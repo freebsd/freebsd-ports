@@ -8,13 +8,12 @@
 ## to make this port work with mail/postfix port.
 
 ## WITH_POSTFIX_MILTER knob implicitly defines
-## SENDMAIL_MILTER_IN_BASE, to build with libmilter*
+## WITH_SENDMAIL_BASE, to build with libmilter*
 ## in base system.  If you have deleted sendamil in
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,8 +25,12 @@ USE_RC_SUBR=	milter-dkim.sh
 USE_OPENSSL=	yes
 
 .if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)
-SENDMAIL_MILTER_IN_BASE=	yes
+WITH_SENDMAIL_BASE=	yes
 PKGMESSAGE=	pkg-message.postfix
+
+.if defined(SENDMAIL_MILTER_IN_BASE)
+WITH_SENDMAIL_BASE=yes
+.endif
 
 .if defined(WITH_POSTFIX_CURRENT)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix-current
@@ -36,21 +39,6 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix
 .endif
 .endif
 
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-.if defined(SENDMAIL_WITH_SHARED_MILTER)
-LIB_DEPENDS+=	milter.3:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.endif
-.endif
-
-.if defined(WITH_SENDMAIL_STATIC_MILTER) && !defined(SENDMAIL_WITH_SHARED_MILTER)
-SITE+=		-e '\|-static|s|%%STATIC%%||g'
-.else
-SITE+=		-e '\|-static|s|%%STATIC%%|dnl |g'
-.endif
-
-SENDMAIL_MILTER_PORT?=	sendmail
 SUB_FILES=	milter-dkim.sh
 WCONF=		${WRKSRC}/devtools/Site
 MAN5=		dkim-filter.conf.5
@@ -116,15 +104,22 @@ PLIST_FILES+=	${DOCSDIR_REL}/README.dkim-filter \
 PLIST_DIRS+=	${DOCSDIR_REL}/libdkim
 .endif
 
+.include <bsd.port.pre.mk>
+
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
+
 SITE+=		${FILESDIR}/site.config.m4
-.if !defined(SENDMAIL_MILTER_IN_BASE)
+.if defined(WITH_SENDMAIL_PORT)
 SITE+=		${FILESDIR}/site.config.m4.milter
 .endif
 SITE+=		${WRKSRC}/site.config.m4.dist
 SITE_SUB+=	-e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g"
-
-.include <bsd.port.pre.mk>
+.if defined(WITH_SENDMAIL_STATIC_MILTER)
+SITE_SUB+=	-e '\|-static|s|%%STATIC%%||g'
+.else
+SITE_SUB+=	-e '\|-static|s|%%STATIC%%|dnl |g'
+.endif
 
 SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR:S/.sh$//}${RC_SUBR_SUFFIX}"
 
@@ -143,6 +138,7 @@ LIBDK_PORT=	mail/dk-milter
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${LIBDK_PORT}:patch
 LIBDK_PATH!=	cd ${PORTSDIR}/${LIBDK_PORT} && ${MAKE} -V WRKSRC
 SITE_SUB+=	-e '\|bld_VERIFY_DOMAINKEYS|s/^dnl //'
+PORTDOCS+=	rfc4870.txt
 .endif
 
 .if defined(WITH_STATS) && !defined(WITHOUT_STATS)
@@ -173,11 +169,10 @@ SITE_SUB+=	-e 's|%%OPENSSL%%||g' \
 .endif
 
 pre-fetch:
-.if defined(SENDMAIL_WITHOUT_MILTER)
+.if defined(SENDMAIL_MILTER_IN_BASE)
 	@${ECHO_MSG}
-	@${ECHO_MSG} You must unset variable SENDMAIL_WITHOUT_MILTER,
-	@${ECHO_MSG} and rebuild sendmail in the ports
-	@${FALSE}
+	@${ECHO_MSG} "SENDMAIL_MILTER_IN_BASE now deprecated,"
+	@${ECHO_MSG} "please set WITH_SENDMAIL_BASE=yes instead"
 .endif
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If you do not have OpenSSL 0.9.8 or later installed,"
@@ -187,7 +182,7 @@ pre-fetch:
 	@${ECHO_MSG} "dkim-milter has the following tunable option(s):"
 	@${ECHO_MSG} " WITH_POPAUTH=yes		Query POP-before-SMTP authentication database"
 	@${ECHO_MSG} " WITH_VERIFY_DOMAINKEYS=yes	Verify DomainKeys using dk-milter's libdk"
-	@${ECHO_MSG} " SENDMAIL_MILTER_IN_BASE=yes	Build to run with base sendmail"
+	@${ECHO_MSG} " WITH_SENDMAIL_BASE=yes	Build to run with base sendmail"
 	@${ECHO_MSG} " WITH_POSTFIX=yes		Build to run with postfix port"
 	@${ECHO_MSG}
 	@sleep 5
@@ -207,6 +202,7 @@ post-patch:
 
 .if defined(WITH_VERIFY_DOMAINKEYS) && !defined(WITHOUT_VERIFY_DOMAINKEYS)
 	${LN} -s ${LIBDK_PATH}/libdk ${WRKSRC}/
+	${CP} ${LIBDK_PATH}/rfc4870.txt ${WRKSRC}/
 .endif
 
 post-install:
