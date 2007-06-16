@@ -3,5 +3,4 @@ command line utilities to monitor and configure network devices and
 host systems. The scli package is based on the SNMP management
 protocol.
 
-WWW: http://www.ibr.cs.tu-bs.de/projects/scli/
-
+WWW: https://trac.eecs.iu-bremen.de/projects/scli/

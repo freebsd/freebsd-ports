@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	scli
-PORTVERSION=	0.2.12
-PORTREVISION=	2
+PORTVERSION=	0.3.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/${PORTNAME}/
+MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/local/${PORTNAME}/ \
+		http://matt.peterson.org/FreeBSD/ports/
 
 MAINTAINER=	lyngbol@wheel.dk
 COMMENT=	A collection of SNMP command line management tools
 
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	gsnmp:${PORTSDIR}/net-mgmt/gsnmp
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib12
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man --infodir=${PREFIX}/info
+USE_GMAKE=	yes
+USE_GNOME=	libxml2
 
 MAN1=		scli.1
 INFO=		scli
