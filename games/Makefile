@@ -247,6 +247,7 @@
     SUBDIR += garith
     SUBDIR += gbottler
     SUBDIR += gcompris
+    SUBDIR += gdado
     SUBDIR += geki2
     SUBDIR += geki3
     SUBDIR += gemdropx
