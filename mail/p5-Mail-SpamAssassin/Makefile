@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -19,6 +19,7 @@ COMMENT=	A highly efficient mail filter for identifying spam
 BUILD_DEPENDS=	p5-Net-DNS>=0.58:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-IO-Zlib>=1.04:${PORTSDIR}/archivers/p5-IO-Zlib \
 		p5-HTML-Parser>=3.43:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-IO-Compress-Zlib>=2.04:${PORTSDIR}/archivers/p5-IO-Compress-Zlib \
 		p5-Compress-Zlib>=2.04:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 
@@ -28,6 +29,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${SITE_PERL}/mach/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect
 
 PERL_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 	       	CONTACT_ADDRESS="${CONTACT_ADDRESS}" \
 		LOCALSTATEDIR="/var/db/spamassassin"
@@ -58,6 +60,8 @@ WITHOUT_SSL=1
 .endif
 
 .if defined(WITH_SPF_QUERY)
+RUN_DEPENDS+=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
+# see http://www.freebsd.org/cgi/query-pr.cgi?pr=113638
 RUN_DEPENDS+=	${SITE_PERL}/Mail/SPF.pm:${PORTSDIR}/mail/p5-Mail-SPF
 .endif
 
@@ -68,8 +72,10 @@ USE_OPENSSL=	yes
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 CONFIGURE_ARGS+=	ENABLE_SSL=yes
+PLIST_SUB+=	SSL=""
 .else
 CONFIGURE_ARGS+=	ENABLE_SSL=no
+PLIST_SUB+=	SSL="@comment "
 .endif
 
 .if !defined(WITHOUT_GNUPG)
@@ -85,9 +91,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 .endif
 
 .if defined(WITH_RAZOR)
-RUN_DEPENDS+=	razor-agents>=2.81:${PORTSDIR}/mail/razor-agents
-# see http://www.freebsd.org/cgi/query-pr.cgi?pr=112522
-# really needs razor-agents>=2.82_1
+RUN_DEPENDS+=	razor-agents>=2.84:${PORTSDIR}/mail/razor-agents
 .endif
 
 .if defined(WITH_DKIM)
@@ -96,8 +100,6 @@ RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SS
 .endif
 
 .if defined(WITH_SACOMPILE)
-# if this fails, you need re2c .12.0:
-# http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/112501
 RUN_DEPENDS+=	re2c>=.12.0:${PORTSDIR}/devel/re2c
 .endif
 
@@ -217,11 +219,24 @@ post-patch:
 	${REINPLACE_CMD} -e '/DCC/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
 .endif
 .if defined(WITH_SACOMPILE)
-	${REINPLACE_CMD} -e '/Rule2XSBody/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v320.pre
+	${REINPLACE_CMD} -e '/Rule2XSBody/s/^# loadplugin/loadplugin/' ${WRKSRC}/rules/v320.pre
+.endif
+
+post-build:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} spamc/libspamc.so)
+.if !defined(WITHOUT_SSL)
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} spamc/libsslspamc.so)
 .endif
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libspamc.so ${PREFIX}/lib/libspamc.so.0
+	@${LN} -sf libspamc.so.0 ${PREFIX}/lib/libspamc.so
+.if !defined(WITHOUT_SSL)
+	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libsslspamc.so ${PREFIX}/lib/libsslspamc.so.0
+	@${LN} -sf libsslspamc.so.0 ${PREFIX}/lib/libsslspamc.so
+.endif
+	@${INSTALL_DATA} ${WRKSRC}/spamc/libspamc.h ${PREFIX}/include
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/spamc
@@ -246,10 +261,6 @@ post-install:
 
 .endif
 	@${SED} -e 's#PREFIX#${PREFIX}#' ${PKGMESSAGE}
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	needs perl 5.6.1 or higher, install lang/perl5.8 and try again
-.endif
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
