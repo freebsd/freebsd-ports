@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	base64
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	converters
 MASTER_SITES=	http://www.fourmilab.ch/webtools/base64/ \
 		http://dl.droso.net/FreeBSD/distfiles/
