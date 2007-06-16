@@ -7,6 +7,8 @@ etc/mararc.sample
 etc/rc.d/maradns.sh
 etc/rc.d/zoneserver.sh
 etc/maradns/example_csv2
+@exec mkdir -p %D/etc/maradns/logger
+@dirrmtry etc/maradns/logger
 @dirrmtry etc/maradns
 sbin/maradns
 sbin/zoneserver

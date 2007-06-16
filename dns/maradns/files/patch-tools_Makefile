@@ -1,0 +1,11 @@
+--- tools/Makefile.orig	Sat Jun  2 13:33:56 2007
++++ tools/Makefile	Sat Jun  2 13:38:09 2007
+@@ -27,7 +27,7 @@
+ 	$(CC) $(FLAGS) -o benchmark benchmark.c $(OBJECTS) $(POBJECTS)
+ 
+ duende: duende.c 
+-	$(CC) $(FLAGS) -o duende duende.c
++	$(CC) $(FLAGS) -o duende duende.c -lutil
+ 
+ strip.control: strip.control.c
+ 	$(CC) $(FLAGS) -o strip.control strip.control.c

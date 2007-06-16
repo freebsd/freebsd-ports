@@ -28,11 +28,11 @@ prefix=%%PREFIX%%
 
 name="%%SERVICE%%"
 rcvar=`set_rcvar`
-command="${prefix}/sbin/${name}"
-command_args="| /usr/bin/logger -p daemon.notice -t %%SERVICE%% &"
+command="${prefix}/bin/duende"
+pidfile="/var/run/${name}.pid"
 
 load_rc_config $name
 
-flags="${%%SERVICE%%_flags}"
+flags="${prefix}/sbin/${name} ${%%SERVICE%%_flags}"
 
 run_rc_command "$1"
