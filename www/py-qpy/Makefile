@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	qpy
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/qpy/ \
+		${MASTER_SITE_LOCAL} \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Generating safely-quoted html text from python code
 
 USE_PYTHON=	2.4+
