@@ -6,6 +6,11 @@ bin/sa-update
 bin/spamassassin
 bin/spamc
 bin/spamd
+lib/libspamc.so
+lib/libspamc.so.0
+%%SSL%%lib/libsslspamc.so
+%%SSL%%lib/libsslspamc.so.0
+include/libspamc.h
 @unexec rm -rf %D/etc/mail/spamassassin/sa-update-keys || true
 etc/mail/spamassassin/local.cf.sample
 @unexec if cmp -s %B/init.pre.sample %B/init.pre; then rm -f %B/init.pre; fi
