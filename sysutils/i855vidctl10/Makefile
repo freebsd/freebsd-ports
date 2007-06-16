@@ -16,11 +16,6 @@ COMMENT=	Resolution tool for Centrino based laptops
 
 ONLY_FOR_ARCHS=	i386
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/i855vidctl
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
