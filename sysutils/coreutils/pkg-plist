@@ -169,6 +169,7 @@ bin/gyes
 %%NLS%%@dirrmtry share/locale/sl/LC_TIME
 %%NLS%%@dirrmtry share/locale/sk/LC_TIME
 %%NLS%%@dirrmtry share/locale/rw/LC_TIME
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/rw
 %%NLS%%@dirrmtry share/locale/ru/LC_TIME
 %%NLS%%@dirrmtry share/locale/pt_BR/LC_TIME
