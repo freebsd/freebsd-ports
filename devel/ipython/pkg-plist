@@ -58,9 +58,18 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_completers.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_completers.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_completers.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_constants.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_constants.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_constants.pyo
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_defaults.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_defaults.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_defaults.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_exportdb.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_exportdb.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_exportdb.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_extutil.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_extutil.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_extutil.pyo
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_gnuglobal.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_gnuglobal.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_gnuglobal.pyo
@@ -70,6 +79,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_pydb.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_pydb.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_pydb.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_render.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_render.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_render.pyo
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_signals.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_signals.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_signals.pyo
@@ -79,6 +91,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_system_conf.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_system_conf.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_system_conf.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_which.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_which.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_which.pyo
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/jobctrl.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/jobctrl.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/jobctrl.pyo
@@ -172,9 +187,6 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric.py
 %%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric.pyc
 %%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric.pyo
-%%PYTHON_SITELIBDIR%%/IPython/external/thread2.py
-%%PYTHON_SITELIBDIR%%/IPython/external/thread2.pyc
-%%PYTHON_SITELIBDIR%%/IPython/external/thread2.pyo
 %%PYTHON_SITELIBDIR%%/IPython/genutils.py
 %%PYTHON_SITELIBDIR%%/IPython/genutils.pyc
 %%PYTHON_SITELIBDIR%%/IPython/genutils.pyo
@@ -235,8 +247,6 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/winconsole.py
 %%PYTHON_SITELIBDIR%%/IPython/winconsole.pyc
 %%PYTHON_SITELIBDIR%%/IPython/winconsole.pyo
-@dirrm IPython/Extensions
-@dirrm IPython
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/external
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/UserConfig
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/Extensions
