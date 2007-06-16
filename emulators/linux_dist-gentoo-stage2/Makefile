@@ -16,9 +16,6 @@ COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
 RESTRICTED=	binaries licensed under GNU GPL without accompanying source
 
-# Does not build when jailed
-MANUAL_PACKAGE_BUILD=	YES
-
 USE_BZIP2=		YES
 DIST_SUBDIR=		gentoo-linux
 NO_BUILD=		YES
@@ -54,6 +51,9 @@ DISTNAME=		stage2-${GENTOO_OPTIMIZED}-${PORTVERSION}
 MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages
 DISTNAME=		stage2-x86-${PORTVERSION}
 .endif
+
+do-extract:
+	${MKDIR} ${WRKDIR}
 
 pre-fetch:
 .if defined(WITH_LINUXBASE)

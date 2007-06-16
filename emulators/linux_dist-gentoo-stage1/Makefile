@@ -18,9 +18,6 @@ COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
 RESTRICTED=	binaries licensed under GNU GPL without accompanying source
 
-# Does not build when jailed
-MANUAL_PACKAGE_BUILD=	YES
-
 USE_BZIP2=		YES
 DIST_SUBDIR=		gentoo-linux
 NO_BUILD=		YES
@@ -50,6 +47,9 @@ PREFIX_SUBDIR=	${PORTNAME}/
 .if (${ARCH} == "amd64")
 LATEST_LINK=	${PORTNAME:C/linux_base/linux32_base/}
 .endif
+
+do-extract:
+	${MKDIR} ${WRKDIR}
 
 pre-fetch:
 .if defined(WITH_LINUXBASE)
