@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=		Tk
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=		lubomir_m@abv.bg
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A resizeable button to be used in a Tk::HList column header
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
