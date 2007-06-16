@@ -727,8 +727,16 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Show all directories which are build-dependencies
 #				  for this port.
 # package-depends-list
-#				- Show all directories which are
-#				  package-dependencies for this port.
+#				- Show all directories which are package-dependencies
+#				  for this port. This is based upon the dependency
+#				  tree as recorded in the Makefiles of the ports
+#				  collection, not as recorded in the currently
+#				  installed ports.
+# actual-package-depends-list
+#				- Like package-depends-list but with the difference
+#				  that the dependencies of the currently installed
+#				  ports are used instead of the dependencies as
+#				  recorded in the ports collection.
 # run-depends-list
 #				- Show all directories which are run-dependencies
 #				  for this port.
@@ -2450,7 +2458,7 @@ PKGINSTALLVER!= ${CHROOT} ${DESTDIR} ${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.
 DISABLE_CONFLICTS=	YES
 .endif
 .if !defined(PKG_ARGS)
-PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && ${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u`" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS}
+PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && ${MAKE} actual-package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u`" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS}
 .if !defined(NO_MTREE)
 PKG_ARGS+=		-m ${MTREE_FILE}
 .endif
@@ -5365,15 +5373,47 @@ PACKAGE-DEPENDS-LIST?= \
 				shift 3; \
 			done; \
 			checked="$$dir $$childdir $$checked"; \
-		else \\
+		else \
 			${ECHO_MSG} "${PKGNAME}: \"$$dir\" non-existent -- dependency list incomplete" >&2; \
 		fi; \
 	done
+
+ACTUAL-PACKAGE-DEPENDS?= \
+	if [ "${_LIB_RUN_DEPENDS}" != "  " ]; then \
+		for pkgname in ${PKG_DBDIR}/*; do \
+			if [ -e $$pkgname/+CONTENTS ]; then \
+				a=$${pkgname\#\#*/}; \
+				b=`${SED} -n -e "s/@comment ORIGIN://p" $$pkgname/+CONTENTS`; \
+				if [ ! -z $$b ]; then \
+					origins="$$origins $$a $$b"; \
+				fi; \
+			fi; \
+		done; \
+		for dir in ${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,}; do \
+			tmp=$${dir%/*}; \
+			dir=$${tmp\#\#*/}/$${dir\#\#*/}; \
+			set -- $$origins; \
+			while [ $$\# != 0 ]; do \
+				if [ $$dir = $$2 ]; then \
+					${ECHO_CMD} $$1:$$dir; \
+					if [ -e ${PKG_DBDIR}/$$1/+CONTENTS ]; then \
+						packagelist="$$packagelist ${PKG_DBDIR}/$$1/+CONTENTS"; \
+					fi; \
+					break; \
+				fi; \
+				shift 2; \
+			done; \
+		done; \
+		[ -z "$$packagelist" ] || ${AWK} -F '( |:)' 'BEGIN { pkgname="broken_contents" } /@pkgdep / { pkgname=$$2 } /@comment DEPORIGIN:/ { printf "%s:%s\n", pkgname, $$3; pkgname="broken_contents" }' $$packagelist; \
+	fi
 
 # Print out package names.
 
 package-depends:
 	@${PACKAGE-DEPENDS-LIST} | ${AWK} '{print $$1":"$$3}'
+
+actual-package-depends:
+	@${ACTUAL-PACKAGE-DEPENDS}
 
 # Build packages for port and dependencies
 
