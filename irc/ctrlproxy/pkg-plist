@@ -18,9 +18,8 @@ lib/ctrlproxy/libsocks.so
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%PORTDOCS%%%%DOCSDIR%%/user-guide.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-lib/pkgconfig
+libdata/pkgconfig/ctrlproxy.pc
 @dirrm %%DATADIR%%/default/networks
 @dirrm %%DATADIR%%/default
 @dirrm %%DATADIR%%
 @dirrm lib/ctrlproxy
-@dirrm include/ctrlproxy-3.0
