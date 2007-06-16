@@ -260,6 +260,8 @@ ${item:U}_ENV+=	${AUTOTOOLS_VARS}
 # the order of autotools running.
 
 .if !target(run-autotools)
+.ORDER: run-autotools run-autotools-aclocal patch-autotools run-autotools-autoheader run-autotools-autoconf run-autotools-automake
+
 run-autotools:: run-autotools-aclocal patch-autotools run-autotools-autoheader \
 		run-autotools-autoconf run-autotools-automake
 .endif
