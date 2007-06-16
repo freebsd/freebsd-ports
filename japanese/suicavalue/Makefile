@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	suicavalue
-PORTVERSION=	2007.01.06
-PORTREVISION=	1
+PORTVERSION=	2007.05.15
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.imfj.net/people/nomura/soft/PaSoRi/
 DISTNAME=	SuicaValue
