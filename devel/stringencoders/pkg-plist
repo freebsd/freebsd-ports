@@ -1,0 +1,13 @@
+include/modp_ascii.h
+include/modp_b16.h
+include/modp_b2.h
+include/modp_b64.h
+include/modp_b64w.h
+include/modp_b85.h
+include/modp_bjavascript.h
+include/modp_burl.h
+include/modp_numtoa.h
+lib/libmodpbase64.a
+lib/libmodpbase64.la
+lib/libmodpbase64.so
+lib/libmodpbase64.so.0
