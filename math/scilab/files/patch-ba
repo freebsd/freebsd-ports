@@ -4,7 +4,7 @@
  	conftest conftest.c so_locations
  
  # SCIBASE for scilab binaries generation
--SCIBASE = scilab-4.1
+-SCIBASE = scilab-4.1.1
 +SCIBASE = scilab
  
  PVMBINDISTFILES = \

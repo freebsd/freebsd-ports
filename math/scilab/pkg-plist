@@ -2057,6 +2057,8 @@ lib/scilab/macros/m2sci/kernel/m2sci_info.bin
 lib/scilab/macros/m2sci/kernel/m2sci_info.sci
 lib/scilab/macros/m2sci/kernel/m2sci_syntax.bin
 lib/scilab/macros/m2sci/kernel/m2sci_syntax.sci
+lib/scilab/macros/m2sci/kernel/mfile_path.bin
+lib/scilab/macros/m2sci/kernel/mfile_path.sci
 lib/scilab/macros/m2sci/kernel/mtlbtoolfun.bin
 lib/scilab/macros/m2sci/kernel/mtlbtoolfun.sci
 lib/scilab/macros/m2sci/kernel/mtlbtree2sci.bin
