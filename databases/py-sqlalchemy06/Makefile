@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://cheeseshop.python.org/packages/source/S/SQLAlchemy/ \
@@ -49,7 +49,7 @@ PORTDOCS=	adv_datamapping.html alphaapi.html \
 .endif
 
 PORTEXAMPLES=	adjacencytree association backref collections graphs \
-	pickle polymorph vertical
+	pickle polymorph poly_assoc vertical
 
 .include <bsd.port.pre.mk>
 

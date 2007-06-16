@@ -1,24 +1,3 @@
 @unexec %%PREFIX%%/bin/easy_install -q -N -m -x -S %%PREFIX%%/%%PYTHON_SITELIBDIR%% %%EGG%%
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg
-%%EXAMPLEDIR%%/adjacencytree/basic_tree.py
-%%EXAMPLEDIR%%/adjacencytree/byroot_tree.py
-%%EXAMPLEDIR%%/association/basic_association.py
-%%EXAMPLEDIR%%/association/proxied_association.py
-%%EXAMPLEDIR%%/backref/backref_tree.py
-%%EXAMPLEDIR%%/collections/large_collection.py
-%%EXAMPLEDIR%%/graphs/graph1.py
-%%EXAMPLEDIR%%/pickle/custom_pickler.py
-%%EXAMPLEDIR%%/polymorph/concrete.py
-%%EXAMPLEDIR%%/polymorph/polymorph.py
-%%EXAMPLEDIR%%/polymorph/single.py
-%%EXAMPLEDIR%%/vertical/vertical.py
-@dirrm %%EXAMPLEDIR%%/adjacencytree
-@dirrm %%EXAMPLEDIR%%/association
-@dirrm %%EXAMPLEDIR%%/backref
-@dirrm %%EXAMPLEDIR%%/collections
-@dirrm %%EXAMPLEDIR%%/graphs
-@dirrm %%EXAMPLEDIR%%/pickle
-@dirrm %%EXAMPLEDIR%%/polymorph
-@dirrm %%EXAMPLEDIR%%/vertical
-@dirrm %%EXAMPLEDIR%%
 @exec %%PREFIX%%/bin/easy_install -q -N  -S %%PREFIX%%/%%PYTHON_SITELIBDIR%% %%EGG%%
