@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ctrlproxy
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	irc
 MASTER_SITES=	http://ctrlproxy.vernstok.nl/releases/
 

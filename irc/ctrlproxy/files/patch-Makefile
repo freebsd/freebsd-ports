@@ -1,21 +1,31 @@
---- Makefile.orig	Fri Jan  5 06:33:03 2007
-+++ Makefile	Fri Jan  5 23:44:47 2007
-@@ -96,17 +96,14 @@
- 	$(INSTALL) -d $(DESTDIR)$(bindir)
- 	$(INSTALL) -d $(DESTDIR)$(destincludedir)
+--- Makefile.orig	Sun Apr 15 14:17:58 2007
++++ Makefile	Sat Jun 16 12:00:33 2007
+@@ -90,7 +90,7 @@
+ ctrlproxy.pc Makefile.settings: configure Makefile.settings.in ctrlproxy.pc.in
+ 	./$<
+ 
+-install: all install-dirs install-bin install-header install-mods install-data install-pkgconfig $(EXTRA_INSTALL_TARGETS)
++install: all install-dirs install-bin install-mods install-data install-pkgconfig $(EXTRA_INSTALL_TARGETS)
+ install-dirs:
  	$(INSTALL) -d $(DESTDIR)$(modulesdir)
--	$(INSTALL) -d $(DESTDIR)$(docdir)
- 	$(INSTALL) -d $(DESTDIR)$(cdatadir)
--	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig
-+	$(INSTALL) -d $(DESTDIR)$(prefix)/libdata/pkgconfig
  
- install-bin:
- 	$(INSTALL) ctrlproxy$(EXEEXT) $(DESTDIR)$(bindir)
+@@ -113,8 +113,6 @@
  
- install-doc: doc
- 	$(INSTALL) -m 0644 $(headers) $(DESTDIR)$(destincludedir)
+ install-doc:: doc
+ 	$(INSTALL) -d $(DESTDIR)$(docdir)
 -	$(INSTALL) -m 0644 UPGRADING $(DESTDIR)$(docdir)
 -	$(MAKE) -C doc install PACKAGE_VERSION=$(PACKAGE_VERSION)
  
- install-data:
- 	$(INSTALL) -m 0644 motd $(DESTDIR)$(cdatadir)
+ uninstall-doc: 
+ 	$(MAKE) -C doc uninstall
+@@ -146,8 +144,8 @@
+ 	-rmdir $(DESTDIR)$(modulesdir)
+ 
+ install-pkgconfig:
+-	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig
+-	$(INSTALL) -m 0644 ctrlproxy.pc $(DESTDIR)$(libdir)/pkgconfig
++	$(INSTALL) -d $(DESTDIR)$(prefix)/libdata/pkgconfig
++	$(INSTALL) -m 0644 ctrlproxy.pc $(DESTDIR)$(prefix)/libdata/pkgconfig
+ 
+ uninstall-pkgconfig:
+ 	-rm -f $(DESTDIR)$(libdir)/pkgconfig/ctrlproxy.pc
