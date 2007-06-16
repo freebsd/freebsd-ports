@@ -240,11 +240,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	ftp://mirrors.kernel.org/fedora/core/%SUBDIR%/ \
 	http://mirror.web-ster.com/fedora/core/%SUBDIR%/ \
 	ftp://mirror.web-ster.com/fedora/core/%SUBDIR%/ \
-	ftp://fedora.cs.utah.edu/pub/fedora/linux/core/%SUBDIR%/ \
-	http://fedora.cat.pdx.edu/linux/core/%SUBDIR%/ \
-	ftp://fedora.cat.pdx.edu/linux/core/%SUBDIR%/ \
-	http://mirror.linux.duke.edu/pub/fedora/linux/core/%SUBDIR%/ \
-	ftp://mirror.linux.duke.edu/pub/fedora/linux/core/%SUBDIR%/ \
 	http://rpmfind.net/linux/fedora/core/%SUBDIR%/ \
 	ftp://rpmfind.net/linux/fedora/core/%SUBDIR%/ \
 	ftp://ftp.gtlib.cc.gatech.edu/pub/fedora.redhat/linux/core/%SUBDIR%/ \
@@ -253,18 +248,10 @@ MASTER_SITE_FEDORA_LINUX+= \
 	ftp://ftp.ale.org/mirrors/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.ndlug.nd.edu/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.ndlug.nd.edu/pub/fedora/linux/core/%SUBDIR%/ \
-	http://fedora.server4you.net/fedora/core/%SUBDIR%/ \
-	ftp://fedora.server4you.net/fedora/core/%SUBDIR%/ \
-	http://fedora.mirrored.ca/fedora/%SUBDIR%/ \
-	ftp://fedora.mirrored.ca/fedora/%SUBDIR%/ \
-	ftp://ftp.scarlet.be/pub/fedora/%SUBDIR%/ \
-	http://ftp.belnet.be/linux/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.belnet.be/linux/fedora/linux/core/%SUBDIR%/ \
 	http://sunsite.mff.cuni.cz/pub/fedora/%SUBDIR%/ \
 	ftp://sunsite.mff.cuni.cz/pub/fedora/%SUBDIR%/ \
 	ftp://ultra.linux.cz/pub/fedora/%SUBDIR%/ \
-	ftp://ftp.fi.muni.cz/pub/linux/fedora/linux/core/%SUBDIR%/ \
-	ftp://ftp.ipv6.funet.fi/pub/mirrors/ftp.redhat.com/pub/fedora/linux/core/%SUBDIR%/ \
 	http://fr2.rpmfind.net/linux/fedora/core/%SUBDIR%/ \
 	ftp://fr2.rpmfind.net/linux/fedora/core/%SUBDIR%/ \
 	http://wftp.tu-chemnitz.de/pub/linux/fedora-core/%SUBDIR%/ \
@@ -274,36 +261,143 @@ MASTER_SITE_FEDORA_LINUX+= \
 	http://ftp.esat.net/pub/linux/fedora/%SUBDIR%/ \
 	ftp://ftp.esat.net/pub/linux/fedora/%SUBDIR%/ \
 	ftp://alviss.et.tudelft.nl/pub/fedora/core/%SUBDIR%/ \
-	http://ftp.surfnet.nl/ftp/pub/os/Linux/distr/fedora/%SUBDIR%/ \
-	ftp://ftp.surfnet.nl/pub/os/Linux/distr/fedora/%SUBDIR%/ \
-	http://ftp.nluug.nl/ftp/pub/os/Linux/distr/fedora/%SUBDIR%/ \
-	ftp://ftp.nluug.nl/pub/os/Linux/distr/fedora/%SUBDIR%/ \
+	http://ftp.surfnet.nl/ftp/pub/os/Linux/distr/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.surfnet.nl/pub/os/Linux/distr/fedora/linux/core/%SUBDIR%/ \
+	http://ftp.nluug.nl/ftp/pub/os/Linux/distr/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.nluug.nl/pub/os/Linux/distr/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.uninett.no/pub/linux/Fedora/core/%SUBDIR%/ \
-	http://ftp.man.poznan.pl/pub/linux/fedora/%SUBDIR%/ \
+	http://ftp.man.poznan.pl/pub/linux/fedora/core/%SUBDIR%/ \
 	ftp://ftp.man.poznan.pl/pub/linux/fedora/%SUBDIR%/ \
 	http://ftp.ps.pl/pub/linux/fedora-core/%SUBDIR%/ \
 	ftp://ftp.ps.pl/pub/linux/fedora-core/%SUBDIR%/ \
-	http://ftp.idilis.ro/mirrors/fedora/core/%SUBDIR%/ \
-	ftp://ftp.idilis.ro/mirrors/fedora/core/%SUBDIR%/ \
 	ftp://ftp.kappa.ro/pub/Linux/Distributions/fedora/%SUBDIR%/ \
-	http://mirror.etf.bg.ac.yu/fedora/linux/core/%SUBDIR%/ \
-	ftp://mirror.etf.bg.ac.yu/fedora/linux/core/%SUBDIR%/ \
-	ftp://ftp.chl.chalmers.se/pub/fedora/linux/core/%SUBDIR%/ \
+	http://mirror.etf.bg.ac.yu/fedora/%SUBDIR%/ \
+	ftp://mirror.etf.bg.ac.yu/fedora/%SUBDIR%/ \
 	http://www.mirrorservice.org/sites/download.fedora.redhat.com/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/download.fedora.redhat.com/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.hostrino.com/pub/fedora/linux/core/%SUBDIR%/ \
-	ftp://ftp.sfc.wide.ad.jp/pub/Linux/Fedora/%SUBDIR%/ \
+	ftp://ftp.sfc.wide.ad.jp/pub/Linux/Fedora/core/%SUBDIR%/ \
 	http://ftp.kddilabs.jp/Linux/packages/fedora/core/%SUBDIR%/ \
 	ftp://ftp.kddilabs.jp/Linux/packages/fedora/core/%SUBDIR%/ \
 	ftp://ftp.riken.go.jp/pub/Linux/fedora/core/%SUBDIR%/ \
 	http://ftp.isu.edu.tw/pub/Linux/Fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.isu.edu.tw/pub/Linux/Fedora/linux/core/%SUBDIR%/ \
-	ftp://ftp.planetmirror.com/pub/fedora/linux/core/%SUBDIR%/ \
 	http://www.las.ic.unicamp.br/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://www.las.ic.unicamp.br/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://mirror.netglobalis.net/pub/fedora/%SUBDIR%/ \
 	http://mirror.pacific.net.au/linux/redhat/fedora/%SUBDIR%/ \
-	ftp://mirror.pacific.net.au/linux/redhat/fedora/%SUBDIR%/
+	ftp://mirror.pacific.net.au/linux/redhat/fedora/%SUBDIR%/ \
+	http://download.fedora.redhat.com/pub/fedora/linux/core/%SUBDIR%/ \
+	http://ftp.univie.ac.at/systems/linux/fedora/core/%SUBDIR%/ \
+	http://mirror.aarnet.edu.au/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://mirror.aarnet.edu.au/pub/fedora/linux/core/%SUBDIR%/ \
+	http://fedora.mirror.iweb.ca/core/%SUBDIR%/ \
+	ftp://fedora.mirror.iweb.ca/core/%SUBDIR%/ \
+	ftp://ftp.telus.net/pub/fedora/linux/core/%SUBDIR%/ \
+	http://fedora.arcticnetwork.ca/linux/core/%SUBDIR%/ \
+	http://www.muug.mb.ca/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.muug.mb.ca/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.solnet.ch/mirror/fedora/linux/core/%SUBDIR%/ \
+	http://mirror.karneval.cz/pub/linux/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.telmexchile.cl/Unix/fedora/linux/core/%SUBDIR%/ \
+	http://ftp.sh.cvut.cz/MIRRORS/fedora/%SUBDIR%/ \
+	ftp://ftp.sh.cvut.cz/MIRRORS/fedora/%SUBDIR%/ \
+	http://sunsite.mff.cuni.cz/MIRRORS/fedora.redhat.com/linux/core/%SUBDIR%/ \
+	ftp://sunsite.mff.cuni.cz/MIRRORS/fedora.redhat.com/linux/core/%SUBDIR%/ \
+	http://ftp-stud.hs-esslingen.de/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp-stud.hs-esslingen.de/pub/fedora/linux/core/%SUBDIR%/ \
+	http://www.jur-linux.org/download/fedora/core/%SUBDIR%/ \
+	http://ftp.uni-erlangen.de/pub/Linux/MIRROR.fedora/core/%SUBDIR%/ \
+	ftp://ftp.uni-muenster.de/pub/linux/distributions/fedora/linux/core/%SUBDIR%/ \
+	http://ftp.uni-bayreuth.de/linux/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.uni-bayreuth.de/pub/linux/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.fu-berlin.de/linux/fedora/core/%SUBDIR%/ \
+	http://ftp.uni-koeln.de/mirrors/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.uni-koeln.de/mirrors/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.informatik.uni-frankfurt.de/pub/linux/Mirror/ftp.redhat.com/fedora/core/%SUBDIR%/ \
+	http://ftp.udl.es/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.udl.es/pub/fedora/linux/core/%SUBDIR%/ \
+	http://mirrors.ircam.fr/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://mirrors.ircam.fr/pub/fedora/linux/core/%SUBDIR%/ \
+	http://ftp.crihan.fr/mirrors/fedora.redhat.com/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.crihan.fr/mirrors/fedora.redhat.com/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.univ-pau.fr/pub/mirrors/fedora/%SUBDIR%/ \
+	ftp://ftp.lip6.fr/pub/linux/distributions/fedora/%SUBDIR%/ \
+	http://fr.rpmfind.net/linux/fedora/core/%SUBDIR%/ \
+	http://zeniiia.linux.org.uk/pub/distributions/fedora/linux/core/%SUBDIR%/ \
+	ftp://zeniiia.linux.org.uk/pub/distributions/fedora/linux/core/%SUBDIR%/ \
+	http://www.gtlib.gatech.edu/pub/fedora.redhat/linux/core/%SUBDIR%/ \
+	http://download.stmc.edu.hk/fedora/linux/core/%SUBDIR%/ \
+	ftp://download.stmc.edu.hk/fedora/linux/core/%SUBDIR%/ \
+	http://ftp.rhnet.is/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.rhnet.is/pub/fedora/linux/core/%SUBDIR%/ \
+	http://ftp.unina.it/pub/linux/distributions/fedora/%SUBDIR%/ \
+	ftp://ftp.unina.it/pub/linux/distributions/fedora/%SUBDIR%/ \
+	http://ftp.iij.ad.jp/pub/linux/fedora/core/%SUBDIR%/ \
+	ftp://ftp.iij.ad.jp/pub/linux/fedora/core/%SUBDIR%/ \
+	http://ftp.dti.ad.jp/pub/Linux/Fedora/core/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/Linux/Fedora/core/%SUBDIR%/ \
+	http://ftp.nara.wide.ad.jp/pub/Linux/fedora/core/%SUBDIR%/ \
+	http://ftp.yz.yamagata-u.ac.jp/pub/linux/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.yz.yamagata-u.ac.jp/pub/linux/fedora/linux/core/%SUBDIR%/ \
+	http://ftp.jaist.ac.jp/pub/Linux/Fedora/core/%SUBDIR%/ \
+	ftp://ftp.jaist.ac.jp/pub/Linux/Fedora/core/%SUBDIR%/ \
+	http://ftp.riken.jp/Linux/fedora/core/%SUBDIR%/ \
+	http://ftp.kaist.ac.kr/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.kaist.ac.kr/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.kreonet.re.kr/pub/Linux/fedora/core/%SUBDIR%/ \
+	ftp://mirror.hostway.co.kr/pub/fedora/%SUBDIR%/ \
+	http://fedora.ifc.unam.mx/fedora/core/%SUBDIR%/ \
+	ftp://fedora.ifc.unam.mx/linux/fedora/core/%SUBDIR%/ \
+	ftp://ftp.easynet.nl/mirror/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.quicknet.nl/pub/Linux/download.fedora.redhat.com/core/%SUBDIR%/ \
+	ftp://ftp.uib.no/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.tpnet.pl/d17/fedora/%SUBDIR%/ \
+	http://ftp.wsisiz.edu.pl/pub/linux/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.pbone.net/pub/fedora/pub/fedora/linux/core/%SUBDIR%/ \
+	http://ftp.pwr.wroc.pl/pub/linux/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.pwr.wroc.pl/pub/linux/fedora/linux/core/%SUBDIR%/ \
+	ftp://mirrors.hpcf.upr.edu/pub/Mirrors/redhat/download.fedora.redhat.com/%SUBDIR%/ \
+	http://ftp.astral.ro/mirrors/fedora/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.astral.ro/mirrors/fedora/pub/fedora/linux/core/%SUBDIR%/ \
+	http://ftp.iasi.roedu.net/mirrors/fedora.redhat.com/core/%SUBDIR%/ \
+	ftp://ftp.rdsor.ro/pub/Linux/Distributions/Fedora/%SUBDIR%/ \
+	http://ftp.chg.ru/pub/Linux/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/Linux/fedora/linux/core/%SUBDIR%/ \
+	http://ftp.rhd.ru/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.rhd.ru/pub/fedora/linux/core/%SUBDIR%/ \
+	http://ftp.sunet.se/pub/Linux/distributions/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.sunet.se/pub/Linux/distributions/fedora/linux/core/%SUBDIR%/ \
+	http://ftp.port80.se/fedora/core/%SUBDIR%/ \
+	ftp://ftp.port80.se/fedora/core/%SUBDIR%/ \
+	http://ftp.upjs.sk/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.upjs.sk/pub/fedora/linux/core/%SUBDIR%/ \
+	http://ftp.mirror.tw/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.mirror.tw/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.tlk-l.net/pub/mirrors/fedora.redhat.com/linux/core/%SUBDIR%/ \
+	http://limestone.uoregon.edu/ftp/fedora/%SUBDIR%/ \
+	ftp://limestone.uoregon.edu/fedora/%SUBDIR%/ \
+	http://mirrors.tiatera.com/fedora/core/%SUBDIR%/ \
+	ftp://mirrors.tiatera.com/fedora/core/%SUBDIR%/ \
+	ftp://fedora.bu.edu/core/%SUBDIR%/ \
+	http://mirror.anl.gov/pub/fedora-linux-core/%SUBDIR%/ \
+	ftp://mirror.anl.gov/pub/fedora-linux-core/%SUBDIR%/ \
+	ftp://ftp.cse.buffalo.edu/pub/Linux/fedora/linux/core/%SUBDIR%/ \
+	http://coblitz.planet-lab.org/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.software.umn.edu/linux/fedora/core/%SUBDIR%/ \
+	http://fedora.omnispring.com/core/%SUBDIR%/ \
+	ftp://fedora.omnispring.com/core/%SUBDIR%/ \
+	ftp://ftp.applios.net/pub/fedora/linux/core/%SUBDIR%/ \
+	http://fedora.mirror.facebook.com/linux/core/%SUBDIR%/ \
+	http://mirror.steadfast.net/fedora/core/%SUBDIR%/ \
+	http://mirror.eas.muohio.edu/fedora/linux/core/%SUBDIR%/ \
+	http://mirror.engr.sjsu.edu/pub/fedora/linux/core/%SUBDIR%/ \
+	ftp://wuarchive.wustl.edu/pub/linux/distributions/fedora/%SUBDIR%/ \
+	http://www.gtlib.gatech.edu/pub/fedora.redhat/linux/core/%SUBDIR%/ \
+	ftp://ftp.gtlib.gatech.edu/pub/fedora.redhat/linux/core/%SUBDIR%/ \
+	http://mirror.cogentco.com/pub/linux/fedora/linux/core/%SUBDIR%/ \
+	http://mirrors.tummy.com/pub/fedora.redhat.com/fedora/linux/core/%SUBDIR%/ \
+	ftp://mirrors.tummy.com/pub/fedora.redhat.com/fedora/linux/core/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_FESTIVAL)
