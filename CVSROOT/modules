@@ -3384,6 +3384,7 @@ gcursor		ports/x11/gcursor
 gcvs		ports/devel/gcvs
 gd		ports/graphics/gd
 gd-aspell	ports/textproc/gd-aspell
+gdado		ports/games/gdado
 gdal		ports/graphics/gdal
 gdal-grass	ports/graphics/gdal-grass
 gdam		ports/audio/gdam
