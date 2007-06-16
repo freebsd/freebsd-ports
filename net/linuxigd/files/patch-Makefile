@@ -1,5 +1,5 @@
---- Makefile.orig	Wed May 24 06:16:36 2006
-+++ Makefile	Sat Jun 16 18:59:19 2007
+--- Makefile.orig	Sun Jun 17 00:17:05 2007
++++ Makefile	Sun Jun 17 00:18:25 2007
 @@ -1,25 +1,11 @@
 -PREFIX=/usr
 -LIBUPNP_PREFIX=/usr
@@ -28,7 +28,7 @@
  all: upnpd
  
  upnpd: $(FILES)
-@@ -33,11 +19,11 @@
+@@ -33,11 +19,12 @@
  	rm -f *.o upnpd
  
  install: upnpd
@@ -40,11 +40,12 @@
 -	install upnpd $(PREFIX)/sbin
 -	install upnpd.8 $(PREFIX)/share/man/man8
 -	if [ ! -f /etc/upnpd.conf ]; then install etc/upnpd.conf /etc; fi
-+	install -d %%PREFIX%%/etc/linuxigd
-+	$(BSD_INSTALL_DATA) etc/gatedesc.xml %%PREFIX%%/etc/linuxigd
-+	$(BSD_INSTALL_DATA) etc/gateconnSCPD.xml  %%PREFIX%%/etc/linuxigd
-+	$(BSD_INSTALL_DATA) etc/gateicfgSCPD.xml %%PREFIX%%/etc/linuxigd
-+	$(BSD_INSTALL_DATA) etc/dummy.xml %%PREFIX%%/etc/linuxigd
++	install -d $(PREFIX)/etc/linuxigd
++	$(BSD_INSTALL_DATA) etc/gatedesc.xml $(PREFIX)/etc/linuxigd
++	$(BSD_INSTALL_DATA) etc/gateconnSCPD.xml $(PREFIX)/etc/linuxigd
++	$(BSD_INSTALL_DATA) etc/gateicfgSCPD.xml $(PREFIX)/etc/linuxigd
++	$(BSD_INSTALL_DATA) etc/dummy.xml $(PREFIX)/etc/linuxigd
 +	$(BSD_INSTALL_PROGRAM) upnpd $(PREFIX)/sbin
 +	$(BSD_INSTALL_DATA) upnpd.8 $(PREFIX)/man/man8
-+	if [ ! -f %%PREFIX%%/etc/upnpd.conf ]; then $(BSD_INSTALL_DATA) etc/upnpd.conf %%PREFIX%%/etc; fi
++	$(BSD_INSTALL_DATA) etc/upnpd.conf $(PREFIX)/etc/upnpd.conf.sample
++	if [ ! -f $(PREFIX)/etc/upnpd.conf ]; then $(BSD_INSTALL_DATA) $(PREFIX)/etc/upnpd.conf.sample $(PREFIX)/etc/upnpd.conf; fi
