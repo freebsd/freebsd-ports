@@ -14871,6 +14871,7 @@ streamripper	ports/audio/streamripper
 streamtranscoder	ports/audio/streamtranscoder
 streamtuner	ports/audio/streamtuner
 stress		ports/sysutils/stress
+stringencoders	ports/devel/stringencoders
 strobe		ports/security/strobe
 stroq		ports/games/stroq
 stuffit		ports/archivers/stuffit
