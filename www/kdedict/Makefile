@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.i18n.kde.org/tools/${PORTNAME}/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Web based db to administer standard translations of a translation team
 
 RUN_DEPENDS=	p5-Date-Manip>0:${PORTSDIR}/devel/p5-Date-Manip \
@@ -29,12 +29,6 @@ USE_APACHE=	yes
 CGI_DIR?=	${PREFIX}/www/cgi-bin
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTNAME=${PORTNAME} CGI_DIR=${CGI_DIR}
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL}<500800
-RUN_DEPENDS+=	p5-DBD-File>0:${PORTSDIR}/databases/p5-DBD-File
-.endif
 
 pre-everything::
 	@${ECHO_CMD} "Define to suit your needs:"
@@ -53,4 +47,4 @@ do-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
