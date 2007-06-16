@@ -1,0 +1,17 @@
+bin/gsnmp-get
+include/gsnmp/ber.h
+include/gsnmp/dispatch.h
+include/gsnmp/gsnmp.h
+include/gsnmp/message.h
+include/gsnmp/pdu.h
+include/gsnmp/security.h
+include/gsnmp/session.h
+include/gsnmp/transport.h
+include/gsnmp/utils.h
+lib/libgsnmp.a
+lib/libgsnmp.la
+lib/libgsnmp.so
+lib/libgsnmp.so.0
+libdata/pkgconfig/gsnmp.pc
+share/aclocal/gsnmp.m4
+@dirrm include/gsnmp
