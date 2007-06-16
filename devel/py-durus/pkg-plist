@@ -13,9 +13,11 @@ bin/durus
 %%PYTHON_SITELIBDIR%%/durus/client.py
 %%PYTHON_SITELIBDIR%%/durus/persistent_dict.py
 %%PYTHON_SITELIBDIR%%/durus/serialize.py
+%%PYTHON_SITELIBDIR%%/durus/shelf.py
 %%PYTHON_SITELIBDIR%%/durus/pack_storage.py
 %%PYTHON_SITELIBDIR%%/durus/__init__.py
 %%PYTHON_SITELIBDIR%%/durus/persistent_list.py
+%%PYTHON_SITELIBDIR%%/durus/file.py
 %%PYTHON_SITELIBDIR%%/durus/file_storage.py
 %%PYTHON_SITELIBDIR%%/durus/utils.py
 %%PYTHON_SITELIBDIR%%/durus/error.pyc
@@ -32,10 +34,12 @@ bin/durus
 %%PYTHON_SITELIBDIR%%/durus/client.pyc
 %%PYTHON_SITELIBDIR%%/durus/persistent_dict.pyc
 %%PYTHON_SITELIBDIR%%/durus/serialize.pyc
+%%PYTHON_SITELIBDIR%%/durus/shelf.pyc
 %%PYTHON_SITELIBDIR%%/durus/pack_storage.pyc
 %%PYTHON_SITELIBDIR%%/durus/__init__.pyc
 %%PYTHON_SITELIBDIR%%/durus/persistent_list.pyc
 %%PYTHON_SITELIBDIR%%/durus/file_storage.pyc
+%%PYTHON_SITELIBDIR%%/durus/file.pyc
 %%PYTHON_SITELIBDIR%%/durus/utils.pyc
 %%PYTHON_SITELIBDIR%%/durus/_persistent.so
 %%PYTHON_SITELIBDIR%%/durus/error.pyo
@@ -52,10 +56,12 @@ bin/durus
 %%PYTHON_SITELIBDIR%%/durus/client.pyo
 %%PYTHON_SITELIBDIR%%/durus/persistent_dict.pyo
 %%PYTHON_SITELIBDIR%%/durus/serialize.pyo
+%%PYTHON_SITELIBDIR%%/durus/shelf.pyo
 %%PYTHON_SITELIBDIR%%/durus/pack_storage.pyo
 %%PYTHON_SITELIBDIR%%/durus/__init__.pyo
 %%PYTHON_SITELIBDIR%%/durus/persistent_list.pyo
 %%PYTHON_SITELIBDIR%%/durus/file_storage.pyo
+%%PYTHON_SITELIBDIR%%/durus/file.pyo
 %%PYTHON_SITELIBDIR%%/durus/utils.pyo
 %%PORTDOCS%%%%DOCSDIR%%/ACKS.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt

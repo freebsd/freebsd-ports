@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	durus
-PORTVERSION=	3.6
+PORTVERSION=	3.7
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.mems-exchange.org/software/durus/ \
+		${MASTER_SITE_LOCAL} \
 		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Durus-${PORTVERSION}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	A persistent object storage system for Python
 
 USE_PYTHON=	2.4+
