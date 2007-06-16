@@ -1,6 +1,6 @@
---- Coro/Makefile.PL.orig	Wed Mar  7 09:39:09 2007
-+++ Coro/Makefile.PL	Wed Mar  7 09:42:08 2007
-@@ -20,9 +20,7 @@ maintainer :)
+--- Coro/Makefile.PL.orig	Sun Jun 17 01:31:38 2007
++++ Coro/Makefile.PL	Sun Jun 17 01:35:46 2007
+@@ -20,9 +20,7 @@
  
  EOF
  
@@ -10,19 +10,19 @@
  
  
  $DEFINE .= " -DHAVE_MMAP" if $Config{d_mmap} eq "define" && $Config{d_munmap} eq "define";
-@@ -88,10 +86,7 @@ EOF
+@@ -104,10 +102,7 @@
  
  retry:
  
 -my $r = prompt "Use which implementation,\n" .
--               "<s>etjmp/longjump, <u>context, <i>rix, <l>inux or <w>indows?",
+-               "<s>et/longjump, <u>context, <a>ssembly, <i>rix, <l>inux or <w>indows?",
 -               $iface;
 -$iface = lc $1 if $r =~ /(\S)/;
 +$iface = 'u';
  
  if ($iface eq "u") {
     $DEFINE .= " -DCORO_UCONTEXT";
-@@ -145,7 +140,7 @@ The default should be fine.
+@@ -165,7 +160,7 @@
  
  EOF
  
@@ -31,7 +31,7 @@
  $DEFINE .= " -DCORO_STACKSIZE=$stacksize";
  
  print "using a stacksize of $stacksize * sizeof(long)\n";
-@@ -172,7 +167,7 @@ The default, as usual, should be just fi
+@@ -192,7 +187,7 @@
  
  EOF
  
@@ -40,7 +40,7 @@
  $DEFINE .= " -DCORO_STACKGUARD=$stackguard";
  
  print <<EOF;
-@@ -190,8 +185,7 @@ the safe choice.
+@@ -210,8 +205,7 @@
  
  EOF
  
@@ -50,7 +50,7 @@
  $DEFINE .= " -DCORO_USE_VALGRIND=1" if $valgrind =~ /[yY]/;
  
  
-@@ -208,7 +202,7 @@ should enable it only as a last resort.
+@@ -228,7 +222,7 @@
  
  EOF
  
