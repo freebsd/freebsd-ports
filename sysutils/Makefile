@@ -224,6 +224,7 @@
     SUBDIR += fuser
     SUBDIR += fvcool
     SUBDIR += gag
+    SUBDIR += gai-leds
     SUBDIR += ganglia-monitor-core
     SUBDIR += ganglia-webfrontend
     SUBDIR += gapcmon

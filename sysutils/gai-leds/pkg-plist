@@ -1,0 +1,12 @@
+bin/gai-leds
+libdata/bonobo/servers/GNOME_gai-ledsApplet.server
+share/gnome/pixmaps/gai-leds-icon.png
+share/gnome/pixmaps/gai-leds/capslock_off.png
+share/gnome/pixmaps/gai-leds/capslock_on.png
+share/gnome/pixmaps/gai-leds/ledsbg_horz.png
+share/gnome/pixmaps/gai-leds/ledsbg_vert.png
+share/gnome/pixmaps/gai-leds/numlock_off.png
+share/gnome/pixmaps/gai-leds/numlock_on.png
+share/gnome/pixmaps/gai-leds/scrollock_off.png
+share/gnome/pixmaps/gai-leds/scrollock_on.png
+@dirrm share/gnome/pixmaps/gai-leds
