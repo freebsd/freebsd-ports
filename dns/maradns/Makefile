@@ -7,6 +7,7 @@
 
 PORTNAME=	maradns
 PORTVERSION=	1.2.12.06
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/1.2/${PORTVERSION}/ \
 		http://kapranoff.ru/~kappa/files/
@@ -57,6 +58,7 @@ do-install:
 	${MKDIR} ${PREFIX}/etc/maradns
 	${INSTALL_DATA} ${WRKSRC}/doc/en/examples/example_csv2 \
  		${PREFIX}/etc/maradns/example_csv2
+	${MKDIR} ${PREFIX}/etc/maradns/logger
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
  		'-e s!%%SERVICE%%!maradns!g' \
  		${FILESDIR}/rc_d.sh > ${PREFIX}/etc/rc.d/maradns.sh
