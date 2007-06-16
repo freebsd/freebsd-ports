@@ -1510,6 +1510,7 @@
 %%T%%/jre/lib/cmm/sRGB.pf
 %%T%%/jre/lib/content-types.properties
 %%T%%/jre/lib/deploy.jar
+%%T%%/jre/lib/deploy/ffjcext.zip
 %%T%%/jre/lib/ext/dnsns.jar
 %%T%%/jre/lib/ext/localedata.jar
 %%T%%/jre/lib/ext/sunjce_provider.jar
@@ -1662,7 +1663,7 @@
 %%T%%/jre/lib/zi/Africa/Accra
 %%T%%/jre/lib/zi/Africa/Addis_Ababa
 %%T%%/jre/lib/zi/Africa/Algiers
-%%T%%/jre/lib/zi/Africa/Asmera
+%%T%%/jre/lib/zi/Africa/Asmara
 %%T%%/jre/lib/zi/Africa/Bamako
 %%T%%/jre/lib/zi/Africa/Bangui
 %%T%%/jre/lib/zi/Africa/Banjul
@@ -1774,6 +1775,7 @@
 %%T%%/jre/lib/zi/America/Indiana/Petersburg
 %%T%%/jre/lib/zi/America/Indiana/Vevay
 %%T%%/jre/lib/zi/America/Indiana/Vincennes
+%%T%%/jre/lib/zi/America/Indiana/Winamac
 %%T%%/jre/lib/zi/America/Inuvik
 %%T%%/jre/lib/zi/America/Iqaluit
 %%T%%/jre/lib/zi/America/Jamaica
@@ -1816,6 +1818,7 @@
 %%T%%/jre/lib/zi/America/Rankin_Inlet
 %%T%%/jre/lib/zi/America/Recife
 %%T%%/jre/lib/zi/America/Regina
+%%T%%/jre/lib/zi/America/Resolute
 %%T%%/jre/lib/zi/America/Rio_Branco
 %%T%%/jre/lib/zi/America/Santiago
 %%T%%/jre/lib/zi/America/Santo_Domingo
@@ -1929,7 +1932,7 @@
 %%T%%/jre/lib/zi/Atlantic/Bermuda
 %%T%%/jre/lib/zi/Atlantic/Canary
 %%T%%/jre/lib/zi/Atlantic/Cape_Verde
-%%T%%/jre/lib/zi/Atlantic/Faeroe
+%%T%%/jre/lib/zi/Atlantic/Faroe
 %%T%%/jre/lib/zi/Atlantic/Madeira
 %%T%%/jre/lib/zi/Atlantic/Reykjavik
 %%T%%/jre/lib/zi/Atlantic/South_Georgia
@@ -1940,6 +1943,7 @@
 %%T%%/jre/lib/zi/Australia/Broken_Hill
 %%T%%/jre/lib/zi/Australia/Currie
 %%T%%/jre/lib/zi/Australia/Darwin
+%%T%%/jre/lib/zi/Australia/Eucla
 %%T%%/jre/lib/zi/Australia/Hobart
 %%T%%/jre/lib/zi/Australia/Lindeman
 %%T%%/jre/lib/zi/Australia/Lord_Howe
@@ -2447,6 +2451,7 @@
 @dirrm %%T%%/jre/lib/i386
 @dirrm %%T%%/jre/lib/fonts
 @dirrm %%T%%/jre/lib/ext
+@dirrm %%T%%/jre/lib/deploy
 @dirrm %%T%%/jre/lib/cmm
 @dirrm %%T%%/jre/lib/audio
 @dirrm %%T%%/jre/lib/applet
