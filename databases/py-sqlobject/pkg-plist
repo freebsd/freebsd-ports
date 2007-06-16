@@ -154,11 +154,15 @@ bin/sqlobject-admin
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/threadinglocal.py
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/threadinglocal.pyc
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/threadinglocal.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/versioning/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/versioning/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/versioning/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/wsgi_middleware.py
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/wsgi_middleware.pyc
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/wsgi_middleware.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/versioning
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sybase
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sqlite
