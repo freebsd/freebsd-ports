@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Tree/Simple/View.pm
+%%SITE_PERL%%/Tree/Simple/View/ASCII.pm
 %%SITE_PERL%%/Tree/Simple/View/DHTML.pm
 %%SITE_PERL%%/Tree/Simple/View/Exceptions.pm
 %%SITE_PERL%%/Tree/Simple/View/HTML.pm

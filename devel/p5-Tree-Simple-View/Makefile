@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tree-Simple-View
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tree
@@ -20,10 +20,16 @@ BUILD_DEPENDS=	${SITE_PERL}/Tree/Simple.pm:${PORTSDIR}/devel/p5-Tree-Simple \
 		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-MAN3=		Tree::Simple::View.3 Tree::Simple::View::DHTML.3 \
-		Tree::Simple::View::HTML.3 Tree::Simple::View::Exceptions.3
+MAN3=		Tree::Simple::View.3 \
+		Tree::Simple::View::ASCII.3 \
+		Tree::Simple::View::DHTML.3 \
+		Tree::Simple::View::Exceptions.3 \
+		Tree::Simple::View::HTML.3
 
 PERL_CONFIGURE=	yes
+
+post-extract:
+	${RM} -f ${WRKSRC}/._Makefile.PL
 
 .include <bsd.port.pre.mk>
 
