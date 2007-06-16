@@ -6,45 +6,30 @@
 #
 
 PORTNAME=	agg
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.antigrain.com/ \
-		${MASTER_SITE_SOURCEFORGE} \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/novel/}
-MASTER_SITE_SUBDIR=	vector-agg
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A High Quality Rendering Engine for C++
 
-BUILD_WRKSRC=	${WRKDIR}/agg23/src
+GNU_CONFIGURE=	yes
+USE_SDL=	sdl
+USE_X_LIB=	yes
+USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
+USE_AUTOTOOLS=	autoconf:259:env automake:15:env libtool:15:env
 MAKE_ENV=	C="${CC}" CXX="${CXX}" AGGCXXFLAGS="${CXXFLAGS}"
-CXXFLAGS+=	-I${X11BASE}/include -L${X11BASE}/lib -I../include -L./
+CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -I../include -L./
 
-PLIST_FILES=	lib/libagg.a
+post-patch:
+	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+	${WRKSRC}/Makefile.am
 
-.include <bsd.port.pre.mk>
+pre-configure:
+	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ACLOCAL_ARGS="${ACLOCAL_ARGS}" ${SH} autogen.sh
 
-post-extract:
-	@${CP} -f ${FILESDIR}/Makefile.in.FreeBSD ${WRKSRC}
-
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/libagg.a ${PREFIX}/lib
-	@${MKDIR} ${PREFIX}/include/agg
-	${CP} -R ${WRKSRC}/include/ ${PREFIX}/include/agg
-	@${FIND} ${PREFIX}/include/agg ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/include/agg -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples ${EXAMPLESDIR}
-	@${FIND} ${EXAMPLESDIR} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
