@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scilab
-PORTVERSION=	4.1
-PORTREVISION=	3
+PORTVERSION=	4.1.1
 CATEGORIES=	math cad parallel
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
@@ -37,8 +36,6 @@ CONFIGURE_ARGS=	--with-tk \
 		--without-ocaml
 
 CONFIGURE_ENV+=	X11BASE=${X11BASE} F77=${F77} FFLAGS="${FFLAGS}"
-
-PLIST_SUB=	PORTVERSION="${PORTVERSION}" DOCSDIR="share/doc/scilab"
 
 OPTIONS=	GTK2	"Use Gtk+2 interface"	off \
 		PVM	"Use PVM"	 	off
