@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Dec 30 18:23:03 2006
-+++ Makefile	Sat Apr  7 10:38:43 2007
-@@ -15,11 +15,11 @@
+--- Makefile.orig	Thu Apr 12 13:14:02 2007
++++ Makefile	Sat Jun 16 12:25:29 2007
+@@ -11,11 +11,11 @@
  PREFIX = /usr
  EXEC_PREFIX = $(PREFIX)
  BINDIR = $(EXEC_PREFIX)/bin
@@ -13,13 +13,13 @@
 +INITDIR = $(PREFIX)/etc/rc.d/init.d
  DESTDIR =
  
- all:	$(APPNAME).1$(MANCOMPRESS)
-@@ -29,7 +29,7 @@
- 	$(INSTALL) -m 755 -d $(DESTDIR)$(SYSCONFDIR)
- 	$(INSTALL) -m 755 -d $(DESTDIR)$(MAN1DIR)
- 	$(INSTALL) -m 755 $(APPNAME) $(DESTDIR)$(BINDIR)
--	$(INSTALL) -m 755 $(CONF) $(DESTDIR)$(SYSCONFDIR)
-+	$(INSTALL) -m 755 $(CONF) $(DESTDIR)$(SYSCONFDIR)/$(CONF).sample
- 	$(INSTALL) -m 644 $(APPNAME).1$(MANCOMPRESS) $(DESTDIR)$(MAN1DIR)
+ all:	$(APPNAME).1.gz
+@@ -25,7 +25,7 @@
+ 	$(INSTALL) -p -m 755 -d $(DESTDIR)$(SYSCONFDIR)
+ 	$(INSTALL) -p -m 755 -d $(DESTDIR)$(MAN1DIR)
+ 	$(INSTALL) -p -m 755 $(APPNAME) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -p -m 644 $(CONF) $(DESTDIR)$(SYSCONFDIR)
++	$(INSTALL) -p -m 644 $(CONF) $(DESTDIR)$(SYSCONFDIR)/$(CONF).sample
+ 	$(INSTALL) -p -m 644 $(APPNAME).1.gz $(DESTDIR)$(MAN1DIR)
  
  init:

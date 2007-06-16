@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	blocksshd
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	security sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	blocksshd
@@ -26,12 +25,12 @@ USE_RC_SUBR=	blocksshd
 USE_DOS2UNIX=	blocksshd blocksshd.conf
 
 MAN1=		blocksshd.1
+MANCOMPRESSED=	yes
 
 post-extract:
 	@${CHMOD} 755 ${WRKSRC}/init
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^MANCOMPRESS = .gz||g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/etc/blocksshd.conf|${PREFIX}/etc/blocksshd.conf|g' ${WRKSRC}/blocksshd
 
 post-install:
