@@ -3,5 +3,7 @@ etc/linuxigd/dummy.xml
 etc/linuxigd/gateconnSCPD.xml
 etc/linuxigd/gatedesc.xml
 etc/linuxigd/gateicfgSCPD.xml
-etc/upnpd.conf
+@unexec if cmp -s %D/etc/upnpd.conf.sample %D/etc/upnpd.conf; then rm -f %D/etc/upnpd.conf; fi
+etc/upnpd.conf.sample
+@exec if [ ! -f %D/etc/upnpd.conf ]; then cp %D/etc/upnpd.conf.sample %D/etc/upnpd.conf; fi
 @dirrm etc/linuxigd
