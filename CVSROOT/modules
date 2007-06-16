@@ -6131,6 +6131,7 @@ lbreakout2	ports/games/lbreakout2
 lc		ports/misc/lc
 lcab		ports/archivers/lcab
 lcdproc		ports/sysutils/lcdproc
+lcdtest		ports/graphics/lcdtest
 lcms		ports/graphics/lcms
 ldap-account-manager	ports/sysutils/ldap-account-manager
 ldap2dns	ports/net/ldap2dns
