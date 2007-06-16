@@ -23,6 +23,8 @@ bin/latex-mk
 %%DATADIR%%/latex.subdir.mk
 %%DATADIR%%/lgrind.gmk
 %%DATADIR%%/lgrind.mk
+%%DATADIR%%/mpost.mk
+%%DATADIR%%/mpost.gmk
 %%DATADIR%%/tgif.gmk
 %%DATADIR%%/tgif.mk
 %%DATADIR%%/xfig.gmk
