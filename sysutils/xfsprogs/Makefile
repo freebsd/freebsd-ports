@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfsprogs
-PORTVERSION=	2.8.10
+PORTVERSION=	2.8.21
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://oss.sgi.com/projects/xfs/cmd_tars/
@@ -35,12 +35,11 @@ MAN8=	fsck.xfs.8 mkfs.xfs.8 xfs_admin.8 xfs_bmap.8 xfs_check.8 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
+.if ${OSVERSION} < 700000
+BROKEN=		"Does not compile on less than FreeBSD 7.x"
 .endif
 
 post-extract:
-	echo "Blah"
 	${LN} -sf ${WRKDIR}/${PORTNAME}-${PORTVERSION} ${WRKSRC}
 
 pre-configure:
@@ -49,6 +48,8 @@ pre-configure:
 post-configure:
 	${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g'
+	${FIND} ${WRKSRC}/include -name "builddefs" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|LIBRT =|LIBRT = -lrt|g'
 
 post-patch:
 	${FIND} ${WRKDIR} -name "*.m4" | ${XARGS} ${REINPLACE_CMD} -e \
