@@ -27,6 +27,7 @@ PLIST_SUB+=	TRAMP_LISPDIR=${TRAMP_LISPDIR}
 CONFIGURE_ENV=	TEXI2DVI=no
 CONFIGURE_ARGS=	--with-contrib --prefix=${PREFIX} \
 		--with-lispdir=${PREFIX}/${TRAMP_LISPDIR} \
+		--infodir=${PREFIX}/info \
 		--with-emacs=${EMACS_CMD}
 
 INFO=		tramp
