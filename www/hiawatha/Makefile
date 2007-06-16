@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	5.7
+PORTVERSION=	5.9
 CATEGORIES=	www
 MASTER_SITES=	http://hiawatha.leisink.org/files/
 
 MAINTAINER=	hugo@leisink.net
 COMMENT=	An advanced and secure webserver for Unix
 
-MAN1=		hiawatha.1 cgi-wrapper.1 php-fcgi.1 wigwam.1
+MAN1=		hiawatha.1 cgi-wrapper.1 php-fcgi.1 wigwam.1 newroot.1
 MANCOMPRESSED=	no
 
 USE_RC_SUBR=	hiawatha
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var webrootdir=${PREFIX}/www/hiawatha
+CONFIGURE_ARGS=	--localstatedir=/var --mandir=${MANPREFIX}/man webrootdir=${PREFIX}/www/hiawatha
 
 OPTIONS=	SSL "Support for Secure Sockets Layer (SSL)?" On
 OPTIONS+=	CACHE "Internal file caching support?" On
