@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	whois
-PORTVERSION=	4.7.20
+PORTVERSION=	4.7.21
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	Marco d'Itri whois client
 
 USE_ICONV=		yes
