@@ -322,6 +322,7 @@
     SUBDIR += kuickshow
     SUBDIR += l2p
     SUBDIR += landscape
+    SUBDIR += lcdtest
     SUBDIR += lcms
     SUBDIR += leafpak
     SUBDIR += lfview
