@@ -18,6 +18,9 @@ COMMENT=	Base class for writing DBI drivers for plain files
 RUN_DEPENDS=	${SITE_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+DEPRECATED=		Only usable on 4.x
+EXPIRATION_DATE=	2007-06-30
+
 PERL_CONFIGURE=	yes
 
 MAN3=		DBD::File.3
