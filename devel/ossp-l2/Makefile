@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	l2
-PORTVERSION=	0.9.11
-PORTREVISION=	1
+PORTVERSION=	0.9.13
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -17,8 +16,9 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A C library for a flexible and sophisticated Unix logging facility
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		l2-config.1 l2tool.1
 MAN3=		l2.3
