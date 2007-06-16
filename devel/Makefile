@@ -2118,6 +2118,7 @@
     SUBDIR += stlport
     SUBDIR += str
     SUBDIR += strace
+    SUBDIR += stringencoders
     SUBDIR += styx
     SUBDIR += subclipse
     SUBDIR += subversion
