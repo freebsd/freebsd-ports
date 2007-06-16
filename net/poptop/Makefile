@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	poptop
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,7 @@ COMMENT=	Windows 9x compatible PPTP (VPN) server
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
@@ -29,12 +30,6 @@ MAN8=		pptpd.8 pptpctrl.8
 CONFIGURE_ARGS+=	--with-bsdppp
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-USE_GETOPT_LONG=	yes
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/pptpctrl.c
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/pptpd.8
@@ -44,4 +39,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/pptpd.conf \
 		${PREFIX}/etc/pptpd.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
