@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skreuzer@f2o.org
+MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	An implementation of the Automated Password Generator standard
 
 PERL_CONFIGURE=	yes

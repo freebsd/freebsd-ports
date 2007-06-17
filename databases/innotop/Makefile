@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	skreuzer@f2o.org
+MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	A MySQL and InnoDB monitoring program
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \

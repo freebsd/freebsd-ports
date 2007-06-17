@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 DISTVERSIONSUFFIX=	-fx+fl
 CATEGORIES=	www
 
-MAINTAINER=	skreuzer@f2o.org
+MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	Useful error pages
 
 XPI_DISTNAME=	errorzilla_mod

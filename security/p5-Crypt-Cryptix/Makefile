@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ntua.gr/cryptix/dist/ \
 		http://www.cypherpunks.to/~cryptix/dist/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skreuzer@f2o.org
+MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	Perl5 interface to the Cryptix Crypto Library (Blowfish, DES and IDEA)
 
 PERL_CONFIGURE=	yes
