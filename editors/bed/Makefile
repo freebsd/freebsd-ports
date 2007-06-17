@@ -17,6 +17,8 @@ COMMENT=	Variable dataformat binary editor
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+IGNORE=		has a broken test for pthread_create() (wrong prototype and calling conventions) causing an infinite loop.
+
 USE_GCC=	3.4
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -28,10 +30,6 @@ MAN1=		bed.1 xbed.1
 MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_X11)
-PATCH_DEPENDS+=	rxvt:${PORTSDIR}/x11/rxvt
-.endif
 
 # Check for menubar support in "x11/rxvt". In case of failure, disable X11 if
 # BATCH or PACKAGE_BUILDING, and IGNORE otherwise.
@@ -46,6 +44,10 @@ IGNORE=		needs "x11/rxvt" to be compiled with the WITH_MENUBAR option to enable 
 .   endif
 .  endif
 . endif
+.endif
+
+.if !defined(WITHOUT_X11)
+PATCH_DEPENDS+=	rxvt:${PORTSDIR}/x11/rxvt
 .endif
 
 .if !defined(WITHOUT_X11)
