@@ -16,7 +16,7 @@ EXTRACT_SUFX=	tar.gz
 MAINTAINER=	jbq@caraldi.com
 COMMENT=	VoIP abstraction library
 
-LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib
+LIB_DEPENDS=	pt_r:${PORTSDIR}/devel/pwlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
@@ -34,22 +34,20 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-# Avoid build error on 64-bit architectures
-.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
+# Be sure to compile position-independent objects for the shared libraries
 CFLAGS+=	-fPIC
-.endif
 
 .ifdef (WITH_FFMPEG)
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
-CONFIGURE_ARGS+=	--enable-h263avcodec=${LOCALBASE}/include/ffmpeg
+LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
+CONFIGURE_ARGS+=--enable-h263avcodec=${LOCALBASE}/include/ffmpeg
 .endif
 
 .ifdef (WITH_SPEEX)
-LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	speex:${PORTSDIR}/audio/speex
 BUILD_DEPENDS+=	${LOCALBASE}/include/speex/speex_echo.h:${PORTSDIR}/audio/speex
-CONFIGURE_ARGS+=	--enable-localspeex=no
+CONFIGURE_ARGS+=--enable-localspeex=no
 .else
-CONFIGURE_ARGS+=	--enable-localspeex=yes
+CONFIGURE_ARGS+=--enable-localspeex=yes
 .endif
 
 .include <bsd.port.post.mk>
