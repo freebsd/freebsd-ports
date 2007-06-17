@@ -56,6 +56,8 @@ lib/pidgin/gestures.la
 lib/pidgin/gestures.so
 %%EVO%%lib/pidgin/gevolution.la
 %%EVO%%lib/pidgin/gevolution.so
+lib/pidgin/gtkbuddynote.la
+lib/pidgin/gtkbuddynote.so
 lib/pidgin/history.la
 lib/pidgin/history.so
 lib/pidgin/iconaway.la
@@ -414,6 +416,7 @@ share/gnome/pixmaps/pidgin/tray/16/tray-connecting.png
 share/gnome/pixmaps/pidgin/tray/16/tray-extended-away.png
 share/gnome/pixmaps/pidgin/tray/16/tray-invisible.png
 share/gnome/pixmaps/pidgin/tray/16/tray-message.png
+share/gnome/pixmaps/pidgin/tray/16/tray-new-im.png
 share/gnome/pixmaps/pidgin/tray/16/tray-offline.png
 share/gnome/pixmaps/pidgin/tray/16/tray-online.png
 share/gnome/pixmaps/pidgin/tray/22/tray-away.png
@@ -422,8 +425,25 @@ share/gnome/pixmaps/pidgin/tray/22/tray-connecting.png
 share/gnome/pixmaps/pidgin/tray/22/tray-extended-away.png
 share/gnome/pixmaps/pidgin/tray/22/tray-invisible.png
 share/gnome/pixmaps/pidgin/tray/22/tray-message.png
+share/gnome/pixmaps/pidgin/tray/22/tray-new-im.png
 share/gnome/pixmaps/pidgin/tray/22/tray-offline.png
 share/gnome/pixmaps/pidgin/tray/22/tray-online.png
+share/gnome/pixmaps/pidgin/tray/32/tray-away.png
+share/gnome/pixmaps/pidgin/tray/32/tray-busy.png
+share/gnome/pixmaps/pidgin/tray/32/tray-connecting.png
+share/gnome/pixmaps/pidgin/tray/32/tray-extended-away.png
+share/gnome/pixmaps/pidgin/tray/32/tray-invisible.png
+share/gnome/pixmaps/pidgin/tray/32/tray-new-im.png
+share/gnome/pixmaps/pidgin/tray/32/tray-offline.png
+share/gnome/pixmaps/pidgin/tray/32/tray-online.png
+share/gnome/pixmaps/pidgin/tray/48/tray-away.png
+share/gnome/pixmaps/pidgin/tray/48/tray-busy.png
+share/gnome/pixmaps/pidgin/tray/48/tray-connecting.png
+share/gnome/pixmaps/pidgin/tray/48/tray-extended-away.png
+share/gnome/pixmaps/pidgin/tray/48/tray-invisible.png
+share/gnome/pixmaps/pidgin/tray/48/tray-new-im.png
+share/gnome/pixmaps/pidgin/tray/48/tray-offline.png
+share/gnome/pixmaps/pidgin/tray/48/tray-online.png
 share/gnome/pixmaps/purple/buddy_icons/qq/qq_1.png
 share/gnome/pixmaps/purple/buddy_icons/qq/qq_10.png
 share/gnome/pixmaps/purple/buddy_icons/qq/qq_100.png
@@ -538,6 +558,8 @@ share/icons/hicolor/scalable/apps/pidgin.svg
 @dirrm share/gnome/pixmaps/purple/buddy_icons/qq
 @dirrm share/gnome/pixmaps/purple/buddy_icons
 @dirrm share/gnome/pixmaps/purple
+@dirrm share/gnome/pixmaps/pidgin/tray/48
+@dirrm share/gnome/pixmaps/pidgin/tray/32
 @dirrm share/gnome/pixmaps/pidgin/tray/22
 @dirrm share/gnome/pixmaps/pidgin/tray/16
 @dirrm share/gnome/pixmaps/pidgin/tray
