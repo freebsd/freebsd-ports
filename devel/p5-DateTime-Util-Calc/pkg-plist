@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Util/Calc/.packlist
+%%SITE_PERL%%/DateTime/Util/Calc.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Util/Calc
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Util
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
+@dirrmtry %%SITE_PERL%%/DateTime/Util/Calc
+@dirrmtry %%SITE_PERL%%/DateTime/Util
+@dirrmtry %%SITE_PERL%%/DateTime
