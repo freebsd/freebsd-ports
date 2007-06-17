@@ -10,6 +10,7 @@ bin/xspasswd
 %%WWWDIR%%/conf/httpd.conf.sample
 %%WWWDIR%%/conf/mime.index
 %%WWWDIR%%/conf/script.methods.sample
+%%WWWDIR%%/conf/compress.methods.sample
 %%WWWDIR%%/contrib/SSL-Makefile
 %%WWWDIR%%/contrib/agentstats.pl
 %%WWWDIR%%/contrib/caroot.pem
@@ -17,7 +18,6 @@ bin/xspasswd
 %%WWWDIR%%/contrib/persistent.pl
 %%WWWDIR%%/contrib/powered-by-xs.gif
 %%WWWDIR%%/contrib/wwwstats.pl
-%%WWWDIR%%/compress.methods.sample
 %%WWWDIR%%/gfxcount/digital0.ppm
 %%WWWDIR%%/gfxcount/digital1.ppm
 %%WWWDIR%%/gfxcount/digital2.ppm
