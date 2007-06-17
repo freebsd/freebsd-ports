@@ -22,7 +22,7 @@ required_files=%%PREFIX%%/etc/p3scan/p3scan.conf
 # set defaults
 
 p3scan_enable=${p3scan_enable:-"NO"}
-p3scan_config=${p3scan_config:-"%%PREFIX%%/local/etc/p3scan/p3scan.conf"}
+p3scan_config=${p3scan_config:-"%%PREFIX%%/etc/p3scan/p3scan.conf"}
 
 load_rc_config $name
 run_rc_command "$1"
