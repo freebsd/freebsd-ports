@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Audit
-PORTVERSION=	2.2.18
+PORTVERSION=	2.2.19
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -37,7 +37,7 @@ MAN3=		Mail::Audit.3 \
 		Mail::Audit::Vacation.3
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples//${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	Changes FAQ README
 PORTEXAMPLES=	popread proc2ma
 
@@ -51,9 +51,11 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
 .endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 .for i in ${PORTEXAMPLES}
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${i}  ${EXAMPLESDIR}/${i}
 .endfor
+.endif
 
 .include <bsd.port.mk>
