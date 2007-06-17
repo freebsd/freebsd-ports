@@ -1,6 +1,6 @@
 # New ports collection makefile for:	kmysqladmin
-# Date created:			Aug 12, 2005
-# Whom:				Igor Leonenko <bananaz@bk.ru>
+# Date created:				Aug 12, 2005
+# Whom:					Igor Leonenko <bananaz@bk.ru>
 #
 # $FreeBSD$
 #
@@ -19,13 +19,9 @@ USE_MYSQL=	yes
 USE_XLIB=	yes
 USE_QT_VER=	3
 USE_KDELIBS_VER=3
+USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"don't build on 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
