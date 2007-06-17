@@ -1,6 +1,6 @@
---- build.xml.orig	Sun Oct 17 01:24:11 2004
-+++ build.xml	Sun Oct 17 01:26:18 2004
-@@ -199,10 +199,6 @@
+--- build.xml.orig	Sun May  7 16:22:18 2006
++++ build.xml	Sun Jun 17 14:12:16 2007
+@@ -158,10 +158,6 @@
      <copy todir="${dist.home}/src" filtering="on">
        <fileset dir="${source.home}"/>
      </copy>
@@ -11,3 +11,17 @@
    </target>
  
  <!-- ========== Targets: "External" Targets: Clean-up ===================== -->
+@@ -181,13 +177,6 @@
+           description="Compile shareable components">
+     <javac srcdir      ="${source.home}/java"
+            destdir     ="${build.home}/classes"
+-           debug       ="${compile.debug}"
+-           deprecation ="${compile.deprecation}"
+-           optimize    ="${compile.optimize}">
+-      <classpath refid="compile.classpath"/>
+-    </javac>
+-    <javac srcdir      ="${source.home}/examples"
+-           destdir     ="${build.home}/examples"
+            debug       ="${compile.debug}"
+            deprecation ="${compile.deprecation}"
+            optimize    ="${compile.optimize}">
