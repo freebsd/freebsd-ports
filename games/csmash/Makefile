@@ -16,14 +16,12 @@ MASTER_SITE_SUBDIR=	cannonsmash
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D tabletennis game
 
-BROKEN=		Configure fails
-
 USE_SDL=	image mixer sdl
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
