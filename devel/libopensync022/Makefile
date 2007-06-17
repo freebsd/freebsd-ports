@@ -6,38 +6,28 @@
 #
 
 PORTNAME=	libopensync
-PORTVERSION=	0.17
-PORTREVISION=	2
+PORTVERSION=	0.30
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.opensync.org/attachment/wiki/download/
-MASTER_SITE_SUBDIR=	ahze
-EXTRACT_SUFX=	.tar.gz\?rev=\&format=raw
+MASTER_SITES=	http://www.opensync.org/attachment/wiki/download/
+DISTNAME=	libopensync-${PORTVERSION}
+EXTRACT_SUFX=	.tar.bz2\?rev=\&format=raw
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Freedesktop synchronization framework
+COMMENT=	A PIM data synchronization framework
 
-BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
-GNU_CONFIGURE=	yes
-USE_PYTHON=	yes
-USE_GNOME=	gnomehack glib20 libxml2
-INSTALLS_SHLIB=	yes
-
-pre-everything::
-	@${ECHO_MSG} "NOTE: You may want to avoid extra dependencies"
-	@${ECHO_MSG} " from devel/swig13 by building with the following"
-	@${ECHO_MSG} " SWIG_LANGUAGES=\"perl python\""
-	@${ECHO_MSG}
+USE_BZIP2=	yes
+USE_GNOME=	glib20 libxml2
+USE_LDCONFIG=	yes
+USE_SCONS=	yes
+SCONS_ARGS=	prefix=${PREFIX}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/opensync/Makefile.in \
-		${WRKSRC}/osengine/Makefile.in
-	${REINPLACE_CMD} -e "s,echo aout, echo elf,g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$libsuffix/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} -e 's|gthread-2.0|gthread-2.0 pthread|' ${WRKSRC}/opensync/SConscript
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
