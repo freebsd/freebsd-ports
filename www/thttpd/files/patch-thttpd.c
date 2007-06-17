@@ -1,5 +1,5 @@
---- thttpd.c.orig	Thu Dec 25 19:06:52 2003
-+++ thttpd.c	Fri May 28 12:25:54 2004
+--- thttpd.c.orig	Wed Jun 29 19:50:59 2005
++++ thttpd.c	Sun Jun 17 21:30:11 2007
 @@ -1723,12 +1723,45 @@
      if ( hc->responselen == 0 )
  	{
@@ -54,3 +54,16 @@
  	}
  
      if ( sz < 0 && errno == EINTR )
+@@ -1786,7 +1820,11 @@
+ 	**
+ 	** And ECONNRESET isn't interesting either.
+ 	*/
+-	if ( errno != EPIPE && errno != EINVAL && errno != ECONNRESET )
++	if ( errno != EPIPE && errno != EINVAL && errno != ECONNRESET
++#ifdef USE_SENDFILE
++	&& errno != ENOTCONN
++#endif
++	)
+ 	    syslog( LOG_ERR, "write - %m sending %.80s", hc->encodedurl );
+ 	clear_connection( c, tvP );
+ 	return;
