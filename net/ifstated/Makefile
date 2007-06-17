@@ -9,8 +9,7 @@ PORTNAME=	ifstated
 PORTVERSION=	3.7
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://skreuzer.f2o.org/mirror/ifstated/ \
-		http://www.atarininja.org/~wxs/distfiles/ \
+MASTER_SITES=	http://www.atarininja.org/~wxs/distfiles/ \
 		http://www.pkix.net/mirror/f2o.org/ifstated/
 
 MAINTAINER=	skreuzer@exit2shell.com
