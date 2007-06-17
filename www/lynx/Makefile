@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}2-8-6
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies \
-		--enable-ipv6
+		--enable-ipv6 --with-curses-dir=/usr
 
 .if defined(ENABLE_DEFAULT_COLORS)
 CONFIGURE_ARGS+=--enable-default-colors
