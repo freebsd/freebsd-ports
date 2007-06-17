@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pound
-PORTVERSION=	2.2
+PORTVERSION=	2.3.2
 CATEGORIES=	www net
 MASTER_SITES=	http://www.apsis.ch/pound/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -25,6 +25,7 @@ SUB_LIST=	NAME=${PORTNAME}
 CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKE_ARGS+=	F_CONF=${PREFIX}/etc/pound.cfg
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
 MAN8=	pound.8 poundctl.8
 
