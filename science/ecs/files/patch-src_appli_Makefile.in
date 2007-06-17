@@ -1,0 +1,11 @@
+--- src/appli/Makefile.in.orig	Thu Feb 15 20:16:38 2007
++++ src/appli/Makefile.in	Mon May  7 11:58:10 2007
+@@ -276,7 +276,7 @@
+ $(top_builddir)/src/pre-post/libprepostecs.la \
+ $(top_builddir)/src/base/libbaseecs.la \
+ $(top_builddir)/src/util/libutilecs.la \
+-@HDF5_LDFLAGS@ @HDF5_LIBS@ @MED_LDFLAGS@ @MED_LIBS@ \
++$(LTLIBINTL) @HDF5_LDFLAGS@ @HDF5_LIBS@ @MED_LDFLAGS@ @MED_LIBS@ \
+ @CGNS_LDFLAGS@ @CGNS_LIBS@ \
+ @METIS_LDFLAGS@ @METIS_LIBS@ \
+ -lm

@@ -1,0 +1,56 @@
+--- configure.orig	Thu Feb 15 20:16:38 2007
++++ configure	Mon May  7 11:41:21 2007
+@@ -3771,7 +3771,7 @@
+ #------------------------------------------------------------------
+ 
+ case "$host_os" in
+-  linux* | hpux* | irix*)
++  linux* | freebsd* | hpux* | irix*)
+     CPPFLAGS="${CPPFLAGS} -D_POSIX_SOURCE"
+     ;;
+   osf*)
+@@ -19595,7 +19595,7 @@
+     HDF5_CPPFLAGS="-I$with_hdf5_prefix/include"
+     HDF5_LDFLAGS="-L$with_hdf5_prefix/lib"
+   fi
+-  HDF5_LIBS="-lhdf5"
++  HDF5_LIBS="-lhdf5 $PTHREAD_LIBS"
+ 
+   CPPFLAGS="${CPPFLAGS} ${HDF5_CPPFLAGS}"
+   LDFLAGS="${LDFLAGS} ${HDF5_LDFLAGS}"
+@@ -19607,7 +19607,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lhdf5  $LIBS"
++LIBS="$HDF5_LIBS $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -19749,7 +19749,7 @@
+   elif test "x$with_cgns_prefix" != "x" ; then
+     CGNS_LDFLAGS="-L$with_cgns_prefix/lib"
+   fi
+-  CGNS_LIBS="-lcgns"
++  CGNS_LIBS="-lcgns $HDF5_LIBS"
+   CPPFLAGS="${CPPFLAGS} ${CGNS_CPPFLAGS}"
+   LDFLAGS="${LDFLAGS} ${CGNS_LDFLAGS}"
+   LIBS="${LIBS} ${CGNS_LIBS}"
+@@ -19760,7 +19760,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lcgns  $LIBS"
++LIBS="$CGNS_LIBS $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -20749,6 +20749,8 @@
+ 	fi
+       fi;
+       MED_LIBS="-lmedC -lpthread";;
++    freebsd*)
++      MED_ARCH_NAME=FREEBSD;;
+     osf*)
+       if test "x$ints_are_64bit" != "xyes" ; then
+         MED_ARCH_NAME=OSF1_32

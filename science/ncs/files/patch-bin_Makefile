@@ -1,0 +1,64 @@
+--- bin/Makefile.orig	Thu Mar  1 12:23:39 2007
++++ bin/Makefile	Sun Jun 17 10:48:01 2007
+@@ -186,7 +186,6 @@
+ 
+ link:
+ 	@make privtitre
+-	@make privconfig
+ 	@make privcompil
+ 	@make privlink
+ 	@make privfin
+@@ -287,7 +286,7 @@
+ 	 if   [ ${BLAS} -eq 1 ] ;\
+ 	 then dir_inc_cs="$${dir_inc_cs} $(BLAS_INC)" ;\
+ 	      cflags="$${cflags} -D_CS_HAVE_BLAS " ;\
+-	      fflags="$${fflags} -WF,-D_CS_HAVE_BLAS " ;\
++	      fflags="$${fflags} -D_CS_HAVE_BLAS " ;\
+ 	 fi ; \
+ 	 if   [ ${XML} -eq 1 ] ;\
+ 	 then dir_inc_cs="$${dir_inc_cs} $(XML_INC)" ;\
+@@ -881,7 +880,7 @@
+ 	                echo "$(BO)$(BLD_CS)/$(NOM_ARCH)/$${module}$(NO)" ;\
+ 	                echo ;\
+ 	                tput init ;\
+-	                exit -1 ;\
++	                exit 1 ;\
+ 	           fi ;\
+ 	      fi ;\
+ 	 else module="$(MYMODULE)" ;\
+@@ -901,7 +900,7 @@
+ 	                echo "$(BO)$(BLD_CS)/$(NOM_ARCH)/$${module}$(NO)" ;\
+ 	                echo ;\
+ 	                tput init ;\
+-	                exit -1 ;\
++	                exit 1 ;\
+ 	           fi ;\
+ 	      fi ;\
+ 	 fi ;\
+@@ -914,7 +913,7 @@
+ 	      echo "$(BO) Il faut être dans le repertoire général $(DIR_CS)$(NO)" ;\
+ 	      echo ;\
+ 	      tput init ;\
+-	      exit -1 ;\
++	      exit 1 ;\
+ 	 fi ;\
+ 	 if   [ ! "$${modtrav}" = "$${module}" ] ;\
+ 	 then echo ;\
+@@ -926,7 +925,7 @@
+ 	      fi ;\
+ 	      echo ;\
+ 	      tput init ;\
+-	      exit -1 ;\
++	      exit 1 ;\
+ 	 fi ;\
+ 	 if   [ ! "$${opttrav}" = "$(MYOPT)" ] ;\
+ 	 then echo ;\
+@@ -940,7 +939,7 @@
+ 	      fi ;\
+ 	      echo ;\
+ 	      tput init ;\
+-	      exit -1 ;\
++	      exit 1 ;\
+ 	 fi ;\
+ 	 if [ "$${modtrav}" = "BASE" ] ;\
+ 	 then INC_CS="toto" ;\

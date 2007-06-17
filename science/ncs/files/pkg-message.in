@@ -1,0 +1,15 @@
+===============================================================================
+The current version of Code_Saturne is located in the directory
+%%PREFIX%%/Saturne/Noyau/ncs
+
+In order to use Code Saturne, every user must add the following line in their
+file ".profile":
+
+. %%PREFIX%%/Saturne/Noyau/ncs/bin/cs_profile
+
+For more information refer to the Code_Saturne documentation, available through
+the "info_cs" command.
+
+The Graphical User Interface must be installed separately; it is available as
+a FreeBSD port: science/ics.
+===============================================================================

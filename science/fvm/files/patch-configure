@@ -1,0 +1,74 @@
+--- configure.orig	Thu Feb 15 18:57:25 2007
++++ configure	Fri May  4 23:03:56 2007
+@@ -19654,7 +19654,7 @@
+     HDF5_CPPFLAGS="-I$with_hdf5_prefix/include"
+     HDF5_LDFLAGS="-L$with_hdf5_prefix/lib"
+   fi
+-  HDF5_LIBS="-lhdf5"
++  HDF5_LIBS="-lhdf5 $PTHREAD_LIBS"
+ 
+   CPPFLAGS="${CPPFLAGS} ${HDF5_CPPFLAGS}"
+   LDFLAGS="${LDFLAGS} ${HDF5_LDFLAGS}"
+@@ -19666,7 +19666,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lhdf5  $LIBS"
++LIBS="$HDF5_LIBS $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -19810,7 +19810,7 @@
+   elif test "x$with_cgns_prefix" != "x" ; then
+     CGNS_LDFLAGS="-L$with_cgns_prefix/lib"
+   fi
+-  CGNS_LIBS="-lcgns"
++  CGNS_LIBS="-lcgns $HDF5_LIBS"
+   CPPFLAGS="${CPPFLAGS} ${CGNS_CPPFLAGS}"
+   LDFLAGS="${LDFLAGS} ${CGNS_LDFLAGS}"
+   LIBS="${LIBS} ${CGNS_LIBS}"
+@@ -19821,7 +19821,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lcgns  $LIBS"
++LIBS="$CGNS_LIBS $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -20810,6 +20810,8 @@
+ 	fi
+       fi;
+       MED_LIBS="-lmedC -lpthread";;
++    freebsd*)
++      MED_ARCH_NAME=FREEBSD;;
+     osf*)
+       if test "x$ints_are_64bit" != "xyes" ; then
+         MED_ARCH_NAME=OSF1_32
+@@ -25366,7 +25368,7 @@
+   { echo "$as_me:$LINENO: checking for MPI (basic test)" >&5
+ echo $ECHO_N "checking for MPI (basic test)... $ECHO_C" >&6; }
+   if test "$MPI_LIBS" = "" ; then
+-    MPI_LIBS="-lmpi"
++    MPI_LIBS="-lmpi $PTHREAD_LIBS"
+   fi
+   CPPFLAGS="$saved_CPPFLAGS $MPI_CPPFLAGS"
+   LDFLAGS="$saved_LDFLAGS $MPI_LDFLAGS"
+@@ -25422,7 +25424,7 @@
+     { echo "$as_me:$LINENO: checking for MPI (mpich test)" >&5
+ echo $ECHO_N "checking for MPI (mpich test)... $ECHO_C" >&6; }
+     # First try (simplest)
+-    MPI_LIBS="-lmpich"
++    MPI_LIBS="-lmpich $PTHREAD_LIBS"
+     LIBS="$saved_LIBS $MPI_LIBS"
+     cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+@@ -25524,7 +25526,7 @@
+     { echo "$as_me:$LINENO: checking for MPI (lam-mpi test)" >&5
+ echo $ECHO_N "checking for MPI (lam-mpi test)... $ECHO_C" >&6; }
+     # First try (without MPI-IO)
+-    MPI_LIBS="-lmpi -llam -lpthread"
++    MPI_LIBS="-lmpi -llam $PTHREAD_LIBS"
+     LIBS="$saved_LIBS $MPI_LIBS"
+     cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
