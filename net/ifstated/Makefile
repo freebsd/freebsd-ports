@@ -13,7 +13,7 @@ MASTER_SITES=	http://skreuzer.f2o.org/mirror/ifstated/ \
 		http://www.atarininja.org/~wxs/distfiles/ \
 		http://www.pkix.net/mirror/f2o.org/ifstated/
 
-MAINTAINER=	skreuzer@f2o.org
+MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	Interface State daemon
 
 INSTALL_TARGET=	install install-man

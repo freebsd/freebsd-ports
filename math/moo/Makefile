@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://cyth.net/~ray/moo/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	skreuzer@f2o.org
+MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	Calculator that accepts C-like syntax as input
 
 PLIST_FILES=	bin/moo

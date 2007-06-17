@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skreuzer@f2o.org
+MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	Encrypt Data using OFB Mode
 
 BUILD_DEPENDS=	${SITE_PERL}/Crypt/ECB.pm:${PORTSDIR}/security/p5-Crypt-ECB
