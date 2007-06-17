@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AI-Pathfinding-AStar
-PORTVERSION=	0.07
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	AI
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Perl implementation of the A* pathfinding algorithm
 
-BUILD_DEPENDS=	${SITE_PERL}/Heap/Fibonacci.pm:${PORTSDIR}/devel/p5-Heap
+BUILD_DEPENDS=	${SITE_PERL}/Heap/Binomial.pm:${PORTSDIR}/devel/p5-Heap
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
