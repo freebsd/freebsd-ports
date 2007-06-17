@@ -1,0 +1,4 @@
+bin/ecs
+bin/ecs-config
+bin/perm_nopo
+%%NLS%%share/locale/fr/LC_MESSAGES/ecs.mo

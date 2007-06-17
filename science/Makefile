@@ -9,6 +9,7 @@
     SUBDIR += afni
     SUBDIR += at
     SUBDIR += bblimage
+    SUBDIR += bft
     SUBDIR += bodr
     SUBDIR += buddy
     SUBDIR += cdcl
@@ -23,6 +24,7 @@
     SUBDIR += dcl
     SUBDIR += devisor
     SUBDIR += dft++
+    SUBDIR += ecs
     SUBDIR += elmer-eio
     SUBDIR += elmer-fem
     SUBDIR += elmer-hutiter
@@ -36,6 +38,7 @@
     SUBDIR += fasthenry
     SUBDIR += felt
     SUBDIR += flounder
+    SUBDIR += fvm
     SUBDIR += g3data
     SUBDIR += gamess
     SUBDIR += gave
@@ -55,6 +58,7 @@
     SUBDIR += gwyddion
     SUBDIR += hdf
     SUBDIR += hdf5
+    SUBDIR += ics
     SUBDIR += isaac-cfd
     SUBDIR += kmovisto
     SUBDIR += kst
@@ -75,6 +79,7 @@
     SUBDIR += mpb
     SUBDIR += mpqc
     SUBDIR += mpqc-mpich
+    SUBDIR += ncs
     SUBDIR += netcdf
     SUBDIR += nifticlib
     SUBDIR += oases

@@ -1,0 +1,17 @@
+--- bin/gracehst.orig	Thu Mar  1 12:23:39 2007
++++ bin/gracehst	Mon May  7 14:16:22 2007
+@@ -1,4 +1,4 @@
+-#!/bin/ksh
++#! /bin/sh
+ #============================================================================
+ #
+ #                    Code_Saturne version 1.3
+@@ -30,7 +30,7 @@
+ #
+ #============================================================================
+ #
+-if [ "$1" = "-h" -o "$1" = "-h" -o "$1" = "-h" ] ; then 
++if [ "$1" = "-h" -o "$1" = "-help" -o "$#" = "0" ] ; then 
+ echo ' ' 
+ echo ' gracehst: appel de grace -nxy sur un fichier historique  '
+ echo '       de Code_Saturne en eliminant la premiere colonne.  '
