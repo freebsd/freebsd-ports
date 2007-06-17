@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mantis
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mantisbt
@@ -19,18 +19,23 @@ USE_MYSQL=	yes
 USE_APACHE=	yes
 USE_PHP=	yes
 
-MANTISDIR?=	www/${PORTNAME}
-
 SUB_FILES=	pkg-message
-SUB_LIST=	MANTISDIR=${MANTISDIR}
 
-PLIST_SUB=	MANTISDIR=${MANTISDIR}
+PLIST_SUB+=	WWWDIR_REL=${WWWDIR_REL}
+
+.ifdef(MANTISDIR)
+WWWDIR=	${MATISDIR}
+DMSG=	"Usage of MATISDIR is depreciated and will be dropped in future versions, please use WWWDIR instead."
+.endif
+
+pre-everything::
+	@${ECHO_CMD} ${DMSG}
 
 do-install:
-	@${ECHO} "Installing in ${PREFIX}/${MANTISDIR}"
-	${MKDIR} ${PREFIX}/${MANTISDIR}
-	${CP} -R ${WRKSRC}/* ${PREFIX}/${MANTISDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MANTISDIR}
+	@${ECHO} "Installing in WWWDIR: ${WWWDIR}"
+	${MKDIR} ${WWWDIR}
+	${CP} -R ${WRKSRC}/* ${WWWDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
