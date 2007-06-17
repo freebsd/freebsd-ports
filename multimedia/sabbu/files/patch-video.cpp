@@ -1,11 +1,22 @@
-Index: Source/video.cpp
-===================================================================
-RCS file: /cvsroot/sabbu/sabbu/Source/video.cpp,v
-retrieving revision 1.36
-diff -u -r1.36 video.cpp
---- Source/video.cpp	11 Aug 2005 17:16:17 -0000	1.36
-+++ Source/video.cpp	24 Nov 2005 09:40:33 -0000
-@@ -213,7 +213,7 @@
+--- Source/video.cpp.orig	Thu Aug 11 19:16:17 2005
++++ Source/video.cpp	Sun Jun 17 08:40:11 2007
+@@ -74,6 +74,7 @@
+ }
+ #else
+ 
++extern "C" {
+ #ifndef _WINDOWS
+ #include <ffmpeg/avformat.h>
+ #include <ffmpeg/avcodec.h>
+@@ -99,6 +100,7 @@
+ int (*avpicture_alloc)(AVPicture *picture, int pix_fmt, int width, int height) = NULL;
+ void (*avpicture_free)(AVPicture *picture) = NULL;
+ #endif
++}
+ 
+ 
+ GModule *module_avformat = NULL;
+@@ -213,7 +215,7 @@
  
    for(i = 0; i < video->ic->nb_streams; i++) 
    {
@@ -14,7 +25,7 @@ diff -u -r1.36 video.cpp
      if(enc->codec_type == CODEC_TYPE_VIDEO)
      {
        video->video_index = i;
-@@ -227,7 +227,7 @@
+@@ -227,7 +229,7 @@
      throw kryError(_("The video file does not seem to contain a video stream."));
    }
  
@@ -23,7 +34,7 @@ diff -u -r1.36 video.cpp
    enc->debug_mv = 0;
    enc->debug = 0;
    enc->workaround_bugs = 1;
-@@ -291,9 +291,9 @@
+@@ -291,9 +293,9 @@
    frame = avcodec_alloc_frame();
    while(1)
    {
@@ -36,7 +47,7 @@ diff -u -r1.36 video.cpp
  
      if(got_picture)
        break;
-@@ -302,14 +302,14 @@
+@@ -302,14 +304,14 @@
        return FALSE;
    }
  
@@ -54,7 +65,7 @@ diff -u -r1.36 video.cpp
      width, height) < 0)
    {
      av_free(frame);
-@@ -323,17 +323,17 @@
+@@ -323,17 +325,17 @@
  
  int video_get_width(struct video_ffmpeg *video)
  {
@@ -75,7 +86,7 @@ diff -u -r1.36 video.cpp
  }
  
  int64_t video_get_duration(struct video_ffmpeg *video)
-@@ -348,7 +348,7 @@
+@@ -348,7 +350,7 @@
      free(video->last_pkt);
      video->last_pkt = NULL;
    }
@@ -84,7 +95,7 @@ diff -u -r1.36 video.cpp
    av_close_input_file(video->ic);
  }
  
-@@ -376,11 +376,11 @@
+@@ -376,11 +378,11 @@
      if(av_seek_frame(video->ic, -1, target_time) < 0)
      #endif
      {
