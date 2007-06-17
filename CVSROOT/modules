@@ -190,6 +190,7 @@ abridge		ports/games/abridge
 abs		ports/math/abs
 abuse		ports/games/abuse
 abuse_sdl	ports/games/abuse_sdl
+accessibility_orca	ports/accessibility/orca
 accessx		ports/x11/accessx
 accrete		ports/astro/accrete
 ace		ports/devel/ace
@@ -607,9 +608,9 @@ aub		ports/news/aub
 aube		ports/audio/aube
 auctex		ports/print/auctex
 audacious	ports/multimedia/audacious
+audacious-crossfade	ports/audio/audacious-crossfade
 audacious-dumb	ports/audio/audacious-dumb
 audacious-plugins	ports/multimedia/audacious-plugins
-audacious-crossfade	ports/audio/audacious-crossfade
 audacity	ports/audio/audacity
 audacity-devel	ports/audio/audacity-devel
 audit		ports/security/audit
@@ -794,6 +795,7 @@ bfilter		ports/net/bfilter
 bfm		ports/games/bfm
 bforce		ports/comms/bforce
 bforce-kst	ports/comms/bforce-kst
+bft		ports/science/bft
 bftpd		ports/ftp/bftpd
 bg-aspell	ports/textproc/bg-aspell
 bglibs		ports/devel/bglibs
@@ -827,9 +829,9 @@ bincimap	ports/mail/bincimap
 bind8		ports/dns/bind8
 bind84		ports/dns/bind84
 bind9		ports/dns/bind9
-bind94		ports/dns/bind94
 bind9-dlz	ports/dns/bind9-dlz
 bind9-sdb-ldap	ports/dns/bind9-sdb-ldap
+bind94		ports/dns/bind94
 binder		ports/x11-fm/binder
 bindtest	ports/net/bindtest
 bing		ports/net/bing
@@ -856,7 +858,6 @@ bitedit		ports/editors/bitedit
 bitefusion	ports/games/bitefusion
 bitflu		ports/net-p2p/bitflu
 bitlbee		ports/irc/bitlbee
-editors-bitmap		ports/editors/bitmap
 bitmap		ports/x11/bitmap
 bitmap-emacs20	ports/editors/bitmap-emacs20
 bitmap-fonts	ports/x11-fonts/bitmap-fonts
@@ -2307,11 +2308,13 @@ ecm		ports/archivers/ecm
 ecore		ports/x11/ecore
 ecos-tools	ports/devel/ecos-tools
 ecromedos	ports/textproc/ecromedos
+ecs		ports/science/ecs
 ed2k		ports/net-p2p/ed2k
 edb		ports/databases/edb
 ede		ports/x11-wm/ede
 edenmath	ports/math/edenmath
 edith		ports/editors/edith
+editors-bitmap		ports/editors/bitmap
 editres		ports/x11/editres
 editss		ports/games/editss
 edje		ports/graphics/edje
@@ -2826,10 +2829,10 @@ firebird2-server	ports/databases/firebird2-server
 firedns		ports/dns/firedns
 fireflies	ports/x11/fireflies
 firefox		ports/www/firefox
-firefox15	ports/www/firefox15
 firefox-devel	ports/www/firefox-devel
 firefox-i18n	ports/www/firefox-i18n
 firefox-remote	ports/www/firefox-remote
+firefox15	ports/www/firefox15
 firemime	ports/mail/firemime
 firepay		ports/mail/firepay
 fireprofile	ports/databases/fireprofile
@@ -2837,7 +2840,6 @@ firestring	ports/misc/firestring
 firetalk	ports/net-im/firetalk
 firewalk	ports/security/firewalk
 fisg		ports/irc/fisg
-ports_fish		ports/shells/fish
 fishsupper	ports/games/fishsupper
 fist		ports/textproc/fist
 fistgen		ports/devel/fistgen
@@ -3231,6 +3233,7 @@ fuser		ports/sysutils/fuser
 fuzz		ports/security/fuzz
 fv		ports/graphics/fv
 fvcool		ports/sysutils/fvcool
+fvm		ports/science/fvm
 fvwm		ports/x11-wm/fvwm
 fvwm-themes	ports/x11-themes/fvwm-themes
 fvwm2		ports/x11-wm/fvwm2
@@ -4135,10 +4138,10 @@ gstreamer-plugins-libmms	ports/net/gstreamer-plugins-libmms
 gstreamer-plugins-libpng	ports/graphics/gstreamer-plugins-libpng
 gstreamer-plugins-libvisual	ports/graphics/gstreamer-plugins-libvisual
 gstreamer-plugins-mad		ports/audio/gstreamer-plugins-mad
-gstreamer-plugins-mpeg2enc	ports/multimedia/gstreamer-plugins-mpeg2enc
 gstreamer-plugins-moodbar	ports/audio/gstreamer-plugins-moodbar
 gstreamer-plugins-mp3	ports/audio/gstreamer-plugins-mp3
 gstreamer-plugins-mpeg2dec	ports/multimedia/gstreamer-plugins-mpeg2dec
+gstreamer-plugins-mpeg2enc	ports/multimedia/gstreamer-plugins-mpeg2enc
 gstreamer-plugins-musepack	ports/audio/gstreamer-plugins-musepack
 gstreamer-plugins-musicbrainz	ports/audio/gstreamer-plugins-musicbrainz
 gstreamer-plugins-neon		ports/www/gstreamer-plugins-neon
@@ -4669,6 +4672,7 @@ icoutils	ports/graphics/icoutils
 icpld		ports/net/icpld
 icqlib		ports/net-im/icqlib
 icqnd		ports/net-im/icqnd
+ics		ports/science/ics
 icu		ports/devel/icu
 icu2		ports/devel/icu2
 id-aspell	ports/textproc/id-aspell
@@ -7932,6 +7936,7 @@ ncnf		ports/devel/ncnf
 ncp		ports/net/ncp
 ncplib		ports/net/ncplib
 ncrypt		ports/security/ncrypt
+ncs		ports/science/ncs
 nctop		ports/sysutils/nctop
 ncurses		ports/devel/ncurses
 ncurses-devel	ports/devel/ncurses-devel
@@ -8377,8 +8382,8 @@ opendchub	ports/net-p2p/opendchub
 opendd		ports/dns/opendd
 opendis		ports/graphics/opendis
 opendx		ports/graphics/opendx
-openfoam	ports/science/openfoam
 openfire	ports/net-im/openfire
+openfoam	ports/science/openfoam
 openftd		ports/news/openftd
 openfts		ports/textproc/openfts
 opengl-man	ports/graphics/opengl-man
@@ -8463,7 +8468,6 @@ orange		ports/archivers/orange
 orbital_eunuchs_sniper	ports/games/orbital_eunuchs_sniper
 orbitcpp	ports/devel/orbitcpp
 orca		ports/graphics/orca
-accessibility_orca	ports/accessibility/orca
 oregano		ports/cad/oregano
 org-mode.el	ports/deskutils/org-mode.el
 orion		ports/x11-wm/orion
@@ -12313,6 +12317,7 @@ ports_enigma	ports/games/enigma
 ports_f2c	ports/lang/f2c
 ports_file	ports/sysutils/file
 ports_finance	ports/finance
+ports_fish		ports/shells/fish
 ports_french	ports/french
 ports_ftp	ports/ftp
 ports_games	ports/games
@@ -12631,13 +12636,13 @@ puredb		ports/databases/puredb
 pushmi		ports/devel/pushmi
 putty		ports/security/putty
 pv		ports/sysutils/pv
+pvk		ports/security/pvk
 pvm		ports/net/pvm
 pvm++		ports/net/pvm++
 pvmpov		ports/graphics/pvmpov
 pvpgn		ports/games/pvpgn
 pvr250		ports/multimedia/pvr250
 pvrxxx		ports/multimedia/pvrxxx
-pvk		ports/security/pvk
 pwauth		ports/security/pwauth
 pwcbsd		ports/multimedia/pwcbsd
 pwd_unmkdb	ports/sysutils/pwd_unmkdb
@@ -14423,7 +14428,6 @@ silky		ports/net/silky
 silkymail	ports/mail/silkymail
 silo		ports/x11/silo
 silvercity	ports/textproc/silvercity
-simh		ports/emulators/simh
 sim-im		ports/net-im/sim-im
 sim-im-devel	ports/net-im/sim-im-devel
 sim4		ports/biology/sim4
@@ -14431,6 +14435,7 @@ sim6811		ports/emulators/sim6811
 simage		ports/graphics/simage
 simd-viterbi	ports/math/simd-viterbi
 simgear		ports/devel/simgear
+simh		ports/emulators/simh
 simian		ports/devel/simian
 simlib		ports/science/simlib
 simplemod	ports/audio/simplemod
