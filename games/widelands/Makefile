@@ -31,8 +31,6 @@ SCONS_ARGS=	CXXFLAGS="${CXXFLAGS}" LINKFLAGS="${LDFLAGS}" \
 		install_prefix=${PREFIX} bindir=bin datadir=share/widelands
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|options=opts|options=opts, **dict((k, v.split()) for k, v in ARGUMENTS.iteritems())|' \
-		${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e 's|, True||' ${WRKSRC}/worlds/SConscript
 	@${RM} -f ${WRKSRC}/worlds/SConscript.bak
 
