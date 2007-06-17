@@ -9341,6 +9341,7 @@ p5-DateTime-Set	ports/devel/p5-DateTime-Set
 p5-DateTime-TimeZone	ports/devel/p5-DateTime-TimeZone
 p5-DateTime-TimeZone-Alias	ports/devel/p5-DateTime-TimeZone-Alias
 p5-DateTime-TimeZone-LMT	ports/devel/p5-DateTime-TimeZone-LMT
+p5-DateTime-Util-Calc	ports/devel/p5-DateTime-Util-Calc
 p5-Decision-ACL	ports/devel/p5-Decision-ACL
 p5-DelimMatch	ports/textproc/p5-DelimMatch
 p5-Devel-Arena	ports/devel/p5-Devel-Arena
