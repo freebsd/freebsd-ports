@@ -29,7 +29,7 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		apache+mod_ssl+mod_snmp+mod_accel-1.* \
 		apache+ipv6-1.* apache-1.* apache-2.* apache_fp-1.* \
 		caudium-devel-1.* caudium10-1.* caudium12-* \
-		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
+		ru-apache+mod_ssl-1.* ru-apache-1.*
 
 APACHE_VERSION=		1.3.37
 APACHE_SSL_VERSION=	1.57
