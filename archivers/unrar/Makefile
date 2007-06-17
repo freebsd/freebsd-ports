@@ -14,7 +14,10 @@ MASTER_SITES=	http://files1.rarlab.com/rar/ \
 		http://files3.rarlab.com/rar/ \
 		http://files4.rarlab.com/rar/ \
 		http://files5.rarlab.com/rar/ \
-		http://files6.rarlab.com/rar/
+		http://files6.rarlab.com/rar/ \
+		http://files7.rarlab.com/rar/ \
+		http://files8.rarlab.com/rar/ \
+		http://files9.rarlab.com/rar/
 DISTNAME=	unrarsrc-3.7.6
 
 MAINTAINER?=	ache@FreeBSD.org
