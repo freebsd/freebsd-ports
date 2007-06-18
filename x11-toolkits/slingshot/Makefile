@@ -19,7 +19,6 @@ COMMENT=	Supplemental Libraries to extend Xview
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/sspkg2.1
-USE_X_PREFIX=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	OPENWINHOME=${X11BASE}
