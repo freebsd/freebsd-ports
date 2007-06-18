@@ -961,7 +961,6 @@
     SUBDIR += yazproxy
     SUBDIR += yptransitd
     SUBDIR += ytalk
-    SUBDIR += zabbix-agent
     SUBDIR += zebra
     SUBDIR += zebra-server
     SUBDIR += zillion
