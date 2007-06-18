@@ -23,21 +23,21 @@ name="nginx"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/nginx"
 
+load_rc_config $name
+
+pidfile="${nginx_pidfile}"
+
 extra_commands="configtest reload"
 
 configtest_cmd="configtest_cmd"
 configtest_cmd()  {
 	echo "Configuration syntax test for ${name}."
-	if ${command} -t; then
+	if ${command} ${nginx_flags} -t; then
 		:
 	else
 		err 8 "FATAL: bad config for ${name}"
 	fi
 }
-
-load_rc_config $name
-
-pidfile="${nginx_pidfile}"
 
 start_cmd="echo \"Starting ${name}.\"; /usr/bin/limits -U www ${command} ${nginx_flags}"
 
