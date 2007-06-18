@@ -18,13 +18,13 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/gnome-vfs-2.0/modules/libsyncevfs.so:${PORTSDIR}
 RUN_DEPENDS=	${LOCALBASE}/lib/gnome-vfs-2.0/modules/libsyncevfs.so:${PORTSDIR}/palm/synce-gnomevfs
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
 
-BROKEN=		Configure fails
-
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gnometarget
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib -lsynce
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE} \
 			--with-librapi2=${LOCALBASE}
 
