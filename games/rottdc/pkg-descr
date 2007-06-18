@@ -3,7 +3,4 @@ released in 1994.  This port duplicates the functionality of the original
 game on modern operating systems, including Linux, Win32, OSX and now FreeBSD.
 In order to run game you'll need original game data.
 
-WWW:	http://sdl-dc.sourceforge.net/
-
-- Igor Pokrovsky
-tiamat@comset.net
+WWW: http://sdl-dc.sourceforge.net/

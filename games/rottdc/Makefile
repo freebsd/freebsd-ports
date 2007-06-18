@@ -1,17 +1,16 @@
-# New ports collection makefile for: rottdc
-# Date created:		18 Feb 2004
-# Whom:			Igor Pokrovsky <tiamat@comset.net>
+# New ports collection makefile for:	rottdc
+# Date created:				18 Feb 2004
+# Whom:					Igor Pokrovsky <tiamat@comset.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	rottdc
-PORTVERSION=	1.0.2
+DISTVERSION=	1.0-2
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sdl-dc
-DISTNAME=	${PORTNAME}-1.0-2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apogee's Rise Of The Triad source port
@@ -22,6 +21,9 @@ USE_SDL=	sdl mixer
 USE_XLIB=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/rott
+
+post-patch:
+	@${REINPLACE_CMD} -e '433s,^static ,,' ${WRKSRC}/rt_actor.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rott ${PREFIX}/bin
