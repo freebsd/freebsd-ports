@@ -8947,6 +8947,7 @@ p5-Chess-PGN-Parse	ports/textproc/p5-Chess-PGN-Parse
 p5-Cisco-Reconfig	ports/net-mgmt/p5-Cisco-Reconfig
 p5-Class-Accessor	ports/devel/p5-Class-Accessor
 p5-Class-Accessor-Chained	ports/devel/p5-Class-Accessor-Chained
+p5-Class-Accessor-Grouped	ports/devel/p5-Class-Accessor-Grouped
 p5-Class-Accessor-Lvalue	ports/devel/p5-Class-Accessor-Lvalue
 p5-Class-Accessor-Named	ports/devel/p5-Class-Accessor-Named
 p5-Class-Adapter	ports/devel/p5-Class-Adapter
