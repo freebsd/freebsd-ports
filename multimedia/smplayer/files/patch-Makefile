@@ -1,0 +1,43 @@
+--- Makefile.orig	Thu Jun 14 20:12:01 2007
++++ Makefile	Thu Jun 14 20:13:14 2007
+@@ -5,7 +5,6 @@
+ CONF_PREFIX=$(PREFIX)
+ 
+ DATA_PATH=$(PREFIX)/share/smplayer
+-DOC_PATH=$(PREFIX)/share/doc/packages/smplayer
+ TRANSLATION_PATH=$(PREFIX)/share/smplayer/translations
+ CONF_PATH=$(CONF_PREFIX)/etc/smplayer
+ THEMES_PATH=$(PREFIX)/share/smplayer/themes
+@@ -22,7 +21,7 @@
+ 
+ DEFS=DATA_PATH=\\\"$(DATA_PATH)\\\" CONF_PATH=\\\"$(CONF_PATH)\\\" \
+      TRANSLATION_PATH=\\\"$(TRANSLATION_PATH)\\\" \
+-     DOC_PATH=\\\"$(DOC_PATH)\\\" THEMES_PATH=\\\"$(THEMES_PATH)\\\" \
++     THEMES_PATH=\\\"$(THEMES_PATH)\\\" \
+      SHORTCUTS_PATH=\\\"$(SHORTCUTS_PATH)\\\"
+ 
+ 
+@@ -58,8 +57,6 @@
+ 	install -m 644 src/input.conf $(DESTDIR)$(DATA_PATH)
+ 	-install -d $(DESTDIR)$(TRANSLATION_PATH)
+ 	install -m 644 src/translations/*.qm $(DESTDIR)$(TRANSLATION_PATH)
+-	-install -d $(DESTDIR)$(DOC_PATH)
+-	install -m 644 Changelog *.txt $(DESTDIR)$(DOC_PATH)
+ 
+ 	-install -d $(DESTDIR)$(SHORTCUTS_PATH)
+ 	cp src/shortcuts/* $(DESTDIR)$(SHORTCUTS_PATH)
+@@ -79,8 +76,6 @@
+ 	-rm $(PREFIX)/bin/smplayer
+ 	-rm $(DATA_PATH)/input.conf
+ 	-rm $(TRANSLATION_PATH)/*.qm
+-	-rm $(DOC_PATH)/Changelog
+-	-rm $(DOC_PATH)/*.txt
+ 	-rm $(SHORTCUTS_PATH)/*.keys
+ 	-rm $(KDE_ICONS)/64x64/apps/smplayer.png
+ 	-rm $(KDE_ICONS)/32x32/apps/smplayer.png
+@@ -88,5 +83,4 @@
+ 	-rm $(KDE_ICONS)/16x16/apps/smplayer.png
+ 	-rm $(KDE_APPLNK)/smplayer.desktop
+ 	-rmdir $(TRANSLATION_PATH)/
+-	-rmdir $(DOC_PATH)/
+ 	-rmdir $(DATA_PATH)/

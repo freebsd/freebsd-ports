@@ -1,0 +1,41 @@
+bin/smplayer
+share/applications/smplayer.desktop
+share/icons/hicolor/16x16/apps/smplayer.png
+share/icons/hicolor/22x22/apps/smplayer.png
+share/icons/hicolor/32x32/apps/smplayer.png
+share/icons/hicolor/64x64/apps/smplayer.png
+%%DATADIR%%/input.conf
+%%DATADIR%%/shortcuts/default.keys
+%%DATADIR%%/translations/smplayer_bg.qm
+%%DATADIR%%/translations/smplayer_cs.qm
+%%DATADIR%%/translations/smplayer_de.qm
+%%DATADIR%%/translations/smplayer_en_US.qm
+%%DATADIR%%/translations/smplayer_es.qm
+%%DATADIR%%/translations/smplayer_fr.qm
+%%DATADIR%%/translations/smplayer_hu.qm
+%%DATADIR%%/translations/smplayer_it.qm
+%%DATADIR%%/translations/smplayer_ja.qm
+%%DATADIR%%/translations/smplayer_ka.qm
+%%DATADIR%%/translations/smplayer_nl.qm
+%%DATADIR%%/translations/smplayer_pl.qm
+%%DATADIR%%/translations/smplayer_pt_BR.qm
+%%DATADIR%%/translations/smplayer_ru_RU.qm
+%%DATADIR%%/translations/smplayer_sk.qm
+%%DATADIR%%/translations/smplayer_sr.qm
+%%DATADIR%%/translations/smplayer_sv.qm
+%%DATADIR%%/translations/smplayer_tr.qm
+%%DATADIR%%/translations/smplayer_uk_UA.qm
+%%DATADIR%%/translations/smplayer_zh_CN.qm
+%%DATADIR%%/translations/smplayer_zh_TW.qm
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%/shortcuts
+@dirrmtry %%DATADIR%%
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
