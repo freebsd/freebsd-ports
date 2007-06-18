@@ -1,5 +1,5 @@
 # ex:ts=8
-# New ports collection makefile for:	Gaim-OTR
+# Ports collection Makefile for:	pidgin-otr
 # Date created:				2004-12-17
 # Whom:					Conor McDermottroe <ports@mcdermottroe.com>
 #
@@ -7,24 +7,25 @@
 #
 
 PORTNAME=	otr
-PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTVERSION=	3.0.1
 CATEGORIES=	security net
-MASTER_SITES=	http://www.cypherpunks.ca/otr/ \
-		http://www.xelerance.com/mirror/otr/
-PKGNAMEPREFIX=	gaim-
+MASTER_SITES=	http://www.cyberdyne.org/~icebrkr/files/
+PKGNAMEPREFIX=	pidgin-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@mcdermottroe.com
-COMMENT=	Allows deniable private conversations using GAIM
+MAINTAINER=	perlfu@gmail.com
+COMMENT=	Allows deniable private conversations using Pidgin
 
-BUILD_DEPENDS=	${LOCALBASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
-RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
+BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
 LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
-		gcrypt:${PORTSDIR}/security/libgcrypt
+		gcrypt:${PORTSDIR}/security/libgcrypt \
+		purple.0:${PORTSDIR}/net-im/libpurple
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
+
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-libotr-prefix=${LOCALBASE}/lib \
 		--with-libotr-inc-prefix=${LOCALBASE}/include
 

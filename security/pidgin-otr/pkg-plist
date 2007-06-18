@@ -1,2 +1,3 @@
-lib/gaim/gaim-otr.so
-lib/gaim/gaim-otr.la
+lib/pidgin/pidgin-otr.la
+lib/pidgin/pidgin-otr.so
+@dirrmtry lib/pidgin
