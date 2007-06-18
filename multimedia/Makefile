@@ -194,6 +194,7 @@
     SUBDIR += smpeg
     SUBDIR += smpeg-xmms
     SUBDIR += smplayer
+    SUBDIR += smplayer-qt4
     SUBDIR += smplayer-themes
     SUBDIR += spigot
     SUBDIR += streamanalyze
