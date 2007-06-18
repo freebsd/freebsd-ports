@@ -12029,9 +12029,10 @@ picturebook	ports/graphics/picturebook
 piddle		ports/graphics/piddle
 pidentd		ports/security/pidentd
 pidgin		ports/net-im/pidgin
+pidgin-encryption	ports/security/pidgin-encryption
 pidgin-guifications	ports/net-im/pidgin-guifications
 pidgin-hotkeys	ports/net-im/pidgin-hotkeys
-pidgin-otr	ports/net-im/pidgin-otr
+pidgin-otr	ports/security/pidgin-otr
 pidof		ports/sysutils/pidof
 piewm		ports/x11-wm/piewm
 pikdev		ports/devel/pikdev
