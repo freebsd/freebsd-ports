@@ -1,51 +1,45 @@
-# New ports collection makefile for:	gaim-encryption
+# New ports collection Makefile for: pidgen-encryption
 # Date created:		2004-05-01
-# Whom:		 	ports@c0decafe.net
+# Whom:			ports@c0decafe.net
 #
 # $FreeBSD$
 #
 
-PORTNAME=	encryption
-PORTVERSION=	2.39
-PORTREVISION=	2
-CATEGORIES=	security net
+PORTNAME=	pidgin
+PORTVERSION=	3.0
+CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
-PKGNAMEPREFIX=	gaim-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
+MASTER_SITE_SUBDIR=	pidgin-encrypt
+PKGNAMESUFFIX=	-encryption
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	ports@c0decafe.net
-COMMENT=	Provides transparent RSA encryption as a Gaim plugin
+MAINTAINER=	perlfu@gmail.com
+COMMENT=	Encryption Plugin for the Pidgin instant messenger client
 
-BUILD_DEPENDS=	${LOCALBASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
-RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
-LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss
+BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
+LIB_DEPENDS=	purple.0:${PORTSDIR}/net-im/libpurple \
+		nss3:${PORTSDIR}/security/nss
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-nspr-includes=${LOCALBASE}/include/nspr \
-		--with-nspr-libs=${LOCALBASE}/lib \
+CONFIGURE_ARGS=	--with-nspr-includes=${LOCALBASE}/include/nspr	\
+		--with-nspr-libs=${LOCALBASE}/lib	\
 		--with-nss-includes=${LOCALBASE}/include/nss/nss \
 		--with-nss-libs=${LOCALBASE}/lib/nss
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=--disable-nls
+CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WARNING: make sure net-im/gaim is built with NSS support (it is, by default)"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} ""
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
