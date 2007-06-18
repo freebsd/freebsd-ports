@@ -6,14 +6,20 @@
 #
 
 PORTNAME=	bsdadminscripts
-PORTVERSION=	2.1.4
-CATEGORIES=	sysutils
+PORTVERSION=	3.0
+CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lon_kamikaze@gmx.de
 COMMENT=	A small collection of administration scripts
 
+OPTIONS+=	RCSTART "Use rc scripts based on PROVIDE" On
+OPTIONS+=	PORTCONFIG "Depends on portupgrade" On
+OPTIONS+=	BUILDFLAGS "Build configuration system" On
+OPTIONS+=	PKG_VALIDATE "Check for broken and missing files" On
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 NO_BUILD=	yes
 MANCOMPRESSED=	no
 
@@ -22,7 +28,11 @@ MAN1=		bsdadminscripts.1
 RC_SCRIPTS=	start stop restart status onestart onestop onerestart onestatus
 PORT_SCRIPTS=	config build clean fetch package \
 		config-recursive fetch-recursive
-BUILDFLAGS_FILES=	buildflags.mk buildflags.awk buildflags.conf
+BUILDFLAGS_SCRIPTS=	buildflags.awk
+BUILDFLAGS_FILES=	buildflags.mk
+BUILDFLAGS_ETC=	buildflags.conf.sample
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_RCSTART)
 PLIST_FILES+=	${RC_SCRIPTS:S,^,sbin/rc,}
@@ -36,36 +46,58 @@ MAN1+=		portconfig.1
 .endif
 
 .if !defined(WITHOUT_BUILDFLAGS)
-PLIST_FILES+=	${BUILDFLAGS_FILES:S,^,share/$(PORTNAME)/,}
-PLIST_DIRS+=	share/${PORTNAME}
+PLIST_FILES+=	${BUILDFLAGS_FILES:S,^,${DATADIR_REL}/,}
+PLIST_FILES+=	${BUILDFLAGS_SCRIPTS:S,^,${DATADIR_REL}/,}
+ETC_FILES+=	${BUILDFLAGS_ETC}
+PLIST_DIRS+=	${DATADIR_REL}
 MAN1+=		buildflags.mk.1 buildflags.conf.1 buildflags.awk.1
 .endif
+
+.if !defined(WITHOUT_PKG_VALIDATE)
+PLIST_FILES+=	sbin/pkg_validate
+MAN1+=		pkg_validate.1
+.endif
+
+PLIST_FILES+=	${ETC_FILES:S,^,etc/,}
 
 do-install:
 .if !defined(WITHOUT_RCSTART)
 	@${ECHO_MSG} "===>  Installing rcstart."
-	@${INSTALL} ${WRKSRC}/rcstart ${PREFIX}/sbin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/rcstart ${PREFIX}/sbin/
 .for _link in ${RC_SCRIPTS:Nstart}
 	@${LN} ${PREFIX}/sbin/rcstart ${PREFIX}/sbin/rc${_link}
 .endfor
 .endif
 .if !defined(WITHOUT_PORTCONFIG)
 	@${ECHO_MSG} "===>  Installing portconfig."
-	@${INSTALL} ${WRKSRC}/portconfig ${PREFIX}/sbin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/portconfig ${PREFIX}/sbin/
 .for _link in ${PORT_SCRIPTS:Nconfig}
 	@${LN} ${PREFIX}/sbin/portconfig ${PREFIX}/sbin/port${_link}
 .endfor
 .endif
 .if !defined(WITHOUT_BUILDFLAGS)
 	@${ECHO_MSG} "===>  Installing buildflags."
-	@${MKDIR} ${PREFIX}/share/${PORTNAME}
+	@${MKDIR} ${DATADIR}
 .for _file in ${BUILDFLAGS_FILES}
-	@${INSTALL} ${WRKSRC}/${_file} ${PREFIX}/share/${PORTNAME}/
+	@${INSTALL_DATA} ${WRKSRC}/${_file} ${DATADIR}
+.endfor
+.for _file in ${BUILDFLAGS_SCRIPTS}
+	@${INSTALL_SCRIPT} ${WRKSRC}/${_file} ${DATADIR}
+.endfor
+.endif
+.if !defined(WITHOUT_PKG_VALIDATE)
+	@${ECHO_MSG} "===>  Installing pkg_validate."
+	@${INSTALL_SCRIPT} ${WRKSRC}/pkg_validate ${PREFIX}/sbin/
+.endif
+.if defined(ETC_FILES)
+	@${ECHO_MSG} "===>  Installing configuration samples."
+.for _conf in ${ETC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${_conf} ${PREFIX}/etc
 .endfor
 .endif
 	@${ECHO_MSG} "===>  Installing man pages."
 .for _manpage in ${MAN1}
-	@${INSTALL} ${WRKSRC}/${_manpage} ${PREFIX}/man/man1/
+	@${INSTALL_MAN} ${WRKSRC}/${_manpage} ${MANPREFIX}/man/man1/
 .endfor
 
 message:
@@ -74,4 +106,4 @@ message:
 post-install: message
 	@${DO_NADA}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
