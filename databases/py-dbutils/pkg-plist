@@ -1,14 +1,3 @@
-%%PYTHON_SITELIBDIR%%/DBUtils/Docs/Doc.css
-%%PYTHON_SITELIBDIR%%/DBUtils/Docs/DocUtils.css
-%%PYTHON_SITELIBDIR%%/DBUtils/Docs/RelNotes-0.8.1.html
-%%PYTHON_SITELIBDIR%%/DBUtils/Docs/RelNotes-0.9.1.html
-%%PYTHON_SITELIBDIR%%/DBUtils/Docs/RelNotes-0.9.2.html
-%%PYTHON_SITELIBDIR%%/DBUtils/Docs/UsersGuide.html
-%%PYTHON_SITELIBDIR%%/DBUtils/Docs/UsersGuide.txt
-%%PYTHON_SITELIBDIR%%/DBUtils/Docs/dbdep.gif
-%%PYTHON_SITELIBDIR%%/DBUtils/Docs/persist.gif
-%%PYTHON_SITELIBDIR%%/DBUtils/Docs/pgdep.gif
-%%PYTHON_SITELIBDIR%%/DBUtils/Docs/pool.gif
 %%PYTHON_SITELIBDIR%%/DBUtils/Examples/DBUtilsExample.py
 %%PYTHON_SITELIBDIR%%/DBUtils/Examples/DBUtilsExample.pyc
 %%PYTHON_SITELIBDIR%%/DBUtils/Examples/DBUtilsExample.pyo
@@ -77,7 +66,19 @@
 %%PYTHON_SITELIBDIR%%/DBUtils/__init__.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/DBUtils/Testing
 @dirrm %%PYTHON_SITELIBDIR%%/DBUtils/Examples
-@dirrm %%PYTHON_SITELIBDIR%%/DBUtils/Docs
 @dirrm %%PYTHON_SITELIBDIR%%/DBUtils
-@dirrm %%PYTHON_SITELIBDIR%%
-@dirrm %%PYTHON_LIBDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/Doc.css
+%%PORTDOCS%%%%DOCSDIR%%/DocUtils.css
+%%PORTDOCS%%%%DOCSDIR%%/RelNotes-0.8.1.html
+%%PORTDOCS%%%%DOCSDIR%%/RelNotes-0.9.1.html
+%%PORTDOCS%%%%DOCSDIR%%/RelNotes-0.9.2.html
+%%PORTDOCS%%%%DOCSDIR%%/RelNotes-0.9.3.html
+%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.html
+%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.txt
+%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.zh.html
+%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.zh.txt
+%%PORTDOCS%%%%DOCSDIR%%/dbdep.gif
+%%PORTDOCS%%%%DOCSDIR%%/persist.gif
+%%PORTDOCS%%%%DOCSDIR%%/pgdep.gif
+%%PORTDOCS%%%%DOCSDIR%%/pool.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
