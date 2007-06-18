@@ -14,8 +14,8 @@ DISTNAME=	${PORTNAME}linux-${PORTVERSION}-x86
 EXTRACT_SUFX=	.rpm
 DIST_SUBDIR=	rpm
 
-MAINTAINER=	bsam@FreeBSD.org
-COMMENT=	CD/DVD disk burner (trial beta version)
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	CD/DVD disk burner
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2
 
