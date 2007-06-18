@@ -5,29 +5,37 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xxkb
-PORTVERSION=	1.10
-PORTREVISION=	1
-CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+PORTNAME=		xxkb
+PORTVERSION=		1.11
+CATEGORIES=		x11
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xxkb
+DISTNAME=		${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	alexander.pohoyda@gmx.net
-COMMENT=	An XKB keyboard layout switcher and indicator
+MAINTAINER=		alexander.pohoyda@gmx.net
+COMMENT=		An XKB keyboard layout switcher and indicator
 
-MAN1=		xxkb.1
-USE_XPM=	yes
-USE_IMAKE=	yes
+WRKSRC=			${WRKDIR}/${PORTNAME}
+USE_XPM=		yes
+USE_IMAKE=		yes
 
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/XXkb.ad ${PREFIX}/lib/X11/app-defaults/XXkb
-	@${MKDIR} ${PREFIX}/share/xxkb
-	${INSTALL_DATA} ${WRKSRC}/*.xpm ${PREFIX}/share/xxkb
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for FILE in LICENSE CHANGES.koi8 README.koi8
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+MAN1=			xxkb.1
+
+OPTIONS=		LIBRSVG	"With SVG(librsvg2) support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_LIBRSVG)
+LIB_DEPENDS+=		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
+XMKMF=			xmkmf -a -DWITH_SVG_SUPPORT
 .endif
 
-.include <bsd.port.mk>
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.	for file in LICENSE README CHANGES.koi8 README.koi8
+	    ${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.	endfor
+.endif
+
+.include <bsd.port.post.mk>

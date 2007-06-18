@@ -1,9 +1,15 @@
 bin/xxkb
 lib/X11/app-defaults/XXkb
+%%DATADIR%%/bg15.xpm
+%%DATADIR%%/bg48.xpm
 %%DATADIR%%/by15.xpm
 %%DATADIR%%/by48.xpm
+%%DATADIR%%/de15.xpm
+%%DATADIR%%/de48.xpm
 %%DATADIR%%/en15.xpm
 %%DATADIR%%/en48.xpm
+%%DATADIR%%/il15.xpm
+%%DATADIR%%/il48.xpm
 %%DATADIR%%/ru15.xpm
 %%DATADIR%%/ru48.xpm
 %%DATADIR%%/su15.xpm
@@ -11,7 +17,8 @@ lib/X11/app-defaults/XXkb
 %%DATADIR%%/ua15.xpm
 %%DATADIR%%/ua48.xpm
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.koi8
 %%PORTDOCS%%%%DOCSDIR%%/README.koi8
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/xxkb
+@dirrm %%DATADIR%%
