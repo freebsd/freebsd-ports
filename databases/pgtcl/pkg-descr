@@ -1,0 +1,5 @@
+A TCL extension for accessing PostgreSQL databases. This used
+to come bunlded with PostgreSQL itself, but was split into a
+separate project in more recent version (8+).
+
+WWW:	http://pgtcl.projects.postgresql.org/

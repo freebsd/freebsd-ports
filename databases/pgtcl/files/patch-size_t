@@ -1,0 +1,13 @@
+size_t is the right type to use, but Tcl's core is not prepared for it.
+
+	-mi
+
+--- pgtclCmds.c	Mon Jan 15 21:41:07 2007
++++ pgtclCmds.c	Mon Jun 18 16:28:31 2007
+@@ -3644,5 +3644,5 @@
+ {
+ 	unsigned char	   *from_binary;
+-	size_t         		from_len;
++	int         		from_len;
+ 	unsigned char	   *to_string;
+ 	size_t 				to_len;
