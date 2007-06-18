@@ -13,7 +13,6 @@ MASTER_SITES=	SFE
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Produce PDF from scanned documents
 
-LIB_DEPENDS=	rsvg-2.2:${PORTSDIR}/graphics/librsvg2
 RUN_DEPENDS=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
 		scanimage:${PORTSDIR}/graphics/sane-backends \
 		scanadf:${PORTSDIR}/graphics/sane-frontends \
@@ -26,10 +25,11 @@ RUN_DEPENDS=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
 		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
 #		xdg-email:${PORTSDIR}/devel/xdg-utils
 
-USE_PERL5=	yes
 USE_GETTEXT=	yes
-PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNOME=	librsvg2
+USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 MAN1=		${PORTNAME}.1
 
 post-patch:
