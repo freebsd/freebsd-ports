@@ -193,6 +193,7 @@
     SUBDIR += shell-fm
     SUBDIR += smpeg
     SUBDIR += smpeg-xmms
+    SUBDIR += smplayer-themes
     SUBDIR += spigot
     SUBDIR += streamanalyze
     SUBDIR += streamdvd
