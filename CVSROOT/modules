@@ -10026,6 +10026,7 @@ p5-MP3-Info	ports/audio/p5-MP3-Info
 p5-MP3-Tag	ports/audio/p5-MP3-Tag
 p5-MP4-Info	ports/multimedia/p5-MP4-Info
 p5-MPEG-ID3v2Tag	ports/audio/p5-MPEG-ID3v2Tag
+p5-MRO-Compat	ports/devel/p5-MRO-Compat
 p5-Mac-FileSpec-Unixish	ports/devel/p5-Mac-FileSpec-Unixish
 p5-Mac-Macbinary	ports/archivers/p5-Mac-Macbinary
 p5-Mail-Address-MobileJp	ports/mail/p5-Mail-Address-MobileJp
