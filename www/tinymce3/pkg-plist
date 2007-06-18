@@ -211,6 +211,7 @@
 %%TINYMCEDIR%%/jscripts/tiny_mce/plugins/readme.txt
 %%TINYMCEDIR%%/jscripts/tiny_mce/plugins/save/editor_plugin.js
 %%TINYMCEDIR%%/jscripts/tiny_mce/plugins/save/editor_plugin_src.js
+%%TINYMCEDIR%%/jscripts/tiny_mce/plugins/save/images/cancel.gif
 %%TINYMCEDIR%%/jscripts/tiny_mce/plugins/save/images/save.gif
 %%TINYMCEDIR%%/jscripts/tiny_mce/plugins/save/langs/en.js
 %%TINYMCEDIR%%/jscripts/tiny_mce/plugins/save/readme.txt
