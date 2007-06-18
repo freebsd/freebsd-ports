@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	jama
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	math devel
 MASTER_SITES=	http://math.nist.gov/tnt/
-DISTNAME=	${PORTNAME}124src
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 .ifndef NOPORTDOCS
 DISTFILES=${DISTNAME}${EXTRACT_SUFX} jama102doc.zip
 .endif
@@ -31,10 +31,10 @@ do-install:
 	${EXTRACT_CMD} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} \
 		-d ${PREFIX}/include/tnt
 .ifndef NOPORTDOCS
-	${MKDIR} ${PREFIX}/share/doc
-	${EXTRACT_CMD} ${DISTDIR}/${DIST_SUBDIR}/jama102doc \
-		-d ${PREFIX}/share/doc
-	${MV} ${PREFIX}/share/doc/doxygen ${DOCSDIR}
+	${MKDIR} ${WRKDIR}/doc ${DOCSDIR}
+	${EXTRACT_CMD} -o ${DISTDIR}/${DIST_SUBDIR}/jama102doc \
+		-d ${WRKDIR}/doc
+	(cd ${WRKDIR}/doc/doxygen && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
