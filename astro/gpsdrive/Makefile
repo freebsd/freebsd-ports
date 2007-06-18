@@ -9,18 +9,16 @@ PORTNAME=	gpsdrive
 PORTVERSION=	2.09
 PORTREVISION=	6
 CATEGORIES=	astro
-MASTER_SITES=	http://www.ganter.at/software/ \
-		http://www.ostertag.name/gpsdrive.de/
+MASTER_SITES=	http://www.gpsdrive.de/packages/ \
+		LOCAL/beech
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GPS navigation system
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-USE_GETOPT_LONG=yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtool:15
 

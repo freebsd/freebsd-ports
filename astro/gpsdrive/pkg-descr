@@ -5,7 +5,7 @@ a zoomable map. The map file is autoselected depending on the position and
 prefered scale. Speech output is supported if the "festival" software is
 running. Waypoint database is supported via mySQL (optional).
 
-WWW: http://www.gpsdrive.cc/
+WWW: http://www.gpsdrive.de/
 
 - Marco
 molter@gufi.org
