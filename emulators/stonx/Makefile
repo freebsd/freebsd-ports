@@ -18,7 +18,7 @@ COMMENT=	AtariST emulator
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
 RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
-RESTRICTED=	"tos.img is copyrighted"
+RESTRICTED=	tos.img is copyrighted
 
 TOSIMG?=	tos.img
 #USE_XLIB=	yes
@@ -90,7 +90,7 @@ IGNORE="Please get a ROM dump from your AtariST and save it as"\
 .endif
 
 .if ${X_WINDOW_SYSTEM:L} == xorg
-BUILD_DEPENDS+=		${X11BASE}/lib/X11/fonts/misc/fonts.alias:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps
+BUILD_DEPENDS+=		${X11BASE}/lib/X11/fonts/misc/10x20-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/font-misc-misc
 .endif
 
 .include <bsd.port.post.mk>
