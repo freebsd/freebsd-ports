@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Class/Accessor/Grouped.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Grouped/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Grouped
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class/Accessor
+@dirrmtry %%SITE_PERL%%/Class
