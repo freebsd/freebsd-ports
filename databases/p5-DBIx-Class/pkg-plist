@@ -29,8 +29,10 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Core.pm
 %%SITE_PERL%%/DBIx/Class/Cursor.pm
 %%SITE_PERL%%/DBIx/Class/DB.pm
+%%SITE_PERL%%/DBIx/Class/Exception.pm
 %%SITE_PERL%%/DBIx/Class/InflateColumn.pm
 %%SITE_PERL%%/DBIx/Class/InflateColumn/DateTime.pm
+%%SITE_PERL%%/DBIx/Class/InflateColumn/File.pm
 %%SITE_PERL%%/DBIx/Class/Manual.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Component.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Cookbook.pod
@@ -60,16 +62,19 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Relationship/Helpers.pm
 %%SITE_PERL%%/DBIx/Class/Relationship/ManyToMany.pm
 %%SITE_PERL%%/DBIx/Class/Relationship/ProxyMethods.pm
+%%SITE_PERL%%/DBIx/Class/ResultClass/HashRefInflator.pm
 %%SITE_PERL%%/DBIx/Class/ResultSet.pm
 %%SITE_PERL%%/DBIx/Class/ResultSetColumn.pm
 %%SITE_PERL%%/DBIx/Class/ResultSetManager.pm
 %%SITE_PERL%%/DBIx/Class/ResultSetProxy.pm
 %%SITE_PERL%%/DBIx/Class/ResultSource.pm
 %%SITE_PERL%%/DBIx/Class/ResultSource/Table.pm
+%%SITE_PERL%%/DBIx/Class/ResultSourceHandle.pm
 %%SITE_PERL%%/DBIx/Class/ResultSourceProxy.pm
 %%SITE_PERL%%/DBIx/Class/ResultSourceProxy/Table.pm
 %%SITE_PERL%%/DBIx/Class/Row.pm
 %%SITE_PERL%%/DBIx/Class/Schema.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Versioned.pm
 %%SITE_PERL%%/DBIx/Class/Serialize/Storable.pm
 %%SITE_PERL%%/DBIx/Class/Storage.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI.pm
@@ -81,7 +86,10 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC/DB2_400_SQL.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Oracle.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/Oracle/Generic.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/Oracle/WhereJoins.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Pg.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/Replication.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase/MSSQL.pm
@@ -91,6 +99,9 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/UTF8Columns.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBIx/Class.pm
 %%SITE_PERL%%/SQL/Translator/Producer/DBIx/Class/File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Producer/DBIx/Class
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Producer/DBIx
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Producer
@@ -100,12 +111,15 @@ bin/dbicadmin
 @dirrmtry %%SITE_PERL%%/SQL
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Test
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/Oracle
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Serialize
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema
 @dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSourceProxy
 @dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSource
+@dirrmtry %%SITE_PERL%%/DBIx/Class/ResultClass
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Relationship
 @dirrmtry %%SITE_PERL%%/DBIx/Class/PK/Auto
 @dirrmtry %%SITE_PERL%%/DBIx/Class/PK
