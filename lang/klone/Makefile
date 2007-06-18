@@ -23,10 +23,6 @@ WRKSRC=		${WRKDIR}/Klone
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 do-configure:
 	@${SED} -e 's:%%PREFIX%%:${PREFIX}:' \
 		-e 's:%%CC%%:${CC}:' \

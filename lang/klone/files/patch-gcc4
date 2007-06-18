@@ -1,0 +1,26 @@
+--- KloneLight/KlLib.h.orig	Fri Feb 16 21:47:53 2001
++++ KloneLight/KlLib.h	Tue Jun 19 03:03:49 2007
+@@ -375,8 +375,8 @@
+     type[5] = (KlMethod) (((Card32) type[5]) | trait); \
+     KlDeclareTrait(type,trait)
+ #else
+-#define KlDeclareTrait(type,trait) ((Card32) type[4]) |= trait
+-#define KlDeclareIsTrait(type,trait) ((Card32) type[5]) |= trait; \
++#define KlDeclareTrait(type,trait) (type[4] = (Card32) type[4] | trait)
++#define KlDeclareIsTrait(type,trait) (type[5] = (Card32) type[5] | trait); \
+     KlDeclareTrait(type,trait)
+ #endif
+ 
+--- klone.h.orig	Fri Feb 16 21:47:49 2001
++++ klone.h	Tue Jun 19 03:07:31 2007
+@@ -503,8 +503,8 @@
+     type[5] = (KlMethod) (((Card32) type[5]) | trait); \
+     KlDeclareTrait(type,trait)
+ #else
+-#define KlDeclareTrait(type,trait) ((Card32) type[4]) |= trait
+-#define KlDeclareIsTrait(type,trait) ((Card32) type[5]) |= trait; \
++#define KlDeclareTrait(type,trait) (type[4] = (Card32) type[4] | trait)
++#define KlDeclareIsTrait(type,trait) (type[5] = (Card32) type[5] | trait); \
+     KlDeclareTrait(type,trait)
+ #endif
+ 
