@@ -1,18 +1,27 @@
-lib/gaim/encrypt.a
-lib/gaim/encrypt.la
-lib/gaim/encrypt.so
-%%NLS%%share/locale/cs/LC_MESSAGES/gaim-encryption.mo
-%%NLS%%share/locale/da/LC_MESSAGES/gaim-encryption.mo
-%%NLS%%share/locale/de/LC_MESSAGES/gaim-encryption.mo
-%%NLS%%share/locale/es/LC_MESSAGES/gaim-encryption.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/gaim-encryption.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/gaim-encryption.mo
-%%NLS%%share/locale/it/LC_MESSAGES/gaim-encryption.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/gaim-encryption.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/gaim-encryption.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/gaim-encryption.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/gaim-encryption.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/gaim-encryption.mo
-%%NLS%%share/locale/sl/LC_MESSAGES/gaim-encryption.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/gaim-encryption.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/gaim-encryption.mo
+lib/pidgin/encrypt.a
+lib/pidgin/encrypt.la
+lib/pidgin/encrypt.so
+%%NLS%%share/locale/cs/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/da/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pidgin-encryption.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pidgin-encryption.mo
+share/pixmaps/pidgin/pidgin-encryption/crypto.png
+@dirrm share/pixmaps/pidgin/pidgin-encryption
+@dirrmtry share/pixmaps/pidgin/
+@dirrmtry lib/pidgin/
