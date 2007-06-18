@@ -1,0 +1,31 @@
+--- our_allo.c.orig	Tue Jun 19 04:31:56 2007
++++ our_allo.c	Tue Jun 19 04:30:44 2007
+@@ -21,10 +21,11 @@
+ static HEADER base;
+ static HEADER *allocp = NULL;	
+ 
++static HEADER *morecore();
++
+ char *our_alloc(nbytes)
+         ALLOC nbytes;
+ {
+-	HEADER *morecore();
+ 	HEADER *p;
+ 	HEADER *q;
+ 	ALLOC nunits;
+diff -ur work/our_orde.c foo/our_orde.c
+--- our_orde.c.orig	Tue Jun 19 04:31:56 2007
++++ our_orde.c	Tue Jun 19 04:31:30 2007
+@@ -21,10 +21,11 @@
+ static HEADER orders_base;
+ static HEADER *orders_allocp = NULL;	
+ 
++static HEADER *orders_morecore();
++
+ char *our_orders_alloc(nbytes)
+         ALLOC nbytes;
+ {
+-	HEADER *orders_morecore();
+ 	HEADER *p, *q;
+ 	ALLOC nunits;
+ 
