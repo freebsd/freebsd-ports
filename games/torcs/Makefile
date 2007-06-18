@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=		torcs
-DISTVERSION=		1.3.0
-PORTREVISION=		1
-CATEGORIES=		games
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+PORTNAME=	torcs
+DISTVERSION=	1.3.0
+PORTREVISION=	1
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,7 +24,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GETOPT_LONG=yes
+USE_LDCONFIG=	yes
 REINPLACE_ARGS=	-i ""
 CONFIGURE_ARGS=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -40,10 +40,12 @@ PLIST_SUB=	TORCSDIR=${LINSTDIR}
 
 PORTDOCS=	faq.html
 
-BASH2FIX=	src/linux/torcs.in src/tools/accc/accc.in src/tools/nfsperf/nfsperf.in	\
-		src/tools/texmapper/texmapper.in src/tools/nfs2ac/nfs2ac.in		\
-		src/tools/trackgen/trackgen.in src/modules/telemetry/telemetry.sh	\
-		robotgen Make-default.mk data/tracks/road/ole-road-1/generate.sh
+BASH2FIX=	src/linux/torcs.in src/tools/accc/accc.in \
+		src/tools/nfsperf/nfsperf.in \
+		src/tools/texmapper/texmapper.in src/tools/nfs2ac/nfs2ac.in \
+		src/tools/trackgen/trackgen.in \
+		src/modules/telemetry/telemetry.sh robotgen Make-default.mk \
+		data/tracks/road/ole-road-1/generate.sh
 
 .include <bsd.port.pre.mk>
 
