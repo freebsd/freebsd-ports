@@ -21,15 +21,9 @@ MAKEFILE=	Makefile.i386
 MAN1=		mprof.1
 PLIST_FILES=	bin/mprof lib/libc_mp.a
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mprof ${PREFIX}/bin
 	${INSTALL} ${COPY} -m 555 ${WRKSRC}/libc_mp.a ${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/mprof.1 ${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
