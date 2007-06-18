@@ -7,9 +7,10 @@
 
 PORTNAME=	papi
 PORTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://papi-for-freebsd.googlecode.com/files/:source1
-DISTFILES=	papi-3.5.0-freebsd-rev40.tar.bz2:source1
+DISTFILES=	papi-3.5.0-freebsd-rev45.tar.bz2:source1
 
 MAINTAINER=	redcrash@gmail.com
 COMMENT=	API to access the performance counter hw in the microprocessor
@@ -268,5 +269,8 @@ do-install:
 .for f in ${MAN3}
 	${INSTALL_MAN} ${WRKMAN}/man3/${f} ${PREFIX}/man/man3
 .endfor
+
+post-install:
+	${CAT} pkg-message
 
 .include <bsd.port.post.mk>
