@@ -18,6 +18,12 @@ COMMENT=	A GUI library for Haskell on top of Tcl-Tk
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/FranTk1.1/src
 
@@ -36,4 +42,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
