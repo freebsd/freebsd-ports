@@ -1,5 +1,3 @@
-[ excerpt from developer's www site with modifications ]
-
 tovid is a collection of video disc authoring tools; it can help
 you create your own DVDs, VCDs, and SVCDs for playback on your home
 DVD player. It has a command-line interface as well as a graphical
@@ -13,6 +11,4 @@ You may find tovid useful if:
 - your video files are eating up too much hard drive space, and you
   want to back them up onto a portable medium
 
-WWW: http://tovid.berlios.de/
-
--- lioux@FreeBSD.org
+WWW: http://tovid.wikia.com/
