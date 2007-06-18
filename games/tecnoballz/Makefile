@@ -43,6 +43,10 @@ post-patch:
 		's|/var/lib/games|/var/games|; \
 		 s|TecnoballZ/|${DATADIR}/|' \
 		${WRKSRC}/src/ressources.cc
+	@${REINPLACE_CMD} -e 's|escapeMenu::||' \
+		${WRKSRC}/include/escapeMenu.h
+	@${REINPLACE_CMD} -e 's|zexplosion\*|class &|' \
+		${WRKSRC}/include/zeGigaBlit.h
 
 do-install:
 	@${MKDIR} ${PREFIX}/bin
