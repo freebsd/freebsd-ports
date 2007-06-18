@@ -18,8 +18,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-gl --without-motif --without-sx \
 		--without-editres --without-dtsaver --without-rplay \
-		--without-nas --without-gtk --without-esound \
-		--without-gtk2
+		--without-nas --without-gtk --without-esound
 .if defined(MAKE_KERBEROS4)
 CONFIGURE_ARGS+=--enable-kerberos4
 KRB4LIB=	-lcom_err -lcrypto
@@ -29,9 +28,12 @@ CONFIGURE_ARGS+=--enable-kerberos5
 CFLAGS+=	-I${KRB5_HOME}/include
 KRB5LIB=	-L${KRB5_HOME}/lib
 .endif
+USE_GNOME=	#
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+
 MAN1=		xlock.1
+PLIST_FILES=	bin/xlock lib/X11/app-defaults/XLock
 
 OPTIONS=MESAGL			"Enable Mesa 3D (for GL modes)"		off \
 	MB			"Enable Xmb function series"		off \
@@ -40,7 +42,11 @@ OPTIONS=MESAGL			"Enable Mesa 3D (for GL modes)"		off \
 	NICE_ONLY		"Enable only low cpu modes"		off \
 	BLANK_ONLY		"Enable blank mode only (boring)"	off \
 	PAM			"Enable PAM authentication support"	off \
-	BAD_PAM			"Xlock will ask PAM with root rights"	off
+	BAD_PAM			"Xlock will ask PAM with root rights"	off \
+	GTK2			"Build Gtk2 graphical shell"		off \
+	XLOCK_GROUP		"Allow xlock group to logout"		off \
+	TIME_BOMB		"Allow autologout"			off \
+	CUSTOMIZATION		"Allow tune through resource file"	off
 
 .include <bsd.port.pre.mk>
 
@@ -67,6 +73,9 @@ CONFIGURE_ARGS+=	--enable-bad-pam
 
 .if defined(WITH_PAM)
 CONFIGURE_ARGS+=	--enable-pam
+.if defined(WITH_XLOCK_GROUP)
+BROKEN=			PAM and xlock group simultaneously breaks the build
+.endif
 .endif
 
 .if defined(WITH_NICE_ONLY)
@@ -89,6 +98,32 @@ CONFIGURE_ARGS+=	--with-lang=${XLOCKMORE_LANG}
 CONFIGURE_ARGS+=	--enable-syslog
 .endif
 
+.if defined(WITH_GTK2)
+CONFIGURE_ARGS+=	--with-gtk2
+USE_GNOME+=	gtk20
+PLIST_FILES+=	bin/xglock share/xlock/xglockrc
+PLIST_DIRS+=	share/xlock
+.else
+CONFIGURE_ARGS+=	--without-gtk2
+.endif
+
+.if defined(WITH_XLOCK_GROUP)
+CONFIGURE_ARGS+=	--enable-xlock-group
+.if defined(WITH_PAM)
+BROKEN=			PAM and xlock group simultaneously breaks the build
+.endif
+.endif
+
+.if defined(WITH_TIME_BOMB)
+CONFIGURE_ARGS+=	--enable-bomb
+.else
+CONFIGURE_ARGS+=	--disable-bomb
+.endif
+
+.if defined(WITH_CUSTOMIZATION)
+CONFIGURE_ARGS+=	--enable-customization
+.endif
+
 CONFIGURE_ENV+=		XLOCKLIBS="${KRB5LIB} ${KRB4LIB} ${MESALIB}"
 
 .if defined(WITH_DISABLE_ALLOW_ROOT)
@@ -104,9 +139,10 @@ pre-extract:
 	@${ECHO}
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e '/xglockrc/ s|PROGRAM|DATA|' ${WRKSRC}/xglock/Makefile.in
+
 post-configure:
 	${REINPLACE_CMD} -e 's/-lXdpms//g' ${WRKSRC}/modes/Makefile
-
-PLIST_FILES=	bin/xlock lib/X11/app-defaults/XLock
 
 .include <bsd.port.post.mk>
