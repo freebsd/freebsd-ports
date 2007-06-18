@@ -17,6 +17,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A perl module to manipulate raw IP packets
 
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils
+
 PERL_CONFIGURE=	yes
 MAN3=		Net::RawIP.3 Net::RawIP::libpcap.3
 
