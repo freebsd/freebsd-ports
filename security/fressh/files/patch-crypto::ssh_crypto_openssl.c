@@ -14,3 +14,12 @@ $FreeBSD$
  
  #include <openssl/opensslv.h>
  
+@@ -183,7 +183,7 @@
+ 	new_bn = BN_bin2bn(data, bytes, &((*num)->num));
+ 	if (new_bn == NULL)
+ 		return (-1);
+-	(BIGNUM *) * num = new_bn;
++	*num = (BIGNUM *) new_bn;
+ 	return (0);
+ }
+ 

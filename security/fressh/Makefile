@@ -17,11 +17,11 @@ COMMENT=	A free rewritten implementation of the SSH communication protocol
 
 USE_BZIP2=	yes
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/fressh bin/fressh-add bin/fressh-agent \
+		bin/fressh-keygen sbin/fresshd
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e '117s,^static ,,' ${WRKSRC}/sshd_main.c
 
 .if !exists(/usr/lib/libssl.a) || !exists(/usr/lib/libcrypto.a)
 .if exists(${LOCALBASE}/lib/libssl.a) && exists(${LOCALBASE}/lib/libcrypto.a)
@@ -36,4 +36,4 @@ RSAGLUE+=	-lRSAglue
 .endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
