@@ -23,6 +23,8 @@ USE_OPENSSL=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+MAKE_ENV=	CC="${CC}" CXX="${CXX}"
+
 DOCS=		LICENSE README
 
 .include <bsd.port.pre.mk>
