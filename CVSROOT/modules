@@ -1088,7 +1088,7 @@ ca-aspell	ports/textproc/ca-aspell
 ca-roots	ports/security/ca-roots
 cabextract	ports/archivers/cabextract
 cacao		ports/java/cacao
-cacti		ports/net/cacti
+cacti		ports/net-mgmt/cacti
 cactid		ports/net/cactid
 cadaver		ports/www/cadaver
 cadubi		ports/graphics/cadubi
