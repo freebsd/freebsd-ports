@@ -32,6 +32,7 @@
     SUBDIR += bsnmpd
     SUBDIR += bsnmptools
     SUBDIR += bwm-ng
+    SUBDIR += cacti
     SUBDIR += cdpd
     SUBDIR += cdpr
     SUBDIR += cfgstoragemk
