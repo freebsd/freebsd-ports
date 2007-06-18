@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	taxonomy_access
-DISTVERSION=	5.x-1.x-dev
-PORTREVISION=	20070218
+DISTVERSION=	5.x-1.1
 CATEGORIES=	www security
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav/drupal
+MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	Access control system for the Drupal based on Taxonomy classification
