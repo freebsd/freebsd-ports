@@ -17223,7 +17223,7 @@ yydecode	ports/news/yydecode
 z80-asm		ports/devel/z80-asm
 z88		ports/cad/z88
 zabbix		ports/net-mgmt/zabbix
-zabbix-agent	ports/net/zabbix-agent
+zabbix-agent	ports/net-mgmt/zabbix-agent
 zabit		ports/mail/zabit
 zangband	ports/games/zangband
 zaptel		ports/misc/zaptel
