@@ -14573,6 +14573,7 @@ smm++		ports/net/smm++
 smokeping	ports/net/smokeping
 smpeg		ports/multimedia/smpeg
 smpeg-xmms	ports/multimedia/smpeg-xmms
+smplayer-themes	ports/multimedia/smplayer-themes
 smproxy		ports/x11/smproxy
 sms_client	ports/comms/sms_client
 smssend		ports/misc/smssend
