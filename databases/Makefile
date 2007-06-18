@@ -338,6 +338,7 @@
     SUBDIR += pgpool
     SUBDIR += pgpool-II
     SUBDIR += pgpoolAdmin
+    SUBDIR += pgtcl
     SUBDIR += pgtop
     SUBDIR += pgworksheet
     SUBDIR += php-sqlite3
