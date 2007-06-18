@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: webfsd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable webfsd:
+#
+# webfsd_enable=(bool):	Set it to "YES" to enable webfsd
+# 
+# and add appropriate webfsd_flags.
+#
+
+. %%RC_SUBR%%
+
+name="webfsd"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${webfsd_enable="NO"}
+
+command=%%PREFIX%%/sbin/${name}
+
+run_rc_command "$1"
