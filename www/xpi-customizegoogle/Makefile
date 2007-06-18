@@ -7,6 +7,7 @@
 
 PORTNAME=	customizegoogle
 PORTVERSION=	0.60
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-fx+fl
 CATEGORIES=	www
 
@@ -16,7 +17,7 @@ COMMENT=	Enhance and tweak Google services
 XPI_NUM=	743
 XPI_ID=		{fce36c1e-58d8-498a-b2a5-66ad1cedebbb}
 XPI_FILES=	Changes GPL Ideas README chrome/customizegoogle.jar \
-		defaults/preferences/prefs.js install.rdf
+		defaults/preferences/prefs.js install.rdf chrome.manifest
 XPI_DIRS=	chrome defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
