@@ -230,5 +230,6 @@
     SUBDIR += wispy-tools
     SUBDIR += yabm
     SUBDIR += zabbix
+    SUBDIR += zabbix-agent
 
 .include <bsd.port.subdir.mk>
