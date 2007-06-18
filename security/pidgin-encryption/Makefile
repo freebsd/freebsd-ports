@@ -1,4 +1,4 @@
-# New ports collection Makefile for: pidgen-encryption
+# New ports collection Makefile for: pidgin-encryption
 # Date created:		2004-05-01
 # Whom:			ports@c0decafe.net
 #
