@@ -21,12 +21,6 @@ PROGRAMS=	crimap
 EXAMPLES=	chr7a.gen demo.dat
 EXIT_PATCH=	e_ped.c get_log.c our_allo.c our_orde.c
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-patch:
 .for file in ${EXIT_PATCH}
 	@${REINPLACE_CMD} -e 's|exit\ *()|exit(0)|' ${WRKSRC}/${file}
@@ -50,4 +44,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
