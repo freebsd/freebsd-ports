@@ -6,16 +6,25 @@
 #
 
 PORTNAME=	dbutils
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	databases python
-MASTER_SITES=	http://www.w4py.org/downloads/DBUtils/
+MASTER_SITES=	http://www.w4py.org/downloads/DBUtils/ \
+		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	DBUtils-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Providing solid, persistent and pooled connections to a database
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+
+DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/DBUtils/Docs/ ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
