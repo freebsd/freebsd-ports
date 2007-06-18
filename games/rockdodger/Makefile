@@ -1,6 +1,6 @@
-# New ports collection makefile for: rockdodger
-# Date created:		02 Dec 2002
-# Whom:			nbm
+# New ports collection makefile for:	Rock Dodger
+# Date created:				02 Dec 2002
+# Whom:					Neil Blakey-Milner <nbm@FreeBSD.org>
 #
 # $FreeBSD$
 #
