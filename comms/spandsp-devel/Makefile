@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spandsp
-DISTVERSION=	0.0.3pre27
+DISTVERSION=	0.0.4pre3
 CATEGORIES=	comms
 MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/ \
 		ftp://ftp.rewt.org.uk/pub/distfiles/
@@ -19,7 +19,7 @@ COMMENT=	Fax DSP library
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
-WRKSRC=		${WRKDIR}/spandsp-0.0.3/
+WRKSRC=		${WRKDIR}/spandsp-0.0.4/
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 

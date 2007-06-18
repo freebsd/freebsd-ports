@@ -66,6 +66,7 @@ include/spandsp/v42bis.h
 include/spandsp/v8.h
 include/spandsp/vector_float.h
 include/spandsp/vector_int.h
+include/spandsp/version.h
 lib/libspandsp.a
 lib/libspandsp.la
 lib/libspandsp.so
