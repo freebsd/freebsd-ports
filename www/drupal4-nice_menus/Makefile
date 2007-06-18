@@ -12,7 +12,7 @@ CATEGORIES=	www security
 MASTER_SITE=	http://ftp.osuosl.org/pub/drupal/files/projects/
 
 MAINTAINER=	nick@foobar.org
-COMMENT=	Access control system for the Drupal CMS based on Taxonomy classification
+COMMENT=	CSS / Javascript pull-down menus for Drupal
 
 DRUPAL_MODULE=	yes
 MODULE_FILES=	arrow-down.png arrow-left.png arrow-right.png \
