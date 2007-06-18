@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	opal
-PORTVERSION=	2.2.4
-PORTREVISION=	1
+PORTVERSION=	2.2.8
 CATEGORIES=	net
-MASTER_SITES=	http://www.voxgratia.org/releases/
-DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src-
-EXTRACT_SUFX=	tar.gz
+MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/sources/
 
-MAINTAINER=	jbq@caraldi.com
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	VoIP abstraction library
 
-LIB_DEPENDS=	pt_r:${PORTSDIR}/devel/pwlib
+OPTIONS=	FFMPEG	"Support H263 audio/video codec"	on \
+		SPEEX	"Use speex installed by audio/speex"	on
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
+LIB_DEPENDS=	pt_r:${PORTSDIR}/devel/pwlib
 
 # In opal's Makefile the default make's target is optshared
 ALL_TARGET=	optshared
@@ -27,6 +25,7 @@ USE_AUTOTOOLS=	autoconf:259
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_ARGS=	-j`${SYSCTL} -n hw.ncpu`
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${WRKSRC}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
@@ -37,16 +36,17 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 # Be sure to compile position-independent objects for the shared libraries
 CFLAGS+=	-fPIC
 
-.ifdef (WITH_FFMPEG)
+.if defined(WITHOUT_FFMPEG)
+CONFIGURE_ARGS+=--disable-h263avcodec
+.else
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=--enable-h263avcodec=${LOCALBASE}/include/ffmpeg
 .endif
 
-.ifdef (WITH_SPEEX)
-LIB_DEPENDS+=	speex:${PORTSDIR}/audio/speex
-BUILD_DEPENDS+=	${LOCALBASE}/include/speex/speex_echo.h:${PORTSDIR}/audio/speex
+.if defined(WITHOUT_SPEEX)
 CONFIGURE_ARGS+=--enable-localspeex=no
 .else
+LIB_DEPENDS+=	speex:${PORTSDIR}/audio/speex
 CONFIGURE_ARGS+=--enable-localspeex=yes
 .endif
 
