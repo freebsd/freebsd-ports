@@ -24,8 +24,8 @@ SUB_FILES=	pkg-message
 PLIST_SUB+=	WWWDIR_REL=${WWWDIR_REL}
 
 .ifdef(MANTISDIR)
-WWWDIR=	${MATISDIR}
-DMSG=	"Usage of MATISDIR is depreciated and will be dropped in future versions, please use WWWDIR instead."
+WWWDIR=	${MANTISDIR}
+DMSG=	"Usage of MANTISDIR is depreciated and will be dropped in future versions, please use WWWDIR instead."
 .endif
 
 pre-everything::
