@@ -12,7 +12,8 @@
 PORTNAME=	freeipmi
 PORTVERSION=	0.3.3
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/ \
+	ftp://ftp.riss-telecom.ru/pub/mirrors/ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/
 
 MAINTAINER=	frolov@riss-telecom.ru
 COMMENT=	Library and tools to support IPMI-capable hardware
@@ -22,7 +23,6 @@ LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
