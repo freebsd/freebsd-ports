@@ -11801,6 +11801,7 @@ pgpool		ports/databases/pgpool
 pgpool-II	ports/databases/pgpool-II
 pgpoolAdmin	ports/databases/pgpoolAdmin
 pgpsendmail	ports/mail/pgpsendmail
+pgtcl		ports/databases/pgtcl
 pgtop		ports/databases/pgtop
 pgworksheet	ports/databases/pgworksheet
 phalanx		ports/games/phalanx
