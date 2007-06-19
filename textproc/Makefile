@@ -36,6 +36,7 @@
     SUBDIR += br-aspell
     SUBDIR += british-ispell
     SUBDIR += bsddiff
+    SUBDIR += bsdgrep
     SUBDIR += btparse
     SUBDIR += c2html
     SUBDIR += ca-aspell
