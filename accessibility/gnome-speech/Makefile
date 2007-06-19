@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-speech
-PORTVERSION=	0.4.13
+PORTVERSION=	0.4.14
 CATEGORIES=	accessibility audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
