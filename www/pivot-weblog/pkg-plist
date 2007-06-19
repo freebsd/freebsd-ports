@@ -57,6 +57,7 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/blank.htm
 %%BLOGDIR%%/extensions/hooks/editor_wysi/langs/de.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/langs/es.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/langs/fr.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/langs/nb.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/langs/nl.js
@@ -66,6 +67,7 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/images/template.gif
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/langs/de.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/langs/es.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/langs/fr.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/langs/nb.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/langs/nl.js
@@ -98,6 +100,7 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/jscripts/functions.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/langs/de.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/langs/es.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/langs/fr.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/langs/nb.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/langs/nl.js
@@ -110,6 +113,7 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/jscripts/flash.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/langs/de.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/langs/es.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/langs/fr.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/langs/nb.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/langs/nl.js
@@ -118,6 +122,7 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/images/iespell.gif
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/langs/de.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/langs/es.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/langs/fr.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/langs/nb.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/langs/nl.js
@@ -127,6 +132,7 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/images/inserttime.gif
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/langs/de.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/langs/es.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/langs/fr.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/langs/nb.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/langs/nl.js
@@ -142,7 +148,10 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/media/images/windowsmedia.gif
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/media/jscripts/embed.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/media/jscripts/media.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/media/langs/de.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/media/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/media/langs/es.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/media/langs/fr.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/media/langs/nb.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/media/media.htm
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/blank.htm
@@ -156,6 +165,7 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/jscripts/pasteword.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/langs/de.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/langs/es.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/langs/fr.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/langs/nb.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/langs/nl.js
@@ -170,6 +180,7 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/jscripts/search.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/langs/de.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/langs/es.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/langs/fr.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/langs/nb.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/langs/nl.js
@@ -200,6 +211,7 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/jscripts/table.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/langs/de.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/langs/es.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/langs/fr.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/langs/nb.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/langs/nl.js
@@ -214,6 +226,7 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/visualchars/langs/nb.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/abbr.htm
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/acronym.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/attributes.htm
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/cite.htm
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/css/popup.css
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/css/xhtmlxtras.css
@@ -233,7 +246,10 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/jscripts/del.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/jscripts/element_common.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/jscripts/ins.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/langs/de.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/langs/es.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/langs/fr.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/langs/nb.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/xhtmlxtras/langs/nl.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/zoom/editor_plugin.js
@@ -244,6 +260,7 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/anchor.htm
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/charmap.htm
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/color_picker.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/css/colorpicker.css
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/css/editor_content.css
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/css/editor_popup.css
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/css/editor_ui.css
@@ -269,6 +286,7 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/close.gif
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/code.gif
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/color.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/colors.jpg
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/copy.gif
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/custom_1.gif
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/cut.gif
@@ -338,6 +356,7 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/jscripts/source_editor.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/langs/de.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/langs/es.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/langs/fr.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/langs/nb.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/langs/nl.js
@@ -355,7 +374,6 @@
 %%BLOGDIR%%/extensions/hooks/pre_editor_wysi.php
 %%BLOGDIR%%/extensions/index.html
 %%BLOGDIR%%/extensions/moblog/config.inc-default.php
-%%BLOGDIR%%/extensions/moblog/fetchmail-imap.php
 %%BLOGDIR%%/extensions/moblog/fetchmail.php
 %%BLOGDIR%%/extensions/moblog/inspect.zip
 %%BLOGDIR%%/extensions/moblog/is_a.php
