@@ -1018,6 +1018,13 @@ MASTER_SITE_QT+= \
 	ftp://ftp.trolltech.com/qt/source/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_RAR)
+.for mirror in 2 3 4 5 6 7 8 9
+MASTER_SITE_RAR+= \
+	http://files${mirror}.rarlab.com/rar/%SUBDIR%/
+.endfor
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_REDHAT_LINUX)
 MASTER_SITE_REDHAT_LINUX+= \
 	http://mirrors.usc.edu/pub/linux/distributions/redhat/redhat/linux/%SUBDIR%/ \
