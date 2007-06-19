@@ -4145,6 +4145,7 @@ gstreamer-plugins-mpeg2dec	ports/multimedia/gstreamer-plugins-mpeg2dec
 gstreamer-plugins-mpeg2enc	ports/multimedia/gstreamer-plugins-mpeg2enc
 gstreamer-plugins-musepack	ports/audio/gstreamer-plugins-musepack
 gstreamer-plugins-musicbrainz	ports/audio/gstreamer-plugins-musicbrainz
+gstreamer-plugins-nas	ports/audio/gstreamer-plugins-nas
 gstreamer-plugins-neon		ports/www/gstreamer-plugins-neon
 gstreamer-plugins-ogg		ports/audio/gstreamer-plugins-ogg
 gstreamer-plugins-pango		ports/x11-toolkits/gstreamer-plugins-pango
