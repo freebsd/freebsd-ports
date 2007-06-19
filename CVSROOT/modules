@@ -3977,7 +3977,6 @@ gpasman		ports/security/gpasman
 gpass		ports/security/gpass
 gpc		ports/lang/gpc
 gpctool		ports/x11/gpctool
-gpdf		ports/graphics/gpdf
 gperiodic	ports/biology/gperiodic
 gpgme		ports/security/gpgme
 gpgme03		ports/security/gpgme03
