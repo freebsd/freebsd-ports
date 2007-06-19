@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="903654bd-1927-11dc-b8a0-02e0185f8d72">
+    <topic>clamav -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.90.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Clamav had been found vulnerable to multiple vulnerabilities:</p>
+	<ul>
+	  <li>Improper checking for the end of an buffer causing an
+	    unspecified attack vector.</li>
+	  <li>Insecure temporary file handling, which could be exploited
+	    to read sensitive information.</li>
+	  <li>A flaw in the parser engine which could allow a remote
+	    attacker to bypass the scanning of RAR files.</li>
+	  <li>A flaw in libclamav/unrar.c which could cause a remote
+	    Denial of Service (DoS) by sending a specially crafted
+	    RAR file with a modified vm_codesize.</li>
+	  <li>A flaw in the OLE2 parser which could cause a remote
+	    Denial of Service (DoS).</li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-2650</cvename>
+      <cvename>CVE-2007-3023</cvename>
+      <cvename>CVE-2007-3024</cvename>
+      <cvename>CVE-2007-3122</cvename>
+      <cvename>CVE-2007-3123</cvename>
+      <url>http://news.gmane.org/gmane.comp.security.virus.clamav.devel/cutoff=2853</url>
+    </references>
+    <dates>
+      <discovery>2007-04-18</discovery>
+      <entry>2007-06-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8092b820-1d6f-11dc-a0b2-001921ab2fa4">
     <topic>p5-Mail-SpamAssassin -- local user symlink-attack DoS vulnerability</topic>
     <affects>
