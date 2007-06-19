@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	sunbird
-DISTVERSION=	0.5rc1
+DISTVERSION=	0.5rc2
 DISTVERSIONSUFFIX=	.en-US.linux-i686
 PORTEPOCH=	1
 CATEGORIES=	deskutils
 MASTER_SITE_SUBDIR?=	calendar/${PORTNAME}/releases/${DISTVERSION}/linux-i686/en-US
 DISTNAME=	${PORTNAME}-0.5${DISTVERSIONSUFFIX}
+DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Calendaring application branched from Mozilla
