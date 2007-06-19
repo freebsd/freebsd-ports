@@ -18,7 +18,7 @@ COMMENT=	XFce 4 window manager
 
 CONFIGURE_ARGS=	--enable-xinerama
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS= yes
+INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -29,7 +29,8 @@ USE_XFCE=	configenv libmcs libutil libgui mcsmanager panel
 USE_XLIB=	yes
 
 OPTIONS=	COMPOSITE	"Support the experimental X11 Composite extension"	on \
-		STARTUP 	"Enable startup notification support"			on
+		STARTUP 	"Enable startup notification support"			on \
+		REVMOUSE	"Reverse mouse workspace changing direction"		off
 
 .include <bsd.port.pre.mk>
 
@@ -44,6 +45,10 @@ LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
+.endif
+
+.if defined(WITH_REVMOUSE)
+EXTRA_PATCHES=  ${FILESDIR}/extrapatch-src__events.c
 .endif
 
 post-patch:
