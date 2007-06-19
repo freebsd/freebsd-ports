@@ -6,6 +6,7 @@ tinderbox/scripts/enterbuild
 tinderbox/scripts/etc/rc.d/tinderd.sh
 tinderbox/scripts/lib/Build.pm
 tinderbox/scripts/lib/BuildPortsQueue.pm
+tinderbox/scripts/lib/Hook.pm
 tinderbox/scripts/lib/Host.pm
 tinderbox/scripts/lib/Jail.pm
 tinderbox/scripts/lib/MakeCache.pm
@@ -51,11 +52,13 @@ tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.2.0_to_2.3.0.sql
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.3.0_to_2.3.1.sql
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.3.1_to_2.3.2.sql
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.3.2_to_2.3.3.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.3.3_to_2.4.0.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.1.1_to_2.2.0.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.2.0_to_2.3.0.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.3.0_to_2.3.1.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.3.1_to_2.3.2.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.3.2_to_2.3.3.sql
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.3.3_to_2.4.0.sql
 tinderbox/scripts/upgrade/mig_shlib.sh
 %%WEB_EXP%%tinderbox/scripts/www-exp/core/Build.php
 %%WEB_EXP%%tinderbox/scripts/www-exp/core/BuildPortsQueue.php
@@ -112,7 +115,6 @@ tinderbox/scripts/upgrade/mig_shlib.sh
 %%WEB%%tinderbox/scripts/www/showbuild.php
 %%WEB%%tinderbox/scripts/www/showport.php
 %%WEB%%tinderbox/scripts/www/tinderstyle.css
-
 %%WEB_EXP%%@dirrm tinderbox/scripts/www-exp/templates/default
 %%WEB_EXP%%@dirrm tinderbox/scripts/www-exp/templates
 %%WEB_EXP%%@dirrm tinderbox/scripts/www-exp/module
@@ -124,7 +126,6 @@ tinderbox/scripts/upgrade/mig_shlib.sh
 @dirrm tinderbox/scripts/lib
 @dirrm tinderbox/scripts/etc/rc.d
 @dirrm tinderbox/scripts/etc
-
 @dirrmtry tinderbox/scripts/www-exp
 @dirrmtry tinderbox/scripts
 @dirrmtry tinderbox
