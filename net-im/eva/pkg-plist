@@ -1,5 +1,5 @@
 bin/eva
-share/applnk/Internet/eva.desktop
+share/applications/kde/eva.desktop
 share/apps/eva/evaui.rc
 share/apps/eva/image/face/1.png
 share/apps/eva/image/face/10.png
@@ -381,6 +381,9 @@ share/apps/eva/servers
 share/apps/eva/sound/msg.wav
 share/apps/eva/sound/online.wav
 share/apps/eva/sound/system.wav
+share/doc/HTML/en/eva/common
+share/doc/HTML/en/eva/index.cache.bz2
+share/doc/HTML/en/eva/index.docbook
 share/icons/hicolor/128x128/apps/eva.png
 share/icons/hicolor/16x16/apps/eva.png
 share/icons/hicolor/22x22/apps/eva.png
@@ -388,6 +391,7 @@ share/icons/hicolor/32x32/apps/eva.png
 share/icons/hicolor/48x48/apps/eva.png
 share/icons/hicolor/64x64/apps/eva.png
 share/locale/zh_CN/LC_MESSAGES/eva.mo
+@dirrm share/doc/HTML/en/eva
 @dirrm share/apps/eva/sound
 @dirrm share/apps/eva/image/theme
 @dirrm share/apps/eva/image/smiley
