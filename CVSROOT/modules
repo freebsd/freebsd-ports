@@ -4153,6 +4153,7 @@ gstreamer-plugins-pulse		ports/audio/gstreamer-plugins-pulse
 gstreamer-plugins-sdl		ports/devel/gstreamer-plugins-sdl
 gstreamer-plugins-shout2	ports/audio/gstreamer-plugins-shout2
 gstreamer-plugins-sidplay	ports/audio/gstreamer-plugins-sidplay
+gstreamer-plugins-sndfile	ports/audio/gstreamer-plugins-sndfile
 gstreamer-plugins-spc	ports/audio/gstreamer-plugins-spc
 gstreamer-plugins-speex		ports/audio/gstreamer-plugins-speex
 gstreamer-plugins-swfdec	ports/graphics/gstreamer-plugins-swfdec
