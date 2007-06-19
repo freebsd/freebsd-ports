@@ -6,7 +6,7 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-ugly/Makefile,v 1.8 2006/09/14 21:20:43 ahze Exp $
 #
 
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	Ugly gstreamer-plugins

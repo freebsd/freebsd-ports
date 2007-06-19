@@ -6,7 +6,7 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-good/Makefile,v 1.10 2006/09/14 22:41:06 ahze Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	Good gstreamer-plugins
