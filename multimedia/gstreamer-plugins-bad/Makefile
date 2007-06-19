@@ -6,7 +6,7 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-bad/Makefile,v 1.7 2006/09/14 21:25:16 ahze Exp $
 #
 
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	Bad gstreamer-plugins
@@ -20,7 +20,7 @@ BUILD_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR
 RUN_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
 
 gst_bad_DIST=	bad
-BAD_GST_DIRS=	gst sys gst-libs po
+BAD_GST_DIRS=	gst-libs sys gst po
 PLIST_SUB=	VERSION="${GST_VERSION}"
 NO_GSTREAMER_COMMON=	yes
 PLIST=	${.CURDIR}/pkg-plist

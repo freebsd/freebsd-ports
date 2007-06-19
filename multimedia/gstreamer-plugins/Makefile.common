@@ -28,14 +28,19 @@ BAD_GST_ALL_PLUGINS+= \
 		mpeg2enc \
 		musepack \
 		musicbrainz \
+		mythtv \
+		nas \
 		neon \
 		sdl \
+		sndfile \
 		soundtouch \
 		spc \
 		swfdec \
-		wavpack \
+		timidity \
+		x264 \
 		xvid
-#		throra
+#		ladspa \
+#		theora
 
 # good
 GOOD_GST_ALL_PLUGINS+= \
@@ -56,8 +61,10 @@ GOOD_GST_ALL_PLUGINS+= \
 		raw1394 \
 		shout2 \
 		speex \
-		taglib
-# Ugly
+		taglib \
+		wavpack
+
+# ugly
 UGLY_GST_ALL_PLUGINS+= \
 		a52dec \
 		amrnb \
@@ -339,7 +346,6 @@ gst_xvid_DIST=	bad
 
 # wavpack
 gst_wavpack_LIB_DEPENDS+=	wavpack.1:${PORTSDIR}/audio/wavpack
-gst_wavpack_DIST=	bad
 
 .endif # NO_GSTREAMER_COMMON
 

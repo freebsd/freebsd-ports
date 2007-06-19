@@ -34,6 +34,9 @@ lib/gstreamer-%%VERSION%%/libgsteffectv.so
 lib/gstreamer-%%VERSION%%/libgstflxdec.a
 lib/gstreamer-%%VERSION%%/libgstflxdec.la
 lib/gstreamer-%%VERSION%%/libgstflxdec.so
+lib/gstreamer-%%VERSION%%/libgstgamma.a
+lib/gstreamer-%%VERSION%%/libgstgamma.la
+lib/gstreamer-%%VERSION%%/libgstgamma.so
 lib/gstreamer-%%VERSION%%/libgstgoom.a
 lib/gstreamer-%%VERSION%%/libgstgoom.la
 lib/gstreamer-%%VERSION%%/libgstgoom.so
@@ -61,6 +64,9 @@ lib/gstreamer-%%VERSION%%/libgstnavigationtest.so
 lib/gstreamer-%%VERSION%%/libgstossaudio.a
 lib/gstreamer-%%VERSION%%/libgstossaudio.la
 lib/gstreamer-%%VERSION%%/libgstossaudio.so
+lib/gstreamer-%%VERSION%%/libgstqtdemux.a
+lib/gstreamer-%%VERSION%%/libgstqtdemux.la
+lib/gstreamer-%%VERSION%%/libgstqtdemux.so
 lib/gstreamer-%%VERSION%%/libgstrtp.a
 lib/gstreamer-%%VERSION%%/libgstrtp.la
 lib/gstreamer-%%VERSION%%/libgstrtp.so
@@ -79,6 +85,9 @@ lib/gstreamer-%%VERSION%%/libgstvideobalance.so
 lib/gstreamer-%%VERSION%%/libgstvideobox.a
 lib/gstreamer-%%VERSION%%/libgstvideobox.la
 lib/gstreamer-%%VERSION%%/libgstvideobox.so
+lib/gstreamer-%%VERSION%%/libgstvideocrop.a
+lib/gstreamer-%%VERSION%%/libgstvideocrop.la
+lib/gstreamer-%%VERSION%%/libgstvideocrop.so
 lib/gstreamer-%%VERSION%%/libgstvideoflip.a
 lib/gstreamer-%%VERSION%%/libgstvideoflip.la
 lib/gstreamer-%%VERSION%%/libgstvideoflip.so
@@ -100,6 +109,7 @@ share/locale/cs/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/ja/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/or/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
