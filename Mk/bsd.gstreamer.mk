@@ -57,8 +57,8 @@ _USE_GSTREAMER10_ALL=	a52dec aalib annodex bad bz2 cairo cdaudio cdparanoia dts 
 			dv dvd esound faac faad ffmpeg flac gconf gnomevfs \
 			gnonlin good gsm hal ivorbis jack jpeg ladspa lame \
 			libcaca libmms libpng libvisual mp3 mpeg2enc mpeg2dec \
-			musepack neon ogg pango pulse python sdl shout2 sidplay \
-			spc speex swfdec theora ugly vorbis wavpack xvid
+			musepack nas neon ogg pango pulse python sdl shout2 sidplay \
+			sndfile spc speex swfdec theora ugly vorbis wavpack x264 xvid
 
 # other plugins
 OTHER_GSTREAMER_PLUGINS+=	core yes ${_USE_GSTREAMER10_ALL} fluendo-mp3 mad
