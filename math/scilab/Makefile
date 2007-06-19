@@ -7,6 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	math cad parallel
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
@@ -89,6 +90,7 @@ CXX=		g++32
 
 WANT_FORTRAN=yes #dummy but future use
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+RUN_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 F77=		gfortran42
 FC=		gfortran42
 CONFIGURE_ARGS+=	--with-gfortran
