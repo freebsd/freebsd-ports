@@ -1,9 +1,9 @@
---- Makefile.PL	Wed Aug 20 17:07:25 2003
-+++ Makefile.PL~	Wed Aug 20 17:07:16 2003
+--- Makefile.PL.orig	Sat May 19 15:56:18 2007
++++ Makefile.PL	Tue Jun 19 16:05:28 2007
 @@ -98,6 +98,18 @@
- 		Socket     => 1.3,
  		IO::Socket => 1.05
  	      },
+   dist => { DIST_DEFAULT => 'mydist', },
 +  'MAN3PODS'  => {
 +    'Net/Cmd.pm' => '$(INST_MAN3DIR)/Net::Cmd.$(MAN3EXT)',
 +    'Net/Config.pm' => '$(INST_MAN3DIR)/Net::Config.$(MAN3EXT)',
