@@ -1,0 +1,44 @@
+--- src/game/World.h
++++ src/game/World.h
+@@ -120,6 +120,7 @@
+     RATE_AUCTION_TIME,
+     RATE_AUCTION_DEPOSIT,
+     RATE_AUCTION_CUT,
++    RATE_HONOR,
+     RATE_MINING_AMOUNT,
+     RATE_MINING_NEXT,
+     MAX_RATES
+--- src/mangosd/mangosd.conf.in
++++ src/mangosd/mangosd.conf.in
+@@ -233,6 +233,9 @@
+ Rate.Mining.Amount = 1
+ Rate.Mining.Next   = 1
+ 
++#
++Rate.Honor = 1
++
+ # Save respawn time for creatures at death, for gameobjects at use/open
+ #          0 (save creature/gameobject respawn time at grid unload)
+ # Default: 1 (save creature/gameobject respawn time without waiting grid unload)
+ 
+--- src/game/Player.cpp
++++ src/game/Player.cpp
+@@ -4697,7 +4697,7 @@
+ 
+     UpdateHonorFields();                                    // to prevent CalcluateHonor() on a new day before old honor was UpdateHonorFields()
+ 
+-    float honor = ((float)urand(1,80))/10;                  // honor between: 0.1 - 8.0
++    float honor = ((float)urand(1,80))/10 * sWorld.getRate(RATE_HONOR);                  // honor between: 0.1 - 8.0
+     float approx_honor = honor * (((float)urand(8,12))/10); // approx honor: 80% - 120% of real honor
+     sDatabase.Execute("INSERT INTO `character_kill` (`guid`,`creature_template`,`honor`,`date`) VALUES (%u, %u, %f, %u)", GUID_LOPART(GetGUID()), uVictim->GetEntry(), honor, time(0));
+ 
+--- src/game/World.cpp
++++ src/game/World.cpp
+@@ -257,6 +257,7 @@
+     rate_values[RATE_AUCTION_TIME]  = sConfig.GetFloatDefault("Rate.Auction.Time", 1);
+     rate_values[RATE_AUCTION_DEPOSIT] = sConfig.GetFloatDefault("Rate.Auction.Deposit", 1);
+     rate_values[RATE_AUCTION_CUT] = sConfig.GetFloatDefault("Rate.Auction.Cut", 1);
++    rate_values[RATE_HONOR] = sConfig.GetFloatDefault("Rate.Honor", 1);
+     rate_values[RATE_MINING_AMOUNT] = sConfig.GetFloatDefault("Rate.Mining.Amount",1);
+     rate_values[RATE_MINING_NEXT]   = sConfig.GetFloatDefault("Rate.Mining.Next",1);
+ 

@@ -1,0 +1,53 @@
+--- src/shared/EventSystem.cpp	Wed May 23 10:14:13 2007
++++ src/shared/EventSystem.cpp	Wed May 23 10:16:34 2007
+@@ -21,7 +21,7 @@
+ #include "EventSystem.h"
+ 
+ #ifndef WIN32
+-#include <sys/timeb.h>
++#include <sys/time.h>
+ #endif
+ 
+ PeriodicEvent *msPEvents=NULL;
+@@ -103,10 +103,11 @@
+     #if PLATFORM == PLATFORM_WIN32
+     return timeGetTime();
+     #else
+-    struct timeb tp;
+-    ftime(&tp);
++    
++    struct timeval tv;
++    gettimeofday(&tv, (struct timezone*) NULL);
+ 
+-    return  tp.time * 1000 + tp.millitm;
++    return  tv.tv_sec * 1000 + tv.tv_usec / 1000;
+     #endif
+ }
+ 
+--- src/shared/Timer.h	Sat Mar 17 14:26:42 2007
++++ src/shared/Timer.h	Wed May 23 10:43:28 2007
+@@ -27,7 +27,7 @@
+ #   include <time.h>
+ #else
+ # if defined(__FreeBSD__) || defined(__APPLE_CC__)
+-#   include <time.h>
++#   include <sys/time.h>
+ # endif
+ #   include <sys/timeb.h>
+ #endif
+@@ -38,10 +38,11 @@
+     #if PLATFORM == PLATFORM_WIN32
+     time_in_ms = timeGetTime();
+     #else
+-    struct timeb tp;
+-    ftime(&tp);
+-
+-    time_in_ms = tp.time * 1000 + tp.millitm;
++    struct timeval tv;
++    gettimeofday(&tv, (struct timezone*) NULL); 
++    
++    time_in_ms = tv.tv_sec * 1000 + tv.tv_usec / 1000; 
++    
+     #endif
+ 
+     return time_in_ms;
