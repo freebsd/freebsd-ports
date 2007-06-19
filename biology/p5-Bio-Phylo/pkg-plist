@@ -6,6 +6,8 @@ bin/dndtag.pl
 bin/droptip.pl
 bin/postmb.pl
 %%SITE_PERL%%/Bio/Phylo.pm
+%%SITE_PERL%%/Bio/ObjectCompat.pod
+%%SITE_PERL%%/Bio/Phylo/Adaptor.pm
 %%SITE_PERL%%/Bio/Phylo/ConfigData.pm
 %%SITE_PERL%%/Bio/Phylo/Forest.pm
 %%SITE_PERL%%/Bio/Phylo/Forest/Node.pm
@@ -14,15 +16,32 @@ bin/postmb.pl
 %%SITE_PERL%%/Bio/Phylo/IO.pm
 %%SITE_PERL%%/Bio/Phylo/Listable.pm
 %%SITE_PERL%%/Bio/Phylo/Manual.pod
+%%SITE_PERL%%/Bio/Phylo/Adaptor/Bioperl/Node.pm
+%%SITE_PERL%%/Bio/Phylo/Adaptor/Bioperl/Datum.pm
+%%SITE_PERL%%/Bio/Phylo/Adaptor/Bioperl/Tree.pm
+%%SITE_PERL%%/Bio/Phylo/Adaptor/Bioperl/Matrix.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Datatype.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Datum.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Matrix.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/TypeSafeData.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Protein.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Standard.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Restriction.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Dna.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Custom.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Mixed.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Continuous.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Rna.pm
+%%SITE_PERL%%/Bio/Phylo/Mediators/TaxaMediator.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Newick.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Nexus.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Table.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Taxlist.pm
 %%SITE_PERL%%/Bio/Phylo/Taxa.pm
 %%SITE_PERL%%/Bio/Phylo/Taxa/Taxon.pm
+%%SITE_PERL%%/Bio/Phylo/Taxa/TaxaLinker.pm
+%%SITE_PERL%%/Bio/Phylo/Taxa/TaxonLinker.pm
 %%SITE_PERL%%/Bio/Phylo/Treedrawer.pm
 %%SITE_PERL%%/Bio/Phylo/Treedrawer/Svg.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Mrp.pm
@@ -32,12 +51,17 @@ bin/postmb.pl
 %%SITE_PERL%%/Bio/Phylo/Util/CONSTANT.pm
 %%SITE_PERL%%/Bio/Phylo/Util/Exceptions.pm
 %%SITE_PERL%%/Bio/Phylo/Util/IDPool.pm
+%%SITE_PERL%%/Bio/Phylo/Util/XMLWritable.pm
+@dirrm %%SITE_PERL%%/Bio/Phylo/Adaptor/Bioperl
+@dirrm %%SITE_PERL%%/Bio/Phylo/Adaptor
 @dirrm %%SITE_PERL%%/Bio/Phylo/Util
 @dirrm %%SITE_PERL%%/Bio/Phylo/Unparsers
 @dirrm %%SITE_PERL%%/Bio/Phylo/Treedrawer
 @dirrm %%SITE_PERL%%/Bio/Phylo/Taxa
 @dirrm %%SITE_PERL%%/Bio/Phylo/Parsers
+@dirrm %%SITE_PERL%%/Bio/Phylo/Matrices/Datatype
 @dirrm %%SITE_PERL%%/Bio/Phylo/Matrices
+@dirrm %%SITE_PERL%%/Bio/Phylo/Mediators
 @dirrm %%SITE_PERL%%/Bio/Phylo/Forest
 @dirrm %%SITE_PERL%%/Bio/Phylo
 @dirrmtry %%SITE_PERL%%/Bio
