@@ -82,7 +82,7 @@ The following changes were made to the ports infrastructure:
 AUTHOR: portmgr@FreeBSD.org
 The following changes were made to the ports infrastructure:
 
-  * The remainging vestiges of FreeBSD 4.X support were removed.  Any
+  * The remaining vestiges of FreeBSD 4.X support were removed.  Any
     remaining users of 4.X should have stayed with the RELEASE_4_EOL tag.
 
   * It is now possible to include USE_PHP after bsd.port.pre.mk.
@@ -96,7 +96,7 @@ The following changes were made to the ports infrastructure:
   * DEPENDS variable was removed, please use other *_DEPENDS variables instead.
 
   * A new pkg-plist keyword is available, @stopdaemon.  It will call forcestop
-    on all rc.subr scripts installed by the port on deinstall, efectively
+    on all rc.subr scripts installed by the port on deinstall, effectively
     stopping services on deinstall/upgrade.
 
   * rc.subr script suffix is now available in Makefile as RC_SUBR_SUFFIX.
@@ -214,7 +214,7 @@ The following functional changes were made to bsd.sites.mk:
 
 20060804:
 AUTHOR:	gabor@FreeBSD.org
-The following functional changes were made to bsd.*.mk and to 
+The following functional changes were made to bsd.*.mk and to
 Tools/scripts/security-check.awk:
 
   * Add DESTDIR support to let one install ports into a jail from outside.
@@ -294,7 +294,7 @@ The following functional changes were made to bsd.port.mk:
 
   * Update default linux_base from '8' (Redhat 8) to 'fc4' (Fedora Core 4) [5]
 
-  * Switch default Linux X implementation from XFree86 to xorg to track the
+  * Switch default Linux X implementation from XFree86 to X.org to track the
     above [5]
 
   * Deprecate INSTALLS_SHLIB and replace it by USE_LDCONFIG.  If set to "yes",
@@ -452,7 +452,7 @@ AUTHOR: netchild@FreeBSD.org
     instead upon the native FreeBSD libraries.
   - The variable LINUX_BASE_PORT contains a string which is suitable as an
     item in *_DEPENDS, so if a port BATCH_DEPENDS or FETCH_DEPENDS upon the
-    default (or overridden) Linux base, ${LINUX_BASE_PORT} should be used+
+    default (or overridden) Linux base, ${LINUX_BASE_PORT} should be used
     instead of a hardcoded reference.
   - If USE_LINUX or OVERRIDE_LINUX_BASE doesn't point to an existing linux_base
     port and if USE_LINUX isn't set to "yes" (case insensitive), the port will
