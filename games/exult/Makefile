@@ -23,27 +23,25 @@ USE_SDL=	sdl mixer
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	expack.1 ipack.1 shp2pcx.1 splitshp.1 textpack.1
 MAN6=	exult.6
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
+SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|desktop||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/configure
 
 post-install:
-.ifndef	(NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in FAQ NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-	@${SED} -e 's|%%DOCSDIR%%|${DOCSDIR}|' <${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
