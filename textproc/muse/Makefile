@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	muse
-PORTVERSION=	3.02.93
-PORTREVISION=	1
+PORTVERSION=	3.03
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://download.gna.org/muse-el/ \
+		${MASTER_SITE_LOCAL} \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+MASTER_SITE_SUBDIR=	dryice
 
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	An authoring and publishing environment for Emacs
