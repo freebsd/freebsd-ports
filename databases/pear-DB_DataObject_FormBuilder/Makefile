@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_DataObject_FormBuilder
-PORTVERSION=	0.18.0
+PORTVERSION=	0.18.1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org
