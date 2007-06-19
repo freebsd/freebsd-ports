@@ -2241,12 +2241,9 @@ multimedia/gstreamer-plugins-libfame|multimedia/gstreamer-plugins-libfame80|2006
 graphics/gstreamer-plugins-libmng|graphics/gstreamer-plugins-libmng80|2006-04-29|Not part of gstreamer 0.10 yet
 audio/gstreamer-plugins-mikmod|audio/gstreamer-plugins-mikmod80|2006-04-29|Not part of gstreamer 0.10 yet
 multimedia/gstreamer-plugins-mplex|multimedia/gstreamer-plugins-mplex80|2006-04-29|Not part of gstreamer 0.10 yet
-audio/gstreamer-plugins-nas|audio/gstreamer-plugins-nas80|2006-04-29|Not part of gstreamer 0.10 yet
 audio/gstreamer-plugins-polypaudio|audio/gstreamer-plugins-pulse|2006-04-29|Project renamed
 audio/gstreamer-plugins-shout|audio/gstreamer-plugins-shout2|2006-04-29|Not part of gstreamer 0.10 yet
 audio/gstreamer-plugins-smoothwave|audio/gstreamer-plugins-smoothwave80|2006-04-29|Not part of gstreamer 0.10 yet
-audio/gstreamer-plugins-sndfile|audio/gstreamer-plugins-sndfile80|2006-04-29|Not part of gstreamer 0.10 yet
-multimedia/gstreamer-plugins-x264|multimedia/gstreamer-plugins-x26480|2006-04-29|Not part of gstreamer 0.10 yet
 graphics/gstreamer-plugins-jpeg-mmx|graphics/gstreamer-plugins-jpeg-mmx80|2006-04-29|Not part of gstreamer 0.10 yet
 audio/gstreamer-plugins-polyp|audio/gstreamer-plugins-pulse|2006-04-29|Project renamed
 www/evolution-caldav||2006-04-29|Now included in evolution-data-server and evolution
@@ -2987,14 +2984,14 @@ audio/gstreamer-plugins-mad80|audio/gstreamer-plugins-mad|2007-06-01|Gstreamer 0
 audio/gstreamer-plugins-mikmod80||2007-06-01|Gstreamer 0.8 has been removed
 audio/gstreamer-plugins-musepack80|audio/gstreamer-plugins-musepack|2007-06-01|Gstreamer 0.8 has been removed
 audio/gstreamer-plugins-musicbrainz80|audio/gstreamer-plugins-musicbrainz|2007-06-01|Gstreamer 0.8 has been removed
-audio/gstreamer-plugins-nas80||2007-06-01|Gstreamer 0.8 has been removed
+audio/gstreamer-plugins-nas80|audio/gstreamer-plugins-nas|2007-06-01|Gstreamer 0.8 has been removed
 audio/gstreamer-plugins-ogg80|audio/gstreamer-plugins-ogg|2007-06-01|Gstreamer 0.8 has been removed
 audio/gstreamer-plugins-polyp80||2007-06-01|Gstreamer 0.8 has been removed
 audio/gstreamer-plugins-shout280|audio/gstreamer-plugins-shout2|2007-06-01|Gstreamer 0.8 has been removed
 audio/gstreamer-plugins-shout80||2007-06-01|Gstreamer 0.8 has been removed
 audio/gstreamer-plugins-sidplay80|audio/gstreamer-plugins-sidplay|2007-06-01|Gstreamer 0.8 has been removed
 audio/gstreamer-plugins-smoothwave80||2007-06-01|Gstreamer 0.8 has been removed
-audio/gstreamer-plugins-sndfile80||2007-06-01|Gstreamer 0.8 has been removed
+audio/gstreamer-plugins-sndfile80|audio/gstreamer-plugins-sndfile|2007-06-01|Gstreamer 0.8 has been removed
 audio/gstreamer-plugins-speex80|audio/gstreamer-plugins-speex|2007-06-01|Gstreamer 0.8 has been removed
 audio/gstreamer-plugins-vorbis80|audio/gstreamer-plugins-vorbis|2007-06-01|Gstreamer 0.8 has been removed
 devel/gstreamer-plugins-gconf80|devel/gstreamer-plugins-gconf|2007-06-01|Gstreamer 0.8 has been removed
@@ -3019,7 +3016,7 @@ multimedia/gstreamer-plugins-libfame80||2007-06-01|Gstreamer 0.8 has been remove
 multimedia/gstreamer-plugins-mpeg2dec80|multimedia/gstreamer-plugins-mpeg2dec|2007-06-01|Gstreamer 0.8 has been removed
 multimedia/gstreamer-plugins-mplex80||2007-06-01|Gstreamer 0.8 has been removed
 multimedia/gstreamer-plugins-theora80|multimedia/gstreamer-plugins-theora|2007-06-01|Gstreamer 0.8 has been removed
-multimedia/gstreamer-plugins-x26480||2007-06-01|Gstreamer 0.8 has been removed
+multimedia/gstreamer-plugins-x26480|multimedia/gstreamer-plugins-x264|2007-06-01|Gstreamer 0.8 has been removed
 multimedia/gstreamer-plugins-xvid80|multimedia/gstreamer-plugins-xvid|2007-06-01|Gstreamer 0.8 has been removed
 multimedia/gstreamer-plugins80|multimedia/gstreamer-plugins|2007-06-01|Gstreamer 0.8 has been removed
 multimedia/gstreamer80|multimedia/gstreamer|2007-06-01|Gstreamer 0.8 has been removed
