@@ -1,6 +1,6 @@
 # Ports collection makefile for:	jeta
 # Date created:			Sat Feb 10, 2007
-# Whom:				Beech Rintoul <beech@alaskaparadise.com>
+# Whom:				Beech Rintoul <beech@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	security www
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Horde wrapper around various Java SSH applets
 
 USE_HORDE=	base pkg-message
