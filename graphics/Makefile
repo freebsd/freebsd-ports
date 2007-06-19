@@ -220,7 +220,6 @@
     SUBDIR += goom
     SUBDIR += gozer
     SUBDIR += gpaint
-    SUBDIR += gpdf
     SUBDIR += gphoto2
     SUBDIR += gplot
     SUBDIR += gpsmanshp
