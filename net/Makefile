@@ -608,6 +608,7 @@
     SUBDIR += pear-Net_Socket
     SUBDIR += pear-Net_Traceroute
     SUBDIR += pear-Net_URL
+    SUBDIR += pear-Net_URL2
     SUBDIR += pear-Net_URL_Mapper
     SUBDIR += pear-Net_UserAgent_Detect
     SUBDIR += pear-Net_UserAgent_Mobile
