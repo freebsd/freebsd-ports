@@ -1,6 +1,5 @@
 %%SITE_PERL%%/Lingua/EN/AddressGrammar.pm
 %%SITE_PERL%%/Lingua/EN/AddressParse.pm
-%%SITE_PERL%%/Lingua/EN/demo.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/AddressParse/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/AddressParse
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
