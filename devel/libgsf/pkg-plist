@@ -16,6 +16,7 @@ include/libgsf-1/gsf/gsf-infile-zip.h
 include/libgsf-1/gsf/gsf-infile.h
 include/libgsf-1/gsf/gsf-input-bzip.h
 include/libgsf-1/gsf/gsf-input-gzip.h
+include/libgsf-1/gsf/gsf-input-http.h
 include/libgsf-1/gsf/gsf-input-impl.h
 include/libgsf-1/gsf/gsf-input-iochannel.h
 include/libgsf-1/gsf/gsf-input-memory.h
@@ -26,6 +27,7 @@ include/libgsf-1/gsf/gsf-input.h
 include/libgsf-1/gsf/gsf-libxml.h
 include/libgsf-1/gsf/gsf-meta-names.h
 include/libgsf-1/gsf/gsf-msole-utils.h
+include/libgsf-1/gsf/gsf-open-pkg-utils.h
 include/libgsf-1/gsf/gsf-opendoc-utils.h
 include/libgsf-1/gsf/gsf-outfile-impl.h
 include/libgsf-1/gsf/gsf-outfile-msole.h
@@ -68,6 +70,7 @@ share/doc/gsf/gsf-Text.html
 share/doc/gsf/gsf-XML-and-libxml.html
 share/doc/gsf/gsf-Zip.html
 share/doc/gsf/gsf-blobs.html
+share/doc/gsf/gsf-index.html
 share/doc/gsf/gsf-memory.html
 share/doc/gsf/gsf-metadata.html
 share/doc/gsf/gsf-users.html
