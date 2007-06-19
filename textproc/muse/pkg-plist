@@ -65,9 +65,10 @@
 %%EMACS_SITE_LISPDIR%%/muse/muse.elc
 %%EXAMPLESDIR%%/Makefile
 %%EXAMPLESDIR%%/QuickStart.muse
-%%EXAMPLESDIR%%/johnw/muse-johnw.el
+%%EXAMPLESDIR%%/emacs-muse.png
+%%EXAMPLESDIR%%/johnw/muse-init.el
 %%EXAMPLESDIR%%/johnw/publish-johnw
-%%EXAMPLESDIR%%/muse.rnc
+%%EXAMPLESDIR%%/muse-made-with.png
 %%EXAMPLESDIR%%/mwolson/muse-init.el
 %%EXAMPLESDIR%%/mwolson/stylesheets/blog.css
 %%EXAMPLESDIR%%/mwolson/stylesheets/common.css

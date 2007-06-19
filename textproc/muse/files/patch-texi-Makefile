@@ -1,13 +1,10 @@
---- Makefile.orig	Sat Sep  9 12:17:41 2006
-+++ Makefile	Sat Sep  9 12:17:51 2006
-@@ -43,8 +43,8 @@
+--- texi/Makefile.orig	Tue Jun 19 09:33:34 2007
++++ texi/Makefile	Tue Jun 19 09:33:54 2007
+@@ -22,5 +22,5 @@
  
- install-info: $(MANUAL).info
+ install: $(MANUAL).info
  	[ -d $(INFODIR) ] || install -d $(INFODIR)
 -	install -m 0644 $(MANUAL).info $(INFODIR)/$(MANUAL)
 -	$(INSTALLINFO) $(INFODIR)/$(MANUAL)
 +	install -m 0644 $(MANUAL).info $(INFODIR)/$(MANUAL).info
 +	$(INSTALLINFO) $(INFODIR)/$(MANUAL).info
- 
- install-bin: autoloads lisp contrib
- 	(cd lisp && $(MAKE) install)
