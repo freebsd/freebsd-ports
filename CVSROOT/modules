@@ -1016,6 +1016,7 @@ bsdiff		ports/misc/bsdiff
 bsdproxy	ports/net/bsdproxy
 bsdsar		ports/sysutils/bsdsar
 bsdsfv		ports/security/bsdsfv
+bsdsort		ports/textproc/bsdsort
 bsdstats	ports/sysutils/bsdstats
 bsdtris		ports/games/bsdtris
 bsfilter	ports/mail/bsfilter
