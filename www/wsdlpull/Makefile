@@ -30,7 +30,9 @@ LDFLAGS=	-L${LOCALBASE}/lib
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|: install-docsDATA|:|g'
-	@${REINPLACE_CMD} -e '/-O2 -Wall/d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/-O2 -Wall/d' \
+	    -e 's|echo aout|echo elf|g' \
+	${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
