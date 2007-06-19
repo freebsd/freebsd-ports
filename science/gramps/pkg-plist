@@ -1,10 +1,4 @@
 bin/gramps
-share/mime/subclasses
-share/mime/globs
-share/mime/magic
-share/mime/XMLnamespaces
-share/mime/aliases
-share/mime/mime.cache
 share/application-registry/gramps.applications
 share/applications/gramps.desktop
 share/gnome/help/gramps/C/figures/bookreport.png
@@ -2012,7 +2006,6 @@ share/locale/tr/LC_MESSAGES/gramps.mo
 share/locale/zh_CN/LC_MESSAGES/gramps.mo
 share/mime-info/gramps.keys
 share/mime-info/gramps.mime
-share/mime/application/x-gedcom.xml
 share/mime/application/x-geneweb.xml
 share/mime/application/x-gramps-package.xml
 share/mime/application/x-gramps-xml.xml
