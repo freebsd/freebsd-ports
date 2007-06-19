@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ireport
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	devel databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -47,7 +46,8 @@ JARFILES=	JasperBabylon-1.0.0.jar LICENSE.asm-attr.txt LICENSE.asm.txt	\
 		microba-0.4.1-bin.jar mondrian-2.0.1.jar nsisant-1.1.jar	\
 		png-encoder-1.5.jar rex-20070125.jar saaj-api-1.3.jar		\
 		servlet.jar spring-2.0-m2.jar spring-context-2.0-m2.jar		\
-		spring-hibernate3-2.0-m2.jar sqleonardo-2007.03.jar toniclf.jar
+		spring-hibernate3-2.0-m2.jar sqleonardo-2007.03.jar		\
+		swingx-2007_05_13.jar toniclf.jar
 BASEFILES=	Changelog.txt notice.txt relnotes${PORTVERSION}.html
 SUBDIRS=	fonts plugins templates
 
@@ -64,8 +64,8 @@ CLSSPTH=	JasperBabylon-1.0.0 antlr asm-attrs asm barbecue-1.1 bsh	\
 		microba-0.4.1-bin mondrian-2.0.1 mysql-connector-java		\
 		nsisant-1.1 png-encoder-1.5 poi postgresql rex-20070125		\
 		saaj-api-1.3 servlet spring-2.0-m2 spring-context-2.0-m2	\
-		spring-hibernate3-2.0-m2 sqleonardo-2007.03 tinylaf toniclf	\
-		xalan xercesImpl xml-apis ${CLSSHSQLDB}
+		spring-hibernate3-2.0-m2 sqleonardo-2007.03 swingx-2007_05_13	\
+		tinylaf toniclf xalan xercesImpl xml-apis ${CLSSHSQLDB}
 
 .include <bsd.port.pre.mk>
 
