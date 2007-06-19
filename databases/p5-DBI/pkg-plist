@@ -57,6 +57,8 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/dbi_sql.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/dbipport.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/dbivport.h
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/dbixs_rev.h
+%%SITE_PERL%%/%%PERL_ARCH%%/dbixs_rev.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/goferperf.pl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Win32
