@@ -1,0 +1,6 @@
+This is the BSD-licensed version of the well-known diff utility, obtained from
+OpenBSD. It lacks some features of GNU diff. It is a proposed project idea
+to replace the GNU diff with this one, but it needs to be completed first.
+Patches are highly appreciated.
+
+WWW: http://www.freebsd.org/projects/ideas/#p-bsdtexttools
