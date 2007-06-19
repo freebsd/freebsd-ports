@@ -1,3 +1,7 @@
 %%SITE_PERL%%/Catalyst/Action/RenderView.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action/RenderView/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action/RenderView
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/Action
 @dirrmtry %%SITE_PERL%%/Catalyst
