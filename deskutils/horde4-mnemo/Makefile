@@ -10,7 +10,7 @@ PORTVERSION=	2.1.1
 PORTREVISION=	2
 CATEGORIES=	deskutils www
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Mnemo is the Horde notes and memos application
 
 USE_HORDE=	base
