@@ -1,0 +1,32 @@
+--- configure.orig	Tue Jun 19 00:45:29 2007
++++ configure	Tue Jun 19 00:46:52 2007
+@@ -25107,13 +25107,6 @@ else
+ fi
+ 
+ 
+-if test $WITH_BONOBO = yes; then
+-  WITH_BONOBO_TRUE=
+-  WITH_BONOBO_FALSE='#'
+-else
+-  WITH_BONOBO_TRUE='#'
+-  WITH_BONOBO_FALSE=
+-fi
+ 
+ 
+     if test $WITH_BONOBO = yes; then
+@@ -25215,6 +25208,15 @@ else
+   WITH_LIBGSF_GNOME_TRUE='#'
+   WITH_LIBGSF_GNOME_FALSE=
+ fi
++
++if test $WITH_BONOBO = yes; then
++  WITH_BONOBO_TRUE=
++  WITH_BONOBO_FALSE='#'
++else
++  WITH_BONOBO_TRUE='#'
++  WITH_BONOBO_FALSE=
++fi
++
+ 
+ 
+ # ===================

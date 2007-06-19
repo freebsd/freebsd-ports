@@ -1,6 +1,6 @@
---- gsf-gnome/Makefile.in.orig	Mon Nov  7 00:22:33 2005
-+++ gsf-gnome/Makefile.in	Mon Nov  7 00:23:42 2005
-@@ -60,9 +60,7 @@
+--- gsf-gnome/Makefile.in.orig	Tue Jun 19 00:39:37 2007
++++ gsf-gnome/Makefile.in	Tue Jun 19 00:41:22 2007
+@@ -66,9 +66,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" 
  libLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(lib_LTLIBRARIES)
  am__DEPENDENCIES_1 =
@@ -11,7 +11,7 @@
  am__libgsf_gnome_1_la_SOURCES_DIST = gsf-input-gnomevfs.c \
  	gsf-output-gnomevfs.c gsf-input-bonobo.c gsf-output-bonobo.c \
  	gsf-shared-bonobo-stream.c
-@@ -277,7 +275,7 @@
+@@ -309,19 +307,21 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  AM_CPPFLAGS = -I$(top_srcdir) $(LIBGSF_GNOME_CFLAGS)
  @WITH_LIBGSF_GNOME_TRUE@lib_LTLIBRARIES = libgsf-gnome-1.la
@@ -19,11 +19,9 @@
 +@WITH_LIBGSF_GNOME_TRUE@libgsf_gnome_1_la_LIBADD = $(LIBGSF_GNOME_LIBS)
  @WITH_LIBGSF_GNOME_TRUE@libgsf_gnome_1_la_LDFLAGS = -version-info \
  @WITH_LIBGSF_GNOME_TRUE@	$(VERSION_INFO) $(am__append_1)
- @WITH_LIBGSF_GNOME_TRUE@libgsf_gnome_1_la_SOURCES = \
-@@ -287,13 +285,15 @@
- @WITH_LIBGSF_GNOME_TRUE@	gsf-output-bonobo.c	\
- @WITH_LIBGSF_GNOME_TRUE@	gsf-shared-bonobo-stream.c
- 
+ @WITH_LIBGSF_GNOME_TRUE@libgsf_gnome_1_la_SOURCES =  \
+ @WITH_LIBGSF_GNOME_TRUE@	gsf-input-gnomevfs.c \
+ @WITH_LIBGSF_GNOME_TRUE@	gsf-output-gnomevfs.c $(am__append_2)
 -libgsf_gnome_1_includedir = $(includedir)/libgsf-1/gsf-gnome
 -libgsf_gnome_1_include_HEADERS = \
 -	gsf-input-gnomevfs.h	\
