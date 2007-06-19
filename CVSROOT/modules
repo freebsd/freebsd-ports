@@ -2120,6 +2120,7 @@ drupal5		ports/www/drupal5
 drupal5-adsense	ports/www/drupal5-adsense
 drupal5-google_analytics	ports/www/drupal5-google_analytics
 drupal5-gsitemap	ports/www/drupal5-gsitemap
+drupal5-nice_menus	ports/www/drupal5-nice_menus
 drupal5-taxonomy_access	ports/www/drupal5-taxonomy_access
 drupal5-taxonomy_ticker	ports/www/drupal5-taxonomy_ticker
 drupal5-tinymce	ports/www/drupal5-tinymce
