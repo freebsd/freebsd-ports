@@ -9,24 +9,3 @@
  
  $(OBJS) : $(HEADERS)
  
---- edit.c.orig	Mon Apr 29 17:36:37 1996
-+++ edit.c	Mon Jun 18 21:46:31 2007
-@@ -34,7 +34,7 @@
- 
- /* work */
- static Window editfuncwin[3];
--static int edit_mode[3] = {EDIT_PLOT, EDIT_GETCOLOR, EDIT_GETCOLOR};
-+int edit_mode[3] = {EDIT_PLOT, EDIT_GETCOLOR, EDIT_GETCOLOR};
- static int area_mode = 0;
- static int circle_mode = 0;
- static int line_mode = 0;
---- magtoppm.c.orig	Mon Apr 29 17:36:41 1996
-+++ magtoppm.c	Mon Jun 18 21:46:06 2007
-@@ -53,7 +53,6 @@
- 
- char rcsid_magtoppm[] = "$Id: magtoppm.c,v 1.22 1996/04/23 10:58:05 yav Exp $";
- static char rcsrev[] = "$Revision: 1.22 $";
--static char *myname = "magtoppm";
- static char mag_magic_number[] = "MAKI02  ";
- static struct {int x,y;} magpostbl[16]={
-   {0,0},{1,0},{2,0},{4,0},{0,1},{1,1},{0,2},{1,2},

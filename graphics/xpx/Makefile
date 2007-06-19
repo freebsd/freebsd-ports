@@ -10,19 +10,29 @@ PORTVERSION=	1.41
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/xpx/
-DISTNAME=	xpx141
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple pixel editing tool to make datas for KISS
 
-WRKSRC=		${WRKDIR}/xpx
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
 XMKMF=		xmkmf
 
+DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
+PORTDOCS=	xpx.doc xpxrc.eg
+PLIST_FILES=	bin/xpx
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|myname|my_name|g' ${WRKSRC}/magtoppm.c
+	@${REINPLACE_CMD} -e '/edit_mode/d' ${WRKSRC}/work.h
+
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ja/xpx
-	${INSTALL_MAN} ${WRKSRC}/xpx.doc ${WRKSRC}/xpxrc.eg ${PREFIX}/share/doc/ja/xpx
+	${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
