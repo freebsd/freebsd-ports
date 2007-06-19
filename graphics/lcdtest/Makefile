@@ -19,7 +19,7 @@ BUILD_DEPENDS=	pngtopnm:${PORTSDIR}/graphics/netpbm
 USE_GMAKE=	yes
 USE_SDL=	sdl image
 CFLAGS=		-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=	-o SDL/SDL.h -o SDL/SDL_image.h
 PLIST_FILES=	bin/lcdtest
