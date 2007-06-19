@@ -237,6 +237,7 @@
     SUBDIR += gstreamer-plugins-pulse
     SUBDIR += gstreamer-plugins-shout2
     SUBDIR += gstreamer-plugins-sidplay
+    SUBDIR += gstreamer-plugins-sndfile
     SUBDIR += gstreamer-plugins-spc
     SUBDIR += gstreamer-plugins-speex
     SUBDIR += gstreamer-plugins-vorbis
