@@ -1009,6 +1009,7 @@ bsd-airtools	ports/net-mgmt/bsd-airtools
 bsd-splash-changer	ports/sysutils/bsd-splash-changer
 bsdadminscripts	ports/sysutils/bsdadminscripts
 bsdbktr_tvtune	ports/multimedia/bsdbktr_tvtune
+bsddiff		ports/textproc/bsddiff
 bsdftpd-ssl	ports/ftp/bsdftpd-ssl
 bsdiff		ports/misc/bsdiff
 bsdproxy	ports/net/bsdproxy
