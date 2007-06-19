@@ -10,8 +10,7 @@ PORTVERSION=	3.70b1
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	archivers
-MASTER_SITES=	http://files.rarlab.com/rar/ \
-		http://files2.rarlab.com/rar/
+MASTER_SITES=	RAR
 DISTNAME=	rarbsd-3.7.b1
 
 MAINTAINER=	gabor@FreeBSD.org
