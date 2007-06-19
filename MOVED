@@ -3075,3 +3075,4 @@ databases/p5-DBD-Pg-13||2007-06-14|Has expired: Use databases/p5-DBD-Pg instead
 multimedia/audacious-docklet|multimedia/audacious-plugins|2007-06-15|Functionality folded into plugins package
 net/cacti|net-mgmt/cacti|2007-06-18|Move to net-mgmt category
 net/zabbix-agent|net-mgmt/zabbix-agent|2007-06-18|Move to net-mgmt category
+graphics/gpdf|graphics/evince|2007-06-19|Obsolete port
