@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	DateTime-Format-Pg
-PORTVERSION=	0.15
+PORTVERSION=	0.16.001
+DISTVERSION=	${PORTVERSION:C/.(...)$/\1/}
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -19,8 +20,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
 		${SITE_PERL}/DateTime/TimeZone.pm:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		${SITE_PERL}/DateTime/Format/Builder.pm:${PORTSDIR}/devel/p5-DateTime-Format-Builder
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PERL_CONFIGURE=	yes
 
