@@ -285,6 +285,13 @@ gst_musicbrainz_PLIST_FILES=	${GST_LIB_DIR}/libgsttrm.so \
 		${GST_LIB_DIR}/libgsttrm.la
 gst_musicbrainz_DIST=	bad
 
+# nas
+gst_nas_LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
+gst_nas_DIST=	bad
+gst_nas_PLIST_FILES=	${GST_LIB_DIR}/libgstnassink.a \
+		${GST_LIB_DIR}/libgstnassink.la \
+		${GST_LIB_DIR}/libgstnassink.so
+
 # neon
 gst_neon_LIB_DEPENDS+=	neon.26:${PORTSDIR}/www/neon
 gst_neon_CONFIGURE_ENV+=	NEON_CFLAGS="-I${LOCALBASE}/include/neon"
@@ -320,6 +327,10 @@ gst_sidplay_PLIST_FILES=	${GST_LIB_DIR}/libgstsid.so \
 		${GST_LIB_DIR}/libgstsid.la
 gst_sidplay_DIST=	ugly
 
+# sndfile
+gst_sndfile_LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+gst_sndfile_DIST=	bad
+
 # spc
 gst_spc_LIB_DEPENDS+=	OpenSPC.3:${PORTSDIR}/audio/openspc
 gst_spc_DIST=		bad
@@ -339,6 +350,10 @@ gst_vorbis_USE_GSTREAMER+=	ogg
 gst_vorbis_LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 gst_vorbis_EXTRA_LIBS+=	-lgsttag-${VERSION} -lgstaudio-${VERSION}
 gst_vorbis_DIST=	base
+
+# x264
+gst_x264_LIB_DEPENDS+=	x264.50:${PORTSDIR}/multimedia/x264
+gst_x264_DIST=	bad
 
 # xvid
 gst_xvid_LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
