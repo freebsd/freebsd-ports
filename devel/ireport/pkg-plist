@@ -24,10 +24,12 @@ bin/iReport
 @exec ln -sf %D/%%JAVAJARDIR%% %D/%%DATADIR%%/lib
 @unexec rm -f %D/%%DATADIR%%/lib
 %%DATADIR%%/notice.txt
+%%DATADIR%%/plugins/JRXMLDataSourcePlugin.xml
 %%DATADIR%%/plugins/checkupdate.xml
 %%DATADIR%%/plugins/example_1.xml
 %%DATADIR%%/plugins/massive_compiler.xml
 %%DATADIR%%/plugins/oracle_options.xml
+%%DATADIR%%/plugins/register.xml
 %%DATADIR%%/plugins/text_wizard.xml
 %%DATADIR%%/plugins/translationStatus.xml
 %%DATADIR%%/relnotes%%VER%%.html
@@ -84,6 +86,7 @@ bin/iReport
 %%JAVAJARDIR%%/spring-context-2.0-m2.jar
 %%JAVAJARDIR%%/spring-hibernate3-2.0-m2.jar
 %%JAVAJARDIR%%/sqleonardo-2007.03.jar
+%%JAVAJARDIR%%/swingx-2007_05_13.jar
 %%JAVAJARDIR%%/toniclf.jar
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/plugins
