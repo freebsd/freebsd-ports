@@ -15,29 +15,26 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL based space-ship "shoot-em-up" game
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
-		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+USE_GNOME=	gnometarget
+USE_SDL=	sdl mixer
+USE_GL=		glut
 USE_GMAKE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
-USE_GL=		yes
-USE_SDL=	sdl mixer
 ALL_TARGET=	${PORTNAME}
 
 MAN6=		glaxium.6
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's|/usr/X11R6|${X11BASE}|g; \
-		s|\$datadir/games/glaxium|\$datadir/glaxium|g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -i '' -e 's|%%X11BASE%%|${X11BASE}|g' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g; \
+		 s|/games/glaxium|/glaxium|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|gcc -g -o|$$(CC) -o|g ; \
+		 s|/games/glaxium|/glaxium|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|Scratcher:: Scratcher|Scratcher|g' \
+		${WRKSRC}/scratcher.hpp
+	@${REINPLACE_CMD} -e 's|TankFire::TankFire|TankFire|g' \
+		${WRKSRC}/tank.hpp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
