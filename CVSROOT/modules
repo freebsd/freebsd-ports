@@ -8899,6 +8899,7 @@ p5-Catalyst-Plugin-ConfigLoader-Environment	ports/www/p5-Catalyst-Plugin-ConfigL
 p5-Catalyst-Plugin-DefaultEnd	ports/www/p5-Catalyst-Plugin-DefaultEnd
 p5-Catalyst-Plugin-FillInForm	ports/www/p5-Catalyst-Plugin-FillInForm
 p5-Catalyst-Plugin-FormBuilder	ports/www/p5-Catalyst-Plugin-FormBuilder
+p5-Catalyst-Plugin-FormCanary	ports/www/p5-Catalyst-Plugin-FormCanary
 p5-Catalyst-Plugin-FormValidator	ports/www/p5-Catalyst-Plugin-FormValidator
 p5-Catalyst-Plugin-FormValidator-Simple	ports/www/p5-Catalyst-Plugin-FormValidator-Simple
 p5-Catalyst-Plugin-HTML-Widget	ports/www/p5-Catalyst-Plugin-HTML-Widget
