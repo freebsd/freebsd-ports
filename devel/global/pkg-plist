@@ -40,6 +40,9 @@ share/gtags/icons/right.png
 share/gtags/icons/text.png
 share/gtags/icons/top.png
 share/gtags/nvi-1.79-gtags.diff
+share/gtags/BOKIN_MODEL
+share/gtags/BOKIN_MODEL_FAQ
+share/gtags/DONORS
 share/gtags/style.css
 @dirrm share/gtags/icons
 @dirrm share/gtags
