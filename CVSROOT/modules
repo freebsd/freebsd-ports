@@ -13702,6 +13702,7 @@ rox-wallpaper	ports/x11/rox-wallpaper
 roxbg		ports/x11/roxbg
 roxen		ports/www/roxen
 roxirc		ports/irc/roxirc
+roxterm		ports/x11/roxterm
 rp-pppoe	ports/net/rp-pppoe
 rpc		ports/math/rpc
 rpc2		ports/devel/rpc2
