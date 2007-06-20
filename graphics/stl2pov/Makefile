@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	stl2pov
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xs4all.nl/~rsmith/software/
 
