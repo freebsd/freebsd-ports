@@ -1,8 +1,10 @@
 bin/graph-easy
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Easy/.packlist
 %%SITE_PERL%%/Graph/Easy.pm
 %%SITE_PERL%%/Graph/Easy/As_ascii.pm
 %%SITE_PERL%%/Graph/Easy/As_graphviz.pm
 %%SITE_PERL%%/Graph/Easy/As_txt.pm
+%%SITE_PERL%%/Graph/Easy/As_vcg.pm
 %%SITE_PERL%%/Graph/Easy/Attributes.pm
 %%SITE_PERL%%/Graph/Easy/Base.pm
 %%SITE_PERL%%/Graph/Easy/Edge.pm
@@ -22,7 +24,7 @@ bin/graph-easy
 %%SITE_PERL%%/Graph/Easy/Node/Empty.pm
 %%SITE_PERL%%/Graph/Easy/Parser.pm
 %%SITE_PERL%%/Graph/Easy/Parser/Graphviz.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Easy/.packlist
+%%SITE_PERL%%/Graph/Easy/Parser/VCG.pm
 @dirrmtry %%SITE_PERL%%/Graph/Easy/Parser
 @dirrmtry %%SITE_PERL%%/Graph/Easy/Node
 @dirrmtry %%SITE_PERL%%/Graph/Easy/Layout
