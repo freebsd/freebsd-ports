@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	signing-party
-PORTVERSION=	0.4.10.1
+PORTVERSION=	0.4.11.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/s/signing-party
