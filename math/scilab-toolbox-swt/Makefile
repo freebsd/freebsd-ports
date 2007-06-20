@@ -6,36 +6,32 @@
 #
 
 PORTNAME=	swt
-PORTVERSION=	0.1.0.r3
-PORTREVISION=	2
+DISTVERSION=	0.1.0rc4
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scwt
 PKGNAMEPREFIX=	scilab-toolbox-
-DISTNAME=	${PORTNAME}-0.1.0rc3
+DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	Scilab 1-D and 2-D Wavelet Toolbox
 
-BUILD_DEPENDS+=	scilab:${PORTSDIR}/math/scilab
+BUILD_DEPENDS=	${LOCALBASE}/bin/scilab:${PORTSDIR}/math/scilab
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib/scilab/contrib/swt/lib
+SCI=		${LOCALBASE}/lib/scilab
+TOOLBOXDIR?=	lib/scilab/contrib/swt
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--prefix=${PREFIX}/lib/scilab/contrib/swt
-TOOLBOXDIR=	lib/scilab/contrib/swt
+CONFIGURE_ARGS+=--prefix=${PREFIX}/${TOOLBOXDIR}
+CONFIGURE_ENV+=	SCI="${SCI}"
+USE_LDCONFIG=	${PREFIX}/${TOOLBOXDIR}
+
 PLIST_SUB=	TOOLBOXDIR=${TOOLBOXDIR}
 
-post-install@:
-	@${ECHO_MSG} "==========================================================="
-	@${ECHO_MSG} "NOTE: SWT should be recompiled whenever Scilab is upgraded."
-	@${ECHO_MSG} "==========================================================="
+post-install:
+	 @${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
