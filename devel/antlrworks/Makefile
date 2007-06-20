@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	antlrworks
-PORTVERSION=	1.0b9
-PORTREVISION=	1
+PORTVERSION=	1.0.2
+PORTEPOCH=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -17,9 +17,6 @@ COMMENT=	The ANTLR GUI Development Environment
 USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	"-d${DISTNAME}"
 USE_X_PREFIX=	yes
-BUILD_WRKSRC=	${WRKSRC}/source
-
-BROKEN=		Does not fetch
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -48,8 +45,8 @@ post-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/antlrworks ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${BUILD_WRKSRC}/build/antlrworks.jar ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/dist/antlrworks-1.0.2.jar ${DATADIR}/antlrworks.jar
 	${MKDIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${BUILD_WRKSRC}/src/org/antlr/works/icons/app_32x32.png ${PREFIX}/share/pixmaps/antlrworks.png
+	${INSTALL_DATA} ${WRKSRC}/src/aw/org/antlr/works/icons/app_32x32.png ${PREFIX}/share/pixmaps/antlrworks.png
 
 .include <bsd.port.mk>
