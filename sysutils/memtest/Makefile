@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memtest
-PORTVERSION=	4.0.6
+PORTVERSION=	4.0.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}er/old-versions/ \
 		http://mirrors.closedsrc.org/memtester/
