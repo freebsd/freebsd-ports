@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" && ${OSVERSION} >= 600034
-BROKEN=		"Internal compiler error during build on FreeBSD >= 6.0 and !i386"
+BROKEN=		Internal compiler error during build on FreeBSD >= 6.0 and !i386
 .endif
 
 .include <bsd.port.post.mk>
