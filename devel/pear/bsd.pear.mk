@@ -110,7 +110,7 @@ do-generate-plist:
 	for file in ${EXAMPLES}; do echo "%%PORTDOCS%%${LEXAMPLESDIR}/$${file}"; done; \
 	echo "${LPKGREGDIR}/package.xml"; \
 	for d in ${FILES} ${FILES:H}; do echo $${d}; done | ${DIRFILTER} | \
-	    while read dir; do echo "@dirrm ${LINSTDIR}/$${dir}"; done; \
+	    while read dir; do echo "@dirrmtry ${LINSTDIR}/$${dir}"; done; \
 	for d in ${TESTS}; do echo $${d}; done | ${DIRFILTER} | \
 	    while read dir; do echo "@dirrm ${LTESTSDIR}/$${dir}"; done; \
 	for d in ${DATA}; do echo $${d}; done | ${DIRFILTER} | \
