@@ -9,11 +9,14 @@
 #quagga_enable="YES"
 #
 # You may also wish to use the following variables to fine-tune startup:
-#quagga_flags="-d"
-#quagga_daemons="zebra ripd ripngd ospfd ospf6d bgpd isisd"
+#  quagga_flags="-d"
+#  quagga_daemons="zebra ripd ripngd ospfd ospf6d bgpd isisd"
 # Per daemon tuning may be done with daemon_name_flags
-#zebra_flags="-dP 0"
-#bgpd_flags="-dnrP 0" and so on
+#  zebra_flags="-dP 0"
+#  bgpd_flags="-dnrP 0" and so on
+# If you want to give the routing deamons a chance to catchup before
+# continueing, set quagga_delay to a certain amount of seconds.
+#  quagga_delay="30"
 #
 #
 # If the quagga daemons require additional shared libraries to start,
@@ -42,6 +45,7 @@ load_rc_config $name
 : ${quagga_flags="-d"}
 : ${quagga_daemons="zebra ripd ripngd ospfd ospf6d bgpd isisd"}
 : ${quagga_extralibs_path=""}
+: ${quagga_delay="0"}
 
 quagga_cmd=$1
 
@@ -78,3 +82,8 @@ for daemon in ${quagga_daemons}; do
     eval flags=\$\{${daemon}_flags:-\"${quagga_flags}\"\}
     run_rc_command "$1"
 done
+
+if [ "${quagga_delay}" != "0" ]; then
+    echo "Sleeping ${quagga_delay} to obtain dynamic routing information..."
+    sleep ${quagga_delay}
+fi
