@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	eaccelerator
-DISTVERSION=	0.9.5
-PORTREVISION=	1
+DISTVERSION=	0.9.5.1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://bart.eaccelerator.net/source/${DISTVERSION}/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An opcode cache for PHP with encoder and loader
