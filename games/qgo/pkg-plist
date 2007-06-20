@@ -1,4 +1,6 @@
 bin/qgo
+share/applnk/Games/qgo.desktop
+share/mimelnk/text/sgf.desktop
 share/qGo/pics/Bowl.png
 share/qGo/pics/barcelona_cherry.jpg
 share/qGo/pics/birch.jpg
@@ -27,11 +29,17 @@ share/qGo/translations/qgo_de.qm
 share/qGo/translations/qgo_dk.qm
 share/qGo/translations/qgo_fr.qm
 share/qGo/translations/qgo_it.qm
+share/qGo/translations/qgo_la.qm
 share/qGo/translations/qgo_nl.qm
 share/qGo/translations/qgo_pt.qm
 share/qGo/translations/qgo_ru.qm
 share/qGo/translations/qgo_zh.qm
+share/qGo/translations/qgo_zh_cn.qm
 @dirrm share/qGo/translations
 @dirrm share/qGo/sounds
 @dirrm share/qGo/pics
 @dirrm share/qGo
+@dirrmtry share/mimelnk/text
+@dirrmtry share/mimelnk
+@dirrmtry share/applnk/Games
+@dirrmtry share/applnk
