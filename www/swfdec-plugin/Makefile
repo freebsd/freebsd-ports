@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	swfdec-plugin
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	www
 MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec-mozilla/0.4/
 DISTNAME=	swfdec-mozilla-${PORTVERSION}
