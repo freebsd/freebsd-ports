@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graph-Easy
-PORTVERSION=	0.54
+PORTVERSION=	0.55
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Graph
@@ -27,6 +27,7 @@ MAN3=	Graph::Easy.3 \
 	Graph::Easy::As_ascii.3 \
 	Graph::Easy::As_graphviz.3 \
 	Graph::Easy::As_txt.3 \
+	Graph::Easy::As_vcg.3 \
 	Graph::Easy::Attributes.3 \
 	Graph::Easy::Base.3 \
 	Graph::Easy::Edge.3 \
@@ -45,7 +46,8 @@ MAN3=	Graph::Easy.3 \
 	Graph::Easy::Node::Cell.3 \
 	Graph::Easy::Node::Empty.3 \
 	Graph::Easy::Parser.3 \
-	Graph::Easy::Parser::Graphviz.3
+	Graph::Easy::Parser::Graphviz.3 \
+	Graph::Easy::Parser::VCG.3
 
 .include <bsd.port.pre.mk>
 
