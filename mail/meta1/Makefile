@@ -17,6 +17,14 @@ COMMENT=	Secure and efficient mail gateway
 
 NOT_FOR_ARCHS=	ia64
 CONFILCTS=	smx-*
+
+.if !defined(SENDMAIL_WITHOUT_SHMEM)
+IPCCHECK!=	ipcrm -q 0 2>&1 || true
+.if ${IPCCHECK:Mimplemented}
+IGNORE=		your system does not support sysvipc
+.endif
+.endif
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
