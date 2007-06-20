@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	qgo
-PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTVERSION=	1.5.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,6 +27,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		's|src templates|src|g' ${WRKSRC}/Makefile.in
+		's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/templates/*.desktop
 
 .include <bsd.port.mk>
