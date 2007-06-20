@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MDB2_Driver_sqlite
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,8 +15,6 @@ COMMENT=	PEAR sqlite MDB2 driver
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Incomplete pkg-plist
 
 USE_PHP=	sqlite
 
