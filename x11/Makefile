@@ -243,6 +243,7 @@
     SUBDIR += rgb
     SUBDIR += rox-wallpaper
     SUBDIR += roxbg
+    SUBDIR += roxterm
     SUBDIR += rsibreak
     SUBDIR += rstart
     SUBDIR += ruby-X11
