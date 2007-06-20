@@ -1,4 +1,4 @@
-@cwd /
-%%KMODDIR%%/%%DRIVERNAME%%_bss.ko
-%%KMODDIR%%/%%DRIVERNAME%%_ibss.ko
-%%KMODDIR%%/%%DRIVERNAME%%_monitor.ko
+@cwd %%KMODDIR%%
+%%DRIVERNAME%%_bss.ko
+%%DRIVERNAME%%_ibss.ko
+%%DRIVERNAME%%_monitor.ko
