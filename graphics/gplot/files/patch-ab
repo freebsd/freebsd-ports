@@ -1,6 +1,14 @@
---- utils.c.orig	Fri Oct 25 19:08:50 2002
-+++ utils.c	Fri Oct 25 19:10:44 2002
-@@ -300,9 +300,8 @@
+--- utils.c.orig	Wed Oct 30 00:48:16 1991
++++ utils.c	Sat Jun 16 02:10:19 2007
+@@ -4,6 +4,7 @@
+ #include <stdio.h>
+ #include <math.h>
+ #include <ctype.h>
++#include <string.h>
+ #include "defs.h"
+ /* some include files vary in location */
+ #ifdef VAXC
+@@ -300,9 +301,8 @@
       struct info_struct *out_info;
       struct one_opt *opt;	/* put command line options here */
  #define may_override(name) if (opt[(int) name].set) switch (opt[(int) name].tag) {	    \
