@@ -1,0 +1,23 @@
+bin/roxterm
+bin/roxterm-config
+share/applications/roxterm.desktop
+share/icons/hicolor/scalable/apps/roxterm.svg
+%%DATADIR%%/Config/Colours/GTK
+%%DATADIR%%/Config/Shortcuts/Default
+%%DATADIR%%/roxterm-config.glade
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/imgs/roxterm_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/imgs/sflogo.png
+@dirrmtry share/applications
+@dirrm %%DATADIR%%/Config/Shortcuts
+@dirrm %%DATADIR%%/Config/Colours
+@dirrm %%DATADIR%%/Config
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/imgs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

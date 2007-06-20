@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Tue Jun 19 22:25:48 2007
++++ Makefile.in	Tue Jun 19 22:32:44 2007
+@@ -721,12 +721,13 @@
+ 	uninstall-local uninstall-nobase_pkgdataDATA
+ 
+ 
+-install-data-local:
++install-doc-local:
+ 	$(top_srcdir)/install-sh -d $(DESTDIR)/$(pkgdocdir)/imgs
+ 	$(top_srcdir)/install-sh -m 0644 -t $(DESTDIR)/$(pkgdocdir) \
+ 		$(HELPFILES)
+ 	$(top_srcdir)/install-sh -m 0644 -t $(DESTDIR)/$(pkgdocdir)/imgs \
+ 		$(HELPIMGS)
++install-data-local:
+ 	$(top_srcdir)/install-sh -m 0644 $(top_srcdir)/.DirIcon \
+ 		$(DESTDIR)/$(pkgicondir)/roxterm.svg
+ 
