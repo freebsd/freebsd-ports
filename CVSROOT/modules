@@ -1452,6 +1452,7 @@ compaq-cc	ports/lang/compaq-cc
 compat3x	ports/misc/compat3x
 compat4x	ports/misc/compat4x
 compat5x	ports/misc/compat5x
+compat6x	ports/misc/compat6x
 compiz		ports/x11-wm/compiz
 compositeext	ports/x11/compositeext
 compositeproto	ports/x11/compositeproto
