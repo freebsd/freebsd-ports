@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distorm
-PORTVERSION=	1.6.20
+PORTVERSION=	1.7.23
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.ragestorm.net/distorm/ \
 		http://www.damogran.de/ports/distorm/
