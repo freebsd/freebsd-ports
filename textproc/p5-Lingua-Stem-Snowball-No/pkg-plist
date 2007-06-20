@@ -1,4 +1,5 @@
-%%SITE_PERL%%/Lingua/Stem/Snowball/stemmer.pl
+@comment $FreeBSD$
+bin/stemmer-no.pl
 %%SITE_PERL%%/Lingua/Stem/Snowball/No.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball/No/.packlist
 @dirrm %%SITE_PERL%%/mach/auto/Lingua/Stem/Snowball/No
