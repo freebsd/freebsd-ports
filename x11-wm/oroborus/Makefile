@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	oroborus
-PORTVERSION=	2.0.12
-PORTREVISION=	2
+PORTVERSION=	2.0.18
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.oroborus.org/debian/dists/sid/main/source/x11/ \
 		http://matt.peterson.org/FreeBSD/ports/
-DISTNAME=	${PORTNAME}_${PORTVERSION}-1
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	matt@peterson.org
 COMMENT=	A small and simple GNOME-compatible window manager
@@ -20,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XPM=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
