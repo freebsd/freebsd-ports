@@ -38,7 +38,7 @@ OPTIONS=	CLI "Build CLI version" on \
 		CGI "Build CGI version" on \
 		APACHE "Build Apache module" off \
 		DEBUG "Enable debug" off \
-		SUHOSIN "Enable Suhosin protection system" on \
+		SUHOSIN "Enable Suhosin protection system (not for jails)" on \
 		MULTIBYTE "Enable zend multibyte support" off \
 		IPV6 "Enable ipv6 support" on \
 		MAILHEAD "Enable mail header patch" off \
