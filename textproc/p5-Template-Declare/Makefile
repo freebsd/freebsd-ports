@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Template-Declare
-PORTVERSION=	0.07
+PORTVERSION=	0.21
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Template
@@ -26,10 +26,4 @@ PERL_CONFIGURE=	yes
 MAN3=	Template::Declare.3 \
 	Template::Declare::Tags.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		fails tests on this version of perl
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
