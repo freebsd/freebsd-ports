@@ -51,9 +51,8 @@ BUILD_VER=	45731
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} >= 700000) && (!exists(/lib/libc.so.6))
-IGNORE= requires libc.so.6
-#LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
+.if ${OSVERSION} >= 700000
+LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
 .endif
 
 .if ${OSVERSION} < 500000
