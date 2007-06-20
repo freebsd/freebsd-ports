@@ -7,7 +7,7 @@
 
 PORTNAME=	pyPgSQL
 PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pypgsql
@@ -37,9 +37,11 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 .for f in ${EXAMPLES}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
 .endfor
+.endif
 
 .include <bsd.port.mk>
