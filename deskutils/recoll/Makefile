@@ -14,7 +14,7 @@ MAINTAINER=	jean-francois.dockes@wanadoo.fr
 COMMENT=	A personal full text search package, based on QT and Xapian
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=	xapian.1[3-4]:${PORTSDIR}/databases/xapian-core \
+LIB_DEPENDS=	xapian.1[3-5]:${PORTSDIR}/databases/xapian-core \
 		qt-mt.3:${PORTSDIR}/x11-toolkits/qt33
 
 USE_QT_VER=	3
