@@ -486,6 +486,7 @@ ari-yahoo	ports/net-im/ari-yahoo
 aria		ports/www/aria
 aria2		ports/www/aria2
 ariadne		ports/biology/ariadne
+aribas		ports/math/aribas
 arirang		ports/security/arirang
 arj		ports/archivers/arj
 arkpandora	ports/x11-fonts/arkpandora
