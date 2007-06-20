@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Lingua-Stem-Snowball-Se
-PORTVERSION=		1.01
+PORTVERSION=		1.2
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AS/ASKSH
