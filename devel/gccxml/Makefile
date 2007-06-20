@@ -37,7 +37,9 @@ do-configure:
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Build fails on alpha"
+BROKEN=		Build fails on alpha
+.elif ${OSVERSION} >= 700000
+BROKEN=		Does not compile
 .endif
 
 .include <bsd.port.post.mk>
