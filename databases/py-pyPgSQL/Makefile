@@ -7,12 +7,13 @@
 
 PORTNAME=	pyPgSQL
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pypgsql
-PKGNAMEPREFIX=	py-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	A Python DB-API 2 compliant library for using PostgreSQL databases
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
@@ -29,16 +30,16 @@ DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
 DOCSDIR=	${PREFIX}/share/doc/py-pyPgSQL
 EXAMPLESDIR=	${PREFIX}/share/examples/py-pyPgSQL
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-	@${MKDIR} ${EXAMPLESDIR}
-.for file in ${EXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
+.for f in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
+	@${MKDIR} ${EXAMPLESDIR}
+.for f in ${EXAMPLES}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
+.endfor
 
 .include <bsd.port.mk>
