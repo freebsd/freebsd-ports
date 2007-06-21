@@ -30,6 +30,7 @@ USE_X_PREFIX=	yes
 MAN1=		pcdtoppm.1 pcdview.1 xpcd.1
 
 DEPRECATED=		is an abandoned project and might be vulnerable
+FORBIDDEN=		is an abandoned project and might be vulnerable
 EXPIRATION_DATE=	2007-07-21
 
 .include <bsd.port.mk>
