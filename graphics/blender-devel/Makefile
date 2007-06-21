@@ -60,7 +60,8 @@ post-patch:
 		s|g++|${CXX}|; \
 		s|-O2|${CFLAGS}|; \
 		s|-DGAMEBLENDER=1||; \
-		s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
+		s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|; \
+		s|/usr/X11R6|${X11BASE}|' \
 		${WRKSRC}/source/nan_compile.mk
 
 	@${REINPLACE_CMD} -e \
