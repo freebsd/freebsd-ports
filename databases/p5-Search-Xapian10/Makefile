@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Search-Xapian
-PORTVERSION=	1.0.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Search
@@ -16,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Perl XS frontend to the Xapian C++ search library
 
-BUILD_DEPENDS=	xapian-core>=1.0.0:${PORTSDIR}/databases/xapian-core
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	xapian-core>=1.0.1:${PORTSDIR}/databases/xapian-core
 
 PERL_CONFIGURE=	yes
 CC=		${CXX}
@@ -38,8 +37,4 @@ MAN3=	Search::Xapian.3 \
 	Search::Xapian::Weight.3 \
 	Search::Xapian::WritableDatabase.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires at least Perl 5.6. Install lang/perl5 or perl5.8 and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
