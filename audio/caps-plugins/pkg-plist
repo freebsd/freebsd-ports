@@ -1,0 +1,4 @@
+lib/ladspa/caps.so
+share/ladspa/rdf/caps.rdf
+@dirrmtry share/ladspa/rdf
+@dirrmtry share/ladspa
