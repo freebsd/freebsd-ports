@@ -22,8 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}/
 
 post-extract:
 	${FIND} ${WRKDIR} -name .DS_Store -delete
-	${FIND} ${WRKDIR} -name ._.DS_Store -delete
-	${FIND} ${WRKDIR} -name ._* -delete
+	${FIND} ${WRKDIR} -name '._*' -delete
 
 do-install:
 .if !exists(${WWWDIR})
