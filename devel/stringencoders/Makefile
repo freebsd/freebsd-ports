@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	Collection of high performance c-string transformations
 
+USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
