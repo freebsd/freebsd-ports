@@ -1,0 +1,10 @@
+File::ExtAttr is a Perl module providing access to the extended
+attributes of the files.
+
+Extended attributes are metadata associated with a file. Examples are
+access control lists (ACLs) and other security parameters. But users can
+add their own key=value pairs.
+
+Extended attributes are supported by FreeBSD starting from version 5.
+
+WWW: http://search.cpan.org/dist/File-ExtAttr/
