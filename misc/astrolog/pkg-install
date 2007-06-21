@@ -3,5 +3,5 @@
 if [ "$2" != "POST-INSTALL" ]; then
   exit 0
 fi
-echo "See the file ${PKG_PREFIX}/share/doc/astrolog/Helpfile.530 for help"
+echo "See the file ${PKG_PREFIX}/share/doc/astrolog/Helpfile.540 for help"
 echo "and tune ${PKG_PREFIX}/lib/astrolog/astrolog.dat"
