@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -28,22 +28,15 @@ MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	Secure Internet Live Conferencing (SILC) network client
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GNOME=	glib12
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME} \
-		--with-simdir=${PREFIX}/lib/silcsim/client \
-		--with-helpdir=${PREFIX}/share/${PORTNAME}/help \
-		--with-docdir=${PREFIX}/share/doc/silc \
+CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
+		--mandir=${MANPREFIX}/man \
 		--with-perl=no \
 		--without-libtoolfix
-#INSTALLS_SHLIB=	yes
-PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
-PKGDEINSTALL=	${PKGINSTALL}
-
-INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
+MAN1=	silc.1
 
 .ifndef(WITH_PTHREADS)
 CONFIGURE_ARGS+=	--without-pthreads
@@ -61,32 +54,23 @@ pre-everything::
 .ifndef(WITH_PTHREADS)
 	@${ECHO_MSG} '===> Define WITH_PTHREADS to enable pthreads support'
 .endif
-	@${ECHO_MSG}
-.ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} '===> Define WITH_OPTIMIZED_CFLAGS to enable compilation optimizations'
-	@${ECHO_MSG} '===> which is known to break some platforms (e.g., alpha)'
-.endif
 
 post-patch:
-.ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${PERL} -pi -e 's/-O2//' ${WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
 # install neither documentation nor silc server, we have ports for those
-	@${PERL} -pi -e 's/-D_THREAD_SAFE//' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${PERL} -pi -e 's/docdir/DOCDIR/' ${WRKSRC}/doc/Makefile.in
-	@${PERL} -pi -e 's/^(install-data-am:) install-docDATA$$/\1/' \
+	@${REINPLACE_CMD} -e 's/-D_THREAD_SAFE//' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's/docdir/DOCDIR/' ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's/^install-data-am: install-docDATA$$/install-data-am:/' \
 		${WRKSRC}/apps/irssi/docs/Makefile.in
-	@${PERL} -pi -e 's/^(install-data-am:) install-moduleLTLIBRARIES$$/\1/' \
+	@${REINPLACE_CMD} -e 's/^install-data-am: install-moduleLTLIBRARIES$$/install-data-am:/' \
 		${WRKSRC}/apps/irssi/src/perl/Makefile.in
-	@${PERL} -pi -e 's/--libtool-enable-shared//' \
+	@${REINPLACE_CMD} -e 's/--libtool-enable-shared//' \
 		${WRKSRC}/lib/silccrypt/Makefile.in
-
-#post-configure:
-#	@${CP} ${LIBTOOL} ${WRKSRC}
+	@${REINPLACE_CMD} -e 's/^MODULESDIR="$$silc_prefix/MODULESDIR="$$silc_prefix\/share\/silc/' ${WRKSRC}/configure
 
 post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
-		${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@if [ ! -f ${PREFIX}/etc/silc.conf ]; then \
+		${CP} -p ${PREFIX}/etc/silc.conf.sample ${PREFIX}/etc/silc.conf ; \
+	fi
 
 .include <bsd.port.pre.mk>
 
@@ -94,7 +78,7 @@ post-install:
 WITHOUT_OPTIMIZED_ASM=	yes
 .endif
 
-.if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
+.ifndef(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
