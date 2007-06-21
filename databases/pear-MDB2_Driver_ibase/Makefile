@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MDB2_Driver_ibase
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org
