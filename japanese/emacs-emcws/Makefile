@@ -25,8 +25,8 @@ PATCHFILES+=		emacs-21.1-fontset.patch emacs-21.2-menu-encode.patch
 MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	Emacs + Canna + Wnn + Sj3
 
-BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs
-RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs
+USE_EMACS=		yes
+EMACS_PORT_NAME=	emacs21
 
 CONFLICTS=	emacs-19.* emacs-20.* emacs-22.* \
 		ja-emcws-20.* \
@@ -37,7 +37,6 @@ WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}
 
 USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	YES
-EMACS_VER=	21.3
 
 # Change these as you like.
 WITH_WNN6?=	NO
