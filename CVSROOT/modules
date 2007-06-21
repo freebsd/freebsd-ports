@@ -11339,6 +11339,7 @@ p5-libwww	ports/www/p5-libwww
 p5-libxml	ports/textproc/p5-libxml
 p5-ming		ports/graphics/p5-ming
 p5-mixin	ports/devel/p5-mixin
+p5-mocked	ports/devel/p5-mocked
 p5-mogilefs-server	ports/sysutils/p5-mogilefs-server
 p5-openxpki	ports/security/p5-openxpki
 p5-openxpki-client	ports/security/p5-openxpki-client
