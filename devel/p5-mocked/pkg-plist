@@ -1,0 +1,3 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/mocked/.packlist
+%%SITE_PERL%%/mocked.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/mocked
