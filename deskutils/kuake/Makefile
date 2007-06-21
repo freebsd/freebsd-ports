@@ -6,14 +6,14 @@
 
 PORTNAME=	kuake
 PORTVERSION=	0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://199.231.140.154/software/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE konsole application acting like the Quake-console
 
-USE_KDELIBS_VER=3
+USE_KDEBASE_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 
