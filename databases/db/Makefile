@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	db
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	1.15
 CATEGORIES=	databases
 MASTER_SITES=	http://www.mavetju.org/download/
 
@@ -19,5 +18,20 @@ MANCOMPRESSED=	yes
 PLIST_FILES=	bin/db
 
 MAKE_ENV=	BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX}
+
+DIST_CVS=	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/src/usr.bin/db/db
+DB1VERSION=	1.17
+MAKEVERSION=	1.2
+DIST_DB1=	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/src/usr.bin/db/db.1?rev=${DB1VERSION}&content-type=text/plain&only_with_tag=HEAD
+DIST_DBC=	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/src/usr.bin/db/db.c?rev=${PORTVERSION}&content-type=text/plain
+DIST_MAKEFILE=	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/src/usr.bin/db/Makefile?rev=${MAKEVERSION}&content-type=text/plain
+
+tarball:
+	${MKDIR} ${WRKSRC}
+	fetch -o ${WRKSRC}/db.1 "${DIST_DB1}"
+	fetch -o ${WRKSRC}/db.c "${DIST_DBC}"
+	fetch -o ${WRKSRC}/Makefile "${DIST_MAKEFILE}"
+	cd ${WRKDIR} && ${TAR} zcvf ${DISTFILES} ${PORTNAME}-${PORTVERSION}
+	${MV} ${WRKDIR}/${DISTFILES} ${DISTDIR}
 
 .include <bsd.port.mk>
