@@ -16,8 +16,7 @@
 # Makefile.BSD, which is included in the source distribution.
 
 PORTNAME=	afni
-PORTVERSION=	2007.04.18.1830
-PORTREVISION=	1
+PORTVERSION=	2007.06.15.1339
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/AFNI/${PORTVERSION}/ \
 		http://afni.nimh.nih.gov/pub/dist/tgz/
@@ -35,15 +34,13 @@ RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
 		ppmtogif:${PORTSDIR}/graphics/netpbm \
 		endian:${PORTSDIR}/sysutils/endian
 
-BROKEN=		Does not compile
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=	Does not compile on sparc64: "undefined reference to '_mcount'"
 .endif
 
-USE_GL=		glw
+USE_GL=		glw glu
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
@@ -80,6 +77,8 @@ post-extract:
 .for f in ${X11R6_FILES}
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${X11BASE}|g' ${WRKSRC}/${f}
 .endfor
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/afni.1 ${WRKDIR}
+	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKDIR}/afni.1
 
 post-build:
 	${MKDIR} ${STAGE}/bin \
@@ -90,10 +89,6 @@ post-build:
 		${STAGE}/doc \
 		${STAGE}/share
 	${MV}	${INSTALL_WRKSRC}/libf2c.a \
-		${INSTALL_WRKSRC}/cjpeg \
-		${INSTALL_WRKSRC}/djpeg \
-		${INSTALL_WRKSRC}/mpeg_encode \
-		${INSTALL_WRKSRC}/whirlgif \
 		${STAGE}/trash
 	${MV}	${INSTALL_WRKSRC}/*.a \
 		${INSTALL_WRKSRC}/*.so \
@@ -106,6 +101,7 @@ post-build:
 		${STAGE}/include
 	${MV}	${INSTALL_WRKSRC}/README* \
 		${STAGE}/doc
+	${MV}	${INSTALL_WRKSRC}/abut ${INSTALL_WRKSRC}/afni_abut
 	for binary in `${FILE} ${INSTALL_WRKSRC}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
 		${MV} $${binary} ${STAGE}/bin ; \
 	done
@@ -121,7 +117,7 @@ do-install:
 	${INSTALL_SCRIPT} ${STAGE}/scripts/* ${PREFIX}/bin
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/TTatlas* ${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/CA_EZ_v1.3c-May0806/* ${DATADIR}
-	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/afni.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/afni.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${STAGE}/doc/* ${DOCSDIR}
