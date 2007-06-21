@@ -19,14 +19,14 @@ COMMENT=	Mantissa is an application server using the DivMod components
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/nevow/__init__.py:${PORTSDIR}/www/py-nevow \
 		${PYTHON_SITELIBDIR}/axiom/__init__.py:${PORTSDIR}/databases/py-axiom \
 		${PYTHON_SITELIBDIR}/vertex/__init__.py:${PORTSDIR}/net-p2p/py-vertex \
-		${PYTHON_SITELIBDIR}/pytz/__init__.py:${PORTSDIR}/devel/py-pytz \
+		${PYTHON_SITELIBDIR}/${PYPYTZ_EGG}:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb \
 		${PYTHON_SITELIBDIR}/twisted/mail/__init__.py:${PORTSDIR}/mail/py-twistedMail \
 		${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:${PORTSDIR}/security/py-twistedConch
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/nevow/__init__.py:${PORTSDIR}/www/py-nevow \
 		${PYTHON_SITELIBDIR}/axiom/__init__.py:${PORTSDIR}/databases/py-axiom \
 		${PYTHON_SITELIBDIR}/vertex/__init__.py:${PORTSDIR}/net-p2p/py-vertex \
-		${PYTHON_SITELIBDIR}/pytz/__init__.py:${PORTSDIR}/devel/py-pytz \
+		${PYTHON_SITELIBDIR}/${PYPYTZ_EGG}:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb \
 		${PYTHON_SITELIBDIR}/twisted/mail/__init__.py:${PORTSDIR}/mail/py-twistedMail \
 		${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:${PORTSDIR}/security/py-twistedConch
@@ -36,4 +36,8 @@ USE_PYDISTUTILS=	yes
 USE_TWISTED=	yes
 NO_BUILD=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PYPYTZ_EGG!=	${MAKE} -f ${PORTSDIR}/devel/py-pytz/Makefile -V PYPYTZ_EGG
+
+.include <bsd.port.post.mk>
