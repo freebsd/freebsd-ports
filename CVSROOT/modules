@@ -11973,6 +11973,7 @@ php5-xmlwriter	ports/textproc/php5-xmlwriter
 php5-xsl	ports/textproc/php5-xsl
 php5-zlib	ports/archivers/php5-zlib
 phpSysInfo	ports/www/phpSysInfo
+php_doc		ports/lang/php_doc
 php_doc-ar	ports/arabic/php_doc
 php_doc-de	ports/german/php_doc
 php_doc-en	ports/lang/php_doc
