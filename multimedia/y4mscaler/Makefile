@@ -7,7 +7,7 @@
 
 PORTNAME=	y4mscaler
 PORTVERSION=	9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mir.com/DMG/Software/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Y4mscaler scales, crops, and shifts Y'CbCr video
 
-LIB_DEPENDS=	lavjpeg-1.8.0:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS=	lavjpeg-1.9.1:${PORTSDIR}/multimedia/mjpegtools
 
 USE_GMAKE=	yes
 

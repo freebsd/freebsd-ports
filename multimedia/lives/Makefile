@@ -7,7 +7,7 @@
 
 PORTNAME=	lives
 DISTVERSION=	0.9.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/%7Esalsaman/lives/current/ CENKES
 DISTNAME=	LiVES-${DISTVERSION}
@@ -25,7 +25,7 @@ LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick \
 		dv.4:${PORTSDIR}/multimedia/libdv \
 		matroska.0:${PORTSDIR}/multimedia/libmatroska \
 		oil-0.3.1:${PORTSDIR}/devel/liboil \
-		mjpegutils-1.8.0:${PORTSDIR}/multimedia/mjpegtools \
+		mjpegutils-1.9.1:${PORTSDIR}/multimedia/mjpegtools \
 		x264.50:${PORTSDIR}/multimedia/x264
 BUILD_DEPENDS=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
