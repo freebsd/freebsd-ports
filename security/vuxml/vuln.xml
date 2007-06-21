@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d337b206-200f-11dc-a197-0011098b2f36">
+    <topic>xpcd -- buffer overflow</topic>
+    <affects>
+      <package>
+	<name>xpcd</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian Project reports:</p>
+	<blockquote cite="http://www.debian.org/security/2005/dsa-676">
+	  <p>Erik Sjolund discovered a buffer overflow in pcdsvgaview,
+	    an SVGA PhotoCD viewer.  xpcd-svga is part of xpcd and uses
+	    svgalib to display graphics on the Linux console for which
+	    root permissions are required.  A malicious user could
+	    overflow a fixed-size buffer and may cause the program to
+	    execute arbitrary code with elevated privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12523</bid>
+      <cvename>CVE-2005-0074</cvename>
+      <url>http://www.debian.org/security/2005/dsa-676</url>
+    </references>
+    <dates>
+      <discovery>2005-02-11</discovery>
+      <entry>2007-06-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="903654bd-1927-11dc-b8a0-02e0185f8d72">
     <topic>clamav -- multiple vulnerabilities</topic>
     <affects>
