@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	20060518
+PORTVERSION=	20070620
 CATEGORIES=	irc
-MASTER_SITES=	http://coekie.404.be/irssi/ \
-		http://mirror.inerd.com/FreeBSD/distfiles/irssi-devel/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A modular IRC client with many features
 
 CONFLICTS=	irssi-0.8*
@@ -29,7 +28,7 @@ OPTIONS=	PERL "Enable Perl support" on \
 		IPV6 "Enable IPv6" on \
 		BOT "Enable bot" off
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.10
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.12-svn
 
 # USE_OPENSSL must be defined before bsd.port.pre.mk so use old schema
 # for WITH_SSL option
@@ -65,16 +64,16 @@ CONFIGURE_ARGS+=	--with-socks
 .endif
 
 .if !defined(WITHOUT_IPV6)
-.if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=	--enable-ipv6
 CATEGORIES+=	ipv6
-.else
-BROKEN=	This version of FreeBSD does not support IPv6. Please define WITHOUT_IPV6
-.endif
 .endif
 
 .if defined(WITH_BOT)
 CONFIGURE_ARGS+=	--with-bot
+PLIST_SUB+=	WITH_BOT=""
+.else
+CONFIGURE_ARGS+=	--without-bot
+PLIST_SUB+=	WITH_BOT="@comment "
 .endif
 
 post-configure:
