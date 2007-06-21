@@ -7,10 +7,10 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	224
+PATCHLEVEL=	241
 PORTVERSION=	7.0.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
 DISTFILES=	${RELEASE}${EXTRACT_SUFX}
@@ -19,7 +19,7 @@ PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}
 PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	005 027 028 032 045 057 065 074 108 130 132 138 156 161 170 171 180 197 198 208 215
+BADPATCHES=	005 027 028 032 045 057 065 074 108 130 132 138 156 161 170 171 180 197 198 208 215 232 233
 .for p in ${BADPATCHES}
 PATCHFILES:=	${PATCHFILES:N7.0.${p}}
 .endfor
@@ -226,7 +226,7 @@ cklatest:
 
 find-bad-patches:
 	cd ${DISTDIR} ; egrep -l \
-		'(src/os_win32|src/os_mswin|src/if_ole|src/proto/gui_w32|src/gui_w48|src/gui_mac|src/os_(riscos|cyg|os2|vms|amiga))'\
+		'(src/if_ole|src/gui_(w32|w48|mac)|src/os_(riscos|cyg|os2|vms|amiga|win32|mswin))'\
 		vim/${PORTVERSION:C/\.[0-9a-z]*$//}*
 
 .include <bsd.port.post.mk>
