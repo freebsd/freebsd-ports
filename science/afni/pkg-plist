@@ -69,6 +69,7 @@ bin/3dMedianFilter
 bin/3dNLfim
 bin/3dNotes
 bin/3dOverlap
+bin/3dPAR2AFNI.pl
 bin/3dROIstats
 bin/3dRegAna
 bin/3dRowFillin
@@ -209,9 +210,9 @@ bin/SurfToSurf
 bin/SurfaceMetrics
 bin/Vecwarp
 bin/Xphace
-bin/abut
 bin/adwarp
 bin/afni
+bin/afni_abut
 bin/afni_base.py
 bin/afni_proc.py
 bin/afni_util.py
@@ -281,7 +282,6 @@ bin/whereami
 include/afni/3ddata.h
 include/afni/afni_environ.h
 include/afni/afni_warp.h
-include/afni/cdflib.h
 include/afni/coxplot.h
 include/afni/cs.h
 include/afni/cs_sort_template.h
@@ -406,6 +406,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/face_asanders.jpg
 %%DATADIR%%/face_ashackman.jpg
 %%DATADIR%%/face_athomas.jpg
+%%DATADIR%%/face_aysesaygin.jpg
 %%DATADIR%%/face_bandettini.jpg
 %%DATADIR%%/face_barbaracd.jpg
 %%DATADIR%%/face_bargall.jpg
@@ -422,6 +423,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/face_claudio.jpg
 %%DATADIR%%/face_cmoritz.jpg
 %%DATADIR%%/face_cmyers.jpg
+%%DATADIR%%/face_craigstark.jpg
 %%DATADIR%%/face_cscholl.jpg
 %%DATADIR%%/face_csenior.jpg
 %%DATADIR%%/face_cwettig.jpg
@@ -469,6 +471,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/face_lincoln1.jpg
 %%DATADIR%%/face_lincoln2.jpg
 %%DATADIR%%/face_lindachao.jpg
+%%DATADIR%%/face_lindathede.jpg
 %%DATADIR%%/face_lisaeyler.jpg
 %%DATADIR%%/face_lizyoder.jpg
 %%DATADIR%%/face_ljcox.jpg

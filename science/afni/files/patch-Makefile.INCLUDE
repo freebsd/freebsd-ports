@@ -1,0 +1,11 @@
+--- Makefile.INCLUDE.orig	Fri Apr 27 15:03:08 2007
++++ Makefile.INCLUDE	Fri Apr 27 15:03:29 2007
+@@ -41,7 +41,7 @@
+ ## AFNI package, but included because they are useful.  Some of
+ ## them are Open Source programs, not from the AFNI group at all.
+ 
+-EXTRAS   = cjpeg djpeg whirlgif mpeg_encode myget Xphace rmz aiv $(EXPROGS)
++EXTRAS   = myget Xphace rmz aiv $(EXPROGS)
+ 
+ # mpegtoppm in above list
+ 

@@ -13,5 +13,8 @@ http://afni.nimh.nih.gov.
 For large 3dDeconvolve analyses, you may need to increase the shared
 memory limit on your system.  For instructions, visit
 
-http://www.neuro.mcw.edu/~bacon/FreeBSD_MRI/
+http://www.neuro.mcw.edu/~bacon/Ports/FreeBSD/shared_mem.html
+
+The program "abut" has been renamed "afni_abut" to resolve a collision
+with the unixstat port.
 =============================================================================
