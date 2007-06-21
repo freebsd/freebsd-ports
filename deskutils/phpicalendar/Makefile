@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phpicalendar
-PORTVERSION=	2.22
-PORTREVISION=	1
+PORTVERSION=	2.24
 CATEGORIES=	deskutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,8 +21,9 @@ SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}/
 
 post-extract:
-	${RM} -r ${WRKSRC}/templates/default/images/CVS
 	${FIND} ${WRKDIR} -name .DS_Store -delete
+	${FIND} ${WRKDIR} -name ._.DS_Store -delete
+	${FIND} ${WRKDIR} -name ._* -delete
 
 do-install:
 .if !exists(${WWWDIR})
@@ -37,7 +37,7 @@ do-install:
 	@${CP} -v ${WRKSRC}/${f} ${WWWDIR}
 	${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/${f}
 .endfor
-	@${CP} -v ${WRKSRC}/config.inc.php ${WWWDIR}/config.inc.php-default
+	@${CP} -v ${WRKSRC}/config.inc-dist.php ${WWWDIR}/config.inc.php-default
 	${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/config.inc.php-default
 
 post-install:

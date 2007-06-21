@@ -6,8 +6,7 @@
 %%WWWDIR%%/calendars/Home.ics
 %%WWWDIR%%/calendars/US Holidays.ics
 %%WWWDIR%%/calendars/Work.ics
-%%WWWDIR%%/calendars/publish.ical.php
-%%WWWDIR%%/calendars/publish.mozilla.php
+%%WWWDIR%%/calendars/publish.php
 %%WWWDIR%%/config.inc.php-default
 %%WWWDIR%%/day.php
 %%WWWDIR%%/error.php
@@ -20,6 +19,7 @@
 %%WWWDIR%%/functions/init.inc.php
 %%WWWDIR%%/functions/list_functions.php
 %%WWWDIR%%/functions/overlapping_events.php
+%%WWWDIR%%/functions/sanitize.php
 %%WWWDIR%%/functions/template.php
 %%WWWDIR%%/functions/timezones.php
 %%WWWDIR%%/functions/userauth_functions.php
@@ -39,6 +39,7 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/languages/afrikaans.inc.php
 %%WWWDIR%%/languages/brazilian.inc.php
+%%WWWDIR%%/languages/bulgarian.inc.php
 %%WWWDIR%%/languages/catalan.inc.php
 %%WWWDIR%%/languages/czech.inc.php
 %%WWWDIR%%/languages/danish.inc.php
@@ -47,7 +48,9 @@
 %%WWWDIR%%/languages/esperanto.inc.php
 %%WWWDIR%%/languages/finnish.inc.php
 %%WWWDIR%%/languages/french.inc.php
+%%WWWDIR%%/languages/galego.inc.php
 %%WWWDIR%%/languages/german.inc.php
+%%WWWDIR%%/languages/hungarian.inc.php
 %%WWWDIR%%/languages/italian.inc.php
 %%WWWDIR%%/languages/japanese.inc.php
 %%WWWDIR%%/languages/korean.inc.php
@@ -55,6 +58,9 @@
 %%WWWDIR%%/languages/norwegian.inc.php
 %%WWWDIR%%/languages/polish.inc.php
 %%WWWDIR%%/languages/portuguese.inc.php
+%%WWWDIR%%/languages/russian.inc.php
+%%WWWDIR%%/languages/slovak.inc.php
+%%WWWDIR%%/languages/slovensko.inc.php
 %%WWWDIR%%/languages/spanish.inc.php
 %%WWWDIR%%/languages/swedish.inc.php
 %%WWWDIR%%/languages/traditional_chinese.inc.php
