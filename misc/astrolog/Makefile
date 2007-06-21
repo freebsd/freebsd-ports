@@ -10,18 +10,18 @@
 
 PORTNAME=	astrolog
 PORTVERSION=	5.40
-PORTREVISION=	3
-CATEGORIES=	misc
-MASTER_SITES=	http://www.astrolog.org/ftp/ephem/ \
-		http://www.astrolog.org/ftp/ \
-		ftp://ftp.kiarchive.ru/pub/unix/magick/astrology/astrolog/
+PORTREVISION=	4
+CATEGORIES=	misc astro
+MASTER_SITES=	http://www.astrolog.org/ftp/ephem/:ephem \
+		http://www.astrolog.org/ftp/:dist
 EXTRACT_ONLY=	ast54unx.shr
-EPHEM=		LRZ5_24 CHI_24 CPJV_24
-DISTFILES=	${EXTRACT_ONLY} ${EPHEM}
+EPHEM=		ephemall.zip
+DISTFILES=	${EXTRACT_ONLY}:dist ${EPHEM}:ephem
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	An astrology program for X11 and alpha-numeric terminals
 
+EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 MAKE_ARGS=	-DX11
@@ -33,14 +33,18 @@ DIST_SUBDIR=	astrolog
 ALL_TARGET=	astrolog
 NO_WRKSUBDIR=	yes
 
+post-extract:
+	-@${MKDIR} ${WRKDIR}/ephem
+	${UNZIP_CMD} -a -qo ${_DISTDIR}/${EPHEM} -d ${WRKDIR}/ephem
+
 post-patch:
 	@${REINPLACE_CMD} -e "s@malloc.h@stdlib.h@g" \
 		${WRKSRC}/astrolog.h ${WRKSRC}/placalc.h
 
 do-install:
 	-@${MKDIR} ${PREFIX}/lib/astrolog
-	cd ${DISTDIR}/${DIST_SUBDIR} && \
-		${INSTALL_DATA} ${EPHEM} ${PREFIX}/lib/astrolog
+	cd ${WRKDIR}/ephem && \
+		${INSTALL_DATA} * ${PREFIX}/lib/astrolog
 	cd ${WRKSRC}; \
 		${INSTALL_DATA} astrolog.dat ${PREFIX}/lib/astrolog/astrolog.dat-dist; \
 		if [ ! -f ${PREFIX}/lib/astrolog/astrolog.dat ] ; then \
