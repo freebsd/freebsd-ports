@@ -89,6 +89,10 @@ MAN1+=		scanpci.1
 PLIST_SUB+=	AMD64_I386="@comment "
 .endif
 
+.if ${OSVERSION} > 700042
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-gcc42
+.endif
+
 .if !defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO
 pre-everything::
 	@${ECHO_MSG} "By default, the X Server installs as a set-user-id root binary. When run by"
