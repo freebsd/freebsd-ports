@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome2
 PORTVERSION=	2.18.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -88,7 +88,7 @@ RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp \
 		epiphany:${PORTSDIR}/www/epiphany
 .endif
 .if ${.CURDIR:T}!="gnome2-lite"
-.if ${ARCH} == "i386"
+.if ${ARCH} == "i386" && ${OSVERSION} < 700042
 RUN_DEPENDS+=	tomboy:${PORTSDIR}/deskutils/tomboy
 .endif
 .if ${OSVERSION}>=600000
