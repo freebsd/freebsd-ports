@@ -1,17 +1,18 @@
---- Makefile.orig	Tue Mar  6 12:39:47 2007
-+++ Makefile	Tue Mar  6 12:40:24 2007
-@@ -1,11 +1,11 @@
+--- Makefile.orig	Sun Jun 17 12:32:01 2007
++++ Makefile	Mon Jun 18 14:58:10 2007
+@@ -1,12 +1,12 @@
  PREFIX = /usr/local
  
 -CC = g++
--OPTS = -O6 -ffast-math -funroll-loops -Wall -fPIC -DPIC
+-OPTS = -O3 -ffast-math -funroll-loops -Wall -fPIC -DPIC
 +CC = $(CXX)
 +OPTS = -Wall -fPIC -DPIC
- # users of later iterations of the x86 architecture may want to add these:
- # OPTS = -msse2 -mfpmath=sse -pipe -ftracer
+ #OPTS = -g -DDEBUG 
  
--CFLAGS = $(OPTS)
+ -include defines.make
+ 
+-CFLAGS = $(OPTS) $(_CFLAGS)
 +CFLAGS += $(OPTS)
  
  PLUG = caps
- VERSION = 0.3.0
+ VERSION = 0.4.0

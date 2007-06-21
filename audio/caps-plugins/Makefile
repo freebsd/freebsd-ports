@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	caps-plugins
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	audio
 MASTER_SITES=	http://quitte.de/dsp/
 DISTNAME=	caps_${PORTVERSION}
@@ -20,12 +20,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 WRKSRC=		${WRKDIR}/caps-${PORTVERSION}
 USE_GMAKE=	yes
 
-PLIST_FILES=	lib/ladspa/caps.so
-
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O6 -ffast-math -funroll-loops
+CFLAGS+=	-O3 -ffast-math -funroll-loops
 .endif
 
 .if ${OSVERSION} < 600000
