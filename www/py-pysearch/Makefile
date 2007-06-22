@@ -8,8 +8,7 @@
 PORTNAME=	pysearch
 PORTVERSION=	3.0
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pysearch
+MASTER_SITES=	SOURCEFORGE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pYsearch-${PORTVERSION}
 
@@ -19,9 +18,7 @@ COMMENT=	Yahoo Search Web Services SDK for Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-.if !defined(NOPORTDOCS)
 DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
-.endif
 EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
 
 post-install:
@@ -29,7 +26,9 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
 .endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>

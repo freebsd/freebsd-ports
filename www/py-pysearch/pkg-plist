@@ -107,6 +107,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/yahoo.search.web.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/profile.py
-%%EXAMPLESDIR%%/websearch.py
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/profile.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/websearch.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
