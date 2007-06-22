@@ -11,29 +11,29 @@ bin/fl-run-bench
 bin/fl-run-test
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/demo/README.txt
-%%EXAMPLESDIR%%/demo/cmf/Cmf.conf
-%%EXAMPLESDIR%%/demo/cmf/README.txt
-%%EXAMPLESDIR%%/demo/cmf/credential.conf
-%%EXAMPLESDIR%%/demo/cmf/groups.txt
-%%EXAMPLESDIR%%/demo/cmf/passwords.txt
-%%EXAMPLESDIR%%/demo/cmf/test_Cmf.py
-%%EXAMPLESDIR%%/demo/simple/README.txt
-%%EXAMPLESDIR%%/demo/simple/Simple.conf
-%%EXAMPLESDIR%%/demo/simple/monitor.conf
-%%EXAMPLESDIR%%/demo/simple/test_Simple.py
-%%EXAMPLESDIR%%/demo/xmlrpc/Credential.conf
-%%EXAMPLESDIR%%/demo/xmlrpc/Makefile
-%%EXAMPLESDIR%%/demo/xmlrpc/README.txt
-%%EXAMPLESDIR%%/demo/xmlrpc/cred.conf
-%%EXAMPLESDIR%%/demo/xmlrpc/monitor.conf
-%%EXAMPLESDIR%%/demo/xmlrpc/test_Credential.py
-%%EXAMPLESDIR%%/demo/zope/README.txt
-%%EXAMPLESDIR%%/demo/zope/Zope.conf
-%%EXAMPLESDIR%%/demo/zope/test_Zope.py
-@dirrm %%EXAMPLESDIR%%/demo/zope
-@dirrm %%EXAMPLESDIR%%/demo/xmlrpc
-@dirrm %%EXAMPLESDIR%%/demo/simple
-@dirrm %%EXAMPLESDIR%%/demo/cmf
-@dirrm %%EXAMPLESDIR%%/demo
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/cmf/Cmf.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/cmf/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/cmf/credential.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/cmf/groups.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/cmf/passwords.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/cmf/test_Cmf.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/simple/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/simple/Simple.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/simple/monitor.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/simple/test_Simple.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/xmlrpc/Credential.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/xmlrpc/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/xmlrpc/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/xmlrpc/cred.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/xmlrpc/monitor.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/xmlrpc/test_Credential.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/zope/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/zope/Zope.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/zope/test_Zope.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/zope
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/xmlrpc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/simple
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/cmf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
