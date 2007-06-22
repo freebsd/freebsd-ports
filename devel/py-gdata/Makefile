@@ -20,7 +20,6 @@ USE_PYDISTUTILS=	yes
 
 EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
 
-NOPORTEXAMPLES=	yes
 .if !defined(NOPORTEXAMPLES)
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
