@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	parsedatetime
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://code-bear.com/code/parsedatetime/ \
-		http://cheeseshop.python.org/packages/source/p/parsedatetime/ \
+		CHEESESHOP \
 		http://parsedatetime.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -34,9 +34,7 @@ PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
 		PARSEDATETIME_EGG=${PARSEDATETIME_EGG} \
 		PARSEDATETIME_EGG_VER="${PORTNAME}==${PORTVERSION}"
 
-.if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-.endif
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 EXAMPLES=	README.txt basic.py with_locale.py
 
@@ -45,9 +43,11 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
 .endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 .for f in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}
 .endfor
+.endif
 
 .include <bsd.port.mk>

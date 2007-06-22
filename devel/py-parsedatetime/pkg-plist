@@ -74,7 +74,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/toc-parsedatetime.tests.TestUnits-module.html
 %%PORTDOCS%%%%DOCSDIR%%/toc.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/README.txt
-%%EXAMPLESDIR%%/basic.py
-%%EXAMPLESDIR%%/with_locale.py
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/with_locale.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
