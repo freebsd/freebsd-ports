@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	numpy
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://numpy.scipy.org/:doc \
@@ -45,10 +44,6 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \
 		blas.2:${PORTSDIR}/math/blas
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
 pre-fetch:
 .if ${PYTHON_REL} < 200
 	@${ECHO} "Py-numpy doesn't work with Python versions < 2.0."
@@ -68,12 +63,13 @@ post-patch:
 	@${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" \
 	    -e "s+%%LOCALBASE%%+${LOCALBASE}+" \
-	    -e "s+%%ATLASLIBS%%+lapack, blas+" ${WRKSRC}/site.cfg
+	    -e "s+%%ATLASLIBS%%+alapack_r, f77blas_r, cblas_r, atlas_r+" \
+		${WRKSRC}/site.cfg
 .else
 	@${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" \
 	    -e "s+%%LOCALBASE%%+${LOCALBASE}+" \
-	    -e "s+%%ATLASLIBS%%+alapack_r, f77blas_r, cblas_r, atlas_r+" \
+	    -e "s+%%ATLASLIBS%%+lapack, blas+" \
 		 ${WRKSRC}/site.cfg
 .endif
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" ${WRKSRC}/numpy/distutils/system_info.py
