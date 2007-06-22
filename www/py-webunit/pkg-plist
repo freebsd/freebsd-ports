@@ -23,9 +23,9 @@
 %%PYTHON_SITELIBDIR%%/webunit/webunittest.pyc
 %%PYTHON_SITELIBDIR%%/webunit/webunittest.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/webunit
-%%EXAMPLESDIR%%/run_tests
-%%EXAMPLESDIR%%/demo/__init__.py
-%%EXAMPLESDIR%%/demo/google.py
-%%EXAMPLESDIR%%/demo/python_org.py
-@dirrm %%EXAMPLESDIR%%/demo
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_tests
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/google.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/python_org.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
