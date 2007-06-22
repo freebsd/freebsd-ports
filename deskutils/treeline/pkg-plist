@@ -74,6 +74,7 @@ lib/treeline/treexmlparse.pyc
 lib/treeline/undo.py
 lib/treeline/undo.pyc
 %%HTTPLOAD%%lib/treeline/plugins/httpload.py
+%%TYPESEARCH%%lib/treeline/plugins/typesearch.py
 %%DATADIR%%/icons/anchor.png
 %%DATADIR%%/icons/arrow_1.png
 %%DATADIR%%/icons/arrow_2.png

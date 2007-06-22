@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	treeline
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://www.bellz.org/treeline/ \
 		http://depot.fsck.ch/mirror/distfiles/
@@ -22,7 +21,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 OPTIONS=	ASPELL "install with aspell support" off \
 		ISPELL "install with ispell support" off \
 		PYXML "use pythons py-xml instead of textproc/expat2" on \
-		HTTPLOAD "install httpLoad plugin" off
+		HTTPLOAD "install httpLoad plugin" off \
+		TYPESEARCH "install typesearch plugin" off
 
 WRKSRC=		${WRKDIR}/TreeLine
 USE_QT_VER=	3
@@ -50,11 +50,21 @@ PLIST_SUB+=	HTTPLOAD=""
 PLIST_SUB+=	HTTPLOAD="@comment "
 .endif
 
+.if defined(WITH_TYPESEARCH)
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} typesearch.py
+PLIST_SUB+=	TYPESEARCH=""
+.else
+PLIST_SUB+=	TYPESEARCH="@comment "
+.endif
+
 do-install:
 	@cd ${WRKSRC} && ${PYTHON_CMD} install.py \
 	-p ${PREFIX} -d ${DOCSDIR} -i ${DATADIR}/icons -x
 .if defined(WITH_HTTPLOAD)
 	@${INSTALL_DATA} ${DISTDIR}/httpload.py ${PREFIX}/lib/${PORTNAME}/plugins/
+.endif
+.if defined(WITH_TYPESEARCH)
+	@${INSTALL_DATA} ${DISTDIR}/typesearch.py ${PREFIX}/lib/${PORTNAME}/plugins/
 .endif
 
 post-install:
