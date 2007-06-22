@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ss5
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.2
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ss5
@@ -21,12 +21,14 @@ USE_OPENLDAP=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-binpathbase=${PREFIX}/sbin \
 		--with-docpathbase=${PREFIX}/share/doc \
 		--with-confpathbase=${PREFIX}/etc \
 		--with-libpath=${PREFIX}/lib
 
 MAKE_ENV=	DATADIR=${DATADIR} EXAMPLESDIR=${EXAMPLESDIR}
+CFLAGS+=	-DLDAP_DEPRECATED
 
 MAN1=		ss5.1
 MAN5=		ss5.conf.5 ss5.pam.5 ss5.passwd.5 ss5.peers.5
