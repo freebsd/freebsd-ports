@@ -23,10 +23,6 @@ RELDATE=	20000521
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-extract:
 	-cd ${WRKSRC} && co RCS/*,v
 
