@@ -1,0 +1,20 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Template/Alloy.pm
+%%SITE_PERL%%/Template/Alloy.pod
+%%SITE_PERL%%/Template/Alloy/Compile.pm
+%%SITE_PERL%%/Template/Alloy/Context.pm
+%%SITE_PERL%%/Template/Alloy/Exception.pm
+%%SITE_PERL%%/Template/Alloy/HTE.pm
+%%SITE_PERL%%/Template/Alloy/Iterator.pm
+%%SITE_PERL%%/Template/Alloy/Operator.pm
+%%SITE_PERL%%/Template/Alloy/Parse.pm
+%%SITE_PERL%%/Template/Alloy/Play.pm
+%%SITE_PERL%%/Template/Alloy/TT.pm
+%%SITE_PERL%%/Template/Alloy/Tmpl.pm
+%%SITE_PERL%%/Template/Alloy/VMethod.pm
+%%SITE_PERL%%/Template/Alloy/Velocity.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Alloy/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Alloy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrmtry %%SITE_PERL%%/Template/Alloy
+@dirrmtry %%SITE_PERL%%/Template
