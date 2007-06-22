@@ -8,7 +8,7 @@
 PORTNAME=	webunit
 PORTVERSION=	1.3.9
 CATEGORIES=	www python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/w/webunit/ \
+MASTER_SITES=	CHEESESHOP \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,9 +20,11 @@ USE_PYDISTUTILS=	yes
 
 EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
 
+.if !defined(NOPORTEXAMPLES)
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/run_tests ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/demo ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
