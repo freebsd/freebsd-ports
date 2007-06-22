@@ -1,21 +1,19 @@
-%%PKGNAME%% has been installed into:
+GroupOffice has been installed into:
 
-    %%PREFIX%%/%%GROUPOFFICEDIR%%
+    %%WWWDIR%%
 
 You will probably want to add an alias to your httpd.conf file, 
 somethinglike this:
 
-    Alias /groupoffice "%%PREFIX%%/%%GROUPOFFICEDIR%%"
+    Alias /groupoffice "%%WWWDIR%%"
 
 And restart Apache.
-Before the first use of GroupOffice, create config.php
-    
-    touch %%PREFIX%%/%%GROUPOFFICEDIR%%/config.php
 
-and change the owner to %%WWWOWN%%:
+open to install
+    http://<hostname>/groupoffice/install/install.php 
 
-    chown %%WWWOWN%% %%PREFIX%%/%%GROUPOFFICEDIR%%/config.php
+or update
+	http://<hostname>/groupoffice/install/upgrade.php
 
-Please visit 'http://localhost/groupoffice/install/install.php' 
 in a web-browser and follow the configuration instructions.
 
