@@ -1,6 +1,7 @@
 bin/honeyd
 bin/honeydctl
 bin/honeydstats
+bin/hsniff
 include/honeyd/debug.h
 include/honeyd/hooks.h
 include/honeyd/plugins.h
