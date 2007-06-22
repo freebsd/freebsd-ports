@@ -2615,6 +2615,7 @@ excalibur-configuration	ports/devel/excalibur-configuration
 excido		ports/games/excido
 exctags		ports/devel/ctags
 execline	ports/lang/execline
+execwrap	ports/security/execwrap
 exhaust		ports/games/exhaust
 exhaust-doc	ports/games/exhaust-doc
 exhaust-ma	ports/games/exhaust-ma
