@@ -1,27 +1,32 @@
---- Makefile.common.orig	Tue May 31 17:39:18 2005
-+++ Makefile.common	Sun Apr  2 16:30:37 2006
+--- Makefile.common.orig	Tue Apr 24 15:45:43 2007
++++ Makefile.common	Thu Jun 21 06:58:50 2007
 @@ -53,7 +53,7 @@
  
- DEVEL  ?= 0
- CHATTY ?= $(DEVEL)
--STATIC_PLUGINS ?= 0
-+STATIC_PLUGINS ?= 1
+ DEVEL  = 0
+ CHATTY = $(DEVEL)
+-STATIC_PLUGINS = 0
++STATIC_PLUGINS = 1
  #$(warning CHATTY=$(CHATTY) DEVEL=$(DEVEL))
  ifeq (1,$(CHATTY))
  Q :=
-@@ -83,13 +83,11 @@
- # compile flags
- 
- RM      = rm -f
--CC      = gcc
-+CC      ?= gcc
+@@ -89,10 +89,8 @@
+ CC      ?= gcc
  AR      = ar
- LIBS    = $(shell pkg-config --libs gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0) -L/usr/X11R6/lib  -lXmu
--INCS2   = $(shell pkg-config --cflags gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0)
+ LIBS    = $(shell pkg-config --libs glib-2.0 gmodule-2.0 gthread-2.0 gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0) -L/usr/X11R6/lib  -lXmu
+-INCS2   = $(shell pkg-config --cflags glib-2.0 gmodule-2.0 gthread-2.0 gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0)
 -INCS   := $(INCS2:-I%=-isystem %)
 +INCS = $(shell pkg-config --cflags gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0)
  
--CFLAGS = -O2
+-CFLAGS ?= -O2 -Wall
  ifeq (1,$(DEVEL))
  override CFLAGS += -g
  endif
+@@ -113,7 +111,7 @@
+ 
+ %.dep : %.c
+ 	$(call summary,DEP ,$@)
+-	$(Q)$(CC) $(CPPFLAGS) $(INCS) -MM $< | sed 's/\($*\).o[ :]*/\1.o $@ :/' > $@
++	$(Q)$(CC) $(CPPFLAGS) $(INCS) -MM $< | sed 's/\($*\)\.o[ :]*/\1.o $@ :/' > $@
+ 
+ 
+ #########################################
