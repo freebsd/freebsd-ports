@@ -54,7 +54,7 @@ GTK2_DATA_FILES=	${WRKSRC}/src/gtk/vba.glade
 .endif
 
 .ifndef(PROFILING)
-CONFIGURE_ARGS+=	--without-profiling
+CONFIGURE_ARGS+=	--disable-profiling
 .endif
 
 pre-everything::
