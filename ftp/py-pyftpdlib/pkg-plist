@@ -5,11 +5,11 @@
 %%PYTHON_SITELIBDIR%%/pyftpdlib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pyftpdlib/__init__.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/pyftpdlib
-%%EXAMPLESDIR%%/unix_ftpd.py
-%%EXAMPLESDIR%%/md5_ftpd.py
-%%EXAMPLESDIR%%/basic_ftpd.py
-%%EXAMPLESDIR%%/winNT_ftpd.py
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/winNT_ftpd.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/pyftpdlib.css
 %%PORTDOCS%%%%DOCSDIR%%/pyftpdlib.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

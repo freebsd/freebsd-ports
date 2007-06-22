@@ -18,9 +18,7 @@ COMMENT=	Python FTP server library
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-.if !defined(NOPORTDOCS)
 DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
-.endif
 EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
 
 post-install:
@@ -28,7 +26,9 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/demo/ ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
