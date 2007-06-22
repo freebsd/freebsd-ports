@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iscsi-target
-PORTVERSION=	20060527
+PORTVERSION=	20070615
 CATEGORIES=	net
 MASTER_SITES=	http://www.alistaircrooks.co.uk/src/
 DISTNAME=	netbsd-iscsi-${PORTVERSION}
