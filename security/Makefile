@@ -115,6 +115,7 @@
     SUBDIR += drweb-sendmail
     SUBDIR += dsniff
     SUBDIR += engine_pkcs11
+    SUBDIR += execwrap
     SUBDIR += expiretable
     SUBDIR += f-prot
     SUBDIR += f-prot-sig
