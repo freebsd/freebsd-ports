@@ -3,10 +3,9 @@ bin/ifm2dev
 bin/ifm2tex
 bin/scr2ifm
 bin/tkifm
-lib/ifm/gpp
+bin/vars-config
 %%PORTDOCS%%%%DOCSDIR%%/html/WARNINGS
 %%PORTDOCS%%%%DOCSDIR%%/html/contents.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/contents.png
 %%PORTDOCS%%%%DOCSDIR%%/html/footnode.htm
 %%PORTDOCS%%%%DOCSDIR%%/html/ifm.css
 %%PORTDOCS%%%%DOCSDIR%%/html/ifm.htm
@@ -22,7 +21,6 @@ lib/ifm/gpp
 %%PORTDOCS%%%%DOCSDIR%%/html/internals.pl
 %%PORTDOCS%%%%DOCSDIR%%/html/labels.pl
 %%PORTDOCS%%%%DOCSDIR%%/html/next.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/next.png
 %%PORTDOCS%%%%DOCSDIR%%/html/node1.htm
 %%PORTDOCS%%%%DOCSDIR%%/html/node10.htm
 %%PORTDOCS%%%%DOCSDIR%%/html/node11.htm
@@ -35,19 +33,12 @@ lib/ifm/gpp
 %%PORTDOCS%%%%DOCSDIR%%/html/node8.htm
 %%PORTDOCS%%%%DOCSDIR%%/html/node9.htm
 %%PORTDOCS%%%%DOCSDIR%%/html/nx_grp_g.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/nx_grp_g.png
 %%PORTDOCS%%%%DOCSDIR%%/html/prev.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/prev.png
 %%PORTDOCS%%%%DOCSDIR%%/html/prev_g.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/prev_g.png
 %%PORTDOCS%%%%DOCSDIR%%/html/up.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/up.png
 %%PORTDOCS%%%%DOCSDIR%%/html/up_g.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/up_g.png
 %%PORTDOCS%%%%DOCSDIR%%/ifm.pdf
 %%DATADIR%%/helvetica.ifm
-%%DATADIR%%/ifm-color.ifm
-%%DATADIR%%/ifm-compat.ifm
 %%DATADIR%%/ifm-init.ifm
 %%DATADIR%%/ifm-pro.ps
 %%DATADIR%%/ifm-rgb.txt
@@ -58,4 +49,3 @@ lib/ifm/gpp
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/ifm
