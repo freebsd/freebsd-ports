@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	ftp www
 
 MAINTAINER=	beech@FreeBSD.org
-COMMENT=	Gollem is the Horde web-based File Manager
+COMMENT=	Web-based File Manager
 
 USE_HORDE=	base
 USE_GETTEXT=	yes

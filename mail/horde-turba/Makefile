@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	mail www
 
 MAINTAINER=	beech@FreeBSD.org
-COMMENT=	The Horde contact management application
+COMMENT=	Contact management application
 
 USE_HORDE=	base
 USE_PHP=	ldap

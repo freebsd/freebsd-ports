@@ -92,6 +92,9 @@
     SUBDIR += gworkspace-gwmetadata
     SUBDIR += gxmessage
     SUBDIR += helpviewer
+    SUBDIR += horde-kronolith
+    SUBDIR += horde-mnemo
+    SUBDIR += horde-nag
     SUBDIR += hot-babe
     SUBDIR += howm
     SUBDIR += ical
@@ -113,7 +116,6 @@
     SUBDIR += kompose
     SUBDIR += kooldock
     SUBDIR += krefty
-    SUBDIR += kronolith
     SUBDIR += krss
     SUBDIR += ksmoothdock
     SUBDIR += ktagebuch
@@ -133,7 +135,6 @@
     SUBDIR += mhc
     SUBDIR += mhc-emacs20
     SUBDIR += mical
-    SUBDIR += mnemo
     SUBDIR += moregroupware
     SUBDIR += mrundlg
     SUBDIR += multi-backgrounds-daemon
@@ -141,7 +142,6 @@
     SUBDIR += multisync-backup
     SUBDIR += multisync-syncml
     SUBDIR += mywiki
-    SUBDIR += nag
     SUBDIR += narval
     SUBDIR += nautilus-actions
     SUBDIR += nautilus-locked-folder

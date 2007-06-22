@@ -179,6 +179,7 @@
     SUBDIR += heimdal
     SUBDIR += hlfl
     SUBDIR += hmap
+    SUBDIR += horde-jeta
     SUBDIR += hostsentry
     SUBDIR += httprint
     SUBDIR += hunch
@@ -203,7 +204,6 @@
     SUBDIR += isnprober
     SUBDIR += its4
     SUBDIR += jce_policy14
-    SUBDIR += jeta
     SUBDIR += john
     SUBDIR += kedpm
     SUBDIR += keepassx

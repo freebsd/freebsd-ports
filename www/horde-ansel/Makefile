@@ -11,7 +11,6 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=
 CATEGORIES=	www
 MASTER_SITES=	CENKES http://freebsd.alaskaparadise.com/source/
-PKGNAMEPREFIX=	horde-
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Image gallery

@@ -1,12 +1,13 @@
 #-*- mode: makefile; tab-width: 4; -*
 # ex:ts=4
 #
-# Maintainers:  Beech Rintoul <beech@alaskaparadise.com>,
+# Maintainers:  Beech Rintoul <beech@FreeBSD.org>,
 #				Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 
 MASTER_SITES?=		HORDE
 DISTVERSIONPREFIX?=	h3-
+PKGNAMEPREFIX?=	horde-
 
 .if defined(USE_HORDE) && ${USE_HORDE:Mbase}
 RUN_DEPENDS+=	${HORBAS}/rpc.php:${PORTSDIR}/www/horde-base

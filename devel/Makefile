@@ -140,7 +140,6 @@
     SUBDIR += cgprof
     SUBDIR += charva
     SUBDIR += check
-    SUBDIR += chora
     SUBDIR += cil
     SUBDIR += cl-asdf
     SUBDIR += cl-asdf-clisp
@@ -421,6 +420,7 @@
     SUBDIR += hapy
     SUBDIR += hc12mem
     SUBDIR += highlighterkit
+    SUBDIR += horde-chora
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
     SUBDIR += hptools

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	deskutils www
 
 MAINTAINER=	beech@FreeBSD.org
-COMMENT=	Mnemo is the Horde notes and memos application
+COMMENT=	Notes and memos application
 
 USE_HORDE=	base
 USE_GETTEXT=	yes

@@ -160,6 +160,10 @@
     SUBDIR += hbiff
     SUBDIR += heirloom-mailx
     SUBDIR += horde-forwards
+    SUBDIR += horde-imp
+    SUBDIR += horde-ingo
+    SUBDIR += horde-mimp
+    SUBDIR += horde-turba
     SUBDIR += horde-vacation
     SUBDIR += hotwayd
     SUBDIR += ifile
@@ -168,8 +172,6 @@
     SUBDIR += imap-uw
     SUBDIR += imapfilter
     SUBDIR += imapsync
-    SUBDIR += imp
-    SUBDIR += ingo
     SUBDIR += isoqlog
     SUBDIR += isync
     SUBDIR += itraxp
@@ -251,7 +253,6 @@
     SUBDIR += milter-regex
     SUBDIR += milter-skem
     SUBDIR += mimedefang
-    SUBDIR += mimp
     SUBDIR += mini_sendmail
     SUBDIR += minimalist
     SUBDIR += missey
@@ -615,7 +616,6 @@
     SUBDIR += tmda
     SUBDIR += tpop3d
     SUBDIR += tumgreyspf
-    SUBDIR += turba
     SUBDIR += uebimiau
     SUBDIR += up-imapproxy
     SUBDIR += usendmail

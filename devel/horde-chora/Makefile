@@ -12,7 +12,7 @@ CATEGORIES=	devel www
 DIST_SUBDIR=	horde
 
 MAINTAINER=	beech@FreeBSD.org
-COMMENT=	The Horde CVS web-viewer
+COMMENT=	CVS web-viewer
 
 #-----------------------------------------------------------------------
 # You may define these options:

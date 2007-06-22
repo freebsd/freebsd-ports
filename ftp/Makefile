@@ -38,8 +38,8 @@
     SUBDIR += gftp
     SUBDIR += gnusget
     SUBDIR += gnustep-ftp
-    SUBDIR += gollem
     SUBDIR += greed
+    SUBDIR += horde-gollem
     SUBDIR += hsftp
     SUBDIR += jftp
     SUBDIR += jftpgw
