@@ -10,7 +10,7 @@ PATH=/bin:/usr/sbin
 
 USER=zabbix
 GROUP=${USER}
-UID=112
+UID=122
 GID=${UID}
 
 if pw group show "${GROUP}" 2>/dev/null; then
