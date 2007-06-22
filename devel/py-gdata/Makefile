@@ -6,29 +6,25 @@
 #
 
 PORTNAME=	gdata
-PORTVERSION=	1.0
+PORTVERSION=	1.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	http://gdata-python-client.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	gdata.py.${PORTVERSION}
+DISTNAME=	gdata.py-${PORTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	GData Python Client Library
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_ZIP=	yes
-
-WRKSRC=	${WRKDIR}/gdata-python-client
 
 EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
 
-do-patch:
-	${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|g' ${FILESDIR}/setup.py \
-		> ${WRKSRC}/setup.py
-
+NOPORTEXAMPLES=	yes
+.if !defined(NOPORTEXAMPLES)
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/samples/ ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
