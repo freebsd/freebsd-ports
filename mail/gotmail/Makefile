@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gotmail
-PORTVERSION=	0.8.9
+PORTVERSION=	0.9.0
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A script to fetch mail from a Hotmail or MSN mailbox
