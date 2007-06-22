@@ -7,7 +7,7 @@
 
 PORTNAME?=	libGL
 PORTVERSION?=	6.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
@@ -40,7 +40,7 @@ pre-patch:
 		-e 's|g++|${CXX}|g' \
 		-e 's|CFLAGS = |CFLAGS = ${CFLAGS} |g' \
 		-e 's|OPT_FLAGS = .*|OPT_FLAGS = ${CFLAGS}|g' \
-		-e 's|-pthread|${PTHREAD_LIBS}|g' \
+		-e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		-e 's|SRC_DIRS = .*|SRC_DIRS = glx/x11|g' \
 		${WRKSRC}/configs/freebsd-dri
 	@${REINPLACE_CMD} \
