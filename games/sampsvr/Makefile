@@ -5,19 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	sampsvr
-PORTVERSION=	0.1b
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.sa-mp.com/files/ \
-		http://eu.littlewhitey.com/
-DISTNAME=	${SAMPVER}-cpp6
+		http://eu.littlewhitey.com/ \
+		http://dedi.azer.nl/upload/ \
+		http://www.kfcgang.com/files/
+DISTNAME=	samp02svr
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Rockstar's GTA: San Andreas multiplayer modification dedicated server
 
 USE_LINUX=	yes
 NO_BUILD=	yes
-SAMPVER=	samp01b-r2
+WRKSRC=		${WRKDIR}/samp02
+USE_DOS2UNIX=	server.cfg *.pwn
 USE_RC_SUBR=	sampd
 SAMPDIR=	${PREFIX}/lib/${PORTNAME}
 PORTDOCS=	README
@@ -33,7 +35,7 @@ SUB_LIST+=	NOTEWORK=""
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${MV} ${WRKSRC}/${SAMPVER} ${WRKSRC}/${USE_RC_SUBR}
+	@${MV} ${WRKSRC}/${DISTNAME} ${WRKSRC}/${USE_RC_SUBR}
 
 do-install:
 	${MKDIR} ${SAMPDIR}
