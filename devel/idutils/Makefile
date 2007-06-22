@@ -10,7 +10,7 @@ PORTVERSION=	4.0
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITE_SUBDIR=	idutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The classic Berkeley gid/lid tools for looking up variables in code
