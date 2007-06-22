@@ -8,8 +8,9 @@
 PORTNAME=	pyephem
 PORTVERSION=	3.7b
 CATEGORIES=	astro math hamradio
-MASTER_SITES=	http://www.rhodesmill.org/brandon/projects/ \
+MASTER_SITES=	http://rhodesmill.org/brandon/projects/ \
 		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	db
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Scientific-grade astronomical computations for Python
