@@ -4,8 +4,11 @@ bin/mugshot-uri-handler
 lib/mugshot/firefox/chrome.manifest
 lib/mugshot/firefox/chrome/content/chatWindow.js
 lib/mugshot/firefox/chrome/content/chatWindow.xul
+lib/mugshot/firefox/chrome/content/hippo.js
 lib/mugshot/firefox/chrome/content/overlay.js
 lib/mugshot/firefox/chrome/content/overlay.xul
+lib/mugshot/firefox/chrome/content/tabcontext.js
+lib/mugshot/firefox/chrome/content/windowcontext.js
 lib/mugshot/firefox/chrome/icons/default/mugshot.xpm
 lib/mugshot/firefox/chrome/locale/en-US/overlay.dtd
 lib/mugshot/firefox/chrome/skin/chatWindow.css
@@ -35,7 +38,7 @@ share/icons/hicolor/22x22/apps/mugshot_notification_disabled.png
 share/icons/hicolor/24x24/apps/mugshot.png
 share/icons/hicolor/32x32/apps/mugshot.png
 share/icons/hicolor/48x48/apps/mugshot.png
-@dirrm share/mugshot
+@dirrm %%DATADIR%%
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor/32x32/apps
