@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ircservices
-PORTVERSION=	5.0.61
+PORTVERSION=	5.0.62
 CATEGORIES=	irc
 MASTER_SITES=	http://www.ircservices.za.net/download/ \
 	ftp://ftp.esper.net/ircservices/ \
