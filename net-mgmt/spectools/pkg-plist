@@ -1,4 +1,4 @@
 bin/wispy_curses
-%%WITH_GTK%%bin/wispy_gtk
+%%GTK%%bin/wispy_gtk
 bin/wispy_log
 bin/wispy_raw

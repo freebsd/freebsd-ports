@@ -1,4 +1,4 @@
 ====
 In order to use the tools you need read/write access to the ugen(4)
-device node corresponding to your your Wi-Spy device.
+device node corresponding to the Wi-Spy device.
 ====
