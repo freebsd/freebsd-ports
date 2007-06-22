@@ -1,0 +1,12 @@
+--- bin/mklib.orig	Wed Jun 20 14:50:40 2007
++++ bin/mklib	Wed Jun 20 14:50:53 2007
+@@ -100,6 +100,9 @@
+ 	-L*)
+ 	    DEPS="$DEPS $1"
+ 	    ;;
++	'-pthread')
++	    DEPS="$DEPS -pthread"
++	    ;;
+ 	'-cplusplus')
+ 	    CPLUSPLUS=1
+ 	    ;;
