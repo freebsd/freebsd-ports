@@ -20,7 +20,7 @@ RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
 		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils \
 		${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
 
-USE_PYTHON=	2.4
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 
 PLIST_SUB=	PORTNAME=${PORTNAME}
