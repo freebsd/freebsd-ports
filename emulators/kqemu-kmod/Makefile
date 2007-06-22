@@ -22,7 +22,6 @@ COMMENT=	Kernel Acceralator for QEMU CPU Emulator (development version)
 ONLY_FOR_ARCHS=	i386 amd64
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
 
 USE_RC_SUBR=	kqemu
