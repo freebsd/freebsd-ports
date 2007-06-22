@@ -7,6 +7,7 @@
 
 PORTNAME=	CGI-Ex
 PORTVERSION=	2.15
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -14,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	CGI utility suite - makes powerful application writing fun and easy
+
+BUILD_DEPENDS=	${SITE_PERL}/Template/Alloy.pm:${PORTSDIR}/www/p5-Template-Alloy
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
