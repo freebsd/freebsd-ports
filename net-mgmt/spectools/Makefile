@@ -35,11 +35,9 @@ IGNORE=	is unsupported on systems prior to FreeBSD v700027
 .endif
 
 ALL_TARGET=	wispy_curses wispy_log wispy_raw
-.if defined(WITH_GTK)
-ALL_TARGET+=	wispy_gtk
-.endif
 
 .if defined(WITH_GTK)
+ALL_TARGET+=	wispy_gtk
 LIB_DEPENDS+=	gtk:${PORTSDIR}/x11-toolkits/gtk20
 PLIST_SUB=	GTK=""
 .else
