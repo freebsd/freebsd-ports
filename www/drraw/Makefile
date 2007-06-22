@@ -8,8 +8,8 @@
 PORTNAME=	drraw
 PORTVERSION=	2.1.3
 CATEGORIES=	www
-MASTER_SITES=	http://web.taranis.org/drraw/dist/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://web.taranis.org/drraw/dist/ \
+		http://christianserving.org/ports/mail/imapsync/
 
 MAINTAINER=	ports@christianserving.org
 COMMENT=	A simple web-based presentation front-end for RRDtool
