@@ -5,6 +5,3 @@ special "sharing hardware" on the UPS itself. CGI scripts are provided
 to monitor UPS status via a WEB browser.
 
 WWW: http://www.networkupstools.org/
-
-- Doug Barton
-DougB@FreeBSD.org
