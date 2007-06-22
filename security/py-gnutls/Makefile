@@ -28,9 +28,11 @@ post-patch:
 	${FIND} ${WRKSRC}/gnutls/library -type f | ${XARGS} ${REINPLACE_CMD} -e 's/libgnutls.so.13/libgnutls.so.15/g'
 	${FIND} ${WRKSRC}/gnutls/library -type f | ${XARGS} ${REINPLACE_CMD} -e 's/libgnutls-extra.so.13/libgnutls-extra.so.15/g'
 
+.if !defined(NOPORTEXAMPLES)
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.pre.mk>
 

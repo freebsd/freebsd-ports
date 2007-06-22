@@ -42,24 +42,24 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gnutls/interfaces/twisted
 @dirrm %%PYTHON_SITELIBDIR%%/gnutls/interfaces
 @dirrm %%PYTHON_SITELIBDIR%%/gnutls
-%%EXAMPLESDIR%%/README
-%%EXAMPLESDIR%%/c.py
-%%EXAMPLESDIR%%/certs/ca.pem
-%%EXAMPLESDIR%%/certs/crl.pem
-%%EXAMPLESDIR%%/certs/revoked.crt
-%%EXAMPLESDIR%%/certs/revoked.key
-%%EXAMPLESDIR%%/certs/valid.crt
-%%EXAMPLESDIR%%/certs/valid.key
-%%EXAMPLESDIR%%/client.py
-%%EXAMPLESDIR%%/crypto.py
-%%EXAMPLESDIR%%/osc.py
-%%EXAMPLESDIR%%/oss.py
-%%EXAMPLESDIR%%/s.py
-%%EXAMPLESDIR%%/server.py
-%%EXAMPLESDIR%%/tc.py
-%%EXAMPLESDIR%%/ts.py
-%%EXAMPLESDIR%%/tso.py
-%%EXAMPLESDIR%%/twisted-client.py
-%%EXAMPLESDIR%%/twisted-server.py
-@dirrm %%EXAMPLESDIR%%/certs
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/ca.pem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/crl.pem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/revoked.crt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/revoked.key
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/valid.crt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/valid.key
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crypto.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/osc.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oss.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/s.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tc.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ts.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tso.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/twisted-client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/twisted-server.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/certs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
