@@ -32,17 +32,17 @@
 %%PYTHON_SITELIBDIR%%/notifier/version.pyc
 %%PYTHON_SITELIBDIR%%/notifier/version.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/notifier
-%%EXAMPLESDIR%%/callbacks.py
-%%EXAMPLESDIR%%/logger.py
-%%EXAMPLESDIR%%/process.py
-%%EXAMPLESDIR%%/process2.py
-%%EXAMPLESDIR%%/signal.py
-%%EXAMPLESDIR%%/signal2.py
-%%EXAMPLESDIR%%/test-generic.py
-%%EXAMPLESDIR%%/test-gtk.py
-%%EXAMPLESDIR%%/test-qt.py
-%%EXAMPLESDIR%%/test-wx.py
-%%EXAMPLESDIR%%/threads.py
-%%EXAMPLESDIR%%/test-gobject.py
-%%EXAMPLESDIR%%/process3.py
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/callbacks.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logger.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/process.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/process2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/signal.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/signal2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-generic.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-gtk.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-qt.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-wx.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/threads.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-gobject.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/process3.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

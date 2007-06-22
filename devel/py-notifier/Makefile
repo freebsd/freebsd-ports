@@ -22,7 +22,7 @@ EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
 
 WRKSRC=		${WRKDIR}/py${PORTNAME}-${PORTVERSION}
 
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
