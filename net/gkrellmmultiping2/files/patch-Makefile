@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Dec 17 15:46:48 2005
-+++ Makefile	Sat Jan  7 00:53:35 2006
+--- Makefile.orig	Thu Jan 18 08:23:12 2007
++++ Makefile	Wed Jun 20 07:04:53 2007
 @@ -1,15 +1,11 @@
  ifeq ($(INSTALLROOT),)
  INSTALLROOT = /usr/local
@@ -12,7 +12,7 @@
 -endif
 +PLUGINDIR=${PREFIX}/libexec/gkrellm2/plugins
 +HELPERDIR=$(PLUGINDIR)
- VERSION = 2.0.11
+ VERSION = 2.0.13
  PKGNAME = gkrellm-multiping
 -CC = gcc
 +CC ?= gcc
