@@ -10,7 +10,6 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	# Empty
-PKGNAMEPREFIX=	horde-
 DISTFILES=	# None
 
 MAINTAINER=	beech@FreeBSD.org
@@ -40,43 +39,43 @@ OPTIONS=	IMP "IMAP Webmail System" on	\
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde-base
 
 .if !defined(WITHOUT_IMP)
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/imp/index.php:${PORTSDIR}/mail/imp
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/imp/index.php:${PORTSDIR}/mail/horde-imp
 .endif
 
 .if defined(WITH_MIMP)
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/mimp/index.php:${PORTSDIR}/mail/mimp
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/mimp/index.php:${PORTSDIR}/mail/horde-mimp
 .endif
 
 .if !defined(WITHOUT_INGO)
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/ingo/filters.php:${PORTSDIR}/mail/ingo
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/ingo/filters.php:${PORTSDIR}/mail/horde-ingo
 .endif
 
 .if !defined(WITHOUT_TURBA)
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/turba/minisearch.php:${PORTSDIR}/mail/turba
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/turba/minisearch.php:${PORTSDIR}/mail/horde-turba
 .endif
 
 .if defined(WITH_KRONOLITH)
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/kronolith/index.php:${PORTSDIR}/deskutils/kronolith
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/kronolith/index.php:${PORTSDIR}/deskutils/horde-kronolith
 .endif
 
 .if defined(WITH_MNEMO)
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/mnemo/index.php:${PORTSDIR}/deskutils/mnemo
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/mnemo/index.php:${PORTSDIR}/deskutils/horde-mnemo
 .endif
 
 .if !defined(WITHOUT_NAG)
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/nag/data.php:${PORTSDIR}/deskutils/nag
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/nag/data.php:${PORTSDIR}/deskutils/horde-nag
 .endif
 
 .if defined(WITH_CHORA)
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/chora/index.php:${PORTSDIR}/devel/chora
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/chora/index.php:${PORTSDIR}/devel/horde-chora
 .endif
 
 .if defined(WITH_GOLLEM)
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/gollem/index.php:${PORTSDIR}/ftp/gollem
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/gollem/index.php:${PORTSDIR}/ftp/horde-gollem
 .endif
 
 .if defined(WITH_JETA)
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/jeta/index.php:${PORTSDIR}/security/jeta
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/jeta/index.php:${PORTSDIR}/security/horde-jeta
 .endif
 
 .if defined(WITH_HPASSWD)
@@ -102,11 +101,8 @@ RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/ansel/gallery.php:${PORTSDIR}/www/horde-
 post-configure:
 	@${CAT} ${FILESDIR}/post-configure-message
 
-postinstall:
-
+do-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
-
-do-install:
 
 .include <bsd.port.post.mk>

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	deskutils www
 
 MAINTAINER=	beech@FreeBSD.org
-COMMENT=	Kronolith is the Horde calendar application
+COMMENT=	Calendar application
 
 USE_HORDE=	base
 USE_GETTEXT=	yes

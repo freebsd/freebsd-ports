@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	mail www
 
 MAINTAINER=	beech@FreeBSD.org
-COMMENT=	Horde's email-filter management application
+COMMENT=	Email-filter management application
 
 #-----------------------------------------------------------------------
 # You may define this option:

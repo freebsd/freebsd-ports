@@ -9,11 +9,10 @@ PORTNAME=	passwd
 PORTVERSION=	3.0.1
 PORTREVISION=	1
 CATEGORIES=	www mail
-PKGNAMEPREFIX=	horde-
 DIST_SUBDIR=	horde
 
 MAINTAINER=	beech@FreeBSD.org
-COMMENT=	Password changing module for Horde
+COMMENT=	Password changing module
 
 USE_HORDE=	base
 USE_GETTEXT=	yes

@@ -3073,3 +3073,13 @@ multimedia/audacious-docklet|multimedia/audacious-plugins|2007-06-15|Functionali
 net/cacti|net-mgmt/cacti|2007-06-18|Move to net-mgmt category
 net/zabbix-agent|net-mgmt/zabbix-agent|2007-06-18|Move to net-mgmt category
 graphics/gpdf|graphics/evince|2007-06-19|Obsolete port
+deskutils/mnemo|deskutils/horde-mnemo|2007-06-21|Port renamed for consistency
+deskutils/nag|deskutils/horde-nag|2007-06-21|Port renamed for consistency
+deskutils/kronolith|deskutils/horde-kronolith|2007-06-21|Port renamed for consistency
+devel/chora|devel/horde-chora|2007-06-21|Port renamed for consistency
+ftp/gollem|ftp/horde-gollem|2007-06-21|Port renamed for consistency
+mail/imp|mail/horde-imp|2007-06-21|Port renamed for consistency
+mail/ingo|mail/horde-ingo|2007-06-21|Port renamed for consistency
+mail/mimp|mail/horde-mimp|2007-06-21|Port renamed for consistency
+mail/turba|mail/horde-turba|2007-06-21|Port renamed for consistency
+security/jeta|security/horde-jeta|2007-06-21|Port renamed for consistency
