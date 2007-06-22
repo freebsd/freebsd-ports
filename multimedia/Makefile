@@ -16,6 +16,7 @@
     SUBDIR += camserv
     SUBDIR += castpodder
     SUBDIR += clive
+    SUBDIR += devede
     SUBDIR += dirac
     SUBDIR += dirac-reference
     SUBDIR += dtv

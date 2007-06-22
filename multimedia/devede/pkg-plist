@@ -1,0 +1,36 @@
+bin/devede
+lib/devede/devede_convert.py
+lib/devede/devede_gtk_helper.py
+lib/devede/devede_other.py
+share/applications/devede.desktop
+%%DATADIR%%/barras.png
+%%DATADIR%%/devede.glade
+%%DATADIR%%/devedesans.ttf
+%%DATADIR%%/estira.png
+%%PORTDOCS%%%%DOCSDIR%%/html/choose.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/devede.html
+%%PORTDOCS%%%%DOCSDIR%%/html/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gpl.html
+%%PORTDOCS%%%%DOCSDIR%%/html/main.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/movie1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/movie2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/movie3.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/movie4.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/movie5.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/movie6.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/psf.html
+%%NLS%%share/locale/cs/LC_MESSAGES/devede.mo
+%%NLS%%share/locale/de/LC_MESSAGES/devede.mo
+%%NLS%%share/locale/es/LC_MESSAGES/devede.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/devede.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/devede.mo
+%%NLS%%share/locale/it/LC_MESSAGES/devede.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/devede.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/devede.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/devede.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/devede.mo
+share/pixmaps/devede.png
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrm lib/devede
