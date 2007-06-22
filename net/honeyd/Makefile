@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	honeyd
-PORTVERSION=	1.5b
-PORTREVISION=	2
+PORTVERSION=	1.5c
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
@@ -16,8 +15,7 @@ MAINTAINER=	wxs@atarininja.org
 COMMENT=	Simulate virtual network hosts (honeypots)
 
 LIB_DEPENDS=	event-1.3b:${PORTSDIR}/devel/libevent \
-		dnet.1:${PORTSDIR}/net/libdnet \
-		dnsres.0:${PORTSDIR}/devel/libdnsres
+		dnet.1:${PORTSDIR}/net/libdnet
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
 
 USE_LDCONFIG=	yes
@@ -25,7 +23,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
 		--with-libevent=${LOCALBASE} \
-		--with-libdnsres=${LOCALBASE}
+		--mandir=${MANPREFIX}/man
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	2.4
@@ -38,10 +36,6 @@ MAN1=		honeydctl.1
 MAN8=		honeyd.8
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-LIB_DEPENDS+=	edit.6:${PORTSDIR}/devel/libedit
-.endif
 
 .if !defined(WITH_PYTHON)
 pre-everything::
