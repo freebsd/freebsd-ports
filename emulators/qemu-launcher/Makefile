@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qemu-launcher
-PORTVERSION=	1.7.3
-PORTREVISION=	1
+PORTVERSION=	1.7.4
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.gna.org/qemulaunch/1.7.x/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -17,7 +16,6 @@ COMMENT=	A GTK front-end to Qemu
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		${SITE_PERL}/${PERL_ARCH}/Gtk2/GladeXML/:${PORTSDIR}/x11-toolkits/p5-Glade2 \
-		${SITE_PERL}/${PERL_ARCH}/Gnome2.pm:${PORTSDIR}/x11-toolkits/p5-Gnome2 \
 		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
