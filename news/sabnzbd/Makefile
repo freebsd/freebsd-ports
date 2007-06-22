@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	SABnzbd
+PORTNAME=	sabnzbd
 PORTVERSION=	0.2.5
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sabnzbd
+DISTNAME=	SABnzbd-${PORTVERSION}
 
 MAINTAINER=	daniel@netwalk.org
 COMMENT=	A web-interface based binary newsgrabber in python, with nzb support
