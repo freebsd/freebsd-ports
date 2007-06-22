@@ -8,7 +8,9 @@
 PORTNAME=	opal
 PORTVERSION=	2.2.8
 CATEGORIES=	net
-MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/sources/
+MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/sources/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=mi
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	VoIP abstraction library
