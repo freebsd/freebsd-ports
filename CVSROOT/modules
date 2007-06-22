@@ -1277,7 +1277,6 @@ chmlib		ports/misc/chmlib
 chmsee		ports/deskutils/chmsee
 chmview		ports/converters/chmview
 choparp		ports/net-mgmt/choparp
-chora		ports/devel/chora
 chord		ports/misc/chord
 chord2html	ports/misc/chord2html
 chordpack	ports/audio/chordpack
@@ -3951,7 +3950,6 @@ golddig		ports/games/golddig
 golded+		ports/news/golded+
 goldstr		ports/misc/goldstr
 golem		ports/x11-wm/golem
-gollem		ports/ftp/gollem
 gomoku.app	ports/games/gomoku.app
 gone		ports/misc/gone
 gonvert		ports/misc/gonvert
@@ -4498,11 +4496,21 @@ honeyd		ports/net/honeyd
 hope		ports/lang/hope
 horde-ansel	ports/www/horde-ansel
 horde-base	ports/www/horde-base
+horde-chora	ports/devel/horde-chora
 horde-forwards	ports/mail/horde-forwards
+horde-gollem	ports/ftp/horde-gollem
+horde-imp	ports/mail/horde-imp
+horde-ingo	ports/mail/horde-ingo
+horde-jeta	ports/security/horde-jeta
+horde-kronolith	ports/deskutils/horde-kronolith
 horde-meta	ports/www/horde-meta
+horde-mimp	ports/mail/horde-mimp
+horde-mnemo	ports/deskutils/horde-mnemo
+horde-nag	ports/deskutils/horde-nag
 horde-nic	ports/net-mgmt/horde-nic
 horde-passwd	ports/www/horde-passwd
 horde-trean	ports/www/horde-trean
+horde-turba	ports/mail/horde-turba
 horde-vacation	ports/mail/horde-vacation
 hostsentry	ports/security/hostsentry
 hot-babe	ports/deskutils/hot-babe
@@ -4765,7 +4773,6 @@ imlib		ports/graphics/imlib
 imlib2		ports/graphics/imlib2
 imlib2_loaders	ports/graphics/imlib2_loaders
 imm		ports/mbone/imm
-imp		ports/mail/imp
 imp-interpreter	ports/lang/imp-interpreter
 impact		ports/cad/impact
 impress		ports/editors/impress
@@ -4780,7 +4787,6 @@ info_to_html	ports/textproc/info_to_html
 infobot		ports/irc/infobot
 infobus		ports/java/infobus
 inform		ports/games/inform
-ingo		ports/mail/ingo
 inilib		ports/devel/inilib
 initutil	ports/devel/initutil
 inkscape	ports/graphics/inkscape
@@ -5521,7 +5527,6 @@ jedit-devel	ports/editors/jedit-devel
 jep		ports/devel/jep
 jerm		ports/comms/jerm
 jesred		ports/www/jesred
-jeta		ports/security/jeta
 jetpack		ports/games/jetpack
 jetspeed	ports/www/jetspeed
 jetty		ports/www/jetty
@@ -6032,7 +6037,6 @@ krefty		ports/deskutils/krefty
 krename		ports/sysutils/krename
 kripp		ports/security/kripp
 kroc		ports/lang/kroc
-kronolith	ports/deskutils/kronolith
 krosswordplayer	ports/games/krosswordplayer
 krss		ports/deskutils/krss
 krusader	ports/x11-fm/krusader
@@ -7362,7 +7366,6 @@ mimedefang	ports/mail/mimedefang
 mimelib		ports/converters/mimelib
 mimetex		ports/www/mimetex
 mimir		ports/devel/mimir
-mimp		ports/mail/mimp
 minc		ports/science/minc
 minc2		ports/science/minc2
 minder		ports/net-p2p/minder
@@ -7472,7 +7475,6 @@ mmsrip		ports/multimedia/mmsrip
 mmucl		ports/net/mmucl
 mmv		ports/misc/mmv
 mn-aspell	ports/textproc/mn-aspell
-mnemo		ports/deskutils/mnemo
 mnogosearch	ports/www/mnogosearch
 mnogosearch31	ports/www/mnogosearch31
 mob		ports/devel/mob
@@ -7880,7 +7882,6 @@ mywwwatcher	ports/databases/mywwwatcher
 nInvaders	ports/games/nInvaders
 nab		ports/biology/nab
 nadar		ports/games/nadar
-nag		ports/deskutils/nag
 nagcon		ports/net-mgmt/nagcon
 nagios		ports/net-mgmt/nagios
 nagios-base-logos	ports/misc/nagios-base-logos
@@ -15550,7 +15551,6 @@ tulip		ports/graphics/tulip
 tumgreyspf	ports/mail/tumgreyspf
 tunapie		ports/multimedia/tunapie
 tuneradio	ports/audio/tuneradio
-turba		ports/mail/turba
 tux-aqfh	ports/games/tux-aqfh
 tuxcards	ports/deskutils/tuxcards
 tuxguitar	ports/audio/tuxguitar
