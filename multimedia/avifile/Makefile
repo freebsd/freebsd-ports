@@ -72,6 +72,10 @@ BROKEN=		xvid plugin fails to build
 WITH_OPTIMIZED_CFLAGS=	yes
 .endif
 
+.if ${OSVERSION} >= 700000
+BROKEN=		Numerous compile errors under gcc 4.2
+.endif
+
 .if (${ARCH} != "i386") && (${ARCH} != "amd64")
 WITHOUT_A52=yes
 BROKEN=		Does not compile on !i386
