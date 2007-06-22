@@ -328,6 +328,12 @@ lib/libmangosscript.so.0
 %%DATADIR%%/sql/updates/3845_command.sql
 %%DATADIR%%/sql/updates/3859_spell_affect.sql
 %%DATADIR%%/sql/updates/3862_prospecting_loot_template.sql
+%%DATADIR%%/sql/updates/3874_spell_scripts.sql
+%%DATADIR%%/sql/updates/3875_item_template.sql
+%%DATADIR%%/sql/updates/3876_character_ticket.sql
+%%DATADIR%%/sql/updates/3884_quest_scripts.sql
+%%DATADIR%%/sql/updates/3891_quest_scripts.sql
+%%DATADIR%%/sql/updates/3906_areatrigger_template.sql						
 %%DATADIR%%/sql/updates/README
 %%DBC%%%%DATADIR%%/dbc/AnimationData.dbc
 %%DBC%%%%DATADIR%%/dbc/AreaPOI.dbc
@@ -504,7 +510,15 @@ lib/libmangosscript.so.0
 %%DBC%%%%DATADIR%%/dbc/gtOCTRegenMP.dbc
 %%DBC%%%%DATADIR%%/dbc/gtRegenHPPerSpt.dbc
 %%DBC%%%%DATADIR%%/dbc/gtRegenMPPerSpt.dbc
+%%SD2%%share/scriptdev2/sql/scriptdev_full.sql
+%%SD2%%share/scriptdev2/sql/updates/09_BraveWindfeather.sql
+%%SD2%%share/scriptdev2/sql/updates/11_SilvaFilnaveth.sql
+%%SD2%%share/scriptdev2/sql/updates/27_Vaelastraz.sql
+%%SD2%%share/scriptdev2/sql/updates/r56.sql
 @dirrm %%DATADIR%%/sql/updates
 @dirrm %%DATADIR%%/sql
 %%DBC%%@dirrm %%DATADIR%%/dbc
 @dirrm %%DATADIR%%
+%%SD2%%@dirrm share/scriptdev2/sql/updates
+%%SD2%%@dirrm share/scriptdev2/sql
+%%SD2%%@dirrm share/scriptdev2

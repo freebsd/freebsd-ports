@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mangos
-PORTVERSION=	3865
+PORTVERSION=	3909
 CATEGORIES=	games
 MASTER_SITES=	CENKES http://mangos-port.by.ru/ \
 		http://neon.heavennet.ru/mangos/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
-SCRIPTDEV2REV=	54
+SCRIPTDEV2REV=	58
 
 MAINTAINER=    	neon_cyrex@mail.ru
 COMMENT=	Free dedicated-server for World of Warcraft
@@ -38,6 +38,9 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .ifdef WITH_SCRIPTDEV2
 DISTFILES+=	ScriptDev2-${SCRIPTDEV2REV}.tar.gz
 EXTRA_PATCHES=	${FILESDIR}/ScriptDev2.patch
+PLIST_SUB+=	SD2=""
+.else
+PLIST_SUB+=	SD2="@comment "
 .endif
 .ifdef WITH_DBC
 PLIST_SUB+=	DBC=""
