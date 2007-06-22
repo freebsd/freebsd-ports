@@ -34,17 +34,16 @@ IGNORE=	is unsupported on systems prior to FreeBSD v602101
 IGNORE=	is unsupported on systems prior to FreeBSD v700027
 .endif
 
+ALL_TARGET=	wispy_curses wispy_log wispy_raw
 .if defined(WITH_GTK)
-LIB_DEPENDS+=	gtk:${PORTSDIR}/x11-toolkits/gtk20
-PLIST_SUB=	WITH_GTK=""
-.else
-PLIST_SUB=	WITH_GTK="@comment "
+ALL_TARGET+=	wispy_gtk
 .endif
 
-do-build:
-	cd ${WRKSRC} && ${GMAKE} wispy_curses wispy_log wispy_raw
 .if defined(WITH_GTK)
-	cd ${WRKSRC} && ${GMAKE} wispy_gtk
+LIB_DEPENDS+=	gtk:${PORTSDIR}/x11-toolkits/gtk20
+PLIST_SUB=	GTK=""
+.else
+PLIST_SUB=	GTK="@comment "
 .endif
 
 do-install:
@@ -56,7 +55,7 @@ do-install:
 .endif
 
 post-install:
-.ifndef(NOPORTDOC)
+.ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
