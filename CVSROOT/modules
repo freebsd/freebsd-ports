@@ -10821,6 +10821,7 @@ p5-TclTk	ports/x11-toolkits/p5-TclTk
 p5-TeX-Encode	ports/textproc/p5-TeX-Encode
 p5-TeX-Hyphen	ports/textproc/p5-TeX-Hyphen
 p5-Telnet-Cisco	ports/net-mgmt/p5-Telnet-Cisco
+p5-Template-Alloy	ports/www/p5-Template-Alloy
 p5-Template-DBI	ports/databases/p5-Template-DBI
 p5-Template-Declare	ports/textproc/p5-Template-Declare
 p5-Template-Extract	ports/textproc/p5-Template-Extract
