@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netstiff
-PORTVERSION=	20070322
+PORTVERSION=	20070621
 CATEGORIES=	www
 MASTER_SITES=	http://pkqs.net/~sbeyer/tools/netstiff/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
