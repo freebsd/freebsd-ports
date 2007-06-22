@@ -84,6 +84,7 @@ USE_ICONV=	yes
 .endif
 
 .ifdef(WITH_ID3TAG)
+LIB_DEPENDS+=	id3tag.0:${PORTSDIR}/audio/libid3tag
 CONFIGURE_ARGS+=--enable-mpd-id3tag
 .endif
 
