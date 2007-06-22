@@ -49,9 +49,9 @@ lib/gstreamer-%%VERSION%%/libgstnsf.so
 lib/gstreamer-%%VERSION%%/libgstnuvdemux.a
 lib/gstreamer-%%VERSION%%/libgstnuvdemux.la
 lib/gstreamer-%%VERSION%%/libgstnuvdemux.so
-lib/gstreamer-%%VERSION%%/libgstreal.a
-lib/gstreamer-%%VERSION%%/libgstreal.la
-lib/gstreamer-%%VERSION%%/libgstreal.so
+%%I386%%lib/gstreamer-%%VERSION%%/libgstreal.a
+%%I386%%lib/gstreamer-%%VERSION%%/libgstreal.la
+%%I386%%lib/gstreamer-%%VERSION%%/libgstreal.so
 lib/gstreamer-%%VERSION%%/libgstreplaygain.a
 lib/gstreamer-%%VERSION%%/libgstreplaygain.la
 lib/gstreamer-%%VERSION%%/libgstreplaygain.so
@@ -107,4 +107,4 @@ share/locale/sr/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
-@dirrmtry include/gstreamer-%%VERSION%%/gst/app
+@dirrm lib/gstreamer-%%VERSION%%
