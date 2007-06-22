@@ -63,6 +63,12 @@ DEFAULT_AUDIOSRC?=	osssrc
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH}=="i386"
+PLIST_SUB+=	I386=""
+.else
+PLIST_SUB+=	I386="@comment "
+.endif
+
 .if ${GST_PLUGIN} == "base"
 gst_base_DIST=	base
 NO_GSTREAMER_COMMON=	yes
