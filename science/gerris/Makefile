@@ -14,7 +14,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gfs
 
 PATCH_SITES=		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
-			http://members.aon.at/odunkl/downloads/patches/:odunkl
+			http://members.aon.at/odi/downloads/patches/:odunkl
 PATCH_SITE_SUBDIR=	gfs/:sf
 PATCHFILES=		gerris-0.6-patch-1.gz:sf,odunkl \
 			gerris-0.6-patch-2.gz:odunkl
