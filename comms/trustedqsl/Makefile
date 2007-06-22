@@ -26,12 +26,6 @@ MAKE_ENV=	INCDIR="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	can not build on 4.x
-.endif
-
 post-patch:
 	@${CP} ${FILESDIR}/Makefile  ${WRKSRC}
 	@${REINPLACE_CMD} -e 's|%%INSTALL%%|${INSTALL_PROGRAM}|' \
@@ -70,4 +64,5 @@ post-install:
 	@${ECHO} before this program will run correctly.
 	@${ECHO}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
+
