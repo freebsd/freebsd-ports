@@ -24,10 +24,6 @@ OPTIONS=	RSYNC "rsync support" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		wordexp() is not supported on 4.x
-.endif
-
 .if defined(WITH_RSYNC)
 RUN_DEPENDS+=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
 CONFIGURE_ARGS+=--with-rsync=${LOCALBASE}/bin/rsync
