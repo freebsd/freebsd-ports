@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A pragma to use the C3 method resolution order algorithm
 
-OPTIONS=	XS "XS Speedoffs" off
+OPTIONS=	XS "XS speed optimizations" off
 
 .include <bsd.port.pre.mk>
 
