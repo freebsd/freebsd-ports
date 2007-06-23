@@ -20,6 +20,7 @@ avr/include/avr/io8515.h
 avr/include/avr/io8534.h
 avr/include/avr/io8535.h
 avr/include/avr/io86r401.h
+avr/include/avr/io90pwm1.h
 avr/include/avr/io90pwmx.h
 avr/include/avr/ioat94k.h
 avr/include/avr/iocan128.h
@@ -40,6 +41,7 @@ avr/include/avr/iom165p.h
 avr/include/avr/iom168.h
 avr/include/avr/iom169.h
 avr/include/avr/iom169p.h
+avr/include/avr/iom16hva.h
 avr/include/avr/iom2560.h
 avr/include/avr/iom2561.h
 avr/include/avr/iom32.h
@@ -62,9 +64,11 @@ avr/include/avr/iom8.h
 avr/include/avr/iom8515.h
 avr/include/avr/iom8535.h
 avr/include/avr/iom88.h
+avr/include/avr/iom8hva.h
 avr/include/avr/iomx8.h
 avr/include/avr/iomxx0_1.h
 avr/include/avr/iomxx4.h
+avr/include/avr/iomxxhva.h
 avr/include/avr/iotn11.h
 avr/include/avr/iotn12.h
 avr/include/avr/iotn13.h
@@ -87,8 +91,11 @@ avr/include/avr/iotnx5.h
 avr/include/avr/iotnx61.h
 avr/include/avr/iousb1286.h
 avr/include/avr/iousb1287.h
+avr/include/avr/iousb162.h
 avr/include/avr/iousb646.h
 avr/include/avr/iousb647.h
+avr/include/avr/iousb82.h
+avr/include/avr/iousbxx2.h
 avr/include/avr/iousbxx6_7.h
 avr/include/avr/parity.h
 avr/include/avr/pgmspace.h
@@ -113,8 +120,21 @@ avr/include/stdlib.h
 avr/include/string.h
 avr/include/util/crc16.h
 avr/include/util/delay.h
+avr/include/util/delay_basic.h
 avr/include/util/parity.h
 avr/include/util/twi.h
+avr/lib/avr25/crt86401.o
+avr/lib/avr25/crttn13.o
+avr/lib/avr25/crttn2313.o
+avr/lib/avr25/crttn24.o
+avr/lib/avr25/crttn25.o
+avr/lib/avr25/crttn261.o
+avr/lib/avr25/crttn44.o
+avr/lib/avr25/crttn45.o
+avr/lib/avr25/crttn461.o
+avr/lib/avr25/crttn84.o
+avr/lib/avr25/crttn85.o
+avr/lib/avr25/crttn861.o
 avr/lib/avr3/crt43320.o
 avr/lib/avr3/crt43355.o
 avr/lib/avr3/crt76711.o
@@ -125,6 +145,7 @@ avr/lib/avr3/libprintf_flt.a
 avr/lib/avr3/libprintf_min.a
 avr/lib/avr3/libscanf_flt.a
 avr/lib/avr3/libscanf_min.a
+avr/lib/avr4/crt90pwm1.o
 avr/lib/avr4/crt90pwm2.o
 avr/lib/avr4/crt90pwm3.o
 avr/lib/avr4/crtm48.o
@@ -132,6 +153,7 @@ avr/lib/avr4/crtm8.o
 avr/lib/avr4/crtm8515.o
 avr/lib/avr4/crtm8535.o
 avr/lib/avr4/crtm88.o
+avr/lib/avr4/crtm8hva.o
 avr/lib/avr4/libc.a
 avr/lib/avr4/libm.a
 avr/lib/avr4/libprintf_flt.a
@@ -155,13 +177,18 @@ avr/lib/avr5/crtm165p.o
 avr/lib/avr5/crtm168.o
 avr/lib/avr5/crtm169.o
 avr/lib/avr5/crtm169p.o
+avr/lib/avr5/crtm16hva.o
 avr/lib/avr5/crtm32.o
 avr/lib/avr5/crtm323.o
 avr/lib/avr5/crtm324p.o
 avr/lib/avr5/crtm325.o
+avr/lib/avr5/crtm325p.o
 avr/lib/avr5/crtm3250.o
+avr/lib/avr5/crtm3250p.o
 avr/lib/avr5/crtm329.o
+avr/lib/avr5/crtm329p.o
 avr/lib/avr5/crtm3290.o
+avr/lib/avr5/crtm3290p.o
 avr/lib/avr5/crtm406.o
 avr/lib/avr5/crtm64.o
 avr/lib/avr5/crtm640.o
@@ -173,8 +200,10 @@ avr/lib/avr5/crtm649.o
 avr/lib/avr5/crtm6490.o
 avr/lib/avr5/crtusb1286.o
 avr/lib/avr5/crtusb1287.o
+avr/lib/avr5/crtusb162.o
 avr/lib/avr5/crtusb646.o
 avr/lib/avr5/crtusb647.o
+avr/lib/avr5/crtusb82.o
 avr/lib/avr5/libc.a
 avr/lib/avr5/libm.a
 avr/lib/avr5/libprintf_flt.a
@@ -231,6 +260,7 @@ share/doc/avr-libc/LICENSE
 @dirrm avr/include/compat
 @dirrm avr/include/avr
 @dirrm avr/include
+@dirrm avr/lib/avr25
 @dirrm avr/lib/avr3
 @dirrm avr/lib/avr4
 @dirrm avr/lib/avr5
