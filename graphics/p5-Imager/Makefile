@@ -26,7 +26,7 @@ LIB_DEPENDS=	\
 USE_FREETYPE=	yes
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib" \
-		IM_CFLAGS="${CFLAGS}" \
+		IM_CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 		IM_INCPATH="${LOCALBASE}/include/freetype1/freetype"
 
 .include "Makefile.man"
