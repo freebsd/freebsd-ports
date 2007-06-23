@@ -29,7 +29,7 @@ MAN1=		rtorrent.1
 USE_GCC=	3.4+
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-debug
+CONFIGURE_ARGS=	--disable-debug --mandir="${PREFIX}/man"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 SUB_FILES=	pkg-message
