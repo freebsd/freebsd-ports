@@ -16,7 +16,7 @@ Locally added support for the following AVR devices:
   ATmega329/ATmega3290/ATmega649/ATmega6490, including their "P" variants
   ATmega406
   ATmega640/ATmega1280/ATmega1281
-  AT90PWM1/PWM2/AT90PWM3          AT90CAN32/64
+  AT90PWM1/PWM2/AT90PWM3          AT90CAN32/64      ATmega8HVA/ATmega16HVA
   AT90USB82/162/646/647/1286/1287
   ATmega2560/ATmega2561 (beta test)
 
