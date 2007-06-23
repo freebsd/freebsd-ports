@@ -1,6 +1,6 @@
---- configure.orig	Sun Sep  3 12:31:45 2006
-+++ configure	Sun Sep  3 12:32:34 2006
-@@ -20559,6 +20559,7 @@ echo $ECHO_N "checking whether to check 
+--- configure.orig	Sat Jun 23 02:05:47 2007
++++ configure	Sat Jun 23 02:13:52 2007
+@@ -20338,6 +20338,7 @@ echo $ECHO_N "checking whether to check 
     check_inconsistencies=yes
     case "${host_cpu}-${host_os}" in
       *-darwin*) check_inconsistencies=no ;;
@@ -8,3 +8,11 @@
     esac
     if test x"$GCC" != xyes -o "x$check_inconsistencies" != xyes ; then
        { echo "$as_me:$LINENO: result: no" >&5
+@@ -22442,6 +22443,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <sys/socket.h>
+ int
+ main ()
+ {
