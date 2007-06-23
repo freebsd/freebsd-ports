@@ -102,7 +102,6 @@ post-configure:
 	@${CAT} ${FILESDIR}/post-configure-message
 
 do-install:
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	@${DO_NADA}
 
 .include <bsd.port.post.mk>
