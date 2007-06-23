@@ -20,7 +20,6 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/mixfont-mplus-ipa-TrueType-20060520p1
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
