@@ -1,5 +1,0 @@
-@comment $FreeBSD$
-bin/acroread
-@exec mkdir -p %D/%%ACROBASE%%
-@dirrmtry %%ACROBASE%%
-@dirrmtry %%ADOBEBASE%%

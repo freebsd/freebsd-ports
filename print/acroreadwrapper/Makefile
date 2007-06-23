@@ -7,7 +7,7 @@
 
 PORTNAME=	acroreadwrapper
 PORTVERSION=	0.0.20060221
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -18,8 +18,7 @@ COMMENT=	Wrapper script for Adobe Reader
 ONLY_FOR_ARCHS=	amd64 i386
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
-PLIST_SUB=	ACROBASE=${ACROBASE} \
-		ADOBEBASE=${ADOBEBASE}
+PLIST_FILES=	bin/acroread
 SUB_FILES=	acroread
 SUB_LIST=	ACROBASE=${ACROBASE} \
 		ADOBE_LANG=${ADOBE_LANG:U} \
@@ -36,7 +35,6 @@ do-fetch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/acroread ${PREFIX}/bin/acroread
-	${MKDIR} ${PREFIX}/${ACRODIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
