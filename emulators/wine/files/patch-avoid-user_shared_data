@@ -1,0 +1,62 @@
+Index: dlls/ntdll/loader.c
+===================================================================
+RCS file: /home/wine/wine/dlls/ntdll/loader.c,v
+retrieving revision 1.155
+diff -u -3 -p -r1.155 loader.c
+--- dlls/ntdll/loader.c	23 May 2007 13:12:18 -0000	1.155
++++ dlls/ntdll/loader.c	3 Jun 2007 14:20:23 -0000
+@@ -2308,7 +2308,9 @@ void __wine_init_windows_dir( const WCHA
+     LPWSTR buffer, p;
+ 
+     RtlCreateUnicodeString( &system_dir, sysdir );
++#if !defined(__FreeBSD__)
+     strcpyW( user_shared_data->NtSystemRoot, windir );
++#endif
+ 
+     /* prepend the system dir to the name of the already created modules */
+     mark = &NtCurrentTeb()->Peb->LdrData->InLoadOrderModuleList;
+Index: dlls/ntdll/thread.c
+===================================================================
+RCS file: /home/wine/wine/dlls/ntdll/thread.c,v
+retrieving revision 1.84
+diff -u -3 -p -r1.84 thread.c
+--- dlls/ntdll/thread.c	23 May 2007 13:12:18 -0000	1.84
++++ dlls/ntdll/thread.c	3 Jun 2007 14:20:23 -0000
+@@ -332,12 +332,15 @@ HANDLE thread_init(void)
+ 
+     /* initialize time values in user_shared_data */
+     NtQuerySystemTime( &now );
++
++#if !defined(__FreeBSD__)
+     user_shared_data->SystemTime.LowPart = now.u.LowPart;
+     user_shared_data->SystemTime.High1Time = user_shared_data->SystemTime.High2Time = now.u.HighPart;
+     user_shared_data->u.TickCountQuad = (now.QuadPart - server_start_time) / 10000;
+     user_shared_data->u.TickCount.High2Time = user_shared_data->u.TickCount.High1Time;
+     user_shared_data->TickCountLowDeprecated = user_shared_data->u.TickCount.LowPart;
+     user_shared_data->TickCountMultiplier = 1 << 24;
++#endif
+ 
+     return exe_file;
+ }
+Index: dlls/ntdll/version.c
+===================================================================
+RCS file: /home/wine/wine/dlls/ntdll/version.c,v
+retrieving revision 1.38
+diff -u -3 -p -r1.38 version.c
+--- dlls/ntdll/version.c	18 May 2007 18:57:23 -0000	1.38
++++ dlls/ntdll/version.c	3 Jun 2007 14:20:25 -0000
+@@ -506,12 +506,14 @@ done:
+     NtCurrentTeb()->Peb->OSBuildNumber  = current_version->dwBuildNumber;
+     NtCurrentTeb()->Peb->OSPlatformId   = current_version->dwPlatformId;
+ 
++#if ! defined(__FreeBSD__)
+     user_shared_data->NtProductType      = current_version->wProductType;
+     user_shared_data->ProductTypeIsValid = TRUE;
+     user_shared_data->MajorNtVersion     = current_version->dwMajorVersion;
+     user_shared_data->MinorNtVersion     = current_version->dwMinorVersion;
+     user_shared_data->MinorNtVersion     = current_version->dwMinorVersion;
+     user_shared_data->SuiteMask          = current_version->wSuiteMask;
++#endif
+ 
+     TRACE( "got %d.%d plaform %d build %x name %s service pack %d.%d product %d\n",
+            current_version->dwMajorVersion, current_version->dwMinorVersion,
