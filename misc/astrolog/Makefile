@@ -11,7 +11,7 @@
 PORTNAME=	astrolog
 PORTVERSION=	5.40
 PORTREVISION=	4
-CATEGORIES=	misc astro
+CATEGORIES=	misc
 MASTER_SITES=	http://www.astrolog.org/ftp/ephem/:ephem \
 		http://www.astrolog.org/ftp/:dist
 EXTRACT_ONLY=	ast54unx.shr
@@ -21,7 +21,7 @@ DISTFILES=	${EXTRACT_ONLY}:dist ${EPHEM}:ephem
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	An astrology program for X11 and alpha-numeric terminals
 
-EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+USE_ZIP=	yes
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 MAKE_ARGS=	-DX11
