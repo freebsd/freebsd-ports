@@ -1,0 +1,17 @@
+--- Makefile.orig	Mon Jun 18 12:27:34 2007
++++ Makefile	Mon Jun 18 12:28:01 2007
+@@ -15,11 +15,11 @@
+ 	version = 0.4
+ endif
+ 
+-LIBEVENT_INCL = -I../libevent/
+-LIBEVENT_LIB  = -L../libevent -levent
++LIBEVENT_INCL = -I%PREFIX%/include
++LIBEVENT_LIB  = -L%PREFIX%/lib -levent
+ 
+ CFLAGS  += $(LIBEVENT_INCL)
+-LDFLAGS += $(LIBEVENT_LIB) -lpthread -lresolv
++LDFLAGS += $(LIBEVENT_LIB) -lpthread
+ 
+ #--------------------------------------------------------------------
+ 

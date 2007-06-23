@@ -820,6 +820,7 @@
     SUBDIR += spoofer
     SUBDIR += spread
     SUBDIR += spread-j
+    SUBDIR += spserver
     SUBDIR += ss5
     SUBDIR += ssldump
     SUBDIR += ssltunnel-client

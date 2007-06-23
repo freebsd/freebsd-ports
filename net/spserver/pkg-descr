@@ -1,0 +1,5 @@
+spserver is a TCP server framework library written in C++ based on libevent.
+
+spserver is an implementation of Half-Sync/Half-Async pattern.
+
+WWW: http://code.google.com/p/spserver/
