@@ -14,339 +14,62 @@ catfontsdir ()
     done
 }
 
+ROMA=""
+BOLD="ds=y"
+ITAL="ai=0.15"
+OBLI="ai=0.15"
+RITA="ai=0.08"
+ROBL="ai=0.08"
+
+make_xlfd()
+{
+	_enc=$1
+	_file=$2
+	_vendor=$3
+	_fname=$4
+	_poc=$5
+
+	case "${_poc}:${_enc}" in
+	p:jisx0201.1976-*)	PFIX="fp=y:bw=0.5" ;;
+	c:jisx0201.1976-*)	PFIX="fp=n:bw=0.5" ;;
+	p:*)			PFIX="fp=y" ;;
+	c:*)			PFIX="fp=n" ;;
+	esac
+
+	set --	"${ROMA}"	medium-r \
+		${BOLD}		bold-r \
+		${ITAL}		medium-i \
+		${ITAL}:${BOLD} bold-i \
+		${OBLI}		medium-o \
+		${OBLI}:${BOLD}	bold-o \
+		${RITA}		medium-ri \
+		${RITA}:${BOLD}	bold-ri \
+		${ROBL}		medium-ro \
+		${ROBL}:${BOLD}	bold-ro
+	while [ $# != 0 ]; do
+		_prefix="${PFIX}:$1"; shift
+		_variant=$1; shift
+		printf "%s:%s -%s-%s-%s-normal--0-0-0-0-%s-0-%s\n" \
+			$_prefix $_file $_vendor $_fname $_variant $_poc $_enc
+	done | sed -e 's,::,:,g' -e 's,^:,,'
+}
+
 addentries ()
 {
-    (while read _IN; do echo ${_IN}; done) <<EOT
-ipag.ttf -ipa-IPAGothic-medium-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ipag.ttf -ipa-IPAGothic-bold-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:ipag.ttf -ipa-IPAGothic-medium-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:ipag.ttf -ipa-IPAGothic-bold-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:ipag.ttf -ipa-IPAGothic-medium-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:ipag.ttf -ipa-IPAGothic-bold-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:ipag.ttf -ipa-IPAGothic-medium-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:ipag.ttf -ipa-IPAGothic-bold-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:ipag.ttf -ipa-IPAGothic-medium-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:ipag.ttf -ipa-IPAGothic-bold-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-bw=0.5:ipag.ttf -ipa-IPAGothic-medium-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ipag.ttf -ipa-IPAGothic-bold-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:ipag.ttf -ipa-IPAGothic-medium-i-normal--0-0-0-0-c-0-jisx0201.1976-0 bw=0.5:ds=y:ai=0.15:ipag.ttf -ipa-IPAGothic-bold-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:ipag.ttf -ipa-IPAGothic-medium-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:ipag.ttf -ipa-IPAGothic-bold-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:ipag.ttf -ipa-IPAGothic-medium-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:ipag.ttf -ipa-IPAGothic-bold-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:ipag.ttf -ipa-IPAGothic-medium-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:ipag.ttf -ipa-IPAGothic-bold-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ipag.ttf -ipa-IPAGothic-medium-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:ipag.ttf -ipa-IPAGothic-medium-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:ipag.ttf -ipa-IPAGothic-medium-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:ipag.ttf -ipa-IPAGothic-medium-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:ipag.ttf -ipa-IPAGothic-medium-ro-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ipag.ttf -ipa-IPAGothic-bold-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:ipag.ttf -ipa-IPAGothic-bold-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:ipag.ttf -ipa-IPAGothic-bold-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:ipag.ttf -ipa-IPAGothic-bold-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:ipag.ttf -ipa-IPAGothic-bold-ro-normal--0-0-0-0-c-0-iso8859-1
-ipagp.ttf -ipa-IPAPGothic-medium-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ipagp.ttf -ipa-IPAPGothic-bold-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:ipagp.ttf -ipa-IPAPGothic-medium-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:ipagp.ttf -ipa-IPAPGothic-bold-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:ipagp.ttf -ipa-IPAPGothic-medium-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:ipagp.ttf -ipa-IPAPGothic-bold-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:ipagp.ttf -ipa-IPAPGothic-medium-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:ipagp.ttf -ipa-IPAPGothic-bold-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:ipagp.ttf -ipa-IPAPGothic-medium-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:ipagp.ttf -ipa-IPAPGothic-bold-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-bw=0.5:ipagp.ttf -ipa-IPAPGothic-medium-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ipagp.ttf -ipa-IPAPGothic-bold-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:ipagp.ttf -ipa-IPAPGothic-medium-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:ipagp.ttf -ipa-IPAPGothic-bold-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:ipagp.ttf -ipa-IPAPGothic-medium-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:ipagp.ttf -ipa-IPAPGothic-bold-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:ipagp.ttf -ipa-IPAPGothic-medium-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:ipagp.ttf -ipa-IPAPGothic-bold-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:ipagp.ttf -ipa-IPAPGothic-medium-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:ipagp.ttf -ipa-IPAPGothic-bold-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ipagp.ttf -ipa-IPAPGothic-medium-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:ipagp.ttf -ipa-IPAPGothic-medium-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:ipagp.ttf -ipa-IPAPGothic-medium-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:ipagp.ttf -ipa-IPAPGothic-medium-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:ipagp.ttf -ipa-IPAPGothic-medium-ro-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ipagp.ttf -ipa-IPAPGothic-bold-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:ipagp.ttf -ipa-IPAPGothic-bold-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:ipagp.ttf -ipa-IPAPGothic-bold-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:ipagp.ttf -ipa-IPAPGothic-bold-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:ipagp.ttf -ipa-IPAPGothic-bold-ro-normal--0-0-0-0-c-0-iso8859-1
-ipagui.ttf -ipa-IPAUIGothic-medium-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ipagui.ttf -ipa-IPAUIGothic-bold-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:ipagui.ttf -ipa-IPAUIGothic-medium-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:ipagui.ttf -ipa-IPAUIGothic-bold-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:ipagui.ttf -ipa-IPAUIGothic-medium-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:ipagui.ttf -ipa-IPAUIGothic-bold-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:ipagui.ttf -ipa-IPAUIGothic-medium-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:ipagui.ttf -ipa-IPAUIGothic-bold-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:ipagui.ttf -ipa-IPAUIGothic-medium-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:ipagui.ttf -ipa-IPAUIGothic-bold-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-bw=0.5:ipagui.ttf -ipa-IPAUIGothic-medium-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ipagui.ttf -ipa-IPAUIGothic-bold-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:ipagui.ttf -ipa-IPAUIGothic-medium-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:ipagui.ttf -ipa-IPAUIGothic-bold-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:ipagui.ttf -ipa-IPAUIGothic-medium-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:ipagui.ttf -ipa-IPAUIGothic-bold-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:ipagui.ttf -ipa-IPAUIGothic-medium-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:ipagui.ttf -ipa-IPAUIGothic-bold-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:ipagui.ttf -ipa-IPAUIGothic-medium-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:ipagui.ttf -ipa-IPAUIGothic-bold-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ipagui.ttf -ipa-IPAUIGothic-medium-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:ipagui.ttf -ipa-IPAUIGothic-medium-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:ipagui.ttf -ipa-IPAUIGothic-medium-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:ipagui.ttf -ipa-IPAUIGothic-medium-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:ipagui.ttf -ipa-IPAUIGothic-medium-ro-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ipagui.ttf -ipa-IPAUIGothic-bold-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:ipagui.ttf -ipa-IPAUIGothic-bold-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:ipagui.ttf -ipa-IPAUIGothic-bold-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:ipagui.ttf -ipa-IPAUIGothic-bold-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:ipagui.ttf -ipa-IPAUIGothic-bold-ro-normal--0-0-0-0-c-0-iso8859-1
-ipam.ttf -ipa-IPAMincho-medium-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ipam.ttf -ipa-IPAMincho-bold-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:ipam.ttf -ipa-IPAMincho-medium-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:ipam.ttf -ipa-IPAMincho-bold-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:ipam.ttf -ipa-IPAMincho-medium-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:ipam.ttf -ipa-IPAMincho-bold-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:ipam.ttf -ipa-IPAMincho-medium-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:ipam.ttf -ipa-IPAMincho-bold-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:ipam.ttf -ipa-IPAMincho-medium-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:ipam.ttf -ipa-IPAMincho-bold-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-bw=0.5:ipam.ttf -ipa-IPAMincho-medium-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ipam.ttf -ipa-IPAMincho-bold-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:ipam.ttf -ipa-IPAMincho-medium-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:ipam.ttf -ipa-IPAMincho-bold-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:ipam.ttf -ipa-IPAMincho-medium-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:ipam.ttf -ipa-IPAMincho-bold-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:ipam.ttf -ipa-IPAMincho-medium-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:ipam.ttf -ipa-IPAMincho-bold-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:ipam.ttf -ipa-IPAMincho-medium-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:ipam.ttf -ipa-IPAMincho-bold-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ipam.ttf -ipa-IPAMincho-medium-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:ipam.ttf -ipa-IPAMincho-medium-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:ipam.ttf -ipa-IPAMincho-medium-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:ipam.ttf -ipa-IPAMincho-medium-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:ipam.ttf -ipa-IPAMincho-medium-ro-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ipam.ttf -ipa-IPAMincho-bold-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:ipam.ttf -ipa-IPAMincho-bold-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:ipam.ttf -ipa-IPAMincho-bold-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:ipam.ttf -ipa-IPAMincho-bold-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:ipam.ttf -ipa-IPAMincho-bold-ro-normal--0-0-0-0-c-0-iso8859-1
-ipamp.ttf -ipa-IPAPMincho-medium-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ipamp.ttf -ipa-IPAPMincho-bold-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:ipamp.ttf -ipa-IPAPMincho-medium-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:ipamp.ttf -ipa-IPAPMincho-bold-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:ipamp.ttf -ipa-IPAPMincho-medium-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:ipamp.ttf -ipa-IPAPMincho-bold-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:ipamp.ttf -ipa-IPAPMincho-medium-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:ipamp.ttf -ipa-IPAPMincho-bold-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:ipamp.ttf -ipa-IPAPMincho-medium-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:ipamp.ttf -ipa-IPAPMincho-bold-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-bw=0.5:ipamp.ttf -ipa-IPAPMincho-medium-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ipamp.ttf -ipa-IPAPMincho-bold-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:ipamp.ttf -ipa-IPAPMincho-medium-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:ipamp.ttf -ipa-IPAPMincho-bold-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:ipamp.ttf -ipa-IPAPMincho-medium-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:ipamp.ttf -ipa-IPAPMincho-bold-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:ipamp.ttf -ipa-IPAPMincho-medium-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:ipamp.ttf -ipa-IPAPMincho-bold-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:ipamp.ttf -ipa-IPAPMincho-medium-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:ipamp.ttf -ipa-IPAPMincho-bold-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ipamp.ttf -ipa-IPAPMincho-medium-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:ipamp.ttf -ipa-IPAPMincho-medium-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:ipamp.ttf -ipa-IPAPMincho-medium-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:ipamp.ttf -ipa-IPAPMincho-medium-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:ipamp.ttf -ipa-IPAPMincho-medium-ro-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ipamp.ttf -ipa-IPAPMincho-bold-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:ipamp.ttf -ipa-IPAPMincho-bold-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:ipamp.ttf -ipa-IPAPMincho-bold-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:ipamp.ttf -ipa-IPAPMincho-bold-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:ipamp.ttf -ipa-IPAPMincho-bold-ro-normal--0-0-0-0-c-0-iso8859-1
-M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-bw=0.5:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-medium-ro-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:M+2VM+IPAG-circle.ttf -ipa-M+2VM+IPAG_circle-bold-ro-normal--0-0-0-0-c-0-iso8859-1
-M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-bw=0.5:M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:M+2P+IPAG.ttf -ipa-M+2P+IPAG-medium-ro-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:M+2P+IPAG.ttf -ipa-M+2P+IPAG-bold-ro-normal--0-0-0-0-c-0-iso8859-1
-M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-bw=0.5:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-medium-ro-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:M+2P+IPAG-circle.ttf -ipa-M+2P+IPAG_circle-bold-ro-normal--0-0-0-0-c-0-iso8859-1
-M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-bw=0.5:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-medium-ro-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:M+1VM+IPAG-circle.ttf -ipa-M+1VM+IPAG_circle-bold-ro-normal--0-0-0-0-c-0-iso8859-1
-M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-bw=0.5:M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:M+1P+IPAG.ttf -ipa-M+1P+IPAG-medium-ro-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:M+1P+IPAG.ttf -ipa-M+1P+IPAG-bold-ro-normal--0-0-0-0-c-0-iso8859-1
-M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-r-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-i-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.15:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.15:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-o-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-ri-normal--0-0-0-0-c-0-jisx0208.1983-0
-ai=0.08:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-ds=y:ai=0.08:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-ro-normal--0-0-0-0-c-0-jisx0208.1983-0
-bw=0.5:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-r-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-i-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.15:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.15:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-o-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-ri-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ai=0.08:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:ds=y:ai=0.08:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-ro-normal--0-0-0-0-c-0-jisx0201.1976-0
-bw=0.5:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.15:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ai=0.08:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-medium-ro-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-r-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-i-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.15:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-o-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-ri-normal--0-0-0-0-c-0-iso8859-1
-bw=0.5:ds=y:ai=0.08:M+1P+IPAG-circle.ttf -ipa-M+1P+IPAG_circle-bold-ro-normal--0-0-0-0-c-0-iso8859-1
-EOT
+	for ENC in iso8859-1 iso10646-1 jisx0201.1976-0 jisx0208.1983-0 jisx0208.1990-0
+	do
+		make_xlfd $ENC ipag.ttf ipa IPAGothic c
+		make_xlfd $ENC ipagp.ttf ipa IPAPGothic p
+		make_xlfd $ENC ipagui.ttf ipa IPAUIGothic c
+		make_xlfd $ENC ipam.ttf ipa IPAMincho c
+		make_xlfd $ENC ipamp.ttf ipa IPAPMincho p
+		make_xlfd $ENC M+2VM+IPAG-circle.ttf ipa M+2VM+IPAG_circle c
+		make_xlfd $ENC M+1VM+IPAG-circle.ttf ipa M+1VM+IPAG_circle c
+		make_xlfd $ENC M+1P+IPAG.ttf ipa M+1P+IPAG p
+		make_xlfd $ENC M+1P+IPAG-circle.ttf ipa M+1P+IPAG_circle p
+		make_xlfd $ENC M+2P+IPAG.ttf ipa M+2P+IPAG p
+		make_xlfd $ENC M+2P+IPAG-circle.ttf ipa M+2P+IPAG_circle p
+	done
 }
 
 nfonts ()
