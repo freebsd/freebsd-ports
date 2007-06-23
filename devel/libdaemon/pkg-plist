@@ -8,6 +8,6 @@ include/libdaemon/dsignal.h
 lib/libdaemon.a
 lib/libdaemon.la
 lib/libdaemon.so
-lib/libdaemon.so.2
+lib/libdaemon.so.0
 libdata/pkgconfig/libdaemon.pc
 @dirrm include/libdaemon
