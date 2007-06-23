@@ -8504,6 +8504,7 @@ osiris		ports/security/osiris
 oskit		ports/devel/oskit
 osmose		ports/emulators/osmose
 osrtspproxy	ports/net/osrtspproxy
+oss		ports/audio/oss
 ossec-hids-client	ports/security/ossec-hids-client
 ossec-hids-local	ports/security/ossec-hids-local
 ossec-hids-server	ports/security/ossec-hids-server
