@@ -6,7 +6,7 @@
 #   $Id: Makefile,v 1.2 2006/02/15 19:15:40 tmclau02 Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	net dns
 PKGNAMESUFFIX=	-sharp
 
@@ -27,7 +27,7 @@ AVAHI_SLAVE=	yes
 
 USE_GNOME=	gnomehack gnometarget
 CONFIGURE_ARGS= --with-distro=freebsd \
-		--with-dbus-system-address=unix:path=/var/run/dbus \
+		--with-dbus-system-address=unix:path=/var/run/dbus/system_bus_socket \
 		--disable-gtk \
 		--disable-qt3 \
 		--disable-qt4 \
