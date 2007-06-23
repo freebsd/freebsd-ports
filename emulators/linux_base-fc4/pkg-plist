@@ -25,7 +25,6 @@ bin/nice
 bin/pwd
 bin/rm
 bin/rmdir
-bin/rpm
 bin/setserial
 bin/sh
 bin/sleep
@@ -40,7 +39,6 @@ etc/DIR_COLORS
 etc/DIR_COLORS.xterm
 etc/aliases
 etc/bashrc
-etc/cron.daily/rpm
 etc/csh.cshrc
 etc/csh.login
 etc/default/nss
@@ -57,7 +55,6 @@ etc/issue.net
 etc/krb5.conf.dist
 etc/ld.so.cache
 etc/ld.so.conf
-etc/logrotate.d/rpm
 etc/mtab
 @unexec if cmp -s %D/etc/nsswitch.conf.dist %D/etc/nsswitch.conf; then rm -f %D/etc/nsswitch.conf; fi
 etc/nsswitch.conf.dist
@@ -262,7 +259,6 @@ usr/sbin/filefrag
 usr/bin/fmt
 usr/bin/fold
 usr/bin/gencat
-usr/bin/gendiff
 usr/bin/getconf
 usr/bin/getent
 usr/bin/groups
@@ -301,11 +297,6 @@ usr/bin/readlink
 usr/bin/reset
 usr/bin/resetall
 usr/bin/rpcgen
-usr/bin/rpm2cpio
-usr/bin/rpmdb
-usr/bin/rpmquery
-usr/bin/rpmsign
-usr/bin/rpmverify
 usr/bin/runcon
 usr/bin/seq
 usr/bin/sha1sum
@@ -4989,47 +4980,6 @@ usr/lib/locale/zu_ZA/LC_NUMERIC
 usr/lib/locale/zu_ZA/LC_PAPER
 usr/lib/locale/zu_ZA/LC_TELEPHONE
 usr/lib/locale/zu_ZA/LC_TIME
-usr/lib/rpm/athlon-linux/macros
-usr/lib/rpm/config.guess
-usr/lib/rpm/config.sub
-usr/lib/rpm/convertrpmrc.sh
-usr/lib/rpm/freshen.sh
-usr/lib/rpm/i386-linux/macros
-usr/lib/rpm/i486-linux/macros
-usr/lib/rpm/i586-linux/macros
-usr/lib/rpm/i686-linux/macros
-usr/lib/rpm/macros
-usr/lib/rpm/mkinstalldirs
-usr/lib/rpm/noarch-linux/macros
-usr/lib/rpm/pentium3-linux/macros
-usr/lib/rpm/pentium4-linux/macros
-usr/lib/rpm/rpm.daily
-usr/lib/rpm/rpm.log
-usr/lib/rpm/rpm.xinetd
-usr/lib/rpm/rpm2cpio.sh
-usr/lib/rpm/rpmd
-usr/lib/rpm/rpmdb_archive
-usr/lib/rpm/rpmdb_checkpoint
-usr/lib/rpm/rpmdb_deadlock
-usr/lib/rpm/rpmdb_dump
-usr/lib/rpm/rpmdb_load
-usr/lib/rpm/rpmdb_loadcvt
-usr/lib/rpm/rpmdb_printlog
-usr/lib/rpm/rpmdb_recover
-usr/lib/rpm/rpmdb_stat
-usr/lib/rpm/rpmdb_svc
-usr/lib/rpm/rpmdb_upgrade
-usr/lib/rpm/rpmdb_verify
-usr/lib/rpm/rpme
-usr/lib/rpm/rpmfile
-usr/lib/rpm/rpmi
-usr/lib/rpm/rpmk
-usr/lib/rpm/rpmpopt-4.4.1
-usr/lib/rpm/rpmq
-usr/lib/rpm/rpmrc
-usr/lib/rpm/rpmu
-usr/lib/rpm/rpmv
-usr/lib/rpm/tgpg
 usr/lib/tls/i486/libdb-4.3.so
 usr/lib/tls/i486/libdb_cxx-4.3.so
 usr/lib/tls/i586/libdb-4.3.so
@@ -5576,29 +5526,6 @@ usr/share/doc/ncurses-5.4/README
 usr/share/doc/ncurses-5.4/announce.html
 usr/share/doc/pcre-5.0/AUTHORS
 usr/share/doc/pcre-5.0/LICENCE
-usr/share/doc/rpm-4.4.1/BETA-GPG-KEY
-usr/share/doc/rpm-4.4.1/CHANGES
-usr/share/doc/rpm-4.4.1/GROUPS
-usr/share/doc/rpm-4.4.1/Makefile
-usr/share/doc/rpm-4.4.1/Makefile.am
-usr/share/doc/rpm-4.4.1/Makefile.in
-usr/share/doc/rpm-4.4.1/RPM-GPG-KEY
-usr/share/doc/rpm-4.4.1/RPM-PGP-KEY
-usr/share/doc/rpm-4.4.1/builddependencies
-usr/share/doc/rpm-4.4.1/buildroot
-usr/share/doc/rpm-4.4.1/conditionalbuilds
-usr/share/doc/rpm-4.4.1/dependencies
-usr/share/doc/rpm-4.4.1/format
-usr/share/doc/rpm-4.4.1/hregions
-usr/share/doc/rpm-4.4.1/macros
-usr/share/doc/rpm-4.4.1/multiplebuilds
-usr/share/doc/rpm-4.4.1/queryformat
-usr/share/doc/rpm-4.4.1/relocatable
-usr/share/doc/rpm-4.4.1/rollbacks
-usr/share/doc/rpm-4.4.1/signatures
-usr/share/doc/rpm-4.4.1/spec
-usr/share/doc/rpm-4.4.1/triggers
-usr/share/doc/rpm-4.4.1/tsort
 usr/share/doc/setserial-2.17/README
 usr/share/doc/setserial-2.17/rc.serial
 usr/share/doc/setup-2.5.44/uidgid
@@ -6073,12 +6000,10 @@ usr/share/locale/cs/LC_MESSAGES/freetype.mo
 usr/share/locale/cs/LC_MESSAGES/grep.mo
 usr/share/locale/cs/LC_MESSAGES/libc.mo
 usr/share/locale/cs/LC_MESSAGES/popt.mo
-usr/share/locale/cs/LC_MESSAGES/rpm.mo
 usr/share/locale/cs/LC_TIME/coreutils.mo
 usr/share/locale/da/LC_MESSAGES/coreutils.mo
 usr/share/locale/da/LC_MESSAGES/libc.mo
 usr/share/locale/da/LC_MESSAGES/popt.mo
-usr/share/locale/da/LC_MESSAGES/rpm.mo
 usr/share/locale/da/LC_TIME/coreutils.mo
 usr/share/locale/de/LC_MESSAGES/coreutils.mo
 usr/share/locale/de/LC_MESSAGES/e2fsprogs.mo
@@ -6086,7 +6011,6 @@ usr/share/locale/de/LC_MESSAGES/freetype.mo
 usr/share/locale/de/LC_MESSAGES/grep.mo
 usr/share/locale/de/LC_MESSAGES/libc.mo
 usr/share/locale/de/LC_MESSAGES/popt.mo
-usr/share/locale/de/LC_MESSAGES/rpm.mo
 usr/share/locale/de/LC_TIME/coreutils.mo
 usr/share/locale/el/LC_MESSAGES/coreutils.mo
 usr/share/locale/el/LC_MESSAGES/grep.mo
@@ -6110,7 +6034,6 @@ usr/share/locale/eu_ES/LC_MESSAGES/popt.mo
 usr/share/locale/fi/LC_MESSAGES/coreutils.mo
 usr/share/locale/fi/LC_MESSAGES/libc.mo
 usr/share/locale/fi/LC_MESSAGES/popt.mo
-usr/share/locale/fi/LC_MESSAGES/rpm.mo
 usr/share/locale/fi/LC_TIME/coreutils.mo
 usr/share/locale/fr/LC_MESSAGES/coreutils.mo
 usr/share/locale/fr/LC_MESSAGES/e2fsprogs.mo
@@ -6118,7 +6041,6 @@ usr/share/locale/fr/LC_MESSAGES/freetype.mo
 usr/share/locale/fr/LC_MESSAGES/grep.mo
 usr/share/locale/fr/LC_MESSAGES/libc.mo
 usr/share/locale/fr/LC_MESSAGES/popt.mo
-usr/share/locale/fr/LC_MESSAGES/rpm.mo
 usr/share/locale/fr/LC_TIME/coreutils.mo
 usr/share/locale/ga/LC_MESSAGES/coreutils.mo
 usr/share/locale/ga/LC_TIME/coreutils.mo
@@ -6126,7 +6048,6 @@ usr/share/locale/gl/LC_MESSAGES/coreutils.mo
 usr/share/locale/gl/LC_MESSAGES/grep.mo
 usr/share/locale/gl/LC_MESSAGES/libc.mo
 usr/share/locale/gl/LC_MESSAGES/popt.mo
-usr/share/locale/gl/LC_MESSAGES/rpm.mo
 usr/share/locale/gl/LC_TIME/coreutils.mo
 usr/share/locale/hr/LC_MESSAGES/grep.mo
 usr/share/locale/hr/LC_MESSAGES/libc.mo
@@ -6137,7 +6058,6 @@ usr/share/locale/hu/LC_TIME/coreutils.mo
 usr/share/locale/id/LC_MESSAGES/grep.mo
 usr/share/locale/id/LC_MESSAGES/popt.mo
 usr/share/locale/is/LC_MESSAGES/popt.mo
-usr/share/locale/is/LC_MESSAGES/rpm.mo
 usr/share/locale/it/LC_MESSAGES/coreutils.mo
 usr/share/locale/it/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/it/LC_MESSAGES/grep.mo
@@ -6148,13 +6068,11 @@ usr/share/locale/ja/LC_MESSAGES/coreutils.mo
 usr/share/locale/ja/LC_MESSAGES/grep.mo
 usr/share/locale/ja/LC_MESSAGES/libc.mo
 usr/share/locale/ja/LC_MESSAGES/popt.mo
-usr/share/locale/ja/LC_MESSAGES/rpm.mo
 usr/share/locale/ja/LC_TIME/coreutils.mo
 usr/share/locale/ko/LC_MESSAGES/coreutils.mo
 usr/share/locale/ko/LC_MESSAGES/grep.mo
 usr/share/locale/ko/LC_MESSAGES/libc.mo
 usr/share/locale/ko/LC_MESSAGES/popt.mo
-usr/share/locale/ko/LC_MESSAGES/rpm.mo
 usr/share/locale/ko/LC_TIME/coreutils.mo
 usr/share/locale/lg/LC_MESSAGES/coreutils.mo
 usr/share/locale/lg/LC_TIME/coreutils.mo
@@ -6173,59 +6091,48 @@ usr/share/locale/nl/LC_TIME/coreutils.mo
 usr/share/locale/no/LC_MESSAGES/coreutils.mo
 usr/share/locale/no/LC_MESSAGES/grep.mo
 usr/share/locale/no/LC_MESSAGES/popt.mo
-usr/share/locale/no/LC_MESSAGES/rpm.mo
 usr/share/locale/no/LC_TIME/coreutils.mo
 usr/share/locale/pl/LC_MESSAGES/coreutils.mo
 usr/share/locale/pl/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/pl/LC_MESSAGES/grep.mo
 usr/share/locale/pl/LC_MESSAGES/libc.mo
 usr/share/locale/pl/LC_MESSAGES/popt.mo
-usr/share/locale/pl/LC_MESSAGES/rpm.mo
 usr/share/locale/pl/LC_TIME/coreutils.mo
 usr/share/locale/pt/LC_MESSAGES/coreutils.mo
 usr/share/locale/pt/LC_MESSAGES/popt.mo
-usr/share/locale/pt/LC_MESSAGES/rpm.mo
 usr/share/locale/pt/LC_TIME/coreutils.mo
 usr/share/locale/pt_BR/LC_MESSAGES/coreutils.mo
 usr/share/locale/pt_BR/LC_MESSAGES/grep.mo
 usr/share/locale/pt_BR/LC_MESSAGES/libc.mo
 usr/share/locale/pt_BR/LC_MESSAGES/popt.mo
-usr/share/locale/pt_BR/LC_MESSAGES/rpm.mo
 usr/share/locale/pt_BR/LC_TIME/coreutils.mo
 usr/share/locale/ro/LC_MESSAGES/popt.mo
-usr/share/locale/ro/LC_MESSAGES/rpm.mo
 usr/share/locale/ru/LC_MESSAGES/coreutils.mo
 usr/share/locale/ru/LC_MESSAGES/grep.mo
 usr/share/locale/ru/LC_MESSAGES/libc.mo
 usr/share/locale/ru/LC_MESSAGES/popt.mo
-usr/share/locale/ru/LC_MESSAGES/rpm.mo
 usr/share/locale/ru/LC_TIME/coreutils.mo
 usr/share/locale/rw/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/rw/LC_MESSAGES/libc.mo
 usr/share/locale/sk/LC_MESSAGES/coreutils.mo
 usr/share/locale/sk/LC_MESSAGES/libc.mo
 usr/share/locale/sk/LC_MESSAGES/popt.mo
-usr/share/locale/sk/LC_MESSAGES/rpm.mo
 usr/share/locale/sk/LC_TIME/coreutils.mo
 usr/share/locale/sl/LC_MESSAGES/coreutils.mo
 usr/share/locale/sl/LC_MESSAGES/grep.mo
 usr/share/locale/sl/LC_MESSAGES/popt.mo
-usr/share/locale/sl/LC_MESSAGES/rpm.mo
 usr/share/locale/sl/LC_TIME/coreutils.mo
 usr/share/locale/sr/LC_MESSAGES/popt.mo
-usr/share/locale/sr/LC_MESSAGES/rpm.mo
 usr/share/locale/sv/LC_MESSAGES/coreutils.mo
 usr/share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/sv/LC_MESSAGES/grep.mo
 usr/share/locale/sv/LC_MESSAGES/libc.mo
 usr/share/locale/sv/LC_MESSAGES/popt.mo
-usr/share/locale/sv/LC_MESSAGES/rpm.mo
 usr/share/locale/sv/LC_TIME/coreutils.mo
 usr/share/locale/tr/LC_MESSAGES/coreutils.mo
 usr/share/locale/tr/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/tr/LC_MESSAGES/libc.mo
 usr/share/locale/tr/LC_MESSAGES/popt.mo
-usr/share/locale/tr/LC_MESSAGES/rpm.mo
 usr/share/locale/tr/LC_TIME/coreutils.mo
 usr/share/locale/uk/LC_MESSAGES/popt.mo
 usr/share/locale/wa/LC_MESSAGES/popt.mo
@@ -6238,11 +6145,6 @@ usr/share/locale/zh_TW/LC_MESSAGES/coreutils.mo
 usr/share/locale/zh_TW/LC_MESSAGES/libc.mo
 usr/share/locale/zh_TW/LC_MESSAGES/popt.mo
 usr/share/locale/zh_TW/LC_TIME/coreutils.mo
-usr/share/man/ja/man8/rpm.8.gz
-usr/share/man/ja/man8/rpm2cpio.8.gz
-usr/share/man/ja/man8/rpmbuild.8.gz
-usr/share/man/ja/man8/rpmcache.8.gz
-usr/share/man/ja/man8/rpmgraph.8.gz
 usr/share/man/man1/..1.gz
 usr/share/man/man1/:.1.gz
 usr/share/man/man1/[.1.gz
@@ -6310,7 +6212,6 @@ usr/share/man/man1/fg.1.gz
 usr/share/man/man1/fgrep.1.gz
 usr/share/man/man1/fmt.1.gz
 usr/share/man/man1/fold.1.gz
-usr/share/man/man1/gendiff.1.gz
 usr/share/man/man1/getopts.1.gz
 usr/share/man/man1/grep.1.gz
 usr/share/man/man1/groups.1.gz
@@ -6448,8 +6349,6 @@ usr/share/man/man8/mkfs.ext2.8.gz
 usr/share/man/man8/mke2fs.8.gz
 usr/share/man/man8/mklost+found.8.gz
 usr/share/man/man8/resize2fs.8.gz
-usr/share/man/man8/rpm.8.gz
-usr/share/man/man8/rpm2cpio.8.gz
 usr/share/man/man8/tune2fs.8.gz
 usr/share/man/man8/selinux.8.gz
 usr/share/man/man8/selinuxenabled.8.gz
@@ -6457,16 +6356,6 @@ usr/share/man/man8/setenforce.8.gz
 usr/share/man/man8/setsebool.8.gz
 usr/share/man/man8/setserial.8.gz
 usr/share/man/man8/togglesebool.8.gz
-usr/share/man/pl/man1/gendiff.1.gz
-usr/share/man/pl/man8/rpm.8.gz
-usr/share/man/pl/man8/rpm2cpio.8.gz
-usr/share/man/pl/man8/rpmbuild.8.gz
-usr/share/man/pl/man8/rpmcache.8.gz
-usr/share/man/pl/man8/rpmdeps.8.gz
-usr/share/man/pl/man8/rpmgraph.8.gz
-usr/share/man/ru/man8/rpm.8.gz
-usr/share/man/ru/man8/rpm2cpio.8.gz
-usr/share/man/sk/man8/rpm.8.gz
 usr/share/tabset/std
 usr/share/tabset/stdcrt
 usr/share/tabset/vt100
@@ -8969,14 +8858,6 @@ usr/share/terminfo/z/ztx
 usr/share/terminfo/z/ztx-1-a
 usr/share/terminfo/z/ztx11
 usr/tmp
-var/lib/rpm/conflictsindex.rpm
-var/lib/rpm/fileindex.rpm
-var/lib/rpm/groupindex.rpm
-var/lib/rpm/nameindex.rpm
-var/lib/rpm/packages.rpm
-var/lib/rpm/providesindex.rpm
-var/lib/rpm/requiredby.rpm
-var/lib/rpm/triggerindex.rpm
 var/mail
 @comment directory listing in revers order
 @dirrm var/yp
@@ -8990,7 +8871,6 @@ var/mail
 @dirrm var/lock/subsys
 @dirrm var/lock
 @dirrm var/local
-@dirrm var/lib/rpm
 @dirrm var/lib/misc
 @dirrm var/lib/games
 @dirrm var/lib
@@ -9046,13 +8926,6 @@ var/mail
 @dirrm usr/share/tabset
 @dirrm usr/share/pixmaps
 @dirrm usr/share/misc
-@dirrm usr/share/man/sk/man8
-@dirrm usr/share/man/sk
-@dirrm usr/share/man/ru/man8
-@dirrm usr/share/man/ru
-@dirrm usr/share/man/pl/man8
-@dirrm usr/share/man/pl/man1
-@dirrm usr/share/man/pl
 @dirrm usr/share/man/mann
 @dirrm usr/share/man/man9
 @dirrm usr/share/man/man8
@@ -9063,8 +8936,6 @@ var/mail
 @dirrm usr/share/man/man3
 @dirrm usr/share/man/man2
 @dirrm usr/share/man/man1
-@dirrm usr/share/man/ja/man8
-@dirrm usr/share/man/ja
 @dirrm usr/share/man
 @dirrm usr/share/locale/zh_TW/LC_TIME
 @dirrm usr/share/locale/zh_TW/LC_MESSAGES
@@ -9297,7 +9168,6 @@ var/mail
 @dirrm usr/share/doc/zlib-1.2.2.2
 @dirrm usr/share/doc/setup-2.5.44
 @dirrm usr/share/doc/setserial-2.17
-@dirrm usr/share/doc/rpm-4.4.1
 @dirrm usr/share/doc/pcre-5.0
 @dirrm usr/share/doc/ncurses-5.4
 @dirrm usr/share/doc/libgcc-4.0.2
@@ -9355,15 +9225,6 @@ var/mail
 @dirrm usr/lib/tls/i586
 @dirrm usr/lib/tls/i486
 @dirrm usr/lib/tls
-@dirrm usr/lib/rpm/pentium4-linux
-@dirrm usr/lib/rpm/pentium3-linux
-@dirrm usr/lib/rpm/noarch-linux
-@dirrm usr/lib/rpm/i686-linux
-@dirrm usr/lib/rpm/i586-linux
-@dirrm usr/lib/rpm/i486-linux
-@dirrm usr/lib/rpm/i386-linux
-@dirrm usr/lib/rpm/athlon-linux
-@dirrm usr/lib/rpm
 @dirrm usr/lib/locale/zu_ZA/LC_MESSAGES
 @dirrm usr/lib/locale/zu_ZA.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/zu_ZA.utf8
@@ -10134,10 +9995,8 @@ var/mail
 @dirrm etc/pki
 @dirrm etc/pam.d
 @dirrm etc/opt
-@dirrm etc/logrotate.d
 @dirrm etc/ld.so.conf.d
 @dirrm etc/default
-@dirrm etc/cron.daily
 @dirrm etc/X11/sysconfig
 @dirrm etc/X11/starthere
 @dirrm etc/X11/serverconfig

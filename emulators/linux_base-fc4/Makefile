@@ -8,7 +8,7 @@
 
 PORTNAME=		fc
 PORTVERSION=		4
-PORTREVISION=		9
+PORTREVISION=		10
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
@@ -54,7 +54,6 @@ BIN_DISTFILES=	basesystem-8.0-5.noarch.rpm \
 		pcre-5.0-4.1.fc4.${LINUX_RPM_ARCH}.rpm \
 		popt-1.10.1-23.${LINUX_RPM_ARCH}.rpm \
 		readline-5.0-3.${LINUX_RPM_ARCH}.rpm \
-		rpm-4.4.1-23.${LINUX_RPM_ARCH}.rpm \
 		setserial-2.17-19.${LINUX_RPM_ARCH}.rpm \
 		setup-2.5.44-1.1.noarch.rpm \
 		slang-1.4.9-17.${LINUX_RPM_ARCH}.rpm \
@@ -87,7 +86,6 @@ SRC_DISTFILES+=	acl-2.2.32-1.FC4.2.src.rpm \
 		ncurses-5.4-19.fc4.src.rpm \
 		pcre-5.0-4.1.fc4.src.rpm \
 		readline-5.0-3.src.rpm \
-		rpm-4.4.1-23.src.rpm \
 		setserial-2.17-19.src.rpm \
 		setup-2.5.44-1.1.src.rpm \
 		slang-1.4.9-17.src.rpm \
@@ -125,14 +123,7 @@ REMOVE_DIRS=		boot dev home initrd root tmp var/log var/run var/tmp \
 REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \
 			etc/protocols
-ADD_FILES=		var/lib/rpm/packages.rpm \
-			var/lib/rpm/nameindex.rpm \
-			var/lib/rpm/fileindex.rpm \
-			var/lib/rpm/providesindex.rpm \
-			var/lib/rpm/requiredby.rpm \
-			var/lib/rpm/conflictsindex.rpm \
-			var/lib/rpm/groupindex.rpm \
-			var/lib/rpm/triggerindex.rpm
+ADD_FILES=		# empty
 
 .if (${MACHINE_ARCH} == "amd64")
 FALLBACK_ELF_MIB=	kern.elf32.fallback_brand
