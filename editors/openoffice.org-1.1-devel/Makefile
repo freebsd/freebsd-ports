@@ -7,7 +7,6 @@
 
 PORTNAME=	openoffice.org
 PORTVERSION=	1.1.5.${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.1/ \
 		http://openoffice.lunarshells.com/sources/1.1/ \
@@ -79,8 +78,8 @@ L10NHELPS=	helpcontent_01_unix.tgz helpcontent_07_unix.tgz \
 
 CODELINE=		645
 RELEASE_NR=		1.1.5
-MILESTONE=		65
-SNAPDATE=		20070220
+MILESTONE=		66
+SNAPDATE=		20070606
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org1.1
