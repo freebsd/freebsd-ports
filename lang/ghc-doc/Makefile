@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	ghc
-PORTVERSION=	6.6
+PORTVERSION=	6.6.1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/docs/${PORTVERSION}/ \
 		http://www.haskell.org/ghc/docs/${PORTVERSION}/html/
 PKGNAMESUFFIX=	-doc
-DISTFILES=	Cabal.ps.gz Cabal.html.tar.gz building.ps.gz \
-		building.html.tar.gz \
+DISTFILES=	Cabal.ps.gz Cabal.html.tar.gz \
 		libraries.html.tar.gz users_guide.html.tar.gz \
 		users_guide.ps.gz index.html
 DIST_SUBDIR=	ghc-${PORTVERSION}
@@ -27,11 +26,11 @@ PORTDOCS=	*
 
 do-install:
 	@${MKDIR} ${DOCSDIR}
-.for FILE in Cabal.ps.gz building.ps.gz users_guide.ps.gz index.html
+.for FILE in Cabal.ps.gz users_guide.ps.gz index.html
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${FILE} \
 		${DOCSDIR}
 .endfor
-.for FILE in Cabal.html.tar.gz building.html.tar.gz \
+.for FILE in Cabal.html.tar.gz \
 	libraries.html.tar.gz users_guide.html.tar.gz
 	@${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${FILE} \
 		-C ${DOCSDIR}
