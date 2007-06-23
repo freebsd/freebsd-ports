@@ -6,8 +6,8 @@
 #    $MCom: ports/devel/libglade2/Makefile,v 1.23 2006/09/10 00:51:09 mezz Exp $
 
 PORTNAME=	libglade2
-PORTVERSION=	2.6.0
-PORTREVISION?=	3
+PORTVERSION=	2.6.1
+PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/..$//}
