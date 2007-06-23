@@ -26,6 +26,8 @@ USE_PERL5_RUN=	yes
 USE_GNOME=	gnomehack gtkhtml3 vte librsvg2 libgnomecanvas \
 		libgnomeprintui libglade2
 
+USE_AUTOTOOLS=	libtool:15
+
 MAKE_ENV=MONO_SHARED_DIR=${WRKDIR}
 
 post-patch:
