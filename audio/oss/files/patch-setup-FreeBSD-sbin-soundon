@@ -1,0 +1,38 @@
+--- setup/FreeBSD/sbin/soundon.orig	Fri Jun 22 15:26:04 2007
++++ setup/FreeBSD/sbin/soundon	Fri Jun 22 15:29:46 2007
+@@ -1,13 +1,13 @@
+ #!/bin/sh
+ 
+-if test -f /etc/oss.conf
++if test -f %%PREFIX%%/etc/oss.conf
+ then
+-  . /etc/oss.conf
++  . %%PREFIX%%/etc/oss.conf
+ else
+-  OSSLIBDIR=/usr/lib/oss
++  OSSLIBDIR=%%PREFIX%%/lib/oss
+ fi
+ 
+-LOG=$OSSLIBDIR/logs/soundon.log
++LOG=/var/log/soundon.log
+ echo "Open Sound System starting" `date` > $LOG
+ echo "OSS version: " `cat $OSSLIBDIR/version.dat` >> $LOG 2>&1
+ echo "Kernel version: " `uname -a` >> $LOG
+@@ -29,7 +29,7 @@
+ 
+ if test -f $OSSLIBDIR/etc/license.asc
+ then
+-   /usr/sbin/ossdetect -l >> $LOG
++   %%PREFIX%%/sbin/ossdetect -l >> $LOG
+ fi
+ 
+ if ! /sbin/kldload $OSSLIBDIR/modules/osscore.ko
+@@ -74,7 +74,7 @@
+ 
+ ls -l /dev/dsp* /dev/sndstat /dev/mixer* /dev/oss/*/* >> $LOG 2>&1
+ 
+-/usr/sbin/savemixer -L >> $LOG 2>&1
++%%PREFIX%%/sbin/savemixer -L >> $LOG 2>&1
+ 
+ if test -x $OSSLIBDIR/soundon.user
+ then

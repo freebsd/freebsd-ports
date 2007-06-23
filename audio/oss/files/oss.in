@@ -1,0 +1,30 @@
+#!/bin/sh -
+
+# PROVIDE: oss
+# REQUIRE: cleanvar
+# KEYWORD: nojail shutdown
+
+. %%RC_SUBR%%
+
+name="oss"
+rcvar=${name}_enable
+
+stop_cmd="oss_stop"
+start_cmd="oss_start"
+
+load_rc_config $name
+
+oss_start()
+{
+	echo "Starting Open Sound System"
+	%%PREFIX%%/sbin/soundon
+}
+
+oss_stop()
+{
+	echo "Stopping Open Sound System"
+	%%PREFIX%%/sbin/soundoff
+}
+
+run_rc_command "$1"
+
