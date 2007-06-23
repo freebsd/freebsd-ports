@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silktools
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2
 CATEGORIES=	security net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
@@ -18,7 +18,8 @@ COMMENT=	Tools for large-scale network capture analysis
 LIB_DEPENDS=	lzo:${PORTSDIR}/archivers/lzo
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools
+CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools \
+	--mandir=${PREFIX}/man
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" GCC_FLAGS="" CFLAGS_RELEASE=""
 USE_LDCONFIG=	yes
