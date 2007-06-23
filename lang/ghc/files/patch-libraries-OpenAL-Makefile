@@ -1,0 +1,11 @@
+--- libraries/OpenAL/Makefile.orig	Wed Apr 25 19:25:47 2007
++++ libraries/OpenAL/Makefile	Sun Jun 17 17:57:27 2007
+@@ -28,7 +28,7 @@
+ 
+ PACKAGE_DEPS = base OpenGL
+ 
+-SRC_HC_OPTS += -Wall -fffi -Iinclude '-\#include "HsOpenAL.h"' -cpp
++SRC_HC_OPTS += -Wall -fffi -Iinclude '-\#include "HsOpenAL.h"' -I/usr/local/include -cpp
+ 
+ # WinDoze DLL hell
+ # NOTE: For some obscure/unknown reason, OpenAL uses ccall, even on WinDoze...

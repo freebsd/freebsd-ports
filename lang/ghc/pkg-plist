@@ -24,6 +24,7 @@ lib/ghc-%%GHC_VERSION%%/HSbase.o
 lib/ghc-%%GHC_VERSION%%/HSbase_cbits.o
 lib/ghc-%%GHC_VERSION%%/HScgi.o
 lib/ghc-%%GHC_VERSION%%/HSfgl.o
+lib/ghc-%%GHC_VERSION%%/HSfilepath.o
 lib/ghc-%%GHC_VERSION%%/HSghc.o
 lib/ghc-%%GHC_VERSION%%/HShaskell-src.o
 lib/ghc-%%GHC_VERSION%%/HShaskell98.o
@@ -43,7 +44,7 @@ lib/ghc-%%GHC_VERSION%%/HSunix.o
 lib/ghc-%%GHC_VERSION%%/HSunix_cbits.o
 lib/ghc-%%GHC_VERSION%%/HSxhtml.o
 lib/ghc-%%GHC_VERSION%%/cgprof
-lib/ghc-%%GHC_VERSION%%/ghc-6.6
+lib/ghc-%%GHC_VERSION%%/ghc-%%GHC_VERSION%%
 lib/ghc-%%GHC_VERSION%%/ghc-asm
 lib/ghc-%%GHC_VERSION%%/ghc-pkg.bin
 lib/ghc-%%GHC_VERSION%%/ghc-split
@@ -123,8 +124,12 @@ lib/ghc-%%GHC_VERSION%%/imports/Control/Monad.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Cont.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Cont.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Cont/Class.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Cont/Class.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Error.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Error.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Error/Class.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Error/Class.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Fix.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Fix.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Identity.hi
@@ -135,8 +140,16 @@ lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/List.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/List.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS/Class.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS/Class.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS/Lazy.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS/Lazy.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS/Strict.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS/Strict.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Reader.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Reader.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Reader/Class.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Reader/Class.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/ST.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/ST.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/ST/Lazy.hi
@@ -147,10 +160,22 @@ lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/STM.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/STM.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State/Class.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State/Class.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State/Lazy.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State/Lazy.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State/Strict.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State/Strict.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Trans.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Trans.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer/Class.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer/Class.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer/Lazy.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer/Lazy.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer/Strict.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer/Strict.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Control/Parallel.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Parallel.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Control/Parallel/Strategies.hi
@@ -353,10 +378,12 @@ lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/UTC.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/UTC.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/UTCDiff.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/UTCDiff.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Format/Parse.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Format/Parse.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Format.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Format.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime/Format.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime/Format.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime/LocalTime.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime/LocalTime.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime/TimeOfDay.hi
@@ -633,6 +660,8 @@ lib/ghc-%%GHC_VERSION%%/imports/GHC/Word.hi
 %%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ColorSum.p_hi
 %%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Colors.hi
 %%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Colors.p_hi
+%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ControlPoint.hi
+%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ControlPoint.p_hi
 %%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ComparisonFunction.hi
 %%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ComparisonFunction.p_hi
 %%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/CoordTrans.hi
@@ -641,6 +670,8 @@ lib/ghc-%%GHC_VERSION%%/imports/GHC/Word.hi
 %%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/DataType.p_hi
 %%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/DisplayLists.hi
 %%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/DisplayLists.p_hi
+%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Domain.hi
+%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Domain.p_hi
 %%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/EdgeFlag.hi
 %%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/EdgeFlag.p_hi
 %%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Evaluators.hi
@@ -721,6 +752,8 @@ lib/ghc-%%GHC_VERSION%%/imports/GHC/Word.hi
 %%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/SavingState.p_hi
 %%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Selection.hi
 %%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Selection.p_hi
+%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Shaders.hi
+%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Shaders.p_hi
 %%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/StateVar.hi
 %%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/StateVar.p_hi
 %%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/StringQueries.hi
@@ -829,6 +862,8 @@ lib/ghc-%%GHC_VERSION%%/imports/GHC/Word.hi
 %%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Event.p_hi
 %%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Font.hi
 %%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Font.p_hi
+%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Image.hi
+%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Image.p_hi
 %%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Misc.hi
 %%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Misc.p_hi
 %%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Region.hi
@@ -839,6 +874,8 @@ lib/ghc-%%GHC_VERSION%%/imports/GHC/Word.hi
 %%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Types.p_hi
 %%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Window.hi
 %%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Window.p_hi
+%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11.hi
+%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/IO.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/IO.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Int.hi
@@ -891,8 +928,6 @@ lib/ghc-%%GHC_VERSION%%/imports/Network/BSD.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Network/BSD.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Network/CGI.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Network/CGI.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/Compat.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/Compat.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/Cookie.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/Cookie.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/Monad.hi
@@ -917,8 +952,6 @@ lib/ghc-%%GHC_VERSION%%/imports/Random.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Random.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Ratio.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Ratio.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Setup.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Setup.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/StablePtr.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/StablePtr.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Storable.hi
@@ -943,6 +976,12 @@ lib/ghc-%%GHC_VERSION%%/imports/System/Environment.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Environment.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/System/Exit.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Exit.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/System/FilePath/Posix.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/FilePath/Posix.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/System/FilePath/Windows.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/FilePath/Windows.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/System/FilePath.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/FilePath.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/System/IO.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/IO.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/System/IO/Error.hi
@@ -1397,6 +1436,8 @@ lib/ghc-%%GHC_VERSION%%/include/HsNetworkConfig.h
 %%X11%%lib/ghc-%%GHC_VERSION%%/include/HsOpenGLTypes.h
 lib/ghc-%%GHC_VERSION%%/include/HsReadline.h
 lib/ghc-%%GHC_VERSION%%/include/HsReadlineConfig.h
+lib/ghc-%%GHC_VERSION%%/include/HsTime.h
+lib/ghc-%%GHC_VERSION%%/include/HsTimeConfig.h
 lib/ghc-%%GHC_VERSION%%/include/HsUnix.h
 lib/ghc-%%GHC_VERSION%%/include/HsUnixConfig.h
 %%X11%%lib/ghc-%%GHC_VERSION%%/include/HsX11Config.h
@@ -1469,6 +1510,8 @@ lib/ghc-%%GHC_VERSION%%/libHSbase_cbits.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSbase_p.a
 lib/ghc-%%GHC_VERSION%%/libHScgi.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHScgi_p.a
+lib/ghc-%%GHC_VERSION%%/libHSfilepath.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSfilepath_p.a
 lib/ghc-%%GHC_VERSION%%/libHSfgl.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSfgl_p.a
 lib/ghc-%%GHC_VERSION%%/libHSghc.a
@@ -1537,6 +1580,7 @@ lib/ghc-%%GHC_VERSION%%/unlit
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Posix
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Mem
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System/IO
+@dirrm lib/ghc-6.6.1/imports/System/FilePath
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Directory
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Console
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System
@@ -1572,6 +1616,7 @@ lib/ghc-%%GHC_VERSION%%/unlit
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Debug/QuickCheck
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Debug
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Format
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Time
@@ -1588,7 +1633,13 @@ lib/ghc-%%GHC_VERSION%%/unlit
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Array
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Parallel
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/ST
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Reader
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Error
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Cont
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent
