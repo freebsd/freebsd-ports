@@ -7,6 +7,3 @@ bin/glimpseserver
 bin/tbuild
 bin/uncast
 bin/wgconvert
-share/doc/glimpse/COPYRIGHT
-share/doc/glimpse/README
-@dirrm share/doc/glimpse
