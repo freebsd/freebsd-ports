@@ -1,6 +1,14 @@
---- astrolog.c.orig	Wed Dec 23 23:29:16 1998
-+++ astrolog.c	Fri May 25 21:07:58 2001
-@@ -1146,8 +1146,18 @@
+--- astrolog.c.orig	1998-12-23 23:29:07.000000000 +0300
++++ astrolog.c	2007-06-23 18:07:49.000000000 +0400
+@@ -35,6 +35,7 @@
+ ** Last code change made 12/20/1998.
+ */
+ 
++#include <ctype.h>
+ #include "astrolog.h"
+ 
+ 
+@@ -1146,8 +1147,18 @@
      case 'z':
        if (ch1 == '0') {
          if (argc <= 1 || RParseSz(argv[1], pmZon) == rLarge) {
@@ -21,7 +29,27 @@
            SS = us.dstDef = i ? 1.0 : 0.0;
          } else {
            SS = us.dstDef = RParseSz(argv[1], pmZon);
-@@ -1236,9 +1246,19 @@
+@@ -1232,13 +1243,39 @@
+           return fFalse;
+         }
+         ciCore.nam = SzPersist(argv[1]);
++	if (CchSz(ciCore.nam) > 25) /* see xcharts0.c */
++	  ciCore.nam[25] = chNull;
++	for (pch = ciCore.nam; *pch; pch++) {
++	  if (*pch == '"') /* see io.c */
++	    *pch = '\'';
++	  else if (iscntrl((_char)*pch)) /* see xgeneral.c */
++	    *pch = ' ';
++	}
+         ciCore.loc = SzPersist(argv[2]);
++	if (CchSz(ciCore.loc) > 25) /* see xcharts0.c */
++	  ciCore.loc[25] = chNull;
++	for (pch = ciCore.loc; *pch; pch++) {
++	  if (*pch == '"') /* see io.c */
++	    *pch = '\'';
++	  else if (iscntrl((_char)*pch)) /* see xgeneral.c */
++	    *pch = ' ';
++	}
          argc -= 2; argv += 2;
          break;
        }
