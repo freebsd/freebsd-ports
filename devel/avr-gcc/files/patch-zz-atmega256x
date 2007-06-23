@@ -241,9 +241,9 @@ diff -ur gcc/config/avr/avr.h gcc-4.1.1-new-devices-m256/gcc/config/avr/avr.h
  #define LIB_SPEC \
    "%{!mmcu=at90s1*:%{!mmcu=attiny11:%{!mmcu=attiny12:%{!mmcu=attiny15:%{!mmcu=attiny28: -lc }}}}}"
 @@ -904,6 +915,8 @@
- %{mmcu=atmega128:crtm128.o%s} \
- %{mmcu=atmega1280:crtm1280.o%s} \
  %{mmcu=atmega1281:crtm1281.o%s} \
+ %{mmcu=atmega8hva:crtm8hva.o%s} \
+ %{mmcu=atmega16hva:crtm16hva.o%s} \
 +%{mmcu=atmega2560:crtm2560.o%s} \
 +%{mmcu=atmega2561:crtm2561.o%s} \
  %{mmcu=at90can32:crtcan32.o%s} \

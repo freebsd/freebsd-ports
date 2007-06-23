@@ -7,7 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITES+=	http://people.freebsd.org/~joerg/:local
