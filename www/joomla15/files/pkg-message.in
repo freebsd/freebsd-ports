@@ -2,6 +2,6 @@
 
  Please read INSTALL file. It can be found at:
 		
-  %%PREFIX%%/%%JOOMLA_DIR%%/INSTALL.php
+  %%WWWDIR%%/INSTALL.php
 
 *******************************************************************
