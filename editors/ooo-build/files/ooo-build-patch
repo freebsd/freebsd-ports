@@ -19,9 +19,9 @@
  	$base_cmd = 'sed \'s/^\(@.*\)\r$/\1/\' | ' . $base_cmd;
      }
 
---- patches/src680/apply.orig	Fri Jan 12 06:43:19 2007
-+++ patches/src680/apply	Sun Jan 14 06:43:42 2007
-@@ -96,6 +96,8 @@
+--- patches/src680/apply.orig	Thu May 10 00:43:32 2007
++++ patches/src680/apply	Tue May 15 05:33:14 2007
+@@ -97,6 +97,8 @@
  NovellWin32ISO: Win32, NovellOnly, NovellOnlyWin32, Lockdown, CalcSolver, cairocanvas
  # Mac OS X
  MacOSX : MacOSXCommon, SystemJavaBits, CalcSolver, MacOSXOnly
@@ -30,7 +30,7 @@
  # -------- [ Tag [ >= <tag> etc. ], ] patch sets --------
  
  
-@@ -781,7 +783,7 @@
+@@ -842,7 +844,7 @@
  autodoc-add-missing-stdio-h.diff, rengelha
  
  # do not pack any potential .orig files with ppds
@@ -39,30 +39,26 @@
  
  # changes the SDK gid module name to gid_Module_Root_SDK, so the generated list
  # of files does not conflict with the main package, i#64802
-@@ -873,7 +875,7 @@
- warning-uninitialized-variables-tools-2.diff, i#58984, pmladek
- 
- # Don't re-define NULL
--solar-dont-define-NULL.diff, i#66666, jholesov
-+# solar-dont-define-NULL.diff, i#66666, jholesov
- 
- # Fix warnings that appear on x86-64 & are considered dangerous
- sixtyfour-warnings-svx.diff, i#70594, jholesov
-@@ -887,7 +889,7 @@
- buildfix-gcc41-pointers-icu.diff, pmladek
- 
- # fix build with newer gccs
--buildfix-gcc-4.1.2-NULL.diff, rengelha, i#70684
-+# buildfix-gcc-4.1.2-NULL.diff, rengelha, i#70684
- 
- [ BFBuildBits ]
- SectionOwner => pmladek
-@@ -903,7 +905,7 @@
- sixtyfour-warnings-binfilter.diff, i#70594, jholesov
- 
- # fix build with newer gccs
--buildfix-binfilter-gcc-4.1.2-NULL.diff, rengelha, i#70684
-+# buildfix-binfilter-gcc-4.1.2-NULL.diff, rengelha, i#70684
- 
- 
- [ VCL ]
+
+
+--- patches/vba/sc-source-ui-vba-vbaaxis-cxx.diff~	Thu Jun 14 01:52:48 2007
++++ patches/vba/sc-source-ui-vba-vbaaxis-cxx.diff	Sat Jun 23 13:45:05 2007
+@@ -1,6 +1,6 @@
+ --- /dev/null	
+ +++ sc/source/ui/vba//vbaaxis.cxx
+-@@ -0,0 +1,678 @@
++@@ -0,0 +1,682 @@
+ +/*************************************************************************
+ + *
+ + *  OpenOffice.org - a multi-platform office productivity suite
+@@ -42,6 +42,10 @@
+ +#include <org/openoffice/excel/XlScaleType.hpp>
+ +#include "vbaaxistitle.hxx"
+ +#include "vbachart.hxx"
+++#if defined (FREEBSD)
+++#undef MIN
+++#undef MAX
+++#endif
+ +using namespace ::com::sun::star;
+ +using namespace ::org::openoffice;
+ +using namespace ::org::openoffice::excel::XlAxisCrosses;
