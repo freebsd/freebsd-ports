@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	0.9.36
-PORTREVISION=	1
+PORTVERSION=	0.9.39
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
@@ -18,11 +17,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility layer for Unix-like systems
 
-# wine/dlls/glut32/ depends on the presence of libglut.
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gdraw.1:${PORTSDIR}/print/fontforge \
-		glut.4:${PORTSDIR}/graphics/libglut \
 		xml2:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
@@ -38,7 +35,7 @@ ONLY_FOR_ARCHS=	i386
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GL=		yes
+USE_GL=		glut
 USE_XPM=	yes
 
 SUB_FILES=	pkg-message

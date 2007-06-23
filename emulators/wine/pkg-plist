@@ -183,6 +183,14 @@ include/wine/windows/exdisp.idl
 include/wine/windows/exdispid.h
 include/wine/windows/fci.h
 include/wine/windows/fdi.h
+include/wine/windows/gdiplus.h
+include/wine/windows/gdiplusenums.h
+include/wine/windows/gdiplusflat.h
+include/wine/windows/gdiplusgpstubs.h
+include/wine/windows/gdiplusinit.h
+include/wine/windows/gdiplusmem.h
+include/wine/windows/gdipluspixelformats.h
+include/wine/windows/gdiplustypes.h
 include/wine/windows/guiddef.h
 include/wine/windows/hlguids.h
 include/wine/windows/hlink.h
@@ -192,6 +200,8 @@ include/wine/windows/htiframe.idl
 include/wine/windows/htmlhelp.h
 include/wine/windows/iads.h
 include/wine/windows/iads.idl
+include/wine/windows/icftypes.h
+include/wine/windows/icftypes.idl
 include/wine/windows/icm.h
 include/wine/windows/icmpapi.h
 include/wine/windows/idispids.h
@@ -268,6 +278,8 @@ include/wine/windows/msxml2did.h
 include/wine/windows/msxmldid.h
 include/wine/windows/nb30.h
 include/wine/windows/ndrtypes.h
+include/wine/windows/netfw.h
+include/wine/windows/netfw.idl
 include/wine/windows/npapi.h
 include/wine/windows/nspapi.h
 include/wine/windows/ntddcdrm.h
@@ -329,6 +341,7 @@ include/wine/windows/rpcdcep.h
 include/wine/windows/rpcndr.h
 include/wine/windows/rpcnterr.h
 include/wine/windows/rpcproxy.h
+include/wine/windows/scarderr.h
 include/wine/windows/schannel.h
 include/wine/windows/schnlsp.h
 include/wine/windows/schemadef.h
@@ -405,6 +418,8 @@ include/wine/windows/winnt.h
 include/wine/windows/winreg.h
 include/wine/windows/winres.h
 include/wine/windows/winresrc.h
+include/wine/windows/winscard.h
+include/wine/windows/winsmcrd.h
 include/wine/windows/winsock.h
 include/wine/windows/winsock2.h
 include/wine/windows/winspool.h
@@ -516,8 +531,10 @@ lib/wine/expand.exe.so
 lib/wine/explorer.exe.so
 lib/wine/gdi.exe16
 lib/wine/gdi32.dll.so
+lib/wine/gdiplus.dll.so
 lib/wine/glu32.dll.so
 lib/wine/gphoto2.ds.so
+lib/wine/hal.dll.so
 lib/wine/hh.exe.so
 lib/wine/hhctrl.ocx.so
 lib/wine/hid.dll.so
@@ -578,6 +595,7 @@ lib/wine/libdxerr8.a
 lib/wine/libdxerr9.a
 lib/wine/libdxguid.a
 lib/wine/libgdi32.def
+lib/wine/libgdiplus.def
 lib/wine/libglu32.def
 lib/wine/libhid.def
 lib/wine/libhlink.def
@@ -608,6 +626,7 @@ lib/wine/libnetapi32.def
 lib/wine/libnewdev.def
 lib/wine/libntdll.def
 lib/wine/libntdsapi.def
+lib/wine/libntoskrnl.exe.def
 lib/wine/libodbc32.def
 lib/wine/libodbccp32.def
 lib/wine/libole32.def
@@ -657,6 +676,7 @@ lib/wine/libwinedos.def
 lib/wine/libwininet.def
 lib/wine/libwinmm.def
 lib/wine/libwinnls32.def
+lib/wine/libwinscard.def
 lib/wine/libwinspool.def
 lib/wine/libwintab32.def
 lib/wine/libwintrust.def
@@ -708,11 +728,13 @@ lib/wine/msvideo.dll16
 lib/wine/mswsock.dll.so
 lib/wine/msxml3.dll.so
 lib/wine/nddeapi.dll.so
+lib/wine/net.exe.so
 lib/wine/netapi32.dll.so
 lib/wine/newdev.dll.so
 lib/wine/notepad.exe.so
 lib/wine/ntdll.dll.so
 lib/wine/ntdsapi.dll.so
+lib/wine/ntoskrnl.exe.so
 lib/wine/objsel.dll.so
 lib/wine/odbc32.dll.so
 lib/wine/odbccp32.dll.so
@@ -733,6 +755,7 @@ lib/wine/olesvr.dll16
 lib/wine/olesvr32.dll.so
 lib/wine/oleview.exe.so
 lib/wine/opengl32.dll.so
+lib/wine/pdh.dll.so
 lib/wine/powrprof.dll.so
 lib/wine/progman.exe.so
 lib/wine/psapi.dll.so
@@ -820,6 +843,7 @@ lib/wine/wineconsole.exe.so
 lib/wine/winecoreaudio.drv.so
 lib/wine/wined3d.dll.so
 lib/wine/winedbg.exe.so
+lib/wine/winedevice.exe.so
 lib/wine/winedos.dll.so
 lib/wine/wineesd.drv.so
 lib/wine/winefile.exe.so
@@ -842,6 +866,7 @@ lib/wine/wininet.dll.so
 lib/wine/winmm.dll.so
 lib/wine/winnls.dll16
 lib/wine/winnls32.dll.so
+lib/wine/winscard.dll.so
 lib/wine/winsock.dll16
 lib/wine/winspool.drv.so
 lib/wine/wintab.dll16
