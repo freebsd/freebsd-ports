@@ -1,15 +1,15 @@
---- result-to-fo.c.orig	Mon Jan 10 14:56:38 2005
-+++ result-to-fo.c	Mon Jan 10 14:57:14 2005
-@@ -852,6 +852,8 @@
+--- fo/fo-fo.c.orig	Sat Aug 19 01:29:53 2006
++++ fo/fo-fo.c	Sat Aug 19 01:30:44 2006
+@@ -1213,6 +1213,8 @@
    while (iterator)
      {
        FoProperty *property = NULL;
 +      FoPropertyClass *property_class = NULL;
 +      FoTypeFunc type_func;
  
+       /* Skip processing attributes that have already been handled. */
        if (strcmp (xslAttrListIteratorName (iterator), "font-size") == 0 ||
- 	  (FO_IS_TABLE_CELL (fo_fo) &&
-@@ -872,8 +874,8 @@
+@@ -1234,8 +1236,8 @@
  	    }
  	}
  

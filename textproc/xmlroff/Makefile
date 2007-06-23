@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	xmlroff
-PORTVERSION=	0.3.9
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://xmlroff.org/download/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XSL formatter that produces PDF and PostScript
 
-LIB_DEPENDS=	pangoxsl-1.0.600:${PORTSDIR}/x11-toolkits/pangoxsl
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
 USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget libgnomeprint libxslt
-INSTALLS_SHLIB=	yes
+USE_GNOME=	gnomehack gnometarget libgnomeprint libxslt \
+		libxml2 gtk20 glib20 pango
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
