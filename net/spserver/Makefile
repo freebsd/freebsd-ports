@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spserver
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	net
 MASTER_SITES=	http://spserver.googlecode.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
