@@ -1,0 +1,16 @@
+--- setup/FreeBSD/sbin/soundoff.orig	Fri Jun 22 15:30:11 2007
++++ setup/FreeBSD/sbin/soundoff	Fri Jun 22 15:30:38 2007
+@@ -1,10 +1,10 @@
+ #!/bin/sh
+ 
+-if test -f /etc/oss.conf
++if test -f %%PREFIX%%/etc/oss.conf
+ then
+-  . /etc/oss.conf
++  . %%PREFIX%%/etc/oss.conf
+ else
+-  OSSLIBDIR=/usr/lib/oss
++  OSSLIBDIR=%%PREFIX%%/usr/lib/oss
+ fi
+ 
+ if ! /sbin/kldstat | grep -q osscore.ko

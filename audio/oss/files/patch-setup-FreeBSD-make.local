@@ -1,0 +1,18 @@
+--- setup/FreeBSD/make.local.orig	Fri Jun 15 22:52:47 2007
++++ setup/FreeBSD/make.local	Fri Jun 15 22:53:15 2007
+@@ -2,14 +2,9 @@
+ 	sh build.sh
+ 
+ copy:	build
+-	cp -R prototype/* /
+ 
+ package:	build
+ 		sh setup/FreeBSD/mkpkg.sh
+ 
+ install:	copy
+-		cd /usr/lib/oss/build && sh install.sh
+-		sync
+-		soundoff
+-		sync
+-		soundon
++		cd prototype/usr/lib/oss/build && sh install.sh

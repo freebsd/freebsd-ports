@@ -1,0 +1,8 @@
+#! /bin/sh
+
+case $2 in
+POST-INSTALL)
+	if ! test -f ${PKG_PREFIX}/lib/oss/etc/installed_drivers; then
+		${PKG_PREFIX}/sbin/ossdetect -v
+	fi
+esac

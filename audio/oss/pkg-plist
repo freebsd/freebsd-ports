@@ -1,0 +1,58 @@
+etc/oss.conf
+bin/ossxmix
+bin/osstest
+bin/ossrecord
+bin/ossplay
+bin/ossmix
+bin/ossinfo
+sbin/savemixer
+sbin/ossdevlinks
+sbin/ossdetect
+sbin/ossctl
+sbin/soundon
+sbin/soundoff
+lib/libOSSlib.so
+include/sys/soundcard.h
+@dirrmtry include/sys
+include/midiparser.h
+lib/oss/modules/osscore.ko
+lib/oss/modules/ali5455.ko
+lib/oss/modules/allegro.ko
+lib/oss/modules/als300.ko
+lib/oss/modules/als4000.ko
+lib/oss/modules/apci97.ko
+lib/oss/modules/atiaudio.ko
+lib/oss/modules/audigyls.ko
+lib/oss/modules/audioloop.ko
+lib/oss/modules/audiopci.ko
+lib/oss/modules/cmi8788.ko
+lib/oss/modules/cmpci.ko
+lib/oss/modules/cs4280.ko
+lib/oss/modules/cs4281.ko
+lib/oss/modules/digi32.ko
+lib/oss/modules/digi96.ko
+lib/oss/modules/emu10k1x.ko
+lib/oss/modules/fm801.ko
+lib/oss/modules/geode.ko
+lib/oss/modules/hdaudio.ko
+lib/oss/modules/ich.ko
+lib/oss/modules/imux.ko
+lib/oss/modules/maestro.ko
+lib/oss/modules/neomagic.ko
+lib/oss/modules/s3vibes.ko
+lib/oss/modules/sblive.ko
+lib/oss/modules/softoss.ko
+lib/oss/modules/solo.ko
+lib/oss/modules/trident.ko
+lib/oss/modules/via8233.ko
+lib/oss/modules/via97.ko
+lib/oss/modules/vmix.ko
+lib/oss/modules/vortex.ko
+lib/oss/modules/ymf7xx.ko
+@dirrm lib/oss/modules
+lib/oss/etc/devices.list
+@unexec rm -f %D/lib/oss/etc/installed_drivers
+@dirrm lib/oss/etc
+lib/oss/version.dat
+lib/oss/sysfiles.list
+@dirrm lib/oss
