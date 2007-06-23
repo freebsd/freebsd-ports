@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-@cwd %%LOCALBASE%%
 %%DATADIR%%/ppd/OPVP-HP-Color_LaserJet_5500.ppd
 %%DATADIR%%/ppd/OPVP-HP-Color_LaserJet_4600.ppd
 %%DATADIR%%/ppd/Makefile.in
