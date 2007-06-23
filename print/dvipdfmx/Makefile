@@ -6,9 +6,7 @@
 #
 
 PORTNAME=	dvipdfmx
-PORTVERSION=	20061211
-PORTREVISION=	1
-#PORTREVISION=	0
+PORTVERSION=	20070409
 CATEGORIES=	print
 MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/release/
 DIST_SUBDIR=	dvipdfmx
@@ -37,12 +35,8 @@ FONTCMAPDIR=	${TEXMFDIR}/fonts/cmap/dvipdfm
 ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
-pre-install:
-	${RM} -f ${WRKSRC}/data/config/dvipdfmx.cfg.orig \
-		${WRKSRC}/data/config/cid-x.map
-
 post-install:
-	${MV} ${PREFIX}/${TEXMFDIR}/dvipdfm/config/glyphlist.txt \
+	${MV} ${PREFIX}/${TEXMFDIR}/dvipdfm/glyphlist.txt \
 		${LOCALBASE}/${FONTMAPDIR}/glyphlist.txt
 	${MKDIR} ${LOCALBASE}/${FONTCMAPDIR}
 	${INSTALL_DATA} ${FILESDIR}/cid-x.map.in \
