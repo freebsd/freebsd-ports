@@ -19,7 +19,7 @@ LIB_DEPENDS=	lzo:${PORTSDIR}/archivers/lzo
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools \
-	--mandir=${PREFIX}/man
+	--mandir=${MANPREFIX}/man
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" GCC_FLAGS="" CFLAGS_RELEASE=""
 USE_LDCONFIG=	yes
