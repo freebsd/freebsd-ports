@@ -1,0 +1,10 @@
+--- libraries/OpenAL/configure.ac.orig	Sun Jun 17 17:59:49 2007
++++ libraries/OpenAL/configure.ac	Sun Jun 17 17:58:54 2007
+@@ -12,6 +12,7 @@
+ AL_BUILD_PACKAGE=no
+ AC_SUBST([AL_BUILD_PACKAGE])
+ 
++LDFLAGS="$LDFLAGS -pthread"
+ # Shall we build this package at all?
+ FP_ARG_OPENAL
+ 

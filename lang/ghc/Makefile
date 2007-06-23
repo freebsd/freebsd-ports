@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	6.6
-PORTREVISION=	1
+PORTVERSION=	6.6.1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot \
@@ -14,9 +13,6 @@ MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 MASTER_SITE_SUBDIR=vs/ghcdist/${PORTVERSION}/:boot
 DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source \
 		ghc-${PORTVERSION}-src-extralibs${EXTRACT_SUFX}:source
-
-PATCH_SITES=	http://www-i2.informatik.rwth-aachen.de/~stolz/FreeBSD/
-PATCHFILES=	patch-ghc-libraries_OpenAL.diff
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Compiler for the functional language Haskell
