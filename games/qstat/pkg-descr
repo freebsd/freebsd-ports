@@ -4,7 +4,7 @@ a game.  For servers running a game, the server name, map name, current
 number of players, and response time are displayed.  Server rules and
 player information may also be displayed.  Can output templates for
 automatic HTML generation.  Also has raw display mode for integration
-with custom server browsers.  List of supported games includes:
+with custom server browsers.  Incomplete list of supported games includes:
 
     - old Quake (NetQuake)
     - QuakeWorld
@@ -12,11 +12,10 @@ with custom server browsers.  List of supported games includes:
     - HexenWorld
     - Quake II
     - Unreal
-    - Turok2
-    - Sin
     - Half-Life 2
     - Half-Life
     - Doom III
-    - and more...
+    - Warsow
+    - Tremulous
 
 WWW: http://www.qstat.org/
