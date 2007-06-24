@@ -611,6 +611,7 @@ auctex		ports/print/auctex
 audacious	ports/multimedia/audacious
 audacious-crossfade	ports/audio/audacious-crossfade
 audacious-dumb	ports/audio/audacious-dumb
+audacious-mac	ports/audio/audacious-mac
 audacious-plugins	ports/multimedia/audacious-plugins
 audacity	ports/audio/audacity
 audacity-devel	ports/audio/audacity-devel
