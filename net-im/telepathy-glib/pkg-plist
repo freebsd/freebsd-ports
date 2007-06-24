@@ -37,6 +37,7 @@ include/telepathy-1.0/telepathy-glib/handle.h
 include/telepathy-1.0/telepathy-glib/heap.h
 include/telepathy-1.0/telepathy-glib/interfaces.h
 include/telepathy-1.0/telepathy-glib/intset.h
+include/telepathy-1.0/telepathy-glib/presence-mixin.h
 include/telepathy-1.0/telepathy-glib/properties-mixin.h
 include/telepathy-1.0/telepathy-glib/run.h
 include/telepathy-1.0/telepathy-glib/svc-channel.h
@@ -58,14 +59,14 @@ include/telepathy-unstable/telepathy-glib/_gen/unstable-enums.h
 include/telepathy-unstable/telepathy-glib/_gen/unstable-interfaces.h
 include/telepathy-unstable/telepathy-glib/_gen/unstable-svc.h
 include/telepathy-unstable/telepathy-glib/svc-unstable.h
+lib/libtelepathy-glib-unstable.a
+lib/libtelepathy-glib-unstable.la
 lib/libtelepathy-glib.a
 lib/libtelepathy-glib.la
 lib/libtelepathy-glib.so
-lib/libtelepathy-glib.so.0
-lib/libtelepathy-glib-unstable.a
-lib/libtelepathy-glib-unstable.la
-libdata/pkgconfig/telepathy-glib.pc
+lib/libtelepathy-glib.so.2
 libdata/pkgconfig/telepathy-glib-unstable.pc
+libdata/pkgconfig/telepathy-glib.pc
 share/gtk-doc/html/telepathy-glib/TpBaseConnection.html
 share/gtk-doc/html/telepathy-glib/TpBaseConnectionManager.html
 share/gtk-doc/html/telepathy-glib/TpDynamicHandleRepo.html
@@ -86,24 +87,25 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-TpChannelIface.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpGroupMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpHeap.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpIntSet.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-TpPresenceMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpPropertiesMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpTextMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-dbus.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-debug-ansi.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-debug.html
-share/gtk-doc/html/telepathy-glib/telepathy-glib-errors.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-enums.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-errors.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-handle-repo.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-handle.html
-share/gtk-doc/html/telepathy-glib/telepathy-glib-run.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-interfaces.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-run.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-connection-manager.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-connection.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-media-interfaces.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-properties-interface.html
-share/gtk-doc/html/telepathy-glib/telepathy-glib-svc.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-unstable.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-svc.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-util.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib.devhelp
 share/gtk-doc/html/telepathy-glib/telepathy-glib.devhelp2
@@ -113,7 +115,7 @@ share/gtk-doc/html/telepathy-glib/up.png
 @dirrmtry share/gtk-doc
 @dirrm include/telepathy-unstable/telepathy-glib/_gen
 @dirrm include/telepathy-unstable/telepathy-glib
+@dirrmtry include/telepathy-unstable
 @dirrm include/telepathy-1.0/telepathy-glib/_gen
 @dirrm include/telepathy-1.0/telepathy-glib
-@dirrmtry include/telepathy-unstable
 @dirrmtry include/telepathy-1.0
