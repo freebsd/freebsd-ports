@@ -179,6 +179,7 @@
     SUBDIR += cppunit
     SUBDIR += cproto
     SUBDIR += cross-binutils
+    SUBDIR += cross-gcc
     SUBDIR += crow
     SUBDIR += cscope
     SUBDIR += cscout
