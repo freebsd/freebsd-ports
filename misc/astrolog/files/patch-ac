@@ -33,8 +33,8 @@
            return fFalse;
          }
          ciCore.nam = SzPersist(argv[1]);
-+	if (CchSz(ciCore.nam) > 25) /* see xcharts0.c */
-+	  ciCore.nam[25] = chNull;
++	if (CchSz(ciCore.nam) > 29) /* see charts1.c */
++	  ciCore.nam[29] = chNull;
 +	for (pch = ciCore.nam; *pch; pch++) {
 +	  if (*pch == '"') /* see io.c */
 +	    *pch = '\'';
@@ -42,8 +42,8 @@
 +	    *pch = ' ';
 +	}
          ciCore.loc = SzPersist(argv[2]);
-+	if (CchSz(ciCore.loc) > 25) /* see xcharts0.c */
-+	  ciCore.loc[25] = chNull;
++	if (CchSz(ciCore.loc) > 29) /* see charts1.c */
++	  ciCore.loc[29] = chNull;
 +	for (pch = ciCore.loc; *pch; pch++) {
 +	  if (*pch == '"') /* see io.c */
 +	    *pch = '\'';
