@@ -1,0 +1,17 @@
+--- configure.in.orig	Sun Nov  6 09:08:06 2005
++++ configure.in	Sun Jun 24 12:52:04 2007
+@@ -5,8 +5,13 @@
+ 
+ dnl Checks for programs.
+ AC_PROG_CXX
+-AC_PROG_RANLIB
+ AC_PROG_INSTALL
++
++#
++# Shared library support
++#
++AM_ENABLE_SHARED
++AM_PROG_LIBTOOL
+ 
+ dnl Checks for libraries.
+ 
