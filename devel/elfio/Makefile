@@ -17,8 +17,14 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	C++ library for reading and generating files in the ELF binary format
 
+BUILD_DEPENDS=	libtoolize:${PORTSDIR}/devel/libtool15
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
+USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:259 libtool:15
+AUTOMAKE_ARGS=	-c -a
+ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 
 OPTIONS=	EXAMPLES "Install sample programms" on
 
@@ -31,6 +37,14 @@ PLIST_SUB+=	EXAMPLES=""
 .else
 PLIST_SUB+=	EXAMPLES="@comment "
 .endif
+
+post-patch:
+	@(${FIND} ${WRKSRC}/ -name Makefile.am | \
+		${XARGS} ${REINPLACE_CMD} -E -e 's,(libELFIO)\.a,.libs/\1.so,g')
+
+pre-configure:
+	@(cd ${WRKSRC}/ && \
+		${LIBTOOLIZE} --force --copy --automake)
 
 post-install:
 .if !defined(NOPORTDOCS)

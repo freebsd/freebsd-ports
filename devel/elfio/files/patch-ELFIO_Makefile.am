@@ -1,0 +1,18 @@
+--- ELFIO/Makefile.am.orig	Sun Jun 24 12:43:57 2007
++++ ELFIO/Makefile.am	Sun Jun 24 12:44:29 2007
+@@ -1,6 +1,6 @@
+-lib_LIBRARIES = libELFIO.a
++lib_LTLIBRARIES = libELFIO.la
+ 
+-libELFIO_a_SOURCES = ELFIDynamic.cpp ELFIImpl.cpp ELFINote.cpp ELFIO.cpp \
++libELFIO_la_SOURCES = ELFIDynamic.cpp ELFIImpl.cpp ELFINote.cpp ELFIO.cpp \
+     ELFIOUtils.cpp ELFIRelocation.cpp ELFISection.cpp \
+     ELFISegment.cpp ELFIStrings.cpp ELFISymbols.cpp \
+     ELFODynamic.cpp ELFOImpl.cpp ELFONote.cpp \
+@@ -10,4 +10,4 @@
+ include_HEADERS = ELFI.h ELFIO.h ELFO.h ELFTypes.h
+ noinst_HEADERS  = ELFIImpl.h ELFOImpl.h ELFIOUtils.h
+ 
+-EXTRA_DIST = ELFIO.dsp ELFIO.dsw ELFIO.mcp
+\ No newline at end of file
++EXTRA_DIST = ELFIO.dsp ELFIO.dsw ELFIO.mcp
