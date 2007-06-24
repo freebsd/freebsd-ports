@@ -1,0 +1,8 @@
+The wikiCalc program lets you make web pages with more than just
+paragraphs of prose. It combines the ease of authoring and multi-person
+editing of a wiki with the familiar visual formatting and calculating
+metaphor of a spreadsheet. Written in Perl and released under the GPL 2.0
+license, it can easily be setup to run on almost any server as a web
+application or on a personal computer to publish by FTP.
+
+WWW: http://www.softwaregarden.com/products/wikicalc/index.html

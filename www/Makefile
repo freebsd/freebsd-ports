@@ -1247,6 +1247,7 @@
     SUBDIR += webstone
     SUBDIR += webstone-ssl
     SUBDIR += wget4web
+    SUBDIR += wikicalc
     SUBDIR += wikindx
     SUBDIR += wiliki
     SUBDIR += winhelpcgi

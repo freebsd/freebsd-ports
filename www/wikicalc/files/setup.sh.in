@@ -1,0 +1,25 @@
+#!/bin/sh
+# $FreeBSD$
+
+ask_noyes()
+{
+	local key
+
+	echo -n "$1 [y/N]: "
+	read key
+	case "$key" in
+	[Yy]*)
+		return 0;;
+	*)
+		return 1;;
+	esac
+} 
+
+echo "This script will setup current directory for wikicalc."
+if ask_noyes "Are you ready?"; then
+	ln -s -f %%DATADIR%%/* .
+	echo "done."
+else
+	echo "Stopped."
+	exit 1
+fi
