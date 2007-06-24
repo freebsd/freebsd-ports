@@ -7,13 +7,12 @@
 
 PORTNAME=	gdb
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 
-LCLTARGET=	powerpc-rtems
-CONFIGURE_ARGS=	--verbose --enable-sim --enable-sim-powerpc \
-		--enable-sim-timebase --enable-sim-hardware
+TGTARCH=	powerpc
+TGTABI=		rtems
 
-MAN1+=		${LCLTARGET}-run.1
+WITH_RTEMS_PATCHES=	yes
 
-MASTERDIR=	${.CURDIR}/../i386-rtems-gdb
+MASTERDIR=	${.CURDIR}/../cross-gdb
 .include "${MASTERDIR}/Makefile"

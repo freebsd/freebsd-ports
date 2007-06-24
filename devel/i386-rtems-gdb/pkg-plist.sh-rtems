@@ -1,3 +1,0 @@
-bin/sh-rtems-gdb
-bin/sh-rtems-run
-lib/libsh-rtems-sim.a

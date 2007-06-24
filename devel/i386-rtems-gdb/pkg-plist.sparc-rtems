@@ -1,4 +1,0 @@
-bin/sparc-rtems-gdb
-%%SPARC_NOSIM%%bin/sparc-rtems-run
-%%SPARC_NOSIM%%bin/sparc-rtems-sis
-%%SPARC_NOSIM%%lib/libsparc-rtems-sim.a

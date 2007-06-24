@@ -1,3 +1,0 @@
-bin/mips-rtems-gdb
-bin/mips-rtems-run
-lib/libmips-rtems-sim.a

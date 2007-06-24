@@ -7,9 +7,11 @@
 
 PORTNAME=	binutils
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 
-LCLTARGET=	sparc-rtems
+TGTARCH=	sparc
+TGTABI=		rtems
+WITH_RTEMS_PATCHES=	yes
 
-MASTERDIR=	${.CURDIR}/../i386-rtems-binutils
+MASTERDIR=	${.CURDIR}/../cross-binutils
 .include "${MASTERDIR}/Makefile"

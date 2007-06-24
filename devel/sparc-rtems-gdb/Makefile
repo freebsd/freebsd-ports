@@ -7,9 +7,12 @@
 
 PORTNAME=	gdb
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 
-LCLTARGET=	sparc-rtems
+TGTARCH=	sparc
+TGTABI=		rtems
 
-MASTERDIR=	${.CURDIR}/../i386-rtems-gdb
+WITH_RTEMS_PATCHES=	yes
+
+MASTERDIR=	${.CURDIR}/../cross-gdb
 .include "${MASTERDIR}/Makefile"

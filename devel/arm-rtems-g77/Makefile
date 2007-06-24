@@ -7,9 +7,14 @@
 
 PORTNAME=	g77
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 
-LCLTARGET=	arm-rtems
+TGTARCH=	arm
+TGTABI=		rtems
 
-MASTERDIR=	${.CURDIR}/../i386-rtems-g77
+IGNORE=		deprecated; use arm-rtems-gcc instead
+DEPRECIATED=	${IGNORE}
+EXPIRE_DATE=	2007-06-22
+
+MASTERDIR=	${.CURDIR}/../cross-gcc
 .include "${MASTERDIR}/Makefile"

@@ -7,11 +7,16 @@
 
 PORTNAME=	gdb
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 
-LCLTARGET=	i960-rtems
+TGTARCH=	i960
+TGTABI=		rtems
+
+IGNORE=		abandoned by mainstream                                                                                                                     
+DEPRECIATED=	${IGNORE}                                                                                                                                   
+EXPIRE_DATE=	2007-06-22
 
 MAN1=		${LCLTARGET}-run.1
 
-MASTERDIR=	${.CURDIR}/../i386-rtems-gdb
+MASTERDIR=	${.CURDIR}/../cross-gdb
 .include "${MASTERDIR}/Makefile"
