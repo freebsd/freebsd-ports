@@ -25,12 +25,6 @@ MAKEFILE=	${WRKSRC}/make/gcc.mak
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
 post-patch:
 #
 # CFLAGS safety
@@ -52,4 +46,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
