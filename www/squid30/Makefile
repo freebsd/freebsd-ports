@@ -92,14 +92,14 @@ PATCH_SITE_SUBDIR=	Versions/v3/3.0/changesets
 # Inspired by editors/vim:
 # (I know that portlint is not happy with this, but putting this code at any
 # other location makes it even unhappier.)
-PATCHSET_DATE=		20070529
+PATCHSET_DATE=		20070623
 FIRST_PATCHSET=		10789
-LAST_PATCHSET=		10834
+LAST_PATCHSET=		10865
 IGNORE_PATCHSETS=	10792 10793 10794 10795 10796 10798 10799 10803 10807 \
-			10810 10814 10819
+			10810 10814 10819 10835 10842 10847 10862 10864
 PATCHFILES!=	jot -w "%d.patch" - ${FIRST_PATCHSET} ${LAST_PATCHSET} 1
-.for cs in ${IGNORE_PATCHSETS}
-PATCHFILES:=	${PATCHFILES:N${cs}\.patch}
+.for ps in ${IGNORE_PATCHSETS}
+PATCHFILES:=	${PATCHFILES:N${ps}\.patch}
 .endfor
 PATCH_DIST_STRIP=	-p1
 
@@ -121,6 +121,7 @@ SQUID_GID?=	squid
 MAN8=		cachemgr.cgi.8 squid.8
 docs=		QUICKSTART README RELEASENOTES.html doc/debug-sections.txt
 PORTDOCS=	${docs:T}
+PORTEXAMPLES=	*
 SUB_FILES+=	pkg-deinstall pkg-install pkg-message
 SUB_LIST+=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 
@@ -149,7 +150,7 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_ESI "Enable ESI support (experimental)" off \
 		SQUID_AUFS "Enable the aufs storage scheme" off \
 		SQUID_COSS "Enable the COSS storage scheme" off \
-		SQUID_KQUEUE "Use kqueue(2) instead of poll(2)" on \
+		SQUID_KQUEUE "Use kqueue(2) (experimental)" on \
 		SQUID_LARGEFILE "Support log and cache files >2GB" off \
 		SQUID_STACKTRACES "Create backtraces on fatal errors" off \
 		SQUID_DEBUG "Enable debugging options" off
@@ -180,7 +181,7 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_SHUTTING_DOWN ERR_SOCKET_FAILURE ERR_TOO_BIG ERR_UNSUP_REQ \
 		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT
 
-libexec=	cachemgr.cgi digest_pw_auth diskd ip_user_check \
+libexec=	cachemgr.cgi db_auth.pl digest_pw_auth diskd ip_user_check \
 		msnt_auth ncsa_auth ntlm_auth \
 		pam_auth smb_auth smb_auth.sh squid_session squid_unix_group \
 		wbinfo_group.pl
@@ -205,7 +206,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 
 # Authentication methods and modules:
 
-basic_auth=	NCSA PAM MSNT SMB
+basic_auth=	DB NCSA PAM MSNT SMB
 digest_auth=	password
 external_acl=	ip_user session unix_group wbinfo_group
 MAN8+=		pam_auth.8 squid_session.8 squid_unix_group.8
@@ -346,8 +347,9 @@ CONFIGURE_ARGS+=	--enable-esi
 LIB_DEPENDS+=		xml2:${PORTSDIR}/textproc/libxml2
 .endif
 .if defined(WITHOUT_SQUID_KQUEUE)
-# XXX: Squid3 -- unlike Squid2 -- does not automatically enable kqueue(2) at
-#      this time so this is a no-op for now:
+# Squid-3's kqueue support is still marked as experimental, so it is not yet
+# enabled automatically as in Squid-2. We are explicit about disabling it,
+# nonetheless:
 CONFIGURE_ARGS+=	--disable-kqueue
 .else
 CONFIGURE_ARGS+=	--enable-kqueue
@@ -357,15 +359,14 @@ CONFIGURE_ARGS+=	--with-large-files
 .endif
 .if defined(WITH_SQUID_STACKTRACES)
 CONFIGURE_ARGS+=	--enable-stacktraces
-CFLAGS+=	-g
-STRIP=			""
+CFLAGS+=		-g
+STRIP=
 .endif
 .if defined(WITH_SQUID_DEBUG) || defined(WITH_DEBUG)
 # TODO: are there other useful options that can/should be set to help
 #       the developers in debugging failures?
 CONFIGURE_ARGS+=	--disable-optimizations
-CFLAGS+=	-g
-STRIP=		""
+WITH_DEBUG?=		yes
 .endif
 # Languages:
 #
@@ -400,7 +401,7 @@ PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
 PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
 
 pre-patch:
-# special handling for ChangeSet 10817 that relies on metadata information
+# special handling for PatchSet 10817 that relies on metadata information
 # supplied by a non applicable earlier patch; can be removed when the port
 # is updated to a post-pre6 tarball:
 	@${REINPLACE_CMD} -e 's|v 1.453 2007/05/09 22:14:24 wessels|v 1.454 2007/05/13 10:57:41 hno|' \
@@ -411,7 +412,6 @@ post-patch:
 # add this version's datestamp so that Squid identifies itself as patched-up:
 	@${REINPLACE_CMD} -e 's|3.0.PRE6|&+PatchSets-${PATCHSET_DATE}|' \
 	    ${WRKSRC}/configure.in
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%SQUID_UID%%|${SQUID_UID}|g' \
 	    -e 's|%%SQUID_GID%%|${SQUID_GID}|g' \
 	    -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/cf.data.pre
@@ -429,10 +429,12 @@ pre-su-install:
 	    ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-# Create cachemgr.conf.default manually since squid-3's install routine
+# Create cachemgr.conf.default manually since Squid-3's install routine
 # unfortunately fails to do so (as it did in the old 2.5 days...):
 	${INSTALL_DATA} ${WRKSRC}/tools/cachemgr.conf \
 	    ${PREFIX}/etc/squid/cachemgr.conf.default
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/helpers/basic_auth/DB/passwd.sql ${EXAMPLESDIR}
 .if defined(WITH_SQUID_PINGER)
 	${CHMOD} 4510 ${PREFIX}/libexec/squid/pinger; \
 	${CHGRP} ${SQUID_GID} ${PREFIX}/libexec/squid/pinger

@@ -1,5 +1,16 @@
---- src/cf.data.pre.orig	Tue Apr 17 00:10:49 2007
-+++ src/cf.data.pre	Thu May 17 15:13:37 2007
+--- src/cf.data.pre.orig	Sun Jun 24 13:42:25 2007
++++ src/cf.data.pre	Sun Jun 24 13:59:32 2007
+@@ -1417,6 +1417,10 @@
+ LOC: Config.pidFilename
+ DOC_START
+ 	A filename to write the process-id to.  To disable, enter "none".
++
++	Note: If you change this setting, you need to set squid_pidfile
++	in /etc/rc.conf to reflect the new value. Please see
++	%%PREFIX%%/etc/rc.d/squid for details.
+ DOC_END
+ 
+ 
 @@ -3047,12 +3062,12 @@
  
  NAME: cache_effective_user
