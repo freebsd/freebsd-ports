@@ -37,6 +37,7 @@
     SUBDIR += aube
     SUBDIR += audacious-crossfade
     SUBDIR += audacious-dumb
+    SUBDIR += audacious-mac
     SUBDIR += audacity
     SUBDIR += audacity-devel
     SUBDIR += aumix
