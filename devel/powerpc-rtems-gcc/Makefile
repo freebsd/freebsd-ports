@@ -7,9 +7,11 @@
 
 PORTNAME=	gcc
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 
-RTEMS_ARCH=	powerpc
+TGTARCH=	powerpc
+TGTABI=		rtems
+WITH_RTEMS_PATCHES=	yes
 
-MASTERDIR=	${.CURDIR}/../i386-rtems-gcc
+MASTERDIR=	${.CURDIR}/../cross-gcc
 .include "${MASTERDIR}/Makefile"

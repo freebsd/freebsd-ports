@@ -7,9 +7,14 @@
 
 PORTNAME=	objc
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 
-LCLTARGET=	sparc-rtems
+TGTARCH=	sparc
+TGTABI=		rtems
 
-MASTERDIR=	${.CURDIR}/../i386-rtems-objc
+IGNORE=		deprecated; use sparc-rtems-gcc instead
+DEPRECIATED=	${IGNORE}
+EXPIRE_DATE=	2007-06-22
+
+MASTERDIR=	${.CURDIR}/../cross-gcc
 .include "${MASTERDIR}/Makefile"

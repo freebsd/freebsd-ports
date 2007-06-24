@@ -1,7 +1,0 @@
---- gcc-3.2.3/gcc/intl/Makefile.in.orig	Mon Dec 10 04:04:22 2001
-+++ gcc-3.2.3/gcc/intl/Makefile.in	Mon Mar 19 16:48:49 2007
-@@ -146,3 +146,3 @@
- # package, you have to use `configure --with-included-gettext'.
--install: install-exec install-data
-+install:
- install-exec: all

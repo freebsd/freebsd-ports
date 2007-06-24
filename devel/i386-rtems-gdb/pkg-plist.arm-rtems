@@ -1,3 +1,0 @@
-bin/arm-rtems-gdb
-bin/arm-rtems-run
-lib/libarm-rtems-sim.a

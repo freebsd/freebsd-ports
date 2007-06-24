@@ -7,12 +7,12 @@
 
 PORTNAME=	gdb
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 
-LCLTARGET=	sh-rtems
-CONFIGURE_ARGS=	--verbose --enable-sim
+TGTARCH=	sh
+TGTABI=		rtems
 
-MAN1=		${LCLTARGET}-run.1
+WITH_RTEMS_PATCHES=	yes
 
-MASTERDIR=	${.CURDIR}/../i386-rtems-gdb
+MASTERDIR=	${.CURDIR}/../cross-gdb
 .include "${MASTERDIR}/Makefile"

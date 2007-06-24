@@ -7,11 +7,12 @@
 
 PORTNAME=	gdb
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 
-LCLTARGET=	mips-rtems
+TGTARCH=	mips
+TGTABI=		rtems
 
-MAN1=		${LCLTARGET}-run.1
+WITH_RTEMS_PATCHES=	yes
 
-MASTERDIR=	${.CURDIR}/../i386-rtems-gdb
+MASTERDIR=	${.CURDIR}/../cross-gdb
 .include "${MASTERDIR}/Makefile"

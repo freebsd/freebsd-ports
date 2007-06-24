@@ -6,73 +6,15 @@
 #
 
 PORTNAME=	g77
-PORTVERSION=	3.2.3
-PORTREVISION=	5
-CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
-		${MASTER_SITE_GNU:S/$/:gcc/}
-MASTER_SITE_SUBDIR=	newlib \
-			gcc/${GCCNAME}/:gcc
-DISTFILES=		${NEWLIBNAME}.tar.gz \
-			${G77NAME}.tar.gz:gcc
-PATCHFILES=	${G77NAME}-rtems-20030507a.diff \
-		${NEWLIBNAME}-rtems-20030605.diff
-PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/snapshots/c_tools/source/ \
-		http://rtems.thehousleys.net/
 
-MAINTAINER=	ade@FreeBSD.org
-COMMENT=	FSF F77-gcc-3.2.3 base-port for RTEMS development
+MAINTAINER=	stas@FreeBSD.org
 
-.include <bsd.port.pre.mk>
+TGTARCH=	i386
+TGTABI=		rtems
 
-.if ${OSVERSION} >= 700000
-BROKEN=		"Does not configure on FreeBSD 7.0"
-.endif
+IGNORE=		deprecated; use i386-rtems-gcc instead
+DEPRECIATED=	${IGNORE}
+EXPIRE_DATE=	2007-06-22
 
-LCLTARGET?=	i386-rtems
-
-GCCVERSION=	3.2.3
-G77NAME=	gcc-${GCCVERSION}
-PLIST_SUB+=	"GCCVERSION=${GCCVERSION}"
-NEWLIBNAME=	newlib-1.11.0
-PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
-
-BUILD_DEPENDS=	${LCLTARGET}-gcc:${PORTSDIR}/devel/${LCLTARGET}-gcc
-RUN_DEPENDS=	${LCLTARGET}-gcc:${PORTSDIR}/devel/${LCLTARGET}-gcc
-
-PKGNAMEPREFIX=	${LCLTARGET}-
-WANT_AUTOHEADER_VER=253
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-ALL_TARGET=	all info
-
-CONFIGURE_TARGET?=	--target=${LCLTARGET}
-CONFIGURE_ARGS?=	--with-gnu-as --with-gnu-ld --with-newlib --verbose \
-			--enable-languages="f77" \
-			--with-libiconv-prefix=${LOCALBASE} \
-			--without-included-gettext
-CONFIGURE_WRKSRC?=	${WRKDIR}/build-${LCLTARGET}
-CONFIGURE_SCRIPT?=	../${G77NAME}/configure
-
-PATCH_WRKSRC=		${WRKDIR}
-PATCH_STRIP=		-p
-
-WITHOUT_CPU_CFLAGS=	yes
-MAKE_FLAGS=	LANGUAGES="f77"
-MAKE_ENV=	MACHINE_ARCH=${RTEMS_ARCH} NO_CPU_CFLAGS=true
-
-pre-configure:
-	@(cd ${WRKDIR} ; \
-	cd ${G77NAME} ; ${LN} -fs ../${NEWLIBNAME}/newlib . ; \
-	cd .. ; \
-	${MKDIR} build-${LCLTARGET})
-
-do-build:
-	@(cd ${WRKDIR}/build-${LCLTARGET} ; \
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
-
-do-install:
-	@(cd ${WRKDIR}/build-${LCLTARGET} && \
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-
-.include <bsd.port.post.mk>
+MASTERDIR=	${.CURDIR}/../cross-gcc
+.include "${MASTERDIR}/Makefile"

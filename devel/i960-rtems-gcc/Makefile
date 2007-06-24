@@ -7,9 +7,14 @@
 
 PORTNAME=	gcc
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 
-RTEMS_ARCH=	i960
+TGTARCH=	i960
+TGTABI=		rtems
 
-MASTERDIR=	${.CURDIR}/../i386-rtems-gcc
+IGNORE=		abandoned by mainstream
+DEPRECIATED=	${IGNORE}
+EXPIRE_DATE=	2007-06-22
+
+MASTERDIR=	${.CURDIR}/../cross-gcc
 .include "${MASTERDIR}/Makefile"

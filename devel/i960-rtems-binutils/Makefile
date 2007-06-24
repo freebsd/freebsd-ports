@@ -7,9 +7,14 @@
 
 PORTNAME=	binutils
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 
-LCLTARGET=	i960-rtems
+TGTARCH=	i960
+TGTABI=		rtems
 
-MASTERDIR=	${.CURDIR}/../i386-rtems-binutils
+IGNORE=		abandoned by mainstream
+DEPRECIATED=	${IGNORE}
+EXPIRE_DATE=	2007-06-22
+
+MASTERDIR=	${.CURDIR}/../cross-binutils
 .include "${MASTERDIR}/Makefile"
