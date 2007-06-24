@@ -1564,6 +1564,7 @@ cromwell	ports/sysutils/cromwell
 cronolog	ports/sysutils/cronolog
 cross-binutils	ports/devel/cross-binutils
 cross-gcc	ports/devel/cross-gcc
+cross-gdb	ports/devel/cross-gdb
 crossfire-client	ports/games/crossfire-client
 crossfire-server	ports/games/crossfire-server
 crossip		ports/dns/crossip
