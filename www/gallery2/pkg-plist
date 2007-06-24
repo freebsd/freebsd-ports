@@ -962,8 +962,11 @@
 %%GALLERY2DIR%%/modules/core/classes/GalleryStorage/xml-src/A_GalleryPluginParameterMap_1.0.xml
 %%GALLERY2DIR%%/modules/core/classes/GalleryStorage/xml-src/A_GalleryPluginParameterMap_1.1.xml
 %%GALLERY2DIR%%/modules/core/classes/GalleryStorage/xml-src/A_GalleryPluginParameterMap_1.2.xml
+%%GALLERY2DIR%%/modules/core/classes/GalleryStorage/xml-src/A_GallerySessionMap_1.0.xml
 %%GALLERY2DIR%%/modules/core/classes/GalleryStorage/xml-src/A_GalleryUser_1.0.xml
 %%GALLERY2DIR%%/modules/core/classes/GalleryStorage/xml-src/A_GalleryUser_1.1.xml
+%%GALLERY2DIR%%/modules/core/classes/GalleryStorage/xml-src/A_Schema_1.0.xml
+%%GALLERY2DIR%%/modules/core/classes/GalleryStorage/xml-src/A_Schema_1.1.xml
 %%GALLERY2DIR%%/modules/core/classes/GalleryStorage/xml-src/Lock.xml
 %%GALLERY2DIR%%/modules/core/classes/GalleryStorage/xml-src/R_GalleryCache_1.0.xml
 %%GALLERY2DIR%%/modules/core/classes/GalleryStorage/xml-src/R_GalleryItemPropertiesMap_1.0.xml
@@ -5437,6 +5440,7 @@
 %%GALLERY2DIR%%/modules/shutterfly/classes/ShutterflyCartPlugin.class
 %%GALLERY2DIR%%/modules/shutterfly/locale/af/LC_MESSAGES/modules_shutterfly.mo
 %%GALLERY2DIR%%/modules/shutterfly/locale/cs/LC_MESSAGES/modules_shutterfly.mo
+%%GALLERY2DIR%%/modules/shutterfly/locale/da/LC_MESSAGES/modules_shutterfly.mo
 %%GALLERY2DIR%%/modules/shutterfly/locale/de/LC_MESSAGES/modules_shutterfly.mo
 %%GALLERY2DIR%%/modules/shutterfly/locale/en_GB/LC_MESSAGES/modules_shutterfly.mo
 %%GALLERY2DIR%%/modules/shutterfly/locale/es/LC_MESSAGES/modules_shutterfly.mo
@@ -5460,6 +5464,7 @@
 %%GALLERY2DIR%%/modules/shutterfly/po/GNUmakefile
 %%GALLERY2DIR%%/modules/shutterfly/po/af.po
 %%GALLERY2DIR%%/modules/shutterfly/po/cs.po
+%%GALLERY2DIR%%/modules/shutterfly/po/da.po
 %%GALLERY2DIR%%/modules/shutterfly/po/de.po
 %%GALLERY2DIR%%/modules/shutterfly/po/en_GB.po
 %%GALLERY2DIR%%/modules/shutterfly/po/es.po
@@ -6309,6 +6314,7 @@
 %%GALLERY2DIR%%/modules/webdav/locale/ja/LC_MESSAGES/modules_webdav.mo
 %%GALLERY2DIR%%/modules/webdav/locale/no/LC_MESSAGES/modules_webdav.mo
 %%GALLERY2DIR%%/modules/webdav/locale/pl/LC_MESSAGES/modules_webdav.mo
+%%GALLERY2DIR%%/modules/webdav/locale/sr/LC_MESSAGES/modules_webdav.mo
 %%GALLERY2DIR%%/modules/webdav/locale/sv/LC_MESSAGES/modules_webdav.mo
 %%GALLERY2DIR%%/modules/webdav/locale/zh_TW/LC_MESSAGES/modules_webdav.mo
 %%GALLERY2DIR%%/modules/webdav/module.inc
@@ -6324,6 +6330,7 @@
 %%GALLERY2DIR%%/modules/webdav/po/ja.po
 %%GALLERY2DIR%%/modules/webdav/po/no.po
 %%GALLERY2DIR%%/modules/webdav/po/pl.po
+%%GALLERY2DIR%%/modules/webdav/po/sr.po
 %%GALLERY2DIR%%/modules/webdav/po/strings.raw
 %%GALLERY2DIR%%/modules/webdav/po/sv.po
 %%GALLERY2DIR%%/modules/webdav/po/zh_TW.po
@@ -8255,6 +8262,8 @@
 @dirrm %%GALLERY2DIR%%/modules/webdav/locale/zh_TW
 @dirrm %%GALLERY2DIR%%/modules/webdav/locale/sv/LC_MESSAGES
 @dirrm %%GALLERY2DIR%%/modules/webdav/locale/sv
+@dirrm %%GALLERY2DIR%%/modules/webdav/locale/sr/LC_MESSAGES
+@dirrm %%GALLERY2DIR%%/modules/webdav/locale/sr
 @dirrm %%GALLERY2DIR%%/modules/webdav/locale/pl/LC_MESSAGES
 @dirrm %%GALLERY2DIR%%/modules/webdav/locale/pl
 @dirrm %%GALLERY2DIR%%/modules/webdav/locale/no/LC_MESSAGES
@@ -9052,6 +9061,8 @@
 @dirrm %%GALLERY2DIR%%/modules/shutterfly/locale/en_GB
 @dirrm %%GALLERY2DIR%%/modules/shutterfly/locale/de/LC_MESSAGES
 @dirrm %%GALLERY2DIR%%/modules/shutterfly/locale/de
+@dirrm %%GALLERY2DIR%%/modules/shutterfly/locale/da/LC_MESSAGES
+@dirrm %%GALLERY2DIR%%/modules/shutterfly/locale/da
 @dirrm %%GALLERY2DIR%%/modules/shutterfly/locale/cs/LC_MESSAGES
 @dirrm %%GALLERY2DIR%%/modules/shutterfly/locale/cs
 @dirrm %%GALLERY2DIR%%/modules/shutterfly/locale/af/LC_MESSAGES
