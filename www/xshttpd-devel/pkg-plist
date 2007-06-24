@@ -7,6 +7,7 @@ bin/xspasswd
 %%WWWDIR%%/cgi-bin/error
 %%WWWDIR%%/cgi-bin/gfxcount
 %%WWWDIR%%/cgi-bin/imagemap
+%%WWWDIR%%/cgi-bin/xschpass
 %%WWWDIR%%/conf/httpd.conf.sample
 %%WWWDIR%%/conf/mime.index
 %%WWWDIR%%/conf/script.methods.sample
