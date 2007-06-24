@@ -7,6 +7,7 @@
 
 PORTNAME=	password
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	security ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Ruby library to create, verify and manipulate passwords
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
+LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
 RUN_DEPENDS=	${LOCALBASE}/${SADIR}/termios.so:${PORTSDIR}/comms/ruby-termios
 
 USE_RUBY=	yes
@@ -27,7 +28,7 @@ SADIR=	lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}
 CONFIGURE_ARGS=	--with-crack-dict="${LOCALBASE}/libdata/cracklib/pw_dict.pwd"
 INSTALL_TARGET=	site-install
 
-MAN1=		pwgen.1
+MAN1=		ruby-pwgen.1
 MANCOMPRESSED=	no
 
 DOCS_EN=	CHANGES README
@@ -37,8 +38,8 @@ post-patch:
 		${WRKSRC}/rbcrack.c ${WRKSRC}/extconf.rb
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/example/pwgen ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/pwgen.1 ${MANPREFIX}/man/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/example/pwgen ${PREFIX}/bin/ruby-pwgen
+	${INSTALL_MAN} ${WRKSRC}/pwgen.1 ${MANPREFIX}/man/man1/ruby-pwgen.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${MKDIR} ${RUBY_MODDOCDIR}
