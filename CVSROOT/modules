@@ -1562,6 +1562,7 @@ criticalmass	ports/games/criticalmass
 crm114		ports/mail/crm114
 cromwell	ports/sysutils/cromwell
 cronolog	ports/sysutils/cronolog
+cross-binutils	ports/devel/cross-binutils
 crossfire-client	ports/games/crossfire-client
 crossfire-server	ports/games/crossfire-server
 crossip		ports/dns/crossip
