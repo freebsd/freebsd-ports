@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libtelepathy
-PORTVERSION=	0.0.53
-PORTREVISION=	3
+PORTVERSION=	0.0.55
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
