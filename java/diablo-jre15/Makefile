@@ -46,11 +46,12 @@ INSTALL_DIR=	${PREFIX}/${PKGNAMEPREFIX}jre${JRE_VERSION}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700000
-IGNORE=		Not available for FreeBSD 7.x yet
+LIB_DEPENDS=	c.6:${PORTSDIR}/misc/compat6x
+JRE_OSREL=	freebsd6
 .elif ${OSVERSION} >= 600000
-JRE_OSREL=freebsd6
+JRE_OSREL=	freebsd6
 .elif ${OSVERSION} >= 500000 && ${ARCH} == "i386"
-JRE_OSREL=freebsd5
+JRE_OSREL=	freebsd5
 .else
 IGNORE=		Only available for FreeBSD 5.x/i386 and FreeBSD 6.x/amd64 and later
 .endif
