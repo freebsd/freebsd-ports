@@ -193,4 +193,5 @@ include/fltk/xpmImage.h
 @dirrm include/fltk
 lib/libfltk2.a
 lib/libfltk2_gl.a
+lib/libfltk2_glut.a
 lib/libfltk2_images.a
