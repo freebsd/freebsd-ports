@@ -1,0 +1,218 @@
+# New ports collection makefile for:	cross-gcc
+# Date created:		2006-08-10
+# Whom:			Stanislav Sedov <stas@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gcc
+PORTVERSION=	4.2.0
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_GCC:S,$,:gcc,} \
+		${MASTER_SITE_SOURCEWARE:S,$,:newlib,}
+MASTER_SITE_SUBDIR=	releases/${DISTNAME}/:gcc newlib/:newlib
+PKGNAMEPREFIX=	${TGTARCH}-${TGTABI}-
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gcc \
+		newlib-${NEWLIB_VERSION}${NEWLIB_EXTRACT_SUFX}:newlib
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	stas@FreeBSD.org
+COMMENT=	GNU gcc for cross-target development
+
+#
+# Temporary hack to dial with dependencies during package builds for
+# slave ports.
+#
+.if defined(PACKAGE_BUILDING)
+BUILD_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/${OURTARGET}-binutils
+RUN_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/${OURTARGET}-binutils
+.else
+BUILD_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
+RUN_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
+.endif
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_BISON=	yes
+GNU_CONFIGURE=	yes
+ALL_TARGET=	all info
+
+DEPENDS_ARGS=	TGTARCH="${TGTARCH}" TGTABI="${TGTABI}"
+
+#
+# Newlib version to use
+#
+NEWLIB_VERSION=	1.15.0
+NEWLIB_EXTRACT_SUFX=.tar.gz
+
+OURTARGET=	${TGTARCH}-${TGTABI}
+
+#
+# override user-defined settings in make.conf
+#
+WITHOUT_CPU_CFLAGS=	yes
+MAKE_ENV=	NO_CPU_CFLAGS=true
+
+CONFIGURE_ARGS=	--target=${OURTARGET} \
+		--enable-languages="${TGTLANGS}" \
+		--with-system-zlib \
+		--disable-nls \
+		--with-libiconv-prefix=${LOCALBASE} \
+		--without-included_gettext \
+		--with-newlib \
+		--with-dwarf2 \
+		--libdir=${TGT_LIBDIR} \
+		--with-gxx-include-dir=${TGT_LIBDIR}/include/cxx/ \
+		--disable-shared
+
+MAN1=		${MANPAGES:S,^,${OURTARGET}-,}
+
+INFO=		${OURTARGET}-cpp \
+		${OURTARGET}-cppinternals \
+		${OURTARGET}-gcc \
+		${OURTARGET}-gccint
+
+GCC_AUTODIRS=	${OURTARGET}/include \
+		${OURTARGET}/lib \
+		libexec/gcc/${OURTARGET}
+
+MANPAGES=	cpp.1 g++.1 gcc.1 gcov.1
+
+PLIST_FILES=	bin/${OURTARGET}-cpp \
+		bin/${OURTARGET}-gcc \
+		bin/${OURTARGET}-gcc-${GCCVER} \
+		bin/${OURTARGET}-gccbug \
+		bin/${OURTARGET}-gcov
+
+# Build C by default
+TGTLANGS=	c
+
+TGT_LIBDIR=	${PREFIX}/${OURTARGET}/lib/gcc/
+
+GCCVER=		${PORTVERSION}
+
+.if defined(WITH_CPU)
+CONFIGURE_ARGS+=--with-cpu=${WITH_CPU} \
+		--enable-cxx-flags=${WITH_CPU}
+.endif
+
+.if defined(WITH_FLOAT_TYPE)
+CONFIGURE_ARGS+=--with-float=${WITH_FLOAT_TYPE}
+.endif
+
+.if defined(WITH_RTEMS_PATCHES)
+PATCHFILES+=	gcc-core-4.2-20070221-rtems4.8-20070228.diff \
+		newlib-${NEWLIB_VERSION}-rtems4.8-20070413.diff
+.endif
+
+#
+# Macro to fix up info referencies
+#
+FIXREFS=	${SH} -c '${REINPLACE_CMD} -E \
+		-e "s,(^|[[:space:]/])$$0\.(texi|info),\1${OURTARGET}-$$0.\2,g"\
+		-e "s,(@file)\{$$0\},\1\{${OURTARGET}-$$0\},g" \
+		-e "s,\($$0\),\(${OURTARGET}-$$0\),g" $$*' --
+
+.if !defined(TGTARCH) || !defined(TGTABI)
+PKGNAMEPREFIX=	#empty
+IGNORE=		you should select ARCH and ABI to build port
+.endif
+
+OPTIONS=	CXX	"Enable C++ language support" on \
+		OBJC	"Enable Objective C support" on \
+		FORTRAN	"Enable Fortran support" off
+
+.include <bsd.port.pre.mk>
+
+PKG_ARGS=	-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${PORTSDIR}/devel/cross-binutils && ${MAKE} ${DEPENDS_ARGS} -V PKGNAME`:devel/cross-binutils" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS} -m ${MTREE_FILE} -o ${PKGORIGIN}
+
+.if !defined(WITHOUT_CXX)
+TGTLANGS:=	"${TGTLANGS},c++"
+PLIST_FILES+=	bin/${OURTARGET}-c++ bin/${OURTARGET}-g++
+.endif
+
+.if !defined(WITHOUT_OBJC)
+TGTLANGS:=	"${TGTLANGS},objc"
+.endif
+
+.if defined(WITH_FORTRAN)
+TGTLANGS:=	"${TGTLANGS},fortran"
+LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4 \
+		mpfr.1:${PORTSDIR}/math/mpfr
+CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
+PLIST_FILES+=	bin/${OURTARGET}-gfortran
+.endif
+
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "---------------------------------------------------------"
+	@${ECHO_MSG} "You can specify target architectur using TGTARCH switch,"
+	@${ECHO_MSG} "and ABI using TGTABI switch."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Default CPU module can be set using WITH_CPU, FPU type is"
+	@${ECHO_MSG} "selectable through WITH_FLOAT_TYPE"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "NOTE: not all options combinations are supported. For full"
+	@${ECHO_MSG} "list of supported values refer to binutils documentation"
+	@${ECHO_MSG} "---------------------------------------------------------"
+	@${ECHO_MSG}
+
+post-extract:
+	@(cd ${WRKSRC} && ${TAR} -xzf \
+		${DISTDIR}/newlib-${NEWLIB_VERSION}${NEWLIB_EXTRACT_SUFX})
+	@${LN} -sf ${WRKSRC}/newlib-${NEWLIB_VERSION}/newlib ${WRKSRC}/newlib
+	@${LN} -sf ${WRKSRC}/newlib-${NEWLIB_VERSION}/libgloss \
+		${WRKSRC}/libgloss
+
+post-patch:
+
+#
+# Fix INFO references
+#
+.for FILE in cpp cppinternals gcc gccint
+	@${FIXREFS} ${FILE} ${WRKSRC}/gcc/doc/*.texi ${WRKSRC}/gcc/Makefile.in
+	@${MV} ${WRKSRC}/gcc/doc/${FILE}.texi \
+		${WRKSRC}/gcc/doc/${OURTARGET}-${FILE}.texi
+.endfor
+
+#
+# Do not install manpages
+#
+	@${REINPLACE_CMD} -E -e '/^install:/,/^$$/s,install-man,,' \
+		${WRKSRC}/gcc/Makefile.in
+
+#
+# Do not install unneeded infofiles
+#
+	@${REINPLACE_CMD} -E \
+		-e '/\$$\(DESTDIR\)\$$\(infodir\)\/gccinstall.info/d' \
+		${WRKSRC}/gcc/Makefile.in
+
+post-install:
+#
+# Install manpages
+#
+.for FILE in ${MANPAGES}
+	${INSTALL_MAN} ${WRKSRC}/gcc/doc/${FILE} \
+		${MAN1PREFIX}/man/man1/${OURTARGET}-${FILE}
+.endfor
+
+#
+# Build pkg-plist
+#
+.for DIR in ${GCC_AUTODIRS:S,^,${PREFIX}/,}
+	@${FIND} ${DIR} ! -type d ! -regex .*/ldscripts/[^/]* |\
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${DIR} -type d ! -name ldscripts | ${SORT} -r | \
+		${SED} -E -e 's,(.*),@unexec rmdir \1 2>/dev/null || true,' >> \
+		${TMPPLIST}
+.endfor
+	@${ECHO_CMD} "@unexec rmdir ${PREFIX}/${OURTARGET} 2>/dev/null || true"\
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir ${PREFIX}/libexec/gcc 2>/dev/null || true" \
+		>> ${TMPPLIST}
+
+.include <bsd.port.post.mk>
