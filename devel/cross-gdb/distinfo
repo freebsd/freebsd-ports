@@ -1,0 +1,6 @@
+MD5 (gdb-6.6.tar.bz2) = a4df41d28dd514d64e8ccbfe125fd9a6
+SHA256 (gdb-6.6.tar.bz2) = 6e602987298db5ddb479bbb84ce653eabd9c304957a49552245f65cdc70d43bd
+SIZE (gdb-6.6.tar.bz2) = 14535755
+MD5 (gdb-6.6-rtems4.8-20070306.diff) = 45288142add1b4f2345f995e8b2a7756
+SHA256 (gdb-6.6-rtems4.8-20070306.diff) = 60f277070131d72101855fce8a51f25c86620cf7bbacc7f092b9ec28f31674bc
+SIZE (gdb-6.6-rtems4.8-20070306.diff) = 4526
