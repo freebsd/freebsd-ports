@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Tcl/Tk.pm
 %%SITE_PERL%%/Tcl/Tk/Widget/Balloon.pm
+%%SITE_PERL%%/Tcl/Tk/Widget/Text.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tcl/Tk/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tcl/Tk
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tcl
