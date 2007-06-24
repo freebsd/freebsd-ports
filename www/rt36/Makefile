@@ -108,6 +108,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl 
 		${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
 .endif
 .endif
+.if defined(MULTIPLE_INSTANCES)
+EXTRA_PATCHES+=	${FILESDIR}/multiple*
+.endif
 
 DB_TYPE?=	mysql
 

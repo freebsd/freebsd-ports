@@ -1,0 +1,63 @@
+--- lib/RT.pm.in.orig	Mon Nov  6 21:09:32 2006
++++ lib/RT.pm.in	Mon Apr 30 23:04:45 2007
+@@ -98,6 +98,60 @@
+ # via the web interface)
+ $MasonSessionDir = '@MASON_SESSION_PATH@';
+ 
++=item import
++
++Allow override of various internal paths.
++
++    RT->import (
++            RT_INSTANCE_PATH => '/usr/local/rt/stuff',
++            SITE_CONFIG_FILE => '/etc/stuff.pm',
++              ...
++    );
++
++If RT_INSTANCE_PATH is set in the arguments (or in %ENV)
++then it replaces the old value of $BasePath in the following
++variables:
++  $SITE_CONFIG_FILE
++  $LocalPath
++  $LocalEtcPath
++  $LocalLexiconPath
++  $MasonLocalComponentRoot
++  $MasonDataDir
++  $MasonSessionDir
++
++Beyond that, those individual values can be set explicitly
++by arguments.
++
++=cut
++
++sub import {
++no strict 'refs';
++    shift;
++    my %args = @_;
++    return unless ( scalar (keys %args) || $ENV{RT_INSTANCE_PATH} );
++
++    my @variables = qw (
++        SITE_CONFIG_FILE
++        LocalPath
++        LocalEtcPath
++        LocalLexiconPath
++        MasonLocalComponentRoot
++        MasonDataDir
++        MasonSessionDir
++    );
++
++    my $RT_INSTANCE_PATH = $args{RT_INSTANCE_PATH} || $ENV{RT_INSTANCE_PATH};
++    if ($RT_INSTANCE_PATH) {
++        foreach my $vref (@variables) {
++            $$vref =~ s/^\Q$BasePath\E/$RT_INSTANCE_PATH/;
++        }
++    }
++    foreach my $vref (@variables) {
++        $$vref = $args{$vref} if defined ( $args{$vref} );
++    }
++
++use strict 'refs';
++}
+ 
+ 
+ =head1 NAME

@@ -1,0 +1,21 @@
+--- sbin/rt-setup-database.in.orig	Fri Dec  1 20:59:26 2006
++++ sbin/rt-setup-database.in	Mon Apr 30 23:04:45 2007
+@@ -51,11 +51,17 @@
+ 
+ use lib "@LOCAL_LIB_PATH@";
+ use lib "@RT_LIB_PATH@";
++## RT_INSTANCE_PATH can be passed in environment.
++## Can change where RT_SiteConfig is read from.
++my $RT_INSTANCE_PATH;
++BEGIN {
++    $RT_INSTANCE_PATH = $ENV{RT_INSTANCE_PATH};
++}
+ 
+ #This drags in  RT's config.pm
+ # We do it in a begin block because RT::Handle needs to know the type to do its
+ # inheritance
+-use RT;
++use RT (RT_INSTANCE_PATH => $RT_INSTANCE_PATH);
+ use Carp;
+ use RT::User;
+ use RT::CurrentUser;

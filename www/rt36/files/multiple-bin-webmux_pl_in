@@ -1,0 +1,15 @@
+--- bin/webmux.pl.in.orig	Tue Sep 26 18:06:31 2006
++++ bin/webmux.pl.in	Mon Apr 30 23:04:45 2007
+@@ -63,6 +63,12 @@
+ }
+ 
+ use lib ( "@LOCAL_LIB_PATH@", "@RT_LIB_PATH@" );
++if ($ENV{RT_INSTANCE_PATH}) {
++    lib->import("$ENV{RT_INSTANCE_PATH}/local/lib");
++}
++if ($ENV{RT_VENDOR_PATH}) {
++    lib->import($ENV{RT_VENDOR_PATH});
++}
+ use RT;
+ 
+ package RT::Mason;
