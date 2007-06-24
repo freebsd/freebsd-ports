@@ -31,12 +31,6 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 PLIST_FILES=	bin/camomilecharmap \
 		bin/camomilelocaledef
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Need working <wctype.h>
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -E -e \
 		"s,([[:space:]]*)cp[[:space:]]*-f,\1\$${BSD_INSTALL_DATA}," \
@@ -52,4 +46,4 @@ post-install:
 	@${FIND} ${OCAMLFIND_DESTDIR}/${PORTNAME} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
