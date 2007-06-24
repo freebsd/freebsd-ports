@@ -14,7 +14,7 @@ TGTABI=		rtems
 
 IGNORE=		deprecated; use arm-rtems-gcc instead
 DEPRECIATED=	${IGNORE}
-EXPIRE_DATE=	2007-06-22
+EXPIRE_DATE=	2007-07-02
 
 MASTERDIR=	${.CURDIR}/../cross-gcc
 .include "${MASTERDIR}/Makefile"

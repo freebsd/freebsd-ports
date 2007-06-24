@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gcc
-
 MAINTAINER=	stas@FreeBSD.org
 
 TGTARCH=	i960
@@ -14,7 +12,7 @@ TGTABI=		rtems
 
 IGNORE=		abandoned by mainstream
 DEPRECIATED=	${IGNORE}
-EXPIRE_DATE=	2007-06-22
+EXPIRE_DATE=	2007-07-02
 
 MASTERDIR=	${.CURDIR}/../cross-gcc
 .include "${MASTERDIR}/Makefile"

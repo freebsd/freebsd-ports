@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PORTNAME=	binutils
-
 MAINTAINER=	stas@FreeBSD.org
 
 TGTARCH=	m68k
