@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qstat
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 CATEGORIES=	games net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +22,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(qstat\.cfg\)|\1\.default|' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|OpenBSD|FreeBSD|' ${WRKSRC}/qstat.c
 
 post-install:
 .if !defined(NOPORTDOCS)
