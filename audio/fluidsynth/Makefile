@@ -7,12 +7,12 @@
 
 PORTNAME=	fluidsynth
 PORTVERSION=	1.0.7a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	fluid
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
@@ -30,6 +30,11 @@ MAN1=		fluidsynth.1
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+OPTIONS=	JACK "Enable Jack audio support" On \
+		LADSPA "Enable LADSPA audio support" Off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .else
@@ -46,4 +51,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| -O2 | |g ; \
 		 s|== "yes"|= "yes"|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
