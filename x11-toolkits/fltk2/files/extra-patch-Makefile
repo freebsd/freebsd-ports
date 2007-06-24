@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Jun 24 17:30:12 2007
++++ Makefile	Sun Jun 24 17:30:19 2007
+@@ -25,7 +25,7 @@
+ 
+ include makeinclude
+ 
+-DIRS = src $(LOCALIMAGES) images OpenGL fluid glut test
++DIRS = src $(LOCALIMAGES) images OpenGL fluid glut
+ 
+ all: makeinclude
+ 	for dir in $(DIRS); do\

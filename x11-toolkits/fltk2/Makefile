@@ -19,10 +19,11 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-SNAPSHOT=	r5857
+SNAPSHOT=	r5917
 
 OPTIONS=	FLTK_THREADS "Install with threads support" on \
-		FLTK_CAIRO "Use cairo as graphics backend" off
+		FLTK_CAIRO "Use cairo as graphics backend" off \
+		FLTK_EXAMPLES "Build and install example programs" on
 
 LATEST_LINK=	fltk2
 
@@ -67,6 +68,22 @@ BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 CONFIGURE_ARGS+=	--disable-cairo
 .endif
 
+.if defined(WITH_FLTK_EXAMPLES) && !defined (NOPORTEXAMPLES)
+example_apps=	ansiwidget arc bitmap boxtype browser button buttons cairo \
+		checkers clock color_chooser cube CubeView cursor curve \
+		demo doublebuffer drawing drawtiming editor exception \
+		file_chooser fonts fractals fullscreen gl_overlay glpuzzle \
+		hello image inactive input keyboard label line_style list \
+		list_visuals mandelbrot menu message monitors navigation \
+		output pack pixmap progress qubix resizable resizealign \
+		scroll shape sizes symbols tabs threads tile timer \
+		utf wizard
+example_img=	images/ulon.bmp
+PORTEXAMPLES=	*
+.else
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's:%%CXX%%:${CXX}:g' \
 	    ${WRKSRC}/fltk2-config.in \
@@ -77,6 +94,15 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/documentation && ${INSTALL_DATA} *.html *.gif ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README_fltk1_to_fltk2.txt ${DOCSDIR}
+.endif
+.if defined(WITH_FLTK_EXAMPLES) && !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}/images
+	for f in ${example_apps} ; do \
+	    ${INSTALL_PROGRAM} ${WRKSRC}/test/$${f} ${EXAMPLESDIR} ; \
+	done
+	for f in ${example_img} ; do \
+	    ${INSTALL_DATA} ${WRKSRC}/test/$${f} ${EXAMPLESDIR}/images ; \
+	done
 .endif
 
 .include <bsd.port.post.mk>

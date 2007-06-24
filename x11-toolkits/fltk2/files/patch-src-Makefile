@@ -1,9 +1,10 @@
---- src/Makefile.orig	Fri May 12 00:09:39 2006
-+++ src/Makefile	Mon Jun  5 14:44:17 2006
-@@ -251,36 +251,27 @@
- 	    mkdir $(DESTDIR);                               \
- 	  fi                                                \
+--- src/Makefile.orig	Sun Jun 24 17:08:53 2007
++++ src/Makefile	Sun Jun 24 17:10:34 2007
+@@ -251,37 +251,27 @@
+ 			mkdir $(DESTDIR);                               \
+ 		fi                                                  \
  	fi
+-
 -	$(RMDIR) $(DESTDIR)$(includedir)/fltk
  	$(MKDIR) $(DESTDIR)$(includedir)/fltk
 -	$(CP) ../fltk/*.h ../fltk/*.r  $(DESTDIR)$(includedir)/fltk
