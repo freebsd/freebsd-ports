@@ -7,7 +7,7 @@
 
 PORTNAME=	stklos
 PORTVERSION=	0.82
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -41,6 +41,8 @@ post-patch:
 		${WRKSRC}/utils/stklos-install
 	@${REINPLACE_CMD} -e 's|$UID = 0|`id -u` -eq 0|' \
 		${WRKSRC}/utils/stklos-ext-install \
+		${WRKSRC}/utils/stklos-install
+	@${REINPLACE_CMD} -e '/&&/s|make|gmake|; /&&/s|configure|./configure|' \
 		${WRKSRC}/utils/stklos-install
 
 .if defined(NOPORTDOCS)
