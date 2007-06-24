@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gcc
-
 MAINTAINER=	stas@FreeBSD.org
 
 TGTARCH=	sparc

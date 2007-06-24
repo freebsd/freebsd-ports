@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gdb
-
 MAINTAINER=	stas@FreeBSD.org
 
 TGTARCH=	powerpc

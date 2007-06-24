@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gcc
+PORTNAME?=	gcc
 PORTVERSION=	4.2.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC:S,$,:gcc,} \
