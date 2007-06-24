@@ -1563,6 +1563,7 @@ crm114		ports/mail/crm114
 cromwell	ports/sysutils/cromwell
 cronolog	ports/sysutils/cronolog
 cross-binutils	ports/devel/cross-binutils
+cross-gcc	ports/devel/cross-gcc
 crossfire-client	ports/games/crossfire-client
 crossfire-server	ports/games/crossfire-server
 crossip		ports/dns/crossip
