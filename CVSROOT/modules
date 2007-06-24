@@ -16066,6 +16066,7 @@ wide-dhcp	ports/net-mgmt/wide-dhcp
 widelands	ports/games/widelands
 widentd		ports/net/widentd
 widgetfactory	ports/x11/widgetfactory
+wikicalc	ports/www/wikicalc
 wikindx		ports/www/wikindx
 wildfire	ports/net-im/wildfire
 wildmagic	ports/graphics/wildmagic
