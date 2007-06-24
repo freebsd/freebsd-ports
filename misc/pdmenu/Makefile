@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdmenu
-PORTVERSION=	1.2.89
+PORTVERSION=	1.2.90
 CATEGORIES=	misc
 MASTER_SITES=	http://www.powertrip.co.za/distfiles/pdmenu/ \
 				http://dev.powertrip.co.za/distfiles/pdmenu/ \
