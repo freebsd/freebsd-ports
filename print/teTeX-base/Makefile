@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX-base
 PORTVERSION=	3.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -69,7 +69,7 @@ MAN1=	tie.1 kpseaccess.1 kpsereadlink.1 mpost.1 \
 	dvipng.1 e2pall.1 makempx.1 \
 	pk2bm.1 pktogf.1 tangle.1 amstex.1 \
 	eplain.1 epstopdf.1 kpsetool.1 fdf2tex.1 \
-	mkindex.1 pslatex.1 texhash.1 kpsewhere.1 \
+	mkindex.1 pslatex.1 kpsewhere.1 \
 	makempy.1 mkocp.1 mkofm.1 ofm2opl.1 \
 	opl2ofm.1 otp2ocp.1 bibtex.1 outocp.1 \
 	ovf2ovp.1 ovp2ovf.1 rumakeindex.1 texdoc.1 \
@@ -77,7 +77,7 @@ MAN1=	tie.1 kpseaccess.1 kpsereadlink.1 mpost.1 \
 	texfind.1 texfont.1 texlinks.1 texutil.1 \
 	thumbpdf.1 ttf2afm.1 dvitomp.1 latex.1 \
 	pdftex.1 mag.1 kpsestat.1 texconfig.1 \
-	odvitype.1 allcm.1 allneeded.1 \
+	allcm.1 allneeded.1 \
 	dvitype.1 mktexlsr.1 omega.1 \
 	ps2frag.1 dvi2fax.1 rubibtex.1 texdoctk.1
 MAN5=	fmtutil.cnf.5
@@ -98,7 +98,9 @@ MLINKS=	dvilj.1 dvilj2p.1 \
 	fmtutil.1 mktexfmt.1 \
 	fmtutil.1 fmtutil-sys.1 \
 	texconfig.1 texconfig-sys.1 \
-	updmap.1 updmap-sys.1
+	updmap.1 updmap-sys.1 \
+	dvitype.1 odvitype.1 \
+	mktexlsr.1 texhash.1
 
 INFO=	kpathsea latex web2c
 
