@@ -199,7 +199,7 @@ Note:  Please add new entries to the beginning of this file.
 	<name>wordpress</name>
 	<name>de-wordpress</name>
 	<name>zh-wordpress</name>
-	<range><gt>0</gt></range>
+	<range><lt>2.2.1</lt></range>
       </package>
     </affects>
     <description>
@@ -226,6 +226,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-06-06</discovery>
       <entry>2007-06-09</entry>
+      <modified>2007-06-24</modified>
     </dates>
   </vuln>
 
