@@ -180,6 +180,7 @@
     SUBDIR += cproto
     SUBDIR += cross-binutils
     SUBDIR += cross-gcc
+    SUBDIR += cross-gdb
     SUBDIR += crow
     SUBDIR += cscope
     SUBDIR += cscout
