@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	20070402
-PORTREVISION=	1
+PORTVERSION=	20070621
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-2007-04-02
+DISTNAME=	${PORTNAME}-2007-06-21
 
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
@@ -40,7 +39,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-0.11.1.0
 
 MAN1=		gajim.1 gajim-remote.1
 
-EMOTICONS=	animated static
+EMOTICONS=	animated static static-big
 ICONSETS=	crystal dcraven gnome goojim gossip gota jabberbulb nuvola \
 		simplebulb stellar sun transports
 
@@ -56,23 +55,11 @@ pre-build:
 post-install:
 		${MKDIR} ${DATADIR}/data/emoticons
 		(cd ${WRKSRC}/data/emoticons && \
-		${CP} -R ${EMOTICONS} ${DATADIR}/data/emoticons)
-
-		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/data/emoticons
-		${FIND} ${DATADIR}/data/emoticons -type d -print0 | \
-			${XARGS} -0 ${CHMOD} 755
-		${FIND} ${DATADIR}/data/emoticons -type f -print0 | \
-			${XARGS} -0 ${CHMOD} ${SHAREMODE}
+		${COPYTREE_SHARE} "${EMOTICONS}" ${DATADIR}/data/emoticons)
 
 		${MKDIR} ${DATADIR}/data/iconsets
 		(cd ${WRKSRC}/data/iconsets && \
-		${CP} -R ${ICONSETS} ${DATADIR}/data/iconsets)
-
-		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/data/iconsets
-		${FIND} ${DATADIR}/data/iconsets -type d -print0 | \
-			${XARGS} -0 ${CHMOD} 755
-		${FIND} ${DATADIR}/data/iconsets -type f -print0 | \
-			${XARGS} -0 ${CHMOD} ${SHAREMODE}
+		${COPYTREE_SHARE} "${ICONSETS}" ${DATADIR}/data/iconsets)
 
 .include <bsd.port.pre.mk>
 
