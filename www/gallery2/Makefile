@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gallery2
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gallery
-DISTNAME=	gallery-2.2.1-full
+DISTNAME=	gallery-2.2.2-full
 DIST_SUBDIR=	gallery2
 
 MAINTAINER=	freebsd-ports@varju.ca
@@ -24,9 +23,6 @@ WRKSRC=		${WRKDIR}/${DIST_SUBDIR}
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 CPIOARGS=	--quiet -pdum -R
-PLIST_SUB+=	GALLERY2DIR=${GALLERY2DIR}
-
-GALLERY2DIR?=	www/gallery2
 
 # Note that USE_PHP must be set before bsd.port.pre.mk is included, so
 # OPTIONS can't be used right now without making portlint angry
@@ -73,12 +69,15 @@ LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
 .endif
 
-pre-fetch:
+pre-everything::
 .if !defined(GALLERY2DIR)
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define GALLERY2DIR to override default of '${GALLERY2DIR}'."
+	@${ECHO_MSG} "Define GALLERY2DIR to override default of 'www/gallery2'."
 	@${ECHO_MSG} ""
 .endif
+
+GALLERY2DIR?=	www/gallery2
+PLIST_SUB+=	GALLERY2DIR=${GALLERY2DIR}
 
 post-configure:
 	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#g' \
