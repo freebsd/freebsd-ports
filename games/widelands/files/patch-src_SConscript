@@ -5,7 +5,7 @@
  SRC=Glob('*.cc')
  
 -srcenv=env.Copy()
-+srcenv=env.Copy(LIBPATH=[])
++srcenv=env.Copy(CPPPATH=[], LIBPATH=[])
  
  srcenv.Append(CPPPATH=[
  		'#/src',
@@ -13,7 +13,7 @@
  srcenv.Append(LIBS='editor', LIBPATH='editor')
  srcenv.Append(LIBS='editoruimenus', LIBPATH='editor/ui_menus')
  srcenv.Append(LIBS='editortools', LIBPATH='editor/tools')
-+srcenv.Append(LIBPATH=env['LIBPATH'])
++srcenv.Append(CPPPATH=env['CPPPATH'], LIBPATH=env['LIBPATH'])
  
  SConscript('editor/SConscript')
  SConscript('ui/ui_basic/SConscript')
