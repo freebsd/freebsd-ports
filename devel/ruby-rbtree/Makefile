@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	rbtree
-PORTVERSION=	0.1.3
+PORTVERSION=	0.2.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.geocities.co.jp/SiliconValley-PaloAlto/3388/rbtree/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An implementation of Red-Black Tree for Ruby
 
 USE_RUBY=	yes
@@ -26,7 +26,7 @@ DOCS=		ChangeLog LICENSE README
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
+BROKEN=		Does not compile on sparc64
 .endif
 
 post-install:
