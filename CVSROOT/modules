@@ -4118,6 +4118,7 @@ gstreamer-plugins-aalib		ports/graphics/gstreamer-plugins-aalib
 gstreamer-plugins-all		ports/multimedia/gstreamer-plugins-all
 gstreamer-plugins-annodex	ports/multimedia/gstreamer-plugins-annodex
 gstreamer-plugins-bad	ports/multimedia/gstreamer-plugins-bad
+gstreamer-plugins-buzztard	ports/multimedia/gstreamer-plugins-buzztard
 gstreamer-plugins-bz2		ports/multimedia/gstreamer-plugins-bz2
 gstreamer-plugins-cairo		ports/graphics/gstreamer-plugins-cairo
 gstreamer-plugins-cdaudio	ports/audio/gstreamer-plugins-cdaudio
