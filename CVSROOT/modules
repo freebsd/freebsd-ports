@@ -14211,6 +14211,7 @@ scan_ffs	ports/sysutils/scan_ffs
 scanbuttond	ports/sysutils/scanbuttond
 scand		ports/net/scand
 scandoc		ports/devel/scandoc
+scanhill	ports/security/scanhill
 scanlogd	ports/security/scanlogd
 scanssh		ports/security/scanssh
 scapy		ports/net/scapy
