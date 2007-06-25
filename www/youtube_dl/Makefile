@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2007.06.06
+PORTVERSION=	2007.06.22
 CATEGORIES=	www
 MASTER_SITES=	http://www.arrakis.es/~rggi3/youtube-dl/
 DISTNAME=	youtube-dl-${PORTVERSION}
