@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer-plugins-fluendo-mp3
-PORTVERSION=	0.10.5
-PORTREVISION=	1
+PORTVERSION=	0.10.6
 CATEGORIES=	audio
 MASTER_SITES=	http://core.fluendo.com/gstreamer/src/gst-fluendo-mp3/
 DISTNAME=	gst-fluendo-mp3-${PORTVERSION}
