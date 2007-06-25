@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b1b5c125-2308-11dc-b91a-001921ab2fa4">
+    <topic>evolution-data-server -- remote execution of arbitrary code vulnerability</topic>
+    <affects>
+      <package>
+	<name>evolution-data-server</name>
+	<range><lt>1.11.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian project reports:</p>
+	<blockquote cite="http://lists.debian.org/debian-security-announce/debian-security-announce-2007/msg00082.html">
+	  <p>It was discovered that the IMAP code in the Evolution
+	    Data Server performs insufficient sanitising of a value
+	    later used an array index, which can lead to the execution
+	    of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-3257</cvename>
+      <url>http://secunia.com/advisories/25766/</url>
+      <url>http://bugzilla.gnome.org/show_bug.cgi?id=447414</url>
+    </references>
+    <dates>
+      <discovery>2007-06-23</discovery>
+      <entry>2007-06-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d337b206-200f-11dc-a197-0011098b2f36">
     <topic>xpcd -- buffer overflow</topic>
     <affects>
