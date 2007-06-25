@@ -125,7 +125,7 @@ CONFIGURE_ARGS+=	--without-terminfo
 PLIST_SUB+=		TERMINFO="@comment "
 .else
 BUILD_DEPENDS+=	tic:${PORTSDIR}/devel/ncurses
-CONFIGURE_ARGS+=	--with-terminfo=${LOCALBASE}share/misc/terminfo.db
+CONFIGURE_ARGS+=	--with-terminfo=${LOCALBASE}/share/misc/terminfo.db
 RUN_DEPENDS+=	${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
 PLIST_SUB+=		TERMINFO=""
 .endif
