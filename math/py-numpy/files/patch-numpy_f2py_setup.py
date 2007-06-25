@@ -1,6 +1,6 @@
---- numpy/f2py/setup.py.orig	Wed Jul 26 16:04:20 2006
-+++ numpy/f2py/setup.py	Sat Nov 18 17:13:33 2006
-@@ -32,14 +32,13 @@
+--- numpy/f2py/setup.py.orig	Mon Oct  2 17:08:55 2006
++++ numpy/f2py/setup.py	Mon Jun 11 12:17:13 2007
+@@ -34,14 +34,13 @@
      config.add_data_dir('docs')
  
      config.add_data_files('src/fortranobject.c',
