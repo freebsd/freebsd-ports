@@ -1,3 +1,4 @@
+%%SITE_PERL%%/Lingua/test.pl
 %%SITE_PERL%%/Lingua/Stem.pod
 %%SITE_PERL%%/Lingua/Stem.pm
 %%SITE_PERL%%/Lingua/Stem/AutoLoader.pm
