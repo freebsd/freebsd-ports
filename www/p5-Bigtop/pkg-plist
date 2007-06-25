@@ -41,6 +41,7 @@
 %%SITE_PERL%%/Bigtop/ScriptHelp/Style/Pg8Live.pm
 %%SITE_PERL%%/Bigtop/TentMaker.pm
 %%SITE_PERL%%/Bigtop/TentMakerPath.pm
+%%SITE_PERL%%/Bigtop/grammar.pod
 bin/bigtop
 bin/tentmaker
 @dirrmtry %%SITE_PERL%%/Bigtop/ScriptHelp/Style
