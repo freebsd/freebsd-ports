@@ -7,6 +7,7 @@
 
 PORTNAME?=	gcc
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC:S,$,:gcc,} \
 		${MASTER_SITE_SOURCEWARE:S,$,:newlib,}
@@ -23,7 +24,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	GNU gcc for cross-target development
 
 #
-# Temporary hack to dial with dependencies during package builds for
+# Temporary hack to deal with dependencies during package builds for
 # slave ports.
 #
 .if defined(PACKAGE_BUILDING)
@@ -64,7 +65,6 @@ CONFIGURE_ARGS=	--target=${OURTARGET} \
 		--without-included_gettext \
 		--with-newlib \
 		--with-dwarf2 \
-		--libdir=${TGT_LIBDIR} \
 		--with-gxx-include-dir=${TGT_LIBDIR}/include/cxx/ \
 		--disable-shared
 
@@ -77,7 +77,8 @@ INFO=		${OURTARGET}-cpp \
 
 GCC_AUTODIRS=	${OURTARGET}/include \
 		${OURTARGET}/lib \
-		libexec/gcc/${OURTARGET}
+		libexec/gcc/${OURTARGET} \
+		lib/gcc/${OURTARGET}
 
 MANPAGES=	cpp.1 g++.1 gcc.1 gcov.1
 
@@ -85,12 +86,17 @@ PLIST_FILES=	bin/${OURTARGET}-cpp \
 		bin/${OURTARGET}-gcc \
 		bin/${OURTARGET}-gcc-${GCCVER} \
 		bin/${OURTARGET}-gccbug \
-		bin/${OURTARGET}-gcov
+		bin/${OURTARGET}-gcov \
+		${OURTARGET}/bin/gcc
 
 # Build C by default
 TGTLANGS=	c
 
 TGT_LIBDIR=	${PREFIX}/${OURTARGET}/lib/gcc/
+
+LN_BINARIES=	addr2line ar as c++filt ld \
+		nm objcopy objdump ranlib \
+		readelf size strings strip
 
 GCCVER=		${PORTVERSION}
 
@@ -118,6 +124,7 @@ FIXREFS=	${SH} -c '${REINPLACE_CMD} -E \
 
 .if !defined(TGTARCH) || !defined(TGTABI)
 PKGNAMEPREFIX=	#empty
+OURTARGET=	cross	# to generate a correct index line
 IGNORE=		you should select ARCH and ABI to build port
 .endif
 
@@ -131,7 +138,10 @@ PKG_ARGS=	-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${
 
 .if !defined(WITHOUT_CXX)
 TGTLANGS:=	"${TGTLANGS},c++"
-PLIST_FILES+=	bin/${OURTARGET}-c++ bin/${OURTARGET}-g++
+PLIST_FILES+=	bin/${OURTARGET}-c++ \
+		bin/${OURTARGET}-g++ \
+		${OURTARGET}/bin/c++ \
+		${OURTARGET}/bin/g++
 .endif
 
 .if !defined(WITHOUT_OBJC)
@@ -143,7 +153,8 @@ TGTLANGS:=	"${TGTLANGS},fortran"
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		mpfr.1:${PORTSDIR}/math/mpfr
 CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
-PLIST_FILES+=	bin/${OURTARGET}-gfortran
+PLIST_FILES+=	bin/${OURTARGET}-gfortran \
+		${OURTARGET}/bin/gfortran
 .endif
 
 pre-everything::
@@ -168,7 +179,6 @@ post-extract:
 		${WRKSRC}/libgloss
 
 post-patch:
-
 #
 # Fix INFO references
 #
@@ -191,6 +201,12 @@ post-patch:
 		-e '/\$$\(DESTDIR\)\$$\(infodir\)\/gccinstall.info/d' \
 		${WRKSRC}/gcc/Makefile.in
 
+#
+# Do not install libiberty
+#
+	@${REINPLACE_CMD} -E -e 's,^(install:).*,\1,' \
+		${WRKSRC}/libiberty/Makefile.in
+
 post-install:
 #
 # Install manpages
@@ -198,6 +214,14 @@ post-install:
 .for FILE in ${MANPAGES}
 	${INSTALL_MAN} ${WRKSRC}/gcc/doc/${FILE} \
 		${MAN1PREFIX}/man/man1/${OURTARGET}-${FILE}
+.endfor
+
+#
+# Generate symlinks for binutils binaries to let gcc found them
+#
+.for F in ${LN_BINARIES}   
+	@${LN} -sf ../../../../bin/${PKGNAMEPREFIX}$F \
+		${PREFIX}/libexec/gcc/${OURTARGET}/${PORTVERSION}/$F
 .endfor
 
 #
@@ -210,9 +234,13 @@ post-install:
 		${SED} -E -e 's,(.*),@unexec rmdir \1 2>/dev/null || true,' >> \
 		${TMPPLIST}
 .endfor
+	@${ECHO_CMD} "@unexec rmdir ${PREFIX}/${OURTARGET}/bin 2>/dev/null " \
+		"|| true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir ${PREFIX}/${OURTARGET} 2>/dev/null || true"\
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir ${PREFIX}/libexec/gcc 2>/dev/null || true" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir ${PREFIX}/lib/gcc 2>/dev/null || true" \
 		>> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
