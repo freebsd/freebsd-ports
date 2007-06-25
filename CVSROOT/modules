@@ -13158,6 +13158,7 @@ py-vobject	ports/deskutils/py-vobject
 py-vorbis	ports/audio/py-vorbis
 py-vte		ports/x11-toolkits/py-vte
 py-wax		ports/x11-toolkits/py-wax
+py-webhelpers	ports/www/py-webhelpers
 py-webunit	ports/www/py-webunit
 py-webware	ports/www/py-webware
 py-webware-component	ports/www/py-webware-component
