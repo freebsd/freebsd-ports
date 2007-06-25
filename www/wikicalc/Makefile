@@ -20,7 +20,6 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	setup.sh
-SUB_LIST=	DATADIR=${DATADIR}
 
 post-extract:
 	@${RM} -f ${WRKSRC}/gpl.txt
@@ -31,12 +30,10 @@ post-patch:
 do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && \
-	for i in `${FIND} . -type f -a ! -name \*.pl -a ! -name \*.bak`; do \
-		${INSTALL_DATA} $${i} ${DATADIR}/$${i}; \
-	done; \
-	for i in `${FIND} . -type f -a -name \*.pl`; do \
-		${INSTALL_SCRIPT} $${i} ${DATADIR}/$${i}; \
-	done
+	${FIND} . -type f -a ! -name \*.pl -a ! -name \*.bak | \
+		${XARGS} -J % ${INSTALL_DATA} % ${DATADIR}/$${i}; \
+	${FIND} . -type f -a -name \*.pl | \
+		${XARGS} -J % ${INSTALL_SCRIPT} % ${DATADIR}/$${i}; \
 	${INSTALL_SCRIPT} ${WRKDIR}/setup.sh ${DATADIR}
 
 .include <bsd.port.mk>
