@@ -1,3 +1,14 @@
+bin/pycallgraph-dot.py
 %%PYTHON_SITELIBDIR%%/pycallgraph.py
 %%PYTHON_SITELIBDIR%%/pycallgraph.pyc
 %%PYTHON_SITELIBDIR%%/pycallgraph.pyo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/all.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/colours.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filter.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filter_time.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/import.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/large.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/recursive.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regexp.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
