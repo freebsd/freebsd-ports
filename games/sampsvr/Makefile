@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	sampsvr
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.sa-mp.com/files/ \
 		http://eu.littlewhitey.com/ \
-		http://dedi.azer.nl/upload/ \
-		http://www.kfcgang.com/files/
-DISTNAME=	samp02svr
+		http://dedi.azer.nl/upload/
+DISTNAME=	samp021svr
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Rockstar's GTA: San Andreas multiplayer modification dedicated server
@@ -34,12 +33,9 @@ SUB_LIST+=	NOTEWORK=""
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${MV} ${WRKSRC}/${DISTNAME} ${WRKSRC}/${USE_RC_SUBR}
-
 do-install:
 	${MKDIR} ${SAMPDIR}
-.for i in ${USE_RC_SUBR} announce
+.for i in samp02svr announce
 	${BRANDELF} -t Linux ${WRKSRC}/${i}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${SAMPDIR}
 .endfor
