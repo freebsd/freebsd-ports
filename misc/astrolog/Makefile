@@ -10,7 +10,7 @@
 
 PORTNAME=	astrolog
 PORTVERSION=	5.40
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc
 MASTER_SITES=	http://www.astrolog.org/ftp/ephem/:ephem \
 		http://www.astrolog.org/ftp/:dist
@@ -21,6 +21,8 @@ DISTFILES=	${EXTRACT_ONLY}:dist ${EPHEM}:ephem
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	An astrology program for X11 and alpha-numeric terminals
 
+CFLAGS+=-O	# Silent gcc 4.2.0 loop optimization bug with -O2
+		# at the end of intrpret.c:ChartInfluence()
 USE_ZIP=	yes
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
