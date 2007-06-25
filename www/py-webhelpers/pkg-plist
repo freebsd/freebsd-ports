@@ -1,0 +1,87 @@
+@unexec %%EASY_INSTALL_CMD%% -N -m -q %D/%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/feedgenerator.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/feedgenerator.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/feedgenerator.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/hinclude.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/hinclude.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/hinclude.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/htmlgen.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/htmlgen.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/htmlgen.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/markdown.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/markdown.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/markdown.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/pagination/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/pagination/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/pagination/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/pagination/links.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/pagination/links.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/pagination/links.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/pagination/orm.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/pagination/orm.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/pagination/orm.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/asset_tag.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/asset_tag.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/asset_tag.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/date.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/date.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/date.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/form_options.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/form_options.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/form_options.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/form_tag.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/form_tag.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/form_tag.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/javascript.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/javascript.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/javascript.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/javascripts/builder.js
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/javascripts/controls.js
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/javascripts/dragdrop.js
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/javascripts/effects.js
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/javascripts/prototype.js
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/javascripts/scriptaculous.js
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/javascripts/slider.js
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/javascripts/unittest.js
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/number.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/number.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/number.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/prototype.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/prototype.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/prototype.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/scriptaculous.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/scriptaculous.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/scriptaculous.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/tags.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/tags.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/tags.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/text.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/text.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/text.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/urls.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/textile.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/textile.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/textile.pyo
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/util.py
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/util.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/pagination
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails/javascripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers/rails
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/webhelpers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%
+@exec %%EASY_INSTALL_CMD%% -N -q %D/%%PYTHON_SITELIBDIR%%/%%PYWEBHELPERS_EGG%%

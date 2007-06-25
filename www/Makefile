@@ -1041,6 +1041,7 @@
     SUBDIR += py-twistedWeb
     SUBDIR += py-twistedWeb2
     SUBDIR += py-urljr
+    SUBDIR += py-webhelpers
     SUBDIR += py-webunit
     SUBDIR += py-webware
     SUBDIR += py-webware-component
