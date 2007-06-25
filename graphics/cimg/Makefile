@@ -62,12 +62,8 @@ NOBUILD=	yes
 RUN_DEPENDS+=	${LOCALBASE}/lib/libMagick.so.10:${PORTSDIR}/graphics/ImageMagick
 .endif
 
-post-patch:
-	${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
-#	@${CP} ${WRKSRC}/CImg.h ${WRKSRC}/CImg.h.dos
-#	@${TR} -d '\r' < ${WRKSRC}/CImg.h.dos > ${WRKSRC}/CImg.h
-
 pre-configure:
+	${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 .if !defined(NOPORTDOCS)
 	${GREP} -lR 'img/' ${BUILD_WRKSRC} |	\
 		${XARGS} ${REINPLACE_CMD} -e 's|img/|${EXAMPLESDIR}/img/|g'
