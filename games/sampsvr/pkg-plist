@@ -1,7 +1,7 @@
 @unexec if cmp -s %D/etc/sampsvr.cfg %D/etc/sampsvr.cfg.dist; then rm -f %D/etc/sampsvr.cfg; fi
 etc/sampsvr.cfg.dist
 @exec [ -f %B/sampsvr.cfg ] || cp %B/%f %B/sampsvr.cfg
-%%SAMPDIR%%/sampd
+%%SAMPDIR%%/samp02svr
 %%SAMPDIR%%/announce
 %%SAMPDIR%%/server.cfg
 %%SAMPDIR%%/filterscripts
