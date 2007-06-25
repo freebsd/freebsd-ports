@@ -1,5 +1,5 @@
---- setup/FreeBSD/sbin/soundon.orig	Fri Jun 22 15:26:04 2007
-+++ setup/FreeBSD/sbin/soundon	Fri Jun 22 15:29:46 2007
+--- setup/FreeBSD/sbin/soundon.orig	Tue Feb 20 23:36:33 2007
++++ setup/FreeBSD/sbin/soundon	Mon Jun 25 14:21:10 2007
 @@ -1,13 +1,13 @@
  #!/bin/sh
  
@@ -27,6 +27,24 @@
  fi
  
  if ! /sbin/kldload $OSSLIBDIR/modules/osscore.ko
+@@ -50,7 +50,7 @@
+ done
+ 
+ echo "+++ ossinfo -v3 +++" >> $LOG
+-ossinfo -v3 >> $LOG 2>&1
++%%PREFIX%%/bin/ossinfo -v3 >> $LOG 2>&1
+ echo "+++ /dev/sndstat +++" >> $LOG
+ cat /dev/sndstat >> $LOG 2>&1
+ echo "+++ dmesg +++" >> $LOG
+@@ -65,7 +65,7 @@
+ 	sh $OSSLIBDIR/etc/legacy_devices >> $LOG 2>&1
+ fi
+ 
+-/usr/sbin/ossdevlinks -v >> $LOG 2>&1
++%%PREFIX%%/sbin/ossdevlinks -v >> $LOG 2>&1
+ 
+ if test ! -f /dev/dsp
+ then
 @@ -74,7 +74,7 @@
  
  ls -l /dev/dsp* /dev/sndstat /dev/mixer* /dev/oss/*/* >> $LOG 2>&1

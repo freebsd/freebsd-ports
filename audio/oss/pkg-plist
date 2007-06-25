@@ -52,6 +52,7 @@ lib/oss/modules/ymf7xx.ko
 @dirrm lib/oss/modules
 lib/oss/etc/devices.list
 @unexec rm -f %D/lib/oss/etc/installed_drivers
+@unexec rm -f %D/lib/oss/etc/legacy_devices
 @dirrm lib/oss/etc
 lib/oss/version.dat
 lib/oss/sysfiles.list

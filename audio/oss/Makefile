@@ -7,6 +7,7 @@
 
 PORTNAME=	oss
 DISTVERSION=	4.0-build1003
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://developer.opensound.com/sources/stable/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-gpl
@@ -35,7 +36,7 @@ IGNORE=		requires kernel source to be installed
 do-configure:
 	${MKDIR} ${WRKSRC}
 	cd ${WRKSRC} && ${WRKDIR}/${DISTNAME}/configure
-	${FIND} ${WRKDIR}/${DISTNAME} -type f -name '*.[hc]' | ${XARGS} ${REINPLACE_CMD} \
+	${FIND} ${WRKDIR}/${DISTNAME} -type f -name '*.[hc]' -or -name '*.man' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|"/usr/include/stdarg.h"|<stdarg.h>|g' \
 		-e 's|/usr/|${PREFIX}/|g' \
 		-e 's|/etc/oss|${PREFIX}/etc/oss|g'
