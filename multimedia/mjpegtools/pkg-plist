@@ -65,6 +65,7 @@ include/mjpegtools/mjpeg_types.h
 include/mjpegtools/mpeg2enc/elemstrmwriter.hh
 include/mjpegtools/mpeg2enc/encoderparams.hh
 include/mjpegtools/mpeg2enc/encodertypes.h
+include/mjpegtools/mpeg2enc/imageplanes.hh
 include/mjpegtools/mpeg2enc/macroblock.hh
 include/mjpegtools/mpeg2enc/mpeg2coder.hh
 include/mjpegtools/mpeg2enc/mpeg2encoder.hh
