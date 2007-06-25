@@ -3,6 +3,7 @@ bin/bash
 bin/bashbug
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/bash.mo
 %%HELP%%%%DATADIR%%/alias
 %%HELP%%%%DATADIR%%/arith
 %%HELP%%%%DATADIR%%/arith_for
