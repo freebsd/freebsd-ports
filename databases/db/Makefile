@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	db
-PORTVERSION=	1.15
+PORTVERSION=	1.14
+PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.mavetju.org/download/
 
