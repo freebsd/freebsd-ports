@@ -1,0 +1,55 @@
+include/gstreamer-0.10/gst/childbin/childbin.h
+include/gstreamer-0.10/gst/envelope/envelope.h
+include/gstreamer-0.10/gst/help/help.h
+include/gstreamer-0.10/gst/note2frequency/note2frequency.h
+include/gstreamer-0.10/gst/preset/preset.h
+include/gstreamer-0.10/gst/propertymeta/propertymeta.h
+include/gstreamer-0.10/gst/tempo/tempo.h
+lib/gstreamer-0.10/libgstaudiodelay.a
+lib/gstreamer-0.10/libgstaudiodelay.la
+lib/gstreamer-0.10/libgstaudiodelay.so
+lib/gstreamer-0.10/libgstfluidsynth.a
+lib/gstreamer-0.10/libgstfluidsynth.la
+lib/gstreamer-0.10/libgstfluidsynth.so
+lib/gstreamer-0.10/libgstfluidsynth.so.0
+lib/gstreamer-0.10/libgstsimsyn.a
+lib/gstreamer-0.10/libgstsimsyn.la
+lib/gstreamer-0.10/libgstsimsyn.so
+lib/libgstbuzztard.a
+lib/libgstbuzztard.la
+lib/libgstbuzztard.so
+lib/libgstbuzztard.so.0
+libdata/pkgconfig/libgstbuzztard.pc
+%%DOCSDIR%%/gst-buzztard/GstAudioDelay.html
+%%DOCSDIR%%/gst-buzztard/GstChildBin.html
+%%DOCSDIR%%/gst-buzztard/GstHelp.html
+%%DOCSDIR%%/gst-buzztard/GstNote2Frequency.html
+%%DOCSDIR%%/gst-buzztard/GstPreset.html
+%%DOCSDIR%%/gst-buzztard/GstPropertyMeta.html
+%%DOCSDIR%%/gst-buzztard/GstSimSyn.html
+%%DOCSDIR%%/gst-buzztard/GstTempo.html
+%%DOCSDIR%%/gst-buzztard/api-index.html
+%%DOCSDIR%%/gst-buzztard/ch01.html
+%%DOCSDIR%%/gst-buzztard/ch02.html
+%%DOCSDIR%%/gst-buzztard/ch03.html
+%%DOCSDIR%%/gst-buzztard/gst-buzztard-GstEnvelope.html
+%%DOCSDIR%%/gst-buzztard/gst-buzztard.devhelp
+%%DOCSDIR%%/gst-buzztard/gst-buzztard.devhelp2
+%%DOCSDIR%%/gst-buzztard/hierarchy.html
+%%DOCSDIR%%/gst-buzztard/home.png
+%%DOCSDIR%%/gst-buzztard/index.html
+%%DOCSDIR%%/gst-buzztard/index.sgml
+%%DOCSDIR%%/gst-buzztard/left.png
+%%DOCSDIR%%/gst-buzztard/pr01.html
+%%DOCSDIR%%/gst-buzztard/right.png
+%%DOCSDIR%%/gst-buzztard/style.css
+%%DOCSDIR%%/gst-buzztard/up.png
+@dirrm %%DOCSDIR%%/gst-buzztard
+@dirrm %%DOCSDIR%%
+@dirrmtry include/gstreamer-0.10/gst/tempo
+@dirrmtry include/gstreamer-0.10/gst/propertymeta
+@dirrmtry include/gstreamer-0.10/gst/preset
+@dirrmtry include/gstreamer-0.10/gst/note2frequency
+@dirrmtry include/gstreamer-0.10/gst/help
+@dirrmtry include/gstreamer-0.10/gst/envelope
+@dirrmtry include/gstreamer-0.10/gst/childbin
