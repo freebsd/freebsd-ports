@@ -1,6 +1,6 @@
 # New ports collection makefile for:	gstreamer-plugins-buzztard
 # Date created:		2007-06-24
-# Whom:			Michael Johnson <ahze@buh.ahze.net>
+# Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
 #
