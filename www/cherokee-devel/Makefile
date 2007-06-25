@@ -8,8 +8,8 @@
 PORTNAME=	cherokee
 DISTVERSION=	0.6.0b700
 CATEGORIES=	www
-MASTER_SITES=	http://www.cherokee-project.com/download/${PORTVERSION:R}/${PORTVERSION}/ \
-		CENKES http://www.alaskaparadise.com/freebsd/
+MASTER_SITES=	http://www.cherokee-project.com/download/0.6/${PORTVERSION:R}/ \
+		CENKES LOCAL/beech
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	beech@FreeBSD.org
