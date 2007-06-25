@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML_AJAX
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	www devel pear
 
 MAINTAINER=	numisemis@yahoo.com
@@ -20,7 +21,7 @@ FILES=		AJAX.php AJAX/Action.php AJAX/Debug.php AJAX/Helper.php \
 		AJAX/JSON.php AJAX/Response.php AJAX/Server.php \
 		AJAX/Serializer/JSON.php AJAX/Serializer/Null.php \
 		AJAX/Serializer/PHP.php AJAX/Serializer/Urlencoded.php \
-		AJAX/Serializer/Error.php
+		AJAX/Serializer/Error.php AJAX/Serializer/XML.php
 EXAMPLES=	guestbook/auto_server.php \
 		guestbook/guestbook.class.php \
 		guestbook/index.php \
