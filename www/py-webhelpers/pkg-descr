@@ -1,0 +1,9 @@
+WebHelpers is package aimed at providing helper functions for use
+within web applications.
+
+These functions are intended to ease web development with template
+languages by removing common view logic and encapsulating it in
+re-usable modules as well as occasionally providing objects for use
+within controllers to assist with common web development paradigms.
+
+WWW: http://pylonshq.com/WebHelpers/
