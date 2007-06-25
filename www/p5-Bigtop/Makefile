@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bigtop
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Bigtop
@@ -58,6 +58,7 @@ MAN3=		Bigtop.3 Bigtop::Backend::CGI.3 \
 		Bigtop::ScriptHelp::Style::Kickstart.3 \
 		Bigtop::ScriptHelp::Style::Pg8Live.3 \
 		Bigtop::TentMaker.3 \
-		Bigtop::TentMakerPath.3
+		Bigtop::TentMakerPath.3 \
+		Bigtop::grammar.3
 
 .include <bsd.port.mk>
