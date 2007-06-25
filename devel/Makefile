@@ -1821,6 +1821,7 @@
     SUBDIR += py-cxx
     SUBDIR += py-dateutil
     SUBDIR += py-dbus
+    SUBDIR += py-decorator
     SUBDIR += py-dialog
     SUBDIR += py-distorm
     SUBDIR += py-durus
