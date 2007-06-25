@@ -1,4 +1,4 @@
-misc/tinderbox is now installed, but it requires some additional setup.
+ports-mgmt/tinderbox is now installed, but it requires some additional setup.
 
 ****************************************************
 Additional info: %%PREFIX%%/tinderbox/scripts/README
