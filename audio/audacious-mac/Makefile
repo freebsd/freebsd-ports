@@ -1,4 +1,4 @@
-# New ports collection makefile for:    audacious-audacious
+# New ports collection makefile for:    audacious-mac
 # Date created:                         23 June 2007
 # Whom:					buganini@gmail.com
 #
@@ -19,7 +19,6 @@ LIB_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/"
-USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXXFLAGS = @CXXFLAGS@|CXXFLAGS = @CXXFLAGS@ -lmac|' ${WRKSRC}/src/Makefile.in
