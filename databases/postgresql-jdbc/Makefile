@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	8.2.504
+PORTVERSION=	8.2.505
 DISTVERSIONSUFFIX=.src
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	databases java
 MASTER_SITES=	http://jdbc.postgresql.org/download/
 PKGNAMESUFFIX=	-jdbc
