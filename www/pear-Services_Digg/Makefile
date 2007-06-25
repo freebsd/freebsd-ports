@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Digg
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	www pear
 
 MAINTAINER=	bg1tpt@gmail.com
@@ -36,7 +36,8 @@ TESTS=		000-services-digg-factory.phpt 001-errors-getAll.phpt \
 		034-stories-diggs.phpt 034-stories-popular.phpt \
 		035-stories-getAll.phpt 035-stories-getStoriesComments.phpt \
 		035-stories-getStoriesDiggs.phpt 036-stories-getStoryByTitle.phpt \
-		040-story-comments.phpt 050-comments.phpt 060-comment-replies.phpt \
+		040-story-comments.phpt 041-story-getCommentById.phpt \
+		050-comments.phpt 060-comment-replies.phpt \
 		070-proxy-get.phpt 071-proxy-post.phpt \
 		200-diggapiuser-isFriend.phpt 201-diggapistories-iteration.phpt \
 		tests-config.php
