@@ -7,13 +7,15 @@
 
 PORTNAME=	Net_Whois
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net pear
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A tool to query internet domain name services
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
 
 CATEGORY=	Net
 FILES=		Whois.php
