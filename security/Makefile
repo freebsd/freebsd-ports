@@ -651,6 +651,7 @@
     SUBDIR += samhain-server
     SUBDIR += sancp
     SUBDIR += sasp
+    SUBDIR += scanhill
     SUBDIR += scanlogd
     SUBDIR += scanssh
     SUBDIR += seahorse
