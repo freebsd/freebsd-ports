@@ -25,7 +25,8 @@ CONFLICTS=	ncurses-[0-9]*
 
 PATCHES=	20061223 20061230 20070106 20070113 20070120 20070127 20070128 \
 		20070203 20070210 20070217 20070224 20070303 20070310 20070311 \
-		20070317 20070324 20070331 20070407 20070414
+		20070317 20070324 20070331 20070407 20070414 20070421 20070428 \
+		20070505 20070512 20070526 20070602 20070609 20070612 20070623
 
 RELEASE=	5.6
 
@@ -69,6 +70,7 @@ PLIST_SUB+=	PORTVERSION=${RELEASE} \
 		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${TARGETDIR}/,,}
 
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
 DOCS=	ANNOUNCE INSTALL NEWS README TO-DO doc/html/announce.html \
 	doc/hackguide.doc doc/html/hackguide.html \
@@ -139,9 +141,9 @@ post-configure:
 	    do-configure
 .endif
 .for d in test c++
-.if !defined(WITHOUT_WIDEC)
+. if !defined(WITHOUT_WIDEC)
 	${CP} ${WRKSRC}/${d}/* ${WIDEC_WRKSRC}/${d}/
-.endif
+. endif
 	${CP} ${WRKSRC}/${d}/* ${NOWIDEC_WRKSRC}/${d}/
 .endfor
 
@@ -155,16 +157,18 @@ post-install:
 	${MAKE} INSTALL_WRKSRC=${WIDEC_WRKSRC} do-install
 .endif
 
-.for i in ${EXAMPLES_TARGETS}
+.if !defined(NOPORTEXAMPLES)
+. for i in ${EXAMPLES_TARGETS}
 	${MKDIR} ${${i}_EXAMPLESDIR}/c++
-.for f in ${EXAMPLES}
+.  for f in ${EXAMPLES}
 	${INSTALL_DATA} ${${i}_WRKSRC}/test/${f} ${${i}_EXAMPLESDIR}
-.endfor
+.  endfor
 	${INSTALL_SCRIPT} ${${i}_WRKSRC}/test/tracemunch ${${i}_EXAMPLESDIR}
-.for f in ${EXAMPLES_CPP}
+.  for f in ${EXAMPLES_CPP}
 	${INSTALL_DATA} ${${i}_WRKSRC}/c++/${f} ${${i}_EXAMPLESDIR}/c++
-.endfor
-.endfor
+.  endfor
+. endfor
+.endif
 
 .if !defined(WITHOUT_TERMINFO)
 	${FIND} ${PREFIX}/share/misc -name "*.terminfo" -print0	|	\
