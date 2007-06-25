@@ -12998,6 +12998,7 @@ py-pydasm	ports/devel/py-pydasm
 py-pydot	ports/graphics/py-pydot
 py-pyftpdlib	ports/ftp/py-pyftpdlib
 py-pygments	ports/textproc/py-pygments
+py-pylons	ports/www/py-pylons
 py-pymsn	ports/net-im/pymsn
 py-pypcap	ports/net/py-pypcap
 py-pyproj	ports/graphics/py-pyproj
