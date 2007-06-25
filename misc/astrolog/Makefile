@@ -22,7 +22,6 @@ MAINTAINER=	ache@FreeBSD.org
 COMMENT=	An astrology program for X11 and alpha-numeric terminals
 
 CFLAGS+=-O	# Silent gcc 4.2.0 loop optimization bug with -O2
-		# at the end of intrpret.c:ChartInfluence()
 USE_ZIP=	yes
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
