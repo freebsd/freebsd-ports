@@ -331,6 +331,7 @@
     SUBDIR += lcdproc
     SUBDIR += ldap-account-manager
     SUBDIR += ldapvi
+    SUBDIR += ledit
     SUBDIR += less
     SUBDIR += lfm
     SUBDIR += libcdio
