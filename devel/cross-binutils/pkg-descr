@@ -1,6 +1,6 @@
 GNU binutils for cross-target application development.
 
-Prerequisite for the GCC cross-compiling enviropment.
+Prerequisite for the GCC cross-compiling environment.
 
 Use TGTARCH switch to select target architecture, and TGTABI to select ABI.
 E.g. the following command will build binutils for rtems on sparc:
