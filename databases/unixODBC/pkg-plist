@@ -7,8 +7,12 @@ bin/iusql
 bin/odbc_config
 bin/odbcinst
 %%GUI:%%bin/odbctest
-etc/odbc.ini
-etc/odbcinst.ini
+@unexec if cmp -s %D/etc/odbc.ini %D/etc/odbc.ini.sample; then  rm -f %D/etc/odbc.ini; fi
+etc/odbc.ini.sample
+@exec [ -f %D/etc/odbc.ini ] || cp %D/etc/odbc.ini.sample %D/etc/odbc.ini
+@unexec if cmp -s %D/etc/odbcinst.ini %D/etc/odbcinst.ini.sample; then rm -f %D/etc/odbcinst.ini; fi
+etc/odbcinst.ini.sample
+@exec [ -f %D/etc/odbcinst.ini ] || cp %D/etc/odbcinst.ini.sample %D/etc/odbcinst.ini
 include/autotest.h
 include/odbcinst.h
 include/odbcinstext.h

@@ -7,7 +7,7 @@
 
 PORTNAME=	unixODBC
 PORTVERSION=	2.2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
@@ -56,5 +56,10 @@ post-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 .endif
+.for conffile in odbc.ini odbcinst.ini
+	@if [ ! -f ${PREFIX}/etc/${conffile} ]; then \
+		${CP} -p ${PREFIX}/etc/${conffile}.sample ${PREFIX}/etc/${conffile} ; \
+	fi
+.endfor
 
 .include <bsd.port.mk>
