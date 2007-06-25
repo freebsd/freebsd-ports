@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pycallgraph
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://pycallgraph.slowchop.com/files/download/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
@@ -20,5 +19,14 @@ RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
+
+.if !defined(NOPORTEXANPLES)
+post-install:
+	${MKDIR} ${EXAMPLESDIR}
+	${CP} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	${CHOWN} 755 ${EXAMPLESDIR}/*
+.endif
 
 .include <bsd.port.mk>
