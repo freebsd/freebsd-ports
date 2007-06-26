@@ -21,13 +21,6 @@ DISTFILES=	${EXTRACT_ONLY}:dist ${EPHEM}:ephem
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	An astrology program for X11 and alpha-numeric terminals
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-# gcc 4.2.0 loop optimization limits range bug with -O2
-CFLAGS+=-fno-tree-vrp
-.endif
-
 USE_ZIP=	yes
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
@@ -69,4 +62,4 @@ do-install:
 	@${ECHO_MSG} "See the file ${PREFIX}/share/doc/astrolog/Helpfile.540 for help"
 	@${ECHO_MSG} "and tune ${PREFIX}/lib/astrolog/astrolog.dat"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
