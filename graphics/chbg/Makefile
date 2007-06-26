@@ -9,12 +9,11 @@ PORTNAME=	chbg
 PORTVERSION=	1.5
 PORTREVISION=	7
 CATEGORIES=	graphics gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.idata.sk/~ondrej/sw/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	netchild@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Change Background Picture with time period
 
 USE_X_PREFIX=	yes
