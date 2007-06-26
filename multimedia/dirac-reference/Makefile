@@ -15,8 +15,6 @@ BUILD_DEPENDS+=		dot:${PORTSDIR}/graphics/graphviz \
 
 MASTERDIR=	${.CURDIR}/../../multimedia/dirac
 
-BROKEN=		Incorrect pkg-plist
-
 BUILD_WRKSRC=	${WRKSRC}/doc
 INSTALL_WRKSRC=	${WRKSRC}/doc
 PLIST=	${.CURDIR}/pkg-plist
