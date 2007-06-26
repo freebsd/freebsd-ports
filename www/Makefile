@@ -1324,6 +1324,7 @@
     SUBDIR += xpi-sessionmanager
     SUBDIR += xpi-statusbarclock
     SUBDIR += xpi-stumbleupon
+    SUBDIR += xpi-stylish
     SUBDIR += xpi-surfkeys
     SUBDIR += xpi-tabletools
     SUBDIR += xpi-tabmixplus

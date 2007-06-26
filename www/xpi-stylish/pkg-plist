@@ -1,0 +1,238 @@
+%%XPI_XPIDIR%%/LICENSE
+%%XPI_XPIDIR%%/chrome/content/StylishStyle.js
+%%XPI_XPIDIR%%/chrome/content/branding.dtd
+%%XPI_XPIDIR%%/chrome/content/browserOverlay.js
+%%XPI_XPIDIR%%/chrome/content/browserOverlay.xul
+%%XPI_XPIDIR%%/chrome/content/common.js
+%%XPI_XPIDIR%%/chrome/content/commonOverlay.js
+%%XPI_XPIDIR%%/chrome/content/contents.rdf
+%%XPI_XPIDIR%%/chrome/content/domiOverlay.js
+%%XPI_XPIDIR%%/chrome/content/domiOverlay.xul
+%%XPI_XPIDIR%%/chrome/content/edit.js
+%%XPI_XPIDIR%%/chrome/content/edit.xul
+%%XPI_XPIDIR%%/chrome/content/editor.js
+%%XPI_XPIDIR%%/chrome/content/mailOverlay.js
+%%XPI_XPIDIR%%/chrome/content/mailOverlay.xul
+%%XPI_XPIDIR%%/chrome/content/manage.js
+%%XPI_XPIDIR%%/chrome/content/manage.xul
+%%XPI_XPIDIR%%/chrome/content/rdfds.js
+%%XPI_XPIDIR%%/chrome/content/repair.js
+%%XPI_XPIDIR%%/chrome/content/repair.xul
+%%XPI_XPIDIR%%/chrome/content/seamonkeyCompat.js
+%%XPI_XPIDIR%%/chrome/content/specifySites.js
+%%XPI_XPIDIR%%/chrome/content/specifySites.xul
+%%XPI_XPIDIR%%/chrome/content/stylish-default.rdf
+%%XPI_XPIDIR%%/chrome/content/update.js
+%%XPI_XPIDIR%%/chrome/content/update.xul
+%%XPI_XPIDIR%%/chrome/content/urls.properties
+%%XPI_XPIDIR%%/chrome/icons/default/stylish.ico
+%%XPI_XPIDIR%%/chrome/icons/default/stylish.xpm
+%%XPI_XPIDIR%%/chrome/locale/de/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/de/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/de/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/de/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/de/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/de/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/de/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/de/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/de/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/en-GB/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/stylish.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/en-GB/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/en-US/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/en-US/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/es-ES/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/es-ES/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/fi/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/fi/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/fr/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/fr/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/he-IL/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/he-IL/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/it/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/it/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/ja/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/ja/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/nl/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/nl/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/stylish.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/ru/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/ru/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/ru/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/sk/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/sk/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk-UA/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk-UA/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/uk-UA/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk-UA/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk-UA/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk-UA/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk-UA/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk-UA/stylish.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk-UA/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/uk-UA/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/stylish.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/common.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/specifySites.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/update.dtd
+%%XPI_XPIDIR%%/chrome/skin/add.png
+%%XPI_XPIDIR%%/chrome/skin/bigicon.png
+%%XPI_XPIDIR%%/chrome/skin/contents.rdf
+%%XPI_XPIDIR%%/chrome/skin/delete.png
+%%XPI_XPIDIR%%/chrome/skin/edit.css
+%%XPI_XPIDIR%%/chrome/skin/edit.png
+%%XPI_XPIDIR%%/chrome/skin/help.png
+%%XPI_XPIDIR%%/chrome/skin/manage.css
+%%XPI_XPIDIR%%/chrome/skin/mediumicon.png
+%%XPI_XPIDIR%%/chrome/skin/overlay.css
+%%XPI_XPIDIR%%/chrome/skin/overlay1.8.1.css
+%%XPI_XPIDIR%%/chrome/skin/prefwindow.css
+%%XPI_XPIDIR%%/chrome/skin/repair.css
+%%XPI_XPIDIR%%/chrome/skin/sidebar.css
+%%XPI_XPIDIR%%/chrome/skin/smallicon.png
+%%XPI_XPIDIR%%/chrome/skin/specifySites.css
+%%XPI_XPIDIR%%/chrome/skin/update.css
+%%XPI_XPIDIR%%/chrome/skin/update.png
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/components/StylishStartup.js
+%%XPI_XPIDIR%%/defaults/preferences/stylish.js
+%%XPI_XPIDIR%%/install.js
+%%XPI_XPIDIR%%/install.rdf
+@dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome/icons/default
+@dirrm %%XPI_XPIDIR%%/chrome/icons
+@dirrm %%XPI_XPIDIR%%/chrome/locale/de
+@dirrm %%XPI_XPIDIR%%/chrome/locale/en-GB
+@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
+@dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fi
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fr
+@dirrm %%XPI_XPIDIR%%/chrome/locale/he-IL
+@dirrm %%XPI_XPIDIR%%/chrome/locale/it
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ja
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ko-KR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/nl
+@dirrm %%XPI_XPIDIR%%/chrome/locale/pl-PL
+@dirrm %%XPI_XPIDIR%%/chrome/locale/pt-BR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ru
+@dirrm %%XPI_XPIDIR%%/chrome/locale/sk
+@dirrm %%XPI_XPIDIR%%/chrome/locale/uk-UA
+@dirrm %%XPI_XPIDIR%%/chrome/locale/zh-CN
+@dirrm %%XPI_XPIDIR%%/chrome/locale/zh-TW
+@dirrm %%XPI_XPIDIR%%/chrome/locale
+@dirrm %%XPI_XPIDIR%%/chrome/skin
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
