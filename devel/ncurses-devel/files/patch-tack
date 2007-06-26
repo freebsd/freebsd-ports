@@ -1,0 +1,57 @@
+diff -ruN tack-1.04/Makefile.in tack-1.05/Makefile.in
+--- tack-1.04/Makefile.in	Sun Apr  8 23:57:15 2007
++++ tack/Makefile.in	Mon Apr 30 04:49:12 2007
+@@ -1,4 +1,4 @@
+-# $Id: Makefile.in,v 1.46 2007/04/08 15:57:15 tom Exp $
++# $Id: Makefile.in,v 1.47 2007/04/29 20:49:12 tom Exp $
+ ##############################################################################
+ # Copyright (c) 1998-2006,2007 Free Software Foundation, Inc.                #
+ #                                                                            #
+@@ -98,7 +98,7 @@
+ LOCAL_LIBDIR	= @top_builddir@/lib
+ 
+ LD		= @LD@
+-LINK		= @LINK_PROGS@ $(LIBTOOL_LINK) $(CC)
++LINK		= @LINK_PROGS@ $(LIBTOOL_LINK)
+ LDFLAGS		= @EXTRA_LDFLAGS@ \
+ 		@TICS_ARGS@ @TINFO_ARGS@ @LDFLAGS@ @LD_MODEL@ @LIBS@
+ 
+diff -ruN tack-1.04/configure tack-1.05/configure
+--- tack-1.04/configure	Mon Apr  9 00:04:45 2007
++++ tack/configure	Mon Apr 30 07:51:35 2007
+@@ -1205,7 +1205,7 @@
+ LIB_CLEAN=""				
+ LIB_COMPILE=""				
+ LIB_INSTALL=""				
+-LIB_LINK=""				
++LIB_LINK='$(CC)'			
+ LIB_SUFFIX=""				
+ LIB_UNINSTALL=""			
+ LINK_PROGS=""				
+@@ -2754,7 +2754,7 @@
+ 	make an error
+ # endif
+ #endif
+-	exit(0);
++	${cf_cv_main_return-return}(0);
+ }
+ EOF
+ if { (eval echo configure:2761: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
+@@ -3678,7 +3678,7 @@
+ 	make an error
+ # endif
+ #endif
+-	exit(0);
++	${cf_cv_main_return-return}(0);
+ }
+ EOF
+ if { (eval echo configure:3685: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
+@@ -4304,7 +4304,7 @@
+ 	make an error
+ # endif
+ #endif
+-	exit(0);
++	${cf_cv_main_return-return}(0);
+ }
+ EOF
+ if { (eval echo configure:4311: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
