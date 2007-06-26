@@ -7,6 +7,7 @@
 
 PORTNAME=	Net_LDAP
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	net pear
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -20,9 +21,12 @@ CATEGORY=	Net
 FILES=		LDAP.php \
 		LDAP/Entry.php LDAP/Filter.php LDAP/RootDSE.php \
 		LDAP/Schema.php LDAP/Search.php LDAP/Util.php
-DOCS=		README.txt RootDSE.txt STATUS Schema.txt utf8.txt
-_DOCSDIR=	./doc
+DOCS=		README.txt RootDSE.txt Schema.txt utf8.txt
+_DOCSDIR=	doc
 TESTS=		tests.php
+EXAMPLES=	add_entry.php connecting.php fetch_entry.php \
+		modify_entry.php search_entries.php
+_EXAMPLESDIR=	doc/examples
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
