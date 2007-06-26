@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpd
-DISTVERSION=	4.1
+DISTVERSION=	4.2
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	mpd
@@ -18,11 +18,19 @@ COMMENT=	Multi-link PPP daemon based on netgraph(4)
 LIB_DEPENDS=	pdel.0:${PORTSDIR}/devel/libpdel
 
 LATEST_LINK=    mpd4
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700041
+BUILD_DEPENDS=	/usr/local/include/netgraph/ng_car.h:${PORTSDIR}/net/ng_car
+RUN_DEPENDS=	${KMODDIR}/ng_car.ko:${PORTSDIR}/net/ng_car
+.endif
+
 MTREE_FILE=	${FILESDIR}/mpd4.mtree
 MAN8=		mpd4.8
 MANCOMPRESSED=	maybe
 USE_RC_SUBR=	mpd4.sh
-HTMLNUM!=	jot 62 1
+HTMLNUM!=	jot 67 1
 CONFSUF=	conf links secret script
 DOCSDIR=	${TARGETDIR}/share/doc/mpd4
 PORTDOCS=	${HTMLNUM:S/^/mpd/:S/$/.html/} mpd.html mpd.ps README	\
@@ -32,4 +40,4 @@ PLIST_FILES=	${CONFSUF:S/^/etc\/mpd4\/mpd./:S/$/.sample/} sbin/mpd4
 
 USE_OPENSSL=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
