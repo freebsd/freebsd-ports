@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	1.3.1
+PORTVERSION=	2.2.3
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
@@ -15,6 +15,7 @@ COMMENT=	Library to create and read several streaming archive formats
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
 PLIST_FILES=	bin/bsdtar \
 		include/archive.h \
@@ -30,7 +31,8 @@ MAN3=		archive_entry.3 \
 		archive_read.3 \
 		archive_util.3 \
 		archive_write.3 \
-		libarchive.3
+		libarchive.3 \
+		libarchive_internals.3
 MAN5=		libarchive-formats.5 \
 		tar.5
 
