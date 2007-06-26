@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fusenshi
-PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.ongs.co.jp/projects/fusenshi/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -25,7 +24,7 @@ USE_XLIB=	yes
 .ifdef WITHOUT_SSL
 MAKE_ARGS+=	WITHOUT_SSL=yes
 .else
-USE_OPENSSL=	yes
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .endif
 
 post-install:
