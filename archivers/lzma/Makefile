@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	lzma
-PORTVERSION=	4.47
+PORTVERSION=	4.48
 CATEGORIES=	archivers
-MASTER_SITES=	SF/sevenzip
+MASTER_SITES=	SFE/sevenzip
 DISTNAME=	7z${PORTVERSION:S/.//g}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	High-ratio LZMA compressor
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
 USE_DOS2UNIX=	yes
 BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Compress/LZMA_Alone
@@ -30,7 +31,7 @@ post-patch:
 			${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/lzma ${TARGETDIR}/bin/
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/lzma ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d ${DOCSDIR}/
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/DOC/,} ${DOCSDIR}/
