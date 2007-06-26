@@ -47,6 +47,7 @@ LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls \
 RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
 .endif
 .ifndef WITHOUT_MYSQL
+USE_MYSQL=	yes
 USE_PHP+=	mysql
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}/bin/mysql_config
 .elifdef WITH_PGSQL
