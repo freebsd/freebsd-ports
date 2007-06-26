@@ -32,7 +32,7 @@ DISTFILES+=	${CWSARCHIVE}:cws
 CWSARCHIVE=	${WITH_CWS}.tar.gz
 
 NO_LATEST_LINK=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	desktopfileutils gtk20
 MOZILLA_VERSION=	1.7.5
 MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
 .if !defined(WITHOUT_MOZILLA)
@@ -134,9 +134,9 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-symbols=SMALL
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
+LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost
+CONFIGURE_ARGS+=	--with-system-boost=yes #i58343#
 .endif
-#LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost
-#CONFIGURE_ARGS+=	--with-system-boost=yes #i58343#
 .if (${OSVERSION} <= 602102)
 EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
 .endif
@@ -242,6 +242,7 @@ post-install:
 			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
 	@for app in base calc draw impress math printeradmin writer; do \
 		${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -$${app} %U/" \
+			-e "s/^Icon.*/Icon=${EXECBASE}-$${app}.png/" \
 		${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/$${app}.desktop ; \
 	done
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
@@ -254,23 +255,23 @@ post-install:
 	@for dir in `ls ${ICONS}/hicolor | ${GREP} -v CVS`; do \
 		for app in base calc draw impress math printeradmin writer; do \
 			if [ -r ${ICONS}/hicolor/$${dir}/apps/$${app}.png ]; then \
-				${CP} ${ICONS}/hicolor/$${dir}/apps/$${app}.png \
-				    ${PREFIX}/share/icons/hicolor/$${dir}/apps/openofficeorg23-$${app}.png ; \
-				${ECHO_CMD} "share/icons/hicolor/$${dir}/apps/openofficeorg23-$${app}.png" >> ${TMPPLIST} ; \
+				${INSTALL_DATA} ${ICONS}/hicolor/$${dir}/apps/$${app}.png \
+				    ${PREFIX}/share/icons/hicolor/$${dir}/apps/${EXECBASE}-$${app}.png ; \
+				${ECHO_CMD} "share/icons/hicolor/$${dir}/apps/${EXECBASE}-$${app}.png" >> ${TMPPLIST} ; \
 			fi \
 		done ; \
 		for file in `cd ${ICONS}/hicolor/$${dir}/mimetypes; ls *.png`; do \
-			${CP} ${ICONS}/hicolor/$${dir}/mimetypes/$${file} \
+			${INSTALL_DATA} ${ICONS}/hicolor/$${dir}/mimetypes/$${file} \
 			    ${PREFIX}/share/icons/hicolor/$${dir}/mimetypes/ ; \
 			${ECHO_CMD} "share/icons/hicolor/$${dir}/mimetypes/$${file}" >> ${TMPPLIST} ; \
 		done ; \
 	done
-	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} >> ${TMPPLIST}
-	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} ${EXECBASE} >> ${TMPPLIST}
-	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}
-	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type l >> ${TMPPLIST}
-	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type d > ${WRKDIR}/dir.tmp
-	@${SORT} -r ${WRKDIR}/dir.tmp | ${XARGS} -n 1 ${ECHO_CMD} @dirrm >> ${TMPPLIST}
+	@${PREFIX}/bin/update-desktop-database 2>/dev/null || ${TRUE}
+	@${ECHO_CMD} "@exec ${PREFIX}/bin/update-desktop-database 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
+	@cd ${PREFIX} ; ${FIND} -s bin \( -type f -or -type l \) -name "${EXECBASE}*" >> ${TMPPLIST}
+	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} \( -type f -or -type l \) >> ${TMPPLIST}
+	@cd ${PREFIX} ; ${FIND} ${INSTALLATION_BASEDIR} -type d | ${SORT} -r | \
+		${XARGS} -n 1 ${ECHO_CMD} @dirrm >> ${TMPPLIST}
 	@${CP} ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
