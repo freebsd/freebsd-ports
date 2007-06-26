@@ -1,5 +1,5 @@
 @comment $FreeBSD$
-@unexec if cmp -s %D/%%XAPPLRESDIR%%/Tgif.ja %D/%%XAPPLRESDIR%%/Tgif; then rm %D/%%XAPPLRESDIR%%/Tgif; fi
+@unexec if cmp -s %D/%%XAPPLRESDIR%%/Tgif.ja-dist %D/%%XAPPLRESDIR%%/Tgif; then rm %D/%%XAPPLRESDIR%%/Tgif; fi
 %%XAPPLRESDIR%%/Tgif.ja-dist
 @exec if ! test -r %D/%%XAPPLRESDIR%%/Tgif; then cp %D/%%XAPPLRESDIR%%/Tgif.ja-dist %D/%%XAPPLRESDIR%%/Tgif; fi
 @dirrmtry %%XAPPLRESDIR%%
