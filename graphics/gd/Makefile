@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gd
-PORTVERSION=	2.0.34
-PORTREVISION?=	1
+PORTVERSION=	2.0.35
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.libgd.org/releases/
@@ -64,6 +64,8 @@ USE_PERL5_BUILD=	yes
 SCRIPTS_ENV+=	GD_FONTS="${GD_FONTS}"
 .endif
 
+FONTBASE=	${X11BASE}/lib/X11/fonts
+
 pre-extract::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "gd has the following tunables:"
@@ -86,6 +88,9 @@ post-configure:
 		-e 's|@FEATURES@|${FEATURES}|' \
 		${WRKSRC}/config/gdlib-config.in \
 		> ${WRKDIR}/gdlib-config
+	${REINPLACE_CMD} \
+	-e 's|#define DEFAULT_FONTPATH .*|#define DEFAULT_FONTPATH "${FONTBASE}/TTF:${FONTBASE}/Type1:${FONTBASE}"|' \
+		${WRKSRC}/gd.h
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gdfx.h ${WRKSRC}/gdhelpers.h \
