@@ -34,6 +34,8 @@ IGNOREFILES+=	doc${EXTRACT_SUFX}
 PORTDOCS=	*
 .endif
 
+IGNORE=	source tarball marked as temporarilly unavailable by the author
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'	\
 		-e 's|%%DESKTOPDIR%%|${DESKTOPDIR}|' ${WRKSRC}/${MAKEFILE}
