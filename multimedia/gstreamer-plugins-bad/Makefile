@@ -6,7 +6,7 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-bad/Makefile,v 1.7 2006/09/14 21:25:16 ahze Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 COMMENT=	Bad gstreamer-plugins

@@ -107,4 +107,7 @@ share/locale/sr/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+@dirrmtry include/gstreamer-%%VERSION%%/gst/app
+@dirrmtry include/gstreamer-%%VERSION%%/gst
+@dirrmtry include/gstreamer-%%VERSION%%
 @dirrm lib/gstreamer-%%VERSION%%
