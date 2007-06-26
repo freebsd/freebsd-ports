@@ -3,3 +3,5 @@ The AnimeNfo client
 The simplest AnimeNfo client. Written in C.
 Despite being the simplest example of AnimeNfo client,
 all socket operations were done in non-blocking.
+
+WWW: http://www.animenfo.com/
