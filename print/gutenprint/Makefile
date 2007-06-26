@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gutenprint
-PORTVERSION=	5.1
-PORTREVISION=	2
+PORTVERSION=	5.1.3
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -43,12 +42,6 @@ RUN_DEPENDS+=	gutenprint-ijs>0:${PORTSDIR}/print/gutenprint-ijs
 .if defined(WITH_FOOMATIC)
 RUN_DEPENDS+=	gutenprint-foomatic>0:${PORTSDIR}/print/gutenprint-foomatic
 .endif
-
-pre-everything::
-	@if [ -n "`${PKG_INFO} -xI '^gutenprint-[0-9].[0-9].[0-9]*' 2>/dev/null`" ]; then \
-		${ECHO_CMD} "${PKGNAME}: Old version of gutenprint detected! Please see ${PORTSDIR}/UPDATING for information on upgrading ${PKGNAME}" ; \
-		${FALSE}; \
-	fi
 
 do-install:	# empty
 
