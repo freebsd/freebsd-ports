@@ -51,9 +51,11 @@ USE_MYSQL=	yes
 USE_PHP+=	mysql
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}/bin/mysql_config
 .elifdef WITH_PGSQL
+USE_PGSQL=	yes
 USE_PHP+=	pgsql
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}/bin/pg_config
 .elifdef WITH_SQLITE
+USE_SQLITE=	yes
 USE_PHP+=	sqlite
 CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
 .else
