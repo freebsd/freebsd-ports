@@ -20,6 +20,11 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Mark Crispin's C-client mail access routines
 
+OPTIONS=	SSL "Compile with SSL support" on \
+		SSL_AND_PLAINTEXT "Allow plain text passwords and SSL" off \
+		IPV6 "Support IPv6" on \
+		MBX_DEFAULT "Use MBX as default mailbox format" off
+
 USE_LDCONFIG=	yes
 ALL_TARGET=	bsf
 .if defined(WITHOUT_SSL)
@@ -51,6 +56,10 @@ post-patch:
 		s:/etc/ssl/private:${PREFIX}/certs:g" ${WRKSRC}/Makefile
 .if !defined(WITHOUT_IPV6)
 	@${REINPLACE_CMD} -e "s|^IP=4|IP=6|" ${WRKSRC}/Makefile \
+		${WRKSRC}/src/osdep/unix/Makefile
+.endif
+.if defined(WITH_MBX_DEFAULT)
+	@${REINPLACE_CMD} -e "s|^CREATEPROTO=unixproto|CREATEPROTO=mbxproto|" \
 		${WRKSRC}/src/osdep/unix/Makefile
 .endif
 
