@@ -1,6 +1,6 @@
---- configure.orig	Sat Apr 28 17:18:20 2007
-+++ configure	Sat Apr 28 17:18:56 2007
-@@ -36874,12 +36874,7 @@
+--- configure.old	Tue Jun 26 11:51:09 2007
++++ configure	Tue Jun 26 11:51:34 2007
+@@ -36877,10 +36877,7 @@
  
    fi
    GTK_BINARY_VERSION=`$PKG_CONFIG --variable=gtk_binary_version gtk+-2.0`
@@ -8,9 +8,7 @@
 -  if test -z "$GTK_LIBDIR)"; then
 -    GTK_LIBDIR="$libdir"
 -  fi
--
--
 +  GTK_LIBDIR="$libdir"
+   GTK_IM_MODULEDIR=$GTK_LIBDIR/gtk-2.0/immodules
  
- fi
  
