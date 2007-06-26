@@ -213,45 +213,45 @@
 %%PYTHON_SITELIBDIR%%/%%PYPYLONS_EGG%%/tests/test_webapps/test_make_project.py
 %%PYTHON_SITELIBDIR%%/%%PYPYLONS_EGG%%/tests/test_webapps/test_make_project.pyc
 %%PYTHON_SITELIBDIR%%/%%PYPYLONS_EGG%%/tests/test_webapps/test_make_project.pyo
-%%DOCSDIR%%/adding_docs.txt
-%%DOCSDIR%%/application_configuration.txt
-%%DOCSDIR%%/application_setup.txt
-%%DOCSDIR%%/caching.txt
-%%DOCSDIR%%/deployment.txt
-%%DOCSDIR%%/error_documents.txt
-%%DOCSDIR%%/faq.txt
-%%DOCSDIR%%/flickrsearch.txt
-%%DOCSDIR%%/form_handling.txt
-%%DOCSDIR%%/getting_started.txt
-%%DOCSDIR%%/hosting.txt
-%%DOCSDIR%%/index.txt
-%%DOCSDIR%%/install.txt
-%%DOCSDIR%%/interactive_debugger.txt
-%%DOCSDIR%%/internationalization.txt
-%%DOCSDIR%%/logging.txt
-%%DOCSDIR%%/pudge_template/at.png
-%%DOCSDIR%%/pudge_template/class.html
-%%DOCSDIR%%/pudge_template/common.html
-%%DOCSDIR%%/pudge_template/document.html
-%%DOCSDIR%%/pudge_template/layout.css
-%%DOCSDIR%%/pudge_template/layout.html
-%%DOCSDIR%%/pudge_template/master-index.html
-%%DOCSDIR%%/pudge_template/member.html
-%%DOCSDIR%%/pudge_template/module-index.html
-%%DOCSDIR%%/pudge_template/module.html
-%%DOCSDIR%%/pudge_template/package-index.html
-%%DOCSDIR%%/pudge_template/pudge.css
-%%DOCSDIR%%/pudge_template/rst.css
-%%DOCSDIR%%/pudge_template/silvercity.css
-%%DOCSDIR%%/pudge_template/transitions.html
-%%DOCSDIR%%/pylonsdev.txt
-%%DOCSDIR%%/quick_wiki.txt
-%%DOCSDIR%%/security_policy.txt
-%%DOCSDIR%%/template_plugins.txt
-%%DOCSDIR%%/testing_web_application.txt
-%%DOCSDIR%%/webserver_config.txt
-%%DOCSDIR%%/windowsnotes.txt
-%%DOCSDIR%%/wsgi.txt
+%%PORTDOCS%%%%DOCSDIR%%/adding_docs.txt
+%%PORTDOCS%%%%DOCSDIR%%/application_configuration.txt
+%%PORTDOCS%%%%DOCSDIR%%/application_setup.txt
+%%PORTDOCS%%%%DOCSDIR%%/caching.txt
+%%PORTDOCS%%%%DOCSDIR%%/deployment.txt
+%%PORTDOCS%%%%DOCSDIR%%/error_documents.txt
+%%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/flickrsearch.txt
+%%PORTDOCS%%%%DOCSDIR%%/form_handling.txt
+%%PORTDOCS%%%%DOCSDIR%%/getting_started.txt
+%%PORTDOCS%%%%DOCSDIR%%/hosting.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/install.txt
+%%PORTDOCS%%%%DOCSDIR%%/interactive_debugger.txt
+%%PORTDOCS%%%%DOCSDIR%%/internationalization.txt
+%%PORTDOCS%%%%DOCSDIR%%/logging.txt
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/at.png
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/class.html
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/common.html
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/document.html
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/layout.css
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/layout.html
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/master-index.html
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/member.html
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/module-index.html
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/module.html
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/package-index.html
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/pudge.css
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/rst.css
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/silvercity.css
+%%PORTDOCS%%%%DOCSDIR%%/pudge_template/transitions.html
+%%PORTDOCS%%%%DOCSDIR%%/pylonsdev.txt
+%%PORTDOCS%%%%DOCSDIR%%/quick_wiki.txt
+%%PORTDOCS%%%%DOCSDIR%%/security_policy.txt
+%%PORTDOCS%%%%DOCSDIR%%/template_plugins.txt
+%%PORTDOCS%%%%DOCSDIR%%/testing_web_application.txt
+%%PORTDOCS%%%%DOCSDIR%%/webserver_config.txt
+%%PORTDOCS%%%%DOCSDIR%%/windowsnotes.txt
+%%PORTDOCS%%%%DOCSDIR%%/wsgi.txt
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPYLONS_EGG%%/pylons/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPYLONS_EGG%%/pylons/decorators
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPYLONS_EGG%%/pylons/templates/default_project/+egg+.egg-info
@@ -287,6 +287,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPYLONS_EGG%%/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPYLONS_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPYLONS_EGG%%
-@dirrm %%DOCSDIR%%/pudge_template
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pudge_template
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec %%EASY_INSTALL_CMD%% -N -q %D/%%PYTHON_SITELIBDIR%%/%%PYPYLONS_EGG%%
