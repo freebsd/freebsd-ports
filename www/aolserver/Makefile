@@ -7,7 +7,7 @@
 
 PORTNAME=	aolserver
 PORTVERSION=	4.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aolserver
@@ -699,6 +699,9 @@ PLIST_SUB+=	TESTS=""
 .else
 PLIST_SUB+=	TESTS="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| _init| _ns_init|' ${WRKSRC}/include/ns.mak.in
 
 post-install:
 .if defined(WITH_TESTS)
