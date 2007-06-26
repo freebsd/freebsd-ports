@@ -50,7 +50,7 @@ MAN3 =	ApplicationShell.3 Composite.3 Constraint.3 Core.3 \
 
 MAN5 =	VirtualBindings.5 mwmrc.5
 
-.if defined(HAVE_MOTIF) && !defined(PARALLEL_PACKAGE_BUILD) && !defined(BATCH) && !defined(WANT_LESSTIF)
+.if defined(HAVE_MOTIF) && !defined(PACKAGE_BUILDING) && !defined(BATCH) && !defined(WANT_LESSTIF)
 MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
 IS_INTERACTIVE=	yes
 pre-extract:

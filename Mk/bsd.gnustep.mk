@@ -498,7 +498,7 @@ do-install:
 	@(cd ${WRKSRC}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 .endif
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(BATCH) || defined(CLEAN_ROOT)
+.if defined(PACKAGE_BUILDING) || defined(BATCH) || defined(CLEAN_ROOT)
 	rm -rf /root/GNUstep
 .endif
 

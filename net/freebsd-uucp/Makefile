@@ -104,7 +104,7 @@ post-install:
 	@${ECHO_MSG} "Add this lines to your pam.conf:"
 	@${CAT} ${FILESDIR}/uucp-pam.conf
 .endif
-.if exists(/usr/sbin/uuchk) && !defined(PARALLEL_PACKAGE_BUILD)
+.if exists(/usr/sbin/uuchk) && !defined(PACKAGE_BUILDING)
 	${MAKE} base-package
 .endif
 
