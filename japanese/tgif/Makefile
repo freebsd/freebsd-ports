@@ -17,6 +17,8 @@ COMMENT=	Japanese Resource and Configuration for TGIF
 RUN_DEPENDS=	tgif:${PORTSDIR}/graphics/tgif \
 		${LOCALBASE}/share/ipa-ttfonts/fonts/ipag.ttf:${PORTSDIR}/japanese/ipa-ttfonts
 
+BROKEN=		Wrong plist
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
