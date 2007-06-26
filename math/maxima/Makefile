@@ -42,7 +42,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=		Does not build on amd64
+MAKE_ENV+=	CC="${CC}"
 .endif
 
 # Lisp to build with. Define only ONE of these!
