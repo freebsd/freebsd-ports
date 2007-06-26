@@ -17,6 +17,8 @@ COMMENT=	PEAR regression testing framework for unit tests
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Does not fetch
+
 CONFLICTS=	*PHPUnit*
 
 LATEST_LINK=	pear-${PORTNAME}
