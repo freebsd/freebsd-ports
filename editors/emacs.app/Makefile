@@ -35,7 +35,7 @@ do-build:
 
 do-install:
 	${CP} -r ${WRKSRC}/nextstep/build/Emacs.app ${PREFIX}/System/Applications/
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(BATCH) || defined(CLEAN_ROOT)
+.if defined(PACKAGE_BUILDING) || defined(BATCH) || defined(CLEAN_ROOT)
 	${RM} -rf /root/GNUstep
 .endif
 
