@@ -19,7 +19,6 @@ share/foomatic/db/source/opt/gutenprint-ijs-simplified.5.1-stp_laminate.xml
 share/foomatic/db/source/opt/gutenprint-ijs-simplified.5.1-stp_mediatype.xml
 share/foomatic/db/source/opt/gutenprint-ijs-simplified.5.1-stp_quality.xml
 share/foomatic/db/source/opt/gutenprint-ijs-simplified.5.1-stp_resolution.xml
-share/foomatic/db/source/opt/gutenprint-ijs-simplified.5.1-stp_saturation-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs-simplified.5.1-stp_usegloss.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.1-color.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.1-model.xml
@@ -109,7 +108,6 @@ share/foomatic/db/source/opt/gutenprint-ijs.5.1-stp_printingdirection.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.1-stp_quality.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.1-stp_reddensity-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.1-stp_resolution.xml
-share/foomatic/db/source/opt/gutenprint-ijs.5.1-stp_saturation-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.1-stp_usegloss.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.1-stp_weave.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.1-stp_yellowbalance-1.xml

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #    $MCom: ports/print/gimp-gutenprint/Makefile,v 1.2 2007/03/30 16:42:46 ahze Exp $
 
-PORTREVISION=	1
+PORTREVISION=	0
 PORTEPOCH=	0
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	# empty
