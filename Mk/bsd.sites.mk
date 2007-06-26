@@ -1083,7 +1083,7 @@ MASTER_SITE_RUBY+= \
 MASTER_SITE_RUBYFORGE+= \
 	http://rubyforge.rubyuser.de/%SUBDIR%/ \
 	http://rubyforge.iasi.roedu.net/files/%SUBDIR%/ \
-	http://rubyforge.halostatue.info/%SUBDIR%/ \
+	http://files.rubyforge.mmmultiworks.com/%SUBDIR%/ \
 	http://files.rubyforge.vm.bytemark.co.uk/%SUBDIR%/
 .endif
 
