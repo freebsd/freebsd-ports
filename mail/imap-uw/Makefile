@@ -22,6 +22,15 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 
+# This port must have the same SSL settings as mail/cclient, which it depends on
+# To make MBX format the default mailbox format, change the settings of cclient
+
+OPTIONS=	SSL "Compile with SSL support" on \
+		SSL_AND_PLAINTEXT "Allow plain text passwords and SSL" off \
+		DRAC "Dynamically open MTA for relaying" off \
+		NETSCAPE_BRAIN_DAMAGE "See Makefile for documentation" off \
+		ENTOURAGE_BRAIN_DAMAGE "See Makefile for documentation" off
+
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 .if defined(WITH_DRAC)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
