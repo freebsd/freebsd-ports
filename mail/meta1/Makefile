@@ -25,6 +25,10 @@ IGNORE=		your system does not support sysvipc
 .endif
 .endif
 
+.if defined(PARALLEL_PACKAGE_BUILD)
+IRGNORE=	builds not without hostname
+.endif
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
