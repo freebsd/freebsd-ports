@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	speex
-DISTVERSION=	1.2beta1
-PORTREVISION=	1
+DISTVERSION=	1.2beta2
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
@@ -24,7 +23,7 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ogg-dir=${LOCALBASE}
+CONFIGURE_ARGS=	--with-ogg-dir=${LOCALBASE} --mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
