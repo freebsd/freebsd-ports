@@ -123,7 +123,7 @@ FIXREFS=	${SH} -c '${REINPLACE_CMD} -E \
 		-e "s,\($$0\),\(${OURTARGET}-$$0\),g" $$*' --
 
 .if !defined(TGTARCH) || !defined(TGTABI)
-PKGNAMEPREFIX=	#empty
+PKGNAMEPREFIX=	cross-
 OURTARGET=	cross	# to generate a correct index line
 IGNORE=		you should select ARCH and ABI to build port
 .endif
