@@ -9,7 +9,6 @@ PORTNAME=	telepathy-salut
 PORTVERSION=	0.1.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
-DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Link-local Connection Manager for Telepathy Framework
