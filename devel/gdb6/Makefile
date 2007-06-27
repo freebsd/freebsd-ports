@@ -45,6 +45,7 @@ LIB_DEPENDS=	itk:${PORTSDIR}/x11-toolkits/itk
 RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets:${PORTSDIR}/x11-toolkits/iwidgets
 DISTFILES+=	gdbtk-6.6${EXTRACT_SUFX}:gdbtk
 PLIST_SUB+=	INSIGHT=''
+EXTRA_PATCHES=	${FILESDIR}/itcl33-patch
 CONFIGURE_ARGS+=--enable-gdbtk \
 		--with-tclconfig=${LOCALBASE}/lib/tcl8.4 \
 		--with-tclinclude=${LOCALBASE}/include/tcl8.4/generic \
