@@ -13,7 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -49,9 +49,9 @@ PLIST_FILES=	libexec/dkim-filter sbin/gentxt-dkim \
 PLIST_DIRS=	etc/mail
 PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh \
-		draft-allman-dkim-ssp-02.txt draft-hoffman-dac-vbr-00.txt \
-		draft-ietf-dkim-overview-04.txt \
-		draft-ietf-dkim-ssp-requirements-02.txt rfc4686.txt rfc4871.txt
+		draft-hoffman-dac-vbr-00.txt draft-ietf-dkim-overview-05.txt \
+		draft-ietf-dkim-ssp-00.txt draft-ietf-dkim-ssp-requirements-04.txt \
+		rfc4686.txt rfc4871.txt
 .if !defined(NOPORTDOCS)
 LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/overview.html \
@@ -200,6 +200,7 @@ post-patch:
 	@${SED} ${SITE_SUB} -e '\|^dnl |d' -e '/^dnl$$/d' \
 		${SITE} > ${WCONF}/site.config.m4
 
+pre-configure:
 .if defined(WITH_VERIFY_DOMAINKEYS) && !defined(WITHOUT_VERIFY_DOMAINKEYS)
 	${LN} -s ${LIBDK_PATH}/libdk ${WRKSRC}/
 	${CP} ${LIBDK_PATH}/rfc4870.txt ${WRKSRC}/
