@@ -16,8 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Haru Free PDF Library
 
+LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_PNG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--shared \
 		--prefix=${PREFIX} \
