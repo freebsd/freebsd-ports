@@ -16,13 +16,13 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A collection of utility modules for Tcl
 
 BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
+USE_TCL_BUILD=	yes
+USE_TCL_RUN=	${USE_TCL_BUILD}
 
-TCL_VER?=	8.4
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all
 MAKE_ENV+=	LANG=C
-SCRIPTS_ENV+=	TCL_VER=${TCL_VER} PATCH="${PATCH}"
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
@@ -58,6 +58,10 @@ MANN=	aes.n asn.n ansi_cmacros.n ansi_cctrl.n ansi_cattr.n           \
 
 MANCOMPRESSED=	no
 
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ENV+=	ac_cv_path_tclsh="${TCLSH}"
+
 post-patch:
 	#
 	# Ensure, the detailed output of vendors' self-tests is
@@ -65,8 +69,8 @@ post-patch:
 	#
 	${REINPLACE_CMD} -e 's,test run,test run -l testlog,' \
 		${WRKSRC}/Makefile.in
-
-.include <bsd.port.pre.mk>
+	${REINPLACE_CMD} -e 's,exec tclsh,exec ${TCLSH},'	\
+		${WRKSRC}/apps/dtplite
 
 RUNTEST=	${SETENV} LANG=C DISPLAY= ${MAKE} -C ${WRKSRC} test
 MYID	!=	${ID} -u
