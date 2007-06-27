@@ -6,6 +6,7 @@ share/locale/de/LC_MESSAGES/scim-hangul.mo
 share/locale/fr/LC_MESSAGES/scim-hangul.mo
 share/locale/ja/LC_MESSAGES/scim-hangul.mo
 share/locale/ko/LC_MESSAGES/scim-hangul.mo
+share/locale/pa/LC_MESSAGES/scim-hangul.mo
 share/locale/zh_CN/LC_MESSAGES/scim-hangul.mo
 share/scim/icons/scim-hangul.png
 @dirrmtry share/scim/icons
