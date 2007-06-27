@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.6.14
-PORTREVISION=	1
+PORTVERSION=	0.6.17
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -28,7 +27,7 @@ CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
 		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -fPIC" \
 		LIBS="-L../common -L${LOCALBASE}/lib"
 
-MAN1=		gnokii.1 todologo.1 ppm2nokia.1 sendsms.1
+MAN1=		gnokii.1 sendsms.1
 MAN8=		gnokiid.8 mgnokiidev.8
 PORTDOCS=	*
 

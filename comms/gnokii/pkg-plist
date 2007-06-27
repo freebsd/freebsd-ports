@@ -1,8 +1,5 @@
 bin/gnokii
-bin/ppm2nokia
 bin/sendsms
-bin/todologo
-bin/waitcall
 %%X11%%bin/xgnokii
 etc/gnokiirc.sample
 include/gnokii.h
@@ -23,7 +20,7 @@ include/gnokii/wappush.h
 lib/libgnokii.a
 lib/libgnokii.la
 lib/libgnokii.so
-lib/libgnokii.so.3
+lib/libgnokii.so.5
 libdata/pkgconfig/gnokii.pc
 libdata/pkgconfig/xgnokii.pc
 sbin/gnokiid
