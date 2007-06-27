@@ -1,0 +1,55 @@
+--- gdb/gdbtk/library/tfind_args.tcl	Sun Feb  6 19:19:42 2000
++++ gdb/gdbtk/library/tfind_args.tcl	Wed May 17 00:11:49 2006
+@@ -29,5 +29,5 @@
+ # ----------------------------------------------------------------------
+  
+-itcl_class TfindArgs {
++itcl::class TfindArgs {
+   # ------------------------------------------------------------------
+   #  CONSTRUCTOR - create new tfind arguments dialog
+--- gdb/gdbtk/library/ehandler.itb	Tue Oct 15 17:19:51 2002
++++ gdb/gdbtk/library/ehandler.itb	Wed May 17 00:12:55 2006
+@@ -23,5 +23,5 @@
+ 
+   # invoke event handlers
+-  foreach w [itcl_info objects -isa GDBEventHandler] {
++  foreach w [itcl::find objects -isa GDBEventHandler] {
+     dbug I "posting event \"$handler\" to \"$w\""
+     if {[catch {$w $handler $event}]} {
+--- gdb/gdbtk/library/managedwin.itb	Fri Aug 27 19:13:14 2004
++++ gdb/gdbtk/library/managedwin.itb	Wed May 17 00:13:32 2006
+@@ -76,5 +76,5 @@
+ itcl::body ManagedWin::window_instance {ins} {
+   set win_instance $ins
+-  foreach obj [itcl_info objects -isa ManagedWin] {
++  foreach obj [itcl::find objects -isa ManagedWin] {
+     debug "$obj ManagedWin::_wname"
+     $obj window_name ""
+@@ -134,5 +134,5 @@
+   
+   # call the reconfig method for each object
+-  foreach obj [itcl_info objects -isa ManagedWin] {
++  foreach obj [itcl::find objects -isa ManagedWin] {
+     if {[catch {$obj reconfig} msg]} {
+       dbug W "reconfig failed for $obj - $msg"
+@@ -148,5 +148,5 @@
+ itcl::body ManagedWin::shutdown {} {
+   set activeWins {}
+-  foreach win [itcl_info objects -isa ManagedWin] {
++  foreach win [itcl::find objects -isa ManagedWin] {
+     if {![$win isa ModalDialog] && ![$win _ignore_on_save]} {
+       set g [wm geometry [winfo toplevel [namespace tail $win]]]
+@@ -221,5 +221,5 @@
+   if {!$force} {
+     # check all windows for one of this type
+-    foreach obj [itcl_info objects -isa ManagedWin] {
++    foreach obj [itcl::find objects -isa ManagedWin] {
+       if {[$obj isa $class]} {
+ 	$obj reveal
+@@ -364,5 +364,5 @@
+   debug "$win"
+   set res ""
+-  foreach obj [itcl_info objects -isa ManagedWin] {
++  foreach obj [itcl::find objects -isa ManagedWin] {
+     if {[$obj isa $win]} {
+       lappend res $obj
