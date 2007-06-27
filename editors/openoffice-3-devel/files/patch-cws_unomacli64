@@ -1,0 +1,1760 @@
+CWS unomacli64:	#i77422#, #i77600#, #i78114#, #i78143#, and #i78284#
+
+--- bridges/source/cpp_uno/msvc_win32_intel/dllinit.cxx	1 Jan 1970 00:00:00 -0000
++++ bridges/source/cpp_uno/msvc_win32_intel/dllinit.cxx	20 Jun 2007 10:29:46 -0000	1.1.2.1
+@@ -0,0 +1,66 @@
++/*************************************************************************
++ *
++ *  OpenOffice.org - a multi-platform office productivity suite
++ *
++ *  $RCSfile: dllinit.cxx,v $
++ *
++ *  $Revision: 1.1.2.1 $
++ *
++ *  last change: $Author: kr $ $Date: 2007/06/20 10:29:46 $
++ *
++ *  The Contents of this file are made available subject to
++ *  the terms of GNU Lesser General Public License Version 2.1.
++ *
++ *
++ *    GNU Lesser General Public License Version 2.1
++ *    =============================================
++ *    Copyright 2005 by Sun Microsystems, Inc.
++ *    901 San Antonio Road, Palo Alto, CA 94303, USA
++ *
++ *    This library is free software; you can redistribute it and/or
++ *    modify it under the terms of the GNU Lesser General Public
++ *    License version 2.1, as published by the Free Software Foundation.
++ *
++ *    This library is distributed in the hope that it will be useful,
++ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ *    Lesser General Public License for more details.
++ *
++ *    You should have received a copy of the GNU Lesser General Public
++ *    License along with this library; if not, write to the Free Software
++ *    Foundation, Inc., 59 Temple Place, Suite 330, Boston,
++ *    MA  02111-1307  USA
++ *
++ ************************************************************************/
++
++
++// MARKER(update_precomp.py): autogen include statement, do not remove
++#include "precompiled_bridges.hxx"
++
++
++#pragma warning(push,1) // disable warnings within system headers
++#include <windows.h>
++#pragma warning(pop)
++
++ 
++void dso_init(void);
++void dso_exit(void);
++
++
++extern "C" BOOL WINAPI DllMain(HMODULE hModule, DWORD dwReason, LPVOID lpvReserved)
++{
++    switch(dwReason) {
++    case DLL_PROCESS_ATTACH:
++        DisableThreadLibraryCalls(hModule);
++
++        dso_init();
++        break;
++
++    case DLL_PROCESS_DETACH:
++        if (!lpvReserved)
++            dso_exit();
++        break;
++    }
++
++    return TRUE;
++}
+--- bridges/source/cpp_uno/msvc_win32_intel/makefile.mk	26 Mar 2007 13:15:33 -0000	1.13
++++ bridges/source/cpp_uno/msvc_win32_intel/makefile.mk	20 Jun 2007 10:29:46 -0000	1.13.10.1
+@@ -57,9 +57,11 @@
+ .ENDIF
+ .ENDIF
+ 
++
+ SLOFILES= \
+ 	$(SLO)$/cpp2uno.obj		\
+ 	$(SLO)$/uno2cpp.obj		\
++	$(SLO)$/dllinit.obj		\
+ 	$(SLO)$/except.obj
+ 
+ NOOPTFILES= \
+--- bridges/source/cpp_uno/shared/component.cxx	9 May 2007 13:24:21 -0000	1.6
++++ bridges/source/cpp_uno/shared/component.cxx	6 Jun 2007 07:38:41 -0000	1.6.4.1
+@@ -107,12 +107,12 @@
+ 
+ extern "C" {
+ 
+-static void s_stub_computeObjectIdentifier(va_list param)
++static void s_stub_computeObjectIdentifier(va_list * pParam)
+     SAL_THROW( () )
+ {
+-	uno_ExtEnvironment  * pEnv       = va_arg(param, uno_ExtEnvironment *);
+-	rtl_uString        ** ppOId      = va_arg(param, rtl_uString **);
+-	void                * pInterface = va_arg(param, void *);
++	uno_ExtEnvironment  * pEnv       = va_arg(*pParam, uno_ExtEnvironment *);
++	rtl_uString        ** ppOId      = va_arg(*pParam, rtl_uString **);
++	void                * pInterface = va_arg(*pParam, void *);
+ 
+ 
+     OSL_ENSURE( pEnv && ppOId && pInterface, "### null ptr!" );
+@@ -168,11 +168,11 @@
+ 	uno_Environment_invoke(&pExtEnv->aBase, s_stub_computeObjectIdentifier, pExtEnv, ppOId, pInterface);
+ }
+ 
+-static void s_stub_acquireInterface(va_list param)
++static void s_stub_acquireInterface(va_list * pParam)
+     SAL_THROW( () )
+ {
+-	/*uno_ExtEnvironment * pExtEnv = */va_arg(param, uno_ExtEnvironment *);
+-	void               * pCppI   = va_arg(param, void *);
++	/*uno_ExtEnvironment * pExtEnv = */va_arg(*pParam, uno_ExtEnvironment *);
++	void               * pCppI   = va_arg(*pParam, void *);
+ 
+     reinterpret_cast< ::com::sun::star::uno::XInterface * >( pCppI )->acquire();
+ }
+@@ -183,11 +183,11 @@
+ 	uno_Environment_invoke(&pExtEnv->aBase, s_stub_acquireInterface, pExtEnv, pCppI);
+ }
+ 
+-static void s_stub_releaseInterface(va_list param)
++static void s_stub_releaseInterface(va_list * pParam)
+     SAL_THROW( () )
+ {
+-	/*uno_ExtEnvironment * pExtEnv = */va_arg(param, uno_ExtEnvironment *);
+-	void               * pCppI   = va_arg(param, void *);
++	/*uno_ExtEnvironment * pExtEnv = */va_arg(*pParam, uno_ExtEnvironment *);
++	void               * pCppI   = va_arg(*pParam, void *);
+ 
+     reinterpret_cast< ::com::sun::star::uno::XInterface * >( pCppI )->release();
+ }
+--- bridges/source/cpp_uno/shared/cppinterfaceproxy.cxx	16 Sep 2006 15:56:12 -0000	1.6
++++ bridges/source/cpp_uno/shared/cppinterfaceproxy.cxx	20 Jun 2007 10:29:46 -0000	1.6.50.1
+@@ -33,6 +33,7 @@
+  *
+  ************************************************************************/
+ 
++
+ // MARKER(update_precomp.py): autogen include statement, do not remove
+ #include "precompiled_bridges.hxx"
+ 
+@@ -54,12 +55,39 @@
+ #include <cstddef>
+ #include <new>
+ 
++
++static bridges::cpp_uno::shared::VtableFactory * pInstance;
++
++#ifdef __GNUG__
++void dso_init(void) __attribute__((constructor));
++void dso_exit(void) __attribute__((destructor));
++#endif
++
++void dso_init(void) {
++    if (!pInstance)
++        pInstance = new bridges::cpp_uno::shared::VtableFactory();
++}
++
++void dso_exit(void) {
++    if (pInstance) 
++    {
++        delete pInstance;
++        pInstance = NULL;
++    }
++}
++
++#ifdef __SUNPRO_CC
++# pragma init(dso_init)
++# pragma fini(dso_exit)
++#endif
++
++
++
+ namespace {
+ 
+ struct InitVtableFactory {
+     bridges::cpp_uno::shared::VtableFactory * operator()() {
+-        static bridges::cpp_uno::shared::VtableFactory instance;
+-        return &instance;
++        return pInstance;
+     }
+ };
+ 
+--- bridges/source/cpp_uno/shared/makefile.mk	7 Sep 2005 22:34:55 -0000	1.3
++++ bridges/source/cpp_uno/shared/makefile.mk	23 Jun 2007 00:31:45 -0000
+@@ -50,4 +50,11 @@
+     $(SLO)$/vtablefactory.obj \
+     $(SLO)$/vtables.obj
+ 
++# disable optimization for cppinterfaceproxy.cxx -
++# attribute constructor / destructor get not called otherwise
++.IF "$(COM)" == "GCC"
++NOOPTFILES = \
++    $(SLO)$/cppinterfaceproxy.obj
++.ENDIF
++
+ .INCLUDE: target.mk
+--- cppu/inc/cppu/Enterable.hxx	9 May 2007 13:32:35 -0000	1.2
++++ cppu/inc/cppu/Enterable.hxx	5 Jun 2007 15:00:52 -0000	1.2.2.1
+@@ -52,11 +52,11 @@
+ public:
+     /* These methods need to be implemented in a derived class.
+      */
+-	virtual void v_enter     (void)                                   = 0;
+-	virtual void v_leave     (void)                                   = 0;
+-	virtual void v_callInto_v(uno_EnvCallee * pCallee, va_list param) = 0;
+-	virtual void v_callOut_v (uno_EnvCallee * pCallee, va_list param) = 0;
+-	virtual int  v_isValid   (rtl::OUString * pReason)                = 0;
++	virtual void v_enter     (void)                                      = 0;
++	virtual void v_leave     (void)                                      = 0;
++	virtual void v_callInto_v(uno_EnvCallee * pCallee, va_list * pParam) = 0;
++	virtual void v_callOut_v (uno_EnvCallee * pCallee, va_list * pParam) = 0;
++	virtual int  v_isValid   (rtl::OUString * pReason)                   = 0;
+ 
+     virtual ~Enterable() {};
+ 
+@@ -66,8 +66,8 @@
+ 	inline void enter(void) {m_enter(this);};
+ 	inline void leave(void) {m_leave(this);};
+ 
+-	inline void callInto_v(uno_EnvCallee * pCallee, va_list param) {m_callInto_v(this, pCallee, param);};
+-	inline void callOut_v (uno_EnvCallee * pCallee, va_list param) {m_callOut_v (this, pCallee, param);};
++	inline void callInto_v(uno_EnvCallee * pCallee, va_list * pParam) {m_callInto_v(this, pCallee, pParam);};
++	inline void callOut_v (uno_EnvCallee * pCallee, va_list * pParam) {m_callOut_v (this, pCallee, pParam);};
+ 
+ 	inline void callInto(uno_EnvCallee * pCallee, ...);
+ 	inline void callOut (uno_EnvCallee * pCallee, ...);
+@@ -81,10 +81,10 @@
+ 
+ extern "C" inline void Enterable_call_enter (void * context) { ((Enterable *)context)->v_enter(); };
+ extern "C" inline void Enterable_call_leave (void * context) { ((Enterable *)context)->v_leave(); };
+-extern "C" inline void Enterable_call_callInto_v(void * context, uno_EnvCallee * pCallee, va_list param) 
+-    { ((Enterable *)context)->v_callInto_v(pCallee, param); };
+-extern "C" inline void Enterable_call_callOut_v (void * context, uno_EnvCallee * pCallee, va_list param) 
+-    { ((Enterable *)context)->v_callOut_v(pCallee, param); };
++extern "C" inline void Enterable_call_callInto_v(void * context, uno_EnvCallee * pCallee, va_list * pParam) 
++    { ((Enterable *)context)->v_callInto_v(pCallee, pParam); };
++extern "C" inline void Enterable_call_callOut_v (void * context, uno_EnvCallee * pCallee, va_list * pParam) 
++    { ((Enterable *)context)->v_callOut_v(pCallee, pParam); };
+ extern "C" inline int  Enterable_call_isValid   (void * context, rtl_uString ** pReason)
+     {return ((Enterable *)context)->v_isValid((rtl::OUString *)pReason);}
+ 
+@@ -103,7 +103,7 @@
+ 	va_list param;
+ 
+ 	va_start(param, pCallee);
+-	callInto_v(pCallee, param);
++	callInto_v(pCallee, &param);
+ 	va_end(param);
+ }
+ 
+@@ -112,7 +112,7 @@
+ 	va_list param;
+ 
+ 	va_start(param, pCallee);
+-	callOut_v(pCallee, param);
++	callOut_v(pCallee, &param);
+ 	va_end(param);
+ }
+ 
+--- cppu/inc/uno/Enterable.h	9 May 2007 13:33:57 -0000	1.2
++++ cppu/inc/uno/Enterable.h	5 Jun 2007 15:00:52 -0000	1.2.2.1
+@@ -68,10 +68,10 @@
+     
+ 	@param context
+     @param pCallee  the function to be called
+-    @param param    the parameter pointer to be passed to the function
++    @param pParam   the parameter pointer to be passed to the function
+     @since UDK 3.2.7
+ */
+-typedef void uno_Enterable_callInto_v(void * context, uno_EnvCallee * pCallee, va_list param);
++typedef void uno_Enterable_callInto_v(void * context, uno_EnvCallee * pCallee, va_list * pParam);
+ 
+ 
+ /** Generic function type declaration for calling out of an Environment.
+@@ -79,10 +79,10 @@
+     
+ 	@param context
+     @param pCallee  the function to be called
+-    @param param    the parameter pointer to be passed to the function
++    @param pParam   the parameter pointer to be passed to the function
+     @since UDK 3.2.7
+ */
+-typedef void uno_Enterable_callOut_v (void * context, uno_EnvCallee * pCallee, va_list param);
++typedef void uno_Enterable_callOut_v (void * context, uno_EnvCallee * pCallee, va_list * pParam);
+ 
+ 
+ /** Generic function type declaration for checking if calling on managed object is
+--- cppu/inc/uno/environment.h	9 May 2007 13:34:52 -0000	1.11
++++ cppu/inc/uno/environment.h	5 Jun 2007 15:00:52 -0000	1.11.2.1
+@@ -349,16 +349,16 @@
+ 
+ /** Typedef for variable argument function.
+  */
+-typedef void SAL_CALL uno_EnvCallee(va_list param);
++typedef void SAL_CALL uno_EnvCallee(va_list * pParam);
+ 
+ /** Invoke the passed function in the given environment.
+ 
+     @param pEnv     the target environment
+     @param pCallee  the function to call
+-    @param param    the parameter pointer passed to the function
++    @param pParam   the parameter pointer passed to the function
+     @since UDK 3.2.7
+  */
+-void SAL_CALL uno_Environment_invoke_v(uno_Environment * pEnv, uno_EnvCallee * pCallee, va_list param)
++void SAL_CALL uno_Environment_invoke_v(uno_Environment * pEnv, uno_EnvCallee * pCallee, va_list * pParam)
+ 	SAL_THROW_EXTERN_C();
+ 
+ /** Invoke the passed function in the given environment. 
+--- cppu/inc/uno/environment.hxx	9 May 2007 13:35:05 -0000	1.8
++++ cppu/inc/uno/environment.hxx	5 Jun 2007 15:00:52 -0000	1.8.2.1
+@@ -167,10 +167,10 @@
+ 	/** Invoke the passed function in this environment.
+ 
+ 		@param pCallee  the function to call
+-		@param param    the parameter pointer to be passed to the function
++		@param pParam   the parameter pointer to be passed to the function
+         @since UDK 3.2.7
+ 	*/
+-	inline void SAL_CALL invoke_v(uno_EnvCallee * pCallee, va_list param) const SAL_THROW( () );
++	inline void SAL_CALL invoke_v(uno_EnvCallee * pCallee, va_list * pParam) const SAL_THROW( () );
+ 
+ 	/** Invoke the passed function in this environment. 
+ 
+@@ -242,10 +242,10 @@
+ 	return *this;
+ }
+ //__________________________________________________________________________________________________
+-inline void SAL_CALL Environment::invoke_v(uno_EnvCallee * pCallee, va_list param) const SAL_THROW( () )
++inline void SAL_CALL Environment::invoke_v(uno_EnvCallee * pCallee, va_list * pParam) const SAL_THROW( () )
+ {
+ 	if (_pEnv)
+-		uno_Environment_invoke_v(_pEnv, pCallee, param);
++		uno_Environment_invoke_v(_pEnv, pCallee, pParam);
+ }
+ //__________________________________________________________________________________________________
+ inline void SAL_CALL Environment::invoke(uno_EnvCallee * pCallee, ...) const SAL_THROW( () )
+@@ -255,7 +255,7 @@
+ 		va_list param;
+ 		
+ 		va_start(param, pCallee);
+-		uno_Environment_invoke_v(_pEnv, pCallee, param);
++		uno_Environment_invoke_v(_pEnv, pCallee, &param);
+ 		va_end(param);
+ 	}
+ 	
+--- cppu/source/AffineBridge/AffineBridge.cxx	14 May 2007 09:32:30 -0000	1.3
++++ cppu/source/AffineBridge/AffineBridge.cxx	5 Jun 2007 15:04:23 -0000	1.3.2.1
+@@ -71,7 +71,7 @@
+ 
+ 	Msg                   m_message;
+ 	uno_EnvCallee       * m_pCallee;
+-	va_list               m_param;
++	va_list             * m_pParam;
+ 
+ 	osl::Mutex            m_innerMutex;
+ 	oslThreadIdentifier   m_innerThreadId;
+@@ -87,8 +87,8 @@
+ 	explicit  AffineBridge(void);
+ 	virtual  ~AffineBridge(void);
+ 
+-	virtual void  v_callInto_v(uno_EnvCallee * pCallee, va_list param);
+-	virtual void  v_callOut_v (uno_EnvCallee * pCallee, va_list param);
++	virtual void  v_callInto_v(uno_EnvCallee * pCallee, va_list * pParam);
++	virtual void  v_callOut_v (uno_EnvCallee * pCallee, va_list * pParam);
+ 
+ 	virtual void  v_enter(void);
+ 	virtual void  v_leave(void);
+@@ -207,7 +207,7 @@
+ 			
+ 		case CB_FPOINTER: 
+ 		{
+-			m_pCallee(m_param);
++			m_pCallee(m_pParam);
+ 			
+ 			m_message = CB_DONE;
+ 			m_innerCondition.set();
+@@ -241,7 +241,7 @@
+ 			
+ 		case CB_FPOINTER: 
+ 		{
+-			m_pCallee(m_param);
++			m_pCallee(m_pParam);
+ 			
+ 			m_message = CB_DONE;
+ 			m_outerCondition.set();
+@@ -254,7 +254,7 @@
+ 	while(mm != CB_DONE);
+ }
+ 
+-void AffineBridge::v_callInto_v(uno_EnvCallee * pCallee, va_list param)
++void AffineBridge::v_callInto_v(uno_EnvCallee * pCallee, va_list * pParam)
+ {
+ 	osl::MutexGuard guard(m_outerMutex); // only one thread at a time can call into
+ 
+@@ -273,7 +273,7 @@
+ 
+ 	m_message = CB_FPOINTER;
+ 	m_pCallee = pCallee;
+-	m_param   = param;
++	m_pParam  = pParam;
+ 	m_innerCondition.set();
+ 
+ 	outerDispatch(1);
+@@ -282,7 +282,7 @@
+ 		m_outerThreadId = 0;
+ }
+ 
+-void AffineBridge::v_callOut_v(uno_EnvCallee * pCallee, va_list param)
++void AffineBridge::v_callOut_v(uno_EnvCallee * pCallee, va_list * pParam)
+ {
+ 	OSL_ASSERT(m_innerThreadId);
+ 
+@@ -306,7 +306,7 @@
+ 
+ 	m_message = CB_FPOINTER;
+ 	m_pCallee = pCallee;
+-	m_param   = param;
++	m_pParam  = pParam;
+ 	m_outerCondition.set();
+ 
+ 	innerDispatch();
+--- cppu/source/UnsafeBridge/UnsafeBridge.cxx	14 May 2007 09:32:30 -0000	1.3
++++ cppu/source/UnsafeBridge/UnsafeBridge.cxx	5 Jun 2007 15:04:34 -0000	1.3.2.1
+@@ -68,8 +68,8 @@
+ public:
+ 	explicit UnsafeBridge(void);
+ 
+-	virtual void v_callInto_v(uno_EnvCallee * pCallee, va_list param);
+-	virtual void v_callOut_v (uno_EnvCallee * pCallee, va_list param);
++	virtual void v_callInto_v(uno_EnvCallee * pCallee, va_list * pParam);
++	virtual void v_callOut_v (uno_EnvCallee * pCallee, va_list * pParam);
+ 
+ 	virtual void v_enter(void);
+ 	virtual void v_leave(void);
+@@ -91,19 +91,19 @@
+ 	OSL_ASSERT(m_count >= 0);
+ }
+ 
+-void UnsafeBridge::v_callInto_v(uno_EnvCallee * pCallee, va_list param)
++void UnsafeBridge::v_callInto_v(uno_EnvCallee * pCallee, va_list * pParam)
+ {
+ 	enter();
+-	pCallee(param);
++	pCallee(pParam);
+ 	leave();
+ }
+ 
+-void UnsafeBridge::v_callOut_v(uno_EnvCallee * pCallee, va_list param)
++void UnsafeBridge::v_callOut_v(uno_EnvCallee * pCallee, va_list * pParam)
+ {
+ 	OSL_ASSERT(m_count > 0);
+ 
+ 	-- m_count;
+-	pCallee(param);
++	pCallee(pParam);
+ 	++ m_count;
+ 
+ 	if (!m_threadId)
+--- cppu/source/helper/purpenv/helper_purpenv_Environment.cxx	14 May 2007 09:32:30 -0000	1.3
++++ cppu/source/helper/purpenv/helper_purpenv_Environment.cxx	5 Jun 2007 15:04:44 -0000	1.3.2.1
+@@ -119,8 +119,8 @@
+ 
+ 	virtual void v_enter     (void);
+ 	virtual void v_leave     (void);
+-	virtual void v_callInto_v(uno_EnvCallee * pCallee, va_list param);
+-	virtual void v_callOut_v (uno_EnvCallee * pCallee, va_list param);
++	virtual void v_callInto_v(uno_EnvCallee * pCallee, va_list * pParam);
++	virtual void v_callOut_v (uno_EnvCallee * pCallee, va_list * pParam);
+ 	virtual int  v_isValid   (rtl::OUString * pReason);
+ 
+ protected:
+@@ -331,15 +331,15 @@
+ }
+ 
+ 
+-extern "C" { static void s_registerProxyInterface_v(va_list param) 
++extern "C" { static void s_registerProxyInterface_v(va_list * pParam) 
+ {
+-	uno_ExtEnvironment                   * pExtEnv    = va_arg(param, uno_ExtEnvironment *);
+-	void                                ** ppProxy    = va_arg(param, void **);
+-	uno_freeProxyFunc                      freeProxy  = va_arg(param, uno_freeProxyFunc);
+-	rtl_uString                          * pOId       = va_arg(param, rtl_uString *);
+-	typelib_InterfaceTypeDescription     * pTypeDescr = va_arg(param, typelib_InterfaceTypeDescription *);
++	uno_ExtEnvironment                   * pExtEnv    = va_arg(*pParam, uno_ExtEnvironment *);
++	void                                ** ppProxy    = va_arg(*pParam, void **);
++	uno_freeProxyFunc                      freeProxy  = va_arg(*pParam, uno_freeProxyFunc);
++	rtl_uString                          * pOId       = va_arg(*pParam, rtl_uString *);
++	typelib_InterfaceTypeDescription     * pTypeDescr = va_arg(*pParam, typelib_InterfaceTypeDescription *);
+ 	ExtEnv_registerProxyInterface  * pRegisterProxyInterface
+-		= va_arg(param, ExtEnv_registerProxyInterface *);
++		= va_arg(*pParam, ExtEnv_registerProxyInterface *);
+ 
+ 	pRegisterProxyInterface(pExtEnv, ppProxy, freeProxy, pOId, pTypeDescr);
+ }}
+@@ -360,11 +360,11 @@
+ }
+ 
+ 
+-extern "C" { static void s_revokeInterface_v(va_list param) 
++extern "C" { static void s_revokeInterface_v(va_list * pParam) 
+ {
+-	uno_ExtEnvironment * pExtEnv    = va_arg(param, uno_ExtEnvironment *);
+-	void               * pInterface = va_arg(param, void *);
+-	ExtEnv_revokeInterface * pRevokeInterface = va_arg(param, ExtEnv_revokeInterface *);
++	uno_ExtEnvironment * pExtEnv    = va_arg(*pParam, uno_ExtEnvironment *);
++	void               * pInterface = va_arg(*pParam, void *);
++	ExtEnv_revokeInterface * pRevokeInterface = va_arg(*pParam, ExtEnv_revokeInterface *);
+ 
+ 	pRevokeInterface(pExtEnv, pInterface);
+ }}
+@@ -379,13 +379,13 @@
+ }
+ 
+ 
+-extern "C" { static void s_getObjectIdentifier_v(va_list param) 
++extern "C" { static void s_getObjectIdentifier_v(va_list * pParam) 
+ {
+-	uno_ExtEnvironment * pExtEnv    = va_arg(param, uno_ExtEnvironment *);
+-	void               * pInterface = va_arg(param, void *);
+-	rtl::OUString      * pOId       = va_arg(param, rtl::OUString *);
++	uno_ExtEnvironment * pExtEnv    = va_arg(*pParam, uno_ExtEnvironment *);
++	void               * pInterface = va_arg(*pParam, void *);
++	rtl::OUString      * pOId       = va_arg(*pParam, rtl::OUString *);
+ 	ExtEnv_getObjectIdentifier * pGetObjectIdentifier
+-		= va_arg(param, ExtEnv_getObjectIdentifier *);
++		= va_arg(*pParam, ExtEnv_getObjectIdentifier *);
+ 
+ 	pGetObjectIdentifier(pExtEnv, reinterpret_cast<rtl_uString **>(pOId), pInterface);
+ }}
+@@ -401,14 +401,14 @@
+ }
+ 
+ 
+-extern "C" { static void s_getRegisteredInterface_v(va_list param) 
++extern "C" { static void s_getRegisteredInterface_v(va_list * pParam) 
+ {
+-	uno_ExtEnvironment                   * pExtEnv     = va_arg(param, uno_ExtEnvironment *);
+-	void                                ** ppInterface = va_arg(param, void **);
+-	rtl_uString                          * pOId        = va_arg(param, rtl_uString *);
+-	typelib_InterfaceTypeDescription     * pTypeDescr  = va_arg(param, typelib_InterfaceTypeDescription *);
++	uno_ExtEnvironment                   * pExtEnv     = va_arg(*pParam, uno_ExtEnvironment *);
++	void                                ** ppInterface = va_arg(*pParam, void **);
++	rtl_uString                          * pOId        = va_arg(*pParam, rtl_uString *);
++	typelib_InterfaceTypeDescription     * pTypeDescr  = va_arg(*pParam, typelib_InterfaceTypeDescription *);
+ 	ExtEnv_getRegisteredInterface  * pGetRegisteredInterface
+-		= va_arg(param, ExtEnv_getRegisteredInterface *);
++		= va_arg(*pParam, ExtEnv_getRegisteredInterface *);
+ 
+ 	pGetRegisteredInterface(pExtEnv, ppInterface, pOId, pTypeDescr);
+ }}
+@@ -427,14 +427,14 @@
+ }
+ 
+ 
+-extern "C" { static void s_getRegisteredInterfaces_v(va_list param) 
++extern "C" { static void s_getRegisteredInterfaces_v(va_list * pParam) 
+ {
+-	uno_ExtEnvironment   * pExtEnv      = va_arg(param, uno_ExtEnvironment *);
+-	void               *** pppInterface = va_arg(param, void ***);
+-	sal_Int32            * pnLen        = va_arg(param, sal_Int32 *);
+-	uno_memAlloc           memAlloc     = va_arg(param, uno_memAlloc);
++	uno_ExtEnvironment   * pExtEnv      = va_arg(*pParam, uno_ExtEnvironment *);
++	void               *** pppInterface = va_arg(*pParam, void ***);
++	sal_Int32            * pnLen        = va_arg(*pParam, sal_Int32 *);
++	uno_memAlloc           memAlloc     = va_arg(*pParam, uno_memAlloc);
+ 	ExtEnv_getRegisteredInterfaces * pGetRegisteredInterfaces
+-		= va_arg(param, ExtEnv_getRegisteredInterfaces *);
++		= va_arg(*pParam, ExtEnv_getRegisteredInterfaces *);
+ 
+ 	pGetRegisteredInterfaces(pExtEnv, pppInterface, pnLen, memAlloc);
+ }}
+@@ -453,13 +453,13 @@
+ }
+ 
+ 
+-extern "C" { static void s_computeObjectIdentifier_v(va_list param) 
++extern "C" { static void s_computeObjectIdentifier_v(va_list * pParam) 
+ {
+-	uno_ExtEnvironment * pExtEnv    = va_arg(param, uno_ExtEnvironment *);
+-	void               * pInterface = va_arg(param, void *);
+-	rtl::OUString      * pOId       = va_arg(param, rtl::OUString *);
++	uno_ExtEnvironment * pExtEnv    = va_arg(*pParam, uno_ExtEnvironment *);
++	void               * pInterface = va_arg(*pParam, void *);
++	rtl::OUString      * pOId       = va_arg(*pParam, rtl::OUString *);
+ 	ExtEnv_computeObjectIdentifier * pComputeObjectIdentifier
+-		= va_arg(param, ExtEnv_computeObjectIdentifier *);
++		= va_arg(*pParam, ExtEnv_computeObjectIdentifier *);
+ 
+ 	pComputeObjectIdentifier(pExtEnv, reinterpret_cast<rtl_uString **>(pOId), pInterface);
+ }}
+@@ -475,12 +475,12 @@
+ }
+ 
+ 
+-extern "C" { static void s_acquireInterface_v(va_list param) 
++extern "C" { static void s_acquireInterface_v(va_list * pParam) 
+ {
+-	uno_ExtEnvironment * pExtEnv    = va_arg(param, uno_ExtEnvironment *);
+-	void               * pInterface = va_arg(param, void *);
++	uno_ExtEnvironment * pExtEnv    = va_arg(*pParam, uno_ExtEnvironment *);
++	void               * pInterface = va_arg(*pParam, void *);
+ 	ExtEnv_acquireInterface * pAcquireInterface 
+-		= va_arg(param, ExtEnv_acquireInterface *);
++		= va_arg(*pParam, ExtEnv_acquireInterface *);
+ 
+ 	pAcquireInterface(pExtEnv, pInterface);
+ }}
+@@ -491,12 +491,12 @@
+ }
+ 
+ 
+-extern "C" { static void s_releaseInterface_v(va_list param) 
++extern "C" { static void s_releaseInterface_v(va_list * pParam) 
+ {
+-	uno_ExtEnvironment * pExtEnv    = va_arg(param, uno_ExtEnvironment *);
+-	void               * pInterface = va_arg(param, void *);
++	uno_ExtEnvironment * pExtEnv    = va_arg(*pParam, uno_ExtEnvironment *);
++	void               * pInterface = va_arg(*pParam, void *);
+ 	ExtEnv_releaseInterface * pReleaseInterface
+-		= va_arg(param, ExtEnv_releaseInterface *);
++		= va_arg(*pParam, ExtEnv_releaseInterface *);
+ 
+ 	pReleaseInterface(pExtEnv, pInterface);
+ }}
+@@ -520,14 +520,14 @@
+     m_pEnterable->leave();
+ }
+ 
+-void Base::v_callInto_v(uno_EnvCallee * pCallee, va_list param)
++void Base::v_callInto_v(uno_EnvCallee * pCallee, va_list * pParam)
+ {
+-    m_pEnterable->callInto_v(pCallee, param);
++    m_pEnterable->callInto_v(pCallee, pParam);
+ }
+ 
+-void Base::v_callOut_v(uno_EnvCallee * pCallee, va_list param)
++void Base::v_callOut_v(uno_EnvCallee * pCallee, va_list * pParam)
+ {
+-    m_pEnterable->callOut_v(pCallee, param);
++    m_pEnterable->callOut_v(pCallee, pParam);
+ }
+ 
+ int Base::v_isValid(rtl::OUString * pReason) 
+--- cppu/source/helper/purpenv/helper_purpenv_Mapping.cxx	14 May 2007 09:32:30 -0000	1.3
++++ cppu/source/helper/purpenv/helper_purpenv_Mapping.cxx	5 Jun 2007 15:04:44 -0000	1.3.2.1
+@@ -116,11 +116,11 @@
+ }
+ 
+ 
+-static void s_getIdentifier_v(va_list param)
++static void s_getIdentifier_v(va_list * pParam)
+ {
+-	uno_ExtEnvironment *  pEnv  = va_arg(param, uno_ExtEnvironment *);
+-	rtl_uString        ** ppOid = va_arg(param, rtl_uString **);
+-	uno_Interface      *  pUnoI = va_arg(param, uno_Interface *);
++	uno_ExtEnvironment *  pEnv  = va_arg(*pParam, uno_ExtEnvironment *);
++	rtl_uString        ** ppOid = va_arg(*pParam, rtl_uString **);
++	uno_Interface      *  pUnoI = va_arg(*pParam, uno_Interface *);
+ 	
+ 	pEnv->getObjectIdentifier(pEnv, ppOid, pUnoI);
+ }
+--- cppu/source/helper/purpenv/helper_purpenv_Proxy.cxx	14 May 2007 09:32:30 -0000	1.3
++++ cppu/source/helper/purpenv/helper_purpenv_Proxy.cxx	5 Jun 2007 15:04:44 -0000	1.3.2.1
+@@ -211,12 +211,12 @@
+ 	pProxy->release();
+ }
+ 
+-static void s_acquireAndRegister_v(va_list param) 
++static void s_acquireAndRegister_v(va_list * pParam) 
+ {
+-	uno_Interface                    * pUnoI      = va_arg(param, uno_Interface *);
+-	rtl_uString                      * pOid       = va_arg(param, rtl_uString *);
+-	typelib_InterfaceTypeDescription * pTypeDescr = va_arg(param, typelib_InterfaceTypeDescription *);
+-	uno_ExtEnvironment               * pEnv       = va_arg(param, uno_ExtEnvironment *);
++	uno_Interface                    * pUnoI      = va_arg(*pParam, uno_Interface *);
++	rtl_uString                      * pOid       = va_arg(*pParam, rtl_uString *);
++	typelib_InterfaceTypeDescription * pTypeDescr = va_arg(*pParam, typelib_InterfaceTypeDescription *);
++	uno_ExtEnvironment               * pEnv       = va_arg(*pParam, uno_ExtEnvironment *);
+ 
+ 	pUnoI->acquire(pUnoI);
+  	pEnv->registerInterface(pEnv, reinterpret_cast<void **>(&pUnoI), pOid, pTypeDescr);
+@@ -260,10 +260,10 @@
+     uno_Interface::pDispatcher = s_Proxy_dispatch;
+ }
+ 
+-extern "C" { static void s_releaseAndRevoke_v(va_list param) 
++extern "C" { static void s_releaseAndRevoke_v(va_list * pParam) 
+ {
+-	uno_ExtEnvironment * pEnv  = va_arg(param, uno_ExtEnvironment *);
+-	uno_Interface      * pUnoI = va_arg(param, uno_Interface *);
++	uno_ExtEnvironment * pEnv  = va_arg(*pParam, uno_ExtEnvironment *);
++	uno_Interface      * pUnoI = va_arg(*pParam, uno_Interface *);
+ 
+ 	pEnv->revokeInterface(pEnv, reinterpret_cast<void *>(pUnoI));
+     pUnoI->release(pUnoI);
+@@ -383,21 +383,21 @@
+ 
+ 
+ extern "C" {
+-static void s_type_destructData_v(va_list param)
++static void s_type_destructData_v(va_list * pParam)
+ {
+-	void * ret = va_arg(param, void *);
+-	typelib_TypeDescriptionReference * pReturnTypeRef = va_arg(param, typelib_TypeDescriptionReference *);
++	void * ret = va_arg(*pParam, void *);
++	typelib_TypeDescriptionReference * pReturnTypeRef = va_arg(*pParam, typelib_TypeDescriptionReference *);
+ 
+ 	uno_type_destructData(ret, pReturnTypeRef, 0);
+ }
+ 
+-static void s_dispatcher_v(va_list param)
++static void s_dispatcher_v(va_list * pParam)
+ {
+-	uno_Interface                 * pUnoI       = va_arg(param, uno_Interface *);
+-	typelib_TypeDescription const * pMemberType = va_arg(param, typelib_TypeDescription const *);
+-	void                          * pReturn     = va_arg(param, void *);
+-	void                         ** pArgs       = va_arg(param, void **);
+-	uno_Any                      ** ppException = va_arg(param, uno_Any **);
++	uno_Interface                 * pUnoI       = va_arg(*pParam, uno_Interface *);
++	typelib_TypeDescription const * pMemberType = va_arg(*pParam, typelib_TypeDescription const *);
++	void                          * pReturn     = va_arg(*pParam, void *);
++	void                         ** pArgs       = va_arg(*pParam, void **);
++	uno_Any                      ** ppException = va_arg(*pParam, uno_Any **);
+ 
+ 	pUnoI->pDispatcher(pUnoI, pMemberType, pReturn, pArgs, ppException);
+ }
+--- cppu/source/threadpool/thread.cxx	17 Sep 2006 00:19:42 -0000	1.11
++++ cppu/source/threadpool/thread.cxx	7 Jun 2007 10:54:33 -0000	1.11.36.2
+@@ -65,7 +65,7 @@
+ #if OSL_DEBUG_LEVEL > 1
+ 		if( m_lst.size() )
+ 		{
+-			fprintf( stderr, "%d Threads left\n" , m_lst.size() );
++			fprintf( stderr, "%lu Threads left\n" , static_cast<unsigned long>(m_lst.size()) );
+ 		}
+ #endif
+ 	}
+--- cppu/source/threadpool/threadpool.cxx	17 Sep 2006 00:20:10 -0000	1.16
++++ cppu/source/threadpool/threadpool.cxx	7 Jun 2007 10:54:33 -0000	1.16.36.2
+@@ -72,7 +72,7 @@
+ #if OSL_DEBUG_LEVEL > 1
+ 		if( !m_lst.empty() )
+ 		{
+-			printf( "DisposedCallerList : %d left\n" , m_lst.size( ));
++			printf( "DisposedCallerList : %lu left\n" , static_cast<unsigned long>(m_lst.size( )));
+ 		}
+ #endif
+ 	}
+@@ -120,7 +120,7 @@
+ #if OSL_DEBUG_LEVEL > 1
+ 		if( m_mapQueue.size() )
+ 		{
+-			printf( "ThreadIdHashMap : %d left\n" , m_mapQueue.size() );
++			printf( "ThreadIdHashMap : %lu left\n" , static_cast<unsigned long>(m_mapQueue.size()) );
+ 		}
+ #endif
+ 	}
+--- cppu/source/uno/EnvStack.cxx	16 May 2007 15:21:55 -0000	1.3
++++ cppu/source/uno/EnvStack.cxx	5 Jun 2007 15:06:18 -0000	1.3.2.1
+@@ -225,22 +225,22 @@
+ 	return res;
+ } 
+ 
+-extern "C" { static void s_pull(va_list param)
++extern "C" { static void s_pull(va_list * pParam)
+ {
+-	uno_EnvCallee * pCallee = va_arg(param, uno_EnvCallee *);
+-       va_list       * xparam  = va_arg(param, va_list *);
++	uno_EnvCallee * pCallee = va_arg(*pParam, uno_EnvCallee *);
++    va_list       * pXparam = va_arg(*pParam, va_list *);
+ 
+-       pCallee(*xparam);
++    pCallee(pXparam);
+ }}
+ 
+-static void s_callInto_v(uno_Environment * pEnv, uno_EnvCallee * pCallee, va_list param)
++static void s_callInto_v(uno_Environment * pEnv, uno_EnvCallee * pCallee, va_list * pParam)
+ {
+ 	cppu::Enterable * pEnterable = reinterpret_cast<cppu::Enterable *>(pEnv->pReserved);
+ 	if (pEnterable)
+-               pEnterable->callInto(s_pull, pCallee, &param);
++		pEnterable->callInto(s_pull, pCallee, pParam);
+ 				
+ 	else
+-		pCallee(param);
++		pCallee(pParam);
+ }
+ 
+ static void s_callInto(uno_Environment * pEnv, uno_EnvCallee * pCallee, ...)
+@@ -248,18 +248,18 @@
+ 	va_list param;
+ 
+ 	va_start(param, pCallee);
+-	s_callInto_v(pEnv, pCallee, param);
++	s_callInto_v(pEnv, pCallee, &param);
+ 	va_end(param);
+ }
+ 
+-static void s_callOut_v(uno_Environment * pEnv, uno_EnvCallee * pCallee, va_list param)
++static void s_callOut_v(uno_Environment * pEnv, uno_EnvCallee * pCallee, va_list * pParam)
+ {
+ 	cppu::Enterable * pEnterable = reinterpret_cast<cppu::Enterable *>(pEnv->pReserved);
+ 	if (pEnterable)
+-		pEnterable->callOut_v(pCallee, param);
++		pEnterable->callOut_v(pCallee, pParam);
+ 
+ 	else
+-		pCallee(param);
++		pCallee(pParam);
+ }
+ 
+ static void s_callOut(uno_Environment * pEnv, uno_EnvCallee * pCallee, ...)
+@@ -267,44 +267,44 @@
+ 	va_list param;
+ 
+ 	va_start(param, pCallee);
+-	s_callOut_v(pEnv, pCallee, param);
++	s_callOut_v(pEnv, pCallee, &param);
+ 	va_end(param);
+ }
+ 
+-static void s_environment_invoke_v(uno_Environment *, uno_Environment *, uno_EnvCallee *, va_list);
++static void s_environment_invoke_v(uno_Environment *, uno_Environment *, uno_EnvCallee *, va_list *);
+ 
+-extern "C" { static void s_environment_invoke_vv(va_list param)
++extern "C" { static void s_environment_invoke_vv(va_list * pParam)
+ {
+-	uno_Environment * pCurrEnv    = va_arg(param, uno_Environment *);
+-	uno_Environment * pTargetEnv  = va_arg(param, uno_Environment *);
+-	uno_EnvCallee   * pCallee = va_arg(param, uno_EnvCallee *);
+-       va_list         *  xparam  = va_arg(param, va_list *);
++	uno_Environment * pCurrEnv    = va_arg(*pParam, uno_Environment *);
++	uno_Environment * pTargetEnv  = va_arg(*pParam, uno_Environment *);
++	uno_EnvCallee   * pCallee     = va_arg(*pParam, uno_EnvCallee *);
++    va_list         * pXparam     = va_arg(*pParam, va_list *);
+ 
+-       s_environment_invoke_v(pCurrEnv, pTargetEnv, pCallee, *xparam);
++    s_environment_invoke_v(pCurrEnv, pTargetEnv, pCallee, pXparam);
+ }}
+ 
+-static void s_environment_invoke_v(uno_Environment * pCurrEnv, uno_Environment * pTargetEnv, uno_EnvCallee * pCallee, va_list param)
++static void s_environment_invoke_v(uno_Environment * pCurrEnv, uno_Environment * pTargetEnv, uno_EnvCallee * pCallee, va_list * pParam)
+ {
+ 	uno_Environment * pNextEnv = NULL;
+ 	switch(s_getNextEnv(&pNextEnv, pCurrEnv, pTargetEnv))
+ 	{
+ 	case -1:
+ 		s_setCurrent(pNextEnv);
+-               s_callOut(pCurrEnv, s_environment_invoke_vv, pNextEnv, pTargetEnv, pCallee, &param);
++		s_callOut(pCurrEnv, s_environment_invoke_vv, pNextEnv, pTargetEnv, pCallee, pParam);
+ 		s_setCurrent(pCurrEnv);
+ 		break;
+ 
+ 	case 0: {
+ 		uno_Environment * hld = s_getCurrent();
+ 		s_setCurrent(pCurrEnv);
+-		pCallee(param);
++		pCallee(pParam);
+ 		s_setCurrent(hld);
+ 	}
+ 		break;
+ 
+ 	case 1:
+ 		s_setCurrent(pNextEnv);
+-               s_callInto(pNextEnv, s_environment_invoke_vv, pNextEnv, pTargetEnv, pCallee, &param);
++		s_callInto(pNextEnv, s_environment_invoke_vv, pNextEnv, pTargetEnv, pCallee, pParam);
+ 		s_setCurrent(pCurrEnv);
+ 		break;
+ 	}
+@@ -313,10 +313,10 @@
+ 		pNextEnv->release(pNextEnv);
+ }
+ 
+-extern "C" void SAL_CALL uno_Environment_invoke_v(uno_Environment * pTargetEnv, uno_EnvCallee * pCallee, va_list param)
++extern "C" void SAL_CALL uno_Environment_invoke_v(uno_Environment * pTargetEnv, uno_EnvCallee * pCallee, va_list * pParam)
+ 	SAL_THROW_EXTERN_C()
+ {
+-	s_environment_invoke_v(s_getCurrent(), pTargetEnv, pCallee, param);
++	s_environment_invoke_v(s_getCurrent(), pTargetEnv, pCallee, pParam);
+ }
+ 
+ extern "C" void SAL_CALL uno_Environment_invoke(uno_Environment * pEnv, uno_EnvCallee * pCallee, ...)
+@@ -325,7 +325,7 @@
+ 	va_list param;
+ 
+ 	va_start(param, pCallee);
+-	uno_Environment_invoke_v(pEnv, pCallee, param);
++	uno_Environment_invoke_v(pEnv, pCallee, &param);
+ 	va_end(param);
+ }
+ 
+--- cppu/source/uno/cascade_mapping.cxx	9 May 2007 13:38:28 -0000	1.2
++++ cppu/source/uno/cascade_mapping.cxx	5 Jun 2007 15:06:18 -0000	1.2.2.1
+@@ -149,12 +149,12 @@
+ 	}
+ }
+ 
+-extern "C" { static void s_mapInterface_v(va_list param)
++extern "C" { static void s_mapInterface_v(va_list * pParam)
+ {
+-	void                            ** ppOut               = va_arg(param, void **);
+-	void                             * pInterface          = va_arg(param, void *);
+-	typelib_InterfaceTypeDescription * pInterfaceTypeDescr = va_arg(param, typelib_InterfaceTypeDescription *);
+-	uno_Mapping                      * pMapping            = va_arg(param, uno_Mapping *);
++	void                            ** ppOut               = va_arg(*pParam, void **);
++	void                             * pInterface          = va_arg(*pParam, void *);
++	typelib_InterfaceTypeDescription * pInterfaceTypeDescr = va_arg(*pParam, typelib_InterfaceTypeDescription *);
++	uno_Mapping                      * pMapping            = va_arg(*pParam, uno_Mapping *);
+ 
+ 	pMapping->mapInterface(pMapping, ppOut, pInterface, pInterfaceTypeDescr);
+ }}
+--- cppu/source/uno/lbenv.cxx	9 May 2007 13:39:11 -0000	1.36
++++ cppu/source/uno/lbenv.cxx	5 Jun 2007 15:06:18 -0000	1.36.2.1
+@@ -375,10 +375,10 @@
+ }
+ 
+ //------------------------------------------------------------------------------
+-static void SAL_CALL s_stub_defenv_revokeInterface(va_list param)
++static void SAL_CALL s_stub_defenv_revokeInterface(va_list * pParam)
+ {
+-	uno_ExtEnvironment * pEnv       = va_arg(param, uno_ExtEnvironment *);
+-	void               * pInterface = va_arg(param, void *);
++	uno_ExtEnvironment * pEnv       = va_arg(*pParam, uno_ExtEnvironment *);
++	void               * pInterface = va_arg(*pParam, void *);
+ 
+     OSL_ENSURE( pEnv && pInterface, "### null ptr!" );
+     uno_DefaultEnvironment * that =
+--- cppu/test/EnvStack_tester/EnvStack.tester.cxx	9 May 2007 13:41:59 -0000	1.2
++++ cppu/test/EnvStack_tester/EnvStack.tester.cxx	5 Jun 2007 15:09:13 -0000	1.2.2.1
+@@ -61,9 +61,9 @@
+ 	return env_dcp;
+ }
+ 
+-extern "C" { static void s_getCurrentEnvDcp_v(va_list param)
++extern "C" { static void s_getCurrentEnvDcp_v(va_list * pParam)
+ {
+-	rtl_uString ** ppEnvDcp  = va_arg(param, rtl_uString **);
++	rtl_uString ** ppEnvDcp  = va_arg(*pParam, rtl_uString **);
+ 
+ 	rtl::OUString env_dcp(s_getCurrentEnvDcp());
+ 	
+--- cppu/test/EnvStack_tester/ProbeEnv.cxx	9 May 2007 13:42:24 -0000	1.2
++++ cppu/test/EnvStack_tester/ProbeEnv.cxx	5 Jun 2007 15:09:13 -0000	1.2.2.1
+@@ -33,6 +33,9 @@
+  *
+  ************************************************************************/
+ 
++// MARKER(update_precomp.py): autogen include statement, do not remove
++#include "precompiled_cppu.hxx"
++
+ #include "cppu/EnvDcp.hxx"
+ 
+ #include "cppu/helper/purpenv/Environment.hxx"
+@@ -65,8 +68,8 @@
+ 	virtual void v_enter(void);
+ 	virtual void v_leave(void);
+ 
+-	virtual void v_callInto_v(uno_EnvCallee * pCallee, va_list param);
+-	virtual void v_callOut_v (uno_EnvCallee * pCallee, va_list param);
++	virtual void v_callInto_v(uno_EnvCallee * pCallee, va_list * pParam);
++	virtual void v_callOut_v (uno_EnvCallee * pCallee, va_list * pParam);
+ 
+ 	virtual int  v_isValid   (rtl::OUString * pReason);
+ };
+@@ -98,24 +101,24 @@
+ 	}
+ }
+ 
+-void TestEnv::v_callInto_v(uno_EnvCallee * pCallee, va_list param)
++void TestEnv::v_callInto_v(uno_EnvCallee * pCallee, va_list * pParam)
+ {
+ 	g_commentStack += rtl::OUString(RTL_CONSTASCII_USTRINGPARAM("-into"));
+ 	g_commentStack += cppu::EnvDcp::getPurpose(m_pEnv->pTypeName);
+ 
+ 	s_checkGEnvValidity();
+ 
+-	pCallee(param);
++	pCallee(pParam);
+ }
+ 
+-void TestEnv::v_callOut_v(uno_EnvCallee * pCallee, va_list param)
++void TestEnv::v_callOut_v(uno_EnvCallee * pCallee, va_list * pParam)
+ {
+ 	g_commentStack += rtl::OUString(RTL_CONSTASCII_USTRINGPARAM("-out"));
+ 	g_commentStack += cppu::EnvDcp::getPurpose(m_pEnv->pTypeName);
+ 
+ 	s_checkGEnvValidity();
+ 
+-	pCallee(param);
++	pCallee(pParam);
+ }
+ 
+ void TestEnv::v_enter(void)
+--- cppu/test/EnvStack_tester/ProbeEnv.def	1 Jan 1970 00:00:00 -0000
++++ cppu/test/EnvStack_tester/ProbeEnv.def	31 May 2007 08:41:36 -0000	1.3.2.2
+@@ -0,0 +1,8 @@
++HEAPSIZE	  0
++EXPORTS
++	uno_initEnvironment
++	uno_ext_getMapping
++
++
++
++
+--- cppu/test/ObjectFactory/CppObject.cxx	9 May 2007 13:43:47 -0000	1.2
++++ cppu/test/ObjectFactory/CppObject.cxx	5 Jun 2007 15:15:55 -0000	1.2.2.1
+@@ -33,6 +33,9 @@
+  *
+  ************************************************************************/
+ 
++// MARKER(update_precomp.py): autogen include statement, do not remove
++#include "precompiled_cppu.hxx"
++
+ #include "cppu/EnvDcp.hxx"
+ #include "cppuhelper/implbase1.hxx"
+ 
+--- cppu/test/ObjectFactory/ObjectFactory.cxx	9 May 2007 13:44:08 -0000	1.2
++++ cppu/test/ObjectFactory/ObjectFactory.cxx	5 Jun 2007 15:15:55 -0000	1.2.2.1
+@@ -33,6 +33,9 @@
+  *
+  ************************************************************************/
+ 
++// MARKER(update_precomp.py): autogen include statement, do not remove
++#include "precompiled_cppu.hxx"
++
+ #define CPPU_test_ObjectFactory_IMPL
+ 
+ #include "UnoObject.hxx"
+--- cppu/test/ObjectFactory/UnoObject.cxx	9 May 2007 13:44:33 -0000	1.2
++++ cppu/test/ObjectFactory/UnoObject.cxx	5 Jun 2007 15:15:55 -0000	1.2.2.1
+@@ -33,6 +33,9 @@
+  *
+  ************************************************************************/
+ 
++// MARKER(update_precomp.py): autogen include statement, do not remove
++#include "precompiled_cppu.hxx"
++
+ #include "osl/interlck.h"
+ #include "uno/environment.h"
+ #include "uno/mapping.h"
+--- cppu/test/ObjectFactory/empty.def	1 Jan 1970 00:00:00 -0000
++++ cppu/test/ObjectFactory/empty.def	5 Jun 2007 15:15:12 -0000	1.1.4.2
+@@ -0,0 +1,5 @@
++HEAPSIZE	  0
++EXPORTS
++
++
++
+--- cppu/test/alignment/pass1.cxx	17 Sep 2006 00:22:50 -0000	1.3
++++ cppu/test/alignment/pass1.cxx	22 Jun 2007 11:53:13 -0000	1.3.36.1
+@@ -36,6 +36,8 @@
+ // MARKER(update_precomp.py): autogen include statement, do not remove
+ #include "precompiled_cppu.hxx"
+ 
++#include "sal/main.h"
++
+ #include <stdio.h>
+ #include <vector>
+ 
+@@ -87,6 +89,8 @@
+             case RT_TYPE_STRUCT:
+                 pNames->push_back( aReader.getTypeName().replace( '/', '.' ) );
+                 break;
++            default:
++                break;
+             }   
+         }
+         
+@@ -119,7 +123,7 @@
+ }
+ 
+ //==================================================================================================
+-int SAL_CALL main( int, char const ** )
++SAL_IMPLEMENT_MAIN()
+ {
+     sal_Int32 argc = rtl_getAppCommandArgCount();
+     if (argc < 1)
+@@ -172,8 +176,8 @@
+             if (bDumpStdOut)
+             {
+                 // type name on stdout
+-                OString str( OSTR(name) );
+-                fprintf( stdout, "%s\n", str.getStr() );
++                OString str2( OSTR(name) );
++                fprintf( stdout, "%s\n", str2.getStr() );
+             }
+             // all includes
+             OString includeName( makeIncludeName( name ) );
+@@ -182,8 +186,9 @@
+         // include diagnose.h
+         fprintf(
+             hPass2,
+-            "\n#include <diagnose.h>\n\n"
+-            "int SAL_CALL main( int argc, char const * argv[] )\n{\n" );
++            "\n#include <diagnose.h>\n"
++            "#include \"sal/main.h\"\n\n"
++            "SAL_IMPLEMENT_MAIN()\n{\n" );
+         // generate all type checks
+         for ( nPos = names.size(); nPos--; )
+         {
+@@ -206,19 +211,19 @@
+                     hPass2, "\tBINTEST_VERIFYALIGNMENT( %s, %d );\n",
+                     cppName.getStr(), pTD->nAlignment );
+                 // offset checks
+-                for ( sal_Int32 nPos = pCTD->nMembers; nPos--; )
++                for ( sal_Int32 nPos2 = pCTD->nMembers; nPos2--; )
+                 {
+-                    OString memberName( OSTR(pCTD->ppMemberNames[ nPos ]) );
++                    OString memberName( OSTR(pCTD->ppMemberNames[ nPos2 ]) );
+                     fprintf(
+                         hPass2, "\tBINTEST_VERIFYOFFSET( %s, %s, %d );\n",
+-                        cppName.getStr(), memberName.getStr(), pCTD->pMemberOffsets[ nPos ] );
++                        cppName.getStr(), memberName.getStr(), pCTD->pMemberOffsets[ nPos2 ] );
+                 }
+                 typelib_typedescription_release( pTD );
+             }
+             else
+             {
+-                OString str( OSTR(name) );
+-                fprintf( stderr, "### cannot dump type %s!!!\n", str.getStr() );
++                OString str2( OSTR(name) );
++                fprintf( stderr, "### cannot dump type %s!!!\n", str2.getStr() );
+             }
+         }
+         fprintf(
+--- cppu/test/cascade_mapping/TestMapping.def	1 Jan 1970 00:00:00 -0000
++++ cppu/test/cascade_mapping/TestMapping.def	5 Jun 2007 15:15:12 -0000	1.3.2.2
+@@ -0,0 +1,11 @@
++LIBRARY	  cppu3
++DESCRIPTION	'StarView 3.00  680 m124'
++DATA		  READ WRITE SHARED
++HEAPSIZE	  0
++EXPORTS
++	uno_initEnvironment
++	uno_ext_getMapping
++
++
++
++
+--- cppu/test/cascade_mapping/makefile.mk	9 May 2007 13:46:59 -0000	1.2
++++ cppu/test/cascade_mapping/makefile.mk	5 Jun 2007 15:16:31 -0000	1.2.2.1
+@@ -44,6 +44,7 @@
+ 
+ .INCLUDE :  settings.mk
+ 
++CFLAGS += -fPIC
+ 
+ VERSIONOBJ := # NO GetVersionInfo symbols :-)
+ ENVINCPRE  := -I$(OUT)$/inc$/$(TARGET)
+--- cppu/test/cascade_mapping/path.test.def	1 Jan 1970 00:00:00 -0000
++++ cppu/test/cascade_mapping/path.test.def	5 Jun 2007 15:15:12 -0000	1.3.2.2
+@@ -0,0 +1,8 @@
++LIBRARY	  cppu3
++DESCRIPTION	'StarView 3.00  680 m124'
++DATA		  READ WRITE SHARED
++HEAPSIZE	  0
++EXPORTS
++  CALLEE
++
++
+--- cppu/test/env_tester/TestEnvironment.cxx	9 May 2007 13:47:51 -0000	1.2
++++ cppu/test/env_tester/TestEnvironment.cxx	8 Jun 2007 09:10:17 -0000	1.2.2.1
+@@ -33,6 +33,9 @@
+  *
+  ************************************************************************/
+ 
++// MARKER(update_precomp.py): autogen include statement, do not remove
++#include "precompiled_cppu.hxx"
++
+ #include "uno/environment.h"
+ 
+ 
+--- cppu/test/env_tester/TestEnvironment.def	1 Jan 1970 00:00:00 -0000
++++ cppu/test/env_tester/TestEnvironment.def	5 Jun 2007 15:15:13 -0000	1.3.2.2
+@@ -0,0 +1,7 @@
++LIBRARY	  cppu3
++DESCRIPTION	'StarView 3.00  680 m124'
++DATA		  READ WRITE SHARED
++HEAPSIZE	  0
++EXPORTS
++  uno_initEnvironment
++
+--- cppu/test/env_tester/register.test.cxx	9 May 2007 13:48:45 -0000	1.2
++++ cppu/test/env_tester/register.test.cxx	5 Jun 2007 15:16:32 -0000	1.2.2.1
+@@ -50,7 +50,7 @@
+ 	rtl::OUString result(RTL_CONSTASCII_USTRINGPARAM("\ts_test_getEnvironment("));
+ 	result += envDcp;
+ 	result += rtl::OUString(RTL_CONSTASCII_USTRINGPARAM(", "));
+-	result += rtl::OUString::valueOf((sal_Int32)pContext);
++	result += rtl::OUString::valueOf((long)pContext);
+ 	result += rtl::OUString(RTL_CONSTASCII_USTRINGPARAM(")\n"));
+ 
+ 	uno::Environment env(envDcp, pContext);
+@@ -80,9 +80,9 @@
+ 	result += rtl::OUString(RTL_CONSTASCII_USTRINGPARAM(", "));
+ 	result += envDcp2;
+ 	result += rtl::OUString(RTL_CONSTASCII_USTRINGPARAM(", "));
+-	result += rtl::OUString::valueOf((sal_Int32)pContext1);
++	result += rtl::OUString::valueOf((long)pContext1);
+ 	result += rtl::OUString(RTL_CONSTASCII_USTRINGPARAM(", " ));
+-	result += rtl::OUString::valueOf((sal_Int32)pContext2);
++	result += rtl::OUString::valueOf((long)pContext2);
+ 	result += rtl::OUString(RTL_CONSTASCII_USTRINGPARAM(")\n"));
+ 
+ 	uno::Environment env1(envDcp1, pContext1);
+@@ -135,7 +135,7 @@
+ 	rtl::OUString result(RTL_CONSTASCII_USTRINGPARAM("\ts_test_uno_getRegisteredEnvironments_registered("));
+ 	result += envDcp;
+ 	result += rtl::OUString(RTL_CONSTASCII_USTRINGPARAM(", "));
+-	result += rtl::OUString::valueOf((sal_Int32)pContext);
++	result += rtl::OUString::valueOf((long)pContext);
+ 	result += rtl::OUString(RTL_CONSTASCII_USTRINGPARAM(")\n"));
+ 
+ 	uno::Environment env(envDcp, pContext);
+@@ -151,7 +151,7 @@
+ 	rtl::OUString result(RTL_CONSTASCII_USTRINGPARAM("\ts_test_uno_getRegisteredEnvironments_notRegistered("));
+ 	result += envDcp;
+ 	result += rtl::OUString(RTL_CONSTASCII_USTRINGPARAM(", "));
+-	result += rtl::OUString::valueOf((sal_Int32)pContext);
++	result += rtl::OUString::valueOf((long)pContext);
+ 	result += rtl::OUString(RTL_CONSTASCII_USTRINGPARAM(")\n"));
+ 
+ 	uno::Environment env(envDcp, pContext);
+@@ -168,7 +168,7 @@
+ 	rtl::OUString result(RTL_CONSTASCII_USTRINGPARAM("\ts_test_uno_createEnvironment("));
+ 	result += envDcp;
+ 	result += rtl::OUString(RTL_CONSTASCII_USTRINGPARAM(", "));
+-	result += rtl::OUString::valueOf((sal_Int32)pContext);
++	result += rtl::OUString::valueOf((long)pContext);
+ 	result += rtl::OUString(RTL_CONSTASCII_USTRINGPARAM(")\n"));
+ 
+ 	uno_Environment * pEnv = NULL;
+--- cppu/test/purpenvhelper/TestEnv.cxx	9 May 2007 13:49:26 -0000	1.2
++++ cppu/test/purpenvhelper/TestEnv.cxx	8 Jun 2007 09:10:17 -0000	1.2.2.2
+@@ -33,6 +33,10 @@
+  *
+  ************************************************************************/
+ 
++// MARKER(update_precomp.py): autogen include statement, do not remove
++#include "precompiled_cppu.hxx"
++
++
+ #include "cppu/EnvDcp.hxx"
+ 
+ #include "cppu/helper/purpenv/Environment.hxx"
+@@ -64,8 +68,8 @@
+ 	virtual void v_enter(void);
+ 	virtual void v_leave(void);
+ 
+-	virtual void v_callInto_v(uno_EnvCallee * pCallee, va_list param);
+-	virtual void v_callOut_v (uno_EnvCallee * pCallee, va_list param);
++	virtual void v_callInto_v(uno_EnvCallee * pCallee, va_list * pParam);
++	virtual void v_callOut_v (uno_EnvCallee * pCallee, va_list * pParam);
+ 
+ 	virtual int  v_isValid   (rtl::OUString * pReason);
+ };
+@@ -82,17 +86,17 @@
+ }
+ 
+ 
+-void TestEnv::v_callInto_v(uno_EnvCallee * pCallee, va_list param)
++void TestEnv::v_callInto_v(uno_EnvCallee * pCallee, va_list * pParam)
+ {
+ 	++ m_inCount;
+-	pCallee(param);
++	pCallee(pParam);
+ 	-- m_inCount;
+ }
+ 
+-void TestEnv::v_callOut_v(uno_EnvCallee * pCallee, va_list param)
++void TestEnv::v_callOut_v(uno_EnvCallee * pCallee, va_list * pParam)
+ {
+ 	-- m_inCount;
+-	pCallee(param);
++	pCallee(pParam);
+ 	++ m_inCount;
+ }
+ 
+--- cppu/util/makefile.mk	9 May 2007 13:51:06 -0000	1.9
++++ cppu/util/makefile.mk	5 Jun 2007 15:18:13 -0000	1.9.2.1
+@@ -79,7 +79,11 @@
+ 
+ SHL2TARGET  := $(NAMEpurpenv_helper)
+ DEF2NAME    := $(SHL2TARGET)
++.IF "$(CPUNAME)" == "X86_64"
++SHL2VERSIONMAP:=$(SHL2TARGET).$(CPUNAME).map
++.ELSE
+ SHL2VERSIONMAP:=$(SHL2TARGET).map
++.ENDIF
+ SHL2DEF     := $(MISC)$/$(SHL2TARGET).def
+ SHL2IMPLIB  := i$(SHL2TARGET)
+ SHL2STDLIBS := $(CPPULIB) $(SALHELPERLIB) $(SALLIB) 
+--- cppu/util/uno_purpenvhelpergcc3.X86_64.map	1 Jan 1970 00:00:00 -0000
++++ cppu/util/uno_purpenvhelpergcc3.X86_64.map	5 Jun 2007 15:18:13 -0000	1.1.2.1
+@@ -0,0 +1,8 @@
++UDK_3_0_0 {
++    global:
++        _ZN4cppu6helper7purpenv13createMappingEPP12_uno_MappingP16_uno_EnvironmentS6_PFvbPvS7_P33_typelib_TypeDescriptionReferenceP24_typelib_MethodParameteriPK24_typelib_TypeDescriptionS7_PS7_PP8_uno_AnyES7_;
++        _ZN4cppu6helper7purpenv29Environment_initWithEnterableEP16_uno_EnvironmentPNS_9EnterableE;
++
++    local:
++        *;
++};
+--- cppuhelper/source/component_context.cxx	9 May 2007 13:25:10 -0000	1.30
++++ cppuhelper/source/component_context.cxx	6 Jun 2007 07:40:31 -0000	1.30.6.1
+@@ -833,13 +833,13 @@
+ 
+ 
+ //##################################################################################################
+-extern "C" { static void s_createComponentContext_v(va_list param)
++extern "C" { static void s_createComponentContext_v(va_list * pParam)
+ {
+-    ContextEntry_Init const  * pEntries     = va_arg(param, ContextEntry_Init const *);
+-	sal_Int32                  nEntries     = va_arg(param, sal_Int32);
+-	XComponentContext        * pDelegatee   = va_arg(param, XComponentContext *);
+-	void                    ** ppContext    = va_arg(param, void **);
+-	uno::Mapping             * pTarget2curr = va_arg(param, uno::Mapping *);
++    ContextEntry_Init const  * pEntries     = va_arg(*pParam, ContextEntry_Init const *);
++	sal_Int32                  nEntries     = va_arg(*pParam, sal_Int32);
++	XComponentContext        * pDelegatee   = va_arg(*pParam, XComponentContext *);
++	void                    ** ppContext    = va_arg(*pParam, void **);
++	uno::Mapping             * pTarget2curr = va_arg(*pParam, uno::Mapping *);
+ 
+ 	Reference<XComponentContext> xDelegate(pDelegatee, SAL_NO_ACQUIRE);
+ 	Reference<XComponentContext> xContext;
+--- cppuhelper/source/gcc3_linux_intel.map	15 May 2007 12:18:29 -0000	1.14
++++ cppuhelper/source/gcc3_linux_intel.map	27 Jun 2007 14:47:19 -0000	1.14.4.1
+@@ -15,9 +15,9 @@
+ _ZN4cppu11OWeakObjectD0Ev;
+ _ZN4cppu11OWeakObjectD1Ev;
+ _ZN4cppu11OWeakObjectD2Ev;
+-_ZN4cppu13ClassDataBaseC1El;
++_ZN4cppu13ClassDataBaseC1E?;
+ _ZN4cppu13ClassDataBaseC1Ev;
+-_ZN4cppu13ClassDataBaseC2El;
++_ZN4cppu13ClassDataBaseC2E?;
+ _ZN4cppu13ClassDataBaseC2Ev;
+ _ZN4cppu13ClassDataBaseD1Ev;
+ _ZN4cppu13ClassDataBaseD2Ev;
+@@ -76,10 +76,10 @@
+ _ZN4cppu18OPropertySetHelper16setPropertyValueERKN3rtl8OUStringERKN3com3sun4star3uno3AnyE;
+ _ZN4cppu18OPropertySetHelper17getPropertyValuesERKN3com3sun4star3uno8SequenceIN3rtl8OUStringEEE;
+ _ZN4cppu18OPropertySetHelper17setPropertyValuesERKN3com3sun4star3uno8SequenceIN3rtl8OUStringEEERKNS5_INS4_3AnyEEE;
+-_ZN4cppu18OPropertySetHelper20getFastPropertyValueEl;
+-_ZN4cppu18OPropertySetHelper20setFastPropertyValueElRKN3com3sun4star3uno3AnyE;
++_ZN4cppu18OPropertySetHelper20getFastPropertyValueE?;
++_ZN4cppu18OPropertySetHelper20setFastPropertyValueE?RKN3com3sun4star3uno3AnyE;
+ _ZN4cppu18OPropertySetHelper21createPropertySetInfoERNS_20IPropertyArrayHelperE;
+-_ZN4cppu18OPropertySetHelper21setFastPropertyValuesElPlPKN3com3sun4star3uno3AnyEl;
++_ZN4cppu18OPropertySetHelper21setFastPropertyValuesE?P?PKN3com3sun4star3uno3AnyE?;
+ _ZN4cppu18OPropertySetHelper25addPropertyChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XPropertyChangeListenerEEE;
+ _ZN4cppu18OPropertySetHelper25addVetoableChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XVetoableChangeListenerEEE;
+ _ZN4cppu18OPropertySetHelper25firePropertiesChangeEventERKN3com3sun4star3uno8SequenceIN3rtl8OUStringEEERKNS4_9ReferenceINS3_5beans25XPropertiesChangeListenerEEE;
+@@ -87,7 +87,7 @@
+ _ZN4cppu18OPropertySetHelper28removePropertyChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XPropertyChangeListenerEEE;
+ _ZN4cppu18OPropertySetHelper28removeVetoableChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XVetoableChangeListenerEEE;
+ _ZN4cppu18OPropertySetHelper30removePropertiesChangeListenerERKN3com3sun4star3uno9ReferenceINS3_5beans25XPropertiesChangeListenerEEE;
+-_ZN4cppu18OPropertySetHelper4fireEPlPKN3com3sun4star3uno3AnyES8_lh;
++_ZN4cppu18OPropertySetHelper4fireEP?PKN3com3sun4star3uno3AnyES8_?h;
+ _ZN4cppu18OPropertySetHelper9disposingEv;
+ _ZN4cppu18OPropertySetHelperC1ERNS_19OBroadcastHelperVarINS_34OMultiTypeInterfaceContainerHelperEN3com3sun4star3uno4TypeEEE;
+ _ZN4cppu18OPropertySetHelperC2ERNS_19OBroadcastHelperVarINS_34OMultiTypeInterfaceContainerHelperEN3com3sun4star3uno4TypeEEE;
+@@ -100,14 +100,14 @@
+ _ZN4cppu20IPropertyArrayHelperD0Ev;
+ _ZN4cppu20IPropertyArrayHelperD1Ev;
+ _ZN4cppu20IPropertyArrayHelperD2Ev;
+-_ZN4cppu20OPropertyArrayHelper11fillHandlesEPlRKN3com3sun4star3uno8SequenceIN3rtl8OUStringEEE;
++_ZN4cppu20OPropertyArrayHelper11fillHandlesEP?RKN3com3sun4star3uno8SequenceIN3rtl8OUStringEEE;
+ _ZN4cppu20OPropertyArrayHelper13getPropertiesEv;
+ _ZN4cppu20OPropertyArrayHelper15getHandleByNameERKN3rtl8OUStringE;
+ _ZN4cppu20OPropertyArrayHelper17getPropertyByNameERKN3rtl8OUStringE;
+ _ZN4cppu20OPropertyArrayHelper17hasPropertyByNameERKN3rtl8OUStringE;
+-_ZN4cppu20OPropertyArrayHelper27fillPropertyMembersByHandleEPN3rtl8OUStringEPsl;
++_ZN4cppu20OPropertyArrayHelper27fillPropertyMembersByHandleEPN3rtl8OUStringEPs?;
+ _ZN4cppu20OPropertyArrayHelper4initEh;
+-_ZN4cppu20OPropertyArrayHelperC1EPN3com3sun4star5beans8PropertyElh;
++_ZN4cppu20OPropertyArrayHelperC1EPN3com3sun4star5beans8PropertyE?h;
+ _ZN4cppu20OPropertyArrayHelperC1ERKN3com3sun4star3uno8SequenceINS3_5beans8PropertyEEEh;
+ _ZN4cppu20OPropertyArrayHelperC2EPN3com3sun4star5beans8PropertyElh;
+ _ZN4cppu20OPropertyArrayHelperC2ERKN3com3sun4star3uno8SequenceINS3_5beans8PropertyEEEh;
+@@ -115,7 +115,7 @@
+ _ZN4cppu20createNestedRegistryERKN3rtl8OUStringE;
+ _ZN4cppu20createSimpleRegistryERKN3rtl8OUStringE;
+ _ZN4cppu22ImplInhHelper_getTypesEPNS_10class_dataERKN3com3sun4star3uno8SequenceINS5_4TypeEEE;
+-_ZN4cppu22createComponentContextEPKNS_17ContextEntry_InitElRKN3com3sun4star3uno9ReferenceINS6_17XComponentContextEEE;
++_ZN4cppu22createComponentContextEPKNS_17ContextEntry_InitE?RKN3com3sun4star3uno9ReferenceINS6_17XComponentContextEEE;
+ _ZN4cppu22getImplHelperInitMutexEv;
+ _ZN4cppu23WeakImplHelper_getTypesEPNS_10class_dataE;
+ _ZN4cppu24OInterfaceIteratorHelper4nextEv;
+@@ -186,9 +186,9 @@
+ _ZN4cppu34OMultiTypeInterfaceContainerHelperD2Ev;
+ _ZN4cppu35WeakAggComponentImplHelper_getTypesEPNS_10class_dataE;
+ _ZN4cppu35WeakAggComponentImplHelper_queryAggERKN3com3sun4star3uno4TypeEPNS_10class_dataEPvPNS_30WeakAggComponentImplHelperBaseE;
+-_ZN4cppu39OMultiTypeInterfaceContainerHelperInt3212addInterfaceERKlRKN3com3sun4star3uno9ReferenceINS6_10XInterfaceEEE;
++_ZN4cppu39OMultiTypeInterfaceContainerHelperInt3212addInterfaceERK?RKN3com3sun4star3uno9ReferenceINS6_10XInterfaceEEE;
+ _ZN4cppu39OMultiTypeInterfaceContainerHelperInt3215disposeAndClearERKN3com3sun4star4lang11EventObjectE;
+-_ZN4cppu39OMultiTypeInterfaceContainerHelperInt3215removeInterfaceERKlRKN3com3sun4star3uno9ReferenceINS6_10XInterfaceEEE;
++_ZN4cppu39OMultiTypeInterfaceContainerHelperInt3215removeInterfaceERK?RKN3com3sun4star3uno9ReferenceINS6_10XInterfaceEEE;
+ _ZN4cppu39OMultiTypeInterfaceContainerHelperInt325clearEv;
+ _ZN4cppu39OMultiTypeInterfaceContainerHelperInt32C1ERN3osl5MutexE;
+ _ZN4cppu39OMultiTypeInterfaceContainerHelperInt32C2ERN3osl5MutexE;
+@@ -196,7 +196,7 @@
+ _ZN4cppu39OMultiTypeInterfaceContainerHelperInt32D2Ev;
+ _ZN4cppu40defaultBootstrap_InitialComponentContextERKN3rtl8OUStringE;
+ _ZN4cppu40defaultBootstrap_InitialComponentContextEv;
+-_ZN4cppu9ClassData15writeTypeOffsetERKN3com3sun4star3uno4TypeEl;
++_ZN4cppu9ClassData15writeTypeOffsetERKN3com3sun4star3uno4TypeE?;
+ _ZN4cppu9ClassData16initTypeProviderEv;
+ _ZN4cppu9ClassData19getImplementationIdEv;
+ _ZN4cppu9ClassData5queryERKN3com3sun4star3uno4TypeEPNS3_4lang13XTypeProviderE;
+@@ -208,7 +208,7 @@
+ _ZNK4cppu25OInterfaceContainerHelper9getLengthEv;
+ _ZNK4cppu34OMultiTypeInterfaceContainerHelper12getContainerERKN3com3sun4star3uno4TypeE;
+ _ZNK4cppu34OMultiTypeInterfaceContainerHelper17getContainedTypesEv;
+-_ZNK4cppu39OMultiTypeInterfaceContainerHelperInt3212getContainerERKl;
++_ZNK4cppu39OMultiTypeInterfaceContainerHelperInt3212getContainerERK?;
+ _ZNK4cppu39OMultiTypeInterfaceContainerHelperInt3217getContainedTypesEv;
+ _ZTVN4cppu11OWeakObjectE;
+ _ZTVN4cppu14OWeakAggObjectE;
+@@ -221,51 +221,51 @@
+ component_getDescriptionFunc;
+ _ZN4cppu20OPropertyArrayHelperD0Ev;
+ _ZN4cppu20OPropertyArrayHelperD1Ev;
+-_ZThn16_N4cppu14OWeakAggObject12setDelegatorERKN3com3sun4star3uno9ReferenceINS4_10XInterfaceEEE;
+-_ZThn16_N4cppu14OWeakAggObject14queryInterfaceERKN3com3sun4star3uno4TypeE;
+-_ZThn16_N4cppu14OWeakAggObject16queryAggregationERKN3com3sun4star3uno4TypeE;
+-_ZThn16_N4cppu14OWeakAggObject7acquireEv;
+-_ZThn16_N4cppu14OWeakAggObject7releaseEv;
+-_ZThn16_N4cppu16OComponentHelper14queryInterfaceERKN3com3sun4star3uno4TypeE;
+-_ZThn16_N4cppu16OComponentHelper16queryAggregationERKN3com3sun4star3uno4TypeE;
+-_ZThn16_N4cppu16OComponentHelper7acquireEv;
+-_ZThn16_N4cppu16OComponentHelper7releaseEv;
+-_ZThn16_N4cppu27WeakComponentImplHelperBase14queryInterfaceERKN3com3sun4star3uno4TypeE;
+-_ZThn16_N4cppu27WeakComponentImplHelperBase16addEventListenerERKN3com3sun4star3uno9ReferenceINS3_4lang14XEventListenerEEE;
+-_ZThn16_N4cppu27WeakComponentImplHelperBase19removeEventListenerERKN3com3sun4star3uno9ReferenceINS3_4lang14XEventListenerEEE;
+-_ZThn16_N4cppu27WeakComponentImplHelperBase7acquireEv;
+-_ZThn16_N4cppu27WeakComponentImplHelperBase7disposeEv;
+-_ZThn16_N4cppu27WeakComponentImplHelperBase7releaseEv;
+-_ZThn16_N4cppu30WeakAggComponentImplHelperBase14queryInterfaceERKN3com3sun4star3uno4TypeE;
+-_ZThn16_N4cppu30WeakAggComponentImplHelperBase16queryAggregationERKN3com3sun4star3uno4TypeE;
+-_ZThn16_N4cppu30WeakAggComponentImplHelperBase7acquireEv;
+-_ZThn16_N4cppu30WeakAggComponentImplHelperBase7releaseEv;
+-_ZThn24_N4cppu16OComponentHelper14queryInterfaceERKN3com3sun4star3uno4TypeE;
+-_ZThn24_N4cppu16OComponentHelper7acquireEv;
+-_ZThn24_N4cppu16OComponentHelper7releaseEv;
+-_ZThn24_N4cppu16OComponentHelper8getTypesEv;
+-_ZThn24_N4cppu30WeakAggComponentImplHelperBase14queryInterfaceERKN3com3sun4star3uno4TypeE;
+-_ZThn24_N4cppu30WeakAggComponentImplHelperBase16addEventListenerERKN3com3sun4star3uno9ReferenceINS3_4lang14XEventListenerEEE;
+-_ZThn24_N4cppu30WeakAggComponentImplHelperBase19removeEventListenerERKN3com3sun4star3uno9ReferenceINS3_4lang14XEventListenerEEE;
+-_ZThn24_N4cppu30WeakAggComponentImplHelperBase7acquireEv;
+-_ZThn24_N4cppu30WeakAggComponentImplHelperBase7disposeEv;
+-_ZThn24_N4cppu30WeakAggComponentImplHelperBase7releaseEv;
+-_ZThn28_N4cppu16OComponentHelper14queryInterfaceERKN3com3sun4star3uno4TypeE;
+-_ZThn28_N4cppu16OComponentHelper16addEventListenerERKN3com3sun4star3uno9ReferenceINS3_4lang14XEventListenerEEE;
+-_ZThn28_N4cppu16OComponentHelper19removeEventListenerERKN3com3sun4star3uno9ReferenceINS3_4lang14XEventListenerEEE;
+-_ZThn28_N4cppu16OComponentHelper7acquireEv;
+-_ZThn28_N4cppu16OComponentHelper7disposeEv;
+-_ZThn28_N4cppu16OComponentHelper7releaseEv;
+-_ZThn4_N4cppu18OPropertySetHelper14queryInterfaceERKN3com3sun4star3uno4TypeE;
+-_ZThn4_N4cppu18OPropertySetHelper20getFastPropertyValueEl;
+-_ZThn4_N4cppu18OPropertySetHelper20setFastPropertyValueElRKN3com3sun4star3uno3AnyE;
+-_ZThn8_N4cppu18OPropertySetHelper14queryInterfaceERKN3com3sun4star3uno4TypeE;
+-_ZThn8_N4cppu18OPropertySetHelper16getPropertyValueERKN3rtl8OUStringE;
+-_ZThn8_N4cppu18OPropertySetHelper16setPropertyValueERKN3rtl8OUStringERKN3com3sun4star3uno3AnyE;
+-_ZThn8_N4cppu18OPropertySetHelper25addPropertyChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XPropertyChangeListenerEEE;
+-_ZThn8_N4cppu18OPropertySetHelper25addVetoableChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XVetoableChangeListenerEEE;
+-_ZThn8_N4cppu18OPropertySetHelper28removePropertyChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XPropertyChangeListenerEEE;
+-_ZThn8_N4cppu18OPropertySetHelper28removeVetoableChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XVetoableChangeListenerEEE;
++_ZThn*_N4cppu14OWeakAggObject12setDelegatorERKN3com3sun4star3uno9ReferenceINS4_10XInterfaceEEE;
++_ZThn*_N4cppu14OWeakAggObject14queryInterfaceERKN3com3sun4star3uno4TypeE;
++_ZThn*_N4cppu14OWeakAggObject16queryAggregationERKN3com3sun4star3uno4TypeE;
++_ZThn*_N4cppu14OWeakAggObject7acquireEv;
++_ZThn*_N4cppu14OWeakAggObject7releaseEv;
++_ZThn*_N4cppu16OComponentHelper14queryInterfaceERKN3com3sun4star3uno4TypeE;
++_ZThn*_N4cppu16OComponentHelper16queryAggregationERKN3com3sun4star3uno4TypeE;
++_ZThn*_N4cppu16OComponentHelper7acquireEv;
++_ZThn*_N4cppu16OComponentHelper7releaseEv;
++_ZThn*_N4cppu27WeakComponentImplHelperBase14queryInterfaceERKN3com3sun4star3uno4TypeE;
++_ZThn*_N4cppu27WeakComponentImplHelperBase16addEventListenerERKN3com3sun4star3uno9ReferenceINS3_4lang14XEventListenerEEE;
++_ZThn*_N4cppu27WeakComponentImplHelperBase19removeEventListenerERKN3com3sun4star3uno9ReferenceINS3_4lang14XEventListenerEEE;
++_ZThn*_N4cppu27WeakComponentImplHelperBase7acquireEv;
++_ZThn*_N4cppu27WeakComponentImplHelperBase7disposeEv;
++_ZThn*_N4cppu27WeakComponentImplHelperBase7releaseEv;
++_ZThn*_N4cppu30WeakAggComponentImplHelperBase14queryInterfaceERKN3com3sun4star3uno4TypeE;
++_ZThn*_N4cppu30WeakAggComponentImplHelperBase16queryAggregationERKN3com3sun4star3uno4TypeE;
++_ZThn*_N4cppu30WeakAggComponentImplHelperBase7acquireEv;
++_ZThn*_N4cppu30WeakAggComponentImplHelperBase7releaseEv;
++_ZThn*_N4cppu16OComponentHelper14queryInterfaceERKN3com3sun4star3uno4TypeE;
++_ZThn*_N4cppu16OComponentHelper7acquireEv;
++_ZThn*_N4cppu16OComponentHelper7releaseEv;
++_ZThn*_N4cppu16OComponentHelper8getTypesEv;
++_ZThn*_N4cppu30WeakAggComponentImplHelperBase14queryInterfaceERKN3com3sun4star3uno4TypeE;
++_ZThn*_N4cppu30WeakAggComponentImplHelperBase16addEventListenerERKN3com3sun4star3uno9ReferenceINS3_4lang14XEventListenerEEE;
++_ZThn*_N4cppu30WeakAggComponentImplHelperBase19removeEventListenerERKN3com3sun4star3uno9ReferenceINS3_4lang14XEventListenerEEE;
++_ZThn*_N4cppu30WeakAggComponentImplHelperBase7acquireEv;
++_ZThn*_N4cppu30WeakAggComponentImplHelperBase7disposeEv;
++_ZThn*_N4cppu30WeakAggComponentImplHelperBase7releaseEv;
++_ZThn*_N4cppu16OComponentHelper14queryInterfaceERKN3com3sun4star3uno4TypeE;
++_ZThn*_N4cppu16OComponentHelper16addEventListenerERKN3com3sun4star3uno9ReferenceINS3_4lang14XEventListenerEEE;
++_ZThn*_N4cppu16OComponentHelper19removeEventListenerERKN3com3sun4star3uno9ReferenceINS3_4lang14XEventListenerEEE;
++_ZThn*_N4cppu16OComponentHelper7acquireEv;
++_ZThn*_N4cppu16OComponentHelper7disposeEv;
++_ZThn*_N4cppu16OComponentHelper7releaseEv;
++_ZThn*_N4cppu18OPropertySetHelper14queryInterfaceERKN3com3sun4star3uno4TypeE;
++_ZThn*_N4cppu18OPropertySetHelper20getFastPropertyValueE?;
++_ZThn*_N4cppu18OPropertySetHelper20setFastPropertyValueE?RKN3com3sun4star3uno3AnyE;
++_ZThn*_N4cppu18OPropertySetHelper14queryInterfaceERKN3com3sun4star3uno4TypeE;
++_ZThn*_N4cppu18OPropertySetHelper16getPropertyValueERKN3rtl8OUStringE;
++_ZThn*_N4cppu18OPropertySetHelper16setPropertyValueERKN3rtl8OUStringERKN3com3sun4star3uno3AnyE;
++_ZThn*_N4cppu18OPropertySetHelper25addPropertyChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XPropertyChangeListenerEEE;
++_ZThn*_N4cppu18OPropertySetHelper25addVetoableChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XVetoableChangeListenerEEE;
++_ZThn*_N4cppu18OPropertySetHelper28removePropertyChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XPropertyChangeListenerEEE;
++_ZThn*_N4cppu18OPropertySetHelper28removeVetoableChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XVetoableChangeListenerEEE;
+ 
+ _ZN4cppu13AccessControl19checkFilePermissionERKN3rtl8OUStringES4_;
+ _ZN4cppu13AccessControl21checkSocketPermissionERKN3rtl8OUStringES4_;
+@@ -339,8 +339,8 @@
+         _ZN4cppu20PropertySetMixinImpl17getPropertyValuesEv;
+         _ZN4cppu20PropertySetMixinImpl17setPropertyValuesERKN3com3sun4star3uno8SequenceINS3_5beans13PropertyValueEEE;
+         _ZN4cppu20PropertySetMixinImpl18getPropertySetInfoEv;
+-        _ZN4cppu20PropertySetMixinImpl20getFastPropertyValueEl;
+-        _ZN4cppu20PropertySetMixinImpl20setFastPropertyValueElRKN3com3sun4star3uno3AnyE;
++        _ZN4cppu20PropertySetMixinImpl20getFastPropertyValueE?;
++        _ZN4cppu20PropertySetMixinImpl20setFastPropertyValueE?RKN3com3sun4star3uno3AnyE;
+         _ZN4cppu20PropertySetMixinImpl25addPropertyChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XPropertyChangeListenerEEE;
+         _ZN4cppu20PropertySetMixinImpl25addVetoableChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XVetoableChangeListenerEEE;
+         _ZN4cppu20PropertySetMixinImpl28removePropertyChangeListenerERKN3rtl8OUStringERKN3com3sun4star3uno9ReferenceINS7_5beans23XPropertyChangeListenerEEE;
+@@ -351,12 +351,12 @@
+         _ZN4cppu20PropertySetMixinImplD1Ev;
+         _ZN4cppu20PropertySetMixinImplD2Ev;
+         _ZNK4cppu20PropertySetMixinImpl14BoundListeners6notifyEv;
+-        _ZThn4_N4cppu20PropertySetMixinImpl14queryInterfaceERKN3com3sun4star3uno4TypeE;
+-        _ZThn4_N4cppu20PropertySetMixinImpl20getFastPropertyValueEl;
+-        _ZThn4_N4cppu20PropertySetMixinImpl20setFastPropertyValueElRKN3com3sun4star3uno3AnyE;
+-        _ZThn8_N4cppu20PropertySetMixinImpl14queryInterfaceERKN3com3sun4star3uno4TypeE;
+-        _ZThn8_N4cppu20PropertySetMixinImpl17getPropertyValuesEv;
+-        _ZThn8_N4cppu20PropertySetMixinImpl17setPropertyValuesERKN3com3sun4star3uno8SequenceINS3_5beans13PropertyValueEEE;
++        _ZThn*_N4cppu20PropertySetMixinImpl14queryInterfaceERKN3com3sun4star3uno4TypeE;
++        _ZThn*_N4cppu20PropertySetMixinImpl20getFastPropertyValueE?;
++        _ZThn*_N4cppu20PropertySetMixinImpl20setFastPropertyValueE?RKN3com3sun4star3uno3AnyE;
++        _ZThn*_N4cppu20PropertySetMixinImpl14queryInterfaceERKN3com3sun4star3uno4TypeE;
++        _ZThn*_N4cppu20PropertySetMixinImpl17getPropertyValuesEv;
++        _ZThn*_N4cppu20PropertySetMixinImpl17setPropertyValuesERKN3com3sun4star3uno8SequenceINS3_5beans13PropertyValueEEE;
+ } UDK_3.1;
+ 
+ UDK_3.3 { # OOo 2.3
+--- cppuhelper/source/makefile.mk	9 May 2007 13:25:49 -0000	1.46
++++ cppuhelper/source/makefile.mk	27 Jun 2007 17:15:10 -0000
+@@ -72,6 +72,8 @@
+ 		com.sun.star.bridge.UnoUrlResolver \
+ 		com.sun.star.bridge.XUnoUrlResolver \
+ 		com.sun.star.connection.SocketPermission \
++		com.sun.star.container.XElementAccess \
++		com.sun.star.container.XEnumerationAccess \
+ 		com.sun.star.container.XHierarchicalNameAccess \
+ 		com.sun.star.container.XNameAccess \
+ 		com.sun.star.container.XNameContainer \
+@@ -173,11 +175,9 @@
+ SHL1VERSIONMAP=msvc_win32_intel.map
+ .ELIF "$(COMNAME)"=="sunpro5"
+ SHL1VERSIONMAP=cc5_solaris_sparc.map
+-.ELIF "$(OS)$(CPU)$(COMNAME)"=="LINUXIgcc3"
++.ELIF "$(OS)$(COMNAME)"=="LINUXgcc3"
+ SHL1VERSIONMAP=gcc3_linux_intel.map
+-.ELIF "$(OS)$(CPU)$(COMNAME)"=="FREEBSDIgcc3"
+-SHL1VERSIONMAP=gcc3_linux_intel.map
+-.ELIF "$(OS)$(CPU)$(COMNAME)"=="LINUXSgcc3"
++.ELIF "$(OS)$(COMNAME)"=="FREEBSDgcc3"
+ SHL1VERSIONMAP=gcc3_linux_intel.map
+ .ELIF "$(OS)$(CPU)$(COMNAME)"=="MACOSXIgcc3"
+ SHL1VERSIONMAP=gcc3_linux_intel.map
+--- cppuhelper/source/shlib.cxx	9 May 2007 13:26:03 -0000	1.27
++++ cppuhelper/source/shlib.cxx	6 Jun 2007 07:40:31 -0000	1.27.6.1
+@@ -322,13 +322,13 @@
+ 	return aExcMsg;
+ }
+ 
+-extern "C" {static void s_getFactory(va_list param) 
++extern "C" {static void s_getFactory(va_list * pParam) 
+ {
+-	component_getFactoryFunc         pSym      = va_arg(param, component_getFactoryFunc);
+-	OString                  const * pImplName = va_arg(param, OString const *);
+-	void                           * pSMgr     = va_arg(param, void *);
+-	void                           * pKey      = va_arg(param, void *);
+-	void                          ** ppSSF     = va_arg(param, void **);
++	component_getFactoryFunc         pSym      = va_arg(*pParam, component_getFactoryFunc);
++	OString                  const * pImplName = va_arg(*pParam, OString const *);
++	void                           * pSMgr     = va_arg(*pParam, void *);
++	void                           * pKey      = va_arg(*pParam, void *);
++	void                          ** ppSSF     = va_arg(*pParam, void **);
+ 
+ 	*ppSSF = pSym(pImplName->getStr(), pSMgr, pKey);
+ }}
+@@ -469,12 +469,12 @@
+ }
+ 
+ //==============================================================================
+-extern "C" { static void s_writeInfo(va_list param) 
++extern "C" { static void s_writeInfo(va_list * pParam) 
+ {
+-	component_writeInfoFunc         pSym      = va_arg(param, component_writeInfoFunc);
+-	void                          * pSMgr     = va_arg(param, void *);
+-	void                          * pKey      = va_arg(param, void *);
+-    sal_Bool                      * pbRet     = va_arg(param, sal_Bool *);
++	component_writeInfoFunc         pSym      = va_arg(*pParam, component_writeInfoFunc);
++	void                          * pSMgr     = va_arg(*pParam, void *);
++	void                          * pKey      = va_arg(*pParam, void *);
++    sal_Bool                      * pbRet     = va_arg(*pParam, sal_Bool *);
+ 
+ 	*pbRet = pSym(pSMgr, pKey);
+ 
+--- cppuhelper/test/bootstrap/TestEnv.cxx	9 May 2007 13:26:30 -0000	1.2
++++ cppuhelper/test/bootstrap/TestEnv.cxx	8 Jun 2007 09:53:51 -0000	1.2.6.2
+@@ -33,6 +33,9 @@
+  *
+  ************************************************************************/
+ 
++// MARKER(update_precomp.py): autogen include statement, do not remove
++#include "precompiled_cppuhelper.hxx"
++
+ #include "cppu/EnvDcp.hxx"
+ 
+ #include "cppu/helper/purpenv/Environment.hxx"
+@@ -64,8 +67,8 @@
+ 	virtual void v_enter(void);
+ 	virtual void v_leave(void);
+ 
+-	virtual void v_callInto_v(uno_EnvCallee * pCallee, va_list param);
+-	virtual void v_callOut_v (uno_EnvCallee * pCallee, va_list param);
++	virtual void v_callInto_v(uno_EnvCallee * pCallee, va_list * pParam);
++	virtual void v_callOut_v (uno_EnvCallee * pCallee, va_list * pParam);
+ 
+ 	virtual int  v_isValid   (rtl::OUString * pReason);
+ };
+@@ -82,17 +85,17 @@
+ }
+ 
+ 
+-void TestEnv::v_callInto_v(uno_EnvCallee * pCallee, va_list param)
++void TestEnv::v_callInto_v(uno_EnvCallee * pCallee, va_list * pParam)
+ {
+ 	++ m_inCount;
+-	pCallee(param);
++	pCallee(pParam);
+ 	-- m_inCount;
+ }
+ 
+-void TestEnv::v_callOut_v(uno_EnvCallee * pCallee, va_list param)
++void TestEnv::v_callOut_v(uno_EnvCallee * pCallee, va_list * pParam)
+ {
+ 	-- m_inCount;
+-	pCallee(param);
++	pCallee(pParam);
+ 	++ m_inCount;
+ }
+ 
+--- cppuhelper/test/bootstrap/TestEnv.def	1 Jan 1970 00:00:00 -0000
++++ cppuhelper/test/bootstrap/TestEnv.def	8 Jun 2007 09:54:32 -0000	1.3.2.2
+@@ -0,0 +1,8 @@
++HEAPSIZE	  0
++EXPORTS
++	uno_initEnvironment
++	uno_ext_getMapping
++
++
++
++
+--- cppuhelper/test/testcmp/TestComponent.cxx	9 May 2007 13:27:36 -0000	1.2
++++ cppuhelper/test/testcmp/TestComponent.cxx	8 Jun 2007 09:53:51 -0000	1.2.6.1
+@@ -33,6 +33,10 @@
+  *
+  ************************************************************************/
+ 
++// MARKER(update_precomp.py): autogen include statement, do not remove
++#include "precompiled_cppuhelper.hxx"
++
++
+ #define CPPUHELPER_TEST_COMPONENT_IMPL
+ #include "TestComponent.hxx"
+ 
+--- cppuhelper/test/testcmp/TestComponent.uno.def	1 Jan 1970 00:00:00 -0000
++++ cppuhelper/test/testcmp/TestComponent.uno.def	8 Jun 2007 09:54:32 -0000	1.3.2.2
+@@ -0,0 +1,11 @@
++HEAPSIZE	  0
++EXPORTS
++	component_getImplementationEnvironmentExt;
++	component_getFactory;
++	component_writeInfo;
++	?g_envDcp@@3VOUString@rtl@@A;
++
++
++
++
++
+--- ure/source/README	25 Jan 2007 10:54:01 -0000	1.11
++++ ure/source/README	22 Jun 2007 11:08:49 -0000	1.11.8.2
+@@ -55,6 +55,8 @@
+ /opt/openoffice.org/ure/lib/libuno_salhelperC52.so.3  [Solaris only]
+ /opt/openoffice.org/ure/lib/libstlport_gcc.so  [Linux x86 only]
+ /opt/openoffice.org/ure/lib/libstlport_sunpro.so  [Solaris only]
++/opt/openoffice.org/ure/lib/libuno_purpenvhelpergcc3.so.3  [Linux x86 only]
++/opt/openoffice.org/ure/lib/libuno_purpenvhelperC52.so.3  [Solaris only]
+ /opt/openoffice.org/ure/share/java/unoloader.jar
+ /opt/openoffice.org/ure/share/java/juh.jar
+ /opt/openoffice.org/ure/share/java/jurt.jar
+@@ -112,6 +114,8 @@
+ /opt/openoffice.org/ure/lib/libstdc++.so.6  [private; Linux x86 only]
+ /opt/openoffice.org/ure/share/java/java_uno.jar  [private]
+ /opt/openoffice.org/ure/share/misc/javavendors.xml  [private]
++/opt/openoffice.org/ure/lib/libunsafe_uno_uno.so  [private]
++/opt/openoffice.org/ure/lib/libaffine_uno_uno.so  [private]
+ 
+ Windows:
+ 
+@@ -127,6 +131,7 @@
+ Program Files\URE\bin\sal3.dll
+ Program Files\URE\bin\salhelper3MSC.dll
+ Program Files\URE\bin\stlport_vc7145.dll
++Program Files\URE\bin\purpenvhelper3MSC.dll
+ Program Files\URE\java\unoloader.jar
+ Program Files\URE\java\juh.jar
+ Program Files\URE\java\jurt.jar
+@@ -181,6 +186,8 @@
+ Program Files\URE\bin\uwinapi.dll  [private]
+ Program Files\URE\java\java_uno.jar  [private]
+ Program Files\URE\misc\javavendors.xml  [private]
++Program Files\URE\bin\unsafe_uno_uno.dll  [private]
++Program Files\URE\bin\affine_uno_uno.dll  [private]
+ 
+ Files marked as [private] are private to the URE installation.  To avoid
+ stability issues, applications that use the URE should not access the
+@@ -203,7 +210,7 @@
+ enables Java executables to use a Java VM, such as the Sun JDK/JRE.  Executables
+ such as uno and regcomp run this helper automatically.
+ 
+-- cppu, cppuhelper, sal, and salhelper are the public C++ UNO runtime dynamic
++- cppu, cppuhelper, sal, salhelper and purpenvhelper are the public C++ UNO runtime dynamic
+ libraries that client code can call.  For details on the functionality that
+ these libraries offer, see the "C++ Reference" section of the SDK HTML
+ documentation.  The corresponding C++ header files are not in the URE, but
+@@ -347,10 +354,10 @@
+ 
+ C++ UNO components run from within the uno executable can depend on an
+ environment in which the public C++ UNO runtime dynamic libraries (cppu,
+-cppuhelper, sal, salhelper, stlport) are already available (that is, on
+-Linux x86, Solaris x86, and Solaris SPARC, a component dynamic library need not
+-make sure that the UNO runtime dynamic libraries it needs can be found on its
+-RPATH).
++cppuhelper, sal, salhelper, stlport, purpenvhelper) are already available (that 
++is, on Linux x86, Solaris x86, and Solaris SPARC, a component dynamic library 
++need not make sure that the UNO runtime dynamic libraries it needs can be found
++on its RPATH).
+ 
+ Similarly, Java UNO components can depend on an environment in which the public
+ Java UNO runtime JARs are already available (that is, a component JAR need not
