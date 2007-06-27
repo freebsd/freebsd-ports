@@ -31,7 +31,7 @@ CONFIGURE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH} CC=${LOCALBASE}/bin/gcc41/gc
 MAKE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH} CC=${LOCALBASE}/bin/gcc41/gcc41
 CONFIGURE_ARGS=	--with-GL=GL
 
-USE_GL=		gl
+USE_GL=		gl glu
 USE_GNOME=	gnomehack gtk20 libglade2
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
