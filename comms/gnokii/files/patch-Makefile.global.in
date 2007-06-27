@@ -1,5 +1,5 @@
---- Makefile.global.in.orig	Wed May 18 15:08:43 2005
-+++ Makefile.global.in	Wed May 18 15:11:40 2005
+--- Makefile.global.in.orig	Thu May 10 20:50:16 2007
++++ Makefile.global.in	Thu Jun 21 23:18:13 2007
 @@ -21,14 +21,14 @@
  
  bindir         = @bindir@
@@ -14,7 +14,7 @@
  man1dir        = ${mandir}/man1/
  man8dir        = ${mandir}/man8/
 -xmandir        = @XGNOKIIDIR@/man/man1/
-+xmandir        = ${prefix}/man/man1/
++xmandir        = ${mandir}/man1/
  docdir         = ${prefix}/share/doc/${PACKAGE}
  locdir         = @datadir@/locale
- 
+ datadir        = @datadir@

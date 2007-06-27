@@ -1,50 +1,59 @@
---- configure.orig	Fri Apr 29 22:40:40 2005
-+++ configure	Thu May  5 14:20:32 2005
-@@ -26347,13 +26347,15 @@
+--- configure.orig	Thu May 10 20:50:32 2007
++++ configure	Thu Jun 21 23:16:04 2007
+@@ -976,7 +976,7 @@
+ psdir='${docdir}'
+ libdir='${exec_prefix}/lib'
+ localedir='${datarootdir}/locale'
+-mandir='${datarootdir}/man'
++mandir='${prefix}/man'
+ 
+ ac_prev=
+ ac_dashdash=
+@@ -26321,13 +26321,15 @@
  # First of all, check if the user has set any of the PTHREAD_LIBS,
  # etcetera environment variables, and if threads linking works using
  # them:
 -if test x"$PTHREAD_LIBS$PTHREAD_CFLAGS" != x; then
-+if test x"%%PTHREAD_LIBS%%%%PTHREAD_CFLAGS%%" != x; then
-+	PTHREAD_CFLAGS="%%PTHREAD_CFLAGS%%"
-+	PTHREAD_LIBS="%%PTHREAD_LIBS%%"
++if test x"-pthread" != x; then
++	PTHREAD_CFLAGS=""
++	PTHREAD_LIBS="-pthread"
          save_CFLAGS="$CFLAGS"
 -        CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
-+        CFLAGS="$CFLAGS %%PTHREAD_CFLAGS%%"
++        CFLAGS="$CFLAGS "
          save_LIBS="$LIBS"
 -        LIBS="$PTHREAD_LIBS $LIBS"
--        echo "$as_me:$LINENO: checking for pthread_join in LIBS=$PTHREAD_LIBS with CFLAGS=$PTHREAD_CFLAGS" >&5
--echo $ECHO_N "checking for pthread_join in LIBS=$PTHREAD_LIBS with CFLAGS=$PTHREAD_CFLAGS... $ECHO_C" >&6
-+        LIBS="%%PTHREAD_LIBS%% $LIBS"
-+        echo "$as_me:$LINENO: checking for pthread_join in LIBS=%%PTHREAD_LIBS%% with CFLAGS=%%PTHREAD_CFLAGS%%" >&5
-+echo $ECHO_N "checking for pthread_join in LIBS=%%PTHREAD_LIBS%% with CFLAGS=%%PTHREAD_CFLAGS%%... $ECHO_C" >&6
+-        { echo "$as_me:$LINENO: checking for pthread_join in LIBS=$PTHREAD_LIBS with CFLAGS=$PTHREAD_CFLAGS" >&5
+-echo $ECHO_N "checking for pthread_join in LIBS=$PTHREAD_LIBS with CFLAGS=$PTHREAD_CFLAGS... $ECHO_C" >&6; }
++        LIBS="-pthread $LIBS"
++        { echo "$as_me:$LINENO: checking for pthread_join in LIBS=-pthread with CFLAGS=" >&5
++echo $ECHO_N "checking for pthread_join in LIBS=-pthread with CFLAGS=... $ECHO_C" >&6; }
          cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -26725,7 +26727,7 @@
- echo $ECHO_N "checking if more special flags are required for pthreads... $ECHO_C" >&6
+@@ -26691,7 +26693,7 @@
+ echo $ECHO_N "checking if more special flags are required for pthreads... $ECHO_C" >&6; }
          flag=no
          case "${host_cpu}-${host_os}" in
 -                *-aix* | *-freebsd* | *-darwin*) flag="-D_THREAD_SAFE";;
 +                *-aix* | *-darwin*) flag="-D_THREAD_SAFE";;
                  *solaris* | *-osf* | *-hpux*) flag="-D_REENTRANT";;
          esac
-         echo "$as_me:$LINENO: result: ${flag}" >&5
-@@ -27569,7 +27571,7 @@
- USE_LIBICAL="no"
- OLD_LIBS="$LIBS"
- OLD_CFLAGS="$CFLAGS"
--LIBS="$LIBS $ICAL_LIBS -lpthread -lical"
-+LIBS="$LIBS $ICAL_LIBS -L/usr/local %%PTHREAD_LIBS%% -lical"
- CFLAGS="$CFLAGS $ICAL_CFLAGS"
- echo "$as_me:$LINENO: checking whether libical is installed" >&5
- echo $ECHO_N "checking whether libical is installed... $ECHO_C" >&6
-@@ -29111,7 +29113,7 @@
- echo "$as_me:$LINENO: result: $ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" >&5
- echo "${ECHO_T}$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" >&6
+         { echo "$as_me:$LINENO: result: ${flag}" >&5
+@@ -27495,7 +27497,7 @@
+ 
+ if test "$enable_libical" == "yes"; then
+ 	OLD_CFLAGS="$CFLAGS"
+-	LIBS="$LIBS $ICAL_LIBS -lpthread -lical"
++	LIBS="$LIBS $ICAL_LIBS -pthread -lical"
+ 	CFLAGS="$CFLAGS $ICAL_CFLAGS"
+ 	{ echo "$as_me:$LINENO: checking whether libical is installed" >&5
+ echo $ECHO_N "checking whether libical is installed... $ECHO_C" >&6; }
+@@ -29039,7 +29041,7 @@
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" >&5
+ echo "${ECHO_T}$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" >&6; }
  if test $ac_cv_lib_Xpm_XpmWriteFileFromXpmImage = yes; then
 -   XPM_CFLAGS="$XINCL" XPM_LIBS="-L$x_libraries -lXpm -lX11"
 +   XPM_CFLAGS="$XINCL" XPM_LIBS="-L$x_libraries -lXpm -lX11 -lroken -lcrypt"
-               cat >>confdefs.h <<\_ACEOF
+                   cat >>confdefs.h <<\_ACEOF
  #define XPM 1
  _ACEOF
