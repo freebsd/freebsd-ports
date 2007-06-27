@@ -112,6 +112,7 @@ pre-patch:
 	${CP} -p ${WRKSRC}/bin/macros_Linux.mk ${WRKSRC}/bin/macros_FreeBSD.mk
 
 do-configure:
+	${RM} ${WRKSRC}/src/base_1/gradco.F.orig
 	${REINPLACE_CMD} -e 's|%%PATHCS%%|${PATHCS}|'		\
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|'		\
 		-e 's|%%FC%%|${FC}|'				\
