@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_perl
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
@@ -71,6 +71,9 @@ PLIST_SUB=	THREADMUTEX="@comment "
 .if ${PERL_LEVEL} < 500800
 IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
 .endif
+
+pre-configure:
+	${RM} ${WRKSRC}/ModPerl-Registry/lib/ModPerl/RegistryCooker.pm.orig
 
 post-install:
 	${MKDIR} ${PREFIX}/${APACHEINCLUDEDIR}/modules/perl
