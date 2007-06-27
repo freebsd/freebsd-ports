@@ -7,6 +7,7 @@
 PORTNAME=	libarchive
 PORTVERSION=	2.2.3
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
 
