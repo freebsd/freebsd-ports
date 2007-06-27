@@ -7,7 +7,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,8 +18,6 @@ COMMENT=	Extremely powerful network monitoring system
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
-
-BROKEN=		Incomplete pkg-plist
 
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
