@@ -57,7 +57,7 @@ JAVA_VENDOR=	freebsd bsdjava
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-ONLY_FOR_ARCHS=	i386 #amd64
+ONLY_FOR_ARCHS=	i386 amd64
 
 .if ${ARCH} == amd64
 FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
