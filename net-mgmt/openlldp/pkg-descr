@@ -1,0 +1,7 @@
+The OpenLLDP project aims to provide a comprehensive implementation of the
+IEEE standard 802.1AB Link Layer Discovery Protocol. LLDP is an industry
+standard protocol designed to supplant proprietary Link-Layer protocols
+such as Extreme's EDP (Extreme Discovery Protocol) and CDP (Cisco Discovery
+Protocol).
+
+WWW: http://sourceforge.net/projects/openlldp/

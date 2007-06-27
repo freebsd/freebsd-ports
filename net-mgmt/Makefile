@@ -141,6 +141,7 @@
     SUBDIR += nsca-client
     SUBDIR += nstreams
     SUBDIR += ocs-unix-agent
+    SUBDIR += openlldp
     SUBDIR += openvmps
     SUBDIR += oproute
     SUBDIR += ourmon

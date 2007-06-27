@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: lldpd
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable lldpd:
+#
+# lldpd_enable="YES"
+#
+# You can define flags for lldpd running. See lldpd(8) for details.
+#
+# Example:
+# lldpd_flags="-i em0"
+
+. %%RC_SUBR%%
+
+name=lldpd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/$name
+command_args=">/dev/null 2>/dev/null &"
+
+# set defaults
+
+lldpd_enable=${lldpd_enable:-"NO"}
+lldpd_flags=${lldpd_flags:-""}
+
+load_rc_config $name
+run_rc_command "$1"
