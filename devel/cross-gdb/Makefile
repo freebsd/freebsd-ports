@@ -56,7 +56,7 @@ PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.8-20070306.diff
 .endif
 
 .if !defined(TGTARCH) || !defined(TGTABI)
-PKGNAMEPREFIX=	#empty
+PKGNAMEPREFIX=	cross-
 OURTARGET=	cross	# to generate correct dependency list
 IGNORE=		you should select ARCH and ABI to build port
 .endif
