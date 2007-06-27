@@ -308,6 +308,7 @@ share/nagios/stylesheets/trends.css
 @dirrm share/nagios/media
 @dirrm share/nagios/ssi
 @dirrm share/nagios/stylesheets
+@dirrm share/nagios
 @unexec rmdir /var/spool/nagios/archives 2>/dev/null || true
 @unexec rmdir /var/spool/nagios/rw 2>/dev/null || true
 @unexec rmdir /var/spool/nagios 2>/dev/null || true
