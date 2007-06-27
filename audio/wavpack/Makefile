@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wavpack
-PORTVERSION=	4.40.0
+PORTVERSION=	4.41.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.wavpack.com/
 
