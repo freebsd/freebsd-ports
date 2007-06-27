@@ -74,6 +74,7 @@ cups:*:193:
 sympa:*:200:
 dspam:*:202:
 bs:*:220:
+postgrey:*:225:
 fcron:*:247:
 _tor:*:256:
 _dns-proxy-tor:*:257:

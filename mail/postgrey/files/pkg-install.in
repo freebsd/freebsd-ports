@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/mail/postgrey/files/pkg-install.in,v 1.1 2007-06-27 21:13:24 beech Exp $
 
 PATH=/bin:/usr/bin:/usr/sbin
 
