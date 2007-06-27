@@ -921,7 +921,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>mod_perl2</name>
-	<range><ge>0</ge></range>
+	<range><lt>2.0.3_2,3</lt></range>
       </package>
     </affects>
     <description>
@@ -943,7 +943,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-03-29</discovery>
       <entry>2007-04-24</entry>
-      <modified>2007-05-07</modified>
+      <modified>2007-05-27</modified>
     </dates>
   </vuln>
 
