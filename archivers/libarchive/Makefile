@@ -31,6 +31,7 @@ MAN3=		archive_entry.3 \
 		archive_read.3 \
 		archive_util.3 \
 		archive_write.3 \
+		archive_write_disk.3 \
 		libarchive.3 \
 		libarchive_internals.3
 MAN5=		libarchive-formats.5 \
