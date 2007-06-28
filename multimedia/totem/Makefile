@@ -72,6 +72,8 @@ PLIST_SUB+=	GSTREAMER=""
 CONFIGURE_ARGS+=--enable-xine=yes
 LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
 PLIST_SUB+=	GSTREAMER="@comment "
+
+BROKEN=		needs libxine-1.1.7
 .endif
 
 .if defined(WITH_DVDNAV) && !defined(WITHOUT_DVDNAV)
