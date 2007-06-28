@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=	--enable-imagemagick=no
 .endif
 
 .if defined(WITH_MJPEG) || exists(${LOCALBASE}/lib/liblavjpeg.so)
-LIB_DEPENDS+=	lavjpeg-1.8.1:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS+=	lavjpeg-1.9.1:${PORTSDIR}/multimedia/mjpegtools
 CONFIGURE_ARGS+=	--enable-mjpegtools
 .else
 CONFIGURE_ARGS+=	--enable-mjpegtools=no
