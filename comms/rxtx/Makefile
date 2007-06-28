@@ -28,6 +28,8 @@ CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}
 PREFIX=		${JAVA_HOME}/jre
 NO_MTREE=	yes
 
+PLIST_SUB=	ARCH=${MACHINE_ARCH}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure ${WRKSRC}/ltconfig
 
