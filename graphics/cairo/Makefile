@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.4.8
-PORTREVISION?=	1
+PORTVERSION=	1.4.10
+PORTREVISION?=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
 #MASTER_SITES=	http://cairographics.org/snapshots/
