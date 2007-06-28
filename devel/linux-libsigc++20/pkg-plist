@@ -1,0 +1,9 @@
+usr/lib/libsigc-2.0.so.0
+usr/lib/libsigc-2.0.so.0.0.0
+%%PORTDOCS%%usr/share/doc/libsigc++20-2.0.17/AUTHORS
+%%PORTDOCS%%usr/share/doc/libsigc++20-2.0.17/COPYING
+%%PORTDOCS%%usr/share/doc/libsigc++20-2.0.17/ChangeLog
+%%PORTDOCS%%usr/share/doc/libsigc++20-2.0.17/NEWS
+%%PORTDOCS%%usr/share/doc/libsigc++20-2.0.17/README
+%%PORTDOCS%%usr/share/doc/libsigc++20-2.0.17/TODO
+%%PORTDOCS%%@dirrm usr/share/doc/libsigc++20-2.0.17

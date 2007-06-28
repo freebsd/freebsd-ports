@@ -651,6 +651,7 @@
     SUBDIR += linux-js
     SUBDIR += linux-kmod-compat
     SUBDIR += linux-libglade
+    SUBDIR += linux-libsigc++20
     SUBDIR += linux-runrev
     SUBDIR += linux-sdl12
     SUBDIR += linux_kdump
