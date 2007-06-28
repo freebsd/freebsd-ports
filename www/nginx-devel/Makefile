@@ -54,7 +54,11 @@ NGINX_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-http_ssl_module
 .endif
 
-.if defined(WITH_MAIL_MODULE) || defined(WITH_IMAP_MODULE)
+.if defined(WITH_ADDITION_MODULE)
+CONFIGURE_ARGS+=--with-http_addition_module
+.endif
+
+.if defined(WITH_MAIL_MODULE)
 NGINX_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-mail --with-mail_ssl_module
 .endif
@@ -82,14 +86,6 @@ PLIST_SUB+=	WWWDATA=""
 .endif
 
 PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-
-pre-fetch:
-.if defined(WITH_IMAP_MODULE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} WITH_IMAP_MODULE knob deprecated.
-	@${ECHO_MSG} Please use WITH_MAIL_MODULE knob instead.
-	@${ECHO_MSG}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
