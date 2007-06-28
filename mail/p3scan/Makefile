@@ -7,7 +7,7 @@
 
 PORTNAME=	p3scan
 PORTVERSION=	2.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -53,7 +53,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/p3scan ${PREFIX}/sbin/
 	${INSTALL_DATA} ${WRKSRC}/p3scan.conf ${PREFIX}/etc/p3scan/p3scan.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/p3scan-en.mail ${PREFIX}/etc/p3scan/p3scan.mail.sample
-	${INSTALL_SCRIPT} ${WRKDIR}/p3scan ${PREFIX}/etc/rc.d/
 .for f in ${MAN8}
 	${INSTALL_MAN} ${WRKSRC}/${f}.gz ${MAN8PREFIX}/man/man8/
 .endfor
