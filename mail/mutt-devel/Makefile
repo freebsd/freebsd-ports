@@ -106,8 +106,8 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.15
-PORTREVISION?=	1
+PORTVERSION=	1.5.16
+PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -136,7 +136,8 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://cedricduval.free.fr/mutt/patches/download/:cd \
 		http://home.woolridge.ca/mutt/patches/:dw \
 		http://www.spinnaker.de/mutt/compressed/:rr \
-		http://www.emaillab.org/mutt/${AC_PATCH_VERSION}/:jp
+		http://www.emaillab.org/mutt/${AC_PATCH_VERSION}/:jp \
+		http://vc.org.ua/mutt/:vc
 
 MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (development version)
@@ -190,10 +191,14 @@ DW_MBOX_PATCH_VERSION=	${DW_PATCH_VERSION}
 .if !defined(AC_PATCH_VERSION)
 AC_PATCH_VERSION=	${PORTVERSION}
 .endif
+.if !defined(VC_PATCH_VERSION)
+VC_PATCH_VERSION=	${PORTVERSION}
+.endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 WITH_MUTT_IMAP_HEADER_CACHE=	yes
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
+IGNORE=	the WITH_MUTT_SIDEBAR_PATCH does not work at the moment
 .if defined(WITH_MUTT_NNTP)
 IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not compatible
 .endif
@@ -335,11 +340,6 @@ post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-reverse_reply
 .endif
 
-.if defined(WITH_MUTT_GREETING_PATCH)
-post-patch::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-greeting
-.endif
-
 .if defined(WITHOUT_MUTT_FLOCK)
 CONFIGURE_ARGS+=	--disable-flock
 .else
@@ -432,6 +432,9 @@ pre-patch::
 	@${REINPLACE_CMD} -E '/^diff.*\/Makefile.in$$/,/^diff/d' \
 		 ${WRKDIR}/patch-sidebar
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-sidebar
+.endif
+.if defined(WITH_MUTT_GREETING_PATCH)
+PATCHFILES+=	mutt-${VC_PATCH_VERSION}.vc.greeting:vc
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}

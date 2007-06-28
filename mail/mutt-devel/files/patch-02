@@ -1,7 +1,7 @@
---- doc/Makefile.am.orig	Tue Mar  6 17:39:29 2007
-+++ doc/Makefile.am	Tue Mar  6 17:40:41 2007
-@@ -42,7 +42,7 @@
- all: ../makedoc$(EXEEXT)
+--- doc/Makefile.am.orig	Wed Jun 13 10:15:07 2007
++++ doc/Makefile.am	Wed Jun 13 10:17:15 2007
+@@ -41,7 +41,7 @@
+ all:
  	$(MAKE) makedoc-all
  
 -makedoc-all: mutt.1 muttrc.man manual.html stamp-doc-chunked manual.txt
@@ -9,7 +9,7 @@
  
  install-data-local: makedoc-all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -63,9 +63,6 @@
+@@ -62,9 +62,6 @@
  		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
  	done
  	-$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir)
@@ -19,11 +19,13 @@
  
  uninstall-local:
  	for f in mutt.1 mutt_dotlock.1 flea.1 muttbug.1 ; do \
-@@ -82,7 +79,7 @@
+@@ -81,9 +78,7 @@
  
  check:
  manual.txt: manual.html
--	-lynx -dump -nolist -with_backspaces $^ > $@ || w3m -dump $^ > $@
+-	-lynx -dump -nolist -with_backspaces $^ > $@ || \
+-	w3m -dump $^ > $@ || \
+-	elinks -dump -no-numbering -no-references $^ > $@
 +	-lynx -dump -nolist -with_backspaces manual.html > $@
  
  manual.html: $(srcdir)/html.xsl stamp-doc-xml
