@@ -30,6 +30,10 @@ CONST=
 CONST=	const
 .endif
 
+.if ${OSVERSION} < 600000
+IGNORE=	does not compile: needs gethostbyname_r()
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/> FD_SETSIZE/>= (int)FD_SETSIZE/g' ${WRKSRC}/soapcpp2/stdsoap2.c
 	@${REINPLACE_CMD} -e 's/> FD_SETSIZE/>= (int)FD_SETSIZE/g' ${WRKSRC}/soapcpp2/stdsoap2.cpp
