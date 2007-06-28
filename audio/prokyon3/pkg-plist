@@ -1,47 +1,47 @@
 bin/prokyon3
-share/prokyon3/images/action_append.png
-share/prokyon3/images/action_connect.png
-share/prokyon3/images/action_createdb.png
-share/prokyon3/images/action_discard.png
-share/prokyon3/images/action_disconnect.png
-share/prokyon3/images/action_quit.png
-share/prokyon3/images/action_readtags.png
-share/prokyon3/images/action_remove.png
-share/prokyon3/images/action_settings.png
-share/prokyon3/images/action_switchbottom.png
-share/prokyon3/images/action_switchleft.png
-share/prokyon3/images/action_switchright.png
-share/prokyon3/images/action_synchronize.png
-share/prokyon3/images/action_updateonly.png
-share/prokyon3/images/action_writetags.png
-share/prokyon3/images/action_xmms.png
-share/prokyon3/images/help.png
-share/prokyon3/images/lvi_album.png
-share/prokyon3/images/lvi_artist.png
-share/prokyon3/images/lvi_artist_favourite.png
-share/prokyon3/images/lvi_cdrom.png
-share/prokyon3/images/lvi_changed.png
-share/prokyon3/images/lvi_hdd.png
-share/prokyon3/images/lvi_nfs.png
-share/prokyon3/images/lvi_playlist.png
-share/prokyon3/images/lvi_smb.png
-share/prokyon3/images/madsmiley.png
-share/prokyon3/images/pink_marble.png
-share/prokyon3/images/smiley.png
-share/prokyon3/images/splash4.png
+%%DATADIR%%/images/action_append.png
+%%DATADIR%%/images/action_connect.png
+%%DATADIR%%/images/action_createdb.png
+%%DATADIR%%/images/action_discard.png
+%%DATADIR%%/images/action_disconnect.png
+%%DATADIR%%/images/action_quit.png
+%%DATADIR%%/images/action_readtags.png
+%%DATADIR%%/images/action_remove.png
+%%DATADIR%%/images/action_settings.png
+%%DATADIR%%/images/action_switchbottom.png
+%%DATADIR%%/images/action_switchleft.png
+%%DATADIR%%/images/action_switchright.png
+%%DATADIR%%/images/action_synchronize.png
+%%DATADIR%%/images/action_updateonly.png
+%%DATADIR%%/images/action_writetags.png
+%%DATADIR%%/images/action_xmms.png
+%%DATADIR%%/images/help.png
+%%DATADIR%%/images/lvi_album.png
+%%DATADIR%%/images/lvi_artist.png
+%%DATADIR%%/images/lvi_artist_favourite.png
+%%DATADIR%%/images/lvi_cdrom.png
+%%DATADIR%%/images/lvi_changed.png
+%%DATADIR%%/images/lvi_hdd.png
+%%DATADIR%%/images/lvi_nfs.png
+%%DATADIR%%/images/lvi_playlist.png
+%%DATADIR%%/images/lvi_smb.png
+%%DATADIR%%/images/madsmiley.png
+%%DATADIR%%/images/pink_marble.png
+%%DATADIR%%/images/smiley.png
+%%DATADIR%%/images/splash4.png
 share/locale/de/LC_MESSAGES/prokyon3.mo
 share/locale/fr/LC_MESSAGES/prokyon3.mo
 share/locale/nl/LC_MESSAGES/prokyon3.mo
-share/prokyon3/images/action_burncd.png
-share/prokyon3/images/action_documentation.png
-share/prokyon3/html/manual_one_file/images/docbook/important.png
-share/prokyon3/html/manual_one_file/images/docbook/note.png
-share/prokyon3/html/manual_one_file/images/docbook/tip.png
-share/prokyon3/html/manual_one_file/images/docbook/warning.png
-share/prokyon3/html/manual_one_file/index.html
-@dirrm share/prokyon3/images
-@dirrm share/prokyon3/html/manual_one_file/images/docbook
-@dirrm share/prokyon3/html/manual_one_file/images
-@dirrm share/prokyon3/html/manual_one_file
-@dirrm share/prokyon3/html
-@dirrm share/prokyon3
+%%DATADIR%%/images/action_burncd.png
+%%DATADIR%%/images/action_documentation.png
+%%DATADIR%%/html/manual_one_file/images/docbook/important.png
+%%DATADIR%%/html/manual_one_file/images/docbook/note.png
+%%DATADIR%%/html/manual_one_file/images/docbook/tip.png
+%%DATADIR%%/html/manual_one_file/images/docbook/warning.png
+%%DATADIR%%/html/manual_one_file/index.html
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/html/manual_one_file/images/docbook
+@dirrm %%DATADIR%%/html/manual_one_file/images
+@dirrm %%DATADIR%%/html/manual_one_file
+@dirrm %%DATADIR%%/html
+@dirrm %%DATADIR%%
