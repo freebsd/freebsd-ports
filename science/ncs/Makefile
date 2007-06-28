@@ -35,7 +35,11 @@ FORTRANLIBDIR=	`${DIRNAME} \\`gfortran42 -print-libgcc-file-name\\``
 FORTRANLIBDIR2=	`${DIRNAME} \\`gfortran42 -print-libgcc-file-name\\``/../../../
 MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
+.if defined(PACKAGE_BUILDING)
+TERM=		vt100	# Force for pointyhat to override su
+.else
 TERM?=		vt100	# Default value needed for tput in jail or tinderbox
+.endif
 
 PATHCS=		${PREFIX}/Saturne
 CS_HOME=	${PATHCS}/Noyau/ncs
