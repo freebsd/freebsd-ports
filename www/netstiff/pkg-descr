@@ -1,6 +1,7 @@
-netstiff (formerly known as webdiff) is a powerful Web page update checker.
-It supports a variety of different methods (diff, html, size, date, MD5 sum,
-regexp) and only prints the URIs of the Web pages that changed so that its
-output can easily be used by other scripts (such as wget or mail).
+netstiff (formerly known as webdiff) is a powerful Web and FTP site update
+checker. It supports a variety of different methods (diff, html, size, date,
+MD5 sum, regexp) and only prints the URIs of the Web pages and/or FTP sites
+that changed so that its output can easily be used by other scripts
+(such as wget or mail).
 
 WWW: http://pkqs.net/~sbeyer/#netstiff
