@@ -1,0 +1,10 @@
+--- libcruft/mkf77def.in~	Sat Oct 28 08:19:17 2006
++++ libcruft/mkf77def.in	Wed Jun 27 16:17:36 2007
+@@ -1,6 +1,6 @@
+ #! /bin/sh
+ 
+-SED=${SED:-'sed'}
++SED=gsed
+ AWK=${AWK:-'awk'}
+ 
+ F77_TOLOWER=%F77_APPEND_UNDERSCORE%
