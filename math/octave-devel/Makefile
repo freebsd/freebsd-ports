@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	2.9.9
-PORTREVISION=	2
+PORTVERSION=	2.9.12
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/\
@@ -18,8 +17,9 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Developer's version of math/octave
 
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
-		gperf:${PORTSDIR}/devel/gperf \
-		${LOCALBASE}/lib/libglpk.a:${PORTSDIR}/math/glpk
+		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
+		${LOCALBASE}/lib/libglpk.a:${PORTSDIR}/math/glpk \
+		gsed:${PORTSDIR}/textproc/gsed
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		hdf5:${PORTSDIR}/science/hdf5 \
@@ -91,7 +91,7 @@ SUB_FILES=	octave
 SUB_LIST=	OCTAVE_VERSION="${OCTAVE_VERSION}" GNU_HOST="${GNU_HOST}"
 
 pre-configure:
-	@cd ${WRKSRC}/scripts ; autoconf259
+	@cd ${WRKSRC}/scripts ; ${AUTOCONF}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/liboctave/liboctave.info ${PREFIX}/info
