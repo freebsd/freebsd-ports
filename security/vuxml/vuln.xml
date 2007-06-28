@@ -39,7 +39,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>evolution-data-server</name>
-	<range><lt>1.11.4</lt></range>
+	<range><lt>1.10.2_1</lt></range>
+	<range><gt>1.11.*</gt><lt>1.11.4</lt></range>
       </package>
     </affects>
     <description>
@@ -61,6 +62,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-06-23</discovery>
       <entry>2007-06-25</entry>
+      <modified>2007-06-28</modified>
     </dates>
   </vuln>
 
