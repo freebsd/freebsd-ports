@@ -1,0 +1,195 @@
+--- modules/cmdline/typedCmdline.test.orig	Thu Jun 28 13:56:05 2007
++++ modules/cmdline/typedCmdline.test	Thu Jun 28 13:57:28 2007
+@@ -115,7 +115,7 @@
+ 	catch {unset arg}
+ 	set argList {-foo 123}
+ 	list [catch {cmdline::typedGetopt argList {a.arg foo.bar b} opt arg} msg] $msg $argList $opt $arg
+-    } [list 1 {Illegal option type specification: must be one of alnum|alpha|ascii|control|boolean|digit|double|false|graph|integer|lower|print|punct|space|true|upper|wideinteger|wordchar|xdigit} {-foo 123} {} {}]
++    } [list 1 {Illegal option type specification: must be one of alnum|alpha|ascii|control|boolean|digit|double|false|graph|integer|list|lower|print|punct|space|true|upper|wideinteger|wordchar|xdigit} {-foo 123} {} {}]
+ } else {
+     test typed-cmdline-6.14 {cmdline::typedGetopt, integer options} {
+ 	catch {unset opt}
+--- modules/grammar_me/me_tcl.test.orig	Thu Jun 28 14:00:22 2007
++++ modules/grammar_me/me_tcl.test	Thu Jun 28 14:03:49 2007
+@@ -509,7 +509,17 @@
+ 	grammar::me::tcl::ict_match_tokclass a b c
+     } -result {wrong # args: should be "grammar::me::tcl::ict_match_tokclass code msg"}
+ 
+-test mevmtcl-ict_match_tokclass-1.2a {Call with bad code} \
++if {[::tcltest::testConstraint tcl8.5plus]} {
++    test mevmtcl-ict_match_tokclass-1.2a {Call with bad code} \
++	-constraints tcl8.5plus \
++	-returnCodes error \
++	-setup {
++	    grammar::me::tcl::init fake
++	} -body {
++	    grammar::me::tcl::ict_match_tokclass gargle foo
++	} -result {bad class "gargle": must be alnum, alpha, ascii, control, boolean, digit, double, false, graph, integer, list, lower, print, punct, space, true, upper, wideinteger, wordchar, or xdigit}
++} else {
++    test mevmtcl-ict_match_tokclass-1.2a {Call with bad code} \
+     -constraints tcl8.5plus \
+     -returnCodes error \
+     -setup {
+@@ -517,6 +527,7 @@
+     } -body {
+ 	grammar::me::tcl::ict_match_tokclass gargle foo
+     } -result {bad class "gargle": must be alnum, alpha, ascii, control, boolean, digit, double, false, graph, integer, lower, print, punct, space, true, upper, wideinteger, wordchar, or xdigit}
++}
+ 
+ test mevmtcl-ict_match_tokclass-1.2b {Call with bad code} \
+     -constraints {!tcl8.5plus} \
+--- modules/math/fuzzy.test	2006/01/24 05:10:01	1.5
++++ modules/math/fuzzy.test	2006/11/07 20:02:34	1.6
+@@ -168,6 +168,12 @@
+    set tol_le 0
+    set tol_lt 0
+ 
++   #
++   # Force Tcl8.4 or earlier behaviour in expanding numbers
++   #
++   set org_tcl_precision $tcl_precision
++   set tcl_precision 12
++
+    for { set i -1000 } { $i <= 1000 } { incr i } {
+       if { $i == 0 } continue
+ 
+@@ -192,6 +198,7 @@
+          set equal 0
+       }
+    }
++   set tcl_precision $org_tcl_precision
+    set equal
+ } 0
+ 
+
+--- modules/snit/snit.test.orig	Thu Jun 28 14:48:15 2007
++++ modules/snit/snit.test	Thu Jun 28 14:48:17 2007
+@@ -693,7 +693,8 @@
+     dog destroy
+ } -result {3}
+ 
+-test dtypemethod-1.6 {delegating unknown typemethod to existing typecomponent with error} -body {
++if {[::tcltest::testConstraint tcl8.5plus]} {
++    test dtypemethod-1.6 {delegating unknown typemethod to existing typecomponent with error} -body {
+     type dog {
+         delegate typemethod * to stringhandler
+ 
+@@ -703,9 +704,24 @@
+     }
+ 
+     dog foo bar
+-} -returnCodes {
++    } -returnCodes {
+     error
+-} -result {bad option "foo": must be bytelength, compare, equal, first, index, is, last, length, map, match, range, repeat, replace, tolower, toupper, totitle, trim, trimleft, trimright, wordend, or wordstart}
++    } -result {bad option "foo": must be bytelength, compare, equal, first, index, is, last, length, map, match, range, repeat, replace, reverse, tolower, toupper, totitle, trim, trimleft, trimright, wordend, or wordstart}
++} else {
++    test dtypemethod-1.6 {delegating unknown typemethod to existing typecomponent with error} -body {
++	type dog {
++    	    delegate typemethod * to stringhandler
++
++    	    typeconstructor {
++        	set stringhandler string
++    	    }
++	}
++
++	dog foo bar
++    } -returnCodes {
++	error
++    } -result {bad option "foo": must be bytelength, compare, equal, first, index, is, last, length, map, match, range, repeat, replace, tolower, toupper, totitle, trim, trimleft, trimright, wordend, or wordstart}
++}
+ 
+ test dtypemethod-1.7 {can't delegate local typemethod: order 1} -body {
+     type dog {
+@@ -3218,7 +3234,8 @@
+     dog destroy
+ } -result {3}
+ 
+-test dmethod-1.6 {delegating unknown method to existing component with error} -body {
++if {[::tcltest::testConstraint tcl8.5plus]} {
++    test dmethod-1.6 {delegating unknown method to existing component with error} -body {
+     type dog {
+         constructor {args} {
+             set stringhandler string
+@@ -3229,11 +3246,29 @@
+ 
+     dog create spot
+     spot foo bar
+-} -returnCodes {
++    } -returnCodes {
+     error
+-} -cleanup {
++    } -cleanup {
++        dog destroy
++    } -result {bad option "foo": must be bytelength, compare, equal, first, index, is, last, length, map, match, range, repeat, replace, reverse, tolower, toupper, totitle, trim, trimleft, trimright, wordend, or wordstart}
++} else {
++    test dmethod-1.6 {delegating unknown method to existing component with error} -body {
++	type dog {
++    	    constructor {args} {
++        	set stringhandler string
++    	    }
++
++            delegate method * to stringhandler
++	}
++
++        dog create spot
++        spot foo bar
++    } -returnCodes {
++	error
++    } -cleanup {
+     dog destroy
+-} -result {bad option "foo": must be bytelength, compare, equal, first, index, is, last, length, map, match, range, repeat, replace, tolower, toupper, totitle, trim, trimleft, trimright, wordend, or wordstart}
++    } -result {bad option "foo": must be bytelength, compare, equal, first, index, is, last, length, map, match, range, repeat, replace, tolower, toupper, totitle, trim, trimleft, trimright, wordend, or wordstart}
++}
+ 
+ test dmethod-1.7 {can't delegate local method: order 1} -body {
+     type cat {
+@@ -5784,13 +5819,23 @@
+ #-----------------------------------------------------------------------
+ # expose statement
+ 
+-test expose-1.1 {can't expose nothing} -body {
++if {[::tcltest::testConstraint tcl8.5plus]} {
++    test expose-1.1 {can't expose nothing} -body {
+     type dog {
+ 	expose
+     }
+-} -returnCodes {
++    } -returnCodes {
++	error
++    } -result [tcltest::wrongNumArgs expose {component ?as? ?methodname?} 0]
++} else {
++    test expose-1.1 {can't expose nothing} -body {
++	type dog {
++	    expose
++	}
++    } -returnCodes {
+     error
+-} -result [tcltest::wrongNumArgs ::snit::Comp.statement.expose {component ?as? ?methodname?} 0]
++    } -result [tcltest::wrongNumArgs ::snit::Comp.statement.expose {component ?as? ?methodname?} 0]
++}
+ 
+ test expose-1.2 {expose a component that's never installed} -body {
+     type dog {
+--- modules/struct/sets.test.orig	Thu Jun 28 14:10:46 2007
++++ modules/struct/sets.test	Thu Jun 28 14:13:24 2007
+@@ -36,10 +36,17 @@
+ 
+ #----------------------------------------------------------------------
+ 
+-test set-1.0 {nothing} {
++if {[::tcltest::testConstraint tcl8.5plus]} {
++    test set-1.0 {nothing} {
+     catch {setop} msg
+     set msg
+-} [tcltest::wrongNumArgs {::struct::set::set} {cmd args} 0]
++    } [tcltest::wrongNumArgs {setop} {cmd args} 0]
++} else {
++    test set-1.0 {nothing} {
++	catch {setop} msg
++	set msg
++    } [tcltest::wrongNumArgs {::struct::set::set} {cmd args} 0]
++}
+ 
+ test set-1.1 {bogus} {
+     catch {setop foo} msg
