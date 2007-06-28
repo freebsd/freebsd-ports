@@ -42,8 +42,8 @@ PLIST_SUB=	XEMACS_VER=20.4 XEMACS_ARCH=${XEMACS_ARCH}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == ia64
-BROKEN=		Configure fails on ia64
+.if ${ARCH} != i386
+BROKEN=		Configure fails outside i386: unrecognized architecture
 .endif
 
 .if (${OSVERSION} >= 600000)
