@@ -6859,6 +6859,7 @@ linux-libmad	ports/audio/linux-libmad
 linux-libmng	ports/graphics/linux-libmng
 linux-libogg	ports/audio/linux-libogg
 linux-libperl5.8	ports/lang/linux-libperl5.8
+linux-libsigc++20	ports/devel/linux-libsigc++20
 linux-libtheora	ports/multimedia/linux-libtheora
 linux-libvorbis	ports/audio/linux-libvorbis
 linux-libxml	ports/textproc/linux-libxml
