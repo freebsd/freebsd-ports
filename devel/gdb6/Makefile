@@ -17,7 +17,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gdb
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	GNU GDB of newer version than comes with the system
 
-OPTIONS=	INSIGHT "Build the Tcl/Tk GUI (broken!)" off
+OPTIONS=	INSIGHT "Build the Tcl/Tk GUI (experimental!)" off
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		--enable-target=all \
-		--enable-tui --with-libiconv-prefix=${PREFIX}
+		--enable-tui --with-libiconv-prefix=${LOCALBASE}
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
 EXCLUDE=	dejagnu expect readline sim texinfo intl
@@ -56,10 +56,9 @@ CONFIGURE_ARGS+=--enable-gdbtk \
 
 pre-everything::
 	#
-	# The Tk-based GUI (Insight) is severely broken at the moment.
-	# Do not submit bug-reports, unless you have fixes for them --
-	# insight code needs to be ported to use the most recent ITk and
-	# IWidgets.
+	# The Tk-based GUI (Insight) is patched to work with [incr tcl]
+	# version 3.3 and is currently experimental. Bug reports should
+	# be accompanied by patches.
 	#
 
 pre-configure:
@@ -84,7 +83,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/gdb${VER}
 	${LN} ${PREFIX}/bin/gdb${VER} ${PREFIX}/bin/gdbtui${VER}
-	${INSTALL_DATA} ${WRKSRC}/gdb/gdb.1 ${PREFIX}/man/man1/gdb${VER}.1
+	${INSTALL_MAN} ${WRKSRC}/gdb/gdb.1 ${MAN1PREFIX}/man/man1/gdb${VER}.1
 .if defined(WITH_INSIGHT)
 	${LN} ${PREFIX}/bin/gdb${VER} ${PREFIX}/bin/insight
 	${MKDIR} ${PREFIX}/share/redhat/gui
