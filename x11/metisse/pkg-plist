@@ -23,9 +23,9 @@ bin/opale-start-fvwmi
 include/libmetisse/auth.h
 include/libmetisse/proto.h
 @dirrm include/libmetisse
-%%PYTHON%%lib/python2.4/site-packages/facade_setup.py
-%%PYTHON%%lib/python2.4/site-packages/facade_setup.pyc
-%%PYTHON%%lib/python2.4/site-packages/facade_setup.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/facade_setup.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/facade_setup.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/facade_setup.pyo
 lib/libmetisse.a
 lib/libmetisse.la
 lib/libmetisse.so
