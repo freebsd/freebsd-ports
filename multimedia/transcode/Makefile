@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=	--enable-imagemagick=no
 .endif
 
 .if defined(WITH_MJPEG) || exists(${LOCALBASE}/lib/liblavjpeg.so)
-LIB_DEPENDS+=	lavjpeg-1.9.1:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS+=	lavjpeg-1.8.1:${PORTSDIR}/multimedia/mjpegtools
 CONFIGURE_ARGS+=	--enable-mjpegtools
 .else
 CONFIGURE_ARGS+=	--enable-mjpegtools=no
@@ -132,17 +132,17 @@ CONFIGURE_ARGS+=	--enable-libquicktime \
 CONFIGURE_ARGS+=	--enable-libquicktime=no
 .endif
 
-.if defined(WITH_FAME) # Disable.. meh # || exists(${LOCALBASE}/lib/libfame.so)
+.if defined(WITH_FAME) # Disable.. meh # || (exists(${LOCALBASE}/lib/libfame.so) && !defined(WITHOUT_FAME))
 LIB_DEPENDS+=	fame-0.9:${PORTSDIR}/multimedia/libfame
 CONFIGURE_ARGS+=	--with-libfame-prefix=${LOCALBASE} --enable-libfame
 .endif
 
-.if defined(WITH_XVID) || exists(${LOCALBASE}/lib/libxvidcore.so)
+.if defined(WITH_XVID) || (exists(${LOCALBASE}/lib/libxvidcore.so) && !defined(WITHOUT_XVID))
 LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 RUN_DEPENDS+=	xvid4conf:${PORTSDIR}/multimedia/xvid4conf
 .endif
 
-.if defined(WITH_LIBA52_DEFAULT) || exists(${LOCALBASE}/lib/liba52.so)
+.if defined(WITH_LIBA52_DEFAULT) || (exists(${LOCALBASE}/lib/liba52.so) && !defined(WITHOUT_LIBA52))
 WITH_LIBA52=	yes
 CONFIGURE_ARGS+=	--enable-a52-default-decoder
 .endif
@@ -154,14 +154,14 @@ CONFIGURE_ARGS+=	--enable-a52
 CONFIGURE_ARGS+=	--with-a52=no
 .endif
 
-.if defined(WITH_LAME) || exists(${LOCALBASE}/lib/libmp3lame.so)
+.if defined(WITH_LAME) || (exists(${LOCALBASE}/lib/libmp3lame.so) && !defined(WITHOUT_LAME))
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=	--with-lame-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--disable-lame
 .endif
 
-.if defined(WITH_LZO) || exists(${LOCALBASE}/lib/liblzo.so)
+.if defined(WITH_LZO) || (exists(${LOCALBASE}/lib/liblzo.so) && !defined(WITHOUT_LZO))
 LIB_DEPENDS+=	lzo.1:${PORTSDIR}/archivers/lzo
 CONFIGURE_ARGS+=	--enable-lzo --with-lzo-prefix=${LOCALBASE} \
 					--with-lzo-includes=${LOCALBASE}
@@ -169,7 +169,7 @@ CONFIGURE_ARGS+=	--enable-lzo --with-lzo-prefix=${LOCALBASE} \
 CONFIGURE_ARGS+=	--enable-lzo=no
 .endif
 
-.if (defined(WITH_DIVX5) && ${ARCH}=="i386") || exists(${LINUXBASE}/usr/lib/libdivxdecore.so)
+.if (defined(WITH_DIVX5) && ${ARCH}=="i386") || (exists(${LINUXBASE}/usr/lib/libdivxdecore.so) && !defined(WITHOUT_DIVX5))
 BUILD_DEPENDS+=	${LINUXBASE}/usr/lib/libdivxdecore.so:${PORTSDIR}/multimedia/linux-divx4linux
 CFLAGS+=	-I${LINUXBASE}/usr/include/divx
 .else
@@ -209,9 +209,9 @@ pre-everything::
 	@${ECHO_MSG} "You can enable realtime-previewing by defining WITH_SDL."
 	@${ECHO_MSG} "This implies WITH_LIBDV."
 .endif
-.if !defined(WITHOUT_XML)
+.if !defined(WITH_XML)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "You can disable libxml2-dependent modules by defining WITHOUT_XML."
+	@${ECHO_MSG} "You can enable libxml2-dependent modules by defining WITH_XML."
 .endif
 .if !defined(WITH_LAME)
 	@${ECHO_MSG}
