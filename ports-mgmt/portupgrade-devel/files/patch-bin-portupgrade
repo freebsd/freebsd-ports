@@ -1,5 +1,5 @@
 --- bin/portupgrade.orig	Mon Feb 26 19:00:26 2007
-+++ bin/portupgrade	Tue May  1 21:37:49 2007
++++ bin/portupgrade	Thu Jun 28 14:34:58 2007
 @@ -616,7 +616,9 @@
  
  	  # Track unistalled ports is appeared after updating
@@ -7,7 +7,7 @@
 -	    install_tasks |= get_uninstalled_depends($pkgdb.origin(task))
 +	    o = $pkgdb.origin(task)
 +#XXX	    install_tasks |= get_uninstalled_depends(o) if !o.nil?
-+	    $task_options[task][:origin] = o
++#	    $task_options[task][:origin] = o
  	  end
  	}
  
