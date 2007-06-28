@@ -8,7 +8,9 @@
 PORTNAME=	audacious-plugins
 PORTVERSION=	1.3.5
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://static.audacious-media-player.org/release/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://static.audacious-media-player.org/release/
+MASTER_SITE_SUBDIR=oliver
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oliver@FreeBSD.org
