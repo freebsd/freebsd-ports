@@ -49,6 +49,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|prokburn||' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|prokburn||' ${WRKSRC}/Makefile.in
 .endif
+	@${REINPLACE_CMD} -E 's|[[:alpha:]]+::||' ${WRKSRC}/src/gui.h \
+		${WRKSRC}/src/configuration.h
+	@${REINPLACE_CMD} -e 's|QProgressDialogScroll::||' \
+		${WRKSRC}/src/jobbase.cpp
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
