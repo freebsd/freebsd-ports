@@ -689,9 +689,9 @@ ltverhack_PRE_PATCH+=	for file in gnome-ltmain.sh gnome-libtool; do \
 
 # Then traverse through all components, check which of them
 # exist in ${_USE_GNOME} and set variables accordingly
+.ifdef _USE_GNOME
 . for component in ${_USE_GNOME_ALL}
-_COMP_TEST=	${_USE_GNOME:M${component}}
-.  if ${_COMP_TEST:S/${component}//}!=${_COMP_TEST:S/  / /g}
+.  if ${_USE_GNOME:M${component}}!=""
 PATCH_DEPENDS+=	${${component}_PATCH_DEPENDS}
 FETCH_DEPENDS+=	${${component}_FETCH_DEPENDS}
 EXTRACT_DEPENDS+=${${component}_EXTRACT_DEPENDS}
@@ -725,6 +725,7 @@ GNOME_PRE_PATCH+=	; ${${component}_PRE_PATCH}
 
 .  endif
 . endfor
+.endif
 .endif
 
 .if defined(GNOME_PRE_PATCH)
