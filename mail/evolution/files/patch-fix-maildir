@@ -1,0 +1,111 @@
+Index: mail/ChangeLog
+===================================================================
+--- mail/ChangeLog	(revision 33704)
++++ mail/ChangeLog	(working copy)
+@@ -1,3 +1,11 @@
++2007-06-18  Milan Crha  <mcrha@redhat.com>
++
++	** Fix for bug #352346
++
++	* em-migrate.c (em_update_accounts_2_11), (em_migrate):
++	Added function to change "spool" to "spooldir" for those
++	spools which points on directories.
++
+ 2007-06-18  Srinivasa Ragavan  <sragavan@novell.com>
+ 	
+         ** Fix for bug #448223 from Gilles Dartiguelongue
+Index: mail/mail-config.glade
+===================================================================
+--- mail/mail-config.glade	(revision 33704)
++++ mail/mail-config.glade	(working copy)
+@@ -1354,7 +1354,6 @@
+ 				  <property name="right_attach">2</property>
+ 				  <property name="top_attach">2</property>
+ 				  <property name="bottom_attach">3</property>
+-				  <property name="x_options">fill</property>
+ 				  <property name="y_options"></property>
+ 				</packing>
+ 			      </child>
+Index: mail/em-account-editor.c
+===================================================================
+--- mail/em-account-editor.c	(revision 33704)
++++ mail/em-account-editor.c	(working copy)
+@@ -1665,9 +1665,19 @@
+ 	}
+ 	if (url->user)
+ 		gtk_entry_set_text(service->username, url->user);
+-	if (service->pathentry && url->path)
+-		gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (service->pathentry), url->path);
++	if (service->pathentry) {
++		GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER;
+ 
++		if (service->provider && (service->provider->url_flags & CAMEL_URL_NEED_PATH_DIR) == 0)
++			action = GTK_FILE_CHOOSER_ACTION_OPEN;
++
++		if (action != gtk_file_chooser_get_action (GTK_FILE_CHOOSER (service->pathentry)))
++			gtk_file_chooser_set_action (GTK_FILE_CHOOSER (service->pathentry), action);
++
++		if (url->path)
++			gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (service->pathentry), url->path);
++	}
++
+ 	tmp = camel_url_get_param(url, "use_ssl");
+ 	if (tmp == NULL)
+ 		tmp = "never";
+Index: mail/em-migrate.c
+===================================================================
+--- mail/em-migrate.c	(revision 33704)
++++ mail/em-migrate.c	(working copy)
+@@ -2639,6 +2639,41 @@
+ 	return 0;
+ }
+ 
++static void
++em_update_accounts_2_11 (void)
++{
++	EAccountList *accounts;
++	EIterator *iter;
++	gboolean changed = FALSE;
++
++	if (!(accounts = mail_config_get_accounts ()))
++		return;
++
++	iter = e_list_get_iterator ((EList *) accounts);
++	while (e_iterator_is_valid (iter)) {
++		EAccount *account = (EAccount *) e_iterator_get (iter);
++
++		if (g_str_has_prefix (account->source->url, "spool://")) {
++			struct stat st;
++
++			if (stat(account->source->url + 8, &st) != -1 && S_ISDIR(st.st_mode)) {
++				char *str = g_strdup_printf ("spooldir://%s", account->source->url + 8);
++
++				g_free (account->source->url);
++				account->source->url = str;
++				changed = TRUE;
++			}
++		}
++
++		e_iterator_next (iter);
++	}
++
++	g_object_unref (iter);
++
++	if (changed)
++		mail_config_save_accounts ();
++}
++
+ #endif
+ 
+ static int
+@@ -2777,6 +2812,10 @@
+ 		
+ 		g_free (path);
+ 	}
++
++	if (major < 2 || (major == 2 && minor <= 11)) {
++		em_update_accounts_2_11 ();
++	}
+ #endif	/* !G_OS_WIN32 */
+ 	return 0;
+ }
