@@ -3297,10 +3297,14 @@ all: build
 .endif
 
 .if !defined(DEPENDS_TARGET)
+.if defined(DEPENDS_PRECLEAN)
+DEPENDS_TARGET=	clean
+DEPENDS_ARGS=	NOCLEANDEPENDS=yes
+.endif
 .if make(reinstall)
-DEPENDS_TARGET=	reinstall
+DEPENDS_TARGET+=	reinstall
 .else
-DEPENDS_TARGET=	install
+DEPENDS_TARGET+=	install
 .endif
 .if defined(DEPENDS_CLEAN)
 DEPENDS_TARGET+=	clean
@@ -4538,7 +4542,7 @@ do-clean:
 .if !target(clean)
 clean:
 .if !defined(NOCLEANDEPENDS)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} clean-depends
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} limited-clean-depends
 .endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
 .if target(pre-clean)
@@ -5008,6 +5012,14 @@ ${deptype:L}-depends:
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
 			target=`${ECHO_CMD} $$dir | ${SED} -e 's/.*://'`; \
 			dir=`${ECHO_CMD} $$dir | ${SED} -e 's/:.*//'`; \
+			if [ X${DEPENDS_PRECLEAN} != "X" ]; then \
+				target="clean $$target"; \
+				depends_args="$$depends_args NOCLEANDEPENDS=yes"; \
+			fi; \
+			if [ X${DEPENDS_CLEAN} != "X" ]; then \
+				target="$$target clean"; \
+				depends_args="$$depends_args NOCLEANDEPENDS=yes"; \
+			fi; \
 		else \
 			target="${DEPENDS_TARGET}"; \
 			depends_args="${DEPENDS_ARGS}"; \
@@ -5212,9 +5224,95 @@ ALL-DEPENDS-LIST= \
 		L=$$l;							\
 	done
 
+CLEAN-DEPENDS-FULL= \
+	L="${_DEPEND_DIRS}";						\
+	checked="";							\
+	while [ -n "$$L" ]; do						\
+		l="";							\
+		for d in $$L; do					\
+			case $$checked in				\
+			$$d\ *|*\ $$d\ *|*\ $$d)			\
+				continue;;				\
+			esac;						\
+			checked="$$checked $$d";			\
+			if [ ! -d $$d ]; then				\
+				${ECHO_MSG} "${PKGNAME}: \"$$d\" non-existent -- dependency list incomplete" >&2; \
+				continue;				\
+			fi;						\
+			if ! children=$$(cd $$d && ${MAKE} -V WRKDIR -V _DEPEND_DIRS); then \
+				${ECHO_MSG} "${PKGNAME}: \"$$d\" erroneous -- dependency list incomplete" >&2; \
+				continue;				\
+			fi;						\
+			state=0;					\
+			for child in $$children; do			\
+				case $$state in				\
+				0)					\
+					if [ -d $child ]; then 		\
+						${ECHO_CMD} $$d;	\
+					fi;				\
+					state=1;;			\
+				1)					\
+					case "$$checked $$l" in		\
+					$$child\ *|*\ $$child\ *|*\ $$child) \
+						continue;;		\
+					esac;				\
+					l="$$l $$child";;		\
+				esac;					\
+			done;						\
+		done;							\
+		L=$$l;							\
+	done
+
+CLEAN-DEPENDS-LIMITED= \
+	L="${_DEPEND_DIRS}";						\
+	checked="";							\
+	while [ -n "$$L" ]; do						\
+		l="";							\
+		for d in $$L; do					\
+			case $$checked in				\
+			$$d\ *|*\ $$d\ *|*\ $$d)			\
+				continue;;				\
+			esac;						\
+			checked="$$checked $$d";			\
+			if [ ! -d $$d ]; then				\
+				${ECHO_MSG} "${PKGNAME}: \"$$d\" non-existent -- dependency list incomplete" >&2; \
+				continue;				\
+			fi;						\
+			if ! children=$$(cd $$d && ${MAKE} -V WRKDIR -V _DEPEND_DIRS); then \
+				${ECHO_MSG} "${PKGNAME}: \"$$d\" erroneous -- dependency list incomplete" >&2; \
+				continue;				\
+			fi;						\
+			state=0;					\
+			for child in $$children; do			\
+				case $$state in				\
+				0)					\
+					if [ ! -d $child ]; then 	\
+						break;		\
+					fi;				\
+					state=1;			\
+					${ECHO_CMD} $$d;;		\
+				1)					\
+					case "$$checked $$l" in		\
+					$$child\ *|*\ $$child\ *|*\ $$child) \
+						continue;;		\
+					esac;				\
+					l="$$l $$child";;		\
+				esac;					\
+			done;						\
+		done;							\
+		L=$$l;							\
+	done
+
 .if !target(clean-depends)
 clean-depends:
-	@for dir in $$(${ALL-DEPENDS-LIST}); do \
+	@for dir in $$(${CLEAN-DEPENDS-FULL}); do \
+		(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes clean); \
+	done
+.endif
+
+.if !target(limited-clean-depends)
+limited-clean-depends:
+	@for dir in $$(${CLEAN-DEPENDS-LIMITED}); do \
 		(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes clean); \
 	done
 .endif
