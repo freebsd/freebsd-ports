@@ -7,7 +7,8 @@
 PORTNAME=	hyperestraier
 PORTVERSION=	0.9.2
 CATEGORIES=	textproc python
-MASTER_SITES=	http://www.liris.org/tech/program/hyperestraier-purepython/
+MASTER_SITES=	CHEESESHOP \
+		http://www.liris.org/tech/program/hyperestraier-purepython/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-python
 EXTRACT_SUFX=	.tgz
