@@ -1,0 +1,141 @@
+Index: camel/providers/local/camel-local-provider.c
+===================================================================
+--- camel/providers/local/camel-local-provider.c	(revision 7830)
++++ camel/providers/local/camel-local-provider.c	(working copy)
+@@ -56,7 +56,7 @@
+ 	N_("For storing local mail in MH-like mail directories."),
+ 	"mail",
+ 	CAMEL_PROVIDER_IS_SOURCE | CAMEL_PROVIDER_IS_STORAGE | CAMEL_PROVIDER_IS_LOCAL,
+-	CAMEL_URL_NEED_PATH | CAMEL_URL_PATH_IS_ABSOLUTE | CAMEL_URL_FRAGMENT_IS_PATH,
++	CAMEL_URL_NEED_PATH | CAMEL_URL_NEED_PATH_DIR | CAMEL_URL_PATH_IS_ABSOLUTE | CAMEL_URL_FRAGMENT_IS_PATH,
+ 	mh_conf_entries,
+ 	/* ... */
+ };
+@@ -74,7 +74,7 @@
+ 	N_("For retrieving (moving) local mail from standard mbox-formatted spools into folders managed by Evolution."),
+ 	"mail",
+ 	CAMEL_PROVIDER_IS_SOURCE | CAMEL_PROVIDER_IS_STORAGE | CAMEL_PROVIDER_IS_LOCAL,
+-	CAMEL_URL_NEED_PATH | CAMEL_URL_PATH_IS_ABSOLUTE | CAMEL_URL_FRAGMENT_IS_PATH,
++	CAMEL_URL_NEED_PATH | CAMEL_URL_NEED_PATH_DIR |CAMEL_URL_PATH_IS_ABSOLUTE | CAMEL_URL_FRAGMENT_IS_PATH,
+ 	mbox_conf_entries,
+ 	/* ... */
+ };
+@@ -96,7 +96,7 @@
+ 	N_("For storing local mail in maildir directories."),
+ 	"mail",
+ 	CAMEL_PROVIDER_IS_SOURCE | CAMEL_PROVIDER_IS_STORAGE | CAMEL_PROVIDER_IS_LOCAL,
+-	CAMEL_URL_NEED_PATH | CAMEL_URL_PATH_IS_ABSOLUTE | CAMEL_URL_FRAGMENT_IS_PATH,
++	CAMEL_URL_NEED_PATH | CAMEL_URL_NEED_PATH_DIR | CAMEL_URL_PATH_IS_ABSOLUTE | CAMEL_URL_FRAGMENT_IS_PATH,
+ 	maildir_conf_entries,
+ 	/* ... */
+ };
+@@ -110,9 +110,9 @@
+ 	{ CAMEL_PROVIDER_CONF_END }
+ };
+ 
+-static CamelProvider spool_provider = {
++static CamelProvider spool_file_provider = {
+ 	"spool",
+-	N_("Standard Unix mbox spool or directory"),
++	N_("Standard Unix mbox spool file"),
+ 	N_("For reading and storing local mail in external standard mbox spool files.\nMay also be used to read a tree of Elm, Pine, or Mutt style folders."),
+ 	"mail",
+ 	CAMEL_PROVIDER_IS_SOURCE | CAMEL_PROVIDER_IS_STORAGE,
+@@ -121,6 +121,17 @@
+ 	/* ... */
+ };
+ 
++static CamelProvider spool_directory_provider = {
++	"spooldir",
++	N_("Standard Unix mbox spool directory"),
++	N_("For reading and storing local mail in external standard mbox spool files.\nMay also be used to read a tree of Elm, Pine, or Mutt style folders."),
++	"mail",
++	CAMEL_PROVIDER_IS_SOURCE | CAMEL_PROVIDER_IS_STORAGE,
++	CAMEL_URL_NEED_PATH | CAMEL_URL_NEED_PATH_DIR | CAMEL_URL_PATH_IS_ABSOLUTE | CAMEL_URL_FRAGMENT_IS_PATH,
++	spool_conf_entries,
++	/* ... */
++};
++
+ #endif
+ 
+ /* build a canonical 'path' */
+@@ -234,13 +245,19 @@
+ 	camel_provider_register(&mbox_provider);
+ 
+ #ifndef G_OS_WIN32
+-	spool_conf_entries[0].value = path;  /* default path - same as mbox */
+-	spool_provider.object_types[CAMEL_PROVIDER_STORE] = camel_spool_store_get_type ();
+-	spool_provider.url_hash = local_url_hash;
+-	spool_provider.url_equal = local_url_equal;
+-	spool_provider.translation_domain = GETTEXT_PACKAGE;
+-	camel_provider_register(&spool_provider);
+-	
++	spool_conf_entries[0].value = path;  /* default path - same as mbox; it's for both file and directory */
++	spool_file_provider.object_types[CAMEL_PROVIDER_STORE] = camel_spool_store_get_type ();
++	spool_file_provider.url_hash = local_url_hash;
++	spool_file_provider.url_equal = local_url_equal;
++	spool_file_provider.translation_domain = GETTEXT_PACKAGE;
++	camel_provider_register(&spool_file_provider);
++
++	spool_directory_provider.object_types[CAMEL_PROVIDER_STORE] = camel_spool_store_get_type ();
++	spool_directory_provider.url_hash = local_url_hash;
++	spool_directory_provider.url_equal = local_url_equal;
++	spool_directory_provider.translation_domain = GETTEXT_PACKAGE;
++	camel_provider_register(&spool_directory_provider);
++
+ 	path = getenv("MAILDIR");
+ 	maildir_conf_entries[0].value = path ? path : "";  /* default path */
+ 	maildir_provider.object_types[CAMEL_PROVIDER_STORE] = camel_maildir_store_get_type ();
+Index: camel/providers/local/ChangeLog
+===================================================================
+--- camel/providers/local/ChangeLog	(revision 7830)
++++ camel/providers/local/ChangeLog	(working copy)
+@@ -1,3 +1,12 @@
++2007-06-18  Milan Crha  <mcrha@redhat.com>
++
++	** Fix for bug #352346
++
++	* camel-local-provider.c: (camel_provider_module_init):
++	New provider spool_file_provider with virtual protocol 'spooldir'
++	and set CAMEL_URL_NEED_PATH_DIR; registering this provider
++	as copy for spool files.
++
+ 2007-06-06  Jeffrey Stedfast  <fejj@novell.com>
+ 
+ 	Robustness fix while making sure the code would properly handle
+Index: camel/ChangeLog
+===================================================================
+--- camel/ChangeLog	(revision 7830)
++++ camel/ChangeLog	(working copy)
+@@ -1,3 +1,11 @@
++2007-06-18  Milan Crha  <mcrha@redhat.com>
++
++	** Fix for bug #352346
++
++	* camel-provider.h: Added new constants CAMEL_URL_PART_PATH_DIR and
++	CAMEL_URL_NEED_PATH_DIR; when CAMEL_URL_NEED_PATH_DIR is set, then
++	in editor dialog is choosing file, without it directory.
++
+ 2007-06-14  Philip Van Hoof  <pvanhoof@gnome.org>
+ 	
+ 	* camel-net-utils.c: Memory leak fix
+Index: camel/camel-provider.h
+===================================================================
+--- camel/camel-provider.h	(revision 7830)
++++ camel/camel-provider.h	(working copy)
+@@ -81,6 +81,7 @@
+ #define CAMEL_URL_PART_HOST	 (1 << 3)
+ #define CAMEL_URL_PART_PORT	 (1 << 4)
+ #define CAMEL_URL_PART_PATH	 (1 << 5)
++#define CAMEL_URL_PART_PATH_DIR  (1 << 6)
+ 
+ #define CAMEL_URL_PART_NEED	       8
+ #define CAMEL_URL_PART_HIDDEN	(CAMEL_URL_PART_NEED + 8)
+@@ -104,6 +105,7 @@
+ #define CAMEL_URL_NEED_HOST	 (CAMEL_URL_PART_HOST << CAMEL_URL_PART_NEED)
+ #define CAMEL_URL_NEED_PORT	 (CAMEL_URL_PART_PORT << CAMEL_URL_PART_NEED)
+ #define CAMEL_URL_NEED_PATH	 (CAMEL_URL_PART_PATH << CAMEL_URL_PART_NEED)
++#define CAMEL_URL_NEED_PATH_DIR  (CAMEL_URL_PART_PATH_DIR << CAMEL_URL_PART_NEED)
+ 
+ #define CAMEL_URL_HIDDEN_USER	 (CAMEL_URL_PART_USER << CAMEL_URL_PART_HIDDEN)
+ #define CAMEL_URL_HIDDEN_AUTH	 (CAMEL_URL_PART_AUTH << CAMEL_URL_PART_HIDDEN)
