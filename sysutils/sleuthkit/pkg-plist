@@ -25,6 +25,7 @@ bin/sigfind
 bin/sorter
 bin/srch_strings
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/XGetopt_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/api-doc/aff_8c.html
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/aff_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/aux__tools_8h-source.html
@@ -41,6 +42,7 @@ bin/srch_strings
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/dos_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/api-doc/ewf_8c.html
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/ewf_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/ext2fs_8c.html
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/ext2fs_8h-source.html
@@ -90,7 +92,9 @@ bin/srch_strings
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/ntfs_8c.html
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/ntfs_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/ntfs__dent_8c.html
+%%PORTDOCS%%%%DOCSDIR%%/api-doc/raw_8c.html
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/raw_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/api-doc/split_8c.html
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/split_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/structTSK__FS__DATA.html
 %%PORTDOCS%%%%DOCSDIR%%/api-doc/structTSK__FS__DATA__RUN.html

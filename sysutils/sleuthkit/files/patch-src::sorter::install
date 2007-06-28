@@ -14,7 +14,7 @@
  fi
  
 -echo "my \$SK_DIR=\"`cd ../..; pwd`/\";" >> $BIN_DIR$PROG;
-+echo "my \$SK_DIR=\"${LOCALBASE}\";" >> $BIN_DIR$PROG;
++echo "my \$SK_DIR=\"${PREFIX}\";" >> $BIN_DIR$PROG;
  
  # Print the current version
  echo "my \$VER = \"`cat ../../patchlevel`\";" >> $BIN_DIR$PROG;
