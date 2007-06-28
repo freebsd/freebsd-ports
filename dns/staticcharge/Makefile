@@ -20,13 +20,17 @@ BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 PLIST_FILES=	bin/staticcharge
 WRKSRC=		${WRKDIR}/staticcharge
 USE_GNOME=	gtk12
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 .ifdef DEBUG
 CONFIGURE_ARGS+=	--enable-debug
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -E 's,\(int\)([[:graph:]]+) = ,\1 = (char *),' \
+		${WRKSRC}/src/checkexe.c ${WRKSRC}/src/checkip.c \
+		${WRKSRC}/src/getfields.c
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
