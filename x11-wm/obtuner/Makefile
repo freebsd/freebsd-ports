@@ -17,6 +17,8 @@ COMMENT=	Configurator for Openbox with keybinding and mousebinding editor
 
 BUILD_DEPENDS=	openbox:${PORTSDIR}/x11-wm/openbox
 
+BROKEN=		does not compile with recent Openbox
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
