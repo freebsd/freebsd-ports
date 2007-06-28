@@ -7,7 +7,7 @@
 
 PORTNAME=		tcllib
 PORTVERSION=		1.9
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		devel tcl83 tcl84
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcllib
@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	tcllib
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A collection of utility modules for Tcl
 
-BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
-USE_TCL_BUILD=	yes
+USE_TCL_BUILD=	84+
 USE_TCL_RUN=	${USE_TCL_BUILD}
 
 USE_BZIP2=	yes
