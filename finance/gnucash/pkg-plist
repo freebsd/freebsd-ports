@@ -1019,7 +1019,7 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrmtry share/locale/es_NI
 @dirrm share/gnome/xml/gnucash/xsl
 @dirrm share/gnome/xml/gnucash
-@dirrm share/gnome/xml
+@dirrmtry share/gnome/xml
 @dirrm share/gnome/gnucash/xml/qsf
 @dirrm share/gnome/gnucash/xml
 @dirrm share/gnome/gnucash/ui
