@@ -4,6 +4,7 @@
 #
 
 BASH="${PKG_PREFIX-/usr/local}/bin/bash"
+RBASH="${PKG_PREFIX-/usr/local}/bin/rbash"
 SHELLS="${PKG_DESTDIR-}/etc/shells"
 
 case $2 in
@@ -16,6 +17,16 @@ DEINSTALL)
       rm "$TMPSHELLS"
     else
       echo "Not root, please remove $BASH from $SHELLS manually"
+    fi
+  fi
+  if grep -qs "^$RBASH\$" "$SHELLS"; then
+    if [ `id -u` -eq 0 ]; then
+      TMPSHELLS=`mktemp -t shells`
+      grep -v "^$RBASH\$" "$SHELLS" > "$TMPSHELLS"
+      cat "$TMPSHELLS" > "$SHELLS"
+      rm "$TMPSHELLS"
+    else
+      echo "Not root, please remove $RBASH from $SHELLS manually"
     fi
   fi
   ;;

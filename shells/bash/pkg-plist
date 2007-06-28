@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/bash
+bin/rbash
 bin/bashbug
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/bash.mo

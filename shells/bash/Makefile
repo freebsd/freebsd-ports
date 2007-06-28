@@ -9,7 +9,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		17
 PORTVERSION=		3.2.${PATCHLEVEL:S/^0//g}
-PORTREVISION=		1
+PORTREVISION?=		2
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/:faq
@@ -111,6 +111,7 @@ pre-install:
 		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	@cd ${PREFIX}/bin ; ${LN} -sf bash rbash
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DESTDIR}${DOCSDIR}
 .if !defined(WITH_INCLUDED_FAQ)

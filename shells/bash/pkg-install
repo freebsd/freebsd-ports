@@ -4,6 +4,7 @@
 #
 
 BASH="${PKG_PREFIX-/usr/local}/bin/bash"
+RBASH="${PKG_PREFIX-/usr/local}/bin/rbash"
 SHELLS="${PKG_DESTDIR-}/etc/shells"
 
 case $2 in
@@ -13,6 +14,13 @@ POST-INSTALL)
       echo "$BASH" >> "$SHELLS"
     else
       echo "Not root, please add $BASH to $SHELLS manually"
+    fi
+  fi
+  if [ -d "${SHELLS%/*}" ] && ! grep -qs "^$RBASH\$" "$SHELLS"; then
+    if [ `id -u` -eq 0 ]; then
+      echo "$RBASH" >> "$SHELLS"
+    else
+      echo "Not root, please add $RBASH to $SHELLS manually"
     fi
   fi
   ;;
