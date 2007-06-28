@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}-source${EXTRACT_SUFX}
@@ -44,7 +43,7 @@ PLIST_SUB+=	I386_ONLY="@comment "
 .if defined(WITH_SBCL) && exists(${LOCALBASE}/bin/sbcl)
 LISP_CMD=	""
 .else
-BOOT_VERSION=	${PORTVERSION}
+BOOT_VERSION=	1.0.6
 .if make(makesum)
 BOOT_ARCH_OS_LIST=	x86-freebsd x86-64-freebsd
 .elif ${ARCH} == "i386"
