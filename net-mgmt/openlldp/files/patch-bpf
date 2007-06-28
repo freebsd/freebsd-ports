@@ -1,0 +1,33 @@
+diff -Nbur openlldp-0.3alpha-orig/src/framehandlers/bpf/bpflib.c src/framehandlers/bpf/bpflib.c
+--- openlldp-0.3alpha-orig/src/framehandlers/bpf/bpflib.c	Sun Apr  1 03:10:55 2007
++++ src/framehandlers/bpf/bpflib.c	Thu Jun 28 09:09:15 2007
+@@ -217,7 +217,7 @@
+ 	
+     prog.bf_len = sizeof(insns) / sizeof(struct bpf_insn);
+     prog.bf_insns = insns;
+-    return ioctl(fd, BIOCSETF, (u_int)&prog);
++    return ioctl(fd, BIOCSETF, &prog);
+ }
+ 
+ /*int
+@@ -236,7 +236,7 @@
+ 	
+     prog.bf_len = sizeof(insns) / sizeof(struct bpf_insn);
+     prog.bf_insns = insns;
+-    return ioctl(fd, BIOCSETF, (u_int)&prog);
++    return ioctl(fd, BIOCSETF, &prog);
+ }*/
+ 
+ int bpf_see_sent(int fd, int value) {
+diff -Nbur openlldp-0.3alpha-orig/src/framehandlers/bpf/lldp_bpf_framer.c src/framehandlers/bpf/lldp_bpf_framer.c
+--- openlldp-0.3alpha-orig/src/framehandlers/bpf/lldp_bpf_framer.c	Sun Apr  1 06:03:26 2007
++++ src/framehandlers/bpf/lldp_bpf_framer.c	Thu Jun 28 09:09:45 2007
+@@ -101,7 +101,7 @@
+     (struct bpf_insn*) &progcodes
+   };
+ 
+-  if(ioctl(lldp_port->socket, BIOCSETF, (u_int)&prog) < 0) {
++  if(ioctl(lldp_port->socket, BIOCSETF, &prog) < 0) {
+     debug_printf(DEBUG_NORMAL, "[Error] (%d) : %s (%s:%d)\n", errno, strerror(errno), __FUNCTION__, __LINE__);
+     bpf_dispose(lldp_port->socket);
+     return XENOSOCK;
