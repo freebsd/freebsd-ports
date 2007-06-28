@@ -12,7 +12,7 @@ DEINSTALL)
   if grep -qs "^$BASH\$" "$SHELLS"; then
     if [ `id -u` -eq 0 ]; then
       TMPSHELLS=`mktemp -t shells`
-      grep -v "^$BASH\$" "$SHELLS" > "$TMPSHELLS"
+      grep -v "^$(echo "$BASH" | /usr/bin/sed -e 's|//|/|g')\$" "$SHELLS" > "$TMPSHELLS"
       cat "$TMPSHELLS" > "$SHELLS"
       rm "$TMPSHELLS"
     else
@@ -22,7 +22,7 @@ DEINSTALL)
   if grep -qs "^$RBASH\$" "$SHELLS"; then
     if [ `id -u` -eq 0 ]; then
       TMPSHELLS=`mktemp -t shells`
-      grep -v "^$RBASH\$" "$SHELLS" > "$TMPSHELLS"
+      grep -v "^$(echo "$RBASH" | /usr/bin/sed -e 's|//|/|g')\$" "$SHELLS" > "$TMPSHELLS"
       cat "$TMPSHELLS" > "$SHELLS"
       rm "$TMPSHELLS"
     else
