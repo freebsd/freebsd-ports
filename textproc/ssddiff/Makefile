@@ -8,9 +8,9 @@
 PORTNAME=	ssddiff
 PORTVERSION=	0.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://alioth.debian.org/download.php/1469/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/1469/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A diff application for semistructured data such as XML files
 
 USE_AUTOTOOLS=	automake:14
