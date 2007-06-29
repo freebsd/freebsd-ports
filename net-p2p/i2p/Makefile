@@ -7,7 +7,7 @@
 
 PORTNAME=	i2p
 PORTVERSION=	0.6.1.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p java security
 MASTER_SITES=	http://dev.i2p.net/i2p/:i2p \
 		${MASTER_SITE_SOURCEFORGE:S/$/:jetty/}
@@ -20,6 +20,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An anonymous network
 
+EXTRACT_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
