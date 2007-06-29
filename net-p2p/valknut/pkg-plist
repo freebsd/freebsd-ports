@@ -1,118 +1,118 @@
 bin/valknut
-share/valknut/COPYING
-share/valknut/icons/appl/default/back.xpm
-share/valknut/icons/appl/default/ball_green.xpm
-share/valknut/icons/appl/default/ball_red.xpm
-share/valknut/icons/appl/default/ball_yellow.xpm
-share/valknut/icons/appl/default/bookmark_add.xpm
-share/valknut/icons/appl/default/bookmark_folder.xpm
-share/valknut/icons/appl/default/configure.xpm
-share/valknut/icons/appl/default/configure_22x22.xpm
-share/valknut/icons/appl/default/connect_creating.xpm
-share/valknut/icons/appl/default/connect_no.xpm
-share/valknut/icons/appl/default/connected.xpm
-share/valknut/icons/appl/default/down.xpm
-share/valknut/icons/appl/default/download.xpm
-share/valknut/icons/appl/default/edit.xpm
-share/valknut/icons/appl/default/editadd.xpm
-share/valknut/icons/appl/default/editcopy.xpm
-share/valknut/icons/appl/default/editdelete.xpm
-share/valknut/icons/appl/default/exit.xpm
-share/valknut/icons/appl/default/fileclose.xpm
-share/valknut/icons/appl/default/filefind.xpm
-share/valknut/icons/appl/default/find.xpm
-share/valknut/icons/appl/default/find_22x22.xpm
-share/valknut/icons/appl/default/flag_bosnian.xpm
-share/valknut/icons/appl/default/flag_brazilian.xpm
-share/valknut/icons/appl/default/flag_czech.xpm
-share/valknut/icons/appl/default/flag_denmark.xpm
-share/valknut/icons/appl/default/flag_english.xpm
-share/valknut/icons/appl/default/flag_finland.xpm
-share/valknut/icons/appl/default/flag_france.xpm
-share/valknut/icons/appl/default/flag_germany.xpm
-share/valknut/icons/appl/default/flag_greek.xpm
-share/valknut/icons/appl/default/flag_hungary.xpm
-share/valknut/icons/appl/default/flag_iceland.xpm
-share/valknut/icons/appl/default/flag_italy.xpm
-share/valknut/icons/appl/default/flag_latvian.xpm
-share/valknut/icons/appl/default/flag_netherland.xpm
-share/valknut/icons/appl/default/flag_norway.xpm
-share/valknut/icons/appl/default/flag_poland.xpm
-share/valknut/icons/appl/default/flag_romania.xpm
-share/valknut/icons/appl/default/flag_russia.xpm
-share/valknut/icons/appl/default/flag_slovak.xpm
-share/valknut/icons/appl/default/flag_spain.xpm
-share/valknut/icons/appl/default/flag_sweden.xpm
-share/valknut/icons/appl/default/folder_blue.xpm
-share/valknut/icons/appl/default/folder_blue_open.xpm
-share/valknut/icons/appl/default/folder_red.xpm
-share/valknut/icons/appl/default/globe.xpm
-share/valknut/icons/appl/default/gv.xpm
-share/valknut/icons/appl/default/help.xpm
-share/valknut/icons/appl/default/icon_128x128.icns
-share/valknut/icons/appl/default/icon_128x128.png
-share/valknut/icons/appl/default/icon_16x16.png
-share/valknut/icons/appl/default/icon_22x22.png
-share/valknut/icons/appl/default/icon_22x22.xpm
-share/valknut/icons/appl/default/icon_24x24.png
-share/valknut/icons/appl/default/icon_32x32.png
-share/valknut/icons/appl/default/icon_48x48.png
-share/valknut/icons/appl/default/icon_64x64.png
-share/valknut/icons/appl/default/icon_operator.xpm
-share/valknut/icons/appl/default/icon_user.xpm
-share/valknut/icons/appl/default/icon_user_away.xpm
-share/valknut/icons/appl/default/info.xpm
-share/valknut/icons/appl/default/info_22x22.xpm
-share/valknut/icons/appl/default/message.xpm
-share/valknut/icons/appl/default/notconnected.xpm
-share/valknut/icons/appl/default/open.xpm
-share/valknut/icons/appl/default/player_pause.xpm
-share/valknut/icons/appl/default/player_play.xpm
-share/valknut/icons/appl/default/reload.xpm
-share/valknut/icons/appl/default/reload_22x22.xpm
-share/valknut/icons/appl/default/save.xpm
-share/valknut/icons/appl/default/server.xpm
-share/valknut/icons/appl/default/splash.xpm
-share/valknut/icons/appl/default/spy.xpm
-share/valknut/icons/appl/default/ssl_no.xpm
-share/valknut/icons/appl/default/ssl_yes.xpm
-share/valknut/icons/appl/default/transfer.xpm
-share/valknut/icons/appl/default/translate.xpm
-share/valknut/icons/appl/default/up.xpm
-share/valknut/icons/appl/default/view_sidetree.xpm
-share/valknut/icons/emot/default/emoticons.xml
-share/valknut/icons/emot/default/emoticons.xpm
-share/valknut/icons/user/default/usericons.xml
-share/valknut/icons/user/default/usericons.xpm
-share/valknut/translation/valknut.bs.qm
-share/valknut/translation/valknut.cs.qm
-share/valknut/translation/valknut.da.qm
-share/valknut/translation/valknut.de.qm
-share/valknut/translation/valknut.el.qm
-share/valknut/translation/valknut.en_GB.qm
-share/valknut/translation/valknut.es.qm
-share/valknut/translation/valknut.fi.qm
-share/valknut/translation/valknut.fr.qm
-share/valknut/translation/valknut.hu.qm
-share/valknut/translation/valknut.is.qm
-share/valknut/translation/valknut.it.qm
-share/valknut/translation/valknut.lv.qm
-share/valknut/translation/valknut.nb.qm
-share/valknut/translation/valknut.nl.qm
-share/valknut/translation/valknut.pl.qm
-share/valknut/translation/valknut.pt_br.qm
-share/valknut/translation/valknut.ro.qm
-share/valknut/translation/valknut.rus.qm
-share/valknut/translation/valknut.sk.qm
-share/valknut/translation/valknut.sv.qm
-@dirrm share/valknut/translation
-@dirrm share/valknut/sounds/default
-@dirrm share/valknut/sounds
-@dirrm share/valknut/icons/user/default
-@dirrm share/valknut/icons/user
-@dirrm share/valknut/icons/emot/default
-@dirrm share/valknut/icons/emot
-@dirrm share/valknut/icons/appl/default
-@dirrm share/valknut/icons/appl
-@dirrm share/valknut/icons
-@dirrm share/valknut
+%%DATADIR%%/COPYING
+%%DATADIR%%/icons/appl/default/back.xpm
+%%DATADIR%%/icons/appl/default/ball_green.xpm
+%%DATADIR%%/icons/appl/default/ball_red.xpm
+%%DATADIR%%/icons/appl/default/ball_yellow.xpm
+%%DATADIR%%/icons/appl/default/bookmark_add.xpm
+%%DATADIR%%/icons/appl/default/bookmark_folder.xpm
+%%DATADIR%%/icons/appl/default/configure.xpm
+%%DATADIR%%/icons/appl/default/configure_22x22.xpm
+%%DATADIR%%/icons/appl/default/connect_creating.xpm
+%%DATADIR%%/icons/appl/default/connect_no.xpm
+%%DATADIR%%/icons/appl/default/connected.xpm
+%%DATADIR%%/icons/appl/default/down.xpm
+%%DATADIR%%/icons/appl/default/download.xpm
+%%DATADIR%%/icons/appl/default/edit.xpm
+%%DATADIR%%/icons/appl/default/editadd.xpm
+%%DATADIR%%/icons/appl/default/editcopy.xpm
+%%DATADIR%%/icons/appl/default/editdelete.xpm
+%%DATADIR%%/icons/appl/default/exit.xpm
+%%DATADIR%%/icons/appl/default/fileclose.xpm
+%%DATADIR%%/icons/appl/default/filefind.xpm
+%%DATADIR%%/icons/appl/default/find.xpm
+%%DATADIR%%/icons/appl/default/find_22x22.xpm
+%%DATADIR%%/icons/appl/default/flag_bosnian.xpm
+%%DATADIR%%/icons/appl/default/flag_brazilian.xpm
+%%DATADIR%%/icons/appl/default/flag_czech.xpm
+%%DATADIR%%/icons/appl/default/flag_denmark.xpm
+%%DATADIR%%/icons/appl/default/flag_english.xpm
+%%DATADIR%%/icons/appl/default/flag_finland.xpm
+%%DATADIR%%/icons/appl/default/flag_france.xpm
+%%DATADIR%%/icons/appl/default/flag_germany.xpm
+%%DATADIR%%/icons/appl/default/flag_greek.xpm
+%%DATADIR%%/icons/appl/default/flag_hungary.xpm
+%%DATADIR%%/icons/appl/default/flag_iceland.xpm
+%%DATADIR%%/icons/appl/default/flag_italy.xpm
+%%DATADIR%%/icons/appl/default/flag_latvian.xpm
+%%DATADIR%%/icons/appl/default/flag_netherland.xpm
+%%DATADIR%%/icons/appl/default/flag_norway.xpm
+%%DATADIR%%/icons/appl/default/flag_poland.xpm
+%%DATADIR%%/icons/appl/default/flag_romania.xpm
+%%DATADIR%%/icons/appl/default/flag_russia.xpm
+%%DATADIR%%/icons/appl/default/flag_slovak.xpm
+%%DATADIR%%/icons/appl/default/flag_spain.xpm
+%%DATADIR%%/icons/appl/default/flag_sweden.xpm
+%%DATADIR%%/icons/appl/default/folder_blue.xpm
+%%DATADIR%%/icons/appl/default/folder_blue_open.xpm
+%%DATADIR%%/icons/appl/default/folder_red.xpm
+%%DATADIR%%/icons/appl/default/globe.xpm
+%%DATADIR%%/icons/appl/default/gv.xpm
+%%DATADIR%%/icons/appl/default/help.xpm
+%%DATADIR%%/icons/appl/default/icon_128x128.icns
+%%DATADIR%%/icons/appl/default/icon_128x128.png
+%%DATADIR%%/icons/appl/default/icon_16x16.png
+%%DATADIR%%/icons/appl/default/icon_22x22.png
+%%DATADIR%%/icons/appl/default/icon_22x22.xpm
+%%DATADIR%%/icons/appl/default/icon_24x24.png
+%%DATADIR%%/icons/appl/default/icon_32x32.png
+%%DATADIR%%/icons/appl/default/icon_48x48.png
+%%DATADIR%%/icons/appl/default/icon_64x64.png
+%%DATADIR%%/icons/appl/default/icon_operator.xpm
+%%DATADIR%%/icons/appl/default/icon_user.xpm
+%%DATADIR%%/icons/appl/default/icon_user_away.xpm
+%%DATADIR%%/icons/appl/default/info.xpm
+%%DATADIR%%/icons/appl/default/info_22x22.xpm
+%%DATADIR%%/icons/appl/default/message.xpm
+%%DATADIR%%/icons/appl/default/notconnected.xpm
+%%DATADIR%%/icons/appl/default/open.xpm
+%%DATADIR%%/icons/appl/default/player_pause.xpm
+%%DATADIR%%/icons/appl/default/player_play.xpm
+%%DATADIR%%/icons/appl/default/reload.xpm
+%%DATADIR%%/icons/appl/default/reload_22x22.xpm
+%%DATADIR%%/icons/appl/default/save.xpm
+%%DATADIR%%/icons/appl/default/server.xpm
+%%DATADIR%%/icons/appl/default/splash.xpm
+%%DATADIR%%/icons/appl/default/spy.xpm
+%%DATADIR%%/icons/appl/default/ssl_no.xpm
+%%DATADIR%%/icons/appl/default/ssl_yes.xpm
+%%DATADIR%%/icons/appl/default/transfer.xpm
+%%DATADIR%%/icons/appl/default/translate.xpm
+%%DATADIR%%/icons/appl/default/up.xpm
+%%DATADIR%%/icons/appl/default/view_sidetree.xpm
+%%DATADIR%%/icons/emot/default/emoticons.xml
+%%DATADIR%%/icons/emot/default/emoticons.xpm
+%%DATADIR%%/icons/user/default/usericons.xml
+%%DATADIR%%/icons/user/default/usericons.xpm
+%%DATADIR%%/translation/valknut.bs.qm
+%%DATADIR%%/translation/valknut.cs.qm
+%%DATADIR%%/translation/valknut.da.qm
+%%DATADIR%%/translation/valknut.de.qm
+%%DATADIR%%/translation/valknut.el.qm
+%%DATADIR%%/translation/valknut.en_GB.qm
+%%DATADIR%%/translation/valknut.es.qm
+%%DATADIR%%/translation/valknut.fi.qm
+%%DATADIR%%/translation/valknut.fr.qm
+%%DATADIR%%/translation/valknut.hu.qm
+%%DATADIR%%/translation/valknut.is.qm
+%%DATADIR%%/translation/valknut.it.qm
+%%DATADIR%%/translation/valknut.lv.qm
+%%DATADIR%%/translation/valknut.nb.qm
+%%DATADIR%%/translation/valknut.nl.qm
+%%DATADIR%%/translation/valknut.pl.qm
+%%DATADIR%%/translation/valknut.pt_br.qm
+%%DATADIR%%/translation/valknut.ro.qm
+%%DATADIR%%/translation/valknut.rus.qm
+%%DATADIR%%/translation/valknut.sk.qm
+%%DATADIR%%/translation/valknut.sv.qm
+@dirrm %%DATADIR%%/translation
+@dirrm %%DATADIR%%/sounds/default
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/icons/user/default
+@dirrm %%DATADIR%%/icons/user
+@dirrm %%DATADIR%%/icons/emot/default
+@dirrm %%DATADIR%%/icons/emot
+@dirrm %%DATADIR%%/icons/appl/default
+@dirrm %%DATADIR%%/icons/appl
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
