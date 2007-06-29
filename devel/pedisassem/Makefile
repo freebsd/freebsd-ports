@@ -17,11 +17,14 @@ COMMENT=	A disassembler for Win32 code (PE format)
 NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
+USE_DOS2UNIX=	*.[ch] readme.txt
 MAKEFILE=	${FILESDIR}/Makefile
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|`/usr/bin/printf '\r'`|| ; s|malloc\.h|stdlib.h|" \
-		${WRKSRC}/*.[ch] ${WRKSRC}/readme.txt
+	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib.h|' \
+		${WRKSRC}/*.[ch]
+	@${REINPLACE_CMD} -e 's|(int) c = |c = (unsigned char *)|' \
+		${WRKSRC}/decoder.c
 
 post-install:
 .if !defined(NOPORTDOCS)
