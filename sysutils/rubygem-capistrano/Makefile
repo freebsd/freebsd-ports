@@ -11,7 +11,7 @@ CATEGORIES=	sysutils rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	r.s.a.vandomburg@student.utwente.nl
+MAINTAINER=	r.s.a.vandomburg@nedforce.nl
 COMMENT=	A utility for executing commands in parallel on multiple machines
 
 BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
