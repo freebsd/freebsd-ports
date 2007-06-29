@@ -164,7 +164,7 @@ BROKEN=		does not compile
 .endif
 
 .if ${OSVERSION} < 600000
-CONFIGURE_ENV+=	MAKEINFO_CMD=${LOCALBASE}/bin/makeinfo
+CONFIGURE_ENV+=	MAKEINFO=${LOCALBASE}/bin/makeinfo
 BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 .endif
 
