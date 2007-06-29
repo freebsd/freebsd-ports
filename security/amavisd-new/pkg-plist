@@ -22,7 +22,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.performance
 %%PORTDOCS%%%%DOCSDIR%%/README.policy-on-notifications
 %%PORTDOCS%%%%DOCSDIR%%/README.postfix
-%%PORTDOCS%%%%DOCSDIR%%/README.postfix.old
 %%PORTDOCS%%%%DOCSDIR%%/README.postfix.html
 %%PORTDOCS%%%%DOCSDIR%%/README.protocol
 %%PORTDOCS%%%%DOCSDIR%%/README.sendmail
