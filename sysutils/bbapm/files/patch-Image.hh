@@ -16,7 +16,7 @@
 +  int allocated;
 +  unsigned char red, green, blue;
 +  unsigned long pixel;
-+  BColor::BColor() { allocated = False; }
++  BColor() { allocated = False; }
 +};
 +#endif
  
