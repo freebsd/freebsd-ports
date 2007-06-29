@@ -1,5 +1,5 @@
 --- src/cdo_pthread.c.orig	Wed Mar 22 22:04:18 2006
-+++ src/cdo_pthread.c	Sat Apr  7 01:07:02 2007
++++ src/cdo_pthread.c	Fri Jun 29 00:18:34 2007
 @@ -32,8 +32,10 @@
  {
  #if  defined  (HAVE_LIBPTHREAD)

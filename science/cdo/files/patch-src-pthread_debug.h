@@ -1,5 +1,5 @@
 --- src/pthread_debug.h.orig	Wed Feb 15 21:22:38 2006
-+++ src/pthread_debug.h	Sat Apr  7 01:13:25 2007
++++ src/pthread_debug.h	Fri Jun 29 00:18:34 2007
 @@ -15,8 +15,10 @@
  void Pthread_cond_wait(const char *caller, pthread_cond_t *cond, pthread_mutex_t *mutex);
  
