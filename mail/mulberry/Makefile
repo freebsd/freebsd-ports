@@ -21,7 +21,7 @@ COMMENT=	A scalable high-performance GUI internet Mail User Agent
 NO_WRKSUBDIR=	yes
 USE_LINUX=	yes
 USE_XLIB=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 .include <bsd.port.pre.mk>
 
