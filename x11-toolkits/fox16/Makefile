@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER?=	araujo@bsdmail.org
+MAINTAINER?=	araujo@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.6
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

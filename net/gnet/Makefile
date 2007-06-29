@@ -10,7 +10,7 @@ PORTVERSION=	1.1.9
 CATEGORIES=	net
 MASTER_SITES=	http://www.gnetlibrary.org/src/
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A simple network library built upon Glib
 
 USE_AUTOTOOLS=	libtool:15

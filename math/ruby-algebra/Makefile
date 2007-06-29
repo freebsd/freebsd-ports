@@ -12,7 +12,7 @@ MASTER_SITES=	http://blade.nagaokaut.ac.jp/~sinara/ruby/math/algebra/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A Ruby library for mathematical (algebraic) computations
 
 USE_RUBY=	yes

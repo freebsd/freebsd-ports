@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	voice_abc_di-${PORTVERSION}
 DIST_SUBDIR=	festival
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Mexican Spanish male voice for Festival speech synthesis system
 
 RUN_DEPENDS=	\

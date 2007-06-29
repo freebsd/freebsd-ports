@@ -12,7 +12,7 @@ CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A Mesh Generation Utility for use with the ELMER FEM package
 
 WANT_FORTRAN=yes #dummy but future use

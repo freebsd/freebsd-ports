@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.cfdrc.com/pub/FOX/ \
 		ftp://SunSITE.Informatik.RWTH-Aachen.DE/pub/Linux/fox/
 
-MAINTAINER?=	araujo@bsdmail.org
+MAINTAINER?=	araujo@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

@@ -14,7 +14,7 @@ MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
 		${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	GNU Generic Security Service Library
 
 LIB_DEPENDS=	shishi.0:${PORTSDIR}/security/shishi

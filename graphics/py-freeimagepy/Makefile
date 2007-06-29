@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FreeImagePy_w_dll_${PORTVERSION}
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A FreeImage library python wrapper
 
 LIB_DEPENDS=	freeimage:${PORTSDIR}/graphics/freeimage

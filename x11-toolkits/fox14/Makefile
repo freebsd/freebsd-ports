@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/
 
-MAINTAINER?=	araujo@bsdmail.org
+MAINTAINER?=	araujo@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.dworkin.nl/pub/dgd/archive/ \
 		http://dl.droso.net/ports/
 DISTNAME=	dgd-${PORTVERSION}
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Dworkin's Generic Driver + extra networking support + regexps
 
 NO_CDROM=	no distribution to corporate environment

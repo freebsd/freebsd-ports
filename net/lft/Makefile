@@ -10,7 +10,7 @@ PORTVERSION=	3.0b
 CATEGORIES=	net
 MASTER_SITES=	GENTOO/distfiles
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Layer 4 Traceroute program
 
 GNU_CONFIGURE=	yes

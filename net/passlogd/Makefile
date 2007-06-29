@@ -10,7 +10,7 @@ PORTVERSION=	0.1f
 CATEGORIES=	net
 MASTER_SITES=	http://www.morphine.com/void/
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Intercept and dump syslog remote log packets
 
 PLIST_FILES=	sbin/passlogd

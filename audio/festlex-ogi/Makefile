@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	OGIlexicon-2.2
 DIST_SUBDIR=	festival
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Composite pronunciation dictionary from ogi.edu for Festival
 
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \

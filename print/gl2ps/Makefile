@@ -12,7 +12,7 @@ CATEGORIES=	print graphics
 MASTER_SITES=	http://www.geuz.org/gl2ps/src/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A C library providing vector output for OpenGL application
 
 USE_GL=		yes

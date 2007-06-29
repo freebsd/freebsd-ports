@@ -13,7 +13,7 @@ MASTER_SITES=	http://ftp.twaren.net/local-distfiles/wpmu/ \
 		ftp://ftp.stu.edu.tw/pub/wpmu/
 DISTNAME=	wordpressmu-${PORTVERSION}
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Multi-user version of the famous WordPress blogging application
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

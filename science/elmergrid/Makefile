@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/ \
 		ftp://ftp.funet.fi/pub/sci/physics/elmer/src/old/
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A Mesh Manipulation Utility for use with the ELMER FEM package
 
 ALL_TARGET=

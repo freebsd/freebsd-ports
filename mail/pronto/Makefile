@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://muhri.net/pronto/
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A Mail Client for Gnome/Gtk written in Perl
 
 BUILD_DEPENDS=\

@@ -12,7 +12,7 @@ CATEGORIES=	devel java python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jepp
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Java Embedded Python
 
 HAS_CONFIGURE=	yes

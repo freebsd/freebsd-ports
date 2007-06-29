@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	print devel
 MASTER_SITES=	http://www.m17n.org/libotf/
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Library for handling OpenType fonts
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2

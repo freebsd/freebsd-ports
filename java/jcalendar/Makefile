@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	java misc
 MASTER_SITES=	http://www.toedter.com/download/
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Java Date Chooser
 
 USE_ZIP=	yes

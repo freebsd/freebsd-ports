@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://noc.postnuke.com/frs/download.php/1340/
 DISTNAME=	PostNuke-0.764
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An automated website package to distribute and manage content
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear

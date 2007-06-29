@@ -12,7 +12,7 @@ CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Graphical User Interface for the ELMER FEM package
 
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84	\

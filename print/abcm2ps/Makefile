@@ -9,7 +9,7 @@ PORTVERSION=	5.4.1
 CATEGORIES=	print audio
 MASTER_SITES=	http://moinejf.free.fr/
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Converts ABC to music sheet in PostScript format
 
 GNU_CONFIGURE=	yes
