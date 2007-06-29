@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7128fb45-2633-11dc-94da-0016179b2dd5">
+    <topic>vlc -- format string vulnerability and integer overflow</topic>
+    <affects>
+      <package>
+	<name>vcl</name>
+	<range><lt>0.8.6c</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>isecpartners reports:</p>
+	<blockquote cite="http://www.isecpartners.com/advisories/2007-001-vlc.txt">
+	  <p>VLC is vulnerable to a format string attack in the parsing
+	    of Vorbis comments in Ogg Vorbis and Ogg Theora files, CDDA
+	    data or SAP/SDP service discovery messages. Additionally,
+	    there are two errors in the handling of wav files, one a
+	    denial of service due to an uninitialized variable, and one
+	    integer overflow in sampling frequency calculations.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.isecpartners.com/advisories/2007-001-vlc.txt</url>
+    </references>
+    <dates>
+      <discovery>2007-06-05</discovery>
+      <entry>2007-06-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="32d38cbb-2632-11dc-94da-0016179b2dd5">
     <topic>flac123 -- stack overflow in comment parsing </topic>
     <affects>
