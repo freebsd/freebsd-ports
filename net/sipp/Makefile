@@ -7,6 +7,7 @@
 
 PORTNAME=	sipp
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	sipp
@@ -28,7 +29,7 @@ OPTIONS=	OPENSSL		"OpenSSL support (for digest auth and SIP over TLS)" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GSL)
-LIB_DEPENDS+=	gsl.9:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	gsl.10:${PORTSDIR}/math/gsl
 
 MAKE_ENV+=	EXTRACPPFLAGS=-DHAVE_GSL \
 		EXTRACFLAGS=-DHAVE_GSL \

@@ -7,7 +7,7 @@
 
 PORTNAME=	orpie
 PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	math
 MASTER_SITES=	http://www.eecs.umich.edu/~pelzlpj/orpie/
 
@@ -15,7 +15,7 @@ MAINTAINER=	dylan@dylex.net
 COMMENT=	A fullscreen RPN calculator for the console
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-LIB_DEPENDS=	gsl.9:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	gsl.10:${PORTSDIR}/math/gsl
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

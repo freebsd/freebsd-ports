@@ -7,6 +7,7 @@
 
 PORTNAME=	freefem++
 DISTVERSION=	2.17-1
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads		\
 		fftw3.4:${PORTSDIR}/math/fftw3				\
 		umfpack.1:${PORTSDIR}/math/suitesparse			\
 		arpack.1:${PORTSDIR}/math/arpack			\
-		gsl.9:${PORTSDIR}/math/gsl
+		gsl.10:${PORTSDIR}/math/gsl
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick		\
 		dvips:${PORTSDIR}/print/dvipsk-tetex			\
 		pdflatex:${PORTSDIR}/print/teTeX-base	\

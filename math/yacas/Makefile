@@ -8,13 +8,14 @@
 
 PORTNAME=	yacas
 PORTVERSION=	1.0.61
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://yacas.sourceforge.net/backups/
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Yet Another Computer Algebra System
 
-LIB_DEPENDS=	gsl.9:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	gsl.10:${PORTSDIR}/math/gsl
 
 USE_AUTOTOOLS=	libtool:15
 USE_PERL5_BUILD=	yes

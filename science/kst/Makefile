@@ -6,7 +6,7 @@
 
 PORTNAME=	kst
 PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE} \
 		http://omega.astro.utoronto.ca/${PORTNAME}/
@@ -16,7 +16,7 @@ MAINTAINER=	kay_lehmann@web.de
 COMMENT=	Data viewing program for KDE
 
 LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
-		gsl.9:${PORTSDIR}/math/gsl
+		gsl.10:${PORTSDIR}/math/gsl
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes

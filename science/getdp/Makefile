@@ -7,7 +7,7 @@
 
 PORTNAME=	getdp
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	http://www.geuz.org/getdp/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A rather general finite element solver using mixed finite elements
 
-LIB_DEPENDS=	gsl.9:${PORTSDIR}/math/gsl	\
+LIB_DEPENDS=	gsl.10:${PORTSDIR}/math/gsl	\
 		lapack.4:${PORTSDIR}/math/lapack
 
 WANT_FORTRAN=	yes #dummy but future use
