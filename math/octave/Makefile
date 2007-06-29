@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		http://neacm.fe.up.pt/pub/octave/bleeding-edge/ \
 		ftp://ftp.lublin.pl/site/octave/bleeding-edge/
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-level interactive language for numerical computations
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot

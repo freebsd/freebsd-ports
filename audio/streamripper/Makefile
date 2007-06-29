@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	streamripper
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Splits SHOUTcast stream into tracks
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad

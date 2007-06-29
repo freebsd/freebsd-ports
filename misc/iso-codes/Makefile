@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://freebsd.powered.net/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lists of the country, language and currency iso names
 
 BUILD_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml

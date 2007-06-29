@@ -12,7 +12,7 @@ CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.plasticbugs.com/blogimg/ \
 		http://freebsd.powered.net/distfiles/
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP fork resembling Adobe Photoshop
 
 LIB_DEPENDS=	wmf:${PORTSDIR}/graphics/libwmf \

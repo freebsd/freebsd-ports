@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/ \
 		http://distfiles.master.finkmirrors.net/
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theora video codec for the Ogg multimedia streaming system
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	apps/sound/recorders/:sun \
 		${PORTNAME}/:sf
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sun,sf
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to record and playback raw audio data
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

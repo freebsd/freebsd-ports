@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.outguess.org/ \
 		http://distfiles.master.finkmirrors.net/
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated tool for detecting steganographic content in JPEGs
 
 .if !defined(WITHOUT_X11)

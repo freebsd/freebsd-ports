@@ -11,7 +11,7 @@ PORTVERSION=	0.4.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec/0.4/
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flash Rendering Library
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \

@@ -13,8 +13,8 @@ MASTER_SITES=	http://www.exit1.org/dvdrip/dist/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Video/JRED
 
-MAINTAINER=	rainer.alves@gmail.com
-COMMENT=	This is dvd::rip, a Perl Gtk+ based dvd-ripper
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Perl Gtk+ based dvd-ripper
 
 RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		convert:${PORTSDIR}/graphics/ImageMagick \

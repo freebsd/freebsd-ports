@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	miwi
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${BINVER}-${ARCH}-export
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A well known commercial FTP daemon with a 30-day evaluation license
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

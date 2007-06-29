@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	5/source/SRPMS
 EXTRACT_SUFX=	-1.2.1.src.rpm
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility for removing files based on when they were last accessed
 
 EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio

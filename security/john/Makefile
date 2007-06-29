@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.openwall.com/john/f/ \
 		ftp://ftp.se.openwall.com/pub/projects/john/${PORTVERSION}/ \
 		http://distro.ibiblio.org/pub/linux/distributions/openwall/projects/john/${PORTVERSION}/
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Featureful Unix password cracker
 
 DATAFILES=	all.chr alnum.chr alpha.chr digits.chr lanman.chr password.lst
