@@ -7,13 +7,15 @@
 
 PORTNAME=	vncrypt
 PORTVERSION=	1.1
-CATEGORIES=	security
+CATEGORIES=	security kld
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Cryptographic disk driver for FreeBSD
+DEPRECATED=	not supported on any current version of FreeBSD
+EXPIRATION_DATE=	2007-08-29
 
 NO_PACKAGE=	"Depends on kernel"
 PLIST_SUB=	KMODDIR=${KMODDIR} DOCSDIR="share/doc/${PORTNAME}"
@@ -21,15 +23,6 @@ MAKE_ENV+=	BINDIR=${PREFIX}/sbin
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
-
-SUP_OS_VER=	450004
-.if ${OSVERSION} < ${SUP_OS_VER}
-BROKEN=		"OS versions prior to ${SUP_OS_VER} is not supported"
-.endif
-
-.if ${OSVERSION} >= 502112
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 .ifdef(IPSEC)
 #Compile for kernel with IPSEC support
