@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	r.s.a.vandomburg@student.utwente.nl
+MAINTAINER=	r.s.a.vandomburg@nedforce.nl
 COMMENT=	Dependency-injection/inversion-of-control container
 
 FETCH_CMD=	/usr/bin/fetch -Rr
