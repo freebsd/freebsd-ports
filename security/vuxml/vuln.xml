@@ -38,7 +38,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>vlc -- format string vulnerability and integer overflow</topic>
     <affects>
       <package>
-	<name>vcl</name>
+	<name>vlc</name>
 	<range><lt>0.8.6c</lt></range>
       </package>
     </affects>
