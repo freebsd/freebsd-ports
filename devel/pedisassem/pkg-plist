@@ -1,3 +1,3 @@
 bin/pedisassem
-%%PORTDOCS%%share/doc/pedisassem/readme.txt
-%%PORTDOCS%%@dirrm share/doc/pedisassem
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
