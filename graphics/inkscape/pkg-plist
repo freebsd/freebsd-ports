@@ -243,6 +243,7 @@ share/applications/inkscape.desktop
 %%DATADIR%%/templates/default.lt.svg
 %%DATADIR%%/templates/default.pl.svg
 %%DATADIR%%/templates/default.pt_BR.svg
+%%DATADIR%%/templates/default.sk.svg
 %%DATADIR%%/templates/default.svg
 %%DATADIR%%/templates/default_mm.svg
 %%DATADIR%%/templates/default_pt.svg
@@ -370,6 +371,7 @@ share/locale/hr/LC_MESSAGES/inkscape.mo
 share/locale/hu/LC_MESSAGES/inkscape.mo
 share/locale/it/LC_MESSAGES/inkscape.mo
 share/locale/ja/LC_MESSAGES/inkscape.mo
+share/locale/km/LC_MESSAGES/inkscape.mo
 share/locale/ko/LC_MESSAGES/inkscape.mo
 share/locale/lt/LC_MESSAGES/inkscape.mo
 share/locale/mk/LC_MESSAGES/inkscape.mo
@@ -397,7 +399,9 @@ share/locale/vi/LC_MESSAGES/inkscape.mo
 share/locale/zh_CN/LC_MESSAGES/inkscape.mo
 share/locale/zh_TW/LC_MESSAGES/inkscape.mo
 share/pixmaps/inkscape.png
-@dirrmtry share/locale/en_US@piglatin/LC_MESSAGES
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/en_US@piglatin
 @dirrmtry share/locale/en_US@piglatin
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/tutorials
