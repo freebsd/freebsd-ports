@@ -20,7 +20,7 @@ libdata/pkgconfig/dbus-glib-1.pc
 %%DOCSDIR%%/dbus-glib-DBusGMessage.html
 %%DOCSDIR%%/dbus-glib-DBusGMethod.html
 %%DOCSDIR%%/dbus-glib-DBusGProxy.html
-%%DOCSDIR%%/dbus-glib-GType-utility-functions.html
+%%DOCSDIR%%/dbus-glib-Specializable-GType-System.html
 %%DOCSDIR%%/dbus-glib.devhelp
 %%DOCSDIR%%/dbus-glib.devhelp2
 %%DOCSDIR%%/home.png
