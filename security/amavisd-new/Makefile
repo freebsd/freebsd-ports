@@ -7,7 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -144,7 +144,12 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/altermime:${PORTSDIR}/mail/altermime
 RUN_DEPENDS+=	file>=4.21:${PORTSDIR}/sysutils/file
 .endif
 
+# archviers/rar is a 32-bit binary port, we don't want the install to fail
+# at that port, therefore we will block instantly here if the platform does
+# not suit rar.
+
 .if defined(WITH_RAR)
+IA32_BINARY_PORT=	yes
 RUN_DEPENDS+=	${LOCALBASE}/bin/rar:${PORTSDIR}/archivers/rar
 .endif
 
