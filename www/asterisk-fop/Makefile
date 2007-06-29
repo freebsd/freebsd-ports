@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.asternic.org/files/
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Flash Operator Panel for the Asterisk PBX
 
 NO_BUILD=	yes

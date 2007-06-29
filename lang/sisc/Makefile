@@ -12,7 +12,7 @@ CATEGORIES=	lang scheme java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An extensible Java-based Scheme interpreter
 
 USE_JAVA=	yes

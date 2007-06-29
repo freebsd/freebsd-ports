@@ -12,7 +12,7 @@ MASTER_SITES=	http://muuz.deadbbs.com/FreeBSD/xenscript/
 DISTNAME=	enscript_fonts-0.81
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	More than 120 free- and share-ware fonts to extend enscript-1.5
 
 NO_WRKSUBDIR=	YES

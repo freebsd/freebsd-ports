@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.boutell.com/mapedit/http/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A WWW authoring tool to create clickable maps
 
 RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11

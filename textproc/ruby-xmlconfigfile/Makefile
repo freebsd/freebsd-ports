@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	xml-configfile-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A Ruby module for easy handling of XML configuration files
 
 USE_RUBY=	yes

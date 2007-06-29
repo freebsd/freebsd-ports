@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://networkx.lanl.gov/download/
 DISTNAME=	networkx-${PORTVERSION}
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Python package for studying network structure, dynamics, and function
 
 BUILD_DEPENDS=	${PYNUMERIC} \

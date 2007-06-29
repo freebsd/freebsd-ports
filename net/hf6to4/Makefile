@@ -14,7 +14,7 @@ DISTFILES=	hf6to4\?rev=1.3\&content-type=text%2fplain \
 		hf6to4.conf\?rev=1.2\&content-type=text%2fplain
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Enables 6to4 IPv6 automatic tunnels
 
 NO_BUILD=	yes

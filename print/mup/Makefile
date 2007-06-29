@@ -12,7 +12,7 @@ CATEGORIES=	print audio
 MASTER_SITES=	ftp://ftp.arkkra.com/pub/unix/
 DISTFILES=	mup${PORTVERSION:S/.//}src.tar.gz
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A shareware program for typesetting music
 
 USE_XLIB=	yes

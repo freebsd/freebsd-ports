@@ -10,7 +10,7 @@ PORTVERSION=	0.3.18
 CATEGORIES=	devel
 MASTER_SITES=	http://www.balabit.com/downloads/libol/0.3/
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Library needed by syslog-ng
 
 USE_AUTOTOOLS=	libtool:15

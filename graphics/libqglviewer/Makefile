@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://artis.imag.fr/Members/Gilles.Debunne/QGLViewer/src/
 DISTNAME=	libQGLViewer-${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A C++ library helps development of 3D applications
 
 BUILD_DEPENDS=	${QMAKE}:${PORTSDIR}/devel/qmake

@@ -10,7 +10,7 @@ PORTVERSION=	2.1
 CATEGORIES=	security perl5
 MASTER_SITES=	http://www.wiretrip.net/rfp/${PORTNAME}/
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Perl module to create HTTP test scripts
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-${PORTVERSION}

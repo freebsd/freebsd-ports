@@ -11,7 +11,7 @@ CATEGORIES+=	audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nap
 
-MAINTAINER?=	araujo@bsdmail.org
+MAINTAINER?=	araujo@FreeBSD.org
 COMMENT?=	An MP3 sharing, search, and chat client for the OpenNAP network
 
 CONFLICTS?=	ru-nap-*

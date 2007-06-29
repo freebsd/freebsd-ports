@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.urbanophile.com/pub/arenn/software/sources/
 PKGNAMEPREFIX=	java-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Java version of GNU getopt family functions
 
 USE_JAVA=	yes

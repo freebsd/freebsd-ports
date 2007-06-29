@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A graphical program for editing sound files
 
 USE_BZIP2=	yes

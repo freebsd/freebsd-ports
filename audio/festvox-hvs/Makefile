@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	voice_hvs_di-2.1
 DIST_SUBDIR=	festival
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Mexican Spanish female voice for Festival
 
 RESTRICTED=	no-commercial-use

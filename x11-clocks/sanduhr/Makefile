@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://seehuhn.de/data/
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An alarm clock for GNOME desktop designed as a sand-glass
 
 USE_X_PREFIX=	yes
