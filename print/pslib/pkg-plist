@@ -4,7 +4,7 @@ include/libps/psversion.h
 lib/libps.a
 lib/libps.la
 lib/libps.so
-lib/libps.so.2
+lib/libps.so.3
 libdata/pkgconfig/libps.pc
 %%NLS%%share/locale/de/LC_MESSAGES/pslib.mo
 %%DATADIR%%/draft.ps
