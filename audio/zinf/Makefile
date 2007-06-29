@@ -48,7 +48,6 @@ CPPFLAGS+=	"-D_M_ALPHA"
 .if ${HAVE_GNOME:Mesound}!="" || defined(WITH_ALL_PLUGINS)
 USE_GNOME+=	esound
 PLIST_SUB+=	ESOUND=""
-PKGNAMESUFFIX=	-esound
 .else
 CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESOUND="@comment "
@@ -83,6 +82,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|Player::||' ${WRKSRC}/base/include/player.h
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/sdr/plugins
