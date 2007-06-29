@@ -18,26 +18,20 @@ COMMENT=	X11 port of WinPopup
 RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba3
 
 WRKSRC=		${WRKDIR}/LinPopUp-${PORTVERSION}/src
-ALL_TARGET=
-MAN1=		linpopup.1 LinPopUp.1
 
 USE_GNOME=	gtk12
-USE_X_PREFIX=	yes
+ALL_TARGET=	LinPopUp
+
+MLINKS=		LinPopUp.1 linpopup.1
+MAN1=		LinPopUp.1
+
+SUB_FILES=	pkg-message
 
 .if defined(WITH_SAMBA3)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-samba3
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
-post-patch:
-	${REINPLACE_CMD} -e "s#/doc/#/share/doc/#" ${WRKSRC}/Makefile
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

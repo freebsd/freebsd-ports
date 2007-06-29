@@ -1,5 +1,14 @@
---- send.c.orig	Mon Nov 20 16:07:54 2000
-+++ send.c	Mon Nov 20 16:18:43 2000
+--- send.c.orig	Tue Mar 14 11:45:05 2000
++++ send.c	Sun Jun 24 00:06:25 2007
+@@ -70,7 +70,7 @@
+ 
+ 
+ 
+-  (char *) header_end = (char *) (head_text + hlen);
++  header_end = (gchar *) (head_text + hlen);
+ 
+ 
+   /* -- destroy erroneous embedded single-quotes. -- */
 @@ -161,7 +161,7 @@
    gchar message_text[2048];
    guint message_length;
