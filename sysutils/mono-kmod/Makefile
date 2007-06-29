@@ -7,7 +7,7 @@
 
 PORTNAME=	mono-kmod
 PORTVERSION=	20070416
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils kld
 MASTER_SITES=	http://www.alpha-tierchen.de/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	bkoenig@cs.tu-berlin.de
