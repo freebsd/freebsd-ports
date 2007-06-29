@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	virtualmin
-PORTVERSION=	2.611
+PORTVERSION=	3.42
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	webadmin
-DISTNAME=	virtual-server-${PORTVERSION}
+MASTER_SITES=	http://download.webmin.com/download/virtualmin/
+DISTNAME=	virtual-server-${PORTVERSION}.gpl
 EXTRACT_SUFX=	.wbm.gz
 
 MAINTAINER=	ports@FreeBSD.org
