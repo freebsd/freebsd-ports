@@ -3,8 +3,8 @@
 # $FreeBSD$
 #
 
-BASH="${PKG_PREFIX-/usr/local}/bin/bash"
-RBASH="${PKG_PREFIX-/usr/local}/bin/rbash"
+BASH="$(echo ${PKG_PREFIX-/usr/local}/bin/bash | /usr/bin/sed -e 's|//|/|g')"
+RBASH="$(echo ${PKG_PREFIX-/usr/local}/bin/rbash | /usr/bin/sed -e 's|//|/|g')"
 SHELLS="${PKG_DESTDIR-}/etc/shells"
 
 case $2 in
@@ -12,7 +12,7 @@ DEINSTALL)
   if grep -qs "^$BASH\$" "$SHELLS"; then
     if [ `id -u` -eq 0 ]; then
       TMPSHELLS=`mktemp -t shells`
-      grep -v "^$(echo "$BASH" | /usr/bin/sed -e 's|//|/|g')\$" "$SHELLS" > "$TMPSHELLS"
+      grep -v "^$BASH\$" "$SHELLS" > "$TMPSHELLS"
       cat "$TMPSHELLS" > "$SHELLS"
       rm "$TMPSHELLS"
     else
@@ -22,7 +22,7 @@ DEINSTALL)
   if grep -qs "^$RBASH\$" "$SHELLS"; then
     if [ `id -u` -eq 0 ]; then
       TMPSHELLS=`mktemp -t shells`
-      grep -v "^$(echo "$RBASH" | /usr/bin/sed -e 's|//|/|g')\$" "$SHELLS" > "$TMPSHELLS"
+      grep -v "^$RBASH\$" "$SHELLS" > "$TMPSHELLS"
       cat "$TMPSHELLS" > "$SHELLS"
       rm "$TMPSHELLS"
     else
