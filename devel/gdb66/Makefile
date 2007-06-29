@@ -77,6 +77,7 @@ post-patch:
 		${WRKSRC}/gdb/version.in
 	@${REINPLACE_CMD} -e 's/^READLINE/#READLINE/' \
 		-e 's/^readline/#readline/' \
+		-e 's,^LIBICONV =.*,LIBICONV=-L${LOCALBASE}/lib -liconv,' \
 		${WRKSRC}/gdb/Makefile.in
 	${ECHO} 'READLINE = -lreadline' >> ${WRKSRC}/gdb/Makefile.in
 
