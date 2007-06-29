@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd %%PREFIX%%/share/mucommander
+JAVA_VERSION="%%JAVA_VERSION%%" %%LOCALBASE%%/bin/java -DGNOME_DESKTOP_SESSION_ID=$GNOME_DESKTOP_SESSION_ID -DKDE_FULL_SESSION=$KDE_FULL_SESSION \
+				-jar %%PREFIX%%/share/mucommander/mucommander.jar $@

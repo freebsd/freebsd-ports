@@ -23,6 +23,7 @@
     SUBDIR += jaffm
     SUBDIR += krusader
     SUBDIR += mtoolsfm
+    SUBDIR += mucommander
     SUBDIR += nautilus
     SUBDIR += pcmanfm
     SUBDIR += py-nautilus
