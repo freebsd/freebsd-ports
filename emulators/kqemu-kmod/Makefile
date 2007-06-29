@@ -7,7 +7,7 @@
 
 PORTNAME=	kqemu
 PORTVERSION=	1.3.0.p11
-CATEGORIES=	emulators
+CATEGORIES=	emulators kld
 MASTER_SITES=	http://qemu.org/ \
 		http://fabrice.bellard.free.fr/qemu/ \
 		${MASTER_SITE_LOCAL}
