@@ -13,6 +13,8 @@ DISTNAME=	ixj_freebsd-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for Quicknet Internet PhoneJack and LineJack. Used by OpenH323
+DEPRECATED=	does not work on any supported FreeBSD version
+EXPIRATION_DATE=	2007-07-29
 
 ONLY_FOR_ARCHS=	i386
 
