@@ -7773,6 +7773,7 @@ mtrxmath	ports/math/mtrxmath
 mtx		ports/misc/mtx
 mtxorbd		ports/sysutils/mtxorbd
 mu-conference	ports/net-im/mu-conference
+mucommander	ports/x11-fm/mucommander
 muddleftpd	ports/ftp/muddleftpd
 mudix		ports/net/mudix
 mudmagic	ports/games/mudmagic
