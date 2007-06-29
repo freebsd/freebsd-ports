@@ -5247,7 +5247,7 @@ CLEAN-DEPENDS-FULL= \
 			for child in $$children; do			\
 				case $$state in				\
 				0)					\
-					if [ -d $child ]; then 		\
+					if [ -d $$child ]; then		\
 						${ECHO_CMD} $$d;	\
 					fi;				\
 					state=1;;			\
@@ -5286,7 +5286,7 @@ CLEAN-DEPENDS-LIMITED= \
 			for child in $$children; do			\
 				case $$state in				\
 				0)					\
-					if [ ! -d $child ]; then 	\
+					if [ ! -d $$child ]; then	\
 						break;		\
 					fi;				\
 					state=1;			\
