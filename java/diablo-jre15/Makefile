@@ -46,7 +46,7 @@ INSTALL_DIR=	${PREFIX}/${PKGNAMEPREFIX}jre${JRE_VERSION}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700000
-LIB_DEPENDS=	c.6:${PORTSDIR}/misc/compat6x
+LIB_DEPENDS=	z.3:${PORTSDIR}/misc/compat6x
 JRE_OSREL=	freebsd6
 .elif ${OSVERSION} >= 600000
 JRE_OSREL=	freebsd6
