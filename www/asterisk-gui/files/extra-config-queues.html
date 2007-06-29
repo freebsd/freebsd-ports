@@ -1,6 +1,6 @@
---- config/queues.html.orig	Wed Apr  4 12:50:22 2007
-+++ config/queues.html	Wed Apr  4 12:50:42 2007
-@@ -254,7 +254,7 @@
+--- config/queues.html.orig	Thu Jun 28 14:58:19 2007
++++ config/queues.html	Thu Jun 28 14:59:20 2007
+@@ -171,7 +171,7 @@
  	for(k=0; k<$('agents').length; k++){
  		selectedagent = "selectedagent" + k;
  		if( $(selectedagent).checked ){
@@ -9,7 +9,7 @@
  			p = p+1;
  		}
  	}
-@@ -398,7 +398,7 @@
+@@ -338,7 +338,7 @@
  		queuenames[j] = t.name;
  			return t.name + " -- Queue '" + t.fieldbyname['fullname'] + "'";
  	}else if(InArray(extensions_conf_qs, t.name)) {  // if is a subcategory 
@@ -18,19 +18,12 @@
  		if(t.names[x] == 'member' && tmp.length > 1){
  			queueagents [j] [k] = tmp[1];
  			k = k+1;
-@@ -512,7 +512,7 @@
+@@ -435,7 +435,7 @@
+ 							</select>
  						</td>
  					</tr>
- 					<tr onmouseover="show_tooltip('en', 'queues', 3);" >
--						<td valign='top' class="field_text">Agents:</td>
-+						<td valign='top' class="field_text">Users:</td>
+-					<tr>	<td valign='top' class="field_text" tip="en,queues,3">Agents:</td>
++					<tr>	<td valign='top' class="field_text" tip="en,queues,3">Users:</td>
  						<td><select multiple='true' id='agents' style='display:none;'></select>
  							<div id="testmulti" style='border:1px solid; font-size: 8pt; height:75px; width: 200px;overflow :auto;'></div>
  						</td>
-@@ -580,4 +580,4 @@
- 	</tr>
- </table>
- </div>
--</body>
-\ No newline at end of file
-+</body>

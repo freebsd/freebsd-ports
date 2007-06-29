@@ -6,6 +6,7 @@ share/asterisk/static-http/config/graphs/graph_cpu.svgz
 share/asterisk/static-http/config/images/1.gif
 share/asterisk/static-http/config/images/accordion-icon.gif
 share/asterisk/static-http/config/images/adv-v.gif
+share/asterisk/static-http/config/images/bandwidth.gif
 share/asterisk/static-http/config/images/digiumlogo.gif
 share/asterisk/static-http/config/images/dots.gif
 share/asterisk/static-http/config/images/favicon.ico
@@ -23,7 +24,6 @@ share/asterisk/static-http/config/scripts/lang.js
 share/asterisk/static-http/config/scripts/prototype.js
 share/asterisk/static-http/config/scripts/rico.js
 share/asterisk/static-http/config/scripts/tooltip.js
-share/asterisk/static-http/config/stylesheets/rico.css
 share/asterisk/static-http/config/stylesheets/schwing.css
 share/asterisk/static-http/config/setup/1.html
 share/asterisk/static-http/config/setup/10.html
@@ -41,6 +41,7 @@ share/asterisk/static-http/config/setup/template.html
 share/asterisk/static-http/config/backup.html
 share/asterisk/static-http/config/cfgbasic.html
 share/asterisk/static-http/config/cli.html
+share/asterisk/static-http/config/callparking.html
 share/asterisk/static-http/config/emailsettings.html
 share/asterisk/static-http/config/feditor.html
 share/asterisk/static-http/config/guialert.html

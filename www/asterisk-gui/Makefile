@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	asterisk-gui
-PORTVERSION=	0.0.1r20070528
+PORTVERSION=	0.0.1r20070627
 CATEGORIES=	www
 MASTER_SITES=	http://asterisk-bsd.googlecode.com/files/
-DISTNAME=	${PORTNAME}-snap-2007-05-28
+DISTNAME=	${PORTNAME}-snap-2007-06-27
 
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	An asterisk ajax web manager
