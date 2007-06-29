@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bcfg2
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/bcfg/ \
 		http://mirror.opensysadmin.com/bcfg/
@@ -16,7 +16,7 @@ MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	A configuration management system written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/${PYLXML_EGG}:${PORTSDIR}/devel/py-lxml
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/${PYCHEETAH_EGG}:${PORTSDIR}/devel/py-cheetah
+RUN_DEPENDS+=	cheetah:${PORTSDIR}/devel/py-cheetah
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gamin.py:${PORTSDIR}/devel/py-gamin
 
 USE_PYTHON=		yes
@@ -42,6 +42,5 @@ post-install:
 .include <bsd.port.pre.mk>
 
 PYLXML_EGG!=	${MAKE} -f ${PORTSDIR}/devel/py-lxml/Makefile -V PYLXML_EGG
-PYCHEETAH_EGG!=	${MAKE} -f ${PORTSDIR}/devel/py-cheetah/Makefile -V PYCHEETAH_EGG
 
 .include <bsd.port.post.mk>

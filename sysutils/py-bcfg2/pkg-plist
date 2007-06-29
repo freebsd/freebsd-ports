@@ -183,6 +183,9 @@ bin/bcfg2-query
 %%PYTHON_SITELIBDIR%%/Bcfg2/Client/Tools/Encap.py
 %%PYTHON_SITELIBDIR%%/Bcfg2/Client/Tools/Encap.pyc
 %%PYTHON_SITELIBDIR%%/Bcfg2/Client/Tools/Encap.pyo
+%%PYTHON_SITELIBDIR%%/Bcfg2/Client/Tools/FreeBSDPackage.py
+%%PYTHON_SITELIBDIR%%/Bcfg2/Client/Tools/FreeBSDPackage.pyc
+%%PYTHON_SITELIBDIR%%/Bcfg2/Client/Tools/FreeBSDPackage.pyo
 %%PYTHON_SITELIBDIR%%/Bcfg2/Client/Tools/Portage.py
 %%PYTHON_SITELIBDIR%%/Bcfg2/Client/Tools/Portage.pyc
 %%PYTHON_SITELIBDIR%%/Bcfg2/Client/Tools/Portage.pyo
