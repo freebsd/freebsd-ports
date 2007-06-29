@@ -52,8 +52,11 @@ include/dclib/cutils.h
 include/dclib/dclib.h
 include/dclib/dcobject.h
 include/dclib/dcos.h
-include/dclib/hash/tiger.h
-include/dclib/hash/tigertree.h
+include/dclib/hash/Encoder.h
+include/dclib/hash/HashValue.h
+include/dclib/hash/MerkleTree.h
+include/dclib/hash/TigerHash.h
+include/dclib/hash/compat.h
 lib/libdc.a
 lib/libdc.la
 lib/libdc.so

@@ -1,4 +1,4 @@
-This is a library for the Direct Connect system. It is used by the
-dcgui (net/dcgui) port.
+This is a library for the Direct Connect system. It is used by
+valknut.
 
-WWW: http://dcgui.berlios.de/
+WWW: http://wxdcgui.sourceforge.net/
