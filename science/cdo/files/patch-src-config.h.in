@@ -1,5 +1,5 @@
---- src/config.h.in.orig	Tue Dec 19 19:07:07 2006
-+++ src/config.h.in	Sat Apr  7 04:00:39 2007
+--- src/config.h.in.orig	Wed Apr 18 16:24:45 2007
++++ src/config.h.in	Fri Jun 29 00:18:34 2007
 @@ -107,3 +107,7 @@
  
  /* Define for large files, on AIX-style hosts. */
