@@ -29,4 +29,8 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 ONLY_FOR_ARCHS=	i386
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,^static int terminal,int terminal,' \
+		${WRKSRC}/nfl.c
+
 .include <bsd.port.mk>
