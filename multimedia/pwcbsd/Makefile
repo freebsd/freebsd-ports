@@ -8,7 +8,7 @@
 PORTNAME=	pwcbsd
 PORTVERSION=	1.3.1
 PORTREVISION=   2
-CATEGORIES=	multimedia sysutils
+CATEGORIES=	multimedia sysutils kld
 MASTER_SITES=	http://raaf.atspace.org/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi

@@ -7,7 +7,7 @@
 
 PORTNAME=	pvrxxx
 PORTVERSION=	20060822
-CATEGORIES=	multimedia
+CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTFILES=	${CXMSHAR} ${PVRTOOLS}.tar.gz hcwPVRP2.sys HcwMakoA.ROM pvrxxx_gpl.tgz
 IGNOREFILES=	hcwPVRP2.sys	# Varies from month to month

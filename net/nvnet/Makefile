@@ -7,7 +7,7 @@
 
 PORTNAME=	nvnet
 PORTVERSION=	1.0.0301
-CATEGORIES=	net
+CATEGORIES=	net kld
 MASTER_SITES=	http://www.onthenet.com.au/~q/nvnet/
 DISTFILES=	${PORTNAME}-src-${DISTVERSION}${EXTRACT_SUFX}
 

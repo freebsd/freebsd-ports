@@ -7,7 +7,7 @@
 
 PORTNAME=	linux-js
 PORTVERSION=	2.2
-CATEGORIES=	devel emulators
+CATEGORIES=	devel emulators kld
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jylefort
 

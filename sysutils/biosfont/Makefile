@@ -7,7 +7,7 @@
 
 PORTNAME=	biosfont
 PORTVERSION=	1.1
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils kld
 MASTER_SITES=	http://home.tiscali.nl/rladan/biosfont/
 
 MAINTAINER=	r.c.ladan@gmail.com

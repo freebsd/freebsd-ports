@@ -8,7 +8,7 @@
 PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
 #PORTREVISION?=	0
-CATEGORIES=	emulators
+CATEGORIES=	emulators kld
 MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMESUFFIX?=	-guestd
 DISTNAME=	vmware-freebsd-tools

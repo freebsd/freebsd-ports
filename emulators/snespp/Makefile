@@ -7,7 +7,7 @@
 
 PORTNAME=	snespp
 PORTVERSION=	1.0
-CATEGORIES=	emulators
+CATEGORIES=	emulators kld
 MASTER_SITES=	http://www.cse.unsw.edu.au/~tbourke/software/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	ipmi-kmod
 PORTVERSION=	20060926
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils kld
 MASTER_SITES=	http://dpw.threerings.net/projects/ipmi-kmod/
 
 MAINTAINER=	snb@threerings.net

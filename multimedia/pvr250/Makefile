@@ -8,7 +8,7 @@
 
 PORTNAME=	pvr250
 PORTVERSION=	20051030
-CATEGORIES=	multimedia
+CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTFILES=	${CXMSHAR} hcwPVRP2.sys ${PVRTOOLS}.tar.gz
 IGNOREFILES=	hcwPVRP2.sys	# Varies from month to month

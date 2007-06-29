@@ -7,13 +7,16 @@
 
 PORTNAME=	ng_netflow
 PORTVERSION=	0.2.5
-CATEGORIES=	net
+CATEGORIES=	net kld
 MASTER_SITES=	http://cell.sick.ru/~glebius/ng_netflow/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ng-netflow
 
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Netgraph node implementing Cisco (c) netflow
+DEPRECATED=	already in base in all supported versions of FreeBSD
+EXPIRATION_DATE=	2007-08-29
+
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 
@@ -24,10 +27,6 @@ MAN8=		flowctl.8
 MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 503101
-IGNORE=		"already exists in base system"
-.endif
 
 pre-fetch:
 

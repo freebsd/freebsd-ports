@@ -7,7 +7,7 @@
 
 PORTNAME=	p54u
 PORTVERSION=	0.8
-CATEGORIES=	net
+CATEGORIES=	net kld
 MASTER_SITES=	http://www.prism54.org/p54u/releases/
 
 MAINTAINER=	lekernel@prism54.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	emu10kx
 PORTVERSION=	20051021
-CATEGORIES=	audio
+CATEGORIES=	audio kld
 MASTER_SITES=	http://chibis.persons.gfk.ru/audigy/emu10kx/
 DISTNAME=	${PORTNAME}-2005-10-21
 

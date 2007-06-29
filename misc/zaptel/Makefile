@@ -7,7 +7,7 @@
 
 PORTNAME=	zaptel
 PORTVERSION=	1.4.1
-CATEGORIES=	misc
+CATEGORIES=	misc kld
 MASTER_SITES=	http://www.pbxpress.com/~gonzo/
 DISTNAME=	${PORTNAME}-bsd-${PORTVERSION}
 
@@ -25,10 +25,6 @@ SUB_FILES=	pkg-message
 USE_RC_SUBR=	zaptel
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	does not build on FreeBSD \< 5.x
-.endif
 
 pre-everything::
 	@if [ ! -f /usr/src/sys/Makefile ]; then \
