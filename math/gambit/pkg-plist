@@ -9,7 +9,6 @@ bin/gambit-liap
 bin/gambit-logit
 bin/gambit-lp
 bin/gambit-nfg-logitdyn
-bin/gambit-nfg-mixdom
 bin/gambit-nfg2html
 bin/gambit-nfg2tex
 bin/gambit-simpdiv
