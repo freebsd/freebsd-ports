@@ -34,6 +34,73 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6e099997-25d8-11dc-878b-000c29c5647f">
+    <topic>gd -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>gd</name>
+        <range><lt>2.0.35,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>gd had been reported vulnerable to several
+	  vulnerabilities:</p>
+	<ul>
+	  <li>CVE-2007-3472: Integer overflow in gdImageCreateTrueColor
+	    function in the GD Graphics Library (libgd) before 2.0.35
+	    allows user-assisted remote attackers has unspecified attack
+	    vectors and impact.</li>
+	  <li>CVE-2007-3473: The gdImageCreateXbm function in the GD
+	    Graphics Library (libgd) before 2.0.35 allows user-assisted
+	    remote attackers to cause a denial of service (crash) via
+	    unspecified vectors involving a gdImageCreate failure.</li>
+	  <li>CVE-2007-3474: Multiple unspecified vulnerabilities in the GIF reader in the GD
+	    Graphics Library (libgd) before 2.0.35 allow user-assisted remote
+	    attackers to have unspecified attack vectors and impact.</li>
+	  <li>CVE-2007-3475: The GD Graphics Library (libgd) before 2.0.35 allows user-assisted
+	    remote attackers to cause a denial of service (crash) via a GIF image
+	    that has no global color map.</li>
+	  <li>CVE-2007-3476: Array index error in gd_gif_in.c in the GD Graphics Library (libgd)
+	    before 2.0.35 allows user-assisted remote attackers to cause a denial
+	    of service (crash and heap corruption) via large color index values in
+	    crafted image data, which results in a segmentation fault.</li>
+	  <li>CVE-2007-3477: The (a) imagearc and (b) imagefilledarc functions in GD Graphics
+	    Library (libgd) before 2.0.35 allows attackers to cause a denial of
+	    service (CPU consumption) via a large (1) start or (2) end angle
+	    degree value.</li>
+	  <li>CVE-2007-3478: Race condition in gdImageStringFTEx (gdft_draw_bitmap) in gdft.c in
+	    the GD Graphics Library (libgd) before 2.0.35 allows user-assisted
+	    remote attackers to cause a denial of service (crash) via unspecified
+	    vectors, possibly involving truetype font (TTF) support.</li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-3472</cvename>
+      <cvename>CVE-2007-3473</cvename>
+      <cvename>CVE-2007-3474</cvename>
+      <cvename>CVE-2007-3475</cvename>
+      <cvename>CVE-2007-3476</cvename>
+      <cvename>CVE-2007-3477</cvename>
+      <cvename>CVE-2007-3478</cvename>
+      <url>http://www.libgd.org/ReleaseNote020035</url>
+      <url>http://www.frsirt.com/english/advisories/2007/2336</url>
+      <url>http://bugs.libgd.org/?do=details&amp;task_id=89</url>
+      <url>http://bugs.libgd.org/?do=details&amp;task_id=94</url>
+      <url>http://bugs.libgd.org/?do=details&amp;task_id=70</url>
+      <url>http://bugs.libgd.org/?do=details&amp;task_id=87</url>
+      <url>http://bugs.libgd.org/?do=details&amp;task_id=92</url>
+      <url>http://bugs.libgd.org/?do=details&amp;task_id=74</url>
+      <url>http://bugs.libgd.org/?do=details&amp;task_id=48</url>
+      <url>http://bugs.php.net/bug.php?id=40578</url>
+    </references>
+    <dates>
+      <discovery>2007-06-21</discovery>
+      <entry>2007-06-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b1b5c125-2308-11dc-b91a-001921ab2fa4">
     <topic>evolution-data-server -- remote execution of arbitrary code vulnerability</topic>
     <affects>
