@@ -14,34 +14,19 @@ MASTER_SITES=	http://www.nongnu.org/epiwm/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another fast, small, configurable window manager
 
-LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		ungif.5:${PORTSDIR}/graphics/libungif
-
-CONFIG=		icons key menu start style window workspace
-DOCS=		AUTHORS BUGS COPYING ChangeLog EPIwm-0.5.6.lsm INSTALL NEWS \
-		README TODO
+USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 post-patch:
-	${REINPLACE_CMD} 's|/etc/X11/epiwm|${PREFIX}/etc/epiwm|' \
-	    ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/etc/X11/epiwm|${PREFIX}/etc/epiwm|' \
+		${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for ii in ${DOCS}
+	@${MKDIR} ${DOCSDIR}
+.for ii in AUTHORS BUGS ChangeLog EPIwm-0.5.6.lsm COPYING INSTALL NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${ii} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
