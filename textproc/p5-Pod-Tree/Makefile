@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Pod-Tree
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
@@ -23,7 +23,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=		perl2html.1 pods2html.1
+MAN1=		perl2html.1 pods2html.1 \
+		podtree2html.1
 MAN3=		Pod::Tree.3 \
 		Pod::Tree::HTML.3 \
 		Pod::Tree::Node.3 \
