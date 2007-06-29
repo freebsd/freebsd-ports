@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="32d38cbb-2632-11dc-94da-0016179b2dd5">
+    <topic>flac123 -- stack overflow in comment parsing </topic>
+    <affects>
+      <package>
+	<name>flac123</name>
+	<range><lt>0.9.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>isecpartners reports:</p>
+	<blockquote cite="http://www.isecpartners.com/advisories/2007-002-flactools.txt">
+	  <p>flac123, also known as flac-tools, is vulnerable
+	    to a buffer overflow in vorbis comment parsing.
+	    This allows for the execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.isecpartners.com/advisories/2007-002-flactools.txt</url>
+    </references>
+    <dates>
+      <discovery>2007-06-05</discovery>
+      <entry>2007-06-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6e099997-25d8-11dc-878b-000c29c5647f">
     <topic>gd -- multiple vulnerabilities</topic>
     <affects>
