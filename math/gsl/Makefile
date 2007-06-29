@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gsl
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gsl/} \
 		http://www.gnu.org/software/${PORTNAME}/manual/:gslref
@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gsl \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	bf2006a@yahoo.com
 COMMENT=	The GNU Scientific Library - mathematical libs
 
 INSTALLS_SHLIB=	yes

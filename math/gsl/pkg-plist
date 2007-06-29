@@ -18,6 +18,7 @@ include/gsl/gsl_block_uchar.h
 include/gsl/gsl_block_uint.h
 include/gsl/gsl_block_ulong.h
 include/gsl/gsl_block_ushort.h
+include/gsl/gsl_bspline.h
 include/gsl/gsl_cblas.h
 include/gsl/gsl_cdf.h
 include/gsl/gsl_chebyshev.h
@@ -145,6 +146,7 @@ include/gsl/gsl_sf_laguerre.h
 include/gsl/gsl_sf_lambert.h
 include/gsl/gsl_sf_legendre.h
 include/gsl/gsl_sf_log.h
+include/gsl/gsl_sf_mathieu.h
 include/gsl/gsl_sf_pow_int.h
 include/gsl/gsl_sf_psi.h
 include/gsl/gsl_sf_result.h
@@ -217,7 +219,7 @@ include/gsl/gsl_wavelet2d.h
 lib/libgsl.a
 lib/libgsl.la
 lib/libgsl.so
-lib/libgsl.so.9
+lib/libgsl.so.10
 lib/libgslcblas.a
 lib/libgslcblas.la
 lib/libgslcblas.so
