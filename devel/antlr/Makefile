@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr.org/download/
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ANother Tool for Language Recognition
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper

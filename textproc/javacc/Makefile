@@ -12,7 +12,7 @@ CATEGORIES=	textproc java devel
 MASTER_SITES=	https://javacc.dev.java.net/files/documents/17/26783/
 DISTNAME=	${PORTNAME}-${PORTVERSION}src
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java parser generator and lexical analyzer
 
 FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget

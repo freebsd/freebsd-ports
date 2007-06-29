@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	-src.zip
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plan projects using a Gantt chart
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/${PORTNAME}-builder

@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNU project to create a free Java class library
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip

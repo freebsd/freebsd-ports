@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scribus.net/downloads/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive desktop publishing program
 
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \

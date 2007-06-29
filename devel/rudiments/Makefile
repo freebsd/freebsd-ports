@@ -10,7 +10,7 @@ PORTVERSION=	0.30
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility C++ class library for daemons, clients, servers and more
 
 USE_AUTOTOOLS=	libtool:15

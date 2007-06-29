@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://gd.tuwien.ac.at/infosys/network/tools/mtr/ \
 		http://mirrors.evolva.ro/util/mtr/
 
-MAINTAINER=	rainer.alves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
 GNU_CONFIGURE=	yes
