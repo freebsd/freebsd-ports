@@ -1,0 +1,2468 @@
+--- btnlib/border.c.orig	Fri May  5 00:21:13 1995
++++ btnlib/border.c	Fri Jun 29 11:08:51 2007
+@@ -35,6 +35,10 @@
+  * Note:	For each byte, bit 0 (0x01) appears on the left.
+  * Note:	For each byte, bit 7 (0x80) appears on the right.
+  */
++
++static unsigned char btn_ReverseByte();
++static void btn_MakeBdrLine();
++
+ void btn_MakeBdrBitmap ( buttonmap, width, height, byte_width, form, inverse )
+      unsigned char *buttonmap;	/* i,o: pointer to bitmap of button */
+      int width, height;		/* i: dimensions of button window (to cover) */
+@@ -52,8 +56,6 @@
+   int right_form_bit;		/* l: bit in first right form byte to use */
+   int right_bdr_byte;		/* l: index of first line byte for right bdr */
+   int right_bdr_bit;		/* l: bit in first line byte for right bdr */
+-  static unsigned char btn_ReverseByte();
+-  static void btn_MakeBdrLine();
+ 
+   /* portion of pattern form used (clip overlap if button very small) */
+   /* middle overlap on odd size counted for height, omitted for width */
+@@ -119,6 +121,9 @@
+  * Subroutine:	btn_MakeBdrLine
+  * Purpose:	set the bits for one line of the button's border
+  */
++
++static void btn_RightBorder();
++
+ static void btn_MakeBdrLine ( line, form, byte_width, inverse,
+ 			      right_bdr_byte, right_bdr_bit,
+ 			      right_form_byte, right_form_bit )
+@@ -131,7 +136,6 @@
+      int right_bdr_byte;	/* l: index of first line byte for right bdr */
+      int right_bdr_bit;		/* l: bit in first line byte for right bdr */
+ {
+-  static void btn_RightBorder();
+   /* copy in top left, store reverse for top right */
+   *line = *form;
+   *(line+1) = *(++form);
+--- btnlib/create.c.orig	Sun Apr 29 04:17:46 1990
++++ btnlib/create.c	Fri Jun 29 11:09:21 2007
+@@ -53,6 +53,9 @@
+  * Note:	Buttonboxes must later be combined into menus and panels
+  * Note:	Call TouchButton to activate buttons and submenus when ready
+  */
++
++static void btn_CreateWindows();
++
+ ButtonBox MakeButtonBox ( parent, gc, visual, background, geo, defs, borders )
+      BoxParent *parent;		/* i: Parent window info */
+      GC gc;			/* i: graphics context for drawing labels */
+@@ -70,7 +73,6 @@
+   int x, y;			/* l: coordinates of box in parent */
+   int i;			/* l: loop counter */
+   char *btn_Alloc();
+-  static void btn_CreateWindows();
+   void btn_LabelButtons(), btn_Dimensions();
+ 
+   /* allocate the space for the new record */
+--- btnlib/draw.c.orig	Sat Jun 22 06:40:21 1991
++++ btnlib/draw.c	Fri Jun 29 11:06:53 2007
+@@ -103,11 +103,13 @@
+  * Xlib calls:	none
+  * Method:	Dim this box and all co-menu boxes
+  */
++
++static void btn_DimButtons();
++
+ void btn_DelightButtons ( buttonbox )
+      ButtonBox buttonbox;
+ {
+   int i;
+-  static void btn_DimButtons();
+ 
+   btn_DimButtons(buttonbox);
+   for( i=0; i < buttonbox->co_menu_count; i++ ) {
+@@ -153,11 +155,13 @@
+  * Uses:	btn_LightButtons() below
+  * Xlib calls:	none
+  */
++
++static void btn_LightButtons();
++
+ void btn_RelightButtons ( buttonbox )
+      ButtonBox buttonbox;
+ {
+   int i;
+-  static void btn_LightButtons();
+ 
+   btn_LightButtons(buttonbox);
+   for( i=0; i < buttonbox->co_menu_count; i++ ) {
+--- btnlib/event.c.orig	Fri May  5 00:27:33 1995
++++ btnlib/event.c	Fri Jun 29 11:07:53 2007
+@@ -52,12 +52,14 @@
+  *		with their active submenus.
+  * Note:	Must be called with a buttonbox at the base of the menu tree
+  */
++
++static int btn_Event();
++
+ int ButtonEvent ( buttonbox, event )
+      ButtonBox buttonbox;	/* i: top handle for button menu group */
+      XEvent *event;		/* i: pointer to filled event record */
+ {
+   int i;			/* l: loop counter */
+-  static int btn_Event();
+ 
+   /* is the event in the primary buttonbox (or its sub-menus) */
+   if( btn_Event(buttonbox, event) != 0 ) {
+@@ -139,6 +141,10 @@
+  *		with their active submenus.
+  * Note:	Must be called with a buttonbox at the base of the menu tree
+  */
++
++static int btn_Event();
++static int btn_Control();
++
+ int ButtonControl ( buttonbox, event, response )
+      ButtonBox buttonbox;	/* i: top handle for button menu group */
+      XEvent *event;		/* i: pointer to filled event record */
+@@ -147,8 +153,6 @@
+   int status;		/* o: reason for return code (-1,0,1) */
+   int not_found;	/* l: event search status */
+   int i;		/* l: loop counter */
+-  static int btn_Event();
+-  static int btn_Control();
+ 
+   status = 1;
+   *response = NULL;
+@@ -206,6 +210,9 @@
+  *		until one fields it.  If still not, return NULL, else (it
+  *		was fielded) get the next event and loop again.
+  */
++
++static int btn_Event();
++
+ static int btn_Control ( buttonbox, event, response )
+      ButtonBox buttonbox;	/* i: top handle for button menu tree */
+      XEvent *event;		/* i: pointer to filled event record */
+@@ -218,7 +225,6 @@
+   int type;		/* l: temp for button response type */
+   int id;		/* l: temp for button id */
+   int mask[2];		/* l: temp store for select mask (select changes it) */
+-  static int btn_Event();
+   int btn_PushButton();
+   void btn_PutImage(), btn_DrawButton(), btn_ReleaseButton();
+ 
+--- btnlib/image.c.orig	Sun Aug  4 05:42:11 1991
++++ btnlib/image.c	Fri Jun 29 11:10:36 2007
+@@ -38,6 +38,9 @@
+  * Post-state:	off_out, off_in, on_out, on_in XImage's set in button record.
+  * Exception:	Only labels present are installed.
+  */
++
++static void btn_AddLabel();
++
+ void btn_MakeXImages ( button, width, height, byte_width, visual,
+ 		       off_out, off_in, on_out, on_in, mapsz, off, on, motf )
+      ButtonRecord *button;	/* i: main structure describing button */
+@@ -56,7 +59,6 @@
+   unsigned char *data;		/* l: pointer to bitmap currently processing */
+   XImage *ximage;
+   char *btn_Alloc();
+-  static void btn_AddLabel();
+ 
+ #ifdef ALLIANT
+   extern int nbutton;
+@@ -173,6 +175,9 @@
+  * Exception:	Label is not stenciled if one dimension would be zero.
+  * Method:	Get basic alignment parameters and call btn_StencilLabel();
+  */
++
++static int btn_LabelX(), btn_LabelY();
++
+ static void btn_AddLabel ( label, width, height, byte_width, bitmap, inverse )
+      ButtonLabel *label;	/* i: record of label bitmap to stencil in */
+      int width;			/* i: width in pixels of button */
+@@ -185,7 +190,6 @@
+   int dst_x, dst_y;	/* l: coords of start of stencil in dst (button) */
+   int xwdth;		/* l: width (cols) to stencil */
+   int yhght;		/* l: number of lines (rows) to stencil */
+-  static int btn_LabelX(), btn_LabelY();
+   void btn_StencilLabel();
+ 
+   if( ((xwdth = btn_LabelX(label, width, &src_x, &dst_x)) > 0) &&
+--- btnlib/label.c.orig	Fri May  5 00:19:37 1995
++++ btnlib/label.c	Fri Jun 29 11:09:45 2007
+@@ -42,6 +42,10 @@
+  * Note:	For each byte, bit 0 (0x01) appears on the left.
+  * Note:	For each byte, bit 7 (0x80) appears on the right.
+  */
++
++static void btn_Stencil(), btn_StencilInv();
++static void btn_StencilAlligned(),btn_StencilAllignedInv();
++
+ void btn_StencilLabel ( src, msk, dst, src_byte_width, dst_byte_width,
+ 		        src_x, src_y, dst_x, dst_y, width, height, inverse )
+      unsigned char *src;	/* i: ptr to first byte of pattern */
+@@ -65,9 +69,6 @@
+   unsigned char *last_dst;	/* l: ptr to last byte used in first line */
+   int first_mask;		/* l: bit mask, with coded sign (see above) */
+   int last_mask;		/* l: bit mask, with coded sign (see above) */
+-
+-  static void btn_Stencil(), btn_StencilInv();
+-  static void btn_StencilAlligned(),btn_StencilAllignedInv();
+ 
+   /* advance src and msk to their first used bytes */
+   byte_offset = (src_y * src_byte_width) + (src_x / 8);
+--- btnlib/mount.c.orig	Sat Apr 21 05:56:27 1990
++++ btnlib/mount.c	Fri Jun 29 11:11:16 2007
+@@ -35,11 +35,13 @@
+  * Xlib calls:	none
+  * Note:	This routine moves latterally to cover co-menus
+  */
++
++static void btn_MapButtonbox();
++
+ void MountButtonMenu ( buttonbox )
+      ButtonBox buttonbox;
+ {
+   int i;
+-  static void btn_MapButtonbox();
+ 
+   btn_MapButtonbox(buttonbox);
+   for( i = 0; i < buttonbox->co_menu_count; i++ )
+@@ -109,6 +111,9 @@
+  *		map submenus of new button.
+  * Note:	Unmapping submenus is harmless if they were not mapped.
+  */
++
++static void btn_UnmapButtonbox(), btn_MapButtonbox();
++
+ void btn_ReplaceSubmenus ( buttonbox, btn, op_num, mapping )
+      ButtonBox buttonbox;
+      int btn;
+@@ -116,7 +121,6 @@
+      int mapping;		/* i: switch allows suppression of mapping */
+ {
+   int i;
+-  static void btn_UnmapButtonbox(), btn_MapButtonbox();
+ 
+   /* clear out the old submenus */
+   for( i=0; i < buttonbox->submenu_count; i++ )
+@@ -149,6 +153,9 @@
+  * Note:	Requires search through co-menus
+  * Note:	Unmapping cosubmenus is harmless if they were not mapped.
+  */
++
++static void btn_UnmapButtonbox(), btn_MapButtonbox();
++
+ void btn_ReplaceCosubmenus ( buttonbox, btn, op_num, mapping )
+      ButtonBox buttonbox;
+      int btn;
+@@ -156,7 +163,6 @@
+      int mapping;		/* i: switch allows suppression of mapping */
+ {
+   int i, j;
+-  static void btn_UnmapButtonbox(), btn_MapButtonbox();
+ 
+   /* check to see if we have the co-mode submenus */
+   if( buttonbox->cosubmenu_count > 0 ) {
+--- btnlib/resize.c.orig	Sat Apr 21 06:15:57 1990
++++ btnlib/resize.c	Fri Jun 29 11:11:35 2007
+@@ -33,12 +33,14 @@
+  * Post-state:	All buttonboxes having given parent are resized to fill
+  * Method:	Call btn_ChkResize with this menu and then its co-menus.
+  */
++
++static void btn_ChkResize();
++
+ void ResizeButtons ( buttonbox, parent )
+      ButtonBox buttonbox;	/* i: top handle for button menu group */
+      BoxParent *parent;		/* i: record describing parent window */
+ {
+   int i;		/* l: loop counter */
+-  static void btn_ChkResize();
+ 
+   /* check this buttonbox */
+   btn_ChkResize(buttonbox, parent);
+--- clralloc.c.orig	Thu May 13 01:40:45 1999
++++ clralloc.c	Fri Jun 29 11:12:28 2007
+@@ -39,12 +39,14 @@
+  * Method:	Try for at least min cells in default colormap, if failed
+  *		try to create a private colormap.
+  */
++
++static Colormap create_colormap();
++static int alloc_color_cells();
++
+ int alloc_colors( color )
+      struct colorRec *color;
+ {
+   int verify_pseudocolor();
+-  static Colormap create_colormap();
+-  static int alloc_color_cells();
+ 
+   if( (color->map.default_permit != NO) &&
+       (color->map.default_enable == YES) &&
+--- clrctrl.c.orig	Fri Apr 20 22:43:37 1990
++++ clrctrl.c	Fri Jun 29 11:13:02 2007
+@@ -36,13 +36,15 @@
+  * Subroutine:	select_color
+  * Purpose:	Things to do when a buttonbox color menu button is selected
+  */
++
++static void new_color_table();
++
+ void select_color ( )
+ {
+   static int overlay = 0;
+   static int cells = 0;
+   static int mode = VOP_PseudoColor;
+   void invert_rgb(), reinit_color();
+-  static void new_color_table();
+ 
+   if( control.response[0] == VOP ) {
+     switch( control.response[1] ) {
+@@ -218,10 +220,12 @@
+  * Purpose:	Reverse all colors at once (respond to invert button)
+  * Xlib call:	XStoreColors()
+  */
++
++static void invert_table();
++
+ void invert_rgb ( )
+ {
+   void make_cellstore_from_cellmaps(), draw_cgraph();
+-  static void invert_table();
+ 
+   /* invert color tables and remake storemap */
+   invert_table(&color.ctable.red);
+--- clrhard.c.orig	Fri Apr 20 21:54:21 1990
++++ clrhard.c	Fri Jun 29 11:30:10 2007
+@@ -29,11 +29,13 @@
+  * Subroutine:	init_hard_colors
+  * Purpose:	Set up basic hardware colors
+  */
++
++static int get_hard_color();
++
+ void init_hard_colors ( color, colormap )
+      struct colorRec *color;
+      Colormap colormap;
+ {
+-  static int get_hard_color();
+ 
+   color->hard.red =
+     get_hard_color(color->display, colormap, "red", 63000, 0, 0);
+@@ -58,12 +60,14 @@
+  * Subroutine:	lookup_cursor_colors
+  * Purpose:	Get color parameters from named cursor colors
+  */
++
++static void lookup_color();
++
+ void lookup_cursor_colors ( color, colormap, init )
+      struct colorRec *color;
+      Colormap colormap;
+      int init;
+ {
+-  static void lookup_color();
+ 
+   /* update xcolor structs if needed */
+   if( init || (color->cur.desired_cur != NULL) ) {
+@@ -90,12 +94,14 @@
+  * Pre-state:	XColor for cur, one, and two, initialized
+  * Post-state:	Pixel values for one and two set, that for cur returned.
+  */
++
++static int alloc_hard_color();
++
+ int alloc_cursor_cell_color ( color, colormap )
+      struct colorRec *color;
+      Colormap colormap;
+ {
+   int val;
+-  static int alloc_hard_color();
+ 
+   if( (color->cur.disp_one =
+       alloc_hard_color(color->display, colormap, &color->cur.color_one)) < 0 )
+@@ -113,10 +119,12 @@
+  * Subroutine:	free_cursor_cell_color
+  * Purpose:	Free cell color overlay colors
+  */
++
++static void free_readonly_color();
++
+ void free_cursor_cell_color ( color )
+      struct colorRec *color;
+ {
+-  static void free_readonly_color();
+ 
+   free_readonly_color(color, (int)color->cur.color_one.pixel);
+   free_readonly_color(color, (int)color->cur.color_two.pixel);
+--- clrinit.c.orig	Sat Dec 15 05:17:55 2001
++++ clrinit.c	Fri Jun 29 11:30:25 2007
+@@ -38,6 +38,9 @@
+  * Subroutine:	init_color
+  * Purpose:	Claim and set up colors (and do any needed initial work)
+  */
++
++static int init_visual();
++
+ void init_color ( color, init )
+      struct colorRec *color;
+      int init;
+@@ -46,7 +49,6 @@
+   void exit_errmsg(), init_hard_colors(), init_halftone();
+   void free_color_cells(), lookup_cursor_colors(), free_cursor_cell_color();
+   void init_overlay_color(), init_cell_color(), init_halftone_color();
+-  static int init_visual();
+ 
+   if( init ) {
+     display = color->display;
+--- clrmenu.c.orig	Sun Apr 29 06:40:14 1990
++++ clrmenu.c	Fri Jun 29 11:31:13 2007
+@@ -35,14 +35,16 @@
+  * Purpose:	Get a new pre-defined color table and load it for use
+  * Returns:	1 if succeeded, else 0
+  */
++
++static void load_newtable(), write_color_file();
++static ColorTable *read_color_file();
++
+ int fetch_colortable ( color, table_code, imagefile )
+      struct colorRec *color;
+      int table_code;
+      char *imagefile;		/* i: imagefile name to print in output file */
+ {
+   ColorTable *newtable;
+-  static void load_newtable(), write_color_file();
+-  static ColorTable *read_color_file();
+ 
+   switch( table_code ) {
+   case MOP_Init_A:
+@@ -111,13 +113,15 @@
+  * Subroutine: write_color_file
+  * Purpose:    Open and write a color table file
+  */
++
++static void print_one_color();
++
+ static void write_color_file ( imagefile, color )
+      char *imagefile;
+      struct colorRec *color;
+ {
+   FILE *fp;
+   int error;
+-  static void print_one_color();
+   EditStruct *init_edit_popup();
+   int open_output_file();
+   void timestamp();
+@@ -189,11 +193,13 @@
+  * Subroutine:	load_newtable
+  * Purpose:	Load an internally stored color table for use
+  */
++
++static void load_subtable();
++
+ static void load_newtable ( ctable, new )
+      struct colorTable *ctable;
+      ColorTable *new;
+ {
+-  static void load_subtable();
+ 
+   load_subtable(&ctable->red, &new->red);
+   load_subtable(&ctable->green, &new->green);
+--- clrread.c.orig	Sun Apr 29 07:30:35 1990
++++ clrread.c	Fri Jun 29 11:31:49 2007
+@@ -25,6 +25,9 @@
+  * Subroutine:	parse_color_file
+  * Purpose:	Parse values after color identifier
+  */
++
++static int parse_color_table(), advance_to_ascii();
++
+ int parse_color_file ( fp, ctable, max_entries )
+      ColorTable *ctable;
+      int max_entries;
+@@ -35,7 +38,6 @@
+   char line[SZ_LINE];
+   char cbuf[SZ_LINE];
+   struct SubTable *table;
+-  static int parse_color_table(), advance_to_ascii();
+ 
+   line_num = 0;
+   /* advance to first non-comment line */
+@@ -95,6 +97,9 @@
+  * Purpose:	Read color table entries for one color
+  * Note:	Values may start with word "gamma" and its value
+  */
++
++static int advance_to_ascii(), prep_alpha();
++
+ static int parse_color_table ( fp, line, cbuf, i, len, line_num,
+ 			       farb, max_entries, color_cnt )
+      FILE *fp;
+@@ -110,7 +115,6 @@
+   float level, intensity;
+   char *level_token, *intensity_token;
+   int status, entry;
+-  static int advance_to_ascii(), prep_alpha();
+   int check_parens();
+   char *next_token();
+ 
+@@ -227,6 +231,9 @@
+  *		Negative val if string starts with a number or paren
+  *		0 if file ended, or first character was neither char nor num
+  */
++
++static int find_token(), prep_alpha();
++
+ static int advance_to_ascii ( fp, line, scratch, len, line_num, dont_end )
+      FILE *fp;		/* i: file descriptor */
+      char *line;	/* i: buffer to get entire line */
+@@ -236,7 +243,6 @@
+      int dont_end;	/* flag that more is definitely expected */
+ {
+   int i;
+-  static int find_token(), prep_alpha();
+   int check_parens();
+ 
+   /* advance to first non-comment line */
+--- clrsetup.c.orig	Sun Jun  3 12:07:29 1990
++++ clrsetup.c	Fri Jun 29 11:32:20 2007
+@@ -29,12 +29,14 @@
+  * Purpose:	Set up color parameters unique to overlay type usage
+  * Xlib calls:	XStoreColors()
+  */
++
++static void set_cursor_overlay_color(), copy_xcolor_rgb(), init_cellstore();
++
+ void init_overlay_color ( color )
+      struct colorRec *color;
+ {
+   int ncolors;
+   void make_cellstore_from_tables();
+-  static void set_cursor_overlay_color(), copy_xcolor_rgb(), init_cellstore();
+ 
+   init_cellstore(color->cellstore, color->pixvalmap, color->ncolors);
+   /* color in the cursor range of the color map */
+@@ -75,12 +77,14 @@
+  * Purpose:	Set up color parameters unique to cell usage without overlay
+  * Xlib calls:	XStoreColors()
+  */
++
++static void init_cellstore();
++
+ void init_cell_color ( color )
+      struct colorRec *color;
+ {
+   void make_cellstore_from_tables();
+   int alloc_cursor_cell_color();
+-  static void init_cellstore();
+ 
+   init_cellstore(color->cellstore, color->pixvalmap, color->ncolors);
+   /* Not cursor plane */
+--- clrvary.c.orig	Fri Apr 20 21:57:20 1990
++++ clrvary.c	Fri Jun 29 11:32:33 2007
+@@ -130,6 +130,9 @@
+  * Subroutine:	vary_contrast_and_bias
+  * Purpose:	change color table cell_levels as per new contrast and bias
+  */
++
++static void invert_table();
++
+ void vary_contrast_and_bias ( table, contrast, bias )
+      struct subtableRec *table;
+      double contrast;		/* i: normal = 1.0 */
+@@ -137,7 +140,6 @@
+ {
+   double *base_level, *cell_level;
+   int vertex_cnt;
+-  static void invert_table();
+ 
+   base_level = table->base_level;
+   cell_level = table->cell_level;
+--- cmdnew.c.orig	Fri Jun  6 21:52:04 1997
++++ cmdnew.c	Fri Jun 29 11:33:12 2007
+@@ -73,9 +73,11 @@
+  * Called by:	key_response() in MainKey.c
+  * Called by:	select_environment() in MainSelect.c
+  */
++
++static int new_command();
++
+ void get_new_cmd ( )
+ {
+-  static int new_command();
+   int get_edit_input();
+   EditStruct *init_edit_popup();
+ 
+@@ -95,6 +97,11 @@
+  * Purpose:	Given a new command line, parse it and do what is called for
+  * Returns:	1 = success, 0 = user decided not to do anything, -1 = error
+  */
++
++static char **make_argv();
++static int new_file(), form_tokens();
++static void redo_displays(), clear_params(), reset_dispparams(), free_argv();
++
+ static int new_command ( input_line )
+      char *input_line;
+ {
+@@ -104,9 +111,6 @@
+   int headersize;
+   int parse_cmdline(), check_image();
+   void reinit_color(), redraw_magnifier(), touch_submenu_button();
+-  static char **make_argv();
+-  static int new_file(), form_tokens();
+-  static void redo_displays(), clear_params(), reset_dispparams(), free_argv();
+ 
+   /* store some key initial values */
+   headersize = img.headersize;
+--- cmdparse.c.orig	Tue Apr  9 02:26:55 2002
++++ cmdparse.c	Fri Jun 29 11:33:24 2007
+@@ -47,6 +47,9 @@
+  * Purpose:	Process options to set filename and change defaults
+  * Returns:	-1 on error, 0 OK but no filename, 1 OK and new filename given
+  */
++
++static int parse_etc();
++
+ int parse_cmdline ( argc, argv, displayname )
+      int argc;
+      char *argv[];
+@@ -58,7 +61,6 @@
+   int parse_rotate(), parse_scale(), parse_color(), parse_fileread(), usage();
+   int parse_cursor();
+   void init_cmdline();
+-  static int parse_etc();
+ 
+   if( displayname != NULL ) {
+     /* if initial program command line, strip off program name, store line */
+--- crdinvrt.c.orig	Fri Apr 20 22:00:26 1990
++++ crdinvrt.c	Fri Jun 29 11:33:51 2007
+@@ -28,12 +28,14 @@
+  * Purpose:	Compute parameters of the inverse transform
+  * Method:	Uses LU decomposition method
+  */
++
++static void lu_decompose(), lu_backsub();
++
+ void invert_matrix ( old, new )
+      Transform *old, *new;
+ {
+   float scratch[3][3], column[3];
+   int pivots[3];
+-  static void lu_decompose(), lu_backsub();
+ 
+   scratch[0][0] = old->inx_outx;
+   scratch[1][0] = old->iny_outx;
+@@ -65,13 +67,15 @@
+  * Purpose:	Compute the offsets used for integer transforms
+  * Method:	Uses matrix inversion
+  */
++
++static void lu_decompose(), lu_backsub();
++
+ void compute_iadd_invert ( old, new, ioff )
+      Transform *old, *new;
+      float ioff;
+ {
+   float scratch[3][3], column[3];
+   int pivots[3];
+-  static void lu_decompose(), lu_backsub();
+ 
+   /* set transform equations in matrix form */
+   scratch[0][0] = old->inx_outx;
+--- crdrot.c.orig	Fri Apr 20 22:00:51 1990
++++ crdrot.c	Fri Jun 29 11:35:13 2007
+@@ -55,6 +55,9 @@
+  * As each transform is applied to the front, we apply them in reverse order
+  *  the result is, from img->A,B,C,imgtofile(as given)->file
+  */
++
++static void move_mtrx(), flip_mtrx(), turn_mtrx();
++
+ void rotate_transform ( img, imgtofile, flip, rotcode )
+      Coordsys *img;
+      Transform *imgtofile;
+@@ -63,7 +66,6 @@
+ {
+   double xmove, ymove;
+   int angle;
+-  static void move_mtrx(), flip_mtrx(), turn_mtrx();
+ 
+   /* if no rotation, do nothing */
+   if( (rotcode == 0) && (flip == 0) ) return;
+@@ -93,6 +95,9 @@
+  * Note:	ioff is not used for turn or flip, as it is assumed that both
+  * 		will be bracketed between two moves (to place origin at center)
+  */
++
++static void mult_mtrx();
++
+ static void move_mtrx ( mtrx, xtran, ytran, ioff, prior )
+      Transform *mtrx;
+      double xtran, ytran;
+@@ -100,7 +105,6 @@
+      int prior;
+ {
+   Transform translate;
+-  static void mult_mtrx();
+ 
+   bzero((char *)(&translate), sizeof(Transform));
+   translate.inx_outx = 1.0;
+@@ -119,12 +123,14 @@
+  * Subroutine:	flip_mtrx
+  * Purpose:	Apply a mirror reflection to the passed Transform
+  */
++
++static void mult_mtrx();
++
+ static void flip_mtrx ( mtrx, prior )
+      Transform *mtrx;
+      int prior;		/* i: 1: move, transform, move, 0: transform, move */
+ {
+   Transform reflect;
+-  static void mult_mtrx();
+ 
+   bzero((char *)(&reflect), sizeof(Transform));
+   reflect.inx_outx = 1.0;
+@@ -141,6 +147,9 @@
+  * Note:	the pivot is 0,0 of the passed Transform's coordinate system
+  * Exception:	only multiples of 90 degrees are allowed
+  */
++
++static void mult_mtrx();
++
+ static void turn_mtrx ( mtrx, angle, prior )
+      Transform *mtrx;
+      int angle;
+@@ -148,7 +157,6 @@
+ {
+   Transform rotate;
+   void exit_errmsg();
+-  static void mult_mtrx();
+ 
+   while( angle >= 360 ) angle -= 360;
+   while( angle < 0 ) angle += 360;
+--- crdsynth.c.orig	Fri Apr 20 22:01:55 1990
++++ crdsynth.c	Fri Jun 29 11:35:34 2007
+@@ -147,11 +147,13 @@
+  * Subroutine:	set_trans_speed
+  * Purpose:	Set parameters for fast integer computation
+  */
++
++static int integer_test();
++
+ void set_trans_speed ( trans )
+      Transform *trans;
+ {
+   int xzm, yzm;
+-  static int integer_test();
+ 
+   trans->ixzoom = 0;
+   trans->iyzoom = 0;
+--- crdtemp.c.orig	Tue Feb 27 02:14:19 1996
++++ crdtemp.c	Fri Jun 29 11:35:55 2007
+@@ -126,6 +126,9 @@
+  * Purpose:	set up zoom given edges of desired display and
+  *		appropriate img transform
+  */
++
++static int choose_zoom();
++
+ void panedge_zoom ( coord, wintoimgtrans, win_x, win_y )
+      struct coordRec *coord;	/* i: collected coords */
+      Transform *wintoimgtrans;	/* i: transform from mouse's window to img */
+@@ -134,7 +137,6 @@
+   float imgX, imgY;
+   int box_width, box_height;
+   void i_transform();
+-  static int choose_zoom();
+ 
+   /* calculate image coordinates of win_x and win_y */
+   i_transform(wintoimgtrans, win_x, win_y, &imgX, &imgY);
+--- csrarea.c.orig	Fri Apr 20 22:07:03 1990
++++ csrarea.c	Fri Jun 29 11:36:28 2007
+@@ -28,13 +28,15 @@
+  * Purpose:	Calculate area, in float units file pixels, enclosed by cursor
+  * Method:	Use mathematical formula appropriate to cursor type
+  */
++
++static int test_cross();
++
+ double cursor_area ( cursor, user_info )
+      struct cursorRec *cursor;
+      int user_info;		/* flag, data is for user info */
+ {
+   double area;
+   int i, j;
+-  static int test_cross();
+ 
+   switch( cursor->type ) {
+   case COP_Circle:
+@@ -83,13 +85,15 @@
+  *		are not tested since neighbors cannot cross but neighbors do
+  *		share a common point.
+  */
++
++static int intercept();
++
+ static int test_cross ( pt, cnt, j, i )
+      PolyPoint *pt;	/* list of vertices */
+      int cnt;		/* number of vertices */
+      int j, i;		/* two vertices at ends of edge being tested */
+ {
+   int k;
+-  static int intercept();
+ 
+   if( (i+2) >= cnt ) {
+     return( 0 );
+--- csrgrab.c.orig	Fri Apr 20 22:08:42 1990
++++ csrgrab.c	Fri Jun 29 11:37:13 2007
+@@ -38,12 +38,14 @@
+  * Purpose:	Change size of cursor to intersect current mouse cursor
+  *		while keeping aspect ratio of cursor constant
+  */
++
++static void size_annulus(), grab_annulus();
++
+ void size_annuli ( cursor, event )
+      struct cursorRec *cursor;
+      XEvent *event;		/* i: event for location of mouse */
+ {
+   void draw_cursor(), make_cursor();
+-  static void size_annulus(), grab_annulus();
+ 
+   /* if this event is initiating tracking, don't erase the cursor */
+   if( event->type == MotionNotify )
+@@ -64,13 +66,15 @@
+  * Purpose:	Respond to a mouse request to delete an annulus
+  *
+  */
++
++static int on_annulus();
++static void size_annulus(), remove_annulus();
++
+ void delete_annulus ( cursor, event )
+      struct cursorRec *cursor;
+      XEvent *event;		/* i: XMotionEvent or XButtonEvent */
+ {
+   struct cursorRec *parent;
+-  static int on_annulus();
+-  static void size_annulus(), remove_annulus();
+ 
+   /* if there are two or more annuli */
+   if( (cursor->next_annulus != 0) &&
+@@ -169,14 +173,16 @@
+  * Purpose:	Set up cursor to for a size annulus interaction
+  * Called by:	size_annuli()
+  */
++
++static int on_annulus();
++static void remove_annulus();
++
+ static void grab_annulus ( cursor )
+      struct cursorRec *cursor;
+ {
+   double inc;
+   int code;
+   struct cursorRec *parent, *annulus;
+-  static int on_annulus();
+-  static void remove_annulus();
+ 
+   code = on_annulus(cursor, &parent);
+   /* decide what to draw */
+--- csrpoly1.c.orig	Fri Apr 20 22:11:54 1990
++++ csrpoly1.c	Fri Jun 29 11:37:39 2007
+@@ -36,6 +36,9 @@
+  *		Used when initiating a move or size action
+  * Called by:	control_cursor() in CursorCtrl.c
+  */
++
++static int on_polygon_vertex();
++
+ void grab_polygon_vertex ( cursor, event, size )
+      struct cursorRec *cursor;
+      XEvent *event;		/* i: XbuttonEvent (ButtonPress) for x & y */
+@@ -45,7 +48,6 @@
+   int pt;			/* l: index of polygon vertex */
+   int closest_polygon_line();
+   void draw_cursor(), add_polygon_vertex();
+-  static int on_polygon_vertex();
+ 
+   /* erase existing cursor */
+   draw_cursor(cursor, &color.gcset.undraw);
+@@ -84,13 +86,15 @@
+  * Returns:	1 if image must be redrawn, else 0
+  * Called by:	control_cursor() in CursorCtrl.c
+  */
++
++static int on_polygon_vertex();
++
+ int request_delete_polygon_vertex ( cursor, event )
+      struct cursorRec *cursor;
+      XEvent *event;		/* i: XbuttonEvent (ButtonPress) for x & y */
+ {
+   int i;
+   void delete_polygon_vertex(), draw_cursor();
+-  static int on_polygon_vertex();
+ 
+   i = on_polygon_vertex((int)event->xbutton.x, (int)event->xbutton.y,
+ 			cursor->points, cursor->poly_cnt);
+--- csrpoly2.c.orig	Thu Jul  9 23:29:27 1998
++++ csrpoly2.c	Fri Jun 29 11:37:55 2007
+@@ -72,12 +72,14 @@
+  * Subroutine:	start_polygon
+  * Purpose:	Install polygon drawing stuff for the active cursor
+  */
++
++static void init_polygon();
++
+ void start_polygon ( cursor, coord )
+      struct cursorRec *cursor;
+      struct coordRec *coord;
+ {
+   void set_polygon_from_file_coords();
+-  static void init_polygon();
+ 
+   if( polysz == 0 )
+     init_polygon();
+--- csrpoly3.c.orig	Fri Apr 20 22:11:40 1990
++++ csrpoly3.c	Fri Jun 29 11:38:09 2007
+@@ -28,6 +28,9 @@
+  *		vector from pointer to closest point on segment
+  * Method:	top down search
+  */
++
++static double distance_from_segment(), cos_to_segment();
++
+ int closest_polygon_line ( x, y, vertex, cnt )
+      int x, y;
+      XPoint *vertex;
+@@ -38,7 +41,6 @@
+   int min_endpoint, endpoint;
+   int min_j;
+   int i, j;
+-  static double distance_from_segment(), cos_to_segment();
+ 
+   min_distance = 1.0E30;
+   min_j = 0;
+--- csrshape.c.orig	Tue Oct 20 01:46:41 1998
++++ csrshape.c	Fri Jun 29 11:40:32 2007
+@@ -31,9 +31,6 @@
+ 
+ #include "defs/circle.def"	/*  Define Unit_circles  */
+ 
+-#ifdef ANSIC
+-/*  Exported declarations must be centralized before ANSI C can be used  */
+-
+ void		make_cursor(	struct cursorRec *cursor);
+ static int	make_arrow(	double xtip, double ytip, double xray,
+ 				double rotsin, double rotcos, XPoint *points);
+@@ -41,28 +38,20 @@
+ 				double xray, double yray,
+ 				double rotsin, double rotcos, XPoint *points);
+ static int	make_circur(	double xcen, double ycen, double radius,
+-				XPoint *points )
++				XPoint *points );
+ static int	make_sqrcur(	double xcen, double ycen, double radius,
+-				XPoint *points )
++				XPoint *points );
+ static int	make_diacur(	double xcen, double ycen, double radius,
+-				XPoint *points )
++				XPoint *points );
+ static int	make_crosscur(	double xcen, double ycen, double radius,
+-				XPoint *points )
++				XPoint *points );
+ static int	make_excur(	double xcen, double ycen, double radius,
+-				XPoint *points )
++				XPoint *points );
+ static int	make_ellipse(	double xcen, double ycen,
+ 				double xradius, double yradius,
+ 				double rotsin, double rotcos, XPoint *points);
+ static int	make_piecur(	double xcen, double ycen, double radius,
+-				XPoint *points )
+-
+-#else
+-
+-  static int make_arrow(), make_boxcur(), make_circur();
+-  static int make_ellipse(), make_piecur();
+-
+-#endif
+-
++				XPoint *points );
+ 
+ /*  Declare and initialize drawing tools  */
+ double *UnitPieX = Circle12X;
+--- ctrlcntn.c.orig	Thu Jul  9 23:29:00 1998
++++ ctrlcntn.c	Fri Jun 29 11:41:15 2007
+@@ -61,6 +61,9 @@
+  * Purpose:	Open a connection to a remote process and update event handlers
+  * Returns:	-1 on failure, else IPC number
+  */
++
++static void init_select();
++
+ int open_connection ( connection )
+      struct connectRec *connection;
+ {
+@@ -71,7 +74,6 @@
+   extern int ButtonSelectMask(), open_pipe();
+   extern int open_socket_listener();
+   extern struct connectRec *accept_socket_connection();
+-  static void init_select();
+ #endif
+ 
+ #ifdef NOPIPEFLUSH
+--- ctrlfile.c.orig	Fri Apr 20 21:49:12 1990
++++ ctrlfile.c	Fri Jun 29 11:41:47 2007
+@@ -40,6 +40,9 @@
+  * Post state:	Sets pointer to file, open and ready for writing
+  * Returns:	2 = append, 1 = new file, 0 = user decided not to, -1 = error
+  */
++
++static int file_exists();
++
+ int open_output_file ( fd, edit, one_popup_row, prompt )
+      FILE **fd;
+      EditStruct *edit;
+@@ -56,7 +59,6 @@
+   int get_edit_input();
+   EditStruct *init_edit_popup();
+   void clear_edit_buf(), unmap_popwin();
+-  static int file_exists();
+ 
+   open_type[0] = 0;
+   if( (get_edit_input(edit, one_popup_row, 1, 0, prompt) <= 0) ||
+@@ -137,6 +139,9 @@
+  * Note:	Sets pointer of file open and ready for reading
+  * Returns:	1 on success, 0 if user decided not to, -1 on error
+  */
++
++static int file_exists();
++
+ int open_input_file ( fd, edit, one_popup_row, prompt )
+      FILE **fd;
+      EditStruct *edit;
+@@ -146,7 +151,6 @@
+   char filename[132];
+   int exist;
+   int get_edit_input();
+-  static int file_exists();
+ 
+   if( get_edit_input(edit, one_popup_row, 1, 1, prompt) <= 0 )
+     return( 0 );
+--- ctrlgc.c.orig	Wed May  2 16:19:55 1990
++++ ctrlgc.c	Fri Jun 29 11:42:09 2007
+@@ -237,10 +237,12 @@
+  * Subroutine:	get_fontstruct
+  * Returns:	Pointer to the specified fontstruct
+  */
++
++static int init_font();
++
+ XFontStruct *get_fontstruct ( app_code )
+      int app_code;	/* i: see comments above */
+ {
+-  static int init_font();
+ 
+   if( (app_font[app_code] == NULL) && (init_font(app_code) == NULL) )
+     return( NULL );
+@@ -253,11 +255,13 @@
+  * Purpose:	Load the fonts used by this program
+  * Returns:	Font on success, else 0
+  */
++
++static int open_font();
++
+ static int init_font ( app_code )
+      int app_code;	/* i: font application type index */
+ {
+   int i, name_index;
+-  static int open_font();
+ 
+   for( i=0; i<OPTION_COUNT; i++ ) {
+     name_index = preference[app_code][i];
+--- dispblnk.c.orig	Fri Apr 20 22:23:14 1990
++++ dispblnk.c	Fri Jun 29 11:42:36 2007
+@@ -181,13 +181,15 @@
+  * For each button release, if it is on top of stack, release it and display
+  *  one below, else just release it
+  */
++
++static int display_blink();
++
+ void control_blink ()
+ {
+   static int oldmode;
+   static int buttons = 0;
+   static int btnstack[4];
+   int i;
+-  static int display_blink();
+ 
+   if( control.event.type == ButtonPress ) {
+     /* don't respond if it's with a meta key (window resize) */
+--- dispbtmp.c.orig	Sat Jun 22 05:58:15 1991
++++ dispbtmp.c	Fri Jun 29 11:42:53 2007
+@@ -55,9 +55,11 @@
+  * Subroutine:	select_halftone
+  * Purpose:	Respond to halftone selection command
+  */
++
++static void new_halftone();
++
+ void select_halftone ()
+ {
+-  static void new_halftone();
+ 
+   switch( control.response[1] ) {
+   case 0:
+--- editctrl.c.orig	Sun Jun  3 12:07:48 1990
++++ editctrl.c	Fri Jun 29 11:44:00 2007
+@@ -61,6 +61,9 @@
+  * Subroutine:	init_edit_popup
+  * Purpose:	Get everything ready for running editor sessions
+  */
++
++static void init_popwin();
++
+ EditStruct *init_edit_popup ( string, max_chars )
+      char *string;
+      int max_chars;
+@@ -69,7 +72,6 @@
+   int len;
+   EditStruct *get_edit_struct();
+   void init_edit_struct(), load_edit_struct();
+-  static void init_popwin();
+ 
+   if( init_window ) {
+     init_popwin(color.gcset.menu.foreground, color.gcset.menu.background);
+@@ -91,6 +93,9 @@
+  *		(but expose is fielded and configure is saved for end).
+  * Returns:	1 if user returns with a response, 0 if user cancels session
+  */
++
++static void map_popwin();
++
+ int get_edit_input ( edit, one_row, map, unmap, prompt )
+      EditStruct *edit;
+      int one_row;	/* i: put-edit-after-prompt-on-same-line */
+@@ -104,7 +109,6 @@
+   int emacs_response();
+   void draw_new_string(), redraw_edit_string();
+   void adjust_desktop(), redraw_window(), unmap_popwin();
+-  static void map_popwin();
+ 
+   map_popwin(edit, one_row, prompt, map);
+   if( !map ) {
+--- grphbtmp.c.orig	Fri Apr 20 22:31:04 1990
++++ grphbtmp.c	Fri Jun 29 11:44:16 2007
+@@ -27,6 +27,9 @@
+  * Subroutine:	make_halftone_panimage
+  * Purpose:	Make halftone bitmap for pan window (panbox)
+  */
++
++static void byte_dither_sample(), byte_diffuse_sample();
++
+ void make_halftone_colorbar ( bytedata, bitdata,
+ 			      width, height, bytes_per_line )
+      unsigned char *bytedata;
+@@ -34,7 +37,6 @@
+      int width, height;
+      int bytes_per_line;
+ {
+-  static void byte_dither_sample(), byte_diffuse_sample();
+ 
+   bzero((char *)bitdata, bytes_per_line * height);
+   if( color.halftone.mode == BOP_Dither ) {
+--- grphgrab.c.orig	Fri Apr 20 22:33:27 1990
++++ grphgrab.c	Fri Jun 29 11:45:43 2007
+@@ -30,10 +30,12 @@
+  * Subroutine:	grab_cgraph_vertex
+  * Purpose:	When a mouse button is pressed, assign a vertex to that button
+  */
++
++static void get_color_vertex();
++
+ void get_cgraph_vertex ( event )
+      XEvent *event;
+ {
+-  static void get_color_vertex();
+ 
+   switch( event->xbutton.button ) {
+   case Button1:
+@@ -58,10 +60,12 @@
+  *		event
+  * Returns:	1 if a vertex was dropped, else 0
+  */
++
++static int drop_color_vertex();
++
+ int drop_cgraph_vertex ( event )
+      XEvent *event;
+ {
+-  static int drop_color_vertex();
+ 
+   switch( event->xbutton.button ) {
+   case Button1:
+@@ -83,13 +87,15 @@
+  * Purpose:	Handle grab vertex event for single color 
+  * Method:	Grab old vertex or make new vertex - under mouse pointer
+  */
++
++static int grab_old_color_vertex();
++static void install_new_color_vertex();
++
+ static void get_color_vertex ( x, y, col )
+      int x, y;
+      struct colgRec *col;
+ {
+   void install_draw_queue_end();
+-  static int grab_old_color_vertex();
+-  static void install_new_color_vertex();
+ 
+   /* clip against limits */
+   if( x < cgraph.graph.xzero )
+@@ -151,6 +157,9 @@
+  * Subroutine:	install_new_color_vertex
+  * Purpose:	Given hash position, install a new vertex, and make active
+  */
++
++static void add_color_vertex(), add_color_vertex_hash();
++
+ static void install_new_color_vertex ( x, y, col )
+      int x, y;			/* i: position of ULcorner of new hash mark */
+      struct colgRec *col;	/* i: color info structure for one color */
+@@ -158,7 +167,6 @@
+   double intensity, cell_level;
+   int match;
+   int select_best_hash_position();
+-  static void add_color_vertex(), add_color_vertex_hash();
+ 
+   col->active_hash = select_best_hash_position(x, y, col->hash, col->hash_cnt,
+ 					       &match, cgraph.vertical);
+@@ -251,11 +259,13 @@
+  * Purpose:	Delete a color table vertex if one is under the mouse position
+  * Returns:	1 if vertex was dropped, else 0
+  */
++
++  static int grab_old_color_vertex();
++
+ static int drop_color_vertex ( col, x, y )
+      struct colgRec *col;
+      int x, y;
+ {
+-  static int grab_old_color_vertex();
+ 
+   /* hash mark positions are upper left corner of hash box */
+   x -= HASH_RAY;
+--- grphinit.c.orig	Fri Apr 20 22:40:44 1990
++++ grphinit.c	Fri Jun 29 11:46:50 2007
+@@ -46,9 +46,11 @@
+  * Subroutine:	init_colorbox
+  * Purpose:	Handle program init-time color bar and graph initialization
+  */
++
++static void init_main_colorbar();
++
+ void init_colorbox ( )
+ {
+-  static void init_main_colorbar();
+ 
+   cgraph.ncolors = color.ncolors;
+   cgraph.red.table = &color.ctable.red;
+@@ -68,10 +70,12 @@
+  * Purpose:	Initialize color bar and related params
+  * Xlib calls:	XCreateSimpleWindow(), XMapSubwindows()
+  */
++
++static void set_colorbar_image(), set_colorbar_params();
++
+ static void init_main_colorbar ( )
+ {
+   char *calloc_errchk();
+-  static void set_colorbar_image(), set_colorbar_params();
+ 
+   colorbar.display = colorbox.display;
+   colorbar.ref_width = colorbox.width;
+@@ -92,10 +96,12 @@
+  * Subroutine:	adjust_main_colorbar
+  * Purpose:	Adjust color bar size params and/or color data if needed
+  */
++
++static void set_colorbar_image(), set_colorbar_params();
++
+ void adjust_main_colorbar ( )
+ {
+   char *calloc_errchk();
+-  static void set_colorbar_image(), set_colorbar_params();
+ 
+   if( (colorbox.width != colorbar.ref_width) ||
+       (colorbox.height != colorbar.ref_height) ) {
+@@ -113,11 +119,13 @@
+  * Purpose:	Initialize color bar and related params
+  * Xlib calls:	XMapSubwindows()
+  */
++
++static void set_colorbar_image(), set_colorbar_params();
++
+ void init_graph_colorbar ( )
+ {
+   Window create_cgraph_box();
+   char *calloc_errchk();
+-  static void set_colorbar_image(), set_colorbar_params();
+ 
+   cgraph.bar.display = graphbox.display;
+   cgraph.bar.ref_width = graphbox.width;
+@@ -149,11 +157,13 @@
+  * Subroutine:	adjust_graph_colorbar
+  * Purpose:	Adjust color bar size params and/or color data if needed
+  */
++
++static void set_colorbar_image(), set_colorbar_params();
++
+ void adjust_graph_colorbar ( )
+ {
+   int resize = 0;
+   char *calloc_errchk();
+-  static void set_colorbar_image(), set_colorbar_params();
+ 
+   if( cgraph.vertical ) {
+     if( graphbox.height != cgraph.bar.ref_height ) {
+--- grphmove.c.orig	Fri Apr 20 22:37:26 1990
++++ grphmove.c	Fri Jun 29 11:47:08 2007
+@@ -26,12 +26,14 @@
+  * Purpose:	Change values (and position) of designated vertices in
+  *		response to mouse movement
+  */
++
++static void move_color_vertex();
++
+ void move_cgraph_vertices ( x, y )
+      int x, y;
+ {
+   double cell_level, intensity;
+   int hash_x, hash_y;
+-  static void move_color_vertex();
+ 
+   /* clip against limits */
+   if( x < cgraph.graph.xzero )
+--- grpholap.c.orig	Fri Apr 20 22:36:00 1990
++++ grpholap.c	Fri Jun 29 11:47:22 2007
+@@ -28,13 +28,15 @@
+  * Subroutine:	mark_colorline_overlap
+  * Purpose:	Make line representing more than one color black (or white)
+  */
++
++static void mark_hashmark_overlap();
++
+ void mark_colorline_overlap ( )
+ {
+   int i, j;
+   int x, y;
+   int x1, y1;
+   XSegment line[256];
+-  static void mark_hashmark_overlap();
+ 
+   j = 0;
+   if( cgraph.vertical ) {
+--- grphtext.c.orig	Fri Apr 20 22:39:37 1990
++++ grphtext.c	Fri Jun 29 11:49:42 2007
+@@ -33,6 +33,9 @@
+  * Purpose:	Set labeling pieces according to the graph window size
+  * Xlib calls:	XMoveWindow(), XResizeWindow(), XMapWindow()
+  */
++
++static void init_colorbar_label();
++
+ void init_color_graph_label ( )
+ {
+   int new = 0;
+@@ -40,7 +43,6 @@
+   int resize = 0;
+   Window create_cgraph_box();
+   void init_color_graph_label();
+-  static void init_colorbar_label();
+ 
+   if( cgraph.graphlabel.active == 0 )
+     return;
+--- histdist.c.orig	Wed Jul 29 01:56:45 1998
++++ histdist.c	Fri Jun 29 11:51:37 2007
+@@ -24,6 +24,9 @@
+  * Purpose:	Distribute the levels among histogram sub-groups
+  * Returns:	number of groups with no assigned color levels
+  */
++
++static int excess_zgroup(), excess_nzgroup(), range_zgroup();
++
+ int distribute_levels ( linklist, pixel_area, color_levels,
+ 		        pmin, pmax, ncolor )
+      SubrangeLink *linklist;
+@@ -39,7 +42,6 @@
+ #ifdef DEBUG
+   int census = 0;
+ #endif
+-  static int excess_zgroup(), excess_nzgroup(), range_zgroup();
+ 
+   /* if all one group (no strong peaks), allocation is simple */
+   if( linklist->next == 0 ) {
+--- histeql.c.orig	Fri Apr 20 22:59:27 1990
++++ histeql.c	Fri Jun 29 11:51:55 2007
+@@ -24,6 +24,10 @@
+  *		output level optimization accounts for large cell counts
+  *		for single levels (e.g. half of all pixels with value 0)
+  */
++
++static int count_nonzero_histogram_entries(), rescan_histogram();
++static void unmark_peak_links();
++
+ void histogram_equalize ( scalemap, histogram, area, pmin, pmax,
+ 			  color_levels, pixels )
+      unsigned char *scalemap;	/* i/o: scalemap (for signed indexing) */
+@@ -42,8 +46,6 @@
+   char *calloc_errchk();
+   int distribute_levels();
+   void generate_scalemap(), scan_histogram_for_peaks(), resolve_zeroes();
+-  static int count_nonzero_histogram_entries(), rescan_histogram();
+-  static void unmark_peak_links();
+ 
+   /* initialize link list */
+   linklist = (SubrangeLink *)calloc_errchk(10, sizeof(int), "HElink");
+--- histlist.c.orig	Sat Jun 22 05:58:44 1991
++++ histlist.c	Fri Jun 29 11:52:24 2007
+@@ -29,6 +29,12 @@
+  * Subroutine:	make_equalized_list
+  * Purpose:	Distributing levels for a subrange section of the histogram
+  */
++
++static int equalize_simply();
++#ifdef JIGGLE
++static void adjust_list();
++#endif
++
+ void make_equalized_list ( histogram, list, low_entry, high_entry,
+ 			   pixel_area, color_levels )
+      int *histogram;
+@@ -47,10 +53,6 @@
+   int best_levels_under;
+   int best_average_over = 0;	/* average_area used to get best_levels */
+   int best_average_under = 0;
+-  static int equalize_simply();
+-#ifdef JIGGLE
+-  static void adjust_list();
+-#endif
+ 
+   /* else allocation distribution must first be determined */
+   /* run through histgram section making basic allocation and taking notes */
+--- histmap.c.orig	Fri Apr 20 23:00:13 1990
++++ histmap.c	Fri Jun 29 11:53:06 2007
+@@ -28,6 +28,9 @@
+  *		safely be applied.
+  * Note:	The original link-list of groups is freed.
+  */
++
++static void make_subrange_scalemap();
++
+ void generate_scalemap ( hist, subrange, scalemap, pixels )
+      int *hist;				/* i: histogram (for signed offsets) */
+      SubrangeLink *subrange;	/* i: linklist of subranges */
+@@ -36,7 +39,6 @@
+ {
+   int baselevel;
+   SubrangeLink *trash;
+-  static void make_subrange_scalemap();
+ 
+   baselevel = 0;
+   while( subrange != 0 ) {
+@@ -54,6 +56,9 @@
+  * Purpose:	Make a section of scale map using histgroup link as guide 
+  * Called by:	make_HE_scalemap() in HistEqual.c
+  */
++
++static void make_gapped_list(), list_to_map();
++
+ static void
+   make_subrange_scalemap ( histogram, subrange, scalemap, baselevel, pixels )
+      int *histogram;
+@@ -67,7 +72,6 @@
+   unsigned char dispval;
+   char *calloc_errchk();
+   void make_equalized_list();
+-  static void make_gapped_list(), list_to_map();
+ 
+   /* if only one level, make map section */
+   if( subrange->color_levels <= 1 ) {
+@@ -135,6 +139,10 @@
+  * Purpose:	Allocate levels for a histogram subrange.  Special process
+  * 		for situation when more levels than actually used values.
+  */
++
++static int first_shortlist_pass();
++static void add_level_to_short_list();
++
+ static void make_gapped_list ( histogram, list, low, high, levels )
+      int *histogram;
+      SubrangeList *list;
+@@ -142,8 +150,6 @@
+ {
+   int range_j, max_range;
+   int levels_used;
+-  static int first_shortlist_pass();
+-  static void add_level_to_short_list();
+ 
+   levels_used =
+     first_shortlist_pass(histogram, list, low, high, levels,
+--- histscan.c.orig	Fri Apr 20 23:00:36 1990
++++ histscan.c	Fri Jun 29 11:53:29 2007
+@@ -21,6 +21,10 @@
+  * Purpose:	Scan the image histogram picking out large cell count values
+  *		make sub-groups of the histogram between the large count levels
+  */
++
++static SubrangeLink *get_new_subrange_record();
++static void fill_subrange_record();
++
+ void scan_histogram_for_peaks ( subrange, histogram,
+ 			        pixel_area, map_levels, average )
+      SubrangeLink *subrange;	/* i/o: link (initially covers range) */
+@@ -36,8 +40,6 @@
+   int sr_nzentries;		/* l: number of non-zero entries in subrange */
+   int sr_pixel_area;		/* l: number of pixels in current subrange */
+   int sr_max_peak;		/* l: highest peak within current  subrange */
+-  static SubrangeLink *get_new_subrange_record();
+-  static void fill_subrange_record();
+ 
+   /* set initial pixel_count values */
+   sr_pixel_area = 0;
+--- histzero.c.orig	Fri Apr 20 23:01:03 1990
++++ histzero.c	Fri Jun 29 11:53:39 2007
+@@ -23,13 +23,15 @@
+  * Note:	Adjoining groups are large count single level groups
+  * Called by:	histrogram_equalize() above
+  */
++
++static void merge_links();
++
+ void resolve_zeroes ( PriorLink, zeroes )
+      SubrangeLink *PriorLink;
+      int zeroes;
+ {
+   SubrangeLink *ThisLink, *NextLink;
+   int a_count, b_count, z1count, z2count;
+-  static void merge_links();
+ 
+   /* if very first entry is a zero allocated link */
+   if( PriorLink->color_levels == 0 ) {
+--- imgcheck.c.orig	Tue Mar 13 03:31:30 2001
++++ imgcheck.c	Fri Jun 29 11:54:08 2007
+@@ -46,13 +46,15 @@
+  * Purpose:	Do some consistency checks on image type and size
+  * Returns:	0 if no errors found, else -1
+  */
++
++static int check_array();
++
+ int check_image ( img, got_status )
+      struct imageRec *img;
+      int got_status;
+ {
+   int len;
+   char *ext, *mwcs, cext;
+-  static int check_array();
+   extern int isfits();
+ 
+   ext = NULL;
+@@ -148,6 +150,9 @@
+  * Purpose:	Check array size vs file size etc
+  * Returns:	0 if size determined and/or OK, else -1
+  */
++
++static long size_imagefile();
++
+ static int check_array ( img )
+      struct imageRec *img;
+ {
+@@ -156,7 +161,6 @@
+   float posdim;		/* possible dimension */
+   int headersize;	/* size in bytes of header */
+   int rawsize;
+-  static long size_imagefile();
+ 
+   /* get header size */
+   headersize = img->headersize;
+--- imglogo.c.orig	Fri Apr 27 00:31:48 1990
++++ imglogo.c	Fri Jun 29 11:54:27 2007
+@@ -372,13 +372,15 @@
+  * Subroutine:	load_logo
+  * Purpose:	place logo image in image buffer
+  */
++
++static void make_logo();
++
+ void load_logo ( shortbuf, bufwd, bufht )
+      short *shortbuf;
+      int bufwd, bufht;
+ {
+   register short *bufpt, *bufend;
+   register short bkgd;
+-  static void make_logo();
+ 
+   /* fill buffer with background color */
+   bufpt = shortbuf;
+--- imgnew.c.orig	Thu Oct 15 06:01:58 1998
++++ imgnew.c	Fri Jun 29 11:54:42 2007
+@@ -52,6 +52,9 @@
+  *  Purpose:	Create all image coordinate parameters from the beginning
+  * 		and take care of all that might be affected
+  */
++
++static void  load_mainbuf();
++
+ void new_display ( dispnow, clear, load, scale )
+      int dispnow;	/* i: put-display-in-window-now flag */
+      int clear;		/* i: clear img buf before reading flag */
+@@ -61,7 +64,6 @@
+   void set_disptran(), new_pancursor(), new_scalemap();
+   void combine_transform(), set_edges(), set_dispoff(), set_magnifier();
+   void adjust_cursor_coords(), map_dispbox(), disp_dispbox();
+-  static void  load_mainbuf();
+ 
+   /*  Set disp to img and disp to file transforms  */
+   set_disptran(&coord);
+--- imgtrans.c.orig	Fri Apr 20 23:13:46 1990
++++ imgtrans.c	Fri Jun 29 11:55:10 2007
+@@ -26,6 +26,9 @@
+  * 	4-7 = flip y axis then rotate clockwise by (code - 4) * 90 degrees
+  * Called by:	load_image() in ImageRead.c
+  */
++
++static void square_buf(), unsquare_buf();
++
+ void rotate_buf ( buf, flip, rotcode, width, height, buf_squared, buf_doubled )
+      short *buf;
+      int flip;
+@@ -36,7 +39,6 @@
+   int maxdim;
+   void xflip_buf(), yflip_buf(), zflip_buf(), cwturn_buf(), ccwturn_buf();
+   void transfer_buf();
+-  static void square_buf(), unsquare_buf();
+ 
+   if( flip )
+     rotcode += 4;
+--- irafcrd.c.orig	Fri Apr 20 23:16:02 1990
++++ irafcrd.c	Fri Jun 29 11:55:49 2007
+@@ -45,13 +45,15 @@
+  *		If found and parsed, compute new transform for file coord.
+  * Returns:	1 if subsection found and parsed successfully, else 0
+  */
++
++static int parse_iraf_subsection();
++
+ int guess_true_file_coords ( title )
+      char *title;
+ {
+   int xoff, yoff, block;
+   float fblock;
+   Transform imgtoaux;
+-  static int parse_iraf_subsection();
+   void set_trans_speed(), combine_transform(), clear_coord_area();
+ 
+   if( parse_iraf_subsection(title, &xoff, &yoff, &block) == 0 ) {
+@@ -92,6 +94,10 @@
+  * Purpose:	Parse for subsection and blocking from the image name
+  * Returns:	1 if subsection or blocking was used, else 0
+  */
++
++static char *fn_substr();	/* look for a substr */
++static void get_subsection_offsets();
++
+ static int parse_iraf_subsection ( s, xoff, yoff, block )
+      char *s;			/* i: file name */
+      int *xoff;			/* o: x offset */
+@@ -99,8 +105,6 @@
+      int *block;		/* o: block */
+ {
+   char *t, *u;			/* temp char pointers */
+-  static char *fn_substr();	/* look for a substr */
+-  static void get_subsection_offsets();
+ 
+   /* seed the default values */
+   *xoff = 1;
+@@ -139,6 +143,9 @@
+  * Subroutine:	get_subsection_offsets
+  * Purpose:	parse subsection syntax for x and y offsets of subsection
+  */
++
++static char *fn_substr();
++
+ static void get_subsection_offsets ( s, xoff, yoff, is_qp )
+      char *s;
+      int *xoff, *yoff;
+@@ -147,7 +154,6 @@
+   int x1, x2;
+   int y1, y2;
+   char *sy, *s2, *st;
+-  static char *fn_substr();
+ 
+   /* if not qp, grab the initial x offset right after the '[' */
+   sy = fn_substr(s, ",");
+--- irafimtl.c.orig	Thu Feb 26 01:52:37 1998
++++ irafimtl.c	Fri Jun 29 11:56:14 2007
+@@ -46,6 +46,9 @@
+  * Subroutine:	imtool_response
+  * Purpose:	Read imtool messages from iraf (return 1 if pipe trouble)
+  */
++
++static int get_frame_no();
++
+ void imtool_response ( port, imhead, ndatabytes )
+      struct connectRec *port;	/* i: struct of port for IRAF input */
+      struct imtoolRec *imhead;	/* i: packet header, already read in */
+@@ -60,7 +63,6 @@
+   void set_curpos_to_iraf_trigger(), set_cursor_from_iraf(), imtool_output();
+   void set_imtool_scale(), set_cursor_to_iraf(), disp_subpiece();
+   void map_panbox(), disp_panbox(), send_curpos_to_iraf(), flush_connection();
+-  static int get_frame_no();
+ 
+   switch( imhead->subunit & 077 ) {
+   case FEEDBACK:
+@@ -189,6 +191,9 @@
+  * Purpose:	Reset buffer sizes, coordinate systems and parameters as
+  *		needed.
+  */
++
++static int get_frame_no();
++
+ void imtool_newimage ( is_wcs, imhead )
+      int is_wcs;
+      struct imtoolRec *imhead;
+@@ -199,7 +204,6 @@
+   void set_disptran(), combine_transform(), set_edges(), set_dispoff();
+   void adjust_cursor_coords(), set_magnifier(), disp_subpiece(), set_tdisp();
+   void set_imtool_scale(), imtool_reinit(), new_pancursor();
+-  static int get_frame_no();
+ 
+   /* set size and frame */
+   if( is_wcs )
+--- irafio.c.orig	Tue Oct 13 00:17:50 1992
++++ irafio.c	Fri Jun 29 11:56:48 2007
+@@ -102,6 +102,9 @@
+  * Subroutine:	imtool_output
+  * Purpose:	Write image data back to iraf device channel
+  */
++
++static int compact_short_to_byte();
++
+ void imtool_output ( imhead, odev, imagebuf, width, height )
+      struct imtoolRec *imhead;
+      struct connectRec *odev;
+@@ -116,7 +119,6 @@
+   int buferr = 0;
+   char fifobuf[SZ_FIFOBUF + 4];
+   int write_connection();
+-  static int compact_short_to_byte();
+ 
+   ndatabytes = -(int)imhead->thingct;
+   x = imhead->x & 077777;
+@@ -153,6 +155,9 @@
+  * Called by:	imtool_response() in RemoteImtool.c
+  * Returns:	-1 if read no bytes, 1 if trouble, else 0
+  */
++
++static void expand_byte_to_short();
++
+ int imtool_input ( imhead, idev, readbuf, iwdth, owdth, y1, y2,
+ 		   imagebuf, imbufsz )
+      struct imtoolRec *imhead;
+@@ -171,7 +176,6 @@
+   int got, try, gotten;
+   short *obuf;
+   int read_connection();
+-  static void expand_byte_to_short();
+ 
+   /* get data count and packing type */
+   ndatavals = -(int)imhead->thingct;
+--- irafpipe.c.orig	Thu Feb 26 01:52:26 1998
++++ irafpipe.c	Fri Jun 29 11:57:01 2007
+@@ -33,6 +33,9 @@
+  * Subroutine:	read_imtool_packet()
+  * Purpose:	event handler for packet input from iraf
+  */
++
++static int check_packet_sum();
++
+ void read_imtool_packet( port )
+      struct connectRec *port;
+ {
+@@ -48,7 +51,6 @@
+ #endif
+   int read_connection();
+   void imtool_response(), swap_bytes();
+-  static int check_packet_sum();
+ 
+   /* read the header */
+   bytes = read_connection(port, (char *)&imhead, sizeof(struct imtoolRec));
+--- maininit.c.orig	Tue Dec  2 05:21:35 2003
++++ maininit.c	Fri Jun 29 11:57:26 2007
+@@ -76,11 +76,13 @@
+  * Xlib calls:	XSetErrorHandler()
+  * UNIX calls:	setrlimit()
+  */
++
++static void init_params(), init_packages();
++
+ main(argc, argv)
+   int argc;
+   char **argv;
+ {
+-  static void init_params(), init_packages();
+   void crash_on_error(), control_event_loop();
+   void say_goodbye();
+   
+@@ -141,13 +143,15 @@
+  * Purpose:	Initialize parameters in the records
+  * Note:	Resource or default file not yet used
+  */
++
++static void init_server();
++
+ static void init_params ( argc, argv )
+      int argc;
+      char **argv;
+ {
+   char *name;		/* l: both flag for init and return display name */
+   int parse_stat;
+-  static void init_server();
+   int parse_cmdline(), check_image();
+   void say_goodbye(), init_connections();
+ 
+--- mainkey.c.orig	Thu Sep 25 05:38:25 2003
++++ mainkey.c	Fri Jun 29 11:58:47 2007
+@@ -87,6 +87,9 @@
+ 
+ static double oldxpos, oldypos;
+ 
++static void PrintFITSHead();
++static int new_image();
++
+ void
+ key_response()
+ {
+@@ -110,7 +113,6 @@
+   void print_center(), print_cursor();
+   void move_pointer();
+   void get_cursor_pos();
+-  static void PrintFITSHead();
+   void toggle_region_visibility(), toggle_region_labeling();
+   double xbuf, ybuf, xfile, yfile;
+   double newxpos, newypos, distance;
+--- mgfyctrl.c.orig	Fri May  7 02:47:12 1999
++++ mgfyctrl.c	Fri Jun 29 11:59:53 2007
+@@ -45,12 +45,14 @@
+  * Purpose:	Magnify location of a dispbox event
+  * Xlib calls:	XCheckWindowEvent(), XSync()
+  */
++
++static void label_file_coords(), label_file_coords_proportional();
++
+ void magnify_disp ( event, view, text )
+      XEvent *event;		/* i: XEvent for location of mouse */
+      int view, text;
+ {
+   void draw_magnifier();
+-  static void label_file_coords(), label_file_coords_proportional();
+ 
+   /* get only the most recent mouse moved event */
+   XSync(dispbox.display, 0);
+@@ -132,6 +134,9 @@
+  * Purpose:	Show pointer coordinates and image value in display window
+  * Xlib calls:	XDrawImageString()
+  */
++
++static void draw_proportional_coord();
++
+ static void label_file_coords ( bufX, bufY )
+      double bufX, bufY;
+ {
+@@ -142,7 +147,6 @@
+   float fileX, fileY;
+   GC gc, set_edit_gc();
+   void d_transform();
+-  static void draw_proportional_coord();
+   static int lwcs0 = 0;
+   static int lpix0 = 0;
+   int i;
+@@ -289,6 +293,9 @@
+  *		but has not been refined for the val section.
+  * Xlib call:	XDrawImageString()
+  */
++
++static void draw_proportional_number();
++
+ static void label_file_coords_proportional ( bufX, bufY )
+      double bufX, bufY;
+ {
+@@ -297,7 +304,6 @@
+   float fileX, fileY;
+   GC gc, set_edit_gc();
+   void d_transform();
+-  static void draw_proportional_number();
+ 
+   gc = set_edit_gc(magset.text.font,
+ 		   magset.text.foreground, magset.text.background);
+--- mgfytabl.c.orig	Thu Jul  9 23:28:28 1998
++++ mgfytabl.c	Fri Jun 29 12:00:33 2007
+@@ -30,6 +30,10 @@
+  *		coordinates
+  * Note:	Uses event coords in control struct (control.event.xkey)
+  */
++
++static int get_key_buf_coords(), set_table_params();
++static void output_column_labels(), output_pixval_table();
++
+ void print_table ()
+ {
+   int bufx, bufy;
+@@ -39,8 +43,6 @@
+   int table_size;
+   int col_width;
+   int rot;
+-  static int get_key_buf_coords(), set_table_params();
+-  static void output_column_labels(), output_pixval_table();
+ 
+   /* determine the buffer coordinates of the event */
+   if( get_key_buf_coords(&control.event.xkey, &bufx, &bufy) == 0 ) {
+--- pancrsr.c.orig	Wed May  2 14:49:17 1990
++++ pancrsr.c	Fri Jun 29 12:01:31 2007
+@@ -45,13 +45,15 @@
+  * Subroutine:	new_pancursor
+  * Purpose:	Create and draw panbox cursor given image coordinates
+  */
++
++static void set_pancursor();
++
+ void new_pancursor ( track )
+      int track;
+ {
+   float panX1, panX2, panY1, panY2;
+   GC gc, set_gc();
+   void disp_window(), i_transform();
+-  static void set_pancursor();
+ 
+   if( pancur_present ) {
+     /* erase the old box if it was visible */
+--- panimage.c.orig	Sat Apr 21 00:17:38 1990
++++ panimage.c	Fri Jun 29 12:01:53 2007
+@@ -45,12 +45,14 @@
+  * Subroutine:	map_panbox
+  * Purpose:	Fill the panbox display buffer, mapping from its short buffer
+  */
+-void map_panbox ( )
+-{
+-  static void map_panbuf();
++
++static void map_panbuf();
+ #ifdef SUMBLOCK
+-  static void map_adj_panbuf();
++static void map_adj_panbuf();
+ #endif
++
++void map_panbox ( )
++{
+   void panimage_halftone();
+ 
+   if( color.ncolors <= 1 ) {
+--- prntcent.c.orig	Sat Aug 21 05:18:40 1999
++++ prntcent.c	Fri Jun 29 12:41:46 2007
+@@ -36,6 +36,11 @@
+  *		Returns 1 if successful, else 0
+  * Note:	Uses event coords in control struct (control.event.xkey)
+  */
++
++static int set_center_param();
++static int get_key_buf_coord();
++static void comp_center ();
++
+ void
+ print_center ( xc, yc )
+ 
+@@ -59,9 +64,6 @@
+   int xfile, yfile;
+   char string[64];
+   int lstr = 48;
+-  static int set_center_param();
+-  static int get_key_buf_coord();
+-  static void comp_center ();
+   void d_trans();
+   int iswcs();
+ 
+--- prntcurs.c.orig	Thu Jan 17 04:54:18 2002
++++ prntcurs.c	Fri Jun 29 12:41:28 2007
+@@ -31,12 +31,14 @@
+  * Subroutine:	print_cursor
+  * Purpose:	print location of a dispbox event
+  */
++
++static void print_file_value();
++
+ void print_cursor ( event )
+   XEvent *event;		/* XEvent for location of mouse */
+ {
+   double bufx, bufy, filex, filey;
+   void get_cursor_pos();
+-  static void print_file_value();
+ 
+   (void)get_cursor_pos (event, &bufx, &bufy, &filex, &filey );
+   (void)print_file_value ( bufx, bufy, filex, filey );
+--- readarr.c.orig	Tue Feb 23 20:05:41 1999
++++ readarr.c	Fri Jun 29 12:02:06 2007
+@@ -28,6 +28,9 @@
+  * Purpose:	Read array data from a file
+  * Note:	Assumes file was tested benignly, exits here if trouble
+  */
++
++static int read_data();
++
+ void read_array ( fd, img, imgbuf, filebuf, width, height, X, Y, block,
+ 		  verbose )
+      int fd;			/* if >=0 handle to open & ready image file */
+@@ -40,7 +43,6 @@
+      int verbose;		/* whether to print explanatory messages */
+ {
+   int vals;
+-  static int read_data();
+   int image_start;
+   int open_disk(), lseek_disk();
+   void close_disk();
+--- readfith.c.orig	Tue Sep 29 22:40:06 1998
++++ readfith.c	Fri Jun 29 12:02:34 2007
+@@ -46,6 +46,9 @@
+  * Purpose:	Find important FITS parameters in FITS header
+  * Returns:	1 if success, else 0
+  */
++
++static int get_keyint(), get_keyfloat();
++
+ int read_fitsheader ( header, length, bitpix, naxis, naxes, scale, bias )
+      char *header;
+      int length;
+@@ -55,7 +58,6 @@
+      float *scale;
+      float *bias;
+ {
+-  static int get_keyint(), get_keyfloat();
+   struct WorldCoor *wcsinit();
+   char *header0;
+   header0 = header;
+@@ -144,6 +146,9 @@
+  * Purpose:	Return the float value in the data field for a given FITS
+  *		header keyword.  If key not found, return 0.
+  */
++
++static void fix_exponent();
++
+ static int get_keyfloat ( header, keyword, length, val, report_error)
+      char *header;	/* buffer start */
+      char *keyword;	/* keyword to match */
+@@ -153,7 +158,6 @@
+ {
+   int key_not_end;
+   int i;
+-  static void fix_exponent();
+   void no_fitscomment();
+ 
+   key_not_end = (strncmp(keyword, "END     ", 8) != 0);
+--- rgnanli.c.orig	Sat Apr 21 00:25:03 1990
++++ rgnanli.c	Fri Jun 29 12:02:53 2007
+@@ -89,14 +89,16 @@
+  * Note:	"vala valb valc ..." and "val1 val2 n=int" are both
+  *		permitted syntax forms
+  */
++
++static int expand_radii();
++static char *got_nequal();
++
+ int parse_radii ( line, radius, maxcnt )
+      char *line;	/* i: string with first radius as next token */
+      float *radius;	/* o: buffer for float radius vals */
+      int maxcnt;	/* i: size of radius buffer */
+ {
+   int i, cnt;
+-  static int expand_radii();
+-  static char *got_nequal();
+   char *next_token();
+ 
+   i = 0;
+--- rgndraw.c.orig	Tue Dec  1 03:46:40 1998
++++ rgndraw.c	Fri Jun 29 12:04:06 2007
+@@ -115,12 +115,14 @@
+  * Subroutine:	disp_region
+  * Purpose:	Draw one saved cursor region and its labels
+  */
++
++static GC set_region_gc();
++static void label_annuli(), label_region(), draw_region();
++
+ void disp_region ( region )
+      struct cursorRec *region;
+ {
+   GC gc;
+-  static GC set_region_gc();
+-  static void label_annuli(), label_region(), draw_region();
+ 
+   if( rgdraw.visible && (region != NULL) ) {
+     gc = set_region_gc(region);
+@@ -215,11 +217,13 @@
+  * Purpose:	Draw one saved cursor region outline or point index
+  * Note:	gc is already set, hence NULL GCspec in draw calls
+  */
++
++static void draw_region_label();
++
+ static void draw_region ( region, gc )
+      struct cursorRec *region;
+      GC gc;
+ {
+-  static void draw_region_label();
+   void draw_annuli(), draw_cursor();
+ 
+   if( region->type != COP_Point ) {
+@@ -246,12 +250,14 @@
+ /*
+  * Subroutine:	label_annuli
+  */
++
++static void label_region();
++
+ static void label_annuli ( region, gc )
+      struct cursorRec *region;
+      GC gc;
+ {
+   struct cursorRec *annulus;
+-  static void label_region();
+ 
+   /* apply label to outer annulus */
+   annulus = region;
+@@ -268,6 +274,10 @@
+  * Purpose:	Draw one region's label line and text for center and edge
+  * Xlib calls:	XDrawLine()
+  */
++
++static int mark_include();
++static void draw_region_label();
++
+ static void label_region ( region, gc )
+      struct cursorRec *region;
+      GC gc;
+@@ -277,8 +287,6 @@
+   char edge_string[132];
+   int len;
+   int exclude;
+-  static int mark_include();
+-  static void draw_region_label();
+ 
+   /* if label not requested or don't know how to label or will another part */
+   if( (!rgdraw.label) || (region->type == COP_Polygon) )
+--- rgndrop.c.orig	Sat Apr 21 00:31:38 1990
++++ rgndrop.c	Fri Jun 29 12:04:34 2007
+@@ -64,14 +64,16 @@
+  *		cursors enclose one or two digit label but have 0 area).
+  *		In case of equal areas (i.e. points), closer center is used.
+  */
++
++static int pointer_is_inside_region();
++static int closer_to_center();
++
+ struct cursorRec *region_indicated_by_pointer ( cursor, x, y, point_only )
+      struct cursorRec *cursor;
+      int x, y;
+      int point_only;
+ {
+   struct cursorRec *region, *chosen;
+-  static int pointer_is_inside_region();
+-  static int closer_to_center();
+ 
+   chosen = NULL;
+   region = cursor->next_region;
+@@ -115,13 +117,15 @@
+  * Subroutine:	is_inside_region
+  * Purpose:	Determine if mouse is within a region
+  */
++
++static int pointer_is_inside_polygon();
++
+ static int pointer_is_inside_region ( x, y, region )
+      int x, y;
+      struct cursorRec *region;
+ {
+   double rayX, rayY, ray;
+   int inside;
+-  static int pointer_is_inside_polygon();
+ 
+   if( region->type == COP_Polygon )
+     return( pointer_is_inside_polygon((double)x, (double)y,
+--- rgnwpros.c.orig	Wed Jan  9 10:57:30 1991
++++ rgnwpros.c	Fri Jun 29 12:29:12 2007
+@@ -45,11 +45,13 @@
+  * Purpose:	Write ROSAT PROS style region description to file
+  * Method:	Recurse first to start writing from end of link list
+  */
++
++static void cat_annulus(), write_annuli(), cat_shape();
++
+ void write_region_pros ( fd, region )
+      FILE *fd;
+      struct cursorRec *region;
+ {
+-  static void cat_annulus(), write_annuli(), cat_shape();
+ 
+   /*  Check for pointer before doing anything  */
+   if( region == NULL )
+@@ -84,13 +86,15 @@
+ /*  Subroutine:	cat_shape
+  *  Purpose:	Put simple PROS description of given cursor in line buffer
+  */     
++
++static void cat_polypts(), cat_cen(), cat_params();
++
+ static void cat_shape ( region, line )
+      struct cursorRec *region;
+      char *line;
+ {
+   int params;
+   void write_text_region();
+-  static void cat_polypts(), cat_cen(), cat_params();
+ 
+   switch( region->type ) {
+   case COP_Box:
+@@ -205,12 +209,14 @@
+  * Subroutine:	cat_polypts
+  * Purpose:	Add list of point coordinates to line buffer (for polygon)
+  */
++
++static void cat_pt();
++
+ static void cat_polypts ( region, line )
+      struct cursorRec *region;
+      char *line;
+ {
+   int i;
+-  static void cat_pt();
+ 
+   cat_pt((double)region->poly[0].fileX, (double)region->poly[0].fileY,
+ 	 line, 0);
+@@ -254,12 +260,14 @@
+  * Purpose:	Put a PROS style description of circular annuli on the
+  *		line buffer
+  */
++
++static void cat_cen();
++
+ static void cat_annulus ( region, line )
+      struct cursorRec *region;
+      char *line;
+ {
+   char radius[16];
+-  static void cat_cen();
+ 
+   (void)strcat(line, "ANNULUS(");
+   cat_cen(region, line);
+@@ -275,14 +283,16 @@
+  * Subroutine:	write_annuli
+  * Purpose:	Write PROS type description to produce annuli of given shapes
+  */
++
++static struct cursorRec *cat_annular();
++static void cat_shape();
++
+ static void write_annuli ( region, line, fd )
+      struct cursorRec *region;
+      char *line;
+      FILE *fd;
+ {
+   struct cursorRec *annulus;
+-  static struct cursorRec *cat_annular();
+-  static void cat_shape();
+ 
+   /* annuli start with next_annulus (base region is not one of them) */ 
+   if( (annulus = region->next_annulus) != NULL ) {
+@@ -309,11 +319,13 @@
+  * Purpose:	Add outer shape anded with not of inner shape to make
+  *		an annular ring
+  */
++
++static void cat_shape();
++
+ static struct cursorRec *cat_annular ( region, line )
+      struct cursorRec *region;
+      char *line;
+ {
+-  static void cat_shape();
+ 
+   if( region->next_annulus != NULL ) {
+     if( region->exclude_region )
+--- rgnwrite.c.orig	Fri Jun 29 12:42:50 2007
++++ rgnwrite.c	Fri Jun 29 12:29:47 2007
+@@ -58,6 +58,9 @@
+  * Subroutine:	write_regions
+  * Purpose:	Write region info to a file
+  */
++
++static void write_region_imtool();
++
+ void write_regions ( cursor, image, output_type )
+      struct cursorRec *cursor;
+      struct imageRec *image;
+@@ -66,7 +69,6 @@
+   FILE *fd;
+   static int last_output_type = 0;
+   char fname[SZ_FNAME];
+-  static void write_region_imtool();
+   int open_output_file();
+   EditStruct *init_edit_popup();
+   void set_path_iraf(), write_region_pros(), load_edit_struct(), timestamp();
+@@ -146,13 +148,15 @@
+  * Subroutine:	timestamp
+  * Purpose:	Write date and filename (if known) to region file
+  */
++
++static void set_time_string();
++
+ void timestamp ( fd, imagename )
+      FILE *fd;
+      char *imagename;
+ {
+   char  line[SZ_LINE];
+   int len;
+-  static void set_time_string();
+ 
+   /* timestamp the first entry in the output file. */
+   set_time_string (line);
+--- sclctrl.c.orig	Thu Oct 10 22:55:57 1996
++++ sclctrl.c	Fri Jun 29 12:30:24 2007
+@@ -70,6 +70,9 @@
+  * Subroutine:	new_scalemap
+  * Purpose:	Scalemap calculation for a new image
+  */
++
++static void new_histogram();
++
+ void new_scalemap ( )
+ {
+   static double cmdMin = 0.0;
+@@ -78,7 +81,6 @@
+   static int max_given = 0;
+   static int imtool_200 = 0;
+   static int init = 1;		/* identify first time called */
+-  static void new_histogram();
+   void make_scalemap(), color_logo();
+ #ifdef IMTOOL
+   void set_imtool_colors();
+--- sclmap.c.orig	Tue Oct 25 21:25:02 1994
++++ sclmap.c	Fri Jun 29 12:30:47 2007
+@@ -36,11 +36,13 @@
+  * Note:	Map goes from image value to hardware value (through ideal
+  *		map value using pixels array from XAllocColors)
+  */
++
++static void linear_scale(), wrap_scale(), sqrt_scale(), log_scale();
++
+ void make_scalemap ( image_min, image_max )
+      int image_min, image_max;	/* i: range of mapping for image data input */
+ {
+   void histogram_equalize();
+-  static void linear_scale(), wrap_scale(), sqrt_scale(), log_scale();
+ 
+   /* note the range of data for which mapping is to be calculated */
+   if( image_max == image_min )
+@@ -105,6 +107,9 @@
+  * Subroutine:	linear_scale
+  * Purpose:	Distribute color levels in the map evenly
+  */
++
++static void get_histogram_range();
++
+ static void linear_scale ( image_min, image_max )
+   int image_min, image_max;		/* i: limits of values in display */
+ {
+@@ -118,7 +123,6 @@
+   register int imageval;
+   register int pixval;
+   register int imagelim;
+-  static void get_histogram_range();
+ 
+   range_min = image_min;
+   range_max = image_max;
+--- wndwconf.c.orig	Sat Jan 21 06:27:13 1995
++++ wndwconf.c	Fri Jun 29 12:40:29 2007
+@@ -55,9 +55,11 @@
+  * Method:	The size can be given or set to norm.  If given but less
+  *		than min (i.e. 0,0) it becomes the minimum configuration.
+  */
++
++static void set_parsed_geometry();
++
+ void init_desktop ( )
+ {
+-  static void set_parsed_geometry();
+ 
+   desktop.hints.min_width =
+     (2 * desktop.xzero) + (2 * dispbox.bdrwidth) + dispbox.hints.min_width;
+--- wndwinit.c.orig	Sat Dec 15 05:19:23 2001
++++ wndwinit.c	Fri Jun 29 12:41:01 2007
+@@ -53,11 +53,13 @@
+  * Uses:	create_window() in WndwCreate.c
+  * Xlib calls:	DisplayWidth(), DisplayHeight();
+  */
++
++static void set_window_basics();
++
+ void init_windows1 ( argc, argv )
+      int argc;			/* i: command line arg count param */
+      char **argv;		/* i: command line args */
+ {
+-  static void set_window_basics();
+   void init_desktop(), create_window();
+ 
+   /* set display screen parameters for all to see */
+@@ -81,9 +83,11 @@
+  * Uses:	configure_windows() in WndwConfig.c
+  * Uses:	get_window_dimensions(), create_window() in WndwCreate.c
+  */
++
++static void init_window_basics(), set_border_color();
++
+ void init_windows2 ( )
+ {
+-  static void init_window_basics(), set_border_color();
+   void get_window_dimensions(), configure_windowgroup(), create_window();
+ 
+   /* install runtime environment parameters for all windows */
+@@ -175,11 +179,13 @@
+  * Subroutine:	init_window_basics, set_window_basics
+  * Purpose:	Set the runtime environment parameters
+  */
++
++static void set_window_basics();
++
+ static void init_window_basics ( border_pixel )
+      int border_pixel;
+ {
+   XImage *ximage;
+-  static void set_window_basics();
+ 
+   ximage = XCreateImage(desktop.display, color.visual, color.screen_depth,
+ 			dispbox.image.format, 0, malloc(4), 2, 2,
+--- wndwmaus.c.orig	Thu Dec 20 04:06:46 2001
++++ wndwmaus.c	Fri Jun 29 12:41:12 2007
+@@ -61,11 +61,13 @@
+  * Subroutine:	init_mousepointers
+  * Purpose:	Set up the various mouse pointer icons for all windows
+  */
++
++static Cursor make_mouse_cursor();
++
+ void init_mousepointers ( dispdisplay, auxdisplay )
+      Display *dispdisplay;	/* i: display for the dispbox */
+      Display *auxdisplay;	/* i: display for the auxiliary windows */
+ {
+-  static Cursor make_mouse_cursor();
+ 
+   /* create special btnbox cursor for button menu window */
+   btnbox.attrs.cursor =
