@@ -29,6 +29,7 @@
     SUBDIR += afay
     SUBDIR += agide
     SUBDIR += aifad
+    SUBDIR += alabastra
     SUBDIR += ald
     SUBDIR += alf
     SUBDIR += allegro
