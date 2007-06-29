@@ -7,7 +7,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	0.7.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	A Geographical Information System (GIS) data viewer
 
 LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 		proj:${PORTSDIR}/graphics/proj \
-		gsl.9:${PORTSDIR}/math/gsl \
+		gsl.10:${PORTSDIR}/math/gsl \
 		gdal:${PORTSDIR}/graphics/gdal
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 

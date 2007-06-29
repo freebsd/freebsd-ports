@@ -7,6 +7,7 @@
 
 PORTNAME=	msieve
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.boo.net/~jasonp/ \
 		http://mirror.roe.ch/dist/msieve/
@@ -41,7 +42,7 @@ CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
 .if !defined(WITHOUT_GNFS)
-LIB_DEPENDS+=	gsl.9:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	gsl.10:${PORTSDIR}/math/gsl
 ALLTGT_SUFX=	_nfs
 .endif
 

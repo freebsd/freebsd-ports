@@ -7,7 +7,7 @@
 
 PORTNAME=		snd
 PORTVERSION=		7.8
-PORTREVISION=		6
+PORTREVISION=		7
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Multitracking sound editor and utilities
 
-LIB_DEPENDS=		gsl.9:${PORTSDIR}/math/gsl
+LIB_DEPENDS=		gsl.10:${PORTSDIR}/math/gsl
 
 ALL_TARGET=		audinfo snd sndinfo sndplay sndrecord sndsine
 CONFIGURE_ARGS=		--with-float-samples \
