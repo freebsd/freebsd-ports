@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	python-mode.el
-PORTVERSION=	1.0.a
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	lang elisp python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=python-mode
-DISTNAME=	python-mode-1.0alpha
+DISTNAME=	python-mode-${PORTVERSION}
 
 MAINTAINER=	saturnero@gufi.org
 COMMENT=	Emacs lisp module for the Python language
@@ -21,7 +22,7 @@ CONFLICTS=	python-2.4.[012]*
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
-LISPFILES=	python-mode.el pycomplete.el
+LISPFILES=	doctest-mode.el pycomplete.el pycomplete.py python-mode.el
 
 do-install:
 	${MKDIR} ${EMACSLISPDIR}
