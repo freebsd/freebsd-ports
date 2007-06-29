@@ -26,6 +26,6 @@ USE_GNUSTEP_INSTALL=	yes
 WRKSRC=		${WRKDIR}/TimeMon
 
 post-patch:
-	${RM} ${WRKSRC}/shared_obj/loadave.o
+	${RM} ${WRKSRC}/shared_obj/*.*
 
 .include <bsd.port.mk>
