@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	valknut
-PORTVERSION=	0.3.7
-PORTREVISION=	1
+PORTVERSION=	0.3.10
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://download.berlios.de/dcgui/ \
-		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	wxdcgui
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Direct Connect client QT GUI
