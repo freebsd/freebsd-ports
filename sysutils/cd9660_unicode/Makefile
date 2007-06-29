@@ -7,12 +7,15 @@
 
 PORTNAME=	cd9660_unicode
 PORTVERSION=	1.0
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils kld
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sobomax
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A kernel driver for reading CD disks with non-English filenames
+
+DEPRECATED=	is obsolete. See mount_cd9660(8)
+EXPIRATION_DATE=	2007-08-29
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 
@@ -30,10 +33,6 @@ IGNORE=		"your FreeBSD version is not supported. Please update to the latest ver
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501109
-IGNORE=		is obsolete. See mount_cd9660(8)
-.endif
 
 pre-everything::
 	@if [ ! -d /sys -o ! -d ${SRCPREFIX}/sys ]; then \
