@@ -1,0 +1,16 @@
+muCommander is a lightweight, cross-platform file manager featuring
+a Norton Commander style interface and running on any operating
+system with Java support (Mac OS X, Windows, Linux, *BSD, Solaris...).
+
+Here's a non-exaustive list of what you'll find:
+- Virtual filesystem with local volumes, FTP, SFTP, SMB, NFS, HTTP and
+  Bonjour support
+- Quickly copy, move, rename files, create directories, email files...
+- Browse, create and uncompress ZIP, TAR, GZip, BZip2, ISO/NRG, AR/Deb and
+  LST archives
+- Universal bookmarks and credentials manager
+- Multiple windows support
+- Full keyboard access
+- Highly configurable
+
+WWW:	http://www.mucommander.com
