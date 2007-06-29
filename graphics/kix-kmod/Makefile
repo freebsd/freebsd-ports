@@ -7,7 +7,7 @@
 
 PORTNAME=       kix
 PORTVERSION=	1.0
-CATEGORIES=     graphics
+CATEGORIES=     graphics kld
 MASTER_SITES=   http://www.witchspace.com/files/
 PKGNAMESUFFIX=	-kmod
 

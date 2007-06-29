@@ -9,7 +9,7 @@ PORTNAME=	iwi-firmware
 RELNAME=	ipw2200
 PORTVERSION=	2.4
 PORTREVISION=	7
-CATEGORIES=	net sysutils
+CATEGORIES=	net sysutils kld
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Intel PRO/Wireless 2200 Driver Firmware

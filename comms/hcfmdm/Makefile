@@ -10,7 +10,7 @@
 
 PORTNAME=	hcfmdm
 PORTVERSION=	0.99.1
-CATEGORIES=	comms
+CATEGORIES=	comms kld
 MASTER_SITES=	http://lug.cbx.ru/files/modem/ \
 		http://www.int21.de/conexant/ \
 		${MASTER_SITE_GENTOO} \

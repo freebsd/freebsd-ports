@@ -7,7 +7,7 @@
 
 PORTNAME=	ng_daphne
 PORTVERSION=	1.0
-CATEGORIES=	net
+CATEGORIES=	net kld
 MASTER_SITES=	http://newton.ee.auth.gr/ng_daphne/
 
 MAINTAINER=	gedimitr@auth.gr
@@ -21,14 +21,7 @@ IGNORE=		"Requires kernel source (/usr/src/sys) to build"
 .endif
 MAKE_ENV+=	WERROR=
 
-.if ${OSVERSION} < 500000
-IGNORE=		"Requires new netgraph architecture ng_item to build"
-.endif
-
-.if ${OSVERSION} > 502010
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ng_daphne.c
-.endif
-
 PLIST_FILES=	lib/ng_daphne.ko
 PORTDOCS=	README
 

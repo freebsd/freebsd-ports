@@ -8,7 +8,7 @@
 PORTNAME=	est
 PORTVERSION=	0.7.2
 PORTREVISION=	2
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils kld
 MASTER_SITES=	http://www.daemonology.net/freebsd-est/
 
 MAINTAINER=	cperciva@daemonology.net

@@ -8,7 +8,7 @@
 PORTNAME=	devcpu
 PORTVERSION=	0.8.1
 PORTREVISION=	0
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils kld
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
 MAINTAINER=	stas@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	iwi-firmware
 PORTREVISION=	3
-CATEGORIES=	net sysutils
+CATEGORIES=	net sysutils kld
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Intel PRO/Wireless 2200 Firmware Kernel Module

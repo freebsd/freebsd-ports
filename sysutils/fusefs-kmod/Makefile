@@ -8,7 +8,7 @@
 PORTNAME=	fusefs
 PORTVERSION=	0.3.0
 PORTREVISION=	5
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils kld
 MASTER_SITES=	http://fuse4bsd.creo.hu/downloads/ \
 		http://am-productions.biz/docs/
 PKGNAMESUFFIX=	-kmod

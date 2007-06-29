@@ -7,7 +7,7 @@
 
 PORTNAME=	pmap
 PORTVERSION=	20060622
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils kld
 MASTER_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
 		ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/pmap/
 

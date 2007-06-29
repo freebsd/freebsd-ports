@@ -7,7 +7,7 @@
 
 PORTNAME=	plasma
 PORTVERSION=	0.1
-CATEGORIES=	graphics
+CATEGORIES=	graphics kld
 MASTER_SITES=	http://users.uk.freebsd.org/~greid/
 PKGNAMESUFFIX=	-kmod
 

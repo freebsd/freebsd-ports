@@ -8,7 +8,7 @@
 PORTNAME=	ltmdm
 PORTVERSION=	1.4
 PORTREVISION=	18
-CATEGORIES=	comms
+CATEGORIES=	comms kld
 MASTER_SITES=	http://www.dons.net.au/~darius/
 EXTRACT_SUFX=	.tgz
 
