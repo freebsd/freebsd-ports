@@ -46,7 +46,7 @@ INSTALL_DIR=	${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700000
-LIB_DEPENDS=	c.6:${PORTSDIR}/misc/compat6x
+LIB_DEPENDS=	z.3:${PORTSDIR}/misc/compat6x
 JDK_OSREL=	freebsd6
 .elif ${OSVERSION} >= 600000
 JDK_OSREL=	freebsd6
