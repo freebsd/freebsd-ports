@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Mar 14 04:45:05 2000
-+++ Makefile	Mon Nov 20 15:22:53 2000
+--- Makefile.orig	Tue Mar 14 11:45:05 2000
++++ Makefile	Sun Jun 24 00:22:01 2007
 @@ -1,20 +1,21 @@
  SHELL=/bin/sh
 -CC = gcc
@@ -26,13 +26,13 @@
 +PREFIX ?= /usr/local
 +INSTALL_BINPATH = $(PREFIX)/bin
 +INSTALL_MANPATH = $(PREFIX)/man
-+DOC_DIR = $(PREFIX)/doc/$(PROGNAME)
++DOC_DIR = $(PREFIX)/share/doc/$(PROGNAME)
 +SHARE_DIR = $(PREFIX)/share/$(PROGNAME)
 +DATA_DIR ?= /var/db/linpopup
  DATA_FILE = $(DATA_DIR)/messages.dat
  
  RPM_RELEASE = 1
-@@ -22,9 +23,9 @@
+@@ -22,25 +23,25 @@
  RPM_ICONNAME = linpopup.gif
  
  
@@ -45,6 +45,27 @@
  
  
  install : 
+ 	@echo 
+-	/usr/bin/install -s -m 755 $(PROGNAME) $(INSTALL_BINPATH)
+-	/usr/bin/install -m 644 ../$(PROGNAME).1 $(INSTALL_MANPATH)/man1
++	${BSD_INSTALL_PROGRAM} $(PROGNAME) $(INSTALL_BINPATH)
++	${BSD_INSTALL_MAN} ../$(PROGNAME).1 $(INSTALL_MANPATH)/man1
+ 	ln -fs $(PROGNAME) $(INSTALL_BINPATH)/$(PROGNAME_LNK)
+ 	ln -fs $(PROGNAME).1 $(INSTALL_MANPATH)/man1/$(PROGNAME_LNK).1	
+ 	mkdir -p -m0755 $(DATA_DIR)
+ 	mkdir -p -m0755 $(DOC_DIR)
+ 	mkdir -p -m0755 $(SHARE_DIR)
+ 	mkdir -p -m0755 $(SHARE_DIR)/pixmaps
+-	/usr/bin/install -m 644 ../AUTHORS ../BUGS ../COPYING ../ChangeLog ../INSTALL \
++	${BSD_INSTALL_DATA} ../AUTHORS ../BUGS ../COPYING ../ChangeLog ../INSTALL \
+ 	../MANUAL ../NEWS ../README ../TODO ../THANKS  $(DOC_DIR)
+-	/usr/bin/install -m 644 ../pixmaps/little_igloo.xpm  $(SHARE_DIR)/pixmaps/
+-	/usr/bin/install -m 644 ../extra/gtkrc  $(SHARE_DIR)
++	${BSD_INSTALL_DATA} ../pixmaps/little_igloo.xpm  $(SHARE_DIR)/pixmaps/
++	${BSD_INSTALL_DATA} ../extra/gtkrc  $(SHARE_DIR)
+ 	@if ! test -f $(DATA_FILE); then \
+ 	  echo "Creating $(DATA_FILE), and chmod it 0666.";\
+ 	  touch $(DATA_FILE); \
 @@ -97,10 +98,10 @@
  		> ../extra/$(PROGNAME).1.in; \
  		fi;

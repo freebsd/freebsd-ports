@@ -1,6 +1,14 @@
---- recept.c.orig	Mon Nov 20 16:20:24 2000
-+++ recept.c	Mon Nov 20 16:22:04 2000
-@@ -359,7 +359,7 @@
+--- recept.c.orig	Tue Mar 14 11:45:05 2000
++++ recept.c	Sun Jun 24 00:09:07 2007
+@@ -21,6 +21,7 @@
+ #include <gtk/gtk.h>
+ #include <unistd.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+@@ -359,7 +360,7 @@
  delete_showed_message (void)
  {
    struct linpopup_message this_message;
@@ -9,7 +17,7 @@
    int file_handle_temp, file_handle_data;
    int f;
  
-@@ -370,8 +370,7 @@
+@@ -370,8 +371,7 @@
        return;
      }
  
