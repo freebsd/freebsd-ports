@@ -1,5 +1,6 @@
 bin/perl2html
 bin/pods2html
+bin/podtree2html
 %%SITE_PERL%%/Pod/Tree.pm
 %%SITE_PERL%%/Pod/Tree/HTML.pm
 %%SITE_PERL%%/Pod/Tree/Node.pm
