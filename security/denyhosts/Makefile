@@ -20,6 +20,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 USE_RC_SUBR=	denyhosts
+SUB_FILES=	pkg-message
 
 PORTDOCS=	CHANGELOG.txt LICENSE.txt README.txt
 

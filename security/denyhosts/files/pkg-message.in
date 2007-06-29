@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
+To run denyhosts from startup, add denyhosts_enable="YES"
+in your /etc/rc.conf.
+Configiration options can be found in %%PREFIX%%/etc/denyhosts.conf
+-------------------------------------------------------------------------------
 In order to proper working of denyhosts
 1. edit your /etc/hosts.allow file and add:
 sshd : /etc/hosts.deniedssh : deny
