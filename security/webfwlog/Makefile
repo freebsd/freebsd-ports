@@ -6,14 +6,10 @@
 #
 
 PORTNAME=	webfwlog
-PORTVERSION=	0.92
+PORTVERSION=	0.93
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-
-PATCH_SITES=	http://devel.webfwlog.net/download/patches/
-PATCHFILES=	webfwlog-0.92-date_syntax_url.patch
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	zeus@ix.netcom.com
 COMMENT=	A web-based firewall log analyzer
@@ -31,11 +27,10 @@ WANT_PHP_WEB=	yes
 # Set HTML_DOC_ROOT to your webserver's Document Root where you
 # want to install webfwlog, relative to ${PREFIX}.
 
-HTML_DOC_ROOT?=	www/data
-
-PLIST_SUB=	HTML_DOC_ROOT=${HTML_DOC_ROOT}
-
 SUB_FILES=	pkg-message
+DOCS=		README AUTHORS COPYING \
+		CREDITS ChangeLog INSTALL \
+		README ReleaseNotes
 
 .include <bsd.port.pre.mk>
 
@@ -49,29 +44,26 @@ USE_PGSQL=
 CONFIGURE_ARGS+=--with-pgsql
 .endif
 
-pre-install:
-	@${MKDIR} ${PREFIX}/${HTML_DOC_ROOT}
+do-install:
+	@${MKDIR} ${WWWDIR}
+	@${MKDIR} ${WWWDIR}/include/
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
+	@(cd ${WRKSRC}/webfwlog/include/ && ${COPYTREE_SHARE} \* ${WWWDIR}/include/)
+	${INSTALL_PROGRAM} ${WRKSRC}/syslog/wfwl_syslog ${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/webfwlog/style.css ${WWWDIR}
+	${INSTALL_DATA} ${WRKSRC}/webfwlog/index.php ${WWWDIR}
 
 post-install:
-
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/COPYING ${WRKSRC}/AUTHORS ${WRKSRC}/README \
-		${WRKSRC}/INSTALL ${WRKSRC}/CREDITS ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/ChangeLog ${WRKSRC}/ReleaseNotes ${DOCSDIR}
-
-	@${MKDIR} ${DOCSDIR}/mysql/scripts
-	@${INSTALL_MAN} ${WRKSRC}/mysql/README ${WRKSRC}/mysql/setup ${DOCSDIR}/mysql
-	@${INSTALL_MAN} ${WRKSRC}/mysql/scripts/* ${DOCSDIR}/mysql/scripts
-	@${CHMOD} a+x ${DOCSDIR}/mysql/setup
-
-	@${MKDIR} ${DOCSDIR}/pgsql/scripts
-	@${INSTALL_MAN} ${WRKSRC}/pgsql/README ${WRKSRC}/pgsql/setup ${DOCSDIR}/pgsql
-	@${INSTALL_MAN} ${WRKSRC}/pgsql/scripts/* ${DOCSDIR}/pgsql/scripts
-	@${CHMOD} a+x ${DOCSDIR}/pgsql/setup
-
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_MAN} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${DOCSDIR}/mysql
+	@${MKDIR} ${DOCSDIR}/pgsql
+	@(cd ${WRKSRC}/mysql/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/mysql/)
+	@(cd ${WRKSRC}/pgsql/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/pgsql/)
+.for FILE in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.endfor
 .endif
 
 	@if test -f ${PREFIX}/etc/webfwlog.conf; \
@@ -90,10 +82,6 @@ post-install:
 		${RM} -f ${PREFIX}/etc/webfwlog.conf; \
 	fi
 	@${RM} -f ${PREFIX}/etc/webfwlog.conf.new
-	@${CHMOD} 0555 ${PREFIX}/${HTML_DOC_ROOT}/webfwlog
-	@${CHMOD} 0555 ${PREFIX}/${HTML_DOC_ROOT}/webfwlog/include
-	@${CHOWN} :${WWWGRP} ${PREFIX}/bin/wfwl_syslog
-	@${CHMOD} o-wrx ${PREFIX}/bin/wfwl_syslog
 
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
