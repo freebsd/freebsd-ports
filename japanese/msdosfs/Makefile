@@ -7,7 +7,7 @@
 
 PORTNAME=	msdosfs
 PORTVERSION=	${LAST_UPDATED}
-CATEGORIES=	japanese
+CATEGORIES=	japanese kld
 MASTER_SITES=	http://www.linkclub.or.jp/~clover/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor

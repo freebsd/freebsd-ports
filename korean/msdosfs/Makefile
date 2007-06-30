@@ -9,7 +9,7 @@
 
 PORTNAME=	msdosfs
 PORTVERSION=	${LAST_UPDATED}
-CATEGORIES=	korean
+CATEGORIES=	korean kld
 MASTER_SITES=	http://www.kr.freebsd.org/~cjh/freebsd/msdosfs-ko/ \
 		ftp://ftp.kr.freebsd.org/pub/users/cjh/FreeBSD/ \
 		${MASTER_SITE_LOCAL}
