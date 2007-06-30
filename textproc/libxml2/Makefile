@@ -12,7 +12,7 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.6.27
+PORTVERSION=	2.6.29
 PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
