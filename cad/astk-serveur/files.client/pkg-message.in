@@ -12,6 +12,9 @@ ASTK utilise le protocole rcp/rsh, il faut donc l'activer (/etc/inetd.conf
 et ~/.rhosts) ; le paramètre --check passé à astk permet de vérifier votre
 configuration.
 
+ASTK lance xterm avec -display : il ne faut donc pas lancer Xorg avec
+-nolisten tcp
+
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 Standard configuration files have been initialized in the directory
@@ -27,3 +30,6 @@ once Code_Aster has been installed on this machine, else:
 ASTK uses the rcp/rsh protocol: it must be configured (check /etc/inetd.conf
 and ~/.rhosts); if you launch astk with the parameter --check, it will check
 your configuration.
+
+ASTK launch xterm with -display: check that Xorg is not launched with
+-nolisten tcp
