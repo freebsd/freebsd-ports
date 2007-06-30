@@ -9,7 +9,7 @@ PORTNAME=	streamanalyze
 PORTVERSION=	0.4
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.badabum.de/down/
+MASTER_SITES=	CENKES LOCAL/beech
 
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	Shrink-factor calculator for StreamDVD
