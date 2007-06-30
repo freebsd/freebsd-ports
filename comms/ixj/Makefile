@@ -7,7 +7,7 @@
 
 PORTNAME=	ixj
 PORTVERSION=	1.1.0
-CATEGORIES=	comms
+CATEGORIES=	comms kld
 MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 DISTNAME=	ixj_freebsd-${PORTVERSION}
 
