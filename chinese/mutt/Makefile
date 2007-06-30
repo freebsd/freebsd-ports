@@ -20,7 +20,7 @@ COMMENT=	The Mongrel of Mail User Agents with Chinese support
 
 PATCH_SITES=	${MASTER_SITE_LOCAL:S/$/:tw/}
 PATCH_SITE_SUBDIR=	rafan/chinese/:tw
-TW_PATCH_VERSION=	1.5.15-${REVISEDATE}
+TW_PATCH_VERSION=	1.5.16-${REVISEDATE}
 PATCHFILES=	${PKGNAMEPREFIX}mutt-${TW_PATCH_VERSION}.diff.gz:tw
 
 LIB_DEPENDS+=	hz.0:${PORTSDIR}/chinese/autoconvert
