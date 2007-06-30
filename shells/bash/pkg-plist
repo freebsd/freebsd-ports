@@ -82,5 +82,3 @@ bin/bashbug
 %%NLS%%@dirrmtry share/locale/en@boldquot
 %%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@quot
-%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru
