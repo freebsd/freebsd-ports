@@ -53,9 +53,11 @@ lib/gwyddion/modules/file/unisoku.so
 lib/gwyddion/modules/file/witfile.so
 lib/gwyddion/modules/file/wsxmfile.so
 lib/gwyddion/modules/graph/graph_cd.so
+lib/gwyddion/modules/graph/graph_cut.so
 lib/gwyddion/modules/graph/graph_export_ascii.so
 lib/gwyddion/modules/graph/graph_export_bitmap.so
 lib/gwyddion/modules/graph/graph_export_vector.so
+lib/gwyddion/modules/graph/graph_fdfit.so
 lib/gwyddion/modules/graph/graph_fit.so
 lib/gwyddion/modules/graph/graph_level.so
 lib/gwyddion/modules/layer/axis.so
@@ -63,6 +65,7 @@ lib/gwyddion/modules/layer/ellipse.so
 lib/gwyddion/modules/layer/line.so
 lib/gwyddion/modules/layer/point.so
 lib/gwyddion/modules/layer/rectangle.so
+lib/gwyddion/modules/process/acf2d.so
 lib/gwyddion/modules/process/angle_dist.so
 lib/gwyddion/modules/process/arithmetic.so
 lib/gwyddion/modules/process/basicops.so
@@ -114,15 +117,19 @@ lib/gwyddion/modules/process/unrotate.so
 lib/gwyddion/modules/tool/crop.so
 lib/gwyddion/modules/tool/distance.so
 lib/gwyddion/modules/tool/filter.so
+lib/gwyddion/modules/tool/grainmeasure.so
 lib/gwyddion/modules/tool/grainremover.so
 lib/gwyddion/modules/tool/icolorange.so
 lib/gwyddion/modules/tool/level3.so
 lib/gwyddion/modules/tool/linestats.so
 lib/gwyddion/modules/tool/maskedit.so
+lib/gwyddion/modules/tool/pathlevel.so
 lib/gwyddion/modules/tool/polynom.so
 lib/gwyddion/modules/tool/profile.so
 lib/gwyddion/modules/tool/readvalue.so
+lib/gwyddion/modules/tool/roughness.so
 lib/gwyddion/modules/tool/sfunctions.so
+lib/gwyddion/modules/tool/spectro.so
 lib/gwyddion/modules/tool/spotremove.so
 lib/gwyddion/modules/tool/stats.so
 lib/gwyddion/modules/plugin-proxy.so
@@ -144,6 +151,7 @@ include/gwyddion/libgwyddion/gwydebugobjects.h
 include/gwyddion/libgwyddion/gwyentities.h
 include/gwyddion/libgwyddion/gwyenum.h
 include/gwyddion/libgwyddion/gwyexpr.h
+include/gwyddion/libgwyddion/gwyfdcurvepreset.h
 include/gwyddion/libgwyddion/gwyinventory.h
 include/gwyddion/libgwyddion/gwymacros.h
 include/gwyddion/libgwyddion/gwymath.h
@@ -177,6 +185,7 @@ include/gwyddion/libprocess/inttrans.h
 include/gwyddion/libprocess/level.h
 include/gwyddion/libprocess/linestats.h
 include/gwyddion/libprocess/simplefft.h
+include/gwyddion/libprocess/spectra.h
 include/gwyddion/libprocess/stats.h
 include/gwyddion/libprocess/tip.h
 include/gwyddion/libdraw/gwydraw.h
@@ -245,6 +254,7 @@ include/gwyddion/libgwymodule/gwymodule-tool.h
 include/gwyddion/libgwymodule/gwymodulebrowser.h
 include/gwyddion/libgwymodule/gwymoduleenums.h
 include/gwyddion/libgwymodule/gwymoduleloader.h
+include/gwyddion/libgwymodule/gwymoduletypes.h
 include/gwyddion/app/app.h
 include/gwyddion/app/data-browser.h
 include/gwyddion/app/datachooser.h
@@ -289,6 +299,10 @@ share/icons/hicolor/48x48/apps/gwyddion.png
 %%DATADIR%%/pixmaps/gwy_bold-20.png
 %%DATADIR%%/pixmaps/gwy_cantilever-24.png
 %%DATADIR%%/pixmaps/gwy_color_range-24.png
+%%DATADIR%%/pixmaps/gwy_color_range_adaptive-24.png
+%%DATADIR%%/pixmaps/gwy_color_range_auto-24.png
+%%DATADIR%%/pixmaps/gwy_color_range_fixed-24.png
+%%DATADIR%%/pixmaps/gwy_color_range_full-24.png
 %%DATADIR%%/pixmaps/gwy_crop-24.png
 %%DATADIR%%/pixmaps/gwy_cwt-24.png
 %%DATADIR%%/pixmaps/gwy_data_measure-24.png
@@ -304,10 +318,12 @@ share/icons/hicolor/48x48/apps/gwyddion.png
 %%DATADIR%%/pixmaps/gwy_flip_horizontally-24.png
 %%DATADIR%%/pixmaps/gwy_flip_vertically-24.png
 %%DATADIR%%/pixmaps/gwy_fractal-24.png
+%%DATADIR%%/pixmaps/gwy_gl_material-16.png
 %%DATADIR%%/pixmaps/gwy_gradient_horizontal-24.png
 %%DATADIR%%/pixmaps/gwy_gradient_vertical-24.png
 %%DATADIR%%/pixmaps/gwy_grains-24.png
 %%DATADIR%%/pixmaps/gwy_grains_graph-24.png
+%%DATADIR%%/pixmaps/gwy_grains_measure-24.png
 %%DATADIR%%/pixmaps/gwy_grains_remove-24.png
 %%DATADIR%%/pixmaps/gwy_grains_water-24.png
 %%DATADIR%%/pixmaps/gwy_graph-24.png
@@ -324,6 +340,7 @@ share/icons/hicolor/48x48/apps/gwyddion.png
 %%DATADIR%%/pixmaps/gwy_gwyddion-32.png
 %%DATADIR%%/pixmaps/gwy_gwyddion-60.png
 %%DATADIR%%/pixmaps/gwy_immerse-24.png
+%%DATADIR%%/pixmaps/gwy_iso_roughness-24.png
 %%DATADIR%%/pixmaps/gwy_italic-20.png
 %%DATADIR%%/pixmaps/gwy_less-24.png
 %%DATADIR%%/pixmaps/gwy_level-24.png
@@ -332,6 +349,7 @@ share/icons/hicolor/48x48/apps/gwyddion.png
 %%DATADIR%%/pixmaps/gwy_line_level-24.png
 %%DATADIR%%/pixmaps/gwy_logscale_horizontal-24.png
 %%DATADIR%%/pixmaps/gwy_logscale_vertical-24.png
+%%DATADIR%%/pixmaps/gwy_mask-16.png
 %%DATADIR%%/pixmaps/gwy_mask-24.png
 %%DATADIR%%/pixmaps/gwy_mask_add-24.png
 %%DATADIR%%/pixmaps/gwy_mask_circle-24.png
@@ -343,6 +361,7 @@ share/icons/hicolor/48x48/apps/gwyddion.png
 %%DATADIR%%/pixmaps/gwy_mask_grow-24.png
 %%DATADIR%%/pixmaps/gwy_mask_intersect-24.png
 %%DATADIR%%/pixmaps/gwy_mask_invert-24.png
+%%DATADIR%%/pixmaps/gwy_mask_line-24.png
 %%DATADIR%%/pixmaps/gwy_mask_rect_exclusive-24.png
 %%DATADIR%%/pixmaps/gwy_mask_rect_inclusive-24.png
 %%DATADIR%%/pixmaps/gwy_mask_remove-24.png
@@ -350,7 +369,9 @@ share/icons/hicolor/48x48/apps/gwyddion.png
 %%DATADIR%%/pixmaps/gwy_mask_subtract-24.png
 %%DATADIR%%/pixmaps/gwy_merge-24.png
 %%DATADIR%%/pixmaps/gwy_more-24.png
+%%DATADIR%%/pixmaps/gwy_palettes-16.png
 %%DATADIR%%/pixmaps/gwy_palettes-24.png
+%%DATADIR%%/pixmaps/gwy_path_level-24.png
 %%DATADIR%%/pixmaps/gwy_pointer_measure-24.png
 %%DATADIR%%/pixmaps/gwy_polynom-24.png
 %%DATADIR%%/pixmaps/gwy_profile-24.png
@@ -364,6 +385,7 @@ share/icons/hicolor/48x48/apps/gwyddion.png
 %%DATADIR%%/pixmaps/gwy_scale_vertically-24.png
 %%DATADIR%%/pixmaps/gwy_scars-24.png
 %%DATADIR%%/pixmaps/gwy_shader-24.png
+%%DATADIR%%/pixmaps/gwy_spectrum-24.png
 %%DATADIR%%/pixmaps/gwy_spot_remove-24.png
 %%DATADIR%%/pixmaps/gwy_stat_quantities-24.png
 %%DATADIR%%/pixmaps/gwy_subscript-20.png
@@ -460,7 +482,7 @@ share/mime/application/x-createc-spm.xml
 share/mime/application/x-dme-spm.xml
 share/mime/application/x-gwyddion-spm.xml
 share/mime/application/x-hitachi-spm.xml
-share/mime/application/x-jpk-spm.xml
+share/mime/application/x-jpk-image-scan.xml
 share/mime/application/x-mi-spm.xml
 share/mime/application/x-nanonis-spm.xml
 share/mime/application/x-nanoscope-ii-spm.xml

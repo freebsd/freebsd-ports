@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gwyddion
-PORTVERSION=	2.5
+PORTVERSION=	2.7
 PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -26,7 +26,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
-		--disable-pascal --disable-pygwy
+		--disable-pascal --disable-pygwy \
+		--mandir=${MANPREFIX}/man
 
 MAKE_ARGS=	pkgconfigdatadir=${PREFIX}/libdata/pkgconfig
 
