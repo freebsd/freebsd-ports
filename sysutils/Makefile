@@ -260,6 +260,7 @@
     SUBDIR += gnome_subr
     SUBDIR += gnomebaker
     SUBDIR += gnomefind
+    SUBDIR += googlog
     SUBDIR += gpart
     SUBDIR += gpkgdep
     SUBDIR += gpte
