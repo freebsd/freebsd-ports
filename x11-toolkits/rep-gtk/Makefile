@@ -7,7 +7,7 @@
 
 PORTNAME=	rep-gtk
 PORTVERSION=	0.15
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/rep-gtk/0.15
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	sources/rep-gtk/0.15
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK+ binding for rep Lisp interpreter
 
-LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	rep.13:${PORTSDIR}/lang/librep
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
