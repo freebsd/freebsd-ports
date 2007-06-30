@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	homard
-DISTVERSION=	8.5-1
-PORTREVISION=	1
+DISTVERSION=	8.7-1
+DISTVERSIONSUFFIX=	.${ARCH}
 CATEGORIES=	french cad linux python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}-${DISTVERSION}.${ARCH}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A refinement and de-refinement mesh tool
@@ -32,7 +31,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 LHOMARDDIR?=	apps/${PORTNAME}
-ASTER_VER=	9.0
+ASTER_VER=	9.1
 vaster=		STA${ASTER_VER}
 ASTER_TOOLS=	${LOCALBASE}/aster/${vaster}/outils
 HOMARDDIR=	${PREFIX}/${LHOMARDDIR}
@@ -45,7 +44,8 @@ HOMARDPG=	${PORTNAME:U}_V${PORTVERSION:R}.out
 HOMARDWDIR=	${PORTNAME:U}
 
 DIR2RM=		sfr_mix_2d_zzzz121d_d1 qua_2d_24x36_d2 mix_qua_tri_d1_equ		\
-		med_3d_tet_tri_d2_man med_3d_cube_d2 med_2d_carre_d1 med_2d_6xtri_d2
+		med_3d_tet_tri_d2_man med_3d_cube_d2 med_2d_carre_d1 med_2d_6xtri_d2	\
+		sfr_2d_rugby_d2 hex_d2
 
 DOCS=		A_Lire.txt Readme.txt
 
