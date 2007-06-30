@@ -3964,6 +3964,7 @@ google-ctemplate	ports/textproc/google-ctemplate
 google-earth	ports/astro/google-earth
 google-sitemapgen	ports/www/google-sitemapgen
 google-sparsehash	ports/devel/google-sparsehash
+googlog		ports/sysutils/googlog
 googolplex	ports/net/googolplex
 goom		ports/graphics/goom
 goonies		ports/games/goonies
