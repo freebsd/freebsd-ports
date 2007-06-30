@@ -16,7 +16,7 @@ foreach my $m (keys %v) {
         my $p = "p5-$m";
         $p =~ s/::/-/g;
 	my $version = ${"${m}::VERSION"};
-        warn "Found p5-$p-$version, but you need to upgrade.\n";
+        warn "Found $p-$version, but you need to upgrade.\n";
         exit 1;
     }
 }
