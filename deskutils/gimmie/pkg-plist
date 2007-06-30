@@ -26,9 +26,6 @@ libdata/bonobo/servers/GNOME_GimmieApplet.server
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_base.py
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_base.pyc
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_base.pyo
-%%PYTHON_SITELIBDIR%%/gimmie/gimmie_browser.py
-%%PYTHON_SITELIBDIR%%/gimmie/gimmie_browser.pyc
-%%PYTHON_SITELIBDIR%%/gimmie/gimmie_browser.pyo
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_computer.py
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_computer.pyc
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_computer.pyo
@@ -56,6 +53,9 @@ libdata/bonobo/servers/GNOME_GimmieApplet.server
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_people.py
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_people.pyc
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_people.pyo
+%%PYTHON_SITELIBDIR%%/gimmie/gimmie_pidgin.py
+%%PYTHON_SITELIBDIR%%/gimmie/gimmie_pidgin.pyc
+%%PYTHON_SITELIBDIR%%/gimmie/gimmie_pidgin.pyo
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_prefs.py
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_prefs.pyc
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_prefs.pyo
@@ -107,6 +107,7 @@ libexec/gimmie_applet
 %%NLS%%share/locale/en_GB/LC_MESSAGES/gimmie.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gimmie.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/gimmie.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gimmie.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/gimmie.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gimmie.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/gimmie.mo

@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gimmie
-PORTVERSION=	0.2.5
-PORTREVISION=	1
-CATEGORIES=	deskutils
-MASTER_SITES=	http://www.beatniksoftware.com/gimmie/releases/
+PORTVERSION=	0.2.7
+CATEGORIES=	deskutils gnome
+MASTER_SITES=	http://www.beatniksoftware.com/gimmie/releases/ \
+		LOCAL/beech
 
 MAINTAINER=	pneumann@gmail.com
-COMMENT=	An elegant way to think about how you use your desktop computer
+COMMENT=	Gnome desktop organizer
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libgnomecups-1.0.a:${PORTSDIR}/print/libgnomecups \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus \
