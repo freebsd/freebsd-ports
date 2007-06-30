@@ -1,0 +1,349 @@
+bin/emesene
+share/applications/emesene.desktop
+%%DATADIR%%/Avatar.py
+%%DATADIR%%/AvatarChooser.py
+%%DATADIR%%/COPYING
+%%DATADIR%%/Config.py
+%%DATADIR%%/Controller.py
+%%DATADIR%%/Conversation.py
+%%DATADIR%%/ConversationLayoutManager.py
+%%DATADIR%%/ConversationManager.py
+%%DATADIR%%/ConversationUI.py
+%%DATADIR%%/ConversationWindow.py
+%%DATADIR%%/Dialogs.py
+%%DATADIR%%/FilterEntry.py
+%%DATADIR%%/GroupMenu.py
+%%DATADIR%%/Hotmail.py
+%%DATADIR%%/ImageFileChooser.py
+%%DATADIR%%/ListOfUsers.py
+%%DATADIR%%/Loading.py
+%%DATADIR%%/Log.py
+%%DATADIR%%/Login.py
+%%DATADIR%%/MainMenu.py
+%%DATADIR%%/MainWindow.py
+%%DATADIR%%/PluginManager.py
+%%DATADIR%%/PluginManagerDialog.py
+%%DATADIR%%/PreferenceWindow.py
+%%DATADIR%%/SlashCommands.py
+%%DATADIR%%/SmilieWindow.py
+%%DATADIR%%/StatusMenu.py
+%%DATADIR%%/Theme.py
+%%DATADIR%%/TrayIcon.py
+%%DATADIR%%/TreeViewTooltips.py
+%%DATADIR%%/UserList.py
+%%DATADIR%%/UserMenu.py
+%%DATADIR%%/UserPanel.py
+%%DATADIR%%/conversation_themes/default/theme
+%%DATADIR%%/conversation_themes/irc/theme
+%%DATADIR%%/desktop.py
+%%DATADIR%%/docs/INSTALL
+%%DATADIR%%/docs/TRANSLATORS
+%%DATADIR%%/docs/emeseneUML.dia
+%%DATADIR%%/docs/emeseneUML.png
+%%DATADIR%%/emesene
+%%DATADIR%%/emesene.bak
+%%DATADIR%%/emesene.bat
+%%DATADIR%%/emesenecommon.py
+%%DATADIR%%/emesenelib/ContactData.py
+%%DATADIR%%/emesenelib/DefaultSignalHandler.py
+%%DATADIR%%/emesenelib/MsnOIM.py
+%%DATADIR%%/emesenelib/MsnP2P.py
+%%DATADIR%%/emesenelib/Msnobj.py
+%%DATADIR%%/emesenelib/SoapManager.py
+%%DATADIR%%/emesenelib/Socket.py
+%%DATADIR%%/emesenelib/Switchboard.py
+%%DATADIR%%/emesenelib/XmlTemplates.py
+%%DATADIR%%/emesenelib/__init__.py
+%%DATADIR%%/emesenelib/core.py
+%%DATADIR%%/emesenelib/uuid.py
+%%DATADIR%%/hotmlog.htm
+%%DATADIR%%/htmltextview.py
+%%DATADIR%%/messages.po
+%%DATADIR%%/msnPlusMarkup.py
+%%DATADIR%%/plugins_base/Amarok.py
+%%DATADIR%%/plugins_base/Dbus.py
+%%DATADIR%%/plugins_base/Exaile.py
+%%DATADIR%%/plugins_base/LibNotify.py
+%%DATADIR%%/plugins_base/Listen.py
+%%DATADIR%%/plugins_base/MPD.py
+%%DATADIR%%/plugins_base/Notification.py
+%%DATADIR%%/plugins_base/PersonalMessage.py
+%%DATADIR%%/plugins_base/Plugin.py
+%%DATADIR%%/plugins_base/QuodLibet.py
+%%DATADIR%%/plugins_base/Rhythmbox.py
+%%DATADIR%%/plugins_base/Sound.py
+%%DATADIR%%/plugins_base/Spell.py
+%%DATADIR%%/plugins_base/Winamp.py
+%%DATADIR%%/plugins_base/WindowTremblingNudge.py
+%%DATADIR%%/plugins_base/Xmms.py
+%%DATADIR%%/plugins_base/__init__.py
+%%DATADIR%%/po/ar/LC_MESSAGES/emesen.mo
+%%DATADIR%%/po/ar/LC_MESSAGES/emesen.po
+%%DATADIR%%/po/de/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/de/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/es/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/es/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/es/LC_MESSAGES/plugin_notification.mo
+%%DATADIR%%/po/es/LC_MESSAGES/plugin_notification.po
+%%DATADIR%%/po/es/LC_MESSAGES/plugin_sound.mo
+%%DATADIR%%/po/es/LC_MESSAGES/plugin_sound.po
+%%DATADIR%%/po/fi/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/fi/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/fr/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/fr/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/hu/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/hu/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/it/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/it/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/nl/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/nl/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/pt/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/pt/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/pt_br/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/pt_br/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/sv/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/sv/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/tr/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/tr/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/tr/LC_MESSAGES/plugin_notification.mo
+%%DATADIR%%/po/tr/LC_MESSAGES/plugin_notification.po
+%%DATADIR%%/po/tr/LC_MESSAGES/plugin_sound.mo
+%%DATADIR%%/po/tr/LC_MESSAGES/plugin_sound.po
+%%DATADIR%%/po/zh-cn/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/zh-cn/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/zh-tw/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/zh-tw/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/zh-tw/LC_MESSAGES/plugin_notification.mo
+%%DATADIR%%/po/zh-tw/LC_MESSAGES/plugin_notification.po
+%%DATADIR%%/po/zh-tw/LC_MESSAGES/plugin_sound.mo
+%%DATADIR%%/po/zh-tw/LC_MESSAGES/plugin_sound.po
+%%DATADIR%%/setup
+%%DATADIR%%/themes/default/Thumbs.db
+%%DATADIR%%/themes/default/away.png
+%%DATADIR%%/themes/default/blocked.png
+%%DATADIR%%/themes/default/brb.png
+%%DATADIR%%/themes/default/busy.png
+%%DATADIR%%/themes/default/close.png
+%%DATADIR%%/themes/default/groupChat.png
+%%DATADIR%%/themes/default/guif.png
+%%DATADIR%%/themes/default/icon.png
+%%DATADIR%%/themes/default/icon16.png
+%%DATADIR%%/themes/default/icon32.png
+%%DATADIR%%/themes/default/icon48.png
+%%DATADIR%%/themes/default/icon96.png
+%%DATADIR%%/themes/default/idle.png
+%%DATADIR%%/themes/default/invisible.png
+%%DATADIR%%/themes/default/loading.gif
+%%DATADIR%%/themes/default/login.png
+%%DATADIR%%/themes/default/lunch.png
+%%DATADIR%%/themes/default/mobile.png
+%%DATADIR%%/themes/default/nudge.png
+%%DATADIR%%/themes/default/offline.png
+%%DATADIR%%/themes/default/online.png
+%%DATADIR%%/themes/default/phone.png
+%%DATADIR%%/themes/default/reverse.png
+%%DATADIR%%/themes/default/smilies/Airplane.png
+%%DATADIR%%/themes/default/smilies/Auto.png
+%%DATADIR%%/themes/default/smilies/Baring_teeth_smiley.png
+%%DATADIR%%/themes/default/smilies/Be_Right_Back.png
+%%DATADIR%%/themes/default/smilies/Birthday_cake.png
+%%DATADIR%%/themes/default/smilies/Black_sheep.png
+%%DATADIR%%/themes/default/smilies/Bowl.png
+%%DATADIR%%/themes/default/smilies/Boy.png
+%%DATADIR%%/themes/default/smilies/Cigarette.png
+%%DATADIR%%/themes/default/smilies/Clock.png
+%%DATADIR%%/themes/default/smilies/Disappointed_smiley.png
+%%DATADIR%%/themes/default/smilies/Dog_face.png
+%%DATADIR%%/themes/default/smilies/Dont_tell_anyone.png
+%%DATADIR%%/themes/default/smilies/Embarrassed_smiley.png
+%%DATADIR%%/themes/default/smilies/Eye_rolling_smiley.png
+%%DATADIR%%/themes/default/smilies/Fingerscrossed.png
+%%DATADIR%%/themes/default/smilies/Gift_with_a_bow.png
+%%DATADIR%%/themes/default/smilies/Girl.png
+%%DATADIR%%/themes/default/smilies/Hi_five.png
+%%DATADIR%%/themes/default/smilies/Island_with_a_palm_tree.png
+%%DATADIR%%/themes/default/smilies/Messenger.png
+%%DATADIR%%/themes/default/smilies/Money.png
+%%DATADIR%%/themes/default/smilies/Pizza.png
+%%DATADIR%%/themes/default/smilies/Plate.png
+%%DATADIR%%/themes/default/smilies/Red_heart.png
+%%DATADIR%%/themes/default/smilies/Sarcastic_smiley.png
+%%DATADIR%%/themes/default/smilies/Secret_telling_smiley.png
+%%DATADIR%%/themes/default/smilies/Snail.png
+%%DATADIR%%/themes/default/smilies/Soccer_ball.png
+%%DATADIR%%/themes/default/smilies/Telephone_receiver.png
+%%DATADIR%%/themes/default/smilies/Thinking_smiley.png
+%%DATADIR%%/themes/default/smilies/Thumbs.db
+%%DATADIR%%/themes/default/smilies/Turtle.png
+%%DATADIR%%/themes/default/smilies/Umbrella.png
+%%DATADIR%%/themes/default/smilies/Xbox.png
+%%DATADIR%%/themes/default/smilies/andy.png
+%%DATADIR%%/themes/default/smilies/angel.png
+%%DATADIR%%/themes/default/smilies/angry.png
+%%DATADIR%%/themes/default/smilies/audio-x-generic.png
+%%DATADIR%%/themes/default/smilies/bat.png
+%%DATADIR%%/themes/default/smilies/beer.png
+%%DATADIR%%/themes/default/smilies/blushing.png
+%%DATADIR%%/themes/default/smilies/brflower.png
+%%DATADIR%%/themes/default/smilies/brheart.png
+%%DATADIR%%/themes/default/smilies/coffee.png
+%%DATADIR%%/themes/default/smilies/computer.png
+%%DATADIR%%/themes/default/smilies/confused.png
+%%DATADIR%%/themes/default/smilies/coolglasses.png
+%%DATADIR%%/themes/default/smilies/cry.png
+%%DATADIR%%/themes/default/smilies/cuffs.png
+%%DATADIR%%/themes/default/smilies/devil.png
+%%DATADIR%%/themes/default/smilies/drink.png
+%%DATADIR%%/themes/default/smilies/emblem-favorite.png
+%%DATADIR%%/themes/default/smilies/face-angel.png
+%%DATADIR%%/themes/default/smilies/face-glasses.png
+%%DATADIR%%/themes/default/smilies/flower.png
+%%DATADIR%%/themes/default/smilies/goat.png
+%%DATADIR%%/themes/default/smilies/grin.png
+%%DATADIR%%/themes/default/smilies/help-browser.png
+%%DATADIR%%/themes/default/smilies/hugleft.png
+%%DATADIR%%/themes/default/smilies/hugright.png
+%%DATADIR%%/themes/default/smilies/i_dont_know.png
+%%DATADIR%%/themes/default/smilies/kiss.png
+%%DATADIR%%/themes/default/smilies/lamp.png
+%%DATADIR%%/themes/default/smilies/mail.png
+%%DATADIR%%/themes/default/smilies/oh.png
+%%DATADIR%%/themes/default/smilies/party_smiley.png
+%%DATADIR%%/themes/default/smilies/phone.png
+%%DATADIR%%/themes/default/smilies/photo.png
+%%DATADIR%%/themes/default/smilies/pussy.png
+%%DATADIR%%/themes/default/smilies/rainbow.png
+%%DATADIR%%/themes/default/smilies/sick.png
+%%DATADIR%%/themes/default/smilies/sleeping.png
+%%DATADIR%%/themes/default/smilies/smile.png
+%%DATADIR%%/themes/default/smilies/star.png
+%%DATADIR%%/themes/default/smilies/stare.png
+%%DATADIR%%/themes/default/smilies/thumbdown.png
+%%DATADIR%%/themes/default/smilies/thumbup.png
+%%DATADIR%%/themes/default/smilies/tongue.png
+%%DATADIR%%/themes/default/smilies/uncertain.png
+%%DATADIR%%/themes/default/smilies/unhappy.png
+%%DATADIR%%/themes/default/smilies/video-x-generic.png
+%%DATADIR%%/themes/default/smilies/weather-clear-night.png
+%%DATADIR%%/themes/default/smilies/weather-clear.png
+%%DATADIR%%/themes/default/smilies/weather-showers-scattered.png
+%%DATADIR%%/themes/default/smilies/weather-storm.png
+%%DATADIR%%/themes/default/smilies/wink.png
+%%DATADIR%%/themes/default/sounds/alarm.wav
+%%DATADIR%%/themes/default/sounds/newemail.wav
+%%DATADIR%%/themes/default/sounds/nudge.wav
+%%DATADIR%%/themes/default/sounds/offline.wav
+%%DATADIR%%/themes/default/sounds/online.wav
+%%DATADIR%%/themes/default/sounds/type.wav
+%%DATADIR%%/themes/default/space.png
+%%DATADIR%%/themes/default/status-blocked.png
+%%DATADIR%%/themes/default/trayicon.ico
+%%DATADIR%%/themes/default/trayicon.png
+%%DATADIR%%/themes/default/typing.png
+%%DATADIR%%/themes/default/userPanel.png
+%%DATADIR%%/themes/defaultSmall/Thumbs.db
+%%DATADIR%%/themes/defaultSmall/away.png
+%%DATADIR%%/themes/defaultSmall/blocked.png
+%%DATADIR%%/themes/defaultSmall/brb.png
+%%DATADIR%%/themes/defaultSmall/busy.png
+%%DATADIR%%/themes/defaultSmall/close.png
+%%DATADIR%%/themes/defaultSmall/guif.png
+%%DATADIR%%/themes/defaultSmall/icon.png
+%%DATADIR%%/themes/defaultSmall/idle.png
+%%DATADIR%%/themes/defaultSmall/invisible.png
+%%DATADIR%%/themes/defaultSmall/loading.gif
+%%DATADIR%%/themes/defaultSmall/login.png
+%%DATADIR%%/themes/defaultSmall/lunch.png
+%%DATADIR%%/themes/defaultSmall/mobile.png
+%%DATADIR%%/themes/defaultSmall/nudge.png
+%%DATADIR%%/themes/defaultSmall/offline.png
+%%DATADIR%%/themes/defaultSmall/online.png
+%%DATADIR%%/themes/defaultSmall/phone.png
+%%DATADIR%%/themes/defaultSmall/reverse.png
+%%DATADIR%%/themes/defaultSmall/sounds/alarm.wav
+%%DATADIR%%/themes/defaultSmall/sounds/newemail.wav
+%%DATADIR%%/themes/defaultSmall/sounds/nudge.wav
+%%DATADIR%%/themes/defaultSmall/sounds/offline.wav
+%%DATADIR%%/themes/defaultSmall/sounds/online.wav
+%%DATADIR%%/themes/defaultSmall/sounds/type.wav
+%%DATADIR%%/themes/defaultSmall/space.png
+%%DATADIR%%/themes/defaultSmall/trayicon.ico
+%%DATADIR%%/themes/defaultSmall/trayicon.png
+%%DATADIR%%/themes/defaultSmall/typing.png
+%%DATADIR%%/themes/defaultSmall/userPanel.png
+%%DATADIR%%/themes/tango/Thumbs.db
+%%DATADIR%%/themes/tango/away.png
+%%DATADIR%%/themes/tango/blocked.png
+%%DATADIR%%/themes/tango/brb.png
+%%DATADIR%%/themes/tango/busy.png
+%%DATADIR%%/themes/tango/close.png
+%%DATADIR%%/themes/tango/groupChat.png
+%%DATADIR%%/themes/tango/guif.png
+%%DATADIR%%/themes/tango/icon.png
+%%DATADIR%%/themes/tango/idle.png
+%%DATADIR%%/themes/tango/invisible.png
+%%DATADIR%%/themes/tango/loading.gif
+%%DATADIR%%/themes/tango/login.png
+%%DATADIR%%/themes/tango/lunch.png
+%%DATADIR%%/themes/tango/mobile.png
+%%DATADIR%%/themes/tango/nudge.png
+%%DATADIR%%/themes/tango/offline.png
+%%DATADIR%%/themes/tango/online.png
+%%DATADIR%%/themes/tango/phone.png
+%%DATADIR%%/themes/tango/reverse.png
+%%DATADIR%%/themes/tango/sounds/alarm.wav
+%%DATADIR%%/themes/tango/sounds/newemail.wav
+%%DATADIR%%/themes/tango/sounds/nudge.wav
+%%DATADIR%%/themes/tango/sounds/offline.wav
+%%DATADIR%%/themes/tango/sounds/online.wav
+%%DATADIR%%/themes/tango/sounds/type.wav
+%%DATADIR%%/themes/tango/space.png
+%%DATADIR%%/themes/tango/trayicon.ico
+%%DATADIR%%/themes/tango/trayicon.png
+%%DATADIR%%/themes/tango/typing.png
+%%DATADIR%%/themes/tango/userPanel.png
+@dirrm %%DATADIR%%/themes/tango/sounds
+@dirrm %%DATADIR%%/themes/tango
+@dirrm %%DATADIR%%/themes/defaultSmall/sounds
+@dirrm %%DATADIR%%/themes/defaultSmall
+@dirrm %%DATADIR%%/themes/default/sounds
+@dirrm %%DATADIR%%/themes/default/smilies
+@dirrm %%DATADIR%%/themes/default
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/po/zh-tw/LC_MESSAGES
+@dirrm %%DATADIR%%/po/zh-tw
+@dirrm %%DATADIR%%/po/zh-cn/LC_MESSAGES
+@dirrm %%DATADIR%%/po/zh-cn
+@dirrm %%DATADIR%%/po/tr/LC_MESSAGES
+@dirrm %%DATADIR%%/po/tr
+@dirrm %%DATADIR%%/po/sv/LC_MESSAGES
+@dirrm %%DATADIR%%/po/sv
+@dirrm %%DATADIR%%/po/pt_br/LC_MESSAGES
+@dirrm %%DATADIR%%/po/pt_br
+@dirrm %%DATADIR%%/po/pt/LC_MESSAGES
+@dirrm %%DATADIR%%/po/pt
+@dirrm %%DATADIR%%/po/nl/LC_MESSAGES
+@dirrm %%DATADIR%%/po/nl
+@dirrm %%DATADIR%%/po/it/LC_MESSAGES
+@dirrm %%DATADIR%%/po/it
+@dirrm %%DATADIR%%/po/hu/LC_MESSAGES
+@dirrm %%DATADIR%%/po/hu
+@dirrm %%DATADIR%%/po/fr/LC_MESSAGES
+@dirrm %%DATADIR%%/po/fr
+@dirrm %%DATADIR%%/po/fi/LC_MESSAGES
+@dirrm %%DATADIR%%/po/fi
+@dirrm %%DATADIR%%/po/es/LC_MESSAGES
+@dirrm %%DATADIR%%/po/es
+@dirrm %%DATADIR%%/po/de/LC_MESSAGES
+@dirrm %%DATADIR%%/po/de
+@dirrm %%DATADIR%%/po/ar/LC_MESSAGES
+@dirrm %%DATADIR%%/po/ar
+@dirrm %%DATADIR%%/po
+@dirrm %%DATADIR%%/plugins_base
+@dirrm %%DATADIR%%/emesenelib
+@dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%/conversation_themes/irc
+@dirrm %%DATADIR%%/conversation_themes/default
+@dirrm %%DATADIR%%/conversation_themes
+@dirrm %%DATADIR%%
+@dirrmtry share/applications

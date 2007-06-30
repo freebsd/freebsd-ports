@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Emesene
+Comment=OS Independent Msn Messenger
+Exec=emesene
+Icon=%%DATADIR%%/themes/default/userPanel.png
+Categories=Network;InstantMessaging;GTK;
