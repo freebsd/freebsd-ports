@@ -22,7 +22,13 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ldap-prefix=${LOCALBASE}
 
+post-patch:
+	@${REINPLACE_CMD} -E 's,^([[:blank:]]+)\([^\)]+\) ,\1,' \
+		${WRKSRC}/src/modules.c
+	@${REINPLACE_CMD} -e 's,(void \*) ,,g' \
+		${WRKSRC}/src/modules/ldap/cache.c
+
 post-install:
-	@ ${CAT} ${.CURDIR}/pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
