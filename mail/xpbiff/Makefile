@@ -31,7 +31,7 @@ YOUBINBINDIR=	${LOCALBASE}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 do-extract:
