@@ -36,6 +36,10 @@ lib/ROX-Lib2/Help/python/rox.settings.html
 lib/ROX-Lib2/Help/python/rox.su.html
 lib/ROX-Lib2/Help/python/rox.suchild.html
 lib/ROX-Lib2/Help/python/rox.tasks.html
+lib/ROX-Lib2/Help/python/rox.templates.html
+lib/ROX-Lib2/Help/python/rox.thumbnail.html
+lib/ROX-Lib2/Help/python/rox.uri_handler.html
+lib/ROX-Lib2/Help/python/rox.xattr.html
 lib/ROX-Lib2/Help/python/rox.xxmlrpc.html
 lib/ROX-Lib2/Messages/de.gmo
 lib/ROX-Lib2/Messages/de.po
@@ -58,6 +62,7 @@ lib/ROX-Lib2/Messages/zh_CN.po
 lib/ROX-Lib2/Messages/zh_TW.gmo
 lib/ROX-Lib2/Messages/zh_TW.po
 lib/ROX-Lib2/ROX-Lib2.xml
+lib/ROX-Lib2/python/check.sh
 lib/ROX-Lib2/python/make_docs.py
 lib/ROX-Lib2/python/make_docs.pyc
 lib/ROX-Lib2/python/make_docs.pyo
@@ -143,6 +148,18 @@ lib/ROX-Lib2/python/rox/suchild.sh
 lib/ROX-Lib2/python/rox/tasks.py
 lib/ROX-Lib2/python/rox/tasks.pyc
 lib/ROX-Lib2/python/rox/tasks.pyo
+lib/ROX-Lib2/python/rox/templates.py
+lib/ROX-Lib2/python/rox/templates.pyc
+lib/ROX-Lib2/python/rox/templates.pyo
+lib/ROX-Lib2/python/rox/thumbnail.py
+lib/ROX-Lib2/python/rox/thumbnail.pyc
+lib/ROX-Lib2/python/rox/thumbnail.pyo
+lib/ROX-Lib2/python/rox/uri_handler.py
+lib/ROX-Lib2/python/rox/uri_handler.pyc
+lib/ROX-Lib2/python/rox/uri_handler.pyo
+lib/ROX-Lib2/python/rox/xattr.py
+lib/ROX-Lib2/python/rox/xattr.pyc
+lib/ROX-Lib2/python/rox/xattr.pyo
 lib/ROX-Lib2/python/rox/xxmlrpc.py
 lib/ROX-Lib2/python/rox/xxmlrpc.pyc
 lib/ROX-Lib2/python/rox/xxmlrpc.pyo
