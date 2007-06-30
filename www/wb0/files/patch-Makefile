@@ -24,7 +24,16 @@
 +	cp ./data/* ${PREFIX}/share/wb0/
 +	echo "path ${PREFIX}/share/wb0/" >>${PREFIX}/etc/wb0.config
 +	chmod u+s ${PREFIX}/bin/wb0
-+	chown root:wheel ${LOCALBASE}/bin/wb0
++	chown root:wheel ${PREFIX}/bin/wb0
  
  pkfont: pkfont.c
+ 
+@@ -19,7 +20,7 @@
+ makefont: makefont.c
+ 
+ wb0: wb0.o scroller.o line_breaker.o font_loader.o gvars.o watcher.o image_parser.o printer.o block.o
+-	gcc $(LDFLAGS) wb0.o scroller.o line_breaker.o font_loader.o gvars.o watcher.o image_parser.o printer.o block.o -o wb0
++	$(CC) $(LDFLAGS) wb0.o scroller.o line_breaker.o font_loader.o gvars.o watcher.o image_parser.o printer.o block.o -o wb0
+ 
+ line_breaker.o: line_breaker.c line_breaker.h gvars.h scroller.h gvars.c block.h
  

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	wb0
 # Date created:				2001-01-31
-# Whom:					trevor
+# Whom:					Trevor Johnson <trevor@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -20,21 +20,21 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		vga.1:${PORTSDIR}/graphics/svgalib \
 		png.5:${PORTSDIR}/graphics/png
 
-PORTDOCS=	AUTHORS Changelog README
+DOCS=		AUTHORS Changelog README etc/wb0/wb0.config.README
+PORTDOCS=	${DOCS:T}
 ONLY_FOR_ARCHS=	i386
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/wb0|${LOCALBASE}/etc|g ; \
-		s|/usr/local/src/wb0/font/bit|${LOCALBASE}/share/wb0/|g' \
-		${WRKSRC}/wb0.c
+		s|/usr/local/src/wb0/font/bit|${LOCALBASE}/share/wb0/|g ; \
+		s|^static ||' ${WRKSRC}/wb0.c
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/etc/wb0/wb0.config.README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
