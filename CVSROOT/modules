@@ -12065,6 +12065,7 @@ pidgin-encryption	ports/security/pidgin-encryption
 pidgin-guifications	ports/net-im/pidgin-guifications
 pidgin-hotkeys	ports/net-im/pidgin-hotkeys
 pidgin-otr	ports/security/pidgin-otr
+pidgin-rhythmbox	ports/net-im/pidgin-rhythmbox
 pidof		ports/sysutils/pidof
 piewm		ports/x11-wm/piewm
 pikdev		ports/devel/pikdev
