@@ -68,7 +68,6 @@ share/pixmaps/cream.svg
 %%VIMRUNTIME%%/cream/cream-conf.example.vim
 %%VIMRUNTIME%%/cream/cream-devel.vim
 %%VIMRUNTIME%%/cream/cream-expertmode.vim
-@comment %%VIMRUNTIME%%/cream/cream-explorer.vim
 %%VIMRUNTIME%%/cream/cream-filetype.vim
 %%VIMRUNTIME%%/cream/cream-find.vim
 %%VIMRUNTIME%%/cream/cream-gui.vim
@@ -188,7 +187,6 @@ share/pixmaps/cream.svg
 %%VIMRUNTIME%%/cream/bitmaps/undo.bmp
 %%VIMRUNTIME%%/cream/bitmaps/undo.xpm
 %%VIMRUNTIME%%/cream/help/EnhancedCommentify.txt
-%%VIMRUNTIME%%/cream/help/opsplorer.txt
 %%VIMRUNTIME%%/cream/lang/menu_chinese_gb.936.vim
 %%VIMRUNTIME%%/cream/lang/menu_en_us.utf-8.vim
 %%VIMRUNTIME%%/cream/lang/menu_fr_fr.latin1.vim
@@ -203,29 +201,11 @@ share/pixmaps/cream.svg
 %%VIMRUNTIME%%/cream/lang/menu_zh_cn.gbk.vim
 %%VIMRUNTIME%%/cream/lang/menu_zh_cn.utf-8.vim
 %%VIMRUNTIME%%/cream/lang/strings_en_us.utf-8.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s-CA_1.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s-CA_2.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s-CA_3.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s-CA_4.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s-GB_1.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s-GB_2.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s-GB_3.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s-GB_4.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s-US_1.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s-US_2.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s-US_3.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s-US_4.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s_1.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s_2.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s_3.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict-eng-s_4.vim
-%%VIMRUNTIME%%/cream/spelldicts/cream-spell-dict.vim
 %%VIMRUNTIME%%/cream/creamrc
 %%VIMRUNTIME%%/cream/genutils.vim
 %%VIMRUNTIME%%/cream/multvals.vim
-@comment %%VIMRUNTIME%%/cream/opsplorer.vim
+%%VIMRUNTIME%%/cream/securemodelines.vim
 %%VIMRUNTIME%%/cream/taglist.vim
-@dirrm %%VIMRUNTIME%%/cream/spelldicts
 @dirrm %%VIMRUNTIME%%/cream/lang
 @dirrm %%VIMRUNTIME%%/cream/help
 @dirrm %%VIMRUNTIME%%/cream/bitmaps
