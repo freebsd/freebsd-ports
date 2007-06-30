@@ -18,6 +18,7 @@
     SUBDIR += convey
     SUBDIR += echat
     SUBDIR += ejabberd
+    SUBDIR += emesene
     SUBDIR += eva
     SUBDIR += finch
     SUBDIR += firetalk
