@@ -5,5 +5,3 @@ factor to reduce the video size.
 
 Before using StreamAnalyze you should call 'lsdvd' or 'tcprobe' to get an
 overview of what is available on the video DVD you want to backup.
-
-WWW: http://www.badabum.de/streamdvd.html
