@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -16,7 +16,8 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Generic Catalyst Session plugin
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Object-Signature>=0:${PORTSDIR}/devel/p5-Object-Signature
+		p5-Object-Signature>=0:${PORTSDIR}/devel/p5-Object-Signature \
+		p5-Tie-RefHash>=1.34:${PORTSDIR}/devel/p5-Tie-RefHash
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -29,7 +30,7 @@ MAN3=	Catalyst::Plugin::Session.3 \
 	Catalyst::Plugin::Session::Tutorial.3
 
 post-extract:
-	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
+	@${PERL} -i.bak -ne 'print unless /^my/ .. /^}/ or m,Test::,' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
