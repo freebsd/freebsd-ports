@@ -18,6 +18,8 @@ COMMENT=	Configurator for Openbox with keybinding and mousebinding editor
 BUILD_DEPENDS=	openbox:${PORTSDIR}/x11-wm/openbox
 
 BROKEN=		does not compile with recent Openbox
+DEPRECATED=	broken with recent Openbox and the project is not active anymore
+EXPIRATION_DATE=	2007-09-15
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
