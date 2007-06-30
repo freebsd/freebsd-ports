@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	cream
-PORTVERSION=	0.38
-PORTREVISION=	1
+PORTVERSION=	0.39
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Gvim extension with many features
@@ -19,14 +17,14 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim
 
 NO_BUILD=	yes
 # needs updating for each major vim update.
-VIMRUNTIME=	${PREFIX}/share/vim/vim70
+VIMRUNTIME=	${PREFIX}/share/vim/vim71
 PLIST_SUB=	VIMRUNTIME="${VIMRUNTIME:S/${PREFIX}\///}"
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cream ${PREFIX}/bin
 	${MKDIR} ${VIMRUNTIME}/cream
 	${INSTALL_DATA} ${WRKSRC}/creamrc ${WRKSRC}/*.vim ${VIMRUNTIME}/cream
-.for f in addons bitmaps help lang spelldicts
+.for f in addons bitmaps help lang
 	${MKDIR} ${VIMRUNTIME}/cream/${f}
 	${INSTALL_DATA} ${WRKSRC}/${f}/* ${VIMRUNTIME}/cream/${f}
 .endfor
