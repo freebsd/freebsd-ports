@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	astk
-DISTVERSION=	1.5.0-1
-PORTREVISION=	2
+DISTVERSION=	1.5.2-1
+DISTVERSIONSUFFIX=	.noarch
 CATEGORIES=	cad
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 .if !defined(CLIENT_SEUL)
@@ -15,7 +15,6 @@ PKGNAMESUFFIX=	-serveur
 .else
 PKGNAMESUFFIX=	-client
 .endif
-DISTNAME=	${PORTNAME}-${DISTVERSION}.noarch
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Graphical interface for Code_Aster (server side)
@@ -33,9 +32,6 @@ COMMENT?=	Graphical interface for Code_Aster (server side)
 # There exists a "logical" RUN_DEPENDS towards french/aster and french/eficas
 # for the server part, but it is not set to avoid circular dependences.
 RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}
-.if defined(WITH_PBS) && !defined(CLIENT_SEUL)
-RUN_DEPENDS+=	${LOCALBASE}bin/pbs_tclsh:${PORTSDIR}/misc/pbs
-.endif
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
@@ -60,6 +56,12 @@ PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_SERV SERV="" CLIENT="@comment "		\
 		vaster=${vaster}
 PATCH2RM=	conf/config bin/as_exec bin/as_serv lib/as_config.py	\
 		lib/as_exec.py conf/aster_profile.sh lib/as_system.py
+. if exists(${LOCALBASE}/sbin/pbs_server)
+WITH_PBS=	yes
+. endif
+. if defined(WITH_PBS)
+RUN_DEPENDS+=	qsub:${PORTSDIR}/sysutils/torque
+. endif
 .else
 RUN_DEPENDS+=	xterm:${PORTSDIR}/x11/xterm						\
 		wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
@@ -78,7 +80,7 @@ TCL_VER?=	${TK_VER}
 SHORT_TK_VER=	${TK_VER:S/.//}
 BWidget_VER=	1.7.0
 
-ASTER_VER=	9.0.0
+ASTER_VER=	9.1.0
 vaster=		STA${ASTER_VER:R}
 
 GIBI=		gibi2003
@@ -179,7 +181,7 @@ do-configure:
 # CLIENT_SEUL
 . for scripts in ${C_SCRIPTS}
 	@${REINPLACE_CMD} -e "s#?SHELL_EXECUTION?#${SHELL_INSTALL_ASTER}#"	\
-	-e "s#?HOME_ASTK?#${inst_dir}#"						\
+	-e "s#?HOME_ASTK?#${inst_dir}#;s#?ASTER_ROOT?#${PREFIX}/aster#"		\
 	-e "s#?WISH_EXE?#wish${TK_VER}#" ${WRKSRC}/${scripts}
 . endfor
 	@${REINPLACE_CMD} -e "s#GIBI#${GIBI}#"					\
@@ -189,6 +191,7 @@ do-configure:
 		-e "s#?XTERM?#${X11BASE}/bin/xterm#"				\
 		-e "s#?FULL_SERVER_NAME?#${SERVER_NAME}#"			\
 		-e "s#?SERVER_NAME?#${HOST_NAME}#"				\
+		-e "s#?ASTER_ROOT?#${PREFIX}/aster#"				\
 		-e "s#?EDITOR?#${WITH_ED}#" ${conf_dir}/config_serveurs
 	@${REINPLACE_CMD} -e "s#?XTERM?#${X11BASE}/bin/xterm#"			\
 		-e "s#?ASTER_VERSION?#${ASTER_VER}#"				\
@@ -199,7 +202,6 @@ do-configure:
 		${WRKSRC}/share/tkselecteur.tcl
 	@${REINPLACE_CMD} -e "s#%%unamesm%%#${unamesm}#"			\
 		${WRKSRC}/lib/ASTK/init.tcl
-	@${REINPLACE_CMD} -e 's|?ASTER_ROOT?|${PREFIX}/aster|' ${WRKSRC}/bin/astk
 .endif
 
 do-install:
