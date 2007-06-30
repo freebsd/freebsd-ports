@@ -8,11 +8,9 @@ include/google/template_from_string.h
 include/google/template_modifiers.h
 include/google/template_namelist.h
 lib/libctemplate.a
-lib/libctemplate.la
 lib/libctemplate.so
 lib/libctemplate.so.0
 lib/libctemplate_nothreads.a
-lib/libctemplate_nothreads.la
 lib/libctemplate_nothreads.so
 lib/libctemplate_nothreads.so.0
 @dirrmtry include/google
