@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uniutils
-PORTVERSION=	2.24
+PORTVERSION=	2.25
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
