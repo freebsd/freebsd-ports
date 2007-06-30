@@ -53,6 +53,7 @@ ircproxyd:*:118:
 mythtv:*:119:
 pdns:*:120
 otrs:*:121:
+zabbix:*:122:
 _ntp:*:123:
 fetchmail:*:124
 postfix:*:125:
