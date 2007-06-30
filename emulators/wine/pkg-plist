@@ -314,6 +314,8 @@ include/wine/windows/oleidl.h
 include/wine/windows/oleidl.idl
 include/wine/windows/optary.h
 include/wine/windows/optary.idl
+include/wine/windows/pdh.h
+include/wine/windows/pdhmsg.h
 include/wine/windows/pktdef.h
 include/wine/windows/poppack.h
 include/wine/windows/powrprof.h
@@ -415,6 +417,7 @@ include/wine/windows/winnetwk.h
 include/wine/windows/winnls.h
 include/wine/windows/winnls32.h
 include/wine/windows/winnt.h
+include/wine/windows/winperf.h
 include/wine/windows/winreg.h
 include/wine/windows/winres.h
 include/wine/windows/winresrc.h
@@ -525,6 +528,7 @@ lib/wine/dplayx.dll.so
 lib/wine/dpnet.dll.so
 lib/wine/dsound.dll.so
 lib/wine/dswave.dll.so
+lib/wine/dwmapi.dll.so
 lib/wine/dxdiagn.dll.so
 lib/wine/eject.exe.so
 lib/wine/expand.exe.so
@@ -539,6 +543,7 @@ lib/wine/hh.exe.so
 lib/wine/hhctrl.ocx.so
 lib/wine/hid.dll.so
 lib/wine/hlink.dll.so
+lib/wine/hnetcfg.dll.so
 lib/wine/iccvid.dll.so
 lib/wine/icinfo.exe.so
 lib/wine/icmp.dll.so
@@ -591,6 +596,7 @@ lib/wine/libdpnet.def
 lib/wine/libdplay.def
 lib/wine/libdplayx.def
 lib/wine/libdsound.def
+lib/wine/libdwmapi.def
 lib/wine/libdxerr8.a
 lib/wine/libdxerr9.a
 lib/wine/libdxguid.a
@@ -735,6 +741,7 @@ lib/wine/notepad.exe.so
 lib/wine/ntdll.dll.so
 lib/wine/ntdsapi.dll.so
 lib/wine/ntoskrnl.exe.so
+lib/wine/ntprint.dll.so
 lib/wine/objsel.dll.so
 lib/wine/odbc32.dll.so
 lib/wine/odbccp32.dll.so
@@ -757,6 +764,7 @@ lib/wine/oleview.exe.so
 lib/wine/opengl32.dll.so
 lib/wine/pdh.dll.so
 lib/wine/powrprof.dll.so
+lib/wine/printui.dll.so
 lib/wine/progman.exe.so
 lib/wine/psapi.dll.so
 lib/wine/pstorec.dll.so
