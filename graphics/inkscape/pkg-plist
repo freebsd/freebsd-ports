@@ -400,8 +400,8 @@ share/locale/zh_CN/LC_MESSAGES/inkscape.mo
 share/locale/zh_TW/LC_MESSAGES/inkscape.mo
 share/pixmaps/inkscape.png
 @dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/en_US@piglatin
+@dirrmtry share/locale/km
+@dirrmtry share/locale/en_US@piglatin/LC_MESSAGES
 @dirrmtry share/locale/en_US@piglatin
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/tutorials
