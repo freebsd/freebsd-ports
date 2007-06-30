@@ -99,6 +99,7 @@
     SUBDIR += pidgin
     SUBDIR += pidgin-guifications
     SUBDIR += pidgin-hotkeys
+    SUBDIR += pidgin-rhythmbox
     SUBDIR += pork
     SUBDIR += py-msnp
     SUBDIR += py-pyxmpp
