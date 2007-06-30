@@ -1,6 +1,6 @@
-# Ports collection makefile for:  john
-# Date created:			  Sun Mar 09, 1997
-# Whom:				  David O'Brien (obrien@FreeBSD.org)
+# Ports collection makefile for:	John the Ripper
+# Date created:				Sun Mar 09, 1997
+# Whom:					David O'Brien <obrien@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.openwall.com/john/f/ \
 		ftp://ftp.se.openwall.com/pub/projects/john/${PORTVERSION}/ \
 		http://distro.ibiblio.org/pub/linux/distributions/openwall/projects/john/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Featureful Unix password cracker
 
 DATAFILES=	all.chr alnum.chr alpha.chr digits.chr lanman.chr password.lst
@@ -28,24 +28,12 @@ CFLAGS+=	-DJOHN_SYSTEMWIDE=1 \
 		-DJOHN_SYSTEMWIDE_HOME=\\"${DATADIR}\\" \
 		-DCFG_FULL_NAME=\\"${PREFIX}/etc/${PORTNAME}.conf\\"
 
-# workaround for OSVERSION/ARCH detection before bsd.port.pre.mk
-# (required for OPTIONS usage)
-ARCH!=		/usr/bin/uname -p
-OSVERSION!=	/sbin/sysctl -n kern.osreldate
-
-.if ${ARCH} == "i386"
-. if ${OSVERSION} > 500000
-OPTIONS=	SSE2 "Enable SSE2 optimizations" off
-. endif
-OPTIONS+=	MMX "Enable MMX optimizations" off
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-. if defined(WITH_SSE2)
+. if ${MACHINE_CPU:Msse2}
 ALL_TARGET=	${OSNAME}-x86-sse2
-. elif defined(WITH_MMX)
+. elif ${MACHINE_CPU:Mmmx}
 ALL_TARGET=	${OSNAME}-x86-mmx
 . else
 ALL_TARGET=	${OSNAME}-x86-any
