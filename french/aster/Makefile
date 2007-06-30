@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	aster
-DISTVERSION=	9.0.0-2
-PORTREVISION=	3
-CATEGORIES=	french cad python
-MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}-full-src-${DISTVERSION}.noarch
+PORTNAME=		aster
+DISTVERSIONPREFIX=	full-src-
+DISTVERSION=		9.1.0-1
+DISTVERSIONSUFFIX=	.noarch
+CATEGORIES=		french cad python
+MASTER_SITES=		http://www.code-aster.org/FICHIERS/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Aster finite element method solver
@@ -361,8 +361,6 @@ post-install:
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
-	(cd ${inst_dir};	\
-	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run forma01a.export)
 	@${ECHO_CMD} Note: homard must be installed to run some steps succesfully.
 	(cd ${inst_dir};	\
 	HDF5_DISABLE_VERSION_CHECK=1	\
