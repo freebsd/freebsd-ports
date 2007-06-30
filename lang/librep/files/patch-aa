@@ -1,20 +1,19 @@
---- configure.orig	Mon Oct 29 06:19:47 2001
-+++ configure	Thu Jan 24 17:54:12 2002
-@@ -4659,7 +4659,7 @@
-     ;;
-   esac
- fi
--need_lc=${lt_cv_archive_cmds_need_lc-yes}
-+need_lc=no
+--- configure.orig	Mon Nov 24 22:46:51 2003
++++ configure	Sat Jun 30 01:24:06 2007
+@@ -6567,6 +6567,7 @@ if test -z "$aix_libpath"; then aix_libp
+       hardcode_libdir_flag_spec='-R$libdir'
+       hardcode_direct=yes
+       hardcode_shlibpath_var=no
++      archive_cmds_need_lc=no
+       ;;
  
- # The second clause should only fire when bootstrapping the
- # libtool distribution, otherwise you forgot to ship ltmain.sh
-@@ -6136,7 +6136,7 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
+     hpux9*)
+@@ -19768,7 +19769,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_gdbm_gdbm_open" >&5
+ echo "${ECHO_T}$ac_cv_lib_gdbm_gdbm_open" >&6
+ if test $ac_cv_lib_gdbm_gdbm_open = yes; then
 -  GDBM_LIBS="-lgdbm"
-+  GDBM_LIBS="-lgdbm $LIBS"
++  GDBM_LIBS="$LIBS -lgdbm"
  else
-   echo "$ac_t""no" 1>&6
- { echo "configure: error: Cannot find GDBM library" 1>&2; exit 1; }
+   { { echo "$as_me:$LINENO: error: Cannot find GDBM library" >&5
+ echo "$as_me: error: Cannot find GDBM library" >&2;}
