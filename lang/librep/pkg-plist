@@ -4,13 +4,14 @@ bin/rep-remote
 bin/rep-xgettext
 bin/repdoc
 include/rep.h
+include/rep_gh.h
 include/rep_lisp.h
 include/rep_regexp.h
 include/rep_subrs.h
 lib/librep.la
 lib/librep.so
-lib/librep.so.12
-libexec/rep/%%VERSION%%/%%GNUHOST%%/DOC
+lib/librep.so.13
+libexec/rep/%%VERSION%%/%%GNUHOST%%/doc-strings
 libexec/rep/%%VERSION%%/%%GNUHOST%%/emulate-gnu-tar
 libexec/rep/%%VERSION%%/%%GNUHOST%%/gdbm.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/gdbm.so
@@ -20,6 +21,8 @@ libexec/rep/%%VERSION%%/%%GNUHOST%%/readline.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/readline.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/data/tables.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/data/tables.so
+libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/ffi.la
+libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/ffi.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/i18n/gettext.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/i18n/gettext.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/db/gdbm.la
