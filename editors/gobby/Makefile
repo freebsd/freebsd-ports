@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gobby
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/ \
 		http://www.atarininja.org/~wxs/distfiles/
@@ -23,7 +22,6 @@ LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig gtksourceview
-USE_GCC=	3.4
 
 CONFIGURE_ARGS=	"--mandir=${PREFIX}/man"
 
