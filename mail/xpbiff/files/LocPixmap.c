@@ -45,6 +45,8 @@
  * LocatePixmapFile - read a pixmap file using the normal defaults
  */
 
+static char **split_path_string();
+
 Pixmap LocatePixmapFile (screen, name, srcname, srcnamelen,
 			    widthp, heightp, mask)
     Screen *screen;
@@ -63,7 +65,6 @@ Pixmap LocatePixmapFile (screen, name, srcname, srcnamelen,
     unsigned int width, height;
     int xhot, yhot;
     int i;
-    static char **split_path_string();
 
 
     /*
