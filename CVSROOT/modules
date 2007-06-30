@@ -10350,6 +10350,7 @@ p5-Net-SNMP	ports/net-mgmt/p5-Net-SNMP
 p5-Net-SNMP3	ports/net-mgmt/p5-Net-SNMP3
 p5-Net-SNPP	ports/net/p5-Net-SNPP
 p5-Net-SSH	ports/net/p5-Net-SSH
+p5-Net-SSH-Expect	ports/net/p5-Net-SSH-Expect
 p5-Net-SSH-Perl	ports/net/p5-Net-SSH-Perl
 p5-Net-SSH2	ports/net/p5-Net-SSH2
 p5-Net-SSLeay	ports/security/p5-Net-SSLeay
