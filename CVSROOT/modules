@@ -2419,6 +2419,7 @@ emc2		ports/math/emc2
 emelfm2		ports/x11-fm/emelfm2
 emerald		ports/x11-wm/emerald
 emerald-themes	ports/x11-themes/emerald-themes
+emesene		ports/net-im/emesene
 emh		ports/mail/emh
 emh-emacs20	ports/mail/emh-emacs20
 emh-xemacs21-mule	ports/mail/emh-xemacs21-mule
