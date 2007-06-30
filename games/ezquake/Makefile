@@ -25,6 +25,8 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		png.5:${PORTSDIR}/graphics/png \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 
+BROKEN=		does not compile
+
 USE_DOS2UNIX=	*.[ch] Makefile*
 USE_GCC=	3.4+
 USE_GMAKE=	yes
