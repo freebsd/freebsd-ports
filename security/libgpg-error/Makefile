@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgpg-error
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Common error values for all GnuPG components
 
+USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	ltverhack
 USE_LDCONFIG=		yes
