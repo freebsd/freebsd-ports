@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ZendFramework
-PORTVERSION=	0.9.1b
+PORTVERSION=	1.0.0rc3
 CATEGORIES=	www
-MASTER_SITES=	http://framework.zend.com/releases/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/-Beta/}
+MASTER_SITES=	http://framework.zend.com/releases/${DISTNAME}/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/rc3/-RC3/}
 
 MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	A framework for developing PHP web applications
