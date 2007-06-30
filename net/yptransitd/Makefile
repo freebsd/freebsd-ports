@@ -1,6 +1,6 @@
-# New ports collection makefile for:   yptransitd
-# Date created: 	26 September 2002
-# Whom: 		Michael Joyner <mjoyner@hq.dyns.cx>
+# New ports collection makefile for:	yptransitd
+# Date created:				26 September 2002
+# Whom:					Michael Joyner <mjoyner@hq.dyns.cx>
 #
 # $FreeBSD$
 #
