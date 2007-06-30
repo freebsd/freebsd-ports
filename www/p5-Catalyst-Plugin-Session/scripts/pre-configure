@@ -1,0 +1,23 @@
+#!/usr/local/bin/perl
+#
+# $FreeBSD$
+#
+# Mimic requirement in Catalyst::Plugin::Session's original Makefile.PL
+
+eval 'exec /usr/local/bin/perl -S $0 ${1+"$@"}'
+	if $running_under_some_shell;
+
+my %v = ( "Catalyst::Plugin::Session::State::Cookie" => '^0\\.0[0-2]', # 0.03+
+          "Catalyst::Plugin::Session::State::URI" => '^0\\.0[0-1]', # 0.02+
+);
+foreach my $m (keys %v) {
+    eval "use $m";
+    if (!$@ && ${"${m}::VERSION"} =~ /$v{$m}/) {
+        my $p = "p5-$m";
+        $p =~ s/::/-/g;
+	my $version = ${"${m}::VERSION"};
+        warn "Found p5-$p-$version, but you need to upgrade.\n";
+        exit 1;
+    }
+}
+exit 0;
