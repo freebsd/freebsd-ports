@@ -39,12 +39,17 @@ PLIST_SUB+=	CTESTS=""
 PLIST_SUB+=	FTESTS="@comment "
 .else
 PLIST_SUB+=	FTESTS=""
+BUILD_DEPENDS=	gfortran:${PORTSDIR}/lang/gcc42
 .endif
 
 .if defined(WITHOUT_DEBUG)
 CONFIGURE_ARGS+=	--without-debug
 .else
 CONFIGURE_ARGS+=	--with-debug
+.endif
+
+.if ${OSVERSION} < 600000
+IGNORE=	requires FreeBSD 6 or later
 .endif
 
 MAN1=	papi_avail.1 \
