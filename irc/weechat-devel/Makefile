@@ -7,6 +7,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://flashcode.free.fr/flashtux/weechat/ \
 		http://weechat.flashtux.org/download/
@@ -74,7 +75,7 @@ PLIST_SUB+=	RUBY="@comment "
 
 .if defined(WITH_GNUTLS)
 CONFIGURE_ARGS+=	--enable-gnutls
-LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnu-tls
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	filezilla
 DISTVERSION=	3.0.0-beta7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 DISTNAME=	FileZilla_${DISTVERSION}_src
@@ -15,7 +15,7 @@ DISTNAME=	FileZilla_${DISTVERSION}_src
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Fast FTP and SFTP client with a lot of features
 
-LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls \
+LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls \
 		idn.16:${PORTSDIR}/dns/libidn
 
 USE_BZIP2=	yes

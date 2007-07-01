@@ -7,7 +7,7 @@
 
 PORTNAME=	gaim
 PORTVERSION=	1.5.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -58,7 +58,7 @@ PLIST_SUB+=	EVO="@comment "
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=		gnutls.15:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.13:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls
 .endif

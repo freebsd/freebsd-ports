@@ -8,13 +8,14 @@
 
 PORTNAME=	ctrlproxy
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://ctrlproxy.vernstok.nl/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible IRC proxy
 
-LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls
 
 USE_GNOME=	glib20 gnometarget
 USE_GCC=	3.4+

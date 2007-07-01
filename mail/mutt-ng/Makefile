@@ -7,7 +7,7 @@
 
 PORTNAME=	mutt-ng
 PORTVERSION=	20061125
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://nion.modprobe.de/mutt-ng/snapshots/		\
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=	--enable-imap
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS+=	--with-gnutls=${LOCALBASE}
-LIB_DEPENDS+=		gnutls.15:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.13:${PORTSDIR}/security/gnutls
 .endif
 .endif
 

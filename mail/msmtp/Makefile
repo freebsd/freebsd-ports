@@ -7,6 +7,7 @@
 
 PORTNAME=	msmtp
 PORTVERSION=	1.4.12
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	msmtp
@@ -26,7 +27,7 @@ MAN1=	msmtp.1
 INFO=	msmtp
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-ssl=gnutls
 .elif defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
