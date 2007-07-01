@@ -1,0 +1,176 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/zh_CN/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/zh_CN/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/ru_RU/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/ru_RU/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/ro_RO/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/ro_RO/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/pt_BR/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/pt_BR/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/pl_PL/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/pl_PL/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/nl_NL/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/nl_NL/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/nb_NO/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/nb_NO/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/lt_LT/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/lt_LT/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/it_IT/LC_MESSAGES/avelsieve_lorenzo.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/it_IT/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/it_IT/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/is_IS/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/is_IS/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/fr_FR/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/fr_FR/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/fi_FI/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/fi_FI/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/es_ES/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/es_ES/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/el_GR/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/el_GR/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/de_DE/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/de_DE/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/cs_CZ/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/cs_CZ/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/bg_BG/LC_MESSAGES/avelsieve.po
+%%SQUIRRELDIR%%/plugins/avelsieve/locale/bg_BG/LC_MESSAGES/avelsieve.mo
+%%SQUIRRELDIR%%/plugins/avelsieve/include/support.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/standalone_html.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/standalone.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/spamrule.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/sieve_getrule.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/sieve_buildrule.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/sieve_actions.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/sieve.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/search_integration.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/process_user_input.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/message_commands.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/managesieve_wrapper.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/managesieve.lib.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/html_rulestable.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/html_ruleedit_wizard.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/html_ruleedit.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/html_main.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/dumpr.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/constants.inc.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/DO_Sieve_Skeleton.class.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/DO_Sieve_PearManageSieve.class.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/DO_Sieve_ManageSieve.class.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/DO_Sieve_File.class.php
+%%SQUIRRELDIR%%/plugins/avelsieve/include/DO_Sieve.class.php
+%%SQUIRRELDIR%%/plugins/avelsieve/images/warning_small.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/warning.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/stop.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/stock_disconnect.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/plain_obsolete/up.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/plain_obsolete/edit.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/plain_obsolete/dup.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/plain_obsolete/down.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/plain_obsolete/del.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/nr.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/mail.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24/up.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24/up.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24/top.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24/top.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24/edit.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24/edit.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24/dup.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24/dup.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24/down.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24/down.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24/del.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24/del.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24/bottom.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24/bottom.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16/up.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16/up.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16/top.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16/top.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16/edit.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16/edit.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16/dup.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16/dup.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16/down.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16/down.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16/del.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16/del.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16/bottom.png
+%%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16/bottom.gif
+%%SQUIRRELDIR%%/plugins/avelsieve/images/add.png
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/style/avelsieve_meta.css
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/notes.html
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/highlight_spam.patch
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/avelsieve_translation_statistics.html
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/TODO.html
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/TODO
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/REPORTING_BUGS.html
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/REPORTING_BUGS
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/RELEASE-NOTES.html
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/RELEASE-NOTES
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/README.html
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/README-FIRST.BETA
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/README
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/NEWS.html
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/NEWS
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/INSTALL
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/DEVELOPMENT
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/CREDITS.html
+%%SQUIRRELDIR%%/plugins/avelsieve/doc/CREDITS
+%%SQUIRRELDIR%%/plugins/avelsieve/config/config_sample.php
+%%SQUIRRELDIR%%/plugins/avelsieve/version
+%%SQUIRRELDIR%%/plugins/avelsieve/table.php
+%%SQUIRRELDIR%%/plugins/avelsieve/setup.php
+%%SQUIRRELDIR%%/plugins/avelsieve/manage_scripts.php
+%%SQUIRRELDIR%%/plugins/avelsieve/index.php
+%%SQUIRRELDIR%%/plugins/avelsieve/edit.php
+%%SQUIRRELDIR%%/plugins/avelsieve/addspamrule.php
+%%SQUIRRELDIR%%/plugins/avelsieve/addrule.php
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/zh_CN/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/zh_CN
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/ru_RU/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/ru_RU
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/ro_RO/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/ro_RO
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/pt_BR/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/pt_BR
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/pl_PL/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/pl_PL
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/nn_NO/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/nn_NO
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/nl_NL/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/nl_NL
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/nb_NO/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/nb_NO
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/lt_LT/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/lt_LT
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/it_IT/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/it_IT
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/is_IS/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/is_IS
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/fr_FR/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/fr_FR
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/fi_FI/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/fi_FI
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/es_ES/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/es_ES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/el_GR/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/el_GR
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/de_DE/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/de_DE
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/cs_CZ/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/cs_CZ
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/bg_BG/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/bg_BG
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/lib
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/include
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/images/plain_obsolete
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/images
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/doc/style
+@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/doc
+@dirrmtry %%SQUIRRELDIR%%/plugins/avelsieve/config
+@dirrmtry %%SQUIRRELDIR%%/plugins/avelsieve
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
