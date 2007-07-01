@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	1.0.8
-PORTREVISION=	2
+PORTVERSION=	1.0.9
 CATEGORIES=	devel
 MASTER_SITES=	http://darcs.net/
 
@@ -20,8 +19,8 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		readline.5:${PORTSDIR}/devel/readline
 
 OPTIONS=	SERVER "install server" off
-USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${PREFIX}/lib/ ${PTHREAD_LIBS}" \
 		CFLAGS=""
@@ -51,21 +50,15 @@ INSTALL_TARGET+=	installdocs
 
 MAN1=	darcs.1
 
-post-patch:
-	@${RM} ${WRKSRC}/configure
 .if defined(WITH_SERVER)
+post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libexecdir)/cgi-bin|${PREFIX}/${CGIDIR}| ; \
-		s|darcs/cgi.conf|cgi.conf.sample| ; /ln/d' \
+		s|darcs/cgi.conf|darcs/cgi.conf.sample|' \
 		${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -e '/$$(sysconfdir)\/darcs/d' ${WRKSRC}/${MAKEFILE}
 .endif
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e '/$$(datadir)/d' ${WRKSRC}/${MAKEFILE}
-.else
-	@${REINPLACE_CMD} -e 's/^\(installdocs:.\)darcs.ps/\1/ ; \
-			s/^\(installbin:\).*/\1/ ; /darcs\.ps/d ' \
-		 ${WRKSRC}/${MAKEFILE}
-.endif
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|$${prefix}|${PREFIX}|' ${WRKSRC}/cgi/darcs.cgi
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/darcs
