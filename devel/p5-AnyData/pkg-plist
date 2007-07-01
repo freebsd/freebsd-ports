@@ -1,0 +1,25 @@
+%%SITE_PERL%%/AnyData/Format/Base.pm
+%%SITE_PERL%%/AnyData/Format/CSV.pm
+%%SITE_PERL%%/AnyData/Format/FileSys.pm
+%%SITE_PERL%%/AnyData/Format/Fixed.pm
+%%SITE_PERL%%/AnyData/Format/HTMLtable.pm
+%%SITE_PERL%%/AnyData/Format/Ini.pm
+%%SITE_PERL%%/AnyData/Format/Mp3.pm
+%%SITE_PERL%%/AnyData/Format/Paragraph.pm
+%%SITE_PERL%%/AnyData/Format/Passwd.pm
+%%SITE_PERL%%/AnyData/Format/Pipe.pm
+%%SITE_PERL%%/AnyData/Format/Tab.pm
+%%SITE_PERL%%/AnyData/Format/Text.pm
+%%SITE_PERL%%/AnyData/Format/Weblog.pm
+%%SITE_PERL%%/AnyData/Format/XML.pm
+%%SITE_PERL%%/AnyData/Storage/File.pm
+%%SITE_PERL%%/AnyData/Storage/File.pod
+%%SITE_PERL%%/AnyData/Storage/FileSys.pm
+%%SITE_PERL%%/AnyData/Storage/PassThru.pm
+%%SITE_PERL%%/AnyData/Storage/RAM.pm
+%%SITE_PERL%%/AnyData/Storage/TiedHash.pm
+@dirrm %%SITE_PERL%%/AnyData/Storage
+@dirrm %%SITE_PERL%%/AnyData/Format
+@dirrm %%SITE_PERL%%/AnyData
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyData/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyData
