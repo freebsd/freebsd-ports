@@ -7,6 +7,7 @@
 
 PORTNAME=	ps
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	print pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -17,7 +18,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	alan@fromorbit.com
 COMMENT=	PHP extension for pslib to generate postscript
 
-LIB_DEPENDS=	ps.2:${PORTSDIR}/print/pslib
+LIB_DEPENDS=	ps.3:${PORTSDIR}/print/pslib
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
