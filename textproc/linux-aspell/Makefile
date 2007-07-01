@@ -14,26 +14,20 @@ MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/ximian/ximian-evolution/redha
 		ftp://ftp.icm.edu.pl/vol/rzm8/ximian/ximian-evolution/redhat-80-i386/ \
 		ftp://ftp.chg.ru/.7/X11/ximian/ximian-evolution/redhat-80-i386/ \
 		ftp://ftp.is.co.za/mirror/ftp.ximian.com/ximian-evolution/redhat-80-i386/
-PKGNAMEPREFIX=	linux-
-DISTFILES=	${PORTNAME}-${PORTVERSION}-0.ximian.5.1.i386.rpm # needed for slave ports / options
-EXTRACT_ONLY=
+DISTNAME=	${PORTNAME}-${PORTVERSION}-0.ximian.5.1
+DISTFILES=	${DISTNAME}.i386.rpm	# needed for slave ports / options
+EXTRACT_SUFX=	.i386.rpm
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spelling checker with better logic than ispell (linux version)
 
-BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-
-NO_BUILD=		yes
-ONLY_FOR_ARCHS=		i386 amd64
-USE_LINUX=		yes
-USE_LINUX_PREFIX=	yes
-USE_GMAKE=		yes
-LDCONFIG_LINUX=		${LINUXBASE}/sbin/ldconfig
-
-DBPATH=		/var/lib/rpm
-#RPMDIR=	${DISTDIR}/${DIST_SUBDIR}
-RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
-		--nodeps --replacepkgs
+USE_LINUX_RPM=	yes
+ONLY_FOR_ARCHS=	i386 amd64
+USE_GMAKE=	yes
+MD5_FILE=	${MASTERDIR}/distinfo
+DIST_SUBDIR=	rpm
+BRANDELF_DIRS=	usr/bin
 
 CONF_DICT_ENV=	ASPELL="${PREFIX}/usr/bin/aspell" \
 		WORD_LIST_COMPRESS="${PREFIX}/usr/bin/word-list-compress"
@@ -79,10 +73,6 @@ DICT_SUFFIX=	.tar.bz2
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500021 
-BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
-.endif
-
 .if defined(LANG)
 . for i in ${AVAIL_DICT} no
 .  if ${LANG:M${i}*} != ""
@@ -94,6 +84,7 @@ DEF_DICT=	nn
 . endif
 .endif
 DEF_DICT?=	en
+DICO_WRKDIR=	${WRKDIR}_DICO
 
 pre-everything::
 .if defined(ASPELL_NO)
@@ -179,10 +170,10 @@ DISTFILES+=	aspell-${DICO}-${DICTVERSION}${DICT_SUFFIX}:dict${DICO}
 post-extract:
 .for DICO in ${DICTS}
 . if (${SPECDICTS:M${DICO}*} != "")
-	@cd ${WRKDIR} && \
+	@${MKDIR} -p ${DICO_WRKDIR} && cd ${DICO_WRKDIR} && \
 	 ${TAR} -xjf ${DISTDIR}/aspell-${DICO}-${DICTVER_${DICO:U}}${DICT_SUFFIX}
 . else
-	@cd ${WRKDIR} && \
+	@${MKDIR} -p ${DICO_WRKDIR} && cd ${DICO_WRKDIR} && \
 	 ${TAR} -xjf ${DISTDIR}/aspell-${DICO}-${DICTVERSION}${DICT_SUFFIX}
 . endif
 .endfor
@@ -192,35 +183,31 @@ post-patch:
 . if (${SPECDICTS:M${DICO}*} != "")
 	@${REINPLACE_CMD} -e 's|$${dictdir}|${PREFIX}$${dictdir}|g ; \
 		s|$${datadir}|${PREFIX}$${datadir}|g' \
-			${WRKDIR}/aspell-${DICO}-${DICTVER_${DICO:U}}/Makefile.pre
+			${DICO_WRKDIR}/aspell-${DICO}-${DICTVER_${DICO:U}}/Makefile.pre
 . else
 	@${REINPLACE_CMD} -e 's|$${dictdir}|${PREFIX}$${dictdir}|g ; \
 		s|$${datadir}|${PREFIX}$${datadir}|g' \
-			${WRKDIR}/aspell-${DICO}-${DICTVERSION}/Makefile.pre
+			${DICO_WRKDIR}/aspell-${DICO}-${DICTVERSION}/Makefile.pre
 . endif
 .endfor
-
-do-install:
-	@${LOCALBASE}/bin/rpm -U ${RPMFLAGS} \
-		${DISTDIR}/${PORTNAME}-${PORTVERSION}-0.ximian.5.1.i386.rpm
-	@${FIND} ${LINUXBASE} -name lib -type d | ${SED} 's|${LINUXBASE}||g' \
-		> ${LINUXBASE}/etc/ld.so.conf
-	@${LDCONFIG_LINUX}
 
 post-install:
 .for DICO in ${DICTS}
 	@${ECHO_MSG} "===>   Installing for ${DICO} dictionaries"
 . if (${SPECDICTS:M${DICO}*} != "")
-	@cd ${WRKDIR}/aspell-${DICO}-${DICTVER_${DICO:U}} &&	\
+	@cd ${DICO_WRKDIR}/aspell-${DICO}-${DICTVER_${DICO:U}} &&	\
 	 ${CONF_DICT_ENV} ./${CONFIGURE_SCRIPT} &&		\
 	 ${GMAKE} install
 . else
-	@cd ${WRKDIR}/aspell-${DICO}-${DICTVERSION} &&		\
+	@cd ${DICO_WRKDIR}/aspell-${DICO}-${DICTVERSION} &&		\
 	 ${CONF_DICT_ENV} ./${CONFIGURE_SCRIPT}  &&		\
 	 ${GMAKE} install
 . endif
 	@${CAT} ${MASTERDIR}/pkg-plist.${DICO} >> ${TMPPLIST}
 .endfor
 	@${CAT} ${MASTERDIR}/pkg-plist.dirrm >> ${TMPPLIST}
+
+post-clean:
+	@${RM} -rf ${DICO_WRKDIR} || ${TRUE}
 
 .include <bsd.port.post.mk>
