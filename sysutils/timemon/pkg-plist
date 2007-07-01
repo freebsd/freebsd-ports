@@ -8,6 +8,7 @@ System/Applications/TimeMon.app/Resources/TimeMon.gorm/objects.gorm
 System/Applications/TimeMon.app/Resources/TimeMon.tiff
 System/Applications/TimeMon.app/Resources/TimeMonP.tiff
 System/Applications/TimeMon.app/TimeMon
+System/Applications/TimeMon.app/library_paths.openapp
 System/Applications/TimeMon.app/stamp.make
 System/Tools/TimeMon
 @dirrm System/Applications/TimeMon.app/Resources/TimeMon.gorm
