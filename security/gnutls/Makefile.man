@@ -340,6 +340,8 @@ MAN3=	\
 	gnutls_x509_crt_get_activation_time.3 \
 	gnutls_x509_crt_get_authority_key_id.3 \
 	gnutls_x509_crt_get_crl_dist_points.3 \
+	gnutls_x509_crt_get_raw_issuer_dn.3 \
+	gnutls_x509_crt_get_raw_dn.3 \
 	gnutls_x509_crt_get_dn.3 \
 	gnutls_x509_crt_get_dn_by_oid.3 \
 	gnutls_x509_crt_get_dn_oid.3 \
