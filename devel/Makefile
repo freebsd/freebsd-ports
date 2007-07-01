@@ -837,6 +837,7 @@
     SUBDIR += p5-Alias
     SUBDIR += p5-Alzabo
     SUBDIR += p5-Alzabo-GUI-Mason
+    SUBDIR += p5-AnyData
     SUBDIR += p5-AnyEvent
     SUBDIR += p5-App-CLI
     SUBDIR += p5-App-Cache
