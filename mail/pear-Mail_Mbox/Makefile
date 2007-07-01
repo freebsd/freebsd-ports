@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail_Mbox
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	mail www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,7 +16,6 @@ COMMENT=	PEAR Read and modify Unix MBOXes
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	Mail
 FILES=		Mail/Mbox.php
 EXAMPLES=	demobox mimedecode.php read.php modify.php
 TESTS=		AllTests.php Mail_MboxTest.php testbox
