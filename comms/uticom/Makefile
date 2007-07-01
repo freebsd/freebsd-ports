@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uticom
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	comms kld
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ DISTNAME=	 ${PORTNAME}-${PORTVERSION}
 MAINTAINER=	dxi@mail.ru
 COMMENT=	A FreeBSD Driver for TUSB3410 uart-to-usb converter
 
-NO_PACKAGE=	"Should be in sync with the kernel to work correctly"
+NO_PACKAGE=	Should be in sync with the kernel to work correctly
 
 ONLY_FOR_ARCHS=	i386
 SRCPREFIX?=	/usr/src
@@ -26,10 +26,6 @@ LOCALBASE=	/boot/kernel
 PLIST_FILES=	uticom.ko
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		FreeBSD < 5.0 are not supported
-.endif
 
 # Make sure kernel sources are present before going any further
 .if ! exists(${SRCPREFIX}/sys/dev/usb/usb.c)
