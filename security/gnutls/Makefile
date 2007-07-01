@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 	ftp://ftp.gnutls.org/pub/gnutls/ \
@@ -25,14 +25,14 @@ CONFLICTS=	gnutls-devel-[0-9]*
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_GNOME=	pkgconfig
+USE_GNOME=	pkgconfig ltverhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GCC=	3.4+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -fPIC" LDFLAGS="${LDFLAGS}" \
-		MAKEINFO="${LOCALBASE}/bin/makeinfo"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -fPIC" LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-included-lzo \
 			--infodir="${PREFIX}/info" --mandir="${PREFIX}/man/"
@@ -49,6 +49,7 @@ LIB_DEPENDS+=	tasn1.3:${PORTSDIR}/security/libtasn1
 
 .if ${OSVERSION} < 600000
 BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
 .endif
 
 .if defined(WITHOUT_CXX)
