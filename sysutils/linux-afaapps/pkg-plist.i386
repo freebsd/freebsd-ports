@@ -1,4 +1,2 @@
-dev/MAKEDEV.afa
 usr/sbin/afacli
 usr/sbin/getcfg.afa
-@dirrmtry dev
