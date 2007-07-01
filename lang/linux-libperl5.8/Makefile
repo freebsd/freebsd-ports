@@ -12,38 +12,16 @@ PORTVERSION=	5.8.5
 CATEGORIES=	lang linux
 MASTER_SITES=	ftp://195.220.108.108/linux/conectiva/snapshot/i386/RPMS.extra/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}${PORTVERSION:R}-${PORTVERSION}-67091cl.${MACHINE_ARCH}
-EXTRACT_SUFX=	.rpm
-EXTRACT_ONLY=
+DISTNAME=	${PORTNAME}${PORTVERSION:R}-${PORTVERSION}-67091cl
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for embedding the perl interpreter (linux version)
 
-BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-
-USE_LINUX=	yes
-USE_LINUX_PREFIX=	yes
-LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
-
+USE_LINUX_RPM=	yes
+INSTALLS_SHLIB=	yes
 ONLY_FOR_ARCHS=	i386 amd64
+
 DIST_SUBDIR=	rpm
-NO_BUILD=	yes
-PLIST=		${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
-MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
+PLIST=		${MASTERDIR}/pkg-plist.${LINUX_RPM_ARCH}
 
-DBPATH=		/var/lib/rpm
-RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
-		--nodeps --replacepkgs
-RPMDIR=		${DISTDIR}/${DIST_SUBDIR}
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-MACHINE_ARCH=	i386
-.endif
-
-do-install:
-	@${LOCALBASE}/bin/rpm -U ${RPMFLAGS} ${RPMDIR}/${DISTFILES}
-	@${LDCONFIG_LINUX}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
