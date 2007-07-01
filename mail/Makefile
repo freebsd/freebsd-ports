@@ -570,6 +570,7 @@
     SUBDIR += spruce
     SUBDIR += sqlgrey
     SUBDIR += squirrelmail
+    SUBDIR += squirrelmail-avelsieve-plugin
     SUBDIR += squirrelmail-change_ldappass-plugin
     SUBDIR += squirrelmail-compatibility-plugin
     SUBDIR += squirrelmail-compatibility-plugin1
