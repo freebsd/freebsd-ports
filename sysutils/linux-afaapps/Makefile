@@ -11,38 +11,36 @@ PORTREVISION=		4
 CATEGORIES=		sysutils linux
 MASTER_SITES=		ftp://ftp.us.dell.com/scsi-raid/
 PKGNAMEPREFIX=		linux-
-DISTNAME=		aacraid-util-rh8.0-${MACHINE_ARCH}
+DISTNAME=		aacraid-util-rh8.0-${LINUX_RPM_ARCH}
+DIST_SUBDIR=		rpm
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		DELL PowerEdge Raid Controller 2 (apps)
 
-BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=		${LINUXBASE}/usr/lib/libartsc.so.0:${PORTSDIR}/audio/linux-arts
 
 RESTRICTED=		"binary redistribution license needs clarification"
 
-NO_BUILD=		yes
-NO_WRKSUBDIR=		yes
+USE_LINUX_RPM=	yes
+ONLY_FOR_ARCHS=	i386 amd64
+BRANDELF_FILES=	usr/sbin/afacli
 
-USE_LINUX=		yes
-USE_LINUX_PREFIX=       yes
-LDCONFIG_LINUX=		${LINUXBASE}/sbin/ldconfig
+EXTRACT_CMD=		${GZIP_CMD}
+EXTRACT_BEFORE_ARGS=	-dc
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
+EXTRACT_SUFX=		.tar.gz
 
-ONLY_FOR_ARCHS=		i386
-PLIST=			${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
-MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
+RPMFILE=	${PORTNAME}-${PORTVERSION}-2.${LINUX_RPM_ARCH}.rpm
 
-RPMFILE=		${PORTNAME}-${PORTVERSION}-2.${MACHINE_ARCH}.rpm
+.include <bsd.port.pre.mk>
 
-DBPATH=			/var/lib/rpm
-RPMFLAGS=		--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
-			--nodeps --replacepkgs --noscripts
+post-extract:
+	@cd ${WRKDIR} && ${RPM2CPIO} ${RPMFILE} | ${CPIO} -id --quiet && \
+	    ${RM} ${RPMFILE} readme
 
-do-install:
-	@${LOCALBASE}/bin/rpm -U ${RPMFLAGS} ${WRKDIR}/${RPMFILE}
-	@${RM} ${PREFIX}/usr/sbin/afacli
-	@${MV} ${PREFIX}/usr/sbin/afacli.bin ${PREFIX}/usr/sbin/afacli
-	@${BRANDELF} -t Linux ${PREFIX}/usr/sbin/afacli
-	@${LDCONFIG_LINUX}
+build: configure
+	@${RM} -rf ${WRKDIR}/dev
+	@${RM} ${WRKDIR}/usr/sbin/afacli
+	@${MV} ${WRKDIR}/usr/sbin/afacli.bin ${WRKDIR}/usr/sbin/afacli
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
