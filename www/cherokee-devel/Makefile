@@ -7,6 +7,7 @@
 
 PORTNAME=	cherokee
 DISTVERSION=	0.6.0b700
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/0.6/${PORTVERSION:R}/ \
 		CENKES LOCAL/beech
@@ -46,7 +47,7 @@ OPTIONS=	OPENSSL	"TLS/SSL support via openssl"	on \
 .ifndef WITHOUT_OPENSSL
 CONFIGURE_ARGS+=--enable-tls=openssl
 .elifdef WITH_GNUTLS
-LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--enable-tls=gnutls
 .else
 CONFIGURE_ARGS+=--disable-tls

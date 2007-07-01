@@ -7,6 +7,7 @@
 
 PORTNAME=	liferea
 PORTVERSION=	1.2.17
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -47,7 +48,7 @@ PLIST_SUB+=	NOTIFY=""
 .ifdef WITHOUT_GNUTLS
 CONFIGURE_ARGS+=--disable-gnutls
 .else
-LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
 .endif
 
 .ifdef WITH_MOZILLA
