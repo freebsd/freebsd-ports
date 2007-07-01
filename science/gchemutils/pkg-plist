@@ -267,6 +267,7 @@ share/gchemutils/glade/table/eltpage.glade
 share/gchemutils/glade/table/family.glade
 share/gchemutils/glade/table/state-thermometer.glade
 share/gchemutils/isotopes.xml
+share/gchemutils/pixmaps/gcrystal_logo.png
 share/gchemutils/radii.xml
 share/gnome/help/gchem3d-viewer/C/figures/main-window.png
 share/gnome/help/gchem3d-viewer/C/gchem3d-viewer.xml
@@ -299,15 +300,26 @@ share/gnome/help/gcrystal/C/figures/size-dlg.png
 share/gnome/help/gcrystal/C/figures/view-settings.png
 share/gnome/help/gcrystal/C/gcrystal.xml
 share/gnome/help/gcrystal/C/legal.xml
-share/gnome-chemistry-utils/pixmaps/gcrystal_logo.png
 share/mimelnk/application/x-gcrystal.desktop
 share/icons/hicolor/32x32/mimetypes/gnome-mime-application-x-gcrystal.png
+share/icons/hicolor/32x32/apps/gchem3d-viewer.png
+share/icons/hicolor/32x32/apps/gchemcalc.png
+share/icons/hicolor/32x32/apps/gchemtable.png
 share/icons/hicolor/32x32/apps/gcrystal.png
 share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-gcrystal.png
+share/icons/hicolor/48x48/apps/gchem3d-viewer.png
+share/icons/hicolor/48x48/apps/gchemcalc.png
+share/icons/hicolor/48x48/apps/gchemtable.png
 share/icons/hicolor/48x48/apps/gcrystal.png
 share/icons/hicolor/72x72/mimetypes/gnome-mime-application-x-gcrystal.png
+share/icons/hicolor/72x72/apps/gchem3d-viewer.png
+share/icons/hicolor/72x72/apps/gchemcalc.png
+share/icons/hicolor/72x72/apps/gchemtable.png
 share/icons/hicolor/72x72/apps/gcrystal.png
 share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-gcrystal.png
+share/icons/hicolor/128x128/apps/gchem3d-viewer.png
+share/icons/hicolor/128x128/apps/gchemcalc.png
+share/icons/hicolor/128x128/apps/gchemtable.png
 share/icons/hicolor/128x128/apps/gcrystal.png
 share/locale/de/LC_MESSAGES/gchemutils.mo
 share/locale/es/LC_MESSAGES/gchemutils.mo
@@ -322,6 +334,7 @@ share/mime/packages/gchemutils.xml
 @dirrmtry share/applications
 @dirrm share/doc/gchemutils/reference
 @dirrm share/doc/gchemutils
+@dirrm share/gchemutils/pixmaps
 @dirrm share/gchemutils/glade/crystal
 @dirrm share/gchemutils/glade/table
 @dirrm share/gchemutils/glade
@@ -338,8 +351,6 @@ share/mime/packages/gchemutils.xml
 @dirrm share/gnome/help/gcrystal/C/figures
 @dirrm share/gnome/help/gcrystal/C
 @dirrm share/gnome/help/gcrystal
-@dirrm share/gnome-chemistry-utils/pixmaps
-@dirrm share/gnome-chemistry-utils
 @dirrmtry share/mime/chemical
 @dirrmtry share/mimelnk/application
 @dirrmtry share/mimelnk
