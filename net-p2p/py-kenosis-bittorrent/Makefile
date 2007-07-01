@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-BitTorrent
 DISTNAME=	${KENOSIS_DISTNAME}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	A Kenosis enabled, distributed BitTorrent
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/kenosis/__init__.py:${PORTSDIR}/net-p2p/py-kenosis
