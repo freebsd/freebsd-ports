@@ -207,6 +207,7 @@
     SUBDIR += p5-Class-DBI-Untaint
     SUBDIR += p5-Class-DBI-mysql
     SUBDIR += p5-Class-Inflate
+    SUBDIR += p5-DBD-AnyData
     SUBDIR += p5-DBD-CSV
     SUBDIR += p5-DBD-Excel
     SUBDIR += p5-DBD-File

@@ -1,0 +1,19 @@
+The DBD::AnyData module provides a DBI/SQL interface to data in many formats
+and from many sources.
+
+Regardless of the format or source of the data, it may be accessed and/or
+modified using all standard DBI methods and a subset of SQL syntax.
+
+In addition to standard database access to files, the module also supports
+in-memory tables which allow you to create temporary views; to combine data
+from a number of sources; to quickly prototype database systems; and to display
+or save the data in any of the supported formats (e.g. to display data in a CSV
+file as an HTML table). These in-memory tables can be created from any
+combination of DBI databases or files of any format. They may also be created
+from perl data structures which means it's possible to quickly prototype a
+database system without any file access or rdbms backend.
+
+The module also supports converting files between any of the supported formats
+(e.g. save selected data from MySQL or Oracle to an XML file).
+
+WWW: http://search.cpan.org/dist/DBD-AnyData/
