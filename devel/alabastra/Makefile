@@ -6,6 +6,7 @@
 
 PORTNAME=	alabastra
 PORTVERSION=	0.2b
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -16,7 +17,7 @@ MAINTAINER=	liu_yinghong@yahoo.com.cn
 COMMENT=	C++ Editor writed with QT4
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc gui xml
+QT_COMPONENTS=	qmake moc gui xml uic rcc
 
 WRKSRC=		${WRKDIR}/Alabastra-${PORTVERSION}
 
