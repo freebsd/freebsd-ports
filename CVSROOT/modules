@@ -14798,6 +14798,7 @@ squidview	ports/www/squidview
 squirm		ports/www/squirm
 squirrel-sql	ports/databases/squirrel-sql
 squirrelmail	ports/mail/squirrelmail
+squirrelmail-avelsieve-plugin	ports/mail/squirrelmail-avelsieve-plugin
 squirrelmail-change_ldappass-plugin	ports/mail/squirrelmail-change_ldappass-plugin
 squirrelmail-compatibility-plugin	ports/mail/squirrelmail-compatibility-plugin
 squirrelmail-compatibility-plugin1	ports/mail/squirrelmail-compatibility-plugin1
