@@ -1,5 +1,5 @@
---- src/osdep/unix/Makefile.orig	Thu Apr 21 00:48:34 2005
-+++ src/osdep/unix/Makefile	Mon May 30 19:08:25 2005
+--- src/osdep/unix/Makefile.orig	Sat Apr 30 22:51:13 2005
++++ src/osdep/unix/Makefile	Sun Jul  1 22:29:26 2007
 @@ -22,8 +22,8 @@
  
  EXTRAAUTHENTICATORS=
@@ -17,13 +17,11 @@
  
 -SSLDIR=/usr/local/ssl
 -SSLCERTS=$(SSLDIR)/certs
-+SSLDIR=$(OPENSSLBASE)
++#SSLDIR=/usr/local/ssl
 +SSLCERTS=$(PREFIX)/certs
  SSLKEYS=$(SSLCERTS)
--SSLINCLUDE=$(SSLDIR)/include
--SSLLIB=$(SSLDIR)/lib
-+SSLINCLUDE=$(OPENSSLINC)
-+SSLLIB=$(OPENSSLLIB)
+ SSLINCLUDE=$(SSLDIR)/include
+ SSLLIB=$(SSLDIR)/lib
  
 -SSLCRYPTO=-lcrypto
 +SSLCRYPTO=-lcrypto -lcrypt
@@ -121,7 +119,7 @@
  
  
  # Dependencies
-@@ -850,7 +867,7 @@
+@@ -850,7 +863,7 @@
  
  # OS-dependent
  
@@ -130,7 +128,7 @@
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c ip_unix.c\
  	auths.c crexcl.c flockcyg.c flocklnx.c flocksim.c nfstest.c fsync.c \
-@@ -864,12 +881,19 @@
+@@ -864,12 +877,19 @@
  	write.c sslstdio.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS
