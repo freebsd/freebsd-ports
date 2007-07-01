@@ -14,6 +14,7 @@ MASTER_SITES=	http://tdc-www.harvard.edu/software/saoimage/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smithsonian Astrophysical Observatory image utility for X
 
+USE_XLIB=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	OFLAGS="${CFLAGS}"
 ALL_TARGET=	${OPSYS}
