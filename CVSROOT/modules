@@ -9203,6 +9203,7 @@ p5-Curses-Application	ports/devel/p5-Curses-Application
 p5-Curses-Forms	ports/devel/p5-Curses-Forms
 p5-Curses-UI	ports/devel/p5-Curses-UI
 p5-Curses-Widgets	ports/devel/p5-Curses-Widgets
+p5-DBD-AnyData	ports/databases/p5-DBD-AnyData
 p5-DBD-CSV	ports/databases/p5-DBD-CSV
 p5-DBD-Excel	ports/databases/p5-DBD-Excel
 p5-DBD-File	ports/databases/p5-DBD-File
