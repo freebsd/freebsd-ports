@@ -171,7 +171,7 @@ etc/mail/spamassassin/v320.pre.sample
 %%DATADIR%%/user_prefs.template
 @unexec rm -rf %D/libdata/spamassassin || true
 @unexec rm -rf /var/lib/spamassassin || true
-@unexec rm -rf /var/lib || true
+@unexec rmdir /var/lib 2>/dev/null || true
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
