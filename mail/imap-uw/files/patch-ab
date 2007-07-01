@@ -1,25 +1,23 @@
---- src/osdep/unix/Makefile.orig	Fri Apr 30 02:08:48 2004
-+++ src/osdep/unix/Makefile	Fri Jun  4 07:34:19 2004
-@@ -29,13 +29,13 @@
+--- src/osdep/unix/Makefile.orig	Sat Apr 30 22:51:13 2005
++++ src/osdep/unix/Makefile	Sun Jul  1 22:36:01 2007
+@@ -41,13 +41,13 @@
  
  # Extended flags needed for SSL.  You may need to modify.
  
 -SSLDIR=/usr/local/ssl
 -SSLCERTS=$(SSLDIR)/certs
-+SSLDIR=$(OPENSSLBASE)
++#SSLDIR=/usr/local/ssl
 +SSLCERTS=$(PREFIX)/certs
  SSLKEYS=$(SSLCERTS)
--SSLINCLUDE=$(SSLDIR)/include
--SSLLIB=$(SSLDIR)/lib
-+SSLINCLUDE=$(OPENSSLINC)
-+SSLLIB=$(OPENSSLLIB)
+ SSLINCLUDE=$(SSLDIR)/include
+ SSLLIB=$(SSLDIR)/lib
  
 -SSLCRYPTO=-lcrypto
 +SSLCRYPTO=-lcrypto -lcrypt
  
  # Older versions of MIT Kerberos also have a libcrypto.  If so, you may need
  # to use this instead
-@@ -48,7 +48,7 @@
+@@ -60,7 +60,7 @@
  
  SSLCFLAGS= -I$(SSLINCLUDE) -I$(SSLINCLUDE)/openssl\
   -DSSL_CERT_DIRECTORY=\"$(SSLCERTS)\" -DSSL_KEY_DIRECTORY=\"$(SSLKEYS)\"
@@ -28,7 +26,7 @@
  
  
  # Extended flags needed for non-standard passwd types.  You may need to modify.
-@@ -62,7 +62,7 @@
+@@ -74,7 +74,7 @@
  # AFSLDFLAGS may also need -L/usr/ucblib -lucb
  DCECFLAGS= -DDCE_MINIMAL -DPASSWD_OVERRIDE=\"/opt/pop3/passwd/passwd\"
  DCELDFLAGS= -ldce
@@ -37,7 +35,7 @@
  
  
  # Build parameters normally set by the individual port
-@@ -99,7 +99,7 @@
+@@ -111,7 +111,7 @@
  # Commands possibly overriden by the individual port
  
  ARRC=ar rc
@@ -46,7 +44,7 @@
  LN=ln -s
  RANLIB=ranlib
  
-@@ -117,7 +117,7 @@
+@@ -129,7 +129,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -55,7 +53,7 @@
  
  CAT=cat
  MAKE=make
-@@ -200,6 +200,15 @@
+@@ -212,6 +212,15 @@
  	 BASECFLAGS="-g -B/usr/lib/big/ -Dvoid=char -Dconst=" \
  	 RANLIB=true ARRC="ar -rc"
  
@@ -71,7 +69,7 @@
  bs3:	# BSD/i386 3.0 or higher
  	$(BUILD) `$(CAT) SPECIALS` OS=bsi \
  	 CHECKPW=bsi LOGINPW=bsi CRXTYPE=nfs \
-@@ -219,8 +228,9 @@
+@@ -231,8 +240,9 @@
  	 SPOOLDIR=/var \
  	 ACTIVEFILE=/usr/local/news/lib/active \
  	 RSHPATH=/usr/bin/rsh \
@@ -83,7 +81,7 @@
  
  bsi:	# BSD/i386
  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
-@@ -788,7 +798,7 @@
+@@ -803,7 +813,7 @@
  
  build:	clean once $(ARCHIVE)
  

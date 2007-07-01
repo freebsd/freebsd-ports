@@ -25,10 +25,12 @@ OPTIONS=	SSL "Compile with SSL support" on \
 		IPV6 "Support IPv6" on \
 		MBX_DEFAULT "Use MBX as default mailbox format" off
 
+.include <bsd.port.pre.mk>
+
 USE_LDCONFIG=	yes
 ALL_TARGET=	bsf
 .if defined(WITHOUT_SSL)
-MAKE_ARGS+=	SSLTYPE=none
+MAKE_ARGS+=	SSLTYPE=none SSLDIR=${OPENSSLBASE}
 .else
 USE_OPENSSL=	yes
 .if defined(WITH_SSL_AND_PLAINTEXT)
@@ -45,8 +47,6 @@ SHLIBMAJ=	8
 SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}
 MAKE_ENV=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 .for file in Makefile src/osdep/unix/Makefile src/osdep/unix/Makefile.gss

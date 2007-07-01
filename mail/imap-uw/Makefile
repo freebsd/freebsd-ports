@@ -31,6 +31,8 @@ OPTIONS=	SSL "Compile with SSL support" on \
 		NETSCAPE_BRAIN_DAMAGE "See Makefile for documentation" off \
 		ENTOURAGE_BRAIN_DAMAGE "See Makefile for documentation" off
 
+.include <bsd.port.pre.mk>
+
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 .if defined(WITH_DRAC)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
@@ -44,7 +46,7 @@ MAN8=		ipopd.8 imapd.8
 
 ALL_TARGET=	bsf
 .if defined(WITHOUT_SSL)
-MAKE_ARGS+=	SSLTYPE=none
+MAKE_ARGS+=	SSLTYPE=none SSLDIR=${OPENSSLBASE}
 .else
 USE_OPENSSL=	yes
 .if defined(WITH_SSL_AND_PLAINTEXT)
@@ -63,8 +65,6 @@ MAKE_ARGS+=	WITH_NETSCAPE_BRAIN_DAMAGE=yes
 MAKE_ARGS+=	WITH_ENTOURAGE_BRAIN_DAMAGE=yes
 .endif
 # See src/imapd/Makefile for more information about these three options.
-
-.include <bsd.port.pre.mk>
 
 pre-build:
 	@${SH} ${PKGREQ}.rev ${LOCALBASE}/include/c-client/portrevision.h ${PORTVERSION}
