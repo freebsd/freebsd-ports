@@ -1938,7 +1938,6 @@ digest		ports/security/digest
 digger-vgl	ports/games/digger-vgl
 digikam		ports/graphics/digikam
 digikam-doc	ports/graphics/digikam-doc
-digikamimageplugins	ports/graphics/digikamimageplugins
 digikamimageplugins-doc	ports/graphics/digikamimageplugins-doc
 digitizer	ports/math/digitizer
 dillo		ports/www/dillo

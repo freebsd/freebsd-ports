@@ -84,7 +84,6 @@
     SUBDIR += diacanvas2
     SUBDIR += digikam
     SUBDIR += digikam-doc
-    SUBDIR += digikamimageplugins
     SUBDIR += digikamimageplugins-doc
     SUBDIR += divxcalc
     SUBDIR += djview4
