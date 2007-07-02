@@ -1,15 +1,15 @@
---- speventcb.cpp.orig	Mon Jun 18 12:41:11 2007
-+++ speventcb.cpp	Mon Jun 18 12:42:31 2007
-@@ -14,6 +14,8 @@
- #include <stdlib.h>
+--- speventcb.cpp.orig	Sun Jul  1 13:21:42 2007
++++ speventcb.cpp	Mon Jul  2 21:20:16 2007
+@@ -15,6 +15,8 @@
  #include <netinet/in.h>
  #include <arpa/inet.h>
+ #include <netinet/tcp.h>
 +#include <sys/uio.h>
 +#include <unistd.h>
  
  #include "speventcb.hpp"
  #include "spsession.hpp"
-@@ -26,7 +28,7 @@
+@@ -27,7 +29,7 @@
  #include "sprequest.hpp"
  #include "spmsgblock.hpp"
  
@@ -18,7 +18,7 @@
  #include "event_msgqueue.h"
  #include "event.h"
  
-@@ -341,7 +343,7 @@
+@@ -476,7 +478,7 @@
  		char buffer[ 16 ] = { 0 };
  		session->getInBuffer()->take( buffer, sizeof( buffer ) );
  		syslog( LOG_WARNING, "session(%d.%d) status is %d, ignore [%s...] (%dB)",
