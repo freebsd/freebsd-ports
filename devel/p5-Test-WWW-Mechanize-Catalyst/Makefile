@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-WWW-Mechanize-Catalyst
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/L/LB/LBROCARD
@@ -16,7 +16,8 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Test::WWW::Mechanize for Catalyst
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Test-WWW-Mechanize>=1.04:${PORTSDIR}/devel/p5-Test-WWW-Mechanize
+		p5-Test-WWW-Mechanize>=1.14:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
+		p5-WWW-Mechanize>=1.30:${PORTSDIR}/www/p5-WWW-Mechanize
 BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
