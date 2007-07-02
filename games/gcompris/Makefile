@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcompris
-DISTVERSION=	8.2.2-2
-PORTREVISION=	1
+DISTVERSION=	8.3.2-2
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gcompris
@@ -25,7 +24,7 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-8.2.2
+WRKSRC=		${WRKDIR}/${PORTNAME}-8.3.2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
@@ -33,7 +32,7 @@ GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_SDL=	mixer
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui pygnome2
-USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--infodir=${PREFIX}/info
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="${PTHREAD_LIBS} -lm"
@@ -42,10 +41,6 @@ MAN6=		gcompris.6
 INFO=		gcompris
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	does not build on 4.X
-.endif
 
 .if !defined(DISPLAY)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \

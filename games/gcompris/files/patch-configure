@@ -1,15 +1,24 @@
---- configure.orig	Sun Dec 24 11:48:17 2006
-+++ configure	Sun Dec 24 11:50:32 2006
-@@ -26586,7 +26586,7 @@
- else
+--- configure.orig	2007-07-02 01:31:20.000000000 -0400
++++ configure	2007-07-02 01:33:05.000000000 -0400
+@@ -25746,7 +25746,7 @@ else
+ fi
+ 
+ found_xf86vidmode=no
+-if test "x$USE_XF86VM" == "xyes" ; then
++if test "x$USE_XF86VM" = "xyes" ; then
+   XF86VM_LIBS=
+   { echo "$as_me:$LINENO: checking for XF86VidModeQueryExtension in -lXxf86vm" >&5
+ echo $ECHO_N "checking for XF86VidModeQueryExtension in -lXxf86vm... $ECHO_C" >&6; }
+@@ -27439,7 +27439,7 @@ else
    USE_DEBUG="no"
- fi;
+ fi
+ 
 -if test "x$USE_DEBUG" == "xyes" ; then
 +if test "x$USE_DEBUG" = "xyes" ; then
  
  cat >>confdefs.h <<_ACEOF
  #define DEBUG 1
-@@ -26693,7 +26693,7 @@
+@@ -27548,7 +27548,7 @@ _ACEOF
  
  
  cat >>confdefs.h <<_ACEOF
