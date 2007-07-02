@@ -6,13 +6,11 @@
 #   $MCom: ports/www/epiphany-extensions/Makefile,v 1.88 2007/03/11 20:34:21 mezz Exp $
 #
 
-PORTNAME=	epiphany
-PORTVERSION=	2.18.2
+PORTNAME=	epiphany-extensions
+PORTVERSION=	2.18.3
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-PKGNAMESUFFIX=	-extensions
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
