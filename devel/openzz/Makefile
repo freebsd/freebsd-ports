@@ -23,13 +23,8 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s/cfree/free/g" ${WRKSRC}/src/list.c
-.if ${OSVERSION} <= 500027
-	@${FIND} ${WRKSRC}/src -type f | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|<stdint.h>|<inttypes.h>|'
-.endif
+	@${REINPLACE_CMD} -e "s/argv\[\]/*argv/" ${WRKSRC}/src/zzbind.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
