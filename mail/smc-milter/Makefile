@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	milter
 
-MAINTAINER=	nyxo@dnuc.polyn.kiae.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A non-context email filter
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbind_r.a:${PORTSDIR}/dns/bind84
