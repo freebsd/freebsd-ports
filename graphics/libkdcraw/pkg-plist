@@ -1,0 +1,19 @@
+bin/kdcraw
+include/libkdcraw/dcrawbinary.h
+include/libkdcraw/dcrawinfocontainer.h
+include/libkdcraw/dcrawsettingswidget.h
+include/libkdcraw/kdcraw.h
+include/libkdcraw/libkdcraw_export.h
+include/libkdcraw/rawdecodingsettings.h
+include/libkdcraw/rawfiles.h
+include/libkdcraw/version.h
+lib/libkdcraw.a
+lib/libkdcraw.la
+lib/libkdcraw.so
+lib/libkdcraw.so.1
+libdata/pkgconfig/libkdcraw.pc
+share/icons/hicolor/128x128/apps/kdcraw.png
+share/icons/hicolor/32x32/apps/kdcraw.png
+share/icons/hicolor/48x48/apps/kdcraw.png
+share/icons/hicolor/64x64/apps/kdcraw.png
+@dirrm include/libkdcraw

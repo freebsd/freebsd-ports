@@ -358,6 +358,7 @@
     SUBDIR += libimg-tk83
     SUBDIR += libimg-tkstep80
     SUBDIR += libiptcdata
+    SUBDIR += libkdcraw
     SUBDIR += libkexif
     SUBDIR += libkexiv2
     SUBDIR += libkipi

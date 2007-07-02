@@ -1,0 +1,11 @@
+--- configure.orig	Fri Jun 22 08:31:03 2007
++++ configure	Fri Jun 22 08:31:27 2007
+@@ -33495,7 +33495,7 @@
+ 
+ 
+ 
+-KDCRAW_DIR="\$(libdir)/libkdcraw\$(ABI_MAJOR)"
++KDCRAW_DIR="\$(bindir)"
+ 
+ 
+ # -----------------------------------------------------------------
