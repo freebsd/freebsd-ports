@@ -1,0 +1,10 @@
+Sudo runs commands as another user, provided the system sudo
+implementation is setup to enable this. This does not allow running
+applications securely, simply it allows the programmer to run a
+program as another user (suid) using the sudo tools rather than
+suidperl. Suidperl is not generally recommended for secure operation
+as another user. While sudo itself is a single point tool to enable
+one user to execute commands as another sudo does not itself make you
+any more or less secure.
+
+WWW:	http://search.cpan.org/dist/Sudo
