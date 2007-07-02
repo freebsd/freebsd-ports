@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	scummvm
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	Graphical Adventure Game Virtual Machine
 
 USE_BZIP2=	yes
