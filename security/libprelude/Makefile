@@ -5,6 +5,7 @@
 
 PORTNAME=	libprelude
 PORTVERSION=	0.9.14
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -12,7 +13,7 @@ MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Framework library for Prelude NIDS
 
-LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls
 
 OPTIONS=	PERL "Include Perl bindings" off \
 		PYTHON "Include Python bindings" off
