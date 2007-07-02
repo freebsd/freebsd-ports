@@ -7,35 +7,35 @@
 
 PORTNAME=	aolserver
 PORTVERSION=	4.5.0
-PORTREVISION=	4
+DISTVERSIONSUFFIX=	-src
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aolserver
 DIST_SUBDIR=	aolserver
-DISTVERSIONSUFFIX=	-src
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A multithreaded web server with embedded TCL interpreter
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
-AOLSERVERBASE?=	${TARGETDIR}/${PORTNAME}
+AOLSERVERBASE?=	${PORTNAME}
 AOLSERVERUSER?=	nobody
 AOLSERVERGROUP?=	nogroup
 
-MANPREFIX=	${AOLSERVERBASE}
+MANPREFIX=	${TARGETDIR}/${AOLSERVERBASE}
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 
-USE_RC_SUBR=	aolserver
+USE_RC_SUBR=	${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-message aolserver pkg-install pkg-deinstall
 SUB_VARS=	AOLSERVERUSER=${AOLSERVERUSER} \
 		AOLSERVERGROUP=${AOLSERVERGROUP}
-SUB_LIST+=	${SUB_VARS} AOLSERVERBASE=${AOLSERVERBASE}
-PLIST_SUB+=	${SUB_VARS} AOLSERVERBASE=${AOLSERVERBASE:S/${TARGETDIR}\///}
+SUB_LIST+=	${SUB_VARS} AOLSERVERBASE="${PREFIX}/${AOLSERVERBASE}"
+PLIST_SUB+=	${SUB_VARS} AOLSERVERBASE="${AOLSERVERBASE}"
 
 USE_TCL=		84+
 USE_TCL_THREADS=	yes
@@ -43,6 +43,7 @@ USE_TCL_THREADS=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONS=	HTMLDOCS "Install HTML documentation" off \
+		MANPAGES "Install manpages" off \
 		TESTS "Install tests in examples directory" off
 
 .include <bsd.port.pre.mk>
@@ -54,11 +55,11 @@ SUB_LIST+=	MKDIR="${MKDIR}" ECHO_CMD="${ECHO_CMD}" \
 BROKEN=		does not compile on ia64
 .endif
 
-CONFIGURE_ENV+=		TCLSH=${TCLSH}
-CONFIGURE_ARGS+=	--prefix=${AOLSERVERBASE} \
-			--with-tcl=${TCL_LIBDIR}
+CONFIGURE_ENV+=		TCLSH="${TCLSH}"
+CONFIGURE_ARGS+=	--prefix="${PREFIX}/${AOLSERVERBASE}" \
+			--with-tcl="${TCL_LIBDIR}"
 
-.if !defined(NO_INSTALL_MANPAGES)
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_MANPAGES)
 INSTALL_TARGET=	install install-man
 MANCOMPRESSED=	no
 MAN1=		nsd.1
@@ -681,6 +682,9 @@ MLINKS=	Ns_AdpRegisterParser.3 Ns_AdpRequest.3 \
 	ns_share.n nsv_names.n \
 	ns_share.n nsv_set.n \
 	ns_share.n nsv_unset.n
+PLIST_SUB+=	MANPAGES=""
+.else
+PLIST_SUB+=	MANPAGES="@comment "
 .endif
 
 .if !defined(NOPORTDOCS)
@@ -717,9 +721,10 @@ post-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
-
 	@ ${ECHO_MSG} "Installing sample configuration file"
-	@ ${SED} -e 's|\[ns_info address\]|0.0.0.0|' ${WRKSRC}/examples/config/base.tcl > ${AOLSERVERBASE}/sample-config.tcl
+	@ ${SED} -e 's|\[ns_info address\]|0.0.0.0|' \
+		${WRKSRC}/examples/config/base.tcl > \
+		${PREFIX}/${AOLSERVERBASE}/sample-config.tcl
 
 # post-install script
 	@ ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
