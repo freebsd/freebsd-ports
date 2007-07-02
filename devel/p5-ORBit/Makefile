@@ -29,4 +29,10 @@ MAN3=		CORBA::ORBit.3 \
 		CORBA::ORBit::ULongLong.3 \
 		CORBA::ORBit::mapping.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>

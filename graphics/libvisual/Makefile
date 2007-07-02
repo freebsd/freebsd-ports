@@ -28,6 +28,10 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042 && ${ARCH} == i386
+BROKEN=		Does not compile with GCC 4.2 on i386
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wno-unused-variable||g' \
 		-e 's|-O3|${CFLAGS}|g' \

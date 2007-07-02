@@ -36,6 +36,10 @@ LIB_DEPENDS+=   gmp.7:${PORTSDIR}/math/libgmp4
 IGNORE=		nfsmounter component fails to execute correctly on ${ARCH} systems
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 MAN1=	\
 		dirsearch.1 \
 		newaid.1 \

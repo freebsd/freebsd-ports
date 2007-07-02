@@ -75,6 +75,10 @@ CONFIGURE_ARGS+=--enable-dsm
 BROKEN=		"Does not build on amd64"
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 pre-configure:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-CONFIGURE
 

@@ -36,6 +36,10 @@ OPTIONS=	BDB	"Berkeley DB extension"		off \
 BROKEN=		"fails to compile"
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not install
+.endif
+
 # Dependencies for port options
 
 .if defined(WITH_BDB)

@@ -31,6 +31,12 @@ USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--pginc-prefix=${LOCALBASE}/include --pglib-prefix=${LOCALBASE}/lib
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-extract:
 	@${ECHO_MSG} ">>> extracting bash"
 	@${TAR} -C ${WRKDIR}/pgbash-7.3/src -xzf ${DISTDIR}/bash-2.05a.tar.gz
@@ -50,4 +56,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgbash ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/pgbash-7.3/rc/pgbashrc ${PREFIX}/etc/pgbashrc-dist
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

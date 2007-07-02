@@ -66,6 +66,12 @@ MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 CFLAGS:=	${CFLAGS:C/-m[-=0-9a-z]*//g}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-extract:
 	@(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTNAME}.tar.gz ${EXTRACT_AFTER_ARGS})
 
@@ -125,4 +131,4 @@ post-install:
 	${RM} ${PREFIX}/pilot/bin/m68k-palmos-c++filt
 	${RM} ${PREFIX}/pilot/lib/libiberty.a
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

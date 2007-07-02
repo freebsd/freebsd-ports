@@ -26,6 +26,10 @@ MAN1=			a2asm.1 a2link.1 a2load.1 a2objx.1
 BROKEN=			"Does not compile on !i386"
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=			Does not compile with GCC 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|-O3|${CFLAGS}|' \
 		${WRKSRC}/Make.defs
