@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Visitor
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -15,16 +15,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Visitor style traversal of Perl data structures
 
-BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
-		p5-Test-MockObject>=1.04:${PORTSDIR}/devel/p5-Test-MockObject \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=	Data::Visitor.3 \
 	Data::Visitor::Callback.3
+
+post-extract:
+	@${PERL} -i.bak -ne 'print unless /Test::/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
