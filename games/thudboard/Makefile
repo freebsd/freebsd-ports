@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	thudboard
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	games
 MASTER_SITES=	http://www.million.nl/file/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	The Discworld Boardgame Board
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYXML}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 NO_WRKSUBDIR=	yes
 USE_PYTHON=	yes
