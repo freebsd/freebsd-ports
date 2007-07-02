@@ -22,6 +22,12 @@ MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 NOMAN=
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|\/opt\/SMC|${PREFIX}\/etc\/smc|g' \
 		${WRKSRC}/smc-milter.h
@@ -30,4 +36,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/smc-milter.sh \
 		${PREFIX}/etc/rc.d/smc-milter.sh.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

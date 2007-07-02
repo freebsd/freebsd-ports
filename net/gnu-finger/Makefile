@@ -33,6 +33,12 @@ post-patch:
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	server
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-install:
 	${MKDIR} ${PREFIX}/etc/fingerdir
 	${MKDIR} ${PREFIX}/etc/rc.d
@@ -42,4 +48,4 @@ post-install:
 	@${ECHO_CMD} "GNU.finger.server.hostname" > ${PREFIX}/etc/fingerdir/serverhost.sample
 	@${ECHO_CMD} "mail.spool.server.hostname" > ${PREFIX}/etc/fingerdir/mailhost.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

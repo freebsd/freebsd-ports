@@ -22,6 +22,12 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 MAN8=		plb.8
 DOCS=		AUTHORS CONTACT COPYING NEWS README THANKS TODO
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/plb.sh.sample \
 		> ${WRKSRC}/plb.sh.sample
@@ -38,4 +44,4 @@ post-install:
 	@${ECHO_CMD} "to adapt it to your needs, and save it as ${PREFIX}/etc/plb.conf.sample."
 	@${ECHO_CMD}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

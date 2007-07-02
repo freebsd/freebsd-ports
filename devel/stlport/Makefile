@@ -28,6 +28,10 @@ BROKEN=		"Segfault during build on alpha"
 BROKEN=		"Requires /usr/include/wchar.h for compilation"
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 WRKSRC=		${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}/src
 PATCH_WRKSRC=	${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}
 USE_GMAKE=	yes

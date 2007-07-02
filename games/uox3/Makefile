@@ -26,6 +26,12 @@ USE_GMAKE=	YES
 MAKEFILE=	makefile
 ALL_TARGET=	linux
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 do-build:
 	cd ${WRKSRC}/dev && ${GMAKE} -f ${MAKEFILE} CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" ${ALL_TARGET}
 
@@ -50,4 +56,4 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

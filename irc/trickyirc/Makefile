@@ -19,6 +19,12 @@ MAKEFILE=	GNUmakefile
 WRKSRC=		${WRKDIR}/trickyirc
 USE_GMAKE=	YES
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-install:
 	@ ${MKDIR} ${PREFIX}/share/doc/TrickyIRC
 #	@ ${MKDIR} ${PREFIX}/share/examples/TrickyIRC
@@ -29,4 +35,4 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/trickyirc
 	@${CAT} ${PKGMESSAGE} | ${SED} -e s:/usr/local:${PREFIX}:
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -33,6 +33,10 @@ PORTDOCS=	*
 IGNORE=		is broken on sparc64: interchanges red and blue colour channels in images
 .endif
 
+.if ${ARCH} == i386 && ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2 on i386
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

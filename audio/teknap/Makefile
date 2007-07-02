@@ -35,6 +35,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
 CONFIGURE_ARGS+=--with-gtk
