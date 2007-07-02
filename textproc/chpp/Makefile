@@ -8,7 +8,8 @@
 PORTNAME=	chpp
 PORTVERSION=	0.3.5
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.complang.tuwien.ac.at/~schani/chpp/files/
+MASTER_SITES=	http://www.complang.tuwien.ac.at/~schani/chpp/files/ \
+		http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Non-intrusive full-featured text preprocessor
@@ -35,7 +36,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS NEWS README
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
