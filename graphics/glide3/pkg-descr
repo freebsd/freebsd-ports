@@ -1,5 +1,5 @@
 This library is used by the 3dfx DRI module (lib/modules/dri/tdfx_dri.so) to 
-provide 3d hardware accelerated OpenGL for 3dfx Voodoo3/4/5/Banshee cards.  
+provide 3D hardware accelerated OpenGL for 3dfx Voodoo3/4/5/Banshee cards.  
 This does not support applications requiring the Glide library.
 
 WWW: http://glide.sourceforge.net/
