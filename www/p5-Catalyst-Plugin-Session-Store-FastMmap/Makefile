@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session-Store-FastMmap
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -15,10 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	FastMmap session storage backend
 
-BUILD_DEPENDS=	p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap \
-		p5-Catalyst-Plugin-Session>=0.01:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
-		p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp \
-		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
+BUILD_DEPENDS=	p5-Cache-FastMmap>=1.13:${PORTSDIR}/devel/p5-Cache-FastMmap \
+		p5-Catalyst-Plugin-Session>=0.09:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
