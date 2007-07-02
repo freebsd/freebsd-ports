@@ -1,3 +1,4 @@
+bin/ps2sp.pl
 bin/qucs
 bin/qucsator
 bin/qucsattenuator
@@ -8,6 +9,7 @@ bin/qucsfilter
 bin/qucshelp
 bin/qucslib
 bin/qucstrans
+bin/qucsveri
 %%DATADIR%%/bitmaps/ac.png
 %%DATADIR%%/bitmaps/ac_current.png
 %%DATADIR%%/bitmaps/ac_voltage.png
@@ -51,6 +53,7 @@ bin/qucstrans
 %%DATADIR%%/bitmaps/diode.png
 %%DATADIR%%/bitmaps/dmosfet.png
 %%DATADIR%%/bitmaps/dmosfet_sub.png
+%%DATADIR%%/bitmaps/edd.png
 %%DATADIR%%/bitmaps/editcopy.png
 %%DATADIR%%/bitmaps/editcut.png
 %%DATADIR%%/bitmaps/editdelete.png
@@ -73,6 +76,7 @@ bin/qucstrans
 %%DATADIR%%/bitmaps/gyrator.png
 %%DATADIR%%/bitmaps/hb.png
 %%DATADIR%%/bitmaps/home.png
+%%DATADIR%%/bitmaps/iexp.png
 %%DATADIR%%/bitmaps/inductor.png
 %%DATADIR%%/bitmaps/inverter.png
 %%DATADIR%%/bitmaps/iprobe.png
@@ -170,6 +174,7 @@ bin/qucstrans
 %%DATADIR%%/bitmaps/undo.png
 %%DATADIR%%/bitmaps/vccs.png
 %%DATADIR%%/bitmaps/vcvs.png
+%%DATADIR%%/bitmaps/vexp.png
 %%DATADIR%%/bitmaps/vhdlfile.png
 %%DATADIR%%/bitmaps/viewmag+.png
 %%DATADIR%%/bitmaps/viewmag-.png
@@ -283,6 +288,32 @@ bin/qucstrans
 %%DATADIR%%/docs/ru/subcircuit.html
 %%DATADIR%%/docs/ru/subcircuit.png
 %%DATADIR%%/docs/ru/wire.png
+%%DATADIR%%/docs/uk/characters.html
+%%DATADIR%%/docs/uk/contab.png
+%%DATADIR%%/docs/uk/index.html
+%%DATADIR%%/docs/uk/internal.html
+%%DATADIR%%/docs/uk/matching.html
+%%DATADIR%%/docs/uk/mathfunc.html
+%%DATADIR%%/docs/uk/optimization1.png
+%%DATADIR%%/docs/uk/optimization2.png
+%%DATADIR%%/docs/uk/optimization3.png
+%%DATADIR%%/docs/uk/optimization4.png
+%%DATADIR%%/docs/uk/optimization5.png
+%%DATADIR%%/docs/uk/optimization6.png
+%%DATADIR%%/docs/uk/optimization7.png
+%%DATADIR%%/docs/uk/optimization8.png
+%%DATADIR%%/docs/uk/paste.png
+%%DATADIR%%/docs/uk/programs.html
+%%DATADIR%%/docs/uk/qucsdigi.png
+%%DATADIR%%/docs/uk/qucsmain.png
+%%DATADIR%%/docs/uk/select.png
+%%DATADIR%%/docs/uk/short.html
+%%DATADIR%%/docs/uk/start.html
+%%DATADIR%%/docs/uk/start_digi.html
+%%DATADIR%%/docs/uk/start_opt.html
+%%DATADIR%%/docs/uk/subcircuit.html
+%%DATADIR%%/docs/uk/subcircuit.png
+%%DATADIR%%/docs/uk/wire.png
 %%DATADIR%%/lang/qucs_ca.qm
 %%DATADIR%%/lang/qucs_cs.qm
 %%DATADIR%%/lang/qucs_de.qm
@@ -316,6 +347,7 @@ bin/qucstrans
 @dirrm %%DATADIR%%/tline
 @dirrm %%DATADIR%%/library
 @dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%/docs/uk
 @dirrm %%DATADIR%%/docs/ru
 @dirrm %%DATADIR%%/docs/fr
 @dirrm %%DATADIR%%/docs/es
