@@ -58,7 +58,9 @@ QT_PRESENT=	off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
+.if ${OSVERSION} >= 700040
+OPERA_TYPE=	1
+.elif ${OSVERSION} >= 600000
 OPERA_TYPE=	4
 .elif ${OSVERSION} >= 500000
 OPERA_TYPE=	3
