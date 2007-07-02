@@ -43,6 +43,7 @@ IGNORE=	${_IGNORE_MSG}
 .elif ${ARCH}=="sparc64"
 . if ${OSVERSION} > 600000
 OS_VER=	6
+ARCH_PORTVERSION=0.5
 . else
 IGNORE=	${_IGNORE_MSG}
 . endif
