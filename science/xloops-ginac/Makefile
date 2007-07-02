@@ -29,4 +29,10 @@ CFLAGS+=	-fpermissive
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2, does not compile with GCC 3.4 against GiNaC compiled with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>
