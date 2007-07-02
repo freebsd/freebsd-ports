@@ -25,23 +25,24 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 PKGDEINSTALL=	${PKGINSTALL}
 
-OPTIONS=	DEBUG "Turn on debugging" on
+OPTIONS=	DEBUG "Turn on debugging" off
 
 .include <bsd.port.pre.mk>
 
-.ifndef(WITH_DEBUG)
+.if !defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=no
 .endif
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not build on !i386"
+BROKEN=		Does not build on !i386
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|xCC|xc|' \
-		-e 's|-O2||' \
+	@${REINPLACE_CMD} -e 's|xCC|xc| ; s|-O2||' \
+		-e 's|ftello64|ftello| ; s|fseeko64|fseeko|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|"m"|"g"|' \
+		${WRKSRC}/audioplugin/MP3/audioencoder/lame3.70/quantize-pvt.c
 .if ${OSVERSION} >= 502126
 	@${REINPLACE_CMD} \
 		-e 's|-fpic||' \
