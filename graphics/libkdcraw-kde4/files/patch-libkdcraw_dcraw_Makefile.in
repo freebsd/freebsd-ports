@@ -1,0 +1,11 @@
+--- libkdcraw/dcraw/Makefile.in.orig	Fri Jun 22 08:39:06 2007
++++ libkdcraw/dcraw/Makefile.in	Fri Jun 22 08:39:22 2007
+@@ -255,7 +255,7 @@
+ am__quote = @am__quote@
+ am__tar = @am__tar@
+ am__untar = @am__untar@
+-bindir = $(KDCRAW_DIR)
++bindir = @bindir@
+ build = @build@
+ build_alias = @build_alias@
+ build_cpu = @build_cpu@
