@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	psycopg2
-PORTVERSION=	2.0.5.1
-PORTREVISION=	1
+PORTVERSION=	2.0.6
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/pub/software/psycopg/ \
 		${MASTER_SITE_LOCAL}
@@ -22,20 +21,14 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/DateTime:${PORTSDIR}/lang/py-mx-base
 
 USE_PGSQL=	yes
 USE_GMAKE=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
-
-.include <bsd.port.pre.mk>
 
 do-build:
 	@(cd ${WRKSRC}; ${PYTHON_CMD} setup.py build)
 
 do-install:
 	@(cd ${WRKSRC}; ${PYTHON_CMD} setup.py install)
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
 
 DOCSDIR=	${TARGETDIR}/share/doc/py-psycopg2
 EXAMPLESDIR=	${TARGETDIR}/share/examples/py-psycopg2
@@ -48,15 +41,17 @@ EXAMPLES=	binary.py cursor.py dt.py lastrowid.py notify.py threads.py \
 DOCS=		AUTHORS ChangeLog INSTALL README PKG-INFO
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 .for f in ${EXAMPLES}
 	@${INSTALL_DATA} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}
 .endfor
+.endif
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
-	@${INSTALL_MAN} ${WRKSRC}/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
