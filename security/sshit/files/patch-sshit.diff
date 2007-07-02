@@ -1,0 +1,11 @@
+--- sshit.orig	Sun Jul  1 22:13:45 2007
++++ sshit	Sun Jul  1 22:14:46 2007
+@@ -317,7 +317,7 @@
+ 
+ while (<>) {
+ 	chomp;
+-	if (/(failed|Invalid user) .*from (\d+\.\d+\.\d+\.\d+|[\da-fA-F:]+)/i ) { # IPv4 & IPv6
++	if (/(failed|error|Invalid user) .*from (\d+\.\d+\.\d+\.\d+|[\da-fA-F:]+)/i ) { # IPv4 & IPv6
+ 		$ip = $2;
+ 		if ($list{$ip}{name}) {
+ 			if ($list{$ip}{n} >= $MAX_COUNT) {

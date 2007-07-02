@@ -7,6 +7,7 @@
 
 PORTNAME=	sshit
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://anp.ath.cx/sshit/ \
 		${MASTER_SITE_LOCAL}
