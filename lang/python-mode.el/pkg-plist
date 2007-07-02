@@ -3,10 +3,10 @@ share/emacs/site-lisp/python-mode.el
 share/emacs/site-lisp/pycomplete.el
 share/emacs/site-lisp/pycomplete.py
 @exec mkdir -p %D/lib/xemacs/site-lisp
-@exec ln -sf %D/%F %D/lib/xemacs/site-lisp/doctest-mode.el
-@exec ln -sf %D/%F %D/lib/xemacs/site-lisp/python-mode.el
-@exec ln -sf %D/%F %D/lib/xemacs/site-lisp/pycomplete.el
-@exec ln -sf %D/%F %D/lib/xemacs/site-lisp/pycomplete.py
+@exec ln -sf %D/share/emacs/site-lisp/doctest-mode.el %D/lib/xemacs/site-lisp
+@exec ln -sf %D/share/emacs/site-lisp/python-mode.el %D/lib/xemacs/site-lisp
+@exec ln -sf %D/share/emacs/site-lisp/pycomplete.el %D/lib/xemacs/site-lisp
+@exec ln -sf %D/share/emacs/site-lisp/pycomplete.py %D/lib/xemacs/site-lisp
 @unexec rm %D/lib/xemacs/site-lisp/doctest-mode.el 2>/dev/null || true
 @unexec rm %D/lib/xemacs/site-lisp/python-mode.el 2>/dev/null || true
 @unexec rm %D/lib/xemacs/site-lisp/pycomplete.el 2>/dev/null || true
