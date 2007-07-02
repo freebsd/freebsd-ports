@@ -18,6 +18,8 @@ HAS_CONFIGURE=	yes
 PKGMESSAGE=     ${WRKSRC}/MESSAGE
 STARTUP_SCRIPT= ${PREFIX}/etc/rc.d/roxen.sh.sample
 
+BROKEN=		does not configure
+
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" ${FILESDIR}/roxen.sh.in > \
 	  ${WRKDIR}/roxen.sh
@@ -39,10 +41,6 @@ post-install:
 
 .if ${ARCH} == "alpha"
 BROKEN=		"Does not compile on alpha"
-.endif
-
-.if defined(PARALLEL_PACKAGE_BUILD) && ${OSVERSION} >= 500000
-IGNORE=	hang
 .endif
 
 .include <bsd.port.post.mk>
