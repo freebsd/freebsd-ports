@@ -1,0 +1,44 @@
+bin/qtemu
+%%PORTDOCS%%%%DOCSDIR%%/config.png
+%%PORTDOCS%%%%DOCSDIR%%/de/config.png
+%%PORTDOCS%%%%DOCSDIR%%/de/main.htm
+%%PORTDOCS%%%%DOCSDIR%%/de/mainwindow.png
+%%PORTDOCS%%%%DOCSDIR%%/de/mainwindow_new_machine_1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/mainwindow_new_machine_2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/mainwindow_new_machine_3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/mainwindow_new_machine_4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/mainwindow_new_machine_5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/mainwindow_new_machine_6.png
+%%PORTDOCS%%%%DOCSDIR%%/de/mainwindow_new_machine_7.png
+%%PORTDOCS%%%%DOCSDIR%%/de/mainwindow_new_machine_8.png
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbar.png
+%%PORTDOCS%%%%DOCSDIR%%/de/wizard_1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/wizard_1_1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/wizard_2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/wizard_2_1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/wizard_3.png
+%%PORTDOCS%%%%DOCSDIR%%/main.htm
+%%PORTDOCS%%%%DOCSDIR%%/mainwindow.png
+%%PORTDOCS%%%%DOCSDIR%%/mainwindow_new_machine_1.png
+%%PORTDOCS%%%%DOCSDIR%%/mainwindow_new_machine_2.png
+%%PORTDOCS%%%%DOCSDIR%%/mainwindow_new_machine_3.png
+%%PORTDOCS%%%%DOCSDIR%%/mainwindow_new_machine_4.png
+%%PORTDOCS%%%%DOCSDIR%%/mainwindow_new_machine_5.png
+%%PORTDOCS%%%%DOCSDIR%%/mainwindow_new_machine_6.png
+%%PORTDOCS%%%%DOCSDIR%%/mainwindow_new_machine_7.png
+%%PORTDOCS%%%%DOCSDIR%%/mainwindow_new_machine_8.png
+%%PORTDOCS%%%%DOCSDIR%%/toolbar.png
+%%PORTDOCS%%%%DOCSDIR%%/wizard_1.png
+%%PORTDOCS%%%%DOCSDIR%%/wizard_1_1.png
+%%PORTDOCS%%%%DOCSDIR%%/wizard_2.png
+%%PORTDOCS%%%%DOCSDIR%%/wizard_2_1.png
+%%PORTDOCS%%%%DOCSDIR%%/wizard_3.png
+%%NLS%%%%DATADIR%%/translations/qtemu_cz.qm
+%%NLS%%%%DATADIR%%/translations/qtemu_de.qm
+%%NLS%%%%DATADIR%%/translations/qtemu_es.qm
+%%NLS%%%%DATADIR%%/translations/qtemu_ru.qm
+%%NLS%%%%DATADIR%%/translations/qtemu_tr.qm
+%%NLS%%@dirrm %%DATADIR%%/translations
+%%NLS%%@dirrm share/qtemu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

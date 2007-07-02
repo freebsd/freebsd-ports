@@ -111,6 +111,7 @@
     SUBDIR += qemu-devel
     SUBDIR += qemu-launcher
     SUBDIR += qmc2
+    SUBDIR += qtemu
     SUBDIR += quasi88
     SUBDIR += raine
     SUBDIR += rtc
