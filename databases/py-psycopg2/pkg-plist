@@ -3,6 +3,8 @@ lib/%%PYTHON_VERSION%%/site-packages/psycopg2/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/psycopg2/_psycopg.so
 lib/%%PYTHON_VERSION%%/site-packages/psycopg2/extensions.py
 lib/%%PYTHON_VERSION%%/site-packages/psycopg2/extensions.pyc
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/errorcodes.py
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/errorcodes.pyc
 lib/%%PYTHON_VERSION%%/site-packages/psycopg2/extras.py
 lib/%%PYTHON_VERSION%%/site-packages/psycopg2/extras.pyc
 lib/%%PYTHON_VERSION%%/site-packages/psycopg2/pool.py
@@ -17,24 +19,24 @@ lib/%%PYTHON_VERSION%%/site-packages/psycopg2/tz.pyc
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/PKG-INFO
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%EXAMPLESDIR%%/binary.py
-%%EXAMPLESDIR%%/copy_from.py
-%%EXAMPLESDIR%%/copy_to.py
-%%EXAMPLESDIR%%/cursor.py
-%%EXAMPLESDIR%%/dialtone.py
-%%EXAMPLESDIR%%/dict.py
-%%EXAMPLESDIR%%/dt.py
-%%EXAMPLESDIR%%/encoding.py
-%%EXAMPLESDIR%%/fetch.py
-%%EXAMPLESDIR%%/lastrowid.py
-%%EXAMPLESDIR%%/mogrify.py
-%%EXAMPLESDIR%%/myfirstrecipe.py
-%%EXAMPLESDIR%%/notify.py
-%%EXAMPLESDIR%%/simple.py
-%%EXAMPLESDIR%%/somehackers.jpg
-%%EXAMPLESDIR%%/threads.py
-%%EXAMPLESDIR%%/tz.py
-%%EXAMPLESDIR%%/usercast.py
-%%EXAMPLESDIR%%/whereareyou.jpg
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/binary.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copy_from.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copy_to.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cursor.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialtone.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dict.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dt.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/encoding.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fetch.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lastrowid.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mogrify.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/myfirstrecipe.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/somehackers.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/threads.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tz.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usercast.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/whereareyou.jpg
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
