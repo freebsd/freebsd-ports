@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	twitter
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Command line twits and an API wrapper
 
-BROKEN=		Does not build
+BUILD_DEPENDS=	rubygem-hpricot>0:${PORTSDIR}/www/rubygem-hpricot
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 GEM_NAME=	${DISTNAME}
