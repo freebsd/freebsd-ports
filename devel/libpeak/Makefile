@@ -25,10 +25,8 @@ MAKE_ARGS=	CFLAGS="${CFLAGS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	${WRKSRC}/configure
 
-.if ${OSVERSION} > 700000
-BROKEN=		Does not package (objformat fallout)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
