@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libqalculate
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	qalculate
+MASTER_SITES=	SF/qalculate
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A a multi-purpose desktop calculator (backend library)
