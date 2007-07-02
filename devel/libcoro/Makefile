@@ -5,29 +5,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=		libcoro
-PORTVERSION=		1.0.3
-CATEGORIES=		devel
-MASTER_SITES=		${MASTER_SITE_LOCAL}
+PORTNAME=	libcoro
+PORTVERSION=	1.0.3
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kbyanc
-DISTNAME=		coro-${PORTVERSION}
+DISTNAME=	coro-${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		C library that implements coroutines
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	C library that implements coroutines
 
-ONLY_FOR_ARCHS=		i386
+ONLY_FOR_ARCHS=	i386
 
-HAS_CONFIGURE=		yes
-CONFIGURE_ARGS=		--arch arch/x86-freebsd
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--arch arch/x86-freebsd
 NOPRECIOUSMAKEVARS=	yes
 
-MAN2=			coro.2
+MAN2=		coro.2
 
-PLIST_FILES=		lib/libcoro.a include/coro.h
+PLIST_FILES=	lib/libcoro.a include/coro.h
 
 post-extract:
 	${CP} -r ${WRKSRC}/arch/x86-linux ${WRKSRC}/arch/x86-freebsd
-	${SED} -e '43,43s/$$/ __attribute__((noreturn,regparm(1)))/' \
+	@${SED} -e '43,43s/$$/ __attribute__((noreturn,regparm(1)))/' \
 		${WRKSRC}/arch/x86-linux/coro.c > ${WRKSRC}/arch/x86-freebsd/coro.c
 
 .include <bsd.port.mk>

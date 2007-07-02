@@ -8,9 +8,6 @@ Excerpt from The Art of Computer Programming by D. E. Knuth:
 
 coro is a C library that implements the low level handling of coroutines.
 Despite it's simplicity, there is no portable way to implement them. The goal
-of this library is to build a standard API for coroutines and implement it for
-as many architectures as possible. Currently only the i386 architecture is
-supported.
-
-  -Kelly
-   kbyanc@posi.net
+of this library is to build a standard API for coroutines and implement it
+for as many architectures as possible. Currently only the i386 architecture
+is supported.
