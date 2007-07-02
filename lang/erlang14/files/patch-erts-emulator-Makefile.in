@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- erts/emulator/Makefile.in.orig
++++ erts/emulator/Makefile.in
+@@ -265,7 +265,9 @@
+ endif
+ WITH_SCTP=@WITH_SCTP@
+ ifdef WITH_SCTP
++ifneq ($(findstring freebsd,$(TARGET)),freebsd)
+ LIBS += -lsctp
++endif
+ endif
+ 
+ ORG_THR_LIBS=@EMU_THR_LIBS@

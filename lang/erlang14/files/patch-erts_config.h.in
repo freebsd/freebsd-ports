@@ -1,0 +1,17 @@
+
+$FreeBSD$
+
+--- erts/config.h.in.orig
++++ erts/config.h.in
+@@ -366,6 +366,10 @@
+ /* Define to 1 if `ssh_data' is member of `struct sctp_send_failed'. */
+ #undef HAVE_STRUCT_SCTP_SEND_FAILED_SSH_DATA
+ 
++/* Define to 1 if `sctp_adaptation_layer_event' is member of
++   `struct sctp_event_subscribe'. */
++#undef HAVE_STRUCT_SCTP_EVENT_SUBSCRIBE_SCTP_ADAPTATION_LAYER_EVENT
++
+ /* Define to 1 if you have the <syslog.h> header file. */
+ #undef HAVE_SYSLOG_H
+ 
+
