@@ -71,7 +71,7 @@ elif bzgrep -qE '(ANSI C.. forbids|is a contravariance violation|changed for new
   reason="new_compiler_error"; tag="newgcc"
 elif bzgrep -qE '(syntax error before|ISO C\+\+ forbids|friend declaration|no matching function for call to|.main. must return .int.|invalid conversion from|cannot be used as a macro name as it is an operator in C\+\+|is not a member of type|after previous specification in|no class template named|because worst conversion for the former|better than worst conversion|no match for.*operator|no match for call to|undeclared in namespace|is used as a type, but is not|error: array bound forbidden|error: class definition|error: expected constructor|error: there are no arguments|error:.*cast.*loses precision|ISO C\+\+ does not support)' $1; then
   reason="bad_C++_code"; tag="badc++"
-elif bzgrep -qE 'error: (array type has incomplete element type|extra qualification .* on member|invalid cast from type .* to type|invalid lvalue in (assignment|decrement|increment|unary)|invalid storage class for function|static declaration of.*follows non-static declaration|two or more data types in declaration specifiers|.* was not declared in this scope)' $1; then
+elif bzgrep -qE 'error: (array type has incomplete element type|conflicts with new declaration|expected.*before .class|expected primary expression|extra qualification .* on member|.*has incomplete type|invalid cast from type .* to type|invalid lvalue in (assignment|decrement|increment|unary)|invalid storage class for function|lvalue required as (increment operator|left operand)|.*should have been declared inside|static declaration of.*follows non-static declaration|two or more data types in declaration specifiers|.* was not declared in this scope)' $1; then
   reason="gcc4_error"; tag="gcc4"
 elif bzgrep -qE '(/usr/libexec/elf/ld: cannot find|undefined reference to|cannot open -l.*: No such file)' $1; then
   reason="linker_error"; tag="ld"
@@ -86,7 +86,7 @@ elif bzgrep -q "core dumped" $1; then
 
 elif bzgrep -qE "(.s: Assembler messages:|Cannot (determine .* target|find the byte order) for this architecture|^cc1: bad value.*for -mcpu.*switch|could not read symbols: File in wrong format|[Ee]rror: [Uu]nknown opcode|error.*Unsupported architecture|ENDIAN must be defined 0 or 1|failed to merge target-specific data|(file not recognized|failed to set dynamic section sizes): File format not recognized|impossible register constraint|inconsistent operand constraints in an .asm|Invalid configuration.*unknown.*machine.*unknown not recognized|invalid lvalue in asm statement|is only for.*, and you are running|not a valid 64 bit base/index expression|relocation R_X86_64_32.*can not be used when making a shared object|relocation truncated to fit: |shminit failed: Function not implemented|The target cpu, .*, is not currently supported.|This architecture seems to be neither big endian nor little endian|unknown register name|Unable to correct byte order|Unsupported platform, sorry|won't run on this architecture)" $1;  then
   reason="arch"; tag="arch"
-elif bzgrep -qE "autoconf(.*): (not found|No such file or directory)" $1; then
+elif bzgrep -qE "autoconf([0-9\-\.]*): (not found|No such file or directory)" $1; then
   reason="autoconf"; tag="autoconf"
 elif bzgrep -q "autoheader: not found" $1; then
   reason="autoheader"; tag="autoheader"
@@ -109,6 +109,8 @@ elif bzgrep -qE "Member name contains .\.\." $1; then
   reason="fetch"; tag="fetch"
 elif bzgrep -qE "(pnohang: killing make checksum|fetch: transfer timed out)" $1; then
   reason="fetch_timeout"; tag="fetch-timeout"
+elif bzgrep -qE "(f77: not found|f77:No such file or directory|Unable to find a fortran compiler)" $1; then
+  reason="f77"; tag="f77"
 elif bzgrep -q "See <URL:http://gcc.gnu.org/bugs.html> for instructions." $1; then
   reason="gcc_bug"; tag="gcc-bug"
 elif bzgrep -qE "(Run-time system build failed for some reason|tar: Error opening archive: Failed to open.*No such file or directory)" $1; then
@@ -153,6 +155,8 @@ elif bzgrep -qi 'read-only file system' $1; then
 # types of errors, and thus need to be evaluated after all the specific
 # cases.
 
+elif bzgrep -qE 'cc1.*warnings being treated as errors' $1; then
+  reason="compiler_error"; tag="cc"
 elif bzgrep -q 'tar: Error exit delayed from previous errors' $1; then
   reason="install_error"; tag="install"
 elif bzgrep -q "Cannot stat: " $1; then
