@@ -1,0 +1,9 @@
+MIME::EncWords is aimed to be another implimentation of MIME::Words so
+    that it will achive more exact conformance with MIME specifications.
+    Additionally, it contains some improvements. Following synopsis and
+    descriptions are inherited from its inspirer, with description of
+    improvements and clarifications added.*
+
+
+Author: <hatuka@nezumi.nu>
+WWW: http://search.cpan.org/dist/MIME-EncWords/
