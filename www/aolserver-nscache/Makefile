@@ -7,6 +7,7 @@
 
 PORTNAME=	aolserver-nscache
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aolserver
@@ -18,21 +19,26 @@ COMMENT=	Tcl interface to AOLserver's caching API
 
 WRKSRC=		${WRKDIR}/nscache-${PORTVERSION}
 
-AOLSERVERBASE?=	${PREFIX}/aolserver
-BUILD_DEPENDS+=	${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
+AOLSERVERBASE?=	aolserver
+BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 RUN_DEPENDS+=	${BUILD_DEPENDS}
-PLIST_SUB+=	AOLSERVERBASE=${AOLSERVERBASE:S/${PREFIX}\///}
 
 USE_GMAKE=	yes
 
-MAKE_ARGS=	AOLSERVER=${AOLSERVERBASE}
+MAKE_ARGS=	AOLSERVER="${LOCALBASE}/${AOLSERVERBASE}"
+
+PLIST_FILES=	${AOLSERVERBASE}/bin/nscache.so \
+		${AOLSERVERBASE}/lib/libnscache.a \
+		${AOLSERVERBASE}/lib/libnscache.so
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog index.html
 .endif
 
 post-patch:
-	@ ${REINPLACE_CMD} -e 's|OBJS|MODOBJS|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} \
+		-e '/^OBJS     =.*/{p;s/OBJS     =.*/MODOBJS  = $$(OBJS)/g;}' \
+		${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
