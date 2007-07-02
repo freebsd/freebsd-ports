@@ -1,22 +1,16 @@
---- Makefile.orig	Wed Jun 21 23:11:51 2006
-+++ Makefile	Fri Jan 12 17:14:52 2007
-@@ -3,9 +3,7 @@
+--- Makefile.orig	2007-06-16 23:00:22.000000000 +0200
++++ Makefile	2007-06-30 16:37:15.000000000 +0200
+@@ -3,10 +3,9 @@
  
  SRC=.
  
 -CC      := gcc
 -CXX     := g++
--CFLAGS  += -g -O -Wall -Wuninitialized -Wno-long-long -Wno-multichar
-+CFLAGS  += -Wall -Wuninitialized -Wno-long-long -Wno-multichar -I$(LOCALBASE)/include
- # LDFLAGS +=
+-CFLAGS  += -g -O -Wall -Wuninitialized -Wno-long-long -Wno-multichar -DUNIX
+-# LDFLAGS +=
++CFLAGS  += -g -O -Wall -Wuninitialized -Wno-long-long -Wno-multichar -DUNIX -I/usr/local/include
++CXXFLAGS  += -g -O -Wall -Wuninitialized -Wno-long-long -Wno-multichar -DUNIX -I/usr/local/include
++LDFLAGS += -L/usr/local/lib
  
  # Additional warnings
-@@ -61,7 +59,7 @@
- 	$(CXX) $(LDFLAGS) -o $@ $+
- 
- encode_dxa$(EXEEXT): encode_dxa.o compress.o util.o
--	$(CXX) $(LDFLAGS) -o $@ $+ -lpng -lz
-+	$(CXX) $(LDFLAGS) -o $@ $+ -lpng -lz -L$(LOCALBASE)/lib
- 
- extract_loom_tg16$(EXEEXT): extract_loom_tg16.o util.o
- 	$(CC) $(LDFLAGS) -o $@ $+
+ CFLAGS+= -Wshadow
