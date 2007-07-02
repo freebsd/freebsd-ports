@@ -13423,6 +13423,7 @@ qt4-uic		ports/devel/qt4-uic
 qt4-uic3	ports/devel/qt4-uic3
 qt4-xml		ports/textproc/qt4-xml
 qtella		ports/net-p2p/qtella
+qtemu		ports/emulators/qtemu
 qtfw		ports/security/qtfw
 qtiplot		ports/math/qtiplot
 qtiplot-doc	ports/math/qtiplot-doc
