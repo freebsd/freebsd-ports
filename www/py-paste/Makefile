@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Paste
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	www python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/P/Paste/ \
 		${MASTER_SITE_LOCAL} \
