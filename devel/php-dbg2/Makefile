@@ -24,6 +24,12 @@ CONFIGURE_ARGS=	--enable-dbg=shared --with-dbg-profiler
 #CONFIGURE_ENV=	with_dbg_trace=1
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-build:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
@@ -36,4 +42,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
