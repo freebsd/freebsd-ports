@@ -12387,7 +12387,6 @@ ports_libisc		ports/devel/libisc
 ports_libpcap	ports/net/libpcap
 ports_libusb	ports/devel/libusb
 ports_lightning	ports/mail/lightning
-ports_lukemftp	ports/ftp/lukemftp
 ports_mail	ports/mail
 ports_math	ports/math
 ports_mbone	ports/mbone
