@@ -1,42 +1,42 @@
 bin/xlispstat
 libexec/xlispstat/xlisp
 libexec/xlispstat/xlisp.wks
-share/xlispstat/Autoload/_autoidx.lsp
-share/xlispstat/Autoload/bayes.fsl
-share/xlispstat/Autoload/glim.fsl
-share/xlispstat/Autoload/maximize.fsl
-share/xlispstat/Autoload/nonlin.fsl
-share/xlispstat/Autoload/oneway.fsl
-share/xlispstat/Autoload/stepper.fsl
-share/xlispstat/Data/absorbtion.lsp
-share/xlispstat/Data/aircraft.lsp
-share/xlispstat/Data/book.lsp
-share/xlispstat/Data/car-prices.lsp
-share/xlispstat/Data/diabetes.lsp
-share/xlispstat/Data/heating.lsp
-share/xlispstat/Data/iris.lsp
-share/xlispstat/Data/leukemia.lsp
-share/xlispstat/Data/metabolism.lsp
-share/xlispstat/Data/oxygen.lsp
-share/xlispstat/Data/puromycin.lsp
-share/xlispstat/Data/randu.lsp
-share/xlispstat/Data/stackloss.lsp
-share/xlispstat/Data/tutorial.lsp
-share/xlispstat/Examples/abrasiondemo.lsp
-share/xlispstat/Examples/addbox.lsp
-share/xlispstat/Examples/addhandrotate.lsp
-share/xlispstat/Examples/bcdemo.lsp
-share/xlispstat/Examples/dataprotos.lsp
-share/xlispstat/Examples/fstat.lsp
-share/xlispstat/Examples/inspect.lsp
-share/xlispstat/Examples/plotcontrols.lsp
-share/xlispstat/Examples/regdemo.lsp
-share/xlispstat/Examples/rotatedemo.lsp
-share/xlispstat/Examples/tour.lsp
-share/xlispstat/Examples/tourdemo.lsp
-share/xlispstat/xlisp.hlp
-@dirrm share/xlispstat/Examples
-@dirrm share/xlispstat/Data
-@dirrm share/xlispstat/Autoload
-@dirrm share/xlispstat
+%%DATADIR%%/Autoload/_autoidx.lsp
+%%DATADIR%%/Autoload/bayes.fsl
+%%DATADIR%%/Autoload/glim.fsl
+%%DATADIR%%/Autoload/maximize.fsl
+%%DATADIR%%/Autoload/nonlin.fsl
+%%DATADIR%%/Autoload/oneway.fsl
+%%DATADIR%%/Autoload/stepper.fsl
+%%DATADIR%%/Data/absorbtion.lsp
+%%DATADIR%%/Data/aircraft.lsp
+%%DATADIR%%/Data/book.lsp
+%%DATADIR%%/Data/car-prices.lsp
+%%DATADIR%%/Data/diabetes.lsp
+%%DATADIR%%/Data/heating.lsp
+%%DATADIR%%/Data/iris.lsp
+%%DATADIR%%/Data/leukemia.lsp
+%%DATADIR%%/Data/metabolism.lsp
+%%DATADIR%%/Data/oxygen.lsp
+%%DATADIR%%/Data/puromycin.lsp
+%%DATADIR%%/Data/randu.lsp
+%%DATADIR%%/Data/stackloss.lsp
+%%DATADIR%%/Data/tutorial.lsp
+%%DATADIR%%/Examples/abrasiondemo.lsp
+%%DATADIR%%/Examples/addbox.lsp
+%%DATADIR%%/Examples/addhandrotate.lsp
+%%DATADIR%%/Examples/bcdemo.lsp
+%%DATADIR%%/Examples/dataprotos.lsp
+%%DATADIR%%/Examples/fstat.lsp
+%%DATADIR%%/Examples/inspect.lsp
+%%DATADIR%%/Examples/plotcontrols.lsp
+%%DATADIR%%/Examples/regdemo.lsp
+%%DATADIR%%/Examples/rotatedemo.lsp
+%%DATADIR%%/Examples/tour.lsp
+%%DATADIR%%/Examples/tourdemo.lsp
+%%DATADIR%%/xlisp.hlp
+@dirrm %%DATADIR%%/Examples
+@dirrm %%DATADIR%%/Data
+@dirrm %%DATADIR%%/Autoload
+@dirrm %%DATADIR%%
 @dirrm libexec/xlispstat
