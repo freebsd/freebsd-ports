@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nsmhash
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.aolserver.cz/download/
 PKGNAMEPREFIX=	aolserver-
@@ -19,28 +18,37 @@ COMMENT=	AOLserver interface to mhash library
 
 WRKSRC=		${WRKDIR}
 
-AOLSERVERBASE?=	${PREFIX}/aolserver
+AOLSERVERBASE?=	aolserver
 LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash
-BUILD_DEPENDS+=	${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
+BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 RUN_DEPENDS+=	${BUILD_DEPENDS}
-PLIST_SUB+=	AOLSERVERBASE=${AOLSERVERBASE:S/${PREFIX}\///}
 
 USE_GMAKE=	yes
+MAKEFILE=	Makefile.ns
 
 USE_TCL=	84+
 USE_TCL_THREADS=	yes
 
+PLIST_FILES=	${AOLSERVERBASE}/bin/nsmhash.so \
+		${AOLSERVERBASE}/lib/libnsmhash.a \
+		${AOLSERVERBASE}/lib/libnsmhash.so
+
 .include <bsd.port.pre.mk>
 
-MAKE_ARGS=	NSHOME=${AOLSERVERBASE} MODLIBS="-L${LOCALBASE}/lib -lmhash" \
-		CFLAGS="-I. -I${AOLSERVERBASE}/include -I${LOCALBASE}/include -I${TCL_INCLUDEDIR} -DAOL4=1 -fPIC"
+CFLAGS+=	"-I${LOCALBASE}/include"
+MAKE_ARGS+=	NSHOME="${LOCALBASE}/${AOLSERVERBASE}" \
+		DLLLIBS="-L${LOCALBASE}/lib -lmhash" \
+		MODLIBS="-L${LOCALBASE}/lib -lmhash"
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	AUTHORS COPYING README
+PORTDOCS=	AUTHORS CHANGES COPYING README
 .endif
 
 post-patch:
-	@ ${REINPLACE_CMD} -e 's|OBJS|MODOBJS|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/^CFLAGS   =/CFLAGS  +=/g' \
+		-e 's/^MODLIBS  =/MODLIBS +=/g' \
+		-e '/^OBJS     =.*/{n;s/.*/MODOBJS  = $$(OBJS)/g;G;}' \
+		${WRKSRC}/${MAKEFILE}
 
 post-install:
 .if !defined(NOPORTDOCS)
