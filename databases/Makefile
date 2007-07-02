@@ -134,6 +134,7 @@
     SUBDIR += mysql-connector-odbc
     SUBDIR += mysql-editor
     SUBDIR += mysql-navigator
+    SUBDIR += mysql-proxy
     SUBDIR += mysql-query-browser
     SUBDIR += mysql2odbc
     SUBDIR += mysql2pgsql
