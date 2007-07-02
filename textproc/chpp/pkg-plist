@@ -1,106 +1,106 @@
 bin/chpp
-share/chpp/include/cgi.chh
-share/chpp/include/files.chh
-share/chpp/include/list.chh
-share/chpp/include/sql.chh
-share/chpp/include/strings.chh
-share/chpp/include/time.chh
-share/chpp/include/w3lib.chh
-%%PORTDOCS%%share/doc/chpp/AUTHORS
-%%PORTDOCS%%share/doc/chpp/NEWS
-%%PORTDOCS%%share/doc/chpp/README
-share/examples/chpp/regress/dotest
-share/examples/chpp/regress/tests
-share/examples/chpp/regress/arith/arith.txt
-share/examples/chpp/regress/arith/expected.err
-share/examples/chpp/regress/arith/expected.out
-share/examples/chpp/regress/array/array.txt
-share/examples/chpp/regress/array/expected.err
-share/examples/chpp/regress/array/expected.out
-share/examples/chpp/regress/assoc/assoc.txt
-share/examples/chpp/regress/assoc/expected.err
-share/examples/chpp/regress/assoc/expected.out
-share/examples/chpp/regress/define/define.txt
-share/examples/chpp/regress/define/expected.err
-share/examples/chpp/regress/define/expected.out
-share/examples/chpp/regress/error/error.txt
-share/examples/chpp/regress/error/error2.txt
-share/examples/chpp/regress/error/error3.txt
-share/examples/chpp/regress/fileops/expected.err
-share/examples/chpp/regress/fileops/expected.out
-share/examples/chpp/regress/fileops/fileops.txt
-share/examples/chpp/regress/fileops/test.data
-share/examples/chpp/regress/hanoi/expected.err
-share/examples/chpp/regress/hanoi/expected.out
-share/examples/chpp/regress/hanoi/hanoi.txt
-share/examples/chpp/regress/include/incdir/incdir2/recinc3.txt
-share/examples/chpp/regress/include/incdir/recinc1.txt
-share/examples/chpp/regress/include/incdir/recinc2.txt
-share/examples/chpp/regress/include/expected.err
-share/examples/chpp/regress/include/expected.out
-share/examples/chpp/regress/include/include.txt
-share/examples/chpp/regress/include/include2.txt
-share/examples/chpp/regress/include/include3.txt
-share/examples/chpp/regress/include/include4.txt
-share/examples/chpp/regress/loops/expected.err
-share/examples/chpp/regress/loops/expected.out
-share/examples/chpp/regress/loops/loops.txt
-share/examples/chpp/regress/metachar/expected.err
-share/examples/chpp/regress/metachar/expected.out
-share/examples/chpp/regress/metachar/metachar.txt
-share/examples/chpp/regress/regex/expected.err
-share/examples/chpp/regress/regex/expected.out
-share/examples/chpp/regress/regex/regex.txt
-share/examples/chpp/regress/stringops/expected.err
-share/examples/chpp/regress/stringops/expected.out
-share/examples/chpp/regress/stringops/stringops.txt
-share/examples/chpp/tautogen/data.cslab
-share/examples/chpp/tautogen/data.new
-share/examples/chpp/tautogen/grammar
-share/examples/chpp/tautogen/tautogen.csml
-share/examples/chpp/website/Makefile
-share/examples/chpp/website/choicebar.chml
-share/examples/chpp/website/choicestrip.chml
-share/examples/chpp/website/footer.chml
-share/examples/chpp/website/header.chml
-share/examples/chpp/website/menu.chml
-share/examples/chpp/website/news.csml
-share/examples/chpp/website/news_a.html
-share/examples/chpp/website/news_l.jpg
-share/examples/chpp/website/news_s.jpg
-share/examples/chpp/website/news_s_g.jpg
-share/examples/chpp/website/news_t.chml
-share/examples/chpp/website/template.chml
-share/examples/chpp/website/tips.csml
-share/examples/chpp/website/tips_a.html
-share/examples/chpp/website/tips_l.jpg
-share/examples/chpp/website/tips_s.jpg
-share/examples/chpp/website/tips_s_g.jpg
-share/examples/chpp/website/tips_t.chml
-share/examples/chpp/website/tricks.csml
-share/examples/chpp/website/tricks_a.html
-share/examples/chpp/website/tricks_l.jpg
-share/examples/chpp/website/tricks_s.jpg
-share/examples/chpp/website/tricks_s_g.jpg
-share/examples/chpp/website/tricks_t.chml
-@dirrm share/examples/chpp/website
-@dirrm share/examples/chpp/tautogen
-@dirrm share/examples/chpp/regress/stringops
-@dirrm share/examples/chpp/regress/regex
-@dirrm share/examples/chpp/regress/metachar
-@dirrm share/examples/chpp/regress/loops
-@dirrm share/examples/chpp/regress/include/incdir/incdir2
-@dirrm share/examples/chpp/regress/include/incdir
-@dirrm share/examples/chpp/regress/include
-@dirrm share/examples/chpp/regress/hanoi
-@dirrm share/examples/chpp/regress/fileops
-@dirrm share/examples/chpp/regress/error
-@dirrm share/examples/chpp/regress/define
-@dirrm share/examples/chpp/regress/assoc
-@dirrm share/examples/chpp/regress/array
-@dirrm share/examples/chpp/regress/arith
-@dirrm share/examples/chpp/regress
-@dirrm share/examples/chpp
-%%PORTDOCS%%@dirrm share/doc/chpp
-@dirrm share/chpp/include
-@dirrm share/chpp
+%%DATADIR%%/include/cgi.chh
+%%DATADIR%%/include/files.chh
+%%DATADIR%%/include/list.chh
+%%DATADIR%%/include/sql.chh
+%%DATADIR%%/include/strings.chh
+%%DATADIR%%/include/time.chh
+%%DATADIR%%/include/w3lib.chh
+@dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/dotest
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/tests
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/arith/arith.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/arith/expected.err
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/arith/expected.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/array/array.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/array/expected.err
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/array/expected.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/assoc/assoc.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/assoc/expected.err
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/assoc/expected.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/define/define.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/define/expected.err
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/define/expected.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/error/error.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/error/error2.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/error/error3.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/fileops/expected.err
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/fileops/expected.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/fileops/fileops.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/fileops/test.data
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/hanoi/expected.err
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/hanoi/expected.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/hanoi/hanoi.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/include/incdir/incdir2/recinc3.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/include/incdir/recinc1.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/include/incdir/recinc2.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/include/expected.err
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/include/expected.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/include/include.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/include/include2.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/include/include3.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/include/include4.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/loops/expected.err
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/loops/expected.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/loops/loops.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/metachar/expected.err
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/metachar/expected.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/metachar/metachar.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/regex/expected.err
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/regex/expected.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/regex/regex.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/stringops/expected.err
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/stringops/expected.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/stringops/stringops.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tautogen/data.cslab
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tautogen/data.new
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tautogen/grammar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tautogen/tautogen.csml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/choicebar.chml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/choicestrip.chml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/footer.chml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/header.chml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/menu.chml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/news.csml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/news_a.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/news_l.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/news_s.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/news_s_g.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/news_t.chml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/template.chml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tips.csml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tips_a.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tips_l.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tips_s.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tips_s_g.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tips_t.chml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tricks.csml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tricks_a.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tricks_l.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tricks_s.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tricks_s_g.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tricks_t.chml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/website
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tautogen
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/stringops
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/regex
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/metachar
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/loops
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/include/incdir/incdir2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/include/incdir
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/include
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/hanoi
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/fileops
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/error
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/define
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/assoc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/array
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/arith
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
