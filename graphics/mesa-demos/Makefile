@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	demos
-PORTVERSION=	6.5.3
-PORTREVISION=	2
+PORTVERSION=	7.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mesa3d/
@@ -69,7 +68,7 @@ post-extract:
 		-e 's|geartrain.dat|${DATADIR}/data/geartrain.dat|g' \
 		-e 's|terrain.dat|${DATADIR}/data/terrain.dat|g' \
 		-e 's|isosurf.dat|${DATADIR}/data/isosurf.dat|g' \
-		${WRKSRC}/progs/demos/*.c
+		${WRKSRC}/progs/demos/*.c ${WRKSRC}/progs/xdemos/*.c
 
 do-install:
 	@for prog in ${DEMO_PROGS}; do \
