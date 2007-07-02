@@ -25,4 +25,10 @@ MAKE_ARGS=	CFLAGS="${CFLAGS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 700000
+BROKEN=		Does not package (objformat fallout)
+.endif
+
+.include <bsd.port.post.mk>
