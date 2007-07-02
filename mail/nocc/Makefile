@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nocc
-DISTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,9 +19,11 @@ WANT_PHP_WEB=	yes
 
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
 PORTDOCS=	*
+
+post-extract:
+	@${RM} -f ${WRKSRC}/themes/._.DS_Store ${WRKSRC}/themes/.DS_Store
 
 do-install:
 	${MKDIR} ${PREFIX}/www/nocc
