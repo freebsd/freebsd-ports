@@ -17376,6 +17376,7 @@ zh-p5-Lingua-ZH-Numbers	ports/chinese/p5-Lingua-ZH-Numbers
 zh-p5-Lingua-ZH-Summarize	ports/chinese/p5-Lingua-ZH-Summarize
 zh-p5-Lingua-ZH-TaBE	ports/chinese/p5-Lingua-ZH-TaBE
 zh-p5-Lingua-ZH-Toke	ports/chinese/p5-Lingua-ZH-Toke
+zh-p5-Lingua-ZH-WordSegmenter	ports/chinese/p5-Lingua-ZH-WordSegmenter
 zh-p5-Lingua-ZH-Wrap	ports/chinese/p5-Lingua-ZH-Wrap
 zh-pcmanx	ports/chinese/pcmanx
 zh-phpbb-tw	ports/chinese/phpbb-tw
