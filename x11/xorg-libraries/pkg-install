@@ -1,0 +1,53 @@
+#!/bin/sh
+
+if [ "$2" != "POST-INSTALL" ]; then
+	exit 0
+fi
+
+X11BASE=/usr/X11R6
+LOCALBASE=/usr/local
+
+if [ ${X11BASE} -ef ${LOCALBASE} ]; then
+	echo "Spamming files in /etc..."
+else
+	exit 0
+fi
+
+# periodic.conf
+local_periodic=`. /etc/defaults/periodic.conf && source_periodic_confs ; echo ${local_periodic}`
+for lp in ${local_periodic}; do
+	if (expr ${lp} : "^${X11BASE}" >/dev/null); then
+		continue
+	else
+		new_periodic="${new_periodic} ${lp}"
+	fi
+done
+if [ "${local_periodic}x" != "${new_periodic## }x" ]; then
+	echo "==> Removing ${X11BASE}/etc/periodic from periodic setup..."
+	echo "# added by xorg-libraries port" >> /etc/periodic.conf
+	echo "local_periodic=\"${new_periodic## }\"" >> /etc/periodic.conf
+	ppath_done=1
+fi
+
+# manpath.config
+if (PATH="/sbin:/bin:/usr/sbin:/usr/bin" manpath -q | grep -q "${X11BASE}");then	echo "==> Removing ${X11BASE}/man from MANPATH..."
+	sed -i ".bak.xorg" -e "s,^[^#]*${X11BASE}.*$,# (disabled by xorg-libraries port) &," \
+	    /etc/manpath.config
+	mpath_done=1
+fi
+
+# rc.conf
+rcdirs=`. /etc/defaults/rc.conf && source_rc_confs && echo ${local_startup}`
+for rd in ${rcdirs}; do
+	if (expr ${rd} : "${X11BASE}" >/dev/null); then
+		continue
+	else
+		new_rcdirs="${new_rcdirs} ${rd}"
+	fi
+done
+if [ "${rcdirs}x" != "${new_rcdirs## }x" ]; then
+	echo "==> Removing ${X11BASE} from rc sequence..."
+	echo "# added by xorg-libraries port" >> /etc/rc.conf
+	echo "local_startup=\"${new_rcdirs## }\"" >> /etc/rc.conf
+	rcconf_done=1
+fi

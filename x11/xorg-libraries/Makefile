@@ -7,7 +7,7 @@
 
 PORTNAME=	xorg-libraries
 PORTVERSION=	7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -67,7 +67,16 @@ RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
 
 .if !defined(XORG_UPGRADE) && !defined(PACKAGE_BUILDING) && exists(/usr/X11R6)
 pre-everything::
-	@test -L /usr/X11R6 || ( echo "Read ${PORTSDIR}/UPDATING for the procedure to upgrade or install xorg 7.2." && /usr/bin/false )
+	@if [ ! -L /usr/X11R6 ]; then \
+	    echo -n "/usr/X11R6 exists, but it is not a symlink. "; \
+	    echo "Installation cannot proceed."; \
+	    echo -n "This looks like an incompletely removed old version "; \
+	    echo -n "of X.  In the current version, /usr/X11R6 must be "; \
+	    echo -n "a symlink if it exists at all."; \
+	    echo -n "Please read ${PORTSDIR}/UPDATING (entry of 20070519) "; \
+	    echo -n "for the procedure to upgrade X.org related ports."; \
+	    /usr/bin/false; \
+	fi
 .elif !exists(/usr/X11R6) && !defined(WITHOUT_X11R6_SYMLINK)
 pre-everything::
 	${LN} -s ${X11BASE} /usr/X11R6 || ${TRUE}
@@ -76,5 +85,8 @@ pre-everything::
 do-install:
 		${MKDIR} ${PREFIX}/libdata/xorg
 		${TOUCH} ${PREFIX}/libdata/xorg/libraries
+
+post-install:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
