@@ -17,12 +17,20 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A passwd file cracker (supports distributed nodes)
 
+PLIST_FILES=	sbin/slurp sbin/slurpie
+PORTDOCS=	README
+
+post-patch:
+# Fix for GCC 4.2
+	@${REINPLACE_CMD} -e \
+		's,(u_char)cfg.ptask_level = ,cfg.ptask_level = (u_int),' \
+		${WRKSRC}/src/slurpie.c
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/slurp ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/slurpie ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/slurp* ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/slurpie
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/slurpie/README
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
