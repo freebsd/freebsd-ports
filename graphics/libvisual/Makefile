@@ -6,7 +6,7 @@
 #
 
 # WARNING: when updating this port check if the ports that use libvisual
-# can work with it. Backwards compatiblity is known to be broken in the past.
+# can work with it. Backwards compatibility is known to be broken in the past.
 
 PORTNAME=	libvisual
 PORTVERSION=	0.2.0
@@ -27,10 +27,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500001
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-libvisual_lv_cpu.c
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wno-unused-variable||g' \
