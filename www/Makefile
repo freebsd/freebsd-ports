@@ -673,6 +673,7 @@
     SUBDIR += p5-Flickr-Upload
     SUBDIR += p5-Gantry
     SUBDIR += p5-Geo-Caching
+    SUBDIR += p5-HTML-Adsense
     SUBDIR += p5-HTML-Breadcrumbs
     SUBDIR += p5-HTML-CalendarMonthSimple
     SUBDIR += p5-HTML-Chunks
