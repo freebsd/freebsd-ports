@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	2.18.2
+PORTVERSION=	2.18.3
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -32,8 +32,8 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
-CONFIGURE_ARGS=	--with-mozilla=${GECKO} --mandir=${PREFIX}/man
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ARGS=	--with-mozilla=${GECKO} --mandir=${MANPREFIX}/man
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 GCONF_SCHEMAS=	epiphany-lockdown.schemas epiphany.schemas \
