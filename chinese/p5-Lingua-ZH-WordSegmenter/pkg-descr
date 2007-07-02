@@ -1,0 +1,13 @@
+This is a perl version of simplified Chinese word segmentation.
+
+The algorithm for this segmenter is to search the longest word at each
+point from both left and right directions, and choose the one with
+higher frequency product.
+
+The original program is from the CPAN module Lingua::ZH::WordSegment
+(http://search.cpan.org/~chenyr/) I did the follwing changes: 1) make
+the interface object oriented; 2) make the internal string into utf8;
+3) using sogou's dictionary (http://www.sogou.com/labs/dl/w.html) as
+the default dictionary.
+
+WWW:	http://search.cpan.org/dist/Lingua-ZH-WordSegmenter/
