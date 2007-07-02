@@ -7,18 +7,19 @@
 #
 
 PORTNAME=	tvmet
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny Vector and Matrix template library
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
+MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 MAN1=		tvmet-config.1
 
@@ -28,6 +29,15 @@ CONFIGURE_ARGS+=	--with-cppunit-prefix=${LOCALBASE}
 .else
 CONFIGURE_ENV+=	ac_cv_path_CPPUNIT_CONFIG=no
 .endif
+
+.if defined(WITH_DEBUG)
+CXXFLAGS+=	-DTVMET_DEBUG
+.else
+CXXFLAGS+=	-DTVMET_OPTIMIZE
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|= -O |= |g' ${WRKSRC}/doc/Makefile.in 
 
 post-install:
 .if !defined(NOPORTDOCS)
