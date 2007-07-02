@@ -1,0 +1,68 @@
+--- config/Makefile.in.orig	Tue Feb  6 20:47:18 2007
++++ config/Makefile.in	Thu Jun 21 15:08:28 2007
+@@ -370,13 +370,13 @@
+ 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
+ install-dist_xdmscriptSCRIPTS: $(dist_xdmscript_SCRIPTS)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(xdmscriptdir)" || $(mkdir_p) "$(DESTDIR)$(xdmscriptdir)"
++	test -z "$(EXAMPLESDIR)" || $(mkdir_p) "$(DESTDIR)$(EXAMPLESDIR)"
+ 	@list='$(dist_xdmscript_SCRIPTS)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  if test -f $$d$$p; then \
+ 	    f=`echo "$$p" | sed 's|^.*/||;$(transform)'`; \
+-	    echo " $(dist_xdmscriptSCRIPT_INSTALL) '$$d$$p' '$(DESTDIR)$(xdmscriptdir)/$$f'"; \
+-	    $(dist_xdmscriptSCRIPT_INSTALL) "$$d$$p" "$(DESTDIR)$(xdmscriptdir)/$$f"; \
++	    echo " $(dist_xdmscriptSCRIPT_INSTALL) '$$d$$p' '$(DESTDIR)$(EXAMPLESDIR)/$$f'"; \
++	    $(dist_xdmscriptSCRIPT_INSTALL) "$$d$$p" "$(DESTDIR)$(EXAMPLESDIR)/$$f"; \
+ 	  else :; fi; \
+ 	done
+ 
+@@ -389,13 +389,13 @@
+ 	done
+ install-xdmscriptSCRIPTS: $(xdmscript_SCRIPTS)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(xdmscriptdir)" || $(mkdir_p) "$(DESTDIR)$(xdmscriptdir)"
++	test -z "$(EXAMPLESDIR)" || $(mkdir_p) "$(DESTDIR)$(EXAMPLESDIR)"
+ 	@list='$(xdmscript_SCRIPTS)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  if test -f $$d$$p; then \
+ 	    f=`echo "$$p" | sed 's|^.*/||;$(transform)'`; \
+-	    echo " $(xdmscriptSCRIPT_INSTALL) '$$d$$p' '$(DESTDIR)$(xdmscriptdir)/$$f'"; \
+-	    $(xdmscriptSCRIPT_INSTALL) "$$d$$p" "$(DESTDIR)$(xdmscriptdir)/$$f"; \
++	    echo " $(xdmscriptSCRIPT_INSTALL) '$$d$$p' '$(DESTDIR)$(EXAMPLESDIR)/$$f'"; \
++	    $(xdmscriptSCRIPT_INSTALL) "$$d$$p" "$(DESTDIR)$(EXAMPLESDIR)/$$f"; \
+ 	  else :; fi; \
+ 	done
+ 
+@@ -435,12 +435,12 @@
+ 	done
+ install-dist_xdmconfigDATA: $(dist_xdmconfig_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(xdmconfigdir)" || $(mkdir_p) "$(DESTDIR)$(xdmconfigdir)"
++	test -z "$(EXAMPLESDIR)" || $(mkdir_p) "$(DESTDIR)$(EXAMPLESDIR)"
+ 	@list='$(dist_xdmconfig_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(dist_xdmconfigDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(xdmconfigdir)/$$f'"; \
+-	  $(dist_xdmconfigDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(xdmconfigdir)/$$f"; \
++	  echo " $(dist_xdmconfigDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(EXAMPLESDIR)/$$f'"; \
++	  $(dist_xdmconfigDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(EXAMPLESDIR)/$$f"; \
+ 	done
+ 
+ uninstall-dist_xdmconfigDATA:
+@@ -452,12 +452,12 @@
+ 	done
+ install-xdmconfigDATA: $(xdmconfig_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(xdmconfigdir)" || $(mkdir_p) "$(DESTDIR)$(xdmconfigdir)"
++	test -z "$(EXAMPLESDIR)" || $(mkdir_p) "$(DESTDIR)$(EXAMPLESDIR)"
+ 	@list='$(xdmconfig_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(xdmconfigDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(xdmconfigdir)/$$f'"; \
+-	  $(xdmconfigDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(xdmconfigdir)/$$f"; \
++	  echo " $(xdmconfigDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(EXAMPLESDIR)/$$f'"; \
++	  $(xdmconfigDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(EXAMPLESDIR)/$$f"; \
+ 	done
+ 
+ uninstall-xdmconfigDATA:
