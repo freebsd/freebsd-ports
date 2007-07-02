@@ -9,7 +9,7 @@
  
 -# optimize a lot
 -CFLAGS=-O3
-+CFLAGS += -L%%PREFIX%%/lib -I%%PREFIX%%/include
++CFLAGS += -L${LOCALBASE}/lib -I${LOCALBASE}/include
  
  LIBS=-lvga -lvgagl -lm
  
