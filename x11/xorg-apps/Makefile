@@ -99,7 +99,6 @@ RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		xsetmode:${PORTSDIR}/x11/xsetmode \
 		xsetpointer:${PORTSDIR}/x11/xsetpointer \
 		xsetroot:${PORTSDIR}/x11/xsetroot \
-		xsm:${PORTSDIR}/x11/xsm \
 		xstdcmap:${PORTSDIR}/x11/xstdcmap \
 		xtrapchar:${PORTSDIR}/x11/xtrap \
 		xvidtune:${PORTSDIR}/x11/xvidtune \
@@ -108,6 +107,10 @@ RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		xwininfo:${PORTSDIR}/x11/xwininfo \
 		xwud:${PORTSDIR}/x11/xwud \
 		xterm:${PORTSDIR}/x11/xterm
+
+.if exists(/usr/bin/rsh)
+RUN_DEPENDS+=	xsm:${PORTSDIR}/x11/xsm
+.endif
 
 NO_BUILD=	yes
 
