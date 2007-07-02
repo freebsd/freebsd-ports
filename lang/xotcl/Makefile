@@ -29,7 +29,7 @@ GNU_CONFIGURE=	yes
 OPTIONS=	ACTIWEB		"Include actiweb"		on \
 		TUTORIAL	"Install XOTcl tutorial" 	off
 .else
-AOLSERVERBASE?=	${LOCALBASE}/aolserver
+AOLSERVERBASE?=	aolserver
 .endif
 
 .include <bsd.port.pre.mk>
@@ -38,7 +38,7 @@ AOLSERVERBASE?=	${LOCALBASE}/aolserver
 RUN_DEPENDS+=		${LOCALBASE}/aolserver/bin/init.tcl:${PORTSDIR}/www/aolserver \
 			${LOCALBASE}/lib/xotcl${PORTVERSION}/xotclConfig.sh:${PORTSDIR}/lang/xotcl
 PLIST=			${WRKDIR}/pkg-plist.aolserver
-PLIST_FILES=		${AOLSERVERBASE:S/${LOCALBASE}\///}/modules/tcl/xotcl.tcl
+PLIST_FILES=		${AOLSERVERBASE}/modules/tcl/xotcl.tcl
 LATEST_LINK=		aolserver-xotcl
 NO_BUILD=		yes
 .endif
@@ -77,7 +77,8 @@ post-patch:
 .if defined(AOLSERVER_XOTCL) # Install for aolserver module
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/generic/aol-xotcl.tcl ${AOLSERVERBASE}/modules/tcl/xotcl.tcl
+	@${INSTALL_DATA} ${WRKSRC}/generic/aol-xotcl.tcl \
+		${PREFIX}/${AOLSERVERBASE}/modules/tcl/xotcl.tcl
 .endif
 
 .if !defined(AOLSERVER_XOTCL) # Aolserver module has no post-install
