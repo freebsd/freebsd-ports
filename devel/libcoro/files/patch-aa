@@ -1,7 +1,15 @@
-diff -u arch/x86-freebsd/coro.c arch/x86-freebsd/coro.c
 --- arch/x86-freebsd/coro.c	Fri Jun 23 00:15:18 2000
 +++ arch/x86-freebsd/coro.c	Fri Jun 23 00:16:38 2000
-@@ -63,7 +63,7 @@
+@@ -53,6 +53,8 @@
+ co_create(void *func, void *stack, int size)
+ {
+     struct coroutine *co;
++    intptr_t _co;
++    void **sp;
+     int to_free = 0;
+ 
+     if (size < 128)
+@@ -63,14 +65,15 @@
  	size += 4096-1;
  	size &= ~(4096-1);
  	stack = mmap(0, size, PROT_READ|PROT_WRITE,
@@ -10,5 +18,31 @@ diff -u arch/x86-freebsd/coro.c arch/x86-freebsd/coro.c
  	if (stack == (void*)-1)
  	    return 0;
  
-Only in arch/x86-freebsd: coro.o
-Only in arch/x86-freebsd: libcoro.a
+ 	to_free = size;
+     }
+     co = stack + size;
+-    (unsigned long)co &= ~3;
++    _co = (intptr_t)co & ~3;
++    co = (struct coroutine *)_co;
+     co -= 1;
+ 
+     co->sp = co;
+@@ -80,11 +83,13 @@
+     co->func = func;
+     co->to_free = to_free;
+ 
+-    *--(void **)co->sp = wrap;		// return addr (here: start addr)
+-    *--(void **)co->sp = 0;		// ebp
+-    *--(void **)co->sp = 0;		// ebx
+-    *--(void **)co->sp = 0;		// esi
+-    *--(void **)co->sp = 0;		// edi
++    sp = (void **)co->sp;
++
++    *--sp = wrap;		// return addr (here: start addr)
++    *--sp = 0;			// ebp
++    *--sp = 0;			// ebx
++    *--sp = 0;			// esi
++    *--sp = 0;			// edi
+     return co;
+ }
+ 
