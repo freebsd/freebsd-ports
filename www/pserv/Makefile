@@ -21,6 +21,11 @@ OPTIONS=	LOG "Enable logging" on \
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITHOUT_PHP)
+USE_PHP=	yes
+WANT_PHP_CGI=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g;s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${WRKSRC}/defaults/pserv.conf ${WRKSRC}/sources/main.h
