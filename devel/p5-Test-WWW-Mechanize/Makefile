@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	Test-WWW-Mechanize
-PORTVERSION=	1.12
+PORTVERSION=	1.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fbsdports@commit.it
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Testing-specific WWW::Mechanize subclass
 
-BUILD_DEPENDS=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
+BUILD_DEPENDS=	p5-WWW-Mechanize>=1.24:${PORTSDIR}/www/p5-WWW-Mechanize \
 		${SITE_PERL}/URI/file.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/Carp/Assert/More.pm:${PORTSDIR}/devel/p5-Carp-Assert-More \
 		${SITE_PERL}/HTTP/Server/Simple.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple \
