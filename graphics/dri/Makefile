@@ -6,9 +6,7 @@
 #
 
 PORTNAME=	dri
-PORTVERSION=	6.5.3
-PORTREVISION=	1
-PORTEPOCH=	2
+PORTVERSION=	7.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=mesa3d
@@ -73,8 +71,11 @@ post-patch:
 		-e 's|/usr/X11R6|$$(X11BASE)|g' \
 		-e 's|-lpthread|$$(PTHREAD_LIBS)|g' \
 		-e 's|^\(SRC_DIRS =\).*|\1 mesa|' \
-		-e 's|-DHAVE_POSIX_MEMALIGN||' \
 			${WRKSRC}/configs/freebsd-dri
+.if ${OSVERSION} < 700013
+	@${REINPLACE_CMD} -e 's|-DHAVE_POSIX_MEMALIGN||' \
+			${WRKSRC}/configs/freebsd-dri
+.endif
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
@@ -83,7 +84,7 @@ ALL_TARGET=	freebsd-dri-x86
 .elif ${ARCH} == amd64
 PLIST_SUB+=	I386="@comment "
 PLIST_SUB+=	I386_AMD64=""
-ALL_TARGET=	freebsd-dri
+ALL_TARGET=	freebsd-dri-amd64
 .else
 PLIST_SUB+=	I386="@comment "
 PLIST_SUB+=	I386_AMD64="@comment "
