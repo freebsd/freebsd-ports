@@ -98,6 +98,7 @@
     SUBDIR += p5-Lingua-ZH-Summarize
     SUBDIR += p5-Lingua-ZH-TaBE
     SUBDIR += p5-Lingua-ZH-Toke
+    SUBDIR += p5-Lingua-ZH-WordSegmenter
     SUBDIR += p5-Lingua-ZH-Wrap
     SUBDIR += pcmanx
     SUBDIR += php_doc-hk

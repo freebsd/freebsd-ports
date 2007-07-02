@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/WordSegmenter/.packlist
+%%SITE_PERL%%/Lingua/ZH/WordSegmenter.pm
+@dirrmtry %%SITE_PERL%%/Lingua/ZH
+@dirrmtry %%SITE_PERL%%/Lingua
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/WordSegmenter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
