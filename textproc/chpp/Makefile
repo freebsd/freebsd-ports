@@ -1,6 +1,6 @@
 # New ports collection makefile for:	chpp
 # Date created:				4 May 1999
-# Whom:					Andrey Zakhvatov
+# Whom:					Andrey Zakhvatov <andy@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -16,21 +16,22 @@ COMMENT=	Non-intrusive full-featured text preprocessor
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
-EXAMPLES_DIR=	${PREFIX}/share/examples/chpp
 INFO=		chpp
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile"
+BROKEN=		Does not compile
 .endif
 
 post-install:
-	@${MKDIR} ${EXAMPLES_DIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	${TAR} -C ${WRKSRC}/test -cf - . | \
-		${TAR} -C ${EXAMPLES_DIR} --unlink -xf -
-	@${FIND} ${EXAMPLES_DIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@${FIND} ${EXAMPLES_DIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+		${TAR} -C ${EXAMPLESDIR} --unlink -xf -
+.if !defined(NOPORTEXAMPLES)
+	@${FIND} ${EXAMPLESDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${EXAMPLESDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS NEWS README

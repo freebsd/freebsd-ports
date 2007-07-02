@@ -5,7 +5,7 @@ What distinguishes `chpp' from other textprocessors are mainly two
 features:
 
 * `chpp' is non-intrusive. This means that you can take your
-     favourite text and it is very unlikely that it will be changed when
+     favorite text and it is very unlikely that it will be changed when
      piped through `chpp'. Due to this feature it is pretty easy to
      start using `chpp' since you can just start writing your text and
      need not concern yourself with `chpp' sitting in the background
