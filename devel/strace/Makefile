@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	strace
-PORTVERSION=	4.5.1
-PORTREVISION=	1
+PORTVERSION=	4.5.2
 CATEGORIES=	devel sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +18,8 @@ USE_BZIP2=	yes
 USE_PERL5=	yes # for strace-graph
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
+
+PLIST_FILES=	bin/strace bin/strace-graph
 
 MAN1=		strace.1
 
