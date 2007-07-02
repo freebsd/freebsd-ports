@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	libGL
-PORTVERSION?=	6.5.3
-PORTREVISION=	3
+PORTVERSION?=	7.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
@@ -65,7 +64,7 @@ ALL_TARGET=	freebsd-dri-x86
 .elif ${ARCH} == amd64
 PLIST_SUB+=	I386="@comment "
 PLIST_SUB+=	I386_AMD64=""
-ALL_TARGET=	freebsd-dri
+ALL_TARGET=	freebsd-dri-amd64
 .else
 PLIST_SUB+=	I386="@comment "
 PLIST_SUB+=	I386_AMD64="@comment "
