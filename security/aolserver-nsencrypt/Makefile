@@ -7,6 +7,7 @@
 
 PORTNAME=	aolserver-nsencrypt
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aolserver
@@ -18,19 +19,30 @@ COMMENT=	OpenSSL data encryption module for AOLserver
 
 WRKSRC=		${WRKDIR}/nsencrypt-${PORTVERSION}
 
-AOLSERVERBASE?=	${PREFIX}/aolserver
-BUILD_DEPENDS+=	${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
+AOLSERVERBASE?=	aolserver
+BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 RUN_DEPENDS+=	${BUILD_DEPENDS}
-PLIST_SUB+=	AOLSERVERBASE=${AOLSERVERBASE:S/${PREFIX}\///}
+PLIST_SUB+=	AOLSERVERBASE=${AOLSERVERBASE}
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 
-MAKE_ARGS=	AOLSERVER=${AOLSERVERBASE} OPENSSL=${OPENSSLBASE}
+MAKE_ARGS=	AOLSERVER="${LOCALBASE}/${AOLSERVERBASE}" \
+		OPENSSL="${OPENSSLBASE}"
+
+PLIST_FILES=	${AOLSERVERBASE}/bin/nsencrypt.so \
+		${AOLSERVERBASE}/lib/libnsencrypt.a \
+		${AOLSERVERBASE}/lib/libnsencrypt.so
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog readme.txt
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e '/^MODOBJS  =.*/{p;s/MODOBJS  =/OBJS  +=/g;}' \
+		-e '/^MODLIBS  =.*/{p;s/MODLIBS  =/DLLLIBS  +=/g;}' \
+		${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -5,35 +5,44 @@
 # $FreeBSD$
 #
 
-PORTNAME=	aolserver-nsmysql
+PORTNAME=	nsmysql
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aolserver
-DISTFILES=	nsmysql_v1.tar.gz
+PKGNAMEPREFIX=	aolserver-
+DISTNAME=	nsmysql_v1
 DIST_SUBDIR=	aolserver
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Internal MySQL database driver for AOLserver
 
-WRKSRC=		${WRKDIR}/nsmysql_v1
-
-AOLSERVERBASE?=	${PREFIX}/aolserver
-BUILD_DEPENDS+=	${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
+AOLSERVERBASE?=	aolserver
+BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 RUN_DEPENDS+=	${BUILD_DEPENDS}
-PLIST_SUB+=	AOLSERVERBASE=${AOLSERVERBASE:S/${PREFIX}\///}
 
 USE_MYSQL=	yes
 USE_GMAKE=	yes
 
-MAKE_ARGS=	AOLSERVER=${AOLSERVERBASE}
+MAKE_ARGS=	AOLSERVER="${LOCALBASE}/${AOLSERVERBASE}" \
+		MYSQL_PREFIX="${LOCALBASE}" \
+		MODLIBS="-L${LOCALBASE}/lib/mysql -lmysqlclient_r" \
+		DLLLIBS="-L${LOCALBASE}/lib/mysql -lmysqlclient_r" \
+		NO_LDOVERRIDE=1
+
+PLIST_FILES=	${AOLSERVERBASE}/bin/nsmysql.so \
+		${AOLSERVERBASE}/lib/libnsmysql.a \
+		${AOLSERVERBASE}/lib/libnsmysql.so
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog README INSTALL
 .endif
 
 post-patch:
-	@ ${REINPLACE_CMD} -e 's|OBJS|MODOBJS|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/^MODLIBS  =/MODLIBS +=/g' \
+		-e '/^OBJS      =.*/{n;s/.*/MODOBJS  = $$(OBJS)/g;G;}' \
+		${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
