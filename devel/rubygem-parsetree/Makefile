@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	parsetree
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,8 @@ DISTNAME=	ParseTree-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ruby parse tree tools
 
-BUILD_DEPENDS=	rubygem-inline>=3.2.0:${PORTSDIR}/devel/rubygem-inline
+BUILD_DEPENDS=	rubygem-inline>=3.2.0:${PORTSDIR}/devel/rubygem-inline \
+		rubygem-hoe>=1.2.1:${PORTSDIR}/devel/rubygem-hoe
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GEM_NAME=       ${DISTNAME}
