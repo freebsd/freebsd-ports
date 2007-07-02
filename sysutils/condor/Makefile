@@ -29,6 +29,10 @@ CONFLICTS=	condor-devel-[0-9]*
 
 .include <bsd.port.pre.mk>
 
+.if defined(PACKAGE_BUILDING)
+IGNORE=		requires fully qualified hostname
+.endif
+
 .if defined(WITHOUT_SUBMIT_NODE)
 INSTALL_SUBMIT_NODE=
 .else
