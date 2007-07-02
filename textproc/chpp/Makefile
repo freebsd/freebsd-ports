@@ -25,10 +25,10 @@ BROKEN=		Does not compile
 .endif
 
 post-install:
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${TAR} -C ${WRKSRC}/test -cf - . | \
 		${TAR} -C ${EXAMPLESDIR} --unlink -xf -
-.if !defined(NOPORTEXAMPLES)
 	@${FIND} ${EXAMPLESDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
 	@${FIND} ${EXAMPLESDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .endif
