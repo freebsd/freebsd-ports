@@ -10043,6 +10043,7 @@ p5-MIDI		ports/audio/p5-MIDI
 p5-MIME-Base32	ports/converters/p5-MIME-Base32
 p5-MIME-Base64	ports/converters/p5-MIME-Base64
 p5-MIME-Charset	ports/mail/p5-MIME-Charset
+p5-MIME-EncWords	ports/mail/p5-MIME-EncWords
 p5-MIME-Explode	ports/mail/p5-MIME-Explode
 p5-MIME-Fast	ports/mail/p5-MIME-Fast
 p5-MIME-Lite	ports/mail/p5-MIME-Lite
