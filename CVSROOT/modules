@@ -6485,6 +6485,7 @@ libjackasyn	ports/audio/libjackasyn
 libjbigi	ports/math/libjbigi
 libjingle	ports/net-im/libjingle
 libjit		ports/lang/libjit
+libkdcraw	ports/graphics/libkdcraw
 libkexif	ports/graphics/libkexif
 libkexiv2	ports/graphics/libkexiv2
 libkipi		ports/graphics/libkipi
