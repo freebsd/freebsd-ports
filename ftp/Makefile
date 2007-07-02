@@ -53,7 +53,6 @@
     SUBDIR += linux-curl
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp
-    SUBDIR += lukemftp
     SUBDIR += mget
     SUBDIR += mirror
     SUBDIR += moftpd

@@ -3082,3 +3082,4 @@ mail/mimp|mail/horde-mimp|2007-06-21|Port renamed for consistency
 mail/turba|mail/horde-turba|2007-06-21|Port renamed for consistency
 security/jeta|security/horde-jeta|2007-06-21|Port renamed for consistency
 graphics/digikamimageplugins|graphics/digikam|2007-07-02|Projects merged
+ftp/lukemftp|ftp/tnftp|2007-07-02|Vendor name change
