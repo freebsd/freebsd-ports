@@ -6,12 +6,11 @@
 #    $MCom: ports/devel/lasi/Makefile,v 1.1 2006/10/04 20:25:40 ahze Exp $
 
 PORTNAME=	lasi
-PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTVERSION=	1.0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.unifont.org/lasi/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	C++ stream output interface for creating Postscript documents
 
 USE_GCC=	3.2+
