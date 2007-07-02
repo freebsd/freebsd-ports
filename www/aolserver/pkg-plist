@@ -816,10 +816,10 @@
 %%HTMLDOCS%%@dirrm %%AOLSERVERBASE%%/html
 @dirrm %%AOLSERVERBASE%%/lib
 @dirrmtry %%AOLSERVERBASE%%/log
-@dirrm %%AOLSERVERBASE%%/man/man1
-@dirrm %%AOLSERVERBASE%%/man/man3
-@dirrm %%AOLSERVERBASE%%/man/mann
-@dirrm %%AOLSERVERBASE%%/man
+%%MANPAGES%%@dirrm %%AOLSERVERBASE%%/man/man1
+%%MANPAGES%%@dirrm %%AOLSERVERBASE%%/man/man3
+%%MANPAGES%%@dirrm %%AOLSERVERBASE%%/man/mann
+%%MANPAGES%%@dirrm %%AOLSERVERBASE%%/man
 @dirrm %%AOLSERVERBASE%%/modules/tcl/nsperm
 @dirrm %%AOLSERVERBASE%%/modules/tcl
 @dirrm %%AOLSERVERBASE%%/modules
