@@ -112,7 +112,7 @@
 +        -I../portaudio/pa_common -I../portaudio/pablio \
 +        -I../portmidi/pm_common \
 +        -I../portmidi/pm_linux \
-+	-Werror -fno-strict-aliasing"
++        -fno-strict-aliasing"
 +    LDFLAGS="-Wl,-export-dynamic"
 +    SYSSRC="s_audio_oss.c"
 +    if test x$portaudio = "xyes";

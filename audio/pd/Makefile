@@ -1,23 +1,24 @@
-# New ports collection makefile for:	pd
+# New ports collection makefile for:	Pd
 # Date created:				2002-05-24
-# Whom:					trevor
+# Whom:					Trevor Johnson <trevor@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	pd
 DISTVERSION=	0.40-2
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	.src
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Pure Data, a MIDI-capable real-time audio processor/synthesizer
+COMMENT=	MIDI-capable real-time audio processor/synthesizer
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S;.src;/src;}
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include \
+		-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 MAKEFILE=	makefile
 MAN1=		pd.1 pdreceive.1 pdsend.1
@@ -77,7 +78,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../bin/pd.tk ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/m_pd.h ${PREFIX}/include
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for ii in LICENSE README
 	${INSTALL_DATA} ${WRKSRC}/../${ii}.txt ${DOCSDIR}
 .endfor
@@ -86,7 +87,7 @@ do-install:
 .for ii in pd pdreceive pdsend
 	${INSTALL_MAN} ${WRKSRC}/../man/${ii}.1 ${PREFIX}/man/man1/
 .endfor
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/../extra && ${PAX} -r -w * ${DATADIR}
 
 .include <bsd.port.post.mk>
