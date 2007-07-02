@@ -37,6 +37,10 @@ BUILDDIR=	${WRKSRC}/iiimsf
 IGNORE=	is supported on FreeBSD 5.3 and later only
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if defined(WITH_DEBUG)
 CFLAGS+=	-g -ggdb -DDEBUG
 .endif
