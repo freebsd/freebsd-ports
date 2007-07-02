@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	qucs
-PORTVERSION=	0.0.11
-PORTREVISION=	1
+PORTVERSION=	0.0.12
 CATEGORIES=	cad science
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical circuit design and simulation tool
@@ -21,7 +19,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
-MAN1=		qucs.1 qucsator.1 qucsattenuator.1 qucsconv.1 qucsdigi.1 \
-		qucsedit.1 qucsfilter.1 qucshelp.1 qucslib.1 qucstrans.1
+MAN1=		ps2sp.1 qucs.1 qucsator.1 qucsattenuator.1 qucsconv.1 \
+		qucsdigi.1 qucsedit.1 qucsfilter.1 qucshelp.1 qucslib.1 \
+		qucstrans.1 qucsveri.1
 
 .include <bsd.port.mk>
