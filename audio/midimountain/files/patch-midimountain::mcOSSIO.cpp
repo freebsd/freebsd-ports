@@ -1,6 +1,6 @@
---- midimountain/mcOSSIO.cpp	Wed Dec 11 23:35:35 2002
-+++ midimountain/mcOSSIO.cpp	Wed Dec 11 23:35:37 2002
-@@ -1,13 +1,14 @@
+--- midimountain/mcOSSIO.cpp.orig	Tue Oct 23 23:19:14 2001
++++ midimountain/mcOSSIO.cpp	Mon Jul  2 14:09:01 2007
+@@ -1,17 +1,18 @@
  //=============================================================================
  // implementation class midi IO
  //=============================================================================
@@ -16,6 +16,11 @@
  
  
  // define static variables:
+-const char* TMidiOSSIO::sequencer       = "/dev/music";
++const char* TMidiOSSIO::sequencer       = "/dev/music0";
+ int    TMidiOSSIO::class_count          =  0;
+ uchar  TMidiOSSIO::midi_write_packet[4] = {SEQ_MIDIPUTC, 0, 0, 0};
+ uchar  TMidiOSSIO::midi_read_packet[4];
 @@ -464,7 +465,7 @@
  					break;
  
