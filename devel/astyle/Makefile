@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	astyle
-PORTVERSION=	1.20.2
+PORTVERSION=	1.21
 CATEGORIES=	devel textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}_linux
+DISTNAME=	${PORTNAME}_${PORTVERSION}__linux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	A reindenter and reformatter of C, C++, C\# and Java source code
 
 ALL_TARGET=	astyle
@@ -30,7 +30,7 @@ pre-patch:
 
 PLIST_FILES=	bin/astyle
 .if !defined(NOPORTDOCS)
-PORTDOCS=	astyle.html astyleX.html astyle_news.html astyle_release_notes.html develop.html install.html license.html
+PORTDOCS=	astyle.html astyleX.html astyle_news.html install.html license.html astyle_notes.html index.html
 .endif
 
 do-install:
