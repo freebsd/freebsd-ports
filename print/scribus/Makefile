@@ -26,7 +26,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 
 USE_BZIP2=	yes
 USE_QT_VER=	3
-USE_GCC=	3.3+
 USE_GNOME=	gnometarget libartlgpl2 libxml2
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
@@ -41,16 +40,8 @@ MANLANG=	"" pl
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700029
-BROKEN=		Broken objformat handling
-.endif
-
 .if ${OSVERSION} < 500035
 CXXFLAGS+=	-fpermissive
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
 .endif
 
 post-patch:
@@ -62,5 +53,7 @@ post-patch:
 		s|python2_3|${PYTHON_VERSION:S/./_/}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/\/share\/pixmaps\//s|^|#|g' \
 		${WRKSRC}/scribus/icons/Makefile.in
+	 @${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	    ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
