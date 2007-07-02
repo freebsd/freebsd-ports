@@ -1,4 +1,4 @@
-# New ports collection makefile for:	xenon
+# New ports collection makefile for:	Xenon
 # Date created:				22 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
@@ -16,18 +16,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X-based text editor
 
 USE_GMAKE=	yes
-USE_GCC=	3.4+
-USE_X_PREFIX=	yes
 USE_XPM=	yes
 MAKEFILE=	${WRKSRC}/makefiles/Makefile.Linux
+NOPRECIOUSSOFTMAKEVARS=	yes
+EXAMPLESDIR=	${PREFIX}/share/examples/ex
 
 MAN1=		xe.1
 
 FIX_FILES=	Xe.h XeApp.C XeApp.h XeFontTable.C XeKeyTable.C \
 		XeKeyTable.h XeObject.C XeObject.h XeObjectTable.h XeText.C \
 		XeText.h
-
-.include <bsd.port.pre.mk>
 
 do-configure:
 .for file in ${FIX_FILES}
@@ -38,13 +36,17 @@ do-configure:
 		-e 's|#include <hash_map>|#include <ext/hash_map>|' \
 		-e 's|std::hash_map|__gnu_cxx::hash_map|g' \
 		-e 's|std::hash|__gnu_cxx::hash|g' \
-		${WRKSRC}/${file}
+			${WRKSRC}/${file}
 .endfor
+	@${REINPLACE_CMD} '/friend int compare/d' ${WRKSRC}/KrAtom.h
+	@${REINPLACE_CMD} 's|<Undo\*>|<class Undo*>|' ${WRKSRC}/XeText.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xe ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xe.1 ${PREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/share/examples/xe
-	${INSTALL_DATA} ${WRKSRC}/xerc ${PREFIX}/share/examples/xe/sample.xerc
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/xerc ${EXAMPLESDIR}/sample.xerc
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
