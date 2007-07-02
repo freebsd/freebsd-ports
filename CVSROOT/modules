@@ -9703,6 +9703,7 @@ p5-Gtk2-Html2	ports/x11-toolkits/p5-Gtk2-Html2
 p5-Gtk2-Spell	ports/devel/p5-Gtk2-Spell
 p5-Gtk2-TrayIcon	ports/x11-toolkits/p5-Gtk2-TrayIcon
 p5-GtkXmHTML	ports/x11-toolkits/p5-GtkXmHTML
+p5-HTML-Adsense	ports/www/p5-HTML-Adsense
 p5-HTML-Breadcrumbs	ports/www/p5-HTML-Breadcrumbs
 p5-HTML-CalendarMonthSimple	ports/www/p5-HTML-CalendarMonthSimple
 p5-HTML-Chunks	ports/www/p5-HTML-Chunks
