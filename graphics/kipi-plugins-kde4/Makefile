@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kipi-plugins
-PORTVERSION=	0.1.3
-PORTREVISION=	4
+PORTVERSION=	0.1.4
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,7 +16,8 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	KDE Image Plugin Interface plugins
 
 LIB_DEPENDS=	kipi.1:${PORTSDIR}/graphics/libkipi \
-		exiv2.0:${PORTSDIR}/graphics/exiv2
+		kexiv2.2:${PORTSDIR}/graphics/libkexiv2 \
+		kdcraw.1:${PORTSDIR}/graphics/libkdcraw
 
 OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		BATCHPROCESSIMAGES "batch processing on images" on \
@@ -28,6 +28,7 @@ OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		GALLERYEXPORT "export images to remote Gallery server" on \
 		GPSSYNC "geolocalize pictures" on \
 		HTMLEXPORT "export images collections into HTML page" on \
+		IMAGEVIEWER "OpenGL based image viewer" on \
 		JPEGLOSSLESS "batch processing without losing metainfo" on \
 		KAMERAKLIENT "GPhoto2 interface (import from cameras)" on \
 		METADATAEDIT "edit EXIF and IPTC pictures metadata" on \
@@ -72,6 +73,7 @@ PLIST_SUB+=	BATCHPROCESSIMAGES:="@comment "
 .if !defined(WITHOUT_CALENDAR)
 PLIST_SUB+=	CALENDAR:=""
 SUBDIRS+=	calendar
+LIB_DEPENDS+=	kcal.2:${PORTSDIR}/deskutils/kdepim3
 .else
 PLIST_SUB+=	CALENDAR:="@comment "
 .endif
@@ -118,6 +120,13 @@ SUBDIRS+=	htmlexport
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
 PLIST_SUB+=	HTMLEXPORT:="@comment "
+.endif
+
+.if !defined(WITHOUT_IMAGEVIEWER)
+PLIST_SUB+=	IMAGEVIEWER:=""
+SUBDIRS+=	imageviewer
+.else
+PLIST_SUB+=	IMAGEVIEWER:="@comment "
 .endif
 
 .if !defined(WITHOUT_JPEGLOSSLESS)
