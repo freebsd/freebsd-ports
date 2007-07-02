@@ -13,7 +13,7 @@ MASTER_SITES=	http://got.net/~brian/teknap/ \
 		ftp://ftp.arnes.si/packages2/OpenBSD/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.g/g/}
 
-MAINTAINER=	calle.madestrand@norrgarden.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console napster client
 
 .if defined(WITH_MP3)
