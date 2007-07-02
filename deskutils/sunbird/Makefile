@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	sunbird
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.5
 PORTEPOCH=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	calendar/sunbird/releases/${DISTVERSION}/source
-DISTNAME=	${PORTNAME}-${DISTVERSION}.source
+DISTNAME=	lightning-${PORTNAME}-${DISTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Redesign of the Mozilla Calendar with XUL interface
@@ -58,6 +57,11 @@ post-patch:
 		${FILESDIR}/sunbird.desktop.in >${WRKDIR}/sunbird.desktop
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/security/manager/ssl/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|%%LIB_BZ2%%|${LIB_BZ2}|' \
+		${WRKSRC}/toolkit/mozapps/update/src/updater/Makefile.in
+
+post-build:
+	@(cd ${WRKSRC}/xpfe/components/autocomplete/src && ${GMAKE})
 
 pre-install:
 	${ECHO_CMD} 'share/applications/sunbird.desktop' >> ${PLIST}

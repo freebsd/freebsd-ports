@@ -22,8 +22,8 @@
  		$(NULL)
  
  include $(topsrcdir)/config/rules.mk
---- security/manager/Makefile.in.orig	Thu Jun 22 14:47:38 2006
-+++ security/manager/Makefile.in	Thu Oct 12 23:54:37 2006
+--- security/manager/Makefile.in.orig	Mon Jun 26 18:14:34 2006
++++ security/manager/Makefile.in	Mon Jul  2 06:13:12 2007
 @@ -54,22 +54,13 @@
  	SSL3_LIB \
  	SOFTOKEN3_LIB \
@@ -47,24 +47,33 @@
  # Default
  HAVE_FREEBL_LIBS = 1
  
-@@ -217,11 +208,6 @@
+@@ -217,13 +208,6 @@
+ 
  .nss.cleaned: .nss.checkout
  ifndef MOZ_NATIVE_NSS
- 	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
+-	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
 -	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) clean
 -ifndef SKIP_CHK
 -	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) clean
 -	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS) clean
 -endif
- 	touch $@
+-	touch $@
  endif
  
-@@ -242,95 +228,16 @@
+ .nss.checkout:
+@@ -240,105 +224,12 @@
+ endif
  
  libs::
- ifndef MOZ_NATIVE_NSS
+-ifndef MOZ_NATIVE_NSS
 -	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS)
--	$(MAKE) -C $(topsrcdir)/security/dbm $(DEFAULT_GMAKE_FLAGS) 
+-endif
+-ifeq ($(OS_ARCH),WINNT)
+-	cd $(DIST)/lib; cp -f $(LIB_PREFIX)dbm$(MOZ_BITS).$(LIB_SUFFIX) $(LIB_PREFIX)dbm.$(LIB_SUFFIX)
+-else
+-	cd $(DIST)/lib; cp -f $(LIB_PREFIX)mozdbm_s.$(LIB_SUFFIX) $(LIB_PREFIX)dbm.$(LIB_SUFFIX); $(RANLIB) $(LIB_PREFIX)dbm.$(LIB_SUFFIX)
+-endif
+-ifndef MOZ_NATIVE_NSS
 -	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS)
 -ifndef SKIP_CHK
 -	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS)
@@ -107,16 +116,15 @@
 -	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_64FPU_LIB) $(DIST)/bin
 -endif
 -endif
- 	$(MAKE) -C boot $@
- 	$(MAKE) -C ssl $@
+-	$(MAKE) -C boot $@
+-	$(MAKE) -C ssl $@
  	$(MAKE) -C locales $@
  ifdef MOZ_XUL
  	$(MAKE) -C pki $@
  endif
-+endif
  
  install::
- ifndef MOZ_NATIVE_NSS
+-ifndef MOZ_NATIVE_NSS
 -	$(SYSINSTALL) -m 755 $(DIST)/lib/$(LOADABLE_ROOT_MODULE) $(DESTDIR)$(mozappdir)
 -ifndef SKIP_CHK
 -	$(SYSINSTALL) -m 644 $(DIST)/lib/$(SOFTOKEN3_CHK) $(DESTDIR)$(mozappdir)
@@ -153,10 +161,13 @@
 -	$(SYSINSTALL) -m 755 $(DIST)/lib/$(FREEBL_64INT_LIB) $(DESTDIR)$(mozappdir)
 -	$(SYSINSTALL) -m 755 $(DIST)/lib/$(FREEBL_64FPU_LIB) $(DESTDIR)$(mozappdir)
 -endif
- endif
- 	$(MAKE) -C boot $@
- 	$(MAKE) -C ssl $@
-@@ -347,12 +254,6 @@
+-endif
+-	$(MAKE) -C boot $@
+-	$(MAKE) -C ssl $@
+ 	$(MAKE) -C locales $@
+ ifdef MOZ_XUL
+ 	$(MAKE) -C pki $@
+@@ -352,12 +243,6 @@
  	$(MAKE) -C pki $@
  endif
  ifndef MOZ_NATIVE_NSS
@@ -169,3 +180,19 @@
  endif
  
  echo-requires-recursive::
+--- toolkit/mozapps/update/src/updater/Makefile.in.orig	Mon Jul  2 07:59:59 2007
++++ toolkit/mozapps/update/src/updater/Makefile.in	Mon Jul  2 08:00:21 2007
+@@ -52,11 +52,11 @@
+ 
+ PROGRAM = updater$(BIN_SUFFIX)
+ 
+-REQUIRES = libmar libbz2
++REQUIRES = libmar
+ 
+ LIBS += \
+ 	$(DIST)/lib/$(LIB_PREFIX)mar.$(LIB_SUFFIX) \
+-	$(DIST)/lib/$(LIB_PREFIX)bz2.$(LIB_SUFFIX) \
++	%%LIB_BZ2%% \
+ 	$(NULL)
+ 
+ ifeq ($(OS_ARCH),WINNT)

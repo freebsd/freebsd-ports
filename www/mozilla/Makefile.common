@@ -244,6 +244,12 @@ MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
 		-e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g'
 MOZCONFIG_SED?= ${SED} ${MOZ_SED_ARGS}
 
+.if ${OSVERSION} >= 700000 || exists(/usr/lib/libbz2_p.a)
+LIB_BZ2=	-lbz2_p
+.else
+LIB_BZ2=	-lbz2
+.endif
+
 post-patch: gecko-post-patch gecko-moz-pis-patch
 
 gecko-post-patch:

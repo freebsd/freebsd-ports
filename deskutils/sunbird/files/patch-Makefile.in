@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Mon Jul  2 06:19:35 2007
++++ Makefile.in	Mon Jul  2 06:19:47 2007
+@@ -91,7 +91,6 @@
+ #
+ # tier 1 -  3rd party individual libraries
+ #
+-tier_1_dirs	+= dbm
+ 
+ ifndef MOZ_NATIVE_JPEG
+ tier_1_dirs	+= jpeg
+@@ -107,7 +106,6 @@
+ endif
+ 
+ ifdef MOZ_UPDATER
+-tier_1_dirs += modules/libbz2
+ tier_1_dirs += modules/libmar
+ endif
+ 
