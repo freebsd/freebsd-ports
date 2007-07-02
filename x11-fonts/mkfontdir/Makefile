@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkfontdir
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,6 +14,7 @@ COMMENT=	Create an index of X font files in a directory
 
 XORG_CAT=	app
 
+PLIST_FILES=	bin/mkfontdir
 MAN1=		mkfontdir.1
 
 .include <bsd.port.mk>
