@@ -1,6 +1,6 @@
-# New ports collection makefile for:	linplasma
+# New ports collection makefile for:	LinPlasma
 # Date created:				2000-10-22
-# Whom:					trevor
+# Whom:					Trevor Johnson <trevor@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -26,6 +26,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 post-patch:
 	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s:PI:M_PI:g" ${WRKSRC}/linplasma.c
+	@${REINPLACE_CMD} -e \
+		"s:(int)palptr = (int:palptr = (unsigned char *:" \
+			${WRKSRC}/linplasma.c
 
 pre-install:
 	${ECHO_CMD} "bin/linplasma" > ${PLIST}
