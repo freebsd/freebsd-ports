@@ -5,33 +5,41 @@
 # $FreeBSD$
 #
 
-PORTNAME=	aolserver-nszlib
+PORTNAME=	nszlib
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	archivers www
 MASTER_SITES=	ftp://ftp.crystalballinc.com/pub/vlad/
 MASTER_SITE_SUBDIR=	aolserver
-DISTNAME=	nszlib
+PKGNAMEPREFIX=	aolserver-
+DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	aolserver
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Zlib library interface for AOLserver
 
-AOLSERVERBASE?=	${PREFIX}/aolserver
+AOLSERVERBASE?=	aolserver
 
-BUILD_DEPENDS+=	${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
+BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 RUN_DEPENDS+=	${BUILD_DEPENDS}
-PLIST_SUB+=	AOLSERVERBASE=${AOLSERVERBASE:S/${PREFIX}\///}
 
 USE_GMAKE=	yes
 
-MAKE_ARGS=	AOLSERVER=${AOLSERVERBASE}
+MAKE_ARGS=	AOLSERVER="${LOCALBASE}/${AOLSERVERBASE}" \
+		DLLLIBS="-lz" MODLIBS="-lz"
+
+PLIST_FILES=	${AOLSERVERBASE}/bin/nszlib.so \
+		${AOLSERVERBASE}/lib/libnszlib.a \
+		${AOLSERVERBASE}/lib/libnszlib.so
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog README example.tcl
 .endif
 
 post-patch:
-	@ ${REINPLACE_CMD} -e 's|OBJS|MODOBJS|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/^MODLIBS  =/MODLIBS +=/g' \
+		-e '/^OBJS     =.*/{n;s/.*/MODOBJS  = $$(OBJS)/g;G;}' \
+		${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)

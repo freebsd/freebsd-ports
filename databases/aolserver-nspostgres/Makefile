@@ -7,6 +7,7 @@
 
 PORTNAME=	nspostgres
 PORTVERSION=	4.1
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,20 +20,31 @@ COMMENT=	Internal PostgreSQL driver for AOLserver
 
 WRKSRC=		${WRKDIR}/nspostgres-${PORTVERSION}
 
-AOLSERVERBASE?=	${PREFIX}/aolserver
-BUILD_DEPENDS+=	${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
+AOLSERVERBASE?=	aolserver
+BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 RUN_DEPENDS+=	${BUILD_DEPENDS}
-PLIST_SUB+=	AOLSERVERBASE=${AOLSERVERBASE:S/${PREFIX}\///}
 
 USE_PGSQL=	yes
 DEFAULT_PGSQL_VER=	82
 USE_GMAKE=	yes
 
-MAKE_ARGS=	AOLSERVER=${AOLSERVERBASE} POSTGRES=${LOCALBASE} ACS=1
+MAKE_ARGS=	AOLSERVER="${LOCALBASE}/${AOLSERVERBASE}" \
+		PG_CONFIG="${LOCALBASE}/bin/pg_config" \
+		POSTGRES=PG_CONFIG ACS=1 OPENSSL=1
+
+PLIST_FILES=	${AOLSERVERBASE}/bin/nspostgres.so \
+		${AOLSERVERBASE}/lib/libnspostgres.a \
+		${AOLSERVERBASE}/lib/libnspostgres.so
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog README
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e '/^MODOBJS   =.*/{n;s/.*/OBJS  = $$(MODOBJS)/g;G;}' \
+		-e '/MODLIBS *+=.*/{p;s/MODLIBS *+=/DLLLIBS  +=/g;}' \
+		${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
