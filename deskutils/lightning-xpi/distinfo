@@ -1,3 +1,6 @@
+MD5 (lightning-0.5-tb-FreeBSD7-i386.xpi) = f54eb364f474c7a0e6ad3cf4badb5587
+SHA256 (lightning-0.5-tb-FreeBSD7-i386.xpi) = 91a7598bb73c3965f78d64d2384de4129910f62c9b1ecf05523244b63c0a5740
+SIZE (lightning-0.5-tb-FreeBSD7-i386.xpi) = 1135425
 MD5 (lightning-0.5-tb-FreeBSD6-sparc64.xpi) = 1dd62b41b77097a287af62b2b6bd56fc
 SHA256 (lightning-0.5-tb-FreeBSD6-sparc64.xpi) = be3cecfd35bee4e069779b2d7fd934088c453ec5485186b1de8b77c3cf03c3e9
 SIZE (lightning-0.5-tb-FreeBSD6-sparc64.xpi) = 1189082
