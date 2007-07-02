@@ -7,6 +7,7 @@
 
 PORTNAME=	libX11
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -16,10 +17,10 @@ COMMENT=	X11 library
 .if defined(WITH_XCB)
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xcb-xlib.pc:${PORTSDIR}/x11/libxcb
 RUN_DEPENDS=	${BUILD_DEPENDS}
-CONFIGURE_ARGS= --with-xcb=yes
+CONFIGURE_ARGS=	--with-xcb=yes
 PLIST_SUB+=	XCB=""
 .else
-CONFIGURE_ARGS= --with-xcb=no
+CONFIGURE_ARGS=	--with-xcb=no
 PLIST_SUB+=	XCB="@comment "
 .endif
 
