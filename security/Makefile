@@ -586,6 +586,7 @@
     SUBDIR += proxycheck
     SUBDIR += proxytunnel
     SUBDIR += pscan
+    SUBDIR += pssh
     SUBDIR += pure-sfv
     SUBDIR += putty
     SUBDIR += pvk
