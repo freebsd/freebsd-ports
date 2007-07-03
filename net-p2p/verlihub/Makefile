@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	verlihub
-PORTVERSION=	0.9.8.c
-PORTREVISION=	2
+DISTVERSION=	0.9.8d-RC1
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	verlihub-0.9.8c-RC2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Direct Connect protocol server (Hub)
@@ -23,8 +21,6 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP \
 		pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-
-WRKSRC=		${WRKDIR}/verlihub-0.9.8c
 
 USE_RC_SUBR=	verlihub
 
@@ -38,6 +34,9 @@ SUB_FILES+=	pkg-message
 DOCS=		configuring.txt using.txt help.html verlihub.html
 MANUAL_DOCS=	verlihub.css verlihub_manual.html
 PORTDOCS=	${DOCS} ${MANUAL_DOCS}
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)
