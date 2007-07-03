@@ -379,7 +379,6 @@
     SUBDIR += nvnet
     SUBDIR += nxserver
     SUBDIR += nylon
-    SUBDIR += obnc
     SUBDIR += ocaml-netclient
     SUBDIR += ohphone
     SUBDIR += olsrd
