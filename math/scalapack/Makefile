@@ -9,10 +9,12 @@ PORTNAME=	scalapack
 PORTVERSION=	1.7.5
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.netlib.org/scalapack/
+MASTER_SITES=	ftp://ftp.netlib.org/scalapack/ \
+		${MASTER_SITE_LOCAL:S/$/:install_ps/}
+MASTER_SITE_SUBDIR+= maho/scalapack/:install_ps
 DISTFILES=	scalapack-${PORTVERSION}.tgz manpages.tgz
 .if !defined(NOPORTDOCS)
-DISTFILES+=	scalapack_install.ps scalapackqref.ps  \
+DISTFILES+=	scalapack_install.ps:install_ps scalapackqref.ps  \
 		lawn100.ps pblasqref.ps manual.ps design.ps \
 		pumma_refmanual.ps trans.ps
 .endif
