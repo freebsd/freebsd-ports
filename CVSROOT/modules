@@ -8268,7 +8268,6 @@ objc		ports/lang/objc
 objcunit	ports/devel/objcunit
 objectivelib	ports/devel/objectivelib
 obliterate	ports/sysutils/obliterate
-obnc		ports/net/obnc
 obtuner		ports/x11-wm/obtuner
 ocaml		ports/lang/ocaml
 ocaml-annexlib	ports/devel/ocaml-annexlib
