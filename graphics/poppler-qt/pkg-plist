@@ -1,8 +1,9 @@
-include/poppler/poppler-link-qt3.h
-include/poppler/poppler-page-transition.h
-include/poppler/poppler-qt.h
+include/poppler/qt3/poppler-link-qt3.h
+include/poppler/qt3/poppler-page-transition.h
+include/poppler/qt3/poppler-qt.h
 lib/libpoppler-qt.a
 lib/libpoppler-qt.la
 lib/libpoppler-qt.so
 lib/libpoppler-qt.so.1
 libdata/pkgconfig/poppler-qt.pc
+@dirrm include/poppler/qt3

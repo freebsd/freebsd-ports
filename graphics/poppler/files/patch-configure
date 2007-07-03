@@ -1,0 +1,11 @@
+--- configure.orig	Tue Jul  3 17:06:02 2007
++++ configure	Tue Jul  3 17:06:36 2007
+@@ -25848,7 +25848,7 @@
+     fi
+ fi
+ 
+-if test "x$have_qt" == "xyes"; then
++if test "x$have_qt" = "xyes"; then
+     ac_ext=cpp
+ ac_cpp='$CXXCPP $CPPFLAGS'
+ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
