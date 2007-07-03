@@ -1,0 +1,11 @@
+--- config.h.in.orig	Tue Jul  3 20:40:57 2007
++++ config.h.in	Tue Jul  3 20:41:07 2007
+@@ -475,7 +475,7 @@
+ #undef size_t
+ 
+ /* Define to `unsigned int' if <sys/types.h> does not define it */
+-#undef socklen_t
++/* #undef socklen_t */
+ 
+ /* Define as `fork' if `vfork' does not work. */
+ #undef vfork
