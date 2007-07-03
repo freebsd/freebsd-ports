@@ -23,5 +23,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 DIST_SUBDIR=	rpm
 PLIST=		${MASTERDIR}/pkg-plist.${LINUX_RPM_ARCH}
+SRC_DISTFILES=	# empty, perl is covered by the Artistic License, so this is ok
 
 .include <bsd.port.mk>
