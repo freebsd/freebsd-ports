@@ -27,10 +27,6 @@ CFLAGS+=	-fPIC
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 .if ${HAVE_GNOME:Mlibxslt}!=""
 USE_GNOME+=	libxslt
 .else
@@ -38,6 +34,10 @@ CONFIGURE_ARGS+=	--disable-xslt
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} "s:/usr/bin/perl:${PERL}:" ${WRKSRC}/configure.pl
+	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},' ${WRKSRC}/configure.pl
+# Fix for GCC 4.2
+	@${REINPLACE_CMD} -e 's,^std::ostream,namespace xml { &,' \
+		-e '/^namespace/s,xml::,,g' -e '$$s,^,} ,' \
+		${WRKSRC}/src/libxml/node.cxx
 
 .include <bsd.port.post.mk>
