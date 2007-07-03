@@ -3,7 +3,7 @@
 # Whom:                 marcus@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/poppler/Makefile,v 1.35 2007/06/26 16:33:29 ahze Exp $
+#   $MCom: ports/graphics/poppler/Makefile,v 1.36 2007/07/01 20:46:42 mezz Exp $
 #
 
 PORTNAME=	poppler
@@ -25,8 +25,8 @@ CONFIGURE_ARGS=	--enable-zlib \
 		--enable-xpdf-headers \
 		--with-html-dir=${DOCSDIR} \
 		--mandir=${PREFIX}/man
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .if !defined(SLAVEPORT)
 OPTIONS=	CAIRO "Enable cairo output backend" on
@@ -74,8 +74,8 @@ LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
 
 post-patch:
 .if defined(SLAVEPORT) && ${SLAVEPORT}=="qt"
-	@${REINPLACE_CMD} -e 's|/usr/local/qt/include|${X11BASE}/include|; \
-		s|/usr/local/qt/lib|${X11BASE}/lib|' \
+	@${REINPLACE_CMD} -e 's|/usr/local/qt/include|${LOCALBASE}/include|; \
+		s|/usr/local/qt/lib|${LOCALBASE}/lib|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$QTDIR|${QT_PREFIX}|' ${WRKSRC}/configure
 .endif
