@@ -14972,6 +14972,7 @@ suitesparse	ports/math/suitesparse
 sulci		ports/net-im/sulci
 sun-wtk		ports/java/sun-wtk
 sunbird		ports/deskutils/sunbird
+sunbird-i18n	ports/deskutils/sunbird-i18n
 sunclock	ports/astro/sunclock
 sunterlib	ports/devel/sunterlib
 sup_port	ports/net/sup
