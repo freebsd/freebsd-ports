@@ -1,0 +1,8 @@
+@unexec %%EASY_INSTALL_CMD%% -q -N -m -x -S %D/%%PYTHON_SITELIBDIR%% %%EGG%%
+bin/prsync
+bin/pnuke
+bin/pslurp
+bin/pssh
+bin/pscp
+%%PYTHON_SITELIBDIR%%/%%PSSH_EGG%%
+@exec %%EASY_INSTALL_CMD%% -q -x -N -S %D/%%PYTHON_SITELIBDIR%% %%EGG%%
