@@ -1,3 +1,4 @@
+%%SITE_PERL%%/AnyData.pm
 %%SITE_PERL%%/AnyData/Format/Base.pm
 %%SITE_PERL%%/AnyData/Format/CSV.pm
 %%SITE_PERL%%/AnyData/Format/FileSys.pm
