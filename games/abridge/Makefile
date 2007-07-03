@@ -16,6 +16,7 @@ COMMENT=	Bridge game
 USE_WX=		2.4
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.4.0
 
 MAN1=		abridge.1
 PLIST_FILES=	bin/abridge
