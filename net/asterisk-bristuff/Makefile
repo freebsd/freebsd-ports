@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.2.13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -65,9 +65,9 @@ MAKE_ENV+=	WITH_H323=1
 PLIST_SUB+=	WITH_ZAPTEL="@comment "
 MAKE_ENV+=	WITHOUT_ZAPTEL=1
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
+BUILD_DEPENDS+=	${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
 LIB_DEPENDS+=	pri-bristuff.1:${PORTSDIR}/misc/libpri-bristuff
-RUN_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
+RUN_DEPENDS+=	${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
 PLIST_SUB+=	WITH_ZAPTEL=""
 MAKE_ENV+=	WITH_ZAPTEL=1
 .endif
@@ -94,9 +94,5 @@ PLIST_SUB+=	WITH_FAX=""
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
 	${REINPLACE_CMD} -e 's,^#include <libpri\.h>,#include <libpri-bristuff.h>,' ${WRKSRC}/channels/chan_zap.c
-	${REINPLACE_CMD}\
-		-e 's,-lpri,-lpri-bristuff,'\
-		-e 's,libpri\.so,libpri-bristuff.so,g'\
-			${WRKSRC}/channels/Makefile
 
 .include <bsd.port.post.mk>

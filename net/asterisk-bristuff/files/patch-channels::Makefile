@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- channels/Makefile.orig
-+++ channels/Makefile
+--- channels/Makefile.orig	Tue Jul  3 23:40:42 2007
++++ channels/Makefile	Tue Jul  3 23:45:45 2007
 @@ -48,8 +48,8 @@
  endif
  
@@ -28,14 +25,15 @@ $FreeBSD$
    CHANNEL_LIBS+=chan_h323.so
  endif
  
-@@ -91,12 +91,12 @@
+@@ -92,12 +92,12 @@
    CHANNEL_LIBS+=chan_alsa.so
  endif
  
 -ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/lib/libpri.so.1)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/lib/libpri.so.1),)
-+ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/lib/libpri.so.1)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/lib/libpri.so.1),)
++ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/lib/libpri-bristuff.so.1)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/lib/libpri-bristuff.so.1),)
    CFLAGS+=-DZAPATA_PRI
-   ZAPPRI=-lpri
+-  ZAPPRI=-lpri
++  ZAPPRI=-lpri-bristuff
  endif
  
 -ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/lib/libmfcr2.so.1)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/lib/libmfcr2.so.1),)
@@ -43,12 +41,12 @@ $FreeBSD$
    CFLAGS+=-DZAPATA_R2
    ZAPR2=-lmfcr2
  endif
-@@ -109,12 +109,12 @@
+@@ -115,14 +115,14 @@
  endif
  
  ifndef WITHOUT_ZAPTEL
 -ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/pkg/include/zaptel.h),)
-+ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/pkg/include/zaptel.h),)
++ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/zaptel/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/pkg/include/zaptel.h),)
    ifeq (${OSARCH},NetBSD)
      SOLINK+=-L$(CROSS_COMPILE_TARGET)/usr/pkg/lib
    endif
@@ -56,9 +54,12 @@ $FreeBSD$
 -    SOLINK+=-L$(CROSS_COMPILE_TARGET)/usr/local/lib
 +    SOLINK+=-L$(CROSS_COMPILE_TARGET)$(LOCALBASE)/lib
    endif
-   CFLAGS+=-DIAX_TRUNKING
+-  CFLAGS+=-DIAX_TRUNKING
++  CFLAGS+=-DIAX_TRUNKING -I$(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/zaptel
    CHANNEL_LIBS+=chan_zap.so
-@@ -229,8 +229,10 @@
+ endif
+ endif # WITHOUT_ZAPTEL
+@@ -267,8 +267,10 @@
  chan_h323.so: chan_h323.o h323/libchanh323.a h323/Makefile.ast
  	$(CC) $(SOLINK) $(H323LDFLAGS) -o $@ $< h323/libchanh323.a $(H323LDLIBS) -lstdc++
  else
@@ -70,8 +71,8 @@ $FreeBSD$
 +	$(MAKE) -C h323 ast_h323.o
  endif
  
- chan_misdn.so: chan_misdn.o chan_misdn_config.o misdn/chan_misdn_lib.a
-@@ -244,8 +246,7 @@
+ misdn/chan_misdn_lib.a:
+@@ -287,8 +289,7 @@
  #	$(CC) -rdynamic -shared -Xlinker -x -o $@ $<
  
  install: all

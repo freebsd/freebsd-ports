@@ -1,12 +1,13 @@
---- apps/Makefile.orig	Sun Apr 30 16:38:22 2006
-+++ apps/Makefile	Wed Jun 14 14:03:42 2006
-@@ -45,25 +45,27 @@
+--- apps/Makefile.orig	Wed Jul  4 00:07:15 2007
++++ apps/Makefile	Wed Jul  4 00:18:41 2007
+@@ -52,25 +52,28 @@
  #APPS+=app_rpt.so
  
  ifndef WITHOUT_ZAPTEL
 -ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/zaptel.h),)
-+ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/zaptel.h),)
++ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/zaptel/zaptel.h),)
    APPS+=app_zapras.so app_meetme.so app_flash.so app_zapbarge.so app_zapscan.so app_page.so
++  CFLAGS+=-I$(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/zaptel
  endif
  endif # WITHOUT_ZAPTEL
  
@@ -37,7 +38,7 @@
  
  ifeq (${OSARCH},CYGWIN)
  CYGSOLINK=-Wl,--out-implib=lib$@.a -Wl,--export-all-symbols
-@@ -95,18 +97,26 @@
+@@ -102,18 +105,26 @@
  	$(CC) $(SOLINK) -o $@ ${CYGSOLINK} $< ${CYGSOLIB} -ltonezone
  
  install: all
