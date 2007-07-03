@@ -1,7 +1,4 @@
------------------------------------------------------------------------
-NOTE: If you upgrade, it's recomended to run pkgdb -L to restore lost
-      dependencies.
-
+------------------------------------------------------------------------------
       Fill ALT_PKGDEP section in pkgtools.conf file for portupgrade
       be aware of alternative dependencies you use.
       E.g.
@@ -14,4 +11,8 @@ NOTE: If you upgrade, it's recomended to run pkgdb -L to restore lost
       suffixes (E.g. -nox11). So you should explicitly define variables
       (E.g. WITHOUT_X11=yes) for the ports in /etc/make.conf or pkgtools.conf
       (MAKE_ARGS section) files.
------------------------------------------------------------------------
+
+      REMEMBER, portupgrade helps to upgrade ports but you should understand
+      what you doing. It allows you to shut in your leg or make a demage if
+      you ask it.
+------------------------------------------------------------------------------
