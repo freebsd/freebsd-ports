@@ -114,10 +114,13 @@ PLIST_SUB+=	GTK="@comment "
 .endif
 
 post-extract: .SILENT
-	# Fix KDE tray
+# Fix KDE tray
 	${REINPLACE_CMD} -e '4723d' ${WRKSRC}/fvwm-insitu/fvwm/events.c
-	# Fix desktop entries path
+# Fix desktop entries path
 	${REINPLACE_CMD} -E 's,^(configdir =).*,\1 ${DESKTOPDIR},' \
 		${WRKSRC}/fvwm-insitu/opale/session/Makefile.in
+# Simple GCC 4.2 gimmick
+	${REINPLACE_CMD} -e '/^typedef/s,GLvoid,void,g' \
+		${WRKSRC}/xserver/include/GL/glu.h
 
 .include <bsd.port.post.mk>
