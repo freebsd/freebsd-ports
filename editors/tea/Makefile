@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tea
-DISTVERSION=	16.1.1
+DISTVERSION=	17.0.0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tea-editor
@@ -16,7 +16,6 @@ COMMENT=	A simple and powerful GTK+ text editor
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GCC=	3.3+
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -40,9 +39,9 @@ LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 post-patch: .SILENT
 	${REINPLACE_CMD} -e 's|/tea/doc/|/doc/tea/|' \
 		${WRKSRC}/src/tea_defs.h
-	# Fix FINK-related defines
-	${REINPLACE_CMD} -e '5215d; 5218,5221d' ${WRKSRC}/configure
-	# Do not install yet another copy of GPL
-	${REINPLACE_CMD} -e '627d' ${WRKSRC}/Makefile.in
+# Fix FINK-related defines
+	${REINPLACE_CMD} -e '5702d; 5705,5708d' ${WRKSRC}/configure
+# Do not install yet another copy of GPL
+	${REINPLACE_CMD} -e '634d' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
