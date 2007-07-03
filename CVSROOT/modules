@@ -9227,7 +9227,6 @@ p5-DBD-mysql41	ports/databases/p5-DBD-mysql41
 p5-DBD-mysql50	ports/databases/p5-DBD-mysql50
 p5-DBD-mysql51	ports/databases/p5-DBD-mysql51
 p5-DBI		ports/databases/p5-DBI
-p5-DBI-137	ports/databases/p5-DBI-137
 p5-DBI-Shell	ports/databases/p5-DBI-Shell
 p5-DBIWrapper	ports/databases/p5-DBIWrapper
 p5-DBIx-Abstract	ports/databases/p5-DBIx-Abstract
