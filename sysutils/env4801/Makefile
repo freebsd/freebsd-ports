@@ -7,6 +7,7 @@
 
 PORTNAME=		env4801
 PORTVERSION=		0.3
+PORTREVISION=		1
 CATEGORIES=		sysutils
 MASTER_SITES=		http://phk.freebsd.dk/soekris/env4801/
 DISTFILES=		Makefile env4801.c
@@ -25,6 +26,15 @@ MAKE_ARGS=		-DNOMAN
 
 PLIST_FILES=		sbin/env4801 etc/rc.d/env4801.sh
 
+OPTIONS=		STATIC "Build a statically linked executable" On
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+.ifdef(WITHOUT_STATIC)
+	@${REINPLACE_CMD} -e '/-static/d' ${WRKSRC}/Makefile
+.endif
+
 post-extract:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/env4801.sh > ${WRKSRC}/env4801.sh
@@ -36,4 +46,4 @@ do-install:
 post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
