@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Oct 29 16:49:02 2006
-+++ Makefile	Sun Oct 29 16:52:11 2006
+--- Makefile.orig	Tue Jul  3 23:08:38 2007
++++ Makefile	Tue Jul  3 23:32:03 2007
 @@ -19,8 +19,8 @@
  # CROSS_COMPILE=/opt/montavista/pro/devkit/arm/xscale_be/bin/xscale_be-
  # CROSS_COMPILE_BIN=/opt/montavista/pro/devkit/arm/xscale_be/bin/
@@ -139,15 +139,17 @@
  
  endif # FreeBSD
  
-@@ -307,7 +304,7 @@
+@@ -307,8 +304,8 @@
  
  ifndef WITHOUT_ZAPTEL
  
 -ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/pkg/include/zaptel.h),)
-+ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/pkg/include/zaptel.h),)
-   ASTCFLAGS+=-DZAPTEL_OPTIMIZATIONS
+-  ASTCFLAGS+=-DZAPTEL_OPTIMIZATIONS
++ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/zaptel/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/pkg/include/zaptel.h),)
++  ASTCFLAGS+=-DZAPTEL_OPTIMIZATIONS -I$(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/zaptel
  endif
  
+ endif # WITHOUT_ZAPTEL
 @@ -414,7 +411,7 @@
  endif
  
