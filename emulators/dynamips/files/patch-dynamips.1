@@ -1,0 +1,20 @@
+--- dynamips.1.orig	Wed Feb 14 20:37:58 2007
++++ dynamips.1	Fri Apr  6 20:59:41 2007
+@@ -44,7 +44,7 @@
+ .SH OPTIONS
+ A summary of options is included below.
+ .TP
+-.B -H <tcp_port>
++.B -H [ip_address:]<tcp_port>
+ Enable hypervisor mode.
+ .br
+ The hypervisor mode of dynamips allows you to run simultaneously
+@@ -133,7 +133,7 @@
+ The command "show clock" at the IOS' CLI will help you set this value.
+ 
+ .TP
+-.B -T <port>
++.B -T [ip_address:]<port>
+ Console is on TCP <port>
+ .TP
+ .B -U <si_desc>

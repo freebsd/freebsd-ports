@@ -1,0 +1,11 @@
+--- README.orig	Fri Apr  6 20:53:59 2007
++++ README	Fri Apr  6 20:57:02 2007
+@@ -50,7 +50,7 @@
+   -R <rom_file>      : Load an alternate ROM (default: embedded)
+   -k <clock_div>     : Set the clock divisor (default: 4)
+ 
+-  -T <port>          : Console is on TCP <port>
++  -T [ip_address:]<port> : Console is on TCP <port>
+   -U <si_desc>       : Console in on serial interface <si_desc>
+                        (default is on the terminal)
+ 

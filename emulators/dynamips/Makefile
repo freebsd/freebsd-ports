@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dynamips
-PORTVERSION=	0.2.5
-PORTREVISION=	2
+DISTVERSION=	0.2.7
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 
@@ -19,22 +18,19 @@ LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
 USE_GMAKE=	yes
 USE_GCC=	3.2+
 USE_GETOPT_LONG=yes
-ALL_TARGET=	${PORTNAME}
+ALL_TARGET=	${PORTNAME} nvram_export
 MAKE_ENV=	DYNAMIPS_ARCH=${DYNAMIPS_ARCH}\
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS}\
 		PTHREAD_LIBS=${PTHREAD_LIBS}\
 		LDFLAGS="${LDFLAGS}"
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} bin/nvram_export
 .if !defined(NOPORTDOCS)
-PORTDOCS=	README
+PORTDOCS=	README README.hypervisor
 .endif
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.if !defined(NO_INSTALL_MANPAGES)
+MAN1=		${PORTNAME}.1 nvram_export.1
+MAN7=		hypervisor_mode.7
 .endif
 
 .include <bsd.port.pre.mk>
@@ -42,19 +38,31 @@ do-install:
 .if ${ARCH} == "i386"
 DYNAMIPS_ARCH=	"x86"
 .elif ${ARCH} == "amd64"
-DYNAMIPS_ARCH=	"nojit"	# JIT does not work on amd64 for some reason
+DYNAMIPS_ARCH=	"amd64"
 .else
 DYNAMIPS_ARCH=	"nojit"
 .endif
 
 .if ${OSVERSION} < 602100 || ${OSVERSION} < 700021
-#
-# Requires libpcap 0.9.4
 BUILD_DEPENDS+=	libpcap>=0.9.4:${PORTSDIR}/net/libpcap
 .endif
 
 .if ${OSVERSION} >= 700013
 MAKE_ENV+=	HAS_POSIX_MEMALIGN=1
+.endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/nvram_export ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.hypervisor ${DOCSDIR}
+.endif
+.if !defined(NO_INSTALL_MANPAGES)
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/nvram_export.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/hypervisor_mode.7 ${PREFIX}/man/man7
 .endif
 
 .include <bsd.port.post.mk>
