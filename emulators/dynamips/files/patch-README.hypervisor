@@ -1,0 +1,11 @@
+--- README.hypervisor.orig	Wed Mar 21 10:00:28 2007
++++ README.hypervisor	Wed Mar 21 10:01:22 2007
+@@ -8,7 +8,7 @@
+ Running dynamips in hypervisor mode
+ ===================================
+ 
+-dynamips -H <tcp_port>
++dynamips -H [ip_address:]<tcp_port>
+ 
+ Managing the hypervisor
+ =======================
