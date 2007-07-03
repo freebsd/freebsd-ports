@@ -25,6 +25,8 @@ USE_PYTHON=	yes
 USE_GNOME=	gnomehack glib20 libxml2
 USE_LDCONFIG=	yes
 
+LATEST_LINK=	libopensync022
+
 pre-everything::
 	@${ECHO_MSG} "NOTE: You may want to avoid extra dependencies"
 	@${ECHO_MSG} " from devel/swig13 by building with the following"
