@@ -101,21 +101,21 @@ lib/libvhapi.a
 lib/libvhapi.la
 lib/libvhapi.so
 lib/libvhapi.so.0
-share/verlihub/config/faq
-share/verlihub/config/help_admin
-share/verlihub/config/help_cheef
-share/verlihub/config/help_master
-share/verlihub/config/help_op
-share/verlihub/config/help_reg
-share/verlihub/config/help_usr
-share/verlihub/config/help_vip
-share/verlihub/config/motd
-share/verlihub/config/rules
-share/verlihub/sql/default_pi_plug.sql
-share/verlihub/sql/default_conn_types.sql
-share/verlihub/sql/default_file_trigger.sql
-share/verlihub/sql/default_reglist.sql
+%%DATADIR%%/config/faq
+%%DATADIR%%/config/help_admin
+%%DATADIR%%/config/help_cheef
+%%DATADIR%%/config/help_master
+%%DATADIR%%/config/help_op
+%%DATADIR%%/config/help_reg
+%%DATADIR%%/config/help_usr
+%%DATADIR%%/config/help_vip
+%%DATADIR%%/config/motd
+%%DATADIR%%/config/rules
+%%DATADIR%%/sql/default_pi_plug.sql
+%%DATADIR%%/sql/default_conn_types.sql
+%%DATADIR%%/sql/default_file_trigger.sql
+%%DATADIR%%/sql/default_reglist.sql
 @dirrm include/verlihub
-@dirrm share/verlihub/config
-@dirrm share/verlihub/sql
-@dirrm share/verlihub
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/sql
+@dirrm %%DATADIR%%
