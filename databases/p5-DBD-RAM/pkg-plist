@@ -1,5 +1,0 @@
-%%SITE_PERL%%/DBD/RAM.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/RAM/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/RAM
-@dirrmtry %%SITE_PERL%%/%PERL_ARCH%%/auto/DBD
-@dirrmtry %%SITE_PERL%%/DBD
