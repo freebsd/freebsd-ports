@@ -23,7 +23,9 @@ USE_LDCONFIG=	${PREFIX}/lib/scsh/0.6/scx-0.2/lib/${MACHINE_ARCH}-portbld-freebsd
 PLIST_SUB=	TARGET=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
+			-e 's|echo aout|echo elf|g' \
+	${WRKSRC}/configure
 
 do-install:
 	(cd ${WRKSRC}; ${LOCALBASE}/lib/scsh/scsh-install-pkg --prefix=${PREFIX}/lib/scsh)
