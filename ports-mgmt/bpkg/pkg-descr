@@ -1,0 +1,7 @@
+bpkg is a simple tool written in sh(1) for managing FreeBSD packages/ports. It 
+is a wrapper around base system utilities manipulating the FreeBSD Ports 
+Collection. The main goal of this project is to provide one universal tool for 
+packages/ports management.
+
+-- Andy Kosela
+<andy.kosela@gmail.com>
