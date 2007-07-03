@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Command line twits and an API wrapper
 
-BUILD_DEPENDS=	rubygem-hpricot>0:${PORTSDIR}/www/rubygem-hpricot
+BUILD_DEPENDS=	rubygem-hpricot>0:${PORTSDIR}/www/rubygem-hpricot \
+		rubygem-hoe>=1.2.0:${PORTSDIR}/devel/rubygem-hoe
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
