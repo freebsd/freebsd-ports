@@ -1,23 +1,9 @@
---- ./configure.orig	Fri Apr  6 17:07:12 2007
-+++ ./configure	Wed Jun  6 00:49:21 2007
-@@ -19969,10 +19969,10 @@
- 
- 
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS=" /usr/local/share/libtool/ltmain.sh"
- 
- # Always use our own libtool.
--LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-+LIBTOOL='$(SHELL) /usr/local/bin/libtool'
- 
- # Prevent multiple expansion
- 
-@@ -24702,6 +24702,74 @@
-    { (exit 1); exit 1; }; }
+--- configure.orig	Wed Apr 26 15:28:47 2006
++++ configure	Wed Apr 26 15:28:56 2006
+@@ -25122,6 +25122,74 @@
  fi
  
-+
+ 
 +	echo "$as_me:$LINENO: checking for iconv_open in -liconv" >&5
 +echo $ECHO_N "checking for iconv_open in -liconv... $ECHO_C" >&6
 +if test "${ac_cv_lib_iconv_iconv_open+set}" = set; then
@@ -85,6 +71,7 @@
 +if test $ac_cv_lib_iconv_iconv_open = yes; then
 +  LIBS="$LIBS -liconv"
 +fi
- 
++
  	echo "$as_me:$LINENO: checking if iconv second argument needs const" >&5
  echo $ECHO_N "checking if iconv second argument needs const... $ECHO_C" >&6
+ 	saved_CFLAGS=$CFLAGS
