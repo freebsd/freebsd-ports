@@ -16457,6 +16457,7 @@ xdl		ports/graphics/xdl
 xdm		ports/x11/xdm
 xdms		ports/archivers/xdms
 xdoclet		ports/java/xdoclet
+xdotool		ports/x11/xdotool
 xdpyinfo	ports/x11/xdpyinfo
 xdrawchem	ports/biology/xdrawchem
 xdriinfo	ports/x11/xdriinfo
