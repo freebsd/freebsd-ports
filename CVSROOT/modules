@@ -989,6 +989,7 @@ bozohttpd	ports/www/bozohttpd
 bpatch		ports/editors/bpatch
 bpfstat		ports/net/bpfstat
 bpft		ports/net-mgmt/bpft
+bpkg		ports/ports-mgmt/bpkg
 bpl+		ports/comms/bpl+
 bpm		ports/ports-mgmt/bpm
 br-aspell	ports/textproc/br-aspell
