@@ -1,6 +1,0 @@
-@comment $FreeBSD$
-%%SITE_PERL%%/DBD/File.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/File/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
-@dirrmtry %%SITE_PERL%%/DBD

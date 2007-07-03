@@ -211,7 +211,6 @@
     SUBDIR += p5-DBD-AnyData
     SUBDIR += p5-DBD-CSV
     SUBDIR += p5-DBD-Excel
-    SUBDIR += p5-DBD-File
     SUBDIR += p5-DBD-Google
     SUBDIR += p5-DBD-InterBase
     SUBDIR += p5-DBD-LDAP

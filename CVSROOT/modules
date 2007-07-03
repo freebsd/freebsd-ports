@@ -9208,7 +9208,6 @@ p5-Curses-Widgets	ports/devel/p5-Curses-Widgets
 p5-DBD-AnyData	ports/databases/p5-DBD-AnyData
 p5-DBD-CSV	ports/databases/p5-DBD-CSV
 p5-DBD-Excel	ports/databases/p5-DBD-Excel
-p5-DBD-File	ports/databases/p5-DBD-File
 p5-DBD-Google	ports/databases/p5-DBD-Google
 p5-DBD-InterBase	ports/databases/p5-DBD-InterBase
 p5-DBD-LDAP	ports/databases/p5-DBD-LDAP
