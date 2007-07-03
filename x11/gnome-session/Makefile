@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-session
-PORTVERSION=	2.18.2
+PORTVERSION=	2.18.3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://www.marcuscom.com/downloads/:local
@@ -33,9 +33,8 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gnome-session.1 gnome-wm.1 session-properties.1 \
 		gnome-session-save.1
