@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	popfile
-PORTVERSION=	0.22.4
+PORTVERSION=	0.22.5
 #PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,8 +16,6 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=Automatic mail classification tool, acts as a POP3 proxy
 
-# Use DBD::SQLite2 since POPFile doesn't support SQLite 1.x.
-# See also files/patch-Bayes.pm.
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite2.pm:${PORTSDIR}/databases/p5-DBD-SQLite2 \
 		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
@@ -35,9 +33,8 @@ START_SCRIPTS_SUB= DATADIR=${DATADIR}
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_POPFILE_SSL)
-# POPFile v0.22.4 works with IO::Socket::SSL version 0.96 but not 0.97.
-#RUN_DEPENDS+=  ${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
-IGNORE=		does not work with IO::Socket::SSL version 0.97
+# POPFile works with IO::Socket::SSL version 1.07 (and not 0.97/0.99).
+RUN_DEPENDS+=  p5-IO-Socket-SSL>=1.07:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
 .if defined(WITH_POPFILE_XMLRPC)
@@ -68,35 +65,25 @@ PATCHFILES+=	popfile-${PORTVERSION}-use-jcode.pl.patch
 .endif
 
 pre-fetch:
-	@${ECHO_CMD} "This port has some compile options:"
+	@${ECHO_CMD} "This port has some compile-time options:"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "   * make WITH_POPFILE_SSL=YES"
-	@${ECHO_CMD} "        POPFile supports SSL for all proxy protocols.  You may use SSL"
-	@${ECHO_CMD} "        protocol to connect an actual servers.  Note that this does NOT"
-	@${ECHO_CMD} "        enable POPFile to accept SSL connection from clients.  Enable
-	@${ECHO_CMD} "        this option to install net/p5-SOAP-Lite."
+	@${ECHO_CMD} "        Depend SSL libraries/modules to use SSL connection to the servers."
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "   * make WITH_POPFILE_XMLRPC=YES"
-	@${ECHO_CMD} "        Your program may communicate to POPFile via XMLRPC or SOAP."
-	@${ECHO_CMD} "        Note that POPFile acts as a server, no client implementation is"
-	@${ECHO_CMD} "        provided; you have to have your own client by yourself.  Enable"
-	@${ECHO_CMD} "        this option to install net/p5-SOAP-Lite."
+	@${ECHO_CMD} "        Depend SOAP libraries to use POPFile as XMLRPC server."
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "   * make WITH_POPFILE_UPGRADE_FROM_0_20=YES"
-	@${ECHO_CMD} "        Since v0.21.0, The corpus format Is changed from BerkeleyDB to."
-	@${ECHO_CMD} "        SQLite.  If you have old (v0.20.1 or before) corpus and upgrade to"
-	@${ECHO_CMD} "        new POPFile, enable this option to install databases/p5-BerkeleyDB"
-	@${ECHO_CMD} "        for upgrading your corpus.  Note that once you have converted to"
-	@${ECHO_CMD} "        new SQLite corpus, you do not need this option next time."
+	@${ECHO_CMD} "        Depend BerkeleyDB libraries to upgrade old POPFile corpus."
+	@${ECHO_CMD} "        This option is required only for upgrading POPFile 0.20.1 or before."
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "   * make WITH_POPFILE_JAPANESE=YES"
-	@${ECHO_CMD} "        Even though POPFile supports Japanese help messages, parsing"
-	@${ECHO_CMD} "        Japanese email is not supported by POPFile itself, but by KAKASI"
-	@${ECHO_CMD} "        (Kanji Kana Simple Inverter.)  If you need Japanese email support,"
-	@${ECHO_CMD} "        enable this option to install japanese/p5-Text-Kakasi."
+	@${ECHO_CMD} "        Depend libraries to handle email that is written in Japanese."
+	@${ECHO_CMD} "        Note that UI menus in Japanese is supported by default."
 .if ${PERL_LEVEL} < 500800
-	@${ECHO_CMD} "        If you still using perl 5.6 or before, a hacky patch (use jcode.pl"
-	@${ECHO_CMD} "        instead of Encode::from_to) is applied for using POPFile."
+	@${ECHO_CMD} "        For perl 5.6 users: Since POPFile uses Encode module to convert email"
+	@${ECHO_CMD} "        texts that are not available on perl 5.6, a local patch is"
+	@${ECHO_CMD} "        applied to this ports (uses jcode.pl for conversion)."
 .endif
 
 post-patch:
