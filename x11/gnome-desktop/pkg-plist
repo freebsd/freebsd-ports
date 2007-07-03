@@ -229,6 +229,7 @@ share/locale/tr/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ug/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ur/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/uz/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/xh/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -248,6 +249,8 @@ share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
 @dirrmtry share/locale/yi
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/uz/LC_MESSAGES
+@dirrmtry share/locale/uz
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
 @dirrmtry share/locale/ug/LC_MESSAGES
