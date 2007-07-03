@@ -24,10 +24,6 @@ DOCS=		AUTHORS CONTACT COPYING NEWS README THANKS TODO
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/plb.sh.sample \
 		> ${WRKSRC}/plb.sh.sample
