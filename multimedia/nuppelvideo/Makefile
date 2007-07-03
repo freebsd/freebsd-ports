@@ -18,6 +18,9 @@ COMMENT=	A very low CPU usage VCR/DVR application
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
+DEPRECATED=	Unmaintained upstream for years.  The nuppelvideo format is now supported by mencoder
+EXPIRATION_DATE=2007-10-03
+
 USE_XLIB=	yes
 USE_GMAKE=	yes
 
@@ -28,6 +31,10 @@ CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include \
 		-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
 
 ###
 ## Auto detected features
