@@ -14,6 +14,7 @@ include/poppler/Error.h
 include/poppler/ErrorCodes.h
 include/poppler/FontEncodingTables.h
 include/poppler/FontInfo.h
+include/poppler/Form.h
 include/poppler/Function.cc
 include/poppler/Function.h
 include/poppler/Gfx.h
@@ -35,14 +36,16 @@ include/poppler/PDFDocEncoding.h
 include/poppler/PSOutputDev.h
 include/poppler/PSTokenizer.h
 include/poppler/Page.h
+include/poppler/PageTransition.h
 include/poppler/Parser.h
+include/poppler/PreScanOutputDev.h
 include/poppler/ProfileData.h
 include/poppler/SecurityHandler.h
+include/poppler/Sound.h
 include/poppler/SplashOutputDev.h
 include/poppler/Stream-CCITT.h
 include/poppler/Stream.h
 include/poppler/TextOutputDev.h
-include/poppler/UGooString.h
 include/poppler/UTF8.h
 include/poppler/UnicodeCClassTables.h
 include/poppler/UnicodeCompTables.h

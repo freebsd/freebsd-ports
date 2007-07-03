@@ -1,15 +1,16 @@
---- qt/Makefile.in.orig	Sat Sep 30 00:10:34 2006
-+++ qt/Makefile.in	Sat Sep 30 00:11:29 2006
-@@ -63,16 +63,14 @@
+--- qt/Makefile.in.orig	Wed Jun 20 07:19:52 2007
++++ qt/Makefile.in	Wed Jun 20 07:30:01 2007
+@@ -63,8 +63,7 @@
  libLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(lib_LTLIBRARIES)
  am__DEPENDENCIES_1 =
 -libpoppler_qt_la_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
--	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
-+libpoppler_qt_la_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
++libpoppler_qt_la_DEPENDENCIES = 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
  am_libpoppler_qt_la_OBJECTS = poppler-document.lo poppler-fontinfo.lo \
  	poppler-link.lo poppler-page.lo poppler-page-transition.lo
- libpoppler_qt_la_OBJECTS = $(am_libpoppler_qt_la_OBJECTS)
+@@ -72,8 +71,7 @@
  PROGRAMS = $(noinst_PROGRAMS)
  am_test_poppler_qt_OBJECTS = test-poppler-qt.$(OBJEXT)
  test_poppler_qt_OBJECTS = $(am_test_poppler_qt_OBJECTS)
@@ -19,16 +20,16 @@
  DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir) -I$(top_builddir)/poppler
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
-@@ -281,7 +279,7 @@
+@@ -286,7 +284,7 @@
  	poppler-private.h
  
  libpoppler_qt_la_LIBADD = \
 -	$(top_builddir)/poppler/libpoppler.la	\
 +	-lpoppler -lqt-mt			\
  	$(POPPLER_QT_LIBS)			\
- 	$(FREETYPE_LIBS)
- 
-@@ -290,7 +288,7 @@
+ 	$(FREETYPE_LIBS)			\
+ 	$(FONTCONFIG_LIBS)
+@@ -296,7 +294,7 @@
         test-poppler-qt.cpp
  
  test_poppler_qt_LDADD = \
