@@ -24,6 +24,7 @@ RESTRICTED=		"binary redistribution license needs clarification"
 USE_LINUX_RPM=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 BRANDELF_FILES=	usr/sbin/afacli
+SRC_DISTFILES=	# empty, no sources available
 
 EXTRACT_CMD=		${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc
