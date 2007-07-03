@@ -103,9 +103,6 @@ USE_XLIB=	yes
 DOCFILES=	README.xaw
 DOCLANG=	C ja_JP.eucJP
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 .endif
 
 .if ${INTERFACE} == "xskin"
