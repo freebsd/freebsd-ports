@@ -182,6 +182,7 @@
     SUBDIR += splashsetter
     SUBDIR += sugarcrm
     SUBDIR += sunbird
+    SUBDIR += sunbird-i18n
     SUBDIR += superkaramba-lwp
     SUBDIR += superswitcher
     SUBDIR += systempreferences
