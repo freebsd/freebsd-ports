@@ -595,6 +595,7 @@
     SUBDIR += liboop
     SUBDIR += libopendaap
     SUBDIR += libopensync
+    SUBDIR += libopensync022
     SUBDIR += libowfat
     SUBDIR += libpasori
     SUBDIR += libpci
