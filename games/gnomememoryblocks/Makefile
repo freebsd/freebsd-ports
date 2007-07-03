@@ -16,7 +16,7 @@ DISTNAME=	gnome-memblocks-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Memory Blocks game for GNOME
 
-USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -27,5 +27,7 @@ post-patch:
 		s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|games\.|games:| ; s|2111|2555|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
