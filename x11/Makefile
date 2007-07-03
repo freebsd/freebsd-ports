@@ -333,6 +333,7 @@
     SUBDIR += xdialog
     SUBDIR += xditview
     SUBDIR += xdm
+    SUBDIR += xdotool
     SUBDIR += xdpyinfo
     SUBDIR += xdriinfo
     SUBDIR += xdtm
