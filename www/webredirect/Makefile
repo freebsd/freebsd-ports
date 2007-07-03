@@ -22,10 +22,6 @@ USE_RC_SUBR=	webredirect.sh
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 pre-build:
 	@${TOUCH} ${WRKSRC}/incu/depend.mk
 	@${TOUCH} ${WRKSRC}/depend.mk
