@@ -5824,6 +5824,7 @@ keximdb		ports/databases/keximdb
 kexis		ports/audio/kexis
 keychain	ports/security/keychain
 keylaunch	ports/x11/keylaunch
+keynav		ports/x11/keynav
 keynote		ports/security/keynote
 keyprint	ports/security/keyprint
 kf		ports/net-im/kf
