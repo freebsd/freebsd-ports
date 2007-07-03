@@ -24,7 +24,6 @@ share/gnome/applications/nautilus-folder-handler.desktop
 share/gnome/applications/nautilus-home.desktop
 share/gnome/applications/nautilus.desktop
 share/gnome/applications/network-scheme.desktop
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/nautilus/browser.xml
 share/gnome/nautilus/glade/nautilus-bookmarks-window.glade
 share/gnome/nautilus/glade/nautilus-file-management-properties.glade
@@ -87,6 +86,7 @@ share/locale/am/LC_MESSAGES/nautilus.mo
 share/locale/ar/LC_MESSAGES/nautilus.mo
 share/locale/az/LC_MESSAGES/nautilus.mo
 share/locale/be/LC_MESSAGES/nautilus.mo
+share/locale/be@latin/LC_MESSAGES/nautilus.mo
 share/locale/bg/LC_MESSAGES/nautilus.mo
 share/locale/bn/LC_MESSAGES/nautilus.mo
 share/locale/bn_IN/LC_MESSAGES/nautilus.mo
@@ -138,6 +138,7 @@ share/locale/ne/LC_MESSAGES/nautilus.mo
 share/locale/nl/LC_MESSAGES/nautilus.mo
 share/locale/nn/LC_MESSAGES/nautilus.mo
 share/locale/nso/LC_MESSAGES/nautilus.mo
+share/locale/oc/LC_MESSAGES/nautilus.mo
 share/locale/or/LC_MESSAGES/nautilus.mo
 share/locale/pa/LC_MESSAGES/nautilus.mo
 share/locale/pl/LC_MESSAGES/nautilus.mo
@@ -179,9 +180,10 @@ share/mime/packages/nautilus.xml
 @exec /bin/mkdir -p %D/lib/nautilus/extensions-1.0
 @dirrmtry lib/nautilus/extensions-1.0
 @dirrmtry lib/nautilus
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -196,6 +198,8 @@ share/mime/packages/nautilus.xml
 @dirrmtry share/locale/sr@ije
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
 @dirrmtry share/locale/mi/LC_MESSAGES
@@ -212,3 +216,5 @@ share/mime/packages/nautilus.xml
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
