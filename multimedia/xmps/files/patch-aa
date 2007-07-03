@@ -38,7 +38,7 @@ $FreeBSD$
    
  
 -CFLAGS="$CFLAGS `gtk-config --cflags` -Wall -Werror"
-+CFLAGS="$CFLAGS `$GTK_CONFIG --cflags` -Wall -Werror"
++CFLAGS="$CFLAGS `$GTK_CONFIG --cflags` -Wall"
  
  
  VIDEO_ADDON_PLUGIN_DIR=addons/video
