@@ -549,6 +549,7 @@
     SUBDIR += poppler-data
     SUBDIR += poppler-gtk
     SUBDIR += poppler-qt
+    SUBDIR += poppler-qt4
     SUBDIR += poppler-utils
     SUBDIR += popplerkit
     SUBDIR += pornview

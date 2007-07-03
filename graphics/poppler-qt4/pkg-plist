@@ -1,0 +1,10 @@
+include/poppler/qt4/poppler-annotation.h
+include/poppler/qt4/poppler-form.h
+include/poppler/qt4/poppler-link.h
+include/poppler/qt4/poppler-page-transition.h
+include/poppler/qt4/poppler-qt4.h
+lib/libpoppler-qt4.a
+lib/libpoppler-qt4.la
+lib/libpoppler-qt4.so
+lib/libpoppler-qt4.so.1
+@dirrm include/poppler/qt4
