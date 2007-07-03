@@ -18,6 +18,7 @@ COMMENT=	DBI driver for Oracle RDBMS server
 
 OPTIONS=	OCI8 "Use OCI8" off
 
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -42,22 +43,13 @@ post-install:
 PORTVERSION=	1.19
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ORACLE_HOME=	${LOCALBASE}/oracle8-client
-BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntst8.a:${PORTSDIR}/databases/oracle8-client
+BUILD_DEPENDS+=	${ORACLE_HOME}/lib/libclntst8.a:${PORTSDIR}/databases/oracle8-client
 CONFIGURE_ARGS=	-V 8.1.7
 .else
 PORTVERSION=	1.14
 ORACLE_HOME=	${LOCALBASE}/oracle7
-BUILD_DEPENDS=	${ORACLE_HOME}/rdbms/demo/oracle.mk:${PORTSDIR}/databases/oracle7-client
+BUILD_DEPENDS+=	${ORACLE_HOME}/rdbms/demo/oracle.mk:${PORTSDIR}/databases/oracle7-client
 CONFIGURE_ARGS=	-m ${ORACLE_HOME}/rdbms/demo/oracle.mk
-.endif
-
-.if ${PERL_LEVEL} < 500600
-.ifdef WITH_OCI8
-IGNORE=	perl 5.6 or newer required. Install lang/perl5.8 and try again
-.endif
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-.else
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 .endif
 
 post-patch:
