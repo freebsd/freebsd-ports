@@ -1,6 +1,6 @@
---- src/oracle_functions.c.orig	Wed Jun  8 19:39:20 2005
-+++ src/oracle_functions.c	Wed Jun  8 19:39:32 2005
-@@ -48,6 +48,7 @@
+--- src/oracle_functions.c.orig	Tue Jul  3 23:11:11 2007
++++ src/oracle_functions.c	Tue Jul  3 23:11:24 2007
+@@ -50,6 +50,7 @@
  
  long local_min(long a, long b){if(a<b)return a; return b;}
  
@@ -8,7 +8,7 @@
  int epc_exit_handler()
  {
    /* in oracle 8.1.6 and 8.1.7 libclntsh.so registers an
-@@ -65,6 +66,7 @@
+@@ -67,6 +68,7 @@
      printf("neener neener caught the exit handler bug!\n");
    return 0;
  }

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	oracle_odbc_driver
-PORTVERSION=	0.5.5
-PORTREVISION=	1
+PORTVERSION=	0.5.6
 CATEGORIES=	databases
 MASTER_SITES=	http://home.fnal.gov/~dbox/oracle/odbc/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -26,9 +25,11 @@ ORACLE_HOME=	${LOCALBASE}/oracle8-client
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}" \
-		LIBS="`${CAT} ${ORACLE_HOME}/lib/sysliblist`"
+		LIBS="`${CAT} ${ORACLE_HOME}/lib/sysliblist`"\
+		AUTOHEADER=true
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool:15
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-lclntst8 -lcompat -lpthread -lm/-lclntst8 -lcompat ${PTHREAD_LIBS} -lm/' ${WRKSRC}/configure
