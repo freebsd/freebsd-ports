@@ -13,18 +13,22 @@ diff -ru ../../work/linuxthreads-2.2.3/Examples/Makefile ./Examples/Makefile
 diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 --- ../../work/linuxthreads-2.2.3/Makefile	Wed Apr 25 21:50:59 2001
 +++ ./Makefile	Thu Jun  7 23:13:52 2001
-@@ -1,128 +1,143 @@
+@@ -1,128 +1,149 @@
 -# Copyright (C) 1996,1997,1998,1999,2000,2001 Free Software Foundation, Inc.
 -# This file is part of the GNU C Library.
 +LIB=lthread
 +.if defined(LINUXTHREADS_WRAP_API)
-+.if defined(USING_GCC3)
++.if defined(USING_GCC4)
++SHLIB_MAJOR= 7
++.elif defined(USING_GCC3)
 +SHLIB_MAJOR= 5
 +.else
 +SHLIB_MAJOR= 4
 +.endif
 +.else
-+.if defined(USING_GCC3)
++.if defined(USING_GCC4)
++SHLIB_MAJOR= 6
++.elif defined(USING_GCC3)
 +SHLIB_MAJOR= 3
 +.else
 +SHLIB_MAJOR= 2
@@ -98,7 +102,9 @@ diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 +	specific.c spinlock.c uthread_file.c wraputhread.c wrapsyscall.c \
 +	barrier.c localtime.c getlogin.c telldir.c ttyname.c strptime.c
 +
-+.if defined(USING_GCC3)
++.if defined(USING_GCC4)
++SOBJS += libgcc_r/unwind-sjlj.o libgcc_r/unwind-dw2.o libgcc_r/unwind-dw2-fde-glibc.o
++.elif defined(USING_GCC3)
 +SOBJS += libgcc_r/unwind-sjlj.o libgcc_r/unwind-dw2.o libgcc_r/unwind-dw2-fde.o
 +.else
 +SOBJS += libgcc_r/frame.o libgcc_r/_eh.o

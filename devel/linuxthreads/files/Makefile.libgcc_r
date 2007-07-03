@@ -1,9 +1,13 @@
-# $FreeBSD: /tmp/pcvs/ports/devel/linuxthreads/files/Makefile.libgcc_r,v 1.5 2003-06-09 00:25:04 tegge Exp $
+# $FreeBSD: /tmp/pcvs/ports/devel/linuxthreads/files/Makefile.libgcc_r,v 1.6 2007-07-03 08:38:00 pav Exp $
 
 PREFIX?=	${DESTDIR}/usr/local
 LIBDIR=		${PREFIX:S,^${DESTDIR},,}/lib
+SHLIBDIR=	${PREFIX:S,^${DESTDIR},,}/lib
+.if defined(USING_GCC4)
+INSTALL_PIC_ARCHIVE=yes
+.endif
 
-CFLAGS+=-D_PTHREADS -I../
+CFLAGS+=-D_PTHREADS -I../ -D__USE_UNIX98
 CFLAGS+=-I../sysdeps/i386 -I../sysdeps/pthread -I../sysdeps/unix/sysv/linux
 CXXFLAGS=	${CXXINCLUDES} ${CFLAGS:C/-std=[a-z:0-9]+//}
 
