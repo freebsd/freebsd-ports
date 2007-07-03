@@ -26,7 +26,7 @@ LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
 USE_AUTOTOOLS=	autoconf:259 libltdl:15 libtool:15
 #GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 CONFIGURE_ENV=	CFLAGS="-I${PREFIX}/include -L${PREFIX}/lib"
 ONLY_FOR_ARCHS=	i386
@@ -38,6 +38,10 @@ INFO=		hacking vmintegration
 # Directories for the SableVM source components
 SABLEVMDIR=	${PORTNAME}-${PORTVERSION}
 CLASSPATHDIR=	${PORTNAME}-classpath-${PORTVERSION}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	${WRKDIR}/${CLASSPATHDIR}/configure
 
 post-build:
 		@${ECHO} "===>    ${CLASSPATHDIR}"
