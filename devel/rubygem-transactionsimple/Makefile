@@ -14,9 +14,10 @@ DISTNAME=	transaction-simple-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simple object transaction support
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/hoe-1.2.1.gemspec:${PORTSDIR}/devel/rubygem-hoe
+BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/hoe-${HOE_VERSION}.gemspec:${PORTSDIR}/devel/rubygem-hoe
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
+HOE_VERSION!=    (cd ${PORTSDIR}/devel/rubygem-hoe && make -V PORTVERSION)
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 .include <bsd.port.post.mk>
