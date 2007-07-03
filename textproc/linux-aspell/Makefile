@@ -7,13 +7,12 @@
 
 PORTNAME=	aspell
 PORTVERSION=	0.50.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc linux
-MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/ximian/ximian-evolution/redhat-80-i386/ \
-		ftp://ftp.ntua.gr/pub/X11/ximian/ximian-evolution/redhat-80-i386/ \
-		ftp://ftp.icm.edu.pl/vol/rzm8/ximian/ximian-evolution/redhat-80-i386/ \
-		ftp://ftp.chg.ru/.7/X11/ximian/ximian-evolution/redhat-80-i386/ \
-		ftp://ftp.is.co.za/mirror/ftp.ximian.com/ximian-evolution/redhat-80-i386/
+MASTER_SITES=	ftp://ftp.pbone.net/mirror/ftp.ximian.com/pub/ximian-evolution/redhat-80-i386/ \
+		ftp://ftp.pbone.net/mirror/ftp.ximian.com/pub/ximian-evolution/redhat-80-i386/source/ \
+		ftp://ftp.is.co.za/mirror/ftp.ximian.com/ximian-evolution/redhat-80-i386/ \
+		ftp://ftp.chg.ru/pub/X11/ximian/ximian-evolution/redhat-80-i386/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-0.ximian.5.1
 DISTFILES=	${DISTNAME}.i386.rpm	# needed for slave ports / options
 EXTRACT_SUFX=	.i386.rpm
@@ -52,7 +51,7 @@ DICTVER_GV=	0.50-0
 DICTVER_HR=	0.51-0
 DICTVER_IA=	0.50-1
 DICTVER_ID=	0.50.1-0
-DICTVER_IS=	0.51-0
+DICTVER_IS=	0.51.1-0
 DICTVER_IT=	0.53-0
 DICTVER_MI=	0.50-0
 DICTVER_MS=	0.50-0
