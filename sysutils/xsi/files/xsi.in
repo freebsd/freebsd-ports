@@ -20,6 +20,6 @@ xsi_flags=${xsi_flags-""}
 name=xsi
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/bin/${name} ${xsi_flags}
+command=%%PREFIX%%/bin/${name}
 load_rc_config ${name}
 run_rc_command "$1"

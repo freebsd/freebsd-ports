@@ -4,5 +4,7 @@ bin/xsi
 %%PORTDOCS%%%%DOCSDIR%%/FRONTENDS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/xmlsysinfo-1.0.xsd
+%%PORTDOCS%%%%DOCSDIR%%/xsi-output.css
+%%PORTDOCS%%%%DOCSDIR%%/xsi-output.html
 %%PORTDOCS%%%%DOCSDIR%%/xsi-output.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

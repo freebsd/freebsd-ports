@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xsi
-PORTREVISION=	1
-PORTVERSION=	0.98.20
+PORTVERSION=	1.0.b2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://xsi.kolabore.ath.cx/download/
+DISTNAME=	${PORTNAME}-1.0-beta2
 
 MAINTAINER=	tmclaugh@FreeBSD.org
 COMMENT=	System monitor that provides XML encoded stats
