@@ -1,6 +1,6 @@
-# New ports collection makefile for:		diablo
-# Date created:					June 2nd 1997
-# Whom:						jfitz
+# New ports collection makefile for:	Diablo
+# Date created:				June 2nd 1997
+# Whom:					James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -25,20 +25,16 @@ MAN8=		dicmd.8 didump.8 dexpireover.8 dfeedinfo.8 dgrpctl.8 \
 		doverctl.8 drequeue.8 dhisexpire.8
 PORTDOCS=	COPYRIGHT INSTALL README.READER README.SERVER RELEASE_NOTES
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-extract:
 	@${CP} ${SCRIPTDIR}/diablo.sh-sample ${WRKDIR}
-
-do-configure:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g;\
-		s|-g -O2|${CFLAGS}|' \
+	@${REINPLACE_CMD} -E 's|%%PREFIX%%|${PREFIX}|g ;\
+		s|-g -O.?|${CFLAGS}| ; s|g?cc|${CC}|' \
 		${WRKDIR}/diablo.sh-sample ${WRKSRC}/XMakefile.inc
-.ifndef WITH_DES
+# Fix for GCC 4.2
+	@${REINPLACE_CMD} -e 's|VServerConfig\[\]|*VServerConfig|' \
+		${WRKSRC}/dreaderd/main.c
+
+.if !defined(WITH_DES)
 	@${REINPLACE_CMD} -e 's| -ldes||g' ${WRKSRC}/XMakefile.inc
 .endif
 
@@ -46,15 +42,15 @@ do-build:
 	@cd ${WRKSRC} && xmake all
 
 pre-install:
-	@${INSTALL} -d ${DOCDIR} ${PREFIX}/news ${PREFIX}/news/dbin
+	${INSTALL} -d ${DOCDIR} ${PREFIX}/news ${PREFIX}/news/dbin
 
 do-install:
 	@cd ${WRKSRC} && xmake install
-	@${INSTALL_SCRIPT} ${WRKDIR}/diablo.sh-sample ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKDIR}/diablo.sh-sample ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
@@ -63,4 +59,4 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${RM} -rf ${PREFIX}/news/man
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
