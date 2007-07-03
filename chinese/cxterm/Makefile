@@ -40,6 +40,10 @@ ALL_TARGET=	xrelease Makefiles includes all
 BROKEN=		"Coredump during build on ia64"
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile on GCC 4.2
+.endif
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/CXterm.sh ${PREFIX}/bin/CXterm
 	# standard X11 place

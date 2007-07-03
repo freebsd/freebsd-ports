@@ -32,6 +32,12 @@ MAKE_ENV+=	VARKON_ROOT=${VARKON_ROOT}
 VARKON_PREFIX=	${PREFIX}/share/varkon
 WEB_BROWSER?=	mozilla
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%MAKE%%+${GMAKE}+g;' ${WRKSRC}/make_varkon
 	@${REINPLACE_CMD} -e 's+netscape+${WEB_BROWSER}+ ' \
@@ -71,4 +77,4 @@ do-install:
 		-d ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

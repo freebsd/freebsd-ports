@@ -39,6 +39,10 @@ WIN32_CODEC_PREFIX=	${LOCALBASE}/lib/win32
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 # add this after <bsd.port.pre.mk> so that we inherit /etc/make.conf
 CONFIGURE_ARGS+=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-extraincdir=${LOCALBASE}/include \

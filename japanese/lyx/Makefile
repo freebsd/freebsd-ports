@@ -28,6 +28,12 @@ STRIP=
 CONFIGURE_ARGS=	--with-extra-lib=${X11BASE}/lib --with-extra-inc="${X11BASE}/include ${X11BASE}/include/X11"
 MAN1=		lyx.1 reLyX.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 pre-fetch:
 .if !defined(WITH_ISPELL)
 	@${ECHO_MSG} "if you want this port build with spell checker type"
@@ -43,4 +49,4 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/README.jis ${PREFIX}/share/lyx
 	${INSTALL_DATA} ${WRKSRC}/lib/lyxrc.jp ${PREFIX}/share/lyx
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

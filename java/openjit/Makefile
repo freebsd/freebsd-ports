@@ -32,6 +32,10 @@ PLIST_SUB+=	JAVADIR=${JAVA_HOME:S,${PREFIX}/,,}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if ${JAVA_PORT_VERSION} == 1.1
 JDKLIBDIR=	${PREFIX}/lib/OpenJIT
 PLIST_SUB+=	JAVA2:="@comment " JAVA11:=""

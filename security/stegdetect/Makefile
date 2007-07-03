@@ -33,6 +33,12 @@ CONFIGURE_ENV+=	PATH_GTKCONFIG="${GTK_CONFIG}"
 PLIST_SUB+=	X11=""
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-patch:
 	${REINPLACE_CMD} 's;/usr/include/event;${LOCALBASE}/include;g' \
 	${WRKSRC}/configure
@@ -40,4 +46,4 @@ post-patch:
 	${REINPLACE_CMD} 's/gtk-config//g' ${WRKSRC}/configure
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

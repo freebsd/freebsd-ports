@@ -38,6 +38,12 @@ PIXIE_SHLIBS=	file framebuffer rgbe
 
 SUB_LIST+=	PORTNAME=${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-patch:
 	@${FIND} -X ${WRKSRC} -name '*.cpp' -or -name '*.h' | \
 		${XARGS} ${REINPLACE_CMD} -i '' -e 's|malloc\.h|stdlib\.h|g'
@@ -95,4 +101,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
