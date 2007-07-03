@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxthreads
 PORTVERSION=	2.2.3
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
@@ -25,9 +25,12 @@ USE_PERL5_BUILD=true
 # This port only works on i386 right now.
 ONLY_FOR_ARCHS=	i386
 
-.if ${OSVERSION} >= 500035
-USING_GCC3=true
-MAKE_ENV+= USING_GCC3=true
+.if ${OSVERSION} >= 700042
+USING_GCC4=	true
+MAKE_ENV+=	USING_GCC4=true
+.elif ${OSVERSION} >= 500035
+USING_GCC3=	true
+MAKE_ENV+=	USING_GCC3=true
 .endif
 .if defined(LINUXTHREADS_INSTALL_LIBLTHREAD_PIC_ARCHIVE)
 MAKE_ENV+=	INSTALL_LIBLTHREAD_PIC_ARCHIVE=yes
@@ -120,7 +123,7 @@ pre-fetch:
 	  ${ECHO_MSG} ">>Please install FreeBSD source code in /usr/src"; \
 	  ${FALSE}; \
 	fi
-.if defined(USING_GCC3)
+.if defined(USING_GCC3) || defined(USING_GCC4)
 	@if ${TEST} -f /usr/src/gnu/lib/libstdc++/Makefile; then \
 	  : ; \
 	else \
@@ -156,12 +159,13 @@ post-extract:
 	@${TEST} -f ${WRKSRC}/libgcc_r/Makefile || \
 	${LN} -s ${FILESDIR}/Makefile.libgcc_r ${WRKSRC}/libgcc_r/Makefile
 	@${SED} -e 's/^LIB=[ 	]*gcc$$/LIB=	lgcc_r/;' \
+	     -e 's/^SHLIB_NAME=[ 	]*libgcc_s\.so\./SHLIB_NAME=	liblgcc_s.so./' \
 	     -e 's=$${.CURDIR}=/usr/src/gnu/lib/libgcc=g' \
 	  /usr/src/gnu/lib/libgcc/Makefile \
 	  > ${WRKSRC}/libgcc_r/Makefile.inc.tmp && \
 	${MV} ${WRKSRC}/libgcc_r/Makefile.inc.tmp \
 	   ${WRKSRC}/libgcc_r/Makefile.inc
-.if defined(USING_GCC3)
+.if defined(USING_GCC3) || defined(USING_GCC4)
 	@${MKDIR} ${WRKSRC}/libstdc++
 	@${TEST} -f ${WRKSRC}/libstdc++/Makefile || \
 	${LN} -s ${FILESDIR}/Makefile.libstdc++ ${WRKSRC}/libstdc++/Makefile
@@ -201,7 +205,7 @@ post-patch:
 pre-build:
 	@cd ${WRKSRC}/libgcc_r ; \
 		${SETENV} ${MAKE_ENV} ${MAKE}
-.if defined(USING_GCC3)
+.if defined(USING_GCC3) || defined(USING_GCC4)
 	cd ${WRKSRC}/libstdc++ ; \
 		${SETENV} ${MAKE_ENV} ${MAKE}
 	@cd ${WRKSRC}/libsupc++ ; \
@@ -212,7 +216,7 @@ pre-su-install:
 	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 0755 ${PREFIX}/lib
 	@cd ${WRKSRC}/libgcc_r ; \
 		${SETENV} ${MAKE_ENV} ${MAKE} install
-.if defined(USING_GCC3)
+.if defined(USING_GCC3) || defined(USING_GCC4)
 	@cd ${WRKSRC}/libstdc++ ; \
 		${SETENV} ${MAKE_ENV} ${MAKE} install
 	@cd ${WRKSRC}/libsupc++ ; \
@@ -251,22 +255,34 @@ PLIST_SUB+=	LIBLTHREADPICARCHIVE:=""
 .else
 PLIST_SUB+=	LIBLTHREADPICARCHIVE:="@comment "
 .endif
-.if defined(USING_GCC3)
-PLIST_SUB+=	GCC3ONLY:=""
+.if defined(USING_GCC4)
+PLIST_SUB+=	GCC3OR4ONLY:=""
+PLIST_SUB+=	GCC4ONLY:=""
+.if defined(LINUXTHREADS_WRAP_API)
+PLIST_SUB+=	LTHREADSHMAJOR:="7"
+.else
+PLIST_SUB+=	LTHREADSHMAJOR:="6"
+.endif
+.elif defined(USING_GCC3)
+PLIST_SUB+=	GCC3OR4ONLY:=""
+PLIST_SUB+=	GCC4ONLY:="@comment "
 .if defined(LINUXTHREADS_WRAP_API)
 PLIST_SUB+=	LTHREADSHMAJOR:="5"
 .else
 PLIST_SUB+=	LTHREADSHMAJOR:="3"
 .endif
 .else
-PLIST_SUB+=	GCC3ONLY:="@comment "
+PLIST_SUB+=	GCC3OR4ONLY:="@comment "
+PLIST_SUB+=	GCC4ONLY:="@comment "
 .if defined(LINUXTHREADS_WRAP_API)
 PLIST_SUB+=	LTHREADSHMAJOR:="4"
 .else
 PLIST_SUB+=	LTHREADSHMAJOR:="2"
 .endif
 .endif
-.if ${OSVERSION} >= 600033
+.if ${OSVERSION} >= 700042
+PLIST_SUB+=	LIBSTDCPPMAJOR:="6"
+.elif ${OSVERSION} >= 600033
 PLIST_SUB+=	LIBSTDCPPMAJOR:="5"
 .else
 PLIST_SUB+=	LIBSTDCPPMAJOR:="4"
