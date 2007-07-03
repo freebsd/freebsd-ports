@@ -31,6 +31,10 @@ CONFIGURE_ARGS=	--with-win32-path=${LOCALBASE}/lib/win32
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s|-lc_r|${PTHREAD_LIBS}|g" \

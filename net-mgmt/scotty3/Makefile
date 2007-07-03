@@ -56,6 +56,12 @@ PLIST_SUB+=	X11='@comment '
 
 LATEST_LINK=	scotty3
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-patch:
 	${MV} ${WRKSRC}/scotty.c ${WRKSRC}/scotty.c.orig
 	${CP} -p ${FILESDIR}/scotty.c ${WRKSRC}/scotty.c
@@ -67,4 +73,4 @@ post-install:
 	${LN} -s tkined1.5.0 ${PREFIX}/bin/tkined
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

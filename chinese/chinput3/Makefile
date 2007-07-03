@@ -30,6 +30,10 @@ SUB_FILES=	pkg-message
 BROKEN=		Does not compile on !i386
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/extern int ForwardEvent();/d' \
 		${WRKSRC}/src/Chinput-*/src/*.c

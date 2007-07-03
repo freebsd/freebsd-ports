@@ -23,4 +23,10 @@ NO_INSTALL_MANPAGES=	yes
 
 PLIST_FILES=	bin/xmbibtex lib/X11/app-defaults/XmBibTeX
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>

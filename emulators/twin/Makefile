@@ -37,6 +37,10 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--disable-intp
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 LIBRARIES=	libadvapi32.so libcomctl32.so libcomm.so \
 	libcommdlg.so libddeml.so libkeyboard.so \
 	liblzexpand.so libmmsystem.so libmsvcrt.so \

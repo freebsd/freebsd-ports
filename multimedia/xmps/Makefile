@@ -28,6 +28,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 BROKEN=		"Does not compile on !i386"
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
