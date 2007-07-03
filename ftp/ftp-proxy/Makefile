@@ -25,6 +25,10 @@ CFLAGS+=	-I${PREFIX}/include
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 700048
+IGNORE=		is a part of base for 7.0 and above
+.endif
+
 .if ${OSVERSION} < 502106
 IGNORE=		only for 5.3 and above
 .endif
