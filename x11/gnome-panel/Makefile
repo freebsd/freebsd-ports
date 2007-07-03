@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-panel
-PORTVERSION=	2.18.2
+PORTVERSION=	2.18.3
 PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -34,7 +34,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share \
 		--with-kde-docdir=${LOCALBASE}/share/doc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gnome-panel.1
@@ -61,8 +61,6 @@ CONFIGURE_ARGS+=--disable-eds
 .endif
 
 post-patch:
-#	@${REINPLACE_CMD} -e 's|evolution.desktop|evolution-2.8.desktop|g' \
-#		${WRKSRC}/gnome-panel/panel-default-setup.entries
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -e \
 		's|"applications.menu"|"gnome-applications.menu"|'
