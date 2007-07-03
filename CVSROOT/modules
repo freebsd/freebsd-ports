@@ -12626,6 +12626,7 @@ pslist		ports/sysutils/pslist
 psmark		ports/print/psmark
 psmisc		ports/sysutils/psmisc
 pspp		ports/math/pspp
+pssh		ports/security/pssh
 pstack		ports/sysutils/pstack
 pstoedit	ports/graphics/pstoedit
 pstoepsi	ports/graphics/pstoepsi
