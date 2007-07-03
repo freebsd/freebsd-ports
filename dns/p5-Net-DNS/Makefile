@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.59
+PORTVERSION=	0.60
 CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -25,7 +25,8 @@ CONFIGURE_ARGS+=	--online-tests
 MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::Question.3 Net::DNS::RR.3 Net::DNS::RR::A.3 \
 		Net::DNS::RR::AFSDB.3 Net::DNS::RR::CNAME.3 \
-		Net::DNS::RR::HINFO.3 Net::DNS::RR::ISDN.3 Net::DNS::RR::MG.3 \
+		Net::DNS::RR::ISDN.3 Net::DNS::RR::MG.3 \
+		Net::DNS::RR::HINFO.3 Net::DNS::RR::IPSECKEY.3 \
 		Net::DNS::RR::MINFO.3 Net::DNS::RR::MR.3 Net::DNS::RR::MX.3 \
 		Net::DNS::RR::NS.3 Net::DNS::RR::PTR.3 Net::DNS::RR::RP.3 \
 		Net::DNS::RR::RT.3 Net::DNS::RR::SOA.3 Net::DNS::RR::SRV.3 \
