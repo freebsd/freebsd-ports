@@ -18,7 +18,8 @@ COMMENT=	Perl port of Java package XML-DBMS v1.0
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
+		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -35,14 +36,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/*.* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-.else
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
