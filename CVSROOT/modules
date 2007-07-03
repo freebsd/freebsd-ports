@@ -12295,6 +12295,7 @@ poppler		ports/graphics/poppler
 poppler-data	ports/graphics/poppler-data
 poppler-gtk	ports/graphics/poppler-gtk
 poppler-qt	ports/graphics/poppler-qt
+poppler-qt4	ports/graphics/poppler-qt4
 poppler-utils	ports/graphics/poppler-utils
 popplerkit	ports/graphics/popplerkit
 poppwd		ports/mail/poppwd
