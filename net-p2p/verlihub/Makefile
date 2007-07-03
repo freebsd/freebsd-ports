@@ -1,6 +1,6 @@
-# New ports collection makefile for:	verlihub
+# New ports collection makefile for:	Verlihub
 # Date created:				2 April 2004
-# Whom:					Hurbold
+# Whom:					Bill Cadwallader <hurbold@yahoo.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	verlihub
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	verlihub-0.9.8c-RC2
 
 MAINTAINER=	ports@FreeBSD.org
@@ -32,18 +32,16 @@ USE_AUTOTOOLS=	libtool:15
 USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	3.4+
 USE_OPENSSL=	yes
 SUB_FILES+=	pkg-message
 
-SUB_FILES=	pkg-message
-DOCS=	configuring.txt using.txt help.html verlihub.html
+DOCS=		configuring.txt using.txt help.html verlihub.html
 MANUAL_DOCS=	verlihub.css verlihub_manual.html
 PORTDOCS=	${DOCS} ${MANUAL_DOCS}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
 .endfor
@@ -51,7 +49,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/html_manual/${i} ${DOCSDIR}
 .endfor
 .endif
-
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
