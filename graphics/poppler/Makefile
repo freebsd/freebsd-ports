@@ -3,12 +3,12 @@
 # Whom:                 marcus@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/poppler/Makefile,v 1.30 2006/09/30 04:55:20 ahze Exp $
+#   $MCom: ports/graphics/poppler/Makefile,v 1.35 2007/06/26 16:33:29 ahze Exp $
 #
 
 PORTNAME=	poppler
-PORTVERSION=	0.5.4
-PORTREVISION?=	3
+PORTVERSION=	0.5.9
+PORTREVISION?=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -19,11 +19,12 @@ RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack gnometarget libxml2
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-zlib \
 		--enable-xpdf-headers \
-		--with-html-dir=${DOCSDIR}
+		--with-html-dir=${DOCSDIR} \
+		--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
@@ -45,7 +46,13 @@ CONFIGURE_ARGS+=--enable-poppler-qt
 USE_QT_VER+=	3
 BUILD_WRKSRC=	${WRKSRC}/qt
 INSTALL_WRKSRC=	${WRKSRC}/qt
-# blah.. USE_QT_VER can't be defined after bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.kde.mk"
+.elif ${SLAVEPORT}=="qt4"
+CONFIGURE_ARGS+=--enable-poppler-qt4
+USE_QT_VER+=	4
+QT_COMPONENTS=	gui corelib xml qtestlib
+BUILD_WRKSRC=	${WRKSRC}/qt4
+INSTALL_WRKSRC=	${WRKSRC}/qt4
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
 .elif ${SLAVEPORT}=="utils"
 CONFIGURE_ARGS+=--enable-utils

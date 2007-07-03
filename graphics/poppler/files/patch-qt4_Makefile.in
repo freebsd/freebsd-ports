@@ -1,0 +1,11 @@
+--- qt4/Makefile.in.orig	Tue Jun 26 10:47:02 2007
++++ qt4/Makefile.in	Tue Jun 26 10:47:17 2007
+@@ -220,7 +220,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = src tests
++SUBDIRS = src
+ all: all-recursive
+ 
+ .SUFFIXES:

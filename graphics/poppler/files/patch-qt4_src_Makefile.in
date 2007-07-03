@@ -1,0 +1,34 @@
+--- qt4/src/Makefile.in.orig	Tue Jun 26 10:39:41 2007
++++ qt4/src/Makefile.in	Tue Jun 26 10:44:32 2007
+@@ -37,8 +37,8 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-@BUILD_SPLASH_OUTPUT_TRUE@am__append_1 = \
+-@BUILD_SPLASH_OUTPUT_TRUE@	$(top_builddir)/poppler/libpoppler-arthur.la
++@BUILD_SPLASH_OUTPUT_TRUE@am__append_1 =
++@BUILD_SPLASH_OUTPUT_TRUE@
+ 
+ subdir = qt4/src
+ DIST_COMMON = $(poppler_include_HEADERS) $(srcdir)/Makefile.am \
+@@ -64,9 +64,9 @@
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+-@BUILD_SPLASH_OUTPUT_TRUE@am__DEPENDENCIES_2 = $(top_builddir)/poppler/libpoppler-arthur.la
++@BUILD_SPLASH_OUTPUT_TRUE@am__DEPENDENCIES_2 = 
+ libpoppler_qt4_la_DEPENDENCIES =  \
+-	$(top_builddir)/poppler/libpoppler.la $(am__DEPENDENCIES_1) \
++	$(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+ am_libpoppler_qt4_la_OBJECTS = poppler-document.lo poppler-page.lo \
+ 	poppler-fontinfo.lo poppler-embeddedfile.lo poppler-textbox.lo \
+@@ -295,7 +295,7 @@
+ 	poppler-link-extractor-private.h	\
+ 	poppler-private.h
+ 
+-libpoppler_qt4_la_LIBADD = $(top_builddir)/poppler/libpoppler.la \
++libpoppler_qt4_la_LIBADD = -lpoppler -lm \
+ 	$(FONTCONFIG_LIBS) $(POPPLER_QT4_LIBS) $(am__append_1)
+ libpoppler_qt4_la_LDFLAGS = -version-info 1:0:0
+ all: all-am

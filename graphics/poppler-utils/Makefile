@@ -3,9 +3,9 @@
 # Whom:			Michael Nottebrock <lofi@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom$
+#    $MCom: ports/graphics/poppler-utils/Makefile,v 1.1 2007/06/20 17:12:04 ahze Exp $
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-utils
 
 MAINTAINER=	gnome@FreeBSD.org
