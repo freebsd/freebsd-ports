@@ -4,18 +4,18 @@ Documentation has been installed in %%PREFIX%%/share/doc
 
 Scripts and the executable have been installed in %%PREFIX%%/bin
 
-This port requires a working mysql server installation, either
+This port requires a working MySQL server installation, either
 locally or remotely.
 
-Once you have a properly-running mysql server, please run the install
+Once you have a properly-running MySQL server, please run the install
 script:
 
-%%PREFIX%%/bin/vh_install
+	%%PREFIX%%/bin/vh_install
 
 Follow the instructions given.
 
 Visit http://www.verlihub-project.org/ for the project's homepage
 or http://www.verlihubforums.com/ for the project's forums. The verlihub
-manual is available online at http://www.danomac.org/verlihub
+manual is available online at http://www.danomac.org/verlihub/.
 
 -------------------------------------------------------------------
