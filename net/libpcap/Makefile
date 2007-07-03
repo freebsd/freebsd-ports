@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpcap
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/ \
 		http://www.icrew.org/mirror/tcp_dump/tcpdump_3_9/
