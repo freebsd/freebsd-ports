@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=sablevm
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-classpath-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	roman@ontographics.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java VM created by McGill University's Sable Research Group
 
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
