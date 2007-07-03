@@ -115,6 +115,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		gpatch:${PORTSDIR}/devel/patch \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bison2:${PORTSDIR}/devel/bison2 \
+		bash:${PORTSDIR}/shells/bash \
 		imake:${X_IMAKE_PORT}
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 .if !defined(WITH_GPC)
