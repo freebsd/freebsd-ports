@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.60.8
-PORTREVISION=	2
+PORTVERSION=	4.61.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -167,9 +166,16 @@ do-build:
 		${WRKSRC}/bin/cron/update_phishing_sites.cron
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
-		s,/usr/bin/sa-update,${LOCALBASE}/bin/sa-update,g; \
+		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
 		s,%%RC_SUBR%%,${RC_SUBR},g;' \
-		${WRKSRC}/bin/cron/sa-update.cron
+		${WRKSRC}/bin/cron/update_spamassassin.cron
+	${PERL} -pi -e \
+		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
+                s,/etc/init.d/MailScanner,${LOCALBASE}/etc/rc.d/mailscanner,g; \
+		s,/etc/mail/,${LOCALBASE}/etc/mail/,g; \
+		s,/usr/bin/sa-compile,${LOCALBASE}/bin/sa-compile,g; \
+		s,/usr/bin/sa-update,${LOCALBASE}/bin/sa-update,g;' \
+                ${WRKSRC}/bin/update_spamassassin
 	${PERL} -pi -e \
 		's,/etc/MailScanner/MailScanner.conf,${PREFIX}/etc/MailScanner/MailScanner.conf,g;' \
 		${WRKSRC}/bin/clean.SA.cache
@@ -226,8 +232,10 @@ do-install:
 		${PREFIX}/libexec/MailScanner/update_virus_scanners
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/update_virus_scanners.cron \
 		${PREFIX}/libexec/MailScanner/update_virus_scanners.cron
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/sa-update.cron \
-		${PREFIX}/libexec/MailScanner/sa-update.cron
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_spamassassin \
+		${PREFIX}/libexec/MailScanner/update_spamassassin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/update_spamassassin.cron \
+		${PREFIX}/libexec/MailScanner/update_spamassassin.cron
 	#
 	# Step 3: Install etc files
 	#

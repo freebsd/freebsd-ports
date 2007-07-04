@@ -1,3 +1,10 @@
+Version 4.61.7
+==============
+- Upgrade to 4.61.7
+- Attention: update_spamassassin and update_spamassassin.cron are rewritten to fit
+  FreeBSD. Untestet. If you are using non-standard directories or FreeBSD < 6 you will
+  have to tweck update_spamassassin.
+
 Version 4.60.8_2
 ================
 - Fixed error in auto-zip: If a message contained 2 different attachments 

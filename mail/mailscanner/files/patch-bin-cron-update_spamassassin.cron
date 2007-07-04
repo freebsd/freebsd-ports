@@ -1,0 +1,42 @@
+--- ../MailScanner-install-4.61.7.orig/bin/cron/update_spamassassin.cron	Mon Jul  2 12:34:52 2007
++++ bin/cron/update_spamassassin.cron	Mon Jul  2 12:50:12 2007
+@@ -11,23 +11,28 @@
+   exit;
+ fi
+ 
+-# Insert a random delay up to this value, to spread virus updates round
+-# the clock. 1800 seconds = 30 minutes.
+-# Set this to 0 to disable it.
+-UPDATEMAXDELAY=3600
++# Add the following line to /etc/rc.conf to configure a maximum delay in
++# order to spread spamassassin updates round the clock. 1800 seconds = 30 minutes.
++# Set this to 0 to disable it
++
++. %%RC_SUBR%%
++
++name="mailscanner"
++rcvar=`set_rcvar`
++
++load_rc_config $name
++
++: ${mailscanner_sa_updatemaxdelay="3600"}
++
+ SAUPDATE=/opt/MailScanner/bin/update_spamassassin
+-if [ -f /etc/sysconfig/MailScanner ] ; then
+-        . /etc/sysconfig/MailScanner
+-fi
+-export UPDATEMAXDELAY
+ export SAUPDATE
+ 
+ [ -x $SAUPDATE ] || exit 0
+-if [ "x$UPDATEMAXDELAY" = "x0" ]; then
++if [ "x${mailscanner_sa_updatemaxdelay}" = "x0" ]; then
+   :
+ else
+-  logger -p mail.info -t update_spamassassin Delaying cron job up to $UPDATEMAXDELAY seconds
+-  perl -e "sleep int(rand($UPDATEMAXDELAY));"
++  logger -p mail.info -t update_spamassassin Delaying cron job up to ${mailscanner_sa_updatemaxdelay} seconds
++  perl -e "sleep int(rand(${mailscanner_sa_updatemaxdelay}));"
+ fi
+ exec $SAUPDATE
+ exit 0
