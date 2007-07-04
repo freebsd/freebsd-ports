@@ -215,6 +215,7 @@ gst_gsm_LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
 gst_gsm_DIST=	bad
 
 # ivorbis
+gst_ivorbis_USE_GSTREAMER+=	vorbis
 gst_ivorbis_LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
 gst_ivorbis_DIST=	bad
 
