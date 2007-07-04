@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.generalconcepts.com/resources/software/
 
-MAINTAINER=	jsellens@generalconcepts.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The X11R4 version of xmessage updated for X11R5 and renamed
 
 MAN1=		xmsg.1
