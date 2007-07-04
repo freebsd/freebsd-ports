@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.mpeg.org/pub/mpeg/mssg/
 DISTFILES=	mpeg2vidcodec_v12.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	An MPEG-2 Encoder and Decoder
 
 USE_XLIB=	yes

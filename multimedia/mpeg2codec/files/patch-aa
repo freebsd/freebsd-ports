@@ -24,8 +24,8 @@
  
 -#INCLUDEDIR = -I/usr/openwin/include
 -#LIBRARYDIR = -L/usr/openwin/lib
-+INCLUDEDIR = -I${X11BASE}/include
-+LIBRARYDIR = -L${X11BASE}/lib
++INCLUDEDIR = -I${LOCALBASE}/include
++LIBRARYDIR = -L${LOCALBASE}/lib
  
  # select one of the following CC CFLAGS settings
  
