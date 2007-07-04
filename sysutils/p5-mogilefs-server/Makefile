@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mogilefs-server
-PORTVERSION=	2.10.919
+PORTVERSION=	2.16
 CATEGORIES=	sysutils perl5
-MASTER_SITES=	http://freebsd.csie.nctu.edu.tw/~gslin/files/
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADFITZ
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-2.10.r919
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	MogileFS (distributed filesystem) server
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/AIO.pm:${PORTSDIR}/devel/p5-IO-AIO \
@@ -25,7 +25,7 @@ PERL_CONFIGURE=	yes
 
 MAN1=		mogautomount.1 mogilefsd.1 mogstored.1
 MAN3=		MogileFS::DevFID.3 MogileFS::FID.3 MogileFS::IOStatWatcher.3 \
-		MogileFS::Overview.3 \
+		MogileFS::Overview.3 MogileFS::ReplicationPolicy.3 \
 		MogileFS::ReplicationPolicy::MultipleHosts.3 \
 		MogileFS::Server.3 MogileFS::Store.3 \
 		MogileFS::Store::MySQL.3 MogileFS::Store::SQLite.3 \
