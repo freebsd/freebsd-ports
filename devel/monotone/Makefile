@@ -7,6 +7,7 @@
 
 PORTNAME=	monotone
 PORTVERSION=	0.35
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
 
@@ -34,9 +35,9 @@ PORTDOCS=	NEWS UPGRADE monotone.html
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-LIB_DEPENDS+=	boost_regex.3:${PORTSDIR}/devel/boost-gcc3
+LIB_DEPENDS+=	boost_regex.4:${PORTSDIR}/devel/boost-gcc3
 .else
-LIB_DEPENDS+=	boost_regex.3:${PORTSDIR}/devel/boost
+LIB_DEPENDS+=	boost_regex.4:${PORTSDIR}/devel/boost
 .endif
 
 .if defined(WITHOUT_NLS)

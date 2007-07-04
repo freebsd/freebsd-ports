@@ -8,7 +8,7 @@
 
 PORTNAME=	gsculpt
 PORTVERSION=	0.99.39.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ DISTNAME=	gSculpt-${PORTVERSION}-alpha-src
 MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	An Opensource 3D modelling application
 
-LIB_DEPENDS=	boost_python.3:${PORTSDIR}/devel/boost-python
+LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gtkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext \
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 

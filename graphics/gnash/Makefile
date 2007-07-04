@@ -7,7 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	GNU Flash movie player
 
-LIB_DEPENDS=	boost_thread.3:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		curl.4:${PORTSDIR}/ftp/curl
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gigi
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
@@ -16,7 +16,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	OpenGL Graphic User Interface Library
 
 LIB_DEPENDS=	IL.1:${PORTSDIR}/graphics/devil \
-		boost_filesystem.3:${PORTSDIR}/devel/boost \
+		boost_filesystem.4:${PORTSDIR}/devel/boost \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 BROKEN=		Does not build

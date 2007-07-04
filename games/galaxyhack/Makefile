@@ -7,7 +7,7 @@
 
 PORTNAME=	galaxyhack
 PORTVERSION=	1.74
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	AI script based strategy game
 
-LIB_DEPENDS=	boost_filesystem.3:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes

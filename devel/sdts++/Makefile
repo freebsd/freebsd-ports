@@ -7,6 +7,7 @@
 
 PORTNAME=	sdts++
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://thor-f5.er.usgs.gov/sdts/sdtsxx/ \
 		http://lychnobite.org/sdts/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://thor-f5.er.usgs.gov/sdts/sdtsxx/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for SDTS related development
 
-LIB_DEPENDS=	boost_thread.3:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes

@@ -7,13 +7,14 @@
 
 PORTNAME=	mp3plot
 DISTVERSION=	0.4.0a
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://p.outlyer.net/mp3plot/files/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Mp3 bitrate plot tool
 
-LIB_DEPENDS=	boost_thread.3:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
 
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
