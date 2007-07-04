@@ -12,14 +12,15 @@ PKGNAMESUFFIX=	-libuuid
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	UUID library from e2fsprogs package
 
-CONFIGURE_ARGS=	--enable-elf-shlibs --disable-fsck --disable-e2initrd-helper
+CONFIGURE_ARGS=	--enable-elf-shlibs --disable-fsck \
+		--disable-e2initrd-helper --mandir=${MANPREFIX}/man
 
 CONFLICTS=	ossp-uuid-[0-9]*
 
 WITHOUT_NLS=	yes
 MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
 MAKE_ARGS=	LIB_SUBDIRS=lib/uuid
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 ALL_TARGET=	libs
 INSTALL_TARGET=	install install-shlibs
 INSTALL_WRKSRC=	${WRKSRC}/lib/uuid
