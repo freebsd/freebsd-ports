@@ -1,0 +1,17 @@
+--- tools/build/v2/tools/common.jam.orig	Wed Jun 20 20:50:33 2007
++++ tools/build/v2/tools/common.jam	Wed Jun 20 20:51:11 2007
+@@ -645,14 +645,6 @@
+                 result += [ join-tag $(f:G=) :
+                     [ toolset-tag $(name) : $(type) : $(property-set) ] ] ;
+                 
+-                case <threading> :
+-                result += [ join-tag $(f:G=) :
+-                    [ threading-tag $(name) : $(type) : $(property-set) ] ] ;
+-                
+-                case <runtime> :
+-                result += [ join-tag $(f:G=) :
+-                    [ runtime-tag $(name) : $(type) : $(property-set) ] ] ;
+-                
+                 case <version:*> :
+                 local key = [ MATCH <version:(.*)> : $(f:G) ] ;
+                 local version = [ $(property-set).get <$(key)> ] ;

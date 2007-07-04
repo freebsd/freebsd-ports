@@ -1,0 +1,29 @@
+--- tools/build/v2/tools/gcc.jam.orig	Thu May  3 08:09:04 2007
++++ tools/build/v2/tools/gcc.jam	Sun Jul  1 12:22:38 2007
+@@ -62,7 +62,7 @@
+ {
+     # Information about the gcc command...
+     #   The command.
+-    local command = [ common.get-invocation-command gcc : g++ : $(command) ] ;
++    local command = [ common.get-invocation-command gcc : %%CXX%% : $(command) ] ;
+     #   The root directory of the tool install.
+     local root = [ feature.get-values <root> : $(options) ] ;
+     #   The bin directory where to find the command to execute.
+@@ -268,7 +268,7 @@
+ 
+ # Declare flags and action for compilation
+ flags gcc.compile OPTIONS <optimization>off : -O0 ;
+-flags gcc.compile OPTIONS <optimization>speed : -O3 ;
++flags gcc.compile OPTIONS <optimization>speed : %%CXXFLAGS%% ;
+ flags gcc.compile OPTIONS <optimization>space : -Os ;
+ 
+ flags gcc.compile OPTIONS <inlining>off : -fno-inline ;
+@@ -656,7 +656,7 @@
+         }
+     case *BSD :
+         {
+-        flags gcc OPTIONS <threading>multi : -pthread ;
++        flags gcc OPTIONS <threading>multi : %%PTHREAD_LIBS%% %%PTHREAD_CFLAGS%% ;
+         # there is no -lrt on BSD
+         }
+     case DragonFly :
