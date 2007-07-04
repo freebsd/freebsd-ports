@@ -1,6 +1,6 @@
 # New ports collection makefile for:	stegdetect
-# Date created:			Jul 19, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
+# Date created:				Jul 19, 2001
+# Whom:					Mark Pulford <mark@kyne.com.au>
 #
 # $FreeBSD$
 #
@@ -33,17 +33,11 @@ CONFIGURE_ENV+=	PATH_GTKCONFIG="${GTK_CONFIG}"
 PLIST_SUB+=	X11=""
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 post-patch:
-	${REINPLACE_CMD} 's;/usr/include/event;${LOCALBASE}/include;g' \
-	${WRKSRC}/configure
+	@${REINPLACE_CMD} 's;/usr/include/event;${LOCALBASE}/include;g' \
+		${WRKSRC}/configure
 .if defined(WITHOUT_X11)
-	${REINPLACE_CMD} 's/gtk-config//g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's/gtk-config//g' ${WRKSRC}/configure
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -3,11 +3,11 @@ in images. It is capable of detecting several different
 steganographic methods to embed hidden information in JPEG images.
 Currently, the detectable schemes are:
 
-* jsteg
-* jphide (unix and windows)
-* invisible secrets
-* outguess 01.3b
-* F5
-# appendX and camouflage
+    * jsteg
+    * jphide (unix and windows)
+    * invisible secrets
+    * outguess 01.3b
+    * F5
+    * appendX and camouflage
 
 WWW: http://www.outguess.org/detection.php

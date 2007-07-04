@@ -1,5 +1,13 @@
 --- stegdetect.c.orig	Sat Apr 15 00:14:05 2006
 +++ stegdetect.c	Sat Apr 15 00:14:40 2006
+@@ -78,7 +78,6 @@
+ float DCThist[257];
+ float scale = 1;		/* Sensitivity scaling */
+ 
+-static int debug = 0;
+ static int quiet = 0;
+ static int ispositive = 0;	/* Current images contain stego */
+ static char *transformname;	/* Current transform name */
 @@ -1227,7 +1227,7 @@
  			strlcat(outbuf, quality(tmp, stars), sizeof(outbuf));
  			flag = 1;
