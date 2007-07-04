@@ -24,7 +24,6 @@
     SUBDIR += alac
     SUBDIR += alienwah
     SUBDIR += amarok
-    SUBDIR += amarokFS
     SUBDIR += amp
     SUBDIR += ample
     SUBDIR += amrcoder

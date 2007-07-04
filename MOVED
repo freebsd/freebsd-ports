@@ -3091,3 +3091,4 @@ multimedia/libdivxencore||2007-07-04|Obsolete port
 multimedia/libdivxdecore||2007-07-04|Obsolete port
 multimedia/libdivxdecore-devel||2007-07-04|Obsolete port
 multimedia/handbrake-gtk2||2007-07-04|Obsolete, getting old to keep unsupport version around
+audio/amarokFS||2007-07-04|Removed
