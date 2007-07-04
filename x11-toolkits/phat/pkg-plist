@@ -18,36 +18,31 @@ lib/libphat.so
 lib/libphat.la
 lib/libphat.a
 libdata/pkgconfig/phat.pc
-share/gtk-doc/html/phat/abstractbaseclasses.html
-share/gtk-doc/html/phat/c4.html
-share/gtk-doc/html/phat/fansliders.html
-share/gtk-doc/html/phat/index.html
-share/gtk-doc/html/phat/install.html
-share/gtk-doc/html/phat/overview.html
-share/gtk-doc/html/phat/p4.html
-share/gtk-doc/html/phat/phat-phatfanslider.html
-share/gtk-doc/html/phat/phat-phathfanslider.html
-share/gtk-doc/html/phat/phat-phathkeyboard.html
-share/gtk-doc/html/phat/phat-phatkeyboard.html
-share/gtk-doc/html/phat/phat-phatprivate.html
-share/gtk-doc/html/phat/phat-phatsliderbutton.html
-share/gtk-doc/html/phat/phat-phatvfanslider.html
-share/gtk-doc/html/phat/phat-phatvkeyboard.html
-share/gtk-doc/html/phat/phat.html
-share/gtk-doc/html/phat/phatfanslider.html
-share/gtk-doc/html/phat/phathfanslider.html
-share/gtk-doc/html/phat/phathkeyboard.html
-share/gtk-doc/html/phat/phatkeyboard.html
-share/gtk-doc/html/phat/phatsliderbutton.html
-share/gtk-doc/html/phat/phatvfanslider.html
-share/gtk-doc/html/phat/phatvkeyboard.html
-share/gtk-doc/html/phat/phatwidgets.html
-share/gtk-doc/html/phat/use.html
-share/gtk-doc/html/phat/widgets.html
-share/gtk-doc/html/phat/index.sgml
 %%DATADIR%%/pixmaps/knob.png
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
+share/gtk-doc/html/phat/PhatFanSlider.html
+share/gtk-doc/html/phat/PhatHFanSlider.html
+share/gtk-doc/html/phat/PhatHKeyboard.html
+share/gtk-doc/html/phat/PhatKeyboard.html
+share/gtk-doc/html/phat/PhatSliderButton.html
+share/gtk-doc/html/phat/PhatVFanSlider.html
+share/gtk-doc/html/phat/PhatVKeyboard.html
+share/gtk-doc/html/phat/home.png
+share/gtk-doc/html/phat/index.html
+share/gtk-doc/html/phat/index.sgml
+share/gtk-doc/html/phat/install.html
+share/gtk-doc/html/phat/left.png
+share/gtk-doc/html/phat/phat-PhatKnob.html
+share/gtk-doc/html/phat/phat-PhatPad.html
+share/gtk-doc/html/phat/phat.devhelp
+share/gtk-doc/html/phat/phat.devhelp2
+share/gtk-doc/html/phat/phat.html
+share/gtk-doc/html/phat/phatwidgets.html
+share/gtk-doc/html/phat/right.png
+share/gtk-doc/html/phat/style.css
+share/gtk-doc/html/phat/up.png
+share/gtk-doc/html/phat/use.html
 @dirrm share/gtk-doc/html/phat
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
