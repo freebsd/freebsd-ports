@@ -1,0 +1,16 @@
+--- src/net/Makefile.in.orig	Sun Feb 19 15:01:40 2006
++++ src/net/Makefile.in	Thu Jul  5 00:53:03 2007
+@@ -168,13 +168,6 @@
+ DIST_COMMON = $(srcdir)/Makefile.in Makefile.am
+ all: all-am
+ 
+-.SUFFIXES:
+-$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+-	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu  src/net/Makefile
+-Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+-
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+ 
