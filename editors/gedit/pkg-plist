@@ -59,8 +59,8 @@ lib/gedit-2/plugins/libfilebrowser.la
 lib/gedit-2/plugins/libfilebrowser.so
 lib/gedit-2/plugins/libindent.la
 lib/gedit-2/plugins/libindent.so
-lib/gedit-2/plugins/libmodelines.la
-lib/gedit-2/plugins/libmodelines.so
+%%PYTHON%%lib/gedit-2/plugins/libmodelines.la
+%%PYTHON%%lib/gedit-2/plugins/libmodelines.so
 lib/gedit-2/plugins/libsample.la
 lib/gedit-2/plugins/libsample.so
 lib/gedit-2/plugins/libsort.la
@@ -71,7 +71,7 @@ lib/gedit-2/plugins/libtaglist.la
 lib/gedit-2/plugins/libtaglist.so
 lib/gedit-2/plugins/libtime.la
 lib/gedit-2/plugins/libtime.so
-lib/gedit-2/plugins/modelines.gedit-plugin
+%%PYTHON%%lib/gedit-2/plugins/modelines.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/pythonconsole.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/pythonconsole/__init__.py
 %%PYTHON%%lib/gedit-2/plugins/pythonconsole/__init__.pyc
@@ -376,6 +376,7 @@ share/locale/nb/LC_MESSAGES/gedit.mo
 share/locale/ne/LC_MESSAGES/gedit.mo
 share/locale/nl/LC_MESSAGES/gedit.mo
 share/locale/nn/LC_MESSAGES/gedit.mo
+share/locale/oc/LC_MESSAGES/gedit.mo
 share/locale/or/LC_MESSAGES/gedit.mo
 share/locale/pa/LC_MESSAGES/gedit.mo
 share/locale/pl/LC_MESSAGES/gedit.mo
@@ -384,6 +385,7 @@ share/locale/pt_BR/LC_MESSAGES/gedit.mo
 share/locale/ro/LC_MESSAGES/gedit.mo
 share/locale/ru/LC_MESSAGES/gedit.mo
 share/locale/rw/LC_MESSAGES/gedit.mo
+share/locale/si/LC_MESSAGES/gedit.mo
 share/locale/sk/LC_MESSAGES/gedit.mo
 share/locale/sl/LC_MESSAGES/gedit.mo
 share/locale/sq/LC_MESSAGES/gedit.mo
@@ -462,8 +464,12 @@ share/locale/zh_TW/LC_MESSAGES/gedit.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
