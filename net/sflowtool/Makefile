@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sflowtool
-PORTVERSION=	3.10
+PORTVERSION=	3.12
 CATEGORIES=	net
 MASTER_SITES=	http://www.inmon.com/bin/
 
