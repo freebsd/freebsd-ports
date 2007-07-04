@@ -3,6 +3,17 @@
 # Whom:                        Christian Weisgerber <naddy@mips.inka.de>
 #
 # $FreeBSD$
+#
+# Make sure that your configuration DOES NOT set AN?Y gcc-related
+# variables.  ksh93 will not compile if you set even the seemingly
+# most unrelated variable related to gcc configuration.  This means
+# especially any flag which attempts to set the cputype.  Setting the
+# cputype does absolutely nothing except cause systems to fail in
+# horrible ways.  For any modern processor, setting the cputype only
+# serves to expose gcc bugs and does nothing to speed up any known
+# program.  If you are really unconvinced, go ahead but do not
+# complain to me about it.
+#
 
 PORTNAME=	ksh93
 PORTVERSION=	${VERSION:S/-//g}
@@ -17,7 +28,7 @@ COMMENT=	Official AT&T release of KornShell 93
 
 MANUAL_PACKAGE_BUILD=Doesn't build in tinderbox environment
 
-VERSION=	2007-03-28
+VERSION=	2007-06-28
 RESTRICTED=	Source recipient must acknowledge license
 
 FETCH_ENV=	HTTP_AUTH='basic:*:I accept www.opensource.org/licenses/cpl:.'
