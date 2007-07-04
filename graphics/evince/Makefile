@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	evince
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
