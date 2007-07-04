@@ -31,12 +31,11 @@ USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 SUB_FILES+=	pkg-message
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 DOCS=		configuring.txt using.txt help.html verlihub.html
 MANUAL_DOCS=	verlihub.css verlihub_manual.html
 PORTDOCS=	${DOCS} ${MANUAL_DOCS}
-
-post-extract:
-	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)
