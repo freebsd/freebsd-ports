@@ -38,10 +38,8 @@ CONFIGURE_ARGS+=	--mandir=${PREFIX}/man --infodir=${PREFIX}/info
 DOCS=	README README.VFS logo-shaded.svg
 MAN8=	nepenthes.8
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 \
+	${REINPLACE_CMD} -e 's,-Werror,,'
 
-.if ${OSVERSION} >= 700000
-BROKEN=		Does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
