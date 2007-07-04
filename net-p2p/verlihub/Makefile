@@ -8,11 +8,12 @@
 PORTNAME=	verlihub
 DISTVERSION=	0.9.8d-RC1
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skylord@vt.net.ru
 COMMENT=	A Direct Connect protocol server (Hub)
 
 # XXX: Actually, bash isn't required for building,
@@ -31,11 +32,12 @@ USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 SUB_FILES+=	pkg-message
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 DOCS=		configuring.txt using.txt help.html verlihub.html
 MANUAL_DOCS=	verlihub.css verlihub_manual.html
 PORTDOCS=	${DOCS} ${MANUAL_DOCS}
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)
