@@ -170,10 +170,10 @@ post-extract:
 .for DICO in ${DICTS}
 . if (${SPECDICTS:M${DICO}*} != "")
 	@${MKDIR} -p ${DICO_WRKDIR} && cd ${DICO_WRKDIR} && \
-	 ${TAR} -xjf ${DISTDIR}/aspell-${DICO}-${DICTVER_${DICO:U}}${DICT_SUFFIX}
+	 ${TAR} -xjf ${DISTDIR}/${DIST_SUBDIR}/aspell-${DICO}-${DICTVER_${DICO:U}}${DICT_SUFFIX}
 . else
 	@${MKDIR} -p ${DICO_WRKDIR} && cd ${DICO_WRKDIR} && \
-	 ${TAR} -xjf ${DISTDIR}/aspell-${DICO}-${DICTVERSION}${DICT_SUFFIX}
+	 ${TAR} -xjf ${DISTDIR}/${DIST_SUBDIR}/aspell-${DICO}-${DICTVERSION}${DICT_SUFFIX}
 . endif
 .endfor
 
