@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer-plugins
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/gst-pulse/
 PKGNAMESUFFIX=	-pulse
