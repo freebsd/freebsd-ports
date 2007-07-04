@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/lexa/ \
 		ftp://ftp.des.tstu.ru/pub/mirror/Unix/apache/apache.lexa.ru/pub/domestic/lexa/
 
-MAINTAINER=	Serge@Maslov.biz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print lines contans IP matching a pattern in CIDR format
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
