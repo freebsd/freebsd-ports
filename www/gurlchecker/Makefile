@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-clamav
 .if defined(WITHOUT_GNUTLS)
 CONFIGURE_ARGS+=	--disable-gnutls
 .else
-LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
 .endif
 
 post-patch:
