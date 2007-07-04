@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: obspamd
-# REQUIRE: NETWORKING SERVERS
+# REQUIRE: NETWORKING SERVERS syslogd named
 # BEFORE:  DAEMON
 # KEYWORD: shutdown
 
