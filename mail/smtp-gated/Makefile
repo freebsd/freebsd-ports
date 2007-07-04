@@ -12,7 +12,7 @@ CATEGORIES=		mail
 MASTER_SITES=	http://smtp-proxy.klolik.org/
 DISTNAME=		${PORTNAME}-1.4.12-rc9
 
-MAINTAINER=		msciciel@darkzone.ma.cx
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		This software block SMTP sessions used by e-mail worms and viruses
 
 HAS_CONFIGURE=		yes

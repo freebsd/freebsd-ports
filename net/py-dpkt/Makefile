@@ -11,7 +11,7 @@ CATEGORIES=	net python
 MASTER_SITES=	http://dpkt.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	msciciel@darkzone.ma.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python fast, simple packet creation / parsing module
 
 USE_PYTHON=	yes

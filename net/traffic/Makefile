@@ -10,7 +10,7 @@ DISTVERSION=		0.1rc4
 CATEGORIES=		net
 MASTER_SITES=		http://darkzone.ma.cx/resources/unix/traffic/
 
-MAINTAINER=		msciciel@darkzone.ma.cx
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The main goal of this program is to count bandwidth usage by IP
 
 GNU_CONFIGURE=		yes
