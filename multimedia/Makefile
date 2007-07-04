@@ -100,9 +100,6 @@
     SUBDIR += ksubeditor
     SUBDIR += ldvd
     SUBDIR += libdca
-    SUBDIR += libdivxdecore
-    SUBDIR += libdivxdecore-devel
-    SUBDIR += libdivxencore
     SUBDIR += libdv
     SUBDIR += libdvbpsi
     SUBDIR += libdvdcss

@@ -3087,3 +3087,6 @@ net/obnc||2007-07-03|Removed: A new version of this port is available from base 
 databases/p5-DBD-RAM||2007-07-03|Has expired: Only works on 4.x
 databases/p5-DBD-File||2007-07-03|Has expired: Only usable on 4.x
 databases/p5-DBI-137|databases/p5-DBI|2007-07-03|Only useful for 4.x
+multimedia/libdivxencore||2007-07-04|Obsolete port
+multimedia/libdivxdecore||2007-07-04|Obsolete port
+multimedia/libdivxdecore-devel||2007-07-04|Obsolete port
