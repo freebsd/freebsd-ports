@@ -1,15 +1,15 @@
 @comment $FreeBSD$
-%%PORTDOCS%%%%DOCSDIR%%/apache.conf
 %%PORTDOCS%%%%DOCSDIR%%/fsck-notes.txt
-%%PORTDOCS%%%%DOCSDIR%%/lighttpd.conf
 %%PORTDOCS%%%%DOCSDIR%%/memcache-support.txt
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mogilefs-server/.packlist
 %%SITE_PERL%%/MogileFS/Class.pm
 %%SITE_PERL%%/MogileFS/Config.pm
 %%SITE_PERL%%/MogileFS/Connection/Client.pm
+%%SITE_PERL%%/MogileFS/Connection/Mogstored.pm
 %%SITE_PERL%%/MogileFS/Connection/Worker.pm
 %%SITE_PERL%%/MogileFS/DevFID.pm
 %%SITE_PERL%%/MogileFS/Device.pm
+%%SITE_PERL%%/MogileFS/DeviceState.pm
 %%SITE_PERL%%/MogileFS/Domain.pm
 %%SITE_PERL%%/MogileFS/Exception.pm
 %%SITE_PERL%%/MogileFS/FID.pm
@@ -18,7 +18,13 @@
 %%SITE_PERL%%/MogileFS/IOStatWatcher.pm
 %%SITE_PERL%%/MogileFS/Overview.pm
 %%SITE_PERL%%/MogileFS/ProcManager.pm
+%%SITE_PERL%%/MogileFS/RebalancePolicy.pm
+%%SITE_PERL%%/MogileFS/RebalancePolicy/DrainDevices.pm
+%%SITE_PERL%%/MogileFS/RebalancePolicy/PercentFree.pm
+%%SITE_PERL%%/MogileFS/RebalancePolicy/Random.pm
+%%SITE_PERL%%/MogileFS/ReplicationPolicy.pm
 %%SITE_PERL%%/MogileFS/ReplicationPolicy/MultipleHosts.pm
+%%SITE_PERL%%/MogileFS/ReplicationRequest.pm
 %%SITE_PERL%%/MogileFS/Server.pm
 %%SITE_PERL%%/MogileFS/Store.pm
 %%SITE_PERL%%/MogileFS/Store/MySQL.pm
@@ -32,23 +38,27 @@
 %%SITE_PERL%%/MogileFS/Worker/Query.pm
 %%SITE_PERL%%/MogileFS/Worker/Reaper.pm
 %%SITE_PERL%%/MogileFS/Worker/Replicate.pm
+%%SITE_PERL%%/Mogstored/ChildProcess.pm
+%%SITE_PERL%%/Mogstored/ChildProcess/DiskUsage.pm
+%%SITE_PERL%%/Mogstored/ChildProcess/FIDSizes.pm
+%%SITE_PERL%%/Mogstored/ChildProcess/IOStat.pm
+%%SITE_PERL%%/Mogstored/FIDStatter.pm
 %%SITE_PERL%%/Mogstored/HTTPServer.pm
 %%SITE_PERL%%/Mogstored/HTTPServer/Lighttpd.pm
 %%SITE_PERL%%/Mogstored/HTTPServer/Perlbal.pm
 %%SITE_PERL%%/Mogstored/SideChannelClient.pm
 %%SITE_PERL%%/Mogstored/SideChannelListener.pm
-%%SITE_PERL%%/makedocs.pl
 bin/mogautomount
 bin/mogdbsetup
 bin/mogilefsd
 bin/mogstored
-bin/mogstored-diskusage
-bin/mogstored-iostat
 @dirrmtry %%SITE_PERL%%/Mogstored/HTTPServer
+@dirrmtry %%SITE_PERL%%/Mogstored/ChildProcess
 @dirrmtry %%SITE_PERL%%/Mogstored
 @dirrmtry %%SITE_PERL%%/MogileFS/Worker
 @dirrmtry %%SITE_PERL%%/MogileFS/Store
 @dirrmtry %%SITE_PERL%%/MogileFS/ReplicationPolicy
+@dirrmtry %%SITE_PERL%%/MogileFS/RebalancePolicy
 @dirrmtry %%SITE_PERL%%/MogileFS/Connection
 @dirrmtry %%SITE_PERL%%/MogileFS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/mogilefs-server
