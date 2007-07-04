@@ -77,14 +77,17 @@ bin/olive-gtk
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_history.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_preferences.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_tortoise_bzr.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_viz.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_history.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_preferences.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_tortoise_bzr.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_viz.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_history.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_preferences.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_tortoise_bzr.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_viz.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/annotate/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/annotate/colormap.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/annotate/config.py
@@ -177,20 +180,19 @@ bin/olive-gtk
 share/olive/olive.glade
 share/olive/oliveicon2.png
 share/olive/cmenu.ui
-share/olive/icons/commit.png
-share/olive/icons/commit16.png
-share/olive/icons/diff.png
-share/olive/icons/diff16.png
-share/olive/icons/log.png
-share/olive/icons/log16.png
-share/olive/icons/pull.png
-share/olive/icons/pull16.png
-share/olive/icons/push.png
-share/olive/icons/push16.png
-share/olive/icons/refresh.png
+share/olive/commit.png
+share/olive/commit16.png
+share/olive/diff.png
+share/olive/diff16.png
+share/olive/log.png
+share/olive/log16.png
+share/olive/pull.png
+share/olive/pull16.png
+share/olive/push.png
+share/olive/push16.png
+share/olive/refresh.png
 share/applications/olive-gtk.desktop
 share/pixmaps/olive-gtk.png
-@dirrm share/olive/icons
 @dirrm share/olive
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/olive
