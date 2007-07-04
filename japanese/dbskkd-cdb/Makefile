@@ -10,7 +10,7 @@ PORTVERSION=	1.71
 PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.ne.jp/asahi/bdx/info/software/
-DISTNAME=	${PORTNAME}-${PORTVERSION}dev
+DISTVERSIONSUFFIX=	dev
 
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=Yet another dictionary server for SKK
