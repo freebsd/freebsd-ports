@@ -202,6 +202,7 @@ share/locale/ms/LC_MESSAGES/kfile_cpp.mo
 share/locale/ms/LC_MESSAGES/kfile_dds.mo
 share/locale/ms/LC_MESSAGES/kfile_deb.mo
 share/locale/ms/LC_MESSAGES/kfile_desktop.mo
+share/locale/ms/LC_MESSAGES/kfile_diff.mo
 share/locale/ms/LC_MESSAGES/kfile_drgeo.mo
 share/locale/ms/LC_MESSAGES/kfile_dvi.mo
 share/locale/ms/LC_MESSAGES/kfile_exr.mo
@@ -224,6 +225,7 @@ share/locale/ms/LC_MESSAGES/kfile_pcx.mo
 share/locale/ms/LC_MESSAGES/kfile_pdf.mo
 share/locale/ms/LC_MESSAGES/kfile_png.mo
 share/locale/ms/LC_MESSAGES/kfile_pnm.mo
+share/locale/ms/LC_MESSAGES/kfile_po.mo
 share/locale/ms/LC_MESSAGES/kfile_ps.mo
 share/locale/ms/LC_MESSAGES/kfile_rfc822.mo
 share/locale/ms/LC_MESSAGES/kfile_rgb.mo
@@ -233,6 +235,7 @@ share/locale/ms/LC_MESSAGES/kfile_tga.mo
 share/locale/ms/LC_MESSAGES/kfile_theora.mo
 share/locale/ms/LC_MESSAGES/kfile_tiff.mo
 share/locale/ms/LC_MESSAGES/kfile_torrent.mo
+share/locale/ms/LC_MESSAGES/kfile_ts.mo
 share/locale/ms/LC_MESSAGES/kfile_txt.mo
 share/locale/ms/LC_MESSAGES/kfile_vcf.mo
 share/locale/ms/LC_MESSAGES/kfile_wav.mo
@@ -291,6 +294,7 @@ share/locale/ms/LC_MESSAGES/kio_sftp.mo
 share/locale/ms/LC_MESSAGES/kio_sieve.mo
 share/locale/ms/LC_MESSAGES/kio_smb.mo
 share/locale/ms/LC_MESSAGES/kio_smtp.mo
+share/locale/ms/LC_MESSAGES/kio_svn.mo
 share/locale/ms/LC_MESSAGES/kio_system.mo
 share/locale/ms/LC_MESSAGES/kio_tar.mo
 share/locale/ms/LC_MESSAGES/kio_thumbnail.mo
@@ -378,6 +382,7 @@ share/locale/ms/LC_MESSAGES/kreadconfig.mo
 share/locale/ms/LC_MESSAGES/krec.mo
 share/locale/ms/LC_MESSAGES/kregexpeditor.mo
 share/locale/ms/LC_MESSAGES/kres_blogging.mo
+share/locale/ms/LC_MESSAGES/kres_bugzilla.mo
 share/locale/ms/LC_MESSAGES/kres_exchange.mo
 share/locale/ms/LC_MESSAGES/kres_featureplan.mo
 share/locale/ms/LC_MESSAGES/kres_groupware.mo
@@ -404,6 +409,7 @@ share/locale/ms/LC_MESSAGES/ksplash.mo
 share/locale/ms/LC_MESSAGES/ksplashthemes.mo
 share/locale/ms/LC_MESSAGES/kstars.mo
 share/locale/ms/LC_MESSAGES/kstart.mo
+share/locale/ms/LC_MESSAGES/kstartperf.mo
 share/locale/ms/LC_MESSAGES/kstyle_highcontrast_config.mo
 share/locale/ms/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/ms/LC_MESSAGES/kstyle_phase_config.mo
@@ -432,6 +438,7 @@ share/locale/ms/LC_MESSAGES/kturtle.mo
 share/locale/ms/LC_MESSAGES/ktux.mo
 share/locale/ms/LC_MESSAGES/kuick_plugin.mo
 share/locale/ms/LC_MESSAGES/kuickshow.mo
+share/locale/ms/LC_MESSAGES/kuiviewer.mo
 share/locale/ms/LC_MESSAGES/kuser.mo
 share/locale/ms/LC_MESSAGES/kverbos.mo
 share/locale/ms/LC_MESSAGES/kview.mo
@@ -502,18 +509,19 @@ share/locale/ms/LC_MESSAGES/nsplugin.mo
 share/locale/ms/LC_MESSAGES/pitchablespeed.mo
 share/locale/ms/LC_MESSAGES/ppdtranslations.mo
 share/locale/ms/LC_MESSAGES/privacy.mo
-share/locale/ms/LC_MESSAGES/qeditor.mo
 share/locale/ms/LC_MESSAGES/quanta.mo
 share/locale/ms/LC_MESSAGES/quicklauncher.mo
 share/locale/ms/LC_MESSAGES/rellinks.mo
 share/locale/ms/LC_MESSAGES/searchbarplugin.mo
 share/locale/ms/LC_MESSAGES/secpolicy.mo
+share/locale/ms/LC_MESSAGES/spy.mo
 share/locale/ms/LC_MESSAGES/synaescope.mo
 share/locale/ms/LC_MESSAGES/timezones.mo
 share/locale/ms/LC_MESSAGES/tippecanoe.mo
 share/locale/ms/LC_MESSAGES/trashapplet.mo
 share/locale/ms/LC_MESSAGES/tyler.mo
 share/locale/ms/LC_MESSAGES/uachangerplugin.mo
+share/locale/ms/LC_MESSAGES/umbrello.mo
 share/locale/ms/LC_MESSAGES/useraccount.mo
 share/locale/ms/LC_MESSAGES/validatorsplugin.mo
 share/locale/ms/LC_MESSAGES/wakeup.mo

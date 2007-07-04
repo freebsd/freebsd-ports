@@ -406,6 +406,7 @@ share/apps/kopete/styles/Clear/Contents/Resources/Outgoing/Content.html
 share/apps/kopete/styles/Clear/Contents/Resources/Outgoing/NextContent.html
 share/apps/kopete/styles/Clear/Contents/Resources/Outgoing/buddy_icon.png
 share/apps/kopete/styles/Clear/Contents/Resources/Status.html
+share/apps/kopete/styles/Clear/Contents/Resources/Variants/No_avatars.css
 share/apps/kopete/styles/Clear/Contents/Resources/images/body-background.png
 share/apps/kopete/styles/Clear/Contents/Resources/images/body-inbound-arrow.png
 share/apps/kopete/styles/Clear/Contents/Resources/images/body-inbound-avatar.png
@@ -817,6 +818,7 @@ share/sounds/Kopete_User_is_Online.ogg
 @dirrm share/apps/kopete/styles/Gaim/Contents
 @dirrm share/apps/kopete/styles/Gaim
 @dirrm share/apps/kopete/styles/Clear/Contents/Resources/images
+@dirrm share/apps/kopete/styles/Clear/Contents/Resources/Variants
 @dirrm share/apps/kopete/styles/Clear/Contents/Resources/Outgoing
 @dirrm share/apps/kopete/styles/Clear/Contents/Resources/Incoming
 @dirrm share/apps/kopete/styles/Clear/Contents/Resources

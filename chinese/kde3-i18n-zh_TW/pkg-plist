@@ -397,12 +397,6 @@ share/locale/zh_TW/LC_MESSAGES/kolourpaint.mo
 share/locale/zh_TW/LC_MESSAGES/kolourpicker.mo
 share/locale/zh_TW/LC_MESSAGES/kommander.mo
 share/locale/zh_TW/LC_MESSAGES/kompare.mo
-share/locale/zh_TW/LC_MESSAGES/konnector_dummy.mo
-share/locale/zh_TW/LC_MESSAGES/konnector_kabc.mo
-share/locale/zh_TW/LC_MESSAGES/konnector_kcal.mo
-share/locale/zh_TW/LC_MESSAGES/konnector_local.mo
-share/locale/zh_TW/LC_MESSAGES/konnector_qtopia.mo
-share/locale/zh_TW/LC_MESSAGES/konnector_remote.mo
 share/locale/zh_TW/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/zh_TW/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/zh_TW/LC_MESSAGES/konqsidebar_metabar.mo
@@ -548,7 +542,6 @@ share/locale/zh_TW/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/zh_TW/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/zh_TW/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/zh_TW/LC_MESSAGES/libkickermenu_tom.mo
-share/locale/zh_TW/LC_MESSAGES/libkitchensync.mo
 share/locale/zh_TW/LC_MESSAGES/libkleopatra.mo
 share/locale/zh_TW/LC_MESSAGES/libkmime.mo
 share/locale/zh_TW/LC_MESSAGES/libkonq.mo
@@ -568,7 +561,6 @@ share/locale/zh_TW/LC_MESSAGES/mediaapplet.mo
 share/locale/zh_TW/LC_MESSAGES/mediacontrol.mo
 share/locale/zh_TW/LC_MESSAGES/mf_konqplugin.mo
 share/locale/zh_TW/LC_MESSAGES/minitoolsplugin.mo
-share/locale/zh_TW/LC_MESSAGES/multisynk.mo
 share/locale/zh_TW/LC_MESSAGES/naughtyapplet.mo
 share/locale/zh_TW/LC_MESSAGES/nexscope.mo
 share/locale/zh_TW/LC_MESSAGES/noatun.mo
@@ -576,7 +568,6 @@ share/locale/zh_TW/LC_MESSAGES/nsplugin.mo
 share/locale/zh_TW/LC_MESSAGES/pitchablespeed.mo
 share/locale/zh_TW/LC_MESSAGES/ppdtranslations.mo
 share/locale/zh_TW/LC_MESSAGES/privacy.mo
-share/locale/zh_TW/LC_MESSAGES/qeditor.mo
 share/locale/zh_TW/LC_MESSAGES/quanta.mo
 share/locale/zh_TW/LC_MESSAGES/quicklauncher.mo
 share/locale/zh_TW/LC_MESSAGES/rellinks.mo

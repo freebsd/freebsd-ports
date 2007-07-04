@@ -35,6 +35,21 @@ share/doc/HTML/fr/kchart/kchart-wizard3.png
 share/doc/HTML/fr/kchart/kchart-wizard4.png
 share/doc/HTML/fr/kchart/shortcut.png
 share/doc/HTML/fr/kchart/toolbars.png
+share/doc/HTML/fr/kexi/basics.docbook
+share/doc/HTML/fr/kexi/building.docbook
+share/doc/HTML/fr/kexi/common
+share/doc/HTML/fr/kexi/comparing.docbook
+share/doc/HTML/fr/kexi/configuration.docbook
+share/doc/HTML/fr/kexi/credits.docbook
+share/doc/HTML/fr/kexi/database.docbook
+share/doc/HTML/fr/kexi/designingforms.docbook
+share/doc/HTML/fr/kexi/enteringdataintotables.docbook
+share/doc/HTML/fr/kexi/enteringdatausingforms.docbook
+share/doc/HTML/fr/kexi/index.cache.bz2
+share/doc/HTML/fr/kexi/index.docbook
+share/doc/HTML/fr/kexi/intro.docbook
+share/doc/HTML/fr/kexi/menus.docbook
+share/doc/HTML/fr/kexi/querydesigning.docbook
 share/doc/HTML/fr/kformula/ambiguous-string.png
 share/doc/HTML/fr/kformula/common
 share/doc/HTML/fr/kformula/file-toolbar.png
@@ -435,6 +450,7 @@ share/locale/fr/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/fr/koffice
 @dirrm share/doc/HTML/fr/kivio
 @dirrm share/doc/HTML/fr/kformula
+@dirrm share/doc/HTML/fr/kexi
 @dirrm share/doc/HTML/fr/kchart
 @dirrm share/doc/HTML/fr/karbon
 @dirrm share/apps/koffice/autocorrect

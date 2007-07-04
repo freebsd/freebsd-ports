@@ -143,12 +143,18 @@ include/kdevelop/widgets/qcomboview.h
 include/kdevelop/widgets/resizablecombo.h
 include/kinterfacedesigner/designer.h
 lib/kconf_update_bin/kdev-gen-settings-kconf_update
+lib/kde3/kded_kdevsvnd.a
+lib/kde3/kded_kdevsvnd.la
+lib/kde3/kded_kdevsvnd.so
 lib/kde3/kio_chm.a
 lib/kde3/kio_chm.la
 lib/kde3/kio_chm.so
 lib/kde3/kio_csharpdoc.a
 lib/kde3/kio_csharpdoc.la
 lib/kde3/kio_csharpdoc.so
+lib/kde3/kio_kdevsvn.a
+lib/kde3/kio_kdevsvn.la
+lib/kde3/kio_kdevsvn.so
 lib/kde3/kio_perldoc.a
 lib/kde3/kio_perldoc.la
 lib/kde3/kio_perldoc.so
@@ -1311,6 +1317,7 @@ share/apps/kdevrubysupport/pics/ruby_config.png
 share/apps/kdevrubysupport/pics/ruby_run.png
 share/apps/kdevscripting/kdevscripting.rc
 share/apps/kdevscriptproject/kdevscriptproject.rc
+share/apps/kdevsnippet/kdevpart_snippet.rc
 share/apps/kdevsqlsupport/kdevsqlsupport.rc
 share/apps/kdevtipofday/kdevpart_tipofday.rc
 share/apps/kdevtipofday/tips
@@ -1482,6 +1489,7 @@ share/services/docdoxygenplugin.desktop
 share/services/dockdevtocplugin.desktop
 share/services/docqtplugin.desktop
 share/services/kchmpart.desktop
+share/services/kded/kdevsvnd.desktop
 share/services/kdevabbrev.desktop
 share/services/kdevadaproject.desktop
 share/services/kdevadasupport.desktop
@@ -1553,6 +1561,11 @@ share/services/kdevsnippet.desktop
 share/services/kdevsqlsupport.desktop
 share/services/kdevsubversion.desktop
 share/services/kdevsubversionintegrator.desktop
+share/services/kdevsvn+file.protocol
+share/services/kdevsvn+http.protocol
+share/services/kdevsvn+https.protocol
+share/services/kdevsvn+ssh.protocol
+share/services/kdevsvn+svn.protocol
 share/services/kdevtexttools.desktop
 share/services/kdevtipofday.desktop
 share/services/kdevtmakeproject.desktop
@@ -1761,6 +1774,7 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @dirrm share/apps/kdevtools
 @dirrm share/apps/kdevtipofday
 @dirrm share/apps/kdevsqlsupport
+@dirrm share/apps/kdevsnippet
 @dirrm share/apps/kdevscriptproject
 @dirrm share/apps/kdevscripting
 @dirrm share/apps/kdevrubysupport/pics

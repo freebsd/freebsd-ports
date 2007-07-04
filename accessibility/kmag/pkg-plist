@@ -416,6 +416,14 @@ share/icons/mono/scalable/actions/add_user.svgz
 share/icons/mono/scalable/actions/addimagefolder.svgz
 share/icons/mono/scalable/actions/addpoint.svgz
 share/icons/mono/scalable/actions/addquestion.svgz
+share/icons/mono/scalable/actions/adept_commit.svgz
+share/icons/mono/scalable/actions/adept_distupgrade.svgz
+share/icons/mono/scalable/actions/adept_install.svgz
+share/icons/mono/scalable/actions/adept_notifier_warning.svgz
+share/icons/mono/scalable/actions/adept_purge.svgz
+share/icons/mono/scalable/actions/adept_remove.svgz
+share/icons/mono/scalable/actions/adept_sourceseditor.svgz
+share/icons/mono/scalable/actions/adept_update.svgz
 share/icons/mono/scalable/actions/adjustcol.svgz
 share/icons/mono/scalable/actions/adjustrow.svgz
 share/icons/mono/scalable/actions/agenda.svgz
@@ -666,6 +674,7 @@ share/icons/mono/scalable/actions/documentinfo.svgz
 share/icons/mono/scalable/actions/domtreeviewer.svgz
 share/icons/mono/scalable/actions/dontknow.svgz
 share/icons/mono/scalable/actions/down.svgz
+share/icons/mono/scalable/actions/duringbreaks.svgz
 share/icons/mono/scalable/actions/dynamic.svgz
 share/icons/mono/scalable/actions/edit.svgz
 share/icons/mono/scalable/actions/edit_add.svgz
@@ -810,6 +819,7 @@ share/icons/mono/scalable/actions/harmonichomology.svgz
 share/icons/mono/scalable/actions/hdd.svgz
 share/icons/mono/scalable/actions/help.svgz
 share/icons/mono/scalable/actions/hexagonbcv.svgz
+share/icons/mono/scalable/actions/hibernate.svgz
 share/icons/mono/scalable/actions/hide_table_column.svgz
 share/icons/mono/scalable/actions/hide_table_row.svgz
 share/icons/mono/scalable/actions/hidemouse.svgz
@@ -939,6 +949,7 @@ share/icons/mono/scalable/actions/kgpg_sign.svgz
 share/icons/mono/scalable/actions/kgpg_term.svgz
 share/icons/mono/scalable/actions/khotkeys.svgz
 share/icons/mono/scalable/actions/khtml_kget.svgz
+share/icons/mono/scalable/actions/kig_numbers.svgz
 share/icons/mono/scalable/actions/kig_polygon.svgz
 share/icons/mono/scalable/actions/kig_text.svgz
 share/icons/mono/scalable/actions/kiten.svgz
@@ -994,6 +1005,7 @@ share/icons/mono/scalable/actions/kontact_todo.svgz
 share/icons/mono/scalable/actions/konv_message.svgz
 share/icons/mono/scalable/actions/kopeteavailable.svgz
 share/icons/mono/scalable/actions/kopeteaway.svgz
+share/icons/mono/scalable/actions/kopeteeditstatusmessage.svgz
 share/icons/mono/scalable/actions/korgac.svgz
 share/icons/mono/scalable/actions/korgac_disabled.svgz
 share/icons/mono/scalable/actions/kpilotaddress.svgz
@@ -1037,11 +1049,13 @@ share/icons/mono/scalable/actions/ktstop.svgz
 share/icons/mono/scalable/actions/ktstop_all.svgz
 share/icons/mono/scalable/actions/kverbosuser.svgz
 share/icons/mono/scalable/actions/label.svgz
+share/icons/mono/scalable/actions/lan.svgz
 share/icons/mono/scalable/actions/languages.svgz
 share/icons/mono/scalable/actions/laptop_charge.svgz
 share/icons/mono/scalable/actions/laptop_nobattery.svgz
 share/icons/mono/scalable/actions/laptop_nocharge.svgz
 share/icons/mono/scalable/actions/laptop_power.svgz
+share/icons/mono/scalable/actions/laptoppower.svgz
 share/icons/mono/scalable/actions/largethumbnails.svgz
 share/icons/mono/scalable/actions/lastmoves.svgz
 share/icons/mono/scalable/actions/launch.svgz
@@ -1350,6 +1364,8 @@ share/icons/mono/scalable/actions/player_volume_up.svgz
 share/icons/mono/scalable/actions/playlist.svgz
 share/icons/mono/scalable/actions/playsound.svgz
 share/icons/mono/scalable/actions/plot.svgz
+share/icons/mono/scalable/actions/podcast.svgz
+share/icons/mono/scalable/actions/podcast_new.svgz
 share/icons/mono/scalable/actions/point.svgz
 share/icons/mono/scalable/actions/pointOnLine.svgz
 share/icons/mono/scalable/actions/pointxy.svgz
@@ -1371,6 +1387,7 @@ share/icons/mono/scalable/actions/prevmarked.svgz
 share/icons/mono/scalable/actions/prevpo.svgz
 share/icons/mono/scalable/actions/prevtemplate.svgz
 share/icons/mono/scalable/actions/prevuntranslated.svgz
+share/icons/mono/scalable/actions/processor.svgz
 share/icons/mono/scalable/actions/prod.svgz
 share/icons/mono/scalable/actions/progress.svgz
 share/icons/mono/scalable/actions/project_open.svgz
@@ -1441,6 +1458,13 @@ share/icons/mono/scalable/actions/rotation.svgz
 share/icons/mono/scalable/actions/rotation_acw.svgz
 share/icons/mono/scalable/actions/rotation_cw.svgz
 share/icons/mono/scalable/actions/rowcol.svgz
+share/icons/mono/scalable/actions/rsibreak0.svgz
+share/icons/mono/scalable/actions/rsibreak1.svgz
+share/icons/mono/scalable/actions/rsibreak2.svgz
+share/icons/mono/scalable/actions/rsibreak3.svgz
+share/icons/mono/scalable/actions/rsibreak4.svgz
+share/icons/mono/scalable/actions/rsibreakx.svgz
+share/icons/mono/scalable/actions/rss_tag.svgz
 share/icons/mono/scalable/actions/rsub.svgz
 share/icons/mono/scalable/actions/rsup.svgz
 share/icons/mono/scalable/actions/run.svgz
@@ -1457,6 +1481,11 @@ share/icons/mono/scalable/actions/scaleorig.svgz
 share/icons/mono/scalable/actions/scaletoheight.svgz
 share/icons/mono/scalable/actions/scaletowidth.svgz
 share/icons/mono/scalable/actions/scaling.svgz
+share/icons/mono/scalable/actions/scheme_acoustic.svgz
+share/icons/mono/scalable/actions/scheme_advanced_powersave.svgz
+share/icons/mono/scalable/actions/scheme_power.svgz
+share/icons/mono/scalable/actions/scheme_powersave.svgz
+share/icons/mono/scalable/actions/scheme_presentation.svgz
 share/icons/mono/scalable/actions/search.svgz
 share/icons/mono/scalable/actions/search2msgstr.svgz
 share/icons/mono/scalable/actions/segment.svgz
@@ -1482,6 +1511,7 @@ share/icons/mono/scalable/actions/shadowRU.svgz
 share/icons/mono/scalable/actions/shadowU.svgz
 share/icons/mono/scalable/actions/share.svgz
 share/icons/mono/scalable/actions/shear.svgz
+share/icons/mono/scalable/actions/show_offliners.svgz
 share/icons/mono/scalable/actions/show_table_column.svgz
 share/icons/mono/scalable/actions/show_table_row.svgz
 share/icons/mono/scalable/actions/showmenu.svgz
@@ -1521,6 +1551,7 @@ share/icons/mono/scalable/actions/spring.svgz
 share/icons/mono/scalable/actions/sqrt.svgz
 share/icons/mono/scalable/actions/square.svgz
 share/icons/mono/scalable/actions/stamp.svgz
+share/icons/mono/scalable/actions/stand_by.svgz
 share/icons/mono/scalable/actions/start.svgz
 share/icons/mono/scalable/actions/state_data.svgz
 share/icons/mono/scalable/actions/state_edit.svgz
@@ -1540,6 +1571,15 @@ share/icons/mono/scalable/actions/submit.svgz
 share/icons/mono/scalable/actions/sum.svgz
 share/icons/mono/scalable/actions/super.svgz
 share/icons/mono/scalable/actions/superimpose.svgz
+share/icons/mono/scalable/actions/suspend.svgz
+share/icons/mono/scalable/actions/suspend_to_disk.svgz
+share/icons/mono/scalable/actions/suspend_to_ram.svgz
+share/icons/mono/scalable/actions/svn_add.svgz
+share/icons/mono/scalable/actions/svn_branch.svgz
+share/icons/mono/scalable/actions/svn_merge.svgz
+share/icons/mono/scalable/actions/svn_remove.svgz
+share/icons/mono/scalable/actions/svn_status.svgz
+share/icons/mono/scalable/actions/svn_switch.svgz
 share/icons/mono/scalable/actions/switchuser.svgz
 share/icons/mono/scalable/actions/syntax.svgz
 share/icons/mono/scalable/actions/tab_breakoff.svgz
@@ -1640,6 +1680,7 @@ share/icons/mono/scalable/actions/thumbnail.svgz
 share/icons/mono/scalable/actions/timeedit.svgz
 share/icons/mono/scalable/actions/timeline.svgz
 share/icons/mono/scalable/actions/timespan.svgz
+share/icons/mono/scalable/actions/timings.svgz
 share/icons/mono/scalable/actions/today.svgz
 share/icons/mono/scalable/actions/todo.svgz
 share/icons/mono/scalable/actions/toggle_log.svgz
@@ -1762,12 +1803,15 @@ share/icons/mono/scalable/actions/viewmag_w.svgz
 share/icons/mono/scalable/actions/viewmagfit.svgz
 share/icons/mono/scalable/actions/visible.svgz
 share/icons/mono/scalable/actions/visualizations.svgz
+share/icons/mono/scalable/actions/voicecall.svgz
 share/icons/mono/scalable/actions/volume.svgz
 share/icons/mono/scalable/actions/w.svgz
 share/icons/mono/scalable/actions/wallet_closed.svgz
 share/icons/mono/scalable/actions/wallet_open.svgz
 share/icons/mono/scalable/actions/warning.svgz
 share/icons/mono/scalable/actions/webarchiver.svgz
+share/icons/mono/scalable/actions/webcamreceive.svgz
+share/icons/mono/scalable/actions/webcamsend.svgz
 share/icons/mono/scalable/actions/webexport.svgz
 share/icons/mono/scalable/actions/webpres.svgz
 share/icons/mono/scalable/actions/whatsnext.svgz
@@ -1835,6 +1879,7 @@ share/icons/mono/scalable/apps/amor.svgz
 share/icons/mono/scalable/apps/antivirus.svgz
 share/icons/mono/scalable/apps/apollon.svgz
 share/icons/mono/scalable/apps/applixware.svgz
+share/icons/mono/scalable/apps/apport.svgz
 share/icons/mono/scalable/apps/ark.svgz
 share/icons/mono/scalable/apps/arts.svgz
 share/icons/mono/scalable/apps/artsbuilder.svgz
@@ -2101,6 +2146,7 @@ share/icons/mono/scalable/apps/kfontview.svgz
 share/icons/mono/scalable/apps/kformdesigner.svgz
 share/icons/mono/scalable/apps/kformula.svgz
 share/icons/mono/scalable/apps/kfouleggs.svgz
+share/icons/mono/scalable/apps/kftpgrabber.svgz
 share/icons/mono/scalable/apps/kgamma.svgz
 share/icons/mono/scalable/apps/kgeo.svgz
 share/icons/mono/scalable/apps/kgeography.svgz
@@ -2185,6 +2231,7 @@ share/icons/mono/scalable/apps/kolf.svgz
 share/icons/mono/scalable/apps/kolourpaint.svgz
 share/icons/mono/scalable/apps/kommander.svgz
 share/icons/mono/scalable/apps/kommando.svgz
+share/icons/mono/scalable/apps/komparator.svgz
 share/icons/mono/scalable/apps/kompare.svgz
 share/icons/mono/scalable/apps/kompose.svgz
 share/icons/mono/scalable/apps/konqsidebar_mediaplayer.svgz
@@ -2423,6 +2470,7 @@ share/icons/mono/scalable/apps/planner.svgz
 share/icons/mono/scalable/apps/playing.svgz
 share/icons/mono/scalable/apps/potracegui.svgz
 share/icons/mono/scalable/apps/power-management.svgz
+share/icons/mono/scalable/apps/power-manager.svgz
 share/icons/mono/scalable/apps/powertweak.svgz
 share/icons/mono/scalable/apps/printer.svgz
 share/icons/mono/scalable/apps/printer2.svgz
@@ -2517,6 +2565,7 @@ share/icons/mono/scalable/apps/win_apps.svgz
 share/icons/mono/scalable/apps/window-capplet.svgz
 share/icons/mono/scalable/apps/window_list.svgz
 share/icons/mono/scalable/apps/wine.svgz
+share/icons/mono/scalable/apps/wineconfig.svgz
 share/icons/mono/scalable/apps/winprops.svgz
 share/icons/mono/scalable/apps/wmaker_apps.svgz
 share/icons/mono/scalable/apps/wp.svgz
@@ -2830,6 +2879,7 @@ share/icons/mono/scalable/mimetypes/template_source.svgz
 share/icons/mono/scalable/mimetypes/tex.svgz
 share/icons/mono/scalable/mimetypes/text.svgz
 share/icons/mono/scalable/mimetypes/tgz.svgz
+share/icons/mono/scalable/mimetypes/torrent.svgz
 share/icons/mono/scalable/mimetypes/trash.svgz
 share/icons/mono/scalable/mimetypes/txt.svgz
 share/icons/mono/scalable/mimetypes/txt2.svgz

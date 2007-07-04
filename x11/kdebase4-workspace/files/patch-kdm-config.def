@@ -1,10 +1,12 @@
---- kdm/config.def.orig	Wed Jun 14 17:51:42 2006
-+++ kdm/config.def	Wed Jun 14 17:51:57 2006
-@@ -36,7 +36,7 @@
+--- kdm/config.def.orig	Mon Oct 10 17:04:31 2005
++++ kdm/config.def	Fri May 25 12:08:24 2007
+@@ -35,8 +35,8 @@
+ #ifdef _AIX
  # define HALT_CMD	"/usr/sbin/shutdown -h now"
  # define REBOOT_CMD	"/usr/sbin/shutdown -r now"
- #elif defined(BSD)
+-#elif defined(BSD)
 -# define HALT_CMD	"/sbin/shutdown -h now"
++#elif defined(__FreeBSD__)
 +# define HALT_CMD	"/sbin/shutdown -p now"
  # define REBOOT_CMD	"/sbin/shutdown -r now"
  #elif defined(__SVR4)

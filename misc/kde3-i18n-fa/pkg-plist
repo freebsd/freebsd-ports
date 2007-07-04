@@ -273,6 +273,7 @@ share/locale/fa/LC_MESSAGES/khotkeys.mo
 share/locale/fa/LC_MESSAGES/khtmlkttsd.mo
 share/locale/fa/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/fa/LC_MESSAGES/kicker.mo
+share/locale/fa/LC_MESSAGES/kickermenu_kate.mo
 share/locale/fa/LC_MESSAGES/kiconedit.mo
 share/locale/fa/LC_MESSAGES/kig.mo
 share/locale/fa/LC_MESSAGES/kimagemapeditor.mo
@@ -362,12 +363,6 @@ share/locale/fa/LC_MESSAGES/kolourpaint.mo
 share/locale/fa/LC_MESSAGES/kolourpicker.mo
 share/locale/fa/LC_MESSAGES/kommander.mo
 share/locale/fa/LC_MESSAGES/kompare.mo
-share/locale/fa/LC_MESSAGES/konnector_dummy.mo
-share/locale/fa/LC_MESSAGES/konnector_kabc.mo
-share/locale/fa/LC_MESSAGES/konnector_kcal.mo
-share/locale/fa/LC_MESSAGES/konnector_local.mo
-share/locale/fa/LC_MESSAGES/konnector_qtopia.mo
-share/locale/fa/LC_MESSAGES/konnector_remote.mo
 share/locale/fa/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/fa/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/fa/LC_MESSAGES/konqsidebar_metabar.mo
@@ -532,7 +527,6 @@ share/locale/fa/LC_MESSAGES/mediaapplet.mo
 share/locale/fa/LC_MESSAGES/mediacontrol.mo
 share/locale/fa/LC_MESSAGES/mf_konqplugin.mo
 share/locale/fa/LC_MESSAGES/minitoolsplugin.mo
-share/locale/fa/LC_MESSAGES/multisynk.mo
 share/locale/fa/LC_MESSAGES/naughtyapplet.mo
 share/locale/fa/LC_MESSAGES/nexscope.mo
 share/locale/fa/LC_MESSAGES/noatun.mo
@@ -540,7 +534,6 @@ share/locale/fa/LC_MESSAGES/nsplugin.mo
 share/locale/fa/LC_MESSAGES/pitchablespeed.mo
 share/locale/fa/LC_MESSAGES/ppdtranslations.mo
 share/locale/fa/LC_MESSAGES/privacy.mo
-share/locale/fa/LC_MESSAGES/qeditor.mo
 share/locale/fa/LC_MESSAGES/quanta.mo
 share/locale/fa/LC_MESSAGES/quicklauncher.mo
 share/locale/fa/LC_MESSAGES/rellinks.mo

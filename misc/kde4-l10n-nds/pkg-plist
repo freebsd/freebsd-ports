@@ -1,3 +1,87 @@
+share/apps/khangman/data/nds/animals.kvtml
+share/apps/khangman/data/nds/easy.kvtml
+share/apps/khangman/data/nds/hard.kvtml
+share/apps/khangman/data/nds/medium.kvtml
+share/apps/khangman/nds.txt
+share/apps/klettres/nds/alpha/a.ogg
+share/apps/klettres/nds/alpha/ae.ogg
+share/apps/klettres/nds/alpha/b.ogg
+share/apps/klettres/nds/alpha/c.ogg
+share/apps/klettres/nds/alpha/d.ogg
+share/apps/klettres/nds/alpha/e.ogg
+share/apps/klettres/nds/alpha/f.ogg
+share/apps/klettres/nds/alpha/g.ogg
+share/apps/klettres/nds/alpha/h.ogg
+share/apps/klettres/nds/alpha/i.ogg
+share/apps/klettres/nds/alpha/j.ogg
+share/apps/klettres/nds/alpha/k.ogg
+share/apps/klettres/nds/alpha/l.ogg
+share/apps/klettres/nds/alpha/m.ogg
+share/apps/klettres/nds/alpha/n.ogg
+share/apps/klettres/nds/alpha/o.ogg
+share/apps/klettres/nds/alpha/oe.ogg
+share/apps/klettres/nds/alpha/p.ogg
+share/apps/klettres/nds/alpha/q.ogg
+share/apps/klettres/nds/alpha/r.ogg
+share/apps/klettres/nds/alpha/s.ogg
+share/apps/klettres/nds/alpha/sz.ogg
+share/apps/klettres/nds/alpha/t.ogg
+share/apps/klettres/nds/alpha/u.ogg
+share/apps/klettres/nds/alpha/ue.ogg
+share/apps/klettres/nds/alpha/v.ogg
+share/apps/klettres/nds/alpha/w.ogg
+share/apps/klettres/nds/alpha/x.ogg
+share/apps/klettres/nds/alpha/y.ogg
+share/apps/klettres/nds/alpha/z.ogg
+share/apps/klettres/nds/sounds.xml
+share/apps/klettres/nds/syllab/aal.ogg
+share/apps/klettres/nds/syllab/aennern.ogg
+share/apps/klettres/nds/syllab/aeten.ogg
+share/apps/klettres/nds/syllab/al.ogg
+share/apps/klettres/nds/syllab/all.ogg
+share/apps/klettres/nds/syllab/baeaer.ogg
+share/apps/klettres/nds/syllab/boom.ogg
+share/apps/klettres/nds/syllab/cent.ogg
+share/apps/klettres/nds/syllab/deert.ogg
+share/apps/klettres/nds/syllab/eer.ogg
+share/apps/klettres/nds/syllab/ehr.ogg
+share/apps/klettres/nds/syllab/en.ogg
+share/apps/klettres/nds/syllab/faehr.ogg
+share/apps/klettres/nds/syllab/fix.ogg
+share/apps/klettres/nds/syllab/greeksch.ogg
+share/apps/klettres/nds/syllab/huus.ogg
+share/apps/klettres/nds/syllab/ies.ogg
+share/apps/klettres/nds/syllab/ik.ogg
+share/apps/klettres/nds/syllab/imm.ogg
+share/apps/klettres/nds/syllab/juest.ogg
+share/apps/klettres/nds/syllab/keerl.ogg
+share/apps/klettres/nds/syllab/leef.ogg
+share/apps/klettres/nds/syllab/muur.ogg
+share/apps/klettres/nds/syllab/naam.ogg
+share/apps/klettres/nds/syllab/och.ogg
+share/apps/klettres/nds/syllab/oeko.ogg
+share/apps/klettres/nds/syllab/oeller.ogg
+share/apps/klettres/nds/syllab/oeoel.ogg
+share/apps/klettres/nds/syllab/oll.ogg
+share/apps/klettres/nds/syllab/oolt.ogg
+share/apps/klettres/nds/syllab/pann.ogg
+share/apps/klettres/nds/syllab/queern.ogg
+share/apps/klettres/nds/syllab/reeg.ogg
+share/apps/klettres/nds/syllab/sachts.ogg
+share/apps/klettres/nds/syllab/schiet.ogg
+share/apps/klettres/nds/syllab/spaasz.ogg
+share/apps/klettres/nds/syllab/stunn.ogg
+share/apps/klettres/nds/syllab/taach.ogg
+share/apps/klettres/nds/syllab/typ.ogg
+share/apps/klettres/nds/syllab/uem.ogg
+share/apps/klettres/nds/syllab/uenner.ogg
+share/apps/klettres/nds/syllab/ueuetz.ogg
+share/apps/klettres/nds/syllab/ut.ogg
+share/apps/klettres/nds/syllab/uul.ogg
+share/apps/klettres/nds/syllab/veegtoorsch.ogg
+share/apps/klettres/nds/syllab/veel.ogg
+share/apps/klettres/nds/syllab/waag.ogg
+share/apps/klettres/nds/syllab/zeeg.ogg
 share/apps/ktuberling/sounds/nds/afteken.wav
 share/apps/ktuberling/sounds/nds/aquarium.wav
 share/apps/ktuberling/sounds/nds/brill.wav
@@ -275,6 +359,7 @@ share/locale/nds/LC_MESSAGES/kfile_wav.mo
 share/locale/nds/LC_MESSAGES/kfile_xbm.mo
 share/locale/nds/LC_MESSAGES/kfile_xpm.mo
 share/locale/nds/LC_MESSAGES/kfileaudiopreview.mo
+share/locale/nds/LC_MESSAGES/kfilereplace.mo
 share/locale/nds/LC_MESSAGES/kfileshare.mo
 share/locale/nds/LC_MESSAGES/kfindpart.mo
 share/locale/nds/LC_MESSAGES/kfloppy.mo
@@ -301,6 +386,7 @@ share/locale/nds/LC_MESSAGES/kicker.mo
 share/locale/nds/LC_MESSAGES/kickermenu_kate.mo
 share/locale/nds/LC_MESSAGES/kiconedit.mo
 share/locale/nds/LC_MESSAGES/kig.mo
+share/locale/nds/LC_MESSAGES/kimagemapeditor.mo
 share/locale/nds/LC_MESSAGES/kinetd.mo
 share/locale/nds/LC_MESSAGES/kio.mo
 share/locale/nds/LC_MESSAGES/kio_audiocd.mo
@@ -346,6 +432,7 @@ share/locale/nds/LC_MESSAGES/kleopatra.mo
 share/locale/nds/LC_MESSAGES/klettres.mo
 share/locale/nds/LC_MESSAGES/klickety.mo
 share/locale/nds/LC_MESSAGES/klines.mo
+share/locale/nds/LC_MESSAGES/klinkstatus.mo
 share/locale/nds/LC_MESSAGES/klipper.mo
 share/locale/nds/LC_MESSAGES/klock.mo
 share/locale/nds/LC_MESSAGES/kmag.mo
@@ -372,6 +459,7 @@ share/locale/nds/LC_MESSAGES/kmobile.mo
 share/locale/nds/LC_MESSAGES/kmoon.mo
 share/locale/nds/LC_MESSAGES/kmousetool.mo
 share/locale/nds/LC_MESSAGES/kmouth.mo
+share/locale/nds/LC_MESSAGES/kmplot.mo
 share/locale/nds/LC_MESSAGES/kmrml.mo
 share/locale/nds/LC_MESSAGES/knetattach.mo
 share/locale/nds/LC_MESSAGES/knetwalk.mo
@@ -384,13 +472,8 @@ share/locale/nds/LC_MESSAGES/kodo.mo
 share/locale/nds/LC_MESSAGES/kolf.mo
 share/locale/nds/LC_MESSAGES/kolourpaint.mo
 share/locale/nds/LC_MESSAGES/kolourpicker.mo
+share/locale/nds/LC_MESSAGES/kommander.mo
 share/locale/nds/LC_MESSAGES/kompare.mo
-share/locale/nds/LC_MESSAGES/konnector_dummy.mo
-share/locale/nds/LC_MESSAGES/konnector_kabc.mo
-share/locale/nds/LC_MESSAGES/konnector_kcal.mo
-share/locale/nds/LC_MESSAGES/konnector_local.mo
-share/locale/nds/LC_MESSAGES/konnector_qtopia.mo
-share/locale/nds/LC_MESSAGES/konnector_remote.mo
 share/locale/nds/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/nds/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/nds/LC_MESSAGES/konqsidebar_metabar.mo
@@ -409,6 +492,7 @@ share/locale/nds/LC_MESSAGES/kpager.mo
 share/locale/nds/LC_MESSAGES/kpartsaver.mo
 share/locale/nds/LC_MESSAGES/kpat.mo
 share/locale/nds/LC_MESSAGES/kpdf.mo
+share/locale/nds/LC_MESSAGES/kpercentage.mo
 share/locale/nds/LC_MESSAGES/kpersonalizer.mo
 share/locale/nds/LC_MESSAGES/kpf.mo
 share/locale/nds/LC_MESSAGES/kpilot.mo
@@ -479,14 +563,17 @@ share/locale/nds/LC_MESSAGES/ktimemon.mo
 share/locale/nds/LC_MESSAGES/ktimer.mo
 share/locale/nds/LC_MESSAGES/ktip.mo
 share/locale/nds/LC_MESSAGES/ktnef.mo
+share/locale/nds/LC_MESSAGES/ktouch.mo
 share/locale/nds/LC_MESSAGES/ktron.mo
 share/locale/nds/LC_MESSAGES/kttsd.mo
 share/locale/nds/LC_MESSAGES/ktuberling.mo
+share/locale/nds/LC_MESSAGES/kturtle.mo
 share/locale/nds/LC_MESSAGES/ktux.mo
 share/locale/nds/LC_MESSAGES/kuick_plugin.mo
 share/locale/nds/LC_MESSAGES/kuickshow.mo
 share/locale/nds/LC_MESSAGES/kuiviewer.mo
 share/locale/nds/LC_MESSAGES/kuser.mo
+share/locale/nds/LC_MESSAGES/kverbos.mo
 share/locale/nds/LC_MESSAGES/kview.mo
 share/locale/nds/LC_MESSAGES/kview_scale.mo
 share/locale/nds/LC_MESSAGES/kviewbrowserplugin.mo
@@ -512,6 +599,7 @@ share/locale/nds/LC_MESSAGES/kworldclock.mo
 share/locale/nds/LC_MESSAGES/kwriteconfig.mo
 share/locale/nds/LC_MESSAGES/kxkb.mo
 share/locale/nds/LC_MESSAGES/kxsconfig.mo
+share/locale/nds/LC_MESSAGES/kxsldbg.mo
 share/locale/nds/LC_MESSAGES/libKTTSD.mo
 share/locale/nds/LC_MESSAGES/libdmctl.mo
 share/locale/nds/LC_MESSAGES/libkaddrbk_geo_xxport.mo
@@ -531,7 +619,6 @@ share/locale/nds/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/nds/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/nds/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/nds/LC_MESSAGES/libkickermenu_tom.mo
-share/locale/nds/LC_MESSAGES/libkitchensync.mo
 share/locale/nds/LC_MESSAGES/libkleopatra.mo
 share/locale/nds/LC_MESSAGES/libkmime.mo
 share/locale/nds/LC_MESSAGES/libkonq.mo
@@ -551,7 +638,6 @@ share/locale/nds/LC_MESSAGES/mediaapplet.mo
 share/locale/nds/LC_MESSAGES/mediacontrol.mo
 share/locale/nds/LC_MESSAGES/mf_konqplugin.mo
 share/locale/nds/LC_MESSAGES/minitoolsplugin.mo
-share/locale/nds/LC_MESSAGES/multisynk.mo
 share/locale/nds/LC_MESSAGES/naughtyapplet.mo
 share/locale/nds/LC_MESSAGES/nexscope.mo
 share/locale/nds/LC_MESSAGES/noatun.mo
@@ -559,7 +645,7 @@ share/locale/nds/LC_MESSAGES/nsplugin.mo
 share/locale/nds/LC_MESSAGES/pitchablespeed.mo
 share/locale/nds/LC_MESSAGES/ppdtranslations.mo
 share/locale/nds/LC_MESSAGES/privacy.mo
-share/locale/nds/LC_MESSAGES/qeditor.mo
+share/locale/nds/LC_MESSAGES/quanta.mo
 share/locale/nds/LC_MESSAGES/quicklauncher.mo
 share/locale/nds/LC_MESSAGES/rellinks.mo
 share/locale/nds/LC_MESSAGES/searchbarplugin.mo
@@ -585,3 +671,10 @@ share/locale/nds/entry.desktop
 @dirrm share/apps/ktuberling/sounds/nds
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
+@dirrm share/apps/klettres/nds/syllab
+@dirrm share/apps/klettres/nds/alpha
+@dirrm share/apps/klettres/nds
+@dirrm share/apps/klettres
+@dirrm share/apps/khangman/data/nds
+@dirrm share/apps/khangman/data
+@dirrm share/apps/khangman

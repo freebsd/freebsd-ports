@@ -8,7 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -18,7 +18,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
-BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		artsc.0:${PORTSDIR}/audio/arts \
@@ -32,7 +31,6 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	kdehier>0:${PORTSDIR}/misc/kdehier \
-		iceauth:${X_CLIENTS_PORT} \
 		${FONTSCALE}:${X_FONTS_TTF_PORT} \
 		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT} \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
@@ -80,6 +78,14 @@ FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif # !exists(/usr/bin/bzip2)
+
+.if ${X_WINDOW_SYSTEM:L} != xorg
+BUILD_DEPENDS+=	mkfontdir:${X_CLIENTS_PORT}
+RUN_DEPENDS+=	iceauth:${X_CLIENTS_PORT}
+.else
+BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+RUN_DEPENDS+=	iceauth:${PORTSDIR}/x11/iceauth
+.endif
 
 pre-configure:
 	${REINPLACE_CMD} "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/kdeprint/cups/kmcupsmanager.cpp

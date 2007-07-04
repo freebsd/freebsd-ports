@@ -1181,6 +1181,9 @@ share/doc/HTML/da/kscd/index.docbook
 share/doc/HTML/da/kshisen/common
 share/doc/HTML/da/kshisen/index.cache.bz2
 share/doc/HTML/da/kshisen/index.docbook
+share/doc/HTML/da/ksig/common
+share/doc/HTML/da/ksig/index.cache.bz2
+share/doc/HTML/da/ksig/index.docbook
 share/doc/HTML/da/ksim/common
 share/doc/HTML/da/ksim/index.cache.bz2
 share/doc/HTML/da/ksim/index.docbook
@@ -1422,10 +1425,6 @@ share/doc/HTML/da/lisa/index.docbook
 share/doc/HTML/da/lskat/common
 share/doc/HTML/da/lskat/index.cache.bz2
 share/doc/HTML/da/lskat/index.docbook
-share/doc/HTML/da/multisynk/common
-share/doc/HTML/da/multisynk/index.cache.bz2
-share/doc/HTML/da/multisynk/index.docbook
-share/doc/HTML/da/multisynk/konnectors-chapter.docbook
 share/doc/HTML/da/noatun/common
 share/doc/HTML/da/noatun/index.cache.bz2
 share/doc/HTML/da/noatun/index.docbook
@@ -2033,7 +2032,6 @@ share/locale/da/LC_MESSAGES/nsplugin.mo
 share/locale/da/LC_MESSAGES/pitchablespeed.mo
 share/locale/da/LC_MESSAGES/ppdtranslations.mo
 share/locale/da/LC_MESSAGES/privacy.mo
-share/locale/da/LC_MESSAGES/qeditor.mo
 share/locale/da/LC_MESSAGES/quanta.mo
 share/locale/da/LC_MESSAGES/quicklauncher.mo
 share/locale/da/LC_MESSAGES/rellinks.mo
@@ -2063,7 +2061,6 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/scripts
 @dirrm share/doc/HTML/da/quanta
 @dirrm share/doc/HTML/da/noatun
-@dirrm share/doc/HTML/da/multisynk
 @dirrm share/doc/HTML/da/lskat
 @dirrm share/doc/HTML/da/lisa
 @dirrm share/doc/HTML/da/lilo-config
@@ -2104,6 +2101,7 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/ksirtet
 @dirrm share/doc/HTML/da/ksirc
 @dirrm share/doc/HTML/da/ksim
+@dirrm share/doc/HTML/da/ksig
 @dirrm share/doc/HTML/da/kshisen
 @dirrm share/doc/HTML/da/kscd
 @dirrm share/doc/HTML/da/ksame

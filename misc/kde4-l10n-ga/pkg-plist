@@ -277,6 +277,7 @@ share/locale/ga/LC_MESSAGES/khotkeys.mo
 share/locale/ga/LC_MESSAGES/khtmlkttsd.mo
 share/locale/ga/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ga/LC_MESSAGES/kicker.mo
+share/locale/ga/LC_MESSAGES/kickermenu_kate.mo
 share/locale/ga/LC_MESSAGES/kiconedit.mo
 share/locale/ga/LC_MESSAGES/kig.mo
 share/locale/ga/LC_MESSAGES/kimagemapeditor.mo
@@ -366,14 +367,9 @@ share/locale/ga/LC_MESSAGES/kolourpaint.mo
 share/locale/ga/LC_MESSAGES/kolourpicker.mo
 share/locale/ga/LC_MESSAGES/kommander.mo
 share/locale/ga/LC_MESSAGES/kompare.mo
-share/locale/ga/LC_MESSAGES/konnector_dummy.mo
-share/locale/ga/LC_MESSAGES/konnector_kabc.mo
-share/locale/ga/LC_MESSAGES/konnector_kcal.mo
-share/locale/ga/LC_MESSAGES/konnector_local.mo
-share/locale/ga/LC_MESSAGES/konnector_qtopia.mo
-share/locale/ga/LC_MESSAGES/konnector_remote.mo
 share/locale/ga/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/ga/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/ga/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/ga/LC_MESSAGES/konqsidebar_news.mo
 share/locale/ga/LC_MESSAGES/konqueror.mo
 share/locale/ga/LC_MESSAGES/konquest.mo
@@ -535,7 +531,6 @@ share/locale/ga/LC_MESSAGES/mediaapplet.mo
 share/locale/ga/LC_MESSAGES/mediacontrol.mo
 share/locale/ga/LC_MESSAGES/mf_konqplugin.mo
 share/locale/ga/LC_MESSAGES/minitoolsplugin.mo
-share/locale/ga/LC_MESSAGES/multisynk.mo
 share/locale/ga/LC_MESSAGES/naughtyapplet.mo
 share/locale/ga/LC_MESSAGES/nexscope.mo
 share/locale/ga/LC_MESSAGES/noatun.mo
@@ -543,7 +538,6 @@ share/locale/ga/LC_MESSAGES/nsplugin.mo
 share/locale/ga/LC_MESSAGES/pitchablespeed.mo
 share/locale/ga/LC_MESSAGES/ppdtranslations.mo
 share/locale/ga/LC_MESSAGES/privacy.mo
-share/locale/ga/LC_MESSAGES/qeditor.mo
 share/locale/ga/LC_MESSAGES/quanta.mo
 share/locale/ga/LC_MESSAGES/quicklauncher.mo
 share/locale/ga/LC_MESSAGES/rellinks.mo

@@ -1,3 +1,17 @@
+share/apps/katepart/syntax/logohighlightstyle.mk_MK.xml
+share/apps/kturtle/data/logokeywords.mk_MK.xml
+share/apps/kturtle/examples/mk_MK/boiplatno.logo
+share/apps/kturtle/examples/mk_MK/cvekje.logo
+share/apps/kturtle/examples/mk_MK/izvitkano.logo
+share/apps/kturtle/examples/mk_MK/kde.logo
+share/apps/kturtle/examples/mk_MK/kvadrat.logo
+share/apps/kturtle/examples/mk_MK/kvadratii.logo
+share/apps/kturtle/examples/mk_MK/reklama.logo
+share/apps/kturtle/examples/mk_MK/slucajnoime.logo
+share/apps/kturtle/examples/mk_MK/strelka.logo
+share/apps/kturtle/examples/mk_MK/tablicamnozenje.logo
+share/apps/kturtle/examples/mk_MK/triagolnicii.logo
+share/apps/kturtle/examples/mk_MK/triagolnik.logo
 share/locale/mk/LC_MESSAGES/akregator.mo
 share/locale/mk/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/mk/LC_MESSAGES/alsaplayerui.mo
@@ -265,6 +279,7 @@ share/locale/mk/LC_MESSAGES/khotkeys.mo
 share/locale/mk/LC_MESSAGES/khtmlkttsd.mo
 share/locale/mk/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/mk/LC_MESSAGES/kicker.mo
+share/locale/mk/LC_MESSAGES/kickermenu_kate.mo
 share/locale/mk/LC_MESSAGES/kiconedit.mo
 share/locale/mk/LC_MESSAGES/kig.mo
 share/locale/mk/LC_MESSAGES/kinetd.mo
@@ -350,12 +365,6 @@ share/locale/mk/LC_MESSAGES/kolf.mo
 share/locale/mk/LC_MESSAGES/kolourpaint.mo
 share/locale/mk/LC_MESSAGES/kolourpicker.mo
 share/locale/mk/LC_MESSAGES/kompare.mo
-share/locale/mk/LC_MESSAGES/konnector_dummy.mo
-share/locale/mk/LC_MESSAGES/konnector_kabc.mo
-share/locale/mk/LC_MESSAGES/konnector_kcal.mo
-share/locale/mk/LC_MESSAGES/konnector_local.mo
-share/locale/mk/LC_MESSAGES/konnector_qtopia.mo
-share/locale/mk/LC_MESSAGES/konnector_remote.mo
 share/locale/mk/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/mk/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/mk/LC_MESSAGES/konqsidebar_metabar.mo
@@ -519,7 +528,6 @@ share/locale/mk/LC_MESSAGES/mediaapplet.mo
 share/locale/mk/LC_MESSAGES/mediacontrol.mo
 share/locale/mk/LC_MESSAGES/mf_konqplugin.mo
 share/locale/mk/LC_MESSAGES/minitoolsplugin.mo
-share/locale/mk/LC_MESSAGES/multisynk.mo
 share/locale/mk/LC_MESSAGES/naughtyapplet.mo
 share/locale/mk/LC_MESSAGES/nexscope.mo
 share/locale/mk/LC_MESSAGES/noatun.mo
@@ -547,3 +555,7 @@ share/locale/mk/LC_MESSAGES/webarchiver.mo
 share/locale/mk/charset
 share/locale/mk/entry.desktop
 share/locale/mk/flag.png
+@dirrm share/apps/kturtle/examples/mk_MK
+@dirrm share/apps/kturtle/examples
+@dirrm share/apps/kturtle/data
+@dirrm share/apps/kturtle

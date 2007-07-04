@@ -65,6 +65,7 @@ share/doc/HTML/en_GB/docs/common/logotp3.png
 share/doc/HTML/en_GB/kaddressbook/common
 share/doc/HTML/en_GB/kaddressbook/index.cache.bz2
 share/doc/HTML/en_GB/kaddressbook/index.docbook
+share/doc/HTML/en_GB/kalarm/alarmmessage.png
 share/doc/HTML/en_GB/kalarm/common
 share/doc/HTML/en_GB/kalarm/editwindow.png
 share/doc/HTML/en_GB/kalarm/index.cache.bz2
@@ -1169,7 +1170,6 @@ share/locale/en_GB/LC_MESSAGES/nsplugin.mo
 share/locale/en_GB/LC_MESSAGES/pitchablespeed.mo
 share/locale/en_GB/LC_MESSAGES/ppdtranslations.mo
 share/locale/en_GB/LC_MESSAGES/privacy.mo
-share/locale/en_GB/LC_MESSAGES/qeditor.mo
 share/locale/en_GB/LC_MESSAGES/quanta.mo
 share/locale/en_GB/LC_MESSAGES/quicklauncher.mo
 share/locale/en_GB/LC_MESSAGES/rellinks.mo

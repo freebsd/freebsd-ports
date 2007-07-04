@@ -148,9 +148,15 @@ share/doc/HTML/fr/kandy/common
 share/doc/HTML/fr/kandy/index.cache.bz2
 share/doc/HTML/fr/kandy/index.docbook
 share/doc/HTML/fr/kappfinder/man-kappfinder.1.docbook
+share/doc/HTML/fr/karm/clipboard-history.png
 share/doc/HTML/fr/karm/common
+share/doc/HTML/fr/karm/copy-this-task.png
+share/doc/HTML/fr/karm/csvexport.png
+share/doc/HTML/fr/karm/daterange.png
+share/doc/HTML/fr/karm/idle-detect.png
 share/doc/HTML/fr/karm/index.cache.bz2
 share/doc/HTML/fr/karm/index.docbook
+share/doc/HTML/fr/karm/karm.png
 share/doc/HTML/fr/kasteroids/common
 share/doc/HTML/fr/kasteroids/index.cache.bz2
 share/doc/HTML/fr/kasteroids/index.docbook
@@ -614,6 +620,7 @@ share/doc/HTML/fr/khelpcenter/userguide/common
 share/doc/HTML/fr/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/fr/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/fr/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/fr/khelpcenter/userguide/customizing-desktop.docbook
 share/doc/HTML/fr/khelpcenter/userguide/email.docbook
 share/doc/HTML/fr/khelpcenter/userguide/extragear-applications.docbook
 share/doc/HTML/fr/khelpcenter/userguide/file-sharing.docbook
@@ -678,6 +685,7 @@ share/doc/HTML/fr/khelpcenter/userguide/screen-captures.docbook
 share/doc/HTML/fr/khelpcenter/userguide/services.png
 share/doc/HTML/fr/khelpcenter/userguide/shared-sessions.docbook
 share/doc/HTML/fr/khelpcenter/userguide/shortcuts.docbook
+share/doc/HTML/fr/khelpcenter/userguide/splash-screen.png
 share/doc/HTML/fr/khelpcenter/userguide/staff.docbook
 share/doc/HTML/fr/khelpcenter/userguide/standard-menu-entries.docbook
 share/doc/HTML/fr/khelpcenter/userguide/switching-sessions.docbook
@@ -965,6 +973,9 @@ share/doc/HTML/fr/kmplot/menu.docbook
 share/doc/HTML/fr/kmplot/reference.docbook
 share/doc/HTML/fr/kmplot/settingsdlg.png
 share/doc/HTML/fr/kmplot/using.docbook
+share/doc/HTML/fr/knetattach/common
+share/doc/HTML/fr/knetattach/index.cache.bz2
+share/doc/HTML/fr/knetattach/index.docbook
 share/doc/HTML/fr/knetworkconf/common
 share/doc/HTML/fr/knetworkconf/index.cache.bz2
 share/doc/HTML/fr/knetworkconf/index.docbook
@@ -1028,6 +1039,20 @@ share/doc/HTML/fr/kodo/index.docbook
 share/doc/HTML/fr/kolf/common
 share/doc/HTML/fr/kolf/index.cache.bz2
 share/doc/HTML/fr/kolf/index.docbook
+share/doc/HTML/fr/kolourpaint/common
+share/doc/HTML/fr/kolourpaint/image_balance.png
+share/doc/HTML/fr/kolourpaint/image_emboss.png
+share/doc/HTML/fr/kolourpaint/image_flatten.png
+share/doc/HTML/fr/kolourpaint/image_flip.png
+share/doc/HTML/fr/kolourpaint/image_invert.png
+share/doc/HTML/fr/kolourpaint/image_reduce_colors.png
+share/doc/HTML/fr/kolourpaint/image_resize_scale.png
+share/doc/HTML/fr/kolourpaint/image_rotate.png
+share/doc/HTML/fr/kolourpaint/image_skew.png
+share/doc/HTML/fr/kolourpaint/image_soften_sharpen.png
+share/doc/HTML/fr/kolourpaint/index.cache.bz2
+share/doc/HTML/fr/kolourpaint/index.docbook
+share/doc/HTML/fr/kolourpaint/kolourpaint-main.png
 share/doc/HTML/fr/kompare/common
 share/doc/HTML/fr/kompare/index.cache.bz2
 share/doc/HTML/fr/kompare/index.docbook
@@ -1117,6 +1142,7 @@ share/doc/HTML/fr/kooka/index.docbook
 share/doc/HTML/fr/kooka/kooka_gocr.png
 share/doc/HTML/fr/kooka/kooka_gocr_result.png
 share/doc/HTML/fr/kooka/kooka_mainctrl.png
+share/doc/HTML/fr/kopete/chatstyle.docbook
 share/doc/HTML/fr/kopete/common
 share/doc/HTML/fr/kopete/index.cache.bz2
 share/doc/HTML/fr/kopete/index.docbook
@@ -2169,7 +2195,6 @@ share/locale/fr/LC_MESSAGES/nsplugin.mo
 share/locale/fr/LC_MESSAGES/pitchablespeed.mo
 share/locale/fr/LC_MESSAGES/ppdtranslations.mo
 share/locale/fr/LC_MESSAGES/privacy.mo
-share/locale/fr/LC_MESSAGES/qeditor.mo
 share/locale/fr/LC_MESSAGES/quanta.mo
 share/locale/fr/LC_MESSAGES/quicklauncher.mo
 share/locale/fr/LC_MESSAGES/rellinks.mo
@@ -2280,12 +2305,14 @@ share/locale/fr/relecture_gui
 @dirrm share/doc/HTML/fr/konq-plugins/babel
 @dirrm share/doc/HTML/fr/konq-plugins
 @dirrm share/doc/HTML/fr/kompare
+@dirrm share/doc/HTML/fr/kolourpaint
 @dirrm share/doc/HTML/fr/kolf
 @dirrm share/doc/HTML/fr/kodo
 @dirrm share/doc/HTML/fr/knotes
 @dirrm share/doc/HTML/fr/knode
 @dirrm share/doc/HTML/fr/knewsticker
 @dirrm share/doc/HTML/fr/knetworkconf
+@dirrm share/doc/HTML/fr/knetattach
 @dirrm share/doc/HTML/fr/kmplot
 @dirrm share/doc/HTML/fr/kmouth
 @dirrm share/doc/HTML/fr/kmousetool

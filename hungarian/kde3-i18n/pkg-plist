@@ -687,6 +687,7 @@ share/locale/hu/LC_MESSAGES/kio_thumbnail.mo
 share/locale/hu/LC_MESSAGES/kio_trash.mo
 share/locale/hu/LC_MESSAGES/kio_zeroconf.mo
 share/locale/hu/LC_MESSAGES/kioexec.mo
+share/locale/hu/LC_MESSAGES/kitchensync.mo
 share/locale/hu/LC_MESSAGES/kiten.mo
 share/locale/hu/LC_MESSAGES/kjobviewer.mo
 share/locale/hu/LC_MESSAGES/kjots.mo
@@ -739,12 +740,6 @@ share/locale/hu/LC_MESSAGES/kolourpaint.mo
 share/locale/hu/LC_MESSAGES/kolourpicker.mo
 share/locale/hu/LC_MESSAGES/kommander.mo
 share/locale/hu/LC_MESSAGES/kompare.mo
-share/locale/hu/LC_MESSAGES/konnector_dummy.mo
-share/locale/hu/LC_MESSAGES/konnector_kabc.mo
-share/locale/hu/LC_MESSAGES/konnector_kcal.mo
-share/locale/hu/LC_MESSAGES/konnector_local.mo
-share/locale/hu/LC_MESSAGES/konnector_qtopia.mo
-share/locale/hu/LC_MESSAGES/konnector_remote.mo
 share/locale/hu/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/hu/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/hu/LC_MESSAGES/konqsidebar_metabar.mo
@@ -909,7 +904,6 @@ share/locale/hu/LC_MESSAGES/mediaapplet.mo
 share/locale/hu/LC_MESSAGES/mediacontrol.mo
 share/locale/hu/LC_MESSAGES/mf_konqplugin.mo
 share/locale/hu/LC_MESSAGES/minitoolsplugin.mo
-share/locale/hu/LC_MESSAGES/multisynk.mo
 share/locale/hu/LC_MESSAGES/naughtyapplet.mo
 share/locale/hu/LC_MESSAGES/nexscope.mo
 share/locale/hu/LC_MESSAGES/noatun.mo
@@ -917,7 +911,6 @@ share/locale/hu/LC_MESSAGES/nsplugin.mo
 share/locale/hu/LC_MESSAGES/pitchablespeed.mo
 share/locale/hu/LC_MESSAGES/ppdtranslations.mo
 share/locale/hu/LC_MESSAGES/privacy.mo
-share/locale/hu/LC_MESSAGES/qeditor.mo
 share/locale/hu/LC_MESSAGES/quanta.mo
 share/locale/hu/LC_MESSAGES/quicklauncher.mo
 share/locale/hu/LC_MESSAGES/rellinks.mo

@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070704: 
+  AFFECTS: users of x11/kdebase3
+  AUTHOR: kde@freebsd.org
+
+  The media kioslave now mounts all filesystems that support charset conversion
+  with charset conversion turned on, set to the locale from the user's 
+  environment (LANG). If you are using a customized kernel configuration, make 
+  sure all *_iconv kernel modules are available. At the time of writing, these 
+  are cd9660_iconv, udf_iconv, msdosfs_iconv and ntfs_iconv.
+
 20070614:
   AFFECTS: users of www/oscommerce
   AUTHOR: vlad@vlad.uz.ua

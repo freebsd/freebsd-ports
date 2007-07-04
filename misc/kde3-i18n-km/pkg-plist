@@ -59,7 +59,6 @@ share/locale/km/LC_MESSAGES/kasbarextension.mo
 share/locale/km/LC_MESSAGES/kasteroids.mo
 share/locale/km/LC_MESSAGES/kate.mo
 share/locale/km/LC_MESSAGES/katecppsymbolviewer.mo
-share/locale/km/LC_MESSAGES/katedefaultproject.mo
 share/locale/km/LC_MESSAGES/katefiletemplates.mo
 share/locale/km/LC_MESSAGES/katefll_initplugin.mo
 share/locale/km/LC_MESSAGES/katefll_plugin.mo
@@ -369,6 +368,7 @@ share/locale/km/LC_MESSAGES/kooka.mo
 share/locale/km/LC_MESSAGES/kopete.mo
 share/locale/km/LC_MESSAGES/korganizer.mo
 share/locale/km/LC_MESSAGES/korn.mo
+share/locale/km/LC_MESSAGES/kpackage.mo
 share/locale/km/LC_MESSAGES/kpager.mo
 share/locale/km/LC_MESSAGES/kpartapp.mo
 share/locale/km/LC_MESSAGES/kpat.mo
@@ -430,7 +430,6 @@ share/locale/km/LC_MESSAGES/ksysguard.mo
 share/locale/km/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/km/LC_MESSAGES/ksystraycmd.mo
 share/locale/km/LC_MESSAGES/ktalkd.mo
-share/locale/km/LC_MESSAGES/ktaskbarapplet.mo
 share/locale/km/LC_MESSAGES/kteatime.mo
 share/locale/km/LC_MESSAGES/ktexteditor_autobookmarker.mo
 share/locale/km/LC_MESSAGES/ktexteditor_docwordcompletion.mo
@@ -540,7 +539,6 @@ share/locale/km/LC_MESSAGES/rellinks.mo
 share/locale/km/LC_MESSAGES/searchbarplugin.mo
 share/locale/km/LC_MESSAGES/superkaramba.mo
 share/locale/km/LC_MESSAGES/synaescope.mo
-share/locale/km/LC_MESSAGES/taskbarextension.mo
 share/locale/km/LC_MESSAGES/timezones.mo
 share/locale/km/LC_MESSAGES/tippecanoe.mo
 share/locale/km/LC_MESSAGES/trashapplet.mo

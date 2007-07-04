@@ -380,12 +380,6 @@ share/locale/uk/LC_MESSAGES/kolourpaint.mo
 share/locale/uk/LC_MESSAGES/kolourpicker.mo
 share/locale/uk/LC_MESSAGES/kommander.mo
 share/locale/uk/LC_MESSAGES/kompare.mo
-share/locale/uk/LC_MESSAGES/konnector_dummy.mo
-share/locale/uk/LC_MESSAGES/konnector_kabc.mo
-share/locale/uk/LC_MESSAGES/konnector_kcal.mo
-share/locale/uk/LC_MESSAGES/konnector_local.mo
-share/locale/uk/LC_MESSAGES/konnector_qtopia.mo
-share/locale/uk/LC_MESSAGES/konnector_remote.mo
 share/locale/uk/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/uk/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/uk/LC_MESSAGES/konqsidebar_metabar.mo
@@ -478,6 +472,7 @@ share/locale/uk/LC_MESSAGES/ktouch.mo
 share/locale/uk/LC_MESSAGES/ktron.mo
 share/locale/uk/LC_MESSAGES/kttsd.mo
 share/locale/uk/LC_MESSAGES/ktuberling.mo
+share/locale/uk/LC_MESSAGES/kturtle.mo
 share/locale/uk/LC_MESSAGES/ktux.mo
 share/locale/uk/LC_MESSAGES/kuick_plugin.mo
 share/locale/uk/LC_MESSAGES/kuickshow.mo
@@ -528,7 +523,6 @@ share/locale/uk/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/uk/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/uk/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/uk/LC_MESSAGES/libkickermenu_tom.mo
-share/locale/uk/LC_MESSAGES/libkitchensync.mo
 share/locale/uk/LC_MESSAGES/libkleopatra.mo
 share/locale/uk/LC_MESSAGES/libkmime.mo
 share/locale/uk/LC_MESSAGES/libkonq.mo
@@ -548,7 +542,6 @@ share/locale/uk/LC_MESSAGES/mediaapplet.mo
 share/locale/uk/LC_MESSAGES/mediacontrol.mo
 share/locale/uk/LC_MESSAGES/mf_konqplugin.mo
 share/locale/uk/LC_MESSAGES/minitoolsplugin.mo
-share/locale/uk/LC_MESSAGES/multisynk.mo
 share/locale/uk/LC_MESSAGES/naughtyapplet.mo
 share/locale/uk/LC_MESSAGES/nexscope.mo
 share/locale/uk/LC_MESSAGES/noatun.mo
@@ -556,7 +549,6 @@ share/locale/uk/LC_MESSAGES/nsplugin.mo
 share/locale/uk/LC_MESSAGES/pitchablespeed.mo
 share/locale/uk/LC_MESSAGES/ppdtranslations.mo
 share/locale/uk/LC_MESSAGES/privacy.mo
-share/locale/uk/LC_MESSAGES/qeditor.mo
 share/locale/uk/LC_MESSAGES/quanta.mo
 share/locale/uk/LC_MESSAGES/quicklauncher.mo
 share/locale/uk/LC_MESSAGES/rellinks.mo

@@ -82,6 +82,7 @@ share/locale/bg/LC_MESSAGES/katexmltools.mo
 share/locale/bg/LC_MESSAGES/katomic.mo
 share/locale/bg/LC_MESSAGES/kaudiocreator.mo
 share/locale/bg/LC_MESSAGES/kay.mo
+share/locale/bg/LC_MESSAGES/kbabel.mo
 share/locale/bg/LC_MESSAGES/kbackgammon.mo
 share/locale/bg/LC_MESSAGES/kbattleship.mo
 share/locale/bg/LC_MESSAGES/kbinaryclock.mo
@@ -244,6 +245,7 @@ share/locale/bg/LC_MESSAGES/kfile_wav.mo
 share/locale/bg/LC_MESSAGES/kfile_xbm.mo
 share/locale/bg/LC_MESSAGES/kfile_xpm.mo
 share/locale/bg/LC_MESSAGES/kfileaudiopreview.mo
+share/locale/bg/LC_MESSAGES/kfilereplace.mo
 share/locale/bg/LC_MESSAGES/kfileshare.mo
 share/locale/bg/LC_MESSAGES/kfindpart.mo
 share/locale/bg/LC_MESSAGES/kfloppy.mo
@@ -252,6 +254,7 @@ share/locale/bg/LC_MESSAGES/kfontinst.mo
 share/locale/bg/LC_MESSAGES/kfouleggs.mo
 share/locale/bg/LC_MESSAGES/kgamma.mo
 share/locale/bg/LC_MESSAGES/kgantt.mo
+share/locale/bg/LC_MESSAGES/kgeography.mo
 share/locale/bg/LC_MESSAGES/kget.mo
 share/locale/bg/LC_MESSAGES/kghostview.mo
 share/locale/bg/LC_MESSAGES/kgoldrunner.mo
@@ -266,14 +269,15 @@ share/locale/bg/LC_MESSAGES/khotkeys.mo
 share/locale/bg/LC_MESSAGES/khtmlkttsd.mo
 share/locale/bg/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/bg/LC_MESSAGES/kicker.mo
+share/locale/bg/LC_MESSAGES/kickermenu_kate.mo
 share/locale/bg/LC_MESSAGES/kiconedit.mo
 share/locale/bg/LC_MESSAGES/kig.mo
+share/locale/bg/LC_MESSAGES/kimagemapeditor.mo
 share/locale/bg/LC_MESSAGES/kinetd.mo
 share/locale/bg/LC_MESSAGES/kio.mo
 share/locale/bg/LC_MESSAGES/kio_audiocd.mo
 share/locale/bg/LC_MESSAGES/kio_finger.mo
 share/locale/bg/LC_MESSAGES/kio_fish.mo
-share/locale/bg/LC_MESSAGES/kio_floppy.mo
 share/locale/bg/LC_MESSAGES/kio_groupwise.mo
 share/locale/bg/LC_MESSAGES/kio_help.mo
 share/locale/bg/LC_MESSAGES/kio_home.mo
@@ -343,6 +347,7 @@ share/locale/bg/LC_MESSAGES/kmplot.mo
 share/locale/bg/LC_MESSAGES/kmrml.mo
 share/locale/bg/LC_MESSAGES/knetattach.mo
 share/locale/bg/LC_MESSAGES/knetwalk.mo
+share/locale/bg/LC_MESSAGES/knetworkconf.mo
 share/locale/bg/LC_MESSAGES/knewsticker.mo
 share/locale/bg/LC_MESSAGES/knode.mo
 share/locale/bg/LC_MESSAGES/knotes.mo
@@ -351,14 +356,11 @@ share/locale/bg/LC_MESSAGES/kodo.mo
 share/locale/bg/LC_MESSAGES/kolf.mo
 share/locale/bg/LC_MESSAGES/kolourpaint.mo
 share/locale/bg/LC_MESSAGES/kolourpicker.mo
-share/locale/bg/LC_MESSAGES/konnector_dummy.mo
-share/locale/bg/LC_MESSAGES/konnector_kabc.mo
-share/locale/bg/LC_MESSAGES/konnector_kcal.mo
-share/locale/bg/LC_MESSAGES/konnector_local.mo
-share/locale/bg/LC_MESSAGES/konnector_qtopia.mo
-share/locale/bg/LC_MESSAGES/konnector_remote.mo
+share/locale/bg/LC_MESSAGES/kommander.mo
+share/locale/bg/LC_MESSAGES/kompare.mo
 share/locale/bg/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/bg/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/bg/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/bg/LC_MESSAGES/konqsidebar_news.mo
 share/locale/bg/LC_MESSAGES/konqueror.mo
 share/locale/bg/LC_MESSAGES/konquest.mo
@@ -481,6 +483,7 @@ share/locale/bg/LC_MESSAGES/kworldclock.mo
 share/locale/bg/LC_MESSAGES/kwriteconfig.mo
 share/locale/bg/LC_MESSAGES/kxkb.mo
 share/locale/bg/LC_MESSAGES/kxsconfig.mo
+share/locale/bg/LC_MESSAGES/kxsldbg.mo
 share/locale/bg/LC_MESSAGES/libKTTSD.mo
 share/locale/bg/LC_MESSAGES/libdmctl.mo
 share/locale/bg/LC_MESSAGES/libkaddrbk_geo_xxport.mo
@@ -519,7 +522,6 @@ share/locale/bg/LC_MESSAGES/mediaapplet.mo
 share/locale/bg/LC_MESSAGES/mediacontrol.mo
 share/locale/bg/LC_MESSAGES/mf_konqplugin.mo
 share/locale/bg/LC_MESSAGES/minitoolsplugin.mo
-share/locale/bg/LC_MESSAGES/multisynk.mo
 share/locale/bg/LC_MESSAGES/naughtyapplet.mo
 share/locale/bg/LC_MESSAGES/nexscope.mo
 share/locale/bg/LC_MESSAGES/noatun.mo
@@ -527,7 +529,7 @@ share/locale/bg/LC_MESSAGES/nsplugin.mo
 share/locale/bg/LC_MESSAGES/pitchablespeed.mo
 share/locale/bg/LC_MESSAGES/ppdtranslations.mo
 share/locale/bg/LC_MESSAGES/privacy.mo
-share/locale/bg/LC_MESSAGES/qeditor.mo
+share/locale/bg/LC_MESSAGES/quanta.mo
 share/locale/bg/LC_MESSAGES/quicklauncher.mo
 share/locale/bg/LC_MESSAGES/rellinks.mo
 share/locale/bg/LC_MESSAGES/searchbarplugin.mo

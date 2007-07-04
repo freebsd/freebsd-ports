@@ -488,6 +488,7 @@ share/doc/HTML/pt_BR/khelpcenter/userguide/common
 share/doc/HTML/pt_BR/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/pt_BR/khelpcenter/userguide/customizing-desktop.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/email.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/extragear-applications.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/file-sharing.docbook
@@ -1623,6 +1624,7 @@ share/locale/pt_BR/LC_MESSAGES/khotkeys.mo
 share/locale/pt_BR/LC_MESSAGES/khtmlkttsd.mo
 share/locale/pt_BR/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/pt_BR/LC_MESSAGES/kicker.mo
+share/locale/pt_BR/LC_MESSAGES/kickermenu_kate.mo
 share/locale/pt_BR/LC_MESSAGES/kiconedit.mo
 share/locale/pt_BR/LC_MESSAGES/kig.mo
 share/locale/pt_BR/LC_MESSAGES/kimagemapeditor.mo
@@ -1710,12 +1712,6 @@ share/locale/pt_BR/LC_MESSAGES/kolourpaint.mo
 share/locale/pt_BR/LC_MESSAGES/kolourpicker.mo
 share/locale/pt_BR/LC_MESSAGES/kommander.mo
 share/locale/pt_BR/LC_MESSAGES/kompare.mo
-share/locale/pt_BR/LC_MESSAGES/konnector_dummy.mo
-share/locale/pt_BR/LC_MESSAGES/konnector_kabc.mo
-share/locale/pt_BR/LC_MESSAGES/konnector_kcal.mo
-share/locale/pt_BR/LC_MESSAGES/konnector_local.mo
-share/locale/pt_BR/LC_MESSAGES/konnector_qtopia.mo
-share/locale/pt_BR/LC_MESSAGES/konnector_remote.mo
 share/locale/pt_BR/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/pt_BR/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/pt_BR/LC_MESSAGES/konqsidebar_news.mo
@@ -1878,7 +1874,6 @@ share/locale/pt_BR/LC_MESSAGES/mediaapplet.mo
 share/locale/pt_BR/LC_MESSAGES/mediacontrol.mo
 share/locale/pt_BR/LC_MESSAGES/mf_konqplugin.mo
 share/locale/pt_BR/LC_MESSAGES/minitoolsplugin.mo
-share/locale/pt_BR/LC_MESSAGES/multisynk.mo
 share/locale/pt_BR/LC_MESSAGES/naughtyapplet.mo
 share/locale/pt_BR/LC_MESSAGES/nexscope.mo
 share/locale/pt_BR/LC_MESSAGES/noatun.mo
@@ -1886,7 +1881,6 @@ share/locale/pt_BR/LC_MESSAGES/nsplugin.mo
 share/locale/pt_BR/LC_MESSAGES/pitchablespeed.mo
 share/locale/pt_BR/LC_MESSAGES/ppdtranslations.mo
 share/locale/pt_BR/LC_MESSAGES/privacy.mo
-share/locale/pt_BR/LC_MESSAGES/qeditor.mo
 share/locale/pt_BR/LC_MESSAGES/quanta.mo
 share/locale/pt_BR/LC_MESSAGES/quicklauncher.mo
 share/locale/pt_BR/LC_MESSAGES/rellinks.mo

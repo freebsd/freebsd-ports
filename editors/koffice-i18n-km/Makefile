@@ -1,13 +1,12 @@
-# New ports collection makefile for:	koffice-i18n-km
-# Date created:                         03 March 2007
+# New ports collection makefile for:	koffice-i18n-ga
+# Date created:                         06 April 2006
 # Whom:                                 Michael Nottebrock <lofi@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	koffice-i18n
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.6.3
 CATEGORIES?=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}/src/koffice-l10n
