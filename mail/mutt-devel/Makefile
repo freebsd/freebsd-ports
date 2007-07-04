@@ -137,7 +137,8 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://home.woolridge.ca/mutt/patches/:dw \
 		http://www.spinnaker.de/mutt/compressed/:rr \
 		http://www.emaillab.org/mutt/${AC_PATCH_VERSION}/:jp \
-		http://vc.org.ua/mutt/:vc
+		http://vc.org.ua/mutt/:vc \
+		http://yz.kiev.ua/mutt/:vc
 
 MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (development version)
@@ -299,8 +300,7 @@ LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 .if defined(WITH_MUTT_IMAP_HEADER_CACHE)
-LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
-CFLAGS+=	-I${LOCALBASE}/include/db42
+USE_BDB=	42+
 .endif
 .if exists(${LOCALBASE}/lib/libidn.so)
 WITH_MUTT_IDN=	yes
