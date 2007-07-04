@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	passepartout
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.6.90
 CATEGORIES=	graphics gnome
-MASTER_SITES=	http://www.stacken.kth.se/project/pptout/files/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	DTP application for X
@@ -24,16 +25,13 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	CFALGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 
 MAN1=		xml2ps.1 passepartout.1x
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	does not build on FreeBSD 4.x
-.endif
 
 .if exists(${LOCALBASE}/lib/libfam.a)
 WITH_FAM=	yes
