@@ -25,6 +25,10 @@ MAKE_ARGS+=	LOCALE_FILE="${LOCALE_FILE}" QTDIR="${QT_PREFIX}"
 PLIST_FILES=	bin/QNetChess %%DATADIR%%/${PORTNAME}_ru.qm
 PLIST_DIRS=	%%DATADIR%%
 
+post-patch:
+	${REINPLACE_CMD} -e 's|static char|static const char|' \
+		                  ${WRKSRC}/xpm/*
+
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/QNetChess	${PREFIX}/bin
