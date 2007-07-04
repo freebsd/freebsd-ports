@@ -15,7 +15,7 @@ MAINTAINER=	saurbier@math.uni-bielefeld.de
 COMMENT=	A Ruby interface to RRDTool
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/net/rrdtool
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/hoe-1.2.0.gemspec:${PORTSDIR}/devel/rubygem-hoe
+BUILD_DEPENDS=	sow:${PORTSDIR}/devel/rubygem-hoe
 
 GEM_NAME=	RubyRRDtool-0.6.0
 GEM_ENV=	MAKEFLAGS="CPPFLAGS=-I${LOCALBASE}/include"
