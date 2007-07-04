@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.10.4
-PORTREVISION=	1
+PORTVERSION=	2.10.5
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/pygtk/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,7 +16,7 @@ DISTNAME=	pygtk-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A set of Python bindings for GTK
+COMMENT=	A set of Python bindings for GTK+
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject
