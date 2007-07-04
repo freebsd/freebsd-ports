@@ -94,6 +94,7 @@
     SUBDIR += p5-Stanford-DNSserver
     SUBDIR += p5-Tie-DNS
     SUBDIR += pdnsd
+    SUBDIR += pear-File_DNS
     SUBDIR += pear-Net_DNS
     SUBDIR += posadis
     SUBDIR += poweradmin
