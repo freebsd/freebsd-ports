@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.generalconcepts.com/resources/software/
 
-MAINTAINER=	jsellens@generalconcepts.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An alternative to ls(1)
 
 MAN1=		lc.1

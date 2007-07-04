@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.orcaware.com/orca/pub/
 
-MAINTAINER=	jsellens@generalconcepts.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for plotting arbitrary data from text files onto a Web server
 
 # needs some happy Perl modules
