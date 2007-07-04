@@ -360,6 +360,7 @@ amanda-server	ports/misc/amanda-server
 amanith		ports/graphics/amanith
 amap		ports/security/amap
 amarok		ports/audio/amarok
+amarok-fs	ports/audio/amarok-fs
 amaterus	ports/x11-wm/amaterus
 amavis-perl	ports/security/amavis-perl
 amavis-stats	ports/security/amavis-stats
