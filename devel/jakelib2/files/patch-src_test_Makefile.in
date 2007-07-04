@@ -1,0 +1,17 @@
+--- src/test/Makefile.in.orig	Sun Feb 19 15:03:19 2006
++++ src/test/Makefile.in	Thu Jul  5 01:38:26 2007
+@@ -242,14 +242,6 @@
+ 
+ all: all-am
+ 
+-.SUFFIXES:
+-.SUFFIXES: .cpp .lo .o .obj
+-$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+-	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu  src/test/Makefile
+-Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+-
+ clean-noinstLIBRARIES:
+ 	-test -z "$(noinst_LIBRARIES)" || rm -f $(noinst_LIBRARIES)
+ libjake2_test.a: $(libjake2_test_a_OBJECTS) $(libjake2_test_a_DEPENDENCIES) 

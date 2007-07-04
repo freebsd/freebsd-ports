@@ -1,0 +1,16 @@
+--- src/Makefile.in.orig	Sun Feb 19 15:01:03 2006
++++ src/Makefile.in	Thu Jul  5 00:52:24 2007
+@@ -554,13 +554,6 @@
+ 
+ all: all-recursive
+ 
+-.SUFFIXES:
+-.SUFFIXES: .c .cpp .lo .o .obj
+-$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+-	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu  src/Makefile
+-Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ install-libLTLIBRARIES: $(lib_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)

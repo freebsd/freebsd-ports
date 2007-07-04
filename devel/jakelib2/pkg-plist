@@ -12,6 +12,7 @@ include/jakelib2/io/BufferedReader.h
 include/jakelib2/io/BufferedWriter.h
 include/jakelib2/io/ByteArrayInputStream.h
 include/jakelib2/io/File.h
+include/jakelib2/io/FileInfo.h
 include/jakelib2/io/FileInputStream.h
 include/jakelib2/io/FileOutputStream.h
 include/jakelib2/io/FileReader.h

@@ -1,5 +1,5 @@
 # ex:ts=8
-# Ports collection makefile for:	jakelib2
+# New ports collection makefile for:	jakelib2
 # Date created:			Oct 23, 2003
 # Whom:				ijliao
 #
@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	jakelib2
-PORTVERSION=	2.0.0.s
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.jakelib.org/lib/jakelib2/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross platform C++ class library with a Java-like API
@@ -25,15 +23,15 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--disable-debug
 
 USE_LDCONFIG=	yes
-INFO=	jakelib2
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
+INFO=		jakelib2
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
+		${WRKSRC}/configure
+# Fixes for GCC 4.2
+	@${REINPLACE_CMD} -e '178s|gc::||' \
+		${WRKSRC}/include/jakelib2/gc/gc_cpp.h
+	@${REINPLACE_CMD} -e 's|SimpleDateFormat::||' \
+		${WRKSRC}/include/jakelib2/text/SimpleDateFormat.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
