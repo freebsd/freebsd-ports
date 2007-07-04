@@ -59,6 +59,7 @@ share/aclocal/libgnutls.m4
 %%NLS%%share/locale/de/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/gnutls.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gnutls.mo
 @dirrm %%EXAMPLESDIR%%
