@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bzr-gtk
-PORTVERSION=	0.16.0
-PORTREVISION=	0
+PORTVERSION=	0.17.0
 CATEGORIES=	devel
 MASTER_SITES=	http://samba.org/~jelmer/bzr/
 
