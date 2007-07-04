@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	centerim
-PORTVERSION=	4.22.0
-PORTREVISION=	1
+PORTVERSION=	4.22.1
 CATEGORIES=	net-im
-MASTER_SITES=	http://cim.sbisinger.net/tars/ \
-		http://www.centerim.org/download/ \
+MASTER_SITES=	http://www.centerim.org/download/ \
+		http://cim.sbisinger.net/tars/ \
 		ftp://ftp.centerim.org/
-DISTNAME=	${PORTNAME}-20070518
+DISTNAME=	${PORTNAME}-20070625
 
 MAINTAINER=	frank@altpeter.de
 COMMENT=	A text mode menu- and window-driven IM interface
@@ -26,7 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
-CONFIGURE_ARGS=	--with-ssl --with-openssl --disable-konst --mandir="${PREFIX}/man"
+CONFIGURE_ARGS=	--with-ssl --with-openssl --disable-konst --mandir="${MANPREFIX}/man"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFLICTS=	centericq-[0-9]*
 
@@ -43,7 +42,7 @@ OPTIONS=	NLS             "Native Language Support" on \
 		LJ              "Support for LiveJournal" off \
 		GG              "Support for Gadu-Gadu Protocol" off
 
-MAN1=	cicqconv.1
+MAN1=	cicqconv.1 centerim.1
 
 PORTDOCS=	FAQ README
 
