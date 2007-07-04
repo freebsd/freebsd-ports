@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- script/confhat.orig
++++ script/confhat
+@@ -24,7 +24,7 @@
+   # discover ghc version (technique courtesy of Simon Marlow)
+   echo __GLASGOW_HASKELL__ >ghcsym.hs;
+   $COMP -E -cpp -optP-P ghcsym.hs -o ghcsym.out;
+-  GHCSYM=`grep -v '^#' ghcsym.out | grep -v '^$'`
++  GHCSYM=`grep -v '^#' ghcsym.out | grep -v '^$' | grep -v '^{'`
+   rm -f ghcsym.hs ghcsym.out;
+ 
+ #  # discover ghc location
