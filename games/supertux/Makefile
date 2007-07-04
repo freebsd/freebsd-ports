@@ -26,4 +26,8 @@ CONFIGURE_ARGS=		--disable-debug
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 700000
+USE_GCC=	3.4
+.endif
+
 .include <bsd.port.post.mk>
