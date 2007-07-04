@@ -38,4 +38,10 @@ CONFIGURE_ARGS+=	--mandir=${PREFIX}/man --infodir=${PREFIX}/info
 DOCS=	README README.VFS logo-shaded.svg
 MAN8=	nepenthes.8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		Does not compile
+.endif
+
+.include <bsd.port.post.mk>
