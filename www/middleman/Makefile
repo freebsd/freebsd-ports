@@ -1,6 +1,6 @@
-# New ports collection makefile for: 	middleman
-# Date created:		Sun Apr 27 15:48:16 CEST 2003
-# Whom:                Kirill Ponomarew <ponomarew@oberon.net>
+# New ports collection makefile for:	middleman
+# Date created:				Sun Apr 27 15:48:16 CEST 2003
+# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
 #
 # $FreeBSD$
 #
@@ -40,12 +40,6 @@ CONFIGURE_ARGS+=	--enable-mtime
 MMAN_CACHE=	/var/cache/mman
 PLIST_SUB+=	MMAN_CACHE=${MMAN_CACHE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|/usr/bin/mman|${PREFIX}/bin/mman|g ; \
@@ -62,9 +56,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/scripts/mman.init \
 		${PREFIX}/etc/rc.d/mman.sh.sample
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/scripts/filter.pl ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
