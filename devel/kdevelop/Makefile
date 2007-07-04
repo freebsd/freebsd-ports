@@ -7,7 +7,7 @@
 
 PORTNAME=	kdevelop
 PORTVERSION=	3.4.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -22,6 +22,7 @@ BUILD_DEPENDS=	cervisia:${PORTSDIR}/devel/kdesdk3 \
 		msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion
 RUN_DEPENDS=	extractrc:${PORTSDIR}/devel/kdesdk3 \
+		gdb66:${PORTSDIR}/devel/gdb6 \
 		gmake:${PORTSDIR}/devel/gmake \
 		${LOCALBASE}/gnu-autotools/bin/automake:${PORTSDIR}/devel/gnu-automake \
 		${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoconf
@@ -74,6 +75,13 @@ post-configure:
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' < ${FILESDIR}/kdevelop \
 		> ${WRKDIR}/kdevelop
+	${REINPLACE_CMD} -e 's|<gdbpath>.*</gdbpath>|<gdbpath></gdbpath>|g' \
+		-e 's|<dbgshell>.*</dbgshell>|<dbgshell></dbgshell>|g' \
+		${WRKSRC}/languages/cpp/app_templates/*/*.kdevelop
+	${REINPLACE_CMD} -e 's|"gdb"|"gdb66"|g' \
+		${WRKSRC}/languages/cpp/debugger/gdbcontroller.cpp
+	${REINPLACE_CMD} -E -e 's|(.*shell =.*)libtool|\1libtool --mode=execute|g' \
+		${WRKSRC}/languages/cpp/debugger/debuggerconfigwidget.cpp
 
 post-install:
 	@${MV} ${PREFIX}/bin/kdevelop ${PREFIX}/bin/kdevelop-bin
