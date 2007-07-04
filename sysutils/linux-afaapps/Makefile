@@ -38,10 +38,8 @@ RPMFILE=	${PORTNAME}-${PORTVERSION}-2.${LINUX_RPM_ARCH}.rpm
 post-extract:
 	@cd ${WRKDIR} && ${RPM2CPIO} ${RPMFILE} | ${CPIO} -id --quiet && \
 	    ${RM} ${RPMFILE} readme
-
-build: configure
-	@${RM} -rf ${WRKDIR}/dev
-	@${RM} ${WRKDIR}/usr/sbin/afacli
-	@${MV} ${WRKDIR}/usr/sbin/afacli.bin ${WRKDIR}/usr/sbin/afacli
+	${RM} -rf ${WRKDIR}/dev
+	${RM} ${WRKDIR}/usr/sbin/afacli
+	${MV} ${WRKDIR}/usr/sbin/afacli.bin ${WRKDIR}/usr/sbin/afacli
 
 .include <bsd.port.post.mk>
