@@ -1,6 +1,0 @@
-include/divx/decore.h
-lib/libdivxdecore.a
-lib/libdivxdecore.la
-lib/libdivxdecore.so
-lib/libdivxdecore.so.%%LIB_VERSION%%
-@dirrm include/divx
