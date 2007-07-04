@@ -1,6 +1,6 @@
-# New ports collection makefile for:	icmpchat
+# New ports collection makefile for:	ICMP-Chat
 # Date created:				8 October 2002
-# Whom:					mwest@uct.ac.za
+# Whom:					Matthew West <mwest@uct.ac.za>
 #
 # $FreeBSD$
 #
@@ -12,17 +12,15 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	icmpchat
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Simple console-based chat that uses the ICMP protocol
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
+COMMENT=	Simple console-based chat that uses ICMP protocol
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-O2 -Wall -pedantic|${CFLAGS}|;\
 		s|= gcc|?= gcc|;s|default|all|' ${WRKSRC}/Makefile
+# Fix for GCC 4.2
+	@${REINPLACE_CMD} -e \
+		's|((uint8_t \*) data) +=|data += sizeof(uint8_t *) *|' \
+			${WRKSRC}/sha256.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icmpchat ${PREFIX}/bin
@@ -35,4 +33,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Todo ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

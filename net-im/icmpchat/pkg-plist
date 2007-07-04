@@ -1,7 +1,7 @@
 bin/icmpchat
-%%PORTDOCS%%share/doc/icmpchat/Changes
-%%PORTDOCS%%share/doc/icmpchat/License
-%%PORTDOCS%%share/doc/icmpchat/Problems
-%%PORTDOCS%%share/doc/icmpchat/Readme
-%%PORTDOCS%%share/doc/icmpchat/Todo
-%%PORTDOCS%%@dirrm share/doc/icmpchat
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/License
+%%PORTDOCS%%%%DOCSDIR%%/Problems
+%%PORTDOCS%%%%DOCSDIR%%/Readme
+%%PORTDOCS%%%%DOCSDIR%%/Todo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
