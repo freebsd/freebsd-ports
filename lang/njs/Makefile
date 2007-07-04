@@ -1,6 +1,6 @@
-# New ports collection makefile for:	njs
-# Date created:		Fri Jan 11 20:45:26 GMT 2002
-# Whom:			thierry@pompo.net
+# New ports collection makefile for:	NJS
+# Date created:				Fri Jan 11 20:45:26 GMT 2002
+# Whom:					Thierry Thomas <thierry@pompo.net>
 #
 # $FreeBSD$
 #
@@ -22,29 +22,20 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-shared
 
-SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
-MAN1=	js.1 jsdas.1
-INFO=	js
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
+MAN1=		js.1 jsdas.1
+INFO=		js
 
 post-extract:
 	@${RM} ${WRKSRC}/docs/js.info*
+# Fix for GCC 4.2
+	@${REINPLACE_CMD} -E \
+		's,(\(unsigned char \*\) )(ptr \+=),\2 sizeof\1*,' \
+			${WRKSRC}/src/iostream.c
 
 pre-install:
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e "s:docs micros examples:micros:g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s:docs micros examples:micros:g" \
+		${WRKSRC}/Makefile
 .endif
 
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
