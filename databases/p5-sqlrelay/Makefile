@@ -13,7 +13,7 @@ MASTER_SITES=	# none
 PKGNAMEPREFIX=	p5-
 DISTFILES=	# none
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 modules to access to SQL Relay, including a DBD interface
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
