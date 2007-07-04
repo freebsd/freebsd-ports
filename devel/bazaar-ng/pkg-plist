@@ -5,6 +5,8 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/atomicfile.py
 %%PYTHON_SITELIBDIR%%/bzrlib/branch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/breakin.py
+%%PYTHON_SITELIBDIR%%/bzrlib/branchbuilder.py
+%%PYTHON_SITELIBDIR%%/bzrlib/counted_lock.py
 %%PYTHON_SITELIBDIR%%/bzrlib/bugtracker.py
 %%PYTHON_SITELIBDIR%%/bzrlib/builtins.py
 %%PYTHON_SITELIBDIR%%/bzrlib/bzrdir.py
@@ -307,6 +309,7 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_branch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_bugtracker.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_bundle.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_branchbuilder.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_bzrdir.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_cache_utf8.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_commands.py
@@ -314,6 +317,7 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_commit_merge.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_config.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_conflicts.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_counted_lock.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_decorators.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_delta.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_diff.py
@@ -670,6 +674,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_tags.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_uncommit.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_update.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_sprout.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_sprout.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_sprout.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/bzrdir_implementations/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/bzrdir_implementations/test_bzrdir.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/bzrdir_implementations/__init__.pyc
@@ -1119,6 +1126,10 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_wsgi.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_xml.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/treeshape.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_branchbuilder.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_counted_lock.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_branchbuilder.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_counted_lock.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/chroot.py
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/decorator.py
@@ -1437,6 +1448,10 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/xml6.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/xml7.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/xml_serializer.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/branchbuilder.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/counted_lock.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/branchbuilder.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/counted_lock.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/benchmarks
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/bundle/serializer
