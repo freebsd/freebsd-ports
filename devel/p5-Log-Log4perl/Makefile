@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Log4perl
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Log
@@ -65,6 +65,7 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Logger.3 \
 		Log::Log4perl::MDC.3 \
 		Log::Log4perl::NDC.3 \
+		Log::Log4perl::Resurrector.3 \
 		Log::Log4perl::Util.3
 
 .include <bsd.port.pre.mk>
