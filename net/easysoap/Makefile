@@ -22,8 +22,12 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GCC=	2.95
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	    ${WRKSRC}/configure
 
 pre-configure:
 	@${ECHO_MSG} "CPPFLAGS=${CPPFLAGS} CXXFLAGS=${CXXFLAGS}"
