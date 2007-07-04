@@ -3090,3 +3090,4 @@ databases/p5-DBI-137|databases/p5-DBI|2007-07-03|Only useful for 4.x
 multimedia/libdivxencore||2007-07-04|Obsolete port
 multimedia/libdivxdecore||2007-07-04|Obsolete port
 multimedia/libdivxdecore-devel||2007-07-04|Obsolete port
+multimedia/handbrake-gtk2||2007-07-04|Obsolete, getting old to keep unsupport version around

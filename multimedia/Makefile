@@ -80,7 +80,6 @@
     SUBDIR += gxine
     SUBDIR += gxmms
     SUBDIR += handbrake
-    SUBDIR += handbrake-gtk2
     SUBDIR += hayes
     SUBDIR += helixplayer
     SUBDIR += iriverter
