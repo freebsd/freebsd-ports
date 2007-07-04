@@ -1628,6 +1628,7 @@ cups-pdf	ports/print/cups-pdf
 cups-pstoraster	ports/print/cups-pstoraster
 cups-samba	ports/print/cups-samba
 cups-smb-backend	ports/print/cups-smb-backend
+cupsddk		ports/print/cupsddk
 curator		ports/graphics/curator
 curl		ports/ftp/curl
 curlpp		ports/ftp/curlpp
