@@ -4,6 +4,7 @@ etc/slsh.rc
 include/slang.h
 include/slcurses.h
 lib/libslang.a
+lib/libslang.so.2.0.7
 lib/libslang.so.2
 lib/libslang.so
 lib/slang/v2/modules/fcntl-module.so
