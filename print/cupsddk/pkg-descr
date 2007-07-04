@@ -1,0 +1,5 @@
+The CUPS Driver Development Kit (DDK) provides a suite of standard drivers,
+a PPD file compiler, and other utilities that can be used to develop printer
+drivers for CUPS and other printing environments.
+
+WWW: http://www.cups.org/ddk/
