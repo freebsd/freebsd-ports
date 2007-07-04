@@ -60,7 +60,8 @@ libexec/MailScanner/update_phishing_sites
 libexec/MailScanner/update_phishing_sites.cron
 libexec/MailScanner/update_virus_scanners
 libexec/MailScanner/update_virus_scanners.cron
-libexec/MailScanner/sa-update.cron
+libexec/MailScanner/update_spamassassin
+libexec/MailScanner/update_spamassassin.cron
 libexec/MailScanner/antivir-autoupdate.sample
 libexec/MailScanner/antivir-wrapper.sample
 libexec/MailScanner/avast-wrapper.sample
@@ -72,7 +73,6 @@ libexec/MailScanner/bitdefender-autoupdate.sample
 libexec/MailScanner/bitdefender-wrapper.sample
 libexec/MailScanner/clamav-autoupdate.sample
 libexec/MailScanner/clamav-wrapper.sample
-libexec/MailScanner/clamd-wrapper.sample
 libexec/MailScanner/command-wrapper.sample
 libexec/MailScanner/css-autoupdate.sample
 libexec/MailScanner/css-wrapper.sample
