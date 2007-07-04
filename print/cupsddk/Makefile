@@ -1,0 +1,43 @@
+# New ports collection makefile for:	cupsddk
+# Date created:		2007-07-04
+# Whom:			Michael Johnson <ahze@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	cupsddk
+PORTVERSION=	1.1.1
+CATEGORIES=	print devel
+MASTER_SITES=	EASYSW
+MASTER_SITE_SUBDIR=	${PORTNAME}/${DISTVERSION}
+DISTNAME=	${PORTNAME}-${DISTVERSION}-source
+
+MAINTAINER=	ahze@FreeBSD.org
+COMMENT=	CUPS Driver Development Kit
+
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
+		cups.2:${PORTSDIR}/print/cups-base
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+MAN1=	commandtoescpx.1 commandtopclx.1 cupsprofile.1 \
+	ppdc.1 ppdhtml.1 ppdi.1 ppdmerge.1 ppdpo.1 \
+	rastertoescpx.1 rastertopclx.1
+MAN5=	ppdcfile.5
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/cupsprofile.ppm|${DATADIR:S,${PREFIX}/share,,}/cupsprofile.ppm|' \
+		${WRKSRC}/cups/cupsprofile.c
+	@${REINPLACE_CMD} -e 's|ln -s|${LN} -sf|' \
+		${WRKSRC}/Makedefs.in
+
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/cups/cupsprofile.ppm ${DATADIR}
+
+.include <bsd.port.mk>

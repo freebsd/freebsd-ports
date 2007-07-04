@@ -1,0 +1,46 @@
+bin/cupsprofile
+bin/ppdc
+bin/ppdhtml
+bin/ppdi
+bin/ppdmerge
+bin/ppdpo
+include/cups/driver.h
+libexec/cups/driver/drv
+libexec/cups/filter/commandtoescpx
+libexec/cups/filter/commandtopclx
+libexec/cups/filter/rastertoescpx
+libexec/cups/filter/rastertopclx
+%%DATADIR%%/cupsprofile.ppm
+%%DATADIR%%/include/dymo.h
+%%DATADIR%%/include/epson.h
+%%DATADIR%%/include/escp.h
+%%DATADIR%%/include/font.defs
+%%DATADIR%%/include/hp.h
+%%DATADIR%%/include/label.h
+%%DATADIR%%/include/media.defs
+%%DATADIR%%/include/pcl.h
+%%DATADIR%%/include/raster.defs
+%%DATADIR%%/po/de.po
+%%DATADIR%%/po/es.po
+%%DATADIR%%/po/fr.po
+%%DATADIR%%/po/it.po
+%%DATADIR%%/po/ja.po
+share/doc/cups/examples/color.drv
+share/doc/cups/examples/constraint.drv
+share/doc/cups/examples/custom.drv
+share/doc/cups/examples/grouping.drv
+share/doc/cups/examples/minimum.drv
+share/doc/cups/help/man-cupsprofile.html
+share/doc/cups/help/man-ppdc.html
+share/doc/cups/help/man-ppdhtml.html
+share/doc/cups/help/man-ppdi.html
+share/doc/cups/help/man-ppdmerge.html
+share/doc/cups/help/man-ppdpo.html
+share/doc/cups/help/man-rastertoescpx.html
+share/doc/cups/help/man-rastertopclx.html
+share/doc/cups/help/ref-ppdcfile.html
+@dirrmtry share/doc/cups/examples
+@dirrm %%DATADIR%%/po
+@dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%
+@dirrmtry share/cups/drv
