@@ -268,7 +268,7 @@ gst_mad_LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 gst_mad_DIST=	ugly
 
 # mpeg2enc
-gst_mpeg2enc_LIB_DEPENDS+=	mjpegutils-1.9.0:${PORTSDIR}/multimedia/mjpegtools
+gst_mpeg2enc_LIB_DEPENDS+=	mjpegutils-1.9.1:${PORTSDIR}/multimedia/mjpegtools
 gst_mpeg2enc_DIST=	bad
 
 # mpeg2dec
