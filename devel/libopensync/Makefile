@@ -7,6 +7,7 @@
 
 PORTNAME=	libopensync
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opensync.org/attachment/wiki/download/
 DISTNAME=	libopensync-${PORTVERSION}
@@ -14,6 +15,8 @@ EXTRACT_SUFX=	.tar.bz2\?rev=\&format=raw
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PIM data synchronization framework
+
+CONFLICTS=	libopensync-0.22*
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
@@ -28,6 +31,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gthread-2.0|gthread-2.0 pthread|' ${WRKSRC}/opensync/SConscript
 
 post-install:
+	@${LN} -sf ${LOCALBASE}/lib/libopensync.so ${LOCALBASE}/lib/libopensync.so.1
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
