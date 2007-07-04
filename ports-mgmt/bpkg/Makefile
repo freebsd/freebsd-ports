@@ -23,9 +23,6 @@ PLIST_FILES=	sbin/bpkg
 
 MAN8=		bpkg.8
 
-do-fetch:
-	@${DO_NADA}
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/bpkg.sh ${PREFIX}/sbin/bpkg
 	${INSTALL_MAN} ${FILESDIR}/bpkg.8 ${MAN8PREFIX}/man/man8
