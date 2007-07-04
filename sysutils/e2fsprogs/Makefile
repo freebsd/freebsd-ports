@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.39
-PORTREVISION?=	1
+PORTVERSION=	1.40
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,13 @@ USE_GETTEXT=	yes
 
 PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS?=	--disable-fsck --disable-e2initrd-helper '--with-ldopts=-L${LOCALBASE}/lib' --with-cc='${CC}' --with-linker='${LD}' --with-ccopts='${CFLAGS}' --with-root-prefix='${PREFIX}'
+CONFIGURE_ARGS?=	--disable-fsck --disable-e2initrd-helper \
+			'--with-ldopts=-L${LOCALBASE}/lib' \
+			--with-cc='${CC}' --with-linker='${LD}' \
+			--with-ccopts='${CFLAGS}' \
+			--with-root-prefix='${PREFIX}'\
+			 --infodir=${PREFIX}/info \
+			 --mandir=${MANPREFIX}/man
 # for unknown reasons, the assembly bitops cause SIGSEGV.
 # _EXT2_USE_C_VERSIONS_ uses C bitops, these appear to work fine.
 CONFIGURE_ENV+=	CPPFLAGS='${CPPFLAGS} -I${WRKSRC}/lib -I${LOCALBASE}/include -D_EXT2_USE_C_VERSIONS_'
@@ -29,10 +35,11 @@ CONFIGURE_ENV+=	CPPFLAGS='${CPPFLAGS} -I${WRKSRC}/lib -I${LOCALBASE}/include -D_
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .else
-MAKE_ARGS+=	STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a ../lib/libblkid.a  ../lib/libuuid.a ${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
+MAKE_ARGS+=	STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a ../lib/libblkid.a  \
+		../lib/libuuid.a ${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
 PLIST_SUB=	NLS=""
 .endif
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PKGDEINSTALL=	${PKGINSTALL}
 
 .if !defined(MASTERDIR)

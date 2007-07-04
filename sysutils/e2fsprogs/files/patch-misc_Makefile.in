@@ -1,16 +1,15 @@
---- a/misc/Makefile.in.orig	Thu Jun  8 16:20:48 2006
-+++ b/misc/Makefile.in	Thu Jun  8 16:24:18 2006
-@@ -288,11 +288,9 @@
+--- a/misc/Makefile.in.orig	Sat Jun 30 16:57:47 2007
++++ b/misc/Makefile.in	Sat Jun 30 16:58:17 2007
+@@ -295,11 +295,9 @@
  		echo "	INSTALL_DATA $(man5dir)/$$i"; \
  		$(INSTALL_DATA) $$i $(DESTDIR)$(man5dir)/$$i; \
  	done
--	@if ! test -f $(DESTDIR)/etc/mke2fs.conf; then \
--		echo "	INSTALL_DATA /etc/mke2fs.conf"; \
-+		echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf.dist"; \
+-	@if ! test -f $(DESTDIR)$(root_sysconfdir)/mke2fs.conf; then \
+ 		echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf"; \
  		$(INSTALL_DATA) $(srcdir)/mke2fs.conf \
--			$(DESTDIR)/etc/mke2fs.conf; \
+-			$(DESTDIR)$(root_sysconfdir)/mke2fs.conf; \
 -	fi
-+			$(DESTDIR)$(root_sysconfdir)/mke2fs.conf.dist
++			$(DESTDIR)$(root_sysconfdir)/mke2fs.conf.dist; \
  
  install-strip: install
  	@for i in $(SPROGS); do \
