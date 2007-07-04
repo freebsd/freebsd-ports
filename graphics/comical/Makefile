@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	john@mcaree.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sequential image viewer
 
 LIB_DEPENDS=	unrar.3:${PORTSDIR}/archivers/libunrar
