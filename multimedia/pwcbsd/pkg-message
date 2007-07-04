@@ -15,8 +15,6 @@ To load the kernel module at boot, add the following line to
 	pwc_load="YES"
 
 CAUTION: If you enabled mmap support in the driver, beware that
-unplugging your webcam while it is in use may crash your system.  So
-if you enabled mmap support, always remember to first exit the
-application that is using the webcam before unplugging the webcam.
+unplugging your webcam while it is in use may crash your system.
 
 ===============================================================================

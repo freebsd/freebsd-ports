@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	pwcbsd
-PORTVERSION=	1.3.1
-PORTREVISION=   2
+PORTVERSION=	1.4.0
 CATEGORIES=	multimedia sysutils kld
 MASTER_SITES=	http://raaf.atspace.org/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi
 
-MAINTAINER=	freebsd@luna.afraid.org
+MAINTAINER=	raaf@zen.mooo.com
 COMMENT=	The Linux pwc webcam driver ported to FreeBSD
 
 MAN4=		pwc.4
