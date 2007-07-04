@@ -1,19 +1,26 @@
---- makefile.orig	Mon Mar 28 15:40:31 2005
-+++ makefile	Thu Dec  1 11:28:45 2005
-@@ -22,16 +22,6 @@
+--- makefile.orig	Mon Apr 30 08:10:40 2007
++++ makefile	Mon Jul  2 18:32:10 2007
+@@ -22,20 +22,11 @@
  # THIS SOFTWARE.
  # ****************************************************************/
  
 -CFLAGS = -g
 -CFLAGS = -O2
 -CFLAGS =
--
++CFLAGS ?= -O2
+ 
 -CC = gcc -Wall -g -Wwrite-strings
--CC = gcc -fprofile-arcs -ftest-coverage
--		# followed by gcov onefile.c; cat onefile.c.gcov
+-CC = gcc -fprofile-arcs -ftest-coverage # then gcov f1.c; cat f1.c.gcov
 -CC = gcc -Wall -g
 -CC = cc
+-CC = gcc -O4
+-CC = gcc -Wall -g
++CC ?= cc
+ 
 -
- YACC = bison -y
- YACC = yacc
+-YACC = bison -y
+-YACC = yacc
++YACC ?= yacc
  YFLAGS = -d
+ 
+ OFILES = b.o main.o parse.o proctab.o tran.o lib.o run.o lex.o
