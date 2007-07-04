@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://download.berlios.de/kompose/
 
-MAINTAINER=	lauri@kde.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen task manager similar to Expose(tm)
 
 LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
