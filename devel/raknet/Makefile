@@ -1,5 +1,5 @@
 # New ports collection makefile for:	RakNet
-# Date created:				11 october 2005
+# Date created:				11 October 2005
 # Whom:					Andrew Baznikin <dikiy@scn.ru>
 #
 # $FreeBSD$
@@ -16,6 +16,8 @@ COMMENT=	Networking API that provides reliable UDP primarily for online games
 
 USE_ZIP=	yes
 USE_LDCONFIG=	yes
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	[^ ]*/(makefile.*|.*\.([^x]|cpp))
 WRKSRC=		${WRKDIR}
 PORTDOCS=	*
 
@@ -23,13 +25,6 @@ post-patch: .SILENT
 	${FIND} ${WRKSRC} -name CVS -delete
 	${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" -e "s|-lpthread|${PTHREAD_LIBS}|" -e "s|-fPIC|-fPIC ${CFLAGS}|" ${WRKSRC}/makefile.defs
 	${REINPLACE_CMD} -e "s|rm -f|#rm -f|g" -e "s|ln -s|${LN} -sf|" ${WRKSRC}/Makefile
-	for _F in `${FIND} ${WRKSRC} \
-		-iregex '[^ ]*/makefile.*' -or \
-		-iregex "[^ ]*/*.cpp" -or \
-		-iregex "[^ ]*/*.h"`; do \
-			${AWK} 'gsub( /\r/, "" )' $${_F} > $${_F}.awk.tmp; \
-			${MV} -f $${_F}.awk.tmp $${_F}; \
-	done
 	${MKDIR} ${WRKSRC}/Lib/linux
 	${LN} -s ${WRKSRC}/Lib ${WRKSRC}/lib
 # Some GCC 4.2 gimmick
