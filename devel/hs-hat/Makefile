@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hat
-PORTVERSION=	2.04
-PORTREVISION=	4
+PORTVERSION=	2.05
 CATEGORIES=	devel haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 PKGNAMEPREFIX=	hs-
@@ -22,10 +21,6 @@ USE_GNOME=	glib12
 OPTIONS=	NHC98 "Build with nhc98" off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_NHC98) && ${OSVERSION} >= 500000
-BROKEN=	"does not build with nhc98 on this platform"
-.endif
 
 .if defined(WITH_NHC98)
 BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
@@ -67,8 +62,8 @@ CONFIGURE_ARGS+=	--docdir=${DOCSDIR} +docs
 PORTDOCS=	*
 .endif
 
-MAN1=		black-hat.1 hat-cover.1 hat-detect.1 hat-nonterm.1 hat-observe.1 \
-		hat-stack.1 hat-trail.1 hat-trans.1
+MAN1=		black-hat.1 hat-anim.1 hat-cover.1 hat-delta.1 hat-detect.1 hat-nonterm.1 hat-observe.1 \
+		hat-stack.1 hat-trail.1 hat-trans.1 pretty-hat.1
 
 pre-everything::
 	@${ECHO_CMD} ""
@@ -85,15 +80,12 @@ post-patch:
 		${WRKSRC}/configure ${WRKSRC}/src/hattools/Makefile
 .if !(defined(WITH_NHC98))
 .for f in hattrans/Makefile hatlib/Makefile
-	@${REINPLACE_CMD} -e "s/package lang/package lang -package haskell98/" ${WRKSRC}/src/${f}
+	@${REINPLACE_CMD} -e "s/package lang/package haskell98/" ${WRKSRC}/src/${f}
 .endfor
-	@${REINPLACE_CMD} -e "s/package lang/package lang -package base -package haskell98/" ${WRKSRC}/src/hattools/Makefile
+	@${REINPLACE_CMD} -e "s/package lang/package base -package haskell98/" ${WRKSRC}/src/hattools/Makefile
 .endif
 
 post-install:
-.	for i in Foreign/C NHC System/Directory Text/Html Text/Regex Text/Show
-	  @${RMDIR} ${LOCALBASE}/include/hat/${i} # empty!
-.	endfor
 .	if !defined(WITH_NHC98)
 	  @${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 .	endif

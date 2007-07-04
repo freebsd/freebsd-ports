@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- script/confhc-hat.orig
++++ script/confhc-hat
+@@ -56,7 +56,7 @@
+ ghcsym () {
+   echo __GLASGOW_HASKELL__ >ghcsym.hs;
+   $1 -E -cpp -optP-P ghcsym.hs -o ghcsym.out;
+-  grep -v '^#' ghcsym.out | grep -v '^$' > $2
++  grep -v '^#' ghcsym.out | grep -v '^$' | grep -v '^{' > $2
+   rm -f ghcsym.hs ghcsym.out;
+ }
+ 
