@@ -72,13 +72,13 @@ INSTALLEXEC=	${SETENV} UNAME_s=Linux \
 			${SH} ./INSTALL --install_path=${INSTALLDIR} ${POSTPROCESS}
 
 pre-install:
-	@${MKDIR} ${INSTALLDIR}
 	@${MKDIR} ${WRKDIR}/bin
 	@${INSTALL_SCRIPT} \
 		${WRKDIR}/ln ${WRKDIR}/rm ${WRKDIR}/mv \
 		${WRKDIR}/bin
 do-install:
 	@${ECHO_CMD} Installing...
+	@${MKDIR} ${INSTALLDIR}
 	@cd ${WRKSRC} && ${SETENV} PATH=${WRKDIR}/bin:${PATH} ${INSTALLEXEC}
 	${CHMOD} 0 ${INSTALLDIR}/Reader/intellinux/plug_ins/PPKLite.api
 	${BRANDELF} -t Linux ${INSTALLDIR}/Reader/intellinux/bin/acroread
