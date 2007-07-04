@@ -33,6 +33,7 @@
 %%SITE_PERL%%/ExtUtils/Mkbootstrap.pm
 %%SITE_PERL%%/ExtUtils/Mksymlists.pm
 %%SITE_PERL%%/ExtUtils/Packlist.pm
+%%SITE_PERL%%/ExtUtils/Command.pm
 %%SITE_PERL%%/ExtUtils/testlib.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto//ExtUtils/MakeMaker/.packlist
 @dirrm %%SITE_PERL%%/ExtUtils/MakeMaker
