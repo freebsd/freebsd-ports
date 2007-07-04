@@ -32,10 +32,4 @@ post-extract:
 		's,(\(unsigned char \*\) )(ptr \+=),\2 sizeof\1*,' \
 			${WRKSRC}/src/iostream.c
 
-pre-install:
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e "s:docs micros examples:micros:g" \
-		${WRKSRC}/Makefile
-.endif
-
 .include <bsd.port.mk>
