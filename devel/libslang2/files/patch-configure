@@ -1,0 +1,18 @@
+--- configure.orig	Wed Jul  4 08:44:29 2007
++++ configure	Wed Jul  4 08:45:13 2007
+@@ -7028,14 +7028,9 @@
+      ELFLIB_MAJOR_MINOR="lib\$(THIS_LIB).\$(ELF_MAJOR_VERSION).\$(ELF_MINOR_VERSION).dylib"
+      ;;
+   *freebsd* )
+-    ELFLIB_MAJOR_MINOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION)"
+     ELF_CC="\$(CC)"
+     ELF_CFLAGS="\$(CFLAGS) -fPIC"
+-    if test "X$PORTOBJFORMAT" = "Xelf" ; then
+-      ELF_LINK="\$(CC) \$(LDFLAGS) -shared -Wl,-soname,\$(ELFLIB_MAJOR)"
+-    else
+-      ELF_LINK="ld -Bshareable -x"
+-    fi
++    ELF_LINK="\$(CC) \$(LDFLAGS) -shared -Wl,-soname,\$(ELFLIB_MAJOR)"
+     ELF_DEP_LIBS="\$(DL_LIB) -lm"
+     CC_SHARED="\$(CC) \$(CFLAGS) -shared -fPIC"
+     ;;
