@@ -1,4 +1,4 @@
-xmbibtex is a Motif (LessTif) reference manager based on the BibTeX
+XmBibTeX is a Motif (LessTif) reference manager based on the BibTeX
 file format. It allows to add, delete, and edit references. The
 references can be saved in the BibTeX file format and also written on
 a LaTeX file that can be printed using LaTeX and BibTeX. References
