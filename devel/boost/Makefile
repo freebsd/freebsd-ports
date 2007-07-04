@@ -6,8 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	boost
-PORTVERSION=	1.33.1
-PORTREVISION=	2
+PORTVERSION=	1.34.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -20,12 +19,13 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}
 
-MAKE_ENV+=	GCC="${CC} ${CFLAGS}"\
-		GXX="${CXX} ${CXXFLAGS}"\
-		STLPORT_ROOT=/
+MAKE_ENV+=	CXX=${CXX} CC=${CC}
 
 .if defined(WITH_PYTHON) || defined (WITH_PYSTE)
 USE_PYTHON=	2.4+
+
+# Python implies threads
+WITH_THREADS=IMPLIED_BY_PYTHON
 .endif
 
 OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
@@ -35,10 +35,10 @@ OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 		OPTIMIZED_CFLAGS "Enable -O3 optimization"	off
 
 UNIQ=		/usr/bin/uniq
-BOOST_LIBS=	date_time filesystem iostreams prg_exec_monitor\
+BOOST_LIBS=	date_time filesystem graph iostreams prg_exec_monitor\
 		program_options regex serialization signals\
-		test_exec_monitor unit_test_framework wserialization
-BOOST_SHARED_LIB_VER=	3
+		unit_test_framework wave wserialization
+BOOST_SHARED_LIB_VER=	4
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -67,6 +67,7 @@ MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}"\
 		PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
 BOOST_LIBS+=	python
+
 .if defined(WITH_PYSTE)
 RUN_DEPENDS+=	gccxml:${PORTSDIR}/devel/gccxml \
 		${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
@@ -80,55 +81,54 @@ PLIST_SUB+=	BOOST_PYTHON="@comment "
 PLIST_SUB+=	BOOST_PYSTE="@comment "
 .endif
 
+# Bjam configuratation
 BOOST_TOOLS=	gcc
 
+BJAM_OPTIONS=	--layout=system
 .if defined (WITH_VERBOSE_BUILD)
-BJAM_OPTIONS=	-d2
-.endif
-
-.if defined (WITHOUT_DEBUG)
-BJAM_BUILD+=	release
-.else
-BJAM_BUILD+=	debug
-.endif
-
-.if defined (WITHOUT_THREADS)
-BJAM_BUILD+=	<threading>single
-PLIST_SUB+=	BOOST_THREADS="@comment "
-.else
-BJAM_BUILD+=	<threading>multi
-PLIST_SUB+=	BOOST_THREADS=""
-BOOST_LIBS+=	thread
+BJAM_OPTIONS+=	-d2
 .endif
 
 .if defined (WITH_ICU)
 LIB_DEPENDS+=	icuuc:${PORTSDIR}/devel/icu
-BOOST_ICU_OPTS=	"-sICU_PATH=${LOCALBASE}"
+BJAM_OPTIONS+=	-sICU_PATH=${LOCALBASE}
 .endif
 
-.if defined (WITHOUT_OPTIMIZED_CFLAGS)
-BJAM_BUILD+=	<optimization>off
+.if defined (WITHOUT_DEBUG)
+BJAM_OPTIONS+=	variant=release
 .else
-BJAM_BUILD+=	<optimization>speed\
-		<inlining>full
+BJAM_OPTIONS+=	variant=debug
+.endif
+
+.if defined (WITHOUT_THREADS) && ! defined (WITH_PYTHON)
+BJAM_OPTIONS+=	threading=single
+PLIST_SUB+=	BOOST_THREADS="@comment "
+.else
+BJAM_OPTIONS+=	threading=multi
+PLIST_SUB+=	BOOST_THREADS=""
+BOOST_LIBS+=	thread
+.endif
+
+# Unless WITH_OPTIMIZED_CFLAGS is defined, the port uses
+# CXXFLAGS as defined by the user (overridng Boost's 'speed'
+# configuration scheme
+BJAM_OPTIONS+=	optimization=speed
+.if defined (WITH_OPTIMIZED_CFLAGS)
+BJAM_OPTIONS+=	inlining=full
+CXXFLAGS=	-O3
 .endif
 
 .if ${ARCH} == alpha
-BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsdaxp/bjam
-# temporary work around for GCC bug on alpha
-# ("-mcpu=ev4 -mtune=ev5 -mieee" makes gcc consume all virtual memory)
-#
-# If you are trying to build this on alpha, a quick test whether the problem
-# still exists would be very much appreciated!
-CXXFLAGS=-O -pipe
+BJAM=		${WRKSRC}/tools/jam/src/bin.freebsdaxp/bjam
 .elif ${ARCH} == sparc64
-BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsdsparc/bjam
+BJAM=		${WRKSRC}/tools/jam/src/bin.freebsdsparc/bjam
 .elif ${ARCH} == ia64
-BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsdia64/bjam
+BJAM=		${WRKSRC}/tools/jam/src/bin.freebsdia64/bjam
 .else
-BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsd/bjam
+BJAM=		${WRKSRC}/tools/jam/src/bin.freebsd/bjam
 .endif
 
+# Handle python settings
 pre-everything::
 .if !defined(WITH_PYTHON)
 	@${ECHO_CMD}
@@ -164,13 +164,17 @@ post-patch:
 	@${RM} -rf ${WRKSRC}/boost/python* ${WRKSRC}/libs/python
 .endif
 
-# Do the right thing(tm) for pthread support
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|'\
-		${WRKSRC}/tools/build/v1/gcc-tools.jam \
-		${WRKSRC}/tools/build/v1/gcc-stlport-tools.jam
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|'\
-		${WRKSRC}/tools/build/v1/gcc-tools.jam \
-		${WRKSRC}/tools/build/v1/gcc-stlport-tools.jam
+# Do the right thing(tm) for pthread support and respect CXX
+	@${REINPLACE_CMD}\
+		-e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|'\
+		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|'\
+		-e 's|%%CXX%%|${CXX}|'\
+		-e 's|%%CXXFLAGS%%|${CXXFLAGS}|'\
+	${WRKSRC}/tools/build/v2/tools/gcc.jam
+
+	@${REINPLACE_CMD}\
+		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:S/-//}|'\
+	${WRKSRC}/tools/build/v2/tools/python.jam
 
 post-configure:
 # Configure pyste, the Boost.Python code generator
@@ -182,24 +186,22 @@ post-configure:
 
 do-build:
 # build the bjam project build tool
-	cd ${WRKSRC}/tools/build/jam_src && ./build.sh gcc
+	cd ${WRKSRC}/tools/jam/src && ./build.sh gcc;
 
 # build the library
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
-		"-sTOOLS=${BOOST_TOOLS}" "-sBUILD=${BJAM_BUILD}"\
-		${BOOST_STL_OPTS} ${BOOST_ICU_OPTS}
+		--toolset=${BOOST_TOOLS}
 
 # build bgl-viz library
 	cd ${WRKSRC}/libs/graph/build && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
-		"-sTOOLS=${BOOST_TOOLS}" "-sBUILD=${BJAM_BUILD}"\
-		${BOOST_STL_OPTS} ${BOOST_ICU_OPTS}
+		--toolset=${BOOST_TOOLS}
 
 # build random device code
 	cd ${WRKSRC}/libs/random && \
 	${CXX} ${CXXCFLAGS} ${CFLAGS} -c -I${WRKSRC} random_device.cpp && \
-	${AR} rc ${WRKSRC}/bin/boost/libs/libboost_random.a random_device.o
+	${AR} rc ${WRKSRC}/bin.v2/libs/libboost_random.a random_device.o
 
 # Build pyste, the Boost.Python code generator
 .if defined(WITH_PYSTE)
@@ -214,10 +216,10 @@ do-install:
 
 # Install libraries
 	${MKDIR} ${PREFIX}/lib
-	${FIND} ${WRKSRC}/bin/boost/libs -type f -name "*.a"\
+	${FIND} ${WRKSRC}/bin.v2/libs -type f -name "*.a"\
 		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
 
-	${FIND} ${WRKSRC}/bin/boost/libs -type f \
+	${FIND} ${WRKSRC}/bin.v2/libs -type f \
 		-name "*.so" \
 		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
 

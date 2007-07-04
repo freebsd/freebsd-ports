@@ -1,0 +1,11 @@
+--- libs/regex/build/Jamfile.v2.orig	Wed Jun 27 17:05:32 2007
++++ libs/regex/build/Jamfile.v2	Wed Jun 27 17:05:43 2007
+@@ -132,7 +132,7 @@
+ 
+    if $(ICU_PATH)
+    {
+-      if $(ICU_PATH) != "/usr" && $(ICU_PATH) != "/usr/local"
++      if $(ICU_PATH) != "/usr"
+       {
+          BOOST_REGEX_ICU_OPTS += "<include>$(ICU_PATH)/include" ;
+          ICU_SEARCH_OPTS = <search>/$(ICU_PATH)/lib ;

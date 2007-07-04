@@ -1,0 +1,10 @@
+--- ./tools/build/v2/tools/python.jam.orig	Wed Jun 27 10:33:39 2007
++++ ./tools/build/v2/tools/python.jam	Wed Jun 27 10:39:36 2007
+@@ -625,6 +625,7 @@
+         case windows : return ;
+ 
+         case hpux : return  <library>rt ;
++        case *bsd : return  <library>%%PTHREAD_LIBS%% <toolset>gcc:<library>util ;
+ 
+         case * : return  <library>pthread <library>dl <toolset>gcc:<library>util ;
+     }
