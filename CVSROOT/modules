@@ -6331,9 +6331,6 @@ libdca		ports/multimedia/libdca
 libdfui		ports/devel/libdfui
 libdict		ports/devel/libdict
 libdisasm	ports/devel/libdisasm
-libdivxdecore	ports/multimedia/libdivxdecore
-libdivxdecore-devel	ports/multimedia/libdivxdecore-devel
-libdivxencore	ports/multimedia/libdivxencore
 libdjbdns	ports/dns/libdjbdns
 libdlmalloc	ports/devel/libdlmalloc
 libdmx		ports/x11/libdmx
