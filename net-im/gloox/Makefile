@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	gloox
-PORTVERSION=	0.8.8
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 
 MAINTAINER=	trasz@freebsd.org
 COMMENT=	Jabber/XMPP client library
 
-LIB_DEPENDS=	iksemel.3:${PORTSDIR}/textproc/iksemel \
-		idn.16:${PORTSDIR}/dns/libidn \
+LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \
 		gnutls.13:${PORTSDIR}/security/gnutls
 
 USE_AUTOTOOLS=	libtool:15
