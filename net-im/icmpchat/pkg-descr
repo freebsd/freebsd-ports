@@ -1,7 +1,4 @@
 ICMP-Chat is a simple console-based chat that uses ICMP packets for
-communication.  The data is encrypted using the Rijndael-256 algorithm. 
+communication.  The data is encrypted using the Rijndael-256 algorithm.
 
 WWW: http://icmpchat.sourceforge.net/
-
--- 
-mwest@uct.ac.za
