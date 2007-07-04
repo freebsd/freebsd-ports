@@ -9,3 +9,12 @@
  stdlib.h string.h unistd.h sys/param.h
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+@@ -16641,7 +16641,7 @@
+ fi
+ { echo "$as_me:$LINENO: checking for unified diff option" >&5
+ echo $ECHO_N "checking for unified diff option... $ECHO_C" >&6; }
+-if diff -u $0 $0 >& /dev/null ; then
++if diff -u $0 $0 >/dev/null 2>&1 ; then
+    UNI_DIFF_OPTS=-u
+ else
+    UNI_DIFF_OPTS=-c
