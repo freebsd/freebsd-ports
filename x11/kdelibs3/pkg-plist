@@ -144,7 +144,6 @@ include/kabc/resource.h
 include/kabc/resourcedir.h
 include/kabc/resourcefile.h
 include/kabc/resourceldapkio.h
-include/kabc/resourcenet.h
 include/kabc/resourceselectdialog.h
 include/kabc/secrecy.h
 include/kabc/sortmode.h
@@ -771,9 +770,6 @@ lib/kde3/kabc_file.so
 lib/kde3/kabc_ldapkio.a
 lib/kde3/kabc_ldapkio.la
 lib/kde3/kabc_ldapkio.so
-lib/kde3/kabc_net.a
-lib/kde3/kabc_net.la
-lib/kde3/kabc_net.so
 lib/kde3/kabcformat_binary.a
 lib/kde3/kabcformat_binary.la
 lib/kde3/kabcformat_binary.so
@@ -1008,10 +1004,6 @@ lib/libkabc_ldapkio.a
 lib/libkabc_ldapkio.la
 lib/libkabc_ldapkio.so
 lib/libkabc_ldapkio.so.1
-lib/libkabc_net.a
-lib/libkabc_net.la
-lib/libkabc_net.so
-lib/libkabc_net.so.1
 lib/libkatepartinterfaces.a
 lib/libkatepartinterfaces.la
 lib/libkatepartinterfaces.so
@@ -1646,6 +1638,7 @@ share/apps/ksgmltools2/customization/de/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/de/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/de/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/de/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/de/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/de/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/de/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/de/lang.entities
@@ -1792,6 +1785,7 @@ share/apps/ksgmltools2/customization/fr/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/fr/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/fr/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/fr/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/fr/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/fr/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/fr/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/fr/lang.entities
@@ -5282,6 +5276,7 @@ share/mimelnk/audio/x-mpegurl.desktop
 share/mimelnk/audio/x-ms-wma.desktop
 share/mimelnk/audio/x-musepack.desktop
 share/mimelnk/audio/x-oggflac.desktop
+share/mimelnk/audio/x-pn-realaudio-plugin.desktop
 share/mimelnk/audio/x-pn-realaudio.desktop
 share/mimelnk/audio/x-scpls.desktop
 share/mimelnk/audio/x-speex.desktop
@@ -5438,7 +5433,6 @@ share/services/knotify.desktop
 share/services/kresources/kabc/dir.desktop
 share/services/kresources/kabc/file.desktop
 share/services/kresources/kabc/ldapkio.desktop
-share/services/kresources/kabc/net.desktop
 share/services/kresources/kabc_manager.desktop
 share/services/kspell_aspell.desktop
 share/services/kspell_ispell.desktop

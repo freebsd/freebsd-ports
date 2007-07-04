@@ -382,7 +382,6 @@ share/locale/cs/LC_MESSAGES/kfile_dvi.mo
 share/locale/cs/LC_MESSAGES/kfile_exr.mo
 share/locale/cs/LC_MESSAGES/kfile_flac.mo
 share/locale/cs/LC_MESSAGES/kfile_folder.mo
-share/locale/cs/LC_MESSAGES/kfile_font.mo
 share/locale/cs/LC_MESSAGES/kfile_gif.mo
 share/locale/cs/LC_MESSAGES/kfile_html.mo
 share/locale/cs/LC_MESSAGES/kfile_ico.mo
@@ -479,6 +478,7 @@ share/locale/cs/LC_MESSAGES/kio_thumbnail.mo
 share/locale/cs/LC_MESSAGES/kio_trash.mo
 share/locale/cs/LC_MESSAGES/kio_zeroconf.mo
 share/locale/cs/LC_MESSAGES/kioexec.mo
+share/locale/cs/LC_MESSAGES/kitchensync.mo
 share/locale/cs/LC_MESSAGES/kiten.mo
 share/locale/cs/LC_MESSAGES/kjobviewer.mo
 share/locale/cs/LC_MESSAGES/kjots.mo
@@ -681,6 +681,7 @@ share/locale/cs/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/cs/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/cs/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/cs/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/cs/LC_MESSAGES/libkitchensync.mo
 share/locale/cs/LC_MESSAGES/libkleopatra.mo
 share/locale/cs/LC_MESSAGES/libkmime.mo
 share/locale/cs/LC_MESSAGES/libkonq.mo
@@ -708,7 +709,6 @@ share/locale/cs/LC_MESSAGES/nsplugin.mo
 share/locale/cs/LC_MESSAGES/pitchablespeed.mo
 share/locale/cs/LC_MESSAGES/ppdtranslations.mo
 share/locale/cs/LC_MESSAGES/privacy.mo
-share/locale/cs/LC_MESSAGES/qeditor.mo
 share/locale/cs/LC_MESSAGES/quanta.mo
 share/locale/cs/LC_MESSAGES/quicklauncher.mo
 share/locale/cs/LC_MESSAGES/rellinks.mo

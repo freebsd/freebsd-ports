@@ -1012,7 +1012,6 @@ share/doc/HTML/de/kmplot/install.docbook
 share/doc/HTML/de/kmplot/introduction.docbook
 share/doc/HTML/de/kmplot/main.png
 share/doc/HTML/de/kmplot/man-kmplot.1.docbook
-share/doc/HTML/de/kmplot/menu.docbook
 share/doc/HTML/de/kmplot/reference.docbook
 share/doc/HTML/de/kmplot/settingsdlg.png
 share/doc/HTML/de/kmplot/using.docbook
@@ -1157,9 +1156,6 @@ share/doc/HTML/de/konq-plugins/kuick/index.docbook
 share/doc/HTML/de/konq-plugins/mediaplayer/common
 share/doc/HTML/de/konq-plugins/mediaplayer/index.cache.bz2
 share/doc/HTML/de/konq-plugins/mediaplayer/index.docbook
-share/doc/HTML/de/konq-plugins/smbmounter/common
-share/doc/HTML/de/konq-plugins/smbmounter/index.cache.bz2
-share/doc/HTML/de/konq-plugins/smbmounter/index.docbook
 share/doc/HTML/de/konq-plugins/uachanger/common
 share/doc/HTML/de/konq-plugins/uachanger/index.cache.bz2
 share/doc/HTML/de/konq-plugins/uachanger/index.docbook
@@ -1223,8 +1219,6 @@ share/doc/HTML/de/korganizer/event-attendees.png
 share/doc/HTML/de/korganizer/event-freebusy.png
 share/doc/HTML/de/korganizer/event-general.png
 share/doc/HTML/de/korganizer/event-recurrence.png
-share/doc/HTML/de/korganizer/exchange-plugin.docbook
-share/doc/HTML/de/korganizer/group-scheduling.docbook
 share/doc/HTML/de/korganizer/index.cache.bz2
 share/doc/HTML/de/korganizer/index.docbook
 share/doc/HTML/de/korganizer/korganizer-resource.png
@@ -1248,7 +1242,6 @@ share/doc/HTML/de/kpat/common
 share/doc/HTML/de/kpat/index.cache.bz2
 share/doc/HTML/de/kpat/index.docbook
 share/doc/HTML/de/kpat/man-kpat.6.docbook
-share/doc/HTML/de/kpat/man.docbook
 share/doc/HTML/de/kpdf/common
 share/doc/HTML/de/kpdf/configure.png
 share/doc/HTML/de/kpdf/index.cache.bz2
@@ -2179,12 +2172,6 @@ share/locale/de/LC_MESSAGES/kolourpaint.mo
 share/locale/de/LC_MESSAGES/kolourpicker.mo
 share/locale/de/LC_MESSAGES/kommander.mo
 share/locale/de/LC_MESSAGES/kompare.mo
-share/locale/de/LC_MESSAGES/konnector_dummy.mo
-share/locale/de/LC_MESSAGES/konnector_kabc.mo
-share/locale/de/LC_MESSAGES/konnector_kcal.mo
-share/locale/de/LC_MESSAGES/konnector_local.mo
-share/locale/de/LC_MESSAGES/konnector_qtopia.mo
-share/locale/de/LC_MESSAGES/konnector_remote.mo
 share/locale/de/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/de/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/de/LC_MESSAGES/konqsidebar_metabar.mo
@@ -2330,7 +2317,6 @@ share/locale/de/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/de/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/de/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/de/LC_MESSAGES/libkickermenu_tom.mo
-share/locale/de/LC_MESSAGES/libkitchensync.mo
 share/locale/de/LC_MESSAGES/libkleopatra.mo
 share/locale/de/LC_MESSAGES/libkmime.mo
 share/locale/de/LC_MESSAGES/libkonq.mo
@@ -2350,7 +2336,6 @@ share/locale/de/LC_MESSAGES/mediaapplet.mo
 share/locale/de/LC_MESSAGES/mediacontrol.mo
 share/locale/de/LC_MESSAGES/mf_konqplugin.mo
 share/locale/de/LC_MESSAGES/minitoolsplugin.mo
-share/locale/de/LC_MESSAGES/multisynk.mo
 share/locale/de/LC_MESSAGES/naughtyapplet.mo
 share/locale/de/LC_MESSAGES/nexscope.mo
 share/locale/de/LC_MESSAGES/noatun.mo
@@ -2358,7 +2343,6 @@ share/locale/de/LC_MESSAGES/nsplugin.mo
 share/locale/de/LC_MESSAGES/pitchablespeed.mo
 share/locale/de/LC_MESSAGES/ppdtranslations.mo
 share/locale/de/LC_MESSAGES/privacy.mo
-share/locale/de/LC_MESSAGES/qeditor.mo
 share/locale/de/LC_MESSAGES/quanta.mo
 share/locale/de/LC_MESSAGES/quicklauncher.mo
 share/locale/de/LC_MESSAGES/rellinks.mo
@@ -2456,7 +2440,6 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/konq-plugins/webarchiver
 @dirrm share/doc/HTML/de/konq-plugins/validators
 @dirrm share/doc/HTML/de/konq-plugins/uachanger
-@dirrm share/doc/HTML/de/konq-plugins/smbmounter
 @dirrm share/doc/HTML/de/konq-plugins/mediaplayer
 @dirrm share/doc/HTML/de/konq-plugins/kuick
 @dirrm share/doc/HTML/de/konq-plugins/khtmlsettings

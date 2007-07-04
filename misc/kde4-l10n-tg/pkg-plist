@@ -151,6 +151,7 @@ share/locale/tg/LC_MESSAGES/kcmperformance.mo
 share/locale/tg/LC_MESSAGES/kcmprintmgr.mo
 share/locale/tg/LC_MESSAGES/kcmsamba.mo
 share/locale/tg/LC_MESSAGES/kcmscreensaver.mo
+share/locale/tg/LC_MESSAGES/kcmshell.mo
 share/locale/tg/LC_MESSAGES/kcmsmartcard.mo
 share/locale/tg/LC_MESSAGES/kcmsmserver.mo
 share/locale/tg/LC_MESSAGES/kcmspellchecking.mo
@@ -393,6 +394,7 @@ share/locale/tg/LC_MESSAGES/ksplashthemes.mo
 share/locale/tg/LC_MESSAGES/kstars.mo
 share/locale/tg/LC_MESSAGES/kstart.mo
 share/locale/tg/LC_MESSAGES/kstartperf.mo
+share/locale/tg/LC_MESSAGES/kstyle_highcontrast_config.mo
 share/locale/tg/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/tg/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/tg/LC_MESSAGES/kstyle_plastik_config.mo
@@ -485,7 +487,6 @@ share/locale/tg/LC_MESSAGES/nsplugin.mo
 share/locale/tg/LC_MESSAGES/pitchablespeed.mo
 share/locale/tg/LC_MESSAGES/ppdtranslations.mo
 share/locale/tg/LC_MESSAGES/privacy.mo
-share/locale/tg/LC_MESSAGES/qeditor.mo
 share/locale/tg/LC_MESSAGES/quanta.mo
 share/locale/tg/LC_MESSAGES/quicklauncher.mo
 share/locale/tg/LC_MESSAGES/rellinks.mo

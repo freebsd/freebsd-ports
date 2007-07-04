@@ -7,7 +7,6 @@
 
 PORTNAME=	kdesdk
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -32,7 +31,8 @@ USE_AUTOTOOLS=  libtool:15
 
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS+=--with-db-include-dir=${BDB_INCLUDE_DIR} \
+CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man \
+		--with-db-include-dir=${BDB_INCLUDE_DIR} \
 		--with-db-lib-dir=${BDB_LIB_DIR} --with-db-name=${BDB_LIB_NAME} \
 		--with-apr-config=${LOCALBASE}/bin/apr-1-config \
 		--with-apu-config=${LOCALBASE}/bin/apu-1-config \

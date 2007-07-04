@@ -1596,12 +1596,6 @@ share/locale/ru/LC_MESSAGES/kolourpaint.mo
 share/locale/ru/LC_MESSAGES/kolourpicker.mo
 share/locale/ru/LC_MESSAGES/kommander.mo
 share/locale/ru/LC_MESSAGES/kompare.mo
-share/locale/ru/LC_MESSAGES/konnector_dummy.mo
-share/locale/ru/LC_MESSAGES/konnector_kabc.mo
-share/locale/ru/LC_MESSAGES/konnector_kcal.mo
-share/locale/ru/LC_MESSAGES/konnector_local.mo
-share/locale/ru/LC_MESSAGES/konnector_qtopia.mo
-share/locale/ru/LC_MESSAGES/konnector_remote.mo
 share/locale/ru/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/ru/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/ru/LC_MESSAGES/konqsidebar_metabar.mo
@@ -1747,7 +1741,6 @@ share/locale/ru/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/ru/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/ru/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/ru/LC_MESSAGES/libkickermenu_tom.mo
-share/locale/ru/LC_MESSAGES/libkitchensync.mo
 share/locale/ru/LC_MESSAGES/libkleopatra.mo
 share/locale/ru/LC_MESSAGES/libkmime.mo
 share/locale/ru/LC_MESSAGES/libkonq.mo
@@ -1767,7 +1760,6 @@ share/locale/ru/LC_MESSAGES/mediaapplet.mo
 share/locale/ru/LC_MESSAGES/mediacontrol.mo
 share/locale/ru/LC_MESSAGES/mf_konqplugin.mo
 share/locale/ru/LC_MESSAGES/minitoolsplugin.mo
-share/locale/ru/LC_MESSAGES/multisynk.mo
 share/locale/ru/LC_MESSAGES/naughtyapplet.mo
 share/locale/ru/LC_MESSAGES/nexscope.mo
 share/locale/ru/LC_MESSAGES/noatun.mo
@@ -1775,7 +1767,6 @@ share/locale/ru/LC_MESSAGES/nsplugin.mo
 share/locale/ru/LC_MESSAGES/pitchablespeed.mo
 share/locale/ru/LC_MESSAGES/ppdtranslations.mo
 share/locale/ru/LC_MESSAGES/privacy.mo
-share/locale/ru/LC_MESSAGES/qeditor.mo
 share/locale/ru/LC_MESSAGES/quanta.mo
 share/locale/ru/LC_MESSAGES/quicklauncher.mo
 share/locale/ru/LC_MESSAGES/rellinks.mo

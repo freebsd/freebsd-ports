@@ -15,10 +15,12 @@ share/locale/gl/LC_MESSAGES/audiorename_plugin.mo
 share/locale/gl/LC_MESSAGES/autorefresh.mo
 share/locale/gl/LC_MESSAGES/babelfish.mo
 share/locale/gl/LC_MESSAGES/blinken.mo
+share/locale/gl/LC_MESSAGES/cervisia.mo
 share/locale/gl/LC_MESSAGES/charlatanui.mo
 share/locale/gl/LC_MESSAGES/clockapplet.mo
 share/locale/gl/LC_MESSAGES/crashesplugin.mo
 share/locale/gl/LC_MESSAGES/cupsdconf.mo
+share/locale/gl/LC_MESSAGES/cvsservice.mo
 share/locale/gl/LC_MESSAGES/dcoprss.mo
 share/locale/gl/LC_MESSAGES/dirfilterplugin.mo
 share/locale/gl/LC_MESSAGES/display.mo
@@ -84,6 +86,8 @@ share/locale/gl/LC_MESSAGES/kblackbox.mo
 share/locale/gl/LC_MESSAGES/kbounce.mo
 share/locale/gl/LC_MESSAGES/kbruch.mo
 share/locale/gl/LC_MESSAGES/kbstateapplet.mo
+share/locale/gl/LC_MESSAGES/kbugbuster.mo
+share/locale/gl/LC_MESSAGES/kcachegrind.mo
 share/locale/gl/LC_MESSAGES/kcalc.mo
 share/locale/gl/LC_MESSAGES/kcharselect.mo
 share/locale/gl/LC_MESSAGES/kcharselectapplet.mo
@@ -136,6 +140,7 @@ share/locale/gl/LC_MESSAGES/kcmlaptop.mo
 share/locale/gl/LC_MESSAGES/kcmlaunch.mo
 share/locale/gl/LC_MESSAGES/kcmlayout.mo
 share/locale/gl/LC_MESSAGES/kcmlilo.mo
+share/locale/gl/LC_MESSAGES/kcmlirc.mo
 share/locale/gl/LC_MESSAGES/kcmlocale.mo
 share/locale/gl/LC_MESSAGES/kcmmedia.mo
 share/locale/gl/LC_MESSAGES/kcmnic.mo
@@ -150,6 +155,7 @@ share/locale/gl/LC_MESSAGES/kcmsmserver.mo
 share/locale/gl/LC_MESSAGES/kcmspellchecking.mo
 share/locale/gl/LC_MESSAGES/kcmstyle.mo
 share/locale/gl/LC_MESSAGES/kcmtaskbar.mo
+share/locale/gl/LC_MESSAGES/kcmthinkpad.mo
 share/locale/gl/LC_MESSAGES/kcmusb.mo
 share/locale/gl/LC_MESSAGES/kcmview1394.mo
 share/locale/gl/LC_MESSAGES/kcmwifi.mo
@@ -162,6 +168,7 @@ share/locale/gl/LC_MESSAGES/kdcop.mo
 share/locale/gl/LC_MESSAGES/kdebugdialog.mo
 share/locale/gl/LC_MESSAGES/kdelibs.mo
 share/locale/gl/LC_MESSAGES/kdelibs_colors.mo
+share/locale/gl/LC_MESSAGES/kdelirc.mo
 share/locale/gl/LC_MESSAGES/kdepasswd.mo
 share/locale/gl/LC_MESSAGES/kdepimresources.mo
 share/locale/gl/LC_MESSAGES/kdepimwizards.mo
@@ -169,8 +176,11 @@ share/locale/gl/LC_MESSAGES/kdeprint.mo
 share/locale/gl/LC_MESSAGES/kdeprint_part.mo
 share/locale/gl/LC_MESSAGES/kdeprintfax.mo
 share/locale/gl/LC_MESSAGES/kdesktop.mo
+share/locale/gl/LC_MESSAGES/kdessh.mo
 share/locale/gl/LC_MESSAGES/kdesu.mo
 share/locale/gl/LC_MESSAGES/kdesud.mo
+share/locale/gl/LC_MESSAGES/kdevdesigner.mo
+share/locale/gl/LC_MESSAGES/kdevtipofday.mo
 share/locale/gl/LC_MESSAGES/kdf.mo
 share/locale/gl/LC_MESSAGES/kdgantt.mo
 share/locale/gl/LC_MESSAGES/kdialog.mo
@@ -252,6 +262,8 @@ share/locale/gl/LC_MESSAGES/kgreet_classic.mo
 share/locale/gl/LC_MESSAGES/kgreet_winbind.mo
 share/locale/gl/LC_MESSAGES/khangman.mo
 share/locale/gl/LC_MESSAGES/khelpcenter.mo
+share/locale/gl/LC_MESSAGES/khexedit.mo
+share/locale/gl/LC_MESSAGES/khexedit2part.mo
 share/locale/gl/LC_MESSAGES/khotkeys.mo
 share/locale/gl/LC_MESSAGES/khtmlkttsd.mo
 share/locale/gl/LC_MESSAGES/khtmlsettingsplugin.mo
@@ -286,6 +298,7 @@ share/locale/gl/LC_MESSAGES/kio_sftp.mo
 share/locale/gl/LC_MESSAGES/kio_sieve.mo
 share/locale/gl/LC_MESSAGES/kio_smb.mo
 share/locale/gl/LC_MESSAGES/kio_smtp.mo
+share/locale/gl/LC_MESSAGES/kio_svn.mo
 share/locale/gl/LC_MESSAGES/kio_system.mo
 share/locale/gl/LC_MESSAGES/kio_tar.mo
 share/locale/gl/LC_MESSAGES/kio_thumbnail.mo
@@ -314,6 +327,12 @@ share/locale/gl/LC_MESSAGES/kmcop.mo
 share/locale/gl/LC_MESSAGES/kmenuapplet.mo
 share/locale/gl/LC_MESSAGES/kmenuedit.mo
 share/locale/gl/LC_MESSAGES/kmid.mo
+share/locale/gl/LC_MESSAGES/kmilo_delli8k.mo
+share/locale/gl/LC_MESSAGES/kmilo_generic.mo
+share/locale/gl/LC_MESSAGES/kmilo_kvaio.mo
+share/locale/gl/LC_MESSAGES/kmilo_powerbook.mo
+share/locale/gl/LC_MESSAGES/kmilo_thinkpad.mo
+share/locale/gl/LC_MESSAGES/kmilod.mo
 share/locale/gl/LC_MESSAGES/kmines.mo
 share/locale/gl/LC_MESSAGES/kminipagerapplet.mo
 share/locale/gl/LC_MESSAGES/kmix.mo
@@ -333,6 +352,7 @@ share/locale/gl/LC_MESSAGES/kodo.mo
 share/locale/gl/LC_MESSAGES/kolf.mo
 share/locale/gl/LC_MESSAGES/kolourpaint.mo
 share/locale/gl/LC_MESSAGES/kolourpicker.mo
+share/locale/gl/LC_MESSAGES/kompare.mo
 share/locale/gl/LC_MESSAGES/konnector_dummy.mo
 share/locale/gl/LC_MESSAGES/konnector_kabc.mo
 share/locale/gl/LC_MESSAGES/konnector_kcal.mo
@@ -368,8 +388,10 @@ share/locale/gl/LC_MESSAGES/krandr.mo
 share/locale/gl/LC_MESSAGES/krdb.mo
 share/locale/gl/LC_MESSAGES/kreadconfig.mo
 share/locale/gl/LC_MESSAGES/krec.mo
+share/locale/gl/LC_MESSAGES/kregexpeditor.mo
 share/locale/gl/LC_MESSAGES/kres_birthday.mo
 share/locale/gl/LC_MESSAGES/kres_blogging.mo
+share/locale/gl/LC_MESSAGES/kres_bugzilla.mo
 share/locale/gl/LC_MESSAGES/kres_exchange.mo
 share/locale/gl/LC_MESSAGES/kres_featureplan.mo
 share/locale/gl/LC_MESSAGES/kres_groupware.mo
@@ -515,6 +537,7 @@ share/locale/gl/LC_MESSAGES/tippecanoe.mo
 share/locale/gl/LC_MESSAGES/trashapplet.mo
 share/locale/gl/LC_MESSAGES/tyler.mo
 share/locale/gl/LC_MESSAGES/uachangerplugin.mo
+share/locale/gl/LC_MESSAGES/umbrello.mo
 share/locale/gl/LC_MESSAGES/useraccount.mo
 share/locale/gl/LC_MESSAGES/validatorsplugin.mo
 share/locale/gl/LC_MESSAGES/wakeup.mo

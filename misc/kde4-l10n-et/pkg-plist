@@ -1077,6 +1077,9 @@ share/doc/HTML/et/kscd/index.docbook
 share/doc/HTML/et/kshisen/common
 share/doc/HTML/et/kshisen/index.cache.bz2
 share/doc/HTML/et/kshisen/index.docbook
+share/doc/HTML/et/ksig/common
+share/doc/HTML/et/ksig/index.cache.bz2
+share/doc/HTML/et/ksig/index.docbook
 share/doc/HTML/et/ksim/common
 share/doc/HTML/et/ksim/index.cache.bz2
 share/doc/HTML/et/ksim/index.docbook
@@ -1722,12 +1725,6 @@ share/locale/et/LC_MESSAGES/kolourpaint.mo
 share/locale/et/LC_MESSAGES/kolourpicker.mo
 share/locale/et/LC_MESSAGES/kommander.mo
 share/locale/et/LC_MESSAGES/kompare.mo
-share/locale/et/LC_MESSAGES/konnector_dummy.mo
-share/locale/et/LC_MESSAGES/konnector_kabc.mo
-share/locale/et/LC_MESSAGES/konnector_kcal.mo
-share/locale/et/LC_MESSAGES/konnector_local.mo
-share/locale/et/LC_MESSAGES/konnector_qtopia.mo
-share/locale/et/LC_MESSAGES/konnector_remote.mo
 share/locale/et/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/et/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/et/LC_MESSAGES/konqsidebar_metabar.mo
@@ -1873,7 +1870,6 @@ share/locale/et/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/et/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/et/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/et/LC_MESSAGES/libkickermenu_tom.mo
-share/locale/et/LC_MESSAGES/libkitchensync.mo
 share/locale/et/LC_MESSAGES/libkleopatra.mo
 share/locale/et/LC_MESSAGES/libkmime.mo
 share/locale/et/LC_MESSAGES/libkonq.mo
@@ -1893,7 +1889,6 @@ share/locale/et/LC_MESSAGES/mediaapplet.mo
 share/locale/et/LC_MESSAGES/mediacontrol.mo
 share/locale/et/LC_MESSAGES/mf_konqplugin.mo
 share/locale/et/LC_MESSAGES/minitoolsplugin.mo
-share/locale/et/LC_MESSAGES/multisynk.mo
 share/locale/et/LC_MESSAGES/naughtyapplet.mo
 share/locale/et/LC_MESSAGES/nexscope.mo
 share/locale/et/LC_MESSAGES/noatun.mo
@@ -1901,7 +1896,6 @@ share/locale/et/LC_MESSAGES/nsplugin.mo
 share/locale/et/LC_MESSAGES/pitchablespeed.mo
 share/locale/et/LC_MESSAGES/ppdtranslations.mo
 share/locale/et/LC_MESSAGES/privacy.mo
-share/locale/et/LC_MESSAGES/qeditor.mo
 share/locale/et/LC_MESSAGES/quanta.mo
 share/locale/et/LC_MESSAGES/quicklauncher.mo
 share/locale/et/LC_MESSAGES/rellinks.mo
@@ -1971,6 +1965,7 @@ share/locale/et/flag.png
 @dirrm share/doc/HTML/et/ksirtet
 @dirrm share/doc/HTML/et/ksirc
 @dirrm share/doc/HTML/et/ksim
+@dirrm share/doc/HTML/et/ksig
 @dirrm share/doc/HTML/et/kshisen
 @dirrm share/doc/HTML/et/kscd
 @dirrm share/doc/HTML/et/ksame

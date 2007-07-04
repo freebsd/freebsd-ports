@@ -4,6 +4,6 @@ lib/kde3/librenaudioplugin.so
 lib/kde3/librenimageplugin.a
 lib/kde3/librenimageplugin.la
 lib/kde3/librenimageplugin.so
-share/applications/kdeaddons-renamedlg-plugins-3.5.6
+share/applications/kdeaddons-renamedlg-plugins-3.5.7
 share/services/renaudiodlg.desktop
 share/services/renimagedlg.desktop

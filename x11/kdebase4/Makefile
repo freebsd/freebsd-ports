@@ -8,7 +8,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -18,8 +18,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
 RUN_DEPENDS=	${KDE_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde-xdg-env
-BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT} \
-		xmkmf:${X_IMAKE_PORT}
+BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
 LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		smbclient:${PORTSDIR}/net/samba-libsmbclient \
 		usb-0.1:${PORTSDIR}/devel/libusb
@@ -58,7 +57,11 @@ OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on \
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} == xorg
+.if ${X_WINDOW_SYSTEM:L} != xorg
+BUILD_DEPENDS+=	mkfontdir:${X_CLIENTS_PORT}
+.else
+BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 RUN_DEPENDS+=	kompmgr:${PORTSDIR}/x11-wm/kompmgr
 .endif
 
@@ -72,8 +75,7 @@ RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 
 .if !defined(WITHOUT_HAL) && ${OSVERSION} > 500035
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.cpp \
-		${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.h \
-		${FILESDIR}/extrapatch-kioslave_media_mounthelper-kio_media_mounthelper.cpp
+		${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.h
 LIB_DEPENDS+=	dbus-qt-1.1:${PORTSDIR}/devel/dbus-qt3 \
 		hal.1:${PORTSDIR}/sysutils/hal
 PLIST_SUB+=	MEDIA=""

@@ -388,12 +388,6 @@ share/locale/sr@Latn/LC_MESSAGES/kolourpaint.mo
 share/locale/sr@Latn/LC_MESSAGES/kolourpicker.mo
 share/locale/sr@Latn/LC_MESSAGES/kommander.mo
 share/locale/sr@Latn/LC_MESSAGES/kompare.mo
-share/locale/sr@Latn/LC_MESSAGES/konnector_dummy.mo
-share/locale/sr@Latn/LC_MESSAGES/konnector_kabc.mo
-share/locale/sr@Latn/LC_MESSAGES/konnector_kcal.mo
-share/locale/sr@Latn/LC_MESSAGES/konnector_local.mo
-share/locale/sr@Latn/LC_MESSAGES/konnector_qtopia.mo
-share/locale/sr@Latn/LC_MESSAGES/konnector_remote.mo
 share/locale/sr@Latn/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/sr@Latn/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/sr@Latn/LC_MESSAGES/konqsidebar_metabar.mo
@@ -539,7 +533,6 @@ share/locale/sr@Latn/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/sr@Latn/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/sr@Latn/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/sr@Latn/LC_MESSAGES/libkickermenu_tom.mo
-share/locale/sr@Latn/LC_MESSAGES/libkitchensync.mo
 share/locale/sr@Latn/LC_MESSAGES/libkleopatra.mo
 share/locale/sr@Latn/LC_MESSAGES/libkmime.mo
 share/locale/sr@Latn/LC_MESSAGES/libkonq.mo
@@ -559,7 +552,6 @@ share/locale/sr@Latn/LC_MESSAGES/mediaapplet.mo
 share/locale/sr@Latn/LC_MESSAGES/mediacontrol.mo
 share/locale/sr@Latn/LC_MESSAGES/mf_konqplugin.mo
 share/locale/sr@Latn/LC_MESSAGES/minitoolsplugin.mo
-share/locale/sr@Latn/LC_MESSAGES/multisynk.mo
 share/locale/sr@Latn/LC_MESSAGES/naughtyapplet.mo
 share/locale/sr@Latn/LC_MESSAGES/nexscope.mo
 share/locale/sr@Latn/LC_MESSAGES/noatun.mo
@@ -567,7 +559,6 @@ share/locale/sr@Latn/LC_MESSAGES/nsplugin.mo
 share/locale/sr@Latn/LC_MESSAGES/pitchablespeed.mo
 share/locale/sr@Latn/LC_MESSAGES/ppdtranslations.mo
 share/locale/sr@Latn/LC_MESSAGES/privacy.mo
-share/locale/sr@Latn/LC_MESSAGES/qeditor.mo
 share/locale/sr@Latn/LC_MESSAGES/quanta.mo
 share/locale/sr@Latn/LC_MESSAGES/quicklauncher.mo
 share/locale/sr@Latn/LC_MESSAGES/rellinks.mo

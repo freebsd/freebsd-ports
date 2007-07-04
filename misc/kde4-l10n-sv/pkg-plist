@@ -619,6 +619,10 @@ share/doc/HTML/sv/kdevelop/automake-manager.png
 share/doc/HTML/sv/kdevelop/automake-subproject-popup.png
 share/doc/HTML/sv/kdevelop/automake-target-popup.png
 share/doc/HTML/sv/kdevelop/automakemanager.png
+share/doc/HTML/sv/kdevelop/build-commands.png
+share/doc/HTML/sv/kdevelop/build-configurations.png
+share/doc/HTML/sv/kdevelop/build-menu-automake.png
+share/doc/HTML/sv/kdevelop/build-menu.png
 share/doc/HTML/sv/kdevelop/class-browsers.docbook
 share/doc/HTML/sv/kdevelop/classview.png
 share/doc/HTML/sv/kdevelop/commands.docbook
@@ -640,12 +644,21 @@ share/doc/HTML/sv/kdevelop/configure-docu-general.png
 share/doc/HTML/sv/kdevelop/configure-docu-toc.png
 share/doc/HTML/sv/kdevelop/configure-editor.png
 share/doc/HTML/sv/kdevelop/configure-file-selector.png
+share/doc/HTML/sv/kdevelop/configure-file-templates.png
 share/doc/HTML/sv/kdevelop/configure-general.png
+share/doc/HTML/sv/kdevelop/configure-project-buildconfig.png
+share/doc/HTML/sv/kdevelop/configure-project-configure.png
+share/doc/HTML/sv/kdevelop/configure-project-cpp.png
+share/doc/HTML/sv/kdevelop/configure-project-cppoptions.png
 share/doc/HTML/sv/kdevelop/configure-project-doc.png
+share/doc/HTML/sv/kdevelop/configure-project-make.png
+share/doc/HTML/sv/kdevelop/configure-project-run.png
 share/doc/HTML/sv/kdevelop/configure-select.png
 share/doc/HTML/sv/kdevelop/configure-snippets.png
 share/doc/HTML/sv/kdevelop/create-new-project-cvs.png
+share/doc/HTML/sv/kdevelop/create-new-project.png
 share/doc/HTML/sv/kdevelop/createnewproject.png
+share/doc/HTML/sv/kdevelop/createnewprojectoptions.png
 share/doc/HTML/sv/kdevelop/credits.docbook
 share/doc/HTML/sv/kdevelop/cvs.docbook
 share/doc/HTML/sv/kdevelop/debugger.docbook
@@ -655,12 +668,23 @@ share/doc/HTML/sv/kdevelop/doctree.png
 share/doc/HTML/sv/kdevelop/doctreeview.png
 share/doc/HTML/sv/kdevelop/documentation.docbook
 share/doc/HTML/sv/kdevelop/documents-contents.png
+share/doc/HTML/sv/kdevelop/documents-search.png
 share/doc/HTML/sv/kdevelop/edit-doctree-TOC-entry.png
 share/doc/HTML/sv/kdevelop/editing.docbook
+share/doc/HTML/sv/kdevelop/editor-ctags-lookup.png
+share/doc/HTML/sv/kdevelop/editor-ctags-menu.png
+share/doc/HTML/sv/kdevelop/editor-ctags-regenerate.png
+share/doc/HTML/sv/kdevelop/editor-find-menu.png
+share/doc/HTML/sv/kdevelop/editor-search-doc.png
+share/doc/HTML/sv/kdevelop/editor-switch-header.png
 share/doc/HTML/sv/kdevelop/empty-ide.png
 share/doc/HTML/sv/kdevelop/file-browsers.docbook
+share/doc/HTML/sv/kdevelop/file-list-close-selected.png
+share/doc/HTML/sv/kdevelop/file-list-session-create.png
+share/doc/HTML/sv/kdevelop/file-list-session-default.png
 share/doc/HTML/sv/kdevelop/file-selector.png
 share/doc/HTML/sv/kdevelop/filetree.png
+share/doc/HTML/sv/kdevelop/find-in-files.png
 share/doc/HTML/sv/kdevelop/folded-tabs.png
 share/doc/HTML/sv/kdevelop/getting-started.docbook
 share/doc/HTML/sv/kdevelop/importdirectory.png
@@ -678,14 +702,26 @@ share/doc/HTML/sv/kdevelop/kdevelop-toplevel-mode.png
 share/doc/HTML/sv/kdevelop/nutshell.docbook
 share/doc/HTML/sv/kdevelop/open-recent-project.png
 share/doc/HTML/sv/kdevelop/plugin-tools.docbook
+share/doc/HTML/sv/kdevelop/problem-report-all-todos.png
+share/doc/HTML/sv/kdevelop/problem-report-marks.png
+share/doc/HTML/sv/kdevelop/problem-report-todo.png
 share/doc/HTML/sv/kdevelop/project-advanced.docbook
 share/doc/HTML/sv/kdevelop/project-management.docbook
+share/doc/HTML/sv/kdevelop/raw-project-warning.png
+share/doc/HTML/sv/kdevelop/run-button.png
 share/doc/HTML/sv/kdevelop/script_location.png
 share/doc/HTML/sv/kdevelop/select-user-interface-0.png
 share/doc/HTML/sv/kdevelop/select-user-interface.png
 share/doc/HTML/sv/kdevelop/setup.docbook
+share/doc/HTML/sv/kdevelop/split-source-header-navigate.png
+share/doc/HTML/sv/kdevelop/split-source-header.png
+share/doc/HTML/sv/kdevelop/split-windows.png
+share/doc/HTML/sv/kdevelop/split-workspace.png
 share/doc/HTML/sv/kdevelop/survey-manual.docbook
 share/doc/HTML/sv/kdevelop/tip.database
+share/doc/HTML/sv/kdevelop/tutorial-hello-new.png
+share/doc/HTML/sv/kdevelop/tutorial-hello-options.png
+share/doc/HTML/sv/kdevelop/tutorial-new-project.png
 share/doc/HTML/sv/kdevelop/unixdev.docbook
 share/doc/HTML/sv/kdf/common
 share/doc/HTML/sv/kdf/index.cache.bz2
@@ -1685,6 +1721,10 @@ share/doc/HTML/sv/kshisen/common
 share/doc/HTML/sv/kshisen/index.cache.bz2
 share/doc/HTML/sv/kshisen/index.docbook
 share/doc/HTML/sv/kshisen/kshisen-configuration.png
+share/doc/HTML/sv/ksig/common
+share/doc/HTML/sv/ksig/index.cache.bz2
+share/doc/HTML/sv/ksig/index.docbook
+share/doc/HTML/sv/ksig/screenshot.png
 share/doc/HTML/sv/ksim/common
 share/doc/HTML/sv/ksim/index.cache.bz2
 share/doc/HTML/sv/ksim/index.docbook
@@ -2082,19 +2122,6 @@ share/doc/HTML/sv/lskat/index.docbook
 share/doc/HTML/sv/megami/common
 share/doc/HTML/sv/megami/index.cache.bz2
 share/doc/HTML/sv/megami/index.docbook
-share/doc/HTML/sv/multisynk/common
-share/doc/HTML/sv/multisynk/editdialog-conflicts.png
-share/doc/HTML/sv/multisynk/editdialog.png
-share/doc/HTML/sv/multisynk/index.cache.bz2
-share/doc/HTML/sv/multisynk/index.docbook
-share/doc/HTML/sv/multisynk/konnector-addressbook.png
-share/doc/HTML/sv/multisynk/konnector-calendar.png
-share/doc/HTML/sv/multisynk/konnector-local.png
-share/doc/HTML/sv/multisynk/konnector-qtopia.png
-share/doc/HTML/sv/multisynk/konnector-remote.png
-share/doc/HTML/sv/multisynk/konnectors-chapter.docbook
-share/doc/HTML/sv/multisynk/logdialog.png
-share/doc/HTML/sv/multisynk/mainwin.png
 share/doc/HTML/sv/noatun/common
 share/doc/HTML/sv/noatun/index.cache.bz2
 share/doc/HTML/sv/noatun/index.docbook
@@ -2574,12 +2601,6 @@ share/locale/sv/LC_MESSAGES/kolourpaint.mo
 share/locale/sv/LC_MESSAGES/kolourpicker.mo
 share/locale/sv/LC_MESSAGES/kommander.mo
 share/locale/sv/LC_MESSAGES/kompare.mo
-share/locale/sv/LC_MESSAGES/konnector_dummy.mo
-share/locale/sv/LC_MESSAGES/konnector_kabc.mo
-share/locale/sv/LC_MESSAGES/konnector_kcal.mo
-share/locale/sv/LC_MESSAGES/konnector_local.mo
-share/locale/sv/LC_MESSAGES/konnector_qtopia.mo
-share/locale/sv/LC_MESSAGES/konnector_remote.mo
 share/locale/sv/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/sv/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/sv/LC_MESSAGES/konqsidebar_metabar.mo
@@ -2725,7 +2746,6 @@ share/locale/sv/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/sv/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/sv/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/sv/LC_MESSAGES/libkickermenu_tom.mo
-share/locale/sv/LC_MESSAGES/libkitchensync.mo
 share/locale/sv/LC_MESSAGES/libkleopatra.mo
 share/locale/sv/LC_MESSAGES/libkmime.mo
 share/locale/sv/LC_MESSAGES/libkonq.mo
@@ -2745,7 +2765,6 @@ share/locale/sv/LC_MESSAGES/mediaapplet.mo
 share/locale/sv/LC_MESSAGES/mediacontrol.mo
 share/locale/sv/LC_MESSAGES/mf_konqplugin.mo
 share/locale/sv/LC_MESSAGES/minitoolsplugin.mo
-share/locale/sv/LC_MESSAGES/multisynk.mo
 share/locale/sv/LC_MESSAGES/naughtyapplet.mo
 share/locale/sv/LC_MESSAGES/nexscope.mo
 share/locale/sv/LC_MESSAGES/noatun.mo
@@ -2753,7 +2772,6 @@ share/locale/sv/LC_MESSAGES/nsplugin.mo
 share/locale/sv/LC_MESSAGES/pitchablespeed.mo
 share/locale/sv/LC_MESSAGES/ppdtranslations.mo
 share/locale/sv/LC_MESSAGES/privacy.mo
-share/locale/sv/LC_MESSAGES/qeditor.mo
 share/locale/sv/LC_MESSAGES/quanta.mo
 share/locale/sv/LC_MESSAGES/quicklauncher.mo
 share/locale/sv/LC_MESSAGES/rellinks.mo
@@ -2783,7 +2801,6 @@ share/locale/sv/flag.png
 @dirrm share/doc/HTML/sv/scripts
 @dirrm share/doc/HTML/sv/quanta
 @dirrm share/doc/HTML/sv/noatun
-@dirrm share/doc/HTML/sv/multisynk
 @dirrm share/doc/HTML/sv/megami
 @dirrm share/doc/HTML/sv/lskat
 @dirrm share/doc/HTML/sv/lisa
@@ -2826,6 +2843,7 @@ share/locale/sv/flag.png
 @dirrm share/doc/HTML/sv/ksirtet
 @dirrm share/doc/HTML/sv/ksirc
 @dirrm share/doc/HTML/sv/ksim
+@dirrm share/doc/HTML/sv/ksig
 @dirrm share/doc/HTML/sv/kshisen
 @dirrm share/doc/HTML/sv/kscd
 @dirrm share/doc/HTML/sv/ksame

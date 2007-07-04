@@ -191,6 +191,7 @@ share/locale/zh_CN/LC_MESSAGES/kdgantt.mo
 share/locale/zh_CN/LC_MESSAGES/kdialog.mo
 share/locale/zh_CN/LC_MESSAGES/kdict.mo
 share/locale/zh_CN/LC_MESSAGES/kdictapplet.mo
+share/locale/zh_CN/LC_MESSAGES/kdjview.mo
 share/locale/zh_CN/LC_MESSAGES/kdmconfig.mo
 share/locale/zh_CN/LC_MESSAGES/kdmgreet.mo
 share/locale/zh_CN/LC_MESSAGES/kdvi.mo
@@ -198,6 +199,7 @@ share/locale/zh_CN/LC_MESSAGES/kedit.mo
 share/locale/zh_CN/LC_MESSAGES/keduca.mo
 share/locale/zh_CN/LC_MESSAGES/kenolaba.mo
 share/locale/zh_CN/LC_MESSAGES/kfax.mo
+share/locale/zh_CN/LC_MESSAGES/kfaxview.mo
 share/locale/zh_CN/LC_MESSAGES/kfifteenapplet.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_au.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_avi.mo
@@ -411,6 +413,7 @@ share/locale/zh_CN/LC_MESSAGES/krfb.mo
 share/locale/zh_CN/LC_MESSAGES/kruler.mo
 share/locale/zh_CN/LC_MESSAGES/krunapplet.mo
 share/locale/zh_CN/LC_MESSAGES/ksame.mo
+share/locale/zh_CN/LC_MESSAGES/ksayit.mo
 share/locale/zh_CN/LC_MESSAGES/kscd.mo
 share/locale/zh_CN/LC_MESSAGES/kscreensaver.mo
 share/locale/zh_CN/LC_MESSAGES/kshisen.mo
@@ -453,6 +456,7 @@ share/locale/zh_CN/LC_MESSAGES/ktouch.mo
 share/locale/zh_CN/LC_MESSAGES/ktron.mo
 share/locale/zh_CN/LC_MESSAGES/kttsd.mo
 share/locale/zh_CN/LC_MESSAGES/ktuberling.mo
+share/locale/zh_CN/LC_MESSAGES/kturtle.mo
 share/locale/zh_CN/LC_MESSAGES/ktux.mo
 share/locale/zh_CN/LC_MESSAGES/kuick_plugin.mo
 share/locale/zh_CN/LC_MESSAGES/kuickshow.mo
@@ -470,6 +474,7 @@ share/locale/zh_CN/LC_MESSAGES/kviewshell.mo
 share/locale/zh_CN/LC_MESSAGES/kviewviewer.mo
 share/locale/zh_CN/LC_MESSAGES/kvoctrain.mo
 share/locale/zh_CN/LC_MESSAGES/kwalletmanager.mo
+share/locale/zh_CN/LC_MESSAGES/kwatchgnupg.mo
 share/locale/zh_CN/LC_MESSAGES/kweather.mo
 share/locale/zh_CN/LC_MESSAGES/kwifimanager.mo
 share/locale/zh_CN/LC_MESSAGES/kwin.mo
@@ -526,7 +531,6 @@ share/locale/zh_CN/LC_MESSAGES/nsplugin.mo
 share/locale/zh_CN/LC_MESSAGES/pitchablespeed.mo
 share/locale/zh_CN/LC_MESSAGES/ppdtranslations.mo
 share/locale/zh_CN/LC_MESSAGES/privacy.mo
-share/locale/zh_CN/LC_MESSAGES/qeditor.mo
 share/locale/zh_CN/LC_MESSAGES/quanta.mo
 share/locale/zh_CN/LC_MESSAGES/quicklauncher.mo
 share/locale/zh_CN/LC_MESSAGES/rellinks.mo

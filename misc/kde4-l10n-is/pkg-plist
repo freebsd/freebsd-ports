@@ -271,6 +271,7 @@ share/locale/is/LC_MESSAGES/khotkeys.mo
 share/locale/is/LC_MESSAGES/khtmlkttsd.mo
 share/locale/is/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/is/LC_MESSAGES/kicker.mo
+share/locale/is/LC_MESSAGES/kickermenu_kate.mo
 share/locale/is/LC_MESSAGES/kiconedit.mo
 share/locale/is/LC_MESSAGES/kig.mo
 share/locale/is/LC_MESSAGES/kimagemapeditor.mo
@@ -537,7 +538,6 @@ share/locale/is/LC_MESSAGES/nsplugin.mo
 share/locale/is/LC_MESSAGES/pitchablespeed.mo
 share/locale/is/LC_MESSAGES/ppdtranslations.mo
 share/locale/is/LC_MESSAGES/privacy.mo
-share/locale/is/LC_MESSAGES/qeditor.mo
 share/locale/is/LC_MESSAGES/quanta.mo
 share/locale/is/LC_MESSAGES/quicklauncher.mo
 share/locale/is/LC_MESSAGES/rellinks.mo

@@ -107,10 +107,10 @@ share/applications/kde/ktouch.desktop
 share/applications/kde/kturtle.desktop
 share/applications/kde/kverbos.desktop
 share/applications/kde/kvoctrain.desktop
+share/applications/kde/kwordquiz.desktop
 share/applnk/Edutainment/Languages/.directory
 share/applnk/Edutainment/Mathematics/.directory
 share/applnk/Edutainment/Miscellaneous/.directory
-share/applnk/Edutainment/Miscellaneous/kwordquiz.desktop
 share/applnk/Edutainment/Science/.directory
 share/applnk/Edutainment/Tools/.directory
 share/apps/blinken/README.packagers
@@ -1186,6 +1186,7 @@ share/apps/klettres/icons/crystalsvg/scalable/actions/klettres_desert.svgz
 share/apps/klettres/icons/crystalsvg/scalable/actions/klettres_grownup.svgz
 share/apps/klettres/icons/crystalsvg/scalable/actions/klettres_kids.svgz
 share/apps/klettres/klettresui.rc
+share/apps/klettres/nds.txt
 share/apps/klettres/pics/klettres_desert.png
 share/apps/klettres/pics/klettres_grownup.png
 share/apps/klettres/pics/klettres_kids.jpeg

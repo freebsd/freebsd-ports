@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	3.4.0
-PORTREVISION=	3
+PORTVERSION=	3.4.1
+PORTREVISION=	0
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
 # DISTNAME=	${KDE_DISTNAME}
 DIST_SUBDIR=	KDE
 
@@ -48,8 +48,7 @@ CONFIGURE_ARGS+=--with-qtdoc-dir=${X11BASE}/share/doc/qt/html \
 		--with-db-libdir=${BDB_LIB_DIR} --with-db-lib=${BDB_LIB_NAME} \
 		--with-apr-config=${LOCALBASE}/bin/apr-1-config \
 		--with-apu-config=${LOCALBASE}/bin/apu-1-config \
-		--with-subversion-dir=${LOCALBASE} \
-		--with-svn-include=${LOCALBASE}/include \
+		--with-svn-include=${LOCALBASE}/include/subversion-1 \
 		--with-svn-lib=${LOCALBASE}/lib \
 		--with-neon-config=${LOCALBASE}/bin/neon-config
 

@@ -545,6 +545,10 @@ share/doc/HTML/it/kdevelop/automake-file-popup.png
 share/doc/HTML/it/kdevelop/automake-subproject-popup.png
 share/doc/HTML/it/kdevelop/automake-target-popup.png
 share/doc/HTML/it/kdevelop/automakemanager.png
+share/doc/HTML/it/kdevelop/build-commands.png
+share/doc/HTML/it/kdevelop/build-configurations.png
+share/doc/HTML/it/kdevelop/build-menu-automake.png
+share/doc/HTML/it/kdevelop/build-menu.png
 share/doc/HTML/it/kdevelop/class-browsers.docbook
 share/doc/HTML/it/kdevelop/classview.png
 share/doc/HTML/it/kdevelop/commands.docbook
@@ -566,12 +570,21 @@ share/doc/HTML/it/kdevelop/configure-docu-general.png
 share/doc/HTML/it/kdevelop/configure-docu-toc.png
 share/doc/HTML/it/kdevelop/configure-editor.png
 share/doc/HTML/it/kdevelop/configure-file-selector.png
+share/doc/HTML/it/kdevelop/configure-file-templates.png
 share/doc/HTML/it/kdevelop/configure-general.png
+share/doc/HTML/it/kdevelop/configure-project-buildconfig.png
+share/doc/HTML/it/kdevelop/configure-project-configure.png
+share/doc/HTML/it/kdevelop/configure-project-cpp.png
+share/doc/HTML/it/kdevelop/configure-project-cppoptions.png
 share/doc/HTML/it/kdevelop/configure-project-doc.png
+share/doc/HTML/it/kdevelop/configure-project-make.png
+share/doc/HTML/it/kdevelop/configure-project-run.png
 share/doc/HTML/it/kdevelop/configure-select.png
 share/doc/HTML/it/kdevelop/configure-snippets.png
 share/doc/HTML/it/kdevelop/create-new-project-cvs.png
+share/doc/HTML/it/kdevelop/create-new-project.png
 share/doc/HTML/it/kdevelop/createnewproject.png
+share/doc/HTML/it/kdevelop/createnewprojectoptions.png
 share/doc/HTML/it/kdevelop/credits.docbook
 share/doc/HTML/it/kdevelop/cvs.docbook
 share/doc/HTML/it/kdevelop/debugger.docbook
@@ -581,12 +594,19 @@ share/doc/HTML/it/kdevelop/doctree.png
 share/doc/HTML/it/kdevelop/doctreeview.png
 share/doc/HTML/it/kdevelop/documentation.docbook
 share/doc/HTML/it/kdevelop/documents-contents.png
+share/doc/HTML/it/kdevelop/documents-search.png
 share/doc/HTML/it/kdevelop/edit-doctree-TOC-entry.png
 share/doc/HTML/it/kdevelop/editing.docbook
+share/doc/HTML/it/kdevelop/editor-ctags-menu.png
+share/doc/HTML/it/kdevelop/editor-ctags-regenerate.png
+share/doc/HTML/it/kdevelop/editor-find-menu.png
+share/doc/HTML/it/kdevelop/editor-search-doc.png
 share/doc/HTML/it/kdevelop/empty-ide.png
 share/doc/HTML/it/kdevelop/file-browsers.docbook
+share/doc/HTML/it/kdevelop/file-list-close-selected.png
 share/doc/HTML/it/kdevelop/file-selector.png
 share/doc/HTML/it/kdevelop/filetree.png
+share/doc/HTML/it/kdevelop/find-in-files.png
 share/doc/HTML/it/kdevelop/folded-tabs.png
 share/doc/HTML/it/kdevelop/getting-started.docbook
 share/doc/HTML/it/kdevelop/importdirectory.png
@@ -605,13 +625,22 @@ share/doc/HTML/it/kdevelop/nutshell.docbook
 share/doc/HTML/it/kdevelop/open-project.png
 share/doc/HTML/it/kdevelop/open-recent-project.png
 share/doc/HTML/it/kdevelop/plugin-tools.docbook
+share/doc/HTML/it/kdevelop/problem-report-all-todos.png
+share/doc/HTML/it/kdevelop/problem-report-marks.png
+share/doc/HTML/it/kdevelop/problem-report-todo.png
 share/doc/HTML/it/kdevelop/project-advanced.docbook
 share/doc/HTML/it/kdevelop/project-management.docbook
+share/doc/HTML/it/kdevelop/raw-project-warning.png
+share/doc/HTML/it/kdevelop/run-button.png
 share/doc/HTML/it/kdevelop/script_location.png
 share/doc/HTML/it/kdevelop/select-user-interface-0.png
 share/doc/HTML/it/kdevelop/select-user-interface.png
 share/doc/HTML/it/kdevelop/setup.docbook
 share/doc/HTML/it/kdevelop/survey-manual.docbook
+share/doc/HTML/it/kdevelop/tutorial-debug-tree.png
+share/doc/HTML/it/kdevelop/tutorial-hello-new2.png
+share/doc/HTML/it/kdevelop/tutorial-hello-options.png
+share/doc/HTML/it/kdevelop/tutorial-new-project.png
 share/doc/HTML/it/kdevelop/unixdev.docbook
 share/doc/HTML/it/kdf/common
 share/doc/HTML/it/kdf/index.cache.bz2
@@ -716,23 +745,33 @@ share/doc/HTML/it/khelpcenter/quickstart/index.docbook
 share/doc/HTML/it/khelpcenter/support.docbook
 share/doc/HTML/it/khelpcenter/userguide/about-desktop.docbook
 share/doc/HTML/it/khelpcenter/userguide/accessibility.docbook
+share/doc/HTML/it/khelpcenter/userguide/base-kde-applications.docbook
 share/doc/HTML/it/khelpcenter/userguide/browser-fine-tuning.docbook
 share/doc/HTML/it/khelpcenter/userguide/burning-cds.docbook
+share/doc/HTML/it/khelpcenter/userguide/common
 share/doc/HTML/it/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/it/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/it/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/it/khelpcenter/userguide/customizing-desktop.docbook
 share/doc/HTML/it/khelpcenter/userguide/email.docbook
+share/doc/HTML/it/khelpcenter/userguide/extragear-applications.docbook
 share/doc/HTML/it/khelpcenter/userguide/file-sharing.docbook
 share/doc/HTML/it/khelpcenter/userguide/first-impressions.docbook
 share/doc/HTML/it/khelpcenter/userguide/font-installation.docbook
+share/doc/HTML/it/khelpcenter/userguide/getting-help.docbook
 share/doc/HTML/it/khelpcenter/userguide/getting-started.docbook
 share/doc/HTML/it/khelpcenter/userguide/glossary.docbook
+share/doc/HTML/it/khelpcenter/userguide/groupware-kontact.docbook
 share/doc/HTML/it/khelpcenter/userguide/history.docbook
+share/doc/HTML/it/khelpcenter/userguide/index.cache.bz2
+share/doc/HTML/it/khelpcenter/userguide/index.docbook
 share/doc/HTML/it/khelpcenter/userguide/installation.docbook
 share/doc/HTML/it/khelpcenter/userguide/internet-shortcuts.docbook
 share/doc/HTML/it/khelpcenter/userguide/intro.docbook
 share/doc/HTML/it/khelpcenter/userguide/kde-as-root.docbook
 share/doc/HTML/it/khelpcenter/userguide/kde-edutainment.docbook
+share/doc/HTML/it/khelpcenter/userguide/kde-for-admins.docbook
+share/doc/HTML/it/khelpcenter/userguide/kde-office.docbook
 share/doc/HTML/it/khelpcenter/userguide/kdeadmin-apps.docbook
 share/doc/HTML/it/khelpcenter/userguide/kdebase-apps.docbook
 share/doc/HTML/it/khelpcenter/userguide/kdeedu-apps.docbook
@@ -746,14 +785,19 @@ share/doc/HTML/it/khelpcenter/userguide/kdeutils-apps.docbook
 share/doc/HTML/it/khelpcenter/userguide/koffice-apps.docbook
 share/doc/HTML/it/khelpcenter/userguide/konsole-intro.docbook
 share/doc/HTML/it/khelpcenter/userguide/messaging-intro.docbook
+share/doc/HTML/it/khelpcenter/userguide/migrator-applications.docbook
 share/doc/HTML/it/khelpcenter/userguide/migrator-dictionary.docbook
 share/doc/HTML/it/khelpcenter/userguide/more-help.docbook
 share/doc/HTML/it/khelpcenter/userguide/net-connection-setup.docbook
+share/doc/HTML/it/khelpcenter/userguide/networking-with-windows.docbook
+share/doc/HTML/it/khelpcenter/userguide/panel-and-desktop.docbook
 share/doc/HTML/it/khelpcenter/userguide/pdf-files.docbook
 share/doc/HTML/it/khelpcenter/userguide/playing-audiocds.docbook
 share/doc/HTML/it/khelpcenter/userguide/playing-movies.docbook
+share/doc/HTML/it/khelpcenter/userguide/playing-music.docbook
 share/doc/HTML/it/khelpcenter/userguide/printer-setup.docbook
 share/doc/HTML/it/khelpcenter/userguide/printing-from-apps.docbook
+share/doc/HTML/it/khelpcenter/userguide/programs-and-documents.docbook
 share/doc/HTML/it/khelpcenter/userguide/programs-controlling.docbook
 share/doc/HTML/it/khelpcenter/userguide/removable-disks.docbook
 share/doc/HTML/it/khelpcenter/userguide/screen-captures.docbook
@@ -1277,6 +1321,9 @@ share/doc/HTML/it/kscd/kscd6.png
 share/doc/HTML/it/kshisen/common
 share/doc/HTML/it/kshisen/index.cache.bz2
 share/doc/HTML/it/kshisen/index.docbook
+share/doc/HTML/it/ksig/common
+share/doc/HTML/it/ksig/index.cache.bz2
+share/doc/HTML/it/ksig/index.docbook
 share/doc/HTML/it/ksim/common
 share/doc/HTML/it/ksim/index.cache.bz2
 share/doc/HTML/it/ksim/index.docbook
@@ -1601,7 +1648,11 @@ share/doc/HTML/it/umbrello/introduction.docbook
 share/doc/HTML/it/umbrello/other_features.docbook
 share/doc/HTML/it/umbrello/uml_basics.docbook
 share/doc/HTML/it/umbrello/working_with_umbrello.docbook
+share/doc/HTML/it/xsldbg/commands.docbook
+share/doc/HTML/it/xsldbg/common
 share/doc/HTML/it/xsldbg/credits.docbook
+share/doc/HTML/it/xsldbg/index.cache.bz2
+share/doc/HTML/it/xsldbg/index.docbook
 share/doc/HTML/it/xsldbg/introduction.docbook
 share/doc/HTML/it/xsldbg/usage.docbook
 share/locale/it/LC_MESSAGES/akregator.mo
@@ -1969,12 +2020,6 @@ share/locale/it/LC_MESSAGES/kolourpaint.mo
 share/locale/it/LC_MESSAGES/kolourpicker.mo
 share/locale/it/LC_MESSAGES/kommander.mo
 share/locale/it/LC_MESSAGES/kompare.mo
-share/locale/it/LC_MESSAGES/konnector_dummy.mo
-share/locale/it/LC_MESSAGES/konnector_kabc.mo
-share/locale/it/LC_MESSAGES/konnector_kcal.mo
-share/locale/it/LC_MESSAGES/konnector_local.mo
-share/locale/it/LC_MESSAGES/konnector_qtopia.mo
-share/locale/it/LC_MESSAGES/konnector_remote.mo
 share/locale/it/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/it/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/it/LC_MESSAGES/konqsidebar_metabar.mo
@@ -2120,7 +2165,6 @@ share/locale/it/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/it/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/it/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/it/LC_MESSAGES/libkickermenu_tom.mo
-share/locale/it/LC_MESSAGES/libkitchensync.mo
 share/locale/it/LC_MESSAGES/libkleopatra.mo
 share/locale/it/LC_MESSAGES/libkmime.mo
 share/locale/it/LC_MESSAGES/libkonq.mo
@@ -2140,7 +2184,6 @@ share/locale/it/LC_MESSAGES/mediaapplet.mo
 share/locale/it/LC_MESSAGES/mediacontrol.mo
 share/locale/it/LC_MESSAGES/mf_konqplugin.mo
 share/locale/it/LC_MESSAGES/minitoolsplugin.mo
-share/locale/it/LC_MESSAGES/multisynk.mo
 share/locale/it/LC_MESSAGES/naughtyapplet.mo
 share/locale/it/LC_MESSAGES/nexscope.mo
 share/locale/it/LC_MESSAGES/noatun.mo
@@ -2148,7 +2191,6 @@ share/locale/it/LC_MESSAGES/nsplugin.mo
 share/locale/it/LC_MESSAGES/pitchablespeed.mo
 share/locale/it/LC_MESSAGES/ppdtranslations.mo
 share/locale/it/LC_MESSAGES/privacy.mo
-share/locale/it/LC_MESSAGES/qeditor.mo
 share/locale/it/LC_MESSAGES/quanta.mo
 share/locale/it/LC_MESSAGES/quicklauncher.mo
 share/locale/it/LC_MESSAGES/rellinks.mo
@@ -2218,6 +2260,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/ksirtet
 @dirrm share/doc/HTML/it/ksirc
 @dirrm share/doc/HTML/it/ksim
+@dirrm share/doc/HTML/it/ksig
 @dirrm share/doc/HTML/it/kshisen
 @dirrm share/doc/HTML/it/kscd
 @dirrm share/doc/HTML/it/ksame

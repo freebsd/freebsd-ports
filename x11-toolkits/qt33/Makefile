@@ -8,7 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.8
-PORTREVISION=	3
+PORTREVISION=	2
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -56,8 +56,7 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	--exclude '${DISTNAME}/examples' --exclude '${DISTNAME}/tutorial' \
 	--exclude '${DISTNAME}/extensions/nsplugin/src/[^q]*' \
 	--exclude '${DISTNAME}/include/jri*' \
-	--exclude '${DISTNAME}/include/np*' \
-	--exclude '${DISTNAME}/doc/html/qmake*'
+	--exclude '${DISTNAME}/include/np*'
 
 OPTIONS=	CUPS "Enable CUPS support" on \
 		KDE_PATCHES "Apply KDE patches" off \
@@ -101,7 +100,7 @@ CONFIGURE_ARGS+=-debug
 .endif
 
 .if !defined(WITHOUT_OPENGL)
-USE_GL=		yes
+USE_GL=		glu
 CONFIGURE_ARGS+=-dlopen-opengl
 .elif defined(WITHOUT_OPENGL)
 CONFIGURE_ARGS+=-disable-opengl

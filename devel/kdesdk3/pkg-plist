@@ -595,10 +595,12 @@ share/apps/umbrello/pics/CVstruct.png
 share/apps/umbrello/pics/actor.png
 share/apps/umbrello/pics/aggregation.png
 share/apps/umbrello/pics/align_bottom.png
+share/apps/umbrello/pics/align_hori_distribute.png
 share/apps/umbrello/pics/align_hori_middle.png
 share/apps/umbrello/pics/align_left.png
 share/apps/umbrello/pics/align_right.png
 share/apps/umbrello/pics/align_top.png
+share/apps/umbrello/pics/align_vert_distribute.png
 share/apps/umbrello/pics/align_vert_middle.png
 share/apps/umbrello/pics/anchor.png
 share/apps/umbrello/pics/andline.png
@@ -777,6 +779,12 @@ share/doc/HTML/en/kdesvn-build/index.docbook
 share/doc/HTML/en/kompare/common
 share/doc/HTML/en/kompare/index.cache.bz2
 share/doc/HTML/en/kompare/index.docbook
+share/doc/HTML/en/kompare/settings-diff1.png
+share/doc/HTML/en/kompare/settings-diff2.png
+share/doc/HTML/en/kompare/settings-diff3.png
+share/doc/HTML/en/kompare/settings-diff4.png
+share/doc/HTML/en/kompare/settings-view1.png
+share/doc/HTML/en/kompare/settings-view2.png
 share/doc/HTML/en/umbrello/activity-diagram.png
 share/doc/HTML/en/umbrello/add-remove-languages.png
 share/doc/HTML/en/umbrello/aggregation.png

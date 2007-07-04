@@ -2018,7 +2018,7 @@ share/apps/kthememanager/themes/YellowOnBlue-big/YellowOnBlue-big.xml
 share/apps/kthememanager/themes/YellowOnBlue/YellowOnBlue.preview.png
 share/apps/kthememanager/themes/YellowOnBlue/YellowOnBlue.xml
 share/apps/kwin/b2.desktop
-share/apps/kwin/default_rules/fsp_workarounds_1
+share/apps/kwin/default_rules/fsp_workarounds_1.kwinrules
 share/apps/kwin/eventsrc
 share/apps/kwin/keramik.desktop
 share/apps/kwin/laptop.desktop
@@ -3797,6 +3797,8 @@ share/locale/l10n/mc/entry.desktop
 share/locale/l10n/mc/flag.png
 share/locale/l10n/md/entry.desktop
 share/locale/l10n/md/flag.png
+share/locale/l10n/me/entry.desktop
+share/locale/l10n/me/flag.png
 share/locale/l10n/mg/entry.desktop
 share/locale/l10n/mg/flag.png
 share/locale/l10n/mh/entry.desktop
@@ -3894,6 +3896,8 @@ share/locale/l10n/qa/entry.desktop
 share/locale/l10n/qa/flag.png
 share/locale/l10n/ro/entry.desktop
 share/locale/l10n/ro/flag.png
+share/locale/l10n/rs/entry.desktop
+share/locale/l10n/rs/flag.png
 share/locale/l10n/ru/entry.desktop
 share/locale/l10n/ru/flag.png
 share/locale/l10n/rw/entry.desktop
@@ -3999,8 +4003,6 @@ share/locale/l10n/ws/entry.desktop
 share/locale/l10n/ws/flag.png
 share/locale/l10n/ye/entry.desktop
 share/locale/l10n/ye/flag.png
-share/locale/l10n/yu/entry.desktop
-share/locale/l10n/yu/flag.png
 share/locale/l10n/za/entry.desktop
 share/locale/l10n/za/flag.png
 share/locale/l10n/zm/entry.desktop
@@ -4469,7 +4471,6 @@ share/wallpapers/triplegears.jpg.desktop
 @dirrm share/locale/l10n/zw
 @dirrm share/locale/l10n/zm
 @dirrm share/locale/l10n/za
-@dirrm share/locale/l10n/yu
 @dirrm share/locale/l10n/ye
 @dirrm share/locale/l10n/ws
 @dirrm share/locale/l10n/wf
@@ -4519,6 +4520,7 @@ share/wallpapers/triplegears.jpg.desktop
 @dirrm share/locale/l10n/sa
 @dirrm share/locale/l10n/rw
 @dirrm share/locale/l10n/ru
+@dirrm share/locale/l10n/rs
 @dirrm share/locale/l10n/ro
 @dirrm share/locale/l10n/qa
 @dirrm share/locale/l10n/py
@@ -4565,6 +4567,7 @@ share/wallpapers/triplegears.jpg.desktop
 @dirrm share/locale/l10n/mk
 @dirrm share/locale/l10n/mh
 @dirrm share/locale/l10n/mg
+@dirrm share/locale/l10n/me
 @dirrm share/locale/l10n/md
 @dirrm share/locale/l10n/mc
 @dirrm share/locale/l10n/ma

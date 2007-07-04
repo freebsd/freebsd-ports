@@ -7,7 +7,7 @@ $ xset fp+ %%PREFIX%%/share/apps/konsole/fonts
 $ xset fp rehash
 
 or by adding it to your X-server configuration file (usually
-/etc/X11/XF86Config or %%X11BASE%%/lib/X11/XF86Config) and
+/etc/X11/xorg.conf or %%X11BASE%%/lib/X11/xorg.conf) and
 restarting the X-server.
 
 You also have to make the new path known to fontconfig by
