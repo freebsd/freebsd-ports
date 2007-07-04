@@ -3,11 +3,11 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/pkgconfig/Makefile,v 1.6 2005/10/14 20:39:57 adamw Exp $
+#   $MCom: ports/devel/pkg-config/Makefile,v 1.8 2007/06/28 14:28:37 ahze Exp $
 #
 
 PORTNAME=	pkg-config
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	devel
 MASTER_SITES=	http://pkgconfig.freedesktop.org/releases/
 DIST_SUBDIR=	gnome2
@@ -35,6 +35,7 @@ PC_PATH:=	${PC_PATH}:${X11BASE}/lib/pkgconfig
 .endif
 
 CONFIGURE_ARGS=	--disable-threads \
-		--with-pc-path="${PC_PATH}"
+		--with-pc-path="${PC_PATH}" \
+		--mandir=${MANPREFIX}/man
 
 .include <bsd.port.post.mk>
