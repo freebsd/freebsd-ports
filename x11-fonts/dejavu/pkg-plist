@@ -1,10 +1,10 @@
 %%FONTSDIR%%/DejaVuSans-Bold.ttf
 %%FONTSDIR%%/DejaVuSans-BoldOblique.ttf
+%%FONTSDIR%%/DejaVuSans-ExtraLight.ttf
 %%FONTSDIR%%/DejaVuSans-Oblique.ttf
 %%FONTSDIR%%/DejaVuSans.ttf
 %%FONTSDIR%%/DejaVuSansCondensed-Bold.ttf
 %%FONTSDIR%%/DejaVuSansCondensed-BoldOblique.ttf
-%%FONTSDIR%%/DejaVuSans-ExtraLight.ttf
 %%FONTSDIR%%/DejaVuSansCondensed-Oblique.ttf
 %%FONTSDIR%%/DejaVuSansCondensed.ttf
 %%FONTSDIR%%/DejaVuSansMono-Bold.ttf
@@ -12,14 +12,18 @@
 %%FONTSDIR%%/DejaVuSansMono-Oblique.ttf
 %%FONTSDIR%%/DejaVuSansMono.ttf
 %%FONTSDIR%%/DejaVuSerif-Bold.ttf
+%%FONTSDIR%%/DejaVuSerif-BoldItalic.ttf
 %%FONTSDIR%%/DejaVuSerif-BoldOblique.ttf
+%%FONTSDIR%%/DejaVuSerif-Italic.ttf
 %%FONTSDIR%%/DejaVuSerif-Oblique.ttf
 %%FONTSDIR%%/DejaVuSerif.ttf
 %%FONTSDIR%%/DejaVuSerifCondensed-Bold.ttf
+%%FONTSDIR%%/DejaVuSerifCondensed-BoldItalic.ttf
 %%FONTSDIR%%/DejaVuSerifCondensed-BoldOblique.ttf
+%%FONTSDIR%%/DejaVuSerifCondensed-Italic.ttf
 %%FONTSDIR%%/DejaVuSerifCondensed-Oblique.ttf
 %%FONTSDIR%%/DejaVuSerifCondensed.ttf
 %%FONTSDIR%%/fonts.dir
-@exec %%X11BASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
+@exec %%LOCALBASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
 @unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
 @dirrm %%FONTSDIR%%
