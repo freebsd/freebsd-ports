@@ -27,10 +27,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	netcdf-*
 
-BROKEN=		libtool problem
-
 WANT_FORTRAN=   yes
-#USE_GCC=4.2+
 BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
 FC=             gfortran42
 F77=            gfortran42
@@ -38,7 +35,9 @@ F77=            gfortran42
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=--with-jpeg="${LOCALBASE}" \
 		--with-szlib="${LOCALBASE}"
-CONFIGURE_ENV+=	F77="${F77}" FFLAGS="${FFLAGS}"
+#wiredness of F77, FC in hdf/src/Makefile
+CONFIGURE_ENV+=	F77="f77" FC="f77" FFLAGS="${FFLAGS}"
+MAKE_ENV+=	PATH="${WRKSRC}/bin:${PATH}"
 DOCFILES=	HDF41r5_SpecDG.pdf \
 		HDF42r0_RefMan.pdf \
 		HDF42r0_UserGd.pdf
@@ -58,6 +57,10 @@ BROKEN=		Does not compile on !i386, !amd64 and !alpha
 post-patch:
 	${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 		${WRKSRC}/hdf/src/Makefile.in ${WRKSRC}/mfhdf/libsrc/Makefile.in
+
+#wiredness of F77, FC in hdf/src/Makefile
+pre-configure:
+	${LN} -s `${WHICH} ${FC}` ${WRKSRC}/bin/f77
 
 post-install:
 .if !defined(NOPORTDOCS)
