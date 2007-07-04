@@ -7,12 +7,15 @@
 
 PORTNAME=	libopensync
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opensync.org/attachment/wiki/download/
 EXTRACT_SUFX=	.tar.bz2\?rev=\&format=raw
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freedesktop synchronization framework
+
+CONFLICTS=	libopensync-0.[3-9]*
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3

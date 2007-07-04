@@ -57,6 +57,7 @@ include/opensync-1.0/opensync/plugin/opensync_plugin_info.h
 include/opensync-1.0/opensync/plugin/opensync_sink.h
 include/opensync-1.0/opensync/version/opensync_version.h
 lib/libopensync.so
+lib/libopensync.so.1
 lib/opensync/formats/libdata.so
 lib/opensync/formats/libfile.so
 lib/opensync/formats/libxmlformat-doc.so
