@@ -7,7 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
@@ -67,6 +67,7 @@ post-patch:
 	@${FIND} ${WRKSRC}/src/ -type f|${XARGS} \
 		${REINPLACE_CMD} -Ee 's|(/etc/zabbix)|${PREFIX}\1|;s|/usr/sbin|${LOCALBASE}/sbin|'
 	@${REINPLACE_CMD} -e '/test.*rf/s|-rf|-f|;/LDFLAGS/s|-static||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^SDI.*pg_connection_string/d' ${WRKSRC}/frontends/php/include/db.inc.php
 .ifdef WITHOUT_FPING
 	@${ECHO} 'DisablePinger=yes' >> ${WRKSRC}/misc/conf/zabbix_server.conf
 .endif
