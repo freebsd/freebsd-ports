@@ -40,6 +40,8 @@ lib/epiphany/%%VERSION%%/extensions/libpageinfoextension.la
 lib/epiphany/%%VERSION%%/extensions/libpageinfoextension.so
 lib/epiphany/%%VERSION%%/extensions/libpushscrollerextension.la
 lib/epiphany/%%VERSION%%/extensions/libpushscrollerextension.so
+lib/epiphany/%%VERSION%%/extensions/librssextension.la
+lib/epiphany/%%VERSION%%/extensions/librssextension.so
 lib/epiphany/%%VERSION%%/extensions/libselectstylesheetextension.la
 lib/epiphany/%%VERSION%%/extensions/libselectstylesheetextension.so
 lib/epiphany/%%VERSION%%/extensions/libsidebarextension.la
@@ -53,6 +55,7 @@ lib/epiphany/%%VERSION%%/extensions/libtabstatesextension.so
 lib/epiphany/%%VERSION%%/extensions/page-info.ephy-extension
 lib/epiphany/%%VERSION%%/extensions/push-scroller.ephy-extension
 %%PYTHON%%lib/epiphany/%%VERSION%%/extensions/python-console.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/rss.ephy-extension
 lib/epiphany/%%VERSION%%/extensions/select-stylesheet.ephy-extension
 lib/epiphany/%%VERSION%%/extensions/sidebar.ephy-extension
 lib/epiphany/%%VERSION%%/extensions/smart-bookmarks.ephy-extension
@@ -67,6 +70,7 @@ share/gnome/epiphany-extensions/glade/actions-editor.glade
 share/gnome/epiphany-extensions/glade/error-viewer.glade
 share/gnome/epiphany-extensions/glade/extensions-manager-ui.glade
 share/gnome/epiphany-extensions/glade/page-info.glade
+share/gnome/epiphany-extensions/glade/rss-ui.glade
 share/gnome/epiphany-extensions/xml/epiphany-sidebar-ui.xml
 share/gnome/epiphany-extensions/xml/page-info-context-ui.xml
 share/gnome/help/epiphany-extensions/C/epiphany-extensions.xml
