@@ -7,7 +7,7 @@
 
 PORTNAME=	fracplanet
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	An interactive generator of planets and terrain
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
 		bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	boost_program_options.3:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_program_options.4:${PORTSDIR}/devel/boost
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

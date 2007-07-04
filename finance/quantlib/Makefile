@@ -8,6 +8,7 @@
 
 PORTNAME=	quantlib
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ DISTNAME=	QuantLib-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive software framework for quantitative finance
 
-LIB_DEPENDS=	boost_thread.3:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
 
 WRKSRC=		${WRKDIR}/QuantLib-${PORTVERSION}
 

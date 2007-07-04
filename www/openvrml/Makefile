@@ -7,7 +7,7 @@
 
 PORTNAME=	openvrml
 PORTVERSION=	0.15.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -53,9 +53,9 @@ BROKEN=		Gets internal gcc error on ${ARCH}
 .endif
 
 .if exists(${LOCALBASE}/include/boost/python.hpp)
-LIB_DEPENDS+=	boost_python.3:${PORTSDIR}/devel/boost-python
+LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python
 .else
-LIB_DEPENDS+=	boost_regex.3:${PORTSDIR}/devel/boost
+LIB_DEPENDS+=	boost_regex.4:${PORTSDIR}/devel/boost
 .endif
 
 post-patch:

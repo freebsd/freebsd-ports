@@ -6,7 +6,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	0.73
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
@@ -23,7 +23,7 @@ LIB_DEPENDS=	xapian.15:${PORTSDIR}/databases/xapian-core	\
 		textcat.0:${PORTSDIR}/textproc/libtextcat	\
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib	\
 		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26	\
-		boost_thread.3:${PORTSDIR}/devel/boost		\
+		boost_thread.4:${PORTSDIR}/devel/boost		\
 		gmime-2.0:${PORTSDIR}/mail/gmime2		\
 		tag.5:${PORTSDIR}/audio/taglib			\
 		curl.4:${PORTSDIR}/ftp/curl

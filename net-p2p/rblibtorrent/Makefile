@@ -7,6 +7,7 @@
 
 PORTNAME=	libtorrent
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	rb
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	rb
 MAINTAINER=	johan@stromnet.se
 COMMENT=	A C++ library implementing a BitTorrent client
 
-LIB_DEPENDS=	boost_date_time.3:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

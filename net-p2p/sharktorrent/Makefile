@@ -7,14 +7,14 @@
 
 PORTNAME=	sharktorrent
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	C++ Bittorrent client using wxWidgets, libtorrent and boost
 
-LIB_DEPENDS=	boost_filesystem.3:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost \
 		torrent.1:${PORTSDIR}/net-p2p/rblibtorrent
 
 USE_WX=		2.6
