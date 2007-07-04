@@ -1,0 +1,339 @@
+Index: casyncconn.cpp
+===================================================================
+RCS file: /cvsroot/verlihub/verlihub/src/casyncconn.cpp,v
+retrieving revision 1.89
+diff -u -r1.89 casyncconn.cpp
+--- src/casyncconn.cpp	12 Sep 2005 21:28:50 -0000	1.89
++++ src/casyncconn.cpp	17 Jun 2006 21:27:43 -0000
+@@ -94,33 +94,13 @@
+ 	mType(ct)
+ {
+ 	mMaxBuffer=MAX_SEND_SIZE;
+-	struct sockaddr saddr;
+-	struct sockaddr_in *addr_in;
+-	socklen_t addr_size;
+-
+-	addr_size = sizeof(saddr);
+-	unsigned int addr;
+-
+ 	mIp=0;
+ 	ClearLine();
+ 	mBufEnd = mBufReadPos = 0;
+ 	mRegFlag = 0;
+ 	if(mSockDesc)
+ 	{
+-		if(0 > getpeername(mSockDesc, &saddr, &addr_size))
+-		{
+-			if(Log(2)) LogStream() << "Error getting peername, closing" << endl;
+-			CloseNow();
+-		}
+-		addr_in = (struct sockaddr_in *)&saddr;
+-		// copy IP
+-		addr = mIp = addr_in->sin_addr.s_addr;
+-		// asci ip addr
+-		mAddrIP = inet_ntoa(addr_in->sin_addr);
+-		// host name
+-		if( mxServer && mxServer->mUseDNS ) DNSLookup();
+-		// port number
+-		mAddrPort=addr_in->sin_port;
++		FetchSockAddr();
+ 	}
+ 	memset (&mCloseAfter,0, sizeof(mCloseAfter));
+ }
+@@ -168,6 +148,32 @@
+ 	this->Close();
+ }
+ 
++/** Fetch IP addr from socket */
++void cAsyncConn::FetchSockAddr()
++{
++	struct sockaddr saddr;
++	struct sockaddr_in *addr_in;
++	socklen_t addr_size;
++
++	addr_size = sizeof(saddr);
++	unsigned int addr;
++
++	if(0 > getpeername(mSockDesc, &saddr, &addr_size))
++	{
++		if(Log(2)) LogStream() << "Error getting peername, closing" << endl;
++		CloseNow();
++	}
++	addr_in = (struct sockaddr_in *)&saddr;
++	// copy IP
++	addr = mIp = addr_in->sin_addr.s_addr;
++	// asci ip addr
++	mAddrIP = inet_ntoa(addr_in->sin_addr);
++	// host name
++	if( mxServer && mxServer->mUseDNS ) DNSLookup();
++	// port number
++	mAddrPort=addr_in->sin_port;
++}
++
+ /** close connection to peer */
+ void cAsyncConn::Close()
+ {
+@@ -270,6 +276,7 @@
+ /** immediately close the connection */
+ void cAsyncConn::CloseNow()
+ {
++	OnCloseNow();
+ 	mWritable = false;
+ 	ok = false;
+ 	if(mxServer) mxServer->mConnChooser.cConnChoose::OptOut((cConnBase*)this, cConnChoose::eCC_ALL);
+@@ -483,6 +490,8 @@
+ 			return -1;
+ 		}
+ 		ok=true;
++		/* Fetch socket info */
++		FetchSockAddr();
+ 		return 0;
+ 	}
+ 	else
+@@ -849,6 +858,9 @@
+ /** function called before closing nicely */
+ int cAsyncConn::OnCloseNice(void) { return 0; }
+ 
++/** function called before closing now */
++int cAsyncConn::OnCloseNow(void) { return 0; }
++
+ cMessageParser *cAsyncConn::CreateParser()
+ {
+ 	if (this->mxProtocol != NULL)
+Index: casyncsocketserver.cpp
+===================================================================
+RCS file: /cvsroot/verlihub/verlihub/src/casyncsocketserver.cpp,v
+retrieving revision 1.70
+diff -u -r1.70 casyncsocketserver.cpp
+--- src/casyncsocketserver.cpp	27 Mar 2006 13:37:32 -0000	1.70
++++ src/casyncsocketserver.cpp	17 Jun 2006 21:27:43 -0000
+@@ -198,6 +198,7 @@
+ 		return;
+ 	}
+ 	tCLIt it = old_conn->mIterator;//find(mConnList.begin(), mConnList.end(), old_conn);
++
+ 	cAsyncConn *found=(*it);
+ 	if( (it ==  mConnList.end()) || (found != old_conn) )
+ 	{
+Index: cconndc.cpp
+===================================================================
+RCS file: /cvsroot/verlihub/verlihub/src/cconndc.cpp,v
+retrieving revision 1.63
+diff -u -r1.63 cconndc.cpp
+--- src/cconndc.cpp	4 Oct 2005 19:47:38 -0000	1.63
++++ src/cconndc.cpp	17 Jun 2006 21:27:43 -0000
+@@ -359,7 +359,13 @@
+ 		IPMax = cBanList::Ip2Num(mServer->mC.ip_zone6_max);
+ 		if( (IPMin <= IPConn) && (IPMax >= IPConn)) conn->mGeoZone = 6;
+ 	}
++
+ 	conn->mxProtocol = mProtocol;
++
++	conn->mDCIterator = 
++		mServer->mDCConnList.insert(mServer->mDCConnList.begin(),
++																conn);
++
+ 	return (cAsyncConn*) conn;
+ }
+ 
+@@ -386,6 +392,20 @@
+ 		mServer->mCallBacks.mOnCloseConn.CallAll(conn);
+ 		#endif
+ 	}
++
++	cConnDC::tCLIt it = conn->mDCIterator;
++	cAsyncConn *found=(*it);
++	if( (it ==  mServer->mDCConnList.end()) || (found != conn) )
++	{
++		cout << "not found " << conn << endl;
++		throw "Trying to delete non-existent connection";
++	}
++
++	//cout << "Deleting connection on socket: " << old_conn->mSockDesc << endl;
++	mServer->mDCConnList.erase(it);
++	cConnDC::tCLIt emptyit;
++	conn->mDCIterator = emptyit;
++	
+ 	cConnFactory::DeleteConn(Conn);
+ }
+ 
+Index: cserverdc.cpp
+===================================================================
+RCS file: /cvsroot/verlihub/verlihub/src/cserverdc.cpp,v
+retrieving revision 1.235
+diff -u -r1.235 cserverdc.cpp
+--- src/cserverdc.cpp	8 Nov 2005 07:51:23 -0000	1.235
++++ src/cserverdc.cpp	17 Jun 2006 21:27:44 -0000
+@@ -492,7 +492,7 @@
+ 	}
+ 
+ 	int count=0;
+-	for(i=mConnList.begin(); i!= mConnList.end(); i++)
++	for(i=mDCConnList.begin(); i!= mDCConnList.end(); i++)
+ 	{
+ 		conn=(cConnDC *)(*i);
+ 		if(conn && conn->ok && conn->mWritable && conn->mpUser && conn->mpUser->mInList)
+@@ -516,7 +516,7 @@
+ 	cConnDC *conn;
+ 	tCLIt i;
+ 	int counter = 0;
+-	for(i=mConnList.begin(); i!= mConnList.end(); i++)
++	for(i=mDCConnList.begin(); i!= mDCConnList.end(); i++)
+ 	{
+ 		conn=(cConnDC *)(*i);
+ 		if(
+@@ -541,7 +541,7 @@
+ 	static string str;
+ 	cConnDC *conn;
+ 	tCLIt i;
+-	for(i=mConnList.begin(); i!= mConnList.end(); i++)
++	for(i=mDCConnList.begin(); i!= mDCConnList.end(); i++)
+ 	{
+ 		conn=(cConnDC *)(*i);
+ 		if(
+@@ -563,6 +563,9 @@
+ /** return negative if conn should be removed */
+ int cServerDC::OnNewConn(cAsyncConn *nc)
+ {
++	if(string(nc->mClassName) != string("ConnDC"))
++		return 0;
++
+ 	cConnDC *conn = (cConnDC *)nc;
+ 	stringstream errmsg,os;
+ 	if(!conn) return -1;
+@@ -909,7 +912,7 @@
+ /** return true if accept is allowed - override */
+ bool cServerDC::AllowNewConn()
+ {
+-	return mConnList.size() <= (unsigned) mC.max_users_total + mC.max_extra_regs + mC.max_extra_vips + mC.max_extra_ops + mC.max_extra_cheefs + mC.max_extra_admins + 200;
++	return mDCConnList.size() <= (unsigned) mC.max_users_total + mC.max_extra_regs + mC.max_extra_vips + mC.max_extra_ops + mC.max_extra_cheefs + mC.max_extra_admins + 200;
+ }
+ 
+ int cServerDC::SaveFile(const string &file, const string &text)
+@@ -1268,6 +1271,7 @@
+ 		delete work;
+ 		return 0;
+ 	}
++	return true;
+ }
+ 
+ /** No descriptions */
+Index: casyncconn.h
+===================================================================
+RCS file: /cvsroot/verlihub/verlihub/src/casyncconn.h,v
+retrieving revision 1.50
+diff -u -r1.50 casyncconn.h
+--- src/casyncconn.h	4 Sep 2005 19:37:06 -0000	1.50
++++ src/casyncconn.h	17 Jun 2006 21:27:44 -0000
+@@ -92,6 +92,8 @@
+ 	cAsyncConn(int sd=0, cAsyncSocketServer *s=NULL, tConnType ct= eCT_CLIENT);
+ 	cAsyncConn(const string & host, int port, bool udp=false);
+ 	virtual ~cAsyncConn();
++	/** fetch IP addr from connection */
++	void FetchSockAddr();
+ 	/** close connection to peer */
+ 	void Close();
+ 	/** flush as much from output buffer as possible to the iochannel */
+@@ -115,6 +117,8 @@
+ 	/** time to close the connection */
+ 	cTime mCloseAfter;
+ 
++public:
++	/* Anyone know, why we should do this private ??? */
+ 	typedef list<cAsyncConn*> tConnList;
+ 	typedef tConnList::iterator tCLIt;
+ 	
+@@ -183,6 +187,8 @@
+ 	tSocket AcceptSock();
+ 	/** function called before closing nicely */
+ 	virtual int OnCloseNice(void);
++	/** function called before closing now */
++	virtual int OnCloseNow(void);
+ 	/** for udp */
+ 	struct sockaddr_in mAddrIN;
+ 	
+@@ -195,7 +201,7 @@
+ 	const string & AddrIP(){return mAddrIP;}
+ 	const string & AddrHost(){return mAddrHost;}
+ 	const int AddrPort(){return mAddrPort;}
+-	const unsigned long GetSockAddress() { return mAddrIN.sin_addr.s_addr; }
++	const unsigned long GetSockAddress() { return (mType == eCT_CLIENTUDP)?mAddrIN.sin_addr.s_addr:mIp; }
+ 	
+ 	/** reads all available data from the socket and stores it into a static member buffer */
+ 	int ReadAll();
+Index: casyncsocketserver.h
+===================================================================
+RCS file: /cvsroot/verlihub/verlihub/src/casyncsocketserver.h,v
+retrieving revision 1.27
+diff -u -r1.27 casyncsocketserver.h
+--- src/casyncsocketserver.h	21 Dec 2004 12:48:46 -0000	1.27
++++ src/casyncsocketserver.h	17 Jun 2006 21:27:44 -0000
+@@ -96,6 +96,12 @@
+ 	cTime mTime;
+ 	//
+ 	cMeanFrequency<unsigned ,21> mFrequency;
++
++	/* I don't know, why we should make this protected */
++	/** add given connection to server */
++	virtual void addConnection(cAsyncConn *);
++	/** remove given connection from server */
++	void delConnection(cAsyncConn * );
+ protected: // Protected attributes
+ 	/** indicates whether the loop should run or not */
+ 	bool mbRun;
+@@ -117,10 +123,6 @@
+ 	static bool WSinitialized;
+ 	cConnFactory *mFactory;
+ protected: // Protected methods
+-	/** add given connection to server */
+-	virtual void addConnection(cAsyncConn *);
+-	/** remove given connection from server */
+-	void delConnection(cAsyncConn * );
+ 	/** perform input operation, read all data from the connection, return number of bytes read, return negative number, if error occured */
+ 	virtual int input(cAsyncConn *conn);
+ 	/** perform output operation */
+Index: cconndc.h
+===================================================================
+RCS file: /cvsroot/verlihub/verlihub/src/cconndc.h,v
+retrieving revision 1.41
+diff -u -r1.41 cconndc.h
+--- src/cconndc.h	12 Sep 2005 21:28:50 -0000	1.41
++++ src/cconndc.h	17 Jun 2006 21:27:44 -0000
+@@ -130,6 +130,7 @@
+ class cConnDC : public cAsyncConn
+ {
+ 	friend class nProtocol::cDCProto;
++	friend class cDCConnFactory;
+ public:
+ 	cConnDC(int sd=0, cAsyncSocketServer *server=NULL);
+ 	virtual ~cConnDC();
+@@ -219,6 +220,10 @@
+ 	};
+ 	sTimes mT;
+ 	int mSRCounter;
++
++	// DC++ type connections iterator
++	tCLIt	mDCIterator;
++	
+ protected: // Protected methods
+ 	/** function called before closing nicely */
+ 	int OnCloseNice();
+Index: cserverdc.h
+===================================================================
+RCS file: /cvsroot/verlihub/verlihub/src/cserverdc.h,v
+retrieving revision 1.111
+diff -u -r1.111 cserverdc.h
+--- src/cserverdc.h	14 Sep 2005 20:20:28 -0000	1.111
++++ src/cserverdc.h	17 Jun 2006 21:27:44 -0000
+@@ -329,6 +329,11 @@
+ 	cTimeOut mHublistTimer;
+ 	cTimeOut mReloadcfgTimer;
+ 	cVHPluginMgr mPluginManager;
++
++protected:
++	// Protected attributes :D
++	tConnList	mDCConnList;
++
+ private:
+ 	struct sCallBacks
+ 	{

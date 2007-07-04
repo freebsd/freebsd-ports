@@ -11,8 +11,8 @@ bin/vh_trigger
 include/verlihub/cantiflood.h
 include/verlihub/casyncconn.h
 include/verlihub/casyncsocketserver.h
-include/verlihub/cbanlist.h
 include/verlihub/cban.h
+include/verlihub/cbanlist.h
 include/verlihub/ccallbacklist.h
 include/verlihub/cchatconsole.h
 include/verlihub/ccmdr.h
@@ -22,8 +22,8 @@ include/verlihub/cconfigfile.h
 include/verlihub/cconfigitembase.h
 include/verlihub/cconfmysql.h
 include/verlihub/cconnbase.h
-include/verlihub/cconndc.h
 include/verlihub/cconnchoose.h
+include/verlihub/cconndc.h
 include/verlihub/cconnpoll.h
 include/verlihub/cconnselect.h
 include/verlihub/cconntypes.h
@@ -38,8 +38,8 @@ include/verlihub/cfreqlimiter.h
 include/verlihub/cgeoip.h
 include/verlihub/cinfoserver.h
 include/verlihub/cinterpolexp.h
-include/verlihub/ckicklist.h
 include/verlihub/ckick.h
+include/verlihub/ckicklist.h
 include/verlihub/cmeanfrequency.h
 include/verlihub/cmessagedc.h
 include/verlihub/cmutex.h
@@ -61,15 +61,15 @@ include/verlihub/csetuplist.h
 include/verlihub/ctempfunctionbase.h
 include/verlihub/cthread.h
 include/verlihub/cthreadwork.h
-include/verlihub/ctimeout.h
 include/verlihub/ctime.h
-include/verlihub/ctriggers.h
+include/verlihub/ctimeout.h
 include/verlihub/ctrigger.h
+include/verlihub/ctriggers.h
 include/verlihub/curr_date_time.h
-include/verlihub/cusercollection.h
 include/verlihub/cuser.h
-include/verlihub/cvhpluginmgr.h
+include/verlihub/cusercollection.h
 include/verlihub/cvhplugin.h
+include/verlihub/cvhpluginmgr.h
 include/verlihub/cworkerthread.h
 include/verlihub/dirsettings.h
 include/verlihub/dll.h
@@ -77,8 +77,8 @@ include/verlihub/make_time.h
 include/verlihub/script_api.h
 include/verlihub/stringutils.h
 include/verlihub/tcache.h
-include/verlihub/thasharray.h
 include/verlihub/tchashlistmap.h
+include/verlihub/thasharray.h
 include/verlihub/tlistconsole.h
 include/verlihub/tlistplugin.h
 include/verlihub/tmysqlmemoryhash.h
@@ -111,11 +111,11 @@ lib/libvhapi.so.0
 %%DATADIR%%/config/help_vip
 %%DATADIR%%/config/motd
 %%DATADIR%%/config/rules
-%%DATADIR%%/sql/default_pi_plug.sql
 %%DATADIR%%/sql/default_conn_types.sql
 %%DATADIR%%/sql/default_file_trigger.sql
+%%DATADIR%%/sql/default_pi_plug.sql
 %%DATADIR%%/sql/default_reglist.sql
 @dirrm include/verlihub
-@dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%/sql
+@dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
