@@ -10,19 +10,23 @@ CATEGORIES=	devel net
 MASTER_SITES=	http://www.rakkarsoft.com/raknet/downloads/
 DISTNAME=	RakNet
 
-MAINTAINER=	dikiy@scn.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Networking API that provides reliable UDP prmary for online games
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name CVS -delete
@@ -35,10 +39,6 @@ post-patch:
 			${AWK} 'gsub( /\r/, "" )' $${_F} > $${_F}.awk.tmp; \
 			${MV} $${_F}.awk.tmp $${_F}; \
 	done
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e "s|stdint.h|inttypes.h|" ${WRKSRC}/Include/BitStream.h
-	@${RM} ${WRKSRC}/Include/BitStream.h.bak
-.endif
 	@${MKDIR} ${WRKSRC}/Lib/linux
 	@${LN} -s ${WRKSRC}/Lib ${WRKSRC}/lib
 
