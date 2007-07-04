@@ -69,6 +69,10 @@ PLIST_SUB+=	CONDITIONAL=""
 .endif
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 pre-configure:
 	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=g;s=%%DATADIRVERSION%%=${DATADIR}/${PORTVERSION}=g" \
 		< ${FILESDIR}/pkg-install.in \
