@@ -11,7 +11,7 @@ CATEGORIES=	audio kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
-DISTNAME=	52641-${PORTNAME}-${PORTVERSION}
+DISTNAME=	52641-amarokFS-${PORTVERSION}
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A full screen application for Amarok
@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 INSTALLS_ICONS=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/amarokFS-${PORTVERSION}
 
 PORTDOCS=	README theme-howto.txt
 
