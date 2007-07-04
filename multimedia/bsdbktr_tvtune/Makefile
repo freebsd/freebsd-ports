@@ -8,9 +8,9 @@
 PORTNAME=	bsdbktr_tvtune
 PORTVERSION=	0.02
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.topfx.com/dist/
+MASTER_SITES=	http://mina.naguib.ca/dist/
 
-MAINTAINER=	webmaster@topfx.com
+MAINTAINER=	mina.website@naguib.ca
 COMMENT=	A console Brooktree (bktr) TV tuner
 
 PLIST_FILES=	bin/bsdbktr_tvtune
