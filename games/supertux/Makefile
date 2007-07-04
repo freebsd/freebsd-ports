@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Super Tux is a side-scroller similar to Super Mario Brothers
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_SDL=	image mixer
 USE_GL=		yes
@@ -24,10 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--disable-debug
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's,Menu::,,' ${WRKSRC}/src/menu.h
 
-.if ${OSVERSION} > 700000
-USE_GCC=	3.4
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
