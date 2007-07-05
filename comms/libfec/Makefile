@@ -6,6 +6,7 @@
 
 PORTNAME=	libfec
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	comms astro hamradio math
 MASTER_SITES=	http://www.ka9q.net/code/fec/ \
 		${MASTER_SITE_LOCAL}
