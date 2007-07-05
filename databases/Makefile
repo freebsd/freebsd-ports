@@ -457,6 +457,7 @@
     SUBDIR += qt4-sqlite3-plugin
     SUBDIR += rdb
     SUBDIR += rdfdb
+    SUBDIR += rrdtool
     SUBDIR += ruby-bdb
     SUBDIR += ruby-bdb1
     SUBDIR += ruby-cdb

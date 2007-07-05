@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	. old
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	JUNIper router snmp POLLer for firewall filter counters
 
-RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
+RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/Altoids.pm:${PORTSDIR}/net-mgmt/p5-Altoids
 
 PERL_CONFIGURE=	yes

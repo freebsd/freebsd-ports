@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Crypt/CBC.php:${PORTSDIR}/security/pear-Cry
 		${LOCALBASE}/bin/run-mailcap:${PORTSDIR}/misc/mime-support \
 		${LOCALBASE}/lib/nss_mysql.so:${PORTSDIR}/net/libnss-mysql \
 		${LOCALBASE}/sbin/chrootuid:${PORTSDIR}/security/chrootuid \
-		${LOCALBASE}/bin/rrdtool:${PORTSDIR}/net/rrdtool \
+		${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
 		${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
 		${X11BASE}/lib/X11/fonts/webfonts/verdana.ttf:${PORTSDIR}/x11-fonts/webfonts \
 		${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql50-server

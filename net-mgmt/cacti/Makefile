@@ -22,7 +22,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Web-driven graphing interface for RRDTool
 
-RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool
+RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 
 PATCHLEVEL=	.3
 PATCH_STRIP=	-p1

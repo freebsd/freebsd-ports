@@ -16,7 +16,7 @@ DISTNAME=	py-rrdtool-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python interface to RRDTool, the graphing and logging utility
 
-LIB_DEPENDS=	rrd:${PORTSDIR}/net/rrdtool
+LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

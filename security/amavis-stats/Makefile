@@ -14,7 +14,7 @@ MASTER_SITES=	http://rekudos.net/download/
 MAINTAINER=	stone@tainet.lt
 COMMENT=	A simple AMaViS statistics generator based on rrdtool
 
-RUN_DEPENDS=	${SITE_PERL}/mach/RRDs.pm:${PORTSDIR}/net/rrdtool
+RUN_DEPENDS=	${SITE_PERL}/mach/RRDs.pm:${PORTSDIR}/databases/rrdtool
 
 USE_PERL5_RUN=	yes
 USE_PHP=	pcre

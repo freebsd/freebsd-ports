@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Nagiostat parses performance-data from Nagios and generates graphs
 
-RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
+RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		nagios:${PORTSDIR}/net-mgmt/nagios
 
 USE_PERL5=	yes

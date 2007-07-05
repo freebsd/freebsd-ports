@@ -14,7 +14,7 @@ MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Latency logging and graphing system
 
-RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
+RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/CGI/SpeedyCGI.pm:${PORTSDIR}/www/p5-CGI-SpeedyCGI \
 		${SITE_PERL}/BER.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \

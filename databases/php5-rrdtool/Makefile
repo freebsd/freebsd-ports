@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rick@wzoeterwoude.net
 COMMENT=	A php 5 rrdtool glue
 
-LIB_DEPENDS=	rrd:${PORTSDIR}/net/rrdtool
+LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 
 WRKSRC=		${WRKDIR}/rrdtool
 

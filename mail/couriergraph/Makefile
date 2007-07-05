@@ -14,7 +14,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A RRDtool frontend for Courier statistics
 
-RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/net/rrdtool	\
+RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool	\
 		${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
 
 NO_BUILD=	yes

@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-snapshot-20060810
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Web based frontend to nfdump netflow collector
 
-RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/net/rrdtool \
+RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
 		nfdump:${PORTSDIR}/net-mgmt/nfdump
 
 USE_ICONV=	yes

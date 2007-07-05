@@ -7,7 +7,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.2.23
-CATEGORIES=	net
+CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
 MAINTAINER=	demon@FreeBSD.org

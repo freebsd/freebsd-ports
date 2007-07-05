@@ -14,7 +14,7 @@ DISTNAME=	RubyRRDtool-${PORTVERSION}
 MAINTAINER=	saurbier@math.uni-bielefeld.de
 COMMENT=	A Ruby interface to RRDTool
 
-LIB_DEPENDS=	rrd:${PORTSDIR}/net/rrdtool
+LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 BUILD_DEPENDS=	sow:${PORTSDIR}/devel/rubygem-hoe
 
 GEM_NAME=	RubyRRDtool-0.6.0

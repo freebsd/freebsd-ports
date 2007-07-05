@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Processes IP flows recorded in cflowd-format raw flow files
 
 BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh \
-		rrdtool:${PORTSDIR}/net/rrdtool \
+		rrdtool:${PORTSDIR}/databases/rrdtool \
 		${LOCALBASE}/sbin/cflowd:${PORTSDIR}/net-mgmt/cflowd \
 		${SITE_PERL}/Boulder/Stream.pm:${PORTSDIR}/converters/p5-Boulder \
 		${SITE_PERL}/ConfigReader/DirectiveStyle.pm:${PORTSDIR}/devel/p5-ConfigReader \

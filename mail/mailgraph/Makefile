@@ -14,7 +14,7 @@ MASTER_SITES=	http://mailgraph.schweikert.ch/pub/ \
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A RRDtool frontend for Postfix statistics
 
-RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/net/rrdtool	\
+RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool	\
 		${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
 
 NO_BUILD=	yes

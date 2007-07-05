@@ -16,7 +16,7 @@ DISTNAME=	${UNIQUENAME}-${PORTVERSION}
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	A php/rrdtool glue
 
-LIB_DEPENDS=	rrd:${PORTSDIR}/net/rrdtool
+LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${UNIQUENAME}-${PORTVERSION}

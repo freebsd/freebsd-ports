@@ -16,7 +16,7 @@ COMMENT=        A libpcap-based network monitoring and anomaly detection system
 
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 LIB_DEPENDS=    gd:$(PORTSDIR)/graphics/gd
-RUN_DEPENDS=    rrdtool:$(PORTSDIR)/net/rrdtool
+RUN_DEPENDS=    rrdtool:$(PORTSDIR)/databases/rrdtool
 
 #IS_INTERACTIVE= yes
 WRKSRC=         ${WRKDIR}/mrourmon

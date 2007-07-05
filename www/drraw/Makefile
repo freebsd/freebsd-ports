@@ -14,7 +14,7 @@ MASTER_SITES=	http://web.taranis.org/drraw/dist/ \
 MAINTAINER=	ports@christianserving.org
 COMMENT=	A simple web-based presentation front-end for RRDtool
 
-RUN_DEPENDS+=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/net/rrdtool
+RUN_DEPENDS+=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool
 
 USE_PERL5_RUN=	yes
 

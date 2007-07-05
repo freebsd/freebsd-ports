@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://nrg.hep.wisc.edu/pub/src/nrg/ \
 MAINTAINER=	mranner@inode.at
 COMMENT=	Tool for visualizing network and resource utilization data
 
-BUILD_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/net/rrdtool \
+BUILD_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
 		${LOCALBASE}/bin/snmpget:${PORTSDIR}/net-mgmt/net-snmp4
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${SITE_PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
