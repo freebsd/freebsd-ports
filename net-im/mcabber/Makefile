@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mcabber
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 

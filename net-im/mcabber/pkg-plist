@@ -149,6 +149,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/pl/hlp_authorization.txt
 %%DATADIR%%/help/pl/hlp_bind.txt
 %%DATADIR%%/help/pl/hlp_buffer.txt
+%%DATADIR%%/help/pl/hlp_chat_disable.txt
 %%DATADIR%%/help/pl/hlp_clear.txt
 %%DATADIR%%/help/pl/hlp_connect.txt
 %%DATADIR%%/help/pl/hlp_del.txt
@@ -156,6 +157,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/pl/hlp_event.txt
 %%DATADIR%%/help/pl/hlp_group.txt
 %%DATADIR%%/help/pl/hlp_help.txt
+%%DATADIR%%/help/pl/hlp_iline.txt
 %%DATADIR%%/help/pl/hlp_info.txt
 %%DATADIR%%/help/pl/hlp_move.txt
 %%DATADIR%%/help/pl/hlp_msay.txt
@@ -169,6 +171,8 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/pl/hlp_say.txt
 %%DATADIR%%/help/pl/hlp_say_to.txt
 %%DATADIR%%/help/pl/hlp_set.txt
+%%DATADIR%%/help/pl/hlp_screen_refresh.txt
+%%DATADIR%%/help/pl/hlp_source.txt
 %%DATADIR%%/help/pl/hlp_status.txt
 %%DATADIR%%/help/pl/hlp_status_to.txt
 %%DATADIR%%/help/pl/hlp_version.txt
