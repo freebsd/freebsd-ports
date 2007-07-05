@@ -12,6 +12,8 @@ lib/xorg/modules/drivers/ivch.la
 lib/xorg/modules/drivers/ivch.so
 lib/xorg/modules/drivers/sil164.la
 lib/xorg/modules/drivers/sil164.so
+lib/xorg/modules/drivers/tfp410.la
+lib/xorg/modules/drivers/tfp410.so
 @dirrmtry lib/xorg/modules/drivers
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg
