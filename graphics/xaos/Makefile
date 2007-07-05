@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xaos
-PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTVERSION=	3.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xaos
@@ -22,18 +21,15 @@ USE_XLIB=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 
-OPTIONS=	SVGALIB "Enable svgalib support" off \
-		AALIB "Enable aalib support" off \
-		PTHREAD "Enable experimental threads support" off
+OPTIONS=	PTHREAD "Enable experimental SMP support" off
 
-CONFIGURE_ENV=	LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-dga-driver=no
-
-CFLAGS=		-DHAVE_SYS_PARAM_H \
-		-I${LOCALBASE}/include \
-		-I${PREFIX}/include \
-		-pipe -O6 -fstrength-reduce -ffast-math -fomit-frame-pointer\
-		-fforce-mem -fforce-addr -funroll-loops
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-aa-driver=no --with-dga-driver=no \
+		--with-ggi-driver=no --with-svga-driver=no \
+		--with-included-gettext=yes \
+		--with-x --with-png=yes \
+		--with-mit-shm=yes
 
 MAN6=		xaos.6
 INFO=		xaos
@@ -42,31 +38,12 @@ PLIST_SUB+=	XAOSDIR="share/XaoS"
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SVGALIB)
-LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
-CONFIGURE_ARGS+=	--with-svga-driver=yes
-.else
-CONFIGURE_ARGS+=	--with-svga-driver=no
-.endif
-
-.if defined(WITH_AALIB)
-LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
-CONFIGURE_ARGS+=	--with-aa-driver=yes
-.else
-CONFIGURE_ARGS+=	--with-aa-driver=no
-.endif
-
 .if defined(WITH_PTHREAD)
 CONFIGURE_ARGS+=	--with-pthread=yes
 CONFIGURE_ENV+=		LIBS="${PTHREAD_LIBS}" \
 			CFLAGS="${PTHREAD_CFLAGS} ${CFLAGS}"
 .else
 CONFIGURE_ARGS+=	--with-pthread=no
-.endif
-
-# GCC 3.4.2 alleges prototype mismatches with __attribute__((regparm))
-.if ${OSVERSION} >= 502125
-CFLAGS+=	-DNOREGISTERS
 .endif
 
 post-install:

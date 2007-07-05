@@ -1,0 +1,8 @@
+--- src/include/aconfig.h.in.orig	Wed Jul  4 22:26:52 2007
++++ src/include/aconfig.h.in	Wed Jul  4 22:26:58 2007
+@@ -55,4 +55,5 @@
+ #undef SIZEOF_LONG
+ #undef HAVE_GETTEXT
+ #undef NO_MALLOC_H
++#undef PREFIX
+ #endif

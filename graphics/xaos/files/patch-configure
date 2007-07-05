@@ -1,0 +1,19 @@
+--- configure.orig	Sun Nov 12 22:49:50 2006
++++ configure	Wed Jul  4 22:41:37 2007
+@@ -10653,7 +10653,7 @@
+ 
+ use_cc_g_flag=no
+ DRIVERDIRS=""
+-LOCALEDIR="/usr/share/locale"
++LOCALEDIR="${prefix}/share/locale"
+ DRIVERLIBS="lib/libui.a lib/libui-hlp.a lib/libengine.a lib/libutil.a lib/libfilter.a"
+ CFLAGS="$CCOPTS"
+ # Find a good install program.  We prefer a C program (faster),
+@@ -16237,6 +16237,7 @@
+ eval datadir2=$datadir
+ cat >>confdefs.h <<_ACEOF
+ #define DATAPATH "${datadir2}/XaoS"
++#define PREFIX "${prefix}"
+ _ACEOF
+ 
+ 
