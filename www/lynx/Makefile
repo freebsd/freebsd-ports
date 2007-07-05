@@ -33,7 +33,7 @@ USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
 .endif
 
-.if defined(NO_INET6)
+.if defined(NO_INET6) || defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
 .else
 CONFIGURE_ARGS+=--enable-ipv6
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=--enable-ipv6
 CONFIGURE_ARGS+=--enable-default-colors
 .endif
 
-MAKE_ARGS=	helpdir=${L_HELP} docdir=${DOCSDIR}	#-j`${SYSCTL} -n hw.ncpu`
+MAKE_ARGS=	helpdir=${L_HELP} docdir=${DOCSDIR}
 MAKEFILE=	makefile
 INSTALL_TARGET=	install-full
 MAN1=		lynx.1
