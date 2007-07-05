@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkcs11-helper
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
@@ -22,16 +22,20 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man \
+		--disable-crypto-engine-gnutls
 
-MAN8=		pkcs11-helper.8
+MAN8=		pkcs11-helper-1.8
 
 PORTDOCS=	*
 
-.if defined(NOPORTDOCS)
 post-patch:
-	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am|'
+	@${REINPLACE_CMD} 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/configure
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am|' \
 		${WRKSRC}/Makefile.in
 .endif
+
 
 .include <bsd.port.mk>
