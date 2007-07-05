@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xmms-speex
 # Date created:				3 Oct 2002
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://jzb.rapanden.dk/pub/
 DISTNAME=	speex-xmms-${PORTVERSION}
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	XMMS input plugin to play speex files
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

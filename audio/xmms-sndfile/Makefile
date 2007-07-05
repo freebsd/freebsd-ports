@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xmms-sndfile
 # Date created:				27 Dec 2001
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/xmms_sndfile/
 DISTNAME=	xmms_sndfile-${PORTVERSION}
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	XMMS plugin to allow playing libsndfile supported files
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \

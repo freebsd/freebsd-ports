@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.blender.org/release/Publisher${PORTVERSION}/
 DISTNAME=	blender-publisher-${PORTVERSION}-freebsd-4.2-i386
 DIST_SUBDIR=	blender
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	Fully functional 3D modeling/rendering/animation/gaming package
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

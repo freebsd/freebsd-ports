@@ -1,6 +1,6 @@
 # New ports collection makefile for:	reallyslick
 # Date created:				24 Nov 2002
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rss-glx
 DISTNAME=	rss-glx_${PORTVERSION}
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	OpenGL screensaver collection
 
 LIB_DEPENDS=	Wand.10:${PORTSDIR}/graphics/ImageMagick

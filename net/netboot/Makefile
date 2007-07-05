@@ -1,6 +1,6 @@
 # New ports collection makefile for:	netboot
 # Date created:				16 Apr 2003
-# Whom:					dyeske@yahoo.com
+# Whom:					dyeske@gmail.com
 #
 # $FreeBSD$
 
@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	Netboot with Packet or NDIS-2 drivers
 
 USE_GMAKE=	yes

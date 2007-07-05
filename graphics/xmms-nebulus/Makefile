@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xmms-nebulus
 # Date created:				3 Oct 2002
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://nebulus.tuxfamily.org/
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A XMMS visualization plugin that uses SDL and OpenGL
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

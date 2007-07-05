@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xmms-pipe
 # Date created:				23 Aug 2002
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://rooster.stanford.edu/~ben/xmmspipe/files/
 DISTNAME=	xmmspipe-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	Controls XMMS with a named pipe
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	tclxml
 # Date created:				2 May 2003
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tclxml
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	API for parsing XML documents using Tcl
 
 BUILD_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84

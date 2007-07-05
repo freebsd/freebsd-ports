@@ -1,7 +1,7 @@
 # ex:ts=8
 # New ports collection makefile for:	L-Breeder
 # Date created:				30 May 2002
-# Whom:					David Yeske <dyeske@yahoo.com> et al
+# Whom:					David Yeske <dyeske@gmail.com> et al
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://www.simonyi.ox.ac.uk/dawkins/software/yan/L-Breeder/
 DISTNAME=	${PORTNAME}-source
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	Allows you to display and breed L-system forms
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

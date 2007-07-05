@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xmms-jess
 # Date created:				3 Feb 2002
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://arquier.free.fr/
 DISTNAME=	JESS-${PORTVERSION}
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A XMMS visualization plugin that uses SDL
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

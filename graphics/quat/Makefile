@@ -1,6 +1,6 @@
 # New ports collection makefile for:	quat
 # Date created:				26 Aug 2002
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.20
 CATEGORIES=	graphics
 MASTER_SITES=   http://www.physcip.uni-stuttgart.de/phy11733/download/
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A Three-dimensional fractal creator (command line only)
 
 GNU_CONFIGURE=	yes

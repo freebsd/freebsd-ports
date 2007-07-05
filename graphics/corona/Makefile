@@ -1,6 +1,6 @@
 # New ports collection makefile for:	corona
 # Date created:				25 May 2004
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 
@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A graphics library that supports most image formats
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

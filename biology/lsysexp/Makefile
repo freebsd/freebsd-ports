@@ -1,6 +1,6 @@
 # New ports collection makefile for:	lsysexp
 # Date created:				22 Apr 2003
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://coscorrosa.com/programs/${PORTNAME}/download/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A GTK based program for viewing and creating L-system fractals
 
 WRKSRC=		${WRKDIR}/lsysexp-0.67

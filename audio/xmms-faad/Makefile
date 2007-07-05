@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xmms-faad
 # Date created:			23 Feb, 2002
-# Whom:				David Yeske <dyeske@yahoo.com>
+# Whom:				David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	faac
 PKGNAMEPREFIX=	xmms-
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	XMMS plugin for faad
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

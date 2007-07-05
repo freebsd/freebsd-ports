@@ -1,6 +1,6 @@
 # New ports collection makefile for:	cinepaint
 # Date created:				11 Oct 2003
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	An editing tool used for painting and retouching of movies
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

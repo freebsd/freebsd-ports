@@ -1,6 +1,6 @@
 # New ports collection makefile for:	sdl_sound
 # Date created:				6 Feb 2003
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.icculus.org/SDL_sound/downloads/
 DISTNAME=	SDL_sound-${PORTVERSION}
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A SDL audio library and player for some popular sound file formats
 
 USE_AUTOTOOLS=	libtool:15

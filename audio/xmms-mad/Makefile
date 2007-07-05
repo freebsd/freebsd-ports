@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xmms-mad
 # Date created:				30 Aug 2002
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmms-mad
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A XMMS input plugin that uses libmad
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \

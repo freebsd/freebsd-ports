@@ -1,6 +1,6 @@
 # New ports collection makefile for:	quat-gui
 # Date created:				2 May 2002
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.physcip.uni-stuttgart.de/phy11733/download/
 PKGNAMESUFFIX=	-gui
 DISTNAME=	quat-${PORTVERSION:S/.p/pre/}
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A Three-dimensional fractal creator (X11 GUI)
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	blender
 # Date created:				27 Feb 2003
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 
@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.blender.org/source/ \
 		http://public.planetmirror.com/pub/blender/source/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	3D modeling/rendering/animation/gaming package
 
 BUILD_DEPENDS=	${X11BASE}/lib/libftgl.a:${PORTSDIR}/graphics/ftgl
