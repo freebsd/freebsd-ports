@@ -1,6 +1,6 @@
 # New ports collection makefile for:	zh-auto-cn-l10n
 # Date created:		12 May 2006
-# Whom:			Liu.Yinghong <liu_yinghong@yahoo.com.cn>
+# Whom:			Yinghong Liu <relaxbsd@gmail.com>
 #
 # $FreeBSD$
 
@@ -10,7 +10,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
 DISTNAME=	zh-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	The automatic localization for Simplified Chinese zh_CN.eucCN locale
 
 NO_BUILD=	yes

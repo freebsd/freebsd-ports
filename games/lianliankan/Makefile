@@ -1,6 +1,6 @@
 # New ports collection makefile for:	lianliankan
 # Date created:				26 April 2006
-# Whom:					Liu.Yinghong <liu_yinghong@yahoo.com.cn>
+# Whom:					Yinghong Liu <relaxbsd@gmail.com>
 #
 # $FreeBSD$
 #
@@ -9,11 +9,11 @@ PORTNAME=	lianliankan
 PORTVERSION=	2.2
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	llk-linux
 DISTNAME=	llk_linux-${PORTVERSION}
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	A scarce recreation game
 
 USE_GNOME=	gtk20 esound

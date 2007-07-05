@@ -9,10 +9,10 @@ PORTNAME=	relaxconf
 PORTVERSION=	1.1.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	relaxbsd
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	A set of text menu based utilities for configuring RelaxBSD LiveCD
 
 BUILD_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog

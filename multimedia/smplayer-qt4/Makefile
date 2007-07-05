@@ -1,6 +1,6 @@
 # New ports collection makefile for:	smplayer-qt4
 # Date created:				16 Jun, 2007
-# Whom:	Diego Depaoli <trebestie@gmail.com> and Yinghong.Liu <liu_yinghong@yahoo.com.cn>
+# Whom:	Diego Depaoli <trebestie@gmail.com> and Yinghong Liu <relaxbsd@gmail.com>
 #
 # $FreeBSD$
 #

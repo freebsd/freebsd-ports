@@ -1,17 +1,17 @@
 # Ports collection makefile for:	stardict-dict-korean
 # Date created:				20 May 2007
-# Whom:					Yinghong.Liu <liu_yinghong@yahoo.com.cn>
+# Whom:					Yinghong Liu <relaxbsd@gmail.com>
 # $FreeBSD$
 #
 
 PORTNAME=	stardict2-dict-kr
 PORTVERSION=	2.4.2
 CATEGORIES=	korean textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	stardict
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	Korean and foreign language Dictionaries for StarDict
 
 RUN_DEPENDS=	stardict:${PORTSDIR}/textproc/stardict2

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	cchess
 # Date created:				10 May 2007
-# Whom:					Yinghong.Liu <liu_yinghong@yahoo.com.cn>
+# Whom:					Yinghong Liu <relaxbsd@gmail.com>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	Very simple Chinese chess program
 
 LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro \

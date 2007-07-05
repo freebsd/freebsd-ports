@@ -1,6 +1,6 @@
 # New ports collection makefile for:	smplayer
 # Date created:				13 Jun, 2007
-# Whom:	Diego Depaoli <trebestie@gmail.com> and Yinghong.Liu <liu_yinghong@yahoo.com.cn>
+# Whom:	Diego Depaoli <trebestie@gmail.com> and Yinghong Liu <relaxbsd@gmail.com>
 #
 # $FreeBSD$
 #
@@ -8,10 +8,9 @@
 PORTNAME=	smplayer
 DISTVERSION=	0.5.0
 CATEGORIES=	multimedia audio kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT?=	A complete front-end based on QT3 for mplayer
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \

@@ -1,6 +1,6 @@
 # New ports collection makefile for:   dvdauthorwizard
 # Date created:        30 May 2007
-# Whom:                liu_yinghong@yahoo.com.cn
+# Whom:			Yinghong Liu <relaxbsd@gmail.com>
 #
 # $FreeBSD$
 #
@@ -8,11 +8,10 @@
 PORTNAME=	dvdauthorwizard
 PORTVERSION=	1.4.6
 CATEGORIES=	multimedia kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	DVDAuthorWizard-${PORTVERSION}
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	The tool for creating a DVD with fully animated menu from MPEG-2 files
 
 NO_BUILD=	yes

@@ -1,6 +1,6 @@
 # New ports collection makefile for:    zh-scim-fcitx
 # Date created:		8 May 2007
-# Whom:			Yinghong.Liu <liu_yinghong@yahoo.com.cn>
+# Whom:			Yinghong Liu <relaxbsd@gmail.com>
 #
 # $FreeBSD$
 #
@@ -8,12 +8,11 @@
 PORTNAME=	scim
 PORTVERSION=	3.1.1
 CATEGORIES=	chinese
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=scim
+MASTER_SITES=	SF
 PKGNAMESUFFIX=	-fcitx
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.${PORTVERSION}
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	An SCIM IMEngine module for fcitx
 
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
