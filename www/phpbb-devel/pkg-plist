@@ -703,6 +703,7 @@
 %%PHPBBDIR%%/styles/prosilver/theme/images/index.htm
 %%PHPBBDIR%%/styles/prosilver/theme/images/no_avatar.gif
 %%PHPBBDIR%%/styles/prosilver/theme/images/quote.gif
+%%PHPBBDIR%%/styles/prosilver/theme/bidi.css
 %%PHPBBDIR%%/styles/prosilver/theme/index.htm
 %%PHPBBDIR%%/styles/prosilver/theme/large.css
 %%PHPBBDIR%%/styles/prosilver/theme/links.css
