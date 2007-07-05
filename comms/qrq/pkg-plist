@@ -1,0 +1,5 @@
+bin/qrq
+%%DATADIR%%/callbase
+%%DATADIR%%/qrqrc
+%%DATADIR%%/toplist
+@dirrm %%DATADIR%%
