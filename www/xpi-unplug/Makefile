@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	unplug
-DISTVERSION=	1.6.00
+DISTVERSION=	1.6.06
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
-MASTER_SITES=	CSME
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Converts embedded media to html links
 
 XPI_ID=		unplug@compunach
+XPI_NUM=	2254
+
+post-extract:
+	@${FIND} ${WRKSRC} -type d -name CVS|${XARGS} ${RM} -rf
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

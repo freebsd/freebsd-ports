@@ -7,10 +7,10 @@
 %%XPI_XPIDIR%%/chrome/content/settings.xul
 %%XPI_XPIDIR%%/chrome/content/songbird.xul
 %%XPI_XPIDIR%%/chrome/content/streamsave.xul
-%%XPI_XPIDIR%%/chrome/content/u230.js
-%%XPI_XPIDIR%%/chrome/content/u230.xul
 %%XPI_XPIDIR%%/chrome/content/unplug.js
 %%XPI_XPIDIR%%/chrome/content/unplug_extern.js
+%%XPI_XPIDIR%%/chrome/content/unplug_httpreq.js
+%%XPI_XPIDIR%%/chrome/content/unplug_playlist.js
 %%XPI_XPIDIR%%/chrome/content/unplug_rulez.js
 %%XPI_XPIDIR%%/chrome/content/unplug_settings.js
 %%XPI_XPIDIR%%/chrome/content/unplug_streamwiz.js
