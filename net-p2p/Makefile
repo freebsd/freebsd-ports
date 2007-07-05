@@ -126,6 +126,7 @@
     SUBDIR += tvrss
     SUBDIR += valknut
     SUBDIR += verlihub
+    SUBDIR += verlihub-plugins
     SUBDIR += verlihub-plugins-floodprotect
     SUBDIR += verlihub-plugins-forbid
     SUBDIR += verlihub-plugins-iplog

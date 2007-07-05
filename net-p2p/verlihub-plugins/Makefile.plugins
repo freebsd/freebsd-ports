@@ -1,0 +1,32 @@
+# $FreeBSD$
+
+# common bits for verlihub plugins
+
+# this controls DISTNAME
+PLUGIN_NAME?=	${PORTNAME}
+
+PKGNAMEPREFIX=	verlihub-plugins-
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	verlihub
+DISTNAME=	${PLUGIN_NAME}
+
+BUILD_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
+RUN_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
+
+GNU_CONFIGURE=	yes
+
+PLIST_FILES+=	lib/lib${PLUGIN_NAME}_pi.a \
+		lib/lib${PLUGIN_NAME}_pi.la \
+		lib/lib${PLUGIN_NAME}_pi.so \
+		lib/lib${PLUGIN_NAME}_pi.so.0 \
+		etc/verlihub/plugins/lib${PLUGIN_NAME}_pi.so
+
+post-install::
+	@${MKDIR} ${PREFIX}/etc/verlihub/plugins
+	@${LN} -sf ${PREFIX}/lib/lib${PLUGIN_NAME}_pi.so \
+		${PREFIX}/etc/verlihub/plugins/lib${PLUGIN_NAME}_pi.so
+	@if [ -f ${PKGMESSAGE} ]; then \
+	   ${CAT} ${PKGMESSAGE}; \
+	 fi
+	@${ECHO_CMD} '@unexec rmdir %D/etc/verlihub/plugins 2>/dev/null || true' >> ${TMPPLIST}
+	@${ECHO_CMD} '@unexec rmdir %D/etc/verlihub 2>/dev/null || true' >> ${TMPPLIST}
