@@ -4,73 +4,19 @@ etc/slsh.rc
 include/slang.h
 include/slcurses.h
 lib/libslang.a
-lib/libslang.so.2.0.7
+lib/libslang.so.2.1.1
 lib/libslang.so.2
 lib/libslang.so
 lib/slang/v2/modules/fcntl-module.so
 %%PCRE%%lib/slang/v2/modules/pcre-module.so
 %%PNG%%lib/slang/v2/modules/png-module.so
+%%ICONV%%lib/slang/v2/modules/iconv-module.so
+%%ONIG%%lib/slang/v2/modules/onig-module.so
 lib/slang/v2/modules/select-module.so
 lib/slang/v2/modules/slsmg-module.so
 lib/slang/v2/modules/socket-module.so
 lib/slang/v2/modules/termios-module.so
 lib/slang/v2/modules/varray-module.so
-%%DATADIR%%/arrayfuns.sl
-%%DATADIR%%/autoload.sl
-%%DATADIR%%/cmaps/cool.map
-%%DATADIR%%/cmaps/copper.map
-%%DATADIR%%/cmaps/drywet.map
-%%DATADIR%%/cmaps/gebco.map
-%%DATADIR%%/cmaps/globe.map
-%%DATADIR%%/cmaps/gray.map
-%%DATADIR%%/cmaps/haxby.map
-%%DATADIR%%/cmaps/hot.map
-%%DATADIR%%/cmaps/jet.map
-%%DATADIR%%/cmaps/no_green.map
-%%DATADIR%%/cmaps/ocean.map
-%%DATADIR%%/cmaps/polar.map
-%%DATADIR%%/cmaps/rainbow.map
-%%DATADIR%%/cmaps/red2green.map
-%%DATADIR%%/cmaps/relief.map
-%%DATADIR%%/cmaps/sealand.map
-%%DATADIR%%/cmaps/seis.map
-%%DATADIR%%/cmaps/split.map
-%%DATADIR%%/cmaps/topo.map
-%%DATADIR%%/cmaps/wysiwyg.map
-%%DATADIR%%/fcntl.sl
-%%DATADIR%%/glob.sl
-%%DATADIR%%/help/arrayfuns.hlp
-%%DATADIR%%/help/glob.hlp
-%%DATADIR%%/help/pcrefuns.hlp
-%%DATADIR%%/help/pngfuns.hlp
-%%DATADIR%%/help/require.hlp
-%%DATADIR%%/help/sockfuns.hlp
-%%DATADIR%%/help/structfuns.hlp
-%%DATADIR%%/pcre.sl
-%%DATADIR%%/png.sl
-%%DATADIR%%/print.sl
-%%DATADIR%%/profile.sl
-%%DATADIR%%/require.sl
-%%DATADIR%%/scripts/jpegsize
-%%DATADIR%%/scripts/lsrpm
-%%DATADIR%%/scripts/sldb
-%%DATADIR%%/scripts/slprof
-%%DATADIR%%/scripts/svnsh
-%%DATADIR%%/select.sl
-%%DATADIR%%/sldb.sl
-%%DATADIR%%/sldbcore.sl
-%%DATADIR%%/slshrl.sl
-%%DATADIR%%/slsmg.sl
-%%DATADIR%%/socket.sl
-%%DATADIR%%/stkcheck.sl
-%%DATADIR%%/structfuns.sl
-%%DATADIR%%/termios.sl
-%%DATADIR%%/varray.sl
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/cmaps
-@dirrmtry %%DATADIR%%/local-packages
-@dirrm %%DATADIR%%
 @dirrm lib/slang/v2/modules
 @dirrm lib/slang/v2
 @dirrm lib/slang
