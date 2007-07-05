@@ -13749,7 +13749,7 @@ rprint		ports/print/rprint
 rpy		ports/math/rpy
 rqm		ports/mbone/rqm
 rrdman		ports/net/rrdman
-rrdtool		ports/net/rrdtool
+rrdtool		ports/databases/rrdtool
 rrdtool10	ports/net/rrdtool10
 rscheme		ports/lang/rscheme
 rshell		ports/net/rshell
