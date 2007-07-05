@@ -48,11 +48,9 @@ USE_KDELIBS_VER=3
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
-.if ${OSVERSION} < 500000
-CONFIGURE_ARGS+=--enable-final
-.endif
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_ACQUIREIMAGES)
 PLIST_SUB+=	ACQUIREIMAGES:=""
