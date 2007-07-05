@@ -7,7 +7,7 @@
 
 PORTNAME=	fspd
 PORTVERSION=	2.8.1.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fsp
@@ -46,8 +46,6 @@ OPTIONS=	NOCLIENTS "Omit client commands" off \
 .if defined(WITH_INFINITE)
 CONFIGURE_ARGS+=	--disable-timeout
 .endif
-
-PLIST_FILES=	bin/fspscan bin/fspd etc/fspd.conf.sample
 
 .if !defined(WITH_NOCLIENTS)
 .for command in ${CLIENTS}
