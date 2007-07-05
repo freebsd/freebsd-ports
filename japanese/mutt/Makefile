@@ -6,12 +6,12 @@
 
 PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/1.4/ \
 		http://my.reset.jp/~iwashita/mutt/distfiles/ \
 		http://ha4.seikyou.ne.jp/home/Kohtaro.Hitomi/mutt/ \
-		ftp://ftp.mutt.org/pub/mutt/devel/
+		ftp://ftp.mutt.org/pub/mutt/
 DISTNAME=	${PORTNAME}-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-ja.${JP_VERSION}${EXTRACT_SUFX} \
@@ -34,7 +34,7 @@ FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:253
+USE_AUTOTOOLS=	automake:19 autoconf:259
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib
