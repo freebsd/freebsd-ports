@@ -131,6 +131,7 @@
     SUBDIR += verlihub-plugins-iplog
     SUBDIR += verlihub-plugins-luascript
     SUBDIR += verlihub-plugins-messanger
+    SUBDIR += verlihub-plugins-stats
     SUBDIR += xmule
     SUBDIR += xnap
 
