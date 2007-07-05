@@ -127,6 +127,7 @@
     SUBDIR += valknut
     SUBDIR += verlihub
     SUBDIR += verlihub-plugins
+    SUBDIR += verlihub-plugins-chatroom
     SUBDIR += verlihub-plugins-floodprotect
     SUBDIR += verlihub-plugins-forbid
     SUBDIR += verlihub-plugins-iplog
