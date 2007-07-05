@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	gmidimonitor
-PORTVERSION=	3.1
-PORTREVISION=	1
+PORTVERSION=	3.2
 CATEGORIES=	audio
-MASTER_SITES=	https://files.bountysource.com/file/download/583/
+# WARNING: the path below changes with every release.  It's not enough to change
+# the version number above.
+MASTER_SITES=	https://files.bountysource.com/file/download/588/
 
 MAINTAINER=	trasz@freebsd.org
 COMMENT=	GTK+ application that shows MIDI events
