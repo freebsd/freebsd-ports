@@ -27,6 +27,8 @@ RUN_DEPENDS=	\
 		${LOCALBASE}/lib/libstats_pi.so:${PORTSDIR}/net-p2p/verlihub-plugins-stats
 
 NO_BUILD=	yes
-NO_INSTALL=	yes
+
+do-install:
+	@${DO_NADA}
 
 .include <bsd.port.mk>
