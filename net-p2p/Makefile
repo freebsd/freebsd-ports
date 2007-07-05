@@ -126,6 +126,7 @@
     SUBDIR += tvrss
     SUBDIR += valknut
     SUBDIR += verlihub
+    SUBDIR += verlihub-plugins-floodprotect
     SUBDIR += xmule
     SUBDIR += xnap
 
