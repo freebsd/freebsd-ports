@@ -34,6 +34,7 @@ bin/resolveip
 %%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_config_parameters.h
 %%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_config_parameters_debug.h
 %%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_debug.h
+%%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_error.h
 %%NDB%%include/mysql/storage/ndb/mgmapi/ndb_logevent.h
 %%NDB%%include/mysql/storage/ndb/mgmapi/ndbd_exit_codes.h
 %%NDB%%include/mysql/storage/ndb/ndb_constants.h
