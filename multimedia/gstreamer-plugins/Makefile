@@ -29,6 +29,8 @@ LIB_DEPENDS+=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
 		popt.0:${PORTSDIR}/devel/popt \
 		oil-0.3.1:${PORTSDIR}/devel/liboil
 
+CFLAGS:=	${CFLAGS} -O2
+
 BASE_PORTVERSION=	0.10.13
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}

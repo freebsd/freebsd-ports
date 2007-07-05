@@ -17,6 +17,7 @@ DISTNAME=	gst-ffmpeg-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 
+CFLAGS:=	${CFLAGS} -O2
 USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

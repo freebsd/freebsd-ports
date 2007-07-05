@@ -17,6 +17,7 @@ COMMENT=	GStreamer plugin for pulseaudio
 
 LIB_DEPENDS=	pulse.0:${PORTSDIR}/audio/pulseaudio
 
+CFLAGS:=	${CFLAGS} -O2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	lthack gnomehack

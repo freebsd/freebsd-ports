@@ -18,6 +18,7 @@ COMMENT=	Development framework for creating media applications
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
+CFLAGS:=	${CFLAGS} -O2
 USE_XLIB=	yes
 USE_BISON=	yes
 USE_BZIP2=	yes
