@@ -127,6 +127,7 @@
     SUBDIR += valknut
     SUBDIR += verlihub
     SUBDIR += verlihub-plugins-floodprotect
+    SUBDIR += verlihub-plugins-forbid
     SUBDIR += xmule
     SUBDIR += xnap
 
