@@ -26,8 +26,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-BROKEN=		Does not build
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GETTEXT=	yes
 USE_XLIB=	yes
@@ -37,6 +35,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		ives.1 xjpegroot.1 xnc.1 xnlaunch.1 iedit.1 iview.1
+
+post-configure:
+	${REINPLACE_CMD} -e 's|-I$$(MYSRCDIR)/intl||;s|$${top_builddir}/intl/libintl.a|-lintl|' \
+		${WRKSRC}/src/ives/makefile \
+		${WRKSRC}/src/launch/makefile \
+		${WRKSRC}/src/xsetup/makefile \
+		${WRKSRC}/src/makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
