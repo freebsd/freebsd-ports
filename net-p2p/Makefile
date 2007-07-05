@@ -130,6 +130,7 @@
     SUBDIR += verlihub-plugins-floodprotect
     SUBDIR += verlihub-plugins-forbid
     SUBDIR += verlihub-plugins-iplog
+    SUBDIR += verlihub-plugins-isp
     SUBDIR += verlihub-plugins-luascript
     SUBDIR += verlihub-plugins-messanger
     SUBDIR += verlihub-plugins-stats
