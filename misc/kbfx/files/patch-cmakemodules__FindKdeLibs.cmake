@@ -1,6 +1,6 @@
---- ./cmakemodules/FindKdeLibs.cmake.orig	Thu Dec 14 11:00:32 2006
-+++ ./cmakemodules/FindKdeLibs.cmake	Wed Jan 31 00:22:35 2007
-@@ -159,7 +159,7 @@
+--- ./cmakemodules/FindKdeLibs.cmake.orig	Fri Mar  9 03:04:51 2007
++++ ./cmakemodules/FindKdeLibs.cmake	Tue Jun 12 11:11:19 2007
+@@ -139,7 +139,7 @@
  ## the following are directories where stuff will be installed to
  SET(BIN_INSTALL_DIR          "${EXEC_INSTALL_PREFIX}/bin"                  CACHE PATH "The kde bin install dir (default prefix/bin)" FORCE)
  SET(SBIN_INSTALL_DIR         "${EXEC_INSTALL_PREFIX}/sbin"                 CACHE PATH "The kde sbin install dir (default prefix/sbin)" FORCE)
