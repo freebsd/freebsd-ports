@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	http-access
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.9
 CATEGORIES=	www ruby
 MASTER_SITES=	http://dev.ctor.org/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -22,6 +21,7 @@ NO_BUILD=	yes
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
+	${INSTALL_DATA} ${WRKSRC}/lib/http-access2/cacert.p7s ${RUBY_SITELIBDIR}/http-access2/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${CP} -R ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
