@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	games tk84
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/JACOBY/
 
-MAINTAINER=	johnh@isi.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A solitaire game for X11 modeled after Free Space
 
 GNU_CONFIGURE=	yes
