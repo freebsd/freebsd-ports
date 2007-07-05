@@ -1,3 +1,4 @@
 bin/qjackctl
-share/icons/qjackctl.png
-@dirrmtry share/icons
+share/pixmaps/qjackctl.png
+share/applications/qjackctl.desktop
+@dirrmtry share/applications
