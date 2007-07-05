@@ -15,6 +15,7 @@ DISTNAME=	gnonlin-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gstreamer lib for writing non-linear audio and video
 
+CFLAGS:=	${CFLAGS} -O2
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes

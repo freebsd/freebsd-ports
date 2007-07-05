@@ -14,6 +14,7 @@ DISTNAME=	gst-fluendo-mp3-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Mp3 gstreamer plugin from fluendo
 
+CFLAGS:=	${CFLAGS} -O2
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/gstreamer-0.10/libgstflump3dec.a \
