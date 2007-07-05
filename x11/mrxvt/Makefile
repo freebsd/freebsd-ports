@@ -1,6 +1,6 @@
 # New ports collection makefile for:	mrxvt
 # Date created:				27 Nov 2004
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	materm
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A tabbed version of rxvt
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

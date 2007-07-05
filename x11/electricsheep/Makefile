@@ -1,6 +1,6 @@
 # New ports collection makefile for:	electricsheep
 # Date created:				11 Feb 2002
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A nice distributed screensaver
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \

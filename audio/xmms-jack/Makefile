@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xmms-jack
 # Date created:				13 Mar 2004
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	xmms-jack
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	XMMS plugin for jack
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \

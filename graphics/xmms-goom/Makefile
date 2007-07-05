@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xmms-goom
 # Date created:				20 Jan 2002
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	xmms-
 DISTNAME=	xmms-goom_${PORTVERSION:S/.p/pre/}-2
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A cool XMMS visualization
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms \

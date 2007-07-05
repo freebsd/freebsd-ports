@@ -1,6 +1,6 @@
 # New ports collection makefile for:	lush
 # Date created:				20 May 2003
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 
@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lush
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A high level object-oriented programming language
 
 USE_GETTEXT=	yes

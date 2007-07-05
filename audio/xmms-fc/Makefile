@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xmms-fc
 # Date created:				8 Jan 2002
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A XMMS future composer input plugin
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

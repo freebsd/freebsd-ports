@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xmms-infinity
 # Date created:				14 Dec 2001
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://julien.carme.free.fr/
 DISTNAME=	infinity-${PORTVERSION}
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A XMMS plug-in which generate full-screen interactive light effects
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

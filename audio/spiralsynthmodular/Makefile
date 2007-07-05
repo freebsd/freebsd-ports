@@ -1,6 +1,6 @@
 # New ports collection makefile for:	spiralsynthmodular
 # Date created:				2003 Jan 30
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	spiralmodular
 DISTNAME=	spiralmodular-${PORTVERSION}
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	An object orientated modular softsynth / sequencer / sampler
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa

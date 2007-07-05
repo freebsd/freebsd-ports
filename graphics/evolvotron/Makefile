@@ -1,6 +1,6 @@
 # New ports collection makefile for:	evolvotron
 # Date created:				16 Mar 2003
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 
@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	Generative software that evolves images/textures/patterns
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

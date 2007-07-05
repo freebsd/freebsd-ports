@@ -1,6 +1,6 @@
 # New ports collection makefile for:	leocad
 # Date created:				27 Jan 2002
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	arved
 DISTFILES=	leocad-${PORTVERSION:S/.p/pre/}.tgz leocad-pieces-20030330.zip
 EXTRACT_ONLY=	leocad-${PORTVERSION:S/.p/pre/}.tgz
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A CAD program that uses bricks similar to those found in many toys
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip

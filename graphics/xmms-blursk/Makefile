@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xmms-blursk
 # Date created:				19 Aug 2002
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://web.cecs.pdx.edu/~kirkenda/blursk/
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	Blursk-${PORTVERSION}
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A XMMS plugin inspired by "Blur Scope"
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

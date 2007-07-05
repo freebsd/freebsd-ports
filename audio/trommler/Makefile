@@ -1,6 +1,6 @@
 # New ports collection makefile for:	trommler
 # Date created:				17 Apr 2003
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://muth.org/Robert/Trommler/
 DISTNAME=	trommler.3.4
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	A GTK based drum machine
 
 WRKSRC=		${WRKDIR}/Trommler

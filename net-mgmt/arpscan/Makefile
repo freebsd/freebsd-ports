@@ -1,6 +1,6 @@
 # New ports collection makefile for:	arpscan
 # Date created:				22 Mar 2004
-# Whom:					David Yeske <dyeske@yahoo.com>
+# Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://ish.cx/~jason/arpscan/ \
 		http://unx.ca/~jason/arpscan/
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	Simple arp scanner
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
