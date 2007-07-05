@@ -4,6 +4,7 @@
    COMMENT = Ports for managing, installing and developing FreeBSD ports and packages
 
    SUBDIR += barry
+   SUBDIR += bpkg
    SUBDIR += bpm
    SUBDIR += genplist
    SUBDIR += instant-tinderbox
