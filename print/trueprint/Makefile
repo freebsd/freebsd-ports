@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	trueprint
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print program listings on postscript printer
 
 USE_GMAKE=	yes
