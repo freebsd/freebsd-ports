@@ -23,6 +23,10 @@ USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	i386
 
+post-patch:
+	@${REINPLACE_CMD} -E -e 's,(objformat=).*,\1elf,' \
+		${WRKSRC}/configure
+
 post-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/Flash.dev ${DATADIR}
