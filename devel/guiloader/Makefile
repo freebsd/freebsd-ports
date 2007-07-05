@@ -1,6 +1,6 @@
 # New ports collection makefile for:	guiloader
 # Date created:		11 May 2007
-# Whom:			Yinghong.Liu <liu_yinghong@yahoo.com.cn>
+# Whom:			Yinghong Liu <relaxbsd@gmail.com>
 #
 # $FreeBSD$
 #
@@ -8,10 +8,10 @@
 PORTNAME=	guiloader
 PORTVERSION=	2.10.0
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	crow-designer
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	A C++ binding to the GuiLoader library
 
 USE_BZIP2=	yes

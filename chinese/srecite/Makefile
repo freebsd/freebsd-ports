@@ -9,14 +9,13 @@ PORTNAME=	srecite
 PORTVERSION=	0.6.2
 PORTREVISION=	4
 CATEGORIES=	chinese textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		wordbooks-utf8.tar.gz
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		wordbooks-utf8.tar.gz
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	A tool for the Chinese people to study foreign language
 
 GNU_CONFIGURE=	yes

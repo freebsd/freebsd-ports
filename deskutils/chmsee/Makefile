@@ -1,6 +1,6 @@
 # New ports collection makefile for:	chmsee
 # Date created:                		10 June 2006
-# Whom:                    		Liu.Yinghong <liu_yinghong@yahoo.com.cn>
+# Whom:                    		Yinghong Liu <relaxbsd@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://chmsee.gro.clinux.org/
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	A viewer for Microsoft Help "CHM" files
 
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \

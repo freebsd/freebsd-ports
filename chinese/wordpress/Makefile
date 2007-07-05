@@ -1,6 +1,6 @@
 # New ports collection makefile for:	wordpress
 # Date created:		2007-05-11
-# Whom:			Yinghong.Liu <liu_yinghong@yahoo.com.cn>
+# Whom:			Yinghong Liu <relaxbsd@gmail.com>
 #
 # $FreeBSD$
 #
@@ -9,12 +9,12 @@ PORTNAME=	wordpress
 PORTVERSION=	2.2
 PORTREVISION=	1
 CATEGORIES=	chinese www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}-zh
 PKGNAMEPREFIX=	zh-
 DISTNAME=	${PORTNAME}_${PORTVERSION}_zh_CN
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	A state-of-the-art semantic personal publishing platform
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

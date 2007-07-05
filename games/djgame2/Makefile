@@ -1,6 +1,6 @@
 # New ports collection makefile for:	djgame2
 # Date created:		4 May 2007
-# Whom:			Yinghong.Liu <liuyh@gmx.net>
+# Whom:			Yinghong Liu <relaxbsd@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.bluedj.com/download/src/
 DISTNAME=	source-${PORTVERSION}
 #EXTRACT_SUFX=	.zip
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	bluedj contains many popular online games
 
 NO_BUILD=	yes

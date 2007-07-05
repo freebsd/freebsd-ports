@@ -18,7 +18,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
 		${PORTNAME}-books-${PORTVERSION}.tar.bz2 \
 		${PORTNAME}-dicts-0.8.2.tar.bz2
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	Education software to help people to study English
 
 GNU_CONFIGURE=	yes

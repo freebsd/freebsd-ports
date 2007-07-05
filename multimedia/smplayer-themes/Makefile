@@ -1,6 +1,6 @@
 # New ports collection makefile for:	mplayer-themes
 # Date created:				18 Jun, 2007
-# Whom:	Diego Depaoli <trebestie@gmail.com> and Yinghong.Liu <liu_yinghong@yahoo.com.cn>
+# Whom:	Diego Depaoli <trebestie@gmail.com> and Yinghong Liu <relaxbsd@gmail.com>
 #
 # $FreeBSD$
 #
@@ -8,10 +8,10 @@
 PORTNAME=	smplayer-themes
 PORTVERSION=	0.1.1
 CATEGORIES=	multimedia audio kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=smplayer
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	Themes for smplayer
 
 NO_BUILD=	yes

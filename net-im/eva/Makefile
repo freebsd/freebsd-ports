@@ -9,14 +9,14 @@ PORTNAME=	eva
 PORTVERSION=	0.4.1
 PORTREVISION=	4
 CATEGORIES=	net-im kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	evaq
 
 PATCH_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
 PATCHFILES=	eva-0.4.1_20070504.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	QQ IM Client for KDE3
 
 USE_KDELIBS_VER=3

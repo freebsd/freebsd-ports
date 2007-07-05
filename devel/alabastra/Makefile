@@ -1,6 +1,6 @@
 # New ports collection makefile for:	alabastra
 # Date created:				20 Jun 2007
-# Whom:					Yinghong.Liu <liu_yinghong@yahoo.com.cn>
+# Whom:					Yinghong Liu <relaxbsd@gmail.com>
 #
 # $FreeBSD$
 
@@ -9,12 +9,11 @@ PORTVERSION=	0.2b
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=${PORTNAME}
 DISTNAME=	Alabastra-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
-COMMENT=	C++ Editor writed with QT4
+MAINTAINER=	relaxbsd@gmail.com
+COMMENT=	C++ Editor writen with QT4
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake moc gui xml uic rcc
