@@ -41,6 +41,10 @@ PLIST_SUB+=	PYTHON="@comment "
 PORTDOCS=	README README.FreeBSD
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -E -e 's,(objformat=).*,\1elf,' \
+		${WRKSRC}/configure
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
