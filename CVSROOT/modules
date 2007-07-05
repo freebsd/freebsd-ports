@@ -11396,6 +11396,7 @@ p5-vpopmail	ports/mail/p5-vpopmail
 p5-webservice-validator-css-w3c		ports/www/p5-webservice-validator-css-w3c
 p5-webservice-validator-html-w3c	ports/www/p5-webservice-validator-html-w3c
 p5-xmltv	ports/textproc/p5-xmltv
+p5-xmms2	ports/audio/p5-xmms2
 p54u		ports/net/p54u
 p65		ports/devel/p65
 p7zip		ports/archivers/p7zip
