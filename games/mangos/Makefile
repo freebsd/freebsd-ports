@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mangos
-PORTVERSION=	3909
+PORTVERSION=	4010
 CATEGORIES=	games
 MASTER_SITES=	CENKES http://mangos-port.by.ru/ \
 		http://neon.heavennet.ru/mangos/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
-SCRIPTDEV2REV=	58
+SCRIPTDEV2REV=	64
 
 MAINTAINER=    	neon_cyrex@mail.ru
 COMMENT=	Free dedicated-server for World of Warcraft
