@@ -333,7 +333,13 @@ lib/libmangosscript.so.0
 %%DATADIR%%/sql/updates/3876_character_ticket.sql
 %%DATADIR%%/sql/updates/3884_quest_scripts.sql
 %%DATADIR%%/sql/updates/3891_quest_scripts.sql
-%%DATADIR%%/sql/updates/3906_areatrigger_template.sql						
+%%DATADIR%%/sql/updates/3906_areatrigger_template.sql
+%%DATADIR%%/sql/updates/3929_spell_affect.sql
+%%DATADIR%%/sql/updates/3932_item_enchantment_template.sql
+%%DATADIR%%/sql/updates/3932_item_template.sql
+%%DATADIR%%/sql/updates/3939_realmd_account.sql
+%%DATADIR%%/sql/updates/3948_realmd_account.sql
+%%DATADIR%%/sql/updates/3951_exploration_basexp.sql
 %%DATADIR%%/sql/updates/README
 %%DBC%%%%DATADIR%%/dbc/AnimationData.dbc
 %%DBC%%%%DATADIR%%/dbc/AreaPOI.dbc
@@ -515,6 +521,8 @@ lib/libmangosscript.so.0
 %%SD2%%share/scriptdev2/sql/updates/11_SilvaFilnaveth.sql
 %%SD2%%share/scriptdev2/sql/updates/27_Vaelastraz.sql
 %%SD2%%share/scriptdev2/sql/updates/r56.sql
+%%SD2%%share/scriptdev2/sql/updates/r59.sql
+%%SD2%%share/scriptdev2/sql/updates/r63.sql
 @dirrm %%DATADIR%%/sql/updates
 @dirrm %%DATADIR%%/sql
 %%DBC%%@dirrm %%DATADIR%%/dbc
