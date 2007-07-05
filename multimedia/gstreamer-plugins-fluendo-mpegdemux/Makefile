@@ -14,6 +14,7 @@ DISTNAME=	gst-fluendo-mpegdemux-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG2 demuxing gstreamer plugin from fluendo
 
+CFLAGS:=	${CFLAGS} -O2
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/gstreamer-0.10/libgstflumpegdemux.a \

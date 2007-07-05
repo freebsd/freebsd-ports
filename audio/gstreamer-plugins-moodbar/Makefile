@@ -19,6 +19,7 @@ COMMENT=	Shows the "moods" of audio tracks in Amarok
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
 		fftw3:${PORTSDIR}/math/fftw3
 
+CFLAGS:=	${CFLAGS} -O2
 USE_GSTREAMER=	yes good
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
