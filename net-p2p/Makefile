@@ -130,6 +130,7 @@
     SUBDIR += verlihub-plugins-forbid
     SUBDIR += verlihub-plugins-iplog
     SUBDIR += verlihub-plugins-luascript
+    SUBDIR += verlihub-plugins-messanger
     SUBDIR += xmule
     SUBDIR += xnap
 
