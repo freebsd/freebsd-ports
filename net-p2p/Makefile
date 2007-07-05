@@ -126,7 +126,6 @@
     SUBDIR += tvrss
     SUBDIR += valknut
     SUBDIR += verlihub
-    SUBDIR += verlihub-plugins-chatroom
     SUBDIR += xmule
     SUBDIR += xnap
 
