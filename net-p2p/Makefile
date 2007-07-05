@@ -129,6 +129,7 @@
     SUBDIR += verlihub-plugins-floodprotect
     SUBDIR += verlihub-plugins-forbid
     SUBDIR += verlihub-plugins-iplog
+    SUBDIR += verlihub-plugins-luascript
     SUBDIR += xmule
     SUBDIR += xnap
 
