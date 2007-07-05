@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	rrfw
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Apply Holt-Winters prediction parameters to RRD data
 
-BUILD_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool
+BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	YES

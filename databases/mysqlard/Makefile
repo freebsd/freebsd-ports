@@ -13,7 +13,7 @@ MASTER_SITES=	http://gert.sos.be/downloads/mysqlar/
 MAINTAINER=	gregoryba@gmail.com
 COMMENT=	A tool to collect and graph database statistics from mysql
 
-BUILD_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool
+BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_APACHE=	1.3+

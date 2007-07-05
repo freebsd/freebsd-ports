@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Simple grapher of SNMP data with RRD
 
-RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
+RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		p5-Color-Rgb>0:${PORTSDIR}/graphics/p5-Color-Rgb
 BUILD_DEPENDS=	${RUN_DEPENDS}
 

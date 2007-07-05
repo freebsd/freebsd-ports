@@ -17,7 +17,7 @@ MAINTAINER=	freebsd@troback.com
 COMMENT=	SNMP-based network and system monitor with web interface
 
 RUN_DEPENDS=	\
-		rrdtool:${PORTSDIR}/net/rrdtool \
+		rrdtool:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \

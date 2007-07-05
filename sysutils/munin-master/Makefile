@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.r/rc/}
 MAINTAINER=	lupe@lupe-christoph.de
 COMMENT=	Collector part of Munin
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/RRDs.pm:${PORTSDIR}/net/rrdtool \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/RRDs.pm:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip

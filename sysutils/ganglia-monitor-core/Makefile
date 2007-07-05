@@ -63,7 +63,7 @@ USE_RC_SUBR=	ganglia.sh
 
 
 .if defined (WITH_GMETAD)
-LIB_DEPENDS=	rrd.2:${PORTSDIR}/net/rrdtool
+LIB_DEPENDS=	rrd.2:${PORTSDIR}/databases/rrdtool
 CONFIGURE_ARGS+=	--with-gmetad
 PLIST_SUB+=	GMETAD=
 SUB_LIST+=	GMETAD=
