@@ -459,6 +459,7 @@
     SUBDIR += p5-Xmms
     SUBDIR += p5-libvorbis
     SUBDIR += p5-tagged
+    SUBDIR += p5-xmms2
     SUBDIR += pacpl
     SUBDIR += paman
     SUBDIR += pd
