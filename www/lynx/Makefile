@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.6
-PORTREVISION=	5
+PORTVERSION=	2.8.6.5
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/ \
 		ftp://lynx.isc.org/lynx${PORTVERSION}/patches/:patches
-DISTNAME=	${PORTNAME}${PORTVERSION}rel.4
+DISTNAME=	${PORTNAME}${PORTVERSION:R}rel.${PORTVERSION:E}
 
 MAINTAINER?=	jharris@widomaker.com
 COMMENT?=	A non-graphical, text-based World-Wide Web client
@@ -20,17 +19,31 @@ COMMENT?=	A non-graphical, text-based World-Wide Web client
 CONFLICTS?=	lynx-ssl* lynx-current*
 
 USE_BZIP2=	yes
+USE_ICONV=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-6
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies \
-		--enable-ipv6 --with-curses-dir=/usr
+		--with-curses-dir=/usr --with-libiconv-prefix="${LOCALBASE}"
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+.else
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=--enable-nls
+.endif
+
+.if defined(NO_INET6)
+CONFIGURE_ARGS+=--disable-ipv6
+.else
+CONFIGURE_ARGS+=--enable-ipv6
+.endif
 
 .if defined(ENABLE_DEFAULT_COLORS)
 CONFIGURE_ARGS+=--enable-default-colors
 .endif
 
-MAKE_ARGS=	helpdir=${L_HELP} docdir=${DOCSDIR}
+MAKE_ARGS=	helpdir=${L_HELP} docdir=${DOCSDIR}	#-j`${SYSCTL} -n hw.ncpu`
 MAKEFILE=	makefile
 INSTALL_TARGET=	install-full
 MAN1=		lynx.1
