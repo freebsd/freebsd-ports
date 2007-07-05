@@ -15831,6 +15831,15 @@ ventrilo-server	ports/audio/ventrilo-server
 vera		ports/misc/vera
 verbiste	ports/french/verbiste
 verlihub	ports/net-p2p/verlihub
+verlihub-plugins	ports/net-p2p/verlihub-plugins
+verlihub-plugins-chatroom	ports/net-p2p/verlihub-plugins-chatroom
+verlihub-plugins-floodprotect	ports/net-p2p/verlihub-plugins-floodprotect
+verlihub-plugins-forbid	ports/net-p2p/verlihub-plugins-forbid
+verlihub-plugins-iplog	ports/net-p2p/verlihub-plugins-iplog
+verlihub-plugins-isp	ports/net-p2p/verlihub-plugins-isp
+verlihub-plugins-luascript	ports/net-p2p/verlihub-plugins-luascript
+verlihub-plugins-messanger	ports/net-p2p/verlihub-plugins-messanger
+verlihub-plugins-stats	ports/net-p2p/verlihub-plugins-stats
 versuch		ports/net/versuch
 vertex		ports/graphics/vertex
 vexim		ports/mail/vexim
