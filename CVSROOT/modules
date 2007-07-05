@@ -13364,6 +13364,7 @@ qpopper		ports/mail/qpopper
 qpxtool		ports/sysutils/qpxtool
 qrash		ports/x11/qrash
 qrfcview	ports/deskutils/qrfcview
+qrq		ports/comms/qrq
 qsa		ports/devel/qsa
 qscan		ports/mail/qscan
 qscanplot	ports/math/qscanplot
