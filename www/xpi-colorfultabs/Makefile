@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	colorfultabs
-PORTVERSION=	2.0.2
-DISTVERSIONSUFFIX=	-firefox
+PORTVERSION=	2.0.4
+DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -15,8 +15,8 @@ COMMENT=	Colors every tab in a different color
 
 XPI_ID=		{0545b830-f0aa-4d7e-8820-50a4629a56fe}
 XPI_NUM=	1368
-XPI_FILES=	chrome/clrtabs.jar chrome.manifest defaults/preferences/defaults.js install.js \
-		install.rdf
+XPI_FILES=	chrome/clrtabs.jar chrome/todo.txt chrome.manifest \
+		defaults/preferences/defaults.js install.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
