@@ -37,6 +37,7 @@ world		-a .
 CVSROOT		CVSROOT
 access		CVSROOT access
 avail		CVSROOT avail
+bpkg		ports/ports-mgmt/bpkg
 commit_prep	CVSROOT commit_prep.pl
 commitcheck	CVSROOT commitcheck
 commitinfo	CVSROOT commitinfo
