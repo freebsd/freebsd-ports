@@ -1,0 +1,10 @@
+--------------------------------------------------------------------
+
+This port installs the Statistics VerliHub plugin.
+You need to restart your hub or manually load plugin with
+plugman commands.
+
+Visit http://www.verlihub-project.org/ for online manuals or 
+http://www.verlihubforums.com/ for the project's forums.
+
+-------------------------------------------------------------------
