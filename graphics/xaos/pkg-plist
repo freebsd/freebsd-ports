@@ -4,6 +4,7 @@ share/locale/de/LC_MESSAGES/xaos.mo
 share/locale/es/LC_MESSAGES/xaos.mo
 share/locale/fr/LC_MESSAGES/xaos.mo
 share/locale/hu/LC_MESSAGES/xaos.mo
+share/locale/ro/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/catalogs/README
 %%XAOSDIR%%/catalogs/cesky.cat
 %%XAOSDIR%%/catalogs/deutsch.cat
@@ -11,6 +12,7 @@ share/locale/hu/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/catalogs/espanhol.cat
 %%XAOSDIR%%/catalogs/francais.cat
 %%XAOSDIR%%/catalogs/magyar.cat
+%%XAOSDIR%%/catalogs/romanian.cat
 %%XAOSDIR%%/doc/AUTHORS
 %%XAOSDIR%%/doc/PROBLEMS
 %%XAOSDIR%%/doc/README
@@ -56,6 +58,7 @@ share/locale/hu/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/examples/edge2.xpf
 %%XAOSDIR%%/examples/edge3.xpf
 %%XAOSDIR%%/examples/eifell.xpf
+%%XAOSDIR%%/examples/fract0.xpf
 %%XAOSDIR%%/examples/fract1.xpf
 %%XAOSDIR%%/examples/galaxy.xpf
 %%XAOSDIR%%/examples/gamma.xpf
@@ -64,6 +67,8 @@ share/locale/hu/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/examples/head.xpf
 %%XAOSDIR%%/examples/head2.xpf
 %%XAOSDIR%%/examples/head3.xpf
+%%XAOSDIR%%/examples/hornflake1.xpf
+%%XAOSDIR%%/examples/hornflake2.xpf
 %%XAOSDIR%%/examples/impulzus.xpf
 %%XAOSDIR%%/examples/incolor1.xpf
 %%XAOSDIR%%/examples/incolor2.xpf
@@ -161,9 +166,13 @@ share/locale/hu/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/examples/zsigapro.xpf
 %%XAOSDIR%%/help/xaos.hlp
 %%XAOSDIR%%/tutorial/3dtutor.xaf
+%%XAOSDIR%%/tutorial/Bclosing.xaf
+%%XAOSDIR%%/tutorial/Bintro.xaf
+%%XAOSDIR%%/tutorial/Bolyai.xaf
 %%XAOSDIR%%/tutorial/anim.xaf
 %%XAOSDIR%%/tutorial/anim.xhf
 %%XAOSDIR%%/tutorial/barnsley.xaf
+%%XAOSDIR%%/tutorial/classic.xaf
 %%XAOSDIR%%/tutorial/coast.xhf
 %%XAOSDIR%%/tutorial/dimension.xaf
 %%XAOSDIR%%/tutorial/escape.xaf
@@ -177,6 +186,7 @@ share/locale/hu/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/tutorial/flake5.xhf
 %%XAOSDIR%%/tutorial/flaketh.xhf
 %%XAOSDIR%%/tutorial/fmath.xaf
+%%XAOSDIR%%/tutorial/fourfr.xaf
 %%XAOSDIR%%/tutorial/fractal.xaf
 %%XAOSDIR%%/tutorial/head.xhf
 %%XAOSDIR%%/tutorial/incolor.xaf
@@ -192,6 +202,7 @@ share/locale/hu/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/tutorial/newton.xaf
 %%XAOSDIR%%/tutorial/octo.xaf
 %%XAOSDIR%%/tutorial/other.xaf
+%%XAOSDIR%%/tutorial/otherfr.xaf
 %%XAOSDIR%%/tutorial/outcolor.xaf
 %%XAOSDIR%%/tutorial/outnew.xhf
 %%XAOSDIR%%/tutorial/palette.xaf
@@ -205,6 +216,7 @@ share/locale/hu/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/tutorial/render.xaf
 %%XAOSDIR%%/tutorial/square.xhf
 %%XAOSDIR%%/tutorial/tree.xhf
+%%XAOSDIR%%/tutorial/trice.xaf
 %%XAOSDIR%%/tutorial/truecol.xaf
 %%XAOSDIR%%/tutorial/truecol.xhf
 @dirrm %%XAOSDIR%%/catalogs
