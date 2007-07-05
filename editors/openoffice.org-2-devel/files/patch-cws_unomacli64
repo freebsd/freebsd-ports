@@ -1330,7 +1330,7 @@ CWS unomacli64:	#i77422#, #i77600#, #i78114#, #i78143#, #i78284#, and #i78830#
  	Reference<XComponentContext> xDelegate(pDelegatee, SAL_NO_ACQUIRE);
  	Reference<XComponentContext> xContext;
 --- cppuhelper/source/gcc3.map	1 Jan 1970 00:00:00 -0000
-+++ cppuhelper/source/gcc3.map	29 Jun 2007 11:13:54 -0000	1.1.2.1
++++ cppuhelper/source/gcc3.map	4 Jul 2007 18:08:24 -0000	1.1.2.2
 @@ -0,0 +1,366 @@
 +UDK_3_0_0 {
 +	global:
@@ -1443,7 +1443,7 @@ CWS unomacli64:	#i77422#, #i77600#, #i78114#, #i78143#, #i78284#, and #i78830#
 +_ZN4cppu20OPropertyArrayHelper4initEh;
 +_ZN4cppu20OPropertyArrayHelperC1EPN3com3sun4star5beans8PropertyE?h;
 +_ZN4cppu20OPropertyArrayHelperC1ERKN3com3sun4star3uno8SequenceINS3_5beans8PropertyEEEh;
-+_ZN4cppu20OPropertyArrayHelperC2EPN3com3sun4star5beans8PropertyElh;
++_ZN4cppu20OPropertyArrayHelperC2EPN3com3sun4star5beans8PropertyE?h;
 +_ZN4cppu20OPropertyArrayHelperC2ERKN3com3sun4star3uno8SequenceINS3_5beans8PropertyEEEh;
 +_ZN4cppu20WeakImplHelper_queryERKN3com3sun4star3uno4TypeEPNS_10class_dataEPvPNS_11OWeakObjectE;
 +_ZN4cppu20createNestedRegistryERKN3rtl8OUStringE;
