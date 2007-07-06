@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	termios
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 PORTEPOCH=	1
 CATEGORIES=	comms ruby
 MASTER_SITES=	http://arika.org/archive/
