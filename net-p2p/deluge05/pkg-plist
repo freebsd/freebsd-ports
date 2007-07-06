@@ -34,34 +34,59 @@ share/applications/deluge.desktop
 %%DATADIR%%/glade/aboutdialog.glade
 %%DATADIR%%/glade/delugegtk.glade
 %%DATADIR%%/glade/dgtkpopups.glade
+%%DATADIR%%/glade/edit_trackers.glade
 %%DATADIR%%/glade/file_tab_menu.glade
 %%DATADIR%%/glade/plugin_dialog.glade
 %%DATADIR%%/glade/preferences_dialog.glade
 %%DATADIR%%/glade/torrent_menu.glade
+%%DATADIR%%/glade/tray_menu.glade
 %%DATADIR%%/pixmaps/deluge-about.png
 %%DATADIR%%/pixmaps/deluge128.png
 %%DATADIR%%/pixmaps/deluge192.png
 %%DATADIR%%/pixmaps/deluge22.png
 %%DATADIR%%/pixmaps/deluge256.png
 %%DATADIR%%/pixmaps/deluge32.png
+%%DATADIR%%/pixmaps/downloading16.png
+%%DATADIR%%/pixmaps/inactive16.png
+%%DATADIR%%/pixmaps/seeding16.png
+%%DATADIR%%/plugins/BlocklistImport/__init__.py
+%%DATADIR%%/plugins/BlocklistImport/listfile1.txt
+%%DATADIR%%/plugins/BlocklistImport/listfile2.txt
+%%DATADIR%%/plugins/BlocklistImport/nipfilter.dat.gz
+%%DATADIR%%/plugins/BlocklistImport/peerguardian.py
+%%DATADIR%%/plugins/BlocklistImport/pg.txt
+%%DATADIR%%/plugins/BlocklistImport/splist.txt
+%%DATADIR%%/plugins/BlocklistImport/test.py
+%%DATADIR%%/plugins/BlocklistImport/text.py
+%%DATADIR%%/plugins/BlocklistImport/ui.py
+%%DATADIR%%/plugins/DesiredRatio/__init__.py
+%%DATADIR%%/plugins/ExamplePlugin/__init__.py
 %%DATADIR%%/plugins/ExamplePlugin/example-plugin.png
 %%DATADIR%%/plugins/ExamplePlugin/example.glade
 %%DATADIR%%/plugins/ExamplePlugin/plugin.py
-%%DATADIR%%/plugins/HelloWorld/plugin.py
+%%DATADIR%%/plugins/HelloWorld/__init__.py
+%%DATADIR%%/plugins/NetworkGraph/__init__.py
 %%DATADIR%%/plugins/NetworkGraph/plugin.py
+%%DATADIR%%/plugins/NetworkHealth/__init__.py
 %%DATADIR%%/plugins/NetworkHealth/plugin.py
-%%DATADIR%%/plugins/TorrentCreator/plugin.py
-%%DATADIR%%/plugins/TorrentCreator/tcreator.glade
+%%DATADIR%%/plugins/Scheduler/__init__.py
+%%DATADIR%%/plugins/Scheduler/plugin.py
+%%DATADIR%%/plugins/TorrentCreator/__init__.py
+%%DATADIR%%/plugins/TorrentCreator/torrentcreator.glade
+%%DATADIR%%/plugins/TorrentSearch/__init__.py
 %%DATADIR%%/plugins/TorrentSearch/plugin.py
 %%DATADIR%%/plugins/TorrentSearch/searchdlg.glade
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/locale/ar/LC_MESSAGES/deluge.mo
+share/locale/ast/LC_MESSAGES/deluge.mo
 share/locale/bg/LC_MESSAGES/deluge.mo
 share/locale/ca/LC_MESSAGES/deluge.mo
 share/locale/cs/LC_MESSAGES/deluge.mo
 share/locale/da/LC_MESSAGES/deluge.mo
 share/locale/de/LC_MESSAGES/deluge.mo
 share/locale/el/LC_MESSAGES/deluge.mo
+share/locale/en_AU/LC_MESSAGES/deluge.mo
 share/locale/en_CA/LC_MESSAGES/deluge.mo
 share/locale/en_GB/LC_MESSAGES/deluge.mo
 share/locale/es/LC_MESSAGES/deluge.mo
@@ -73,6 +98,7 @@ share/locale/gl/LC_MESSAGES/deluge.mo
 share/locale/he/LC_MESSAGES/deluge.mo
 share/locale/hr/LC_MESSAGES/deluge.mo
 share/locale/hu/LC_MESSAGES/deluge.mo
+share/locale/id/LC_MESSAGES/deluge.mo
 share/locale/it/LC_MESSAGES/deluge.mo
 share/locale/ja/LC_MESSAGES/deluge.mo
 share/locale/ko/LC_MESSAGES/deluge.mo
@@ -84,24 +110,35 @@ share/locale/nl/LC_MESSAGES/deluge.mo
 share/locale/pl/LC_MESSAGES/deluge.mo
 share/locale/pt/LC_MESSAGES/deluge.mo
 share/locale/pt_BR/LC_MESSAGES/deluge.mo
+share/locale/ro/LC_MESSAGES/deluge.mo
 share/locale/ru/LC_MESSAGES/deluge.mo
 share/locale/sk/LC_MESSAGES/deluge.mo
 share/locale/sl/LC_MESSAGES/deluge.mo
 share/locale/sr/LC_MESSAGES/deluge.mo
 share/locale/sv/LC_MESSAGES/deluge.mo
+share/locale/ta/LC_MESSAGES/deluge.mo
+share/locale/tlh/LC_MESSAGES/deluge.mo
 share/locale/tr/LC_MESSAGES/deluge.mo
+share/locale/uk/LC_MESSAGES/deluge.mo
 share/locale/zh_CN/LC_MESSAGES/deluge.mo
 share/locale/zh_TW/LC_MESSAGES/deluge.mo
 share/pixmaps/deluge.xpm
+@dirrmtry share/locale/tlh/LC_MESSAGES
+@dirrmtry share/locale/tlh
 @dirrmtry share/locale/la/LC_MESSAGES
 @dirrmtry share/locale/la
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/plugins/TorrentSearch
 @dirrm %%DATADIR%%/plugins/TorrentCreator
+@dirrm %%DATADIR%%/plugins/Scheduler
 @dirrm %%DATADIR%%/plugins/NetworkHealth
 @dirrm %%DATADIR%%/plugins/NetworkGraph
 @dirrm %%DATADIR%%/plugins/HelloWorld
 @dirrm %%DATADIR%%/plugins/ExamplePlugin
+@dirrm %%DATADIR%%/plugins/DesiredRatio
+@dirrm %%DATADIR%%/plugins/BlocklistImport
 @dirrmtry %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
