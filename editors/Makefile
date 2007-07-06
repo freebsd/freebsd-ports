@@ -164,6 +164,7 @@
     SUBDIR += thoteditor
     SUBDIR += tpad
     SUBDIR += tree-widget
+    SUBDIR += treeform
     SUBDIR += uemacs
     SUBDIR += uzap
     SUBDIR += ved
