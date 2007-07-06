@@ -24,11 +24,11 @@ include/proftpd/glibc-glob.h
 include/proftpd/help.h
 include/proftpd/ident.h
 include/proftpd/inet.h
-include/proftpd/lastlog.h
 include/proftpd/libsupp.h
 include/proftpd/log.h
 include/proftpd/mkhome.h
 include/proftpd/mod_ctrls.h
+include/proftpd/mod_quotatab.h
 include/proftpd/modules.h
 include/proftpd/netacl.h
 include/proftpd/netaddr.h
@@ -57,9 +57,7 @@ sbin/ftpshut
 sbin/in.proftpd
 sbin/proftpd
 %%MYSQL%%include/proftpd/mod_sql.h
-@unexec if cmp -s %D/etc/proftpd.conf %D/%%EXAMPLESDIR%%/etc/proftpd.conf; then rm -f %D/etc/proftpd.conf; fi
-%%EXAMPLESDIR%%/etc/proftpd.conf
-@exec if [ ! -f %D/etc/proftpd.conf ] ; then cp -p %D/%F %B/proftpd.conf; fi
-@dirrm %%EXAMPLESDIR%%/etc
-@dirrm %%EXAMPLESDIR%%
+@unexec if cmp -s %D/etc/proftpd.conf %D/etc/proftpd.conf.sample; then rm -f %D/etc/proftpd.conf; fi
+etc/proftpd.conf.sample
+@exec cp -n %D/%F %B/proftpd.conf
 @dirrm include/proftpd
