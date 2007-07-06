@@ -9,10 +9,12 @@
 PORTNAME=	shc
 PORTVERSION=	3.8.6
 CATEGORIES=	misc
-MASTER_SITES=	http://www.datsi.fi.upm.es/~frosal/sources/
+MASTER_SITES=	http://www.datsi.fi.upm.es/~frosal/sources/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A shell script "encoder"
 
 MAN1=		shc.1
