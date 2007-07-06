@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mpd
-DISTVERSION=	4.2.1
+DISTVERSION=	4.2.2
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	mpd
 DIST_SUBDIR=	mpd4
 
-MAINTAINER=	mav@alkar.net
+MAINTAINER=	mav@FreeBSD.org
 COMMENT=	Multi-link PPP daemon based on netgraph(4)
 
 LIB_DEPENDS=	pdel.0:${PORTSDIR}/devel/libpdel
@@ -23,7 +23,11 @@ LATEST_LINK=    mpd4
 
 .if ${OSVERSION} < 700041
 BUILD_DEPENDS=	/usr/local/include/netgraph/ng_car.h:${PORTSDIR}/net/ng_car
+.if exists(${KMODDIR}/ng_car.ko)
 RUN_DEPENDS=	${KMODDIR}/ng_car.ko:${PORTSDIR}/net/ng_car
+.else
+RUN_DEPENDS=	/boot/modules/ng_car.ko:${PORTSDIR}/net/ng_car
+.endif
 .endif
 
 MTREE_FILE=	${FILESDIR}/mpd4.mtree
