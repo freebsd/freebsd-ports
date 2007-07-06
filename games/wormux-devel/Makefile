@@ -6,31 +6,33 @@
 #
 
 PORTNAME=	wormux
-DISTVERSION=	0.8
-PORTREVISION=	1
+DISTVERSION=	20070706
 CATEGORIES=	games
-MASTER_SITES=	http://download.gna.org/wormux/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	wormux-${PORTVERSION}alpha1
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Wormux game
 
-LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26
+LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
+		png.5:${PORTSDIR}/graphics/png \
+		curl.4:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image mixer ttf gfx net
-USE_BZIP2=	yes
+USE_GMAKE=	yes
 
-CONFIGURE_ARGS=	--with-datadir-name=${DATADIR} --program-prefix=""
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=		--mandir=${MANPREFIX}/man
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+MANCOMPRESSED=	no
 MAN6=	wormux.6
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
+post-patch:
+	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/Makefile.in \
+	${WRKSRC}/src/Makefile.in
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -42,4 +44,4 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
