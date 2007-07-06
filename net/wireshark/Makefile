@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	wireshark
-PORTVERSION=	0.99.5
-PORTREVISION?=	3
+PORTVERSION=	0.99.6
+PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/
 DISTNAME=	${DATADIR_NAME}-${PORTVERSION}
@@ -29,7 +29,8 @@ USE_OPENSSL=	yes
 CONFIGURE_ENV=	MIBDIRS="/dev/null" \
 		LIBS="${WIRESHARK_LIBS}"
 CONFIGURE_ARGS+=	--program-transform-name="" \
-			--with-ssl=${OPENSSLBASE}
+			--with-ssl=${OPENSSLBASE} \
+			--mandir=${MANPREFIX}/man
 MAKE_ENV=	MIBDIRS="/dev/null"
 USE_LDCONFIG=	yes
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
@@ -93,7 +94,7 @@ GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure wiretap/configure
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-.if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6=yes
 .else
 CONFIGURE_ARGS+=	--enable-ipv6=no
