@@ -11632,6 +11632,7 @@ pear-Mail	ports/mail/pear-Mail
 pear-Mail_Mbox	ports/mail/pear-Mail_Mbox
 pear-Mail_Mime	ports/mail/pear-Mail_Mime
 pear-Mail_Queue	ports/mail/pear-Mail_Queue
+pear-Mail_mimeDecode	ports/mail/pear-Mail_mimeDecode
 pear-Math_Combinatorics	ports/math/pear-Math_Combinatorics
 pear-Net_CDDB	ports/net/pear-Net_CDDB
 pear-Net_CheckIP	ports/net/pear-Net_CheckIP
