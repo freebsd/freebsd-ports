@@ -7,7 +7,7 @@
 
 PORTNAME=	tix
 PORTVERSION=	8.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= tix
@@ -57,6 +57,9 @@ TCLBASE!=	( cd ${PORTSDIR}/${TCL84_PORT} && make -V TCLBASE )
 TCLWRK!=	( cd ${PORTSDIR}/${TCL84_PORT} && make -V WRKDIR )
 TKBASE!=	( cd ${PORTSDIR}/${TK84_PORT} && make -V TKBASE )
 TKWRK!=		( cd ${PORTSDIR}/${TK84_PORT} && make -V WRKDIR )
+
+pre-extract:
+	@${MAKE} clean
 
 pre-configure:
 	@(cd ${WRKSRC}/.. && \
