@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	Geo-IP
-PORTVERSION=	1.27
-PORTREVISION=	1
+PORTVERSION=	1.28
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.maxmind.com/download/geoip/api/perl/
 MASTER_SITE_SUBDIR=	Geo
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Gets country name by IP or hostname
 
 LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP
