@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Benchmark
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	benchmarks devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR framework to benchmark PHP scripts or function calls
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
@@ -17,8 +17,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	bcmath
 
-CATEGORY=	Benchmark
-FILES=		Timer.php Iterate.php Profiler.php
+FILES=		Benchmark/Timer.php Benchmark/Iterate.php Benchmark/Profiler.php
 EXAMPLES=	timer_example.php
 _EXAMPLESDIR=	doc
 
