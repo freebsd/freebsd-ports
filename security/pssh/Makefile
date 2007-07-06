@@ -7,6 +7,7 @@
 
 PORTNAME=	pssh
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	security net sysutils
 MASTER_SITES=	http://www.theether.org/pssh/ \
 		${MASTER_SITE_LOCAL}
@@ -18,8 +19,6 @@ COMMENT=	Parallel versions of the openssh tools
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools \
 		rsync:${PORTSDIR}/net/rsync
-
-IGNORE=		most connections fail with bogus error
 
 USE_PYTHON=	YES
 USE_PYDISTUTILS=yes
