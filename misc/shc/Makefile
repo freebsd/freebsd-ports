@@ -21,7 +21,7 @@ MAN1=		shc.1
 PLIST_FILES=	bin/shc
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -o shc shc.c
+	${CC} ${CFLAGS} -o ${WRKSRC}/shc ${WRKSRC}/shc.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/shc ${PREFIX}/bin
