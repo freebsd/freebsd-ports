@@ -1,0 +1,6 @@
+#!/bin/sh
+LANG=C
+LC_ALL=C
+VM_ARGS="-Xmx256m -Xms64m"
+cd "%%DATADIR%%"
+java ${VM_ARGS} -jar "%%JAVAJARDIR%%/TreeForm.jar"
