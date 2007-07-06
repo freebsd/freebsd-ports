@@ -22,11 +22,11 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/GeometricTools/${PORTNAME}${MV}
-DOS2UNIX_REGEX=	.*\.(wm${MV}|h|inl)
+DOS2UNIX_REGEX=	.*\.(wm${MV}|h|inl|cpp)
 MAKEFILE=	makefile.wm${MV}
 ALL_TARGET=	build
 MAKE_ARGS=	CFG=${CONFIG} SYS=${OPSYS:L} GRF=${GRF}
-MAKE_ENV=	CC=${CXX} GCC=${CC} AR=${AR} EGL=${EGL} EGL0=glx EGL1=Glx	\
+MAKE_ENV=	CC=${CXX} GCC=${CXX} AR=${AR} EGL=${EGL} EGL0=glx EGL1=Glx	\
 		INCPATH="-I${LOCALBASE}/include -I${X11BASE}/include"		\
 		LIBPATH="-L${LOCALBASE}/lib -L${X11BASE}/lib"			\
 		XLIBS="-lX11 -lXext" GLIBS="-lGL -lGLU"
@@ -57,18 +57,13 @@ CONFIG=		Release
 #CFLAGS+=	-DNDEBUG
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 pre-configure:
 	${FIND} ${WRKSRC} -name "*.wm${MV}" | ${XARGS}	\
 	${REINPLACE_CMD} -e 's|make -f|${SETENV} ${MAKE_ENV} ${GMAKE} -f|;	\
 			s|; make |; ${SETENV} ${MAKE_ENV} ${GMAKE} |;		\
 			s|-O2 -DNDEBUG|${CFLAGS} |;s|CFLAGS := -c|CFLAGS += -c|;\
-			s|INCPATH := |INCPATH += |; s|LIBPATH := |LIBPATH += |'
+			s|INCPATH := |INCPATH += |; s|LIBPATH := |LIBPATH += |; \
+			s|$$(CC)|$$(CXX)|'
 	${REINPLACE_CMD} -e 's|GetEnv("WM4_PATH")|"${DATADIR}"|'	\
 		${WRKSRC}/LibFoundation/System/Wm4System.cpp
 
@@ -102,4 +97,4 @@ do-install:
 	${FIND} ${EXAMPLESDIR} -name "*.bak" -delete
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
