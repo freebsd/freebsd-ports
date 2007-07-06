@@ -1,0 +1,5 @@
+Nagircbot is an IRC bot that monitors Nagios's status file for changes and
+announces those in an IRC channel. It can also change the topic of the channel
+to reflect current status.
+
+WWW: http://www.vanheusden.com/nagircbot/

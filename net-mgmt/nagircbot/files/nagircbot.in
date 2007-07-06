@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: nagircbot
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable nagircbot:
+#
+# nagircbot_enable="YES"
+#
+# You must configure at least some flags to make it connect to a server. See -h.
+#
+
+. %%RC_SUBR%%
+
+name=nagircbot
+rcvar=`set_rcvar`
+
+pidfile=/var/run/nagios/${name}.pid
+command=%%PREFIX%%/bin/nagircbot
+command_args="-P $pidfile -z nagios"
+
+# set defaults
+
+nagircbot_enable=${nagircbot_enable:-"NO"}
+nagircbot_flags=${nagircbot_flags:-""}
+
+load_rc_config ${name}
+run_rc_command "$1"
