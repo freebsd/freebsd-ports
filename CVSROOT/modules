@@ -16222,6 +16222,7 @@ wmpiki		ports/net/wmpiki
 wmpinboard	ports/deskutils/wmpinboard
 wmping		ports/net/wmping
 wmpop3		ports/mail/wmpop3
+wmpop3lb	ports/mail/wmpop3lb
 wmpuzzle	ports/games/wmpuzzle
 wmq3		ports/net/wmq3
 wmqstat		ports/games/wmqstat
