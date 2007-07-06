@@ -1169,7 +1169,6 @@ ccxstream	ports/net/ccxstream
 ccze		ports/sysutils/ccze
 cd-console	ports/audio/cd-console
 cd-discid	ports/audio/cd-discid
-cd-write	ports/sysutils/cd-write
 cd2mp3		ports/audio/cd2mp3
 cd9660_unicode	ports/sysutils/cd9660_unicode
 cdargs		ports/sysutils/cdargs
