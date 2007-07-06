@@ -104,6 +104,7 @@
     SUBDIR += nagios12
     SUBDIR += nagiosgraph
     SUBDIR += nagiostat
+    SUBDIR += nagircbot
     SUBDIR += nat
     SUBDIR += nav
     SUBDIR += nbtscan

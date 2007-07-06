@@ -1,0 +1,24 @@
+--- Makefile.orig	Mon Nov 27 06:21:58 2006
++++ Makefile	Sat Apr 28 14:14:16 2007
+@@ -1,9 +1,10 @@
+ VERSION=0.0.20
+ 
+ DEBUG= -g  -D_DEBUG #-fprofile-arcs -ftest-coverage # -pg -g
+-CXXFLAGS+=-Wall -O2 -DVERSION=\"${VERSION}\" $(DEBUG)
++CXXFLAGS+=-DUSE_MMAP -Wall -O2 -DVERSION=\"${VERSION}\" $(DEBUG)
+ CFLAGS+=${CXXFLAGS}
+-LDFLAGS+=$(DEBUG) -lstdc++
++LDFLAGS+=$(DEBUG) -lstdc++ -lutil
++PREFIX?=/usr/local
+ 
+ OBJS=error.o log.o utils.o br.o pl.o anna.o
+ 
+@@ -13,7 +14,7 @@
+ 	$(CC) -Wall -W $(OBJS) $(LDFLAGS) -o nagircbot
+ 
+ install: nagircbot
+-	cp nagircbot /usr/local/bin
++	cp nagircbot ${PREFIX}/bin
+ 
+ clean:
+ 	rm -f $(OBJS) nagircbot core *.da *.gcov *.bb*
