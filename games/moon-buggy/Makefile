@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	moon-buggy
-PORTVERSION=	1.0
+PORTVERSION=	1.0.51
 CATEGORIES=	games
-MASTER_SITES=	http://www.seehuhn.de/data/
+MASTER_SITES=	http://seehuhn.de/media/programs/
 .if defined (WITH_ESOUND)
 PKGNAMESUFFIX=	"-esound"
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.ac
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Drive a buggy across the moons surface
 
 .if defined (WITH_ESOUND)
