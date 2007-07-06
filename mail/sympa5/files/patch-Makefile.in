@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Apr 12 11:01:38 2006
-+++ Makefile.in	Wed Apr 12 16:10:58 2006
+--- Makefile.in.orig	Mon Jun  4 15:11:37 2007
++++ Makefile.in	Wed Jun 13 11:33:54 2007
 @@ -220,6 +220,8 @@
  PERL_VERSION = `$(PERL) -e ' print $$]'`
  SYMPA_VERSION = @VERSION@
@@ -27,7 +27,7 @@
  
  nextstep: 
  	@echo ""
-@@ -740,7 +742,7 @@
+@@ -743,7 +745,7 @@
  
  installdir:
  	@echo "Creating required directories"
@@ -36,7 +36,7 @@
  		if [ ! -d $(DESTDIR)$$dir ] ; then \
  			echo "Creating $(DESTDIR)$$dir"; \
  			mkdir -p $(DESTDIR)$$dir; \
-@@ -786,17 +788,6 @@
+@@ -789,17 +791,6 @@
  		fi \
  	done \
  	fi
@@ -54,7 +54,7 @@
  
  installconfig:
  	mkdir -p $(DESTDIR)$(CONFDIR)
-@@ -812,14 +803,7 @@
+@@ -815,14 +806,7 @@
  	INITCONF='1'; \
  	fi \
  	fi \
