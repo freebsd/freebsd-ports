@@ -7,7 +7,7 @@
 
 PORTNAME=	plplot
 PORTVERSION=	5.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -49,8 +49,8 @@ CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=	X11="@comment "
 .else
 USE_XLIB=	yes
+LIB_DEPENDS+=	LASi.0:${PORTSDIR}/devel/lasi
 PLIST_SUB+=	X11=""
-#USE_GNOME=	libgnomeui pkgconfig pango
 .endif
 
 .if !defined(WITHOUT_PTHREAD)
@@ -73,6 +73,14 @@ CONFIGURE_ENV+=	PYTHON_VERSION="${PYTHON_VERSION}"
 CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
+
+#.if defined(WITH_GNOME)
+#.undef WITHOUT_X11
+USE_GNOME=	libgnomeprintui libgnomeui
+PLIST_SUB+=	GNOME=""
+#.else
+#PLIST_SUB+=	GNOME="@comment "
+#.endif
 
 .if defined(WITH_TCLTK)
 .undef WITHOUT_X11
@@ -102,6 +110,7 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_X11=yes		Turns off X11 support"
 	@${ECHO_MSG} "	WITHOUT_PTHREAD=yes	Turns off pthread support"
 	@${ECHO_MSG} "	WITH_SVGALIB=yes	Turns on SVGAlib support"
+#	@${ECHO_MSG} "	WITH_GNOME=yes		Turns on GNOME driver support"
 	@${ECHO_MSG} "	WITH_PYTHON=yes		Turns on Python support"
 	@${ECHO_MSG} "	WITH_TCLTK=yes		Turns on Tcl/Tk support"
 	@${ECHO_MSG} ""
