@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	linux-eagle
-EAGLEVERSION?=	4.16
+EAGLEVERSION?=	4.16r2
 EAGLELANG?=	eng
 PORTVERSION=	${EAGLEVERSION:S/r/./}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	cad linux
 MASTER_SITES=	ftp://ftp.cadsoft.de/pub/program/${EAGLEVERSION}/
 DISTNAME=	${PORTNAME:S/linux-//}-lin-${EAGLELANG}-${EAGLEVERSION}
@@ -20,7 +20,7 @@ COMMENT?=	An easy to use, yet powerful tool for designing printed circuit boards
 
 CONFLICTS?=	de-linux-eagle-[0-9]*
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/linux-//}-lin-${EAGLELANG}-${EAGLEVERSION}
 DATADIR=	${PREFIX}/share/${PORTNAME:S/linux-//}
