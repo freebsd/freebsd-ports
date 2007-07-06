@@ -1,6 +1,6 @@
---- src/interface.py.orig	Sat Jun  9 12:20:35 2007
-+++ src/interface.py	Sat Jun  9 12:20:54 2007
-@@ -75,9 +75,9 @@
+--- src/interface.py.orig	Thu Jul  5 22:48:09 2007
++++ src/interface.py	Thu Jul  5 22:48:21 2007
+@@ -43,9 +43,9 @@
  	def __init__(self):
  		APP = 'deluge'
  		DIR = os.path.join(common.INSTALL_PREFIX, 'share', 'locale')
