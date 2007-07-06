@@ -1,6 +1,6 @@
---- Makefile.rule.orig	Thu Jan  4 16:10:00 2007
-+++ Makefile.rule	Tue Feb  6 09:07:21 2007
-@@ -141,11 +141,11 @@
+--- Makefile.rule.orig	Fri May 18 09:21:57 2007
++++ Makefile.rule	Wed Jul  4 22:53:03 2007
+@@ -153,11 +153,11 @@
  endif
  
  ifndef F_COMPILER
@@ -14,7 +14,7 @@
  CCOMMON_OPT += -Wall
  ifneq ($(OSNAME), CYGWIN_NT)
  CCOMMON_OPT += -fPIC 
-@@ -163,12 +163,12 @@
+@@ -175,12 +175,12 @@
  endif
  
  ifeq ($(C_COMPILER), INTEL)
@@ -29,7 +29,7 @@
  BU	     = _
  CCOMMON_OPT += -DF_INTERFACE_F2C -DNEED_F2CCONV
  FCOMMON_OPT += -Wall
-@@ -185,7 +185,7 @@
+@@ -197,7 +197,7 @@
  endif
  
  ifeq ($(F_COMPILER), G95)
@@ -37,8 +37,8 @@
 +COMPILER_F77 = %%F77%%
  BU	     = _
  CCOMMON_OPT += -DF_INTERFACE_F2C
- FCOMMON_OPT += -Wall
-@@ -202,11 +202,12 @@
+ FCOMMON_OPT += -Wall #  -fno-underscoring
+@@ -214,11 +214,12 @@
  endif
  
  ifeq ($(F_COMPILER), GFORTRAN)
@@ -53,7 +53,7 @@
  ifneq ($(OSNAME), CYGWIN_NT)
  FCOMMON_OPT += -fPIC 
  endif
-@@ -224,7 +225,7 @@
+@@ -236,7 +237,7 @@
  endif
  
  ifeq ($(F_COMPILER), INTEL)
@@ -62,20 +62,21 @@
  BU	     = _
  CCOMMON_OPT += -DF_INTERFACE_F2C
  FCOMMON_OPT += -fPIC
-@@ -276,10 +277,9 @@
+@@ -288,11 +289,9 @@
  endif
  endif
  
 -ifneq ($(OSNAME), CYGWIN_NT)
  ifdef SMP
 -PTHREADLIB += -lpthread
+-FEXTRALIB  += -lpthread
 -endif
-+PTHREADLIB +=	${PTHREAD_LIBS}
-+CCOMMON_OPT+=	${PTHREAD_CFLAGS}
++PTHREADLIB += ${PTHREAD_LIBS}
++FEXTRALIB  += ${PTHREAD_CFLAGS}
  endif
  
  ifeq ($(F_COMPILER), PATHSCALE)
-@@ -326,7 +326,7 @@
+@@ -343,7 +342,7 @@
  GETARCH_CC	 = gcc
  endif
  
@@ -84,8 +85,8 @@
  SUBARCH     := $(shell (cd $(TOPDIR); ./getarch 1 $(GETARCH_CC) $(GETARCH_FLAGS)))
  ARCHSUBDIR  := $(shell (cd $(TOPDIR); ./getarch 2 $(GETARCH_CC) $(GETARCH_FLAGS)))
  CONFIG      := $(shell (cd $(TOPDIR); ./getarch 3 $(GETARCH_CC) $(GETARCH_FLAGS)))
-@@ -407,11 +407,11 @@
- FPFLAGS = $(COMMON_OPT) $(FCOMMON_OPT) $(COMMON_PROF)
+@@ -418,11 +417,11 @@
+ FPFLAGS    = $(COMMON_OPT) $(FCOMMON_OPT) $(COMMON_PROF)
  
  ifndef SMP
 -LIBNAME		= $(LIBPREFIX)_$(LIBSUBARCH)$(REVISION).a
