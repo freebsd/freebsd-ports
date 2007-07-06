@@ -19,6 +19,8 @@ BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools \
 		rsync:${PORTSDIR}/net/rsync
 
+IGNORE=		most connections fail with bogus error
+
 USE_PYTHON=	YES
 USE_PYDISTUTILS=yes
 
