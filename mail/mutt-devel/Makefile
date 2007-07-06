@@ -107,7 +107,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.16
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -199,7 +199,6 @@ VC_PATCH_VERSION=	${PORTVERSION}
 WITH_MUTT_IMAP_HEADER_CACHE=	yes
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-IGNORE=	the WITH_MUTT_SIDEBAR_PATCH does not work at the moment
 .if defined(WITH_MUTT_NNTP)
 IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not compatible
 .endif
@@ -387,21 +386,21 @@ USE_KRB5_SYS=YES
 PATCH_DIST_STRIP=	-p1
 
 .if ! defined (WITHOUT_MUTT_COMPRESSED_FOLDERS)
-DISTFILES+=	patch-${RR_PATCH_VERSION}.rr.compressed.gz:vvv
+DISTFILES+=	patch-${RR_PATCH_VERSION}.rr.compressed.2.gz:vvv
 CONFIGURE_ARGS+=	--enable-compressed
 XML_NEEDED=	yes
 pre-patch::
-	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${RR_PATCH_VERSION}.rr.compressed.gz > ${WRKDIR}/patch-compressed
+	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${RR_PATCH_VERSION}.rr.compressed.2.gz > ${WRKDIR}/patch-compressed
 	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.txt$$/,/^diff/d' \
 		 ${WRKDIR}/patch-compressed
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-compressed
 .endif
 .if defined(WITH_MUTT_NNTP)
-DISTFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.2.gz:vvv
+DISTFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.3.gz:vvv
 CONFIGURE_ARGS+=	--enable-nntp
 XML_NEEDED=	yes
 pre-patch::
-	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${VVV_PATCH_VERSION}.vvv.nntp.2.gz > ${WRKDIR}/patch-nntp
+	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${VVV_PATCH_VERSION}.vvv.nntp.3.gz > ${WRKDIR}/patch-nntp
 	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.txt$$/,/^diff/d' \
 		${WRKDIR}/patch-nntp
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-nntp
@@ -424,7 +423,7 @@ pre-patch::
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-SIDEBAR_PATCH=	patch-1.5.15.sidebar.20070408.txt
+SIDEBAR_PATCH=	patch-1.5.16.sidebar.20070704.txt
 DISTFILES+=	${SIDEBAR_PATCH}:tchan
 XML_NEEDED=	yes
 pre-patch::
