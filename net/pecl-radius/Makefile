@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	radius
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	net security pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Radius client library for PHP
 
 USE_PHP=	yes
