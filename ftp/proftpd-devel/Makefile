@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	proftpd
-DISTVERSION=	1.3.1rc2
-PORTREVISION=	4
+DISTVERSION=	1.3.1rc3
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -30,6 +29,15 @@ PORTDOCScontrib=mod_ifsession.html mod_radius.html mod_rewrite.html \
 		mod_ban.html mod_quotatab_radius.html ftpasswd.html
 PORTDOCS=	${PORTDOCSdoc} ${PORTDOCScontrib}
 
+PORTEXAMPLES=	ASCII.html CreateHome.html Filters.html SQL.html Umask.html \
+		AuthFiles.html DNS.html Globbing.html SSH.html Upgrade.html \
+		Authentication.html DSO.html Limit.html Scoreboard.html Vhost.html \
+		BCP.html Debugging.html ListOptions.html ServerType.html \
+		VirtualUsers.html Chroot.html Directory.html Logging.html Stopping.html \
+		index.html Classes.html DisplayFiles.html NAT.html TLS.html ConfigFile.html \
+		FTP.html Quotas.html Timestamps.html Controls.html \
+		FXP.html Regex.html Tracing.html
+
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:259
@@ -38,7 +46,7 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	proftpd.sh
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
-		--sysconfdir=${EXAMPLESDIR}/etc \
+		--sysconfdir=${PREFIX}/etc \
 		--enable-builtin-getnameinfo \
 		--disable-sendfile
 
@@ -235,14 +243,14 @@ MODULES!=${ECHO} ${MODULES} | ${SED} -e 's,^:,,' -e 's,:$$,,'
 
 post-patch:
 .if defined(WITH_NLS)
-	${REINPLACE_CMD} -e 's|-lsupp|-lsupp -lintl|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-lsupp|-lsupp -lintl|g' ${WRKSRC}/Makefile.in
 .endif
+	@${REINPLACE_CMD} -e 's|proftpd\.conf|proftpd.conf.sample|g' ${WRKSRC}/Makefile.in
 
 pre-configure:
 	@${ECHO_MSG} "==> Configuring with ${MODULES}"
 
 post-configure:
-	${REINPLACE_CMD} -e 's:${EXAMPLESDIR}:${PREFIX}:' ${WRKSRC}/config.h
 	${REINPLACE_CMD} -e 's: -lnsl::' ${WRKSRC}/Make.rules
 	${REINPLACE_CMD} -e 's:/usr/sbin:${PREFIX}/sbin:' \
 		-e 's:/usr/bin:${PREFIX}/bin:' \
@@ -250,27 +258,22 @@ post-configure:
 		${WRKSRC}/utils/ftpcount.1
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/proftpd.conf ]; then \
-	${CP} -p ${EXAMPLESDIR}/etc/proftpd.conf ${PREFIX}/etc/proftpd.conf ; \
-    fi
-
+	@cd  ${PREFIX}/etc/ && ${CP} -n proftpd.conf.sample proftpd.conf
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/proftpd
-.for f in ${PORTDOCSdoc}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${PREFIX}/share/doc/proftpd
-.endfor
-.for f in ${PORTDOCScontrib}
-	@${INSTALL_DATA} ${WRKSRC}/doc/contrib/${f} ${PREFIX}/share/doc/proftpd
-.endfor
+	@${INSTALL} -d ${DOCSDIR}/
+	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCSdoc} ${DOCSDIR}/
+	@cd ${WRKSRC}/doc/contrib && ${INSTALL_DATA} ${PORTDOCScontrib} ${DOCSDIR}/
 .endif
-
+.if !defined(NOPORTEXAMPLES)
+	@${INSTALL} -d ${EXAMPLESDIR}/
+	@cd ${WRKSRC}/doc/howto/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
+.endif
 .if !defined(WITHOUT_PAM)
 	@${CAT} ${PKGMESSAGE}
 .endif
-
 .if defined(WITH_CTRLS)
-	@${INSTALL_PROGRAM} ${WRKSRC}/ftpdctl ${PREFIX}/sbin/ftpdctl
-	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${PREFIX}/man/man8/ftpdctl.8
+	@${INSTALL_PROGRAM} ${WRKSRC}/ftpdctl ${PREFIX}/sbin/
+	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${MAN8PREFIX}/man/man8/
 .endif
 
 .include <bsd.port.post.mk>
