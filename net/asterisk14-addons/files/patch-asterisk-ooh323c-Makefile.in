@@ -14,7 +14,7 @@
  
  install: 
 -	cp .libs/libchan_h323.so.1.0.1 $(DESTDIR)/usr/lib/asterisk/modules/chan_ooh323.so
-+	cp .libs/libchan_h323.so /usr/local/lib/asterisk/modules/chan_ooh323.so
++	cp .libs/libchan_h323.so ${PREFIX}/lib/asterisk/modules/chan_ooh323.so
  
  sample:
  	cp h323.conf.sample $(DESTDIR)/etc/asterisk/ooh323.conf

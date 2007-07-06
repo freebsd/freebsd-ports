@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk-addons
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/releases/
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 
 OPTIONS=	SAMPLE_CONFIG	"Install sample configuration files" off
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_AUTOTOOLS=	libtool:15
 USE_MYSQL=	yes
 USE_GMAKE=	yes

@@ -1,8 +1,0 @@
---- format_mp3/Makefile.orig	Mon Apr  2 22:26:03 2007
-+++ format_mp3/Makefile	Mon Apr  2 22:26:12 2007
-@@ -1,4 +1,4 @@
--INSTALLTO=$(DESTDIR)/usr/lib/asterisk/modules
-+INSTALLTO=/usr/local/lib/asterisk/modules
- MODS=format_mp3.so
- MP3OBJS=common.o dct64_i386.o decode_ntom.o layer3.o tabinit.o interface.o format_mp3.o
- 
