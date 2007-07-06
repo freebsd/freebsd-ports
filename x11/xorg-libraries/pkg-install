@@ -5,7 +5,7 @@ if [ "$2" != "POST-INSTALL" ]; then
 fi
 
 X11BASE=/usr/X11R6
-LOCALBASE=/usr/local
+LOCALBASE=${LOCALBASE:-/usr/local}
 
 if [ ${X11BASE} -ef ${LOCALBASE} ]; then
 	echo "Spamming files in /etc..."
