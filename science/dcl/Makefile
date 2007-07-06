@@ -6,17 +6,21 @@
 #
 
 PORTNAME=	dcl
-PORTVERSION=	5.3.2
-PORTREVISION=	1
+PORTVERSION=	5.3.3
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.gfd-dennou.org/arch/dcl/
 
 MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
 COMMENT=	Scientific graphic library for geoscience
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --libdir=${PREFIX}/lib/${PORTNAME}-${PORTVERSION}  --disable-gtk2 --disable-gtk --with-x
+CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-gtk2 --disable-gtk --with-x
+USE_XLIB=	yes
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+CONFIGURE_ENV+=	FC="${FC}" FFLAGS="${FFLAGS}"
 
 DOCFILES=	CHECK CREDITS HISTORY README README_clrmap README_gt2dlib \
 		README_itr51 README_pslib README_umfmap

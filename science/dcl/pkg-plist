@@ -2,7 +2,7 @@ bin/dclcc
 bin/dclclr
 bin/dclcmap
 bin/dclconfig
-bin/dclconfig532
+bin/dclconfig533
 bin/dcldate
 bin/dcldbs
 bin/dclexec
@@ -48,12 +48,13 @@ lib/dcldbase/colormap_10.x11
 lib/dcldbase/colormap_11.x11
 lib/dcldbase/colormap_12.x11
 lib/dcldbase/colormap_13.x11
+lib/dcldbase/colormap_14.x11
 lib/dcldbase/font1u
 lib/dcldbase/font2u
 lib/dcldbase/plate_world
 lib/dcldbase/pref_japan
 lib/dcldbase/state_usa
-lib/libf77dcl532.a
+lib/libf77dcl533.a
 %%PORTDOCS%%%%DOCSDIR%%/CHECK
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
