@@ -7513,6 +7513,7 @@ mod_auth_pgsql2	ports/www/mod_auth_pgsql2
 mod_auth_pwcheck	ports/www/mod_auth_pwcheck
 mod_auth_remote	ports/www/mod_auth_remote
 mod_auth_useragent	ports/www/mod_auth_useragent
+mod_auth_xradius	ports/www/mod_auth_xradius
 mod_authenticache	ports/www/mod_authenticache
 mod_authnz_external	ports/www/mod_authnz_external
 mod_backhand	ports/www/mod_backhand
