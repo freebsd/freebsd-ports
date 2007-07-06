@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	dict
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A client-side implementation of the DICT protocol in Ruby
 
 USE_RUBY=	yes
