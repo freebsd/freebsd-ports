@@ -7909,6 +7909,7 @@ nagios-statd	ports/sysutils/nagios-statd
 nagios12	ports/net-mgmt/nagios12
 nagiosgraph	ports/net-mgmt/nagiosgraph
 nagiostat	ports/net-mgmt/nagiostat
+nagircbot	ports/net-mgmt/nagircbot
 naim		ports/net-im/naim
 najitool	ports/misc/najitool
 nakenchat	ports/net/nakenchat
