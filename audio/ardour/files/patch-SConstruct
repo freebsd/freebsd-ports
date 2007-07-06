@@ -1,5 +1,5 @@
---- SConstruct.orig	Mon Apr 30 00:19:46 2007
-+++ SConstruct	Mon Apr 30 23:51:40 2007
+--- SConstruct.orig	Mon Jul  2 19:14:26 2007
++++ SConstruct	Wed Jul  4 14:23:38 2007
 @@ -38,7 +38,7 @@
      BoolOption('FPU_OPTIMIZATION', 'Build runtime checked assembler code', 1),
      BoolOption('LIBLO', 'Compile with support for liblo library', 1),
@@ -33,7 +33,7 @@
  
  if env['DEBUG'] == 1:
      env.Append(CCFLAGS=" ".join (debug_flags))
-@@ -761,6 +755,7 @@
+@@ -771,6 +765,7 @@
  if env['LIBLO']:
      libraries['lo'] = LibraryInfo ()
      prep_libcheck(env, libraries['lo'])
@@ -41,7 +41,7 @@
  
      conf = Configure (libraries['lo'])
      if conf.CheckLib ('lo', 'lo_server_new') == False:
-@@ -774,6 +769,7 @@
+@@ -784,6 +779,7 @@
  
  libraries['dmalloc'] = LibraryInfo ()
  prep_libcheck(env, libraries['dmalloc'])
@@ -49,7 +49,7 @@
  
  #
  # look for the threaded version
-@@ -805,8 +801,10 @@
+@@ -815,8 +811,10 @@
      subst_dict['%MIDITAG%'] = "ardour"
      subst_dict['%MIDITYPE%'] = "coremidi"
  else:
@@ -62,7 +62,17 @@
  
  env = conf.Finish()
  
-@@ -1073,8 +1071,8 @@
+@@ -986,8 +984,7 @@
+ surface_subdirs = [ 'libs/surfaces/control_protocol',
+                     'libs/surfaces/generic_midi',
+                     'libs/surfaces/tranzport',
+-                    'libs/surfaces/mackie',
+-                    'libs/surfaces/powermate'
++                    'libs/surfaces/mackie'
+                     ]
+ 
+ if env['SURFACES']:
+@@ -1090,8 +1087,8 @@
      subst_dict['%JACK_INPUT%'] = "coreaudio:Built-in Audio:in"
      subst_dict['%JACK_OUTPUT%'] = "coreaudio:Built-in Audio:out"
  else:

@@ -76,6 +76,8 @@ share/ardour2/icons/record_normal_red.png
 share/ardour2/icons/crossfade_out_transition.png
 share/ardour2/icons/crossfade_out_slow-cut.png
 share/ardour2/icons/crossfade_in_slow-cut.png
+share/ardour2/icons/crossfade_in_default.png
+share/ardour2/icons/crossfade_out_default.png
 share/ardour2/icons/transport_loop.png
 share/ardour2/icons/tool_audition.png
 share/ardour2/icons/transport_end.png
