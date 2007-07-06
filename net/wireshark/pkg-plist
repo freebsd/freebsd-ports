@@ -32,12 +32,14 @@ lib/wireshark/plugins/%%PORTVERSION%%/irda.la
 lib/wireshark/plugins/%%PORTVERSION%%/irda.so
 lib/wireshark/plugins/%%PORTVERSION%%/lwres.la
 lib/wireshark/plugins/%%PORTVERSION%%/lwres.so
+lib/wireshark/plugins/%%PORTVERSION%%/m2m.la
+lib/wireshark/plugins/%%PORTVERSION%%/m2m.so
 lib/wireshark/plugins/%%PORTVERSION%%/mate.la
 lib/wireshark/plugins/%%PORTVERSION%%/mate.so
-lib/wireshark/plugins/%%PORTVERSION%%/megaco.la
-lib/wireshark/plugins/%%PORTVERSION%%/megaco.so
 lib/wireshark/plugins/%%PORTVERSION%%/mgcp.la
 lib/wireshark/plugins/%%PORTVERSION%%/mgcp.so
+lib/wireshark/plugins/%%PORTVERSION%%/opcua.la
+lib/wireshark/plugins/%%PORTVERSION%%/opcua.so
 lib/wireshark/plugins/%%PORTVERSION%%/opsi.la
 lib/wireshark/plugins/%%PORTVERSION%%/opsi.so
 lib/wireshark/plugins/%%PORTVERSION%%/parlay.la
@@ -60,6 +62,8 @@ lib/wireshark/plugins/%%PORTVERSION%%/tango.la
 lib/wireshark/plugins/%%PORTVERSION%%/tango.so
 lib/wireshark/plugins/%%PORTVERSION%%/v5ua.la
 lib/wireshark/plugins/%%PORTVERSION%%/v5ua.so
+lib/wireshark/plugins/%%PORTVERSION%%/wimax.la
+lib/wireshark/plugins/%%PORTVERSION%%/wimax.so
 lib/libwireshark.la
 lib/libwireshark.so
 lib/libwireshark.so.0
@@ -77,6 +81,7 @@ lib/libwiretap.so.0
 %%DATADIR%%/diameter/chargecontrol.xml
 %%DATADIR%%/diameter/dictionary.dtd
 %%DATADIR%%/diameter/dictionary.xml
+%%DATADIR%%/diameter/gqpolicy.xml
 %%DATADIR%%/diameter/imscxdx.xml
 %%DATADIR%%/diameter/mobileipv4.xml
 %%DATADIR%%/diameter/nasreq.xml
