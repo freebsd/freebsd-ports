@@ -94,15 +94,21 @@ lib/plplot%%VERSION%%/driversd/plmeta.so
 lib/plplot%%VERSION%%/driversd/ps.la
 lib/plplot%%VERSION%%/driversd/ps.rc
 lib/plplot%%VERSION%%/driversd/ps.so
+lib/plplot%%VERSION%%/driversd/xfig.la
+lib/plplot%%VERSION%%/driversd/xfig.rc
+lib/plplot%%VERSION%%/driversd/xfig.so
 %%TCLTK%%lib/plplot%%VERSION%%/driversd/tk.la
 %%TCLTK%%lib/plplot%%VERSION%%/driversd/tk.rc
 %%TCLTK%%lib/plplot%%VERSION%%/driversd/tk.so
 %%TCLTK%%lib/plplot%%VERSION%%/driversd/tkwin.la
 %%TCLTK%%lib/plplot%%VERSION%%/driversd/tkwin.rc
 %%TCLTK%%lib/plplot%%VERSION%%/driversd/tkwin.so
-lib/plplot%%VERSION%%/driversd/xfig.la
-lib/plplot%%VERSION%%/driversd/xfig.rc
-lib/plplot%%VERSION%%/driversd/xfig.so
+%%GNOME%%lib/plplot%%VERSION%%/driversd/gcw.la
+%%GNOME%%lib/plplot%%VERSION%%/driversd/gcw.rc
+%%GNOME%%lib/plplot%%VERSION%%/driversd/gcw.so
+%%X11%%lib/plplot%%VERSION%%/driversd/psttf.la
+%%X11%%lib/plplot%%VERSION%%/driversd/psttf.rc
+%%X11%%lib/plplot%%VERSION%%/driversd/psttf.so
 %%X11%%lib/plplot%%VERSION%%/driversd/xwin.la
 %%X11%%lib/plplot%%VERSION%%/driversd/xwin.rc
 %%X11%%lib/plplot%%VERSION%%/driversd/xwin.so
@@ -234,6 +240,14 @@ libdata/pkgconfig/plplotd-f95.pc
 %%DATADIR%%%%VERSION%%/examples/f95/Makefile
 %%DATADIR%%%%VERSION%%/examples/test_f95.sh
 %%DATADIR%%%%VERSION%%/examples/plplot-test.sh
+%%DATADIR%%%%VERSION%%/examples/test_c.sh
+%%DATADIR%%%%VERSION%%/examples/test_cxx.sh
+%%DATADIR%%%%VERSION%%/examples/test_f77.sh
+%%DATADIR%%%%VERSION%%/globe.map
+%%DATADIR%%%%VERSION%%/plstnd5.fnt
+%%DATADIR%%%%VERSION%%/plxtnd5.fnt
+%%DATADIR%%%%VERSION%%/usa.map
+%%DATADIR%%%%VERSION%%/usaglobe.map
 %%PYTHON%%%%DATADIR%%%%VERSION%%/examples/python/README.plplotcanvas
 %%PYTHON%%%%DATADIR%%%%VERSION%%/examples/python/README.pythondemos
 %%PYTHON%%%%DATADIR%%%%VERSION%%/examples/python/plplot_python_start.py
@@ -283,6 +297,9 @@ libdata/pkgconfig/plplotd-f95.pc
 %%PYTHON%%%%DATADIR%%%%VERSION%%/examples/python/xw19.py
 %%PYTHON%%%%DATADIR%%%%VERSION%%/examples/python/xw22.py
 %%PYTHON%%%%DATADIR%%%%VERSION%%/examples/python/xw23.py
+%%PYTHON%%%%DATADIR%%%%VERSION%%/examples/test_python.sh
+%%PYTHON%%@dirrm %%DATADIR%%%%VERSION%%/examples/python
+%%TCLTK%%%%DATADIR%%%%VERSION%%/examples/test_tcl.sh
 %%TCLTK%%%%DATADIR%%%%VERSION%%/examples/tcl/README.tcldemos
 %%TCLTK%%%%DATADIR%%%%VERSION%%/examples/tcl/plgrid.tcl
 %%TCLTK%%%%DATADIR%%%%VERSION%%/examples/tcl/plot.dat
@@ -364,15 +381,7 @@ libdata/pkgconfig/plplotd-f95.pc
 %%TCLTK%%%%DATADIR%%%%VERSION%%/examples/tk/xtk01.c
 %%TCLTK%%%%DATADIR%%%%VERSION%%/examples/tk/xtk02.c
 %%TCLTK%%%%DATADIR%%%%VERSION%%/examples/tk/xtk04.c
-%%DATADIR%%%%VERSION%%/examples/test_c.sh
-%%DATADIR%%%%VERSION%%/examples/test_cxx.sh
-%%DATADIR%%%%VERSION%%/examples/test_f77.sh
-%%PYTHON%%%%DATADIR%%%%VERSION%%/examples/test_python.sh
-%%TCLTK%%%%DATADIR%%%%VERSION%%/examples/test_tcl.sh
-%%DATADIR%%%%VERSION%%/globe.map
 %%TCLTK%%%%DATADIR%%%%VERSION%%/pkgIndex.tcl
-%%DATADIR%%%%VERSION%%/plstnd5.fnt
-%%DATADIR%%%%VERSION%%/plxtnd5.fnt
 %%TCLTK%%%%DATADIR%%%%VERSION%%/tcl/FileSelector.tcl
 %%TCLTK%%%%DATADIR%%%%VERSION%%/tcl/PLWin.itk
 %%TCLTK%%%%DATADIR%%%%VERSION%%/tcl/PLXWin.itk
@@ -396,12 +405,12 @@ libdata/pkgconfig/plplotd-f95.pc
 %%TCLTK%%%%DATADIR%%%%VERSION%%/tcl/pltools.tcl
 %%TCLTK%%%%DATADIR%%%%VERSION%%/tcl/plwidget.tcl
 %%TCLTK%%%%DATADIR%%%%VERSION%%/tcl/tclIndex
-%%DATADIR%%%%VERSION%%/usa.map
-%%DATADIR%%%%VERSION%%/usaglobe.map
 %%TCLTK%%@dirrm %%DATADIR%%%%VERSION%%/tcl
 %%TCLTK%%@dirrm %%DATADIR%%%%VERSION%%/examples/tk
 %%TCLTK%%@dirrm %%DATADIR%%%%VERSION%%/examples/tcl
-%%PYTHON%%@dirrm %%DATADIR%%%%VERSION%%/examples/python
+%%GNOME%%%%DATADIR%%%%VERSION%%/examples/c/README.plplotcanvas
+%%GNOME%%%%DATADIR%%%%VERSION%%/examples/c/plplotcanvas_animation.c
+%%GNOME%%%%DATADIR%%%%VERSION%%/examples/c/plplotcanvas_demo.c
 @dirrm %%DATADIR%%%%VERSION%%/examples/f95
 @dirrm %%DATADIR%%%%VERSION%%/examples/f77
 @dirrm %%DATADIR%%%%VERSION%%/examples/c++
