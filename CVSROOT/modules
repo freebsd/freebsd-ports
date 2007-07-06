@@ -15521,6 +15521,7 @@ trayer		ports/x11/trayer
 tree		ports/sysutils/tree
 tree-widget	ports/editors/tree-widget
 treecc		ports/lang/treecc
+treeform	ports/editors/treeform
 treeline	ports/deskutils/treeline
 treepuzzle	ports/biology/treepuzzle
 treeviewx	ports/biology/treeviewx
