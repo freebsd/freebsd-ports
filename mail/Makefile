@@ -643,6 +643,7 @@
     SUBDIR += wmmaiload
     SUBDIR += wmmultipop3
     SUBDIR += wmpop3
+    SUBDIR += wmpop3lb
     SUBDIR += wmymail
     SUBDIR += xbuffy
     SUBDIR += xc-mail
