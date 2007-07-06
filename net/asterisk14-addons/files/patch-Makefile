@@ -5,7 +5,7 @@
  OVERWRITE:=y
  
 -CFLAGS+=-fPIC
-+CFLAGS+=-fPIC -I/usr/local/include 
++CFLAGS+=-fPIC -I${PREFIX}/include 
  
  # If the file .asteriskaddons.makeopts is present in your home directory, you can
  # include all of your favorite menuselect options so that every time you download
