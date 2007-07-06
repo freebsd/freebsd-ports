@@ -307,7 +307,7 @@
 +
 +	   g_object_get (G_OBJECT (monitor), "cpu", &mon_cpu, NULL);
 +	   len = sizeof (ifreq);
-+	   freq_oid = g_strdup_printf ("dev.cpu.%d.freq", mon_cpu);
++	   freq_oid = g_strdup_printf ("dev.cpu.%d.freq", 0);
 +
 +	   if (sysctlbyname (freq_oid, &ifreq, &len, NULL, 0) == -1) {
 +	       		 g_free (freq_oid);
@@ -346,7 +346,7 @@
 +	   g_object_get (G_OBJECT (monitor), "cpu", &mon_cpu, NULL);
 +
 +	   levels_oid = g_strdup_printf ("dev.cpu.%d.freq_levels",
-+	   	mon_cpu);
++	   	0);
 +	   len = 4;
 +	   sysctlnametomib (levels_oid, mib, &len);
 +	   len = sizeof (levels);

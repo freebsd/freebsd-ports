@@ -183,7 +183,7 @@
 +	   g_object_get (G_OBJECT (selector), "cpu", &cpu, NULL);
 +
 +	   frequency = (guint) ((gdouble) frequency / 1000); /* Convert back to MHz*/
-+           freq_oid = g_strdup_printf ("dev.cpu.%d.freq", (gint) cpu);
++           freq_oid = g_strdup_printf ("dev.cpu.%d.freq", (gint) 0);
 +
 +           sysctlbyname (freq_oid, NULL, &len, &frequency, sizeof (frequency));
 +           g_free (freq_oid);
