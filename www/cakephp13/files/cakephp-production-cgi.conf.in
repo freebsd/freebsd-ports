@@ -4,7 +4,7 @@ AddType application/x-httpd-php-source .phps
 Action php-script %%PHPCGI%%         
 AddHandler php-script .php
  
-DocumentRoot %%DATADIR%%/app/webroot
+DocumentRoot %%WWWDIR%%/app/webroot
 
 <Location />
     DirectoryIndex index.php

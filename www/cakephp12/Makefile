@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	cakephp
-PORTVERSION=	1.1.13.4450
-PORTREVISION=	1
+PORTVERSION=	1.1.15.5144
 CATEGORIES=	www
-MASTER_SITES=	http://cakeforge.org/frs/download.php/326/
+MASTER_SITES=	http://cakeforge.org/frs/download.php/410/
 DISTNAME=	cake_${PORTVERSION}
 
 MAINTAINER=	glarkin@sourcehosting.net
@@ -63,7 +62,7 @@ PROD=		development
 EXTRA_PATCHES=	${FILESDIR}/development-app-config-core.php.patch
 .endif
 
-CONF=		cakephp-${PROD}${CGI_EXT}.conf 
+CONF=		cakephp-${PROD}${CGI_EXT}.conf
 SUB_FILES+=	${CONF}
 
 DB_DEFINED=	no
@@ -109,15 +108,15 @@ confighelp:
 	@${ECHO_MSG} ""
 
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${WWWDIR}
 	${CP} -R ${WRKSRC}/.htaccess \
 			${WRKSRC}/app \
 			${WRKSRC}/cake \
 			${WRKSRC}/index.php \
-			${WRKSRC}/vendors ${DATADIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DATADIR}
-	${FIND} ${DATADIR} -type f -print | ${XARGS} -n1 ${CHMOD} 644
-	${FIND} ${DATADIR} -type d -print | ${XARGS} -n1 ${CHMOD} 755
+			${WRKSRC}/vendors ${WWWDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	${FIND} ${WWWDIR} -type f -print | ${XARGS} -n1 ${CHMOD} 644
+	${FIND} ${WWWDIR} -type d -print | ${XARGS} -n1 ${CHMOD} 755
 
 post-install:
 	@if [ -d "${CONFDIR}" ]; then \

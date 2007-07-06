@@ -4,7 +4,7 @@ AddType application/x-httpd-php-source .phps
 Action php-script %%PHPCGI%%
 AddHandler php-script .php
 
-Alias /cakephp %%DATADIR%%
+Alias /cakephp %%WWWDIR%%
 
 <Location /cakephp>
     DirectoryIndex index.php
