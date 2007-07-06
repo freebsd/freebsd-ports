@@ -409,6 +409,7 @@
     SUBDIR += pear-Mail_Mbox
     SUBDIR += pear-Mail_Mime
     SUBDIR += pear-Mail_Queue
+    SUBDIR += pear-Mail_mimeDecode
     SUBDIR += pear-Net_Cyrus
     SUBDIR += pear-Net_IMAP
     SUBDIR += pear-Net_LMTP
