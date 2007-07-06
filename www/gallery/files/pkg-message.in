@@ -2,7 +2,7 @@
 
  Please consider adding the following 3 lines to your httpd.conf
 	
-	<Directory %%PREFIX%%/%%GALLERYDIR%%>
+	<Directory "%%WWWDIR%%">
 		AllowOverride Options FileInfo
 	</Directory>
 
@@ -10,7 +10,7 @@
 
 *****************************************************************
 
- Please visit 'http://{host.domain}/gallery/' in a
+ Please visit 'http://{host.domain}/%%WWWDIR_REL%%/' in a
  web-browser and follow the configuration instructions.
 
 *****************************************************************
