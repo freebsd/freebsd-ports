@@ -4,8 +4,9 @@
 #
 
 # PROVIDE: mpd
-# REQUIRE: NETWORKING
-# BEFORE: SERVERS
+# REQUIRE: SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
 
 #
 # Add the following lines to /etc/rc.conf to enable mpd4:
