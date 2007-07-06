@@ -55,6 +55,14 @@ post-patch:
 	${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,'	\
 	    ${WRKSRC}/src/support/tests/test_*
 
+pre-configure:
+	# If the installed Boost is 1.34 or later, we must compile
+	# with exceptions enabled:
+	${AWK} '/#define BOOST_VERSION / {exit($$NF >= 103400)}'	\
+		${LOCALBASE}/include/boost/version.hpp || \
+	${REINPLACE_CMD} -e 's,\(AM_CXXFLAGS="\)-fno-exceptions,\1,' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+
 post-configure:
 	# Removing explicit linking with -lc
 	${REINPLACE_CMD} -e 's,-lc ,,' ${WRKSRC}/*/Makefile
