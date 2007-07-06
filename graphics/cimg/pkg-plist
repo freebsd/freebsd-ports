@@ -11,6 +11,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/CImgLogo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/CImgLogo2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/FAQ_item.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/curve_editor.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/download_item.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/item_codesample.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/item_getting.jpg
@@ -26,6 +27,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard3.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard4.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/postcard5.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/project-support.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/screenshots_item.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_blobs.jpg
@@ -61,6 +63,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000020.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000021.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000022.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000023.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_odykill.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_optflow.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_paint.jpg
@@ -172,6 +175,7 @@ include/CImg.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/cimgmatlab_cannyderiche.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/cimgmatlab_cannyderiche.m
+%%PORTDOCS%%%%EXAMPLESDIR%%/curve_editor.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/dtmri_view.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/edge_explorer.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/fade_images.cpp

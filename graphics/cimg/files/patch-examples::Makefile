@@ -1,9 +1,9 @@
---- examples/Makefile.orig	Tue Jun 12 14:54:41 2007
-+++ examples/Makefile	Tue Jun 12 19:04:08 2007
-@@ -37,10 +37,10 @@
+--- examples/Makefile.orig	Wed Jul  4 13:23:28 2007
++++ examples/Makefile	Wed Jul  4 23:23:43 2007
+@@ -38,10 +38,10 @@
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = 1.21
+ CIMG_VERSION = 1.22
 -CC           = g++
 -X11PATH      = /usr/X11R6
 -CFLAGS       = -Wall -W -ansi -pedantic -ffast-math
@@ -15,7 +15,7 @@
  
  #--------------------------------------------------
  # Set compilation flags allowing to customize CImg
-@@ -76,6 +76,9 @@
+@@ -77,6 +77,9 @@
  # Flags to compile on Solaris
  CIMG_SOLARIS_FLAGS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
  
@@ -25,7 +25,7 @@
  # Set default compilation flags.
  # Uncomment lines here, if you want to customize your default configuration
  CIMG_DEFAULT_FLAGS = $(CIMG_X11_FLAGS) \
-@@ -129,7 +132,7 @@
+@@ -130,7 +133,7 @@
  all: $(CIMG_FILES)
  
  clean:
@@ -34,7 +34,7 @@
  
  # Linux/Mac OSX targets
  linux:
-@@ -155,3 +158,9 @@
+@@ -156,3 +159,9 @@
  Msolaris:
  	make "ARCHFLAGS=-Dcimg_display_type=0 -O3 $(CIMG_ALL_FLAGS)" all
  
