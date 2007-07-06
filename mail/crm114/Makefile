@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	crm114
-PORTVERSION=	20070428
+PORTVERSION=	20070622
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
@@ -23,7 +23,7 @@ LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre
 # there is no other then formail on this planet
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
-CRM114RELEASENAME=BlameSpamConf
+CRM114RELEASENAME=BlameTheInterns
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
