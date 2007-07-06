@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sympa
-PORTVERSION=	5.2.4
-PORTREVISION=	1
+PORTVERSION=	5.3.2
 CATEGORIES=	mail
 MASTER_SITES?=	http://www.sympa.org/distribution/
 
@@ -17,11 +16,14 @@ COMMENT=	Sympa is an electronic mailing list manager
 BUILD_DEPENDS+=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
+		${SITE_PERL}/MIME/EncWords.pm:${PORTSDIR}/mail/p5-MIME-EncWords \
+		${SITE_PERL}/File/NFSLock.pm:${PORTSDIR}/devel/p5-File-NFSLock \
 		${SITE_PERL}/Locale/TextDomain.pm:${PORTSDIR}/devel/p5-Locale-libintl \
 		${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
 		${SITE_PERL}/Crypt/CipherSaber.pm:${PORTSDIR}/security/p5-Crypt-CipherSaber \
+		${SITE_PERL}/mach/Crypt/OpenSSL/X509.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-X509 \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/bin/mhonarc:${PORTSDIR}/www/mhonarc
@@ -29,7 +31,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LATEST_LINK=	sympa5
 USE_APACHE=	1.3+
-CONFLICTS=	sympa-4* sympa-5.[0-1]* sympa-5.2.[0-3]*
+CONFLICTS=	sympa-4* sympa-5.[0-2]*
 
 DB_TYPE?=mysql
 
