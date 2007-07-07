@@ -142,7 +142,7 @@ share/pixmaps/deluge.xpm
 @dirrmtry %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/deluge
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
