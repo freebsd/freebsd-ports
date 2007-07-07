@@ -1,0 +1,11 @@
+--- klaptopdaemon/Makefile.in.orig	Sun Jul  8 01:27:01 2007
++++ klaptopdaemon/Makefile.in	Sun Jul  8 01:27:58 2007
+@@ -488,7 +488,7 @@
+ #>- kded_klaptopdaemon_la_SOURCES = $(MESSAGE_SOURCES) laptop_daemon.skel  
+ #>+ 1
+ kded_klaptopdaemon_la_SOURCES=$(MESSAGE_SOURCES)    laptop_daemon_skel.cc
+-kded_klaptopdaemon_la_LDFLAGS = $(all_libraries) -module -avoid-version  -lXtst
++kded_klaptopdaemon_la_LDFLAGS = $(all_libraries) -module -avoid-version  -lXtst -lXss
+ kded_klaptopdaemon_la_LIBADD = $(LIB_KDEUI) libkcmlaptop.la
+ klaptop_acpi_helper_SOURCES = acpi_helper.cpp
+ klaptop_check_SOURCES = laptop_check.cpp 
