@@ -5268,6 +5268,7 @@ ja-py-kanjilib	ports/japanese/py-kanjilib
 ja-pycodec	ports/japanese/pycodec
 ja-pycodec-zope	ports/japanese/pycodec-zope
 ja-qkc		ports/japanese/qkc
+ja-qt4-codecs-jp	ports/japanese/qt4-codecs-jp
 ja-quit		ports/japanese/quit
 ja-rbnamazu	ports/japanese/rbnamazu
 ja-recjis	ports/japanese/recjis
@@ -5950,6 +5951,7 @@ ko-nvi-euc-kr	ports/korean/nvi-euc-kr
 ko-nvi-iso-2022-kr	ports/korean/nvi-iso-2022-kr
 ko-pgp.language	ports/korean/pgp.language
 ko-pinetreefonts	ports/korean/pinetreefonts
+ko-qt4-codecs-kr	ports/korean/qt4-codecs-kr
 ko-scim-hangul	ports/korean/scim-hangul
 ko-scim-tables	ports/korean/scim-tables
 ko-stardict2-dict-kr	ports/korean/stardict2-dict-kr
@@ -13399,10 +13401,6 @@ qt33		ports/x11-toolkits/qt33
 qt4		ports/devel/qt4
 qt4-accessible	ports/accessibility/qt4-accessible
 qt4-assistant	ports/devel/qt4-assistant
-qt4-codecs-cn	ports/chinese/qt4-codecs-cn
-qt4-codecs-jp	ports/japanese/qt4-codecs-jp
-qt4-codecs-kr	ports/korean/qt4-codecs-kr
-qt4-codecs-tw	ports/chinese/qt4-codecs-tw
 qt4-corelib	ports/devel/qt4-corelib
 qt4-designer	ports/devel/qt4-designer
 qt4-doc		ports/misc/qt4-doc
@@ -17411,6 +17409,8 @@ zh-phpbb-tw	ports/chinese/phpbb-tw
 zh-pine4	ports/chinese/pine4
 zh-pyDict	ports/chinese/pyDict
 zh-qe		ports/chinese/qe
+zh-qt4-codecs-cn ports/chinese/qt4-codecs-cn
+zh-qt4-codecs-tw ports/chinese/qt4-codecs-tw
 zh-qterm	ports/chinese/qterm
 zh-reciteword	ports/chinese/reciteword
 zh-scim-chewing	ports/chinese/scim-chewing
