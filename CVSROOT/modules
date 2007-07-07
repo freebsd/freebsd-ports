@@ -12739,6 +12739,7 @@ py-astng	ports/devel/py-astng
 py-asv		ports/textproc/py-asv
 py-avahi	ports/net/py-avahi
 py-axiom	ports/databases/py-axiom
+py-babel	ports/devel/py-babel
 py-basemap	ports/math/py-basemap
 py-basemap-data	ports/math/py-basemap-data
 py-bcfg2	ports/sysutils/py-bcfg2
