@@ -1077,6 +1077,7 @@
     SUBDIR += p5-DateTime-TimeZone
     SUBDIR += p5-DateTime-TimeZone-Alias
     SUBDIR += p5-DateTime-TimeZone-LMT
+    SUBDIR += p5-DateTime-Util-Astro
     SUBDIR += p5-DateTime-Util-Calc
     SUBDIR += p5-Decision-ACL
     SUBDIR += p5-Devel-Arena
