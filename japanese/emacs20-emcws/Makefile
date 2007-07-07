@@ -25,6 +25,8 @@ COMMENT=	Emacs + Canna + Wnn + Sj3
 BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
 RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
 
+DEPRECATED=	"editors/emacs20 is also deprecated"
+
 CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
 		ja-emcws-21.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
