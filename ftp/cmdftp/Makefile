@@ -8,7 +8,7 @@
 PORTNAME=	cmdftp
 PORTVERSION=	0.9.5
 CATEGORIES=	ftp
-MASTER_SITES=	SAVANNAH
+MASTER_SITES=	SAVANNAH CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Command line shell-like ftp client
