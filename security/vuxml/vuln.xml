@@ -39,7 +39,11 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>wireshark</name>
-	<name>etherreal</name>
+	<name>wireshark-lite</name>
+	<name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
 	<range><ge>0.8.20</ge><lt>0.99.6</lt></range>
       </package>
     </affects>
@@ -47,7 +51,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>wireshark Team reports:</p>
 	<blockquote cite="http://www.wireshark.org/security/wnpa-sec-2007-02.html">
-	  <p>It may be possible to make Wireshark or Etherreal crash or use up
+	  <p>It may be possible to make Wireshark or Ethereal crash or use up
 	    available memory by injecting a purposefully malformed packet onto
 	    the wire or by convincing someone to read a malformed packet trace
 	    file.</p>
@@ -61,6 +65,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-06-29</discovery>
       <entry>2007-07-06</entry>
+      <modified>2007-07-07</modified>
     </dates>
   </vuln>
 
