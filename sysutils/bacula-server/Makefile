@@ -88,7 +88,7 @@ OPTIONS+=	OPENSSL "Enable OpenSSL for encrypted communication" off
 # include of bsd.port.pre.mk!
 WANT_GNOME=	yes
 .if defined(WITH_GNOMECONSOLE)
-USE_GNOME=	libgnome
+USE_GNOME=	libgnome gnomelibs libgnomeui
 .endif
 
 PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
