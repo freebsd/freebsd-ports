@@ -569,6 +569,7 @@
     SUBDIR += pmars-sdl
     SUBDIR += poker-engine
     SUBDIR += poker-eval
+    SUBDIR += pokerth
     SUBDIR += polypuzzle
     SUBDIR += pongix
     SUBDIR += pouetchess
