@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	m17n-lib
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.3.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib-download/
 
@@ -24,7 +23,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/m17n/mdb.dir:${PORTSDIR}/devel/m17n-db
 USE_AUTOTOOLS=	libtool:15
 USE_XLIB=	yes
 USE_GNOME=	gnometarget libxml2 pkgconfig
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
@@ -51,5 +49,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g ; \
 		 s|-ldl||g'
+	@${REINPLACE_CMD} -e '/if test/s|==|=|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
