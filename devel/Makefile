@@ -1815,6 +1815,7 @@
     SUBDIR += py-argparse
     SUBDIR += py-asn1
     SUBDIR += py-astng
+    SUBDIR += py-babel
     SUBDIR += py-bison
     SUBDIR += py-celementtree
     SUBDIR += py-cheetah
