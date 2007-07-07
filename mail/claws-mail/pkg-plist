@@ -91,6 +91,7 @@ include/claws-mail/gtk/filesel.h
 include/claws-mail/gtk/foldersort.h
 include/claws-mail/gtk/gtkaspell.h
 include/claws-mail/gtk/gtksctree.h
+include/claws-mail/gtk/headers.h
 include/claws-mail/gtk/gtkshruler.h
 include/claws-mail/gtk/gtksourceprintjob.h
 include/claws-mail/gtk/gtkutils.h
@@ -122,6 +123,7 @@ include/claws-mail/ldaplocate.h
 include/claws-mail/ldapquery.h
 include/claws-mail/ldapserver.h
 include/claws-mail/ldaputil.h
+include/claws-mail/ldapupdate.h
 include/claws-mail/ldif.h
 include/claws-mail/localfolder.h
 include/claws-mail/main.h
@@ -143,6 +145,7 @@ include/claws-mail/news.h
 include/claws-mail/news_gtk.h
 include/claws-mail/noticeview.h
 include/claws-mail/partial_download.h
+include/claws-mail/prefs_summary_open.h
 include/claws-mail/pine.h
 %%GPGME%%include/claws-mail/plugins/pgpcore/passphrase.h
 %%GPGME%%include/claws-mail/plugins/pgpcore/pgp_viewer.h
