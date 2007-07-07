@@ -30,6 +30,7 @@ CONFIGURE_ENV=	MIBDIRS="/dev/null" \
 		LIBS="${WIRESHARK_LIBS}"
 CONFIGURE_ARGS+=	--program-transform-name="" \
 			--with-ssl=${OPENSSLBASE} \
+			--disable-warnings-as-errors \
 			--mandir=${MANPREFIX}/man
 MAKE_ENV=	MIBDIRS="/dev/null"
 USE_LDCONFIG=	yes
