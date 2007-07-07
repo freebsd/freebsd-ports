@@ -1,3 +1,4 @@
+bin/pyblcmd
 %%PYTHON_SITELIBDIR%%/Pyblosxom/__init__.py
 %%PYTHON_SITELIBDIR%%/Pyblosxom/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Pyblosxom/__init__.pyo
@@ -74,7 +75,6 @@
 %%EXAMPLESDIR%%/config.py
 %%EXAMPLESDIR%%/pyblosxom.cgi
 %%EXAMPLESDIR%%/pyblosxom.tac
-%%EXAMPLESDIR%%/wsgi_app.py
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/Pyblosxom/renderers
