@@ -558,6 +558,7 @@
     SUBDIR += p5-Text-RecordParser
     SUBDIR += p5-Text-Reflow
     SUBDIR += p5-Text-Reform
+    SUBDIR += p5-Text-Report
     SUBDIR += p5-Text-Repository
     SUBDIR += p5-Text-Shellwords
     SUBDIR += p5-Text-Similarity
