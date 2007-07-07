@@ -1,0 +1,16 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP/HTMLMatrix/.packlist
+%%SITE_PERL%%/Test/TAP/HTMLMatrix.pm
+%%SITE_PERL%%/Test/TAP/HTMLMatrix/detailed_view.html
+%%SITE_PERL%%/Test/TAP/HTMLMatrix/htmlmatrix.css
+%%SITE_PERL%%/Test/TAP/HTMLMatrix/summary_view.html
+%%SITE_PERL%%/Test/TAP/Model/Colorful.pm
+%%SITE_PERL%%/Test/TAP/Model/File/Visual.pm
+%%SITE_PERL%%/Test/TAP/Model/Subtest/Visual.pm
+%%SITE_PERL%%/Test/TAP/Model/Visual.pm
+@dirrm %%SITE_PERL%%/Test/TAP/HTMLMatrix
+@dirrmtry %%SITE_PERL%%/Test/TAP/Model/Subtest
+@dirrmtry %%SITE_PERL%%/Test/TAP/Model/File
+@dirrmtry %%SITE_PERL%%/Test/TAP/Model
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP/HTMLMatrix
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
