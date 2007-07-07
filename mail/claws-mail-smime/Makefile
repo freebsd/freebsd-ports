@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smime
-PORTVERSION=	0.7
-PORTREVISION?=	5
+PORTVERSION=	0.7.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -16,8 +15,8 @@ MAINTAINER=	c0rn@o2.pl
 COMMENT=	S/MIME plugin for claws-mail
 
 LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme
-BUILD_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=2.10:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=2.10:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
