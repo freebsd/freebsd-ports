@@ -1,0 +1,12 @@
+This module is a subclass of Test::Harness::Straps.
+
+It uses callbacks in the straps object to construct a deep structure,
+with all the data known about a test run accessible within.
+
+It's purpose is to ease the processing of test data, for the purpose of
+generating reports, or something like that.
+
+The niche it fills is creating a way to access test run data, both from
+a serialized and a real source, and to ease the querying of this data.
+
+WWW: http://search.cpan.org/dist/Test-TAP-Model/
