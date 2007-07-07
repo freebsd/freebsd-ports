@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	m17n-db
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.3.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib-download/:m17n \
 		${MASTER_SITE_GNU:S/$/:glibc/}
@@ -19,11 +18,18 @@ EXTRACT_ONLY=	${M17N_DISTFILE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data files for the m17n library
 
-USE_GNOME=	pkgconfig
+USE_GNOME=	gnometarget pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-charmaps=${CHARMAPSDIR}
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 M17N_DISTFILE=	${DISTNAME}${EXTRACT_SUFX}
 GLIBC_VERSION=	2.3.6
@@ -32,7 +38,6 @@ CHARMAPSDIR=	glibc-${GLIBC_VERSION}/localedata/charmaps
 
 post-extract:
 	cd ${WRKSRC}; ${TAR} xjf ${DISTDIR}/${GLIBC_DISTFILE} ${CHARMAPSDIR}
-
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
