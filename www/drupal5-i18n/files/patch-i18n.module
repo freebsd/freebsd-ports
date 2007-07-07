@@ -1,0 +1,15 @@
+--- i18n.module	2007/05/03 13:48:57	1.36.2.12
++++ i18n.module	2007/05/16 17:43:10	1.36.2.13
+@@ -187,10 +187,10 @@
+         if (isset($node->menu) && !$node->menu['delete'] && $node->menu['title']) {
+           $item = $node->menu;
+           $item['path'] = ($item['path']) ? $item['path'] : "node/$node->nid";
+-
++          $item['type'] = $item['type'] | MENU_MODIFIED_BY_ADMIN;
+           if ($item['mid']) {
+             // Update menu item 
+-            db_query("UPDATE {menu} SET pid = %d, path = '%s', title = '%s', description = '%s', weight = %d, type = %d, language = '%s' WHERE mid = %d", $item['pid'], $item['path'], $item['title'], $item['description'], $item['weight'], $item['type'], $item['mid'], $node->language);
++            db_query("UPDATE {menu} SET pid = %d, path = '%s', title = '%s', description = '%s', weight = %d, type = %d, language = '%s' WHERE mid = %d", $item['pid'], $item['path'], $item['title'], $item['description'], $item['weight'], $item['type'], $node->language, $item['mid']);
+             drupal_set_message(t('The menu item %title has been updated with node language.', array('%title' => $item['title'])));
+           } elseif(SAVED_NEW == menu_save_item($item)) {
+             // Creating new menu item with node language
