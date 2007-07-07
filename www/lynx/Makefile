@@ -28,9 +28,11 @@ CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS='@comment '
 .else
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
+PLIST_SUB+=	NLS=''
 .endif
 
 .if defined(NO_INET6) || defined(WITHOUT_IPV6)
