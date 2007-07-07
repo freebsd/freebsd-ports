@@ -133,6 +133,7 @@ share/m17n/LANGUAGE.tbl
 share/m17n/LAOO-ALICE.flt
 share/m17n/LAOO-GENERIC.flt
 share/m17n/LAOO-MULE.flt
+share/m17n/LAOO-OTF.flt
 share/m17n/LINEBREAK.tab
 share/m17n/LOCALE.ali
 share/m17n/LOCALE.cs
@@ -146,6 +147,7 @@ share/m17n/ORYA-OTF.flt
 share/m17n/SCRIPT-LANGUAGE.tbl
 share/m17n/SCRIPT-OTF.tbl
 share/m17n/SCRIPT.tab
+share/m17n/SCRIPT.tbl
 share/m17n/SINH-OTF.flt
 share/m17n/SOFT-DOTTED.tab
 share/m17n/SYRC-OTF.flt
@@ -155,6 +157,7 @@ share/m17n/TELU-OTF.flt
 share/m17n/THAA-OTF.flt
 share/m17n/THAI-GENERIC.flt
 share/m17n/THAI-NORASI.flt
+share/m17n/THAI-OTF.flt
 share/m17n/THAI-TIS620.flt
 share/m17n/TIBT-MTIB.flt
 share/m17n/TIBT-MULE.flt
@@ -168,14 +171,14 @@ share/m17n/as-itrans.mim
 share/m17n/bn-itrans.mim
 share/m17n/bn-unijoy.mim
 share/m17n/bo-wylie.mim
-share/m17n/bopo-kbd.mim
 share/m17n/cjk-util.mim
-share/m17n/command.mim
 share/m17n/default.fst
 share/m17n/dv-phonetic.mim
 share/m17n/el-kbd.mim
 share/m17n/fa-isiri.mim
 share/m17n/generic.fst
+share/m17n/global.mim
+share/m17n/grc-mizuochi.mim
 share/m17n/gu-itrans.mim
 share/m17n/he-kbd.mim
 share/m17n/hi-itrans.mim
@@ -225,7 +228,12 @@ share/m17n/icons/sv-post.png
 share/m17n/icons/syrc-phonetic.png
 share/m17n/icons/ta-itrans.png
 share/m17n/icons/te-itrans.png
+share/m17n/icons/th-kesmanee-2.png
 share/m17n/icons/th-kesmanee.png
+share/m17n/icons/th-pattachote-2.png
+share/m17n/icons/th-pattachote.png
+share/m17n/icons/th-tis820-2.png
+share/m17n/icons/th-tis820.png
 share/m17n/icons/unicode.png
 share/m17n/icons/vi-telex.png
 share/m17n/icons/vi-viqr.png
@@ -242,6 +250,7 @@ share/m17n/icons/zh-tonepy.png
 share/m17n/ispell.mim
 share/m17n/ja-anthy.mim
 share/m17n/ja-tcode.mim
+share/m17n/ja-trycode.mim
 share/m17n/ka-kbd.mim
 share/m17n/kk-arabic.mim
 share/m17n/kk-kbd.mim
@@ -260,8 +269,10 @@ share/m17n/or-itrans.mim
 share/m17n/pa-itrans.mim
 share/m17n/rfc1345.mim
 share/m17n/ru-kbd.mim
+share/m17n/ru-phonetic.mim
 share/m17n/ru-yawerty.mim
 share/m17n/si-samanala.mim
+share/m17n/si-wijesekera-preedit.mim
 share/m17n/si-wijesekera.mim
 share/m17n/sk-kbd.mim
 share/m17n/sr-kbd.mim
@@ -269,14 +280,20 @@ share/m17n/sv-post.mim
 share/m17n/syrc-phonetic.mim
 share/m17n/ta-itrans.mim
 share/m17n/te-itrans.mim
+share/m17n/th-kesmanee-2.mim
 share/m17n/th-kesmanee.mim
+share/m17n/th-pattachote-2.mim
+share/m17n/th-pattachote.mim
+share/m17n/th-tis820-2.mim
+share/m17n/th-tis820.mim
 share/m17n/truetype.fst
+share/m17n/ug-kbd.mim
 share/m17n/unicode.mim
-share/m17n/variable.mim
 share/m17n/vi-telex.mim
 share/m17n/vi-viqr.mim
 share/m17n/vi-vni.mim
 share/m17n/xfont.fst
+share/m17n/zh-bopomofo.mim
 share/m17n/zh-cangjie.mim
 share/m17n/zh-pinyin.mim
 share/m17n/zh-py-b5.mim
@@ -289,3 +306,4 @@ share/m17n/zh-tonepy.mim
 share/m17n/zh-util.mim
 @dirrm share/m17n/icons
 @dirrm share/m17n
+%%NLS%%share/locale/ja/LC_MESSAGES/m17n-db.mo
