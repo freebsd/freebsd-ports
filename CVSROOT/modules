@@ -11006,6 +11006,7 @@ p5-Text-Quoted	ports/textproc/p5-Text-Quoted
 p5-Text-RecordParser	ports/textproc/p5-Text-RecordParser
 p5-Text-Reflow	ports/textproc/p5-Text-Reflow
 p5-Text-Reform	ports/textproc/p5-Text-Reform
+p5-Text-Report	ports/textproc/p5-Text-Report
 p5-Text-Repository	ports/textproc/p5-Text-Repository
 p5-Text-Shellwords	ports/textproc/p5-Text-Shellwords
 p5-Text-Similarity	ports/textproc/p5-Text-Similarity
