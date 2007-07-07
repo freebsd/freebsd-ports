@@ -12272,6 +12272,7 @@ poedit		ports/editors/poedit
 poink		ports/net/poink
 poker-engine	ports/games/poker-engine
 poker-eval	ports/games/poker-eval
+pokerth		ports/games/pokerth
 policykit	ports/sysutils/policykit
 polipo		ports/www/polipo
 poly1305aes	ports/security/poly1305aes
