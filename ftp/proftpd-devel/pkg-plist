@@ -28,7 +28,6 @@ include/proftpd/libsupp.h
 include/proftpd/log.h
 include/proftpd/mkhome.h
 include/proftpd/mod_ctrls.h
-include/proftpd/mod_quotatab.h
 include/proftpd/modules.h
 include/proftpd/netacl.h
 include/proftpd/netaddr.h
@@ -56,7 +55,6 @@ include/proftpd/xferlog.h
 sbin/ftpshut
 sbin/in.proftpd
 sbin/proftpd
-%%MYSQL%%include/proftpd/mod_sql.h
 @unexec if cmp -s %D/etc/proftpd.conf %D/etc/proftpd.conf.sample; then rm -f %D/etc/proftpd.conf; fi
 etc/proftpd.conf.sample
 @exec cp -n %D/%F %B/proftpd.conf

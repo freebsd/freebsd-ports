@@ -7,6 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1rc3
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -167,9 +168,6 @@ USE_MYSQL=	yes
 MODULES:=${MODULES}:mod_sql_mysql
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include:${LOCALBASE}/include/mysql
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib/mysql
-PLIST_SUB+=	MYSQL=""
-.else
-PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_PGSQL)
@@ -181,6 +179,7 @@ LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 
 .if ${MODULES:M*mod_sql_*}
 MODULES:=mod_sql${MODULES}
+PLIST_FILES+=	include/proftpd/mod_sql.h
 .endif
 
 .if defined(WITH_OPENSSL)
@@ -203,6 +202,7 @@ MODULES:=${MODULES}:mod_ctrls_admin
 
 .if defined(WITH_QUOTA)
 MODULES:=${MODULES}:mod_quotatab:mod_quotatab_file
+PLIST_FILES+=	include/proftpd/mod_quotatab.h
 .if defined(WITH_LDAP)
 MODULES:=${MODULES}:mod_quotatab_ldap
 .endif
