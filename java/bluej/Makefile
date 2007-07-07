@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bluej
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	java editors
 MASTER_SITES=	http://www.bluej.org/download/files/ \
 		ftp://ftp.bluej.org/pub/bluej/
@@ -15,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	Integrated Java environment designed for introductory teaching
 
 IS_INTERACTIVE=	yes
