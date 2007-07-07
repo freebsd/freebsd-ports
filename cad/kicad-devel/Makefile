@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		kicad
-DISTVERSION=		2007-05-25
+DISTVERSION=		2007-07-02
 CATEGORIES=		cad
 MASTER_SITES=		ftp://iut-tice.ujf-grenoble.fr/cao/:dat		\
 			ftp://ftp.lis.inpg.fr/uploads/kicad/:dat	\
@@ -15,20 +15,21 @@ MASTER_SITES=		ftp://iut-tice.ujf-grenoble.fr/cao/:dat		\
 			ftp://ftp.lis.inpg.fr/uploads/kicad/:src\
 			http://iut-tice.ujf-grenoble.fr/cao/:src
 DISTFILES=		${PORTNAME}-${DISTVERSION}.tgz:dat		\
-			${PORTNAME}-sources-${DISTVERSION}${EXTRACT_SUFX}:src
+			${PORTNAME}-sources--${DISTVERSION}${EXTRACT_SUFX}:src
 DIST_SUBDIR=		${PORTNAME}
-EXTRACT_ONLY=		${PORTNAME}-sources-${DISTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=		${PORTNAME}-sources--${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Schematic and PCB editing software
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	doc_components-${DOCVERSION}.tgz:dat
-DOCVERSION=	2007-05-11
+DOCVERSION=	2007-07-02
 .endif
 
 WRKSRC=		${WRKDIR}/kicad-dev
 MAKEFILE=	makefile.gtk
+INSTALL_TARGET=	install-bin
 
 USE_ZIP=	yes
 USE_GETTEXT=	yes
@@ -41,8 +42,10 @@ USE_GNOME=	atk	# Required by libwx_gtk2_aui-2.8.so
 INSTDIR=	${PORTNAME}
 PLIST_SUB=	INSTDIR=${INSTDIR} OPSYS=${OPSYS}
 
-DOS2CNV=	makefile.gtk makefile.include
+DOS2CNV=	makefile.gtk makefile.include libs.linux
 BINS=		cvpcb eeschema gerbview kicad pcbnew
+EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
+		contrib_makefiles.txt running_kicad_under_W98.txt
 
 .include <bsd.port.pre.mk>
 
@@ -64,9 +67,10 @@ post-extract:
 		${WRKSRC}/libs.${OPSYS}
 
 pre-configure:
-	for f in `${FIND} ${WRKSRC} -name ${MAKEFILE}`; do		\
+	for f in `${FIND} ${WRKSRC} -name ${MAKEFILE}` ; do		\
 		${REINPLACE_CMD} -e 's|CC = gcc|#CC = gcc|'		\
 			-e 's|LD = gcc|LD = ${CC}|'			\
+			-e 's|LD = g++|LD = ${CXX}|'			\
 			-e 's|-O2|${CFLAGS} -I${X11BASE}/include|'	\
 			-e 's|wx-config|${WX_CONFIG}|'			\
 			-e 's|LDFLAGS =|LDFLAGS += -L${X11BASE}/lib|'	\
@@ -74,6 +78,7 @@ pre-configure:
 			-e 's|gcc -D|${CC} -D|' $$f ;			\
 	done
 	${REINPLACE_CMD} -e 's|kicad/linux|${INSTDIR}/${OPSYS}|'	\
+		-e 's|/usr/share/kicad|${PREFIX}/${INSTDIR}|'		\
 		-e 's|/usr/local|${PREFIX}|' ${WRKSRC}/common/gestfich.cpp
 	${REINPLACE_CMD} -e 's|/usr/bin/xpdf|${X11BASE}/bin/xpdf|'	\
 		-e 's|/usr/bin/konqueror|${LOCALBASE}/bin/konqueror|'	\
@@ -82,9 +87,11 @@ pre-configure:
 pre-install:
 	${MKDIR} ${PREFIX}/${INSTDIR}/${OPSYS}/plugins
 	(cd ${PREFIX} && ${TAR} -xzopf ${_DISTDIR}/${PORTNAME}-${DISTVERSION}.tgz)
-	${RM} -rf ${PREFIX}/${INSTDIR}/linux-non_unicode		\
-		${PREFIX}/${INSTDIR}/linux ${PREFIX}/${INSTDIR}/wings3d	\
-		${PREFIX}/${INSTDIR}/LINUX.README
+	${SED} -e 's|Exec=/usr/local/kicad/linux|Exec=$(PREFIX)/bin|'		\
+		-e 's|Icon=/usr/local/kicad/linux|Icon=${PREFIX}/${INSTDIR}|'	\
+	< ${PREFIX}/${INSTDIR}/linux/kicad.desktop > ${DESKTOPDIR}/kicad.desktop
+	${INSTALL_DATA} ${PREFIX}/${INSTDIR}/linux/kicad_icon.png ${PREFIX}/${INSTDIR}
+	${RM} -rf ${EXTRAS2RM:S|^|${PREFIX}/${INSTDIR}/|}
 
 post-install:
 	${LN} -sf ${BINS:S|^|${PREFIX}/${INSTDIR}/${OPSYS}/|} ${PREFIX}/bin

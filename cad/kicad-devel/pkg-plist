@@ -30,25 +30,18 @@
 %%INSTDIR%%/demos/electric/electric.cache.lib
 %%INSTDIR%%/demos/electric/electric.pro
 %%INSTDIR%%/demos/electric/electric.sch
-%%INSTDIR%%/demos/interf_u/interf_u-Component.pho
-%%INSTDIR%%/demos/interf_u/interf_u-Copper.pho
 %%INSTDIR%%/demos/interf_u/interf_u.brd
 %%INSTDIR%%/demos/interf_u/interf_u.cache.lib
 %%INSTDIR%%/demos/interf_u/interf_u.cmp
-%%INSTDIR%%/demos/interf_u/interf_u.drl
-%%INSTDIR%%/demos/interf_u/interf_u.drl.rpt
 %%INSTDIR%%/demos/interf_u/interf_u.net
 %%INSTDIR%%/demos/interf_u/interf_u.pro
 %%INSTDIR%%/demos/interf_u/interf_u.sch
 %%INSTDIR%%/demos/microwave/microwave.brd
 %%INSTDIR%%/demos/microwave/microwave.pro
 %%INSTDIR%%/demos/microwave/shape1.txt
-%%INSTDIR%%/demos/pic_programmer/pic_programmer.bak
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.brd
-%%INSTDIR%%/demos/pic_programmer/pic_programmer.cache.bck
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.cache.lib
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.cmp
-%%INSTDIR%%/demos/pic_programmer/pic_programmer.lst
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.net
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.pro
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.sch
@@ -82,7 +75,6 @@
 %%INSTDIR%%/demos/video/video.cmp
 %%INSTDIR%%/demos/video/video.net
 %%INSTDIR%%/demos/video/video.pro
-%%INSTDIR%%/demos/video/video.ps
 %%INSTDIR%%/demos/video/video.sch
 %%INSTDIR%%/doc_conv_orcad_to_kicad.txt
 %%INSTDIR%%/doc_conv_orcad_to_kicad_spanish.txt
@@ -584,6 +576,8 @@
 %%INSTDIR%%/help/ru/kicad/kicad_html_m7fc53a80.png
 %%INSTDIR%%/help/ru/pcbnew/doc_pcbnew.zip
 %%INSTDIR%%/help/ru/pcbnew/pcbnew_ru.html
+%%INSTDIR%%/internat/cs/kicad.mo
+%%INSTDIR%%/internat/cs/kicad.po
 %%INSTDIR%%/internat/de/kicad.mo
 %%INSTDIR%%/internat/de/kicad.po
 %%INSTDIR%%/internat/es/kicad.mo
@@ -600,8 +594,11 @@
 %%INSTDIR%%/internat/pl/kicad.po
 %%INSTDIR%%/internat/pt/kicad.mo
 %%INSTDIR%%/internat/pt/kicad.po
+%%INSTDIR%%/internat/ru/kicad.mo
+%%INSTDIR%%/internat/ru/kicad.po
 %%INSTDIR%%/internat/sl/kicad.mo
 %%INSTDIR%%/internat/sl/kicad.po
+%%INSTDIR%%/kicad_icon.png
 %%INSTDIR%%/library/74xx.dcm
 %%INSTDIR%%/library/74xx.lib
 %%INSTDIR%%/library/adc-dac.dcm
@@ -1217,6 +1214,7 @@
 %%INSTDIR%%/tutorial/Kicad_Tutorial_ru.odt
 %%INSTDIR%%/tutorial/Tutorial_Kicad_FR.odt
 %%INSTDIR%%/version.txt
+share/applications/kicad.desktop
 @dirrm %%INSTDIR%%/tutorial
 @dirrm %%INSTDIR%%/template
 @dirrm %%INSTDIR%%/modules/packages3d/valves
@@ -1277,6 +1275,7 @@
 %%PORTDOCS%%@dirrm %%INSTDIR%%/library/doc
 @dirrm %%INSTDIR%%/library
 @dirrm %%INSTDIR%%/internat/sl
+@dirrm %%INSTDIR%%/internat/ru
 @dirrm %%INSTDIR%%/internat/pt
 @dirrm %%INSTDIR%%/internat/pl
 @dirrm %%INSTDIR%%/internat/ko
@@ -1285,6 +1284,7 @@
 @dirrm %%INSTDIR%%/internat/fr
 @dirrm %%INSTDIR%%/internat/es
 @dirrm %%INSTDIR%%/internat/de
+@dirrm %%INSTDIR%%/internat/cs
 @dirrm %%INSTDIR%%/internat
 @dirrm %%INSTDIR%%/help/ru/pcbnew
 @dirrm %%INSTDIR%%/help/ru/kicad
