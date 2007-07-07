@@ -48,6 +48,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYMAKO_EGG%%/mako/ext/autohandler.py
 %%PYTHON_SITELIBDIR%%/%%PYMAKO_EGG%%/mako/ext/autohandler.pyc
 %%PYTHON_SITELIBDIR%%/%%PYMAKO_EGG%%/mako/ext/autohandler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYMAKO_EGG%%/mako/ext/babelplugin.py
+%%PYTHON_SITELIBDIR%%/%%PYMAKO_EGG%%/mako/ext/babelplugin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYMAKO_EGG%%/mako/ext/babelplugin.pyo
 %%PYTHON_SITELIBDIR%%/%%PYMAKO_EGG%%/mako/ext/preprocessors.py
 %%PYTHON_SITELIBDIR%%/%%PYMAKO_EGG%%/mako/ext/preprocessors.pyc
 %%PYTHON_SITELIBDIR%%/%%PYMAKO_EGG%%/mako/ext/preprocessors.pyo
