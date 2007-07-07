@@ -1,14 +1,17 @@
 @comment $FreeBSD$
 bin/ganttproject
+%%DATADIR%%/HouseBuildingSample.gan
 %%DATADIR%%/eclipsito.jar
 %%DATADIR%%/ganttproject-eclipsito-config.xml
-%%DATADIR%%/HouseBuildingSample.gan
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/colombia_calendar.patch
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_de.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_en_canada.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_en_england.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_es.calendar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_es_colombia.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_fr.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_it.calendar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_ja_JP.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_no.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_pl.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_pt_brazil.calendar
@@ -424,6 +427,7 @@ bin/ganttproject
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/keyboard.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_bg.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_cs.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_cz.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_da.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_de.properties
