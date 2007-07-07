@@ -7,7 +7,7 @@
 
 PORTNAME=	WebMagick
 PORTVERSION=	2.03p3
-PORTREVISION=	26
+PORTREVISION=	27
 PORTEPOCH=	1
 CATEGORIES=	www graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -29,6 +29,8 @@ CONFIGURE_ENV=	webmagick_cv_rootpath=${PREFIX}/www/data \
 		webmagick_cv_maptype=ncsa \
 		PERL=${PERL}
 
+.include <bsd.port.pre.mk>
+
 .if !exists(${X11BASE}/bin/xlsfonts)
 WITHOUT_X11=	yes
 .endif
@@ -49,4 +51,4 @@ post-install:
 	fi; \
 	${INSTALL_DATA} webmagickrc ${PREFIX}/etc/webmagickrc.dist
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
