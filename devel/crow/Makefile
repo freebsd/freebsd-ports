@@ -11,7 +11,7 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crow-designer
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	A modern GUI builder for the GTK+ toolkit
 
 LIB_PC_DEPENDS=	guiloader-c++.pc:${PORTSDIR}/devel/guiloader-c++
