@@ -1,0 +1,5 @@
+Text::Report - Perl extension for generating mixed columnar formatted reports
+and report templates
+
+Author: David Huggins <davidius@cpan.org>
+WWW:    http://search.cpan.org/dist/Text-Report/
