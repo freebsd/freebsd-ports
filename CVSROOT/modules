@@ -9213,6 +9213,7 @@ p5-DBD-Google	ports/databases/p5-DBD-Google
 p5-DBD-InterBase	ports/databases/p5-DBD-InterBase
 p5-DBD-LDAP	ports/databases/p5-DBD-LDAP
 p5-DBD-Mock	ports/databases/p5-DBD-Mock
+p5-DBD-Multi	ports/databases/p5-DBD-Multi
 p5-DBD-ODBC	ports/databases/p5-DBD-ODBC
 p5-DBD-Oracle	ports/databases/p5-DBD-Oracle
 p5-DBD-Pg	ports/databases/p5-DBD-Pg
