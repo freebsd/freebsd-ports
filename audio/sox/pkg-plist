@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+bin/libst-config
+bin/play
+bin/rec
+bin/sox
+include/st.h
+include/ststdint.h
+lib/libst.a
+lib/libst.la
+lib/libst.so
+lib/libst.so.0
