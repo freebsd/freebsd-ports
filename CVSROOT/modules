@@ -11725,6 +11725,7 @@ pecl-APC	ports/www/pecl-APC
 pecl-amfext	ports/www/pecl-amfext
 pecl-bcompiler	ports/devel/pecl-bcompiler
 pecl-big_int	ports/math/pecl-big_int
+pecl-bitset	ports/math/pecl-bitset
 pecl-bz2	ports/archivers/pecl-bz2
 pecl-crack	ports/security/pecl-crack
 pecl-ctemplate	ports/textproc/pecl-ctemplate
