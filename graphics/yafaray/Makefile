@@ -15,7 +15,6 @@ COMMENT=	A fast XML based raytracer
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_SCONS=	yes
-USE_GETOPT_LONG=yes
 USE_LDCONFIG=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
