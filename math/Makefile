@@ -278,6 +278,7 @@
     SUBDIR += parmetis
     SUBDIR += pear-Math_Combinatorics
     SUBDIR += pecl-big_int
+    SUBDIR += pecl-bitset
     SUBDIR += pecl-stats
     SUBDIR += petsc
     SUBDIR += petsc-mpich
