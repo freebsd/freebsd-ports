@@ -7,27 +7,20 @@
 #
 
 PORTNAME=	postmark
-PORTVERSION=	1.5
+PORTVERSION=	1.51
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.netapp.com/ftp/  \
-		http://dl.droso.net/ports/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
-EXTRACT_SUFX=	.c
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetApps file system benchmark
 
-BROKEN=		Checksum mismatch
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_WRKSUBDIR=	yes
 PLIST_FILES=	sbin/postmark
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
-
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o postmark ${DISTFILES})
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o postmark postmark-${PORTVERSION}.c)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/postmark ${PREFIX}/sbin
