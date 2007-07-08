@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	artemis
-PORTVERSION=	7
-PORTREVISION=	2
+PORTVERSION=	9
 CATEGORIES=	biology java
-MASTER_SITES=	http://www.sanger.ac.uk/Software/Artemis/v${PORTVERSION}/
-DISTNAME=	artemis_compiled_v${PORTVERSION}_${PORTREVISION}
+MASTER_SITES=	http://www.sanger.ac.uk/Software/Artemis/v${PORTVERSION}/ \
+		ftp://ftp.sanger.ac.uk/pub/pathogens/software/artemis/v${PORTVERSION}/
+DISTNAME=	artemis_compiled_v${PORTVERSION}
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A DNA sequence viewer and annotation tool
-
-BROKEN=		Unfetchable
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -24,6 +22,9 @@ JAVA_VERSION=	1.4+
 
 NO_BUILD=	yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+
+post-extract:
+	@${FIND} ${WRKSRC} -type d -name CVS -exec ${RM} -rf {} +
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PORTNAME}-${PORTVERSION}
