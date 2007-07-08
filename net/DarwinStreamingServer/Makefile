@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	DarwinStreamingServer
-PORTVERSION=	5.5.4
-PORTREVISION=	1
+PORTVERSION=	5.5.5
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	#http://developer.apple.com/darwin/projects/streaming/source/
 #		You must accept APSL (Apple Public Source License),  and get
-#		DarwinStreamingSrvr5.5.4-Source.tar.
+#		DarwinStreamingSrvr5.5.5-Source.tar.gz.
 DISTNAME=	DarwinStreamingSrvr${PORTVERSION}-Source
-EXTRACT_SUFX=	.tar
+#EXTRACT_SUFX=	.tar
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Darwin Streaming Server, a MP3, MPEG4 and QuickTime streaming server
@@ -97,7 +97,6 @@ post-patch:
 		${WRKSRC}/qtpasswd.tproj/Makefile.POSIX					\
 		${WRKSRC}/MP3Broadcaster/Makefile.POSIX					\
 		${WRKSRC}/HTTPUtilitiesLib/Makefile.POSIX				\
-		${WRKSRC}/StreamingLoadTool/Makefile.POSIX				\
 		${WRKSRC}/CommonUtilitiesLib/Makefile.POSIX				\
 		${WRKSRC}/StreamingProxy.tproj/Makefile.POSIX				\
 		${WRKSRC}/StreamingServer.xcode/project.pbxproj				\
