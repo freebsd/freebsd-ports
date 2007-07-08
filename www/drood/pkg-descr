@@ -1,0 +1,10 @@
+Drood is a lightweight, kqueue-based, connection-multiplexing, HTTP/1.1
+server, intended as an alternative to larger, more complex web servers for
+websites where the server requirements are simple.  Drood supports
+name-based virtual hosting.
+
+WWW: http://www.mammothcheese.ca/munger.html
+
+--
+James Bailie <jimmy@mammothcheese.ca>
+http://www.mammothcheese.ca

@@ -111,6 +111,7 @@
     SUBDIR += dotproject
     SUBDIR += dotproject-devel
     SUBDIR += dpsearch
+    SUBDIR += drood
     SUBDIR += drraw
     SUBDIR += drupal4
     SUBDIR += drupal4-attachment
