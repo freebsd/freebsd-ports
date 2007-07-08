@@ -40,9 +40,6 @@
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Text.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Text.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Text.pyo
-%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Tubes.py
-%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Tubes.pyc
-%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Tubes.pyo
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection.pyo
