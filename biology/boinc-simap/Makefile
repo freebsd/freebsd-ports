@@ -61,6 +61,10 @@ SUB_LIST=	SIMAP_BINARY=${SIMAP_BINARY} HMMER_BINARY=${HMMER_BINARY} SIMAP_APPVER
 IGNORE=		only supports FreeBSD 6.X and newer
 .endif
 
+.if ${OSVERSION} >= 700043
+LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
+.endif
+
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} ${DISTDIR}/${SIMAP_BINARY} ${WRKDIR}
