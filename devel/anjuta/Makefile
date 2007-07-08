@@ -8,6 +8,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -69,7 +70,8 @@ post-configure:
 		s|%%PREFIX%%|${PREFIX}|g' < ${FILESDIR}/anjuta \
 		> ${WRKDIR}/anjuta
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash| ; \
-	    	s|/usr/local|${PREFIX}|' \
+	    	s|/usr/local|${PREFIX}| ; \
+		s|share/anjuta|share/gnome/anjuta|' \
 	    	${WRKSRC}/global-tags/create_global_tags.sh
 
 post-install:
