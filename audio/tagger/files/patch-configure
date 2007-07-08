@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jul  7 16:57:39 2007
++++ configure	Sat Jul  7 16:57:47 2007
+@@ -11,7 +11,7 @@
+ 	check_cc_flag -std=gnu99 -pipe -Wall -Wshadow -Wcast-align -Wpointer-arith \
+ 		-Wwrite-strings -Wundef -Wmissing-prototypes -Wredundant-decls
+ 
+-	for i in -Wdeclaration-after-statement -Wold-style-definition -Wno-pointer-sign
++	for i in -Wdeclaration-after-statement -Wold-style-definition
+ 	do
+ 		check_cc_flag $i
+ 	done
