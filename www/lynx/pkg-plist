@@ -126,3 +126,5 @@ share/lynx_help/lynx_url_support.html
 %%NLS%%share/locale/rw/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lynx.mo
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
