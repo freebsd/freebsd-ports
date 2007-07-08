@@ -1,6 +1,6 @@
---- configure.orig	Thu May  3 23:07:19 2007
-+++ configure	Thu May  3 23:10:58 2007
-@@ -6120,7 +6120,7 @@ cat >>confdefs.h <<\_ACEOF
+--- configure.orig	Sun Jul  8 16:14:31 2007
++++ configure	Sun Jul  8 16:18:30 2007
+@@ -6896,7 +6896,7 @@ cat >>confdefs.h <<\_ACEOF
  #define HAVE_GTK_PRINT 1
  _ACEOF
  
@@ -9,7 +9,7 @@
  else
    gnome_print_extras="libgnomeprint-2.2 >= 2.1.4 libgnomeprintui-2.2 >= 2.1.4"
  fi
-@@ -6732,7 +6732,7 @@ if eval "test \"\${$as_ac_Lib+set}\" = s
+@@ -7525,7 +7525,7 @@ if { as_var=$as_ac_Lib; eval "test \"\${
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -18,7 +18,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -7008,7 +7008,7 @@ if test "${ac_cv_lib_ldap_ldap_search+se
+@@ -7797,7 +7797,7 @@ if test "${ac_cv_lib_ldap_ldap_search+se
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -27,7 +27,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -7072,7 +7072,7 @@ cat >>confdefs.h <<\_ACEOF
+@@ -7858,7 +7858,7 @@ cat >>confdefs.h <<\_ACEOF
  #define ENABLE_LDAP 1
  _ACEOF
  
@@ -36,35 +36,68 @@
  else
    { { echo "$as_me:$LINENO: error: *** You enabled LDAP but ldap library is not found." >&5
  echo "$as_me: error: *** You enabled LDAP but ldap library is not found." >&2;}
-@@ -8735,13 +8735,13 @@ _ACEOF
+@@ -9473,13 +9473,13 @@ _ACEOF
  else
  
  
--echo "$as_me:$LINENO: checking for new_pspell_manager in -lpspell" >&5
--echo $ECHO_N "checking for new_pspell_manager in -lpspell... $ECHO_C" >&6
+-{ echo "$as_me:$LINENO: checking for new_pspell_manager in -lpspell" >&5
+-echo $ECHO_N "checking for new_pspell_manager in -lpspell... $ECHO_C" >&6; }
 -if test "${ac_cv_lib_pspell_new_pspell_manager+set}" = set; then
-+echo "$as_me:$LINENO: checking for new_aspell_speller in -lpspell" >&5
-+echo $ECHO_N "checking for new_aspell_speller in -lpspell... $ECHO_C" >&6
-+if test "${ac_cv_lib_pspell_new_aspell_speller+set}" = set; then
++{ echo "$as_me:$LINENO: checking for new_aspell_manager in -laspell" >&5
++echo $ECHO_N "checking for new_aspell_manager in -laspell... $ECHO_C" >&6; }
++if test "${ac_cv_lib_aspell_new_aspell_manager+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpspell -lstdc++ -lpspell-modules $LIBS"
-+LIBS="-lpspell -lstdc++ $LIBS"
++LIBS="-laspell -lstdc++ $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -8755,11 +8755,11 @@ extern "C"
+@@ -9493,11 +9493,11 @@ cat >>conftest.$ac_ext <<_ACEOF
+ #ifdef __cplusplus
+ extern "C"
  #endif
- /* We use char because int might match the return type of a gcc2
-    builtin and then its argument prototype would still apply.  */
 -char new_pspell_manager ();
-+char new_aspell_speller ();
++char new_aspell_manager ();
  int
  main ()
  {
--new_pspell_manager ();
-+new_aspell_speller ();
+-return new_pspell_manager ();
++return new_aspell_manager ();
    ;
    return 0;
  }
+@@ -9520,26 +9520,26 @@ eval "echo \"\$as_me:$LINENO: $ac_try_ec
+ 	 test ! -s conftest.err
+        } && test -s conftest$ac_exeext &&
+        $as_test_x conftest$ac_exeext; then
+-  ac_cv_lib_pspell_new_pspell_manager=yes
++  ac_cv_lib_aspell_new_aspell_manager=yes
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-	ac_cv_lib_pspell_new_pspell_manager=no
++	ac_cv_lib_aspell_new_aspell_manager=no
+ fi
+ 
+ rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
+       conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ echo "$as_me:$LINENO: result: $ac_cv_lib_pspell_new_pspell_manager" >&5
+-echo "${ECHO_T}$ac_cv_lib_pspell_new_pspell_manager" >&6; }
+-if test $ac_cv_lib_pspell_new_pspell_manager = yes; then
++{ echo "$as_me:$LINENO: result: $ac_cv_lib_aspell_new_aspell_manager" >&5
++echo "${ECHO_T}$ac_cv_lib_aspell_new_aspell_manager" >&6; }
++if test $ac_cv_lib_aspell_new_aspell_manager = yes; then
+   cat >>confdefs.h <<_ACEOF
+ #define HAVE_LIBPSPELL 1
+ _ACEOF
+ 
+-  LIBS="-lpspell $LIBS"
++  LIBS="-laspell $LIBS"
+ 
+ else
+ 
