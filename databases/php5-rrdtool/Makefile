@@ -7,7 +7,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.00
-CATEGORIES=	net
+CATEGORIES=	databases
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/contrib/ \
 		http://ftp.ntua.gr/pub/net/monitoring/rrdtool/contrib/ \
 		http://www.mirrors.wiretapped.net/security/network-monitoring/rrdtool/contrib/
