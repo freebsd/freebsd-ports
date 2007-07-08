@@ -31,7 +31,7 @@
 +	int c = 0;
 +
 +#ifdef ENABLE_CHROOT
-+	c = config.use_chrott;
++	c = config.use_chroot;
 +#endif
 +
 +	add_kqueue_watch(c ? "/" : AVAHI_CONFIG_DIR);
