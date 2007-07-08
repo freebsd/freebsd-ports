@@ -148,9 +148,6 @@ etc/streaming/relayconfig.xml-dist
 @unexec if cmp -s %D/etc/streaming/streamingserver.xml %D/etc/streaming/streamingserver.xml-dist; then rm -f %D/etc/streaming/streamingserver.xml; fi
 etc/streaming/streamingserver.xml-dist
 @exec [ ! -f %B/streamingserver.xml ] && cp %B/%f %B/streamingserver.xml
-@unexec if cmp -s %D/etc/streaming/streamingloadtool.conf %D/etc/streaming/streamingloadtool.conf-dist; then rm -f %D/etc/streaming/streamingloadtool.conf; fi
-etc/streaming/streamingloadtool.conf-dist
-@exec [ ! -f %B/streamingloadtool.conf ] && cp %B/%f %B/streamingloadtool.conf
 @dirrm %%DATADIR%%/AdminHtml/includes
 @dirrm %%DATADIR%%/AdminHtml/images
 @dirrm %%DATADIR%%/AdminHtml/html_en
