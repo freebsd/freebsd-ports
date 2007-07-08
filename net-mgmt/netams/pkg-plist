@@ -2,6 +2,7 @@ etc/netams.cfg.sample
 libexec/netams
 sbin/flowprobe
 sbin/ipfw2netflow
+sbin/ascii2netflow
 bin/netamsctl
 %%DATADIR%%/ru-networks.txt.sample
 %%DATADIR%%/.netamsctl.rc

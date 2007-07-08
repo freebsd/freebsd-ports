@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	netams
-PORTVERSION=	3.3.5
-PORTREVISION=	1
+DISTVERSION=	3.4.0rc2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.netams.com/files/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jura@netams.com
 COMMENT=	Network Traffic Accounting and Monitoring Software
 
-NO_PACKAGE=	Depends on kernel
+NO_PACKAGE=	Depends on installed SQL database
 
 USE_SUBMAKE=	yes
 USE_RC_SUBR=	netams
 MANCOMPRESSED=	no
+
+SUB_FILES=	pkg-message
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		PREFIX="${PREFIX}" \
@@ -39,25 +39,13 @@ CGI=		.htaccess config.cgi netams_api.pl russian.res \
 IMAGES=		logo.gif logo_sm.jpg admintool-logo.gif showtable-logo.gif
 MAN8=		netams.8 flowprobe.8 netamsctl.8
 
-SYSDIR?=	/sys
-
 OPTIONS=	DEBUG	"Build with debug symbols"			off \
 		BW	"Build with bandwidth limitation functionality"	off \
 		HASH	"Build with HASH support"			off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 601104
-BROKEN=		Does not compile on FreeBSD >= 6.x
-.endif
-
-#.if !exists(${SYSDIR})
-#IGNORE=		Could not find the kernel sources in ${SYSDIR}. Please define SYSDIR
-#.endif
-
 post-patch:
-	@${REINPLACE_CMD} -E 's/^(CC).*/\1=$$(CXX)/; s|^(INCLUDE=).*|\1 ${LOCALBASE}/include|; s|^(CFLAGS).*=|\1+=|; /^FLAGS/d' \
-		${WRKSRC}/addon/Makefile.common
 .if defined(WITHOUT_DEBUG)
 	@${REINPLACE_CMD} -e 's|configure.sh|configure.sh -nodebug|' \
 		${WRKSRC}/Makefile
@@ -65,18 +53,19 @@ post-patch:
 
 .if defined(WITH_BW)
 	@${REINPLACE_CMD} -e 's|#DEFINE += -DHAVE_BW|DEFINE += -DHAVE_BW|' \
-		${WRKSRC}/addon/Makefile.common
+		${WRKSRC}/configure.sh
 .endif
 
 .if defined(WITH_HASH)
 	@${REINPLACE_CMD} -e 's|#DEFINE += -DUSE_HASH|DEFINE += -DUSE_HASH|' \
-		${WRKSRC}/addon/Makefile.common
+		${WRKSRC}/configure.sh
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/netams ${PREFIX}/libexec/netams
 	${INSTALL_PROGRAM} ${WRKSRC}/src/flowprobe ${PREFIX}/sbin/flowprobe
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ipfw2netflow ${PREFIX}/sbin/ipfw2netflow
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ascii2netflow ${PREFIX}/sbin/ascii2netflow
 	${INSTALL_PROGRAM} ${WRKSRC}/src/netamsctl ${PREFIX}/bin/netamsctl
 	${INSTALL_DATA} ${WRKSRC}/addon/netams.cfg ${PREFIX}/etc/netams.cfg.sample
 	${MKDIR} ${DATADIR}/cgi-bin/admin ${DATADIR}/cgi-bin/images
@@ -92,11 +81,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cgi-bin/admin/${f} ${DATADIR}/cgi-bin/admin
 .endfor
 .for f in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/doc/${f} ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/${f} ${MAN8PREFIX}/man/man8
 .endfor
 
 post-install:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g; s|%%DATADIR%%|${DATADIR}|g' \
-		${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
