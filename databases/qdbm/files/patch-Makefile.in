@@ -1,0 +1,11 @@
+--- Makefile.in.orig    Wed Feb 21 16:44:56 2007
++++ Makefile.in Sun Jul  8 18:19:52 2007
+@@ -169,8 +169,10 @@
+	cd $(srcdir)/man && cp -Rf $(MYMAN1S) $(DESTDIR)$(MYMAN1DIR)
+	mkdir -p $(DESTDIR)$(MYMAN3DIR)
+	cd $(srcdir)/man && cp -Rf $(MYMAN3S) $(DESTDIR)$(MYMAN3DIR)
++.if $(MYDOCS) != ""
+	mkdir -p $(DESTDIR)$(MYDATADIR)
+	cd $(srcdir) && cp -Rf $(MYDOCS) $(DESTDIR)$(MYDATADIR)
++.endif
+	mkdir -p $(DESTDIR)$(MYPCDIR)
