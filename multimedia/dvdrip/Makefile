@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dvdrip
-PORTVERSION=	0.98.2
-PORTREVISION=	1
+PORTVERSION=	0.98.6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/ \
 		${MASTER_SITE_PERL_CPAN}
