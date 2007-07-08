@@ -5,15 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	esniper
-DISTVERSION=	2-15-0
-PORTREVISION=	1
+DISTVERSION=	2-16-1
 CATEGORIES=	misc net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lewiz@compsoc.man.ac.uk
-COMMENT=	Lightweight tool for sniping ebay auctions
+COMMENT=	A lightweight console application for sniping ebay auctions
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
@@ -22,9 +21,15 @@ USE_OPENSSL=	yes
 
 MAN1=		esniper.1
 
+PLIST_FILES=	bin/esniper
+
+PORTEXAMPLES=	sample_auction.txt sample_config.txt
+
 post-install:
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample_auction.txt ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample_config.txt ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
