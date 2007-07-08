@@ -2,7 +2,7 @@ bin/imgcmp
 bin/imginfo
 bin/jasper
 bin/tmrdemo
-bin/jiv
+%%OPENGL%%bin/jiv
 include/jasper/jas_cm.h
 include/jasper/jas_config.h
 include/jasper/jas_config2.h

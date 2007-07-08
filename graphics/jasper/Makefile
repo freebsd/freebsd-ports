@@ -7,7 +7,7 @@
 
 PORTNAME=	jasper
 PORTVERSION=	1.900.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
 		${MASTER_SITE_IMAGEMAGICK}
@@ -20,7 +20,6 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_AUTOTOOLS=	libtool:15
 USE_ZIP=	yes
-USE_GL=	glut
 USE_GNOME=	gnometarget lthack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -31,6 +30,19 @@ USE_LDCONFIG=	yes
 MASTER_SITE_IMAGEMAGICK=	\
 	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/&,}
+
+OPTIONS=	OPENGL	"OpenGL support" off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_OPENGL)
+USE_GL=	glut
+CONFIGURE_ARGS+=--enable-opengl
+PLIST_SUB+=	OPENGL=""
+.else
+CONFIGURE_ARGS+=--disable-opengl
+PLIST_SUB+=	OPENGL="@comment "
+.endif
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=		imgcmp.1 imginfo.1 jasper.1 jiv.1
@@ -45,4 +57,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
