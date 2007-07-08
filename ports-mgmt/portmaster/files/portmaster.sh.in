@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.181
+# Local version: 1.182
 # $FreeBSD$
 
 # Copyright (c) 2005-2007 Douglas Barton, All rights reserved
@@ -629,6 +629,7 @@ echo "===>>> Skipping ${dep_port#$pd/} because it matches the pattern: *${EXCL}*
 			fi
 		done
 
+		ign_p=''
 		cur_p=`iport_from_origin ${dep_port#$pd/}`
 		if [ -n "$cur_p" ]; then
 			upd_args=$cur_p
@@ -1430,7 +1431,7 @@ for state in FORBIDDEN BROKEN IGNORE; do
 	fi
 done
 
-if [ "$$" -eq "$PARENT_PID" ]; then
+if [ "$$" -eq "$PARENT_PID" -a -z "$SHOW_WORK" ]; then
 	# Set the file name here so it's visible to the parent
 	DI_FILES=`mktemp -t DI-FILES-$PARENT_PID`
 	export DI_FILES
@@ -1439,7 +1440,7 @@ if [ "$$" -eq "$PARENT_PID" ]; then
 fi
 
 # Do these things first time through, with or without 'make config'
-if [ -z "$BUILDING" ]; then
+if [ -z "$BUILDING" -a -z "$SHOW_WORK" ]; then
 dofetch () {
 	echo "===>>> Launching 'make checksum' for $portdir in background"
 	fetchlog=`mktemp -t fetchlog-${PARENT_PID}-${portdir##*/}`
