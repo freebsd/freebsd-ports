@@ -1,6 +1,0 @@
-rubyrrdtool is an interface to Tobi Oetiker's round robin
-database and logging utility rrdtool. It uses librrd and
-is functionally comparable to the native perl bindings.
-It's under the MIT License.
-
-WWW: http://rubyforge.org/projects/rubyrrdtool/
