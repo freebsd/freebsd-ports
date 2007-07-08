@@ -8,7 +8,7 @@
 
 PORTNAME=	rrdpipe
 PORTVERSION=	0.1
-CATEGORIES=	net python
+CATEGORIES=	databases python
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
