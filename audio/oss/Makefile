@@ -7,7 +7,7 @@
 
 PORTNAME=	oss
 DISTVERSION=	4.0-build1003
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio kld
 MASTER_SITES=	http://developer.opensound.com/sources/stable/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-gpl
