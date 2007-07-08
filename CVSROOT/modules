@@ -11990,7 +11990,7 @@ php5-propel	ports/databases/php5-propel
 php5-pspell	ports/textproc/php5-pspell
 php5-readline	ports/devel/php5-readline
 php5-recode	ports/converters/php5-recode
-php5-rrdtool	ports/net/php5-rrdtool
+php5-rrdtool	ports/databases/php5-rrdtool
 php5-session	ports/www/php5-session
 php5-shmop	ports/devel/php5-shmop
 php5-simplexml	ports/textproc/php5-simplexml
@@ -13079,7 +13079,7 @@ py-rlcompleter2	ports/devel/py-rlcompleter2
 py-ro		ports/devel/py-ro
 py-routes	ports/www/py-routes
 py-roxlib	ports/devel/py-roxlib
-py-rrdpipe	ports/net/py-rrdpipe
+py-rrdpipe	ports/databases/py-rrdpipe
 py-rrdtool_lgpl	ports/net/py-rrdtool_lgpl
 py-rss2gen	ports/textproc/py-rss2gen
 py-rt		ports/net/py-rt
@@ -13762,7 +13762,7 @@ rpm4		ports/archivers/rpm4
 rprint		ports/print/rprint
 rpy		ports/math/rpy
 rqm		ports/mbone/rqm
-rrdman		ports/net/rrdman
+rrdman		ports/databases/rrdman
 rrdtool		ports/databases/rrdtool
 rrdtool10	ports/net/rrdtool10
 rscheme		ports/lang/rscheme
@@ -14134,7 +14134,7 @@ rubygem-rake	ports/devel/rubygem-rake
 rubygem-rapt	ports/devel/rubygem-rapt
 rubygem-redcloth	ports/www/rubygem-redcloth
 rubygem-rgl	ports/devel/rubygem-rgl
-rubygem-rrdtool	ports/net/rubygem-rrdtool
+rubygem-rrdtool	ports/databases/rubygem-rrdtool
 rubygem-rscm	ports/devel/rubygem-rscm
 rubygem-rspec	ports/devel/rubygem-rspec
 rubygem-rtags	ports/devel/rubygem-rtags
