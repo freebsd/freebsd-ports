@@ -3094,3 +3094,4 @@ multimedia/handbrake-gtk2||2007-07-04|Obsolete, getting old to keep unsupport ve
 audio/amarokFS||2007-07-04|Removed
 net/rrdtool|databases/rrdtool|2007-07-05|Move to better category
 sysutils/cd-write||2007-07-06|Obsolete port
+net/rubygems-rrdtool|databases/rubygems-rrdtool|2007-07-08|Chase move of databases/rrdtool
