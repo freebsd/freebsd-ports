@@ -1,10 +1,10 @@
---- configure.orig	Mon Jun 20 16:08:34 2005
-+++ configure	Mon Jun 20 16:09:54 2005
-@@ -19760,7 +19760,7 @@
- VERSION="2.10.1"
- WINDOWS_LIB_VERSION="2-10"
+--- configure.orig	Sun Jul  8 16:36:24 2007
++++ configure	Sun Jul  8 16:37:02 2007
+@@ -20331,7 +20331,7 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtoo
+ apiversion="2.12"
+ WINDOWS_LIB_VERSION="2-12"
  
--INSTALLED_CLASSPATH=\${prefix}/share/java/glade${apiversion}-${VERSION}.jar
+-INSTALLED_CLASSPATH=\${jardir}/glade${apiversion}-${VERSION}.jar
 +INSTALLED_CLASSPATH=\${prefix}/share/java/classes/glade${apiversion}.jar
  INSTALLED_JNI_DIR=\${prefix}/lib/
  
