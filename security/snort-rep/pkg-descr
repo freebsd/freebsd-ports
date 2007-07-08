@@ -7,4 +7,4 @@ output from a syslog file. The reports contain:
 * Alert summary by local host and ID
 * Alert summary by local port and ID
 
-WWW: http://people.ee.ethz.ch/~dws/software/snort-rep/
+WWW: http://david.schweikert.ch/software/snort-rep/

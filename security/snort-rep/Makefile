@@ -8,7 +8,7 @@
 PORTNAME=	snort-rep
 PORTVERSION=	1.10
 CATEGORIES=	security
-MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/snort-rep/pub/
+MASTER_SITES=	http://david.schweikert.ch/software/snort-rep/pub/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Snort reporting tool that can produce text or HTML from logs
