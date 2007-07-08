@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	easytag
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,5 +30,12 @@ USE_GNOME=	gnomehack gnomeprefix gtk20 desktopfileutils
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_GTK" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+.if defined(WITH_WAVPACK)
+LIB_DEPENDS+=		wavpack.1:${PORTSDIR}/audio/wavpack
+CONFIGURE_ARGS+=	--enable-wavpack
+.else
+CONFIGURE_ARGS+=	--disable-wavpack
+.endif
 
 .include <bsd.port.mk>
