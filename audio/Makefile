@@ -588,6 +588,7 @@
     SUBDIR += swami
     SUBDIR += sweep
     SUBDIR += swhplugins
+    SUBDIR += tagger
     SUBDIR += taglib
     SUBDIR += tagtool
     SUBDIR += tap-plugins
