@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	telepathy-python
-PORTVERSION=	0.13.9
-PORTREVISION=	1
+PORTVERSION=	0.13.10
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
-USE_PYTHON=	2.4+
+USE_PYTHON=		2.4+
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
