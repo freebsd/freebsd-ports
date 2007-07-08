@@ -147,6 +147,9 @@
 %%PYTHON_SITELIBDIR%%/penguintv/utils.py
 %%PYTHON_SITELIBDIR%%/penguintv/utils.pyc
 
+@comment This one shouldn't be here, but the py-lucene port doesn't generate it
+%%PYTHON_SITELIBDIR%%/PyLucene.pyc
+
 bin/PenguinTV
 
 share/applications/penguintv.desktop
