@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	portmaster
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -22,9 +22,6 @@ SUB_FILES=	portmaster.sh
 PLIST_FILES=	sbin/portmaster
 
 MAN8=		portmaster.8
-
-do-fetch:
-	@${DO_NADA}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/portmaster.sh ${PREFIX}/sbin/portmaster
