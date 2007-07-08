@@ -10,34 +10,49 @@ include/devhelp-1.0/devhelp/dh-preferences.h
 include/devhelp-1.0/devhelp/dh-search.h
 include/devhelp-1.0/devhelp/dh-util.h
 include/devhelp-1.0/devhelp/dh-window.h
+include/devhelp-1.0/devhelp/eggfindbar.h
+%%GEDIT%%lib/gedit-2/plugins/devhelp.gedit-plugin
+%%GEDIT%%lib/gedit-2/plugins/devhelp/__init__.py
+%%GEDIT%%lib/gedit-2/plugins/devhelp/__init__.pyc
+%%GEDIT%%lib/gedit-2/plugins/devhelp/__init__.pyo
+%%GEDIT%%lib/gedit-2/plugins/devhelp/devhelp.py
+%%GEDIT%%lib/gedit-2/plugins/devhelp/devhelp.pyc
+%%GEDIT%%lib/gedit-2/plugins/devhelp/devhelp.pyo
 lib/libdevhelp-1.a
 lib/libdevhelp-1.la
 lib/libdevhelp-1.so
 lib/libdevhelp-1.so.0
 libdata/pkgconfig/libdevhelp-1.0.pc
 share/gnome/applications/devhelp.desktop
+share/gnome/devhelp/default-prefs.js
 share/gnome/devhelp/devhelp.glade
 share/gnome/devhelp/dtd/devhelp-1.dtd
 share/gnome/devhelp/images/book_closed.png
 share/gnome/devhelp/images/book_open.png
 share/gnome/devhelp/images/helpdoc.png
 share/gnome/devhelp/ui/window.ui
-share/gnome/mime-info/devhelp.keys
-share/gnome/mime-info/devhelp.mime
-share/gnome/pixmaps/devhelp.png
+share/icons/hicolor/48x48/apps/devhelp.png
+share/icons/hicolor/scalable/apps/devhelp.svg
 share/locale/am/LC_MESSAGES/devhelp.mo
+share/locale/ar/LC_MESSAGES/devhelp.mo
 share/locale/az/LC_MESSAGES/devhelp.mo
 share/locale/be/LC_MESSAGES/devhelp.mo
+share/locale/be@latin/LC_MESSAGES/devhelp.mo
+share/locale/bg/LC_MESSAGES/devhelp.mo
+share/locale/bn_IN/LC_MESSAGES/devhelp.mo
 share/locale/ca/LC_MESSAGES/devhelp.mo
 share/locale/cs/LC_MESSAGES/devhelp.mo
 share/locale/da/LC_MESSAGES/devhelp.mo
 share/locale/de/LC_MESSAGES/devhelp.mo
+share/locale/dz/LC_MESSAGES/devhelp.mo
 share/locale/el/LC_MESSAGES/devhelp.mo
 share/locale/en_CA/LC_MESSAGES/devhelp.mo
 share/locale/en_GB/LC_MESSAGES/devhelp.mo
 share/locale/es/LC_MESSAGES/devhelp.mo
+share/locale/et/LC_MESSAGES/devhelp.mo
 share/locale/fi/LC_MESSAGES/devhelp.mo
 share/locale/fr/LC_MESSAGES/devhelp.mo
+share/locale/gl/LC_MESSAGES/devhelp.mo
 share/locale/gu/LC_MESSAGES/devhelp.mo
 share/locale/he/LC_MESSAGES/devhelp.mo
 share/locale/hi/LC_MESSAGES/devhelp.mo
@@ -48,13 +63,15 @@ share/locale/it/LC_MESSAGES/devhelp.mo
 share/locale/ja/LC_MESSAGES/devhelp.mo
 share/locale/kn/LC_MESSAGES/devhelp.mo
 share/locale/ko/LC_MESSAGES/devhelp.mo
+share/locale/lt/LC_MESSAGES/devhelp.mo
 share/locale/lv/LC_MESSAGES/devhelp.mo
 share/locale/mk/LC_MESSAGES/devhelp.mo
 share/locale/ml/LC_MESSAGES/devhelp.mo
 share/locale/ms/LC_MESSAGES/devhelp.mo
 share/locale/nb/LC_MESSAGES/devhelp.mo
+share/locale/ne/LC_MESSAGES/devhelp.mo
 share/locale/nl/LC_MESSAGES/devhelp.mo
-share/locale/no/LC_MESSAGES/devhelp.mo
+share/locale/or/LC_MESSAGES/devhelp.mo
 share/locale/pa/LC_MESSAGES/devhelp.mo
 share/locale/pl/LC_MESSAGES/devhelp.mo
 share/locale/pt/LC_MESSAGES/devhelp.mo
@@ -62,14 +79,17 @@ share/locale/pt_BR/LC_MESSAGES/devhelp.mo
 share/locale/ru/LC_MESSAGES/devhelp.mo
 share/locale/rw/LC_MESSAGES/devhelp.mo
 share/locale/sk/LC_MESSAGES/devhelp.mo
+share/locale/sl/LC_MESSAGES/devhelp.mo
 share/locale/sq/LC_MESSAGES/devhelp.mo
 share/locale/sr/LC_MESSAGES/devhelp.mo
 share/locale/sr@Latn/LC_MESSAGES/devhelp.mo
 share/locale/sv/LC_MESSAGES/devhelp.mo
+share/locale/th/LC_MESSAGES/devhelp.mo
 share/locale/tr/LC_MESSAGES/devhelp.mo
 share/locale/uk/LC_MESSAGES/devhelp.mo
 share/locale/vi/LC_MESSAGES/devhelp.mo
 share/locale/zh_CN/LC_MESSAGES/devhelp.mo
+share/locale/zh_HK/LC_MESSAGES/devhelp.mo
 share/locale/zh_TW/LC_MESSAGES/devhelp.mo
 @dirrm share/gnome/devhelp/ui
 @dirrm share/gnome/devhelp/images
@@ -77,5 +97,13 @@ share/locale/zh_TW/LC_MESSAGES/devhelp.mo
 @dirrm share/gnome/devhelp
 @dirrm include/devhelp-1.0/devhelp
 @dirrm include/devhelp-1.0
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
