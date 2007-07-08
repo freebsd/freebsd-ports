@@ -3097,3 +3097,4 @@ sysutils/cd-write||2007-07-06|Obsolete port
 net/rubygems-rrdtool|databases/rubygems-rrdtool|2007-07-08|Chase move of databases/rrdtool
 net/rrdman|databases/rrdman|2007-07-08|Chase move of databases/rrdtool
 net/py-rrdpipe|databases/py-rrdpipe|2007-07-08|Chase move of databases/rrdtool
+net/php5-rrdtool|databases/php5-rrdtool|2007-07-08|Chase move of databases/rrdtool
