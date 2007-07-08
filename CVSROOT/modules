@@ -15098,6 +15098,7 @@ tac_plus-libradius	ports/net/tac_plus-libradius
 tac_plus4	ports/net/tac_plus4
 tacshell	ports/net/tacshell
 tads		ports/games/tads
+tagger		ports/audio/tagger
 taglib		ports/audio/taglib
 tagtool		ports/audio/tagtool
 tagutils	ports/deskutils/tagutils
