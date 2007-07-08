@@ -3,11 +3,11 @@
 # Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/anjuta-devel/Makefile,v 1.14 2006/09/10 00:51:07 mezz Exp $
 #
 
 PORTNAME=	anjuta
-PORTVERSION=	1.2.4
-PORTREVISION=	7
+PORTVERSION=	2.2.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -15,38 +15,64 @@ MASTER_SITE_SUBDIR=	anjuta
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated Development Environment for C and C++
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
+		bash:${PORTSDIR}/shells/bash \
+		neato:${PORTSDIR}/graphics/graphviz
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+		gbf-1.0:${PORTSDIR}/devel/gnome-build \
+		gladeui-1.5:${PORTSDIR}/devel/glade3 \
+		devhelp-1.0:${PORTSDIR}/devel/devhelp
 RUN_DEPENDS=	${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoconf \
 		${LOCALBASE}/gnu-autotools/bin/automake:${PORTSDIR}/devel/gnu-automake \
+		bash:${PORTSDIR}/shells/bash \
+		autogen:${PORTSDIR}/devel/autogen \
+		neato:${PORTSDIR}/graphics/graphviz \
 		libtool:${PORTSDIR}/devel/libtool15
 
-USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
+USE_BZIP2=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
-INSTALLS_OMF=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeprintui libgnomeui vte
 USE_GETTEXT=	yes
+INSTALLS_OMF=	yes
+INSTALLS_ICONS=	yes
+USE_GNOME=	gnomeprefix gnomehack libgnomeprintui libgnomeui vte \
+		gtksourceview
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+USE_LDCONFIG=	yes
 
 MAN1=		anjuta.1 anjuta_launcher.1
 
+OPTIONS=	SVN "Build subversion plugins" off
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=	uses symbols not available on 4.X
+.if defined(WITH_SVN)
+BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+USE_APACHE=	2.0+
+
+CONFIGURE_ARGS+=--with-subversion-dir=${LOCALBASE}/bin \
+		--with-svn-include=${LOCALBASE}/include \
+		--with-svn-lib=${LOCALBASE}/lib \
+		--with-apr-config=${LOCALBASE}/bin/apr-1-config \
+		--with-apu-config=${LOCALBASE}/bin/apu-1-config
+PLIST_SUB+=	SVN=""
+.else
+CONFIGURE_ARGS+=--disable-plugin-subversion
+PLIST_SUB+=	SVN="@comment "
 .endif
 
 post-configure:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|%%PREFIX%%|${PREFIX}|g' < ${FILESDIR}/anjuta \
 		> ${WRKDIR}/anjuta
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash| ; \
+	    	s|/usr/local|${PREFIX}|' \
+	    	${WRKSRC}/global-tags/create_global_tags.sh
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/applogo.png \
-		${PREFIX}/share/gnome/anjuta/glade
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in AUTHORS COPYING ChangeLog FUTURE INSTALL NEWS README \
@@ -56,5 +82,6 @@ post-install:
 .endif
 	${MV} ${PREFIX}/bin/anjuta ${PREFIX}/bin/anjuta-bin
 	${INSTALL_SCRIPT} ${WRKDIR}/anjuta ${PREFIX}/bin
+	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.post.mk>
