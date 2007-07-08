@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql80
-PORTVERSION=	8.0.2
+PORTVERSION=	8.0.4
 CATEGORIES=	japanese databases
 MASTER_SITES=	http://www.postgresql.jp/document/pg${PORTVERSION:C/\.//g}doc/
 PKGNAMESUFFIX=	-man
