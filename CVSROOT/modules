@@ -2114,6 +2114,7 @@ drill		ports/dns/drill
 drivel		ports/deskutils/drivel
 drjava		ports/editors/drjava
 drm		ports/games/drm
+drood		ports/www/drood
 dropbear	ports/security/dropbear
 drpython	ports/devel/drpython
 drraw		ports/www/drraw
