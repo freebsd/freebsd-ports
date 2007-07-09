@@ -14,5 +14,6 @@ lib/libdmallocxx.a
 lib/libdmallocxx.so
 lib/libdmallocxx.so.1
 %%PORTDOCS%%%%DOCSDIR%%/dmalloc.html
+%%PORTDOCS%%%%DOCSDIR%%/dmalloc.pdf
 %%PORTDOCS%%%%DOCSDIR%%/dmalloc.texi
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
