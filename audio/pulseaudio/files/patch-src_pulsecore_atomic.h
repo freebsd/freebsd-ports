@@ -70,7 +70,7 @@
  
  static inline void* pa_atomic_ptr_load(const pa_atomic_ptr_t *a) {
 -    return (void*) AO_load_full((AO_t*) &a->value);
-+#ifdef atomic_load_acq_long
++#ifdef atomic_load_acq_64
 +    return (void*) atomic_load_acq_ptr((unsigned long *) &a->value);
 +#else
 +    return (void*) atomic_load_acq_ptr((unsigned int *) &a->value);
@@ -79,7 +79,7 @@
  
  static inline void pa_atomic_ptr_store(pa_atomic_ptr_t *a, void *p) {
 -    AO_store_full(&a->value, (AO_t) p);
-+#ifdef atomic_load_acq_long
++#ifdef atomic_load_acq_64
 +    atomic_store_rel_ptr(&a->value, (unsigned long) p);
 +#else
 +    atomic_store_rel_ptr((unsigned int *) &a->value, (unsigned int) p);
@@ -88,7 +88,7 @@
  
  static inline int pa_atomic_ptr_cmpxchg(pa_atomic_ptr_t *a, void *old_p, void* new_p) {
 -    return AO_compare_and_swap_full(&a->value, (AO_t) old_p, (AO_t) new_p);
-+#ifdef atomic_load_acq_long
++#ifdef atomic_load_acq_64
 +    return atomic_cmpset_ptr(&a->value, (unsigned long) old_p, (unsigned long) new_p);
 +#else
 +    return atomic_cmpset_ptr((unsigned int *) &a->value, (unsigned int) old_p, (unsigned int) new_p);
