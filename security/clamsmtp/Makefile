@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	clamsmtp
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.9
 CATEGORIES=	security
-MASTER_SITES=	http://memberwebs.com/nielsen/software/clamsmtp/
+MASTER_SITES=	http://memberwebs.com/stef/software/clamsmtp/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	An ClamAV anti-virus SMTP Filter
@@ -21,6 +20,7 @@ SUB_LIST=	CLAMAV_PID_DIR=${CLAMAV_PID_DIR}
 SUB_FILES+=	pkg-message
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
 CLAMAV_PID_DIR?=	/var/run/clamav
 
