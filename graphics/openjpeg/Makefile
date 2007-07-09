@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openjpeg
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openjpeg.org/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/g}
@@ -17,19 +16,19 @@ COMMENT=	An open-source JPEG 2000 codec
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/OpenJPEG
+WRKSRC=		${WRKDIR}/trunk
 
 PLIST_FILES=	include/openjpeg.h \
 		lib/libopenjpeg.a \
 		lib/libopenjpeg.so.${SHLIB_VER} \
 		lib/libopenjpeg.so
 
-SHLIB_VER=	1
+SHLIB_VER=	2
 
 do-install:
-		${INSTALL_DATA} ${WRKSRC}/dist/openjpeg.h ${PREFIX}/include
-		${INSTALL_DATA} ${WRKSRC}/dist/libopenjpeg.a ${PREFIX}/lib
-		${INSTALL_PROGRAM} ${WRKSRC}/dist/libopenjpeg-1.0.0.so \
+		${INSTALL_DATA} ${WRKSRC}/libopenjpeg/openjpeg.h ${PREFIX}/include
+		${INSTALL_DATA} ${WRKSRC}/libopenjpeg.a ${PREFIX}/lib
+		${INSTALL_PROGRAM} ${WRKSRC}/libopenjpeg-2.1.2.0.so \
 			${PREFIX}/lib/libopenjpeg.so.${SHLIB_VER}
 		cd ${PREFIX}/lib && \
 			${LN} -sf libopenjpeg.so.${SHLIB_VER} libopenjpeg.so
