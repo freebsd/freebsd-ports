@@ -7,7 +7,7 @@
 
 PORTNAME=	wrapper
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 DISTNAME=	# intentionally left blank
 EXTRACT_SUFX=	# intentionally left blank
@@ -21,7 +21,7 @@ USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 .if ${X_WINDOW_SYSTEM:L} == xorg
-XSERVER=	-DXSERVER_PATH=\"/usr/X11R6/bin/Xorg\"
+XSERVER=	-DXSERVER_PATH=\"${X11BASE}/bin/Xorg\"
 PKGNAMEPREFIX=	xorg-
 COMMENT=	Wrapper for X.org X11 server
 .elif ${X_WINDOW_SYSTEM:L} == xfree86-4
