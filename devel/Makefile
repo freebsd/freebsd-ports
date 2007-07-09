@@ -468,6 +468,7 @@
     SUBDIR += ixlib
     SUBDIR += jakarta-commons-chain
     SUBDIR += jakarta-commons-configuration
+    SUBDIR += jakarta-commons-daemon
     SUBDIR += jakarta-commons-io
     SUBDIR += jakarta-commons-jxpath
     SUBDIR += jakarta-commons-modeler
