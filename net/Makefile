@@ -157,7 +157,6 @@
     SUBDIR += glflow
     SUBDIR += globus4
     SUBDIR += gnet
-    SUBDIR += gnet-glib2
     SUBDIR += gnet2
     SUBDIR += gnetcat
     SUBDIR += gnoemoe
