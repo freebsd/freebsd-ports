@@ -439,6 +439,7 @@
     SUBDIR += p5-Petal-Utils
     SUBDIR += p5-Plagger
     SUBDIR += p5-Plucene
+    SUBDIR += p5-Plucene-Analysis-CJKAnalyzer
     SUBDIR += p5-Plucene-Plugin-Analyzer-SnowballAnalyzer
     SUBDIR += p5-Plucene-Simple
     SUBDIR += p5-Pod-Constants

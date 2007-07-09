@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/Analysis/CJKAnalyzer/.packlist
+%%SITE_PERL%%/Plucene/Analysis/CJKAnalyzer.pm
+%%SITE_PERL%%/Plucene/Analysis/CJKTokenizer.pm
+@dirrmtry %%SITE_PERL%%/Plucene/Analysis
+@dirrmtry %%SITE_PERL%%/Plucene
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/Analysis/CJKAnalyzer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/Analysis
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene
