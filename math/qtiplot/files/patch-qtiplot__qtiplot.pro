@@ -1,5 +1,5 @@
---- ./qtiplot/qtiplot.pro.orig	Sat Jun  2 15:33:23 2007
-+++ ./qtiplot/qtiplot.pro	Sat Jun  2 15:35:21 2007
+--- ./qtiplot/qtiplot.pro.orig	Fri Jun  8 00:55:33 2007
++++ ./qtiplot/qtiplot.pro	Fri Jun  8 00:58:19 2007
 @@ -17,24 +17,17 @@
  
  # what to install and where
@@ -128,7 +128,7 @@
  
  }
  
-@@ -396,12 +391,11 @@
+@@ -396,12 +391,12 @@
    SOURCES += src/PythonScript.cpp src/PythonScripting.cpp
  
    unix {
@@ -141,7 +141,8 @@
 +	INCLUDEPATH += $$(PYTHON_INCLUDEDIR)
 +	LIBS +=	-lm -l$$(PYTHON_VERSION)
 +	system(mkdir -p $${SIP_DIR})
-+	system($$(PYTHON_VERSION) -c $${SIP_DIR} src/qti.sip)
++	SIPCMD = $$(PYTHON_VERSION) python-sipcmd.py
++	system($$system($$SIPCMD) -c $${SIP_DIR} src/qti.sip)
 +	}
  
    win32 {
