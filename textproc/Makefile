@@ -851,7 +851,6 @@
     SUBDIR += ruby-rss.alt
     SUBDIR += ruby-sablot
     SUBDIR += ruby-sary
-    SUBDIR += ruby-spreadsheet-excel
     SUBDIR += ruby-tempura
     SUBDIR += ruby-xml-script
     SUBDIR += ruby-xmlconfigfile
@@ -862,6 +861,7 @@
     SUBDIR += ruby-xtemplate
     SUBDIR += rubygem-ferret
     SUBDIR += rubygem-htmltools
+    SUBDIR += rubygem-spreadsheet-excel
     SUBDIR += rubygem-syntax
     SUBDIR += rubygem-tidy
     SUBDIR += rw-aspell
