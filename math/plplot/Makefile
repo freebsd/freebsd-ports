@@ -74,13 +74,14 @@ CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-#.if defined(WITH_GNOME)
-#.undef WITHOUT_X11
+.if defined(WITH_GNOME)
+.undef WITHOUT_X11
 USE_GNOME=	libgnomeprintui libgnomeui
 PLIST_SUB+=	GNOME=""
-#.else
-#PLIST_SUB+=	GNOME="@comment "
-#.endif
+.else
+PLIST_SUB+=	GNOME="@comment "
+CONFIGURE_ARGS+=	--disable-gcw
+.endif
 
 .if defined(WITH_TCLTK)
 .undef WITHOUT_X11
@@ -110,7 +111,7 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_X11=yes		Turns off X11 support"
 	@${ECHO_MSG} "	WITHOUT_PTHREAD=yes	Turns off pthread support"
 	@${ECHO_MSG} "	WITH_SVGALIB=yes	Turns on SVGAlib support"
-#	@${ECHO_MSG} "	WITH_GNOME=yes		Turns on GNOME driver support"
+	@${ECHO_MSG} "	WITH_GNOME=yes		Turns on GNOME driver support"
 	@${ECHO_MSG} "	WITH_PYTHON=yes		Turns on Python support"
 	@${ECHO_MSG} "	WITH_TCLTK=yes		Turns on Tcl/Tk support"
 	@${ECHO_MSG} ""
