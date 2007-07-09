@@ -1,0 +1,11 @@
+--- configure.orig	Mon Jul  9 08:30:38 2007
++++ configure	Mon Jul  9 08:29:58 2007
+@@ -20357,6 +20357,8 @@
+      LIBS="$ql_original_LIBS -l$boost_lib"
+      boost_unit_found=no
+      cat >conftest.$ac_ext <<_ACEOF
++#define BOOST_TEST_DYN_LINK
++#define BOOST_TEST_MAIN
+ #include <boost/test/unit_test.hpp>
+           using namespace boost::unit_test_framework;
+           test_suite*
