@@ -8,6 +8,8 @@ include/gpac/config.h
 include/gpac/constants.h
 include/gpac/crypt.h
 include/gpac/download.h
+include/gpac/esi.h
+include/gpac/events.h
 include/gpac/ietf.h
 include/gpac/internal/avilib.h
 include/gpac/internal/bifs_dev.h
@@ -36,6 +38,7 @@ include/gpac/module.h
 include/gpac/modules/audio_out.h
 include/gpac/modules/codec.h
 include/gpac/modules/font.h
+include/gpac/modules/ipmp.h
 include/gpac/modules/raster2d.h
 include/gpac/modules/service.h
 include/gpac/modules/video_out.h
@@ -43,7 +46,9 @@ include/gpac/mpeg4_odf.h
 include/gpac/mpegts.h
 include/gpac/network.h
 include/gpac/nodes_mpeg4.h
-include/gpac/nodes_svg.h
+include/gpac/nodes_svg_da.h
+include/gpac/nodes_svg_sa.h
+include/gpac/nodes_svg_sani.h
 include/gpac/nodes_x3d.h
 include/gpac/options.h
 include/gpac/path2d.h
@@ -53,6 +58,7 @@ include/gpac/scenegraph.h
 include/gpac/scenegraph_svg.h
 include/gpac/scenegraph_vrml.h
 include/gpac/setup.h
+include/gpac/svg_types.h
 include/gpac/sync_layer.h
 include/gpac/term_info.h
 include/gpac/terminal.h
