@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinylaf
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.8
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.muntjak.de/hans/java/tinylaf/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
