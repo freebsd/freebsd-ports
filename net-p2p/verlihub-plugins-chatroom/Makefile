@@ -10,7 +10,8 @@ PORTVERSION=	1.1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	skylord@vt.net.ru
-COMMENT=	Chatroom plugin for the VerliHub - a Direct Connect protocol server
+
+PLUGIN_DESC=	Chatroom
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/net-p2p/verlihub-plugins/Makefile.plugins"

@@ -10,9 +10,9 @@ PORTVERSION=	1.6
 CATEGORIES=	net-p2p
 
 MAINTAINER=	skylord@vt.net.ru
-COMMENT=	Floodprotect plugin for the VerliHub - a Direct Connect protocol server
 
 PLUGIN_NAME=	floodprot
+PLUGIN_DESC=	Floodprotect
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/net-p2p/verlihub-plugins/Makefile.plugins"

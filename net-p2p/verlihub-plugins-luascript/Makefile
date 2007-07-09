@@ -10,9 +10,9 @@ PORTVERSION=	1.6
 CATEGORIES=	net-p2p
 
 MAINTAINER=	skylord@vt.net.ru
-COMMENT=	LuaScript plugin for the VerliHub - a Direct Connect protocol server (Hub)
 
 PLUGIN_NAME=	lua
+PLUGIN_DESC=	LuaScript
 
 USE_LUA=	5.1
 CONFIGURE_ENV=	CXXFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"

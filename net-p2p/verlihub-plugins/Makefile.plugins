@@ -10,6 +10,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	verlihub
 DISTNAME=	${PLUGIN_NAME}
 
+COMMENT?=	${PLUGIN_DESC} plugin for the VerliHub - a Direct Connect protocol server
+
 BUILD_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
 RUN_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
 
@@ -20,6 +22,13 @@ PLIST_FILES+=	lib/lib${PLUGIN_NAME}_pi.a \
 		lib/lib${PLUGIN_NAME}_pi.so \
 		lib/lib${PLUGIN_NAME}_pi.so.0 \
 		etc/verlihub/plugins/lib${PLUGIN_NAME}_pi.so
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+PKGMESSAGE_TEMPLATE=	${PORTSDIR}/net-p2p/verlihub-plugins/pkg-message.plugins
+
+post-build::
+	@${SED} -e 's,%%PLUGIN_DESC%%,${PLUGIN_DESC},' < ${PKGMESSAGE_TEMPLATE} \
+		> ${PKGMESSAGE}
 
 post-install::
 	@${MKDIR} ${PREFIX}/etc/verlihub/plugins
