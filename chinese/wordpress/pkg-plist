@@ -300,6 +300,7 @@ www/wordpress/wp-includes/js/tinymce/themes/advanced/about.htm
 www/wordpress/wp-includes/js/tinymce/themes/advanced/anchor.htm
 www/wordpress/wp-includes/js/tinymce/themes/advanced/charmap.htm
 www/wordpress/wp-includes/js/tinymce/themes/advanced/color_picker.htm
+www/wordpress/wp-includes/js/tinymce/themes/advanced/css/colorpicker.css
 www/wordpress/wp-includes/js/tinymce/themes/advanced/css/editor_content.css
 www/wordpress/wp-includes/js/tinymce/themes/advanced/css/editor_popup.css
 www/wordpress/wp-includes/js/tinymce/themes/advanced/css/editor_ui.css
@@ -325,6 +326,7 @@ www/wordpress/wp-includes/js/tinymce/themes/advanced/images/cleanup.gif
 www/wordpress/wp-includes/js/tinymce/themes/advanced/images/close.gif
 www/wordpress/wp-includes/js/tinymce/themes/advanced/images/code.gif
 www/wordpress/wp-includes/js/tinymce/themes/advanced/images/color.gif
+www/wordpress/wp-includes/js/tinymce/themes/advanced/images/colors.jpg
 www/wordpress/wp-includes/js/tinymce/themes/advanced/images/copy.gif
 www/wordpress/wp-includes/js/tinymce/themes/advanced/images/custom_1.gif
 www/wordpress/wp-includes/js/tinymce/themes/advanced/images/cut.gif

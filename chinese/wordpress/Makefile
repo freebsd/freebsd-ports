@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	chinese www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}-zh
@@ -24,7 +23,9 @@ USE_PHP=	mysql pcre xml
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 WORDPRESS?=	www/wordpress
-PKGMESSAGE=	${WRKDIR}/pkg-message
+
+SUB_FILES=	pkg-message
+SUB_LIST=	WORDPRESSDIR="${PREFIX}/${WORDPRESS}"
 
 PORTDOCS=	license.txt readme.html
 
@@ -48,8 +49,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
 .endif
-	@${SED} "s|%%WORDPRESSDIR%%|${PREFIX}/${WORDPRESS}|g" \
-		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
