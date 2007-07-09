@@ -1,10 +1,18 @@
 -----------------------------------------------------------
+textpattern has been installed into:
+
+    %%WWWDIR%%
+
+You will probably want to add an alias to your httpd.conf file,
+something like this:
+
+    Alias /textpattern "%%WWWDIR%%"
 
 For initial setup:
 
  - Setup an empty mysql database
  - Open web browser and browse textpattern directory
-     http://yourserver/subdir/textpattern/setup/
+     http://yourserver/textpattern/setup/
  - Follow steps on setup wizard
 
 -----------------------------------------------------------
