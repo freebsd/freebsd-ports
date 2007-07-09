@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	915resolution
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.5.3
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.geocities.com/stomljen/ \
@@ -16,14 +15,16 @@ MASTER_SITE_SUBDIR=	ehaupt
 MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	Resolution tool for Intel i915 video cards
 
-PLIST_FILES=	bin/915resolution
-ALL_TARGET=	915resolution
+USE_RC_SUBR=	915resolution.sh
+
+PLIST_FILES=	sbin/915resolution
+PORTDOCS=	README.txt chipset_info.txt
 
 ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 600034
 BROKEN=		Does not build
 .endif
 
@@ -32,6 +33,12 @@ do-build:
 		${CC} ${CFLAGS} 915resolution.c -o 915resolution
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/915resolution ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/915resolution ${PREFIX}/sbin
+.if !defined(NOPORTDOCS)
+	${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m ${BINMODE} -d ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
