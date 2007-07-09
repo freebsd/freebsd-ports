@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ion-3rc
-PORTVERSION=	20070608
-PORTREVISION=	1
+PORTVERSION=	20070708
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/dl/:ion3 \
 		http://wannabehacker.com/src/:xinerama
