@@ -1,0 +1,45 @@
+# New ports collection makefile for:   commons-daemon
+# Date created:        9 July 2007
+# Whom:                Ronald Klop <ronald@echteman.nl>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	commons-daemon
+PORTVERSION=	1.0.1
+CATEGORIES=	devel java
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	commons/daemon/source
+PKGNAMEPREFIX=	jakarta-
+DISTNAME=	daemon-${PORTVERSION}
+
+MAINTAINER=	ronald@echteman.nl
+COMMENT=	Wrapper code to start/stop a Java application as a daemon.
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
+JAVA_OS=	native
+JAVA_BUILD=	jdk
+NEED_JAVAC=	yes
+USE_JIKES=	no
+USE_ANT=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-java=${JAVA_HOME}
+
+ALL_TARGET=dist
+
+CONFIGURE_WRKSRC=	${WRKSRC}/src/native/unix/
+INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
+
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar bin/jsvc
+
+post-build:
+	cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all
+
+do-install:
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
+	${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/jsvc ${PREFIX}/bin
+
+.include <bsd.port.mk>

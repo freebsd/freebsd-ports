@@ -1,0 +1,47 @@
+# New ports collection makefile for:   commons-daemon
+# Date created:        9 July 2007
+# Whom:                Ronald Klop <ronald@echteman.nl>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	commons-daemon
+PORTVERSION=	1.0.1
+CATEGORIES=	devel java
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	commons/daemon/source
+PKGNAMEPREFIX=	jakarta-
+DISTNAME=	daemon-${PORTVERSION}
+
+MAINTAINER=	ronald@echteman.nl
+COMMENT=	Wrapper code to start/stop a Java application as a daemon.
+
+BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
+JAVA_OS=	native
+JAVA_BUILD=	jdk
+NEED_JAVAC=	yes
+USE_JIKES=	no
+USE_ANT=	yes
+
+GNU_CONFIGURE=	yes
+
+ALL_TARGET=	dist
+
+PLIST_FILES=	bin/jsvc share/java/classes/commons-daemon.jar
+
+.include <bsd.port.pre.mk>
+
+do-configure:
+	cd ${WRKSRC}/src/native/unix && ./configure --with-java=${JAVA_HOME}
+
+pre-build:
+	cd ${WRKSRC}/src/native/unix && ${GMAKE}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/native/unix/jsvc ${LOCALBASE}/bin
+	${INSTALL} ${WRKSRC}/dist/commons-daemon.jar ${JAVAJARDIR}
+
+.include <bsd.port.post.mk>
