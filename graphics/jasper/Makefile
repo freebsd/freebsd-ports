@@ -7,7 +7,7 @@
 
 PORTNAME=	jasper
 PORTVERSION=	1.900.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
 		${MASTER_SITE_IMAGEMAGICK}
@@ -35,7 +35,7 @@ OPTIONS=	OPENGL	"OpenGL support" off
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_OPENGL)
+.if defined(WITH_OPENGL)
 USE_GL=	glut
 CONFIGURE_ARGS+=--enable-opengl
 PLIST_SUB+=	OPENGL=""
