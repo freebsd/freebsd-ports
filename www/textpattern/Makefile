@@ -6,24 +6,28 @@
 #
 
 PORTNAME=	textpattern
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.5
 CATEGORIES=	www
-MASTER_SITES=	http://www.farrokhi.net/distfiles/
+MASTER_SITES=	http://textpattern.com/file_download/37/
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	A free, flexible, elegant, easy-to-use content management system
 
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
-TEXTPATTERN?=	www/${PORTNAME}
-PLIST_SUB+=	TEXTPATTERN=${TEXTPATTERN}
 USE_PHP=	mbstring xml mysql
 
-do-install:
-	-${MKDIR} ${PREFIX}/${TEXTPATTERN}
-	@(cd ${WRKSRC} && ${CP} -R * ${PREFIX}/${TEXTPATTERN}/ )
+SUB_FILES=	pkg-message
 
-post-install:
+do-install:
+	-${MKDIR} ${WWWDIR}
+	@${CP} -R ${WRKSRC}/ ${WWWDIR}/
 	@${CAT} ${PKGMESSAGE}
+
+create-plist:
+	@${FIND} -s ${WRKSRC}/${file} -not -type d \
+	| ${SED} -e 's,^${WRKSRC},%%WWWDIR%%,' > ${PLIST}
+	@${FIND} -ds ${WRKSRC}/${file} -type d \
+	| ${SED} -e 's,^${WRKSRC},@dirrm %%WWWDIR%%,' >> ${PLIST}
 
 .include <bsd.port.mk>
