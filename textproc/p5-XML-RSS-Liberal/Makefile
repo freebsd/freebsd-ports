@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-RSS-Liberal
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		XML::RSS::Liberal.3 XML::RSS::Liberal::Parser.3
+MAN3=		XML::RSS::Liberal.3
 
 .include <bsd.port.pre.mk>
 
