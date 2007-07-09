@@ -1,0 +1,34 @@
+# New ports collection makefile for:	lisaem
+# Date created:		2007-07-04
+# Whom:			Edward Tomasz Napierala <trasz@freebsd.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	lisaem
+DISTVERSION=	1.0.0
+CATEGORIES=	emulators
+MASTER_SITES=	http://lisaem.sunder.net/20070707/
+
+MAINTAINER=	trasz@freebsd.org
+COMMENT=	Apple Lisa emulator
+
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		pngtopnm:${PORTSDIR}/graphics/netpbm
+
+USE_BZIP2=	yes
+USE_WX=		2.8
+ALL_TARGET=	build
+
+post-patch:
+		${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" \
+				 -e "s|wx-config|${WX_CONFIG}|g" ${WRKSRC}/build.sh
+do-build:
+		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/bash build.sh build
+
+do-install:
+		${INSTALL_PROGRAM} ${WRKSRC}/bin/lisaem ${PREFIX}/bin
+		${MKDIR} ${PREFIX}/share/LisaEm
+		${INSTALL_DATA} ${WRKSRC}/resources/* ${PREFIX}/share/LisaEm/
+
+.include <bsd.port.mk>
