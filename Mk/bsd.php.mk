@@ -233,10 +233,10 @@ php-ini:
 # Extensions
 .if defined(_POSTMKINCLUDED) && ${USE_PHP:L} != "yes"
 # non-version specific components
-_USE_PHP_ALL=	bcmath bz2 calendar ctype curl dba dbase \
+_USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dbase \
 		exif fileinfo fribidi ftp gd gettext gmp \
 		hash iconv imap interbase json ldap mbstring mcrypt \
-		mhash mssql mysql ncurses odbc \
+		memcache mhash mssql mysql ncurses odbc \
 		openssl pcntl pcre pdf pgsql posix \
 		pspell radius readline recode session shmop snmp \
 		sockets sybase_ct sysvmsg sysvsem sysvshm \
@@ -248,6 +248,7 @@ _USE_PHP_VER5=	${_USE_PHP_ALL} dom filter ming mysqli oci8 pdo pdo_sqlite \
 		simplexml soap spl sqlite tidy xmlreader xmlwriter xsl
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
+bitset_DEPENDS=	math/pecl-bitset
 bz2_DEPENDS=	archivers/php${PHP_VER}-bz2
 calendar_DEPENDS=	misc/php${PHP_VER}-calendar
 crack_DEPENDS=	security/php${PHP_VER}-crack
@@ -278,6 +279,7 @@ mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
 mcal_DEPENDS=	misc/php${PHP_VER}-mcal
 mcrypt_DEPENDS=	security/php${PHP_VER}-mcrypt
 mcve_DEPENDS=	devel/php${PHP_VER}-mcve
+memcache_DEPENDS=	databases/pecl-memcache
 mhash_DEPENDS=	security/php${PHP_VER}-mhash
 ming_DEPENDS=	graphics/php${PHP_VER}-ming
 mnogosearch_DEPENDS=	www/php${PHP_VER}-mnogosearch
