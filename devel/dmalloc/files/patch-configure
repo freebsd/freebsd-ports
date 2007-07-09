@@ -1,0 +1,11 @@
+--- configure	2007-07-06 20:01:39.000000000 +0300
++++ configure_new	2007-07-06 16:59:48.000000000 +0300
+@@ -2643,7 +2643,7 @@
+ 
+ 
+ # see if we actually have a CXX program
+-if test "$ac_cv_prog_CXX" = "" -o ! -x "$ac_cv_prog_CXX"; then
++if test "$CXX" = ""; then
+     { echo "$as_me:$LINENO: WARNING: could not find C++ compiler $ac_cv_prog_CXX" >&5
+ echo "$as_me: WARNING: could not find C++ compiler $ac_cv_prog_CXX" >&2;}
+     enable_cxx=no

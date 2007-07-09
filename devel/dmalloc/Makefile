@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	dmalloc
-PORTVERSION=	5.4.2
+PORTVERSION=	5.5.2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	dmalloc
+# Version 5.5.2 is only available at this URL
+MASTER_SITES=	http://dmalloc.com/releases/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pesho.petrov@gmail.com
 COMMENT=	Portable debug memory allocation library
 
 GNU_CONFIGURE=	yes
@@ -23,15 +23,12 @@ USE_LDCONFIG=	yes
 ALL_TARGET=	all heavy
 INSTALL_TARGET=	install
 
-INFO=	dmalloc
-
 .if !defined(NOPORTDOCS)
-INSTALL_TARGET+=installdocs installinfo
+INSTALL_TARGET+=installdocs
 .endif
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|\.so|\.so.1|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|\.@shlibext@|\.@shlibext@.1|' ${WRKSRC}/Makefile.in
 
 post-install:
 	@(cd ${PREFIX}/lib; \
