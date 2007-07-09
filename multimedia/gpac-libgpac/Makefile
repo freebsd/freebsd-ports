@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpac-libgpac
-DISTVERSION=	0.4.2-rc2
+DISTVERSION=	0.4.4
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -30,12 +30,6 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--extra-cflags="${CFLAGS} ${PTHREAD_CFLAGS} -fPIC" \
 		--extra-ldflags="${LDFLAGS} ${PTHREAD_LIBS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build
-.endif
-
 post-patch:
 	${CHMOD} +x ${WRKSRC}/configure
 
@@ -47,4 +41,4 @@ do-install:
 	${LN} -sf libgpac.so.${LIBVER} ${PREFIX}/lib/libgpac.so
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/libgpac_static.a ${PREFIX}/lib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
