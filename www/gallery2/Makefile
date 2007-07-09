@@ -7,6 +7,7 @@
 
 PORTNAME=	gallery2
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gallery
@@ -21,13 +22,17 @@ WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${DIST_SUBDIR}
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
 CPIOARGS=	--quiet -pdum -R
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST+=	WWWDIR_REL=${WWWDIR_REL}
 
 # Note that USE_PHP must be set before bsd.port.pre.mk is included, so
 # OPTIONS can't be used right now without making portlint angry
 #OPTIONS=	NETPBM "Enable netpbm support" off \
 #		IMAGEMAGICK "Enable imagemagick support" on \
+#		GRAPHICSMAGICK "Use graphicsmagick instead of imagemagick" off \
 #		PGSQL "Use PostgreSQL instead of MySQL" off \
 #		JHEAD "Enable jhead support" on \
 #		UNZIP "Enable unzip support" on \
@@ -53,9 +58,13 @@ USE_PHP+=	gettext
 .if defined(WITH_NETPBM)
 RUN_DEPENDS+=	giftopnm:${PORTSDIR}/graphics/netpbm
 .endif
-.if !defined(WITHOUT_IMAGEMAGICK)
+
+.if defined(WITH_GRAPHICSMAGICK)
+RUN_DEPENDS+=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
+.elif !defined(WITHOUT_IMAGEMAGICK)
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
+
 .if !defined(WITHOUT_JHEAD)
 RUN_DEPENDS+=	jhead:${PORTSDIR}/graphics/jhead
 .endif
@@ -70,23 +79,18 @@ RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
 .endif
 
 pre-everything::
-.if !defined(GALLERY2DIR)
+.if defined(GALLERY2DIR)
+WWWDIR=	${GALLERY2DIR}
+.else
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define GALLERY2DIR to override default of 'www/gallery2'."
+	@${ECHO_MSG} "Define GALLERY2DIR to override default of ${WWWDIR}."
 	@${ECHO_MSG} ""
 .endif
 
-GALLERY2DIR?=	www/gallery2
-PLIST_SUB+=	GALLERY2DIR=${GALLERY2DIR}
-
-post-configure:
-	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#g' \
-	  -e 's#%%GALLERY2DIR%%#${GALLERY2DIR}#g' pkg-message > ${PKGMESSAGE}
-
 do-install:
-	@ ${MKDIR} -m 0755 ${PREFIX}/${GALLERY2DIR}
-	@ cd ${WRKSRC} && ${FIND} * -print | ${CPIO} ${CPIOARGS} ${WWWOWN}:${WWWGRP} ${PREFIX}/${GALLERY2DIR}
-	@ ${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${GALLERY2DIR}
+	@ ${MKDIR} -m 0755 ${WWWDIR}
+	@ cd ${WRKSRC} && ${FIND} * -print | ${CPIO} ${CPIOARGS} ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@ ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:
 .if !defined(BATCH)
