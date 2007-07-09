@@ -74,7 +74,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>typespeed</name>
-	<range><le>4.1.0</le></range>
+	<range><le>0.4.1</le></range>
       </package>
     </affects>
     <description>
@@ -95,6 +95,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-02-16</discovery>
       <entry>2007-07-03</entry>
+      <modified>2007-07-09</modified>
     </dates>
   </vuln>
 
