@@ -10,10 +10,12 @@ bin/fwbuilder
 %%DOCSDIR%%/Credits
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README.floppyfw
+%%DOCSDIR%%/README.iosacl
 %%DOCSDIR%%/README.ipf
 %%DOCSDIR%%/README.ipfw
 %%DOCSDIR%%/README.ipt
 %%DOCSDIR%%/README.pf
+%%DOCSDIR%%/README.policy_import
 %%DOCSDIR%%/README.routing
 %%DOCSDIR%%/FWBuilder-Routing-LICENSE.txt
 %%DOCSDIR%%/PatchAcceptancePolicy.txt
@@ -27,9 +29,12 @@ bin/fwbuilder
 %%DOCSDIR%%/ReleaseNotes_2.1.10.txt
 %%DOCSDIR%%/ReleaseNotes_2.1.11.html
 %%DOCSDIR%%/ReleaseNotes_2.1.11.txt
+%%DOCSDIR%%/ReleaseNotes_2.1.12.html
+%%DOCSDIR%%/ReleaseNotes_2.1.12.txt
 share/fwbuilder%%BUILD_VERSION%%/objects_init.xml
 share/fwbuilder%%BUILD_VERSION%%/templates.xml
 share/fwbuilder%%BUILD_VERSION%%/resources.xml
+share/fwbuilder%%BUILD_VERSION%%/platform/iosacl.xml
 share/fwbuilder%%BUILD_VERSION%%/platform/iptables.xml
 share/fwbuilder%%BUILD_VERSION%%/platform/ipf.xml
 share/fwbuilder%%BUILD_VERSION%%/platform/pf.xml
@@ -37,6 +42,7 @@ share/fwbuilder%%BUILD_VERSION%%/platform/ipfw.xml
 share/fwbuilder%%BUILD_VERSION%%/platform/fwsm.xml
 share/fwbuilder%%BUILD_VERSION%%/platform/pix.xml
 share/fwbuilder%%BUILD_VERSION%%/platform/unknown.xml
+share/fwbuilder%%BUILD_VERSION%%/os/ios.xml
 share/fwbuilder%%BUILD_VERSION%%/os/linux24.xml
 share/fwbuilder%%BUILD_VERSION%%/os/linksys.xml
 share/fwbuilder%%BUILD_VERSION%%/os/macosx.xml
