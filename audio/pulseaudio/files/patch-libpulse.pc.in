@@ -1,11 +1,9 @@
---- libpulse.pc.in.orig	Sun Apr 29 19:25:22 2007
-+++ libpulse.pc.in	Sun Apr 29 19:25:46 2007
-@@ -6,6 +6,6 @@ includedir=${prefix}/include
- Name: libpulse
+--- libpulse.pc.in.orig	Sat Sep  2 10:57:19 2006
++++ libpulse.pc.in	Sun Jul  8 17:40:02 2007
+@@ -7,5 +7,5 @@ Name: libpulse
  Description: Client Interface to PulseAudio
  Version: @PACKAGE_VERSION@
--Libs: -L${libdir} -lpulse
+ Libs: -L${libdir} -lpulse @PTHREAD_LIBS@
 -Cflags: -D_REENTRANT -I${includedir}
-+Libs: -L${libdir} @PTHREAD_LIBS@ -lpulse
-+Cflags: -D_REENTRANT @PTHREAD_CFLAGS@ -I${includedir}
++Cflags: -D_REENTRANT -I${includedir} @PTHREAD_CFLAGS@
  Requires:

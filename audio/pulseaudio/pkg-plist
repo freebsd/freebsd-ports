@@ -39,6 +39,7 @@ include/pulse/util.h
 include/pulse/version.h
 include/pulse/volume.h
 include/pulse/xmalloc.h
+include/pulsecore/atomic.h
 include/pulsecore/authkey-prop.h
 include/pulsecore/authkey.h
 include/pulsecore/autoload.h
@@ -62,6 +63,7 @@ include/pulsecore/idxset.h
 include/pulsecore/iochannel.h
 include/pulsecore/ioline.h
 include/pulsecore/ipacl.h
+include/pulsecore/llist.h
 include/pulsecore/log.h
 include/pulsecore/mcalign.h
 include/pulsecore/memblock.h
@@ -70,8 +72,10 @@ include/pulsecore/memchunk.h
 include/pulsecore/modargs.h
 include/pulsecore/modinfo.h
 include/pulsecore/module.h
+include/pulsecore/mutex.h
 include/pulsecore/namereg.h
 include/pulsecore/native-common.h
+include/pulsecore/once.h
 include/pulsecore/packet.h
 include/pulsecore/parseaddr.h
 include/pulsecore/pdispatch.h
@@ -88,6 +92,7 @@ include/pulsecore/pstream-util.h
 include/pulsecore/pstream.h
 include/pulsecore/queue.h
 include/pulsecore/random.h
+include/pulsecore/refcnt.h
 include/pulsecore/resampler.h
 include/pulsecore/sample-util.h
 include/pulsecore/sconv.h
@@ -105,6 +110,7 @@ include/pulsecore/source.h
 include/pulsecore/strbuf.h
 include/pulsecore/strlist.h
 include/pulsecore/tagstruct.h
+include/pulsecore/thread.h
 include/pulsecore/tokenizer.h
 include/pulsecore/x11prop.h
 include/pulsecore/x11wrap.h
@@ -127,7 +133,7 @@ lib/libpulse.so.0
 lib/libpulsecore.a
 lib/libpulsecore.la
 lib/libpulsecore.so
-lib/libpulsecore.so.2
+lib/libpulsecore.so.3
 lib/libpulsedsp.so
 lib/pulse-%%PULSE_VERSION%%/modules/libauthkey-prop.la
 lib/pulse-%%PULSE_VERSION%%/modules/libauthkey-prop.so
@@ -262,7 +268,6 @@ libdata/pkgconfig/libpulse-mainloop-glib.pc
 libdata/pkgconfig/libpulse-simple.pc
 libdata/pkgconfig/libpulse.pc
 %%GCONF%%libexec/pulse/gconf-helper
-%%GCONF%%libexec/pulse
 %%GCONF%%@dirrm libexec/pulse
 @dirrm lib/pulse-%%PULSE_VERSION%%/modules
 @dirrm lib/pulse-%%PULSE_VERSION%%
