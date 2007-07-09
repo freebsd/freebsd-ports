@@ -1,0 +1,55 @@
+--- Makefile.orig	Tue Mar  6 15:11:03 2007
++++ Makefile	Fri Jul  6 06:58:52 2007
+@@ -24,13 +24,13 @@
+ 
+ default: seehelp zxid zxidhlo zxidhlowsf zxidsimple zxidwsctool zxlogview
+ 
+-all: seehelp zxid zxidhlo zxidsimple zxlogview samlmod phpzxid javazxid
++all: seehelp zxid zxidhlo zxidsimple zxlogview
+ 
+ ZXIDREL=0.17
+ ZXIDVERSION=0x000017
+ 
+ ### Where package is installed (use `make PREFIX=/your/path' to change)
+-PREFIX=/usr/local/zxid/$(ZXIDREL)
++PREFIX?=/usr/local/zxid/$(ZXIDREL)
+ 
+ ### Where runtime configuration and temporary data is kept.
+ ### If you change the following, be sure to edit zxidconf.h as well. N.B. Trailing / is needed.
+@@ -58,8 +58,8 @@
+ ###
+ 
+ TOP=$(shell pwd)
+-CURL_ROOT=/usr/local
+-OPENSSL_ROOT=/usr/local/ssl
++CURL_ROOT?=/usr/local
++OPENSSL_ROOT?=/usr/local/ssl
+ PHP_CONFIG=php-config
+ PERL=perl
+ XSD2SG_PL= ../pd/xsd2sg.pl
+@@ -69,11 +69,11 @@
+ SWIG=swig
+ AR=ar -crs
+ ARX=ar -x
+-CC=gcc
+-LD=gcc
+-SHARED_FLAGS=-shared --export-all-symbols -Wl,-whole-archive -Wl,--allow-multiple-definition
+-SHARED_CLOSE=-Wl,-no-whole-archive
+-CFLAGS=-g -fpic -fmessage-length=0 -Wno-unused-label -Wno-unknown-pragmas -fno-strict-aliasing
++CC?=gcc
++LD?=gcc
++SHARED_FLAGS+=-shared --export-all-symbols -Wl,-whole-archive -Wl,--allow-multiple-definition
++SHARED_CLOSE+=-Wl,-no-whole-archive
++CFLAGS+=-g -fpic -fmessage-length=0 -Wno-unused-label -Wno-unknown-pragmas -fno-strict-aliasing
+ #CFLAGS += -Os    # gcc-3.4.6 miscompiles with -Os on ix86
+ #CFLAGS += -Wall
+ 
+@@ -105,7 +105,7 @@
+ CDEF+= -DUSE_CURL
+ # Without OpenSSL signing and signature verification are not possible
+ CDEF+= -DUSE_OPENSSL
+-LIBS=-lpthread -L$(CURL_ROOT)/lib -L$(OPENSSL_ROOT)/lib -lcrypto -ldl -lcurl -lz
++LIBS=-lpthread -L$(CURL_ROOT)/lib -L$(OPENSSL_ROOT)/lib -lcrypto -lcurl -lz
+ 
+ # Following ld flags as well as C flag -ffunction-sections are a quest to
+ # eliminate unused functions from final link.
