@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTVERSION=	1.5.2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	Distributed source code management tool
 
 BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		asciidoc:${PORTSDIR}/textproc/asciidoc \
-		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-		xmlto:${PORTSDIR}/textproc/xmlto
+		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		cvsps:${PORTSDIR}/devel/cvsps-devel \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
@@ -25,7 +24,6 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	cogito-0.1[012] git-4.*
 
-.if !defined(NOPORTDOCS)
 MAN1=		git-add.1 \
 		git-am.1 \
 		git-annotate.1 \
@@ -158,23 +156,16 @@ MAN1=		git-add.1 \
 		git-whatchanged.1 \
 		git-write-tree.1 \
 		gitk.1
-MAN5=		gitattributes.5
-MAN7=		git.7
-.endif
 MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
 MAN3=		Git.3
+MAN5=		gitattributes.5 gitignore.5
+MAN7=		git.7
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	all
-INSTALL_TARGET=	install
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	doc
-INSTALL_TARGET+=install-doc
-.endif
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	CURLDIR=${LOCALBASE} \
 		NEEDS_LIBICONV=yes \
@@ -194,6 +185,16 @@ MAKE_ENV+=	NO_TCLTK=yes
 .endif
 
 post-install:
+.for i in ${MAN1}
+	${INSTALL_MAN} ${WRKDIR}/man1/${i} ${MANPREFIX}/man/man1/
+.endfor
+.for i in ${MAN5}
+	${INSTALL_MAN} ${WRKDIR}/man5/${i} ${MANPREFIX}/man/man5/
+.endfor
+.for i in ${MAN7}
+	${INSTALL_MAN} ${WRKDIR}/man7/${i} ${MANPREFIX}/man/man7/
+.endfor
+
 	-${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod
 	${MKDIR} ${PREFIX}/share/emacs/site-lisp/git
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp/git
