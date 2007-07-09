@@ -4,4 +4,4 @@ readable by Gnumeric).  It's a port of John McNamara's
 Spreadsheet::WriteExcel Perl module.
 
 Author:	Daniel J. Berger <djberg96@yahoo.com>
-WWW:	http://rubyspreadsheet.sourceforge.net/
+WWW:	http://rubyforge.org/projects/spreadsheet
