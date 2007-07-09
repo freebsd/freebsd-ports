@@ -1,4 +1,4 @@
-mod_jail is Apache 1.3.xx module, that makes running Apache in a secure jail
+mod_jail is Apache 1.3.xx/2.0.xx module, that makes running Apache in a secure jail
 prison easy, so it is intended to run on FreeBSD only. It is similar to
 mod_chroot, but uses FreeBSD's specific system call - jail. Also mod_jail make
 it possible to change securelevel into jail prison.

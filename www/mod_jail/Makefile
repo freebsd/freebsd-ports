@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	mod_jail
-PORTVERSION=	0.1
+PORTVERSION=	0.4
 CATEGORIES=	www
 MASTER_SITES=	http://igorpopov.newmail.ru/
 
 MAINTAINER=	laszlof@FreeBSD.org
-COMMENT=	Apache 1.3.x module to enable an easy alternative to mod_chroot
+COMMENT=	Apache 1.3.x/2.0.xx module to enable an easy alternative to mod_chroot
 
 WRKSRC=		${WRKDIR}/mod_jail
-USE_APACHE=	1.3
+USE_APACHE=	1.3+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 
@@ -25,10 +25,6 @@ PORTDOCS=	changelog.html documentation.html download.html \
 
 post-extract:
 	@${REINPLACE_CMD} -e "s|= apxs|= ${APXS}|" ${WRKSRC}/Makefile
-
-.if defined(WITH_APACHE2)
-IGNORE=		only works on Apache 1.3.x
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
