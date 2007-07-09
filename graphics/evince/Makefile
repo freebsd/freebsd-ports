@@ -40,9 +40,9 @@ OPTIONS=	DVI		"Enable DVI viewer support"		off \
 		T1LIB		"Enable T1LIB for TYPE1 fonts to DVI (Enables DVI)"	off \
 		NAUTILUS	"Enable Nautilus plugin"		on  \
 		DBUS		"Enable D-BUS support"			on \
-		COMICS		"Enable comic book archives support"	off
-#		IMPRESS		"Enable Impress presentations support"	off \
-#		DJVU		"Enable DJVU support"			off
+		COMICS		"Enable comic book archives support"	off \
+		IMPRESS		"Enable Impress presentations support"	off \
+		DJVU		"Enable DJVU support"			off
 
 .include <bsd.port.pre.mk>
 
@@ -73,25 +73,25 @@ CONFIGURE_ARGS+=	--disable-nautilus
 PLIST_SUB+=		NAUTILUS="@comment "
 .endif
 
-#.if defined(WITH_IMPRESS)
-#CONFIGURE_ARGS+=	--enable-impress
-#.else
+.if defined(WITH_IMPRESS)
+CONFIGURE_ARGS+=	--enable-impress
+.else
 CONFIGURE_ARGS+=	--disable-impress
-#.endif
+.endif
 
-#.if exists(${X11BASE}/bin/djview)
-#DJVU_DIR?=	# empty
-#.else
-#DJVU_DIR?=	-nox11
-#.endif
-#
-#.if defined(WITH_DJVU)
-#LIB_DEPENDS+=		djvulibre.17:${PORTSDIR}/graphics/djvulibre${DJVU_DIR}
-#CONFIGURE_ARGS+=	--enable-djvu
-#GCONF_SCHEMAS+=		evince-thumbnailer-djvu.schemas
-#.else
+.if exists(${X11BASE}/bin/djview)
+DJVU_DIR?=	# empty
+.else
+DJVU_DIR?=	-nox11
+.endif
+
+.if defined(WITH_DJVU)
+LIB_DEPENDS+=		djvulibre.18:${PORTSDIR}/graphics/djvulibre${DJVU_DIR}
+CONFIGURE_ARGS+=	--enable-djvu
+GCONF_SCHEMAS+=		evince-thumbnailer-djvu.schemas
+.else
 CONFIGURE_ARGS+=	--disable-djvu
-#.endif
+.endif
 
 .if !defined(WITHOUT_DBUS)
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
