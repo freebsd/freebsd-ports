@@ -1,15 +1,15 @@
---- configure.orig	Mon Apr 10 20:59:48 2006
-+++ configure	Thu Dec 21 16:33:07 2006
-@@ -6701,21 +6701,29 @@
-   $ac_cs_success || { (exit 1); exit 1; }
- fi
+--- configure.orig	Thu Apr  5 17:16:02 2007
++++ configure	Mon Apr 23 11:46:22 2007
+@@ -6703,20 +6703,30 @@
  
--
+ echo "#define WEBINTERFACEPATH \"$prefix/share/sams\" " >> config.h
+ 
 +CASHE_DIR=./tmp
 +CASHE=${CASHE_DIR}/config.cashe
 +[ -d ./tmp ] || mkdir ${CASHE_DIR}
 +[ -f ./tmp/config.cashe ] && truncate ${CASHE}
 +exec 7>> ${CASHE}
++
  echo "$as_me:$LINENO: result: " >&5
  echo "${ECHO_T}" >&6
  echo "$as_me:$LINENO: result: ***** Options and locations *****" >&5

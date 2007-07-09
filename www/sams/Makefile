@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	sams
-PORTVERSION=	20060417
-PORTREVISION=	1
+DISTVERSION=	20070524
 CATEGORIES=	www
-MASTER_SITES=	http://sams.irc.perm.ru/downloads/
+MASTER_SITES=	http://sams.irc.perm.ru/downloads/ \
+		http://www.dindin.ru/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	dindin@FreeBSD.org.ua
+MAINTAINER=	dindin@dindin.ru
 COMMENT=	Squid Accounting Management System
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_RC_SUBR=	sams.sh
 

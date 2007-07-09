@@ -5,9 +5,17 @@ bin/samsf
 bin/samsredir
 etc/sams.conf.sample
 %%DATADIR%%/admin.php
+%%DATADIR%%/bin/diskspace
+%%DATADIR%%/bin/freemem
+%%DATADIR%%/bin/freeswap
+%%DATADIR%%/bin/fsusage
+%%DATADIR%%/bin/getwbinfousers
+%%DATADIR%%/bin/samsdf
+%%DATADIR%%/bin/testwbinfopasswd
+%%DATADIR%%/bin/updateuserlist
+%%DATADIR%%/bin/uptime
 %%DATADIR%%/config.php
 %%DATADIR%%/createpdf.php
-%%DATADIR%%/defaultpassword.php
 %%DATADIR%%/doc/EN/admin.html
 %%DATADIR%%/doc/EN/apache.html
 %%DATADIR%%/doc/EN/faq.html
@@ -44,6 +52,7 @@ etc/sams.conf.sample
 %%DATADIR%%/doc/KOI8-R/sams_conf.html
 %%DATADIR%%/doc/KOI8-R/script.html
 %%DATADIR%%/doc/KOI8-R/settings.html
+%%DATADIR%%/doc/KOI8-R/several.html
 %%DATADIR%%/doc/KOI8-R/shablons.html
 %%DATADIR%%/doc/KOI8-R/soft.html
 %%DATADIR%%/doc/KOI8-R/squid.html
@@ -369,6 +378,8 @@ etc/sams.conf.sample
 %%DATADIR%%/icon/classic/printer.gif
 %%DATADIR%%/icon/classic/proxy.gif
 %%DATADIR%%/icon/classic/proxy_big.gif
+%%DATADIR%%/icon/classic/proxyes_32.jpg
+%%DATADIR%%/icon/classic/proxyes_48.jpg
 %%DATADIR%%/icon/classic/psite.gif
 %%DATADIR%%/icon/classic/puser.gif
 %%DATADIR%%/icon/classic/puser_open.gif
@@ -455,10 +466,12 @@ etc/sams.conf.sample
 %%DATADIR%%/icon/classic/web.gif
 %%DATADIR%%/icon/classic/webinterface.gif
 %%DATADIR%%/index.html
+%%DATADIR%%/lang/koi8r-2-utf8
 %%DATADIR%%/lang/koi8r-2-win1251
 %%DATADIR%%/lang/koi8r-2-win1251.php
 %%DATADIR%%/lang/lang.EN
 %%DATADIR%%/lang/lang.KOI8-R
+%%DATADIR%%/lang/lang.UTF8
 %%DATADIR%%/lang/lang.WIN1251
 %%DATADIR%%/lframe.php
 %%DATADIR%%/lframe_0ident.php
@@ -526,7 +539,6 @@ etc/sams.conf.sample
 %%DATADIR%%/messages/urldenied.html
 %%DATADIR%%/mysqltools.php
 %%DATADIR%%/rgb.php
-%%DATADIR%%/setpassword.php
 %%DATADIR%%/src/_lffolder_6_users.php
 %%DATADIR%%/src/_usersbuttom_1_ldap.php
 %%DATADIR%%/src/adldap.php
@@ -550,7 +562,7 @@ etc/sams.conf.sample
 %%DATADIR%%/src/contextbuttom_2_savelist.php
 %%DATADIR%%/src/contextbuttom_3_deletelist.php
 %%DATADIR%%/src/contextlisttray.php
-%%DATADIR%%/src/createpdf.ph2
+%%DATADIR%%/src/createdb.php
 %%DATADIR%%/src/dbbuttom_1_dbcheck.php
 %%DATADIR%%/src/dbbuttom_6_statdb.php
 %%DATADIR%%/src/dbbuttom_7_chname.php
@@ -559,6 +571,10 @@ etc/sams.conf.sample
 %%DATADIR%%/src/deniedbuttom_2_savelist.php
 %%DATADIR%%/src/deniedbuttom_3_deletelist.php
 %%DATADIR%%/src/deniedlisttray.php
+%%DATADIR%%/src/filebuttom_1_loadlist.php
+%%DATADIR%%/src/filebuttom_2_savelist.php
+%%DATADIR%%/src/filebuttom_3_deletelist.php
+%%DATADIR%%/src/filelisttray.php
 %%DATADIR%%/src/groupbuttom_0_prop.php
 %%DATADIR%%/src/groupbuttom_1_traffic.php
 %%DATADIR%%/src/groupbuttom_2_file.php
@@ -569,6 +585,7 @@ etc/sams.conf.sample
 %%DATADIR%%/src/lffolder_2_squid.php
 %%DATADIR%%/src/lffolder_3_mysql.php
 %%DATADIR%%/src/lffolder_4_redirect.php
+%%DATADIR%%/src/lffolder_4_z0_filedenied.php
 %%DATADIR%%/src/lffolder_4_z1_urldenied.php
 %%DATADIR%%/src/lffolder_4_z2_url.php
 %%DATADIR%%/src/lffolder_4_z3_urlallow.php
@@ -615,6 +632,7 @@ etc/sams.conf.sample
 %%DATADIR%%/src/squidbuttom_1_savebase.php
 %%DATADIR%%/src/squidbuttom_2_loadbase.php
 %%DATADIR%%/src/squidbuttom_3_delete.php
+%%DATADIR%%/src/squidbuttom_4_addcache.php
 %%DATADIR%%/src/squidtray.php
 %%DATADIR%%/src/urllistfunction.php
 %%DATADIR%%/src/user.php
@@ -642,7 +660,6 @@ etc/sams.conf.sample
 %%DATADIR%%/src/usertray.php
 %%DATADIR%%/src/webconfigbuttom_1_prop.php
 %%DATADIR%%/src/webconfigtray.php
-%%DATADIR%%/test_redirector.php
 %%DATADIR%%/tray.php
 @dirrm %%DATADIR%%/src/script
 @dirrm %%DATADIR%%/src
@@ -664,5 +681,6 @@ etc/sams.conf.sample
 @dirrm %%DATADIR%%/doc/EN
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%/backup
 @dirrm %%DATADIR%%
