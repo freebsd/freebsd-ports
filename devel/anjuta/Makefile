@@ -73,6 +73,8 @@ post-configure:
 	    	s|/usr/local|${PREFIX}| ; \
 		s|share/anjuta|share/gnome/anjuta|' \
 	    	${WRKSRC}/global-tags/create_global_tags.sh
+	@${REINPLACE_CMD} -e 's|PKG_PATH|PKG_CONFIG_PATH|g' \
+	    	${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
