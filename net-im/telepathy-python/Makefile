@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	telepathy-python
-PORTVERSION=	0.13.10
+PORTVERSION=	0.13.13
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
