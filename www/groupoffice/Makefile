@@ -6,7 +6,7 @@
 
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
-DISTVERSION=	2.17-stable-6
+DISTVERSION=	2.17-stable-8
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	group-office
@@ -25,8 +25,10 @@ WWWDIR?=	${PREFIX}/www/${PORTNAME}2
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	IMAP	"IMAP support" on \
-		GD	"Gallery support (GD)" on
+OPTIONS=	IMAP		"IMAP support" on \
+		GD		"Gallery support (GD)" on \
+		CALENDAR	"Calendar holiday support" on \
+		WBXML		"Synchronization support" off
 
 .include <bsd.port.pre.mk>
 
@@ -36,6 +38,14 @@ USE_PHP+=	imap iconv
 
 .if !defined(WITHOUT_GD)
 USE_PHP+=	gd
+.endif
+
+.if !defined(WITHOUT_CALENDAR)
+USE_PHP+=	calendar
+.endif
+
+.if !defined(WITHOUT_WBXML)
+LIB_DEPENDS=	wbxml2:${PORTSDIR}/textproc/wbxml2
 .endif
 
 do-install:

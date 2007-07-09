@@ -9,6 +9,7 @@
 %%WWWDIR%%/TODO
 %%WWWDIR%%/TRANSLATORS
 %%WWWDIR%%/about.php
+%%WWWDIR%%/action.php
 %%WWWDIR%%/adodb-time.inc.php
 %%WWWDIR%%/auth_sources.dist
 %%WWWDIR%%/checker.php
@@ -1316,31 +1317,8 @@
 %%WWWDIR%%/controls/FCKeditor/htaccess.txt
 %%WWWDIR%%/controls/FCKeditor/license.txt
 %%WWWDIR%%/controls/JUpload/jupload.inc
-%%WWWDIR%%/controls/JUpload/jupload.jar
 %%WWWDIR%%/controls/JUpload/jupload.php
-%%WWWDIR%%/controls/JUpload/src/images/delete.png
-%%WWWDIR%%/controls/JUpload/src/images/error.png
-%%WWWDIR%%/controls/JUpload/src/images/file-manager.png
-%%WWWDIR%%/controls/JUpload/src/images/stop.png
-%%WWWDIR%%/controls/JUpload/src/images/up.png
-%%WWWDIR%%/controls/JUpload/src/jupload/AfterUploadSucc.java
-%%WWWDIR%%/controls/JUpload/src/jupload/AfterUploadSuccImp.java
-%%WWWDIR%%/controls/JUpload/src/jupload/DnDListener.java
-%%WWWDIR%%/controls/JUpload/src/jupload/FilePanel.java
-%%WWWDIR%%/controls/JUpload/src/jupload/FilePanelImp.java
-%%WWWDIR%%/controls/JUpload/src/jupload/FileUploadThread.java
-%%WWWDIR%%/controls/JUpload/src/jupload/FileUploadThreadV2.java
-%%WWWDIR%%/controls/JUpload/src/jupload/JUpload.java
-%%WWWDIR%%/controls/JUpload/src/jupload/JUploadApplet.java
-%%WWWDIR%%/controls/JUpload/src/jupload/JUploadPanel.java
-%%WWWDIR%%/controls/JUpload/src/jupload/StatusArea.java
-%%WWWDIR%%/controls/JUpload/src/jupload/filepanel/ColumnComparator.java
-%%WWWDIR%%/controls/JUpload/src/jupload/filepanel/DateRenderer.java
-%%WWWDIR%%/controls/JUpload/src/jupload/filepanel/FilePanelDataModel.java
-%%WWWDIR%%/controls/JUpload/src/jupload/filepanel/FilePanelJTable.java
-%%WWWDIR%%/controls/JUpload/src/jupload/filepanel/FilePanelTableImp.java
-%%WWWDIR%%/controls/JUpload/src/jupload/filepanel/SortArrowIcon.java
-%%WWWDIR%%/controls/JUpload/src/jupload/filepanel/SortHeaderRenderer.java
+%%WWWDIR%%/controls/JUpload/wjhk.jupload.jar
 %%WWWDIR%%/controls/acl.php
 %%WWWDIR%%/controls/backend_treeview.php
 %%WWWDIR%%/controls/color_selector.php
@@ -1996,6 +1974,7 @@
 %%WWWDIR%%/language/preferences/zh-tw.inc
 %%WWWDIR%%/language/preferences/zh_TW_big5.inc
 %%WWWDIR%%/language/sync/ca.inc
+%%WWWDIR%%/language/sync/cs.inc
 %%WWWDIR%%/language/sync/de.inc
 %%WWWDIR%%/language/sync/en.inc
 %%WWWDIR%%/language/sync/es.inc
@@ -2274,8 +2253,10 @@
 %%WWWDIR%%/modules/cms/index.php
 %%WWWDIR%%/modules/cms/index.php.move
 %%WWWDIR%%/modules/cms/insert_link.php
+%%WWWDIR%%/modules/cms/jupload.php
 %%WWWDIR%%/modules/cms/language/bg.inc
 %%WWWDIR%%/modules/cms/language/ca.inc
+%%WWWDIR%%/modules/cms/language/cs.inc
 %%WWWDIR%%/modules/cms/language/da.inc
 %%WWWDIR%%/modules/cms/language/de.inc
 %%WWWDIR%%/modules/cms/language/en.inc
@@ -2335,11 +2316,13 @@
 %%WWWDIR%%/modules/cms/themes/Default/images/move_up.png
 %%WWWDIR%%/modules/cms/themes/Default/images.inc
 %%WWWDIR%%/modules/cms/treeview.inc
+%%WWWDIR%%/modules/cms/upload.php
 %%WWWDIR%%/modules/cms/view.inc
 %%WWWDIR%%/modules/cms/view.php
 %%WWWDIR%%/modules/comics/classes/comics.class.inc
 %%WWWDIR%%/modules/comics/index.php
 %%WWWDIR%%/modules/comics/language/ca.inc
+%%WWWDIR%%/modules/comics/language/cs.inc
 %%WWWDIR%%/modules/comics/language/da.inc
 %%WWWDIR%%/modules/comics/language/de.inc
 %%WWWDIR%%/modules/comics/language/en.inc
@@ -2423,6 +2406,7 @@
 %%WWWDIR%%/modules/email/tnef.php
 %%WWWDIR%%/modules/email/treeview.php
 %%WWWDIR%%/modules/email/upload.php
+%%WWWDIR%%/modules/email/vacation_functions.inc
 %%WWWDIR%%/modules/email/zip_attachments.php
 %%WWWDIR%%/modules/filesystem/add_file.inc
 %%WWWDIR%%/modules/filesystem/classes/filesystem.class.inc
@@ -2486,6 +2470,7 @@
 %%WWWDIR%%/modules/gallery/index.php
 %%WWWDIR%%/modules/gallery/jupload.php
 %%WWWDIR%%/modules/gallery/language/ca.inc
+%%WWWDIR%%/modules/gallery/language/cs.inc
 %%WWWDIR%%/modules/gallery/language/de.inc
 %%WWWDIR%%/modules/gallery/language/en.inc
 %%WWWDIR%%/modules/gallery/language/es.inc
@@ -2680,6 +2665,7 @@
 %%WWWDIR%%/modules/phpsysinfo/includes/xml/vitals.php
 %%WWWDIR%%/modules/phpsysinfo/index.php
 %%WWWDIR%%/modules/phpsysinfo/language/ca.inc
+%%WWWDIR%%/modules/phpsysinfo/language/cs.inc
 %%WWWDIR%%/modules/phpsysinfo/language/de.inc
 %%WWWDIR%%/modules/phpsysinfo/language/en.inc
 %%WWWDIR%%/modules/phpsysinfo/language/es.inc
@@ -2842,7 +2828,9 @@
 %%WWWDIR%%/modules/tools/dbcheck.php
 %%WWWDIR%%/modules/tools/importusers.php
 %%WWWDIR%%/modules/tools/index.php
+%%WWWDIR%%/modules/tools/language/cs.inc
 %%WWWDIR%%/modules/tools/language/en.inc
+%%WWWDIR%%/modules/tools/language/si.inc
 %%WWWDIR%%/modules/tools/module.info
 %%WWWDIR%%/modules/tools/query.php
 %%WWWDIR%%/modules/tools/rm_duplicates.php
@@ -2863,7 +2851,9 @@
 %%WWWDIR%%/modules/translate/module.info
 %%WWWDIR%%/modules/updateclient/classes/updateclient.class.inc
 %%WWWDIR%%/modules/updateclient/index.php
+%%WWWDIR%%/modules/updateclient/language/cs.inc
 %%WWWDIR%%/modules/updateclient/language/en.inc
+%%WWWDIR%%/modules/updateclient/language/si.inc
 %%WWWDIR%%/modules/updateclient/module.info
 %%WWWDIR%%/modules/updateclient/settings.php
 %%WWWDIR%%/modules/updateclient/sql/updateclient.install.sql
@@ -5045,10 +5035,6 @@
 @dirrm %%WWWDIR%%/controls/FCKeditor/editor/skins
 @dirrm %%WWWDIR%%/controls/FCKeditor/editor
 @dirrm %%WWWDIR%%/controls/FCKeditor
-@dirrm %%WWWDIR%%/controls/JUpload/src/images
-@dirrm %%WWWDIR%%/controls/JUpload/src/jupload/filepanel
-@dirrm %%WWWDIR%%/controls/JUpload/src/jupload
-@dirrm %%WWWDIR%%/controls/JUpload/src
 @dirrm %%WWWDIR%%/controls/JUpload
 @dirrm %%WWWDIR%%/controls/htmlarea/examples
 @dirrm %%WWWDIR%%/controls/htmlarea/images
