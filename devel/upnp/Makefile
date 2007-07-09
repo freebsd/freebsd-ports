@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	upnp
-PORTVERSION=	1.4.6
+PORTVERSION=	1.6.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -29,9 +29,9 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	LIBS="-llwres -lcompat"
 
 .if defined(NOPORTDOCS)
-CONFIGURE_ARGS=	--without-docdir
+CONFIGURE_ARGS=	--without-documentation
 .else
-CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
+CONFIGURE_ARGS=	--with-documentation=${DOCSDIR}
 .endif
 
 post-patch:
