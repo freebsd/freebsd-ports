@@ -39,6 +39,7 @@
 %%CPGDIR%%/displayreport.php
 %%CPGDIR%%/docs/README.html
 %%CPGDIR%%/docs/faq.htm
+%%CPGDIR%%/docs/faq_de.htm
 %%CPGDIR%%/docs/faq_fr.htm
 %%CPGDIR%%/docs/index.htm
 %%CPGDIR%%/docs/index_fr.htm
@@ -46,6 +47,7 @@
 %%CPGDIR%%/docs/pics/admin_mode_bar.gif
 %%CPGDIR%%/docs/pics/albmgr.gif
 %%CPGDIR%%/docs/pics/album_menu.gif
+%%CPGDIR%%/docs/pics/anchor.gif
 %%CPGDIR%%/docs/pics/barre_menu_fr.gif
 %%CPGDIR%%/docs/pics/bridge_01_start.gif
 %%CPGDIR%%/docs/pics/bridge_02_app.gif
@@ -113,6 +115,7 @@
 %%CPGDIR%%/docs/pics/util_re-size.gif
 %%CPGDIR%%/docs/pics/valid-css.gif
 %%CPGDIR%%/docs/pics/valid-xhtml10.gif
+%%CPGDIR%%/docs/pics/vanity.png
 %%CPGDIR%%/docs/pics/versioncheck_comparison.gif
 %%CPGDIR%%/docs/pics/versioncheck_options.gif
 %%CPGDIR%%/docs/showdoc.php
@@ -380,6 +383,7 @@
 %%CPGDIR%%/keyword_select.php
 %%CPGDIR%%/keywordmgr.php
 %%CPGDIR%%/lang/albanian.php
+%%CPGDIR%%/lang/arabic.php
 %%CPGDIR%%/lang/basque.php
 %%CPGDIR%%/lang/brazilian_portuguese.php
 %%CPGDIR%%/lang/bulgarian.php
@@ -398,11 +402,13 @@
 %%CPGDIR%%/lang/german_sie.php
 %%CPGDIR%%/lang/greek.php
 %%CPGDIR%%/lang/hebrew.php
+%%CPGDIR%%/lang/hindi.php
 %%CPGDIR%%/lang/hungarian.php
 %%CPGDIR%%/lang/indonesian.php
 %%CPGDIR%%/lang/italian.php
 %%CPGDIR%%/lang/japanese.php
 %%CPGDIR%%/lang/korean.php
+%%CPGDIR%%/lang/lithuanian.php
 %%CPGDIR%%/lang/norwegian.php
 %%CPGDIR%%/lang/persian.php
 %%CPGDIR%%/lang/polish.php
@@ -412,8 +418,10 @@
 %%CPGDIR%%/lang/slovenian.php
 %%CPGDIR%%/lang/spanish.php
 %%CPGDIR%%/lang/swedish.php
+%%CPGDIR%%/lang/thai.php
 %%CPGDIR%%/lang/turkish.php
 %%CPGDIR%%/lang/ukrainian.php
+%%CPGDIR%%/lang/vietnamese.php
 %%CPGDIR%%/login.php
 %%CPGDIR%%/logout.php
 %%CPGDIR%%/logs/log_header.inc.php
