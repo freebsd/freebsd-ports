@@ -10,7 +10,8 @@ PORTVERSION=	1.3
 CATEGORIES=	net-p2p
 
 MAINTAINER=	skylord@vt.net.ru
-COMMENT=	ForbiddenWords plugin for the VerliHub - a Direct Connect protocol server
+
+PLUGIN_DESC=	ForbiddenWords
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/net-p2p/verlihub-plugins/Makefile.plugins"

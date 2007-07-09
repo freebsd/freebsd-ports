@@ -1,6 +1,6 @@
 --------------------------------------------------------------------
 
-This port installs the Floodprotect VerliHub plugin.
+This port installs the %%PLUGIN_DESC%% VerliHub plugin.
 You need to restart your hub or manually load plugin with
 plugman commands.
 
