@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ushare
-PORTVERSION=	0.9.10
+PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	http://ushare.geexbox.org/releases/
 
