@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Apr 16 17:17:57 2006
-+++ Makefile.in	Sun Apr 16 17:18:08 2006
-@@ -97,22 +97,18 @@
+--- Makefile.in.orig	Mon Sep 25 11:06:00 2006
++++ Makefile.in	Sun Jul  8 18:36:39 2007
+@@ -98,22 +98,18 @@
  
  CLEANFILES = $(OBJ) libpcap.a $(GENSRC) $(GENHDR) lex.yy.c
  
@@ -22,12 +22,12 @@
 -libpcap.so: $(OBJ)
 +libpcap.so.2: $(OBJ)
  	@rm -f $@
--	ld -shared -o $@.`cat VERSION` $(OBJ)
+-	$(CC) -shared -o $@.`cat VERSION` $(OBJ) $(DAGLIBS)
 +	$(CC) -shared -Wl,-x  -o libpcap.so.2 -Wl,-soname,libpcap.so.2  `lorder *.o | tsort -q`
  
  # the following rule succeeds, but the result is untested.
  libpcap.dylib: $(OBJ)
-@@ -173,6 +169,8 @@
+@@ -174,6 +170,8 @@
  install: libpcap.a 
  	[ -d $(DESTDIR)$(libdir) ] || \
  	    (mkdir -p $(DESTDIR)$(libdir); chmod 755 $(DESTDIR)$(libdir))
