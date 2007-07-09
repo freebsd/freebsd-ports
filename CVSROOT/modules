@@ -6968,6 +6968,7 @@ lion		ports/devel/lion
 liquidwar	ports/games/liquidwar
 lirc		ports/comms/lirc
 lire		ports/sysutils/lire
+lisaem		ports/emulators/lisaem
 listener	ports/audio/listener
 listmanager	ports/mail/listmanager
 listres		ports/x11/listres
