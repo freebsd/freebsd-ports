@@ -3098,3 +3098,4 @@ net/rubygems-rrdtool|databases/rubygems-rrdtool|2007-07-08|Chase move of databas
 net/rrdman|databases/rrdman|2007-07-08|Chase move of databases/rrdtool
 net/py-rrdpipe|databases/py-rrdpipe|2007-07-08|Chase move of databases/rrdtool
 net/php5-rrdtool|databases/php5-rrdtool|2007-07-08|Chase move of databases/rrdtool
+textproc/ruby-spreadsheet-excel|textproc/rubygem-spreadsheet-excel|2007-07-09|Port updated in rubygem version
