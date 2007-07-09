@@ -37,7 +37,6 @@ OPTIONS=	DOCS "Install the QtiPlot Handbook" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PYTHON)
-BROKEN=	py-qt4-\* ports should be fixed first
 USE_PYTHON=	yes
 # manually include this, because USE_PYTHON is defined
 # after including bsd.port.pre.mk
@@ -58,7 +57,6 @@ RUN_DEPENDS+=	qtiplot-doc>=0:${PORTSDIR}/math/qtiplot-doc
 .if !defined(WITHOUT_NLS)
 #QT_COMPONENTS+=	linguist
 BUILD_DEPENDS+=	${LOCALBASE}/bin/lupdate-qt4:${PORTSDIR}/devel/qt4-linguist
-QTI_LANG=	de es fr ja ru sv
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
@@ -90,16 +88,8 @@ post-configure:
 	@${REINPLACE_CMD} -e \
 		's|^CC .*|CC=${CC}|; \
 		 s|^CXX .*|CXX=${CXX}|; \
-		 s|^LINK .*|LINK=${CXX}|; \
-		 s|-pipe||; \
-		 s|^\(CFLAGS .*= \)|\1${CFLAGS}|; \
-		 s|^\(CXXFLAGS = \)|\1${CXXFLAGS}|' \
+		 s|^LINK .*|LINK=${CXX}|' \
 		${WRKSRC}/${d}/Makefile
-.endfor
-
-do-build:
-.for d in ${QPRO_DIRS}
-	(cd ${WRKSRC}/${d}; ${SETENV} ${MAKE_ENV} ${GMAKE})
 .endfor
 
 do-install:
