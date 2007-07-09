@@ -1,20 +1,20 @@
---- Makefile.orig	Wed Aug  9 10:07:14 2006
-+++ Makefile	Wed Aug  9 10:07:37 2006
+--- Makefile.orig	2007-07-09 10:11:24.000000000 -0400
++++ Makefile	2007-07-09 10:11:49.000000000 -0400
 @@ -18,7 +18,7 @@
  endif
  
  # MMX/SSE optims
 -ifeq ($(ARCH),X86)
 +ifeq ($(ARCH),i386)
+ ifneq ($(AS),)
  SRCS   += common/i386/mc-c.c common/i386/predict-c.c
  ASMSRC  = common/i386/dct-a.asm common/i386/cpu-a.asm \
-           common/i386/pixel-a.asm common/i386/mc-a.asm \
-@@ -30,7 +30,7 @@
+@@ -32,7 +32,7 @@
  endif
  
  # MMX/SSE optims
 -ifeq ($(ARCH),X86_64)
 +ifeq ($(ARCH),amd64)
+ ifneq ($(AS),)
  SRCS   += common/i386/mc-c.c common/i386/predict-c.c
  ASMSRC  = common/amd64/dct-a.asm common/amd64/cpu-a.asm \
-           common/amd64/pixel-a.asm common/amd64/mc-a.asm \
