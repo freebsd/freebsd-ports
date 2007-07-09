@@ -1,14 +1,15 @@
---- Makefile.orig	Tue Feb 13 09:49:00 2007
-+++ Makefile	Tue Mar 20 22:14:10 2007
-@@ -8,15 +8,13 @@
+--- Makefile.orig	Mon Jun  4 15:27:25 2007
++++ Makefile	Wed Jul  4 09:43:14 2007
+@@ -8,17 +8,14 @@
  INCLUDE = -Ilibopenjpeg
  
  # General configuration variables:
 -CC = gcc
 -AR = ar
  
--INSTALLDIR = /usr/lib
-+INSTALLDIR = $(PREFIX)/lib
+-PREFIX = /usr
+ INSTALL_LIBDIR = $(PREFIX)/lib
+ INSTALL_INCLUDE = $(PREFIX)/include
  
  # Converts cr/lf to just lf
  DOS2UNIX = dos2unix
@@ -18,16 +19,18 @@
  LIBRARIES = -lstdc++
  
  MODULES = $(SRCS:.c=.o)
-@@ -54,10 +52,9 @@
- 	$(CC) -s -shared -Wl,-soname,$(LIBNAME) -o $@ $(MODULES) $(LIBRARIES)
+@@ -58,11 +55,11 @@
  
- install:
--	install -m 644 -o root -g root $(STATICLIB) $(INSTALLDIR)
--	install -m 755 -o root -g root $(SHAREDLIB) $(INSTALLDIR)
-+	install -m 644 -o 0 -g 0 $(STATICLIB) $(INSTALLDIR)
-+	install -m 755 -o 0 -g 0 $(SHAREDLIB) $(INSTALLDIR)
- 	ln -sf $(SHAREDLIB) $(INSTALLDIR)/$(LIBNAME)
--	ldconfig
+ install: OpenJPEG
+ 	install -d '$(DESTDIR)$(INSTALL_LIBDIR)' '$(DESTDIR)$(INSTALL_INCLUDE)'
+-	install -m 644 -o root -g root $(STATICLIB) '$(DESTDIR)$(INSTALL_LIBDIR)'
++	install -m 644 -o 0 -g 0 $(STATICLIB) '$(DESTDIR)$(INSTALL_LIBDIR)'
+ 	ranlib '$(DESTDIR)$(INSTALL_LIBDIR)/$(STATICLIB)'
+-	install -m 755 -o root -g root $(SHAREDLIB) '$(DESTDIR)$(INSTALL_LIBDIR)'
++	install -m 755 -o 0 -g 0 $(SHAREDLIB) '$(DESTDIR)$(INSTALL_LIBDIR)'
+ 	ln -sf $(SHAREDLIB) '$(DESTDIR)$(INSTALL_LIBDIR)/$(LIBNAME)'
+-	install -m 644 -o root -g root libopenjpeg/openjpeg.h '$(DESTDIR)$(INSTALL_INCLUDE)'
++	install -m 644 -o 0 -g 0 libopenjpeg/openjpeg.h '$(DESTDIR)$(INSTALL_INCLUDE)'
+ 	-ldconfig
  
  clean:
- 	rm -rf core dist/ u2dtmp* $(MODULES) $(STATICLIB) $(SHAREDLIB) $(LIBNAME)
