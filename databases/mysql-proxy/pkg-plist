@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+%%DATADIR%%/tutorial-basic.lua
+%%DATADIR%%/tutorial-constants.lua
+%%DATADIR%%/tutorial-inject.lua
+%%DATADIR%%/tutorial-packets.lua
+%%DATADIR%%/tutorial-query-time.lua
+%%DATADIR%%/tutorial-rewrite.lua
+%%DATADIR%%/tutorial-warnings.lua
+sbin/mysql-proxy
+@dirrmtry %%DATADIR%%
