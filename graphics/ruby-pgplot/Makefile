@@ -18,12 +18,14 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby interface to PGPLOT graphics library
 
-LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot \
-		gfortran:${PORTSDIR}/lang/gcc42
+LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
 
-USE_GCC=	4.2+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
