@@ -151,7 +151,7 @@ post-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "If you are having trouble displaying gantt charts,"
 	@${ECHO_MSG} "please try increasing PHP's memory limit. Thanks to"
-	@${ECHO_MSG} "Erik Greenwalk for pointing this issue out."
+	@${ECHO_MSG} "Erik Greenwald for pointing this issue out."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "gforge is a huge project and complex to configure."
 	@${ECHO_MSG} "If you have some great ideas for this port please"
