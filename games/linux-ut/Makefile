@@ -8,7 +8,7 @@
 PORTNAME=	linux-ut
 PORTVERSION=	451
 CATEGORIES=	games linux
-MASTER_SITES=	http://liflg.0wnitsch.de/files/native/:p436 \
+MASTER_SITES=	http://liflg.0wnitsch.de/files/final/:p436 \
 		http://www.utpg.org/patches/:p451
 DISTFILES=	${PATCH436FILES} \
 		${PATCH451FILES}
@@ -112,6 +112,13 @@ do-install:
 		${MV} -f galaxy.int Galaxy.int &&\
 		${MV} -f editor.int Editor.int &&\
 		${MV} -f windrv.int WinDrv.int
+	@${ECHO_CMD} "Removing /usr/local from ut-bin's library search path"
+	@UTBIN=${DATADIR}/System/ut-bin &&\
+		FILESIZE=`/usr/bin/stat -f "%z" $${UTBIN}` &&\
+		${MV} $${UTBIN} $${UTBIN}.orig &&\
+		${SED} -Ee 's|:/usr/local|:/USR-LOCAL|' $${UTBIN}.orig |\
+		${HEAD} -c $${FILESIZE} > $${UTBIN} &&\
+		${RM} $${UTBIN}.orig
 	@${ECHO_CMD} "Setting permissions"
 	@${FIND} ${DATADIR} -print0 |\
 		${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
