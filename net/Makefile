@@ -744,6 +744,7 @@
     SUBDIR += ruby-tserver
     SUBDIR += rubygem-openid
     SUBDIR += rubygem-twitter
+    SUBDIR += rubygem-twitter4r
     SUBDIR += rubygem-yadis
     SUBDIR += rude
     SUBDIR += rwhoisd
