@@ -36,22 +36,22 @@
 ;; This file takes all neccessary actions. The easiest way is to load
 ;; it in your Lisp everytime it starts, by putting
 ;;
-;;  (load "/usr/local/etc/freebsd-lisp-init")
+;;  (load "%%PREFIX%%/etc/freebsd-lisp-init")
 ;;
 ;; in your init file.
 ;;
 ;; Each Lisp implementation has it's own files where this can be done:
 ;;
 ;; CLISP:
-;;   /usr/local/lib/clisp/config.lisp
+;;   %%PREFIX%%/lib/clisp/config.lisp
 ;;   ~/.clisprc
 ;;
 ;; CMUCL:
-;;   /usr/local/lib/cmucl/lib/cmucl/lib/site-init.lisp
+;;   %%PREFIX%%/lib/cmucl/lib/cmucl/lib/site-init.lisp
 ;;   ~/.cmucl-init.lisp
 ;;
 ;; SBCL:
-;;  /usr/local/etc/sbclrc
+;;  %%PREFIX%%/etc/sbclrc
 ;;  ~/.sbclrc
 ;;
 ;; After that, you can load your installed ports like this (using
@@ -68,7 +68,7 @@
 ;; We mess around with asdf:output-files in interesting ways to
 ;; enforce a filesystem layout that works without multiple Lisp
 ;; implementations overwriting their fasls. Basically, each lib has
-;; it's own directory in /usr/local/lib/common-lisp, initially
+;; it's own directory in %%PREFIX%%/lib/common-lisp, initially
 ;; containing its sources. Each fasl port will create an
 ;; implementation-specific subdirectory where all it's fasls go, for
 ;; example ./cmuclfasl, ./clispfasl etc.
@@ -126,11 +126,11 @@
 ;;;; Pathes
 
 (defvar *asdf-pathname*
-  "/usr/local/lib/common-lisp/asdf/asdf"
+  "%%PREFIX%%/lib/common-lisp/asdf/asdf"
   "Path of the ASDF library")
 
 (defvar *system-registry*
-  "/usr/local/lib/common-lisp/system-registry"
+  "%%PREFIX%%/lib/common-lisp/system-registry"
   "FreeBSDs contribution to the entral registry for ASDF system
 definitions.  This will be added to asdf:*central-registry*, you
 should modify that in order to add other directories.")
