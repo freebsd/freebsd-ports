@@ -1,6 +1,6 @@
-# New ports collection makefile for:    lynx
-# Date created:         15 Dec 1994
-# Whom:                 ache
+# New ports collection makefile for:	lynx
+# Date created:				15 Dec 1994
+# Whom:					Andrey Chernov <ache@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,17 +13,18 @@ MASTER_SITES=	http://lynx.isc.org/current/ \
 		ftp://lynx.isc.org/lynx${PORTVERSION}/patches/:patches
 DISTNAME=	${PORTNAME}${PORTVERSION:R}rel.${PORTVERSION:E}
 
-MAINTAINER?=	jharris@widomaker.com
-COMMENT?=	A non-graphical, text-based World-Wide Web client
+MAINTAINER=	jharris@widomaker.com
+COMMENT=	A non-graphical, text-based World-Wide Web client
 
-CONFLICTS?=	lynx-ssl* lynx-current*
+CONFLICTS=	lynx-current*
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
+USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-6
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
-		--enable-nsl-fork --enable-persistent-cookies \
+		--enable-nsl-fork --enable-persistent-cookies --with-ssl \
 		--with-curses-dir=/usr --with-libiconv-prefix="${LOCALBASE}"
 
 .if defined(WITHOUT_NLS)
