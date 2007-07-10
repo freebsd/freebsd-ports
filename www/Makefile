@@ -284,7 +284,6 @@
     SUBDIR += lws
     SUBDIR += lynx
     SUBDIR += lynx-current
-    SUBDIR += lynx-ssl
     SUBDIR += mambo
     SUBDIR += man2web
     SUBDIR += mapedit

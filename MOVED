@@ -3096,3 +3096,4 @@ net/py-rrdpipe|databases/py-rrdpipe|2007-07-08|Chase move of databases/rrdtool
 net/php5-rrdtool|databases/php5-rrdtool|2007-07-08|Chase move of databases/rrdtool
 textproc/ruby-spreadsheet-excel|textproc/rubygem-spreadsheet-excel|2007-07-09|Port updated in rubygem version
 net/gnet-glib2|net/gnet2|2007-07-09|Functionality merged into gnet2
+www/lynx-ssl|www/lynx|2007-07-10|SSL enabled by default in www/lynx
