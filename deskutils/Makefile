@@ -18,6 +18,7 @@
     SUBDIR += bitcollider
     SUBDIR += blogtk
     SUBDIR += bmp-docklet
+    SUBDIR += bookreader
     SUBDIR += buoh
     SUBDIR += cal
     SUBDIR += calcurse
