@@ -57,5 +57,6 @@ include/zxid/zxidconf.h
 include/zxid/zxidvers.h
 include/zxid/zxwsc.h
 lib/libzxid.a
+lib/libzxid.so.0
 lib/libzxid.so.0.0
 @dirrmtry include/zxid

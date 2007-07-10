@@ -7,6 +7,7 @@
 
 PORTNAME=	zxid
 PORTVERSION=	0.17
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://zxid.org/
 EXTRACT_SUFX=	.tgz
@@ -21,5 +22,8 @@ MAKE_ARGS+=	CC="${CC}" CURL_ROOT="${LOCALBASE}" LD="${CC}" \
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
+
+post-install:
+	${LN} -s libzxid.so.0.0 ${PREFIX}/lib/libzxid.so.0
 
 .include <bsd.port.mk>
