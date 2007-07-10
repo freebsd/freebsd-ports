@@ -1,11 +1,11 @@
---- docsis_decode.c.orig	Fri Jul  5 14:54:11 2002
-+++ docsis_decode.c	Fri Jul  5 14:55:31 2002
-@@ -47,7 +47,7 @@
-   memset( &helper, 0,sizeof(unsigned int));
-   memcpy( &helper, tlvbuf+2, sizeof(unsigned int));
+# $FreeBSD$
+--- src/docsis_decode.c.orig	Mon Aug  1 07:30:42 2005
++++ src/docsis_decode.c	Sun Jun 10 18:24:22 2007
+@@ -22,6 +22,7 @@
  
--  printf ( "%s %u;\n", sym->sym_ident, ntohl(helper));
-+  printf ( "%s %u;\n", sym->sym_ident, (unsigned int)ntohl(helper));
- }
+ #include <math.h>
+ #include <ctype.h>
++#include <string.h>
  
- void decode_ushort (unsigned char *tlvbuf, symbol_type *sym)
+ /* #include "docsis.h" */
+ #include "docsis_decode.h"

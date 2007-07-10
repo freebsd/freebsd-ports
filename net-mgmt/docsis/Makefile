@@ -6,27 +6,25 @@
 #
 
 PORTNAME=	docsis
-PORTVERSION=	0.8.2
-PORTREVISION=	5
+PORTVERSION=	0.9.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RELEASE
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jflemer@alum.rpi.edu
 COMMENT=	DOCSIS(tm) binary configuration file encoder/decoder
 
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
 
+GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_BISON=	yes
 
-ALL_TARGET=	docsis
+PLIST_SUB=	MIBS=share/snmp/mibs
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/docsis ${PREFIX}/bin
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+post-patch:
+	@${REINPLACE_CMD} -e 's|^htmldocdir =.*|htmldocdir = ${DOCSDIR}|' ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's|^examplesdir =.*|examplesdir = ${EXAMPLESDIR}|' ${WRKSRC}/examples/Makefile.in
 
 .include <bsd.port.mk>

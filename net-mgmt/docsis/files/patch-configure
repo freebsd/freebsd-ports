@@ -1,0 +1,13 @@
+--- configure.orig	Wed Jul  6 01:53:59 2005
++++ configure	Wed Jul 11 00:09:11 2007
+@@ -19510,8 +19510,8 @@
+    { (exit 1); exit 1; }; }
+ else
+   ac_m4_vers=`$M4 --version 2>/dev/null | head -1` ;
+-  ac_is_gnu_m4=`echo $ac_m4_vers | cut -d' ' -f1`;
+-  if test "x$ac_is_gnu_m4" = "xGNU"; then
++  ac_is_gnu_m4=`echo $ac_m4_vers | grep GNU`;
++  if test "x$ac_is_gnu_m4" != "x"; then
+ 	echo "$as_me:$LINENO: result:    found $ac_m4_vers at $M4 " >&5
+ echo "${ECHO_T}   found $ac_m4_vers at $M4 " >&6
+   else
