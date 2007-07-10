@@ -1,6 +1,6 @@
---- help.c.orig	Wed Feb 14 04:37:46 2007
-+++ help.c	Thu Feb 22 18:44:17 2007
-@@ -352,7 +352,7 @@
+--- help.c.orig	Wed May  9 15:23:18 2007
++++ help.c	Fri Jun 29 17:59:12 2007
+@@ -370,7 +370,7 @@
    printf("\n%s",s);
    DEB"\n%s",s);
    }  
@@ -9,7 +9,7 @@
  line=3;
  if(screen_mode)
    {
-@@ -367,7 +367,7 @@
+@@ -385,7 +385,7 @@
  {
  int line;
  if(msg_no < 0)return;

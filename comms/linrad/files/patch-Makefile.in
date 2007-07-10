@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Apr 10 14:08:58 2007
-+++ Makefile.in	Sat Apr 21 23:23:50 2007
+--- Makefile.in.orig	Wed May  9 15:23:18 2007
++++ Makefile.in	Fri Jun 29 17:53:19 2007
 @@ -4,7 +4,7 @@
  # Name the output files *.ol instead of *.o 
  # so we definitely know it is for Linux. 
@@ -9,7 +9,7 @@
  WCC	= /usr/bin/i586-mingw32msvc-gcc
  WINWCC  = C:\mingw\bin\mingw32-gcc
  NASM	= nasm
-@@ -14,13 +14,10 @@
+@@ -14,10 +14,7 @@
  # so we definitely know it is for Windows.
  # (*.o files can be present by mistake) 
  # Always use the same flags.
@@ -20,17 +20,13 @@
 +CFL	= ${CFLAGS} -DOSNUM=1 -I${X11BASE}/include -c -o
  CFW	= -g -O -DOSNUM=2 -W -Wimplicit -Wreturn-type -Wformat \
  -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
---Wparentheses -Wstrict-prototypes -Werror -ffast-math \
-+-Wparentheses -Wstrict-prototypes -ffast-math \
- -fomit-frame-pointer -c -o
- # Define dependencies for routines used both in Linux and Windows
- 
+ -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
 @@ -624,7 +621,7 @@
  meter_graph.ol fonts.ol screensub.ol lxsys.ol 
  
  
--	gcc -olinrad -lvgagl -lvga -lpthread -lm \
-+	$(CC) -olinrad -lvgagl -lvga -pthread -lm \
+-	gcc @MEM@ -olinrad -lvgagl -lvga -lpthread -lm \
++	${CC} @MEM@ -olinrad -lvgagl -lvga -pthread -lm \
  -Wl,-Map,linrad.lmap,-warn-common \
  	lmain.ol lvar.ol ui.ol lsetad.ol fft1.ol buf.ol \
  mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
@@ -38,8 +34,8 @@
  
  
  
--	gcc -oxlinrad -L/usr/X11R6/lib -lX11 -lpthread -lm \
-+	$(CC) -oxlinrad -L/usr/X11R6/lib -lX11 -pthread -lm \
+-	gcc @MEM@ -oxlinrad -L/usr/X11R6/lib -lX11 -lpthread -lm \
++	gcc @MEM@ -oxlinrad -L/usr/local/lib -lX11 -pthread -lm \
  -Wl,-Map,linrad.xmap,-warn-common \
  xmain.ol xvar.ol ui.ol lsetad.ol fft1.ol buf.ol lvar.ol \
  mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
