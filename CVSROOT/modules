@@ -11480,6 +11480,7 @@ pardiff		ports/textproc/pardiff
 pari		ports/math/pari
 paris-traceroute	ports/net/paris-traceroute
 parmetis	ports/math/parmetis
+paros		ports/www/paros
 party		ports/irc/party
 pas2dox		ports/devel/pas2dox
 pash		ports/shells/pash
