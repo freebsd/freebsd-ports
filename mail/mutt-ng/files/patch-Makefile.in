@@ -18,6 +18,15 @@
  am_makedoc_OBJECTS = makedoc.$(OBJEXT)
  makedoc_OBJECTS = $(am_makedoc_OBJECTS)
  am__objects_1 = patchlist.$(OBJEXT)
+@@ -267,7 +269,7 @@
+ INTL_LIBTOOL_SUFFIX_PREFIX = @INTL_LIBTOOL_SUFFIX_PREFIX@
+ ISPELL = @ISPELL@
+ KRB5CFGPATH = @KRB5CFGPATH@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = -Llib @LDFLAGS@
+ LIBGNUTLS_CFLAGS = @LIBGNUTLS_CFLAGS@
+ LIBGNUTLS_CONFIG = @LIBGNUTLS_CONFIG@
+ LIBGNUTLS_LIBS = @LIBGNUTLS_LIBS@
 @@ -467,7 +469,6 @@
  	@rm -f stamp-h1
  	cd $(top_builddir) && $(SHELL) ./config.status config.h
