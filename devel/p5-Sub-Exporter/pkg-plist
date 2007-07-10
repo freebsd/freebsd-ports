@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Sub/Exporter.pm
+%%SITE_PERL%%/Sub/Exporter/Cookbook.pod
 %%SITE_PERL%%/Sub/Exporter/Tutorial.pod
 %%SITE_PERL%%/Sub/Exporter/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter/.packlist

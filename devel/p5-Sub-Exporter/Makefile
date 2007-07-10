@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sub-Exporter
-PORTVERSION=	0.974
+PORTVERSION=	0.975
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Sub
@@ -23,6 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=	Sub::Exporter.3 \
+	Sub::Exporter::Cookbook.3 \
 	Sub::Exporter::Tutorial.3 \
 	Sub::Exporter::Util.3
 
