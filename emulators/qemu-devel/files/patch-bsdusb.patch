@@ -36,15 +36,15 @@ Index: qemu/configure
  for target in $target_list; do
  target_dir="$target"
 Index: qemu/Makefile.target
-@@ -329,7 +329,7 @@
+@@ -408,7 +408,7 @@
  VL_OBJS+= scsi-disk.o cdrom.o lsi53c895a.o
  
  # USB layer
 -VL_OBJS+= usb.o usb-hub.o usb-linux.o usb-hid.o usb-ohci.o usb-msd.o
 +VL_OBJS+= usb.o usb-hub.o usb-$(HOST_USB).o usb-hid.o usb-ohci.o usb-msd.o
+ VL_OBJS+= usb-wacom.o
  
- # PCI network cards
- VL_OBJS+= ne2000.o rtl8139.o pcnet.o
+ # EEPROM emulation
 Index: qemu/usb-stub.c
 @@ -0,0 +1,11 @@
 +#include "vl.h"
