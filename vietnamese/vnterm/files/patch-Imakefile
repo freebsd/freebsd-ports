@@ -39,7 +39,7 @@
 -       PROGRAMS = resize xterm
 -       DEPLIBS1 = XkbClientDepLibs XawClientDepLibs
 +       PROGRAMS = vnterm
-+         VNLIBS = /usr/local/lib/libviqr.a /usr/local/lib/libvntype.a
++         VNLIBS = $(LOCALBASE)/lib/libviqr.a $(LOCALBASE)/lib/libvntype.a
 +        /*VNFONTX = $(VNFONTXDIR)/fontsmade */
 +        VNFONTX =
 +       DEPLIBS1 = XkbClientDepLibs XawClientDepLibs $(VNFONTX)
