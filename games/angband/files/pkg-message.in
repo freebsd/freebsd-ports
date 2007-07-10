@@ -5,9 +5,9 @@
 
  To use graphical tiles, use -g:
    angband -g
-   Note: you have to download graphical tiles from www.thangorodrim.net
+   Note: you have to download graphical tiles from angband.oook.cz
    manually and place them in %%PREFIX%%/share/angband/lib/xtra/graf
 
- Tip: If you're experiencing display issues while playing angband in 
-      syscons, try setting your TERM environment variable to 'mvterm'  
+ Tip: If you're experiencing display issues while playing angband in
+      syscons, try setting your TERM environment variable to 'mvterm'
  =======================================================================

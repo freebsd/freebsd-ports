@@ -1,109 +1,140 @@
 bin/angband
-share/angband/lib/apex/delete.me
-share/angband/lib/apex/scores.raw
-share/angband/lib/bone/delete.me
-share/angband/lib/data/artifact.raw
-share/angband/lib/data/cost_adj.raw
-share/angband/lib/data/delete.me
-share/angband/lib/data/ego_item.raw
-share/angband/lib/data/flavor.raw
-share/angband/lib/data/limits.raw
-share/angband/lib/data/monster.raw
-share/angband/lib/data/object.raw
-share/angband/lib/data/p_class.raw
-share/angband/lib/data/p_hist.raw
-share/angband/lib/data/p_race.raw
-share/angband/lib/data/prices.raw
-share/angband/lib/data/shop_own.raw
-share/angband/lib/data/terrain.raw
-share/angband/lib/data/vault.raw
-share/angband/lib/edit/artifact.txt
-share/angband/lib/edit/cost_adj.txt
-share/angband/lib/edit/ego_item.txt
-share/angband/lib/edit/flavor.txt
-share/angband/lib/edit/limits.txt
-share/angband/lib/edit/monster.txt
-share/angband/lib/edit/object.txt
-share/angband/lib/edit/p_class.txt
-share/angband/lib/edit/p_hist.txt
-share/angband/lib/edit/p_race.txt
-share/angband/lib/edit/shop_own.txt
-share/angband/lib/edit/terrain.txt
-share/angband/lib/edit/vault.txt
-share/angband/lib/file/dead.txt
-share/angband/lib/file/news.txt
-share/angband/lib/help/attack.txt
-share/angband/lib/help/birth.txt
-share/angband/lib/help/command.txt
-share/angband/lib/help/dungeon.txt
-share/angband/lib/help/general.txt
-share/angband/lib/help/help.hlp
-share/angband/lib/help/option.txt
-share/angband/lib/help/playing.txt
-share/angband/lib/help/version.txt
-share/angband/lib/info/delete.me
-share/angband/lib/pref/flvr-dvg.prf
-share/angband/lib/pref/flvr-new.prf
-share/angband/lib/pref/flvr-xxx.prf
-share/angband/lib/pref/font-ami.prf
-share/angband/lib/pref/font-dos.prf
-share/angband/lib/pref/font-ibm.prf
-share/angband/lib/pref/font-mac.prf
-share/angband/lib/pref/font-win.prf
-share/angband/lib/pref/font-x11.prf
-share/angband/lib/pref/font-xxx.prf
-share/angband/lib/pref/font.prf
-share/angband/lib/pref/graf-ami.prf
-share/angband/lib/pref/graf-dvg.prf
-share/angband/lib/pref/graf-gcu.prf
-share/angband/lib/pref/graf-ibm.prf
-share/angband/lib/pref/graf-lsl.prf
-share/angband/lib/pref/graf-mac.prf
-share/angband/lib/pref/graf-new.prf
-share/angband/lib/pref/graf-win.prf
-share/angband/lib/pref/graf-x11.prf
-share/angband/lib/pref/graf-xxx.prf
-share/angband/lib/pref/graf.prf
-share/angband/lib/pref/message.prf
-share/angband/lib/pref/pref-acn.prf
-share/angband/lib/pref/pref-ami.prf
-share/angband/lib/pref/pref-dos.prf
-share/angband/lib/pref/pref-emx.prf
-share/angband/lib/pref/pref-gcu.prf
-share/angband/lib/pref/pref-mac.prf
-share/angband/lib/pref/pref-win.prf
-share/angband/lib/pref/pref-x11.prf
-share/angband/lib/pref/pref.prf
-share/angband/lib/pref/user-mac.prf
-share/angband/lib/pref/user.prf
-share/angband/lib/pref/xtra-dvg.prf
-share/angband/lib/pref/xtra-new.prf
-share/angband/lib/pref/xtra-xxx.prf
-share/angband/lib/save/delete.me
-share/angband/lib/script/birth.lua
-share/angband/lib/script/event.lua
-share/angband/lib/script/init.lua
-share/angband/lib/script/object.lua
-share/angband/lib/script/player.lua
-share/angband/lib/script/spell.lua
-share/angband/lib/script/store.lua
-share/angband/lib/script/test.lua
-share/angband/lib/script/trace.lua
-share/angband/lib/user/delete.me
-share/angband/lib/xtra/delete.me
-share/angband/lib/xtra/font/16x16.txt
-@dirrm share/angband/lib/apex
-@dirrm share/angband/lib/bone
-@dirrm share/angband/lib/data
-@dirrm share/angband/lib/edit
-@dirrm share/angband/lib/file
-@dirrm share/angband/lib/help
-@dirrm share/angband/lib/info
-@dirrm share/angband/lib/pref
-@dirrm share/angband/lib/save
-@dirrm share/angband/lib/script
-@dirrm share/angband/lib/user
-@dirrm share/angband/lib/xtra/font
-@dirrm share/angband/lib/xtra
-@dirrm share/angband/lib
+share/angband/apex/delete.me
+share/angband/apex/scores.raw
+share/angband/bone/delete.me
+share/angband/data/artifact.raw
+share/angband/data/cost_adj.raw
+share/angband/data/delete.me
+share/angband/data/ego_item.raw
+share/angband/data/flavor.raw
+share/angband/data/limits.raw
+share/angband/data/monster.raw
+share/angband/data/object.raw
+share/angband/data/p_class.raw
+share/angband/data/p_hist.raw
+share/angband/data/p_race.raw
+share/angband/data/prices.raw
+share/angband/data/shop_own.raw
+share/angband/data/terrain.raw
+share/angband/data/vault.raw
+share/angband/edit/artifact.txt
+share/angband/edit/cost_adj.txt
+share/angband/edit/ego_item.txt
+share/angband/edit/flavor.txt
+share/angband/edit/limits.txt
+share/angband/edit/monster.txt
+share/angband/edit/object.txt
+share/angband/edit/p_class.txt
+share/angband/edit/p_hist.txt
+share/angband/edit/p_race.txt
+share/angband/edit/shop_own.txt
+share/angband/edit/spell.txt
+share/angband/edit/terrain.txt
+share/angband/edit/vault.txt
+share/angband/file/dead.txt
+share/angband/file/news.txt
+share/angband/help/attack.txt
+share/angband/help/birth.txt
+share/angband/help/command.txt
+share/angband/help/dungeon.txt
+share/angband/help/general.txt
+share/angband/help/option.txt
+share/angband/help/playing.txt
+share/angband/help/version.txt
+share/angband/info/delete.me
+share/angband/pref/flvr-dvg.prf
+share/angband/pref/flvr-new.prf
+share/angband/pref/flvr-xxx.prf
+share/angband/pref/font-mac.prf
+share/angband/pref/font-win.prf
+share/angband/pref/font-x11.prf
+share/angband/pref/font-xxx.prf
+share/angband/pref/font.prf
+share/angband/pref/graf-dvg.prf
+share/angband/pref/graf-mac.prf
+share/angband/pref/graf-new.prf
+share/angband/pref/graf-win.prf
+share/angband/pref/graf-x11.prf
+share/angband/pref/graf-xxx.prf
+share/angband/pref/graf.prf
+share/angband/pref/message.prf
+share/angband/pref/pref-acn.prf
+share/angband/pref/pref-gcu.prf
+share/angband/pref/pref-mac.prf
+share/angband/pref/pref-sdl.prf
+share/angband/pref/pref-x11.prf
+share/angband/pref/pref.prf
+share/angband/pref/user-mac.prf
+share/angband/pref/user.prf
+share/angband/pref/xtra-dvg.prf
+share/angband/pref/xtra-new.prf
+share/angband/pref/xtra-xxx.prf
+share/angband/save/delete.me
+share/angband/user/delete.me
+share/angband/xtra/font/copying.txt
+share/angband/xtra/font/10x17b.fon
+share/angband/xtra/font/10x17.fon
+share/angband/xtra/font/10x20.fon
+share/angband/xtra/font/12x20b.fon
+share/angband/xtra/font/12x20.fon
+share/angband/xtra/font/12x24.fon
+share/angband/xtra/font/16x25b.fon
+share/angband/xtra/font/16x25.fon
+share/angband/xtra/font/5x8.fon
+share/angband/xtra/font/6x10.fon
+share/angband/xtra/font/6x12.fon
+share/angband/xtra/font/6x13b.fon
+share/angband/xtra/font/6x13.fon
+share/angband/xtra/font/7x13b.fon
+share/angband/xtra/font/7x13.fon
+share/angband/xtra/font/8x13b.fon
+share/angband/xtra/font/8x13c.fon
+share/angband/xtra/font/8x13.fon
+share/angband/xtra/font/8x16b.fon
+share/angband/xtra/font/8x16.fon
+share/angband/xtra/font/9x15b.fon
+share/angband/xtra/font/9x15.fon
+share/angband/xtra/graf/backgrnd.bmp
+share/angband/xtra/graf/mask.bmp
+share/angband/xtra/graf/16x16.bmp
+share/angband/xtra/graf/16x16.png
+share/angband/xtra/graf/32x32.png
+share/angband/xtra/graf/8x13.bmp
+share/angband/xtra/graf/8x8.bmp
+share/angband/xtra/graf/8x8.png
+share/angband/xtra/sound/breath.wav
+share/angband/xtra/sound/clunk.wav
+share/angband/xtra/sound/death.wav
+share/angband/xtra/sound/destroy.wav
+share/angband/xtra/sound/drop.wav
+share/angband/xtra/sound/eat.wav
+share/angband/xtra/sound/flee.wav
+share/angband/xtra/sound/hallu.wav
+share/angband/xtra/sound/hit1.wav
+share/angband/xtra/sound/hit.wav
+share/angband/xtra/sound/kill1.wav
+share/angband/xtra/sound/kill.wav
+share/angband/xtra/sound/level.wav
+share/angband/xtra/sound/miss1.wav
+share/angband/xtra/sound/miss.wav
+share/angband/xtra/sound/money.wav
+share/angband/xtra/sound/opendoor.wav
+share/angband/xtra/sound/shutdoor.wav
+share/angband/xtra/sound/sound.cfg
+share/angband/xtra/sound/thump.wav
+share/angband/xtra/sound/vomit.wav
+@dirrm share/angband/apex
+@dirrm share/angband/bone
+@dirrm share/angband/data
+@dirrm share/angband/edit
+@dirrm share/angband/file
+@dirrm share/angband/help
+@dirrm share/angband/info
+@dirrm share/angband/pref
+@dirrm share/angband/save
+@dirrm share/angband/user
+@dirrm share/angband/xtra/sound
+@dirrm share/angband/xtra/graf
+@dirrm share/angband/xtra/font
+@dirrm share/angband/xtra
 @dirrm share/angband

@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	angband
-PORTVERSION=	3.0.6
-PORTREVISION=	1
+PORTVERSION=	3.0.8
 CATEGORIES=	games
-MASTER_SITES=	http://angband.oook.cz/download/
+MASTER_SITES=	http://rephial.org/downloads/ \
+		http://angband.oook.cz/download/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Rogue-like game with color, X11 support
 
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-setgid=games
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	sm x11
 CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--with-x=no
@@ -32,6 +33,13 @@ pre-fetch:
 .else
 	@${ECHO_MSG} "Building without X support"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lSM|-L${LOCALBASE}/lib -lSM|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| $$(INCLUDEDIR)||' ${WRKSRC}/mk/objective.mk
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|$${prefix}|${PREFIX}|' ${WRKSRC}/src/autoconf.h
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
