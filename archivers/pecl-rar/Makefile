@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.4
 CATEGORIES=	archivers pear
-MASTER_SITES=	http://pecl.php.net/get/
+MASTER_SITES=	LOCAL/chinsan/PECL/
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
