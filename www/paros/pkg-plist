@@ -1,0 +1,56 @@
+bin/paros
+%%DATADIR%%/IeEmbed.exe
+%%DATADIR%%/MozEmbed.exe
+%%DATADIR%%/autoupd.bat
+%%DATADIR%%/db/def.txt
+%%DATADIR%%/db/parosdb.backup
+%%DATADIR%%/db/parosdb.data
+%%DATADIR%%/db/parosdb.log
+%%DATADIR%%/db/parosdb.properties
+%%DATADIR%%/db/parosdb.script
+%%DATADIR%%/db/startmanager.bat
+%%DATADIR%%/db/startserver.bat
+%%DATADIR%%/filter/dummy.txt
+%%DATADIR%%/jdic.dll
+%%DATADIR%%/libjdic.so
+%%DATADIR%%/libmozembed-linux-gtk1.2.so
+%%DATADIR%%/libmozembed-linux-gtk2.so
+%%DATADIR%%/libtray.so
+%%DATADIR%%/license/ApacheLicense-2.0.txt
+%%DATADIR%%/license/COPYING
+%%DATADIR%%/license/hsqldb_lic.txt
+%%DATADIR%%/license/hypersonic_lic.txt
+%%DATADIR%%/license/TheClarifiedArtisticLicense.htm
+%%DATADIR%%/license/TheClarifiedArtisticLicense.rtf
+%%DATADIR%%/log/dummy.txt
+%%DATADIR%%/mozembed-linux-gtk1.2
+%%DATADIR%%/mozembed-linux-gtk2
+%%DATADIR%%/paros.jar
+%%DATADIR%%/paros_logo.ico
+%%DATADIR%%/plugin/dummy.txt
+%%DATADIR%%/release.txt
+%%DATADIR%%/session/dummy.txt
+%%DATADIR%%/startserver.bat
+%%DATADIR%%/tray.dll
+%%DATADIR%%/xml/alert.dtd
+%%DATADIR%%/xml/alert.xml
+%%DATADIR%%/xml/alertDef.dtd
+%%DATADIR%%/xml/alertDef.xml
+%%DATADIR%%/xml/config.dtd
+%%DATADIR%%/xml/config.xml
+%%DATADIR%%/xml/Copy of reportLatestScan.xsl
+%%DATADIR%%/xml/log4j.properties
+%%DATADIR%%/xml/reportLatestScan.xsl
+%%DATADIR%%/xml/scanPolicy.xml
+%%DATADIR%%/xml/session.dtd
+%%DATADIR%%/xml/session.xml
+%%DATADIR%%/xml/test.xml
+%%DATADIR%%/xml/untitledsession.xml
+@dirrm %%DATADIR%%/db
+@dirrm %%DATADIR%%/filter
+@dirrm %%DATADIR%%/license
+@dirrm %%DATADIR%%/log
+@dirrm %%DATADIR%%/plugin
+@dirrm %%DATADIR%%/session
+@dirrm %%DATADIR%%/xml
+@dirrm %%DATADIR%%
