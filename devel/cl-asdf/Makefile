@@ -6,7 +6,7 @@
 
 PORTNAME=		asdf
 PORTVERSION=		2003.05.16
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		devel lisp
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
@@ -27,8 +27,10 @@ do-install:
 	${MKDIR} ${ASDF_SYSTEM_REGISTRY}
 	${INSTALL_DATA} ${WRKSRC}/asdf.lisp ${CL_LIBDIR}/asdf/
 	${INSTALL_DATA} ${WRKSRC}/wild-modules.lisp ${CL_LIBDIR}/asdf/
+	${SED}	-i '' -e 's|%%PREFIX%%|${PREFIX}|' ${CL_LIBDIR}/asdf/asdf.lisp
 	${SED}	-e 's|%%ASDF_PATHNAME%%|${CL_LIBDIR}/asdf/asdf|' \
 		-e 's|%%ASDF_SYSTEM_REGISTRY%%|${ASDF_SYSTEM_REGISTRY}|' \
+		-e 's|%%PREFIX%%|${PREFIX}|' \
 		${FILESDIR}/asdf-init.lisp > \
 		${PREFIX}/etc/asdf-init.lisp.default
 	[ -f ${PREFIX}/etc/asdf-init.lisp ] || \

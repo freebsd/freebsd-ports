@@ -6,7 +6,7 @@
    '(*default-pathname-defaults*
 -    #+nil "/home/dan/src/sourceforge/cclan/asdf/systems/"
 -    #+nil "telent:asdf;systems;"))
-+    "/usr/local/lib/common-lisp/system-registry/"))
++    "%%PREFIX%%/lib/common-lisp/system-registry/"))
  
  (defun sysdef-central-registry-search (system)
    (let ((name (coerce-name system)))
