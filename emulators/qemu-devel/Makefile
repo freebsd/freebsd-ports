@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.9.0s.20070526
+PORTVERSION=	0.9.0s.20070702
 CATEGORIES=	emulators
 MASTER_SITES=	http://qemu.org/:release \
 		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \
@@ -15,7 +15,7 @@ MASTER_SITES=	http://qemu.org/:release \
 		http://people.brandeis.edu/~jcoiner/qemu_idedma/:idedma \
 		http://people.freebsd.org/~maho/qemu/:misc
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-snapshot-2007-05-26_05
+DISTNAME=	${PORTNAME}-snapshot-2007-07-02_05
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 DIST_SUBDIR=	qemu
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -45,6 +45,7 @@ OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
 .include <bsd.port.pre.mk>
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
+CFLAGS:=        ${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
 
 .if defined(WITHOUT_SDL)

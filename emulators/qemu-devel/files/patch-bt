@@ -1,14 +1,14 @@
 Index: qemu/vl.c
-@@ -43,6 +43,9 @@
- #ifndef __APPLE__
- #include <libutil.h>
+@@ -76,6 +76,9 @@
+ #endif
+ #endif
  #endif
 +#ifdef __FreeBSD__
 +#include <sys/module.h>
 +#endif
- #else
- #include <linux/if.h>
- #include <linux/if_tun.h>
+ 
+ #if defined(CONFIG_SLIRP)
+ #include "libslirp.h"
 @@ -1059,6 +1062,34 @@
  
  #endif /* CONFIG_SLIRP */

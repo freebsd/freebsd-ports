@@ -1,20 +1,19 @@
---- vl.c.orig	Mon Aug 21 23:06:11 2006
-+++ vl.c	Mon Aug 21 23:04:49 2006
-@@ -48,6 +48,8 @@
+Index: qemu/vl.c
+@@ -78,6 +78,8 @@
  #endif
  #ifdef __FreeBSD__
  #include <sys/module.h>
 +#include <dev/ppbus/ppi.h>
 +#include <dev/ppbus/ppbconf.h>
  #endif
- #else
- #ifndef __sun__
+ 
+ #if defined(CONFIG_SLIRP)
 @@ -1728,7 +1730,64 @@
      chr->chr_ioctl = pp_ioctl;
      return chr;
  }
 -#endif /* defined(__linux__) */
-+#elif defined(__FreeBSD__)
++#if defined(__FreeBSD__)
 +static int pp_ioctl(CharDriverState *chr, int cmd, void *arg)
 +{
 +    int fd = (int)chr->opaque;

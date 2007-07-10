@@ -185,32 +185,6 @@ Index: qemu-0.8.2/hw/fdc.c
          }
      }
      retval = fdctrl->fifo[pos];
-Index: qemu-0.8.2/hw/ne2000.c
-===================================================================
---- qemu-0.8.2.orig/hw/ne2000.c	2007-04-20 06:05:59.000000000 +0300
-+++ qemu-0.8.2/hw/ne2000.c	2007-04-20 06:05:59.000000000 +0300
-@@ -230,7 +230,7 @@ static void ne2000_receive(void *opaque,
- {
-     NE2000State *s = opaque;
-     uint8_t *p;
--    int total_len, next, avail, len, index, mcast_idx;
-+    unsigned int total_len, next, avail, len, index, mcast_idx;
-     uint8_t buf1[60];
-     static const uint8_t broadcast_macaddr[6] = 
-         { 0xff, 0xff, 0xff, 0xff, 0xff, 0xff };
-@@ -299,7 +299,11 @@ static void ne2000_receive(void *opaque,
- 
-     /* write packet data */
-     while (size > 0) {
--        avail = s->stop - index;
-+        /* taviso: this can wrap, so check its okay. */
-+        if (index <= s->stop)
-+            avail = s->stop - index;
-+        else
-+            avail = 0;
-         len = size;
-         if (len > avail)
-             len = avail;
 Index: qemu-0.8.2/hw/pc.c
 ===================================================================
 --- qemu-0.8.2.orig/hw/pc.c	2007-04-20 06:05:58.000000000 +0300
@@ -272,20 +246,6 @@ Index: qemu-0.8.2/target-i386/translate.c
 ===================================================================
 --- qemu-0.8.2.orig/target-i386/translate.c	2006-07-22 20:23:34.000000000 +0300
 +++ qemu-0.8.2/target-i386/translate.c	2007-04-20 06:05:59.000000000 +0300
-@@ -5244,7 +5244,12 @@ static target_ulong disas_insn(DisasCont
-         if (CODE64(s))
-             goto illegal_op;
-         val = ldub_code(s->pc++);
--        gen_op_aam(val);
-+        /* taviso: operand can be zero */
-+        if (val) {
-+            gen_op_aam(val);
-+        } else {
-+            gen_exception(s, EXCP00_DIVZ, s->pc - s->cs_base);
-+        }
-         s->cc_op = CC_OP_LOGICB;
-         break;
-     case 0xd5: /* aad */
 @@ -5292,6 +5297,7 @@ static target_ulong disas_insn(DisasCont
          gen_jmp_im(pc_start - s->cs_base);
          gen_op_into(s->pc - pc_start);
