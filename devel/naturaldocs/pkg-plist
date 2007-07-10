@@ -1,0 +1,127 @@
+bin/NaturalDocs
+%%DATADIR%%/NaturalDocs
+%%DATADIR%%/License-GPL.txt
+%%DATADIR%%/NaturalDocs.bat
+%%DATADIR%%/Config/Languages.txt
+%%DATADIR%%/Config/Topics.txt
+%%PORTDOCS%%%%DATADIR%%/Help/example/Default.css
+%%PORTDOCS%%%%DATADIR%%/Help/example/NaturalDocs.js
+%%PORTDOCS%%%%DATADIR%%/Help/example/Roman.css
+%%PORTDOCS%%%%DATADIR%%/Help/example/showstyle.html
+%%PORTDOCS%%%%DATADIR%%/Help/example/Small.css
+%%PORTDOCS%%%%DATADIR%%/Help/images/header/background.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/header/leftside.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/header/logo.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/header/overbody.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/header/overbodybg.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/header/overleftmargin.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/header/overmenu.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/header/overmenubg.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/header/rightside.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/menu/about.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/menu/background.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/menu/bottomleft.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/menu/bottomright.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/menu/community.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/menu/customizing.png
+%%PORTDOCS%%%%DATADIR%%/Help/images/menu/using.png
+%%PORTDOCS%%%%DATADIR%%/Help/javascript/BrowserStyles.js
+%%PORTDOCS%%%%DATADIR%%/Help/javascript/PNGHandling.js
+%%PORTDOCS%%%%DATADIR%%/Help/bugs.html
+%%PORTDOCS%%%%DATADIR%%/Help/customizinglanguages.html
+%%PORTDOCS%%%%DATADIR%%/Help/customizingtopics.html
+%%PORTDOCS%%%%DATADIR%%/Help/documenting.html
+%%PORTDOCS%%%%DATADIR%%/Help/examples.css
+%%PORTDOCS%%%%DATADIR%%/Help/favicon.ico
+%%PORTDOCS%%%%DATADIR%%/Help/index.html
+%%PORTDOCS%%%%DATADIR%%/Help/keywords.html
+%%PORTDOCS%%%%DATADIR%%/Help/languages.html
+%%PORTDOCS%%%%DATADIR%%/Help/menu.html
+%%PORTDOCS%%%%DATADIR%%/Help/messageboards.html
+%%PORTDOCS%%%%DATADIR%%/Help/output.html
+%%PORTDOCS%%%%DATADIR%%/Help/running.html
+%%PORTDOCS%%%%DATADIR%%/Help/styles.css
+%%PORTDOCS%%%%DATADIR%%/Help/styles.html
+%%PORTDOCS%%%%DATADIR%%/Help/troubleshooting.html
+%%DATADIR%%/Info/CSSGuide.txt
+%%DATADIR%%/Info/Languages.txt
+%%DATADIR%%/Info/NDMarkup.txt
+%%DATADIR%%/JavaScript/NaturalDocs.js
+%%DATADIR%%/Modules/NaturalDocs/Builder/Base.pm
+%%DATADIR%%/Modules/NaturalDocs/Builder/FramedHTML.pm
+%%DATADIR%%/Modules/NaturalDocs/Builder/HTML.pm
+%%DATADIR%%/Modules/NaturalDocs/Builder/HTMLBase.pm
+%%DATADIR%%/Modules/NaturalDocs/ClassHierarchy/Class.pm
+%%DATADIR%%/Modules/NaturalDocs/ClassHierarchy/File.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages/Advanced/Scope.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages/Advanced/ScopeChange.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages/Prototype/Parameter.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages/ActionScript.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages/Ada.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages/Advanced.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages/Base.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages/CSharp.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages/Pascal.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages/Perl.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages/PLSQL.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages/Prototype.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages/Simple.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages/Tcl.pm
+%%DATADIR%%/Modules/NaturalDocs/Menu/Entry.pm
+%%DATADIR%%/Modules/NaturalDocs/Parser/Native.pm
+%%DATADIR%%/Modules/NaturalDocs/Parser/ParsedTopic.pm
+%%DATADIR%%/Modules/NaturalDocs/Project/File.pm
+%%DATADIR%%/Modules/NaturalDocs/Settings/BuildTarget.pm
+%%DATADIR%%/Modules/NaturalDocs/SymbolTable/File.pm
+%%DATADIR%%/Modules/NaturalDocs/SymbolTable/IndexElement.pm
+%%DATADIR%%/Modules/NaturalDocs/SymbolTable/Reference.pm
+%%DATADIR%%/Modules/NaturalDocs/SymbolTable/ReferenceTarget.pm
+%%DATADIR%%/Modules/NaturalDocs/SymbolTable/Symbol.pm
+%%DATADIR%%/Modules/NaturalDocs/SymbolTable/SymbolDefinition.pm
+%%DATADIR%%/Modules/NaturalDocs/Topics/Type.pm
+%%DATADIR%%/Modules/NaturalDocs/Builder.pm
+%%DATADIR%%/Modules/NaturalDocs/ClassHierarchy.pm
+%%DATADIR%%/Modules/NaturalDocs/ConfigFile.pm
+%%DATADIR%%/Modules/NaturalDocs/Constants.pm
+%%DATADIR%%/Modules/NaturalDocs/DefineMembers.pm
+%%DATADIR%%/Modules/NaturalDocs/Error.pm
+%%DATADIR%%/Modules/NaturalDocs/File.pm
+%%DATADIR%%/Modules/NaturalDocs/Languages.pm
+%%DATADIR%%/Modules/NaturalDocs/Menu.pm
+%%DATADIR%%/Modules/NaturalDocs/NDMarkup.pm
+%%DATADIR%%/Modules/NaturalDocs/Parser.pm
+%%DATADIR%%/Modules/NaturalDocs/Project.pm
+%%DATADIR%%/Modules/NaturalDocs/ReferenceString.pm
+%%DATADIR%%/Modules/NaturalDocs/Settings.pm
+%%DATADIR%%/Modules/NaturalDocs/StatusMessage.pm
+%%DATADIR%%/Modules/NaturalDocs/SymbolString.pm
+%%DATADIR%%/Modules/NaturalDocs/SymbolTable.pm
+%%DATADIR%%/Modules/NaturalDocs/Topics.pm
+%%DATADIR%%/Modules/NaturalDocs/Version.pm
+%%DATADIR%%/Styles/Default.css
+%%DATADIR%%/Styles/Roman.css
+%%DATADIR%%/Styles/Small.css
+@dirrm %%DATADIR%%/Config
+%%PORTDOCS%%@dirrm %%DATADIR%%/Help/example
+%%PORTDOCS%%@dirrm %%DATADIR%%/Help/images/header
+%%PORTDOCS%%@dirrm %%DATADIR%%/Help/images/menu
+%%PORTDOCS%%@dirrm %%DATADIR%%/Help/images
+%%PORTDOCS%%@dirrm %%DATADIR%%/Help/javascript
+%%PORTDOCS%%@dirrm %%DATADIR%%/Help
+@dirrm %%DATADIR%%/Info
+@dirrm %%DATADIR%%/JavaScript
+@dirrm %%DATADIR%%/Modules/NaturalDocs/Builder
+@dirrm %%DATADIR%%/Modules/NaturalDocs/ClassHierarchy
+@dirrm %%DATADIR%%/Modules/NaturalDocs/Languages/Advanced
+@dirrm %%DATADIR%%/Modules/NaturalDocs/Languages/Prototype
+@dirrm %%DATADIR%%/Modules/NaturalDocs/Languages
+@dirrm %%DATADIR%%/Modules/NaturalDocs/Menu
+@dirrm %%DATADIR%%/Modules/NaturalDocs/Parser
+@dirrm %%DATADIR%%/Modules/NaturalDocs/Project
+@dirrm %%DATADIR%%/Modules/NaturalDocs/Settings
+@dirrm %%DATADIR%%/Modules/NaturalDocs/SymbolTable
+@dirrm %%DATADIR%%/Modules/NaturalDocs/Topics
+@dirrm %%DATADIR%%/Modules/NaturalDocs
+@dirrm %%DATADIR%%/Modules
+@dirrm %%DATADIR%%/Styles
+@dirrm %%DATADIR%%
