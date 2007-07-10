@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxigd
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	linux-igd
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	linux-igd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux UPnP Internet Gateway Device
 
-LIB_DEPENDS=	upnp.2:${PORTSDIR}/devel/upnp
+LIB_DEPENDS=	upnp.3:${PORTSDIR}/devel/upnp
 
 USE_RC_SUBR=	linuxigd
 USE_GMAKE=	yes
