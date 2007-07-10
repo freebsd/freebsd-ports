@@ -14156,6 +14156,7 @@ rubygem-tidy	ports/textproc/rubygem-tidy
 rubygem-transactionsimple	ports/devel/rubygem-transactionsimple
 rubygem-turing	ports/graphics/rubygem-turing
 rubygem-twitter	ports/net/rubygem-twitter
+rubygem-twitter4r	ports/net/rubygem-twitter4r
 rubygem-tzinfo	ports/devel/rubygem-tzinfo
 rubygem-yadis	ports/net/rubygem-yadis
 rubygem-zentest	ports/devel/rubygem-zentest
