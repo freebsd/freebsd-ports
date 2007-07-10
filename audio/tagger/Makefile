@@ -17,7 +17,7 @@ COMMENT=	CLI Ogg/Vorbis and MP3 ID3v1/ID3v1.1 tag editor
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=prefix=${TARGETDIR} mandir=${TARGETDIR}/man
+CONFIGURE_ARGS+=prefix=${PREFIX} mandir=${MANPREFIX}/man
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 	LDFLAGS="-L${LOCALBASE}/lib"
 
