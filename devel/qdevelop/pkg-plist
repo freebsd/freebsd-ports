@@ -1,0 +1,21 @@
+bin/QDevelop
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.cmake
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/copying
+share/pixmaps/QDevelop.png
+%%NLS%%%%DATADIR%%/translations/QDevelop_Chinese.qm
+%%NLS%%%%DATADIR%%/translations/QDevelop_Czech.qm
+%%NLS%%%%DATADIR%%/translations/QDevelop_Dutch.qm
+%%NLS%%%%DATADIR%%/translations/QDevelop_French.qm
+%%NLS%%%%DATADIR%%/translations/QDevelop_German.qm
+%%NLS%%%%DATADIR%%/translations/QDevelop_Italian.qm
+%%NLS%%%%DATADIR%%/translations/QDevelop_Polish.qm
+%%NLS%%%%DATADIR%%/translations/QDevelop_Portuguese.qm
+%%NLS%%%%DATADIR%%/translations/QDevelop_Russian.qm
+%%NLS%%%%DATADIR%%/translations/QDevelop_Spanish.qm
+%%NLS%%%%DATADIR%%/translations/QDevelop_Ukrainian.qm
+%%NLS%%%%DATADIR%%/translations/QDevelop_Vietnamese.qm
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
