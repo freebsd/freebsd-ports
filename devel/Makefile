@@ -579,6 +579,7 @@
     SUBDIR += libisc
     SUBDIR += libixp
     SUBDIR += libleaftag
+    SUBDIR += liblogging
     SUBDIR += libltdl15
     SUBDIR += libmatheval
     SUBDIR += libmba
