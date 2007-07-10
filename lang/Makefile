@@ -321,6 +321,7 @@
     SUBDIR += treecc
     SUBDIR += tuareg-mode.el
     SUBDIR += twelf
+    SUBDIR += vala
     SUBDIR += visualworks
     SUBDIR += wamcc
     SUBDIR += whitespace
