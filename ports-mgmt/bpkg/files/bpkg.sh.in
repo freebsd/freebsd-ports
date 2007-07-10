@@ -41,25 +41,11 @@ trap_exit() {
 	exit 1
 }
 
-installed() {
-	a=pkg_installed
-}
-
 missing() {
 	echo "It seems you typed the port which is not available in /usr/ports/"
 	echo "Check your port's name and try again."
 	exit 0
 }
-
-init_check() {
-	pkg_chk=`pkg_info -xoq $pkg 2>/dev/null`
-	[ ! -z "$pkg_chk" ] && installed
-
-	if [ -z "$a" ]; then
-		port_chk=`whereis -sq $pkg`
-		[ -z "$port_chk" ] && missing
-	fi
-} 
 
 main() {
 	root
@@ -67,135 +53,254 @@ main() {
 		echo "bpkg: you didn't specify any package to install/upgrade."
 		exit 0
 	fi
+	
+	for e in $pkg; do
+		[ -z "`cd /usr/ports && make search path=/$e[0-9]*$`" ] && missing
+	done
 
-	init_check
+	echo "Available in ports:"
+	for e in $pkg; do
+		cd /usr/ports && make search path=/$e[0-9]*$ | awk '/Port/ /Path/ { print $0 "\n" }' 
+	done
 
-	if [ -z "$a" ]; then
-		pkg_install=`whereis -sq $pkg | cut -d/ -f5 | awk '{ORS=" " ; print}'`
-		whereis -sq $pkg
-		echo ""
-		echo -e "\033[33m*** not installed ***\033[0m"
-		echo -n "Do you want to install "$pkg_install"using binary packages [y] "
-		read key
-		case $key in
-			n) echo "Installing new port(s):"
-		   	for e in `whereis -sq $pkg`; do
-				echo -n "Do you want to set config options recursively? [y] "
-				read key2
-				case $key2 in
-					n) for e in `whereis -sq $pkg`; do
-							cd $e && make install clean
-					done
-					exit 0;;
-					*) for e in `whereis -sq $pkg`; do
-						cd $e && make config-conditional
-						cd $e && make install clean
-					done
-					exit 0;;
-				esac
-		   	done
-		   	exit 0;;
-			*) echo "Installing new package(s):"
-		   	pkg_add -r $pkg_install
-		   	exit 0;;
-		esac
-	fi
+	for z in $pkg; do
+		pkg_install=`cd /usr/ports && make search path=/$z[0-9]*$ | grep Path | cut -d/ -f4,5`
 
-	pkg_install=`pkg_info -xoq $pkg | cut -d/ -f2 | awk '{ORS=" " ; print}'`
-	pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-	echo ""
-	echo -e "\033[33m*** installed ***\033[0m"
-	echo -n "Do you want to upgrade "$pkg_install"using binary packages? [y] "
-	read key
+		for e in $pkg_install; do
+			e_stripped=`echo $e | cut -d/ -f2`
+			e_installed=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`
 
-	case $key in
-		n) echo "Upgrading port(s):"
-	   	for e in `pkg_info -xoq $pkg`; do
-	   		c=`echo $e | cut -d/ -f2` 
-	   		pkg_delete -rix $c
-			if [ ! -z `pkg_info -xoq $c 2>/dev/null` ]; then
-				echo "*** cannot proceed without first removing the package ***"
-				exit 0
+			if [ -z "$e_installed" ]; then
+				e_install=`cd /usr/ports && make search path=/$e[0-9]*$ | grep Path | cut -d/ -f4,5`
+				echo -n "Do you want to install new $e_install? [y] "
+			else
+				echo -n "Do you want to upgrade installed $e_installed? [y] "
 			fi
+			read key
+			case $key in
+				n) ;;
+				*) echo -n "Fetch binary package? [y] "
+				read key
 
-			echo -n "Do you want to explicitly set config options? [n] "
-			read key2
-			case $key2 in
-				y) for e in `pkg_info -xoq $pkg`; do
-					cd /usr/ports/$e && make config
-					cd /usr/ports/$e && make install clean
-				done
-				exit 0;;
-				*) for e in `pkg_info -xoq $pkg`; do
-					cd /usr/ports/$e && make install clean
-				done
-				exit 0;;
+				if [ ! -z "$e_installed" ]; then
+					echo ""
+					echo "*** Creating backup package in /usr/tmp/$e_installed.tbz ***"
+					cd /usr/tmp/ && pkg_create -b $e_installed
+					echo "Done."
+				fi
+
+				case $key in
+
+					# Install from port (source)
+
+					n) echo ""
+					if [ ! -z "$e_installed" ]; then
+						echo "Upgrading installed port:"
+						pkg_delete -fi $e_installed
+						if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
+							echo "*** cannot proceed without first removing the package ***"
+							exit 0
+						fi
+					else
+						echo "Installing new port:"
+					fi
+
+					echo -n "Do you want to explicitly set config options now? [n] "
+					read key2
+					case $key2 in
+						y) echo -n "Recursive? [n] "
+						read key
+						case $key in
+							y) cd /usr/ports/$e_install && make config-recursive
+							cd /usr/ports/$e_install && make install clean
+							exit 0;;
+							*) cd /usr/ports/$e_install && make config
+							cd /usr/ports/$e_install && make install clean
+							exit 0;;
+						esac;;
+
+						*) cd /usr/ports/$e_install && make install clean
+						exit 0;;
+					esac
+	   				exit 0;;
+
+					# Fetch and install binary package
+
+					*) echo ""
+					if [ ! -z "$e_installed" ]; then
+						echo "Upgrading installed package:"
+						pkg_delete -fi $e_installed
+						if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
+							echo "*** cannot proceed without first removing the package ***"
+							exit 0
+						fi
+						pkg_add -r $e_stripped
+						exit 0
+					else
+						echo "Installing new package:"
+						pkg_add -r $e_stripped
+						exit 0
+					fi;;
+				esac
 			esac
 		done
-	   	exit 0;;
-		*) echo "Upgrading package(s):"
-	   	pkg_delete -fix $pkg_install && pkg_add -r $pkg_install
-	   	exit 0;;
-	esac
+	done
 }
 
 simulation() {
 	root
-	init_check
-
-	if [ -z "$a" ]; then
-		pkg_install=`whereis -sq $pkg | cut -d/ -f5 | awk '{ORS=" " ; print}'`
-		whereis -sq $pkg
-		echo ""
-		echo -e "\033[33m*** not installed ***\033[0m"
-		echo -n "Do you want to install "$pkg_install"using binary packages (simulation mode) [y] "
-		read key
-		case $key in
-			n) echo "Installing new port(s): $pkg_install"
-		   	exit 0;;
-			*) echo "Installing new package(s):"
-		   	pkg_add -rn $pkg_install
-		   	exit 0;;
-		esac
+	if [ -z "$pkg" ]; then
+		echo "bpkg: you didn't specify any package to install/upgrade."
+		exit 0
 	fi
+	
+	for e in $pkg; do
+		[ -z "`cd /usr/ports && make search name=$e-[0-9]`" ] && missing
+	done
 
-	pkg_install=`pkg_info -xoq $pkg | cut -d/ -f2 | awk '{ORS=" " ; print}'`
-	pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-	echo ""
-	echo -e "\033[33m*** installed ***\033[0m"
-	echo -n "Do you want to upgrade "$pkg_install"using binary packages? (simulation mode) [y] "
-	read key
+	echo "Available in ports:"
+	for e in $pkg; do
+		cd /usr/ports && make search path=/$e[0-9]*$ | awk '/Port/ /Path/ { print $0 "\n" }' 
+	done
 
-	case $key in
-		n) echo "Upgrading port(s): $pkg_install"
-	   	exit 0;;
-		*) echo "Upgrading package(s):"
-	   	pkg_delete -ixn $pkg_install && pkg_add -rn $pkg_install
-	   	exit 0;;
-	esac
+	for z in $pkg; do
+		pkg_install=`cd /usr/ports && make search path=/$z[0-9]*$ | grep Path | cut -d/ -f4,5`
+
+		for e in $pkg_install; do
+			e_install=`cd /usr/ports && make search path=/$e[0-9]*$ | grep Path | cut -d/ -f4,5`
+			e_stripped=`echo $e | cut -d/ -f2`
+			e_installed=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`
+
+			if [ -z "$e_installed" ]; then
+				echo -n "Do you want to install new $e_install? [y] "
+			else
+				echo -n "Do you want to upgrade installed $e_installed? [y] "
+			fi
+			read key
+			case $key in
+				n) ;;
+				*) echo -n "Fetch binary package? [y] "
+				read key
+
+				if [ ! -z "$e_installed" ]; then
+					echo ""
+					echo "*** Creating backup package in /usr/tmp/$e_installed.tbz ***"
+					echo "Done."
+				fi
+
+				case $key in
+
+					# Install from port (source)
+
+					n) echo ""
+					if [ ! -z "$e_installed" ]; then
+						echo "Upgrading installed port:"
+						pkg_delete -in $e_installed
+						if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
+							echo "*** cannot proceed without first removing the package ***"
+							exit 0
+						fi
+					else
+						echo "Installing new port:"
+					fi
+
+					echo -n "Do you want to explicitly set config options now? [n] "
+					read key2
+					case $key2 in
+						y) echo -n "Recursive? [n] "
+						read key
+						case $key in
+							y) exit 0;;
+							*) exit 0;;
+						esac;;
+
+						*) exit 0;;
+					esac
+	   				exit 0;;
+
+					# Fetch and install binary package
+
+					*) echo ""
+					if [ ! -z "$e_installed" ]; then
+						echo "Upgrading installed package:"
+						pkg_delete -in $e_installed
+						if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
+							echo "*** cannot proceed without first removing the package ***"
+							exit 0
+						fi
+						pkg_add -rn $e_stripped
+						exit 0
+					else
+						echo "Installing new package:"
+						pkg_add -rn $e_stripped
+						exit 0
+					fi;;
+				esac
+			esac
+		done
+	done
 }
 
 non-interactive() {
 	root
-	init_check
-
-	if [ -z "$a" ]; then
-		pkg_install=`whereis -sq $pkg | cut -d/ -f5 | awk '{ORS=" " ; print}'`
-		whereis -sq $pkg
-		echo ""
-		echo -e "\033[33m*** not installed ***\033[0m"
-		echo "Installing new package(s):"
-	 	pkg_add -r $pkg_install
-	   	exit 0
+	if [ -z "$pkg" ]; then
+		echo "bpkg: you didn't specify any package to install/upgrade."
+		exit 0
 	fi
+	
+	for e in $pkg; do
+		[ -z "`cd /usr/ports && make search name=$e-[0-9]`" ] && missing
+	done
 
-	pkg_install=`pkg_info -xoq $pkg | cut -d/ -f2 | awk '{ORS=" " ; print}'`
-	pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-	echo ""
-	echo -e "\033[33m*** installed ***\033[0m"
-	echo "Upgrading package(s):"
-	pkg_delete -fx $pkg_install && pkg_add -r $pkg_install
-	exit 0
+	echo "Available in ports:"
+	for e in $pkg; do
+		cd /usr/ports && make search path=/$e[0-9]*$ | awk '/Port/ /Path/ { print $0 "\n" }' 
+	done
+
+	for z in $pkg; do
+		pkg_install=`cd /usr/ports && make search path=/$z[0-9]*$ | grep Path | cut -d/ -f4,5`
+
+		for e in $pkg_install; do
+			e_install=`cd /usr/ports && make search path=/$e[0-9]*$ | grep Path | cut -d/ -f4,5`
+			e_stripped=`echo $e | cut -d/ -f2`
+			e_installed=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`
+
+			if [ -z "$e_installed" ]; then
+				echo -n "Do you want to install new $e_install? [y] "
+			else
+				echo -n "Do you want to upgrade installed $e_installed? [y] "
+			fi
+			read key
+			case $key in
+				n) ;;
+				*) 
+				if [ ! -z "$e_installed" ]; then
+					echo ""
+					echo "*** Creating backup package in /usr/tmp/$e_installed.tbz ***"
+					cd /usr/tmp/ && pkg_create -b $e_installed
+					echo "Done."
+				fi
+
+				# Fetch and install binary package
+
+				echo ""
+				if [ ! -z "$e_installed" ]; then
+					echo "Upgrading installed package:"
+					pkg_delete -f $e_installed
+					if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
+						echo "*** cannot proceed without first removing the package ***"
+						exit 0
+					fi
+					pkg_add -r $e_stripped
+					exit 0
+				else
+					echo "Installing new package:"
+					pkg_add -r $e_stripped
+					exit 0
+				fi;;
+			esac
+		done
+	done
 }
 
 all() {
@@ -206,9 +311,8 @@ all() {
 
 	case $key in
 		n) echo "Upgrading all ports:"
+		pkg_delete -ifa 
 	   	for e in `pkg_info -aoq`; do
-	   		c=`echo "$e" | cut -d/ -f2` 
-	   		pkg_delete -rix $c
 	   		cd /usr/ports/$e && make install clean
 	   	done
 	   	exit 0;;
@@ -227,9 +331,8 @@ all_non-interactive() {
 
 	case $key in
 		n) echo "Upgrading all ports:"
+		pkg_delete -fa
 	   	for e in `pkg_info -aoq $pkg`; do
-	   		c=`echo $e | cut -d/ -f2` 
-	   		pkg_delete -rx $c
 	   		cd /usr/ports/$e && make install clean
 	   	done
 	   	exit 0;;
@@ -241,35 +344,43 @@ all_non-interactive() {
 }
 
 pkg_info-xI() {
-	init_check
-	if [ -z "$a" ]; then
-		echo -e "\033[33m*** not installed ***\033[0m"
-		path=`whereis -sq $pkg`
-		echo "$path: `cat $path/Makefile | grep COMMENT | cut -d= -f2`"
-	else
-		echo -e "\033[33m*** installed ***\033[0m"
-		pkg_info -xI $pkg
-	fi
-
+	for e in $pkg; do
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`
+	
+		if [ -z "$info" ]; then
+			path=`cd /usr/ports && make search path=/$e[0-9]*$ | grep Path | cut -d/ -f4,5`
+			for i in $path; do
+				echo -e "\033[33m*** not installed ***\033[0m"
+				echo "$i: `cat /usr/ports/$i/Makefile | grep COMMENT | cut -d= -f2`"
+				echo ""
+			done
+		else
+			echo -e "\033[33m*** installed ***\033[0m"
+			pkg_info -I $info 
+			echo ""
+		fi
+	done
 	exit 0
 }
 
 pkg_info-xL() {
-	z=`pkg_info -xL $pkg 2>/dev/null`
+	for e in $pkg; do
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5,6,7`
 
-	if [ -z "$z" ]; then
-        	echo "bpkg: no installed packages match pattern(s)" 
-	else
-		pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-		echo ""
-		echo -e "\033[33m*** installed ***\033[0m"
-		echo "$z"
-	fi
-
+		if [ ! -z "$info" ]; then
+			echo -e "\033[33m*** installed ***\033[0m"
+			echo "`echo $info | cut -d: -f3`: `echo $info | cut -d/ -f1`" 
+			echo ""
+			pkg_info -L `echo $info | cut -d/ -f1` 
+		else
+			echo -e "bpkg: no installed packages match $e\n"
+		fi
+	done
 	exit 0
 }
 
 pkg_inf() {
+	echo -e "\033[33m*** installed ***\033[0m"
 	pkg_info 
 	echo ""
 	echo "***`pkg_info | wc -l` packages installed     ***"
@@ -277,118 +388,148 @@ pkg_inf() {
 }
 
 pkg_info-xs() {
-	z=`pkg_info -xs $pkg 2>/dev/null`
+	for e in $pkg; do
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5,6,7`
 
-	if [ -z "$z" ]; then
-        	echo "bpkg: no installed packages match pattern(s)"
-	else
-		pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-		echo ""
-		echo -e "\033[33m*** installed ***\033[0m"
-		echo "$z"
-	fi
-
+		if [ ! -z "$info" ]; then
+			echo -e "\033[33m*** installed ***\033[0m"
+			echo "`echo $info | cut -d: -f3`: `echo $info | cut -d/ -f1`" 
+			echo ""
+			pkg_info -s `echo $info | cut -d/ -f1` 
+		else
+			echo -e "bpkg: no installed packages match $e\n"
+		fi
+	done
 	exit 0
 }
 
 pkg_info-xr() {
-	init_check
-	if [ -z "$a" ]; then
-		whereis -sq $pkg
-		echo ""
-        	echo -e "\033[33m*** not installed ***\033[0m"
-		for e in $pkg; do
-			path=`whereis -sq $e`
-			echo "$pkg: `cat $path/Makefile | grep COMMENT | cut -d= -f2`"
-			cd /usr/ports && make search name=^$e-[0-9] | grep .*-deps
+	for e in $pkg; do
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5,6,7`
+	
+		if [ -z "$info" ]; then
+			path=`cd /usr/ports && make search path=/$e[0-9]*$ | grep Path | cut -d/ -f4,5`
+			for i in $path; do
+				echo -e "\033[33m*** not installed ***\033[0m"
+				echo "$i: `cat /usr/ports/$i/Makefile | grep COMMENT | cut -d= -f2`"
+				echo ""
+				echo "Information in ports for `echo $i | cut -d/ -f2`:"
+				echo ""
+				cd /usr/ports && make search path=/$i$ | grep .*-deps
+				echo ""
+			done
+		else
+			echo -e "\033[33m*** installed ***\033[0m"
+			echo "`echo $info | cut -d: -f3`: `echo $info | cut -d/ -f1`" 
 			echo ""
-		done
-	else
-		pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-		echo ""
-		echo -e "\033[33m*** installed ***\033[0m"
-		pkg_info -xrR $pkg
-	fi
-
+			echo "Information in ports for `echo $info | cut -d/ -f1 | sed 's/\(.*\)-.*/\1/g'`:"
+			echo ""
+			cd /usr/ports && make search path=/`echo $info | cut -d: -f3`$ | grep .*-deps
+			echo ""
+			pkg_info -rR `echo $info | cut -d/ -f1`
+		fi
+	done
 	exit 0
 }
 
 pkg_info-xg() {
-	z=`pkg_info -xg $pkg 2>/dev/null`
+	for e in $pkg; do
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5,6,7`
 
-	if [ -z "$z" ]; then
-        	echo "bpkg: no installed packages match pattern(s)"
-	else
-		pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-		echo ""
-		echo -e "\033[33m*** installed ***\033[0m"
-		echo "$z"
-	fi
-
+		if [ ! -z "$info" ]; then
+			echo -e "\033[33m*** installed ***\033[0m"
+			echo "`echo $info | cut -d: -f3`: `echo $info | cut -d/ -f1`" 
+			echo ""
+			pkg_info -g `echo $info | cut -d/ -f1` 
+		else
+			echo -e "bpkg: no installed packages match $e\n"
+		fi
+	done
 	exit 0
 }
 
 pkg_info-xf() {
-	init_check
-	if [ -z "$a" ]; then
-		whereis -sq $pkg
-		echo ""
-        	echo -e "\033[33m*** not installed ***\033[0m"
-		for e in $pkg; do
-			path=`whereis -sq $e`
-			echo "$pkg: `cat $path/Makefile | grep COMMENT | cut -d= -f2`"
+	for e in $pkg; do
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5,6,7`
+	
+		if [ -z "$info" ]; then
+			path=`cd /usr/ports && make search path=/$e[0-9]*$ | grep Path | cut -d/ -f4,5`
+			for i in $path; do
+				echo -e "\033[33m*** not installed ***\033[0m"
+				echo "$i: `cat /usr/ports/$i/Makefile | grep COMMENT | cut -d= -f2`"
+				echo ""
+				echo "Packing list:"
+				cat /usr/ports/$i/pkg-plist
+				echo ""
+			done
+		else
+			echo -e "\033[33m*** installed ***\033[0m"
+			echo "`echo $info | cut -d: -f3`: `echo $info | cut -d/ -f1`" 
 			echo ""
-			cat $path/pkg-plist
-			echo ""
-		done
-	else
-		pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-		echo ""
-		echo -e "\033[33m*** installed ***\033[0m"
-		pkg_info -xf $pkg
-	fi
-
+			pkg_info -f `echo $info | cut -d/ -f1`
+		fi
+	done
 	exit 0
 }
 
 pkg_info-xk() {
-	z=`pkg_info -xk $pkg 2>/dev/null`
+	for e in $pkg; do
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5,6,7`
 
-	if [ -z "$z" ]; then
-		echo "bpkg: no installed packages match pattern(s)"
-	else
-		pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-		echo ""
-		echo -e "\033[33m*** installed ***\033[0m"
-		echo "$z"
-	fi
+		if [ ! -z "$info" ]; then
+			echo -e "\033[33m*** installed ***\033[0m"
+			echo "`echo $info | cut -d: -f3`: `echo $info | cut -d/ -f1`" 
+			echo ""
+			pkg_info -k `echo $info | cut -d/ -f1` 
+		else
+			echo -e "bpkg: no installed packages match $e\n"
+		fi
+	done
+	exit 0
+}
 
+pkg_info-xD() {
+	for e in $pkg; do
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5,6,7`
+
+		if [ ! -z "$info" ]; then
+			echo -e "\033[33m*** installed ***\033[0m"
+			echo "`echo $info | cut -d: -f3`: `echo $info | cut -d/ -f1`" 
+			echo ""
+			pkg_info -D `echo $info | cut -d/ -f1` 
+		else
+			echo -e "bpkg: no installed packages match $e\n"
+		fi
+	done
 	exit 0
 }
 
 pkg_info-x() {
-	init_check
-
-	if [ -z "$a" ]; then
-		whereis -sq $pkg
-		echo ""
-		echo -e "\033[33m*** not installed ***\033[0m"
-		path=`whereis -sq $pkg`
-		echo "$pkg: `cat $path/Makefile | grep COMMENT | cut -d= -f2`"
-		echo ""
-		echo "Description:"
-		echo "`cat $path/pkg-descr`"
-	else
-		pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-		echo ""
-		echo -e "\033[33m*** installed ***\033[0m"
-		pkg_info -x $pkg
-	fi
-
+	for e in $pkg; do
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5,6,7`
+	
+		if [ -z "$info" ]; then
+			path=`cd /usr/ports && make search path=/$e[0-9]*$ | grep Path | cut -d/ -f4,5`
+			for i in $path; do
+				echo -e "\033[33m*** not installed ***\033[0m"
+				echo "$i: `cat /usr/ports/$i/Makefile | grep COMMENT | cut -d= -f2`"
+				echo ""
+				echo "Description:"
+				echo "`cat /usr/ports/$i/pkg-descr`"
+				echo ""
+			done
+		else
+			echo -e "\033[33m*** installed ***\033[0m"
+			echo "`echo $info | cut -d: -f3`: `echo $info | cut -d/ -f1`" 
+			echo ""
+			pkg_info `echo $info | cut -d/ -f1` 
+		fi
+	done
 	exit 0
 }
 
 pkg_ver() {
+	echo -e "\033[33m*** installed ***\033[0m"
 	pkg_version -Iv
 	echo ""
 	echo "***`pkg_info | wc -l` packages installed     ***"
@@ -396,54 +537,60 @@ pkg_ver() {
 }
 
 pkg_path() {
-	for e in `ls -l /usr/ports/*/ | grep $pkg | awk '{print $9}'`; do
-		path=`whereis -sq $e`
-		echo "$path" ; cat $path/Makefile | grep COMMENT | cut -d= -f2
+	path=`cd /usr/ports && make search path=/$pkg | grep Path | cut -d/ -f4,5`
+	for e in $path; do
+		path2=`cd /usr/ports && make search path=$e$ | grep Path | cut -d/ -f4,5`
+		if [ ! -z "$path2" ]; then
+			echo "$path2" ; cat /usr/ports/$path2/Makefile | grep COMMENT | cut -d= -f2
+		fi
 	done
-
 	exit 0
 }
 
 pkg_makefile() {
-	init_check
-	path=`whereis -sq $pkg`
-	less $path/Makefile 2>/dev/null
+	path=`cd /usr/ports && make search path=/$pkg$ | grep Path | cut -d/ -f4,5`
+	[ -z "$path" ] && missing
+
+	less /usr/ports/$path/Makefile 2>/dev/null
 	exit 0
 }
 
 make_search() {
-	init_check
-	if [ -z "$a" ]; then
-		whereis -sq $pkg
-		echo -e "\033[33m*** not installed ***\033[0m"
-		echo ""
-		for e in $pkg; do
-        		cd /usr/ports && make search name=^$e
-		done
-	else
-		pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-		echo -e "\033[33m*** installed ***\033[0m"
-		echo ""
-		for e in $pkg; do
-	        	name=`pkg_info -xoq $e`
-			for i in $name; do
-				cd /usr/ports && make search path=$i$
+	for e in $pkg; do
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5,6,7`
+	
+		if [ -z "$info" ]; then
+			path=`cd /usr/ports && make search path=/$e[0-9]*$ | grep Path | cut -d/ -f4,5`
+			for i in $path; do
+				echo -e "\033[33m*** not installed ***\033[0m"
+				cd /usr/ports && make search path=/$i$
 			done
-		done
-	fi
-
+		else
+			echo -e "\033[33m*** installed ***\033[0m"
+			echo "`echo $info | cut -d: -f3`: `echo $info | cut -d/ -f1`" 
+			echo ""
+			cd /usr/ports && make search path=/`echo $info | cut -d: -f3`$
+		fi
+	done
 	exit 0
 }
 
-make_search_w() {
-	cd /usr/ports && make search name=$pkg
+make_search_S() {
+	for e in $pkg; do
+		cd /usr/ports && make search path=$e
+	done
 	exit 0
 }
 
 pkg_find() {
 	arch=`uname -m`
 	sys=`uname -r | cut -d- -f1,2 | tr '[:upper:]' '[:lower:]'`
-	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys/Latest/
+
+	for e in $pkg; do
+		echo "ls $e*" >> /tmp/bpkg.tmp
+	done
+	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys/Latest/ < /tmp/bpkg.tmp
+	rm /tmp/bpkg.tmp
 	exit 0
 }
 
@@ -459,24 +606,24 @@ pkg_delete-xr() {
 	pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
 	echo ""
 	echo -e "\033[33m*** installed ***\033[0m"
-	echo -n "Do you want to use recursive removal? [y] "
+	echo -n "Do you want to use recursive removal? [n] "
 	read key
 
 	case $key in
-		n) echo -n "Do you want to use force removal? [n] "
-		read key2
-		case $key2 in
-			y) pkg_delete -xf $pkg
-			exit 0;;
-			*) pkg_delete -x $pkg
-			exit 0;;
-		esac;;
-        	*) echo -n "Do you want to use force removal? [n] "
+        	y) echo -n "Do you want to use force removal? [n] "
 		read key2
 		case $key2 in
 			y) pkg_delete -xrfi $pkg
 			exit 0;;
 			*) pkg_delete -xri $pkg
+			exit 0;;
+		esac;;
+		*) echo -n "Do you want to use force removal? [n] "
+		read key2
+		case $key2 in
+			y) pkg_delete -xf $pkg
+			exit 0;;
+			*) pkg_delete -x $pkg
 			exit 0;;
 		esac;;
 	esac
@@ -501,141 +648,426 @@ pkg_clean2() {
 pkg_which-() {
 	grep "$pkg"$ /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
 	sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
-	awk -F: '{ print $1 ":\t/usr/local/" $2 }'
+	awk -F: '{ print $1 ":\t" $2 }'
+	exit 0
+}
+
+pkg_backup() {
+	root
+	z=`pkg_info -xoQ $pkg 2>/dev/null`
+
+	if [ -z "$z" ]; then
+        	echo "bpkg: no installed packages match pattern(s)"
+		exit 0
+	fi
+
+	pkg_install=`pkg_info -xoQ $pkg | cut -d: -f1 | awk '{ORS=" " ; print}'`
+	echo "Creating backup package(s) "$pkg_install"in /usr/tmp/"
+	for e in `pkg_info -xoq $pkg`; do
+		cd /usr/tmp/ && pkg_create -xb $e
+	done
+	echo "Done."
+	exit 0
+}	
+
+pkg_time() {
+	echo "Packages (date of installation):"
+	echo ""
+	/bin/ls -lTt /var/db/pkg/*/+CONTENTS | awk -F' ' '{ print $6,$7,$8,$9,$10 }' | cut -d/ -f1,5 
+	echo ""
+	echo "***`pkg_info | wc -l` packages installed     ***"
 	exit 0
 }
 
 make_showc() {
-	init_check
-	if [ -z "$a" ]; then
-		whereis -sq $pkg
-		echo ""
-		echo -e "\033[33m*** not installed ***\033[0m"
-	else
-	 	pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-		echo ""
-		echo -e "\033[33m*** installed ***\033[0m"
-	fi
+	for e in $pkg; do
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5,6,7`
 	
-	echo -n "Do you want to display config options recursively? [n] "
-	read key
-	case $key in
-		y) for e in `whereis -sq $pkg`; do
-			cd $e && make showconfig-recursive
-		done
-		exit 0;;
-		*) for e in `whereis -sq $pkg`; do
-			cd $e && make showconfig
-		done
-		exit 0;;
-	esac
+		if [ -z "$info" ]; then
+			path=`cd /usr/ports && make search path=/$e[0-9]*$ | grep Path | cut -d/ -f4,5`
+			for i in $path; do
+				echo -e "\033[33m*** not installed ***\033[0m"
+				echo "$i: `cat /usr/ports/$i/Makefile | grep COMMENT | cut -d= -f2`"
+				echo ""
+				echo -n "Do you want to display config options recursively? [n] "
+				read key
+				case $key in
+					y) cd /usr/ports/$i && make showconfig-recursive;;
+					*) cd /usr/ports/$i && make showconfig;; 
+				esac
+				echo ""
+			done
+		else
+			echo -e "\033[33m*** installed ***\033[0m"
+			echo "`echo $info | cut -d: -f3`: `echo $info | cut -d/ -f1`" 
+			echo ""
+			echo -n "Do you want to display config options recursively? [n] "
+			read key
+			case $key in
+				y) cd /usr/ports/`echo $info | cut -d: -f3` && make showconfig-recursive;;
+				*) cd /usr/ports/`echo $info | cut -d: -f3` && make showconfig;; 
+			esac
+			echo ""
+		fi
+	done
+	exit 0
 }
 
 make_rmc() {
 	root
-	if [ -z "$pkg" ]; then
-		echo "bpkg: you didn't specify any package/port."
-		exit 0
-	fi
-
-	init_check
-	if [ -z "$a" ]; then
-		whereis -sq $pkg
-		echo ""
-		echo -e "\033[33m*** not installed ***\033[0m"
-	else
-	 	pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-		echo ""
-		echo -e "\033[33m*** installed ***\033[0m"
-	fi
+	for e in $pkg; do
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5,6,7`
 	
-	echo -n "Do you want to remove config options recursively? [n] "
-	read key
-	case $key in
-		y) for e in `whereis -sq $pkg`; do
-			cd $e && make rmconfig-recursive
-		done
-		exit 0;;
-		*) for e in `whereis -sq $pkg`; do
-			cd $e && make rmconfig
-		done
-		exit 0;;
-	esac
+		if [ -z "$info" ]; then
+			path=`cd /usr/ports && make search path=/$e[0-9]*$ | grep Path | cut -d/ -f4,5`
+			for i in $path; do
+				echo -e "\033[33m*** not installed ***\033[0m"
+				echo "$i: `cat /usr/ports/$i/Makefile | grep COMMENT | cut -d= -f2`"
+				echo ""
+				echo -n "Do you want to remove config options recursively? [n] "
+				read key
+				case $key in
+					y) cd /usr/ports/$i && make rmconfig-recursive;;
+					*) cd /usr/ports/$i && make rmconfig;; 
+				esac
+				echo ""
+			done
+		else
+			echo -e "\033[33m*** installed ***\033[0m"
+			echo "`echo $info | cut -d: -f3`: `echo $info | cut -d/ -f1`" 
+			echo ""
+			echo -n "Do you want to remove config options recursively? [n] "
+			read key
+			case $key in
+				y) cd /usr/ports/`echo $info | cut -d: -f3` && make rmconfig-recursive;;
+				*) cd /usr/ports/`echo $info | cut -d: -f3` && make rmconfig;; 
+			esac
+			echo ""
+		fi
+	done
+	exit 0
 }
 
 make_config() {
 	root
-	if [ -z "$pkg" ]; then
-		echo "bpkg: you didn't specify any package/port."
-		exit 0
-	fi
-
-	init_check
-	if [ -z "$a" ]; then
-		whereis -sq $pkg
-		echo ""
-		echo -e "\033[33m*** not installed ***\033[0m"
-	else
-	 	pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-		echo ""
-		echo -e "\033[33m*** installed ***\033[0m"
-	fi
+	for e in $pkg; do
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5,6,7`
 	
-	echo -n "Do you want to set config options recursively? [n] "
-	read key
-	case $key in
-		y) for e in `whereis -sq $pkg`; do
-			cd $e && make config-recursive
-		done
-		exit 0;;
-		*) for e in `whereis -sq $pkg`; do
-			cd $e && make config
-		done
-		exit 0;;
-	esac
+		if [ -z "$info" ]; then
+			path=`cd /usr/ports && make search path=/$e[0-9]*$ | grep Path | cut -d/ -f4,5`
+			for i in $path; do
+				echo -e "\033[33m*** not installed ***\033[0m"
+				echo "$i: `cat /usr/ports/$i/Makefile | grep COMMENT | cut -d= -f2`"
+				echo ""
+				echo -n "Do you want to set config options recursively? [n] "
+				read key
+				case $key in
+					y) cd /usr/ports/$i && make config-recursive;;
+					*) cd /usr/ports/$i && make config;; 
+				esac
+				echo ""
+			done
+		else
+			echo -e "\033[33m*** installed ***\033[0m"
+			echo "`echo $info | cut -d: -f3`: `echo $info | cut -d/ -f1`" 
+			echo ""
+			echo -n "Do you want to set config options recursively? [n] "
+			read key
+			case $key in
+				y) cd /usr/ports/`echo $info | cut -d: -f3` && make config-recursive;;
+				*) cd /usr/ports/`echo $info | cut -d: -f3` && make config;; 
+			esac
+			echo ""
+		fi
+	done
+	exit 0
 }
 
 make_depends() {
-	root
-	if [ -z "$pkg" ]; then
-		echo "bpkg: you didn't specify any port to install/upgrade."
-		exit 0
-	fi
+	for e in $pkg; do
+		[ -z "`cd /usr/ports && make search path=/$e[0-9]*$`" ] && missing
+	done
 
-	init_check
-	if [ -z "$a" ]; then
-		whereis -sq $pkg
-		echo ""
-		echo -e "\033[33m*** not installed ***\033[0m"
-		echo "Installing new port(s):"
-	else
-	 	pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-		echo ""
-		echo -e "\033[33m*** installed ***\033[0m"
-		echo "Upgrading port(s):"
-	fi
+	echo "Available in ports:"
+	for e in $pkg; do
+		cd /usr/ports && make search path=/$e[0-9]*$ | awk '/Port/ /Path/ { print $0 "\n" }' 
+	done
+
+	for z in $pkg; do
+		pkg_install=`cd /usr/ports && make search path=/$z[0-9]*$ | grep Path | cut -d/ -f4,5`
+
+		for e in $pkg_install; do
+			e_stripped=`echo $e | cut -d/ -f2`
+			e_installed=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`
+
+			if [ -z "$e_installed" ]; then
+				e_install=`cd /usr/ports && make search path=/$e[0-9]*$ | grep Path | cut -d/ -f4,5`
+				echo -n "Do you want to install new $e_install? [y] "
+			else
+				echo -n "Do you want to upgrade installed $e_installed? [y] "
+			fi
+			read key
+			case $key in
+				n) ;;
+				*) 
+				if [ ! -z "$e_installed" ]; then
+					echo ""
+					echo "*** Creating backup package in /usr/tmp/$e_installed.tbz ***"
+					cd /usr/tmp/ && pkg_create -b $e_installed
+					echo "Done."
+				fi
+
+				echo ""
+				if [ ! -z "$e_installed" ]; then
+					echo "Upgrading installed port and all dependencies:"
+					pkg_delete -fi $e_installed
+					if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
+						echo "*** cannot proceed without first removing the package ***"
+						exit 0
+					fi
+				else
+					echo "Installing new port and all dependencies:"
+				fi
+
+				echo -n "Do you want to explicitly set config options now? [n] "
+				read key2
+				case $key2 in
+					y) echo -n "Recursive? [n] "
+					read key
+					case $key in
+						y) cd /usr/ports/$e_install && make config-recursive
+						cd /usr/ports/$e_install && make depends && make install clean
+						exit 0;;
+						*) cd /usr/ports/$e_install && make config
+						cd /usr/ports/$e_install && make depends && make install clean
+						exit 0;;
+					esac;;
+
+					*) cd /usr/ports/$e_install && make depends && make install clean
+					exit 0;;
+				esac
+	   			exit 0;;
+			esac
+		done
+	done
+}
+
+make_ldd() {
+	for e in $pkg; do
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5,6,7`
 	
-	echo -n "Do you want to set config options recursively? [y] "
-	read key
-	case $key in
-		n) for e in `whereis -sq $pkg`; do
-			cd $e && make config
-			cd $e && make depends && make install clean
-		done
-		exit 0;;
-		*) for e in `whereis -sq $pkg`; do
-			cd $e && make config-recursive
-			cd $e && make depends && make install clean
-		done
-		exit 0;;
-	esac
+		if [ -z "$info" ]; then
+			echo "bpkg: no installed packages match pattern(s)"
+		else
+			echo -e "\033[33m*** installed ***\033[0m"
+			echo "`echo $info | cut -d: -f3`: `echo $info | cut -d/ -f1`" 
+			echo ""
+			echo "List of dynamic object dependencies:"
+			echo ""
+			pkg=`echo $info | cut -d/ -f1`
+			bin=`pkg_info -L $pkg | awk '/\/usr\/local\/bin/ /\/usr\/local\/sbin/'`
+			for i in $bin; do
+				/usr/bin/ldd -a $i
+			done
+			echo ""
+		fi
+	done
+	exit 0
+}
+
+make_ldd_all() {
+	echo ""
+	echo "List of all missing dynamic object dependencies:"
+	echo ""
+
+	for e in `/bin/ls -l /bin/ 2>/dev/null | awk -F' ' '{print $9}'`; do 
+		libs=`/usr/bin/ldd -a /bin/$e 2>/dev/null | grep found`
+		if [ ! -z "$libs" ]; then 
+			grep "$e"$ /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+			sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+			awk -F: '{ print $1 ":\t" $2 }'
+			echo "$libs"
+			for i in `echo $libs | cut -d' ' -f1 | cut -d. -f1,2`; do
+				grep "$i". /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+				sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+				awk -F: '{ print $2 "\t [" $1 "]" }'
+			done
+			echo ""
+		fi
+	done
+	for e in `/bin/ls -l /sbin/ 2>/dev/null | awk -F' ' '{print $9}'`; do 
+		libs=`/usr/bin/ldd -a /sbin/$e 2>/dev/null | grep found`
+		if [ ! -z "$libs" ]; then 
+			grep "$e"$ /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+			sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+			awk -F: '{ print $1 ":\t" $2 }'
+			echo "$libs"
+			for i in `echo $libs | cut -d' ' -f1 | cut -d. -f1,2`; do
+				grep "$i". /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+				sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+				awk -F: '{ print $2 "\t [" $1 "]" }'
+			done
+			echo ""
+		fi
+	done
+	for e in `/bin/ls -l /usr/bin/ 2>/dev/null | awk -F' ' '{print $9}'`; do 
+		libs=`/usr/bin/ldd -a /usr/bin/$e 2>/dev/null | grep found`
+		if [ ! -z "$libs" ]; then 
+			grep "$e"$ /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+			sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+			awk -F: '{ print $1 ":\t" $2 }'
+			echo "$libs"
+			for i in `echo $libs | cut -d' ' -f1 | cut -d. -f1,2`; do
+				grep "$i". /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+				sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+				awk -F: '{ print $2 "\t [" $1 "]" }'
+			done
+			echo ""
+		fi
+	done
+	for e in `/bin/ls -l /usr/games/ 2>/dev/null | awk -F' ' '{print $9}'`; do 
+		libs=`/usr/bin/ldd -a /usr/games/$e 2>/dev/null | grep found`
+		if [ ! -z "$libs" ]; then 
+			grep "$e"$ /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+			sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+			awk -F: '{ print $1 ":\t" $2 }'
+			echo "$libs"
+			for i in `echo $libs | cut -d' ' -f1 | cut -d. -f1,2`; do
+				grep "$i". /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+				sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+				awk -F: '{ print $2 "\t [" $1 "]" }'
+			done
+			echo ""
+		fi
+	done
+	for e in `/bin/ls -l /usr/libexec/ 2>/dev/null | awk -F' ' '{print $9}'`; do 
+		libs=`/usr/bin/ldd -a /usr/libexec/$e 2>/dev/null | grep found`
+		if [ ! -z "$libs" ]; then 
+			grep "$e"$ /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+			sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+			awk -F: '{ print $1 ":\t" $2 }'
+			echo "$libs"
+			for i in `echo $libs | cut -d' ' -f1 | cut -d. -f1,2`; do
+				grep "$i". /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+				sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+				awk -F: '{ print $2 "\t [" $1 "]" }'
+			done
+			echo ""
+		fi
+	done
+	for e in `/bin/ls -l /usr/sbin/ 2>/dev/null | awk -F' ' '{print $9}'`; do 
+		libs=`/usr/bin/ldd -a /usr/sbin/$e 2>/dev/null | grep found`
+		if [ ! -z "$libs" ]; then 
+			grep "$e"$ /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+			sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+			awk -F: '{ print $1 ":\t" $2 }'
+			echo "$libs"
+			for i in `echo $libs | cut -d' ' -f1 | cut -d. -f1,2`; do
+				grep "$i". /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+				sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+				awk -F: '{ print $2 "\t [" $1 "]" }'
+			done
+			echo ""
+		fi
+	done
+	for e in `/bin/ls -l /usr/local/bin/ 2>/dev/null | awk -F' ' '{print $9}'`; do 
+		libs=`/usr/bin/ldd -a /usr/local/bin/$e 2>/dev/null | grep found`
+		if [ ! -z "$libs" ]; then 
+			grep "$e"$ /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+			sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+			awk -F: '{ print $1 ":\t" $2 }'
+			echo "$libs"
+			for i in `echo $libs | cut -d' ' -f1 | cut -d. -f1,2`; do
+				grep "$i". /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+				sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+				awk -F: '{ print $2 "\t [" $1 "]" }'
+			done
+			echo ""
+		fi
+	done
+	for e in `/bin/ls -l /usr/local/libexec/ 2>/dev/null | awk -F' ' '{print $9}'`; do 
+		libs=`/usr/bin/ldd -a /usr/local/libexec/$e 2>/dev/null | grep found`
+		if [ ! -z "$libs" ]; then 
+			grep "$e"$ /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+			sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+			awk -F: '{ print $1 ":\t" $2 }'
+			echo "$libs"
+			for i in `echo $libs | cut -d' ' -f1 | cut -d. -f1,2`; do
+				grep "$i". /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+				sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+				awk -F: '{ print $2 "\t [" $1 "]" }'
+			done
+			echo ""
+		fi
+	done
+	for e in `/bin/ls -l /usr/local/sbin/ 2>/dev/null | awk -F' ' '{print $9}'`; do 
+		libs=`/usr/bin/ldd -a /usr/local/sbin/$e 2>/dev/null | grep found`
+		if [ ! -z "$libs" ]; then 
+			grep "$e"$ /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+			sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+			awk -F: '{ print $1 ":\t" $2 }'
+			echo "$libs"
+			for i in `echo $libs | cut -d' ' -f1 | cut -d. -f1,2`; do
+				grep "$i". /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+				sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+				awk -F: '{ print $2 "\t [" $1 "]" }'
+			done
+			echo ""
+		fi
+	done
+	for e in `/bin/ls -l /usr/X11R6/bin/ 2>/dev/null | awk -F' ' '{print $9}'`; do 
+		libs=`/usr/bin/ldd -a /usr/X11R6/bin/$e 2>/dev/null | grep found`
+		if [ ! -z "$libs" ]; then 
+			grep "$e"$ /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+			sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+			awk -F: '{ print $1 ":\t" $2 }'
+			echo "$libs"
+			for i in `echo $libs | cut -d' ' -f1 | cut -d. -f1,2`; do
+				grep "$i". /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+				sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+				awk -F: '{ print $2 "\t [" $1 "]" }'
+			done
+			echo ""
+		fi
+	done
+	for e in `/bin/ls -l /usr/X11R6/libexec/ 2>/dev/null | awk -F' ' '{print $9}'`; do 
+		libs=`/usr/bin/ldd -a /usr/X11R6/libexec/$e 2>/dev/null | grep found`
+		if [ ! -z "$libs" ]; then 
+			grep "$e"$ /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+			sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+			awk -F: '{ print $1 ":\t" $2 }'
+			echo "$libs"
+			for i in `echo $libs | cut -d' ' -f1 | cut -d. -f1,2`; do
+				grep "$i". /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+				sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+				awk -F: '{ print $2 "\t [" $1 "]" }'
+			done
+			echo ""
+		fi
+	done
+	for e in `/bin/ls -l /usr/X11R6/sbin/ 2>/dev/null | awk -F' ' '{print $9}'`; do 
+		libs=`/usr/bin/ldd -a /usr/X11R6/sbin/$e 2>/dev/null | grep found`
+		if [ ! -z "$libs" ]; then 
+			grep "$e"$ /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+			sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+			awk -F: '{ print $1 ":\t" $2 }'
+			echo "$libs"
+			for i in `echo $libs | cut -d' ' -f1 | cut -d. -f1,2`; do
+				grep "$i". /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
+				sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | \
+				awk -F: '{ print $2 "\t [" $1 "]" }'
+			done
+			echo ""
+		fi
+	done
+	exit 0
 }
 
 help() {
 	echo "bpkg version `pkg_info -xI bpkg | cut -d- -f2 | cut -d' ' -f1`" 
 	echo ""
-	echo "Usage: bpkg [-dDeEfgiIkLmnNoOprsSw] pkg-name ..."
-	echo "       bpkg [-aAcCFhlv]"
+	echo "Usage: bpkg [-bdDeEfFgiIkLmMnNoOprsSwz] pkg-name ..."
+	echo "       bpkg [-aAcChltvZ]"
 	echo ""
 	echo "Please see the bpkg(8) man page for more information"
 	echo ""
@@ -645,8 +1077,10 @@ help() {
 # End of functions
 ################################################################################
 
-while getopts d:D:e:E:f:g:i:I:k:L:m:n:N:o:O:p:r:s:S:w:aAcCFhlv opts; do
+while getopts b:d:D:e:E:f:F:g:i:I:k:L:m:M:n:N:o:O:p:r:s:S:w:z:aAcChltvZ opts; do
 	case $opts in
+		b) pkg=$OPTARG
+		   pkg_backup;;	
 		d) pkg=$OPTARG
 		   pkg_delete-xr;;
 		D) pkg=$OPTARG
@@ -657,6 +1091,8 @@ while getopts d:D:e:E:f:g:i:I:k:L:m:n:N:o:O:p:r:s:S:w:aAcCFhlv opts; do
 		   make_depends;;
 		f) pkg=$OPTARG
 		   pkg_info-xf;;
+		F) pkg=$OPTARG
+		   pkg_find;;
 		g) pkg=$OPTARG
 		   pkg_info-xg;;
 		i) pkg=$OPTARG
@@ -669,6 +1105,8 @@ while getopts d:D:e:E:f:g:i:I:k:L:m:n:N:o:O:p:r:s:S:w:aAcCFhlv opts; do
 		   pkg_info-xL;;
 		m) pkg=$OPTARG
 		   pkg_makefile;;
+		M) pkg=$OPTARG
+		   pkg_info-xD;;
 		n) pkg=$OPTARG
 		   simulation;;
 		N) pkg=$OPTARG
@@ -684,17 +1122,20 @@ while getopts d:D:e:E:f:g:i:I:k:L:m:n:N:o:O:p:r:s:S:w:aAcCFhlv opts; do
 		s) pkg=$OPTARG
 		   pkg_info-xs;;
 		S) pkg=$OPTARG
-		   make_search_w;;
+		   make_search_S;;
 		w) pkg=$OPTARG
 		   pkg_which-;;
+		z) pkg=$OPTARG
+		   make_ldd;;
 		a) all;;
 		A) all_non-interactive;;
 		c) pkg_clean;;
 		C) pkg_clean2;;
-		F) pkg_find;;
 		h) help;;
 		l) pkg_inf;;
+		t) pkg_time;;
 		v) pkg_ver;;
+		Z) make_ldd_all;;
 		*) help;;
 	esac
 done
