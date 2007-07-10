@@ -13323,6 +13323,7 @@ qdbm		ports/databases/qdbm
 qdbm-java	ports/databases/qdbm-java
 qdbm-plus	ports/databases/qdbm-plus
 qdecoder	ports/www/qdecoder
+qdevelop	ports/devel/qdevelop
 qdvdauthor	ports/multimedia/qdvdauthor
 qemacs		ports/editors/qemacs
 qemu		ports/emulators/qemu
