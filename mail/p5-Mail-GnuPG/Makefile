@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Mail-GnuPG
-PORTVERSION=	0.08
-PORTREVISION=	0
+PORTVERSION=	0.10
 CATEGORIES=	mail security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -30,9 +29,6 @@ MAN3=		Mail::GnuPG.3
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
 .endif
 
 .include <bsd.port.post.mk>
