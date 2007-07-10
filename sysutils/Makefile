@@ -549,6 +549,7 @@
     SUBDIR += rotate
     SUBDIR += rsnapshot
     SUBDIR += rsyncmanager
+    SUBDIR += rsyslog
     SUBDIR += rtty
     SUBDIR += ruby-log4r
     SUBDIR += ruby-quota
