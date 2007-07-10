@@ -6496,6 +6496,7 @@ libksba		ports/security/libksba
 libleaftag	ports/devel/libleaftag
 liblingoteach	ports/textproc/liblingoteach
 liblo		ports/audio/liblo
+liblogging	ports/devel/liblogging
 liblr		ports/science/liblr
 liblrdf		ports/textproc/liblrdf
 libltdl15	ports/devel/libltdl15
