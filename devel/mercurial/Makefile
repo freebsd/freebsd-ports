@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.selenic.com/mercurial/release/
 
@@ -34,8 +34,6 @@ CONTRIB_FILES=	bash_completion \
 		git-viz/hg-viz \
 		hgsh/Makefile \
 		hgsh/hgsh.c \
-		purge/README \
-		purge/purge.py \
 		vim/HGAnnotate.vim \
 		vim/hg-menu.vim \
 		vim/hgcommand.vim \
@@ -64,7 +62,6 @@ post-install:
 	${MKDIR} ${DATADIR}/contrib
 	${MKDIR} ${DATADIR}/contrib/git-viz
 	${MKDIR} ${DATADIR}/contrib/hgsh
-	${MKDIR} ${DATADIR}/contrib/purge
 	${MKDIR} ${DATADIR}/contrib/vim
 	for f in ${CONTRIB_FILES}; do \
 		${CP} -p ${WRKSRC}/contrib/$${f} ${DATADIR}/contrib/$${f}; \
