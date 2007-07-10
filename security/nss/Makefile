@@ -19,7 +19,7 @@ LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
 
 _MAJOR=	3
 _MINOR=	11
-_PATCH=	5
+_PATCH=	7
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/security/nss
 
