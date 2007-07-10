@@ -972,6 +972,7 @@ bonobo		ports/devel/bonobo
 bonobo-conf	ports/devel/bonobo-conf
 boodler		ports/audio/boodler
 bookmarkbridge	ports/www/bookmarkbridge
+bookreader	ports/deskutils/bookreader
 boost		ports/devel/boost
 boost-python		ports/devel/boost-python
 bopm		ports/irc/bopm
