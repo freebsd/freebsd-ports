@@ -125,6 +125,7 @@ CONFIGURE_ARGS+=	--without-libidn
 .endif
 
 .if defined(WITH_LIBSSH2)
+BROKEN=		does not work with libssh2-0.15
 LIB_DEPENDS+=	ssh2.1:${PORTSDIR}/security/libssh2
 CONFIGURE_ARGS+=	--with-libssh2=${LOCALBASE}
 .else
