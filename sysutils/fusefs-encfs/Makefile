@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	fusefs-
 DISTNAME=	encfs-${PORTVERSION}-1
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	An encrypted pass-through FUSE filesystem
 
 LIB_DEPENDS=	rlog:${PORTSDIR}/devel/rlog

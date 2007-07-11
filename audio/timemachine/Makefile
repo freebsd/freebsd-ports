@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/timemachine/
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	JACK audio capture tool
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \

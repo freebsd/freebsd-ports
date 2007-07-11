@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.coyotegulch.com/distfiles/
 DISTNAME=	libacovea-${PORTVERSION}
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Tool to find the "best" compiler options using genetic algorithm
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \

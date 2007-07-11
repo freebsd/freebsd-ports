@@ -11,7 +11,7 @@ CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.osc.edu/~pw/mpiexec/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	A tool to run a parallel job from within a PBS environment
 
 LIB_DEPENDS=	torque.0:${PORTSDIR}/sysutils/torque

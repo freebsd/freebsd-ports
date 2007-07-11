@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.openjpeg.org/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/g}
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	An open-source JPEG 2000 codec
 
 USE_GMAKE=	yes

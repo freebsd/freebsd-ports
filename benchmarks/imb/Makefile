@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	itetcu
 DISTNAME=	327191_327191
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Intel MPI Benchmark
 
 WRKSRC=		${WRKDIR}/IMB_3.0/src/

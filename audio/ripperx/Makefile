@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ripperx
 DISTNAME=	ripperX-${PORTVERSION}
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	GTK program to rip CD audio tracks and encode them
 
 LIB_DEPENDS=	id3:${PORTSDIR}/audio/id3lib

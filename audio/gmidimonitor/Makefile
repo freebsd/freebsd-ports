@@ -12,7 +12,7 @@ CATEGORIES=	audio
 # the version number above.
 MASTER_SITES=	https://files.bountysource.com/file/download/588/
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	GTK+ application that shows MIDI events
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	oss
 # Date created:		2007-06-14
-# Whom:			Edward Tomasz Napierala <trasz@freebsd.org>
+# Whom:			Edward Tomasz Napierala <trasz@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	audio kld
 MASTER_SITES=	http://developer.opensound.com/sources/stable/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-gpl
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Open Sound System
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk

@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://members.iinet.net.au/~tom-hunter/
 DISTNAME=	dtcyber20b1
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Desktop CYBER Emulator
 
 USE_ZIP=	yes

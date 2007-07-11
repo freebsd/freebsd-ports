@@ -10,7 +10,7 @@ PORTVERSION=	0.5.3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.savannah.gnu.org/releases/lash/
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Session management system for JACK audio applications
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \

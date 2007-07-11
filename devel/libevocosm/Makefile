@@ -10,7 +10,7 @@ PORTVERSION=	3.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.coyotegulch.com/distfiles/
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Collection of tools for creating a variety of evolutionary algorithms
 
 LIB_DEPENDS=	coyotl-3.1.4:${PORTSDIR}/devel/libcoyotl \
