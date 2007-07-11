@@ -716,6 +716,7 @@ barnyard	ports/security/barnyard
 barnyard-sguil6	ports/security/barnyard-sguil6
 barrage		ports/games/barrage
 barry		ports/ports-mgmt/barry
+bas2tap		ports/lang/bas2tap
 base		ports/security/base
 base64		ports/converters/base64
 bash		ports/shells/bash
