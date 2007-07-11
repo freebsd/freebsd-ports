@@ -1,5 +1,16 @@
 %%SITE_PERL%%/XML/RSS.pm
+%%SITE_PERL%%/XML/RSS/Private/Output/Base.pm
+%%SITE_PERL%%/XML/RSS/Private/Output/V2_0.pm
+%%SITE_PERL%%/XML/RSS/Private/Output/V0_9.pm
+%%SITE_PERL%%/XML/RSS/Private/Output/V0_91.pm
+%%SITE_PERL%%/XML/RSS/Private/Output/V1_0.pm
+%%SITE_PERL%%/XML/RSS/Private/Output/Roles/ImageDims.pm
+%%SITE_PERL%%/XML/RSS/Private/Output/Roles/ModulesElems.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/RSS/Private/Output/Roles
+@dirrmtry %%SITE_PERL%%/XML/RSS/Private/Output
+@dirrmtry %%SITE_PERL%%/XML/RSS/Private
+@dirrmtry %%SITE_PERL%%/XML/RSS
 @dirrmtry %%SITE_PERL%%/XML
