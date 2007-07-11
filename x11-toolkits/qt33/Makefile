@@ -8,7 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -143,6 +143,9 @@ EXTRA_PATCHES=	${PATCHDIR}/0001-dnd_optimization.patch \
 		${PATCHDIR}/0061-qscrollview-propagate-horizontal-wheelevent.patch \
 		${PATCHDIR}/0073-xinerama-aware-qpopup.patch \
 		${PATCHDIR}/0076-fix-qprocess.diff \
+		${PATCHDIR}/0078-argb-visual-hack.patch \
+		${PATCHDIR}/0079-compositing-types.patch \
+		${PATCHDIR}/0080-net-wm-sync-request.patch \
 		${PATCHDIR}/xxxx-qt-font-default-subst.patch
 PKGNAMESUFFIX=	-copy
 COMMENT+=	(+ KDE patches)
@@ -179,6 +182,7 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -e \
 		's|/lib/pkgconfig/|/libdata/pkgconfig/|g' \
+		-e 's|^INCPATH.*=|INCPATH  = -I../include|g' \
 			${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} -e \
 		's|^prefix=.*|prefix=${PREFIX}|g' ${WRKSRC}/lib/qt-mt.pc
