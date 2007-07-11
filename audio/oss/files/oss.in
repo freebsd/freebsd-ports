@@ -1,19 +1,20 @@
-#!/bin/sh -
+#!/bin/sh
 
 # PROVIDE: oss
-# REQUIRE: cleanvar
+# REQUIRE: DAEMON
 # KEYWORD: nojail shutdown
 
 . %%RC_SUBR%%
 
 name="oss"
 rcvar=`set_rcvar`
-oss_enable="${oss_enable:-NO}"
 
 stop_cmd="oss_stop"
 start_cmd="oss_start"
 
 load_rc_config $name
+
+: ${oss_enable=NO}
 
 oss_start()
 {
