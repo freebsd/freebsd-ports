@@ -1,0 +1,31 @@
+--- Makefile.in.orig	Thu Jul  8 02:28:59 2004
++++ Makefile.in	Sat Jul  7 13:46:20 2007
+@@ -23,23 +23,23 @@
+ both: libuninameslist.la libuninameslist-fr.la
+ 
+ libuninameslist.la: nameslist.lo
+-	$(LIBTOOL) $(CC) $(CFLAGS) -o libuninameslist.la nameslist.lo \
++	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libuninameslist.la nameslist.lo \
+ 	    -rpath $(libdir) -version-info $(UN_VERSION):$(UN_REVISION):$(UN_AGE)
+ 
+ libuninameslist-fr.la: nameslist-fr.lo
+-	$(LIBTOOL) $(CC) $(CFLAGS) -o libuninameslist-fr.la nameslist-fr.lo \
++	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libuninameslist-fr.la nameslist-fr.lo \
+ 	    -rpath $(libdir) -version-info $(UN_VERSION):$(UN_REVISION):$(UN_AGE)
+ 
+ 
+ %.lo: %.c
+-	$(LIBTOOL) $(CC) $(CFLAGS) -c $<
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c $<
+ 
+ install: both
+ # You may need to be root to do the install
+ 	mkdir -p $(libdir)
+-	$(LIBTOOL) $(INSTALL) -c libuninameslist.la $(libdir)/libuninameslist.la
++	$(LIBTOOL) --mode=install $(INSTALL) -c libuninameslist.la $(libdir)/libuninameslist.la
+ 	$(LIBTOOL) $(INSTALL) -c libuninameslist-fr.la $(libdir)/libuninameslist-fr.la
+-	$(LIBTOOL) --finish $(libdir)
++	$(LIBTOOL) --mode=finish $(libdir)
+ 	mkdir -p $(incdir)
+ 	$(INSTALL_DATA) nameslist.h $(incdir)/uninameslist.h
+ 
