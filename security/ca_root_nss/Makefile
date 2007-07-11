@@ -23,7 +23,7 @@ CERTDIR?=	share/certs
 PLIST_DIRS=	${CERTDIR}
 PLIST_FILES=	${CERTDIR}/ca-root-nss.crt
 
-VERSION_NSS=	3.11.5
+VERSION_NSS=	3.11.7
 VERSION_APACHE=	1.3.37
 VERSION_MODSSL=	2.8.28
 MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
