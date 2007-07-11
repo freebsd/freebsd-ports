@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-CONFLICTS=	libslang-[0-9]* libslang2-devel-[0-9]*
+CONFLICTS=	libslang-[0-9]* libslang-1.*.j[0-9]
 
 ALL_TARGET=	all static
 INSTALL_TARGET=	install install-static

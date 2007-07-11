@@ -619,7 +619,6 @@
     SUBDIR += libsigsegv
     SUBDIR += libslang
     SUBDIR += libslang2
-    SUBDIR += libslang2-devel
     SUBDIR += libsoup
     SUBDIR += libsoup-reference
     SUBDIR += libstatgrab
