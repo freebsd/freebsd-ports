@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
 		--includedir=${PREFIX}/include/gpgme \
 		--infodir=${PREFIX}/${INFO_PATH}
 
-INFODIR=	${LOCALBASE}/share/info
 INFO=		gpgme
 
 OPTIONS=	PTH "Enable alternative libgpgme using GNU portable threads" off
