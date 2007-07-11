@@ -7,7 +7,7 @@
 
 PORTNAME=	sunbird-i18n
 PORTVERSION=	0.5
-CATEGORIES=	www
+CATEGORIES=	deskutils
 MASTER_SITES=	MOZILLA_EXTENDED/calendar/sunbird/releases/${DISTVERSION}/langpacks
 PKGNAMEPREFIX=
 DISTFILES=	${SUNBIRD_I18N_:S|$|.xpi|}
