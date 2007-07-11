@@ -102,8 +102,10 @@ time zone update file, ${TZUPDATEFILE}.\n\n
 
 
 .if !defined(WITHOUT_TZUPDATE)
-pre-install:
+post-extract:
 	@${UNZIP_CMD} -qo ${DISTDIR}/${TZUPDATEFILE} -d ${WRKDIR}
+
+pre-install:
 	@# Update time zones
 	@-${WRKSRC}/bin/java -jar \
 		${WRKDIR}/tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}/tzupdater.jar -u -bc
