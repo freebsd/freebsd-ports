@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	stalonetray
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.6.5
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	STAnd-aLONE system tray
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
+USE_XPM=	yes
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-native-kde --disable-debug
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
+		--disable-native-kde \
+		--disable-debug
 
 MAN1=		stalonetray.1
 PLIST_FILES=	bin/stalonetray
