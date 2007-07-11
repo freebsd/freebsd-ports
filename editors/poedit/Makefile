@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	poedit
-PORTVERSION=	1.3.6
-PORTREVISION=	2
+PORTVERSION=	1.3.7
 CATEGORIES=	editors
 MASTER_SITES=	SF
 
@@ -19,32 +18,28 @@ COMMENT=	Gettext catalogs (.po files) editor
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 
-USE_GETTEXT=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
-USE_BDB=	yes
-WITH_BDB_HIGHEST=	yes
 USE_WX=		2.6
 WX_CONF_ARGS=	absolute
 WX_UNICODE=	yes
+USE_BDB=	yes
+WITH_BDB_HIGHEST=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		WXRC="${X11BASE}/bin/wxrc-gtk2u-2.6"
-CONFIGURE_ARGS=	--with-wx-config=${X11BASE}/bin/wxgtk2u-2.6-config \
-		--mandir=${MANPREFIX}/man
-
-CPPFLAGS=	-I${BDB_INCLUDE_DIR} \
-		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${BDB_LIB_DIR} ${PTHREAD_LIBS}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		WXRC="${WXRC_CMD}"
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
+INSTALLS_ICONS=	yes
 
 MAN1=		poedit.1
+
+CPPFLAGS=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${BDB_LIB_DIR} -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's/for version in .*;/for version in ${BDB_VER};/ ; \
 		 s/-ldb-$$version/-l${BDB_LIB_NAME}/' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		'/^SUBDIRS/s/ install / /' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
