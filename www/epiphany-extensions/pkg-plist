@@ -73,6 +73,11 @@ share/gnome/epiphany-extensions/glade/page-info.glade
 share/gnome/epiphany-extensions/glade/rss-ui.glade
 share/gnome/epiphany-extensions/xml/epiphany-sidebar-ui.xml
 share/gnome/epiphany-extensions/xml/page-info-context-ui.xml
+share/gnome/epiphany/icons/hicolor/16x16/status/feed-presence.png
+share/gnome/epiphany/icons/hicolor/22x22/status/feed-presence.png
+share/gnome/epiphany/icons/hicolor/24x24/status/feed-presence.png
+share/gnome/epiphany/icons/hicolor/32x32/status/feed-presence.png
+share/gnome/epiphany/icons/hicolor/scalable/status/feed-presence.svg
 share/gnome/help/epiphany-extensions/C/epiphany-extensions.xml
 share/gnome/help/epiphany-extensions/C/figures/epi-ext-action-create.png
 share/gnome/help/epiphany-extensions/C/figures/epi-ext-adblocker.png
