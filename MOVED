@@ -3099,3 +3099,4 @@ net/gnet-glib2|net/gnet2|2007-07-09|Functionality merged into gnet2
 www/lynx-ssl|www/lynx|2007-07-10|SSL enabled by default in www/lynx
 net-p2p/py-bittorrent-devel|net-p2p/py-bittorent|2007-07-10|Non-devel port have newer version
 net-p2p/py-bittorrent-core-devel|net-p2p/py-bittorent-core|2007-07-10|Non-devel port have newer version
+devel/libslang2-devel||2007-07-11|Non-devel port have newer version
