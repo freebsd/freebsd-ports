@@ -10,7 +10,7 @@ DISTVERSION=	0.5.2-rc3
 CATEGORIES=	audio
 MASTER_SITES=	http://zhevny.com/specimen/files/
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	MIDI controllable audio sampler
 
 LIB_DEPENDS=	phat.0:${PORTSDIR}/x11-toolkits/phat \

@@ -10,7 +10,7 @@ PORTVERSION=	3.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.coyotegulch.com/distfiles/
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Collection of useful C++ classes
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

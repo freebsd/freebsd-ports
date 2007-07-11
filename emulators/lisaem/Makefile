@@ -1,6 +1,6 @@
 # New ports collection makefile for:	lisaem
 # Date created:		2007-07-04
-# Whom:			Edward Tomasz Napierala <trasz@freebsd.org>
+# Whom:			Edward Tomasz Napierala <trasz@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ DISTVERSION=	1.0.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://lisaem.sunder.net/20070707/
 
-MAINTAINER=	trasz@freebsd.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Apple Lisa emulator
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
