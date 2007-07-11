@@ -14,6 +14,7 @@
     SUBDIR += asn1c
     SUBDIR += atlast
     SUBDIR += awka
+    SUBDIR += bas2tap
     SUBDIR += bf2c
     SUBDIR += bigloo
     SUBDIR += bwbasic
