@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpgme
-PORTVERSION=	1.1.3
-PORTREVISION=	3
+PORTVERSION=	1.1.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -25,8 +24,10 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
 		--with-gpgsm=${LOCALBASE}/bin/gpgsm \
-		--includedir=${PREFIX}/include/gpgme
+		--includedir=${PREFIX}/include/gpgme \
+		--infodir=${PREFIX}/${INFO_PATH}
 
+INFODIR=	${LOCALBASE}/share/info
 INFO=		gpgme
 
 OPTIONS=	PTH "Enable alternative libgpgme using GNU portable threads" off
