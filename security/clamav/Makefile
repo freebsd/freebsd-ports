@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.90.3
+PORTVERSION=	0.91
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -20,7 +20,6 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		LHA "Enable lha archives support" On \
 		MILTER "Compile the milter interface" Off \
 		LDAP "libmilter was built with LDAP" Off \
-		CURL "Support URL downloading" Off \
 		STDERR "Print logs to stderr instead of stdout" Off \
 		EXPERIMENTAL "Build experimental code" Off
 
@@ -140,13 +139,6 @@ CONFIGURE_ARGS+=	--enable-milter
 PLIST_SUB+=	CLAMAV-MILTER=""
 .else
 PLIST_SUB+=	CLAMAV-MILTER="@comment "
-.endif
-
-.if defined(WITH_CURL)
-LIB_DEPENDS+=		curl.4:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--with-libcurl
-.else
-CONFIGURE_ARGS+=	--without-libcurl
 .endif
 
 .if defined(WITH_STDERR)
