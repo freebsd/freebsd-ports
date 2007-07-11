@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libuninameslist
-PORTVERSION=	20050712
+PORTVERSION=	20060907
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	libuninameslist
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -18,10 +17,10 @@ COMMENT=	A library of Unicode annotation data
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_AUTOTOOLS=	libtool:15
+USE_GNOME=	gnometarget
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_AUTOTOOLS=	libtool:15
 ALL_TARGET=	both
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
