@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	2.2.34
+PORTVERSION=	2.2.37
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small emacs-like text editor
@@ -19,8 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LIBS="-lgnuregex"
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--infodir=${PREFIX}/${INFO_PATH} \
-		--disable-allegro --disable-epocemx
+		--infodir=${PREFIX}/${INFO_PATH}
 
 MAN1=		zile.1
 INFO=		zile
