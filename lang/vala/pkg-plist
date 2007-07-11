@@ -162,7 +162,7 @@ include/vala-1.0/vala/valawhilestatement.h
 lib/libvala.la
 lib/libvala.so
 lib/libvala.so.0
-lib/pkgconfig/vala-1.0.pc
+libdata/pkgconfig/vala-1.0.pc
 %%DATADIR%%/vapi/atk.vala
 %%DATADIR%%/vapi/cairo.vala
 %%DATADIR%%/vapi/dbus-glib-1.vala
@@ -183,7 +183,6 @@ lib/pkgconfig/vala-1.0.pc
 %%DATADIR%%/vapi/vte.vala
 @dirrm %%DATADIR%%/vapi
 @dirrm %%DATADIR%%
-@dirrm lib/pkgconfig
 @dirrm include/vala-1.0/vala
 @dirrm include/vala-1.0/gobject
 @dirrm include/vala-1.0/ccode

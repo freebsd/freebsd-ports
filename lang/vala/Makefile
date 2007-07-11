@@ -7,6 +7,7 @@
 
 PORTNAME=	vala
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 
@@ -22,4 +23,7 @@ USE_BISON=	yes
 MAN1=		valac.1
 USE_LDCONFIG=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
 .include <bsd.port.mk>
