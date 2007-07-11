@@ -1,5 +1,5 @@
 bin/poedit
-share/pixmaps/poedit.png
+share/applications/poedit.desktop
 share/icons/hicolor/16x16/apps/poedit.png
 share/icons/hicolor/32x32/apps/poedit.png
 share/icons/hicolor/48x48/apps/poedit.png
@@ -63,9 +63,11 @@ share/locale/th/LC_MESSAGES/poedit.mo
 share/locale/tr/LC_MESSAGES/poedit.mo
 share/locale/tt/LC_MESSAGES/poedit.mo
 share/locale/uk/LC_MESSAGES/poedit.mo
+share/locale/ur/LC_MESSAGES/poedit.mo
 share/locale/wa/LC_MESSAGES/poedit.mo
 share/locale/zh_CN/LC_MESSAGES/poedit.mo
 share/locale/zh_TW/LC_MESSAGES/poedit.mo
+share/pixmaps/poedit.png
 %%DATADIR%%/help/common/comment.gif
 %%DATADIR%%/help/common/fileopen.gif
 %%DATADIR%%/help/common/filesave.gif
@@ -120,7 +122,6 @@ share/locale/zh_TW/LC_MESSAGES/poedit.mo
 %%DATADIR%%/icons/help-browser.png
 %%DATADIR%%/icons/poedit-comment.png
 %%DATADIR%%/icons/poedit-fuzzy.png
-%%DATADIR%%/icons/poedit-quotes.png
 %%DATADIR%%/icons/poedit-status-automatic.png
 %%DATADIR%%/icons/poedit-status-cat-mid.png
 %%DATADIR%%/icons/poedit-status-cat-no.png
@@ -154,3 +155,4 @@ share/locale/zh_TW/LC_MESSAGES/poedit.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/af_ZA/LC_MESSAGES
 @dirrmtry share/locale/af_ZA
+@dirrmtry share/applications
