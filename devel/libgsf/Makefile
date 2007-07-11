@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	libgsf
-PORTVERSION=	1.14.4
-PORTREVISION?=	1
+PORTVERSION=	1.14.5
+PORTREVISION?=	0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -28,17 +28,13 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GNOME?=	gnomehack gnomeprefix glib20 libxml2 gconf2 ltverhack intlhack
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
-		--disable-gtk-doc --without-gnome --with-bz2 \
-		--mandir=${PREFIX}/man \
-		--with-gconf-source=${GCONF_CONFIG_SOURCE} \
-		--without-python
+CONFIGURE_ARGS?=--without-gnome --without-python
 CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(GSF_SLAVE)
 GCONF_SCHEMAS=	gsf-office-thumbnailer.schemas
-MAN1=		gsf-office-thumbnailer.1
+MAN1=		gsf.1 gsf-office-thumbnailer.1
 .endif
 
 .include <bsd.port.mk>
