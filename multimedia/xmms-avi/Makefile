@@ -20,20 +20,14 @@ COMMENT=	An avifile based .avi and .asf file playback plugin for XMMS
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 ONLY_FOR_ARCHS=	i386
-PLIST_FILES=	lib/xmms/Input/libavixmms.so
 
-USE_X_PREFIX=	yes
-USE_SDL=	sdl
 USE_GNOME=	gtk12
+USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-win32-path=${LOCALBASE}/lib/win32
+USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
+PLIST_FILES=	lib/xmms/Input/libavixmms.so
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -49,4 +43,4 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/libavixmms.so ${PREFIX}/lib/xmms/Input
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
