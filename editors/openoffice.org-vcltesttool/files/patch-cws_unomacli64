@@ -1331,7 +1331,7 @@ CWS unomacli64:	#i77422#, #i77600#, #i78114#, #i78143#, #i78284#, and #i78830#
  	Reference<XComponentContext> xContext;
 --- cppuhelper/source/gcc3.map	1 Jan 1970 00:00:00 -0000
 +++ cppuhelper/source/gcc3.map	4 Jul 2007 18:08:24 -0000	1.1.2.2
-@@ -0,0 +1,366 @@
+@@ -0,0 +1,365 @@
 +UDK_3_0_0 {
 +	global:
 +GetVersionInfo;
@@ -1552,7 +1552,6 @@ CWS unomacli64:	#i77422#, #i77600#, #i78114#, #i78143#, #i78284#, and #i78830#
 +_ZTVN4cppu20OPropertyArrayHelperE;
 +_ZTVN4cppu27WeakComponentImplHelperBaseE;
 +_ZTVN4cppu30WeakAggComponentImplHelperBaseE;
-+component_getDescriptionFunc;
 +_ZN4cppu20OPropertyArrayHelperD0Ev;
 +_ZN4cppu20OPropertyArrayHelperD1Ev;
 +_ZThn*_N4cppu14OWeakAggObject12setDelegatorERKN3com3sun4star3uno9ReferenceINS4_10XInterfaceEEE;
