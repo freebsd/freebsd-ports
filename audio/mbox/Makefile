@@ -4,8 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	mbox
-PORTVERSION=	0.5.2
-PORTREVISION=	4
+PORTVERSION=	0.7.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mbox.wz.cz/src/
 
@@ -18,11 +17,12 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/__init__.py:${PORTSDIR}/audio/py-ogg \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		mplayer:${PORTSDIR}/multimedia/mplayer
 
+WRKSRC=		${WRKDIR}/mBox-${PORTVERSION}
+
+USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_BZIP2=	yes
-USE_WX=		2.4
+USE_WX=		2.6
 WX_COMPS=	python
-WRKSRC=		${WRKDIR}/mBox-${PORTVERSION}
 
 .include <bsd.port.mk>
