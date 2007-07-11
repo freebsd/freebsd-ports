@@ -1,0 +1,10 @@
+This utility converts both 48k and 128k ZX Spectrum BASIC programs stored
+as plain text files into TAP files.
+
+TAP files can be used in most ZX Spectrum emulators and can be concatenated
+together using cat(1).
+
+Author: Martijn van der Heide
+--
+Rene Ladan
+r.c.ladan@gmail.com
