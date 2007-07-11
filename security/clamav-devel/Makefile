@@ -25,7 +25,6 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		UNZOO "Enavle zoo archives support" On \
 		MILTER "Compile the milter interface" Off \
 		LDAP "libmilter was built with LDAP" Off \
-		CURL "Support URL downloading" Off \
 		STDERR "Print logs to stderr instead of stdout" Off
 
 USE_AUTOTOOLS=	libtool:15
@@ -151,13 +150,6 @@ CONFIGURE_ARGS+=	--enable-milter
 PLIST_SUB+=	CLAMAV-MILTER=""
 .else
 PLIST_SUB+=	CLAMAV-MILTER="@comment "
-.endif
-
-.if defined(WITH_CURL)
-LIB_DEPENDS+=		curl.4:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--with-libcurl
-.else
-CONFIGURE_ARGS+=	--without-libcurl
 .endif
 
 .if defined(WITH_STDERR)
