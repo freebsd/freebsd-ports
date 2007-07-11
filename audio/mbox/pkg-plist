@@ -47,6 +47,9 @@ bin/mbox
 %%PYTHON_SITELIBDIR%%/mBoxModules/images.py
 %%PYTHON_SITELIBDIR%%/mBoxModules/images.pyc
 %%PYTHON_SITELIBDIR%%/mBoxModules/images.pyo
+%%PYTHON_SITELIBDIR%%/mBoxModules/mboxDataParser.py
+%%PYTHON_SITELIBDIR%%/mBoxModules/mboxDataParser.pyc
+%%PYTHON_SITELIBDIR%%/mBoxModules/mboxDataParser.pyo
 %%PYTHON_SITELIBDIR%%/mBoxModules/mboxFileUtils.py
 %%PYTHON_SITELIBDIR%%/mBoxModules/mboxFileUtils.pyc
 %%PYTHON_SITELIBDIR%%/mBoxModules/mboxFileUtils.pyo
