@@ -3,10 +3,14 @@ share/applications/wxdfast.desktop
 share/locale/cs/LC_MESSAGES/wxDFast.mo
 share/locale/de/LC_MESSAGES/wxDFast.mo
 share/locale/es/LC_MESSAGES/wxDFast.mo
+share/locale/fr/LC_MESSAGES/wxDFast.mo
 share/locale/hu/LC_MESSAGES/wxDFast.mo
+share/locale/id/LC_MESSAGES/wxDFast.mo
+share/locale/nl/LC_MESSAGES/wxDFast.mo
 share/locale/pl/LC_MESSAGES/wxDFast.mo
 share/locale/pt_BR/LC_MESSAGES/wxDFast.mo
 share/locale/ru/LC_MESSAGES/wxDFast.mo
+share/locale/tr/LC_MESSAGES/wxDFast.mo
 share/pixmaps/wxdfast.png
 %%DATADIR%%/RipStop/icon/dfast48x48.png
 %%DATADIR%%/RipStop/icon/wxdfast.ico
