@@ -73,12 +73,18 @@ share/gnome/applications/meld.desktop
 share/gnome/help/meld/C/figures/dirdiff.png
 share/gnome/help/meld/C/figures/filediff.png
 share/gnome/help/meld/C/meld.xml
+share/gnome/help/meld/es/figures/dirdiff.png
+share/gnome/help/meld/es/figures/filediff.png
+share/gnome/help/meld/es/meld.xml
 share/gnome/omf/meld/meld-C.omf
+share/gnome/omf/meld/meld-es.omf
 share/gnome/pixmaps/meld.png
+share/locale/ar/LC_MESSAGES/meld.mo
 share/locale/bg/LC_MESSAGES/meld.mo
 share/locale/ca/LC_MESSAGES/meld.mo
 share/locale/cs/LC_MESSAGES/meld.mo
 share/locale/de/LC_MESSAGES/meld.mo
+share/locale/dz/LC_MESSAGES/meld.mo
 share/locale/en_CA/LC_MESSAGES/meld.mo
 share/locale/en_GB/LC_MESSAGES/meld.mo
 share/locale/es/LC_MESSAGES/meld.mo
@@ -139,6 +145,8 @@ share/locale/zh_TW/LC_MESSAGES/meld.mo
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrm share/gnome/omf/meld
+@dirrm share/gnome/help/meld/es/figures
+@dirrm share/gnome/help/meld/es
 @dirrm share/gnome/help/meld/C/figures
 @dirrm share/gnome/help/meld/C
 @dirrm share/gnome/help/meld
