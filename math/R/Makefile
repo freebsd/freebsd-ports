@@ -61,10 +61,7 @@ CONFIGURE_ARGS=	--enable-R-shlib --with-system-bzlib --with-system-zlib \
 
 .include <bsd.port.pre.mk>
 
-WANT_FORTRAN=	yes
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 test check: build
 	@(cd ${WRKSRC}; ${MAKE} check)
