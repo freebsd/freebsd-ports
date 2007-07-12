@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ksudoku
-PORTVERSION=	0.3
-PORTREVISION=	2
+PORTVERSION=	0.4
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,12 +14,20 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	freebsd@chillt.de
 COMMENT=	A Sudoku generator and solver for KDE
 
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
+BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
+
+CMAKE_ARGS=	-DCMAKE_C_COMPILER:STRING="${CC}" \
+		-DCMAKE_CXX_COMPILER:STRING="${CXX}" \
+		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS} ${PTHREAD_CFLAGS}" \
+		-DCMAKE_EXE_LINKER_FLAGS:STRING="${PTHREAD_LIBS}" \
+		-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX}
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_GMAKE=	yes
+USE_GL=		yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
+do-configure:
+	@cd ${WRKSRC} && \
+		${LOCALBASE}/bin/cmake ${CMAKE_ARGS}
 
 .include <bsd.port.mk>

@@ -1,0 +1,18 @@
+--- src/CMakeLists.txt.orig	Sun Jun 24 02:43:59 2007
++++ src/CMakeLists.txt	Sun Jun 24 02:51:21 2007
+@@ -50,12 +50,9 @@
+ 
+ ########### install files ###############
+ 
+-FIND_PROGRAM(KDE3_KDECONFIG_EXECUTABLE NAMES kde-config )
+-
+-EXEC_PROGRAM(${KDE3_KDECONFIG_EXECUTABLE} ARGS --expandvars --install 
+-xdgdata-apps OUTPUT_VARIABLE KDE3_XDG_APPS_DIR )
+-EXEC_PROGRAM(${KDE3_KDECONFIG_EXECUTABLE} ARGS --expandvars --install data OUTPUT_VARIABLE KDE3_DATA_INSTALL_DIR )
+-EXEC_PROGRAM(${KDE3_KDECONFIG_EXECUTABLE} ARGS --expandvars --install config OUTPUT_VARIABLE KDE3_CONFIG_INSTALL_DIR )
++set(KDE3_XDG_APPS_DIR ${CMAKE_INSTALL_PREFIX}/share/applications/kde)
++set(KDE3_DATA_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/share/apps)
++set(KDE3_CONFIG_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/share/config)
+ 
+ install( FILES gui/ksudoku.desktop  DESTINATION  ${KDE3_XDG_APPS_DIR})
+ install( FILES gui/ksudokuui.rc  DESTINATION  ${KDE3_DATA_INSTALL_DIR}/ksudoku )
