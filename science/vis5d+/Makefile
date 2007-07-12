@@ -22,12 +22,7 @@ LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
-
+USE_FORTRAN=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk12
