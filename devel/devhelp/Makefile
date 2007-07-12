@@ -7,6 +7,7 @@
 
 PORTNAME=	devhelp
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES?=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C,^([[:digit:]]+\.[[:digit:]]+).*,\1,}
@@ -34,7 +35,7 @@ USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui
+USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui libwnck
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
