@@ -1,0 +1,95 @@
+%%DATADIR%%/COPYING
+%%DATADIR%%/Makefile
+%%DATADIR%%/README
+%%DATADIR%%/conf/amd64/FREESBIE
+%%DATADIR%%/conf/freesbie.defaults.conf
+%%DATADIR%%/conf/i386/FREESBIE
+%%DATADIR%%/conf/make.conf
+%%DATADIR%%/conf/make.conf.minimal
+%%DATADIR%%/conf/powerpc/FREESBIE
+%%DATADIR%%/conf/rc.d/unionfs
+%%DATADIR%%/conf/rc.d/uzip
+%%DATADIR%%/extra/README
+%%DATADIR%%/extra/adduser.sh
+%%DATADIR%%/extra/adduser/homemfs.rc
+%%DATADIR%%/extra/autologin.sh
+%%DATADIR%%/extra/backup.sh
+%%DATADIR%%/extra/backup/restorebackup.rc
+%%DATADIR%%/extra/backup/restorebackup.sh
+%%DATADIR%%/extra/backup/savebackup.sh
+%%DATADIR%%/extra/buildmodules.sh
+%%DATADIR%%/extra/comconsole.sh
+%%DATADIR%%/extra/customroot.sh
+%%DATADIR%%/extra/customroot/README
+%%DATADIR%%/extra/customscripts.sh
+%%DATADIR%%/extra/customscripts/README
+%%DATADIR%%/extra/etcmfs.sh
+%%DATADIR%%/extra/etcmfs/etcmfs.rc
+%%DATADIR%%/extra/installports.sh
+%%DATADIR%%/extra/l10n.sh
+%%DATADIR%%/extra/l10n/l10n.rc
+%%DATADIR%%/extra/mountdisks.sh
+%%DATADIR%%/extra/mountdisks/mountdisks.sh
+%%DATADIR%%/extra/mountdisks/mountdisksrc.sh
+%%DATADIR%%/extra/pf.sh
+%%DATADIR%%/extra/pf/pf_rules.sh
+%%DATADIR%%/extra/rootmfs.sh
+%%DATADIR%%/extra/rootmfs/rootmfs.rc
+%%DATADIR%%/extra/sound.sh
+%%DATADIR%%/extra/sound/snd_card_ids.txt
+%%DATADIR%%/extra/sound/sound_detect.sh
+%%DATADIR%%/extra/suid.sh
+%%DATADIR%%/extra/swapfind.sh
+%%DATADIR%%/extra/swapfind/swapfind.sh
+%%DATADIR%%/extra/varmfs.sh
+%%DATADIR%%/extra/varmfs/varmfs.rc
+%%DATADIR%%/extra/xautostart.sh
+%%DATADIR%%/extra/xautostart/xautostart.rc
+%%DATADIR%%/extra/xconfig-probe.sh
+%%DATADIR%%/extra/xconfig-probe/xconfig-probe.sh
+%%DATADIR%%/extra/xconfig-probe/xkbdlayout.sh
+%%DATADIR%%/extra/xconfig-probe/xorg.conf.orig
+%%DATADIR%%/extra/xconfig.sh
+%%DATADIR%%/extra/xconfig/xconfig.sh
+%%DATADIR%%/extra/xconfig/xkbdlayout.sh
+%%DATADIR%%/extra/xconfig/xorg.conf.orig
+%%DATADIR%%/scripts/buildkernel.sh
+%%DATADIR%%/scripts/buildworld.sh
+%%DATADIR%%/scripts/cleandir.sh
+%%DATADIR%%/scripts/clonefs.sh
+%%DATADIR%%/scripts/custom/README
+%%DATADIR%%/scripts/extra.sh
+%%DATADIR%%/scripts/flash.sh
+%%DATADIR%%/scripts/img.sh
+%%DATADIR%%/scripts/installkernel.sh
+%%DATADIR%%/scripts/installworld.sh
+%%DATADIR%%/scripts/iso.sh
+%%DATADIR%%/scripts/launch.sh
+%%DATADIR%%/scripts/pkginstall.sh
+%%DATADIR%%/scripts/pkgselect.sh
+%%DATADIR%%/scripts/powerpc/iso.sh
+@dirrm %%DATADIR%%/scripts/powerpc
+@dirrm %%DATADIR%%/scripts/custom
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/extra/xconfig-probe
+@dirrm %%DATADIR%%/extra/xconfig
+@dirrm %%DATADIR%%/extra/xautostart
+@dirrm %%DATADIR%%/extra/varmfs
+@dirrm %%DATADIR%%/extra/swapfind
+@dirrm %%DATADIR%%/extra/sound
+@dirrm %%DATADIR%%/extra/rootmfs
+@dirrm %%DATADIR%%/extra/pf
+@dirrm %%DATADIR%%/extra/mountdisks
+@dirrm %%DATADIR%%/extra/l10n
+@dirrm %%DATADIR%%/extra/etcmfs
+@dirrm %%DATADIR%%/extra/customscripts
+@dirrm %%DATADIR%%/extra/customroot
+@dirrm %%DATADIR%%/extra/backup
+@dirrm %%DATADIR%%/extra/adduser
+@dirrm %%DATADIR%%/extra
+@dirrm %%DATADIR%%/conf/rc.d
+@dirrm %%DATADIR%%/conf/powerpc
+@dirrm %%DATADIR%%/conf/i386
+@dirrm %%DATADIR%%/conf/amd64
+@dirrm %%DATADIR%%/conf
+@dirrm %%DATADIR%%
