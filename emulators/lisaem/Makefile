@@ -18,7 +18,6 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 
 USE_BZIP2=	yes
 USE_WX=		2.8
-ALL_TARGET=	build
 
 post-patch:
 		${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" \
