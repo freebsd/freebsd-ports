@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Authentication
-PORTVERSION=	0.09
+PORTVERSION=	0.10000
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -24,9 +24,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Plugin::Authentication.3 \
 	Catalyst::Plugin::Authentication::Credential::Password.3 \
+	Catalyst::Plugin::Authentication::Internals.3 \
 	Catalyst::Plugin::Authentication::Store.3 \
 	Catalyst::Plugin::Authentication::Store::Minimal.3 \
-	Catalyst::Plugin::Authentication::Store::Minimal::Backend.3 \
+	Catalyst::Plugin::Authentication::Store::Old-Minimal.3 \
 	Catalyst::Plugin::Authentication::User.3 \
 	Catalyst::Plugin::Authentication::User::Hash.3
 

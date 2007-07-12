@@ -1,7 +1,8 @@
+%%SITE_PERL%%/Catalyst/Plugin/Authentication/Internals.pod
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store.pod
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Credential/Password.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Minimal.pm
-%%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Minimal/Backend.pm
+%%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Old-Minimal.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/User/Hash.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/User.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication.pm
