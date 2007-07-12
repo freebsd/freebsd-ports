@@ -27,16 +27,13 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	netcdf-*
 
-WANT_FORTRAN=   yes
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=             gfortran42
-F77=            gfortran42
+USE_FORTRAN=   yes
 
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=--with-jpeg="${LOCALBASE}" \
 		--with-szlib="${LOCALBASE}"
 #wiredness of F77, FC in hdf/src/Makefile
-CONFIGURE_ENV+=	F77="f77" FC="f77" FFLAGS="${FFLAGS}"
+CONFIGURE_ENV+=	F77="f77" FC="f77"
 MAKE_ENV+=	PATH="${WRKSRC}/bin:${PATH}"
 DOCFILES=	HDF41r5_SpecDG.pdf \
 		HDF42r0_RefMan.pdf \

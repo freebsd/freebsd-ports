@@ -20,11 +20,7 @@ NO_WRKSUBDIR=	yes
 ALL_TARGET=	drawcgm gtex gplot
 MAN1=		gplot.1
 DOCS=		gplot.hlp gplot.txt gtex.doc
-WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+=	 gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-MAKE_ENV+=	FC="${FC}" F77="${F77}"
+USE_FORTRAN=	yes
 
 .include <bsd.port.pre.mk>
 
