@@ -29,10 +29,7 @@ USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
 
-WANT_FORTRAN=   yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=             gfortran42
-F77=            gfortran42
+USE_FORTRAN=   yes
 
 .if ${ARCH} == "amd64" || ${ARCH} == "alpha" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
 MAKE_FLAGS+=	BINARY64=1
