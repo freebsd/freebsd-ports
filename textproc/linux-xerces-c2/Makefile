@@ -10,7 +10,7 @@ PORTVERSION=	2.7.0
 CATEGORIES=	textproc linux
 MASTER_SITES=	http://ftp.belnet.be/packages/dries.ulyssis.org/fedora/fc4/i386/RPMS.dries/ \
 		ftp://ftp.freshrpms.net/pub/dag/dries/fedora/fc4/i386/RPMS.dries/ \
-		ftp://ftp.icm.edu.pl/vol/rzm4/linux-dag/dries/fedora/fc4/i386/RPMS.dries/
+		http://mirrors.ircam.fr/pub/dag/dries/packages/xerces-c/fc4-i386/
 PKGNAMESUFFIX=	-c2
 DISTNAME=	${PORTNAME}-c-${PORTVERSION}-1.2.fc4.rf
 
