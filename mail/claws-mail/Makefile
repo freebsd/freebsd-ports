@@ -7,6 +7,7 @@
 
 PORTNAME=	claws-mail
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -63,6 +64,7 @@ OPTIONS=	ALL		"Enable all options."			off \
 		LDAP		"Enable LDAP support."			off \
 		SA_PLUG		"Enable SpamAssassin support."		off \
 		SSL		"Enable OpenSSL support."		on \
+		STARTUP		"Enable startup notification support."	on \
 		THEMES		"Install additional themes."		on
 
 .include <bsd.port.pre.mk>
@@ -164,6 +166,13 @@ CONFIGURE_ARGS+=	--disable-dillo-viewer-plugin
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+.if !defined(WITHOUT_STARTUP) || defined(WITH_ALL)
+LIB_DEPENDS+=		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+CONFIGURE_ARGS+=	--enable-startup-notification
+.else
+CONFIGURE_ARGS+=	--disable-startup-notification
 .endif
 
 post-extract:
