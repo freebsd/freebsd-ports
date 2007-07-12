@@ -17266,6 +17266,7 @@ yakuake		ports/x11/yakuake
 yale-tftpd	ports/ftp/yale-tftpd
 yalias		ports/x11/yalias
 yamcha		ports/textproc/yamcha
+yamdi		ports/multimedia/yamdi
 yammi		ports/audio/yammi
 yamsweeper	ports/games/yamsweeper
 yamt		ports/audio/yamt
