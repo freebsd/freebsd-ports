@@ -1,12 +1,12 @@
 bin/ksudoku
-bin/ksudoku_client
-share/applnk/Games/ksudoku.desktop
+share/applications/kde/ksudoku.desktop
+share/apps/ksudoku/4x4.xml
+share/apps/ksudoku/Jigsaw.xml
+share/apps/ksudoku/Samurai.xml
+share/apps/ksudoku/XSudoku.xml
 share/apps/ksudoku/ksudokuui.rc
-share/doc/HTML/en/ksudoku/common
-share/doc/HTML/en/ksudoku/index.cache.bz2
-share/doc/HTML/en/ksudoku/index.docbook
+share/config/ksudokurc
 share/icons/hicolor/128x128/apps/ksudoku.png
 share/icons/hicolor/16x16/apps/ksudoku.png
 share/icons/hicolor/32x32/apps/ksudoku.png
-@dirrm share/doc/HTML/en/ksudoku
 @dirrm share/apps/ksudoku
