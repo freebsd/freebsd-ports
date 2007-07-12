@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Integrated Java environment designed for introductory teaching
 
 IS_INTERACTIVE=	yes

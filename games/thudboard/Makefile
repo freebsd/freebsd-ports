@@ -10,7 +10,7 @@ PORTVERSION=	1.8
 CATEGORIES=	games
 MASTER_SITES=	http://www.million.nl/file/
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	The Discworld Boardgame Board
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}__linux
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A reindenter and reformatter of C, C++, C\# and Java source code
 
 ALL_TARGET=	astyle
