@@ -1,9 +1,9 @@
---- scripts/Makefile.in.orig	Wed May  2 16:43:17 2007
-+++ scripts/Makefile.in	Thu May 17 11:11:40 2007
-@@ -355,24 +355,7 @@
- yassl_libs = @yassl_libs@
- yassl_taocrypt_extra_cxxflags = @yassl_taocrypt_extra_cxxflags@
- zlib_dir = @zlib_dir@
+--- scripts/Makefile.in.orig	Wed Jul  4 15:10:00 2007
++++ scripts/Makefile.in	Thu Jul 12 08:27:29 2007
+@@ -377,24 +377,7 @@
+ BUILT_SOURCES = mysql_fix_privilege_tables.sql \
+ 		mysql_fix_privilege_tables_sql.c
+ 
 -bin_SCRIPTS = @server_scripts@ \
 -			msql2mysql \
 -			mysql_config \
@@ -26,9 +26,9 @@
  
  noinst_SCRIPTS = make_binary_distribution \
  			make_sharedlib_distribution \
-@@ -407,11 +390,7 @@
- 			make_win_bin_dist \
- 			mysql_system_tables_fix.sql
+@@ -431,11 +414,7 @@
+ 			mysql_system_tables_fix.sql \
+ 			CMakeLists.txt
  
 -dist_pkgdata_DATA = fill_help_tables.sql \
 -			mysql_fix_privilege_tables.sql \
