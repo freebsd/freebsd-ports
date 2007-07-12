@@ -9141,6 +9141,7 @@ p5-Crypt-CBC	ports/security/p5-Crypt-CBC
 p5-Crypt-CBCeasy	ports/security/p5-Crypt-CBCeasy
 p5-Crypt-CFB	ports/security/p5-Crypt-CFB
 p5-Crypt-Caesar	ports/security/p5-Crypt-Caesar
+p5-Crypt-Camellia_PP	ports/security/p5-Crypt-Camellia_PP
 p5-Crypt-Chimera	ports/security/p5-Crypt-Chimera
 p5-Crypt-CipherSaber	ports/security/p5-Crypt-CipherSaber
 p5-Crypt-Cracklib	ports/security/p5-Crypt-Cracklib
