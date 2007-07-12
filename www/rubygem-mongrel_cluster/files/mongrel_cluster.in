@@ -20,16 +20,25 @@ name=mongrel_cluster
 rcvar=${name}_enable
 
 command="%%PREFIX%%/bin/mongrel_cluster_ctl"
-required_dirs="%%PREFIX%%/etc/${name}"
 
 load_rc_config $name
 
 : ${mongrel_cluster_enable="NO"}
-: ${mongrel_cluster_conf_dir="%%PREFIX%%/etc/mongrel_cluster"}
+: ${mongrel_cluster_conf_dir="%%ETCDIR%%"}
 
 command_args="-c ${mongrel_cluster_conf_dir}"
-start_cmd="${command} start ${command_args}"
-stop_cmd="${command} stop ${command_args}"
-restart_cmd="${command} restart ${command_args}"
+start_cmd="mongrel_cmd start"
+stop_cmd="mongrel_cmd stop"
+restart_cmd="mongrel_cmd restart"
+status_cmd="mongrel_cmd status"
 
+mongrel_cmd()
+{
+    if [ ! -d "${mongrel_cluster_conf_dir}/." ]; then
+	warn "${mongrel_cluster_conf_dir} is not a directory."
+	return 1
+    fi
+    ${command} $1 ${mongrel_cluster_flags} ${command_args} 2>&1 | grep -v "procfs"
+}
+			    
 run_rc_command "$1"
