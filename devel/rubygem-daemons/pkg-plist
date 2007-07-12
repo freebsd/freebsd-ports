@@ -33,9 +33,11 @@
 %%GEM_LIB_DIR%%/examples/run/ctrl_ontop.rb
 %%GEM_LIB_DIR%%/examples/run/ctrl_optionparser.rb
 %%GEM_LIB_DIR%%/examples/run/ctrl_proc.rb
+%%GEM_LIB_DIR%%/examples/run/ctrl_proc.rb.output
 %%GEM_LIB_DIR%%/examples/run/ctrl_proc_simple.rb
 %%GEM_LIB_DIR%%/examples/run/myserver.rb
 %%GEM_LIB_DIR%%/examples/run/myserver_crashing.rb
+%%GEM_LIB_DIR%%/examples/run/myserver_crashing.rb.output
 %%GEM_LIB_DIR%%/examples/run/myserver_exiting.rb
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
 %%GEM_DOC_DIR%%/rdoc/files/lib/daemons/application_rb.html
