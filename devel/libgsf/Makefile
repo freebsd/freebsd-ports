@@ -33,7 +33,7 @@ CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(GSF_SLAVE)
-GCONF_SCHEMAS=	gsf-office-thumbnailer.schemas
+#GCONF_SCHEMAS=	gsf-office-thumbnailer.schemas
 MAN1=		gsf.1 gsf-office-thumbnailer.1
 .endif
 
