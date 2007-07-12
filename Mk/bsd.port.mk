@@ -1769,7 +1769,7 @@ BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
 CONFIGURE_ENV+=	MAKE=${GMAKE}
 .endif
 
-.if defined(USE_GCC)
+.if defined(USE_GCC) || defined(USE_FORTRAN)
 .include "${PORTSDIR}/Mk/bsd.gcc.mk"
 .endif
 
