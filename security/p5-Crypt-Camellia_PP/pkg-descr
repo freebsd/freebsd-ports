@@ -1,0 +1,8 @@
+Crypt::Camellia_PP is a pure perl implementation of Camellia, a 128-bit
+symmetrical block cipher with 128-bit, 192-bit, and 256-bit key from
+NTT and Mitsubishi Electric Corporation.  It is one of the approved
+encryption methods to be used by European Union as well as specified
+in several Internet RFCs.
+
+See also: http://info.isl.ntt.co.jp/crypt/eng/camellia/index.html
+WWW: http://search.cpan.org/dist/Crypt-Camellia_PP/
