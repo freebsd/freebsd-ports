@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdaemon
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -16,6 +16,6 @@ COMMENT=	Lightweight C library that eases the writing of UNIX daemons
 CONFIGURE_ARGS=	--disable-lynx
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget ltverhack
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
