@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	freesbie
-PORTVERSION=	2.0.20060202
+PORTVERSION=	2.0.20070710
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rrr.de/~riggs/freesbie/
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/%SUBDIR%/delphij/}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/2.0.//}
 
 MAINTAINER=	riggs@rrr.de
@@ -27,13 +28,8 @@ IGNORE=		earlier FreeBSD versions then 5.4-RELEASE are not supported
 .endif
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@ cd ${WRKSRC} && ${FIND} . -type f -print | \
-		${CPIO} --quiet -pdum -R ${BINOWN}:${BINGRP} ${DATADIR}
-	@ cd ${DATADIR} && ${FIND} . -type d -print | ${XARGS} ${CHMOD} 0755
-	@ cd ${PREFIX} && ${FIND} share/${PORTNAME} -type f -print | \
-		${SORT} -r > ${TMPPLIST}
-	@ cd ${PREFIX} && ${FIND} share/${PORTNAME} -type d -print | \
-		${SORT} -r | ${SED} -e 's#^#@dirrm #' >> ${TMPPLIST}
+	@ ${MKDIR} ${DATADIR}
+	@ cd ${WRKSRC} && ${FIND} . -type f -print | tar -cf - -T - | \
+	tar -xf - -C ${DATADIR}
 
 .include <bsd.port.post.mk>
