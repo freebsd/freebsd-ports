@@ -17,12 +17,7 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A library of Fortran 77 subroutines for linear algebra
 
 LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas
-WANT_FORTRAN=	yes
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
-MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+USE_FORTRAN=	yes
 
 DIST_SUBDIR=	lapack
 
