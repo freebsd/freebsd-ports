@@ -1413,6 +1413,7 @@ MASTER_SITE_XORG+= \
 	ftp://ftp.mirrorservice.org/sites/ftp.x.org/pub/%SUBDIR%/ \
 	ftp://sunsite.uio.no/pub/X11/%SUBDIR%/ \
 	http://xorg.freedesktop.org/%SUBDIR%/ \
+	http://xorg.freedesktop.org/releases/%SUBDIR%/ \
 	ftp://ftp.x.org/pub/%SUBDIR%/
 .endif
 
