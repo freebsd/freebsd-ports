@@ -246,5 +246,6 @@
     SUBDIR += xvid
     SUBDIR += xvid4conf
     SUBDIR += y4mscaler
+    SUBDIR += yamdi
 
 .include <bsd.port.subdir.mk>
