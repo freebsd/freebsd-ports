@@ -24,11 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+USE_FORTRAN=	yes
 MAKE_ARGS+=	X11BASE="${X11BASE}"
 
 post-install:
