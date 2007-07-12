@@ -36,6 +36,9 @@ MAKE_ENV=	PREFIX=${LOCALBASE} USE_GTK=0
 .if ${OSVERSION} < 501107
 IGNORE=		requires newer kernel sources
 .endif
+.if ${OSVERSION} > 700045
+IGNORE=		is not supported on FreeBSD 7.X and later
+.endif
 
 post-patch:
 # Abovementioned header was removed.  Patch for it.
