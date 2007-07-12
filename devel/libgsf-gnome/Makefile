@@ -14,6 +14,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME wrapper for libgsf
 
 MASTERDIR=	${.CURDIR}/../libgsf
+BUILD_WRKSRC=	${WRKSRC}/gsf-gnome
+INSTALL_WRKSRC=	${WRKSRC}/gsf-gnome
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
@@ -25,12 +27,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GSF_SLAVE=	yes
 
-do-build:
-	@cd ${WRKSRC}/gsf-gnome && ${MAKE}
-
-do-install:
-	cd ${WRKSRC}/gsf-gnome && ${MAKE} ${INSTALL_TARGET}
-	${MKDIR} ${PREFIX}/libdata/pkgconfig
-	${INSTALL_DATA} ${WRKSRC}/libgsf-gnome-1.pc ${PREFIX}/libdata/pkgconfig
+post-install:
+	@${MKDIR} ${PREFIX}/libdata/pkgconfig
+	@${INSTALL_DATA} ${WRKSRC}/libgsf-gnome-1.pc \
+		${PREFIX}/libdata/pkgconfig/
 
 .include "${MASTERDIR}/Makefile"
