@@ -9232,19 +9232,6 @@
  # Source file extension for RC test sources.
  ac_ext=rc
  
-@@ -19581,10 +18881,10 @@ fi
- 
- 
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS=" /usr/home/marcus/src/ports/libgsf/work/gnome-ltmain.sh"
-+LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
- 
- # Always use our own libtool.
--LIBTOOL='$(SHELL) /usr/home/marcus/src/ports/libgsf/work/gnome-libtool'
-+LIBTOOL='$(SHELL) $(top_builddir)/libtool'
- 
- # Prevent multiple expansion
- 
 @@ -19608,57 +18908,57 @@ LIBTOOL='$(SHELL) /usr/home/marcus/src/p
  
  
