@@ -35,10 +35,8 @@ SAMPLES=	README clean.make *.1st *.boat *.cell *.chair *.dat *.dyn0	\
 BENCHES=	README *.dyn0 *.log *.key *.run *.xyz results*
 
 .include <bsd.port.pre.mk>
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=	gfortran42
-F77=	gfortran42
-MAKE_ENV+=	FC="${FC}" F77="${F77}"
+
+USE_FORTRAN=	yes
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
