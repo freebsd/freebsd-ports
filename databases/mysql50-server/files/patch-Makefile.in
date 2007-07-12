@@ -5,12 +5,12 @@
  			README COPYING EXCEPTIONS-CLIENT
  
 -SUBDIRS = . include @docs_dirs@ @zlib_dir@ @yassl_dir@ \
--			@readline_topdir@ sql-common \
+-			@readline_topdir@ sql-common scripts \
 -			@thread_dirs@ pstack \
--			@sql_union_dirs@ scripts @man_dirs@ tests \
+-			@sql_union_dirs@ @man_dirs@ tests \
 -			netware @libmysqld_dirs@ \
 -			@bench_dirs@ support-files @tools_dirs@
 +SUBDIRS =
  
  DIST_SUBDIRS = . include @docs_dirs@ zlib \
- 			@readline_topdir@ sql-common \
+ 			@readline_topdir@ sql-common scripts \
