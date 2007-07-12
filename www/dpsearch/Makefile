@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dpsearch
-PORTVERSION=	4.46
+PORTVERSION=	4.47
 CATEGORIES=	www
 MASTER_SITES=	http://www.dataparksearch.org/ \
 		http://dataparksearch.newsa.ru/
@@ -133,6 +133,7 @@ CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 pre-install:
 	@${MKDIR} ${DATADIR}
