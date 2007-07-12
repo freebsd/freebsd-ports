@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Crypt/Camellia_PP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Camellia_PP/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Camellia_PP/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
+@dirrmtry %%SITE_PERL%%/Crypt
