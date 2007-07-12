@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	azureus
-PORTVERSION=	3.0.1.4
+PORTVERSION=	3.0.1.6
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
 DISTNAME=	Azureus_${PORTVERSION}_source
@@ -52,6 +52,7 @@ SUB_LIST=	LIBDIR="${LOCALBASE}/lib" JARFILE="${JARFILE}" \
 SWT=		swt-devel
 .else
 SWT=		swt
+BROKEN=		swt-devel is currently required
 .endif
 
 CLASSPATH=.
