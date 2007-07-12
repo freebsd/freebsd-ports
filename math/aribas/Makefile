@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.mathematik.uni-muenchen.de/pub/forster/aribas/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Interpreter for big integer/multi-precision floating point arithmetic
 
 BUILD_WRKSRC=	${WRKSRC}/src

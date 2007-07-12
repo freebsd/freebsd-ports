@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/swiggle/files/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Swiggle is a commandline web image gallery generator
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ho1
 DISTNAME=	HO_${PORTVERSION:S/.//g}
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A management tool for Hattrick.org written in Java
 
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}

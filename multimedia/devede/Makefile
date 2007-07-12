@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.rastersoft.com/descargas/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Create video DVDs, VCDs, sVCDs or CVDs from any number of video files
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \

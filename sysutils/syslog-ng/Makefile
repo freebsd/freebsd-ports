@@ -10,7 +10,7 @@ PORTVERSION=	1.6.12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/1.6/src/
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man

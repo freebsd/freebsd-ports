@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A Run box for Blackbox
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/bbrun

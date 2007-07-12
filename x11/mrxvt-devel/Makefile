@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	materm
 DISTNAME=	mrxvt-${PORTVERSION}
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Development version of mrxvt
 
 CONFLICTS=	mrxvt-0.4.*

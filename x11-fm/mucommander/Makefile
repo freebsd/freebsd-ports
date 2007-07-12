@@ -11,7 +11,7 @@ CATEGORIES=	x11-fm java
 MASTER_SITES=	http://www.mucommander.com/download/
 DISTNAME=	${PORTNAME}-0_8_beta3
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Lightweight file manager featuring a Norton Commander style interface
 
 USE_JAVA=	yes

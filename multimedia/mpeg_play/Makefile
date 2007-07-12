@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/ \
 		ftp://mm-ftp.cs.berkeley.edu/pub/multimedia/mpeg/play/
 EXTRACT_SUFX=	-patched-src.tar.gz
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A program to play mpeg movies on X displays
 
 WRKSRC=		${WRKDIR}/mpeg_play
