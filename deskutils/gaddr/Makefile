@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A GTK (and optionally, GNOME) address book
 
 PLIST_FILES=	bin/gaddr

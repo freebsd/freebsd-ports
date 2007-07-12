@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Displays audio volume with an OSD
 
 BUILD_DEPENDS=	xosd-config:${PORTSDIR}/misc/xosd

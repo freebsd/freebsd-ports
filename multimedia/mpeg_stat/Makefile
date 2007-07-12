@@ -12,7 +12,7 @@ MASTER_SITES=	http://bmrc.berkeley.edu/ftp/pub/multimedia/mpeg/stat/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/
 DISTNAME=	${PKGNAME}-src
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	An MPEG-I statistics gatherer
 
 MAN1=		mpeg_stat.1

@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Displays battery life and CPU frequency with an OSD
 
 BUILD_DEPENDS=	xosd-config:${PORTSDIR}/misc/xosd

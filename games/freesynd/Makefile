@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freesynd
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	FreeSynd GPLed reimplementation of the classic Bullfrog game Syndicate
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

@@ -12,7 +12,7 @@ MASTER_SITES=	http://ccca.nctu.edu.tw/~gslin/Software/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Minimal secure webserver. Fast and efficient, no cgi-bin support
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.02-4

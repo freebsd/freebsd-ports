@@ -16,7 +16,7 @@ MASTER_SITES=	http://mirror.arcticnetwork.ca/pub/gentoo/distfiles/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Aircrack is a set of tools for auditing wireless networks
 
 ALL_TARGET=	aircrack airdecap arpforge mergeivs pcap2ivs

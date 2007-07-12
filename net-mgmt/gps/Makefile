@@ -13,7 +13,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-FRC
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Ghost Port Scan
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10

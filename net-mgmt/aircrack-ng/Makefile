@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://download.aircrack-ng.org/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	lars.engels@0x20.net
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Aircrack-ng is the next generation of aircrack with new features
 
 ALL_TARGET=	aircrack-ng airdecap-ng packetforge-ng ivstools kstats makeivs \
