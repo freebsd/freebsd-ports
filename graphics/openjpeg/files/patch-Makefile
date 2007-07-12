@@ -19,18 +19,3 @@
  LIBRARIES = -lstdc++
  
  MODULES = $(SRCS:.c=.o)
-@@ -58,11 +55,11 @@
- 
- install: OpenJPEG
- 	install -d '$(DESTDIR)$(INSTALL_LIBDIR)' '$(DESTDIR)$(INSTALL_INCLUDE)'
--	install -m 644 -o root -g root $(STATICLIB) '$(DESTDIR)$(INSTALL_LIBDIR)'
-+	install -m 644 -o 0 -g 0 $(STATICLIB) '$(DESTDIR)$(INSTALL_LIBDIR)'
- 	ranlib '$(DESTDIR)$(INSTALL_LIBDIR)/$(STATICLIB)'
--	install -m 755 -o root -g root $(SHAREDLIB) '$(DESTDIR)$(INSTALL_LIBDIR)'
-+	install -m 755 -o 0 -g 0 $(SHAREDLIB) '$(DESTDIR)$(INSTALL_LIBDIR)'
- 	ln -sf $(SHAREDLIB) '$(DESTDIR)$(INSTALL_LIBDIR)/$(LIBNAME)'
--	install -m 644 -o root -g root libopenjpeg/openjpeg.h '$(DESTDIR)$(INSTALL_INCLUDE)'
-+	install -m 644 -o 0 -g 0 libopenjpeg/openjpeg.h '$(DESTDIR)$(INSTALL_INCLUDE)'
- 	-ldconfig
- 
- clean:
