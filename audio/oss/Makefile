@@ -7,7 +7,7 @@
 
 PORTNAME=	oss
 DISTVERSION=	4.0-build1003
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio kld
 MASTER_SITES=	http://developer.opensound.com/sources/stable/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-gpl
@@ -25,6 +25,7 @@ USE_RC_SUBR=	oss
 WRKSRC=		${WRKDIR}/build
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 SUB_FILES=	pkg-install pkg-message
+ONLY_FOR_ARCHS=	amd64 i386
 
 MAN1=		ossinfo.1 ossmix.1 ossplay.1 ossrecord.1 osstest.1 ossxmix.1
 MAN8=		ossctl.8 ossdevlinks.8 savemixer.8 ossdetect.8
@@ -33,16 +34,28 @@ MAN8=		ossctl.8 ossdevlinks.8 savemixer.8 ossdetect.8
 IGNORE=		requires kernel source to be installed
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Does not compile on 5.x.
+.endif
+
+pre-patch:
+	${FIND} ${WRKDIR}/${DISTNAME} -type f -name '*.[hc]' -or -name '*.man' | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|"/usr/include/stdarg.h"|<machine/stdarg.h>|g' \
+		-e 's|/usr/|${PREFIX}/|g' \
+		-e 's|/etc/oss|${PREFIX}/etc/oss|g'
+	${REINPLACE_CMD} -e "s|<i386/include/intr_machdep.h>|<${ARCH}/include/intr_machdep.h>|g" \
+		${WRKDIR}/${DISTNAME}/setup/FreeBSD/oss/build/osscore.c
+	${REINPLACE_CMD} -e "s|mkdir|mkdir -p|" ${WRKDIR}/${DISTNAME}/setup/FreeBSD/build.sh
+
+post-patch:
+	${FIND} ${WRKDIR} -name soundon -or -name soundoff -or -name build.sh | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|%%PREFIX%%|${PREFIX}|g'
+
 do-configure:
 	${MKDIR} ${WRKSRC}
 	cd ${WRKSRC} && ${WRKDIR}/${DISTNAME}/configure
-	${FIND} ${WRKDIR}/${DISTNAME} -type f -name '*.[hc]' -or -name '*.man' | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|"/usr/include/stdarg.h"|<stdarg.h>|g' \
-		-e 's|/usr/|${PREFIX}/|g' \
-		-e 's|/etc/oss|${PREFIX}/etc/oss|g'
-	${REINPLACE_CMD} -e "s|mkdir|mkdir -p|" ${WRKSRC}/build.sh
-	${FIND} ${WRKDIR} -name soundon -or -name soundoff -or -name build.sh | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|%%PREFIX%%|${PREFIX}|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/bin/* ${PREFIX}/bin
@@ -69,11 +82,5 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/prototype/usr/man/man1/* ${PREFIX}/man/man1/
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000 || ${OSVERSION} > 700000
-BROKEN=		Does not compile on 5.x and 7.x
-.endif
 
 .include <bsd.port.post.mk>
