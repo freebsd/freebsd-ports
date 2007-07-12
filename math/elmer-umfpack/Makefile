@@ -16,12 +16,9 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	UMFPACK library used by ELMER FEM package
 
-WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=	gfortran42
-F77=	gfortran42
-CONFIGURE_ENV+=	FC=${FC} F77=${FC}
+USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	FC=${FC} F77=${FC}
 ALL_TARGET=
 
 # This should be looked up by autoconf

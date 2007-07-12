@@ -17,10 +17,7 @@ COMMENT=	MatC language library used by ELMER FEM package
 GNU_CONFIGURE=	yes
 ALL_TARGET=
 
-WANT_FORTRAN=yes	#dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=	gfortran42
-F77=	gfortran42
+USE_FORTRAN=	yes
 
 PLIST_SUB=	ARCH=${MACHINE_ARCH}
 
