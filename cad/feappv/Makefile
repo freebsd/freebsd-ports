@@ -26,10 +26,7 @@ EXTRACT_BEFORE_ARGS=	-L
 
 WRKSRC=		${WRKDIR}/ver20
 USE_XLIB=	yes
-WANT_FORTRAN=	yes	#dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 FFLAGS+=	-O2
 MAKEFILE=	makefile
 ALL_TARGET=	install
