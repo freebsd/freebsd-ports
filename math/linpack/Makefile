@@ -20,10 +20,7 @@ LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas
 
 .include <bsd.port.pre.mk>
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 USE_LDCONFIG=	yes
 DIST_SUBDIR=	${PORTNAME}
