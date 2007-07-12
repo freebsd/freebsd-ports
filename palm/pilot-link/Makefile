@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pilot-link
-PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTVERSION=	0.12.2
 PORTEPOCH=	1
 CATEGORIES=	palm comms
 MASTER_SITES=	http://www.mirrorservice.org/sites/master.us.finkmirrors.net/distfiles/ \
