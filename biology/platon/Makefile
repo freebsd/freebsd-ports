@@ -21,11 +21,7 @@ COMMENT=	Tool for viewing molecular/crystallographic structures
 RESTRICTED=	free for academic, US$ 5000 for commercial users
 
 USE_XLIB=	yes
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-MAKE_ENV+=	FC="${FC}"
+USE_FORTRAN=	yes
 
 # This port only has snapshot archive
 IGNOREFILES=	platon.tar.gz

@@ -18,10 +18,7 @@ COMMENT=	Plotting wavefunctions (molecular orbitals) in 3D
 
 .include <bsd.port.pre.mk>
 
-WANT_FORTRAN=	yes #dummy
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 pre-patch:
 	${MV} ${WRKSRC}/src/makefile ${WRKSRC}/src/Makefile
