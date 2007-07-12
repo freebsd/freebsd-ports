@@ -8,7 +8,7 @@
 
 PORTNAME=	libgsf
 PORTVERSION=	1.14.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -33,7 +33,7 @@ CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(GSF_SLAVE)
-#GCONF_SCHEMAS=	gsf-office-thumbnailer.schemas
+GCONF_SCHEMAS=	gsf-office-thumbnailer.schemas
 MAN1=		gsf.1 gsf-office-thumbnailer.1
 .endif
 
