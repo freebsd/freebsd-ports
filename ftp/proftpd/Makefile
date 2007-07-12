@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1rc3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -215,6 +215,7 @@ MODULES:=${MODULES}:mod_quotatab_sql
 USE_ICONV=	YES
 MODULES:=${MODULES}:mod_codeconv
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+CONFIGURE_ARGS+=	--disable-sendfile
 PROFTPD_LIBS+=	-liconv -L${LOCALBASE}/lib
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mod-codeconv
 .endif

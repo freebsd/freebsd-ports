@@ -1,6 +1,6 @@
 diff -urN ./modules/mod_codeconv.c .-iconv/modules/mod_codeconv.c
 --- ./modules/mod_codeconv.c    1970-01-01 09:00:00.000000000 +0900
-+++ .-iconv/modules/mod_codeconv.c      2004-09-25 21:44:05.000000000 +0900
++++ modules/mod_codeconv.c      2004-09-25 21:44:05.000000000 +0900
 @@ -0,0 +1,229 @@
 +/*
 + * ProFTPD: mod_codeconv -- local <-> remote charset conversion
@@ -233,7 +233,7 @@ diff -urN ./modules/mod_codeconv.c .-iconv/modules/mod_codeconv.c
 +};
 diff -urN ./modules/mod_df.c .-iconv/modules/mod_df.c
 --- ./modules/mod_df.c  1970-01-01 09:00:00.000000000 +0900
-+++ .-iconv/modules/mod_df.c    2004-09-25 21:43:57.000000000 +0900
++++ modules/mod_df.c    2004-09-25 21:43:57.000000000 +0900
 @@ -0,0 +1,127 @@
 +/*
 + * ProFTPD: mod_df -- &#1077;&#9567;&#1077;&#1075;&#1077;&#9571;&#1077;&#1087;&#9570;&#1111;&#1076;&#1085;&#9552;&#9566;&#9580;&#9568;&#9472;&#9568;&#9500;&#9580;&#1077;&#1090;&#1077;&#9557;&#1077;&#1093;&#1073;&#9565;&#1077;&#1099;
@@ -363,7 +363,7 @@ diff -urN ./modules/mod_df.c .-iconv/modules/mod_df.c
 +
 +};
 --- ./modules/mod_ls.c  Sat Dec 16 01:25:31 2006
-+++ .-iconv/modules/mod_ls.c    Tue Jan 23 15:43:20 2007
++++ modules/mod_ls.c    Tue Jan 23 15:43:20 2007
 @@ -244,12 +244,15 @@
    return res;
  }
@@ -396,7 +396,7 @@ diff -urN ./modules/mod_df.c .-iconv/modules/mod_df.c
      res = pr_data_xfer(listbuf, strlen(listbuf));
 diff -urN ./src/netio.c .-iconv/src/netio.c
 --- ./src/netio.c       2004-06-16 01:45:21.000000000 +0900
-+++ .-iconv/src/netio.c 2004-09-25 21:42:59.000000000 +0900
++++ src/netio.c 2004-09-25 21:42:59.000000000 +0900
 @@ -467,9 +467,12 @@
    return -1;
  }
@@ -423,4 +423,3 @@ diff -urN ./src/netio.c .-iconv/src/netio.c
 +
    return pr_netio_write(nstrm, buf, strlen(buf));
  }
-
