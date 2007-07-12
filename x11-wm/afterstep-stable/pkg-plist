@@ -34,6 +34,8 @@ include/libASGTK/asgtkgradient.h
 include/libASGTK/asgtkimagebrowser.h
 include/libASGTK/asgtkimagedir.h
 include/libASGTK/asgtkimageview.h
+include/libASGTK/asgtklistviews.h
+include/libASGTK/asgtklookedit.h
 include/libASGTK/asgtkxmleditor.h
 include/libASGTK/asgtkxmloptlist.h
 include/libAfterConf/afterconf.h
@@ -496,12 +498,16 @@ lib/libAfterStep.a
 %%DATADIR%%/desktop/icons/EditorUnicode
 %%DATADIR%%/desktop/icons/Eyecon.xpm
 %%DATADIR%%/desktop/icons/FileFolders.xpm
+%%DATADIR%%/desktop/icons/Folder-AfterStep
 %%DATADIR%%/desktop/icons/Folder-Brushes
+%%DATADIR%%/desktop/icons/Folder-Calculator2
 %%DATADIR%%/desktop/icons/Folder-Cardgames
+%%DATADIR%%/desktop/icons/Folder-Chat
 %%DATADIR%%/desktop/icons/Folder-ChessBishop
 %%DATADIR%%/desktop/icons/Folder-ChessKnight
 %%DATADIR%%/desktop/icons/Folder-Desktop2
 %%DATADIR%%/desktop/icons/Folder-Dice
+%%DATADIR%%/desktop/icons/Folder-Filecabinet
 %%DATADIR%%/desktop/icons/Folder-GNOME2
 %%DATADIR%%/desktop/icons/Folder-GameController
 %%DATADIR%%/desktop/icons/Folder-Gear2
@@ -510,6 +516,7 @@ lib/libAfterStep.a
 %%DATADIR%%/desktop/icons/Folder-HammerBrown
 %%DATADIR%%/desktop/icons/Folder-Headphones
 %%DATADIR%%/desktop/icons/Folder-Info
+%%DATADIR%%/desktop/icons/Folder-JFK
 %%DATADIR%%/desktop/icons/Folder-KDE
 %%DATADIR%%/desktop/icons/Folder-Knight
 %%DATADIR%%/desktop/icons/Folder-Library
@@ -520,8 +527,10 @@ lib/libAfterStep.a
 %%DATADIR%%/desktop/icons/Folder-MoonInMonitor
 %%DATADIR%%/desktop/icons/Folder-Mouse
 %%DATADIR%%/desktop/icons/Folder-MovieProjector
+%%DATADIR%%/desktop/icons/Folder-MusicalNote
 %%DATADIR%%/desktop/icons/Folder-PadlockClosed
 %%DATADIR%%/desktop/icons/Folder-PadlockOpen
+%%DATADIR%%/desktop/icons/Folder-Pager
 %%DATADIR%%/desktop/icons/Folder-Pallette
 %%DATADIR%%/desktop/icons/Folder-Pen1
 %%DATADIR%%/desktop/icons/Folder-PencilCup
@@ -531,13 +540,17 @@ lib/libAfterStep.a
 %%DATADIR%%/desktop/icons/Folder-PlayerStop
 %%DATADIR%%/desktop/icons/Folder-Puzzle
 %%DATADIR%%/desktop/icons/Folder-RaceCar
+%%DATADIR%%/desktop/icons/Folder-Scanner
 %%DATADIR%%/desktop/icons/Folder-Screwdriver
 %%DATADIR%%/desktop/icons/Folder-SoccerBall
 %%DATADIR%%/desktop/icons/Folder-Stopsign
+%%DATADIR%%/desktop/icons/Folder-TV
 %%DATADIR%%/desktop/icons/Folder-TeddyBear
 %%DATADIR%%/desktop/icons/Folder-TetrisBlocks
 %%DATADIR%%/desktop/icons/Folder-Touch
 %%DATADIR%%/desktop/icons/Folder-View
+%%DATADIR%%/desktop/icons/Folder-Wharf
+%%DATADIR%%/desktop/icons/Folder-WinList
 %%DATADIR%%/desktop/icons/Folder-Windows
 %%DATADIR%%/desktop/icons/Folder-XWindow3
 %%DATADIR%%/desktop/icons/Folder.xpm
@@ -550,6 +563,12 @@ lib/libAfterStep.a
 %%DATADIR%%/desktop/icons/Network.xpm
 %%DATADIR%%/desktop/icons/NetworkInfoManager.xpm
 %%DATADIR%%/desktop/icons/OldFashionedRadio.xpm
+%%DATADIR%%/desktop/icons/PagerSample-1x1
+%%DATADIR%%/desktop/icons/PagerSample-1x2
+%%DATADIR%%/desktop/icons/PagerSample-1x4
+%%DATADIR%%/desktop/icons/PagerSample-2x1
+%%DATADIR%%/desktop/icons/PagerSample-2x2
+%%DATADIR%%/desktop/icons/PagerSample-4x1
 %%DATADIR%%/desktop/icons/Paint.xpm
 %%DATADIR%%/desktop/icons/Plasma.xpm
 %%DATADIR%%/desktop/icons/Publish.xpm
@@ -567,6 +586,20 @@ lib/libAfterStep.a
 %%DATADIR%%/desktop/icons/Toggle-Rembrandt
 %%DATADIR%%/desktop/icons/TouchLeftHand
 %%DATADIR%%/desktop/icons/WWW.xpm
+%%DATADIR%%/desktop/icons/WharfSample-1x4
+%%DATADIR%%/desktop/icons/WharfSample-2x4
+%%DATADIR%%/desktop/icons/WharfSample-4x1
+%%DATADIR%%/desktop/icons/WharfSample-4x2
+%%DATADIR%%/desktop/icons/WinListSample-1Bottom
+%%DATADIR%%/desktop/icons/WinListSample-1Top
+%%DATADIR%%/desktop/icons/WinListSample-2Bottom
+%%DATADIR%%/desktop/icons/WinListSample-2Top
+%%DATADIR%%/desktop/icons/WinListSample-3Bottom
+%%DATADIR%%/desktop/icons/WinListSample-3Top
+%%DATADIR%%/desktop/icons/WinListSample-LeftDown
+%%DATADIR%%/desktop/icons/WinListSample-LeftUp
+%%DATADIR%%/desktop/icons/WinListSample-RightDown
+%%DATADIR%%/desktop/icons/WinListSample-RightUp
 %%DATADIR%%/desktop/icons/YellowBlueRedGeometry.xpm
 %%DATADIR%%/desktop/icons/arrow-dots.xpm
 %%DATADIR%%/desktop/icons/arrow.xpm
@@ -709,6 +742,7 @@ lib/libAfterStep.a
 %%DATADIR%%/desktop/icons/logos/TuxXmas
 %%DATADIR%%/desktop/icons/logos/Unicode
 %%DATADIR%%/desktop/icons/logos/VIM
+%%DATADIR%%/desktop/icons/logos/Worker
 %%DATADIR%%/desktop/icons/logos/XWindow
 %%DATADIR%%/desktop/icons/logos/XWindow2
 %%DATADIR%%/desktop/icons/logos/XWindow3
@@ -861,6 +895,7 @@ lib/libAfterStep.a
 %%DATADIR%%/desktop/icons/normal/IRC_Transp
 %%DATADIR%%/desktop/icons/normal/Info
 %%DATADIR%%/desktop/icons/normal/InkJetPrinter
+%%DATADIR%%/desktop/icons/normal/JFK
 %%DATADIR%%/desktop/icons/normal/Key
 %%DATADIR%%/desktop/icons/normal/Keyboard
 %%DATADIR%%/desktop/icons/normal/KeysOnChain
@@ -915,6 +950,8 @@ lib/libAfterStep.a
 %%DATADIR%%/desktop/icons/normal/Notebook
 %%DATADIR%%/desktop/icons/normal/Notebook2
 %%DATADIR%%/desktop/icons/normal/OldFashionedRadio
+%%DATADIR%%/desktop/icons/normal/OutlineBold
+%%DATADIR%%/desktop/icons/normal/OutlineBoldDesktop
 %%DATADIR%%/desktop/icons/normal/PCCase
 %%DATADIR%%/desktop/icons/normal/PCMCIA
 %%DATADIR%%/desktop/icons/normal/PDA
@@ -943,6 +980,7 @@ lib/libAfterStep.a
 %%DATADIR%%/desktop/icons/normal/Pliers
 %%DATADIR%%/desktop/icons/normal/PowerOutlet
 %%DATADIR%%/desktop/icons/normal/PowerPlug
+%%DATADIR%%/desktop/icons/normal/Pulse
 %%DATADIR%%/desktop/icons/normal/PushPin
 %%DATADIR%%/desktop/icons/normal/Puzzle
 %%DATADIR%%/desktop/icons/normal/Pyramid
@@ -989,6 +1027,7 @@ lib/libAfterStep.a
 %%DATADIR%%/desktop/icons/normal/View
 %%DATADIR%%/desktop/icons/normal/WWW
 %%DATADIR%%/desktop/icons/normal/Wharf
+%%DATADIR%%/desktop/icons/normal/Whisper
 %%DATADIR%%/desktop/icons/normal/WinList
 %%DATADIR%%/desktop/icons/normal/Window
 %%DATADIR%%/desktop/icons/normal/Windows
@@ -1044,30 +1083,22 @@ lib/libAfterStep.a
 %%DATADIR%%/desktop/tiles/AfterStepBeauty
 %%DATADIR%%/desktop/tiles/Blue
 %%DATADIR%%/desktop/tiles/BlurtsMichelson
-%%DATADIR%%/desktop/tiles/BlurtsMichelson.mini
 %%DATADIR%%/desktop/tiles/Checkers
 %%DATADIR%%/desktop/tiles/Clear
 %%DATADIR%%/desktop/tiles/ConvexBlue
 %%DATADIR%%/desktop/tiles/Default
 %%DATADIR%%/desktop/tiles/DefenselessElsie
-%%DATADIR%%/desktop/tiles/DefenselessElsie.mini
 %%DATADIR%%/desktop/tiles/DorchesterConsolidated
-%%DATADIR%%/desktop/tiles/DorchesterConsolidated.mini
 %%DATADIR%%/desktop/tiles/DropInjures
-%%DATADIR%%/desktop/tiles/DropInjures.mini
 %%DATADIR%%/desktop/tiles/EvilCarWash
-%%DATADIR%%/desktop/tiles/EvilCarWash.mini
 %%DATADIR%%/desktop/tiles/FireStreaks
 %%DATADIR%%/desktop/tiles/Gray
 %%DATADIR%%/desktop/tiles/Green
 %%DATADIR%%/desktop/tiles/LibelousPaintings
-%%DATADIR%%/desktop/tiles/LibelousPaintings.mini
 %%DATADIR%%/desktop/tiles/Marble
 %%DATADIR%%/desktop/tiles/NordicPowderPirate
-%%DATADIR%%/desktop/tiles/NordicPowderPirate.mini
 %%DATADIR%%/desktop/tiles/Plasma
 %%DATADIR%%/desktop/tiles/PsychiatristsImminently
-%%DATADIR%%/desktop/tiles/PsychiatristsImminently.mini
 %%DATADIR%%/desktop/tiles/Red
 %%DATADIR%%/desktop/tiles/SimpleTexture
 %%DATADIR%%/desktop/tiles/Slate
@@ -1114,6 +1145,7 @@ lib/libAfterStep.a
 %%DATADIR%%/doc/html/Audio.html
 %%DATADIR%%/doc/html/AudioEvents.html
 %%DATADIR%%/doc/html/AutoExec.html
+%%DATADIR%%/doc/html/BalloonContents.html
 %%DATADIR%%/doc/html/Base.html
 %%DATADIR%%/doc/html/Bevel.html
 %%DATADIR%%/doc/html/ColorScheme.html
@@ -1260,8 +1292,32 @@ lib/libAfterStep.a
 %%DATADIR%%/start/1_Desktop/Menu_Options/4_txtitemsind
 %%DATADIR%%/start/1_Desktop/Menu_Options/5_recentitems
 %%DATADIR%%/start/1_Desktop/Pictures/.include
+%%DATADIR%%/start/1_Desktop/Pictures/AfterStep_Images/.include
+%%DATADIR%%/start/1_Desktop/Pictures/GNOME_Images/.include
+%%DATADIR%%/start/1_Desktop/Pictures/GNOME_Images/GNOME_Branded/.include
+%%DATADIR%%/start/1_Desktop/Pictures/GNOME_Images/GNOME_Nature/.include
+%%DATADIR%%/start/1_Desktop/Pictures/GNOME_Images/GNOME_Tiles/.include
+%%DATADIR%%/start/1_Desktop/Pictures/GNOME_Images/GNOME_Translucent/.include
 %%DATADIR%%/start/1_Desktop/Pictures/KDE_Wallpapers/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Nautilus_Patterns/.include
 %%DATADIR%%/start/1_Desktop/Pictures/Other/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/For-E/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_01/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_02/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_03/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_04/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_05/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_06/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_07/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_08/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_09/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_10/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_11/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_12/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_13/.include
+%%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_14/.include
+%%DATADIR%%/start/1_Desktop/Pictures/User_Backgrounds/.include
 %%DATADIR%%/start/1_Desktop/Theme/.include
 %%DATADIR%%/start/1_Desktop/X_Tools/.include
 %%DATADIR%%/start/1_Desktop/X_Tools/Mouse/.include
@@ -1269,6 +1325,10 @@ lib/libAfterStep.a
 %%DATADIR%%/start/1_Desktop/updateall
 %%DATADIR%%/start/1_Desktop/updatestartmenu
 %%DATADIR%%/start/2_Modules/.include
+%%DATADIR%%/start/2_Modules/10_custom_pager
+%%DATADIR%%/start/2_Modules/11_custom_wharf
+%%DATADIR%%/start/2_Modules/12_custom_winlist
+%%DATADIR%%/start/2_Modules/13_nop
 %%DATADIR%%/start/2_Modules/5_RestartModule
 %%DATADIR%%/start/2_Modules/6_StopModule
 %%DATADIR%%/start/2_Modules/7_StartAll
@@ -1303,9 +1363,9 @@ lib/libAfterStep.a
 %%DATADIR%%/themes/Default
 %%DATADIR%%/wharf
 %%DATADIR%%/winlist
-share/gnome/wm-properties/AfterStep.desktop
 share/xsessions/AfterStep.desktop
 @dirrm share/xsessions
+@dirrm share/pixmaps
 @dirrm %%DATADIR%%_old
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/start/7_About_AfterStep
@@ -1320,8 +1380,32 @@ share/xsessions/AfterStep.desktop
 @dirrm %%DATADIR%%/start/1_Desktop/X_Tools/Mouse
 @dirrm %%DATADIR%%/start/1_Desktop/X_Tools
 @dirrm %%DATADIR%%/start/1_Desktop/Theme
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/User_Backgrounds
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_14
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_13
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_12
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_11
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_10
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_09
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_08
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_07
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_06
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_05
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_04
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_03
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_02
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/Volume_01
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images/For-E
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Propaganda_Images
 @dirrm %%DATADIR%%/start/1_Desktop/Pictures/Other
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/Nautilus_Patterns
 @dirrm %%DATADIR%%/start/1_Desktop/Pictures/KDE_Wallpapers
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/GNOME_Images/GNOME_Translucent
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/GNOME_Images/GNOME_Tiles
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/GNOME_Images/GNOME_Nature
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/GNOME_Images/GNOME_Branded
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/GNOME_Images
+@dirrm %%DATADIR%%/start/1_Desktop/Pictures/AfterStep_Images
 @dirrm %%DATADIR%%/start/1_Desktop/Pictures
 @dirrm %%DATADIR%%/start/1_Desktop/Menu_Options
 @dirrm %%DATADIR%%/start/1_Desktop/Look
