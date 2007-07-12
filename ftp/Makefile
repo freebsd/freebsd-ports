@@ -93,6 +93,7 @@
     SUBDIR += py-pyftpdlib
     SUBDIR += quftp
     SUBDIR += rexx-curl
+    SUBDIR += scythia
     SUBDIR += smbftpd
     SUBDIR += spegla
     SUBDIR += tftp-hpa
