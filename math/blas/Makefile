@@ -21,12 +21,7 @@ COMMENT=	Basic Linear Algebra, level 1, 2, and 3
 USE_LDCONFIG=	yes
 
 NO_WRKSUBDIR=	yes
-WANT_FORTRAN=	yes
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=             gfortran42
-F77=            gfortran42
-MAKE_ENV+=      FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+USE_FORTRAN=	yes
 
 PLIST_FILES=	lib/libblas.a lib/libblas.so lib/libblas.so.2
 
