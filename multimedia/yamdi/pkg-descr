@@ -1,0 +1,4 @@
+YAMDI stands for Yet Another MetaData Injector and is a metadata injector
+for FLV files. It adds the onMetaData event to your FLV files.
+
+WWW: http://yamdi.sourceforge.net/
