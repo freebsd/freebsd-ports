@@ -41,30 +41,42 @@ CONFIGURE_ARGS+=--enable-poppler-glib
 USE_GNOME+=	gtk20
 BUILD_WRKSRC=	${WRKSRC}/glib
 INSTALL_WRKSRC=	${WRKSRC}/glib
-.elif ${SLAVEPORT}=="qt"
+.else
+CONFIGURE_ARGS+=--disable-poppler-glib
+.endif
+
+.if ${SLAVEPORT}=="qt"
 CONFIGURE_ARGS+=--enable-poppler-qt
 USE_QT_VER+=	3
 BUILD_WRKSRC=	${WRKSRC}/qt
 INSTALL_WRKSRC=	${WRKSRC}/qt
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
-.elif ${SLAVEPORT}=="qt4"
+.else
+CONFIGURE_ARGS+=--disable-poppler-qt
+.endif
+
+.if ${SLAVEPORT}=="qt4"
 CONFIGURE_ARGS+=--enable-poppler-qt4
 USE_QT_VER+=	4
 QT_COMPONENTS=	gui corelib xml qtestlib
-BUILD_WRKSRC=	${WRKSRC}/qt4
+#BUILD_WRKSRC=	${WRKSRC}/qt4
 INSTALL_WRKSRC=	${WRKSRC}/qt4
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
-.elif ${SLAVEPORT}=="utils"
+.else
+CONFIGURE_ARGS+=--disable-poppler-qt4
+.endif
+
+.if ${SLAVEPORT}=="utils"
 CONFIGURE_ARGS+=--enable-utils
 CONFLICTS=	xpdf-[0-9]*
 BUILD_WRKSRC=	${WRKSRC}/utils
 INSTALL_WRKSRC=	${WRKSRC}/utils
 MAN1=	pdffonts.1 pdfimages.1 pdfinfo.1 \
 	pdftohtml.1  pdftops.1 pdftotext.1 pdftoppm.1
-.endif
 .else
-CONFIGURE_ARGS+=--disable-poppler-glib --disable-poppler-qt \
-		--disable-poppler-qt4 --disable-utils
+CONFIGURE_ARGS+=--disable-utils
+.endif
+
 .if defined(WITHOUT_CAIRO)
 CONFIGURE_ARGS+=	--disable-cairo-output
 .else
