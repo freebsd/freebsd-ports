@@ -6,20 +6,16 @@
 #
 
 PORTNAME=	freedroidrpg
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	0.10.2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	freedroid
+MASTER_SITES=	SF/freedroid
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Modification of the classical Freedroid engine into an RPG
 
 USE_BZIP2=	yes
-USE_GETOPT_LONG=yes
 USE_SDL=	mixer image net sdl
 WANT_GNOME=	yes
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name= --mandir="${MANPREFIX}/man"
 
@@ -34,7 +30,7 @@ OPTIONS=	BACKTRACE "Use backtrace() to generate nice bug reports" on \
 .if !defined(WITHOUT_BACKTRACE)
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 CONFIGURE_ARGS+=--enable-backtrace
-STRIP=		# keep debugging symbols
+STRIP=		#
 .else
 CONFIGURE_ARGS+=--disable-backtrace
 .endif
