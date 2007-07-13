@@ -94,15 +94,6 @@ bin/freedroidRPG
 %%DATADIR%%/dialogs/subdlg_Spencer_eval.dialog
 %%DATADIR%%/dialogs/subdlg_Stone.dialog
 %%DATADIR%%/dialogs/subdlg_kevin_reward1.dialog
-%%DATADIR%%/graphics/backgrounds/LevelEditorBanner.png
-%%DATADIR%%/graphics/backgrounds/LevelEditorSelectionBar1.png
-%%DATADIR%%/graphics/backgrounds/LevelEditorSelectionBar2.png
-%%DATADIR%%/graphics/backgrounds/LevelEditorSelectionBar3.png
-%%DATADIR%%/graphics/backgrounds/LevelEditorSelectionBar4.png
-%%DATADIR%%/graphics/backgrounds/LevelEditorSelectionBar5.png
-%%DATADIR%%/graphics/backgrounds/LevelEditorSelectionBar6.png
-%%DATADIR%%/graphics/backgrounds/LevelEditorSelectionBar7.png
-%%DATADIR%%/graphics/backgrounds/LevelEditorWallsMenu.png
 %%DATADIR%%/graphics/backgrounds/LoadGameBanner.png
 %%DATADIR%%/graphics/backgrounds/QuestBrowser.png
 %%DATADIR%%/graphics/backgrounds/SaveGameBanner.png
@@ -2017,6 +2008,7 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/font/ArialGold_Depleted.png
 %%DATADIR%%/graphics/font/NeonFont.png
 %%DATADIR%%/graphics/font/SmallStone.png
+%%DATADIR%%/graphics/font/cpuFont.8859-2.png
 %%DATADIR%%/graphics/font/cpuFont.png
 %%DATADIR%%/graphics/font/font01.png
 %%DATADIR%%/graphics/font/font05.png
@@ -2026,13 +2018,17 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/font/font05_red.png
 %%DATADIR%%/graphics/font/font05_white.png
 %%DATADIR%%/graphics/font/font05_yellow.png
+%%DATADIR%%/graphics/font/parafont.8859-2.png
 %%DATADIR%%/graphics/font/parafont.png
 %%DATADIR%%/graphics/font/redfont.png
+%%DATADIR%%/graphics/font/small_white.8859-2.png
 %%DATADIR%%/graphics/font/small_white.png
 %%DATADIR%%/graphics/green_mist_0.png
 %%DATADIR%%/graphics/green_mist_1.png
 %%DATADIR%%/graphics/green_mist_2.png
 %%DATADIR%%/graphics/green_mist_3.png
+%%DATADIR%%/graphics/grid_tile.offset
+%%DATADIR%%/graphics/grid_tile.png
 %%DATADIR%%/graphics/items/NONE_AVAILABLE_YET/portrait_0001.jpg
 %%DATADIR%%/graphics/items/NONE_AVAILABLE_YET/portrait_0002.jpg
 %%DATADIR%%/graphics/items/NONE_AVAILABLE_YET/portrait_0003.jpg
@@ -4119,10 +4115,6 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/items/wheel_drive/portrait_0030.jpg
 %%DATADIR%%/graphics/items/wheel_drive/portrait_0031.jpg
 %%DATADIR%%/graphics/items/wheel_drive/portrait_0032.jpg
-%%DATADIR%%/graphics/lanzz_theme/config.theme
-%%DATADIR%%/graphics/lanzz_theme/skill_buttons.png
-%%DATADIR%%/graphics/lanzz_theme/to_background.jpg
-%%DATADIR%%/graphics/lanzz_theme/to_elem.png
 %%DATADIR%%/graphics/level_editor_floor_cursor.offset
 %%DATADIR%%/graphics/level_editor_floor_cursor.png
 %%DATADIR%%/graphics/level_editor_map_label_indicator.offset
@@ -4205,6 +4197,8 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/mouse_buttons/LevelEditorNewObstacleLabelButton.png
 %%DATADIR%%/graphics/mouse_buttons/LevelEditorNextItemGroup.png
 %%DATADIR%%/graphics/mouse_buttons/LevelEditorNextObstacleButton.png
+%%DATADIR%%/graphics/mouse_buttons/LevelEditorObjectSelectorLeft.png
+%%DATADIR%%/graphics/mouse_buttons/LevelEditorObjectSelectorRight.png
 %%DATADIR%%/graphics/mouse_buttons/LevelEditorPlantWaypoint.png
 %%DATADIR%%/graphics/mouse_buttons/LevelEditorPrevItemGroup.png
 %%DATADIR%%/graphics/mouse_buttons/LevelEditorQuitButton.png
@@ -4217,6 +4211,9 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/mouse_buttons/LevelEditorToggleConnectionRedButton.png
 %%DATADIR%%/graphics/mouse_buttons/LevelEditorToggleEnemiesButton.png
 %%DATADIR%%/graphics/mouse_buttons/LevelEditorToggleEnemiesButtonOff.png
+%%DATADIR%%/graphics/mouse_buttons/LevelEditorToggleGridButton.png
+%%DATADIR%%/graphics/mouse_buttons/LevelEditorToggleGridButtonFull.png
+%%DATADIR%%/graphics/mouse_buttons/LevelEditorToggleGridButtonOff.png
 %%DATADIR%%/graphics/mouse_buttons/LevelEditorToggleObstaclesButton.png
 %%DATADIR%%/graphics/mouse_buttons/LevelEditorToggleObstaclesButtonOff.png
 %%DATADIR%%/graphics/mouse_buttons/LevelEditorToggleTooltipsButton.png
@@ -4657,6 +4654,14 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/obstacles/iso_counter_0011.png
 %%DATADIR%%/graphics/obstacles/iso_counter_0012.offset
 %%DATADIR%%/graphics/obstacles/iso_counter_0012.png
+%%DATADIR%%/graphics/obstacles/iso_disautogun_0001.offset
+%%DATADIR%%/graphics/obstacles/iso_disautogun_0001.png
+%%DATADIR%%/graphics/obstacles/iso_disautogun_0002.offset
+%%DATADIR%%/graphics/obstacles/iso_disautogun_0002.png
+%%DATADIR%%/graphics/obstacles/iso_disautogun_0003.offset
+%%DATADIR%%/graphics/obstacles/iso_disautogun_0003.png
+%%DATADIR%%/graphics/obstacles/iso_disautogun_0004.offset
+%%DATADIR%%/graphics/obstacles/iso_disautogun_0004.png
 %%DATADIR%%/graphics/obstacles/iso_doors_0001.offset
 %%DATADIR%%/graphics/obstacles/iso_doors_0001.png
 %%DATADIR%%/graphics/obstacles/iso_doors_0002.offset
@@ -5279,6 +5284,8 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/red_fire_1.png
 %%DATADIR%%/graphics/red_fire_2.png
 %%DATADIR%%/graphics/red_fire_3.png
+%%DATADIR%%/graphics/skill_buttons.png
+%%DATADIR%%/graphics/skill_icons/Calculate_PI.png
 %%DATADIR%%/graphics/skill_icons/ChestAndDeadBodyLoot.png
 %%DATADIR%%/graphics/skill_icons/DetectItemsSpell.png
 %%DATADIR%%/graphics/skill_icons/ExplosionCircleSpell.png
@@ -5289,7 +5296,6 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/skill_icons/ExtractSuperconductor.png
 %%DATADIR%%/graphics/skill_icons/ExtractTachyonCondensator.png
 %%DATADIR%%/graphics/skill_icons/FirstAidSpell.png
-%%DATADIR%%/graphics/skill_icons/FrostBoltSpell.png
 %%DATADIR%%/graphics/skill_icons/IdentifySkill.png
 %%DATADIR%%/graphics/skill_icons/NoSkillAvailable.png
 %%DATADIR%%/graphics/skill_icons/PlasmaBoltSpell.png
@@ -5305,6 +5311,8 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/speed_o_meter.png
 %%DATADIR%%/graphics/speed_o_meter_arrow_energy.png
 %%DATADIR%%/graphics/speed_o_meter_arrow_mana.png
+%%DATADIR%%/graphics/to_background.jpg
+%%DATADIR%%/graphics/to_elem.png
 %%DATADIR%%/graphics/tux_flags/flag_dexterity_0001.offset
 %%DATADIR%%/graphics/tux_flags/flag_dexterity_0001.png
 %%DATADIR%%/graphics/tux_flags/flag_dexterity_0002.offset
@@ -5585,7 +5593,6 @@ bin/freedroidRPG
 @dirrm %%DATADIR%%/graphics/obstacles
 @dirrm %%DATADIR%%/graphics/mouse_buttons
 @dirrm %%DATADIR%%/graphics/light_radius_chunks
-@dirrm %%DATADIR%%/graphics/lanzz_theme
 @dirrm %%DATADIR%%/graphics/items/wheel_drive
 @dirrm %%DATADIR%%/graphics/items/warrior_wristband
 @dirrm %%DATADIR%%/graphics/items/vmx_grenade
