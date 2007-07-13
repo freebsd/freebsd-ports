@@ -21,6 +21,7 @@ bin/rmsgmerge
 %%RUBY_SITELIBDIR%%/gettext/parser/ruby.rb
 %%RUBY_SITELIBDIR%%/gettext/poparser.rb
 %%RUBY_SITELIBDIR%%/gettext/rails.rb
+%%RUBY_SITELIBDIR%%/gettext/rails_compat.rb
 %%RUBY_SITELIBDIR%%/gettext/rgettext.rb
 %%RUBY_SITELIBDIR%%/gettext/rmsgfmt.rb
 %%RUBY_SITELIBDIR%%/gettext/rmsgmerge.rb
@@ -31,6 +32,8 @@ bin/rmsgmerge
 %%RUBY_SITELIBDIR%%/gettext/version.rb
 @dirrm %%RUBY_SITELIBDIR%%/gettext/parser
 @dirrm %%RUBY_SITELIBDIR%%/gettext
+share/locale/bs/LC_MESSAGES/rails.mo
+share/locale/bs/LC_MESSAGES/rgettext.mo
 share/locale/ca/LC_MESSAGES/rails.mo
 share/locale/ca/LC_MESSAGES/rgettext.mo
 share/locale/cs/LC_MESSAGES/rails.mo
@@ -46,12 +49,16 @@ share/locale/es/LC_MESSAGES/rgettext.mo
 share/locale/et/LC_MESSAGES/rails.mo
 share/locale/fr/LC_MESSAGES/rails.mo
 share/locale/fr/LC_MESSAGES/rgettext.mo
+share/locale/hr/LC_MESSAGES/rails.mo
+share/locale/hr/LC_MESSAGES/rgettext.mo
 share/locale/it/LC_MESSAGES/rails.mo
 share/locale/it/LC_MESSAGES/rgettext.mo
 share/locale/ja/LC_MESSAGES/rails.mo
 share/locale/ja/LC_MESSAGES/rgettext.mo
 share/locale/ko/LC_MESSAGES/rails.mo
 share/locale/ko/LC_MESSAGES/rgettext.mo
+share/locale/nb/LC_MESSAGES/rails.mo
+share/locale/nb/LC_MESSAGES/rgettext.mo
 share/locale/nl/LC_MESSAGES/rails.mo
 share/locale/nl/LC_MESSAGES/rgettext.mo
 share/locale/pt_BR/LC_MESSAGES/rails.mo
@@ -59,10 +66,12 @@ share/locale/pt_BR/LC_MESSAGES/rgettext.mo
 share/locale/ru/LC_MESSAGES/rails.mo
 share/locale/ru/LC_MESSAGES/rgettext.mo
 share/locale/sv/LC_MESSAGES/rgettext.mo
-share/locale/zh_TW/LC_MESSAGES/rails.mo
-share/locale/zh_TW/LC_MESSAGES/rgettext.mo
+share/locale/vi/LC_MESSAGES/rails.mo
+share/locale/vi/LC_MESSAGES/rgettext.mo
 share/locale/zh/LC_MESSAGES/rails.mo
 share/locale/zh/LC_MESSAGES/rgettext.mo
+share/locale/zh_TW/LC_MESSAGES/rails.mo
+share/locale/zh_TW/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/Rakefile
@@ -74,6 +83,10 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/hellolib.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/http.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/index.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/bs/LC_MESSAGES/helloerb1.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/bs/LC_MESSAGES/helloerb2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/bs/LC_MESSAGES/hellolib.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/bs/LC_MESSAGES/main.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/ca/LC_MESSAGES/helloerb1.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/ca/LC_MESSAGES/helloerb2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/ca/LC_MESSAGES/hellolib.mo
@@ -102,6 +115,10 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/fr/LC_MESSAGES/helloerb2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/fr/LC_MESSAGES/hellolib.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/fr/LC_MESSAGES/main.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/hr/LC_MESSAGES/helloerb1.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/hr/LC_MESSAGES/helloerb2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/hr/LC_MESSAGES/hellolib.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/hr/LC_MESSAGES/main.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/it/LC_MESSAGES/helloerb1.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/it/LC_MESSAGES/helloerb2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/it/LC_MESSAGES/hellolib.mo
@@ -114,6 +131,10 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/ko/LC_MESSAGES/helloerb2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/ko/LC_MESSAGES/hellolib.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/ko/LC_MESSAGES/main.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/nb/LC_MESSAGES/helloerb1.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/nb/LC_MESSAGES/helloerb2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/nb/LC_MESSAGES/hellolib.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/nb/LC_MESSAGES/main.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/nl/LC_MESSAGES/helloerb1.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/nl/LC_MESSAGES/helloerb2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/nl/LC_MESSAGES/hellolib.mo
@@ -126,15 +147,23 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/ru/LC_MESSAGES/helloerb2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/ru/LC_MESSAGES/hellolib.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/ru/LC_MESSAGES/main.mo
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh_TW/LC_MESSAGES/helloerb1.mo
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh_TW/LC_MESSAGES/helloerb2.mo
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh_TW/LC_MESSAGES/hellolib.mo
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh_TW/LC_MESSAGES/main.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/vi/LC_MESSAGES/helloerb1.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/vi/LC_MESSAGES/helloerb2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/vi/LC_MESSAGES/hellolib.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/vi/LC_MESSAGES/main.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh/LC_MESSAGES/helloerb1.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh/LC_MESSAGES/helloerb2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh/LC_MESSAGES/hellolib.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh/LC_MESSAGES/main.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh_TW/LC_MESSAGES/helloerb1.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh_TW/LC_MESSAGES/helloerb2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh_TW/LC_MESSAGES/hellolib.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh_TW/LC_MESSAGES/main.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/other.rhtml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/bs/helloerb1.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/bs/helloerb2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/bs/hellolib.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/bs/main.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/ca/helloerb1.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/ca/helloerb2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/ca/hellolib.po
@@ -166,6 +195,10 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/helloerb1.pot
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/helloerb2.pot
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/hellolib.pot
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/hr/helloerb1.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/hr/helloerb2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/hr/hellolib.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/hr/main.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/it/helloerb1.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/it/helloerb2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/it/hellolib.po
@@ -179,6 +212,10 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/ko/hellolib.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/ko/main.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/main.pot
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/nb/helloerb1.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/nb/helloerb2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/nb/hellolib.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/nb/main.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/nl/helloerb1.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/nl/helloerb2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/nl/hellolib.po
@@ -191,14 +228,18 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/ru/helloerb2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/ru/hellolib.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/ru/main.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/zh_TW/helloerb1.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/zh_TW/helloerb2.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/zh_TW/hellolib.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/zh_TW/main.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/vi/helloerb1.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/vi/helloerb2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/vi/hellolib.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/vi/main.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/zh/helloerb1.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/zh/helloerb2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/zh/hellolib.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/zh/main.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/zh_TW/helloerb1.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/zh_TW/helloerb2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/zh_TW/hellolib.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/po/zh_TW/main.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/ruby.bat
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello2.rb
@@ -210,6 +251,13 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hellogtk.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hellogtk2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hellotk.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/bs/LC_MESSAGES/hello.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/bs/LC_MESSAGES/hello2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/bs/LC_MESSAGES/hello_noop.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/bs/LC_MESSAGES/hello_plural.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/bs/LC_MESSAGES/helloglade2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/bs/LC_MESSAGES/hellogtk.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/bs/LC_MESSAGES/hellotk.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ca/LC_MESSAGES/hello.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ca/LC_MESSAGES/hello2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ca/LC_MESSAGES/hello_noop.mo
@@ -259,6 +307,13 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/fr/LC_MESSAGES/helloglade2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/fr/LC_MESSAGES/hellogtk.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/fr/LC_MESSAGES/hellotk.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/hr/LC_MESSAGES/hello.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/hr/LC_MESSAGES/hello2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/hr/LC_MESSAGES/hello_noop.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/hr/LC_MESSAGES/hello_plural.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/hr/LC_MESSAGES/helloglade2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/hr/LC_MESSAGES/hellogtk.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/hr/LC_MESSAGES/hellotk.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/it/LC_MESSAGES/hello.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/it/LC_MESSAGES/hello2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/it/LC_MESSAGES/hello_noop.mo
@@ -280,6 +335,13 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ko/LC_MESSAGES/helloglade2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ko/LC_MESSAGES/hellogtk.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ko/LC_MESSAGES/hellotk.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/nb/LC_MESSAGES/hello.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/nb/LC_MESSAGES/hello2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/nb/LC_MESSAGES/hello_noop.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/nb/LC_MESSAGES/hello_plural.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/nb/LC_MESSAGES/helloglade2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/nb/LC_MESSAGES/hellogtk.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/nb/LC_MESSAGES/hellotk.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/nl/LC_MESSAGES/hello.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/nl/LC_MESSAGES/hello2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/nl/LC_MESSAGES/hello_noop.mo
@@ -308,13 +370,13 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/sv/LC_MESSAGES/helloglade2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/sv/LC_MESSAGES/hellogtk.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/sv/LC_MESSAGES/hellotk.mo
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES/hello.mo
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES/hello2.mo
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES/hello_noop.mo
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES/hello_plural.mo
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES/helloglade2.mo
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES/hellogtk.mo
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES/hellotk.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/vi/LC_MESSAGES/hello.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/vi/LC_MESSAGES/hello2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/vi/LC_MESSAGES/hello_noop.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/vi/LC_MESSAGES/hello_plural.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/vi/LC_MESSAGES/helloglade2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/vi/LC_MESSAGES/hellogtk.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/vi/LC_MESSAGES/hellotk.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh/LC_MESSAGES/hello.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh/LC_MESSAGES/hello2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh/LC_MESSAGES/hello_noop.mo
@@ -322,7 +384,21 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh/LC_MESSAGES/helloglade2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh/LC_MESSAGES/hellogtk.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh/LC_MESSAGES/hellotk.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES/hello.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES/hello2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES/hello_noop.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES/hello_plural.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES/helloglade2.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES/hellogtk.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES/hellotk.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/makemo.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/bs/hello.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/bs/hello2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/bs/hello_noop.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/bs/hello_plural.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/bs/helloglade2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/bs/hellogtk.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/bs/hellotk.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ca/hello.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ca/hello2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ca/hello_noop.po
@@ -379,6 +455,13 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/helloglade2.pot
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hellogtk.pot
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hellotk.pot
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hr/hello.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hr/hello2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hr/hello_noop.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hr/hello_plural.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hr/helloglade2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hr/hellogtk.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hr/hellotk.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/it/hello.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/it/hello2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/it/hello_noop.po
@@ -400,6 +483,13 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ko/helloglade2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ko/hellogtk.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ko/hellotk.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/nb/hello.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/nb/hello2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/nb/hello_noop.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/nb/hello_plural.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/nb/helloglade2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/nb/hellogtk.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/nb/hellotk.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/nl/hello.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/nl/hello2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/nl/hello_noop.po
@@ -428,13 +518,13 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/sv/helloglade2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/sv/hellogtk.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/sv/hellotk.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh_TW/hello.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh_TW/hello2.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh_TW/hello_noop.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh_TW/hello_plural.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh_TW/helloglade2.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh_TW/hellogtk.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh_TW/hellotk.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/vi/hello.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/vi/hello2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/vi/hello_noop.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/vi/hello_plural.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/vi/helloglade2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/vi/hellogtk.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/vi/hellotk.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh/hello.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh/hello2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh/hello_noop.po
@@ -442,6 +532,13 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh/helloglade2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh/hellogtk.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh/hellotk.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh_TW/hello.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh_TW/hello2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh_TW/hello_noop.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh_TW/hello_plural.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh_TW/helloglade2.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh_TW/hellogtk.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/zh_TW/hellotk.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/Rakefile
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/app/controllers/application.rb
@@ -464,6 +561,7 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/config/routes.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/db/schema.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/lib/tasks/gettext.rake
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/bs/LC_MESSAGES/blog.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/ca/LC_MESSAGES/blog.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/cs/LC_MESSAGES/blog.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/de/LC_MESSAGES/blog.mo
@@ -472,31 +570,38 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/eo/LC_MESSAGES/blog.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/es/LC_MESSAGES/blog.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/fr/LC_MESSAGES/blog.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/hr/LC_MESSAGES/blog.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/it/LC_MESSAGES/blog.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/ja/LC_MESSAGES/blog.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/ko/LC_MESSAGES/blog.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/nb/LC_MESSAGES/blog.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/nl/LC_MESSAGES/blog.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/pt_BR/LC_MESSAGES/blog.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/ru/LC_MESSAGES/blog.mo
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/zh_TW/LC_MESSAGES/blog.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/vi/LC_MESSAGES/blog.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/zh/LC_MESSAGES/blog.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/locale/zh_TW/LC_MESSAGES/blog.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/blog.pot
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/bs/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/ca/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/cs/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/de/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/el/blog.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/eo/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/en/blog.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/eo/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/es/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/fr/blog.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/hr/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/it/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/ja/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/ko/blog.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/nb/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/nl/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/pt_BR/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/ru/blog.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/zh_TW/blog.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/vi/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/zh/blog.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/po/zh_TW/blog.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/public/404.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/public/500.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/public/dispatch.cgi
@@ -533,20 +638,25 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/Rakefile
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/init.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/lib/gettext_plugin.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/bs/LC_MESSAGES/gettext_plugin.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/ca/LC_MESSAGES/gettext_plugin.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/cs/LC_MESSAGES/gettext_plugin.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/de/LC_MESSAGES/gettext_plugin.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/el/LC_MESSAGES/gettext_plugin.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/es/LC_MESSAGES/gettext_plugin.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/fr/LC_MESSAGES/gettext_plugin.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/hr/LC_MESSAGES/gettext_plugin.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/it/LC_MESSAGES/gettext_plugin.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/ja/LC_MESSAGES/gettext_plugin.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/ko/LC_MESSAGES/gettext_plugin.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/nb/LC_MESSAGES/gettext_plugin.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/nl/LC_MESSAGES/gettext_plugin.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/pt_BR/LC_MESSAGES/gettext_plugin.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/ru/LC_MESSAGES/gettext_plugin.mo
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/zh_TW/LC_MESSAGES/gettext_plugin.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/vi/LC_MESSAGES/gettext_plugin.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/zh/LC_MESSAGES/gettext_plugin.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/zh_TW/LC_MESSAGES/gettext_plugin.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/bs/gettext_plugin.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/ca/gettext_plugin.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/cs/gettext_plugin.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/de/gettext_plugin.po
@@ -554,47 +664,58 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/es/gettext_plugin.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/fr/gettext_plugin.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/gettext_plugin.pot
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/hr/gettext_plugin.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/it/gettext_plugin.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/ja/gettext_plugin.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/ko/gettext_plugin.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/nb/gettext_plugin.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/nl/gettext_plugin.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/pt_BR/gettext_plugin.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/ru/gettext_plugin.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/zh_TW/gettext_plugin.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/vi/gettext_plugin.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/zh/gettext_plugin.po
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/zh
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/zh_TW/gettext_plugin.po
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/zh_TW
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/zh
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/vi
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/ru
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/pt_BR
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/nl
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/nb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/ko
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/it
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/hr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/fr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/es
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/eo
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/en
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/el
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/de
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/cs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/ca
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po/bs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/po
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/zh/LC_MESSAGES
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/zh
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/zh_TW/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/zh_TW
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/zh/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/zh
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/vi/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/vi
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/ru/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/ru
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/pt_BR/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/pt_BR
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/nl/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/nl
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/nb/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/nb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/ko/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/ko
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/ja/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/it/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/it
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/hr/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/hr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/fr/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/fr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/es/LC_MESSAGES
@@ -607,15 +728,14 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/cs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/ca/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/ca
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/bs/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale/bs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/locale
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext/lib
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins/gettext
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor/plugins
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/vendor
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/test/unit
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/test/mocks/test
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/test/mocks/development
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/test/mocks
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/test/functional
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/test/fixtures
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/test
@@ -626,14 +746,17 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/public/javascripts
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/public/images
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/public
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/zh
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/zh_TW
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/zh
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/vi
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/ru
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/pt_BR
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/nl
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/nb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/ko
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/it
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/hr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/fr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/es
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/eo
@@ -642,24 +765,31 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/de
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/cs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/ca
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po/bs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/po
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/log
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/zh/LC_MESSAGES
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/zh
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/zh_TW/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/zh_TW
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/zh/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/zh
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/vi/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/vi
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/ru/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/ru
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/pt_BR/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/pt_BR
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/nl/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/nl
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/nb/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/nb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/ko/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/ko
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/ja/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/it/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/it
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/hr/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/hr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/fr/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/fr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/es/LC_MESSAGES
@@ -676,6 +806,8 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/cs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/ca/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/ca
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/bs/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale/bs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/locale
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/lib/tasks
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/lib
@@ -690,15 +822,18 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/app/controllers
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails/app
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rails
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/zh
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/zh_TW
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/zh
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/vi
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/sv
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/ru
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/pt_BR
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/nl
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/nb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/ko
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/it
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/hr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/fr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/es
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/eo
@@ -706,11 +841,14 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/de
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/cs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/ca
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/bs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/zh/LC_MESSAGES
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/zh
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/zh_TW/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/zh_TW
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/zh/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/zh
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/vi/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/vi
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/sv/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/sv
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/ru/LC_MESSAGES
@@ -719,12 +857,16 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/pt_BR
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/nl/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/nl
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/nb/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/nb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/ko/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/ko
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/it/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/it
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/hr/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/hr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/fr/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/fr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/es/LC_MESSAGES
@@ -739,15 +881,20 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/cs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/ca/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/ca
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/bs/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/bs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/zh
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/zh_TW
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/zh
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/vi
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/ru
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/pt_BR
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/nl
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/nb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/ko
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/it
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/hr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/fr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/es
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/eo
@@ -755,23 +902,30 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/de
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/cs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/ca
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po/bs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/po
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh/LC_MESSAGES
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh_TW/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh_TW
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/zh
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/vi/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/vi
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/ru/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/ru
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/pt_BR/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/pt_BR
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/nl/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/nl
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/nb/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/nb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/ko/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/ko
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/ja/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/it/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/it
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/hr/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/hr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/fr/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/fr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/es/LC_MESSAGES
@@ -786,6 +940,8 @@ share/locale/zh/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/cs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/ca/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/ca
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/bs/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale/bs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/locale
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
