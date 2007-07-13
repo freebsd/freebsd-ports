@@ -9,9 +9,9 @@ PORTNAME=	hachoir-wx
 PORTVERSION=	0.1.2
 PORTREVISION=	1
 CATEGORIES=	sysutils python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/h/${PORTNAME}/ CENKES
+MASTER_SITES=	CHEESESHOP CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Hachoir GUI
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/hachoir-parser

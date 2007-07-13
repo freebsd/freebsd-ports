@@ -276,6 +276,7 @@
     SUBDIR += gtoaster
     SUBDIR += gupsc
     SUBDIR += hachoir-metadata
+    SUBDIR += hachoir-subfile
     SUBDIR += hachoir-urwid
     SUBDIR += hachoir-wx
     SUBDIR += hal

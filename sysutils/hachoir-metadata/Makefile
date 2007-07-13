@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	hachoir-metadata
-PORTVERSION=	0.10.0
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Extract metadata from files
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/hachoir-parser

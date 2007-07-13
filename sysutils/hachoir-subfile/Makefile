@@ -1,20 +1,20 @@
-# New ports collection makefile for:	hachoir-urwid
-# Date created:		25 January 2007
+# New ports collection makefile for:	hachoir-subfile
+# Date created:		13 July 2007
 # Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	hachoir-urwid
-PORTVERSION=	1.0.1
+PORTNAME=	hachoir-subfile
+PORTVERSION=	0.5.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP CENKES
 
 MAINTAINER=	lwhsu@FreeBSD.org
-COMMENT=	Binary file explorer
+COMMENT=	Find subfiles in any binary stream
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/hachoir-parser \
-		${PYTHON_SITELIBDIR}/urwid/__init__.py:${PORTSDIR}/devel/py-urwid
+		${PYTHON_SITELIBDIR}/hachoir_regex/__init__.py:${PORTSDIR}/devel/hachoir-regex
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
