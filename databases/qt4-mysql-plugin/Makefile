@@ -8,6 +8,7 @@
 
 PORTNAME=	qt4-${DB}-plugin
 PORTVERSION=	4.2.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
@@ -23,10 +24,12 @@ LIB_DEPENDS+=	QtSql:${PORTSDIR}/databases/qt4-sql
 USE_MYSQL=	yes
 #USE_BZIP2=	yes
 DRIVER=		src/sql/drivers/${DB}
+PLUGIN=		src/plugins/sqldrivers/${DB}
 EXTRACT_AFTER_ARGS?=| ${TAR} -xf - \
-		${DISTNAME}/${DRIVER}
+		${DISTNAME}/${DRIVER} ${DISTNAME}/${PLUGIN}
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ENV+=	DB="${DB}" DRIVER="${DRIVER}" \
+		PLUGIN="${PLUGIN}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST_SUB=	DB=${DB}
