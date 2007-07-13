@@ -21,7 +21,8 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
-NOT_FOR_ARCH=	amd64 sparc64
+USE_AUTOTOOLS=	libtool:15
+NOT_FOR_ARCHS=	amd64 sparc64
 GNU_CONFIGURE=	yes
 USE_DOS2UNIX=	yes
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
