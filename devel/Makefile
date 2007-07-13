@@ -420,6 +420,7 @@
     SUBDIR += gzstream
     SUBDIR += hachoir-core
     SUBDIR += hachoir-parser
+    SUBDIR += hachoir-regex
     SUBDIR += happydoc
     SUBDIR += hapy
     SUBDIR += hc12mem
