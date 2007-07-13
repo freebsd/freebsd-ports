@@ -25,13 +25,9 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 FFLAGS+=	-fno-range-check
-MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
-
+MAKE_ENV+=	FFLAGS="${FFLAGS}"
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 MAXOBV?=	20000	# Make bigger if you need more observations/variable
