@@ -9,7 +9,7 @@ PORTNAME=	boswars
 PORTVERSION=	2.3
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.boswars.org/releases/
+MASTER_SITES=	http://www.boswars.org/dist/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	alepulver@FreeBSD.org
