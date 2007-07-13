@@ -6,8 +6,7 @@
 #    $MCom: ports/lang/vala/Makefile,v 1.1 2007/07/09 12:48:15 ahze Exp $
 
 PORTNAME=	vala
-PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTVERSION=	0.1.1
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 
