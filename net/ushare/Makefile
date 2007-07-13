@@ -7,13 +7,14 @@
 
 PORTNAME=	ushare
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ushare.geexbox.org/releases/
 
 MAINTAINER=	votdev@gmx.de
 COMMENT=	A lightweight UPnP (TM) A/V Media Server
 
-LIB_DEPENDS=	upnp.2:${PORTSDIR}/devel/upnp
+LIB_DEPENDS=	upnp.3:${PORTSDIR}/devel/upnp
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
 PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample etc/rc.d/${PORTNAME}
@@ -21,8 +22,17 @@ MAN1=		${PORTNAME}.1
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}/lib --with-libintl-prefix=${LOCALBASE}/lib --mandir=${LOCALBASE}/man
 USE_GNOME=	pkgconfig
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}/lib \
+		--with-libintl-prefix=${LOCALBASE}/lib \
+		--mandir=${MANPREFIX}/man \
+		--with-libupnp-prefix=${LOCALBASE}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700042
+CFLAGS+=	-lpthread
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
@@ -30,4 +40,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/${PORTNAME} ${PREFIX}/etc/rc.d
 	${INSTALL_MAN} ${WRKSRC}/src/${PORTNAME}.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
