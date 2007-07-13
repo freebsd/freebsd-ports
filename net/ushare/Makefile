@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}/lib \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700042
-CFLAGS+=	-lpthread
+CFLAGS+=	${PTHREAD_LIBS}
 .endif
 
 do-install:
