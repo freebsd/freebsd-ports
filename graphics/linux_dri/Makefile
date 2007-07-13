@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux_dri
-PORTVERSION=	6.5
+PORTVERSION=	7.0
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://people.freebsd.org/~anholt/dri/files/
 DISTFILES=	Mesa-linux-bin-${PORTVERSION}.tar.bz2 \
@@ -28,9 +28,19 @@ USE_XLIB=	yes
 # the drm.
 ONLY_FOR_ARCHS=	i386
 
-MODULELIST=	i810_dri.so i915_dri.so mach64_dri.so mga_dri.so r128_dri.so \
-		r200_dri.so r300_dri.so radeon_dri.so sis_dri.so savage_dri.so \
-		sis_dri.so tdfx_dri.so
+MODULELIST=	i810_dri.so \
+		i915_dri.so \
+		i965_dri.so \
+		mach64_dri.so \
+		mga_dri.so \
+		r128_dri.so \
+		r200_dri.so \
+		r300_dri.so \
+		radeon_dri.so \
+		savage_dri.so \
+		sis_dri.so \
+		tdfx_dri.so \
+		unichrome_dri.so
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 
 .include <bsd.port.pre.mk>
@@ -45,13 +55,13 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/linux_dri/libGL.so.1.2 \
 		${PREFIX}/usr/X11R6/lib
 #	${BRANDELF} -t Linux ${PREFIX}/usr/X11R6/lib/libGL.so.1.2
-	${INSTALL_PROGRAM} ${WRKSRC}/linux_dri/libGLU.so.1.3.060500 \
+	${INSTALL_PROGRAM} ${WRKSRC}/linux_dri/libGLU.so.1.3.070100 \
 		${PREFIX}/usr/X11R6/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/linux_dri/libdrm.so.2.0.0 \
+	${INSTALL_PROGRAM} ${WRKSRC}/linux_dri/libdrm.so.2.3.0 \
 		${PREFIX}/usr/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/linux_dri/libexpat.so.1 \
 		${PREFIX}/usr/lib
-#	${BRANDELF} -t Linux ${PREFIX}/usr/X11R6/lib/libGLU.so.1.3.060500
+#	${BRANDELF} -t Linux ${PREFIX}/usr/X11R6/lib/libGLU.so.1.3.070100
 .for i in ${MODULELIST}
 	${INSTALL_PROGRAM} ${WRKSRC}/linux_dri/${i} \
 		${PREFIX}/usr/X11R6/lib/modules/dri
