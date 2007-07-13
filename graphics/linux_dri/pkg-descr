@@ -1,9 +1,6 @@
 linux_dri installs binary linux DRI modules, libraries and basic programs to 
 support and test 3d hardware acceleration of linux binaries with the DRI.
-(Currently, compiled from X420src-*.tgz by anholt@freebsd.org on a chroot 
-Gentoo with a patch to xf86drm.c to fix linux compatibility).
 
-WWW: http://people.freebsd.org/~anholt/dri/
-
-- Eric Anholt
-eta@lclark.edu
+Compiled by anholt@FreeBSD.org on a debian unstable system, patched to
+disable the new Damage protocol call for rotated rendering due to it being
+unavailable in our linux base ports.
