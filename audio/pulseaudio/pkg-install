@@ -2,7 +2,7 @@
 
 case $2 in
 POST-INSTALL)
-	RGROUP=realtime
+	RGROUP=pulse-rt
 	SUSER=pulse
 	SGROUP=${SUSER}
 	AGROUP=pulse-access

@@ -102,7 +102,7 @@ ejabberd:*:544:
 qtss:*:554:
 ircdru:*:555:
 messagebus:*:556:
-realtime:*:557:
+pulse-rt:*:557:
 avahi:*:558:
 tacacs:*:559:
 distcc:*:561:
