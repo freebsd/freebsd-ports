@@ -24,10 +24,12 @@ include/vala-1.0/ccode/valaccodefragment.h
 include/vala-1.0/ccode/valaccodefunction.h
 include/vala-1.0/ccode/valaccodefunctioncall.h
 include/vala-1.0/ccode/valaccodefunctiondeclarator.h
+include/vala-1.0/ccode/valaccodegotostatement.h
 include/vala-1.0/ccode/valaccodeidentifier.h
 include/vala-1.0/ccode/valaccodeifstatement.h
 include/vala-1.0/ccode/valaccodeincludedirective.h
 include/vala-1.0/ccode/valaccodeinitializerlist.h
+include/vala-1.0/ccode/valaccodelabel.h
 include/vala-1.0/ccode/valaccodelinedirective.h
 include/vala-1.0/ccode/valaccodemacroreplacement.h
 include/vala-1.0/ccode/valaccodememberaccess.h
