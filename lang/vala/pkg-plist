@@ -165,26 +165,26 @@ lib/libvala.la
 lib/libvala.so
 lib/libvala.so.0
 libdata/pkgconfig/vala-1.0.pc
-%%DATADIR%%/vapi/atk.vala
-%%DATADIR%%/vapi/cairo.vala
-%%DATADIR%%/vapi/dbus-glib-1.vala
-%%DATADIR%%/vapi/gdk-2.0.deps
-%%DATADIR%%/vapi/gdk-2.0.vala
-%%DATADIR%%/vapi/gio-standalone.vala
-%%DATADIR%%/vapi/glib-2.0.vala
-%%DATADIR%%/vapi/gtk+-2.0.deps
-%%DATADIR%%/vapi/gtk+-2.0.vala
-%%DATADIR%%/vapi/hal.deps
-%%DATADIR%%/vapi/hal.vala
-%%DATADIR%%/vapi/libxml-2.0.vala
-%%DATADIR%%/vapi/math.vala
-%%DATADIR%%/vapi/pango.deps
-%%DATADIR%%/vapi/pango.vala
-%%DATADIR%%/vapi/vala-1.0.vala
-%%DATADIR%%/vapi/vte.deps
-%%DATADIR%%/vapi/vte.vala
-@dirrm %%DATADIR%%/vapi
-@dirrm %%DATADIR%%
+share/gnome/vala/vapi/atk.vala
+share/gnome/vala/vapi/cairo.vala
+share/gnome/vala/vapi/dbus-glib-1.vala
+share/gnome/vala/vapi/gdk-2.0.deps
+share/gnome/vala/vapi/gdk-2.0.vala
+share/gnome/vala/vapi/gio-standalone.vala
+share/gnome/vala/vapi/glib-2.0.vala
+share/gnome/vala/vapi/gtk+-2.0.deps
+share/gnome/vala/vapi/gtk+-2.0.vala
+share/gnome/vala/vapi/hal.deps
+share/gnome/vala/vapi/hal.vala
+share/gnome/vala/vapi/libxml-2.0.vala
+share/gnome/vala/vapi/math.vala
+share/gnome/vala/vapi/pango.deps
+share/gnome/vala/vapi/pango.vala
+share/gnome/vala/vapi/vala-1.0.vala
+share/gnome/vala/vapi/vte.deps
+share/gnome/vala/vapi/vte.vala
+@dirrm share/gnome/vala/vapi
+@dirrm share/gnome/vala
 @dirrm include/vala-1.0/vala
 @dirrm include/vala-1.0/gobject
 @dirrm include/vala-1.0/ccode
