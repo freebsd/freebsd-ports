@@ -21,10 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmatc.a:${PORTSDIR}/science/elmer-matc	\
 RUN_DEPENDS=	ElmerGrid:${PORTSDIR}/science/elmergrid		\
 		Mesh2D:${PORTSDIR}/science/elmer-meshgen2d
 
-WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 .ifdef WITH_OPTIMIZED_FLAGS
 FCFLAGS+=	-O3 -ffast-math
