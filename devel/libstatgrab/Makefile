@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	libstatgrab
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
-		ftp://ftp2.uk.i-scream.org/mirror/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
-		http://ftp2.uk.i-scream.org/mirror/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		ftp://ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.i-scream.org/pub/i-scream/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -51,11 +49,6 @@ PLIST_SUB+=		SAIDAR="@comment "
 .else
 PLIST_SUB+=		SAIDAR=""
 MAN1+=			saidar.1
-.endif
-
-# setgid kmem binaries needed on FreeBSD 4 only
-.ifdef(WITHOUT_SETGID_BINARIES)
-CONFIGURE_ARGS+=	--disable-setgid-binaries
 .endif
 
 .include <bsd.port.mk>
