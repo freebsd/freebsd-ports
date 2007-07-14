@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: metalog
+# REQUIRE: mountcritremote cleanvar newsyslog ldconfig
+# BEFORE:  SERVERS
+
+. %%RC_SUBR%%
+
+name=metalog
+rcvar=`set_rcvar`
+pidfile="/var/run/metalog.pid"
+command="%%PREFIX%%/sbin/${name}"
+command_args="--daemonize"
+required_files="%%PREFIX%%/etc/metalog.conf"
+
+load_rc_config $name
+: ${metalog_enable:="NO"}
+run_rc_command "$1"
