@@ -33,10 +33,7 @@ USE_LDCONFIG=	yes
 
 MAN1=		gretl.1 gretl-config.1
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}" LAPACK_LIBS="${BLAS} ${LAPACK} -l${FORTRANRUNTIME}"
 FORTRANRUNTIME=	gfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
