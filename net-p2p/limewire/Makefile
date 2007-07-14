@@ -16,6 +16,8 @@ DISTNAME=	LimeWireOther
 MAINTAINER=	armitage@smartwifi.com.ph
 COMMENT=	A Java based Gnutella client
 
+BROKEN=		Checksum mismatch
+
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	yes
