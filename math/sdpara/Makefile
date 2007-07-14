@@ -20,15 +20,12 @@ EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SDPARA paralell version of SDPA (math/sdpa)
 
-LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
-BUILD_DEPENDS=	${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack \
-		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
-		${LOCALBASE}/mpich2/lib/libmpich.a:${PORTSDIR}/net/mpich2
+LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas \
+		scalapack:${PORTSDIR}/math/scalapack \
+		blacs:${PORTSDIR}/math/blacs \
+		mpich:${PORTSDIR}/net/mpich2
 
-WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -66,6 +63,9 @@ CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops 
 .endif
 .endif
 
+pre-build:
+	${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 			      s|%%LOCALBASE%%|${LOCALBASE}|g ; \
@@ -73,6 +73,7 @@ post-patch:
 			      s|%%FFLAGS%%|${FFLAGS}|g ; \
 			      s|%%LAPACK%%|${LAPACK}|g ; \
 			      s|%%BLAS%%|${BLAS}|g ; \
+			      s|%%GCCLIBDIR%%|${GCCLIBDIR}|g ; \
 			      s|%%FORTRANLIBS%%|${FORTRANLIBS}|g '  ${WRKSRC}/Makefile
 .if !defined(WITH_OPTIMIZED_FLAGS)
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."

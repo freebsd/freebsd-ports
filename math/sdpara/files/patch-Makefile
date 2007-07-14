@@ -10,7 +10,7 @@
  
 -LAPACK_LIB =  -llapack -lcblaswr -lcblas \
 -              -lf77blas -lI77 -lF77 -latlas
-+LAPACK_LIB = %%LAPACK%% %%BLAS%% %%FORTRANLIBS%%
++LAPACK_LIB = %%LAPACK%% %%BLAS%% %%GCCLIBDIR%% %%FORTRANLIBS%%
  
  # if you use BLAS in clapack.tgz, use next line
  # and set NON_ATLAS_SDPA in rsdpa_include.h to 1.
