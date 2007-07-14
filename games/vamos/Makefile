@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	vamos
 # Date created:			Mar 15, 2002
 # Whom:				ijliao
@@ -7,36 +6,35 @@
 #
 
 PORTNAME=	vamos
-PORTVERSION=	0.5.6
+PORTVERSION=	0.5.7
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automotive simulation framework
 
-BUILD_DEPENDS=	${X11BASE}/lib/libplibul.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	cppunit-1.10.2:${PORTSDIR}/devel/cppunit \
-		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
-		glut.4:${PORTSDIR}/graphics/libglut \
+LIB_DEPENDS=	alut.1:${PORTSDIR}/audio/freealut \
+		openal.0:${PORTSDIR}/audio/openal \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gnometarget
-USE_GL=		yes
+USE_GL=		glut
+USE_SDL=	ttf sdl
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib \
-		--infodir=${PREFIX}/${INFO_PATH}
+		--infodir=${PREFIX}/${INFO_PATH} \
+		ac_cv_header_boost_test_unit_test_hpp=no
 USE_LDCONFIG=	yes
 
 INFO=		vamos
 
-CPPFLAGS=	-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include \
-		-I${X11BASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lusbhid \
+CPPFLAGS+=	`pkg-config --cflags-only-I sdl freealut libpng12` \
+		${PTHREAD_CFLAGS}
+LDFLAGS=	`pkg-config --libs-only-L sdl freealut libpng12` \
 		${PTHREAD_LIBS}
 
 post-extract:
@@ -44,8 +42,8 @@ post-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-pedantic -O1 -g -gstabs+||g ; \
-		 s|-ldl||g'
+		's|-pedantic -O2 -g||g ; \
+		 s|libpng`|libpng12`|g'
 	@${REINPLACE_CMD} -e 's|freeglut|glut|g ; \
 		 s|FREEGLUT|GLUT|g' ${WRKSRC}/configure
 
