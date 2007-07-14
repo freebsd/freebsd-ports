@@ -1,5 +1,5 @@
---- Makefile_FreeBSD_4.org	Mon May  7 13:07:46 2001
-+++ Makefile_FreeBSD_4	Mon May  7 13:03:51 2001
+--- ./Makefile_FreeBSD_4.orig	2007-07-14 20:49:46.000000000 +0400
++++ ./Makefile_FreeBSD_4	2007-07-14 20:49:46.000000000 +0400
 @@ -0,0 +1,6 @@
 +TCL_INC = ${LOCALBASE}/include/tcl8.2
 +TK_INC  = ${LOCALBASE}/include/tk8.2
