@@ -272,6 +272,7 @@
     SUBDIR += eiffelstudio
     SUBDIR += elf
     SUBDIR += elfio
+    SUBDIR += elfrc
     SUBDIR += elfsh
     SUBDIR += elftoaout
     SUBDIR += elib
