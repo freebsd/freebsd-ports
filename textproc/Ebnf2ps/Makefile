@@ -17,6 +17,8 @@ COMMENT=	Generate EPS/FIG diagrams from EBNF/yacc/bison grammars
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
+BROKEN=		Does not build
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 USE_XLIB=	yes
