@@ -23,10 +23,6 @@ MAKE_ARGS=	EXTRA_CFLAGS="${PTHREAD_CFLAGS}" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/funkgold ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
