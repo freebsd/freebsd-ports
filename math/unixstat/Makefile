@@ -16,14 +16,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	mwm@mired.org
 COMMENT=	A statistics package designed for use with the Unix shell
 
-RESTRICTED=	"License does not allow redistribution of binaries"
+RESTRICTED=	License does not allow mass redistribution.
 
 .include <bsd.port.pre.mk>
-
-.if ( ${OSVERSION} < 500000 )
-EXTRACT_DEPENDS=gtar:${PORTSDIR}/archivers/gtar
-TAR=		gtar
-.endif
 
 EXTRACT_CMD=	uncompress
 EXTRACT_BEFORE_ARGS=-c

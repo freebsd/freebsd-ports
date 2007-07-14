@@ -53,3 +53,30 @@
  	if (isatty (fileno (stdin)))
  		{
  		Interactive = 1;
+*** /tmp/perm.c.orig	Sat Jul 14 18:22:36 2007
+--- src/perm.c	Sat Jul 14 18:23:06 2007
+***************
+*** 19,29 ****
+  Boole	InfoLimits;           /* print program limits */
+  Boole	InfoOptions;          /* print usage information */
+  
+! int 	jpossible   Cdecl ((char **array, int n, int * choice, int i));
+! int 	jgetunused  Cdecl ((char **array, int n, int i));
+! int 	jchoose     Cdecl ((char **array, int n, int *choice, int i));
+  Status	jstrpermut  Cdecl ((char **array, int n));
+! void	jprint      Cdecl ((char *name, char **array, int n));
+  void	strpermut   Cdecl ((char **array, int size));
+  int 	initial     Cdecl ((int argc, char **argv));
+  void	usinfo      Cdecl ((void));
+--- 19,29 ----
+  Boole	InfoLimits;           /* print program limits */
+  Boole	InfoOptions;          /* print usage information */
+  
+! static int 	jpossible   Cdecl ((char **array, int n, int * choice, int i));
+! static int 	jgetunused  Cdecl ((char **array, int n, int i));
+! static int 	jchoose     Cdecl ((char **array, int n, int *choice, int i));
+  Status	jstrpermut  Cdecl ((char **array, int n));
+! static void	jprint      Cdecl ((char *name, char **array, int n));
+  void	strpermut   Cdecl ((char **array, int size));
+  int 	initial     Cdecl ((int argc, char **argv));
+  void	usinfo      Cdecl ((void));
