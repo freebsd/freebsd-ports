@@ -7,9 +7,10 @@
 
 PORTNAME=	kqemu
 PORTVERSION=	1.3.0.p11
+PORTREVISION=	1
 CATEGORIES=	emulators kld
-MASTER_SITES=	http://qemu.org/ \
-		http://fabrice.bellard.free.fr/qemu/ \
+MASTER_SITES=	http://fabrice.bellard.free.fr/qemu/ \
+		http://qemu.org/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nox
 PKGNAMESUFFIX=	-kmod
@@ -52,6 +53,30 @@ MAKE_ENV+=	KMODDIR="${KMODDIR}"
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		kqemu requires kernel source to be installed
+.endif
+
+.if ${OSVERSION} >= 700024 && !defined(NOKSE)
+# XXX this is wrong if you have `nooption KSE' in your kernel config,
+# please define NOKSE in that case
+CFLAGS+=	-DKSE
+.endif
+
+# XXX the following is wrong if you run a custom SMP kernel on a
+# singleprocessor machine (but it probably doesn't really matter)
+KERNCONF!=	${UNAME} -v | ${SED} 's-.*/--'
+NCPU!=		${SYSCTL} -n hw.ncpu 2>/dev/null
+# we know 7.x GENERIC has SMP
+.if ${KERNCONF} == "GENERIC" && ${OSVERSION} >= 700000
+CFLAGS+=	-DSMP
+.elif ${NCPU} > 1
+CFLAGS+=	-DSMP
+.endif
+
+post-extract:
+.if ${OSVERSION} >= 700024 && !defined(NOKSE)
+	@${ECHO_MSG} "Compiling with -DKSE."
+	@${ECHO_MSG} "If this is wrong (i.e. you have \`nooption KSE' in your kernel config),"
+	@${ECHO_MSG} "then please define NOKSE."
 .endif
 
 do-build:
