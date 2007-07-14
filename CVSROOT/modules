@@ -14117,6 +14117,7 @@ rubygem-ferret	ports/textproc/rubygem-ferret
 rubygem-gd2	ports/graphics/rubygem-gd2
 rubygem-gem_plugin	ports/devel/rubygem-gem_plugin
 rubygem-gruff	ports/graphics/rubygem-gruff
+rubygem-haml	ports/www/rubygem-haml
 rubygem-hoe		ports/devel/rubygem-hoe
 rubygem-hpricot	ports/www/rubygem-hpricot
 rubygem-htmltools	ports/textproc/rubygem-htmltools
