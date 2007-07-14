@@ -40,6 +40,10 @@ CONFIGURE_ARGS+= --enable-cfgpath="${PREFIX}/etc/linm" --enable-kolocalepath="${
 LINM_VER=	0.7.7
 WRKSRC=		${WRKDIR}/linm-${LINM_VER}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|Panel::SetCur|SetCur|' ${WRKSRC}/panel/common/panel.h
+	@${REINPLACE_CMD} -e 's|Position::Show|Show|' ${WRKSRC}/src/ncurses/dialog.h
+
 post-install:
 .if !defined (NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/linm
