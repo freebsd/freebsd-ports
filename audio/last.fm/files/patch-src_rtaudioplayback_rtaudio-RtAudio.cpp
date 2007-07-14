@@ -1,5 +1,5 @@
---- src/rtaudioplayback/rtaudio/RtAudio.cpp.orig	Tue Feb  6 00:07:31 2007
-+++ src/rtaudioplayback/rtaudio/RtAudio.cpp	Tue Feb  6 00:08:41 2007
+--- src/output/RtAudio/rtaudio/RtAudio.cpp.orig	Tue Feb  6 00:07:31 2007
++++ src/output/RtAudio/rtaudio/RtAudio.cpp	Tue Feb  6 00:08:41 2007
 @@ -42,7 +42,7 @@
  #include <QtGui>
  
