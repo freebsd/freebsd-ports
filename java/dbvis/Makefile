@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	dbvis
-PORTVERSION=	5.1.1
-PORTREVISION=	1
+PORTVERSION=	6.0
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.dbvis.com/product_download/dbvis/media/
-DISTNAME=	dbvis_unix_5_1_1
+DISTNAME=	dbvis_unix_${PORTVERSION:S/./_/}
 
 MAINTAINER=	contact@toha.org.ua
 COMMENT=	DbVisualizer database tool
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 RESTRICTED=	Redistribution is not permitted
 
 PLIST_FILES=	bin/dbvis
-WRKSRC=		DbVisualizer-5.1.1
+WRKSRC=		DbVisualizer-${PORTVERSION}
 
 do-install:
 	cd ${WRKDIR}/${WRKSRC} \
