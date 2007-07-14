@@ -5551,7 +5551,7 @@ jext		ports/editors/jext
 jfc		ports/java/jfc
 jfconv		ports/palm/jfconv
 jfduke3d	ports/games/jfduke3d
-jffnms		ports/net/jffnms
+jffnms		ports/net-mgmt/jffnms
 jfk		ports/games/jfk
 jflex		ports/java/jflex
 jfreechart	ports/java/jfreechart
