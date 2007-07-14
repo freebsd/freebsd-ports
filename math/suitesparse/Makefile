@@ -43,10 +43,7 @@ FPIC=	-fpic
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 WRKSRC=${WRKDIR}/SuiteSparse
 WRKSRC_SHARED=${WRKSRC}_shared
 CFLAGS_SHARED=${CFLAGS} ${FPIC}
