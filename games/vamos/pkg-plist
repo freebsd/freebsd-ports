@@ -31,10 +31,10 @@ include/vamos/geometry/Spline.h
 include/vamos/geometry/Three_Matrix.h
 include/vamos/geometry/Three_Vector.h
 include/vamos/geometry/Two_Vector.h
-include/vamos/geometry/XML_Parser.h
 include/vamos/media/Ac3d.h
 include/vamos/media/Sample.h
 include/vamos/media/Texture_Image.h
+include/vamos/media/XML_Parser.h
 include/vamos/track/Gl_Road_Segment.h
 include/vamos/track/Road_Segment.h
 include/vamos/track/Strip_Track.h
