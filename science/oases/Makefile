@@ -21,11 +21,7 @@ WRKSRC=		${WRKDIR}/Oases_export
 USE_XLIB=	yes
 MAKE_ENV+=	OASES_ROOT="${WRKSRC}"
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+USE_FORTRAN=	yes
 
 SCRIPT=		avbeam bistat cplot mplot mtvplot multmtv oasn oasp oasr \
 		oass oassp oast plp2mtv

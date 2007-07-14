@@ -35,10 +35,7 @@ BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 P_VERSION=	3.0
 WRKSRC=		${WRKDIR}/SuperLU_${P_VERSION}
