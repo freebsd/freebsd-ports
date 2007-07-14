@@ -27,10 +27,7 @@ LIB_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GMAKE=	yes
-WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=	gfortran42
-F77=	gfortran42
+USE_FORTRAN=	yes
 FORTRANLIBS=    -lgfortranbegin -lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
