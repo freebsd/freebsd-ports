@@ -29,6 +29,10 @@ PORTDOCShtml+=	tutorial-en.html tutorial-ja.html
 
 MAN8=		pgpool.8
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	${WRKSRC}/configure
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
