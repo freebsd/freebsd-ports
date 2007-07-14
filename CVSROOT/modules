@@ -14824,6 +14824,7 @@ squidpurge	ports/www/squidpurge
 squidtimes	ports/www/squidtimes
 squidview	ports/www/squidview
 squirm		ports/www/squirm
+squirrel	ports/lang/squirrel
 squirrel-sql	ports/databases/squirrel-sql
 squirrelmail	ports/mail/squirrelmail
 squirrelmail-avelsieve-plugin	ports/mail/squirrelmail-avelsieve-plugin
