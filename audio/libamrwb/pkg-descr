@@ -1,6 +1,13 @@
-Adaptive Multi-Rate Wideband decoder and encoder library.
+3GPP Adaptive Multi-Rate - Wideband (AMR-WB) Speech Codec
 (3GPP TS 26.204 V7.0.0)
-
 http://www.3gpp.org/ftp/Specs/html-info/26204.htm
+
+AMR-WB is a speech coding standard developed after the AMR using the same
+technology like ACELP. The codec provides better speech quality due to wider
+speech bandwidth of 50-7000 Hz compared to narrowband speech codecs.
+AMR-WB is codified as G.722.2, an ITU-T standard speech codec.
+
+Note that depending on law in your country, you may need a license for
+distribution, any use, commercial use or even development.
 
 WWW: http://www.penguin.cz/~utx/amr
