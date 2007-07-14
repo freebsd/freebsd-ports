@@ -56,12 +56,7 @@ BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 
-WANT_FORTRAN=	yes
-#workaround optimization bug in gcc42, not gfortran42
-#USE_GCC=4.2+
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 OCTAVE_VERSION=	${PORTVERSION}
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
