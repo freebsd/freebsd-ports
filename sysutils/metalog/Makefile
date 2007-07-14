@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metalog
-DISTVERSION=	0.8-rc1
+DISTVERSION=	0.8
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,17 +17,21 @@ COMMENT=	Modern syslogd replacement with PCRE support
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
+USE_BZIP2=	yes
+USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-# Needed for metalog's configure to find installed devel/pcre port
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc --mandir=${MANPREFIX}/man
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN5=		metalog.conf.5
 MAN8=		metalog.8
 DOCS=		AUTHORS NEWS README
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|' ${WRKSRC}/man/*[58]
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
