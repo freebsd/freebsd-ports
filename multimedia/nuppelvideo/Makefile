@@ -32,10 +32,6 @@ CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 ###
 ## Auto detected features
 ###
@@ -76,6 +72,7 @@ post-patch:
 		-e 's|^CC.*$$|#|' \
 		-e 's|^(COPTSRT).*$$|\1=\$$(CFLAGS)|' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|[(]__u8[)]strm[[]|((__u8*)strm)[|' ${WRKSRC}/RTjpegN.c
 
 post-install:
 .if !defined(NOPORTDOCS)
