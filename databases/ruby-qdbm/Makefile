@@ -16,5 +16,6 @@ MASTERDIR=	${.CURDIR}/../../databases/qdbm
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/ruby
 PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
+PATCHDIR=	${.CURDIR}/files
 
 .include "${MASTERDIR}/Makefile"
