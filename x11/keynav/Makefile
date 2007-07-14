@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keynav
-PORTVERSION=	20070629
+DISTVERSION=	20070705
 CATEGORIES=	x11
 MASTER_SITES=	http://www.semicomplete.com/files/keynav/ \
 		http://www.atarininja.org/~wxs/distfiles/
@@ -19,8 +19,13 @@ USE_XLIB=	yes
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/keynav
+PORTEXAMPLES=	keynavrc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/keynav ${PREFIX}/bin
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/keynavrc ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
