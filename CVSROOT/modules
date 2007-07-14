@@ -2377,6 +2377,7 @@ electricfence	ports/devel/ElectricFence
 electricsheep	ports/x11/electricsheep
 elf		ports/devel/elf
 elfio		ports/devel/elfio
+elfrc		ports/devel/elfrc
 elfsh		ports/devel/elfsh
 elftoaout	ports/devel/elftoaout
 elib		ports/devel/elib
