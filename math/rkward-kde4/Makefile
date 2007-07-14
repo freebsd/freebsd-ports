@@ -27,13 +27,9 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
 CONFIGURE_ARGS=	--disable-fast-perl
 INSTALLS_ICONS=	yes
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 FORTRANLIBDIR2=	`${DIRNAME} \\`gfortran42 -print-libgcc-file-name\\``/../../../
 CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
-MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/rkward
 
