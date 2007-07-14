@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Sep 14 12:39:00 1999
-+++ Makefile	Sat Mar 17 18:16:04 2007
+--- ./Makefile.orig	1999-09-14 14:39:00.000000000 +0400
++++ ./Makefile	2007-07-14 20:49:46.000000000 +0400
 @@ -10,8 +10,8 @@
  # -DDEBUG_RTP -DREPEAT
  
