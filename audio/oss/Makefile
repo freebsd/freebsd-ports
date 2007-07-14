@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	oss
-DISTVERSION=	4.0-build1003
-PORTREVISION=	3
+DISTVERSION=	4.0-build1004
 CATEGORIES=	audio kld
 MASTER_SITES=	http://developer.opensound.com/sources/stable/
-DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-gpl
+DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-cddl
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Open Sound System
