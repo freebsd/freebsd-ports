@@ -171,6 +171,7 @@
     SUBDIR += py-vobject
     SUBDIR += pybookreader
     SUBDIR += pypanel
+    SUBDIR += qlabels
     SUBDIR += qrfcview
     SUBDIR += recoll
     SUBDIR += remember.el
