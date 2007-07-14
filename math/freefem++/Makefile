@@ -20,17 +20,14 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads		\
 		gsl.10:${PORTSDIR}/math/gsl
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick		\
 		dvips:${PORTSDIR}/print/dvipsk-tetex			\
-		pdflatex:${PORTSDIR}/print/teTeX-base	\
-		gfortran42:${PORTSDIR}/lang/gcc42
+		pdflatex:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex			\
 		pdflatex:${PORTSDIR}/print/teTeX-base			\
 		bamg:${PORTSDIR}/math/bamg
 
 RESTRICTED=	No resale or commercial use
 
-WANT_FORTRAN=		yes
-FC=			gfortran42
-F77=			gfortran42
+USE_FORTRAN=		yes
 FORTRANLIBDIR=		`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``
 FORTRANLIBDIR2=		`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``/../../../
 USE_BISON=		yes
