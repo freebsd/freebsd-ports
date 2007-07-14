@@ -1090,6 +1090,7 @@
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionwebservice
     SUBDIR += rubygem-bluecloth
+    SUBDIR += rubygem-haml
     SUBDIR += rubygem-hpricot
     SUBDIR += rubygem-layout-yullio
     SUBDIR += rubygem-maruku
