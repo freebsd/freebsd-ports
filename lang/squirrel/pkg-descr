@@ -1,0 +1,13 @@
+Squirrel is a high level imperative/OO programming language, designed
+to be a powerful scripting tool that fits in the size, memory bandwidth,
+and real-time requirements of applications like games. However Squirrel
+offers a wide range of features like dynamic typing, delegation, classes
+& inheritance, higher order functions, generators, coroutines, tail
+recursion, exception handling, automatic memory management, weak
+references, etc.
+
+Squirrel is inspired by languages like Python, Javascript and especially
+Lua. The API is very similar and the table code is based on the Lua one.
+
+WWW: http://squirrel-lang.org/
+Author: Alberto Demichelis <alberto@ademichelis.com>
