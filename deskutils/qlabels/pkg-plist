@@ -1,0 +1,15 @@
+bin/qlabels
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%DATADIR%%/templates/avery-iso-templates.xml
+%%DATADIR%%/templates/avery-other-templates.xml
+%%DATADIR%%/templates/avery-us-templates.xml
+%%DATADIR%%/templates/dvd-template.xml
+%%DATADIR%%/templates/misc-iso-templates.xml
+%%DATADIR%%/templates/misc-other-templates.xml
+%%DATADIR%%/templates/misc-us-templates.xml
+%%DATADIR%%/templates/paper-sizes.xml
+%%DATADIR%%/templates/zweckform-iso-templates.xml
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
