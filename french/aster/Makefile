@@ -141,10 +141,7 @@ BUILD_DEPENDS+=	${HOME_MPI}/include/mpif.h:${PORTSDIR}/net/mpich2
 HOME_MPI=	${LOCALBASE}/mpich2
 .endif
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 FORTRANLIBDIR=	`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``
 FORTRANLIBDIR2=	`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``/../../../
 
