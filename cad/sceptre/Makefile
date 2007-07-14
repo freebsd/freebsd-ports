@@ -14,17 +14,10 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SCEPTRE is a general purpose circuit analysis program
 
-WANT_FORTRAN=	yes #dummy but future use
-
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 700000
-BUILD_DEPENDS+= g77-34:${PORTSDIR}/lang/gcc34
-FC=             g77-34
-F77=            g77-34
+USE_FORTRAN=	g77
 FFLAGS+=	-fno-automatic -O
-MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
-.endif
 
 NO_WRKSUBDIR=	YES
 
