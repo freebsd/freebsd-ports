@@ -18,7 +18,7 @@ COMMENT=	A Numerical Hartree-Fock Program for Diatomic Molecules
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 .if defined(WITH_INTEL)
-BUILD_DEPENDS+=  ${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc
+USE_FORTRAN=	ifort
 BUILD_DEPENDS+=  ${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
 
@@ -34,10 +34,7 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 .endif
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double

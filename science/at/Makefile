@@ -16,10 +16,7 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The Acoustic ToolBox includes four acoustic models
 
 WRKSRC=                 ${WRKDIR}/at
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%FC%%|${FC}|g" -e "s|%%F77%%|${F77}|g" -e "s|%%FFLAGS%%|${FFLAGS}|g" ${WRKSRC}/Bellhop/Makefile
