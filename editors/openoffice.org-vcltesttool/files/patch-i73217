@@ -1,3 +1,5 @@
+It won't fix in the master as it breaks the POSIX.
+
 Index: epm/epm-3.7.patch
 ===================================================================
 RCS file: /cvs/external/epm/epm-3.7.patch,v
