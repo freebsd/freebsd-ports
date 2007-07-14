@@ -4,6 +4,10 @@ bin/freecol
 %%DATADIR%%/data/audio/sfx/03LoadCargo.wav
 %%DATADIR%%/data/audio/sfx/04SellCargo.wav
 %%DATADIR%%/data/audio/sfx/05Artillery.wav
+%%DATADIR%%/data/audio/sfx/10_Anthem_Dutch.wav
+%%DATADIR%%/data/audio/sfx/11_Anthem_Spanish.wav
+%%DATADIR%%/data/audio/sfx/12_Anthem_French.wav
+%%DATADIR%%/data/audio/sfx/13_Anthem_English.wav
 %%DATADIR%%/data/fonts/Plakat-Fraktur.ttf
 %%DATADIR%%/data/fonts/README
 %%DATADIR%%/data/fonts/ShadowedBlack.ttf
@@ -489,13 +493,22 @@ bin/freecol
 %%DATADIR%%/data/images/ui/bg2.png
 %%DATADIR%%/data/images/ui/bg_europe.jpg
 %%DATADIR%%/data/images/ui/bg_map1.jpg
+%%DATADIR%%/data/images/ui/building_section.png
+%%DATADIR%%/data/images/ui/closed_section.png
 %%DATADIR%%/data/images/ui/doi.png
+%%DATADIR%%/data/images/ui/dutch-ref.png
+%%DATADIR%%/data/images/ui/dutch.png
+%%DATADIR%%/data/images/ui/english-ref.png
+%%DATADIR%%/data/images/ui/english.png
 %%DATADIR%%/data/images/ui/exploration.png
 %%DATADIR%%/data/images/ui/freecol.png
 %%DATADIR%%/data/images/ui/freecol2.png
+%%DATADIR%%/data/images/ui/french-ref.png
+%%DATADIR%%/data/images/ui/french.png
 %%DATADIR%%/data/images/ui/go.png
 %%DATADIR%%/data/images/ui/infopanel-skin.png
 %%DATADIR%%/data/images/ui/landing.png
+%%DATADIR%%/data/images/ui/map-americas.png
 %%DATADIR%%/data/images/ui/meet_aztec.png
 %%DATADIR%%/data/images/ui/meet_europeans.png
 %%DATADIR%%/data/images/ui/meet_inca.png
@@ -513,6 +526,8 @@ bin/freecol
 %%DATADIR%%/data/images/ui/menuborder-w.png
 %%DATADIR%%/data/images/ui/military.png
 %%DATADIR%%/data/images/ui/minimap-skin.png
+%%DATADIR%%/data/images/ui/native.png
+%%DATADIR%%/data/images/ui/open_section.png
 %%DATADIR%%/data/images/ui/path-foot-illegal.png
 %%DATADIR%%/data/images/ui/path-foot-nextturn.png
 %%DATADIR%%/data/images/ui/path-foot.png
@@ -527,6 +542,8 @@ bin/freecol
 %%DATADIR%%/data/images/ui/path-wagon.png
 %%DATADIR%%/data/images/ui/political.png
 %%DATADIR%%/data/images/ui/religious.png
+%%DATADIR%%/data/images/ui/spanish-ref.png
+%%DATADIR%%/data/images/ui/spanish.png
 %%DATADIR%%/data/images/ui/trade.png
 %%DATADIR%%/data/images/ui/victory.png
 %%DATADIR%%/data/images/units/Unit0.png
@@ -592,6 +609,27 @@ bin/freecol
 %%DATADIR%%/data/images/units/Unit7.png
 %%DATADIR%%/data/images/units/Unit8.png
 %%DATADIR%%/data/images/units/Unit9.png
+%%DATADIR%%/data/maps/america-large.fsg
+%%DATADIR%%/data/strings/FreeColMessages.properties
+%%DATADIR%%/data/strings/FreeColMessages_br.properties
+%%DATADIR%%/data/strings/FreeColMessages_de.properties
+%%DATADIR%%/data/strings/FreeColMessages_de_DE.properties
+%%DATADIR%%/data/strings/FreeColMessages_en_GB.properties
+%%DATADIR%%/data/strings/FreeColMessages_en_US.properties
+%%DATADIR%%/data/strings/FreeColMessages_es_ES.properties
+%%DATADIR%%/data/strings/FreeColMessages_fa.properties
+%%DATADIR%%/data/strings/FreeColMessages_fi.properties
+%%DATADIR%%/data/strings/FreeColMessages_fr.properties
+%%DATADIR%%/data/strings/FreeColMessages_hu.properties
+%%DATADIR%%/data/strings/FreeColMessages_it_IT.properties
+%%DATADIR%%/data/strings/FreeColMessages_nl.properties
+%%DATADIR%%/data/strings/FreeColMessages_nl_BE.properties
+%%DATADIR%%/data/strings/FreeColMessages_pl_PL.properties
+%%DATADIR%%/data/strings/FreeColMessages_pms.properties
+%%DATADIR%%/data/strings/FreeColMessages_pt_BR.properties
+%%DATADIR%%/data/strings/FreeColMessages_pt_PT.properties
+%%DATADIR%%/data/strings/FreeColMessages_ru.properties
+%%DATADIR%%/data/strings/FreeColMessages_sv_SE.properties
 %%DATADIR%%/jars/higlayout.jar
 %%DATADIR%%/jars/jsr173_1.0_api.jar
 %%DATADIR%%/jars/wstx-lgpl-4.0pr1.jar
@@ -631,6 +669,8 @@ bin/freecol
 @dirrm %%DATADIR%%/data/images/ui
 @dirrm %%DATADIR%%/data/images/units
 @dirrm %%DATADIR%%/data/images
+@dirrm %%DATADIR%%/data/maps
+@dirrm %%DATADIR%%/data/strings
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/jars
 @dirrm %%DATADIR%%
