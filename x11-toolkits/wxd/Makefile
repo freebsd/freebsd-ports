@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wxd
-PORTVERSION=	0.08
-PORTREVISION=	2
+PORTVERSION=	0.10
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,12 +19,16 @@ BUILD_DEPENDS=	gdc:${PORTSDIR}/lang/gdc
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_WX=		2.6
+USE_WX=		2.8
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS=	UNICODE "Build the Unicode version" On
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		does not compile
+.endif
 
 .if !defined(WITHOUT_UNICODE)
 WX_UNICODE=	yes
@@ -38,15 +41,5 @@ pre-patch:
 	@${MV} ${WRKSRC}/wxc/GNUmakefile ${WRKSRC}/wxc/Makefile
 	@${RM} ${WRKSRC}/wx/Makefile
 	@${MV} ${WRKSRC}/wx/GNUmakefile ${WRKSRC}/wx/Makefile
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -R ${WRKSRC}/Samples/* ${EXAMPLESDIR}
-.endif
-
-.if ${OSVERSION} < 500000
-IGNORE=	needs FreeBSD 5.x or later
-.endif
 
 .include <bsd.port.post.mk>
