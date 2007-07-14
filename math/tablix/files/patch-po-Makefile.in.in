@@ -1,0 +1,10 @@
+--- po/Makefile.in.in.orig	Wed Feb 14 13:44:33 2007
++++ po/Makefile.in.in	Sat Jul 14 18:06:22 2007
+@@ -25,6 +25,7 @@
+ exec_prefix = @exec_prefix@
+ datarootdir = @datarootdir@
+ datadir = @datadir@
++DATADIRNAME = @DATADIRNAME@
+ localedir = @localedir@
+ gettextsrcdir = $(datadir)/gettext/po
+ 
