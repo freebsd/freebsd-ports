@@ -21,15 +21,11 @@ COMMENT=	Himeno bench benchmark, solves Poisson eq. with Jacobi's method
 BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
 .if defined(WITH_IFC)
-BUILD_DEPENDS=	${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc
+USE_FORTRAN=	ifort
 .endif
 EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
-#use gfortran
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 GCCVER:=      ${USE_GCC:S/+//}
 
@@ -55,7 +51,7 @@ PLIST_SUB+=	WITH_IFC=""
 PLIST_SUB+=	WITH_IFC="@comment "
 .endif
 
-.if ${GCCVER} < 4.2
+.if ${USE_FORTRAN} == yes
 PLIST_SUB+=	WITH_GFORTRAN="@comment "
 .else
 PLIST_SUB+=	WITH_GFORTRAN=""
@@ -67,7 +63,7 @@ do-extract:
 	cd ${WRKSRC} ; lha xf ${DISTDIR}/${DIST_SUBDIR}/$$i; \
 	done
 do-build:
-.if ${GCCVER} >= 4.2
+.if ${USE_FORTRAN} == yes
 	cd ${WRKSRC} ; ${FC} ${FFLAGS} -o himenobmtxp    himenobmtxp.f90
 .endif
 #	cd ${WRKSRC} ; ${FC} ${FFLAGS} -o himenobmtxp_xl himenobmtxp_xl.f #Too large
@@ -97,7 +93,7 @@ do-build:
 .endif
 do-install:
 #	${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_xl          ${PREFIX}/bin #Too large
-.if ${GCCVER} >= 4.2
+.if ${USE_FORTRAN} == yes
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp            ${PREFIX}/bin
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_l           ${PREFIX}/bin
