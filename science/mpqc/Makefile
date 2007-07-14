@@ -40,7 +40,7 @@ BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 .if defined(WITH_MPICH)
-BUILD_DEPENDS+=	${LOCALBASE}/mpich2/lib/libmpich.a:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
 .endif
 LIB_DEPENDS+=	int.1:${PORTSDIR}/science/libint
 .if !defined(NOPORTDOCS)
