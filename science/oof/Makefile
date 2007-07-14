@@ -27,9 +27,9 @@ LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
 BLAS_LIBS=	-lblas
 .endif
 
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FORTRANLIBDIR=	`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``
-FORTRANLIBDIR2=	`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``/../../../
+USE_FORTRAN=	yes
+FORTRANLIBDIR=	`${DIRNAME} \`${FC} -print-libgcc-file-name\``
+FORTRANLIBDIR2=	`${DIRNAME} \`${FC} -print-libgcc-file-name\``/../../../
 FORTRANLIBS=	-lgfortranbegin -lgfortran
 
 CXXFLAGS+=	-DDONT_HAVE_STRSTREAM_H -DNEED_FDSTREAM

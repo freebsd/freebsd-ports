@@ -31,11 +31,7 @@ CONFIGURE_ARGS=	--with-cc=${CC} \
 		--x-libraries=${X11BASE}/lib \
 		--x-includes=${X11BASE}/include
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+USE_FORTRAN=	yes
 
 .include <bsd.port.pre.mk>
 
