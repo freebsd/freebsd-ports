@@ -26,10 +26,7 @@ BUILD_DEPENDS=		pkg-config:${PORTSDIR}/devel/pkg-config
 IGNORE=			no MPI support at the moment
 .endif
 
-WANT_FORTRAN=		yes #dummy but future use
-BUILD_DEPENDS+=		gfortran42:${PORTSDIR}/lang/gcc42
-FC=			gfortran42
-F77=			gfortran42
+USE_FORTRAN=		yes
 FFLAGS+=		-O2
 
 USE_GL=			yes
