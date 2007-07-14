@@ -24,10 +24,7 @@ LIB_DEPENDS=	mpqc:${PORTSDIR}/science/mpqc \
 		ghemical:${PORTSDIR}/science/libghemical \
 		mopac7:${PORTSDIR}/biology/mopac
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 USE_GMAKE=	yes
