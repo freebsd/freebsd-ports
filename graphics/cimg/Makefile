@@ -33,10 +33,7 @@ LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas -lf77blas -L`${CAT} ${WRKSRC}/L
 LAPACK_DEF=	-Dcimg_lapack
 . endif
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 . if !defined(WITHOUT_OPTIMIZATIONS)
 USE_XLIB=	yes

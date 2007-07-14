@@ -25,11 +25,7 @@ USE_LDCONFIG=	yes
 
 VER=		${PORTVERSION:S/.//}
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-MAKE_ENV+=	FFLAGS="${FFLAGS}"
+USE_FORTRAN=	yes
 
 WRKSRC=		${WRKDIR}/cdf${VER}-dist
 SUB_FILES=	pkg-message
