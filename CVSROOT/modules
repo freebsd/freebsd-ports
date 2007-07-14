@@ -17008,6 +17008,7 @@ xpi-displayquota	ports/mail/xpi-displayquota
 xpi-downthemall	ports/www/xpi-downthemall
 xpi-errorzilla	ports/www/xpi-errorzilla
 xpi-fasterfox	ports/www/xpi-fasterfox
+xpi-firebug	ports/www/xpi-firebug
 xpi-firefox-showcase	ports/www/xpi-firefox-showcase
 xpi-fission	ports/www/xpi-fission
 xpi-flashblock	ports/www/xpi-flashblock
