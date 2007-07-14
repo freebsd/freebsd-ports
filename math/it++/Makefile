@@ -34,9 +34,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	opt
 USE_GMAKE=	yes
 USE_GCC=	3.3+
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|sparc|__sparc__|" \
