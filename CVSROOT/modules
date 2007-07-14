@@ -4384,6 +4384,7 @@ hachoir-core	ports/devel/hachoir-core
 hachoir-metadata	ports/sysutils/hachoir-metadata
 hachoir-parser	ports/devel/hachoir-parser
 hachoir-regex	ports/devel/hachoir-regex
+hachoir-subfile	ports/sysutils/hachoir-subfile
 hachoir-urwid	ports/sysutils/hachoir-urwid
 hachoir-wx	ports/sysutils/hachoir-wx
 hackbot		ports/security/hackbot
