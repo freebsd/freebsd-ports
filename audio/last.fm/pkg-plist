@@ -1,4 +1,5 @@
 bin/last.fm
+%%DATADIR%%/LastFMHelper
 %%DATADIR%%/data/about.png
 %%DATADIR%%/data/about_generic.png
 %%DATADIR%%/data/about_mac.png
@@ -46,6 +47,7 @@ bin/last.fm
 %%DATADIR%%/data/icons/neighbour_radio.png
 %%DATADIR%%/data/icons/options_account.png
 %%DATADIR%%/data/icons/options_connection.png
+%%DATADIR%%/data/icons/options_mediadevices.png
 %%DATADIR%%/data/icons/options_radio.png
 %%DATADIR%%/data/icons/options_scrobbling.png
 %%DATADIR%%/data/icons/orangeprofile24.png
@@ -53,7 +55,9 @@ bin/last.fm
 %%DATADIR%%/data/icons/qt_cross.png
 %%DATADIR%%/data/icons/recent_tracks.png
 %%DATADIR%%/data/icons/recently_banned.png
+%%DATADIR%%/data/icons/recently_banned16.png
 %%DATADIR%%/data/icons/recently_loved.png
+%%DATADIR%%/data/icons/recently_loved16.png
 %%DATADIR%%/data/icons/recommended_radio.png
 %%DATADIR%%/data/icons/redprofile24.png
 %%DATADIR%%/data/icons/scrobble16.png
@@ -92,23 +96,17 @@ bin/last.fm
 %%DATADIR%%/data/wizard.png
 %%DATADIR%%/data/wizard_generic.png
 %%DATADIR%%/data/wizard_mac.png
-%%DATADIR%%/extensions/libextension_metadata.so
-%%DATADIR%%/extensions/libextension_search.so
-%%DATADIR%%/extensions/libextension_sidebar.so
-%%DATADIR%%/extensions/libextension_userinfo.so
 %%DATADIR%%/last.fm
 %%DATADIR%%/last.fm.app
 %%DATADIR%%/last.fm.bak
-%%DATADIR%%/libLastFMTools.so
-%%DATADIR%%/libLastFMTools.so.1
-%%DATADIR%%/libLastFMTools.so.1.0
-%%DATADIR%%/libLastFMTools.so.1.0.0
-%%DATADIR%%/services/libinput_http.so
-%%DATADIR%%/services/libmediadevice_itunes.so
-%%DATADIR%%/services/libplayback_rtaudio.so
-%%DATADIR%%/services/libservice_settings.so
-%%DATADIR%%/services/libservice_web.so
-%%DATADIR%%/services/libtranscode_mp3.so
+%%DATADIR%%/libLastFmTools.so
+%%DATADIR%%/libLastFmTools.so.1
+%%DATADIR%%/libLastFmTools.so.1.0
+%%DATADIR%%/libLastFmTools.so.1.0.0
+%%DATADIR%%/services/libsrv_httpinput.so
+%%DATADIR%%/services/libsrv_itunesdevice.so
+%%DATADIR%%/services/libsrv_mp3transcode.so
+%%DATADIR%%/services/libsrv_rtaudioplayback.so
 share/services/lastfm.protocol
 @dirrmtry share/services
 @dirrm %%DATADIR%%/services

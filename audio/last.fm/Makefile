@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	last.fm
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.3.0.58
 CATEGORIES=	audio net
 MASTER_SITES=	http://static.last.fm/client/Linux/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -28,6 +27,8 @@ CONFIGURE_ENV+=	X11BASE=${X11BASE}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-build:
+	cd ${WRKSRC}/src/output/RtAudio && \
+	${QMAKE} -spec freebsd-g++ && make
 	${REINPLACE_CMD} -e 's|`dirname $$0`|${DATADIR}|g' \
 		${WRKSRC}/bin/last.fm
 
