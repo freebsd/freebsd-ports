@@ -83,6 +83,7 @@
     SUBDIR += ipv6gen
     SUBDIR += irrtoolset
     SUBDIR += isic
+    SUBDIR += jffnms
     SUBDIR += junipoll
     SUBDIR += kismet
     SUBDIR += knowlan
