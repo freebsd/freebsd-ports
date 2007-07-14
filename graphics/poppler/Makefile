@@ -8,7 +8,7 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.5.9
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -76,12 +76,12 @@ MAN1=	pdffonts.1 pdfimages.1 pdfinfo.1 \
 .else
 CONFIGURE_ARGS+=--disable-utils
 .endif
+.endif
 
 .if defined(WITHOUT_CAIRO)
 CONFIGURE_ARGS+=	--disable-cairo-output
 .else
 LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
-.endif
 .endif
 
 post-patch:
