@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libao
-PORTVERSION=	0.8.5
-PORTREVISION=	5
+PORTVERSION=	0.8.8
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/ao/
 
@@ -18,6 +17,7 @@ USE_AUTOTOOLS=	libtool:15
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir="${PREFIX}/man"
 INSTALLS_SHLIB=	yes
 
 .if defined(NOPORTDOCS)
@@ -28,36 +28,44 @@ MAKE_ENV=	DOC=doc
 
 MAN5=		libao.conf.5
 
+OPTIONS=	ARTS "Enable the aRts module" off \
+		ESOUND "Enable the EsounD module" off \
+		NAS "Enable the Network Audio System module" off \
+		PULSEAUDIO "Enable the PulseAudio module" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-PLIST_SUB+=	ARTS=""
 .else
-CONFIGURE_ARGS+=	--disable-arts
-PLIST_SUB+=	ARTS="@comment "
-pre-everything::
-	@${ECHO_MSG} "Define WITH_ARTS to enable the aRts module."
+CONFIGURE_ARGS+=--disable-arts
+.endif
+
+.if defined(WITH_ESOUND)
+USE_GNOME+=	esound
+.else
+CONFIGURE_ARGS+=--disable-esd
 .endif
 
 .if defined(WITH_NAS)
 LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
-PLIST_SUB+=	NAS=""
 .else
-CONFIGURE_ARGS+=	--disable-nas
-PLIST_SUB+=	NAS="@comment "
-pre-everything::
-	@${ECHO_MSG} "Define WITH_NAS to enable the NAS module."
+CONFIGURE_ARGS+=--disable-nas
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mesound}
-USE_GNOME+=	esound
-PLIST_SUB+=	ESOUND=""
-PKGNAMESUFFIX=	-esound
+.if defined(WITH_PULSEAUDIO)
+LIB_DEPENDS+=	pulse-simple.0:${PORTSDIR}/audio/pulseaudio
 .else
-CONFIGURE_ARGS+=	--disable-esd
-PLIST_SUB+=	ESOUND="@comment "
+CONFIGURE_ARGS+=--disable-pulse
 .endif
+
+.for m in ARTS ESOUND NAS PULSEAUDIO
+.   if defined(WITH_$m)
+PLIST_SUB+=	$m=""
+.   else
+PLIST_SUB+=	$m="@comment "
+.   endif
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/libao.conf|${PREFIX}&|' \

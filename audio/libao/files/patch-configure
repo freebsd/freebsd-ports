@@ -1,17 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Sun Oct  5 03:32:52 2003
-+++ configure	Wed Oct  8 16:17:26 2003
-@@ -7787,6 +7787,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -7816,7 +7817,7 @@
+--- configure.orig
++++ configure
+@@ -20076,7 +20076,7 @@
          *)
                  PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
                  DEBUG="-g"
@@ -20,7 +12,7 @@ $FreeBSD$
                  PROFILE="-g -p" ;;
          esac
  else
-@@ -7839,9 +7840,9 @@
+@@ -20099,9 +20099,9 @@
                  PROFILE="-g -pg -D__NO_MATH_INLINES -fsigned-char -Ddlsym=dlsym_auto_underscore" ;;
          *)
                  PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
@@ -33,16 +25,16 @@ $FreeBSD$
          esac
  fi
  CFLAGS="$CFLAGS $cflags_save"
-@@ -12128,7 +12129,7 @@
+@@ -24840,7 +24840,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-laudio -lXau $X_LIBS $LIBS"
 +LIBS="-laudio -lXau -lXt -lm $X_LIBS $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -12337,7 +12338,7 @@
+ _ACEOF
+@@ -25055,7 +25055,7 @@
  
  if test "x$have_nas" = xyes; then
  	NAS_CFLAGS="$X_CFLAGS"

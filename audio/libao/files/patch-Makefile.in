@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Mon Aug 13 13:39:22 2001
-+++ Makefile.in	Tue Aug 14 17:39:55 2001
-@@ -87,7 +87,7 @@
- 
- AUTOMAKE_OPTIONS = foreign dist-zip
- 
--SUBDIRS = src include doc debian
-+SUBDIRS = src include $(DOC) debian
- 
- m4datadir = $(datadir)/aclocal
+--- Makefile.in.orig
++++ Makefile.in
+@@ -225,7 +225,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = foreign 1.6 dist-zip
+-SUBDIRS = src include doc
++SUBDIRS = src include $(DOC)
+ m4datadir = $(prefix)/share/aclocal
  m4data_DATA = ao.m4
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
