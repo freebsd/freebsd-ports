@@ -1,0 +1,17 @@
+
+AMR codecs incorporate several patents, held by Ericsson,
+Universite de Sherbrooke (VoiceAge) and Nokia.
+VoiceAge claims to provide patent portfolio for AMR codecs. Depending on law in
+your country, manufacturers and developers may need to get a license.
+Because it is a shared library, you may need a special contract for each one
+application, which links against this library, directly or indirectly.
+
+* 3GPP policy on licensing and 3G Patent Platform:
+    http://www.3gpp.org/faq/faq_2005_2.htm#A3.1
+* Intellectual property in ETSI standards:
+    http://webapp.etsi.org/IPR/home.asp
+* On 3GPP legal issues:
+    http://www.3gpp.org/legal/legal.htm
+* On VoiceAge licensing:
+    http://www.voiceage.com/licensing.php
+
