@@ -252,7 +252,6 @@
     SUBDIR += gwenview
     SUBDIR += gx
     SUBDIR += hobbes-icons-xpm
-    SUBDIR += hpoj
     SUBDIR += hppsmtools
     SUBDIR += hs-hgl
     SUBDIR += hsetroot
