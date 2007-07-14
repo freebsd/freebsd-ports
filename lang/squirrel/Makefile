@@ -29,6 +29,8 @@ PLIST_FILES=	bin/sq lib/libsqstdlib.so lib/libsqstdlib.so.0\
 .if ${ARCH} == amd64 || ${ARCH} == sparc64 || ${ARCH} == ia64
 ALL_TARGET=	sq64
 CFLAGS+=	-fPIC
+.else
+ALL_TARGET=	sq32
 .endif
 
 post-patch:
