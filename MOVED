@@ -3101,3 +3101,4 @@ net-p2p/py-bittorrent-devel|net-p2p/py-bittorent|2007-07-10|Non-devel port have 
 net-p2p/py-bittorrent-core-devel|net-p2p/py-bittorent-core|2007-07-10|Non-devel port have newer version
 devel/libslang2-devel||2007-07-11|Non-devel port have newer version
 graphics/hpoj||2007-07-14|Expired: project discontinued, please switch to print/hplip
+net/jffnms|net-mgmt/jffnms|2007-07-14|move to net-mgmt/jffnms
