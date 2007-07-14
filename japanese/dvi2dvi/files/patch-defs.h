@@ -1,6 +1,14 @@
---- defs.h.orig	Sat Aug 21 01:06:36 2004
-+++ defs.h	Sat Aug 21 01:07:14 2004
-@@ -35,21 +35,11 @@
+--- defs.h.orig	Fri Apr 17 04:41:28 1998
++++ defs.h	Sun Jul 15 04:47:17 2007
+@@ -27,6 +27,7 @@
+ #define	bcopy(s, d, n)	memcpy(d, s, n)
+ #define	bzero(p, n)	memset(p, 0, n)
+ #else
++#include	<string.h>
+ #include	<strings.h>
+ #endif
+ 
+@@ -35,21 +36,11 @@
  char *realloc();
  char *calloc();
  int free();
