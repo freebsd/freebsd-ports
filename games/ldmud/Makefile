@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ldmud
-PORTVERSION=	3.2.9
+PORTVERSION=	3.3.714
 CATEGORIES=	games net
 MASTER_SITES=	http://www.bearnip.com/ftp/mud/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern version of the LPMud game driver
@@ -18,6 +17,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--libdir=${DATADIR} --bindir=${PREFIX}/sbin
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 ALL_TARGET=	ldmud
+MAN1=		ldmud.1
 
 LOGDIR=		${DATADIR}
 .if defined(MUDLIB) && ${MUDLIB} == lpmud
@@ -30,10 +30,6 @@ PLIST_SUB+=	LPMUD="@comment " MUDLIB="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 post-install:
 	# Install an RC script for ldmud
