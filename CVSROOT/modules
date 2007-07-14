@@ -13347,6 +13347,7 @@ qiv		ports/graphics/qiv
 qix		ports/games/qix
 qjackctl	ports/audio/qjackctl
 qkmj		ports/games/qkmj
+qlabels		ports/deskutils/qlabels
 qlas		ports/misc/qlas
 qlogtools	ports/sysutils/qlogtools
 qlwm		ports/x11-wm/qlwm
