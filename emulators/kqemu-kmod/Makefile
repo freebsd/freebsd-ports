@@ -18,7 +18,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.p/pre/}
 DIST_SUBDIR=	kqemu
 
 MAINTAINER=	nox@FreeBSD.org
-COMMENT=	Kernel Acceralator for QEMU CPU Emulator (development version)
+COMMENT=	Kernel Accelerator for QEMU CPU Emulator (development version)
 
 ONLY_FOR_ARCHS=	i386 amd64
 HAS_CONFIGURE=	yes
