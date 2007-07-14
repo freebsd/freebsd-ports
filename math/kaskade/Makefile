@@ -15,9 +15,7 @@ DISTNAME=	${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptive linear scalar elliptic and parabolic problem solver
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-F77=		gfortran42
+USE_FORTRAN=	yes
 FORTRANLIBS=	-lgfortranbegin -lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
