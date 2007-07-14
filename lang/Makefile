@@ -296,6 +296,7 @@
     SUBDIR += spidermonkey
     SUBDIR += spl
     SUBDIR += squeak
+    SUBDIR += squirrel
     SUBDIR += sr
     SUBDIR += starlogo
     SUBDIR += steptalk
