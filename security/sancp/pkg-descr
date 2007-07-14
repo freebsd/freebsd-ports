@@ -10,3 +10,5 @@ be validated through some means. Sancp uses rules to identify,
 record, and tag traffic of interest. 'Tagging' a connection 
 is a new feature since v1.4.0 Connections ('stats') can be 
 loaded into a database for further analysis. 
+
+WWW: http://www.metre.net/sancp.html
