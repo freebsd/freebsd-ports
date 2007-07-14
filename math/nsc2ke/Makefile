@@ -21,10 +21,7 @@ COMMENT=	A Navier-Stokes solver
 
 RESTRICTED=	No resale, contact author for commercial usage
 
-WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=	gfortran42
-F77=	gfortran42
+USE_FORTRAN=	yes
 FFLAGS+=	-O2
 
 NO_WRKSUBDIR=	yes

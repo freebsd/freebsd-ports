@@ -19,13 +19,9 @@ COMMENT=	A rather general finite element solver using mixed finite elements
 LIB_DEPENDS=	gsl.10:${PORTSDIR}/math/gsl	\
 		lapack.4:${PORTSDIR}/math/lapack
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
-
+USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+= FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-gsl-prefix=${LOCALBASE}	\
 		--with-blas-lapack-prefix=${LOCALBASE}

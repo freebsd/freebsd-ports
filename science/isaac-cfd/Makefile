@@ -28,10 +28,7 @@ NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_FLAGS+=	CPPFLAGS=-I.
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 .if !defined(WITH_EXAMPLES)
 PLIST_SUB=	WITH_EXAMPLES="@comment "
