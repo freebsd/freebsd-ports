@@ -26,6 +26,9 @@ PLIST_FILES+=	lib/lib${PLUGIN_NAME}_pi.a \
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGMESSAGE_TEMPLATE=	${PORTSDIR}/net-p2p/verlihub-plugins/pkg-message.plugins
 
+post-patch::
+	@${REINPLACE_CMD} -e 's,echo aout,echo elf,' ${WRKSRC}/configure
+
 post-build::
 	@${SED} -e 's,%%PLUGIN_DESC%%,${PLUGIN_DESC},' < ${PKGMESSAGE_TEMPLATE} \
 		> ${PKGMESSAGE}
