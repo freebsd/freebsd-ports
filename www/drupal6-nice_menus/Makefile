@@ -14,6 +14,8 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
 MAINTAINER=	nick@foobar.org
 COMMENT=	CSS / Javascript pull-down menus for Drupal
 
+BROKEN=		Checksum mismatch
+
 DRUPAL5_MODULE=	yes
 
 MODULE_FILES=	arrow-down.png arrow-left.png arrow-right.png ie.css \
