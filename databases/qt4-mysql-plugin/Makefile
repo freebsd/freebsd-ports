@@ -19,6 +19,7 @@ COMMENT=	Qt MySQL database plugin
 
 DB=		mysql
 
+BUILD_DEPENDS+= moc-qt4:${PORTSDIR}/devel/qt4-moc
 LIB_DEPENDS+=	QtSql:${PORTSDIR}/databases/qt4-sql
 
 USE_MYSQL=	yes

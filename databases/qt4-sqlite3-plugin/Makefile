@@ -19,6 +19,7 @@ COMMENT=	Qt SQLite 3.x database plugin
 
 DB=		sqlite
 
+BUILD_DEPENDS+= moc-qt4:${PORTSDIR}/devel/qt4-moc
 LIB_DEPENDS+=	QtSql:${PORTSDIR}/databases/qt4-sql \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 
