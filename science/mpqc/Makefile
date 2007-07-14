@@ -50,10 +50,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:259
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 .if defined(WITH_ICC)
 CC=		${LOCALBASE}/intel_cc_80/bin/icc
