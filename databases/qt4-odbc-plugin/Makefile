@@ -19,6 +19,7 @@ COMMENT=	Qt ODBC database plugin
 
 DB=		odbc
 
+BUILD_DEPENDS+= moc-qt4:${PORTSDIR}/devel/qt4-moc
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC \
 		QtSql:${PORTSDIR}/databases/qt4-sql
 
