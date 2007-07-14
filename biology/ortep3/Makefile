@@ -21,14 +21,9 @@ COMMENT=	The Oak Ridge Thermal Ellipsoid Plot Program for Crystal Structure
 LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
 .endif
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-
+USE_FORTRAN=	yes
 WRKSRC=		${WRKDIR}/ortep/src
-
-MAKE_ARGS=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}" LFLAGS="${LFLAGS}"
+MAKE_ARGS=	LFLAGS="${LFLAGS}"
 
 .if defined(WITH_PGPLOT)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-aa

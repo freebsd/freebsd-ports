@@ -20,10 +20,7 @@ LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
 		gd.4:${PORTSDIR}/graphics/gd \
 		qhull.5:${PORTSDIR}/math/qhull
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 USE_AUTOTOOLS=	libltdl:15
 USE_PERL5_BUILD=yes
