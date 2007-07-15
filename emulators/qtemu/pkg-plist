@@ -36,9 +36,11 @@ bin/qtemu
 %%NLS%%%%DATADIR%%/translations/qtemu_cz.qm
 %%NLS%%%%DATADIR%%/translations/qtemu_de.qm
 %%NLS%%%%DATADIR%%/translations/qtemu_es.qm
+%%NLS%%%%DATADIR%%/translations/qtemu_fr.qm
+%%NLS%%%%DATADIR%%/translations/qtemu_it.qm
 %%NLS%%%%DATADIR%%/translations/qtemu_ru.qm
 %%NLS%%%%DATADIR%%/translations/qtemu_tr.qm
 %%NLS%%@dirrm %%DATADIR%%/translations
-%%NLS%%@dirrm share/qtemu
+%%NLS%%@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/de
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

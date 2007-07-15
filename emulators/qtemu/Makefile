@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	qtemu
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	A Qt4 front-end to Qemu
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
@@ -29,23 +27,20 @@ DESKTOP_ENTRIES="QtEmu" "QEMU frontend" "" \
 .if !defined(WITHOUT_NLS)
 #QT_COMPONENTS+=	linguist
 BUILD_DEPENDS+=	${LOCALBASE}/bin/lupdate-qt4:${PORTSDIR}/devel/qt4-linguist
-QTI_LANG=	cz de es ru tr
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
 
 do-configure:
-	(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE})
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/lrelease-qt4 -verbose qtemu.pro \
+	&& ${SETENV} ${CONFIGURE_ENV} ${QMAKE})
 
 post-configure:
 	@${REINPLACE_CMD} -e \
 		's|^CC .*|CC=${CC}|; \
 		 s|^CXX .*|CXX=${CXX}|; \
-		 s|^LINK .*|LINK=${CXX}|; \
-		 s|-pipe||; \
-		 s|^\(CFLAGS .*= \)|\1${CFLAGS}|; \
-		 s|^\(CXXFLAGS = \)|\1${CXXFLAGS}|' \
+		 s|^LINK .*|LINK=${CXX}|' \
 		${WRKSRC}/Makefile
 
 do-install:
