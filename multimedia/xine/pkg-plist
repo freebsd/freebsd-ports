@@ -5,142 +5,153 @@ bin/xine
 bin/xine-bugreport
 bin/xine-check
 bin/xine-remote
-share/doc/xine-ui/README.config_en
-share/doc/xine-ui/README.cs.0.Introduction
-share/doc/xine-ui/README.cs.10.Remote_control
-share/doc/xine-ui/README.cs.15.MRLs
-share/doc/xine-ui/README.cs.5.xine-ui
-share/doc/xine-ui/README.en.0.Introduction
-share/doc/xine-ui/README.en.10.Remote_control
-share/doc/xine-ui/README.en.15.MRLs
-share/doc/xine-ui/README.en.20.DVD
-share/doc/xine-ui/README.en.25.VideoCD
-share/doc/xine-ui/README.en.30.Advanced
-share/doc/xine-ui/README.en.32.Window_managers
-share/doc/xine-ui/README.en.35.Legal_issues
-share/doc/xine-ui/README.en.5.xine-ui
-share/doc/xine-ui/README_cs
-share/doc/xine-ui/README_de
-share/doc/xine-ui/README_en
-share/doc/xine-ui/README_es
-share/doc/xine-ui/README_fi
-share/doc/xine-ui/README_fr
-share/doc/xine-ui/README_it
-share/doc/xine-ui/README_pl
-share/doc/xine-ui/README_uk
+%%DOCSDIR%%/README.config_en
+%%DOCSDIR%%/README.cs.0.Introduction
+%%DOCSDIR%%/README.cs.10.Remote_control
+%%DOCSDIR%%/README.cs.15.MRLs
+%%DOCSDIR%%/README.cs.5.xine-ui
+%%DOCSDIR%%/README.en.0.Introduction
+%%DOCSDIR%%/README.en.10.Remote_control
+%%DOCSDIR%%/README.en.15.MRLs
+%%DOCSDIR%%/README.en.20.DVD
+%%DOCSDIR%%/README.en.25.VideoCD
+%%DOCSDIR%%/README.en.30.Advanced
+%%DOCSDIR%%/README.en.32.Window_managers
+%%DOCSDIR%%/README.en.35.Legal_issues
+%%DOCSDIR%%/README.en.5.xine-ui
+%%DOCSDIR%%/README_cs
+%%DOCSDIR%%/README_de
+%%DOCSDIR%%/README_en
+%%DOCSDIR%%/README_es
+%%DOCSDIR%%/README_fi
+%%DOCSDIR%%/README_fr
+%%DOCSDIR%%/README_it
+%%DOCSDIR%%/README_pl
+%%DOCSDIR%%/README_uk
 share/doc/xitk/README
-share/locale/cs/LC_MESSAGES/xine-ui.mo
-share/locale/cs/LC_MESSAGES/xitk.mo
-share/locale/de/LC_MESSAGES/xine-ui.mo
-share/locale/de/LC_MESSAGES/xitk.mo
-share/locale/es/LC_MESSAGES/xine-ui.mo
-share/locale/es/LC_MESSAGES/xitk.mo
-share/locale/eu/LC_MESSAGES/xine-ui.mo
-share/locale/eu/LC_MESSAGES/xitk.mo
-share/locale/fr/LC_MESSAGES/xine-ui.mo
-share/locale/fr/LC_MESSAGES/xitk.mo
-share/locale/it/LC_MESSAGES/xine-ui.mo
-share/locale/it/LC_MESSAGES/xitk.mo
-share/locale/ja/LC_MESSAGES/xine-ui.mo
-share/locale/ja/LC_MESSAGES/xitk.mo
-share/locale/pl/LC_MESSAGES/xine-ui.mo
-share/locale/pl/LC_MESSAGES/xitk.mo
-share/locale/pt_BR/LC_MESSAGES/xine-ui.mo
-share/locale/pt_BR/LC_MESSAGES/xitk.mo
-share/locale/ru/LC_MESSAGES/xine-ui.mo
-share/locale/ru/LC_MESSAGES/xitk.mo
-share/locale/sk/LC_MESSAGES/xine-ui.mo
-share/locale/sk/LC_MESSAGES/xitk.mo
-share/locale/uk/LC_MESSAGES/xine-ui.mo
-share/locale/uk/LC_MESSAGES/xitk.mo
+share/icons/hicolor/16x16/apps/xine.png
+share/icons/hicolor/22x22/apps/xine.png
+share/icons/hicolor/32x32/apps/xine.png
+share/icons/hicolor/48x48/apps/xine.png
+%%NLS%%share/locale/cs/LC_MESSAGES/xine-ui.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/xitk.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xine-ui.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xitk.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/xine-ui.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xine-ui.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xitk.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/xine-ui.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/xitk.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xine-ui.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xitk.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xine-ui.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xitk.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xine-ui.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xitk.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/xine-ui.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/xitk.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xine-ui.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xitk.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xine-ui.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xitk.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xine-ui.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xitk.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/xine-ui.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/xitk.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xine-ui.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xitk.mo
 share/pixmaps/xine.xpm
-share/pixmaps/xine_16x16.png
-share/pixmaps/xine_22x22.png
-share/pixmaps/xine_32x32.png
-share/pixmaps/xine_48x48.png
-share/xine/desktop/xine.desktop
-share/xine/oxine/mainmenu
-share/xine/oxine/mediamarks
-share/xine/skins/xine_splash.png
-share/xine/skins/xine-ui_logo.mpv
-share/xine/skins/xinetic/BigArrowDown.png
-share/xine/skins/xinetic/BigArrowLeft.png
-share/xine/skins/xinetic/BigArrowRight.png
-share/xine/skins/xinetic/BigArrowUp.png
-share/xine/skins/xinetic/CtlBg.png
-share/xine/skins/xinetic/CtlBtn.png
-share/xine/skins/xinetic/CtlDismiss.png
-share/xine/skins/xinetic/CtlDummy.png
-share/xine/skins/xinetic/CtlReset.png
-share/xine/skins/xinetic/CtlSave.png
-share/xine/skins/xinetic/Letters.png
-share/xine/skins/xinetic/Letters2.png
-share/xine/skins/xinetic/MainAutoButton.png
-share/xine/skins/xinetic/MainBg.png
-share/xine/skins/xinetic/MainCam.png
-share/xine/skins/xinetic/MainClose.png
-share/xine/skins/xinetic/MainDown.png
-share/xine/skins/xinetic/MainEject.png
-share/xine/skins/xinetic/MainFastB.png
-share/xine/skins/xinetic/MainFastF.png
-share/xine/skins/xinetic/MainFullScreen.png
-share/xine/skins/xinetic/MainMute.png
-share/xine/skins/xinetic/MainNav.png
-share/xine/skins/xinetic/MainNext.png
-share/xine/skins/xinetic/MainPause.png
-share/xine/skins/xinetic/MainPlay.png
-share/xine/skins/xinetic/MainPower.png
-share/xine/skins/xinetic/MainPrev.png
-share/xine/skins/xinetic/MainSetup.png
-share/xine/skins/xinetic/MainStop.png
-share/xine/skins/xinetic/MainUp.png
-share/xine/skins/xinetic/MainVolumeBg.png
-share/xine/skins/xinetic/MainVolumePad.png
-share/xine/skins/xinetic/MrlBg.png
-share/xine/skins/xinetic/MrlBtn.png
-share/xine/skins/xinetic/MrlDismiss.png
-share/xine/skins/xinetic/MrlFlit.png
-share/xine/skins/xinetic/MrlSelect.png
-share/xine/skins/xinetic/Onglet.png
-share/xine/skins/xinetic/PlBg.png
-share/xine/skins/xinetic/PlBtn.png
-share/xine/skins/xinetic/PlDelete.png
-share/xine/skins/xinetic/PlDeleteAll.png
-share/xine/skins/xinetic/PlDismiss.png
-share/xine/skins/xinetic/PlInputTxt.png
-share/xine/skins/xinetic/PlItemBtn.png
-share/xine/skins/xinetic/PlMoveDn.png
-share/xine/skins/xinetic/PlMoveUp.png
-share/xine/skins/xinetic/PlPlay.png
-share/xine/skins/xinetic/PlSlidHBg.png
-share/xine/skins/xinetic/SkItemBtn.png
-share/xine/skins/xinetic/SkSlidBG.png
-share/xine/skins/xinetic/SkSlidHBg.png
-share/xine/skins/xinetic/SkSlidHPad.png
-share/xine/skins/xinetic/SlidHPad.png
-share/xine/skins/xinetic/SliderHBg.png
-share/xine/skins/xinetic/SliderHPad.png
-share/xine/skins/xinetic/SliderVBg.png
-share/xine/skins/xinetic/SliderVPad.png
-share/xine/skins/xinetic/SmallArrowDown.png
-share/xine/skins/xinetic/SmallArrowUp.png
-share/xine/skins/xinetic/skinconfig
-share/xine/visuals/default.avi
-@dirrmtry man/de/man1
-@dirrmtry man/de
-@dirrmtry man/es/man1
-@dirrmtry man/es
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
+%%DATADIR%%/desktop/xine.desktop
+%%DATADIR%%/oxine/mainmenu
+%%DATADIR%%/oxine/mediamarks
+%%DATADIR%%/skins/xine-ui_logo.mpv
+%%DATADIR%%/skins/xine_splash.png
+%%DATADIR%%/skins/xinetic/BigArrowDown.png
+%%DATADIR%%/skins/xinetic/BigArrowLeft.png
+%%DATADIR%%/skins/xinetic/BigArrowRight.png
+%%DATADIR%%/skins/xinetic/BigArrowUp.png
+%%DATADIR%%/skins/xinetic/CtlBg.png
+%%DATADIR%%/skins/xinetic/CtlBtn.png
+%%DATADIR%%/skins/xinetic/CtlDismiss.png
+%%DATADIR%%/skins/xinetic/CtlDummy.png
+%%DATADIR%%/skins/xinetic/CtlReset.png
+%%DATADIR%%/skins/xinetic/CtlSave.png
+%%DATADIR%%/skins/xinetic/Letters.png
+%%DATADIR%%/skins/xinetic/Letters2.png
+%%DATADIR%%/skins/xinetic/MainAutoButton.png
+%%DATADIR%%/skins/xinetic/MainBg.png
+%%DATADIR%%/skins/xinetic/MainCam.png
+%%DATADIR%%/skins/xinetic/MainClose.png
+%%DATADIR%%/skins/xinetic/MainDown.png
+%%DATADIR%%/skins/xinetic/MainEject.png
+%%DATADIR%%/skins/xinetic/MainFastB.png
+%%DATADIR%%/skins/xinetic/MainFastF.png
+%%DATADIR%%/skins/xinetic/MainFullScreen.png
+%%DATADIR%%/skins/xinetic/MainMute.png
+%%DATADIR%%/skins/xinetic/MainNav.png
+%%DATADIR%%/skins/xinetic/MainNext.png
+%%DATADIR%%/skins/xinetic/MainPause.png
+%%DATADIR%%/skins/xinetic/MainPlay.png
+%%DATADIR%%/skins/xinetic/MainPower.png
+%%DATADIR%%/skins/xinetic/MainPrev.png
+%%DATADIR%%/skins/xinetic/MainSetup.png
+%%DATADIR%%/skins/xinetic/MainStop.png
+%%DATADIR%%/skins/xinetic/MainUp.png
+%%DATADIR%%/skins/xinetic/MainVolumeBg.png
+%%DATADIR%%/skins/xinetic/MainVolumePad.png
+%%DATADIR%%/skins/xinetic/MrlBg.png
+%%DATADIR%%/skins/xinetic/MrlBtn.png
+%%DATADIR%%/skins/xinetic/MrlDismiss.png
+%%DATADIR%%/skins/xinetic/MrlFlit.png
+%%DATADIR%%/skins/xinetic/MrlSelect.png
+%%DATADIR%%/skins/xinetic/Onglet.png
+%%DATADIR%%/skins/xinetic/PlBg.png
+%%DATADIR%%/skins/xinetic/PlBtn.png
+%%DATADIR%%/skins/xinetic/PlDelete.png
+%%DATADIR%%/skins/xinetic/PlDeleteAll.png
+%%DATADIR%%/skins/xinetic/PlDismiss.png
+%%DATADIR%%/skins/xinetic/PlInputTxt.png
+%%DATADIR%%/skins/xinetic/PlItemBtn.png
+%%DATADIR%%/skins/xinetic/PlMoveDn.png
+%%DATADIR%%/skins/xinetic/PlMoveUp.png
+%%DATADIR%%/skins/xinetic/PlPlay.png
+%%DATADIR%%/skins/xinetic/PlSlidHBg.png
+%%DATADIR%%/skins/xinetic/SkItemBtn.png
+%%DATADIR%%/skins/xinetic/SkSlidBG.png
+%%DATADIR%%/skins/xinetic/SkSlidHBg.png
+%%DATADIR%%/skins/xinetic/SkSlidHPad.png
+%%DATADIR%%/skins/xinetic/SlidHPad.png
+%%DATADIR%%/skins/xinetic/SliderHBg.png
+%%DATADIR%%/skins/xinetic/SliderHPad.png
+%%DATADIR%%/skins/xinetic/SliderVBg.png
+%%DATADIR%%/skins/xinetic/SliderVPad.png
+%%DATADIR%%/skins/xinetic/SmallArrowDown.png
+%%DATADIR%%/skins/xinetic/SmallArrowUp.png
+%%DATADIR%%/skins/xinetic/skinconfig
+%%DATADIR%%/visuals/default.avi
+@dirrm %%DATADIR%%/visuals
+@dirrm %%DATADIR%%/skins/xinetic
+@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%/oxine
+@dirrm %%DATADIR%%/desktop
+@dirrmtry %%DATADIR%%
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrm share/doc/xitk
+@dirrm %%DOCSDIR%%
 @dirrmtry man/pl/man1
 @dirrmtry man/pl
-@dirrmtry share/locale/pl_PL/LC_MESSAGES
-@dirrmtry share/locale/pl_PL
-@dirrm share/xine/visuals
-@dirrm share/xine/skins/xinetic
-@dirrm share/xine/oxine
-@dirrm share/xine/desktop
-@dirrm share/xine/skins
-@dirrmtry share/xine
-@dirrm share/doc/xine-ui
-@dirrm share/doc/xitk
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/es/man1
+@dirrmtry man/es
+@dirrmtry man/de/man1
+@dirrmtry man/de
