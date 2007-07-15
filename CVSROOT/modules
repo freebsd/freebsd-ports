@@ -15057,6 +15057,7 @@ swt		ports/x11-toolkits/swt
 swt-devel	ports/x11-toolkits/swt-devel
 swt31		ports/x11-toolkits/swt31
 sxm		ports/lang/sxm
+sxml		ports/textproc/sxml
 sxpc		ports/x11/sxpc
 sxsame		ports/games/sxsame
 sybase-ocsd	ports/databases/sybase-ocsd
