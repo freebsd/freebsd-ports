@@ -22,14 +22,21 @@ mediatomb_config=${mediatomb_config-"%%PREFIX%%/etc/mediatomb/config.xml"}
 mediatomb_flags=${mediatomb_flags-""}
 mediatomb_logfile=${mediatomb_logfile-"%%MEDIATOMB_DIR%%/mediatomb.log"}
 mediatomb_pidfile=${mediatomb_pidfile-"%%MEDIATOMB_DIR%%/mediatomb.pid"}
+mediatomb_interface=${mediatomb_interface-""}
 
 name="mediatomb"
 rcvar=`set_rcvar`
 
 load_rc_config $name
 
+if [ "xx" != "x${mediatomb_interface}x" ]; then
+    mediatomb_interface_command="-e ${mediatomb_interface}"
+else
+    mediatomb_interface_command=""
+fi
+
 command="%%PREFIX%%/bin/mediatomb"
-command_args="-d -c ${mediatomb_config} -l ${mediatomb_logfile} -u ${mediatomb_mtuser} -g ${mediatomb_mtgroup} -P ${mediatomb_pidfile}"
+command_args="-d -c ${mediatomb_config} -l ${mediatomb_logfile} -u ${mediatomb_mtuser} -g ${mediatomb_mtgroup} -P ${mediatomb_pidfile} ${mediatomb_interface_command}"
 
 pidfile="${mediatomb_pidfile}"
 
