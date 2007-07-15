@@ -5,6 +5,7 @@
 # $FreeBSD$
 #   $MCom: ports/devel/goffice/Makefile,v 1.23 2007/03/11 20:02:56 mezz Exp $
 #
+# !!! When updating goffice, don't forget to update gnumeric pkg-plist too! !!!
 
 PORTNAME=	goffice
 PORTVERSION=	0.4.1
