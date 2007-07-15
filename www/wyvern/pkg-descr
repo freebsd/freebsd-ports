@@ -3,15 +3,16 @@ administration, and a small server run-time.  The goal of the Wyvern
 development is to provide a secure and stable web server for embedded
 appliances.  Here is a feature list of Wyvern:
 
-  o  single-process server using select(2) and non-blocking I/O,
+  o  single-process multi-threads server,
   o  HTTP/1.1 support (not fully implemented),
   o  host name based virtual hosting,
-  o  customizable error pages,
-  o  IPv6 communication (experimental),
+  o  customizable error pages and messages,
+  o  IPv6 communication (no support SSL),
   o  Secure Socket Layer (SSL) communication,
+  o  executable CGI program with SuExec mechanism,
   o  highly secure implementation,
-  o  MD5 encrypted password management with dbm,
-  o  ErrorLog logging with syslogd(8), and
+  o  many password management mechanism: db, dbm and SQLite3, PostgreSQL,
+  o  various logging method such as file, Unix pipe and networking, and
   o  extensible plug-in modules.
 
 Author:	Kouichi ABE (WALL) <kouichi@MysticWALL.COM>
