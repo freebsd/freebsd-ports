@@ -15,6 +15,10 @@ COMMENT=	0.99.4 release of ``The Macro Implementation of SNOBOL4 in C''
 DEPRECATED=     Replaced by snobol4 port
 CONFLICTS=      snobol4
 
+.if ${OSVERSION} > 699999
+BROKEN=         ${DEPRECATED}
+.endif
+
 MAN1= snobol4.1
 
 .include <bsd.port.pre.mk>
