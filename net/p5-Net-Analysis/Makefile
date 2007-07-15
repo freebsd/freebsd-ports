@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Net-Analysis
-PORTVERSION=	0.06
+PORTVERSION=	0.40
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Modules for analysing network traffic
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap \
