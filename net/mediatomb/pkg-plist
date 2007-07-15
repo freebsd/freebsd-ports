@@ -1,6 +1,8 @@
 @comment $FreeBSD$
 bin/mediatomb
 %%DATADIR%%/js/import.js
+%%DATADIR%%/js/playlists.js
+%%DATADIR%%/js/common.js
 %%DATADIR%%/mappings.xml
 %%DATADIR%%/mysql.sql
 %%DATADIR%%/sqlite3.sql
@@ -9,8 +11,10 @@ bin/mediatomb
 %%DATADIR%%/web/disabled.html
 %%DATADIR%%/web/favicon.ico
 %%DATADIR%%/web/icons/add_as_autoscan.png
-%%DATADIR%%/web/icons/autoscan_config_folder_open.png
-%%DATADIR%%/web/icons/autoscan_folder_open.png
+%%DATADIR%%/web/icons/autoscan_inotify_config_folder_open.png
+%%DATADIR%%/web/icons/autoscan_inotify_folder_open.png
+%%DATADIR%%/web/icons/autoscan_timed_config_folder_open.png
+%%DATADIR%%/web/icons/autoscan_timed_folder_open.png
 %%DATADIR%%/web/icons/blank.gif
 %%DATADIR%%/web/icons/blank.png
 %%DATADIR%%/web/icons/document-new.png
@@ -31,10 +35,14 @@ bin/mediatomb
 %%DATADIR%%/web/icons/mt-icon48.bmp
 %%DATADIR%%/web/icons/mt-icon48.jpg
 %%DATADIR%%/web/icons/mt-icon48.png
-%%DATADIR%%/web/icons/nanotree/images/autoscan_config_folder_closed.png
-%%DATADIR%%/web/icons/nanotree/images/autoscan_config_folder_open.png
-%%DATADIR%%/web/icons/nanotree/images/autoscan_folder_closed.png
-%%DATADIR%%/web/icons/nanotree/images/autoscan_folder_open.png
+%%DATADIR%%/web/icons/nanotree/images/autoscan_inotify_config_folder_closed.png
+%%DATADIR%%/web/icons/nanotree/images/autoscan_inotify_config_folder_open.png
+%%DATADIR%%/web/icons/nanotree/images/autoscan_inotify_folder_closed.png
+%%DATADIR%%/web/icons/nanotree/images/autoscan_inotify_folder_open.png
+%%DATADIR%%/web/icons/nanotree/images/autoscan_timed_config_folder_closed.png
+%%DATADIR%%/web/icons/nanotree/images/autoscan_timed_config_folder_open.png
+%%DATADIR%%/web/icons/nanotree/images/autoscan_timed_folder_closed.png
+%%DATADIR%%/web/icons/nanotree/images/autoscan_timed_folder_open.png
 %%DATADIR%%/web/icons/nanotree/images/folder_closed.png
 %%DATADIR%%/web/icons/nanotree/images/folder_open.png
 %%DATADIR%%/web/icons/nanotree/images/lastnode.png
