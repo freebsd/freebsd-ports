@@ -608,8 +608,6 @@ share/gnome/help/anjuta-manual/C/preferences.xml
 share/gnome/help/anjuta-manual/C/projects.xml
 share/gnome/help/anjuta-manual/C/template.xml
 share/gnome/help/anjuta-manual/C/tools.xml
-share/gnome/icons/gnome/48x48/mimetypes/gnome-mime-application-x-anjuta.png
-share/gnome/icons/gnome/scalable/mimetypes/gnome-mime-application-x-anjuta.svg
 share/gnome/omf/anjuta-manual/anjuta-manual-C.omf
 share/gnome/pixmaps/anjuta/Icons.16x16.Class
 share/gnome/pixmaps/anjuta/Icons.16x16.Enum
@@ -737,6 +735,8 @@ share/gnome/pixmaps/anjuta/step-over-16.png
 share/gnome/pixmaps/anjuta/step-over.png
 share/gnome/pixmaps/anjuta/swap.png
 share/gnome/pixmaps/anjuta/watch.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-anjuta.png
+share/icons/gnome/scalable/mimetypes/gnome-mime-application-x-anjuta.svg
 share/icons/hicolor/48x48/apps/anjuta.png
 share/icons/hicolor/scalable/apps/anjuta.svg
 share/locale/ar/LC_MESSAGES/anjuta.mo
