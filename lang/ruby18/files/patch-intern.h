@@ -1,10 +1,7 @@
 --- intern.h.orig	Sun Mar 11 11:31:53 2007
-+++ intern.h	Thu Jun  7 16:40:01 2007
-@@ -204,10 +204,13 @@
- void rb_thread_polling _((void));
- void rb_thread_sleep _((int));
++++ intern.h	Sun Jul 15 13:26:46 2007
+@@ -206,8 +206,10 @@
  void rb_thread_sleep_forever _((void));
-+enum thread_status rb_thread_status _((VALUE));
  VALUE rb_thread_stop _((void));
  VALUE rb_thread_wakeup _((VALUE));
 +VALUE rb_thread_wakeup_alive _((VALUE));
