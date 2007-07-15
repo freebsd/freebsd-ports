@@ -1,0 +1,8 @@
+include/sxmlrpc.h
+include/sxml.h
+lib/libsxmlrpc.a
+lib/libsxmlrpc.so
+lib/libsxmlrpc.so.1
+lib/libsxml.a
+lib/libsxml.so
+lib/libsxml.so.1

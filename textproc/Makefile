@@ -917,6 +917,7 @@
     SUBDIR += sv-aspell
     SUBDIR += svn2cl
     SUBDIR += sw-aspell
+    SUBDIR += sxml
     SUBDIR += syck
     SUBDIR += ta-aspell
     SUBDIR += tclExpat
