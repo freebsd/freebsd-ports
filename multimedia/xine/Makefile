@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	0.99.4
-PORTREVISION=	10
+PORTVERSION=	0.99.5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,21 +16,29 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	An X11 multimedia player
 
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine \
-		png.5:${PORTSDIR}/graphics/png \
-		curl.4:${PORTSDIR}/ftp/curl
+		png.5:${PORTSDIR}/graphics/png
 
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--program-transform-name=""
 
 MANLANG=	"" de es fr pl
 MAN1=		aaxine.1 xine-bugreport.1 xine-check.1 xine-remote.1 xine.1
+
+OPTIONS=	CACA "Enable libcaca output" off \
+		AALIB "Enable aalib output" off \
+		LIRC "Enable lirc support" off \
+		CURL "Enable culr support" on \
+		WIN32_CODECS "Enable win32 codecs (for i386 only)" on \
+		NLS "Enable Native Language Support" on \
+		XFT "Enable Xft support" on
+
+DOCSDIR=	${TARGETDIR}/share/doc/xine-ui
 
 .include <bsd.port.pre.mk>
 
@@ -65,22 +72,44 @@ LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 CONFIGURE_ARGS+=	--with-readline=${LOCALBASE}
 .endif
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .else
 CONFIGURE_ARGS+=	--disable-xft
 .endif
 
-.if !defined(WITHOUT_CACA) && (exists(${LOCALBASE}/lib/libcaca.a) || defined(WITH_CACA))
+.if !defined(WITHOUT_CURL)
+LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+.else
+CONFIGURE_ARGS+=	--without-curl
+.endif
+
+.if defined(WITH_LIRC)
+LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
+CONFIGURE_ARGS+=	--enable-lirc
+.else
+CONFIGURE_ARGS+=	--disable-lirc
+.endif
+
+.if defined(WITH_CACA)
 PLIST_SUB+=	WITH_CACA=""
 .else
 PLIST_SUB+=	WITH_CACA="@comment "
-CONFIGURE_ARGS+=	--without-libcaca --disable-cacatest
+CONFIGURE_ARGS+=	--without-caca --disable-cacatest
 .endif
 
-.if !defined(WITHOUT_AALIB) && (exists(${LOCALBASE}/lib/libaa.so.1) || defined (WITH_AALIB))
+.if defined(WITH_AALIB)
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 PLIST_SUB+=	WITH_AALIB=""
+CONFIGURE_ARGS+=	--with-aalib
 .else
 PLIST_SUB+=	WITH_AALIB="@comment "
 CONFIGURE_ARGS+=	--without-aalib --disable-aalibtest
@@ -89,16 +118,8 @@ CONFIGURE_ARGS+=	--without-aalib --disable-aalibtest
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|THREAD_LIBS=.*$$|THREAD_LIBS="\$$THREAD_LIBS"|g ; \
-		 s|THREAD_CFLAGS=.*$$|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g ; \
-		 s|-L/usr/local/lib||g ; \
-		 s|-I/usr/local/include||g' ${WRKSRC}/configure
-.if ${OSVERSION} >= 500035
-	@${REINPLACE_CMD} -e \
-		 's|-malign-loops|-falign-loops|g ; \
-		  s|-malign-jumps|-falign-jumps|g ; \
-		  s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure
-.endif
-	@${RM} ${WRKSRC}/src/xitk/xine-remote.c
+		s|THREAD_CFLAGS=.*$$|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g' \
+		${WRKSRC}/configure
 
 post-install:
 .for l in es fr
