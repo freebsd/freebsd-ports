@@ -16,7 +16,7 @@ COMMENT=	A bug tracking system written in PHP
 
 NO_BUILD=	yes
 USE_MYSQL=	yes
-USE_APACHE=	yes
+USE_APACHE=	1.3+
 USE_PHP=	yes
 
 SUB_FILES=	pkg-message
