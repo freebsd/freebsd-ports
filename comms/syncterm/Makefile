@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	syncterm
-PORTVERSION=	0.8.20061020
+PORTVERSION=	0.9.${PORTVER}
 PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	syncterm-src-20061020
+DISTNAME=	syncterm-src-${PORTVER}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	shurd@sasktel.net
@@ -19,9 +19,10 @@ COMMENT=	An ANSI-BBS terminal which supports telnet, rlogin, and SSH
 
 LIB_DEPENDS=	cl:${PORTSDIR}/security/cryptlib
 
-WRKSRC=		${WRKDIR}/syncterm-20061020
+WRKSRC=		${WRKDIR}/syncterm-${PORTVER}
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
+PORTVER=	20070704
 
 OPTIONS=	X11	"Build with X11 support"	ON \
 		SDL	"Build with SDL support"	ON \
@@ -32,12 +33,12 @@ PLIST_FILES=	bin/syncterm
 .include <bsd.port.pre.mk>
 
 MAKE_ARGS+=	-C syncterm
-MAKE_ARGS+=	PREFIX=${PREFIX}
-MAKE_ARGS+=	"INSTALL_EXE=${INSTALL_PROGRAM}"
-.if defined(WITHOUT_X11)
-MAKE_ARGS+=	NO_X=1
-.else
+MAKE_ARGS+=	PREFIX="${PREFIX}"
+MAKE_ARGS+=	INSTALL_EXE="${INSTALL_PROGRAM}"
+.if !defined(WITHOUT_X11)
 USE_XLIB=	yes
+.else
+MAKE_ARGS+=	NO_X=1
 .endif
 .if !defined(WITHOUT_SDL)
 USE_SDL=	sdl
@@ -48,5 +49,8 @@ MAKE_ARGS+=	DEBUG=1
 .else
 MAKE_ARGS+=	RELEASE=1
 .endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/gcc.freebsd.exe.release/syncterm ${PREFIX}/bin/
 
 .include <bsd.port.post.mk>
