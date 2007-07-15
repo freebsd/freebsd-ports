@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	nvclock
-PORTVERSION=	0.7
-PORTREVISION=	6
+DISTVERSION=	0.8b2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.linuxhardware.org/nvclock/ \
 		http://www.kerneled.com/freebsd/ports/
-DISTNAME=	nvclock${PORTVERSION}
+DISTNAME=	nvclock${DISTVERSION}
 
 MAINTAINER=	sbahra@gwu.edu
 COMMENT=	The nVidia graphic card status and overclocking tool
 
 USE_GMAKE=	yes
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 
@@ -28,6 +26,10 @@ CONFIGURE_ARGS+="--enable-gtk=no"
 USE_GNOME+=	gtk20
 PLIST_SUB+=	GTK=""
 .endif
+
+MAN1=		nvclock.1
+
+PORTDOCS=	ABOUT AUTHORS ChangeLog FAQ README
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -41,5 +43,16 @@ post-patch:
 .for i in src/gtk/Makefile.in src/backend/Makefile.in
 	@${REINPLACE_CMD} -e 's|"CFLAGS="|"CFLAGS+="|g' ${WRKSRC}/${i}
 .endfor
+
+do-install:
+	@${GMAKE} -C ${WRKSRC}/src install
+	@${GMAKE} -C ${WRKSRC} install-man
+.if !defined(WITHOUT_GUI)
+	@${GMAKE} -C ${WRKSRC}/src/gtk install
+.endif
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${GMAKE} -C ${WRKSRC} install-docs
+.endif
 
 .include <bsd.port.mk>
