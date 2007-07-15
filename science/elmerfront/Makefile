@@ -28,10 +28,7 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84	\
 # on older systems (Irix)
 CXXFLAGS+=	-Wno-deprecated
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 USE_GCC=	3.4
 USE_GL=		yes
 GNU_CONFIGURE=	yes

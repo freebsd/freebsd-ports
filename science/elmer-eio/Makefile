@@ -14,10 +14,7 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	ELMER FEM Package Data base Interface
 
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-
-FC=	gfortran42
-F77=	gfortran42
+USE_FORTRAN=	yes
 CONFIGURE_ENV+=	FC=${FC} F77=${FC} FCFLAGS=${FCFLAGS}
 
 GNU_CONFIGURE=	yes
