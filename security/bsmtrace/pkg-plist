@@ -1,0 +1,3 @@
+sbin/bsmtrace
+%%EXAMPLESDIR%%/bsmtrace.conf
+@dirrm %%EXAMPLESDIR%%
