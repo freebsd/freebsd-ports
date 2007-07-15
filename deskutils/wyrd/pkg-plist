@@ -1,0 +1,5 @@
+bin/wyrd
+etc/wyrdrc
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
