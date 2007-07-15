@@ -9,7 +9,7 @@ $FreeBSD$
  
 +	} elsif (Slim::Utils::OSDetect::OS() eq 'unix') {
 +
-+		$path = "/var/db/slimserver/playlists";
++		$path = "%%SLIMDBDIR%%/playlists";
 +
  	} else {
  
@@ -19,7 +19,7 @@ $FreeBSD$
  	} elsif ($os eq 'unix') {
  
 -		$CacheDir = catdir($ENV{'HOME'},'Cache');
-+		$CacheDir = "/var/db/slimserver/cache";
++		$CacheDir = "%%SLIMDBDIR%%/cache";
  
  	} elsif ($os eq 'win' && Slim::Utils::OSDetect::details->{'osName'} =~ /Vista/) {
  
@@ -28,7 +28,7 @@ $FreeBSD$
  		}
  	} else {
 -	 	$prefsPath = $ENV{'HOME'};
-+	 	$prefsPath = "/var/db/slimserver";
++	 	$prefsPath = "%%SLIMDBDIR%%";
  	}
  	
  	$::d_prefs && msg("The default prefs directory is $prefsPath\n");

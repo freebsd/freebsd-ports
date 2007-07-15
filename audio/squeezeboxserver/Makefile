@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slimserver
-PORTVERSION=	6.5.2
+PORTVERSION=	6.5.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
 DISTNAME=	SlimServer_v${PORTVERSION}.no-cpan-arch
@@ -27,7 +27,9 @@ OPTIONS=	APE "Support Monkey's Audio Codec input" on \
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
-WRKSRC=		${WRKDIR}/SlimServer_v${PORTVERSION}
+# XXX: someone botched the 6.5.3 tarball
+#WRKSRC=	${WRKDIR}/SlimServer_v${PORTVERSION}
+WRKSRC=		${WRKDIR}/SlimServer_6.5_v2007-07-11
 
 BUILD_DEPENDS+=	${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which
 RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder \
@@ -95,6 +97,8 @@ SUB_FILES=	softsqueeze.sh pkg-install
 SUB_LIST=	PERL=${PERL} \
 		SLIMDIR=${SLIMDIR} \
 		SLIMDBDIR=${SLIMDBDIR} \
+		SLIMUSER=${SLIMUSER} \
+		SLIMGROUP=${SLIMGROUP} \
 		CONFFILES="${CONFFILES}"
 
 pre-fetch:
@@ -105,7 +109,9 @@ pre-fetch:
 .endif
 
 SLIMDIR?=	slimserver
-SLIMDBDIR=	/var/db/slimserver
+SLIMDBDIR?=	/var/db/slimserver
+SLIMUSER?=	slimserv
+SLIMGROUP?=	${SLIMUSER}
 
 post-fetch:
 .for _PKG in ${SLIMCPANPKGS}
@@ -120,12 +126,14 @@ post-patch:
 	    -e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|' \
 	    -e 's|%%CPANWRKDIR%%|${CPANWRKDIR}|' \
 	    -e 's|%%DISTDIR%%|${_DISTDIR}|' \
-		${WRKSRC}/Bin/build-perl-modules.pl
-	@${REINPLACE_CMD} \
-	    -e 's|/usr/bin/perl|${PERL}|' \
-		${WRKSRC}/scanner.pl ${WRKSRC}/slimserver.pl \
-		${WRKSRC}/Bin/dbish
+	    -e 's|%%SLIMDBDIR%%|${SLIMDBDIR}|' \
+		${WRKSRC}/Bin/build-perl-modules.pl \
+		${WRKSRC}/Bin/dbish \
+		${WRKSRC}/Slim/Utils/Prefs.pm \
+		${WRKSRC}/scanner.pl \
+		${WRKSRC}/slimserver.pl
 	@${RM} ${WRKSRC}/scanner.pl.bak ${WRKSRC}/slimserver.pl.bak \
+	    ${WRKSRC}/Slim/Utils/Prefs.pm.bak \
 	    ${WRKSRC}/Bin/dbish.bak
 
 do-build:
@@ -160,9 +168,12 @@ post-build:
 	@${ECHO} "${SLIMDIR}/Cache" >> ${PLIST}
 	@${ECHO} "${SLIMDIR}/MySQL/errmsg.txt" >> ${PLIST}
 	@${ECHO} "${SLIMDIR}/MySQL/errmsg.sys" >> ${PLIST}
-	@${FIND} ${TMP_SLIMDIR} -type d | \
+	${FIND} ${TMP_SLIMDIR} -type d | \
+	    egrep -v "${TMP_SLIMDIR}(|/Plugins)$$" | \
 	    ${SED} -e 's|${TMP_SLIMDIR}|@dirrm %%SLIMDIR%%|' | \
 	    ${SORT} -r >> ${PLIST}
+	echo "@dirrmtry %%SLIMDIR%%/Plugins" >> ${PLIST}
+	echo "@dirrmtry %%SLIMDIR%%" >> ${PLIST}
 .if !defined(NOPORTDOCS)
 	@${FIND} ${TMP_DOCSDIR} -type d | \
 	    ${SED} -e 's|${TMP_DOCSDIR}|@dirrm %%DOCSDIR%%|' | \
