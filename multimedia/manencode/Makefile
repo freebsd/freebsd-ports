@@ -6,23 +6,19 @@
 #
 
 PORTNAME=	manencode
-DISTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://csgib36.ifrance.com/Manencode/
-DISTNAME=	Manencode-${DISTVERSION}
 
 MAINTAINER=	trebestie@gmail.com
 COMMENT=	Utility to simply transcode your videos
 
-BUILD_DEPENDS=	qmake-qt4:${PORTSDIR}/devel/qmake4
-RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
-		mplayer:${PORTSDIR}/multimedia/mplayer \
+RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer  \
 		transcode:${PORTSDIR}/multimedia/transcode
 
+USE_GMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc rcc uic
-#USE_KDELIBS_VER=3
+QT_COMPONENTS=	gui moc rcc uic qmake corelib
 
 MANENCODEDIR=	${PREFIX}/share/${PORTNAME}
 TRANSLATION=	_en
@@ -39,7 +35,7 @@ INTERFACE=	DVD.png DVDOK.png bt_play.png bt_stop.png \
 MAKE_ENV?=	QTDIR=${QT_PREFIX}
 QMAKE?=	${LOCALBASE}/bin/qmake-qt4
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
-WRKSRC=	${WRKDIR}/Manencode
+WRKSRC=	${WRKDIR}/Manencode-${DISTVERSION}
 
 DESKTOP_ENTRIES=	"Manencode" \
   			"Transcode your video" \
