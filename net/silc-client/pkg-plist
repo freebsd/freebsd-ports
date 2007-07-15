@@ -111,6 +111,5 @@ etc/silc.conf.sample
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/modules
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
