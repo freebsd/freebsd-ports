@@ -6,6 +6,7 @@
 
 PORTNAME=	mod_log_dbd
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://bfoz.net/projects/${PORTNAME}/release/
 
