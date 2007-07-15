@@ -20,6 +20,7 @@ PLIST_FILES=	bin/ipv6socket_scrub
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
 RESTRICTED=		"not redistributable, license agreement required"
 
+.if !defined(PACKAGE_BUILDING)
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
 	${ECHO} '======================================================='; \
@@ -29,6 +30,7 @@ do-fetch:
 	${ECHO} '${DISTDIR} and then restart this build '; \
 	${ECHO} '======================================================='; \
 	fi
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ipv6socket_scrub ${PREFIX}/bin
