@@ -49,6 +49,7 @@
     SUBDIR += bruteblock
     SUBDIR += bruteforceblocker
     SUBDIR += bsdsfv
+    SUBDIR += bsmtrace
     SUBDIR += bsp_upektfmess
     SUBDIR += bubblegum
     SUBDIR += bugs
