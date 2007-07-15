@@ -8,7 +8,8 @@
 PORTNAME=	bpfstat
 PORTVERSION=	1.0
 CATEGORIES=	net
-MASTER_SITES=	http://people.freebsd.org/~csjp/
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=     csjp
 
 MAINTAINER=	csjp@FreeBSD.org
 COMMENT=	Program to retrieve bpf statistics
