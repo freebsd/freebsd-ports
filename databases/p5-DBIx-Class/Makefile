@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08002
+PORTVERSION=	0.08003
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -16,8 +16,7 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Extensible and flexible object <-> relational mapper
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-PathTools>=3.19:${PORTSDIR}/devel/p5-PathTools \
-		p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
+RUN_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-SQL-Abstract>=1.20:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0.101:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
 		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
