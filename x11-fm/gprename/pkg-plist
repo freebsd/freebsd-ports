@@ -1,0 +1,24 @@
+bin/gprename
+share/applications/gprename.desktop
+share/pixmaps/gprename/gprename.png
+share/pixmaps/gprename/gprename_debian_menu_icon.xpm
+share/pixmaps/gprename/gprename_nautilus-action.png
+%%DATADIR%%/languages/lang.de.ISO-8859-1
+%%DATADIR%%/languages/lang.de.UTF-8
+%%DATADIR%%/languages/lang.dt
+%%DATADIR%%/languages/lang.en
+%%DATADIR%%/languages/lang.es.ISO-8859-1
+%%DATADIR%%/languages/lang.es.UTF-8
+%%DATADIR%%/languages/lang.fr.ISO-8859-1
+%%DATADIR%%/languages/lang.fr.UTF-8
+%%DATADIR%%/languages/lang.it.ISO-8859-1
+%%DATADIR%%/languages/lang.it.UTF-8
+%%DATADIR%%/languages/lang.pl.ISO-8859-2
+%%DATADIR%%/languages/lang.pl.UTF-8
+%%DATADIR%%/languages/lang.pt-br.ISO-8859-1
+%%DATADIR%%/languages/lang.pt-br.UTF-8
+%%DATADIR%%/languages/langs.pl
+@dirrm share/pixmaps/gprename
+@dirrm %%DATADIR%%/languages
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
