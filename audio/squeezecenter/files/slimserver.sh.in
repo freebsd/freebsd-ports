@@ -28,8 +28,8 @@ statedir=%%SLIMDBDIR%%
 cachedir=${statedir}/cache
 playlistdir=${statedir}/playlists
 conffile=${statedir}/slimserver.conf
-u=slimserv
-g=slimserv
+u=%%SLIMUSER%%
+g=%%SLIMGROUP%%
 command_args="--daemon --prefsfile=${conffile} --logfile=${logfile} --user=${u} --group=${g} --pidfile=${pidfile}"
 
 slimserver_start_precmd()

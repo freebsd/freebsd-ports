@@ -1,15 +1,15 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/audio/squeezecenter/files/Attic/pkg-install.in,v 1.2 2005-04-21 20:05:53 brooks Exp $
+# $FreeBSD: /tmp/pcvs/ports/audio/squeezecenter/files/Attic/pkg-install.in,v 1.3 2007-07-15 03:47:20 brooks Exp $
 
 name=slimserver
-u=slimserv
-g=slimserv
+u=%%SLIMUSER%%
+g=%%SLIMGROUP%%
 ugid=104
 homedir=/nonexistent
 shell=/sbin/nologin
 comment="Slim Devices SlimServer pseudo-user"
 slimdir="%%PREFIX%%/%%SLIMDIR%%"
-statedir=/var/db/slimserver
+statedir=%%SLIMDBDIR%%
 cachedir=${statedir}/cache
 conffile=${statedir}/slimserver.conf
 playlistdir=${statedir}/playlists
