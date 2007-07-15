@@ -8,7 +8,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -28,7 +28,8 @@ RUN_DEPENDS=	${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoc
 		bash:${PORTSDIR}/shells/bash \
 		autogen:${PORTSDIR}/devel/autogen \
 		neato:${PORTSDIR}/graphics/graphviz \
-		libtool:${PORTSDIR}/devel/libtool15
+		libtool:${PORTSDIR}/devel/libtool15 \
+		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
@@ -75,6 +76,8 @@ post-configure:
 	    	${WRKSRC}/global-tags/create_global_tags.sh
 	@${REINPLACE_CMD} -e 's|PKG_PATH|PKG_CONFIG_PATH|g' \
 	    	${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|[(]datadir[)]/icons/gnome|(prefix)/share/icons/gnome|g' \
+	    	${WRKSRC}/mime/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
