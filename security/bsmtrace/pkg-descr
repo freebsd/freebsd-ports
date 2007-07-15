@@ -1,0 +1,6 @@
+bsmtrace is a BSM based intrusion detection system, utilizing audit trails
+and real-time audit event analysis through auditpipe(4).  This host based
+IDS operates using a finite state machine principles with a flexible
+sequence driven signature system.
+
+WWW: http://people.freebsd.org/~csjp/bsmtrace/bsmtrace.txt
