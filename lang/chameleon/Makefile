@@ -16,6 +16,8 @@ COMMENT=	A Haskell-style language
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		happy:${PORTSDIR}/devel/hs-happy
 
+BROKEN=		Does not build
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src
 MAKE_ARGS=	GHC=ghc INSTALL_PATH='\"${DATADIR}/\"'
 
