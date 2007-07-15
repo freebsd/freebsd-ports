@@ -22,9 +22,14 @@ CONFIGURE_ARGS=	--with-openssl=/usr				\
 		--with-zlib					\
 		--enable-loginf
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${GREP} -slR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib\.h|g'
+.if ${OSVERSION} >= 700042
+	@${REINPLACE_CMD} -e 's/^struct.*\*sgetspent.*(const.*//' ${WRKSRC}/base/lib/shadow_.h
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -33,4 +38,4 @@ post-install:
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
