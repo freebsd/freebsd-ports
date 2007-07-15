@@ -454,6 +454,7 @@ include/wine/windows/xmldsodid.h
 include/wine/windows/zmouse.h
 include/wine/windows/ddk/compstui.h
 include/wine/windows/ddk/hidsdi.h
+include/wine/windows/ddk/imm.h
 include/wine/windows/ddk/ntddcdvd.h
 include/wine/windows/ddk/ntddser.h
 include/wine/windows/ddk/ntddtape.h
@@ -495,6 +496,7 @@ lib/wine/cryptnet.dll.so
 lib/wine/ctl3d.dll16
 lib/wine/ctl3d32.dll.so
 lib/wine/ctl3dv2.dll16
+lib/wine/d3d10.dll.so
 lib/wine/d3d8.dll.so
 lib/wine/d3d9.dll.so
 lib/wine/d3dim.dll.so
@@ -643,6 +645,7 @@ lib/wine/liboledlg.def
 lib/wine/libolepro32.def
 lib/wine/libolesvr32.def
 lib/wine/libopengl32.def
+lib/wine/libpdh.def
 lib/wine/libpowrprof.def
 lib/wine/libpsapi.def
 lib/wine/libquartz.def
@@ -890,50 +893,50 @@ lib/wine/ws2_32.dll.so
 lib/wine/wsock32.dll.so
 lib/wine/wtsapi32.dll.so
 lib/wine/xcopy.exe.so
-share/aclocal/wine.m4
-share/applications/wine.desktop
-share/wine/wine.inf
-share/wine/generic.ppd
-share/wine/fonts/coue1255.fon
-share/wine/fonts/coue1256.fon
-share/wine/fonts/coue1257.fon
-share/wine/fonts/coure.fon
-share/wine/fonts/couree.fon
-share/wine/fonts/coureg.fon
-share/wine/fonts/courer.fon
-share/wine/fonts/couret.fon
-share/wine/fonts/cvgasys.fon
-share/wine/fonts/hvgasys.fon
-share/wine/fonts/jsmalle.fon
-share/wine/fonts/jvgasys.fon
-share/wine/fonts/marlett.ttf
-share/wine/fonts/smae1255.fon
-share/wine/fonts/smae1256.fon
-share/wine/fonts/smae1257.fon
-share/wine/fonts/smalle.fon
-share/wine/fonts/smallee.fon
-share/wine/fonts/smalleg.fon
-share/wine/fonts/smaller.fon
-share/wine/fonts/smallet.fon
-share/wine/fonts/ssee1255.fon
-share/wine/fonts/ssee1256.fon
-share/wine/fonts/ssee1257.fon
-share/wine/fonts/ssee874.fon
-share/wine/fonts/sserife.fon
-share/wine/fonts/sserifee.fon
-share/wine/fonts/sserifeg.fon
-share/wine/fonts/sserifer.fon
-share/wine/fonts/sserifet.fon
-share/wine/fonts/svgasys.fon
-share/wine/fonts/vgas1255.fon
-share/wine/fonts/vgas1256.fon
-share/wine/fonts/vgas1257.fon
-share/wine/fonts/vgas874.fon
-share/wine/fonts/vgasys.fon
-share/wine/fonts/vgasyse.fon
-share/wine/fonts/vgasysg.fon
-share/wine/fonts/vgasysr.fon
-share/wine/fonts/vgasyst.fon
+%%DATADIR%%/aclocal/wine.m4
+%%DATADIR%%/applications/wine.desktop
+%%DATADIR%%/wine/wine.inf
+%%DATADIR%%/wine/generic.ppd
+%%DATADIR%%/wine/fonts/coue1255.fon
+%%DATADIR%%/wine/fonts/coue1256.fon
+%%DATADIR%%/wine/fonts/coue1257.fon
+%%DATADIR%%/wine/fonts/coure.fon
+%%DATADIR%%/wine/fonts/couree.fon
+%%DATADIR%%/wine/fonts/coureg.fon
+%%DATADIR%%/wine/fonts/courer.fon
+%%DATADIR%%/wine/fonts/couret.fon
+%%DATADIR%%/wine/fonts/cvgasys.fon
+%%DATADIR%%/wine/fonts/hvgasys.fon
+%%DATADIR%%/wine/fonts/jsmalle.fon
+%%DATADIR%%/wine/fonts/jvgasys.fon
+%%DATADIR%%/wine/fonts/marlett.ttf
+%%DATADIR%%/wine/fonts/smae1255.fon
+%%DATADIR%%/wine/fonts/smae1256.fon
+%%DATADIR%%/wine/fonts/smae1257.fon
+%%DATADIR%%/wine/fonts/smalle.fon
+%%DATADIR%%/wine/fonts/smallee.fon
+%%DATADIR%%/wine/fonts/smalleg.fon
+%%DATADIR%%/wine/fonts/smaller.fon
+%%DATADIR%%/wine/fonts/smallet.fon
+%%DATADIR%%/wine/fonts/ssee1255.fon
+%%DATADIR%%/wine/fonts/ssee1256.fon
+%%DATADIR%%/wine/fonts/ssee1257.fon
+%%DATADIR%%/wine/fonts/ssee874.fon
+%%DATADIR%%/wine/fonts/sserife.fon
+%%DATADIR%%/wine/fonts/sserifee.fon
+%%DATADIR%%/wine/fonts/sserifeg.fon
+%%DATADIR%%/wine/fonts/sserifer.fon
+%%DATADIR%%/wine/fonts/sserifet.fon
+%%DATADIR%%/wine/fonts/svgasys.fon
+%%DATADIR%%/wine/fonts/vgas1255.fon
+%%DATADIR%%/wine/fonts/vgas1256.fon
+%%DATADIR%%/wine/fonts/vgas1257.fon
+%%DATADIR%%/wine/fonts/vgas874.fon
+%%DATADIR%%/wine/fonts/vgasys.fon
+%%DATADIR%%/wine/fonts/vgasyse.fon
+%%DATADIR%%/wine/fonts/vgasysg.fon
+%%DATADIR%%/wine/fonts/vgasysr.fon
+%%DATADIR%%/wine/fonts/vgasyst.fon
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
@@ -951,6 +954,7 @@ share/wine/fonts/vgasyst.fon
 @dirrm include/wine/windows
 @dirrm include/wine
 @dirrmtry man/man3w
-@dirrmtry share/applications
-@dirrm share/wine/fonts
-@dirrm share/wine
+@dirrmtry %%DATADIR%%/aclocal
+@dirrmtry %%DATADIR%%/applications
+@dirrm %%DATADIR%%/wine/fonts
+@dirrm %%DATADIR%%/wine

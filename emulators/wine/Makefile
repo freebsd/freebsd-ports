@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	0.9.40
+PORTVERSION=	0.9.41
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
@@ -23,14 +23,14 @@ LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		xml2:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
-CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include \
-		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
-		LIBS=-Wl,-rpath,${PREFIX}/lib/wine \
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --datadir=${DATADIR}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		EXTRA_BINARIES="wine-kthread"
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/wine
 MAN1=		widl.1 wine.1 winebuild.1 winedbg.1 winedump.1 winegcc.1 \
 		winemaker.1 wineprefixcreate.1 wineserver.1 wmc.1 wrc.1
+MLINKS=		winegcc.1 wineg++.1
 ONLY_FOR_ARCHS=	i386
 USE_BISON=	yes
 USE_BZIP2=	yes
@@ -51,9 +51,8 @@ pre-build:
 	cd ${WRKSRC} && make depend
 
 post-install:
-	${RM} ${PREFIX}/man/man1/wineg++.1
 	${MV} -f ${PREFIX}/lib/libwine.so.1.0 ${PREFIX}/lib/libwine.so.1
-	${LN} -sf ${PREFIX}/lib/libwine.so.1 ${PREFIX}/lib/libwine.so
+	${LN} -sf libwine.so.1 ${PREFIX}/lib/libwine.so
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${DOCSDIR}
 .for i in README ANNOUNCE AUTHORS LICENSE
