@@ -34,6 +34,9 @@ EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
 
 CONFLICTS=	py*-gnome-2*
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure ${WRKSRC}/pygtk/configure
+
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${EG_DST_DIR}
