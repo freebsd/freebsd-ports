@@ -15,10 +15,7 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A Mesh Generation Utility for use with the ELMER FEM package
 
-WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=
