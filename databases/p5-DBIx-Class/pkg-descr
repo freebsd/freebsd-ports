@@ -15,10 +15,9 @@ PostgreSQL, Oracle, SQL Server and DB2 and is known to be used in production
 on at least the first four, and is fork- and thread-safe out of the box 
 (although your DBD may not be).
 
-This project is still under rapid development, so features added in the latest
-major release may not work 100% yet - check the Changes if you run into
-trouble, and beware of anything explicitly marked EXPERIMENTAL. Failing test
-cases are *always* welcome and point releases are put out rapidly as bugs are
-found and fixed.
+This project is still under rapid development, so large new features may be
+marked EXPERIMENTAL - such APIs are still usable but may have edge bugs.
+Failing test cases are *always* welcome and point releases are put out rapidly
+as bugs are found and fixed.
 
 WWW: http://search.cpan.org/dist/DBIx-Class/
