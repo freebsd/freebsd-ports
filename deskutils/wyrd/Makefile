@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wyrd
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.eecs.umich.edu/~pelzlpj/wyrd/
 
@@ -20,8 +19,19 @@ RUN_DEPENDS=	${LOCALBASE}/bin/remind:${PORTSDIR}/deskutils/remind
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-MAN1=		wyrd.1
-MAN5=		wyrdrc.5
-PLIST_FILES=	bin/wyrd etc/wyrdrc
+MAN1=	wyrd.1
+MAN5=	wyrdrc.5
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/wyrd.opt ${PREFIX}/bin/wyrd
+	${INSTALL_DATA} ${WRKSRC}/wyrdrc ${PREFIX}/etc/wyrdrc
+	${INSTALL_MAN} ${WRKSRC}/doc/wyrd.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/wyrdrc.5 ${MAN5PREFIX}/man/man5
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/manual.html ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/manual.pdf ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>
