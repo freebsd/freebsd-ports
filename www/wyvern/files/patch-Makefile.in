@@ -1,11 +1,11 @@
---- conf/Makefile.in.org	Sun Feb  3 02:30:09 2002
-+++ conf/Makefile.in	Sun Feb  3 02:42:02 2002
-@@ -39,7 +39,7 @@
- 	for file in ${install_conf}; do \
- 		[ -f $${file} ] || ${CP} $${file}.sample $${file}; \
- 	done)
--	@if [ "x${SSL_CMD}" != "x" ]; then ${MAKE} certificate; fi
-+#	@if [ "x${SSL_CMD}" != "x" ]; then ${MAKE} certificate; fi
+--- Makefile.in.orig	Tue Mar 23 21:38:25 2004
++++ Makefile.in	Thu Jun 17 00:46:35 2004
+@@ -47,7 +47,7 @@
  
- 
- ###############################################################################
+ install_conf=wyvern.conf wyvern.conf.ja mime.types mime.types.large mime.types.small
+ install_docs=LICENSE README LICENSE.ja README.ja SECURITY UPDATING
+-install_htdocs=index.html
++install_htdocs=index.html-dist
+ install_icons="*.gif"
+ install_images="*.png"
+ install_manual="*.png *.css *.html"

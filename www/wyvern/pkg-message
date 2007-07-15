@@ -4,4 +4,7 @@ and type:
 
 	make certificate
 
+And confirm "<certificate-file>" and "<certificate-key-file>"
+in wyvern.conf.
+
 ************************************************************

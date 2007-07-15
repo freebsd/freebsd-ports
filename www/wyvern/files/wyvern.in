@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: wyvern
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these wyvern_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/wyvern
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+wyvern_enable=${wyvern_enable:-"NO"}	# Enable wyvern
+
+. @RC_SUBR@
+
+name="wyvern"
+rcvar=`set_rcvar`
+command="@PREFIX@/sbin/wyvern"
+pidfile="/var/run/wyvern.pid"
+required_files="/usr/local/wyvern/conf/wyvern.conf"
+start_cmd="wyvern_start"
+stop_postcmd="wyvern_poststop"
+
+wyvern_start() {
+	${command} -r ${required_files}
+}
+
+wyvern_restart() {
+	if [ -f ${pidfile} ]; then
+		kill `cat ${pidfile}` > /dev/null 2>&1
+		rm -f ${pidfile}
+	fi
+	${command} -r ${required_files}
+}
+
+wyvern_poststop() {
+	if [ -f ${pidfile} ]; then
+		rm -f ${pidfile}
+	fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
