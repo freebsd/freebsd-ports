@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	subversive
-DISTVERSION=	1.1.2
-PORTREVISION=	1
+DISTVERSION=	1.1.3
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.polarion.org/projects/subversive/download/1.1/builds/
 DISTNAME=	Subversive_${DISTVERSION}-LocalUpdateSite
