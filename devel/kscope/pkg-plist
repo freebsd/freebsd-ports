@@ -1,6 +1,8 @@
 bin/kscope
 %%DOCSDIR%%/about.docbook
 %%DOCSDIR%%/autocomp_dlg.png
+%%DOCSDIR%%/bookmarks.docbook
+%%DOCSDIR%%/bookmarks.png
 %%DOCSDIR%%/call_graph.png
 %%DOCSDIR%%/call_tree.png
 %%DOCSDIR%%/config_dlg.docbook
@@ -16,6 +18,7 @@ bin/kscope
 %%DOCSDIR%%/pref_progs.png
 %%DOCSDIR%%/project_details.png
 %%DOCSDIR%%/project_files.png
+%%DOCSDIR%%/project_make.png
 %%DOCSDIR%%/project_open.png
 %%DOCSDIR%%/project_opts.png
 %%DOCSDIR%%/project_types.png
@@ -33,6 +36,7 @@ share/icons/hicolor/16x16/apps/kscope.png
 share/applnk/Development/kscope.desktop
 share/apps/kscope/kscopeui.rc
 share/apps/kscope/kscope_config
+share/apps/kscope/pics/bookmark.png
 share/apps/kscope/pics/file_ro.png
 share/apps/kscope/pics/file_rw.png
 share/apps/kscope/pics/file_save.png

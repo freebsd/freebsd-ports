@@ -1,22 +1,11 @@
---- src/kscope.h.orig	Thu Aug  3 14:13:54 2006
-+++ src/kscope.h	Wed Aug  9 14:22:09 2006
-@@ -160,7 +160,7 @@
+--- src/kscope.h.orig	Thu Jul 12 14:04:16 2007
++++ src/kscope.h	Thu Jul 12 14:04:38 2007
+@@ -171,7 +171,7 @@
  	bool getSymbol(uint&, QString&, bool bPrompt = true);
  	EditorPage* addEditor(const QString&s);
  	EditorPage* createEditorPage();
 -	inline bool isAutoRebuildEnabled();
 +	bool isAutoRebuildEnabled();
- 	void loadOpenFiles();
+ 	void restoreSession();
  	void toggleQueryWindow(bool);
  	
---- src/kscope.cpp.orig	Wed Aug  9 08:27:55 2006
-+++ src/kscope.cpp	Wed Aug  9 14:22:09 2006
-@@ -1215,7 +1215,7 @@
-  * @return	true if database auto-rebuild is enabled for the current project,
-  *			false otherwise
-  */
--inline bool KScope::isAutoRebuildEnabled()
-+bool KScope::isAutoRebuildEnabled()
- {
- 	return (m_pProjMgr->getAutoRebuildTime() >= 0);
- }
