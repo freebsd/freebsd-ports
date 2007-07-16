@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/databases/pgcluster/files/Attic/pgreplicate.in,v 1.1 2007-07-16 10:53:48 rafan Exp $
 #
 # PROVIDE: pgreplicate
 # REQUIRE: DAEMON

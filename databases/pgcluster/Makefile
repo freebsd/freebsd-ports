@@ -18,7 +18,7 @@ PATCHFILES=	pgcluster-${PORTVERSION}-patch.bz2
 PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=The multi-master and synchronous replication system for PostgreSQL
+COMMENT=	The multi-master and synchronous replication system for PostgreSQL
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
@@ -29,7 +29,7 @@ USE_AUTOTOOLS=	autoconf:259
 MAKE_FLAGS=	# empty
 MAKEFILE=	# empty
 CONFLICTS=	postgresql-*
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	pgcluster
 USE_LDCONFIG=	yes
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -41,13 +41,15 @@ INSTALL_TARGET=	install-strip
 BASEPGSQL=	7.3.6
 .if defined(WITHOUT_PGCLUSTER_REPLICATION)
 PGRP=		"@comment "
+.else
+USE_RC_SUBR+=	pgreplicate
 .endif
 .if defined(WITHOUT_PGCLUSTER_LOADBALANCER)
 PGLB=		"@comment "
+.else
+USE_RC_SUBR+=	pglb
 .endif
 PLIST_SUB=	PGRP=${PGRP} PGLB=${PGLB}
-RCSUBR_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-RCSUBR_SED=	${SED} ${RCSUBR_SUB:S|$|!g|:S|^| -e s!%%|:S|=|%%!|}
 
 MAN1=	clusterdb.1 createdb.1 createlang.1 createuser.1 dropdb.1 droplang.1 \
 	dropuser.1 ecpg.1 initdb.1 initlocation.1 ipcclean.1 \
@@ -97,17 +99,9 @@ pre-install:
 post-install:
 .if !defined(WITHOUT_PGCLUSTER_REPLICATION)
 	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pgrp do-install
-	${RCSUBR_SED} ${FILESDIR}/pgreplicate.sh.tmpl > \
-		${PREFIX}/etc/rc.d/pgreplicate.sh
-	${CHMOD} +x ${PREFIX}/etc/rc.d/pgreplicate.sh
 .endif
 .if !defined(WITHOUT_PGCLUSTER_LOADBALANCER)
 	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pglb do-install
-	${RCSUBR_SED} ${FILESDIR}/pglb.sh.tmpl > ${PREFIX}/etc/rc.d/pglb.sh
-	${CHMOD} +x ${PREFIX}/etc/rc.d/pglb.sh
 .endif
-	${RCSUBR_SED} ${FILESDIR}/pgcluster.sh.tmpl > \
-		${PREFIX}/etc/rc.d/pgcluster.sh
-	${CHMOD} +x ${PREFIX}/etc/rc.d/pgcluster.sh
 
 .include <bsd.port.mk>
