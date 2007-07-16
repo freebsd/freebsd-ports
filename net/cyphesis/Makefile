@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyphesis
-PORTVERSION=	0.5.12
+PORTVERSION=	0.5.13
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=worldforge
@@ -21,7 +21,7 @@ LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 		skstream-0.3.4:${PORTSDIR}/net/skstream \
 		gcrypt.13:${PORTSDIR}/security/libgcrypt
 
-CONFIGURE_ARGS=	--with-python=${LOCALBASE}
+CONFIGURE_ARGS=	--with-python=${LOCALBASE} --mandir=${PREFIX}/man
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

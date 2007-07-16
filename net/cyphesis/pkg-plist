@@ -7,15 +7,9 @@ bin/cydumprules
 bin/cyloadrules
 bin/cypasswd
 bin/cyphesis
-etc/cyphesis/acorn.xml
-etc/cyphesis/basic.xml
 etc/cyphesis/cyphesis.vconf
-etc/cyphesis/mason.xml
-etc/cyphesis/werewolf.xml
-%%DATADIR%%/rulesets/basic/__init__.py
-%%DATADIR%%/rulesets/basic/editor.py
-%%DATADIR%%/rulesets/basic/hooks/__init__.py
-%%DATADIR%%/rulesets/basic/hooks/ruleset_import_hooks.py
+etc/cyphesis/mason.d/basic.xml
+etc/cyphesis/mason.d/mason.xml
 %%DATADIR%%/rulesets/basic/mind/Goal.py
 %%DATADIR%%/rulesets/basic/mind/Knowledge.py
 %%DATADIR%%/rulesets/basic/mind/Memory.py
@@ -25,11 +19,13 @@ etc/cyphesis/werewolf.xml
 %%DATADIR%%/rulesets/basic/mind/dictlist.py
 %%DATADIR%%/rulesets/basic/mind/goals/__init__.py
 %%DATADIR%%/rulesets/basic/mind/goals/animal/__init__.py
+%%DATADIR%%/rulesets/basic/mind/goals/animal/domestic.py
 %%DATADIR%%/rulesets/basic/mind/goals/animal/herd.py
 %%DATADIR%%/rulesets/basic/mind/goals/common/__init__.py
 %%DATADIR%%/rulesets/basic/mind/goals/common/common.py
 %%DATADIR%%/rulesets/basic/mind/goals/common/misc_goal.py
 %%DATADIR%%/rulesets/basic/mind/goals/common/move.py
+%%DATADIR%%/rulesets/basic/mind/goals/common/trigger.py
 %%DATADIR%%/rulesets/basic/mind/goals/dynamic/DynamicGoal.py
 %%DATADIR%%/rulesets/basic/mind/goals/dynamic/__init__.py
 %%DATADIR%%/rulesets/basic/mind/goals/dynamic/add_unique_goal.py
@@ -45,47 +41,24 @@ etc/cyphesis/werewolf.xml
 %%DATADIR%%/rulesets/basic/mind/panlingua/ontology.py
 %%DATADIR%%/rulesets/basic/mind/panlingua/panlingua.py
 %%DATADIR%%/rulesets/basic/mind/panlingua/syntax.py
-%%DATADIR%%/rulesets/basic/terrain.py
-%%DATADIR%%/rulesets/basic/test_python_api.py
-%%DATADIR%%/rulesets/basic/world/__init__.py
-%%DATADIR%%/rulesets/basic/world/objects/Pile.py
-%%DATADIR%%/rulesets/basic/world/objects/Thing.py
-%%DATADIR%%/rulesets/basic/world/objects/__init__.py
-%%DATADIR%%/rulesets/basic/world/objects/animals/Animal.py
-%%DATADIR%%/rulesets/basic/world/objects/animals/__init__.py
-%%DATADIR%%/rulesets/basic/world/objects/buildings/House.py
-%%DATADIR%%/rulesets/basic/world/objects/buildings/StoneHouse.py
-%%DATADIR%%/rulesets/basic/world/objects/buildings/__init__.py
-%%DATADIR%%/rulesets/basic/world/objects/elements/Fire.py
-%%DATADIR%%/rulesets/basic/world/objects/elements/__init__.py
-%%DATADIR%%/rulesets/basic/world/objects/plants/Tree.py
-%%DATADIR%%/rulesets/basic/world/objects/plants/__init__.py
-%%DATADIR%%/rulesets/basic/world/objects/tools/Axe.py
-%%DATADIR%%/rulesets/basic/world/objects/tools/Bow.py
-%%DATADIR%%/rulesets/basic/world/objects/tools/Pickaxe.py
-%%DATADIR%%/rulesets/basic/world/objects/tools/Scythe.py
-%%DATADIR%%/rulesets/basic/world/objects/tools/Shovel.py
-%%DATADIR%%/rulesets/basic/world/objects/tools/Sword.py
-%%DATADIR%%/rulesets/basic/world/objects/tools/__init__.py
-%%DATADIR%%/rulesets/basic/world/probability.py
 %%DATADIR%%/rulesets/mason/__init__.py
 %%DATADIR%%/rulesets/mason/define_world.py
 %%DATADIR%%/rulesets/mason/define_world_aglanor.py
-%%DATADIR%%/rulesets/mason/define_world_kai.py
-%%DATADIR%%/rulesets/mason/mind/PigMind.py
-%%DATADIR%%/rulesets/mason/mind/SkelMind.py
-%%DATADIR%%/rulesets/mason/mind/WolfMind.py
-%%DATADIR%%/rulesets/mason/mind/__init__.py
 %%DATADIR%%/rulesets/mason/world/__init__.py
+%%DATADIR%%/rulesets/mason/world/objects/Pile.py
 %%DATADIR%%/rulesets/mason/world/objects/Weather.py
 %%DATADIR%%/rulesets/mason/world/objects/__init__.py
 %%DATADIR%%/rulesets/mason/world/objects/animals/Deer.py
 %%DATADIR%%/rulesets/mason/world/objects/animals/Pig.py
 %%DATADIR%%/rulesets/mason/world/objects/animals/__init__.py
+%%DATADIR%%/rulesets/mason/world/objects/buildings/House.py
 %%DATADIR%%/rulesets/mason/world/objects/buildings/House3.py
+%%DATADIR%%/rulesets/mason/world/objects/buildings/StoneHouse.py
 %%DATADIR%%/rulesets/mason/world/objects/buildings/__init__.py
 %%DATADIR%%/rulesets/mason/world/objects/clothing/Garment.py
 %%DATADIR%%/rulesets/mason/world/objects/clothing/__init__.py
+%%DATADIR%%/rulesets/mason/world/objects/elements/Fire.py
+%%DATADIR%%/rulesets/mason/world/objects/elements/__init__.py
 %%DATADIR%%/rulesets/mason/world/objects/outdoor/Campfire.py
 %%DATADIR%%/rulesets/mason/world/objects/outdoor/Gravestone.py
 %%DATADIR%%/rulesets/mason/world/objects/outdoor/__init__.py
@@ -96,9 +69,15 @@ etc/cyphesis/werewolf.xml
 %%DATADIR%%/rulesets/mason/world/objects/plants/seeds/Fircone.py
 %%DATADIR%%/rulesets/mason/world/objects/plants/seeds/Seed.py
 %%DATADIR%%/rulesets/mason/world/objects/plants/seeds/__init__.py
+%%DATADIR%%/rulesets/mason/world/objects/tools/Axe.py
+%%DATADIR%%/rulesets/mason/world/objects/tools/Bow.py
 %%DATADIR%%/rulesets/mason/world/objects/tools/Bucksaw.py
 %%DATADIR%%/rulesets/mason/world/objects/tools/Cleaver.py
+%%DATADIR%%/rulesets/mason/world/objects/tools/Pickaxe.py
 %%DATADIR%%/rulesets/mason/world/objects/tools/Rope.py
+%%DATADIR%%/rulesets/mason/world/objects/tools/Scythe.py
+%%DATADIR%%/rulesets/mason/world/objects/tools/Shovel.py
+%%DATADIR%%/rulesets/mason/world/objects/tools/Sword.py
 %%DATADIR%%/rulesets/mason/world/objects/tools/Tinderbox.py
 %%DATADIR%%/rulesets/mason/world/objects/tools/Torch.py
 %%DATADIR%%/rulesets/mason/world/objects/tools/Trowel.py
@@ -109,13 +88,21 @@ etc/cyphesis/werewolf.xml
 %%DATADIR%%/rulesets/mason/world/statistics/__init__.py
 %%DATADIR%%/rulesets/mason/world/tasks/Bisect.py
 %%DATADIR%%/rulesets/mason/world/tasks/Combat.py
-%%DATADIR%%/rulesets/mason/world/tasks/GroupCombat.py
-%%DATADIR%%/rulesets/mason/world/tasks/Ram.py
+%%DATADIR%%/rulesets/mason/world/tasks/Cultivate.py
+%%DATADIR%%/rulesets/mason/world/tasks/Delve.py
+%%DATADIR%%/rulesets/mason/world/tasks/Dig.py
 %%DATADIR%%/rulesets/mason/world/tasks/Logging.py
 %%DATADIR%%/rulesets/mason/world/tasks/Raise.py
+%%DATADIR%%/rulesets/mason/world/tasks/Ram.py
+%%DATADIR%%/rulesets/mason/world/tasks/Reap.py
 %%DATADIR%%/rulesets/mason/world/tasks/Sharpen.py
+%%DATADIR%%/rulesets/mason/world/tasks/Slaughter.py
 %%DATADIR%%/rulesets/mason/world/tasks/Slice.py
 %%DATADIR%%/rulesets/mason/world/tasks/__init__.py
+%%DATADIR%%/scripts/cyphesis/__init__.py
+%%DATADIR%%/scripts/cyphesis/Thing.py
+%%DATADIR%%/scripts/cyphesis/probability.py
+%%DATADIR%%/scripts/cyphesis/editor.py
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -128,8 +115,8 @@ etc/cyphesis/werewolf.xml
 %%PORTDOCS%%%%DOCSDIR%%/conf/cyphesis.vconf
 %%PORTDOCS%%%%DOCSDIR%%/conf/mason.xml
 %%PORTDOCS%%%%DOCSDIR%%/conf/werewolf.xml
+@dirrm etc/cyphesis/mason.d
 @dirrm etc/cyphesis
-@dirrm %%DATADIR%%/rulesets/basic/hooks
 @dirrm %%DATADIR%%/rulesets/basic/mind/goals/animal
 @dirrm %%DATADIR%%/rulesets/basic/mind/goals/common
 @dirrm %%DATADIR%%/rulesets/basic/mind/goals/dynamic
@@ -137,18 +124,11 @@ etc/cyphesis/werewolf.xml
 @dirrm %%DATADIR%%/rulesets/basic/mind/goals
 @dirrm %%DATADIR%%/rulesets/basic/mind/panlingua
 @dirrm %%DATADIR%%/rulesets/basic/mind
-@dirrm %%DATADIR%%/rulesets/basic/world/objects/animals
-@dirrm %%DATADIR%%/rulesets/basic/world/objects/buildings
-@dirrm %%DATADIR%%/rulesets/basic/world/objects/elements
-@dirrm %%DATADIR%%/rulesets/basic/world/objects/plants
-@dirrm %%DATADIR%%/rulesets/basic/world/objects/tools
-@dirrm %%DATADIR%%/rulesets/basic/world/objects
-@dirrm %%DATADIR%%/rulesets/basic/world
 @dirrm %%DATADIR%%/rulesets/basic
-@dirrm %%DATADIR%%/rulesets/mason/mind
 @dirrm %%DATADIR%%/rulesets/mason/world/objects/animals
 @dirrm %%DATADIR%%/rulesets/mason/world/objects/buildings
 @dirrm %%DATADIR%%/rulesets/mason/world/objects/clothing
+@dirrm %%DATADIR%%/rulesets/mason/world/objects/elements
 @dirrm %%DATADIR%%/rulesets/mason/world/objects/outdoor
 @dirrm %%DATADIR%%/rulesets/mason/world/objects/plants/seeds
 @dirrm %%DATADIR%%/rulesets/mason/world/objects/plants
@@ -160,6 +140,8 @@ etc/cyphesis/werewolf.xml
 @dirrm %%DATADIR%%/rulesets/mason/world
 @dirrm %%DATADIR%%/rulesets/mason
 @dirrm %%DATADIR%%/rulesets
+@dirrm %%DATADIR%%/scripts/cyphesis
+@dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/conf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
