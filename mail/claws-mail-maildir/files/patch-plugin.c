@@ -11,7 +11,7 @@
  	if (!claws_is_exiting())
  		folder_unregister_class(maildir_get_class());
  	uiddb_done();
-+	retuern TRUE;
++	return TRUE;
  }
  
  const gchar *plugin_name(void)
