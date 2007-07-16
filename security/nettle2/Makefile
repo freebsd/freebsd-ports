@@ -8,6 +8,7 @@
 
 PORTNAME=	nettle
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.lysator.liu.se/~nisse/archive/ \
 		ftp://ftp.lysator.liu.se/pub/security/lsh/
@@ -22,14 +23,15 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ARGS=	--enable-shared --infodir=${PREFIX}/${INFO_PATH}
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USE_GETOPT_LONG=	yes
-USE_GCC=	3.4+
 
 DOCS=		NEWS README TODO nettle.html
 EXAMPLES=	examples/*.c examples/*.h
+
+INFO=		nettle
 
 post-extract:
 	@${RM} -f ${WRKSRC}/nettle.info*
