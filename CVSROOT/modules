@@ -13897,6 +13897,7 @@ ruby-dbd_sqlite	ports/databases/ruby-dbd_sqlite
 ruby-dbdbd	ports/databases/ruby-dbdbd
 ruby-dbi	ports/databases/ruby-dbi
 ruby-dcl	ports/science/ruby-dcl
+ruby-deplate	ports/textproc/ruby-deplate
 ruby-dialogs	ports/devel/ruby-dialogs
 ruby-dict	ports/net/ruby-dict
 ruby-diff	ports/textproc/ruby-diff
