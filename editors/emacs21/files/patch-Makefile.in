@@ -1,0 +1,37 @@
+--- Makefile.in.orig	Sat Oct 19 10:21:01 2002
++++ Makefile.in	Fri Dec  9 01:25:01 2005
+@@ -348,14 +348,6 @@
+ ## as a workaround for a bug in tar on Ultrix 4.2.
+ install-arch-indep: mkdir info
+ 	-set ${COPYDESTS} ; \
+-	unset CDPATH; \
+-	for dir in ${COPYDIR} ; do \
+-	  if [ `(cd $$1 && /bin/pwd)` != `(cd $${dir} && /bin/pwd)` ] ; then \
+-	    rm -rf $$1 ; \
+-	  fi ; \
+-	  shift ; \
+-	done
+-	-set ${COPYDESTS} ; \
+ 	mkdir ${COPYDESTS} ; \
+ 	chmod ugo+rx ${COPYDESTS} ; \
+ 	unset CDPATH; \
+@@ -432,8 +424,8 @@
+ 	   cd ${srcdir}/info ; \
+ 	   for f in ada-mode* autotype* ccmode* cl* dired-x* ebrowse* ediff* efaq* emacs* eshell* eudc* forms* gnus* idlwave* info* message* mh-e* pcl-cvs* reftex* sc* speedbar* vip* widget* woman*; do \
+ 	     (cd $${thisdir}; \
+-	      ${INSTALL_DATA} ${srcdir}/info/$$f ${infodir}/$$f; \
+-	      chmod a+r ${infodir}/$$f); \
++	      ${INSTALL_DATA} ${srcdir}/info/$$f ${infodir}/$$f.info; \
++	      chmod a+r ${infodir}/$$f.info); \
+ 	   done); \
+ 	else true; fi
+ 	-unset CDPATH; \
+@@ -442,7 +434,7 @@
+ 	then \
+ 	  for f in ada-mode autotype ccmode cl dired-x ebrowse ediff efaq emacs emacs-mime eshell eudc forms gnus idlwave info message mh-e pcl-cvs reftex sc speedbar vip viper widget woman; do \
+ 	    (cd $${thisdir}; \
+-	     ${INSTALL_INFO} --info-dir=${infodir} ${infodir}/$$f); \
++	     ${INSTALL_INFO} --info-dir=${infodir} ${infodir}/$$f.info); \
+ 	  done; \
+ 	else true; fi
+ 	-chmod -R a+r ${datadir}/emacs ${COPYDESTS} ${infodir}
