@@ -6,6 +6,24 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070716:
+  AFFECTS: users of editors/emacs
+  AUTHOR: nobutaka@FreeBSD.org
+  
+  editors/emacs port is upgraded to 22.1.
+  Since this is a major upgrade, all installed elisp ports should be
+  reinstalled.
+
+  Please add EMACS_PORT_NAME=emacs22 to /etc/make.conf and
+  upgrade Emacs and related ports with:
+
+  # portupgrade -fr emacs
+
+  If you want to keep using Emacs 21.3, please add EMACS_PORT_NAME=emacs21
+  to /etc/make.conf and reinstall Emacs from editors/emacs21 port:
+
+  # portupgrade -f -o editors/emacs21 emacs
+
 20070713:
   AFFECTS: users of audio/pulseaudio
   AUTHOR: gnome@FreeBSD.org
