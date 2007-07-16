@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=	--disable-arts --disable-artstest
 .endif
 
 .if defined(WITH_CACA)
-BUILD_DEPENDS+=	caca-config:${PORTSDIR}/graphics/libcaca
+LIB_DEPENDS+=	caca.0:${PORTSDIR}/graphics/libcaca
 PLIST_SUB+=	WITH_CACA=""
 .else
 PLIST_SUB+=	WITH_CACA="@comment "
