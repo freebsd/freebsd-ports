@@ -1,0 +1,6 @@
+QTM allows the user to compose, format and submit entries to MT and
+Wordpress blogs (and possibly other content management systems using the
+same interfaces; your mileage may vary).  It uses the standard Blogger,
+MetaWeblog and Movable Type APIs.  It requires Qt 4.1.
+
+WWW: http://qtm.blogistan.co.uk/
