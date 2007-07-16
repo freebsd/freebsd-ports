@@ -27,6 +27,10 @@ MAN3=	dnet.3
 MAN8=	dnet.8
 .endif
 
+.if !exists(/dev/bpf0)
+BROKEN=	Does not build properly without /dev/bpf0.
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if !defined(LIBDNET_SLAVE)
