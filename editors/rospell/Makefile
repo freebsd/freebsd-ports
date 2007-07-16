@@ -6,19 +6,16 @@
 # $FreeBSD$
 
 PORTNAME=	rospell
-PORTVERSION=	2007.00
-PORTREVISION=	1
+DISTVERSION=	2007.01.rc3
+#PORTREVISION=	1
 CATEGORIES=	editors textproc # this should/will be romanian ;)
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	QT-based editor with support for romanian charsets and spell checking
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/readtags.h:${PORTSDIR}/devel/ctags
 RUN_DEPENDS+=	${LOCALBASE}/lib/readtags.o:${PORTSDIR}/devel/ctags
-
-BROKEN=		Segfault during build
 
 USE_XLIB=	yes
 USE_QT_VER=	3
@@ -30,10 +27,6 @@ MAKEFILE=	BSDmakefile
 MAN1=	rospell.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		doesn't compile properly on 4.x systems
-.endif
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} dictfiles.h
