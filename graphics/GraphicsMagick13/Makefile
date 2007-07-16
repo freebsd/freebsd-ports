@@ -7,7 +7,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/
@@ -42,14 +42,17 @@ MAN5=	quantize.5
 
 .ifndef WINDOWS_FONT_DIR
 # Use fonts installed by x11-fonts/webfonts by default
-WINDOWS_FONT_DIR=${X11BASE}/lib/X11/webfonts
+WINDOWS_FONT_DIR=${X11BASE}/lib/X11/fonts/webfonts
 .endif
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--without-perl --with-windows-font-dir=${WINDOWS_FONT_DIR} \
-		--enable-shared --enable-static --without-threads \
-		--enable-symbol-prefix
+CONFIGURE_ARGS=	--without-perl --enable-shared --enable-static \
+		--without-threads
 USE_LDCONFIG=	yes
+
+.if defined(WITH_WINDOWS_FONT_DIR)
+CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
+.endif
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install-data-html
