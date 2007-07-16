@@ -100,6 +100,11 @@ CONFIGURE_ARGS+=	--disable-lirc
 .endif
 
 .if defined(WITH_CACA)
+LIBXINE_VER!=	cd ${PORTSDIR}/multimedia/libxine && ${MAKE} -VPORTVERSION
+.if !exists(${LOCALBASE}/lib/xine/plugins/${LIBXINE_VER}/xineplug_vo_out_caca.so)
+IGNORE=libxine should be compiled with caca support
+.endif
+LIB_DEPENDS+=   caca.0:${PORTSDIR}/graphics/libcaca
 PLIST_SUB+=	WITH_CACA=""
 .else
 PLIST_SUB+=	WITH_CACA="@comment "
