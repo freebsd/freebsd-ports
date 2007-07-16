@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Inline
-PORTVERSION=	2.202
+PORTVERSION=	2.204
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -41,10 +41,4 @@ MAN3=	Test::Inline.3 \
 	Test::Inline::Script.3 \
 	Test::Inline::Section.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires at least Perl5.6 due to dependencies
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
