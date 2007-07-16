@@ -34,6 +34,6 @@ MAN1=		${PORTNAME}.1
 
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|strtoll|std::strtoll|g' ${WRKSRC}/src/SubtitleASS.cc
+	@${REINPLACE_CMD} -e 's|strtoll|strtoq|g' ${WRKSRC}/src/SubtitleASS.cc
 
 .include <bsd.port.mk>
