@@ -34,6 +34,7 @@ MAKE_ARGS=	PREFIX="${PREFIX}" CC="${CC}" CPP="${CXX}" \
 		LIB_DIRS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 DEPRECATED=	Development ceased, this port should be updated to Endeavour Mark II
+EXPIRATION_DATE=	2007-07-31
 
 .include <bsd.port.pre.mk>
 
