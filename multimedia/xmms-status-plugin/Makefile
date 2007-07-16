@@ -21,4 +21,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+post-patch:
+	${REINPLACE_CMD} -e 's,-Werror,,' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
