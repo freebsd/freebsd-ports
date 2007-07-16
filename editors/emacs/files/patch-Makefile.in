@@ -1,7 +1,7 @@
---- Makefile.in.orig	Sat Oct 19 10:21:01 2002
-+++ Makefile.in	Fri Dec  9 01:25:01 2005
-@@ -348,14 +348,6 @@
- ## as a workaround for a bug in tar on Ultrix 4.2.
+--- ./Makefile.in.orig	Sun Aug 27 04:16:25 2006
++++ ./Makefile.in	Fri Sep  1 21:10:08 2006
+@@ -409,14 +409,6 @@
+ ## That flag is also used in leim/Makefile.in
  install-arch-indep: mkdir info
  	-set ${COPYDESTS} ; \
 -	unset CDPATH; \
@@ -15,23 +15,25 @@
  	mkdir ${COPYDESTS} ; \
  	chmod ugo+rx ${COPYDESTS} ; \
  	unset CDPATH; \
-@@ -432,8 +424,8 @@
+@@ -503,9 +495,9 @@
+ 	   fi; \
  	   cd ${srcdir}/info ; \
- 	   for f in ada-mode* autotype* ccmode* cl* dired-x* ebrowse* ediff* efaq* emacs* eshell* eudc* forms* gnus* idlwave* info* message* mh-e* pcl-cvs* reftex* sc* speedbar* vip* widget* woman*; do \
- 	     (cd $${thisdir}; \
--	      ${INSTALL_DATA} ${srcdir}/info/$$f ${infodir}/$$f; \
--	      chmod a+r ${infodir}/$$f); \
-+	      ${INSTALL_DATA} ${srcdir}/info/$$f ${infodir}/$$f.info; \
-+	      chmod a+r ${infodir}/$$f.info); \
+ 	   for elt in $(INFO_FILES); do \
+-	      for f in `ls $$elt $$elt-[1-9] $$elt-[1-9][0-9] 2>/dev/null`; do \
+-	        ${INSTALL_DATA} $$f $(DESTDIR)${infodir}/$$f; \
+-	        chmod a+r $(DESTDIR)${infodir}/$$f; \
++	      for f in `ls $$elt 2>/dev/null`; do \
++	        ${INSTALL_DATA} $$f $(DESTDIR)${infodir}/$$f.info; \
++	        chmod a+r $(DESTDIR)${infodir}/$$f.info; \
+ 	      done; \
  	   done); \
  	else true; fi
- 	-unset CDPATH; \
-@@ -442,7 +434,7 @@
+@@ -515,7 +507,7 @@
  	then \
- 	  for f in ada-mode autotype ccmode cl dired-x ebrowse ediff efaq emacs emacs-mime eshell eudc forms gnus idlwave info message mh-e pcl-cvs reftex sc speedbar vip viper widget woman; do \
+ 	  for elt in $(INFO_FILES); do \
  	    (cd $${thisdir}; \
--	     ${INSTALL_INFO} --info-dir=${infodir} ${infodir}/$$f); \
-+	     ${INSTALL_INFO} --info-dir=${infodir} ${infodir}/$$f.info); \
+-	     ${INSTALL_INFO} --info-dir=$(DESTDIR)${infodir} $(DESTDIR)${infodir}/$$elt); \
++	     ${INSTALL_INFO} --info-dir=$(DESTDIR)${infodir} $(DESTDIR)${infodir}/$$elt.info); \
  	  done; \
  	else true; fi
- 	-chmod -R a+r ${datadir}/emacs ${COPYDESTS} ${infodir}
+ 	-chmod -R a+r $(DESTDIR)${datadir}/emacs ${COPYDESTS} $(DESTDIR)${infodir}
