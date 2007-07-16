@@ -1214,7 +1214,8 @@
 %%INSTDIR%%/tutorial/Kicad_Tutorial_ru.odt
 %%INSTDIR%%/tutorial/Tutorial_Kicad_FR.odt
 %%INSTDIR%%/version.txt
-share/applications/kicad.desktop
+%%DESKTOPDIR%%/kicad.desktop
+@dirrmtry %%DESKTOPDIR%%
 @dirrm %%INSTDIR%%/tutorial
 @dirrm %%INSTDIR%%/template
 @dirrm %%INSTDIR%%/modules/packages3d/valves
