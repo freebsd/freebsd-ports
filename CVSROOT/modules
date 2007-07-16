@@ -13454,6 +13454,7 @@ qtemu		ports/emulators/qtemu
 qtfw		ports/security/qtfw
 qtiplot		ports/math/qtiplot
 qtiplot-doc	ports/math/qtiplot-doc
+qtm		ports/deskutils/qtm
 qtools		ports/mail/qtools
 qtorrent	ports/net-p2p/qtorrent
 qtpixmap	ports/x11-toolkits/qtpixmap
