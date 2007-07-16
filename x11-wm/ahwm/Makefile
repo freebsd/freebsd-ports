@@ -15,12 +15,17 @@ MASTER_SITES=	http://people.cs.uchicago.edu/~ahiorean/ahwm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 window manager
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 
 GNU_CONFIGURE=	yes
+MAKE_ARGS=	prefix=${PREFIX} exec_prefix=${PREFIX}
 
 MAN5=		ahwmrc.5
 MLINKS=		ahwmrc.5 ahwm.5
 PLIST_FILES=	bin/ahwm
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,@prefix@@,@,g' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
