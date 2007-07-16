@@ -31,7 +31,6 @@ USE_GNUSTEP_CAIRO=	yes
 
 USE_GNUSTEP_SYSTEM_LIBS+=	\
 	ScriptKit:lang/gnustep-guile \
-	gnustep-db2:databases/gdl2 \
 	Renaissance:x11-toolkits/renaissance \
 	PreferencePanes:deskutils/preferencepanes \
 	TrackerKit:deskutils/etoile-trackerkit \
@@ -48,6 +47,7 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	Addresses:mail/addresses \
 	SlideShow:graphics/gnustep-slideshowkit \
 	netclasses:net/netclasses \
+	EOInterface:databases/gdl2 \
 	WizardKit:devel/wizardkit \
 	HighlighterKit:devel/highlighterkit \
 	Performance:devel/performance \
