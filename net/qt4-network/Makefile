@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	network
-PORTVERSION=	4.2.3
-PORTREVISION=	2
+PORTVERSION=	${QT4_VERSION}
+PORTREVISION=0
 CATEGORIES?=	net ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -18,23 +18,14 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt network library
 
-BUILD_DEPENDS=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
-		qmake-qt4:${PORTSDIR}/devel/qmake4
-LIB_DEPENDS?=	QtCore:${PORTSDIR}/devel/qt4-corelib
-
-CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
-		qt-3.1.* qt-3.2.* qt-designer-2.* xfmail-1.5.[0-5] \
-		xfmail-1.5.5_[1-2]
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake moc rcc corelib
+QT_NONSTANDARD=	yes
+QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-CONFIGURE_ARGS=	-fast -no-exceptions \
-		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
-		-qt-gif -release -system-libjpeg -system-libpng \
-		-system-zlib -no-nas-sound -prefix ${PREFIX} \
-		-plugindir ${PREFIX}/lib/plugins -bindir ${PREFIX}/bin \
-		-confirm-license
+USE_OPENSSL=	yes
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
@@ -46,7 +37,7 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	--exclude '${DISTNAME}/src/gui' --exclude '${DISTNAME}/src/xml' \
 	--exclude '${DISTNAME}/src/opengl' --exclude '${DISTNAME}/src/qt3support' \
 	--exclude '${DISTNAME}/src/sql' --exclude '${DISTNAME}/src/plugins' \
-	--exclude '${DISTNAME}/src/3rdparty' --exclude '${DISTNAME}/src/tools/moc' \
+	--exclude '${DISTNAME}/src/tools/moc' \
 	--exclude '${DISTNAME}/src/tools/rcc' --exclude '${DISTNAME}/src/tools/uic3' \
 	--exclude '${DISTNAME}/tools/assistant' --exclude '${DISTNAME}/tools/designer' \
 	--exclude '${DISTNAME}/tools/linguist' --exclude '${DISTNAME}/tools/porting' \
@@ -65,13 +56,14 @@ pre-configure:
 	${MKDIR} ${WRKSRC}/../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
+	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/../../bin/rcc
 
 post-configure:
-	${REINPLACE_CMD} -e 's|${PREFIX}/lib/QtNetwork.pc|${PREFIX}/libdata/pkgconfig/QtNetwork.pc|g' \
+	${REINPLACE_CMD} -e 's|${PREFIX}/lib/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 			-e 's|.*$$(QMAKE).*||g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
-		${WRKSRC}/../../lib/*Qt*
+		${WRKSRC}/../../lib/pkgconfig/*Qt*
 
 .include <bsd.port.post.mk>

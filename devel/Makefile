@@ -1971,12 +1971,15 @@
     SUBDIR += qt4-designer
     SUBDIR += qt4-libqtassistantclient
     SUBDIR += qt4-linguist
+    SUBDIR += qt4-makeqpf
     SUBDIR += qt4-moc
     SUBDIR += qt4-porting
+    SUBDIR += qt4-qdbusviewer
     SUBDIR += qt4-qt3support
     SUBDIR += qt4-qtestlib
     SUBDIR += qt4-qvfb
     SUBDIR += qt4-rcc
+    SUBDIR += qt4-script
     SUBDIR += qt4-uic
     SUBDIR += qt4-uic3
     SUBDIR += qsa

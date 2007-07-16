@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	porting
-PORTVERSION=	4.2.3
+PORTVERSION=	${QT4_VERSION}
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -17,25 +17,12 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt utility to assist with porting Qt3 applications to Qt4
 
-BUILD_DEPENDS=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
-		qmake-qt4:${PORTSDIR}/devel/qmake4 \
-		rcc:${PORTSDIR}/devel/qt4-rcc \
-		uic-qt4:${PORTSDIR}/devel/qt4-uic
-LIB_DEPENDS=	QtCore:${PORTSDIR}/devel/qt4-corelib \
-		QtXml:${PORTSDIR}/textproc/qt4-xml
-
-CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
-		qt-3.1.* qt-3.2.* qt-designer-2.* xfmail-1.5.[0-5] \
-		xfmail-1.5.5_[1-2]
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake moc rcc uic corelib xml
+QT_NONSTANDARD=	yes
+QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
-
-CONFIGURE_ARGS=	-fast -no-exceptions \
-		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
-		-qt-gif -release -system-libjpeg -system-libpng \
-		-system-zlib -no-nas-sound -prefix ${PREFIX} \
-		-plugindir ${PREFIX}/lib/plugins -bindir ${PREFIX}/bin \
-		-confirm-license
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
@@ -57,7 +44,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/tools/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../
 
 pre-configure:
-	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}	
+	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
 	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/bin|g' \
 		-e 's|RULESXML.path.*|RULESXML.path=${PREFIX}/share/qt4|g' \
 		${WRKSRC}/${PORTNAME}.pro ${WRKSRC}/src/src.pro

@@ -7,21 +7,22 @@
 #
 
 PORTNAME=	qt4-${DB}-plugin
-PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTVERSION=	${QT4_VERSION}
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt SQLite 3.x database plugin
 
 DB=		sqlite
 
-BUILD_DEPENDS+= moc-qt4:${PORTSDIR}/devel/qt4-moc
-LIB_DEPENDS+=	QtSql:${PORTSDIR}/databases/qt4-sql \
-		sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+
+USE_QT_VER=	4
+QT_COMPONENTS=	moc sql
+QT_NONSTANDARD=	yes
 
 #USE_BZIP2=	yes
 DRIVER=		src/sql/drivers/${DB}
@@ -31,7 +32,7 @@ EXTRACT_AFTER_ARGS?=| ${TAR} -xf - \
 		${DISTNAME}/include/QtSql \
 		${DISTNAME}/src/sql/kernel
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-MAKE_ENV+=	DB="${DB}" DRIVER="${DRIVER}" \
+MAKE_ENV+=	DB="${DB}" DRIVER="${DRIVER}" MOC="${MOC}" \
 		PLUGIN="${PLUGIN}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"

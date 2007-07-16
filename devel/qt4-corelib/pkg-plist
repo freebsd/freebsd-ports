@@ -33,10 +33,12 @@ include/Qt/qconfig.h
 include/Qt/qcontainerfwd.h
 include/Qt/qcoreapplication.h
 include/Qt/qcoreevent.h
+include/Qt/qcryptographichash.h
 include/Qt/qdatastream.h
 include/Qt/qdatetime.h
 include/Qt/qdebug.h
 include/Qt/qdir.h
+include/Qt/qdiriterator.h
 include/Qt/qendian.h
 include/Qt/qeventloop.h
 include/Qt/qfactoryinterface.h
@@ -61,6 +63,7 @@ include/Qt/qmetatype.h
 include/Qt/qmimedata.h
 include/Qt/qmutex.h
 include/Qt/qnamespace.h
+include/Qt/qnumeric.h
 include/Qt/qobject.h
 include/Qt/qobjectcleanuphandler.h
 include/Qt/qobjectdefs.h
@@ -104,6 +107,7 @@ include/Qt/qwaitcondition.h
 include/QtCore/QAbstractEventDispatcher
 include/QtCore/QAbstractFileEngine
 include/QtCore/QAbstractFileEngineHandler
+include/QtCore/QAbstractFileEngineIterator
 include/QtCore/QAbstractItemModel
 include/QtCore/QAbstractListModel
 include/QtCore/QAbstractTableModel
@@ -127,15 +131,18 @@ include/QtCore/QCharRef
 include/QtCore/QChildEvent
 include/QtCore/QConstString
 include/QtCore/QCoreApplication
+include/QtCore/QCryptographicHash
 include/QtCore/QCustomEvent
 include/QtCore/QDataStream
 include/QtCore/QDate
 include/QtCore/QDateTime
 include/QtCore/QDebug
 include/QtCore/QDir
+include/QtCore/QDirIterator
 include/QtCore/QDynamicPropertyChangeEvent
 include/QtCore/QEvent
 include/QtCore/QEventLoop
+include/QtCore/QExplicitlySharedDataPointer
 include/QtCore/QFSFileEngine
 include/QtCore/QFactoryInterface
 include/QtCore/QFile
@@ -150,6 +157,7 @@ include/QtCore/QForeachContainerBase
 include/QtCore/QGenericArgument
 include/QtCore/QGenericReturnArgument
 include/QtCore/QGlobalStatic
+include/QtCore/QGlobalStaticDeleter
 include/QtCore/QHash
 include/QtCore/QHashData
 include/QtCore/QHashDummyNode
@@ -237,6 +245,7 @@ include/QtCore/QString
 include/QtCore/QStringList
 include/QtCore/QStringListIterator
 include/QtCore/QStringMatcher
+include/QtCore/QStringRef
 include/QtCore/QSysInfo
 include/QtCore/QSystemLocale
 include/QtCore/QTS
@@ -333,10 +342,12 @@ include/QtCore/qconfig.h
 include/QtCore/qcontainerfwd.h
 include/QtCore/qcoreapplication.h
 include/QtCore/qcoreevent.h
+include/QtCore/qcryptographichash.h
 include/QtCore/qdatastream.h
 include/QtCore/qdatetime.h
 include/QtCore/qdebug.h
 include/QtCore/qdir.h
+include/QtCore/qdiriterator.h
 include/QtCore/qendian.h
 include/QtCore/qeventloop.h
 include/QtCore/qfactoryinterface.h
@@ -361,6 +372,7 @@ include/QtCore/qmetatype.h
 include/QtCore/qmimedata.h
 include/QtCore/qmutex.h
 include/QtCore/qnamespace.h
+include/QtCore/qnumeric.h
 include/QtCore/qobject.h
 include/QtCore/qobjectcleanuphandler.h
 include/QtCore/qobjectdefs.h
@@ -405,9 +417,8 @@ lib/libQtCore.la
 lib/libQtCore.prl
 lib/libQtCore.so
 lib/libQtCore.so.4
-lib/libQtCore.so.4.2
-lib/libQtCore.so.4.2.3
-lib/libQtCore.so.4.2.3.debug
+lib/libQtCore.so.4.3
+lib/libQtCore.so.4.3.0
 lib/plugins/.keep_me
 libdata/pkgconfig/QtCore.pc
 @dirrmtry share/qt4

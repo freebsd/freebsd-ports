@@ -1,6 +1,7 @@
 include/Qt/QtXml
 include/Qt/qdom.h
 include/Qt/qxml.h
+include/Qt/qxmlstream.h
 include/QtXml/QDomAttr
 include/QtXml/QDomCDATASection
 include/QtXml/QDomCharacterData
@@ -32,15 +33,26 @@ include/QtXml/QXmlNamespaceSupport
 include/QtXml/QXmlParseException
 include/QtXml/QXmlReader
 include/QtXml/QXmlSimpleReader
+include/QtXml/QXmlStreamAttribute
+include/QtXml/QXmlStreamAttributes
+include/QtXml/QXmlStreamEntityDeclaration
+include/QtXml/QXmlStreamEntityDeclarations
+include/QtXml/QXmlStreamNamespaceDeclaration
+include/QtXml/QXmlStreamNamespaceDeclarations
+include/QtXml/QXmlStreamNotationDeclaration
+include/QtXml/QXmlStreamNotationDeclarations
+include/QtXml/QXmlStreamReader
+include/QtXml/QXmlStreamStringRef
+include/QtXml/QXmlStreamWriter
 include/QtXml/QtXml
 include/QtXml/qdom.h
 include/QtXml/qxml.h
+include/QtXml/qxmlstream.h
 lib/libQtXml.la
 lib/libQtXml.prl
 lib/libQtXml.so
 lib/libQtXml.so.4
-lib/libQtXml.so.4.2
-lib/libQtXml.so.4.2.3
-lib/libQtXml.so.4.2.3.debug
+lib/libQtXml.so.4.3
+lib/libQtXml.so.4.3.0
 libdata/pkgconfig/QtXml.pc
 @dirrm include/QtXml

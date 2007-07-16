@@ -1587,8 +1587,12 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .endif
 
-.if defined(USE_QT_VER) || defined(USE_KDELIBS_VER) || defined(USE_KDEBASE_VER)
+.if (defined(USE_QT_VER) && ${USE_QT_VER:L} == 3) || defined(USE_KDELIBS_VER) || defined(USE_KDEBASE_VER)
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
+.endif
+
+.if defined (USE_QT_VER) && ${USE_QT_VER:L} == 4
+.include "${PORTSDIR}/Mk/bsd.qt.mk"
 .endif
 
 .if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
@@ -2098,6 +2102,10 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 
 .if defined(USE_LINUX_RPM)
 .include "${PORTSDIR}/Mk/bsd.linux-rpm.mk"
+.endif
+
+.if defined (USE_QT_VER) && ${USE_QT_VER:L} == 4
+.include "${PORTSDIR}/Mk/bsd.qt.mk"
 .endif
 
 .if defined(USE_SCONS)

@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	qtdemo
-PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTVERSION=	${QT4_VERSION}
+PORTREVISION=0
 CATEGORIES?=	misc
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -18,35 +18,13 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt demonstration and example programs
 
-BUILD_DEPENDS=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
-		qmake-qt4:${PORTSDIR}/devel/qmake4 \
-		rcc:${PORTSDIR}/devel/qt4-rcc \
-		uic-qt4:${PORTSDIR}/devel/qt4-uic
-LIB_DEPENDS=	QtAssistantClient:${PORTSDIR}/devel/qt4-libqtassistantclient \
-		QtCore:${PORTSDIR}/devel/qt4-corelib \
-		QtDBus:${PORTSDIR}/devel/dbus-qt4 \
-		QtDesigner:${PORTSDIR}/devel/qt4-designer \
-		QtGui:${PORTSDIR}/x11-toolkits/qt4-gui \
-		QtNetwork:${PORTSDIR}/net/qt4-network \
-		QtOpenGL:${PORTSDIR}/x11/qt4-opengl \
-		QtSql:${PORTSDIR}/databases/qt4-sql \
-		QtSvg:${PORTSDIR}/graphics/qt4-svg \
-		QtTest:${PORTSDIR}/devel/qt4-qtestlib \
-		QtXml:${PORTSDIR}/textproc/qt4-xml
-RUN_DEPENDS=	qt4-imageformats>=4.2.3:${PORTSDIR}/graphics/qt4-imageformats
-
-CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
-		qt-3.1.* qt-3.2.* qt-designer-2.* xfmail-1.5.[0-5] \
-		xfmail-1.5.5_[1-2]
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake moc rcc uic assistantclient corelib designer gui network opengl\
+		sql svg qtestlib xml imageformats dbus script
+QT_NONSTANDARD=	yes
+QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
-
-CONFIGURE_ARGS=	-fast -no-exceptions \
-		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
-		-qt-gif -release -system-libjpeg -system-libpng \
-		-system-zlib -no-nas-sound -prefix ${PREFIX}  \
-		-plugindir ${PREFIX}/lib/plugins -bindir ${PREFIX}/bin \
-		-confirm-license
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH

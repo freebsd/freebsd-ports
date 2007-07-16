@@ -61,7 +61,6 @@ USE_QT_VER+=	4
 QT_COMPONENTS=	gui corelib xml qtestlib
 #BUILD_WRKSRC=	${WRKSRC}/qt4
 INSTALL_WRKSRC=	${WRKSRC}/qt4
-.include "${PORTSDIR}/Mk/bsd.kde.mk"
 .else
 CONFIGURE_ARGS+=--disable-poppler-qt4
 .endif

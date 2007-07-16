@@ -9,11 +9,15 @@ NOMAN=	true	# qmake.1 anyone?
 
 .PATH:	${.CURDIR} ${.CURDIR:H}/src/corelib/tools ${.CURDIR:H}/src/corelib/io \
 	${.CURDIR:H}/src/corelib/global ${.CURDIR:H}/src/corelib/plugin \
-	${.CURDIR:H}/src/corelib/kernel ${.CURDIR:H}/src/3rdparty/md5
+	${.CURDIR:H}/src/corelib/kernel ${.CURDIR:H}/src/3rdparty/md5 \
+	${.CURDIR:H}/src/3rdparty/md4 ${.CURDIR:H}/src/3rdparty/sha1 \
+	${.CURDIR:H}/src/script
+
 CXXFLAGS+=-I${.CURDIR:H}/mkspecs/freebsd-g++
 
 .for s in src/corelib/arch/generic src/global src/tools src/kernel src/codecs \
-		src/3rdparty/md5 include/QtCore include
+		src/3rdparty/md5 src/3rdparty/md4 src/3rdparty/sha1 \
+		src/script include/QtCore include
 CXXFLAGS+=-I${.CURDIR:H}/$s
 .endfor
 

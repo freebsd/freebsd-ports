@@ -405,8 +405,8 @@ lib/libQt3Support.la
 lib/libQt3Support.prl
 lib/libQt3Support.so
 lib/libQt3Support.so.4
-lib/libQt3Support.so.4.2
-lib/libQt3Support.so.4.2.3
-lib/libQt3Support.so.4.2.3.debug
+lib/libQt3Support.so.4.3
+lib/libQt3Support.so.4.3.0
+lib/libQt3Support.so.4.3.0.debug
 libdata/pkgconfig/Qt3Support.pc
 @dirrm include/Qt3Support

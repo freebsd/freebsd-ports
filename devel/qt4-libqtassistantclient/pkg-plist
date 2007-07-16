@@ -5,7 +5,7 @@ include/QtAssistant/qassistantclient_global.h
 lib/libQtAssistantClient.prl
 lib/libQtAssistantClient.so
 lib/libQtAssistantClient.so.4
-lib/libQtAssistantClient.so.4.2
-lib/libQtAssistantClient.so.4.2.3
-lib/libQtAssistantClient.so.4.2.3.debug
+lib/libQtAssistantClient.so.4.3
+lib/libQtAssistantClient.so.4.3.0
+libdata/pkgconfig/QtAssistantClient.pc
 @dirrm include/QtAssistant
