@@ -22,6 +22,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_EMACS=	yes
 
+.include <bsd.port.pre.mk>
+
 .if ${EMACS_PORT_NAME} == emacs20
 EMACS_SUFFIX=	${PKGNAMESUFFIX}
 .else
@@ -47,4 +49,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME}c \
 		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
