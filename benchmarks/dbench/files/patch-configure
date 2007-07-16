@@ -9,12 +9,3 @@
  sysconfdir='${prefix}/etc'
  sharedstatedir='${prefix}/com'
  localstatedir='${prefix}/var'
-@@ -347,7 +347,7 @@
- includedir='${prefix}/include'
- oldincludedir='/usr/include'
- infodir='${prefix}/info'
--mandir='${prefix}/man'
-+mandir='${prefix}/man/man1'
- 
- ac_prev=
- for ac_option

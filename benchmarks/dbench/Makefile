@@ -19,4 +19,8 @@ GNU_CONFIGURE=	yes
 MAN1=	dbench.1
 MLINKS=	dbench.1 tbench.1 dbench.1 tbench_srv.1
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,$$(mandir),$$(mandir)/man1,' \
+		${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
