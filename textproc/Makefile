@@ -830,6 +830,7 @@
     SUBDIR += ruby-amatch
     SUBDIR += ruby-amrita
     SUBDIR += ruby-csv
+    SUBDIR += ruby-deplate
     SUBDIR += ruby-diff
     SUBDIR += ruby-erbscan
     SUBDIR += ruby-format
