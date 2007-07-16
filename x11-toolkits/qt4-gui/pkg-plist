@@ -10,6 +10,7 @@ include/Qt/qabstractslider.h
 include/Qt/qabstractspinbox.h
 include/Qt/qabstracttextdocumentlayout.h
 include/Qt/qaccessible.h
+include/Qt/qaccessible2.h
 include/Qt/qaccessiblebridge.h
 include/Qt/qaccessibleobject.h
 include/Qt/qaccessibleplugin.h
@@ -29,6 +30,7 @@ include/Qt/qclipboard.h
 include/Qt/qcolor.h
 include/Qt/qcolordialog.h
 include/Qt/qcolormap.h
+include/Qt/qcolumnview.h
 include/Qt/qcombobox.h
 include/Qt/qcommonstyle.h
 include/Qt/qcompleter.h
@@ -47,6 +49,7 @@ include/Qt/qdrawutil.h
 include/Qt/qerrormessage.h
 include/Qt/qevent.h
 include/Qt/qfiledialog.h
+include/Qt/qfileiconprovider.h
 include/Qt/qfocusframe.h
 include/Qt/qfont.h
 include/Qt/qfontcombobox.h
@@ -87,6 +90,8 @@ include/Qt/qlistview.h
 include/Qt/qlistwidget.h
 include/Qt/qmainwindow.h
 include/Qt/qmatrix.h
+include/Qt/qmdiarea.h
+include/Qt/qmdisubwindow.h
 include/Qt/qmenu.h
 include/Qt/qmenubar.h
 include/Qt/qmenudata.h
@@ -161,6 +166,7 @@ include/Qt/qtoolbar.h
 include/Qt/qtoolbox.h
 include/Qt/qtoolbutton.h
 include/Qt/qtooltip.h
+include/Qt/qtransform.h
 include/Qt/qtreeview.h
 include/Qt/qtreewidget.h
 include/Qt/qtreewidgetitemiterator.h
@@ -173,7 +179,9 @@ include/Qt/qwidget.h
 include/Qt/qwidgetaction.h
 include/Qt/qwindowdefs.h
 include/Qt/qwindowsstyle.h
+include/Qt/qwindowsvistastyle.h
 include/Qt/qwindowsxpstyle.h
+include/Qt/qwizard.h
 include/Qt/qwmatrix.h
 include/Qt/qworkspace.h
 include/Qt/qx11embed_x11.h
@@ -191,10 +199,12 @@ include/QtGui/QAbstractSpinBox
 include/QtGui/QAbstractTextDocumentLayout
 include/QtGui/QAbstractUndoItem
 include/QtGui/QAccessible
+include/QtGui/QAccessible2Interface
 include/QtGui/QAccessibleApplication
 include/QtGui/QAccessibleBridge
 include/QtGui/QAccessibleBridgeFactoryInterface
 include/QtGui/QAccessibleBridgePlugin
+include/QtGui/QAccessibleEditableTextInterface
 include/QtGui/QAccessibleEvent
 include/QtGui/QAccessibleFactoryInterface
 include/QtGui/QAccessibleInterface
@@ -202,6 +212,10 @@ include/QtGui/QAccessibleInterfaceEx
 include/QtGui/QAccessibleObject
 include/QtGui/QAccessibleObjectEx
 include/QtGui/QAccessiblePlugin
+include/QtGui/QAccessibleSimpleEditableTextInterface
+include/QtGui/QAccessibleTableInterface
+include/QtGui/QAccessibleTextInterface
+include/QtGui/QAccessibleValueInterface
 include/QtGui/QAccessibleWidget
 include/QtGui/QAccessibleWidgetEx
 include/QtGui/QAction
@@ -224,6 +238,7 @@ include/QtGui/QColor
 include/QtGui/QColorDialog
 include/QtGui/QColorGroup
 include/QtGui/QColormap
+include/QtGui/QColumnView
 include/QtGui/QComboBox
 include/QtGui/QCommonStyle
 include/QtGui/QCompleter
@@ -297,7 +312,10 @@ include/QtGui/QIcon
 include/QtGui/QIconDragEvent
 include/QtGui/QIconEngine
 include/QtGui/QIconEngineFactoryInterface
+include/QtGui/QIconEngineFactoryInterfaceV2
 include/QtGui/QIconEnginePlugin
+include/QtGui/QIconEnginePluginV2
+include/QtGui/QIconEngineV2
 include/QtGui/QIconSet
 include/QtGui/QImage
 include/QtGui/QImageIOHandler
@@ -337,6 +355,8 @@ include/QtGui/QMacMime
 include/QtGui/QMacPasteboardMime
 include/QtGui/QMainWindow
 include/QtGui/QMatrix
+include/QtGui/QMdiArea
+include/QtGui/QMdiSubWindow
 include/QtGui/QMenu
 include/QtGui/QMenuBar
 include/QtGui/QMenuItem
@@ -410,11 +430,13 @@ include/QtGui/QStyleFactory
 include/QtGui/QStyleFactoryInterface
 include/QtGui/QStyleHintReturn
 include/QtGui/QStyleHintReturnMask
+include/QtGui/QStyleHintReturnVariant
 include/QtGui/QStyleOption
 include/QtGui/QStyleOptionButton
 include/QtGui/QStyleOptionComboBox
 include/QtGui/QStyleOptionComplex
 include/QtGui/QStyleOptionDockWidget
+include/QtGui/QStyleOptionDockWidgetV2
 include/QtGui/QStyleOptionFocusRect
 include/QtGui/QStyleOptionFrame
 include/QtGui/QStyleOptionFrameV2
@@ -438,9 +460,11 @@ include/QtGui/QStyleOptionTabWidgetFrame
 include/QtGui/QStyleOptionTitleBar
 include/QtGui/QStyleOptionToolBar
 include/QtGui/QStyleOptionToolBox
+include/QtGui/QStyleOptionToolBoxV2
 include/QtGui/QStyleOptionToolButton
 include/QtGui/QStyleOptionViewItem
 include/QtGui/QStyleOptionViewItemV2
+include/QtGui/QStyleOptionViewItemV3
 include/QtGui/QStylePainter
 include/QtGui/QStylePlugin
 include/QtGui/QSyntaxHighlighter
@@ -487,6 +511,7 @@ include/QtGui/QToolBarChangeEvent
 include/QtGui/QToolBox
 include/QtGui/QToolButton
 include/QtGui/QToolTip
+include/QtGui/QTransform
 include/QtGui/QTreeView
 include/QtGui/QTreeWidget
 include/QtGui/QTreeWidgetItem
@@ -512,7 +537,10 @@ include/QtGui/QWidgetSet
 include/QtGui/QWindowStateChangeEvent
 include/QtGui/QWindowsMime
 include/QtGui/QWindowsStyle
+include/QtGui/QWindowsVistaStyle
 include/QtGui/QWindowsXPStyle
+include/QtGui/QWizard
+include/QtGui/QWizardPage
 include/QtGui/QWorkspace
 include/QtGui/QX11EmbedContainer
 include/QtGui/QX11EmbedWidget
@@ -530,6 +558,7 @@ include/QtGui/qabstractslider.h
 include/QtGui/qabstractspinbox.h
 include/QtGui/qabstracttextdocumentlayout.h
 include/QtGui/qaccessible.h
+include/QtGui/qaccessible2.h
 include/QtGui/qaccessiblebridge.h
 include/QtGui/qaccessibleobject.h
 include/QtGui/qaccessibleplugin.h
@@ -549,6 +578,7 @@ include/QtGui/qclipboard.h
 include/QtGui/qcolor.h
 include/QtGui/qcolordialog.h
 include/QtGui/qcolormap.h
+include/QtGui/qcolumnview.h
 include/QtGui/qcombobox.h
 include/QtGui/qcommonstyle.h
 include/QtGui/qcompleter.h
@@ -567,6 +597,7 @@ include/QtGui/qdrawutil.h
 include/QtGui/qerrormessage.h
 include/QtGui/qevent.h
 include/QtGui/qfiledialog.h
+include/QtGui/qfileiconprovider.h
 include/QtGui/qfocusframe.h
 include/QtGui/qfont.h
 include/QtGui/qfontcombobox.h
@@ -607,6 +638,8 @@ include/QtGui/qlistview.h
 include/QtGui/qlistwidget.h
 include/QtGui/qmainwindow.h
 include/QtGui/qmatrix.h
+include/QtGui/qmdiarea.h
+include/QtGui/qmdisubwindow.h
 include/QtGui/qmenu.h
 include/QtGui/qmenubar.h
 include/QtGui/qmenudata.h
@@ -681,6 +714,7 @@ include/QtGui/qtoolbar.h
 include/QtGui/qtoolbox.h
 include/QtGui/qtoolbutton.h
 include/QtGui/qtooltip.h
+include/QtGui/qtransform.h
 include/QtGui/qtreeview.h
 include/QtGui/qtreewidget.h
 include/QtGui/qtreewidgetitemiterator.h
@@ -693,7 +727,9 @@ include/QtGui/qwidget.h
 include/QtGui/qwidgetaction.h
 include/QtGui/qwindowdefs.h
 include/QtGui/qwindowsstyle.h
+include/QtGui/qwindowsvistastyle.h
 include/QtGui/qwindowsxpstyle.h
+include/QtGui/qwizard.h
 include/QtGui/qwmatrix.h
 include/QtGui/qworkspace.h
 include/QtGui/qx11embed_x11.h
@@ -702,8 +738,7 @@ lib/libQtGui.la
 lib/libQtGui.prl
 lib/libQtGui.so
 lib/libQtGui.so.4
-lib/libQtGui.so.4.2
-lib/libQtGui.so.4.2.3
-lib/libQtGui.so.4.2.3.debug
+lib/libQtGui.so.4.3
+lib/libQtGui.so.4.3.0
 libdata/pkgconfig/QtGui.pc
 @dirrm include/QtGui

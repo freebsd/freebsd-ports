@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	qt4
-PORTVERSION=	4.2.3
-PORTREVISION=	2
+PORTVERSION=	${QT4_VERSION}
+PORTREVISION=0
 CATEGORIES=	devel
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -23,17 +23,20 @@ RUN_DEPENDS=	${LOCALBASE}/lib/plugins/accessible/libqtaccessiblecompatwidgets.so
 		${LOCALBASE}/lib/plugins/codecs/libqtwcodecs.so:${PORTSDIR}/chinese/qt4-codecs-tw \
 		${LOCALBASE}/lib/libQtSql.so:${PORTSDIR}/databases/qt4-sql \
 		qdbus:${PORTSDIR}/devel/dbus-qt4 \
+		qdbusviewer:${PORTSDIR}/devel/qt4-qdbusviewer \
 		qmake-qt4:${PORTSDIR}/devel/qmake4 \
 		assistant-qt4:${PORTSDIR}/devel/qt4-assistant \
 		${LOCALBASE}/lib/libQtCore.so:${PORTSDIR}/devel/qt4-corelib \
 		designer-qt4:${PORTSDIR}/devel/qt4-designer \
 		${LOCALBASE}/lib/libQtAssistantClient.so:${PORTSDIR}/devel/qt4-libqtassistantclient \
 		linguist-qt4:${PORTSDIR}/devel/qt4-linguist \
+		makeqpf-qt4:${PORTSDIR}/devel/qt4-makeqpf \
 		moc-qt4:${PORTSDIR}/devel/qt4-moc \
 		qt3to4:${PORTSDIR}/devel/qt4-porting \
 		${LOCALBASE}/lib/libQt3Support.so:${PORTSDIR}/devel/qt4-qt3support \
 		rcc:${PORTSDIR}/devel/qt4-rcc \
 		qvfb-qt4:${PORTSDIR}/devel/qt4-qvfb \
+		${LOCALBASE}/lib/libQtScript.so:${PORTSDIR}/devel/qt4-script \
 		uic-qt4:${PORTSDIR}/devel/qt4-uic \
 		uic3:${PORTSDIR}/devel/qt4-uic3 \
 		${LOCALBASE}/lib/libQtTest.so:${PORTSDIR}/devel/qt4-qtestlib \
@@ -52,6 +55,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/plugins/accessible/libqtaccessiblecompatwidgets.so
 
 NO_BUILD=	yes
 
+.include "${.CURDIR}/../../Mk/bsd.qt.mk"
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SQL_PLUGINS)

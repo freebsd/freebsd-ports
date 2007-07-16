@@ -167,7 +167,6 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 .if !defined(WITHOUT_QT4)
 USE_QT_VER+=	4
 QT_COMPONENTS+=	gui corelib moc rcc uic
-.include "${PORTSDIR}/Mk/bsd.kde.mk"
 CONFIGURE_ARGS+=--enable-qt4
 .else
 CONFIGURE_ARGS+=--disable-qt4

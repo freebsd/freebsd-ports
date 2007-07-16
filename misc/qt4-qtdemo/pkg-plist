@@ -73,14 +73,6 @@ share/qt4/demos/composition/composition.pro
 share/qt4/demos/composition/composition.qrc
 share/qt4/demos/composition/flower_2.png
 share/qt4/demos/composition/main.cpp
-share/qt4/demos/dbus-viewer/dbus-viewer
-share/qt4/demos/dbus-viewer/dbus-viewer.debug
-share/qt4/demos/dbus-viewer/dbus-viewer.pro
-share/qt4/demos/dbus-viewer/main.cpp
-share/qt4/demos/dbus-viewer/qdbusmodel.cpp
-share/qt4/demos/dbus-viewer/qdbusmodel.h
-share/qt4/demos/dbus-viewer/qdbusviewer.cpp
-share/qt4/demos/dbus-viewer/qdbusviewer.h
 share/qt4/demos/deform/deform
 share/qt4/demos/deform/deform.debug
 share/qt4/demos/deform/deform.pro
@@ -129,6 +121,56 @@ share/qt4/demos/pathstroke/pathstroke.h
 share/qt4/demos/pathstroke/pathstroke.html
 share/qt4/demos/pathstroke/pathstroke.pro
 share/qt4/demos/pathstroke/pathstroke.qrc
+share/qt4/demos/qtdemo/colors.cpp
+share/qt4/demos/qtdemo/colors.h
+share/qt4/demos/qtdemo/demoitem.cpp
+share/qt4/demos/qtdemo/demoitem.h
+share/qt4/demos/qtdemo/demoitemanimation.cpp
+share/qt4/demos/qtdemo/demoitemanimation.h
+share/qt4/demos/qtdemo/demoscene.cpp
+share/qt4/demos/qtdemo/demoscene.h
+share/qt4/demos/qtdemo/demotextitem.cpp
+share/qt4/demos/qtdemo/demotextitem.h
+share/qt4/demos/qtdemo/dockitem.cpp
+share/qt4/demos/qtdemo/dockitem.h
+share/qt4/demos/qtdemo/examplecontent.cpp
+share/qt4/demos/qtdemo/examplecontent.h
+share/qt4/demos/qtdemo/guide.cpp
+share/qt4/demos/qtdemo/guide.h
+share/qt4/demos/qtdemo/guidecircle.cpp
+share/qt4/demos/qtdemo/guidecircle.h
+share/qt4/demos/qtdemo/guideline.cpp
+share/qt4/demos/qtdemo/guideline.h
+share/qt4/demos/qtdemo/headingitem.cpp
+share/qt4/demos/qtdemo/headingitem.h
+share/qt4/demos/qtdemo/imageitem.cpp
+share/qt4/demos/qtdemo/imageitem.h
+share/qt4/demos/qtdemo/images/demobg.png
+share/qt4/demos/qtdemo/images/qtlogo_small.png
+share/qt4/demos/qtdemo/images/trolltech-logo.png
+share/qt4/demos/qtdemo/itemcircleanimation.cpp
+share/qt4/demos/qtdemo/itemcircleanimation.h
+share/qt4/demos/qtdemo/letteritem.cpp
+share/qt4/demos/qtdemo/letteritem.h
+share/qt4/demos/qtdemo/main.cpp
+share/qt4/demos/qtdemo/mainwindow.cpp
+share/qt4/demos/qtdemo/mainwindow.h
+share/qt4/demos/qtdemo/menucontent.cpp
+share/qt4/demos/qtdemo/menucontent.h
+share/qt4/demos/qtdemo/menumanager.cpp
+share/qt4/demos/qtdemo/menumanager.h
+share/qt4/demos/qtdemo/qtdemo.icns
+share/qt4/demos/qtdemo/qtdemo.ico
+share/qt4/demos/qtdemo/qtdemo.pro
+share/qt4/demos/qtdemo/qtdemo.qrc
+share/qt4/demos/qtdemo/qtdemo.rc
+share/qt4/demos/qtdemo/scanitem.cpp
+share/qt4/demos/qtdemo/scanitem.h
+share/qt4/demos/qtdemo/score.cpp
+share/qt4/demos/qtdemo/score.h
+share/qt4/demos/qtdemo/textbutton.cpp
+share/qt4/demos/qtdemo/textbutton.h
+share/qt4/demos/qtdemo/xml/examples.xml
 share/qt4/demos/shared/arthurstyle.cpp
 share/qt4/demos/shared/arthurstyle.h
 share/qt4/demos/shared/arthurwidgets.cpp
@@ -247,6 +289,17 @@ share/qt4/demos/textedit/textedit.doc
 share/qt4/demos/textedit/textedit.h
 share/qt4/demos/textedit/textedit.pro
 share/qt4/demos/textedit/textedit.qrc
+share/qt4/demos/undo/commands.cpp
+share/qt4/demos/undo/commands.h
+share/qt4/demos/undo/document.cpp
+share/qt4/demos/undo/document.h
+share/qt4/demos/undo/main.cpp
+share/qt4/demos/undo/mainwindow.cpp
+share/qt4/demos/undo/mainwindow.h
+share/qt4/demos/undo/undo
+share/qt4/demos/undo/undo.debug
+share/qt4/demos/undo/undo.pro
+share/qt4/demos/undo/undo.qrc
 share/qt4/examples/README
 share/qt4/examples/assistant/assistant.pro
 share/qt4/examples/assistant/simpletextviewer/documentation/about.txt
@@ -340,6 +393,12 @@ share/qt4/examples/desktop/systray/systray.qrc
 share/qt4/examples/desktop/systray/window.cpp
 share/qt4/examples/desktop/systray/window.h
 share/qt4/examples/dialogs/README
+share/qt4/examples/dialogs/classwizard/classwizard
+share/qt4/examples/dialogs/classwizard/classwizard.cpp
+share/qt4/examples/dialogs/classwizard/classwizard.debug
+share/qt4/examples/dialogs/classwizard/classwizard.h
+share/qt4/examples/dialogs/classwizard/classwizard.pro
+share/qt4/examples/dialogs/classwizard/main.cpp
 share/qt4/examples/dialogs/configdialog/configdialog
 share/qt4/examples/dialogs/configdialog/configdialog.cpp
 share/qt4/examples/dialogs/configdialog/configdialog.debug
@@ -365,6 +424,12 @@ share/qt4/examples/dialogs/findfiles/findfiles.pro
 share/qt4/examples/dialogs/findfiles/main.cpp
 share/qt4/examples/dialogs/findfiles/window.cpp
 share/qt4/examples/dialogs/findfiles/window.h
+share/qt4/examples/dialogs/licensewizard/licensewizard
+share/qt4/examples/dialogs/licensewizard/licensewizard.cpp
+share/qt4/examples/dialogs/licensewizard/licensewizard.debug
+share/qt4/examples/dialogs/licensewizard/licensewizard.h
+share/qt4/examples/dialogs/licensewizard/licensewizard.pro
+share/qt4/examples/dialogs/licensewizard/main.cpp
 share/qt4/examples/dialogs/standarddialogs/dialog.cpp
 share/qt4/examples/dialogs/standarddialogs/dialog.h
 share/qt4/examples/dialogs/standarddialogs/main.cpp
@@ -377,6 +442,10 @@ share/qt4/examples/dialogs/tabdialog/tabdialog.cpp
 share/qt4/examples/dialogs/tabdialog/tabdialog.debug
 share/qt4/examples/dialogs/tabdialog/tabdialog.h
 share/qt4/examples/dialogs/tabdialog/tabdialog.pro
+share/qt4/examples/dialogs/trivialwizard/trivialwizard
+share/qt4/examples/dialogs/trivialwizard/trivialwizard.cpp
+share/qt4/examples/dialogs/trivialwizard/trivialwizard.debug
+share/qt4/examples/dialogs/trivialwizard/trivialwizard.pro
 share/qt4/examples/draganddrop/README
 share/qt4/examples/draganddrop/draganddrop.pro
 share/qt4/examples/draganddrop/draggableicons/draggableicons
@@ -439,6 +508,36 @@ share/qt4/examples/graphicsview/collidingmice/main.cpp
 share/qt4/examples/graphicsview/collidingmice/mice.qrc
 share/qt4/examples/graphicsview/collidingmice/mouse.cpp
 share/qt4/examples/graphicsview/collidingmice/mouse.h
+share/qt4/examples/graphicsview/diagramscene/arrow.cpp
+share/qt4/examples/graphicsview/diagramscene/arrow.h
+share/qt4/examples/graphicsview/diagramscene/diagramitem.cpp
+share/qt4/examples/graphicsview/diagramscene/diagramitem.h
+share/qt4/examples/graphicsview/diagramscene/diagramscene
+share/qt4/examples/graphicsview/diagramscene/diagramscene.cpp
+share/qt4/examples/graphicsview/diagramscene/diagramscene.debug
+share/qt4/examples/graphicsview/diagramscene/diagramscene.h
+share/qt4/examples/graphicsview/diagramscene/diagramscene.pro
+share/qt4/examples/graphicsview/diagramscene/diagramscene.qrc
+share/qt4/examples/graphicsview/diagramscene/diagramtextitem.cpp
+share/qt4/examples/graphicsview/diagramscene/diagramtextitem.h
+share/qt4/examples/graphicsview/diagramscene/images/background1.png
+share/qt4/examples/graphicsview/diagramscene/images/background2.png
+share/qt4/examples/graphicsview/diagramscene/images/background3.png
+share/qt4/examples/graphicsview/diagramscene/images/background4.png
+share/qt4/examples/graphicsview/diagramscene/images/bold.png
+share/qt4/examples/graphicsview/diagramscene/images/bringtofront.png
+share/qt4/examples/graphicsview/diagramscene/images/delete.png
+share/qt4/examples/graphicsview/diagramscene/images/floodfill.png
+share/qt4/examples/graphicsview/diagramscene/images/italic.png
+share/qt4/examples/graphicsview/diagramscene/images/linecolor.png
+share/qt4/examples/graphicsview/diagramscene/images/linepointer.png
+share/qt4/examples/graphicsview/diagramscene/images/pointer.png
+share/qt4/examples/graphicsview/diagramscene/images/sendtoback.png
+share/qt4/examples/graphicsview/diagramscene/images/textpointer.png
+share/qt4/examples/graphicsview/diagramscene/images/underline.png
+share/qt4/examples/graphicsview/diagramscene/main.cpp
+share/qt4/examples/graphicsview/diagramscene/mainwindow.cpp
+share/qt4/examples/graphicsview/diagramscene/mainwindow.h
 share/qt4/examples/graphicsview/dragdroprobot/coloritem.cpp
 share/qt4/examples/graphicsview/dragdroprobot/coloritem.h
 share/qt4/examples/graphicsview/dragdroprobot/dragdroprobot
@@ -673,6 +772,14 @@ share/qt4/examples/itemviews/chart/mydata.cht
 share/qt4/examples/itemviews/chart/pieview.cpp
 share/qt4/examples/itemviews/chart/pieview.h
 share/qt4/examples/itemviews/chart/qtdata.cht
+share/qt4/examples/itemviews/coloreditorfactory/coloreditorfactory
+share/qt4/examples/itemviews/coloreditorfactory/coloreditorfactory.debug
+share/qt4/examples/itemviews/coloreditorfactory/coloreditorfactory.pro
+share/qt4/examples/itemviews/coloreditorfactory/colorlisteditor.cpp
+share/qt4/examples/itemviews/coloreditorfactory/colorlisteditor.h
+share/qt4/examples/itemviews/coloreditorfactory/main.cpp
+share/qt4/examples/itemviews/coloreditorfactory/window.cpp
+share/qt4/examples/itemviews/coloreditorfactory/window.h
 share/qt4/examples/itemviews/customsortfiltermodel/customsortfiltermodel
 share/qt4/examples/itemviews/customsortfiltermodel/customsortfiltermodel.debug
 share/qt4/examples/itemviews/customsortfiltermodel/customsortfiltermodel.pro
@@ -730,12 +837,28 @@ share/qt4/examples/itemviews/simpletreemodel/treeitem.cpp
 share/qt4/examples/itemviews/simpletreemodel/treeitem.h
 share/qt4/examples/itemviews/simpletreemodel/treemodel.cpp
 share/qt4/examples/itemviews/simpletreemodel/treemodel.h
+share/qt4/examples/itemviews/simplewidgetmapper/main.cpp
+share/qt4/examples/itemviews/simplewidgetmapper/simplewidgetmapper
+share/qt4/examples/itemviews/simplewidgetmapper/simplewidgetmapper.debug
+share/qt4/examples/itemviews/simplewidgetmapper/simplewidgetmapper.pro
+share/qt4/examples/itemviews/simplewidgetmapper/window.cpp
+share/qt4/examples/itemviews/simplewidgetmapper/window.h
 share/qt4/examples/itemviews/spinboxdelegate/delegate.cpp
 share/qt4/examples/itemviews/spinboxdelegate/delegate.h
 share/qt4/examples/itemviews/spinboxdelegate/main.cpp
 share/qt4/examples/itemviews/spinboxdelegate/spinboxdelegate
 share/qt4/examples/itemviews/spinboxdelegate/spinboxdelegate.debug
 share/qt4/examples/itemviews/spinboxdelegate/spinboxdelegate.pro
+share/qt4/examples/itemviews/stardelegate/main.cpp
+share/qt4/examples/itemviews/stardelegate/stardelegate
+share/qt4/examples/itemviews/stardelegate/stardelegate.cpp
+share/qt4/examples/itemviews/stardelegate/stardelegate.debug
+share/qt4/examples/itemviews/stardelegate/stardelegate.h
+share/qt4/examples/itemviews/stardelegate/stardelegate.pro
+share/qt4/examples/itemviews/stardelegate/stareditor.cpp
+share/qt4/examples/itemviews/stardelegate/stareditor.h
+share/qt4/examples/itemviews/stardelegate/starrating.cpp
+share/qt4/examples/itemviews/stardelegate/starrating.h
 share/qt4/examples/layouts/README
 share/qt4/examples/layouts/basiclayouts/basiclayouts
 share/qt4/examples/layouts/basiclayouts/basiclayouts.debug
@@ -913,6 +1036,7 @@ share/qt4/examples/network/ftp/images/cdtoparent.png
 share/qt4/examples/network/ftp/images/dir.png
 share/qt4/examples/network/ftp/images/file.png
 share/qt4/examples/network/ftp/main.cpp
+share/qt4/examples/network/http/authenticationdialog.ui
 share/qt4/examples/network/http/http
 share/qt4/examples/network/http/http.debug
 share/qt4/examples/network/http/http.pro
@@ -1246,6 +1370,68 @@ share/qt4/examples/richtext/syntaxhighlighter/mainwindow.h
 share/qt4/examples/richtext/syntaxhighlighter/syntaxhighlighter
 share/qt4/examples/richtext/syntaxhighlighter/syntaxhighlighter.debug
 share/qt4/examples/richtext/syntaxhighlighter/syntaxhighlighter.pro
+share/qt4/examples/script/README
+share/qt4/examples/script/calculator/calculator
+share/qt4/examples/script/calculator/calculator.debug
+share/qt4/examples/script/calculator/calculator.pro
+share/qt4/examples/script/calculator/calculator.qrc
+share/qt4/examples/script/calculator/main.cpp
+share/qt4/examples/script/context2d/context2d
+share/qt4/examples/script/context2d/context2d.cpp
+share/qt4/examples/script/context2d/context2d.debug
+share/qt4/examples/script/context2d/context2d.h
+share/qt4/examples/script/context2d/context2d.pro
+share/qt4/examples/script/context2d/context2d.qrc
+share/qt4/examples/script/context2d/domimage.cpp
+share/qt4/examples/script/context2d/domimage.h
+share/qt4/examples/script/context2d/main.cpp
+share/qt4/examples/script/context2d/qcontext2dcanvas.cpp
+share/qt4/examples/script/context2d/qcontext2dcanvas.h
+share/qt4/examples/script/context2d/scripts/alpha.js
+share/qt4/examples/script/context2d/scripts/arc.js
+share/qt4/examples/script/context2d/scripts/bezier.js
+share/qt4/examples/script/context2d/scripts/clock.js
+share/qt4/examples/script/context2d/scripts/fill1.js
+share/qt4/examples/script/context2d/scripts/grad.js
+share/qt4/examples/script/context2d/scripts/linecap.js
+share/qt4/examples/script/context2d/scripts/linestye.js
+share/qt4/examples/script/context2d/scripts/moveto.js
+share/qt4/examples/script/context2d/scripts/moveto2.js
+share/qt4/examples/script/context2d/scripts/pacman.js
+share/qt4/examples/script/context2d/scripts/plasma.js
+share/qt4/examples/script/context2d/scripts/pong.js
+share/qt4/examples/script/context2d/scripts/quad.js
+share/qt4/examples/script/context2d/scripts/rgba.js
+share/qt4/examples/script/context2d/scripts/rotate.js
+share/qt4/examples/script/context2d/scripts/scale.js
+share/qt4/examples/script/context2d/scripts/stroke1.js
+share/qt4/examples/script/context2d/scripts/translate.js
+share/qt4/examples/script/context2d/window.cpp
+share/qt4/examples/script/context2d/window.h
+share/qt4/examples/script/defaultprototypes/defaultprototypes
+share/qt4/examples/script/defaultprototypes/defaultprototypes.debug
+share/qt4/examples/script/defaultprototypes/defaultprototypes.pro
+share/qt4/examples/script/defaultprototypes/defaultprototypes.qrc
+share/qt4/examples/script/defaultprototypes/main.cpp
+share/qt4/examples/script/defaultprototypes/prototypes.cpp
+share/qt4/examples/script/defaultprototypes/prototypes.h
+share/qt4/examples/script/helloscript/helloscript
+share/qt4/examples/script/helloscript/helloscript.debug
+share/qt4/examples/script/helloscript/helloscript.pro
+share/qt4/examples/script/helloscript/main.cpp
+share/qt4/examples/script/qscript/main.cpp
+share/qt4/examples/script/qscript/qscript
+share/qt4/examples/script/qscript/qscript.debug
+share/qt4/examples/script/qscript/qscript.pro
+share/qt4/examples/script/script.pro
+share/qt4/examples/script/tetrix/main.cpp
+share/qt4/examples/script/tetrix/tetrix
+share/qt4/examples/script/tetrix/tetrix.debug
+share/qt4/examples/script/tetrix/tetrix.pro
+share/qt4/examples/script/tetrix/tetrix.qrc
+share/qt4/examples/script/tetrix/tetrixboard.cpp
+share/qt4/examples/script/tetrix/tetrixboard.h
+share/qt4/examples/script/tetrix/tetrixwindow.ui
 share/qt4/examples/sql/README
 share/qt4/examples/sql/cachedtable/cachedtable
 share/qt4/examples/sql/cachedtable/cachedtable.debug
@@ -1254,6 +1440,27 @@ share/qt4/examples/sql/cachedtable/main.cpp
 share/qt4/examples/sql/cachedtable/tableeditor.cpp
 share/qt4/examples/sql/cachedtable/tableeditor.h
 share/qt4/examples/sql/connection.h
+share/qt4/examples/sql/drilldown/drilldown
+share/qt4/examples/sql/drilldown/drilldown.debug
+share/qt4/examples/sql/drilldown/drilldown.pro
+share/qt4/examples/sql/drilldown/drilldown.qrc
+share/qt4/examples/sql/drilldown/imageitem.cpp
+share/qt4/examples/sql/drilldown/imageitem.h
+share/qt4/examples/sql/drilldown/informationwindow.cpp
+share/qt4/examples/sql/drilldown/informationwindow.h
+share/qt4/examples/sql/drilldown/main.cpp
+share/qt4/examples/sql/drilldown/view.cpp
+share/qt4/examples/sql/drilldown/view.h
+share/qt4/examples/sql/masterdetail/database.h
+share/qt4/examples/sql/masterdetail/dialog.cpp
+share/qt4/examples/sql/masterdetail/dialog.h
+share/qt4/examples/sql/masterdetail/main.cpp
+share/qt4/examples/sql/masterdetail/mainwindow.cpp
+share/qt4/examples/sql/masterdetail/mainwindow.h
+share/qt4/examples/sql/masterdetail/masterdetail
+share/qt4/examples/sql/masterdetail/masterdetail.debug
+share/qt4/examples/sql/masterdetail/masterdetail.pro
+share/qt4/examples/sql/masterdetail/masterdetail.qrc
 share/qt4/examples/sql/querymodel/customsqlmodel.cpp
 share/qt4/examples/sql/querymodel/customsqlmodel.h
 share/qt4/examples/sql/querymodel/editablesqlmodel.cpp
@@ -1325,6 +1532,18 @@ share/qt4/examples/tools/customcompleter/mainwindow.h
 share/qt4/examples/tools/customcompleter/resources/wordlist.txt
 share/qt4/examples/tools/customcompleter/textedit.cpp
 share/qt4/examples/tools/customcompleter/textedit.h
+share/qt4/examples/tools/echoplugin/echoplugin.pro
+share/qt4/examples/tools/echoplugin/echowindow/echointerface.h
+share/qt4/examples/tools/echoplugin/echowindow/echoplugin
+share/qt4/examples/tools/echoplugin/echowindow/echowindow.cpp
+share/qt4/examples/tools/echoplugin/echowindow/echowindow.h
+share/qt4/examples/tools/echoplugin/echowindow/echowindow.pro
+share/qt4/examples/tools/echoplugin/echowindow/main.cpp
+share/qt4/examples/tools/echoplugin/plugin/echoplugin.cpp
+share/qt4/examples/tools/echoplugin/plugin/echoplugin.h
+share/qt4/examples/tools/echoplugin/plugin/libechoplugin.so
+share/qt4/examples/tools/echoplugin/plugin/libechoplugin.so.debug
+share/qt4/examples/tools/echoplugin/plugin/plugin.pro
 share/qt4/examples/tools/i18n/i18n
 share/qt4/examples/tools/i18n/i18n.debug
 share/qt4/examples/tools/i18n/i18n.pro
@@ -1383,22 +1602,6 @@ share/qt4/examples/tools/plugandpaintplugins/extrafilters/extrafilters.pro
 share/qt4/examples/tools/plugandpaintplugins/extrafilters/extrafiltersplugin.cpp
 share/qt4/examples/tools/plugandpaintplugins/extrafilters/extrafiltersplugin.h
 share/qt4/examples/tools/plugandpaintplugins/plugandpaintplugins.pro
-share/qt4/examples/tools/qtdemo/demos.xml
-share/qt4/examples/tools/qtdemo/displayshape.cpp
-share/qt4/examples/tools/qtdemo/displayshape.h
-share/qt4/examples/tools/qtdemo/displaywidget.cpp
-share/qt4/examples/tools/qtdemo/displaywidget.h
-share/qt4/examples/tools/qtdemo/examples.xml
-share/qt4/examples/tools/qtdemo/images/qt4-logo.png
-share/qt4/examples/tools/qtdemo/images/trolltech-logo.png
-share/qt4/examples/tools/qtdemo/launcher.cpp
-share/qt4/examples/tools/qtdemo/launcher.h
-share/qt4/examples/tools/qtdemo/main.cpp
-share/qt4/examples/tools/qtdemo/qtdemo.icns
-share/qt4/examples/tools/qtdemo/qtdemo.ico
-share/qt4/examples/tools/qtdemo/qtdemo.pro
-share/qt4/examples/tools/qtdemo/qtdemo.qrc
-share/qt4/examples/tools/qtdemo/qtdemo.rc
 share/qt4/examples/tools/regexp/main.cpp
 share/qt4/examples/tools/regexp/regexp
 share/qt4/examples/tools/regexp/regexp.debug
@@ -1419,7 +1622,43 @@ share/qt4/examples/tools/settingseditor/settingstree.cpp
 share/qt4/examples/tools/settingseditor/settingstree.h
 share/qt4/examples/tools/settingseditor/variantdelegate.cpp
 share/qt4/examples/tools/settingseditor/variantdelegate.h
+share/qt4/examples/tools/styleplugin/plugin/plugin.pro
+share/qt4/examples/tools/styleplugin/plugin/simplestyle.cpp
+share/qt4/examples/tools/styleplugin/plugin/simplestyle.h
+share/qt4/examples/tools/styleplugin/plugin/simplestyleplugin.cpp
+share/qt4/examples/tools/styleplugin/plugin/simplestyleplugin.h
+share/qt4/examples/tools/styleplugin/styleplugin.pro
+share/qt4/examples/tools/styleplugin/stylewindow/main.cpp
+share/qt4/examples/tools/styleplugin/stylewindow/styleplugin
+share/qt4/examples/tools/styleplugin/stylewindow/styles/libsimplestyleplugin.so
+share/qt4/examples/tools/styleplugin/stylewindow/styles/libsimplestyleplugin.so.debug
+share/qt4/examples/tools/styleplugin/stylewindow/stylewindow.cpp
+share/qt4/examples/tools/styleplugin/stylewindow/stylewindow.h
+share/qt4/examples/tools/styleplugin/stylewindow/stylewindow.pro
 share/qt4/examples/tools/tools.pro
+share/qt4/examples/tools/treemodelcompleter/main.cpp
+share/qt4/examples/tools/treemodelcompleter/mainwindow.cpp
+share/qt4/examples/tools/treemodelcompleter/mainwindow.h
+share/qt4/examples/tools/treemodelcompleter/resources/treemodel.txt
+share/qt4/examples/tools/treemodelcompleter/treemodelcompleter
+share/qt4/examples/tools/treemodelcompleter/treemodelcompleter.cpp
+share/qt4/examples/tools/treemodelcompleter/treemodelcompleter.debug
+share/qt4/examples/tools/treemodelcompleter/treemodelcompleter.h
+share/qt4/examples/tools/treemodelcompleter/treemodelcompleter.pro
+share/qt4/examples/tools/treemodelcompleter/treemodelcompleter.qrc
+share/qt4/examples/tools/undoframework/commands.cpp
+share/qt4/examples/tools/undoframework/commands.h
+share/qt4/examples/tools/undoframework/diagramitem.cpp
+share/qt4/examples/tools/undoframework/diagramitem.h
+share/qt4/examples/tools/undoframework/diagramscene.cpp
+share/qt4/examples/tools/undoframework/diagramscene.h
+share/qt4/examples/tools/undoframework/main.cpp
+share/qt4/examples/tools/undoframework/mainwindow.cpp
+share/qt4/examples/tools/undoframework/mainwindow.h
+share/qt4/examples/tools/undoframework/undoframework
+share/qt4/examples/tools/undoframework/undoframework.debug
+share/qt4/examples/tools/undoframework/undoframework.pro
+share/qt4/examples/tools/undoframework/undoframework.qrc
 share/qt4/examples/tutorial/README
 share/qt4/examples/tutorial/t1/main.cpp
 share/qt4/examples/tutorial/t1/t1
@@ -1648,6 +1887,16 @@ share/qt4/examples/widgets/stylesheet/stylesheet.qrc
 share/qt4/examples/widgets/stylesheet/stylesheeteditor.cpp
 share/qt4/examples/widgets/stylesheet/stylesheeteditor.h
 share/qt4/examples/widgets/stylesheet/stylesheeteditor.ui
+share/qt4/examples/widgets/tablet/main.cpp
+share/qt4/examples/widgets/tablet/mainwindow.cpp
+share/qt4/examples/widgets/tablet/mainwindow.h
+share/qt4/examples/widgets/tablet/tablet
+share/qt4/examples/widgets/tablet/tablet.debug
+share/qt4/examples/widgets/tablet/tablet.pro
+share/qt4/examples/widgets/tablet/tabletapplication.cpp
+share/qt4/examples/widgets/tablet/tabletapplication.h
+share/qt4/examples/widgets/tablet/tabletcanvas.cpp
+share/qt4/examples/widgets/tablet/tabletcanvas.h
 share/qt4/examples/widgets/tetrix/main.cpp
 share/qt4/examples/widgets/tetrix/tetrix
 share/qt4/examples/widgets/tetrix/tetrix.debug
@@ -1698,6 +1947,12 @@ share/qt4/examples/xml/dombookmarks/mainwindow.cpp
 share/qt4/examples/xml/dombookmarks/mainwindow.h
 share/qt4/examples/xml/dombookmarks/xbeltree.cpp
 share/qt4/examples/xml/dombookmarks/xbeltree.h
+share/qt4/examples/xml/rsslisting/main.cpp
+share/qt4/examples/xml/rsslisting/rsslisting
+share/qt4/examples/xml/rsslisting/rsslisting.cpp
+share/qt4/examples/xml/rsslisting/rsslisting.debug
+share/qt4/examples/xml/rsslisting/rsslisting.h
+share/qt4/examples/xml/rsslisting/rsslisting.pro
 share/qt4/examples/xml/saxbookmarks/frank.xbel
 share/qt4/examples/xml/saxbookmarks/jennifer.xbel
 share/qt4/examples/xml/saxbookmarks/main.cpp
@@ -1710,8 +1965,27 @@ share/qt4/examples/xml/saxbookmarks/xbelgenerator.cpp
 share/qt4/examples/xml/saxbookmarks/xbelgenerator.h
 share/qt4/examples/xml/saxbookmarks/xbelhandler.cpp
 share/qt4/examples/xml/saxbookmarks/xbelhandler.h
+share/qt4/examples/xml/streambookmarks/frank.xbel
+share/qt4/examples/xml/streambookmarks/jennifer.xbel
+share/qt4/examples/xml/streambookmarks/main.cpp
+share/qt4/examples/xml/streambookmarks/mainwindow.cpp
+share/qt4/examples/xml/streambookmarks/mainwindow.h
+share/qt4/examples/xml/streambookmarks/streambookmarks
+share/qt4/examples/xml/streambookmarks/streambookmarks.debug
+share/qt4/examples/xml/streambookmarks/streambookmarks.pro
+share/qt4/examples/xml/streambookmarks/xbelreader.cpp
+share/qt4/examples/xml/streambookmarks/xbelreader.h
+share/qt4/examples/xml/streambookmarks/xbelwriter.cpp
+share/qt4/examples/xml/streambookmarks/xbelwriter.h
 share/qt4/examples/xml/xml.pro
+share/qt4/examples/xml/xmlstreamlint/main.cpp
+share/qt4/examples/xml/xmlstreamlint/xmlstreamlint
+share/qt4/examples/xml/xmlstreamlint/xmlstreamlint.debug
+share/qt4/examples/xml/xmlstreamlint/xmlstreamlint.pro
+@dirrm share/qt4/examples/xml/xmlstreamlint
+@dirrm share/qt4/examples/xml/streambookmarks
 @dirrm share/qt4/examples/xml/saxbookmarks
+@dirrm share/qt4/examples/xml/rsslisting
 @dirrm share/qt4/examples/xml/dombookmarks
 @dirrm share/qt4/examples/xml
 @dirrm share/qt4/examples/widgets/windowflags
@@ -1719,6 +1993,7 @@ share/qt4/examples/xml/xml.pro
 @dirrm share/qt4/examples/widgets/tooltips/images
 @dirrm share/qt4/examples/widgets/tooltips
 @dirrm share/qt4/examples/widgets/tetrix
+@dirrm share/qt4/examples/widgets/tablet
 @dirrm share/qt4/examples/widgets/stylesheet
 @dirrm share/qt4/examples/widgets/styles/images
 @dirrm share/qt4/examples/widgets/styles
@@ -1754,11 +2029,16 @@ share/qt4/examples/xml/xml.pro
 @dirrm share/qt4/examples/tutorial/t10
 @dirrm share/qt4/examples/tutorial/t1
 @dirrm share/qt4/examples/tutorial
+@dirrm share/qt4/examples/tools/undoframework
+@dirrm share/qt4/examples/tools/treemodelcompleter/resources
+@dirrm share/qt4/examples/tools/treemodelcompleter
+@dirrm share/qt4/examples/tools/styleplugin/stylewindow/styles
+@dirrm share/qt4/examples/tools/styleplugin/stylewindow
+@dirrm share/qt4/examples/tools/styleplugin/plugin
+@dirrm share/qt4/examples/tools/styleplugin
 @dirrm share/qt4/examples/tools/settingseditor/inifiles
 @dirrm share/qt4/examples/tools/settingseditor
 @dirrm share/qt4/examples/tools/regexp
-@dirrm share/qt4/examples/tools/qtdemo/images
-@dirrm share/qt4/examples/tools/qtdemo
 @dirrm share/qt4/examples/tools/plugandpaintplugins/extrafilters
 @dirrm share/qt4/examples/tools/plugandpaintplugins/basictools
 @dirrm share/qt4/examples/tools/plugandpaintplugins
@@ -1766,6 +2046,9 @@ share/qt4/examples/xml/xml.pro
 @dirrm share/qt4/examples/tools/plugandpaint
 @dirrm share/qt4/examples/tools/i18n/translations
 @dirrm share/qt4/examples/tools/i18n
+@dirrm share/qt4/examples/tools/echoplugin/plugin
+@dirrm share/qt4/examples/tools/echoplugin/echowindow
+@dirrm share/qt4/examples/tools/echoplugin
 @dirrm share/qt4/examples/tools/customcompleter/resources
 @dirrm share/qt4/examples/tools/customcompleter
 @dirrm share/qt4/examples/tools/completer/resources
@@ -1780,8 +2063,18 @@ share/qt4/examples/xml/xml.pro
 @dirrm share/qt4/examples/sql/tablemodel
 @dirrm share/qt4/examples/sql/relationaltablemodel
 @dirrm share/qt4/examples/sql/querymodel
+@dirrm share/qt4/examples/sql/masterdetail
+@dirrm share/qt4/examples/sql/drilldown
 @dirrm share/qt4/examples/sql/cachedtable
 @dirrm share/qt4/examples/sql
+@dirrm share/qt4/examples/script/tetrix
+@dirrm share/qt4/examples/script/qscript
+@dirrm share/qt4/examples/script/helloscript
+@dirrm share/qt4/examples/script/defaultprototypes
+@dirrm share/qt4/examples/script/context2d/scripts
+@dirrm share/qt4/examples/script/context2d
+@dirrm share/qt4/examples/script/calculator
+@dirrm share/qt4/examples/script
 @dirrm share/qt4/examples/richtext/syntaxhighlighter
 @dirrm share/qt4/examples/richtext/orderform
 @dirrm share/qt4/examples/richtext/calendar
@@ -1858,7 +2151,9 @@ share/qt4/examples/xml/xml.pro
 @dirrm share/qt4/examples/layouts/borderlayout
 @dirrm share/qt4/examples/layouts/basiclayouts
 @dirrm share/qt4/examples/layouts
+@dirrm share/qt4/examples/itemviews/stardelegate
 @dirrm share/qt4/examples/itemviews/spinboxdelegate
+@dirrm share/qt4/examples/itemviews/simplewidgetmapper
 @dirrm share/qt4/examples/itemviews/simpletreemodel
 @dirrm share/qt4/examples/itemviews/simpledommodel
 @dirrm share/qt4/examples/itemviews/puzzle
@@ -1866,6 +2161,7 @@ share/qt4/examples/xml/xml.pro
 @dirrm share/qt4/examples/itemviews/pixelator
 @dirrm share/qt4/examples/itemviews/dirview
 @dirrm share/qt4/examples/itemviews/customsortfiltermodel
+@dirrm share/qt4/examples/itemviews/coloreditorfactory
 @dirrm share/qt4/examples/itemviews/chart
 @dirrm share/qt4/examples/itemviews/basicsortfiltermodel
 @dirrm share/qt4/examples/itemviews
@@ -1885,6 +2181,8 @@ share/qt4/examples/xml/xml.pro
 @dirrm share/qt4/examples/graphicsview/elasticnodes
 @dirrm share/qt4/examples/graphicsview/dragdroprobot/images
 @dirrm share/qt4/examples/graphicsview/dragdroprobot
+@dirrm share/qt4/examples/graphicsview/diagramscene/images
+@dirrm share/qt4/examples/graphicsview/diagramscene
 @dirrm share/qt4/examples/graphicsview/collidingmice/images
 @dirrm share/qt4/examples/graphicsview/collidingmice
 @dirrm share/qt4/examples/graphicsview
@@ -1895,12 +2193,15 @@ share/qt4/examples/xml/xml.pro
 @dirrm share/qt4/examples/draganddrop/draggableicons/images
 @dirrm share/qt4/examples/draganddrop/draggableicons
 @dirrm share/qt4/examples/draganddrop
+@dirrm share/qt4/examples/dialogs/trivialwizard
 @dirrm share/qt4/examples/dialogs/tabdialog
 @dirrm share/qt4/examples/dialogs/standarddialogs
+@dirrm share/qt4/examples/dialogs/licensewizard
 @dirrm share/qt4/examples/dialogs/findfiles
 @dirrm share/qt4/examples/dialogs/extension
 @dirrm share/qt4/examples/dialogs/configdialog/images
 @dirrm share/qt4/examples/dialogs/configdialog
+@dirrm share/qt4/examples/dialogs/classwizard
 @dirrm share/qt4/examples/dialogs
 @dirrm share/qt4/examples/desktop/systray
 @dirrm share/qt4/examples/desktop/screenshot
@@ -1918,6 +2219,7 @@ share/qt4/examples/xml/xml.pro
 @dirrm share/qt4/examples/assistant/simpletextviewer
 @dirrm share/qt4/examples/assistant
 @dirrm share/qt4/examples
+@dirrm share/qt4/demos/undo
 @dirrm share/qt4/demos/textedit/images/win
 @dirrm share/qt4/demos/textedit/images/mac
 @dirrm share/qt4/demos/textedit/images
@@ -1927,13 +2229,15 @@ share/qt4/examples/xml/xml.pro
 @dirrm share/qt4/demos/spreadsheet
 @dirrm share/qt4/demos/shared/images
 @dirrm share/qt4/demos/shared
+@dirrm share/qt4/demos/qtdemo/xml
+@dirrm share/qt4/demos/qtdemo/images
+@dirrm share/qt4/demos/qtdemo
 @dirrm share/qt4/demos/pathstroke
 @dirrm share/qt4/demos/mainwindow
 @dirrm share/qt4/demos/interview/images
 @dirrm share/qt4/demos/interview
 @dirrm share/qt4/demos/gradients
 @dirrm share/qt4/demos/deform
-@dirrm share/qt4/demos/dbus-viewer
 @dirrm share/qt4/demos/composition
 @dirrm share/qt4/demos/chip
 @dirrm share/qt4/demos/books/images

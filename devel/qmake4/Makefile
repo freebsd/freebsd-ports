@@ -6,17 +6,17 @@
 # $FreeBSD$
 
 PORTNAME=	qmake
-PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTVERSION=	${QT4_VERSION}
+PORTREVISION=0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
 DIST_SUBDIR=	KDE
-LATEST_LINK=	qmake4
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The build utility of the Qt project
 
+LATEST_LINK=	qmake4
 REINPLACE_ARGS=	-i ""
 WRKSRC=		${WRKDIR}/${DISTNAME}/qmake
 MAKEFILE=	${FILESDIR}/Makefile.bsd
@@ -33,7 +33,10 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	'${DISTNAME}/src/corelib/global' \
 	'${DISTNAME}/src/corelib/plugin' \
 	'${DISTNAME}/src/corelib/kernel' \
-	'${DISTNAME}/src/3rdparty/md5'
+	'${DISTNAME}/src/script' \
+	'${DISTNAME}/src/3rdparty/md4' \
+	'${DISTNAME}/src/3rdparty/md5' \
+	'${DISTNAME}/src/3rdparty/sha1'
 
 .if !defined(NOPORTDOCS)
 EXTRACT_AFTER_ARGS+='${DISTNAME}/doc/html/qmake*'
@@ -66,6 +69,7 @@ do-configure:
 	${ECHO} '/* empty */' > ${WRKSRC}/qconfig.h
 	${LN} ${WRKSRC}/qconfig.h ${WRKSRC}/../include/QtCore/qconfig.h
 
+.include "${.CURDIR}/../../Mk/bsd.qt.mk"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500035

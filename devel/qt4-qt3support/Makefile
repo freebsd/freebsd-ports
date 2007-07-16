@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	qt3support
-PORTVERSION=	4.2.3
-PORTREVISION=	2
+PORTVERSION=	${QT4_VERSION}
+PORTREVISION=0
 CATEGORIES?=	devel x11-toolkits
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -18,28 +18,14 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt3 compatibility library
 
-BUILD_DEPENDS=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
-		qmake-qt4:${PORTSDIR}/devel/qmake4
-LIB_DEPENDS?=	QtCore:${PORTSDIR}/devel/qt4-corelib \
-		QtGui:${PORTSDIR}/x11-toolkits/qt4-gui \
-		QtNetwork:${PORTSDIR}/net/qt4-network \
-		QtSql:${PORTSDIR}/databases/qt4-sql \
-		QtXml:${PORTSDIR}/textproc/qt4-xml
-
-CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
-		qt-3.1.* qt-3.2.* qt-designer-2.* xfmail-1.5.[0-5] \
-		xfmail-1.5.5_[1-2]
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake moc corelib gui network sql xml
+QT_NONSTANDARD=	yes
+QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_XLIB=	yes
-
-CONFIGURE_ARGS=	-fast -no-exceptions \
-		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
-		-qt-gif -release -system-libjpeg -system-libpng \
-		-system-zlib -no-nas-sound -prefix ${PREFIX}  \
-		-plugindir ${PREFIX}/lib/plugins -bindir ${PREFIX}/bin \
-		-confirm-license
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
@@ -70,11 +56,11 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
 post-configure:
-	${REINPLACE_CMD} -e 's|${PREFIX}/lib/Qt3Support.pc|${PREFIX}/libdata/pkgconfig/Qt3Support.pc|g' \
+	${REINPLACE_CMD} -e 's|${PREFIX}/lib/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		-e 's|.*$$(QMAKE).*||g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
-		${WRKSRC}/../../lib/*Qt*
+		${WRKSRC}/../../lib/pkgconfig/*Qt*
 
 .include <bsd.port.post.mk>

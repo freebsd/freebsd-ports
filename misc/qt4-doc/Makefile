@@ -7,28 +7,19 @@
 #
 
 PORTNAME=	doc
-PORTVERSION=	4.2.3
+PORTVERSION=	${QT4_VERSION}
 CATEGORIES?=	misc
 MASTER_SITES=	${MASTER_SITE_QT}
-PKGNAMEPREFIX= 	qt4-
+PKGNAMEPREFIX=	qt4-
 DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Multiplatform C++ application framework
 
-CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
-		qt-3.1.* qt-3.2.* qt-designer-2.* xfmail-1.5.[0-5] \
-		xfmail-1.5.5_[1-2]
+QT_DIST=	yes
 
 NO_BUILD=	yes
-
-CONFIGURE_ARGS=	-fast -no-exceptions \
-		-platform ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
-		-qt-gif -release -system-libjpeg -system-libpng \
-		-system-zlib -no-nas-sound -prefix ${PREFIX} \
-		-plugindir ${PREFIX}/lib/plugins -bindir ${PREFIX}/bin \
-		-confirm-license
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
@@ -53,4 +44,5 @@ do-install:
 	${RM} -f ${WRKSRC}/doc/html/qmake*
 	${CP} -Rp ${WRKSRC}/doc/html ${DOCSDIR}
 
+.include "${.CURDIR}/../../Mk/bsd.qt.mk"
 .include <bsd.port.mk>

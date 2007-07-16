@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	uic
-PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTVERSION=	${QT4_VERSION}
+PORTREVISION=0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -18,20 +18,12 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt user interface compiler
 
-BUILD_DEPENDS=	qmake-qt4:${PORTSDIR}/devel/qmake4
-
-CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
-		qt-3.1.* qt-3.2.* qt-designer-2.* xfmail-1.5.[0-5] \
-		xfmail-1.5.5_[1-2]
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake
+QT_NONSTANDARD=	yes
+QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
-
-CONFIGURE_ARGS=	-fast -no-exceptions \
-		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
-		-qt-gif -release -system-libjpeg -system-libpng \
-		-system-zlib -no-nas-sound -prefix ${PREFIX} \
-		-plugindir ${PREFIX}/lib/plugins -bindir ${PREFIX}/bin \
-		-confirm-license
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH

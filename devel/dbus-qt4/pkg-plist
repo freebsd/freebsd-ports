@@ -9,6 +9,7 @@ include/QtDBus/QDBusAbstractInterface
 include/QtDBus/QDBusArgument
 include/QtDBus/QDBusConnection
 include/QtDBus/QDBusConnectionInterface
+include/QtDBus/QDBusContext
 include/QtDBus/QDBusError
 include/QtDBus/QDBusInterface
 include/QtDBus/QDBusMessage
@@ -24,6 +25,7 @@ include/QtDBus/qdbusabstractinterface.h
 include/QtDBus/qdbusargument.h
 include/QtDBus/qdbusconnection.h
 include/QtDBus/qdbusconnectioninterface.h
+include/QtDBus/qdbuscontext.h
 include/QtDBus/qdbuserror.h
 include/QtDBus/qdbusextratypes.h
 include/QtDBus/qdbusinterface.h
@@ -32,12 +34,12 @@ include/QtDBus/qdbusmessage.h
 include/QtDBus/qdbusmetatype.h
 include/QtDBus/qdbusreply.h
 include/QtDBus/qdbusserver.h
-libdata/pkgconfig/QtDBus.pc
 lib/libQtDBus.la
 lib/libQtDBus.prl
 lib/libQtDBus.so
 lib/libQtDBus.so.4
-lib/libQtDBus.so.4.2
-lib/libQtDBus.so.4.2.3
-lib/libQtDBus.so.4.2.3.debug
+lib/libQtDBus.so.4.3
+lib/libQtDBus.so.4.3.0
+lib/libQtDBus.so.4.3.0.debug
+libdata/pkgconfig/QtDBus.pc
 @dirrm include/QtDBus
