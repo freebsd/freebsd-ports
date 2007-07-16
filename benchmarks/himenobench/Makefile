@@ -27,8 +27,6 @@ EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 USE_FORTRAN=	yes
 
-GCCVER:=      ${USE_GCC:S/+//}
-
 RESTRICTED=	unsure to redistribute
 
 .if defined(WITH_OPTIMIZED_FLAGS)
@@ -43,7 +41,7 @@ PLIST_SUB+=	WITH_ICC=""
 .else
 PLIST_SUB+=	WITH_ICC="@comment "
 .endif
-.if defined(WITH_IFC)
+.if ${USE_FORTRAN} == ifort
 FFLAGS_IFC+=	-O3 -tpp7 -axN -Vaxlib -ipo
 IFC=		${LOCALBASE}/intel_fc_80/bin/ifort
 PLIST_SUB+=	WITH_IFC=""
@@ -51,7 +49,7 @@ PLIST_SUB+=	WITH_IFC=""
 PLIST_SUB+=	WITH_IFC="@comment "
 .endif
 
-.if ${USE_FORTRAN} == yes
+.if ${USE_FORTRAN} != yes
 PLIST_SUB+=	WITH_GFORTRAN="@comment "
 .else
 PLIST_SUB+=	WITH_GFORTRAN=""
