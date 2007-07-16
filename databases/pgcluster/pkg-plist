@@ -26,9 +26,6 @@ bin/psql
 bin/vacuumdb
 %%PGLB%%etc/pglb.conf.sample
 %%PGRP%%etc/pgreplicate.conf.sample
-etc/rc.d/pgcluster.sh
-%%PGLB%%etc/rc.d/pglb.sh
-%%PGRP%%etc/rc.d/pgreplicate.sh
 include/ecpgerrno.h
 include/ecpglib.h
 include/ecpgtype.h

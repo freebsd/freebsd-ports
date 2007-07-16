@@ -1,0 +1,26 @@
+--- configure.in.orig	Tue Mar  2 08:44:53 2004
++++ configure.in	Mon Jul 16 16:20:48 2007
+@@ -19,11 +19,7 @@
+ dnl
+ dnl The GNU folks apparently haven't heard that some people don't use
+ dnl Texinfo. Use this sorcery to use "docdir" instead of "infodir".
+-m4_define([info], [doc])
+-m4_define([infodir], [docdir])
+ AC_INIT([PostgreSQL], [7.3.6], [pgsql-bugs@postgresql.org])
+-m4_undefine([infodir])
+-m4_undefine([info])
+ AC_SUBST(docdir)
+ 
+ AC_PREREQ(2.53)
+@@ -506,6 +502,11 @@
+ ])
+ 
+ AC_SUBST(with_openssl)
++
++#
++# Replication
++#
++AC_DEFINE([USE_REPLICATION], 1, [Define to build with Replication support])
+ 
+ 
+ #
