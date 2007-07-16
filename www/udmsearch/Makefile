@@ -29,10 +29,6 @@ MAN5=		indexer.conf.5
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 .if defined(WITH_MSQL)
 BUILD_DEPENDS=		${PREFIX}/lib/libmsql.a:${PORTSDIR}/databases/msql
 CONFIGURE_ARGS+=	--with-msql=${LOCALBASE}
