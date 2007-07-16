@@ -1,0 +1,31 @@
+%%XPI_XPIDIR%%/chrome/firebug.jar
+%%XPI_XPIDIR%%/chrome/icons/default/firebug.ico
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/components/firebug-service.js
+%%XPI_XPIDIR%%/components/nsIFireBug.xpt
+%%XPI_XPIDIR%%/defaults/preferences/firebug.js
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/license.txt
+%%XPI_XPIDIR%%/platform/Darwin/chrome/firebug.jar
+%%XPI_XPIDIR%%/platform/Darwin/chrome.manifest
+%%XPI_XPIDIR%%/platform/Linux/chrome/firebug.jar
+%%XPI_XPIDIR%%/platform/Linux/chrome.manifest
+%%XPI_XPIDIR%%/platform/WINNT/chrome/firebug.jar
+%%XPI_XPIDIR%%/platform/WINNT/chrome.manifest
+%%XPI_XPIDIR%%/platform/linux-gnu/chrome/firebug.jar
+%%XPI_XPIDIR%%/platform/linux-gnu/chrome.manifest
+@dirrm %%XPI_XPIDIR%%/chrome/icons/default
+@dirrm %%XPI_XPIDIR%%/chrome/icons
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
+@dirrm %%XPI_XPIDIR%%/platform/Darwin/chrome
+@dirrm %%XPI_XPIDIR%%/platform/Darwin
+@dirrm %%XPI_XPIDIR%%/platform/Linux/chrome
+@dirrm %%XPI_XPIDIR%%/platform/Linux
+@dirrm %%XPI_XPIDIR%%/platform/WINNT/chrome
+@dirrm %%XPI_XPIDIR%%/platform/WINNT
+@dirrm %%XPI_XPIDIR%%/platform/linux-gnu/chrome
+@dirrm %%XPI_XPIDIR%%/platform/linux-gnu
+@dirrm %%XPI_XPIDIR%%/platform
