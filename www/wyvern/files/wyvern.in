@@ -17,13 +17,13 @@
 #
 wyvern_enable=${wyvern_enable:-"NO"}	# Enable wyvern
 
-. @RC_SUBR@
+. %%RC_SUBR%%
 
 name="wyvern"
 rcvar=`set_rcvar`
-command="@PREFIX@/sbin/wyvern"
+command="%%PREFIX%%/sbin/wyvern"
 pidfile="/var/run/wyvern.pid"
-required_files="/usr/local/wyvern/conf/wyvern.conf"
+required_files="%%PREFIX%%/wyvern/conf/wyvern.conf"
 start_cmd="wyvern_start"
 stop_postcmd="wyvern_poststop"
 
