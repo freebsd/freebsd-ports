@@ -26,7 +26,7 @@ PORT_CLASS?=	master
 .if (${PORT_CLASS} == "master")
 # emacsen-port-name
 USE_EMACS=	yes
-EMACS_PORT_NAME=	emacs20
+EMACS_PORT_NAME?=	emacs20
 .endif
 
 INFO=		skk
