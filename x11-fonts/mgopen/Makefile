@@ -12,7 +12,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.ellak.gr/fonts/mgopen/files/
 DISTNAME=	MgOpen
 
-MAINTAINER=	past@ebs.gr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MgOpen greek fonts collection
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig

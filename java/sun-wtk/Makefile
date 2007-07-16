@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	sun-
 DISTNAME=	j2me_wireless_toolkit-${PORTVERSION:S/./_/}-linux-i386
 EXTRACT_SUFX=	.bin
 
-MAINTAINER=	past@ebs.gr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun J2ME Wireless Toolkit
 
 USE_JAVA=	yes
