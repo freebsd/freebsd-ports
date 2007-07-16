@@ -8,7 +8,8 @@
 PORTNAME=	netbeans
 PORTVERSION=	5.5.1
 CATEGORIES=	java devel
-MASTER_SITES=	http://us1.mirror.netbeans.org/download/5_5_1/fcs/200704122300/ \
+MASTER_SITES=	http://dlc.sun.com/netbeans/download/5_5_1/fcs/200704122300/ \
+		http://us1.mirror.netbeans.org/download/5_5_1/fcs/200704122300/ \
 		http://us2.mirror.netbeans.org/download/5_5_1/fcs/200704122300/
 
 DISTNAME=	netbeans-5_5_1
