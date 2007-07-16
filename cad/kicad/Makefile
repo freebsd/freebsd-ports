@@ -40,7 +40,8 @@ USE_GNOME=	atk	# Required by libwx_gtk2_aui-2.8.so
 #TODO	Add support for Python.
 
 INSTDIR=	${PORTNAME}
-PLIST_SUB=	INSTDIR=${INSTDIR} OPSYS=${OPSYS}
+PLIST_SUB=	INSTDIR=${INSTDIR} OPSYS=${OPSYS}	\
+		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
 DOS2CNV=	makefile.gtk makefile.include libs.linux
 BINS=		cvpcb eeschema gerbview kicad pcbnew
@@ -85,7 +86,7 @@ pre-configure:
 		${WRKSRC}/common/eda_doc.cpp
 
 pre-install:
-	${MKDIR} ${PREFIX}/${INSTDIR}/${OPSYS}/plugins
+	${MKDIR} ${PREFIX}/${INSTDIR}/${OPSYS}/plugins ${DESKTOPDIR}
 	(cd ${PREFIX} && ${TAR} -xzopf ${_DISTDIR}/${PORTNAME}-${DISTVERSION}.tgz)
 	${SED} -e 's|Exec=/usr/local/kicad/linux|Exec=$(PREFIX)/bin|'		\
 		-e 's|Icon=/usr/local/kicad/linux|Icon=${PREFIX}/${INSTDIR}|'	\
