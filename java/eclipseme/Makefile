@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	past@ebs.gr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eclipse J2ME Plugin
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse \

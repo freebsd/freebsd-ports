@@ -12,7 +12,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://graphis.hellug.gr/packages/
 DISTNAME=	avifonts
 
-MAINTAINER=	past@ebs.gr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AviFonts greek fonts collection
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
