@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	postgresql80
-PORTVERSION=	8.0.4
+PORTNAME=	postgresql81
+PORTVERSION=	8.1.5
 CATEGORIES=	japanese databases
 MASTER_SITES=	http://www.postgresql.jp/document/pg${PORTVERSION:C/\.//g}doc/
 PKGNAMESUFFIX=	-man
@@ -40,6 +40,7 @@ MAN1=		clusterdb.1 \
 		postgres.1 \
 		postmaster.1 \
 		psql.1 \
+		reindexdb.1 \
 		vacuumdb.1
 
 MANL=		abort.l \
@@ -53,6 +54,7 @@ MANL=		abort.l \
 		alter_language.l \
 		alter_operator.l \
 		alter_operator_class.l \
+		alter_role.l \
 		alter_schema.l \
 		alter_sequence.l \
 		alter_table.l \
@@ -67,6 +69,7 @@ MANL=		abort.l \
 		cluster.l \
 		comment.l \
 		commit.l \
+		commit_prepared.l \
 		copy.l \
 		create_aggregate.l \
 		create_cast.l \
@@ -80,6 +83,7 @@ MANL=		abort.l \
 		create_language.l \
 		create_operator.l \
 		create_operator_class.l \
+		create_role.l \
 		create_rule.l \
 		create_schema.l \
 		create_sequence.l \
@@ -104,6 +108,7 @@ MANL=		abort.l \
 		drop_language.l \
 		drop_operator.l \
 		drop_operator_class.l \
+		drop_role.l \
 		drop_rule.l \
 		drop_schema.l \
 		drop_sequence.l \
@@ -125,17 +130,20 @@ MANL=		abort.l \
 		move.l \
 		notify.l \
 		prepare.l \
+		prepare_transaction.l \
 		reindex.l \
 		release_savepoint.l \
 		reset.l \
 		revoke.l \
 		rollback.l \
+		rollback_prepared.l \
 		rollback_to_savepoint.l \
 		savepoint.l \
 		select.l \
 		select_into.l \
 		set.l \
 		set_constraints.l \
+		set_role.l \
 		set_session_authorization.l \
 		set_transaction.l \
 		show.l \
@@ -159,6 +167,7 @@ MANL=		abort.l \
 		spi_getargcount.l \
 		spi_getargtypeid.l \
 		spi_getbinval.l \
+		spi_getnspname.l \
 		spi_getrelname.l \
 		spi_gettype.l \
 		spi_gettypeid.l \
