@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ripit
-PORTVERSION=	3.5.1
+PORTVERSION=	3.6.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.suwald.com/ripit/
 
@@ -20,25 +20,24 @@ RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 RUN_DEPENDS+=	cdparanoia:${PORTSDIR}/audio/cdparanoia
 
 NO_BUILD=	yes
-PLIST_FILES=	bin/ripit.pl \
-		bin/ripit \
-		share/examples/ripit/config
-PLIST_DIRS=	share/examples/ripit
+PLIST_FILES=	bin/ripit
 MAN1=		ripit.1
+PORTEXAMPLES=	config
 USE_PERL5_RUN=	yes
 USE_BZIP2=	yes
 
 post-patch:
-	@ ${REINPLACE_CMD} -e "s|#!/usr/bin/perl|#!${PERL}|" ${WRKSRC}/ripit
+	@${REINPLACE_CMD} -e "s|#!/usr/bin/perl|#!${PERL}|" ${WRKSRC}/ripit.pl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ripit ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/ripit.pl ${PREFIX}/bin/ripit
 	${INSTALL_MAN} ${WRKSRC}/ripit.1 ${MAN1PREFIX}/man/man1
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/config ${EXAMPLESDIR}/config
+.endif
 
 post-install:
-	@ ${LN} -s ${PREFIX}/bin/ripit ${PREFIX}/bin/ripit.pl
-	@ ${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
