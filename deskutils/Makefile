@@ -173,6 +173,7 @@
     SUBDIR += pypanel
     SUBDIR += qlabels
     SUBDIR += qrfcview
+    SUBDIR += qtm
     SUBDIR += recoll
     SUBDIR += remember.el
     SUBDIR += remind
