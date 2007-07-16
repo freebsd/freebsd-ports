@@ -25,7 +25,7 @@ MAN8=		dicmd.8 didump.8 dexpireover.8 dfeedinfo.8 dgrpctl.8 \
 		doverctl.8 drequeue.8 dhisexpire.8
 PORTDOCS=	COPYRIGHT INSTALL README.READER README.SERVER RELEASE_NOTES
 
-post-extract:
+post-patch:
 	@${CP} ${SCRIPTDIR}/diablo.sh-sample ${WRKDIR}
 	@${REINPLACE_CMD} -E 's|%%PREFIX%%|${PREFIX}|g ;\
 		s|-g -O.?|${CFLAGS}| ; s|g?cc|${CC}|' \
