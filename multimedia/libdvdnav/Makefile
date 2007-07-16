@@ -32,4 +32,8 @@ post-patch:
 		 ${WRKSRC}/configure ${WRKSRC}/configure.ac \
 		 ${WRKSRC}/missing ${WRKSRC}/aclocal.m4 ${WRKSRC}/autogen.sh
 
+post-configure:
+	${REINPLACE_CMD} -e 's|automake[0-9][0-9]|${TRUE}|' \
+		`${FIND} ${WRKSRC} -type f -name Makefile`
+
 .include <bsd.port.mk>
