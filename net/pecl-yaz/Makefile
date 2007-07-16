@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PECL extension that implements a Z39.50 client
 
 LIB_DEPENDS=	yaz.2:${PORTSDIR}/net/yaz
