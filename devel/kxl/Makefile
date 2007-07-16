@@ -21,6 +21,6 @@ USE_XPM=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LIBS=="-L${X11BASE}/lib"
+		LIBS="-L${X11BASE}/lib"
 
 .include <bsd.port.mk>
