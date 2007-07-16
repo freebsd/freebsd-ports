@@ -17,7 +17,7 @@ DISTFILES=	${PORTNAME}_source.tgz:g95 \
 		gcc-core-${GCC_VER}${EXTRACT_SUFX}:gcc
 DIST_SUBDIR=	g95/${SNAPDATE}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	mldodson@houston.rr.com
 COMMENT=	Fortran 95 compiler from g95.org
 
 SNAPDATE=	20070129
