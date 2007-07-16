@@ -1288,6 +1288,7 @@
     SUBDIR += xpi-downthemall
     SUBDIR += xpi-errorzilla
     SUBDIR += xpi-fasterfox
+    SUBDIR += xpi-firebug
     SUBDIR += xpi-firefox-showcase
     SUBDIR += xpi-fission
     SUBDIR += xpi-flashblock
