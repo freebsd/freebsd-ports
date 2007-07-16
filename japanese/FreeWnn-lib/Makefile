@@ -41,7 +41,12 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 .if (${WNN} == Wnn)
 CONFIGURE_ARGS+= --enable-cWnn=no --enable-kWnn=no
 MANLANG=	ja
-CONFIGURE_ARGS+= --mandir=${PREFIX}/man/ja
+
+# localized manual pages live in ${MANPREFIX}/man/${MANLANG}
+post-patch:
+	@${REINPLACE_CMD} -e 's#@mandir@/#@mandir@/ja/#' \
+		${WRKSRC}/makerule.mk.in
+
 .if (${PKGNAMESUFFIX} == -lib)
 MAN3+= \
 	jl_bun_suu.3	\
