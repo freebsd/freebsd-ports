@@ -1,0 +1,30 @@
+--- configure.in.orig	Sun Mar 16 17:06:05 2003
++++ configure.in	Thu Jul  7 00:14:52 2005
+@@ -179,6 +179,19 @@
+ machine='' opsys='' unported=no
+ case "${canonical}" in
+ 
++  ## FreeBSD ports
++  *-*-freebsd* )
++    opsys=freebsd
++    case "${canonical}" in
++      alpha*-*-freebsd*)       machine=alpha ;;
++      amd64-*-freebsd*)        machine=amd64 ;;
++      ia64-*-freebsd*)         machine=ia64 ;;
++      i[3456]86-*-freebsd*)    machine=intel386 ;;
++      sparc64-*-freebsd*)      machine=sparc ;;
++      powerpc-*-freebsd*)      machine=macppc ;;
++    esac
++  ;;
++
+   ## NetBSD ports
+   *-*-netbsd* )
+     opsys=netbsd
+@@ -1032,7 +1045,6 @@
+ 				;;
+       *-sysv4.2uw* )	  	opsys=unixware; NON_GNU_CPP=/lib/cpp ;;
+       *-386bsd* )	        opsys=386bsd ;;
+-      *-freebsd* )	        opsys=freebsd ;;
+       *-nextstep* )             opsys=nextstep ;;
+       ## Otherwise, we'll fall through to the generic opsys code at the bottom.
+     esac

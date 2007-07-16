@@ -1,0 +1,15 @@
+********************************************************************
+* NOTE:                                                            *
+*   This package does not include                                  *
+*     LEIM: Libraries of Emacs Input Method                        *
+*   package.                                                       *
+*   You can find leim port in the following directory:             *
+*     /usr/ports/editors/leim21                                    *
+*                                                                  *
+*   If you want to use multibyte characters in the menubar,        *
+*     make WITH_MENUBAR_FONTSET=yes install                        *
+*   then set fontset in ~/.Xresources as                           *
+*     Emacs*menubar*fontSet: -misc-fixed-medium-r-normal--14-130-* *
+*   and set coding system for it appropriately in ~/.emacs like    *
+*     (setq menu-coding-system 'euc-jp)                            *
+********************************************************************
