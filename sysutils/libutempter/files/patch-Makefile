@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Dec 11 13:13:49 2005
-+++ Makefile	Thu Feb  8 10:13:03 2007
-@@ -31,10 +31,10 @@
+--- Makefile.orig	2007-02-19 13:14:08.000000000 +0100
++++ Makefile	2007-07-17 23:42:11.000000000 +0200
+@@ -30,18 +30,18 @@
  TARGETS = $(PROJECT) $(SHAREDLIB) $(STATICLIB)
  
  INSTALL = install
@@ -15,16 +15,17 @@
  
  WARNINGS = -W -Wall -Waggregate-return -Wcast-align -Wconversion \
  	-Wdisabled-optimization -Wmissing-declarations \
-@@ -42,7 +42,7 @@
+ 	-Wmissing-format-attribute -Wmissing-noreturn \
  	-Wmissing-prototypes -Wpointer-arith -Wredundant-decls \
  	-Wshadow -Wstrict-prototypes -Wwrite-strings
- CPPFLAGS = -std=gnu99 $(WARNINGS) -DLIBEXECDIR=\"$(libexecdir)\"
+-CPPFLAGS = -std=gnu99 $(WARNINGS) -DLIBEXECDIR=\"$(libexecdir)\"
 -CFLAGS = $(RPM_OPT_FLAGS)
++CPPFLAGS = -std=gnu99 $(WARNINGS)
 +CFLAGS+= -DLIBEXECDIR=\"$(PREFIX)$(libexecdir)\"
  LDLIBS =
  
  all: $(TARGETS)
-@@ -64,15 +64,20 @@
+@@ -63,15 +63,20 @@
  
  iface.o: iface.c utempter.h
  
@@ -40,12 +41,14 @@
 -	$(INSTALL) -p -m644 $(PROJECT).h $(DESTDIR)$(includedir)/
 -	$(INSTALL) -p -m755 $(SHAREDLIB) $(DESTDIR)$(libdir)/$(SHAREDLIB).$(VERSION)
 -	$(INSTALL) -p -m644 $(STATICLIB) $(DESTDIR)$(libdir)/
+-	ln -s $(SHAREDLIB).$(VERSION) $(DESTDIR)$(libdir)/$(SONAME)
+-	ln -s $(SONAME) $(DESTDIR)$(libdir)/$(SHAREDLIB)
 +	$(INSTALL) -m4711 $(PROJECT) $(DESTDIR)$(libexecdir)/$(PROJECT)/$(PROJECT)
 +	$(INSTALL) -m644 $(PROJECT).h $(DESTDIR)$(includedir)/$(PROJECT).h
 +	$(INSTALL) -m755 $(SHAREDLIB) $(DESTDIR)$(libdir)/$(SHAREDLIB).$(VERSION)
 +	$(INSTALL) -m644 $(STATICLIB) $(DESTDIR)$(libdir)/$(STATICLIB)
- 	ln -s $(SHAREDLIB).$(VERSION) $(DESTDIR)$(libdir)/$(SONAME)
- 	ln -s $(SONAME) $(DESTDIR)$(libdir)/$(SHAREDLIB)
++	ln -sf $(SHAREDLIB).$(VERSION) $(DESTDIR)$(libdir)/$(SONAME)
++	ln -sf $(SONAME) $(DESTDIR)$(libdir)/$(SHAREDLIB)
  
  clean:
 -	$(RM) $(TARGETS) iface.o iface.os core *~
