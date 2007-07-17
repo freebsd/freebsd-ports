@@ -1,6 +1,16 @@
 --- src/playaudio.cpp~	Fri Apr 13 19:36:27 2007
-+++ src/playaudio.cpp	Sat Jun  2 20:51:00 2007
-@@ -38,7 +38,10 @@
++++ src/playaudio.cpp	2007-07-17 01:11:15 +0200
+@@ -19,7 +19,9 @@
+ #ifdef HAVE_LIB_AO
+ #include <stdio.h>
+ #include <ao/ao.h>
++extern "C" {
+ #include <ffmpeg/avcodec.h>
++}
+ #include "playaudio.h"
+ 
+ #define MIN_BUFFER_SAMPLES (1536*6)
+@@ -38,7 +40,10 @@
    const uint8_t *d=(const uint8_t*)data;
  
    while (len>0) {
