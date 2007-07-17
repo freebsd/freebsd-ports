@@ -7,7 +7,7 @@
 
 PORTNAME=	syncterm
 PORTVERSION=	0.9.${PORTVER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,8 +27,6 @@ PORTVER=	20070704
 OPTIONS=	X11	"Build with X11 support"	ON \
 		SDL	"Build with SDL support"	ON \
 		DEBUG	"Build a debug version"		OFF
-
-PLIST_FILES=	bin/syncterm
 
 .include <bsd.port.pre.mk>
 
@@ -51,6 +49,10 @@ MAKE_ARGS+=	RELEASE=1
 .endif
 
 do-install:
+	${MKDIR} ${DESKTOPDIR}/
+	${MKDIR} ${PREFIX}/share/icons/hicolor/64x64/apps/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/syncterm.png ${PREFIX}/share/icons/hicolor/64x64/apps/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/syncterm.desktop ${DESKTOPDIR}/
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/gcc.freebsd.exe.release/syncterm ${PREFIX}/bin/
 
 .include <bsd.port.post.mk>
