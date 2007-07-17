@@ -35,10 +35,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib F77="${F77}"
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-WANT_FORTRAN=	yes #dummy but future use
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 .include <bsd.port.pre.mk>
 
