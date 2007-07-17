@@ -1,0 +1,11 @@
+--- cs/Makefile.orig	Thu May  3 08:21:03 2007
++++ cs/Makefile	Tue Jul 17 17:01:16 2007
+@@ -33,7 +33,7 @@
+ 	   test_each_array.cs test_name.cs test_with.cs test_numbers.cs \
+ 	   test_splice.cs test_joo.cs test_first_last.cs test_abs_max_min.cs \
+ 	   test_comma.cs test_macro_set.cs test_func.cs test_escape.cs \
+-	   test_uvar.cs test_crc.cs
++	   test_uvar.cs
+ 
+ 
+ all: $(TARGETS)
