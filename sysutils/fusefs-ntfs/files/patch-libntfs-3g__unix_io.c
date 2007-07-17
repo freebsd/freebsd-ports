@@ -1,5 +1,5 @@
---- libntfs-3g/unix_io.c.orig	Tue Dec 12 20:16:43 2006
-+++ libntfs-3g/unix_io.c	Thu May  3 22:27:13 2007
+--- libntfs-3g/unix_io.c.orig	Fri Jun  8 23:35:33 2007
++++ libntfs-3g/unix_io.c	Mon Jul 16 07:58:02 2007
 @@ -54,6 +54,22 @@
  #include <linux/fd.h>
  #endif
@@ -264,12 +264,11 @@
  
  	if (!NDevOpen(dev)) {
  		errno = EBADF;
-@@ -155,14 +325,21 @@
- 	}
- 	if (NDevDirty(dev))
- 		fsync(DEV_FD(dev));
+@@ -160,12 +330,19 @@
+ 			return -1;
+ 		}
+ 
 +#if USE_LOCK
- 	/* Release exclusive (mandatory) lock on the whole device. */
  	memset(&flk, 0, sizeof(flk));
  	flk.l_type = F_UNLCK;
  	flk.l_whence = SEEK_SET;
@@ -277,18 +276,16 @@
 -	if (fcntl(DEV_FD(dev), F_SETLK, &flk))
 +
 +	if (!NDevBlock(dev) && fcntl(DEV_FD(dev), F_SETLK, &flk))
- 		ntfs_log_perror("ntfs_device_unix_io_close: Warning: Could not "
--				"unlock %s", dev->d_name);
-+			"unlock %s", dev->d_name);
+ 		ntfs_log_perror("Could not unlock %s", dev->d_name);
 +#endif
 +#if USE_UBLIO
 +	if (DEV_HANDLE(dev)->ublio_fh)
 +		ublio_close(DEV_HANDLE(dev)->ublio_fh);
 +#endif
- 	/* Close the file descriptor and clear our open flag. */
- 	if (close(DEV_FD(dev)))
+ 	if (close(DEV_FD(dev))) {
+ 		ntfs_log_perror("Failed to close device %s", dev->d_name);
  		return -1;
-@@ -185,10 +362,235 @@
+@@ -189,9 +366,234 @@
  static s64 ntfs_device_unix_io_seek(struct ntfs_device *dev, s64 offset,
  		int whence)
  {
@@ -325,8 +322,8 @@
 +#else
  	return lseek(DEV_FD(dev), offset, whence);
 +#endif
-+}
-+
+ }
+ 
 +#if USE_ALIGNED_IO
 +
 +#if USE_UBLIO
@@ -408,9 +405,9 @@
 +	if (nr > count)
 +		nr = count;
 +	return nr;
- }
- 
- /**
++}
++
++/**
 + * aligned_pwrite - Perform an aligned positioned write from the device
 + */
 +static s64 aligned_pwrite(struct ntfs_device *dev, void *buf, s64 count, s64 offset)
@@ -520,11 +517,10 @@
 +
 +#endif
 +
-+/**
+ /**
   * ntfs_device_unix_io_read - Read from the device, from the current location
   * @dev:
-  * @buf:
-@@ -201,6 +603,29 @@
+@@ -205,6 +607,29 @@
  static s64 ntfs_device_unix_io_read(struct ntfs_device *dev, void *buf,
  		s64 count)
  {
@@ -554,7 +550,7 @@
  	return read(DEV_FD(dev), buf, count);
  }
  
-@@ -222,6 +647,28 @@
+@@ -226,6 +651,28 @@
  		return -1;
  	}
  	NDevSetDirty(dev);
@@ -583,7 +579,7 @@
  	return write(DEV_FD(dev), buf, count);
  }
  
-@@ -239,6 +686,13 @@
+@@ -243,6 +690,13 @@
  static s64 ntfs_device_unix_io_pread(struct ntfs_device *dev, void *buf,
  		s64 count, s64 offset)
  {
@@ -597,7 +593,7 @@
  	return pread(DEV_FD(dev), buf, count, offset);
  }
  
-@@ -261,6 +715,13 @@
+@@ -265,6 +719,13 @@
  		return -1;
  	}
  	NDevSetDirty(dev);
@@ -611,13 +607,10 @@
  	return pwrite(DEV_FD(dev), buf, count, offset);
  }
  
-@@ -275,7 +736,16 @@
- static int ntfs_device_unix_io_sync(struct ntfs_device *dev)
- {
+@@ -281,6 +742,13 @@
+ 	int res = 0;
+ 	
  	if (!NDevReadOnly(dev)) {
--		int res = fsync(DEV_FD(dev));
-+		int res;
-+
 +#if USE_UBLIO
 +		if (DEV_HANDLE(dev)->ublio_fh) {
 +			res = ublio_fsync(DEV_HANDLE(dev)->ublio_fh);
@@ -625,7 +618,6 @@
 +				return res;
 +		}
 +#endif
-+		res = fsync(DEV_FD(dev));
- 		if (!res)
- 			NDevClearDirty(dev);
- 		return res;
+ 		res = fsync(DEV_FD(dev));
+ 		if (res)
+ 			ntfs_log_perror("Failed to sync device %s", dev->d_name);
