@@ -5,8 +5,7 @@
 # Submit missing XDG-file locations to kde@freebsd.org!
 
 XDG_CONFIG_DIRS=\
-${XDG_CONFIG_DIRS}:/etc/xdg:%%LOCALBASE%%/etc/xdg:%%X11BASE%%/etc/xdg:\
-%%LOCALBASE%%/etc/xdg/xfce4
+${XDG_CONFIG_DIRS}:/etc/xdg:%%LOCALBASE%%/etc/xdg:%%LOCALBASE%%/etc/xdg/xfce4
 
 if [ %%KDE_PREFIX%% != %%LOCALBASE%% ]; then
     XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS}:%%KDE_PREFIX%%/etc/xdg
@@ -15,8 +14,7 @@ fi
 export XDG_CONFIG_DIRS
 
 XDG_DATA_DIRS=\
-${XDG_DATA_DIRS}:/usr/share:%%LOCALBASE%%/share:%%LOCALBASE%%/share/gnome:\
-%%X11BASE%%/share:%%X11BASE%%/share/gnome
+${XDG_DATA_DIRS}:/usr/share:%%LOCALBASE%%/share:%%LOCALBASE%%/share/gnome
 
 if [ %%KDE_PREFIX%% != %%LOCALBASE%% ]; then
     XDG_DATA_DIRS=${XDG_DATA_DIRS}:%%KDE_PREFIX%%/share
