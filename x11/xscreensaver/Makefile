@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.02
+PORTVERSION=	5.03
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
@@ -81,7 +81,7 @@ MAN6=	anemone.6 anemotaxis.6 antinspect.6 antmaze.6 antspotlight.6 \
 	triangle.6 truchet.6 twang.6 vermiculate.6 vidwhacker.6 vines.6 \
 	wander.6 webcollage.6 whirlwindwarp.6 whirlygig.6 worm.6 wormhole.6 \
 	xanalogtv.6 xflame.6 xjack.6 xlyap.6 xmatrix.6 xrayswarm.6 \
-	xspirograph.6 xsublim.6 zoom.6 \
+	xspirograph.6 xsublim.6 zoom.6 cwaves.6 glcells.6 voronoi.6 \
 	xscreensaver-gl-helper.6
 
 .if ${ARCH} == "amd64"
