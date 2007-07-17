@@ -14,12 +14,10 @@ MASTER_SITES=	SF
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Read and manipulate raw images from digital cameras
 
-BUILD_DEPENDS=	gimp>0:${PORTSDIR}/graphics/gimp
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
 		lcms.1:${PORTSDIR}/graphics/lcms
-RUN_DEPENDS=	gimp>0:${PORTSDIR}/graphics/gimp
 
 GCONF_SCHEMAS=	${PORTNAME}.schemas
 GNU_CONFIGURE=	yes
@@ -41,6 +39,13 @@ CONFIGURE_ARGS+=--with-libexif
 LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
 CONFIGURE_ARGS+=--with-exiv2
 .endif
+.endif
+.ifndef WITHOUT_GIMP
+LIB_DEPENDS+=	gimp-2.0.200:${PORTSDIR}/graphics/gimp-app
+PLIST_SUB+=	GIMP=""
+.else
+CONFIGURE_ARGS+=--disable-gimp
+PLIST_SUB+=	GIMP="@comment "
 .endif
 
 MAN1=	ufraw.1
