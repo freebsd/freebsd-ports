@@ -9,7 +9,7 @@
 +	@echo OS = freebsd                    >> Makefile.incl
 +	@echo CC = ${CC}                      >> Makefile.incl
 +	@echo CFLAGS = ${CFLAGS}              >> Makefile.incl
-+	@echo FC = f77                        >> Makefile.incl
++	@echo FC = ${F77}                     >> Makefile.incl
 +	@echo FFLAGS = ${FFLAGS}              >> Makefile.incl
 +	@echo RM = /bin/rm -f                 >> Makefile.incl
 +	@echo OSDEFS =  -DLINUX -DNETWORKBYTEORDER       >> Makefile.incl

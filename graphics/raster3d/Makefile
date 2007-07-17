@@ -23,7 +23,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 BINARIES=	avs2ps balls rastep render ribbon rings3d rods normal3d
 SCRIPTS=	label3d stereo3d
 
-MAKE_ENV+=	FFLAGS="${FFLAGS}"
+USE_FORTRAN=	g77
 
 .if !defined(WITHOUT_IMAGEMAGICK)
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
