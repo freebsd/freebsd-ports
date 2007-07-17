@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	gnudatalanguage
-PORTVERSION=	0.8.11
-PORTREVISION=	7
+DISTVERSION=	0.9pre5
 CATEGORIES=	science lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 .if defined(BUILD_PYTHON_MODULE)
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 .endif
-DISTNAME=	gdl-${PORTVERSION}
+DISTNAME=	gdl-${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT?=	GDL, a free IDL compatible incremental compiler
@@ -82,7 +81,7 @@ CONFIGURE_ARGS+=--with-hdf=no
 .endif
 
 .if !defined(WITHOUT_PYTHON) || defined(BUILD_PYTHON_MODULE)
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/numarray:${PORTSDIR}/math/py-numarray
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/numarray:${PORTSDIR}/math/py-numarray \
 		${PYTHON_SITELIBDIR}/matplotlib:${PORTSDIR}/math/py-matplotlib
@@ -111,8 +110,9 @@ do-install:
 .if !defined(BUILD_PYTHON_MODULE)
 post-install:
 . if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/pro/* ${EXAMPLESDIR}
+	${MKDIR} ${EXAMPLESDIR}/testsuite
+	(cd ${WRKSRC}/src/pro && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
+	(cd ${WRKSRC}/testsuite && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/testsuite/)
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 . endif
 .endif
@@ -124,7 +124,8 @@ regression-test:	install
 	@${ECHO_CMD} 'print GDL.function("sin",(1,))' >> ${WRKDIR}/testgdl.py
 	${PYTHON_CMD} ${WRKDIR}/testgdl.py
 . else
-	@${ECHO_CMD} ".RUN ${EXAMPLESDIR}/test_suite.pro" > ${WRKDIR}/testgdl
+	@${ECHO_CMD} ".RUN ${EXAMPLESDIR}/testsuite/test_suite.pro"	\
+		> ${WRKDIR}/testgdl
 	@${ECHO_CMD} "exit" >> ${WRKDIR}/testgdl
 	${PREFIX}/bin/gdl < ${WRKDIR}/testgdl
 . endif
