@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	clearsilver
-PORTVERSION=	0.10.4
+PORTVERSION=	0.10.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.clearsilver.net/downloads/
 
@@ -37,6 +37,7 @@ MAN3=	cBroadcast.3 cCreate.3 cDestroy.3 cSignal.3 cWait.3 \
 	cgi_filehandle.3 cgi_init.3 cgi_neo_error.3 cgi_output.3 cgi_parse.3 \
 	cgi_redirect.3 cgi_redirect_uri.3 cgi_register_parse_cb.3 \
 	cgi_url_escape.3 cgi_url_escape_more.3 cgi_url_unescape.3 \
+	cgi_url_validate.3 \
 	cgi_vredirect.3 cgiwrap_getenv.3 cgiwrap_init_emu.3 cgiwrap_init_std.3 \
 	cgiwrap_iterenv.3 cgiwrap_putenv.3 cgiwrap_read.3 cgiwrap_write.3 \
 	cgiwrap_writef.3 cgiwrap_writevf.3 cs_destroy.3 cs_dump.3 cs_init.3 \
@@ -58,18 +59,9 @@ MAN3=	cBroadcast.3 cCreate.3 cDestroy.3 cSignal.3 cWait.3 \
 	hdf_write_file_atomic.3 hdf_write_string.3 mCreate.3 \
 	mDestroy.3 mLock.3 mUnlock.3 nerr_ignore.3 nerr_error_string.3 \
 	nerr_error_traceback.3 nerr_handle.3 nerr_init.3 nerr_log_error.3 \
-	nerr_match.3 nerr_pass.3 nerr_pass_ctx.3 nerr_raise.3 nerr_register.3 \
+	nerr_match.3 nerr_pass.3 nerr_pass_ctx.3 nerr_register.3 \
 	skipDelete.3 skipFreeList.3 skipInsert.3 skipNewList.3 skipNext.3 \
 	skipRelease.3 skipSearch.3 wdb_keys.3
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-PATCHDIR=	dont-patch
-PLIST_SUB+=	PTHREAD=""
-.else
-PLIST_SUB+=	PTHREAD="@comment "
-.endif
 
 post-patch:
 	@# Remove CFLAGS when building the python module, pydistfile is used
@@ -83,4 +75,4 @@ post-patch:
 	@${ECHO_CMD} "/* Dummy file */" > ${WRKSRC}/features.h
 	@${ECHO_CMD} "/* Dummy file */" > ${WRKSRC}/cgi/features.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
