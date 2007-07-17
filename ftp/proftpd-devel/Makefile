@@ -269,9 +269,6 @@ post-install:
 	@${INSTALL} -d ${EXAMPLESDIR}/
 	@cd ${WRKSRC}/doc/howto/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
 .endif
-.if !defined(WITHOUT_PAM)
-	@${CAT} ${PKGMESSAGE}
-.endif
 .if defined(WITH_CTRLS)
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpdctl ${PREFIX}/sbin/
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${MAN8PREFIX}/man/man8/
