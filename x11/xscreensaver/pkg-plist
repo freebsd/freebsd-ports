@@ -44,6 +44,7 @@ bin/xscreensaver-hacks/crystal
 bin/xscreensaver-hacks/cube21
 bin/xscreensaver-hacks/cubenetic
 bin/xscreensaver-hacks/cubestorm
+bin/xscreensaver-hacks/cwaves
 bin/xscreensaver-hacks/cynosure
 bin/xscreensaver-hacks/dangerball
 bin/xscreensaver-hacks/decayscreen
@@ -78,6 +79,7 @@ bin/xscreensaver-hacks/galaxy
 bin/xscreensaver-hacks/gears
 bin/xscreensaver-hacks/gflux
 bin/xscreensaver-hacks/glblur
+bin/xscreensaver-hacks/glcells
 bin/xscreensaver-hacks/gleidescope
 bin/xscreensaver-hacks/glforestfire
 bin/xscreensaver-hacks/glhanoi
@@ -120,6 +122,7 @@ bin/xscreensaver-hacks/lissie
 bin/xscreensaver-hacks/ljlatest
 bin/xscreensaver-hacks/lmorph
 bin/xscreensaver-hacks/loop
+bin/xscreensaver-hacks/m6502
 bin/xscreensaver-hacks/maze
 bin/xscreensaver-hacks/memscroller
 bin/xscreensaver-hacks/menger
@@ -195,6 +198,7 @@ bin/xscreensaver-hacks/twang
 bin/xscreensaver-hacks/vermiculate
 bin/xscreensaver-hacks/vidwhacker
 bin/xscreensaver-hacks/vines
+bin/xscreensaver-hacks/voronoi
 bin/xscreensaver-hacks/wander
 bin/xscreensaver-hacks/webcollage
 bin/xscreensaver-hacks/whirlwindwarp
@@ -253,6 +257,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/cube21.xml
 %%DATADIR%%/config/cubenetic.xml
 %%DATADIR%%/config/cubestorm.xml
+%%DATADIR%%/config/cwaves.xml
 %%DATADIR%%/config/cynosure.xml
 %%DATADIR%%/config/dangerball.xml
 %%DATADIR%%/config/decayscreen.xml
@@ -289,6 +294,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/gears.xml
 %%DATADIR%%/config/gflux.xml
 %%DATADIR%%/config/glblur.xml
+%%DATADIR%%/config/glcells.xml
 %%DATADIR%%/config/gleidescope.xml
 %%DATADIR%%/config/glforestfire.xml
 %%DATADIR%%/config/glhanoi.xml
@@ -331,6 +337,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/lissie.xml
 %%DATADIR%%/config/lmorph.xml
 %%DATADIR%%/config/loop.xml
+%%DATADIR%%/config/m6502.xml
 %%DATADIR%%/config/maze.xml
 %%DATADIR%%/config/memscroller.xml
 %%DATADIR%%/config/menger.xml
@@ -407,6 +414,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/vermiculate.xml
 %%DATADIR%%/config/vidwhacker.xml
 %%DATADIR%%/config/vines.xml
+%%DATADIR%%/config/voronoi.xml
 %%DATADIR%%/config/wander.xml
 %%DATADIR%%/config/webcollage.xml
 %%DATADIR%%/config/whirlwindwarp.xml
@@ -434,8 +442,8 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/glade/screensaver-snap.png
 %%DATADIR%%/glade/xscreensaver-demo.glade2
 @dirrmtry bin/xscreensaver-hacks
-@dirrm %%DATADIR%%/config
+@dirrmtry %%DATADIR%%/config
 @dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 @cwd %%LOCALBASE%%
 lib/X11/app-defaults/XScreenSaver
