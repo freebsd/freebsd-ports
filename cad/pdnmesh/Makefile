@@ -35,10 +35,7 @@ BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}" BLAS_LIBS="${BLAS}" LAPACK_LIBS="${LAPACK}"
 USE_XLIB=	yes
 USE_GL=		yes

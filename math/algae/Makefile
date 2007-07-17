@@ -23,10 +23,7 @@ PLIST_SUB=	ALGAE_VERSION=${ALGAE_VERSION}
 MAN1=	algae.1
 INFO=	algae
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}" LDFLAGS="${LDFLAGS} -L`${CAT} ${WRKSRC}/LIBDIR`/../../.. -L`${CAT} ${WRKSRC}/LIBDIR` -L${LOCALBASE}/lib"
 FORTRANLIBS=	gfortranbegin gfortran
 
