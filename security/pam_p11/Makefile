@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_p11
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
