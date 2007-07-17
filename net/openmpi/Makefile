@@ -39,10 +39,7 @@ MANPREFIX=	${TARGETDIR}/${MPIDIR}
 
 .include <bsd.port.pre.mk>
 
-WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 CONFIGURE_ENV+=	F77=${F77} FC=${FC}
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
