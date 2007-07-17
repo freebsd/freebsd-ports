@@ -33,10 +33,7 @@ DISTNAME=	R-${PORTVERSION}
 MAINTAINER=	eric+fbports@vangyzen.net
 COMMENT=	The standalone math library from R
 
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-WANT_FORTRAN=	yes #dummy but future use
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
