@@ -13,6 +13,7 @@ bin/pkcs15-tool
 etc/opensc.conf-sample
 include/opensc/asn1.h
 include/opensc/cardctl.h
+include/opensc/compression.h
 include/opensc/emv.h
 include/opensc/errors.h
 include/opensc/log.h
@@ -20,11 +21,6 @@ include/opensc/opensc.h
 include/opensc/pkcs11.h
 include/opensc/pkcs15-init.h
 include/opensc/pkcs15.h
-include/opensc/rsaref/win32.h
-include/opensc/rsaref/unix.h
-include/opensc/rsaref/pkcs11t.h
-include/opensc/rsaref/pkcs11f.h
-include/opensc/rsaref/pkcs11.h
 include/opensc/scconf.h
 include/opensc/types.h
 include/opensc/ui.h
@@ -47,12 +43,16 @@ lib/libscconf.a
 lib/libscconf.la
 lib/libscconf.so
 lib/libscconf.so.2
+lib/onepin-opensc-pkcs11.a
+lib/onepin-opensc-pkcs11.la
+lib/onepin-opensc-pkcs11.so
 lib/opensc-pkcs11.a
 lib/opensc-pkcs11.la
 lib/opensc-pkcs11.so
 lib/pkcs11-spy.a
 lib/pkcs11-spy.la
 lib/pkcs11-spy.so
+%%DATADIR%%/asepcos.profile
 %%DATADIR%%/cardos.profile
 %%DATADIR%%/cyberflex.profile
 %%DATADIR%%/flex.profile
@@ -65,6 +65,5 @@ lib/pkcs11-spy.so
 %%DATADIR%%/pkcs15.profile
 %%DATADIR%%/setcos.profile
 %%DATADIR%%/starcos.profile
-@dirrm include/opensc/rsaref
 @dirrm include/opensc
 @dirrm %%DATADIR%%

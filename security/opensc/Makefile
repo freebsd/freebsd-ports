@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opensc
-DISTVERSION=	0.11.2-pre3
+DISTVERSION=	0.11.3
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
@@ -14,8 +14,8 @@ MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Libraries and utilities to access smart cards
 
-OPTIONS=	OPENCT "Install openct for direct OpenCT backend support" on \
-		PCSC "Install pcsc-lite for PC/SC backend support" off \
+OPTIONS=	OPENCT "Enable direct OpenCT backend support" on \
+		PCSC "Enable PC/SC backend support" off \
 		SIGNER "Install signer browser plugin" off
 
 USE_AUTOTOOLS=	libltdl:15
@@ -67,12 +67,16 @@ MAN5=		pkcs15-profile.5
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_OPENCT) || exists(${LOCALBASE}/lib/libopenct.so)
+.if !defined(WITHOUT_OPENCT)
 LIB_DEPENDS+=	openct.1:${PORTSDIR}/security/openct
+.else
+CONFIGURE_ARGS+=--disable-openct
 .endif
 
-.if defined(WITH_PCSC) || exists(${LOCALBASE}/lib/libpcsclite.so)
+.if defined(WITH_PCSC)
 LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+.else
+CONFIGURE_ARGS+=--disable-pcsc-lite
 .endif
 
 .if defined(WITH_SIGNER) || exists(${LOCALBASE}/lib/libassuan.a)
