@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	p7zip
-PORTVERSION=	4.48
+PORTVERSION=	4.49
 CATEGORIES=	archivers
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}_${PORTVERSION}_src_all
+DISTNAME=	${PORTNAME}_${DISTVERSION}_src_all
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	File archiver with high compression ratio
@@ -62,9 +62,7 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}/
-	${CP} -R ${WRKSRC}/DOCS/ ${DOCSDIR}/
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/
-	${CHMOD} -R u=rwX,go=rX ${DOCSDIR}/
+	@cd ${WRKSRC}/DOCS/&&${COPYTREE_SHARE} \* ${DOCSDIR}/
 .endif
 	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/man1/,} ${MAN1PREFIX}/man/man1/
 
