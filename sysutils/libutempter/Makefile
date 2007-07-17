@@ -6,6 +6,7 @@
 
 PORTNAME=	libutempter
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.altlinux.org/pub/people/ldv/utempter/
 
