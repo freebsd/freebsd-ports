@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.4.3
-PORTREVISION?=	2
+PORTVERSION=	1.4.4
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.2/:bookhtml \
@@ -28,7 +27,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-ssl
 
-USE_RC_SUBR=	svnserve.sh
+USE_RC_SUBR=	svnserve
 
 MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnsync.1 svnversion.1
 MAN5=		svnserve.conf.5
@@ -196,10 +195,10 @@ CONFIGURE_ARGS+=--with-apr=${APR_APU_DIR}/${APR_CONFIG} \
 		--with-apr-util=${APR_APU_DIR}/${APU_CONFIG}
 
 .if defined(WITH_SVNSERVE_WRAPPER)
-PLIST_SUB+=	SVNSERVE_WRAPPER=""
+PLIST_SUB+=	SVNSERVE_WRAPPER="" SVNSERVE_BIN_EXT=".bin"
 EXTRA_PATCHES=	${PATCHDIR}/build-outputs.mk.patch
 .else
-PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
+PLIST_SUB+=	SVNSERVE_WRAPPER="@comment " SVNSERVE_BIN_EXT=""
 .endif
 
 .if !defined(NOPORTDOCS) && defined(WITH_BOOK)
@@ -329,10 +328,10 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Many useful scripts will be installed into ${PREFIX}/share/subversion"
 
-#post-extract:
-#	@${RM} -r ${WRKSRC}/neon
-#	@${RM} -r ${WRKSRC}/apr
-#	@${RM} -r ${WRKSRC}/apr-util
+post-extract:
+	@${RM} -rf ${WRKSRC}/neon
+	@${RM} -rf ${WRKSRC}/apr
+	@${RM} -rf ${WRKSRC}/apr-util
 
 post-patch:
 .if ${PREFIX} != "/usr"
