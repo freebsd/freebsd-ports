@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hope
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.soi.city.ac.uk/~ross/Hope/
 DISTNAME=	${PORTNAME}
