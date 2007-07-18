@@ -10565,6 +10565,7 @@ p5-Perl-Critic	ports/textproc/p5-Perl-Critic
 p5-Perl-MinimumVersion	ports/textproc/p5-Perl-MinimumVersion
 p5-Perl6-Export	ports/devel/p5-Perl6-Export
 p5-Perl6-Form	ports/devel/p5-Perl6-Form
+p5-Perl6-Junction	ports/devel/p5-Perl6-Junction
 p5-Perl6-Subs	ports/lang/p5-Perl6-Subs
 p5-PerlCryptLib	ports/security/p5-PerlCryptLib
 p5-PerlIO-eol	ports/devel/p5-PerlIO-eol
