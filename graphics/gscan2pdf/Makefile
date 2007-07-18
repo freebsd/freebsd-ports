@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.14
 CATEGORIES=	graphics
 MASTER_SITES=	SFE
 
@@ -22,6 +22,7 @@ RUN_DEPENDS=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
 		p5-Gtk2-Ex-PodViewer>=0.17:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-PodViewer \
 		p5-Gtk2-Ex-Simple-List>=0.50:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-Simple-List \
 		gocr:${PORTSDIR}/graphics/gocr \
+		tesseract:${PORTSDIR}/graphics/tesseract \
 		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
 #		xdg-email:${PORTSDIR}/devel/xdg-utils
 
