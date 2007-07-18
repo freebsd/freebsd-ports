@@ -1,0 +1,6 @@
+recordMyDesktop produces a file(default out.ogg) that contains a video
+and audio recording of a desktop session. The default behavior of 
+recording is to mark areas that have changed(through libxdamage) and
+update the frame. 
+
+WWW: http://recordmydesktop.iovar.org/
