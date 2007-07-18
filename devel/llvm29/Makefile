@@ -10,7 +10,7 @@ PORTVERSION=	1.9
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
 GNU_CONFIGURE=	yes
