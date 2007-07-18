@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_DataObject
-PORTVERSION=	1.8.5
+PORTVERSION=	1.8.7
 CATEGORIES=	databases pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -23,12 +23,17 @@ EXAMPLES=	example.ini
 _EXAMPLESDIR=	docs
 
 LATEST_LINK=	pear-${PORTNAME}
-OPTIONS=	PEAR_VALIDATE "PEAR::Validate support" off
+OPTIONS=	PEAR_MDB2 "PEAR::MDB2 support" off \
+		PEAR_VALIDATE "PEAR::Validate support" off
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|@version@|${PORTVERSION}|" ${WRKSRC}/DataObject.php
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_PEAR_MDB2)
+RUN_DEPENDS+=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
+.endif
 
 .if defined(WITH_PEAR_VALIDATE)
 RUN_DEPENDS+=	${PEARDIR}/Validate.php:${PORTSDIR}/devel/pear-Validate
