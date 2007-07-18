@@ -54,6 +54,9 @@ etc/archmage/arch.conf
 %%PYTHON_SITELIBDIR%%/archmod/__init__.py
 %%PYTHON_SITELIBDIR%%/archmod/__init__.pyc
 %%PYTHON_SITELIBDIR%%/archmod/__init__.pyo
+%%PYTHON_SITELIBDIR%%/archmod/htmltotext.py
+%%PYTHON_SITELIBDIR%%/archmod/htmltotext.pyc
+%%PYTHON_SITELIBDIR%%/archmod/htmltotext.pyo
 %%PYTHON_SITELIBDIR%%/archmod/mod_chm.py
 %%PYTHON_SITELIBDIR%%/archmod/mod_chm.pyc
 %%PYTHON_SITELIBDIR%%/archmod/mod_chm.pyo
