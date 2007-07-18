@@ -83,6 +83,7 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/plugins/export/PluginExportHTML.py
 %%DATADIR%%/lib/plugins/export/PluginExportPDF.py
 %%DATADIR%%/lib/plugins/export/PluginExportXML.py
+%%DATADIR%%/lib/plugins/export/PluginExportiPod.py
 %%DATADIR%%/lib/plugins/export/__init__.py
 %%DATADIR%%/lib/plugins/imp/CSV.py
 %%DATADIR%%/lib/plugins/imp/__init__.py
@@ -95,11 +96,14 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/plugins/movie/PluginMovieCineteka.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieCulturalia.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieDVDEmpire.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieDVDPalace.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieE-Pipoca.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieFDb.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieFilmAffinity.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieFilmDb.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieFilmeVonAZ.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieFilmweb.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieIMDB-de.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieIMDB-es.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieIMDB.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieKinoDe.py
@@ -111,6 +115,7 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/plugins/movie/PluginMovieStopklatka.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieTanukiAnime.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieWP.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieZelluloid.py
 %%DATADIR%%/lib/plugins/movie/__init__.py
 %%DATADIR%%/lib/preferences.py
 %%DATADIR%%/lib/quick_filter.py
@@ -119,6 +124,20 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/version.py
 %%DATADIR%%/lib/view.py
 %%DATADIR%%/lib/widgets.py
+share/locale/bg/LC_MESSAGES/griffith.mo
+share/locale/cs/LC_MESSAGES/griffith.mo
+share/locale/da/LC_MESSAGES/griffith.mo
+share/locale/de/LC_MESSAGES/griffith.mo
+share/locale/el/LC_MESSAGES/griffith.mo
+share/locale/es/LC_MESSAGES/griffith.mo
+share/locale/fr/LC_MESSAGES/griffith.mo
+share/locale/it/LC_MESSAGES/griffith.mo
+share/locale/nl/LC_MESSAGES/griffith.mo
+share/locale/pl/LC_MESSAGES/griffith.mo
+share/locale/pt/LC_MESSAGES/griffith.mo
+share/locale/pt_BR/LC_MESSAGES/griffith.mo
+share/locale/sv/LC_MESSAGES/griffith.mo
+share/locale/zh_CN/LC_MESSAGES/griffith.mo
 share/pixmaps/griffith.png
 share/pixmaps/griffith.xpm
 @dirrm %%DATADIR%%/export_templates/csv
