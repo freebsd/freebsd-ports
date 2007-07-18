@@ -17,6 +17,10 @@ COMMENT=	Jabber Conferencing module
 
 LIB_DEPENDS=	jabberd.1:${PORTSDIR}/net-im/jabber
 
+BROKEN=		old jabber API (net-im/jabber switched to c++)
+DEPRECATED=	Development stalled
+EXPIRATION_DATE=	2007-10-20
+
 USE_GMAKE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/jabber \

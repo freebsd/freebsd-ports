@@ -18,6 +18,10 @@ COMMENT=	Jabber Yahoo Transport module
 
 LIB_DEPENDS=	jabberd.1:${PORTSDIR}/net-im/jabber
 
+BROKEN=		old jabber API (net-im/jabber switched to c++)
+DEPRECATED=	development stalled
+EXPIRATION_DATE=	2007-10-20
+
 USE_GNOME=	glib12
 USE_GMAKE=	yes
 USE_ICONV=	yes

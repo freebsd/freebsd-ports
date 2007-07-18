@@ -18,6 +18,10 @@ COMMENT=	Jabber User Directory module
 
 LIB_DEPENDS=	jabberd.1:${PORTSDIR}/net-im/jabber
 
+BROKEN=		old jabber API (net-im/jabber switched to c++)
+DEPRECATED=	development stalled
+EXPIRATION_DATE=	2007-10-20
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-ansi-c
 
 USE_GMAKE=	yes
