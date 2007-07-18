@@ -7,7 +7,7 @@
 
 PORTNAME=	morla
 PORTVERSION=	0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://www2.autistici.org/bakunin/morla/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www2.autistici.org/bakunin/morla/ \
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A RDF editor
 
-LIB_DEPENDS=	nxml.0:${PORTSDIR}/textproc/libnxml \
+LIB_DEPENDS=	nxml.18:${PORTSDIR}/textproc/libnxml \
 		rdf.0:${PORTSDIR}/textproc/redland
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
