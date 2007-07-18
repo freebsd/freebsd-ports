@@ -1,5 +1,5 @@
---- jsm/sessions.c.orig	Fri Feb  9 11:27:52 2007
-+++ jsm/sessions.c	Fri Feb  9 11:45:32 2007
+--- jsm/sessions.cc.orig	Fri Feb  9 11:27:52 2007
++++ jsm/sessions.cc	Fri Feb  9 11:45:32 2007
 @@ -105,7 +105,9 @@
   */
  static void _js_create_session_id(char resultbuffer[9], xht existing_sessions) {

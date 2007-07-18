@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jabber
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 PORTEPOCH=	1
 CATEGORIES=	net-im ipv6
 MASTER_SITES=	http://download.jabberd.org/jabberd14/
@@ -19,14 +19,15 @@ COMMENT=	XMPP/Jabber server daemon
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth-hard \
 		popt.0:${PORTSDIR}/devel/popt \
 		idn.16:${PORTSDIR}/dns/libidn \
-		expat.6:${PORTSDIR}/textproc/expat2
+		expat.6:${PORTSDIR}/textproc/expat2 \
+		tasn1.3:${PORTSDIR}/security/libtasn1 \
+		gnutls.13:${PORTSDIR}/security/gnutls
 
 OPTIONS=	IPV6 "Enable IPv6 support" off \
 		MYSQL "Build with MySQL support" off \
 		PGSQL "Build with PostgreSQL support" off
 
 USE_RC_SUBR=	jabber
-USE_OPENSSL=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
@@ -48,8 +49,8 @@ JABBER_SPOOLDIR="/var/spool/jabberd"
 JABBER_LOGDIR=	"/var/log/jabberd"
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --localstatedir=/var --enable-ssl \
-		--with-ssl-legacy=${OPENSSLBASE} --sysconfdir=${JABBER_ETCDIR} \
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --localstatedir=/var \
+		--sysconfdir=${JABBER_ETCDIR} \
 		--includedir=${TARGETDIR}/include/jabber \
 		--libdir=${TARGETDIR}/lib/jabber
 
