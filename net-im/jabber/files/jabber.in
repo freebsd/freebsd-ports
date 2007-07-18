@@ -27,8 +27,7 @@ required_files=%%JABBER_ETCDIR%%/jabber.xml
 : ${jabber_group="%%JABBER_GROUP%%"}
 
 command=%%PREFIX%%/bin/jabberd14
-command_args="${jabberd_flags}"
-pidfile=${jabberd_pidfile}
+pidfile=${jabber_pidfile}
 extra_commands="reload"
 
 run_rc_command "$1"
