@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xterm
-PORTVERSION=	225
-PORTREVISION=	1
+PORTVERSION=	227
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		http://voodoo.bawue.com/download/
