@@ -6,7 +6,7 @@
 
 PORTNAME=	newsbeuter
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://synflood.at/newsbeuter/
 
@@ -14,7 +14,7 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	An RSS feed reader for the text console
 
 LIB_DEPENDS=	stfl.0:${PORTSDIR}/devel/stfl \
-		nxml.0:${PORTSDIR}/textproc/libnxml \
+		nxml.18:${PORTSDIR}/textproc/libnxml \
 		mrss.0:${PORTSDIR}/textproc/libmrss \
 
 USE_GMAKE=	yes
