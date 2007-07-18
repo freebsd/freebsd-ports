@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fga
-PORTVERSION=	1.0.4
+PORTVERSION=	1.3.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,19 +17,20 @@ COMMENT=	Fast Genetic Algorithm library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_GMAKE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
-EXAMPLES=	graph_gen maxbit_mt maxbit_st tsp tsp_bf
+EXAMPLES=	graph_gen maxbit tsp tsp_bf
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
 do-install:
-	${INSTALL_DATA}	${WRKSRC}/fga.hpp ${PREFIX}/include
+	${INSTALL_DATA}	${WRKSRC}/include/fga.hpp ${PREFIX}/include
 	${INSTALL_PROGRAM} ${EXAMPLES:S,^,${WRKSRC}/,} ${PREFIX}/bin
 
 .if !defined(NOPORTDOCS)
