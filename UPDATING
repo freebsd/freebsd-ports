@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070718:
+  AFFECTS: user of devel/llvm
+  AUTHOR: brooks@freebsd.org
+
+  The llvm bytecode and .ll formats have changed as have numerious
+  internal APIs.  Existing users should consult the release notes.
+
+    http://llvm.org/releases/2.0/docs/ReleaseNotes.html
+
 20070716:
   AFFECTS: users of editors/emacs
   AUTHOR: nobutaka@FreeBSD.org
