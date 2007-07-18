@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	archmage
-PORTVERSION=	0.0.8
+PORTVERSION=	0.1.9
 CATEGORIES=	textproc python
 MASTER_SITES=	SF
-DIST_SUBDIR=	rerolled
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Extensible reader/decompiler of files in CHM format
@@ -17,12 +16,20 @@ COMMENT=	Extensible reader/decompiler of files in CHM format
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/chm/chm.py:${PORTSDIR}/textproc/pychm
 
 NO_BUILD=	yes
+USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+MAN1=	${PORTNAME}.1
+
+post-extract:
+	@${GUNZIP_CMD} ${WRKSRC}/${PORTNAME}.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,/usr/share,${PREFIX}/share," ${WRKSRC}/arch.conf
+	@${REINPLACE_CMD} -e "s,/usr/share/archmage,${DATADIR}," ${WRKSRC}/arch.conf
 	@${REINPLACE_CMD} -e "s,/etc,${PREFIX}/etc," ${WRKSRC}/archmod/CHM.py
-	@${REINPLACE_CMD} -e "s,/etc,etc," ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e "s,/etc,etc,;/archmage.1/d" ${WRKSRC}/setup.py
+
+post-install:
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>
