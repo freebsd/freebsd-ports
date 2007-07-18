@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b42e8c32-34f6-11dc-9bc9-001921ab2fa4">
+    <topic>linux-flashplugin -- critical vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><gt>9.0</gt><le>9.0r45</le></range>
+	<range><gt>8.0</gt><le>8.0r34</le></range>
+	<range><le>7.0r69</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb07-12.html">
+	  <p>Critical vulnerabilities have been identified in
+	    Adobe Flash Player that could allow an attacker who
+	    successfully exploits these potential vulnerabilities
+	    to take control of the affected system. A malicious
+	    SWF must be loaded in Flash Player by the user for
+	    an attacker to exploit these potential vulnerabilities.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-2022</cvename>
+      <cvename>CVE-2007-3456</cvename>
+      <cvename>CVE-2007-3457</cvename>
+    </references>
+    <dates>
+      <discovery>2007-07-10</discovery>
+      <entry>2007-07-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7fadc049-2ba0-11dc-9377-0016179b2dd5">
     <topic>wireshark -- Multiple problems</topic>
     <affects>
