@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	griffith
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.9.3.1
 CATEGORIES=	deskutils
 MASTER_SITES=	CENKES BERLIOS
 
 MAINTAINER=	infofarmer@FreeBSD.org
-COMMENT=	A film collection manager
+COMMENT=	Lightweight film collection manager
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23 \
 		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab \
@@ -20,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py
 		${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml \
 		py*-sqlalchemy>=0.3.3:${PORTSDIR}/databases/py-sqlalchemy
 
+USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2 pygnomeextras
 USE_GMAKE=	yes
@@ -30,6 +30,7 @@ MANLANG=	"" pl pt
 post-patch:
 	@${FIND} ${WRKSRC}/ -name Makefile |\
 		${XARGS} ${REINPLACE_CMD} -e '/^PREFIX/d' -e '/^MANDIR/s|=.*|=${MANPREFIX}/man|'
+	@${REINPLACE_CMD} -e '/^LANGUAGES=/s|find.*|cd i18n/\&\&ls -d *)|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/share/fonts|${X11BASE}/lib/X11/fonts|' ${WRKSRC}/${PORTNAME}
 
 .include <bsd.port.mk>
