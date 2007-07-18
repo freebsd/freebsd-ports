@@ -1,4 +1,6 @@
 bin/FBReader
+lib/libzlcore.so.0
+lib/libzltext.so.0
 share/FBReader/default/config.xml
 share/FBReader/default/external.xml
 share/FBReader/default/keymap.xml
@@ -10,12 +12,12 @@ share/FBReader/formats/xhtml/xhtml-symbol.ent
 share/FBReader/help/MiniHelp.en.fb2
 share/FBReader/help/MiniHelp.fr.fb2
 share/FBReader/help/MiniHelp.ru.fb2
-share/FBReader/hyphenationPatterns.zip
+share/FBReader/help/MiniHelp.uk.fb2
 share/FBReader/resources/en.xml
 share/FBReader/resources/fr.xml
 share/FBReader/resources/ru.xml
+share/FBReader/resources/uk.xml
 share/applications/FBReader.desktop
-share/pixmaps/FBReader/TOCHANGE
 share/pixmaps/FBReader/addbook.png
 share/pixmaps/FBReader/bookinfo.png
 share/pixmaps/FBReader/books.png
@@ -70,10 +72,13 @@ share/zlibrary/encodings/ISO-8859-9
 share/zlibrary/encodings/KOI8-R
 share/zlibrary/encodings/windows-1251
 share/zlibrary/encodings/windows-1252
+share/zlibrary/hyphenationPatterns.zip
 share/zlibrary/keynames-qt4.xml
 share/zlibrary/resources/en.xml
 share/zlibrary/resources/fr.xml
 share/zlibrary/resources/ru.xml
+share/zlibrary/resources/uk.xml
+share/zlibrary/ui/zlui-qt4.so
 @dirrm share/FBReader/default
 @dirrm share/FBReader/formats/html
 @dirrm share/FBReader/formats/xhtml
@@ -84,5 +89,6 @@ share/zlibrary/resources/ru.xml
 @dirrm share/pixmaps/FBReader
 @dirrm share/zlibrary/encodings
 @dirrm share/zlibrary/resources
+@dirrm share/zlibrary/ui
 @dirrm share/zlibrary
 @dirrmtry share/applications

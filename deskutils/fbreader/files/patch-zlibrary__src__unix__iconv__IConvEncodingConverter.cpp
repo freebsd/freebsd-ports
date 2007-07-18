@@ -1,5 +1,5 @@
---- ./zlibrary/src/unix/iconv/IConvEncodingConverter.cpp.orig	Tue Apr 17 22:53:30 2007
-+++ ./zlibrary/src/unix/iconv/IConvEncodingConverter.cpp	Sat Apr 21 18:50:56 2007
+--- ./zlibrary/core/src/unix/iconv/IConvEncodingConverter.cpp.orig	Tue Apr 17 22:53:30 2007
++++ ./zlibrary/core/src/unix/iconv/IConvEncodingConverter.cpp	Sat Apr 21 18:50:56 2007
 @@ -87,7 +87,7 @@
  	char *out = (char*)dst.data() + oldLength;
  

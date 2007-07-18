@@ -1,5 +1,5 @@
---- ./zlibrary/src/unix/time/ZLUnixTime.cpp.orig	Tue Apr 17 22:53:30 2007
-+++ ./zlibrary/src/unix/time/ZLUnixTime.cpp	Sat Apr 28 00:13:29 2007
+--- ./zlibrary/core/src/unix/time/ZLUnixTime.cpp.orig	Tue Apr 17 22:53:30 2007
++++ ./zlibrary/core/src/unix/time/ZLUnixTime.cpp	Sat Apr 28 00:13:29 2007
 @@ -18,21 +18,22 @@
   * 02110-1301, USA.
   */
