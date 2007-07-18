@@ -15262,6 +15262,7 @@ terminatorx	ports/audio/terminatorx
 terminus-font	ports/x11-fonts/terminus-font
 termlog		ports/security/termlog
 terraform	ports/misc/terraform
+tesseract	ports/graphics/tesseract
 testdisk	ports/sysutils/testdisk
 tet		ports/misc/tet
 tet-aspell	ports/textproc/tet-aspell
