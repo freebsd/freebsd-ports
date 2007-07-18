@@ -1,17 +1,11 @@
-
-coda-setup-ports is useless with a recent /etc/services and it is the only
-file installed by both server and client thus remove it to avoid conflicting
-plists
-
---- coda-src/scripts/Makefile.in.orig	Wed Apr 27 03:12:50 2005
-+++ coda-src/scripts/Makefile.in	Thu Oct  5 19:36:14 2006
-@@ -25,14 +25,14 @@
+--- coda-src/scripts/Makefile.in.orig	2006-11-02 14:46:29.000000000 -0500
++++ coda-src/scripts/Makefile.in	2007-07-14 23:33:28.000000000 -0400
+@@ -25,13 +25,13 @@
  # Need to conditionalize this
  include $(TOPDIR)/Makeconf
  
--VENUS-SCRIPTS = vutil volmunge venus-setup coda-setup-ports \
-+VENUS-SCRIPTS = vutil volmunge venus-setup \
-     coda-client-logrotate
+-VENUS-SCRIPTS = volmunge venus-setup coda-setup-ports
++VENUS-SCRIPTS = volmunge venus-setup
  
  VOL-SCRIPTS	= createvol_rep purgevol_rep bldvldb.sh
  VICE-SCRIPTS	= startserver codastart coda-server-logrotate
