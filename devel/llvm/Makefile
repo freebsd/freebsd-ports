@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	llvm
-PORTVERSION=	1.9
+PORTVERSION=	2.0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 
@@ -21,10 +21,11 @@ USE_GCC=	3.3+
 
 CONFIGURE_FLAGS+=	--enable-optimized
 
-MAN1=		bugpoint.1 gccas.1 gccld.1 llc.1 lli.1 llvm-ar.1 \
+MAN1=		bugpoint.1 llc.1 lli.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-db.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
-		llvm-prof.1 llvm-ranlib.1 llvm2cpp.1 llvmc.1 llvmgcc.1 \
+		llvm-prof.1 llvm-ranlib.1 llvm-upgrade.1 \
+		llvm2cpp.1 llvmc.1 llvmgcc.1 \
 		llvmgxx.1 opt.1 stkrc.1 tblgen.1
 
 .include <bsd.port.pre.mk>
@@ -38,6 +39,9 @@ post-patch:
 		${WRKSRC}/Makefile.config.in
 
 post-install:
-	${RM} -f ${PREFIX}/bin/.dir ${PREFIX}/lib/.dir
+	${RM} -f ${PREFIX}/bin/.dir \
+	    ${PREFIX}/etc/.dir \
+	    ${PREFIX}/etc/llvm/.dir \
+	    ${PREFIX}/lib/.dir
 
 .include <bsd.port.post.mk>
