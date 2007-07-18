@@ -13620,6 +13620,7 @@ recmpeg		ports/multimedia/recmpeg
 recode		ports/converters/recode
 recoll		ports/deskutils/recoll
 recombine	ports/biology/recombine
+recordmydesktop	ports/multimedia/recordmydesktop
 recordproto	ports/x11/recordproto
 recoverdm	ports/sysutils/recoverdm
 recoverjpeg	ports/graphics/recoverjpeg
