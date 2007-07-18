@@ -679,6 +679,7 @@
     SUBDIR += synaesthesia
     SUBDIR += tcm
     SUBDIR += telak
+    SUBDIR += tesseract
     SUBDIR += tgif
     SUBDIR += tif22pnm
     SUBDIR += tiff
