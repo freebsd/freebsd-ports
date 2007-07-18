@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Auth
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.4
 CATEGORIES=	security pear
 
 MAINTAINER=	chinsan@FreeBSD.org
@@ -16,7 +16,8 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-Auth
-OPTIONS=	PEAR_FILE_PASSWD "PEAR::File_Passwd support" off \
+OPTIONS=	PEAR_LOG "PEAR::Log support" off \
+		PEAR_FILE_PASSWD "PEAR::File_Passwd support" off \
 		PEAR_NET_POP3 "PEAR::Net_POP3 support" off \
 		PEAR_DB "PEAR::DB support" off \
 		PEAR_MDB "PEAR::MDB support" off \
@@ -50,6 +51,10 @@ post-extract:
 	@${REINPLACE_CMD} -e "s|@version@|${PORTVERSION}|" ${WRKSRC}/Auth.php
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_PEAR_LOG)
+RUN_DEPENDS+=	${PEARDIR}/Log/syslog.php:${PORTSDIR}/sysutils/pear-Log
+.endif
 
 .if defined(WITH_PEAR_FILE_PASSWD)
 RUN_DEPENDS+=	${PEARDIR}/File/Passwd.php:${PORTSDIR}/security/pear-File_Passwd
