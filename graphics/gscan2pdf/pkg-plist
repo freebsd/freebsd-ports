@@ -20,6 +20,7 @@ share/locale/zh_TW/LC_MESSAGES/gscan2pdf.mo
 %%DATADIR%%/stock-rotate-270.svg
 %%DATADIR%%/stock-rotate-90.svg
 %%DATADIR%%/scanner.png
+%%SITE_PERL%%/Gscan2pdf.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/gscan2pdf/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/gscan2pdf
 @dirrmtry share/applications
