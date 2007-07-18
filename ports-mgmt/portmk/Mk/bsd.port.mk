@@ -1429,6 +1429,7 @@ ETCDIR?=		${TARGETDIR}/etc/${PORTNAME}
 .else
 .include "${PORTSDIR}/Mk/bsd.linux-rpm.mk"
 .endif
+.endif
 
 .if ${OSVERSION} >= 502123
 X_WINDOW_SYSTEM ?= xorg
