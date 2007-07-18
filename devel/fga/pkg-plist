@@ -1,12 +1,10 @@
 bin/graph_gen
-bin/maxbit_mt
-bin/maxbit_st
+bin/maxbit
 bin/tsp
 bin/tsp_bf
 include/fga.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/graph_gen.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/maxbit_mt.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/maxbit_st.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/maxbit.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tsp.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tsp_bf.cpp
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
