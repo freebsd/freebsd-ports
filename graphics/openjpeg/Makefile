@@ -8,7 +8,9 @@
 PORTNAME=	openjpeg
 PORTVERSION=	1.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.openjpeg.org/
+MASTER_SITES=	http://www.openjpeg.org/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	trasz
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/g}
 
 MAINTAINER=	trasz@FreeBSD.org
