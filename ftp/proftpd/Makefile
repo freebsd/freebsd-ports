@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1rc3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -70,8 +70,7 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		QUOTATAB_RADIUS "include mod_quotatab_radius" off \
 		BAN "include mod_ban (Requires CTRLS)" off \
 		NLS "Use nls (builds mod_lang)" off \
-		CYRFIX "Use patch for fix cyrillic encoding" off \
-		CODECONV "Use charset conversion (mod_codeconv)" off
+		CYRFIX "Use patch for fix cyrillic encoding" off
 
 MODULES?=
 LIBDIRS?=
@@ -209,15 +208,6 @@ MODULES:=${MODULES}:mod_quotatab_ldap
 .if defined(WITH_PGSQL) || defined(WITH_MYSQL)
 MODULES:=${MODULES}:mod_quotatab_sql
 .endif
-.endif
-
-.if defined(WITH_CODECONV)
-USE_ICONV=	YES
-MODULES:=${MODULES}:mod_codeconv
-INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
-CONFIGURE_ARGS+=	--disable-sendfile
-PROFTPD_LIBS+=	-liconv -L${LOCALBASE}/lib
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mod-codeconv
 .endif
 
 # mod_ifsession should be the last item in the modules list
