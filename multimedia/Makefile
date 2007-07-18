@@ -185,6 +185,7 @@
     SUBDIR += quodlibet
     SUBDIR += quark
     SUBDIR += recmpeg
+    SUBDIR += recordmydesktop
     SUBDIR += replex
     SUBDIR += rox-videothumbnail
     SUBDIR += ruby-flvtool2
