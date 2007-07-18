@@ -1401,6 +1401,7 @@
     SUBDIR += p5-Penguin-Easy
     SUBDIR += p5-Perl6-Export
     SUBDIR += p5-Perl6-Form
+    SUBDIR += p5-Perl6-Junction
     SUBDIR += p5-PerlIO-eol
     SUBDIR += p5-PerlIO-via-MD5
     SUBDIR += p5-PerlIO-via-dynamic
