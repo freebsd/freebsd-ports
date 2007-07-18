@@ -7,7 +7,7 @@
 
 PORTNAME=	pcmanx
 PORTVERSION=	0.3.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese net gnome
 MASTER_SITES=	http://pcmanx.csie.net/release/
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
@@ -41,5 +41,7 @@ post-extract:
 	@${REINPLACE_CMD} -e 's/wget -O/fetch -o/' ${WRKSRC}/src/mainframe.cpp
 	@${REINPLACE_CMD} -e 's/Antiidlestr/AntiIdleStr/' \
 		${WRKSRC}/src/appconfig.cpp
+	@${REINPLACE_CMD} -e '136 s/, \(.*\)/,1\);/' \
+	  	${WRKSRC}/src/view/telnetview.cpp
 
 .include <bsd.port.mk>
