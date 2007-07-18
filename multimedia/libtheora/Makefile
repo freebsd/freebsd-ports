@@ -32,8 +32,6 @@ CONFIGURE_ARGS+=--disable-asm
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/examples/Makefile.in
 	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
