@@ -17,6 +17,7 @@ MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A full screen application for Amarok
 
 PATCH_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+BUILD_DEPENDS=	${PATCH_DEPENDS}
 RUN_DEPENDS=	amarok:${PORTSDIR}/audio/amarok
 
 USE_GMAKE=	yes
