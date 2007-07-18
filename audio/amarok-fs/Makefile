@@ -16,7 +16,7 @@ DISTNAME=	52641-amarokFS-${PORTVERSION}
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A full screen application for Amarok
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+PATCH_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	amarok:${PORTSDIR}/audio/amarok
 
 USE_GMAKE=	yes
