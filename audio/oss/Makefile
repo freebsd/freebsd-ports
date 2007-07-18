@@ -11,7 +11,7 @@ CATEGORIES=	audio kld
 MASTER_SITES=	http://developer.opensound.com/sources/stable/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-cddl
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Open Sound System
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
