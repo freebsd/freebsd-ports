@@ -7,6 +7,7 @@
 
 PORTNAME=		Data-FormValidator
 PORTVERSION=		4.51
+PORTREVISION=		1
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -19,7 +20,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Ca
 		${SITE_PERL}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
 		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
 		${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
-		${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types
+		${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types \
+		${SITE_PERL}/Perl6/Junction.pm:${PORTSDIR}/devel/p5-Perl6-Junction
 BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod
