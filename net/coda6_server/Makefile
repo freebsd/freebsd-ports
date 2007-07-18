@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	coda
-PORTVERSION=	6.1.2
+PORTVERSION=	6.9.1
 CATEGORIES=	net
 # as of 5 Oct 2006 the archive is not present on ftp.wu-wien.ac.at
 # but maybe it'll appear there soon
@@ -57,8 +57,7 @@ MAN8=	auth2.8 \
 	updateclnt.8 \
 	updatesrv.8 \
 	vice-setup.8 \
-	volutil.8 \
-	vutil.8
+	volutil.8
 .else
 MAN1=	au.1 \
 	cfs.1 \
@@ -74,7 +73,8 @@ MAN1=	au.1 \
 	spy.1
 MAN8=	venus-setup.8 \
 	venus.8 \
-	volmunge.8
+	volmunge.8 \
+	vutil.8
 .endif
 
 .include <bsd.port.pre.mk>
