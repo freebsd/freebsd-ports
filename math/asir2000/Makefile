@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asir
-PORTVERSION=	20060417
-PORTREVISION=	2
+PORTVERSION=	20070718
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 		ftp://ftp.asir.org/pub/asir/src/ \
@@ -24,20 +23,21 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:15 autoconf:253
 USE_XLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari
-ASIR_SRC_VERSION= 20060417
-ASIR_DOC_VERSION= 20060417
-GC_VERSION= 6.5
-ASIR_SRC= asir-${ASIR_SRC_VERSION}.tar.gz
-ASIR_DOC= asirdoc-${ASIR_DOC_VERSION}.tar.gz
-GC_SRC=   gc${GC_VERSION}.tar.gz
-MAN1=     asir.1
-PREFIX?=  ${LOCALBASE}
-WRKSRC=   ${WRKDIR}/asir2000
+ASIR_SRC_VERSION=	20070718
+ASIR_DOC_VERSION=	20070718
+GC_VERSION=	6.8
+ASIR_SRC=	asir-${ASIR_SRC_VERSION}.tar.gz
+ASIR_DOC=	asirdoc-${ASIR_DOC_VERSION}.tar.gz
+GC_SRC=		gc${GC_VERSION}.tar.gz
+MAN1=		asir.1
+WRKSRC=		${WRKDIR}/asir2000
 
-LIB_DATA= alpi bfct bgk const cyclic defs.h dfff dmul dmul102 \
-	fctrdata fctrtest fff glib gr ifplot katsura launch mat nf \
-	num primdec primdec_lex primdec_mod ratint robot solve sp \
-	sturm sym weight xm
+LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul dmul102 \
+		fctrdata fctrtest fff glib gr ifplot katsura launch mat nf \
+		num primdec primdec_lex primdec_mod ratint robot solve sp \
+		sturm sym weight xm
+
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
@@ -46,12 +46,12 @@ BROKEN=		Does not compile on sparc64 or ia64
 .endif
 
 post-extract:
-	@( cd ${WRKSRC};${TAR} xfz ${DISTDIR}/${GC_SRC} )
-pre-install:
-	@${MKDIR} ${DATADIR}
-	@${MKDIR} ${DOCSDIR}
+	@( cd ${WRKSRC}; ${TAR} xfz ${DISTDIR}/${GC_SRC} )
+	@${MKDIR} ${WRKDIR}/asirdoc
+	@${TAR} xfz ${DISTDIR}/${ASIR_DOC} -C ${WRKDIR}/asirdoc
 
 post-install:
+	@${MKDIR} ${DATADIR}
 	@(\
 	   cd ${WRKSRC}/lib ; \
 	   for i in ${LIB_DATA} ; do \
@@ -62,7 +62,10 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/asir ${DATADIR}/ox_asir
 	@${LN} -fs ${PREFIX}/bin/asir ${DATADIR}/ox_plot
 	@${LN} -fs ${PREFIX}/bin/asir ${DATADIR}/ox_launch
-	@${TAR} xfz ${DISTDIR}/${ASIR_DOC} -C ${DOCSDIR}
-	@${INSTALL_MAN} ${DOCSDIR}/${MAN1} ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKDIR}/asirdoc/${MAN1} ${MAN1PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKDIR}/asirdoc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
+.endif
 
 .include <bsd.port.post.mk>
