@@ -14,6 +14,9 @@ MASTER_SITES=	http://www-rocq.inria.fr/~acohen/tuareg/mode/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs major mode for editing Caml code
 
+DEPRECATED=	emacs20 and related ports are obsolete; this port needs an update
+EXPIRATION_DATE=	2007-08-19
+
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs20
 USE_BZIP2=	yes

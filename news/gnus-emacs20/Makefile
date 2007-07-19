@@ -17,6 +17,9 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A popular newsreader for emacs20
 
+DEPRECATED=	emacs20 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 HAS_CONFIGURE=	yes
 
 USE_EMACS=	yes

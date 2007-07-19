@@ -17,6 +17,9 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decode MIME messages inside Emacs (works with RMAIL, VM, and mh-e)
 
+DEPRECATED=	emacs20 and related ports are obsolete; also, distfile is unfetchable
+EXPIRATION_DATE=	2007-08-19
+
 RUN_DEPENDS=	metamail:${PORTSDIR}/mail/metamail
 
 USE_EMACS=	yes

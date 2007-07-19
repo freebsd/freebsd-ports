@@ -15,6 +15,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-mule${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XEmacs text editor version 20, with XIM support and Big5 settings
 
+DEPRECATED=	emacs20 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf

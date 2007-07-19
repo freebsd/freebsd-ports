@@ -9,6 +9,9 @@ RUN_DEPENDS=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/bitmap/bitmap.el:${PORTSDIR
 
 MASTERDIR=	${.CURDIR}/../lookup
 
+DEPRECATED=	emacs20 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
 

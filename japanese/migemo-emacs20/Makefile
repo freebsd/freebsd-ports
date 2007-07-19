@@ -12,6 +12,9 @@ PKGDIR=         ${.CURDIR}
 PLIST=          ${MASTERDIR}/pkg-plist
 PKGMESSAGE=     ${MASTERDIR}/pkg-message
 
+DEPRECATED=	emacs20 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}

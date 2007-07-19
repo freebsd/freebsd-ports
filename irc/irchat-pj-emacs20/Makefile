@@ -20,6 +20,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	IRC client which runs under Emacsen
 
+DEPRECATED=	emacs20 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 BUILD_DEPENDS=	${LOCALBASE}/${LISPDIR:S,${PORTNAME},pure,g}/pure-make.el:${PORTSDIR}/irc/pure-${EMACS_PORT_NAME}
 RUN_DEPENDS=	${LOCALBASE}/${LISPDIR:S,${PORTNAME},pure,g}/pure-make.el:${PORTSDIR}/irc/pure-${EMACS_PORT_NAME} \
 		${LOCALBASE}/bin/dcc:${PORTSDIR}/irc/dcc

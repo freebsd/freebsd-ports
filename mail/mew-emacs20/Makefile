@@ -10,6 +10,9 @@ MASTERDIR=	${.CURDIR}/../mew
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Messaging in the Emacs World for emacs20
 
+DEPRECATED=	emacs20 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 # set emacs port
 USE_EMACS=	yes
 EMACS_PORT_NAME=emacs20

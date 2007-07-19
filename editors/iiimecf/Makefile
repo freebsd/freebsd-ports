@@ -16,6 +16,9 @@ DISTNAME=	IIIMECF-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet/Intranet Input Method Emacs Client Framework for GNU Emacs 20
 
+DEPRECATED=	emacs20 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 BUILD_DEPENDS=	${UN_DEFINE}:${PORTSDIR}/converters/mule-ucs-emacs20
 RUN_DEPENDS=	${UN_DEFINE}:${PORTSDIR}/converters/mule-ucs-emacs20
 

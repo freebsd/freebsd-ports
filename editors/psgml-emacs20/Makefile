@@ -8,6 +8,9 @@
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A major mode for editing SGML and XML documents for emacs20
 
+DEPRECATED=	emacs20 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 # This is a slave port.
 MASTERDIR=	${.CURDIR}/../psgml
 
