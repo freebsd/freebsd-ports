@@ -216,6 +216,7 @@
 %%DATADIR%%/library/Zend/Controller/Plugin/Broker.php
 %%DATADIR%%/library/Zend/Controller/Plugin/ErrorHandler.php
 %%DATADIR%%/library/Zend/Controller/Request/Abstract.php
+%%DATADIR%%/library/Zend/Controller/Request/Apache404.php
 %%DATADIR%%/library/Zend/Controller/Request/Exception.php
 %%DATADIR%%/library/Zend/Controller/Request/Http.php
 %%DATADIR%%/library/Zend/Controller/Response/Abstract.php
@@ -1170,7 +1171,6 @@
 %%DATADIR%%/library/Zend/Uri.php
 %%DATADIR%%/library/Zend/Uri/Exception.php
 %%DATADIR%%/library/Zend/Uri/Http.php
-%%DATADIR%%/library/Zend/Uri/Mailto.php
 %%DATADIR%%/library/Zend/Validate.php
 %%DATADIR%%/library/Zend/Validate/Abstract.php
 %%DATADIR%%/library/Zend/Validate/Alnum.php
@@ -1314,6 +1314,7 @@
 %%DATADIR%%/tests/Zend/Controller/FrontTest.php
 %%DATADIR%%/tests/Zend/Controller/Plugin/BrokerTest.php
 %%DATADIR%%/tests/Zend/Controller/Plugin/ErrorHandlerTest.php
+%%DATADIR%%/tests/Zend/Controller/Request/Apache404Test.php
 %%DATADIR%%/tests/Zend/Controller/Request/HttpTest.php
 %%DATADIR%%/tests/Zend/Controller/Response/HttpTest.php
 %%DATADIR%%/tests/Zend/Controller/Router/RewriteTest.php
@@ -1421,6 +1422,7 @@
 %%DATADIR%%/tests/Zend/Db/Table/Row/Pdo/SqliteTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Row/StaticTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Row/TestCommon.php
+%%DATADIR%%/tests/Zend/Db/Table/Row/TestMockRow.php
 %%DATADIR%%/tests/Zend/Db/Table/Row/TestMyRow.php
 %%DATADIR%%/tests/Zend/Db/Table/Rowset/Db2Test.php
 %%DATADIR%%/tests/Zend/Db/Table/Rowset/MysqliTest.php
@@ -1970,6 +1972,30 @@
 %%DATADIR%%/tests/Zend/_files/_testDir1/ClassNonexistent.php
 %%DATADIR%%/tests/Zend/_files/_testDir1/Interface1.php
 %%DATADIR%%/tests/Zend/_files/_testDir2/Class2.php
+@exec mkdir -p %D/%%DATADIR%%/incubator/demos/Zend/Acl
+@exec mkdir -p %D/%%DATADIR%%/incubator/demos/Zend/Service/Audioscrobbler
+@exec mkdir -p %D/%%DATADIR%%/incubator/library/Zend/Cache/Backend
+@exec mkdir -p %D/%%DATADIR%%/incubator/library/Zend/Controller/Action/Helper
+@exec mkdir -p %D/%%DATADIR%%/incubator/library/Zend/Filter
+@exec mkdir -p %D/%%DATADIR%%/incubator/library/Zend/Registry
+@exec mkdir -p %D/%%DATADIR%%/incubator/library/Zend/Service
+@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Cache
+@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Filter/_files
+@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Http
+@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Registry
+@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Service
+@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Soap/Wsdl
+@exec mkdir -p %D/%%DATADIR%%/library/Zend/View/Filter
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/filters
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/helpers
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/default/controllers
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views/helpers
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/views/filters
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/views/helpers
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Db/Table/_files
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Memory/_files
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Search/Lucene/Storage/_tempFiles
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Search/Lucene/_files/_index
 @dirrm %%DATADIR%%/tests/Zend/_files/_testDir2
 @dirrm %%DATADIR%%/tests/Zend/_files/_testDir1/Class1
 @dirrm %%DATADIR%%/tests/Zend/_files/_testDir1
