@@ -23,6 +23,9 @@ RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
+DEPRECATED=	Obsolete version, use security/pidgin-otr instead
+EXPIRATION_DATE=2007-08-24
+
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libotr-prefix=${LOCALBASE}/lib \
