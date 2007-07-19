@@ -6,19 +6,6 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
-20070719:
-  AFFECTS: users of x11-drivers/xf86-video-nv
-  AUTHOR: flz@FreeBSD.org
-
-  Riva128 support has been merged into the "nv" driver. If your
-  xorg.conf configuration file contains the following:
-
-    Driver	"riva128"
-	
-  replace it with:
-
-    Driver	"nv"
-
 20070718:
   AFFECTS: users of devel/llvm
   AUTHOR: brooks@freebsd.org
