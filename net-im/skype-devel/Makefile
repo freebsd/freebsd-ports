@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.skype.com/linux/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	skype-beta_staticQT-${PORTVERSION}
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	P2P VoIP software
 
 CONFLICTS=	skype-[0-9]*
@@ -27,6 +27,8 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
 .endif
+
+BROKEN=	sources not available
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
