@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	devcpu
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 PORTREVISION=	0
 CATEGORIES=	sysutils kld
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Kernel module that provides access to i386 MSRs and cpuid info
+
+RUN_DEPENDS=	${STAMPFILE}:${PORTSDIR}/sysutils/devcpu-data
 
 USE_BZIP2=	yes
 USE_RC_SUBR=	devcpu
@@ -27,6 +29,8 @@ NO_PACKAGE=	depends on kernel
 PLIST_SUB=	KMODDIR="${KMODDIR:C,^/,,}"
 KMODDIR=	/boot/modules
 MAKE_ENV+=	KMODDIR="${KMODDIR}"
+
+STAMPFILE=	${LOCALBASE}/share/${PORTNAME}/.do_not_delete
 
 OPTIONS=	EXTRACTOR "Install Award Bios microcode extracting utility" off 
 
@@ -63,9 +67,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/cpu/cpu.4 ${PREFIX}/man/man4/
 	${INSTALL_MAN} ${WRKSRC}/cpu_microcode_tool/cpu_microcode_tool.8 \
 		 ${PREFIX}/man/man8/
-
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/mcodes/* ${DATADIR}/
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/
