@@ -9,6 +9,9 @@ PKGNAMESUFFIX=	-sj3+wnn6
 CATEGORIES=	japanese
 COMMENT=	Multilingual emacs, with sj3, Wnn4, and Wnn6 support built-in
 
+DEPRECATED=	emacs19 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 SJ3=		yes
 WNN6=		yes
 

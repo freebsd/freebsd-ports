@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	-freewnn
 MASTERDIR=	${.CURDIR}/../../editors/mule
 COMMENT=	Multilingual emacs, with FreeWnn support built in (Only the executables)
 
+DEPRECATED=	emacs19 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 PKGDIR=		${.CURDIR}
 
 CFREEWNN=	yes

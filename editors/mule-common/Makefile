@@ -18,6 +18,9 @@ DISTFILES=	mule-${MULE_VERSION}-${EMACS_VERSION}.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	For a multilingual emacs, emacs lisp files, info pages, etc (except executables)
 
+DEPRECATED=	emacs19 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 MULE_VERSION=	2.3
 EMACS_VERSION=	19.34
 
@@ -26,7 +29,7 @@ USE_XORG=	xbitmaps
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 .if ${OSVERSION} > 600000
@@ -125,7 +128,7 @@ WRKDIR=	${WRKDIRBASE}/editors/mule/work
 pre-build::
 	@cd ${.CURDIR}/../mule; make
 .else
-IGNORE=		First you should build install a port for mule except mule-common
+IGNORE=		first you should build install a port for mule except mule-common
 .endif
 .endif
 

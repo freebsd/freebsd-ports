@@ -9,6 +9,9 @@ PKGNAMESUFFIX=	-canna+freewnn+sj3
 CATEGORIES=	japanese
 COMMENT=	Multilingual emacs, with Canna, sj3, and FreeWnn support built-in
 
+DEPRECATED=	emacs19 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 CANNA=		yes
 SJ3=		yes
 FREEWNN=	yes

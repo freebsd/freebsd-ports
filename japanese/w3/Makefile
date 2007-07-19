@@ -8,6 +8,9 @@
 COMMENT=	WWW browser based on emacs/mule
 CATEGORIES=	japanese
 
+DEPRECATED=	emacs19 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 # Don't RUN_DEPENDS on mule because we don't know which version the
 # user would want.  We can't omit the BUILD_DEPENDS because it needs
 # to byte-compile .el files.

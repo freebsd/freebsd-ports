@@ -9,6 +9,9 @@ PKGNAMESUFFIX=	-wnn6
 CATEGORIES=	japanese
 COMMENT=	Multilingual emacs, with Wnn4, and Wnn6 support built-in
 
+DEPRECATED=	emacs19 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 WNN6=		yes
 
 MASTERDIR=	${.CURDIR}/../../editors/mule

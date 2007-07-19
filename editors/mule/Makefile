@@ -19,6 +19,9 @@ DISTFILES=	mule-${MULE_VERSION}-${EMACS_VERSION}.tar.gz \
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A multilingual emacs based 19.34 (Only the executables)
 
+DEPRECATED=	emacs19 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 RUN_DEPENDS=	${PREFIX}/share/${EMACS_PREFIX}/${EMACS_VERSION}/lisp/mule.el:${PORTSDIR}/editors/mule-common
 LIB_DEPENDS=	${LIB_INPUT_METHOD}
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
