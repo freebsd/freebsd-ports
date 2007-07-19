@@ -1,6 +1,6 @@
---- Makefile.freebsd.orig	Thu Nov 16 17:47:00 2006
-+++ Makefile.freebsd	Thu Nov 16 17:57:34 2006
-@@ -3,14 +3,15 @@
+--- Makefile.freebsd.orig	Sun Jul 15 16:09:28 2007
++++ Makefile.freebsd	Wed Jul 18 20:23:58 2007
+@@ -3,18 +3,18 @@
  # Edit the following section to adjust the options
  # to fit into your operating system / distribution
  #######################################################
@@ -10,16 +10,19 @@
 -LDFLAGS=-L/usr/X11R6/lib -L/usr/local/lib -lXft -lX11 -lfreetype -lXrender -lfontconfig -lpng -lz -lm -lcrypt -lXmu -lpng -ljpeg
 +CXX?=/usr/bin/g++
 +CC?=/usr/bin/gcc
-+CFLAGS+=-I%%X11BASE%%/include `freetype-config --cflags` `libpng-config --cflags`
-+CXXLAGS+=$(CFLAGS)
-+LDFLAGS=-L%%X11BASE%%/lib `freetype-config --libs` `libpng-config --libs` -lXft -lX11 -lXrender -lfontconfig -lz -lm -lcrypt -lXmu -ljpeg
++CFLAGS+=-I$(LOCALBASE)/include `freetype-config --cflags` `libpng-config --cflags`
++LDFLAGS=-L$(LOCALBASE)/lib `freetype-config --libs` `libpng-config --libs` -lXft -lX11 -lXrender -lfontconfig -lz -lm -lcrypt -lXmu -ljpeg
  CUSTOM=-DNEEDS_BASENAME
+ .ifdef(USE_PAM)
+   LDFLAGS+= -lpam
+   CUSTOM+= -DUSE_PAM
+ .endif
 -PREFIX=/usr
 -CFGDIR=/etc
 -MANDIR=/usr/share/man
-+PREFIX=%%LOCALBASE%%
-+CFGDIR=%%LOCALBASE%%/etc
-+MANDIR=%%LOCALBASE%%/man
++PREFIX?=$(LOCALBASE)
++CFGDIR=$(PREFIX)/etc
++MANDIR=$(MANPREFIX)/man
  DESTDIR=
  #######################################################
  
