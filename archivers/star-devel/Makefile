@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	star
-DISTVERSION=	1.5a80
+DISTVERSION=	1.5a82
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/alpha/
 
@@ -32,11 +32,25 @@ XMKFLAGS=	XMK_FILE=""
 
 MAKE_ENV+=	MAKEFLAGS=${MAKEFLAGS}
 
+PORTDOCS=	README README.crash README.mtio README.pattern STARvsGNUTAR \
+		README.ACL README.largefiles README.otherbugs \
+		README.posix-2001
+
 do-build:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/smake
+	@cd ${WRKSRC}/star && ${MAKE_ENV} ${LOCALBASE}/bin/smake -f Makefile.doc
 
 do-install:
-	@cd ${WRKSRC}/star && ${MAKE_ENV} ${LOCALBASE}/bin/smake ${INSTALL_TARGET} INS_BASE=${PREFIX} ${XMKFLAGS}
+	@cd ${WRKSRC}/star && ${MAKE_ENV} ${LOCALBASE}/bin/smake \
+		${INSTALL_TARGET} INS_BASE=${PREFIX} ${XMKFLAGS}
 	@${STRIP_CMD} ${PREFIX}/bin/star
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for FILE in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/star/${FILE} ${DOCSDIR}/${FILE}
+.endfor
+.endif
 
 .include <bsd.port.mk>
