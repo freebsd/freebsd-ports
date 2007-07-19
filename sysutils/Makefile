@@ -121,6 +121,7 @@
     SUBDIR += detach
     SUBDIR += detox
     SUBDIR += devcpu
+    SUBDIR += devcpu-data
     SUBDIR += di
     SUBDIR += dim
     SUBDIR += dircomp
