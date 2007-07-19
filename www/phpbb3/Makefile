@@ -55,7 +55,8 @@ pre-everything::
 
 do-install:
 	@ ${MKDIR} -m 0775 ${PREFIX}/${PHPBBDIR}
-	@ cd ${WRKSRC} && ${FIND} . -print | ${TAR} cTf - - | ${TAR} xUCf ${PREFIX}/${PHPBBDIR} -
+	@ cd ${WRKSRC} && ${FIND} . ! -name config.php ! -name . -print | ${TAR} cTf - - | ${TAR} xUCf ${PREFIX}/${PHPBBDIR} -
+	@ ${TOUCH} ${PREFIX}/${PHPBBDIR}/config.php
 	@ ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPBBDIR}
 
 post-install:
