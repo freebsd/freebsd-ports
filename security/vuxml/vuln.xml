@@ -34,6 +34,81 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="12d266b6-363f-11dc-b6c9-000c6ec775d9">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<range><lt>9.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera Software ASA reports of multiple security fixes in
+	  Opera, including an arbitrary code execute
+	  vulnerability:</p>
+	<blockquote cite="http://www.opera.com/support/search/view/861/">
+	  <p>Opera for Linux, FreeBSD, and Solaris has a flaw in the
+	    createPattern function that leaves old data that was in
+	    the memory before Opera allocated it in the new
+	    pattern. The pattern can be read and analyzed by
+	    JavaScript, so an attacker can get random samples of the
+	    user's memory, which may contain data.</p>
+	</blockquote>
+	<blockquote cite="http://www.opera.com/support/search/view/862/">
+	  <p>Removing a specially crafted torrent from the download
+	    manager can crash Opera. The crash is caused by an
+	    erroneous memory access.</p>
+	  <p>An attacker needs to entice the user to accept the
+	    malicious BitTorrent download, and later remove it from
+	    Opera's download manager. To inject code, additional means
+	    will have to be employed.</p>
+	  <p>Users clicking a BitTorrent link and rejecting the
+	    download are not affected.</p>
+	</blockquote>
+	<blockquote cite="http://www.opera.com/support/search/view/863/">
+	  <p>data: URLs embed data inside them, instead of linking to
+	    an external resource. Opera can mistakenly display the end
+	    of a data URL instead of the beginning. This allows an
+	    attacker to spoof the URL of a trusted site.</p>
+	</blockquote>
+	<blockquote cite="http://www.opera.com/support/search/view/864/">
+	  <p>Opera's HTTP authentication dialog is displayed when the
+	    user enters a Web page that requires a login name and a
+	    password. To inform the user which server it was that
+	    asked for login credentials, the dialog displays the
+	    server name.</p>
+	  <p>The user has to see the entire server name. A truncated
+	    name can be misleading. Opera's authentication dialog cuts
+	    off the long server names at the right hand side, adding
+	    an ellipsis (...) to indicate that it has been cut off.</p>
+	  <p>The dialog has a predictable size, allowing an attacker
+	    to create a server name which will look almost like a
+	    trusted site, because the real domain name has been cut
+	    off. The three dots at the end will not be obvious to all
+	    users.</p>
+	  <p>This flaw can be exploited by phishers who can set up
+	    custom sub-domains, for example by hosting their own
+	    public DNS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=564</url>
+      <url>http://www.opera.com/support/search/view/861/</url>
+      <url>http://www.opera.com/support/search/view/862/</url>
+      <url>http://www.opera.com/support/search/view/863/</url>
+      <url>http://www.opera.com/support/search/view/864/</url>
+      <url>http://www.opera.com/docs/changelogs/freebsd/922/</url>
+    </references>
+    <dates>
+      <discovery>2007-07-19</discovery>
+      <entry>2007-07-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e190ca65-3636-11dc-a697-000c6ec775d9">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
@@ -78,7 +153,7 @@ Note:  Please add new entries to the beginning of this file.
 	  in Firefox, Seamonkey, and Thunderbird.  Several of these
 	  issues can probably be used to run arbitrary code with the
 	  privilege of the user running the program.</p>
-	<blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html#firefox2.0.0.2">
+	<blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html#firefox2.0.0.5">
 	  <ul>
 	    <li>MFSA 2007-25 XPCNativeWrapper pollution</li>
 	    <li>MFSA 2007-24 Unauthorized access to wyciwyg:// documents</li>
@@ -97,12 +172,13 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2007-3735</cvename>
       <cvename>CVE-2007-3737</cvename>
       <cvename>CVE-2007-3738</cvename>
-      <url>http://www.mozilla.org/security/announce/2007/mfsa2007-25.html</url>
-      <url>http://www.mozilla.org/security/announce/2007/mfsa2007-24.html</url>
-      <url>http://www.mozilla.org/security/announce/2007/mfsa2007-21.html</url>
-      <url>http://www.mozilla.org/security/announce/2007/mfsa2007-20.html</url>
-      <url>http://www.mozilla.org/security/announce/2007/mfsa2007-19.html</url>
+      <url>http://www.mozilla.org/projects/security/known-vulnerabilities.html#firefox2.0.0.5</url>
       <url>http://www.mozilla.org/security/announce/2007/mfsa2007-18.html</url>
+      <url>http://www.mozilla.org/security/announce/2007/mfsa2007-19.html</url>
+      <url>http://www.mozilla.org/security/announce/2007/mfsa2007-20.html</url>
+      <url>http://www.mozilla.org/security/announce/2007/mfsa2007-21.html</url>
+      <url>http://www.mozilla.org/security/announce/2007/mfsa2007-24.html</url>
+      <url>http://www.mozilla.org/security/announce/2007/mfsa2007-25.html</url>
     </references>
     <dates>
       <discovery>2007-07-17</discovery>
