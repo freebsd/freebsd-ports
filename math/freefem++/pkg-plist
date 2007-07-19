@@ -97,12 +97,16 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P3.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P3dc.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P3dc.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P3dc.o
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P3dc.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4.o
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4dc.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4dc.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4dc.o
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4dc.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/FESpace.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/FQuadTree.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/InitFunct.hpp
