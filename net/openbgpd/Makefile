@@ -6,15 +6,14 @@
 #
 
 PORTNAME?=	openbgpd
-PORTVERSION?=	3.9
+PORTVERSION?=	4.0
 PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenBGPD/:openbsd \
 		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
 MASTER_SITE_SUBDIR=	flz/openbgpd/:freebsd
 DISTFILES?=	${PORTNAME}-${PORTVERSION}.tgz:openbsd,freebsd
-DISTFILES+=	if_media.h:freebsd pfkey_compat.c:freebsd \
-		hash.h:freebsd strtonum.c:freebsd
+DISTFILES+=	if_media.h:freebsd hash.h:freebsd strtonum.c:freebsd
 DIST_SUBDIR=	openbgpd
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
 
@@ -30,10 +29,10 @@ MAKE_ENV=	BINDIR="${PREFIX}/sbin" \
 		MANDIR="${PREFIX}/man/man"
 COPTS+=		-DRTA_LABEL=0
 
-EXTRA_PATCHES?=	${.CURDIR}/files/stable-bgpd_bgpd.8
-
 PLIST_FILES=	sbin/bgpctl	\
 		sbin/bgpd
+
+SUB_FILES=	pkg-message
 
 MAN5=		bgpd.conf.5
 MAN8=		bgpctl.8	\
@@ -50,9 +49,7 @@ IGNORE=		requires macros present in <sys/tree.h>
 
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/if_media.h ${WRKSRC}/bgpctl/
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/pfkey_compat.c ${WRKSRC}/bgpd/
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/hash.h ${WRKSRC}/bgpd/
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/strtonum.c ${WRKSRC}/bgpctl/
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g"	\
@@ -62,6 +59,8 @@ post-patch:
 		${WRKSRC}/bgpd/bgpd.conf.5		\
 		${WRKSRC}/bgpctl/Makefile		\
 		${WRKSRC}/bgpctl/bgpctl.8
+	@${REINPLACE_CMD} -e "/__dead2/d"		\
+		${WRKSRC}/bgpd/bgpd.h
 	@${REINPLACE_CMD} -e "s|__dead||"		\
 		${WRKSRC}/bgpd/bgpd.c 		\
 		${WRKSRC}/bgpd/bgpd.h 		\
@@ -88,5 +87,6 @@ do-install:
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
