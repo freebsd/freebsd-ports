@@ -21,6 +21,9 @@ PATCHFILES=	pcl-cvs-2.9.9-compat.patch
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Emacs-based front-end to CVS
 
+DEPRECATED=	emacs20 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 # startup el filename
 PORT_SETUPEL=	pcl-cvs-setup.el
 

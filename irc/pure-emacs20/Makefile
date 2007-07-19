@@ -20,6 +20,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Primitive Universal Relay-chat Environment
 
+DEPRECATED=	emacs20 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 USE_BZIP2=	yes
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs20

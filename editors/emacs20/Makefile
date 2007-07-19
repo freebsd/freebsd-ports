@@ -22,6 +22,7 @@ COMMENT?=	GNU editing macros
 
 ONLY_FOR_ARCHS=	i386 alpha
 DEPRECATED=	"editors/emacs is recommended instead for new installations"
+EXPIRATION_DATE=	2007-08-19
 
 USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes

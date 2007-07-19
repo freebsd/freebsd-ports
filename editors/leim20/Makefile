@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	emacs
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries of (GNU) Emacs Input Method
 
+DEPRECATED=	emacs20 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 LATEST_LINK=	leim20
 
 BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20

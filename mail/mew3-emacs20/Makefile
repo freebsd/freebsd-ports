@@ -8,6 +8,9 @@
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Message interface to Emacs Window (version 3) for emacs20
 
+DEPRECATED=	emacs20 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 # Mew major version
 MEW_MAJOR_VER?=	3
 

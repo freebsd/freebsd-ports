@@ -16,6 +16,9 @@ DISTNAME=	skk${SKK10_VER}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Emacs-lisp frontend for the SKK-10 Japanese Input Method
 
+DEPRECATED=	emacs20 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 USE_BZIP2=	YES
 
 SKK10_VER=	10.62a

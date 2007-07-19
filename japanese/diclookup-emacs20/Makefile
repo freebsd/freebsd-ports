@@ -16,6 +16,9 @@ DISTNAME=	diclookup-mule-${PORTVERSION}
 MAINTAINER=	mita@FreeBSD.org
 COMMENT=	CDROM dictionary client for emacs. (needs ndtpd or dserver package)
 
+DEPRECATED=	emacs20 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 RUN_DEPENDS=	${FONTSDIR}/a18rk.pcf.gz:${PORTSDIR}/x11-fonts/intlfonts
 
 WRKSRC=		${WRKDIR}/diclookup-mule-${PORTVERSION}
