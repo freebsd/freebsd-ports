@@ -14,6 +14,9 @@ MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/www/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	WWW browser based on emacs/mule
 
+DEPRECATED=	distfile is 10 years old and depends on emacs19 which is obsolete
+EXPIRATION_DATE=	2007-08-19
+
 BUILD_DEPENDS?=	emacs-19.34:${PORTSDIR}/editors/emacs19
 RUN_DEPENDS?=	emacs-19.34:${PORTSDIR}/editors/emacs19
 

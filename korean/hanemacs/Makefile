@@ -19,6 +19,9 @@ COMMENT=	Korean version of GNU editing macros
 
 ONLY_FOR_ARCHS=	i386
 
+DEPRECATED=	depends on emacs19 which is obsolete
+EXPIRATION_DATE=	2007-08-19
+
 WRKSRC=		${WRKDIR}/hanemacs-19.34
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
