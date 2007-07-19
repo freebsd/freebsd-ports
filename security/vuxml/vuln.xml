@@ -179,6 +179,7 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://www.mozilla.org/security/announce/2007/mfsa2007-21.html</url>
       <url>http://www.mozilla.org/security/announce/2007/mfsa2007-24.html</url>
       <url>http://www.mozilla.org/security/announce/2007/mfsa2007-25.html</url>
+      <uscertta>TA07-199A</uscertta>
     </references>
     <dates>
       <discovery>2007-07-17</discovery>
