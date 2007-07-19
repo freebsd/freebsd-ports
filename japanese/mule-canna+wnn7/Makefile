@@ -8,6 +8,9 @@
 CATEGORIES=	japanese
 COMMENT=	A multilingual emacs, with Canna, FreeWnn, Wnn6 and Wnn7 support built-in
 
+DEPRECATED=	emacs19 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 CANNA=		yes
 WNN7=		yes
 

@@ -17,6 +17,9 @@ PATCHFILES=	diclookup-mule-${PORTVERSION}-wave-patch.gz
 MAINTAINER=	mita@jp.FreeBSD.org
 COMMENT=	CDROM dictionary client for mule
 
+DEPRECATED=	emacs19 and related ports are obsolete; please use a more recent version
+EXPIRATION_DATE=	2007-08-19
+
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/non-cjk/fonts.dir:${PORTSDIR}/x11-fonts/etlfonts
 BUILD_DEPENDS=	mule:${PORTSDIR}/japanese/mule-freewnn
 
