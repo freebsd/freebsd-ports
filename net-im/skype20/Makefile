@@ -9,10 +9,10 @@ PORTNAME=	skype
 PORTVERSION=	1.2.0.18
 PORTREVISION=	4
 CATEGORIES=	net
-MASTER_SITES=	http://download.skype.com/linux/
+MASTER_SITES=	NETBSD
 DISTNAME=	skype_staticQT-${PORTVERSION}
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	P2P VoIP software
 
 CONFLICTS+=	skype-devel-[0-9]*
@@ -44,17 +44,17 @@ do-build:
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/applications
-	${INSTALL} ${WRKSRC}/skype ${PREFIX}/bin/skype_bin
+	@${INSTALL} ${WRKSRC}/skype ${PREFIX}/bin/skype_bin
 #	${INSTALL} ${WRKSRC}/skype-callto-handler ${PREFIX}/bin/
-	${ECHO_CMD} -e "#!/bin/sh\n\nSKYPE_RESOURCES_PATH='${DATADIR}' skype_bin \"\$$@\" 2>&1 | grep -v 'SOUND_MIXER_WRITE_IGAIN failed'" >${PREFIX}/bin/skype
-	${CHMOD} a+rx ${PREFIX}/bin/skype
-	${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/applications/
-	${INSTALL_DATA} ${WRKSRC}/icons/skype_48_32.png ${PREFIX}/share/pixmaps/skype.png
-	${MKDIR} ${DATADIR}/icons ${DATADIR}/lang ${DATADIR}/sound
-	${INSTALL_DATA} ${WRKSRC}/icons/* ${DATADIR}/icons/
-	${INSTALL_DATA} ${WRKSRC}/lang/*.qm ${DATADIR}/lang/
-	${INSTALL_DATA} ${WRKSRC}/sound/*.wav ${DATADIR}/sound/
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DATADIR}/
+	@${ECHO_CMD} -e "#!/bin/sh\n\nSKYPE_RESOURCES_PATH='${DATADIR}' skype_bin \"\$$@\" 2>&1 | grep -v 'SOUND_MIXER_WRITE_IGAIN failed'" >${PREFIX}/bin/skype
+	@${CHMOD} a+rx ${PREFIX}/bin/skype
+	@${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/applications/
+	@${INSTALL_DATA} ${WRKSRC}/icons/skype_48_32.png ${PREFIX}/share/pixmaps/skype.png
+	@${INSTALL} -d ${DATADIR}/icons ${DATADIR}/lang ${DATADIR}/sound
+	@${INSTALL_DATA} ${WRKSRC}/icons/* ${DATADIR}/icons/
+	@${INSTALL_DATA} ${WRKSRC}/lang/*.qm ${DATADIR}/lang/
+	@${INSTALL_DATA} ${WRKSRC}/sound/*.wav ${DATADIR}/sound/
+	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${DATADIR}/
 
 post-install:
 	@${ECHO} "There are known problems with some soundcards in 5.x. This is due to a bug in the kernel. It is fixed in 6.x. Additionally there is some further work in the sound subsystem going on which fixes some related problems. This work will not be available in 6.0-RELEASE. If you experience problems update to the most recent 6.x-RELEASE, if this does not fix your problems ask on multimedia@FreeBSD.org." | fmt
