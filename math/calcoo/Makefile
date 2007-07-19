@@ -5,11 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	calcoo
-PORTVERSION=	1.3.16
-PORTREVISION=	2
+PORTVERSION=	1.3.17
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://webusers.physics.umn.edu/~kaminski/calcoo/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	calcoo
 
 MAINTAINER=	naddy@FreeBSD.org
@@ -17,6 +15,7 @@ COMMENT=	RPN and algebraic scientific calculator
 
 USE_GNOME=	gtk20 pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir="${PREFIX}/man"
 
 MAN1=		calcoo.1
 
