@@ -1886,6 +1886,7 @@ detex		ports/print/detex
 detox		ports/sysutils/detox
 deutex		ports/archivers/deutex
 devcpu		ports/sysutils/devcpu
+devcpu-data	ports/sysutils/devcpu-data
 devede		ports/multimedia/devede
 devel-replay	ports/devel/replay
 devel_atlas-devel	ports/devel/atlas-devel
