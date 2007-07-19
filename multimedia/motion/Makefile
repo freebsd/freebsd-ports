@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	motion
-PORTVERSION=	3.2.7
+PORTVERSION=	3.2.8
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	motion
 
 PATCH_SITES=	http://www.lavrsen.dk/twiki/pub/Motion/FreeBSDPatch/
-PATCHFILES=	motion-3.2.7.port-freebsd.diff.gz
+PATCHFILES=	motion-3.2.8.port-freebsd.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ack@telefonica.net
