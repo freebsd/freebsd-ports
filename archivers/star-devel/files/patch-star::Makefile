@@ -1,5 +1,5 @@
---- star/Makefile.orig	Sun Feb  4 23:55:39 2007
-+++ star/Makefile	Sun Apr 29 11:38:54 2007
+--- star/Makefile.orig	Sat Jun 16 16:46:18 2007
++++ star/Makefile	Thu Jul 19 13:47:02 2007
 @@ -15,7 +15,7 @@
  INSDIR=		bin
  TARGET=		star
@@ -14,7 +14,7 @@
  #LIBS=		-lschily -lc /usr/local/lib/gcc-gnulib
  LIBS=		-ldeflt -lrmt -lschily $(LIB_ACL) $(LIB_ATTR) $(LIB_SOCKET)
 -XMK_FILE=	Makefile.man starformatman.mk scpioman.mk gnutarman.mk \
--		spaxman.mk suntarman.mk Makefile.dfl
+-		spaxman.mk suntarman.mk Makefile.dfl Makefile.doc
 +XMK_FILE=	Makefile.man starformatman.mk
  
  star_fat.c: star.c
