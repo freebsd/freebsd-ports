@@ -17,6 +17,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/e190ca65-3636-11dc-a697-000c6ec775d9.html
 DEPRECATED=	Obsolete version, use Firefox 2.0 or greater instead
 
 LATEST_LINK=	firefox15
