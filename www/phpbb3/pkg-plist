@@ -126,7 +126,6 @@
 %%PHPBBDIR%%/cache/.htaccess
 %%PHPBBDIR%%/cache/index.htm
 %%PHPBBDIR%%/common.php
-%%PHPBBDIR%%/config.php
 %%PHPBBDIR%%/cron.php
 %%PHPBBDIR%%/docs/AUTHORS
 %%PHPBBDIR%%/docs/CHANGELOG.html
@@ -909,7 +908,9 @@
 %%PHPBBDIR%%/viewforum.php
 %%PHPBBDIR%%/viewonline.php
 %%PHPBBDIR%%/viewtopic.php
+@exec [ -f %D/%%PHPBBDIR%%/config.php ] || touch %D/%%PHPBBDIR%%/config.php
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %B
+@unexec if [ -f %D/%%PHPBBDIR%%/config.php ]; then if [ `stat -f %%z %D/%%PHPBBDIR%%/config.php` = "0" ] ; then rm -f %D/%%PHPBBDIR%%/config.php; fi; fi
 @dirrm %%PHPBBDIR%%/styles/subsilver2/theme/images
 @dirrm %%PHPBBDIR%%/styles/subsilver2/theme
 @dirrm %%PHPBBDIR%%/styles/subsilver2/template
@@ -963,5 +964,5 @@
 @dirrm %%PHPBBDIR%%/adm/style
 @dirrm %%PHPBBDIR%%/adm/images
 @dirrm %%PHPBBDIR%%/adm
-@dirrm %%PHPBBDIR%%
+@dirrmtry %%PHPBBDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
