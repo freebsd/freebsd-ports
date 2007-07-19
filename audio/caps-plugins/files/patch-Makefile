@@ -5,8 +5,8 @@
  
 -CC = g++
 -OPTS = -O2 -ffast-math -funroll-loops -Wall -fPIC -DPIC
-++ CC = $(CXX)
-++ OPTS = -Wall -fPIC -DPIC
++CC = $(CXX)
++OPTS = -Wall -fPIC -DPIC
  #OPTS = -g -DDEBUG 
  
  -include defines.make
