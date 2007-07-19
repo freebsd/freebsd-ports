@@ -8,6 +8,7 @@
 PORTNAME=	scv
 PORTVERSION=	1.0p2
 CATEGORIES=	cad devel
+MASTER_SITES=	# you have to register and manually fetch
 EXTRACT_SUFX=	-sysc2.2.12jun06.tgz
 
 MAINTAINER=	johnson.peter@gmail.com
@@ -20,7 +21,6 @@ RESTRICTED=	You have to register at http://www.systemc.org/account/register.php 
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-USE_GNUCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/scv-1.0p2-sysc2.2
 CONFIGURE_SCRIPT=	../configure
