@@ -12,9 +12,9 @@ lib/liferea/liblihtmlg.so
 %%NOTIFY%%lib/liferea/liblinotiflibnotify.la
 %%NOTIFY%%lib/liferea/liblinotiflibnotify.so
 %%NOTIFY%%lib/liferea/liblinotiflibnotify.so.0
-%%NOTIFY%%lib/liferea/liblinotifpopup.la
-%%NOTIFY%%lib/liferea/liblinotifpopup.so
-%%NOTIFY%%lib/liferea/liblinotifpopup.so.0
+lib/liferea/liblinotifpopup.la
+lib/liferea/liblinotifpopup.so
+lib/liferea/liblinotifpopup.so.0
 share/gnome/applications/liferea.desktop
 share/gnome/liferea/css/adblock.css
 share/gnome/liferea/css/liferea.css
@@ -143,6 +143,8 @@ share/locale/tr/LC_MESSAGES/liferea.mo
 @dirrm share/gnome/liferea/doc
 @dirrm share/gnome/liferea/css
 @dirrm share/gnome/liferea
+@dirrmtry man/pl/man1
+@dirrmtry man/pl
 @dirrm lib/liferea
 %%XPI%%@dirrm lib/firefox/extensions/{79ea0ec1-3fc3-4ade-8220-262d4c4825ab}/chrome
 %%XPI%%@dirrm lib/firefox/extensions/{79ea0ec1-3fc3-4ade-8220-262d4c4825ab}
