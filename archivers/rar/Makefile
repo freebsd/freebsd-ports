@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=	3.70b1
-PORTREVISION=	2
+PORTVERSION=	3.70
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	RAR
-DISTNAME=	rarbsd-3.7.b1
+DISTNAME=	rarbsd-3.7.0
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	File archiver (binary port)
