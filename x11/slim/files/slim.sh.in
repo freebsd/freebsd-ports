@@ -8,6 +8,10 @@
 # slim_enable (bool):      Set to "NO" by default.
 #                          Set it to "YES" to enable slim
 #
+# Alternatively, edit /etc/ttys and change the line below
+#   ttyv8   "/usr/X11R6/bin/xdm -nodaemon"  xterm   off secure
+# to this:
+#   ttyv8   "/usr/local/bin/slim"   xterm   on secure
 
 . %%RC_SUBR%%
 
@@ -18,7 +22,7 @@ load_rc_config $name
 
 : ${slim_enable="NO"}
 
-command=%%LOCALBASE%%/bin/slim
+command=%%PREFIX%%/bin/slim
 command_args="-d"
 pidfile=/var/run/slim.pid
 
