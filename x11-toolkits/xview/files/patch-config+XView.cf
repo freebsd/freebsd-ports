@@ -5,7 +5,7 @@
   */
  #ifndef XVDestDir
 -#define XVDestDir /usr/X11/xview
-+#define XVDestDir /usr/X11R6
++#define XVDestDir /usr/local
  #endif
  /*
   *	Command to add object modules to the library.
