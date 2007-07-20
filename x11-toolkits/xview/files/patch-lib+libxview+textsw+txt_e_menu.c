@@ -1,14 +1,5 @@
---- lib/libxview/textsw/txt_e_menu.c.orig	Thu Oct  5 19:18:11 2006
-+++ lib/libxview/textsw/txt_e_menu.c	Thu Oct  5 20:03:45 2006
-@@ -19,7 +19,7 @@
-  *  3. $(HOME)/.text_extras_menu{.<locale>} (home dir),
-  *  4. locale sensitive system default
-  *		("$OPENWINHOME/lib/locale/<locale>/XView/.text_extras_menu")
-- *  4. fall back to SunView1 ("/usr/lib/.text_extras_menu")
-+ *  4. fall back to SunView1 ("/usr/X11R6/lib/.text_extras_menu")
-  *
-  * Always try locale specific name first, if not there, try without
-  * locale name.  In the #4, we will fall back to the "C" locale.
+--- lib/libxview/textsw/txt_e_menu.c.orig	Tue Jun 29 00:17:42 1993
++++ lib/libxview/textsw/txt_e_menu.c	Sat Jun 30 20:13:46 2007
 @@ -76,6 +76,8 @@
  static	int      Nargs;
  static	char	*check_filename_locale();
@@ -18,7 +9,7 @@
  extern int      EXTRASMENU_FILENAME_KEY;
  
  Pkg_private char *
-@@ -138,15 +140,22 @@
+@@ -138,10 +140,17 @@
  
  #ifdef notdef
  	/* Gee, still?... We will try the old fashioned way */
@@ -36,9 +27,3 @@
  #endif
      }
  
-     /* Giving up, try with ancient way (SunView1) */
--    (void) sprintf(tmp, "/usr/lib/.%s", EXTRASMENU);
-+    (void) sprintf(tmp, "/usr/X11R6/lib/.%s", EXTRASMENU);
-     result = xv_strsave(tmp);
- 
- found:

@@ -28,35 +28,27 @@ MAKE_ENV+=	IMAKEINCLUDE=${IMAKEINCLUDE}
 ALL_TARGET=	World
 SUB_FILES=	pkg-message
 
-X11BASE2FIX=	clients/olwm/screen.c clients/olwmslave/help_file.c		\
-		lib/libxview/help/help_file.c lib/libxview/misc/gettext.h	\
-		lib/libxview/textsw/txt_e_menu.c
-
 MAN1=		xview.1
+
+X11BASE2FIX=	clients/olwmslave/help_file.c	lib/libxview/help/help_file.c	\
+		lib/libxview/misc/gettext.h	lib/libxview/textsw/txt_e_menu.c
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's+/usr/X11R6+${PREFIX}+;' \
+pre-configure:
+	@${REINPLACE_CMD} -e 's+/usr/local+${PREFIX}+;' \
 	  ${WRKSRC}/config/XView.cf
 	@${REINPLACE_CMD} -e "s,CcCmd cc,CcCmd ${CC}," \
 	  ${WRKSRC}/config/XView.tmpl
 	@${REINPLACE_CMD} -e 's+/usr/X11/+${X11BASE}/+g;' \
 	  ${WRKSRC}/clients/olwm/screen.c
-	@${REINPLACE_CMD} -e 's+/usr/lib+${PREFIX}/lib+g;' \
-	  ${WRKSRC}/clients/olwmslave/help_file.c \
-	  ${WRKSRC}/lib/libxview/help/help_file.c \
-	  ${WRKSRC}/lib/libxview/misc/gettext.h \
-	  ${WRKSRC}/lib/libxview/textsw/txt_e_menu.c
+	${REINPLACE_CMD} -e 's+/usr/lib+${PREFIX}/lib+'	\
+		${X11BASE2FIX:C|^|${WRKSRC}/|}
 	@${REINPLACE_CMD} -e "s,^MSG_UTIL,#MSG_UTIL," \
 	  ${WRKSRC}/util/Imakefile
-
-pre-configure:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 	's|^#endif.*$$|#endif|;s|^#else.*$$|#else|;\
 	s|^/\*\*/#*|XCOMM |'
-	${REINPLACE_CMD} -e 's+/usr/X11R6+${X11BASE}+'	\
-		${X11BASE2FIX:C|^|${WRKSRC}/|}
 
 post-install:
 .if !defined{NOPORTDOCS}
