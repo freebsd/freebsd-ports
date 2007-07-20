@@ -910,7 +910,7 @@
 %%PHPBBDIR%%/viewtopic.php
 @exec [ -f %D/%%PHPBBDIR%%/config.php ] || touch %D/%%PHPBBDIR%%/config.php
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %B
-@unexec if [ -f %D/%%PHPBBDIR%%/config.php ]; then if [ `stat -f %%z %D/%%PHPBBDIR%%/config.php` = "0" ] ; then rm -f %D/%%PHPBBDIR%%/config.php; fi; fi
+@unexec [ -s %D/%%PHPBBDIR%%/config.php ] || rm -f %D/%%PHPBBDIR%%/config.php
 @dirrm %%PHPBBDIR%%/styles/subsilver2/theme/images
 @dirrm %%PHPBBDIR%%/styles/subsilver2/theme
 @dirrm %%PHPBBDIR%%/styles/subsilver2/template
