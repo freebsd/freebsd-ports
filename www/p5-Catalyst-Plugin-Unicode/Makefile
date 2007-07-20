@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Unicode
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -15,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Unicode aware Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Module-Install>=0.65:${PORTSDIR}/devel/p5-Module-Install
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
