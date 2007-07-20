@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	gbrain
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Keeps your browser history at Google bookmarks
 
+XPI_NUM=	2515
 XPI_ID=		gbrain@andreas.gohr
 XPI_FILES=	chrome/gbrain.jar chrome.manifest defaults/preferences/gbrain.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
