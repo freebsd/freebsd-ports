@@ -3,11 +3,10 @@ bin/gimmage
 %%DATADIR%%/pixmaps/anticlockwise.png
 %%DATADIR%%/pixmaps/clockwise.png
 %%DATADIR%%/pixmaps/unreadable.png
-share/gnome/apps/Graphics/gimmage.desktop
+share/applications/gimmage.desktop
 share/locale/de/LC_MESSAGES/gimmage.mo
 share/locale/fr/LC_MESSAGES/gimmage.mo
+share/pixmaps/gimmage.png
 @dirrm share/gimmage/pixmaps
 @dirrm share/gimmage
-@dirrmtry share/gnome/apps/Graphics
-@dirrmtry share/gnome/apps
-@dirrmtry share/gnome
+@dirrmtry share/applications
