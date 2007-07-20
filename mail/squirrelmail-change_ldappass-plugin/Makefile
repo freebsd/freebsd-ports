@@ -1,47 +1,52 @@
-# New ports collection makefile for:		squirrelmail-change_ldappass-plugin
+# New ports collection makefile for:	squirrelmail-change_ldappass-plugin
 # Date created:		3 Jul 2005
-# Whom:		Alexander Wittig <alexander@wittig.name>
+# Whom:			Alexander Wittig <alexander@wittig.name>
 #
 # $FreeBSD$
 
-PORTNAME=	squirrelmail
+PORTNAME=	change_ldappass
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
-PKGNAMESUFFIX=	-${SQUIRREL_PLUGIN_NAME}-plugin
-DISTNAME=	${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.4.0
+PKGNAMEPREFIX=	squirrelmail-
+PKGNAMESUFFIX=	-plugin
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1.4.0
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	alexander@wittig.name
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	Allows users to change their passwords stored in LDAP Tree
 
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
 
-SQUIRREL_PLUGIN_NAME=	change_ldappass
+SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 
 .ifdef SQUIRRELDIR
 PLIST_SUB+=	SQUIRRELDIR=${SQUIRRELDIR}
 SUB_LIST+=	"SQUIRRELDIR=${SQUIRRELDIR}"
 .else
-.	ifndef WITHOUT_WWWDIR
+.ifndef WITHOUT_WWWDIR
 SQUIRRELDIR=	${PREFIX}/www/squirrelmail
 PLIST_SUB+=	SQUIRRELDIR=www/squirrelmail
 SUB_LIST+=	"SQUIRRELDIR=www/squirrelmail"
-.	else
+.else
 SQUIRRELDIR=	${PREFIX}/squirrelmail
 PLIST_SUB+=	SQUIRRELDIR=squirrelmail
 SUB_LIST+=	"SQUIRRELDIR=squirrelmail"
-.	endif
 .endif
+.endif
+PLIST_SUB+=	SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
 
 SUB_FILES=	pkg-message
 
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-USE_PERL5_BUILD=yes
-USE_PHP=	ldap
-WANT_PHP_WEB=	yes
-USE_GETTEXT=	yes
+NO_BUILD=		yes
+NO_WRKSUBDIR=		yes
+USE_PERL5_BUILD=	yes
+USE_PHP=		ldap
+WANT_PHP_WEB=		yes
+USE_GETTEXT=		yes
+
+.include <bsd.port.pre.mk>
 
 pre-everything::
 	@${ECHO} ""
@@ -58,6 +63,7 @@ pre-everything::
 
 do-install:
 	${CP} -rp ${WRKSRC}/${SQUIRREL_PLUGIN_NAME} ${SQUIRRELDIR}/plugins
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME}
 
 post-install:
 .ifndef WITHOUT_ACTIVATE
@@ -72,4 +78,4 @@ post-install:
 	@${ECHO} ""
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
