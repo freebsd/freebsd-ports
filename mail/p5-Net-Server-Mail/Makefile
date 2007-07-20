@@ -11,7 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	http://cpan.org/authors/id/G/GU/GUIMARD/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Implementation of SMTP, ESMTP and LMTP protocols
 
 PERL_CONFIGURE=	yes
