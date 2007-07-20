@@ -4,35 +4,39 @@
 #
 # $FreeBSD$
 
-PORTNAME=	squirrelmail
-PORTVERSION=	2.0.6
-PORTREVISION=	1
+PORTNAME=	compatibility
+PORTVERSION=	2.0.8
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
-PKGNAMESUFFIX=	-${SQUIRREL_PLUGIN_NAME}-plugin
-DISTNAME=	${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}
+PKGNAMEPREFIX=	squirrelmail-
+PKGNAMESUFFIX=	-plugin
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1.0
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	alexander@wittig.name
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	Required by many plugins for compatibility with SquirrelMail
 
-RUN_DEPENDS=	squirrelmail>=1.4.9:${PORTSDIR}/mail/squirrelmail
+RUN_DEPENDS=	squirrelmail>=1.4.10:${PORTSDIR}/mail/squirrelmail
 
 CONFLICTS=	squirrelmail-compatibility-plugin-1.*
 
-SQUIRREL_PLUGIN_NAME=	compatibility
+SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 
 .ifdef SQUIRRELDIR
 PLIST_SUB+=	SQUIRRELDIR=${SQUIRRELDIR}
+SUB_LIST+=	"SQUIRRELDIR=${SQUIRRELDIR}"
 .else
-.	ifndef WITHOUT_WWWDIR
+.ifndef WITHOUT_WWWDIR
 SQUIRRELDIR=	${PREFIX}/www/squirrelmail
 PLIST_SUB+=	SQUIRRELDIR=www/squirrelmail
-.	else
+SUB_LIST+=	"SQUIRRELDIR=www/squirrelmail"
+.else
 SQUIRRELDIR=	${PREFIX}/squirrelmail
 PLIST_SUB+=	SQUIRRELDIR=squirrelmail
-.	endif
+SUB_LIST+=	"SQUIRRELDIR=squirrelmail"
 .endif
+.endif
+PLIST_SUB+=	SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -56,11 +60,12 @@ pre-everything::
 
 do-install:
 	${CP} -rp ${WRKSRC}/${SQUIRREL_PLUGIN_NAME} ${SQUIRRELDIR}/plugins
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME}
 
 post-install:
 	@${ECHO} "Patching SquirrelMail for compatibility plugin"
 	@${ECHO} ""
-	${PATCH} -sN -p0 -d ${SQUIRRELDIR}/plugins/compatibility < ${SQUIRRELDIR}/plugins/compatibility/patches/compatibility_patch-1.4.9.diff
+	${PATCH} -sN -p0 -d ${SQUIRRELDIR}/plugins/compatibility < ${SQUIRRELDIR}/plugins/compatibility/patches/compatibility_patch-1.4.10.diff
 	@${ECHO} ""
 
 .ifndef WITHOUT_ACTIVATE
