@@ -1,0 +1,55 @@
+%%SITE_PERL%%/Google/Checkout/Command/AddMerchantOrderNumber.pm
+%%SITE_PERL%%/Google/Checkout/Command/AddTrackingData.pm
+%%SITE_PERL%%/Google/Checkout/Command/ArchiveOrder.pm
+%%SITE_PERL%%/Google/Checkout/Command/AuthorizeOrder.pm
+%%SITE_PERL%%/Google/Checkout/Command/CancelOrder.pm
+%%SITE_PERL%%/Google/Checkout/Command/ChargeOrder.pm
+%%SITE_PERL%%/Google/Checkout/Command/DeliverOrder.pm
+%%SITE_PERL%%/Google/Checkout/Command/GCOCommand.pm
+%%SITE_PERL%%/Google/Checkout/Command/ProcessOrder.pm
+%%SITE_PERL%%/Google/Checkout/Command/RefundOrder.pm
+%%SITE_PERL%%/Google/Checkout/Command/SendBuyerMessage.pm
+%%SITE_PERL%%/Google/Checkout/Command/UnarchiveOrder.pm
+%%SITE_PERL%%/Google/Checkout/General/ConfigReader.pm
+%%SITE_PERL%%/Google/Checkout/General/DigitalContent.pm
+%%SITE_PERL%%/Google/Checkout/General/Error.pm
+%%SITE_PERL%%/Google/Checkout/General/FlatRateShipping.pm
+%%SITE_PERL%%/Google/Checkout/General/GCO.pm
+%%SITE_PERL%%/Google/Checkout/General/GiftCertificate.pm
+%%SITE_PERL%%/Google/Checkout/General/MerchantCalculatedShipping.pm
+%%SITE_PERL%%/Google/Checkout/General/MerchantCalculationCallback.pm
+%%SITE_PERL%%/Google/Checkout/General/MerchantCalculationResult.pm
+%%SITE_PERL%%/Google/Checkout/General/MerchantCalculationResults.pm
+%%SITE_PERL%%/Google/Checkout/General/MerchantCalculations.pm
+%%SITE_PERL%%/Google/Checkout/General/MerchantCheckoutFlow.pm
+%%SITE_PERL%%/Google/Checkout/General/MerchantItem.pm
+%%SITE_PERL%%/Google/Checkout/General/ParameterizedUrls.pm
+%%SITE_PERL%%/Google/Checkout/General/Pickup.pm
+%%SITE_PERL%%/Google/Checkout/General/Shipping.pm
+%%SITE_PERL%%/Google/Checkout/General/ShippingRestrictions.pm
+%%SITE_PERL%%/Google/Checkout/General/ShoppingCart.pm
+%%SITE_PERL%%/Google/Checkout/General/TaxRule.pm
+%%SITE_PERL%%/Google/Checkout/General/TaxTable.pm
+%%SITE_PERL%%/Google/Checkout/General/TaxTableAreas.pm
+%%SITE_PERL%%/Google/Checkout/General/Util.pm
+%%SITE_PERL%%/Google/Checkout/Notification/ChargeAmount.pm
+%%SITE_PERL%%/Google/Checkout/Notification/ChargebackAmount.pm
+%%SITE_PERL%%/Google/Checkout/Notification/Factory.pm
+%%SITE_PERL%%/Google/Checkout/Notification/GCONotification.pm
+%%SITE_PERL%%/Google/Checkout/Notification/NewOrder.pm
+%%SITE_PERL%%/Google/Checkout/Notification/OrderStateChange.pm
+%%SITE_PERL%%/Google/Checkout/Notification/RefundAmount.pm
+%%SITE_PERL%%/Google/Checkout/Notification/RiskInformation.pm
+%%SITE_PERL%%/Google/Checkout/XML/CheckoutXmlWriter.pm
+%%SITE_PERL%%/Google/Checkout/XML/CommandXmlWriter.pm
+%%SITE_PERL%%/Google/Checkout/XML/Constants.pm
+%%SITE_PERL%%/Google/Checkout/XML/NotificationResponseXmlWriter.pm
+%%SITE_PERL%%/Google/Checkout/XML/Writer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Google-Checkout/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google-Checkout
+@dirrm %%SITE_PERL%%/Google/Checkout/XML
+@dirrm %%SITE_PERL%%/Google/Checkout/Notification
+@dirrm %%SITE_PERL%%/Google/Checkout/General
+@dirrm %%SITE_PERL%%/Google/Checkout/Command
+@dirrm %%SITE_PERL%%/Google/Checkout
+@dirrmtry %%SITE_PERL%%/Google
