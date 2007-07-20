@@ -1,0 +1,8 @@
+bin/qstardict
+share/applications/qstardict.desktop
+share/pixmaps/qstardict.png
+%%NLS%%%%DATADIR%%/translations/qstardict-ru_RU.qm
+%%NLS%%%%DATADIR%%/translations/qstardict-zh_TW.qm
+%%NLS%%@dirrm %%DATADIR%%/translations
+%%NLS%%@dirrm %%DATADIR%%
+@dirrmtry share/applications

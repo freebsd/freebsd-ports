@@ -797,6 +797,7 @@
     SUBDIR += py2html
     SUBDIR += pybook
     SUBDIR += pychm
+    SUBDIR += qstardict
     SUBDIR += qt4-xml
     SUBDIR += qu-aspell
     SUBDIR += queequeg
