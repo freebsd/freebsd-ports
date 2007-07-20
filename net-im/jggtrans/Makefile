@@ -6,7 +6,7 @@
 
 PORTNAME=		jggtrans
 PORTVERSION=		2.2.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		net-im polish
 MASTER_SITES=		http://jggtrans.jajcus.net/downloads/ \
 			http://freebsd.e.pl/distfiles/
@@ -28,8 +28,6 @@ MAKE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 
 USE_RC_SUBR=		jggtrans.sh
 
-USE_LDCONFIG=		yes
-
 OPTIONS=		NODEBUG "Turn off debugging code" off \
 			EJABBERD "Use transport with ejabberd" off
 
@@ -50,7 +48,8 @@ SUB_LIST+=	JABBER_REQUIRE=jabberd
 SUB_LIST+=	JABBER_USER=${JABBER_USER}
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/jggtrans.xml ]; then ${CP} -p ${WRKSRC}/jggtrans.xml ${PREFIX}/etc/jggtrans.xml.sample ; fi
+	@${INSTALL_DATA} ${WRKSRC}/jggtrans.xml ${PREFIX}/etc/jggtrans.xml.sample
+	@${CP} -n ${WRKSRC}/jggtrans.xml ${PREFIX}/etc/jggtrans.xml
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
