@@ -4,34 +4,39 @@
 #
 # $FreeBSD$
 
-PORTNAME=	squirrelmail
+PORTNAME=	compatibility
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
-PKGNAMESUFFIX=	-${SQUIRREL_PLUGIN_NAME}-plugin
-DISTNAME=	${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}
+PKGNAMEPREFIX=	squirrelmail-
+PKGNAMESUFFIX=	-plugin
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	alexander@wittig.name
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	Required by many plugins for compatibility with SquirrelMail
 
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
 
 CONFLICTS=	squirrelmail-compatibility-plugin-2.*
 
-SQUIRREL_PLUGIN_NAME=	compatibility
+SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 
 .ifdef SQUIRRELDIR
 PLIST_SUB+=	SQUIRRELDIR=${SQUIRRELDIR}
+SUB_LIST+=	"SQUIRRELDIR=${SQUIRRELDIR}"
 .else
-.	ifndef WITHOUT_WWWDIR
+.ifndef WITHOUT_WWWDIR
 SQUIRRELDIR=	${PREFIX}/www/squirrelmail
 PLIST_SUB+=	SQUIRRELDIR=www/squirrelmail
-.	else
+SUB_LIST+=	"SQUIRRELDIR=www/squirrelmail"
+.else
 SQUIRRELDIR=	${PREFIX}/squirrelmail
 PLIST_SUB+=	SQUIRRELDIR=squirrelmail
-.	endif
+SUB_LIST+=	"SQUIRRELDIR=squirrelmail"
 .endif
+.endif
+PLIST_SUB+=	SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -55,6 +60,7 @@ pre-everything::
 
 do-install:
 	${CP} -rp ${WRKSRC}/${SQUIRREL_PLUGIN_NAME} ${SQUIRRELDIR}/plugins
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME}
 
 post-install:
 .ifndef WITHOUT_ACTIVATE
