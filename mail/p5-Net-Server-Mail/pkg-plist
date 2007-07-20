@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Net/Server/Mail/ESMTP/Extension.pm
 %%SITE_PERL%%/Net/Server/Mail/ESMTP/PIPELINING.pm
 %%SITE_PERL%%/Net/Server/Mail/ESMTP/8BITMIME.pm
+%%SITE_PERL%%/Net/Server/Mail/ESMTP/XFORWARD.pm
 %%SITE_PERL%%/Net/Server/Mail/LMTP.pm
 %%SITE_PERL%%/Net/Server/Mail/SMTP.pm
 @dirrm %%SITE_PERL%%/Net/Server/Mail/ESMTP
