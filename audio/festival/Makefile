@@ -25,11 +25,9 @@ OPTIONS=	NAS "Enable Network Audio System (NAS) backend" on \
 DIST_SUBDIR=	festival
 
 CONFIGURE_WRKSRC=	${WRKDIR}/festival
-USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 SPEECHTOOLS=	${WRKSRC}/speech_tools
 FESTIVAL=	${WRKSRC}/festival
-FHOME=		${PREFIX}/share/festival
 MAKE_ENV+=	GCC="${CC}" \
 		GXX="${CXX}" \
 		EST_HOME=${SPEECHTOOLS} \
@@ -90,25 +88,25 @@ do-configure:
 		${LN} -s gcc_defaults.mak ${WRKDIR}/speech_tools/config/compilers/${CC}.mak
 
 do-install:
-	${MKDIR} ${FHOME}/lib/voices/english/
-	${MKDIR} ${FHOME}/lib/voices/spanish/
-	${MKDIR} ${FHOME}/lib/dicts
+	${MKDIR} ${DATADIR}/lib/voices/english/
+	${MKDIR} ${DATADIR}/lib/voices/spanish/
+	${MKDIR} ${DATADIR}/lib/dicts
 	${CHMOD} -R u+w,a+r,og-w ${FESTIVAL}/lib
 	${FIND} ${FESTIVAL}/lib -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	cd ${FESTIVAL} && ${CP} -pPR lib examples ${FHOME}
-	${RM} -rf ${FHOME}/lib/etc/Makefile ${FHOME}/lib/etc/*FreeBSD* \
-	    ${FHOME}/lib/etc/*unknown
+	cd ${FESTIVAL} && ${CP} -pPR lib examples ${DATADIR}
+	${RM} -rf ${DATADIR}/lib/etc/Makefile ${DATADIR}/lib/etc/*FreeBSD* \
+	    ${DATADIR}/lib/etc/*unknown
 	${INSTALL_PROGRAM} ${FESTIVAL}/lib/etc/*/audsp ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/festival ${PREFIX}/libexec/festival.naked
 	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/festival_client ${PREFIX}/libexec/festival_client.naked
 	for n in festival.sh festival_client.sh sitevars.scm; \
 	do {\
-	  ${SED} "s%@PKG_FESTIVAL_LOCATION@%${FHOME}%; \
+	  ${SED} "s%@PKG_FESTIVAL_LOCATION@%${DATADIR}%; \
 	       s%@PKG_PREFIX@%${PREFIX}%" <${FILESDIR}/$$n > ${WRKDIR}/$$n ;} \
 	done
 	${INSTALL_SCRIPT} ${WRKDIR}/festival.sh ${PREFIX}/bin/festival
 	${INSTALL_SCRIPT} ${WRKDIR}/festival_client.sh ${PREFIX}/bin/festival_client
-	${INSTALL_DATA} ${WRKDIR}/sitevars.scm ${FHOME}/lib/sitevars.scm
+	${INSTALL_DATA} ${WRKDIR}/sitevars.scm ${DATADIR}/lib/sitevars.scm
 	${INSTALL_MAN} ${FESTIVAL}/doc/festival.1 ${PREFIX}/man/man1/festival.1
 	${INSTALL_MAN} ${FESTIVAL}/doc/festival_client.1 ${PREFIX}/man/man1/festival_client.1
 	${CAT} ${PKGMESSAGE}
