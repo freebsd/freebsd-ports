@@ -55,14 +55,14 @@ pre-everything::
 
 do-install:
 	@ ${MKDIR} -m 0775 ${PREFIX}/${PHPBBDIR}
-	@ cd ${WRKSRC} && ${FIND} . ! -name config.php ! -name . -print | ${TAR} cTf - - | ${TAR} xUCf ${PREFIX}/${PHPBBDIR} -
-	@ ${TOUCH} ${PREFIX}/${PHPBBDIR}/config.php
+	@ cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${PHPBBDIR} "! -name config.php"
+	@ [ -f ${PREFIX}/${PHPBBDIR}/config.php ] || ${TOUCH} ${PREFIX}/${PHPBBDIR}/config.php
 	@ ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPBBDIR}
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-	@ cd ${WRKSRC}/docs && ${FIND} . -print | ${TAR} cTf - - | ${TAR} xUCf ${DOCSDIR} -
+	@ cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 
 .if !defined(BATCH)
 	@ ${CAT} ${PKGMESSAGE}
