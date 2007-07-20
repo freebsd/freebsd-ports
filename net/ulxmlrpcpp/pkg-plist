@@ -1,5 +1,7 @@
 bin/introspect
 bin/meerkat_client
+bin/ulxr2xml
+bin/xml2ulxr
 include/ulxmlrpcpp/contrib/mprocess_rpc_server.h
 include/ulxmlrpcpp/contrib/ssl_connection.h
 include/ulxmlrpcpp/ulxmlrpcpp.h
@@ -18,6 +20,8 @@ include/ulxmlrpcpp/ulxr_htmlform_handler.h
 include/ulxmlrpcpp/ulxr_http_client.h
 include/ulxmlrpcpp/ulxr_http_protocol.h
 include/ulxmlrpcpp/ulxr_http_server.h
+include/ulxmlrpcpp/ulxr_log4j.h
+include/ulxmlrpcpp/ulxr_method_adder.h
 include/ulxmlrpcpp/ulxr_mtrpc_server.h
 include/ulxmlrpcpp/ulxr_mutex.h
 include/ulxmlrpcpp/ulxr_protocol.h
@@ -40,11 +44,11 @@ include/ulxmlrpcpp/ulxr_xmlparse_base.h
 lib/libulxmlrpcpp.a
 lib/libulxmlrpcpp.la
 lib/libulxmlrpcpp.so
-lib/libulxmlrpcpp.so.17
+lib/libulxmlrpcpp.so.20
 lib/libulxmlrpcpp_contrib.a
 lib/libulxmlrpcpp_contrib.la
 lib/libulxmlrpcpp_contrib.so
-lib/libulxmlrpcpp_contrib.so.17
+lib/libulxmlrpcpp_contrib.so.20
 libdata/pkgconfig/ulxmlrpcpp.pc
 %%DATADIR%%/httpd/index.html
 %%DATADIR%%/httpd/logo-ulxmlrpcpp.png
