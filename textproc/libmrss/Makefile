@@ -8,7 +8,7 @@
 PORTNAME=	libmrss
 PORTVERSION=	0.18.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://www2.autistici.org/bakunin/libmrss/
+MASTER_SITES=	http://www5.autistici.org/bakunin/libmrss/ GENTOO/distfiles
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A C library for parsing, writing, and creating RSS
