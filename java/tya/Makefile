@@ -18,13 +18,14 @@ COMMENT=	A ``100% unofficial'' JIT-compiler for java
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.3
+JAVAOS=		native
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/a1/a1./}
 
 ONLY_FOR_ARCHS=	i386
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-jdk=${JAVAHOME}
+CONFIGURE_ARGS+=	--with-jdk=${JAVA_HOME}
 
 JAVALIBDIR=	${PREFIX}/lib/tya
 
