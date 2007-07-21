@@ -18,7 +18,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/collections.jar:${PORTSDIR}/java/collections
 
 USE_ZIP=	YES
 USE_JAVA=	YES
-JAVA_VERSION=	1.1
+JAVA_VERSION=	1.1+
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
