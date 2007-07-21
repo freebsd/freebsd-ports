@@ -6,6 +6,7 @@
 
 PORTNAME=	vexim
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://silverwraith.com/vexim/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -13,13 +14,14 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	john@yoafrica.com
 COMMENT=	A web interface for managing virtual domains for exim
 
+RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+
 VEXIMDIR=	www/${PORTNAME}
 WRKSRC=		${WRKDIR}/vexim2
 
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
-USE_APACHE=	yes
-USE_PHP=	yes
+USE_PHP=	gettext session
 
 OPTIONS=	MYSQL "Use MySQL" On \
 		PGSQL "Use PostgreSQL" Off
@@ -28,10 +30,12 @@ OPTIONS=	MYSQL "Use MySQL" On \
 
 .if !defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL)
 USE_MYSQL=	yes
+USE_PHP+=	mysql
 .endif
 
 .if defined(WITH_PGSQL)
 WITH_PGSQL=	yes
+USE_PHP+=	pgsql
 .endif
 
 post-patch:
