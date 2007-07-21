@@ -7,6 +7,7 @@
 
 PORTNAME=	tya
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	http://sax.sax.de/~adlibit/
 DISTNAME=	tya18
@@ -15,16 +16,16 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ``100% unofficial'' JIT-compiler for java
 
-BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk11
+USE_JAVA=	yes
+JAVA_VERSION=	1.3
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/a1/a1./}
 
 ONLY_FOR_ARCHS=	i386
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-jdk=${JAVADIR}
+CONFIGURE_ARGS+=	--with-jdk=${JAVAHOME}
 
-JAVADIR?=	${LOCALBASE}/jdk1.1.8
 JAVALIBDIR=	${PREFIX}/lib/tya
 
 post-patch:
