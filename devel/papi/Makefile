@@ -39,7 +39,7 @@ PLIST_SUB+=	CTESTS=""
 PLIST_SUB+=	FTESTS="@comment "
 .else
 PLIST_SUB+=	FTESTS=""
-BUILD_DEPENDS=	gfortran:${PORTSDIR}/lang/gcc42
+USE_FORTRAN=	yes
 .endif
 
 .if defined(WITHOUT_DEBUG)
