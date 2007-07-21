@@ -1,22 +1,22 @@
 Index: Makefile.in
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
  CPPFLAGS        = -I. -DSYSCONFFILE=\"${sysconfdir}/latrine.conf\" -DDICTDIR=\"${dictdir}\" -DLOCALEDIR=\"${localedir}\" @CPPFLAGS@
- CFLAGS          = -Wall -funroll-loops @CFLAGS@ @GLIB_CFLAGS@
+ CFLAGS          = -Wall -funroll-loops -D_GNU_SOURCE @CFLAGS@
  LDFLAGS         = -Wall @LDFLAGS@
--LDLIBS          = @LIBS@ @GLIB_LIBS@
-+LDLIBS          = @LIBS@ @GLIB_LIBS@ -lintl
+-LDLIBS          = @LIBS@
++LDLIBS          = @LIBS@ -lintl
  INSTALL         = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_DATA    = @INSTALL_DATA@
-@@ -41,10 +41,10 @@
- 		${INSTALL} -d ${DESTDIR}${localedir}/`basename $$i .mo`/LC_MESSAGES; \
- 		${INSTALL_DATA} $$i ${DESTDIR}${localedir}/`basename $$i .mo`/LC_MESSAGES/latrine.mo; \
+@@ -46,11 +46,7 @@
  	done
--	${INSTALL} -d ${DESTDIR}${dictdir}
-+#	${INSTALL} -d ${DESTDIR}${dictdir}
+ #	${INSTALL} -d ${DESTDIR}${dictdir}
  #	${INSTALL_DATA} ${KEYMAPS} ${DESTDIR}${dictdir}
- 	${INSTALL} -d ${DESTDIR}${sysconfdir}
--	test -e ${DESTDIR}${sysconfdir}/latrine.conf || ${INSTALL_DATA} latrine.conf ${DESTDIR}${sysconfdir}
+-	if test -e ${DESTDIR}${sysconfdir}/latrine.conf; then \
+-		${INSTALL_DATA} -D latrine.conf ${DESTDIR}${sysconfdir}/latrine.conf.sample; \
+-	else \
+-		${INSTALL_DATA} -D latrine.conf ${DESTDIR}${sysconfdir}/latrine.conf; \
+-	fi
 +	${INSTALL_DATA} latrine.conf ${DESTDIR}${sysconfdir}/latrine.conf.sample
  
  clean:

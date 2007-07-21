@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	latrine
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.godisch.de/debian/latrine/
 

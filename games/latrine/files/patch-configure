@@ -1,0 +1,12 @@
+Index: configure
+@@ -5461,8 +5461,8 @@
+ # ----------------------------------------------------------------------------
+ { echo "$as_me:$LINENO: checking for release date" >&5
+ echo $ECHO_N "checking for release date... $ECHO_C" >&6; }
+-RELEASE_MONTH=`date -f released +%B`
+-RELEASE_YEAR=`date -f released +%Y`
++RELEASE_MONTH=$(date -j -f  '%a, %e %b %Y %T %z' "$(cat released)" +%B)
++RELEASE_YEAR=$(date -j -f  '%a, %e %b %Y %T %z' "$(cat released)" +%Y)
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define RELEASE_MONTH $RELEASE_MONTH
