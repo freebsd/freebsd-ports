@@ -7,17 +7,12 @@
 
 PORTNAME=	IcOsX
 PORTVERSION=	0.7
-MASTER_SITES=	http://kr.hancom.com/bbs/scripts/
-DISTNAME=	index.php\?table=pds7\&mode=download\&id=24
-EXTRACT_SUFX=
+MASTER_SITES=	http://physics.ramapo.edu/downloads/ \
+		http://easylinuxguide.com/downloads/kde-iconthemes/
 
 COMMENT=	KDE IcOsX iconset
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PORT_SHAREDIR?=	"${PORTNAME}-${PORTVERSION}"
-
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
