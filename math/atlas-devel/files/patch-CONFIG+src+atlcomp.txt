@@ -1,38 +1,103 @@
---- CONFIG/src/atlcomp.txt.org	Wed Dec 27 12:33:29 2006
-+++ CONFIG/src/atlcomp.txt	Wed Dec 27 12:34:12 2006
-@@ -40,18 +40,18 @@
+--- CONFIG/src/atlcomp.txt.orig	Tue Jun 26 03:10:07 2007
++++ CONFIG/src/atlcomp.txt	Sat Jul 21 05:50:18 2007
+@@ -40,74 +40,74 @@
  #
  # Core2Solo and Core2Duo
- MACH=14,15 OS=0 LVL=1000 COMPS=smc,dmc,skc,dkc,icc
+ MACH=Core2Solo,Core2Duo OS=ALL LVL=1000 COMPS=smc,dmc,skc,dkc,icc
 -   'gcc' '-fomit-frame-pointer -mfpmath=sse -msse3 -O2'
 +   '%%CC%%' '-fomit-frame-pointer -mfpmath=sse -msse3 -O2'
  # PPRO,PII,PIII,P4,P4E,K7,HAMMER
- MACH=8,9,10,16,17,19,20 OS=0 LVL=2000 COMPS=smc,dmc,skc,dkc
+ MACH=PPRO,PII,PIII,P4,P4E,K7,HAMMER OS=ALL LVL=2000 COMPS=smc,dmc,skc,dkc
 -   'gcc32' '-fomit-frame-pointer -mfpmath=387 -O2 -falign-loops=4'
 +   '%%CC%%' '-fomit-frame-pointer -mfpmath=387 -O2 -falign-loops=4'
  # PPRO,PII,PIII,P4,P4E,K7,HAMMER
- MACH=8,9,10,16,17,19,20 OS=0 LVL=1000 COMPS=smc,dmc,skc,dkc
+ MACH=PPRO,PII,PIII,P4,P4E,K7,HAMMER OS=ALL LVL=1000 COMPS=smc,dmc,skc,dkc,icc
 -   'gcc' '-fomit-frame-pointer -mfpmath=387 -O2 -falign-loops=4'
 +   '%%CC%%' '-fomit-frame-pointer -mfpmath=387 -O2 -falign-loops=4'
- MACH=8,9,10,16,17,19,20 OS=0 LVL=1000 COMPS=icc
--   'gcc' '-fomit-frame-pointer -mfpmath=387 -O'
-+   '%%CC%%' '-fomit-frame-pointer -mfpmath=387 -O'
  # CoreSolo,CoreDuo
- MACH=12,13 OS=0 LVL=1000 COMPS=smc,dmc,skc,dkc,icc
+ MACH=CoreSolo,CoreDuo OS=ALL LVL=1000 COMPS=smc,dmc,skc,dkc,icc
 -   'gcc' '-fomit-frame-pointer -O3 -mfpmath=387'
 +   '%%CC%%' '-fomit-frame-pointer -O3 -mfpmath=387'
  # UltraSPARC III & IV
- MACH=26,27 OS=0 LVL=1000 COMPS=smc,dmc,skc,dkc
-    'gcc' '-mcpu=ultrasparc3 -mtune=ultrasparc3 -O3 -funroll-all-loops'
-@@ -82,9 +82,9 @@
+ MACH=USIII,USIV OS=ALL LVL=1000 COMPS=smc,dmc,skc,dkc
+-   'gcc' '-mcpu=ultrasparc3 -mtune=ultrasparc3 -O3 -funroll-all-loops'
++   '%%CC%%' '-mcpu=ultrasparc3 -mtune=ultrasparc3 -O3 -funroll-all-loops'
+ MACH=USIII,USIV OS=ALL LVL=1000 COMPS=icc,xcc
+-   'gcc' '-mcpu=ultrasparc3 -mtune=ultrasparc3 -O'
++   '%%CC%%' '-mcpu=ultrasparc3 -mtune=ultrasparc3 -O'
+ MACH=USIII,USIV OS=ALL LVL=1000 COMPS=f77
+-   'f77' '-dalign -native -xO5'
++   '%%FC%%' '-dalign -native -xO5'
+ MACH=USIII,USIV OS=ALL LVL=100 COMPS=f77
+-   'gfortran' '-O -mcpu=ultrasparc3 -mtune=ultrasparc3'
++   '%%FC%%' '-O -mcpu=ultrasparc3 -mtune=ultrasparc3'
+ MACH=USIII,USIV OS=ALL LVL=10 COMPS=f77
+-   'g77' '-O -mcpu=ultrasparc3 -mtune=ultrasparc3'
++   '%%FC%%' '-O -mcpu=ultrasparc3 -mtune=ultrasparc3'
+ #
+ # Itanium & Itanium 2
+ #
+ # These gcc 4 default flags will die on gcc3, allowing gcc3's flags to be used
+ MACH=IA64Itan,IA64Itan2 OS=ALL LVL=1010 COMPS=smc,dmc,skc,dkc
+-   'gcc' '-fomit-frame-pointer -O2 -fno-tree-loop-optimize'
++   '%%CC%%' '-fomit-frame-pointer -O2 -fno-tree-loop-optimize'
+ MACH=IA64Itan,IA64Itan2 OS=ALL LVL=1000 COMPS=smc,dmc,skc,dkc
+-   'gcc' '-fomit-frame-pointer -O2'
++   '%%CC%%' '-fomit-frame-pointer -O2'
+ #
+ # IRIX/MIPS
+ #
+ MACH=MIPSR1xK OS=IRIX LVL=1000 COMPS=smc,dmc,skc,dkc
+-   'cc' '-O3 -OPT:Olimit=15000 -LNO:blocking=OFF -LOPT:alias=typed'
++   '%%CC%%' '-O3 -OPT:Olimit=15000 -LNO:blocking=OFF -LOPT:alias=typed'
+ MACH=MIPSR1xK OS=IRIX LVL=1000 COMPS=icc,xcc
+-   'cc' '-O2 -OPT:Olimit=15000 -LNO:blocking=OFF'
++   '%%CC%%' '-O2 -OPT:Olimit=15000 -LNO:blocking=OFF'
+ MACH=MIPSR1xK OS=IRIX LVL=1000 COMPS=f77
+-   'f77' '-O2'
++   '%%FC%%' '-O2'
+ #
+ # Linux/MIPSICE9
+ #
+ MACH=MIPSICE9 OS=ALL LVL=1000 COMPS=icc,smc,dmc,skc,dkc,xcc
+-   'gcc' '-O2 -mips64 -march=5kf -mtune=5kf -fno-schedule-insns -fschedule-insns2 -fno-peephole -fno-peephole2'
++   '%%CC%%' '-O2 -mips64 -march=5kf -mtune=5kf -fno-schedule-insns -fschedule-insns2 -fno-peephole -fno-peephole2'
+ #
+ # OS X / PowerPC970
+ #
+ MACH=PPCG5 OS=OSX LVL=1001 COMPS=icc,smc,dmc,skc,dkc,xcc
+-   'gcc' '-mpowerpc64 -maltivec -mabi=altivec -mcpu=970 -mtune=970 -faltivec -O3'
++   '%%CC%%' '-mpowerpc64 -maltivec -mabi=altivec -mcpu=970 -mtune=970 -faltivec -O3'
+ MACH=PPCG5 OS=OSX LVL=1010 COMPS=icc,smc,dmc,skc,dkc,xcc
+-   'gcc' '-mpowerpc64 -maltivec -mabi=altivec -mcpu=970 -mtune=970 -faltivec -force_cpusubtype_ALL -O3'
++   '%%CC%%' '-mpowerpc64 -maltivec -mabi=altivec -mcpu=970 -mtune=970 -faltivec -force_cpusubtype_ALL -O3'
+ MACH=PPCG5 OS=ALL LVL=1000 COMPS=icc,smc,dmc,skc,dkc,xcc
+-   'gcc' '-mpowerpc64 -maltivec -mabi=altivec -mcpu=970 -mtune=970 -O3'
++   '%%CC%%' '-mpowerpc64 -maltivec -mabi=altivec -mcpu=970 -mtune=970 -O3'
+ MACH=POWER5 OS=ALL LVL=1010 COMPS=icc,smc,dmc,skc,dkc,xcc
+-   'gcc' '-mcpu=power5 -mtune=power5 -O3'
++   '%%CC%%' '-mcpu=power5 -mtune=power5 -O3'
+ MACH=POWER5 OS=ALL LVL=1010 COMPS=f77
+-   'xlf' '-qtune=pwr5 -qarch=pwr5 -O3 -qmaxmem=-1 -qfloat=hsflt'
++   '%%FC%%' '-qtune=pwr5 -qarch=pwr5 -O3 -qmaxmem=-1 -qfloat=hsflt'
+ MACH=POWER4 OS=ALL LVL=1010 COMPS=icc,smc,dmc,skc,dkc,xcc
+-   'gcc' '-mcpu=power4 -mtune=power4 -O3'
++   '%%CC%%' '-mcpu=power4 -mtune=power4 -O3'
+ MACH=POWER4 OS=ALL LVL=1010 COMPS=f77
+-   'xlf' '-qtune=pwr5 -qarch=pwr5 -O3 -qmaxmem=-1 -qfloat=hsflt'
++   '%%FC%%' '-qtune=pwr5 -qarch=pwr5 -O3 -qmaxmem=-1 -qfloat=hsflt'
+ #
  # Generic defaults
  #
- MACH=0 OS=0 LVL=0 COMPS=icc,smc,dmc,skc,dkc,xcc
+ MACH=ALL OS=ALL LVL=0 COMPS=icc,smc,dmc,skc,dkc,xcc
 -   'gcc' '-O -fomit-frame-pointer'
 +   '%%CC%%' '-O -fomit-frame-pointer'
- MACH=0 OS=0 LVL=2 COMPS=f77
+ MACH=ALL OS=ALL LVL=2 COMPS=f77
 -   'gfortran' '-O'
 +   '%%FC%%' '-O'
- MACH=0 OS=0 LVL=1 COMPS=f77
-    'g77' '-O'
- MACH=0 OS=0 LVL=0 COMPS=f77
+ MACH=ALL OS=ALL LVL=1 COMPS=f77
+-   'g77' '-O'
++   '%%FC%%' '-O'
+ MACH=ALL OS=ALL LVL=0 COMPS=f77
+-   'f77' '-O'
++   '%%FC%%' '-O'
