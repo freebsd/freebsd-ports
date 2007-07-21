@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lugtools
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.2
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://vvelox.net/src/ldap/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -24,11 +24,14 @@ RUN_DEPENDS+=	ldapadd:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client
 
 USE_PERL5=	yes
 
-PLIST_FILES=	bin/lgadd bin/lgrm bin/lpwo bin/luadd bin/lurm
+PLIST_FILES=	bin/lgadd bin/lgrm bin/lpwo bin/luadd bin/lurm bin/lgmod
 
 MAN1=		lpwo.1 \
 		luadd.1 \
-		lurm.1
+		lurm.1 \
+		lgadd.1 \
+		lgrm.1 \
+		lgmod.1
 
 MAN5=		dotlugtools.5
 
