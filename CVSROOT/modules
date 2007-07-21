@@ -8955,6 +8955,7 @@ p5-Catalyst-Plugin-Session	ports/www/p5-Catalyst-Plugin-Session
 p5-Catalyst-Plugin-Session-FastMmap	ports/www/p5-Catalyst-Plugin-Session-FastMmap
 p5-Catalyst-Plugin-Session-State-Cookie	ports/www/p5-Catalyst-Plugin-Session-State-Cookie
 p5-Catalyst-Plugin-Session-State-URI	ports/www/p5-Catalyst-Plugin-Session-State-URI
+p5-Catalyst-Plugin-Session-Store-Cache	ports/www/p5-Catalyst-Plugin-Session-Store-Cache
 p5-Catalyst-Plugin-Session-Store-DBI	ports/www/p5-Catalyst-Plugin-Session-Store-DBI
 p5-Catalyst-Plugin-Session-Store-DBIC	ports/www/p5-Catalyst-Plugin-Session-Store-DBIC
 p5-Catalyst-Plugin-Session-Store-Delegate	ports/www/p5-Catalyst-Plugin-Session-Store-Delegate
