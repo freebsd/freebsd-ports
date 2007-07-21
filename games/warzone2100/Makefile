@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
 
-BUILD_DEPENDS=	bison2>=2.1:${PORTSDIR}/devel/bison2 \
+BUILD_DEPENDS=	bison<1,1:${PORTSDIR}/devel/bison2 \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
