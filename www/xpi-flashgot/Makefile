@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	flashgot
-PORTVERSION=	0.5.99
-DISTVERSIONSUFFIX=	-fx+mz+tb+ns+sm+fl
+PORTVERSION=	0.6.2
+#DISTVERSIONSUFFIX=	-fx+mz+tb+ns+sm+fl
 CATEGORIES=	www
+MASTER_SITES=	http://software.informaction.com/data/releases/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Download links using popular download managers
