@@ -17,21 +17,10 @@ COMMENT=	A transparent POP3-Proxy with virus-scanning capabilities
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-.if !defined(WITHOUT_UVSCAN)
-RUN_DEPENDS+=	uvscan:${PORTSDIR}/security/vscan
-.endif
-
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 MAKE_ENV=	_LDFLAGS="${LDFLAGS}"
 SCRIPTS_ENV=	PKG_PREFIX=${PREFIX} NONEXISTENT=${NONEXISTENT} PASSWD=/etc/passwd
-
-pre-fetch:
-.if !defined(WITHOUT_UVSCAN)
-	@${ECHO}
-	@${ECHO} "Type \"make WITHOUT_UVSCAN=yes\" if you DONT use UVSCAN."
-	@${ECHO}
-.endif
 
 post-extract:
 	@${RM} ${WRKSRC}/ripmime/ripmime.a
