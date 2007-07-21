@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fc9c217e-3791-11dc-bb1a-000fea449b8a">
+    <topic>lighttpd -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name></name>
+	<range><lt>1.4.15_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/26130/">
+	  <p>Some vulnerabilities have been reported in lighttpd,
+	    which can be exploited by malicious people to bypass
+	    certain security restrictions or cause a DoS (Denial
+	    of Service).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://trac.lighttpd.net/trac/ticket/1216</url>
+      <url>http://trac.lighttpd.net/trac/ticket/1232</url>
+      <url>http://trac.lighttpd.net/trac/ticket/1230</url>
+      <url>http://trac.lighttpd.net/trac/ticket/1263</url>
+    </references>
+    <dates>
+      <discovery>2007-07-20</discovery>
+      <entry>2007-07-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="12d266b6-363f-11dc-b6c9-000c6ec775d9">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
