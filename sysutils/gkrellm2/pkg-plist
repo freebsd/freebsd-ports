@@ -1,5 +1,5 @@
 include/gkrellm2/gkrellmd.h
-@dirrm include/gkrellm2
+@dirrmtry include/gkrellm2
 libdata/pkgconfig/gkrellmd.pc
 sbin/gkrellmd
 @exec mkdir -p %D/libexec/gkrellm2/plugins-gkrellmd

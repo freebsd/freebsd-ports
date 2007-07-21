@@ -1,8 +1,8 @@
 Index: src/configure
 diff -u src/configure.orig src/configure
---- src/configure.orig	Wed Oct 25 13:25:45 2006
-+++ src/configure	Tue Dec 26 11:18:57 2006
-@@ -39,6 +39,7 @@
+--- src/configure.orig	Mon May  7 08:45:55 2007
++++ src/configure	Sun Jul 22 03:01:53 2007
+@@ -41,6 +41,7 @@
  
  cat << EOF > test.c
  #include <gnutls/openssl.h>
@@ -10,25 +10,34 @@ diff -u src/configure.orig src/configure
  #include <errno.h>
  #include <pthread.h>
  
-@@ -59,8 +60,8 @@
+@@ -61,8 +62,8 @@
  	}
  EOF
  
--$CC ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
--$CC test.o -o test ${PKG_LIBS} -lgnutls-openssl 2>& 5
+-$CC ${CFLAGS} ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
+-$CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -lgnutls-openssl 2>& 5
 +$CC ${PKG_INCLUDE} -I${GNUTLSINC} -c test.c -o test.o 2>& 5
-+$CC test.o -o test ${PKG_LIBS} -L${GNUTLSLIB} -lgnutls-openssl 2>& 5
++$CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -L${GNUTLSLIB} -lgnutls-openssl 2>& 5
  
  if [ -x ./test ] && ./test
  then
-@@ -99,8 +100,8 @@
+@@ -101,8 +102,8 @@
  	}
  EOF
  
--$CC ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
--$CC test.o -o test ${PKG_LIBS} -lssl -lcrypto 2>& 5
+-$CC ${CFLAGS} ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
+-$CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -lssl -lcrypto 2>& 5
 +$CC ${PKG_INCLUDE} -I${OPENSSLINC} -c test.c -o test.o 2>& 5
-+$CC test.o -o test ${PKG_LIBS} -L${OPENSSLLIB} -lssl -lcrypto 2>& 5
++$CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -L${OPENSSLLIB} -lssl -lcrypto 2>& 5
  
  if [ -x ./test ] && ./test
  then
+@@ -141,7 +142,7 @@
+ 	}
+ EOF
+ 
+-$CC ${CFLAGS} ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
++$CC ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
+ $CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -lsensors 2>& 5
+ 
+ if [ -x ./test ] && ./test
