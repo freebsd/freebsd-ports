@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- mpg321.c.orig	Sun Mar 24 06:49:20 2002
-+++ mpg321.c	Wed Jan  7 21:12:40 2004
+--- mpg321.c.orig
++++ mpg321.c
 @@ -188,7 +188,7 @@
              
              else
@@ -21,7 +21,16 @@ $FreeBSD$
                  free (names[i]);
              }
              if (i%2) fprintf (stderr, "\n");
-@@ -410,12 +410,14 @@
+@@ -285,6 +285,8 @@
+         signal(SIGINT, SIG_DFL);
+         
+         playbuf.buf = NULL;
++        playbuf.frames = NULL;
++        playbuf.times = NULL;
+         playbuf.fd = -1;
+         playbuf.length = 0;
+         playbuf.done = 0;
+@@ -410,12 +412,14 @@
              
              if(fstat(fd, &stat) == -1)
              {
@@ -36,7 +45,7 @@ $FreeBSD$
                  continue;
              }
              
-@@ -432,6 +434,7 @@
+@@ -432,6 +436,7 @@
              if((playbuf.buf = mmap(0, playbuf.length, PROT_READ, MAP_SHARED, fd, 0))
                                  == MAP_FAILED)
              {
@@ -44,7 +53,7 @@ $FreeBSD$
                  mpg321_error(currentfile);
                  continue;
              }
-@@ -509,9 +512,6 @@
+@@ -509,9 +514,6 @@
  
          mad_decoder_finish(&decoder);
  
@@ -54,7 +63,7 @@ $FreeBSD$
          if (playbuf.frames)
               free(playbuf.frames);
  
-@@ -521,6 +521,7 @@
+@@ -521,6 +523,7 @@
          if (playbuf.fd == -1)
          {
              munmap(playbuf.buf, playbuf.length);
@@ -62,7 +71,7 @@ $FreeBSD$
          }
  
          else
-@@ -535,10 +536,6 @@
+@@ -535,10 +538,6 @@
          ao_close(playdevice);
  
      ao_shutdown();
