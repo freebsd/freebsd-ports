@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	azureus
-PORTVERSION=	3.0.1.6
+PORTNAME=	azureus2
+PORTVERSION=	2.5.0.4
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
-DISTNAME=	Azureus_${PORTVERSION}_source
+DISTNAME=	azureus_${PORTVERSION}_source
 
 MAINTAINER=	rnoland@2hip.net
 COMMENT=	A BitTorrent client written in Java
@@ -33,7 +33,7 @@ NO_WRKSUBDIR=	yes
 
 JARFILE=	${PORTNAME}.jar
 
-OPTIONS=	SWTDEVEL "Use SWT Development port" on
+OPTIONS=	SWTDEVEL "Use SWT Development port" off
 
 # build classpath from BUILD_DEPENDS
 MAKE_ENV=	LANG=C
@@ -52,7 +52,6 @@ SUB_LIST=	LIBDIR="${LOCALBASE}/lib" JARFILE="${JARFILE}" \
 SWT=		swt-devel
 .else
 SWT=		swt
-BROKEN=		swt-devel is currently required
 .endif
 
 CLASSPATH=.
