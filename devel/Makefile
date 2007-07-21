@@ -2093,7 +2093,6 @@
     SUBDIR += rudiments
     SUBDIR += rvi
     SUBDIR += rvm
-    SUBDIR += rx
     SUBDIR += safestr
     SUBDIR += scandoc
     SUBDIR += scons
