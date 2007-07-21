@@ -1,0 +1,461 @@
+Index: src/request.c
+===================================================================
+--- src/request.c (revision 1727)
++++ src/request.c (revision 1869)
+@@ -284,6 +284,4 @@
+ 
+ 	int done = 0;
+-
+-	data_string *ds = NULL;
+ 
+ 	/*
+@@ -716,4 +714,6 @@
+ 			case '\r':
+ 				if (con->parse_request->ptr[i+1] == '\n') {
++					data_string *ds = NULL;
++
+ 					/* End of Headerline */
+ 					con->parse_request->ptr[i] = '\0';
+@@ -721,5 +721,15 @@
+ 
+ 					if (in_folding) {
+-						if (!ds) {
++						buffer *key_b;
++						/**
++						 * we use a evil hack to handle the line-folding
++						 * 
++						 * As array_insert_unique() deletes 'ds' in the case of a duplicate
++						 * ds points somewhere and we get a evil crash. As a solution we keep the old
++						 * "key" and get the current value from the hash and append us
++						 *
++						 * */
++
++						if (!key || !key_len) {
+ 							/* 400 */
+ 
+@@ -738,5 +748,13 @@
+ 							return 0;
+ 						}
+-						buffer_append_string(ds->value, value);
++
++						key_b = buffer_init();
++						buffer_copy_string_len(key_b, key, key_len);
++
++						if (NULL != (ds = (data_string *)array_get_element(con->request.headers, key_b->ptr))) {
++							buffer_append_string(ds->value, value);
++						}
++
++						buffer_free(key_b);
+ 					} else {
+ 						int s_len;
+@@ -970,5 +988,10 @@
+ 					is_key = 1;
+ 					value = 0;
+-					key_len = 0;
++#if 0
++					/**
++					 * for Bug 1230 keep the key_len a live
++					 */
++					key_len = 0; 
++#endif
+ 					in_folding = 0;
+ 				} else {
+Index: tests/core-request.t
+===================================================================
+--- tests/core-request.t (revision 1374)
++++ tests/core-request.t (revision 1869)
+@@ -9,5 +9,5 @@
+ use strict;
+ use IO::Socket;
+-use Test::More tests => 33;
++use Test::More tests => 36;
+ use LightyTest;
+ 
+@@ -274,4 +274,36 @@
+ ok($tf->handle_http($t) == 0, 'uppercase filenames');
+ 
++$t->{REQUEST}  = ( <<EOF
++GET / HTTP/1.0
++Location: foo
++Location: foobar
++  baz
++EOF
++ );
++$t->{RESPONSE} = [ { 'HTTP-Protocol' => 'HTTP/1.0', 'HTTP-Status' => 200 } ];
++ok($tf->handle_http($t) == 0, '#1209 - duplicate headers with line-wrapping');
++
++$t->{REQUEST}  = ( <<EOF
++GET / HTTP/1.0
++Location: 
++Location: foobar
++  baz
++EOF
++ );
++$t->{RESPONSE} = [ { 'HTTP-Protocol' => 'HTTP/1.0', 'HTTP-Status' => 200 } ];
++ok($tf->handle_http($t) == 0, '#1209 - duplicate headers with line-wrapping - test 2');
++
++$t->{REQUEST}  = ( <<EOF
++GET / HTTP/1.0
++A: 
++Location: foobar
++  baz
++EOF
++ );
++$t->{RESPONSE} = [ { 'HTTP-Protocol' => 'HTTP/1.0', 'HTTP-Status' => 200 } ];
++ok($tf->handle_http($t) == 0, '#1209 - duplicate headers with line-wrapping - test 3');
++
++
++
+ 
+ ok($tf->stop_proc == 0, "Stopping lighttpd");
+
+Index: src/http_auth.c
+===================================================================
+--- src/http_auth.c (revision 1721)
++++ src/http_auth.c (revision 1875)
+@@ -831,5 +831,11 @@
+ 	username = buffer_init();
+ 
+-	base64_decode(username, realm_str);
++	if (!base64_decode(username, realm_str)) {
++		buffer_free(username);
++
++		log_error_write(srv, __FILE__, __LINE__, "sb", "decodeing base64-string failed", username);
++
++		return 0;
++	}
+ 
+ 	/* r2 == user:password */
+@@ -968,5 +974,5 @@
+ 		/* skip whitespaces */
+ 		while (*c == ' ' || *c == '\t') c++;
+-		if (!c) break;
++		if (!*c) break;
+ 
+ 		for (i = 0; dkv[i].key; i++) {
+@@ -1017,4 +1023,19 @@
+ 		log_error_write(srv, __FILE__, __LINE__, "s",
+ 				"digest: missing field");
++
++		buffer_free(b);
++		return -1;
++	}
++
++	/**
++	 * protect the md5-sess against missing cnonce and nonce
++	 */
++	if (algorithm &&
++	    0 == strcasecmp(algorithm, "md5-sess") &&
++	    (!nonce || !cnonce)) {
++		log_error_write(srv, __FILE__, __LINE__, "s",
++				"digest: (md5-sess: missing field");
++
++		buffer_free(b);
+ 		return -1;
+ 	}
+Index: tests/mod-auth.t
+===================================================================
+--- tests/mod-auth.t (revision 1374)
++++ tests/mod-auth.t (revision 1875)
+@@ -9,5 +9,5 @@
+ use strict;
+ use IO::Socket;
+-use Test::More tests => 10;
++use Test::More tests => 13;
+ use LightyTest;
+ 
+@@ -94,4 +94,41 @@
+ ok($tf->handle_http($t) == 0, 'Digest-Auth: missing nc (noncecount instead), no crash');
+ 
++$t->{REQUEST}  = ( <<EOF
++GET /server-status HTTP/1.0
++Authorization: Basic =
++EOF
++ );
++$t->{RESPONSE} = [ { 'HTTP-Protocol' => 'HTTP/1.0', 'HTTP-Status' => 401 } ];
++ok($tf->handle_http($t) == 0, 'Basic-Auth: Invalid Base64');
++
++
++$t->{REQUEST}  = ( <<EOF
++GET /server-status HTTP/1.0
++User-Agent: Wget/1.9.1
++Authorization: Digest username="jan", realm="jan",
++	nonce="b1d12348b4620437c43dd61c50ae4639", algorithm="md5-sess",
++	uri="/MJ-BONG.xm.mpc", qop=auth, noncecount=00000001",
++	cnonce="036FCA5B86F7E7C4965C7F9B8FE714B7",
++	nc="asd",
++	response="29B32C2953C763C6D033C8A49983B87E"
++EOF
++ );
++$t->{RESPONSE} = [ { 'HTTP-Protocol' => 'HTTP/1.0', 'HTTP-Status' => 401 } ];
++ok($tf->handle_http($t) == 0, 'Digest-Auth: md5-sess + missing cnonce');
++
++$t->{REQUEST}  = ( <<EOF
++GET /server-status HTTP/1.0
++User-Agent: Wget/1.9.1
++Authorization: Digest username="jan", realm="jan",
++	nonce="b1d12348b4620437c43dd61c50ae4639", algorithm="md5-sess",
++	uri="/MJ-BONG.xm.mpc", qop=auth, noncecount=00000001",
++	cnonce="036FCA5B86F7E7C4965C7F9B8FE714B7",
++	nc="asd",
++	response="29B32C2953C763C6D033C8A49983B87E"     
++EOF
++ );
++$t->{RESPONSE} = [ { 'HTTP-Protocol' => 'HTTP/1.0', 'HTTP-Status' => 401 } ];
++ok($tf->handle_http($t) == 0, 'Digest-Auth: trailing WS');
++
+ 
+ 
+Index: NEWS
+===================================================================
+--- NEWS (revision 1874)
++++ NEWS (revision 1875)
+@@ -14,4 +14,10 @@
+   * fixed crash on duplicate headers with trailing WS (#1232)
+   * fixed accepting more connections then requested (#1216)
++  * fixed mem-leak in mod_auth (reported by Stefan Esser)
++  * fixed crash with md5-sess and cnonce not set in mod_auth (reported by Stefan Esser)
++  * fixed missing check for base64 encoded string in mod_auth and Basic auth
++    (reported by Stefan Esser)
++  * fixed possible crash in Auth-Digest header parser on trailing WS in 
++    mod_auth (reported by Stefan Esser) 
+ 
+ - 1.4.15 - 2007-04-13
+
+Index: src/connections.c
+===================================================================
+--- src/connections.c (revision 1852)
++++ src/connections.c (revision 1873)
+@@ -1253,4 +1253,14 @@
+ 	/* accept it and register the fd */
+ 
++	/**
++	 * check if we can still open a new connections
++	 *
++	 * see #1216
++	 */
++
++	if (srv->conns->used >= srv->max_conns) {
++		return NULL;
++	}
++
+ 	cnt_len = sizeof(cnt_addr);
+ 
+@@ -1265,4 +1275,7 @@
+ 		case ECONNABORTED: /* this is a FreeBSD thingy */
+ 			/* we were stopped _after_ we had a connection */
++			break;
++		case EMFILE:
++			/* out of fds */
+ 			break;
+ 		default:
+Index: src/server.c
+===================================================================
+--- src/server.c (revision 1656)
++++ src/server.c (revision 1873)
+@@ -774,4 +774,20 @@
+ 					strerror(errno));
+ 			return -1;
++		}
++
++		/**
++		 * we are not root can can't increase the fd-limit, but we can reduce it
++		 */
++		if (srv->srvconf.max_fds && srv->srvconf.max_fds < rlim.rlim_cur) {
++			/* set rlimits */
++
++			rlim.rlim_cur = srv->srvconf.max_fds;
++
++			if (0 != setrlimit(RLIMIT_NOFILE, &rlim)) {
++				log_error_write(srv, __FILE__, __LINE__,
++						"ss", "couldn't set 'max filedescriptors'",
++						strerror(errno));
++				return -1;
++			}
+ 		}
+ 
+Index: NEWS
+===================================================================
+--- NEWS (revision 1872)
++++ NEWS (revision 1873)
+@@ -9,4 +9,5 @@
+   * fixed circumventing url.access-deny by trailing slash (#1230)
+   * fixed crash on duplicate headers with trailing WS (#1232)
++  * fixed accepting more connections then requested (#1216)
+ 
+ - 1.4.15 - 2007-04-13
+
+Index: src/mod_access.c
+===================================================================
+--- src/mod_access.c (revision 1371)
++++ src/mod_access.c (revision 1871)
+@@ -112,4 +112,13 @@
+ #undef PATCH
+ 
++/**
++ * URI handler
++ *
++ * we will get called twice:
++ * - after the clean up of the URL and 
++ * - after the pathinfo checks are done
++ *
++ * this handles the issue of trailing slashes
++ */
+ URIHANDLER_FUNC(mod_access_uri_handler) {
+ 	plugin_data *p = p_d;
+@@ -123,10 +132,16 @@
+ 	s_len = con->uri.path->used - 1;
+ 
++	if (con->conf.log_request_handling) {
++ 		log_error_write(srv, __FILE__, __LINE__, "s", 
++				"-- mod_access_uri_handler called");
++	}
++
+ 	for (k = 0; k < p->conf.access_deny->used; k++) {
+ 		data_string *ds = (data_string *)p->conf.access_deny->data[k];
+ 		int ct_len = ds->value->used - 1;
++		int denied = 0;
++
+ 
+ 		if (ct_len > s_len) continue;
+-
+ 		if (ds->value->used == 0) continue;
+ 
+@@ -135,14 +150,21 @@
+ 		if (con->conf.force_lowercase_filenames) {
+ 			if (0 == strncasecmp(con->uri.path->ptr + s_len - ct_len, ds->value->ptr, ct_len)) {
+-				con->http_status = 403;
+-
+-				return HANDLER_FINISHED;
++				denied = 1;
+ 			}
+ 		} else {
+ 			if (0 == strncmp(con->uri.path->ptr + s_len - ct_len, ds->value->ptr, ct_len)) {
+-				con->http_status = 403;
++				denied = 1;
++			}
++		}
+ 
+-				return HANDLER_FINISHED;
++		if (denied) {
++			con->http_status = 403;
++
++			if (con->conf.log_request_handling) {
++	 			log_error_write(srv, __FILE__, __LINE__, "sb", 
++					"url denied as we match:", ds->value);
+ 			}
++
++			return HANDLER_FINISHED;
+ 		}
+ 	}
+@@ -159,5 +181,6 @@
+ 	p->init        = mod_access_init;
+ 	p->set_defaults = mod_access_set_defaults;
+-	p->handle_uri_clean  = mod_access_uri_handler;
++	p->handle_uri_clean = mod_access_uri_handler;
++	p->handle_subrequest_start  = mod_access_uri_handler;
+ 	p->cleanup     = mod_access_free;
+ 
+Index: tests/mod-access.t
+===================================================================
+--- tests/mod-access.t (revision 1374)
++++ tests/mod-access.t (revision 1871)
+@@ -9,5 +9,5 @@
+ use strict;
+ use IO::Socket;
+-use Test::More tests => 3;
++use Test::More tests => 4;
+ use LightyTest;
+ 
+@@ -24,4 +24,11 @@
+ ok($tf->handle_http($t) == 0, 'forbid access to ...~');
+ 
++$t->{REQUEST}  = ( <<EOF
++GET /index.html~/ HTTP/1.0
++EOF
++ );
++$t->{RESPONSE} = [ { 'HTTP-Protocol' => 'HTTP/1.0', 'HTTP-Status' => 403 } ];
++ok($tf->handle_http($t) == 0, '#1230 - forbid access to ...~ - trailing slash');
++
+ ok($tf->stop_proc == 0, "Stopping lighttpd");
+ 
+Index: tests/prepare.sh
+===================================================================
+--- tests/prepare.sh (revision 1374)
++++ tests/prepare.sh (revision 1871)
+@@ -26,4 +26,5 @@
+ cp $srcdir/docroot/www/*.html \
+    $srcdir/docroot/www/*.php \
++   $srcdir/docroot/www/*.html~ \
+    $srcdir/docroot/www/*.pl \
+    $srcdir/docroot/www/*.fcgi \
+Index: tests/docroot/www/Makefile.am
+===================================================================
+--- tests/docroot/www/Makefile.am (revision 1374)
++++ tests/docroot/www/Makefile.am (revision 1871)
+@@ -2,4 +2,4 @@
+ 	   redirect.php cgi-pathinfo.pl get-env.php get-server-env.php \
+ 	   nph-status.pl prefix.fcgi get-header.pl ssi.shtml get-post-len.pl \
+-	   exec-date.shtml
++	   exec-date.shtml index.html~
+ SUBDIRS=go indexfile expire
+
+Index: src/mod_scgi.c
+===================================================================
+--- src/mod_scgi.c (revision 1872)
++++ src/mod_scgi.c (revision 1882)
+@@ -2287,5 +2287,5 @@
+ 				 */
+ 
+-				log_error_write(srv, __FILE__, __LINE__, "ssdsd",
++				log_error_write(srv, __FILE__, __LINE__, "ssosd",
+ 						"[REPORT ME] connection was dropped after accept(). reconnect() denied:",
+ 						"write-offset:", hctx->wb->bytes_out,
+@@ -2537,5 +2537,5 @@
+ 				}
+ 
+-				log_error_write(srv, __FILE__, __LINE__, "sdsdsd",
++				log_error_write(srv, __FILE__, __LINE__, "sosdsd",
+ 						"response not sent, request sent:", hctx->wb->bytes_out,
+ 						"connection-fd:", con->fd,
+Index: src/mod_webdav.c
+===================================================================
+--- src/mod_webdav.c (revision 1743)
++++ src/mod_webdav.c (revision 1882)
+@@ -1036,5 +1036,5 @@
+ 
+ 			if (XML_ERR_OK != (err = xmlParseChunk(ctxt, c->file.mmap.start + c->offset, weHave, 0))) {
+-				log_error_write(srv, __FILE__, __LINE__, "sddd", "xmlParseChunk failed at:", cq->bytes_out, weHave, err);
++				log_error_write(srv, __FILE__, __LINE__, "sodd", "xmlParseChunk failed at:", cq->bytes_out, weHave, err);
+ 			}
+ 
+@@ -1054,5 +1054,5 @@
+ 
+ 			if (XML_ERR_OK != (err = xmlParseChunk(ctxt, c->mem->ptr + c->offset, weHave, 0))) {
+-				log_error_write(srv, __FILE__, __LINE__, "sddd", "xmlParseChunk failed at:", cq->bytes_out, weHave, err);
++				log_error_write(srv, __FILE__, __LINE__, "sodd", "xmlParseChunk failed at:", cq->bytes_out, weHave, err);
+ 			}
+ 
+Index: src/mod_fastcgi.c
+===================================================================
+--- src/mod_fastcgi.c (revision 1879)
++++ src/mod_fastcgi.c (revision 1882)
+@@ -2965,5 +2965,5 @@
+ 				 */
+ 
+-				log_error_write(srv, __FILE__, __LINE__, "ssdsd",
++				log_error_write(srv, __FILE__, __LINE__, "ssosd",
+ 						"[REPORT ME] connection was dropped after accept(). reconnect() denied:",
+ 						"write-offset:", hctx->wb->bytes_out,
+Index: NEWS
+===================================================================
+--- NEWS (revision 1879)
++++ NEWS (revision 1882)
+@@ -22,4 +22,6 @@
+   * fixed check on stale errno values, which broke handling of broken fastcgi
+     applications. (#1245)
++  * fixed crash on 32bit archs when debug-msgs are printed in mod_scgi, mod_fastcgi 
++    and mod_webdav (#1263)
+ 
+ - 1.4.15 - 2007-04-13
+
