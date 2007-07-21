@@ -1363,6 +1363,7 @@ lib/libAfterStep.a
 %%DATADIR%%/themes/Default
 %%DATADIR%%/wharf
 %%DATADIR%%/winlist
+share/gnome/wm-properties/AfterStep.desktop
 share/xsessions/AfterStep.desktop
 @dirrm share/xsessions
 @dirrm share/pixmaps
