@@ -8,3 +8,8 @@ else
   cp -p ${PKG_PREFIX}/etc/sudoers.default ${PKG_PREFIX}/etc/sudoers
   chmod 440 ${PKG_PREFIX}/etc/sudoers
 fi
+if [ -e ${PKG_PREFIX}/etc/pam.d/sudo ]; then
+  echo "Will not overwrite existing ${PKG_PREFIX}/etc/pam.d/sudo file."
+else
+  cp -p ${PKG_PREFIX}/etc/pam.d/sudo.default ${PKG_PREFIX}/etc/pam.d/sudo
+fi

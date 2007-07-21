@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.6.8.12
-PORTREVISION=	2
+PORTVERSION=	1.6.9
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://probsd.org/sudoftp/ \
@@ -19,7 +18,6 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://pluto.cdpa.nsysu.edu.tw/sudo/ \
 		ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/ \
 		ftp://ftp.stikman.com/pub/sudo/
-DISTNAME=	${PORTNAME}-1.6.8p12
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allow others to run commands as root
@@ -36,7 +34,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-pam
 
 OPTIONS=	LDAP	"With LDAP support" off \
-		OPIE	"With OPIE support" off \
 		INSULTS "With all insults" off \
 		SHELL_SETS_HOME "Set HOME env to target user in shell mode" off
 
@@ -51,12 +48,9 @@ CONFIGURE_ARGS+=--with-all-insults
 USE_OPENLDAP=yes
 CONFIGURE_ARGS+=--with-ldap=${PREFIX}
 CONFIGURE_ARGS+=--with-ldap-conf-file=${PREFIX}/etc/ldap.conf
-.endif
-
-.if defined(WITH_OPIE) || ${OSVERSION} > 500021
-CONFIGURE_ARGS+=--with-opie
+PLIST_SUB+=	LDAP=""
 .else
-CONFIGURE_ARGS+=--with-skey
+PLIST_SUB=	LDAP="@comment "
 .endif
 
 .if defined(WITH_SHELL_SETS_HOME)
@@ -67,13 +61,28 @@ MAN5=		sudoers.5
 MAN8=		sudo.8 visudo.8
 MLINKS=		sudo.8 sudoedit.8
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|^|#|g' ${WRKSRC}/sample.sudoers
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/sample.sudoers ${PREFIX}/etc/sudoers.sample
-	${INSTALL_DATA} ${WRKSRC}/sudoers ${PREFIX}/etc/sudoers.default
 	${RM} ${PREFIX}/libexec/sudo_noexec.la
-	${INSTALL_DATA} ${FILESDIR}/pam.conf ${PREFIX}/etc/pam.d/sudo
+	${INSTALL_DATA} ${WRKSRC}/sudoers ${PREFIX}/etc/sudoers.default
+	${INSTALL_DATA} ${FILESDIR}/pam.conf ${PREFIX}/etc/pam.d/sudo.default
+
+	if [ ! -e ${PREFIX}/etc/pam.d/sudo ]; then \
+		cp -p ${PREFIX}/etc/pam.d/sudo.default \
+		${PREFIX}/etc/pam.d/sudo ;\
+	fi
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/BUGS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/TROUBLESHOOTING ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/UPGRADE ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample.sudoers ${DOCSDIR}
+.if defined(WITH_LDAP)
+	${INSTALL_DATA} ${WRKSRC}/README.LDAP ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/sudoers2ldif ${DOCSDIR}
+.endif
+.endif
 
 .include <bsd.port.post.mk>

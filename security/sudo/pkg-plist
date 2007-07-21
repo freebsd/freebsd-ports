@@ -1,8 +1,17 @@
 @unexec if cmp -s %D/etc/sudoers %D/etc/sudoers.default; then rm -f %D/etc/sudoers; fi
+@unexec if cmp -s %D/etc/pam.d/sudo %D/etc/pam.d/sudo.default; then rm -f %D/etc/pam.d/sudo; fi
 bin/sudo
 bin/sudoedit
-etc/pam.d/sudo
+etc/pam.d/sudo.default
 etc/sudoers.default
-etc/sudoers.sample
 libexec/sudo_noexec.so
 sbin/visudo
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TROUBLESHOOTING
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
+%%PORTDOCS%%%%DOCSDIR%%/sample.sudoers
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/README.LDAP
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/sudoers2ldif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
