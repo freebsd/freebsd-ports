@@ -9,7 +9,7 @@
 #       Program and compiler flags are finetuned to gcc.
 
 PORTNAME=	atlas
-PORTVERSION=	3.7.29
+PORTVERSION=	3.7.34
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
@@ -160,17 +160,17 @@ post-build:
 # make atlas shared library
 .for i in ${ATLAS_LIBS1}
 	( cd ${WRKSRC}/NON_THREADED_PIC/lib ; \
-		ld -Bshareable -o ${i}.so.2 -x -soname ${i}.so.2 --whole-archive ${i}.a )
+		ld -Bshareable -o ${i}.so.2 -x -soname ${i}.so.2 ${i}.a )
 .endfor
 
 # make atlas shared (thread safe) library
 .for i in ${ATLAS_LIBS1}
 	( cd ${WRKSRC}/THREADED_PIC/lib ; \
-		ld -Bshareable -o ${i}_r.so.2 -x -soname ${i}_r.so.2 --whole-archive ${i}.a )
+		ld -Bshareable -o ${i}_r.so.2 -x -soname ${i}_r.so.2 ${i}.a )
 .endfor
 .for i in ${ATLAS_LIBS2}
 	( cd ${WRKSRC}/THREADED_PIC/lib ; \
-		ld -Bshareable -o ${i}.so.2 -x -soname ${i}.so.2 --whole-archive ${i}.a )
+		ld -Bshareable -o ${i}.so.2 -x -soname ${i}.so.2 ${i}.a )
 .endfor
 do-install:
 .for i in ${ATLAS_LIBS1}
