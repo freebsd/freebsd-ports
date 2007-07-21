@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pyaim
-DISTVERSION=	0.8a
+PORTVERSION=	0.8a
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.blathersource.org/download.php/${PORTNAME}-t/
 PKGNAMEPREFIX=	jabber-
 PKGNAMESUFFIX=	-transport
-DISTNAME=	${PORTNAME}-t-${DISTVERSION}
+DISTNAME=	${PORTNAME}-t-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	takeda@takeda.tk
