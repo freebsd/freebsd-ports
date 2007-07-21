@@ -38,7 +38,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>lighttpd -- multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name></name>
+	<name>lighttpd</name>
 	<range><lt>1.4.15_1</lt></range>
       </package>
     </affects>
