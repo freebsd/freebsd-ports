@@ -7,7 +7,7 @@
 
 PORTNAME=	elib
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -25,7 +25,6 @@ PORTCLASS?=	master
 # emacs port setup
 .if (${PORTCLASS} == "master")
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 .endif
 
 # target name for make build
