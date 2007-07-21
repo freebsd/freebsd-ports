@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gplcver
-PORTVERSION=	2.11.a
+PORTVERSION=	2.12.a
 CATEGORIES=	cad
 MASTER_SITES=	http://www.pragmatic-c.com/gpl-cver/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}.src
