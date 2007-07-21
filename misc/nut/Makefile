@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	12.5
+PORTVERSION=	12.6
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/ CENKES
 PKGNAMEPREFIX=	health-
@@ -19,6 +19,7 @@ MAN1=		${PORTNAME}.1
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 PORTDOCS=	CREDITS LICENSE README
+DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 ALL_TARGET=	${PORTNAME}
 RAW=		FOOD_DES.txt NUT_DATA.txt WEIGHT.lib WEIGHT.txt sr19.nut
 PLIST_FILES=	bin/${PORTNAME} ${RAW:S,^,%%DATADIR%%/,}
@@ -26,7 +27,7 @@ PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local/lib/nut|${DATADIR}|" \
-		-e 's|^CFLAGS=|CFLAGS+=|g' ${WRKSRC}/Makefile
+		-e 's|^CFLAGS=|CFLAGS+=|g;s|-Os||;s|gcc|$${CC}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${TARGETDIR}/bin/
