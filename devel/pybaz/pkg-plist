@@ -32,21 +32,9 @@
 %%PYTHON_SITELIBDIR%%/pybaz/_patchlog.py
 %%PYTHON_SITELIBDIR%%/pybaz/_patchlog.pyc
 %%PYTHON_SITELIBDIR%%/pybaz/_patchlog.pyo
-%%PYTHON_SITELIBDIR%%/pybaz/compat.py
-%%PYTHON_SITELIBDIR%%/pybaz/compat.pyc
-%%PYTHON_SITELIBDIR%%/pybaz/compat.pyo
-%%PYTHON_SITELIBDIR%%/pybaz/deprecation.py
-%%PYTHON_SITELIBDIR%%/pybaz/deprecation.pyc
-%%PYTHON_SITELIBDIR%%/pybaz/deprecation.pyo
-%%PYTHON_SITELIBDIR%%/pybaz/errors.py
-%%PYTHON_SITELIBDIR%%/pybaz/errors.pyc
-%%PYTHON_SITELIBDIR%%/pybaz/errors.pyo
-%%PYTHON_SITELIBDIR%%/pybaz/pathname.py
-%%PYTHON_SITELIBDIR%%/pybaz/pathname.pyc
-%%PYTHON_SITELIBDIR%%/pybaz/pathname.pyo
-%%PYTHON_SITELIBDIR%%/pybaz/util.py
-%%PYTHON_SITELIBDIR%%/pybaz/util.pyc
-%%PYTHON_SITELIBDIR%%/pybaz/util.pyo
+%%PYTHON_SITELIBDIR%%/pybaz/_paths.py
+%%PYTHON_SITELIBDIR%%/pybaz/_paths.pyc
+%%PYTHON_SITELIBDIR%%/pybaz/_paths.pyo
 %%PYTHON_SITELIBDIR%%/pybaz/backends/__init__.py
 %%PYTHON_SITELIBDIR%%/pybaz/backends/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pybaz/backends/__init__.pyo
@@ -65,5 +53,20 @@
 %%PYTHON_SITELIBDIR%%/pybaz/backends/logger.py
 %%PYTHON_SITELIBDIR%%/pybaz/backends/logger.pyc
 %%PYTHON_SITELIBDIR%%/pybaz/backends/logger.pyo
+%%PYTHON_SITELIBDIR%%/pybaz/compat.py
+%%PYTHON_SITELIBDIR%%/pybaz/compat.pyc
+%%PYTHON_SITELIBDIR%%/pybaz/compat.pyo
+%%PYTHON_SITELIBDIR%%/pybaz/deprecation.py
+%%PYTHON_SITELIBDIR%%/pybaz/deprecation.pyc
+%%PYTHON_SITELIBDIR%%/pybaz/deprecation.pyo
+%%PYTHON_SITELIBDIR%%/pybaz/errors.py
+%%PYTHON_SITELIBDIR%%/pybaz/errors.pyc
+%%PYTHON_SITELIBDIR%%/pybaz/errors.pyo
+%%PYTHON_SITELIBDIR%%/pybaz/pathname.py
+%%PYTHON_SITELIBDIR%%/pybaz/pathname.pyc
+%%PYTHON_SITELIBDIR%%/pybaz/pathname.pyo
+%%PYTHON_SITELIBDIR%%/pybaz/util.py
+%%PYTHON_SITELIBDIR%%/pybaz/util.pyc
+%%PYTHON_SITELIBDIR%%/pybaz/util.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/pybaz/backends
 @dirrm %%PYTHON_SITELIBDIR%%/pybaz
