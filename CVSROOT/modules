@@ -11477,6 +11477,7 @@ panoptis	ports/net/panoptis
 panoramixext	ports/x11/panoramixext
 pantera		ports/security/pantera
 pantomime	ports/mail/pantomime
+pantry		ports/misc/pantry
 papercut	ports/news/papercut
 papi		ports/devel/papi
 paq		ports/archivers/paq
