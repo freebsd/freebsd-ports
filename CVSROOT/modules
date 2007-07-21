@@ -4622,6 +4622,7 @@ hugin		ports/graphics/hugin
 hugo		ports/emulators/hugo
 hugs		ports/lang/hugs
 hulgalugha	ports/misc/hulgalugha
+humanzip	ports/textproc/humanzip
 hunch		ports/security/hunch
 husky-base	ports/news/husky-base
 husky-base-devel	ports/news/husky-base-devel
