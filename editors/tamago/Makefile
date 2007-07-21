@@ -7,7 +7,7 @@
 
 PORTNAME=	tamago
 PORTVERSION=	${EGG_DEBIAN_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/e/egg
@@ -28,11 +28,12 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 
 WRKSRC=		${WRKDIR}/egg-4.0.6+0.20041122cvs
 ELISPDIR=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
 PLIST_SUB=	ELISPDIR="${EMACS_LIBDIR_WITH_VER}/site-lisp"
+
+.include <bsd.port.pre.mk>
 
 .if ${EMACS_PORT_NAME} == emacs21 || ${EMACS_PORT_NAME} == emacs22
 PLIST_SUB+=	HAS_JISX0213=""
@@ -58,4 +59,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
