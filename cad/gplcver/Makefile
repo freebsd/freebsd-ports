@@ -12,7 +12,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://www.pragmatic-c.com/gpl-cver/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}.src
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	A Verilog HDL simulator
 
 USE_BZIP2=	yes
