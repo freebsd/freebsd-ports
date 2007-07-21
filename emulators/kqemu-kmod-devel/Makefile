@@ -7,7 +7,7 @@
 
 PORTNAME=	kqemu
 PORTVERSION=	1.3.0.p11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://fabrice.bellard.free.fr/qemu/ \
 		http://qemu.org/ \
@@ -63,7 +63,7 @@ CFLAGS+=	-DKSE
 
 # XXX the following is wrong if you run a custom SMP kernel on a
 # singleprocessor machine (but it probably doesn't really matter)
-KERNCONF!=	${UNAME} -v | ${SED} 's-.*/--'
+KERNCONF!=	${UNAME} -v | ${SED} 's-.*/--' | ${TR} -d ' '
 NCPU!=		${SYSCTL} -n hw.ncpu 2>/dev/null
 # we know 7.x GENERIC has SMP
 .if ${KERNCONF} == "GENERIC" && ${OSVERSION} >= 700000
