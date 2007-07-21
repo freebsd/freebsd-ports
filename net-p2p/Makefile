@@ -6,6 +6,7 @@
     SUBDIR += amule2
     SUBDIR += apollon
     SUBDIR += azureus
+    SUBDIR += azureus2
     SUBDIR += bitflu
     SUBDIR += bittyrant
     SUBDIR += bnbt
