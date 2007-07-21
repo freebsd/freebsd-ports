@@ -18,6 +18,9 @@ COMMENT=	A recipe management software
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+DEPRECATED=	Depends on broken package qextmdi
+EXPIRATION_DATE=2007-09-22
+
 .if defined(WITH_KDE)
 LIB_DEPENDS+=	kextmdi.2:${PORTSDIR}/devel/qextmdi
 PKGNAMESUFFIX=	-kde
