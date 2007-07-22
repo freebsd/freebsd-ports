@@ -1,0 +1,3 @@
+bin/pgbouncer
+%%EXAMPLESDIR%%/pgbouncer.ini
+@dirrm %%EXAMPLESDIR%%

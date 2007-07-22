@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: pgbouncer
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `pgbouncer':
+#
+#pgbouncer_enable="YES"
+#
+
+. "%%RC_SUBR%%"
+
+name="pgbouncer"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/pgbouncer"
+config_file="%%PREFIX%%/etc/$name.ini"
+command_args="-d ${config_file}"
+pidfile="/var/run/$name.pid"
+required_files="${config_file}"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${pgbouncer_enable="NO"}
+: ${pgbouncer_flags=""}
+
+run_rc_command "$1"
