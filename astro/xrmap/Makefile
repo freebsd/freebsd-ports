@@ -8,7 +8,7 @@
 PORTNAME=	xrmap
 PORTVERSION=	2.33
 PORTREVISION=	3
-CATEGORIES=	astro
+CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/data/:data \
 		ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/:src
 DISTFILES=	${SRCFILE}:src ${DATAFILES:S|$|:data|} ${CIAFILE}:data ${POPFILE}:data

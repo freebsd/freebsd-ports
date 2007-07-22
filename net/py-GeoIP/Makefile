@@ -8,7 +8,7 @@
 PORTNAME=	GeoIP
 PORTVERSION=	1.2.1
 PORTREVISION=	3
-CATEGORIES=	net python
+CATEGORIES=	net python geography
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-Python-${PORTVERSION}

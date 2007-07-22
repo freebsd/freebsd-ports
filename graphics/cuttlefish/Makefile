@@ -8,7 +8,7 @@
 PORTNAME=	cuttlefish
 PORTVERSION=	1.3
 PORTREVISION=	1
-CATEGORIES=	graphics
+CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.caida.org/tools/visualization/cuttlefish/code/
 
 MAINTAINER=	mjl@luckie.org.nz
