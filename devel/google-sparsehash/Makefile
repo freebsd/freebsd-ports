@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-sparsehash
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel
 MASTER_SITES=	http://google-sparsehash.googlecode.com/files/ \
 		${MASTER_SITE_LOCAL}
