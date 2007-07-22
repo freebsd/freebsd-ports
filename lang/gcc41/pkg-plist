@@ -10,8 +10,6 @@ bin/%%GNU_HOST%%-g++%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
-%%FORTRAN%%bin/gfortran%%SUFFIX%%
-%%FORTRAN%%bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 %%JAVA%%bin/addr2name.awk%%SUFFIX%%
 %%JAVA%%bin/fastjar%%SUFFIX%%
 %%JAVA%%bin/gcj%%SUFFIX%%

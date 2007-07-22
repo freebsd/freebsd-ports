@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.3
-PORTREVISION=	20070618
+PORTREVISION=	20070709
 CATEGORIES=	lang java
 VERSIONSTRING=	4.1-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -20,11 +20,6 @@ DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 4.1
-
-.if defined(WITH_FORTRAN)
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
-		mpfr.1:${PORTSDIR}/math/mpfr
-.endif
 
 SUFFIX=		41
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
@@ -77,16 +72,6 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gcc \
 		gcc${SUFFIX}/gccinstall \
 		gcc${SUFFIX}/gccint
-
-.if defined(WITH_FORTRAN)
-DISTFILES+=	gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX}
-CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
-MAN1+=		gfortran${SUFFIX}.1
-INFO+=		gcc${SUFFIX}/gfortran
-PLIST_SUB+=	FORTRAN=""
-.else
-PLIST_SUB+=	FORTRAN="@comment "
-.endif
 
 .if ! defined(WITHOUT_JAVA)
 DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
