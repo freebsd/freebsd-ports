@@ -28,6 +28,12 @@ MAN5=	mararc.5 csv1.5 csv2.5 csv2_txt.5
 MAN8=	maradns.8 zoneserver.8 duende.8
 #MANLANG=	"" fr.ISO8859-1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+IGNORE=		does not compile on FreeBSD 5.X, needs pidfile functions in libutil
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/etc/mara|${PREFIX}/etc/mara|g'
@@ -84,4 +90,4 @@ do-install:
 	${CP} -R ${WRKSRC}/doc/en/text ${DOCSDIR}/en
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
