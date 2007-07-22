@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon May 14 22:53:04 2007
-+++ Makefile.in	Mon May 14 22:53:19 2007
-@@ -1359,7 +1359,6 @@
+--- ./Makefile.am.orig	Sat Jun  9 17:15:11 2007
++++ ./Makefile.am	Tue Jul 17 12:37:26 2007
+@@ -360,7 +360,6 @@
          done
  
  install-data-local: ntop.txt ntop.html faq.html

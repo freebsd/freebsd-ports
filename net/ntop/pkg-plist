@@ -7,52 +7,58 @@ etc/ntop/oui.txt.gz
 etc/ntop/p2c.opt.table.gz
 etc/ntop/specialMAC.txt.gz
 @dirrm etc/ntop
-lib/libicmpPlugin-%%SHLIB%%.so
+lib/libicmpPlugin-%%PORTVERSION%%
+lib/libicmpPlugin
 lib/libicmpPlugin.a
-lib/libicmpPlugin.so
-lib/liblastSeenPlugin-%%SHLIB%%.so
+lib/liblastSeenPlugin-%%PORTVERSION%%
+lib/liblastSeenPlugin
 lib/liblastSeenPlugin.a
-lib/liblastSeenPlugin.so
-lib/libmyrrd.so
-lib/libmyrrd-%%SHLIB%%.so
-lib/libmyrrd.a
-lib/libmyrrd.la
-lib/libnetflowPlugin-%%SHLIB%%.so
+lib/libnetflowPlugin-%%PORTVERSION%%
+lib/libnetflowPlugin
 lib/libnetflowPlugin.a
-lib/libnetflowPlugin.so
-lib/libntop-%%SHLIB%%.so
+lib/libntop-%%PORTVERSION%%
+lib/libntop
 lib/libntop.a
 lib/libntop.la
-lib/libntop.so
-lib/libntopreport-%%SHLIB%%.so
+lib/libntopreport-%%PORTVERSION%%
+lib/libntopreport
 lib/libntopreport.a
 lib/libntopreport.la
-lib/libntopreport.so
-lib/libpdaPlugin-%%SHLIB%%.so
+lib/libpdaPlugin-%%PORTVERSION%%
+lib/libpdaPlugin
 lib/libpdaPlugin.a
-lib/libpdaPlugin.so
-lib/librrdPlugin-%%SHLIB%%.so
+lib/libremotePlugin-%%PORTVERSION%%
+lib/libremotePlugin
+lib/libremotePlugin.a
+lib/librrdPlugin-%%PORTVERSION%%
+lib/librrdPlugin
 lib/librrdPlugin.a
-lib/librrdPlugin.so
-lib/libsflowPlugin-%%SHLIB%%.so
+lib/libsflowPlugin-%%PORTVERSION%%
+lib/libsflowPlugin
 lib/libsflowPlugin.a
-lib/libsflowPlugin.so
-lib/libsnmpPlugin.so
-lib/libsnmpPlugin-%%SHLIB%%.so
-lib/libsnmpPlugin.a
-lib/libxmldumpPlugin-%%SHLIB%%.so
-lib/libxmldumpPlugin.a
-lib/libxmldumpPlugin.so
 lib/ntop/plugins/icmpPlugin.so
 lib/ntop/plugins/lastSeenPlugin.so
 lib/ntop/plugins/netflowPlugin.so
 lib/ntop/plugins/pdaPlugin.so
+lib/ntop/plugins/remotePlugin.so
 lib/ntop/plugins/rrdPlugin.so
 lib/ntop/plugins/sflowPlugin.so
-lib/ntop/plugins/snmpPlugin.so
-lib/ntop/plugins/xmldumpPlugin.so
 @dirrm lib/ntop/plugins
 @dirrm lib/ntop
+%%DATADIR%%/html/autosuggest.js
+%%DATADIR%%/html/calendar-setup.js
+%%DATADIR%%/html/calendar.js
+%%DATADIR%%/html/domLib.js
+%%DATADIR%%/html/domTT.js
+%%DATADIR%%/html/zoom.js
+%%DATADIR%%/html/calendar.gif
+%%DATADIR%%/html/edit.gif
+%%DATADIR%%/html/graph_zoom.gif
+%%DATADIR%%/html/marker.gif
+%%DATADIR%%/html/skype.gif
+%%DATADIR%%/html/external.png
+%%DATADIR%%/html/marker.png
+%%DATADIR%%/html/autosuggest.css
 %%DATADIR%%/html/JSCookMenu.js
 %%DATADIR%%/html/theme.js
 %%DATADIR%%/html/arrow.gif
@@ -69,7 +75,6 @@ lib/ntop/plugins/xmldumpPlugin.so
 %%DATADIR%%/html/arrow_down.gif
 %%DATADIR%%/html/arrow_up.gif
 %%DATADIR%%/html/back.gif
-%%DATADIR%%/html/bar.gif
 %%DATADIR%%/html/bg_line.gif
 %%DATADIR%%/html/black.gif
 %%DATADIR%%/html/bottom_corner.gif
@@ -82,7 +87,6 @@ lib/ntop/plugins/xmldumpPlugin.so
 %%DATADIR%%/html/clear.gif
 %%DATADIR%%/html/clock.gif
 %%DATADIR%%/html/collapsed.gif
-%%DATADIR%%/html/copyright.png
 %%DATADIR%%/html/corner.gif
 %%DATADIR%%/html/deleteURL.gif
 %%DATADIR%%/html/deleteUser.gif
@@ -113,11 +117,7 @@ lib/ntop/plugins/xmldumpPlugin.so
 %%DATADIR%%/html/mail.gif
 %%DATADIR%%/html/major.gif
 %%DATADIR%%/html/marchio_unipi_pant541_144.gif
-%%DATADIR%%/html/menubar.png
-%%DATADIR%%/html/menubar_j.png
-%%DATADIR%%/html/menuline.png
 %%DATADIR%%/html/minor.gif
-%%DATADIR%%/html/modifyUser.gif
 %%DATADIR%%/html/multihomed.gif
 %%DATADIR%%/html/multivlaned.gif
 %%DATADIR%%/html/nboxLogo.gif
@@ -126,7 +126,6 @@ lib/ntop/plugins/xmldumpPlugin.so
 %%DATADIR%%/html/ntopdump.dtd
 %%DATADIR%%/html/ntophelp.html
 %%DATADIR%%/html/p2p.gif
-%%DATADIR%%/html/pie-error.png
 %%DATADIR%%/html/phone.gif
 %%DATADIR%%/html/printer.gif
 %%DATADIR%%/html/privacyNotice.html
@@ -380,6 +379,49 @@ lib/ntop/plugins/xmldumpPlugin.so
 %%DATADIR%%/html/web.gif
 %%DATADIR%%/html/wheel.gif
 %%DATADIR%%/html/white_bg.gif
+%%DATADIR%%/html/PlotKit/Base.js
+%%DATADIR%%/html/PlotKit/Canvas.js
+%%DATADIR%%/html/PlotKit/EasyPlot.js
+%%DATADIR%%/html/PlotKit/Layout.js
+%%DATADIR%%/html/PlotKit/PlotKit.js
+%%DATADIR%%/html/PlotKit/PlotKit_Packed.js
+%%DATADIR%%/html/PlotKit/SVG.js
+%%DATADIR%%/html/PlotKit/SweetCanvas.js
+%%DATADIR%%/html/PlotKit/SweetSVG.js
+%%DATADIR%%/html/PlotKit/excanvas.js
+%%DATADIR%%/html/MochiKit/Async.js
+%%DATADIR%%/html/MochiKit/Base.js
+%%DATADIR%%/html/MochiKit/Color.js
+%%DATADIR%%/html/MochiKit/DOM.js
+%%DATADIR%%/html/MochiKit/DateTime.js
+%%DATADIR%%/html/MochiKit/Format.js
+%%DATADIR%%/html/MochiKit/Iter.js
+%%DATADIR%%/html/MochiKit/Logging.js
+%%DATADIR%%/html/MochiKit/LoggingPane.js
+%%DATADIR%%/html/MochiKit/MochiKit.js
+%%DATADIR%%/html/MochiKit/MockDOM.js
+%%DATADIR%%/html/MochiKit/Signal.js
+%%DATADIR%%/html/MochiKit/Test.js
+%%DATADIR%%/html/MochiKit/Visual.js
+%%DATADIR%%/html/MochiKit/__package__.js
+%%DATADIR%%/html/img_inquisitor/as_pointer.gif
+%%DATADIR%%/html/img_inquisitor/hl_corner_bl.gif
+%%DATADIR%%/html/img_inquisitor/hl_corner_br.gif
+%%DATADIR%%/html/img_inquisitor/hl_corner_tl.gif
+%%DATADIR%%/html/img_inquisitor/hl_corner_tr.gif
+%%DATADIR%%/html/img_inquisitor/ul_corner_bl.gif
+%%DATADIR%%/html/img_inquisitor/ul_corner_br.gif
+%%DATADIR%%/html/img_inquisitor/ul_corner_tl.gif
+%%DATADIR%%/html/img_inquisitor/ul_corner_tr.gif
+%%DATADIR%%/html/jscalendar/calendar-load.js
+%%DATADIR%%/html/jscalendar/calendar-setup.js
+%%DATADIR%%/html/jscalendar/calendar.js
+%%DATADIR%%/html/jscalendar/lang/calendar-en.js
+@dirrm %%DATADIR%%/html/jscalendar/lang
+@dirrm %%DATADIR%%/html/jscalendar
+@dirrm %%DATADIR%%/html/img_inquisitor
+@dirrm %%DATADIR%%/html/MochiKit
+@dirrm %%DATADIR%%/html/PlotKit
 @dirrm %%DATADIR%%/html/statsicons/flags
 @dirrm %%DATADIR%%/html/statsicons/os
 @dirrm %%DATADIR%%/html/statsicons

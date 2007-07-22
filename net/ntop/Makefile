@@ -6,35 +6,31 @@
 #
 
 PORTNAME=	ntop
-PORTVERSION=	3.2
-PORTREVISION=	5
+PORTVERSION=	3.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wxs@atarininja.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
+BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		png.5:${PORTSDIR}/graphics/png
-
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
-		${X11BASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts
+		${LOCALBASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts
 
 DBDIR?=		/var/db
 
-USE_AUTOTOOLS=	libtool:15
-USE_GETOPT_LONG=yes
+USE_AUTOTOOLS=	libtool:15 automake:19 autoconf:259
 USE_GNOME=	libxml2
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PLIST_SUB=	DBDIR=${DBDIR} \
-		SHLIB=${PORTVERSION:S/.p/pre/}
+		PORTVERSION=${PORTVERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 		--with-ossl-root=${OPENSSLBASE} \
@@ -86,7 +82,6 @@ CONFIGURE_ARGS+=	--enable-i18n \
 .endif
 
 .if defined(WITH_XMLDUMP)
-BROKEN=			Does not build with XML dump support
 LIB_DEPENDS+=		gdome.8:${PORTSDIR}/textproc/gdome2
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/libxml2 \
 			-I${LOCALBASE}/include/libxml2/libxml \
@@ -103,6 +98,9 @@ PLIST_SUB+=		ASDATA="@comment "
 
 post-extract:
 	@${RM} ${WRKSRC}/configureextra/FREEBSD
+
+pre-configure:
+	@cd ${WRKSRC} && ${SH} autogen.sh --noconfig
 
 post-install:
 	@${MKDIR} ${DBDIR}/ntop

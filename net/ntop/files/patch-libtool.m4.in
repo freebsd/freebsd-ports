@@ -1,0 +1,11 @@
+--- ./libtool.m4.in.orig	Tue Jul 17 12:50:08 2007
++++ ./libtool.m4.in	Tue Jul 17 12:50:13 2007
+@@ -1288,7 +1288,7 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
