@@ -11852,6 +11852,7 @@ pgaccess	ports/databases/pgaccess
 pgadmin3	ports/databases/pgadmin3
 pgadmin3-12	ports/databases/pgadmin3-12
 pgbash		ports/databases/pgbash
+pgbouncer	ports/databases/pgbouncer
 pgcalc		ports/math/pgcalc
 pgcluster	ports/databases/pgcluster
 pgen		ports/mail/pgen
