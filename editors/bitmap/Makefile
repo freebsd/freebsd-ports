@@ -7,7 +7,7 @@
 
 PORTNAME=	bitmap
 PORTVERSION=	${BITMAP_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/bitmap/ \
 		ftp://ftp.jpl.org/pub/elisp/bitmap/snapshots/
@@ -41,7 +41,6 @@ PORTCLASS?=	master
 # Setup EMACS_PORT_NAME variable.
 .if (${PORTCLASS} == "master")
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 DEPPORT_SUFFIX=
 .else
 DEPPORT_SUFFIX=		-${EMACS_PORT_NAME}
