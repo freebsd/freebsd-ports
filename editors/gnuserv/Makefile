@@ -7,7 +7,7 @@
 
 PORTNAME=	gnuserv
 PORTVERSION=	3.12.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://meltin.net/hacks/emacs/src/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 BINSUFFIX?=	-emacs
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=emacs21
 
 .if defined(WITHOUT_X11)
 BROKEN=		Configure fails without X support
