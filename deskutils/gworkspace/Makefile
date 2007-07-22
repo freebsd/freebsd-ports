@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gworkspace
-PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTVERSION=	0.8.6
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/
 
