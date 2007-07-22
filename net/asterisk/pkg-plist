@@ -74,6 +74,8 @@ etc/asterisk/phone.conf-dist
 etc/asterisk/privacy.conf-dist
 @unexec if cmp -s %D/etc/asterisk/queues.conf %D/etc/asterisk/queues.conf-dist; then rm -f %D/etc/asterisk/queues.conf; fi
 etc/asterisk/queues.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_pgsql.conf %D/etc/asterisk/res_pgsql.conf-dist; then rm -f %D/etc/asterisk/res_pgsql.conf; fi
+etc/asterisk/res_pgsql.conf-dist
 @unexec if cmp -s %D/etc/asterisk/res_odbc.conf %D/etc/asterisk/res_odbc.conf-dist; then rm -f %D/etc/asterisk/res_odbc.conf; fi
 etc/asterisk/res_odbc.conf-dist
 @unexec if cmp -s %D/etc/asterisk/rpt.conf %D/etc/asterisk/rpt.conf-dist; then rm -f %D/etc/asterisk/rpt.conf; fi
@@ -280,7 +282,6 @@ lib/asterisk/modules/cdr_manager.so
 %%WITH_POSTGRES%%lib/asterisk/modules/cdr_pgsql.so
 %%WITH_RADIUS%%lib/asterisk/modules/cdr_radius.so
 lib/asterisk/modules/chan_agent.so
-lib/asterisk/modules/chan_features.so
 %%WITH_JABBER%%lib/asterisk/modules/chan_gtalk.so
 lib/asterisk/modules/chan_iax2.so
 lib/asterisk/modules/chan_local.so
@@ -378,8 +379,8 @@ share/asterisk/moh/LICENSE-asterisk-moh-freeplay-wav
 share/asterisk/moh/fpm-calm-river.wav
 share/asterisk/moh/fpm-sunshine.wav
 share/asterisk/moh/fpm-world-mix.wav
-share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.6
-share/asterisk/sounds/CREDITS-asterisk-core-en-1.4.6
+share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.7
+share/asterisk/sounds/CREDITS-asterisk-core-en-1.4.7
 share/asterisk/sounds/agent-alreadyon.gsm
 share/asterisk/sounds/agent-incorrect.gsm
 share/asterisk/sounds/agent-loggedoff.gsm
@@ -749,7 +750,6 @@ share/asterisk/sounds/vm-undeleted.gsm
 share/asterisk/sounds/vm-unknown-caller.gsm
 share/asterisk/sounds/vm-whichbox.gsm
 share/asterisk/sounds/vm-youhave.gsm
-share/asterisk/sounds/x
 share/asterisk/static-http/ajamdemo.html
 share/asterisk/static-http/astman.css
 share/asterisk/static-http/astman.js

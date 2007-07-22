@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- Makefile.orig
 +++ Makefile
-@@ -207,7 +207,7 @@
+@@ -210,7 +210,7 @@
  
  ifeq ($(OSARCH),FreeBSD)
    # -V is understood by BSD Make, not by GNU make.
@@ -12,7 +12,7 @@ $FreeBSD$
    ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
    AST_LIBS+=$(shell if test  $(BSDVERSION) -lt 502102 ; then echo "-lc_r"; else echo "-pthread"; fi)
  endif
-@@ -371,15 +371,15 @@
+@@ -375,15 +375,15 @@
  # Should static HTTP be installed during make samples or even with its own target ala
  # webvoicemail?  There are portions here that *could* be customized but might also be
  # improved a lot.  I'll put it here for now.
@@ -33,7 +33,7 @@ $FreeBSD$
  	$(MAKE) -C sounds install
  
  update: 
-@@ -400,45 +400,45 @@
+@@ -404,45 +404,45 @@
  OLDHEADERS=$(filter-out $(NEWHEADERS),$(notdir $(wildcard $(DESTDIR)$(ASTHEADERDIR)/*.h)))
  
  bininstall: _all
@@ -67,7 +67,7 @@ $FreeBSD$
 +	$(BSD_INSTALL_SCRIPT) contrib/scripts/astgenkey $(DESTDIR)$(ASTSBINDIR)/
 +	$(BSD_INSTALL_SCRIPT) contrib/scripts/autosupport $(DESTDIR)$(ASTSBINDIR)/
  	if [ ! -f $(DESTDIR)$(ASTSBINDIR)/safe_asterisk ]; then \
- 		cat contrib/scripts/safe_asterisk | sed 's|__ASTERISK_SBIN_DIR__|$(ASTSBINDIR)|;' > $(DESTDIR)$(ASTSBINDIR)/safe_asterisk ;\
+ 		cat contrib/scripts/safe_asterisk | sed 's|__ASTERISK_SBIN_DIR__|$(ASTSBINDIR)|;s|__ASTERISK_VARRUN_DIR__|$(ASTVARRUNDIR)|;' > $(DESTDIR)$(ASTSBINDIR)/safe_asterisk ;\
  		chmod 755 $(DESTDIR)$(ASTSBINDIR)/safe_asterisk;\
  	fi
 -	$(INSTALL) -d $(DESTDIR)$(ASTHEADERDIR)
@@ -109,7 +109,7 @@ $FreeBSD$
  	fi
  
  $(SUBDIRS_INSTALL):
-@@ -465,7 +465,7 @@
+@@ -469,7 +469,7 @@
  		echo " WARNING WARNING WARNING" ;\
  	fi
  
@@ -118,7 +118,7 @@ $FreeBSD$
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
  	fi
-@@ -495,31 +495,23 @@
+@@ -499,31 +499,23 @@
  upgrade: bininstall
  
  adsi:
@@ -158,7 +158,7 @@ $FreeBSD$
  		( \
  		echo "[directories]" ; \
  		echo "astetcdir => $(ASTETCDIR)" ; \
-@@ -540,20 +532,23 @@
+@@ -544,20 +536,23 @@
  		echo ";astctlowner = root" ; \
  		echo ";astctlgroup = apache" ; \
  		echo ";astctl = asterisk.ctl" ; \
@@ -186,7 +186,7 @@ $FreeBSD$
  	done
  	@echo " +--------- Asterisk Web Voicemail ----------+"  
  	@echo " +                                           +"
-@@ -580,10 +575,10 @@
+@@ -584,10 +579,10 @@
  
  __rpm: include/asterisk/version.h include/asterisk/buildopts.h spec
  	rm -rf /tmp/asterisk ; \
@@ -199,7 +199,7 @@ $FreeBSD$
  	cp -f contrib/init.d/rc.redhat.asterisk /tmp/asterisk/etc/rc.d/init.d/asterisk ; \
  	rpmbuild --rcfile /usr/lib/rpm/rpmrc:redhat/rpmrc -bb asterisk.spec
  
-@@ -594,19 +589,19 @@
+@@ -598,19 +593,19 @@
  config:
  	@if [ "${OSARCH}" = "linux-gnu" ]; then \
  		if [ -f /etc/redhat-release -o -f /etc/fedora-release ]; then \

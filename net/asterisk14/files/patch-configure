@@ -3,25 +3,80 @@ $FreeBSD$
 
 --- configure.orig
 +++ configure
-@@ -23776,7 +23776,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lodbc ${pbxlibdir} -lltdl $LIBS"
-+LIBS="-lodbc ${pbxlibdir} $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
+@@ -3926,8 +3926,6 @@
+ case "${host_os}" in
+      freebsd*)
+      ac_default_prefix=/usr/local
+-     CPPFLAGS=-I/usr/local/include
+-     LDFLAGS=-L/usr/local/lib
+      ;;
+      *)
+      ac_default_prefix=/usr
+@@ -26066,6 +26064,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <ptlib.h>
+ #include <${OPENH323DIR}/include/h323.h>
  _ACEOF
-@@ -23855,7 +23855,7 @@
- 
- 
-    if test "${AST_UNIXODBC_FOUND}" = "yes"; then
--      UNIXODBC_LIB="-lodbc -lltdl"
-+      UNIXODBC_LIB="-lodbc"
-       UNIXODBC_HEADER_FOUND="1"
-       if test "x${UNIXODBC_DIR}" != "x"; then
-          UNIXODBC_LIB="${pbxlibdir} ${UNIXODBC_LIB}"
-@@ -28065,7 +28065,7 @@
+ rm -f conftest.$ac_objext
+@@ -26106,6 +26105,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <ptlib.h>
+ #include <${OPENH323DIR}/include/h323.h>
+ _ACEOF
+ if { (ac_try="$ac_cpp conftest.$ac_ext"
+@@ -26202,6 +26202,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <ptlib.h>
+ #include <${HOME}/openh323/include/h323.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -26242,6 +26243,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <ptlib.h>
+ #include <${HOME}/openh323/include/h323.h>
+ _ACEOF
+ if { (ac_try="$ac_cpp conftest.$ac_ext"
+@@ -26336,6 +26338,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <ptlib.h>
+ #include </usr/local/include/openh323/h323.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -26376,6 +26379,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <ptlib.h>
+ #include </usr/local/include/openh323/h323.h>
+ _ACEOF
+ if { (ac_try="$ac_cpp conftest.$ac_ext"
+@@ -26475,6 +26479,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <ptlib.h>
+ #include </usr/include/openh323/h323.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -26515,6 +26520,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <ptlib.h>
+ #include </usr/include/openh323/h323.h>
+ _ACEOF
+ if { (ac_try="$ac_cpp conftest.$ac_ext"
+@@ -26700,7 +26706,7 @@
  
  	fi
  
