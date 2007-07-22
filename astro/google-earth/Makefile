@@ -7,7 +7,7 @@
 
 PORTNAME=	google-earth
 PORTVERSION=	4.1.7076.4458
-CATEGORIES=	astro deskutils
+CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/GE${PORTVERSION:C/\..*//g}/
 DISTFILES=	${TARGET_DISTFILE}
 EXTRACT_ONLY=	# none

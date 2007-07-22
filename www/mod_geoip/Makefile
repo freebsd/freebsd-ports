@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_geoip
 PORTVERSION=	1.2.9
-CATEGORIES=	www
+CATEGORIES=	www geography
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/mod_geoip/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

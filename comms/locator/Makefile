@@ -7,7 +7,7 @@
 
 PORTNAME=	locator
 PORTVERSION=	0.1
-CATEGORIES=	comms astro
+CATEGORIES=	comms astro geography
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/ham/}
 
 MAINTAINER=	db@FreeBSD.org

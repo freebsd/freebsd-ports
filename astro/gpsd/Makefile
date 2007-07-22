@@ -7,7 +7,7 @@
 
 PORTNAME=	gpsd
 PORTVERSION=	2.32
-CATEGORIES=	astro
+CATEGORIES=	astro geography
 MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
 
 MAINTAINER=	toxa@toxahost.ru

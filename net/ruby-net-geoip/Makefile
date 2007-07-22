@@ -8,7 +8,7 @@
 PORTNAME=	net-geoip
 PORTVERSION=	0.06
 PORTREVISION=	6
-CATEGORIES=	net ruby
+CATEGORIES=	net ruby geography
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
