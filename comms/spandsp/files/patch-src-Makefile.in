@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- src/Makefile.in.orig
-+++ src/Makefile.in
-@@ -195,9 +195,9 @@
+--- src/Makefile.in.orig	Sat Mar 31 08:39:20 2007
++++ src/Makefile.in	Fri Jul 20 11:50:18 2007
+@@ -213,9 +213,9 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
--AM_CFLAGS = -std=c99
-+#AM_CFLAGS = -std=c99
+-AM_CFLAGS = $(COMP_VENDOR_CFLAGS)
++#AM_CFLAGS = $(COMP_VENDOR_CFLAGS)
  MAINTAINERCLEANFILES = Makefile.in
 -INCLUDES = -I$(top_builddir)
 +#INCLUDES = -I$(top_builddir)

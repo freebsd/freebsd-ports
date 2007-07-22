@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	spandsp
-DISTVERSION=	0.0.2pre26
+DISTVERSION=	0.0.3
 CATEGORIES=	comms
 MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/ \
-		http://www.soft-switch.org/downloads/spandsp/old/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav
+		http://www.soft-switch.org/downloads/spandsp/old/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fax DSP library for Asterisk
