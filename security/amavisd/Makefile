@@ -17,6 +17,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The daemonized version of amavis-perl
 
+DEPRECATED=	depends on misc/compat3x, which has security problems; old version
+EXPIRATION_DATE=	2007-09-21
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc \
 		${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha \
 		${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj \
