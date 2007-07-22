@@ -258,6 +258,7 @@ sbin/httpd
 sbin/httxt2dbm
 sbin/logresolve
 sbin/rotatelogs
+sbin/split-logfile
 %%MOD_SUEXEC%%sbin/suexec
 %%APR_PORTS%%build-1/apr_rules.mk
 %%APR_PORTS%%build-1/libtool

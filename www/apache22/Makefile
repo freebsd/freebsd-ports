@@ -50,7 +50,7 @@ USE_BZIP2=		yes
 USE_ICONV=		yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_PERL5=		yes
-USE_RC_SUBR=		apache22.sh
+USE_RC_SUBR=		apache22.sh htcacheclean.sh
 SUB_LIST+=		RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 LIBTOOLFILES=		configure
 
@@ -108,6 +108,11 @@ WITH_EXCEPTION_HOOK=	YES
 
 .if defined(WITH_EXCEPTION_HOOK)
 CONFIGURE_ARGS+=	--enable-exception-hook
+.endif
+
+.if defined(WITH_PCRE_FROM_PORTS)
+CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}
+LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
 # for slave ports
