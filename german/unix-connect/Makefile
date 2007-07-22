@@ -31,9 +31,6 @@ CONFIGURE_ARGS+=--enable-testing
 CFLAGS+=	-g
 CFLAGS:=	${CFLAGS:S/-O[0-9]*//g}	# gcc generates broken code in uwsmtp
 
-.if defined(PARALLEL_PACKAGE_BUILD)
-CONFIGURE_ARGS+=--with-domain=example.com
-.endif
 MANUAL_PACKAGE_BUILD=	needs hostname
 
 post-install:
