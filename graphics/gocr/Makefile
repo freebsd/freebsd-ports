@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jocr
 
-MAINTAINER=	kay_lehmann@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GOCR/JOCR is an OCR (Optical Character Recognition) program
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
@@ -20,6 +20,7 @@ LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-netpbm=${LOCALBASE}
+MAKE_ARGS=	prefix=${PREFIX} exec_prefix=${PREFIX} DESTDIR=${DESTDIR}
 
 .if !defined(WITHOUT_X11)
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
