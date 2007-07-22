@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.4.4
-PORTREVISION=	2
+PORTVERSION=	1.4.8
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -25,8 +24,9 @@ ONLY_FOR_ARCHS=	i386 sparc64 amd64
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --mandir=${LOCALBASE}/man
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_RC_SUBR=	asterisk.sh
@@ -50,7 +50,7 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 OPTIONS+=	ZAPTEL		"Enable Zaptel support" on
 .else
 WITHOUT_ZAPTEL=	yes
@@ -61,7 +61,7 @@ PLIST_SUB+=	WITH_H323="@comment "
 CONFIGURE_ARGS+= --without-h323
 .else
 PLIST_SUB+=	WITH_H323=""
-CONFIGURE_ARGS+= --with-h323
+CONFIGURE_ARGS+= --with-h323=${LOCALBASE}
 LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib \
 		h323_r.1:${PORTSDIR}/net/openh323
 .endif
@@ -86,8 +86,9 @@ PLIST_SUB+=	WITH_ODBC="@comment "
 CONFIGURE_ARGS+= --without-odbc
 .else
 PLIST_SUB+=	WITH_ODBC=""
-CONFIGURE_ARGS+= --with-odbc
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+CONFIGURE_ARGS+= --with-odbc --with-ltdl
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC \
+		ltdl.4:${PORTSDIR}/devel/libltdl15
 .endif
 
 .if defined(WITHOUT_FREETDS)
