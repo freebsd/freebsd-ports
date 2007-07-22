@@ -26,6 +26,7 @@ System/Applications/GWorkspace.app/Resources/English.lproj/DefEditorPref.gorm/da
 System/Applications/GWorkspace.app/Resources/English.lproj/DefEditorPref.gorm/data.info
 System/Applications/GWorkspace.app/Resources/English.lproj/DefEditorPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.gorm/data.info
 System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/DesktopPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/English.lproj/DesktopPref.gorm/data.info
@@ -73,6 +74,7 @@ System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd
 System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/TabbedShelf-develop.tiff
 System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/dummy.tiff
 System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm/data.info
 System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/HistoryPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/English.lproj/HistoryPref.gorm/data.info
@@ -88,20 +90,25 @@ System/Applications/GWorkspace.app/Resources/English.lproj/LSFolder.gorm/data.in
 System/Applications/GWorkspace.app/Resources/English.lproj/LSFolder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/data.info
 System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/data.info
 System/Applications/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/data.info
 System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/data.info
 System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/data.info
 System/Applications/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/data.info
 System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm/data.info
 System/Applications/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/data.info
@@ -229,8 +236,10 @@ System/Applications/GWorkspace.app/stamp.make
 System/Applications/Recycler.app/Recycler
 System/Applications/Recycler.app/Resources/English.lproj/Localizable.strings
 System/Applications/Recycler.app/Resources/English.lproj/PreferencesWin.gorm/data.classes
+System/Applications/Recycler.app/Resources/English.lproj/PreferencesWin.gorm/data.info
 System/Applications/Recycler.app/Resources/English.lproj/PreferencesWin.gorm/objects.gorm
 System/Applications/Recycler.app/Resources/English.lproj/StartAppWin.gorm/data.classes
+System/Applications/Recycler.app/Resources/English.lproj/StartAppWin.gorm/data.info
 System/Applications/Recycler.app/Resources/English.lproj/StartAppWin.gorm/objects.gorm
 System/Applications/Recycler.app/Resources/Info-gnustep.plist
 System/Applications/Recycler.app/Resources/Recycler.desktop
@@ -297,7 +306,6 @@ System/Library/Bundles/FolderViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/FolderViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/FolderViewer.inspector/stamp.make
 System/Library/Bundles/IBViewViewer.inspector/IBViewViewer
-System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
 System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
 System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 System/Library/Bundles/IBViewViewer.inspector/Resources/Info-gnustep.plist
@@ -307,7 +315,6 @@ System/Library/Bundles/ImageThumbnailer.thumb/ImageThumbnailer
 System/Library/Bundles/ImageThumbnailer.thumb/Resources/Info-gnustep.plist
 System/Library/Bundles/ImageThumbnailer.thumb/stamp.make
 System/Library/Bundles/ImageViewer.inspector/ImageViewer
-System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
 System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
 System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 System/Library/Bundles/ImageViewer.inspector/Resources/Info-gnustep.plist
@@ -317,7 +324,6 @@ System/Library/Bundles/MDModuleAnnotations.mdm/MDModuleAnnotations
 System/Library/Bundles/MDModuleAnnotations.mdm/Resources/Info-gnustep.plist
 System/Library/Bundles/MDModuleAnnotations.mdm/stamp.make
 System/Library/Bundles/NSColorViewer.inspector/NSColorViewer
-System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
 System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
 System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 System/Library/Bundles/NSColorViewer.inspector/Resources/Info-gnustep.plist
