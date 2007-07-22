@@ -19,12 +19,9 @@ bin/vcodacon
 bin/xaskuser
 bin/xfrepair
 etc/coda/realms
-etc/coda/sidekick.intr.ex
 etc/coda/venus.conf.ex
 sbin/asrlauncher
-sbin/coda-client-logrotate
 sbin/codaconfedit
-sbin/sidekick
 sbin/venus
 sbin/venus-setup
 sbin/volmunge
