@@ -852,6 +852,7 @@ share/mime/packages/anjuta.xml
 @dirrm share/gnome/anjuta/class-templates
 @dirrm share/gnome/anjuta/build
 @dirrm share/gnome/anjuta
+@dirrmtry share/icons/gnome/48x48/mimetypes
 @dirrm share/doc/libanjuta
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/anjuta
