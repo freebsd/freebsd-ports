@@ -1,0 +1,10 @@
+
+===>  CONFIGURATION NOTE:
+
+      To setup pgbouncer, you need to copy
+      %%EXAMPLESDIR%%/pgbouncer.ini
+      to %%PREFIX%%/etc/pgbouncer.ini and edit appropriately.
+
+      To run pgbouncer from startup, add pgbouncer_enable="YES"
+      in your /etc/rc.conf.
+
