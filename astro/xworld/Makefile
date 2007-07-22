@@ -8,7 +8,7 @@
 PORTNAME=	xworld
 PORTVERSION=	2.0
 PORTREVISION=	1
-CATEGORIES=	astro
+CATEGORIES=	astro geography
 MASTER_SITES=	ftp://gutemine.geo.uni-koeln.de/pub/xworld/ \
 		ftp://ftp.Uni-Koeln.DE/misc/
 

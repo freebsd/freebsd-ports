@@ -7,7 +7,7 @@
 
 PORTNAME=	Geo-Weather
 PORTVERSION=	1.41
-CATEGORIES=	misc perl5
+CATEGORIES=	misc perl5 geography
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		ftp://ftp.innercite.com/pub/perl/
 MASTER_SITE_SUBDIR=	Geo

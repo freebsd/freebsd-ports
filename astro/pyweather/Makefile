@@ -7,7 +7,7 @@
 
 PORTNAME=	pyWeather
 PORTVERSION=	0.1b
-CATEGORIES=	astro python
+CATEGORIES=	astro python geography
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	will
 DISTNAME=	pyWeather

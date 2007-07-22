@@ -7,7 +7,7 @@
 PORTNAME=	wmweather
 PORTVERSION=	2.4.3
 PORTREVISION=	2
-CATEGORIES=	misc windowmaker
+CATEGORIES=	misc windowmaker geography
 MASTER_SITES=	http://www.godisch.de/debian/wmweather/
 
 MAINTAINER=	kris@FreeBSD.org

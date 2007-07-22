@@ -8,7 +8,7 @@
 PORTNAME=	gpsdrive
 PORTVERSION=	2.09
 PORTREVISION=	6
-CATEGORIES=	astro
+CATEGORIES=	astro geography
 MASTER_SITES=	http://www.gpsdrive.de/packages/ \
 		LOCAL/beech
 

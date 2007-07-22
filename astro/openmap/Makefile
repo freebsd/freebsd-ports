@@ -8,7 +8,7 @@
 PORTNAME=	openmap
 PORTVERSION=	4.6.2
 PORTREVISION=	2
-CATEGORIES=	astro java devel graphics
+CATEGORIES=	astro java devel graphics geography
 MASTER_SITES=	http://openmap.bbn.com/src/
 
 MAINTAINER=	des@FreeBSD.org

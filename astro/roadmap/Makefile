@@ -8,7 +8,7 @@
 PORTNAME=	roadmap
 PORTVERSION=	1.0.6
 PORTREVISION=	3
-CATEGORIES=	astro
+CATEGORIES=	astro geography
 MASTER_SITES=	http://roadmap.digitalomaha.net/roadmap/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}

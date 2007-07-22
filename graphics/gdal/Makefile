@@ -8,7 +8,7 @@
 PORTNAME=	gdal
 PORTVERSION=	1.3.1
 PORTREVISION=	1
-CATEGORIES=	graphics
+CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
 		http://www.gdal.org/dl/ \
 		http://dl.maptools.org/dl/gdal/
