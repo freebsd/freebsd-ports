@@ -17,6 +17,8 @@
 #
 #  * Single system-wide fetchmail daemon:
 #    - It is run as user `fetchmail_user' (default: fetchmail)
+#      Note: The directory /var/run/fetchmail must be writable for
+#            `fetchmail_user'.
 #    - All configuration is contained in one global file
 #      `fetchmail_config' (default: %%PREFIX%%/etc/fetchmailrc),
 #      that must be owned by `fetchmail_user' (mode 700)
@@ -26,6 +28,8 @@
 #  * Per-user daemon
 #    - Users for which a fetchmail daemon is to be started must be
 #      listed in `fetchmail_users', e.g. fetchmail_users="user1 user2"
+#      The `fetchmail_user' (sic!) variable is ignored in this
+#      configuration variant.
 #    - The config files for the individual users must be located at
 #      ${fetchmail_home_prefix}/${user}/${fetchmail_config_name}. The
 #      default for `fetchmail_home_prefix' is "/home", and that for
@@ -71,6 +75,7 @@ fi
 # read settings, set default values
 load_rc_config "$name"
 : ${fetchmail_enable="NO"}
+: ${fetchmail_user="fetchmail"}
 : ${fetchmail_config="%%PREFIX%%/etc/fetchmailrc"}
 : ${fetchmail_polling_interval="900"}
 : ${fetchmail_logging_facility="--syslog"}
@@ -100,7 +105,6 @@ if [ -n "$2" ]; then
 			eval pidfile="${fetchmail_home_prefix}/${user}/.fetchmail.pid"
 			eval fetchmail_user=$user
 		else
-			eval fetchmail_user=fetchmail
 			eval pidfile=/var/run/fetchmail/fetchmail.pid
 		fi
 		required_files=${fetchmail_config}
