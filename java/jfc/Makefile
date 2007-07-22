@@ -26,6 +26,9 @@ ONLY_FOR_ARCHS=	i386
 
 JDK_VERSION=	1.1.8
 
+DEPRECATED=	For obsolete version of jdk
+EXPIRATION_DATE=2007-08-22
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)

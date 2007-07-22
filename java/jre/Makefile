@@ -27,6 +27,9 @@ ONLY_FOR_ARCHS=	i386
 JRE_VERSION=	1.1.8
 PLIST_SUB+=	JRE_VERSION=${JRE_VERSION}
 
+DEPRECATED=	For obsolete version of jdk; depends on forbidden compat3x package
+EXPIRATION_DATE=2007-08-22
+
 WRKSRC=		${WRKDIR}/jre
 
 STRIPFILES=	bin/i386/green_threads/jre \

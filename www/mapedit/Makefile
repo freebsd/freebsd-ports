@@ -19,6 +19,9 @@ RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11
 JDK_VERSION=	1.1.8
 NO_BUILD=	yes
 
+DEPRECATED=	Depends on obsolete version of jdk
+EXPIRATION_DATE=2007-08-22
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|!!LOCALBASE!!|${LOCALBASE}|" ${WRKSRC}/mapedit
 

@@ -28,6 +28,9 @@ JDK_CONCAT_VER=	${JDK_MAJOR_VER:S/.//g}
 NO_BUILD=	yes
 PORTDOCS=	api guide images index.html relnotes tooldocs
 
+DEPRECATED=	Obsolete version of jdk
+EXPIRATION_DATE=2007-08-22
+
 .include <bsd.port.pre.mk>
 
 do-install:

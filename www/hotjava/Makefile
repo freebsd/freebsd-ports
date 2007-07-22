@@ -17,6 +17,9 @@ COMMENT=	Sun's Hotjava web browser
 
 RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11
 
+DEPRECATED=	Depends on obsolete version of jdk
+EXPIRATION_DATE=2007-08-22
+
 EXTRACT_ONLY=
 
 NO_WRKSUBDIR=	yes

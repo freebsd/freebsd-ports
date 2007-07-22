@@ -11,4 +11,7 @@ MD5_FILE=	${.CURDIR}/distinfo
 PLIST=		${.CURDIR}/pkg-plist
 PLIST_FILES=	bin/gjc11 bin/gjcr11 bin/gj11
 
+DEPRECATED=	Modern versions of jdk support generics natively
+EXPIRATION_DATE=2007-08-22
+
 .include "${MASTERDIR}/Makefile"
