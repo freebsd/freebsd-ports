@@ -10,12 +10,13 @@ include/zaptel/zaptel.h
 lib/libtonezone.a
 lib/zaptel/linker.hints
 lib/zaptel/qozap.ko
-lib/zaptel/tau32pci.ko
+%%WITH_TAU32%%lib/zaptel/tau32pci.ko
 lib/zaptel/wcfxo.ko
 lib/zaptel/wcfxs.ko
 lib/zaptel/wct1xxp.ko
 lib/zaptel/wct4xxp.ko
 lib/zaptel/wcte11xp.ko
+lib/zaptel/wcte12xp.ko
 lib/zaptel/zaphfc.ko
 lib/zaptel/zaptel.ko
 lib/zaptel/ztdummy.ko

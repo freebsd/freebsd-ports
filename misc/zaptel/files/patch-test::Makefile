@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- test/Makefile
+--- test/Makefile.orig
 +++ test/Makefile
 @@ -1,7 +1,7 @@
- # $Id: Makefile,v 1.1 2007/04/25 23:17:23 root Exp root $ 
+ # $Id: Makefile 856 2004-06-22 13:40:16Z gonzo $ 
  
  LOCALBASE?=/usr/local
--CFLAGS+=-I../zaptel -I../ztcfg -I${LOCALBASE}/include 
-+CFLAGS+=-I../ -I../zaptel -I../ztcfg -I${LOCALBASE}/include 
+-CFLAGS+=-I.. -I../ztcfg -I${LOCALBASE}/include 
++CFLAGS+=-I.. -I../zaptel -I../ztcfg -I${LOCALBASE}/include 
  PREFIX?=/usr/local
  BSD_INSTALL_PROGRAM?=${INSTALL} -o root -g wheel -m 755 -s
  
