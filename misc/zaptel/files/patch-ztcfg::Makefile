@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- ztcfg/Makefile
++++ ztcfg/Makefile
+@@ -3,7 +3,7 @@
+ LOCALBASE?=/usr/local
+ PREFIX?=/usr/local
+ CFLAGS+=-I. -I../zaptel -I${LOCALBASE}/include -DUSE_LOCAL_INCLUDE=1 \
+-	-DPREFIX=\"${PREFIX}\"
++	-DPREFIX=\"${PREFIX}\" -fPIC
+ INSTALL=/usr/bin/install
+ BSD_INSTALL_PROGRAM?=${INSTALL} -o root -g wheel -m 755 -s
+ BSD_INSTALL_DATA?=${INSTALL} -o root -g wheel -m 644
