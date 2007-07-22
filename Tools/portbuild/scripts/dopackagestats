@@ -228,7 +228,8 @@ write_header
 # display all the mainstream builds first
 for arch in ${SUPPORTED_ARCHS}; do
 
-  builds=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[1-9]$' | sort`
+  # drop 4 as obsolete
+  builds=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[5-9]$' | sort`
   if [ ! -z "$builds" ]; then
     write_table_begin
 
