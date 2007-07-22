@@ -20,6 +20,9 @@ COMMENT=	Blackdown Java Development Kit 1.2 for Linux
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
+DEPRECATED=	Obsolete version of jdk
+EXPIRATION_DATE=2007-08-22
+
 RESTRICTED=	"License doesn\'t allow binary distributions or distribution with fee"
 LATEST_LINK=	linux-blackdown-jdk12
 

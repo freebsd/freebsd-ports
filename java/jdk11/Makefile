@@ -28,6 +28,9 @@ PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
 WRKSRC=		${WRKDIR}/jdk${JDK_VERSION}
 NO_BUILD=	yes
 
+DEPRECATED=	Obsolete version; depends on forbidden compat3x package
+EXPIRATION_DATE=2007-08-22
+
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 

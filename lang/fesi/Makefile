@@ -23,6 +23,9 @@ USE_ZIP=	yes
 JDK_VERSION=	1.1.8
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+DEPRECATED=	Depends on obsolete version of jdk
+EXPIRATION_DATE=2007-08-22
+
 post-extract:
 	@(cd ${WRKSRC} && ${FIND} * -type d -exec ${CHMOD} 755 {} \;)
 

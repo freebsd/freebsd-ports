@@ -28,6 +28,9 @@ JAVADIR=	${PREFIX}/share/java
 JDKVERSION?=	1.2.2
 JDKDIR=		${LOCALBASE}/jdk${JDKVERSION}
 
+DEPRECATED=	Depends on obsolete version of jdk
+EXPIRATION_DATE=2007-08-22
+
 NETYPESVDIR=	${JAVADIR}/netypesv-${PORTVERSION}
 
 post-extract:

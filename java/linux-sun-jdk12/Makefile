@@ -18,6 +18,9 @@ COMMENT=	Sun Java Development Kit 1.2 for Linux
 
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
+DEPRECATED=	Obsolete version of jdk
+EXPIRATION_DATE=2007-08-22
+
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 LATEST_LINK=	linux-sun-jdk12

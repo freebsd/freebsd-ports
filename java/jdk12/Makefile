@@ -18,6 +18,9 @@ DISTFILES=	${SRCFILE} ${PATCHSETFILE}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit 1.2
 
+DEPRECATED=	Obsolete version of jdk
+EXPIRATION_DATE=2007-08-22
+
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		${JDK11DIR}/bin/javac:${PORTSDIR}/java/jdk11 \
