@@ -715,6 +715,8 @@ include/%%WM%%/%%WM%%UtilityRealV3.h
 include/%%WM%%/%%WM%%UtilityRealV3.inl
 include/%%WM%%/%%WM%%VEManifoldMesh.h
 include/%%WM%%/%%WM%%VEManifoldMesh.inl
+include/%%WM%%/%%WM%%VETMesh.h
+include/%%WM%%/%%WM%%VETMesh.inl
 include/%%WM%%/%%WM%%Vector2.h
 include/%%WM%%/%%WM%%Vector2.inl
 include/%%WM%%/%%WM%%Vector2Array.h
@@ -1164,7 +1166,6 @@ lib/lib%%WM%%Physics.so.0
 %%DATADIR%%/Data/Terrain/Image64/image.7.5.wmif
 %%DATADIR%%/Data/Terrain/Image64/image.7.6.wmif
 %%DATADIR%%/Data/Terrain/Image64/image.7.7.wmif
-%%DATADIR%%/Data/Terrain/SkyDome.wmof
 %%DATADIR%%/Data/Terrain/skyline.wmif
 %%DATADIR%%/Data/Wmif/BallTexture.wmif
 %%DATADIR%%/Data/Wmif/Cloth.wmif
@@ -1203,8 +1204,17 @@ lib/lib%%WM%%Physics.so.0
 %%DATADIR%%/Data/Wmif/map02.wmif
 %%DATADIR%%/Data/Wmif/skyline.wmif
 %%DATADIR%%/Data/Wmof/BrainP.wmof
+%%DATADIR%%/Data/Wmof/Castle.wmof
+%%DATADIR%%/Data/Wmof/ConvertToVersion403.cpp
+%%DATADIR%%/Data/Wmof/ConvertToVersion403.h
+%%DATADIR%%/Data/Wmof/ConvertToVersion403.xcodeproj/project.pbxproj
+%%DATADIR%%/Data/Wmof/ConvertToVersion403_VC60.dsp
+%%DATADIR%%/Data/Wmof/ConvertToVersion403_VC70.vcproj
+%%DATADIR%%/Data/Wmof/ConvertToVersion403_VC71.vcproj
+%%DATADIR%%/Data/Wmof/ConvertToVersion403_VC80.vcproj
 %%DATADIR%%/Data/Wmof/FacePN.wmof
 %%DATADIR%%/Data/Wmof/SkinnedBipedPN.wmof
+%%DATADIR%%/Data/Wmof/SkyDome.wmof
 %%DATADIR%%/Data/Wmof/SmallBrainPT2.wmof
 %%DATADIR%%/Data/Wmsp/p_Default.dx9.wmsp
 %%DATADIR%%/Data/Wmsp/p_Default.ogl.wmsp
@@ -1258,6 +1268,7 @@ lib/lib%%WM%%Physics.so.0
 %%DATADIR%%/Data/Wmsp/v_Texture.dx9.wmsp
 %%DATADIR%%/Data/Wmsp/v_Texture.ogl.wmsp
 %%DATADIR%%/Data/Wmsp/v_Texture.sft.wmsp
+%%DATADIR%%/Data/Wmsp/v_Texture2Color3.dx9.wmsp
 %%DATADIR%%/Data/Wmsp/v_Texture2Color3.ogl.wmsp
 %%DATADIR%%/Data/Wmsp/v_VertexColor3.dx9.wmsp
 %%DATADIR%%/Data/Wmsp/v_VertexColor3.ogl.wmsp
@@ -1265,7 +1276,6 @@ lib/lib%%WM%%Physics.so.0
 %%DATADIR%%/Data/Wmsp/v_VertexColor4.dx9.wmsp
 %%DATADIR%%/Data/Wmsp/v_VertexColor4.ogl.wmsp
 %%DATADIR%%/Data/Wmsp/v_VertexColor4.sft.wmsp
-%%DATADIR%%/Data/WmspVS11PS11/Shaders.zip
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleFoundation/BSplineFitContinuous/BSplineFitContinuous.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleFoundation/BSplineFitContinuous/BSplineFitContinuous.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleFoundation/BSplineFitContinuous/BSplineFitContinuous.xcodeproj/project.pbxproj
@@ -1494,7 +1504,6 @@ lib/lib%%WM%%Physics.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/BillboardNodes/BillboardNodes.%%CFG%%%%GRF%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/BillboardNodes/BillboardNodes.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/BillboardNodes/BillboardNodes.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/BillboardNodes/BillboardNodes.wmof
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/BillboardNodes/BillboardNodes.xcodeproj/project.pbxproj
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/BillboardNodes/BillboardNodes_VC60.dsp
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/BillboardNodes/BillboardNodes_VC70.vcproj
@@ -1516,7 +1525,6 @@ lib/lib%%WM%%Physics.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/BlendedTerrain/Data/BTGrass.wmif
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/BlendedTerrain/Data/BTHeightField.wmif
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/BlendedTerrain/Data/BTStone.wmif
-%%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/BlendedTerrain/Data/SkyDome.wmof
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/BlendedTerrain/Data/skyline.wmif
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/BlendedTerrain/WmspWrapper.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/BlendedTerrain/p_BlendedTerrain.dx9.wmsp
@@ -1569,8 +1577,6 @@ lib/lib%%WM%%Physics.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/Castle/Castle_VC70.vcproj
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/Castle/Castle_VC71.vcproj
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/Castle/Castle_VC80.vcproj
-%%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/Castle/Data/Castle.wmof
-%%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/Castle/Data/Thumbs.db
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/Castle/Data/barrel.wmif
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/Castle/Data/barrelbase.wmif
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/Castle/Data/blanket.wmif
@@ -1798,7 +1804,6 @@ lib/lib%%WM%%Physics.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/MorphControllers/Data/FaceTarget2.raw
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/MorphControllers/Data/FaceTarget3.raw
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/MorphControllers/Data/FaceTarget4.raw
-%%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/MorphControllers/FacePN.wmof
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/MorphControllers/MorphControllers.%%CFG%%%%GRF%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/MorphControllers/MorphControllers.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/MorphControllers/MorphControllers.h
@@ -2070,7 +2075,6 @@ lib/lib%%WM%%Physics.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/SkinnedBiped/SkinnedBiped.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/SkinnedBiped/SkinnedBiped.xcodeproj/project.pbxproj
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/SkinnedBiped/SkinnedBipedLayout.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/SkinnedBiped/SkinnedBipedPN.wmof
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/SkinnedBiped/SkinnedBiped_VC60.dsp
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/SkinnedBiped/SkinnedBiped_VC70.vcproj
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleGraphics/SkinnedBiped/SkinnedBiped_VC71.vcproj
@@ -2218,7 +2222,6 @@ lib/lib%%WM%%Physics.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleImagics/BinaryOperations/BinaryOperations_VC70.vcproj
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleImagics/BinaryOperations/BinaryOperations_VC71.vcproj
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleImagics/BinaryOperations/BinaryOperations_VC80.vcproj
-%%PORTDOCS%%%%EXAMPLESDIR%%/SampleImagics/ConformalMapping/BrainP.wmof
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleImagics/ConformalMapping/ConformalMapping.%%CFG%%%%GRF%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleImagics/ConformalMapping/ConformalMapping.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/SampleImagics/ConformalMapping/ConformalMapping.h
@@ -2401,7 +2404,6 @@ lib/lib%%WM%%Physics.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/SamplePhysics/FreeFormDeformation/FreeFormDeformation_VC70.vcproj
 %%PORTDOCS%%%%EXAMPLESDIR%%/SamplePhysics/FreeFormDeformation/FreeFormDeformation_VC71.vcproj
 %%PORTDOCS%%%%EXAMPLESDIR%%/SamplePhysics/FreeFormDeformation/FreeFormDeformation_VC80.vcproj
-%%PORTDOCS%%%%EXAMPLESDIR%%/SamplePhysics/FreeFormDeformation/SmallBrainPT2.wmof
 %%PORTDOCS%%%%EXAMPLESDIR%%/SamplePhysics/FreeTopFixedTip/FreeTopFixedTip.%%CFG%%%%GRF%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/SamplePhysics/FreeTopFixedTip/FreeTopFixedTip.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/SamplePhysics/FreeTopFixedTip/FreeTopFixedTip.h
@@ -2624,8 +2626,8 @@ lib/lib%%WM%%Physics.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/SamplePhysics/WrigglingSnake/WrigglingSnake_VC80.vcproj
 %%PORTDOCS%%%%EXAMPLESDIR%%/SamplePhysics/makeapp.wm4
 %%PORTDOCS%%%%EXAMPLESDIR%%/SamplePhysics/makefile.wm4
-@dirrm %%DATADIR%%/Data/WmspVS11PS11
 @dirrm %%DATADIR%%/Data/Wmsp
+@dirrm %%DATADIR%%/Data/Wmof/ConvertToVersion403.xcodeproj
 @dirrm %%DATADIR%%/Data/Wmof
 @dirrm %%DATADIR%%/Data/Wmif
 @dirrm %%DATADIR%%/Data/Terrain/Image64
