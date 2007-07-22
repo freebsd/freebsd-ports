@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -16,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:apache,cpan
 MAINTAINER=	scheidell@secnap.net
 COMMENT=	A highly efficient mail filter for identifying spam
 
-BUILD_DEPENDS=	p5-Net-DNS>=0.58:${PORTSDIR}/dns/p5-Net-DNS \
+BUILD_DEPENDS=	p5-Net-DNS>=0.60:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-IO-Zlib>=1.04:${PORTSDIR}/archivers/p5-IO-Zlib \
 		p5-HTML-Parser>=3.43:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-IO-Compress-Zlib>=2.04:${PORTSDIR}/archivers/p5-IO-Compress-Zlib \
@@ -61,7 +62,6 @@ WITHOUT_SSL=1
 
 .if defined(WITH_SPF_QUERY)
 RUN_DEPENDS+=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
-# see http://www.freebsd.org/cgi/query-pr.cgi?pr=113638
 RUN_DEPENDS+=	${SITE_PERL}/Mail/SPF.pm:${PORTSDIR}/mail/p5-Mail-SPF
 .endif
 
@@ -97,6 +97,7 @@ RUN_DEPENDS+=	razor-agents>=2.84:${PORTSDIR}/mail/razor-agents
 .if defined(WITH_DKIM)
 RUN_DEPENDS+=	p5-Mail-DKIM>=.20:${PORTSDIR}/mail/p5-Mail-DKIM
 RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+RUN_DEPENDS+=	p5-Mail-DomainKeys>=0.80:${PORTSDIR}/mail/p5-Mail-DomainKeys
 .endif
 
 .if defined(WITH_SACOMPILE)
@@ -211,6 +212,7 @@ post-patch:
 .endif
 .if defined(WITH_DKIM)
 	${REINPLACE_CMD} -e '/DKIM/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v312.pre
+	${REINPLACE_CMD} -e '/DomainKeys/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
 .endif
 .if !defined(WITH_SPF_QUERY)
 	${REINPLACE_CMD} -e '/SPF/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/init.pre
@@ -239,7 +241,9 @@ pre-install:
 	@${INSTALL_DATA} ${WRKSRC}/spamc/libspamc.h ${PREFIX}/include
 
 post-install:
+.if defined (WITH_SPAMC)
 	@${STRIP_CMD} ${PREFIX}/bin/spamc
+.endif
 	@[ -f ${PREFIX}/etc/mail/spamassassin/init.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/init.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/init.pre
@@ -252,6 +256,7 @@ post-install:
 	@[ -f ${PREFIX}/etc/mail/spamassassin/v320.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/v320.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/v320.pre
+	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/sql ${DOCSDIR}/ldap
