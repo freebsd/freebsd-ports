@@ -7,6 +7,7 @@
 
 PORTNAME=	zaptel
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	misc kld
 MASTER_SITES=	http://www.pbxpress.com/~gonzo/
 DISTNAME=	${PORTNAME}-bsd-${PORTVERSION}
