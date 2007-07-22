@@ -22,6 +22,9 @@ DIST_SUBDIR=	vje30
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern intelligent Japanese input engine (purchase version)
 
+DEPRECATED=	depends on forbidden port misc/compat3x
+EXPIRATION_DATE=	2007-09-21
+
 LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
 #RUN_DEPENDS=	${LOCALBASE}/share/java/classes/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc
 
