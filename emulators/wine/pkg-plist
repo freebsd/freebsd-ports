@@ -954,7 +954,8 @@ lib/wine/xcopy.exe.so
 @dirrm include/wine/windows
 @dirrm include/wine
 @dirrmtry man/man3w
-@dirrmtry %%DATADIR%%/aclocal
-@dirrmtry %%DATADIR%%/applications
 @dirrm %%DATADIR%%/wine/fonts
 @dirrm %%DATADIR%%/wine
+@dirrmtry %%DATADIR%%/aclocal
+@dirrmtry %%DATADIR%%/applications
+@dirrmtry %%DATADIR%%
