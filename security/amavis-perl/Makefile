@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	amavis
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail Virus Scanner (uses external antivirus)
 
+DEPRECATED=	depends on misc/compat3x, which has security problems
+EXPIRATION_DATE=	2007-09-21
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha \
 		${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj \
 		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
