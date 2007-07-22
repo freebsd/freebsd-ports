@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libpri
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.digium.com/pub/libpri/ \
 		ftp://ftp.digium.com/pub/libpri/old/
