@@ -1,5 +1,5 @@
 # New ports collection makefile for:    renaissance
-# Date created:         007 Sep 2006
+# Date created:         07 Sep 2006
 # Whom:                 gurkan@linuks.mine.nu
 #
 # $FreeBSD$
