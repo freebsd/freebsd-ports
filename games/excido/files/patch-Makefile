@@ -1,10 +1,10 @@
 --- Makefile.orig	Thu Jul 29 14:17:13 2004
-+++ Makefile	Mon Oct 24 17:19:43 2005
-@@ -1,10 +1,8 @@
++++ Makefile	Sun Jul 22 14:27:56 2007
+@@ -1,10 +1,7 @@
 -CC=g++
 -CFLAGS=`sdl-config --cflags` #-g -Wall #-O2
-+CFLAGS += -I${X11BASE}/include `${SDL_CONFIG} --cflags`
- #CFLAGS=`sdl-config --cflags` -I./physfs#-g -Wall #-O2
+-#CFLAGS=`sdl-config --cflags` -I./physfs#-g -Wall #-O2
++CXXFLAGS += -I${X11BASE}/include `${SDL_CONFIG} --cflags`
  OBJS    := ${patsubst %.cpp, %.o, ${wildcard src/*.cpp}}
 -LIBS = -s -Bstatic `sdl-config --static-libs` -lSDL_image -lSDL_ttf -L. -lphysfs -lopenal -Bdynamic -lGL -lGLU  
 +LIBS = -L${X11BASE}/lib `${SDL_CONFIG} --libs` -lSDL_image -lSDL_ttf -lphysfs -lopenal -lalut -lGL -lGLU
@@ -13,7 +13,21 @@
  BINDIR=$(PREFIX)/bin/
  DATADIR=$(PREFIX)/share/excido/
  
-@@ -28,9 +26,9 @@
+@@ -16,21 +13,21 @@
+ 
+ 
+ .cpp.o:
+-	$(CC) $(CFLAGS) $(DEFINES) -o ${patsubst %.cpp, %.o, $<} -c $<
++	$(CXX) $(CXXFLAGS) $(DEFINES) -o ${patsubst %.cpp, %.o, $<} -c $<
+ 	
+ all: $(TARGET) 
+ 
+ $(TARGET): $(OBJS)
+-	$(CC) $(CFLAGS) -o $(TARGET) $(LIBS) $(OBJS)
++	$(CXX) $(CXXFLAGS) -o $(TARGET) $(LIBS) $(OBJS)
+ 
+ clean:
+ 	rm -f $(OBJS) $(TARGET)
  
  install:
  	[ -d $(BINDIR) ] || mkdir $(BINDIR)
