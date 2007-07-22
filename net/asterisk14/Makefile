@@ -51,7 +51,7 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
-OPTIONS+=	ZAPTEL		"Enable Zaptel support" on
+OPTIONS+=	ZAPTEL		"Enable Zaptel support" off
 .else
 WITHOUT_ZAPTEL=	yes
 .endif
