@@ -17,7 +17,7 @@ COMMENT=	ID3 tags library (part of MAD project)
 
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
