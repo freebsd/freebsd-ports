@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uuid
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -19,7 +19,7 @@ CONFLICTS=	e2fsprogs-libuuid-[0-9]*
 
 USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-shared --enable-static --mandir=${PREFIX}/man
 
@@ -42,6 +42,8 @@ PLIST_SUB+=	WITH_PERL='@comment '
 .if defined(WITH_PERL) && ${PERL_LEVEL} < 500800
 IGNORE=	supports Perl 5.8.0 or above only
 .endif
+
+regression-test: test
 
 test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
