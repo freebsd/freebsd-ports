@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zaptel
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.6
 CATEGORIES=	misc kld
 MASTER_SITES=	http://www.pbxpress.com/~gonzo/
 DISTNAME=	${PORTNAME}-bsd-${PORTVERSION}
@@ -18,13 +18,20 @@ LIB_DEPENDS=	newt.51:${PORTSDIR}/devel/newt
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 MAKE_ENV=	KMODDIR=${PREFIX}/lib/zaptel
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	zaptel
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+PLIST_SUB+=	WITH_TAU32="@comment "
+.else
+PLIST_SUB+=	WITH_TAU32="@comment "
+MAKE_ARGS+=	WITH_TAU32="yes"
+.endif
 
 pre-everything::
 	@if [ ! -f /usr/src/sys/Makefile ]; then \

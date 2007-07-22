@@ -1,12 +1,12 @@
 
 $FreeBSD$
 
---- Makefile
+--- Makefile.orig
 +++ Makefile
 @@ -1,5 +1,5 @@
- # $Id: Makefile,v 1.1 2007/04/25 23:15:33 root Exp root $
--HWMODULES=zaptel tools oct612x qozap zaphfc wcfxs wcfxo wct1xxp wcte11xp wct4xxp ztdummy 
-+HWMODULES=zaptel tools qozap zaphfc wcfxs wcfxo wct1xxp wcte11xp wct4xxp ztdummy 
+ # $Id: Makefile 840 2004-06-16 15:23:08Z gonzo $
+-HWMODULES=zaptel tools oct612x qozap zaphfc wcfxs wcfxo wct1xxp wcte11xp wcte12xp wct4xxp ztdummy 
++HWMODULES=zaptel tools qozap zaphfc wcfxs wcfxo wct1xxp wcte11xp wcte12xp wct4xxp ztdummy 
  USERLAND=ztcfg test
+ .if defined(WITH_TAU32)
  HWMODULES+=tau32pci
- # This is for testing purposes
