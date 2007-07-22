@@ -1,0 +1,13 @@
+--- GNUmakefile.in.orig	2007-07-15 15:25:07.653278406 +0200
++++ GNUmakefile.in	2007-07-15 15:26:01.574449285 +0200
+@@ -27,8 +27,8 @@
+ install: ldapvi
+ 	mkdir -p @bindir@ @mandir@/man1/ @prefix@/share/doc/ldapvi
+ 	@INSTALL_PROGRAM@ ldapvi @bindir@
+-	@INSTALL_PROGRAM@ -m 644 ldapvi.1 @mandir@/man1/
+-	@INSTALL_PROGRAM@ -m 644 manual/manual.css manual/manual.xml manual/bg.png manual/html.xsl @prefix@/share/doc/ldapvi
++	@INSTALL_DATA@ ldapvi.1 @mandir@/man1/
++	@INSTALL_DATA@ manual/manual.css manual/manual.xml manual/bg.png manual/html.xsl @prefix@/share/doc/ldapvi
+ 
+ distclean:
+ 	rm -rf configure GNUmakefile config.h config.log autom4te.cache config.status

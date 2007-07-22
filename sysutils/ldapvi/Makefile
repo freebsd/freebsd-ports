@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldapvi
-PORTVERSION=	1.5
+PORTVERSION=	1.7
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.lichteblau.com/download/
 
@@ -23,23 +23,23 @@ USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 
 CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
 MAN1=		ldapvi.1
-PLIST_FILES=	bin/ldapvi
+PLIST_FILES=	bin/ldapvi \
+		${DOCSDIR_REL}/manual.css ${DOCSDIR_REL}/manual.xml \
+		${DOCSDIR_REL}/bg.png ${DOCSDIR_REL}/html.xsl
+PLIST_DIRS=	${DOCSDIR_REL}
 
 .include <bsd.port.pre.mk>
 
-.ifdef(WANT_OPENLDAP_SASL) && !defined(WITHOUT_SASL)
-PATCH_SITES=	http://w3.gofti.com/~pfnguyen/openldap/
-PATCHFILES=	ldapvi_sasl_${PORTVERSION}.diff
-PATCH_DIST_STRIP=	-p1
+.if !defined(WANT_OPENLDAP_SASL) || defined(WITHOUT_SASL)
+CONFIGURE_ARGS+=--without-sasl
 .endif
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
