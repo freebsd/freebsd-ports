@@ -8,7 +8,7 @@
 PORTNAME=	weather
 PORTVERSION=	0.32
 PORTREVISION=	1
-CATEGORIES=	japanese elisp
+CATEGORIES=	japanese elisp geography
 MASTER_SITES=	ftp://ftp.opaopa.org/pub/elisp/ \
 		ftp://ftp.ring.gr.jp/pub/text/elisp/jaist/ftp.opaopa.org/elisp/ \
 		ftp://ftp.jaist.ac.jp/pub/GNU/elisp/ftp.opaopa.org/elisp/

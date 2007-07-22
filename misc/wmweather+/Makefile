@@ -7,7 +7,7 @@
 PORTNAME=	wmweather+
 PORTVERSION=	2.9
 PORTREVISION=	3
-CATEGORIES=	misc windowmaker
+CATEGORIES=	misc windowmaker geography
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wmweatherplus
 

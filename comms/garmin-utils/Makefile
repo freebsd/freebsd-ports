@@ -8,7 +8,7 @@
 PORTNAME=	garmin-utils
 PORTVERSION=	2.2
 PORTREVISION=	1
-CATEGORIES=	comms
+CATEGORIES=	comms geography
 MASTER_SITES=	ftp://ftp.snafu.org/pub/
 
 MAINTAINER=	mab@red-bean.com

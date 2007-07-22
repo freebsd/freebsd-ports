@@ -7,7 +7,7 @@
 
 PORTNAME=	postgis
 DISTVERSION=	1.2.1
-CATEGORIES=	databases
+CATEGORIES=	databases geography
 MASTER_SITES=	http://postgis.refractions.net/download/
 
 MAINTAINER=	anderson@cnpm.embrapa.br

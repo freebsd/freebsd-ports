@@ -8,7 +8,7 @@
 PORTNAME=	rmap
 PORTVERSION=	1.2
 PORTREVISION=	7
-CATEGORIES=	astro
+CATEGORIES=	astro geography
 MASTER_SITES=	http://www.reza.net/rmap/
 
 MAINTAINER=	ports@FreeBSD.org

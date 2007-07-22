@@ -7,7 +7,7 @@
 
 PORTNAME=	metar
 PORTVERSION=	0.12
-CATEGORIES=	astro python
+CATEGORIES=	astro python geography
 MASTER_SITES=	http://www.schwarzvogel.de/pkgs/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pymetar-${PORTVERSION}

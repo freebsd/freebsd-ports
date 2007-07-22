@@ -7,7 +7,7 @@
 
 PORTNAME=	Services_Weather
 PORTVERSION=	1.4.0
-CATEGORIES=	misc www pear
+CATEGORIES=	misc www pear geography
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PEAR interface to various online weather-services

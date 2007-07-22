@@ -8,7 +8,7 @@
 PORTNAME=	wmglobe
 PORTVERSION=	1.3
 PORTREVISION=	2
-CATEGORIES=	astro windowmaker
+CATEGORIES=	astro windowmaker geography
 MASTER_SITES=	http://hamete.org/static/wmg/
 
 MAINTAINER=	will@FreeBSD.org

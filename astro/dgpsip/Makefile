@@ -7,7 +7,7 @@
 
 PORTNAME=	dgpsip
 PORTVERSION=	1.35
-CATEGORIES=	astro
+CATEGORIES=	astro geography
 MASTER_SITES=	http://www.wsrcc.com/wolfgang/ftp/
 
 MAINTAINER=	jharris@widomaker.com

@@ -9,7 +9,7 @@
 PORTNAME=	flyway
 PORTVERSION=	0.4.1
 PORTREVISION=	1
-CATEGORIES=	misc python
+CATEGORIES=	misc python geography
 MASTER_SITES=	http://www.bellz.org/flyway/
 
 MAINTAINER=	ports@FreeBSD.org

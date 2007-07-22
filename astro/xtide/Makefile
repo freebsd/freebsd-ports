@@ -8,7 +8,7 @@
 PORTNAME=	xtide
 PORTVERSION=	2.9.3
 PORTREVISION=	1
-CATEGORIES=	astro
+CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		libtcd-2.2.2.tar.bz2 \

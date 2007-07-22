@@ -9,7 +9,7 @@
 PORTNAME=	earthview
 PORTVERSION=	1.0
 PORTREVISION=	1
-CATEGORIES=	misc
+CATEGORIES=	misc geography
 MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/privat2/
 EXTRACT_SUFX=	.tgz
 
