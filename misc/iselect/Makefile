@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	iselect
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.ossp.org/pkg/tool/iselect/
+MASTER_SITES=	${MASTER_SITE_OSSP}
+MASTER_SITE_SUBDIR=	tool/iselect
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive Selection Tool
