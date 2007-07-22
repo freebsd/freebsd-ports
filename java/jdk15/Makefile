@@ -198,7 +198,7 @@ IGNORE += Source Binaries, ${JRL_BINFILE}
 IGNORE += .\n\n
 .endif#}
 .if defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})#{
-IGNORE += Please open http://java.sun.com/javase/downloads/index.jsp\n\
+IGNORE += Please open http://java.sun.com/javase/downloads/index_jdk5.jsp\n\
 in a web browser and follow the \"Download\" link for\n\
 \"Other Downloads\" to obtain the JCE policy file, ${POLICYFILE}.\n\n
 .endif#}
