@@ -16,6 +16,9 @@ DIST_SUBDIR?=	mbrola-freebsd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MBROLA voice synthesizer
 
+DEPRECATED=	relies on forbidden port misc/compat3x; last release 2000
+EXPIRATION_DATE=	2007-09-21
+
 .include <bsd.port.pre.mk>
 
 .if !defined(USE_LINUX)
