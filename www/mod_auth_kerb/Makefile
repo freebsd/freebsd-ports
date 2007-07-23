@@ -27,13 +27,6 @@ USE_GMAKE=	yes
 # Don't fsck with CFLAGS
 CFLAGS:=
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME} --without-krb4
-OPTIONS+=	BASE_KERBEROS5	"Use the base Kerberos 5 (Heimdal)"
-.if exists(/usr/lib/libkrb5.so)
-OPTIONS+=	on
-.else
-OPTIONS+=	off
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -47,11 +40,16 @@ APACHE_MODULE_DIR!=${PREFIX}/sbin/apxs -q LIBEXECDIR
 APACHE_MODULE_DIR=libexec/apache
 .endif
 PLIST_SUB+=	APMODDIR=${APACHE_MODULE_DIR:S/^${PREFIX}\///}
-.if defined(WITH_BASE_KERBEROS5)
-KRB5_HOME=	/usr
+
+.if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
+CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME} --without-krb4
+.elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
+CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} --without-krb4
+.elif exists(${DESTDIR}/usr/lib/libkrb5.a) && exists(${DESTDIR}/usr/bin/krb5-config)
+CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr --without-krb4
 .else
-LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
-KRB5_HOME=	${LOCALBASE}
+LIB_DEPENDS+=	krb5:${PORTSDIR}/security/krb5
+CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE} --without-krb4
 .endif
 
 .include <bsd.port.post.mk>
