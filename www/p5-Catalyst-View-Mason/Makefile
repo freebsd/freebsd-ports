@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Catalyst-View-Mason
-PORTVERSION=	0.08
+PORTVERSION=	0.11
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Catalyst
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Helper::View::Mason.3 \
 	Catalyst::View::Mason.3

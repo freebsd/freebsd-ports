@@ -1,5 +1,9 @@
 %%SITE_PERL%%/Catalyst/Helper/View/Mason.pm
 %%SITE_PERL%%/Catalyst/View/Mason.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Mason/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Mason
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper
 @dirrmtry %%SITE_PERL%%/Catalyst/View
