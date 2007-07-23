@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Myspace
-PORTVERSION=	0.66
+PORTVERSION=	0.68
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -35,10 +35,10 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=		add_friends.1 approve_friends.1 comment_myspace.1 \
+MAN1=		approve_friends.1 comment_myspace.1 \
 		message_group.1
-MAN3=		WWW::Myspace.3 WWW::Myspace::Comment.3 WWW::Myspace::Data.3 \
-		WWW::Myspace::FriendAdder.3 WWW::Myspace::FriendChanges.3 \
+MAN3=		WWW::Myspace.3 WWW::Myspace::Comment.3 \
+		WWW::Myspace::FriendChanges.3 \
 		WWW::Myspace::Message.3 WWW::Myspace::MyBase.3
 
 .include <bsd.port.pre.mk>
