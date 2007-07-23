@@ -5,9 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=       dtc
-PORTREVISION=	3
-CATEGORIES=     sysutils
+PORTREVISION=	4
 PKGNAMESUFFIX=  -toaster
 
 MAINTAINER=     scrappy@freebsd.org
@@ -24,9 +22,8 @@ WITH_CYRUS_IMAPD=yes
 WITH_APACHE2=yes
 WITH_PHP5=yes
 
-DESCR=          ${PKGDIR}/pkg-descr
+DESCR=          ${.CURDIR}/pkg-descr
 
 MASTERDIR=      ${.CURDIR}/../dtc
 
 .include "${MASTERDIR}/Makefile"
-
