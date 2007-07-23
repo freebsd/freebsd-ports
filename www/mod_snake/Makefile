@@ -25,4 +25,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apxs="${APXS}"
 USE_GMAKE=	yes
 
+CFLAGS+=	-fPIC
+
 .include <bsd.port.mk>
