@@ -10,7 +10,7 @@ PORTVERSION=	1.07.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.gplhost.com/pub/sbox-dtc/bsd/
 
-MAINTAINER=	thomas@goirand.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A safe CGI wrapper
 
 USE_APACHE=	yes
