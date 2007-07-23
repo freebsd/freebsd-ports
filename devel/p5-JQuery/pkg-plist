@@ -1,0 +1,202 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/JQuery.pm
+%%SITE_PERL%%/JQuery/Accordion.pm
+%%SITE_PERL%%/JQuery/CSS.pm
+%%SITE_PERL%%/JQuery/ClickMenu.pm
+%%SITE_PERL%%/JQuery/Demo.pm
+%%SITE_PERL%%/JQuery/Form.pm
+%%SITE_PERL%%/JQuery/Heartbeat.pm
+%%SITE_PERL%%/JQuery/Splitter.pm
+%%SITE_PERL%%/JQuery/TableSorter.pm
+%%SITE_PERL%%/JQuery/Tabs.pm
+%%SITE_PERL%%/JQuery/Taconite.pm
+%%SITE_PERL%%/JQuery/Treeview.pm
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_clickmenu.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_form.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_heartbeat.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_splitter1.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_splitter2.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_splitter3.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_tablesorter1.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_tablesorter2.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_tabs1.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_tabs2.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_tabs_results.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_taconite1.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_taconite2.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_taconite_results1.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_treeview.pl
+%%SITE_PERL%%/JQuery/cgi-bin/jquery_treeview_results.pl
+%%SITE_PERL%%/JQuery/jquery_js/jquery/jquery-latest.js
+%%SITE_PERL%%/JQuery/jquery_js/jquery/jquery-latest.pack.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/accordion/jquery.accordion.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/accordion/jquery.accordion.pack.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/array/jquery.array.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/attrTmpl/jquery.attrTmpl.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/bgiframe/bgiframe.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/blockUI/jquery.block.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/build.xml
+%%SITE_PERL%%/JQuery/jquery_js/plugins/button/button.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/center/center.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/clickmenu/arrow_right.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/clickmenu/arrow_right_plain.png
+%%SITE_PERL%%/JQuery/jquery_js/plugins/clickmenu/clickmenu.css
+%%SITE_PERL%%/JQuery/jquery_js/plugins/clickmenu/jquery.clickmenu.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/clickmenu/jquery.clickmenu.pack.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/clickmenu/myshadow.png
+%%SITE_PERL%%/JQuery/jquery_js/plugins/cookie/jquery.cookie.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/copyEvents/copyEvents.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/corner/jquery.corner.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/cssHover/cssHover.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/datePicker/datePicker_source.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/dimensions/dimensions.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/dumper/jquery.dump.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/fix_events/fix_events.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/fix_events/jquery.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/format/jquery.format.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/format/jquery.format.pack.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/greybox/close.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/greybox/greybox.css
+%%SITE_PERL%%/JQuery/jquery_js/plugins/greybox/greybox.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/greybox/ie-hacks.css
+%%SITE_PERL%%/JQuery/jquery_js/plugins/heartbeat/heartbeat.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/history_remote/jquery.history_remote.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/history_remote/jquery.history_remote.pack.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/interface/interface.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/jScrollPane/jScrollPane.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/metadata/README
+%%SITE_PERL%%/JQuery/jquery_js/plugins/metadata/lib/jQuery/metadata.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/methods/array.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/methods/date.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/methods/string.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/mousewheel/mousewheel.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/nodeHash/nodeHash.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/pager/pager.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/periodicalUpdate/periodicalUpdate.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/quicksearch/jquery.quicksearch.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/rating/images/delete.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/rating/images/star.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/rating/js/jquery.rating.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/safari_widgets/widgets.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/searchField/jquery.searchField.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/sifr/sifr.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/splitter/README
+%%SITE_PERL%%/JQuery/jquery_js/plugins/splitter/hgrabber.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/splitter/splitter.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/splitter/vgrabber.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tablesorter/default_table.css
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tablesorter/green_arrows.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tablesorter/green_ascending.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tablesorter/green_descending.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tablesorter/header-asc.png
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tablesorter/header-bg.png
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tablesorter/header-desc.png
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tablesorter/jquery.tablesorter.extra.parsers.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tablesorter/jquery.tablesorter.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tablesorter/jquery.tablesorter.modify.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tabs/META.json
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tabs/ahah_1.html
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tabs/ahah_2.html
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tabs/ahah_3.html
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tabs/index.html
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tabs/jquery.history_remote.pack.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tabs/jquery.tabs.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tabs/jquery.tabs.pack.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tabs/loading.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tabs/loading_micro.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tabs/tab.png
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tabs/tabs.css
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tabs/tabs_ie.css
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tabs/tabs_js.css
+%%SITE_PERL%%/JQuery/jquery_js/plugins/taconite/README
+%%SITE_PERL%%/JQuery/jquery_js/plugins/taconite/jquery.taconite.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tooltip/image.png
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tooltip/jquery.tooltip.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tooltip/jquery.tooltip.pack.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tooltip/karte.png
+%%SITE_PERL%%/JQuery/jquery_js/plugins/tooltip/shadow.png
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/black/tv-collapsable-last.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/black/tv-collapsable.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/black/tv-expandable-last.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/black/tv-expandable.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/black/tv-item-last.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/black/tv-item.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/file.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/folder.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/gray/tv-collapsable-last.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/gray/tv-collapsable.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/gray/tv-expandable-last.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/gray/tv-expandable.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/gray/tv-item-last.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/gray/tv-item.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/red/tv-collapsable-last.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/red/tv-collapsable.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/red/tv-expandable-last.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/red/tv-expandable.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/red/tv-item-last.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/red/tv-item.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/tv-collapsable-last.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/tv-collapsable.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/tv-expandable-last.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/tv-expandable.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/tv-item-last.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/tv-item.gif
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/jquery.treeview.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/jquery.treeview.pack.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/validate/jquery.validate.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/validate/jquery.validate.pack.js
+%%SITE_PERL%%/JQuery/jquery_js/plugins/window/window.js
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/window
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/validate
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/red
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/gray
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/black
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/treeview
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/tooltip
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/taconite
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/tabs
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/tablesorter
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/splitter
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/sifr
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/searchField
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/safari_widgets
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/rating/js
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/rating/images
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/rating
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/quicksearch
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/periodicalUpdate
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/pager
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/nodeHash
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/mousewheel
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/methods
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/metadata/lib/jQuery
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/metadata/lib
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/metadata
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/jScrollPane
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/interface
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/history_remote
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/heartbeat
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/greybox
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/format
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/fix_events
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/dumper
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/dimensions
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/datePicker
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/cssHover
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/corner
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/copyEvents
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/cookie
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/clickmenu
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/center
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/button
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/blockUI
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/bgiframe
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/attrTmpl
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/array
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/accordion
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js/jquery
+@dirrmtry %%SITE_PERL%%/JQuery/jquery_js
+@dirrmtry %%SITE_PERL%%/JQuery/cgi-bin
+@dirrmtry %%SITE_PERL%%/JQuery

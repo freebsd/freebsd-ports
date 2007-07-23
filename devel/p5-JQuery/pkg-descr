@@ -1,0 +1,10 @@
+JQuery is a frontend for the jQuery language. I use JQuery to refer to
+the Perl part or the package, and jQuery to reference the javascript
+part or the package.
+
+A quote from http://jquery.com: jQuery is a fast, concise, JavaScript
+Library that simplifies how you traverse HTML documents, handle
+events, perform animations, and add Ajax interactions to your web
+pages.
+
+WWW:	http://search.cpan.org/dist/JQuery/
