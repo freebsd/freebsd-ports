@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	metasploit
-DISTVERSION=	3.0-beta-3
+DISTVERSION=	3.0
 CATEGORIES=	security
 MASTER_SITES=	#
-PKGNAMESUFFIX=	-devel
-DISTNAME=	framework-${DISTVERSION}-svn
+DISTNAME=	framework-${DISTVERSION}
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Exploit-Framework for Penetration-Testing
@@ -22,21 +21,16 @@ RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
 SCRIPTS=	msfcli msfconsole msfd msfencode msflicense msfopcode \
 		msfpayload msfpescan msfweb
 
-WRKSRC=	${WRKDIR}/framework-${DISTVERSION}
 RESTRICTED=	May not be re-sold for more than the cost of duplication, nor redistributed after patching
 
-CONFLICTS=	metasploit-2*
 NO_BUILD=	yes
 USE_RUBY=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MSFWX)
+.if defined(WITH_MSFGUI)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/wxruby.so:${PORTSDIR}/x11-toolkits/ruby-wx
-SCRIPTS+=	msfwx
-PLIST_SUB+=	MSF=""
-.else
-PLIST_SUB+=	MSF="@comment "
+SCRIPTS+=	msfgui
 .endif
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
@@ -49,14 +43,19 @@ accept the license. Once downloaded, save ${DISTNAME}${EXTRACT_SUFX} \n \
 in ${DISTDIR} and try again.\n
 .endif
 
-post-extract:
-	@${FIND} ${WRKSRC}/ -type d -name '.svn' | ${XARGS} ${RM} -rf
-
 do-install:
 	${MKDIR} ${DATADIR}
 	${CP} -Rp ${WRKSRC}/ ${DATADIR}
 .for f in ${SCRIPTS}
 	${LN} -s ${DATADIR}/${f} ${PREFIX}/bin
 .endfor
+
+post-install:
+.for f in ${SCRIPTS}
+	${ECHO} "bin/${f}" >> ${TMPPLIST}
+.endfor
+	@${FIND} ${DATADIR} -type f | ${SED} 's,${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
+		${SED} 's,${PREFIX}/,, ; s,^,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
