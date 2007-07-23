@@ -1,18 +1,15 @@
-# New ports collection makefile for:    php4-dtc
-# Date created:         11 May 2004
-# Whom:                 Thomas Goirand <thomas@goirand.fr>
+# New ports collection makefile for:	proftpd-mysql
+# Date created:		11 May 2004
+# Whom:			Thomas Goirand <thomas@goirand.fr>
 #
 # $FreeBSD$
 
-PORTNAME=	proftpd
 PKGNAMESUFFIX=	-mysql
 
-MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly configurable ftp daemon with MySQL support
-
 WITH_MYSQL=	yes
-CONFLICTS=	proftpd-1.*
+CONFLICTS=	proftpd-[0-9]*
 
-MASTERDIR=	${.CURDIR}/../../ftp/proftpd
+MASTERDIR=	${.CURDIR}/../proftpd
 
-.include	"${MASTERDIR}/Makefile"
+.include "${MASTERDIR}/Makefile"
