@@ -12,7 +12,7 @@ MASTER_SITES=	http://bazaar-vcs.org/releases/src/
 MASTER_SITE_SUBDIR=	gnu-arch
 DISTNAME=	bzr-${PORTVERSION}
 
-MAINTAINER=	lulf@stud.ntnu.no
+MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Distributed version control system by Canonical
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
