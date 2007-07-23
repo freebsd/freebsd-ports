@@ -20,7 +20,7 @@ USE_RC_SUBR=	hiawatha
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var --mandir=${MANPREFIX}/man webrootdir=${PREFIX}/www/hiawatha
+CONFIGURE_ARGS=	--localstatedir=/var webrootdir=${PREFIX}/www/hiawatha
 
 OPTIONS=	SSL "Support for Secure Sockets Layer (SSL)?" On
 OPTIONS+=	CACHE "Internal file caching support?" On

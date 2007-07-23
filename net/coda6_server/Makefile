@@ -25,7 +25,6 @@ LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 ALL_TARGET=	coda
 INSTALL_TARGET=	${CODA_SUITE}-install

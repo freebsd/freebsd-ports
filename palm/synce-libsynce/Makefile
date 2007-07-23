@@ -19,8 +19,7 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/libsynce-${PORTVERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE} \
-			--mandir=${MANPREFIX}/man
+CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
 
 USE_LDCONFIG=	yes
 

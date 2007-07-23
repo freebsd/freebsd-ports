@@ -32,9 +32,7 @@ CONFIGURE_ARGS=		--enable-dccbounce \
 			--enable-onconnect \
 			--enable-empty-awaymsg \
 			--enable-dumpstatus \
-			--disable-dependency-tracking \
-			--infodir=${PREFIX}/info \
-			--mandir=${PREFIX}/man
+			--disable-dependency-tracking
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS}" \

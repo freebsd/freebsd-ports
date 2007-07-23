@@ -19,7 +19,7 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-popt-prefix=${LOCALBASE} --mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--with-popt-prefix=${LOCALBASE}
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls

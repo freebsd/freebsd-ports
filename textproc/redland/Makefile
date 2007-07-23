@@ -31,8 +31,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-raptor=system \
 		--with-rasqal=internal \
-		--with-threestore=no \
-		--mandir=${PREFIX}/man
+		--with-threestore=no
 
 USE_LDCONFIG=	yes
 

@@ -25,7 +25,6 @@ USE_GCC=	3.4+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 MAN1=		font2swf.1 gif2swf.1 jpeg2swf.1 pdf2swf.1 png2swf.1 \
 		swfbbox.1 swfc.1 swfcombine.1 swfdump.1 swfextract.1 \

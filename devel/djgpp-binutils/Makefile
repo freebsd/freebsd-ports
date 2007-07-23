@@ -31,8 +31,8 @@ SRCDIR=		${WRKDIR}/binutils-${BINUTILVERSION}.${PATCHVERSION}
 WRKSRC=		${WRKDIR}/build
 CONFIGURE_ARGS=	--target=${TARGET} \
 		--with-gcc --with-gnu-ld --with-gnu-as \
-		--disable-nls --disable-shared \
-		--infodir=${PREFIX}/${TARGET}/info
+		--disable-nls --disable-shared
+INFO_PATH=	${TARGET}/info
 
 MAN1=	${TARGET}-addr2line.1 ${TARGET}-ar.1    \
 	${TARGET}-as.1 ${TARGET}-dlltool.1      \

@@ -26,8 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=--with-gimp=no --with-gimp2=no \
-		--with-mandir=${PREFIX}/man
+CONFIGURE_ARGS=--with-gimp=no --with-gimp2=no
 USE_LDCONFIG=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${PREFIX}/include
@@ -107,7 +106,6 @@ post-patch:
 		${WRKSRC}/src/gimp2/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$libdir/gimp/1.2/plug-ins||g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|@mandir@|${PREFIX}/man|' ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e 's|= $$(pkglibdir)|= ${PREFIX}/libexec/cups|' \
 		${WRKSRC}/src/cups/Makefile.in
 

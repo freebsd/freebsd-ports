@@ -32,7 +32,6 @@ GNU_CONFIGURE=		yes
 PREFIX=		/usr
 PKGNAMESUFFIX=	-overwrite-base
 MANPREFIX=	${TARGETDIR}/share
-CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man
 PLIST_SUB+=	NOTBASE="@comment "
 PLIST_SUB+=	BASE=""
 PKGMESSAGE=	${FILESDIR}/pkg-message-base

@@ -34,7 +34,6 @@ CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .endif
 
-CONFIGURE_ARGS+=	--mandir=${TARGETDIR}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
 

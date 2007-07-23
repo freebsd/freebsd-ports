@@ -33,8 +33,7 @@ CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
 		LIBS="`${SDL_CONFIG} --libs` -lm"
 
 CONFIGURE_ARGS=	--disable-paraguitest	\
-		--prefix=${TARGETDIR}	\
-		--mandir=${MANPREFIX}/man
+		--prefix=${TARGETDIR}
 
 OPTIONS=	MUSIC "Install extra music files" off
 

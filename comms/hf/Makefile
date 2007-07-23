@@ -21,7 +21,7 @@ USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX} --mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}
 
 ONLY_FOR_ARCHS=	i386
 

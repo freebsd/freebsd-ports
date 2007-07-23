@@ -48,7 +48,6 @@ CONFIGURE_ARGS=	--disable-perl \
 		--docdir=${PREFIX}/share/doc/gimp \
 		--disable-gtk-doc \
 		--enable-static \
-		--mandir=${PREFIX}/man \
 		--disable-print
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

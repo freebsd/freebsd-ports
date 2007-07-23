@@ -21,8 +21,7 @@ USE_GNOME=	gnometarget
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--with-locale-dir=${PREFIX}/share/locale \
+CONFIGURE_ARGS=	--with-locale-dir=${PREFIX}/share/locale \
 		--disable-debug --disable-gnome --disable-js \
 		--enable-utf-8 --enable-threads
 

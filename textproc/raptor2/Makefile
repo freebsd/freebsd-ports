@@ -24,8 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \
 		--with-curl-config=${LOCALBASE}/bin/curl-config \
 		--with-pkg-config=${LOCALBASE}/bin/pkg-config \
-		--with-xml-parser=libxml --with-www=curl \
-		--mandir=${PREFIX}/man
+		--with-xml-parser=libxml --with-www=curl
 
 USE_LDCONFIG=	yes
 

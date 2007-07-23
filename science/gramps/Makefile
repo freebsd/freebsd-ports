@@ -25,7 +25,6 @@ USE_GNOME=	gnomehack pygnome2 pygnomeextras desktopfileutils gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 MAN1=		gramps.1
 MANLANG=	"" fr

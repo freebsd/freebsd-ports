@@ -26,7 +26,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--localstatedir=${STATEDIR} \
 		--datadir=${PREFIX}/etc/nut \
-		--mandir=${PREFIX}/man \
 		--with-drvpath=${PREFIX}/libexec/nut \
 		--with-statepath=${STATEDIR} \
 		--with-altpidpath=${STATEDIR} \

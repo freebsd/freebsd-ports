@@ -17,7 +17,6 @@ MAINTAINER=	jasone@FreeBSD.org
 COMMENT=	Like make(1), but more powerful and clean
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib \
 		YACC=yacc
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

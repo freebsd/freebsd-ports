@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 ALL_TARGET=	ngrep
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man/ --disable-pcap-restart
+CONFIGURE_ARGS=	--disable-pcap-restart
 
 OPTIONS=	PCRE	"Use PCRE instead of GNU regex"	on \
 		PORTS_PCAP	"Use ports PCAP instead of system PCAP" off \

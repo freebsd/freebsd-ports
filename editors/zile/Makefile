@@ -17,8 +17,6 @@ USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LIBS="-lgnuregex"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--infodir=${PREFIX}/${INFO_PATH}
 
 MAN1=		zile.1
 INFO=		zile

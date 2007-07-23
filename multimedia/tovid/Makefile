@@ -43,7 +43,6 @@ USE_PYTHON=	yes
 USE_CDRTOOLS=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 MAN1=		idvid.1 makedvd.1 makemenu.1 makeslides.1 makevcd.1 makexml.1 \
 		postproc.1 pymakexml.1 todisc.1 tovid-stats.1 tovid.1

@@ -28,7 +28,6 @@ USE_GNOME=	gnomehack intlhack libglade2 libgnomeprintui libgnomeui gnomedocutils
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	gcrystal.schemas

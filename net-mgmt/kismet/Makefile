@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS+=	--enable-syspcap --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS+=	--enable-syspcap
 
 OPTIONS=	CURSES "libcurses interface" on \
 		PANEL "libpanels interface" on \

@@ -32,7 +32,7 @@ MAN3=		sg_get_cpu_percents.3 sg_get_cpu_stats.3 \
 		sg_get_process_stats.3 sg_get_swap_stats.3 \
 		sg_get_user_stats.3 statgrab.3
 
-CONFIGURE_ARGS+=	--disable-examples --mandir=${PREFIX}/man
+CONFIGURE_ARGS+=	--disable-examples
 
 .ifdef(WITHOUT_STATGRAB)
 CONFIGURE_ARGS+=	--disable-statgrab

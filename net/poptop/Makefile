@@ -17,7 +17,6 @@ COMMENT=	Windows 9x compatible PPTP (VPN) server
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 

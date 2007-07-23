@@ -16,7 +16,6 @@ MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	A tool for generating a C function which parses command line arguments
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 

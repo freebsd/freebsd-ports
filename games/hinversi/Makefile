@@ -16,7 +16,7 @@ COMMENT=	Reversi/Othello clone
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --mandir=${PREFIX}/man\
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} \
 		--disable-static
 MAN1=	hinversi-cli.1
 

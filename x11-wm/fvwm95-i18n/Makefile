@@ -31,7 +31,6 @@ USE_XPM=	yes
 USE_XORG=	xbitmaps
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-includes=${X11BASE}/include \
-		--mandir=${MANPREFIX}/man \
 		--includedir=${LOCALBASE}/include --libdir=${LOCALBASE}/lib
 CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}"
 MAN1=	fvwm95.1 xpmroot.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \

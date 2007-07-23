@@ -27,7 +27,6 @@ LATEST_LINK=	dansguardian-devel
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
-		--mandir=/usr/local/man \
 		--with-logdir=/var/log \
 		--with-piddir=/var/run
 

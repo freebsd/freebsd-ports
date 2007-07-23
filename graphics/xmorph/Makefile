@@ -30,9 +30,7 @@ USE_XORG=	xbitmaps
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--infodir=${PREFIX}/${INFO_PATH} \
-		--mandir=${MANPREFIX}/man \
-		--without-waili
+CONFIGURE_ARGS=	--without-waili
 USE_LDCONFIG=	yes
 
 MAN1=		gtkmorph.1 xmorph.1

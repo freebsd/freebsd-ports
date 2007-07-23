@@ -35,8 +35,8 @@ USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--with-gcc --with-gnu-ld --with-gnu-as \
-		--enable-languages=c --disable-nls \
-		--infodir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info
+		--enable-languages=c --disable-nls
+INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 MAN1=		${PKGNAMEPREFIX}gcc.1 ${PKGNAMEPREFIX}cpp.1 ${PKGNAMEPREFIX}gcov.1
 

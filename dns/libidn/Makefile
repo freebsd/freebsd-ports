@@ -21,8 +21,6 @@ USE_ICONV=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man \
-		--infodir=${PREFIX}/info
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 

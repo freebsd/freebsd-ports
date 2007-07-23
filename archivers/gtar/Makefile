@@ -21,8 +21,7 @@ INFO=		tar
 USE_BZIP2=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=g \
-		--infodir=${PREFIX}/${INFO_PATH}
+CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib ${LDSTATIC}' \
 		DEFAULT_ARCHIVE=/dev/sa0 \

@@ -13,7 +13,7 @@ MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	UUID library from e2fsprogs package
 
 CONFIGURE_ARGS=	--enable-elf-shlibs --disable-fsck \
-		--disable-e2initrd-helper --mandir=${MANPREFIX}/man
+		--disable-e2initrd-helper
 
 CONFLICTS=	ossp-uuid-[0-9]*
 

@@ -30,7 +30,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -lmagic -lz
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --enable-lzo --enable-bz2 --disable-qt
+CONFIGURE_ARGS=	--enable-lzo --enable-bz2 --disable-qt
 
 MAN1=		base64tool.1 mkvextract.1 mkvinfo.1 mkvmerge.1
 PLIST_FILES=	bin/base64tool bin/mkvextract bin/mkvinfo bin/mkvmerge

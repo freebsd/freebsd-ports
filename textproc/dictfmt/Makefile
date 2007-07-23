@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-cflags="${CFLAGS}" --mandir="${MANPREFIX}/man"
+CONFIGURE_ARGS=	--with-cflags="${CFLAGS}"
 ALL_TARGET=	dictfmt
 INSTALL_TARGET=	install.dictfmt
 USE_AUTOTOOLS=	libtool:15

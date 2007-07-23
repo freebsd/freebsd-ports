@@ -25,9 +25,7 @@ USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/X11 \
-		--mandir=${MANPREFIX}/man \
-		--infodir=${PREFIX}/${INFO_PATH}
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/X11
 
 MAN1=		gv.1
 INFO=		gv

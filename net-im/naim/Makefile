@@ -16,7 +16,6 @@ COMMENT=	Console ncurses-based AIM, ICQ, IRC, and Lily client
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		naim.1

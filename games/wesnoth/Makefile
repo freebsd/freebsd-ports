@@ -27,8 +27,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-freetype-prefix=${LOCALBASE} \
-		--with-localedir=${PREFIX}/share/locale \
-		--mandir=${PREFIX}/man
+		--with-localedir=${PREFIX}/share/locale
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS} -ftemplate-depth-45" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"

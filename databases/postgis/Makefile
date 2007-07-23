@@ -31,7 +31,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/postgis \
 		--bindir=${PREFIX}/bin \
 		--libdir=${PREFIX}/lib \
-		--mandir=${PREFIX}/man \
 		--with-proj
 
 .include <bsd.port.pre.mk>

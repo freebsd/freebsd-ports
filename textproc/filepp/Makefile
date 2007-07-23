@@ -16,8 +16,7 @@ COMMENT=	A generic file preprocessor
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-			--mandir=${PREFIX}/man
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 NO_BUILD=	yes
 
 MAN1=	filepp.1

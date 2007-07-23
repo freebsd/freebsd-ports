@@ -25,7 +25,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	CFALGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 

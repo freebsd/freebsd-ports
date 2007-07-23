@@ -31,8 +31,7 @@ GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnomehack intlhack libxml2 orbit2 referencehack
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
-		--disable-gtk-doc \
-		--mandir=${PREFIX}/man
+		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 MAKE_ENV=	gnomelocaledir=${PREFIX}/share/locale

@@ -67,8 +67,7 @@ PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 BIND_DESTETC=	/etc/namedb
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--sysconfdir=${BIND_DESTETC} \
-			--mandir=${MANPREFIX}/man
+			--sysconfdir=${BIND_DESTETC}
 .else
 BIND_DESTETC=	${PREFIX}/etc
 .endif

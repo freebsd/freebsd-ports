@@ -16,8 +16,7 @@ COMMENT=	GNU m4
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man \
-		--program-prefix=g
+CONFIGURE_ARGS=	--program-prefix=g
 
 .if defined(WITH_CHANGEWORD)
 CONFIGURE_ARGS+=	--enable-changeword

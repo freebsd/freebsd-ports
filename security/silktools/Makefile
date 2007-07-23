@@ -18,8 +18,7 @@ COMMENT=	Tools for large-scale network capture analysis
 LIB_DEPENDS=	lzo:${PORTSDIR}/archivers/lzo
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools \
-	--mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" GCC_FLAGS="" CFLAGS_RELEASE=""
 USE_LDCONFIG=	yes

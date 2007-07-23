@@ -24,8 +24,7 @@ USE_GCC=	3.4+
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--localstatedir=/var --infodir=${PREFIX}/${INFO_PATH} \
-		--mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--localstatedir=/var
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN5=	tinc.conf.5

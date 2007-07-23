@@ -25,8 +25,7 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${MANPREFIX}/man \
-		--with-gmp
+CONFIGURE_ARGS=	--with-gmp
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 

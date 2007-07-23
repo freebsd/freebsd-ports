@@ -21,7 +21,7 @@ RUN_DEPENDS=	rman:${PORTSDIR}/textproc/rman \
 
 USE_GMAKE=	yes
 MAKE_ARGS=	WISH="${PREFIX}/bin/wish8.4" \
-		texinfodir="${PREFIX}/info" \
+		texinfodir="${PREFIX}/${INFO_PATH}" \
 		gzgrep="\"/usr/bin/zgrep -E\"" \
 		mastermen="\"/usr/share/man ${PREFIX}/man ${X11BASE}/man\"" \
 		masterbin="\"/usr/bin ${PREFIX}/bin ${X11BASE}/bin\"" \

@@ -15,7 +15,6 @@ COMMENT=	Library to create and read several streaming archive formats
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
 PLIST_FILES=	bin/bsdtar \
 		include/archive.h \

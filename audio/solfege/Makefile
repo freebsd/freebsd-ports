@@ -25,8 +25,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_XML2PO=""
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--disable-oss-sound \
+CONFIGURE_ARGS=	--disable-oss-sound \
 		--enable-docbook-stylesheet=${STYLESHEET}
 MAKE_ARGS=	skipmanual=yes
 

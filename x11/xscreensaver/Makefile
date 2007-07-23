@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
 		--with-configdir=${PREFIX}/share/xscreensaver/config/ \
 		--with-jpeg=${LOCALBASE} --without-gnome --without-kerberos \
-		--without-motif --mandir=${PREFIX}/man
+		--without-motif
 
 OPTIONS=	ALL_FORTUNES "Run fortune with -sa argument" off \
 		SETUID_HACKS "Install sonar hack suid so it can ping" off

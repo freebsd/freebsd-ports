@@ -17,7 +17,6 @@ COMMENT=	Distribution creation system
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--infodir=${PREFIX}/${INFO_PATH} --mandir=${MANPREFIX}/man
 USE_GMAKE=	yes
 
 MAN1=		autodist.1

@@ -27,9 +27,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_prog_EMACS=no
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--infodir=${PREFIX}/${INFO_PATH} \
-		--enable-generational-gc=no \
+CONFIGURE_ARGS=	--enable-generational-gc=no \
 		--enable-gtk=no \
 		--with-emacs=no \
 		--with-gmp=no

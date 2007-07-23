@@ -44,7 +44,6 @@ PLIST_SUB+=	NLS=""
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e "/^mandir=/s|datarootdir|prefix|" ${WRKSRC}/configure
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e "s|pixmaps help|pixmaps|" ${WRKSRC}/Makefile.in
 .endif

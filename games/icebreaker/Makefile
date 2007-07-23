@@ -19,7 +19,7 @@ USE_SDL=	mixer sdl
 USE_GMAKE=	yes
 MAKE_ENV+=	prefix="${PREFIX}" \
 		highscoredir="${PREFIX}/share/icebreaker/scores" \
-		mandir="${PREFIX}/man" \
+		mandir="${MANPREFIX}/man" \
 		CHMOD="${CHMOD}" \
 		CHOWN="${CHOWN}" \
 		MKDIR="${MKDIR}" \

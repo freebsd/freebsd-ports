@@ -27,8 +27,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--with-wwwroot=${PREFIX}/www/cherokee \
+CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
 		--enable-readdir_r \
 		--disable-static
 DEFCONFS=	advanced.conf cherokee.conf icons.conf mime.compression.types mime.types

@@ -31,8 +31,7 @@ NO_MTREE=	yes
 INFO=		autoconf standards
 CONFIGURE_ENV+=	CONFIG_SHELL=${SH}
 CONFIGURE_ENV+=	M4=${LOCALBASE}/bin/gm4
-CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man \
-		--without-lispdir
+CONFIGURE_ARGS=	--without-lispdir
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		autoconf.1 autoheader.1 autom4te.1 autoreconf.1 autoscan.1 \

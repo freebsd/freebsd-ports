@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--bindir=${PREFIX}/bin \
 		--sbindir=${PREFIX}/sbin \
 		--libexecdir=${PREFIX}/libexec/apache \
-		--mandir=${PREFIX}/man \
 		--sysconfdir=${PREFIX}/etc/apache \
 		--datadir=${PREFIX}/share/apache \
 		--includedir=${PREFIX}/include/apache \

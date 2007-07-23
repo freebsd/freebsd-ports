@@ -23,8 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tiff-includes=${LOCALBASE}/include \
 		--with-tiff-libs=${LOCALBASE}/lib \
 		--with-directory-layout=lsb \
-		--localstatedir=/var \
-		--mandir=${LOCALBASE}/man
+		--localstatedir=/var
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -22,7 +22,7 @@ BUILD_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick	\
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-FreeBSD --infodir=${PREFIX}/info
+CONFIGURE_ARGS=	--enable-FreeBSD
 USE_GMAKE=	yes
 REINPLACE_ARGS=	-Ei.bak
 MAKE_ENV+=	MAKEINFOFLAGS=--no-split

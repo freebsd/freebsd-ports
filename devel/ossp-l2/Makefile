@@ -16,7 +16,6 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A C library for a flexible and sophisticated Unix logging facility
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 

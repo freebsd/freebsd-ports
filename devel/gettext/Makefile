@@ -28,8 +28,7 @@ CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		EMACS="no"
-CONFIGURE_ARGS=	--disable-csharp --disable-threads --disable-openmp \
-		--mandir=${PREFIX}/man --infodir=${PREFIX}/info
+CONFIGURE_ARGS=	--disable-csharp --disable-threads --disable-openmp
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}

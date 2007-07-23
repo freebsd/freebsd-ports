@@ -21,7 +21,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 MAN1=		twolame.1
 

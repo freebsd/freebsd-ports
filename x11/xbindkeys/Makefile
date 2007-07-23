@@ -23,7 +23,6 @@ USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 MAN1=		xbindkeys.1
 PLIST_FILES=	bin/xbindkeys %%EXAMPLESDIR%%/xbindkeysrc

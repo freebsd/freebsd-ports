@@ -31,7 +31,6 @@ WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-debug \
-		--mandir=${MANPREFIX}/man \
 		--without-included-gettext \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE} \

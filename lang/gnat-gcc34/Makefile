@@ -65,8 +65,7 @@ CONFIGURE_ARGS=	--enable-languages="c,ada" \
 				--enable-threads=posix \
 				--program-suffix=${gcc_suffix} \
 				--bindir=${PREFIX}/bin/gcc${gcc_suffix} \
-				--libdir=${targlib} \
-				--infodir=${PREFIX}/${INFO_PATH}/gcc${gcc_suffix}
+				--libdir=${targlib}
 
 BUILD_WRKSRC=	${WRKDIR}/build
 

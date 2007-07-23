@@ -55,7 +55,6 @@ CONFIGURE_ENV=		CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=		--with-krb5="${KRB5_DIR}"	\
 			--with-pamdir="${PREFIX}/lib"	\
 			--with-man-sect=8		\
-			--mandir=${MANDIR}		\
 			--without-krbafs
 
 post-install:

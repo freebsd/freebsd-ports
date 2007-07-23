@@ -17,7 +17,6 @@ COMMENT=	A collection of SNMP command line management tools
 LIB_DEPENDS=	gsnmp:${PORTSDIR}/net-mgmt/gsnmp
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man --infodir=${PREFIX}/info
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
 

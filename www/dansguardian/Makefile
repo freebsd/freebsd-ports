@@ -27,7 +27,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir=/sbin/ \
 		--sysconfdir=/etc/dansguardian/ \
 		--sysvdir=/etc/rc.d/ \
-		--mandir=/man/ \
 		--logdir=/var/log/ \
 		--cgidir=/www/cgi-bin/ \
 		--piddir=/var/run/ \
@@ -54,6 +53,10 @@ USE_APACHE=	1.3+
 .if !(exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})) && !defined(PACKAGE_BUILDING)
 IGNORE="Commercial source download is restricted.  Please visit and read ${DG_URL} and download ${DISTNAME}${EXTRACT_SUFX} into ${DISTDIR} before running make"
 .endif
+
+post-configure:
+	@${REINPLACE_CMD} -e 's,^MANUALFILES = .*,MANUALFILES = ${MANPREFIX}/man/,' \
+		${WRKSRC}/Makefile
 
 pre-install:
 # Configure pkg-plist based on whether phraselists are to be installed or not

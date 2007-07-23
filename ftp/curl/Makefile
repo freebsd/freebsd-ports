@@ -48,7 +48,6 @@ PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
 		CURL_DEBUG "Enable curl diagnostic output" off \

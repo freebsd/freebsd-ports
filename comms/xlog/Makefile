@@ -17,8 +17,7 @@ COMMENT=	Amateur Radio logging application
 USE_GETTEXT=	yes
 USE_GNOME=	libgnomeprint gnomelibs gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-mime-update \
-		--mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--with-mime-update
 
 LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
 

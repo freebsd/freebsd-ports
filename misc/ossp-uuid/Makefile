@@ -21,7 +21,7 @@ USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--disable-shared --enable-static --mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--disable-shared --enable-static
 
 MAN1=	uuid-config.1 uuid.1
 MAN3=	uuid.3

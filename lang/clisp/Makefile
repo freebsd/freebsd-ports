@@ -33,7 +33,7 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 MAKE_ENV=	${CONFIGURE_ENV}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-MAKEMAKE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man \
+MAKEMAKE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man \
 		--srcdir=${WRKSRC}/src --with-dynamic-ffi
 
 OPTIONS=	BDB "Build Berkeley Database module" off \

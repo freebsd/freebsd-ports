@@ -18,7 +18,7 @@ COMMENT=	A program to generate rotational obfuscations
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man --i18n=1
+CONFIGURE_ARGS=	--prefix=${PREFIX} --i18n=1
 CONFIGURE_ENV=	EXPR_COMPAT=1
 
 MAN1=		rotix.1

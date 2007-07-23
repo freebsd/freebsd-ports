@@ -16,7 +16,6 @@ COMMENT=	Network statistics gatherer and reporter
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 MAN1=	darkstat.1
 DOCS=	AUTHORS INSTALL README THANKS

@@ -25,7 +25,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	JW=false
 USE_GETOPT_LONG=yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 CONFLICTS=	py*-ro-[0-9]*
 

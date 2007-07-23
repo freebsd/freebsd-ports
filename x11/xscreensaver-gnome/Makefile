@@ -31,7 +31,6 @@ CONFIGURE_ARGS=	--with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks \
 		--with-configdir=${PREFIX}/share/xscreensaver/config \
 		--with-jpeg=${LOCALBASE} --without-motif \
-		--mandir=${PREFIX}/man \
 		--without-kerberos
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

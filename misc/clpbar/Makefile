@@ -19,7 +19,6 @@ COMMENT=	Command Line Progress Bar
 WRKSRC=		${WRKDIR}/bar-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--mandir=${MANPREFIX}/man
 MAKE_ARGS+=	CFLAGS+="${CFLAGS}"
 
 MAN1=		bar.1

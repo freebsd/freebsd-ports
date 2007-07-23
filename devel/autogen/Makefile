@@ -23,8 +23,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes --datadir=${PREFIX}/share \
-		--infodir=${PREFIX}/info --mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes --datadir=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 MAN1=	autogen.1 autoopts-config.1 columns.1 getdefs.1 xml2ag.1

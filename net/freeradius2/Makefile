@@ -70,7 +70,6 @@ WITH_MYSQL=	yes
 CONFIGURE_ARGS=	--quiet \
 		--prefix=${PREFIX} \
 		--localstatedir=/var \
-		--mandir=${PREFIX}/man \
 		--with-system-libtool
 .ifdef(NOPORTDOCS)
 CONFIGURE_ARGS+=--without-docdir

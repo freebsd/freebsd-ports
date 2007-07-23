@@ -22,7 +22,6 @@ USE_GNOME=	gnometarget pkgconfig ltverhack
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 LIBTOOLFILES=	configure libgphoto2_port/configure
 USE_LDCONFIG=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}" VERSION_PORT=0.7.1

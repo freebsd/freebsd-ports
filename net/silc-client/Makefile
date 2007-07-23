@@ -33,7 +33,6 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GNOME=	glib12
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
-		--mandir=${MANPREFIX}/man \
 		--with-perl=no \
 		--without-libtoolfix
 MAN1=	silc.1

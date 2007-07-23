@@ -30,6 +30,5 @@ CONFIGURE_ENV= CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/li
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|mandir = .*|mandir = ${MANPREFIX}/man|g' ${WRKSRC}/contrib/Makefile.in
 
 .include <bsd.port.mk>

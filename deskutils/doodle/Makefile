@@ -22,7 +22,6 @@ USE_GETTEXT=	yes
 USE_FAM=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		doodle.1 doodled.1

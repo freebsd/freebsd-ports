@@ -26,8 +26,7 @@ USE_EMACS=	yes
 EMACS_PORT_NAME?=emacs20
 
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
-		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/gnus \
-		--infodir=${INFODIR}
+		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/gnus
 
 INFODIR=	${PREFIX}/info
 INFO=		emacs-mime gnus gnus-1 gnus-2 gnus-3 message

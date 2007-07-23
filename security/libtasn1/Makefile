@@ -20,7 +20,6 @@ USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--infodir="${PREFIX}/info" --mandir="${PREFIX}/man/"
 
 DOCS=		AUTHORS NEWS README THANKS doc/TODO \
 		doc/libtasn1.html doc/libtasn1.pdf doc/libtasn1.ps

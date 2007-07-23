@@ -75,6 +75,7 @@ CONFIGURE_ARGS=	--with-x11 \
 		${WITH_XIM} \
 		${WITH_MENUBARS} ${WITH_SCROLLBARS} \
 		${WITH_DIALOGS} ${WITH_WIDGETS}
+INFO_PATH=	lib/xemacs-${XEMACS_VER}/info
 MAKE_ARGS=	prefix=${PREFIX}
 ALL_TARGET=	all dist
 .if defined(PKGNAMEPREFIX)
@@ -188,6 +189,8 @@ pre-configure::
 	@${SED} -e 's/\.1/&.gz/' ${WRKSRC}/${f} > ${WRKDIR}/tmp_zot
 	@${MV} ${WRKDIR}/tmp_zot ${WRKSRC}/${f}
 .endfor
+	@${REINPLACE_CMD} -e 's/^mandir=@mandir@/mandir=@mandir@\/man1/' \
+		${WRKSRC}/Makefile.in.in
 
 pre-build:
 	@${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) \

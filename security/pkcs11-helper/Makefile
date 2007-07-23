@@ -22,8 +22,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man \
-		--disable-crypto-engine-gnutls
+CONFIGURE_ARGS=	--disable-crypto-engine-gnutls
 
 MAN8=		pkcs11-helper-1.8
 

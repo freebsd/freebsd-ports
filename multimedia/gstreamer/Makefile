@@ -31,8 +31,7 @@ CONFIGURE_ARGS=	--disable-tests \
 		--disable-examples \
 		--disable-docs-build \
 		--disable-failing-tests \
-		--disable-gtk-doc \
-		--mandir=${PREFIX}/man
+		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		ac_cv_func_register_printf_function="no"

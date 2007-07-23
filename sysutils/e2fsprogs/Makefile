@@ -25,9 +25,7 @@ CONFIGURE_ARGS?=	--disable-fsck --disable-e2initrd-helper \
 			'--with-ldopts=-L${LOCALBASE}/lib' \
 			--with-cc='${CC}' --with-linker='${LD}' \
 			--with-ccopts='${CFLAGS}' \
-			--with-root-prefix='${PREFIX}'\
-			 --infodir=${PREFIX}/info \
-			 --mandir=${MANPREFIX}/man
+			--with-root-prefix='${PREFIX}'
 # for unknown reasons, the assembly bitops cause SIGSEGV.
 # _EXT2_USE_C_VERSIONS_ uses C bitops, these appear to work fine.
 CONFIGURE_ENV+=	CPPFLAGS='${CPPFLAGS} -I${WRKSRC}/lib -I${LOCALBASE}/include -D_EXT2_USE_C_VERSIONS_'

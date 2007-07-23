@@ -18,7 +18,6 @@ COMMENT=	Chemistry file translation program
 USE_GCC=	3.4+
 USE_GNOME=	gnomehack gnometarget libxml2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 USE_LDCONFIG=	yes
 
 MAN1=		obchiral.1 obfit.1 obgrep.1 obprop.1 obrotate.1 openbabel.1

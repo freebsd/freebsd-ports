@@ -30,7 +30,7 @@ WANT_GNOME=	yes
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --enable-mime
+CONFIGURE_ARGS=	--enable-mime
 
 .ifndef WITHOUT_EXIF
 LIB_DEPENDS+=	exif:${PORTSDIR}/graphics/libexif

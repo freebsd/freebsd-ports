@@ -18,7 +18,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 MAN1=		tvmet-config.1

@@ -43,7 +43,6 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--with-zlib=/usr \
-		--mandir=${MANPREFIX}/man \
 		--disable-zlib-vcheck \
 		--disable-clamuko \
 		--disable-clamav \

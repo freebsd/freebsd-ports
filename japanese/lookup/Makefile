@@ -35,8 +35,7 @@ PLIST_SUB=	ELISPDIR=${EMACS_VERSION_SITE_LISPDIR}
 .endif
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-emacs=${EMACS_CMD} \
-		--with-lispdir=${ELISPDIR} \
-		--infodir=${PORTINFODIR}
+		--with-lispdir=${ELISPDIR}
 
 post-install:
 .if (${EMACS_PORT_NAME} == "xemacs21-mule")

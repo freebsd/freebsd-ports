@@ -70,8 +70,7 @@ CONFIGURE_ARGS=		--enable-languages="c,ada" \
 			--with-libiconv-prefix=${LOCALBASE} \
 			--program-suffix=${gcc_suffix} \
 			--bindir=${PREFIX}/bin/gcc${gcc_suffix} \
-			--libdir=${targlib} \
-			--infodir=${PREFIX}/${INFO_PATH}/gcc${gcc_suffix}
+			--libdir=${targlib}
 
 ALL_TARGET=		bootstrap-lean
 MAKE_ENV+=		MAKEINFOFLAGS="--no-split" PTHREAD_LIBS=${PTHREAD_LIBS}

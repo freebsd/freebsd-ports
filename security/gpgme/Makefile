@@ -24,8 +24,7 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
 		--with-gpgsm=${LOCALBASE}/bin/gpgsm \
-		--includedir=${PREFIX}/include/gpgme \
-		--infodir=${PREFIX}/${INFO_PATH}
+		--includedir=${PREFIX}/include/gpgme
 
 INFO=		gpgme
 

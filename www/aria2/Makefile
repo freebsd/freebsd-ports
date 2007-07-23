@@ -17,7 +17,7 @@ COMMENT=	Yet another download tool
 #DONTSTRIP=	yes
 #CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
 #MAKE_ENV=	DONTSTRIP=
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --mandir=${MANPREFIX}/man --with-openssl \
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-openssl \
 		--with-libxml2 --without-gnutls --without-libares --without-libcares
 
 USE_GCC=	3.4+

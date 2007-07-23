@@ -38,7 +38,7 @@ DCCGID?=	112
 # sed scripting breaks things.
 #
 
-CONFIGURE_ARGS=	--homedir=${PREFIX}/dcc --bindir=${PREFIX}/bin --mandir=${PREFIX}/man --with-rundir=/var/run
+CONFIGURE_ARGS=	--homedir=${PREFIX}/dcc --bindir=${PREFIX}/bin --mandir=${MANPREFIX}/man --with-rundir=/var/run
 
 .include <bsd.port.pre.mk>
 

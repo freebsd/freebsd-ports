@@ -36,7 +36,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/xmedcon \
-		--mandir=${MANPREFIX}/man \
 		--enable-llcheck
 USE_LDCONFIG=	yes
 

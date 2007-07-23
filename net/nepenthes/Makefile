@@ -33,7 +33,6 @@ CONFIGURE_ARGS+=	--enable-debug-logging
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man --infodir=${PREFIX}/info
 
 DOCS=	README README.VFS logo-shaded.svg
 MAN8=	nepenthes.8

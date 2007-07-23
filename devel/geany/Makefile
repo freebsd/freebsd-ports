@@ -20,7 +20,6 @@ INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--mandir="${MANPREFIX}/man"
 
 OPTIONS=	VTE	"Enable Virtual Terminal Emulation support"	on \
 		NLS	"Enable Native Language support"		on

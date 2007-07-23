@@ -71,7 +71,6 @@ CONFIGURE_ARGS=	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
 		--enable-imagedir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
 		--localstatedir=${PREFIX}/var/sqwebmail \
 		--sysconfdir=${PREFIX}/etc/sqwebmail \
-		--mandir=${PREFIX}/man \
 		--enable-imageurl=/${IMAGEURL} \
 		--with-locking-method=fcntl \
 		--with-libintl-prefix=${LOCALBASE} \

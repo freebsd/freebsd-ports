@@ -38,12 +38,12 @@ MAN3=		pnetcdf.3
 .if defined(WITH_OPENMPI)
 BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
-CONFIGURE_ARGS=	--enable-shared --mandir=${PREFIX}/man --disable-f77 --with-mpi=${PREFIX}/mpi/openmpi
+CONFIGURE_ARGS=	--enable-shared --disable-f77 --with-mpi=${PREFIX}/mpi/openmpi
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -fPIC -DPIC -Df2cFortran"
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
 RUN_DEPENDS+=	${LOCALBASE}/mpich2/lib/libmpich.so:${PORTSDIR}/net/mpich2
-CONFIGURE_ARGS=	--enable-shared --mandir=${PREFIX}/man --disable-f77 --with-mpi=${PREFIX}/mpich2
+CONFIGURE_ARGS=	--enable-shared --disable-f77 --with-mpi=${PREFIX}/mpich2
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -fPIC -DPIC -Df2cFortran"
 .endif
 

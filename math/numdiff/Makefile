@@ -14,7 +14,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Compare putatively similar files, ignoring small numeric differences
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --infodir=${PREFIX}/info LIBS=-lm
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH} LIBS=-lm
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
 INFO=	numdiff

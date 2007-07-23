@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-devel
 PORTVERSION=	${XEMACS_VER:S/-/./}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
@@ -60,6 +60,22 @@ CONFIGURE_ARGS?=--enable-clash-detection \
 MAKE_ARGS=	prefix=${PREFIX}
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
+INFO=		xemacs-${XEMACS_VER}/beta \
+		xemacs-${XEMACS_VER}/cl \
+		xemacs-${XEMACS_VER}/custom \
+		xemacs-${XEMACS_VER}/emodules \
+		xemacs-${XEMACS_VER}/external-widget \
+		xemacs-${XEMACS_VER}/info \
+		xemacs-${XEMACS_VER}/internals \
+		xemacs-${XEMACS_VER}/lispref \
+		xemacs-${XEMACS_VER}/new-users-guide \
+		xemacs-${XEMACS_VER}/standards \
+		xemacs-${XEMACS_VER}/term \
+		xemacs-${XEMACS_VER}/termcap \
+		xemacs-${XEMACS_VER}/texinfo \
+		xemacs-${XEMACS_VER}/widget \
+		xemacs-${XEMACS_VER}/xemacs-faq \
+		xemacs-${XEMACS_VER}/xemacs
 ALL_TARGET=	all dist
 
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}

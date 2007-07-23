@@ -17,8 +17,7 @@ USE_BZIP2=	yes
 USE_XPM=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--disable-native-kde \
+CONFIGURE_ARGS=	--disable-native-kde \
 		--disable-debug
 
 MAN1=		stalonetray.1

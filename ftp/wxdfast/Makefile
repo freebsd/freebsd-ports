@@ -19,7 +19,6 @@ USE_WX=		2.6
 WX_CONF_ARGS=	relative
 WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		wxdfast.1

@@ -27,7 +27,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-modules="pipe" \
 			--with-dynmodules="${CONFIGURE_MODULES}" \
 			--sysconfdir="${PREFIX}/etc/pdns" \
-			--mandir="${PREFIX}/man"
 #			--enable-debug
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		CURDIR2="${.CURDIR}" \

@@ -22,8 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man \
-		--x-includes=${X11BASE}/include \
+CONFIGURE_ARGS+=--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib \
 		--with-x
 USE_GETTEXT=	yes

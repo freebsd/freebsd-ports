@@ -22,7 +22,6 @@ RUN_DEPENDS=		ggv:${PORTSDIR}/print/ggv
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GNOME=		gtk20
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--mandir=${X11BASE}/man
 MAN1=			efax.1 efix.1 efax-gtk.1
 
 post-install:

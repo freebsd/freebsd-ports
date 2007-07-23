@@ -18,8 +18,7 @@ COMMENT=	The Gnu Circuit Analysis Package
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/${PORTNAME} \
-			--mandir=${PREFIX}/man
+CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/${PORTNAME}
 
 OPTIONS=	READLINE "Enable commandline features via readline" on
 

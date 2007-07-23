@@ -18,8 +18,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
-			--enable-user=_xsi
+CONFIGURE_ARGS+=	--enable-user=_xsi
 
 USE_RC_SUBR=	xsi
 

@@ -25,7 +25,6 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}/lib \
 		--with-libintl-prefix=${LOCALBASE}/lib \
-		--mandir=${MANPREFIX}/man \
 		--with-libupnp-prefix=${LOCALBASE}
 
 .include <bsd.port.pre.mk>

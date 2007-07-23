@@ -18,7 +18,6 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_PYTHON=	2.3+
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 USE_LDCONFIG=	yes
 
 MAN1=		ktoblzcheck.1

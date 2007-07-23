@@ -17,7 +17,7 @@ USE_GNOME=	gnometarget
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--disable-debug --mandir="${MANPREFIX}/man"
+CONFIGURE_ARGS=	--disable-debug
 USE_GGZ=	client
 
 MAN6=	ggz-txt.6

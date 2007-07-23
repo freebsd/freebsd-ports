@@ -26,7 +26,6 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_GETTEXT=	yes

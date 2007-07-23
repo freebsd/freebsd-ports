@@ -20,7 +20,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 USE_SDL=	mixer image sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --program-prefix=""
+CONFIGURE_ARGS=	--program-prefix=""
 
 MAN6=		penguin-command.6 penguin-command.ja.6
 

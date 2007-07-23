@@ -16,7 +16,6 @@ COMMENT=	Transparent application input fuzzer
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 USE_LDCONFIG=	yes
 
 MAN1=	zzuf.1

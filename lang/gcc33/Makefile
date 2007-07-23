@@ -51,8 +51,7 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--with-system-zlib \
 		--program-suffix=${SUFFIX} \
 		--libdir=${TARGLIB} \
-		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
-		--infodir=${PREFIX}/${INFO_PATH}/gcc${SUFFIX}
+		--with-gxx-include-dir=${TARGLIB}/include/c++/
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 MAKE_ENV=	LD_LIBRARY_PATH=.:${WRKSRC}/gcc
 ALL_TARGET=	bootstrap-lean

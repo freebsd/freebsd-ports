@@ -23,7 +23,7 @@ USE_RC_SUBR=	rsyncd.sh
 SUB_LIST=	NAME=rsyncd
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-debug --enable-ipv6  --mandir=${PREFIX}/man \
+CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
 		--with-rsyncd-conf=${PREFIX}/etc/rsyncd.conf
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PATCH_STRIP=	-p1

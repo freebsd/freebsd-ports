@@ -22,7 +22,7 @@ USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib \
 		--prefix=${PREFIX} \
-		--mandir=${PREFIX}/man \
+		--mandir=${MANPREFIX}/man \
 		--infodir=${PREFIX}/info
 
 MAN1=		freehdl-config.1 \

@@ -29,7 +29,6 @@ USE_GMAKE=	yes
 INFO=		dirmngr
 MAN1=		dirmngr-client.1 dirmngr.1
 
-CONFIGURE_ARGS+=--infodir=${PREFIX}/${INFO_PATH} --mandir=${MANPREFIX}/man
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .if defined(WITHOUT_NLS)

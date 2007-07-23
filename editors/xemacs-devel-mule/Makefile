@@ -7,6 +7,7 @@
 
 PORTNAME=	xemacs-devel-mule
 PORTVERSION=	${XEMACS_VER:S/-/./}
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -81,6 +82,22 @@ DESCR=		${PKGDIR}/pkg-descr.ja
 .else
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
+INFO=		xemacs-${XEMACS_VER}/beta \
+		xemacs-${XEMACS_VER}/cl \
+		xemacs-${XEMACS_VER}/custom \
+		xemacs-${XEMACS_VER}/emodules \
+		xemacs-${XEMACS_VER}/external-widget \
+		xemacs-${XEMACS_VER}/info \
+		xemacs-${XEMACS_VER}/internals \
+		xemacs-${XEMACS_VER}/lispref \
+		xemacs-${XEMACS_VER}/new-users-guide \
+		xemacs-${XEMACS_VER}/standards \
+		xemacs-${XEMACS_VER}/term \
+		xemacs-${XEMACS_VER}/termcap \
+		xemacs-${XEMACS_VER}/texinfo \
+		xemacs-${XEMACS_VER}/widget \
+		xemacs-${XEMACS_VER}/xemacs-faq \
+		xemacs-${XEMACS_VER}/xemacs
 .endif
 
 # Debugging.

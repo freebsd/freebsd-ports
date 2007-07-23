@@ -75,7 +75,6 @@ CONFIGURE_ARGS+=	--with-maxclients=${MAXCLIENTS}
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ircd-hybrid \
 	--moduledir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/modules \
 	--automoduledir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/modules/autoload \
-	--mandir=${MANPREFIX}/man \
 	--uhelpdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/users \
 	--ohelpdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/opers \
 	--messagedir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/messages \

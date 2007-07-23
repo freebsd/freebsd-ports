@@ -43,7 +43,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man/
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Displays

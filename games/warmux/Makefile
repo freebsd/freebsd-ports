@@ -20,8 +20,7 @@ LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image mixer ttf gfx net
 
-CONFIGURE_ARGS=	--with-datadir-name=${DATADIR} --program-prefix="" \
-		--mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--with-datadir-name=${DATADIR} --program-prefix=""
 
 MAN6=	wormux.6
 

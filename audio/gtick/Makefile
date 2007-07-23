@@ -20,7 +20,6 @@ USE_GNOME=	gtk20
 USE_GETTEXT=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--mandir=${MAN1PREFIX}/man
 
 MAN1=		gtick.1
 

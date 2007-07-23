@@ -30,8 +30,7 @@ CONFIGURE_ARGS+=--enable-debug \
 		--enable-confdir=${PREFIX}/etc/ \
 		--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/ \
 		--enable-muscledropdir=${PREFIX}/lib/pcsc/services/ \
-		--enable-threadsafe \
-		--mandir=${PREFIX}/man
+		--enable-threadsafe
 USE_GETOPT_LONG=yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

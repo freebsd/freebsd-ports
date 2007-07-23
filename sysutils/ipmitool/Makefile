@@ -20,8 +20,7 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--enable-intf-lan --enable-intf-lanplus \
-		--disable-intf-imb --disable-intf-lipmi --disable-intf-bmc \
-		--mandir=${MANPREFIX}/man
+		--disable-intf-imb --disable-intf-lipmi --disable-intf-bmc
 CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" \
 	LDFLAGS="${LDFLAGS}"
 PLIST_FILES=	bin/ipmitool sbin/ipmievd

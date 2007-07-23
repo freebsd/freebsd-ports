@@ -18,8 +18,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--disable-alsa
+CONFIGURE_ARGS=	--disable-alsa
 INSTALLS_ICONS=	yes
 
 MAN1=		wavbreaker.1 wavinfo.1 wavmerge.1

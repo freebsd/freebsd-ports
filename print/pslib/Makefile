@@ -24,7 +24,6 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 USE_LDCONFIG=	yes
 
 OPTIONS=	EXAMPLES	"Install additional examples" On \

@@ -39,8 +39,7 @@ CONFIGURE_ARGS+=	--with-libavcodec-includes=${LOCALBASE}/include/ffmpeg \
 			--with-libdvdread-prefix=${LOCALBASE} \
 			--with-libiconv-prefix=${LOCALBASE} \
 			--enable-oss \
-			--enable-gtk=no \
-			--mandir=${PREFIX}/man
+			--enable-gtk=no
 
 MAN1=	avifix.1 aviindex.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
 	tcprobe.1 tcscan.1 transcode.1 tcextract.1 tcdecode.1 tcmodinfo.1 \

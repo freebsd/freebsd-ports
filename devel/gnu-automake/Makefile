@@ -30,7 +30,6 @@ CONFIGURE_ENV=	AUTOCONF=${LOCALBASE}/gnu-autotools/bin/autoconf \
 		AUTOHEADER=${LOCALBASE}/gnu-autotools/bin/autoheader \
 		MAKEINFO="${MAKEINFO} --no-split"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man
 
 PLIST_SUB=	VERSION=1.10
 

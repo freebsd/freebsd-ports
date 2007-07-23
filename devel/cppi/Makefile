@@ -17,7 +17,6 @@ COMMENT=	A tool to indent the C preprocessor directives
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/cppi

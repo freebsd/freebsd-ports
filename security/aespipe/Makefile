@@ -20,8 +20,7 @@ MAN1=		aespipe.1
 
 USE_BZIP2=	yes
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--mandir="${MANPREFIX}/man"
+GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/aespipe
 
 .include <bsd.port.pre.mk>

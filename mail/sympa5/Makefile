@@ -86,7 +86,6 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-lockdir=/var/spool/lock \
 		--with-piddir=/var/run \
 		--with-localedir=${PREFIX}/share/locale \
-		--with-mandir=${PREFIX}/man \
 		--with-docdir=${DOCSDIR} \
 		--with-sampledir=${EXAMPLESDIR} \
 		--with-spooldir=${PREFIX}/sympa/spool

@@ -17,7 +17,6 @@ COMMENT=	Union filesystem for the FUSE driver
 BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 GNU_CONFIGURE=	yes

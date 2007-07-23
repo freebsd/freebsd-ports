@@ -20,8 +20,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lm -lncurses"
 CONFIGURE_ARGS=	--disable-doc \
-		--enable-ncurses \
-		--mandir=${PREFIX}/man
+		--enable-ncurses
 
 DOCS=		AUTHORS COPYING COPYING.GPL COPYING.LGPL ChangeLog NEWS \
 		NOTES README THANKS TODO

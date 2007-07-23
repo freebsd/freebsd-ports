@@ -19,8 +19,7 @@ COMMENT=	Perl Compatible Regular Expressions library
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man --enable-utf8 \
-		--enable-unicode-properties
+CONFIGURE_ARGS=	--enable-utf8 --enable-unicode-properties
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(NOPORTDOCS)

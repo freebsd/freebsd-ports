@@ -22,7 +22,6 @@ RUN_DEPENDS=	pdfoutline:${PORTSDIR}/textproc/pdfoutline
 USE_GNOME=	glib20 pkgconfig pango
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 

@@ -35,8 +35,7 @@ OPTIONS=	FLAC "Support for FLAC Audio" on \
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-pulse \
-		--disable-shout \
-		--mandir=${MANPREFIX}/man
+		--disable-shout
 
 .include <bsd.port.pre.mk>
 

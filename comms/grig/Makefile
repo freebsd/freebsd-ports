@@ -19,7 +19,6 @@ LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 MAN1=		grig.1
 

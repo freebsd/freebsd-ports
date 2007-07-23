@@ -23,8 +23,7 @@ USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--with-Qt-dir="${QT_PREFIX}"
+CONFIGURE_ARGS=	--with-Qt-dir="${QT_PREFIX}"
 
 MAN1=		qcomicbook.1
 

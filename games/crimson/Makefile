@@ -14,7 +14,6 @@ MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	Tactical war game in the tradition of Battle Isle
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 USE_GMAKE=	yes
 USE_SDL=	mixer sdl ttf
 

@@ -31,8 +31,6 @@ USE_GCC=	4.1
 USE_WX=		2.6
 WX_COMPS=	wx
 
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
-
 MAN1=		audacity.1
 MANCOMPRESSED=	yes
 

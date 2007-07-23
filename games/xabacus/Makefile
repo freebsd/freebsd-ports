@@ -23,8 +23,7 @@ WANT_GNOME=	yes
 USE_GNOME=	gnometarget
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--without-nas
+CONFIGURE_ARGS=	--without-nas
 
 MAN6=		xabacus.6
 

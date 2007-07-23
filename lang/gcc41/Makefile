@@ -56,8 +56,7 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--program-suffix=${SUFFIX} \
 		--libdir=${TARGLIB} \
-		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
-		--infodir=${PREFIX}/${INFO_PATH}/gcc${SUFFIX}
+		--with-gxx-include-dir=${TARGLIB}/include/c++/
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 ALL_TARGET=	bootstrap-lean
 USE_LDCONFIG=	${TARGLIB}

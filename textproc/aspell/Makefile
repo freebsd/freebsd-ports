@@ -24,9 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--enable-dict-dir=${DATADIR}	\
 			--enable-docdir=${DOCSDIR}	\
-			--enable-static			\
-			--mandir=${MANPREFIX}/man	\
-			--infodir=${PREFIX}/${INFO_PATH}
+			--enable-static	
 PTHREAD_CFLAGS=		# Disable threading
 PTHREAD_LIBS=		# libaspell may be used by unthreaded apps.
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\

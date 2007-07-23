@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--mandir="${PREFIX}/man/"
 USE_LDCONFIG=	yes
 
 OPTIONS=	TIFFICC "Build color profile applier for tiff" off \

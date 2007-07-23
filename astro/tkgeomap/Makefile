@@ -18,7 +18,6 @@ LIB_DEPENDS=	tclgeomap.0:${PORTSDIR}/astro/tclgeomap
 CONFIGURE_ARGS=	--with-tclgeomap-include=${LOCALBASE}/include/tclgeomap --with-x \
 		--with-tcl=${TCL_LIBDIR} --with-tclinclude=${TCL_INCLUDEDIR} \
 		--with-tk=${TK_LIBDIR} --with-tkinclude=${TK_INCLUDEDIR} \
-		--mandir=${MANPREFIX}/man \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 CONFIGURE_ENV=	TCLGEOMAP_LIB=${LOCALBASE}/lib/tclgeomap
 USE_TK=		82+

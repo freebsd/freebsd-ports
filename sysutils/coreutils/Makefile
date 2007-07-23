@@ -22,7 +22,7 @@ USE_GCC=	3.4+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--program-prefix=g --infodir=${PREFIX}/info --mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
 USE_GMAKE=	yes

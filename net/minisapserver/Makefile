@@ -16,7 +16,6 @@ COMMENT=	SAP and SLP announcement for the VLC Media Player
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 USE_GMAKE=	yes
 MAN1=		sapserver.1
 PLIST_FILES=	bin/sapserver etc/sap.cfg-dist etc/rc.d/sapserver.sh

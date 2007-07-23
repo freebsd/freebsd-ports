@@ -14,7 +14,6 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Network traffic viewer
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 

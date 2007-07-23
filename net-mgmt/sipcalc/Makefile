@@ -16,7 +16,6 @@ COMMENT=	Sipcalc is an IP subnet calculator with IPv6 support
 USE_GETOPT_LONG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	"--mandir=${PREFIX}/man"
 MAN1=		sipcalc.1
 
 DOC_FILES=	doc/sipcalc.txt ChangeLog README

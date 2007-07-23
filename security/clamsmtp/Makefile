@@ -20,7 +20,6 @@ SUB_LIST=	CLAMAV_PID_DIR=${CLAMAV_PID_DIR}
 SUB_FILES+=	pkg-message
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
 CLAMAV_PID_DIR?=	/var/run/clamav
 

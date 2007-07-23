@@ -18,7 +18,6 @@ COMMENT=	The GNU Portable Shell Tool
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 MAN1=		shtool-arx.1 shtool-echo.1 shtool-fixperm.1 shtool-install.1 \
 		shtool-mdate.1 shtool-mkdir.1 shtool-mkln.1 shtool-mkshadow.1 \

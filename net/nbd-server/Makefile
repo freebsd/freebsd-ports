@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GNOME=	glib20
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man --enable-lfs --enable-syslog
+CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-lfs --enable-syslog
 
 PLIST_FILES=	bin/nbd-server
 MAN1=		nbd-server.1
