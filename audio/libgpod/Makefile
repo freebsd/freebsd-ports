@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgpod
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.5.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkpod
@@ -34,9 +33,9 @@ post-extract: .SILENT
 		's,libdir)/pkgconfig,prefix)/libdata/pkgconfig,' \
 		${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's, docs$$,,' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's, docs,,' ${WRKSRC}/Makefile.in
 .endif
 	# Stop configure script want Perl and XML::Parser
-	${REINPLACE_CMD} '19491,19513d' ${WRKSRC}/configure
+	${REINPLACE_CMD} '19568,19590d' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

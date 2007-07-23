@@ -2,23 +2,29 @@ bin/gtkpod
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODOandBUGS.txt
-%%DATADIR%%/gtkpod.glade
-%%DATADIR%%/gtkpod.gladep
-%%DATADIR%%/pixmaps/gtkpod-add-dirs.png
-%%DATADIR%%/pixmaps/gtkpod-add-files.png
-%%DATADIR%%/pixmaps/gtkpod-add-playlists.png
-%%DATADIR%%/pixmaps/gtkpod-icon-32.png
-%%DATADIR%%/pixmaps/gtkpod-icon-32x32-2.png
-%%DATADIR%%/pixmaps/gtkpod-icon-32x32.png
-%%DATADIR%%/pixmaps/gtkpod-icon-48.png
-%%DATADIR%%/pixmaps/gtkpod-icon-48x48.png
-%%DATADIR%%/pixmaps/gtkpod-icon-64x64.png
-%%DATADIR%%/pixmaps/gtkpod-logo.png
-%%DATADIR%%/pixmaps/gtkpod-new-playlist.png
-%%DATADIR%%/pixmaps/gtkpod-read.png
-%%DATADIR%%/pixmaps/gtkpod-sync.png
-%%DATADIR%%/pixmaps/gtkpod.glade
-%%DATADIR%%/pixmaps/gtkpod.gladep
+%%PORTDOCS%%%%DOCSDIR%%/TROUBLESHOOTING
+%%DATADIR%%/data/gtkpod.glade
+%%DATADIR%%/data/cdshine.png
+%%DATADIR%%/data/cdshine_main.png
+%%DATADIR%%/data/default-cover.png
+%%DATADIR%%/data/gtkpod-add-dirs.png
+%%DATADIR%%/data/gtkpod-add-files.png
+%%DATADIR%%/data/gtkpod-add-playlists.png
+%%DATADIR%%/data/gtkpod-icon-32.png
+%%DATADIR%%/data/gtkpod-icon-32-2.png
+%%DATADIR%%/data/gtkpod-icon-48.png
+%%DATADIR%%/data/gtkpod-logo.png
+%%DATADIR%%/data/gtkpod-new-playlist.png
+%%DATADIR%%/data/gtkpod-read.png
+%%DATADIR%%/data/gtkpod-sync.png
+%%DATADIR%%/scripts/convert-flac2m4a.sh
+%%DATADIR%%/scripts/convert-flac2mp3.sh
+%%DATADIR%%/scripts/convert-m4a2mp3.sh
+%%DATADIR%%/scripts/convert-mp32m4a.sh
+%%DATADIR%%/scripts/convert-ogg2m4a.sh
+%%DATADIR%%/scripts/convert-ogg2mp3.sh
+%%DATADIR%%/scripts/convert-wav2m4a.sh
+%%DATADIR%%/scripts/convert-wav2mp3.sh
 %%DATADIR%%/scripts/ldif2vcf.sh
 %%DATADIR%%/scripts/mab2vcard
 %%DATADIR%%/scripts/sync-abook.sh
@@ -34,6 +40,10 @@ bin/gtkpod
 %%DATADIR%%/scripts/sync-thunderbird-nano.sh
 %%DATADIR%%/scripts/sync-tomboy.sh
 %%DATADIR%%/scripts/sync-webcalendar.sh
+share/icons/hicolor/32x32/apps/gtkpod.png
+share/icons/hicolor/48x48/apps/gtkpod.png
+share/icons/hicolor/64x64/apps/gtkpod.png
+share/applications/gtkpod.desktop
 share/locale/de/LC_MESSAGES/gtkpod.mo
 share/locale/es/LC_MESSAGES/gtkpod.mo
 share/locale/fr/LC_MESSAGES/gtkpod.mo
@@ -42,6 +52,6 @@ share/locale/it/LC_MESSAGES/gtkpod.mo
 share/locale/ja/LC_MESSAGES/gtkpod.mo
 share/locale/sv/LC_MESSAGES/gtkpod.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%DATADIR%%/pixmaps
 %%PORTDOCS%%@dirrm %%DATADIR%%/scripts
+%%PORTDOCS%%@dirrm %%DATADIR%%/data
 %%PORTDOCS%%@dirrm %%DATADIR%%
