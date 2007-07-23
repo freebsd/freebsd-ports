@@ -27,8 +27,11 @@ post-patch: .SILENT
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g; \
 		s|-O3[^I]*|${CXXFLAGS} -|; s|$$(prefix)/doc|$$(datadir)/doc|; \
 		s|COPYING.TXT||'
-	# Fix for GCC 4.x
+# Fix for GCC 4.x
 	${REINPLACE_CMD} -e 's|SoundTouch::||' ${WRKSRC}/include/SoundTouch.h
+# Better SSE detection
+	${REINPLACE_CMD} -e '135s|__x86_64__|&) \&\& defined(__SSE__|' \
+		${WRKSRC}/include/STTypes.h
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's| install-pkgdocDATA$$||' \
 		${WRKSRC}/Makefile.in
