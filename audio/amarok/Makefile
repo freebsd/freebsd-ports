@@ -6,7 +6,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	1.4.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=--without-exscalibar \
 PLIST_SUB+=	GPOD="@comment "
 CONFIGURE_ARGS+=--without-libgpod
 .else
-LIB_DEPENDS+=	gpod.1:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS+=	gpod.2:${PORTSDIR}/audio/libgpod
 CONFIGURE_ARGS+=--with-libgpod
 PLIST_SUB+=	GPOD=""
 .endif
