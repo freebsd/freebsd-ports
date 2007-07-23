@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	policyd
-PORTVERSION=	1.80
+PORTVERSION=	1.81
 PORTEPOCH=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://policyd.sourceforge.net/ \
+MASTER_SITES=	SF \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/
 PKGNAMEPREFIX=	postfix-
 PKGNAMESUFFIX=	-sf
-DISTNAME=	policyd-v${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Anti-spam plugin for Postfix (written in C)
@@ -28,9 +27,9 @@ SUB_LIST+=	REALNAME=${REALNAME}
 
 ALL_TARGET=	linux
 
-DOCS=		Changelog.txt README.txt License.txt DATABASE.mysql \
+DOCS=		ChangeLog ChangeLog.1 README LICENSE TODO DATABASE.mysql \
 		doc/whitelist.sql doc/support.txt doc/blacklist_helo.sql
-PORTDOCS=	*
+PORTDOCS=	${DOCS:C/.*\///}
 
 PLIST_FILES=	sbin/${REALNAME}-cleanup \
 		sbin/${REALNAME}-stats \
@@ -47,10 +46,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/policyd ${PREFIX}/sbin/${REALNAME}
 	${INSTALL_DATA} ${WRKSRC}/policyd.conf ${PREFIX}/etc/${REALNAME}.conf.sample
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	for f in ${DOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
-	done
+	@${INSTALL} -d ${DOCSDIR}/
+	cd ${WRKSRC}&&${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
