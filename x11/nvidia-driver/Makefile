@@ -18,7 +18,6 @@ COMMENT=	NVidia graphics card binary drivers for hardware OpenGL rendering
 
 ONLY_FOR_ARCHS=	i386
 
-USE_X_PREFIX=	yes
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 USE_GL=		gl
 INSTALLS_SHLIB=	yes
@@ -54,17 +53,17 @@ EXTRA_PATCHES+=	${FILESDIR}/7667-* \
 
 .if ${X_WINDOW_SYSTEM} == "xorg"
 MODULESDIR=	lib/xorg/modules
-XORG_SUB=	"@comment "
-XFREE86_SUB=	""
-.else
-MODULESDIR=	lib/modules
 XORG_SUB=	""
 XFREE86_SUB=	"@comment "
+.else
+MODULESDIR=	lib/modules
+XORG_SUB=	"@comment "
+XFREE86_SUB=	""
 .endif
 
 # XXX Should use ${PKG_INFO} XXX
 #
-XSERVVERSION!=	/usr/sbin/pkg_info -O x11-servers/XFree86-4-Server 2>/dev/null | ${GREP} Server- || /usr/sbin/pkg_info -O x11-servers/xorg-server 2>/dev/null | ${GREP} server- || true
+XSERVVERSION!=	/usr/sbin/pkg_info -O x11-servers/XFree86-4-Server 2>/dev/null | ${GREP} Server- || /usr/sbin/pkg_info -O x11-servers/xorg-server 2>/dev/null | ${GREP} server- || /usr/sbin/pkg_info -qO x11-servers/xorg-server-snap
 XLIBVERSION!=	/usr/sbin/pkg_info -O x11/XFree86-4-libraries 2>/dev/null | ${GREP} libraries- || /usr/sbin/pkg_info -O graphics/libGL 2>/dev/null | ${GREP} libGL- || true
 
 PLIST_SUB+=	XSERVVERSION=${XSERVVERSION} XLIBVERSION=${XLIBVERSION} \
