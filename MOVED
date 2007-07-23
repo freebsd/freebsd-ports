@@ -3103,3 +3103,4 @@ graphics/hpoj||2007-07-14|Expired: project discontinued, please switch to print/
 net/jffnms|net-mgmt/jffnms|2007-07-14|move to net-mgmt/jffnms
 java/linux-blackdown-jdk13||2007-07-22|Expired: unfixed security vulnerability
 devel/rx||2007-07-22|Expired: has been decommissioned and is no longer developed
+security/metasploit-devel|security/metasploit|2007-07-23|move to security/metasploit
