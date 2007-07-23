@@ -1,40 +1,56 @@
-# Ports collection makefile for:  metasploit
-# Date created:			  18 Nov 2004
-# Whom:				  Yonatan <onatan@gmail.com>
+# Ports collection makefile for:	metasploit-devel
+# Date created:				18 Nov 2004
+# Whom:					Yonatan <onatan@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	metasploit
-PORTVERSION=	2.7
+DISTVERSION=	3.0-beta-3
 CATEGORIES=	security
-MASTER_SITES=	http://www.metasploit.org/tools/
-DISTNAME=	framework-${PORTVERSION}
+MASTER_SITES=	#
+PKGNAMESUFFIX=	-devel
+DISTNAME=	framework-${DISTVERSION}-svn
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Exploit-Framework for Penetration-Testing
 
-RUN_DEPENDS=	${SITE_PERL}/mach/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu	\
-		${SITE_PERL}/mach/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm \
-		${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion
+RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
+		${LOCALBASE}/bin/gem:${PORTSDIR}/devel/ruby-gems \
+		${LOCALBASE}/lib/ruby/gems/1.8/specifications/activerecord-1.15.3.gemspec:${PORTSDIR}/databases/rubygem-activerecord
 
-CONFLICTS=	metasploit-3*
-DEPRECATED=	This port will soon be replaced by metasploit 3 (security/metasploit-devel)
-EXPIRATION_DATE=	2007-05-30
+SCRIPTS=	msfcli msfconsole msfd msfencode msflicense msfopcode \
+		msfpayload msfpescan msfweb
 
+WRKSRC=	${WRKDIR}/framework-${DISTVERSION}
+RESTRICTED=	May not be re-sold for more than the cost of duplication, nor redistributed after patching
+
+CONFLICTS=	metasploit-2*
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
-REINPLACE_ARGS=	-i ''
+USE_RUBY=	yes
 
-SCRIPTS=	msfcli msfconsole msfelfscan msfencode msflogdump msfpayload \
-		msfpescan msfupdate msfweb msfdldebug
+.include <bsd.port.pre.mk>
 
-post-patch:
-.for f in ${SCRIPTS}
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/${f}
-.endfor
-	@${REINPLACE_CMD} -e 's|framework-2.x|${DATADIR}|' ${WRKSRC}/msfupdate
+.if defined(WITH_MSFWX)
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/wxruby.so:${PORTSDIR}/x11-toolkits/ruby-wx
+SCRIPTS+=	msfwx
+PLIST_SUB+=	MSF=""
+.else
+PLIST_SUB+=	MSF="@comment "
+.endif
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+ECHO_MSG=/usr/bin/printf
+IGNORE=\n \
+Due to licensing restrictions you have to accept the Metasploit Framework\n \
+License before downloading ${DISTNAME}${EXTRACT_SUFX}. Please direct your\n \
+web browser to http://metasploit.com/projects/Framework/msf3/ to read and\n \
+accept the license. Once downloaded, save ${DISTNAME}${EXTRACT_SUFX} \n \
+in ${DISTDIR} and try again.\n
+.endif
+
+post-extract:
+	@${FIND} ${WRKSRC}/ -type d -name '.svn' | ${XARGS} ${RM} -rf
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -43,4 +59,4 @@ do-install:
 	${LN} -s ${DATADIR}/${f} ${PREFIX}/bin
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
