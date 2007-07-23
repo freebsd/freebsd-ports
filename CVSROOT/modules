@@ -11249,6 +11249,7 @@ p5-XML-Atom-SimpleFeed	ports/textproc/p5-XML-Atom-SimpleFeed
 p5-XML-Atom-Stream	ports/textproc/p5-XML-Atom-Stream
 p5-XML-Atom-Syndication	ports/textproc/p5-XML-Atom-Syndication
 p5-XML-AutoWriter	ports/textproc/p5-XML-AutoWriter
+p5-XML-Canonical	ports/textproc/p5-XML-Canonical
 p5-XML-Catalog	ports/textproc/p5-XML-Catalog
 p5-XML-Clean	ports/textproc/p5-XML-Clean
 p5-XML-Compile	ports/textproc/p5-XML-Compile
