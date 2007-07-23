@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	jabber
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.1.1
 PORTEPOCH=	1
 CATEGORIES=	net-im ipv6
-MASTER_SITES=	http://download.jabberd.org/jabberd14/
+MASTER_SITES=	http://download.jabberd.org/jabberd14/ \
+		http://download.jabberd.org/jabberd14/old/
 DISTNAME=	jabberd14-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
