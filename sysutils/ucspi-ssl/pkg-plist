@@ -4,7 +4,3 @@ bin/sslclient
 bin/sslconnect
 bin/sslserver
 bin/sslperl
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/UCSPI-SSL
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

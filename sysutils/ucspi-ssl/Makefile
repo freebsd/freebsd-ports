@@ -7,18 +7,18 @@
 
 PORTNAME=	ucspi-ssl
 PORTVERSION?=	0.70
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.superscript.com/ucspi-ssl/ \
 		http://dev.qmailrocks.org/downloads/qmailrocks_3.0-beta/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER?=	lx@redundancy.redundancy.org
+MAINTAINER?=	lx@FreeBSD.org
 COMMENT?=	UCSPI tools for building SSL client-server applications
 
-BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp \
-		${BUILD_DEPENDS}
+		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 CONFLICTS?=	ucspi-ssl-tls-[0-9]*
 
@@ -26,7 +26,7 @@ USE_PERL5=	yes
 
 RESTRICTED=	Non-explicit licensing terms
 
-DOCS=		CHANGES TODO UCSPI-SSL
+PORTDOCS=	CHANGES TODO UCSPI-SSL
 
 WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
 
@@ -65,7 +65,7 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/src && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC}/src && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
