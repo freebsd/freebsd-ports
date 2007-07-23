@@ -8251,8 +8251,8 @@ nvi-devel	ports/editors/nvi-devel
 nvi-m17n	ports/editors/nvi-m17n
 nvi-perl	ports/editors/nvi-perl
 nvidia-driver	ports/x11/nvidia-driver
-nvidia-driver-7184	ports/x11/nvidia-driver-7184
-nvidia-driver-9631	ports/x11/nvidia-driver-9631
+nvidia-driver-71xx	ports/x11/nvidia-driver-71xx
+nvidia-driver-96xx	ports/x11/nvidia-driver-96xx
 nvidia-settings	ports/x11/nvidia-settings
 nvidia-xconfig	ports/x11/nvidia-xconfig
 nvnet		ports/net/nvnet
