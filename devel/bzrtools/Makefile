@@ -10,7 +10,7 @@ PORTVERSION=	0.18.0
 CATEGORIES=	devel
 MASTER_SITES=	http://panoramicfeedback.com/opensource/
 
-MAINTAINER=	lulf@pvv.ntnu.no
+MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Extensions to devel/bazaar-ng
 
 RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng \
