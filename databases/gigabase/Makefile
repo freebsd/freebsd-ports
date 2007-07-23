@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gigabase
-PORTVERSION=	3.49
-PORTREVISION=	0
+PORTVERSION=	3.58
 CATEGORIES=	databases
-MASTER_SITES=	http://www.garret.ru/~knizhnik/
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-Relational Database Management System
@@ -21,6 +20,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS?=--prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
 
 .include <bsd.port.mk>
