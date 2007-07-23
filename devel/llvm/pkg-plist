@@ -265,6 +265,7 @@ lib/LLVMCBackend.o
 lib/LLVMExecutionEngine.o
 lib/LLVMHello.a
 lib/LLVMHello.la
+lib/LLVMHello.so
 lib/LLVMHello.so.0
 lib/LLVMIA64.o
 lib/LLVMInterpreter.o
