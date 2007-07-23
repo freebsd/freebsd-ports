@@ -14,7 +14,6 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Multi-purpose .wav processing utility
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 SHN_ALIASES=	tool len fix hash pad join split cat cmp cue conv info strip gen trim
 PLIST_FILES=	${SHN_ALIASES:S|^|bin/shn|}
 MAN1=		shntool.1

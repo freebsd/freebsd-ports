@@ -36,7 +36,7 @@ BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-login-watch --localstatedir=/var \
-		--mandir=${PREFIX}/man --enable-suidcheck
+		--enable-suidcheck
 
 .if !defined(WITHOUT_XML_LOGS)
 CONFIGURE_ARGS+=	--enable-xml-log

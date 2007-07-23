@@ -15,8 +15,7 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--infodir=${PREFIX}/${INFO_PATH} --mandir=${PREFIX}/man \
-		--enable-all
+CONFIGURE_ARGS=	--enable-all
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

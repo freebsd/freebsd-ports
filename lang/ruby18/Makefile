@@ -21,8 +21,7 @@ COMMENT?=	An object-oriented interpreted scripting language
 GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
-		--enable-shared --with-openssl-include=${OPENSSLINC} \
-		--mandir=${PREFIX}/man
+		--enable-shared --with-openssl-include=${OPENSSLINC}
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 

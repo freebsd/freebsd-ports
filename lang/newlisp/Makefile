@@ -90,7 +90,6 @@ post-patch:
 	@${REINPLACE_CMD} -E -e "s,install -m 644, \$${BSD_INSTALL_DATA},g" \
 		-e "s,install -m 755, \$${BSD_INSTALL_SCRIPT},g" \
 		-e "s,^(datadir=).*,\1${PREFIX}/share,g" \
-		-e "s,^(mandir=).*,\1${PREFIX}/man,g" \
 		-e "s,^(bindir=).*,\1${PREFIX}/bin,g" \
 		${WRKSRC}/Makefile
 

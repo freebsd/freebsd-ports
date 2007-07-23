@@ -22,7 +22,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--with-gcc --with-gnu-ld --with-gnu-as \
-		--disable-nls --infodir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info
+		--disable-nls
+INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 MAN1=		${PKGNAMEPREFIX}ar.1 ${PKGNAMEPREFIX}nm.1 \
 		${PKGNAMEPREFIX}objdump.1 ${PKGNAMEPREFIX}ranlib.1 \
 		${PKGNAMEPREFIX}size.1 ${PKGNAMEPREFIX}strings.1 \

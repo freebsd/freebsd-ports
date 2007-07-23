@@ -32,7 +32,6 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-default-fonts=${X11BASE}/lib/X11/fonts \
 		--with-cache-dir=/var/db/fontconfig \
 		--without-add-fonts \
-		--mandir=${PREFIX}/man \
 		--disable-docs
 MAKE_ENV=	LC_ALL=C
 PKGINSTALL=	${WRKDIR}/pkg-install

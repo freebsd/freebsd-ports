@@ -24,7 +24,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
 MAN1=		fbrun.1 fbsetbg.1 fbsetroot.1 fluxbox.1 fluxstyle.1 \

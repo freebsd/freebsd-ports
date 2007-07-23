@@ -39,7 +39,6 @@ LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@mandir@|${PREFIX}/man|' ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/ doc / /g' ${WRKSRC}/Makefile.in
 
 post-install:

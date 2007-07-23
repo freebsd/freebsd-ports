@@ -36,7 +36,7 @@ NO_BUILD=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--infodir=${PREFIX}/info \
-		--mandir=${PREFIX}/man
+		--mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
 
 OPTIONS=	FLAC "Enable FLAC support" off

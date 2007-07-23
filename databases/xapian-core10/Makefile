@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	miwi
 MAINTAINER=	jean-francois.dockes@wanadoo.fr
 COMMENT=	A probabilistic text search database engine
 
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

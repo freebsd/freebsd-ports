@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/1.6/src/
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 GNU_CONFIGURE=	yes
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 USE_GCC=	3.3+

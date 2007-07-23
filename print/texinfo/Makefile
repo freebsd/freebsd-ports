@@ -25,7 +25,6 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 MAKE_ARGS=	TEXMF=${PREFIX}/${TEXMFLOCAL}
 CONFIGURE_ARGS= \
-		--infodir=${PREFIX}/${INFO_PATH} \
 		--without-included-gettext
 CONFIGURE_ENV=	\
 		CPPFLAGS="-I${LOCALBASE}/lib" \

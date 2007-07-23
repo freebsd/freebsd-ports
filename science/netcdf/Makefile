@@ -17,7 +17,7 @@ COMMENT=	Library for machine-independent, array-oriented data access
 
 CONFLICTS=	hdf-4.*
 
-CONFIGURE_ARGS=	--enable-shared --mandir=${PREFIX}/man --disable-f77
+CONFIGURE_ARGS=	--enable-shared --disable-f77
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -fPIC -DPIC -Df2cFortran"
 
 USE_BZIP2=	YES

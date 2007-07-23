@@ -37,8 +37,8 @@ USE_XLIB=	yes
 USE_XORG=	xbitmaps
 .endif
 CONFIGURE_ARGS+=	--with-line-space \
-	--bindir='$${archlibdir}' \
-	--infodir='$${datadir}/emacs/$${version}/info'
+	--bindir='$${archlibdir}'
+INFO_PATH=	${DATADIR_REL}/${EMACS_VER}/info
 MAKE_ARGS+=	manext=20.1
 
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"

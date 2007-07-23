@@ -21,7 +21,6 @@ USE_BZIP2=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_TARGET=	--build ${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man
 .if ${MACHINE_CPU:Mi586}
 MACHINE_ARCH=	i586
 .endif

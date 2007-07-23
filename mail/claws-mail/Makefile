@@ -43,8 +43,7 @@ MAN1=		claws-mail.1
 CONFIGURE_ARGS=	\
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-manualdir=${DOCSDIR}/manual \
-		--with-faqdir=${DOCSDIR}/faq \
-		--mandir=${PREFIX}/man
+		--with-faqdir=${DOCSDIR}/faq
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \

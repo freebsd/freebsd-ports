@@ -17,7 +17,7 @@ USE_BZIP2=	yes
 USE_SDL=	mixer image net sdl
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-transform-name= --mandir="${MANPREFIX}/man"
+CONFIGURE_ARGS=	--program-transform-name=
 
 MAN6=		freedroidRPG.6
 

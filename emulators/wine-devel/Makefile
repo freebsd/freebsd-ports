@@ -23,7 +23,7 @@ LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		xml2:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --datadir=${DATADIR}
+CONFIGURE_ARGS=	--datadir=${DATADIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		EXTRA_BINARIES="wine-kthread"

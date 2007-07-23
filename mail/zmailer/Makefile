@@ -45,7 +45,6 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/ \
 		--with-vacationpath=${PREFIX}/bin/vacation \
 		--includedir=${PREFIX}/include \
 		--libdir=${PREFIX}/lib \
-		--mandir=${PREFIX}/man \
 		--with-ta-mmap
 
 MAN1=		rmail.1zm vacation.1zm zmailer.1zm zmsh.1zm mboxpath.1zm mailq.1zm \

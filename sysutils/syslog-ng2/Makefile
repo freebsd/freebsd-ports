@@ -26,7 +26,7 @@ NO_LATEST_LINK=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
-CONFIGURE_ARGS=	--enable-dynamic-linking --mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--enable-dynamic-linking
 
 .if defined(WITH_TCP_WRAPPERS)
 CONFIGURE_ARGS+=--enable-tcp-wrapper

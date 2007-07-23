@@ -39,8 +39,4 @@ MAN1=		gnome-dictionary.1 gnome-search-tool.1 gnome-system-log.1 \
 GCONF_SCHEMAS=	gnome-dictionary.schemas gnome-screenshot.schemas \
 		gnome-search-tool.schemas logview.schemas baobab.schemas
 
-post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} -n 10 \
-		${REINPLACE_CMD} -e 's|@mandir@|${PREFIX}/man|'
-
 .include <bsd.port.mk>

@@ -23,8 +23,7 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 
-CONFIGURE_ARGS+=--enable-kipi \
-		--mandir=${MANPREFIX}/man
+CONFIGURE_ARGS+=--enable-kipi
 
 MAN1=	gwenview.1
 

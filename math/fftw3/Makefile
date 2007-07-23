@@ -95,10 +95,6 @@ PLIST_SUB+=	DEF="@comment "
 PLIST_SUB+=	FFTW3_SUFX="${FFTW3_SUFX}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@infodir@|${PREFIX}/info|; \
-		s|@mandir@|${PREFIX}/man|' \
-		${WRKSRC}/doc/Makefile.in \
-		${WRKSRC}/tools/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|/etc/fftw|${PREFIX}/etc/fftw|' \
 		${WRKSRC}/Makefile.in \

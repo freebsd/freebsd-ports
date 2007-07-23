@@ -36,7 +36,6 @@ MAN1=		tor.1 tor-resolve.1 torify.1
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
 CONFIGURE_ENV+=	CPPFLAGS+=-I{LOCALBASE}/include \
 		LDFLAGS+=-L{LOCALBASE}/lib
 

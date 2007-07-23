@@ -30,9 +30,8 @@ PLIST_SUB+=	DPKGDIR=${DPKGDIR:C,^/,,}
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST+=	DPKGDIR=${DPKGDIR}
 
-CONFIGURE_ARGS+=--with-admindir=${DPKGDIR} --mandir=${PREFIX}/man \
-		--libdir=${PREFIX}/libexec --program-transform-name="" \
-		--infodir=${PREFIX}/info --with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=--with-admindir=${DPKGDIR} --libdir=${PREFIX}/libexec \
+		--program-transform-name="" --with-libintl-prefix=${LOCALBASE}
 
 MANLANG=	"" de fr hu ja pl ru sv
 

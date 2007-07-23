@@ -27,7 +27,6 @@ USE_XLIB=	yes
 CONFIGURE_ARGS=--prefix=${PREFIX} \
 	--enable-ansi \
 	--enable-machine=FreeBSD \
-	--infodir=${PREFIX}/info \
 	--enable-info=${PREFIX}/info \
 	--enable-tkconfig=${LOCALBASE}/lib/tk8.4 \
 	--enable-tclconfig=${LOCALBASE}/lib/tcl8.4 \

@@ -26,8 +26,7 @@ USE_ICONV=	yes
 WRKSRC=		${WRKDIR}/librapi-${PORTVERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE} \
-			--with-libsynce=${LOCALBASE} \
-			--mandir=${MANPREFIX}/man
+			--with-libsynce=${LOCALBASE}
 
 USE_LDCONFIG=	yes
 

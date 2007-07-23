@@ -24,7 +24,7 @@ MANLANG=	"" fr it
 MAN1=		worker.1
 
 CFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ARGS=	--disable-libxpkmaster --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--disable-libxpkmaster
 
 .include <bsd.port.pre.mk>
 

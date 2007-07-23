@@ -20,7 +20,6 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--infodir=${PREFIX}/info
 INSTALLS_SHLIB=	yes
 
 INFO=	gcrypt

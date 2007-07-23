@@ -14,7 +14,7 @@ MAINTAINER=	pankov_p@mail.ru
 COMMENT=	A POP3 server that allows logins, but never returns any email
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--libexecdir="${TARGETDIR}/bin" --mandir="${TARGETDIR}/man"
+CONFIGURE_ARGS+=--libexecdir="${TARGETDIR}/bin"
 
 PLIST_FILES=	bin/nullpop
 MAN8=		nullpop.8

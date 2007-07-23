@@ -22,7 +22,6 @@ USE_XLIB=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnomehier gnometarget gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

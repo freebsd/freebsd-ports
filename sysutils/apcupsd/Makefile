@@ -24,9 +24,8 @@ COMMENT=	A daemon for controlling APC UPS
 USE_GETTEXT=	yes
 USE_RC_SUBR=	apcupsd
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --sbindir=${PREFIX}/sbin \
-		--mandir=${MANPREFIX}/man \
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--sbindir=${PREFIX}/sbin \
 		--with-nologin=/var/run \
 		--disable-install-distdir \
 		--sysconfdir=${PREFIX}/etc/apcupsd \

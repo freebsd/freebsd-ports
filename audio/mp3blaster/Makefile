@@ -20,8 +20,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}" \
-		--infodir="${PREFIX}/info" --mandir="${PREFIX}/man"
+CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}"
 
 MAN1=		mp3blaster.1 nmixer.1 splay.1
 

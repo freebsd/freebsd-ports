@@ -39,7 +39,7 @@ PORTDOCS=	README BUGS COPYING ChangeLog
 
 # By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd
 WWWDIR?=	${PREFIX}/www
-CONFIGURE_ARGS+=--with-rootdir=${WWWDIR} --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS+=--with-rootdir=${WWWDIR}
 
 .include <bsd.port.pre.mk>
 

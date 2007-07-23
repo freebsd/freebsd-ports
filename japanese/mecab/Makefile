@@ -24,8 +24,6 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I ${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
-
 # Default charset (euc-jp/shift_jis/utf-8)
 .if defined(WITH_CHARSET)
 CONFIGURE_ARGS+=	--with-charset=${WITH_CHARSET}

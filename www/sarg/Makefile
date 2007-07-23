@@ -24,8 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC=gcc CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-bindir="${PREFIX}/bin" \
 		--enable-sysconfdir="${PREFIX}/etc/${PORTNAME}" \
-		--enable-htmldir="${PREFIX}/www/${PORTNAME}" \
-		--enable-mandir="${MAN1PREFIX}/man/man1"
+		--enable-htmldir="${PREFIX}/www/${PORTNAME}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		sarg.1

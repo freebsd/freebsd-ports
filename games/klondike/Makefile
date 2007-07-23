@@ -15,8 +15,7 @@ MAINTAINER=	faber@isi.edu
 COMMENT=	A solitaire game for X11
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --datadir=${PREFIX}/share/games \
-		--mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --datadir=${PREFIX}/share/games
 USE_TK_RUN=	yes
 MAN6=		klondike.6
 

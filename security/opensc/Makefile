@@ -33,8 +33,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
-
 DOC_FILES=	README *.sh *.xsl *.css *.html api html tools
 
 PORTDOCS=	*

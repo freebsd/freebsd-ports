@@ -33,7 +33,7 @@ PATCH_STRIP=	-p1
 
 BF_LIBS?=		-ldb-4.3
 BF_CPPFLAGS?=		-I${LOCALBASE}/include/db43 -I${LOCALBASE}/include
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc --mandir=${PREFIX}/man
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 .if !defined(WITHOUT_UNICODE)
 CONFIGURE_ARGS+=	--enable-unicode
 USE_ICONV=		yes

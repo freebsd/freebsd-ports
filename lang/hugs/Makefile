@@ -29,8 +29,7 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=	--with-pthreads \
-			--mandir=${PREFIX}/man
+CONFIGURE_ARGS+=	--with-pthreads
 
 .if ${ARCH} == "ia64"
 BROKEN=		dumps core during build on ${ARCH}

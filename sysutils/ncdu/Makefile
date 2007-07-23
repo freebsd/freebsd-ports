@@ -14,7 +14,6 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Ncurses du(1)
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 

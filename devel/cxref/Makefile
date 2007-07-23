@@ -20,7 +20,7 @@ COMMENT=	C program cross-referencing & documentation tool
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-cxref-cpp --mandir="${PREFIX}/man"
+CONFIGURE_ARGS=	--without-cxref-cpp
 ALL_TARGET=	programs
 
 MAN1=		cxref.1 cxref-query.1

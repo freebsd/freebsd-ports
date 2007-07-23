@@ -18,7 +18,6 @@ BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--infodir=${PREFIX}/info
 USE_GMAKE=	yes
 
 INFO=	guile-library

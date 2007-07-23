@@ -28,8 +28,7 @@ USE_GNOME=	gnomehack desktopfileutils intlhack libxslt
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4+
-CONFIGURE_ARGS=	--with-popt \
-		--mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--with-popt
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 

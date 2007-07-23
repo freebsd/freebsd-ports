@@ -23,13 +23,11 @@ RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect \
 USE_PERL5=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=			\
-		--prefix=${PREFIX}/ \
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	\
 		--localstatedir=${PREFIX}/var/${PORTNAME}/ \
 		--bindir=${PREFIX}/libexec/${PORTNAME}/ \
-		--sysconfdir=${PREFIX}/etc/${PORTNAME}/ \
-		--mandir=${PREFIX}/man
+		--sysconfdir=${PREFIX}/etc/${PORTNAME}/
 
 MAN1=		alogin.1 blogin.1 cat5rancid.1 clogin.1 control_rancid.1 \
 		cssrancid.1 elogin.1 erancid.1 f10rancid.1 flogin.1 fnrancid.1 \

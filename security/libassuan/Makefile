@@ -20,8 +20,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INFO=		assuan
 
-CONFIGURE_ARGS+=--infodir=${PREFIX}/info
-
 CFLAGS+=	-I${LOCALBASE}/include/pth
 
 .include <bsd.port.mk>

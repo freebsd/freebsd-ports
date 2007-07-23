@@ -22,7 +22,7 @@ USE_XLIB=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --enable-cli --disable-doc
+CONFIGURE_ARGS=	--enable-cli --disable-doc
 
 MAN1=		cnee.1
 INFO=		cnee xnee

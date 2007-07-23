@@ -25,8 +25,7 @@ LATEST_LINK=	automake${BUILD_VERSION}
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION} \
-		--infodir=${PREFIX}/info --mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INFO=		automake${BUILD_VERSION}
 

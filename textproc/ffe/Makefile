@@ -14,7 +14,6 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Flat file extractor
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MAN1PREFIX}/man
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 PORTDOCS=	${PORTNAME}.html

@@ -9,6 +9,7 @@ bin/ootags
 bin/rcs-checkin
 bin/xemacs
 bin/xemacs-%%XEMACS_VER%%
+info/xemacs-%%XEMACS_VER%%/dir
 @exec mkdir -p %D/lib/xemacs/site-lisp ; chmod 755 %D/lib/xemacs/site-lisp
 lib/xemacs-%%XEMACS_VER%%/etc/COPYING
 lib/xemacs-%%XEMACS_VER%%/etc/ChangeLog
@@ -860,46 +861,6 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/sorted-doc
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/vcdiff
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/wakeup
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/yow
-lib/xemacs-%%XEMACS_VER%%/info/beta.info
-lib/xemacs-%%XEMACS_VER%%/info/cl.info
-lib/xemacs-%%XEMACS_VER%%/info/custom.info
-lib/xemacs-%%XEMACS_VER%%/info/dir
-lib/xemacs-%%XEMACS_VER%%/info/emodules.info
-lib/xemacs-%%XEMACS_VER%%/info/external-widget.info
-lib/xemacs-%%XEMACS_VER%%/info/info.info
-lib/xemacs-%%XEMACS_VER%%/info/internals.info
-lib/xemacs-%%XEMACS_VER%%/info/internals.info-1
-lib/xemacs-%%XEMACS_VER%%/info/internals.info-2
-lib/xemacs-%%XEMACS_VER%%/info/internals.info-3
-lib/xemacs-%%XEMACS_VER%%/info/internals.info-4
-lib/xemacs-%%XEMACS_VER%%/info/internals.info-5
-lib/xemacs-%%XEMACS_VER%%/info/lispref.info
-lib/xemacs-%%XEMACS_VER%%/info/lispref.info-1
-lib/xemacs-%%XEMACS_VER%%/info/lispref.info-2
-lib/xemacs-%%XEMACS_VER%%/info/lispref.info-3
-lib/xemacs-%%XEMACS_VER%%/info/lispref.info-4
-lib/xemacs-%%XEMACS_VER%%/info/lispref.info-5
-lib/xemacs-%%XEMACS_VER%%/info/lispref.info-6
-lib/xemacs-%%XEMACS_VER%%/info/lispref.info-7
-lib/xemacs-%%XEMACS_VER%%/info/lispref.info-8
-lib/xemacs-%%XEMACS_VER%%/info/lispref.info-9
-lib/xemacs-%%XEMACS_VER%%/info/lispref.info-10
-lib/xemacs-%%XEMACS_VER%%/info/new-users-guide.info
-lib/xemacs-%%XEMACS_VER%%/info/standards.info
-lib/xemacs-%%XEMACS_VER%%/info/term.info
-lib/xemacs-%%XEMACS_VER%%/info/termcap.info
-lib/xemacs-%%XEMACS_VER%%/info/texinfo.info
-lib/xemacs-%%XEMACS_VER%%/info/texinfo.info-1
-lib/xemacs-%%XEMACS_VER%%/info/texinfo.info-2
-lib/xemacs-%%XEMACS_VER%%/info/widget.info
-lib/xemacs-%%XEMACS_VER%%/info/xemacs-faq.info
-lib/xemacs-%%XEMACS_VER%%/info/xemacs-faq.info-1
-lib/xemacs-%%XEMACS_VER%%/info/xemacs-faq.info-2
-lib/xemacs-%%XEMACS_VER%%/info/xemacs.info
-lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-1
-lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-2
-lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-3
-lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-4
 lib/xemacs-%%XEMACS_VER%%/lisp/ChangeLog
 lib/xemacs-%%XEMACS_VER%%/lisp/ChangeLog.GTK
 lib/xemacs-%%XEMACS_VER%%/lisp/README
@@ -1457,7 +1418,6 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/term
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mule
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp
-@dirrm lib/xemacs-%%XEMACS_VER%%/info
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include

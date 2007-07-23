@@ -23,8 +23,7 @@ INSTALLS_SHLIB=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--infodir=${PREFIX}/${INFO_PATH}
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_PERL5_BUILD=yes
 
 INFO=		ksba

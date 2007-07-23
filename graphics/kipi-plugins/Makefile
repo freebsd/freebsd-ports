@@ -48,8 +48,6 @@ USE_KDELIBS_VER=3
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
-
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_ACQUIREIMAGES)

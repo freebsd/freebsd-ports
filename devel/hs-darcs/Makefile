@@ -20,7 +20,6 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 OPTIONS=	SERVER "install server" off
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${PREFIX}/lib/ ${PTHREAD_LIBS}" \
 		CFLAGS=""

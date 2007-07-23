@@ -24,8 +24,7 @@ OPTIONS=	VORBIS "Ogg Vorbis support" on \
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--without-alsa
+CONFIGURE_ARGS=	--without-alsa
 
 MAN1=		darkice.1
 MAN5=		darkice.cfg.5

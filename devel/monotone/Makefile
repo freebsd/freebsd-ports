@@ -21,7 +21,6 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--infodir=${PREFIX}/${INFO_PATH} --mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		MAKEINFO="makeinfo --no-split"

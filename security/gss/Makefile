@@ -26,8 +26,7 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--disable-kerberos5 \
-		--infodir=${PREFIX}/${INFO_PATH} --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--disable-kerberos5
 USE_LDCONFIG=	yes
 
 INFO=		gss

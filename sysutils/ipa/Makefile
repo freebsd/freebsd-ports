@@ -32,8 +32,6 @@ OPTIONS=	AUTORULES "Enable dynamic rules support" on \
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
-
 .if defined(WITHOUT_AUTORULES)
 CONFIGURE_ARGS+=	--disable-autorules
 .endif

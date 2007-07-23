@@ -27,7 +27,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}/Modules/@VERSION@ \
 		--without-x \
 		--with-version-path=${PREFIX}/Modules/versions \
-		--mandir=${PREFIX}/man \
+		--mandir=${MANPREFIX}/man \
 		--with-tcl-version=${TCL_VER} \
 		--with-tcl-include=${LOCALBASE}/include/tcl${TCL_DVER} \
 		--with-tcl-libraries=${LOCALBASE}/lib/

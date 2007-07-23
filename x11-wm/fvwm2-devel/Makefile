@@ -25,8 +25,7 @@ CONFLICTS?=	fvwm-1.* fvwm-2.4.*
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man \
-		--with-png-library=${LOCALBASE}/lib
+CONFIGURE_ARGS=	--with-png-library=${LOCALBASE}/lib
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_BZIP2=	yes

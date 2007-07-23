@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 PLIST_FILES=	bin/netrik
 

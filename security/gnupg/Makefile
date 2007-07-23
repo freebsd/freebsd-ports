@@ -31,7 +31,6 @@ USE_ICONV=	YES
 USE_LDCONFIG=	YES
 USE_GETTEXT=	YES
 CONFIGURE_TARGET=# empty
-CONFIGURE_ARGS+=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man
 CONFIGURE_ARGS+=	--enable-nls
 MAN1=		gpg2.1 gpgsm.1 gpgv2.1 gpg-agent.1 scdaemon.1 watchgnupg.1 \
 		gpgconf.1 gpg-preset-passphrase.1 gpg-connect-agent.1 \

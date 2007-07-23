@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig ltverhack
-CONFIGURE_ARGS+=	--without-pam --disable-pgsql --disable-bonjour --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS+=	--without-pam --disable-pgsql --disable-bonjour
 CONFIGURE_ENV=	CPPFLAGS="${CPPLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

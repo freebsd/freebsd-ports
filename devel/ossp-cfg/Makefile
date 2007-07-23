@@ -19,7 +19,7 @@ LIB_DEPENDS=	ex.10:${PORTSDIR}/devel/ossp-ex
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-ex=${LOCALBASE} --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--with-ex=${LOCALBASE}
 USE_LDCONFIG=	yes
 
 MAN3=		cfg.3

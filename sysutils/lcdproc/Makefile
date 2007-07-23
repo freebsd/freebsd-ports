@@ -24,9 +24,7 @@ USE_RC_SUBR=	LCDd lcdproc
 
 CONFIGURE_ARGS=	--enable-drivers=all \
 		--disable-ldap \
-		--disable-doxygen \
-		--mandir=${PREFIX}/man \
-		--infodir=${PREFIX}/info
+		--disable-doxygen
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 
 MAN1=		lcdexec.1 lcdproc.1

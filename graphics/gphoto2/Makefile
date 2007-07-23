@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--without-cdk --mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--without-cdk
 
 MAN1=		gphoto2.1
 

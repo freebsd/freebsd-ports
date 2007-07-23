@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
-CONFIGURE_ARGS=	--with-ssl --with-openssl --disable-konst --mandir="${MANPREFIX}/man"
+CONFIGURE_ARGS=	--with-ssl --with-openssl --disable-konst
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFLICTS=	centericq-[0-9]*
 

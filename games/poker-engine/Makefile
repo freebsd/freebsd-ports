@@ -23,7 +23,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 USE_GNOME=	gnometarget pkgconfig
 USE_PYTHON=	2.3+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 USE_GMAKE=	yes
 
 MAN8=	pokerconfigupgrade.8

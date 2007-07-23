@@ -49,7 +49,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCA
 		THREAD_LIBS="${PTHREAD_LIBS}" \
 		EXTRA_X_LIBS="-lGL -lGLU -lXext -lX11 -lm"
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 --enable-ipv6 \
-		--mandir=${PREFIX}/man --with-external-libmad \
+		--with-external-libmad \
 		--with-external-libdts --with-libflac --disable-v4l
 
 OPTIONS=	ARTS "Enable aRts support" off \

@@ -18,8 +18,7 @@ COMMENT=	IRC client for Emacs
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--infodir=${PREFIX}/${INFO_PATH} \
-		--with-emacs=${EMACS_CMD} \
+CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 USE_GMAKE=	yes
 USE_RUBY=	yes

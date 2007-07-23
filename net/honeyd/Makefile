@@ -22,8 +22,7 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
-		--with-libevent=${LOCALBASE} \
-		--mandir=${MANPREFIX}/man
+		--with-libevent=${LOCALBASE}
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	2.4

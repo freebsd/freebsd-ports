@@ -21,8 +21,7 @@ USE_GETOPT_LONG=yes
 USE_GNOME=	gnometarget gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${WRKSRC}/popt -I${LOCALBASE}/include
-CONFIGURE_ARGS+=--with-libiconv=${LOCALBASE}  --with-included-popt --enable-conduits \
-		 --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS+=--with-libiconv=${LOCALBASE}  --with-included-popt --enable-conduits
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS:S/-Werror//}" # clear -Werror from CFLAGS
 USE_LDCONFIG=	yes
 

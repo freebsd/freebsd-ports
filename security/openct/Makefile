@@ -28,8 +28,6 @@ SUB_FILES=	etoken.conf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
-
 MAN1=		openct-tool.1
 
 DOC_FILES=	README export-wiki.sh export-wiki.xsl trac.css *.html api

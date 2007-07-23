@@ -43,7 +43,7 @@ PORTDOCS=	README COPYING ChangeLog
 .include <bsd.port.pre.mk>
 # By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
-CONFIGURE_ARGS+=--with-rootdir=${WWWDIR} --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS+=--with-rootdir=${WWWDIR}
 
 .if !defined(WITHOUT_SSL)
 .include <${PORTSDIR}/Mk/bsd.openssl.mk>

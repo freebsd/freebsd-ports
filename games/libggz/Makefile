@@ -18,7 +18,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--disable-debug --mandir="${MANPREFIX}/man"
+CONFIGURE_ARGS=	--disable-debug
 USE_LDCONFIG=	yes
 
 MAN3=	ggz.h.3

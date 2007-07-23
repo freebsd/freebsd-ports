@@ -17,7 +17,6 @@ COMMENT=	Alternative C/C++ preprocessor
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 MAN1=		mcpp.1
 
 PLIST_FILES=	bin/mcpp    \

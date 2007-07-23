@@ -122,8 +122,6 @@ post-patch:
 			${WRKSRC}/plug-ins/pygimp/Makefile.in
 	@${REINPLACE_CMD} -e 's|"libpng"|"libpng12"|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|@mandir@|${PREFIX}/man|' \
-		${WRKSRC}/docs/Makefile.in
 
 post-install:
 .if !defined(GIMP_SLAVE)

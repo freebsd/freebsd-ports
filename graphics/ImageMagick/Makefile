@@ -35,7 +35,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15 libltdl:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-shared --mandir=${MANPREFIX}/man --without-dps
+CONFIGURE_ARGS=	--enable-shared --without-dps
 USE_LDCONFIG=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \

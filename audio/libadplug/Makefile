@@ -30,7 +30,6 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 		CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man --infodir=${PREFIX}/info
 
 INFO=		libadplug
 MAN1=		adplugdb.1

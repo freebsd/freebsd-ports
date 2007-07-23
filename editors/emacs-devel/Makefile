@@ -55,8 +55,6 @@ CONFIGURE_ARGS=		--with-gtk
 CONFIGURE_ARGS+=	--without-xim
 .endif
 
-CONFIGURE_ARGS+=	--infodir='$${prefix}/info' --mandir='$${prefix}/man'
-
 MAN1=		ctags.1 emacs.1 emacsclient.1 etags.1
 PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
 

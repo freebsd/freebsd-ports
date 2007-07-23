@@ -27,7 +27,6 @@ USE_LDCONFIG=	yes
 PREFIX=		/usr
 PKGNAMESUFFIX=	-overwrite-base
 MANPREFIX=	${TARGETDIR}/share
-CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man
 PLIST_SUB+=	NOTBASE="@comment "
 PLIST_SUB+=	BASE=""
 EXTRA_PATCHES+=	${FILESDIR}/patchbase-Makefile.in

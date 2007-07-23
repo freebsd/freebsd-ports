@@ -43,7 +43,7 @@ VARBASE?=	/var
 
 HAS_CONFIGURE=		yes
 CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man			\
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
 			--prefix=${INN_NEWSBASE}		\
 			--with-spool-dir=${INN_NEWSSPOOL}	\
 			--with-log-dir=${INN_LOGDIR}		\

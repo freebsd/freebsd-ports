@@ -14,7 +14,6 @@ MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	The GGZ Gaming Zone - KDE Client
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man"
 USE_GMAKE=	yes
 USE_KDELIBS_VER=	3
 USE_GGZ=	client

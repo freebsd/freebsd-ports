@@ -19,8 +19,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-http --enable-icp --enable-smtp --with-ssl \
-		--enable-ttcp --enable-tos --with-libidn=${LOCALBASE} \
-		--mandir=${LOCALBASE}/man
+		--enable-ttcp --enable-tos --with-libidn=${LOCALBASE}
 
 PING_PLUGINS=	dns random whois
 

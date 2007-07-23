@@ -37,8 +37,7 @@ CONFIGURE_ARGS=	--with-freedesktop_org-menu=${PREFIX}/share/gnome/applications \
 		--with-freedesktop_org-mime=${PREFIX}/share/mime \
 		--without-gnome2_4-mime \
 		--without-gnome2_4-appreg \
-		--with-icon-path=${PREFIX}/share/gnome/pixmaps \
-		--mandir=${MANPREFIX}/man
+		--with-icon-path=${PREFIX}/share/gnome/pixmaps
 
 # Turns debugging output on
 .if defined(WITH_DEBUG)

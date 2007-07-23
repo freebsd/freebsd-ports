@@ -37,8 +37,7 @@ CONFIGURE_ARGS?=--with-distro=freebsd \
 		--disable-doxygen-dot \
 		--localstatedir=/var \
 		--enable-compat-howl \
-		--disable-autoipd \
-		--mandir=${PREFIX}/man
+		--disable-autoipd
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_KQUEUE" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \

@@ -41,7 +41,6 @@ WANT_GNOME=	yes
 .include <bsd.port.pre.mk>
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 .if defined(WITH_STROKE)
 CONFIGURE_ARGS+=	--with-stroke --with-stroke-library=${LOCALBASE}/lib \

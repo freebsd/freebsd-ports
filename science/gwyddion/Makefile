@@ -26,8 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
-		--disable-pascal --disable-pygwy \
-		--mandir=${MANPREFIX}/man
+		--disable-pascal --disable-pygwy
 
 MAKE_ARGS=	pkgconfigdatadir=${PREFIX}/libdata/pkgconfig
 

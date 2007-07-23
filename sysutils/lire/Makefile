@@ -41,7 +41,6 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--with-docbookdir=${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd"
-CONFIGURE_ARGS+="--mandir=${PREFIX}/man"
 CONFIGURE_ENV=	POD2MAN=${LOCALBASE}/bin/pod2man
 
 MAN1=		\

@@ -26,7 +26,7 @@ USE_AUTOTOOLS=	libltdl:15
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=--enable-ltdl-install=no --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=--enable-ltdl-install=no
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		GL_LIBS="-L${X11BASE}/lib"

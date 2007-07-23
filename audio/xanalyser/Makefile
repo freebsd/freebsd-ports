@@ -27,7 +27,6 @@ MAN1=		xanalyser.1
 PLIST_FILES=	bin/xanalyser \
 		lib/X11/app-defaults/XAnalyser
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \

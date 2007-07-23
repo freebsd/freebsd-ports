@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
 USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-suid-install --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--disable-suid-install
 
 MAN1=		tcpspray6.1 addrinfo.1 dnssort.1
 MAN8=		ndisc6.8 rdisc6.8 rltraceroute6.8

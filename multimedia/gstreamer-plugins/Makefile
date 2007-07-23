@@ -55,7 +55,6 @@ USE_GNOME+=	gnomehack gnometarget pkgconfig ltverhack
 USE_AUTOTOOLS=	libtool:15
 GST_PLUGIN?=	base
 
-CONFIGURE_ARGS+=--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -L${LOCALBASE}/lib ${EXTRA_LIBS} ${PTHREAD_LIBS}"

@@ -25,7 +25,7 @@ USE_ICONV=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--libdir="${PREFIX}/libdata" --mandir="${PREFIX}/man"
+CONFIGURE_ARGS=	--libdir="${PREFIX}/libdata"
 
 MAN8=		intltool-extract.8 intltool-merge.8 intltool-prepare.8 \
 		intltool-update.8 intltoolize.8

@@ -23,7 +23,6 @@ INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man"
 
 MAN6=		pioneers.6 pioneers-server-gtk.6 pioneers-server-console.6 \
 		pioneersai.6 pioneers-meta-server.6

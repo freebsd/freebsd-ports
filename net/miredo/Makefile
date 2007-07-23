@@ -15,7 +15,6 @@ COMMENT=		Opensource Teredo (IPv6 tunneling) implementation
 
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--mandir=${MANPREFIX}/man
 USE_LDCONFIG=		yes
 
 MAN1=			teredo-mire.1

@@ -24,7 +24,6 @@ USE_XLIB=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--mandir="${PREFIX}/man/"
 MAN1=		openbox.1 openbox-session.1 \
 		openbox-gnome-session.1 openbox-kde-session.1
 

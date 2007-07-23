@@ -25,7 +25,6 @@ CONFIGURE_ARGS+=	--disable-shared \
 			--without-openssl \
 			--disable-libgadu-openssl \
 			--without-libungif \
-			--mandir=${MANPREFIX}/man \
 			--without-libjpeg
 
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \

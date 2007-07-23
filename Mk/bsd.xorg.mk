@@ -42,8 +42,6 @@ DIST_SUBDIR=	xorg/${XORG_CAT}
 MASTER_SITES?=	${MASTER_SITE_XORG}
 MASTER_SITE_SUBDIR?=	individual/${XORG_CAT}
 
-CONFIGURE_ARGS+=	--mandir="${PREFIX}/man/"
-
 . if ${XORG_CAT} == "app"
 USE_GNOME+=	pkgconfig
 . endif

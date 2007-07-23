@@ -17,7 +17,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-libjpeg=${LOCALBASE}
-MAKE_ARGS=	mandir=${PREFIX}/man
+MAKE_ARGS=	mandir=${MANPREFIX}/man
 
 MAN1=		jpegoptim.1
 PLIST_FILES=	bin/jpegoptim

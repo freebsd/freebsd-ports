@@ -28,7 +28,7 @@ MAN8=	bhm.8 postal.8 rabid.8
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --disable-gnutls
+CONFIGURE_ARGS=	--disable-gnutls
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.post.mk>

@@ -23,7 +23,6 @@ USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 LIBTOOLFILES=	pfe/configure
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 MAN1=		pfe.1 pfe-config.1
 

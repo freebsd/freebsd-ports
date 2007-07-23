@@ -32,7 +32,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man --with-docdir=${DOCSDIR} \
+CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} \
 		--disable-locking
 
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}

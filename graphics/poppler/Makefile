@@ -23,8 +23,7 @@ USE_GNOME=	gnomehack gnometarget libxml2
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-zlib \
 		--enable-xpdf-headers \
-		--with-html-dir=${DOCSDIR} \
-		--mandir=${PREFIX}/man
+		--with-html-dir=${DOCSDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 

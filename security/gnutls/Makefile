@@ -34,8 +34,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -fPIC" LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-included-lzo \
-			--infodir="${PREFIX}/info" --mandir="${PREFIX}/man/"
+CONFIGURE_ARGS+=	--with-included-lzo
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>

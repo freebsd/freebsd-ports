@@ -66,9 +66,9 @@ CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--enable-interpreter --enable-hash-synchronization \
 		--without-newlib \
 		--with-gxx-include-dir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include/c++/${GCCVERSION} \
-		--infodir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info \
 		--includedir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include \
 		--datadir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/share
+INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 LIBTOOLFILES=	configure gcc/configure
 MAN1=		${PKGNAMEPREFIX}gcc.1 ${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}g77.1 \

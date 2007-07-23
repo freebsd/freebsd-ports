@@ -41,7 +41,7 @@ USE_OPENSSL=		yes
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--prefix=${PREFIX} --mandir=${MANPREFIX}/man \
+CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--with-md5-passwords --without-zlib-version-check
 PRECIOUS=		ssh_config sshd_config ssh_host_key ssh_host_key.pub \
 			ssh_host_rsa_key ssh_host_rsa_key.pub ssh_host_dsa_key \

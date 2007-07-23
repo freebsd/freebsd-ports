@@ -24,8 +24,6 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man \
-		--infodir=${PREFIX}/info
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 

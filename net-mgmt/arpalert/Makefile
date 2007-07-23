@@ -14,7 +14,7 @@ MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	ARP traffic monitoring
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var --mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--localstatedir=/var
 ALL_TARGET=	${PORTNAME}
 USE_GETOPT_LONG=yes
 

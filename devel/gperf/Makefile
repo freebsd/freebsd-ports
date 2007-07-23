@@ -17,8 +17,6 @@ COMMENT=	Generates perfect hash functions for sets of keywords
 GNU_CONFIGURE=	yes
 MAN1=		gperf.1
 INFO=		gperf
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man \
-			--infodir=${PREFIX}/${INFO_PATH} \
-			--docdir=${DOCSDIR}
+CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 
 .include <bsd.port.mk>

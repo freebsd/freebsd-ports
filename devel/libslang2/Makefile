@@ -30,7 +30,6 @@ INSTALL_TARGET=	install install-static
 MAN1=		slsh.1
 DOCSDIR=	${PREFIX}/share/doc/slang
 DATADIR=	${PREFIX}/share/slsh
-CONFIGURE_ARGS=	--mandir=${MAN1PREFIX}/man
 
 OPTIONS=	PCRE	"Include pcre support" on \
 		PNG	"Include png support"  on \

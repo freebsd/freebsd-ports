@@ -659,7 +659,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # Set the following to specify all .info files your port installs.
 #
 # INFO			- A list of .info files (omitting the trailing ".info");
-#				  only one entry per document!
+#				  only one entry per document! These files are listed in
+#				  the path relative to ${INFO_PATH}.
 # INFO_PATH		- Path, where all .info files will be installed by your
 #				  port, relative to ${PREFIX}
 #				  Default: "share/info" if ${PREFIX} is equal to /usr
@@ -889,7 +890,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: ${ARCH}-portbld-freebsd${OSREL}
 # CONFIGURE_ARGS
 #				- Pass these args to configure if ${HAS_CONFIGURE} is set.
-#				  Default: "--prefix=${PREFIX} ${CONFIGURE_TARGET}" if
+#				  Default: "--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH}
+#				  --mandir=${MANPREFIX}/man ${CONFIGURE_TARGET}" if
 #				  GNU_CONFIGURE is set, "CC=${CC} CCFLAGS=${CFLAGS}
 #				  PREFIX=${PREFIX} INSTALLPRIVLIB=${PREFIX}/lib
 #				  INSTALLARCHLIB=${PREFIX}/lib" if PERL_CONFIGURE is set,
@@ -2977,9 +2979,18 @@ CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer
 .if !defined(CONFIGURE_MAX_CMD_LEN)
 CONFIGURE_MAX_CMD_LEN!=	${SYSCTL} -n kern.argmax
 .endif
-CONFIGURE_ARGS+=	--prefix=${PREFIX} ${CONFIGURE_TARGET}
+CONFIGURE_ARGS+=	--prefix=${PREFIX} $${_LATE_CONFIGURE_ARGS} ${CONFIGURE_TARGET}
 CONFIGURE_ENV+=		lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 HAS_CONFIGURE=		yes
+
+SET_LATE_CONFIGURE_ARGS= \
+     _LATE_CONFIGURE_ARGS="" ; \
+	if [ ! -z "`./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- '--mandir'`" ]; then \
+	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --mandir=${MANPREFIX}/man" ; \
+	fi ; \
+	if [ ! -z "`./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- '--infodir'`" ]; then \
+	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}" ; \
+	fi ;
 .endif
 
 # Passed to most of script invocations
@@ -3107,6 +3118,20 @@ _MANPAGES:=	${_MANPAGES:S%$%.gz%}
 INFO_PATH?=	share/info
 .else
 INFO_PATH?=	info
+.endif
+
+.if defined(INFO)
+. for D in ${INFO:H}
+RD:=	${D}
+.  if ${RD} != "."
+.   if !defined(INFO_SUBDIR)
+INFO_SUBDIR:=	${RD}
+.   elif ${INFO_SUBDIR} != ${RD}
+BROKEN=		only one subdirectory in INFO is allowed
+.   endif
+.  endif
+.undef RD
+. endfor
 .endif
 
 DOCSDIR_REL?=	${DOCSDIR:S,^${TARGETDIR}/,,}
@@ -3723,6 +3748,7 @@ do-configure:
 .endif
 .if defined(HAS_CONFIGURE)
 	@(cd ${CONFIGURE_WRKSRC} && \
+	    ${SET_LATE_CONFIGURE_ARGS} \
 		if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 	    INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
@@ -5859,14 +5885,14 @@ add-plist-info:
 	@${LS} ${TARGETDIR}/${INFO_PATH}/$i.info* | ${SED} -e s:${TARGETDIR}/::g >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec install-info --quiet %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
-	@if [ "`${DIRNAME} $i`" != "." ]; then \
-		${ECHO_CMD} "@unexec ${RMDIR} %D/info/`${DIRNAME} $i` 2> /dev/null || true" >> ${TMPPLIST}; \
-	fi
 .endfor
+.if defined(INFO_SUBDIR)
+	@${ECHO_CMD} "@unexec ${RMDIR} %D/${INFO_PATH}/${INFO_SUBDIR} 2> /dev/null || true" >> ${TMPPLIST}
+.endif
 .if (${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec if [ -f %D/${INFO_PATH}/dir ]; then if sed -e '1,/Menu:/d' %D/${INFO_PATH}/dir | grep -q '^[*] '; then true; else rm %D/${INFO_PATH}/dir; fi; fi" >> ${TMPPLIST}
 .if (${PREFIX} != ${LOCALBASE_REL} && ${PREFIX} != ${X11BASE_REL} && ${PREFIX} != ${LINUXBASE_REL})
-	@${ECHO_CMD} "@unexec rmdir %D/info 2> /dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${INFO_PATH} 2>/dev/null || true" >> ${TMPPLIST}
 .endif
 .endif
 .endif

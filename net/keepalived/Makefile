@@ -24,8 +24,7 @@ USE_RC_SUBR=	keepalived.sh
 
 LDFLAGS+=	-lipvs -L${LOCALBASE}/lib
 
-CONFIGURE_ARGS+=	--with-kernel-dir=${LOCALBASE} \
-		--mandir=${PREFIX}
+CONFIGURE_ARGS+=	--with-kernel-dir=${LOCALBASE}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 MAN1=	genhash.1

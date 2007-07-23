@@ -14,7 +14,6 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Free DTS Coherent Acoustics decoder
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig gnomehack
 USE_LDCONFIG=	yes

@@ -20,7 +20,6 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAN1=		exiv2.1
 ALLTARGET=	all
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 USE_GCC=	3.4+
 
 post-patch:

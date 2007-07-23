@@ -19,8 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/share/guile/site/config/load.scm:${PORTSDIR}/devel/g
 RUN_DEPENDS=	${LOCALBASE}/share/guile/site/config/load.scm:${PORTSDIR}/devel/guile-lib
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--infodir=${PREFIX}/info \
-		--mandir=${PREFIX}/man
 USE_LDCONFIG=	yes
 
 MAN3=	ruin.3

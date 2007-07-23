@@ -116,8 +116,7 @@ gnomeprefix_CONFIGURE_ARGS=--localstatedir=${DESTDIR}${GNOME_LOCALSTATEDIR} \
 			   --with-html-dir=${DESTDIR}${GNOME_HTML_DIR} \
 			   --with-help-dir=${TARGETDIR}/share/gnome/help \
 			   --disable-gtk-doc \
-			   --with-gconf-source=${GCONF_CONFIG_SOURCE} \
-			   --mandir=${PREFIX}/man
+			   --with-gconf-source=${GCONF_CONFIG_SOURCE}
 gnomeprefix_USE_GNOME_IMPL=gnomehier
 .if !defined(WITHOUT_HACK)
 gnomeprefix_PREFIX=${LOCALBASE}

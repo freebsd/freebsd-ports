@@ -19,8 +19,7 @@ USE_GMAKE=	yes
 USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--disable-pyecasound \
+CONFIGURE_ARGS=	--disable-pyecasound \
 		--disable-rubyecasound \
 		--with-largefile \
 		--enable-sys-readline

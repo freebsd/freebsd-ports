@@ -25,7 +25,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
 
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft

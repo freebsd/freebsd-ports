@@ -41,8 +41,7 @@ MAKEFILE=	GNUmakefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 CONFIGURE_ARGS+=	--with-kpathsea-include=${LOCALBASE}/include \
-			--with-kpathsea-lib=${LOCALBASE}/lib \
-			--infodir=${PREFIX}/info
+			--with-kpathsea-lib=${LOCALBASE}/lib 
 CONFIGURE_ENV+=		"CPPFLAGS=${CPPFLAGS}"
 
 .if defined(WITH_SELFBUILT_FONTS)

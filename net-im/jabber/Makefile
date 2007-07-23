@@ -49,7 +49,7 @@ JABBER_SPOOLDIR="/var/spool/jabberd"
 JABBER_LOGDIR=	"/var/log/jabberd"
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --localstatedir=/var \
+CONFIGURE_ARGS=	--localstatedir=/var \
 		--sysconfdir=${JABBER_ETCDIR} \
 		--includedir=${TARGETDIR}/include/jabber \
 		--libdir=${TARGETDIR}/lib/jabber

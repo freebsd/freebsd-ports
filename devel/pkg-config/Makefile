@@ -31,7 +31,6 @@ PC_PATH:=	${PC_PATH}:${LOCALBASE}/lib/pkgconfig
 .endif
 
 CONFIGURE_ARGS=	--disable-threads \
-		--with-pc-path="${PC_PATH}" \
-		--mandir=${MANPREFIX}/man
+		--with-pc-path="${PC_PATH}"
 
 .include <bsd.port.post.mk>

@@ -41,7 +41,6 @@ CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
 		--with-working-dir=${BACULA_DIR} \
 		--with-scriptdir=${PREFIX}/share/${PORTNAME} \
-		--mandir=${PREFIX}/man \
 		--with-readline=yes \
 		--disable-conio
 

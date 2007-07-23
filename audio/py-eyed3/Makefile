@@ -22,7 +22,6 @@ CONFIGURE_ENV=	PYTHON="${PYTHON_CMD}"
 MAKE_ENV=	SETUP_ARGS_BUILD="${PYDISTUTILS_BUILDARGS}" \
 		SETUP_ARGS_INSTALL="${PYDISTUTILS_INSTALLARGS}"
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-MANDIR=		${PREFIX}/man
 
 MAN1=		eyeD3.1
 MANCOMPRESSED=	yes
@@ -34,7 +33,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's,\(setup.py build\),\1 $${SETUP_ARGS_BUILD},g' \
 		-e 's,\(setup.py install\),\1 $${SETUP_ARGS_INSTALL} ,g' \
 		-e 's,^docdir:=.*,docdir:=${DOCSDIR},g' \
-		-e 's,^mandir:=.*,mandir:=${MANDIR},g' \
 		${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's,.*docdir.*,#,g' \

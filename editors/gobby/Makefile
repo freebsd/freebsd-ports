@@ -23,8 +23,6 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig gtksourceview
 
-CONFIGURE_ARGS=	"--mandir=${PREFIX}/man"
-
 PLIST_FILES=	bin/gobby share/pixmaps/gobby.png \
 		share/pixmaps/gobby/userlist.png \
 		share/pixmaps/gobby/doclist.png \

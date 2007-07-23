@@ -40,8 +40,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--with-gcc --with-gnu-ld --with-gnu-as \
 		--disable-nls --disable-win32-registry \
-		--disable-shared \
-		--infodir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info
+		--disable-shared
+INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
 MAN1=	${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}ar.1    \
 	${PKGNAMEPREFIX}as.1 ${PKGNAMEPREFIX}dlltool.1      \

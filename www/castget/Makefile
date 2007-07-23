@@ -21,7 +21,7 @@ USE_GNOME=	glib20 libxml2
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --disable-static
+CONFIGURE_ARGS=	--disable-static
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/castget include/libcastget.h lib/libcastget.la lib/libcastget.so lib/libcastget.so.0

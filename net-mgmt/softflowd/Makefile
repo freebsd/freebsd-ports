@@ -14,7 +14,6 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Softflowd is flow-based network traffic analyser with export
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	"--mandir=${PREFIX}/man"
 USE_GMAKE=	yes
 PLIST_FILES=	sbin/softflowd sbin/softflowctl
 MAN8=		softflowd.8 softflowctl.8

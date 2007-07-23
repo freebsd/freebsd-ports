@@ -17,7 +17,6 @@ COMMENT=	Shared memory allocation library for pre-forked process models
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 MAN1=		mm-config.1
 MAN3=		mm.3

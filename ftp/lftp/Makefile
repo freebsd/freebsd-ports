@@ -61,8 +61,6 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-CONFIGURE_ARGS+=--mandir="${MAN1PREFIX}/man"
-
 MAN1=		lftp.1 lftpget.1
 
 post-install:

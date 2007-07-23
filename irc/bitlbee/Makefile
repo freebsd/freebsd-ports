@@ -33,7 +33,7 @@ OPTIONS=	MSN "Enable MSN protocol support" On \
 		OPENSSL "Use openssl rather than gnutls" Off \
 		IPV6 "Compile IPV6 support" On
 
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man --config=${PREFIX}/etc/bitlbee
+CONFIGURE_ARGS= --config=${PREFIX}/etc/bitlbee
 
 .include <bsd.port.pre.mk>
 

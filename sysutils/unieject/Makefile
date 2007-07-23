@@ -30,7 +30,7 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -lcdio -lconfuse
 CONFIGURE_ENV=	PKG_CONFIG="${TRUE}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} \
-		--with-libpopt-prefix=${LOCALBASE} --mandir=${MANPREFIX}/man
+		--with-libpopt-prefix=${LOCALBASE}
 
 post-patch:
 	${REINPLACE_CMD} -e 's#if.*<<<$$DOXYFORMATS#if false#' ${WRKSRC}/configure

@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--enable-usbdropdir=${LOCALBASE}/lib/pcsc/drivers \
 		--enable-ccidtwindir=${LOCALBASE}/lib/pcsc/drivers/serial \
-		--enable-udev --mandir=${PREFIX}/man
+		--enable-udev
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
 		LIBUSB_CFLAGS="-I${LOCALBASE}/include" \

@@ -23,7 +23,6 @@ USE_SDL=	sdl image mixer ttf gfx net
 USE_GMAKE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--mandir=${MANPREFIX}/man
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

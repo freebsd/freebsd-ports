@@ -25,7 +25,7 @@ USE_AUTOTOOLS=	libltdl:15
 USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/libextractor
-CONFIGURE_ARGS=	--disable-ltdl-install --mandir=${PREFIX}/man --enable-exiv2
+CONFIGURE_ARGS=	--disable-ltdl-install --enable-exiv2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

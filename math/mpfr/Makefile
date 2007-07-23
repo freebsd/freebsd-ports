@@ -19,7 +19,6 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE} \
-		--infodir=${PREFIX}/info \
 		--enable-shared
 USE_LDCONFIG=	yes
 

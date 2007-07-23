@@ -56,7 +56,6 @@ CONFIGURE_ARGS=	--target=${TARGET} \
 		--with-gcc --with-gnu-ld --with-gnu-as \
 		--disable-nls --disable-shared \
 		--with-gxx-include-dir=${PREFIX}/${TARGET}/include/c++/ \
-		--infodir=${PREFIX}/${TARGET}/info \
 		--includedir=${PREFIX}/${TARGET}/include \
 		--datadir=${PREFIX}/${TARGET}/share
 .if defined(WITH_FORTRAN)
@@ -64,6 +63,7 @@ CONFIGURE_ARGS+=--enable-languages=c,c++,fortran,objc,obj-c++
 .else
 CONFIGURE_ARGS+=--enable-languages=c,c++,objc,obj-c++
 .endif
+INFO_PATH=	${TARGET}/info
 
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 LIBTOOLFILES=	configure gcc/configure

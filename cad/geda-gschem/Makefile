@@ -25,8 +25,7 @@ DATADIR=	${PREFIX}/share/geda
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-CONFIGURE_ARGS=	--enable-gdgeda --with-docdir=${DOCSDIR} \
-		--mandir=${PREFIX}/man --infodir=${PREFIX}/info
+CONFIGURE_ARGS=	--enable-gdgeda --with-docdir=${DOCSDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

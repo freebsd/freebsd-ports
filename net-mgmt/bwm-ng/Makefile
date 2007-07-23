@@ -21,6 +21,5 @@ MAN1=		bwm-ng.1
 PLIST_FILES=	bin/bwm-ng
 
 CONFIGURE_ENV=	LIBS="`pkg-config --libs libstatgrab`"
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
 
 .include <bsd.port.mk>

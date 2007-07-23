@@ -65,10 +65,6 @@ MAN8=	lpc.8 checkpc.8 lpd.8
 
 .include <bsd.port.pre.mk>
 
-.if ${PREFIX} == "/usr"
-CONFIGURE_ARGS+=	--mandir="${PREFIX}/share/man"
-.endif
-
 pre-everything::
 	@${ECHO_MSG} "If you want to replace the default printing system with LPRng, use:"
 	@${ECHO_MSG} "  make PORT_REPLACES_BASE_LPR=yes clean all install"

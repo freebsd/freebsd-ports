@@ -17,7 +17,6 @@ COMMENT=	The Varnish high-performance HTTP accelerator
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 USE_LDCONFIG=	yes
 
 MAN1=		varnishd.1 varnishhist.1 varnishlog.1 varnishncsa.1 \

@@ -18,7 +18,7 @@ LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme \
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --with-ssl --enable-aspell=yes
+CONFIGURE_ARGS=	--with-ssl --enable-aspell=yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_OPENSSL=	yes
 USE_ICONV=	yes

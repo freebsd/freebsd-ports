@@ -30,7 +30,7 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--mandir="${PREFIX}/man/" --disable-berylmesa
+CONFIGURE_ARGS+=	--disable-berylmesa
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
