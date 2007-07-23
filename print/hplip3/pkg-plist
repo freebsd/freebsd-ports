@@ -25,7 +25,9 @@ lib/libhpip.so.0
 lib/libsane-hpaio.la
 lib/libsane-hpaio.so
 lib/libsane-hpaio.so.1
+%%PYTHON_SITELIBDIR%%/cupsext.la
 %%PYTHON_SITELIBDIR%%/cupsext.so
+%%PYTHON_SITELIBDIR%%/pcardext.la
 %%PYTHON_SITELIBDIR%%/pcardext.so
 lib/sane/libsane-hpaio.so
 lib/sane/libsane-hpaio.so.1
@@ -52,6 +54,7 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/io.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/known.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/other.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/troubleshooting/parallel.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/pcard.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/printing.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/scanning.html
@@ -250,27 +253,7 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/device_classes.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/hpijs.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/index.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/align.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/check.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/clean.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/colorcal.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/fab.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/firmware.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/hpssd.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/index.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/info.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/install.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/levels.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/makecopies.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/makeuri.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/print.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/probe.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/sendfax.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/setup.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/testpage.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/timedate.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/toolbox.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/unload.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/overview.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/page_sizes.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/printable_areas.html
@@ -288,33 +271,6 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/troubleshooting/scanning.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/troubleshooting/toolbox.html
 %%DATADIR%%/COPYING
-%%DATADIR%%/Cheetah/CacheRegion.py
-%%DATADIR%%/Cheetah/CheetahWrapper.py
-%%DATADIR%%/Cheetah/Compiler.py
-%%DATADIR%%/Cheetah/DummyTransaction.py
-%%DATADIR%%/Cheetah/ErrorCatchers.py
-%%DATADIR%%/Cheetah/FileUtils.py
-%%DATADIR%%/Cheetah/Filters.py
-%%DATADIR%%/Cheetah/ImportHooks.py
-%%DATADIR%%/Cheetah/ImportManager.py
-%%DATADIR%%/Cheetah/NameMapper.py
-%%DATADIR%%/Cheetah/Parser.py
-%%DATADIR%%/Cheetah/Servlet.py
-%%DATADIR%%/Cheetah/SettingsManager.py
-%%DATADIR%%/Cheetah/SourceReader.py
-%%DATADIR%%/Cheetah/Template.py
-%%DATADIR%%/Cheetah/TemplateCmdLineIface.py
-%%DATADIR%%/Cheetah/Utils/Indenter.py
-%%DATADIR%%/Cheetah/Utils/Misc.py
-%%DATADIR%%/Cheetah/Utils/VerifyType.py
-%%DATADIR%%/Cheetah/Utils/WebInputMixin.py
-%%DATADIR%%/Cheetah/Utils/__init__.py
-%%DATADIR%%/Cheetah/Utils/optik/__init__.py
-%%DATADIR%%/Cheetah/Utils/optik/errors.py
-%%DATADIR%%/Cheetah/Utils/optik/option.py
-%%DATADIR%%/Cheetah/Utils/optik/option_parser.py
-%%DATADIR%%/Cheetah/Version.py
-%%DATADIR%%/Cheetah/__init__.py
 %%DATADIR%%/__init__.py
 %%DATADIR%%/align
 %%DATADIR%%/base/__init__.py
@@ -341,43 +297,6 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/base/strings.py
 %%DATADIR%%/base/utils.py
 %%DATADIR%%/check
-%%DATADIR%%/cherrypy/__init__.py
-%%DATADIR%%/cherrypy/_cpcgifs.py
-%%DATADIR%%/cherrypy/_cpengine.py
-%%DATADIR%%/cherrypy/_cperror.py
-%%DATADIR%%/cherrypy/_cphttptools.py
-%%DATADIR%%/cherrypy/_cpserver.py
-%%DATADIR%%/cherrypy/_cpthreadinglocal.py
-%%DATADIR%%/cherrypy/_cptree.py
-%%DATADIR%%/cherrypy/_cputil.py
-%%DATADIR%%/cherrypy/_cpwsgi.py
-%%DATADIR%%/cherrypy/_cpwsgiserver.py
-%%DATADIR%%/cherrypy/config.py
-%%DATADIR%%/cherrypy/filters/__init__.py
-%%DATADIR%%/cherrypy/filters/basefilter.py
-%%DATADIR%%/cherrypy/filters/baseurlfilter.py
-%%DATADIR%%/cherrypy/filters/cachefilter.py
-%%DATADIR%%/cherrypy/filters/decodingfilter.py
-%%DATADIR%%/cherrypy/filters/encodingfilter.py
-%%DATADIR%%/cherrypy/filters/gzipfilter.py
-%%DATADIR%%/cherrypy/filters/logdebuginfofilter.py
-%%DATADIR%%/cherrypy/filters/nsgmlsfilter.py
-%%DATADIR%%/cherrypy/filters/responseheadersfilter.py
-%%DATADIR%%/cherrypy/filters/sessionauthenticatefilter.py
-%%DATADIR%%/cherrypy/filters/sessionfilter.py
-%%DATADIR%%/cherrypy/filters/staticfilter.py
-%%DATADIR%%/cherrypy/filters/tidyfilter.py
-%%DATADIR%%/cherrypy/filters/virtualhostfilter.py
-%%DATADIR%%/cherrypy/filters/wsgiappfilter.py
-%%DATADIR%%/cherrypy/filters/xmlrpcfilter.py
-%%DATADIR%%/cherrypy/lib/__init__.py
-%%DATADIR%%/cherrypy/lib/autoreload.py
-%%DATADIR%%/cherrypy/lib/covercp.py
-%%DATADIR%%/cherrypy/lib/cptools.py
-%%DATADIR%%/cherrypy/lib/defaultformmask.py
-%%DATADIR%%/cherrypy/lib/form.py
-%%DATADIR%%/cherrypy/lib/httptools.py
-%%DATADIR%%/cherrypy/lib/profiler.py
 %%DATADIR%%/clean
 %%DATADIR%%/colorcal
 %%DATADIR%%/copier/__init__.py
@@ -479,6 +398,12 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/Photosmart_a310.png
 %%DATADIR%%/data/images/Photosmart_a510.png
 %%DATADIR%%/data/images/Photosmart_a710.png
+%%DATADIR%%/data/images/add-user-disabled.png
+%%DATADIR%%/data/images/add-user-quick-disabled.png
+%%DATADIR%%/data/images/add-user-quick.png
+%%DATADIR%%/data/images/add-user.png
+%%DATADIR%%/data/images/add-users-disabled.png
+%%DATADIR%%/data/images/add-users.png
 %%DATADIR%%/data/images/align10.png
 %%DATADIR%%/data/images/audio.png
 %%DATADIR%%/data/images/bmp.png
@@ -511,13 +436,19 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/dj350.png
 %%DATADIR%%/data/images/dj450.png
 %%DATADIR%%/data/images/down-disabled.png
+%%DATADIR%%/data/images/down-user-disabled.png
+%%DATADIR%%/data/images/down-user.png
 %%DATADIR%%/data/images/down.png
+%%DATADIR%%/data/images/download-small-disabled.png
+%%DATADIR%%/data/images/download-small.png
 %%DATADIR%%/data/images/download.png
 %%DATADIR%%/data/images/edit-disabled.png
 %%DATADIR%%/data/images/edit.png
 %%DATADIR%%/data/images/error.png
 %%DATADIR%%/data/images/error_small.png
 %%DATADIR%%/data/images/fab.png
+%%DATADIR%%/data/images/fax-disabled.png
+%%DATADIR%%/data/images/fax.png
 %%DATADIR%%/data/images/fax_icon.png
 %%DATADIR%%/data/images/fax_icon_disabled.png
 %%DATADIR%%/data/images/folder_open.png
@@ -600,15 +531,20 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/png.png
 %%DATADIR%%/data/images/powered_by_python.png
 %%DATADIR%%/data/images/prev.png
+%%DATADIR%%/data/images/print-disabled.png
+%%DATADIR%%/data/images/print.png
 %%DATADIR%%/data/images/print_icon.png
 %%DATADIR%%/data/images/print_icon_disabled.png
 %%DATADIR%%/data/images/psc_1100_series.png
 %%DATADIR%%/data/images/psc_1610.png
 %%DATADIR%%/data/images/psc_2300_series.png
+%%DATADIR%%/data/images/remove-user-disabled.png
+%%DATADIR%%/data/images/remove-user.png
 %%DATADIR%%/data/images/scan_icon.png
 %%DATADIR%%/data/images/scan_icon_disabled.png
 %%DATADIR%%/data/images/standard_coverpage.png
 %%DATADIR%%/data/images/status_refresh.png
+%%DATADIR%%/data/images/thumbnail.png
 %%DATADIR%%/data/images/tif.png
 %%DATADIR%%/data/images/toner.png
 %%DATADIR%%/data/images/toner_small.png
@@ -616,6 +552,8 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/type4_gray_patch.png
 %%DATADIR%%/data/images/unknown.png
 %%DATADIR%%/data/images/up-disabled.png
+%%DATADIR%%/data/images/up-user-disabled.png
+%%DATADIR%%/data/images/up-user.png
 %%DATADIR%%/data/images/up.png
 %%DATADIR%%/data/images/v-c-2.png
 %%DATADIR%%/data/images/v-c-3.png
@@ -668,48 +606,8 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/info
 %%DATADIR%%/install.py
 %%DATADIR%%/installer/__init__.py
-%%DATADIR%%/installer/core.py
 %%DATADIR%%/installer/dcheck.py
 %%DATADIR%%/installer/distros.py
-%%DATADIR%%/installer/images/back.png
-%%DATADIR%%/installer/images/button.png
-%%DATADIR%%/installer/images/button1.png
-%%DATADIR%%/installer/images/button1d.png
-%%DATADIR%%/installer/images/circular.gif
-%%DATADIR%%/installer/images/favicon.ico
-%%DATADIR%%/installer/images/hplogo.png
-%%DATADIR%%/installer/images/topbar.png
-%%DATADIR%%/installer/images/tux.png
-%%DATADIR%%/installer/images/view.png
-%%DATADIR%%/installer/pages/__init__.py
-%%DATADIR%%/installer/pages/component.tmpl
-%%DATADIR%%/installer/pages/confirm_distro.tmpl
-%%DATADIR%%/installer/pages/error.tmpl
-%%DATADIR%%/installer/pages/error_package_manager.tmpl
-%%DATADIR%%/installer/pages/error_required_missing.tmpl
-%%DATADIR%%/installer/pages/error_unsupported_distro.tmpl
-%%DATADIR%%/installer/pages/finished.tmpl
-%%DATADIR%%/installer/pages/hplip_remove.tmpl
-%%DATADIR%%/installer/pages/hpoj_remove.tmpl
-%%DATADIR%%/installer/pages/index.tmpl
-%%DATADIR%%/installer/pages/install_optional.tmpl
-%%DATADIR%%/installer/pages/install_required.tmpl
-%%DATADIR%%/installer/pages/installation_path.tmpl
-%%DATADIR%%/installer/pages/mode.tmpl
-%%DATADIR%%/installer/pages/notes.tmpl
-%%DATADIR%%/installer/pages/options.tmpl
-%%DATADIR%%/installer/pages/password.tmpl
-%%DATADIR%%/installer/pages/progress.tmpl
-%%DATADIR%%/installer/pages/quit.tmpl
-%%DATADIR%%/installer/pages/ready_to_build.tmpl
-%%DATADIR%%/installer/pages/select_distro.tmpl
-%%DATADIR%%/installer/pages/turn_off_options.tmpl
-%%DATADIR%%/installer/pages/welcome.tmpl
-%%DATADIR%%/installer/scripts/hplip.js
-%%DATADIR%%/installer/scripts/xml_loader.js
-%%DATADIR%%/installer/styles/hplip.css
-%%DATADIR%%/installer/text_install.py
-%%DATADIR%%/installer/web_install.py
 %%DATADIR%%/levels
 %%DATADIR%%/makecopies
 %%DATADIR%%/makeuri
@@ -772,7 +670,6 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/ui/faxaddrbookgroupeditform_base.py
 %%DATADIR%%/ui/faxaddrbookgroupsform_base.py
 %%DATADIR%%/ui/faxsendjobform.py
-%%DATADIR%%/ui/faxsendjobform_base.py
 %%DATADIR%%/ui/faxsettingsform.py
 %%DATADIR%%/ui/faxsettingsform_base.py
 %%DATADIR%%/ui/imagepropertiesdlg.py
@@ -780,14 +677,12 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/ui/loadpaperform.py
 %%DATADIR%%/ui/loadpaperform_base.py
 %%DATADIR%%/ui/makecopiesform.py
-%%DATADIR%%/ui/makecopiesform_base.py
 %%DATADIR%%/ui/nodevicesform.py
 %%DATADIR%%/ui/nodevicesform_base.py
 %%DATADIR%%/ui/paperedgealignform.py
 %%DATADIR%%/ui/paperedgealignform_base.py
 %%DATADIR%%/ui/printerform.py
-%%DATADIR%%/ui/printerform_base.py
-%%DATADIR%%/ui/printerform_base.ui
+%%DATADIR%%/ui/scrollcopy.py
 %%DATADIR%%/ui/scrollfax.py
 %%DATADIR%%/ui/scrollfunc.py
 %%DATADIR%%/ui/scrollprint.py
@@ -796,6 +691,7 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/ui/scrollstatus.py
 %%DATADIR%%/ui/scrollsupplies.py
 %%DATADIR%%/ui/scrolltool.py
+%%DATADIR%%/ui/scrollunload.py
 %%DATADIR%%/ui/scrollview.py
 %%DATADIR%%/ui/settingsdialog.py
 %%DATADIR%%/ui/settingsdialog_base.py
@@ -806,7 +702,6 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/ui/setupsettings.py
 %%DATADIR%%/ui/setupsettings_base.py
 %%DATADIR%%/ui/unloadform.py
-%%DATADIR%%/ui/unloadform_base.py
 %%DATADIR%%/ui/waitform.py
 %%DATADIR%%/ui/waitform_base.py
 %%DATADIR%%/unload
@@ -976,9 +871,14 @@ share/ppd/HP/HP-DeskJet_980C-hpijs.ppd.gz
 share/ppd/HP/HP-DeskJet_990C-hpijs.ppd.gz
 share/ppd/HP/HP-DeskJet_995C-hpijs.ppd.gz
 share/ppd/HP/HP-DeskJet_D1300-hpijs.ppd.gz
+share/ppd/HP/HP-DeskJet_D1400-hpijs.ppd.gz
 share/ppd/HP/HP-DeskJet_D2300-hpijs.ppd.gz
+share/ppd/HP/HP-DeskJet_D2400-hpijs.ppd.gz
 share/ppd/HP/HP-DeskJet_D4100-hpijs.ppd.gz
+share/ppd/HP/HP-DeskJet_D4200-hpijs.ppd.gz
+share/ppd/HP/HP-DeskJet_F2100-hpijs.ppd.gz
 share/ppd/HP/HP-DeskJet_F300-hpijs.ppd.gz
+share/ppd/HP/HP-DeskJet_F4100-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_1010-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_1012-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_1015-hpijs.ppd.gz
@@ -1231,6 +1131,7 @@ share/ppd/HP/HP_Business_Inkjet_2280.ppd.gz
 share/ppd/HP/HP_Business_Inkjet_2600.ppd.gz
 share/ppd/HP/HP_Business_Inkjet_2800.ppd.gz
 share/ppd/HP/HP_Business_Inkjet_3000.ppd.gz
+share/ppd/HP/HP_CM8050_CM8060_MFP.ppd.gz
 share/ppd/HP/HP_Color_LaserJet.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_2550.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_2605.ppd.gz
@@ -1330,10 +1231,6 @@ share/ppd/HP/hp_officejet_9100_series.ppd.gz
 @dirrm %%DATADIR%%/prnt
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/pcard
-@dirrm %%DATADIR%%/installer/styles
-@dirrm %%DATADIR%%/installer/scripts
-@dirrm %%DATADIR%%/installer/pages
-@dirrm %%DATADIR%%/installer/images
 @dirrm %%DATADIR%%/installer
 @dirrm %%DATADIR%%/fax/ppd
 @dirrm %%DATADIR%%/fax/backend
@@ -1346,13 +1243,7 @@ share/ppd/HP/hp_officejet_9100_series.ppd.gz
 @dirrm %%DATADIR%%/data/firmware
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/copier
-@dirrm %%DATADIR%%/cherrypy/lib
-@dirrm %%DATADIR%%/cherrypy/filters
-@dirrm %%DATADIR%%/cherrypy
 @dirrm %%DATADIR%%/base
-@dirrm %%DATADIR%%/Cheetah/Utils/optik
-@dirrm %%DATADIR%%/Cheetah/Utils
-@dirrm %%DATADIR%%/Cheetah
 @dirrm %%DATADIR%%
 @dirrmtry share/gnome
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/troubleshooting
