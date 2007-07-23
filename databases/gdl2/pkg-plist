@@ -160,7 +160,6 @@ Local/Tools/DBModeler
 Local/Tools/eoutil
 Local/Tools/gdlgsdoc
 System/Library/Makefiles/Auxiliary/gdl2.make
-@dirrm System/Library/Makefiles/Auxiliary
 @dirrm Local/Library/Headers/EOModeler
 @dirrm Local/Library/Headers/EOInterface
 @dirrm Local/Library/Headers/EOControl
