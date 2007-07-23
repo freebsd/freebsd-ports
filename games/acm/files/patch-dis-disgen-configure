@@ -1,0 +1,23 @@
+--- dis/disgen/configure.orig	Mon Jul 16 21:38:36 2007
++++ dis/disgen/configure	Mon Jul 16 21:41:58 2007
+@@ -140,10 +140,20 @@
+ EOF
+     exit 0 ;;
+ 
++  -infodir | --infodir | --infodi | --infod | --info | --inf)
++    ac_prev=infodir ;;
++  -infodir=* | --infodir=* | --infodi=* | --infod=* | --info=* | --inf=*)
++    ;;
++
+   -host | --host | --hos | --ho)
+     ac_prev=host ;;
+   -host=* | --host=* | --hos=* | --ho=*)
+     host="$ac_optarg" ;;
++
++  -mandir | --mandir | --mandi | --mand | --man | --ma | --m)
++    ac_prev=mandir ;;
++  -mandir=* | --mandir=* | --mandi=* | --mand=* | --man=* | --ma=* | --m=*)
++    ;;
+ 
+   -nfp | --nfp | --nf)
+     # Obsolete; use --without-fp.
