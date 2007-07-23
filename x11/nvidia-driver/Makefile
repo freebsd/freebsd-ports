@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	nvidia-driver
-PORTVERSION=	1.0.${NVVERSION}
-PORTREVISION=	5
+DISTVERSION?=	1.0-9746
+PORTREVISION?=	5
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
-MASTER_SITE_SUBDIR=	freebsd/1.0-${NVVERSION}
-DISTNAME=	NVIDIA-FreeBSD-x86-${PORTVERSION:S/0./0-/}
+MASTER_SITE_SUBDIR=	freebsd/${DISTVERSION}
+DISTNAME=	NVIDIA-FreeBSD-x86-${DISTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	NVidia graphics card binary drivers for hardware OpenGL rendering
@@ -30,36 +30,24 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 		ACPI		"Enable support for ACPI Power Management" off \
 		LINUX		"Build with support for Linux compatibility" on
 
-# Get __FreeBSD_version.  Needed to set PORTREVISION before including of
-# <bsd.port.pre.mk>.
-# XXX This is not required for -CURRENT XXX
-#
-.if !defined(OSVERSION)
-.if exists(/sbin/sysctl)
-OSVERSION!=	/sbin/sysctl -n kern.osreldate
-.else
-OSVERSION!=	/usr/sbin/sysctl -n kern.osreldate
-.endif
-.endif
-
 # Starting with version 7667, NVidia has dropped support for numerous
-# "legacy" GPUs.  One can, however, build the port with specific NVVERSION
-# value set.  Currently supported "legacy" values are 7184 and 9631.
-# Consult NVidia README (Appendix A) to find out whether you need to use
-# legacy driver version.  Alternatively, you can install corresponding
-# `x11/nvidia-driver-XXXX' slave port, where XXXX == needed ${NVVERSION}.
+# "legacy" GPUs.  Consult NVidia README (Appendix A) to find out whether
+# you need to use legacy driver version and install one of corresponding
+# `x11/nvidia-driver-71xx' or `x11/nvidia-driver-96xx' slave ports.
 #
-NVVERSION?=	9746			# The latest version to date
+.if ${DISTVERSION:M1.0-*}
+NVVERSION=	${DISTVERSION:S/1.0-//}
+SHLIB_VERSION=	${NVVERSION}
+.else
+NVVERSION=	${DISTVERSION:S/.//g}
+SHLIB_VERSION=	${PORTVERSION}
+.endif
 
 .if ${NVVERSION} == 7184
 EXTRA_PATCHES+=	${FILESDIR}/6113-patch-lib::Makefile
 .else
 EXTRA_PATCHES+=	${FILESDIR}/7667-* \
 		${FILESDIR}/crash-patch-by-zander-1759235
-.endif
-
-.if ${OSVERSION} >= 600033
-LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
 .endif
 
 .include <bsd.port.pre.mk>
@@ -80,7 +68,7 @@ XSERVVERSION!=	/usr/sbin/pkg_info -O x11-servers/XFree86-4-Server 2>/dev/null | 
 XLIBVERSION!=	/usr/sbin/pkg_info -O x11/XFree86-4-libraries 2>/dev/null | ${GREP} libraries- || /usr/sbin/pkg_info -O graphics/libGL 2>/dev/null | ${GREP} libGL- || true
 
 PLIST_SUB+=	XSERVVERSION=${XSERVVERSION} XLIBVERSION=${XLIBVERSION} \
-		LINUXBASE=${LINUXBASE} NVVERSION=${NVVERSION} \
+		LINUXBASE=${LINUXBASE} SHLIB_VERSION=${SHLIB_VERSION} \
 		MODULESDIR=${MODULESDIR} XORG=${XORG_SUB} XFREE86=${XFREE86_SUB}
 
 .if !defined(WITHOUT_LINUX)
@@ -97,6 +85,10 @@ MAKE_ENV+=	WITHOUT_LINUX=yes
 
 .if ${OSVERSION} < 503000
 IGNORE=		supports FreeBSD-STABLE (5.3 or later), or FreeBSD-CURRENT
+.endif
+
+.if ${OSVERSION} >= 600033
+LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
 .endif
 
 post-patch: .SILENT
@@ -143,7 +135,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} '/bin/d ; /man/d' ${WRKSRC}/x11/Makefile
 
 pre-install:
-	${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
+	@${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
 
 post-install:
 # pkg-plist is already overbloated, so use this hack instead of PLIST_SUB's
