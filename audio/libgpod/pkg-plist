@@ -1,7 +1,7 @@
 include/gpod-1.0/gpod/itdb.h
 @dirrm include/gpod-1.0/gpod
 @dirrm include/gpod-1.0
-lib/libgpod.so.1
+lib/libgpod.so.2
 lib/libgpod.so
 lib/libgpod.la
 lib/libgpod.a
