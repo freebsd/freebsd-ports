@@ -1,0 +1,7 @@
+This module provides an implementation of Canonical XML Recommendation
+(Version 1, 15 March 2001). It uses XML::GDOME for its DOM tree and
+XPath nodes.
+
+It provides a XS wrapper around libxml2's Canonical XML code.
+
+WWW:	http://search.cpan.org/dist/XML-Canonical/
