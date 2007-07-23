@@ -7,7 +7,7 @@
 PORTNAME=	proftpd
 PKGNAMESUFFIX=	-mysql
 
-MAINTAINER=	thomas@goirand.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly configurable ftp daemon with MySQL support
 
 WITH_MYSQL=	yes
