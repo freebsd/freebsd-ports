@@ -210,8 +210,8 @@
     SUBDIR += mxico
     SUBDIR += numlockx
     SUBDIR += nvidia-driver
-    SUBDIR += nvidia-driver-7184
-    SUBDIR += nvidia-driver-9631
+    SUBDIR += nvidia-driver-71xx
+    SUBDIR += nvidia-driver-96xx
     SUBDIR += nvidia-settings
     SUBDIR += nvidia-xconfig
     SUBDIR += oclock

@@ -1,11 +1,11 @@
-# New ports collection makefile for:	nvidia-driver, legacy version 7184
+# New ports collection makefile for:	nvidia-driver, legacy version 71xx
 # Date created:				08 Feb 2007
 # Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-NVVERSION=	7184
+DISTVERSION=	1.0-7184
 
 MASTERDIR=	${.CURDIR}/../nvidia-driver
 

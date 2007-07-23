@@ -96,12 +96,12 @@ lib/libXvMCNVIDIA.a
 nvidia.ko
 @unexec kldxref %D
 %%LINUX%%@cwd %%LINUXBASE%%
-%%LINUX%%usr/lib/libGL.so.1.0.%%NVVERSION%%
-%%LINUX%%usr/lib/libGLcore.so.1.0.%%NVVERSION%%
-%%LINUX%%usr/lib/libnvidia-tls.so.1.0.%%NVVERSION%%
-%%LINUX%%@exec ln -sf %D/usr/lib/libGL.so.1.0.%%NVVERSION%% %D/usr/lib/libGL.so.1
-%%LINUX%%@exec ln -sf %D/usr/lib/libGLcore.so.1.0.%%NVVERSION%% %D/usr/lib/libGLcore.so.1
-%%LINUX%%@exec ln -sf %D/usr/lib/libnvidia-tls.so.1.0.%%NVVERSION%% %D/usr/lib/libnvidia-tls.so.1
+%%LINUX%%usr/lib/libGL.so.1.0.%%SHLIB_VERSION%%
+%%LINUX%%usr/lib/libGLcore.so.1.0.%%SHLIB_VERSION%%
+%%LINUX%%usr/lib/libnvidia-tls.so.1.0.%%SHLIB_VERSION%%
+%%LINUX%%@exec ln -sf %D/usr/lib/libGL.so.1.0.%%SHLIB_VERSION%% %D/usr/lib/libGL.so.1
+%%LINUX%%@exec ln -sf %D/usr/lib/libGLcore.so.1.0.%%SHLIB_VERSION%% %D/usr/lib/libGLcore.so.1
+%%LINUX%%@exec ln -sf %D/usr/lib/libnvidia-tls.so.1.0.%%SHLIB_VERSION%% %D/usr/lib/libnvidia-tls.so.1
 %%LINUX%%@unexec rm -f %D/usr/lib/libGL.so.1
 %%LINUX%%@unexec rm -f %D/usr/lib/libGLcore.so.1
 %%LINUX%%@unexec rm -f %D/usr/lib/libnvidia-tls.so.1
