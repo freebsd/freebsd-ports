@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	addresses
-PORTVERSION=	0.4.6
-PORTREVISION=	1
+PORTVERSION=	0.4.7
 CATEGORIES=	mail gnustep
-MASTER_SITES=	http://giesler.biz/bjoern/downloads/ \
-		http://www.energyhq.es.eu.org/files/
+MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/
 DISTNAME=	Addresses-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -23,10 +21,6 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
-WRKSRC=		${WRKDIR}/Addresses-${PORTVERSION}
-MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=LOCAL
-MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
-ADDITIONAL_LIB_DIRS+=	-L${WRKSRC}/Frameworks/AddressView/AddressView.framework/Versions/Current
-ADDITIONAL_LIB_DIRS+=	-L${WRKSRC}/Frameworks/Addresses/Addresses.framework/Versions/Current
+WRKSRC=		${WRKDIR}/Addresses
 
 .include <bsd.port.mk>
