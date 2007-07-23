@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	xca
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	curly@e-card.bg
+MAINTAINER=	mark@foster.cc
 COMMENT=	Graphical certification authority
-
-LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_QT_VER=	3
+USE_QT_VER=	4
+CC?=		gcc
+CXX?=		g++
+
+MAN1=		xca.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -28,21 +30,23 @@ BROKEN=		Does not compile on FreeBSD >= 7.0
 .endif
 
 post-patch:
-	@echo "CPPFLAGS= -I. -I.. -I${OPENSSLINC} ${QTCPPFLAGS} -I${LOCALBASE}/include/db4" > ${WRKSRC}/Local.mak
-	@echo "CFLAGS= ${CFLAGS}" >> ${WRKSRC}/Local.mak
-	@echo "LDFLAGS= ${LDFLAGS}" >> ${WRKSRC}/Local.mak
-	@echo "LIBS= ${QTCFGLIBS} -lqt-mt -L${OPENSSLLIB} -lcrypto -ldb4_cxx ${PTHREAD_LIBS}" >> ${WRKSRC}/Local.mak
+	@echo "CPPFLAGS=-I. -I.. -I${WRKSRC}/ui -I/usr/X11R6/include -I${QT_PREFIX}/include/Qt" > ${WRKSRC}/Local.mak
+	@echo "CFLAGS= ${CFLAGS} -Wall -ggdb" >> ${WRKSRC}/Local.mak
+	@echo "LDFLAGS= ${LDFLAGS} -L${LOCALBASE}/lib" >> ${WRKSRC}/Local.mak
+	@echo "LIBS= -lQtGui -lc_r -lcrypto" >> ${WRKSRC}/Local.mak
 	@echo "MOC=${MOC}" >> ${WRKSRC}/Local.mak
-	@echo "UIC=${QT_PREFIX}/bin/uic" >> ${WRKSRC}/Local.mak
-	@echo "CC=${CXX}" >> ${WRKSRC}/Local.mak
+	@echo "UIC=${QT_PREFIX}/bin/uic-qt4" >> ${WRKSRC}/Local.mak
+	@echo "RCC=${LOCALBASE}/bin/rcc"  >> ${WRKSRC}/Local.mak
+	@echo "LRELEASE=${LOCALBASE}/bin/lrelease-qt4" >> ${WRKSRC}/Local.mak
+	@echo "CC=${CC}" >> ${WRKSRC}/Local.mak
 	@echo "LD=${LD}" >> ${WRKSRC}/Local.mak
 	@echo "STRIP=${STRIP_CMD}" >> ${WRKSRC}/Local.mak
 	@echo "prefix=${PREFIX}" >> ${WRKSRC}/Local.mak
 	@echo "etc=${PREFIX}/etc/xca" >> ${WRKSRC}/Local.mak
 	@echo "basedir=" >> ${WRKSRC}/Local.mak
-	@${REINPLACE_CMD} -E -e 's|QFont\ font\(\ font\(\)\ \)|QFont font|' ${WRKSRC}/widgets/clicklabel.cpp
-	@${REINPLACE_CMD} -E -e 's|(install[\ \:]+xca\.1)\.gz|\1|g' ${WRKSRC}/doc/Makefile
-
-MAN1=	xca.1
+	@echo "#define PREFIX \"${PREFIX}\"" > ${WRKSRC}/local.h
+	@echo "#define ETC \"${PREFIX}/etc/xca\"" >> ${WRKSRC}/local.h
+	@echo "#define VER \"${PORTVERSION}\"" >> ${WRKSRC}/local.h
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/lib/import.cpp
 
 .include <bsd.port.post.mk>
