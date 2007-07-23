@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	pacpl
-PORTVERSION=	3.3.1
-PORTREVISION=	1
+PORTVERSION=	3.3.2
 CATEGORIES=	audio
 MASTER_SITES=	SFE
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Perl Audio Converter
 
-RUN_DEPENDS=	${SITE_PERL}/MP3/Tag.pm:${PORTSDIR}/audio/p5-MP3-Tag \
-		${SITE_PERL}/MP4/Info.pm:${PORTSDIR}/multimedia/p5-MP4-Info \
-		${SITE_PERL}/Audio/WMA.pm:${PORTSDIR}/audio/p5-Audio-WMA \
-		${SITE_PERL}/${PERL_ARCH}/Ogg/Vorbis/Header.pm:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header \
-		${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm:${PORTSDIR}/audio/p5-Audio-FLAC-Header \
-		${SITE_PERL}/Audio/Musepack.pm:${PORTSDIR}/audio/p5-Audio-Musepack \
+RUN_DEPENDS=	p5-MP3-Tag>0:${PORTSDIR}/audio/p5-MP3-Tag \
+		p5-MP4-Info>0:${PORTSDIR}/multimedia/p5-MP4-Info \
+		p5-Audio-WMA>0:${PORTSDIR}/audio/p5-Audio-WMA \
+		p5-Ogg-Vorbis-Header>0:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header \
+		p5-Audio-FLAC-Header>0:${PORTSDIR}/audio/p5-Audio-FLAC-Header \
+		p5-Audio-Musepack>0:${PORTSDIR}/audio/p5-Audio-Musepack \
+		p5-IO-String>0:${PORTSDIR}/devel/p5-IO-String \
 		lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		flac:${PORTSDIR}/audio/flac \
@@ -49,7 +49,7 @@ PACPL_PATHS=	lame oggenc oggdec flac mac shorten faac faad mplayer mppenc mppdec
 		ofr ofs ttaenc lpac sox ffmpeg la:laudio bonk cdparanoia kdialog
 AMAROK_SCR=	transcoding_pacx.pl
 AMAROK_SCR_DIR=	share/apps/amarok/scripts/transcoding_pacx
-KONQ_MIME=	ape bonk kxs la lpac ofr ofs shn tta wavpack
+KONQ_MIME=	ape bonk kxs la lpac ofr ofs rm shn tta wavpack
 KONQ_SVCM=	${PORTNAME}
 KONQ_MIME_DIR=	share/mimelnk/audio
 KONQ_SVCM_DIR=	share/apps/konqueror/servicemenus
