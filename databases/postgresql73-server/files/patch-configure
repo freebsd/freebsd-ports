@@ -1,5 +1,17 @@
 --- configure.orig	Wed Jun 26 21:28:24 2002
 +++ configure	Wed Jun 26 21:35:16 2002
+@@ -441,6 +441,11 @@
+   -docdir=* | --docdir=* | --infodi=* | --infod=* | --doc=* | --inf=*)
+     docdir=$ac_optarg ;;
+ 
++  -infodir | --infodir | --infodi | --infod | --info | --inf)
++    ac_prev=infodir ;;
++  -infodir=* | --infodir=* | --infodi=* | --infod=* | --info=* | --inf=*)
++    infodir=$ac_optarg ;;
++
+   -libdir | --libdir | --libdi | --libd)
+     ac_prev=libdir ;;
+   -libdir=* | --libdir=* | --libdi=* | --libd=*)
 @@ -2007,11 +2007,13 @@
  EOF
  

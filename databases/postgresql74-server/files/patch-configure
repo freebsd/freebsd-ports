@@ -1,7 +1,19 @@
---- configure.orig	Wed Jun 26 21:28:24 2002
-+++ configure	Wed Jun 26 21:35:16 2002
-@@ -2007,11 +2007,13 @@
- EOF
+--- configure.orig	Fri Feb  2 08:15:33 2007
++++ configure	Fri Apr  6 23:40:18 2007
+@@ -441,6 +441,11 @@
+   -docdir=* | --docdir=* | --infodi=* | --infod=* | --doc=* | --inf=*)
+     docdir=$ac_optarg ;;
+ 
++  -infodir | --infodir | --infodi | --infod | --info | --inf)
++    ac_prev=infodir ;;
++  -infodir=* | --infodir=* | --infodi=* | --infod=* | --info=* | --inf=*)
++    infodir=$ac_optarg ;;
++
+   -libdir | --libdir | --libdi | --libd)
+     ac_prev=libdir ;;
+   -libdir=* | --libdir=* | --libdi=* | --libd=*)
+@@ -3321,11 +3326,13 @@
+ _ACEOF
  
  
 -  if test -d "$krb4_prefix/include"; then
@@ -19,8 +31,8 @@
    fi
  
    krb_srvtab="/etc/srvtab"
-@@ -2052,11 +2054,13 @@
- EOF
+@@ -3379,11 +3386,13 @@
+ _ACEOF
  
  
 -  if test -d "$krb5_prefix/include"; then
@@ -38,8 +50,8 @@
    fi
  
    krb_srvtab="FILE:\$(sysconfdir)/krb5.keytab"
-@@ -2157,11 +2161,13 @@
- EOF
+@@ -3562,11 +3571,13 @@
+ _ACEOF
  
  
 -  if test -d "${openssl_prefix}/include" ; then
