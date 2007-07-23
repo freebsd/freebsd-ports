@@ -8,7 +8,7 @@
 # Shamelessly stolen from will's mod_auth_any port.
 
 PORTNAME=	mod_auth_kerb
-PORTVERSION=	5.1
+PORTVERSION=	5.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=modauthkerb
