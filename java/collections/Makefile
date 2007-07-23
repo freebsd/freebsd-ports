@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	java@freebsd.org
 COMMENT=	JDK1.2 Collections\' API for JDK1.1 environments
 
+DEPRECATED=	only needed for jdk1.1, which is obsolete
+EXPIRATION_DATE=	2007-08-22
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.1
 
