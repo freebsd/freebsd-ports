@@ -30,5 +30,5 @@ If X.org cannot start and reports
 in /var/log/Xorg.0.log while actually you have ``options SYSVSHM''
 enabled in kernel, the sysctl ``kern.ipc.shmall'' should be increased.
 
-See %%PREFIX%%/share/doc/NVIDIA_GLX-1.0/README for more information.
+See %%DOCSDIR%%/README for more information.
 
