@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	addresses
-PORTVERSION=	0.4.6
-PORTREVISION=	2
+PORTVERSION=	0.4.7
 CATEGORIES=	mail gnustep
 MASTER_SITES=	http://giesler.biz/bjoern/downloads/ \
 		http://www.energyhq.es.eu.org/files/
@@ -26,7 +25,7 @@ USE_GNUSTEP_SYSTEM_LIBS+=	Inspector:${GWORKSPACE_PORT}
 USE_GNUSTEP_LOCAL_LIBS+=	Addresses:${ADDRESSES_PORT}
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
-WRKSRC=		${WRKDIR}/Addresses-${PORTVERSION}/Goodies
+WRKSRC=		${WRKDIR}/Addresses/Goodies
 
 ADDRESSES_PORT?=	mail/addresses
 GWORKSPACE_PORT?=	deskutils/gworkspace
