@@ -7,7 +7,7 @@
 
 PORTNAME=	zaptel
 PORTVERSION=	1.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc kld
 MASTER_SITES=	http://www.pbxpress.com/~gonzo/
 DISTNAME=	${PORTNAME}-bsd-${PORTVERSION}
@@ -30,7 +30,7 @@ USE_RC_SUBR=	zaptel
 .if ${ARCH} == "amd64"
 PLIST_SUB+=	WITH_TAU32="@comment "
 .else
-PLIST_SUB+=	WITH_TAU32="@comment "
+PLIST_SUB+=	WITH_TAU32=""
 MAKE_ARGS+=	WITH_TAU32="yes"
 .endif
 
