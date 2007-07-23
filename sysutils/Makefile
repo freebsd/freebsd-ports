@@ -556,6 +556,7 @@
     SUBDIR += ruby-log4r
     SUBDIR += ruby-quota
     SUBDIR += rubygem-capistrano
+    SUBDIR += rubygem-god
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += safecat
