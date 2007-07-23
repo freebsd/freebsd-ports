@@ -602,6 +602,7 @@
     SUBDIR += p5-XML-Atom-Stream
     SUBDIR += p5-XML-Atom-Syndication
     SUBDIR += p5-XML-AutoWriter
+    SUBDIR += p5-XML-Canonical
     SUBDIR += p5-XML-Catalog
     SUBDIR += p5-XML-Clean
     SUBDIR += p5-XML-Compile

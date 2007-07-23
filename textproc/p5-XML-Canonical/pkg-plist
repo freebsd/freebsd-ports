@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/Canonical.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Canonical/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Canonical/Canonical.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Canonical/Canonical.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Canonical
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML
