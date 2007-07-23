@@ -6,6 +6,7 @@
 #
 
 DISTVERSION=	1.0-7184
+PORTREVISION=	0
 
 MASTERDIR=	${.CURDIR}/../nvidia-driver
 
