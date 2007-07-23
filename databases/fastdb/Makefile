@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	fastdb
-PORTVERSION=	3.38
+PORTVERSION=	3.39
 CATEGORIES=	databases
-MASTER_SITES=	http://www.garret.ru/~knizhnik/
+MASTER_SITES=	 ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Main Memory Relational Database Management System

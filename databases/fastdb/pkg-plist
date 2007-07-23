@@ -29,4 +29,6 @@ lib/libcli_r.so.2
 lib/libfastdb_r.a
 lib/libfastdb_r.so
 lib/libfastdb_r.so.2
+%%PORTDOCS%%%%DOCSDIR%%/FastDB.htm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry include/fastdb
