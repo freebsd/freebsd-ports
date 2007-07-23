@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hplip
-PORTVERSION=	1.7.3
-PORTREVISION=	1
+PORTVERSION=	1.7.4a
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hplip
@@ -41,7 +40,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 OPTIONS=	GUI "build with Python QT" on
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} IJSVER=2.7.2
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} IJSVER=2.7.4
 
 .include <bsd.port.pre.mk>
 
@@ -84,6 +83,12 @@ post-patch:
 			${WRKSRC}/*.py \
 			${WRKSRC}/*/*.py \
 			${WRKSRC}/*/*/*.py
+	@${REINPLACE_CMD} -e 's|-ldld||g ; \
+			s|-ldl||g' \
+		${WRKSRC}/prnt/hpijs/configure \
+		${WRKSRC}/prnt/hpijs/configure.in \
+		${WRKSRC}/prnt/hpijs/Makefile.in \
+		${WRKSRC}/prnt/hpijs/aclocal.m4
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|install-data-am: install-docDATA|install-data-am:|g' \
