@@ -18,7 +18,7 @@ upgrades.
 
 20070718:
   AFFECTS: users of devel/llvm
-  AUTHOR: brooks@freebsd.org
+  AUTHOR: brooks@FreeBSD.org
 
   The llvm bytecode and .ll formats have changed as have numerious
   internal APIs.  Existing users should consult the release notes.
@@ -61,7 +61,7 @@ upgrades.
 
 20070704:
   AFFECTS: users of x11/kdebase3
-  AUTHOR: kde@freebsd.org
+  AUTHOR: kde@FreeBSD.org
 
   The media kioslave now mounts all filesystems that support charset conversion
   with charset conversion turned on, set to the locale from the user's
@@ -549,7 +549,7 @@ upgrades.
 
 20070313:
   AFFECTS: users of x11/kdebase3
-  AUTHOR: kde@freebsd.org
+  AUTHOR: kde@FreeBSD.org
 
   The HAL option has been turned on by default and the fstabbackend
   patches which have kept the fstab backend for the media kioslave
@@ -681,7 +681,7 @@ upgrades.
 
 20070210:
   AFFECTS: users of x11/kdebase3
-  AUTHOR: kde@freebsd.org
+  AUTHOR: kde@FreeBSD.org
 
   The media kioslave now mounts cdrom/dvd volumes with local charset
   conversion (mount_cd9660 -C <charset>), which requires the cd9660_iconv
@@ -1054,7 +1054,7 @@ upgrades.
 
 20061109
   AFFECTS: users of milter-bogom, dk-milter, dkim-milter
-  AUTHOR: ache@freebsd.org
+  AUTHOR: ache@FreeBSD.org
 
   All 3 milters change their default user to "mailnull".
 
@@ -1359,7 +1359,7 @@ upgrades.
 
 20060902:
   AFFECTS: users of japanese/uim-anthy and japanese/uim-canna
-  AUTHOR: nobutaka@freebsd.org
+  AUTHOR: nobutaka@FreeBSD.org
 
   Input modes for uim-anthy and uim-canna are reorganized since version 1.2.0.
   Please re-configure the following keybindings with uim-pref.
@@ -1746,7 +1746,7 @@ upgrades.
 
 20060622:
   AFFECTS: users of www/dokuwiki
-  AUTHOR: miwi@freebsd.org
+  AUTHOR: miwi@FreeBSD.org
 
   The default install location has changed from
   ${PREFIX}/www/data/dokuwiki to ${PREFIX}/www/dokuwiki.
@@ -2187,7 +2187,7 @@ portupgrade -a
 
 20060330:
   AFFECTS: users of x11/kdebase3
-  AUTHOR: kde@freebsd.org
+  AUTHOR: kde@FreeBSD.org
 
   The genkdmconf.sh rc-script has been removed in favor of a kdm wrapper
   script, which now handles both launching kdm and automatically updating or
