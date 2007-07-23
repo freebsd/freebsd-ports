@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070723:
+  AFFECTS: users of x11/nvidia-driver and slave ports
+  AUTHOR: danfe@FreeBSD.org
+
+  NVVERSION is no longer user settable variable, it's derived from
+  DISTVERSION from now on.  If you used nvidia-driver port with custom
+  NVVERSION, it's time to switch to corresponding legacy driver version
+  port.  They were renamed in order to stop hardcoding explicit version
+  numbers in their [directory] names.
+
 20070718:
   AFFECTS: users of devel/llvm
   AUTHOR: brooks@freebsd.org
