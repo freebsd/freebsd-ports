@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	2.0.7
-PORTREVISION=	2
+PORTVERSION=	2.0.8
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -20,13 +19,8 @@ RUN_DEPENDS=	getdp:${PORTSDIR}/science/getdp
 LIB_DEPENDS=	gsl.10:${PORTSDIR}/math/gsl \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-.if defined(PACKAGE_BUILDING)
-#Triangle and Tetgen are NO_CDROM
-WITHOUT_TRIANGLE=	yes
-WITHOUT_TETGEN=		yes
-.endif
-
 .if !defined(WITHOUT_TRIANGLE)
+NO_CDROM=		Triangle must not be sold for profit
 EXTRACT_DEPENDS+=	${NONEXISTENT}:${TRIANGLE_PORTDIR}:patch
 TRIANGLE_PORTDIR=	${PORTSDIR}/math/triangle
 .endif
@@ -79,6 +73,7 @@ CONFIGURE_ARGS+=	--disable-occ
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		gmsh.1
 
@@ -113,13 +108,23 @@ pre-everything::
 .endif
 
 post-extract:
+	${TOUCH} ${PKGMESSAGE}
 .if !defined(WITHOUT_TRIANGLE)
 	${CP} `cd ${TRIANGLE_PORTDIR}; ${MAKE} -V WRKSRC`/triangle.*	\
 		${WRKSRC}/contrib/Triangle
+	@${ECHO} >> ${PKGMESSAGE}
+	@${ECHO} "This package of Gmsh has been built with Triangle, then" >> ${PKGMESSAGE}
+	@${ECHO} "distribution of this code as part of a commercial system" >> ${PKGMESSAGE}
+	@${ECHO} "is permissible only by direct arrangement with the Triangle's author." >> ${PKGMESSAGE}
 .endif
 .if !defined(WITHOUT_TETGEN)
 	${CP} ${TETGEN_SRC:S|^|`cd ${TETGEN_PORTDIR}; ${MAKE} -V WRKSRC`/|}	\
 		${WRKSRC}/contrib/Tetgen
+	@${ECHO} >> ${PKGMESSAGE}
+	@${ECHO} "The FreeBSD project has been granted redistribution rights" >> ${PKGMESSAGE}
+	@${ECHO} "but anyone attempting to redistribute Gmsh with Tetgen" >> ${PKGMESSAGE}
+	@${ECHO} "for strict commercial purposes must still contact the author" >> ${PKGMESSAGE}
+	@${ECHO} "(Hang Si) and license the code." >> ${PKGMESSAGE}
 .endif
 
 pre-configure:
@@ -142,5 +147,8 @@ do-install:
 	cd ${WRKSRC} && ${FIND} demos ! -name "*.bak" | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
