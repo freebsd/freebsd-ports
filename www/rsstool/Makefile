@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsstool
-DISTVERSION=	1.0.0rc1
+DISTVERSION=	1.0.0rc2
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	www
 MASTER_SITES=	BERLIOS CENKES
@@ -17,14 +17,24 @@ COMMENT=	Read, parse, merge and write RSS and Atom feeds
 USE_ICONV=	yes
 USE_GNOME=	libxml2
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+BUILD_WRKSRC=	${WRKSRC}/src
+CONFIGURE_WRKSRC=	${WRKSRC}/src
 HAS_CONFIGURE=	yes
 PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CC=/d;/^CFLAGS=/s|-O3||;/^CFLAGS=/s|=|+=|' ${WRKSRC}/Makefile
+	@cd ${BUILD_WRKSRC}/&&${REINPLACE_CMD} -e '/^CFLAGS=/s|-O3||;\
+		/^CFLAGS=/s|=|+=|;s|gcc|${CC}|' Makefile configure.in
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+.ifndef NOPORTDOCS
+	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "*html images" ${DOCSDIR}/
+.endif
+.ifndef NOPORTEXAMPLES
+	@cd ${WRKSRC}/contrib/&&${COPYTREE_SHARE} . ${EXAMPLESDIR}/
+.endif
 
 .include <bsd.port.mk>
