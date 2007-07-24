@@ -101,7 +101,6 @@
 %%GEM_LIB_DIR%%/spec/twitter/config_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/console_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/core_spec.rb
-%%GEM_LIB_DIR%%/spec/twitter/deprecated_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/ext/stdlib_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/extras_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/meta_spec.rb
