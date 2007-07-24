@@ -18,7 +18,6 @@ share/X11/xkb/compat/pc98
 share/X11/xkb/compat/xfree86
 share/X11/xkb/compat/xtest
 share/X11/xkb/compat/README
-share/X11/xkb/compiled
 share/X11/xkb/geometry/digital_vndr/lk
 share/X11/xkb/geometry/digital_vndr/pc
 share/X11/xkb/geometry/digital_vndr/unix
@@ -31,6 +30,7 @@ share/X11/xkb/geometry/chicony
 share/X11/xkb/geometry/dell
 share/X11/xkb/geometry/everex
 share/X11/xkb/geometry/fujitsu
+share/X11/xkb/geometry/hhk
 share/X11/xkb/geometry/hp
 share/X11/xkb/geometry/keytronic
 share/X11/xkb/geometry/kinesis
@@ -58,7 +58,6 @@ share/X11/xkb/keycodes/fujitsu
 share/X11/xkb/keycodes/hp
 share/X11/xkb/keycodes/ibm
 share/X11/xkb/keycodes/macintosh
-share/X11/xkb/keycodes/powerpcps2
 share/X11/xkb/keycodes/sony
 share/X11/xkb/keycodes/sun
 share/X11/xkb/keycodes/xfree86
@@ -113,6 +112,7 @@ share/X11/xkb/rules/base.lst
 share/X11/xkb/rules/base.xml
 share/X11/xkb/rules/sgi
 share/X11/xkb/rules/sun
+share/X11/xkb/rules/sun.xml
 share/X11/xkb/rules/xfree98
 share/X11/xkb/rules/xkb.dtd
 share/X11/xkb/rules/xorg
@@ -124,6 +124,7 @@ share/X11/xkb/semantics/basic
 share/X11/xkb/semantics/complete
 share/X11/xkb/semantics/default
 share/X11/xkb/semantics/xtest
+share/X11/xkb/symbols/braille
 share/X11/xkb/symbols/digital_vndr/lk
 share/X11/xkb/symbols/digital_vndr/pc
 share/X11/xkb/symbols/digital_vndr/us
@@ -141,6 +142,7 @@ share/X11/xkb/symbols/macintosh_vndr/fr
 share/X11/xkb/symbols/macintosh_vndr/gb
 share/X11/xkb/symbols/macintosh_vndr/is
 share/X11/xkb/symbols/macintosh_vndr/it
+share/X11/xkb/symbols/macintosh_vndr/latam
 share/X11/xkb/symbols/macintosh_vndr/nl
 share/X11/xkb/symbols/macintosh_vndr/no
 share/X11/xkb/symbols/macintosh_vndr/pt
@@ -202,6 +204,7 @@ share/X11/xkb/symbols/dk
 share/X11/xkb/symbols/ee
 share/X11/xkb/symbols/epo
 share/X11/xkb/symbols/es
+share/X11/xkb/symbols/et
 share/X11/xkb/symbols/fi
 share/X11/xkb/symbols/fo
 share/X11/xkb/symbols/fr
@@ -229,6 +232,7 @@ share/X11/xkb/symbols/latin
 share/X11/xkb/symbols/lk
 share/X11/xkb/symbols/lt
 share/X11/xkb/symbols/lv
+share/X11/xkb/symbols/ma
 share/X11/xkb/symbols/mao
 share/X11/xkb/symbols/mk
 share/X11/xkb/symbols/mm
@@ -283,6 +287,7 @@ share/X11/xkb/types/mousekeys
 share/X11/xkb/types/numpad
 share/X11/xkb/types/pc
 share/X11/xkb/types/README
+share/X11/xkb/xkbcomp
 @exec mkdir -p /var/lib/xkb
 @dirrm share/X11/xkb/compat
 @dirrm share/X11/xkb/geometry/digital_vndr
