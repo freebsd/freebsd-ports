@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	kcd-devel
-PORTVERSION=	7.11.0
+PORTVERSION=	7.13.0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kcd
 DISTNAME=	kcd-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	Change directory in full-screen visual mode
 
 USE_GETTEXT=	yes
