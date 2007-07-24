@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tribler
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.4
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 DISTNAME=	Tribler_${PORTVERSION}_src
@@ -25,8 +25,9 @@ WX_UNICODE=	yes
 
 post-extract:
 	@cd ${WRKSRC} && \
-		${RM} -rf *.bat *.exe.* *.nsi *.sh *LICENSE.txt debian mac && \
-		${MV} protocol_v3.txt readme.txt tribler.xpm ..
+		${RM} -rf *.bat *.exe.* *.nsi *.sh contrib-win32.txt \
+		    *LICENSE.txt debian mac *.command && \
+		${MV} protocol_v3.txt readme.txt tribler*.xpm ..
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/bin/netstat|netstat|' \
@@ -46,7 +47,7 @@ do-install:
 	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
 	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
 	${MKDIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKDIR}/tribler.xpm ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKDIR}/tribler*.xpm ${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.txt ${DOCSDIR}
