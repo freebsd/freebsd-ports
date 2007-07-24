@@ -10,14 +10,13 @@ libexec/sdlmame/romcmp
 libexec/sdlmame/srcclean
 libexec/sdlmame/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/SDLMAME.txt
-%%PORTDOCS%%%%DOCSDIR%%/cheats.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/mame.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/newvideo.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
-%%PORTDOCS%%%%DOCSDIR%%/whatsnew_0115u2.txt
 %%DATADIR%%/keymaps/km-ch.txt
+%%DATADIR%%/keymaps/km-de.txt
 %%DATADIR%%/keymaps/km-fr-OSX.txt
 %%DATADIR%%/keymaps/km-fr.txt
 %%DATADIR%%/ui.bdf
