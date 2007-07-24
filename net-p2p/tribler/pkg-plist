@@ -2,6 +2,7 @@ bin/tribler
 %%PORTDOCS%%%%DOCSDIR%%/protocol_v3.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 share/pixmaps/tribler.xpm
+share/pixmaps/tribler_big.xpm
 %%DATADIR%%/ABC/Actions/__init__.py
 %%DATADIR%%/ABC/Actions/__init__.pyo
 %%DATADIR%%/ABC/Actions/actionbase.py
@@ -223,8 +224,6 @@ share/pixmaps/tribler.xpm
 %%DATADIR%%/Tribler/Category/init_category.pyo
 %%DATADIR%%/Tribler/Dialogs/BandwidthSelector.py
 %%DATADIR%%/Tribler/Dialogs/BandwidthSelector.pyo
-%%DATADIR%%/Tribler/Dialogs/ContentFrontPanel.py
-%%DATADIR%%/Tribler/Dialogs/ContentFrontPanel.pyo
 %%DATADIR%%/Tribler/Dialogs/GUIServer.py
 %%DATADIR%%/Tribler/Dialogs/GUIServer.pyo
 %%DATADIR%%/Tribler/Dialogs/MugshotManager.py
@@ -247,8 +246,6 @@ share/pixmaps/tribler.xpm
 %%DATADIR%%/Tribler/Dialogs/makefriends.pyo
 %%DATADIR%%/Tribler/Dialogs/managefriends.py
 %%DATADIR%%/Tribler/Dialogs/managefriends.pyo
-%%DATADIR%%/Tribler/Dialogs/persons.py
-%%DATADIR%%/Tribler/Dialogs/persons.pyo
 %%DATADIR%%/Tribler/Dialogs/socnetmyinfo.py
 %%DATADIR%%/Tribler/Dialogs/socnetmyinfo.pyo
 %%DATADIR%%/Tribler/Dialogs/test.py
@@ -277,6 +274,10 @@ share/pixmaps/tribler.xpm
 %%DATADIR%%/Tribler/Overlay/__init__.pyo
 %%DATADIR%%/Tribler/Overlay/permid.py
 %%DATADIR%%/Tribler/Overlay/permid.pyo
+%%DATADIR%%/Tribler/Search/KeywordSearch.py
+%%DATADIR%%/Tribler/Search/KeywordSearch.pyo
+%%DATADIR%%/Tribler/Search/__init__.py
+%%DATADIR%%/Tribler/Search/__init__.pyo
 %%DATADIR%%/Tribler/SocialNetwork/OverlapMsgHandler.py
 %%DATADIR%%/Tribler/SocialNetwork/OverlapMsgHandler.pyo
 %%DATADIR%%/Tribler/SocialNetwork/SocialNetworkMsgHandler.py
@@ -343,20 +344,18 @@ share/pixmaps/tribler.xpm
 %%DATADIR%%/Tribler/Web2/util/mypartial.pyo
 %%DATADIR%%/Tribler/Web2/util/observer.py
 %%DATADIR%%/Tribler/Web2/util/observer.pyo
+%%DATADIR%%/Tribler/Web2/util/update.py
+%%DATADIR%%/Tribler/Web2/util/update.pyo
 %%DATADIR%%/Tribler/Web2/util/utilsettings.py
 %%DATADIR%%/Tribler/Web2/util/utilsettings.pyo
 %%DATADIR%%/Tribler/Web2/video/__init__.py
 %%DATADIR%%/Tribler/Web2/video/__init__.pyo
-%%DATADIR%%/Tribler/Web2/video/liveleak.py
-%%DATADIR%%/Tribler/Web2/video/liveleak.pyo
-%%DATADIR%%/Tribler/Web2/video/revver.py
-%%DATADIR%%/Tribler/Web2/video/revver.pyo
+%%DATADIR%%/Tribler/Web2/video/genericsearch.py
+%%DATADIR%%/Tribler/Web2/video/genericsearch.pyo
 %%DATADIR%%/Tribler/Web2/video/settings.py
 %%DATADIR%%/Tribler/Web2/video/settings.pyo
 %%DATADIR%%/Tribler/Web2/video/video.py
 %%DATADIR%%/Tribler/Web2/video/video.pyo
-%%DATADIR%%/Tribler/Web2/video/youtube.py
-%%DATADIR%%/Tribler/Web2/video/youtube.pyo
 %%DATADIR%%/Tribler/Worldmap/__init__.py
 %%DATADIR%%/Tribler/Worldmap/__init__.pyo
 %%DATADIR%%/Tribler/Worldmap/ipinfo.py
@@ -403,6 +402,7 @@ share/pixmaps/tribler.xpm
 %%DATADIR%%/Tribler/vwxGUI/PersonsItemPanel.pyo
 %%DATADIR%%/Tribler/vwxGUI/SubscriptionsItemPanel.py
 %%DATADIR%%/Tribler/vwxGUI/SubscriptionsItemPanel.pyo
+%%DATADIR%%/Tribler/vwxGUI/Tab_graphs.xrc
 %%DATADIR%%/Tribler/vwxGUI/TasteHeart.py
 %%DATADIR%%/Tribler/vwxGUI/TasteHeart.pyo
 %%DATADIR%%/Tribler/vwxGUI/TextButton.py
@@ -425,8 +425,12 @@ share/pixmaps/tribler.xpm
 %%DATADIR%%/Tribler/vwxGUI/filesOverview.xrc
 %%DATADIR%%/Tribler/vwxGUI/filesTab_files.pfr
 %%DATADIR%%/Tribler/vwxGUI/filesTab_files.xrc
+%%DATADIR%%/Tribler/vwxGUI/font.py
+%%DATADIR%%/Tribler/vwxGUI/font.pyo
 %%DATADIR%%/Tribler/vwxGUI/friendsOverview.pfr
 %%DATADIR%%/Tribler/vwxGUI/friendsOverview.xrc
+%%DATADIR%%/Tribler/vwxGUI/graphs.py
+%%DATADIR%%/Tribler/vwxGUI/graphs.pyo
 %%DATADIR%%/Tribler/vwxGUI/images/addAsFriend.png
 %%DATADIR%%/Tribler/vwxGUI/images/addAsFriend_clicked.png
 %%DATADIR%%/Tribler/vwxGUI/images/addFriend.png
@@ -453,6 +457,7 @@ share/pixmaps/tribler.xpm
 %%DATADIR%%/Tribler/vwxGUI/images/boostEnabled_clicked.png
 %%DATADIR%%/Tribler/vwxGUI/images/boost_clicked.png
 %%DATADIR%%/Tribler/vwxGUI/images/btn_DetailsHeader.gif
+%%DATADIR%%/Tribler/vwxGUI/images/btn_DetailsHeader_clicked.gif
 %%DATADIR%%/Tribler/vwxGUI/images/defaultThumb.png
 %%DATADIR%%/Tribler/vwxGUI/images/defaultThumbFriends.png
 %%DATADIR%%/Tribler/vwxGUI/images/defaultThumbL.png
@@ -577,8 +582,6 @@ share/pixmaps/tribler.xpm
 %%DATADIR%%/Tribler/vwxGUI/images/takeMeThere2_clicked.png
 %%DATADIR%%/Tribler/vwxGUI/images/thumb.png
 %%DATADIR%%/Tribler/vwxGUI/images/thumbField.png
-%%DATADIR%%/Tribler/vwxGUI/images/toLower.py
-%%DATADIR%%/Tribler/vwxGUI/images/toLower.pyo
 %%DATADIR%%/Tribler/vwxGUI/images/topBG1.png
 %%DATADIR%%/Tribler/vwxGUI/images/topBG2_grey.png
 %%DATADIR%%/Tribler/vwxGUI/images/topBG3.png
@@ -695,7 +698,6 @@ share/pixmaps/tribler.xpm
 %%DATADIR%%/category.conf
 %%DATADIR%%/cities.txt
 %%DATADIR%%/heading.bmp
-%%DATADIR%%/helpers.txt
 %%DATADIR%%/icons/active.bmp
 %%DATADIR%%/icons/addtorrent.bmp
 %%DATADIR%%/icons/addtorrentnondefault.bmp
@@ -756,8 +758,6 @@ share/pixmaps/tribler.xpm
 %%DATADIR%%/launchmanycore.py
 %%DATADIR%%/launchmanycore.pyo
 %%DATADIR%%/people.txt
-%%DATADIR%%/print_stats.py
-%%DATADIR%%/print_stats.pyo
 %%DATADIR%%/safeguiupdate.py
 %%DATADIR%%/safeguiupdate.pyo
 %%DATADIR%%/setuptribler.py
@@ -840,6 +840,7 @@ share/pixmaps/tribler.xpm
 %%DATADIR%%/tribler.ico
 %%DATADIR%%/tribler.py
 %%DATADIR%%/tribler.pyo
+%%DATADIR%%/web2definitions.conf
 %%DATADIR%%/webservice.py
 %%DATADIR%%/webservice.pyo
 %%DATADIR%%/webtest.py
@@ -862,6 +863,7 @@ share/pixmaps/tribler.xpm
 @dirrm %%DATADIR%%/Tribler/Subscriptions
 @dirrm %%DATADIR%%/Tribler/Statistics
 @dirrm %%DATADIR%%/Tribler/SocialNetwork
+@dirrm %%DATADIR%%/Tribler/Search
 @dirrm %%DATADIR%%/Tribler/Overlay
 @dirrm %%DATADIR%%/Tribler/NATFirewall
 @dirrm %%DATADIR%%/Tribler/Merkle
