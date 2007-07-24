@@ -20,8 +20,7 @@ LIB_DEPENDS=	theora.2:${PORTSDIR}/multimedia/libtheora \
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-oss=yes \
-			--enable-jack=yes \
-			--mandir=${MANPREFIX}/man
+			--enable-jack=yes
 
 MAN1=	recordmydesktop.1
 

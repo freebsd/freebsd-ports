@@ -21,7 +21,7 @@ LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 		skstream-0.3.4:${PORTSDIR}/net/skstream \
 		gcrypt.13:${PORTSDIR}/security/libgcrypt
 
-CONFIGURE_ARGS=	--with-python=${LOCALBASE} --mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--with-python=${LOCALBASE}
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

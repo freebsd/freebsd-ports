@@ -20,7 +20,7 @@ USE_RC_SUBR=	${PORTNAME}d
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-mysql --disable-klogd --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--enable-mysql --disable-klogd
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN8=	rfc3195d.8 rklogd.8 rsyslogd.8

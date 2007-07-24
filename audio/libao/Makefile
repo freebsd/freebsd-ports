@@ -17,7 +17,6 @@ USE_AUTOTOOLS=	libtool:15
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir="${PREFIX}/man"
 INSTALLS_SHLIB=	yes
 
 .if defined(NOPORTDOCS)

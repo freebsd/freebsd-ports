@@ -25,7 +25,6 @@ GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--mandir=${PREFIX}/man
 
 CONFIGURE_ENV=		CPPFLAGS=-I${PREFIX}/include LIBS=-L${PREFIX}/lib \
 			LDFLAGS=-L${PREFIX}/lib \
