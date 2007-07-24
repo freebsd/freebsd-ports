@@ -7,30 +7,53 @@
 
 PORTNAME=	nrpe2
 PORTVERSION=	2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
 DISTNAME=	nrpe-${PORTVERSION}
 
-MAINTAINER=	dan@langille.org
+MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	Nagios Remote Plugin Executor
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
-GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
-
-USE_RC_SUBR=	nrpe2.sh
-SUB_FILES=	pkg-message
-
-PLIST_FILES=	sbin/nrpe2 etc/nrpe.cfg-sample libexec/nagios/check_nrpe2
-
-CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/nagios \
-		--bindir=${PREFIX}/sbin --sysconfdir=${PREFIX}/etc
+USE_RC_SUBR=	nrpe2
 
 OPTIONS=	SSL "SSL support" off \
 		ARGS "Enable command arguments *POTENTIAL SECURITY RISK*" off
+
+GNU_CONFIGURE=	yes
+
+NAGIOSUSER?=	nagios
+NAGIOSGROUP?=	nagios
+NAGIOSDIR?=	/var/spool/nagios
+
+NAGIOSUID=	181
+NAGIOSGID=	${NAGIOSUID}
+
+CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
+		--libexecdir=${PREFIX}/libexec/nagios \
+		--sysconfdir=${PREFIX}/etc \
+		--with-nrpe-user=${NAGIOSUSER} \
+		--with-nrpe-group=${NAGIOSGROUP} \
+		--prefix=${PREFIX}
+
+PLIST_FILES=	sbin/nrpe2 etc/nrpe.cfg-sample libexec/nagios/check_nrpe2
+
+SUB_VARS=	NAGIOSDIR=${NAGIOSDIR} \
+		NAGIOSUSER=${NAGIOSUSER} \
+		NAGIOSGROUP=${NAGIOSGROUP} \
+		NAGIOSUID=${NAGIOSUID} \
+		NAGIOSGID=${NAGIOSGID}
+
+SUB_FILES=	pkg-install \
+		pkg-deinstall \
+		pkg-message
+
+SUB_LIST+=	${SUB_VARS}
+PLIST_SUB+=	${SUB_VARS}
 
 .include <bsd.port.pre.mk>
 
@@ -45,24 +68,21 @@ CONFIGURE_ARGS+=	--disable-ssl
 CONFIGURE_ARGS+=	--enable-command-args
 .endif
 
-post-build:
-	@${REINPLACE_CMD} -e 's|nrpe.pid|nrpe2.pid|g' \
-		${WRKSRC}/sample-config/nrpe.cfg
+post-patch:
+	@${REINPLACE_CMD} -e 's#nrpe.pid#nrpe2.pid#g' \
+		-e 's#/usr/lib/nagios/plugins/#${LOCALBASE}/libexec/nagios/#g' \
+		-e 's#/usr/bin/sudo#${LOCALBASE}/bin/sudo#g' \
+		${WRKSRC}/sample-config/nrpe.cfg.in
 
 pre-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nrpe ${PREFIX}/sbin/nrpe2
-	${INSTALL_PROGRAM} ${WRKSRC}/src/check_nrpe \
-		${PREFIX}/libexec/nagios/check_nrpe2
-	${INSTALL_DATA} ${WRKSRC}/sample-config/nrpe.cfg \
-		${PREFIX}/etc/nrpe.cfg-sample
+	${INSTALL_PROGRAM} ${WRKSRC}/src/check_nrpe ${PREFIX}/libexec/nagios/check_nrpe2
+	${INSTALL_DATA} ${WRKSRC}/sample-config/nrpe.cfg ${PREFIX}/etc/nrpe.cfg-sample
 
 post-install:
-	${CAT} ${PKGMESSAGE}
-
-post-deinstall:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} DEINSTALL
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
