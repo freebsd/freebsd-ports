@@ -1,8 +1,4 @@
 bin/gtkpod
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODOandBUGS.txt
-%%PORTDOCS%%%%DOCSDIR%%/TROUBLESHOOTING
 %%DATADIR%%/data/gtkpod.glade
 %%DATADIR%%/data/cdshine.png
 %%DATADIR%%/data/cdshine_main.png
@@ -40,10 +36,22 @@ bin/gtkpod
 %%DATADIR%%/scripts/sync-thunderbird-nano.sh
 %%DATADIR%%/scripts/sync-tomboy.sh
 %%DATADIR%%/scripts/sync-webcalendar.sh
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
 share/icons/hicolor/32x32/apps/gtkpod.png
 share/icons/hicolor/48x48/apps/gtkpod.png
 share/icons/hicolor/64x64/apps/gtkpod.png
 share/applications/gtkpod.desktop
+@dirrmtry share/applications
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 share/locale/de/LC_MESSAGES/gtkpod.mo
 share/locale/es/LC_MESSAGES/gtkpod.mo
 share/locale/fr/LC_MESSAGES/gtkpod.mo
@@ -51,7 +59,8 @@ share/locale/he/LC_MESSAGES/gtkpod.mo
 share/locale/it/LC_MESSAGES/gtkpod.mo
 share/locale/ja/LC_MESSAGES/gtkpod.mo
 share/locale/sv/LC_MESSAGES/gtkpod.mo
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODOandBUGS.txt
+%%PORTDOCS%%%%DOCSDIR%%/TROUBLESHOOTING
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%DATADIR%%/scripts
-%%PORTDOCS%%@dirrm %%DATADIR%%/data
-%%PORTDOCS%%@dirrm %%DATADIR%%
