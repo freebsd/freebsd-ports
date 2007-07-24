@@ -25,6 +25,9 @@ MAKE_ARGS=	'CXXFLAGS=${CXXFLAGS} -I${X11BASE}/include -pipe -s -O2' \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/scene*.cpp
+	@${REINPLACE_CMD} -e 's|k_InitGL(GLvoid)|k_InitGL(void)|' ${WRKSRC}/scene12.cpp
+	@${REINPLACE_CMD} -e 's|Load(char\*|Load(const char* |g' ${WRKSRC}/Texture.*
+	@${REINPLACE_CMD} -e 's|Create(char\*|Create(const char* |g' ${WRKSRC}/Texture.*
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/glxs ${PREFIX}/bin
