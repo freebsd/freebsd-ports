@@ -25,7 +25,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man --exec-prefix=${PREFIX}
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 
 OPTIONS=	LOCK "Lock the device when mounting (avoids access)" off \
 		UBLIO "Enable user space cache for improved speed" on

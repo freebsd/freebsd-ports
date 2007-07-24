@@ -15,7 +15,6 @@ COMMENT=	RPN and algebraic scientific calculator
 
 USE_GNOME=	gtk20 pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir="${PREFIX}/man"
 
 MAN1=		calcoo.1
 

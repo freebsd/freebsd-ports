@@ -22,7 +22,7 @@ CONFLICTS=	glimpse-4*	# agrep(1)
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS+= --enable-static --mandir=${PREFIX}/man 
+CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
