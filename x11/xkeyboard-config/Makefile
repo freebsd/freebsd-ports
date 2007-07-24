@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xkeyboard-config
-PORTVERSION=	0.9
-PORTREVISION=	3
+PORTVERSION=	1.0
 CATEGORIES=	x11
 MASTER_SITES=	http://xlibs.freedesktop.org/xkbdesc/
 DISTNAME=	xkeyboard-config-${PORTVERSION}
