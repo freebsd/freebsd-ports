@@ -41,67 +41,16 @@ lib/libXvMCNVIDIA.a
 %%MODULESDIR%%/drivers/nvidia_drv.so
 %%MODULESDIR%%/extensions/libglx.so.1
 @exec ln -sf %D/%%MODULESDIR%%/extensions/libglx.so.1 %D/%%MODULESDIR%%/extensions/libglx.so
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-a.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-b.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-c.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-d.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-e.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-f.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-g.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-h.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-i.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-j.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-k.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-l.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-m.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-n.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-o.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-p.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-q.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-r.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-s.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-t.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-u.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-v.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-w.html
-%%PORTDOCS%%%%DOCSDIR%%/html/appendix-x.html
-%%PORTDOCS%%%%DOCSDIR%%/html/chapter-01.html
-%%PORTDOCS%%%%DOCSDIR%%/html/chapter-02.html
-%%PORTDOCS%%%%DOCSDIR%%/html/chapter-03-section-02.html
-%%PORTDOCS%%%%DOCSDIR%%/html/chapter-03.html
-%%PORTDOCS%%%%DOCSDIR%%/html/chapter-04.html
-%%PORTDOCS%%%%DOCSDIR%%/html/chapter-05.html
-%%PORTDOCS%%%%DOCSDIR%%/html/chapter-06.html
-%%PORTDOCS%%%%DOCSDIR%%/html/chapter-07.html
-%%PORTDOCS%%%%DOCSDIR%%/html/chapter-08.html
-%%PORTDOCS%%%%DOCSDIR%%/html/chapter-09.html
-%%PORTDOCS%%%%DOCSDIR%%/html/chapter-10.html
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/part-01.html
-%%PORTDOCS%%%%DOCSDIR%%/html/part-02.html
-%%PORTDOCS%%%%DOCSDIR%%/html/part-03.html
-%%PORTDOCS%%%%DOCSDIR%%/html/preface-01.html
-%%PORTDOCS%%%%DOCSDIR%%/html/preface-02.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.Linux
-%%PORTDOCS%%%%DOCSDIR%%/XF86Config.sample
-%%PORTDOCS%%%%DOCSDIR%%/license.txt
-%%PORTDOCS%%%%DOCSDIR%%/gl.h
-%%PORTDOCS%%%%DOCSDIR%%/glx.h
-%%PORTDOCS%%%%DOCSDIR%%/glext.h
-%%PORTDOCS%%%%DOCSDIR%%/glxtokens.h
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @cwd /boot/modules
 nvidia.ko
 @unexec kldxref %D
 %%LINUX%%@cwd %%LINUXBASE%%
-%%LINUX%%usr/lib/libGL.so.1.0.%%SHLIB_VERSION%%
-%%LINUX%%usr/lib/libGLcore.so.1.0.%%SHLIB_VERSION%%
-%%LINUX%%usr/lib/libnvidia-tls.so.1.0.%%SHLIB_VERSION%%
-%%LINUX%%@exec ln -sf %D/usr/lib/libGL.so.1.0.%%SHLIB_VERSION%% %D/usr/lib/libGL.so.1
-%%LINUX%%@exec ln -sf %D/usr/lib/libGLcore.so.1.0.%%SHLIB_VERSION%% %D/usr/lib/libGLcore.so.1
-%%LINUX%%@exec ln -sf %D/usr/lib/libnvidia-tls.so.1.0.%%SHLIB_VERSION%% %D/usr/lib/libnvidia-tls.so.1
+%%LINUX%%usr/lib/libGL.so.%%SHLIB_VERSION%%
+%%LINUX%%usr/lib/libGLcore.so.%%SHLIB_VERSION%%
+%%LINUX%%usr/lib/libnvidia-tls.so.%%SHLIB_VERSION%%
+%%LINUX%%@exec ln -sf %D/usr/lib/libGL.so.%%SHLIB_VERSION%% %D/usr/lib/libGL.so.1
+%%LINUX%%@exec ln -sf %D/usr/lib/libGLcore.so.%%SHLIB_VERSION%% %D/usr/lib/libGLcore.so.1
+%%LINUX%%@exec ln -sf %D/usr/lib/libnvidia-tls.so.%%SHLIB_VERSION%% %D/usr/lib/libnvidia-tls.so.1
 %%LINUX%%@unexec rm -f %D/usr/lib/libGL.so.1
 %%LINUX%%@unexec rm -f %D/usr/lib/libGLcore.so.1
 %%LINUX%%@unexec rm -f %D/usr/lib/libnvidia-tls.so.1

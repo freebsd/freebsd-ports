@@ -23,6 +23,7 @@ USE_GL=		gl
 INSTALLS_SHLIB=	yes
 SUB_FILES+=	pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
+PORTDOCS=	*
 
 OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 		VM86_INT10CALL	"Use VM86 interface for video BIOS calls" off \
@@ -36,10 +37,8 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 #
 .if ${DISTVERSION:M1.0-*}
 NVVERSION=	${DISTVERSION:S/1.0-//}
-SHLIB_VERSION=	${NVVERSION}
 .else
 NVVERSION=	${DISTVERSION:S/.//g}
-SHLIB_VERSION=	${PORTVERSION}
 .endif
 
 .if ${NVVERSION} == 7184
@@ -63,11 +62,11 @@ XFREE86_SUB=	""
 
 # XXX Should use ${PKG_INFO} XXX
 #
-XSERVVERSION!=	/usr/sbin/pkg_info -O x11-servers/XFree86-4-Server 2>/dev/null | ${GREP} Server- || /usr/sbin/pkg_info -O x11-servers/xorg-server 2>/dev/null | ${GREP} server- || /usr/sbin/pkg_info -qO x11-servers/xorg-server-snap
+XSERVVERSION!=	/usr/sbin/pkg_info -O x11-servers/XFree86-4-Server 2>/dev/null | ${GREP} Server- || /usr/sbin/pkg_info -O x11-servers/xorg-server 2>/dev/null | ${GREP} server- || /usr/sbin/pkg_info -qO x11-servers/xorg-server-snap 2>/dev/null
 XLIBVERSION!=	/usr/sbin/pkg_info -O x11/XFree86-4-libraries 2>/dev/null | ${GREP} libraries- || /usr/sbin/pkg_info -O graphics/libGL 2>/dev/null | ${GREP} libGL- || true
 
 PLIST_SUB+=	XSERVVERSION=${XSERVVERSION} XLIBVERSION=${XLIBVERSION} \
-		LINUXBASE=${LINUXBASE} SHLIB_VERSION=${SHLIB_VERSION} \
+		LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
 		MODULESDIR=${MODULESDIR} XORG=${XORG_SUB} XFREE86=${XFREE86_SUB}
 
 .if !defined(WITHOUT_LINUX)
@@ -133,20 +132,20 @@ post-patch: .SILENT
 .endif
 	${REINPLACE_CMD} '/bin/d ; /man/d' ${WRKSRC}/x11/Makefile
 
-pre-install:
+pre-su-install:
 	@${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
 
 post-install:
 # pkg-plist is already overbloated, so use this hack instead of PLIST_SUB's
 .if ${NVVERSION} < 8174
-	@${REINPLACE_CMD} '/libnvidia-cfg/d ; /html/d' ${TMPPLIST}
+	@${REINPLACE_CMD} '/libnvidia-cfg/d' ${TMPPLIST}
 .else
-	@${REINPLACE_CMD} '/README\.Linux/d ; /nvidia_drv\.o/d' ${TMPPLIST}
+	@${REINPLACE_CMD} '/nvidia_drv\.o/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} < 9746
-	@${REINPLACE_CMD} '/wfb/d ; /chapter-10/d' ${TMPPLIST}
+	@${REINPLACE_CMD} '/wfb/d' ${TMPPLIST}
 .endif
-	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
+	@${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
