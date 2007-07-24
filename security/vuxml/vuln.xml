@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cddde37a-39b5-11dc-b3da-001921ab2fa4">
+    <topic>dokuwiki -- XSS vulnerability in spellchecker backend</topic>
+    <affects>
+      <package>
+	<name>dokuwiki</name>
+	<range><lt>20070626_1</lt></range>
+      </package>
+      <package>
+	<name>dokuwiki-devel</name>
+	<range><lt>20070524_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>DokuWiki reports:</p>
+	<blockquote cite="http://bugs.splitbrain.org/index.php?do=details&amp;task_id=1195">
+	  <p>The spellchecker tests the UTF-8 capabilities of the used browser by
+	    sending an UTF-8 string to the backend, which will send it back unfiltered.
+	    By comparing string length the spellchecker can work around broken
+	    implementations. An attacker could construct a form to let users send
+	    JavaScript to the spellchecker backend, resulting in malicious JavaScript
+	    being executed in their browser.</p>
+	  <p>Affected are all versions up to and including 2007-06-26 even when the
+	    spell checker is disabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://xforce.iss.net/xforce/xfdb/35501</url>
+      <cvename>CVE-2007-3930</cvename>
+    </references>
+    <dates>
+      <discovery>2007-06-26</discovery>
+      <entry>2007-07-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc9c217e-3791-11dc-bb1a-000fea449b8a">
     <topic>lighttpd -- multiple vulnerabilities</topic>
     <affects>
