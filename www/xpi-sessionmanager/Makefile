@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sessionmanager
-PORTVERSION=	0.5.3.3
+PORTVERSION=	0.5.4.1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
@@ -20,7 +20,7 @@ XPI_FILES=	chrome/icons/default/sessionmanagerPrompt.ico \
 		chrome/sessionmanager.jar \
 		components/SessionManagerHelperComponent.js \
 		defaults/preferences/sessionmanager.js \
-		chrome.manifest install.rdf license.txt 
+		chrome.manifest install.rdf license.txt
 XPI_DIRS=	chrome/icons/default chrome/icons chrome \
 		components defaults/preferences defaults
 
