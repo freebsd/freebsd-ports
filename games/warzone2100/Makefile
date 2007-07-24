@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	warzone2100
-PORTVERSION=	2.0.6
-PORTREVISION=	1
+PORTVERSION=	2.0.7
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${DISTNAME}_hotfix1.patch
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
@@ -31,10 +33,9 @@ USE_GL=		yes
 USE_GMAKE=	yes
 USE_SDL=	net sdl
 CONFIGURE_ARGS=	--program-transform-name=""
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="${PTHREAD_LIBS}"
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-m32||' ${WRKSRC}/configure
