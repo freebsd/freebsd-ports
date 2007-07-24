@@ -7,7 +7,7 @@
 
 PORTNAME=	devil
 PORTVERSION=	1.6.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openil
@@ -22,24 +22,20 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
+USE_AUTOTOOLS=	libtool:15
+USE_GL=		yes
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
+
 OPTIONS=	SDL "Enable SDL support" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SDL)
 USE_SDL=	yes
-CFLAGS+=	"-I${LOCALBASE}/include/SDL11"
-.endif
-
-USE_AUTOTOOLS=	libtool:15
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
-		-L${X11BASE}/lib"
-
-.if defined(WITH_SDL)
-post-patch:
-	@${REINPLACE_CMD} 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/configure
+.else
+CONFIGURE_ARGS+=--disable-sdl
 .endif
 
 .include <bsd.port.post.mk>
