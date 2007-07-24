@@ -7,10 +7,12 @@
 
 PORTNAME=	ion-3rc
 PORTVERSION=	20070720
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/dl/:ion3 \
+		${MASTER_SITE_LOCAL:S/$/:ion3/} \
 		http://wannabehacker.com/src/:xinerama
-DISTNAME=	ion-3rc-${PORTVERSION}
+MASTER_SITE_SUBDIR= philip/:ion3
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:ion3
 
 MAINTAINER=	philip@FreeBSD.org
@@ -36,7 +38,7 @@ PLIST_SUB+=	NLS=""
 PLIST_SUB+=	XINERAMA="@comment "
 .else
 PLIST_SUB+=	XINERAMA=""
-DISTFILES+=	mod_xinerama-20070430${EXTRACT_SUFX}:xinerama
+DISTFILES+=	mod_xinerama-20070719${EXTRACT_SUFX}:xinerama
 .endif
 
 MAN1=		ion3.1 pwm3.1
