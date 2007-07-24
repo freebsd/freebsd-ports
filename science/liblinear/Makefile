@@ -8,8 +8,7 @@
 PORTNAME=	liblr
 PORTVERSION=	1.00
 CATEGORIES=	science math
-MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/liblr/ \
-		http://www.csie.ntu.edu.tw/~cjlin/liblr/oldfiles/
+MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	rafan@FreeBSD.org
