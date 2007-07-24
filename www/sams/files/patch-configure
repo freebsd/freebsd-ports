@@ -5,10 +5,10 @@
  echo "#define WEBINTERFACEPATH \"$prefix/share/sams\" " >> config.h
  
 +CASHE_DIR=./tmp
-+CASHE=${CASHE_DIR}/config.cashe
-+[ -d ./tmp ] || mkdir ${CASHE_DIR}
-+[ -f ./tmp/config.cashe ] && truncate ${CASHE}
-+exec 7>> ${CASHE}
++CASHE=${CACHE_DIR}/config.cashe
++[ -d ./tmp ] || mkdir ${CACHE_DIR}
++[ -f ./tmp/config.cashe ] && truncate -s0 ${CACHE}
++exec 7>> ${CACHE}
 +
  echo "$as_me:$LINENO: result: " >&5
  echo "${ECHO_T}" >&6
