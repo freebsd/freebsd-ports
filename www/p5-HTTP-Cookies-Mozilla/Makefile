@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Cookies-Mozilla
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTTP
@@ -23,10 +23,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		HTTP::Cookies::Mozilla.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600	# inherited from www/p5-libwww
-IGNORE=	requires at least Perl 5.6 due to dependencies.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
