@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="872623af-39ec-11dc-b8cc-000fea449b8a">
+    <topic>tomcat -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache-tomcat</name>
+	<range><ge>4.1.0</ge><lt>4.1.36</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache Project reports:</p>
+	<blockquote cite="http://www.mail-archive.com/dev@tomcat.apache.org/msg16385.html">
+	  <p>The Apache Tomcat team is proud to announce the immediate
+	    availability of Tomcat 4.1.36 stable. This build contains
+	    numerous library updates,  A small number of bug fixes and
+	    two important security fixes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-2090</cvename>
+      <cvename>CVE-2007-0450</cvename>
+      <cvename>CVE-2007-1358</cvename>
+    </references>
+    <dates>
+      <discovery>2007-04-27</discovery>
+      <entry>2007-07-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cddde37a-39b5-11dc-b3da-001921ab2fa4">
     <topic>dokuwiki -- XSS vulnerability in spellchecker backend</topic>
     <affects>
