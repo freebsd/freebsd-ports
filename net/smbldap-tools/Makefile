@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	smbldap-tools
-PORTVERSION=	0.9.2a
+PORTVERSION=	0.9.3
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://download.gna.org/smbldap-tools/packages/ \
+		http://download.gna.org/smbldap-tools/packages/old-release/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -26,14 +26,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/a//}
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-
-DOC_HTML_LIST =	contents_motif.gif index.html next_motif.gif \
-		previous_motif.gif smbldap-tools.html smbldap-tools001.html \
-		smbldap-tools002.html smbldap-tools003.html \
-		smbldap-tools004.html smbldap-tools005.html \
-		smbldap-tools006.html smbldap-tools007.html \
-		smbldap-tools008.html smbldap-tools009.html \
-		smbldap-tools010.html
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure.pl
@@ -53,11 +45,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/$i ${EXAMPLESDIR}/etc/$i
 	@[ -f ${PREFIX}/etc/${PORTNAME}/$i ] || ${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/etc/${PORTNAME}/$i
 .endfor
-.for i in smbldap-groupadd smbldap-groupdel smbldap-groupmod smbldap-groupshow smbldap-useradd smbldap-userdel smbldap-usermod smbldap-usershow smbldap-passwd smbldap-populate
+.for i in smbldap-groupadd smbldap-groupdel smbldap-groupmod smbldap-groupshow smbldap-useradd smbldap-userdel smbldap-userlist smbldap-usermod smbldap-usershow smbldap-passwd smbldap-populate
 	${INSTALL_SCRIPT} ${WRKSRC}/$i ${PREFIX}/sbin
 .endfor
 .for i in smbldap-migrate-pwdump-accounts smbldap-migrate-pwdump-groups smbldap-migrate-unix-accounts smbldap-migrate-unix-groups
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/$i ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/migration_scripts/$i ${PREFIX}/sbin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/smbldap_tools.pm ${SITE_PERL}/
 	${INSTALL_DATA} ${WRKSRC}/smb.conf ${EXAMPLESDIR}/
@@ -65,11 +57,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/smbldap-tools.pdf ${DOCSDIR}/smbldap-tools.pdf
-.for i in ${DOC_HTML_LIST}
-	${INSTALL_DATA} ${WRKSRC}/doc/html/$i ${DOCSDIR}/html/$i
-.endfor
 .endif
 
 .include <bsd.port.mk>

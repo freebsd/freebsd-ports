@@ -6,7 +6,7 @@ Additionnaly, some scripts are designed to ease your migration from
 a Windows NT 4.0 PDC Server to a Samba-LDAP PDC Server (Killer?;-):
 smbldap-populate, smbldap-migrate-groups, smbldap-migrate-accounts.
 
-WWW: http://samba.idealx.org/
+WWW: https://gna.org/projects/smbldap-tools/
 
 - Florent Thoumie
 flz@xbsd.org
