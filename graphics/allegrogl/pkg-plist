@@ -15,7 +15,7 @@ include/allegrogl/GLext/glx_ext_list.h
 lib/libagl.so
 lib/libagl.so.0
 lib/libagl.so.0.4
-lib/libagl.so.0.4.1
+lib/libagl.so.0.4.2
 %%EXAMPLESDIR%%/a1.bmp
 %%EXAMPLESDIR%%/a24.tga
 %%EXAMPLESDIR%%/a32.tga
