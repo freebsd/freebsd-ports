@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzma
-PORTVERSION=	4.48
+PORTVERSION=	4.50
 CATEGORIES=	archivers
 MASTER_SITES=	SFE/sevenzip
 DISTNAME=	7z${PORTVERSION:S/.//g}
@@ -26,6 +26,8 @@ CFLAGS+=	-D_LZMA_SYSTEM_SIZE_T
 PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt history.txt lzma.txt
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|4\.49|${DISTVERSION}|' \
+		${BUILD_WRKSRC}/LzmaAlone.cpp
 	@${REINPLACE_CMD} -e \
 		's|^CXX.*||;s|CXX_C|CC|;s|^CFLAGS =|CFLAGS +=|'\
 			${BUILD_WRKSRC}/${MAKEFILE}
