@@ -34,16 +34,60 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ab2575d6-39f0-11dc-b8cc-000fea449b8a">
+    <topic>tomcat -- XSS vulnerability in sample applications</topic>
+    <affects>
+      <package>
+	<name>apache-tomcat</name>
+	<range><gt>6.0.0</gt><lt>6.0.11</lt></range>
+      </package>
+      <package>
+	<name>tomcat</name>
+	<range><gt>5.0.0</gt><lt>5.5.24</lt></range>
+      </package>
+      <package>
+	<name>jakarta-tomcat</name>
+	<range><gt>5.0.0</gt><lt>5.5.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Project reports:</p>
+	<blockquote cite="http://tomcat.apache.org/security-5.html">
+	  <p>The JSP and Servlet included in the sample application within
+	    the Tomcat documentation webapp did not escape user provided
+	    data before including it in the output. This enabled a XSS
+	    attack. These pages have been simplified not to use any user
+	    provided data in the output.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-1355</cvename>
+      <bid>24058</bid>
+    </references>
+    <dates>
+      <discovery>2007-05-19</discovery>
+      <entry>2007-07-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="872623af-39ec-11dc-b8cc-000fea449b8a">
     <topic>tomcat -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>apache-tomcat</name>
 	<range><ge>4.1.0</ge><lt>4.1.36</lt></range>
+	<range><gt>6.0.0</gt><lt>6.0.11</lt></range>
+      </package>
+      <package>
+	<name>tomcat</name>
+	<range><gt>5.0.0</gt><lt>5.5.23</lt></range>
       </package>
       <package>
 	<name>jakarta-tomcat</name>
 	<range><ge>4.0.0</ge><lt>4.1.0</lt></range>
+	<range><gt>5.0.0</gt><lt>5.5.23</lt></range>
       </package>
     </affects>
     <description>
