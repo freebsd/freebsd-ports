@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	ja2
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	games
 MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/ \
 		http://ja2.dragonriders.de/files/
 
 MAINTAINER=	christoph.mallon@gmx.de
 COMMENT=	A port of "Jagged Alliance 2" using SDL
-
-BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/iconv
 
 DISTVERSIONSUFFIX=	-source
 
@@ -30,12 +27,13 @@ NO_PACKAGE=	Language of the datafiles must be hardcoded in the game binary
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS=	DUTCH	"Compile for dutch version"	Off \
-		ENGLISH	"Compile for english version"	Off \
-		FRENCH	"Compile for french version"	Off \
-		GERMAN	"Compile for german version"	Off \
-		ITALIAN	"Compile for italian version"	Off \
-		POLISH	"Compile for polish version"	Off
+OPTIONS=	DUTCH	"Compile for Dutch version"	Off \
+		ENGLISH	"Compile for English version"	Off \
+		FRENCH	"Compile for French version"	Off \
+		GERMAN	"Compile for German version"	Off \
+		ITALIAN	"Compile for Italian version"	Off \
+		POLISH	"Compile for Polish version"	Off \
+		RUSSIAN	"Compile for Russian version"	Off
 
 .include <bsd.port.pre.mk>
 
@@ -51,6 +49,8 @@ MAKE_ARGS+=	LNG=GERMAN
 MAKE_ARGS+=	LNG=ITALIAN
 .elifdef WITH_POLISH
 MAKE_ARGS+=	LNG=POLISH
+.elifdef WITH_RUSSIAN
+MAKE_ARGS+=	LNG=RUSSIAN
 .else
 IGNORE=	no language has been chosen. Please choose the appropriate language for your game CD
 .endif
@@ -63,7 +63,7 @@ MAN6=	ja2.6
 
 do-install:
 	@${MKDIR} ${DATADIR}/Data/TILECACHE
-	@${INSTALL_PROGRAM} ${WRKSRC}/ja ${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/${MAN6} ${MANPREFIX}/man/man6
 
 post-install:
