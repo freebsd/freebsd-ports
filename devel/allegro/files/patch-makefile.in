@@ -1,15 +1,13 @@
---- makefile.in.orig	Sat Apr  8 14:07:28 2006
-+++ makefile.in	Mon Dec 18 12:35:59 2006
-@@ -29,12 +29,13 @@
+--- makefile.in.orig	Fri Jun 15 22:52:28 2007
++++ makefile.in	Fri Jul 13 14:52:12 2007
+@@ -29,11 +29,12 @@
  INFO_DIR = $(infodir)/dir
  DESTDIR =
  
 -ACLOCAL = aclocal
 -AUTOCONF = autoconf
--AUTOHEADER = autoheader
 +ACLOCAL = true
 +AUTOCONF = true
-+AUTOHEADER = true
  
  INSTALL = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
@@ -17,7 +15,7 @@
  INSTALL_DATA = @INSTALL_DATA@
  INSTALL_INFO = @INSTALL_INFO@
  
-@@ -354,6 +355,11 @@
+@@ -352,6 +353,11 @@
  endif
  
  lib: $(ALLEGRO_LIB_TARGETS)
@@ -29,7 +27,7 @@
  
  modules: $(ALLEGRO_MODULE_TARGETS)
  
-@@ -465,9 +471,9 @@
+@@ -463,9 +469,9 @@
  	  fi; \
  	done
  	@for l in alleg alld allp; do \
@@ -42,7 +40,7 @@
  	    $(INSTALL_DATA) $(LIBDIR)/lib$${l}_unsharable.a $(DESTDIR)$(libdir)/; \
  	  fi; \
  	done
-@@ -481,20 +487,10 @@
+@@ -479,20 +485,10 @@
  	fi
  	$(mkinstalldirs) $(DESTDIR)$(bindir)
  	@echo Installing allegro-config to $(DESTDIR)$(bindir)

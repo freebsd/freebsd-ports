@@ -82,7 +82,7 @@ MAN3=	ALLEGRO_DATE.3 ALLEGRO_DATE_STR.3 ALLEGRO_SUB_VERSION.3 \
 	fixtorad_r.3 fixup_datafile.3 fli_bitmap.3 fli_bmp_dirty_from.3 \
 	fli_bmp_dirty_to.3 fli_frame.3 fli_pal_dirty_from.3 \
 	fli_pal_dirty_to.3 fli_palette.3 fli_timer.3 floodfill.3 \
-	flush_config_file.3 font.3 for_each_file_ex.3 \
+	flush_config_file.3 font.3 font_has_alpha.3 for_each_file_ex.3 \
 	free_audio_stream_buffer.3 free_config_entries.3 \
 	free_lzss_pack_data.3 free_lzss_unpack_data.3 \
 	freeze_mouse_flag.3 ftofix.3 generate_332_palette.3 \
@@ -135,7 +135,7 @@ MAN3=	ALLEGRO_DATE.3 ALLEGRO_DATE_STR.3 ALLEGRO_SUB_VERSION.3 \
 	is_color_font.3 is_compatible_font.3 is_inside_bitmap.3 \
 	is_linear_bitmap.3 is_memory_bitmap.3 is_mono_font.3 \
 	is_planar_bitmap.3 is_relative_filename.3 is_same_bitmap.3 \
-	is_screen_bitmap.3 is_sub_bitmap.3 is_system_bitmap.3 \
+	is_screen_bitmap.3 is_sub_bitmap.3 is_system_bitmap.3 is_trans_font.3 \
 	is_video_bitmap.3 is_windowed_mode.3 itofix.3 joy.3 key.3 \
 	key_led_flag.3 key_shifts.3 keyboard_callback.3 \
 	keyboard_lowlevel_callback.3 keyboard_needs_poll.3 \
@@ -158,7 +158,7 @@ MAN3=	ALLEGRO_DATE.3 ALLEGRO_DATE_STR.3 ALLEGRO_SUB_VERSION.3 \
 	matrix_to_quat.3 merge_fonts.3 midi_loop_end.3 midi_loop_start.3 \
 	midi_meta_callback.3 midi_msg_callback.3 midi_out.3 midi_pause.3 \
 	midi_pos.3 midi_recorder.3 midi_resume.3 midi_seek.3 \
-	midi_sysex_callback.3 midi_time.3 mouse_b.3 mouse_callback.3 \
+	midi_sysex_callback.3 midi_time.3 mouse_b.3 mouse_w.3 mouse_callback.3 \
 	mouse_needs_poll.3 mouse_pos.3 mouse_sprite.3 mouse_x.3 \
 	mouse_x_focus.3 mouse_y.3 mouse_y_focus.3 mouse_z.3 \
 	need_uconvert.3 next_fli_frame.3 normalize_vector.3 \
@@ -170,17 +170,17 @@ MAN3=	ALLEGRO_DATE.3 ALLEGRO_DATE_STR.3 ALLEGRO_SUB_VERSION.3 \
 	pack_fopen_chunk.3 pack_fopen_vtable.3 pack_fputs.3 pack_fread.3 \
 	pack_fseek.3 pack_fwrite.3 pack_getc.3 pack_igetl.3 pack_igetw.3 \
 	pack_iputl.3 pack_iputw.3 pack_mgetl.3 pack_mgetw.3 pack_mputl.3 \
-	pack_mputw.3 pack_putc.3 packfile_password.3 palette_color.3 \
-	persp_project.3 persp_project_f.3 pivot_scaled_sprite.3 \
-	pivot_scaled_sprite_v_flip.3 pivot_sprite.3 \
+	pack_mputw.3 pack_putc.3 pack_ungetc.3 packfile_password.3 \
+	palette_color.3 persp_project.3 persp_project_f.3 \
+	pivot_scaled_sprite.3 pivot_scaled_sprite_v_flip.3 pivot_sprite.3 \
 	pivot_sprite_v_flip.3 play_audio_stream.3 play_fli.3 \
 	play_looped_midi.3 play_memory_fli.3 play_midi.3 play_sample.3 \
 	poll_joystick.3 poll_keyboard.3 poll_mouse.3 poll_scroll.3 \
 	polygon.3 polygon3d.3 polygon3d_f.3 polygon_z_normal.3 \
 	polygon_z_normal_f.3 pop_config_state.3 popup_dialog.3 \
-	position_dialog.3 position_mouse.3 position_mouse_z.3 \
-	push_config_state.3 put_backslash.3 putpixel.3 qnx_get_window.3 \
-	qscale_matrix.3 qscale_matrix_f.3 qtranslate_matrix.3 \
+	position_dialog.3 position_mouse.3 position_mouse_w.3 \
+	position_mouse_z.3 push_config_state.3 put_backslash.3 putpixel.3 \
+	qnx_get_window.3 qscale_matrix.3 qscale_matrix_f.3 qtranslate_matrix.3 \
 	qtranslate_matrix_f.3 quad3d.3 quad3d_f.3 quat_interpolate.3 \
 	quat_mul.3 quat_slerp.3 quat_to_matrix.3 radtofix_r.3 \
 	read_sound_input.3 readkey.3 reallocate_voice.3 rect.3 \
