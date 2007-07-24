@@ -68,6 +68,7 @@ include/allegro/platform/albcc32.h
 include/allegro/platform/albecfg.h
 include/allegro/platform/albeos.h
 include/allegro/platform/aldjgpp.h
+include/allegro/platform/aldmc.h
 include/allegro/platform/aldos.h
 include/allegro/platform/almac.h
 include/allegro/platform/almaccfg.h
