@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fortune-bashorgru
-PORTVERSION=	20070621
+PORTVERSION=	20070723
 CATEGORIES=	russian
 MASTER_SITES=	http://www.dindin.ru/download/
 
