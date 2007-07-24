@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tuxpaint-config
-PORTVERSION=	0.0.7
-PORTREVISION=	1
+PORTVERSION=	0.0.8
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tuxpaint
@@ -15,7 +14,8 @@ MASTER_SITE_SUBDIR=	tuxpaint
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Graphical tool to change TuxPaint settings
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
+		paper.2:${PORTSDIR}/print/libpaper
 RUN_DEPENDS=	tuxpaint:${PORTSDIR}/games/tuxpaint
 
 USE_GMAKE=	yes
