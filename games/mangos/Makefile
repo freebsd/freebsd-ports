@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mangos
-PORTVERSION=	4010
+PORTVERSION=	4154
 CATEGORIES=	games
 MASTER_SITES=	CENKES http://mangos-port.by.ru/ \
 		http://neon.heavennet.ru/mangos/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
-SCRIPTDEV2REV=	64
+SCRIPTDEV2REV=	84
 
 MAINTAINER=    	neon_cyrex@mail.ru
 COMMENT=	Free dedicated-server for World of Warcraft
@@ -19,8 +19,7 @@ COMMENT=	Free dedicated-server for World of Warcraft
 OPTIONS=	SCRIPTDEV2	"ScriptDev2"	on \
 		CLI		"Command Line Itrerface support" off \
 		RA		"Remote Administration support" off \
-		DBC		"Install DBC files" on \
-		HONORRATE	"Enable HonorRate patch" on
+		DBC		"Install DBC files" on
 
 USE_AUTOTOOLS=	aclocal:19 libtoolize autoconf:261 autoheader:261 automake:19 libtool:15
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
@@ -44,12 +43,9 @@ PLIST_SUB+=	SD2="@comment "
 .endif
 .ifdef WITH_DBC
 PLIST_SUB+=	DBC=""
-DISTFILES+=	mangos-dbc2.tar.gz
+DISTFILES+=	mangos-dbc2_1_3.tar.gz
 .else
 PLIST_SUB+=	DBC="@comment "
-.endif
-.ifdef WITH_HONORRATE
-EXTRA_PATCHES+=	${FILESDIR}/HonorRate.patch
 .endif
 .ifdef WITH_CLI
 CONFIGURE_ARGS+=--enable-cli

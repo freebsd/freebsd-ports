@@ -340,6 +340,31 @@ lib/libmangosscript.so.0
 %%DATADIR%%/sql/updates/3939_realmd_account.sql
 %%DATADIR%%/sql/updates/3948_realmd_account.sql
 %%DATADIR%%/sql/updates/3951_exploration_basexp.sql
+%%DATADIR%%/sql/updates/3961_uptime.sql
+%%DATADIR%%/sql/updates/3964_command.sql
+%%DATADIR%%/sql/updates/4010_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4012_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4018_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4019_spell_chain.sql
+%%DATADIR%%/sql/updates/4019_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4020_spell_chain.sql
+%%DATADIR%%/sql/updates/4020_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4021_spell_chain.sql
+%%DATADIR%%/sql/updates/4021_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4023_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4026_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4028_spell_chain.sql
+%%DATADIR%%/sql/updates/4028_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4031_spell_chain.sql
+%%DATADIR%%/sql/updates/4031_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4035_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4036_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4037_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4058.sql
+%%DATADIR%%/sql/updates/4059_spell_learn_skill.sql
+%%DATADIR%%/sql/updates/4059_spell_learn_spell.sql
+%%DATADIR%%/sql/updates/4076_playercreateinfo_spell.sql
+%%DATADIR%%/sql/updates/4076_character_spell.sql
 %%DATADIR%%/sql/updates/README
 %%DBC%%%%DATADIR%%/dbc/AnimationData.dbc
 %%DBC%%%%DATADIR%%/dbc/AreaPOI.dbc
@@ -498,6 +523,7 @@ lib/libmangosscript.so.0
 %%DBC%%%%DATADIR%%/dbc/WMOAreaTable.dbc
 %%DBC%%%%DATADIR%%/dbc/WeaponImpactSounds.dbc
 %%DBC%%%%DATADIR%%/dbc/WeaponSwingSounds2.dbc
+%%DBC%%%%DATADIR%%/dbc/Weather.dbc
 %%DBC%%%%DATADIR%%/dbc/WorldMapArea.dbc
 %%DBC%%%%DATADIR%%/dbc/WorldMapContinent.dbc
 %%DBC%%%%DATADIR%%/dbc/WorldMapOverlay.dbc
@@ -523,6 +549,10 @@ lib/libmangosscript.so.0
 %%SD2%%share/scriptdev2/sql/updates/r56.sql
 %%SD2%%share/scriptdev2/sql/updates/r59.sql
 %%SD2%%share/scriptdev2/sql/updates/r63.sql
+%%SD2%%share/scriptdev2/sql/updates/r65.sql
+%%SD2%%share/scriptdev2/sql/updates/r72.sql
+%%SD2%%share/scriptdev2/sql/updates/r78.sql
+%%SD2%%share/scriptdev2/sql/updates/r81.sql
 @dirrm %%DATADIR%%/sql/updates
 @dirrm %%DATADIR%%/sql
 %%DBC%%@dirrm %%DATADIR%%/dbc
