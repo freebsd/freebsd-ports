@@ -41,6 +41,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>apache-tomcat</name>
 	<range><ge>4.1.0</ge><lt>4.1.36</lt></range>
       </package>
+      <package>
+	<name>jakarta-tomcat</name>
+	<range><ge>4.0.0</ge><lt>4.1.0</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
