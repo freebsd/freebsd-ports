@@ -9,6 +9,10 @@
     All filenames must be lowercase!
     After copying you can use "make lowercase" to rename all files.
 
+    When a user starts the game for the first time a file ~/.ja2/ja2.ini
+    is created. In there the path to the data files has to be specified at
+    the line "data_dir = ...".
+
     Enjoy!
 
 ==========================================================================
