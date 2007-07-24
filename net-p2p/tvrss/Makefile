@@ -23,7 +23,7 @@ RUN_DEPENDS=	\
 		${SITE_PERL}/XML/RAI.pm:${PORTSDIR}/textproc/p5-XML-RAI \
 		wget:${PORTSDIR}/ftp/wget
 
-USE_PERL=	yes
+USE_PERL5=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	\
