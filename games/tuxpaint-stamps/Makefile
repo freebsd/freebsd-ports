@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	tuxpaint
-DISTVERSION=	2006.10.21
-PORTREVISION=	1
+DISTVERSION=	2007.07.01
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 PKGNAMESUFFIX=	-stamps
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
@@ -20,8 +18,9 @@ COMMENT=	TuxPaint Stamps
 RUN_DEPENDS=	tuxpaint:${PORTSDIR}/games/tuxpaint
 
 NO_BUILD=	yes
+INSTALL_TARGET=	install-all
 
-do-install:
-	${CP} -R ${WRKSRC}/stamps ${DATADIR}
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/${MAKEFILE}
 
 .include <bsd.port.mk>
