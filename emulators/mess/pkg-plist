@@ -10,6 +10,7 @@ libexec/messdocs
 libexec/messtest
 libexec/regrep
 libexec/romcmp
+libexec/srcclean
 libexec/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/SDLMESS.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/credits.htm
