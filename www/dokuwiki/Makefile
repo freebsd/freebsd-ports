@@ -27,6 +27,8 @@ WRKSRC=		${WRKDIR}/${DIST_VER}
 PLIST_SUB=	DOKUWIKI_DIR=${DOKUWIKI_DIR}
 TEMP_PLIST=	${WRKDIR}/temp-pkg-plist
 
+REINPLACE_ARGS=	-i ''
+
 .include <bsd.port.pre.mk>
 
 # This target is only meant to be used by the port maintainer.
@@ -38,7 +40,8 @@ x-generate-plist:
 		&& ${ECHO_CMD} "@dirrmtry %%DOKUWIKI_DIR%%" >> ${TEMP_PLIST}
 
 post-patch:
-	@${REINPLACE_CMD} -ie 's|9|10|' ${WRKSRC}/conf/msg
+	@${REINPLACE_CMD} -e 's|9|10|' ${WRKSRC}/conf/msg
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
 # Data files
