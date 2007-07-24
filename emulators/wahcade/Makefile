@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wahcade
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.anti-particle.com/projects/wahcade/
 
