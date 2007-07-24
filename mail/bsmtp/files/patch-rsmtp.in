@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- rsmtp.in.orig
++++ rsmtp.in
+@@ -72,7 +72,7 @@
+     print STDERR "Recipient: $r\n" if ($debug);
+     push (@recipients, $r);
+   }
+-  $sendmail="$sendmailproto -f$mailfrom -p@INPROTO@:$fromhost";
++  $sendmail="$sendmailproto -f$mailfrom -p@INPROTO@:$fromhost --";
+   while (defined $recipients[0]) {
+     $sendmail .= " " . $recipients[0];
+     shift (@recipients);
