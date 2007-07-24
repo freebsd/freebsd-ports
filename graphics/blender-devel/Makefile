@@ -5,18 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.43
-PORTREVISION=	2
+PORTVERSION=	2.44
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
-		ftp://ftp.cs.umn.edu/pub/blender.org/source/ \
+		http://mirror.cs.umn.edu/blender.org/source/ \
 		http://public.planetmirror.com/pub/blender/source/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	dyeske@gmail.com
 COMMENT=	3D modeling/rendering/animation/gaming package
 
-BUILD_DEPENDS=	${X11BASE}/lib/libftgl.a:${PORTSDIR}/graphics/ftgl
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png \
@@ -39,9 +37,13 @@ USE_GMAKE=	yes
 CFLAGS+=	-O3 -ffast-math
 .endif
 
-.include <bsd.port.pre.mk>
-
-ONLY_FOR_ARCHS=	i386
+MAKE_ENV+=	NAN_CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
+		-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/OpenEXR \
+		-I${PYTHON_INCLUDEDIR}"
+MAKE_ENV+=	NAN_FREETYPE="${LOCALBASE}"
+MAKE_ENV+=	NAN_OPENEXR="${LOCALBASE}"
+MAKE_ENV+=	WITH_BF_BLENDERPLAYER="false"
 
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
@@ -56,17 +58,25 @@ post-patch:
 		${WRKSRC}/source/nan_definitions.mk
 
 	@${REINPLACE_CMD} -e \
+		's|WITH_ICONV=true|WITH_ICONV=false|; \
+		s|NAN_PYTHON=.*|NAN_PYTHON=${LOCALBASE}|; \
+		s|NAN_JPEG=.*|NAN_JPEG=${LOCALBASE}|; \
+		s|NAN_OPENEXR=.*|NAN_OPENEXR=${LOCALBASE}|; \
+		s|NAN_PNG=.*|NAN_PNG=${LOCALBASE}|' \
+		${WRKSRC}/user-def.mk
+
+	@${REINPLACE_CMD} -e \
 		's|gcc|${CC}|; \
 		s|g++|${CXX}|; \
+		s|-pipe||; \
 		s|-O2|${CFLAGS}|; \
-		s|-DGAMEBLENDER=1||; \
 		s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|; \
 		s|/usr/X11R6|${X11BASE}|' \
 		${WRKSRC}/source/nan_compile.mk
 
 	@${REINPLACE_CMD} -e \
 		's|-lc_r||; \
-		s|-pthread|${PTHREAD_LIBS}|' \
+		s|-pthread|-lintl -lIlmThread ${PTHREAD_LIBS}|' \
 		${WRKSRC}/source/nan_link.mk
 
 	@${REINPLACE_CMD} -e \
@@ -76,4 +86,4 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd/bin/blender ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
