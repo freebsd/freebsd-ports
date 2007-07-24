@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	radiusclient
-PORTVERSION=	0.5.5.1
+PORTVERSION=	0.5.6
 CATEGORIES=	net
-MASTER_SITES=	http://prdownload.berlios.de/radiusclient-ng/ \
-		http://download.berlios.de/radiusclient-ng/
+MASTER_SITES=	http://download.berlios.de/radiusclient-ng/ \
+		http://download2.berlios.de/radiusclient-ng/
 DISTNAME=	${PORTNAME}-ng-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
