@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	splint
-PORTVERSION=	3.1.1
-PORTREVISION=	2
+PORTVERSION=	3.1.2
 CATEGORIES=	devel security
 MASTER_SITES=	http://www.splint.org/downloads/
 EXTRACT_SUFX=	.src.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	A tool for statically checking sourcecode for security vulnerabilities
 
 USE_GMAKE=	yes
