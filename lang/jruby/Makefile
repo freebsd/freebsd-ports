@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jruby
-PORTVERSION=	0.9.9
+PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://dist.codehaus.org/jruby/ \
@@ -24,7 +24,9 @@ WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 JRUBY_HOME?=	${PREFIX}/share/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 REPLACE_FILES=	${WRKSRC}/bin/jruby \
-		${WRKSRC}/bin/jrubyc
+		${WRKSRC}/bin/jrubyc \
+		${WRKSRC}/bin/jrubycli \
+		${WRKSRC}/bin/jrubysrv
 REPLACE_LIST=	JRUBY_HOME=${JRUBY_HOME} \
 		JAVA_HOME=${JAVA_HOME}
 REPLACE_LIST_TEMP=	${REPLACE_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
@@ -50,6 +52,8 @@ do-install:
 	@${ECHO_MSG} -n ">> Installation JRuby files..."
 	@${INSTALL_SCRIPT} ${WRKDIR}/jruby ${PREFIX}/bin/jruby
 	@${INSTALL_SCRIPT} ${WRKDIR}/jrubyc ${PREFIX}/bin/jrubyc
+	@${INSTALL_SCRIPT} ${WRKDIR}/jrubycli ${PREFIX}/bin/jrubycli
+	@${INSTALL_SCRIPT} ${WRKDIR}/jrubysrv ${PREFIX}/bin/jrubysrv
 	@cd ${WRKSRC}/lib \
 	  && ${FIND} . -type d -exec ${MKDIR} ${JRUBY_HOME}/lib/{} \; \
 	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${JRUBY_HOME}/lib/{} \;
