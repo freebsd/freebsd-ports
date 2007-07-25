@@ -4,4 +4,8 @@ To complete the installation of this port you need to copy the files
 "base/pak00[0-4].pk4", from the original Doom III distribution to
 "%%DATADIR%%/base".
 
+If you have the Doom III: Resurrection of Evil expansion copy the file
+"d3xp/pak000.pk4", from the original distribution to
+"%%DATADIR%%/d3xp".
+
 ==============================================================================
