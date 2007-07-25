@@ -37,7 +37,6 @@ CONFIGURE_ARGS=	--enable-llvm=${LOCALBASE}\
 		--with-gxx-include-dir=${TARGLIB}/include/c++\
 		--libexecdir=${TARGLIB}\
 		--infodir=${PREFIX}/llvm-gcc
-# --disable-shared
 PLIST_SUB=	GCC_VER=${GCC_VER}\
 		GNU_HOST=${CONFIGURE_TARGET}
 INFO=		llvm-gcc/cpp \
@@ -74,6 +73,7 @@ post-install:
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--disable-shared
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
