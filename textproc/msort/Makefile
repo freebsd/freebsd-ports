@@ -7,7 +7,7 @@
 
 PORTNAME=	msort
 PORTVERSION=	8.38
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
@@ -23,6 +23,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include"
 GNU_CONFIGURE=	yes
 USE_TK_RUN=	yes
+USE_GETTEXT=	yes
 
 PLIST_FILES=	bin/msg bin/msort
 
