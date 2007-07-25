@@ -8,8 +8,8 @@
 PORTNAME=	addresses
 PORTVERSION=	0.4.7
 CATEGORIES=	mail gnustep
-MASTER_SITES=	http://giesler.biz/bjoern/downloads/ \
-		http://www.energyhq.es.eu.org/files/
+MASTER_SITES=   ${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=     gap
 PKGNAMESUFFIX=	-goodies${PKGNAMESUFFIX2}
 DISTNAME=	Addresses-${PORTVERSION}
 
