@@ -141,6 +141,7 @@
     SUBDIR += linux-j
     SUBDIR += linux-libg2c
     SUBDIR += linux-libperl5.8
+    SUBDIR += llvm-gcc4
     SUBDIR += logo
     SUBDIR += lua
     SUBDIR += lua-mode.el
