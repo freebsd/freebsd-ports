@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	ncurses
-PORTVERSION=	0.9.1
+PORTVERSION=	1.1
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://download.berlios.de/ncurses-ruby/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	ncurses-ruby
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	saurbier@math.uni-bielefeld.de
 COMMENT=	A Ruby interface to ncurses
 
 USE_BZIP2=	yes
@@ -23,7 +24,7 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS=		Changes README THANKS TODO
+DOCS=		COPYING Changes README THANKS TODO
 
 post-install:
 .if !defined(NOPORTDOCS)
