@@ -1,5 +1,6 @@
 bin/filezilla
 bin/fzsftp
+%%DATADIR%%/docs/fzdefaults.xml.example
 %%DATADIR%%/locales/ar/filezilla.mo
 %%DATADIR%%/locales/bg/filezilla.mo
 %%DATADIR%%/locales/ca_ES/filezilla.mo
@@ -13,6 +14,7 @@ bin/fzsftp
 %%DATADIR%%/locales/fr_CA/filezilla.mo
 %%DATADIR%%/locales/fr_FR/filezilla.mo
 %%DATADIR%%/locales/gl/filezilla.mo
+%%DATADIR%%/locales/he_IL/filezilla.mo
 %%DATADIR%%/locales/hu/filezilla.mo
 %%DATADIR%%/locales/id_ID/filezilla.mo
 %%DATADIR%%/locales/it_IT/filezilla.mo
@@ -131,6 +133,7 @@ bin/fzsftp
 @dirrm %%DATADIR%%/locales/it_IT
 @dirrm %%DATADIR%%/locales/id_ID
 @dirrm %%DATADIR%%/locales/hu
+@dirrm %%DATADIR%%/locales/he_IL
 @dirrm %%DATADIR%%/locales/gl
 @dirrm %%DATADIR%%/locales/fr_FR
 @dirrm %%DATADIR%%/locales/fr_CA
@@ -145,4 +148,5 @@ bin/fzsftp
 @dirrm %%DATADIR%%/locales/bg
 @dirrm %%DATADIR%%/locales/ar
 @dirrm %%DATADIR%%/locales
+@dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%
