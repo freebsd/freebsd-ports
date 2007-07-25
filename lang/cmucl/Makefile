@@ -21,7 +21,7 @@ COMMENT=	The CMU implementation of Common Lisp
 
 # To make available on other archs, has to be cross-compiled (there is a
 # script for this, but a configuration file has to be written).
-IA32_BINART_PORT=	yes
+IA32_BINARY_PORT=	yes
 USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
