@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Digg
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	www pear
 
 MAINTAINER=	bg1tpt@gmail.com
@@ -28,19 +28,23 @@ TESTS=		000-services-digg-factory.phpt 001-errors-getAll.phpt \
 		003-errors-getErrorByCode.phpt 005-topics-getAll.phpt \
 		010-user-submissions.phpt 011-user-isFriend.phpt \
 		012-user-isFan.phpt 013-user-comments.phpt \
+		013-user-getFriendsDugg.phpt 013-user-getFriendsSubmissions.phpt \
 		014-user-diggs.phpt 020-users-getUserByName.phpt \
 		030-stories-getStoryById.phpt 031-stories-getContainer.phpt \
+		031-stories-getContainerHot.phpt 031-stories-getContainerTop.phpt \
 		032-stories-getContainerPopular.phpt \
 		032-stories-getContainerUpcoming.phpt \
 		033-stories-getStoriesById.phpt 034-stories-comments.phpt \
 		034-stories-diggs.phpt 034-stories-popular.phpt \
 		035-stories-getAll.phpt 035-stories-getStoriesComments.phpt \
 		035-stories-getStoriesDiggs.phpt 036-stories-getStoryByTitle.phpt \
-		040-story-comments.phpt 041-story-getCommentById.phpt \
-		050-comments.phpt 060-comment-replies.phpt \
-		070-proxy-get.phpt 071-proxy-post.phpt \
-		200-diggapiuser-isFriend.phpt 201-diggapistories-iteration.phpt \
-		tests-config.php
+		037-stories-hot.phpt 037-stories-top.phpt \
+		038-stories-getTopic.phpt 038-stories-getTopicHot.phpt \
+		038-stories-getTopicTop.phpt 040-story-comments.phpt \
+		041-story-getCommentById.phpt 050-comments.phpt \
+		060-comment-replies.phpt 070-proxy-get.phpt \
+		071-proxy-post.phpt 200-diggapiuser-isFriend.phpt \
+		201-diggapistories-iteration.phpt tests-config.php
 
 post-extract:
 	${MV} ${WRKSRC}/Services/Digg.php ${WRKSRC}
