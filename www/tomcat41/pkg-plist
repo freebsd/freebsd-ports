@@ -52,14 +52,14 @@
 %%T%%/server/lib/catalina-ant.jar
 %%T%%/server/lib/catalina.jar
 %%T%%/server/lib/commons-beanutils.jar
-%%T%%/server/lib/commons-digester-1.7.jar
+%%T%%/server/lib/commons-digester-1.8.jar
 %%T%%/server/lib/commons-fileupload-1.1.1.jar
-%%T%%/server/lib/commons-io-1.2.jar
+%%T%%/server/lib/commons-io-1.3.jar
 %%T%%/server/lib/commons-logging-1.1.jar
-%%T%%/server/lib/commons-modeler.jar
+%%T%%/server/lib/commons-modeler-2.0.jar
 %%T%%/server/lib/jaas.jar
 %%T%%/server/lib/jakarta-regexp-1.4.jar
-%%T%%/server/lib/mx4j-jmx.jar
+%%T%%/server/lib/mx4j.jar
 %%T%%/server/lib/mx4j.license
 %%T%%/server/lib/servlets-cgi.renametojar
 %%T%%/server/lib/servlets-common.jar
@@ -1232,38 +1232,16 @@
 %%T%%/webapps/tomcat-docs/jasper/docs/api/resources/inherit.gif
 %%T%%/webapps/tomcat-docs/jasper/docs/api/serialized-form.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/stylesheet.css
-%%T%%/webapps/tomcat-docs/jk/changelog.html
-%%T%%/webapps/tomcat-docs/jk/common/ajpv13a.html
-%%T%%/webapps/tomcat-docs/jk/common/ajpv13ext.html
-%%T%%/webapps/tomcat-docs/jk/common/printer/ajpv13a.html
-%%T%%/webapps/tomcat-docs/jk/common/printer/ajpv13ext.html
-%%T%%/webapps/tomcat-docs/jk/common/printer/tools.html
-%%T%%/webapps/tomcat-docs/jk/common/tools.html
-%%T%%/webapps/tomcat-docs/jk/config/apache.html
-%%T%%/webapps/tomcat-docs/jk/config/iis.html
-%%T%%/webapps/tomcat-docs/jk/config/printer/apache.html
-%%T%%/webapps/tomcat-docs/jk/config/printer/iis.html
-%%T%%/webapps/tomcat-docs/jk/config/printer/workers.html
-%%T%%/webapps/tomcat-docs/jk/config/workers.html
-%%T%%/webapps/tomcat-docs/jk/faq.html
-%%T%%/webapps/tomcat-docs/jk/howto/apache.html
-%%T%%/webapps/tomcat-docs/jk/howto/doccontrib.html
-%%T%%/webapps/tomcat-docs/jk/howto/domino.html
-%%T%%/webapps/tomcat-docs/jk/howto/iis.html
-%%T%%/webapps/tomcat-docs/jk/howto/index.html
-%%T%%/webapps/tomcat-docs/jk/howto/loadbalancers.html
-%%T%%/webapps/tomcat-docs/jk/howto/nes.html
-%%T%%/webapps/tomcat-docs/jk/howto/printer/apache.html
-%%T%%/webapps/tomcat-docs/jk/howto/printer/doccontrib.html
-%%T%%/webapps/tomcat-docs/jk/howto/printer/domino.html
-%%T%%/webapps/tomcat-docs/jk/howto/printer/iis.html
-%%T%%/webapps/tomcat-docs/jk/howto/printer/index.html
-%%T%%/webapps/tomcat-docs/jk/howto/printer/loadbalancers.html
-%%T%%/webapps/tomcat-docs/jk/howto/printer/nes.html
-%%T%%/webapps/tomcat-docs/jk/howto/printer/quick.html
-%%T%%/webapps/tomcat-docs/jk/howto/printer/workers.html
-%%T%%/webapps/tomcat-docs/jk/howto/quick.html
-%%T%%/webapps/tomcat-docs/jk/howto/workers.html
+%%T%%/webapps/tomcat-docs/jk/ajp/printer/ajpv13a.html
+%%T%%/webapps/tomcat-docs/jk/ajp/printer/ajpv13ext.html
+%%T%%/webapps/tomcat-docs/jk/ajp/ajpv13a.html
+%%T%%/webapps/tomcat-docs/jk/ajp/ajpv13ext.html
+%%T%%/webapps/tomcat-docs/jk/generic_howto/printer/loadbalancers.html
+%%T%%/webapps/tomcat-docs/jk/generic_howto/printer/quick.html
+%%T%%/webapps/tomcat-docs/jk/generic_howto/printer/workers.html
+%%T%%/webapps/tomcat-docs/jk/generic_howto/loadbalancers.html
+%%T%%/webapps/tomcat-docs/jk/generic_howto/quick.html
+%%T%%/webapps/tomcat-docs/jk/generic_howto/workers.html
 %%T%%/webapps/tomcat-docs/jk/images/add.gif
 %%T%%/webapps/tomcat-docs/jk/images/code.gif
 %%T%%/webapps/tomcat-docs/jk/images/design.gif
@@ -1274,18 +1252,42 @@
 %%T%%/webapps/tomcat-docs/jk/images/tomcat.gif
 %%T%%/webapps/tomcat-docs/jk/images/update.gif
 %%T%%/webapps/tomcat-docs/jk/images/void.gif
-%%T%%/webapps/tomcat-docs/jk/index.html
-%%T%%/webapps/tomcat-docs/jk/news/20041100.html
-%%T%%/webapps/tomcat-docs/jk/news/20050101.html
-%%T%%/webapps/tomcat-docs/jk/news/20060101.html
+%%T%%/webapps/tomcat-docs/jk/miscellaneous/printer/changelog.html
+%%T%%/webapps/tomcat-docs/jk/miscellaneous/printer/doccontrib.html
+%%T%%/webapps/tomcat-docs/jk/miscellaneous/printer/faq.html
+%%T%%/webapps/tomcat-docs/jk/miscellaneous/printer/jkstatustasks.html
+%%T%%/webapps/tomcat-docs/jk/miscellaneous/printer/reporttools.html
+%%T%%/webapps/tomcat-docs/jk/miscellaneous/changelog.html
+%%T%%/webapps/tomcat-docs/jk/miscellaneous/doccontrib.html
+%%T%%/webapps/tomcat-docs/jk/miscellaneous/faq.html
+%%T%%/webapps/tomcat-docs/jk/miscellaneous/jkstatustasks.html
+%%T%%/webapps/tomcat-docs/jk/miscellaneous/reporttools.html
 %%T%%/webapps/tomcat-docs/jk/news/printer/20041100.html
 %%T%%/webapps/tomcat-docs/jk/news/printer/20050101.html
 %%T%%/webapps/tomcat-docs/jk/news/printer/20060101.html
-%%T%%/webapps/tomcat-docs/jk/printer/changelog.html
-%%T%%/webapps/tomcat-docs/jk/printer/faq.html
+%%T%%/webapps/tomcat-docs/jk/news/printer/20070301.html
+%%T%%/webapps/tomcat-docs/jk/news/20041100.html
+%%T%%/webapps/tomcat-docs/jk/news/20050101.html
+%%T%%/webapps/tomcat-docs/jk/news/20060101.html
+%%T%%/webapps/tomcat-docs/jk/news/20070301.html
 %%T%%/webapps/tomcat-docs/jk/printer/index.html
-%%T%%/webapps/tomcat-docs/jk/printer/proxy.html
-%%T%%/webapps/tomcat-docs/jk/proxy.html
+%%T%%/webapps/tomcat-docs/jk/reference/printer/apache.html
+%%T%%/webapps/tomcat-docs/jk/reference/printer/iis.html
+%%T%%/webapps/tomcat-docs/jk/reference/printer/status.html
+%%T%%/webapps/tomcat-docs/jk/reference/printer/uriworkermap.html
+%%T%%/webapps/tomcat-docs/jk/reference/printer/workers.html
+%%T%%/webapps/tomcat-docs/jk/reference/apache.html
+%%T%%/webapps/tomcat-docs/jk/reference/iis.html
+%%T%%/webapps/tomcat-docs/jk/reference/status.html
+%%T%%/webapps/tomcat-docs/jk/reference/uriworkermap.html
+%%T%%/webapps/tomcat-docs/jk/reference/workers.html
+%%T%%/webapps/tomcat-docs/jk/webserver_howto/printer/apache.html
+%%T%%/webapps/tomcat-docs/jk/webserver_howto/printer/iis.html
+%%T%%/webapps/tomcat-docs/jk/webserver_howto/printer/nes.html
+%%T%%/webapps/tomcat-docs/jk/webserver_howto/apache.html
+%%T%%/webapps/tomcat-docs/jk/webserver_howto/iis.html
+%%T%%/webapps/tomcat-docs/jk/webserver_howto/nes.html
+%%T%%/webapps/tomcat-docs/jk/index.html
 %%T%%/webapps/tomcat-docs/jk/style.css
 %%T%%/webapps/tomcat-docs/jndi-datasource-examples-howto.html
 %%T%%/webapps/tomcat-docs/jndi-resources-howto.html
@@ -1475,8 +1477,6 @@
 %%T%%/webapps/webdav/index.html
 %%T%%/webapps/webdav/tomcat-power.gif
 %%T%%/webapps/webdav/tomcat.gif
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 @dirrm %%T%%/work
 @dirrm %%T%%/webapps/webdav/WEB-INF
 @dirrm %%T%%/webapps/webdav
@@ -1493,17 +1493,6 @@
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax
 @dirrm %%T%%/webapps/tomcat-docs/servletapi
 @dirrm %%T%%/webapps/tomcat-docs/printer
-@dirrm %%T%%/webapps/tomcat-docs/jk/printer
-@dirrm %%T%%/webapps/tomcat-docs/jk/news/printer
-@dirrm %%T%%/webapps/tomcat-docs/jk/news
-@dirrm %%T%%/webapps/tomcat-docs/jk/images
-@dirrm %%T%%/webapps/tomcat-docs/jk/howto/printer
-@dirrm %%T%%/webapps/tomcat-docs/jk/howto
-@dirrm %%T%%/webapps/tomcat-docs/jk/config/printer
-@dirrm %%T%%/webapps/tomcat-docs/jk/config
-@dirrm %%T%%/webapps/tomcat-docs/jk/common/printer
-@dirrm %%T%%/webapps/tomcat-docs/jk/common
-@dirrm %%T%%/webapps/tomcat-docs/jk
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs/api/resources
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/xmlparser
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/util
@@ -1518,6 +1507,21 @@
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs
 @dirrm %%T%%/webapps/tomcat-docs/jasper
 @dirrm %%T%%/webapps/tomcat-docs/images
+@dirrm %%T%%/webapps/tomcat-docs/jk/ajp/printer
+@dirrm %%T%%/webapps/tomcat-docs/jk/ajp
+@dirrm %%T%%/webapps/tomcat-docs/jk/generic_howto/printer
+@dirrm %%T%%/webapps/tomcat-docs/jk/generic_howto
+@dirrm %%T%%/webapps/tomcat-docs/jk/images
+@dirrm %%T%%/webapps/tomcat-docs/jk/miscellaneous/printer
+@dirrm %%T%%/webapps/tomcat-docs/jk/miscellaneous
+@dirrm %%T%%/webapps/tomcat-docs/jk/news/printer
+@dirrm %%T%%/webapps/tomcat-docs/jk/news
+@dirrm %%T%%/webapps/tomcat-docs/jk/printer
+@dirrm %%T%%/webapps/tomcat-docs/jk/reference/printer
+@dirrm %%T%%/webapps/tomcat-docs/jk/reference
+@dirrm %%T%%/webapps/tomcat-docs/jk/webserver_howto/printer
+@dirrm %%T%%/webapps/tomcat-docs/jk/webserver_howto
+@dirrm %%T%%/webapps/tomcat-docs/jk/
 @dirrm %%T%%/webapps/tomcat-docs/config/printer
 @dirrm %%T%%/webapps/tomcat-docs/config
 @dirrm %%T%%/webapps/tomcat-docs/catalina/funcspecs/printer
