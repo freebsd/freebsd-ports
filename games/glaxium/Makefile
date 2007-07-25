@@ -7,7 +7,7 @@
 
 PORTNAME=	glaxium
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://xhosxe.free.fr/glaxium/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -26,6 +26,8 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
 
 MAN6=		glaxium.6
+
+USE_DOS2UNIX=variables.cpp scene.cpp
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g; \
