@@ -69,6 +69,7 @@ etc/qmc2/qmc2.ini.sample
 %%DATADIR%%/img/hint.png
 %%DATADIR%%/img/hint_small.png
 %%DATADIR%%/img/home.png
+%%DATADIR%%/img/icon.png
 %%DATADIR%%/img/info.png
 %%DATADIR%%/img/kill.png
 %%DATADIR%%/img/launch.png
@@ -81,6 +82,7 @@ etc/qmc2/qmc2.ini.sample
 %%DATADIR%%/img/pencils.png
 %%DATADIR%%/img/previous-sail.png
 %%DATADIR%%/img/previous.png
+%%DATADIR%%/img/qt-logo.png
 %%DATADIR%%/img/redo.png
 %%DATADIR%%/img/reload.png
 %%DATADIR%%/img/rom.png
