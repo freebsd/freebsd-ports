@@ -21,6 +21,7 @@
 %%HORDIR%%/index.php
 %%HORDIR%%/js/fixUnstyledOptions.js
 %%HORDIR%%/js/stripe.js
+%%HORDIR%%/lib/tests/toicalendar.phpt
 %%HORDIR%%/lib/Block/month.php
 %%HORDIR%%/lib/Block/monthlist.php
 %%HORDIR%%/lib/Block/prevmonthlist.php
@@ -49,6 +50,8 @@
 %%HORDIR%%/lib/version.php
 %%HORDIR%%/locale/ar_SY/LC_MESSAGES/kronolith.mo
 %%HORDIR%%/locale/bg_BG/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/ca_ES/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/ca_ES/help.xml
 %%HORDIR%%/locale/cs_CZ/LC_MESSAGES/kronolith.mo
 %%HORDIR%%/locale/da_DK/LC_MESSAGES/kronolith.mo
 %%HORDIR%%/locale/de_DE/LC_MESSAGES/kronolith.mo
@@ -60,6 +63,7 @@
 %%HORDIR%%/locale/fi_FI/LC_MESSAGES/kronolith.mo
 %%HORDIR%%/locale/fi_FI/help.xml
 %%HORDIR%%/locale/fr_FR/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/fr_FR/help.xml
 %%HORDIR%%/locale/hu_HU/LC_MESSAGES/kronolith.mo
 %%HORDIR%%/locale/hu_HU/help.xml
 %%HORDIR%%/locale/it_IT/LC_MESSAGES/kronolith.mo
@@ -86,6 +90,7 @@
 %%HORDIR%%/po/README
 %%HORDIR%%/po/ar_SY.po
 %%HORDIR%%/po/bg_BG.po
+%%HORDIR%%/po/ca_ES.po
 %%HORDIR%%/po/cs_CZ.po
 %%HORDIR%%/po/da_DK.po
 %%HORDIR%%/po/de_DE.po
@@ -215,11 +220,14 @@
 @dirrm %%HORDIR%%/lib/FBView
 @dirrm %%HORDIR%%/lib/Scheduler
 @dirrm %%HORDIR%%/lib/Storage
+@dirrm %%HORDIR%%/lib/tests
 @dirrm %%HORDIR%%/lib
 @dirrm %%HORDIR%%/locale/ar_SY/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/ar_SY
 @dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/bg_BG
+@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ca_ES
 @dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/cs_CZ
 @dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
