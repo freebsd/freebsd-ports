@@ -1822,7 +1822,6 @@ de-bsdforen-firefox-searchplugin	ports/german/bsdforen-firefox-searchplugin
 de-bsdgroup-firefox-searchplugin	ports/german/bsdgroup-firefox-searchplugin
 de-bsdpaste	ports/german/bsdpaste
 de-citrix_ica	ports/german/citrix_ica
-de-de-py-qt4-eric4	ports/german/de-py-qt4-eric4
 de-dict		ports/german/dict
 de-digibux	ports/german/digibux
 de-ding		ports/german/ding
@@ -3092,7 +3091,6 @@ fr-aster	ports/french/aster
 fr-dico		ports/french/dico
 fr-eficas	ports/french/eficas
 fr-facturier	ports/french/facturier
-fr-fr-py-qt4-eric4	ports/french/fr-py-qt4-eric4
 fr-geonext	ports/french/geonext
 fr-gfaim	ports/french/gfaim
 fr-gibi		ports/french/gibi
@@ -13077,7 +13075,6 @@ py-qt4-demo	ports/misc/py-qt4-demo
 py-qt4-designer	ports/devel/py-qt4-designer
 py-qt4-designerplugin	ports/devel/py-qt4-designerplugin
 py-qt4-doc	ports/misc/py-qt4-doc
-py-qt4-eric4	ports/devel/py-qt4-eric4
 py-qt4-gui	ports/x11-toolkits/py-qt4-gui
 py-qt4-network	ports/net/py-qt4-network
 py-qt4-opengl	ports/x11/py-qt4-opengl
@@ -13854,7 +13851,6 @@ ru-p5-cyrillic	ports/russian/p5-cyrillic
 ru-pgp.language	ports/russian/pgp.language
 ru-prawda	ports/russian/prawda
 ru-pscyr	ports/russian/pscyr
-ru-ru-py-qt4-eric4	ports/russian/ru-py-qt4-eric4
 ru-ru_pscyr	ports/russian/pscyr
 ru-rubygem-rutils	ports/russian/rubygem-rutils
 ru-rus-ispell	ports/russian/rus-ispell

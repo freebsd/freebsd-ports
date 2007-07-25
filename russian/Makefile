@@ -28,7 +28,6 @@
     SUBDIR += php_doc
     SUBDIR += prawda
     SUBDIR += pscyr
-    SUBDIR += ru-py-qt4-eric4
     SUBDIR += rubygem-rutils
     SUBDIR += rus-ispell
     SUBDIR += rux
