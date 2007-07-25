@@ -1,4 +1,7 @@
 bin/pyrenamer
+%%PYTHON_SITELIBDIR%%/pyrenamer/EXIF.py
+%%PYTHON_SITELIBDIR%%/pyrenamer/EXIF.pyc
+%%PYTHON_SITELIBDIR%%/pyrenamer/EXIF.pyo
 %%PYTHON_SITELIBDIR%%/pyrenamer/TreeViewTooltips.py
 %%PYTHON_SITELIBDIR%%/pyrenamer/TreeViewTooltips.pyc
 %%PYTHON_SITELIBDIR%%/pyrenamer/TreeViewTooltips.pyo

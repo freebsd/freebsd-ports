@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	pyrenamer
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils python gnome
 MASTER_SITES=	http://www.infinicode.org/code/${PORTNAME}/
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A mass file renamer written in PyGTK
+
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/eyeD3/__init__.py:${PORTSDIR}/audio/py-eyed3
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/eyeD3/__init__.py:${PORTSDIR}/audio/py-eyed3
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gconf2 pygtk2
