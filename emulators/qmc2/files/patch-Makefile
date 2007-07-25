@@ -1,8 +1,8 @@
---- ./Makefile.orig	Fri Mar 23 15:37:30 2007
-+++ ./Makefile	Mon Jun  4 22:54:25 2007
-@@ -37,9 +37,6 @@
- # you want to test-compile a specific target's code branch or if the "uname"
- # command doesn't tell the correct OS-type of your system (see also OSREL and
+--- Makefile.orig	Sun Jul 15 20:58:44 2007
++++ Makefile	Mon Jul 23 06:06:32 2007
+@@ -36,9 +36,6 @@
+ # you want to compile a specific OS's code branch or if the "uname"
+ # command doesn't tell the correct OS name of your system (see also OSREL and
  # MACHINE)
 -ifndef ARCH
 -ARCH = $(shell uname)
@@ -10,19 +10,23 @@
  
  # OSREL: target system's OS-release - please only change this if you know what
  # you are doing :).
-@@ -66,7 +63,7 @@
- # END OF MAKE OPTIONS
- 
- # commands are platform-specific
+@@ -77,9 +74,9 @@
+ # commands are platform/distribution-specific
+ include arch/default.cfg
+ ifeq '$(OSCFG)' '1'
+-OSCFGFILEEXISTS = $(shell ls "arch/$(ARCH).cfg")
+-ifeq 'arch/$(ARCH).cfg' '$(OSCFGFILEEXISTS)'
 -include arch/$(ARCH).cfg
++OSCFGFILEEXISTS = $(shell ls "arch/FreeBSD.cfg")
++ifeq 'arch/FreeBSD.cfg' '$(OSCFGFILEEXISTS)'
 +include arch/FreeBSD.cfg
- 
- # QMAKEV: qmake version (major release)
- ifndef QMAKEV
-@@ -183,15 +180,16 @@
+ endif
+ endif
+ ifeq '$(DISTCFG)' '1'
+@@ -204,15 +201,16 @@
  
  install: bin lang
- 	@echo "Installing QMC2 build v$(VERSION). Please wait..."
+ 	@echo "Installing QMC2 v$(VERSION)"
 -	@$(MKDIR) $(DESTDIR)/$(PREFIX)/bin $(DESTDIR)/$(PREFIX)/share/$(PROJECT) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)
 -	@$(RSYNC) --exclude '*svn*' ./$(PROJECT) $(DESTDIR)/$(PREFIX)/bin
 -	@$(RSYNC) --exclude '*svn*' ./data/lng/*.qm $(DESTDIR)/$(DATADIR)/$(PROJECT)/lng/
@@ -42,6 +46,6 @@
 +	@$(CP) -r ./data/fly $(DESTDIR)/$(DATADIR)/$(PROJECT)/
 +	@$(SED) -e "s_DATADIR_$(DATADIR)_" < ./inst/$(PROJECT).ini.template > $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini.sample
 +	@test -f $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini || $(CP) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini.sample $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini
- 	@echo "Installation complete."
+ 	@echo "Installation complete"
  
  clean: Makefile.qmake
