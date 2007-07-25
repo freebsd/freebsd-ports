@@ -11,7 +11,6 @@
     SUBDIR += bsdgroup-firefox-searchplugin
     SUBDIR += bsdpaste
     SUBDIR += citrix_ica
-    SUBDIR += de-py-qt4-eric4
     SUBDIR += dict
     SUBDIR += digibux
     SUBDIR += ding
