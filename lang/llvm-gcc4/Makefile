@@ -20,7 +20,8 @@ USE_BISON=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
-#flex, gm4, llc
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/llc:${PORTSDIR}/devel/llvm
 
 GCC_VER=	4.0.1
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
