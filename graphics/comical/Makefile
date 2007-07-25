@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A sequential image viewer
 
 LIB_DEPENDS=	unrar.3:${PORTSDIR}/archivers/libunrar
@@ -40,7 +40,7 @@ post-patch:
 		s|$$(CC)|${CXX}|; \
 		s|-I../unrar|-I${LOCALBASE}/include/libunrar3|;' \
 			${WRKSRC}/src/Makefile
-	
+
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; \
 		s|CFLAGS=|CFLAGS+=|;' \
 			${WRKSRC}/unzip/Makefile
