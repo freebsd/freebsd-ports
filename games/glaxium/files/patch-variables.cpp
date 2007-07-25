@@ -3,7 +3,7 @@
 @@ -453,6 +453,7 @@
  	static char strReturn[1024];
  	strcpy(strReturn, getenv("HOME"));
- 	strcat(strReturn, "~/.glaxiumrc");
+ 	strcat(strReturn, "/.glaxiumrc");
 +	return strReturn;
  #endif
  }
