@@ -100,6 +100,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/poppler-glib.pc ${PREFIX}/libdata/pkgconfig
 .elif ${SLAVEPORT}=="qt"
 	${INSTALL_DATA} ${WRKSRC}/poppler-qt.pc ${PREFIX}/libdata/pkgconfig
+.elif ${SLAVEPORT}=="qt4"
+	${INSTALL_DATA} ${WRKSRC}/poppler-qt4.pc ${PREFIX}/libdata/pkgconfig
 .endif
 .endif
 
