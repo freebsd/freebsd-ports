@@ -10,6 +10,7 @@
     SUBDIR += belote
     SUBDIR += dico
     SUBDIR += eficas
+    SUBDIR += eric4
     SUBDIR += facturier
     SUBDIR += geonext
     SUBDIR += gfaim
