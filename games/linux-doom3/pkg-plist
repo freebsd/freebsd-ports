@@ -4,8 +4,25 @@ bin/linux-doom3-ded
 %%DATADIR%%/base/pak005.pk4
 %%NEW%%%%DATADIR%%/base/pak006.pk4
 %%NEW%%%%DATADIR%%/base/pak007.pk4
+%%NEW%%%%DATADIR%%/base/pak008.pk4
+%%NEW%%%%DATADIR%%/d3xp/game01.pk4
+%%NEW%%%%DATADIR%%/d3xp/pak001.pk4
+%%NEW%%%%DATADIR%%/pb/htm/la001308.htm
+%%NEW%%%%DATADIR%%/pb/htm/lc001090.htm
+%%NEW%%%%DATADIR%%/pb/htm/ma001308.htm
+%%NEW%%%%DATADIR%%/pb/htm/mc001090.htm
+%%NEW%%%%DATADIR%%/pb/htm/wa001308.htm
+%%NEW%%%%DATADIR%%/pb/htm/wc001090.htm
+%%NEW%%%%DATADIR%%/pb/pbag.so
+%%NEW%%%%DATADIR%%/pb/pbags.so
+%%NEW%%%%DATADIR%%/pb/pbcl.so
+%%NEW%%%%DATADIR%%/pb/pbcls.so
+%%NEW%%%%DATADIR%%/pb/pbsv.so
 %%DATADIR%%/doom.x86
 %%DATADIR%%/doomded.x86
 share/pixmaps/doom3.png
+%%NEW%%@dirrm %%DATADIR%%/pb/htm
+%%NEW%%@dirrm %%DATADIR%%/pb
+%%NEW%%@dirrmtry %%DATADIR%%/d3xp
 @dirrmtry %%DATADIR%%/base
 @unexec rmdir %D/%%DATADIR%% >/dev/null 2>&1 || echo "If you are permanently removing this port, you should remove any configuration files, data files, and mods left in %D/%%DATADIR%%." | fmt

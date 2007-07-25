@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	doom3
-PORTVERSION=	1.3.1302
-PORTREVISION=	2
+PORTVERSION=	1.3.1.1304
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
-MASTER_SITE_SUBDIR=	doom3/linux/old
+MASTER_SITE_SUBDIR=	doom3/linux
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}.x86
 EXTRACT_SUFX=	.run
@@ -18,7 +17,6 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Doom III for Linux
 
-IA32_BINARY_PORT=	yes
 USE_LINUX=	yes
 USE_XLIB=	yes
 NO_CDROM=	Redistribution is limited, see license
@@ -32,13 +30,8 @@ SUB_FILES=	doom3 doom3-ded pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NVIDIA_GL)
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-.else
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
-.endif
-
 .if defined(WITH_NO_CDKEY)
+MASTER_SITE_SUBDIR=	doom3/linux/old
 PORTVERSION=	1.1.1286
 PLIST_SUB+=	NEW="@comment "
 .else
@@ -50,12 +43,23 @@ do-extract:
 	@cd ${WRKDIR} && ${TAIL} +374 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
 		${TAR} zxf -
 
+.if !defined(WITH_NO_CDKEY)
+post-extract:
+	@${RM} ${WRKSRC}/pb/PB_EULA.txt
+.endif
+
 do-install:
 	${MKDIR} ${DATADIR}/base
 	cd ${WRKSRC}/base && \
 		${INSTALL_DATA} game01.pk4 pak*.pk4 ${DATADIR}/base
 	cd ${WRKSRC}/bin/Linux/x86 && \
 		${INSTALL_PROGRAM} doom.x86 doomded.x86 ${DATADIR}
+.if !defined(WITH_NO_CDKEY)
+	${MKDIR} ${DATADIR}/d3xp
+	cd ${WRKSRC}/d3xp && \
+		${INSTALL_DATA} game01.pk4 pak*.pk4 ${DATADIR}/d3xp
+	${CP} -r ${WRKSRC}/pb ${DATADIR}
+.endif
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/doom3.png ${PREFIX}/share/pixmaps
 .for f in doom3 doom3-ded
