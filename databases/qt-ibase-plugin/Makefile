@@ -19,10 +19,10 @@ COMMENT=	A plugin for QT to connect to IBase/Firebird-Databases
 
 DB=		ibase
 
-LIB_DEPENDS+=	gds:${PORTSDIR}/databases/firebird-client \
-		qt-mt:${PORTSDIR}/x11-toolkits/qt33
+LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
 
 USE_BZIP2=	yes
+USE_FIREBIRD=	yes
 PLUGIN=		plugins/src/sqldrivers/${DB}
 DRIVER=		src/sql/drivers/${DB}
 EXTRACT_AFTER_ARGS?=| ${TAR} -xf - ${DISTNAME}/${PLUGIN} \
