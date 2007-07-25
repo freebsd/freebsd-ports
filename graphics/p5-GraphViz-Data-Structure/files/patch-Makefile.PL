@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Tue Sep 27 05:20:28 2005
-+++ Makefile.PL	Mon Apr  2 17:27:28 2007
-@@ -2,15 +2,6 @@
+--- Makefile.PL.orig	Thu Jul 12 04:44:56 2007
++++ Makefile.PL	Wed Jul 25 09:46:28 2007
+@@ -2,17 +2,6 @@
  use 5.008;
  # See lib/ExtUtils/MakeMaker.pm for details of how to influence
  # the contents of the Makefile that is written.
@@ -10,8 +10,10 @@
 -  die "You must install the graphviz package (http://www.graphviz.org) before using this module.\n";
 -}
 -else {
--  my ($v) = ($dot_version =~ /dot version (.*?) /);
--  die "You must have at least version 2.2 of dot to use this module" if ($v+0 < 2.2);
+-  my (@v) = ($dot_version =~ /dot (?:- Graphviz )?version (\d+)\.(\d+) /);
+-  if ( $v[0] < 2 || $v[1] < 2 ) {
+-    die "You must have at least version 2.2 of dot to use this module (found $v[0].$v[1])";
+-  }
 -}
  
  WriteMakefile(
