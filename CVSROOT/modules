@@ -2515,6 +2515,7 @@ epylog		ports/sysutils/epylog
 eqe		ports/textproc/eqe
 erc		ports/irc/erc
 eric		ports/devel/eric
+eric4		ports/devel/eric4
 eris		ports/devel/eris
 erlang		ports/lang/erlang
 erlang-doc	ports/lang/erlang-doc
