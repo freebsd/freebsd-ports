@@ -10,6 +10,7 @@
 %%SITE_PERL%%/ShipIt/State.pm
 %%SITE_PERL%%/ShipIt/Step.pm
 %%SITE_PERL%%/ShipIt/Step/AddToSVNDir.pm
+%%SITE_PERL%%/ShipIt/Step/ChangeRPMVersion.pm
 %%SITE_PERL%%/ShipIt/Step/ChangeVersion.pm
 %%SITE_PERL%%/ShipIt/Step/CheckChangeLog.pm
 %%SITE_PERL%%/ShipIt/Step/Commit.pm
