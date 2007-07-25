@@ -18,6 +18,8 @@
 %%HORDIR%%/lib/prefs.php
 %%HORDIR%%/lib/version.php
 %%HORDIR%%/locale/bg_BG/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/ca_ES/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/ca_ES/help.xml
 %%HORDIR%%/locale/cs_CZ/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/da_DK/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/de_DE/LC_MESSAGES/gollem.mo
@@ -35,8 +37,10 @@
 %%HORDIR%%/locale/nl_NL/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/nn_NO/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/pl_PL/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/pt_BR/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/ro_RO/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/ru_RU/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/sl_SI/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/sv_SE/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/zh_TW/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/zh_TW/help.xml
@@ -45,6 +49,7 @@
 %%HORDIR%%/permissions.php
 %%HORDIR%%/po/README
 %%HORDIR%%/po/bg_BG.po
+%%HORDIR%%/po/ca_ES.po
 %%HORDIR%%/po/cs_CZ.po
 %%HORDIR%%/po/da_DK.po
 %%HORDIR%%/po/de_DE.po
@@ -59,8 +64,10 @@
 %%HORDIR%%/po/nl_NL.po
 %%HORDIR%%/po/nn_NO.po
 %%HORDIR%%/po/pl_PL.po
+%%HORDIR%%/po/pt_BR.po
 %%HORDIR%%/po/ro_RO.po
 %%HORDIR%%/po/ru_RU.po
+%%HORDIR%%/po/sl_SI.po
 %%HORDIR%%/po/sv_SE.po
 %%HORDIR%%/po/zh_TW.po
 %%HORDIR%%/quota.php
@@ -105,6 +112,8 @@
 @dirrm %%HORDIR%%/lib
 @dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/bg_BG
+@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ca_ES
 @dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/cs_CZ
 @dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
@@ -132,10 +141,14 @@
 @dirrm %%HORDIR%%/locale/nn_NO
 @dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/pl_PL
+@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_BR
 @dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/ro_RO
 @dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/ru_RU
+@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sl_SI
 @dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/sv_SE
 @dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
