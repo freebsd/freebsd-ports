@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	${PKGNAMESUFFIX_XPM}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ruby extension library to use Thomas Boutell's gd library
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
@@ -43,7 +43,7 @@ LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 
 # Hmm, GREP and TRUE seem to be defined in the bsd.port.post.mk stage.
 .if exists(${LOCALBASE}/bin/gd2topng)
-WITH_X11_CHECK!=	ldd ${LOCALBASE}/bin/gd2topng | grep -w 'libX11\.so' || true
+WITH_X11_CHECK!=	ldd ${LOCALBASE}/bin/gd2topng | ${GREP} -w 'libX11\.so' || true
 .else
 WITH_X11_CHECK=		# empty
 .endif
