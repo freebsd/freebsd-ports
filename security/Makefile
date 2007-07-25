@@ -227,6 +227,7 @@
     SUBDIR += l0phtcrack
     SUBDIR += l5
     SUBDIR += labrea
+    SUBDIR += lasso
     SUBDIR += lep
     SUBDIR += libassuan
     SUBDIR += libbf
