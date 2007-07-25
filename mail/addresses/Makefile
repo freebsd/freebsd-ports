@@ -8,7 +8,8 @@
 PORTNAME=	addresses
 PORTVERSION=	0.4.7
 CATEGORIES=	mail gnustep
-MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	gap
 DISTNAME=	Addresses-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
