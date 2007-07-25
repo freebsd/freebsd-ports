@@ -80,23 +80,13 @@ LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--disable-gnu-tls
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	this port does not compile on FreeBSD 4.x.
-.endif
-
 .if defined(WITH_PERL)
-.if ${PERL_LEVEL} < 500600
-IGNORE=	this port requires perl 5.6.0 or later, Install lang/perl5 then try again
-.else
 CONFIGURE_ARGS+=	--enable-perl
-USE_PERL=	yes
+USE_PERL5=	yes
 PLIST_SUB+=	PERL=""
-.endif
 .else
 CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=	PERL="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
