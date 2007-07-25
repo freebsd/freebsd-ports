@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gimp-app
-PORTVERSION=	2.3.18
+PORTVERSION=	2.3.19
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -50,7 +50,8 @@ CONFIGURE_ARGS?=--disable-perl \
 		--without-print \
 		--disable-python \
 		--with-desktop-dir=${PREFIX}/share \
-		--docdir=${PREFIX}/share/doc/gimp
+		--docdir=${PREFIX}/share/doc/gimp \
+		--enable-default-binary
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
@@ -78,6 +79,11 @@ CONFLICTS=	gimp-1.* gimp-app-[0-9]*
 
 MAN1+=	gimp-2.3.1 gimp-remote-2.3.1 gimptool-2.0.1
 MAN5+=	gimprc-2.3.5
+MLINKS=	gimp-2.3.1 gimp.1 \
+	gimp-2.3.1 gimp-console-2.3.1 \
+	gimp-console-2.3.1 gimp-console.1 \
+	gimp-remote-2.3.1 gimp-remote.1 \
+	gimprc-2.3.5 gimprc.5
 
 .if defined(WITHOUT_RSVG)
 CONFIGURE_ARGS+=	--without-librsvg
