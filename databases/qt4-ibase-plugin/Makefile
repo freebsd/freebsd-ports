@@ -18,8 +18,7 @@ COMMENT=	Qt IBase/Firebird database plugin
 
 DB=		ibase
 
-LIB_DEPENDS+=	gds:${PORTSDIR}/databases/firebird-client
-
+USE_FIREBIRD=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	moc sql
 QT_NONSTANDARD=	yes
