@@ -5,11 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	sqsh
-PORTVERSION=	2.1.3
-PORTREVISION=	3
+PORTVERSION=	2.1.4
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=		sqsh
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive tool for querying Sybase database servers
