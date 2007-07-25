@@ -6999,6 +6999,7 @@ llgal		ports/www/llgal
 llnlxdir	ports/ftp/llnlxdir
 llnlxftp	ports/ftp/llnlxftp
 llvm		ports/devel/llvm
+llvm-gcc4	ports/lang/llvm-gcc4
 lm-solve	ports/games/lm-solve
 lmarbles	ports/games/lmarbles
 lmbench		ports/benchmarks/lmbench
