@@ -256,14 +256,13 @@ OPTIONS=	MSSQL	"Enable Microsoft SQL Server support" off
 .endif
 
 .if ${PHP_MODNAME} == "pdo_firebird"
-LIB_DEPENDS+=	gds.1:${PORTSDIR}/databases/firebird-client
-
 CONFIGURE_ARGS+=--with-pdo-firebird=${LOCALBASE}
 
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
 
 USE_GCC=	3.4+
+USE_FIREBIRD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "pdo_mysql"
