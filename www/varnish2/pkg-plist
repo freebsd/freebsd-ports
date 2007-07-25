@@ -1,9 +1,16 @@
+bin/varnishadm
 bin/varnishhist
 bin/varnishlog
 bin/varnishncsa
+bin/varnishreplay
 bin/varnishstat
 bin/varnishtop
 etc/varnish/default.vcl
+include/varnish/shmlog.h
+include/varnish/shmlog_tags.h
+include/varnish/stat_field.h
+include/varnish/stats.h
+include/varnish/varnishapi.h
 lib/libvarnish.so.0
 lib/libvarnish.so
 lib/libvarnish.la
@@ -16,5 +23,8 @@ lib/libvcl.so.0
 lib/libvcl.so
 lib/libvcl.la
 lib/libvcl.a
+libdata/pkgconfig/varnishapi.pc
 sbin/varnishd
 @dirrm etc/varnish
+@exec mkdir %D/varnish
+@dirrmtry %D/varnish
