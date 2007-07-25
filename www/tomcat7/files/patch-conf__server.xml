@@ -1,5 +1,5 @@
---- ./conf/server.xml.orig	Wed Feb 14 18:01:28 2007
-+++ ./conf/server.xml	Wed Feb 14 18:01:20 2007
+--- ./conf/server.xml.orig	2007-07-24 22:33:24.134058137 +0800
++++ ./conf/server.xml	2007-07-24 22:34:42.223606359 +0800
 @@ -2,7 +2,7 @@
       define subcomponents such as "Valves" at this level.
       Documentation at /docs/config/server.html
@@ -9,16 +9,25 @@
  
    <!--APR library loader. Documentation at /docs/apr.html -->
    <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
-@@ -40,7 +40,7 @@
+@@ -15,7 +15,7 @@
+   <!-- Global JNDI resources
+        Documentation at /docs/jndi-resources-howto.html
+   -->
+-  <GlobalNamingResources>
++ <GlobalNamingResources>
+     <!-- Editable user database that can also be used by
+          UserDatabaseRealm to authenticate users
+     -->
+@@ -47,7 +47,7 @@
           APR (HTTP/AJP) Connector: /docs/apr.html
           Define a non-SSL HTTP/1.1 Connector on port 8080
      -->
 -    <Connector port="8080" protocol="HTTP/1.1" 
 +    <Connector port="%%HTTP_PORT%%" protocol="HTTP/1.1" 
-                maxThreads="150" connectionTimeout="20000" 
+                connectionTimeout="20000" 
                 redirectPort="8443" />
- 
-@@ -55,7 +55,7 @@
+     <!-- A "Connector" using the shared thread pool-->
+@@ -68,7 +68,7 @@
      -->
  
      <!-- Define an AJP 1.3 Connector on port 8009 -->
