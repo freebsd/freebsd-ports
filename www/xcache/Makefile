@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xcache
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	www
-MASTER_SITES=	http://210.51.190.228/pub/XCache/Releases/ \
+MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${DISTVERSION}/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A fast and stable php opcode cacher
@@ -24,10 +24,9 @@ OPTIONS=	COVERAGER "Enable code coverage dumper" off
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 ADMINFILES=	common-en.lang.php common-zh-simplified-utf-8.lang.php \
 		common-zh-traditional-utf-8.lang.php common.php config.php.example \
+		edit.php edit.tpl.php footer.tpl.php header.tpl.php \
 		help-en.lang.php help-zh-simplified-utf-8.lang.php \
 		help-zh-traditional-utf-8.lang.php help.php index.php \
 		tablesort.js xcache.css xcache.php xcache.tpl.php
