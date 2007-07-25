@@ -1,5 +1,8 @@
+bin/gimp
 bin/gimp-2.3
+bin/gimp-console
 bin/gimp-console-2.3
+bin/gimp-remote
 bin/gimp-remote-2.3
 bin/gimptool-2.0
 etc/gimp/2.2/controllerrc
@@ -251,8 +254,6 @@ libdata/pkgconfig/gimp-2.0.pc
 libdata/pkgconfig/gimpthumb-2.0.pc
 libdata/pkgconfig/gimpui-2.0.pc
 libexec/gimp/2.2/environ/default.env
-@comment this is a simlink to gimp-2.3.1, so put it here because it gives me trouble with MAN1.
-man/man1/gimp-console-2.3.1
 libexec/gimp/2.2/interpreters/default.interp
 libexec/gimp/2.2/modules/libcdisplay_colorblind.a
 libexec/gimp/2.2/modules/libcdisplay_colorblind.la
