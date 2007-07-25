@@ -23,7 +23,7 @@ HAVE_EXAMPLES=	true
 
 .if ${PKGNAMESUFFIX} == "-ibase"
 .	if defined(WITH_IBASE)
-LIB_DEPENDS=	fbembed.1:${PORTSDIR}/databases/firebird-client
+USE_FIREBIRD=	yes
 .	endif
 HAVE_EXAMPLES=	true
 .endif
