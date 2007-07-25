@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Audit
-PORTVERSION=	2.2.19
+PORTVERSION=	2.2.20
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -19,7 +19,6 @@ COMMENT=	Perl module for creating easy mail filters
 RUN_DEPENDS=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		${SITE_PERL}/MIME/Entity.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/Mail/ListDetector.pm:${PORTSDIR}/mail/p5-Mail-ListDetector \
 		${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		p5-File-HomeDir>=0.61:${PORTSDIR}/devel/p5-File-HomeDir \
 		${SITE_PERL}/File/Tempdir.pm:${PORTSDIR}/devel/p5-File-Tempdir \
