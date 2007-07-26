@@ -1,15 +1,16 @@
 #!/bin/sh
 # $FreeBSD$
-#
 
-if [ "$2" != "PRE-INSTALL" ]; then
+if [ "$2" != "POST-INSTALL" ]; then
     exit 0
 fi
 
-USER=jabber
-GROUP=${USER}
-UID=93
-GID=${UID}
+USER=%%JABBER_USER%%
+GROUP=%%JABBER_GROUP%%
+UID=%%JABBER_UID%%
+GID=%%JABBER_GID%%
+ETCDIR=%%JABBER_ETCDIR%%
+RUNDIR=%%JABBER_RUNDIR%%
 
 if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
 	if pw groupadd ${GROUP} -g ${GID}; then
@@ -32,7 +33,15 @@ if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
 	fi
 fi
 
-mkdir -m 750 /var/jabberd /var/jabberd/db /var/jabberd/pid /var/jabberd/log
-chown jabber:jabber /var/jabberd /var/jabberd/db /var/jabberd/pid /var/jabberd/log
+if [ ! -d ${RUNDIR} ]; then
+	echo "Creating \"${RUNDIR}\"."
+	mkdir -p ${RUNDIR}/pid ${RUNDIR}/db ${RUNDIR}/logs
+fi
 
-exit 0
+echo "Fixing ownerships and modes in \"${ETCDIR}\"."
+chown -R ${USER}:${GROUP} ${ETCDIR}
+chmod -R go= ${ETCDIR}
+
+echo "Fixing ownerships and modes in \"${RUNDIR}\"."
+chown -R ${USER}:${GROUP} ${RUNDIR}
+chmod -R go= ${RUNDIR}

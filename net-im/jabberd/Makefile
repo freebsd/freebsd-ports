@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.0.11
-PORTREVISION=	2
+PORTVERSION=	2.1.10
 CATEGORIES=	net-im
-MASTER_SITES=	http://jabberstudio.rediris.es/jabberd2/ \
-		http://jabberstudio.2nw.net/jabberd2/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}s${PORTVERSION:E}
+MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	kirk@strauser.com
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
-LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+		gsasl.10:${PORTSDIR}/security/gsasl \
+		idn.16:${PORTSDIR}/dns/libidn
 
 OPTIONS=	POSTGRESQL "Use PostgreSQL for storage and authentication" off \
 		MYSQL "Use MySQL for storage and authentication" off \
@@ -26,18 +25,39 @@ OPTIONS=	POSTGRESQL "Use PostgreSQL for storage and authentication" off \
 		SQLITE "Use SQLITE3 for storage" off \
 		PAM "Use PAM for authentication" off \
 		PIPE "Enable pipe auth/reg support" off \
-		AVATAR "Enable avatar support in vCard" off \
+		ANON "Enable anonymous auth/reg support" off \
 		DEBUG "Compile with debug information" on
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes
-USE_RC_SUBR=	jabberd.sh
-CONFIGURE_ARGS=	--localstatedir=/var \
+USE_RC_SUBR=	jabberd
+USE_LDCONFIG=	${TARGETDIR}/lib/jabberd
+CONFIGURE_ARGS+=	--localstatedir=/var \
+		--sysconfdir=${PREFIX}/etc/jabberd \
 		--enable-ssl \
-		--with-extra-include-path=${LOCALBASE}/include${EIP} \
-		--with-extra-library-path=${LOCALBASE}/lib${ELP} \
+		--with-extra-include-path="${LOCALBASE}/include ${EIP}" \
+		--with-extra-library-path="${LOCALBASE}/lib ${ELP}" \
 		--enable-fs
+
+JABBER_USER=	jabber
+JABBER_UID=	93
+JABBER_GROUP=	${JABBER_USER}
+JABBER_GID=	${JABBER_UID}
+JABBER_ETCDIR=	"${TARGETDIR}/etc/jabberd"
+JABBER_RUNDIR=	"/var/jabberd"
+
+SUB_LIST+=	JABBER_USER=${JABBER_USER} JABBER_UID=${JABBER_UID} \
+		JABBER_GROUP=${JABBER_GROUP} JABBER_GID=${JABBER_GID} \
+		JABBER_ETCDIR="${JABBER_ETCDIR}" \
+		JABBER_RUNDIR="${JABBER_RUNDIR}"
+
+SUB_FILES+=	pkg-install pkg-deinstall
+
+PORTDOCS=	*
+
+DOCFILES=	AUTHORS BUGS COPYING ChangeLog INSTALL NEWS PROTOCOL README \
+		TODO UPGRADE
 
 .include <bsd.port.pre.mk>
 
@@ -48,15 +68,19 @@ CONFIGURE_ARGS+=--enable-debug
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-pgsql
+PLIST_SUB+=	SUB_PGSQL=""
 .else
 CONFIGURE_ARGS+=--disable-pgsql
+PLIST_SUB+=	SUB_PGSQL="@comment "
 .endif
 
 .if defined(WITH_SQLITE)
 CONFIGURE_ARGS+=--enable-sqlite
 LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+PLIST_SUB+=	SUB_SQLITE=""
 .else
 CONFIGURE_ARGS+=--disable-sqlite
+PLIST_SUB+=	SUB_SQLITE="@comment "
 .endif
 
 .if defined(WITH_MYSQL)
@@ -64,54 +88,70 @@ USE_MYSQL=	yes
 CONFIGURE_ARGS+=--enable-mysql
 EIP+=:${LOCALBASE}/include/mysql
 ELP+=:${LOCALBASE}/lib/mysql
+PLIST_SUB+=	SUB_MYSQL=""
 .else
 CONFIGURE_ARGS+=--disable-mysql
+PLIST_SUB+=	SUB_MYSQL="@comment "
 .endif
 
 .if defined(WITH_BDB)
 USE_BDB=	yes
-WANT_BDB_VER=	43
 CONFIGURE_ARGS+=--enable-db
 CONFIGURE_ARGS+=--oldincludedir=/nonexistant
 EIP+=:${BDB_INCLUDE_DIR}
 ELP+=:${BDB_LIB_DIR}
+PLIST_SUB+=	SUB_BDB=""
 .else
 CONFIGURE_ARGS+=--disable-db
+PLIST_SUB+=	SUB_BDB="@comment "
 .endif
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--enable-ldap
+PLIST_SUB+=	SUB_LDAP=""
 .else
 CONFIGURE_ARGS+=--disable-ldap
+PLIST_SUB+=	SUB_LDAP="@comment "
 .endif
 
 .if defined(WITH_PAM)
 CONFIGURE_ARGS+=--enable-pam
+PLIST_SUB+=	SUB_PAM=""
 .else
 CONFIGURE_ARGS+=--disable-pam
+PLIST_SUB+=	SUB_PAM="@comment "
 .endif
 
 .if defined(WITH_PIPE)
 CONFIGURE_ARGS+=--enable-pipe
+PLIST_SUB+=	SUB_PIPE=""
+.else
+PLIST_SUB+=	SUB_PIPE="@comment "
 .endif
 
-.if defined(WITH_AVATAR)
-PATCH_SITES+=	http://www.deepdarc.com/
-PATCHFILES+=	vcard-avatar.diff
+.if defined(WITH_ANON)
+CONFIGURE_ARGS+=--enable-anon
+PLIST_SUB+=	SUB_ANON=""
+.else
+PLIST_SUB+=	SUB_ANON="@comment "
 .endif
 
 MAN8=		c2s.8 jabberd.8 resolver.8 router.8 s2s.8 sm.8
 
-pre-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
-	@${CHOWN} -R jabber:jabber ${PREFIX}/etc/jabberd
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CHOWN} -R ${JABBER_USER}:${JABBER_GROUP} ${PREFIX}/etc/jabberd
 	@${FIND} ${PREFIX}/etc/jabberd -type d | ${XARGS} ${CHMOD} 750
 	@${FIND} ${PREFIX}/etc/jabberd -type f | ${XARGS} ${CHMOD} 660
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/tools/db-setup.mysql ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/tools/db-setup.pgsql ${DATADIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for FILE in ${DOCFILES}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.endfor
+.for FILE in db-setup.mysql db-setup.pgsql db-setup.sqlite
+	@${INSTALL_DATA} ${WRKSRC}/tools/${FILE} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
