@@ -14597,6 +14597,7 @@ skyeye		ports/emulators/skyeye
 skype		ports/net/skype
 skype-devel	ports/net/skype-devel
 skytemplate	ports/www/skytemplate
+skytools	ports/databases/skytools
 skyutils	ports/misc/skyutils
 sl		ports/games/sl
 sl-aspell	ports/textproc/sl-aspell
