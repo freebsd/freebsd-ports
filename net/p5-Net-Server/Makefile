@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Net-Server
-PORTVERSION=	0.96
+PORTVERSION=	0.97
 CATEGORIES=	net perl5
 MASTER_SITES=	http://seamons.com/projects/perl/net_server/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A configurable base class for writing internet servers in Perl
 
 RUN_DEPENDS=	${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex
