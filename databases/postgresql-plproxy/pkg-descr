@@ -1,0 +1,8 @@
+PL/Proxy is a proxy language used for remote database procedure calls
+and data partitioning between databases based on hashing field values.
+
+Main idea is that proxy function will be created with same signature as
+remote function to be called, so only destination info needs to be
+specified inside proxy function body.
+
+WWW: https://developer.skype.com/SkypeGarage/DbProjects/PlProxy
