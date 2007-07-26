@@ -1,4 +1,4 @@
-#!/bin/sh
+#!%%SH%%
 
 PREFIX="%%PREFIX%%/bin"
 PROGRAM="${0}"

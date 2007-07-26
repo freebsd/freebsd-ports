@@ -1,4 +1,4 @@
-#!/bin/sh
+#!%%SH%%
 #
 # $FreeBSD$
 #
@@ -59,10 +59,11 @@ start_cmd()
 	${mlnet_flags} \
 	>> ${mlnet_logfile} 2>&1 &"
   else
-    su -l ${mlnet_user} -c "${command} \
+    su -l ${mlnet_user} -c "%%SH%% -c \
+	\"${command} \
 	${mlnet_logcommand} \
 	${mlnet_flags} \
-	>> ${mlnet_logfile} 2>&1 &"
+	>> ${mlnet_logfile} 2>&1 &\""
   fi
 }
 
