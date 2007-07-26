@@ -7,6 +7,7 @@
 
 PORTNAME=	doom3
 PORTVERSION=	1.3.1.1304
+PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
 MASTER_SITE_SUBDIR=	doom3/linux
@@ -33,6 +34,7 @@ SUB_FILES=	doom3 doom3-ded pkg-message
 .if defined(WITH_NO_CDKEY)
 MASTER_SITE_SUBDIR=	doom3/linux/old
 PORTVERSION=	1.1.1286
+PORTEPOCH=	0
 PLIST_SUB+=	NEW="@comment "
 .else
 PLIST_SUB+=	NEW=""
