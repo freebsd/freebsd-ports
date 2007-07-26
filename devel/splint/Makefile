@@ -23,5 +23,7 @@ MAN1=		splint.1
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/Headers/constants.h
+	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
+		 ${REINPLACE_CMD} -e '/^pkgdatadir =/s|=.*|=${DATADIR}|'
 
 .include <bsd.port.mk>
