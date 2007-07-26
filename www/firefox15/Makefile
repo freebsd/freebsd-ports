@@ -8,6 +8,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	1.5.0.12
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
@@ -17,7 +18,6 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-FORBIDDEN=	http://vuxml.FreeBSD.org/e190ca65-3636-11dc-a697-000c6ec775d9.html
 DEPRECATED=	Obsolete version, use Firefox 2.0 or greater instead
 
 LATEST_LINK=	firefox15
