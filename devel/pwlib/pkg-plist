@@ -178,5 +178,6 @@ lib/pwlib/devices/sound/oss_pwplugin.so
 %%DATADIR%%/make/qt.mak
 %%DATADIR%%/make/unix.mak
 %%DATADIR%%/make/xlib.mak
+%%DATADIR%%/version.h
 @dirrm %%DATADIR%%/make
 @dirrm %%DATADIR%%
