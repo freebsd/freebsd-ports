@@ -27,7 +27,6 @@ PLIST_SUB+=	SCROLLZ_VER="${PORTVERSION}"
 MAN1=	scrollz.1
 
 .if defined(WITH_SSL)
-USE_GNUTLS=	YES
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libgnutls.a:${PORTSDIR}/security/gnutls
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-ssl
