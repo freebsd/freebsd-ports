@@ -1,0 +1,5 @@
+This is a package of tools in use in Skype for replication and
+failover.  Also it includes a generic queuing mechanism PgQ and
+utility library for Python scripts.
+
+WWW: https://developer.skype.com/SkypeGarage/DbProjects/SkyTools

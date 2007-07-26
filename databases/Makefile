@@ -492,6 +492,7 @@
     SUBDIR += rubygem-memcache-client
     SUBDIR += rubygem-rrdtool
     SUBDIR += rubygem-sqlite3
+    SUBDIR += skytools
     SUBDIR += slony1
     SUBDIR += sqlcached
     SUBDIR += sqlclient
