@@ -1,0 +1,2424 @@
+ netwerk/cookie/public/nsICookie2.idl   |    9 ++
+ netwerk/cookie/src/nsCookie.cpp        |    7 +-
+ netwerk/cookie/src/nsCookie.h          |    8 ++
+ netwerk/cookie/src/nsCookieService.cpp |  111 +++++++++++++++++++++++++--------
+ netwerk/cookie/src/nsCookieService.h   |    6 +
+ 5 files changed, 113 insertions(+), 28 deletions(-)
+
+Index: netwerk/cookie/public/nsICookie2.idl
+===================================================================
+--- netwerk/cookie/public/nsICookie2.idl	2007-07-16 10:53:19.000000000 +0000
++++ netwerk/cookie/public/nsICookie2.idl	2007-07-16 10:53:23.000000000 +0000
+@@ -67,8 +67,17 @@
+      * (where 0 does not represent a session cookie).
+      *
+      * not to be confused with |expires|, an
+      * attribute on nsICookie.
+      */
+     readonly attribute PRInt64 expiry;
+ 
+ };
++
++[scriptable, uuid(40712890-6c9e-45fc-b77c-c8ea344f690e)]
++interface nsICookie2_MOZILLA_1_8_BRANCH : nsICookie2
++{
++    /**
++     * true if the cookie is an http only cookie
++     */
++    readonly attribute boolean httpOnly;
++};
+Index: netwerk/cookie/src/nsCookie.cpp
+===================================================================
+--- netwerk/cookie/src/nsCookie.cpp	2007-07-16 10:53:19.000000000 +0000
++++ netwerk/cookie/src/nsCookie.cpp	2007-07-16 10:53:23.000000000 +0000
+@@ -84,16 +84,17 @@
+ nsCookie::Create(const nsACString &aName,
+                  const nsACString &aValue,
+                  const nsACString &aHost,
+                  const nsACString &aPath,
+                  nsInt64          aExpiry,
+                  nsInt64          aLastAccessed,
+                  PRBool           aIsSession,
+                  PRBool           aIsSecure,
++                 PRBool           aIsHttpOnly,
+                  nsCookieStatus   aStatus,
+                  nsCookiePolicy   aPolicy)
+ {
+   // find the required string buffer size, adding 4 for the terminating nulls
+   const PRUint32 stringLength = aName.Length() + aValue.Length() +
+                                 aHost.Length() + aPath.Length() + 4;
+ 
+   // allocate contiguous space for the nsCookie and its strings -
+@@ -106,17 +107,18 @@
+   char *name, *value, *host, *path, *end;
+   name = NS_STATIC_CAST(char *, place) + sizeof(nsCookie);
+   StrBlockCopy(aName, aValue, aHost, aPath,
+                name, value, host, path, end);
+ 
+   // construct the cookie. placement new, oh yeah!
+   return new (place) nsCookie(name, value, host, path, end,
+                               aExpiry, aLastAccessed, ++gLastCreationTime,
+-                              aIsSession, aIsSecure, aStatus, aPolicy);
++                              aIsSession, aIsSecure, aIsHttpOnly,
++                              aStatus, aPolicy);
+ }
+ 
+ /******************************************************************************
+  * nsCookie:
+  * xpcom impl
+  ******************************************************************************/
+ 
+ // xpcom getters
+@@ -124,25 +126,26 @@
+ NS_IMETHODIMP nsCookie::GetValue(nsACString &aValue)       { aValue = Value();          return NS_OK; }
+ NS_IMETHODIMP nsCookie::GetHost(nsACString &aHost)         { aHost = Host();            return NS_OK; }
+ NS_IMETHODIMP nsCookie::GetRawHost(nsACString &aHost)      { aHost = RawHost();         return NS_OK; }
+ NS_IMETHODIMP nsCookie::GetPath(nsACString &aPath)         { aPath = Path();            return NS_OK; }
+ NS_IMETHODIMP nsCookie::GetExpiry(PRInt64 *aExpiry)        { *aExpiry = Expiry();       return NS_OK; }
+ NS_IMETHODIMP nsCookie::GetIsSession(PRBool *aIsSession)   { *aIsSession = IsSession(); return NS_OK; }
+ NS_IMETHODIMP nsCookie::GetIsDomain(PRBool *aIsDomain)     { *aIsDomain = IsDomain();   return NS_OK; }
+ NS_IMETHODIMP nsCookie::GetIsSecure(PRBool *aIsSecure)     { *aIsSecure = IsSecure();   return NS_OK; }
++NS_IMETHODIMP nsCookie::GetHttpOnly(PRBool *aHttpOnly)     { *aHttpOnly = IsHttpOnly(); return NS_OK; }
+ NS_IMETHODIMP nsCookie::GetStatus(nsCookieStatus *aStatus) { *aStatus = Status();       return NS_OK; }
+ NS_IMETHODIMP nsCookie::GetPolicy(nsCookiePolicy *aPolicy) { *aPolicy = Policy();       return NS_OK; }
+ 
+ // compatibility method, for use with the legacy nsICookie interface.
+ // here, expires == 0 denotes a session cookie.
+ NS_IMETHODIMP
+ nsCookie::GetExpires(PRUint64 *aExpires)
+ {
+   if (IsSession()) {
+     *aExpires = 0;
+   } else {
+     *aExpires = Expiry() > nsInt64(0) ? PRInt64(Expiry()) : 1;
+   }
+   return NS_OK;
+ }
+ 
+-NS_IMPL_ISUPPORTS2(nsCookie, nsICookie2, nsICookie)
++NS_IMPL_ISUPPORTS3(nsCookie, nsICookie2, nsICookie, nsICookie2_MOZILLA_1_8_BRANCH)
+Index: netwerk/cookie/src/nsCookie.h
+===================================================================
+--- netwerk/cookie/src/nsCookie.h	2007-07-16 10:53:19.000000000 +0000
++++ netwerk/cookie/src/nsCookie.h	2007-07-16 10:53:23.000000000 +0000
+@@ -50,71 +50,75 @@
+  * for xpcom access of cookie objects.
+  */
+ 
+ /******************************************************************************
+  * nsCookie:
+  * implementation
+  ******************************************************************************/
+ 
+-class nsCookie : public nsICookie2
++class nsCookie : public nsICookie2_MOZILLA_1_8_BRANCH
+ {
+   // break up the NS_DECL_ISUPPORTS macro, since we use a bitfield refcount member
+   public:
+     NS_DECL_ISUPPORTS_INHERITED
+   protected:
+     NS_DECL_OWNINGTHREAD
+ 
+   public:
+     // nsISupports
+     NS_DECL_NSICOOKIE
+     NS_DECL_NSICOOKIE2
++    NS_DECL_NSICOOKIE2_MOZILLA_1_8_BRANCH
+ 
+   private:
+     // for internal use only. see nsCookie::Create().
+     nsCookie(const char     *aName,
+              const char     *aValue,
+              const char     *aHost,
+              const char     *aPath,
+              const char     *aEnd,
+              nsInt64         aExpiry,
+              nsInt64         aLastAccessed,
+              PRUint32        aCreationTime,
+              PRBool          aIsSession,
+              PRBool          aIsSecure,
++             PRBool          aIsHttpOnly,
+              nsCookieStatus  aStatus,
+              nsCookiePolicy  aPolicy)
+      : mNext(nsnull)
+      , mName(aName)
+      , mValue(aValue)
+      , mHost(aHost)
+      , mPath(aPath)
+      , mEnd(aEnd)
+      , mExpiry(aExpiry)
+      , mLastAccessed(aLastAccessed)
+      , mCreationTime(aCreationTime)
+      , mRefCnt(0)
+      , mIsSession(aIsSession != PR_FALSE)
+      , mIsSecure(aIsSecure != PR_FALSE)
++     , mIsHttpOnly(aIsHttpOnly != PR_FALSE)
+      , mStatus(aStatus)
+      , mPolicy(aPolicy)
+     {
+     }
+ 
+   public:
+     // public helper to create an nsCookie object. use |operator delete|
+     // to destroy an object created by this method.
+     static nsCookie * Create(const nsACString &aName,
+                              const nsACString &aValue,
+                              const nsACString &aHost,
+                              const nsACString &aPath,
+                              nsInt64           aExpiry,
+                              nsInt64           aLastAccessed,
+                              PRBool            aIsSession,
+                              PRBool            aIsSecure,
++                             PRBool            aIsHttpOnly,
+                              nsCookieStatus    aStatus,
+                              nsCookiePolicy    aPolicy);
+ 
+     virtual ~nsCookie() {};
+ 
+     // fast (inline, non-xpcom) getters
+     inline const nsDependentCString Name()  const { return nsDependentCString(mName, mValue - 1); }
+     inline const nsDependentCString Value() const { return nsDependentCString(mValue, mHost - 1); }
+@@ -122,16 +126,17 @@
+     inline const nsDependentCString RawHost() const { return nsDependentCString(IsDomain() ? mHost + 1 : mHost, mPath - 1); }
+     inline const nsDependentCString Path()  const { return nsDependentCString(mPath, mEnd); }
+     inline nsInt64 Expiry()                 const { return mExpiry; }
+     inline nsInt64 LastAccessed()           const { return mLastAccessed; }
+     inline PRUint32 CreationTime()          const { return mCreationTime; }
+     inline PRBool IsSession()               const { return mIsSession; }
+     inline PRBool IsDomain()                const { return *mHost == '.'; }
+     inline PRBool IsSecure()                const { return mIsSecure; }
++    inline PRBool IsHttpOnly()              const { return mIsHttpOnly; }
+     inline nsCookieStatus Status()          const { return mStatus; }
+     inline nsCookiePolicy Policy()          const { return mPolicy; }
+ 
+     // setters
+     inline void SetLastAccessed(nsInt64 aLastAccessed) { mLastAccessed = aLastAccessed; }
+     inline void SetExpiry(PRInt64 aExpiry)             { mExpiry = aExpiry; }
+     inline void SetIsSession(PRBool aIsSession)        { mIsSession = aIsSession; }
+     inline void SetCreationTime(PRUint32 aCT)          { mCreationTime = aCT; }
+@@ -153,13 +158,14 @@
+     const char *mPath;
+     const char *mEnd;
+     nsInt64     mExpiry;
+     nsInt64     mLastAccessed;
+     PRUint32    mCreationTime;
+     PRUint32    mRefCnt    : 16;
+     PRUint32    mIsSession : 1;
+     PRUint32    mIsSecure  : 1;
++    PRUint32    mIsHttpOnly: 1;
+     PRUint32    mStatus    : 3;
+     PRUint32    mPolicy    : 3;
+ };
+ 
+ #endif // nsCookie_h__
+Index: netwerk/cookie/src/nsCookieService.cpp
+===================================================================
+--- netwerk/cookie/src/nsCookieService.cpp	2007-07-16 10:53:19.000000000 +0000
++++ netwerk/cookie/src/nsCookieService.cpp	2007-07-16 10:53:23.000000000 +0000
+@@ -70,16 +70,22 @@
+ #include "nsNetCID.h"
+ #include "nsAppDirectoryServiceDefs.h"
+ 
+ /******************************************************************************
+  * nsCookieService impl:
+  * useful types & constants
+  ******************************************************************************/
+ 
++// XXX_hack. See bug 178993.
++// This is a hack to hide HttpOnly cookies from older browsers
++//
++
++static const char kHttpOnlyPrefix[] = "#HttpOnly_";
++
+ static const char kCookieFileName[] = "cookies.txt";
+ 
+ static const PRUint32 kLazyWriteTimeout = 5000; //msec
+ 
+ #undef  LIMIT
+ #define LIMIT(x, low, high, default) ((x) >= (low) && (x) <= (high) ? (x) : (default))
+ 
+ // default limits for the cookie list. these can be tuned by the
+@@ -119,16 +125,17 @@
+   nsCAutoString value;
+   nsCAutoString host;
+   nsCAutoString path;
+   nsCAutoString expires;
+   nsCAutoString maxage;
+   nsInt64 expiryTime;
+   PRBool isSession;
+   PRBool isSecure;
++  PRBool isHttpOnly;
+ };
+ 
+ // stores linked list iteration state, and provides a rudimentary
+ // list traversal method
+ struct nsListIter
+ {
+   nsListIter() {}
+ 
+@@ -477,40 +484,24 @@
+     nsCOMPtr<nsIPrefBranch> prefBranch = do_QueryInterface(aSubject);
+     if (prefBranch)
+       PrefChanged(prefBranch);
+   }
+ 
+   return NS_OK;
+ }
+ 
+-NS_IMETHODIMP
+-nsCookieService::GetCookieString(nsIURI     *aHostURI,
+-                                 nsIChannel *aChannel,
+-                                 char       **aCookie)
+-{
+-  // try to determine first party URI
+-  nsCOMPtr<nsIURI> firstURI;
+-  if (aChannel) {
+-    nsCOMPtr<nsIHttpChannelInternal> httpInternal = do_QueryInterface(aChannel);
+-    if (httpInternal)
+-      httpInternal->GetDocumentURI(getter_AddRefs(firstURI));
+-  }
+-
+-  return GetCookieStringFromHttp(aHostURI, firstURI, aChannel, aCookie);
+-}
+-
+ // helper function for GetCookieStringFromHttp
+ static inline PRBool ispathdelimiter(char c) { return c == '/' || c == '?' || c == '#' || c == ';'; }
+ 
+-NS_IMETHODIMP
+-nsCookieService::GetCookieStringFromHttp(nsIURI     *aHostURI,
+-                                         nsIURI     *aFirstURI,
+-                                         nsIChannel *aChannel,
+-                                         char       **aCookie)
++nsresult nsCookieService::GetCookieStringFromHttpInternal(nsIURI     *aHostURI,
++                                                          nsIURI     *aFirstURI,
++                                                          nsIChannel *aChannel,
++                                                          char       **aCookie,
++                                                          PRBool     aHttpBound)
+ {
+   *aCookie = nsnull;
+ 
+   if (!aHostURI) {
+     COOKIE_LOGFAILURE(GET_COOKIE, nsnull, nsnull, "host URI is null");
+     return NS_OK;
+   }
+ 
+@@ -560,16 +551,22 @@
+     nsCookieEntry *entry = mHostTable.GetEntry(currentDot);
+     cookie = entry ? entry->Head() : nsnull;
+     for (; cookie; cookie = cookie->Next()) {
+       // if the cookie is secure and the host scheme isn't, we can't send it
+       if (cookie->IsSecure() && !isSecure) {
+         continue;
+       }
+ 
++      // if the cookie is httpOnly and it's not going directly to the HTTP
++      // connection, don't send it
++      if (cookie->IsHttpOnly() && !aHttpBound) {
++        continue;
++      }
++
+       // calculate cookie path length, excluding trailing '/'
+       PRUint32 cookiePathLen = cookie->Path().Length();
+       if (cookiePathLen > 0 && cookie->Path().Last() == '/') {
+         --cookiePathLen;
+       }
+ 
+       // if the nsIURI path is shorter than the cookie path, don't send it back
+       if (!StringBeginsWith(pathFromURI, Substring(cookie->Path(), 0, cookiePathLen))) {
+@@ -639,16 +636,41 @@
+     COOKIE_LOGSUCCESS(GET_COOKIE, aHostURI, cookieData, nsnull);
+     *aCookie = ToNewCString(cookieData);
+   }
+ 
+   return NS_OK;
+ }
+ 
+ NS_IMETHODIMP
++nsCookieService::GetCookieString(nsIURI     *aHostURI,
++                                 nsIChannel *aChannel,
++                                 char       **aCookie)
++{
++  // try to determine first party URI
++  nsCOMPtr<nsIURI> firstURI;
++  if (aChannel) {
++    nsCOMPtr<nsIHttpChannelInternal> httpInternal = do_QueryInterface(aChannel);
++    if (httpInternal)
++      httpInternal->GetDocumentURI(getter_AddRefs(firstURI));
++  }
++
++  return GetCookieStringFromHttpInternal(aHostURI, firstURI, aChannel, aCookie, PR_FALSE);
++}
++
++NS_IMETHODIMP
++nsCookieService::GetCookieStringFromHttp(nsIURI     *aHostURI,
++                                         nsIURI     *aFirstURI,
++                                         nsIChannel *aChannel,
++                                         char       **aCookie)
++{
++  return GetCookieStringFromHttpInternal(aHostURI, aFirstURI, aChannel, aCookie, PR_TRUE);
++}
++
++NS_IMETHODIMP
+ nsCookieService::SetCookieString(nsIURI     *aHostURI,
+                                  nsIPrompt  *aPrompt,
+                                  const char *aCookieHeader,
+                                  nsIChannel *aChannel)
+ {
+   // try to determine first party URI
+   nsCOMPtr<nsIURI> firstURI;
+ 
+@@ -847,16 +869,17 @@
+   nsInt64 currentTime = NOW_IN_SECONDS;
+ 
+   nsRefPtr<nsCookie> cookie =
+     nsCookie::Create(aName, aValue, aDomain, aPath,
+                      nsInt64(aExpiry),
+                      currentTime,
+                      aIsSession,
+                      aIsSecure,
++                     PR_FALSE,
+                      nsICookie::STATUS_UNKNOWN,
+                      nsICookie::POLICY_UNKNOWN);
+   if (!cookie) {
+     return NS_ERROR_OUT_OF_MEMORY;
+   }
+ 
+   AddInternal(cookie, currentTime, nsnull, nsnull);
+   return NS_OK;
+@@ -911,21 +934,21 @@
+   if (NS_FAILED(rv)) {
+     return rv;
+   }
+ 
+   static const char kTrue[] = "TRUE";
+ 
+   nsCAutoString buffer;
+   PRBool isMore = PR_TRUE;
+-  PRInt32 hostIndex = 0, isDomainIndex, pathIndex, secureIndex, expiresIndex, nameIndex, cookieIndex;
++  PRInt32 hostIndex, isDomainIndex, pathIndex, secureIndex, expiresIndex, nameIndex, cookieIndex;
+   nsASingleFragmentCString::char_iterator iter;
+   PRInt32 numInts;
+   PRInt64 expires;
+-  PRBool isDomain;
++  PRBool isDomain, isHttpOnly = PR_FALSE;
+   nsInt64 currentTime = NOW_IN_SECONDS;
+   // we use lastAccessedCounter to keep cookies in recently-used order,
+   // so we start by initializing to currentTime (somewhat arbitrary)
+   nsInt64 lastAccessedCounter = currentTime;
+   nsCookie *newCookie;
+ 
+   /* file format is:
+    *
+@@ -935,21 +958,36 @@
+    * isDomain is "TRUE" or "FALSE" (default to "FALSE")
+    * isSecure is "TRUE" or "FALSE" (default to "TRUE")
+    * expires is a PRInt64 integer
+    * note 1: cookie can contain tabs.
+    * note 2: cookies are written in order of lastAccessed time:
+    *         most-recently used come first; least-recently-used come last.
+    */
+ 
++  /*
++   * ...but due to bug 178933, we hide HttpOnly cookies from older code
++   * in a comment, so they don't expose HttpOnly cookies to JS.
++   *
++   * The format for HttpOnly cookies is
++   *
++   * #HttpOnly_host \t isDomain \t path \t secure \t expires \t name \t cookie
++   *
++   */
++
+   while (isMore && NS_SUCCEEDED(lineInputStream->ReadLine(buffer, &isMore))) {
+-    if (buffer.IsEmpty() || buffer.First() == '#') {
++    if (StringBeginsWith(buffer, NS_LITERAL_CSTRING(kHttpOnlyPrefix))) {
++      isHttpOnly = PR_TRUE;
++      hostIndex = sizeof(kHttpOnlyPrefix) - 1;
++    } else if (buffer.IsEmpty() || buffer.First() == '#') {
+       continue;
++    } else {
++      isHttpOnly = PR_FALSE;
++      hostIndex = 0;
+     }
+-
+     // this is a cheap, cheesy way of parsing a tab-delimited line into
+     // string indexes, which can be lopped off into substrings. just for
+     // purposes of obfuscation, it also checks that each token was found.
+     // todo: use iterators?
+     if ((isDomainIndex = buffer.FindChar('\t', hostIndex)     + 1) == 0 ||
+         (pathIndex     = buffer.FindChar('\t', isDomainIndex) + 1) == 0 ||
+         (secureIndex   = buffer.FindChar('\t', pathIndex)     + 1) == 0 ||
+         (expiresIndex  = buffer.FindChar('\t', secureIndex)   + 1) == 0 ||
+@@ -982,16 +1020,17 @@
+       nsCookie::Create(Substring(buffer, nameIndex, cookieIndex - nameIndex - 1),
+                        Substring(buffer, cookieIndex, buffer.Length() - cookieIndex),
+                        host,
+                        Substring(buffer, pathIndex, secureIndex - pathIndex - 1),
+                        nsInt64(expires),
+                        lastAccessedCounter,
+                        PR_FALSE,
+                        Substring(buffer, secureIndex, expiresIndex - secureIndex - 1).EqualsLiteral(kTrue),
++                       isHttpOnly,
+                        nsICookie::STATUS_UNKNOWN,
+                        nsICookie::POLICY_UNKNOWN);
+     if (!newCookie) {
+       return NS_ERROR_OUT_OF_MEMORY;
+     }
+ 
+     // trick: keep the cookies in most-recently-used order,
+     // by successively decrementing the lastAccessed time
+@@ -1077,28 +1116,37 @@
+    *
+    * isDomain is "TRUE" or "FALSE"
+    * isSecure is "TRUE" or "FALSE"
+    * expires is a PRInt64 integer
+    * note 1: cookie can contain tabs.
+    * note 2: cookies are written in order of lastAccessed time:
+    *         most-recently used come first; least-recently-used come last.
+    */
++
++  /*
++   * XXX but see above in ::Read for the HttpOnly hack
++   */
++   
+   nsCookie *cookie;
+   nsInt64 currentTime = NOW_IN_SECONDS;
+   char dateString[22];
+   PRUint32 dateLen;
+   for (PRUint32 i = 0; i < mCookieCount; ++i) {
+     cookie = NS_STATIC_CAST(nsCookie*, sortedCookieList.ElementAt(i));
+ 
+     // don't write entry if cookie has expired, or is a session cookie
+     if (cookie->IsSession() || cookie->Expiry() <= currentTime) {
+       continue;
+     }
+ 
++    // XXX hack for HttpOnly. see bug 178993.
++    if (cookie->IsHttpOnly()) {
++      bufferedOutputStream->Write(kHttpOnlyPrefix, sizeof(kHttpOnlyPrefix) - 1, &rv);
++    }
+     bufferedOutputStream->Write(cookie->Host().get(), cookie->Host().Length(), &rv);
+     if (cookie->IsDomain()) {
+       bufferedOutputStream->Write(kTrue, sizeof(kTrue) - 1, &rv);
+     } else {
+       bufferedOutputStream->Write(kFalse, sizeof(kFalse) - 1, &rv);
+     }
+     bufferedOutputStream->Write(cookie->Path().get(), cookie->Path().Length(), &rv);
+     if (cookie->IsSecure()) {
+@@ -1194,16 +1242,17 @@
+     nsCookie::Create(cookieAttributes.name,
+                      cookieAttributes.value,
+                      cookieAttributes.host,
+                      cookieAttributes.path,
+                      cookieAttributes.expiryTime,
+                      currentTime,
+                      cookieAttributes.isSession,
+                      cookieAttributes.isSecure,
++                     cookieAttributes.isHttpOnly,
+                      aStatus,
+                      aPolicy);
+   if (!cookie) {
+     return newCookie;
+   }
+ 
+   // check permissions from site permission list, or ask the user,
+   // to determine if we can set the cookie
+@@ -1338,16 +1387,19 @@
+     4. where appropriate, full <OCTET>s are allowed, where the spec dictates to
+        reject control chars or non-ASCII chars. This is erring on the loose
+        side, since there's probably no good reason to enforce this strictness.
+ 
+     5. cookie <NAME> is optional, where spec requires it. This is a fairly
+        trivial case, but allows the flexibility of setting only a cookie <VALUE>
+        with a blank <NAME> and is required by some sites (see bug 169091).
+ 
++    6. Attribute "HttpOnly", not covered in the RFCs, is supported
++       (see bug 178993).
++
+  ** Begin BNF:
+     token         = 1*<any allowed-chars except separators>
+     value         = token-value | quoted-string
+     token-value   = 1*<any allowed-chars except value-sep>
+     quoted-string = ( <"> *( qdtext | quoted-pair ) <"> )
+     qdtext        = <any allowed-chars except <">>             ; CR | LF removed by necko
+     quoted-pair   = "\" <any OCTET except NUL or cookie-sep>   ; CR | LF removed by necko
+     separators    = ";" | "="
+@@ -1372,16 +1424,17 @@
+     valid values for cookie-av (checked post-parsing) are:
+     cookie-av     = "Path"    "=" value
+                   | "Domain"  "=" value
+                   | "Expires" "=" value
+                   | "Max-Age" "=" value
+                   | "Comment" "=" value
+                   | "Version" "=" value
+                   | "Secure"
++                  | "HttpOnly"
+ 
+ ******************************************************************************/
+ 
+ // helper functions for GetTokenValue
+ static inline PRBool iswhitespace     (char c) { return c == ' '  || c == '\t'; }
+ static inline PRBool isterminator     (char c) { return c == '\n' || c == '\r'; }
+ static inline PRBool isquoteterminator(char c) { return isterminator(c) || c == '"'; }
+ static inline PRBool isvalueseparator (char c) { return isterminator(c) || c == ';'; }
+@@ -1478,24 +1531,27 @@
+ nsCookieService::ParseAttributes(nsDependentCString &aCookieHeader,
+                                  nsCookieAttributes &aCookieAttributes)
+ {
+   static const char kPath[]    = "path";
+   static const char kDomain[]  = "domain";
+   static const char kExpires[] = "expires";
+   static const char kMaxage[]  = "max-age";
+   static const char kSecure[]  = "secure";
++  static const char kHttpOnly[]  = "httponly";
+ 
+   nsASingleFragmentCString::const_char_iterator tempBegin, tempEnd;
+   nsASingleFragmentCString::const_char_iterator cookieStart, cookieEnd;
+   aCookieHeader.BeginReading(cookieStart);
+   aCookieHeader.EndReading(cookieEnd);
+ 
+   aCookieAttributes.isSecure = PR_FALSE;
+ 
++  aCookieAttributes.isHttpOnly = PR_FALSE;
++
+   nsDependentCSubstring tokenString(cookieStart, cookieStart);
+   nsDependentCSubstring tokenValue (cookieStart, cookieStart);
+   PRBool newCookie, equalsFound;
+ 
+   // extract cookie <NAME> & <VALUE> (first attribute), and copy the strings.
+   // if we find multiple cookies, return for processing
+   // note: if there's no '=', we assume token is <VALUE>. this is required by
+   //       some sites (see bug 169091).
+@@ -1532,16 +1588,21 @@
+       aCookieAttributes.expires = tokenValue;
+ 
+     else if (tokenString.LowerCaseEqualsLiteral(kMaxage))
+       aCookieAttributes.maxage = tokenValue;
+ 
+     // ignore any tokenValue for isSecure; just set the boolean
+     else if (tokenString.LowerCaseEqualsLiteral(kSecure))
+       aCookieAttributes.isSecure = PR_TRUE;
++
++    // ignore any tokenValue for isHttpOnly (see bug 178993);
++    // just set the boolean
++    else if (tokenString.LowerCaseEqualsLiteral(kHttpOnly))
++      aCookieAttributes.isHttpOnly = PR_TRUE;
+   }
+ 
+   // rebind aCookieHeader, in case we need to process another cookie
+   aCookieHeader.Rebind(cookieStart, cookieEnd);
+   return newCookie;
+ }
+ 
+ /******************************************************************************
+Index: netwerk/cookie/src/nsCookieService.h
+===================================================================
+--- netwerk/cookie/src/nsCookieService.h	2007-07-16 10:53:19.000000000 +0000
++++ netwerk/cookie/src/nsCookieService.h	2007-07-16 11:32:29.000000000 +0000
+@@ -217,11 +217,17 @@
+     PRUint16                      mMaxCookiesPerHost;
+ 
+     // private static member, used to cache a ptr to nsCookieService,
+     // so we can make nsCookieService a singleton xpcom object.
+     static nsCookieService        *gCookieService;
+ 
+     // this callback needs access to member functions
+     friend PLDHashOperator PR_CALLBACK removeExpiredCallback(nsCookieEntry *aEntry, void *aArg);
++
++    nsresult GetCookieStringFromHttpInternal(nsIURI     *aHostURI,
++                                                              nsIURI     *aFirstURI,
++                                                              nsIChannel *aChannel,
++                                                              char       **aCookie,
++                                                              PRBool     aHttpBound);
+ };
+ 
+ #endif // nsCookieService_h__
+Index: js/src/jsopcode.c
+===================================================================
+RCS file: /cvsroot/js/src/jsopcode.c,v
+retrieving revision 3.89.2.8.2.11
+diff -u -8 -p -r3.89.2.8.2.11 jsopcode.c
+--- js/src/jsopcode.c	3 Apr 2007 04:59:17 -0000	3.89.2.8.2.11
++++ js/src/jsopcode.c	17 Jul 2007 17:15:52 -0000
+@@ -61,16 +61,17 @@
+ #include "jsconfig.h"
+ #include "jsdbgapi.h"
+ #include "jsemit.h"
+ #include "jsfun.h"
+ #include "jslock.h"
+ #include "jsobj.h"
+ #include "jsopcode.h"
+ #include "jsregexp.h"
++#include "jsscan.h"
+ #include "jsscope.h"
+ #include "jsscript.h"
+ #include "jsstr.h"
+ 
+ const char js_const_str[]       = "const";
+ const char js_var_str[]         = "var";
+ const char js_function_str[]    = "function";
+ const char js_in_str[]          = "in";
+@@ -2526,41 +2527,54 @@ Decompile(SprintStack *ss, jsbytecode *p
+                               ? " " : "",
+                               (lastop == JSOP_GETTER) ? js_getter_str :
+                               (lastop == JSOP_SETTER) ? js_setter_str :
+                               "",
+                               rval);
+ #else
+                 if (lastop == JSOP_GETTER || lastop == JSOP_SETTER) {
+                     rval += strlen(js_function_str) + 1;
+-                    todo = Sprint(&ss->sprinter, "%s%s%s %s%.*s",
+-                                  lval,
+-                                  (lval[1] != '\0') ? ", " : "",
+-                                  (lastop == JSOP_GETTER)
+-                                  ? js_get_str : js_set_str,
+-                                  xval,
+-                                  strlen(rval) - 1,
+-                                  rval);
++                    if (!atom || !ATOM_IS_STRING(atom) ||
++                        !ATOM_IS_IDENTIFIER(atom) ||
++                        !!ATOM_KEYWORD(js_AtomizeChars(cx,
++                                                     ATOM_TO_STRING(atom),
++                                                     sizeof(ATOM_TO_STRING(atom)),
++                                                     0))||
++                        ((ss->opcodes[ss->top+1] != JSOP_ANONFUNOBJ ||
++                          strncmp(rval, js_function_str, 8) != 0) &&
++                         ss->opcodes[ss->top+1] != JSOP_NAMEDFUNOBJ)) {
++
++                        todo = Sprint(&ss->sprinter, "%s%s%s %s%.*s",
++                                      lval,
++                                      (lval[1] != '\0') ? ", " : "",
++                                      (lastop == JSOP_GETTER)
++                                      ? js_get_str : js_set_str,
++                                      xval,
++                                      strlen(rval) - 1,
++                                      rval);
++                    }
+                 } else {
+                     todo = Sprint(&ss->sprinter, "%s%s%s:%s",
+                                   lval,
+                                   (lval[1] != '\0') ? ", " : "",
+                                   xval,
+                                   rval);
+                 }
+ #endif
+                 break;
+ 
+               case JSOP_INITELEM:
+                 rval = POP_STR();
+                 xval = POP_STR();
+                 lval = POP_STR();
+                 sn = js_GetSrcNote(jp->script, pc);
+-                if (sn && SN_TYPE(sn) == SRC_LABEL)
++                if (sn && SN_TYPE(sn) == SRC_LABEL) {
++                    atom = NULL;
+                     goto do_initprop;
++                }
+                 todo = Sprint(&ss->sprinter, "%s%s%s",
+                               lval,
+                               (lval[1] != '\0' || *xval != '0') ? ", " : "",
+                               rval);
+                 break;
+ 
+ #if JS_HAS_SHARP_VARS
+               case JSOP_DEFSHARP:
+Index: js/src/jsobj.c
+===================================================================
+RCS file: /cvsroot/js/src/jsobj.c,v
+retrieving revision 3.208.2.12.2.26
+diff -u -8 -p -r3.208.2.12.2.26 jsobj.c
+--- js/src/jsobj.c	11 Jul 2007 01:28:31 -0000	3.208.2.12.2.26
++++ js/src/jsobj.c	17 Jul 2007 17:15:53 -0000
+@@ -57,16 +57,17 @@
+ #include "jscntxt.h"
+ #include "jsconfig.h"
+ #include "jsfun.h"
+ #include "jsgc.h"
+ #include "jsinterp.h"
+ #include "jslock.h"
+ #include "jsnum.h"
+ #include "jsobj.h"
++#include "jsscan.h"
+ #include "jsscope.h"
+ #include "jsscript.h"
+ #include "jsstr.h"
+ #include "jsopcode.h"
+ 
+ #include "jsdbgapi.h"   /* whether or not JS_HAS_OBJ_WATCHPOINT */
+ 
+ #if JS_HAS_XML_SUPPORT
+@@ -689,20 +690,22 @@ js_obj_toSource(JSContext *cx, JSObject 
+     jsint i, j, length, valcnt;
+     jsid id;
+ #if JS_HAS_GETTER_SETTER
+     JSObject *obj2;
+     JSProperty *prop;
+     uintN attrs;
+ #endif
+     jsval *val;
++    JSString *gsopold[2];
+     JSString *gsop[2];
+     JSAtom *atom;
+     JSString *idstr, *valstr, *str;
+     int stackDummy;
++    char *atomstrchars;
+ 
+     if (!JS_CHECK_STACK_SIZE(cx, stackDummy)) {
+         JS_ReportErrorNumber(cx, js_GetErrorMessage, NULL, JSMSG_OVER_RECURSED);
+         return JS_FALSE;
+     }
+ 
+     /*
+      * obj_toString for 1.2 calls toSource, and doesn't want the extra parens
+@@ -806,91 +809,110 @@ js_obj_toSource(JSContext *cx, JSObject 
+     /*
+      * We have four local roots for cooked and raw value GC safety.  Hoist the
+      * "argv + 2" out of the loop using the val local, which refers to the raw
+      * (unconverted, "uncooked") values.
+      */
+     val = argv + 2;
+ 
+     for (i = 0, length = ida->length; i < length; i++) {
++        JSBool idIsLexicalIdentifier, needOldStyleGetterSetter;
++
+         /* Get strings for id and value and GC-root them via argv. */
+         id = ida->vector[i];
+ 
+ #if JS_HAS_GETTER_SETTER
+-
+         ok = OBJ_LOOKUP_PROPERTY(cx, obj, id, &obj2, &prop);
+         if (!ok)
+             goto error;
++#endif
++
++        /*
++         * Convert id to a jsval and then to a string.  Decide early whether we
++         * prefer get/set or old getter/setter syntax.
++         */
++        atom = JSID_IS_ATOM(id) ? JSID_TO_ATOM(id) : NULL;
++        idstr = js_ValueToString(cx, ID_TO_VALUE(id));
++        if (!idstr) {
++            ok = JS_FALSE;
++            OBJ_DROP_PROPERTY(cx, obj2, prop);
++            goto error;
++        }
++        *rval = STRING_TO_JSVAL(idstr);         /* local root */
++        idIsLexicalIdentifier = js_IsIdentifier(idstr);
++
++        atomstrchars = ATOM_TO_STRING(atom);
++        needOldStyleGetterSetter = 
++            !idIsLexicalIdentifier ||
++            ATOM_KEYWORD(js_AtomizeChars(cx,
++                                     atomstrchars,
++                                     sizeof(atomstrchars),
++                                     0)) != TOK_EOF;
++
++#if JS_HAS_GETTER_SETTER
++
+         valcnt = 0;
+         if (prop) {
+             ok = OBJ_GET_ATTRIBUTES(cx, obj2, id, prop, &attrs);
+             if (!ok) {
+                 OBJ_DROP_PROPERTY(cx, obj2, prop);
+                 goto error;
+             }
+             if (OBJ_IS_NATIVE(obj2) &&
+                 (attrs & (JSPROP_GETTER | JSPROP_SETTER))) {
+                 if (attrs & JSPROP_GETTER) {
+                     val[valcnt] = (jsval) ((JSScopeProperty *)prop)->getter;
+-#ifdef OLD_GETTER_SETTER
+-                    gsop[valcnt] =
++                    gsopold[valcnt] =
+                         ATOM_TO_STRING(cx->runtime->atomState.getterAtom);
+-#else
+                     gsop[valcnt] =
+                         ATOM_TO_STRING(cx->runtime->atomState.getAtom);
+-#endif
+                     valcnt++;
+                 }
+                 if (attrs & JSPROP_SETTER) {
+                     val[valcnt] = (jsval) ((JSScopeProperty *)prop)->setter;
+-#ifdef OLD_GETTER_SETTER
+-                    gsop[valcnt] =
++                    gsopold[valcnt] =
+                         ATOM_TO_STRING(cx->runtime->atomState.setterAtom);
+-#else
+                     gsop[valcnt] =
+                         ATOM_TO_STRING(cx->runtime->atomState.setAtom);
+-#endif
+                     valcnt++;
+                 }
+             } else {
+                 valcnt = 1;
+                 gsop[0] = NULL;
++                gsopold[0] = NULL;
+                 ok = OBJ_GET_PROPERTY(cx, obj, id, &val[0]);
+             }
+             OBJ_DROP_PROPERTY(cx, obj2, prop);
+         }
+ 
+ #else  /* !JS_HAS_GETTER_SETTER */
+ 
++        /*
++         * We simplify the source code at the price of minor dead code bloat in
++         * the ECMA version (for testing only, see jsconfig.h).  The null
++         * default values in gsop[j] suffice to disable non-ECMA getter and
++         * setter code.
++         */
+         valcnt = 1;
+         gsop[0] = NULL;
++        gsopold[0] = NULL;
+         ok = OBJ_GET_PROPERTY(cx, obj, id, &val[0]);
+ 
+ #endif /* !JS_HAS_GETTER_SETTER */
+ 
+         if (!ok)
+             goto error;
+ 
+-        /* Convert id to a jsval and then to a string. */
+-        atom = JSID_IS_ATOM(id) ? JSID_TO_ATOM(id) : NULL;
+-        id = ID_TO_VALUE(id);
+-        idstr = js_ValueToString(cx, id);
+-        if (!idstr) {
+-            ok = JS_FALSE;
+-            goto error;
+-        }
+-        *rval = STRING_TO_JSVAL(idstr);         /* local root */
+-
+         /*
+          * If id is a string that's a reserved identifier, or else id is not
+          * an identifier at all, then it needs to be quoted.  Also, negative
+          * integer ids must be quoted.
+          */
+         if (atom
+-            ? (ATOM_KEYWORD(atom) || !js_IsIdentifier(idstr))
++            ? (ATOM_KEYWORD(atom) || !idIsLexicalIdentifier)
+             : (JSID_IS_OBJECT(id) || JSID_TO_INT(id) < 0)) {
+             idstr = js_QuoteString(cx, idstr, (jschar)'\'');
+             if (!idstr) {
+                 ok = JS_FALSE;
+                 goto error;
+             }
+             *rval = STRING_TO_JSVAL(idstr);     /* local root */
+         }
+@@ -903,46 +925,67 @@ js_obj_toSource(JSContext *cx, JSObject 
+             if (!valstr) {
+                 ok = JS_FALSE;
+                 goto error;
+             }
+             argv[j] = STRING_TO_JSVAL(valstr);  /* local root */
+             vchars = JSSTRING_CHARS(valstr);
+             vlength = JSSTRING_LENGTH(valstr);
+ 
++            if (vchars[0] == '#')
++                needOldStyleGetterSetter = JS_TRUE;
++
++            if (needOldStyleGetterSetter)
++                gsop[j] = gsopold[j];
++
+ #ifndef OLD_GETTER_SETTER
+             /*
+              * Remove '(function ' from the beginning of valstr and ')' from the
+              * end so that we can put "get" in front of the function definition.
+              */
+-            if (gsop[j]) {
+-                int n = strlen(js_function_str) + 2;
+-                vchars += n;
+-                vlength -= n + 1;
++            if (gsop[j] && (JS_TypeOfValue(cx, val[j]) == JSTYPE_FUNCTION) &&
++                !needOldStyleGetterSetter) {
++                const jschar *start = vchars;
++                if (vchars[0] == '(')
++                    vchars++;
++                vchars = js_strchr_limit(vchars, '(', vchars + vlength);
++                if (vchars) {
++                    vlength -= vchars - start + 1;
++                } else {
++                    gsop[j] = NULL;
++                    vchars = start;
++                }
+             }
++#else
++            needOldStyleGetterSetter = JS_TRUE;
++            gsop[j] = gsopold[j];
+ #endif
+ 
+             /* If val[j] is a non-sharp object, consider sharpening it. */
+             vsharp = NULL;
+             vsharplength = 0;
+ #if JS_HAS_SHARP_VARS
+             if (!JSVAL_IS_PRIMITIVE(val[j]) && vchars[0] != '#') {
+                 he = js_EnterSharpObject(cx, JSVAL_TO_OBJECT(val[j]), NULL,
+                                          &vsharp);
+                 if (!he) {
+                     ok = JS_FALSE;
+                     goto error;
+                 }
+                 if (IS_SHARP(he)) {
+                     vchars = vsharp;
+                     vlength = js_strlen(vchars);
++                    needOldStyleGetterSetter = JS_TRUE;
++                    gsop[j] = gsopold[j];
+                 } else {
+                     if (vsharp) {
+                         vsharplength = js_strlen(vsharp);
+                         MAKE_SHARP(he);
++                        needOldStyleGetterSetter = JS_TRUE;
++                        gsop[j] = gsopold[j];
+                     }
+                     js_LeaveSharpObject(cx, NULL);
+                 }
+             }
+ #endif
+ 
+ #define SAFE_ADD(n)                                                          \
+     JS_BEGIN_MACRO                                                           \
+@@ -977,38 +1020,41 @@ js_obj_toSource(JSContext *cx, JSObject 
+             }
+ 
+             if (comma) {
+                 chars[nchars++] = comma[0];
+                 chars[nchars++] = comma[1];
+             }
+             comma = ", ";
+ 
+-#ifdef OLD_GETTER_SETTER
+-            js_strncpy(&chars[nchars], idstrchars, idstrlength);
+-            nchars += idstrlength;
+-            if (gsop[j]) {
+-                chars[nchars++] = ' ';
+-                gsoplength = JSSTRING_LENGTH(gsop[j]);
+-                js_strncpy(&chars[nchars], JSSTRING_CHARS(gsop[j]), gsoplength);
+-                nchars += gsoplength;
+-            }
+-            chars[nchars++] = ':';
+-#else
+-            if (gsop[j]) {
+-                gsoplength = JSSTRING_LENGTH(gsop[j]);
+-                js_strncpy(&chars[nchars], JSSTRING_CHARS(gsop[j]), gsoplength);
+-                nchars += gsoplength;
+-                chars[nchars++] = ' ';
+-            }
+-            js_strncpy(&chars[nchars], idstrchars, idstrlength);
+-            nchars += idstrlength;
+-            if (!gsop[j])
++            if (needOldStyleGetterSetter) {
++                js_strncpy(&chars[nchars], idstrchars, idstrlength);
++                nchars += idstrlength;
++                if (gsop[j]) {
++                    chars[nchars++] = ' ';
++                    gsoplength = JSSTRING_LENGTH(gsop[j]);
++                    js_strncpy(&chars[nchars], JSSTRING_CHARS(gsop[j]),
++                               gsoplength);
++                    nchars += gsoplength;
++                }
+                 chars[nchars++] = ':';
+-#endif
++            } else {  /* New style "decompilation" */
++                if (gsop[j]) {
++                    gsoplength = JSSTRING_LENGTH(gsop[j]);
++                    js_strncpy(&chars[nchars], JSSTRING_CHARS(gsop[j]),
++                               gsoplength);
++                    nchars += gsoplength;
++                    chars[nchars++] = ' ';
++                }
++                js_strncpy(&chars[nchars], idstrchars, idstrlength);
++                nchars += idstrlength;
++                /* Extraneous space after id here will be extracted later */
++                chars[nchars++] = gsop[j] ? ' ' : ':';
++            }
++
+             if (vsharplength) {
+                 js_strncpy(&chars[nchars], vsharp, vsharplength);
+                 nchars += vsharplength;
+             }
+             js_strncpy(&chars[nchars], vchars, vlength);
+             nchars += vlength;
+ 
+             if (vsharp)
+---
+ js/src/jsinterp.c |    2 ++
+ 1 file changed, 2 insertions(+)
+
+Index: js/src/jsinterp.c
+===================================================================
+--- js/src/jsinterp.c	2007-07-16 11:06:07.000000000 +0200
++++ js/src/jsinterp.c	2007-07-16 11:06:17.000000000 +0200
+@@ -2025,16 +2025,17 @@
+                 cx->fp = fp = fp->down;
+                 JS_ARENA_RELEASE(&cx->stackPool, ifp->mark);
+ 
+                 /* Restore sp to point just above the return value. */
+                 fp->sp = vp + 1;
+                 RESTORE_SP(fp);
+ 
+                 /* Restore the calling script's interpreter registers. */
++                obj = NULL;
+                 script = fp->script;
+                 depth = (jsint) script->depth;
+                 pc = fp->pc;
+                 endpc = script->code + script->length;
+ 
+                 /* Store the generating pc for the return value. */
+                 vp[-depth] = (jsval)pc;
+ 
+@@ -3579,16 +3580,17 @@
+                     if (currentVersion != cx->version)
+                         js_SetVersion(cx, currentVersion);
+                 }
+ 
+                 /* Push the frame and set interpreter registers. */
+                 cx->fp = fp = &newifp->frame;
+                 pc = script->code;
+                 endpc = pc + script->length;
++                obj = NULL;
+                 inlineCallCount++;
+                 JS_RUNTIME_METER(rt, inlineCalls);
+                 continue;
+ 
+               bad_inline_call:
+                 script = fp->script;
+                 depth = (jsint) script->depth;
+                 goto out;
+ caps/src/nsPrincipal.cpp                                   |   39 ---
+ caps/src/nsScriptSecurityManager.cpp                       |   33 +-
+ content/base/public/nsIDocument.h                          |   42 +++
+ content/base/src/nsDocument.cpp                            |    2 
+ content/base/src/nsDocument.h                              |    1 
+ content/base/src/nsFrameLoader.cpp                         |    7 
+ content/html/document/src/nsHTMLDocument.cpp               |   44 +--
+ docshell/base/nsDocShell.cpp                               |  154 +++++++++---
+ docshell/base/nsDocShell.h                                 |   16 +
+ dom/public/base/nsPIDOMWindow.h                            |   29 ++
+ dom/src/base/nsGlobalWindow.cpp                            |  161 +++++++------
+ dom/src/base/nsGlobalWindow.h                              |   10 
+ dom/src/jsurl/nsJSProtocolHandler.cpp                      |    6 
+ embedding/components/windowwatcher/src/Makefile.in         |    1 
+ embedding/components/windowwatcher/src/nsWindowWatcher.cpp |   61 ++++
+ embedding/components/windowwatcher/src/nsWindowWatcher.h   |    1 
+ 16 files changed, 395 insertions(+), 212 deletions(-)
+
+Index: caps/src/nsPrincipal.cpp
+===================================================================
+--- caps/src/nsPrincipal.cpp	2007-07-16 11:51:44.000000000 +0200
++++ caps/src/nsPrincipal.cpp	2007-07-16 11:53:05.000000000 +0200
+@@ -260,15 +260,10 @@
+     }
+ 
+     // Codebases are equal if they have the same origin.
+-    nsIURI *origin = mDomain ? mDomain : mCodebase;
+-    nsCOMPtr<nsIURI> otherOrigin;
+-    aOther->GetDomain(getter_AddRefs(otherOrigin));
+-    if (!otherOrigin) {
+-      aOther->GetURI(getter_AddRefs(otherOrigin));
+-    }
+-
+-    return nsScriptSecurityManager::GetScriptSecurityManager()
+-           ->SecurityCompareURIs(origin, otherOrigin, aResult);
++    *aResult =
++      NS_SUCCEEDED(nsScriptSecurityManager::GetScriptSecurityManager()
++                   ->CheckSameOriginPrincipal(this, aOther));
++    return NS_OK;
+   }
+ 
+   *aResult = PR_TRUE;
+@@ -278,32 +273,6 @@
+ NS_IMETHODIMP
+ nsPrincipal::Subsumes(nsIPrincipal *aOther, PRBool *aResult)
+ {
+-  // First, check if aOther is an about:blank principal. If it is, then we can
+-  // subsume it.
+-
+-  nsCOMPtr<nsIURI> otherOrigin;
+-  aOther->GetURI(getter_AddRefs(otherOrigin));
+-
+-  if (otherOrigin) {
+-    PRBool isAbout = PR_FALSE;
+-    if (NS_SUCCEEDED(otherOrigin->SchemeIs("about", &isAbout)) && isAbout) {
+-      nsCAutoString str;
+-      otherOrigin->GetSpec(str);
+-
+-      // Note: about:blank principals do not necessarily subsume about:blank
+-      // principals (unless aOther == this, which is checked in the Equals call
+-      // below).
+-
+-      if (str.Equals("about:blank")) {
+-        PRBool isEqual = PR_FALSE;
+-        if (NS_SUCCEEDED(otherOrigin->Equals(mCodebase, &isEqual)) && !isEqual) {
+-          *aResult = PR_TRUE;
+-          return NS_OK;
+-        }
+-      }
+-    }
+-  }
+-
+   return Equals(aOther, aResult);
+ }
+ 
+Index: caps/src/nsScriptSecurityManager.cpp
+===================================================================
+--- caps/src/nsScriptSecurityManager.cpp	2007-07-16 11:51:44.000000000 +0200
++++ caps/src/nsScriptSecurityManager.cpp	2007-07-16 11:53:05.000000000 +0200
+@@ -273,7 +273,7 @@
+         return NS_OK;
+     }
+ 
+-    if (!aTargetURI) 
++    if (!aTargetURI || !aSourceURI) 
+     {
+         // return false
+         return NS_OK;
+@@ -863,8 +863,14 @@
+     if (aSubject == aObject)
+         return NS_OK;
+ 
++    // These booleans are only used when !aIsCheckConnect.  Default
++    // them to false, and change if that turns out wrong.
++    PRBool subjectSetDomain = PR_FALSE;
++    PRBool objectSetDomain = PR_FALSE;
++    
+     nsCOMPtr<nsIURI> subjectURI;
+     nsCOMPtr<nsIURI> objectURI;
++
+     if (aIsCheckConnect)
+     {
+         // Don't use domain for CheckConnect calls, since that's called for
+@@ -875,12 +881,18 @@
+     else
+     {
+         aSubject->GetDomain(getter_AddRefs(subjectURI));
+-        if (!subjectURI)
++        if (!subjectURI) {
+             aSubject->GetURI(getter_AddRefs(subjectURI));
++        } else {
++            subjectSetDomain = PR_TRUE;
++        }
+ 
+         aObject->GetDomain(getter_AddRefs(objectURI));
+-        if (!objectURI)
++        if (!objectURI) {
+             aObject->GetURI(getter_AddRefs(objectURI));
++        } else {
++            objectSetDomain = PR_TRUE;
++        }
+     }
+ 
+     PRBool isSameOrigin = PR_FALSE;
+@@ -899,24 +911,11 @@
+         if (aIsCheckConnect)
+             return NS_OK;
+ 
+-        nsCOMPtr<nsIURI> subjectDomain;
+-        aSubject->GetDomain(getter_AddRefs(subjectDomain));
+-
+-        nsCOMPtr<nsIURI> objectDomain;
+-        aObject->GetDomain(getter_AddRefs(objectDomain));
+-
+         // If both or neither explicitly set their domain, allow the access
+-        if (!subjectDomain == !objectDomain)
++        if (subjectSetDomain == objectSetDomain)
+             return NS_OK;
+     }
+ 
+-    // Allow access to about:blank
+-    nsXPIDLCString origin;
+-    rv = aObject->GetOrigin(getter_Copies(origin));
+-    NS_ENSURE_SUCCESS(rv, rv);
+-    if (nsCRT::strcasecmp(origin, "about:blank") == 0)
+-        return NS_OK;
+-
+     /*
+     ** Access tests failed, so now report error.
+     */
+Index: content/base/public/nsIDocument.h
+===================================================================
+--- content/base/public/nsIDocument.h	2007-07-16 11:51:44.000000000 +0200
++++ content/base/public/nsIDocument.h	2007-07-16 11:53:05.000000000 +0200
+@@ -841,7 +841,7 @@
+   PRUint32 mPartID;
+ };
+ 
+-// IID for the nsIDocument interface
++// IID for the nsIDocument_MOZILLA_1_8_0_BRANCH interface
+ #define NS_IDOCUMENT_MOZILLA_1_8_0_BRANCH_IID      \
+ { 0x7d001ad2, 0x01ac, 0x4bf2, \
+   { 0xb8, 0x3a, 0x50, 0xaa, 0xed, 0xc6, 0x1d, 0xfa } }
+@@ -870,6 +870,46 @@
+   virtual nsresult RemoveChildAt(PRUint32 aIndex, PRBool aNotify) = 0;
+ };
+ 
++// IID for the nsIDocument_MOZILLA_1_8_BRANCH2 interface
++#define NS_IDOCUMENT_MOZILLA_1_8_BRANCH2_IID      \
++{ 0x095024b5, 0x57d1, 0x4117, \
++ { 0xb6, 0x02, 0x5c, 0x6d, 0xf2, 0x81, 0xe0, 0xba } }
++
++class nsIDocument_MOZILLA_1_8_BRANCH2 : public nsISupports
++{
++public:
++  NS_DEFINE_STATIC_IID_ACCESSOR(NS_IDOCUMENT_MOZILLA_1_8_BRANCH2_IID)
++
++  nsIDocument_MOZILLA_1_8_BRANCH2() :
++    mIsInitialDocumentInWindow(PR_FALSE)
++  {
++  }
++
++  /**
++   * Ask this document whether it's the initial document in its window.
++   */
++  PRBool IsInitialDocument() const
++  {
++    return mIsInitialDocumentInWindow;
++  }
++  
++  /**
++   * Tell this document that it's the initial document in its window.  See
++   * comments on mIsInitialDocumentInWindow for when this should be called.
++   */
++  void SetIsInitialDocument(PRBool aIsInitialDocument)
++  {
++    mIsInitialDocumentInWindow = aIsInitialDocument;
++  }
++
++protected:   
++  // True if this document is the initial document for a window.  This should
++  // basically be true only for documents that exist in newly-opened windows or
++  // documents created to satisfy a GetDocument() on a window when there's no
++  // document in it.
++  PRBool mIsInitialDocumentInWindow;
++};
++
+ /**
+  * Helper class to automatically handle batching of document updates.  This
+  * class will call BeginUpdate on construction and EndUpdate on destruction on
+Index: content/base/src/nsDocument.cpp
+===================================================================
+--- content/base/src/nsDocument.cpp	2007-07-16 11:51:44.000000000 +0200
++++ content/base/src/nsDocument.cpp	2007-07-16 11:53:05.000000000 +0200
+@@ -783,6 +783,7 @@
+ 
+ nsDocument::nsDocument()
+   : nsIDocument(),
++    nsIDocument_MOZILLA_1_8_BRANCH2(),
+     mVisible(PR_TRUE)
+ {
+ #ifdef PR_LOGGING
+@@ -916,6 +917,7 @@
+ NS_INTERFACE_MAP_BEGIN(nsDocument)
+   NS_INTERFACE_MAP_ENTRY(nsIDocument)
+   NS_INTERFACE_MAP_ENTRY(nsIDocument_MOZILLA_1_8_0_BRANCH)
++  NS_INTERFACE_MAP_ENTRY(nsIDocument_MOZILLA_1_8_BRANCH2)
+   NS_INTERFACE_MAP_ENTRY(nsIDOMDocument)
+   NS_INTERFACE_MAP_ENTRY(nsIDOMNSDocument)
+   NS_INTERFACE_MAP_ENTRY(nsIDOMDocumentEvent)
+Index: content/base/src/nsDocument.h
+===================================================================
+--- content/base/src/nsDocument.h	2007-07-16 11:51:44.000000000 +0200
++++ content/base/src/nsDocument.h	2007-07-16 11:53:05.000000000 +0200
+@@ -365,6 +365,7 @@
+ // the interface.
+ class nsDocument : public nsIDocument,
+                    public nsIDocument_MOZILLA_1_8_0_BRANCH,
++                   public nsIDocument_MOZILLA_1_8_BRANCH2,
+                    public nsIDOMXMLDocument, // inherits nsIDOMDocument
+                    public nsIDOMNSDocument,
+                    public nsIDOMDocumentEvent,
+Index: content/base/src/nsFrameLoader.cpp
+===================================================================
+--- content/base/src/nsFrameLoader.cpp	2007-07-16 11:51:44.000000000 +0200
++++ content/base/src/nsFrameLoader.cpp	2007-07-16 11:53:05.000000000 +0200
+@@ -165,6 +165,13 @@
+     // load instead of just forcing the system principal.  That way if we have
+     // something loaded already the principal used will be that of what we
+     // already have loaded.
++
++    // XXX bz I'd love to nix this, but the problem is chrome calling
++    // setAttribute() on an iframe or browser and passing in a javascript: URI.
++    // We probably don't want to run that with chrome privileges... Though in
++    // similar circumstances, if one sets window.location.href from chrome we
++    // _do_ run that with chrome privileges, so maybe we should do the same
++    // here?
+     loadInfo->SetInheritOwner(PR_TRUE);
+ 
+     // Also, in this case we don't set a referrer, just in case.
+Index: content/html/document/src/nsHTMLDocument.cpp
+===================================================================
+--- content/html/document/src/nsHTMLDocument.cpp	2007-07-16 11:51:44.000000000 +0200
++++ content/html/document/src/nsHTMLDocument.cpp	2007-07-16 11:53:05.000000000 +0200
+@@ -2020,10 +2020,24 @@
+     // Rememer the old scope in case the call to SetNewDocument changes it.
+     nsCOMPtr<nsIScriptGlobalObject> oldScope(do_QueryReferent(mScopeObject));
+ 
++    // If callerPrincipal doesn't match our principal. make sure that
++    // SetNewDocument gives us a new inner window and clears our scope.
++    NS_ENSURE_TRUE(GetPrincipal(), NS_ERROR_OUT_OF_MEMORY);
++    if (!callerPrincipal ||
++        NS_FAILED(nsContentUtils::GetSecurityManager()->
++          CheckSameOriginPrincipal(callerPrincipal, GetPrincipal()))) {
++      SetIsInitialDocument(PR_FALSE);
++    }      
++
+     rv = mScriptGlobalObject->SetNewDocument((nsDocument *)this, nsnull,
+                                              PR_FALSE, PR_FALSE);
+     NS_ENSURE_SUCCESS(rv, rv);
+ 
++    // Now make sure we're not flagged as the initial document anymore, now
++    // that we've had stuff done to us.  From now on, if anyone tries to
++    // document.open() us, they get a new inner window.
++    SetIsInitialDocument(PR_FALSE);
++
+     nsCOMPtr<nsIScriptGlobalObject> newScope(do_QueryReferent(mScopeObject));
+     if (oldScope && newScope != oldScope) {
+       nsContentUtils::ReparentContentWrappersInScope(oldScope, newScope);
+@@ -2359,36 +2373,6 @@
+     GetCurrentNativeCallContext(getter_AddRefs(ncc));
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+-  nsCAutoString spec;
+-
+-  if (mDocumentURI) {
+-    rv = mDocumentURI->GetSpec(spec);
+-    NS_ENSURE_SUCCESS(rv, rv);
+-  }
+-
+-  if (!mDocumentURI || spec.EqualsLiteral("about:blank")) {
+-    // The current document's URI and principal are empty or "about:blank".
+-    // By writing to this document, the script acquires responsibility for the
+-    // document for security purposes. Thus a document.write of a script tag
+-    // ends up producing a script with the same principals as the script
+-    // that performed the write.
+-    nsIScriptSecurityManager *secMan = nsContentUtils::GetSecurityManager();
+-
+-    nsCOMPtr<nsIPrincipal> subject;
+-    rv = secMan->GetSubjectPrincipal(getter_AddRefs(subject));
+-    NS_ENSURE_SUCCESS(rv, rv);
+-
+-    if (subject) {
+-      nsCOMPtr<nsIURI> subjectURI;
+-      subject->GetURI(getter_AddRefs(subjectURI));
+-
+-      if (subjectURI) {
+-        mDocumentURI = subjectURI;
+-        mPrincipal = subject;
+-      }
+-    }
+-  }
+-
+   if (ncc) {
+     // We're called from JS, concatenate the extra arguments into
+     // string_buffer
+Index: docshell/base/nsDocShell.cpp
+===================================================================
+--- docshell/base/nsDocShell.cpp	2007-07-16 11:51:44.000000000 +0200
++++ docshell/base/nsDocShell.cpp	2007-07-16 11:53:05.000000000 +0200
+@@ -3226,21 +3226,20 @@
+         rv = LoadHistoryEntry(mLSHE, type);
+     }
+     else {
++        nsCOMPtr<nsIDOMDocument> domDoc(do_GetInterface(GetAsSupports(this)));
++        nsCOMPtr<nsIDocument> doc(do_QueryInterface(domDoc));
++
++        nsIPrincipal* principal = nsnull;
+         nsAutoString contentTypeHint;
+-        nsCOMPtr<nsIDOMWindow> window(do_GetInterface((nsIDocShell*)this));
+-        if (window) {
+-            nsCOMPtr<nsIDOMDocument> document;
+-            window->GetDocument(getter_AddRefs(document));
+-            nsCOMPtr<nsIDOMNSDocument> doc(do_QueryInterface(document));
+-            if (doc) {
+-                doc->GetContentType(contentTypeHint);
+-            }
++        if (doc) {
++            principal = doc->GetPrincipal();
++            doc->GetContentType(contentTypeHint);
+         }
+ 
+         rv = InternalLoad(mCurrentURI,
+                           mReferrerURI,
+-                          nsnull,         // No owner
+-                          INTERNAL_LOAD_FLAGS_INHERIT_OWNER, // Inherit owner from document
++                          principal,
++                          INTERNAL_LOAD_FLAGS_NONE, // Do not inherit owner from document
+                           nsnull,         // No window target
+                           NS_LossyConvertUCS2toASCII(contentTypeHint).get(),
+                           nsnull,         // No post data
+@@ -4859,7 +4858,38 @@
+     if (mIsBeingDestroyed)
+         return NS_ERROR_FAILURE;
+ 
+-    return CreateAboutBlankContentViewer();
++    nsIPrincipal* principal = nsnull;
++
++    nsCOMPtr<nsPIDOMWindow_MOZILLA_1_8_BRANCH2> piDOMWindow =
++      do_QueryInterface(mScriptGlobal);
++    if (piDOMWindow) {
++        principal = piDOMWindow->GetOpenerScriptPrincipal();
++    }
++
++    if (!principal) {
++        principal = GetInheritedPrincipal(PR_FALSE);
++    }
++
++    nsresult rv = CreateAboutBlankContentViewer();
++
++    if (NS_SUCCEEDED(rv)) {
++        nsCOMPtr<nsIDOMDocument> domDoc;
++        mContentViewer->GetDOMDocument(getter_AddRefs(domDoc));
++        nsCOMPtr<nsIDocument> doc(do_QueryInterface(domDoc));
++        nsCOMPtr<nsIDocument_MOZILLA_1_8_BRANCH2> doc_MOZILLA_1_8_BRANCH2 =
++            do_QueryInterface(domDoc);
++        NS_ASSERTION(doc && doc_MOZILLA_1_8_BRANCH2,
++                     "Should have doc if CreateAboutBlankContentViewer "
++                     "succeeded!");
++
++        doc_MOZILLA_1_8_BRANCH2->SetIsInitialDocument(PR_TRUE);
++
++        if (principal) {
++            doc->SetPrincipal(principal);
++        }
++    }
++
++    return rv;
+ }
+ 
+ NS_IMETHODIMP
+@@ -6300,12 +6330,28 @@
+ 
+     nsCOMPtr<nsISupports> owner(aOwner);
+     //
+-    // Get an owner from the current document if necessary, but only
+-    // if this is not an external load.
++    // Get an owner from the current document if necessary.  Note that we only
++    // do this for URIs that inherit a security context; in particular we do
++    // NOT do this for about:blank.  This way, random about:blank loads that
++    // have no owner (which basically means they were done by someone from
++    // chrome manually messing with our nsIWebNavigation or by C++ setting
++    // document.location) don't get a funky principal.  If callers want
++    // something interesting to happen with the about:blank principal in this
++    // case, they should pass an owner in.
+     //
+     if (aLoadType != LOAD_NORMAL_EXTERNAL && !owner &&
+-        (aFlags & INTERNAL_LOAD_FLAGS_INHERIT_OWNER))
+-        GetCurrentDocumentOwner(getter_AddRefs(owner));
++        (aFlags & INTERNAL_LOAD_FLAGS_INHERIT_OWNER)) {
++        PRBool inherits;
++        PRBool isScheme;
++        inherits =
++            (NS_SUCCEEDED(aURI->SchemeIs("javascript", &isScheme)) &&
++             isScheme) ||
++            (NS_SUCCEEDED(aURI->SchemeIs("data", &isScheme)) &&
++             isScheme);
++        if (inherits) {
++            owner = GetInheritedPrincipal(PR_TRUE);
++        }
++    }
+ 
+     //
+     // Resolve the window target before going any further...
+@@ -6684,42 +6730,51 @@
+     return rv;
+ }
+ 
+-void
+-nsDocShell::GetCurrentDocumentOwner(nsISupports ** aOwner)
++nsIPrincipal*
++nsDocShell::GetInheritedPrincipal(PRBool aConsiderCurrentDocument)
+ {
+-    *aOwner = nsnull;
+     nsCOMPtr<nsIDocument> document;
+-    //-- Get the current document
+-    if (mContentViewer) {
++
++    if (aConsiderCurrentDocument && mContentViewer) {
+         nsCOMPtr<nsIDocumentViewer>
+             docViewer(do_QueryInterface(mContentViewer));
+         if (!docViewer)
+-            return;
++            return nsnull;
+         docViewer->GetDocument(getter_AddRefs(document));
+     }
+-    else //-- If there's no document loaded yet, look at the parent (frameset)
+-    {
++
++    if (!document) {
+         nsCOMPtr<nsIDocShellTreeItem> parentItem;
+         GetSameTypeParent(getter_AddRefs(parentItem));
+-        if (!parentItem)
+-            return;
+-        nsCOMPtr<nsIDOMWindowInternal>
+-            parentWindow(do_GetInterface(parentItem));
+-        if (!parentWindow)
+-            return;
+-        nsCOMPtr<nsIDOMDocument> parentDomDoc;
+-        parentWindow->GetDocument(getter_AddRefs(parentDomDoc));
+-        if (!parentDomDoc)
+-            return;
+-        document = do_QueryInterface(parentDomDoc);
++        if (parentItem) {
++            nsCOMPtr<nsIDOMDocument> parentDomDoc(do_GetInterface(parentItem));
++            document = do_QueryInterface(parentDomDoc);
++        }
++    }
++
++    if (!document) {
++        if (!aConsiderCurrentDocument) {
++            return nsnull;
++        }
++
++        // Make sure we end up with _something_ as the principal no matter
++        // what.
++        EnsureContentViewer();  // If this fails, we'll just get a null
++                                // docViewer and bail.
++
++        nsCOMPtr<nsIDocumentViewer>
++            docViewer(do_QueryInterface(mContentViewer));
++        if (!docViewer)
++            return nsnull;
++        docViewer->GetDocument(getter_AddRefs(document));
+     }
+ 
+     //-- Get the document's principal
+     if (document) {
+-        *aOwner = document->GetPrincipal();
++        return document->GetPrincipal();
+     }
+ 
+-    NS_IF_ADDREF(*aOwner);
++    return nsnull;
+ }
+ 
+ nsresult
+@@ -6885,7 +6940,12 @@
+     // Set the owner of the channel - only for javascript and data channels.
+     //
+     // XXX: Is seems wrong that the owner is ignored - even if one is
+-    //      supplied) unless the URI is javascript or data.
++    //      supplied) unless the URI is javascript or data or about:blank.
++    // XXX: If this is ever changed, check all callers for what owners they're
++    //      passing in.  In particular, see the code and comments in LoadURI
++    //      where we fall back on inheriting the owner if called
++    //      from chrome.  That would be very wrong if this code changed
++    //      anything but channels that can't provide their own security context!
+     //
+     //      (Currently chrome URIs set the owner when they are created!
+     //      So setting a NULL owner would be bad!)
+@@ -6895,7 +6955,7 @@
+     if (!isJSOrData) {
+       aURI->SchemeIs("data", &isJSOrData);
+     }
+-    if (isJSOrData) {
++    if (isJSOrData || IsAboutBlank(aURI)) {
+         channel->SetOwner(aOwner);
+     }
+ 
+@@ -8730,3 +8790,21 @@
+ 
+     return wwatch->GetNewAuthPrompter(window, aResult);
+ }
++
++/* static */
++PRBool
++nsDocShell::IsAboutBlank(nsIURI* aURI)
++{
++    NS_PRECONDITION(aURI, "Must have URI");
++    
++    // GetSpec can be expensive for some URIs, so check the scheme first.
++    PRBool isAbout = PR_FALSE;
++    if (NS_FAILED(aURI->SchemeIs("about", &isAbout)) || !isAbout) {
++        return PR_FALSE;
++    }
++    
++    nsCAutoString str;
++    aURI->GetSpec(str);
++    return str.EqualsLiteral("about:blank");
++}
++                                     
+Index: docshell/base/nsDocShell.h
+===================================================================
+--- docshell/base/nsDocShell.h	2007-07-16 11:51:44.000000000 +0200
++++ docshell/base/nsDocShell.h	2007-07-16 11:53:05.000000000 +0200
+@@ -287,7 +287,18 @@
+     void SetupReferrerFromChannel(nsIChannel * aChannel);
+     
+     NS_IMETHOD GetEldestPresContext(nsPresContext** aPresContext);
+-    void GetCurrentDocumentOwner(nsISupports ** aOwner);
++
++    // Get the principal that we'll set on the channel if we're inheriting.  If
++    // aConsiderCurrentDocument is true, we try to use the current document if
++    // at all possible.  If that fails, we fall back on the parent document.
++    // If that fails too, we force creation of a content viewer and use the
++    // resulting principal.  If aConsiderCurrentDocument is false, we just look
++    // at the parent.
++    nsIPrincipal* GetInheritedPrincipal(PRBool aConsiderCurrentDocument);
++
++    // Actually open a channel and perform a URI load.  Note: whatever owner is
++    // passed to this function will be set on the channel.  Callers who wish to
++    // not have an owner on the channel should just pass null.
+     virtual nsresult DoURILoad(nsIURI * aURI,
+                                nsIURI * aReferrer,
+                                PRBool aSendReferrer,
+@@ -511,6 +522,9 @@
+     // Call BeginRestore(nsnull, PR_FALSE) for each child of this shell.
+     nsresult BeginRestoreChildren();
+ 
++    // Check whether aURI is about:blank
++    static PRBool IsAboutBlank(nsIURI* aURI);
++
+ protected:
+     // Override the parent setter from nsDocLoader
+     virtual nsresult SetDocLoaderParent(nsDocLoader * aLoader);
+Index: dom/public/base/nsPIDOMWindow.h
+===================================================================
+--- dom/public/base/nsPIDOMWindow.h	2007-07-16 11:51:44.000000000 +0200
++++ dom/public/base/nsPIDOMWindow.h	2007-07-16 11:53:05.000000000 +0200
+@@ -50,6 +50,8 @@
+ #include "nsIURI.h"
+ #include "nsCOMPtr.h"
+ 
++class nsIPrincipal;
++
+ // Popup control state enum. The values in this enum must go from most
+ // permissive to least permissive so that it's safe to push state in
+ // all situations. Pushing popup state onto the stack never makes the
+@@ -252,6 +254,8 @@
+     return win->mIsHandlingResizeEvent;
+   }
+ 
++  // DO NOT USE THIS FUNCTION.  IT DOES NOTHING.  USE
++  // SetOpenerScriptPrincipal INSTEAD.
+   virtual void SetOpenerScriptURL(nsIURI* aURI) = 0;
+ 
+   virtual PopupControlState PushPopupControlState(PopupControlState aState,
+@@ -313,7 +317,6 @@
+ 
+   // These members are only used on outer windows.
+   nsIDOMElement *mFrameElement; // weak
+-  nsCOMPtr<nsIURI> mOpenerScriptURL; // strong; used to determine whether to clear scope
+ 
+   // These variables are only used on inner windows.
+   nsTimeout             *mRunningTimeout;
+@@ -329,6 +332,30 @@
+   nsPIDOMWindow         *mOuterWindow;
+ };
+ 
++#define NS_PIDOMWINDOW_MOZILLA_1_8_BRANCH2_IID \
++{ 0xddd4affd, 0x6ad4, 0x44b4, \
++ { 0xa8, 0xfc, 0x78, 0x1d, 0xbd, 0xf1, 0x87, 0x1d } }
++
++class nsPIDOMWindow_MOZILLA_1_8_BRANCH2 : public nsPIDOMWindow
++{
++public:
++  NS_DEFINE_STATIC_IID_ACCESSOR(NS_PIDOMWINDOW_MOZILLA_1_8_BRANCH2_IID)
++
++  // Tell this window who opened it.  This only has an effect if there is
++  // either no document currently in the window or if the document is the
++  // original document this window came with (an about:blank document either
++  // preloaded into it when it was created, or created by
++  // CreateAboutBlankContentViewer()).
++  virtual void SetOpenerScriptPrincipal(nsIPrincipal* aPrincipal) = 0;
++  // Ask this window who opened it.
++  virtual nsIPrincipal* GetOpenerScriptPrincipal() = 0;
++
++protected:
++  nsPIDOMWindow_MOZILLA_1_8_BRANCH2(nsPIDOMWindow *aOuterWindow)
++    : nsPIDOMWindow(aOuterWindow)
++  {
++  }                                     
++};
+ 
+ #ifdef _IMPL_NS_LAYOUT
+ PopupControlState
+Index: dom/src/base/nsGlobalWindow.cpp
+===================================================================
+--- dom/src/base/nsGlobalWindow.cpp	2007-07-16 11:51:44.000000000 +0200
++++ dom/src/base/nsGlobalWindow.cpp	2007-07-16 11:53:05.000000000 +0200
+@@ -296,13 +296,28 @@
+ static const char kCryptoContractID[] = NS_CRYPTO_CONTRACTID;
+ static const char kPkcs11ContractID[] = NS_PKCS11_CONTRACTID;
+ 
++static PRBool
++IsAboutBlank(nsIURI* aURI)
++{
++  NS_PRECONDITION(aURI, "Must have URI");
++    
++  // GetSpec can be expensive for some URIs, so check the scheme first.
++  PRBool isAbout = PR_FALSE;
++  if (NS_FAILED(aURI->SchemeIs("about", &isAbout)) || !isAbout) {
++    return PR_FALSE;
++  }
++    
++  nsCAutoString str;
++  aURI->GetSpec(str);
++  return str.EqualsLiteral("about:blank");  
++}
+ 
+ //*****************************************************************************
+ //***    nsGlobalWindow: Object Management
+ //*****************************************************************************
+ 
+ nsGlobalWindow::nsGlobalWindow(nsGlobalWindow *aOuterWindow)
+-  : nsPIDOMWindow(aOuterWindow),
++  : nsPIDOMWindow_MOZILLA_1_8_BRANCH2(aOuterWindow),
+     mIsFrozen(PR_FALSE),
+     mFullScreen(PR_FALSE),
+     mIsClosed(PR_FALSE), 
+@@ -521,6 +536,7 @@
+   NS_INTERFACE_MAP_ENTRY(nsIDOM3EventTarget)
+   NS_INTERFACE_MAP_ENTRY(nsIDOMNSEventTarget)
+   NS_INTERFACE_MAP_ENTRY(nsPIDOMWindow)
++  NS_INTERFACE_MAP_ENTRY(nsPIDOMWindow_MOZILLA_1_8_BRANCH2)
+   NS_INTERFACE_MAP_ENTRY(nsIDOMViewCSS)
+   NS_INTERFACE_MAP_ENTRY(nsIDOMAbstractView)
+   NS_INTERFACE_MAP_ENTRY(nsISupportsWeakReference)
+@@ -581,70 +597,52 @@
+ PRBool
+ nsGlobalWindow::WouldReuseInnerWindow(nsIDocument *aNewDocument)
+ {
+-  return WouldReuseInnerWindow(aNewDocument, PR_TRUE);
+-}
+-
+-PRBool
+-nsGlobalWindow::WouldReuseInnerWindow(nsIDocument *aNewDocument, PRBool useDocURI)
+-{
+   // We reuse the inner window when:
+-  // a. We are currently at about:blank
++  // a. We are currently at our original document.
+   // b. At least one of the following conditions are true:
+   // -- We are not currently a content window (i.e., we're currently a chrome
+   //    window).
+   // -- The new document is the same as the old document. This means that we're
+   //    getting called from document.open().
+-  // -- The new URI has the same origin as the script opener uri for our current
+-  //    window.
++  // -- The new document has the same origin as what we have loaded right now.
+ 
+   nsCOMPtr<nsIDocument> curDoc(do_QueryInterface(mDocument));
+-  if (!curDoc || !aNewDocument) {
++  nsCOMPtr<nsIDocument_MOZILLA_1_8_BRANCH2> curDoc_MOZILLA_1_8_BRANCH2 =
++    do_QueryInterface(mDocument);
++  if (!curDoc || !curDoc_MOZILLA_1_8_BRANCH2 || !aNewDocument) {
+     return PR_FALSE;
+   }
+ 
+-  nsCOMPtr<nsIURI> newURI;
+-  if (useDocURI) {
+-    newURI = aNewDocument->GetDocumentURI();
+-  } else {
+-    nsCOMPtr<nsIWebNavigation> webNav(do_QueryInterface(mDocShell));
+-
+-    if (webNav) {
+-      webNav->GetCurrentURI(getter_AddRefs(newURI));
+-    }
+-  }
+-
+-  nsIURI* curURI = curDoc->GetDocumentURI();
+-  if (!curURI || !newURI) {
++  nsIPrincipal* newPrincipal = aNewDocument->GetPrincipal();
++  if (!newPrincipal) {
++    // Play it safe
+     return PR_FALSE;
+   }
+-
+-  PRBool isAbout;
+-  if (NS_FAILED(curURI->SchemeIs("about", &isAbout)) || !isAbout) {
+-    return PR_FALSE;
+-  }
+-
+-  nsCAutoString uri;
+-  curURI->GetSpec(uri);
+-  if (!uri.EqualsLiteral("about:blank")) {
++    
++  if (!curDoc_MOZILLA_1_8_BRANCH2->IsInitialDocument()) {
+     return PR_FALSE;
+   }
+   
+-  // Great, we're an about:blank document, check for one of the other
+-  // conditions.
++  NS_ASSERTION(IsAboutBlank(curDoc->GetDocumentURI()),
++               "How'd this happen?");
++  
++  // Great, we're the original document, check for one of the other
+   if (curDoc == aNewDocument) {
+     // aClearScopeHint is false.
+     return PR_TRUE;
+   }
+ 
+-  if (mOpenerScriptURL) {
+-    if (sSecMan) {
+-      PRBool isSameOrigin = PR_FALSE;
+-      sSecMan->SecurityCompareURIs(mOpenerScriptURL, newURI, &isSameOrigin);
+-      if (isSameOrigin) {
+-        // The origin is the same.
+-        return PR_TRUE;
+-      }
+-    }
++  nsIPrincipal* curPrincipal = curDoc->GetPrincipal();
++  if (!curPrincipal) {
++    // Play it safe
++    return PR_FALSE;
++  }
++ 
++  if (nsContentUtils::GetSecurityManager() &&
++      NS_SUCCEEDED(nsContentUtils::GetSecurityManager()->
++        CheckSameOriginPrincipal(curPrincipal, newPrincipal))) {
++    // The origin is the same.
++    return PR_TRUE;
+   }
+ 
+   nsCOMPtr<nsIDocShellTreeItem> treeItem(do_QueryInterface(mDocShell));
+@@ -664,9 +662,49 @@
+ void
+ nsGlobalWindow::SetOpenerScriptURL(nsIURI* aURI)
+ {
+-  FORWARD_TO_OUTER_VOID(SetOpenerScriptURL, (aURI));
++}
++
++void
++nsGlobalWindow::SetOpenerScriptPrincipal(nsIPrincipal* aPrincipal)
++{
++  FORWARD_TO_OUTER_VOID(SetOpenerScriptPrincipal, (aPrincipal));
++
++  nsCOMPtr<nsIDocument> curDoc(do_QueryInterface(mDocument));
++  nsCOMPtr<nsIDocument_MOZILLA_1_8_BRANCH2> curDoc_MOZILLA_1_8_BRANCH2 =
++    do_QueryInterface(mDocument);
++  if (curDoc && curDoc_MOZILLA_1_8_BRANCH2) {
++    if (!curDoc_MOZILLA_1_8_BRANCH2->IsInitialDocument()) {
++      // We have a document already, and it's not the original one.  Bail out.
++      // Do NOT set mOpenerScriptPrincipal in this case, just to be safe.
++      return;
++    }
++    
++#ifdef DEBUG
++    // We better have an about:blank document loaded at this point.  Otherwise,
++    // something is really weird.
++    if (curDoc->GetPrincipal()) {
++      nsCOMPtr<nsIURI> uri;
++      curDoc->GetPrincipal()->GetURI(getter_AddRefs(uri));
++      NS_ASSERTION(uri && IsAboutBlank(uri) &&
++                   IsAboutBlank(curDoc->GetDocumentURI()),
++                   "Unexpected original document");
++    }
++#endif
++    
++    // Set the opener principal on our document; given the above check, this
++    // is safe.
++    curDoc->SetPrincipal(aPrincipal);
++  }
++
++  mOpenerScriptPrincipal = aPrincipal;
++}
++
++nsIPrincipal*
++nsGlobalWindow::GetOpenerScriptPrincipal()
++{
++  FORWARD_TO_OUTER(GetOpenerScriptPrincipal, (), nsnull);
+ 
+-  mOpenerScriptURL = aURI;
++  return mOpenerScriptPrincipal;
+ }
+ 
+ PopupControlState
+@@ -944,7 +982,7 @@
+   // check xpc here.
+   nsIXPConnect *xpc = nsContentUtils::XPConnect();
+ 
+-  PRBool reUseInnerWindow = WouldReuseInnerWindow(newDoc, PR_FALSE);
++  PRBool reUseInnerWindow = WouldReuseInnerWindow(newDoc);
+ 
+   // XXX We used to share event listeners between inner windows in special
+   // circumstances (that were remarkably close to the conditions that we set
+@@ -3530,6 +3568,7 @@
+   if (mDocShell) {
+     // Don't look for a presshell if we're a root chrome window that's got
+     // about:blank loaded.  We don't want to focus our widget in that case.
++    // XXXbz should we really be checking for IsInitialDocument() instead?
+     PRBool lookForPresShell = PR_TRUE;
+     PRInt32 itemType = nsIDocShellTreeItem::typeContent;
+     nsCOMPtr<nsIDocShellTreeItem> treeItem(do_QueryInterface(mDocShell));
+@@ -3541,12 +3580,8 @@
+       nsCOMPtr<nsIDocument> doc(do_QueryInterface(mDocument));
+       NS_ASSERTION(doc, "Bogus doc?");
+       nsIURI* ourURI = doc->GetDocumentURI();
+-      PRBool isAbout;
+-      if (ourURI && NS_SUCCEEDED(ourURI->SchemeIs("about", &isAbout)) &&
+-          isAbout) {
+-        nsCAutoString spec;
+-        ourURI->GetSpec(spec);
+-        lookForPresShell = !spec.EqualsLiteral("about:blank");
++      if (ourURI) {
++        lookForPresShell = !IsAboutBlank(ourURI);
+       }
+     }
+       
+@@ -5978,25 +6013,7 @@
+ 
+   // success!
+ 
+-  if (domReturn) {
+-    CallQueryInterface(domReturn, aReturn);
+-
+-    // Save the principal of the calling script
+-    // We need it to decide whether to clear the scope in SetNewDocument
+-    NS_ASSERTION(sSecMan, "No Security Manager Found!");
+-    if (sSecMan) {
+-      nsCOMPtr<nsIPrincipal> principal;
+-      sSecMan->GetSubjectPrincipal(getter_AddRefs(principal));
+-      if (principal) {
+-        nsCOMPtr<nsIURI> subjectURI;
+-        principal->GetURI(getter_AddRefs(subjectURI));
+-        if (subjectURI) {
+-          nsCOMPtr<nsPIDOMWindow> domReturnPrivate(do_QueryInterface(domReturn));
+-          domReturnPrivate->SetOpenerScriptURL(subjectURI);
+-        }
+-      }
+-    }
+-  }
++  domReturn.swap(*aReturn);
+ 
+   return rv;
+ }
+Index: dom/src/base/nsGlobalWindow.h
+===================================================================
+--- dom/src/base/nsGlobalWindow.h	2007-07-16 11:51:44.000000000 +0200
++++ dom/src/base/nsGlobalWindow.h	2007-07-16 11:53:05.000000000 +0200
+@@ -129,7 +129,7 @@
+ // belonging to the same outer window, but that's an unimportant
+ // side effect of inheriting PRCList).
+ 
+-class nsGlobalWindow : public nsPIDOMWindow,
++class nsGlobalWindow : public nsPIDOMWindow_MOZILLA_1_8_BRANCH2,
+                        public nsIScriptGlobalObject,
+                        public nsIDOMJSWindow,
+                        public nsIScriptObjectPrincipal,
+@@ -224,6 +224,10 @@
+ 
+   virtual NS_HIDDEN_(PRBool) WouldReuseInnerWindow(nsIDocument *aNewDocument);
+ 
++  // nsPIDOMWindow_MOZILLA_1_8_BRANCH2
++  virtual NS_HIDDEN_(void) SetOpenerScriptPrincipal(nsIPrincipal* aPrincipal);
++  virtual NS_HIDDEN_(nsIPrincipal*) GetOpenerScriptPrincipal();
++  
+   // nsIDOMViewCSS
+   NS_DECL_NSIDOMVIEWCSS
+ 
+@@ -294,8 +298,6 @@
+                           PRBool aClearScopeHint,
+                           PRBool aIsInternalCall);
+ 
+-  PRBool WouldReuseInnerWindow(nsIDocument *aNewDocument, PRBool useDocURI);
+-
+   // Get the parent, returns null if this is a toplevel window
+   nsIDOMWindowInternal *GetParentInternal();
+ 
+@@ -461,6 +463,8 @@
+   nsCOMPtr<nsIDOMPkcs11>        mPkcs11;
+ 
+   nsCOMPtr<nsIXPConnectJSObjectHolder> mInnerWindowHolder;
++  nsCOMPtr<nsIPrincipal> mOpenerScriptPrincipal; // strong; used to determine
++                                                 // whether to clear scope
+ 
+   // These member variable are used only on inner windows.
+   nsCOMPtr<nsIEventListenerManager> mListenerManager;
+Index: dom/src/jsurl/nsJSProtocolHandler.cpp
+===================================================================
+--- dom/src/jsurl/nsJSProtocolHandler.cpp	2007-07-16 11:51:44.000000000 +0200
++++ dom/src/jsurl/nsJSProtocolHandler.cpp	2007-07-16 11:53:05.000000000 +0200
+@@ -222,10 +222,8 @@
+         if (!principal)
+             return NS_ERROR_FAILURE;
+ 
+-        //-- Don't run if the script principal is different from the
+-        //   principal of the context, with two exceptions: we allow
+-        //   the script to run if the script has the system principal
+-        //   or the context is about:blank.
++        //-- Don't run if the script principal is different from the principal
++        //   of the context, unless the script has the system principal.
+         nsCOMPtr<nsIPrincipal> objectPrincipal;
+         rv = securityManager->GetObjectPrincipal(
+                                 (JSContext*)scriptContext->GetNativeContext(),
+Index: embedding/components/windowwatcher/src/Makefile.in
+===================================================================
+--- embedding/components/windowwatcher/src/Makefile.in	2007-07-16 11:51:44.000000000 +0200
++++ embedding/components/windowwatcher/src/Makefile.in	2007-07-16 11:53:05.000000000 +0200
+@@ -63,6 +63,7 @@
+ 		  embed_base \
+ 		  intl \
+ 		  layout \
++		  uriloader \
+ 		  $(NULL)
+ 
+ CPPSRCS		= nsPrompt.cpp \
+Index: embedding/components/windowwatcher/src/nsWindowWatcher.cpp
+===================================================================
+--- embedding/components/windowwatcher/src/nsWindowWatcher.cpp	2007-07-16 11:51:44.000000000 +0200
++++ embedding/components/windowwatcher/src/nsWindowWatcher.cpp	2007-07-16 11:53:05.000000000 +0200
+@@ -58,6 +58,7 @@
+ #include "nsIDOMWindow.h"
+ #include "nsIDOMChromeWindow.h"
+ #include "nsIDOMWindowInternal.h"
++#include "nsIScriptObjectPrincipal.h"
+ #include "nsIScreen.h"
+ #include "nsIScreenManager.h"
+ #include "nsIScriptContext.h"
+@@ -684,7 +685,7 @@
+   if (!newDocShellItem)
+     return rv;
+ 
+-  rv = ReadyOpenedDocShellItem(newDocShellItem, aParent, _retval);
++  rv = ReadyOpenedDocShellItem(newDocShellItem, aParent, windowIsNew, _retval);
+   if (NS_FAILED(rv))
+     return rv;
+ 
+@@ -750,6 +751,43 @@
+     }
+   }
+ 
++  // Now we have to set the right opener principal on the new window.  Note
++  // that we have to do this _before_ starting any URI loads, thanks to the
++  // sync nature of javascript: loads.  Since this is the only place where we
++  // set said opener principal, we need to do it for all URIs, including
++  // chrome ones.  So to deal with the mess that is bug 79775, just press on in
++  // a reasonable way even if GetSubjectPrincipal fails.  In that case, just
++  // use a null subjectPrincipal.
++  nsCOMPtr<nsIPrincipal> subjectPrincipal;
++  if (NS_FAILED(sm->GetSubjectPrincipal(getter_AddRefs(subjectPrincipal)))) {
++    subjectPrincipal = nsnull;
++  }
++
++  if (windowIsNew) {
++    // Now set the opener principal on the new window.  Note that we need to do
++    // this no matter whether we were opened from JS; if there is nothing on
++    // the JS stack, just use the principal of our parent window.  In those
++    // cases we do _not_ set the parent window principal as the owner of the
++    // load--since we really don't know who the owner is, just leave it null.
++    nsIPrincipal* newWindowPrincipal = subjectPrincipal;
++    if (!newWindowPrincipal && aParent) {
++      nsCOMPtr<nsIScriptObjectPrincipal> sop(do_QueryInterface(aParent));
++      if (sop) {
++        newWindowPrincipal = sop->GetPrincipal();
++      }
++    }
++
++    nsCOMPtr<nsPIDOMWindow_MOZILLA_1_8_BRANCH2> newWindow =
++      do_QueryInterface(*_retval);
++#ifdef DEBUG
++    nsCOMPtr<nsPIDOMWindow> newDebugWindow = do_GetInterface(newDocShell);
++    NS_ASSERTION(newWindow == newDebugWindow, "Different windows??");
++#endif
++    if (newWindow) {
++      newWindow->SetOpenerScriptPrincipal(newWindowPrincipal);
++    }
++  }
++
+   if (uriToLoad) { // get the script principal and pass it to docshell
+     JSContextAutoPopper contextGuard;
+ 
+@@ -769,15 +807,8 @@
+     newDocShell->CreateLoadInfo(getter_AddRefs(loadInfo));
+     NS_ENSURE_TRUE(loadInfo, NS_ERROR_FAILURE);
+ 
+-    if (!uriToLoadIsChrome) {
+-      nsCOMPtr<nsIPrincipal> principal;
+-      if (NS_FAILED(sm->GetSubjectPrincipal(getter_AddRefs(principal))))
+-        return NS_ERROR_FAILURE;
+-
+-      if (principal) {
+-        nsCOMPtr<nsISupports> owner(do_QueryInterface(principal));
+-        loadInfo->SetOwner(owner);
+-      }
++    if (subjectPrincipal) {
++      loadInfo->SetOwner(subjectPrincipal);
+     }
+ 
+     // Set the new window's referrer from the calling context's document:
+@@ -1523,6 +1554,7 @@
+ nsresult
+ nsWindowWatcher::ReadyOpenedDocShellItem(nsIDocShellTreeItem *aOpenedItem,
+                                          nsIDOMWindow        *aParent,
++                                         PRBool              aWindowIsNew,
+                                          nsIDOMWindow        **aOpenedWindow)
+ {
+   nsresult rv = NS_ERROR_FAILURE;
+@@ -1533,6 +1565,15 @@
+     if (aParent) {
+       nsCOMPtr<nsIDOMWindowInternal> internalParent(do_QueryInterface(aParent));
+       globalObject->SetOpenerWindow(internalParent); // damnit
++
++      if (aWindowIsNew) {
++        nsCOMPtr<nsPIDOMWindow> win = do_QueryInterface(globalObject);
++        nsCOMPtr<nsIDocument_MOZILLA_1_8_BRANCH2> doc =
++          do_QueryInterface(win->GetExtantDocument());
++        if (doc) {
++          doc->SetIsInitialDocument(PR_TRUE);
++        }
++      }
+     }
+     rv = CallQueryInterface(globalObject, aOpenedWindow);
+   }
+Index: embedding/components/windowwatcher/src/nsWindowWatcher.h
+===================================================================
+--- embedding/components/windowwatcher/src/nsWindowWatcher.h	2007-07-16 11:51:44.000000000 +0200
++++ embedding/components/windowwatcher/src/nsWindowWatcher.h	2007-07-16 11:53:05.000000000 +0200
+@@ -100,6 +100,7 @@
+                                  PRInt32 aDefault, PRBool *aPresenceFlag);
+   static nsresult   ReadyOpenedDocShellItem(nsIDocShellTreeItem *aOpenedItem,
+                                             nsIDOMWindow *aParent,
++                                            PRBool aWindowIsNew,
+                                             nsIDOMWindow **aOpenedWindow);
+   static void       SizeOpenedDocShellItem(nsIDocShellTreeItem *aDocShellItem,
+                                            nsIDOMWindow *aParent,
+ js/src/jsfun.c |   13 +++++++++----
+ js/src/jsobj.c |    3 ++-
+ js/src/jsobj.h |    4 ++++
+ 3 files changed, 15 insertions(+), 5 deletions(-)
+
+Index: js/src/jsfun.c
+===================================================================
+--- js/src/jsfun.c	2007-07-16 10:49:46.000000000 +0000
++++ js/src/jsfun.c	2007-07-16 10:53:05.000000000 +0000
+@@ -1051,28 +1051,33 @@
+ static JSBool
+ fun_resolve(JSContext *cx, JSObject *obj, jsval id, uintN flags,
+             JSObject **objp)
+ {
+     JSFunction *fun;
+     JSString *str;
+     JSAtom *prototypeAtom;
+ 
++    /*
++     * No need to reflect fun.prototype in 'fun.prototype = ...' or in an
++     * unqualified reference to prototype, which the emitter looks up as a
++     * hidden atom when attempting to bind to a formal parameter or local
++     * variable slot.
++     */
++    if (flags & (JSRESOLVE_ASSIGNING | JSRESOLVE_HIDDEN))
++        return JS_TRUE;
++
+     if (!JSVAL_IS_STRING(id))
+         return JS_TRUE;
+ 
+     /* No valid function object should lack private data, but check anyway. */
+     fun = (JSFunction *)JS_GetInstancePrivate(cx, obj, &js_FunctionClass, NULL);
+     if (!fun || !fun->object)
+         return JS_TRUE;
+ 
+-    /* No need to reflect fun.prototype in 'fun.prototype = ...'. */
+-    if (flags & JSRESOLVE_ASSIGNING)
+-        return JS_TRUE;
+-
+     /*
+      * Ok, check whether id is 'prototype' and bootstrap the function object's
+      * prototype property.
+      */
+     str = JSVAL_TO_STRING(id);
+     prototypeAtom = cx->runtime->atomState.classPrototypeAtom;
+     if (str == ATOM_TO_STRING(prototypeAtom)) {
+         JSObject *proto, *parentProto;
+Index: js/src/jsobj.c
+===================================================================
+--- js/src/jsobj.c	2007-07-16 10:52:44.000000000 +0000
++++ js/src/jsobj.c	2007-07-16 10:53:05.000000000 +0000
+@@ -2568,17 +2568,18 @@
+                                 flags, shortid);
+ }
+ 
+ JSBool
+ js_LookupHiddenProperty(JSContext *cx, JSObject *obj, jsid id, JSObject **objp,
+                         JSProperty **propp)
+ {
+     return HidePropertyName(cx, &id) &&
+-           js_LookupProperty(cx, obj, id, objp, propp);
++           js_LookupPropertyWithFlags(cx, obj, id, JSRESOLVE_HIDDEN,
++                                      objp, propp);
+ }
+ 
+ JSScopeProperty *
+ js_AddNativeProperty(JSContext *cx, JSObject *obj, jsid id,
+                      JSPropertyOp getter, JSPropertyOp setter, uint32 slot,
+                      uintN attrs, uintN flags, intN shortid)
+ {
+     JSScope *scope;
+Index: js/src/jsobj.h
+===================================================================
+--- js/src/jsobj.h	2007-07-16 10:49:47.000000000 +0000
++++ js/src/jsobj.h	2007-07-16 10:53:05.000000000 +0000
+@@ -405,21 +405,25 @@
+  * must later call OBJ_DROP_PROPERTY(cx, *objp, *propp).
+  */
+ extern JS_FRIEND_API(JSBool)
+ js_LookupProperty(JSContext *cx, JSObject *obj, jsid id, JSObject **objp,
+                   JSProperty **propp);
+ 
+ /*
+  * Specialized subroutine that allows caller to preset JSRESOLVE_* flags.
++ * JSRESOLVE_HIDDEN flags hidden function param/local name lookups, just for
++ * internal use by fun_resolve and similar built-ins.
+  */
+ extern JSBool
+ js_LookupPropertyWithFlags(JSContext *cx, JSObject *obj, jsid id, uintN flags,
+                            JSObject **objp, JSProperty **propp);
+ 
++#define JSRESOLVE_HIDDEN        0x8000
++
+ extern JS_FRIEND_API(JSBool)
+ js_FindProperty(JSContext *cx, jsid id, JSObject **objp, JSObject **pobjp,
+                 JSProperty **propp);
+ 
+ extern JSObject *
+ js_FindIdentifierBase(JSContext *cx, jsid id);
+ 
+ extern JSObject *
+---
+ toolkit/mozapps/plugins/content/pluginInstallerDatasource.js |   30 ++++++-----
+ toolkit/mozapps/plugins/content/pluginInstallerService.js    |    7 +-
+ toolkit/mozapps/plugins/content/pluginInstallerWizard.js     |    7 ++
+ 3 files changed, 28 insertions(+), 16 deletions(-)
+
+Index: toolkit/mozapps/plugins/content/pluginInstallerDatasource.js
+===================================================================
+--- toolkit/mozapps/plugins/content/pluginInstallerDatasource.js	2007-07-16 11:06:06.000000000 +0200
++++ toolkit/mozapps/plugins/content/pluginInstallerDatasource.js	2007-07-16 11:06:26.000000000 +0200
+@@ -104,37 +104,41 @@
+         target = null;
+         children = container.GetElements();
+ 
+         var child = children.getNext();
+         if (child instanceof Components.interfaces.nsIRDFResource){
+           target = child;
+         }
+ 
+-        function getPFSValueFromRDF(aValue, aDatasource, aRDFService){
++        var rdfs = this._rdfService;
++
++        function getPFSValueFromRDF(aValue){
+           var rv = null;
+ 
+-          var myTarget = aDatasource.GetTarget(target, aRDFService.GetResource(PFS_NS + aValue), true);
++          var myTarget = aDatasource.GetTarget(target, rdfs.GetResource(PFS_NS + aValue), true);
+           if (myTarget)
+             rv = myTarget.QueryInterface(Components.interfaces.nsIRDFLiteral).Value;
+ 
+           return rv;
+         }
+ 
+-        pluginInfo = new Object();
+-        pluginInfo.name = getPFSValueFromRDF("name", aDatasource, this._rdfService);
+-        pluginInfo.pid = getPFSValueFromRDF("guid", aDatasource, this._rdfService);
+-        pluginInfo.version = getPFSValueFromRDF("version", aDatasource, this._rdfService);
+-        pluginInfo.IconUrl = getPFSValueFromRDF("IconUrl", aDatasource, this._rdfService);
+-        pluginInfo.XPILocation = getPFSValueFromRDF("XPILocation", aDatasource, this._rdfService);
+-        pluginInfo.InstallerShowsUI = getPFSValueFromRDF("InstallerShowsUI", aDatasource, this._rdfService);
+-        pluginInfo.manualInstallationURL = getPFSValueFromRDF("manualInstallationURL", aDatasource, this._rdfService);
+-        pluginInfo.requestedMimetype = getPFSValueFromRDF("requestedMimetype", aDatasource, this._rdfService);
+-        pluginInfo.licenseURL = getPFSValueFromRDF("licenseURL", aDatasource, this._rdfService);
+-        pluginInfo.needsRestart = getPFSValueFromRDF("needsRestart", aDatasource, this._rdfService);
++        pluginInfo = {
++          name: getPFSValueFromRDF("name"),
++          pid: getPFSValueFromRDF("guid"),
++          version: getPFSValueFromRDF("version"),
++          IconUrl: getPFSValueFromRDF("IconUrl"),
++          XPILocation: getPFSValueFromRDF("XPILocation"),
++          XPIHash: getPFSValueFromRDF("XPIHash"),
++          InstallerShowsUI: getPFSValueFromRDF("InstallerShowsUI"),
++          manualInstallationURL: getPFSValueFromRDF("manualInstallationURL"),
++          requestedMimetype: getPFSValueFromRDF("requestedMimetype"),
++          licenseURL: getPFSValueFromRDF("licenseURL"),
++          needsRestart: getPFSValueFromRDF("needsRestart")
++        };
+       }
+       catch (ex){}
+     }
+     catch (ex){}
+     
+     gPluginInstaller.pluginInfoReceived(pluginInfo);
+   },
+ 
+Index: toolkit/mozapps/plugins/content/pluginInstallerService.js
+===================================================================
+--- toolkit/mozapps/plugins/content/pluginInstallerService.js	2007-07-16 11:06:06.000000000 +0200
++++ toolkit/mozapps/plugins/content/pluginInstallerService.js	2007-07-16 11:06:26.000000000 +0200
+@@ -38,22 +38,25 @@
+ var PluginInstallService = {
+   
+   init: function () 
+   {
+   },
+ 
+   pluginPidArray: null,
+ 
+-  startPluginInsallation: function (aPluginXPIUrlsArray, aPluginPidArray) {
++  startPluginInsallation: function (aPluginXPIUrlsArray,
++                                    aPluginHashes,
++                                    aPluginPidArray) {
+      this.pluginPidArray = aPluginPidArray;
+ 
+      var xpiManager = Components.classes["@mozilla.org/xpinstall/install-manager;1"]
+                                 .createInstance(Components.interfaces.nsIXPInstallManager);
+-     xpiManager.initManagerFromChrome(aPluginXPIUrlsArray, aPluginXPIUrlsArray.length, this);
++     xpiManager.initManagerWithHashes(aPluginXPIUrlsArray, aPluginHashes,
++                                      aPluginXPIUrlsArray.length, this);
+   },
+ 
+   // XPI progress listener stuff
+   onStateChange: function (aIndex, aState, aValue)
+   {
+     // get the pid to return to the wizard
+     var pid = this.pluginPidArray[aIndex];
+     var errorMsg;
+Index: toolkit/mozapps/plugins/content/pluginInstallerWizard.js
+===================================================================
+--- toolkit/mozapps/plugins/content/pluginInstallerWizard.js	2007-07-16 11:06:06.000000000 +0200
++++ toolkit/mozapps/plugins/content/pluginInstallerWizard.js	2007-07-16 11:06:26.000000000 +0200
+@@ -319,31 +319,35 @@
+   this.canAdvance(false);
+   this.canRewind(false);
+ 
+   // since the user can choose what plugins to install, we need to store
+   // which ones were choosen, as nsIXPInstallManager returns an index and not the
+   // mimetype.  So store the pids.
+ 
+   var pluginURLArray = new Array();
++  var pluginHashArray = new Array();
+   var pluginPidArray = new Array();
+ 
+   for (pluginInfoItem in this.mPluginInfoArray){
+     var pluginItem = this.mPluginInfoArray[pluginInfoItem];
+ 
+     // only push to the array if it has an XPILocation, else nsIXPInstallManager
+     // will complain.
+     if (pluginItem.toBeInstalled && pluginItem.XPILocation && pluginItem.licenseAccepted) {
+       pluginURLArray.push(pluginItem.XPILocation);
++      pluginHashArray.push(pluginItem.XPIHash);
+       pluginPidArray.push(pluginItem.pid);
+     }
+   }
+ 
+   if (pluginURLArray.length > 0)
+-    PluginInstallService.startPluginInsallation(pluginURLArray, pluginPidArray);
++    PluginInstallService.startPluginInsallation(pluginURLArray,
++                                                pluginHashArray,
++                                                pluginPidArray);
+   else
+     this.advancePage(null, true, false, false);
+ }
+ 
+ /*
+   0    starting download
+   1    download finished
+   2    starting installation
+@@ -594,16 +598,17 @@
+ }
+ 
+ function PluginInfo(aResult) {
+   this.name = aResult.name;
+   this.pid = aResult.pid;
+   this.version = aResult.version;
+   this.IconUrl = aResult.IconUrl;
+   this.XPILocation = aResult.XPILocation;
++  this.XPIHash = aResult.XPIHash;
+   this.InstallerShowsUI = aResult.InstallerShowsUI;
+   this.manualInstallationURL = aResult.manualInstallationURL;
+   this.requestedMimetype = aResult.requestedMimetype;
+   this.licenseURL = aResult.licenseURL;
+   this.needsRestart = (aResult.needsRestart == "true");
+ 
+   this.error = null;
+   this.toBeInstalled = true;
