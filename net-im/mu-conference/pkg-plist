@@ -1,5 +1,7 @@
+@unexec if cmp -s %D/etc/muc.xml.sample %D/etc/muc.xml; then rm -f %D/etc/muc.xml; fi
 bin/mu-conference
-etc/muc.xml-dist
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+etc/muc.xml.sample
+%%PORTDOCS%%%%DOCSDIR%%/scripts/README
+%%PORTDOCS%%%%DOCSDIR%%/scripts/roomname.pl
+%%PORTDOCS%%%%DOCSDIR%%/scripts/roommaker.pl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/scripts
