@@ -1,0 +1,5 @@
+lib/postgresql/plproxy.so
+share/postgresql/contrib/plproxy.sql
+@dirrmtry lib/postgresql
+@dirrmtry share/postgresql/contrib
+@dirrmtry share/postgresql
