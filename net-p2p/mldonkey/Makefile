@@ -7,6 +7,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	2.8.7
+PORTREVISION=	1
 CATEGORIES+=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		${MASTER_SITE_SAVANNAH}
@@ -89,6 +90,7 @@ USE_GNOME=	gtk20
 
 .if !defined(WITHOUT_CORE)
 USE_RC_SUBR=	mlnet
+SUB_LIST+=	SH=${SH:Q}
 
 . if !defined(WITHOUT_GD)
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
@@ -141,7 +143,10 @@ pre-everything::
 .endif
 
 post-patch:
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${FILESDIR}/wrapper.sh > \
+	@${SED} \
+		-e "s|%%PREFIX%%|${PREFIX}|" \
+		-e "s|%%SH%%|${SH}|" \
+		${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
 	@${REINPLACE_CMD} -E \
 		-e 's|%%AUTOCONF%%|${AUTOCONF}|' \
