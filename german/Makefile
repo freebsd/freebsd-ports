@@ -14,6 +14,7 @@
     SUBDIR += dict
     SUBDIR += digibux
     SUBDIR += ding
+    SUBDIR += eric4
     SUBDIR += geonext
     SUBDIR += ispell
     SUBDIR += ispell-alt
