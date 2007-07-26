@@ -1,0 +1,96 @@
+bin/bulk_loader.py
+bin/cube_dispatcher.py
+bin/londiste.py
+bin/pgqadm.py
+bin/queue_mover.py
+bin/queue_splitter.py
+bin/scriptmgr.py
+bin/table_dispatcher.py
+bin/walmgr.py
+%%PYTHON_SITELIBDIR%%/londiste/__init__.py
+%%PYTHON_SITELIBDIR%%/londiste/__init__.pyc
+%%PYTHON_SITELIBDIR%%/londiste/compare.py
+%%PYTHON_SITELIBDIR%%/londiste/compare.pyc
+%%PYTHON_SITELIBDIR%%/londiste/file_read.py
+%%PYTHON_SITELIBDIR%%/londiste/file_read.pyc
+%%PYTHON_SITELIBDIR%%/londiste/file_write.py
+%%PYTHON_SITELIBDIR%%/londiste/file_write.pyc
+%%PYTHON_SITELIBDIR%%/londiste/installer.py
+%%PYTHON_SITELIBDIR%%/londiste/installer.pyc
+%%PYTHON_SITELIBDIR%%/londiste/playback.py
+%%PYTHON_SITELIBDIR%%/londiste/playback.pyc
+%%PYTHON_SITELIBDIR%%/londiste/repair.py
+%%PYTHON_SITELIBDIR%%/londiste/repair.pyc
+%%PYTHON_SITELIBDIR%%/londiste/setup.py
+%%PYTHON_SITELIBDIR%%/londiste/setup.pyc
+%%PYTHON_SITELIBDIR%%/londiste/syncer.py
+%%PYTHON_SITELIBDIR%%/londiste/syncer.pyc
+%%PYTHON_SITELIBDIR%%/londiste/table_copy.py
+%%PYTHON_SITELIBDIR%%/londiste/table_copy.pyc
+%%PYTHON_SITELIBDIR%%/pgq/__init__.py
+%%PYTHON_SITELIBDIR%%/pgq/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pgq/consumer.py
+%%PYTHON_SITELIBDIR%%/pgq/consumer.pyc
+%%PYTHON_SITELIBDIR%%/pgq/event.py
+%%PYTHON_SITELIBDIR%%/pgq/event.pyc
+%%PYTHON_SITELIBDIR%%/pgq/maint.py
+%%PYTHON_SITELIBDIR%%/pgq/maint.pyc
+%%PYTHON_SITELIBDIR%%/pgq/producer.py
+%%PYTHON_SITELIBDIR%%/pgq/producer.pyc
+%%PYTHON_SITELIBDIR%%/pgq/status.py
+%%PYTHON_SITELIBDIR%%/pgq/status.pyc
+%%PYTHON_SITELIBDIR%%/pgq/ticker.py
+%%PYTHON_SITELIBDIR%%/pgq/ticker.pyc
+%%PYTHON_SITELIBDIR%%/skytools/__init__.py
+%%PYTHON_SITELIBDIR%%/skytools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/skytools/config.py
+%%PYTHON_SITELIBDIR%%/skytools/config.pyc
+%%PYTHON_SITELIBDIR%%/skytools/dbstruct.py
+%%PYTHON_SITELIBDIR%%/skytools/dbstruct.pyc
+%%PYTHON_SITELIBDIR%%/skytools/gzlog.py
+%%PYTHON_SITELIBDIR%%/skytools/gzlog.pyc
+%%PYTHON_SITELIBDIR%%/skytools/installer_config.py
+%%PYTHON_SITELIBDIR%%/skytools/installer_config.pyc
+%%PYTHON_SITELIBDIR%%/skytools/quoting.py
+%%PYTHON_SITELIBDIR%%/skytools/quoting.pyc
+%%PYTHON_SITELIBDIR%%/skytools/scripting.py
+%%PYTHON_SITELIBDIR%%/skytools/scripting.pyc
+%%PYTHON_SITELIBDIR%%/skytools/skylog.py
+%%PYTHON_SITELIBDIR%%/skytools/skylog.pyc
+%%PYTHON_SITELIBDIR%%/skytools/sqltools.py
+%%PYTHON_SITELIBDIR%%/skytools/sqltools.pyc
+@dirrm %%PYTHON_SITELIBDIR%%/skytools
+@dirrm %%PYTHON_SITELIBDIR%%/pgq
+@dirrm %%PYTHON_SITELIBDIR%%/londiste
+@dirrmtry %%PYTHON_SITELIBDIR%%
+%%EXAMPLESDIR%%/conf/bulk_loader.ini.templ
+%%EXAMPLESDIR%%/conf/cube_dispatcher.ini.templ
+%%EXAMPLESDIR%%/conf/londiste.ini
+%%EXAMPLESDIR%%/conf/pgqadm.ini
+%%EXAMPLESDIR%%/conf/queue_mover.ini.templ
+%%EXAMPLESDIR%%/conf/queue_splitter.ini.templ
+%%EXAMPLESDIR%%/conf/scriptmgr.ini.templ
+%%EXAMPLESDIR%%/conf/table_dispatcher.ini.templ
+%%EXAMPLESDIR%%/conf/wal-master.ini
+%%EXAMPLESDIR%%/conf/wal-slave.ini
+@dirrm %%EXAMPLESDIR%%/conf
+@dirrm %%EXAMPLESDIR%%
+lib/postgresql/logtriga.so
+lib/postgresql/txid.so
+share/doc/postgresql/contrib/README.londiste
+share/doc/postgresql/contrib/README.pgq
+share/doc/postgresql/contrib/README.pgq_ext
+share/doc/postgresql/contrib/README.txid
+share/postgresql/contrib/logtriga.sql
+share/postgresql/contrib/londiste.sql
+share/postgresql/contrib/londiste.upgrade.sql
+share/postgresql/contrib/pgq.sql
+share/postgresql/contrib/pgq.upgrade.sql
+share/postgresql/contrib/pgq_ext.sql
+share/postgresql/contrib/uninstall_txid.sql
+share/postgresql/contrib/txid.sql
+@dirrmtry lib/postgresql
+@dirrmtry share/doc/postgresql/contrib
+@dirrmtry share/doc/postgresql
+@dirrmtry share/postgresql/contrib
+@dirrmtry share/postgresql
