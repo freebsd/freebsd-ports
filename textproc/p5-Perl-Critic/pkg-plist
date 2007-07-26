@@ -1,6 +1,7 @@
 bin/perlcritic
 %%SITE_PERL%%/Perl/Critic.pm
 %%SITE_PERL%%/Perl/Critic/Config.pm
+%%SITE_PERL%%/Perl/Critic/ConfigErrors.pm
 %%SITE_PERL%%/Perl/Critic/DEVELOPER.pod
 %%SITE_PERL%%/Perl/Critic/Defaults.pm
 %%SITE_PERL%%/Perl/Critic/Document.pm
@@ -53,6 +54,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/RequireRcsKeywords.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitAutomaticExportation.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitEvilModules.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitExcessMainComplexity.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitMultiplePackages.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/RequireBarewordIncludes.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/RequireEndWithOne.pm
@@ -85,9 +87,11 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitEscapedCharacters.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitInterpolationOfLiterals.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitLeadingZeros.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitLongChainsOfMethodCalls.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitMismatchedOperators.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitMixedBooleanOperators.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitNoisyQuotes.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitQuotesAsQuotelikeOperatorDelimiters.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitVersionStrings.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/RequireInterpolationOfMetachars.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/RequireNumberSeparators.pm
@@ -107,11 +111,15 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/PolicyListing.pm
 %%SITE_PERL%%/Perl/Critic/PolicySummary.pod
 %%SITE_PERL%%/Perl/Critic/ProfilePrototype.pm
+%%SITE_PERL%%/Perl/Critic/Statistics.pm
 %%SITE_PERL%%/Perl/Critic/TestUtils.pm
 %%SITE_PERL%%/Perl/Critic/Theme.pm
 %%SITE_PERL%%/Perl/Critic/UserProfile.pm
 %%SITE_PERL%%/Perl/Critic/Utils.pm
+%%SITE_PERL%%/Perl/Critic/Utils/McCabe.pm
+%%SITE_PERL%%/Perl/Critic/Utils/PPI.pm
 %%SITE_PERL%%/Perl/Critic/Violation.pm
+@dirrm %%SITE_PERL%%/Perl/Critic/Utils
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/Variables
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.05.1
+PORTVERSION=	1.06.1
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Perl
@@ -33,6 +33,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Config.3 \
 	Perl::Critic::DEVELOPER.3 \
 	Perl::Critic::Defaults.3 \
+	Perl::Critic::ConfigErrors.3 \
 	Perl::Critic::Document.3 \
 	Perl::Critic::Policy.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitLvalueSubstr.3 \
@@ -83,6 +84,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Miscellanea::RequireRcsKeywords.3 \
 	Perl::Critic::Policy::Modules::ProhibitAutomaticExportation.3 \
 	Perl::Critic::Policy::Modules::ProhibitEvilModules.3 \
+	Perl::Critic::Policy::Modules::ProhibitExcessMainComplexity.3 \
 	Perl::Critic::Policy::Modules::ProhibitMultiplePackages.3 \
 	Perl::Critic::Policy::Modules::RequireBarewordIncludes.3 \
 	Perl::Critic::Policy::Modules::RequireEndWithOne.3 \
@@ -115,9 +117,11 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitEscapedCharacters.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitInterpolationOfLiterals.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitLeadingZeros.3 \
+	Perl::Critic::Policy::ValuesAndExpressions::ProhibitLongChainsOfMethodCalls.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitMismatchedOperators.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitMixedBooleanOperators.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitNoisyQuotes.3 \
+	Perl::Critic::Policy::ValuesAndExpressions::ProhibitQuotesAsQuotelikeOperatorDelimiters.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitVersionStrings.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireInterpolationOfMetachars.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireNumberSeparators.3 \
@@ -137,10 +141,13 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::PolicyListing.3 \
 	Perl::Critic::PolicySummary.3 \
 	Perl::Critic::ProfilePrototype.3 \
+	Perl::Critic::Statistics.3 \
 	Perl::Critic::TestUtils.3 \
 	Perl::Critic::Theme.3 \
 	Perl::Critic::UserProfile.3 \
 	Perl::Critic::Utils.3 \
+	Perl::Critic::Utils::McCabe.3 \
+	Perl::Critic::Utils::PPI.3 \
 	Perl::Critic::Violation.3
 
 .include <bsd.port.mk>
