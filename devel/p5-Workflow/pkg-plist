@@ -29,52 +29,6 @@
 %%SITE_PERL%%/Workflow/Validator/InEnumeratedType.pm
 %%SITE_PERL%%/Workflow/Validator/MatchesDateFormat.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Workflow/.packlist
-%%DATADIR%%/README
-%%DATADIR%%/workflow_csv.sql
-%%DATADIR%%/workflow_mysql.sql
-%%DATADIR%%/workflow_other.sql
-%%DATADIR%%/workflow_pg.sql
-%%DATADIR%%/workflow_sqlite.sql
-%%EXAMPLESDIR%%/ticket/App/Action/TicketComment.pm
-%%EXAMPLESDIR%%/ticket/App/Action/TicketCreate.pm
-%%EXAMPLESDIR%%/ticket/App/Action/TicketUpdate.pm
-%%EXAMPLESDIR%%/ticket/App/Condition/HasUserAndTicket.pm
-%%EXAMPLESDIR%%/ticket/App/Condition/IsCreator.pm
-%%EXAMPLESDIR%%/ticket/App/Condition/IsWorker.pm
-%%EXAMPLESDIR%%/ticket/App/Ticket.pm
-%%EXAMPLESDIR%%/ticket/App/User.pm
-%%EXAMPLESDIR%%/ticket/App/Web.pm
-%%EXAMPLESDIR%%/ticket/README
-%%EXAMPLESDIR%%/ticket/log4perl.conf
-%%EXAMPLESDIR%%/ticket/ticket.cgi
-%%EXAMPLESDIR%%/ticket/ticket.pl
-%%EXAMPLESDIR%%/ticket/ticket.sql
-%%EXAMPLESDIR%%/ticket/ticket_csv.sql
-%%EXAMPLESDIR%%/ticket/ticket_pg.sql
-%%EXAMPLESDIR%%/ticket/ticket_web.pl
-%%EXAMPLESDIR%%/ticket/web_templates/error.tmpl
-%%EXAMPLESDIR%%/ticket/web_templates/error_message.tmpl
-%%EXAMPLESDIR%%/ticket/web_templates/index.tmpl
-%%EXAMPLESDIR%%/ticket/web_templates/ticket_comment.tmpl
-%%EXAMPLESDIR%%/ticket/web_templates/ticket_form.tmpl
-%%EXAMPLESDIR%%/ticket/web_templates/workflow_actions.tmpl
-%%EXAMPLESDIR%%/ticket/web_templates/workflow_created.tmpl
-%%EXAMPLESDIR%%/ticket/web_templates/workflow_fetched.tmpl
-%%EXAMPLESDIR%%/ticket/web_templates/workflow_history.tmpl
-%%EXAMPLESDIR%%/ticket/web_templates/workflow_summary.tmpl
-%%EXAMPLESDIR%%/ticket/web_workflow.xml
-%%EXAMPLESDIR%%/ticket/workflow.xml
-%%EXAMPLESDIR%%/ticket/workflow_action.xml
-%%EXAMPLESDIR%%/ticket/workflow_condition.xml
-%%EXAMPLESDIR%%/ticket/workflow_persister.xml
-%%EXAMPLESDIR%%/ticket/workflow_validator.xml
-@dirrm %%EXAMPLESDIR%%/ticket/web_templates
-@dirrm %%EXAMPLESDIR%%/ticket/App/Condition
-@dirrm %%EXAMPLESDIR%%/ticket/App/Action
-@dirrm %%EXAMPLESDIR%%/ticket/App
-@dirrm %%EXAMPLESDIR%%/ticket
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Workflow
 @dirrm %%SITE_PERL%%/Workflow/Validator
 @dirrm %%SITE_PERL%%/Workflow/Persister/DBI
