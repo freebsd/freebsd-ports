@@ -1825,6 +1825,7 @@ de-citrix_ica	ports/german/citrix_ica
 de-dict		ports/german/dict
 de-digibux	ports/german/digibux
 de-ding		ports/german/ding
+de-eric4	ports/german/eric4
 de-geonext	ports/german/geonext
 de-ispell	ports/german/ispell
 de-ispell-alt	ports/german/ispell-alt
