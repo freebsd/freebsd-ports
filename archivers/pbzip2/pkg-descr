@@ -4,3 +4,4 @@ of this version is fully compatible with bzip2 v1.0.2 (ie: anything compressed
 with pbzip2 can be decompressed with bzip2).
 
 WWW: http://compression.ca/pbzip2/
+Author: Jeff Gilchrist <pbzip2 [at] compression {dot} ca>
