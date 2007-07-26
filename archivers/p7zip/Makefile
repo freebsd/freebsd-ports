@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p7zip
-PORTVERSION=	4.49
+PORTVERSION=	4.51
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src_all
@@ -17,7 +17,7 @@ COMMENT=	File archiver with high compression ratio
 USE_BZIP2=	yes
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
-MAN1=		7z.1 7za.1 7zr.1
+MAN1=		7z.1 7za.1 7zr.1 p7zip.1
 
 DLLDIR=		${PREFIX}/libexec/p7zip
 PLIST_SUB=	MODULES=""
@@ -47,6 +47,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/share/doc/p7zip/DOCS|${DOCSDIR}|' \
 		${WRKSRC}/man1/*
 	${MV} ${WRKSRC}/README ${WRKSRC}/DOCS/readme.unix
+	${MV} ${WRKSRC}/contrib/gzip-like_CLI_wrapper_for_7z/man1/p7zip.1 ${WRKSRC}/man1/
 
 do-install:
 	${INSTALL} -d ${DLLDIR}/
@@ -62,7 +63,7 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/DOCS/&&${COPYTREE_SHARE} \* ${DOCSDIR}/
+	@cd ${WRKSRC}/DOCS/&&${COPYTREE_SHARE} . ${DOCSDIR}/
 .endif
 	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/man1/,} ${MAN1PREFIX}/man/man1/
 

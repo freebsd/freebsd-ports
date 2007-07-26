@@ -42,6 +42,7 @@ libexec/p7zip/7zCon.sfx
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/password.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/recurse.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/sfx.htm
+%%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/ssc.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/stdin.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/stdout.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/stop_switch.htm
