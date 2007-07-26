@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-PageCache
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -18,7 +18,7 @@ COMMENT=	Cache the output of entire pages
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Plugin::PageCache.3
 
