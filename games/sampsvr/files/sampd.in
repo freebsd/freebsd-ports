@@ -21,7 +21,7 @@ load_rc_config $name
 : ${sampd_chdir="%%SAMPDIR%%"}
 
 command="%%SAMPDIR%%/samp02svr"
-command_args="&"
+command_args="> /dev/null &"
 required_files="%%PREFIX%%/etc/sampsvr.cfg"
 start_precmd="sampd_prestart"
 stop_precmd="sampd_prestop"
