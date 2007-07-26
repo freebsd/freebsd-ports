@@ -6,6 +6,7 @@
 
 PORTNAME=	mu-conference
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.gna.org/mu-conference/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -76,8 +77,8 @@ SUB_LIST+=	JABBER_REQUIRE="${JABBER_REQUIRE}" \
 		MUC_LOGDIR=${MUC_LOGDIR}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#=$$(CFLAGS)#=#g' \
-		-e 's#CFLAGS[:]*=#CFLAGS+=#g' \
+	@${REINPLACE_CMD} -e 's/=$$(CFLAGS)/=/g;s/^CFLAGS[:]*=/CFLAGS+=/g' \
+		-e 's/^CC:*=/CC?=/g;s|gcc |$$(CC) |;s|-O2||g' \
 		-e 's#`pkg-config#`${LOCALBASE}/bin/pkg-config#g' \
 		${WRKSRC}/Makefile ${WRKSRC}/*/Makefile \
 		${WRKSRC}/*/*/Makefile
