@@ -33,12 +33,11 @@ NAGIOSDIR?=	/var/spool/nagios
 NAGIOSUID=	181
 NAGIOSGID=	${NAGIOSUID}
 
-CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
+CONFIGURE_ARGS+=	--bindir=${PREFIX}/sbin \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--sysconfdir=${PREFIX}/etc \
 		--with-nrpe-user=${NAGIOSUSER} \
-		--with-nrpe-group=${NAGIOSGROUP} \
-		--prefix=${PREFIX}
+		--with-nrpe-group=${NAGIOSGROUP}
 
 PLIST_FILES=	sbin/nrpe2 etc/nrpe.cfg-sample libexec/nagios/check_nrpe2
 
