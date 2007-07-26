@@ -7,16 +7,17 @@
 #
 
 PORTNAME=	pbzip2
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	archivers
 MASTER_SITES=	http://compression.ca/pbzip2/ CENKES
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel BZIP2
 
-PLIST_FILES=	bin/pbzip2
+PLIST_FILES=	bin/pbzip2 bin/pbunzip2
 
 MAN1=	pbzip2.1
+MLINKS=	pbzip2.1 pbunzip2.1
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -30,6 +31,7 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	@${LN} -sf ${PORTNAME} ${PREFIX}/bin/pbunzip2
 	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>
