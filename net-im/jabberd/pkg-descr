@@ -1,4 +1,5 @@
-The Jabber server (jabberd) is a daemon for Jabber clients to connect
-and communicate with.
+jabberd 2.x series is the next generation of the Jabber/XMPP server.
+It has been rewritten from the ground up to be scalable, architecturally 
+sound and to support the latest protocol extensions coming out of the XSF. 
 
-WWW: http://jabberd.jabberstudio.org/
+WWW: http://jabberd2.xiaoka.com/

@@ -1,4 +1,4 @@
-@unexec [ ! -f /var/jabberd/pid/router.pid ] || %D/etc/rc.d/jabberd.sh stop || true
+@unexec [ ! -f /var/jabberd/pid/router.pid ] || %D/etc/rc.d/jabberd stop || true
 bin/c2s
 bin/jabberd
 bin/resolver
@@ -11,6 +11,8 @@ etc/jabberd/c2s.xml.dist
 etc/jabberd/jabberd.cfg.dist
 @unexec if cmp -s %D/etc/jabberd/resolver.xml %D/etc/jabberd/resolver.xml.dist; then rm -f %D/etc/jabberd/resolver.xml; fi
 etc/jabberd/resolver.xml.dist
+@unexec if cmp -s %D/etc/jabberd/router-filter.xml %D/etc/jabberd/router-filter.xml.dist; then rm -f %D/etc/jabberd/router-filter.xml; fi
+etc/jabberd/router-filter.xml.dist
 @unexec if cmp -s %D/etc/jabberd/router-users.xml %D/etc/jabberd/router-users.xml.dist; then rm -f %D/etc/jabberd/router-users.xml; fi
 etc/jabberd/router-users.xml.dist
 @unexec if cmp -s %D/etc/jabberd/router.xml %D/etc/jabberd/router.xml.dist; then rm -f %D/etc/jabberd/router.xml; fi
@@ -21,8 +23,101 @@ etc/jabberd/s2s.xml.dist
 etc/jabberd/sm.xml.dist
 @unexec if cmp -s %D/etc/jabberd/templates/roster.xml %D/etc/jabberd/templates/roster.xml.dist; then rm -f %D/etc/jabberd/templates/roster.xml; fi
 etc/jabberd/templates/roster.xml.dist
-%%DATADIR%%/db-setup.mysql
-%%DATADIR%%/db-setup.pgsql
-@dirrm %%DATADIR%%
+%%SUB_ANON%%lib/jabberd/authreg_anon.la
+%%SUB_ANON%%lib/jabberd/authreg_anon.so
+%%SUB_BDB%%lib/jabberd/authreg_db.la
+%%SUB_BDB%%lib/jabberd/authreg_db.so
+%%SUB_LDAP%%lib/jabberd/authreg_ldap.la
+%%SUB_LDAP%%lib/jabberd/authreg_ldap.so
+%%SUB_MYSQL%%lib/jabberd/authreg_mysql.la
+%%SUB_MYSQL%%lib/jabberd/authreg_mysql.so
+%%SUB_PAM%%lib/jabberd/authreg_pam.la
+%%SUB_PAM%%lib/jabberd/authreg_pam.so
+%%SUB_PIPE%%lib/jabberd/authreg_pipe.la
+%%SUB_PIPE%%lib/jabberd/authreg_pipe.so
+%%SUB_PGSQL%%lib/jabberd/authreg_pgsql.la
+%%SUB_PGSQL%%lib/jabberd/authreg_pgsql.so
+%%SUB_SQLITE%%lib/jabberd/authreg_sqlite.la
+%%SUB_SQLITE%%lib/jabberd/authreg_sqlite.so
+lib/jabberd/mod_active.la
+lib/jabberd/mod_active.so
+lib/jabberd/mod_active.so.0
+lib/jabberd/mod_amp.la
+lib/jabberd/mod_amp.so
+lib/jabberd/mod_amp.so.0
+lib/jabberd/mod_announce.la
+lib/jabberd/mod_announce.so
+lib/jabberd/mod_announce.so.0
+lib/jabberd/mod_deliver.la
+lib/jabberd/mod_deliver.so
+lib/jabberd/mod_deliver.so.0
+lib/jabberd/mod_disco-publish.la
+lib/jabberd/mod_disco-publish.so
+lib/jabberd/mod_disco-publish.so.0
+lib/jabberd/mod_disco.la
+lib/jabberd/mod_disco.so
+lib/jabberd/mod_disco.so.0
+lib/jabberd/mod_echo.la
+lib/jabberd/mod_echo.so
+lib/jabberd/mod_echo.so.0
+lib/jabberd/mod_help.la
+lib/jabberd/mod_help.so
+lib/jabberd/mod_help.so.0
+lib/jabberd/mod_iq-last.la
+lib/jabberd/mod_iq-last.so
+lib/jabberd/mod_iq-last.so.0
+lib/jabberd/mod_iq-ping.la
+lib/jabberd/mod_iq-ping.so
+lib/jabberd/mod_iq-ping.so.0
+lib/jabberd/mod_iq-private.la
+lib/jabberd/mod_iq-private.so
+lib/jabberd/mod_iq-private.so.0
+lib/jabberd/mod_iq-time.la
+lib/jabberd/mod_iq-time.so
+lib/jabberd/mod_iq-time.so.0
+lib/jabberd/mod_iq-vcard.la
+lib/jabberd/mod_iq-vcard.so
+lib/jabberd/mod_iq-vcard.so.0
+lib/jabberd/mod_iq-version.la
+lib/jabberd/mod_iq-version.so
+lib/jabberd/mod_iq-version.so.0
+lib/jabberd/mod_offline.la
+lib/jabberd/mod_offline.so
+lib/jabberd/mod_offline.so.0
+lib/jabberd/mod_presence.la
+lib/jabberd/mod_presence.so
+lib/jabberd/mod_presence.so.0
+lib/jabberd/mod_privacy.la
+lib/jabberd/mod_privacy.so
+lib/jabberd/mod_privacy.so.0
+lib/jabberd/mod_roster.la
+lib/jabberd/mod_roster.so
+lib/jabberd/mod_roster.so.0
+lib/jabberd/mod_session.la
+lib/jabberd/mod_session.so
+lib/jabberd/mod_session.so.0
+lib/jabberd/mod_status.la
+lib/jabberd/mod_status.so
+lib/jabberd/mod_status.so.0
+lib/jabberd/mod_template-roster.la
+lib/jabberd/mod_template-roster.so
+lib/jabberd/mod_template-roster.so.0
+lib/jabberd/mod_vacation.la
+lib/jabberd/mod_vacation.so
+lib/jabberd/mod_vacation.so.0
+lib/jabberd/mod_validate.la
+lib/jabberd/mod_validate.so
+lib/jabberd/mod_validate.so.0
+lib/jabberd/storage_fs.la
+lib/jabberd/storage_fs.so
+%%SUB_BDB%%lib/jabberd/storage_db.la
+%%SUB_BDB%%lib/jabberd/storage_db.so
+%%SUB_MYSQL%%lib/jabberd/storage_mysql.la
+%%SUB_MYSQL%%lib/jabberd/storage_mysql.so
+%%SUB_PGSQL%%lib/jabberd/storage_pgsql.la
+%%SUB_PGSQL%%lib/jabberd/storage_pgsql.so
+%%SUB_SQLITE%%lib/jabberd/storage_sqlite.la
+%%SUB_SQLITE%%lib/jabberd/storage_sqlite.so
+@dirrm lib/jabberd
 @dirrmtry etc/jabberd/templates
 @dirrmtry etc/jabberd
