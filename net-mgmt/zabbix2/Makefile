@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}/bin/pg_config
 .elifdef WITH_SQLITE
 USE_SQLITE=	yes
 USE_PHP+=	sqlite
-CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
+CONFIGURE_ARGS+=--with-sqlite3=${LOCALBASE}
 .else
 IGNORE=	zabbix needs a database backend
 .endif
