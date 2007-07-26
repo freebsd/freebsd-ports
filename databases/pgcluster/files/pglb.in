@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/databases/pgcluster/files/Attic/pglb.in,v 1.1 2007-07-16 10:53:48 rafan Exp $
+# $FreeBSD: /tmp/pcvs/ports/databases/pgcluster/files/Attic/pglb.in,v 1.2 2007-07-26 16:05:04 rafan Exp $
 #
 # PROVIDE: pglb
 # REQUIRE: DAEMON
@@ -10,25 +10,26 @@
 # pglb_enable="YES"
 #
 
-pglb_enable=${pglb_enable-"NO"}
-pglb_data=${pglb_data-"%%PREFIX%%/pgsql/data"}
-
 . %%RC_SUBR%%
 
-load_rc_config pglb
-
-name=pglb
+name="pglb"
 rcvar=`set_rcvar`
-command=%%PREFIX%%/bin/pglb
-pglb_user=pgsql
-stop_cmd="pglb_stop"
 
+command=%%PREFIX%%/bin/${name}
+
+load_rc_config $name
+
+: ${pglb_enable="NO"}
+: ${pglb_data="%%PREFIX%%/pgsql/data"}
+
+pglb_user=pgsql
 pglb_flags="${pglb_flags} -D ${pglb_data}"
+
+stop_cmd="pglb_stop"
 
 pglb_stop()
 {
     su -m ${pglb_user} -c "exec ${command} -D ${pglb_data} stop"
 }
 
-load_rc_config $name
 run_rc_command "$1"
