@@ -19,20 +19,20 @@ COMMENT=	A non-graphical, text-based World-Wide Web client
 CONFLICTS=	lynx-current*
 
 USE_BZIP2=	yes
-USE_ICONV=	yes
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-6
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies --with-ssl \
-		--with-curses-dir=/usr --with-libiconv-prefix="${LOCALBASE}"
+		--with-curses-dir=/usr
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS='@comment '
 .else
 USE_GETTEXT=	yes
-CONFIGURE_ARGS+=--enable-nls
+USE_ICONV=	yes
+CONFIGURE_ARGS+=--enable-nls --with-libiconv-prefix="${LOCALBASE}"
 PLIST_SUB+=	NLS=''
 .endif
 
