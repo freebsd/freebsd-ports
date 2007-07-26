@@ -3106,7 +3106,7 @@ devel/rx||2007-07-22|Expired: has been decommissioned and is no longer developed
 security/metasploit-devel|security/metasploit|2007-07-23|move to security/metasploit
 x11/nvidia-driver-7184|x11/nvidia-driver-71xx|2007-07-23|moved to x11/nvidia-driver-71xx
 x11/nvidia-driver-9631|x11/nvidia-driver-96xx|2007-07-23|moved to x11/nvidia-driver-96xx
-french/fr-py-qt4-eric4||2007-07-25|Removed
-german/de-py-qt4-eric4||2007-07-25|Removed
-russian/ru-py-qt4-eric4||2007-07-25|Removed
-devel/py-qt4-eric4||2007-07-25|Removed
+french/fr-py-qt4-eric4|french/eric4|2007-07-25|Moved to french/eric4
+german/de-py-qt4-eric4|german/eric4|2007-07-25|Moved to german/eric4
+russian/ru-py-qt4-eric4|russian/eric4|2007-07-25|Moved to russian/eric4
+devel/py-qt4-eric4|devel/eric4|2007-07-25|Moved to devel/eric4
