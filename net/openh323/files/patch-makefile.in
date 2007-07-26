@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- Makefile.in.orig
-+++ Makefile.in
+--- Makefile.in.orig	2005-08-05 01:31:59.000000000 +0600
++++ Makefile.in	2007-07-13 16:11:26.000000000 +0600
 @@ -337,22 +337,14 @@
  install:
  	mkdir -p $(DESTDIR)$(LIBDIR)
@@ -30,3 +27,11 @@ $FreeBSD$
  	)
  	( for dir in $(DESTDIR)$(LIBDIR) \
  		     $(DESTDIR)$(PREFIX)/include/openh323 \
+@@ -362,6 +354,7 @@
+ 	( for fn in include/*.h ; do \
+ 		$(INSTALL) -m 444 $$fn $(DESTDIR)$(PREFIX)/include/openh323 ; \
+ 	done)
++	$(INSTALL) -m 444 version.h $(DESTDIR)$(PREFIX)/share/openh323
+ 	$(INSTALL) -m 444 openh323u.mak $(DESTDIR)$(PREFIX)/share/openh323
+ 	(cd plugins; $(MAKE) install)
+ 
