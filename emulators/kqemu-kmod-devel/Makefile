@@ -34,9 +34,7 @@ PLIST_FILES=	"include/kqemu/kqemu.h"
 PLIST_FILES+=	"@dirrm include/kqemu"
 PLIST_FILES+=	"@cwd /"
 PLIST_FILES+=	${KMODDIR:C,^/,,}/kqemu.ko
-.if ${OSVERSION} >= 500000
 PLIST_FILES+=	"@unexec kldxref ${KMODDIR}"
-.endif
 
 MAKEFILE=	Makefile.freebsd
 
@@ -45,9 +43,7 @@ MAKE_ARGS+=	ARCH=x86_64
 .endif
 
 # install where x11/nvidia-driver does also:
-.if ${OSVERSION} >= 500000
 KMODDIR=	/boot/modules
-.endif
 
 MAKE_ENV+=	KMODDIR="${KMODDIR}"
 
@@ -91,12 +87,6 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/kqemu-doc.html ${WRKSRC}/kqemu-tech.html \
 		${DOCSDIR}
-.endif
-.if ${OSVERSION} < 500000
-	if [ ! -e /dev/kqemu ]; then\
-		mknod /dev/kqemu c 250 0 ; \
-	fi
-	${CHMOD} 666 /dev/kqemu
 .endif
 
 .include <bsd.port.post.mk>
