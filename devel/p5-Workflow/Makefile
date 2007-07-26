@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Workflow
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Workflow
@@ -65,14 +65,31 @@ MAN3=	Workflow.3 \
 	Workflow::Validator::InEnumeratedType.3 \
 	Workflow::Validator::MatchesDateFormat.3
 
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
+.endif
+.if !defined(NOPORTDATA)
+PORTDATA=	*
+.endif
 .if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}/ticket
-	@${CP} -R ${WRKSRC}/eg/ticket ${EXAMPLESDIR}/
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/eg && ${COPYTREE_SHARE} ticket/\* ${EXAMPLESDIR}/)
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+.endif
+.if !defined(NOPORTDATA)
 	@${MKDIR} ${DATADIR}
-	@${CP} -R ${WRKSRC}/struct/* ${DATADIR}/
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} struct/\* ${DATADIR}/)
 	@${ECHO_MSG} "===> SQL data structures installed in ${DATADIR}."
+.endif
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/ && ${CP} -R README Changes TODO VERSION doc ${DOCSDIR}/)
+	@${ECHO_MSG} "===> Docs are installed in ${DOCSDIR}."
 .endif
 
 .include <bsd.port.pre.mk>
