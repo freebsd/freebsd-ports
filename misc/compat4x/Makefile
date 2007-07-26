@@ -148,6 +148,6 @@ post-install:	install-ldconfig-file
 	@${CAT} ${PKGMESSAGE}
 
 pre-clean:
-	@[ -w ${WRKSRC} ] && chflags -R noschg ${WRKSRC} || ${TRUE}
+	@[ -w ${WRKDIR}/var ] && chflags -R noschg ${WRKDIR}/var || ${TRUE}
 
 .include <bsd.port.post.mk>
