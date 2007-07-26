@@ -5,12 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	sampsvr
-PORTVERSION=	0.2.1
+DISTVERSION=	0.2.1.2
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.sa-mp.com/files/ \
 		http://eu.littlewhitey.com/ \
-		http://dedi.azer.nl/upload/
-DISTNAME=	samp021svr
+		http://dedi.azer.nl/upload/ \
+		http://www.kfcgang.com/files/
+DISTNAME=	samp021r2.svr
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Rockstar's GTA: San Andreas multiplayer modification dedicated server
