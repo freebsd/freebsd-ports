@@ -2132,6 +2132,7 @@
     SUBDIR += smake
     SUBDIR += smc
     SUBDIR += smv
+    SUBDIR += soapui
     SUBDIR += soup
     SUBDIR += sourcenav
     SUBDIR += sparc-rtems-binutils
