@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+bin/NumberConverter.tcl
 bin/numconv
 include/uninum/uninum.h
 include/uninum/nsdefs.h
