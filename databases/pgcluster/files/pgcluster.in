@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/databases/pgcluster/files/Attic/pgcluster.in,v 1.1 2007-07-16 10:53:48 rafan Exp $
+# $FreeBSD: /tmp/pcvs/ports/databases/pgcluster/files/Attic/pgcluster.in,v 1.2 2007-07-26 16:05:04 rafan Exp $
 #
 # PROVIDE: pgcluster
 # REQUIRE: DAEMON
@@ -14,26 +14,29 @@
 # pgcluster_flags="-w -s"
 #
 
-pgcluster_enable=${pgcluster_enable-"NO"}
-pgcluster_data=${pgcluster_data-"%%PREFIX%%/pgsql/data"}
-pgcluster_flags=${pgcluster_flags-"-w -s"}
-
 . %%RC_SUBR%%
 
-load_rc_config pgcluster
-
-name=pgcluster
+name="pgcluster"
 rcvar=`set_rcvar`
+
 command=%%PREFIX%%/bin/pg_ctl
+
+load_rc_config ${name}
+
+: ${pgcluster_enable="NO"}
+: ${pgcluster_data="%%PREFIX%%/pgsql/data"}
+: ${pgcluster_flags="-w -s"}
+
 pgcluster_user=pgsql
+pgcluster_flags="${pgcluster_flags} -D ${pgcluster_data}"
+pidfile="${pgcluster_data}/postmaster.pid"
+
 extra_commands="initdb recover"
+
 initdb_cmd="pgcluster_initdb"
 recover_cmd="pgcluster_recover"
 start_cmd="pgcluster_start"
 stop_cmd="pgcluster_stop"
-
-pgcluster_flags="${pgcluster_flags} -D ${pgcluster_data}"
-pidfile="${pgcluster_data}/postmaster.pid"
 
 pgcluster_start()
 {
@@ -52,5 +55,4 @@ pgcluster_initdb()
     su -m ${pgcluster_user} -c "exec %%PREFIX%%/bin/initdb -D ${pgcluster_data}"
 }
 
-load_rc_config $name
 run_rc_command "$1"

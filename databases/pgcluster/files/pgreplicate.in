@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/databases/pgcluster/files/Attic/pgreplicate.in,v 1.1 2007-07-16 10:53:48 rafan Exp $
+# $FreeBSD: /tmp/pcvs/ports/databases/pgcluster/files/Attic/pgreplicate.in,v 1.2 2007-07-26 16:05:04 rafan Exp $
 #
 # PROVIDE: pgreplicate
 # REQUIRE: DAEMON
@@ -11,26 +11,27 @@
 # pgreplicate_enable="YES"
 #
 
-pgreplicate_enable=${pgreplicate_enable-"NO"}
-pgreplicate_data=${pgreplicate_data-"%%PREFIX%%/pgsql/data"}
-
 . %%RC_SUBR%%
 
-load_rc_config pgreplicate
-
-name=pgreplicate
+name="pgreplicate"
 rcvar=`set_rcvar`
-command=%%PREFIX%%/bin/pgreplicate
-pgreplicate_user=pgsql
-stop_cmd="pgreplicate_stop"
 
+command=%%PREFIX%%/bin/${name}
+
+load_rc_config $name
+
+: ${pgreplicate_enable="NO"}
+: ${pgreplicate_data="%%PREFIX%%/pgsql/data"}
+
+pgreplicate_user=pgsql
 pgreplicate_flags="${pgreplicate_flags} -D ${pgreplicate_data}"
-pidfile="${pgreplicate_data}/pgreplicate.pid"
+pidfile="${pgreplicate_data}/${name}.pid"
+
+stop_cmd="pgreplicate_stop"
 
 pgreplicate_stop()
 {
     su -m ${pgreplicate_user} -c "exec ${command} -D ${pgreplicate_data} stop"
 }
 
-load_rc_config $name
 run_rc_command "$1"
