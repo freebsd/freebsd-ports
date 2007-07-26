@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	2.1.7
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
 		http://ftp.gwdg.de/pub/misc/otrs/ \
 		http://mirror.xaranet.de/otrs/
 
-MAINTAINER=	snb@threerings.net
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Open Ticket Request System
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/Date/Pcalc.pm:${PORTSDIR}/devel/p5-Date-Pcalc \
@@ -27,10 +27,12 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/Net/POP3.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/PDF/API2.pm:${PORTSDIR}/textproc/p5-PDF-API2 \
+		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
 		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -54,21 +56,17 @@ PM_DIRS_LIST=	Kernel Kernel/Config Kernel/Config/Files Kernel/Language \
 		Kernel/Output/HTML/Standard System System/Auth System/AuthSession \
 		System/Crypt System/CustomerAuth System/CustomerUser \
 		System/CustomerUser/ System/
-DOCS_DIRS_LIST=	"" manual/en/pdf
+DOCS_DIRS_LIST=	"" manual/en
 DOCS_FILES_LIST=	C* INSTALL RE* TODO UPGRADING
 
 SCRIPTS_DIRS_LIST=	"" database test tools
-CLEAN_CPAN_DIRS=	Authen Date Email IO Mail MIME XML auto
+CLEAN_CPAN_DIRS=	Algorithm Authen Crypt Date Email IO Mail MIME Text XML auto
 CLEAN_FILES=	scripts/apache2-httpd.include.conf scripts/suse* \
 		scripts/redhat* scripts/DBUpdate*
 
 USE_APACHE=	YES
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again
-.endif
 
 .ifdef WITH_MYSQL
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
@@ -154,5 +152,11 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+
+x-generate-plist:
+	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
+	| ${SED} -E '\
+		s=share/doc/${PORTNAME}=%%DOCSDIR%%=; \
+	')> temp-pkg-plist
 
 .include <bsd.port.post.mk>
