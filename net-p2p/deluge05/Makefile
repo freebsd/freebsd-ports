@@ -8,7 +8,7 @@
 PORTNAME=	deluge
 PORTVERSION=	0.5.2
 CATEGORIES=	net-p2p python
-MASTER_SITES=	http://download.deluge-torrent.org/stable/
+MASTER_SITES=	http://download.deluge-torrent.org/tarball/${PORTVERSION}/
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A Bittorrent client, using Python, GTK+2 and Rasterbar libtorrent
@@ -16,8 +16,6 @@ COMMENT=	A Bittorrent client, using Python, GTK+2 and Rasterbar libtorrent
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
-
-BROKEN=		Unfetchable
 
 USE_GNOME=	pygtk2 desktopfileutils
 USE_GETTEXT=	yes
