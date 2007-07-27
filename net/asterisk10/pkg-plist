@@ -281,6 +281,7 @@ lib/asterisk/modules/cdr_custom.so
 lib/asterisk/modules/cdr_manager.so
 %%WITH_POSTGRES%%lib/asterisk/modules/cdr_pgsql.so
 %%WITH_RADIUS%%lib/asterisk/modules/cdr_radius.so
+%%WITH_SQLITE%%lib/asterisk/modules/cdr_sqlite.so
 lib/asterisk/modules/chan_agent.so
 %%WITH_JABBER%%lib/asterisk/modules/chan_gtalk.so
 lib/asterisk/modules/chan_iax2.so

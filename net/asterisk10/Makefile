@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.4.8
+PORTVERSION=	1.4.9
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -45,7 +45,8 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		SNMP		"Enable SNMP support" on \
 		H323		"Enable H.323 support" on \
 		FREETDS		"Enable FreeTDS support" on \
-		JABBER		"Enable Jabber and Gtalk support" on
+		JABBER		"Enable Jabber and Gtalk support" on \
+		SQLITE          "Enable SQLITE support" on
 
 .include <bsd.port.pre.mk>
 
@@ -142,6 +143,15 @@ CONFIGURE_ARGS+= --without-iksemel
 PLIST_SUB+=	WITH_JABBER=""
 CONFIGURE_ARGS+= --with-iksemel
 LIB_DEPENDS+=	iksemel.3:${PORTSDIR}/textproc/iksemel
+.endif
+
+.if defined(WITHOUT_SQLITE)
+PLIST_SUB+=	WITH_SQLITE="@comment "
+CONFIGURE_ARGS+=	--without-sqlite
+.else
+PLIST_SUB+=	WITH_SQLITE=""
+CONFIGURE_ARGS+= --with-sqlite
+LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2
 .endif
 
 post-patch:
