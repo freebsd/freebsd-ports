@@ -82,10 +82,6 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/../../bin/uic
 
 post-configure:
-.if ${OSVERSION} < 700042 && ${ARCH} == "amd64"
-	${REINPLACE_CMD} -E -e 's|CXXFLAGS[[:space:]]*=(.*)|CXXFLAGS=-fno-gcse\1|g' \
-		${WRKSRC}/Makefile
-.endif
 	${REINPLACE_CMD} -e 's|${PREFIX}/lib/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		-e 's|.*$$(QMAKE).*||g' -e 's|(test -z.*||g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \

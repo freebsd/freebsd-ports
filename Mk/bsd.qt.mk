@@ -45,8 +45,13 @@ UIC?=		${QT_PREFIX}/bin/uic-qt4
 QMAKE?=		${QT_PREFIX}/bin/qmake-qt4
 QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-g++
 
+.if ${OSVERSION} < 700042 && ${ARCH} == "amd64"
+QTCPPFLAGS?=	-fno-gcse
+.else
 QTCPPFLAGS?=
+.endif
 QTCGFLIBS?=
+
 .endif # !defined(_POSTMKINCLUDED) && !defined(Qt_Pre_Include)
 
 QT4_VERSION?=		4.3.0

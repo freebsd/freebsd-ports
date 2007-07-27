@@ -7,7 +7,7 @@
 
 PORTNAME=	qmake
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
@@ -78,6 +78,10 @@ USE_GCC=	3.4+
 
 .if ${ARCH} == "alpha"
 CXXFLAGS+=	-mieee
+.endif
+
+.if ${OSVERSION} < 700042 && ${ARCH} == "amd64"
+CXXFLAGS+=	-fno-gcse
 .endif
 
 .include <bsd.port.post.mk>
