@@ -4,8 +4,8 @@
  
  echo "#define WEBINTERFACEPATH \"$prefix/share/sams\" " >> config.h
  
-+CASHE_DIR=./tmp
-+CASHE=${CACHE_DIR}/config.cashe
++CACHE_DIR=./tmp
++CACHE=${CACHE_DIR}/config.cashe
 +[ -d ./tmp ] || mkdir ${CACHE_DIR}
 +[ -f ./tmp/config.cashe ] && truncate -s0 ${CACHE}
 +exec 7>> ${CACHE}
