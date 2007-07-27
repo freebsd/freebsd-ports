@@ -1284,6 +1284,7 @@ chkrootkit	ports/security/chkrootkit
 chmlib		ports/misc/chmlib
 chmsee		ports/deskutils/chmsee
 chmview		ports/converters/chmview
+chntpw		ports/security/chntpw
 choparp		ports/net-mgmt/choparp
 chord		ports/misc/chord
 chord2html	ports/misc/chord2html
