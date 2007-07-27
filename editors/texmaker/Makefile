@@ -7,30 +7,45 @@
 #
 
 PORTNAME=	texmaker
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.6
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@issp.ac.ru
 COMMENT=	LaTeX Development Environment
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
-		xdvi:${PORTSDIR}/print/xdvik \
-		gv:${PORTSDIR}/print/gv \
-		xpdf:${PORTSDIR}/graphics/xpdf \
-${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
+		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui moc qmake rcc uic
 HAS_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
+
+OPTIONS=	XDVI "view dvi with xdvi" On \
+		GV "view ps with gv" On \
+		XPDF "view pdf with xpdf" On
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_XDVI)
+RUN_DEPENDS+=	xdvi:${PORTSDIR}/print/xdvik
+.endif
+
+.if !defined(WITHOUT_GV)
+RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv
+.endif
+
+.if !defined(WITHOUT_XPDF)
+RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
+.endif
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} -unix PREFIX=${PREFIX} texmaker.pro
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
