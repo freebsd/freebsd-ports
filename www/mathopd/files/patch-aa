@@ -1,6 +1,6 @@
---- src/Makefile.orig	Sun Dec 14 20:37:51 2003
-+++ src/Makefile	Thu May  6 12:16:48 2004
-@@ -1,49 +1,8 @@
+--- src/Makefile.orig	Fri Jul 27 15:30:54 2007
++++ src/Makefile	Fri Jul 27 15:35:04 2007
+@@ -1,54 +1,9 @@
 -BIN = mathopd
 -CC = gcc
 -CFLAGS = -O -Wall
@@ -10,26 +10,32 @@
 -PREFIX = /usr/local
 -SBINDIR = $(PREFIX)/sbin
 +PROG=	mathopd
-+SRCS=	base64.c cgi.c config.c core.c dump.c imap.c log.c \
-+	main.c redirect.c request.c util.c stub.c sendfile.c
-+BINDIR?=${PREFIX}/sbin
++SRCS=	
++SRCS=	base64.c cgi.c config.c core.c dump.c imap.c log.c main.c \
++	redirect.c request.c util.c stub.c sendfile.c
++BINDIR?=	${PREFIX}/sbin
 +NOMAN=	yes
 +LDADD=	-lcrypt
  
 -# On Solaris, uncomment the following
--# CPPFLAGS = -DNEED_INET_ATON -DHAVE_CRYPT_H
--# LIBS = -lsocket -lnsl
+-# CPPFLAGS = -DHAVE_CRYPT_H
+-# LIBS = -lsocket -lnsl -lresolv
 -
 -# On Linux, uncomment the following
 -# CPPFLAGS = -DHAVE_CRYPT_H
 -
+-# For Linux or Solaris:
+-# To add support for large files (>2GB), uncomment the following.
+-# You do not need this for 64-bit executables.
+-# CPPFLAGS += -D_FILE_OFFSET_BITS=64
+-
 -OBJS = base64.o cgi.o config.o core.o dump.o imap.o log.o main.o \
--	redirect.o request.o util.o stub.o
+-	redirect.o request.o util.o stub.o $(EXTRA_OBJS)
 -DEPENDS = mathopd.h Makefile
 -
 -# Uncomment the following if your system does not support the poll() function
 -# CPPFLAGS += -DPOLL_EMULATION
--# OBJS += poll-emul.o
+-# EXTRA_OBJS += poll-emul.o
 -
 -# Uncomment the following if your system does not have the socklen_t type
 -# CPPFLAGS += -DNEED_SOCKLEN_T
@@ -43,11 +49,11 @@
 -# CPPFLAGS += -DFREEBSD_SENDFILE
 -# If you define any of the SENDFILE conditionals, make sure to uncomment
 -# the next line as well.
--# OBJS += sendfile.o
+-# EXTRA_OBJS += sendfile.o
 -
 -all: $(BIN)
 -install: $(BIN)
--	install -c $(BIN) $(SBINDIR)
+-	install -c $(BIN) $(DESTDIR)$(SBINDIR)
 -$(BIN): $(OBJS)
 -	$(CC) $(LDFLAGS) -o $(BIN) $(OBJS) $(LIBS)
 -$(OBJS): $(DEPENDS)
