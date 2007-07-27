@@ -8,7 +8,7 @@
 PORTNAME=	gofer
 PORTVERSION=	2.30b
 CATEGORIES=	lang
-MASTER_SITES=	http://www.cse.ogi.edu/~mpj/goferarc/
+MASTER_SITES=	http://web.cecs.pdx.edu/~mpj/goferarc/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	haskell@FreeBSD.org
