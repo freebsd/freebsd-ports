@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httping
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
 		http://critical.ch/distfiles/ \
@@ -18,6 +18,11 @@ COMMENT=	A ping-like tool for HTTP requests
 
 MAN1=		httping.1
 PLIST_FILES=	bin/httping
+
+CFLAGS+=	-DVERSION=\\\"${PORTVERSION}\\\"
+
+post-patch:
+	@${REINPLACE_CMD} -E '/^(DEBUG|CFLAGS)/d' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
