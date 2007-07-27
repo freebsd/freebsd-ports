@@ -135,6 +135,7 @@ bin/ctest
 %%DATADIR%%/Modules/FindPerlLibs.cmake
 %%DATADIR%%/Modules/FindPhysFS.cmake
 %%DATADIR%%/Modules/FindPike.cmake
+%%DATADIR%%/Modules/FindPkgConfig.cmake
 %%DATADIR%%/Modules/FindPythonInterp.cmake
 %%DATADIR%%/Modules/FindPythonLibs.cmake
 %%DATADIR%%/Modules/FindQt.cmake
