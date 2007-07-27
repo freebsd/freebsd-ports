@@ -55,8 +55,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/plugins/accessible/libqtaccessiblecompatwidgets.so
 
 NO_BUILD=	yes
 
-.include "${.CURDIR}/../../Mk/bsd.qt.mk"
 .include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../Mk/bsd.qt.mk"
 
 .if defined(WITH_SQL_PLUGINS)
 RUN_DEPENDS+=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlibase.so:${PORTSDIR}/databases/qt4-ibase-plugin \
