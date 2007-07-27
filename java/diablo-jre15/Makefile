@@ -22,7 +22,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 RESTRICTED=	"License doesn't allow distribution with fee"
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
+USE_XORG+=	xi xp xt xtst
 ONLY_FOR_ARCHS=	i386 amd64
 JRE_VERSION=	1.5.0
 RELEASE_VERSION=07
