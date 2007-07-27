@@ -16,6 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The build utility of the Qt project
 
+QT_NONSTANDARD=	yes
 LATEST_LINK=	qmake4
 REINPLACE_ARGS=	-i ""
 WRKSRC=		${WRKDIR}/${DISTNAME}/qmake
@@ -69,8 +70,8 @@ do-configure:
 	${ECHO} '/* empty */' > ${WRKSRC}/qconfig.h
 	${LN} ${WRKSRC}/qconfig.h ${WRKSRC}/../include/QtCore/qconfig.h
 
-.include "${.CURDIR}/../../Mk/bsd.qt.mk"
 .include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../Mk/bsd.qt.mk"
 
 .if ${OSVERSION} < 500035
 USE_GCC=	3.4+
