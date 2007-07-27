@@ -300,6 +300,10 @@ share/gnome/help/gcrystal/C/figures/size-dlg.png
 share/gnome/help/gcrystal/C/figures/view-settings.png
 share/gnome/help/gcrystal/C/gcrystal.xml
 share/gnome/help/gcrystal/C/legal.xml
+share/gnome/omf/gchem3d-viewer/gchem3d-viewer-C.omf
+share/gnome/omf/gchemcalc/gchemcalc-C.omf
+share/gnome/omf/gcrystal/gcrystal-C.omf
+share/gnome/omf/gchemtable/gchemtable-C.omf
 share/mimelnk/application/x-gcrystal.desktop
 share/icons/hicolor/32x32/mimetypes/gnome-mime-application-x-gcrystal.png
 share/icons/hicolor/32x32/apps/gchem3d-viewer.png
@@ -339,6 +343,10 @@ share/mime/packages/gchemutils.xml
 @dirrm share/gchemutils/glade/table
 @dirrm share/gchemutils/glade
 @dirrm share/gchemutils
+@dirrm share/gnome/omf/gchem3d-viewer
+@dirrm share/gnome/omf/gchemcalc
+@dirrm share/gnome/omf/gcrystal
+@dirrm share/gnome/omf/gchemtable
 @dirrm share/gnome/help/gchem3d-viewer/C/figures
 @dirrm share/gnome/help/gchem3d-viewer/C
 @dirrm share/gnome/help/gchem3d-viewer
