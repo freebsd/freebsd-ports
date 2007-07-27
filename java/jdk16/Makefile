@@ -200,7 +200,8 @@ IGNORE += .\n\n
 .if defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})#{
 IGNORE += Please open http://java.sun.com/javase/downloads/index_jdk5.jsp\n\
 in a web browser and follow the \"Download\" link for\n\
-\"Other Downloads\" to obtain the JCE policy file, ${POLICYFILE}.\n\n
+\"Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy\n\
+Files 5.0\" to obtain the JCE policy file, ${POLICYFILE}.\n\n
 .endif#}
 .if defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})#{
 IGNORE += Please open http://java.sun.com/javase/downloads/index.jsp\n\
