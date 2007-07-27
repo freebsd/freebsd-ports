@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1ed03222-3c65-11dc-b3d3-0016179b2dd5">
+    <topic>vim -- Command Format String Vulnerability</topic>
+    <affects>
+      <package>
+	<name>vim</name>
+	<name>vim-lite</name>
+	<name>vim-ruby</name>
+	<name>vim6</name>
+	<name>vim6-ruby</name>
+	<range><lt>7.1.39</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/25941/">
+	  <p>A format string error in the "helptags_one()" function in
+	    src/ex_cmds.c when running the "helptags" command can be exploited
+	    to execute arbitrary code via specially crafted help files.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-2953</cvename>
+      <url>http://secunia.com/advisories/25941/</url>
+    </references>
+    <dates>
+      <discovery>2007-07-27</discovery>
+      <entry>2007-07-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b73335a5-3bbe-11dc-8e83-0016179b2dd5">
     <topic>libvorbis -- Multiple memory corruption flaws</topic>
     <affects>
