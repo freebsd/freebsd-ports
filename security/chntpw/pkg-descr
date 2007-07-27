@@ -1,0 +1,9 @@
+* This is a utility to (re)set the password of any user that has a valid
+  (local) account on your NT system.
+* You do not need to know the old password to set a new one.
+* It works offline, that is, you have to shutdown your computer and boot off
+  a floppydisk or CD.
+* Will detect and offer to unlock locked or disabled out user accounts!
+* It is also an almost fully functional registry editor!
+
+WWW: http://home.eunet.no/pnordahl/ntpasswd/
