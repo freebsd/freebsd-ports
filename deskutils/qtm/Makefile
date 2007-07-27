@@ -31,8 +31,7 @@ pre-build:
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} -unix QTM.pro
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/applications
-	@${INSTALL_PROGRAM} ${WRKSRC}/QTM ${PREFIX}/bin/
+	@${INSTALL_PROGRAM} ${WRKSRC}/QTM ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
