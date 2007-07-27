@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	CPE1704TKS@bellsouth.net
 COMMENT=	Report about disk space in use, change since last run, etc
 
+BROKEN=		Unfetchable
+
 NO_BUILD=	yes
 USE_PERL5=	yes
 

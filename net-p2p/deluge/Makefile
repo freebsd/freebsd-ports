@@ -17,6 +17,8 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 
+BROKEN=		Unfetchable
+
 USE_GNOME=	pygtk2 desktopfileutils
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
