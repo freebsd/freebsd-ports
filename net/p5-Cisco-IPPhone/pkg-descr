@@ -1,0 +1,10 @@
+This Cisco IPPhone module was created to provide a simple convenient
+method to display Cisco IP Phone objects and gather input from a Cisco
+7940 or 7960 IP Phone.  This module supports all known Cisco XML objects
+for 7940 and 7960 phones.  Knowledge of Cisco XML syntax is not a
+requirement.
+
+This Perl module gives the ability to use simple PERL objects to display XML
+on the IP Phone unlike to Cisco Software Development Kit (SDK) which uses
+Microsoft IIS Server, ASP's, JSP's, Javascript, COM Objects, and requires
+knowledge of XML syntax.

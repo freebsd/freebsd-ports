@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/IPPhone/.packlist
+%%SITE_PERL%%/Cisco/IPPhone.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/IPPhone
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco
+@dirrmtry %%SITE_PERL%%/Cisco
