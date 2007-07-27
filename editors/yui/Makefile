@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yui
-PORTVERSION=	3.2.02
+PORTVERSION=	3.2.03
 CATEGORIES=	editors
 MASTER_SITES=	http://www.askd.ru/~shelton/fileZ/
 
