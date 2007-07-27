@@ -28,8 +28,8 @@ post-patch: .SILENT
 	${MKDIR} ${WRKSRC}/Lib/linux
 	${LN} -s ${WRKSRC}/Lib ${WRKSRC}/lib
 # Some GCC 4.2 gimmick
-	${REINPLACE_CMD} -e 's,PlayerID::,,' ${WRKSRC}/Include/NetworkTypes.h
-	${REINPLACE_CMD} -e 's,RakVoice::,,' ${WRKSRC}/Include/RakVoice/RakVoice.h
+	${SED} -i '' -e 's,PlayerID::,,' ${WRKSRC}/Include/NetworkTypes.h
+	${SED} -i '' -e 's,RakVoice::,,' ${WRKSRC}/Include/RakVoice/RakVoice.h
 	${ECHO_CMD} -e '3730,$$t62\n3863,$$d\nwq' | ${ED} -s \
 		${WRKSRC}/Source/RakPeer.cpp
 
