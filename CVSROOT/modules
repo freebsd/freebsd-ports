@@ -14176,6 +14176,7 @@ rubygem-rrdtool	ports/databases/rubygem-rrdtool
 rubygem-rscm	ports/devel/rubygem-rscm
 rubygem-rspec	ports/devel/rubygem-rspec
 rubygem-rtags	ports/devel/rubygem-rtags
+rubygem-ruby-debug-base	ports/devel/rubygem-ruby-debug-base
 rubygem-rubyforge	ports/devel/rubygem-rubyforge
 rubygem-rubyfulsoup	ports/www/rubygem-rubyfulsoup
 rubygem-scrapi	ports/www/rubygem-scrapi
