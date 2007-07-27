@@ -18,11 +18,13 @@ COMMENT=	Lovely Sister Database
 BUILD_DEPENDS=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${DEPPORT_SUFFIX}
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
-.if (${EMACS_PORT_NAME} == emacs21)
-DEPPORT_SUFFIX=
-.else
+
+.include <bsd.port.pre.mk>
+
+.if ${EMACS_PORT_NAME} == emacs20
 DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
+.else
+DEPPORT_SUFFIX=
 .endif
 
 SFJP_RELEASE_ID=	1494
@@ -40,4 +42,4 @@ post-install:
 	${INSTALL_DATA}	${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
