@@ -20,10 +20,10 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .if defined(WITHOUT_GUILE)
-CONFIGURE_ARGS+=	--disable-script
+CONFIGURE_ARGS+=	--disable-scripting
 .else
 LIB_DEPENDS+=	guile.15:${PORTSDIR}/lang/guile
-CONFIGURE_ARGS+=	--enable-script
+CONFIGURE_ARGS+=	--enable-scripting
 .endif
 
 .if defined(WITH_TELNET)
