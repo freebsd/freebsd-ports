@@ -22,4 +22,10 @@ INFO=		assuan
 
 CFLAGS+=	-I${LOCALBASE}/include/pth
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
+.include <bsd.port.post.mk>
