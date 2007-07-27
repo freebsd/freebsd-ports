@@ -18,6 +18,7 @@ share/X11/xkb/compat/pc98
 share/X11/xkb/compat/xfree86
 share/X11/xkb/compat/xtest
 share/X11/xkb/compat/README
+share/X11/xkb/compiled
 share/X11/xkb/geometry/digital_vndr/lk
 share/X11/xkb/geometry/digital_vndr/pc
 share/X11/xkb/geometry/digital_vndr/unix

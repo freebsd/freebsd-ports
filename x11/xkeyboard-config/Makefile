@@ -7,6 +7,7 @@
 
 PORTNAME=	xkeyboard-config
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xlibs.freedesktop.org/xkbdesc/
 DISTNAME=	xkeyboard-config-${PORTVERSION}
@@ -31,5 +32,6 @@ CONFIGURE_ARGS+=	--with-xkb-base=${PREFIX}/share/X11/xkb \
 
 post-install:
 	${MKDIR} /var/lib/xkb
+	${LN} -s /var/lib/xkb ${PREFIX}/share/X11/xkb/compiled
 
 .include <bsd.port.mk>
