@@ -77,6 +77,7 @@ PLIST_SUB+=	SUB_PGSQL="@comment "
 .if defined(WITH_SQLITE)
 CONFIGURE_ARGS+=--enable-sqlite
 LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+CFLAGS+=	${PTHREAD_CFLAGS}
 PLIST_SUB+=	SUB_SQLITE=""
 .else
 CONFIGURE_ARGS+=--disable-sqlite
@@ -138,6 +139,10 @@ PLIST_SUB+=	SUB_ANON="@comment "
 .endif
 
 MAN8=		c2s.8 jabberd.8 resolver.8 router.8 s2s.8 sm.8
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|"-lsqlite3|"-lsqlite3 ${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
 
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
