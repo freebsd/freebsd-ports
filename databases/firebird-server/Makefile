@@ -6,12 +6,12 @@
 #
 
 PORTNAME?=	firebird
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
 PKGNAMESUFFIX?=	-server
-DISTNAME=	firebird-1.5.3.4870
+DISTNAME=	firebird-1.5.4.4910
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT?=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:259 aclocal:19 libtool:15
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
-USE_GCC=	3.4+
+USE_GCC=	3.4
 
 LOCALSTATEDIR=	/var/db/firebird
 CONFDIR=	${PREFIX}/etc/firebird
