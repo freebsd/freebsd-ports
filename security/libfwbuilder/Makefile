@@ -40,10 +40,4 @@ post-install:
 	${RM} ${PREFIX}/lib/libfwbuilder.so.7.3
 	${RM} ${PREFIX}/lib/libfwcompiler.so.7.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700019
-BROKEN=         Does not compile on FreeBSD >= 7.0
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
