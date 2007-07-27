@@ -24,7 +24,7 @@ CONFLICTS=	f2py-*
 
 OPTIONS=	ATLAS "Use optimized blas library" Off
 
-WANT_FORTRAN=   yes #dummy
+USE_FORTRAN=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 MAN1=		f2py.1
@@ -54,7 +54,6 @@ pre-fetch:
 post-extract:
 	@${CP} ${DISTDIR}/numpy.pdf ${WRKDIR}
 
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 FC=		gfortran42
 F77=		gfortran42
 GCCLIBDIR=	`${FC} -print-file-name=`

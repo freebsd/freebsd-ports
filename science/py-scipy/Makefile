@@ -24,10 +24,7 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 LATEST_LINK=	py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-numpy/options
 
-WANT_FORTRAN=	yes #dummy
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-RUN_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-
+USE_FORTRAN=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 USE_WX=		2.4-2.6
