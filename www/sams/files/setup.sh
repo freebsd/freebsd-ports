@@ -3,7 +3,7 @@
 #SAMS database setup script
 TMP=./tmp
 
-. ${TMP}/config.cashe
+. ${TMP}/config.cache
 
   CONFIGFILEPATH="${CONFIG_FILE}"
   if [ ! -f ${CONFIG_FILE} -a -f ${CONFIG_FILE}.sample ]; then
