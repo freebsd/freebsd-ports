@@ -19,7 +19,6 @@ bin/snmptrap
 bin/snmpusm
 bin/snmpvacm
 bin/snmpwalk
-etc/rc.d/snmpd.sh
 include/ucd-snmp/agent_index.h
 include/ucd-snmp/agent_read_config.h
 include/ucd-snmp/agent_registry.h

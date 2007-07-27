@@ -7,7 +7,7 @@
 
 PORTNAME=	ucd-snmp
 PORTVERSION=	4.2.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -82,7 +82,7 @@ BIN=		snmpbulkwalk snmpget snmpgetnext snmpnetstat snmpset \
 		snmpstatus snmptest snmptranslate snmptrap snmpwalk
 SBIN=		snmpd snmptrapd
 
-STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh
+USE_RC_SUBR=	snmpd
 
 CONFLICTS=	net-snmp-5.*
 
@@ -134,9 +134,5 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/examples/ucd-snmp
 	@for F in ${WRKSRC}/EXAMPLE.conf  ${WRKSRC}/agent/mibgroup/examples/ucdDemoPublic.conf; do \
 		${INSTALL_DATA} $$F ${PREFIX}/share/examples/ucd-snmp ; done
-	@if [ ! -f ${STARTUP_FILE} ]; then \
-		${ECHO} "Creating ${PREFIX}/etc/rc.d/snmpd.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/snmpd.sh.sample ${STARTUP_FILE}; \
-	 fi
 
 .include <bsd.port.post.mk>
