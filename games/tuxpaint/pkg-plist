@@ -14,6 +14,7 @@ etc/tuxpaint/tuxpaint.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/OPTIONS.txt
 %%PORTDOCS%%%%DOCSDIR%%/PNG.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/SVG.txt
 %%PORTDOCS%%%%DOCSDIR%%/af/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/af/COPYING.txt
 %%PORTDOCS%%%%DOCSDIR%%/af/FAQ.txt
@@ -235,8 +236,11 @@ etc/tuxpaint/tuxpaint.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/html/images/tool_quit.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/tool_redo.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/tool_save.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_sfx.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/tool_shapes.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/tool_stamp.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_stamp_categories.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_stamp_controls.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/tool_text.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/tool_undo.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/tools.jpg
@@ -335,6 +339,11 @@ etc/tuxpaint/tuxpaint.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/ro/PNG.txt
 %%PORTDOCS%%%%DOCSDIR%%/ro/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/ru/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/ru/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/ru/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/ru/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/OPTIONS.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/README.html
 %%PORTDOCS%%%%DOCSDIR%%/sk/COPYING.txt
 %%PORTDOCS%%%%DOCSDIR%%/sr/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/sr/FAQ.txt
@@ -408,6 +417,7 @@ share/locale/ka/LC_MESSAGES/tuxpaint.mo
 share/locale/ko/LC_MESSAGES/tuxpaint.mo
 share/locale/ku/LC_MESSAGES/tuxpaint.mo
 share/locale/lt/LC_MESSAGES/tuxpaint.mo
+share/locale/lv/LC_MESSAGES/tuxpaint.mo
 share/locale/ms/LC_MESSAGES/tuxpaint.mo
 share/locale/nb/LC_MESSAGES/tuxpaint.mo
 share/locale/nl/LC_MESSAGES/tuxpaint.mo
@@ -426,10 +436,12 @@ share/locale/sr/LC_MESSAGES/tuxpaint.mo
 share/locale/sv/LC_MESSAGES/tuxpaint.mo
 share/locale/sw/LC_MESSAGES/tuxpaint.mo
 share/locale/ta/LC_MESSAGES/tuxpaint.mo
+share/locale/te/LC_MESSAGES/tuxpaint.mo
 share/locale/th/LC_MESSAGES/tuxpaint.mo
 share/locale/tl/LC_MESSAGES/tuxpaint.mo
 share/locale/tlh/LC_MESSAGES/tuxpaint.mo
 share/locale/tr/LC_MESSAGES/tuxpaint.mo
+share/locale/twi/LC_MESSAGES/tuxpaint.mo
 share/locale/uk/LC_MESSAGES/tuxpaint.mo
 share/locale/ve/LC_MESSAGES/tuxpaint.mo
 share/locale/vi/LC_MESSAGES/tuxpaint.mo
@@ -447,16 +459,38 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/brushes/aa_round_seethru.png
 %%DATADIR%%/brushes/aa_round_seethru_05.png
 %%DATADIR%%/brushes/aa_round_seethru_10.png
+%%DATADIR%%/brushes/arrow_compass_points.dat
+%%DATADIR%%/brushes/arrow_compass_points.png
+%%DATADIR%%/brushes/arrow_triangles.dat
+%%DATADIR%%/brushes/arrow_triangles.png
+%%DATADIR%%/brushes/blob.png
+%%DATADIR%%/brushes/chisle.png
+%%DATADIR%%/brushes/cutout_square_diamond.png
+%%DATADIR%%/brushes/cutout_star_circle.png
+%%DATADIR%%/brushes/diamond.png
+%%DATADIR%%/brushes/flower_5.png
+%%DATADIR%%/brushes/flower_5_small.png
+%%DATADIR%%/brushes/flower_6.png
+%%DATADIR%%/brushes/flower_6_small.png
+%%DATADIR%%/brushes/heart.png
+%%DATADIR%%/brushes/hexagon.png
 %%DATADIR%%/brushes/kuroneko.dat
 %%DATADIR%%/brushes/kuroneko.png
 %%DATADIR%%/brushes/lines-angled.dat
 %%DATADIR%%/brushes/lines-angled.png
+%%DATADIR%%/brushes/lozenge.png
+%%DATADIR%%/brushes/oval.png
+%%DATADIR%%/brushes/pentagon.png
 %%DATADIR%%/brushes/slash_10_lt.png
 %%DATADIR%%/brushes/slash_10_rt.png
 %%DATADIR%%/brushes/slash_16_lt.png
 %%DATADIR%%/brushes/slash_16_rt.png
 %%DATADIR%%/brushes/slash_20_lt.png
 %%DATADIR%%/brushes/slash_20_rt.png
+%%DATADIR%%/brushes/sphere.png
+%%DATADIR%%/brushes/spiral.dat
+%%DATADIR%%/brushes/spiral.png
+%%DATADIR%%/brushes/splat.png
 %%DATADIR%%/brushes/spray.dat
 %%DATADIR%%/brushes/spray.png
 %%DATADIR%%/brushes/square_06.png
@@ -467,7 +501,10 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/brushes/square_seethru.png
 %%DATADIR%%/brushes/squirrel.dat
 %%DATADIR%%/brushes/squirrel.png
+%%DATADIR%%/brushes/star.png
 %%DATADIR%%/brushes/tiny.png
+%%DATADIR%%/brushes/triangle_down.png
+%%DATADIR%%/brushes/triangle_up.png
 %%DATADIR%%/brushes/vine.dat
 %%DATADIR%%/brushes/vine.png
 %%DATADIR%%/brushes/x.png
@@ -511,6 +548,9 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/fonts/locale/ta.ttf
 %%DATADIR%%/fonts/locale/ta_docs/COPYING.txt
 %%DATADIR%%/fonts/locale/ta_docs/README.txt
+%%DATADIR%%/fonts/locale/te.ttf
+%%DATADIR%%/fonts/locale/te_docs/COPYING.txt
+%%DATADIR%%/fonts/locale/te_docs/README.txt
 %%DATADIR%%/fonts/locale/th.ttf
 %%DATADIR%%/fonts/locale/th_docs/COPYING.txt
 %%DATADIR%%/fonts/locale/th_docs/README.txt
@@ -522,6 +562,8 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/fonts/locale/zh_tw_docs/README.txt
 %%DATADIR%%/fonts/locale/zh_tw_docs/maketuxfont.py
 %%DATADIR%%/fonts/locale/zh_tw_docs/tuxpaintsubset.pe
+%%DATADIR%%/im/ja.im
+%%DATADIR%%/im/ko.im
 %%DATADIR%%/images/icon-win32.ico
 %%DATADIR%%/images/icon.png
 %%DATADIR%%/images/icon128x128.png
@@ -580,7 +622,9 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/images/tools/quit.png
 %%DATADIR%%/images/tools/redo.png
 %%DATADIR%%/images/tools/save.png
+%%DATADIR%%/images/tools/sfx.png
 %%DATADIR%%/images/tools/shapes.png
+%%DATADIR%%/images/tools/speak.png
 %%DATADIR%%/images/tools/stamp.png
 %%DATADIR%%/images/tools/text.png
 %%DATADIR%%/images/tools/undo.png
@@ -600,6 +644,8 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/images/ui/btn_down.png
 %%DATADIR%%/images/ui/btn_off.png
 %%DATADIR%%/images/ui/btn_up.png
+%%DATADIR%%/images/ui/btnsm_off.png
+%%DATADIR%%/images/ui/btnsm_up.png
 %%DATADIR%%/images/ui/color_btn_down.png
 %%DATADIR%%/images/ui/color_btn_up.png
 %%DATADIR%%/images/ui/cursor_down.png
@@ -615,6 +661,7 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/images/ui/italic.png
 %%DATADIR%%/images/ui/mouse.png
 %%DATADIR%%/images/ui/mouse_click.png
+%%DATADIR%%/images/ui/next.png
 %%DATADIR%%/images/ui/no.png
 %%DATADIR%%/images/ui/no_title.png
 %%DATADIR%%/images/ui/no_title_large.png
@@ -623,6 +670,7 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/images/ui/paintwell.png
 %%DATADIR%%/images/ui/play.png
 %%DATADIR%%/images/ui/popup_arrow.png
+%%DATADIR%%/images/ui/prev.png
 %%DATADIR%%/images/ui/printer.png
 %%DATADIR%%/images/ui/printer_wait.png
 %%DATADIR%%/images/ui/progress.png
@@ -698,9 +746,12 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/stamps/cartoon/tux/tux-yes1.png
 %%DATADIR%%/stamps/cartoon/tux/tux-yes2.dat
 %%DATADIR%%/stamps/cartoon/tux/tux-yes2.png
+%%DATADIR%%/starters/carcassone.png
 %%DATADIR%%/starters/chessboard-back.png
 %%DATADIR%%/starters/chessboard.png
 %%DATADIR%%/starters/chicken.png
+%%DATADIR%%/starters/grid_10x10.png
+%%DATADIR%%/starters/grid_20x20.png
 %%DATADIR%%/starters/jetplane.png
 %%DATADIR%%/starters/nagasaki.png
 %%DATADIR%%/starters/nagasaki.svg
@@ -714,6 +765,16 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/starters/skyline-sf-dusk.txt
 %%DATADIR%%/starters/street.png
 %%DATADIR%%/starters/tux_farmer.png
+%%DATADIR%%/starters/worldmap.png
+%%DATADIR%%/starters/worldmap_africa.png
+%%DATADIR%%/starters/worldmap_america_north.png
+%%DATADIR%%/starters/worldmap_america_north_usa-back.png
+%%DATADIR%%/starters/worldmap_america_north_usa.png
+%%DATADIR%%/starters/worldmap_america_south.png
+%%DATADIR%%/starters/worldmap_asia_north.png
+%%DATADIR%%/starters/worldmap_asia_south.png
+%%DATADIR%%/starters/worldmap_australasia.png
+%%DATADIR%%/starters/worldmap_europe.png
 @dirrm %%DATADIR%%/starters
 @dirrm %%DATADIR%%/stamps/cartoon/tux
 @dirrm %%DATADIR%%/stamps/cartoon
@@ -725,9 +786,11 @@ share/pixmaps/tuxpaint.png
 @dirrm %%DATADIR%%/images/shapes
 @dirrm %%DATADIR%%/images/magic
 @dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/im
 @dirrm %%DATADIR%%/fonts/locale/zh_tw_docs
 @dirrm %%DATADIR%%/fonts/locale/vi_docs
 @dirrm %%DATADIR%%/fonts/locale/th_docs
+@dirrm %%DATADIR%%/fonts/locale/te_docs
 @dirrm %%DATADIR%%/fonts/locale/ta_docs
 @dirrm %%DATADIR%%/fonts/locale/ka_docs
 @dirrm %%DATADIR%%/fonts/locale/ja_docs
@@ -741,12 +804,24 @@ share/pixmaps/tuxpaint.png
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/brushes
 @dirrm %%DATADIR%%
+@dirrm share/locale/ve/LC_MESSAGES
+@dirrm share/locale/ve
 @dirrm share/locale/tlh/LC_MESSAGES
 @dirrm share/locale/tlh
 @dirrm share/locale/sw/LC_MESSAGES
 @dirrm share/locale/sw
+@dirrm share/locale/nr/LC_MESSAGES
+@dirrm share/locale/nr
 @dirrm share/locale/gos/LC_MESSAGES
 @dirrm share/locale/gos
+@dirrm share/locale/gd/LC_MESSAGES
+@dirrm share/locale/gd
+@dirrm share/locale/fo/LC_MESSAGES
+@dirrm share/locale/fo
+@dirrm share/locale/en_ZA/LC_MESSAGES
+@dirrm share/locale/en_ZA
+@dirrm share/locale/bo/LC_MESSAGES
+@dirrm share/locale/bo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_tw/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_tw
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_cn
@@ -756,6 +831,7 @@ share/pixmaps/tuxpaint.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sv
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sr
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sk
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ro
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pt_br
@@ -801,24 +877,6 @@ share/pixmaps/tuxpaint.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/be
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/af
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ve/LC_MESSAGES
-@dirrmtry share/locale/ve
-@dirrmtry share/locale/tl/LC_MESSAGES
-@dirrmtry share/locale/tl
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/nr/LC_MESSAGES
-@dirrmtry share/locale/nr
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/gd/LC_MESSAGES
-@dirrmtry share/locale/gd
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
-@dirrmtry share/locale/en_ZA/LC_MESSAGES
-@dirrmtry share/locale/en_ZA
-@dirrmtry share/locale/bo/LC_MESSAGES
-@dirrmtry share/locale/bo
+@dirrmtry share/locale/twi/LC_MESSAGES
+@dirrmtry share/locale/twi
 @dirrmtry etc/tuxpaint
