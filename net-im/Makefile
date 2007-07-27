@@ -104,6 +104,7 @@
     SUBDIR += pork
     SUBDIR += py-msnp
     SUBDIR += py-pyxmpp
+    SUBDIR += py-xmpppy-yahoo
     SUBDIR += pymsn
     SUBDIR += p5-DJabberd
     SUBDIR += p5-Jabber-Connection
