@@ -7,6 +7,7 @@
 
 PORTNAME=	nn
 PORTVERSION=	6.7.3
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://www.sourcefiles.org/Internet/News/Usenet_Clients/  \
 		http://www.wa.apana.org.au/~dean/sources/
