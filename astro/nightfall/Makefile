@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nightfall
-PORTVERSION=	1.61
+PORTVERSION=	1.62
 CATEGORIES=	astro
 MASTER_SITES=	http://www.la-samhna.de/nightfall/ CENKES
 
@@ -45,6 +45,8 @@ RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 CONFIGURE_ARGS+=	--with-gnuplot
 .else
 LIB_DEPENDS+=	pgplot.5:${PORTSDIR}/graphics/pgplot
+USE_FORTRAN=	yes
+CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 CONFIGURE_ARGS+=	--with-pgplot-include=${LOCALBASE}/include \
 			--with-pgplot-lib=${LOCALBASE}/lib
 .endif
@@ -52,12 +54,12 @@ CONFIGURE_ARGS+=	--with-pgplot-include=${LOCALBASE}/include \
 .if defined(WITHOUT_OPENGL)
 CONFIGURE_ARGS+=	--disable-opengl
 .else
-LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut \
-		gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2
+LIB_DEPENDS+=	gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2
+USE_GL=		glut
 CONFIGURE_ARGS+=	--with-lib-GL
 .endif
 
-pre-configure:
+pre-everything::
 	@${ECHO_MSG} "Nightfall has the following tunable option(s):"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	WITHOUT_GNOME=libgnomeui	Turns off Gnome support"
@@ -66,13 +68,13 @@ pre-configure:
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|CFLAGS -O3|CFLAGS|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^Icon=gnome|Icon=${DATADIR}/pixmaps/gnome|g' \
 		${WRKSRC}/nightfall.desktop
 
 post-install:
-	@${INSTALL} -d ${PREFIX}/share/gnome/applications/
-	@${INSTALL_DATA} ${WRKSRC}/nightfall.desktop \
-		${PREFIX}/share/gnome/applications/
+	@${MKDIR} ${PREFIX}/share/gnome/applications
+	${INSTALL_DATA} ${WRKSRC}/nightfall.desktop \
+		${PREFIX}/share/gnome/applications
 
 .include <bsd.port.post.mk>
