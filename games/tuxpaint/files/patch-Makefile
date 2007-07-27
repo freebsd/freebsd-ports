@@ -1,5 +1,5 @@
---- ./Makefile.orig	Thu Oct 19 04:41:49 2006
-+++ ./Makefile	Thu Jan 18 16:53:58 2007
+--- Makefile.orig	Sun Jul  1 12:05:57 2007
++++ Makefile	Fri Jul 20 11:52:57 2007
 @@ -18,7 +18,6 @@
  
  # Where to install things:
@@ -17,18 +17,33 @@
  
  
  # 'System-wide' Config file:
-@@ -97,7 +96,7 @@
- # The entire set of CFLAGS:
+@@ -103,12 +102,8 @@
+ SDL_CFLAGS=$(shell sdl-config --cflags) $(SVG_CFLAGS)
+ 
+ 
+-SVG_LIB=-lrsvg-2 -lcairo
+-SVG_CFLAGS=-I/usr/include/librsvg-2/librsvg \
+-	-I/usr/include/gtk-2.0 \
+-	-I/usr/include/glib-2.0 \
+-	-I/usr/lib/glib-2.0/include \
+-	-I/usr/include/cairo
++SVG_LIB=`pkg-config --libs librsvg-2.0 cairo`
++SVG_CFLAGS=`pkg-config --cflags librsvg-2.0 cairo`
+ 
+ PAPER_LIB=-lpaper
+ 
+@@ -117,7 +112,7 @@
  
  #-ffast-math
--CFLAGS=-O2 -W -Wall -fno-common -ffloat-store \
-+CFLAGS+=-I${LOCALBASE}/include -O2 -W -Wall -fno-common -ffloat-store \
+ OPTFLAGS=-O2
+-CFLAGS=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
++CFLAGS+=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store -I$(LOCALBASE)/include \
  	-Wcast-align -Wredundant-decls \
  	-Wbad-function-cast -Wwrite-strings \
  	-Waggregate-return \
-@@ -222,8 +221,7 @@
+@@ -286,8 +281,7 @@
  install:	install-bin install-data install-man install-doc \
- 		install-icon install-gettext install-importscript \
+ 		install-icon install-gettext install-im install-importscript \
  		install-default-config install-example-stamps \
 -		install-example-starters \
 -		install-gnome install-kde install-kde-icons
@@ -36,7 +51,7 @@
  	@echo
  	@echo "--------------------------------------------------------------"
  	@echo
-@@ -471,8 +469,10 @@
+@@ -479,8 +473,10 @@
  	@echo
  	@echo "...Installing default config file..."
  	@install -d $(CONFDIR)
@@ -49,7 +64,7 @@
  
  
  # Install example stamps
-@@ -590,9 +590,6 @@
+@@ -608,9 +604,6 @@
  	@install -d $(ICON_PREFIX)
  	@cp data/images/icon.png $(ICON_PREFIX)/tuxpaint.png
  	@chmod 644 $(ICON_PREFIX)/tuxpaint.png
@@ -59,7 +74,7 @@
  
  
  # Install the program:
-@@ -1008,12 +1005,6 @@
+@@ -693,12 +686,6 @@
  	@cp src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1
  	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
  	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
@@ -72,10 +87,10 @@
  	@# tuxpaint-import.1
  	@cp src/manpage/tuxpaint-import.1 $(MAN_PREFIX)/man1/
  	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
-@@ -1034,7 +1025,7 @@
- 		$^ \
- 		$(HQXX_O) \
+@@ -723,7 +710,7 @@
  		$(SDL_LIBS) \
+ 		$(SVG_LIB) \
+ 		$(PAPER_LIB) \
 -		-lm $(ARCH_LINKS)
 +		-lm $(ARCH_LINKS) -lintl -lpng
  	@$(RSRC_CMD)
