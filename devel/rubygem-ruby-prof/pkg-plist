@@ -1,0 +1,111 @@
+bin/ruby-prof
+%%GEM_CACHE%%
+%%GEM_DOC_DIR%%/rdoc/classes/RubyProf.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubyProf/AbstractPrinter.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubyProf/CallInfo.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubyProf/CallTreePrinter.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubyProf/FlatPrinter.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubyProf/GraphHtmlPrinter.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubyProf/GraphPrinter.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubyProf/MethodInfo.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubyProf/ProfileTask.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubyProf/Result.html
+%%GEM_DOC_DIR%%/rdoc/classes/Test.html
+%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit.html
+%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/TestCase.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/LICENSE.html
+%%GEM_DOC_DIR%%/rdoc/files/README.html
+%%GEM_DOC_DIR%%/rdoc/files/bin/ruby-prof.html
+%%GEM_DOC_DIR%%/rdoc/files/examples/flat_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/examples/graph_html.html
+%%GEM_DOC_DIR%%/rdoc/files/examples/graph_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/ext/ruby_prof_c.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/ruby-prof/abstract_printer_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/ruby-prof/call_tree_printer_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/ruby-prof/flat_printer_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/ruby-prof/graph_html_printer_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/ruby-prof/graph_printer_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/ruby-prof/profile_test_case_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/ruby-prof/task_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/ruby-prof_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/unprof_rb.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_LIB_DIR%%/CHANGES
+%%GEM_LIB_DIR%%/LICENSE
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/bin/ruby-prof
+%%GEM_LIB_DIR%%/examples/flat.txt
+%%GEM_LIB_DIR%%/examples/graph.html
+%%GEM_LIB_DIR%%/examples/graph.txt
+%%GEM_LIB_DIR%%/ext/Makefile
+%%GEM_LIB_DIR%%/ext/extconf.rb
+%%GEM_LIB_DIR%%/ext/measure_allocations.h
+%%GEM_LIB_DIR%%/ext/measure_cpu_time.h
+%%GEM_LIB_DIR%%/ext/measure_process_time.h
+%%GEM_LIB_DIR%%/ext/measure_wall_time.h
+%%GEM_LIB_DIR%%/ext/mkmf.log
+%%GEM_LIB_DIR%%/ext/ruby_prof.c
+%%GEM_LIB_DIR%%/ext/ruby_prof.o
+%%GEM_LIB_DIR%%/ext/ruby_prof.so
+%%GEM_LIB_DIR%%/lib/ruby-prof.rb
+%%GEM_LIB_DIR%%/lib/ruby_prof.so
+%%GEM_LIB_DIR%%/lib/ruby-prof/abstract_printer.rb
+%%GEM_LIB_DIR%%/lib/ruby-prof/call_tree_printer.rb
+%%GEM_LIB_DIR%%/lib/ruby-prof/flat_printer.rb
+%%GEM_LIB_DIR%%/lib/ruby-prof/graph_html_printer.rb
+%%GEM_LIB_DIR%%/lib/ruby-prof/graph_printer.rb
+%%GEM_LIB_DIR%%/lib/ruby-prof/profile_test_case.rb
+%%GEM_LIB_DIR%%/lib/ruby-prof/task.rb
+%%GEM_LIB_DIR%%/lib/unprof.rb
+%%GEM_LIB_DIR%%/rails_plugin/ruby-prof/init.rb
+%%GEM_LIB_DIR%%/rails_plugin/ruby-prof/lib/profiling.rb
+%%GEM_LIB_DIR%%/test/basic_test.rb
+%%GEM_LIB_DIR%%/test/duplicate_names_test.rb
+%%GEM_LIB_DIR%%/test/gc.log
+%%GEM_LIB_DIR%%/test/line_number_test.rb
+%%GEM_LIB_DIR%%/test/measure_mode_test.rb
+%%GEM_LIB_DIR%%/test/module_test.rb
+%%GEM_LIB_DIR%%/test/no_method_class_test.rb
+%%GEM_LIB_DIR%%/test/prime.rb
+%%GEM_LIB_DIR%%/test/prime1.rb
+%%GEM_LIB_DIR%%/test/prime2.rb
+%%GEM_LIB_DIR%%/test/prime3.rb
+%%GEM_LIB_DIR%%/test/prime_test.rb
+%%GEM_LIB_DIR%%/test/printers_test.rb
+%%GEM_LIB_DIR%%/test/profile_unit_test.rb
+%%GEM_LIB_DIR%%/test/recursive_test.rb
+%%GEM_LIB_DIR%%/test/singleton_test.rb
+%%GEM_LIB_DIR%%/test/start_test.rb
+%%GEM_LIB_DIR%%/test/test_helper.rb
+%%GEM_LIB_DIR%%/test/test_suite.rb
+%%GEM_LIB_DIR%%/test/thread_test.rb
+%%GEM_LIB_DIR%%/test/timing_test.rb
+%%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/rails_plugin/ruby-prof/lib
+@dirrm %%GEM_LIB_DIR%%/rails_plugin/ruby-prof
+@dirrm %%GEM_LIB_DIR%%/rails_plugin
+@dirrm %%GEM_LIB_DIR%%/lib/ruby-prof
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/ext
+@dirrm %%GEM_LIB_DIR%%/examples
+@dirrm %%GEM_LIB_DIR%%/bin
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/ruby-prof
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/ext
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/examples
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/bin
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Test/Unit
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Test
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RubyProf
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%

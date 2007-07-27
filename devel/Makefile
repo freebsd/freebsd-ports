@@ -2089,6 +2089,7 @@
     SUBDIR += rubygem-rtags
     SUBDIR += rubygem-ruby-debug
     SUBDIR += rubygem-ruby-debug-base
+    SUBDIR += rubygem-ruby-prof
     SUBDIR += rubygem-rubyforge
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-transactionsimple
