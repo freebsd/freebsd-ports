@@ -18,6 +18,9 @@ COMMENT=	KDE frontend for cdrecord and mkisofs/mkhybrid
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=2007-12-31
+
 USE_BZIP2=	yes
 USE_CDRTOOLS=	yes
 USE_KDEBASE_VER=3
