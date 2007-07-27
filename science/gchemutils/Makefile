@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchemutils
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/0.8
@@ -29,7 +29,9 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/gnome/omf
 INSTALLS_ICONS=	yes
+INSTALLS_OMF=	yes
 GCONF_SCHEMAS=	gcrystal.schemas
 
 MAN1=		gchem3d-viewer.1 gchemcalc.1 gchemtable.1 gcrystal.1
