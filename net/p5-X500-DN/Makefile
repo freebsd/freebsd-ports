@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	X500-DN
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	X500
@@ -21,9 +21,5 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		X500::DN.3 X500::RDN.3
-
-post-patch:
-	@${PERL} -pi -e 's/5\.6\.1/vars qw(\$$VERSION)/; s/^our //;' \
-		${WRKSRC}/DN.pm
 
 .include <bsd.port.mk>
