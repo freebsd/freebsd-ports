@@ -61,6 +61,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/__init__.pyc
 %%PYTHON_SITELIBDIR%%/BTL/__init__.pyo
 %%PYTHON_SITELIBDIR%%/BTL/addrmap.dat
+%%PYTHON_SITELIBDIR%%/BTL/asyncexecutor.py
+%%PYTHON_SITELIBDIR%%/BTL/asyncexecutor.pyc
+%%PYTHON_SITELIBDIR%%/BTL/asyncexecutor.pyo
 %%PYTHON_SITELIBDIR%%/BTL/atexit_threads.py
 %%PYTHON_SITELIBDIR%%/BTL/atexit_threads.pyc
 %%PYTHON_SITELIBDIR%%/BTL/atexit_threads.pyo
@@ -76,6 +79,12 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/bitfield.py
 %%PYTHON_SITELIBDIR%%/BTL/bitfield.pyc
 %%PYTHON_SITELIBDIR%%/BTL/bitfield.pyo
+%%PYTHON_SITELIBDIR%%/BTL/brpc.py
+%%PYTHON_SITELIBDIR%%/BTL/brpc.pyc
+%%PYTHON_SITELIBDIR%%/BTL/brpc.pyo
+%%PYTHON_SITELIBDIR%%/BTL/brpclib.py
+%%PYTHON_SITELIBDIR%%/BTL/brpclib.pyc
+%%PYTHON_SITELIBDIR%%/BTL/brpclib.pyo
 %%PYTHON_SITELIBDIR%%/BTL/btformats.py
 %%PYTHON_SITELIBDIR%%/BTL/btformats.pyc
 %%PYTHON_SITELIBDIR%%/BTL/btformats.pyo
@@ -97,6 +106,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/connection_cache.py
 %%PYTHON_SITELIBDIR%%/BTL/connection_cache.pyc
 %%PYTHON_SITELIBDIR%%/BTL/connection_cache.pyo
+%%PYTHON_SITELIBDIR%%/BTL/coro.py
+%%PYTHON_SITELIBDIR%%/BTL/coro.pyc
+%%PYTHON_SITELIBDIR%%/BTL/coro.pyo
 %%PYTHON_SITELIBDIR%%/BTL/cpu_meter.py
 %%PYTHON_SITELIBDIR%%/BTL/cpu_meter.pyc
 %%PYTHON_SITELIBDIR%%/BTL/cpu_meter.pyo
@@ -136,6 +148,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/formatters.py
 %%PYTHON_SITELIBDIR%%/BTL/formatters.pyc
 %%PYTHON_SITELIBDIR%%/BTL/formatters.pyo
+%%PYTHON_SITELIBDIR%%/BTL/greenlet_coro.py
+%%PYTHON_SITELIBDIR%%/BTL/greenlet_coro.pyc
+%%PYTHON_SITELIBDIR%%/BTL/greenlet_coro.pyo
 %%PYTHON_SITELIBDIR%%/BTL/greenlet_yielddefer.py
 %%PYTHON_SITELIBDIR%%/BTL/greenlet_yielddefer.pyc
 %%PYTHON_SITELIBDIR%%/BTL/greenlet_yielddefer.pyo
@@ -172,6 +187,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/obsoletepythonsupport.py
 %%PYTHON_SITELIBDIR%%/BTL/obsoletepythonsupport.pyc
 %%PYTHON_SITELIBDIR%%/BTL/obsoletepythonsupport.pyo
+%%PYTHON_SITELIBDIR%%/BTL/opt.py
+%%PYTHON_SITELIBDIR%%/BTL/opt.pyc
+%%PYTHON_SITELIBDIR%%/BTL/opt.pyo
 %%PYTHON_SITELIBDIR%%/BTL/parsedir.py
 %%PYTHON_SITELIBDIR%%/BTL/parsedir.pyc
 %%PYTHON_SITELIBDIR%%/BTL/parsedir.pyo
@@ -214,6 +232,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/translation.py
 %%PYTHON_SITELIBDIR%%/BTL/translation.pyc
 %%PYTHON_SITELIBDIR%%/BTL/translation.pyo
+%%PYTHON_SITELIBDIR%%/BTL/twisted_brpc.py
+%%PYTHON_SITELIBDIR%%/BTL/twisted_brpc.pyc
+%%PYTHON_SITELIBDIR%%/BTL/twisted_brpc.pyo
 %%PYTHON_SITELIBDIR%%/BTL/twisted_ebrpc.py
 %%PYTHON_SITELIBDIR%%/BTL/twisted_ebrpc.pyc
 %%PYTHON_SITELIBDIR%%/BTL/twisted_ebrpc.pyo
