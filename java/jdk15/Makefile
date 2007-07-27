@@ -53,10 +53,10 @@ POLICYFILE=	jce_policy-${JDK_VERSION:S/./_/g}.zip
 TZUPDATEFILE=	tzupdater-${TZUPDATE_VERSION:S/./_/g}-${TZUPDATE_TZVERSION}.zip
 
 JDK_VERSION=	1.5.0
-JDK_UPDATE_VERSION=	11
-JDK_PATCHSET_VERSION=	5
-JDK_BUILD_NUMBER=	03
-JDK_BUILD_DATE=		15_dec_2006
+JDK_UPDATE_VERSION=	12
+JDK_PATCHSET_VERSION=	6
+JDK_BUILD_NUMBER=	04
+JDK_BUILD_DATE=		02_may_2007
 LATEST_LINK=	jdk15
 
 TZUPDATE_VERSION=	1.2.1
@@ -326,7 +326,7 @@ post-build:
 .if defined(WITH_TZUPDATE)
 	@# Update time zones
 	@-${JDKIMAGEDIR}/bin/java -jar \
-		${WRKDIR}/tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}/tzupdater.jar -u
+		${WRKDIR}/tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}/tzupdater.jar -u -bc
 	@-${RM} -rf ${JDKIMAGEDIR}/jre/lib/zi.tzdata*
 .endif
 
