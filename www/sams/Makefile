@@ -7,7 +7,7 @@
 
 PORTNAME=	sams
 DISTVERSION=	20070524
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://sams.irc.perm.ru/downloads/ \
 		http://www.dindin.ru/download/
