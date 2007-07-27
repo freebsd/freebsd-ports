@@ -44,5 +44,7 @@ do-install:
 	${RM} -f ${WRKSRC}/doc/html/qmake*
 	${CP} -Rp ${WRKSRC}/doc/html ${DOCSDIR}
 
+.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../Mk/bsd.qt.mk"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
+
