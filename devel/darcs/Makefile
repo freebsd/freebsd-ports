@@ -44,6 +44,7 @@ PLIST_SUB+=	CGIDIR=${CGIDIR} SERVER=""
 PLIST_SUB+=	SERVER="@comment "
 .endif
 .if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base
 INSTALL_TARGET+=	installdocs
 .endif
 
