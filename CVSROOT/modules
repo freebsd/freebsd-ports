@@ -8198,6 +8198,7 @@ normalize	ports/audio/normalize
 normalizemime	ports/mail/normalizemime
 nos-ttb		ports/net/nos-ttb
 nosefart	ports/audio/nosefart
+notecase	ports/deskutils/notecase
 notftp		ports/www/notftp
 notif2		ports/x11-themes/notif2
 notification-daemon	ports/deskutils/notification-daemon
