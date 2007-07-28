@@ -1,0 +1,17 @@
+KCheckGMail is a simple KDE systray application that notifies 
+when new email is received in a GMail account.
+
+Features:
+* Small
+* Available in multiple languages
+* Google Applications for Domains Support!
+* eMail snippets
+* Snooze support!
+* Store password safely, using the KDE Wallet
+* Customizable check interval
+* Secure login and data retrieval by using https
+
+WWW: http://kcheckgmail.sourceforge.net/
+
+- YUAN Jue
+yuanjue@FreeBSD.org
