@@ -2,6 +2,7 @@ bin/qtiplot
 %%DATADIR%%/fitPlugins/libfitRational0.so
 %%DATADIR%%/fitPlugins/libfitRational1.so
 %%DATADIR%%/qtiplot
+%%DATADIR%%/qtiplot.png
 %%PYTHON%%%%DATADIR%%/qtiplotrc.py
 %%PYTHON%%%%DATADIR%%/qtiplotrc.pyc
 %%NLS%%%%DATADIR%%/translations/qtiplot_de.qm
