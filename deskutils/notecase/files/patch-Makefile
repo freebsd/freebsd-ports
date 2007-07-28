@@ -1,0 +1,109 @@
+--- Makefile.orig	Mon Jun 25 12:53:44 2007
++++ Makefile	Thu Jul 19 18:41:38 2007
+@@ -80,7 +79,7 @@
+ ifdef WINDIR
+  LD=$(QL) $(CXX) $(DEBUG) $(PROFILE) $(LOPTIMIZE) -L$(OBJ) -lz 
+ else
+- LD=$(QL) $(CXX) $(DEBUG) $(PROFILE) $(LOPTIMIZE) -ldl -export-dynamic $(LOPTIMIZE)
++ LD=$(QL) $(CXX) $(DEBUG) $(PROFILE) $(LOPTIMIZE) -export-dynamic $(LOPTIMIZE)
+ endif 
+ 
+ #
+@@ -360,7 +359,7 @@
+ 	$(CC) $(FLAGS) -c $(GUIPATH)/DocActionFinishDel.cpp -o $(OBJ)/DocActionFinishDel.o $(GTKCFLAGS)
+ 	
+ $(OBJ)/libz.a:
+-	@cd ./src/lib/zlib/; make; cp ./libz.a ../../../$(OBJ)/
++	@cd ./src/lib/zlib/; gmake; cp ./libz.a ../../../$(OBJ)/
+ 
+ $(OBJ)/ShortcutsList.o: $(GUIPATH)/ShortcutsList.cpp $(GUIPATH)/ShortcutsList.h
+ 	$(CC) $(FLAGS) -c $(GUIPATH)/ShortcutsList.cpp -o $(OBJ)/ShortcutsList.o  $(GTKCFLAGS)
+@@ -405,7 +404,8 @@
+ 		rm -f po/messages.mo; \
+ 		msgfmt $$i -o po/messages.mo; \
+ 		echo "Installing: $(DESTDIR)$(datadir)/locale/$$loc/LC_MESSAGES/notecase.mo";\
+-		install -D -m 644 po/messages.mo "$(DESTDIR)$(datadir)/locale/$$loc/LC_MESSAGES/notecase.mo"; \
++		install -d $(DESTDIR)$(datadir)/locale/$$loc/LC_MESSAGES; \
++		install -m 644 -c po/messages.mo "$(DESTDIR)$(datadir)/locale/$$loc/LC_MESSAGES/notecase.mo"; \
+ 	done; \
+ 	rm -f po/messages.mo; 
+ 	@echo done installing translations
+@@ -413,16 +413,24 @@
+ pouninstall:
+ 	@rm -vf $(DESTDIR)$(datadir)/locale/*/LC_MESSAGES/notecase.mo
+ 	@echo done uninstalling translations
+-	
++
++docinstall:
++	-install -d $(DESTDIR)$(datadir)/doc/notecase
++	install -m 644 -c docs/help.ncd "$(DESTDIR)$(datadir)/doc/notecase/help.ncd"
++	install -m 644 -c docs/license.txt "$(DESTDIR)$(datadir)/doc/notecase/license.txt"
++
+ #
+ # install application
+ #
+ install: notecase$(EXE) poinstall
+-	install -D -m 755 $(BIN)/notecase "$(DESTDIR)$(bindir)/notecase"
+-	install -D -m 644 docs/help.ncd "$(DESTDIR)$(datadir)/doc/notecase/help.ncd"
+-	install -D -m 644 docs/notecase.desktop "$(DESTDIR)$(datadir)/applications/notecase.desktop"
+-	install -D -m 644 docs/notecase.xml "$(DESTDIR)$(datadir)/mime/packages/notecase.xml"
+-	install -D -m 644 res/notecase.xpm "$(DESTDIR)$(datadir)/pixmaps/notecase.xpm"
++	-install -d $(DESTDIR)$(bindir)
++	install -m 755 -c $(BIN)/notecase "$(DESTDIR)$(bindir)/notecase"
++	-install -d $(DESTDIR)$(datadir)/applications
++	install -m 644 -c docs/notecase.desktop "$(DESTDIR)$(datadir)/applications/notecase.desktop"
++	-install -d $(DESTDIR)$(datadir)/mime/packages
++	install -m 644 -c docs/notecase.xml "$(DESTDIR)$(datadir)/mime/packages/notecase.xml"
++	-install -d $(DESTDIR)$(datadir)/pixmaps
++	install -m 644 -c res/notecase.xpm "$(DESTDIR)$(datadir)/pixmaps/notecase.xpm"
+ 	@echo done installing
+ 
+ #
+@@ -474,23 +482,23 @@
+ #   7. update version in the control file used to build Debian/Ubuntu .deb package
+ #
+ updatesrc:
+-	$(Q)sed -i 's/^Version:.*/Version:        $(VERSION)/' ./docs/notecase.spec
+-	$(Q)sed -i 's/^Source:.*/Source:         $(archive).tar.gz/' ./docs/notecase.spec
+-	$(Q)sed -i 's/\#define APP_VER_STR .*/\#define APP_VER_STR "$(VERSION)"/' ./src/config.h
+-	$(Q)sed -i 's:\#define INSTALL_PREFIX .*:\#define INSTALL_PREFIX "$(DESTDIR)$(prefix)":' ./src/config.h
++	$(Q)sed -i.bak 's/^Version:.*/Version:        $(VERSION)/' ./docs/notecase.spec
++	$(Q)sed -i.bak 's/^Source:.*/Source:         $(archive).tar.gz/' ./docs/notecase.spec
++	$(Q)sed -i.bak 's/\#define APP_VER_STR .*/\#define APP_VER_STR "$(VERSION)"/' ./src/config.h
++	$(Q)sed -i.bak 's:\#define INSTALL_PREFIX .*:\#define INSTALL_PREFIX "$(DESTDIR)$(prefix)":' ./src/config.h
+ 	$(Q)if [ "$(HAVE_GNOME_VFS)" = "" ]; then \
+-		sed -i 's:[/]*#define HAVE_GNOME_VFS.*://#define HAVE_GNOME_VFS:' ./src/config.h; \
++		sed -i.bak 's:[/]*#define HAVE_GNOME_VFS.*://#define HAVE_GNOME_VFS:' ./src/config.h; \
+ 	else \
+-		sed -i 's:[/]*#define HAVE_GNOME_VFS.*:#define HAVE_GNOME_VFS:' ./src/config.h; \
++		sed -i.bak 's:[/]*#define HAVE_GNOME_VFS.*:#define HAVE_GNOME_VFS:' ./src/config.h; \
+ 	fi;
+ 	$(Q)if [ "$(ZAURUS)" = "" ]; then \
+-		sed -i 's:[/]*#define _ZAURUS_BUILD.*://#define _ZAURUS_BUILD:' ./src/config.h; \
++		sed -i.bak 's:[/]*#define _ZAURUS_BUILD.*://#define _ZAURUS_BUILD:' ./src/config.h; \
+ 	else \
+-		sed -i 's:[/]*#define _ZAURUS_BUILD.*:#define _ZAURUS_BUILD:' ./src/config.h; \
++		sed -i.bak 's:[/]*#define _ZAURUS_BUILD.*:#define _ZAURUS_BUILD:' ./src/config.h; \
+ 	fi;
+-	$(Q)sed -i 's/^Version: .*/Version: $(VERSION)/' ./docs/control
+-	$(Q)sed -i 's/^Version: .*/Version: $(VERSION)/' ./debian/control
+-	$(Q)sed -i 's/^Architecture: .*/Architecture: $(ARCH)/' ./debian/control 
++	$(Q)sed -i.bak 's/^Version: .*/Version: $(VERSION)/' ./docs/control
++	$(Q)sed -i.bak 's/^Version: .*/Version: $(VERSION)/' ./debian/control
++	$(Q)sed -i.bak 's/^Architecture: .*/Architecture: $(ARCH)/' ./debian/control 
+ 
+ #
+ # - convert sources to DOS text format (this is multiplatform project)
+@@ -591,9 +599,9 @@
+ #
+ clean:
+ 	@echo cleaning up
+-	$(Q)cd ./src/lib/zlib/; make clean;
++	$(Q)cd ./src/lib/zlib/; gmake clean;
+ 	$(Q)rm -f $(OBJ)/*.o $(OBJ)/*.d $(OBJ)/*.a $(BIN)/core.* $(BIN)/notecase$(EXE) ./gmon.out
+ 	$(Q)rm -rf ./notecase
+ 
+ 
+-.PHONY : all help poinstall pouninstall install uninstall rpm pack packdos updatesrcdos updatesrc updatemime clean ipk deb weexpc check install2
+\ No newline at end of file
++.PHONY : all help poinstall pouninstall install uninstall rpm pack packdos updatesrcdos updatesrc updatemime clean ipk deb weexpc check install2
