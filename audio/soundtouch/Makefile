@@ -14,14 +14,15 @@ MASTER_SITES=	http://www.surina.net/soundtouch/
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An open-source audio processing library
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/automake19:${PORTSDIR}/devel/automake19
 CONFIGURE_ARGS=	--enable-shared=yes
-USE_AUTOTOOLS=	autoconf:259 libtool:15
+USE_AUTOTOOLS=	autoconf:259 automake:19:env libtool:15
 USE_LDCONFIG=	yes
+
+BROKEN=		Does not compile
 
 post-patch: .SILENT
 .for f in config.guess config.sub depcomp install-sh missing
-	${LN} -sf ${LOCALBASE}/share/automake19/${f} ${WRKSRC}/config/${f}
+	${LN} -sf ${LOCALBASE}/share/automake-1.9/${f} ${WRKSRC}/config/${f}
 .endfor
 	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g; \
