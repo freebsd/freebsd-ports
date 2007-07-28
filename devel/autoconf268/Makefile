@@ -7,7 +7,7 @@
 
 PORTNAME=	autoconf
 PORTVERSION=	2.61
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	autoconf
@@ -42,11 +42,10 @@ MAN1_PAGES=	${GENERIC_LINKS} config.guess config.sub
 MAN1=		${MAN1_PAGES:S/$/-${BUILD_VERSION}.1/g}
 
 post-patch:
-	@(cd ${WRKSRC} && ${REINPLACE_CMD} -E 's,(PACKAGE=autoconf),\1${BUILD_VERSION},' configure)
 	@(cd ${WRKSRC}/man && \
 		for file in *.[1x]; do \
-			${REINPLACE_CMD} -E 's,([^-]auto)(conf|make|reconf|update|header|scan),\1\2${BUILD_VERSION},g ; \
-						s,(config\.guess|config\.sub|ifnames),\1${BUILD_VERSION},g' $$file ; \
+			${REINPLACE_CMD} -E 's,([^-]auto)(conf|make|reconf|update|header|scan),\1\2-${BUILD_VERSION},g ; \
+						s,(config\.guess|config\.sub|ifnames),\1-${BUILD_VERSION},g' $$file ; \
 		done)
 	@(cd ${WRKSRC}/doc && \
 		${RM} -f *.info && \
