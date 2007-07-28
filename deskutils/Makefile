@@ -148,6 +148,7 @@
     SUBDIR += nautilus-locked-folder
     SUBDIR += nautilus-open-terminal
     SUBDIR += nautilus-sendto
+    SUBDIR += notecase
     SUBDIR += notification-daemon
     SUBDIR += ontv
     SUBDIR += orage
