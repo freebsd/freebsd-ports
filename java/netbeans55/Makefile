@@ -21,6 +21,8 @@ JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 RESTRICTED=	Restrictive license
 
+BROKEN=		Unfetchable
+
 WRKSRC=		${WRKDIR}/netbeans
 
 SUB_FILES=	pkg-install pkg-deinstall
