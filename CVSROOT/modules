@@ -15831,6 +15831,7 @@ urt		ports/graphics/urt
 urwfonts	ports/x11-fonts/urwfonts
 urwfonts-ttf	ports/x11-fonts/urwfonts-ttf
 us-zipcodes	ports/misc/us-zipcodes
+usbhotkey	ports/sysutils/usbhotkey
 uschedule	ports/sysutils/uschedule
 usendmail	ports/mail/usendmail
 useracc		ports/databases/useracc
