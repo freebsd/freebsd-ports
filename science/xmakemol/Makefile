@@ -6,7 +6,7 @@
 
 PORTNAME=	xmakemol
 PORTVERSION=	5.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Molecule Viewer Program Based on Motif Widget
 
 USE_XLIB=	yes
+USE_GL=		glut glw
 USE_MOTIF=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
