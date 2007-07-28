@@ -358,6 +358,7 @@
     SUBDIR += p5-Filter-Simple
     SUBDIR += p5-FormValidator-Simple
     SUBDIR += p5-Games-Dissociate
+    SUBDIR += p5-Google-Data-JSON
     SUBDIR += p5-HTML-Entities-Numbered
     SUBDIR += p5-HTML-EscapeEvil
     SUBDIR += p5-HTML-Format
