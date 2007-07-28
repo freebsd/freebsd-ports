@@ -7,7 +7,7 @@
 
 PORTNAME=	x-lib
 PORTVERSION=	12.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -28,7 +28,6 @@ USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15:env
-WANT_AUTOHEADER_VER=	259
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/iiimxcf/xiiimp.so

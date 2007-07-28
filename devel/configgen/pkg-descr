@@ -8,10 +8,12 @@ or you can specify a command below.
  -gnu       Create generic gnu configure script
  -gnome     Create gnome specific configure script
  -bsd       Use FreeBSD auto-tools
-              (versions: libtool15, automake15, autoconf253)
+              (versions: libtool, automake-1.5, autoconf-2.53)
  -bsd14     Use FreeBSD auto-tools
-              (versions: libtool15, automake14, autoconf213)
+              (versions: libtool, automake-1.4, autoconf-2.13)
  -bsd19     Use FreeBSD auto-tools
-              (versions: libtool15, automake19, autoconf259)
+              (versions: libtool, automake-1.9, autoconf-2.59)
+ -bsd110    Use FreeBSD auto-tools
+	      (versions: libtool, automake-1.10, autoconf-2.61)
  -f         Find config (fall back on generic gnu)
  <config>   Specify a auto-gen configure script

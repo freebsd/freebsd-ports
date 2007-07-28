@@ -7,7 +7,7 @@
 
 PORTNAME=	php-gtk
 PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtk.php.net/distributions/ \
 		http://document-root.de/mirror/php-gtk/
@@ -88,7 +88,7 @@ EXAMPLES=	combobutton.php fileselection.php gtk.php hello.php list.php \
 
 pre-configure:
 	@${ECHO_MSG} "===>  Building configuration files for ${PKGNAME}"
-	@(cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} PHP_AUTOCONF=autoconf259 PHP_AUTOHEADER=autoheader259 ./buildconf)
+	@(cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} PHP_AUTOCONF=${AUTOCONF} PHP_AUTOHEADER=${AUTOHEADER} ./buildconf)
 .for FILE in ${PIC2FIX}
 	@${REINPLACE_CMD} -e "s|-prefer-pic|${CFLAGS}|g" ${WRKSRC}/${FILE}
 .endfor

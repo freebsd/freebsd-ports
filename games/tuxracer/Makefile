@@ -7,7 +7,7 @@
 
 PORTNAME=	tuxracer
 PORTVERSION=	0.61
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=tuxracer
@@ -22,7 +22,7 @@ LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 USE_SDL=	mixer sdl
 USE_GL=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:253
+USE_AUTOTOOLS=	automake:14 autoconf:261
 AUTOMAKE_ARGS=	-a
 CONFIGURE_ENV=	THREAD_LIB="${PTHREAD_LIBS}"
 MAKE_ENV=	${CONFIGURE_ENV}
@@ -36,11 +36,11 @@ WORKDATA=	${WRKDIR}/${PORTNAME}-data-${PORTVERSION}
 COURSEDIRS=	1 2 3 4 5 6 7 8 9 10 11
 
 post-extract:
-	${RM} ${WRKSRC}/missing
+	@${RM} ${WRKSRC}/missing
 
 post-install:
-	${MKDIR} ${DATADIR}
-	(${CHMOD} -R o+r ${WORKDATA} && cd ${WORKDATA} && ${TAR} -c -f - *) | \
+	@${MKDIR} ${DATADIR}
+	@(${CHMOD} -R o+r ${WORKDATA} && cd ${WORKDATA} && ${TAR} -c -f - *) | \
 		(cd ${DATADIR} && ${TAR} -x -f - )
 
 .include <bsd.port.mk>

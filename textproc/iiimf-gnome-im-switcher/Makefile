@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-im-switcher
 PORTVERSION=	12.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -27,7 +27,6 @@ USE_GNOME=	intltool gconf2 libglade2 libgnomeui \
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15:env
-WANT_AUTOHEADER_VER=	259
 
 GCONF_SCHEMAS=	gnome-im-properties.schemas gnome-im-switcher.schemas
 

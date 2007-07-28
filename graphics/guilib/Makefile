@@ -7,7 +7,7 @@
 
 PORTNAME=	guilib
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/GUIlib/src/
 DISTNAME=	GUIlib-${PORTVERSION}
@@ -25,7 +25,6 @@ USE_AUTOTOOLS=	 aclocal:19:env
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-release $$(LT_RELEASE)||g' ${WRKSRC}/Makefile.in
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|^ACLOCAL =.*|ACLOCAL = ${ACLOCAL}|g' ${WRKSRC}/Makefile

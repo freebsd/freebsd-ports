@@ -1,13 +1,16 @@
---- doc/autoconf.texi.orig	Fri Mar  8 12:57:41 2002
-+++ doc/autoconf.texi	Thu Oct 14 20:14:14 2004
+--- doc/autoconf.texi.orig	Fri Mar  8 04:57:41 2002
++++ doc/autoconf.texi	Sat Apr 14 15:36:01 2007
 @@ -2,4 +2,4 @@
  @c %**start of header
 -@setfilename autoconf.info
 -@settitle Autoconf
-+@setfilename autoconf253.info
-+@settitle Autoconf253
++@setfilename autoconf-2.53.info
++@settitle Autoconf-2.53
  
-@@ -36,21 +36,3 @@
+@@ -34,23 +34,5 @@
+ 
+-@dircategory GNU admin
++@dircategory Programming & development tools
  @direntry
 -* Autoconf: (autoconf).         Create source code configuration scripts
 -@end direntry
@@ -28,5 +31,5 @@
 -                                Recreating a configuration
 -* testsuite: (autoconf)testsuite Invocation.
 -                                Running an Autotest test suite
-+* Autoconf253: (autoconf253).         Create source code configuration scripts
++* Autoconf-2.53: (autoconf-2.53).   Create source code configuration scripts.
  @end direntry

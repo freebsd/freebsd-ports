@@ -1,0 +1,28 @@
+--- doc/Makefile.in.orig	Fri Mar  8 05:10:30 2002
++++ doc/Makefile.in	Thu Apr  5 01:01:20 2007
+@@ -86,3 +86,3 @@
+ 
+-info_TEXINFOS = autoconf.texi standards.texi
++info_TEXINFOS = autoconf-2.53.texi
+ autoconf_TEXINFOS = fdl.texi install.texi
+@@ -103,5 +103,5 @@
+ TEXINFO_TEX = $(top_srcdir)/config/texinfo.tex
+-INFO_DEPS = autoconf.info standards.info
+-DVIS = autoconf.dvi standards.dvi
+-TEXINFOS = autoconf.texi standards.texi
++INFO_DEPS = autoconf-2.53.info
++DVIS = autoconf.dvi
++TEXINFOS = autoconf-2.53.texi
+ DIST_COMMON = $(autoconf_TEXINFOS) $(standards_TEXINFOS) Makefile.am \
+@@ -120,4 +120,4 @@
+ 	@:
+-$(srcdir)/stamp-vti: autoconf.texi $(top_srcdir)/configure.ac
+-	@(set `$(SHELL) $(top_srcdir)/config/mdate-sh $(srcdir)/autoconf.texi`; \
++$(srcdir)/stamp-vti: autoconf-2.53.texi $(top_srcdir)/configure.ac
++	@(set `$(SHELL) $(top_srcdir)/config/mdate-sh $(srcdir)/autoconf-2.53.texi`; \
+ 	echo "@set UPDATED $$1 $$2 $$3"; \
+@@ -138,3 +138,3 @@
+ 
+-autoconf.info: autoconf.texi $(srcdir)/version.texi $(autoconf_TEXINFOS)
++autoconf-2.53.info: autoconf-2.53.texi $(srcdir)/version.texi $(autoconf_TEXINFOS)
+ autoconf.dvi: autoconf.texi $(srcdir)/version.texi $(autoconf_TEXINFOS)

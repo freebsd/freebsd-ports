@@ -121,7 +121,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-common \
     ${PRTYPE} != -spr800
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-ekpstm::main.c
 .endif
-BUILD_DEPENDS+=	${LOCALBASE}/bin/autoconf253:${PORTSDIR}/devel/autoconf253
+BUILD_DEPENDS+=	${LOCALBASE}/bin/autoconf-2.53:${PORTSDIR}/devel/autoconf253
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 USE_ICONV=	yes
 .endif
@@ -281,7 +281,7 @@ post-patch:
 
 pre-configure:
 .if ${PIPS_LEVEL} >= 206 && ${DIST_TYPE} != lpr && ${DIST_TYPE} != cups
-	cd ${WRKSRC}/libltdl && ${LOCALBASE}/bin/autoconf253
+	cd ${WRKSRC}/libltdl && ${LOCALBASE}/bin/autoconf-2.53
 .endif
 
 post-configure:

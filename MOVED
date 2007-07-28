@@ -1130,7 +1130,6 @@ www/mozilla-devel-gtk1||2004-06-28|removed obsolete port
 security/drwebd|security/drweb|2004-06-29|functionality already in security/drweb
 www/drivel|deskutils/drivel|2004-06-30|moved to category deskutils
 devel/autoconf257||2004-07-01|autotools cleanup
-devel/automake17||2004-07-01|autotools cleanup
 devel/libtool14||2004-07-01|autotools cleanup
 math/libgmp-freebsd|math/libgmp4|2004-07-02|superseded by API compatible version
 devel/umbrello|devel/kdesdk3|2004-07-02|Umbrello was integrated into kdesdk package
@@ -1210,7 +1209,6 @@ misc/kwordquiz|misc/kdeedu3|2004-10-13|kwordquiz was integrated into the kdeedu3
 audio/libvorbis-aotuv|audio/libvorbis|2004-10-13|The aoTuV enhancement has been merged into the mainstream
 graphics/kolourpaint|graphics/kdegraphics3|2004-10-13|kolourpaint was integrated into the kdegraphics3 port
 graphics/kimagemapeditor|www/kdewebdev|2004-10-13|kimagemapeditor was integrated into the kdewebdev port
-devel/automake18|devel/automake19|2004-10-15|automake18 replaced with automake19
 www/zope-cmftransforms|www/zope-portaltransforms|2004-10-16|renamed by authors
 dns/bind9-sdb-mysql||2004-10-17|No longer maintained
 www/phpnuke||2004-10-17|security vulnerabilities and no longer maintained

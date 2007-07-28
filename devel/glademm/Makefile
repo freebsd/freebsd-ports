@@ -7,7 +7,7 @@
 
 PORTNAME=	glademm
 PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://home.wtal.de/petig/Gtk/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
@@ -31,11 +31,5 @@ post-patch:
 		-Ee '/^@AMDEP/!s|getopt([^[:space:]])+||g' \
 		-Ee '/^@AMDEP(.)+getopt/d' \
 			${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} \
-		-Ee 's|automake-([[:digit:]]+)\.([[:digit:]]+)|automake\1\2|g' \
-		-e 's|autoconf2\.50|autoconf259|g' \
-		-e 's|autoconf2\.13|autoconf213|g' \
-			${WRKSRC}/src/glade--.cc \
-			${WRKSRC}/src/Cxx.cc
 
 .include <bsd.port.post.mk>

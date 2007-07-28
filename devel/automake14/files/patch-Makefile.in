@@ -1,52 +1,39 @@
 --- Makefile.in.orig	Sat Jul 27 14:09:40 2002
-+++ Makefile.in	Thu May 13 13:44:45 2004
++++ Makefile.in	Thu Apr  5 02:20:54 2007
 @@ -36,5 +36,5 @@
  
 -pkgdatadir = $(datadir)/@PACKAGE@
 -pkglibdir = $(libdir)/@PACKAGE@
 -pkgincludedir = $(includedir)/@PACKAGE@
-+pkgdatadir = $(datadir)/@PACKAGE@14
-+pkglibdir = $(libdir)/@PACKAGE@14
-+pkgincludedir = $(includedir)/@PACKAGE@14
++pkgdatadir = $(datadir)/@PACKAGE@-@APIVERSION@
++pkglibdir = $(libdir)/@PACKAGE@-@APIVERSION@
++pkgincludedir = $(includedir)/@PACKAGE@-@APIVERSION@
  
 @@ -74,3 +74,3 @@
  bin_SCRIPTS = automake aclocal
 -info_TEXINFOS = automake.texi
-+info_TEXINFOS = automake14.texi
++info_TEXINFOS = automake-@APIVERSION@.texi
  
 @@ -97,5 +97,5 @@
  TEXI2DVI = texi2dvi
 -INFO_DEPS = automake.info
--DVIS = automake.dvi
++INFO_DEPS = automake-@APIVERSION@.info
+ DVIS = automake.dvi
 -TEXINFOS = automake.texi
-+INFO_DEPS = automake14.info
-+DVIS = automake14.dvi
-+TEXINFOS = automake14.texi
++TEXINFOS = automake-@APIVERSION@.texi
  DATA =  $(pkgvdata_DATA) $(script_DATA)
 @@ -156,4 +156,4 @@
  
 -$(srcdir)/stamp-vti: automake.texi $(top_srcdir)/configure.in
 -	@echo "@set UPDATED `$(SHELL) $(srcdir)/mdate-sh $(srcdir)/automake.texi`" > vti.tmp
-+$(srcdir)/stamp-vti: automake14.texi $(top_srcdir)/configure.in
-+	@echo "@set UPDATED `$(SHELL) $(srcdir)/mdate-sh $(srcdir)/automake14.texi`" > vti.tmp
++$(srcdir)/stamp-vti: automake-@APIVERSION@.texi $(top_srcdir)/configure.in
++	@echo "@set UPDATED `$(SHELL) $(srcdir)/mdate-sh $(srcdir)/automake-@APIVERSION@.texi`" > vti.tmp
  	@echo "@set EDITION $(VERSION)" >> vti.tmp
-@@ -176,4 +176,4 @@
+@@ -176,3 +176,3 @@
  
 -automake.info: automake.texi version.texi
--automake.dvi: automake.texi version.texi
-+automake14.info: automake14.texi version.texi
-+automake14.dvi: automake14.texi version.texi
- 
-@@ -185,3 +185,3 @@
- 	cd $(srcdir) \
--	  && $(MAKEINFO) `echo $< | sed 's,.*/,,'`
-+	  && $(MAKEINFO) --no-split `echo $< | sed 's,.*/,,'`
- 
-@@ -276,3 +276,3 @@
- mostlyclean-aminfo:
--	-rm -f automake.aux automake.cp automake.cps automake.dvi automake.fn \
-+	-rm -f automake.aux automake.cp automake.cps automake14.dvi automake.fn \
- 	  automake.fns automake.ky automake.kys automake.ps \
++automake-@APIVERSION@.info: automake-@APIVERSION@.texi version.texi
+ automake.dvi: automake.texi version.texi
 @@ -490,3 +490,3 @@
  	@$(NORMAL_INSTALL)
 -	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook

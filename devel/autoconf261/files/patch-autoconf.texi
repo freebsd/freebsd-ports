@@ -1,14 +1,17 @@
---- doc/autoconf.texi.orig	Wed Nov  5 10:38:29 2003
-+++ doc/autoconf.texi	Thu Oct 14 20:17:35 2004
+--- doc/autoconf.texi.orig	Thu Nov 16 16:16:27 2006
++++ doc/autoconf.texi	Sat Apr 14 15:41:27 2007
 @@ -3,5 +3,5 @@
  @comment %**start of header
 -@setfilename autoconf.info
-+@setfilename autoconf261.info
++@setfilename autoconf-2.61.info
  @include version.texi
 -@settitle Autoconf
-+@settitle Autoconf261
++@settitle Autoconf-2.61
  @setchapternewpage odd
-@@ -212,23 +212,3 @@
+@@ -205,25 +205,5 @@
+ 
+-@dircategory Software development
++@dircategory Programming & development tools
  @direntry
 -* Autoconf: (autoconf).         Create source code configuration scripts.
 -@end direntry
@@ -31,5 +34,5 @@
 -                                Automatic update of @file{configure.ac}
 -* config.status: (autoconf)config.status Invocation. Recreating configurations.
 -* testsuite: (autoconf)testsuite Invocation.    Running an Autotest test suite.
-+* Autoconf261: (autoconf261).         Create source code configuration scripts.
++* Autoconf-2.61: (autoconf-2.61).   Create source code configuration scripts.
  @end direntry

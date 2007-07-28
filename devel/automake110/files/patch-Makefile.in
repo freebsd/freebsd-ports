@@ -1,27 +1,6 @@
---- Makefile.in.orig	Sun Mar  7 09:04:32 2004
-+++ Makefile.in	Sun Mar 14 17:07:15 2004
-@@ -82,2 +82,3 @@
- APIVERSION = @APIVERSION@
-+APIPVERSION = @APIPVERSION@
- AUTOCONF = @AUTOCONF@
-@@ -154,2 +155,3 @@
-   -e 's,[@]APIVERSION[@],$(APIVERSION),g' \
-+  -e 's,[@]APIPVERSION[@],$(APIPVERSION),g' \
-   -e 's,[@]PACKAGE[@],$(PACKAGE),g' \
-@@ -590,16 +592,4 @@
- 	@$(POST_INSTALL)
--	@for p in $(bin_SCRIPTS); do \
--	  f="`echo $$p|sed '$(transform)'`"; \
--	  fv="$$f-$(APIVERSION)"; \
--	  rm -f $(DESTDIR)$(bindir)/$$fv; \
--	  echo " $(LN) $(DESTDIR)$(bindir)/$$f $(DESTDIR)$(bindir)/$$fv"; \
--	  $(LN) $(DESTDIR)$(bindir)/$$f $(DESTDIR)$(bindir)/$$fv; \
--	done
- 
- uninstall-hook:
--	@for p in $(bin_SCRIPTS); do \
--	  f="`echo $$p|sed '$(transform)'`"; \
--	  fv="$$f-$(APIVERSION)"; \
--	  rm -f $(DESTDIR)$(bindir)/$$fv; \
--	done
+--- Makefile.in.orig	Sun Oct 15 10:25:23 2006
++++ Makefile.in	Sat Apr 14 16:04:04 2007
+@@ -591,3 +591,2 @@
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
  

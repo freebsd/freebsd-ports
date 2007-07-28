@@ -9,10 +9,10 @@ diff -urNbB src/reconfig.orig src/reconfig
 -do_cmd autoheader
 -do_cmd automake --add-missing --copy
 -do_cmd autoconf
-+do_cmd aclocal19 -I m4
-+do_cmd autoheader259
-+do_cmd automake19 --add-missing --copy
-+do_cmd autoconf259
++do_cmd aclocal-1.9 -I m4
++do_cmd autoheader-2.59
++do_cmd automake-1.9 --add-missing --copy
++do_cmd autoconf-2.59
  
  
  

@@ -3,33 +3,24 @@
 @@ -53,3 +53,3 @@
  DIST_SOURCES =
 -INFO_DEPS = $(srcdir)/automake.info
-+INFO_DEPS = $(srcdir)/automake${APIPVERSION}.info
++INFO_DEPS = $(srcdir)/automake-@APIVERSION@.info
  TEXINFO_TEX = $(top_srcdir)/lib/texinfo.tex
-@@ -73,2 +73,3 @@
- APIVERSION = @APIVERSION@
-+APIPVERSION = @APIPVERSION@
- AUTOCONF = @AUTOCONF@
-@@ -93,3 +94,3 @@
- LTLIBOBJS = @LTLIBOBJS@
--MAKEINFO = @MAKEINFO@
-+MAKEINFO = @MAKEINFO@ --no-split
- MODIFICATION_DELAY = @MODIFICATION_DELAY@
 @@ -135,3 +136,3 @@
  target_alias = @target_alias@
 -info_TEXINFOS = automake.texi
-+info_TEXINFOS = automake${APIPVERSION}.texi
++info_TEXINFOS = automake-@APIVERSION@.texi
  automake_TEXINFOS = fdl.texi
 @@ -142,3 +143,3 @@
  
 -TAGS_DEPENDENCIES = automake.texi
-+TAGS_DEPENDENCIES = automake${APIPVERSION}.texi
++TAGS_DEPENDENCIES = automake-@APIVERSION@.texi
  all: all-am
 @@ -222,5 +223,5 @@
  $(srcdir)/version.texi:  $(srcdir)/stamp-vti
 -$(srcdir)/stamp-vti: automake.texi $(top_srcdir)/configure
 -	@(dir=.; test -f ./automake.texi || dir=$(srcdir); \
 -	set `$(SHELL) $(top_srcdir)/lib/mdate-sh $$dir/automake.texi`; \
-+$(srcdir)/stamp-vti: automake${APIPVERSION}.texi $(top_srcdir)/configure
-+	@(dir=.; test -f ./automake${APIPVERSION}.texi || dir=$(srcdir); \
-+	set `$(SHELL) $(top_srcdir)/lib/mdate-sh $$dir/automake${APIPVERSION}.texi`; \
++$(srcdir)/stamp-vti: automake-@APIVERSION@.texi $(top_srcdir)/configure
++	@(dir=.; test -f ./automake-@APIVERSION@.texi || dir=$(srcdir); \
++	set `$(SHELL) $(top_srcdir)/lib/mdate-sh $$dir/automake-@APIVERSION@.texi`; \
  	echo "@set UPDATED $$1 $$2 $$3"; \
