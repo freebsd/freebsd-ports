@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qtiplot
-DISTVERSION=	0.9rc2
-PORTREVISION=	1
+DISTVERSION=	0.9rc3
 CATEGORIES=	math science
 MASTER_SITES=	http://soft.proindependent.com/src/
 
@@ -16,19 +15,18 @@ COMMENT=	An Origin clone for data analysis and scientific plotting
 
 LIB_DEPENDS=	gsl.10:${PORTSDIR}/math/gsl \
 		muparser.0:${PORTSDIR}/math/muparser \
-		origin.0:${PORTSDIR}/math/liborigin \
 		qwtplot3d-qt4:${PORTSDIR}/math/qwtplot3d-qt4 \
 		qwt.5:${PORTSDIR}/x11-toolkits/qwt-devel
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc qmake opengl qt3support network assistantclient
+QT_COMPONENTS=	gui moc qmake opengl svg qt3support network assistantclient
 HAS_CONFIGURE=	yes
 USE_DOS2UNIX=	qtiplot/qtiplot.pro
 
 DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \
-		"${DATADIR}/manual/common/qtiplot_logo.png" \
+		"${DATADIR}/qtiplot.png" \
 		"qtiplot" "" false
 
 OPTIONS=	DOCS "Install the QtiPlot Handbook" on \
@@ -77,8 +75,15 @@ post-patch:
 		-e "s/^SCRIPTING_LANGS += Python//" \
 		${WRKSRC}/${PORTNAME}/qtiplot.pro
 .endif
+	@${REINPLACE_CMD} -e \
+		's|/usr/share/doc/qtiplot/manual-%1|${DATADIR}/manual|; \
+		 s|/usr/lib/qtiplot/plugins|${DATADIR}/fitPlugins|' \
+		${WRKSRC}/qtiplot/src/ApplicationWindow.cpp
 
 do-configure:
+.if !defined(WITHOUT_NLS)
+	cd ${WRKSRC}/qtiplot && ${LOCALBASE}/bin/lrelease-qt4 -verbose qtiplot.pro
+.endif
 .for d in ${QPRO_DIRS}
 	(cd ${WRKSRC}/${d} && ${SETENV} ${MAKE_ENV} ${QMAKE})
 .endfor
@@ -91,6 +96,7 @@ post-configure:
 		 s|^LINK .*|LINK=${CXX}|' \
 		${WRKSRC}/${d}/Makefile
 .endfor
+	${REINPLACE_CMD} -e 's|^\(INCPATH.*=\)|\1-I../3rdparty/liborigin|' ${WRKSRC}/qtiplot/Makefile
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -101,6 +107,7 @@ do-install:
 				${DATADIR}/fitPlugins/libfitRational0.so
 	${INSTALL_PROGRAM} ${WRKSRC}/fitPlugins/libfitRational1.so.1.0.0 \
 				${DATADIR}/fitPlugins/libfitRational1.so
+	${INSTALL_DATA} ${WRKSRC}/qtiplot_logo.png ${DATADIR}/qtiplot.png
 .if defined(WITH_PYTHON)
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/qtiplotrc.py ${DATADIR}/qtiplotrc.py
 	@cd ${WRKSRC}/qtiplot && ${PYTHON_CMD} -c "import py_compile; py_compile.compile('qtiplotrc.py')"
