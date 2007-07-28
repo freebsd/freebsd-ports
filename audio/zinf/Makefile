@@ -7,7 +7,7 @@
 
 PORTNAME=	zinf
 PORTVERSION=	2.2.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -62,7 +62,7 @@ PLIST_SUB+=	LIBARTS="@comment "
 .endif
 
 .if !defined(WITHOUT_VORBIS) || defined(WITH_ALL_PLUGINS)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
 CONFIGURE_ARGS+=	--disable-vorbis

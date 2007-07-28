@@ -7,7 +7,7 @@
 
 PORTNAME=	prokyon3
 PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	Prokyon3 is a multithreaded MP3 manager and tag editor
 
 BUILD_DEPENDS=	${X11BASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
 LIB_DEPENDS=	id3-3.8:${PORTSDIR}/audio/id3lib \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_QT_VER=	3

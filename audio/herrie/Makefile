@@ -7,6 +7,7 @@
 
 PORTNAME=	herrie
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://herrie.info/distfiles/ \
 		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
@@ -46,7 +47,7 @@ LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad \
 CONFIGURE_ARGS+=no_mp3
 .endif
 .if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=no_vorbis
 .endif

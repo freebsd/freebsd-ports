@@ -7,7 +7,7 @@
 
 PORTNAME=	poe
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia gnustep
 MASTER_SITES=	http://www.eskimo.com/~pburns/Poe/files/
 DISTNAME=	Poe-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	Poe-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A vorbis comment editor for GNUstep
 
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes

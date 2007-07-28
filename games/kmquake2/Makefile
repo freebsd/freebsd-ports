@@ -7,7 +7,7 @@
 
 PORTNAME=	kmquake2
 PORTVERSION=	0.19
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/KMQuake2/:src \
 		http://qexpo2005.quakedev.com/uploaded/54/:data \
@@ -90,7 +90,7 @@ MAKE_ENV+=	KMQ2_ADDONS="${KMQ2_ADDONS:S/-1${EXTRACT_SUFX}//}"
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		openal.0:${PORTSDIR}/audio/openal \
 		png.5:${PORTSDIR}/graphics/png \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 USE_GL=		yes
 .endif
 

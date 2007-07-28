@@ -7,6 +7,7 @@
 
 PORTNAME=	vorbis
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.andrewchatham.com/pyogg/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ COMMENT=	Object-oriented Python bindings for the vorbis library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/ogg/vorbis.so
 USE_PYTHON=		yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	evq3
 PORTVERSION=	1.0a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://evolution.quakedev.com/dev/final/
 DISTNAME=	${PORTNAME}-final-src
@@ -19,7 +19,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	The Marriage of XreaL and Icculus.org Q3 w/ Improvements
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes

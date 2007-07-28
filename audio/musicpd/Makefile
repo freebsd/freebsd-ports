@@ -7,6 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.12.2
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://musicpd.org/uploads/files/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -49,7 +50,7 @@ LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
 .ifdef(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=--disable-ogg
 .else
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 .ifdef(WITHOUT_WAV)

@@ -7,7 +7,7 @@
 
 PORTNAME=	openal
 PORTVERSION=	20060211
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://openal.org/openal_webstf/downloads/
 DISTVERSION=	0.0.8
@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=--disable-sdl
 .endif
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbisfile.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbisfile.5:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--enable-vorbis
 .else
 CONFIGURE_ARGS+=--disable-vorbis

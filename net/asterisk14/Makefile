@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.4.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -115,7 +116,7 @@ CONFIGURE_ARGS+= --without-ogg
 .else
 PLIST_SUB+=	WITH_OGGVORBIS=""
 CONFIGURE_ARGS+= --with-ogg
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if defined(WITHOUT_RADIUS)

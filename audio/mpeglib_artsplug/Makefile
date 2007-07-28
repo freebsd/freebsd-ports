@@ -7,6 +7,7 @@
 
 PORTNAME=	mpeglib_artsplug
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -18,7 +19,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Legacy KDE audio backend
 
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 CONFLICTS=	kdemultimedia-3.1.* kdemultimedia-3.2.[0-3]
 

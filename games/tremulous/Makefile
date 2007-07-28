@@ -7,7 +7,7 @@
 
 PORTNAME=	tremulous
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|$|${PORTNAME}/|} \
 		http://0day.icculus.org/mirrors/tremulous/ \
@@ -83,7 +83,7 @@ USE_GL=		yes
 .   endif
 # Vorbis
 .   if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 MAKE_ENV+=	USE_CODEC_VORBIS=1
 .   endif
 .endif

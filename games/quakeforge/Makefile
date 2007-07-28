@@ -7,7 +7,7 @@
 
 PORTNAME=	quakeforge
 PORTVERSION=	0.5.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
 MASTER_SITE_SUBDIR=	quake/:sf
@@ -64,7 +64,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-ogg=${LOCALBASE} --with-vorbis=${LOCALBASE}
 PLIST_SUB+=	VORBIS=""
 .else

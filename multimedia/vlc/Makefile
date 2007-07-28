@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.6c
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
@@ -529,7 +529,7 @@ CONFIGURE_ARGS+=	--disable-twolame
 .endif
 
 .if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--enable-vorbis
 .else
 CONFIGURE_ARGS+=--disable-vorbis

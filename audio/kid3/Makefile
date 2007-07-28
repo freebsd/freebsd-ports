@@ -7,6 +7,7 @@
 
 PORTNAME=	kid3
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,7 @@ COMMENT=	MP3/Ogg/FLAC tag editor for KDE
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		FLAC.7:${PORTSDIR}/audio/flac \
 		ogg.5:${PORTSDIR}/audio/libogg \
-		vorbis.3:${PORTSDIR}/audio/libvorbis \
+		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		tunepimp.5:${PORTSDIR}/audio/libtunepimp
 
 USE_KDELIBS_VER=3

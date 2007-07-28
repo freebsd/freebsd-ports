@@ -7,6 +7,7 @@
 
 PORTNAME=	warzone2100
 PORTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
 
@@ -25,7 +26,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		openal.0:${PORTSDIR}/audio/openal \
 		physfs-1.0.1:${PORTSDIR}/devel/physfs \
 		png.5:${PORTSDIR}/graphics/png \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

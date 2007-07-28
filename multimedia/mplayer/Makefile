@@ -83,7 +83,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.10
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -458,7 +458,7 @@ CONFIGURE_ARGS+=	--disable-openal
 
 .if !defined(WITH_TREMOR)
 CONFIGURE_ARGS+=	--disable-tremor-internal
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if defined(WITH_REALPLAYER)

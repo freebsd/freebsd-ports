@@ -7,7 +7,7 @@
 
 PORTNAME=	ioquake3
 DISTVERSION=	1.34-rc3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://ioquake3.org/files/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -80,7 +80,7 @@ USE_GL=		yes
 .   endif
 # Vorbis
 .   if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 MAKE_ENV+=	USE_CODEC_VORBIS=1
 .   endif
 .endif

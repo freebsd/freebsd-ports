@@ -7,7 +7,7 @@
 
 PORTNAME=	hugo
 PORTVERSION=	2.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zeograd.com/download/
 
@@ -35,7 +35,7 @@ USE_GNOME=	gtk20
 .endif
 
 .if defined(WITH_OGG_SUPPORT)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 WITH_SDL_MIXER=	yes
 CONFIGURE_ARGS+=	--with-ogg-support
 .endif

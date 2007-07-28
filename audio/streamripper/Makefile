@@ -7,6 +7,7 @@
 
 PORTNAME=	streamripper
 PORTVERSION=	1.61.27
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	streamripper
@@ -24,7 +25,7 @@ OPTIONS=	VORBIS "Include Ogg Vorbis codec support" on
 
 .ifdef(WITH_VORBIS)
 LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 GNU_CONFIGURE=	yes

@@ -8,7 +8,7 @@
 
 PORTNAME=	snack
 PORTVERSION=	2.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio tcl84 tk84
 MASTER_SITES=	http://www.speech.kth.se/snack/dist/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -40,7 +40,7 @@ PLIST_SUB=	SNACK_VER=${PORTVERSION:R}
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--with-ogg-include=${LOCALBASE}/include \
 			--with-ogg-lib=${LOCALBASE}/lib
 ALL_TARGET=	all libsnackogg.so

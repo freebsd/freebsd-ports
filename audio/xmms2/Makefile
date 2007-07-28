@@ -8,6 +8,7 @@
 PORTNAME?=	xmms2
 PORTVERSION=	0.2.d.9
 DISTVERSION=	0.2DrJekyll
+PORTREVISION=	1
 CATEGORIES?=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +19,7 @@ COMMENT?=	Rewrite of xmms as a client/server system (developer release)
 
 .if !defined(XMMS2_SLAVE)
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 USE_BZIP2=	yes

@@ -343,7 +343,7 @@ gst_theora_DIST=	base
 
 # vorbis
 gst_vorbis_USE_GSTREAMER+=	ogg
-gst_vorbis_LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+gst_vorbis_LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 gst_vorbis_EXTRA_LIBS+=	-lgsttag-${VERSION} -lgstaudio-${VERSION}
 gst_vorbis_DIST=	base
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	vorbis-tools
 PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
@@ -23,7 +23,7 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		curl.4:${PORTSDIR}/ftp/curl \
 		FLAC.7:${PORTSDIR}/audio/flac \
 		speex.1:${PORTSDIR}/audio/speex \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_AUTOTOOLS=	aclocal:19 autoconf:259 automake:19 libtool:15
 USE_GETTEXT=	yes

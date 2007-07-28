@@ -7,7 +7,7 @@
 
 PORTNAME=		glob2
 PORTVERSION=		0.8.23
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		games
 MASTER_SITES=		http://dl.sv.nongnu.org/releases/glob2/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	thierry
@@ -16,7 +16,7 @@ MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Globulation 2 - a free and innovative strategy game
 
 BUILD_DEPENDS=		${LOCALBASE}/include/boost/rational.hpp:${PORTSDIR}/devel/boost
-LIB_DEPENDS=		vorbis.3:${PORTSDIR}/audio/libvorbis	\
+LIB_DEPENDS=		vorbis.4:${PORTSDIR}/audio/libvorbis	\
 			speex.1:${PORTSDIR}/audio/speex		\
 			fribidi.0:${PORTSDIR}/converters/fribidi\
 			freetype.9:${PORTSDIR}/print/freetype2

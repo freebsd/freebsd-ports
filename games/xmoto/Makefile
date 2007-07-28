@@ -7,7 +7,7 @@
 
 PORTNAME=	xmoto
 PORTVERSION=	0.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
 		http://www.amdmi3.ru/distfiles/
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Challenging 2D motocross platform game
 
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode

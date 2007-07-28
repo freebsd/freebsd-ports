@@ -7,7 +7,7 @@
 
 PORTNAME=	handbrake
 PORTVERSION=	0.7.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/ \
 		http://www.mirrors.ausmac.net/ftp/AudioVisual-SW/HandBrake/ \
@@ -27,7 +27,7 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2 \
 		ogg.5:${PORTSDIR}/audio/libogg \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		vorbis.3:${PORTSDIR}/audio/libvorbis \
+		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		xvidcore.4:${PORTSDIR}/multimedia/xvid \
 		x264.50:${PORTSDIR}/multimedia/x264 \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg

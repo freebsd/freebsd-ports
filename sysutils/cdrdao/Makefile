@@ -7,7 +7,7 @@
 
 PORTNAME?=	cdrdao
 PORTVERSION=	1.2.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	cdrdao
@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 
 MP3OGG_LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 			mad.2:${PORTSDIR}/audio/libmad \
-			vorbis.3:${PORTSDIR}/audio/libvorbis
+			vorbis.4:${PORTSDIR}/audio/libvorbis
 
 .if ${PORTNAME} == "gcdmaster"
 USE_GCC=		3.4

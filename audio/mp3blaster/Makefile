@@ -7,7 +7,7 @@
 
 PORTNAME=	mp3blaster
 PORTVERSION=	3.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--without-sidplay
 .if defined(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=	--without-oggvorbis
 .else
-LIB_DEPENDS+=	vorbisfile.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbisfile.5:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if !defined(WITHOUT_SDL)

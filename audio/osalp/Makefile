@@ -8,6 +8,7 @@
 
 PORTNAME=	osalp
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,7 @@ COMMENT=	Open Source Audio Library Project
 
 BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		mpg123:${PORTSDIR}/audio/mpg123
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GETOPT_LONG=yes

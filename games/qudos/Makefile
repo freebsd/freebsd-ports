@@ -7,7 +7,7 @@
 
 PORTNAME=	qudos
 PORTVERSION=	0.40.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/QuDos/
 DISTNAME=	QuDos-${PORTVERSION}-src
@@ -87,7 +87,7 @@ PLIST_SUB+=	ARTS="@comment "
 .endif
 
 .if !defined(WITHOUT_CLIENT)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 MAKE_ENV+=	BUILD_QUAKE2=YES
 PLIST_SUB+=	CLIENT=""
 Q2BIN+=		${PORTNAME}

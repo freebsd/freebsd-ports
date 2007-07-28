@@ -7,7 +7,7 @@
 
 PORTNAME=	boswars
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.boswars.org/dist/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -17,7 +17,7 @@ COMMENT=	A real-time strategy game
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		theora.2:${PORTSDIR}/multimedia/libtheora \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_LUA=	5.0
 USE_SDL=	sdl
