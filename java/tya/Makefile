@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ``100% unofficial'' JIT-compiler for java
 
+BROKEN=		Unfetchable
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.3
 JAVAOS=		native
