@@ -1,0 +1,9 @@
+bin/libhid-detach-device
+include/hid.h
+include/hidparser.h
+include/hidtypes.h
+lib/libhid.a
+lib/libhid.la
+lib/libhid.so
+lib/libhid.so.0
+libdata/pkgconfig/libhid.pc

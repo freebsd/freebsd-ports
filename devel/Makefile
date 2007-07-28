@@ -583,6 +583,7 @@
     SUBDIR += libgtop
     SUBDIR += libgutenfetch
     SUBDIR += libhash
+    SUBDIR += libhid
     SUBDIR += libhoard
     SUBDIR += libical
     SUBDIR += libisc
