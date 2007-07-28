@@ -12,6 +12,8 @@ COMMENT=	Gstreamer mpeg encoder plugin
 
 GST_PLUGIN=	mpeg2enc
 
+BROKEN=		Does not build
+
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
 .include "${MASTERDIR}/Makefile"
