@@ -44,6 +44,7 @@ PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt
 
 .if exists(${LOCALBASE}/bin/docbook2man)
 USE_DOCBOOK2MAN=	yes
+BUILD_DEPENDS+=		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-410
 .endif
 
 post-install:
