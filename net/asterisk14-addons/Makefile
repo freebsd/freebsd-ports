@@ -10,7 +10,7 @@ PORTVERSION=	1.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/releases/
 
-MAINTAINER=	fgast@only640k.org
+MAINTAINER=	pneumann@gmail.com
 COMMENT=	GPL modules for the Asterisk Open Source PBX
 
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
