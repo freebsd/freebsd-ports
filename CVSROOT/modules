@@ -9717,6 +9717,7 @@ p5-Gnome2-VFS	ports/x11-toolkits/p5-Gnome2-VFS
 p5-GnuPG-Interface	ports/security/p5-GnuPG-Interface
 p5-Goo		ports/deskutils/p5-Goo
 p5-Google-Checkout	ports/devel/p5-Google-Checkout
+p5-Google-Data-JSON	ports/textproc/p5-Google-Data-JSON
 p5-Gopher-Server	ports/net/p5-Gopher-Server
 p5-Graph	ports/math/p5-Graph
 p5-Graph-Easy	ports/graphics/p5-Graph-Easy
