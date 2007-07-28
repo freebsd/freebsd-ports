@@ -106,6 +106,8 @@ include/wine/windows/cpl.h
 include/wine/windows/custcntl.h
 include/wine/windows/cvconst.h
 include/wine/windows/d3d.h
+include/wine/windows/d3d10.h
+include/wine/windows/d3d10.idl
 include/wine/windows/d3d8.h
 include/wine/windows/d3d8caps.h
 include/wine/windows/d3d8types.h
@@ -173,6 +175,10 @@ include/wine/windows/dxdiag.h
 include/wine/windows/dxerr8.h
 include/wine/windows/dxerr9.h
 include/wine/windows/dxfile.h
+include/wine/windows/dxgi.h
+include/wine/windows/dxgi.idl
+include/wine/windows/dxgitype.h
+include/wine/windows/dxgitype.idl
 include/wine/windows/dyngraph.idl
 include/wine/windows/errors.h
 include/wine/windows/evcode.h
@@ -189,6 +195,7 @@ include/wine/windows/gdiplusflat.h
 include/wine/windows/gdiplusgpstubs.h
 include/wine/windows/gdiplusinit.h
 include/wine/windows/gdiplusmem.h
+include/wine/windows/gdiplusmetaheader.h
 include/wine/windows/gdipluspixelformats.h
 include/wine/windows/gdiplustypes.h
 include/wine/windows/guiddef.h
@@ -397,6 +404,7 @@ include/wine/windows/urlmon.idl
 include/wine/windows/usp10.h
 include/wine/windows/uuids.h
 include/wine/windows/uxtheme.h
+include/wine/windows/vdmdbg.h
 include/wine/windows/ver.h
 include/wine/windows/vfw.h
 include/wine/windows/vfwmsgs.h
