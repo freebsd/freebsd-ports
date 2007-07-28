@@ -1,0 +1,11 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/Parser/OpenSP/OpenSP.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/Parser/OpenSP/OpenSP.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/Parser/OpenSP/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/SGML/Parser/OpenSP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SGML/Parser/OpenSP/Tools.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/Parser/OpenSP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SGML/Parser/OpenSP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SGML/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SGML
