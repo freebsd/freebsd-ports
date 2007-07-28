@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	emelfm2
-PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTVERSION=	0.3.5
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.emelfm2.net/rel/ \
 		http://freebsd.unixfreunde.de/sources/
