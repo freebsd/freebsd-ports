@@ -2,8 +2,12 @@
 syslog-ng is now installed!  To replace FreeBSD's standard syslogd
 (/usr/sbin/syslogd), complete these steps:
 
-1. Create a configuration file named %%PREFIX%%/etc/syslog-ng/syslog-ng.conf
-   (a sample named syslog-ng.conf.sample has been included)
+1. Create a configuration file named %%PREFIX%%/etc/syslog-ng.conf
+   (a sample named syslog-ng.conf.sample has been included in
+   %%PREFIX%%/etc/syslog-ng). Note that this is a change in 2.0.2
+   version, previous ones put the config file in
+   %%PREFIX%%/etc/syslog-ng/syslog-ng.conf, so if this is an update
+   move that file in the right place
 
 2. Configure syslog-ng to start automatically by adding the following
    to /etc/rc.conf:

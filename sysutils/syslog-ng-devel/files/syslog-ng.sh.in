@@ -24,7 +24,7 @@ name=syslog_ng
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/syslog-ng
-required_files=%%PREFIX%%/etc/syslog-ng/syslog-ng.conf
+required_files=%%PREFIX%%/etc/syslog-ng.conf
 extra_commands=reload
 
 if checkyesno syslog_ng_purgeklog; then
