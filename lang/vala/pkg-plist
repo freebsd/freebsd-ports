@@ -47,6 +47,19 @@ include/vala-1.0/ccode/valaccodeunaryexpression.h
 include/vala-1.0/ccode/valaccodevariabledeclarator.h
 include/vala-1.0/ccode/valaccodewhilestatement.h
 include/vala-1.0/ccode/valaccodewriter.h
+include/vala-1.0/gee/arraylist.h
+include/vala-1.0/gee/collection.h
+include/vala-1.0/gee/hashmap.h
+include/vala-1.0/gee/hashset.h
+include/vala-1.0/gee/iterable.h
+include/vala-1.0/gee/iterator.h
+include/vala-1.0/gee/list.h
+include/vala-1.0/gee/map.h
+include/vala-1.0/gee/readonlycollection.h
+include/vala-1.0/gee/readonlylist.h
+include/vala-1.0/gee/readonlymap.h
+include/vala-1.0/gee/readonlyset.h
+include/vala-1.0/gee/set.h
 include/vala-1.0/gobject/valaccodecompiler.h
 include/vala-1.0/gobject/valaclassregisterfunction.h
 include/vala-1.0/gobject/valacodegenerator.h
@@ -65,6 +78,9 @@ include/vala-1.0/vala/vala.h
 include/vala-1.0/vala/valaaddressofexpression.h
 include/vala-1.0/vala/valaarray.h
 include/vala-1.0/vala/valaarraycreationexpression.h
+include/vala-1.0/vala/valaarraylengthfield.h
+include/vala-1.0/vala/valaarraymovemethod.h
+include/vala-1.0/vala/valaarrayresizemethod.h
 include/vala-1.0/vala/valaassignment.h
 include/vala-1.0/vala/valaattribute.h
 include/vala-1.0/vala/valaattributeprocessor.h
@@ -97,8 +113,6 @@ include/vala-1.0/vala/valaenumvalue.h
 include/vala-1.0/vala/valaexpression.h
 include/vala-1.0/vala/valaexpressionstatement.h
 include/vala-1.0/vala/valafield.h
-include/vala-1.0/vala/valaflags.h
-include/vala-1.0/vala/valaflagsvalue.h
 include/vala-1.0/vala/valaforeachstatement.h
 include/vala-1.0/vala/valaformalparameter.h
 include/vala-1.0/vala/valaforstatement.h
@@ -137,6 +151,7 @@ include/vala-1.0/vala/valarealliteral.h
 include/vala-1.0/vala/valareferencetransferexpression.h
 include/vala-1.0/vala/valareport.h
 include/vala-1.0/vala/valareturnstatement.h
+include/vala-1.0/vala/valascope.h
 include/vala-1.0/vala/valasemanticanalyzer.h
 include/vala-1.0/vala/valasignal.h
 include/vala-1.0/vala/valasizeofexpression.h
@@ -150,7 +165,6 @@ include/vala-1.0/vala/valaswitchlabel.h
 include/vala-1.0/vala/valaswitchsection.h
 include/vala-1.0/vala/valaswitchstatement.h
 include/vala-1.0/vala/valasymbol.h
-include/vala-1.0/vala/valasymbolbuilder.h
 include/vala-1.0/vala/valasymbolresolver.h
 include/vala-1.0/vala/valathrowstatement.h
 include/vala-1.0/vala/valatrystatement.h
@@ -183,9 +197,11 @@ share/gnome/vala/vapi/pango.vala
 share/gnome/vala/vapi/vala-1.0.vala
 share/gnome/vala/vapi/vte.deps
 share/gnome/vala/vapi/vte.vala
+share/gnome/vala/vapi/zlib.vala
 @dirrm share/gnome/vala/vapi
 @dirrm share/gnome/vala
 @dirrm include/vala-1.0/vala
 @dirrm include/vala-1.0/gobject
+@dirrm include/vala-1.0/gee
 @dirrm include/vala-1.0/ccode
 @dirrm include/vala-1.0
