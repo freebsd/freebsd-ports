@@ -1659,7 +1659,6 @@ cutils		ports/devel/cutils
 cutlass		ports/security/cutlass
 cuttlefish	ports/graphics/cuttlefish
 cvc3		ports/math/cvc3
-cvcl		ports/math/cvcl
 cvm		ports/security/cvm
 cvs+ipv6		ports/devel/cvs+ipv6
 cvs2cl		ports/devel/cvs2cl

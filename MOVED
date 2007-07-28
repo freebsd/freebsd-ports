@@ -3111,3 +3111,4 @@ devel/py-qt4-eric4|devel/eric4|2007-07-25|Moved to devel/eric4
 science/liblr|science/liblinear|2007-07-28|Project renamed
 games/freeciv-gtk|games/freeciv|2007-07-28|Dropped gtk1 support
 games/freeciv-gtk2|games/freeciv|2007-07-28|Gtk2 is supported by default now
+math/cvcl||2007-07-28|Has expired: CVC Lite is no longer supported. Please use CVC3 (math/cvc3) for all your validity checking needs!

@@ -1,8 +1,0 @@
-CVC Lite is an automatic theorem prover for the Satisfiability Modulo
-Theories (SMT) problem. Its features include: support for a variety of
-theories; interactive as well as C and C++ library interfaces; proof and
-model generation abilities; predicate subtyping; and suppport for quantifiers.
-In addition, there are essentially no limits on its use for research or
-commercial purposes (see license).
-
-WWW:	http://www.cs.nyu.edu/acsys/cvcl/
