@@ -1,0 +1,11 @@
+bin/gdisplay
+bin/gsnapshot
+include/dialog.h
+include/filechooser.h
+include/grabber.h
+include/iconbox.h
+include/language.h
+include/print.h
+include/window.h
+include/xpmglyphs.h
+lib/libsnapshot.a
