@@ -5,20 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	liblr
-PORTVERSION=	1.00
+PORTNAME=	liblinear
+PORTVERSION=	1.10
 CATEGORIES=	science math
-MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/
+MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/liblinear/ \
+		http://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	rafan@FreeBSD.org
-COMMENT=	A library for Large Regularized Logistic Regression
+COMMENT=	A library for Large Linear Classification
 
 OPTIONS=	OCFLAGS "Use optimized CFLAGS" On
 
 USE_ZIP=	yes
 
-MAKE_ENV=	CC="${CC}" CXXC="${CXX}"
+MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
 TXT_DOCS=	COPYRIGHT README
 
@@ -26,18 +27,18 @@ TXT_DOCS=	COPYRIGHT README
 PORTDOCS=	${TXT_DOCS}
 .endif
 
-PLIST_FILES=	bin/lr-train bin/lr-predict
+PLIST_FILES=	bin/train bin/predict
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_OCFLAGS)
-# same as LIBIR itself
+# same as LIBLINEAR itself
 CFLAGS=		-Wall -O3
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lr-train ${TARGETDIR}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/lr-predict ${TARGETDIR}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/train ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/predict ${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)
