@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Builtins/.packlist
+%%SITE_PERL%%/Perl6/Builtins.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Builtins
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6
+@dirrmtry %%SITE_PERL%%/Perl6
