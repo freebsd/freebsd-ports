@@ -655,6 +655,7 @@
     SUBDIR += upsmon
     SUBDIR += uptimec
     SUBDIR += uptimed
+    SUBDIR += usbhotkey
     SUBDIR += uschedule
     SUBDIR += userinfo
     SUBDIR += userlist
