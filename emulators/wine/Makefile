@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	0.9.41
+PORTVERSION=	0.9.42
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
@@ -17,9 +17,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility layer for Unix-like systems
 
-LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
+BUILD_DEPENDS=	fontforge:${PORTSDIR}/print/fontforge
+LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		gdraw.1:${PORTSDIR}/print/fontforge \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		lcms.1:${PORTSDIR}/graphics/lcms \
 		xml2:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
