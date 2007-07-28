@@ -7,7 +7,7 @@
 
 PORTNAME=	tuxguitar
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -17,6 +17,9 @@ MAINTAINER=	gahr@gahr.ch
 COMMENT=	A Multitrack tablature editor and player
 
 BUILD_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt \
+		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext
+
+RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt \
 		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext
 
 WRKSRC=		${WRKDIR}/TuxGuitar-0.9.1-src
