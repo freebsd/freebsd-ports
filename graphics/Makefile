@@ -232,6 +232,7 @@
     SUBDIR += grx
     SUBDIR += gscan2pdf
     SUBDIR += gsculpt
+    SUBDIR += gsnapshot
     SUBDIR += gstreamer-plugins-aalib
     SUBDIR += gstreamer-plugins-cairo
     SUBDIR += gstreamer-plugins-jpeg
