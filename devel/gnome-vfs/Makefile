@@ -98,8 +98,8 @@ pre-configure:
 		${FALSE}; \
 	fi
 .if defined(WITHOUT_KERBEROS)
-	${ECHO_CMD} "${PKGNAME}: KERBEROS is required."
-	${FALSE}
+	@${ECHO_CMD} "${PKGNAME}: KERBEROS is required."
+	@${FALSE}
 .endif
 
 post-install:
