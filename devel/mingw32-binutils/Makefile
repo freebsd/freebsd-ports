@@ -6,35 +6,20 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	${BINUTILVERSION}.${PATCHVERSION}
+PORTVERSION=	${BINUTILVERSION}
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-#MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	mingw
-#MASTER_SITE_SUBDIR=	binutils/releases
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	binutils/snapshots
 PKGNAMEPREFIX=	mingw32-
-DISTNAME=	${PORTNAME}-${BINUTILVERSION}.${PATCHVERSION:S/./-/g}-src
-#DISTNAME=	${PORTNAME}-${BINUTILVERSION}
-DIST_SUBDIR=	mingw
-
-# No patches for this release
-#PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
-# Special hack: I don't use SITE_SUBDIR & DIST_SUBDIR, and only pathces
-#               will be placed to subdirectory
-#               It allows to use main binutils sources from other ports.
-#PATCHFILES=	mingw/${PORTNAME}-${BINUTILVERSION}.${PATCHVERSION:S/./-/g}-src.diff
+DISTNAME=	${PORTNAME}-${BINUTILVERSION}
 
 MAINTAINER=	lev@FreeBSD.org
-COMMENT=	FSF binutils-2.16 for Windows cross-development
+COMMENT=	FSF binutils-2.17 for Windows cross-development
 
-BINUTILVERSION=	2.16
-PATCHVERSION=	91.20060119.1
+BINUTILVERSION=	2.17.50
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
-PATCH_DIST_STRIP=	-p1
-
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
@@ -43,22 +28,23 @@ CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--disable-shared
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
-MAN1=	${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}ar.1    \
-	${PKGNAMEPREFIX}as.1 ${PKGNAMEPREFIX}dlltool.1      \
-	${PKGNAMEPREFIX}c++filt.1 ${PKGNAMEPREFIX}ld.1      \
-	${PKGNAMEPREFIX}nlmconv.1 ${PKGNAMEPREFIX}nm.1      \
-	${PKGNAMEPREFIX}objcopy.1 ${PKGNAMEPREFIX}objdump.1 \
-	${PKGNAMEPREFIX}ranlib.1 ${PKGNAMEPREFIX}readelf.1  \
-	${PKGNAMEPREFIX}size.1 ${PKGNAMEPREFIX}strings.1    \
-	${PKGNAMEPREFIX}strip.1 ${PKGNAMEPREFIX}windres.1
+MAN1=	${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}ar.1   \
+	${PKGNAMEPREFIX}as.1 ${PKGNAMEPREFIX}dlltool.1     \
+	${PKGNAMEPREFIX}c++filt.1 ${PKGNAMEPREFIX}gprof.1  \
+	${PKGNAMEPREFIX}ld.1 ${PKGNAMEPREFIX}nlmconv.1     \
+	${PKGNAMEPREFIX}nm.1 ${PKGNAMEPREFIX}objcopy.1     \
+	${PKGNAMEPREFIX}objdump.1 ${PKGNAMEPREFIX}ranlib.1 \
+	${PKGNAMEPREFIX}readelf.1 ${PKGNAMEPREFIX}size.1   \
+	${PKGNAMEPREFIX}strings.1 ${PKGNAMEPREFIX}strip.1  \
+	${PKGNAMEPREFIX}windmc.1 ${PKGNAMEPREFIX}windres.1
 
-INFO=		as bfd binutils ld configure standards
+INFO=		as bfd binutils ld configure gprof standards
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
 PLIST_SUB+=	BINUTILS_TARG=${PKGNAMEPREFIX:S/-$//}
 
-BINARIES=	addr2line ar as c++filt ld nm objcopy objdump ranlib \
-		readelf size strings strip dlltool dllwrap windres
+BINARIES=	addr2line ar as c++filt gprof ld nm objcopy objdump ranlib \
+		readelf size strings strip dlltool dllwrap windmc windres
 
 pre-configure:
 	${CHMOD} 755 ${WRKSRC}/configure
