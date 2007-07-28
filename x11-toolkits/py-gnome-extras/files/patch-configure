@@ -1,10 +1,22 @@
---- configure.orig	Tue Jul 11 11:39:00 2006
-+++ configure	Tue Jul 11 11:43:03 2006
-@@ -20762,6 +20762,7 @@ case $mozpackage in
+--- configure.orig	Sun Feb 25 16:31:03 2007
++++ configure	Sat Jul 21 20:04:43 2007
+@@ -1550,7 +1550,7 @@
+   --with-pic              try to use only PIC/non-PIC objects [default=use
+                           both]
+   --with-tags[=TAGS]      include additional configurations [automatic]
+-  --with-gtkmozembed=mozilla|firefox|xulrunner
++  --with-gtkmozembed=mozilla|firefox|xulrunner|seamonkey
+                           package that provides libgtkmozembed
+ 
+ Some influential environment variables:
+@@ -22072,8 +22072,9 @@
       xulrunner) mozpackage_required_version=1.8 ;;
       firefox) mozpackage_required_version=1.0 ;;
       mozilla) mozpackage_required_version=1.2b ;;
-+     seamonkey) mozpackage_required_version=1.2b ;;
++     seamonkey) mozpackage_required_version=1.1.3 ;;
       *) { { echo "$as_me:$LINENO: error: --with-gtkmozembed argument must be either 'mozilla', 'firefox', or 'xulrunner'" >&5
- echo "$as_me: error: --with-gtkmozembed argument must be either 'mozilla', 'firefox', or 'xulrunner'" >&2;}
+-echo "$as_me: error: --with-gtkmozembed argument must be either 'mozilla', 'firefox', or 'xulrunner'" >&2;}
++echo "$as_me: error: --with-gtkmozembed argument must be either 'mozilla', 'firefox', 'seamonkey' or 'xulrunner'" >&2;}
     { (exit 1); exit 1; }; }
+ esac
+ 
