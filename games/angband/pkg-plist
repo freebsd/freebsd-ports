@@ -33,11 +33,13 @@ share/angband/edit/terrain.txt
 share/angband/edit/vault.txt
 share/angband/file/dead.txt
 share/angband/file/news.txt
+share/angband/help/308.txt
 share/angband/help/attack.txt
 share/angband/help/birth.txt
 share/angband/help/command.txt
 share/angband/help/dungeon.txt
 share/angband/help/general.txt
+share/angband/help/help.hlp
 share/angband/help/option.txt
 share/angband/help/playing.txt
 share/angband/help/version.txt
