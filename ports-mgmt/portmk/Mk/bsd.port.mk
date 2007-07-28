@@ -659,7 +659,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # Set the following to specify all .info files your port installs.
 #
 # INFO			- A list of .info files (omitting the trailing ".info");
-#				  only one entry per document!
+#				  only one entry per document! These files are listed in
+#				  the path relative to ${INFO_PATH}.
 # INFO_PATH		- Path, where all .info files will be installed by your
 #				  port, relative to ${PREFIX}
 #				  Default: "share/info" if ${PREFIX} is equal to /usr
@@ -889,7 +890,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: ${ARCH}-portbld-freebsd${OSREL}
 # CONFIGURE_ARGS
 #				- Pass these args to configure if ${HAS_CONFIGURE} is set.
-#				  Default: "--prefix=${PREFIX} ${CONFIGURE_TARGET}" if
+#				  Default: "--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH}
+#				  --mandir=${MANPREFIX}/man ${CONFIGURE_TARGET}" if
 #				  GNU_CONFIGURE is set, "CC=${CC} CCFLAGS=${CFLAGS}
 #				  PREFIX=${PREFIX} INSTALLPRIVLIB=${PREFIX}/lib
 #				  INSTALLARCHLIB=${PREFIX}/lib" if PERL_CONFIGURE is set,
@@ -1251,29 +1253,6 @@ MASTER_PORT?=${MASTERDIR:C/[^\/]+\/\.\.\///:C/[^\/]+\/\.\.\///:C/^.*\/([^\/]+\/[
 .else
 SLAVE_PORT?=	no
 MASTER_PORT?=
-.endif
-
-# Check the compatibility layer for amd64/ia64
-
-.if ${ARCH} == "amd64" || ${ARCH} =="ia64"
-.if exists(/usr/lib32)
-HAVE_COMPAT_IA32_LIBS?=  YES
-.endif
-.if !defined(HAVE_COMPAT_IA32_KERN)
-HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -a compat.ia32.maxvmem >/dev/null 2>&1; then echo YES; fi
-.endif
-.endif
-
-.if defined(IA32_BINARY_PORT) && ${ARCH} != "i386"
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-.if !defined(HAVE_COMPAT_IA32_KERN)
-IGNORE= you need a kernel with compiled-in IA32 compatibility to use this port.
-.elif !defined(HAVE_COMPAT_IA32_LIBS)
-IGNORE= you need the 32-bit libraries installed under /usr/lib32 to use this port.
-.endif
-.else
-IGNORE= you have to use i386 (or compatible) platform to use this port.
-.endif
 .endif
 
 # If they exist, include Makefile.inc, then architecture/operating
@@ -1856,6 +1835,34 @@ PATCH_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 .endif
 .endif
 
+# Check the compatibility layer for amd64/ia64
+
+.if ${ARCH} == "amd64" || ${ARCH} =="ia64"
+.if exists(/usr/lib32)
+HAVE_COMPAT_IA32_LIBS?=  YES
+.endif
+.if !defined(HAVE_COMPAT_IA32_KERN)
+HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -a compat.ia32.maxvmem >/dev/null 2>&1; then echo YES; fi
+.endif
+.endif
+
+.if defined(IA32_BINARY_PORT) && ${ARCH} != "i386"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if !defined(HAVE_COMPAT_IA32_KERN)
+IGNORE=		requires a kernel with compiled-in IA32 compatibility
+.elif !defined(HAVE_COMPAT_IA32_LIBS)
+IGNORE=		requires 32-bit libraries installed under /usr/lib32
+.endif
+_LDCONFIG_FLAGS=-32
+LIB32DIR=	lib32
+.else
+IGNORE=		requires i386 (or compatible) platform to run
+.endif
+.else
+LIB32DIR=	lib
+.endif
+PLIST_SUB+=	LIB32DIR=${LIB32DIR}
+
 .if defined(USE_ZIP)
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .endif
@@ -1896,7 +1903,7 @@ LIB_DEPENDS+=		ldap-2.3.2:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
 .elif ${WANT_OPENLDAP_VER} == 24
 LIB_DEPENDS+=		ldap-2.4.2:${PORTSDIR}/net/openldap24${_OPENLDAP_FLAVOUR}-client
 .else
-IGNORE=				unknown OpenLDAP version: ${WANT_OPENLDAP_VER}
+IGNORE=				cannot be built with unknown OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 .endif
 
@@ -1914,7 +1921,7 @@ _HAVE_FAM_SYSTEM=	fam
 
 .if defined(WANT_FAM_SYSTEM)
 .if defined(WITH_FAM_SYSTEM) && ${WITH_FAM_SYSTEM}!=${WANT_FAM_SYSTEM}
-IGNORE=	The port wants to use ${WANT_FAM_SYSTEM} as its FAM system and you wish to use ${WITH_FAM_SYSTEM}
+IGNORE=		wants to use ${WANT_FAM_SYSTEM} as its FAM system, while you wish to use ${WITH_FAM_SYSTEM}
 .endif
 FAM_SYSTEM=	${WANT_FAM_SYSTEM}
 .elif defined(WITH_FAM_SYSTEM)
@@ -1929,14 +1936,14 @@ FAM_SYSTEM=	${DEFAULT_FAM_SYSTEM}
 
 .if defined(_HAVE_FAM_SYSTEM)
 .if ${_HAVE_FAM_SYSTEM}!= ${FAM_SYSTEM}
-BROKEN=	FAM system mismatch: ${_HAVE_FAM_SYSTEM} is installed and desired FAM system is ${FAM_SYSTEM}
+BROKEN=		FAM system mismatch: ${_HAVE_FAM_SYSTEM} is installed, while desired FAM system is ${FAM_SYSTEM}
 .endif
 .endif
 
 .if defined(FAM_SYSTEM_${FAM_SYSTEM:U})
 LIB_DEPENDS+=	${FAM_SYSTEM_${FAM_SYSTEM:U}}
 .else
-IGNORE=			unknown FAM system: ${FAM_SYSTEM}
+IGNORE=		cannot be built with unknown FAM system: ${FAM_SYSTEM}
 .endif
 .endif # USE_FAM
 
@@ -2014,7 +2021,7 @@ LINUX_BASE_PORT=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINU
 .		if ${USE_LINUX:L} == "yes"
 LINUX_BASE_PORT=	${LINUXBASE}/etc/fedora-release:${PORTSDIR}/emulators/linux_base-fc4
 .		else
-IGNORE=	There is no emulators/linux_base-${USE_LINUX}, perhaps wrong use of USE_LINUX or OVERRIDE_LINUX_BASE_PORT.
+IGNORE=		cannot be built: there is no emulators/linux_base-${USE_LINUX}, perhaps wrong use of USE_LINUX or OVERRIDE_LINUX_BASE_PORT
 .		endif
 .	endif
 
@@ -2070,7 +2077,7 @@ X_FONTS_CYRILLIC_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontCyrillic
 X_FONTS_TTF_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontScalable
 X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontScalable
 .else
-IGNORE=	cannot install: bad X_WINDOW_SYSTEM setting; valid values are 'xfree86-4' and 'xorg'
+IGNORE=		cannot be installed: bad X_WINDOW_SYSTEM setting; valid values are 'xfree86-4' and 'xorg'
 .endif
 
 .if defined(USE_IMAKE)
@@ -2125,7 +2132,7 @@ USE_GL=		glu
 .  for _component in ${USE_GL}
 .   if !defined(_GL_${_component}_LIB_DEPENDS) && \
 		!defined(_GL_${_component}_RUN_DEPENDS)
-IGNORE=	uses unknown GL component
+IGNORE=		uses unknown GL component
 .   else
 LIB_DEPENDS+=	${_GL_${_component}_LIB_DEPENDS}
 RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
@@ -2390,18 +2397,6 @@ RUN_DEPENDS+=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 REINPLACE_ARGS?=	-i.bak
 REINPLACE_CMD?=	${SED} ${REINPLACE_ARGS}
 
-# Macro for coping entire directory tree with correct permissions
-COPYTREE_BIN=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
-					2>&1) && \
-					${CHOWN} -R ${BINOWN}:${BINGRP} $$1 && \
-					${FIND} $$1 -type d -exec chmod 755 {} \; && \
-					${FIND} $$1 -type f -exec chmod ${BINMODE} {} \;' --
-COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
-					2>&1) && \
-					${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
-					${FIND} $$1/ -type d -exec chmod 755 {} \; && \
-					${FIND} $$1/ -type f -exec chmod ${SHAREMODE} {} \;' --
-
 # Names of cookies used to skip already completed stages
 EXTRACT_COOKIE?=	${WRKDIR}/.extract_done.${PORTNAME}.${PREFIX:S/\//_/g}
 CONFIGURE_COOKIE?=	${WRKDIR}/.configure_done.${PORTNAME}.${PREFIX:S/\//_/g}
@@ -2569,6 +2564,29 @@ INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			BSD_INSTALL_MAN="${INSTALL_MAN}"
 MAKE_ENV+=	${INSTALL_MACROS}
 SCRIPTS_ENV+=	${INSTALL_MACROS}
+
+# Macro for coping entire directory tree with correct permissions
+.if ${UID} == 0
+COPYTREE_BIN=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+					2>&1) && \
+					${CHOWN} -R ${BINOWN}:${BINGRP} $$1 && \
+					${FIND} $$1 -type d -exec chmod 755 {} \; && \
+					${FIND} $$1 -type f -exec chmod ${BINMODE} {} \;' --
+COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+					2>&1) && \
+					${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
+					${FIND} $$1/ -type d -exec chmod 755 {} \; && \
+					${FIND} $$1/ -type f -exec chmod ${SHAREMODE} {} \;' --
+.else
+COPYTREE_BIN=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+					2>&1) && \
+					${FIND} $$1 -type d -exec chmod 755 {} \; && \
+					${FIND} $$1 -type f -exec chmod ${BINMODE} {} \;' --
+COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+					2>&1) && \
+					${FIND} $$1/ -type d -exec chmod 755 {} \; && \
+					${FIND} $$1/ -type f -exec chmod ${SHAREMODE} {} \;' --
+.endif
 
 # The user can override the NO_PACKAGE by specifying this from
 # the make command line
@@ -3154,9 +3172,18 @@ CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer
 .if !defined(CONFIGURE_MAX_CMD_LEN)
 CONFIGURE_MAX_CMD_LEN!=	${SYSCTL} -n kern.argmax
 .endif
-CONFIGURE_ARGS+=	--prefix=${PREFIX} ${CONFIGURE_TARGET}
+CONFIGURE_ARGS+=	--prefix=${PREFIX} $${_LATE_CONFIGURE_ARGS} ${CONFIGURE_TARGET}
 CONFIGURE_ENV+=		lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 HAS_CONFIGURE=		yes
+
+SET_LATE_CONFIGURE_ARGS= \
+     _LATE_CONFIGURE_ARGS="" ; \
+	if [ ! -z "`./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- '--mandir'`" ]; then \
+	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --mandir=${MANPREFIX}/man" ; \
+	fi ; \
+	if [ ! -z "`./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- '--infodir'`" ]; then \
+	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}" ; \
+	fi ;
 .endif
 
 # Passed to most of script invocations
@@ -3286,6 +3313,20 @@ INFO_PATH?=	share/info
 INFO_PATH?=	info
 .endif
 
+.if defined(INFO)
+. for D in ${INFO:H}
+RD:=	${D}
+.  if ${RD} != "."
+.   if !defined(INFO_SUBDIR)
+INFO_SUBDIR:=	${RD}
+.   elif ${INFO_SUBDIR} != ${RD}
+BROKEN=		only one subdirectory in INFO is allowed
+.   endif
+.  endif
+.undef RD
+. endfor
+.endif
+
 DOCSDIR_REL?=	${DOCSDIR:S,^${TARGETDIR}/,,}
 EXAMPLESDIR_REL?=	${EXAMPLESDIR:S,^${TARGETDIR}/,,}
 DATADIR_REL?=	${DATADIR:S,^${TARGETDIR}/,,}
@@ -3362,20 +3403,20 @@ __ARCH_OK?=		1
 .if defined(ONLY_FOR_ARCHS)
 IGNORE=		is only for ${ONLY_FOR_ARCHS},
 .else # defined(NOT_FOR_ARCHS)
-IGNORE=		does not run on ${NOT_FOR_ARCHS}.
+IGNORE=		does not run on ${NOT_FOR_ARCHS},
 .endif
-IGNORE+=	and you are running ${ARCH}.
+IGNORE+=	while you are running ${ARCH}
 
 .if defined(ONLY_FOR_ARCHS_REASON_${ARCH})
-IGNORE+=	Reason: ${ONLY_FOR_ARCHS_REASON_${ARCH}}
+IGNORE+=	(reason: ${ONLY_FOR_ARCHS_REASON_${ARCH}})
 .elif defined(ONLY_FOR_ARCHS_REASON)
-IGNORE+=	Reason: ${ONLY_FOR_ARCHS_REASON}
+IGNORE+=	(reason: ${ONLY_FOR_ARCHS_REASON})
 .endif
 
 .if defined(NOT_FOR_ARCHS_REASON_${ARCH})
-IGNORE+=	Reason: ${NOT_FOR_ARCHS_REASON_${ARCH}}
+IGNORE+=	(reason: ${NOT_FOR_ARCHS_REASON_${ARCH}})
 .elif defined(NOT_FOR_ARCHS_REASON)
-IGNORE+=	Reason: ${NOT_FOR_ARCHS_REASON}
+IGNORE+=	(reason: ${NOT_FOR_ARCHS_REASON})
 .endif
 
 .endif
@@ -3383,23 +3424,23 @@ IGNORE+=	Reason: ${NOT_FOR_ARCHS_REASON}
 # Check the user interaction and legal issues
 .if !defined(NO_IGNORE)
 .if (defined(IS_INTERACTIVE) && defined(BATCH))
-IGNORE=	is an interactive port
+IGNORE=		is an interactive port
 .elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
-IGNORE=	is not an interactive port
+IGNORE=		is not an interactive port
 .elif (defined(NO_CDROM) && defined(FOR_CDROM))
-IGNORE=	may not be placed on a CDROM: ${NO_CDROM}
+IGNORE=		may not be placed on a CDROM: ${NO_CDROM}
 .elif (defined(RESTRICTED) && defined(NO_RESTRICTED))
-IGNORE=	is restricted: ${RESTRICTED}
+IGNORE=		is restricted: ${RESTRICTED}
 .elif defined(BROKEN)
 .if !defined(TRYBROKEN)
-IGNORE=	is marked as broken: ${BROKEN}
+IGNORE=		is marked as broken: ${BROKEN}
 .endif
 .elif defined(FORBIDDEN)
-IGNORE=	is forbidden: ${FORBIDDEN}
+IGNORE=		is forbidden: ${FORBIDDEN}
 .endif
 
 .if (defined(MANUAL_PACKAGE_BUILD) && defined(PACKAGE_BUILDING))
-IGNORE=	has to be built manually: ${MANUAL_PACKAGE_BUILD}
+IGNORE=		has to be built manually: ${MANUAL_PACKAGE_BUILD}
 clean:
 	@${IGNORECMD}
 .endif
@@ -3900,6 +3941,7 @@ do-configure:
 .endif
 .if defined(HAS_CONFIGURE)
 	@(cd ${CONFIGURE_WRKSRC} && \
+	    ${SET_LATE_CONFIGURE_ARGS} \
 		if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 	    INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
@@ -4244,6 +4286,12 @@ install-ldconfig-file:
 .endif
 # This can be removed once all ports have been converted to USE_LDCONFIG.
 .if defined(INSTALLS_SHLIB)
+.if defined(USE_LDCONFIG)
+	@${ECHO_MSG} "===>   INSTALLS_SHLIB and USE_LDCONFIG both defined."
+.endif
+.if defined(USE_LDCONFIG32)
+	@${ECHO_MSG} "===>   INSTALLS_SHLIB and USE_LDCONFIG32 both defined."
+.endif
 .if !defined(INSTALL_AS_USER)
 .if !defined(DESTDIR)
 	@${ECHO_MSG} "===>   Running ldconfig"
@@ -5326,7 +5374,7 @@ lib-depends:
 		fi; \
 		if [ -z "${DESTDIR}" ] ; then \
 			${ECHO_MSG} -n "===>   ${PKGNAME} depends on shared library: $$lib"; \
-			if ${LDCONFIG} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
+			if ${LDCONFIG} ${_LDCONFIG_FLAGS} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
 				${ECHO_MSG} " - found"; \
 				if [ ${_DEPEND_ALWAYS} = 1 ]; then \
 					${ECHO_MSG} "       (but building it anyway)"; \
@@ -5340,7 +5388,7 @@ lib-depends:
 			fi; \
 		else \
 			${ECHO_MSG} -n "===>   ${PKGNAME} depends on shared library in ${DESTDIR}: $$lib"; \
-			if ${CHROOT} ${DESTDIR} ${LDCONFIG} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
+			if ${CHROOT} ${DESTDIR} ${LDCONFIG} ${_LDCONFIG_FLAGS} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
 				${ECHO_MSG} " - found"; \
 				if [ ${_DEPEND_ALWAYS} = 1 ]; then \
 					${ECHO_MSG} "       (but building it anyway)"; \
@@ -5359,7 +5407,7 @@ lib-depends:
 				${ECHO_MSG} "     => No directory for $$lib.  Skipping.."; \
 			else \
 				${_INSTALL_DEPENDS} \
-				if ! ${LDCONFIG} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
+				if ! ${LDCONFIG} ${_LDCONFIG_FLAGS} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
 					${ECHO_MSG} "Error: shared library \"$$lib\" does not exist"; \
 					${FALSE}; \
 				fi; \
@@ -6036,14 +6084,14 @@ add-plist-info:
 	@${LS} ${TARGETDIR}/${INFO_PATH}/$i.info* | ${SED} -e s:${TARGETDIR}/::g >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec install-info --quiet %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
-	@if [ "`${DIRNAME} $i`" != "." ]; then \
-		${ECHO_CMD} "@unexec ${RMDIR} %D/info/`${DIRNAME} $i` 2> /dev/null || true" >> ${TMPPLIST}; \
-	fi
 .endfor
+.if defined(INFO_SUBDIR)
+	@${ECHO_CMD} "@unexec ${RMDIR} %D/${INFO_PATH}/${INFO_SUBDIR} 2> /dev/null || true" >> ${TMPPLIST}
+.endif
 .if (${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec if [ -f %D/${INFO_PATH}/dir ]; then if sed -e '1,/Menu:/d' %D/${INFO_PATH}/dir | grep -q '^[*] '; then true; else rm %D/${INFO_PATH}/dir; fi; fi" >> ${TMPPLIST}
 .if (${PREFIX} != ${LOCALBASE_REL} && ${PREFIX} != ${X11BASE_REL} && ${PREFIX} != ${LINUXBASE_REL})
-	@${ECHO_CMD} "@unexec rmdir %D/info 2> /dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${INFO_PATH} 2>/dev/null || true" >> ${TMPPLIST}
 .endif
 .endif
 .endif
