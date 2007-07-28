@@ -5,6 +5,7 @@
 %%BINUTILS_TARG%%/bin/c++filt
 %%BINUTILS_TARG%%/bin/dlltool
 %%BINUTILS_TARG%%/bin/dllwrap
+%%BINUTILS_TARG%%/bin/gprof
 %%BINUTILS_TARG%%/bin/ld
 %%BINUTILS_TARG%%/bin/nm
 %%BINUTILS_TARG%%/bin/objcopy
@@ -14,6 +15,7 @@
 %%BINUTILS_TARG%%/bin/strip
 %%BINUTILS_TARG%%/bin/size
 %%BINUTILS_TARG%%/bin/strings
+%%BINUTILS_TARG%%/bin/windmc
 %%BINUTILS_TARG%%/bin/windres
 %%BINUTILS_TARG%%/lib/ldscripts/i386pe.x
 %%BINUTILS_TARG%%/lib/ldscripts/i386pe.xbn
@@ -26,6 +28,7 @@ bin/%%BINUTILS_TARG%%-as
 bin/%%BINUTILS_TARG%%-c++filt
 bin/%%BINUTILS_TARG%%-dlltool
 bin/%%BINUTILS_TARG%%-dllwrap
+bin/%%BINUTILS_TARG%%-gprof
 bin/%%BINUTILS_TARG%%-ld
 bin/%%BINUTILS_TARG%%-nm
 bin/%%BINUTILS_TARG%%-objcopy
@@ -35,7 +38,10 @@ bin/%%BINUTILS_TARG%%-readelf
 bin/%%BINUTILS_TARG%%-strip
 bin/%%BINUTILS_TARG%%-size
 bin/%%BINUTILS_TARG%%-strings
+bin/%%BINUTILS_TARG%%-windmc
 bin/%%BINUTILS_TARG%%-windres
 @dirrm %%BINUTILS_TARG%%/bin
 @dirrm %%BINUTILS_TARG%%/lib/ldscripts
 @dirrm %%BINUTILS_TARG%%/lib
+@dirrmtry %%BINUTILS_TARG%%
+
