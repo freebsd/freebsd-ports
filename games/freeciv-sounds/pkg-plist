@@ -1,0 +1,19 @@
+%%DATADIR%%/stdsounds/LrgCan.ogg
+%%DATADIR%%/stdsounds/LrgExpl.ogg
+%%DATADIR%%/stdsounds/MedCan.ogg
+%%DATADIR%%/stdsounds/MgBar1.ogg
+%%DATADIR%%/stdsounds/MgBar2.ogg
+%%DATADIR%%/stdsounds/MgHeavy.ogg
+%%DATADIR%%/stdsounds/Mortar.ogg
+%%DATADIR%%/stdsounds/SmlExpl.ogg
+%%DATADIR%%/stdsounds/Splash.ogg
+%%DATADIR%%/stdsounds/THover.ogg
+%%DATADIR%%/stdsounds/Tread.ogg
+%%DATADIR%%/stdsounds/foot3.ogg
+%%DATADIR%%/stdsounds/inh2o.ogg
+%%DATADIR%%/stdsounds/metbrk.ogg
+%%DATADIR%%/stdsounds/wall01.ogg
+%%DATADIR%%/stdsounds/woodbrk.ogg
+%%DATADIR%%/stdsounds.soundspec
+@dirrm %%DATADIR%%/stdsounds
+@dirrmtry %%DATADIR%%
