@@ -1,9 +1,11 @@
 #! /bin/sh
 
-AUTOCONF_OLD=autoconf213
-AUTOHEADER_OLD=autoheader213
-AUTOCONF=autoconf259
-AUTOHEADER=autoheader259
+AUTOCONF_OLD=autoconf-2.13
+AUTOHEADER_OLD=autoheader-2.13
+AUTOCONF=autoconf-2.59
+AUTOHEADER=autoheader-2.59
+ACLOCAL=aclocal-1.9
+AUTOMAKE=automake-1.9
 
 #
 #  List of directories in which we should run autoconf or/and automake
@@ -52,8 +54,8 @@ done
 #
 #  Run aclocal where needed
 #
-( cd $gcc_dir/libgfortran && aclocal19 -I ../config || exit 1)
-( cd $gcc_dir/libstdc++-v3 && aclocal19 -I . -I .. -I ../config || exit 1)
+( cd $gcc_dir/libgfortran && ${ACLOCAL} -I ../config || exit 1)
+( cd $gcc_dir/libstdc++-v3 && ${ACLOCAL} -I . -I .. -I ../config || exit 1)
 
 #for dir in $aclocal_list ; do
 #   if cd $dir ; then
@@ -85,7 +87,7 @@ for dir in $automake_list; do
          fi
       fi
       echo "Running automake..."
-      if ! automake19; then
+      if ! ${AUTOMAKE}; then
          echo "automake failed in directory `pwd`"
          cd $top
          exit 1

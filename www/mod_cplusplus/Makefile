@@ -16,9 +16,6 @@ COMMENT=	Apache module for loading C++ objects as handlers
 
 USE_APACHE=	2.0+
 USE_AUTOTOOLS=	autoconf:259 autoheader:259 libtool:15 automake:19 aclocal:19
-# ${LOCALBASE}/share/aclocal19 does not contain libtool.m4 and that causes
-# problems.  Explicitly include ${LOCALBASE}/share/aclocal in the search
-# patch since that directory does contain libtool.m4
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS+=	-a
 GNU_CONFIGURE=	yes

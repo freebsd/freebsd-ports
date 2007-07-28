@@ -7,6 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.delorie.com/pub/djgpp/current/v2gnu/:djsource \
 		ftp://ftp.mirror.ac.uk/sites/www.delorie.com/current/v2gnu/:djsource \
@@ -27,9 +28,9 @@ COMMENT=	FSF gcc-4.1 for DJGPP cross-development
 
 BUILD_DEPENDS=	${TARGET}-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${LOCALBASE}/${TARGET}/bin/stubify:${PORTSDIR}/devel/${PKGNAMEPREFIX}crx \
-		autoconf213:${PORTSDIR}/devel/autoconf213 \
-		autoconf259:${PORTSDIR}/devel/autoconf259 \
-		aclocal19:${PORTSDIR}/devel/automake19
+		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
+		autoconf-2.59:${PORTSDIR}/devel/autoconf259 \
+		aclocal-1.9:${PORTSDIR}/devel/automake19
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		mpfr.1:${PORTSDIR}/math/mpfr

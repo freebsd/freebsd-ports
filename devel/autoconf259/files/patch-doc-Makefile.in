@@ -1,0 +1,31 @@
+--- doc/Makefile.in.orig	Thu Nov  6 01:33:27 2003
++++ doc/Makefile.in	Thu Apr  5 01:23:42 2007
+@@ -50,3 +50,3 @@
+ am__TEXINFO_TEX_DIR = $(top_srcdir)/config
+-INFO_DEPS = autoconf.info standards.info
++INFO_DEPS = autoconf-2.59.info
+ DVIS = autoconf.dvi standards.dvi
+@@ -55,3 +55,3 @@
+ HTMLS = autoconf.html standards.html
+-TEXINFOS = autoconf.texi standards.texi
++TEXINFOS = autoconf-2.59.texi
+ TEXI2PDF = $(TEXI2DVI) --pdf --batch
+@@ -123,3 +123,3 @@
+ TEXI2HTML_FLAGS = -split_chapter
+-info_TEXINFOS = autoconf.texi standards.texi
++info_TEXINFOS = autoconf-2.59.texi
+ autoconf_TEXINFOS = fdl.texi install.texi
+@@ -199,3 +199,3 @@
+ 	 -o $@ $<
+-autoconf.info: autoconf.texi version.texi $(autoconf_TEXINFOS)
++autoconf-2.59.info: autoconf-2.59.texi version.texi $(autoconf_TEXINFOS)
+ autoconf.dvi: autoconf.texi version.texi $(autoconf_TEXINFOS)
+@@ -204,5 +204,5 @@
+ version.texi:  stamp-vti
+-stamp-vti: autoconf.texi $(top_srcdir)/configure
+-	@(dir=.; test -f ./autoconf.texi || dir=$(srcdir); \
+-	set `$(SHELL) $(top_srcdir)/config/mdate-sh $$dir/autoconf.texi`; \
++stamp-vti: autoconf-2.59.texi $(top_srcdir)/configure
++	@(dir=.; test -f ./autoconf-2.59.texi || dir=$(srcdir); \
++	set `$(SHELL) $(top_srcdir)/config/mdate-sh $$dir/autoconf-2.59.texi`; \
+ 	echo "@set UPDATED $$1 $$2 $$3"; \

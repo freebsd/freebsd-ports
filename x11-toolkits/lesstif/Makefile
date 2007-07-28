@@ -7,7 +7,7 @@
 
 PORTNAME=	lesstif
 PORTVERSION=	0.95.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -73,12 +73,8 @@ pre-extract:
 .endif
 
 post-install:
-	${RM} -f ${PREFIX}/lib/libXm.la
-	${RM} -f ${PREFIX}/lib/libMrm.la
-	${RM} -f ${PREFIX}/lib/libDtPrint.la
-	${RM} -f ${PREFIX}/lib/libUil.la
-	${INSTALL_DATA} ${WRKSRC}/scripts/autoconf/ac_find_motif.m4 \
-		${LOCALBASE}/share/aclocal
+	@${INSTALL_DATA} ${WRKSRC}/scripts/autoconf/ac_find_motif.m4 \
+		${PREFIX}/share/aclocal
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>

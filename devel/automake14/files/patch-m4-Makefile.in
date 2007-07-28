@@ -1,7 +1,0 @@
---- m4/Makefile.in.orig	Sat Jul 27 14:09:41 2002
-+++ m4/Makefile.in	Thu May 13 13:35:28 2004
-@@ -70,3 +70,3 @@
- 
--m4datadir = $(datadir)/aclocal-$(APIVERSION)
-+m4datadir = $(datadir)/aclocal14
- m4data_DATA = amversion.m4 ccstdc.m4 cond.m4 dmalloc.m4 error.m4 header.m4 init.m4 lex.m4 lispdir.m4 maintainer.m4 missing.m4 mktime.m4 multi.m4 obstack.m4 protos.m4 ptrdiff.m4 regex.m4 sanity.m4 strtod.m4 termios.m4 winsz.m4

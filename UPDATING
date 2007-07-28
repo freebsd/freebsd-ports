@@ -6,6 +6,25 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070727:
+  AFFECTS: autotools
+  AUTHOR:  ade@FreeBSD.org
+
+Extensive reworking of the autotools ports has occurred, putting them in
+the canonical locations, along with a suitable wrapper port to make
+developing autotools-using code (as opposed to just building ports)
+considerably easier.
+
+Upgrade path is as follows for portupgrade, substitute the appropriate
+commands if you are using portmaster:
+
+   1.   portupgrade -f 'autoconf*' 'automake*'
+   2.   cd /usr/ports/devel/autotools; make install
+   3.   portupgrade -a
+
+The second step is optional, but is recommended to bring in all versions
+of autoconf and automake.
+
 20070723:
   AFFECTS: users of x11/nvidia-driver and slave ports
   AUTHOR: danfe@FreeBSD.org

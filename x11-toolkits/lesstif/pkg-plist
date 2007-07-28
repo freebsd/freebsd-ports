@@ -331,17 +331,22 @@ lib/X11/mwm/README
 lib/X11/mwm/alt.map
 lib/X11/mwm/system.mwmrc
 lib/libDtPrint.a
+lib/libDtPrint.la
 lib/libDtPrint.so
 lib/libDtPrint.so.1
 lib/libUil.a
+lib/libUil.la
 lib/libUil.so
 lib/libUil.so.2
 lib/libMrm.a
+lib/libMrm.la
 lib/libMrm.so
 lib/libMrm.so.2
 lib/libXm.a
+lib/libXm.la
 lib/libXm.so
 lib/libXm.so.2
+share/aclocal/ac_find_motif.m4
 @unexec rm -f %D/LessTif/doc/Lessdox
 @dirrm LessTif/doc/images
 @dirrm LessTif/doc/html
@@ -354,7 +359,3 @@ lib/libXm.so.2
 @dirrm lib/LessTif/config
 @dirrm lib/LessTif
 @dirrm lib/X11/mwm
-@cwd %%LOCALBASE%%
-share/aclocal/ac_find_motif.m4
-share/aclocal19/ac_find_motif.m4
-@dirrmtry share/aclocal19

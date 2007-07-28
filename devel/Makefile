@@ -62,6 +62,7 @@
     SUBDIR += aunit
     SUBDIR += autobook
     SUBDIR += autoconf-archive
+    SUBDIR += autoconf-wrapper
     SUBDIR += autoconf213
     SUBDIR += autoconf253
     SUBDIR += autoconf259
@@ -69,10 +70,15 @@
     SUBDIR += autodia
     SUBDIR += autodist
     SUBDIR += autogen
+    SUBDIR += automake-wrapper
     SUBDIR += automake110
     SUBDIR += automake14
     SUBDIR += automake15
+    SUBDIR += automake16
+    SUBDIR += automake17
+    SUBDIR += automake18
     SUBDIR += automake19
+    SUBDIR += autotools
     SUBDIR += avalon-framework
     SUBDIR += avarice
     SUBDIR += avltree

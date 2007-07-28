@@ -7,7 +7,7 @@
 
 PORTNAME=	libthai
 PORTVERSION=	0.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.usablelabs.com/download/
 
@@ -23,11 +23,13 @@ ALL_TARGET=	all check
 
 MAN3=	libthai.3 thctype.3 wtt.3
 
-pre-configure:
-	${SH} ${WRKSRC}/autogen.sh
-
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(pkgconfigdir = ).*$$,\1$$(prefix)/libdata/pkgconfig,' \
 		${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's,15,-1.5,' -e 's,259,-2.59,' \
+		${WRKSRC}/autogen.sh
+
+pre-configure:
+	@${SH} ${WRKSRC}/autogen.sh
 
 .include <bsd.port.mk>

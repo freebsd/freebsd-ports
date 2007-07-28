@@ -1,7 +1,0 @@
---- configure.orig	Fri Nov 17 11:05:17 2006
-+++ configure	Sun Dec  3 16:58:50 2006
-@@ -2013,3 +2013,3 @@
- # Define the identity of the package.
-- PACKAGE='autoconf'
-+ PACKAGE='autoconf261'
-  VERSION='2.61'

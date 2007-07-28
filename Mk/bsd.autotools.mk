@@ -11,21 +11,6 @@
 Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 
 #---------------------------------------------------------------------------
-# IMPORTANT!  READ ME!  YES, THAT MEANS YOU!
-#
-# The "versioned" autotools referenced here are for BUILDING other ports
-# only.  THIS CANNOT BE STRESSED HIGHLY ENOUGH.  Things WILL BREAK if you
-# try to use them for anything other than ports/ work.  This particularly
-# includes use as a run-time dependency.
-#
-# If you need unmodified versions of autotools, such as for use in an
-# IDE, then you MUST use the devel/gnu-* equivalents, and NOT these.
-# See devel/anjuta and devel/kdevelop for examples.
-#
-# You have been WARNED!
-#---------------------------------------------------------------------------
-
-#---------------------------------------------------------------------------
 # Entry point into the autotools system
 #---------------------------------------------------------------------------
 #
@@ -33,6 +18,10 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #
 # 'tool' can currently be one of:
 #	libtool, libltdl, autoconf, autoheader, automake, aclocal
+#
+#	There is also a special tool, called 'autotools', which is
+#	a convenience function to simply bring in dependencies of
+#	all the autotools.
 #
 # 'version' is tool dependent
 #
@@ -75,10 +64,23 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 AUTOTOOL_${item:C/^([^:]+).*/\1/}${item:M*\:*\:*:C/^[^:]+:[^:]+:([^:]+)/_\1/}= ${item:C/^[^:]+:([^:]+).*/\1/}
 .endfor
 
-# XXX: temporary to highlight any missed ports in the conversion
-#
-.if defined(AUTOTOOL_libtool_inc)
-IGNORE+= error: libtool:${AUTOTOOL_libtool_inc}:inc construct no longer available
+#---------------------------------------------------------------------------
+# AUTOTOOLS handling (for build, runtime, and both)
+#---------------------------------------------------------------------------
+.if defined(AUTOTOOL_autotools)
+AUTOTOOLS_DEPENDS=	${LOCALBASE}/share/autotools:${PORTSDIR}/devel/autotools
+
+. if ${AUTOTOOL_autotools} == "build"
+BUILD_DEPENDS+=	${AUTOTOOLS_DEPENDS}
+. elif ${AUTOTOOL_autotools} == "run"
+RUN_DEPENDS+=	${AUTOTOOLS_DEPENDS}
+. elif ${AUTOTOOL_autotools} == "both"
+BUILD_DEPENDS+=	${AUTOTOOLS_DEPENDS}
+RUN_DEPENDS+=	${AUTOTOOLS_DEPENDS}
+. else
+IGNORE+=  Unknown autotools stanza: ${AUTOTOOL_autotools}
+. endif
+
 .endif
 
 #---------------------------------------------------------------------------
@@ -97,6 +99,7 @@ GNU_CONFIGURE?=			yes
 
 .if defined(AUTOTOOL_automake_env)
 AUTOMAKE_VERSION=	${AUTOTOOL_automake_env}
+AUTOMAKE_SUFFIX=	${AUTOMAKE_VERSION:C/([0-9])(.*)/\1.\2/}
 
 # Make sure we specified a legal version of automake
 #
@@ -106,12 +109,11 @@ IGNORE+=	cannot install: unknown AUTOMAKE version: ${AUTOMAKE_VERSION}
 
 # Set up the automake environment
 #
-AUTOMAKE=			${LOCALBASE}/bin/automake${AUTOMAKE_VERSION}
-AUTOMAKE_DIR=		${LOCALBASE}/share/automake${AUTOMAKE_VERSION}
-ACLOCAL=			${LOCALBASE}/bin/aclocal${AUTOMAKE_VERSION}
-ACLOCAL_DIR=		${LOCALBASE}/share/aclocal${AUTOMAKE_VERSION}
-AUTOMAKE_PATH=		${LOCALBASE}/libexec/automake${AUTOMAKE_VERSION}:
-AUTOMAKE_VARS=		ACLOCAL=${ACLOCAL} AUTOMAKE=${AUTOMAKE}
+AUTOMAKE=			${LOCALBASE}/bin/automake-${AUTOMAKE_SUFFIX}
+AUTOMAKE_DIR=		${LOCALBASE}/share/automake-${AUTOMAKE_SUFFIX}
+ACLOCAL=			${LOCALBASE}/bin/aclocal-${AUTOMAKE_SUFFIX}
+ACLOCAL_DIR=		${LOCALBASE}/share/aclocal-${AUTOMAKE_SUFFIX}
+AUTOMAKE_VARS=		ACLOCAL=${ACLOCAL} AUTOMAKE=${AUTOMAKE} AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
 AUTOMAKE_DEPENDS=	${AUTOMAKE}:${PORTSDIR}/devel/automake${AUTOMAKE_VERSION}
 BUILD_DEPENDS+=		${AUTOMAKE_DEPENDS}
@@ -143,6 +145,7 @@ GNU_CONFIGURE?=			yes
 
 .if defined(AUTOTOOL_autoconf_env)
 AUTOCONF_VERSION=	${AUTOTOOL_autoconf_env}
+AUTOCONF_SUFFIX=	${AUTOCONF_VERSION:C/([0-9])(.*)/\1.\2/}
 
 # Make sure we specified a legal version of autoconf
 #
@@ -152,16 +155,15 @@ IGNORE+=	cannot install: unknown AUTOCONF version: ${AUTOCONF_VERSION}
 
 # Set up the autoconf/autoheader environment
 #
-AUTOCONF=			${LOCALBASE}/bin/autoconf${AUTOCONF_VERSION}
-AUTOCONF_DIR=		${LOCALBASE}/share/autoconf${AUTOCONF_VERSION}
-AUTOHEADER=			${LOCALBASE}/bin/autoheader${AUTOCONF_VERSION}
-AUTOIFNAMES=		${LOCALBASE}/bin/ifnames${AUTOCONF_VERSION}
-AUTOM4TE=			${LOCALBASE}/bin/autom4te${AUTOCONF_VERSION}
-AUTORECONF=			${LOCALBASE}/bin/autoreconf${AUTOCONF_VERSION}
-AUTOSCAN=			${LOCALBASE}/bin/autoscan${AUTOCONF_VERSION}
-AUTOUPDATE=			${LOCALBASE}/bin/autoupdate${AUTOCONF_VERSION}
-AUTOCONF_PATH=		${LOCALBASE}/libexec/autoconf${AUTOCONF_VERSION}:
-AUTOCONF_VARS=		AUTOCONF=${AUTOCONF} AUTOHEADER=${AUTOHEADER} AUTOIFNAMES=${AUTOIFNAMES} AUTOM4TE=${AUTOM4TE} AUTORECONF=${AUTORECONF} AUTOSCAN=${AUTOSCAN} AUTOUPDATE=${AUTOUPDATE}
+AUTOCONF=			${LOCALBASE}/bin/autoconf-${AUTOCONF_SUFFIX}
+AUTOCONF_DIR=		${LOCALBASE}/share/autoconf-${AUTOCONF_SUFFIX}
+AUTOHEADER=			${LOCALBASE}/bin/autoheader-${AUTOCONF_SUFFIX}
+AUTOIFNAMES=		${LOCALBASE}/bin/ifnames-${AUTOCONF_SUFFIX}
+AUTOM4TE=			${LOCALBASE}/bin/autom4te-${AUTOCONF_SUFFIX}
+AUTORECONF=			${LOCALBASE}/bin/autoreconf-${AUTOCONF_SUFFIX}
+AUTOSCAN=			${LOCALBASE}/bin/autoscan-${AUTOCONF_SUFFIX}
+AUTOUPDATE=			${LOCALBASE}/bin/autoupdate-${AUTOCONF_SUFFIX}
+AUTOCONF_VARS=		AUTOCONF=${AUTOCONF} AUTOHEADER=${AUTOHEADER} AUTOIFNAMES=${AUTOIFNAMES} AUTOM4TE=${AUTOM4TE} AUTORECONF=${AUTORECONF} AUTOSCAN=${AUTOSCAN} AUTOUPDATE=${AUTOUPDATE} AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 AUTOCONF_DEPENDS=	${AUTOCONF}:${PORTSDIR}/devel/autoconf${AUTOCONF_VERSION}
 BUILD_DEPENDS+=		${AUTOCONF_DEPENDS}
@@ -221,20 +223,7 @@ LIBTOOLFILES?=		${CONFIGURE_SCRIPT}
 # Now that we've got our environments defined for autotools, add them
 # in so that the rest of the world can handle them
 #
-AUTOTOOLS_PATH=	${AUTOMAKE_PATH}${AUTOCONF_PATH}
 AUTOTOOLS_VARS=	${AUTOMAKE_VARS} ${AUTOCONF_VARS} ${LIBTOOL_VARS}
-
-.if defined(AUTOTOOLS_PATH) && (${AUTOTOOLS_PATH} != "")
-AUTOTOOLS_ENV+=	PATH=${AUTOTOOLS_PATH}${PATH}
-CONFIGURE_ENV+=	PATH=${AUTOTOOLS_PATH}${PATH}
-MAKE_ENV+=		PATH=${AUTOTOOLS_PATH}${PATH}
-SCRIPTS_ENV+=	PATH=${AUTOTOOLS_PATH}${PATH}
-. for item in automake aclocal autoconf autoheader libtool
-.  if defined(AUTOTOOL_${item}_env)
-${item:U}_ENV+=	PATH=${AUTOTOOLS_PATH}${PATH}
-.  endif
-. endfor
-.endif
 
 .if defined(AUTOTOOLS_VARS) && (${AUTOTOOLS_VARS} != "")
 AUTOTOOLS_ENV+=	${AUTOTOOLS_VARS}

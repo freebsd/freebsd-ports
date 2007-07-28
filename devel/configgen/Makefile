@@ -7,6 +7,7 @@
 
 PORTNAME=	configgen
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.marcuscom.com:8080/cgi-bin/cvsweb.cgi/portstools/
 DISTNAME=	${PORTNAME}.sh?rev=${PORTVERSION}
@@ -23,10 +24,7 @@ WANT_GNOME=	yes
 
 .if !defined(WITHOUT_GNUTOOLS)
 USE_GNOME=	glib20
-.for tool in autoconf213 autoconf253 autoconf259 automake14 automake15 automake19
-RUN_DEPENDS+=	${tool}:${PORTSDIR}/devel/${tool}
-.endfor
-RUN_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool15
+USE_AUTOTOOLS=	autotools:run
 .for tool in autoconf automake
 RUN_DEPENDS+=	${LOCALBASE}/gnu-autotools/bin/${tool}:${PORTSDIR}/devel/gnu-${tool}
 .endfor

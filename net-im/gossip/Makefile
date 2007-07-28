@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=	--enable-libnotify=no
 .endif
 
 .if defined(WITH_TELEPATHY)
-LIB_DEPENDS+=		telepathy.3:${PORTSDIR}/net-im/libtelepathy
+LIB_DEPENDS+=		telepathy.5:${PORTSDIR}/net-im/libtelepathy
 CONFIGURE_ARGS+=	--enable-telepathy=yes
 .else
 CONFIGURE_ARGS+=	--enable-telepathy=no

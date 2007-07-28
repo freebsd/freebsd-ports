@@ -5,8 +5,8 @@
  @c %**start of header
 -@setfilename autoconf.info
 -@settitle Autoconf
-+@setfilename autoconf213.info
-+@settitle Autoconf213
++@setfilename autoconf-2.13.info
++@settitle Autoconf-2.13
  @c For double-sided printing, uncomment:
  @c @setchapternewpage odd
 +@dircategory Programming & development tools
@@ -18,7 +18,7 @@
  @format
  START-INFO-DIR-ENTRY
 -* Autoconf: (autoconf).         Create source code configuration scripts.
-+* Autoconf213: (autoconf213).   Create source code configuration scripts.
++* Autoconf-2.13: (autoconf-2.13).   Create source code configuration scripts.
  END-INFO-DIR-ENTRY
  @end format
  

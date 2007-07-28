@@ -1,0 +1,9 @@
+--- Makefile.in.orig	Mon May  1 00:45:18 2006
++++ Makefile.in	Fri Apr 13 17:28:19 2007
+@@ -288,5 +288,3 @@
+ 
+-libGUI_la_LDFLAGS = \
+-        -release $(LT_RELEASE)	\
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libGUI_la_LDFLAGS = # empty
+ 

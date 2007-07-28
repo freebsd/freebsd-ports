@@ -7,6 +7,7 @@
 
 PORTNAME=	autoconf
 PORTVERSION=	2.61
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	autoconf
@@ -17,27 +18,28 @@ COMMENT=	Automatically configure source code on many Un*x platforms (2.61)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
+		autoconf-wrapper:${PORTSDIR}/devel/autoconf-wrapper
 
-BUILD_VERSION=	261
+BUILD_VERSION=	2.61
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
-LATEST_LINK=	autoconf${BUILD_VERSION}
+LATEST_LINK=	autoconf261
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-INFO=		autoconf${BUILD_VERSION} standards${BUILD_VERSION}
+INFO=		autoconf-${BUILD_VERSION}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CONFIG_SHELL=${SH}
-CONFIGURE_ENV+=	M4=${LOCALBASE}/bin/gm4
+CONFIGURE_ENV+=	CONFIG_SHELL=${SH} M4=${LOCALBASE}/bin/gm4
 CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION} --without-lispdir
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 GENERIC_TOOLS=	config.guess config.sub	elisp-comp install-sh mdate-sh missing
+GENERIC_LINKS=	autoconf autoheader autom4te autoreconf autoscan autoupdate \
+		ifnames
 
-MAN1_PAGES=	autoconf autoheader autom4te autoreconf autoscan \
-		autoupdate config.guess config.sub ifnames
-MAN1=		${MAN1_PAGES:S/$/${BUILD_VERSION}.1/g}
+MAN1_PAGES=	${GENERIC_LINKS} config.guess config.sub
+MAN1=		${MAN1_PAGES:S/$/-${BUILD_VERSION}.1/g}
 
 post-patch:
 	@(cd ${WRKSRC} && ${REINPLACE_CMD} -E 's,(PACKAGE=autoconf),\1${BUILD_VERSION},' configure)
@@ -48,20 +50,13 @@ post-patch:
 		done)
 	@(cd ${WRKSRC}/doc && \
 		${RM} -f *.info && \
-		${MV} autoconf.texi autoconf${BUILD_VERSION}.texi && \
-		${MV} standards.texi standards${BUILD_VERSION}.texi && \
-		${REINPLACE_CMD} -E 's,(autoconf)\),\1${BUILD_VERSION}\),g' autoconf${BUILD_VERSION}.texi && \
-		${REINPLACE_CMD} -E 's,(autoconf|standards)\.(info|texi),\1${BUILD_VERSION}\.\2,g' Makefile.in)
+		${MV} autoconf.texi autoconf-${BUILD_VERSION}.texi)
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|@PACKAGE@$$|@PACKAGE@-@VERSION@|'
 
 post-install:
 .for FILE in ${GENERIC_TOOLS}
-	@${INSTALL_SCRIPT} ${WRKSRC}/build-aux/${FILE} ${PREFIX}/share/autoconf${BUILD_VERSION}
-.endfor
-	@-${RM} -fr ${PREFIX}/libexec/autoconf${BUILD_VERSION}
-	@${MKDIR} ${PREFIX}/libexec/autoconf${BUILD_VERSION}
-.for i in autoconf autoheader autoreconf autoscan autoupdate ifnames
-	@${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
-		${PREFIX}/libexec/autoconf${BUILD_VERSION}/${i}
+	@${INSTALL_SCRIPT} ${WRKSRC}/build-aux/${FILE} ${PREFIX}/share/autoconf-${BUILD_VERSION}
 .endfor
 
 .include <bsd.port.mk>

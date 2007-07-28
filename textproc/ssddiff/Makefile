@@ -7,6 +7,7 @@
 
 PORTNAME=	ssddiff
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/1469/
 
@@ -24,7 +25,7 @@ PLIST_FILES=	bin/xmldiff
 
 post-extract:
 .for f in config.guess config.sub install-sh missing mkinstalldirs
-	@${LN} -sf ${LOCALBASE}/share/automake14/${f} ${WRKSRC}/${f}
+	@${LN} -sf ${AUTOMAKE_DIR}/${f} ${WRKSRC}/${f}
 .endfor
 	@${REINPLACE_CMD} -e 's,"getopt\.h",<unistd.h>,' \
 		${WRKSRC}/src/main.cc

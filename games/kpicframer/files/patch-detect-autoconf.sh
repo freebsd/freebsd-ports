@@ -9,8 +9,8 @@ diff -u -r1.6 detect-autoconf.sh
      AUTOCONF="`$WHICH autoconf-2.52`"
    elif test -x "`$WHICH autoconf2.50`" ; then
      AUTOCONF="`$WHICH autoconf2.50`"
-+  elif test -x "`$WHICH autoconf257`" ; then
-+    AUTOCONF="`$WHICH autoconf257`"
++  elif test -x "`$WHICH autoconf-2.59`" ; then
++    AUTOCONF="`$WHICH autoconf-2.59`"
    fi
  }
  
@@ -18,19 +18,9 @@ diff -u -r1.6 detect-autoconf.sh
      AUTOHEADER="`$WHICH autoheader-2.52`"
    elif test -x "`$WHICH autoheader2.50`" ; then
      AUTOHEADER="`$WHICH autoheader2.50`"
-+  elif test -x "`$WHICH autoheader257`" ; then
-+    AUTOHEADER="`$WHICH autoheader257`"
-+    AUTOM4TE="`$WHICH autom4te257`"
++  elif test -x "`$WHICH autoheader-2.59`" ; then
++    AUTOHEADER="`$WHICH autoheader-2.59`"
++    AUTOM4TE="`$WHICH autom4te-2.59`"
    fi
  }
  
-@@ -58,6 +63,9 @@
-     elif test -x "`$WHICH automake-1.7`" ; then
-       AUTOMAKE="`$WHICH automake-1.7`"
-       ACLOCAL="`$WHICH aclocal-1.7`"
-+    elif test -x "`$WHICH automake17`" ; then
-+      AUTOMAKE="`$WHICH automake17`"
-+      ACLOCAL="`$WHICH aclocal17`"
-     fi
-   else
-      AUTOMAKE="$UNSERMAKE"

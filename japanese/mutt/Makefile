@@ -34,7 +34,7 @@ FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	automake:19 autoconf:259
+USE_AUTOTOOLS=	automake:19 autoconf:261
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -44,7 +44,7 @@ CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 		--without-wc-funcs \
 		--enable-flock --disable-fcntl \
 		--with-ssl \
-		--sysconfdir=${PREFIX}/etc \
+		--sysconfdir=${PREFIX}/etc --mandir=${PREFIX}/man \
 		--with-docdir=${DOCSDIR} \
 		--enable-pop --enable-imap \
 		--enable-default-japanese

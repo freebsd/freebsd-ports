@@ -1,7 +1,0 @@
---- automake.in.orig	Sat Jul 27 13:55:58 2002
-+++ automake.in	Thu May 13 13:34:28 2004
-@@ -34,3 +34,3 @@
- $prefix = "@prefix@";
--$am_dir = "@datadir@/@PACKAGE@-@APIVERSION@";
-+$am_dir = "@datadir@/@PACKAGE@14";
- $TAR = "@TAR@";
