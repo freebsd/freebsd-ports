@@ -26,6 +26,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		alut.1:${PORTSDIR}/audio/freealut \
 		CEGUIBase.0:${PORTSDIR}/graphics/cegui
 
+BROKEN=		Incorrect pkg-plist
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4+
