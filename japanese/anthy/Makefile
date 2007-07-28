@@ -32,10 +32,9 @@ DISTFILES+=	2ch.t:2chdic
 
 .if defined(WITH_ODIC)
 MASTER_SITES+=	http://www.ofug.net/~yamajun/files/:odic
-EXTRACT_ONLY+=	${ODIC_SRCS}
 DISTFILES+=	${ODIC_SRCS}:odic
-ODIC_SRCS=	${ODIC_VERS}.tar.gz
-ODIC_VERS=	okinawa-20051104
+ODIC_SRCS=	${ODIC_VERS}.t
+ODIC_VERS=	okinawa-20070717
 .endif
 
 .if defined(WITH_GSKKDIC)
@@ -53,8 +52,8 @@ post-extract:
 .endif
 
 .if defined(WITH_ODIC)
-	${CP} ${WRKDIR}/${ODIC_VERS}/okinawa.t ${WRKSRC}/mkworddic
-	${PRINTF} "/mkworddic\\\\/tankanji.t/a\\\\\\nread @top_srcdir@/mkworddic/okinawa.t\\n" | \
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${ODIC_SRCS} ${WRKSRC}/mkworddic
+	${PRINTF} "/mkworddic\\\\/tankanji.t/a\\\\\\nread @top_srcdir@/mkworddic/${ODIC_SRCS}\\n" | \
 	${REINPLACE_CMD} -f /dev/stdin ${WRKSRC}/mkworddic/dict.args.in
 .endif
 
