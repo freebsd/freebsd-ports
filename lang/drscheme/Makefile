@@ -28,6 +28,8 @@ LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft	\
 		jpeg.9:${PORTSDIR}/graphics/jpeg	\
 		png.5:${PORTSDIR}/graphics/png
 
+BROKEN=		Segfault during build
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-shared --enable-xft --enable-gl \
 		--enable-xrender --enable-cairo --with-x --enable-pthread \
