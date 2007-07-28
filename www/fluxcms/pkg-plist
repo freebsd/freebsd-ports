@@ -2,75 +2,6 @@
 %%INSTALLDIR%%/NEWS
 %%INSTALLDIR%%/README
 %%INSTALLDIR%%/README.INSTALL
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/addresource.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/admin.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/adminfields.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/blank.html
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/blog.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/collection.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/css/admin.css
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/css/blog.css
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/css/dbforms2.css
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/css/editpopup.css
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/css/formedit.css
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/css/head.css
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/css/listview.css
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/css/login.css
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/css/navi.css
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/css/overview.css
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/css/overviewhome.css
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/delete.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/edit.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/formedit.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/frameset.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/bitfluxlogo.gif
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/dbforms2/liveselect_arrowd.gif
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/dbforms2/null.gif
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/overview/blog.png
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/overview/collection.png
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/overview/gallery.png
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/overview/options.png
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/overview/resource.png
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/schloss.jpg
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/shadow1.png
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/shadow2.png
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/sxip_in.gif
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/wait_bar.gif
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/index.html
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/listview.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/login.html
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/navi.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/overview.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/plugins/dbforms2.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/plugins/properties.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/properties.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/themes.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/admin/users.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/common.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/copy.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/mastercommon.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/pagenotallowed.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/aggregator/aggregator.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/aggregator/aggregator2rss.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/blog.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/blog/blog2atom.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/blog/blog2rss.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/blog/comments2rss.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/blog/microsummary.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/blog/osd.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/blog/trackback.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/dms/dms.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/dms/dms2rss.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/gallery.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/linklog/linklog2rss.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/metainfo/podcast.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/metasearch/result2html.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/newsletter/htmlimage.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/newsletter/htmlimagelinks.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/newsletter/textfeeds.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/plugins/vote/vote.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/static.xsl
-%%INSTALLDIR%%/_hosts/live/themes/standard/text.xsl
 %%INSTALLDIR%%/admin/data/admin/addresource/.configxml
 %%INSTALLDIR%%/admin/data/admin/collection/.configxml
 %%INSTALLDIR%%/admin/data/admin/copy/.configxml
@@ -107,6 +38,7 @@
 %%INSTALLDIR%%/admin/sitemap/admin.xml
 %%INSTALLDIR%%/admin/sitemap/assets.xml
 %%INSTALLDIR%%/admin/sitemap/blog.xml
+%%INSTALLDIR%%/admin/sitemap/boxes.xml
 %%INSTALLDIR%%/admin/sitemap/bxe.xml
 %%INSTALLDIR%%/admin/sitemap/dbform.xml
 %%INSTALLDIR%%/admin/sitemap/fck.xml
@@ -359,6 +291,7 @@
 %%INSTALLDIR%%/dbforms2/blogpodcasts.xml
 %%INSTALLDIR%%/dbforms2/blogposts.xml
 %%INSTALLDIR%%/dbforms2/blogposts2.xml
+%%INSTALLDIR%%/dbforms2/boxes.xml
 %%INSTALLDIR%%/dbforms2/events.xml
 %%INSTALLDIR%%/dbforms2/newsletter_feeds.xml
 %%INSTALLDIR%%/dbforms2/newsletter_from.xml
@@ -376,8 +309,6 @@
 %%INSTALLDIR%%/div/db/dbexport.sh
 %%INSTALLDIR%%/div/db/dbexport40.sh
 %%INSTALLDIR%%/div/db/webdavlocks_sqlite.sql
-%%INSTALLDIR%%/div/phpfiles
-%%INSTALLDIR%%/div/phpfiles.old
 %%INSTALLDIR%%/favicon.ico
 %%INSTALLDIR%%/forms/blogcategories/config.xml
 %%INSTALLDIR%%/forms/blogcategories/index.php
@@ -756,6 +687,8 @@
 %%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/subeditor.xsl
 %%INSTALLDIR%%/inc/bx/editors/blog/tabs.xsl
 %%INSTALLDIR%%/inc/bx/editors/blog/uploadimage.xsl
+%%INSTALLDIR%%/inc/bx/editors/boxes.php
+%%INSTALLDIR%%/inc/bx/editors/boxes/boxes.xsl
 %%INSTALLDIR%%/inc/bx/editors/bxe.php
 %%INSTALLDIR%%/inc/bx/editors/bxe/bxe.xsl
 %%INSTALLDIR%%/inc/bx/editors/bxe/config.xml
@@ -897,6 +830,7 @@
 %%INSTALLDIR%%/inc/bx/php/browser.php
 %%INSTALLDIR%%/inc/bx/php/dynButton.php
 %%INSTALLDIR%%/inc/bx/php/dynimage.php
+%%INSTALLDIR%%/inc/bx/php/i18njs.php
 %%INSTALLDIR%%/inc/bx/php/livesearch.php
 %%INSTALLDIR%%/inc/bx/php/openid/common.php
 %%INSTALLDIR%%/inc/bx/php/openid/finish_auth.php
@@ -951,6 +885,7 @@
 %%INSTALLDIR%%/inc/bx/plugins/blog/tagarchive.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/trackback.php
 %%INSTALLDIR%%/inc/bx/plugins/blogauthors.php
+%%INSTALLDIR%%/inc/bx/plugins/boxes.php
 %%INSTALLDIR%%/inc/bx/plugins/collection.php
 %%INSTALLDIR%%/inc/bx/plugins/comments.php
 %%INSTALLDIR%%/inc/bx/plugins/db2xml.php
@@ -967,6 +902,7 @@
 %%INSTALLDIR%%/inc/bx/plugins/graph.php
 %%INSTALLDIR%%/inc/bx/plugins/image.php
 %%INSTALLDIR%%/inc/bx/plugins/linklog.php
+%%INSTALLDIR%%/inc/bx/plugins/linklog/queries.php
 %%INSTALLDIR%%/inc/bx/plugins/linklog/tags.php
 %%INSTALLDIR%%/inc/bx/plugins/links.php
 %%INSTALLDIR%%/inc/bx/plugins/metadata.php
@@ -2739,6 +2675,7 @@
 @dirrm %%INSTALLDIR%%/inc/bx/editors/dbform/xsl
 @dirrm %%INSTALLDIR%%/inc/bx/editors/dbform
 @dirrm %%INSTALLDIR%%/inc/bx/editors/bxe
+@dirrm %%INSTALLDIR%%/inc/bx/editors/boxes
 @dirrm %%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl
 @dirrm %%INSTALLDIR%%/inc/bx/editors/blog/sub
 @dirrm %%INSTALLDIR%%/inc/bx/editors/blog
@@ -2915,23 +2852,4 @@
 @dirrm %%INSTALLDIR%%/admin/data/admin
 @dirrm %%INSTALLDIR%%/admin/data
 @dirrm %%INSTALLDIR%%/admin
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/plugins/vote
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/plugins/newsletter
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/plugins/metasearch
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/plugins/metainfo
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/plugins/linklog
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/plugins/dms
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/plugins/blog
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/plugins/aggregator
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/plugins
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/admin/plugins
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/overview
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/admin/images/dbforms2
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/admin/images
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/admin/css
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard/admin
-@dirrm %%INSTALLDIR%%/_hosts/live/themes/standard
-@dirrm %%INSTALLDIR%%/_hosts/live/themes
-@dirrm %%INSTALLDIR%%/_hosts/live
-@dirrm %%INSTALLDIR%%/_hosts
 @dirrm %%INSTALLDIR%%
