@@ -9,7 +9,8 @@ PORTNAME=	libvorbis
 PORTVERSION=	1.2.0
 PORTEPOCH=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
+MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Audio compression codec library
