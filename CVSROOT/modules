@@ -4123,6 +4123,7 @@ gsl		ports/math/gsl
 gsm		ports/audio/gsm
 gsmc		ports/science/gsmc
 gsmlib		ports/comms/gsmlib
+gsnapshot	ports/graphics/gsnapshot
 gsnes9x		ports/emulators/gsnes9x
 gsnmp		ports/net-mgmt/gsnmp
 gsoap		ports/devel/gsoap
