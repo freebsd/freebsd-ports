@@ -18,6 +18,8 @@ COMMENT=	A tool for merge mpg4 from Gpac
 
 LIB_DEPENDS=	gpac.1:${PORTSDIR}/multimedia/gpac-libgpac
 
+BROKEN=		Does not build
+
 WRKSRC=		${WRKDIR}/gpac/applications/mp4box
 PLIST_FILES=	bin/mp4box
 
