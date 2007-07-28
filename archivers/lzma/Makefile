@@ -22,6 +22,7 @@ BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Compress/LZMA_Alone
 MAKEFILE=	makefile.gcc
 PLIST_FILES=	bin/lzma
 CFLAGS+=	-D_LZMA_SYSTEM_SIZE_T
+MAKE_ENV+=	CXX="${CXX}"
 
 PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt history.txt lzma.txt
 
@@ -29,7 +30,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|4\.49|${DISTVERSION}|' \
 		${BUILD_WRKSRC}/LzmaAlone.cpp
 	@${REINPLACE_CMD} -e \
-		's|^CXX.*||;s|CXX_C|CC|;s|^CFLAGS =|CFLAGS +=|'\
+		'/^CXX/d;s|CXX_C|CC|;s|^CFLAGS =|CFLAGS +=|;s|-o|${CFLAGS} -o|'\
 			${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
