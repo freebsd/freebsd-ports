@@ -3132,9 +3132,8 @@ freebsd-uucp	ports/net/freebsd-uucp
 freecad		ports/cad/freecad
 freecell-solver	ports/games/freecell-solver
 freeciv		ports/games/freeciv
-freeciv-gtk	ports/games/freeciv-gtk
-freeciv-gtk2	ports/games/freeciv-gtk2
 freeciv-nox11	ports/games/freeciv-nox11
+freeciv-sounds	ports/games/freeciv-sounds
 freecol		ports/games/freecol
 freecolor	ports/sysutils/freecolor
 freedbd		ports/net/freedbd
