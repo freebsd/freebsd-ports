@@ -36,6 +36,13 @@ PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+MAKEINFO=	${LOCALBASE}/bin/makeinfo
+.else
+MAKEINFO=	/usr/bin/makeinfo
+.endif
+
 .if defined(WITH_GNEE)
 USE_GNOME+=	gtk20
 PLIST_FILES+=	bin/gnee
@@ -73,8 +80,8 @@ post-patch:
 		's|cp $$(PNEE)|$$(INSTALL_PROGRAM) $$(PNEE)|g' ${WRKSRC}/pnee/src/Makefile.in
 
 post-build:
-	cd ${WRKSRC}/cnee/src && /usr/bin/makeinfo --no-split cnee.texi
-	cd ${WRKSRC}/doc && /usr/bin/makeinfo --no-split xnee.texi
+	cd ${WRKSRC}/cnee/src && ${MAKEINFO} --no-split cnee.texi
+	cd ${WRKSRC}/doc && ${MAKEINFO} --no-split xnee.texi
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/cnee/src/cnee.info ${PREFIX}/${INFO_PATH}
