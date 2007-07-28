@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- doc/vorbisfile/Makefile.in.orig	Fri Sep 24 02:11:56 2004
-+++ doc/vorbisfile/Makefile.in	Fri Sep 24 02:12:12 2004
-@@ -174,7 +174,7 @@
- target_cpu = @target_cpu@
- target_os = @target_os@
- target_vendor = @target_vendor@
+--- doc/vorbisfile/Makefile.in.bak	2007-07-25 16:46:35.000000000 +0000
++++ doc/vorbisfile/Makefile.in	2007-07-26 21:53:26.000000000 +0000
+@@ -150,7 +150,7 @@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/vorbisfile
 +docdir = $(datadir)/doc/$(PACKAGE)/vorbisfile
- doc_DATA = OggVorbis_File.html callbacks.html chaining_example_c.html\
- 	chainingexample.html crosslap.html datastructures.html decoding.html\
- 	example.html exampleindex.html fileinfo.html index.html\
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@

@@ -1,12 +1,12 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Sun Apr 29 22:42:17 2007
-+++ Makefile.in	Sun Apr 29 22:42:36 2007
-@@ -217,7 +217,7 @@
- target_os = @target_os@
- target_vendor = @target_vendor@
- AUTOMAKE_OPTIONS = foreign dist-zip
+--- Makefile.in.orig	2007-07-26 21:46:30.000000000 +0000
++++ Makefile.in	2007-07-26 21:49:02.000000000 +0000
+@@ -221,7 +221,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = 1.6 foreign dist-zip dist-bzip2
 -SUBDIRS = lib include doc examples vq
 +SUBDIRS = lib include $(DOC) examples vq
  m4datadir = $(prefix)/share/aclocal

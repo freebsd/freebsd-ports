@@ -5,7 +5,7 @@ include/vorbis/vorbisfile.h
 lib/libvorbis.a
 lib/libvorbis.la
 lib/libvorbis.so
-lib/libvorbis.so.3
+lib/libvorbis.so.4
 lib/libvorbisenc.a
 lib/libvorbisenc.la
 lib/libvorbisenc.so
@@ -13,13 +13,14 @@ lib/libvorbisenc.so.2
 lib/libvorbisfile.a
 lib/libvorbisfile.la
 lib/libvorbisfile.so
-lib/libvorbisfile.so.4
+lib/libvorbisfile.so.5
 libdata/pkgconfig/vorbis.pc
 libdata/pkgconfig/vorbisenc.pc
 libdata/pkgconfig/vorbisfile.pc
 share/aclocal/vorbis.m4
 %%PORTDOCS%%%%DOCSDIR%%/components.png
-%%PORTDOCS%%%%DOCSDIR%%/draft-kerr-avt-vorbis-rtp-03.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-avt-rtp-vorbis-06.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-avt-rtp-vorbis-06.xml
 %%PORTDOCS%%%%DOCSDIR%%/eightphase.png
 %%PORTDOCS%%%%DOCSDIR%%/evenlsp.png
 %%PORTDOCS%%%%DOCSDIR%%/floor1-1.png
@@ -121,6 +122,6 @@ share/aclocal/vorbis.m4
 %%PORTDOCS%%%%DOCSDIR%%/window1.png
 %%PORTDOCS%%%%DOCSDIR%%/window2.png
 @dirrm include/vorbis
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/vorbisenc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/vorbisfile
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/vorbisenc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

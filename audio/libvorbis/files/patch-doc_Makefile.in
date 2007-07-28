@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- doc/Makefile.in.orig	Fri Sep 24 02:11:04 2004
-+++ doc/Makefile.in	Fri Sep 24 02:11:14 2004
-@@ -184,7 +184,7 @@
- target_os = @target_os@
- target_vendor = @target_vendor@
- SUBDIRS = vorbisfile vorbisenc
+--- doc/Makefile.in.orig	2007-07-26 21:50:20.000000000 +0000
++++ doc/Makefile.in	2007-07-26 21:50:57.000000000 +0000
+@@ -162,7 +162,7 @@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
- 
- ### all of the static docs, commited to SVN and included as is
- static_docs = \
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
