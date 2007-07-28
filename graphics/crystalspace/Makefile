@@ -27,6 +27,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		alut.1:${PORTSDIR}/audio/freealut \
 		CEGUIBase.0:${PORTSDIR}/graphics/cegui
 
+BROKEN=		Incorrect pkg-plist
+
 CONFLICTS=	crystalspace-devel-[0-9]*
 
 USE_BZIP2=	yes

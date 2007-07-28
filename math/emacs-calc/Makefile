@@ -19,6 +19,8 @@ COMMENT=	Arbitrary-precision calculator for Emacs
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 
+BROKEN=		Incorrect pkg-plist
+
 INFO=		calc
 
 post-patch:
