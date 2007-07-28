@@ -6,6 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.2/:bookhtml \
@@ -195,10 +196,12 @@ CONFIGURE_ARGS+=--with-apr=${APR_APU_DIR}/${APR_CONFIG} \
 		--with-apr-util=${APR_APU_DIR}/${APU_CONFIG}
 
 .if defined(WITH_SVNSERVE_WRAPPER)
-PLIST_SUB+=	SVNSERVE_WRAPPER="" SVNSERVE_BIN_EXT=".bin"
+PLIST_SUB+=	SVNSERVE_WRAPPER=""
+SUB_LIST+=	SVNSERVE_BIN_EXT=".bin"
 EXTRA_PATCHES=	${PATCHDIR}/build-outputs.mk.patch
 .else
-PLIST_SUB+=	SVNSERVE_WRAPPER="@comment " SVNSERVE_BIN_EXT=""
+PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
+SUB_LIST+=	SVNSERVE_BIN_EXT=""
 .endif
 
 .if !defined(NOPORTDOCS) && defined(WITH_BOOK)
