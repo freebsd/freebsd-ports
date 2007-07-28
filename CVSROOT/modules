@@ -6515,10 +6515,10 @@ libkexiv2	ports/graphics/libkexiv2
 libkipi		ports/graphics/libkipi
 libksba		ports/security/libksba
 libleaftag	ports/devel/libleaftag
+liblinear	ports/science/liblinear
 liblingoteach	ports/textproc/liblingoteach
 liblo		ports/audio/liblo
 liblogging	ports/devel/liblogging
-liblr		ports/science/liblr
 liblrdf		ports/textproc/liblrdf
 libltdl15	ports/devel/libltdl15
 liblug		ports/graphics/liblug
