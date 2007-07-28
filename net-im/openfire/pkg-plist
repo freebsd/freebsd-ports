@@ -1,11 +1,17 @@
 @unexec %D/etc/rc.d/openfire stop > /dev/null 2>&1 || true
 @unexec if cmp -s %D/etc/openfire/openfire.xml %D/%%EXAMPLESDIR%%/openfire.xml; then rm -f %D/etc/openfire/openfire.xml; else echo If permanently deleting this package, %%PREFIX%%/etc/openfire/openfire.xml must be removed manually; fi
+@unexec if cmp -s %D/etc/openfire/keystore %D/%%EXAMPLESDIR%%/keystore; then rm -f %D/etc/openfire/keystore; else echo If permanently deleting this package, %%PREFIX%%/etc/openfire/keystore must be removed manually; fi
+@unexec if cmp -s %D/etc/openfire/truststore %D/%%EXAMPLESDIR%%/truststore; then rm -f %D/etc/openfire/truststore; else echo If permanently deleting this package, %%PREFIX%%/etc/openfire/truststore must be removed manually; fi
 @unexec [ -d %D/share/doc/openfire/javadoc ] && rm -rf %D/share/doc/openfire/javadoc
 %%EXAMPLESDIR%%/openfire.xml
+%%EXAMPLESDIR%%/keystore
+%%EXAMPLESDIR%%/truststore
 @exec [ -d /var/log/openfire ] || mkdir -p  /var/log/openfire && chown openfire:openfire /var/log/openfire
 @exec [ -d /var/db/openfire ] || mkdir -p  /var/db/openfire && chown openfire:openfire /var/db/openfire
 @exec [ -d %D/etc/openfire ] || mkdir -p  %D/etc/openfire && chown openfire:openfire %D/etc/openfire
 @exec [ -f %D/etc/openfire/openfire.xml ] || cp %%EXAMPLESDIR%%/openfire.xml %D/etc/openfire/openfire.xml && chown openfire:openfire %D/etc/openfire/openfire.xml
+@exec [ -f %D/etc/openfire/keystore ] || cp %%EXAMPLESDIR%%/keystore %D/etc/openfire/keystore && chown openfire:openfire %D/etc/openfire/keystore
+@exec [ -f %D/etc/openfire/truststore ] || cp %%EXAMPLESDIR%%/truststore %D/etc/openfire/truststore && chown openfire:openfire %D/etc/openfire/truststore
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.html
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/changelog.html
@@ -265,23 +271,12 @@ share/java/openfire/resources/nativeAuth/linux-i386/libshaj.so
 share/java/openfire/resources/nativeAuth/osx-ppc/libshaj.jnilib
 share/java/openfire/resources/nativeAuth/solaris-sparc/libshaj.so
 share/java/openfire/resources/nativeAuth/win32-x86/shaj.dll
-share/java/openfire/resources/security/keystore
-share/java/openfire/resources/security/truststore
-share/java/openfire/resources/spank/scripts/prototype.js
-share/java/openfire/resources/spank/scripts/flash.js
 share/java/openfire/resources/spank/WEB-INF/web.xml
-share/java/openfire/resources/spank/crossdomain_version6.swf
 share/java/openfire/resources/spank/index.html
-share/java/openfire/resources/spank/crossdomain_version8.swf
-share/java/openfire/resources/spank/flash6_gateway.swf
 
 @exec [ -d %%PREFIX%%/%%DATADIR%% ] && chown -R openfire:openfire %%PREFIX%%/%%DATADIR%%
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm share/java/openfire/resources/spank/WEB-INF
-@dirrm share/java/openfire/resources/spank/scripts
 @dirrm share/java/openfire/resources/spank
-@dirrm share/java/openfire/resources/security
 @dirrm share/java/openfire/resources/nativeAuth/win32-x86
 @dirrm share/java/openfire/resources/nativeAuth/solaris-sparc
 @dirrm share/java/openfire/resources/nativeAuth/osx-ppc
