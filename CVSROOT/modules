@@ -5713,6 +5713,7 @@ kcd		ports/misc/kcd
 kcd-devel		ports/misc/kcd-devel
 kcdlabel	ports/print/kcdlabel
 kcheckers	ports/games/kcheckers
+kcheckgmail	ports/mail/kcheckgmail
 kchm		ports/deskutils/kchm
 kchmviewer	ports/deskutils/kchmviewer
 kcpuload	ports/sysutils/kcpuload
