@@ -7,6 +7,7 @@
 
 PORTNAME=	freeciv
 PORTVERSION=	2.0.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -38,10 +39,12 @@ USE_GNOME+=	esound
 .else
 CONFIGURE_ARGS+=--disable-esd
 .endif
+CONFLICTS=	freeciv-nox11-[0-9]*
 .else
 PLIST_SUB=	X11="@comment "
 PKGNAMESUFFIX?=	-nox11
 CONFIGURE_ARGS+=--enable-client=no
+CONFLICTS=	freeciv-[0-9]*
 .endif
 
 post-patch:
