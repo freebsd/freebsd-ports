@@ -1,0 +1,12 @@
+--- MANIFEST.orig	2007-07-29 03:17:26.000000000 +0800
++++ MANIFEST	2007-07-29 03:17:35.000000000 +0800
+@@ -23,6 +23,9 @@
+ t/17splitmessage.t
+ t/18halt.t
+ t/19refcounting.t
++t/20passfd.t
++t/21parsestring.t
++t/22mwarnings.t
+ t/98podsyn.t
+ t/99podcov.t
+ lib/SGML/Parser/OpenSP.pm
