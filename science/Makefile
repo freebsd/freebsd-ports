@@ -66,7 +66,7 @@
     SUBDIR += libctl
     SUBDIR += libghemical
     SUBDIR += libint
-    SUBDIR += liblr
+    SUBDIR += liblinear
     SUBDIR += libsvm
     SUBDIR += libsvm-python
     SUBDIR += linsmith
