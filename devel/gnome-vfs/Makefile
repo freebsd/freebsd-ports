@@ -97,6 +97,10 @@ pre-configure:
 		${ECHO_CMD} "${PKGNAME}: bind installed with PORT_REPLACES_BASE_BIND causes build problems."; \
 		${FALSE}; \
 	fi
+.if defined(WITHOUT_KERBEROS)
+	${ECHO_CMD} "${PKGNAME}: KERBEROS is required."
+	${FALSE}
+.endif
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
