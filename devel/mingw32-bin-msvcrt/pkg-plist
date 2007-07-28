@@ -6,17 +6,26 @@ mingw32/include/_mingw.h
 mingw32/include/accctrl.h
 mingw32/include/aclapi.h
 mingw32/include/aclui.h
+mingw32/include/adsprop.h
 mingw32/include/afxres.h
+mingw32/include/amaudio.h
+mingw32/include/amvideo.h
 mingw32/include/assert.h
+mingw32/include/audevcod.h
+mingw32/include/aviriff.h
+mingw32/include/aygshell.h
 mingw32/include/basetsd.h
 mingw32/include/basetyps.h
+mingw32/include/bdatypes.h
 mingw32/include/cderr.h
 mingw32/include/cguid.h
+mingw32/include/cmnquery.h
 mingw32/include/comcat.h
 mingw32/include/commctrl.h
 mingw32/include/commdlg.h
 mingw32/include/complex.h
 mingw32/include/conio.h
+mingw32/include/control.h
 mingw32/include/cpl.h
 mingw32/include/cplext.h
 mingw32/include/ctype.h
@@ -106,6 +115,7 @@ mingw32/include/ddk/winnt4.h
 mingw32/include/ddk/winxp.h
 mingw32/include/ddk/ws2san.h
 mingw32/include/ddk/xfilter.h
+mingw32/include/devguid.h
 mingw32/include/dhcpcsdk.h
 mingw32/include/dir.h
 mingw32/include/direct.h
@@ -113,20 +123,34 @@ mingw32/include/dirent.h
 mingw32/include/dlgs.h
 mingw32/include/docobj.h
 mingw32/include/dos.h
+mingw32/include/dsadmin.h
+mingw32/include/dsclient.h
+mingw32/include/dsgetdc.h
+mingw32/include/dshow.h
+mingw32/include/dsquery.h
+mingw32/include/dsrole.h
+mingw32/include/dvdevcod.h
+mingw32/include/dvdmedia.h
 mingw32/include/dxerr8.h
 mingw32/include/dxerr9.h
+mingw32/include/edevdefs.h
 mingw32/include/errno.h
 mingw32/include/errorrep.h
+mingw32/include/errors.h
+mingw32/include/evcode.h
 mingw32/include/excpt.h
 mingw32/include/exdisp.h
 mingw32/include/exdispid.h
 mingw32/include/fcntl.h
 mingw32/include/fenv.h
 mingw32/include/float.h
+mingw32/include/fltdefs.h
 mingw32/include/getopt.h
 mingw32/include/gmon.h
 mingw32/include/httpext.h
+mingw32/include/icm.h
 mingw32/include/idispids.h
+mingw32/include/il21dec.h
 mingw32/include/imagehlp.h
 mingw32/include/imm.h
 mingw32/include/initguid.h
@@ -136,10 +160,17 @@ mingw32/include/io.h
 mingw32/include/ipexport.h
 mingw32/include/iphlpapi.h
 mingw32/include/ipifcons.h
+mingw32/include/ipinfoid.h
 mingw32/include/iprtrmib.h
 mingw32/include/iptypes.h
+mingw32/include/ipxconst.h
+mingw32/include/ipxrtdef.h
+mingw32/include/ipxtfflt.h
 mingw32/include/isguids.h
+mingw32/include/ks.h
+mingw32/include/ksmedia.h
 mingw32/include/largeint.h
+mingw32/include/libgen.h
 mingw32/include/limits.h
 mingw32/include/lm.h
 mingw32/include/lmaccess.h
@@ -175,8 +206,14 @@ mingw32/include/mciavi.h
 mingw32/include/mcx.h
 mingw32/include/mem.h
 mingw32/include/memory.h
+mingw32/include/mgm.h
 mingw32/include/mgmtapi.h
+mingw32/include/mlang.h
+mingw32/include/mmreg.h
 mingw32/include/mmsystem.h
+mingw32/include/mpegtype.h
+mingw32/include/mprapi.h
+mingw32/include/mq.h
 mingw32/include/msacm.h
 mingw32/include/mshtml.h
 mingw32/include/mswsock.h
@@ -185,6 +222,8 @@ mingw32/include/nddeapi.h
 mingw32/include/nspapi.h
 mingw32/include/ntdef.h
 mingw32/include/ntdll.h
+mingw32/include/ntdsapi.h
+mingw32/include/ntdsbcli.h
 mingw32/include/ntldap.h
 mingw32/include/ntsecapi.h
 mingw32/include/ntsecpkg.h
@@ -193,6 +232,7 @@ mingw32/include/objbase.h
 mingw32/include/objfwd.h
 mingw32/include/objidl.h
 mingw32/include/objsafe.h
+mingw32/include/objsel.h
 mingw32/include/ocidl.h
 mingw32/include/odbcinst.h
 mingw32/include/ole.h
@@ -216,6 +256,7 @@ mingw32/include/pshpack1.h
 mingw32/include/pshpack2.h
 mingw32/include/pshpack4.h
 mingw32/include/pshpack8.h
+mingw32/include/qedit.h
 mingw32/include/rapi.h
 mingw32/include/ras.h
 mingw32/include/rasdlg.h
@@ -225,6 +266,7 @@ mingw32/include/reason.h
 mingw32/include/regstr.h
 mingw32/include/richedit.h
 mingw32/include/richole.h
+mingw32/include/routprot.h
 mingw32/include/rpc.h
 mingw32/include/rpcdce.h
 mingw32/include/rpcdce2.h
@@ -234,9 +276,11 @@ mingw32/include/rpcnsi.h
 mingw32/include/rpcnsip.h
 mingw32/include/rpcnterr.h
 mingw32/include/rpcproxy.h
+mingw32/include/rtutils.h
 mingw32/include/schannel.h
 mingw32/include/schnlsp.h
 mingw32/include/scrnsave.h
+mingw32/include/sddl.h
 mingw32/include/search.h
 mingw32/include/secext.h
 mingw32/include/security.h
@@ -259,8 +303,10 @@ mingw32/include/sspi.h
 mingw32/include/stdint.h
 mingw32/include/stdio.h
 mingw32/include/stdlib.h
+mingw32/include/stm.h
 mingw32/include/string.h
 mingw32/include/strings.h
+mingw32/include/strmif.h
 mingw32/include/subauth.h
 mingw32/include/svcguid.h
 mingw32/include/sys/fcntl.h
@@ -280,11 +326,15 @@ mingw32/include/tmschema.h
 mingw32/include/unistd.h
 mingw32/include/unknwn.h
 mingw32/include/userenv.h
+mingw32/include/usp10.h
 mingw32/include/utime.h
 mingw32/include/uxtheme.h
 mingw32/include/values.h
 mingw32/include/varargs.h
 mingw32/include/vfw.h
+mingw32/include/vidcap.h
+mingw32/include/vmr9.h
+mingw32/include/vptype.h
 mingw32/include/w32api.h
 mingw32/include/wchar.h
 mingw32/include/wctype.h
@@ -320,7 +370,9 @@ mingw32/include/ws2tcpip.h
 mingw32/include/wsahelp.h
 mingw32/include/wsipx.h
 mingw32/include/wsnetbs.h
+mingw32/include/wtsapi32.h
 mingw32/include/wtypes.h
+mingw32/include/xprtdefs.h
 mingw32/include/zmouse.h
 mingw32/lib/CRT_fp10.o
 mingw32/lib/CRT_fp8.o
@@ -382,6 +434,7 @@ mingw32/lib/libgmon.a
 mingw32/lib/libhal.a
 mingw32/lib/libhid.a
 mingw32/lib/libhidparse.a
+mingw32/lib/libicmui.a
 mingw32/lib/libigmpagnt.a
 mingw32/lib/libimagehlp.a
 mingw32/lib/libimm32.a
@@ -402,7 +455,10 @@ mingw32/lib/libmingwthrd.a
 mingw32/lib/libmoldname.a
 mingw32/lib/libmoldnamed.a
 mingw32/lib/libmpr.a
+mingw32/lib/libmprapi.a
+mingw32/lib/libmqrt.a
 mingw32/lib/libmsacm32.a
+mingw32/lib/libmscms.a
 mingw32/lib/libmsdmo.a
 mingw32/lib/libmsimg32.a
 mingw32/lib/libmsvcp60.a
@@ -410,6 +466,8 @@ mingw32/lib/libmsvcr70.a
 mingw32/lib/libmsvcr70d.a
 mingw32/lib/libmsvcr71.a
 mingw32/lib/libmsvcr71d.a
+mingw32/lib/libmsvcr80.a
+mingw32/lib/libmsvcr80d.a
 mingw32/lib/libmsvcrt.a
 mingw32/lib/libmsvcrtd.a
 mingw32/lib/libmsvfw32.a
@@ -441,6 +499,8 @@ mingw32/lib/librasdlg.a
 mingw32/lib/librpcdce4.a
 mingw32/lib/librpcns4.a
 mingw32/lib/librpcrt4.a
+mingw32/lib/librtm.a
+mingw32/lib/librtutils.a
 mingw32/lib/libscrnsave.a
 mingw32/lib/libscrnsavw.a
 mingw32/lib/libscsiport.a
@@ -461,6 +521,7 @@ mingw32/lib/libusbcamd.a
 mingw32/lib/libusbcamd2.a
 mingw32/lib/libuser32.a
 mingw32/lib/libuserenv.a
+mingw32/lib/libusp10.a
 mingw32/lib/libuuid.a
 mingw32/lib/libuxtheme.a
 mingw32/lib/libvdmdbg.a
@@ -479,9 +540,12 @@ mingw32/lib/libws2_32.a
 mingw32/lib/libwsnmp32.a
 mingw32/lib/libwsock32.a
 mingw32/lib/libwst.a
+mingw32/lib/libwtsapi32.a
 mingw32/lib/txtmode.o
 @dirrm mingw32/include/GL
 @dirrm mingw32/include/ddk
 @dirrm mingw32/include/sys
 @dirrm mingw32/include
-@unexec rmdir -p %D/mingw32/lib 2>/dev/null || true
+@dirrmtry mingw32/lib
+@dirrmtry mingw32
+
