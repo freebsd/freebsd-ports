@@ -18,6 +18,8 @@ COMMENT=	Maildir++ plugin for claws-mail
 BUILD_DEPENDS=	claws-mail>=2.10:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=2.10:${PORTSDIR}/mail/claws-mail
 
+BROKEN=		Does not build
+
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:259

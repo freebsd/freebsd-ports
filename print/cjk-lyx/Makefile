@@ -30,6 +30,8 @@ LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost \
 		qt-mt:${PORTSDIR}/x11-toolkits/qt33
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 
+BROKEN=		Does not build
+
 OPTIONS=	ASPELL	"Utilize ASPELL library"	on \
 		ISPELL	"Depend on ISPELL as well"	off
 .if defined(LANG) && ${LANG:C/_.*//} == "ja"
