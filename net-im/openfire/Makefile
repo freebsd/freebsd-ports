@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openfire
-PORTVERSION=	3.3.1
-PORTREVISION=	1
+PORTVERSION=	3.3.2
 CATEGORIES=	net-im java
 MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
@@ -37,8 +36,9 @@ PUSER=		openfire
 PGROUP=		${PUSER}
 
 MLINKS=		${VARLOG} ${DATADIR}/logs \
-	       	${VARDB} ${DATADIR}/embedded-db \
-		${ETCDIR} ${DATADIR}/conf
+		${VARDB} ${DATADIR}/embedded-db \
+		${ETCDIR} ${DATADIR}/conf \
+		${ETCDIR} ${DATADIR}/resources/security
 
 do-install:
 
@@ -49,7 +49,7 @@ do-install:
 	${MKDIR} ${VARLOG};
 	${MKDIR} ${VARDB};
 
-	(cd ${INSTALL_WRKSRC}/resources && ${FIND} . \
+	(cd ${INSTALL_WRKSRC}/resources && ${FIND} . \! -path ./security\* \
 	| ${CPIO} -pvdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/resources)
 
 	(cd ${INSTALL_WRKSRC}/plugins && ${FIND} . \
@@ -67,9 +67,21 @@ do-install:
 post-install:
 	${MKDIR} ${EXAMPLESDIR};
 	${CP} -p ${INSTALL_WRKSRC}/conf/openfire.xml ${EXAMPLESDIR}/openfire.xml
+	${CP} -p ${INSTALL_WRKSRC}/resources/security/truststore \
+		${EXAMPLESDIR}/truststore
+	${CP} -p ${INSTALL_WRKSRC}/resources/security/keystore \
+		${EXAMPLESDIR}/keystore
 	@if [ ! -f ${ETCDIR}/openfire.xml ]; then \
 		${MKDIR} ${ETCDIR}; \
 		${CP} -p ${INSTALL_WRKSRC}/conf/openfire.xml ${ETCDIR}/openfire.xml; \
+	fi
+	@if [ ! -f ${ETCDIR}/keystore ]; then \
+		${CP} -p ${INSTALL_WRKSRC}/resources/security/keystore \
+			${ETCDIR}/keystore; \
+	fi
+	@if [ ! -f ${ETCDIR}/truststore ]; then \
+		${CP} -p ${INSTALL_WRKSRC}/resources/security/truststore \
+			${ETCDIR}/truststore; \
 	fi
 	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	${CHOWN} -R ${PUSER}:${PGROUP} ${ETCDIR}
