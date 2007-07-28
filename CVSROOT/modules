@@ -1267,6 +1267,7 @@ checkpassword	ports/security/checkpassword
 checkpassword-pam	ports/security/checkpassword-pam
 checkrdf	ports/deskutils/checkrdf
 checkservice	ports/sysutils/checkservice
+cheech		ports/games/cheech
 cheesetracker	ports/audio/cheesetracker
 cheetah		ports/www/cheetah
 chef		ports/misc/chef
