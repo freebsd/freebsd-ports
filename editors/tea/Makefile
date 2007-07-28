@@ -24,6 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 OPTIONS=	TEA_ONLY	"Build original GTK-only version"	on \
 		ASPELL		"Build with GNU aspell support"		on
 
+BROKEN=		Does not build
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TEA_ONLY)

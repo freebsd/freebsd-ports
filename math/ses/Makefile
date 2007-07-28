@@ -19,6 +19,8 @@ COMMENT=	Simple Emacs Spreadsheet
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 
+BROKEN=		Does not build
+
 DOC_FILES=	ses-example.ses ses-readme.txt \
 		ses-coverage.el testcover.el unsafep-coverage.el
 DOC_DIR=	share/doc/ses
