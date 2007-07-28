@@ -7,6 +7,7 @@
 
 PORTNAME=	Ogg-Vorbis-Header
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Ogg
@@ -16,7 +17,7 @@ MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Manipulate / fetch info from Ogg-Vorbis audio files
 
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 BUILD_DEPENDS=	${SITE_PERL}/Inline/MakeMaker.pm:${PORTSDIR}/devel/p5-Inline
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

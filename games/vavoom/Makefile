@@ -7,6 +7,7 @@
 
 PORTNAME=	vavoom
 PORTVERSION=	1.24
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -104,7 +105,7 @@ CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-vorbis
 .else
 CONFIGURE_ARGS+=--without-vorbis

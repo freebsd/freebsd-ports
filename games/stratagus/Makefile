@@ -7,7 +7,7 @@
 
 PORTNAME=	stratagus
 PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 EXTRACT_SUFX=	-src.tar.gz
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=--without-mikmod
 .endif
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbisfile.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbisfile.5:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=--without-ogg
 .endif

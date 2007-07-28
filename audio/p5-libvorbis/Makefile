@@ -7,6 +7,7 @@
 
 PORTNAME=	libvorbis
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=../by-authors/id/F/FO/FOOF
@@ -16,7 +17,7 @@ DISTNAME=	${PORTNAME}-perl-${PORTVERSION}
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	Perl extension for Ogg Vorbis streams
 
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 
 PERL_CONFIGURE=	yes

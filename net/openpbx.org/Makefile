@@ -8,7 +8,7 @@
 PORTNAME=	openpbx.org
 PORTVERSION=	1.2
 DISTVERSION=	1.2_rc3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.openpbx.org/releases/
 
@@ -107,7 +107,7 @@ CONFIGURE_ARGS+= --without-format_oggvorbis
 .else
 PLIST_SUB+=	WITH_OGGVORBIS=""
 CONFIGURE_ARGS+= --with-format_oggvorbis
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 pre-su-install:

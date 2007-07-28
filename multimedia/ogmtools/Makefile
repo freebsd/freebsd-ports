@@ -7,14 +7,14 @@
 
 PORTNAME=	ogmtools
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create OGG media streams
 
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

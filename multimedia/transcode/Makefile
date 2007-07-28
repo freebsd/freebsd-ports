@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fromani.exit1.org/
 
@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=	--enable-bktr
 .endif
 
 .if defined(WITH_VORBIS) || exists(${LOCALBASE}/lib/libvorbis.so)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--with-vorbis-prefix=${LOCALBASE} --enable-vorbis
 .else
 CONFIGURE_ARGS+=	--enable-vorbis=no

@@ -7,7 +7,7 @@
 
 PORTNAME=	q2p
 PORTVERSION=	0.2.20061231
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/Q2P/
 DISTNAME=	Q2P-0.2-2006-12-31
@@ -49,7 +49,7 @@ USE_SDL=	sdl
 .endif
 
 .if !defined(WITHOUT_CLIENT)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 MAKE_ENV+=	BUILD_Q2P=YES
 PLIST_SUB+=	CLIENT=""
 Q2BIN+=		${PORTNAME}

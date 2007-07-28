@@ -8,7 +8,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION?=	${BASE_PORTVERSION}
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	3
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-base/:base \

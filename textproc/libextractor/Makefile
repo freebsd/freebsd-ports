@@ -7,7 +7,7 @@
 
 PORTNAME=	libextractor
 PORTVERSION=	0.5.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://gnunet.org/libextractor/download/ \
 		${MASTER_SITE_GNU}
@@ -58,7 +58,7 @@ LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 .if exists(${LOCALBASE}/include/vorbis/vorbisfile.h)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
 PLIST_SUB+=	VORBIS="@comment "

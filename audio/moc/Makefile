@@ -7,7 +7,7 @@
 
 PORTNAME=	moc
 PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 
@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--without-musepack
 .endif
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 PLIST_FILES+=	lib/moc/decoder_plugins/libvorbis_decoder.la \
 		lib/moc/decoder_plugins/libvorbis_decoder.so
 .else

@@ -7,7 +7,7 @@
 
 PORTNAME=	evidence
 PORTVERSION=	0.9.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -91,7 +91,7 @@ PLIST_SUB+=	ID3:=""
 CONFIGURE_ARGS+=--disable-plugin-vorbis
 PLIST_SUB+=	VORBIS:="@comment "
 .else
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--enable-plugin-vorbis
 PLIST_SUB+=	VORBIS:=""
 .endif

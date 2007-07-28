@@ -7,7 +7,7 @@
 
 PORTNAME=	fteqw
 PORTVERSION=	2770
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	ftesrc${PORTVERSION}-all
@@ -40,7 +40,7 @@ IGNORE=		needs at least one executable (DEDICATED, GLX or X11)
 .if !defined(WITHOUT_GL) || !defined(WITHOUT_SW)
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if !defined(WITHOUT_GL)

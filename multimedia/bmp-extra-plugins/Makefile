@@ -7,7 +7,7 @@
 
 PORTNAME=	bmp-extra-plugins
 PORTVERSION=	0.2.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://wrzask.pl/files/
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of additional plugins for beep media player
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
-		vorbis.3:${PORTSDIR}/audio/libvorbis \
+		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		artsc.0:${PORTSDIR}/audio/arts
 
 USE_GNOME=	libglade2 esound

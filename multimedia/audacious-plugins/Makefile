@@ -7,6 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://static.audacious-media-player.org/release/
@@ -134,7 +135,7 @@ PLIST_SUB+=	ADPLUGPLUGIN="@comment "
 .endif
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--enable-vorbis --enable-flac	# it uses an internal flac-lib copy
 PLIST_SUB+=	VORBISPLUGIN=""
 CFLAGS+=	-I. -I../libflac -Ilibflac	# to not use system flac if it is installed

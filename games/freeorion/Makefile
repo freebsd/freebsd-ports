@@ -7,7 +7,7 @@
 
 PORTNAME=	freeorion
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	GiGi.0:${PORTSDIR}/x11-toolkits/gigi \
 		alut.1:${PORTSDIR}/audio/freealut \
 		graph.3:${PORTSDIR}/graphics/graphviz \
 		log4cpp.4:${PORTSDIR}/devel/log4cpp \
-		vorbisfile.4:${PORTSDIR}/audio/libvorbis
+		vorbisfile.5:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 USE_SCONS=	yes

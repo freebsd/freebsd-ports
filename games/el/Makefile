@@ -7,7 +7,7 @@
 
 PORTNAME=	el
 PORTVERSION=	133
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	acm/${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	Eternal Lands is a free 3D MMORPG
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		openal.0:${PORTSDIR}/audio/openal \
-		vorbis.3:${PORTSDIR}/audio/libvorbis \
+		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		cal3d.12:${PORTSDIR}/graphics/cal3d \
 		alut.1:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:${PORTSDIR}/games/el-data

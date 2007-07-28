@@ -8,7 +8,7 @@
 
 PORTNAME=	mp3stat
 PORTVERSION=	2.6.01
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	https://signal-lost.homeip.net/files/ \
 			http://www.alaskaparadise.com/freebsd/
@@ -43,7 +43,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/magic.h:${PORTSDIR}/sysutils/file
 .if defined(WITHOUT_VORBIS)
 MAKE_ARGS+=	VORBIS=""
 .else
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 PLIST_FILES+=	lib/mp3stat/input_vorb.so
 .endif
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	sox
 PORTVERSION=	13.0.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -42,7 +43,7 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if defined(WITH_VORBIS)
 CONFIGURE_ARGS+=	--with-ogg-vorbis
-LIB_DEPENDS+=		vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=		vorbis.4:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=	--without-ogg-vorbis
 # Above configure flag does not exist, so workaround with the below line

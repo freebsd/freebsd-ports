@@ -7,6 +7,7 @@
 
 PORTNAME=	scummvm
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -43,7 +44,7 @@ WITH_VORBIS=	yes
 
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-ogg-prefix=${LOCALBASE} \
 		--with-vorbis-prefix=${LOCALBASE}
 .else

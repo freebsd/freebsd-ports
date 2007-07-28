@@ -7,7 +7,7 @@
 
 PORTNAME=	beep-media-player
 PORTVERSION=	0.9.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=	--disable-mikmod
 PLIST_SUB+=	MIKMODPLUGIN:="@comment "
 
 .if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 INPUT_PLUGINS+=	vorbis
 PLIST_SUB+=	VORBISPLUGIN:=""
 .else

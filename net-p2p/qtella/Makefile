@@ -7,7 +7,7 @@
 
 PORTNAME=	qtella
 PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Gnutella client using Qt
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_KDELIBS_VER=	3
 USE_GNOME=	gnometarget

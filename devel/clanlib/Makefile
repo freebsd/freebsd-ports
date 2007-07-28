@@ -7,7 +7,7 @@
 
 PORTNAME=	clanlib
 PORTVERSION=	0.6.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://clanlib.org/download/legacy/ \

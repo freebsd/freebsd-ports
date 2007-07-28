@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_musicindex
 PORTVERSION=	0.99.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www audio
 # Master site doesn't have a current version'd tarball...
 #MASTER_SITES=	http://www.parisc-linux.org/~varenet/musicindex/
@@ -17,7 +17,7 @@ DISTNAME=	libapache-mod-musicindex_${PORTVERSION}
 MAINTAINER=	ports@fsck.ch
 COMMENT=	Apache module in C that implements the perl module Apache::MP3
 
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad \
 		FLAC.7:${PORTSDIR}/audio/flac

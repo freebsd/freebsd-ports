@@ -7,7 +7,7 @@
 
 PORTNAME=	giFT
 PORTVERSION=	0.11.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	An OpenFT, Gnutella and FastTrack p2p network client
 
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_BZIP2=	yes

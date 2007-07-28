@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.10
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -70,7 +70,7 @@ PLIST_SUB+=	MIKMODPLUGIN:="@comment "
 .endif
 
 .if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 INPUT_PLUGINS+=	vorbis
 PLIST_SUB+=	VORBISPLUGIN:=""
 .else

@@ -6,7 +6,7 @@
 
 PORTNAME=	audacity
 PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--without-libmad
 
 .if !defined(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=	--with-vorbis=system
-LIB_DEPENDS+=		vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=		vorbis.4:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=	--without-vorbis
 .endif

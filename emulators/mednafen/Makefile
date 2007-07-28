@@ -7,7 +7,7 @@
 
 PORTNAME=	mednafen
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators games
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ COMMENT=	Portable multi-system emulator
 
 LIB_DEPENDS=	cdio.7:${PORTSDIR}/sysutils/libcdio \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 BROKEN=		Configure fails
 

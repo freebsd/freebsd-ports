@@ -8,6 +8,7 @@
 
 PORTNAME=	darkice
 PORTVERSION=	0.18.1
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://darkice.tyrell.hu/dist/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -36,7 +37,7 @@ PLIST_FILES=	bin/darkice etc/darkice.cfg
 CONFIGURE_ARGS+=	--without-vorbis
 .else
 CONFIGURE_ARGS+=	--with-vorbis-prefix=${LOCALBASE}
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if defined(WITH_LAME)

@@ -6,7 +6,7 @@
 
 PORTNAME=	terminatorx
 PORTVERSION=	3.82
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://terminatorx.org/dist/
 DISTNAME=	terminatorX-${PORTVERSION}
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=	--disable-sox
 
 .if !defined(WITHOUT_VORBIS)
 BUILD_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=	--disable-vorbis
 .endif

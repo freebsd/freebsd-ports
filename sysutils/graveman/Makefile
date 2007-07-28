@@ -7,7 +7,7 @@
 
 PORTNAME=	graveman
 PORTVERSION=	0.3.12.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://graveman.tuxfamily.org/sources/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-\1/}
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=--disable-mp3
 
 .if defined(WITH_OGG)
 LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=--disable-ogg
 .endif

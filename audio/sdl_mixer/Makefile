@@ -7,7 +7,7 @@
 
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
@@ -38,7 +38,7 @@ LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 .if defined(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=	--disable-music-ogg
 .else
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if defined(WITHOUT_SMPEG)

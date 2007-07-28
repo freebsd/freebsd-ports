@@ -7,7 +7,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://stian.lunafish.org/ocp/ \
 		http://critical.ch/distfiles/ \
@@ -18,7 +18,7 @@ COMMENT=	The legendary Open Cubic Player
 
 LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad \
-		vorbis.3:${PORTSDIR}/audio/libvorbis \
+		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		sidplay.1:${PORTSDIR}/audio/libsidplay
 
 ONLY_FOR_ARCHS=	i386
