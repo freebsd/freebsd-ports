@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/syslog-ng3-devel/files/Attic/syslog-ng.sh.in,v 1.3 2007-03-22 16:30:16 pav Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/syslog-ng3-devel/files/Attic/syslog-ng.sh.in,v 1.4 2007-07-28 22:28:08 pav Exp $
 #
 
 # PROVIDE: syslogd
@@ -24,7 +24,7 @@ name=syslog_ng
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/syslog-ng
-required_files=%%PREFIX%%/etc/syslog-ng/syslog-ng.conf
+required_files=%%PREFIX%%/etc/syslog-ng.conf
 extra_commands=reload
 
 if checkyesno syslog_ng_purgeklog; then
