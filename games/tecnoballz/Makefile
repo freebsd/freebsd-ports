@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tecnoballz
-PORTVERSION=	0.90
-PORTREVISION=	2
+PORTVERSION=	0.91
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/TecnoballZ/download/
 EXTRACT_SUFX=	.tgz
@@ -15,26 +14,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A brick breaker (Arkanoid-like game)
 
-LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
+LIB_DEPENDS=	mikmod:${PORTSDIR}/audio/libmikmod
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src
 
 USE_X_PREFIX=	yes
 USE_SDL=	sdl mixer
 USE_GMAKE=	yes
+MAKE_ARGS+=	-j`${SYSCTL} -n hw.ncpu`
 
 MAN6=		tecnoballz.6
 
 MAKE_ENV+=	LIBMIKMOD_CONFIG=${LOCALBASE}/bin/libmikmod-config
-
-post-extract:
-	@${RM} -f \
-		${WRKSRC}/src/TecnoballZ/hires/.xvpics/*.bmp \
-		${WRKSRC}/src/TecnoballZ/lores/.xvpics/*.bmp
-	@${RMDIR} \
-		${WRKSRC}/src/TecnoballZ/hires/.xvpics \
-		${WRKSRC}/src/TecnoballZ/lores/.xvpics \
 
 post-patch:
 	@${FIND} ${WRKSRC}/include -name '*.h' | ${XARGS} ${REINPLACE_CMD} \
