@@ -25,7 +25,10 @@ lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Drawing/Text.hi
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Drawing/Transformations.hi
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Fonts/FontOptions.hi
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Surfaces/Image.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Surfaces/PDF.hi
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Surfaces/PNG.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Surfaces/PS.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Surfaces/SVG.hi
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Surfaces/Surface.hi
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Utilities.hi
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Matrix.hi
@@ -104,9 +107,12 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Pixbuf.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/PixbufData.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Pixmap.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Region.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/DNDTypes.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/Drag.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/Enums.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/General.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/IconFactory.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/Selection.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/StockItems.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/Structs.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/Style.hi
