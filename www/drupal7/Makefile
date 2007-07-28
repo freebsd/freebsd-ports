@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drupal5
-PORTVERSION=	5.1
-PORTREVISION=	3
+PORTVERSION=	5.2
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
@@ -39,9 +38,6 @@ USE_PHP+=	mysql
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 USE_PHP+=	pgsql
 .endif
-
-post-patch:
-	${RM} ${WRKSRC}/modules/taxonomy/taxonomy.module.orig
 
 do-install:
 	${MKDIR} ${DRUPAL_DIR}
