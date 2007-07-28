@@ -1,0 +1,15 @@
+--- ./examples/test/configure.orig	Mon Oct 10 15:27:36 2005
++++ ./examples/test/configure	Thu Jul 26 20:52:13 2007
+@@ -1017,9 +1017,9 @@
+ else
+ echo "$ac_t""$ac_cv_prog_g77" 1>&1
+ fi
+-    if test $ac_cv_prog_g77 = "yes" ; then
+-        FFLAGS="$FFLAGS -Wno-globals"
+-    fi
++    #if test $ac_cv_prog_g77 = "yes" ; then
++    #    FFLAGS="$FFLAGS -Wno-globals"
++    #fi
+ fi
+ # Fixup for make
+ 

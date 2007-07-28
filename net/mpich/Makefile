@@ -7,7 +7,7 @@
 
 PORTNAME=	mpich
 DISTVERSION=	1.2.7p1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 DIST_SUBDIR=	mpich
@@ -17,8 +17,17 @@ DIST_SUBDIR=	mpich
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Message Passing Interface (MPI) Library
 
+LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
+
 USE_BZIP2=	yes
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-prefix=${PREFIX}/mpich
+USE_FORTRAN=	yes
+F90FLAGS+=	${FFLAGS}
+FORTRANLIBDIR=	`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``
+FORTRANLIBDIR2=	`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``/../../../
+CONFIGURE_ENV+=	F90=${FC} F90FLAGS=${F90FLAGS} F77=${FC}	\
+		LIBS="-L${FORTRANLIBDIR} -L${FORTRANLIBDIR2} -lgfortranbegin  -lgfortran -L${LOCALBASE}/lib -lf2c"
 
 OPTIONS=	X11	"Enable MPE graphics" on \
 		TK	"Build with TK support" on \
@@ -32,6 +41,8 @@ WITHOUT_TK=	yes
 CONFIGURE_ARGS+=--disable-mpe_graphics
 PLIST_SUB+=	X11="@comment "
 .else
+BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 USE_XLIB=	yes
 CONFIGURE_ARGS+=--enable-mpe_graphics
 PLIST_SUB+=	X11=""
@@ -57,8 +68,6 @@ RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 BUILD_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 PLIST_SUB+=	JAVA=""
 .endif
-
-HAS_CONFIGURE=	yes
 
 ALL_TARGET=
 
@@ -197,6 +206,9 @@ CONFIGURE_ENV+=	RSHCOMMAND="${LOCALBASE}/bin/ssh"
 pre-configure:
 .for fic in mpe/configure mpe/src/Makefile.in
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/${fic}
+.endfor
+.for fic in examples/basic/Makefile.in installtest/Makefile.in
+	${REINPLACE_CMD} -e 's|@F90_SUFFIX@|f90|' ${WRKSRC}/${fic}
 .endfor
 
 post-install:
