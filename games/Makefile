@@ -217,9 +217,8 @@
     SUBDIR += freebsd-games
     SUBDIR += freecell-solver
     SUBDIR += freeciv
-    SUBDIR += freeciv-gtk
-    SUBDIR += freeciv-gtk2
     SUBDIR += freeciv-nox11
+    SUBDIR += freeciv-sounds
     SUBDIR += freecol
     SUBDIR += freedoko
     SUBDIR += freedroid

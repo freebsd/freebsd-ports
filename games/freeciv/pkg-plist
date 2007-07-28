@@ -24,6 +24,7 @@ bin/civserver
 %%DATADIR%%/default/techs.ruleset
 %%DATADIR%%/default/terrain.ruleset
 %%DATADIR%%/default/units.ruleset
+%%X11%%%%DATADIR%%/freeciv.rc-2.0
 %%X11%%%%DATADIR%%/helpdata.txt
 %%DATADIR%%/history/buildings.ruleset
 %%DATADIR%%/history/game.ruleset
@@ -297,13 +298,15 @@ bin/civserver
 %%X11%%%%DATADIR%%/isophex/terrain2.spec
 %%X11%%%%DATADIR%%/isophex/tiles.png
 %%X11%%%%DATADIR%%/isophex/tiles.spec
-share/locale/da/LC_MESSAGES/freeciv.mo
+share/locale/ar/LC_MESSAGES/freeciv.mo
 share/locale/ca/LC_MESSAGES/freeciv.mo
 share/locale/cs/LC_MESSAGES/freeciv.mo
+share/locale/da/LC_MESSAGES/freeciv.mo
 share/locale/de/LC_MESSAGES/freeciv.mo
 share/locale/en_GB/LC_MESSAGES/freeciv.mo
 share/locale/es/LC_MESSAGES/freeciv.mo
 share/locale/et/LC_MESSAGES/freeciv.mo
+share/locale/fa/LC_MESSAGES/freeciv.mo
 share/locale/fi/LC_MESSAGES/freeciv.mo
 share/locale/fr/LC_MESSAGES/freeciv.mo
 share/locale/he_IL/LC_MESSAGES/freeciv.mo
@@ -334,5 +337,5 @@ share/locale/uk/LC_MESSAGES/freeciv.mo
 @dirrm %%DATADIR%%/civ1
 %%X11%%@dirrm %%DATADIR%%/flags
 %%X11%%@dirrm %%DATADIR%%/isophex
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 %%X11%%@dirrmtry share/applications
