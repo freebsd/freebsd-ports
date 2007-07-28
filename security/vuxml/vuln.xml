@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="88260dfe-3d21-11dc-b3d3-0016179b2dd5">
+    <topic>phpsysinfo -- url Cross-Site Scripting</topic>
+    <affects>
+      <package>
+	<name>phpSysinfo</name>
+	<range><lt>2.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Doz reports:</p>
+	<blockquote cite="http://secunia.com/advisories/26248/">
+	  <p>A Input passed in the URL to index.php is not properly
+	    sanitised before being returned to the user.  This can be
+	    exploited to execute arbitrary HTML and script code in a
+	    user's browser session in context of an affected site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/26248/</url>
+    </references>
+    <dates>
+      <discovery>2007-07-27</discovery>
+      <entry>2007-07-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="98dd7788-3d13-11dc-b3d3-0016179b2dd5">
     <topic>drupal -- Cross site request forgeries</topic>
     <affects>
