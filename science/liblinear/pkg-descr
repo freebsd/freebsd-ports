@@ -1,16 +1,17 @@
-LIBLR  is a linear classifier for data with millions of instances and
-features. It implement a trust region Newton method in
+LIBLINEAR is a linear classifier for data with millions of instances and
+features. It supports both logistic regression and L2-loss linear SVM using a
+trust region Newton method in
 
 C.-J. Lin, R. C. Weng, and S. S. Keerthi. Trust region Newton method
 for large-scale regularized logistic regression. Technical report, 2007.
 A short version appears in ICML 2007.
 
-Main features of LIBLR include 
+Main features of LIBLINEAR include 
 
 Same data format as LIBSVM and similar usage
 One-vs-the rest multi-class classification
 Cross validation for model selection
-Probability estimates
+Probability estimates (logistic regression only)
 Weights for unbalanced data
 
-WWW: http://www.csie.ntu.edu.tw/~cjlin/liblr/
+WWW: http://www.csie.ntu.edu.tw/~cjlin/liblinear/
