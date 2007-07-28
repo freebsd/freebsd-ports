@@ -34,6 +34,76 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="98dd7788-3d13-11dc-b3d3-0016179b2dd5">
+    <topic>drupal -- Cross site request forgeries</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/162360">
+	  <p>Several parts in Drupal core are not protected against cross
+	    site request forgeries due to inproper use of the Forms API,
+	    or by taking action solely on GET requests. Malicious users are
+	    able to delete comments and content revisions and disable menu
+	    items by enticing a privileged users to visit certain URLs while
+	    the victim is logged-in to the targeted site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/162360</url>
+      <url>http://secunia.com/advisories/26224/</url>
+    </references>
+    <dates>
+      <discovery>2007-07-26</discovery>
+      <entry>2007-07-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1f5b711b-3d0e-11dc-b3d3-0016179b2dd5">
+    <topic>drupal -- Multiple cross-site scripting vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal4</name>
+	<range><lt>4.7.7</lt></range>
+      </package>
+      <package>
+        <name>drupal5</name>
+	<range><lt>5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/162361">
+	  <p>Some server variables are not escaped consistently. When
+	    a malicious user is able to entice a victim to visit a specially
+	    crafted link or webpage, arbitrary HTML and script code can be
+	    injected and executed in the context of the victim's session on
+	    the targeted website.</p>
+	  <p>Custom content type names are not escaped consistently. A
+	    malicious user with the 'administer content types' permission
+	    would be able to inject and execute arbitrary HTML and script
+	    code on the website. Revoking the 'administer content types'
+	    permission provides an immediate workaround.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/162361</url>
+      <url>http://secunia.com/advisories/26224/</url>
+    </references>
+    <dates>
+      <discovery>2007-07-26</discovery>
+      <entry>2007-07-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1ed03222-3c65-11dc-b3d3-0016179b2dd5">
     <topic>vim -- Command Format String Vulnerability</topic>
     <affects>
