@@ -34,6 +34,7 @@
     SUBDIR += asp2php
     SUBDIR += asterisk-fop
     SUBDIR += asterisk-gui
+    SUBDIR += asterisk-stat
     SUBDIR += aswedit
     SUBDIR += aswiki
     SUBDIR += august
