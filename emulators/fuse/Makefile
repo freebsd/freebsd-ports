@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fuse
-PORTVERSION=	0.7.0
-PORTREVISION=	5
+PORTVERSION=	0.8.0.1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fuse-emulator
@@ -15,7 +14,7 @@ MASTER_SITE_SUBDIR=	fuse-emulator
 MAINTAINER=	kemm@in-line.ru
 COMMENT=	Free Unix (Sinclair ZX-)Spectrum Emulator
 
-LIB_DEPENDS=	spectrum.4:${PORTSDIR}/emulators/libspectrum \
+LIB_DEPENDS=	spectrum.5:${PORTSDIR}/emulators/libspectrum \
 		765.4:${PORTSDIR}/emulators/lib765 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		png.5:${PORTSDIR}/graphics/png
@@ -27,6 +26,7 @@ USE_PERL5_BUILD=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-plus3-disk-prefix=${LOCALBASE}
+CFLAGS+=	 `${LOCALBASE}/bin/libpng-config --I_opts` -I${LOCALBASE}/include
 
 OPTIONS=	SMALLMEM "Low memory compile needed" off \
 		GTK      "Use GTK1 user interface" off \
@@ -37,7 +37,11 @@ OPTIONS=	SMALLMEM "Low memory compile needed" off \
 
 .include <bsd.port.pre.mk>
 
+# adjust location of manual page
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
+
 .if defined(WITH_SMALLMEM)
+BROKEN=	Does not compile
 CONFIGURE_ARGS+=	--enable-smallmem
 .endif
 
