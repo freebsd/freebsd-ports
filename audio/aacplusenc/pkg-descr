@@ -1,0 +1,7 @@
+Command-line encoder that outputs aacPlus v2 files (ie. Advanced Audio Coding +
+Spectral Band Resonation + Parametric Stereo, or AAC + SBR + PS), also known as
+HE-AAC+ (High Efficiency AAC+).  Developed by Coding Technologies, based on the
+reference code obtained from 3GPP, repackaged to compile on contemporary Linux
+by Matteo Croce.
+
+WWW: http://teknoraver.campuslife.it/

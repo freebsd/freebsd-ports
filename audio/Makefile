@@ -6,6 +6,7 @@
     SUBDIR += HVSC-Update
     SUBDIR += Maaate
     SUBDIR += aacgain
+    SUBDIR += aacplusenc
     SUBDIR += abcde
     SUBDIR += abcmidi
     SUBDIR += abcselect
