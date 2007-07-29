@@ -45,12 +45,12 @@ CONFIGURE_ARGS+=--enable-final
 .endif
 
 .if !defined(_NO_KDE_NDEBUG)
-.if defined(PARALLEL_PACKAGE_BUILD) || !defined(WANT_KDE_DEBUG)
+.if defined(PACKAGE_BUILDING) || !defined(WANT_KDE_DEBUG)
 CONFIGURE_ARGS+=--disable-debug
 .else
 CONFIGURE_ARGS+=--enable-debug=full
 STRIP=''
-.endif # defined(PARALLEL_PACKAGE_BUILD) || !defined(WANT_KDE_DEBUG)
+.endif # defined(PACKAGE_BUILDING) || !defined(WANT_KDE_DEBUG)
 .endif # !defined(_NO_KDE_NDEBUG)
 
 .if !defined(_NO_KDE_XINERAMA)

@@ -56,7 +56,7 @@ OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 USE_LDCONFIG=	${PREFIX}/lib/evolution/${EVO_VERSION}
 .include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
-.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
+.if defined(PACKAGE_BUILDING)
 WITH_DBUS=	yes
 .endif
 
