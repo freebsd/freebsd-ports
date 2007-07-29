@@ -1,0 +1,38 @@
+--- ./build/build.xml.orig	Sun Mar 25 22:55:20 2007
++++ ./build/build.xml	Sun Mar 25 22:58:57 2007
+@@ -43,6 +43,35 @@
+    -->
+ 
+   <target name="init" unless="init.disable" depends="_buildmagic:init">
++  <!-- Make sure we have the right version of Ant -->
++  <property name="buildmagic.ant15.baseversion" value="1.5"/>
++  <property name="buildmagic.ant16.baseversion" value="1.6"/>
++  <property name="buildmagic.ant16.baseversion" value="1.7"/>
++  <!--
++      | Add new conditions for other supported Ant versions when they
++      | become avaialble.
++   -->
++
++   <condition property="buildmagic.ant.compatible">
++     <or>
++        <contains string="${ant.version}"
++		  substring="Ant version ${buildmagic.ant15.baseversion}"/>
++	<contains string="${ant.version}"
++	    	  substring="Ant version ${buildmagic.ant16.baseversion}"/>
++	<contains string="${ant.version}"
++	          substring="Ant version ${buildmagic.ant17.baseversion}"/>
++     </or>
++   </condition>
++
++   <fail unless="buildmagic.ant.compatible">
++
++      Unsupported Ant version:
++
++       ${ant.version}
++
++      Please install a version which is compatible with Ant ${buildmagic.ant15.baseversion} or ${buildmagic.ant16.baseversion} or ${buildmagic.ant17.baseversion}.
++
++   </fail>
+   </target>
+ 
+ 
