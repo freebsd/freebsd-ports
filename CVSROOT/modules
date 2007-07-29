@@ -2425,6 +2425,7 @@ emacs-devel	ports/editors/emacs-devel
 emacs-lisp-intro	ports/lang/emacs-lisp-intro
 emacs-w3m		ports/www/emacs-w3m
 emacs-w3m-emacs20	ports/www/emacs-w3m-emacs20
+emacs-w3m-emacs21	ports/www/emacs-w3m-emacs21
 emacs-w3m-xemacs21-mule	ports/www/emacs-w3m-xemacs21-mule
 emacs-wget	ports/ftp/emacs-wget
 emacs-wiki	ports/textproc/emacs-wiki
