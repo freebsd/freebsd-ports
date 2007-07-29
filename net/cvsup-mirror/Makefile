@@ -20,7 +20,6 @@ NO_WRKSUBDIR=	true
 NO_BUILD=	true
 IS_INTERACTIVE=	true
 NO_PACKAGE=	too interactive
-SCRIPTS_ENV=	USA_RESIDENT=${USA_RESIDENT}
 
 USE_RC_SUBR=	cvsupd.sh
 SUB_FILES=	update.sh

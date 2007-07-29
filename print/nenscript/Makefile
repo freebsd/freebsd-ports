@@ -22,10 +22,6 @@ MAN1=		nenscript.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == "YES"
-CFLAGS+=	-DUS_VERSION
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nenscript ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/nenscript.1 ${MANPREFIX}/man/man1
