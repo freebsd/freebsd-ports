@@ -25,6 +25,8 @@ lib/libvcl.la
 lib/libvcl.a
 libdata/pkgconfig/varnishapi.pc
 sbin/varnishd
-@dirrm etc/varnish
 @exec mkdir %D/varnish
 @dirrmtry varnish
+@dirrmtry libdata/pkgconfig
+@dirrm include/varnish
+@dirrm etc/varnish
