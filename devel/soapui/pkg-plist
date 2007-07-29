@@ -36,3 +36,4 @@ bin/soapui.sh
 %%DATADIR%%/lib/wsdl4j-1.6.2.jar
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%
