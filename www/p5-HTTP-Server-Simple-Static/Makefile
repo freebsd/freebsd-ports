@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Server-Simple-Static
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	HTTP
@@ -25,8 +25,4 @@ PERL_MODBUILD=	yes
 
 MAN3=	HTTP::Server::Simple::Static.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires Perl 5.6 or newer. Install lang/perl5 or lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
