@@ -99,11 +99,108 @@ share/gnome/kino/help/en/interlace.html
 share/gnome/kino/help/en/intro.html
 share/gnome/kino/help/en/jogshuttle.html
 share/gnome/kino/help/en/keyboard.html
+share/gnome/kino/help/en/keyboard_capture.html
+share/gnome/kino/help/en/keyboard_edit.html
+share/gnome/kino/help/en/keyboard_export.html
+share/gnome/kino/help/en/keyboard_fx.html
+share/gnome/kino/help/en/keyboard_timeline.html
+share/gnome/kino/help/en/keyboard_trim.html
 share/gnome/kino/help/en/kino.xml
 share/gnome/kino/help/en/links.html
 share/gnome/kino/help/en/locked.html
+share/gnome/kino/help/en/media/FX/fx.png
+share/gnome/kino/help/en/media/FX/fx_audio/fx_audio_filters/fx_dub/fx-audiofilter-dub.png
+share/gnome/kino/help/en/media/FX/fx_audio/fx_audio_filters/fx_gain/fx-audiofilter-gain.png
+share/gnome/kino/help/en/media/FX/fx_audio/fx_audio_filters/fx_mix/fx-audiofilter-mix.png
+share/gnome/kino/help/en/media/FX/fx_audio/fx_audio_transitions/fx-audiotransition-crossfade.png
+share/gnome/kino/help/en/media/FX/fx_selection/fx-overwrite-advanced.png
+share/gnome/kino/help/en/media/FX/fx_selection/fx_create/fx_create_colorrange/fx-create-color_range.png
+share/gnome/kino/help/en/media/FX/fx_selection/fx_create/fx_create_fixedcolor/fx-create-fixed_color.png
+share/gnome/kino/help/en/media/FX/fx_selection/fx_create/fx_create_fromfile/fx-create-from_file.png
+share/gnome/kino/help/en/media/FX/fx_selection/fx_create/fx_create_gradient/fx-create-gradient.png
+share/gnome/kino/help/en/media/FX/fx_selection/fx_create/fx_create_noise/fx-create-noise.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_blur/fx-vfilter-blur-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_blur/fx-vfilter-blur.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_charcoal/fx-vfilter-charcoal-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_charcoal/fx-vfilter-charcoal.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_coloraverage/fx-vfilter-coloravg-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_coloraverage/fx-vfilter-coloravg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_colorhold/fx-vfilter-colorhold-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_colorhold/fx-vfilter-colorhold.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_flip/fx-vfilter-flip-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_flip/fx-vfilter-flip.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_jerky/fx-vfilter-jerky.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_kaleidoscope/fx-vfilter-kaleidoscope-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_kaleidoscope/fx-vfilter-kaleidoscope.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_levels/fx-vfilter-levels.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_mirror/fx-vfilter-mirror-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_mirror/fx-vfilter-mirror.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_panzoom/fx-vfilter-panzoom-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_panzoom/fx-vfilter-panzoom.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_pixelate/fx-vfilter-pixelate-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_pixelate/fx-vfilter-pixelate.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_softfocus/fx-vfilter-soft-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_softfocus/fx-vfilter-soft.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_superimpose/fx-vfilter-superimpose-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_superimpose/fx-vfilter-superimpose.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_titler/fx-vfilter-titler-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_titler/fx-vfilter-titler.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx-vtran.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_barndoor/fx-vtran-barn-horz-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_barndoor/fx-vtran-barn-horz.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_barndoor/fx-vtran-barn-vert-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_composite/fx-vtran-composite-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_composite/fx-vtran-composite.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_differences/fx-vtran-diff-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_differences/fx-vtran-diff.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_dissolve/fx-vtran-dissolve-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_dissolve/fx-vtran-dissolve.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_luma/fx-vtran-wipe-barleft.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_luma/fx-vtran-wipe-barndiag.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_luma/fx-vtran-wipe-box.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_luma/fx-vtran-wipe-burst.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_luma/fx-vtran-wipe-clock.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_luma/fx-vtran-wipe-iris.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_luma/fx-vtran-wipe-matrix.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_luma/fx-vtran-wipe.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_push/fx-vtran-push-horz-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_push/fx-vtran-push-vert-eg.png
+share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_push/fx-vtran-push.png
+share/gnome/kino/help/en/media/FX/fx_video/keyframing/fx-keyframe-add.png
+share/gnome/kino/help/en/media/FX/fx_video/keyframing/fx-keyframing-remove.png
+share/gnome/kino/help/en/media/capture/capture-empty.png
+share/gnome/kino/help/en/media/edit/button-copy.png
+share/gnome/kino/help/en/media/edit/button-cut.png
+share/gnome/kino/help/en/media/edit/button-join.png
+share/gnome/kino/help/en/media/edit/button-paste.png
+share/gnome/kino/help/en/media/edit/button-split.png
+share/gnome/kino/help/en/media/edit/edit.png
+share/gnome/kino/help/en/media/edit/pointclick/button-append.png
+share/gnome/kino/help/en/media/edit/pointclick/button-insert.png
+share/gnome/kino/help/en/media/edit/pointclick/file-open.png
+share/gnome/kino/help/en/media/export/export_audio/export-audio.png
+share/gnome/kino/help/en/media/export/export_dv/export-dv-range.png
+share/gnome/kino/help/en/media/export/export_ieee1394/export-1394-enabled.png
+share/gnome/kino/help/en/media/export/export_other/export-other-theora.png
+share/gnome/kino/help/en/media/export/export_selection/export-range.png
+share/gnome/kino/help/en/media/export/mpeg/dvdauthor/export-mpeg-dvd.png
+share/gnome/kino/help/en/media/export/mpeg/export-mpeg-vcd.png
+share/gnome/kino/help/en/media/export/stills/export-stills-current.png
+share/gnome/kino/help/en/media/keyboard/help-keyboard.png
+share/gnome/kino/help/en/media/metadata/metadata.png
+share/gnome/kino/help/en/media/prefs/prefs0/prefs-defaults.png
+share/gnome/kino/help/en/media/prefs/prefs1/prefs-capture.png
+share/gnome/kino/help/en/media/prefs/prefs2/prefs-1394-broken.png
+share/gnome/kino/help/en/media/prefs/prefs2/prefs-1394-empty.png
+share/gnome/kino/help/en/media/prefs/prefs3/prefs-display.png
+share/gnome/kino/help/en/media/prefs/prefs4/prefs-audio.png
+share/gnome/kino/help/en/media/prefs/prefs5/prefs-jogshuttle.png
+share/gnome/kino/help/en/media/prefs/prefs7/prefs-other.png
+share/gnome/kino/help/en/media/publish/button-publish_movie.png
 share/gnome/kino/help/en/media/terms/jogshuttle/shuttlepro.png
+share/gnome/kino/help/en/media/trim/trim.png
 share/gnome/kino/help/en/media/ui/kinoui.png
+share/gnome/kino/help/en/media/ui/properties.png
 share/gnome/kino/help/en/metadata.html
 share/gnome/kino/help/en/metadata_example.html
 share/gnome/kino/help/en/metanames.html
@@ -300,11 +397,73 @@ share/locale/sv/LC_MESSAGES/kino.mo
 share/mime/packages/kino.xml
 @dirrm include/kino
 @dirrm lib/kino-gtk2
-@dirrm share/gnome/kino/help/en/images
+@dirrm share/gnome/kino/help/en/media/ui
+@dirrm share/gnome/kino/help/en/media/trim
 @dirrm share/gnome/kino/help/en/media/terms/jogshuttle
 @dirrm share/gnome/kino/help/en/media/terms
-@dirrm share/gnome/kino/help/en/media/ui
-@dirrm share/gnome/kino/help/en/media
+@dirrm share/gnome/kino/help/en/media/publish
+@dirrm share/gnome/kino/help/en/media/prefs/prefs7
+@dirrm share/gnome/kino/help/en/media/prefs/prefs5
+@dirrm share/gnome/kino/help/en/media/prefs/prefs4
+@dirrm share/gnome/kino/help/en/media/prefs/prefs3
+@dirrm share/gnome/kino/help/en/media/prefs/prefs2
+@dirrm share/gnome/kino/help/en/media/prefs/prefs1
+@dirrm share/gnome/kino/help/en/media/prefs/prefs0
+@dirrm share/gnome/kino/help/en/media/prefs
+@dirrm share/gnome/kino/help/en/media/metadata
+@dirrm share/gnome/kino/help/en/media/keyboard
+@dirrm share/gnome/kino/help/en/media/export/stills
+@dirrm share/gnome/kino/help/en/media/export/mpeg/dvdauthor
+@dirrm share/gnome/kino/help/en/media/export/mpeg
+@dirrm share/gnome/kino/help/en/media/export/export_selection
+@dirrm share/gnome/kino/help/en/media/export/export_other
+@dirrm share/gnome/kino/help/en/media/export/export_ieee1394
+@dirrm share/gnome/kino/help/en/media/export/export_dv
+@dirrm share/gnome/kino/help/en/media/export/export_audio
+@dirrm share/gnome/kino/help/en/media/export
+@dirrm share/gnome/kino/help/en/media/edit/pointclick
+@dirrm share/gnome/kino/help/en/media/edit
+@dirrm share/gnome/kino/help/en/media/capture
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/keyframing
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_push
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_luma
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_dissolve
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_differences
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_composite
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions/fx_barndoor
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_transitions
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_titler
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_superimpose
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_softfocus
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_pixelate
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_panzoom
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_mirror
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_levels
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_kaleidoscope
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_jerky
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_flip
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_colorhold
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_coloraverage
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_charcoal
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters/fx_blur
+@dirrm share/gnome/kino/help/en/media/FX/fx_video/fx_video_filters
+@dirrm share/gnome/kino/help/en/media/FX/fx_video
+@dirrm share/gnome/kino/help/en/media/FX/fx_selection/fx_create/fx_create_noise
+@dirrm share/gnome/kino/help/en/media/FX/fx_selection/fx_create/fx_create_gradient
+@dirrm share/gnome/kino/help/en/media/FX/fx_selection/fx_create/fx_create_fromfile
+@dirrm share/gnome/kino/help/en/media/FX/fx_selection/fx_create/fx_create_fixedcolor
+@dirrm share/gnome/kino/help/en/media/FX/fx_selection/fx_create/fx_create_colorrange
+@dirrm share/gnome/kino/help/en/media/FX/fx_selection/fx_create
+@dirrm share/gnome/kino/help/en/media/FX/fx_selection
+@dirrm share/gnome/kino/help/en/media/FX/fx_audio/fx_audio_transitions
+@dirrm share/gnome/kino/help/en/media/FX/fx_audio/fx_audio_filters/fx_mix
+@dirrm share/gnome/kino/help/en/media/FX/fx_audio/fx_audio_filters/fx_gain
+@dirrm share/gnome/kino/help/en/media/FX/fx_audio/fx_audio_filters/fx_dub
+@dirrm share/gnome/kino/help/en/media/FX/fx_audio/fx_audio_filters
+@dirrm share/gnome/kino/help/en/media/FX/fx_audio
+@dirrm share/gnome/kino/help/en/media/FX
+@dirrm share/gnome/kino/help/en/media/
+@dirrm share/gnome/kino/help/en/images
 @dirrm share/gnome/kino/help/en
 @dirrm share/gnome/kino/help/fr/images
 @dirrm share/gnome/kino/help/fr/media/ui

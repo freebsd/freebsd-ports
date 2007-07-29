@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kino
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,9 +21,9 @@ RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer	\
 		mplex:${PORTSDIR}/multimedia/mjpegtools
 
 OPTIONS=	QUICKTIME "With Quicktime support" off	\
-		FFMPEG_KINO "With ffmpeg-kino" on
+		FFMPEG_KINO "With ffmpeg-kino" off
 
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade2 libxml2
@@ -37,12 +36,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/lqt		\
 			-L${LOCALBASE}/lib -L${X11BASE}/lib"	\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-dv1394
-MAN1=	ffmpeg-kino.1 kino.1 kino2raw.1
+MAN1=	kino.1 kino2raw.1
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=	Does not compile on FreeBSD 4.x
+IGNORE=	does not compile on FreeBSD 4.x
+.endif
+
+.if defined(WITH_FFMPEG_KINO)
+MAN1+=	ffmpeg-kino.1
 .endif
 
 .if defined(WITH_QUICKTIME)
