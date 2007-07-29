@@ -285,7 +285,7 @@ while [ $# -gt 0 ]; do
 
     # Test for copy failure and bail
     if [ ! -f ${chroot}/tmp/depends/$1 ]; then
-      echo "ERROR: Couldn't copy $1"
+      echo "ERROR: Couldn't copy $1" | tee -a ${chroot}/tmp/${pkgname}.log
       bailout ${chroot} ${clean} 255 ${pkgname}
     fi
   fi
