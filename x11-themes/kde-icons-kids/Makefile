@@ -12,4 +12,6 @@ DISTNAME=	${PORTNAME}
 
 COMMENT=	KDE Kids iconset
 
+BROKEN=		Unfetchable
+
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
