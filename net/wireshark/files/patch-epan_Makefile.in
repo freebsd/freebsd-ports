@@ -1,0 +1,13 @@
+--- epan/Makefile.in.orig	2007-07-29 17:56:38.000000000 -0400
++++ epan/Makefile.in	2007-07-29 17:58:47.000000000 -0400
+@@ -708,8 +708,8 @@ MAINTAINERCLEANFILES = \
+ #
+ # Add the object files for missing routines, if any.
+ #
+-libwireshark_la_LIBADD = @G_ASCII_STRTOULL_LO@ @INET_ATON_LO@ @INET_PTON_LO@ @INET_NTOP_LO@ libwireshark_generated.la crypt/libairpdcap.la ftypes/libftypes.la dfilter/libdfilter.la dissectors/libcleandissectors.la dissectors/libdissectors.la dissectors/libasndissectors.la dissectors/libpidldissectors.la $(wslua_lib) @ADNS_LIBS@ @LIBGNUTLS_LIBS@ @LIBICONV@ @KRB5_LIBS@ @SNMP_LIBS@ @SSL_LIBS@ -lm
+-libwireshark_la_DEPENDENCIES = @G_ASCII_STRTOULL_LO@ @INET_ATON_LO@ @INET_PTON_LO@ @INET_NTOP_LO@ libwireshark_generated.la crypt/libairpdcap.la ftypes/libftypes.la dfilter/libdfilter.la dissectors/libcleandissectors.la dissectors/libdissectors.la dissectors/libasndissectors.la dissectors/libpidldissectors.la $(wslua_lib)
++libwireshark_la_LIBADD = @G_ASCII_STRTOULL_LO@ @INET_ATON_LO@ libwireshark_generated.la crypt/libairpdcap.la ftypes/libftypes.la dfilter/libdfilter.la dissectors/libcleandissectors.la dissectors/libdissectors.la dissectors/libasndissectors.la dissectors/libpidldissectors.la $(wslua_lib) @ADNS_LIBS@ @LIBGNUTLS_LIBS@ @LIBICONV@ @KRB5_LIBS@ @SNMP_LIBS@ @SSL_LIBS@ -lm
++libwireshark_la_DEPENDENCIES = @G_ASCII_STRTOULL_LO@ @INET_ATON_LO@ libwireshark_generated.la crypt/libairpdcap.la ftypes/libftypes.la dfilter/libdfilter.la dissectors/libcleandissectors.la dissectors/libdissectors.la dissectors/libasndissectors.la dissectors/libpidldissectors.la $(wslua_lib)
+ LEMON = ../tools/lemon
+ @ENABLE_STATIC_FALSE@@HAVE_PLUGINS_TRUE@plugin_src = 
+ @ENABLE_STATIC_TRUE@@HAVE_PLUGINS_TRUE@plugin_src = \
