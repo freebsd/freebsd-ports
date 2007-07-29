@@ -46,8 +46,7 @@ OPTIONS=	DVI		"Enable DVI viewer support"		off \
 
 .include <bsd.port.pre.mk>
 
-.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD) \
-		|| exists(${LOCALBASE}/lib/libdbus-glib-1.so)
+.if defined(PACKAGE_BUILDING) || exists(${LOCALBASE}/lib/libdbus-glib-1.so)
 WITH_DBUS=	yes
 .endif
 

@@ -68,7 +68,7 @@ libtests:
 
 test: libtests prtests
 
-#.if defined(PARALLEL_PACKAGE_BUILD)
+#.if defined(PACKAGE_BUILDING)
 #post-build: test
 #.else
 post-build:

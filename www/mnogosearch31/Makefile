@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=--enable-phrase \
 		--localstatedir=/var/mnogosearch
 CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
 
-.if defined(PARALLEL_PACKAGE_BUILD)
+.if defined(PACKAGE_BUILDING)
 # OPTIONS not counted, workaround
 WITH_MNOGO_BUILTIN=true
 .endif

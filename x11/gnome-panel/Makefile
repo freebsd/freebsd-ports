@@ -46,7 +46,7 @@ GCONF_SCHEMAS=	clock.schemas fish.schemas \
 
 OPTIONS=	EVOLUTION "use the Evolution calendar if installed" on
 
-.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
+.if defined(PACKAGE_BUILDING)
 .undef WITHOUT_GNOME
 WITH_GNOME=	yes
 .endif
