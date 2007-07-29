@@ -29,6 +29,5 @@ post-extract:
 	${MV} ${WRKSRC}/tests/_files/orig ${WRKSRC}/tests/orig
 
 .include <bsd.port.pre.mk>
-
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
