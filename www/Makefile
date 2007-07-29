@@ -129,6 +129,7 @@
     SUBDIR += drupal5-gsitemap
     SUBDIR += drupal5-i18n
     SUBDIR += drupal5-nice_menus
+    SUBDIR += drupal5-simplenews
     SUBDIR += drupal5-taxonomy_access
     SUBDIR += drupal5-taxonomy_ticker
     SUBDIR += drupal5-tinymce
