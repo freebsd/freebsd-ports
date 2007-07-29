@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.2.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-toolkits tk82
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_2
@@ -20,7 +20,7 @@ USE_TCL=	82
 USE_TCL_BUILD=	82
 
 LATEST_LINK=	tk82
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
@@ -308,6 +308,9 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 .endif
 
 TKBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|X11/Intrinsic.h|X11/Xlib.h|g' ${WRKSRC}/configure
 
 post-configure:
 	${REINPLACE_CMD} \

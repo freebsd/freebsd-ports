@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_0
@@ -20,7 +20,7 @@ USE_TCL=	80
 USE_TCL_BUILD=	80
 
 NO_LATEST_LINK=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 GNU_CONFIGURE=	yes
@@ -281,6 +281,7 @@ MLINKS=	3DBorder.3 Tk_Get3DBorder.3 \
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|X11/Intrinsic.h|X11/Xlib.h|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's/\.[3n]/&.gz/g' ${WRKSRC}/mkLinks
 
 post-configure:
