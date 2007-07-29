@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/flim/flim-1.
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	nobutaka@FreeBSD.org
-COMMENT?=	FLIM, message representation or encoding elisp library for emacs21
+COMMENT?=	FLIM, message representation or encoding elisp library for emacs
 
 PORTCLASS?=	master
 
@@ -29,7 +29,6 @@ FLIM_VERSION_SPECIFIC_LISPDIR=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 
 PORTCLASS?=	master
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 
 EMACS_MASTERDIR_PKGFILES=YES
 DESCR=		${PKGDIR}/pkg-descr

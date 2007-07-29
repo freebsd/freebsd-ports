@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/comp/emacsen/lisp/semi
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	nobutaka@FreeBSD.org
-COMMENT?=	SEMI, Library of MIME feature for GNU Emacs for emacs21
+COMMENT?=	SEMI, Library of MIME feature for GNU Emacs for emacs
 
 PORTCLASS?=	master
 
@@ -30,7 +30,6 @@ SEMI_LISPDIR=			${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 SEMI_VERSION_SPECIFIC_LISPDIR=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 
 EMACS_MASTERDIR_PKGFILES=YES
 DESCR=		${PKGDIR}/pkg-descr

@@ -13,10 +13,9 @@ MASTER_SITES=	http://emacs-w3m.namazu.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT?=	Simple front-end to w3m for emacs21
+COMMENT?=	Simple front-end to w3m for emacs
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 
 CONFIGURE_ARGS?=	--with-emacs=${EMACS_CMD} \
 			--with-lispdir=${PREFIX}/${LISPDIR} \
@@ -48,6 +47,8 @@ WITHOUT_OCTET_VIEWER=	yes
 .else
 SHIMBUN=	""
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22")
 FLIM_PORT=	${PORTSDIR}/editors/flim
@@ -114,4 +115,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
