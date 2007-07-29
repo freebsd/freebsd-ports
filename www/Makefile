@@ -134,6 +134,7 @@
     SUBDIR += drupal5-taxonomy_access
     SUBDIR += drupal5-taxonomy_ticker
     SUBDIR += drupal5-tinymce
+    SUBDIR += drupal5-views
     SUBDIR += dtse
     SUBDIR += dummyflash
     SUBDIR += eaccelerator
