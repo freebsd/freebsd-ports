@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cmus
-PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTVERSION=	2.2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/ \
 		http://mirror.greaterscope.net/cmus/
@@ -16,11 +15,11 @@ MAINTAINER=	simon@olofsson.de
 COMMENT=	Console-based music player with really cool features
 
 USE_BZIP2=	yes
-USE_GCC=	3.2+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=prefix=${TARGETDIR} mandir=${MANPREFIX}/man
+CONFIGURE_ARGS+=prefix=${TARGETDIR} mandir=${MANPREFIX}/man \
+		exampledir=${EXAMPLESDIR}
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -33,13 +32,14 @@ OPTIONS=	FLAC "FLAC (Free Lossless Audio Codec) support" Off \
 		TREMOR "Use Tremor as Ogg/Vorbis input plugin" Off \
 		MP4 "MPEG-4 AAC support" Off \
 		AAC "AAC support" Off \
+		WAVPACK "Wavpack support" Off \
 		LIBAO "Libao cross-platform audio library" Off \
 		ARTS "ARTS support" Off
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
-LIB_DEPENDS=	ncursesw.5:${PORTSDIR}/devel/ncurses
+LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
 .endif
 
 .if defined(WITH_FLAC)
@@ -117,6 +117,15 @@ PLIST_SUB+=	AAC=""
 .else
 CONFIGURE_ARGS+=CONFIG_AAC=n
 PLIST_SUB+=	AAC="@comment "
+.endif
+
+.if defined(WITH_WAVPACK)
+LIB_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
+CONFIGURE_ARGS+=CONFIG_WAVPACK=y
+PLIST_SUB+=	WAVPACK=""
+.else
+CONFIGURE_ARGS+=CONFIG_WAVPACK=n
+PLIST_SUB+=	WAVPACK="@comment "
 .endif
 
 .if defined(WITH_LIBAO)
