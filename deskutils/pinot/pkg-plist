@@ -35,7 +35,6 @@ share/locale/sv/LC_MESSAGES/pinot.mo
 %%DATADIR%%/AmazonAPI.src
 %%DATADIR%%/engines/A9.src
 %%DATADIR%%/engines/Accoona.src
-%%DATADIR%%/engines/Ask.src
 %%DATADIR%%/engines/BitTorrent.src
 %%DATADIR%%/engines/Clusty.src
 %%DATADIR%%/engines/CreativeCommons.src
