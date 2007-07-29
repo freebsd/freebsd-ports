@@ -8,7 +8,7 @@ INDEX_PRISTINE=1
 INDEX_QUIET=1
 
 # Concurrency of index build
-INDEX_JOBS=2
+INDEX_JOBS=6
 
 pb=/var/portbuild
 arch=$1
@@ -48,6 +48,10 @@ case "x$1" in
     ;;
   x6-exp)
     branch=6-exp
+    INDEXFILE=INDEX-6
+    ;;
+  x6-exp2)
+    branch=6-exp2
     INDEXFILE=INDEX-6
     ;;
   x7)
