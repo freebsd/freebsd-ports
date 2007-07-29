@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-DISTVERSION=	0.611
+DISTVERSION=	0.612
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN SF
 PKGNAMEPREFIX=	p5-
@@ -36,6 +36,6 @@ MAN3=		Config::Model.3pm Config::Model::AnyId.3pm \
 		Config::Model::Searcher.3pm Config::Model::TermUI.3pm \
 		Config::Model::Value.3pm Config::Model::ValueComputer.3pm \
 		Config::Model::WarpedNode.3pm Config::Model::WarpedThing.3pm \
-		Config::Model::WizardHelper.3pm
+		Config::Model::WizardHelper.3pm Config::Model::DumpAsData.3pm
 
 .include <bsd.port.mk>
