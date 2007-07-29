@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pinot
-PORTVERSION=	0.73
-PORTREVISION=	4
+PORTVERSION=	0.75
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
@@ -35,21 +34,22 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
 		unzip:${PORTSDIR}/archivers/unzip			\
 		unrtf:${PORTSDIR}/textproc/unrtf
 
-.if !defined(WITHOUT_SOAP)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libgsoap.a:${PORTSDIR}/devel/gsoap
-CONFIGURE_ARGS+=	--with-soap=yes
-.endif
-
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-http=curl
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"	\
+		MKDIR_P="mkdir -p"
 
 USE_GETTEXT=	yes
 USE_XLIB=	yes
 #USE_SQLITE=	3	# Replaced by sqlite3-threads
 USE_PYTHON=	yes
 USE_LDCONFIG=	${PREFIX}/lib/pinot/filters
+
+.if defined(WITH_SOAP)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libgsoap.a:${PORTSDIR}/devel/gsoap
+CONFIGURE_ARGS+=	--enable-soap=yes
+.endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=yes
@@ -64,7 +64,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		pinot-dbus-daemon.1 pinot-index.1 pinot-search.1 pinot.1
 
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
+PORTDOCS=	AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 
 LM2FIX=		textcat_conf.txt textcat3_conf.txt
 SHR2FIX=	Search/pinot-search.1 README
