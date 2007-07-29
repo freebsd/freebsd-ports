@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kaffeine
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	0.8.5
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kaffeine
@@ -57,8 +56,7 @@ post-patch:
 		${WRKSRC}/kaffeine/src/input/disc/paranoia.cpp
 	${MKDIR} ${WRKSRC}/linux/dvb
 	cd ${FILESDIR}; ${CP} ${DVB_HEADERS} ${WRKSRC}/linux/dvb
-
-post-install:
-	${RM} ${PREFIX}/share/doc/HTML/en/doc/CMakeLists.txt
+	${REINPLACE_CMD} -e "s,^LIBTOOL=,#LIBTOOL=," ${WRKSRC}/configure
+	${TOUCH} -t 200401230000 ${WRKSRC}/admin/acinclude.m4.in
 
 .include <bsd.port.post.mk>
