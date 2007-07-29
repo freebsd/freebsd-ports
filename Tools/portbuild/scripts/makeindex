@@ -26,14 +26,6 @@ if [ $# != 1 ]; then
 fi
 
 case "x$1" in
-  x4)
-    branch=4
-    INDEXFILE=INDEX
-    ;;
-  x4-exp)
-    branch=4-exp
-    INDEXFILE=INDEX
-    ;;
   x5)
     branch=5
     INDEXFILE=INDEX-5
