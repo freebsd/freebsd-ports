@@ -9,6 +9,7 @@ lib/cmus/ip/wav.so
 %%VORBIS%%lib/cmus/ip/vorbis.so
 %%MP4%%lib/cmus/ip/mp4.so
 %%AAC%%lib/cmus/ip/aac.so
+%%WAVPACK%%lib/cmus/ip/wavpack.so
 lib/cmus/op/oss.so
 %%AO%%lib/cmus/op/ao.so
 %%ARTS%%lib/cmus/op/arts.so
@@ -16,6 +17,7 @@ lib/cmus/op/oss.so
 %%DATADIR%%/default.theme
 %%DATADIR%%/gray-88.theme
 %%DATADIR%%/green-mono-88.theme
+%%DATADIR%%/green.theme
 %%DATADIR%%/rc
 %%DATADIR%%/xterm-white.theme
 %%EXAMPLESDIR%%/cmus-status-display
