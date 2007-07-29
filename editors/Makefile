@@ -138,6 +138,7 @@
     SUBDIR += scribes
     SUBDIR += semi
     SUBDIR += semi-emacs20
+    SUBDIR += semi-emacs21
     SUBDIR += semi-xemacs21-mule
     SUBDIR += semi113
     SUBDIR += setedit
