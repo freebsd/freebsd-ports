@@ -2,11 +2,12 @@
 #
 # %%APP_TITLE%% startup script.
 #
-# $FreeBSD: /tmp/pcvs/ports/java/jboss4/files/Attic/startup.sh,v 1.4 2006-06-13 17:43:14 glewis Exp $
+# $FreeBSD$
 #
 
 # PROVIDE: %%APP_SHORTNAME%%
 # REQUIRE: NETWORKING SERVERS
+# KEYWORD: shutdown
 
 # Add the following lines to /etc/rc.conf to enable %%APP_SHORTNAME%%:
 # %%APP_SHORTNAME%%_enable (bool):		Set to "NO" by default.
