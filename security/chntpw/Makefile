@@ -18,6 +18,8 @@ USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 
+ONLY_FOR_ARCHS=	i386
+
 PLIST_FILES=	bin/chntpw
 PORTDOCS=	README.txt WinReg.txt regedit.txt
 
