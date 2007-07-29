@@ -130,6 +130,8 @@ share/locale/zh_TW/LC_MESSAGES/kaffeine.mo
 share/locale/ar/LC_MESSAGES/kaffeine.mo
 share/locale/ka/LC_MESSAGES/kaffeine.mo
 share/locale/km/LC_MESSAGES/kaffeine.mo
+share/locale/se/LC_MESSAGES/kaffeine.mo
+share/locale/tg/LC_MESSAGES/kaffeine.mo
 share/mimelnk/application/x-kaffeine.desktop
 %%NOGSTREAMER%%share/services/gstreamer_part.desktop
 %%NOLAME%%share/services/kaffeinemp3lame.desktop
@@ -141,9 +143,12 @@ share/servicetypes/kaffeinedvbplugin.desktop
 @dirrm share/apps/kaffeine/pics
 @dirrm share/apps/kaffeine
 @dirrm share/doc/HTML/en/kaffeine
-@dirrm share/doc/HTML/en/doc
 @dirrmtry share/apps/konqueror/servicemenus
 @dirrmtry share/apps/konqueror
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
+@dirrmtry share/locale/tg/LC_MESSAGES
+@dirrmtry share/locale/tg
+@dirrmtry share/locale/se/LC_MESSAGES
+@dirrmtry share/locale/se
 %%NOGSTREAMER%%@dirrm share/apps/gstreamerpart
