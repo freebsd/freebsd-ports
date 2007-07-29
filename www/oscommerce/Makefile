@@ -8,23 +8,21 @@
 #
 
 PORTNAME=	oscommerce
-DISTVERSION=	2.2r2-060817
-PORTEPOCH=	1
+DISTVERSION=	2.2rc1
+PORTEPOCH=	2
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	tep
-DISTNAME=	${PORTNAME}-${DISTVERSION:S/r/ms/}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://oscommerce.sunsite.dk/downloads/
+DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	vlad@vlad.uz.ua
 COMMENT=	An full-featured open source e-commerce system
 
+USE_ZIP=	yes
 USE_PHP=	mysql session pcre
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-DOCS=		CHANGELOG LICENSE STANDARD documentation.pdf \
-		tep_database-pr2.2-CVS.pdf update-20060817.txt
+DOCS=		CHANGELOG LICENSE STANDARD documentation.pdf upgrade.html
 
 do-install:
 	${MKDIR} ${WWWDIR}
