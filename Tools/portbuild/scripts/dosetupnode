@@ -36,8 +36,8 @@ ssh -n ${client_user}@${node} ${sudo_cmd} sh /tmp/setupnode ${nocopy} $(hostname
 if [ "${disconnected}" = 1 -a "${norsync}" = 0 ]; then
   rsync ${rsync_gzip} -r -l -p --delete ${pb}/scripts ${client_user}@${node}:${pb}/
   rsync ${rsync_gzip} -r -l -p --delete ${pb}/${arch}/portbuild* ${client_user}@${node}:${pb}/${arch}
-  rsync ${rsync_gzip} -r -l -p --delete ${pb}/${arch}/${branch}/ports ${client_user}@${node}:${pb}/${arch}/${branch}
-  rsync ${rsync_gzip} -r -l -p --delete ${pb}/${arch}/${branch}/src ${client_user}@${node}:${pb}/${arch}/${branch}
+  rsync ${rsync_gzip} -r -L -p --delete ${pb}/${arch}/${branch}/ports ${client_user}@${node}:${pb}/${arch}/${branch}
+  rsync ${rsync_gzip} -r -L -p --delete ${pb}/${arch}/${branch}/src ${client_user}@${node}:${pb}/${arch}/${branch}
   rsync ${rsync_gzip} -r -L -p --delete ${pb}/${arch}/${branch}/tarballs/ ${client_user}@${node}:${pb}/${arch}/${branch}/tarballs/
 fi
 
