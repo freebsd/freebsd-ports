@@ -21,7 +21,7 @@ RUN_DEPENDS=	mp3gain:${PORTSDIR}/audio/mp3gain \
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 libglade2
+USE_GNOME=	gtk20 libglade2 libgnomecanvas
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
