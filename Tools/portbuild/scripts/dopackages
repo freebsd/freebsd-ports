@@ -253,7 +253,7 @@ fi
 branch=$1
 date=$2
 
-if [ "x$branch" != x4 -a "x$branch" != x4-exp -a "x$branch" != x5 -a "x$branch" != x5-exp -a "x$branch" != x6 -a "x$branch" != x6-exp -a "x$branch" != x7 ]; then
+if [ "x$branch" != x5 -a "x$branch" != x5-exp -a "x$branch" != x6 -a "x$branch" != x6-exp -a "x$branch" != "x6-exp2" -a "x$branch" != x7 ]; then
   usage
 fi
 
@@ -397,11 +397,12 @@ if [ "$skipstart" = 0 ]; then
     fi
 
     # Create hardlinks to previous set of logs
-    cd ${oldlogs} && find . | cpio -dumpl ${newlogs}
-    cd ${olderrors} && find . | cpio -dumpl ${newerrors}
+    cd ${oldlogs} && find . -name \*.log\* | cpio -dumpl ${newlogs}
+    cd ${olderrors} && find . -name \*.log\* | cpio -dumpl ${newerrors}
 
     # Identify the ports that have changed and need to be removed before rebuilding
     # XXX Need to also remove stale distfiles
+    # XXX and logs?
     cd ${PORTSDIR}
     cut -f 1,2,3,8,9,11,12,13 -d \| ${INDEXFILE}.old | sort > ${INDEXFILE}.old1
     cut -f 1,2,3,8,9,11,12,13 -d \| ${INDEXFILE} | sort > ${INDEXFILE}.1
