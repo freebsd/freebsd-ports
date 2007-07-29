@@ -1,55 +1,101 @@
 www/validator/htdocs/about.html
 www/validator/htdocs/accesskeys.html
 www/validator/htdocs/base.css
+www/validator/htdocs/charset-select.html
 www/validator/htdocs/config/charset.cfg
 www/validator/htdocs/config/eref.cfg
+www/validator/htdocs/config/tidy.conf
 www/validator/htdocs/config/tips.cfg
 www/validator/htdocs/config/types.conf
 www/validator/htdocs/config/validator.conf.sample
 www/validator/htdocs/detailed-form.html
+www/validator/htdocs/detailed-form_directinput.html
 www/validator/htdocs/detailed.html
+www/validator/htdocs/dev/autotest/doctypes.xml
+www/validator/htdocs/dev/tests/1574-charset_iso_8859_7_greek.html
+www/validator/htdocs/dev/tests/197-iso88591_alias.html
+www/validator/htdocs/dev/tests/2329-html401-strict_iframe.html
+www/validator/htdocs/dev/tests/2329-html401-transitional_iframe.html
+www/validator/htdocs/dev/tests/2342-opensp_type_X.html
+www/validator/htdocs/dev/tests/4476-svg_nodoctype.svg
+www/validator/htdocs/dev/tests/4520-iso88591-meta.html
+www/validator/htdocs/dev/tests/4520-iso88591-no_meta.html
+www/validator/htdocs/dev/tests/REC-SVG-1_0-minimal.html
 www/validator/htdocs/dev/tests/REC-SVG-1_0-minimal.svg
+www/validator/htdocs/dev/tests/SMIL21.smil
+www/validator/htdocs/dev/tests/SMIL21_Mobile.smil
 www/validator/htdocs/dev/tests/ampersand-as-data.html
+www/validator/htdocs/dev/tests/ampersand-as-data_html401.html
 www/validator/htdocs/dev/tests/application-xhtml_xml.xhtml
 www/validator/htdocs/dev/tests/bogus-fpi.html
 www/validator/htdocs/dev/tests/bogus-fpi2.html
 www/validator/htdocs/dev/tests/bogus-fpi3.html
+www/validator/htdocs/dev/tests/bogus-fpi4.html
+www/validator/htdocs/dev/tests/bogus-fpi5.xhtml
 www/validator/htdocs/dev/tests/bogus-xmlpi.html
+www/validator/htdocs/dev/tests/bogus-xmlpi.xhtml
 www/validator/htdocs/dev/tests/colons.html
+www/validator/htdocs/dev/tests/error_pls_warning.html
+www/validator/htdocs/dev/tests/errors_sorting.smi
+www/validator/htdocs/dev/tests/fpi_mismatch1.html
+www/validator/htdocs/dev/tests/fpi_mismatch2.html
 www/validator/htdocs/dev/tests/html20-strict.html
 www/validator/htdocs/dev/tests/html20.html
 www/validator/htdocs/dev/tests/html40-frameset.html
 www/validator/htdocs/dev/tests/html40-strict.html
 www/validator/htdocs/dev/tests/html40-transitional.html
+www/validator/htdocs/dev/tests/html401-strict.html
+www/validator/htdocs/dev/tests/html401-strict.xhtml
+www/validator/htdocs/dev/tests/html_xmlns.html.utf8
 www/validator/htdocs/dev/tests/index.html
+www/validator/htdocs/dev/tests/invalid_meta_multibyte.html
 www/validator/htdocs/dev/tests/iso-html.html
 www/validator/htdocs/dev/tests/long-lines.html
 www/validator/htdocs/dev/tests/mathml2.html
+www/validator/htdocs/dev/tests/mathml2.mathml
 www/validator/htdocs/dev/tests/no-newlines.html
+www/validator/htdocs/dev/tests/nocharset.html
+www/validator/htdocs/dev/tests/nocharset_notutf8.html
 www/validator/htdocs/dev/tests/nonSGML-chars.html
 www/validator/htdocs/dev/tests/outline.html
 www/validator/htdocs/dev/tests/plane20-char.xml
+www/validator/htdocs/dev/tests/rddl_fpi.html
 www/validator/htdocs/dev/tests/rddl_fpi.xhtml
 www/validator/htdocs/dev/tests/rddl_si.xhtml
+www/validator/htdocs/dev/tests/sgml-nodoctype-syntaxnotok.html
+www/validator/htdocs/dev/tests/sgml-nodoctype-syntaxok.html
 www/validator/htdocs/dev/tests/sgml_customdtd.html
 www/validator/htdocs/dev/tests/shorttags.html
 www/validator/htdocs/dev/tests/smil10-minimal.smi
 www/validator/htdocs/dev/tests/smil20-profile-doctype.smi
-www/validator/htdocs/dev/tests/svg-minimal-standalone.svg
+www/validator/htdocs/dev/tests/smil20.smi
+www/validator/htdocs/dev/tests/svg11.svg
 www/validator/htdocs/dev/tests/svg_tiny_1_1.svg
+www/validator/htdocs/dev/tests/texthtml_nocharset.html
+www/validator/htdocs/dev/tests/texthtml_nodoctype.html.utf8
+www/validator/htdocs/dev/tests/texthtml_unknownparsemode.html.utf8
+www/validator/htdocs/dev/tests/textxml_html401.xml
+www/validator/htdocs/dev/tests/textxml_nocharset.xml
 www/validator/htdocs/dev/tests/trailing-nul.html
-www/validator/htdocs/dev/tests/xhtml-basic10.html
+www/validator/htdocs/dev/tests/xhtml-basic10.xhtml
+www/validator/htdocs/dev/tests/xhtml-basic11.xhtml
 www/validator/htdocs/dev/tests/xhtml-mathml2-fpi.html
 www/validator/htdocs/dev/tests/xhtml-mathml2.html
 www/validator/htdocs/dev/tests/xhtml-print_1_0-invalid.xhtml
+www/validator/htdocs/dev/tests/xhtml-print_1_0.html
 www/validator/htdocs/dev/tests/xhtml-print_1_0.xhtml
 www/validator/htdocs/dev/tests/xhtml1-blank-1st-line.html
 www/validator/htdocs/dev/tests/xhtml1-bogus-element.html
 www/validator/htdocs/dev/tests/xhtml1-missing-doctype-and-xmlns.html
+www/validator/htdocs/dev/tests/xhtml1-missing-doctype-and-xmlns.xhtml
 www/validator/htdocs/dev/tests/xhtml1-strict-minimal.html
 www/validator/htdocs/dev/tests/xhtml1-strict-missing-xmlns.html
 www/validator/htdocs/dev/tests/xhtml1-strict.html
 www/validator/htdocs/dev/tests/xhtml11-minimal.html
+www/validator/htdocs/dev/tests/xhtml_mathml_svg_newlines.xhtml
+www/validator/htdocs/dev/tests/xhtml_rdfa.xhtml
+www/validator/htdocs/dev/tests/xml-nodoctype-notwf.xml
+www/validator/htdocs/dev/tests/xml-nodoctype-wf.xml
 www/validator/htdocs/docs.css
 www/validator/htdocs/docs/api.html
 www/validator/htdocs/docs/devel.html
@@ -68,47 +114,191 @@ www/validator/htdocs/footer.html
 www/validator/htdocs/fragment-upload.html
 www/validator/htdocs/handheld.css
 www/validator/htdocs/header.html
+www/validator/htdocs/images/arrow-closed.png
+www/validator/htdocs/images/arrow-down.gif
+www/validator/htdocs/images/arrow-open.png
+www/validator/htdocs/images/arrow-right.gif
 www/validator/htdocs/images/arrow_left.gif
 www/validator/htdocs/images/arrow_right.gif
 www/validator/htdocs/images/bg1.gif
 www/validator/htdocs/images/bg2.gif
+www/validator/htdocs/images/button-left.png
+www/validator/htdocs/images/button-right.png
+www/validator/htdocs/images/csupporter.gif
+www/validator/htdocs/images/csupporter.png
+www/validator/htdocs/images/double.png
 www/validator/htdocs/images/ellipsis.gif
 www/validator/htdocs/images/footer.jpg
 www/validator/htdocs/images/footer.png
+www/validator/htdocs/images/grad.png
+www/validator/htdocs/images/head-bl.png
+www/validator/htdocs/images/head-br.png
+www/validator/htdocs/images/head-tl.png
+www/validator/htdocs/images/head-tr.png
 www/validator/htdocs/images/header.jpg
 www/validator/htdocs/images/header.png
+www/validator/htdocs/images/info_icons/README
+www/validator/htdocs/images/info_icons/eastshores_Warning_Notification.svg
+www/validator/htdocs/images/info_icons/error.png
+www/validator/htdocs/images/info_icons/info.png
+www/validator/htdocs/images/info_icons/kuba_information_icons_set.svg
+www/validator/htdocs/images/info_icons/warning.png
+www/validator/htdocs/images/lg_gradient.gif
+www/validator/htdocs/images/markup_validation_service.png
+www/validator/htdocs/images/markup_validation_service.psd
+www/validator/htdocs/images/ppm_1.png
+www/validator/htdocs/images/ppm_2.png
+www/validator/htdocs/images/ppm_3.png
+www/validator/htdocs/images/qa.png
+www/validator/htdocs/images/round-br.png
+www/validator/htdocs/images/round-tl.png
+www/validator/htdocs/images/round-tr.png
+www/validator/htdocs/images/sm_gradient_active.gif
+www/validator/htdocs/images/sm_gradient_hover.gif
+www/validator/htdocs/images/tab-tl.png
+www/validator/htdocs/images/tab-tr.png
+www/validator/htdocs/images/textbg.png
 www/validator/htdocs/images/v15445.gif
 www/validator/htdocs/images/v15445.png
-www/validator/htdocs/images/vcss.gif
-www/validator/htdocs/images/vcss.png
-www/validator/htdocs/images/vh20.gif
-www/validator/htdocs/images/vh20.png
-www/validator/htdocs/images/vh30.gif
-www/validator/htdocs/images/vh30.png
-www/validator/htdocs/images/vh32.gif
-www/validator/htdocs/images/vh32.png
-www/validator/htdocs/images/vh40.gif
-www/validator/htdocs/images/vh40.png
-www/validator/htdocs/images/vh401.gif
-www/validator/htdocs/images/vh401.png
-www/validator/htdocs/images/vhhj.gif
-www/validator/htdocs/images/vhhj.png
-www/validator/htdocs/images/vhns.gif
-www/validator/htdocs/images/vhns.png
-www/validator/htdocs/images/vxhtml-basic10.gif
-www/validator/htdocs/images/vxhtml-basic10.png
-www/validator/htdocs/images/vxhtml10.gif
-www/validator/htdocs/images/vxhtml10.png
-www/validator/htdocs/images/vxhtml11.gif
-www/validator/htdocs/images/vxhtml11.png
-www/validator/htdocs/images/vxml10.gif
+www/validator/htdocs/images/valid_icons/LICENSE
+www/validator/htdocs/images/valid_icons/valid-css-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-css-blue.gif
+www/validator/htdocs/images/valid_icons/valid-css-blue.png
+www/validator/htdocs/images/valid_icons/valid-css-v.svg
+www/validator/htdocs/images/valid_icons/valid-css.gif
+www/validator/htdocs/images/valid_icons/valid-css.png
+www/validator/htdocs/images/valid_icons/valid-css1-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-css1-blue.gif
+www/validator/htdocs/images/valid_icons/valid-css1-blue.png
+www/validator/htdocs/images/valid_icons/valid-css1-v.svg
+www/validator/htdocs/images/valid_icons/valid-css1.gif
+www/validator/htdocs/images/valid_icons/valid-css1.png
+www/validator/htdocs/images/valid_icons/valid-css2-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-css2-blue.gif
+www/validator/htdocs/images/valid_icons/valid-css2-blue.png
+www/validator/htdocs/images/valid_icons/valid-css2-v.svg
+www/validator/htdocs/images/valid_icons/valid-css2.gif
+www/validator/htdocs/images/valid_icons/valid-css2.png
+www/validator/htdocs/images/valid_icons/valid-html20-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-html20-blue.gif
+www/validator/htdocs/images/valid_icons/valid-html20-blue.png
+www/validator/htdocs/images/valid_icons/valid-html20-v.svg
+www/validator/htdocs/images/valid_icons/valid-html20.gif
+www/validator/htdocs/images/valid_icons/valid-html20.png
+www/validator/htdocs/images/valid_icons/valid-html32-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-html32-blue.gif
+www/validator/htdocs/images/valid_icons/valid-html32-blue.png
+www/validator/htdocs/images/valid_icons/valid-html32-v.svg
+www/validator/htdocs/images/valid_icons/valid-html32.gif
+www/validator/htdocs/images/valid_icons/valid-html32.png
+www/validator/htdocs/images/valid_icons/valid-html40-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-html40-blue.gif
+www/validator/htdocs/images/valid_icons/valid-html40-blue.png
+www/validator/htdocs/images/valid_icons/valid-html40-v.svg
+www/validator/htdocs/images/valid_icons/valid-html40.gif
+www/validator/htdocs/images/valid_icons/valid-html40.png
+www/validator/htdocs/images/valid_icons/valid-html401-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-html401-blue.gif
+www/validator/htdocs/images/valid_icons/valid-html401-blue.png
+www/validator/htdocs/images/valid_icons/valid-html401-v.svg
+www/validator/htdocs/images/valid_icons/valid-html401.gif
+www/validator/htdocs/images/valid_icons/valid-html401.png
+www/validator/htdocs/images/valid_icons/valid-mathml20-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-mathml20-blue.gif
+www/validator/htdocs/images/valid_icons/valid-mathml20-blue.png
+www/validator/htdocs/images/valid_icons/valid-mathml20-v.svg
+www/validator/htdocs/images/valid_icons/valid-mathml20.gif
+www/validator/htdocs/images/valid_icons/valid-mathml20.png
+www/validator/htdocs/images/valid_icons/valid-svg10-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-svg10-blue.gif
+www/validator/htdocs/images/valid_icons/valid-svg10-blue.png
+www/validator/htdocs/images/valid_icons/valid-svg10-v.svg
+www/validator/htdocs/images/valid_icons/valid-svg10.gif
+www/validator/htdocs/images/valid_icons/valid-svg10.png
+www/validator/htdocs/images/valid_icons/valid-svg11-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-svg11-blue.gif
+www/validator/htdocs/images/valid_icons/valid-svg11-blue.png
+www/validator/htdocs/images/valid_icons/valid-svg11-v.svg
+www/validator/htdocs/images/valid_icons/valid-svg11.gif
+www/validator/htdocs/images/valid_icons/valid-svg11.png
+www/validator/htdocs/images/valid_icons/valid-svg12-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-svg12-blue.gif
+www/validator/htdocs/images/valid_icons/valid-svg12-blue.png
+www/validator/htdocs/images/valid_icons/valid-svg12-v.svg
+www/validator/htdocs/images/valid_icons/valid-svg12.gif
+www/validator/htdocs/images/valid_icons/valid-svg12.png
+www/validator/htdocs/images/valid_icons/valid-svgtiny11-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-svgtiny11-blue.gif
+www/validator/htdocs/images/valid_icons/valid-svgtiny11-blue.png
+www/validator/htdocs/images/valid_icons/valid-svgtiny11-v.svg
+www/validator/htdocs/images/valid_icons/valid-svgtiny11.gif
+www/validator/htdocs/images/valid_icons/valid-svgtiny11.png
+www/validator/htdocs/images/valid_icons/valid-svgtiny12-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-svgtiny12-blue.gif
+www/validator/htdocs/images/valid_icons/valid-svgtiny12-blue.png
+www/validator/htdocs/images/valid_icons/valid-svgtiny12-v.svg
+www/validator/htdocs/images/valid_icons/valid-svgtiny12.gif
+www/validator/htdocs/images/valid_icons/valid-svgtiny12.png
+www/validator/htdocs/images/valid_icons/valid-xhtml-rdfa-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-xhtml-rdfa-blue.gif
+www/validator/htdocs/images/valid_icons/valid-xhtml-rdfa-blue.png
+www/validator/htdocs/images/valid_icons/valid-xhtml-rdfa-v.svg
+www/validator/htdocs/images/valid_icons/valid-xhtml-rdfa.gif
+www/validator/htdocs/images/valid_icons/valid-xhtml-rdfa.png
+www/validator/htdocs/images/valid_icons/valid-xhtml10-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-xhtml10-blue.gif
+www/validator/htdocs/images/valid_icons/valid-xhtml10-blue.png
+www/validator/htdocs/images/valid_icons/valid-xhtml10-v.svg
+www/validator/htdocs/images/valid_icons/valid-xhtml10.gif
+www/validator/htdocs/images/valid_icons/valid-xhtml10.png
+www/validator/htdocs/images/valid_icons/valid-xhtml11-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-xhtml11-blue.gif
+www/validator/htdocs/images/valid_icons/valid-xhtml11-blue.png
+www/validator/htdocs/images/valid_icons/valid-xhtml11-v.svg
+www/validator/htdocs/images/valid_icons/valid-xhtml11.gif
+www/validator/htdocs/images/valid_icons/valid-xhtml11.png
+www/validator/htdocs/images/valid_icons/valid-xhtml20-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-xhtml20-blue.gif
+www/validator/htdocs/images/valid_icons/valid-xhtml20-blue.png
+www/validator/htdocs/images/valid_icons/valid-xhtml20-v.svg
+www/validator/htdocs/images/valid_icons/valid-xhtml20.gif
+www/validator/htdocs/images/valid_icons/valid-xhtml20.png
+www/validator/htdocs/images/valid_icons/valid-xhtmlbasic10-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-xhtmlbasic10-blue.gif
+www/validator/htdocs/images/valid_icons/valid-xhtmlbasic10-blue.png
+www/validator/htdocs/images/valid_icons/valid-xhtmlbasic10-v.svg
+www/validator/htdocs/images/valid_icons/valid-xhtmlbasic10.gif
+www/validator/htdocs/images/valid_icons/valid-xhtmlbasic10.png
+www/validator/htdocs/images/valid_icons/valid-xhtmlprint10-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-xhtmlprint10-blue.gif
+www/validator/htdocs/images/valid_icons/valid-xhtmlprint10-blue.png
+www/validator/htdocs/images/valid_icons/valid-xhtmlprint10-v.svg
+www/validator/htdocs/images/valid_icons/valid-xhtmlprint10.gif
+www/validator/htdocs/images/valid_icons/valid-xhtmlprint10.png
+www/validator/htdocs/images/valid_icons/valid-xml10-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-xml10-blue.gif
+www/validator/htdocs/images/valid_icons/valid-xml10-blue.png
+www/validator/htdocs/images/valid_icons/valid-xml10-v.svg
+www/validator/htdocs/images/valid_icons/valid-xml10.gif
+www/validator/htdocs/images/valid_icons/valid-xml10.png
+www/validator/htdocs/images/valid_icons/valid-xml11-blue-v.svg
+www/validator/htdocs/images/valid_icons/valid-xml11-blue.gif
+www/validator/htdocs/images/valid_icons/valid-xml11-blue.png
+www/validator/htdocs/images/valid_icons/valid-xml11-v.svg
+www/validator/htdocs/images/valid_icons/valid-xml11.gif
+www/validator/htdocs/images/valid_icons/valid-xml11.png
+www/validator/htdocs/images/w3c.png
 www/validator/htdocs/index.html
+www/validator/htdocs/intro.html
 www/validator/htdocs/loadexplanation.js
 www/validator/htdocs/misc/compaq-logo.gif
 www/validator/htdocs/navbar.css
+www/validator/htdocs/no_referer.asis
 www/validator/htdocs/print.css
 www/validator/htdocs/results.css
 www/validator/htdocs/robots.txt
+www/validator/htdocs/scripts/mootools.js
+www/validator/htdocs/scripts/w3c-validator.js
 www/validator/htdocs/sgml-lib/IETF/HTML-2_0-Level_1.dtd
 www/validator/htdocs/sgml-lib/IETF/HTML-2_0-Strict-Level_1.dtd
 www/validator/htdocs/sgml-lib/IETF/HTML-2_0-Strict.dtd
@@ -155,6 +345,25 @@ www/validator/htdocs/sgml-lib/REC-MathML2-20031021/mathml/mmlextra.ent
 www/validator/htdocs/sgml-lib/REC-MathML2-20031021/mathml2-qname-1.mod
 www/validator/htdocs/sgml-lib/REC-MathML2-20031021/mathml2.dtd
 www/validator/htdocs/sgml-lib/REC-MathML2-20031021/xhtml-math11-f.dtd
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL-anim.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL-control.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL-layout.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL-link.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL-media.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL-metainformation.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL-struct.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL-timing.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL-transition.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL21.dtd
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL21ExtendedMobile.dtd
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL21Mobile.dtd
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/smil-attribs-1.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/smil-datatypes-1.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/smil-extended-mobile-profile-model-1.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/smil-framework-1.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/smil-language-profile-model-1.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/smil-mobile-profile-model-1.mod
+www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/smil-qname-1.mod
 www/validator/htdocs/sgml-lib/REC-SVG-20010904/svg10.dtd
 www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-animation.mod
 www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-animevents-attrib.mod
@@ -289,27 +498,40 @@ www/validator/htdocs/sgml-lib/REC-xhtml11-20010531/xhtml11.cat
 www/validator/htdocs/sgml-lib/REC-xhtml11-20010531/xhtml11.dtd
 www/validator/htdocs/sgml-lib/REC-xhtml11-20010531/xml1.dcl
 www/validator/htdocs/sgml-lib/REC-xhtml11-20010531/xml1n.dcl
+www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809/xhtml-basic-svg-tiny-flat.dtd
+www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809/xhtml-basic-svg-tiny.dtd
+www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809/xhtml-math-svg-flat.dtd
+www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809/xhtml-math-svg.dtd
+www/validator/htdocs/sgml-lib/WD-xhtml-basic-20060705/xhtml-basic11-f.dtd
+www/validator/htdocs/sgml-lib/WD-xhtml-basic-20060705/xhtml-basic11-model-1.mod
+www/validator/htdocs/sgml-lib/WD-xhtml-basic-20060705/xhtml-basic11.cat
+www/validator/htdocs/sgml-lib/WD-xhtml-basic-20060705/xhtml-basic11.dtd
 www/validator/htdocs/sgml-lib/sgml.dcl
 www/validator/htdocs/sgml-lib/sgml.dtd
 www/validator/htdocs/sgml-lib/sgml.soc
 www/validator/htdocs/sgml-lib/spec.dtd
-www/validator/htdocs/sgml-lib/xhtml-math-svg-flat-20020809.dtd
 www/validator/htdocs/sgml-lib/xml.dcl
 www/validator/htdocs/sgml-lib/xml.dtd
 www/validator/htdocs/sgml-lib/xml.soc
 www/validator/htdocs/source/index.html
+www/validator/htdocs/style/base.css
+www/validator/htdocs/style/results.css
+www/validator/htdocs/style/tabtastic.css
 www/validator/htdocs/tips.css
 www/validator/htdocs/todo.html
+www/validator/htdocs/validator-news.xsl
 www/validator/htdocs/whatsnew.html
 www/validator/htdocs/xml-results.css
 www/validator/htdocs/xml-results.xsl
 www/validator/httpd/cgi-bin/check
 www/validator/httpd/cgi-bin/sendfeedback.pl
+www/validator/share/templates/en_US/backtop.tmpl
 www/validator/share/templates/en_US/docs_errors.tmpl
 www/validator/share/templates/en_US/doctype_spiel.tmpl
 www/validator/share/templates/en_US/earl_n3.tmpl
 www/validator/share/templates/en_US/earl_xml.tmpl
 www/validator/share/templates/en_US/error_loop.tmpl
+www/validator/share/templates/en_US/error_loop_grouped.tmpl
 www/validator/share/templates/en_US/error_messages.cfg
 www/validator/share/templates/en_US/fatal-error.tmpl
 www/validator/share/templates/en_US/feedback.tmpl
@@ -324,8 +546,11 @@ www/validator/share/templates/en_US/opt_show_outline.tmpl
 www/validator/share/templates/en_US/opt_show_parsetree.tmpl
 www/validator/share/templates/en_US/opt_show_raw_errors.tmpl
 www/validator/share/templates/en_US/opt_show_source.tmpl
+www/validator/share/templates/en_US/opt_show_tidy.tmpl
 www/validator/share/templates/en_US/popup_charset.tmpl
 www/validator/share/templates/en_US/popup_doctype.tmpl
+www/validator/share/templates/en_US/prefill_html401.tmpl
+www/validator/share/templates/en_US/prefill_xhtml10.tmpl
 www/validator/share/templates/en_US/result.tmpl
 www/validator/share/templates/en_US/soap_disabled.tmpl
 www/validator/share/templates/en_US/soap_fault.tmpl
@@ -343,11 +568,14 @@ www/validator/share/templates/en_US/xml_output.tmpl
 @dirrm www/validator/share
 @dirrm www/validator/httpd/cgi-bin
 @dirrm www/validator/httpd
+@dirrm www/validator/htdocs/style
 @dirrm www/validator/htdocs/source
+@dirrm www/validator/htdocs/sgml-lib/WD-xhtml-basic-20060705
+@dirrm www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml11-20010531
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml1-20020801
-@dirrm www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920
+@dirrm www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219
 @dirrm www/validator/htdocs/sgml-lib/REC-smil20-20050107
 @dirrm www/validator/htdocs/sgml-lib/REC-smil-19980615
 @dirrm www/validator/htdocs/sgml-lib/REC-html401-19991224
@@ -355,6 +583,7 @@ www/validator/share/templates/en_US/xml_output.tmpl
 @dirrm www/validator/htdocs/sgml-lib/REC-html32-19970114
 @dirrm www/validator/htdocs/sgml-lib/REC-SVG11-20030114
 @dirrm www/validator/htdocs/sgml-lib/REC-SVG-20010904
+@dirrm www/validator/htdocs/sgml-lib/REC-SMIL2-20051213
 @dirrm www/validator/htdocs/sgml-lib/REC-MathML2-20031021/mathml
 @dirrm www/validator/htdocs/sgml-lib/REC-MathML2-20031021/iso9573-13
 @dirrm www/validator/htdocs/sgml-lib/REC-MathML2-20031021/iso8879
@@ -363,10 +592,14 @@ www/validator/share/templates/en_US/xml_output.tmpl
 @dirrm www/validator/htdocs/sgml-lib/ISO-HTML
 @dirrm www/validator/htdocs/sgml-lib/IETF
 @dirrm www/validator/htdocs/sgml-lib
+@dirrm www/validator/htdocs/scripts
 @dirrm www/validator/htdocs/misc
+@dirrm www/validator/htdocs/images/valid_icons
+@dirrm www/validator/htdocs/images/info_icons
 @dirrm www/validator/htdocs/images
 @dirrm www/validator/htdocs/docs
 @dirrm www/validator/htdocs/dev/tests
+@dirrm www/validator/htdocs/dev/autotest
 @dirrm www/validator/htdocs/dev
 @dirrm www/validator/htdocs/config
 @dirrm www/validator/htdocs
