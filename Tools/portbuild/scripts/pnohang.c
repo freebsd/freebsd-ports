@@ -91,7 +91,7 @@ main(int argc, char *argv[])
 			    /*snprintf(logstr, BUFSIZ, "logger -t %s killing %s %s, pid %d since no output in %d seconds", argv[0], args, message, pid, timeout);
 			    system(logstr);*/
 			    printf("%s: killing %s (%s, pid %d and %d) since no output in %d seconds since %s", argv[0], args, message, pid1, pid, timeout, ctime(&now));
-			    printf("ps jgx before the singal\n");
+			    printf("ps jgx before the signal\n");
 			    system("ps jgxww");
 			    sleep(1); /* give it a chance to output the message */
 			    kill(pid1, SIGTERM);
