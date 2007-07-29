@@ -379,6 +379,8 @@ share/apps/konqsidebartng/virtual_folders/services/videodvd.desktop
 share/apps/konqueror/servicemenus/k3b_audiocd_rip.desktop
 share/apps/konqueror/servicemenus/k3b_cd_copy.desktop
 share/apps/konqueror/servicemenus/k3b_dvd_copy.desktop
+share/apps/konqueror/servicemenus/k3b_handle_empty_cd.desktop
+share/apps/konqueror/servicemenus/k3b_handle_empty_dvd.desktop
 share/apps/konqueror/servicemenus/k3b_videodvd_rip.desktop
 share/doc/HTML/en/k3b/audiocd-howto.docbook
 share/doc/HTML/en/k3b/burndialog_audio.png
