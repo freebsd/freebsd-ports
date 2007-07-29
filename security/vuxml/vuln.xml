@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="863f95d3-3df1-11dc-b3d3-0016179b2dd5">
+    <topic>mutt -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>mutt</name>
+	<name>mutt-lite</name>
+	<name>ja-mutt</name>
+	<name>zh-mutt</name>
+	<range><lt>1.4.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Securityfocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/24192/">
+	  <p>Mutt is prone to a local buffer-overflow vulnerability
+	    because it fails to properly bounds-check user-supplied
+	    input before using it in a memory copy operation.
+	    An attacker can exploit this issue to execute arbitrary
+	    code with the with the privileges of the victim.  Failed
+	    exploit attempts will result in a denial of service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>24192</bid>
+      <cvename>CVE-2007-2683</cvename>
+      <url>http://www.redhat.com/support/errata/RHSA-2007-0386.html</url>
+    </references>
+    <dates>
+      <discovery>2007-05-28</discovery>
+      <entry>2007-07-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d2b8a963-3d59-11dc-b3d3-0016179b2dd5">
     <topic>p5-Net-DNS -- multiple Vulnerabilities</topic>
     <affects>
