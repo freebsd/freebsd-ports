@@ -9,3 +9,14 @@
    #define POOL apr_pool_t
    #include "http_request.h"   /* for ap_hook_(check_user_id | auth_checker)*/
    #include "ap_compat.h"
+@@ -255,6 +255,10 @@
+   #define NOT_AUTHORIZED AUTH_REQUIRED
+   #define TABLE_GET ap_table_get
+   #define ISSPACE ap_isspace
++#endif
++
++#ifndef APR_XtOffsetOf
++#define APR_XtOffsetOf APR_OFFSETOF
+ #endif
+
+ #include "util_md5.h"
