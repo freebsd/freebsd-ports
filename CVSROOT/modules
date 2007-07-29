@@ -7550,6 +7550,7 @@ mod_auth_useragent	ports/www/mod_auth_useragent
 mod_auth_xradius	ports/www/mod_auth_xradius
 mod_authenticache	ports/www/mod_authenticache
 mod_authnz_external	ports/www/mod_authnz_external
+mod_authz_unixgroup	ports/www/mod_authz_unixgroup
 mod_backhand	ports/www/mod_backhand
 mod_bandwidth	ports/www/mod_bandwidth
 mod_bf		ports/www/mod_bf
