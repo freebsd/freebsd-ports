@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Perl-MinimumVersion
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Perl
@@ -18,8 +18,8 @@ COMMENT=	Find a minimum required version of perl for Perl code
 RUN_DEPENDS=	p5-File-Find-Rule>0:${PORTSDIR}/devel/p5-File-Find-Rule \
 		p5-PPI>=1.118:${PORTSDIR}/textproc/p5-PPI \
 		p5-Params-Util>=0.06:${PORTSDIR}/devel/p5-Params-Util \
-		p5-Scalar-List-Utils>=1.17:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-version>=0.70:${PORTSDIR}/devel/p5-version
+		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-version>=0.72.03:${PORTSDIR}/devel/p5-version
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
