@@ -7,6 +7,7 @@
 %%SITE_PERL%%/Config/Model/CheckList.pm
 %%SITE_PERL%%/Config/Model/Describe.pm
 %%SITE_PERL%%/Config/Model/Dumper.pm
+%%SITE_PERL%%/Config/Model/DumpAsData.pm
 %%SITE_PERL%%/Config/Model/Exception.pm
 %%SITE_PERL%%/Config/Model/HashId.pm
 %%SITE_PERL%%/Config/Model/IdElementReference.pm
