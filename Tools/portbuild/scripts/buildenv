@@ -7,51 +7,25 @@ buildenv () {
     arch=$2
     branch=$3
 
-    export X11BASE=/usr/X11R6
-    export LOCALBASE=/usr/local
     case "x$branch" in
-	x4)
-    	export PKGSUFFIX=.tgz
-    	export PKGZIPCMD=gzip
-	export INDEXFILE=INDEX
-	export X_WINDOW_SYSTEM=xfree86-4
-	    ;;
-	x4-exp)
-    	export PKGSUFFIX=.tgz
-    	export PKGZIPCMD=gzip
-	export PORTS_AUDIT=1
-	export INDEXFILE=INDEX
-	export X_WINDOW_SYSTEM=xfree86-4
-	    ;;
 	x5)
-    	export PKGSUFFIX=.tbz
-    	export PKGZIPCMD=bzip2
 	export INDEXFILE=INDEX-5
-	export X_WINDOW_SYSTEM=xorg
+	export USE_NONDEFAULT_X11BASE=1
 	    ;;
 	x5-exp)
-    	export PKGSUFFIX=.tbz
-    	export PKGZIPCMD=bzip2
-	export INDEXFILE=INDEX-5
-	export X_WINDOW_SYSTEM=xorg
+	export INDEXFILE=INDEX-6
 	    ;;
 	x6)
-    	export PKGSUFFIX=.tbz
-    	export PKGZIPCMD=bzip2
 	export INDEXFILE=INDEX-6
-	export X_WINDOW_SYSTEM=xorg
 	    ;;
 	x6-exp)
-    	export PKGSUFFIX=.tbz
-    	export PKGZIPCMD=bzip2
 	export INDEXFILE=INDEX-6
-	export X_WINDOW_SYSTEM=xorg
+	    ;;
+	x6-exp2)
+	export INDEXFILE=INDEX-6
 	    ;;
 	x7)
-    	export PKGSUFFIX=.tbz
-    	export PKGZIPCMD=bzip2
 	export INDEXFILE=INDEX-7
-	export X_WINDOW_SYSTEM=xorg
 	    ;;
 	*)
 	    echo "buildenv: invalid branch"
@@ -61,6 +35,13 @@ buildenv () {
 
     export ARCH=${arch}
     export MACHINE_ARCH=${arch}
+
+    export X11BASE=/usr/local
+    export LOCALBASE=/usr/local
+    export PKGSUFFIX=.tbz
+    export PKGZIPCMD=bzip2
+    export X_WINDOW_SYSTEM=xorg
+    export XORG_UPGRADE=1
 
     # Have to use realpath because 'make index' doesn't deal with symlinks in PORTSDIR
     # - kk 020311
@@ -91,10 +72,6 @@ buildenv () {
     export PACKAGE_BUILDING=1
 
     export USA_RESIDENT=yes
-
-    # Old and mouldy?
-    export PARALLEL_PACKAGE_BUILD=1
-    export HAVE_MOTIF=1
 
     export FTP_PASSIVE_MODE=yes
     #export FETCH_BEFORE_ARGS=-vvv
