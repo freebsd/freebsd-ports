@@ -10,7 +10,7 @@ fi
 
 arch=$1
 branch=$2
-if [ "x$branch" != x4 -a "x$branch" != x5 -a "x$branch" != x6-exp -a "x$branch" != x6 -a "x$branch" != x7 ]; then
+if [ "x$branch" != x5 -a "x$branch" != x5-exp -a "x$branch" != x6-exp -a "x$branch" != x6-exp2 -a "x$branch" != x6 -a "x$branch" != x7 ]; then
   usage
 fi
 
@@ -53,7 +53,6 @@ cd ${tmpdir}
 mtree -deU -f ${here}/src/etc/mtree/BSD.root.dist -p ${tmpdir}/
 mtree -deU -f ${here}/src/etc/mtree/BSD.var.dist -p ${tmpdir}/var
 mtree -deU -f ${here}/src/etc/mtree/BSD.usr.dist -p ${tmpdir}/usr
-mtree -deU -f ${here}/src/etc/mtree/BSD.local.dist -p ${tmpdir}/usr/local
 
 # Copy the files into the tmpdir.  Use an existing built world, or the ftp
 # files.
