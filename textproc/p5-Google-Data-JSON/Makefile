@@ -16,6 +16,7 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	General XML-JSON converter based on Google Data APIs
 
 BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build \
 		p5-Perl6-Export-Attrs>=0:${PORTSDIR}/devel/p5-Perl6-Export-Attrs \
 		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
