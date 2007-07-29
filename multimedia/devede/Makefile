@@ -7,6 +7,7 @@
 
 PORTNAME=	devede
 DISTVERSION=	3.01
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.rastersoft.com/descargas/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/
@@ -53,10 +54,12 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/devede.py ${PREFIX}/bin/devede
 	${INSTALL_DATA} ${WRKSRC}/devede.glade ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/devedesans.ttf ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/background.png ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/barras.png ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/estira.png ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/devede.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/silence.wav ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/devede.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/devede.desktop ${PREFIX}/share/applications
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
 .for lib in ${DEVEDE_LIBS}
 	${INSTALL_SCRIPT} ${WRKSRC}/${lib} ${PREFIX}/lib/${PORTNAME}
