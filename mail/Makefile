@@ -635,6 +635,7 @@
     SUBDIR += vrfy
     SUBDIR += wanderlust
     SUBDIR += wanderlust-emacs20
+    SUBDIR += wanderlust-emacs21
     SUBDIR += wanderlust-xemacs21-mule
     SUBDIR += wbl
     SUBDIR += websieve
