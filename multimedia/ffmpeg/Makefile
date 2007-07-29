@@ -7,6 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2007-07-12
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -39,8 +40,6 @@ SHLIB_VER=	1
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	yes
 
-MAN1+=	ffmpeg.1 ffserver.1
-
 ##
 DOC_FILES=	COPYING Changelog README
 # under subdir doc
@@ -60,6 +59,7 @@ WITH_BUILTIN_VECTOR=	yes
 ## PORTDOCS
 .ifndef(NOPORTDOCS)
 BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
+MAN1+=	ffmpeg.1 ffserver.1
 .endif
 
 .ifdef(WITH_OPTIMIZED_CFLAGS)
@@ -128,6 +128,9 @@ CONFIGURE_ARGS+=	--enable-libogg
 USE_SDL+=	sdl
 
 PLIST_FILES+=	bin/ffplay
+.if !defined(NOPORTDOCS)
+MAN1+=	ffplay.1
+.endif
 .else
 CONFIGURE_ARGS+=	--disable-ffplay
 .endif
@@ -185,11 +188,11 @@ pre-everything::
 #	@${ECHO_MSG}
 #.endif
 .ifndef(WITH_FAAC)
-	@${ECHO_MSG} 'Define WITH_FAAC to enable FAAC codec'
+	@${ECHO_MSG} 'Define WITH_FAAC to enable FAAC mp4/aac audio encoder'
 	@${ECHO_MSG}
 .endif
-.ifndef(WITH_FAAD)
-	@${ECHO_MSG} 'Define WITH_FAAD to enable FAAD codec'
+.ifndef(WITHOUT_FAAD)
+	@${ECHO_MSG} 'Define WITHOUT_FAAD to disable FAAD mp4/aac audio decoder'
 	@${ECHO_MSG}
 .endif
 .ifndef(WITH_FREETYPE2)
@@ -261,9 +264,6 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(imlib2).*$$|\1=yes|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -E \
-		-e 's|(-lImlib2)|-L ${LOCALBASE}/lib \1|' \
-		${WRKSRC}/vhook/Makefile
 .endif
 .if !defined(WITHOUT_IPV6)
 	@${REINPLACE_CMD} -E \
