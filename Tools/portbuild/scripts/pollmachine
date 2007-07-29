@@ -10,7 +10,7 @@ else
   queue=0
 fi
 
-infoseek_port=infoseek
+infoseek_port=414
 . ${buildroot}/${i}/portbuild.conf
 if [ -f ${buildroot}/${i}/portbuild.${m} ]; then
   . ${buildroot}/${i}/portbuild.${m}
@@ -18,7 +18,7 @@ fi
 if [ -z "${infoseek_host}" ]; then
   infoseek_host=$m
 fi
-if (/usr/local/bin/nc -w 15 ${infoseek_host} ${infoseek_port} > ${buildroot}/${i}/loads/$m < /dev/null); then
+if (/usr/bin/nc -w 15 ${infoseek_host} ${infoseek_port} > ${buildroot}/${i}/loads/$m < /dev/null); then
   if [ "${queue}" = 1 ]; then
     num=$(awk '{print $1}' ${buildroot}/${i}/loads/$m)
     if [ "$num" -lt "${maxjobs}" ]; then
