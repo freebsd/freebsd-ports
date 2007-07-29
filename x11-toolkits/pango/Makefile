@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.16.4
-PORTREVISION?=	1
+PORTVERSION=	1.16.5
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/pango/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/},} \
 		ftp://ftp.gtk.org/pub/pango/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
