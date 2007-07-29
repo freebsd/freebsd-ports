@@ -27,6 +27,5 @@ libdata/pkgconfig/varnishapi.pc
 sbin/varnishd
 @exec mkdir %D/varnish
 @dirrmtry varnish
-@dirrmtry libdata/pkgconfig
 @dirrm include/varnish
 @dirrm etc/varnish
