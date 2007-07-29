@@ -164,6 +164,7 @@ a2ps-letterdj	ports/print/a2ps-letterdj
 aa		ports/astro/aa
 aaccli		ports/sysutils/aaccli
 aacgain		ports/audio/aacgain
+aacplusenc	ports/audio/aacplusenc
 aafid2		ports/security/aafid2
 aalib		ports/graphics/aalib
 aamath		ports/math/aamath
