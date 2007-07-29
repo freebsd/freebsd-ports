@@ -3,33 +3,15 @@
 # usage: $0 DIRNAME PHASE
 #   PHASE is 1 (checksum) or 2 (package)
 
-mountprocfs() {
-  arch=$1
-
-  if [ ${arch} = "i386" -o ${arch} = "amd64" ]; then
-    # JDK ports need linprocfs :(
-    mkdir -p /compat/linux/proc
-    mount_linprocfs linprocfs /compat/linux/proc
-  fi
-}
-
-umountprocfs() {
-  arch=$1
-
-  if [ ${arch} = "i386" -o ${arch} = "amd64" ]; then
-    umount -f /compat/linux/proc 2> /dev/null > /dev/null
-  fi
-}
-
 cleanup() {
   status=$1
 
   # Don't keep distfiles if 'make checksum' failed
-  if [ ${status} -ne 1 ]; then
+  keep_distfiles=$(make -V ALWAYS_KEEP_DISTFILES)
+  if [ ${status} -eq 1 -o -z "${keep_distfiles}" ]; then
     cd ${dir}
-    keep_distfiles=$(make -V ALWAYS_KEEP_DISTFILES)
     distdir=$(make -V DISTDIR)
-    if [ -z "${keep_distfiles}" -a ! -z "${distdir}" ]; then
+    if [ ! -z "${distdir}" ]; then
       rm -rf ${distdir}/*
     fi
   fi
@@ -155,6 +137,11 @@ if [ $phase = 1 ]; then
   #Allow ports to notice they're being run on bento
   export PACKAGE_BUILDING=1
 
+  # Stash a copy of /etc/master.passwd and /etc/group to detect whether someone modifies it
+
+  cp /etc/master.passwd /etc/master.passwd-save
+  cp /etc/group /etc/group-save
+
   # Files we do not care about changing between pre-build and post-cleanup
   cat > /tmp/mtree.preexclude <<EOF
 ./root/*
@@ -171,6 +158,7 @@ if [ $phase = 1 ]; then
 ./usr/local/share/xml
 ./usr/X11R6/etc/gconf
 ./usr/local/etc/gconf
+./var/db/fontconfig
 EOF
   # Record a "pristine" mtree.
   mtree -X /tmp/mtree.preexclude -xcn -k uid,gid,mode -p / > /tmp/mtree.pristine
@@ -237,6 +225,7 @@ else
 ./usr/local/share/xml
 ./usr/X11R6/etc/gconf
 ./usr/local/etc/gconf
+./var/db/fontconfig
 EOF
   # Record a "pristine" mtree.
   mtree -X /tmp/mtree.buildexclude -xcn -k uid,gid,mode -p / > /tmp/mtree.prebuild
@@ -260,7 +249,7 @@ EOF
   cd $dir
   /pnohang $TIMEOUT /tmp/make.log5 ${pkgname} make -k regression-test
   cat /tmp/make.log5
-  mtree -X /tmp/mtree.buildexclude -x -f /tmp/mtree.prebuild -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |${X} |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/(X11R6|local)/man/..( |/man. )|${X}/lib/X11/fonts/TrueType|${X}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|${L}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml )" > /tmp/list.preinstall
+  mtree -X /tmp/mtree.buildexclude -x -f /tmp/mtree.prebuild -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |${X} |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/(X11R6|local)/man/..( |/man. )|${X}/lib/X11/fonts/TrueType|${X}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|${L}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|var/db/fontconfig/* )" > /tmp/list.preinstall
 
   if [ -s /tmp/list.preinstall ]; then
     echo "================================================================"
@@ -306,7 +295,7 @@ EOF
     cleanup 7
   fi
 
-  mtree -X /tmp/mtree.exclude -x -f /tmp/mtree -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |${X} |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/(X11R6|local)/man/..( |/man. )|${X}/lib/X11/fonts/TrueType|${X}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|${L}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml )" > /tmp/list3
+  mtree -X /tmp/mtree.exclude -x -f /tmp/mtree -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |${X} |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/(X11R6|local)/man/..( |/man. )|${X}/lib/X11/fonts/TrueType|${X}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|${L}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|var/db/fontconfig/* )" > /tmp/list3
 
   # Compare the state of the filesystem now to before the 'make install' phase
   dirty=0
@@ -396,6 +385,9 @@ EOF
       touch /.dirty
     fi
   fi
+
+  cmp /etc/group /etc/group-save || (echo "=== /etc/group was modified:"; diff -du /etc/group-save /etc/group)
+  cmp /etc/master.passwd /etc/master.passwd-save || (echo "=== /etc/master.passwd was modified:"; diff -du /etc/master.passwd-save /etc/master.passwd)
 
   if [ ${xvfb} = 1 ]; then
     kill $(jobid %1)
