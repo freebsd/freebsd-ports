@@ -2,8 +2,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/STANDARD
 %%PORTDOCS%%%%DOCSDIR%%/documentation.pdf
-%%PORTDOCS%%%%DOCSDIR%%/tep_database-pr2.2-CVS.pdf
-%%PORTDOCS%%%%DOCSDIR%%/update-20060817.txt
+%%PORTDOCS%%%%DOCSDIR%%/upgrade.html
 %%WWWDIR%%/catalog/.htaccess
 %%WWWDIR%%/catalog/account.php
 %%WWWDIR%%/catalog/account_edit.php
@@ -15,6 +14,7 @@
 %%WWWDIR%%/catalog/address_book.php
 %%WWWDIR%%/catalog/address_book_process.php
 %%WWWDIR%%/catalog/admin/.htaccess
+%%WWWDIR%%/catalog/admin/administrators.php
 %%WWWDIR%%/catalog/admin/backup.php
 %%WWWDIR%%/catalog/admin/banner_manager.php
 %%WWWDIR%%/catalog/admin/banner_statistics.php
@@ -25,6 +25,8 @@
 %%WWWDIR%%/catalog/admin/currencies.php
 %%WWWDIR%%/catalog/admin/customers.php
 %%WWWDIR%%/catalog/admin/define_language.php
+%%WWWDIR%%/catalog/admin/ext/modules/payment/sofortueberweisung/autoinstaller.gif
+%%WWWDIR%%/catalog/admin/ext/modules/payment/sofortueberweisung/install.php
 %%WWWDIR%%/catalog/admin/file_manager.php
 %%WWWDIR%%/catalog/admin/geo_zones.php
 %%WWWDIR%%/catalog/admin/images/ani_send_email.gif
@@ -73,7 +75,7 @@
 %%WWWDIR%%/catalog/admin/images/icons/tick.gif
 %%WWWDIR%%/catalog/admin/images/icons/unlocked.gif
 %%WWWDIR%%/catalog/admin/images/icons/warning.gif
-%%WWWDIR%%/catalog/admin/images/oscommerce.gif
+%%WWWDIR%%/catalog/admin/images/oscommerce.png
 %%WWWDIR%%/catalog/admin/images/pixel_black.gif
 %%WWWDIR%%/catalog/admin/images/pixel_trans.gif
 %%WWWDIR%%/catalog/admin/includes/application_bottom.php
@@ -114,6 +116,7 @@
 %%WWWDIR%%/catalog/admin/includes/functions/html_output.php
 %%WWWDIR%%/catalog/admin/includes/functions/languages.php
 %%WWWDIR%%/catalog/admin/includes/functions/localization.php
+%%WWWDIR%%/catalog/admin/includes/functions/password_funcs.php
 %%WWWDIR%%/catalog/admin/includes/functions/sessions.php
 %%WWWDIR%%/catalog/admin/includes/functions/validations.php
 %%WWWDIR%%/catalog/admin/includes/general.js
@@ -146,6 +149,7 @@
 %%WWWDIR%%/catalog/admin/includes/javascript/spiffyCal/spiffyCal_v2_1.css
 %%WWWDIR%%/catalog/admin/includes/javascript/spiffyCal/spiffyCal_v2_1.js
 %%WWWDIR%%/catalog/admin/includes/languages/english.php
+%%WWWDIR%%/catalog/admin/includes/languages/english/administrators.php
 %%WWWDIR%%/catalog/admin/includes/languages/english/backup.php
 %%WWWDIR%%/catalog/admin/includes/languages/english/banner_manager.php
 %%WWWDIR%%/catalog/admin/includes/languages/english/banner_statistics.php
@@ -197,7 +201,6 @@
 %%WWWDIR%%/catalog/admin/includes/languages/english/images/buttons/button_select.gif
 %%WWWDIR%%/catalog/admin/includes/languages/english/images/buttons/button_send.gif
 %%WWWDIR%%/catalog/admin/includes/languages/english/images/buttons/button_send_mail.gif
-%%WWWDIR%%/catalog/admin/includes/languages/english/images/buttons/button_template_admin.psd
 %%WWWDIR%%/catalog/admin/includes/languages/english/images/buttons/button_unlock.gif
 %%WWWDIR%%/catalog/admin/includes/languages/english/images/buttons/button_update.gif
 %%WWWDIR%%/catalog/admin/includes/languages/english/images/buttons/button_update_currencies.gif
@@ -205,9 +208,12 @@
 %%WWWDIR%%/catalog/admin/includes/languages/english/index.php
 %%WWWDIR%%/catalog/admin/includes/languages/english/invoice.php
 %%WWWDIR%%/catalog/admin/includes/languages/english/languages.php
+%%WWWDIR%%/catalog/admin/includes/languages/english/login.php
 %%WWWDIR%%/catalog/admin/includes/languages/english/mail.php
 %%WWWDIR%%/catalog/admin/includes/languages/english/manufacturers.php
 %%WWWDIR%%/catalog/admin/includes/languages/english/modules.php
+%%WWWDIR%%/catalog/admin/includes/languages/english/modules/index/customers.php
+%%WWWDIR%%/catalog/admin/includes/languages/english/modules/index/orders.php
 %%WWWDIR%%/catalog/admin/includes/languages/english/modules/newsletters/newsletter.php
 %%WWWDIR%%/catalog/admin/includes/languages/english/modules/newsletters/product_notification.php
 %%WWWDIR%%/catalog/admin/includes/languages/english/newsletters.php
@@ -227,6 +233,7 @@
 %%WWWDIR%%/catalog/admin/includes/languages/english/whos_online.php
 %%WWWDIR%%/catalog/admin/includes/languages/english/zones.php
 %%WWWDIR%%/catalog/admin/includes/languages/espanol.php
+%%WWWDIR%%/catalog/admin/includes/languages/espanol/administrators.php
 %%WWWDIR%%/catalog/admin/includes/languages/espanol/backup.php
 %%WWWDIR%%/catalog/admin/includes/languages/espanol/banner_manager.php
 %%WWWDIR%%/catalog/admin/includes/languages/espanol/banner_statistics.php
@@ -285,9 +292,12 @@
 %%WWWDIR%%/catalog/admin/includes/languages/espanol/index.php
 %%WWWDIR%%/catalog/admin/includes/languages/espanol/invoice.php
 %%WWWDIR%%/catalog/admin/includes/languages/espanol/languages.php
+%%WWWDIR%%/catalog/admin/includes/languages/espanol/login.php
 %%WWWDIR%%/catalog/admin/includes/languages/espanol/mail.php
 %%WWWDIR%%/catalog/admin/includes/languages/espanol/manufacturers.php
 %%WWWDIR%%/catalog/admin/includes/languages/espanol/modules.php
+%%WWWDIR%%/catalog/admin/includes/languages/espanol/modules/index/customers.php
+%%WWWDIR%%/catalog/admin/includes/languages/espanol/modules/index/orders.php
 %%WWWDIR%%/catalog/admin/includes/languages/espanol/modules/newsletters/newsletter.php
 %%WWWDIR%%/catalog/admin/includes/languages/espanol/modules/newsletters/product_notification.php
 %%WWWDIR%%/catalog/admin/includes/languages/espanol/newsletters.php
@@ -307,6 +317,7 @@
 %%WWWDIR%%/catalog/admin/includes/languages/espanol/whos_online.php
 %%WWWDIR%%/catalog/admin/includes/languages/espanol/zones.php
 %%WWWDIR%%/catalog/admin/includes/languages/german.php
+%%WWWDIR%%/catalog/admin/includes/languages/german/administrators.php
 %%WWWDIR%%/catalog/admin/includes/languages/german/backup.php
 %%WWWDIR%%/catalog/admin/includes/languages/german/banner_manager.php
 %%WWWDIR%%/catalog/admin/includes/languages/german/banner_statistics.php
@@ -365,9 +376,12 @@
 %%WWWDIR%%/catalog/admin/includes/languages/german/index.php
 %%WWWDIR%%/catalog/admin/includes/languages/german/invoice.php
 %%WWWDIR%%/catalog/admin/includes/languages/german/languages.php
+%%WWWDIR%%/catalog/admin/includes/languages/german/login.php
 %%WWWDIR%%/catalog/admin/includes/languages/german/mail.php
 %%WWWDIR%%/catalog/admin/includes/languages/german/manufacturers.php
 %%WWWDIR%%/catalog/admin/includes/languages/german/modules.php
+%%WWWDIR%%/catalog/admin/includes/languages/german/modules/index/customers.php
+%%WWWDIR%%/catalog/admin/includes/languages/german/modules/index/orders.php
 %%WWWDIR%%/catalog/admin/includes/languages/german/modules/newsletters/newsletter.php
 %%WWWDIR%%/catalog/admin/includes/languages/german/modules/newsletters/product_notification.php
 %%WWWDIR%%/catalog/admin/includes/languages/german/newsletters.php
@@ -388,6 +402,8 @@
 %%WWWDIR%%/catalog/admin/includes/languages/german/zones.php
 %%WWWDIR%%/catalog/admin/includes/local/.cvsignore
 %%WWWDIR%%/catalog/admin/includes/local/README
+%%WWWDIR%%/catalog/admin/includes/modules/index/customers.php
+%%WWWDIR%%/catalog/admin/includes/modules/index/orders.php
 %%WWWDIR%%/catalog/admin/includes/modules/newsletters/newsletter.php
 %%WWWDIR%%/catalog/admin/includes/modules/newsletters/product_notification.php
 %%WWWDIR%%/catalog/admin/includes/stylesheet.css
@@ -395,6 +411,7 @@
 %%WWWDIR%%/catalog/admin/index.php
 %%WWWDIR%%/catalog/admin/invoice.php
 %%WWWDIR%%/catalog/admin/languages.php
+%%WWWDIR%%/catalog/admin/login.php
 %%WWWDIR%%/catalog/admin/mail.php
 %%WWWDIR%%/catalog/admin/manufacturers.php
 %%WWWDIR%%/catalog/admin/modules.php
@@ -432,6 +449,11 @@
 %%WWWDIR%%/catalog/download.php
 %%WWWDIR%%/catalog/download/.htaccess
 %%WWWDIR%%/catalog/download/unreal.zip
+%%WWWDIR%%/catalog/ext/modules/payment/chronopay/callback.php
+%%WWWDIR%%/catalog/ext/modules/payment/paypal/ipn.php
+%%WWWDIR%%/catalog/ext/modules/payment/sofortueberweisung/callback.php
+%%WWWDIR%%/catalog/ext/modules/payment/sofortueberweisung/images/sofortueberweisung.gif
+%%WWWDIR%%/catalog/ext/modules/payment/worldpay/junior_callback.php
 %%WWWDIR%%/catalog/images/account_notifications.gif
 %%WWWDIR%%/catalog/images/account_orders.gif
 %%WWWDIR%%/catalog/images/account_personal.gif
@@ -450,7 +472,6 @@
 %%WWWDIR%%/catalog/images/default/1.gif
 %%WWWDIR%%/catalog/images/default/2.gif
 %%WWWDIR%%/catalog/images/default/3.gif
-%%WWWDIR%%/catalog/images/default/4.gif
 %%WWWDIR%%/catalog/images/dvd/a_bugs_life.gif
 %%WWWDIR%%/catalog/images/dvd/beloved.gif
 %%WWWDIR%%/catalog/images/dvd/blade_runner.gif
@@ -501,7 +522,6 @@
 %%WWWDIR%%/catalog/images/microsoft/imexplorer.gif
 %%WWWDIR%%/catalog/images/microsoft/intkeyboardps2.gif
 %%WWWDIR%%/catalog/images/microsoft/msimpro.gif
-%%WWWDIR%%/catalog/images/oscommerce.gif
 %%WWWDIR%%/catalog/images/pixel_black.gif
 %%WWWDIR%%/catalog/images/pixel_silver.gif
 %%WWWDIR%%/catalog/images/pixel_trans.gif
@@ -511,6 +531,7 @@
 %%WWWDIR%%/catalog/images/stars_3.gif
 %%WWWDIR%%/catalog/images/stars_4.gif
 %%WWWDIR%%/catalog/images/stars_5.gif
+%%WWWDIR%%/catalog/images/store_logo.png
 %%WWWDIR%%/catalog/images/subcategory.gif
 %%WWWDIR%%/catalog/images/subcategory_action.gif
 %%WWWDIR%%/catalog/images/subcategory_action_games.gif
@@ -668,14 +689,19 @@
 %%WWWDIR%%/catalog/includes/languages/english/modules/order_total/ot_total.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/authorizenet.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/cc.php
+%%WWWDIR%%/catalog/includes/languages/english/modules/payment/chronopay.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/cod.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/ipayment.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/moneyorder.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/nochex.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/paypal.php
+%%WWWDIR%%/catalog/includes/languages/english/modules/payment/paypal_ipn.php
+%%WWWDIR%%/catalog/includes/languages/english/modules/payment/payquake_cc.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/pm2checkout.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/psigate.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/secpay.php
+%%WWWDIR%%/catalog/includes/languages/english/modules/payment/sofortueberweisung_direct.php
+%%WWWDIR%%/catalog/includes/languages/english/modules/payment/worldpay_junior.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/shipping/flat.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/shipping/item.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/shipping/table.php
@@ -757,14 +783,19 @@
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/order_total/ot_total.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/authorizenet.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/cc.php
+%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/chronopay.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/cod.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/ipayment.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/moneyorder.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/nochex.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/paypal.php
+%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/paypal_ipn.php
+%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/payquake_cc.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/pm2checkout.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/psigate.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/secpay.php
+%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/sofortueberweisung_direct.php
+%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/worldpay_junior.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/shipping/flat.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/shipping/item.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/shipping/table.php
@@ -846,14 +877,19 @@
 %%WWWDIR%%/catalog/includes/languages/german/modules/order_total/ot_total.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/authorizenet.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/cc.php
+%%WWWDIR%%/catalog/includes/languages/german/modules/payment/chronopay.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/cod.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/ipayment.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/moneyorder.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/nochex.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/paypal.php
+%%WWWDIR%%/catalog/includes/languages/german/modules/payment/paypal_ipn.php
+%%WWWDIR%%/catalog/includes/languages/german/modules/payment/payquake_cc.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/pm2checkout.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/psigate.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/secpay.php
+%%WWWDIR%%/catalog/includes/languages/german/modules/payment/sofortueberweisung_direct.php
+%%WWWDIR%%/catalog/includes/languages/german/modules/payment/worldpay_junior.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/shipping/flat.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/shipping/item.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/shipping/table.php
@@ -886,14 +922,19 @@
 %%WWWDIR%%/catalog/includes/modules/order_total/ot_total.php
 %%WWWDIR%%/catalog/includes/modules/payment/authorizenet.php
 %%WWWDIR%%/catalog/includes/modules/payment/cc.php
+%%WWWDIR%%/catalog/includes/modules/payment/chronopay.php
 %%WWWDIR%%/catalog/includes/modules/payment/cod.php
 %%WWWDIR%%/catalog/includes/modules/payment/ipayment.php
 %%WWWDIR%%/catalog/includes/modules/payment/moneyorder.php
 %%WWWDIR%%/catalog/includes/modules/payment/nochex.php
 %%WWWDIR%%/catalog/includes/modules/payment/paypal.php
+%%WWWDIR%%/catalog/includes/modules/payment/paypal_ipn.php
+%%WWWDIR%%/catalog/includes/modules/payment/payquake_cc.php
 %%WWWDIR%%/catalog/includes/modules/payment/pm2checkout.php
 %%WWWDIR%%/catalog/includes/modules/payment/psigate.php
 %%WWWDIR%%/catalog/includes/modules/payment/secpay.php
+%%WWWDIR%%/catalog/includes/modules/payment/sofortueberweisung_direct.php
+%%WWWDIR%%/catalog/includes/modules/payment/worldpay_junior.php
 %%WWWDIR%%/catalog/includes/modules/product_listing.php
 %%WWWDIR%%/catalog/includes/modules/shipping/flat.php
 %%WWWDIR%%/catalog/includes/modules/shipping/item.php
@@ -905,65 +946,36 @@
 %%WWWDIR%%/catalog/includes/tld.txt
 %%WWWDIR%%/catalog/index.php
 %%WWWDIR%%/catalog/info_shopping_cart.php
+%%WWWDIR%%/catalog/install/ext/niftycorners/nifty.js
+%%WWWDIR%%/catalog/install/ext/niftycorners/niftyCorners.css
+%%WWWDIR%%/catalog/install/ext/xmlhttp/xmlhttp.js
 %%WWWDIR%%/catalog/install/images/button_administration_tool.gif
-%%WWWDIR%%/catalog/install/images/button_back.gif
 %%WWWDIR%%/catalog/install/images/button_cancel.gif
 %%WWWDIR%%/catalog/install/images/button_catalog.gif
 %%WWWDIR%%/catalog/install/images/button_continue.gif
 %%WWWDIR%%/catalog/install/images/button_retry.gif
-%%WWWDIR%%/catalog/install/images/head_frame_lefttop.gif
-%%WWWDIR%%/catalog/install/images/head_frame_righttop.gif
-%%WWWDIR%%/catalog/install/images/head_frame_top.gif
-%%WWWDIR%%/catalog/install/images/header_titlebar_background.gif
-%%WWWDIR%%/catalog/install/images/install.gif
-%%WWWDIR%%/catalog/install/images/layout/block.gif
-%%WWWDIR%%/catalog/install/images/layout/botleft.gif
-%%WWWDIR%%/catalog/install/images/layout/botmid.gif
-%%WWWDIR%%/catalog/install/images/layout/botright.gif
-%%WWWDIR%%/catalog/install/images/layout/bottom_right_curve_y.gif
-%%WWWDIR%%/catalog/install/images/layout/help_icon.gif
-%%WWWDIR%%/catalog/install/images/layout/left_bottom_curve.gif
-%%WWWDIR%%/catalog/install/images/layout/left_column_background.gif
-%%WWWDIR%%/catalog/install/images/layout/left_column_bottom.gif
-%%WWWDIR%%/catalog/install/images/layout/left_column_top.gif
-%%WWWDIR%%/catalog/install/images/layout/left_header_curve.gif
-%%WWWDIR%%/catalog/install/images/layout/middle_bottom_background.gif
-%%WWWDIR%%/catalog/install/images/layout/middle_header_filler.gif
-%%WWWDIR%%/catalog/install/images/layout/midleft.gif
-%%WWWDIR%%/catalog/install/images/layout/midright.gif
-%%WWWDIR%%/catalog/install/images/layout/right_bottom_curve.gif
-%%WWWDIR%%/catalog/install/images/layout/right_column_background.gif
-%%WWWDIR%%/catalog/install/images/layout/right_column_upper_curve.gif
-%%WWWDIR%%/catalog/install/images/layout/topleft.gif
-%%WWWDIR%%/catalog/install/images/layout/topmid.gif
-%%WWWDIR%%/catalog/install/images/layout/topright.gif
-%%WWWDIR%%/catalog/install/images/oscommerce.gif
-%%WWWDIR%%/catalog/install/images/pixel_trans.gif
-%%WWWDIR%%/catalog/install/images/upgrade.gif
+%%WWWDIR%%/catalog/install/images/cross.gif
+%%WWWDIR%%/catalog/install/images/failed.gif
+%%WWWDIR%%/catalog/install/images/oscommerce_silver-22.jpg
+%%WWWDIR%%/catalog/install/images/progress.gif
+%%WWWDIR%%/catalog/install/images/success.gif
+%%WWWDIR%%/catalog/install/images/tick.gif
 %%WWWDIR%%/catalog/install/includes/application.php
+%%WWWDIR%%/catalog/install/includes/functions/compatibility.php
 %%WWWDIR%%/catalog/install/includes/functions/database.php
 %%WWWDIR%%/catalog/install/includes/functions/general.php
 %%WWWDIR%%/catalog/install/includes/functions/html_output.php
 %%WWWDIR%%/catalog/install/index.php
 %%WWWDIR%%/catalog/install/install.php
 %%WWWDIR%%/catalog/install/oscommerce.sql
+%%WWWDIR%%/catalog/install/rpc.php
 %%WWWDIR%%/catalog/install/templates/main_page.php
-%%WWWDIR%%/catalog/install/templates/main_page/footer.php
-%%WWWDIR%%/catalog/install/templates/main_page/header.php
-%%WWWDIR%%/catalog/install/templates/main_page/javascript.js
 %%WWWDIR%%/catalog/install/templates/main_page/stylesheet.css
 %%WWWDIR%%/catalog/install/templates/pages/index.php
 %%WWWDIR%%/catalog/install/templates/pages/install.php
 %%WWWDIR%%/catalog/install/templates/pages/install_2.php
 %%WWWDIR%%/catalog/install/templates/pages/install_3.php
 %%WWWDIR%%/catalog/install/templates/pages/install_4.php
-%%WWWDIR%%/catalog/install/templates/pages/install_5.php
-%%WWWDIR%%/catalog/install/templates/pages/install_6.php
-%%WWWDIR%%/catalog/install/templates/pages/install_7.php
-%%WWWDIR%%/catalog/install/templates/pages/upgrade.php
-%%WWWDIR%%/catalog/install/templates/pages/upgrade_2.php
-%%WWWDIR%%/catalog/install/templates/pages/upgrade_3.php
-%%WWWDIR%%/catalog/install/upgrade.php
 %%WWWDIR%%/catalog/login.php
 %%WWWDIR%%/catalog/logoff.php
 %%WWWDIR%%/catalog/password_forgotten.php
@@ -990,8 +1002,10 @@
 @dirrm %%WWWDIR%%/catalog/install/templates
 @dirrm %%WWWDIR%%/catalog/install/includes/functions
 @dirrm %%WWWDIR%%/catalog/install/includes
-@dirrm %%WWWDIR%%/catalog/install/images/layout
 @dirrm %%WWWDIR%%/catalog/install/images
+@dirrm %%WWWDIR%%/catalog/install/ext/xmlhttp
+@dirrm %%WWWDIR%%/catalog/install/ext/niftycorners
+@dirrm %%WWWDIR%%/catalog/install/ext
 @dirrm %%WWWDIR%%/catalog/install
 @dirrm %%WWWDIR%%/catalog/includes/modules/shipping
 @dirrm %%WWWDIR%%/catalog/includes/modules/payment
@@ -1036,21 +1050,33 @@
 @dirrm %%WWWDIR%%/catalog/images/default
 @dirrm %%WWWDIR%%/catalog/images/banners
 @dirrm %%WWWDIR%%/catalog/images
+@dirrm %%WWWDIR%%/catalog/ext/modules/payment/worldpay
+@dirrm %%WWWDIR%%/catalog/ext/modules/payment/sofortueberweisung/images
+@dirrm %%WWWDIR%%/catalog/ext/modules/payment/sofortueberweisung
+@dirrm %%WWWDIR%%/catalog/ext/modules/payment/paypal
+@dirrm %%WWWDIR%%/catalog/ext/modules/payment/chronopay
+@dirrm %%WWWDIR%%/catalog/ext/modules/payment
+@dirrm %%WWWDIR%%/catalog/ext/modules
+@dirrm %%WWWDIR%%/catalog/ext
 @dirrm %%WWWDIR%%/catalog/download
 @dirrm %%WWWDIR%%/catalog/admin/includes/modules/newsletters
+@dirrm %%WWWDIR%%/catalog/admin/includes/modules/index
 @dirrm %%WWWDIR%%/catalog/admin/includes/modules
 @dirrm %%WWWDIR%%/catalog/admin/includes/local
 @dirrm %%WWWDIR%%/catalog/admin/includes/languages/german/modules/newsletters
+@dirrm %%WWWDIR%%/catalog/admin/includes/languages/german/modules/index
 @dirrm %%WWWDIR%%/catalog/admin/includes/languages/german/modules
 @dirrm %%WWWDIR%%/catalog/admin/includes/languages/german/images/buttons
 @dirrm %%WWWDIR%%/catalog/admin/includes/languages/german/images
 @dirrm %%WWWDIR%%/catalog/admin/includes/languages/german
 @dirrm %%WWWDIR%%/catalog/admin/includes/languages/espanol/modules/newsletters
+@dirrm %%WWWDIR%%/catalog/admin/includes/languages/espanol/modules/index
 @dirrm %%WWWDIR%%/catalog/admin/includes/languages/espanol/modules
 @dirrm %%WWWDIR%%/catalog/admin/includes/languages/espanol/images/buttons
 @dirrm %%WWWDIR%%/catalog/admin/includes/languages/espanol/images
 @dirrm %%WWWDIR%%/catalog/admin/includes/languages/espanol
 @dirrm %%WWWDIR%%/catalog/admin/includes/languages/english/modules/newsletters
+@dirrm %%WWWDIR%%/catalog/admin/includes/languages/english/modules/index
 @dirrm %%WWWDIR%%/catalog/admin/includes/languages/english/modules
 @dirrm %%WWWDIR%%/catalog/admin/includes/languages/english/images/buttons
 @dirrm %%WWWDIR%%/catalog/admin/includes/languages/english/images
@@ -1068,6 +1094,10 @@
 @dirrm %%WWWDIR%%/catalog/admin/images/graphs
 @dirrm %%WWWDIR%%/catalog/admin/images/categories
 @dirrm %%WWWDIR%%/catalog/admin/images
+@dirrm %%WWWDIR%%/catalog/admin/ext/modules/payment/sofortueberweisung
+@dirrm %%WWWDIR%%/catalog/admin/ext/modules/payment
+@dirrm %%WWWDIR%%/catalog/admin/ext/modules
+@dirrm %%WWWDIR%%/catalog/admin/ext
 @dirrm %%WWWDIR%%/catalog/admin
 @dirrm %%WWWDIR%%/catalog
 @dirrm %%WWWDIR%%
