@@ -17,20 +17,28 @@ if [ "$1" = "*" ]; then
   exit 1
 fi
 
-min=9999
+
+min=999999
 while [ $# -gt 0 ]; do
   m=$1
-  num=$(cat $m)
-  if [ $num -lt $min ]; then
+
+  # Pull in maxjobs
+  . ${pb}/${arch}/portbuild.conf
+  test -f ${pb}/${arch}/portbuild.${m} && . ${pb}/${arch}/portbuild.${m}
+
+  curjobs=$(cat $m)
+  weight=$((${curjobs}*1000/${maxjobs}))
+
+  if [ $weight -lt $min ]; then
     mach=$m
-    min=$num
-  elif [ $num -eq $min ]; then
+    min=$weight
+  elif [ $weight -eq $min ]; then
     mach="${mach} ${m}"
   fi
   shift
 done
 
-if [ "$min" = 9999 -o -z "${mach}" ]; then
+if [ "$min" = 999999 -o -z "${mach}" ]; then
   echo ""
   exit 1
 fi
@@ -45,11 +53,12 @@ fi
 . ${pb}/${arch}/portbuild.conf
 test -f ${pb}/${arch}/portbuild.${mach} && . ${pb}/${arch}/portbuild.${mach}
 
+curjobs=$(cat $mach)
 # Now that we've found a machine, register our claim in the queue
-if [ "$((${min}+1))" -ge "${maxjobs}" ]; then
+if [ "$((${curjobs}+1))" -ge "${maxjobs}" ]; then
   rm ${mach}
 else
-  echo $(($min+1)) > ${mach}
+  echo $(($curjobs+1)) > ${mach}
 fi
 
 # Report to caller
