@@ -1,23 +1,23 @@
---- gnome-pty-helper/Makefile.in.orig	Mon Jun  2 20:23:02 2003
-+++ gnome-pty-helper/Makefile.in	Mon Jun  2 20:26:54 2003
-@@ -65,6 +65,7 @@
+--- gnome-pty-helper/Makefile.in.orig	2007-07-29 17:20:13.000000000 -0400
++++ gnome-pty-helper/Makefile.in	2007-07-29 17:25:47.000000000 -0400
+@@ -107,6 +107,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_P
  LDFLAGS = @LDFLAGS@
  LIBOBJS = @LIBOBJS@
  LIBS = @LIBS@
 +BSD_PTHREAD_LIBS = @BSD_PTHREAD_LIBS@
  LTLIBOBJS = @LTLIBOBJS@
  MAINT = @MAINT@
- MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
-@@ -217,7 +218,7 @@
+ MAKEINFO = @MAKEINFO@
+@@ -271,7 +272,7 @@ clean-libexecPROGRAMS:
  	-test -z "$(libexec_PROGRAMS)" || rm -f $(libexec_PROGRAMS)
  gnome-pty-helper$(EXEEXT): $(gnome_pty_helper_OBJECTS) $(gnome_pty_helper_DEPENDENCIES) 
  	@rm -f gnome-pty-helper$(EXEEXT)
--	$(LINK) $(gnome_pty_helper_LDFLAGS) $(gnome_pty_helper_OBJECTS) $(gnome_pty_helper_LDADD) $(LIBS)
-+	$(LINK) $(gnome_pty_helper_LDFLAGS) $(gnome_pty_helper_OBJECTS) $(gnome_pty_helper_LDADD) $(LIBS) $(BSD_PTHREAD_LIBS)
+-	$(LINK) $(gnome_pty_helper_OBJECTS) $(gnome_pty_helper_LDADD) $(LIBS)
++	$(LINK) $(gnome_pty_helper_OBJECTS) $(gnome_pty_helper_LDADD) $(LIBS) $(BSD_PTHREAD_LIBS)
  
  mostlyclean-compile:
- 	-rm -f *.$(OBJEXT) core *.core
-@@ -514,8 +515,8 @@
+ 	-rm -f *.$(OBJEXT)
+@@ -584,8 +585,8 @@ uninstall-am: uninstall-libexecPROGRAMS
  
  
  install-exec-hook:
