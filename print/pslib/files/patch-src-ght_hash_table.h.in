@@ -1,10 +1,10 @@
---- src/ght_hash_table.h.in.orig	Sun Jun 24 14:12:27 2007
-+++ src/ght_hash_table.h.in	Sun Jun 24 14:12:45 2007
+--- src/ght_hash_table.h.in.orig	Sat Jul 14 10:40:00 2007
++++ src/ght_hash_table.h.in	Sat Jul 14 10:40:29 2007
 @@ -60,6 +60,7 @@
  #define GHT_HASH_TABLE_H
  
  #include <stdlib.h>                    /* size_t */
 +#include <sys/types.h>
- 
- #ifdef __cplusplus
- extern "C" {
+ #ifndef WIN32
+ #include <stdint.h>                    /* uint32_t */
+ #endif

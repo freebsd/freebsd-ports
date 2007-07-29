@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pslib
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,7 +33,7 @@ OPTIONS=	EXAMPLES	"Install additional examples" On \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_EXAMPLES)
-EX_NAME=	pslib-examples-0.0.8
+EX_NAME=	pslib-examples-0.0.9
 EX_WRKSRC=	${WRKDIR}/${EX_NAME}
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} ${EX_NAME}${EXTRACT_SUFX}
 PLIST_SUB+=	EXAMPLES=""
@@ -64,9 +64,10 @@ post-patch:
 .endif
 
 post-install:
-.if !defined(WITHOUT_EXAMPLES)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} -m 0755 ${EXAMPLESDIR}
-	@${RM} -f ${EX_WRKSRC}/Makefile ${EX_WRKSRC}/ChangeLog
+	@${RM} -f ${EX_WRKSRC}/Makefile.unix ${EX_WRKSRC}/ChangeLog \
+		${EX_WRKSRC}/CMakeLists.txt
 	cd ${EX_WRKSRC} && ${PAX} -rw * ${EXAMPLESDIR}
 .endif
 
