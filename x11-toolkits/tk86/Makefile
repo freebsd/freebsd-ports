@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.5.a.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -18,7 +18,7 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL
 
 LATEST_LINK?=	tk85
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.a./a/}/unix
 GNU_CONFIGURE=	yes
@@ -401,6 +401,7 @@ pre-everything::
 	@if ${TEST} -e "${NONEXISTENT}"; then ${ECHO_MSG} "=== Aborted, please remove ${NONEXISTENT}"; exit 1; fi
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|X11/Intrinsic.h|X11/Xlib.h|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|@TK_SHARED_BUILD@|#@TK_SHARED_BUILD@|g' ${WRKSRC}/Makefile.in
 .if defined(BUILDING_TK_THREADS)
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
