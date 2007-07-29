@@ -33,7 +33,7 @@ MAN1=		aaxine.1 xine-bugreport.1 xine-check.1 xine-remote.1 xine.1
 OPTIONS=	CACA "Enable libcaca output" off \
 		AALIB "Enable aalib output" off \
 		LIRC "Enable lirc support" off \
-		CURL "Enable culr support" on \
+		CURL "Enable curl support" on \
 		WIN32_CODECS "Enable win32 codecs (for i386 only)" on \
 		NLS "Enable Native Language Support" on \
 		XFT "Enable Xft support" on
