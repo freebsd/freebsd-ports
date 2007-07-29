@@ -5,7 +5,6 @@ bin/gnc-fq-update
 bin/gnc-test-env
 bin/gnucash
 bin/gnucash-bin
-bin/gnucash-config
 bin/gnucash-env
 bin/gnucash-make-guids
 bin/gnucash-valgrind
@@ -14,7 +13,6 @@ etc/gnucash/config
 include/gnucash/Account.h
 include/gnucash/FreqSpec.h
 include/gnucash/GNCId.h
-include/gnucash/Group.h
 include/gnucash/Period.h
 include/gnucash/Query.h
 include/gnucash/QueryCore.h
@@ -33,6 +31,7 @@ include/gnucash/TransLog.h
 include/gnucash/Transaction.h
 include/gnucash/account-quickfill.h
 include/gnucash/basiccell.h
+include/gnucash/binreloc.h
 include/gnucash/cap-gains.h
 include/gnucash/cashobjects.h
 include/gnucash/cell-factory.h
@@ -76,7 +75,10 @@ include/gnucash/gnc-currency-edit.h
 include/gnucash/gnc-date-delta.h
 include/gnucash/gnc-date-edit.h
 include/gnucash/gnc-date-format.h
+include/gnucash/gnc-date-p.h
 include/gnucash/gnc-date.h
+include/gnucash/gnc-dense-cal-model.h
+include/gnucash/gnc-dense-cal-store.h
 include/gnucash/gnc-dense-cal.h
 include/gnucash/gnc-dialog.h
 include/gnucash/gnc-druid-cb.h
@@ -101,12 +103,12 @@ include/gnucash/gnc-general-select.h
 include/gnucash/gnc-gettext-util.h
 include/gnucash/gnc-gnome-utils.h
 include/gnucash/gnc-gui-query.h
+include/gnucash/gnc-help-utils.h
 include/gnucash/gnc-helpers.h
 include/gnucash/gnc-hooks.h
 include/gnucash/gnc-html-graph-gog.h
 include/gnucash/gnc-html-history.h
 include/gnucash/gnc-html.h
-include/gnucash/gnc-http.h
 include/gnucash/gnc-icons.h
 include/gnucash/gnc-import-desc-format.h
 include/gnucash/gnc-import-format-cb.h
@@ -115,6 +117,7 @@ include/gnucash/gnc-menu-extensions.h
 include/gnucash/gnc-module-api.h
 include/gnucash/gnc-module.h
 include/gnucash/gnc-numeric.h
+include/gnucash/gnc-path.h
 include/gnucash/gnc-period-select.h
 include/gnucash/gnc-plugin-file-history.h
 include/gnucash/gnc-plugin-manager.h
@@ -129,6 +132,9 @@ include/gnucash/gnc-report.h
 include/gnucash/gnc-session-scm.h
 include/gnucash/gnc-session.h
 include/gnucash/gnc-splash.h
+include/gnucash/gnc-sx-instance-dense-cal-adapter.h
+include/gnucash/gnc-sx-instance-model.h
+include/gnucash/gnc-sx-list-tree-model-adapter.h
 include/gnucash/gnc-tree-model-account-types.h
 include/gnucash/gnc-tree-model-account.h
 include/gnucash/gnc-tree-model-budget.h
@@ -138,6 +144,7 @@ include/gnucash/gnc-tree-model.h
 include/gnucash/gnc-tree-view-account.h
 include/gnucash/gnc-tree-view-commodity.h
 include/gnucash/gnc-tree-view-price.h
+include/gnucash/gnc-tree-view-sx-list.h
 include/gnucash/gnc-tree-view.h
 include/gnucash/gnc-ui-common.h
 include/gnucash/gnc-ui-util.h
@@ -158,6 +165,7 @@ include/gnucash/option-util.h
 include/gnucash/policy.h
 include/gnucash/pricecell.h
 include/gnucash/print-session.h
+include/gnucash/qof-gobject.h
 include/gnucash/qof.h
 include/gnucash/qofbackend-p.h
 include/gnucash/qofbackend.h
@@ -189,188 +197,82 @@ include/gnucash/table-layout.h
 include/gnucash/table-model.h
 include/gnucash/window-main-summarybar.h
 include/gnucash/window-report.h
-lib/gnucash/goffice/plugins/plot_barcol/barcol.la
-lib/gnucash/goffice/plugins/plot_barcol/barcol.so
-lib/gnucash/goffice/plugins/plot_barcol/gog-barcol-prefs.glade
-lib/gnucash/goffice/plugins/plot_barcol/gog-minmax-prefs.glade
-lib/gnucash/goffice/plugins/plot_barcol/plot-types.xml
-lib/gnucash/goffice/plugins/plot_barcol/plugin.xml
-lib/gnucash/goffice/plugins/plot_boxes/boxplot.la
-lib/gnucash/goffice/plugins/plot_boxes/boxplot.so
-lib/gnucash/goffice/plugins/plot_boxes/gog-boxplot-prefs.glade
-lib/gnucash/goffice/plugins/plot_boxes/plot-types.xml
-lib/gnucash/goffice/plugins/plot_boxes/plugin.xml
-lib/gnucash/goffice/plugins/plot_pie/gog-pie-prefs.glade
-lib/gnucash/goffice/plugins/plot_pie/gog-pie-series.glade
-lib/gnucash/goffice/plugins/plot_pie/gog-ring-prefs.glade
-lib/gnucash/goffice/plugins/plot_pie/pie.la
-lib/gnucash/goffice/plugins/plot_pie/pie.so
-lib/gnucash/goffice/plugins/plot_pie/plot-types.xml
-lib/gnucash/goffice/plugins/plot_pie/plugin.xml
-lib/gnucash/goffice/plugins/plot_radar/plot-types.xml
-lib/gnucash/goffice/plugins/plot_radar/plugin.xml
-lib/gnucash/goffice/plugins/plot_radar/radar.la
-lib/gnucash/goffice/plugins/plot_radar/radar.so
-lib/gnucash/goffice/plugins/plot_surface/gog-contour-prefs.glade
-lib/gnucash/goffice/plugins/plot_surface/plot-types.xml
-lib/gnucash/goffice/plugins/plot_surface/plugin.xml
-lib/gnucash/goffice/plugins/plot_surface/surface.la
-lib/gnucash/goffice/plugins/plot_surface/surface.so
-lib/gnucash/goffice/plugins/plot_xy/gog-bubble-prefs.glade
-lib/gnucash/goffice/plugins/plot_xy/plot-types.xml
-lib/gnucash/goffice/plugins/plot_xy/plugin.xml
-lib/gnucash/goffice/plugins/plot_xy/xy.la
-lib/gnucash/goffice/plugins/plot_xy/xy.so
-lib/gnucash/goffice/plugins/reg_linear/linreg.la
-lib/gnucash/goffice/plugins/reg_linear/linreg.so
-lib/gnucash/goffice/plugins/reg_linear/plugin.xml
-lib/gnucash/goffice/plugins/reg_linear/reg-types.xml
-lib/gnucash/libgnc-business-ledger.la
-lib/gnucash/libgnc-business-ledger.so
-lib/gnucash/libgnc-business-ledger.so.0
 lib/gnucash/libgncmod-app-utils.la
 lib/gnucash/libgncmod-app-utils.so
-lib/gnucash/libgncmod-app-utils.so.0
+lib/gnucash/libgncmod-backend-file.la
+lib/gnucash/libgncmod-backend-file.so
 lib/gnucash/libgncmod-business-backend-file.la
 lib/gnucash/libgncmod-business-backend-file.so
-lib/gnucash/libgncmod-business-backend-file.so.0
 lib/gnucash/libgncmod-business-core.la
 lib/gnucash/libgncmod-business-core.so
-lib/gnucash/libgncmod-business-core.so.0
 lib/gnucash/libgncmod-business-gnome.la
 lib/gnucash/libgncmod-business-gnome.so
-lib/gnucash/libgncmod-business-gnome.so.0
 lib/gnucash/libgncmod-business-utils.la
 lib/gnucash/libgncmod-business-utils.so
-lib/gnucash/libgncmod-business-utils.so.0
 lib/gnucash/libgncmod-calculation.la
 lib/gnucash/libgncmod-calculation.so
-lib/gnucash/libgncmod-calculation.so.0
 lib/gnucash/libgncmod-dialog-tax-table.la
 lib/gnucash/libgncmod-dialog-tax-table.so
-lib/gnucash/libgncmod-dialog-tax-table.so.0
 lib/gnucash/libgncmod-engine.la
 lib/gnucash/libgncmod-engine.so
-lib/gnucash/libgncmod-engine.so.0
 lib/gnucash/libgncmod-generic-import.la
 lib/gnucash/libgncmod-generic-import.so
-lib/gnucash/libgncmod-generic-import.so.0
 lib/gnucash/libgncmod-gnome-search.la
 lib/gnucash/libgncmod-gnome-search.so
-lib/gnucash/libgncmod-gnome-search.so.0
 lib/gnucash/libgncmod-gnome-utils.la
 lib/gnucash/libgncmod-gnome-utils.so
-lib/gnucash/libgncmod-gnome-utils.so.0
 lib/gnucash/libgncmod-ledger-core.la
 lib/gnucash/libgncmod-ledger-core.so
-lib/gnucash/libgncmod-ledger-core.so.0
 lib/gnucash/libgncmod-locale-reports-us.la
 lib/gnucash/libgncmod-locale-reports-us.so
-lib/gnucash/libgncmod-locale-reports-us.so.0
 lib/gnucash/libgncmod-log-replay.la
 lib/gnucash/libgncmod-log-replay.so
-lib/gnucash/libgncmod-log-replay.so.0
-lib/gnucash/libgncmod-network-utils.la
-lib/gnucash/libgncmod-network-utils.so
-lib/gnucash/libgncmod-network-utils.so.0
 lib/gnucash/libgncmod-ofx.la
 lib/gnucash/libgncmod-ofx.so
-lib/gnucash/libgncmod-ofx.so.0
 lib/gnucash/libgncmod-qif-import.la
 lib/gnucash/libgncmod-qif-import.so
-lib/gnucash/libgncmod-qif-import.so.0
 lib/gnucash/libgncmod-qif.la
 lib/gnucash/libgncmod-qif.so
 lib/gnucash/libgncmod-qif.so.0
 lib/gnucash/libgncmod-register-core.la
 lib/gnucash/libgncmod-register-core.so
-lib/gnucash/libgncmod-register-core.so.0
 lib/gnucash/libgncmod-register-gnome.la
 lib/gnucash/libgncmod-register-gnome.so
-lib/gnucash/libgncmod-register-gnome.so.0
 lib/gnucash/libgncmod-report-gnome.la
 lib/gnucash/libgncmod-report-gnome.so
-lib/gnucash/libgncmod-report-gnome.so.0
 lib/gnucash/libgncmod-report-system.la
 lib/gnucash/libgncmod-report-system.so
-lib/gnucash/libgncmod-report-system.so.0
 lib/gnucash/libgncmod-standard-reports.la
 lib/gnucash/libgncmod-standard-reports.so
-lib/gnucash/libgncmod-standard-reports.so.0
 lib/gnucash/libgncmod-stylesheets.la
 lib/gnucash/libgncmod-stylesheets.so
-lib/gnucash/libgncmod-stylesheets.so.0
 lib/gnucash/libgncmod-tax-us.la
 lib/gnucash/libgncmod-tax-us.so
-lib/gnucash/libgncmod-tax-us.so.0
 lib/gnucash/libgncmod-utility-reports.la
 lib/gnucash/libgncmod-utility-reports.so
-lib/gnucash/libgncmod-utility-reports.so.0
-lib/gnucash/libgoffice-1.la
-lib/gnucash/libgoffice-1.so
-lib/gnucash/libgoffice-1.so.0
-lib/gnucash/libgw-app-utils.la
-lib/gnucash/libgw-app-utils.so
-lib/gnucash/libgw-app-utils.so.0
-lib/gnucash/libgw-business-core.la
-lib/gnucash/libgw-business-core.so
-lib/gnucash/libgw-business-core.so.0
-lib/gnucash/libgw-business-gnome.la
-lib/gnucash/libgw-business-gnome.so
-lib/gnucash/libgw-business-gnome.so.0
-lib/gnucash/libgw-dialog-tax-table.la
-lib/gnucash/libgw-dialog-tax-table.so
-lib/gnucash/libgw-dialog-tax-table.so.0
-lib/gnucash/libgw-engine.la
-lib/gnucash/libgw-engine.so
-lib/gnucash/libgw-engine.so.0
-lib/gnucash/libgw-gnc-module.la
-lib/gnucash/libgw-gnc-module.so
-lib/gnucash/libgw-gnc-module.so.0
-lib/gnucash/libgw-gnome-utils.la
-lib/gnucash/libgw-gnome-utils.so
-lib/gnucash/libgw-gnome-utils.so.0
-lib/gnucash/libgw-kvp.la
-lib/gnucash/libgw-kvp.so
-lib/gnucash/libgw-kvp.so.0
-lib/gnucash/libgw-register-core.la
-lib/gnucash/libgw-register-core.so
-lib/gnucash/libgw-register-core.so.0
-lib/gnucash/libgw-report-gnome.la
-lib/gnucash/libgw-report-gnome.so
-lib/gnucash/libgw-report-gnome.so.0
-lib/gnucash/libgw-report-system.la
-lib/gnucash/libgw-report-system.so
-lib/gnucash/libgw-report-system.so.0
-lib/libcore-utils.la
-lib/libcore-utils.so
-lib/libcore-utils.so.0
+lib/gnucash/libgncqof-backend-qsf.la
+lib/gnucash/libgncqof-backend-qsf.so
 lib/libgnc-backend-file-utils.la
 lib/libgnc-backend-file-utils.so
 lib/libgnc-backend-file-utils.so.0
-lib/libgnc-backend-file.la
-lib/libgnc-backend-file.so
-lib/libgncgnome.la
-lib/libgncgnome.so
-lib/libgncgnome.so.0
-lib/libgncmodule.la
-lib/libgncmodule.so
-lib/libgncmodule.so.0
-lib/libgncqof-backend-qsf.la
-lib/libgncqof-backend-qsf.so
-lib/libgncqof.la
-lib/libgncqof.so
-lib/libgncqof.so.1
-lib/libgw-core-utils.la
-lib/libgw-core-utils.so
-lib/libgw-core-utils.so.0
-lib/libgw-gnc.la
-lib/libgw-gnc.so
-lib/libgw-gnc.so.0
+lib/libgnc-business-ledger.la
+lib/libgnc-business-ledger.so
+lib/libgnc-business-ledger.so.0
+lib/libgnc-core-utils.la
+lib/libgnc-core-utils.so
+lib/libgnc-core-utils.so.0
+lib/libgnc-gnome.la
+lib/libgnc-gnome.so
+lib/libgnc-gnome.so.0
+lib/libgnc-module.la
+lib/libgnc-module.so
+lib/libgnc-module.so.0
+lib/libgnc-qof.la
+lib/libgnc-qof.so
+lib/libgnc-qof.so.1
 libexec/gnucash/overrides/gnucash-env
 libexec/gnucash/overrides/gnucash-make-guids
 libexec/gnucash/overrides/guile
-share/aclocal/gnucash.m4
 share/gnome/applications/gnucash.desktop
 share/gnome/gnucash/accounts/C/acctchrt_brokerage.gnucash-xea
 share/gnome/gnucash/accounts/C/acctchrt_business.gnucash-xea
@@ -421,6 +323,23 @@ share/gnome/gnucash/accounts/de_DE/acctchrt_studium.gnucash-xea
 share/gnome/gnucash/accounts/el_GR/acctchrt_brokerage.gnucash-xea
 share/gnome/gnucash/accounts/el_GR/acctchrt_carloan.gnucash-xea
 share/gnome/gnucash/accounts/el_GR/acctchrt_common.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_brokerage.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_business.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_carloan.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_cdmoneymkt.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_checkbook.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_childcare.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_common.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_eduloan.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_fixedassets.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_homeloan.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_homeown.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_otherloan.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_renter.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_retiremt.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_spouseinc.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/acctchrt_spouseretire.gnucash-xea
+share/gnome/gnucash/accounts/en_GB/uk-vat.gnucash-xea
 share/gnome/gnucash/accounts/es_ES/acctchrt_brokerage.gnucash-xea
 share/gnome/gnucash/accounts/es_ES/acctchrt_carloan.gnucash-xea
 share/gnome/gnucash/accounts/es_ES/acctchrt_cdmoneymkt.gnucash-xea
@@ -580,22 +499,29 @@ share/gnome/gnucash/accounts/tr_TR/acctchrt_checkbook.gnucash-xea
 share/gnome/gnucash/accounts/tr_TR/acctchrt_common.gnucash-xea
 share/gnome/gnucash/accounts/tr_TR/acctchrt_fixedassets.gnucash-xea
 share/gnome/gnucash/accounts/tr_TR/acctchrt_homeloan.gnucash-xea
+share/gnome/gnucash/checks/deluxe.chk
+share/gnome/gnucash/checks/quicken.chk
+share/gnome/gnucash/checks/quicken_wallet.chk
 share/gnome/gnucash/doc/AUTHORS
 share/gnome/gnucash/doc/COPYING
 share/gnome/gnucash/doc/ChangeLog
 share/gnome/gnucash/doc/ChangeLog.2003
 share/gnome/gnucash/doc/ChangeLog.2004
 share/gnome/gnucash/doc/ChangeLog.2005
+share/gnome/gnucash/doc/ChangeLog.2006
 share/gnome/gnucash/doc/DOCUMENTERS
 share/gnome/gnucash/doc/HACKING
 share/gnome/gnucash/doc/INSTALL
 share/gnome/gnucash/doc/LICENSE
 share/gnome/gnucash/doc/NEWS
 share/gnome/gnucash/doc/README
+share/gnome/gnucash/doc/README-de.win32-bin.txt
+share/gnome/gnucash/doc/README-fr.win32-bin.txt
 share/gnome/gnucash/doc/README.dependencies
 share/gnome/gnucash/doc/README.francais
 share/gnome/gnucash/doc/README.german
 share/gnome/gnucash/doc/README.patches
+share/gnome/gnucash/doc/README.win32-bin.txt
 share/gnome/gnucash/doc/examples/Money95bank_fr.qif
 share/gnome/gnucash/doc/examples/Money95invst_fr.qif
 share/gnome/gnucash/doc/examples/Money95mfunds_fr.qif
@@ -671,49 +597,11 @@ share/gnome/gnucash/glade/transfer.glade
 share/gnome/gnucash/glade/userpass.glade
 share/gnome/gnucash/glade/vendor.glade
 share/gnome/gnucash/gnome
-share/gnome/gnucash/goffice/glade/go-font-sel.glade
-share/gnome/gnucash/goffice/glade/go-format-sel.glade
-share/gnome/gnucash/goffice/glade/go-rotation-sel.glade
-share/gnome/gnucash/goffice/glade/gog-axis-prefs.glade
-share/gnome/gnucash/goffice/glade/gog-chart-prefs.glade
-share/gnome/gnucash/goffice/glade/gog-error-bar-prefs.glade
-share/gnome/gnucash/goffice/glade/gog-guru-type-selector.glade
-share/gnome/gnucash/goffice/glade/gog-guru.glade
-share/gnome/gnucash/goffice/glade/gog-object-prefs.glade
-share/gnome/gnucash/goffice/glade/gog-reg-curve-prefs.glade
-share/gnome/gnucash/goffice/glade/gog-reg-eqn-prefs.glade
-share/gnome/gnucash/goffice/glade/gog-style-prefs.glade
-share/gnome/gnucash/goffice/patterns/svg-patterns.xml
-share/gnome/gnucash/guile-modules/g-wrapped/gw-app-utils-spec.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-app-utils.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-business-core-spec.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-business-core.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-business-gnome-spec.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-business-gnome.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-core-utils-spec.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-core-utils.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-dialog-tax-table-spec.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-dialog-tax-table.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-engine-spec.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-engine.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-gnc-module-spec.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-gnc-module.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-gnc-spec.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-gnc.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-gnome-utils-spec.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-gnome-utils.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-kvp-spec.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-kvp.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-register-core-spec.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-register-core.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-report-gnome-spec.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-report-gnome.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-report-system-spec.scm
-share/gnome/gnucash/guile-modules/g-wrapped/gw-report-system.scm
 share/gnome/gnucash/guile-modules/gnucash/app-utils.scm
 share/gnome/gnucash/guile-modules/gnucash/business-core.scm
 share/gnome/gnucash/guile-modules/gnucash/business-gnome.scm
 share/gnome/gnucash/guile-modules/gnucash/business-utils.scm
+share/gnome/gnucash/guile-modules/gnucash/core-utils.scm
 share/gnome/gnucash/guile-modules/gnucash/dialog-tax-table.scm
 share/gnome/gnucash/guile-modules/gnucash/engine.scm
 share/gnome/gnucash/guile-modules/gnucash/gnc-module.scm
@@ -721,8 +609,6 @@ share/gnome/gnucash/guile-modules/gnucash/gnome-utils.scm
 share/gnome/gnucash/guile-modules/gnucash/import-export/qif-import.scm
 share/gnome/gnucash/guile-modules/gnucash/main.scm
 share/gnome/gnucash/guile-modules/gnucash/price-quotes.scm
-share/gnome/gnucash/guile-modules/gnucash/printing/number-to-words.scm
-share/gnome/gnucash/guile-modules/gnucash/process.scm
 share/gnome/gnucash/guile-modules/gnucash/report/account-piecharts.scm
 share/gnome/gnucash/guile-modules/gnucash/report/account-summary.scm
 share/gnome/gnucash/guile-modules/gnucash/report/advanced-portfolio.scm
@@ -771,7 +657,6 @@ share/gnome/gnucash/guile-modules/www/cgi.scm
 share/gnome/gnucash/guile-modules/www/http.scm
 share/gnome/gnucash/guile-modules/www/main.scm
 share/gnome/gnucash/guile-modules/www/url.scm
-share/gnome/gnucash/pixmaps/appicon.png
 share/gnome/gnucash/pixmaps/gnc-account-16.png
 share/gnome/gnucash/pixmaps/gnc-account-delete-16.png
 share/gnome/gnucash/pixmaps/gnc-account-delete.png
@@ -798,105 +683,12 @@ share/gnome/gnucash/pixmaps/gnc-sx-new-16.png
 share/gnome/gnucash/pixmaps/gnc-sx-new.png
 share/gnome/gnucash/pixmaps/gnc-transfer-16.png
 share/gnome/gnucash/pixmaps/gnc-transfer.png
-share/gnome/gnucash/pixmaps/gnucash-icon.png
+share/gnome/gnucash/pixmaps/gnucash-icon-16x16.png
+share/gnome/gnucash/pixmaps/gnucash-icon-32x32.png
+share/gnome/gnucash/pixmaps/gnucash-icon-48x48.bmp
+share/gnome/gnucash/pixmaps/gnucash-icon-48x48.png
+share/gnome/gnucash/pixmaps/gnucash-icon.ico
 share/gnome/gnucash/pixmaps/gnucash_splash.png
-share/gnome/gnucash/pixmaps/goffice/area.xpm
-share/gnome/gnucash/pixmaps/goffice/bar-hboth.png
-share/gnome/gnucash/pixmaps/goffice/bar-hminus.png
-share/gnome/gnucash/pixmaps/goffice/bar-hplus.png
-share/gnome/gnucash/pixmaps/goffice/bar-none.png
-share/gnome/gnucash/pixmaps/goffice/bar-vboth.png
-share/gnome/gnucash/pixmaps/goffice/bar-vminus.png
-share/gnome/gnucash/pixmaps/goffice/bar-vplus.png
-share/gnome/gnucash/pixmaps/goffice/bar.xpm
-share/gnome/gnucash/pixmaps/goffice/boxplot.xpm
-share/gnome/gnucash/pixmaps/goffice/bubble.xpm
-share/gnome/gnucash/pixmaps/goffice/chart_area_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_area_1_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_area_1_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_bar_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_bar_1_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_bar_1_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_bar_2_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_bar_2_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_bar_2_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_boxplot_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_bubble_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_column_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_column_1_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_column_1_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_column_2_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_column_2_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_column_2_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_column_3_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_cone_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_cone_1_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_cone_1_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_cone_2_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_cone_2_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_cone_2_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_cone_3_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_contour_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_cylinder_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_cylinder_1_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_cylinder_1_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_cylinder_2_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_cylinder_2_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_cylinder_2_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_cylinder_3_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_dropbar_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_dropbar_1_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_line_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_line_1_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_line_1_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_line_2_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_line_2_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_line_2_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_line_3_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_minmax_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_minmax_1_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_minmax_2_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_minmax_2_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_pie_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_pie_1_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_pie_1_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_pie_2_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_pie_2_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_pie_2_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_polar_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_pyramid_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_pyramid_1_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_pyramid_1_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_pyramid_2_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_pyramid_2_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_pyramid_2_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_pyramid_3_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_radar_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_radar_1_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_radar_1_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_ring_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_ring_1_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_scatter_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_scatter_2_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_scatter_2_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_scatter_3_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_scatter_3_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_scatter_3_3.png
-share/gnome/gnucash/pixmaps/goffice/chart_stock_1_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_stock_1_2.png
-share/gnome/gnucash/pixmaps/goffice/chart_stock_2_1.png
-share/gnome/gnucash/pixmaps/goffice/chart_stock_2_2.png
-share/gnome/gnucash/pixmaps/goffice/column.xpm
-share/gnome/gnucash/pixmaps/goffice/doughnut.xpm
-share/gnome/gnucash/pixmaps/goffice/dropbar.xpm
-share/gnome/gnucash/pixmaps/goffice/linegraph.xpm
-share/gnome/gnucash/pixmaps/goffice/minmax.xpm
-share/gnome/gnucash/pixmaps/goffice/pie.xpm
-share/gnome/gnucash/pixmaps/goffice/polar.png
-share/gnome/gnucash/pixmaps/goffice/radar.xpm
-share/gnome/gnucash/pixmaps/goffice/scatter.xpm
-share/gnome/gnucash/pixmaps/goffice/stock.xpm
-share/gnome/gnucash/pixmaps/goffice/surface.xpm
 share/gnome/gnucash/pixmaps/stock_split_title.png
 share/gnome/gnucash/pixmaps/stock_split_watermark.png
 share/gnome/gnucash/scm/build-config.scm
@@ -927,12 +719,10 @@ share/gnome/gnucash/scm/html-style-sheet.scm
 share/gnome/gnucash/scm/html-table.scm
 share/gnome/gnucash/scm/html-text.scm
 share/gnome/gnucash/scm/html-utilities.scm
-share/gnome/gnucash/scm/kvp-option-registry.scm
 share/gnome/gnucash/scm/main-window.scm
 share/gnome/gnucash/scm/options-utilities.scm
 share/gnome/gnucash/scm/options.scm
 share/gnome/gnucash/scm/prefs.scm
-share/gnome/gnucash/scm/printing/print-check.scm
 share/gnome/gnucash/scm/qif-import/qif-dialog-utils.scm
 share/gnome/gnucash/scm/qif-import/qif-file.scm
 share/gnome/gnucash/scm/qif-import/qif-guess-map.scm
@@ -965,6 +755,7 @@ share/gnome/gnucash/ui/gnc-plugin-page-budget-ui.xml
 share/gnome/gnucash/ui/gnc-plugin-page-invoice-ui.xml
 share/gnome/gnucash/ui/gnc-plugin-page-register-ui.xml
 share/gnome/gnucash/ui/gnc-plugin-page-report-ui.xml
+share/gnome/gnucash/ui/gnc-plugin-page-sx-list-ui.xml
 share/gnome/gnucash/ui/gnc-plugin-page-sxregister-ui.xml
 share/gnome/gnucash/ui/gnc-plugin-qif-import-ui.xml
 share/gnome/gnucash/ui/gnc-plugin-register-ui.xml
@@ -977,7 +768,9 @@ share/gnome/gnucash/xml/qsf/pilot-qsf-GnuCashInvoice.xml
 share/gnome/gnucash/xml/qsf/pilot-qsf-gncCustomer.xml
 share/gnome/gnucash/xml/qsf/qsf-map.xsd.xml
 share/gnome/gnucash/xml/qsf/qsf-object.xsd.xml
-share/gnome/pixmaps/gnucash-icon.png
+share/gnome/pixmaps/gnucash-icon-16x16.png
+share/gnome/pixmaps/gnucash-icon-32x32.png
+share/gnome/pixmaps/gnucash-icon-48x48.png
 share/gnome/xml/gnucash/xsl/README
 share/gnome/xml/gnucash/xsl/date-time.xsl
 share/gnome/xml/gnucash/xsl/gnucash-gnccustomer-vcard2.xsl
@@ -1024,27 +817,21 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrm share/gnome/gnucash/xml
 @dirrm share/gnome/gnucash/ui
 @dirrm share/gnome/gnucash/scm/qif-import
-@dirrm share/gnome/gnucash/scm/printing
 @dirrm share/gnome/gnucash/scm/gnumeric
 @dirrm share/gnome/gnucash/scm
-@dirrm share/gnome/gnucash/pixmaps/goffice
 @dirrm share/gnome/gnucash/pixmaps
 @dirrm share/gnome/gnucash/guile-modules/www
 @dirrm share/gnome/gnucash/guile-modules/srfi
 @dirrm share/gnome/gnucash/guile-modules/gnucash/tax
 @dirrm share/gnome/gnucash/guile-modules/gnucash/report/locale-specific
 @dirrm share/gnome/gnucash/guile-modules/gnucash/report
-@dirrm share/gnome/gnucash/guile-modules/gnucash/printing
 @dirrm share/gnome/gnucash/guile-modules/gnucash/import-export
 @dirrm share/gnome/gnucash/guile-modules/gnucash
-@dirrm share/gnome/gnucash/guile-modules/g-wrapped
 @dirrm share/gnome/gnucash/guile-modules
-@dirrm share/gnome/gnucash/goffice/patterns
-@dirrm share/gnome/gnucash/goffice/glade
-@dirrm share/gnome/gnucash/goffice
 @dirrm share/gnome/gnucash/glade
 @dirrm share/gnome/gnucash/doc/examples
 @dirrm share/gnome/gnucash/doc
+@dirrm share/gnome/gnucash/checks
 @dirrm share/gnome/gnucash/accounts/tr_TR
 @dirrm share/gnome/gnucash/accounts/sk
 @dirrm share/gnome/gnucash/accounts/pt_PT
@@ -1056,6 +843,7 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrm share/gnome/gnucash/accounts/fr_CH
 @dirrm share/gnome/gnucash/accounts/fr_CA
 @dirrm share/gnome/gnucash/accounts/es_ES
+@dirrm share/gnome/gnucash/accounts/en_GB
 @dirrm share/gnome/gnucash/accounts/el_GR
 @dirrm share/gnome/gnucash/accounts/de_DE
 @dirrm share/gnome/gnucash/accounts/de_CH
@@ -1066,15 +854,6 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrm share/gnome/gnucash
 @dirrm libexec/gnucash/overrides
 @dirrm libexec/gnucash
-@dirrm lib/gnucash/goffice/plugins/reg_linear
-@dirrm lib/gnucash/goffice/plugins/plot_xy
-@dirrm lib/gnucash/goffice/plugins/plot_surface
-@dirrm lib/gnucash/goffice/plugins/plot_radar
-@dirrm lib/gnucash/goffice/plugins/plot_pie
-@dirrm lib/gnucash/goffice/plugins/plot_boxes
-@dirrm lib/gnucash/goffice/plugins/plot_barcol
-@dirrm lib/gnucash/goffice/plugins
-@dirrm lib/gnucash/goffice
 @dirrm lib/gnucash
 @dirrm include/gnucash
 @dirrm etc/gnucash
