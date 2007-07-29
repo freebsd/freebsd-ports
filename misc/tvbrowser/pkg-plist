@@ -16,6 +16,7 @@ bin/tvbrowser
 %%DATADIR%%/icons/tango/16x16/actions/edit-delete.png
 %%DATADIR%%/icons/tango/16x16/actions/edit-find.png
 %%DATADIR%%/icons/tango/16x16/actions/edit-paste.png
+%%DATADIR%%/icons/tango/16x16/actions/edit-undo.png
 %%DATADIR%%/icons/tango/16x16/actions/go-down.png
 %%DATADIR%%/icons/tango/16x16/actions/go-next.png
 %%DATADIR%%/icons/tango/16x16/actions/go-previous.png
@@ -77,6 +78,7 @@ bin/tvbrowser
 %%DATADIR%%/icons/tango/22x22/actions/edit-delete.png
 %%DATADIR%%/icons/tango/22x22/actions/edit-find.png
 %%DATADIR%%/icons/tango/22x22/actions/edit-paste.png
+%%DATADIR%%/icons/tango/22x22/actions/edit-undo.png
 %%DATADIR%%/icons/tango/22x22/actions/format-justify-fill.png
 %%DATADIR%%/icons/tango/22x22/actions/go-bottom.png
 %%DATADIR%%/icons/tango/22x22/actions/go-down.png
