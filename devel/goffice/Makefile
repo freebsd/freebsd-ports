@@ -5,10 +5,10 @@
 # $FreeBSD$
 #   $MCom: ports/devel/goffice/Makefile,v 1.23 2007/03/11 20:02:56 mezz Exp $
 #
-# !!! When updating goffice, don't forget to update math/gnumeric and science/gchempaint pkg-plists too! !!!
+# !!! When updating goffice, don't forget to update science/gchempaint pkg-plists too! !!!
 
 PORTNAME=	goffice
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	 sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
