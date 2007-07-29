@@ -1,0 +1,45 @@
+$FreeBSD$
+
+These patches disables the ant version checks.
+
+diff -ruN /tmp/jboss-4.2.0.GA-src/tools/etc/buildmagic/build-common.xml ./tools/etc/buildmagic/build-common.xml
+--- /tmp/jboss-4.2.0.GA-src/tools/etc/buildmagic/build-common.xml	Sat May 12 06:24:27 2007
++++ ./tools/etc/buildmagic/build-common.xml	Tue Jun 19 13:56:11 2007
+@@ -9,10 +9,12 @@
+    -->
+ 
+   <condition property="buildmagic.ant.compatible">
++	<!--
+     <or>
+       <contains string="${ant.version}" 
+ 	        substring="Ant version ${buildmagic.ant16.baseversion}"/>
+     </or>
++	  -->
+   </condition>
+ 
+   <fail unless="buildmagic.ant.compatible">
+diff -ruN /tmp/jboss-4.2.0.GA-src/tools/etc/buildmagic/buildmagic.ent ./tools/etc/buildmagic/buildmagic.ent
+--- /tmp/jboss-4.2.0.GA-src/tools/etc/buildmagic/buildmagic.ent	Sat May 12 06:24:27 2007
++++ ./tools/etc/buildmagic/buildmagic.ent	Tue Jun 19 14:03:55 2007
+@@ -11,19 +11,8 @@
+   <property name="buildmagic.ant15.baseversion" value="1.5"/>
+   <property name="buildmagic.ant16.baseversion" value="1.6"/>
+   
+-  <!--
+-     | Add new conditions for other supported Ant versions when they
+-     | become avaialble.
+-   -->
+-
+-  <condition property="buildmagic.ant.compatible">
+-    <or>
+-      <contains string="${ant.version}"
+-        substring="Ant version ${buildmagic.ant15.baseversion}"/>
+-      <contains string="${ant.version}"
+-        substring="Ant version ${buildmagic.ant16.baseversion}"/>
+-    </or>
+-  </condition>
++  <!-- disable ant checks -->
++  <property name="buildmagic.ant.compatible" value="forced"/>
+ 
+   <fail unless="buildmagic.ant.compatible">
+ 
