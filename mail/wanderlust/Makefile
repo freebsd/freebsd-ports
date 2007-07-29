@@ -19,7 +19,8 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Yet another message interface on Emacsen
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
+
+.include <bsd.port.pre.mk>
 
 MIMEUI_PORT_NAME?=	${MIMEUI_PRODUCT}
 .if (${EMACS_PORT_NAME} == "emacs21")
@@ -42,8 +43,6 @@ RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/bitmap/bitmap.el:${PORT
 .if (${EMACS_PORT_NAME} == "xemacs21-mule")
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-WL-MK ${PATCHDIR}/extra-patch-elmo:elmo-version.el
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if exists(${EMACS_W3M_LISP_FILE})
 BUILD_DEPENDS+=	${EMACS_W3M_LISP_FILE}:${PORTSDIR}/www/${EMACS_W3M_PORT_NAME}

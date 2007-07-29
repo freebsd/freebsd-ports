@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/apel/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	nobutaka@FreeBSD.org
-COMMENT?=	A Portable Emacs Library for emacs21
+COMMENT?=	A Portable Emacs Library for emacs
 
 # distfile version
 APEL_VER=	10.7
@@ -24,7 +24,6 @@ APEL_VERSION_SPECIFIC_LISPDIR?=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 
 # emacs port setup
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 
 DESCR=		${PKGDIR}/pkg-descr
 
