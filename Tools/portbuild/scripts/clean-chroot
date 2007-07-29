@@ -73,10 +73,24 @@ done
 
 #kill_procs ${chroot}
 
-if [ "${use_md_swap}" = "1" -a \( "${md_persistent}" != "1" -a "${clean}" -gt "0" \) -o "${clean}" = "2" ]; then
+if [ "${use_zfs}" = "1" ]; then
+  cleanup_mount ${chroot} ""
+  zfs destroy $(echo ${chroot} | sed -e 's,/,,' )
+elif [ "${use_tmpfs}" = "1" -a "${clean}" = "2" ]; then
+  cleanup_mount ${chroot} ""
+  if ! rm -rf ${chroot} >/dev/null 2>&1; then
+    chflags -R noschg ${chroot} >/dev/null 2>&1
+    rm -rf ${chroot} >/dev/null 2>&1
+  fi
+  # XXX possible race from cleanup and claim by next build?
+elif [ "${use_md_swap}" = "1" -a \( "${md_persistent}" != "1" -a "${clean}" -gt "0" \) -o "${clean}" = "2" ]; then
+  cleanup_mount ${chroot} /used
   cleanup_mount ${chroot} ""
   mdconfig -d -u $(basename ${chroot})
-  rm -rf ${chroot}
+  if ! rm -rf ${chroot} >/dev/null 2>&1; then
+    chflags -R noschg ${chroot} >/dev/null 2>&1
+    rm -rf ${chroot} >/dev/null 2>&1
+  fi
 else
   if [ "${clean}" = 1 ]; then
     rm -rf ${chroot}/tmp/*
