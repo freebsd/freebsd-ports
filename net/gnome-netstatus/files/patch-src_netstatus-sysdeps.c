@@ -1,6 +1,6 @@
---- src/netstatus-sysdeps.c.orig	Tue Feb 13 04:39:19 2007
-+++ src/netstatus-sysdeps.c	Wed Jul  4 17:39:14 2007
-@@ -37,12 +37,23 @@
+--- src/netstatus-sysdeps.c.orig	2007-02-13 04:39:19.000000000 -0500
++++ src/netstatus-sysdeps.c	2007-07-29 13:14:34.000000000 -0400
+@@ -37,13 +37,26 @@
  
  #ifdef __FreeBSD__
  #include <sys/types.h>
@@ -11,8 +11,10 @@
  #include <net/if.h>
 +#include <net/if_media.h>
  #include <net/if_var.h>
++#if __FreeBSD_version < 700046
  #include <dev/an/if_aironet_ieee.h>
  #include <dev/wi/if_wavelan_ieee.h>
+ #endif
 +#if __FreeBSD_version >= 602000
 +#include <net80211/ieee80211.h>
 +#include <net80211/ieee80211_ioctl.h>
@@ -21,10 +23,16 @@
 +#ifndef IEEE80211_ADDR_COPY
 +#define IEEE80211_ADDR_COPY(dst, src)   memcpy(dst, src, IEEE80211_ADDR_LEN)
 +#endif
- #endif
++#endif
  
  static inline gboolean
-@@ -430,11 +441,11 @@ static inline char *
+ parse_stats (char    *buf,
+@@ -426,15 +439,16 @@ wireless_getval (const char      *iface,
+   return TRUE;
+ }
+ 
++#if __FreeBSD_version < 700046
+ static inline char *
  get_an_data (const char *iface,
  	     int        *signal_strength)
  {
@@ -38,7 +46,7 @@
    int                   level;
    char                 *error = NULL;
    gboolean              rssimap_valid = FALSE;
-@@ -486,11 +497,11 @@ get_wi_data (const char *iface,
+@@ -486,11 +500,11 @@ get_wi_data (const char *iface,
    level = (int) wreq.wi_val[1];
  
  #ifdef WI_RID_READ_APS
@@ -52,7 +60,7 @@
        time_t          now;
  
        now = time (NULL);
-@@ -510,15 +521,15 @@ get_wi_data (const char *iface,
+@@ -510,15 +524,15 @@ get_wi_data (const char *iface,
            if (nstations > 0)
  	    {
                w = (struct wi_apinfo *)(((char *) &wreq.wi_val) + sizeof (int));
@@ -71,10 +79,12 @@
            }
      }
  #endif
-@@ -528,6 +539,76 @@ get_wi_data (const char *iface,
+@@ -527,6 +541,77 @@ get_wi_data (const char *iface,
+ 
    return error;
  }
- 
++#endif
++
 +#if __FreeBSD_version >= 602000
 +static inline char *
 +get_net80211_data (const char *iface,
@@ -144,11 +154,10 @@
 +  return error;
 +}
 +#endif
-+
+ 
  char *
  netstatus_sysdeps_read_iface_wireless_details (const char *iface,
- 					       gboolean   *is_wireless,
-@@ -548,8 +629,12 @@ netstatus_sysdeps_read_iface_wireless_de
+@@ -548,21 +633,44 @@ netstatus_sysdeps_read_iface_wireless_de
        g_strncasecmp (iface, "wi",   2) &&
        g_strncasecmp (iface, "ath",  3) &&
        g_strncasecmp (iface, "ndis", 4) &&
@@ -161,27 +170,34 @@
        g_strncasecmp (iface, "acx",  3))
      return error_message;
  
-@@ -558,11 +643,24 @@ netstatus_sysdeps_read_iface_wireless_de
++#if __FreeBSD_version < 700046
+   if (g_strncasecmp (iface, "an", 2) == 0)
+     {
        error_message = get_an_data (iface, signal_strength);
        *is_wireless = TRUE;
      }
++#endif
 +#if __FreeBSD_version >= 602000
++#if __FreeBSD_version < 700046
 +  else if (g_strncasecmp (iface, "wi", 2) == 0)
 +    {
 +      error_message = get_wi_data (iface, signal_strength);
 +      *is_wireless = TRUE;
 +    }
 +  else
++#endif
 +    {
 +      error_message = get_net80211_data (iface, signal_strength);
 +      *is_wireless = TRUE;
 +    }
 +#else
++#if __FreeBSD_version < 700046
    else
      {
        error_message = get_wi_data (iface, signal_strength);
        *is_wireless = TRUE;
      }
++#endif
 +#endif
  
    return error_message;
