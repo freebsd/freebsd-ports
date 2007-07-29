@@ -83,6 +83,7 @@ share/locale/pt_BR/LC_MESSAGES/vte.mo
 share/locale/ro/LC_MESSAGES/vte.mo
 share/locale/ru/LC_MESSAGES/vte.mo
 share/locale/rw/LC_MESSAGES/vte.mo
+share/locale/si/LC_MESSAGES/vte.mo
 share/locale/sk/LC_MESSAGES/vte.mo
 share/locale/sl/LC_MESSAGES/vte.mo
 share/locale/sq/LC_MESSAGES/vte.mo
@@ -110,6 +111,8 @@ share/locale/zh_TW/LC_MESSAGES/vte.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
