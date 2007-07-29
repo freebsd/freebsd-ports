@@ -34,6 +34,7 @@ Dist			Port			Why
 						interface
 5400s_fbsd_cli_v10.zip	sysutils/aaccli		May not be redistributed in
 						binary form
+aacplusenc-*		audio/aacplusenc	Unclear legal status
 ac3dlx*			graphics/linux-ac3d	Commercial license, no
 						distribution
 acroread/AdobeReader_*	print/acroread7		Must fill out redistribution
