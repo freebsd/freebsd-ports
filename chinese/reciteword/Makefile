@@ -40,7 +40,7 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${DATADIR}
-	(cd ${WRKDIR}/ && ${COPYTREE_SHARE} books dicts ${DATADIR} "! -type d -name CVS"
+	(cd ${WRKDIR}/ && ${COPYTREE_SHARE} books dicts ${DATADIR} "! -type d -name CVS")
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
