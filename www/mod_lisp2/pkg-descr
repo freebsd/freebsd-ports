@@ -1,0 +1,4 @@
+mod_lisp is an Apache 2 module for writing web applications in Common
+Lisp. It is distributed with a BSD-style license.
+
+WWW: http://www.fractalconcept.com/asp/html/mod_lisp.html
