@@ -1,0 +1,9 @@
+File_Fortune provides a PHP interface to reading fortune files. With it, you may
+retrieve a single fortune, a random fortune, or all fortunes in the file.
+
+Additionally, it offers the ability to access fortune files as if they were a
+native array, including updating and deleting items. All write operations will
+produce a binary header file to allow compatability with the fortune and
+fortune-mod programs (as well as other fortune interfaces).
+
+WWW: http://pear.php.net/package/File_Fortune/

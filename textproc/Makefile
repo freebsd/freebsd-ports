@@ -722,6 +722,7 @@
     SUBDIR += pcrs
     SUBDIR += pdfoutline
     SUBDIR += pdftohtml
+    SUBDIR += pear-File_Fortune
     SUBDIR += pear-Numbers_Roman
     SUBDIR += pear-Numbers_Words
     SUBDIR += pear-Spreadsheet_Excel_Writer
