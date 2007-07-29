@@ -33,4 +33,10 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Does not compile on FreeBSD 5.x
+.endif
+
+.include <bsd.port.post.mk>
