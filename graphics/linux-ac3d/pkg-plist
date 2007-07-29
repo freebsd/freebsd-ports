@@ -2,7 +2,6 @@ bin/ac3d
 bin/ac3ds
 libexec/ac3d
 libexec/ac3ds
-share/pixmaps/ac3d.png
 %%DATADIR%%/font.ac
 %%DATADIR%%/fontwire.ac
 %%DATADIR%%/lib/tcl8.4/auto.tcl
@@ -50,7 +49,6 @@ share/pixmaps/ac3d.png
 %%DATADIR%%/plugins/airfoil_import.p
 %%DATADIR%%/plugins/centre.p
 %%DATADIR%%/plugins/centre.tcl
-%%DATADIR%%/plugins/csg.p
 %%DATADIR%%/plugins/csg.tcl
 %%DATADIR%%/plugins/ddsload.p
 %%DATADIR%%/plugins/dxf_export.p
@@ -97,6 +95,7 @@ share/pixmaps/ac3d.png
 %%DATADIR%%/tcl/ac3dprefs.tcl
 %%DATADIR%%/tcl/ac3drender.tcl
 %%DATADIR%%/tcl/ac3dtips.tcl
+%%DATADIR%%/tcl/ac3dttfont.tcl
 %%DATADIR%%/tcl/ac3dutil.tcl
 %%DATADIR%%/tcl/ac3duvedit.tcl
 %%DATADIR%%/tcl/ac3dview.tcl
@@ -176,6 +175,7 @@ share/pixmaps/ac3d.png
 %%EXAMPLESDIR%%/tree_transparent.gif
 %%EXAMPLESDIR%%/world.ac
 %%EXAMPLESDIR%%/world.rgb
+share/pixmaps/ac3d.png
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/tcl/images
 @dirrm %%DATADIR%%/tcl
