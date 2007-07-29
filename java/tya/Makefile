@@ -9,14 +9,12 @@ PORTNAME=	tya
 PORTVERSION=	1.8
 PORTREVISION=	1
 CATEGORIES=	java
-MASTER_SITES=	http://sax.sax.de/~adlibit/
+MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/tya|}
 DISTNAME=	tya18
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ``100% unofficial'' JIT-compiler for java
-
-BROKEN=		Unfetchable
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.3
