@@ -11,6 +11,7 @@
     SUBDIR += aewan
     SUBDIR += apel
     SUBDIR += apel-emacs20
+    SUBDIR += apel-emacs21
     SUBDIR += asedit
     SUBDIR += axe
     SUBDIR += beav
