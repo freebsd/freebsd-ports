@@ -27,7 +27,11 @@ buildenv ${pb} ${arch} ${branch}
 
 pkgname=$(basename $1 ${PKGSUFFIX})
 
-chrootdir=${buildroot}/${branch}/chroot
+if [ "${use_zfs}" = 1 ]; then
+  chrootdir=${buildroot}/${branch}
+else
+  chrootdir=${buildroot}/${branch}/chroot
+fi
 
 # Perform initial sanity check
 
@@ -73,7 +77,11 @@ done
 chrootnum=$$
 # If we didn't find a pre-existing directory, create and claim a new one.
 while [ ${found} != 1 ]; do
-  if [ "${use_md_swap}" = "1" ]; then
+  if [ "${use_zfs}" = "1" ]; then
+    chroot=${chrootdir}/${chrootnum}
+    zfs clone y/${branch}@base $(echo ${chrootdir} | sed -e 's,/,,')/${chrootnum}
+    mkdir ${chroot}/used
+  elif [ "${use_md_swap}" = "1" ]; then
     unit=$(mdconfig -a -t swap -s ${md_size})
     newfs /dev/${unit} > /dev/null
     chrootnum=$(echo ${unit} | sed 's,md,,')
@@ -85,14 +93,21 @@ while [ ${found} != 1 ]; do
     touch ${chroot}/used/used/${pkgname}
     umount ${chroot}/used
     mount -o async /dev/${unit} ${chroot}/
+    touch ${chroot}/.notready
   else
     chrootnum=$(($chrootnum+1))
     chroot=${chrootdir}/${chrootnum}
-    mkdir -p ${chroot} 2>/dev/null || continue
+    mkdir -p ${chrootdir} 2> /dev/null || continue
+    mkdir ${chroot} 2>/dev/null || continue
     mkdir ${chroot}/used 2>/dev/null || continue
+    touch ${chroot}/.notready
+  fi
+  if [ "${use_tmpfs}" = "1" ]; then
+    mount -t tmpfs -o "size=${tmpfs_size}" foo ${chroot}
+    mkdir ${chroot}/used 2>/dev/null || echo "ERROR: mkdir race"
+    touch ${chroot}/.notready
   fi
   touch ${chroot}/used/${pkgname}
-  touch ${chroot}/.notready
   found=1
 done
 

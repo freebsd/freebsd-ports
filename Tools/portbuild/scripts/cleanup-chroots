@@ -42,7 +42,11 @@ arch=$(cat /etc/arch)
 
 . ${pb}/${arch}/portbuild.conf
 
-old=$(find ${scratchdir}/*/chroot/* -prune -mmin +20 2> /dev/null)
+if [ "${use_zfs}" = "1" ]; then
+  old=$(find ${scratchdir}/*/* -prune -mmin +20 2> /dev/null)
+else 
+  old=$(find ${scratchdir}/*/chroot/* -prune -mmin +20 2> /dev/null)
+endif
 
 if [ -z "${old}" ]; then
 	exit 0
