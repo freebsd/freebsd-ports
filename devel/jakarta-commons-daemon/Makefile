@@ -34,6 +34,12 @@ INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar bin/jsvc
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		Does not configure
+.endif
+
 post-build:
 	cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all
 
@@ -42,4 +48,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/jsvc ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
