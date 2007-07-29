@@ -23,6 +23,7 @@ USE_WX=		2.6
 WX_COMPS=	python
 WX_UNICODE=	yes
 
+USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 NO_BUILD=	yes
