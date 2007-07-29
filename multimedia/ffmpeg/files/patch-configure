@@ -1,5 +1,5 @@
---- configure.orig	Sun May 27 12:31:02 2007
-+++ configure	Wed May 30 21:50:21 2007
+--- configure.orig	2007-07-08 13:47:15.000000000 -0400
++++ configure	2007-07-09 12:37:09.000000000 -0400
 @@ -210,11 +210,11 @@
  
  # "tr '[a-z]' '[A-Z]'" is a workaround for Solaris tr not grokking "tr a-z A-Z"
@@ -14,7 +14,7 @@
  }
  
  set_all(){
-@@ -1020,15 +1020,9 @@
+@@ -992,15 +992,9 @@
      enable fast_unaligned
    ;;
    x86_64|amd64)
@@ -32,30 +32,20 @@
    ;;
    # armv4l is a subset of armv[567]*l
    arm|armv[4567]*l)
-@@ -1781,14 +1775,14 @@
- # not all compilers support -Os
- test "$optimize" = "small" && check_cflags -Os
- 
--if enabled optimize; then
+@@ -1734,12 +1728,6 @@
+     check_cflags -Os            # not all compilers support -Os
+     optimize="small"
+ elif enabled optimize; then
 -    if test -n "`$cc -v 2>&1 | grep xlc`"; then
 -        add_cflags  "-O5"
 -        add_ldflags "-O5"
 -    else
 -        add_cflags "-O3"
 -    fi
--fi
-+#if enabled optimize; then
-+#    if test -n "`$cc -v 2>&1 | grep xlc`"; then
-+#        add_cflags  "-O5"
-+#        add_ldflags "-O5"
-+#    else
-+#        add_cflags "-O3"
-+#    fi
-+#fi
+ fi
  
  # PIC flags for shared library objects where they are needed
- if enabled shared; then
-@@ -1996,15 +1990,15 @@
+@@ -1927,15 +1915,15 @@
  if enabled shared; then
    echo "BUILD_SHARED=yes" >> config.mak
    echo "PIC=-fPIC -DPIC" >> config.mak
@@ -76,7 +66,7 @@
    echo "SWSVERSION=$sws_version" >> config.mak
    echo "SLIBNAME=${SLIBNAME}" >> config.mak
    echo "SLIBNAME_WITH_VERSION=${SLIBNAME_WITH_VERSION}" >> config.mak
-@@ -2039,7 +2033,7 @@
+@@ -1969,7 +1957,7 @@
  
  echo "SRC_PATH=\"$source_path\"" >> config.mak
  echo "SRC_PATH_BARE=$source_path" >> config.mak
@@ -85,7 +75,7 @@
  
  # Apparently it's not possible to portably echo a backslash.
  if enabled asmalign_pot; then
-@@ -2119,8 +2113,8 @@
+@@ -2047,8 +2035,8 @@
  Version: $version
  Requires: $requires
  Conflicts:
@@ -96,7 +86,7 @@
  EOF
  }
  
-@@ -2143,7 +2137,8 @@
+@@ -2071,7 +2059,8 @@
  Requires: $requires
  Conflicts:
  Libs: \${libdir}/${LIBPREF}${shortname}${LIBSUF} $libs

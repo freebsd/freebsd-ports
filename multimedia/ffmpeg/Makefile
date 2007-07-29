@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2007-05-30
-PORTREVISION=	2
+DISTVERSION=	2007-07-12
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -19,13 +18,16 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_SDL=	yes
+
+.include <bsd.port.pre.mk>
+
 CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--make="${GMAKE}" \
 		--disable-debug \
 		--enable-memalign-hack \
 		--enable-shared \
 		--enable-pp \
-		--extra-cflags="-fPIC -DPIC ${CFLAGS} -I${LOCALBASE}/include" \
+		--extra-cflags="${CFLAGS} -I${LOCALBASE}/include" \
 		--extra-ldflags="-L${LOCALBASE}/lib" \
 		--extra-libs="${PTHREAD_LIBS}" \
 		--enable-gpl \
@@ -37,7 +39,7 @@ SHLIB_VER=	1
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	yes
 
-FFMPEG_MAN1=	ffmpeg.1
+MAN1+=	ffmpeg.1 ffserver.1
 
 ##
 DOC_FILES=	COPYING Changelog README
@@ -46,12 +48,6 @@ DOC_DOCFILES=	TODO faq.html ffmpeg-doc.html \
 		ffplay-doc.html ffserver-doc.html \
 		hooks.html optimization.txt
 PORTDOCS=	*
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH}=="amd64"
-EXTRA_PATCHES=	${PATCHDIR}/amd64-patch
-.endif
 
 ## sse hardware vector support
 .if (defined(MACHINE_CPU) && ${MACHINE_CPU:Msse} == "sse")
@@ -92,14 +88,13 @@ LIB_DEPENDS+=		faac.0:${PORTSDIR}/audio/faac
 CONFIGURE_ARGS+=	--enable-libfaac
 .endif
 ## faad
-.ifdef(WITH_FAAD) || exists(${LOCALBASE}/lib/libfaad.so)
+.ifndef(WITHOUT_FAAD) || exists(${LOCALBASE}/lib/libfaad.so)
 LIB_DEPENDS+=		faad.0:${PORTSDIR}/audio/faad
 
 CONFIGURE_ARGS+=	--enable-libfaad \
 			--enable-libfaadbin
 .endif
 USE_RC_SUBR=		ffserver
-FFMPEG_MAN1+=		ffserver.1
 
 #### BROKEN LIST #####
 WITHOUT_THEORA=	yes
@@ -132,8 +127,6 @@ CONFIGURE_ARGS+=	--enable-libogg
 .ifdef(WITH_SDL) || ${HAVE_SDL:Msdl}
 USE_SDL+=	sdl
 
-FFMPEG_MAN1+=	ffplay.1
-
 PLIST_FILES+=	bin/ffplay
 .else
 CONFIGURE_ARGS+=	--disable-ffplay
@@ -156,7 +149,7 @@ FFMPEG_CFLAGS+=		-I${LOCALBASE}/include/vorbis
 .ifdef(WITH_X264) || exists(${LOCALBASE}/lib/libx264.so)
 LIB_DEPENDS+=		x264.50:${PORTSDIR}/multimedia/x264
 
-CONFIGURE_ARGS+=	--enable-x264
+CONFIGURE_ARGS+=	--enable-libx264
 .endif
 ## builtin vector, requires mmx
 .if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
@@ -179,11 +172,7 @@ WITHOUT_IMLIB2=	yes
 .ifdef(WITH_XVID) || exists(${LOCALBASE}/lib/libxvidcore.so)
 LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
 
-CONFIGURE_ARGS+=	--enable-xvid
-.endif
-
-.ifndef(NOPORTDOCS)
-MAN1=	${FFMPEG_MAN1}
+CONFIGURE_ARGS+=	--enable-libxvid
 .endif
 
 pre-everything::
@@ -239,7 +228,7 @@ pre-everything::
 
 post-patch:
 # Faad compat
-	@${REINPLACE_CMD} -e 's|faacD|NeAACD|' ${WRKSRC}/libavcodec/faad.c
+	@${REINPLACE_CMD} -e 's|faacD|NeAACD|' ${WRKSRC}/libavcodec/libfaad.c
 # {C,LD}FLAGS safeness
 # fix x264 math, use correct log base 2 from math(3)
 .if ${OSVERSION} <= 601000
@@ -312,10 +301,7 @@ post-configure:
 		-e 's|^(CONFIG_LIBTHEORA).*$$|\1=no|' \
 		${WRKSRC}/config.mak
 .endif
-# shared libraries PIC
-	@${REINPLACE_CMD} -E \
-		-e 's|^(PIC[[:space:]]*=.*)$$|\1 -fpic -fPIC -DPIC|' \
-		${WRKSRC}/config.mak
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf ${PREFIX}/etc/ffserver.conf-dist
 	if [ ! -f ${PREFIX}/etc/ffserver.conf ]; then \
