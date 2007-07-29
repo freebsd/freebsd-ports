@@ -2151,6 +2151,7 @@ drupal5-google_analytics	ports/www/drupal5-google_analytics
 drupal5-gsitemap	ports/www/drupal5-gsitemap
 drupal5-i18n	ports/www/drupal5-i18n
 drupal5-nice_menus	ports/www/drupal5-nice_menus
+drupal5-simplenews	ports/www/drupal5-simplenews
 drupal5-taxonomy_access	ports/www/drupal5-taxonomy_access
 drupal5-taxonomy_ticker	ports/www/drupal5-taxonomy_ticker
 drupal5-tinymce	ports/www/drupal5-tinymce
