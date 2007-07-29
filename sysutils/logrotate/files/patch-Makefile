@@ -1,5 +1,5 @@
 --- logrotate-3.7-orig/Makefile	Wed Oct 20 19:07:27 2004
-+++ logrotate-3.7/Makefile	Wed Oct 20 19:07:42 2004
++++ logrotate-3.7.1/Makefile	Wed Oct 20 19:07:42 2004
 @@ -1,5 +1,4 @@
  VERSION = $(shell awk '/Version:/ { print $$2 }' logrotate.spec)
 -CVSROOT = $(shell cat CVS/Root)
