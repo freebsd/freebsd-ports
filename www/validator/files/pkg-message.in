@@ -11,7 +11,11 @@ A sample validator.conf has been installed at
 You need to copy this file to /etc/w3c/validator.conf and then edit it to
 your liking.  If you have used a previous version of the validator, you
 will need to manually check if anything new has been added to the W3C's
-validator.conf and edit your own validator.conf accordingly.
+validator.conf and edit your own validator.conf accordingly.  If you would
+prefer not to put the validator.conf file into /etc, you can place
+it where you would like and set the environment variable W3C_VALIDATOR_CFG
+to the complete path (including filename) of validator.conf.  See below
+for an example of how to set this environment variable in Apache.
 
 # Example httpd.conf snippet for W3C Markup Validation Service
 # Note that this is not a complete server configuration file, but contains
@@ -23,7 +27,7 @@ validator.conf and edit your own validator.conf accordingly.
 #       You are also required to have mod_include active for the validator
 #       pages to show up as they should.
 #
-# The /w3c-validator loaction can be changed to whatever you want it to be,
+# The /w3c-validator location can be changed to whatever you want it to be,
 # but make sure you change it for both of these ScriptAlias commands as well
 # as the Alias command under them.
 
@@ -36,11 +40,14 @@ ScriptAliasMatch /w3c-validator/feedback(\.html)? \
 
 # This is the directory where you have the validator's *.html, *.css etc files.
 
-Alias /w3c-validator/   %%PREFIX%%/www/validator/htdocs/
+Alias /w3c-validator/  %%PREFIX%%/www/validator/htdocs/
 <Directory %%PREFIX%%/www/validator/htdocs/>
-  Options               IncludesNOEXEC Indexes MultiViews
-  AllowOverride         None
-  AddHandler            server-parsed .html
-  AddCharset            utf-8         .html
+  Options        IncludesNOEXEC Indexes MultiViews
+  AllowOverride  None
+  AddHandler     server-parsed .html
+  AddCharset     utf-8         .html
+# If you would like to move the location of validator.conf, set the following,
+#  making sure to change the path if you don't use this path.
+# SetEnv         %%PREFIX%%/www/validator/htdocs/config/validator.conf
 </Directory>
 -------------------------------------------------------------------------------

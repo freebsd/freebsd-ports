@@ -1,7 +1,7 @@
 #
 # Main Configuration File for the W3C Markup Validation Service.
 #
-# $Id: validator.conf,v 1.24 2005/07/08 08:31:09 ot Exp $
+# $Id: validator.conf,v 1.28 2007/03/14 06:33:35 ot Exp $
 #
 # See 'perldoc Config::General' for the syntax, and be aware that the
 # 'SplitPolicy' is 'equalsign', ie. keys and values are separated by '\s*=\s*',
@@ -27,14 +27,13 @@
   # Location of template files
   Templates = $Base/share/templates
 
+  # configuration file for HTML Tidy Module, if available
+  TidyConf = $Base/htdocs/config/tidy.conf
+
   <SGML>
     #
     # The SGML Library Path.
     Library = $Base/htdocs/sgml-lib
-
-    #
-    # The SGML Parser to use.  Defaults to /usr/bin/onsgmls.
-    Parser = %%LOCALBASE%%/bin/onsgmls
   </SGML>
 </Paths>
 
@@ -52,8 +51,9 @@ Enable Debug = no
 Allow Private IPs = no
 
 #
-# Whether the (highly experimental!) SOAP support should be enabled.
-Enable SOAP = no
+# Enable (or not) the web service API for this validator
+# see http://validator.w3.org/docs/api.html
+Enable SOAP = yes
 
 #
 # Whether the validator will check its own output.
@@ -79,6 +79,10 @@ Home Page = http://validator.w3.org/
 #
 # Base URI for the Element Reference.
 Element Ref URI = http://www.htmlhelp.com/reference/html40/
+
+# Localization
+# only English available for now
+Languages = en
 
 
 
