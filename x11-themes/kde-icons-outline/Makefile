@@ -14,4 +14,6 @@ COMMENT=	KDE Outline iconset
 
 WRKSRC=		"${WRKDIR}/Outline"
 
+BROKEN=		Unfetchable
+
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
