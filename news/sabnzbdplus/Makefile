@@ -7,6 +7,7 @@
 
 PORTNAME=	sabnzbd
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sabnzbd
@@ -17,7 +18,7 @@ COMMENT=	A web-interface based binary newsgrabber in python, with nzb support
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
-		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy \
+		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy-old \
 		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils \
 		${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
 
