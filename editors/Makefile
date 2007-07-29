@@ -51,6 +51,7 @@
     SUBDIR += fb
     SUBDIR += flim
     SUBDIR += flim-emacs20
+    SUBDIR += flim-emacs21
     SUBDIR += flim-xemacs21-mule
     SUBDIR += flim113
     SUBDIR += fpc-ide
