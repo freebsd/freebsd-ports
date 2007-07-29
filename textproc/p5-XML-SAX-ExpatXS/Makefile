@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-SAX-ExpatXS
-PORTVERSION=	1.20
+PORTVERSION=	1.31
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -23,6 +23,7 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	EXPATLIBPATH=${LOCALBASE}/lib \
 		EXPATINCPATH=${LOCALBASE}/include </dev/null
 
-MAN3=		XML::SAX::ExpatXS.3 XML::SAX::ExpatXS::Encoding.3
+MAN3=		XML::SAX::ExpatXS.3 XML::SAX::ExpatXS::Encoding.3 \
+		XML::SAX::ExpatXS::Preload.3
 
 .include <bsd.port.mk>

@@ -17,6 +17,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/x-sjis-jdk117.enc
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/x-sjis-jisx0221.enc
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/x-sjis-unicode.enc
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Preload.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/ExpatXS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/ExpatXS/ExpatXS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/ExpatXS/ExpatXS.so
