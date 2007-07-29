@@ -1,17 +1,18 @@
 # New ports collection makefile for:    openfire
 # Date created:                         2006-11-12
-# Whom:                                 Nikolay Pavlov <quetzal@zone3000.net>
+# Whom:                                 Nikolay Pavlov <qpadla@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	openfire
 PORTVERSION=	3.3.2
+PORTREVISION=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	quetzal@zone3000.net
+MAINTAINER=	qpadla@gmail.com
 COMMENT=	Openfire (formerly Wildfire) is an enterprise instant messaging server
 
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
@@ -35,19 +36,13 @@ VARDB=		/var/db/openfire
 PUSER=		openfire
 PGROUP=		${PUSER}
 
-MLINKS=		${VARLOG} ${DATADIR}/logs \
-		${VARDB} ${DATADIR}/embedded-db \
-		${ETCDIR} ${DATADIR}/conf \
-		${ETCDIR} ${DATADIR}/resources/security
-
 do-install:
 
-	(cd ${INSTALL_WRKSRC}/lib && \
-	${INSTALL_DATA} -m 744 *.jar ${JAVAJARDIR});
+	(cd ${INSTALL_WRKSRC}/lib && ${INSTALL} -m 744 *.jar ${JAVAJARDIR})
 
-	${MKDIR} ${DATADIR};
-	${MKDIR} ${VARLOG};
-	${MKDIR} ${VARDB};
+	${MKDIR} ${DATADIR}
+	${MKDIR} ${VARLOG}
+	${MKDIR} ${VARDB}
 
 	(cd ${INSTALL_WRKSRC}/resources && ${FIND} . \! -path ./security\* \
 	| ${CPIO} -pvdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/resources)
@@ -56,38 +51,48 @@ do-install:
 	| ${CPIO} -pvdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/plugins)
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR};
-	(cd ${WRKSRC} && ${INSTALL_DATA} -o ${SHAREOWN} -g ${SHAREGRP} \
-	LICENSE.html README.html changelog.html ${DOCSDIR});
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} \
+	LICENSE.html README.html changelog.html ${DOCSDIR})
 
-	(cd ${WRKSRC}/documentation/docs && ${FIND} . \
+	(cd ${WRKSRC}/documentation/docs && ${FIND} . \! -path ./javadoc\* \
 	| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1 )
 .endif
 
 post-install:
-	${MKDIR} ${EXAMPLESDIR};
-	${CP} -p ${INSTALL_WRKSRC}/conf/openfire.xml ${EXAMPLESDIR}/openfire.xml
-	${CP} -p ${INSTALL_WRKSRC}/resources/security/truststore \
+
+	${LN} -sf ${VARLOG} ${DATADIR}/logs
+	${LN} -sf ${VARDB}  ${DATADIR}/embedded-db
+	${LN} -sf ${ETCDIR} ${DATADIR}/conf
+	${LN} -sf ${ETCDIR} ${DATADIR}/resources/security
+
+	${MKDIR} ${EXAMPLESDIR}
+
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/conf/openfire.xml \
+		${EXAMPLESDIR}/openfire.xml
+	${INSTALL} -m 600 ${INSTALL_WRKSRC}/resources/security/truststore \
 		${EXAMPLESDIR}/truststore
-	${CP} -p ${INSTALL_WRKSRC}/resources/security/keystore \
+	${INSTALL} -m 600 ${INSTALL_WRKSRC}/resources/security/keystore \
 		${EXAMPLESDIR}/keystore
 	@if [ ! -f ${ETCDIR}/openfire.xml ]; then \
 		${MKDIR} ${ETCDIR}; \
-		${CP} -p ${INSTALL_WRKSRC}/conf/openfire.xml ${ETCDIR}/openfire.xml; \
+		${INSTALL} -m 644 ${INSTALL_WRKSRC}/conf/openfire.xml \
+		${ETCDIR}/openfire.xml; \
 	fi
 	@if [ ! -f ${ETCDIR}/keystore ]; then \
-		${CP} -p ${INSTALL_WRKSRC}/resources/security/keystore \
-			${ETCDIR}/keystore; \
+		${INSTALL} -m 600 ${INSTALL_WRKSRC}/resources/security/keystore \
+		${ETCDIR}/keystore; \
 	fi
 	@if [ ! -f ${ETCDIR}/truststore ]; then \
-		${CP} -p ${INSTALL_WRKSRC}/resources/security/truststore \
-			${ETCDIR}/truststore; \
+		${INSTALL} -m 600 ${INSTALL_WRKSRC}/resources/security/truststore \
+		${ETCDIR}/truststore; \
 	fi
-	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	${CHOWN} -R ${PUSER}:${PGROUP} ${ETCDIR}
-	${CHOWN} -R ${PUSER}:${PGROUP} ${VARDB}
-	${CHOWN} -R ${PUSER}:${PGROUP} ${VARLOG}
-	${CHOWN} -R ${PUSER}:${PGROUP} ${DATADIR}
+	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+	${CHOWN} -Rh ${PUSER}:${PGROUP} ${ETCDIR}
+	${CHOWN} -Rh ${PUSER}:${PGROUP} ${VARDB}
+	${CHOWN} -Rh ${PUSER}:${PGROUP} ${VARLOG}
+	${CHOWN} -Rh ${PUSER}:${PGROUP} ${DATADIR}
 
 	@${ECHO_CMD} "===> post-installation information for ${PKGNAME}:"
 	@${ECHO_CMD} ""

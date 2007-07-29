@@ -1,17 +1,15 @@
-@unexec %D/etc/rc.d/openfire stop > /dev/null 2>&1 || true
-@unexec if cmp -s %D/etc/openfire/openfire.xml %D/%%EXAMPLESDIR%%/openfire.xml; then rm -f %D/etc/openfire/openfire.xml; else echo If permanently deleting this package, %%PREFIX%%/etc/openfire/openfire.xml must be removed manually; fi
-@unexec if cmp -s %D/etc/openfire/keystore %D/%%EXAMPLESDIR%%/keystore; then rm -f %D/etc/openfire/keystore; else echo If permanently deleting this package, %%PREFIX%%/etc/openfire/keystore must be removed manually; fi
-@unexec if cmp -s %D/etc/openfire/truststore %D/%%EXAMPLESDIR%%/truststore; then rm -f %D/etc/openfire/truststore; else echo If permanently deleting this package, %%PREFIX%%/etc/openfire/truststore must be removed manually; fi
-@unexec [ -d %D/share/doc/openfire/javadoc ] && rm -rf %D/share/doc/openfire/javadoc
+@unexec if cmp -s %D/%%ETCDIR%%/openfire.xml %D/%%EXAMPLESDIR%%/openfire.xml; then rm -f %D/%%ETCDIR%%/openfire.xml; else echo If permanently deleting this package, %D/%%ETCDIR%%/openfire.xml must be removed manually; fi
+@unexec if cmp -s %D/%%ETCDIR%%/keystore %D/%%EXAMPLESDIR%%/keystore; then rm -f %D/%%ETCDIR%%/keystore; else echo If permanently deleting this package, %D/%%ETCDIR%%/keystore must be removed manually; fi
+@unexec if cmp -s %D/%%ETCDIR%%/truststore %D/%%EXAMPLESDIR%%/truststore; then rm -f %D/%%ETCDIR%%/truststore; else echo If permanently deleting this package, %D/%%ETCDIR%%/truststore must be removed manually; fi
 %%EXAMPLESDIR%%/openfire.xml
 %%EXAMPLESDIR%%/keystore
 %%EXAMPLESDIR%%/truststore
 @exec [ -d /var/log/openfire ] || mkdir -p  /var/log/openfire && chown openfire:openfire /var/log/openfire
 @exec [ -d /var/db/openfire ] || mkdir -p  /var/db/openfire && chown openfire:openfire /var/db/openfire
-@exec [ -d %D/etc/openfire ] || mkdir -p  %D/etc/openfire && chown openfire:openfire %D/etc/openfire
-@exec [ -f %D/etc/openfire/openfire.xml ] || cp %%EXAMPLESDIR%%/openfire.xml %D/etc/openfire/openfire.xml && chown openfire:openfire %D/etc/openfire/openfire.xml
-@exec [ -f %D/etc/openfire/keystore ] || cp %%EXAMPLESDIR%%/keystore %D/etc/openfire/keystore && chown openfire:openfire %D/etc/openfire/keystore
-@exec [ -f %D/etc/openfire/truststore ] || cp %%EXAMPLESDIR%%/truststore %D/etc/openfire/truststore && chown openfire:openfire %D/etc/openfire/truststore
+@exec [ -d %D/%%ETCDIR%% ] || mkdir -p %D/%%ETCDIR%% && chown openfire:openfire %D/%%ETCDIR%%
+@exec [ -f %D/%%ETCDIR%%/openfire.xml ] || install -m 644 -o openfire -g openfire %D/%%EXAMPLESDIR%%/openfire.xml %D/%%ETCDIR%%/openfire.xml
+@exec [ -f %D/%%ETCDIR%%/keystore ] || install -m 600 -o openfire -g openfire  %D/%%EXAMPLESDIR%%/keystore %D/%%ETCDIR%%/keystore
+@exec [ -f %D/%%ETCDIR%%/truststore ] || install -m 600 -o openfire -g openfire %D/%%EXAMPLESDIR%%/truststore %D/%%ETCDIR%%/truststore
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.html
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/changelog.html
@@ -39,278 +37,282 @@
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/translator-guide.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade-guide.html
-share/java/classes/activation.jar
-share/java/classes/bouncycastle.jar
-share/java/classes/commons-el.jar
-share/java/classes/hsqldb.jar
-share/java/classes/jasper-compiler.jar
-share/java/classes/jasper-runtime.jar
-share/java/classes/jdic.jar
-share/java/classes/jtds.jar
-share/java/classes/mail.jar
-share/java/classes/mysql.jar
-share/java/classes/postgres.jar
-share/java/classes/servlet.jar
-share/java/classes/startup.jar
-share/java/classes/openfire.jar
-share/java/openfire/plugins/admin/plugin.xml
-share/java/openfire/plugins/admin/webapp/WEB-INF/admin.tld
-share/java/openfire/plugins/admin/webapp/WEB-INF/decorators.xml
-share/java/openfire/plugins/admin/webapp/WEB-INF/dwr.xml
-share/java/openfire/plugins/admin/webapp/WEB-INF/lib/admin-jsp.jar
-share/java/openfire/plugins/admin/webapp/WEB-INF/lib/dwr.jar
-share/java/openfire/plugins/admin/webapp/WEB-INF/sitemesh.xml
-share/java/openfire/plugins/admin/webapp/WEB-INF/web.xml
-share/java/openfire/plugins/admin/webapp/images/clearspace.gif
-share/java/openfire/plugins/admin/webapp/images/certificate_warning-16x16.png
-share/java/openfire/plugins/admin/webapp/images/certificate_ok-16x16.png
-share/java/openfire/plugins/admin/webapp/images/add-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/aim.gif
-share/java/openfire/plugins/admin/webapp/images/arrow_right_blue.gif
-share/java/openfire/plugins/admin/webapp/images/blank.gif
-share/java/openfire/plugins/admin/webapp/images/both_32x16.gif
-share/java/openfire/plugins/admin/webapp/images/bullet-green-14x14.gif
-share/java/openfire/plugins/admin/webapp/images/bullet-red-14x14.gif
-share/java/openfire/plugins/admin/webapp/images/bullet-yellow-14x14.gif
-share/java/openfire/plugins/admin/webapp/images/bullet.gif
-share/java/openfire/plugins/admin/webapp/images/cache-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/check.gif
-share/java/openfire/plugins/admin/webapp/images/connection-manager_16x16.gif
-share/java/openfire/plugins/admin/webapp/images/delete-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/doc-changelog-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/doc-down-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/doc-readme-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/edit-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/error-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/forbidden-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/greenlight-24x24.gif
-share/java/openfire/plugins/admin/webapp/images/header-background_new.gif
-share/java/openfire/plugins/admin/webapp/images/header-help_new.gif
-share/java/openfire/plugins/admin/webapp/images/header-title_new.gif
-share/java/openfire/plugins/admin/webapp/images/icon_update-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/icon_warning-small.gif
-share/java/openfire/plugins/admin/webapp/images/icq.gif
-share/java/openfire/plugins/admin/webapp/images/im_available.gif
-share/java/openfire/plugins/admin/webapp/images/im_away.gif
-share/java/openfire/plugins/admin/webapp/images/im_dnd.gif
-share/java/openfire/plugins/admin/webapp/images/im_free_chat.gif
-share/java/openfire/plugins/admin/webapp/images/incoming_32x16.gif
-share/java/openfire/plugins/admin/webapp/images/info-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/language_zh_CN.gif
-share/java/openfire/plugins/admin/webapp/images/lock.gif
-share/java/openfire/plugins/admin/webapp/images/login_background.png
-share/java/openfire/plugins/admin/webapp/images/login_boxbg.gif
-share/java/openfire/plugins/admin/webapp/images/login_header.gif
-share/java/openfire/plugins/admin/webapp/images/login_logo.gif
-share/java/openfire/plugins/admin/webapp/images/mark-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/msn.gif
-share/java/openfire/plugins/admin/webapp/images/outgoing_32x16.gif
-share/java/openfire/plugins/admin/webapp/images/page-background_new.gif
-share/java/openfire/plugins/admin/webapp/images/percent-bar-left.gif
-share/java/openfire/plugins/admin/webapp/images/percent-bar-used-high.gif
-share/java/openfire/plugins/admin/webapp/images/percent-bar-used-low.gif
-share/java/openfire/plugins/admin/webapp/images/plugin-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/redlight-24x24.gif
-share/java/openfire/plugins/admin/webapp/images/refresh-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/server_16x16.gif
-share/java/openfire/plugins/admin/webapp/images/setup-header.png
-share/java/openfire/plugins/admin/webapp/images/setup-sidebar-bottom.gif
-share/java/openfire/plugins/admin/webapp/images/setup-sidebar-top.gif
-share/java/openfire/plugins/admin/webapp/images/sidebar_top.gif
-share/java/openfire/plugins/admin/webapp/images/sort_ascending.gif
-share/java/openfire/plugins/admin/webapp/images/sort_descending.gif
-share/java/openfire/plugins/admin/webapp/images/success-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/tape.gif
-share/java/openfire/plugins/admin/webapp/images/user-clear-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/user-green-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/user-red-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/user-yellow-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/user.gif
-share/java/openfire/plugins/admin/webapp/images/warning-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/working-16x16.gif
-share/java/openfire/plugins/admin/webapp/images/x.gif
-share/java/openfire/plugins/admin/webapp/images/yahoo.gif
-share/java/openfire/plugins/admin/webapp/images/setup_btn_bg-orange.gif
-share/java/openfire/plugins/admin/webapp/images/setup_sidebar_progress0.gif
-share/java/openfire/plugins/admin/webapp/images/setup_sidebar_progress5.gif
-share/java/openfire/plugins/admin/webapp/images/setup_btn_gearplay.gif
-share/java/openfire/plugins/admin/webapp/images/setup_header_logo.gif
-share/java/openfire/plugins/admin/webapp/images/aim-gray.gif
-share/java/openfire/plugins/admin/webapp/images/im_unavailable.gif
-share/java/openfire/plugins/admin/webapp/images/setup_btn_bg-grey.gif
-share/java/openfire/plugins/admin/webapp/images/setup_btn_closetestx.gif
-share/java/openfire/plugins/admin/webapp/images/setup_helpicon.gif
-share/java/openfire/plugins/admin/webapp/images/setup_sidebar_progress4.gif
-share/java/openfire/plugins/admin/webapp/images/setup_nextprofile.gif
-share/java/openfire/plugins/admin/webapp/images/irc-gray.gif
-share/java/openfire/plugins/admin/webapp/images/setup_sidebar_check.gif
-share/java/openfire/plugins/admin/webapp/images/irc.gif
-share/java/openfire/plugins/admin/webapp/images/setup_sidebar_progress3.gif
-share/java/openfire/plugins/admin/webapp/images/msn-gray.gif
-share/java/openfire/plugins/admin/webapp/images/enterprise-info-btn.gif
-share/java/openfire/plugins/admin/webapp/images/wait24trans.gif
-share/java/openfire/plugins/admin/webapp/images/setup_btn_bg-bigblue.gif
-share/java/openfire/plugins/admin/webapp/images/yahoo-gray.gif
-share/java/openfire/plugins/admin/webapp/images/setup_sidebar_bg-top.gif
-share/java/openfire/plugins/admin/webapp/images/setup_language_zh_CN.gif
-share/java/openfire/plugins/admin/webapp/images/twisty_closed_9x9.gif
-share/java/openfire/plugins/admin/webapp/images/setup_sidebar_progress2.gif
-share/java/openfire/plugins/admin/webapp/images/enterprise.png
-share/java/openfire/plugins/admin/webapp/images/twisty_inactive_9x9.gif
-share/java/openfire/plugins/admin/webapp/images/icq-gray.gif
-share/java/openfire/plugins/admin/webapp/images/setup_contentbox_bg.gif
-share/java/openfire/plugins/admin/webapp/images/twisty_opened_9x9.gif
-share/java/openfire/plugins/admin/webapp/images/setup_sidebar_bg.gif
-share/java/openfire/plugins/admin/webapp/images/setup_sidebar_progress1.gif
-share/java/openfire/plugins/admin/webapp/images/setup_header_bg.gif
-share/java/openfire/plugins/admin/webapp/index.html
-share/java/openfire/plugins/admin/webapp/favicon.ico
-share/java/openfire/plugins/admin/webapp/js/behaviour.js
-share/java/openfire/plugins/admin/webapp/js/builder.js
-share/java/openfire/plugins/admin/webapp/js/controls.js
-share/java/openfire/plugins/admin/webapp/js/cookies.js
-share/java/openfire/plugins/admin/webapp/js/dragdrop.js
-share/java/openfire/plugins/admin/webapp/js/effects.js
-share/java/openfire/plugins/admin/webapp/js/jscalendar/calendar-setup.js
-share/java/openfire/plugins/admin/webapp/js/jscalendar/calendar-win2k-1.css
-share/java/openfire/plugins/admin/webapp/js/jscalendar/calendar-win2k-cold-1.css
-share/java/openfire/plugins/admin/webapp/js/jscalendar/calendar.js
-share/java/openfire/plugins/admin/webapp/js/pngfix.js
-share/java/openfire/plugins/admin/webapp/js/prototype.js
-share/java/openfire/plugins/admin/webapp/js/scriptaculous.js
-share/java/openfire/plugins/admin/webapp/js/slider.js
-share/java/openfire/plugins/admin/webapp/js/setup.js
-share/java/openfire/plugins/admin/webapp/js/lightbox.js
-share/java/openfire/plugins/admin/webapp/js/unittest.js
-share/java/openfire/plugins/admin/webapp/js/tooltips/domTT.js
-share/java/openfire/plugins/admin/webapp/js/tooltips/fadomatic.js
-share/java/openfire/plugins/admin/webapp/js/tooltips/domLib.js
-share/java/openfire/plugins/admin/webapp/js/tooltips/domTT_drag.js
-share/java/openfire/plugins/admin/webapp/setup/setup-style.css
-share/java/openfire/plugins/admin/webapp/style/global.css
-share/java/openfire/plugins/admin/webapp/style/ldap.css
-share/java/openfire/plugins/admin/webapp/style/lightbox.css
-share/java/openfire/plugins/admin/webapp/style/setup.css
-share/java/openfire/plugins/admin/webapp/style/login.css
-share/java/openfire/resources/database/upgrade/1/openfire_db2.sql
-share/java/openfire/resources/database/upgrade/1/openfire_hsqldb.sql
-share/java/openfire/resources/database/upgrade/1/openfire_mysql.sql
-share/java/openfire/resources/database/upgrade/1/openfire_oracle.sql
-share/java/openfire/resources/database/upgrade/1/openfire_postgresql.sql
-share/java/openfire/resources/database/upgrade/1/openfire_sqlserver.sql
-share/java/openfire/resources/database/upgrade/10/openfire_db2.sql
-share/java/openfire/resources/database/upgrade/10/openfire_hsqldb.sql
-share/java/openfire/resources/database/upgrade/10/openfire_mysql.sql
-share/java/openfire/resources/database/upgrade/10/openfire_oracle.sql
-share/java/openfire/resources/database/upgrade/10/openfire_postgresql.sql
-share/java/openfire/resources/database/upgrade/10/openfire_sqlserver.sql
-share/java/openfire/resources/database/upgrade/10/openfire_sybase.sql
-share/java/openfire/resources/database/upgrade/11/openfire_sybase.sql
-share/java/openfire/resources/database/upgrade/11/openfire_mysql.sql
-share/java/openfire/resources/database/upgrade/11/openfire_db2.sql
-share/java/openfire/resources/database/upgrade/11/openfire_postgresql.sql
-share/java/openfire/resources/database/upgrade/11/openfire_hsqldb.sql
-share/java/openfire/resources/database/upgrade/11/openfire_oracle.sql
-share/java/openfire/resources/database/upgrade/11/openfire_sqlserver.sql
-share/java/openfire/resources/database/upgrade/2/openfire_db2.sql
-share/java/openfire/resources/database/upgrade/2/openfire_hsqldb.sql
-share/java/openfire/resources/database/upgrade/2/openfire_mysql.sql
-share/java/openfire/resources/database/upgrade/2/openfire_oracle.sql
-share/java/openfire/resources/database/upgrade/2/openfire_postgresql.sql
-share/java/openfire/resources/database/upgrade/2/openfire_sqlserver.sql
-share/java/openfire/resources/database/upgrade/4/openfire_db2.sql
-share/java/openfire/resources/database/upgrade/4/openfire_hsqldb.sql
-share/java/openfire/resources/database/upgrade/4/openfire_mysql.sql
-share/java/openfire/resources/database/upgrade/4/openfire_oracle.sql
-share/java/openfire/resources/database/upgrade/4/openfire_postgresql.sql
-share/java/openfire/resources/database/upgrade/4/openfire_sqlserver.sql
-share/java/openfire/resources/database/upgrade/4/openfire_sybase.sql
-share/java/openfire/resources/database/upgrade/5/openfire_db2.sql
-share/java/openfire/resources/database/upgrade/5/openfire_hsqldb.sql
-share/java/openfire/resources/database/upgrade/5/openfire_mysql.sql
-share/java/openfire/resources/database/upgrade/5/openfire_oracle.sql
-share/java/openfire/resources/database/upgrade/5/openfire_postgresql.sql
-share/java/openfire/resources/database/upgrade/5/openfire_sqlserver.sql
-share/java/openfire/resources/database/upgrade/5/openfire_sybase.sql
-share/java/openfire/resources/database/upgrade/6/openfire_db2.sql
-share/java/openfire/resources/database/upgrade/6/openfire_hsqldb.sql
-share/java/openfire/resources/database/upgrade/6/openfire_mysql.sql
-share/java/openfire/resources/database/upgrade/6/openfire_oracle.sql
-share/java/openfire/resources/database/upgrade/6/openfire_postgresql.sql
-share/java/openfire/resources/database/upgrade/6/openfire_sqlserver.sql
-share/java/openfire/resources/database/upgrade/6/openfire_sybase.sql
-share/java/openfire/resources/database/upgrade/7/openfire_db2.sql
-share/java/openfire/resources/database/upgrade/7/openfire_hsqldb.sql
-share/java/openfire/resources/database/upgrade/7/openfire_mysql.sql
-share/java/openfire/resources/database/upgrade/7/openfire_oracle.sql
-share/java/openfire/resources/database/upgrade/7/openfire_postgresql.sql
-share/java/openfire/resources/database/upgrade/7/openfire_sqlserver.sql
-share/java/openfire/resources/database/upgrade/7/openfire_sybase.sql
-share/java/openfire/resources/database/upgrade/8/openfire_db2.sql
-share/java/openfire/resources/database/upgrade/8/openfire_hsqldb.sql
-share/java/openfire/resources/database/upgrade/8/openfire_mysql.sql
-share/java/openfire/resources/database/upgrade/8/openfire_oracle.sql
-share/java/openfire/resources/database/upgrade/8/openfire_postgresql.sql
-share/java/openfire/resources/database/upgrade/8/openfire_sqlserver.sql
-share/java/openfire/resources/database/upgrade/8/openfire_sybase.sql
-share/java/openfire/resources/database/upgrade/9/openfire_db2.sql
-share/java/openfire/resources/database/upgrade/9/openfire_hsqldb.sql
-share/java/openfire/resources/database/upgrade/9/openfire_mysql.sql
-share/java/openfire/resources/database/upgrade/9/openfire_oracle.sql
-share/java/openfire/resources/database/upgrade/9/openfire_postgresql.sql
-share/java/openfire/resources/database/upgrade/9/openfire_sqlserver.sql
-share/java/openfire/resources/database/upgrade/9/openfire_sybase.sql
-share/java/openfire/resources/database/openfire_db2.sql
-share/java/openfire/resources/database/openfire_hsqldb.sql
-share/java/openfire/resources/database/openfire_mysql.sql
-share/java/openfire/resources/database/openfire_oracle.sql
-share/java/openfire/resources/database/openfire_postgresql.sql
-share/java/openfire/resources/database/openfire_sqlserver.sql
-share/java/openfire/resources/database/openfire_sybase.sql
-share/java/openfire/resources/nativeAuth/linux-i386/libshaj.so
-share/java/openfire/resources/nativeAuth/osx-ppc/libshaj.jnilib
-share/java/openfire/resources/nativeAuth/solaris-sparc/libshaj.so
-share/java/openfire/resources/nativeAuth/win32-x86/shaj.dll
-share/java/openfire/resources/spank/WEB-INF/web.xml
-share/java/openfire/resources/spank/index.html
+%%JAVAJARDIR%%/activation.jar
+%%JAVAJARDIR%%/bouncycastle.jar
+%%JAVAJARDIR%%/commons-el.jar
+%%JAVAJARDIR%%/hsqldb.jar
+%%JAVAJARDIR%%/jasper-compiler.jar
+%%JAVAJARDIR%%/jasper-runtime.jar
+%%JAVAJARDIR%%/jdic.jar
+%%JAVAJARDIR%%/jtds.jar
+%%JAVAJARDIR%%/mail.jar
+%%JAVAJARDIR%%/mysql.jar
+%%JAVAJARDIR%%/postgres.jar
+%%JAVAJARDIR%%/servlet.jar
+%%JAVAJARDIR%%/startup.jar
+%%JAVAJARDIR%%/openfire.jar
+%%DATADIR%%/plugins/admin/plugin.xml
+%%DATADIR%%/plugins/admin/webapp/WEB-INF/admin.tld
+%%DATADIR%%/plugins/admin/webapp/WEB-INF/decorators.xml
+%%DATADIR%%/plugins/admin/webapp/WEB-INF/dwr.xml
+%%DATADIR%%/plugins/admin/webapp/WEB-INF/lib/admin-jsp.jar
+%%DATADIR%%/plugins/admin/webapp/WEB-INF/lib/dwr.jar
+%%DATADIR%%/plugins/admin/webapp/WEB-INF/sitemesh.xml
+%%DATADIR%%/plugins/admin/webapp/WEB-INF/web.xml
+%%DATADIR%%/plugins/admin/webapp/images/clearspace.gif
+%%DATADIR%%/plugins/admin/webapp/images/certificate_warning-16x16.png
+%%DATADIR%%/plugins/admin/webapp/images/certificate_ok-16x16.png
+%%DATADIR%%/plugins/admin/webapp/images/add-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/aim.gif
+%%DATADIR%%/plugins/admin/webapp/images/arrow_right_blue.gif
+%%DATADIR%%/plugins/admin/webapp/images/blank.gif
+%%DATADIR%%/plugins/admin/webapp/images/both_32x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/bullet-green-14x14.gif
+%%DATADIR%%/plugins/admin/webapp/images/bullet-red-14x14.gif
+%%DATADIR%%/plugins/admin/webapp/images/bullet-yellow-14x14.gif
+%%DATADIR%%/plugins/admin/webapp/images/bullet.gif
+%%DATADIR%%/plugins/admin/webapp/images/cache-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/check.gif
+%%DATADIR%%/plugins/admin/webapp/images/connection-manager_16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/delete-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/doc-changelog-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/doc-down-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/doc-readme-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/edit-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/error-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/forbidden-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/greenlight-24x24.gif
+%%DATADIR%%/plugins/admin/webapp/images/header-background_new.gif
+%%DATADIR%%/plugins/admin/webapp/images/header-help_new.gif
+%%DATADIR%%/plugins/admin/webapp/images/header-title_new.gif
+%%DATADIR%%/plugins/admin/webapp/images/icon_update-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/icon_warning-small.gif
+%%DATADIR%%/plugins/admin/webapp/images/icq.gif
+%%DATADIR%%/plugins/admin/webapp/images/im_available.gif
+%%DATADIR%%/plugins/admin/webapp/images/im_away.gif
+%%DATADIR%%/plugins/admin/webapp/images/im_dnd.gif
+%%DATADIR%%/plugins/admin/webapp/images/im_free_chat.gif
+%%DATADIR%%/plugins/admin/webapp/images/incoming_32x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/info-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/language_zh_CN.gif
+%%DATADIR%%/plugins/admin/webapp/images/lock.gif
+%%DATADIR%%/plugins/admin/webapp/images/login_background.png
+%%DATADIR%%/plugins/admin/webapp/images/login_boxbg.gif
+%%DATADIR%%/plugins/admin/webapp/images/login_header.gif
+%%DATADIR%%/plugins/admin/webapp/images/login_logo.gif
+%%DATADIR%%/plugins/admin/webapp/images/mark-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/msn.gif
+%%DATADIR%%/plugins/admin/webapp/images/outgoing_32x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/page-background_new.gif
+%%DATADIR%%/plugins/admin/webapp/images/percent-bar-left.gif
+%%DATADIR%%/plugins/admin/webapp/images/percent-bar-used-high.gif
+%%DATADIR%%/plugins/admin/webapp/images/percent-bar-used-low.gif
+%%DATADIR%%/plugins/admin/webapp/images/plugin-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/redlight-24x24.gif
+%%DATADIR%%/plugins/admin/webapp/images/refresh-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/server_16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup-header.png
+%%DATADIR%%/plugins/admin/webapp/images/setup-sidebar-bottom.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup-sidebar-top.gif
+%%DATADIR%%/plugins/admin/webapp/images/sidebar_top.gif
+%%DATADIR%%/plugins/admin/webapp/images/sort_ascending.gif
+%%DATADIR%%/plugins/admin/webapp/images/sort_descending.gif
+%%DATADIR%%/plugins/admin/webapp/images/success-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/tape.gif
+%%DATADIR%%/plugins/admin/webapp/images/user-clear-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/user-green-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/user-red-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/user-yellow-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/user.gif
+%%DATADIR%%/plugins/admin/webapp/images/warning-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/working-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/x.gif
+%%DATADIR%%/plugins/admin/webapp/images/yahoo.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_btn_bg-orange.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_sidebar_progress0.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_sidebar_progress5.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_btn_gearplay.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_header_logo.gif
+%%DATADIR%%/plugins/admin/webapp/images/aim-gray.gif
+%%DATADIR%%/plugins/admin/webapp/images/im_unavailable.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_btn_bg-grey.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_btn_closetestx.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_helpicon.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_sidebar_progress4.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_nextprofile.gif
+%%DATADIR%%/plugins/admin/webapp/images/irc-gray.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_sidebar_check.gif
+%%DATADIR%%/plugins/admin/webapp/images/irc.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_sidebar_progress3.gif
+%%DATADIR%%/plugins/admin/webapp/images/msn-gray.gif
+%%DATADIR%%/plugins/admin/webapp/images/enterprise-info-btn.gif
+%%DATADIR%%/plugins/admin/webapp/images/wait24trans.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_btn_bg-bigblue.gif
+%%DATADIR%%/plugins/admin/webapp/images/yahoo-gray.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_sidebar_bg-top.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_language_zh_CN.gif
+%%DATADIR%%/plugins/admin/webapp/images/twisty_closed_9x9.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_sidebar_progress2.gif
+%%DATADIR%%/plugins/admin/webapp/images/enterprise.png
+%%DATADIR%%/plugins/admin/webapp/images/twisty_inactive_9x9.gif
+%%DATADIR%%/plugins/admin/webapp/images/icq-gray.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_contentbox_bg.gif
+%%DATADIR%%/plugins/admin/webapp/images/twisty_opened_9x9.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_sidebar_bg.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_sidebar_progress1.gif
+%%DATADIR%%/plugins/admin/webapp/images/setup_header_bg.gif
+%%DATADIR%%/plugins/admin/webapp/index.html
+%%DATADIR%%/plugins/admin/webapp/favicon.ico
+%%DATADIR%%/plugins/admin/webapp/js/behaviour.js
+%%DATADIR%%/plugins/admin/webapp/js/builder.js
+%%DATADIR%%/plugins/admin/webapp/js/controls.js
+%%DATADIR%%/plugins/admin/webapp/js/cookies.js
+%%DATADIR%%/plugins/admin/webapp/js/dragdrop.js
+%%DATADIR%%/plugins/admin/webapp/js/effects.js
+%%DATADIR%%/plugins/admin/webapp/js/jscalendar/calendar-setup.js
+%%DATADIR%%/plugins/admin/webapp/js/jscalendar/calendar-win2k-1.css
+%%DATADIR%%/plugins/admin/webapp/js/jscalendar/calendar-win2k-cold-1.css
+%%DATADIR%%/plugins/admin/webapp/js/jscalendar/calendar.js
+%%DATADIR%%/plugins/admin/webapp/js/pngfix.js
+%%DATADIR%%/plugins/admin/webapp/js/prototype.js
+%%DATADIR%%/plugins/admin/webapp/js/scriptaculous.js
+%%DATADIR%%/plugins/admin/webapp/js/slider.js
+%%DATADIR%%/plugins/admin/webapp/js/setup.js
+%%DATADIR%%/plugins/admin/webapp/js/lightbox.js
+%%DATADIR%%/plugins/admin/webapp/js/unittest.js
+%%DATADIR%%/plugins/admin/webapp/js/tooltips/domTT.js
+%%DATADIR%%/plugins/admin/webapp/js/tooltips/fadomatic.js
+%%DATADIR%%/plugins/admin/webapp/js/tooltips/domLib.js
+%%DATADIR%%/plugins/admin/webapp/js/tooltips/domTT_drag.js
+%%DATADIR%%/plugins/admin/webapp/setup/setup-style.css
+%%DATADIR%%/plugins/admin/webapp/style/global.css
+%%DATADIR%%/plugins/admin/webapp/style/ldap.css
+%%DATADIR%%/plugins/admin/webapp/style/lightbox.css
+%%DATADIR%%/plugins/admin/webapp/style/setup.css
+%%DATADIR%%/plugins/admin/webapp/style/login.css
+%%DATADIR%%/resources/database/upgrade/1/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/1/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/1/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/1/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/1/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/1/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/10/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/10/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/10/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/10/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/10/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/10/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/10/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/11/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/11/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/11/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/11/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/11/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/11/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/11/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/2/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/2/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/2/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/2/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/2/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/2/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/4/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/4/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/4/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/4/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/4/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/4/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/4/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/5/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/5/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/5/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/5/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/5/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/5/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/5/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/6/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/6/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/6/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/6/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/6/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/6/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/6/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/7/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/7/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/7/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/7/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/7/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/7/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/7/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/8/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/8/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/8/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/8/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/8/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/8/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/8/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/9/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/9/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/9/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/9/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/9/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/9/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/9/openfire_sybase.sql
+%%DATADIR%%/resources/database/openfire_db2.sql
+%%DATADIR%%/resources/database/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/openfire_mysql.sql
+%%DATADIR%%/resources/database/openfire_oracle.sql
+%%DATADIR%%/resources/database/openfire_postgresql.sql
+%%DATADIR%%/resources/database/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/openfire_sybase.sql
+%%DATADIR%%/resources/nativeAuth/linux-i386/libshaj.so
+%%DATADIR%%/resources/nativeAuth/osx-ppc/libshaj.jnilib
+%%DATADIR%%/resources/nativeAuth/solaris-sparc/libshaj.so
+%%DATADIR%%/resources/nativeAuth/win32-x86/shaj.dll
+%%DATADIR%%/resources/spank/WEB-INF/web.xml
+%%DATADIR%%/resources/spank/index.html
+%%DATADIR%%/resources/security
+%%DATADIR%%/logs
+%%DATADIR%%/embedded-db
+%%DATADIR%%/conf
 
-@exec [ -d %%PREFIX%%/%%DATADIR%% ] && chown -R openfire:openfire %%PREFIX%%/%%DATADIR%%
-@dirrm share/java/openfire/resources/spank/WEB-INF
-@dirrm share/java/openfire/resources/spank
-@dirrm share/java/openfire/resources/nativeAuth/win32-x86
-@dirrm share/java/openfire/resources/nativeAuth/solaris-sparc
-@dirrm share/java/openfire/resources/nativeAuth/osx-ppc
-@dirrm share/java/openfire/resources/nativeAuth/linux-i386
-@dirrm share/java/openfire/resources/nativeAuth
-@dirrm share/java/openfire/resources/database/upgrade/9
-@dirrm share/java/openfire/resources/database/upgrade/8
-@dirrm share/java/openfire/resources/database/upgrade/7
-@dirrm share/java/openfire/resources/database/upgrade/6
-@dirrm share/java/openfire/resources/database/upgrade/5
-@dirrm share/java/openfire/resources/database/upgrade/4
-@dirrm share/java/openfire/resources/database/upgrade/2
-@dirrm share/java/openfire/resources/database/upgrade/10
-@dirrm share/java/openfire/resources/database/upgrade/11
-@dirrm share/java/openfire/resources/database/upgrade/1
-@dirrm share/java/openfire/resources/database/upgrade
-@dirrm share/java/openfire/resources/database
-@dirrm share/java/openfire/resources
-@dirrm share/java/openfire/plugins/admin/webapp/style
-@dirrm share/java/openfire/plugins/admin/webapp/setup
-@dirrm share/java/openfire/plugins/admin/webapp/js/jscalendar
-@dirrm share/java/openfire/plugins/admin/webapp/js/tooltips
-@dirrm share/java/openfire/plugins/admin/webapp/js
-@dirrm share/java/openfire/plugins/admin/webapp/images
-@dirrm share/java/openfire/plugins/admin/webapp/WEB-INF/lib
-@dirrm share/java/openfire/plugins/admin/webapp/WEB-INF
-@dirrm share/java/openfire/plugins/admin/webapp
-@dirrm share/java/openfire/plugins/admin
+@exec [ -d %D/%%DATADIR%% ] && chown -R openfire:openfire %D/%%DATADIR%%
+@dirrm %%DATADIR%%/resources/spank/WEB-INF
+@dirrm %%DATADIR%%/resources/spank
+@dirrm %%DATADIR%%/resources/nativeAuth/win32-x86
+@dirrm %%DATADIR%%/resources/nativeAuth/solaris-sparc
+@dirrm %%DATADIR%%/resources/nativeAuth/osx-ppc
+@dirrm %%DATADIR%%/resources/nativeAuth/linux-i386
+@dirrm %%DATADIR%%/resources/nativeAuth
+@dirrm %%DATADIR%%/resources/database/upgrade/9
+@dirrm %%DATADIR%%/resources/database/upgrade/8
+@dirrm %%DATADIR%%/resources/database/upgrade/7
+@dirrm %%DATADIR%%/resources/database/upgrade/6
+@dirrm %%DATADIR%%/resources/database/upgrade/5
+@dirrm %%DATADIR%%/resources/database/upgrade/4
+@dirrm %%DATADIR%%/resources/database/upgrade/2
+@dirrm %%DATADIR%%/resources/database/upgrade/10
+@dirrm %%DATADIR%%/resources/database/upgrade/11
+@dirrm %%DATADIR%%/resources/database/upgrade/1
+@dirrm %%DATADIR%%/resources/database/upgrade
+@dirrm %%DATADIR%%/resources/database
+@dirrm %%DATADIR%%/resources
+@dirrm %%DATADIR%%/plugins/admin/webapp/style
+@dirrm %%DATADIR%%/plugins/admin/webapp/setup
+@dirrm %%DATADIR%%/plugins/admin/webapp/js/jscalendar
+@dirrm %%DATADIR%%/plugins/admin/webapp/js/tooltips
+@dirrm %%DATADIR%%/plugins/admin/webapp/js
+@dirrm %%DATADIR%%/plugins/admin/webapp/images
+@dirrm %%DATADIR%%/plugins/admin/webapp/WEB-INF/lib
+@dirrm %%DATADIR%%/plugins/admin/webapp/WEB-INF
+@dirrm %%DATADIR%%/plugins/admin/webapp
+@dirrm %%DATADIR%%/plugins/admin
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/licenses
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
-@unexec rmdir %D/share/java/openfire/plugins 2> /dev/null || echo "If permanently deleting this package, %D/share/jave/openfire/plugins must be removed manually"
-@unexec rmdir %D/etc/openfire 2> /dev/null || echo "If permanently deleting this package, %D/etc/openfire must be removed manually"
+@unexec rmdir %D/%%DATADIR%%/plugins 2> /dev/null || echo "If permanently deleting this package, %D/%%DATADIR%%/plugins must be removed manually"
+@unexec rmdir %D/%%ETCDIR%% 2> /dev/null || echo "If permanently deleting this package, %D/%%ETCDIR%% must be removed manually"
 @unexec rmdir /var/db/openfire 2> /dev/null || echo "If permanently deleting this package, /var/db/openfire must be removed manually"
 @unexec rmdir /var/log/openfire 2> /dev/null || echo "If permanently deleting this package, /var/log/openfire must be removed manually"
-@dirrmtry share/java/openfire
+@dirrmtry %%DATADIR%%

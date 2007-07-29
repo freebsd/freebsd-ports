@@ -1,34 +1,32 @@
 #!/bin/sh
 
-PATH=/bin:/usr/sbin
-
 case $2 in
 POST-INSTALL)
-        USER=openfire
-        GROUP=${USER}
-        UID=341
-        GID=${UID}
+        PUSER=openfire
+        PGROUP=${PUSER}
+        PUID=341
+        PGID=${PUID}
 
-        if pw group show "${GROUP}" >/dev/null; then
-                echo "You already have a group \"${GROUP}\", so I will use it."
+        if pw group show "${PGROUP}" >/dev/null; then
+                echo "You already have a group \"${PGROUP}\", so I will use it."
         else
-                if pw groupadd ${GROUP} -g ${GID}; then
-                        echo "Added group \"${GROUP}\"."
+                if pw groupadd ${PGROUP} -g ${PGID}; then
+                        echo "Added group \"${PGROUP}\"."
                 else
-                        echo "Adding group \"${GROUP}\" failed..."
+                        echo "Adding group \"${PGROUP}\" failed..."
                         exit 1
                 fi
         fi
 
-        if pw user show "${USER}" >/dev/null; then
-                echo "You already have a user \"${USER}\", so I will use it."
+        if pw user show "${PUSER}" >/dev/null; then
+                echo "You already have a user \"${PUSER}\", so I will use it."
         else
-                if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+                if pw useradd ${PUSER} -u ${PUID} -g ${PGROUP} -h - \
                         -d /nonexistent -s /sbin/nologin -c "Openfire Daemon"
                 then
-                        echo "Added user \"${USER}\"."
+                        echo "Added user \"${PUSER}\"."
                 else
-                        echo "Adding user \"${USER}\" failed..."
+                        echo "Adding user \"${PUSER}\" failed..."
                         exit 1
                 fi
         fi
