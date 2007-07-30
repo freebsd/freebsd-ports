@@ -30,14 +30,8 @@ USE_LDCONFIG=	yes
 
 NOT_FOR_ARCHS=	alpha
 
-#to compile the ATLAS kernel we use gcc3. See ATLAS/INSTALL.txt for details.
 USE_FORTRAN=	yes
-.if ${OSVERSION} > 700000
-BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
-CCOMPILER=	gcc34
-.else
 CCOMPILER=	${CC}
-.endif
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 LIB_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
