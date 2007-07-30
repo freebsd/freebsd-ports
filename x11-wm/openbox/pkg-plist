@@ -20,11 +20,11 @@ include/openbox/3.4/openbox/version.h
 lib/libobparser.a
 lib/libobparser.la
 lib/libobparser.so
-lib/libobparser.so.15
+lib/libobparser.so.16
 lib/libobrender.a
 lib/libobrender.la
 lib/libobrender.so
-lib/libobrender.so.15
+lib/libobrender.so.16
 libdata/pkgconfig/obparser-3.0.pc
 libdata/pkgconfig/obrender-3.0.pc
 share/gnome/wm-properties/openbox.desktop
