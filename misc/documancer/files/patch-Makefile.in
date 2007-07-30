@@ -1,18 +1,17 @@
---- Makefile.in.orig	Thu Feb  5 09:16:01 2004
-+++ Makefile.in	Thu Feb  5 09:18:04 2004
-@@ -70,18 +70,21 @@
- 	# Install man2html:
- 	$(INSTALL_PROG) src/helpers/man2html/man2html $(DESTDIR)$(pkglibdir)/helpers/man2html
- 	$(INSTALL_PROG) $(srcdir)/src/helpers/man2html/man2html.cgi $(DESTDIR)$(pkglibdir)/helpers/man2html
--	$(INSTALL_DATA) $(srcdir)/src/helpers/man2html/{index.html,man2html.css} $(DESTDIR)$(pkglibdir)/helpers/man2html
-+	$(INSTALL_DATA) $(srcdir)/src/helpers/man2html/index.html $(DESTDIR)$(pkglibdir)/helpers/man2html
-+	$(INSTALL_DATA) $(srcdir)/src/helpers/man2html/man2html.css $(DESTDIR)$(pkglibdir)/helpers/man2html
+--- Makefile.in.orig	Tue Jul 31 01:14:33 2007
++++ Makefile.in	Tue Jul 31 01:14:11 2007
+@@ -79,7 +79,8 @@
+ 	$(INSTALL_DATA) $(srcdir)/src/helpers/man2html/man2html.css $(DESTDIR)$(pkglibdir)/helpers/man2html
  
  	# Install man2info:
 -	$(INSTALL_PROG) $(srcdir)/src/helpers/info2html/{info2html,infocat} $(DESTDIR)$(pkglibdir)/helpers/info2html
 +	$(INSTALL_PROG) $(srcdir)/src/helpers/info2html/info2html $(DESTDIR)$(pkglibdir)/helpers/info2html
 +	$(INSTALL_PROG) $(srcdir)/src/helpers/info2html/infocat $(DESTDIR)$(pkglibdir)/helpers/info2html
  	$(INSTALL_DATA) $(srcdir)/src/helpers/info2html/info2html.conf $(DESTDIR)$(pkglibdir)/helpers/info2html
+ 
+ 	# Install Java indexer (FIXME: only if pylucene is missing!)
+@@ -88,11 +89,12 @@
+ 	$(INSTALL_DATA) $(srcdir)/src/indexers/java/jars/*.jar $(DESTDIR)$(pkglibdir)/indexers/java/jars
  
  	# Install the app:
 -	(cd $(srcdir)/src ; for i in `find -name '*.py'` ; do $(INSTALL_DATA) $$i $(DESTDIR)$(pkglibdir)/`dirname $$i` ; done)
@@ -21,8 +20,8 @@
  	# Rewrite python location in documancer.py:
 -	sed -e 's,#!/usr/bin/env python,#!/usr/bin/env $(PYTHON),g' \
 -		$(srcdir)/src/documancer.py >$(DESTDIR)$(pkglibdir)/documancer.py
-+#	sed -e 's,#!/usr/bin/env python,#!/usr/bin/env $(PYTHON),g' \
-+#		$(srcdir)/src/documancer.py >$(DESTDIR)$(pkglibdir)/documancer.py
++	#sed -e 's,#!/usr/bin/env python,#!/usr/bin/env $(PYTHON),g' \
++	#	$(srcdir)/src/documancer.py >$(DESTDIR)$(pkglibdir)/documancer.py
 +	$(INSTALL_DATA) $(srcdir)/src/documancer.py $(DESTDIR)$(pkglibdir)
  
  	
