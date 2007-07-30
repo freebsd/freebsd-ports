@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	openbox
-PORTVERSION=	3.4.2
+PORTVERSION=	3.4.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://offload1.icculus.org/openbox/releases/
 
@@ -44,5 +44,8 @@ CONFIGURE_ARGS+=	--disable-pango
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
+
+post-configure:
+	@${CHMOD} +x ${WRKSRC}/install-sh
 
 .include <bsd.port.mk>
