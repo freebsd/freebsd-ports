@@ -15,8 +15,6 @@ DISTNAME=	skype_staticQT-${PORTVERSION}
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	P2P VoIP software
 
-CONFLICTS+=	skype-devel-[0-9]*
-
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
 		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
 
@@ -25,7 +23,7 @@ USE_LINUX=	yes
 USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
-RESTRICTED=	Redistribution not allowed yet.
+RESTRICTED=	Redistribution not allowed.
 
 OPTIONS=	NVIDIA_GL "Enable Nvidia Support" off
 
