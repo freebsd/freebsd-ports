@@ -3,30 +3,30 @@ lib/devede/devede_convert.py
 lib/devede/devede_gtk_helper.py
 lib/devede/devede_other.py
 share/applications/devede.desktop
-%%%PORTDOCS%%%DATADIR%%/background.png
-%%%PORTDOCS%%%DATADIR%%/barras.png
-%%%PORTDOCS%%%DATADIR%%/devede.glade
-%%%PORTDOCS%%%DATADIR%%/devedesans.ttf
-%%%PORTDOCS%%%DATADIR%%/estira.png
-%%%PORTDOCS%%%DATADIR%%/silence.wav
-%%%PORTDOCS%%%DOCSDIR%%/html/choose.jpg
-%%%PORTDOCS%%%DOCSDIR%%/html/create.jpg
-%%%PORTDOCS%%%DOCSDIR%%/html/devede.html
-%%%PORTDOCS%%%DOCSDIR%%/html/faq.html
-%%%PORTDOCS%%%DOCSDIR%%/html/gpl.html
-%%%PORTDOCS%%%DOCSDIR%%/html/main.jpg
-%%%PORTDOCS%%%DOCSDIR%%/html/main2.jpg
-%%%PORTDOCS%%%DOCSDIR%%/html/menu.jpg
-%%%PORTDOCS%%%DOCSDIR%%/html/menu_bad.jpg
-%%%PORTDOCS%%%DOCSDIR%%/html/menu_opts.jpg
-%%%PORTDOCS%%%DOCSDIR%%/html/movie1.jpg
-%%%PORTDOCS%%%DOCSDIR%%/html/movie2.jpg
-%%%PORTDOCS%%%DOCSDIR%%/html/movie3.jpg
-%%%PORTDOCS%%%DOCSDIR%%/html/movie4.jpg
-%%%PORTDOCS%%%DOCSDIR%%/html/movie5.jpg
-%%%PORTDOCS%%%DOCSDIR%%/html/movie6.jpg
-%%DOCSDIR%%/html/psf.html
-%%DOCSDIR%%/html/title_prop.jpg
+%%DATADIR%%/background.png
+%%DATADIR%%/barras.png
+%%DATADIR%%/devede.glade
+%%DATADIR%%/devedesans.ttf
+%%DATADIR%%/estira.png
+%%DATADIR%%/silence.wav
+%%PORTDOCS%%%%DOCSDIR%%/html/choose.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/create.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/devede.html
+%%PORTDOCS%%%%DOCSDIR%%/html/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gpl.html
+%%PORTDOCS%%%%DOCSDIR%%/html/main.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/main2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/menu.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/menu_bad.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/menu_opts.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/movie1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/movie2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/movie3.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/movie4.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/movie5.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/movie6.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/psf.html
+%%PORTDOCS%%%%DOCSDIR%%/html/title_prop.jpg
 %%NLS%%share/locale/ca/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/de/LC_MESSAGES/devede.mo
@@ -39,7 +39,7 @@ share/applications/devede.desktop
 %%NLS%%share/locale/sk/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/devede.mo
 share/pixmaps/devede.png
-@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm lib/devede
