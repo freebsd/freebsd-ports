@@ -72,6 +72,7 @@ share/locale/el/LC_MESSAGES/iso_3166_2.mo
 share/locale/el/LC_MESSAGES/iso_4217.mo
 share/locale/el/LC_MESSAGES/iso_639.mo
 share/locale/el/LC_MESSAGES/iso_639_3.mo
+share/locale/en/LC_MESSAGES/iso_3166_2.mo
 share/locale/eo/LC_MESSAGES/iso_3166.mo
 share/locale/eo/LC_MESSAGES/iso_3166_2.mo
 share/locale/eo/LC_MESSAGES/iso_639.mo
@@ -214,6 +215,7 @@ share/locale/mk/LC_MESSAGES/iso_3166.mo
 share/locale/mk/LC_MESSAGES/iso_3166_2.mo
 share/locale/mk/LC_MESSAGES/iso_639.mo
 share/locale/mk/LC_MESSAGES/iso_639_3.mo
+share/locale/ml/LC_MESSAGES/iso_3166.mo
 share/locale/mn/LC_MESSAGES/iso_3166.mo
 share/locale/mn/LC_MESSAGES/iso_3166_2.mo
 share/locale/mn/LC_MESSAGES/iso_4217.mo
@@ -412,11 +414,10 @@ share/xml/iso-codes/iso_3166_2.xml
 share/xml/iso-codes/iso_4217.xml
 share/xml/iso-codes/iso_639.xml
 share/xml/iso-codes/iso_639_3.xml
+@dirrm %%DATADIR%%
 @dirrm share/xml/iso-codes
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/wo/LC_MESSAGES
@@ -447,8 +448,6 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/sid
 @dirrmtry share/locale/sa/LC_MESSAGES
 @dirrmtry share/locale/sa
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
 @dirrmtry share/locale/ps/LC_MESSAGES
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/om/LC_MESSAGES
@@ -495,4 +494,3 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/byn
 @dirrmtry share/locale/aa/LC_MESSAGES
 @dirrmtry share/locale/aa
-@dirrm %%DATADIR%%

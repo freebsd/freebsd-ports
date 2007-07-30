@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	iso-codes
-DISTVERSION=	0.58
-PORTREVISION=	2
+DISTVERSION=	1.3
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
+MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/ \
 		http://freebsd.powered.net/distfiles/
-DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	Lists of the country, language and currency iso names
 
 BUILD_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
 
+USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal:19 autoconf:259 automake:19
-AUTOMAKE_ARGS+=	--add-missing --foreign --copy
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-.*$//}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^pkgconfigdir =/s|=.*|=${PREFIX}/libdata/pkgconfig|'\
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
