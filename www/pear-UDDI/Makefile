@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	UDDI
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	www pear finance
 
 MAINTAINER=	chinsan@FreeBSD.org
