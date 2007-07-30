@@ -1,0 +1,14 @@
+--- tools/linguist/shared/profileevaluator.h
++++ tools/linguist/shared/profileevaluator.h
+@@ -88,7 +88,11 @@ protected:
+ 
+ private:
+     void logMessage(const QString &msg, MessageType mt = MT_DebugLevel2);
+-    void logMessage(MessageType mt, const char *msg, ...);
++    void logMessage(MessageType mt, const char *msg, ...)
++#if defined(Q_CC_GNU) && !defined(__INSURE__)
++        __attribute__ ((format (printf, 3, 4)))
++#endif
++        ;
+     QString expandVariableReferences(const QString &value);
+     QString evaluateExpandFunction(const QByteArray &func, const QString &arguments);

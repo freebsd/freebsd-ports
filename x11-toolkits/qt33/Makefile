@@ -8,7 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -23,6 +23,7 @@ LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
+EXTRA_PATCHES=	${PATCHDIR}/0081-format-string-fixes.diff
 CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
 		qt-3.1.* qt-3.2.* qt-designer-2.* xfmail-1.5.[0-5] \
 		xfmail-1.5.5_[1-2]
@@ -122,7 +123,7 @@ CONFIGURE_ARGS+=-no-nas-sound
 .endif
 
 .if defined(WITH_KDE_PATCHES)
-EXTRA_PATCHES=	${PATCHDIR}/0001-dnd_optimization.patch \
+EXTRA_PATCHES+=	${PATCHDIR}/0001-dnd_optimization.patch \
 		${PATCHDIR}/0002-dnd_active_window_fix.patch \
 		${PATCHDIR}/0007-qpixmap_constants.patch \
 		${PATCHDIR}/0015-qiconview-finditem.patch \
@@ -155,8 +156,8 @@ CONFLICTS+=	qt-copy-[0-9]*
 .endif
 
 .if exists(${X11BASE}/include/qt2/qapp.h)
-BROKEN=	"You have QT2 headers installed!  Installing this port"
-BROKEN+="will result in conflicts between QT3 and QT2!"
+BROKEN=	You have QT2 headers installed!  Installing this port
+BROKEN+=will result in conflicts between QT3 and QT2!
 .endif
 
 post-patch:
