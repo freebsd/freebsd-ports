@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://lisaem.sunder.net/20070707/
 
 MAINTAINER=	trasz@FreeBSD.org
-COMMENT=	Apple Lisa emulator
+COMMENT=	Apple Lisa 2 Emulator
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		pngtopnm:${PORTSDIR}/graphics/netpbm
