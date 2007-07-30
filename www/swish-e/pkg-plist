@@ -11,6 +11,7 @@ lib/swish-e/perl/SWISH/Filters/Doc2html.pm
 lib/swish-e/perl/SWISH/Filters/ID3toHTML.pm
 lib/swish-e/perl/SWISH/Filters/Pdf2HTML.pm
 lib/swish-e/perl/SWISH/Filters/XLtoHTML.pm
+lib/swish-e/perl/SWISH/Filters/pp2html.pm
 @dirrm lib/swish-e/perl/SWISH/Filters
 lib/swish-e/perl/SWISH/DateRanges.pm
 lib/swish-e/perl/SWISH/DefaultHighlight.pm
@@ -35,13 +36,13 @@ lib/swish-e/swish.cgi
 lib/swish-e/swishspider
 libdata/pkgconfig/swish-e.pc
 @dirrm lib/swish-e
-share/swish-e/swish.tmpl
-share/swish-e/swish.tt
-share/swish-e/templates/search.tt
-share/swish-e/templates/page_layout
-share/swish-e/templates/common_header
-share/swish-e/templates/common_footer
-share/swish-e/templates/style.css
-share/swish-e/templates/markup.css
-@dirrm share/swish-e/templates
-@dirrm share/swish-e
+%%DATADIR%%/swish.tmpl
+%%DATADIR%%/swish.tt
+%%DATADIR%%/templates/search.tt
+%%DATADIR%%/templates/page_layout
+%%DATADIR%%/templates/common_header
+%%DATADIR%%/templates/common_footer
+%%DATADIR%%/templates/style.css
+%%DATADIR%%/templates/markup.css
+@dirrmtry %%DATADIR%%/templates
+@dirrmtry %%DATADIR%%
