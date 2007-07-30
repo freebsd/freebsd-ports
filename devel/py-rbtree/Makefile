@@ -16,6 +16,8 @@ DIST_SUBDIR=	python
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	A fast tree with ordered data and expanded iterator support
 
+BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
