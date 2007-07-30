@@ -7,7 +7,7 @@
 
 PORTNAME=	unixODBC
 PORTVERSION=	2.2.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
@@ -54,6 +54,8 @@ post-install:
 		| ${TAR} -C ${DOCSDIR} --unlink -xf -
 .if !defined(INSTALL_AS_USER)
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	${FIND} ${DOCSDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	${FIND} ${DOCSDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 .endif
 .endif
 .for conffile in odbc.ini odbcinst.ini
