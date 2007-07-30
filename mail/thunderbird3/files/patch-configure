@@ -1,0 +1,11 @@
+--- configure.orig	2007-07-30 02:45:45.000000000 -0400
++++ configure	2007-07-30 02:46:26.000000000 -0400
+@@ -20025,7 +20025,7 @@ MOZILLA_1_8_BRANCH=1
+ LIBS_PATH=
+ for lib_arg in $NSPR_LIBS $TK_LIBS; do
+   case $lib_arg in
+-    -L* ) LIBS_PATH="${LIBS_PATH:+$LIBS_PATH:}"`expr $lib_arg : "-L\(.*\)"` ;;
++    -L* ) LIBS_PATH="${LIBS_PATH:+$LIBS_PATH:}"`expr -- $lib_arg : "-L\(.*\)"` ;;
+       * ) ;;
+   esac
+ done
