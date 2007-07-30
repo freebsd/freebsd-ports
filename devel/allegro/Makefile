@@ -20,8 +20,7 @@ USE_LDCONFIG=	yes
 USE_XLIB=	yes
 WANT_GNOME=	yes
 
-OPTIONS=	AL "Enable OpenAL support" off \
-		ARTS "Enable Arts support" off \
+OPTIONS=	ARTS "Enable Arts support" off \
 		DEBUG "Build debugging library" off \
 		DEVEL "Build development utilities" on \
 		ESOUND "Enable Esound support" off \
@@ -50,15 +49,6 @@ PORTSCOUT=	limitw:1,even
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-include-allegro-inline-fmaths.in
-.endif
-
-.if defined(WITH_AL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
-CONFIGURE_ARGS+=--enable-sgialdigi
-PLIST_SUB+=	AL=""
-.else
-CONFIGURE_ARGS+=--disable-sgialdigi
-PLIST_SUB+=	AL="@comment "
 .endif
 
 .if defined(WITH_ARTS)
