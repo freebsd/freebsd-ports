@@ -1,0 +1,11 @@
+--- configure.orig	2004-11-16 06:47:00.000000000 -0800
++++ configure	2007-07-29 22:04:42.000000000 -0700
+@@ -8335,7 +8335,7 @@
+ int
+ main ()
+ {
+- _Complex double val;
++ volatile _Complex double val;
+                   val = ccosh(cacosh(1.5) / 100.0)
+ 
+   ;
