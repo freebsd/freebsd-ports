@@ -26,7 +26,6 @@ include/CLucene/debug/condition.h
 include/CLucene/debug/error.h
 include/CLucene/debug/lucenebase.h
 include/CLucene/debug/mem.h
-include/CLucene/debug/pool.h
 include/CLucene/document/DateField.h
 include/CLucene/document/Document.h
 include/CLucene/document/Field.h
@@ -56,7 +55,6 @@ include/CLucene/queryParser/Lexer.h
 include/CLucene/queryParser/MultiFieldQueryParser.h
 include/CLucene/queryParser/QueryParser.h
 include/CLucene/queryParser/QueryParserBase.h
-include/CLucene/queryParser/QueryParserConstants.h
 include/CLucene/queryParser/QueryToken.h
 include/CLucene/queryParser/TokenList.h
 include/CLucene/search/BooleanClause.h
@@ -89,7 +87,6 @@ include/CLucene/search/PrefixQuery.h
 include/CLucene/search/QueryFilter.h
 include/CLucene/search/RangeFilter.h
 include/CLucene/search/RangeQuery.h
-include/CLucene/search/ScoreDoc.h
 include/CLucene/search/Scorer.h
 include/CLucene/search/SearchHeader.h
 include/CLucene/search/Similarity.h
@@ -110,7 +107,6 @@ include/CLucene/store/RAMDirectory.h
 include/CLucene/store/TransactionalRAMDirectory.h
 include/CLucene/util/Arrays.h
 include/CLucene/util/BitSet.h
-include/CLucene/util/English.h
 include/CLucene/util/Equators.h
 include/CLucene/util/FastCharStream.h
 include/CLucene/util/MD5Digester.h
@@ -119,15 +115,18 @@ include/CLucene/util/PriorityQueue.h
 include/CLucene/util/Reader.h
 include/CLucene/util/StringBuffer.h
 include/CLucene/util/StringIntern.h
+include/CLucene/util/ThreadLocal.h
 include/CLucene/util/VoidList.h
 include/CLucene/util/VoidMap.h
 include/CLucene/util/bufferedstream.h
 include/CLucene/util/dirent.h
 include/CLucene/util/fileinputstream.h
+include/CLucene/util/googlesparsemap.h
 include/CLucene/util/inputstreambuffer.h
 include/CLucene/util/jstreamsconfig.h
 include/CLucene/util/streambase.h
 include/CLucene/util/stringreader.h
+include/CLucene/util/subinputstream.h
 lib/CLucene/clucene-config.h
 lib/libclucene.a
 lib/libclucene.la
