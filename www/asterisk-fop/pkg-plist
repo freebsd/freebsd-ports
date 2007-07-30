@@ -5,7 +5,6 @@ www/op_panel/README
 www/op_panel/RECIPES
 www/op_panel/TODO
 www/op_panel/UPGRADE
-www/op_panel/dhtml/comunicator.pl
 www/op_panel/dhtml/comunicator.swf
 www/op_panel/dhtml/css/default.css
 www/op_panel/dhtml/css/operator.css
@@ -51,6 +50,7 @@ www/op_panel/flash/help_es.html
 www/op_panel/flash/help_fr.html
 www/op_panel/flash/help_it.html
 www/op_panel/flash/help_se.html
+www/op_panel/flash/help_no.html
 www/op_panel/flash/index-clicktodial.html
 www/op_panel/flash/index-crm.html
 www/op_panel/flash/index-fixed.html
@@ -62,6 +62,7 @@ www/op_panel/init/op_panel_debian.sh
 www/op_panel/init/op_panel_redhat.sh
 www/op_panel/init/op_panel_suse.sh
 www/op_panel/ming-source/README
+www/op_panel/ming-source/comunicator.pl
 www/op_panel/ming-source/operator_panel.pl
 www/op_panel/op_astdb.cfg
 www/op_panel/op_buttons.cfg
@@ -72,10 +73,10 @@ www/op_panel/op_lang_es.cfg
 www/op_panel/op_lang_fr.cfg
 www/op_panel/op_lang_it.cfg
 www/op_panel/op_lang_se.cfg
+www/op_panel/op_lang_no.cfg
 www/op_panel/op_server.cfg
 www/op_panel/op_server.pl
 www/op_panel/op_style.cfg
-
 @dirrm www/op_panel/dhtml/css
 @dirrm www/op_panel/dhtml/images
 @dirrm www/op_panel/dhtml/js
