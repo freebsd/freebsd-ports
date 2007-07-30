@@ -7,6 +7,7 @@
 
 PORTNAME=	Net_SMS
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	net pear
 
 MAINTAINER=	chinsan@FreeBSD.org
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail \
 		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PHP=	yes
+USE_PHP=	gettext
 
 CATEGORY=	Net
 FILES=		SMS.php SMS/clickatell_http.php SMS/generic_smtp.php \
