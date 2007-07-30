@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qwt
-PORTVERSION=	5.0.1
-PORTREVISION=	2
+PORTVERSION=	5.0.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
@@ -68,7 +67,7 @@ do-build:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqwt.so.5.0.0 ${PREFIX}/lib/libqwt.so.5
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqwt.so.5.0.2 ${PREFIX}/lib/libqwt.so.5
 	${LN} -fs ${PREFIX}/lib/libqwt.so.5 ${PREFIX}/lib/libqwt.so
 	(cd ${WRKSRC}/src/ && ${COPYTREE_SHARE} '*.h' ${PREFIX}/include/${PORTNAME})
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/Qwt* ${PREFIX}/man/man3
