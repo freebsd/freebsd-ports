@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	fdm
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	mail
 MASTER_SITES=	SFE
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Fetches and delivers mail
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+		tdb.1:${PORTSDIR}/databases/tdb
 
 PLIST_FILES=	bin/fdm
 PORTDOCS=	CHANGES README MANUAL
-PORTEXAMPLES=	n-marriott.conf f-terbeck.conf t-ulmer.conf w-maier.conf
-MAKE_ARGS=	-DPCRE
+PORTEXAMPLES=	n-marriott.conf f-terbeck.conf t-ulmer.conf w-maier.conf g-lando.conf
+MAKE_ARGS=	-DPCRE -DDB
 
 MAN1=	fdm.1
 MAN5=	fdm.conf.5
