@@ -19,6 +19,7 @@ MAN5=charmrc.5
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=	1.6.0
 
 post-install:
 .if !defined(NOPORTDOCS)

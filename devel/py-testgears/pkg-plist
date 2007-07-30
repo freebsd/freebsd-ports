@@ -1,2 +1,1 @@
-@comment $FreeBSD$
-%%PYTHON_SITELIBDIR%%/TestGears-0.2-py2.4.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

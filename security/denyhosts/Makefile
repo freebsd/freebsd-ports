@@ -18,6 +18,7 @@ COMMENT=	Script to thwart ssh attacks
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	DenyHosts
 
 USE_RC_SUBR=	denyhosts
 SUB_FILES=	pkg-message

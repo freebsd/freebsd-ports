@@ -6,6 +6,30 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070730:
+  AFFECTS: users of py-*
+  AUTHOR: python@FreeBSD.org
+
+The default version of Python has been changed from 2.4.x to 2.5.x.
+If you have 2.4.x installed, perform an upgrade of lang/python24 to
+lang/python25 with a command like:
+
+  # portupgrade -o lang/python25 lang/python24
+
+If want to keep 2.4.x installed alongside 2.5.x, set the PYTHON_DEFAULT_VERSION
+variable to 'python2.5' without quotes in make.conf, then go to lang/python and
+execute
+
+  # portupgrade -R python
+
+Once the installed Python has been updated to 2.5, by using one of the methods
+above, it is required to run the upgrade-site-packages target in lang/python to
+assure that site-packages are made available to the new Python version.
+
+  # cd /usr/ports/lang/python && make upgrade-site-packages
+
+This Makefile target requires ports-mgmt/portupgrade to be installed.
+
 20070727:
   AFFECTS: autotools
   AUTHOR:  ade@FreeBSD.org

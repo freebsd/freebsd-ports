@@ -18,5 +18,6 @@ COMMENT=	Python YAML parser
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	PyYAML
 
 .include <bsd.port.mk>

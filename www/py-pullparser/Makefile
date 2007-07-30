@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
 
 PYDISTUTILS_BUILD_TARGET=	bdist_egg

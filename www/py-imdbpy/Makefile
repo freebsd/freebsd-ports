@@ -18,6 +18,7 @@ COMMENT=	Retrieve and manage the data of the IMDb movie database
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	IMDbPY
 
 .if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

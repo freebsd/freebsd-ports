@@ -22,6 +22,7 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	PyOpenAL
 WRKSRC=		${WRKDIR}/PyOpenAL-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-openal
 

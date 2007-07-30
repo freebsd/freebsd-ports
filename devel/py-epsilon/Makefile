@@ -18,6 +18,7 @@ COMMENT=	Epsilon is a set of Python utility modules used by DivMod projects
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Epsilon
 USE_TWISTED=	yes
 NO_BUILD=	yes
 

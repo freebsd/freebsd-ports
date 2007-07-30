@@ -21,6 +21,7 @@ LIB_DEPENDS=	clamav.2:${PORTSDIR}/security/clamav
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pyclamav
 
 PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
 

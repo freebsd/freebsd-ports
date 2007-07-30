@@ -17,5 +17,6 @@ COMMENT=	HTML/XML Parser for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	BeautifulSoup
 
 .include <bsd.port.mk>

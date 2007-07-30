@@ -19,6 +19,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.pth:${PORTSDIR}/x11-toolkits/py-gtk2
 
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	PythonCAD
+PYDISTUTILS_PKGVERSION=	DS1-R32
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gtkpycad.py ${PREFIX}/bin/gtkpycad

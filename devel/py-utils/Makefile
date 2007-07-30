@@ -17,6 +17,8 @@ COMMENT=	General utility modules that simplify common programming in Python
 
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	pythonutils
+PYDISTUTILS_EGGINFODIR=	${PYTHONPREFIX_SITELIBDIR}/pythonutils
 WRKSRC=		${WRKDIR}/pythonutils-${PORTVERSION}
 USE_ZIP=	yes
 

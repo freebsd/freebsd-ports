@@ -20,6 +20,7 @@ LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	py-rrdtool
 
 LIBDIR?=	${LOCALBASE}/lib # directory where librrd.so lives
 

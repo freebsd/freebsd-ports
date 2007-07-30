@@ -19,6 +19,7 @@ COMMENT=	A python library for generating Excel-compatible spreadsheets
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_ZIP=	yes
+PYDISTUTILS_PKGNAME=	pyXLWriter
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}

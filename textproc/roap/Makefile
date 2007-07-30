@@ -18,6 +18,7 @@ COMMENT=	Region Oriented Ascii Processor
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Region_Oriented_Ascii_Processor
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOCS=	README README.ja USAGE USAGE.ja
 

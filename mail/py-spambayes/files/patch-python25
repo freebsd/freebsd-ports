@@ -1,0 +1,57 @@
+--- spambayes/Corpus.py.orig	Thu Jul 26 13:14:51 2007
++++ spambayes/Corpus.py	Thu Jul 26 13:15:11 2007
+@@ -1,5 +1,7 @@
+ #! /usr/local/bin/python2.5
+ 
++from __future__ import generators
++
+ '''Corpus.py - Spambayes corpus management framework.
+ 
+ Classes:
+@@ -78,8 +80,6 @@
+ 
+ __author__ = "Tim Stone <tim@fourstonesExpressions.com>"
+ __credits__ = "Richie Hindle, Tim Peters, all the spambayes contributors."
+-
+-from __future__ import generators
+ 
+ try:
+     True, False
+--- spambayes/FileCorpus.py.orig	Thu Jul 26 13:14:55 2007
++++ spambayes/FileCorpus.py	Thu Jul 26 13:15:21 2007
+@@ -1,5 +1,7 @@
+ #! /usr/local/bin/python2.5
+ 
++from __future__ import generators
++
+ """FileCorpus.py - Corpus composed of file system artifacts
+ 
+ Classes:
+@@ -81,8 +83,6 @@
+ 
+ __author__ = "Tim Stone <tim@fourstonesExpressions.com>"
+ __credits__ = "Richie Hindle, Tim Peters, all the spambayes contributors."
+-
+-from __future__ import generators
+ 
+ from spambayes import Corpus
+ from spambayes import message
+--- spambayes/message.py.orig	Thu Jul 26 13:15:02 2007
++++ spambayes/message.py	Thu Jul 26 13:15:29 2007
+@@ -1,5 +1,7 @@
+ #! /usr/local/bin/python2.5
+ 
++from __future__ import generators
++
+ """message.py - Core Spambayes classes.
+ 
+ Classes:
+@@ -74,8 +76,6 @@
+ 
+ __author__ = "Tim Stone <tim@fourstonesExpressions.com>"
+ __credits__ = "Mark Hammond, Tony Meyer, all the spambayes contributors."
+-
+-from __future__ import generators
+ 
+ try:
+     True, False

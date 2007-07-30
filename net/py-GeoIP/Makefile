@@ -20,6 +20,7 @@ LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	GeoIP-Python
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLE_FILES=	README test.py test_city.py test_org.py test_region.py

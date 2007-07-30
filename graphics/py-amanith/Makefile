@@ -23,6 +23,7 @@ BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	PyAmanith
 
 post-patch:
 	${REINPLACE_CMD} -i "" -e 's|^swig-cpp.*|swig-opts = -c++|g' ${WRKSRC}/setup.cfg

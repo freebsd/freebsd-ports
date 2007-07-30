@@ -18,5 +18,6 @@ COMMENT=	Replacement for readline and interactive environment for Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
+PYDISTUTILS_PKGNAME=	pyrepl
 
 .include <bsd.port.mk>

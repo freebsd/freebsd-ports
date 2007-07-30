@@ -17,6 +17,7 @@ COMMENT=	A quixote session manager with persistence support
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=	0.6
 
 OPTIONS=	MYSQL "MySQLdb support" on
 OPTIONS+=	POSTGRESQL "psycopg support" on

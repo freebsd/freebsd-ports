@@ -10,6 +10,19 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20070730:
+AUTHOR: python@FreeBSD.org
+  
+  * The default Python version has been changed from 2.4.x to 2.5.x.
+
+  * A number of variables have been added to bsd.python.mk to support
+    the more integrated support for Python eggs, including:
+    PYDISTUTILS_PKGNAME, PYDISTUTILS_PKGVERSION, PYEASYINSTALL_EGG,
+    PYDISTUTILS_NOEGGINFO, PYDISTUTILS_EGGINFO, PYEASYINSTALL_ARCHDEP
+
+  * More detailed descriptions of the variables can be found in the comments
+    in bsd.python.mk.
+
 20070723:
 AUTHOR: rafan@FreeBSD.org
 

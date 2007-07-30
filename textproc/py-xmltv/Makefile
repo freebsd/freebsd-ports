@@ -20,6 +20,7 @@ COMMENT=	A Python module that provides access to XMLTV TV listings
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	python-xmltv
 
 .ifndef(NOPORTDOCS)
 PORTDOCS=	README.txt

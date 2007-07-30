@@ -24,6 +24,7 @@ RUN_DEPENDS=	${PYXML} \
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 USE_BZIP2=	yes
+PYDISTUTILS_PKGNAME=	ll-xist
 
 post-install:
 .for file in doc2txt dtd2xsc tld2xsc

@@ -21,6 +21,8 @@ RUN_DEPENDS=	${BUILD_DEPENDES}
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=	0.5
+PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 
 EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
 

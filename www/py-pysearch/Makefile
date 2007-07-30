@@ -17,6 +17,7 @@ COMMENT=	Yahoo Search Web Services SDK for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pYsearch
 
 DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}

@@ -21,6 +21,7 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
+PYDISTUTILS_PKGNAME=	pyflac
 
 do-build:
 	@cd ${WRKSRC} && ${GMAKE} build

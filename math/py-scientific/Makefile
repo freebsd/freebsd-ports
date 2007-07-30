@@ -22,6 +22,7 @@ RUN_DEPENDS=	${PYNUMERIC}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	ScientificPython
 
 DOCDIR=		${PREFIX}/share/doc/py-scientific
 EXAMPLEDIR=	${PREFIX}/share/examples/py-scientific

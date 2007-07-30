@@ -37,6 +37,8 @@ BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|\(rvl_py_version=\)".*$$|\1""|' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|\(-Wl\)|$$(LDFLAGS) \1|' \
 		${WRKSRC}/src/wrap/crack/Makefile.in
 	@${REINPLACE_CMD} -e 's|#include <crack.h>||' \

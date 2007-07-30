@@ -346,7 +346,6 @@
 %%LIBDIR%%/tests/Xml/Xslt/test_harness.py
 %%LIBDIR%%/tests/Xml/__init__.py
 %%LIBDIR%%/tests/test.py
-%%PYTHON_SITELIBDIR%%/4Suite_XML-1.0-py2.4.egg-info
 %%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/Lib/CommandLine/Arguments.py
 %%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/Lib/CommandLine/Arguments.pyc
 %%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/Lib/CommandLine/Command.py

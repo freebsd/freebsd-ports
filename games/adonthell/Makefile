@@ -22,13 +22,14 @@ BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_SDL=	mixer sdl
-USE_PYTHON=	yes
+USE_PYTHON=	-2.4
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-py-debug
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib \
+		PYPACKAGE=${PYTHON_CMD}
 
 .include <bsd.port.pre.mk>
 

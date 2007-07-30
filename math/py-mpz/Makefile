@@ -24,6 +24,7 @@ PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/mpz.so
 DIST_SUBDIR=	python
 USE_PYTHON=	-2.3
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGVERSION=	0.0.0
 WRKSRC=		${PYTHON_WRKSRC}/Modules
 MD5_FILE=	${PORTSDIR}/lang/python/distinfo
 

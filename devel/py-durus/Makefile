@@ -20,6 +20,7 @@ COMMENT=	A persistent object storage system for Python
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Durus
 MAN1=	durus.1
 
 .include <bsd.port.pre.mk>

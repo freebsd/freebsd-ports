@@ -19,6 +19,7 @@ COMMENT=	MSN messaging in Python
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	msnp.py
 
 .if !defined(NOPORTDOCS)
 post-install:

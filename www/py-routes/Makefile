@@ -17,17 +17,8 @@ DISTNAME=	Routes-${PORTVERSION}
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	A Routing package for Python that matches URLs to dicts and vice versa
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS+=	${BUILD_DEPENDS}
-
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-
-PYROUTES_EGG=	Routes-${PORTVERSION}-py${PYTHON_VER}.egg
-
-PLIST_SUB=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PYROUTES_EGG=${PYROUTES_EGG}
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	Routes
 
 .include <bsd.port.mk>

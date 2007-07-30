@@ -19,6 +19,7 @@ COMMENT=	Highly customizable cross-platform ide to aid programming in Python
 USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	DrPython
 USE_WX=		2.6
 WX_COMPS=	python
 

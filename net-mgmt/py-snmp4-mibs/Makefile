@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyasn1/__init__.py:${PORTSDIR}/devel/py-asn1
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	pysnmp-mibs
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 

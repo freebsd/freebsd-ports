@@ -18,6 +18,7 @@ COMMENT=	General parsing module for Python
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	pyparsing
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}

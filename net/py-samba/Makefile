@@ -23,6 +23,8 @@ PKGDIR=			${.CURDIR}
 USE_PYTHON=		2.1+
 USE_PYDISTUTILS=	yes
 PYSETUP=		python/setup.py
+PYDISTUTILS_PKGNAME=	Samba_Python_Extensions
+PYDISTUTILS_PKGVERSION=	0.1
 
 CONFIGURE_ARGS+=	--with-python
 

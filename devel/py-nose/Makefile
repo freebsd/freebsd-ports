@@ -17,16 +17,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	A discovery-based unittest extension
 
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_PYTHON=	2.3+
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 MAN1=		nosetests.1
-NOSEVER?=	${PORTVERSION}
-PYTHONVER?=	${_PYTHON_VERSION}
-PLIST_SUB=	NOSEVER=${NOSEVER} \
-		PYTHONVER=${PYTHONVER}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/nosetests.1 ${PREFIX}/man/man1

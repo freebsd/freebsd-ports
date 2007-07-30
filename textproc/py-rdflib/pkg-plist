@@ -1,4 +1,2 @@
-@unexec easy_install -q -N -m %D/%%PYTHON_SITELIBDIR%%/%%PYRDFLIB_EGG%%
 bin/rdfpipe
-%%PYTHON_SITELIBDIR%%/%%PYRDFLIB_EGG%%
-@exec easy_install -N %D/%%PYTHON_SITELIBDIR%%/%%PYRDFLIB_EGG%%
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

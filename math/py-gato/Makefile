@@ -24,6 +24,9 @@ WRKSRC=		${WRKDIR}/Gato
 GATO_DIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages/Gato
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
+post-patch:
+	@ ${REINPLACE_CMD} -e 's,^.*__future__.*$$,,' ${WRKSRC}/DataStructures.py
+
 pre-build:
 	@ ${TOUCH} ${WRKSRC}/__init__.py
 

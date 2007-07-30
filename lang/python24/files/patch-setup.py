@@ -1,5 +1,5 @@
---- setup.py.orig	Tue Feb 27 20:10:53 2007
-+++ setup.py	Tue Feb 27 20:15:23 2007
+--- setup.py.orig	Fri Mar 30 04:28:05 2007
++++ setup.py	Fri Mar 30 04:30:54 2007
 @@ -15,7 +15,7 @@
  from distutils.command.install_lib import install_lib
  
@@ -52,3 +52,13 @@
                                     libraries = [panel_library] + curses_libs) )
  
  
+@@ -1225,8 +1227,7 @@
+           ext_modules=[Extension('struct', ['structmodule.c'])],
+ 
+           # Scripts to install
+-          scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle',
+-                     'Lib/smtpd.py']
++          scripts = []
+         )
+ 
+ # --install-platlib

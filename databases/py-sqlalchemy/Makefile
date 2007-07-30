@@ -24,6 +24,8 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		EGG="SQLAlchemy==${PORTVERSION}" \
 		EXAMPLEDIR=share/examples/${PORTNAME}
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	SQLAlchemy
+PYDISTUTILS_NOEGGINFO=	yes
 
 BUILD_DEPENDS+=		easy_install:${PORTSDIR}/devel/py-setuptools
 # make sure we have it @deinstall time to remove the egg

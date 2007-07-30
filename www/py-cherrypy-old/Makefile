@@ -20,6 +20,7 @@ COMMENT=	A pythonic, object-oriented web development framework
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	CherryPy
 
 LN_OPTS=	-sf
 RM_OPTS=	-r

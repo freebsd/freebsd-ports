@@ -18,5 +18,6 @@ COMMENT=	Python module extending the PEP 246 adapt() function
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	PyProtocols
 
 .include <bsd.port.mk>

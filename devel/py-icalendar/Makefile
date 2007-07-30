@@ -23,6 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 

@@ -21,5 +21,6 @@ PLIST_FILES=	bin/tcpwatch.py
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGVERSION=	1.2.1
 
 .include <bsd.port.mk>

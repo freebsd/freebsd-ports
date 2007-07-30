@@ -21,5 +21,6 @@ EXTRACT_BEFORE_ARGS=	-a
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
+PYDISTUTILS_PKGNAME=	pyserial
 
 .include <bsd.port.mk>

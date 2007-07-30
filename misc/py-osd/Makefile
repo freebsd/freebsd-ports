@@ -22,6 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/twistd:${PORTSDIR}/devel/py-twisted
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pyosd
 
 PORTDOCS=	AUTHORS ChangeLog ChangeLog.old README README.daemon pyosd.html
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}

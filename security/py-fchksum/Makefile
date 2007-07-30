@@ -19,5 +19,6 @@ COMMENT=	Python module to find the checksum of files
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/fchksum.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	python-fchksum
 
 .include <bsd.port.mk>

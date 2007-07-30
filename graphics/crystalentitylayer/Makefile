@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--enable-debug=yes
 .endif
 
 .if!defined(WITHOUT_PYTHON)
-USE_PYTHON=	yes
+USE_PYTHON=	-2.4
 .include <${PORTSDIR}/Mk/bsd.python.mk>
 .else
 CONFIGURE_ARGS+=	--without-python

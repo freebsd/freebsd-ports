@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	PyTone
 
 OPTIONS=	MAD "MPEG Audio Decoder (libmad) support" On \
 		VORBIS "Ogg/Vorbis support" On \

@@ -23,6 +23,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/vtk.pth:${PORTSDIR}/math/vtk-python \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	MayaVi
 CPIO_ARGS=	--quiet -pdum -R
 
 post-install:

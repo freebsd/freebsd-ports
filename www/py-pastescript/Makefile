@@ -31,6 +31,7 @@ NO_PACKAGE=	no, not yet
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 
 SUB_FILES+=	pkg-deinstall pkg-install
 SUB_LIST+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \

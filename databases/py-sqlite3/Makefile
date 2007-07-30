@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PYTHON_DISTFILE}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Standard Python binding to the SQLite3 library
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
@@ -25,6 +25,8 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 WRKSRC=		${PYTHON_WRKSRC}/Modules
 MD5_FILE=	${PORTSDIR}/lang/python/distinfo
+
+PYDISTUTILS_NOEGGINFO=	yes
 
 pre-extract:
 	@${CAT} ${PKGMESSAGE}

@@ -25,6 +25,9 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_XLIB=	yes
 
+PYDISTUTILS_PKGNAME=	pygame
+PYDISTUTILS_PKGVERSION=	1.7.1release
+
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} config.py
 

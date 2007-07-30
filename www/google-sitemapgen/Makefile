@@ -17,5 +17,6 @@ COMMENT=	Script to analyze web server and generate Google Sitemap files
 
 USE_PYTHON=	YES
 USE_PYDISTUTILS=YES
+PYDISTUTILS_PKGNAME=	sitemap_gen
 
 .include <bsd.port.mk>

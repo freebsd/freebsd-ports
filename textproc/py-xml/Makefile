@@ -18,6 +18,7 @@ COMMENT=		PyXML: Python XML library enhancements
 
 USE_PYTHON=		2.1+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	PyXML
 
 .include <bsd.port.pre.mk>
 

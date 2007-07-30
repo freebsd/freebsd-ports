@@ -18,6 +18,7 @@ COMMENT=	IRC protocol client library for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	python-irclib
 EXAMPLEFILES=	irccat irccat2 servermap testbot.py \
 		dccreceive dccsend
 

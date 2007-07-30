@@ -19,6 +19,7 @@ COMMENT=	A python library to access freedesktop.org standards
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	pyxdg
 
 post-patch:
 	@${REINPLACE_CMD} -e \

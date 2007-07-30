@@ -22,5 +22,6 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/flowtools.so
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pyflowtools
 
 .include <bsd.port.mk>

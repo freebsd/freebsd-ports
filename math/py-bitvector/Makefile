@@ -18,6 +18,7 @@ COMMENT=	A pure-Python memory-efficient packed representation for bit arrays
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	BitVector
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/BitVector.py \
 		%%PYTHON_SITELIBDIR%%/BitVector.pyc \

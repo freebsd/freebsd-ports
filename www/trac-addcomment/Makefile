@@ -23,6 +23,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}macro
 NO_BUILD=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	TracAddCommentMacro
+PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHONVERSION=${_PYTHON_VERSION}
 
 .include <bsd.port.mk>

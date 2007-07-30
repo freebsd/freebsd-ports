@@ -26,5 +26,6 @@ USE_ZIP=	yes
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pykaraoke
 
 .include <bsd.port.mk>

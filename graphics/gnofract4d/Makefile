@@ -22,6 +22,8 @@ USE_PYDISTUTILS=yes
 USE_GCC=	3.4+
 
 PORTDOCS=	*
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_EGGINFODIR=	${PREFIX}/lib/gnofract4d
 
 .include <bsd.port.pre.mk>
 

@@ -18,6 +18,8 @@ COMMENT=	Python module for determing file type
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Magic_file_extensions
+PYDISTUTILS_PKGVERSION=	0.1
 
 WRKSRC=	${WRKDIR}/file-${PORTVERSION}/python
 

@@ -17,5 +17,6 @@ COMMENT=	A powerful and robust templating system for Python
 
 USE_PYTHON=	1.5+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=	3.1
 
 .include <bsd.port.mk>

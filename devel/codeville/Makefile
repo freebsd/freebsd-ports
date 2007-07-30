@@ -17,6 +17,7 @@ COMMENT=	An "anarchic" control version system without unnecessary re-merges
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Codeville
 
 PORTDOCS=	\
 		LICENSE.txt

@@ -19,6 +19,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 USE_PYTHON=	yes
 NO_BUILD=	yes
 USE_GETTEXT=	yes
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_EGGINFODIR=	lib/driconf
 
 pre-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \

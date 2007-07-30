@@ -15,6 +15,8 @@ COMMENT=	A Type III Anonymous Remailer
 
 USE_OPENSSL=	yes
 USE_PYTHON=	2.0+
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 
 MAN1=	mixminion.1
 MAN5=	mixminiond.conf.5 mixminionrc.5

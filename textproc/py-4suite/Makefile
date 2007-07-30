@@ -20,8 +20,10 @@ COMMENT=	A collection of Python tools for XML and RDF processing
 
 USE_BZIP2=	yes
 REINPLACE_ARGS=	-i "" -E
-USE_PYTHON=	2.2.1+
+USE_PYTHON=	2.2-2.4
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	4Suite
+PYDISTUTILS_PKGVERSION=	1.0b1
 
 CONFLICTS=	py*-4Suite-1* py*-xml-0.7*
 

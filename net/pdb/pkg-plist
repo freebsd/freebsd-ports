@@ -1,11 +1,11 @@
 bin/pdb.py
-lib/python2.4/site-packages/pktdbg/__init__.py
-lib/python2.4/site-packages/pktdbg/__init__.pyc
-lib/python2.4/site-packages/pktdbg/__init__.pyo
-lib/python2.4/site-packages/pktdbg/cli.py
-lib/python2.4/site-packages/pktdbg/cli.pyc
-lib/python2.4/site-packages/pktdbg/cli.pyo
-lib/python2.4/site-packages/pktdbg/packetstream.py
-lib/python2.4/site-packages/pktdbg/packetstream.pyc
-lib/python2.4/site-packages/pktdbg/packetstream.pyo
-@dirrm lib/python2.4/site-packages/pktdbg
+%%PYTHON_SITELIBDIR%%/pktdbg/__init__.py
+%%PYTHON_SITELIBDIR%%/pktdbg/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pktdbg/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pktdbg/cli.py
+%%PYTHON_SITELIBDIR%%/pktdbg/cli.pyc
+%%PYTHON_SITELIBDIR%%/pktdbg/cli.pyo
+%%PYTHON_SITELIBDIR%%/pktdbg/packetstream.py
+%%PYTHON_SITELIBDIR%%/pktdbg/packetstream.pyc
+%%PYTHON_SITELIBDIR%%/pktdbg/packetstream.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pktdbg

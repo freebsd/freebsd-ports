@@ -19,6 +19,7 @@ COMMENT=	A ncurses binding for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pyncurses
 
 .include <bsd.port.pre.mk>
 

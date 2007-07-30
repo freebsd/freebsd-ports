@@ -17,6 +17,7 @@ COMMENT=	A system for describing and enforcing a Python object schema
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Grouch
 
 .include <bsd.port.pre.mk>
 

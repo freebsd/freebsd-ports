@@ -20,5 +20,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/urljr:${PORTSDIR}/www/py-urljr \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	python-openid
 
 .include <bsd.port.mk>

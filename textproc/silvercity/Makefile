@@ -18,6 +18,7 @@ COMMENT=	A lexing package for over 20 programming and markup languages
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	SilverCity
 USE_DOS2UNIX=	yes
 
 .include <bsd.port.mk>

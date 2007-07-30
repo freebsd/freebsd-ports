@@ -22,6 +22,7 @@ LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/spread.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	SpreadModule
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/setup.py

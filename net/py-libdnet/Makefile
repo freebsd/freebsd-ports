@@ -24,6 +24,8 @@ LIBDNET_SLAVE=	yes
 
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--with-python
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_PKGNAME=	dnet
 
 .if defined(MAINTAINER_MODE)
 regression-test: install

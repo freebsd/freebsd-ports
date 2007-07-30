@@ -19,5 +19,6 @@ RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/logilab/__init__.py:${PORTSDIR}/devel/py
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	logilab-astng
 
 .include <bsd.port.mk>

@@ -16,6 +16,7 @@ COMMENT=	Python source code checking tool to help hunting common bugs
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	PyChecker
 
 DOCS=		CHANGELOG COPYRIGHT KNOWN_BUGS MAINTAINERS README TODO VERSION
 

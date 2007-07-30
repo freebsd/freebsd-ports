@@ -17,6 +17,7 @@ COMMENT=	Pyflakes is a program that analyzes Python programs for errors
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pyflakes
 NO_BUILD=	yes
 
 .include <bsd.port.mk>

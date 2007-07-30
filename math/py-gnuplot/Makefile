@@ -22,6 +22,7 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	gnuplot-py
 
 post-install:
 .if !defined(NOPORTDOCS)

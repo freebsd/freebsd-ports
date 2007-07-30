@@ -23,6 +23,7 @@ RUN_DEPENDS=	py*-tkinter>=0:${PORTSDIR}/x11-toolkits/py-tkinter \
 USE_PYTHON=	yes
 USE_TK=		yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	NewsFeed
 
 post-patch:
 	@${REINPLACE_CMD} -e '/py_modules=/s|,.*|],|;/sounds/s|d.*|)|' ${WRKSRC}/setup.py

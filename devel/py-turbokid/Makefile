@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	TurboKid
-PORTVERSION=	0.9.9
+PORTVERSION=	1.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://cheeseshop.python.org/packages/${PYTHON_VER}/T/TurboKid/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	kid:${PORTSDIR}/devel/py-kid
 
-USE_PYTHON=	2.4
+USE_PYTHON=	2.4+
 
 NO_BUILD=	yes
 

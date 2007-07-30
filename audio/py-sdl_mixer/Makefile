@@ -23,6 +23,7 @@ DIST_SUBDIR=	python
 USE_SDL=	sdl mixer
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	pysdl_mixer
 WRKSRC=		${WRKDIR}/pysdl_mixer-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-sdl-mixer
 

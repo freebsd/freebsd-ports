@@ -34,6 +34,10 @@ MAKE_ARGS=	PREFIX="${PREFIX}" \
 ALL_TARGET=	all pythonwrap
 INSTALL_TARGET=	install pythonwrap_install
 
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_PKGNAME=	graceTMPL
+PYDISTUTILS_EGGINFODIR=	${PYTHON_SITELIBDIR}/graceTMPL
+
 post-extract:
 	@${ECHO_CMD} -n > ${WRKSRC}/Makefile.defs
 

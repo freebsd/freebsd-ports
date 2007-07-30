@@ -1,13 +1,13 @@
-bin/idle
+%%IF_DEFAULT%%bin/idle
 bin/idle%%PYVER%%
-bin/pydoc
+%%IF_DEFAULT%%bin/pydoc
 bin/pydoc%%PYVER%%
-bin/python
+%%IF_DEFAULT%%bin/python
 bin/python%%PYVER%%
-bin/python-shared
+%%IF_DEFAULT%%bin/python-shared
 bin/python-shared%%PYVER%%
+%%IF_DEFAULT%%bin/smtpd.py
 bin/smtpd%%PYVER%%.py
-bin/smtpd.py
 %%PYTHON_INCLUDEDIR%%/Python.h
 %%PYTHON_INCLUDEDIR%%/Python-ast.h
 %%PYTHON_INCLUDEDIR%%/abstract.h
@@ -574,7 +574,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib-dynload/math.so
 %%PYTHON_LIBDIR%%/lib-dynload/md5.so
 %%PYTHON_LIBDIR%%/lib-dynload/mmap.so
-%%PYTHON_LIBDIR%%/lib-dynload/nis.so
+%%NO_NIS%%%%PYTHON_LIBDIR%%/lib-dynload/nis.so
 %%PYTHON_LIBDIR%%/lib-dynload/operator.so
 %%PYTHON_LIBDIR%%/lib-dynload/ossaudiodev.so
 %%PYTHON_LIBDIR%%/lib-dynload/parser.so

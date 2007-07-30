@@ -22,6 +22,10 @@ INFO=		plwm
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 
+post-patch:
+	${REINPLACE_CMD} -e 's,whrandom,random,g' ${WRKSRC}/plwm/inspect.py
+	${REINPLACE_CMD} -e 's,$$Id,coding: utf-8 ,g' ${WRKSRC}/plwm/mw_apm.py
+
 pre-install:
 	makeinfo -o ${PREFIX}/info/plwm.info ${WRKSRC}/doc/plwm.texi
 

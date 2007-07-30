@@ -35,6 +35,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_TWISTED=	yes
 NO_BUILD=	yes
+PYDISTUTILS_PKGNAME=	Mantissa
 
 .include <bsd.port.pre.mk>
 

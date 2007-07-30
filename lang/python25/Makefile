@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	python25
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.5.1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -39,11 +38,10 @@ PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
 
-.if !exists(/usr/bin/ypcat) # the world with NO_NIS
-PLIST_EXCLUDE=	'nis.so$$'
-.else
-PLIST_EXCLUDE=	'^$$' # nothing
-.endif
+BIN_SCRIPTS=	idle pydoc python python-shared smtpd.py python-config \
+		python-shared-config
+BINLINKS_SUB=	-e 's,smtpd,smtpd${PYTHON_VER},' \
+		-e 's,(idle|pydoc|python-shared|python),\1${PYTHON_VER},'
 
 OPTIONS=	THREADS "Enable thread support" on \
 		HUGE_STACK_SIZE "Use a larger thread stack" off \
@@ -53,6 +51,13 @@ OPTIONS=	THREADS "Enable thread support" on \
 		FPECTL "Enable floating point exception handling" off
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
+MLINKS=		${PYTHON_VERSION}.1 python.1
+PLIST_SUB+=	IF_DEFAULT=""
+.else
+PLIST_SUB+=	IF_DEFAULT="@comment "
+.endif
 
 # workaround for a bug in base curses.h.
 CFLAGS+=	-D__wchar_t=wchar_t
@@ -93,6 +98,12 @@ PLIST_SUB+=     32BIT_ONLY=""
 .endif
 .if ${ARCH} == sparc64
 CFLAGS+=        -DPYTHON_DEFAULT_RECURSION_LIMIT=900
+.endif
+
+.if !exists(/usr/bin/ypcat) # the world with NO_NIS
+PLIST_SUB+=	NO_NIS="@comment "
+.else
+PLIST_SUB+=	NO_NIS=""
 .endif
 
 .if ${OSVERSION} < 400000
@@ -180,8 +191,7 @@ pre-su-install:
 .endfor
 
 pre-install:
-	${EGREP} -v ${PLIST_EXCLUDE} ${PLIST_TEMPLATE} | \
-	${AWK} '{ print $$0; } \
+	${CAT} ${PLIST_TEMPLATE} | ${AWK} '{ print $$0; } \
 	/LIBDIR.*\.py$$/ && !/\/bad/ { print $$0 "o"; print $$0 "c"; }'	> ${PLIST}
 
 	@# if openssl 0.9.8 is detected, _sha{256,512} module won't be installed
@@ -210,6 +220,13 @@ post-install:
 	@${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${PYTHON_WRKSRC}/Misc/python.man \
 		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
+
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
+	for f in ${BIN_SCRIPTS}; do \
+		TARGET=`${ECHO_CMD} $$f | ${SED} -E ${BINLINKS_SUB}`; \
+		cd ${PREFIX}/bin && ${LN} -f $$TARGET $$f; \
+	done
+.endif
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${TOOLSDIR}

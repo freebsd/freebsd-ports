@@ -17,6 +17,7 @@ COMMENT=	GData Python Client Library
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	gdata.py
 
 EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
 

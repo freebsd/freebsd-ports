@@ -20,5 +20,6 @@ RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng \
 WRKSRC=	${WRKDIR}/bzrtools
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	BzrTools
 
 .include <bsd.port.mk>

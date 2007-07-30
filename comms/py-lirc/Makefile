@@ -28,5 +28,6 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pylircmodule.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
+PYDISTUTILS_PKGNAME=	pylirc
 
 .include <bsd.port.mk>

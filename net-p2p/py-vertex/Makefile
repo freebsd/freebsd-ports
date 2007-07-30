@@ -22,6 +22,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:${PORTSDIR}/devel/py-epsil
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Vertex
 USE_TWISTED=	yes
 NO_BUILD=	yes
 

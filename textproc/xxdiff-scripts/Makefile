@@ -20,5 +20,6 @@ BUILD_DEPENDS=	xxdiff:${PORTSDIR}/textproc/xxdiff
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	xxdiff-scripts
 
 .include <bsd.port.mk>

@@ -24,5 +24,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_TWISTED=	yes
 NO_BUILD=	yes
+PYDISTUTILS_PKGNAME=	Axiom
 
 .include <bsd.port.mk>

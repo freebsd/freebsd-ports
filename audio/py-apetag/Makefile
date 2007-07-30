@@ -17,5 +17,6 @@ COMMENT=	Library for APE Tag written in Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	py-ApeTag
 
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ COMMENT=	Library to create RTF documents using the Python language
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	PyRTF
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-rtf
 

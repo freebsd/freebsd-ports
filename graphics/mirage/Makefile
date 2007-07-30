@@ -20,4 +20,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GETTEXT=	yes
 
+PYDISTUTILS_PKGNAME=	Mirage
+
 .include <bsd.port.mk>

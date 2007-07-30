@@ -18,6 +18,12 @@ COMMENT=	The Numeric Extension to Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_EGGINFO=	Numeric/Numeric-0.0.0-py${PYTHON_VER}.egg-info \
+			Numeric/Numeric-${PORTVERSION}-py${PYTHON_VER}.egg-info \
+			RNG-3.0-py${PYTHON_VER}.egg-info \
+			MA-4.1.0-py${PYTHON_VER}.egg-info \
+			FFTPACK-1.0-py${PYTHON_VER}.egg-info
+
 PYSETUP=	setup_all.py
 NO_LATEST_LINK=	yes
 

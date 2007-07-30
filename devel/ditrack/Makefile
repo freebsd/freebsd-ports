@@ -17,8 +17,9 @@ COMMENT=	A tracking system based on Subversion repository
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 
 NO_BUILD=	yes
-USE_PYDISTUTILS=	yes
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	DITrack
 WRKSRC=		${WRKDIR}/DITrack-${PORTVERSION}
 
 .include <bsd.port.pre.mk>

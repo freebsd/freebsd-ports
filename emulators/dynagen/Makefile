@@ -18,6 +18,7 @@ RUN_DEPENDS=	dynamips:${PORTSDIR}/emulators/dynamips
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=	0.4.4
 ALL_TARGET=	# empty
 USE_GCC=	3.4+
 USE_DOS2UNIX=	yes

@@ -17,5 +17,6 @@ COMMENT=	Python module that provides access to NOAA's METAR weather reports
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pymetar
 
 .include <bsd.port.mk>

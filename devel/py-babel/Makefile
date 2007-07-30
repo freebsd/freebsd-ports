@@ -17,25 +17,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	A collection of tools for internationalizing Python applications
 
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_PYTHON=	2.3+
-USE_PYDISTUTILS=	yes
-BABELVER?=	${PORTVERSION}
-PYTHONVER?=	${_PYTHON_VERSION}
-PLIST_SUB=	BABELVER=${BABELVER} \
-		PYTHONVER=${PYTHONVER}
+USE_PYDISTUTILS=	easy_install
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	doc/*
 .endif
-
-SUB_FILES+=	pkg-deinstall pkg-install
-SUB_LIST+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
-		EGG="${PORTNAME}==${PORTVERSION}"
-
-PYBABEL_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VERSION:S/^python//}.egg
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -44,4 +31,5 @@ post-install:
 	${CP} -r ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
+
 .include <bsd.port.mk>

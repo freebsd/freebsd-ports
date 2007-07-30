@@ -17,6 +17,7 @@ COMMENT=	A general-purpose parser generator for Python
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	BisonGen
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}

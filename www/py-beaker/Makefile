@@ -17,17 +17,8 @@ DISTNAME=	Beaker-${PORTVERSION}
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	A Session and Caching library with WSGI Middleware
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS+=	${BUILD_DEPENDS}
-
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-
-PYBEAKER_EGG=	Beaker-${PORTVERSION}-py${PYTHON_VER}.egg
-
-PLIST_SUB=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PYBEAKER_EGG=${PYBEAKER_EGG}
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	Beaker
 
 .include <bsd.port.mk>

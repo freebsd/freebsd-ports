@@ -31,6 +31,7 @@ USE_TWISTED=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 
+PYDISTUTILS_PKGNAME=	BalazarBrothers
 DATADIR=	share/balazar_brothers
 
 OPTIONS=	OPENAL	"Use openal sound system" on \

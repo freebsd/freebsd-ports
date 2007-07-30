@@ -1,6 +1,10 @@
+%%IF_DEFAULT%%bin/idle
 bin/idle%%PYVER%%
+%%IF_DEFAULT%%bin/pydoc
 bin/pydoc%%PYVER%%
+%%IF_DEFAULT%%bin/python
 bin/python%%PYVER%%
+%%IF_DEFAULT%%bin/python-shared
 bin/python-shared%%PYVER%%
 include/%%PYTHON_VERSION%%/Python.h
 include/%%PYTHON_VERSION%%/abstract.h

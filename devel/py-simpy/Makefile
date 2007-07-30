@@ -18,6 +18,7 @@ COMMENT=	Simulation in Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	SimPy
 
 OPTIONS=	TKINTER		"Install py-tkinter for plot"      off
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options

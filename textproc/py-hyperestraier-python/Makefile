@@ -19,5 +19,6 @@ COMMENT=	Pure Python HyperEstraier library
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGVERSION=	0.9.1
 
 .include <bsd.port.mk>

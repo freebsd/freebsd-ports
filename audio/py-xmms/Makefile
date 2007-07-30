@@ -21,6 +21,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pyxmms
 USE_BZIP2=	yes
 USE_GNOME=	glib12
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
