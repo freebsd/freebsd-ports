@@ -1366,7 +1366,6 @@ lib/libAfterStep.a
 share/gnome/wm-properties/AfterStep.desktop
 share/xsessions/AfterStep.desktop
 @dirrm share/xsessions
-@dirrm share/pixmaps
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/start/7_About_AfterStep
 @dirrm %%DATADIR%%/start/5_Quit
