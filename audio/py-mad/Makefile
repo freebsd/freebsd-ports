@@ -20,6 +20,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/madmodule.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
+PYDISTUTILS_PKGNAME=	pymad
 
 post-patch:
 	@${REINPLACE_CMD} 's/^\(.*compile.*\)\?\(.*\)\?\(.*\)$$/\1\2\3/' \

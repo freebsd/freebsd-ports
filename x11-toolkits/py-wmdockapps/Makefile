@@ -19,6 +19,7 @@ COMMENT=	Tools for making dockapps in Python
 USE_XLIB=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pywmdockapps
 
 post-patch:
 	${REINPLACE_CMD} 's|/usr/X11R6|${X11BASE}|' ${WRKSRC}/setup.py

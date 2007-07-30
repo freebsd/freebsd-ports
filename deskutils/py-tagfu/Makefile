@@ -17,5 +17,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	TagFu
+PYDISTUTILS_PKGVERSION=	0.1
 
 .include <bsd.port.mk>

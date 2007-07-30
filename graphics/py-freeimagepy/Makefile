@@ -22,5 +22,7 @@ WRKSRC=		${WRKDIR}/FreeImagePy
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	FreeImagePy
+PYDISTUTILS_PKGVERSION=	1.0.0
 
 .include <bsd.port.mk>

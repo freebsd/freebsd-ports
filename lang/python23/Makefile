@@ -7,7 +7,7 @@
 
 PORTNAME=	python23
 PORTVERSION=	2.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -16,7 +16,6 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	python@FreeBSD.org
 COMMENT?=	An interpreted object-oriented programming language
 
-CONFLICTS=	stackless_python-*
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
@@ -38,6 +37,9 @@ PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
 
+BIN_SCRIPTS=	idle pydoc python python-shared
+BINLINKS_SUB=	-e 's,(idle|pydoc|python-shared|python),\1${PYTHON_VER},'
+
 OPTIONS=	THREADS "Enable thread support" on \
 		HUGE_STACK_SIZE "Use a larger thread stack" off \
 		UCS4 "Use UCS4 for unicode support" on \
@@ -45,6 +47,13 @@ OPTIONS=	THREADS "Enable thread support" on \
 		IPV6 "Enable IPv6 support" on
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
+MLINKS=         ${PYTHON_VERSION}.1 python.1
+PLIST_SUB+=     IF_DEFAULT=""
+.else
+PLIST_SUB+=     IF_DEFAULT="@comment "
+.endif
 
 .if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--with-threads
@@ -170,6 +179,13 @@ post-install:
 	@# additional files installing by ports
 	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.3 ${WRKDIR}/idle2.3 \
 		${PREFIX}/bin
+
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
+	for f in ${BIN_SCRIPTS}; do \
+		TARGET=`${ECHO_CMD} $$f | ${SED} -E ${BINLINKS_SUB}`; \
+		cd ${PREFIX}/bin && ${LN} -f $$TARGET $$f; \
+	done
+.endif
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${TOOLSDIR}

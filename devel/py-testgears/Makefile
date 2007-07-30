@@ -16,15 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python module to run tests written as simple functions
 
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
-# need to remove the egg
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-
-SUB_FILES=	pkg-deinstall
-SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
-		EGG="${PORTNAME}==${PORTVERSION}"
+USE_PYDISTUTILS=easy_install
 
 .include <bsd.port.mk>

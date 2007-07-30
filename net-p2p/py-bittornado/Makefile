@@ -24,6 +24,7 @@ CONFLICTS=	py??-*[Bb]it[Tt]ornado-core-[0-9]* py??-*[Bb]it[Tt]orrent*-[0-9]* btq
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGVERSION=	T-0.3.18._BitTornado_
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-CVS
 

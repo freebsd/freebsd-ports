@@ -20,6 +20,7 @@ RUN_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+PYDISTUTILS_NOEGGINFO=	yes # XXX use bsd.python.mk's
 PYSIMPLEJSON_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}-${OSINFOS}.egg
 OSINFOS=	${OPSYS:L}-${OSRELEASE}-${ARCH}
 

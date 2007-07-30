@@ -19,6 +19,8 @@ COMMENT=	Python Arrays on mmap()
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Vmaps
+PYDISTUTILS_PKGVERSION=	1.0
 
 .if !defined(NOPORTDOCS)
 post-install:

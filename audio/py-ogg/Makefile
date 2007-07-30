@@ -20,6 +20,7 @@ LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pyogg
 
 do-configure:
 	@cd ${WRKSRC} && ${PYTHON_CMD} config_unix.py --prefix ${LOCALBASE}

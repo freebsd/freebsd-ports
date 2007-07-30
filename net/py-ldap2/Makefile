@@ -18,6 +18,7 @@ COMMENT=	An LDAP module for python, for OpenLDAP2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_OPENLDAP=	yes
+PYDISTUTILS_PKGNAME=	python-ldap
 
 REPLACE_ARGS=	-e 's,/usr/local/openldap-2.3/lib,${LOCALBASE}/lib,' \
 		-e 's,/usr/local/openldap-2.3/include,${LOCALBASE}/include,'

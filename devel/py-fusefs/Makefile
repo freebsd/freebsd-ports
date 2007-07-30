@@ -22,4 +22,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GNOME=	pkgconfig
 
+PYDISTUTILS_PKGNAME=	fuse-python
+PYDISTUTILS_PKGVERSION=	0.2pre1
+
 .include <bsd.port.mk>

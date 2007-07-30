@@ -19,5 +19,6 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/curl:${PORTSDIR}/ftp/py-curl
 
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	python-urljr
 
 .include <bsd.port.mk>

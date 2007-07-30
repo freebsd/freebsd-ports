@@ -22,6 +22,7 @@ LIB_DEPENDS=	plot:${PORTSDIR}/graphics/plotutils
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	python2-biggles
 USE_LDCONFIG=	yes
 
 post-patch:

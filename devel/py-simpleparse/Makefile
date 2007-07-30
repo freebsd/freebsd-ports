@@ -21,5 +21,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/TextTools/TextTools.py:${PORTSDIR}/lang/py-
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	SimpleParse
+PYDISTUTILS_PKGVERSION=	2.1.0a1
 
 .include <bsd.port.mk>

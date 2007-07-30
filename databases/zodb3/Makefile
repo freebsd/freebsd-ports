@@ -18,5 +18,6 @@ COMMENT=	The Z - Object Database for python
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	ZODB3
 
 .include <bsd.port.mk>

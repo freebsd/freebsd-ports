@@ -21,5 +21,6 @@ USE_GMAKE=	yes
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/generate.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=	2.2
 
 .include <bsd.port.mk>

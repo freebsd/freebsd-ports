@@ -21,5 +21,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/FontTools.pth:${PORTSDIR}/print/py-fonttools \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	TTFQuery
 
 .include <bsd.port.mk>

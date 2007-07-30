@@ -23,6 +23,8 @@ DIST_SUBDIR=	python
 PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/pyexpat.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	pyexpat
+PYDISTUTILS_PKGVERSION=	0.0.0
 WRKSRC=		${PYTHON_WRKSRC}/Modules
 MD5_FILE=	${PORTSDIR}/lang/python/distinfo
 

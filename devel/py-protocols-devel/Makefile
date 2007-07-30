@@ -30,8 +30,10 @@ SUB_LIST+=	EGG="PyProtocols==${PYPROTOCOLS_VER}" \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=	1.0a0
 USE_ZIP=	yes
 
+PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 PYPROTOCOLS_EGG=	PyProtocols-${PYPROTOCOLS_VER}-py${PYTHON_VERSION:S/^python//}-${OPSYS:L}-${OSRELEASE}-${ARCH}.egg
 PYPROTOCOLS_VER?=	1.0a0
 

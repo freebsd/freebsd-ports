@@ -1,0 +1,16 @@
+--- wxPython/py/introspect.py.orig	Mon Jul 30 08:07:25 2007
++++ wxPython/py/introspect.py	Mon Jul 30 08:07:35 2007
+@@ -1,11 +1,11 @@
+ """Provides a variety of introspective-type support functions for
+ things like call tips and command auto completion."""
+ 
++from __future__ import nested_scopes
++
+ __author__ = "Patrick K. O'Brien <pobrien@orbtech.com>"
+ __cvsid__ = "$Id: introspect.py,v 1.1.2.2 2003/05/19 21:41:24 PKO Exp $"
+ __revision__ = "$Revision: 1.1.2.2 $"[11:-2]
+-
+-from __future__ import nested_scopes
+ 
+ import cStringIO
+ import inspect

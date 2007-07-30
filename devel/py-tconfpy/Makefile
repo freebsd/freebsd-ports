@@ -13,6 +13,9 @@ MAINTAINER=	tconfpy@tundraware.com
 COMMENT=	A Python Configuration File Parser
 
 USE_PYTHON=	yes
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_PKGNAME=	tconfpy
+PYDISTUTILS_PKGVERSION=	0.0.0
 
 MANCOMPRESSED=	yes
 MAN1=		test-tc.1

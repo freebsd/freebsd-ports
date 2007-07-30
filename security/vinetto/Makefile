@@ -20,6 +20,7 @@ OPTIONS=	IMAGING "Build with ability to extract graphic thumbnails" on
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGVERSION=	0.06alpha
 
 .include <bsd.port.pre.mk>
 

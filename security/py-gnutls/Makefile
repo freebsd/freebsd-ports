@@ -20,6 +20,7 @@ LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	python_gnutls
 
 EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
 

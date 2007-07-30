@@ -18,5 +18,6 @@ WRKSRC=		${WRKDIR}/ZConfig-${PORTVERSION}
 
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	ZConfig
 
 .include <bsd.port.mk>

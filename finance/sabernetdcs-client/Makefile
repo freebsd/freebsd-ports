@@ -21,11 +21,13 @@ RUN_DEPENDS=	pygtk-codegen-2.0:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHONPREFIX_SITELIBDIR}/gtk-2.0/gobject/__init__.py:${PORTSDIR}/devel/py-gobject \
 		${PYTHONPREFIX_SITELIBDIR}/Pyro/__init__.py:${PORTSDIR}/devel/py-ro
 
-USE_PYTHON=	2.4
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 USE_BZIP2=	yes
 DOCSDIR=	${TARGETDIR}/share/doc/sndcs
 DATADIR=	${TARGETDIR}/share/sndcs
+
+PYDISTUTILS_PKGNAME=	sndcs
 
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-setup.py

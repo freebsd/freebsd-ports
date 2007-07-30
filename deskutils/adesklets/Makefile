@@ -32,6 +32,7 @@ INFO=		adesklets \
 		adesklets_fr
 
 SUB_FILES=	pkg-message
+INSTALLS_EGGINFO=	yes
 
 .include <bsd.port.pre.mk>
 

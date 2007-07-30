@@ -29,6 +29,7 @@ CONFLICTS=	py??-twisted-[0-9]*
 USE_BZIP2=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Twisted
 
 MAN1=	manhole.1 mktap.1 pyhtmlizer.1 tap2deb.1 tap2rpm.1 tapconvert.1 trial.1 twistd.1
 

@@ -19,6 +19,7 @@ COMMENT=	Graph and set datatypes for Python (C extension)
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=	2.2
 WRKSRC=			${WRKDIR}/${DISTNAME}/kjbuckets
 
 post-install:

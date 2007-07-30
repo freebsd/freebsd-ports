@@ -21,6 +21,7 @@ USE_BZIP2=		yes
 USE_PYTHON=		yes
 FILES=			kqsyscallmodule.so KQueue.py KQueue.pyc
 PLIST_FILES=		${FILES:S+^+%%PYTHON_SITELIBDIR%%/+g}
+MAKE_ENV=		MAINCC=${CC}
 
 .include <bsd.port.pre.mk>
 

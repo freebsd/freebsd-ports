@@ -30,6 +30,8 @@ USE_PYDISTUTILS=	yes
 USE_GL=		yes
 USE_SDL=	sdl mixer
 
+PYDISTUTILS_PKGNAME=	Slune
+
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.cfg
 

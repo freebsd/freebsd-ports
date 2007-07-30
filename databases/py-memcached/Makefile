@@ -18,5 +18,6 @@ COMMENT=	Python API for memcached, a distributed memory cache daemon
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	python-memcached
 
 .include <bsd.port.mk>

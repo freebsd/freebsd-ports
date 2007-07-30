@@ -18,6 +18,8 @@ COMMENT=	Python interface to the sendfile(2) system call
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	py-sendfile
+PYDISTUTILS_PKGVERSION=	1.0
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/sendfile.so
 

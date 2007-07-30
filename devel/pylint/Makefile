@@ -25,4 +25,12 @@ pre-everything::
 	@${ECHO_CMD} "You may want to install x11-toolkits/py-tkinter to make pylint-gui work."
 	@${ECHO_CMD} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 250
+PLIST_SUB+=	NOPY25=""
+.else
+PLIST_SUB+=	NOPY25="@comment "
+.endif
+
+.include <bsd.port.post.mk>

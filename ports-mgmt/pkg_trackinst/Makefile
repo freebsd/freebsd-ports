@@ -13,6 +13,7 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	PkgDB/pkg-plist generator by tracking installation
 
 USE_PYTHON=	2.3+
+INSTALLS_EGGINFO=	yes
 MAKE_ENV=	PYTHON_CMD=${PYTHON_CMD}
 
 .include <bsd.port.pre.mk>

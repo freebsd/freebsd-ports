@@ -43,7 +43,7 @@ do-extract:
 
 post-patch:
 	${PERL} -i -p \
-		-e 's,"2\.1" "2\.0" "1\.6" "1\.5",${PYTHON_VERSION:S/^python//},g;' \
+		-e 's,"2\.4" "2\.3" "2\.2" "2\.1",${PYTHON_VERSION:S/^python//},g;' \
 			${WRKSRC}/configure
 	${CP} ${TEMPLATES}/config.sub ${WRKSRC}
 	${CP} ${TEMPLATES}/config.guess ${WRKSRC}

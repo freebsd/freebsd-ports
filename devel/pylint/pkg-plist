@@ -92,8 +92,8 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/input/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/input/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func___future___import_not_first_stmt.py
-%%PYTHON_SITELIBDIR%%/pylint/test/input/func___future___import_not_first_stmt.pyc
-%%PYTHON_SITELIBDIR%%/pylint/test/input/func___future___import_not_first_stmt.pyo
+%%NOPY25%%%%PYTHON_SITELIBDIR%%/pylint/test/input/func___future___import_not_first_stmt.pyc
+%%NOPY25%%%%PYTHON_SITELIBDIR%%/pylint/test/input/func___future___import_not_first_stmt.pyo
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func___name___access.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func___name___access.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func___name___access.pyo

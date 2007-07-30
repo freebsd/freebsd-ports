@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	PyBookReader
 USE_GNOME=	pygtk2
 
 .include <bsd.port.mk>

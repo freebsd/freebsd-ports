@@ -1,9 +1,16 @@
+%%IF_DEFAULT%%bin/idle
 bin/idle%%PYVER%%
+%%IF_DEFAULT%%bin/pydoc
 bin/pydoc%%PYVER%%
+%%IF_DEFAULT%%bin/python
 bin/python%%PYVER%%
+%%IF_DEFAULT%%bin/python-config
 bin/python%%PYVER%%-config
+%%IF_DEFAULT%%bin/python-shared
 bin/python-shared%%PYVER%%
+%%IF_DEFAULT%%bin/python-shared-config
 bin/python-shared%%PYVER%%-config
+%%IF_DEFAULT%%bin/smtpd.py
 bin/smtpd%%PYVER%%.py
 %%PYTHON_INCLUDEDIR%%/Python-ast.h
 %%PYTHON_INCLUDEDIR%%/Python.h
@@ -670,7 +677,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib-dynload/itertools.so
 %%PYTHON_LIBDIR%%/lib-dynload/math.so
 %%PYTHON_LIBDIR%%/lib-dynload/mmap.so
-%%PYTHON_LIBDIR%%/lib-dynload/nis.so
+%%NO_NIS%%%%PYTHON_LIBDIR%%/lib-dynload/nis.so
 %%PYTHON_LIBDIR%%/lib-dynload/operator.so
 %%PYTHON_LIBDIR%%/lib-dynload/ossaudiodev.so
 %%PYTHON_LIBDIR%%/lib-dynload/parser.so
@@ -860,6 +867,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/exception_hierarchy.txt
 %%PYTHON_LIBDIR%%/test/fork_wait.py
 %%PYTHON_LIBDIR%%/test/greyrgb.uue
+%%PYTHON_LIBDIR%%/test/infinite_reload.py
 %%PYTHON_LIBDIR%%/test/inspect_fodder.py
 %%PYTHON_LIBDIR%%/test/inspect_fodder2.py
 %%PYTHON_LIBDIR%%/test/list_tests.py
@@ -984,6 +992,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_compile.py
 %%PYTHON_LIBDIR%%/test/test_compiler.py
 %%PYTHON_LIBDIR%%/test/test_complex.py
+%%PYTHON_LIBDIR%%/test/test_complex_args.py
 %%PYTHON_LIBDIR%%/test/test_contains.py
 %%PYTHON_LIBDIR%%/test/test_contextlib.py
 %%PYTHON_LIBDIR%%/test/test_cookie.py
@@ -1183,6 +1192,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_strop.py
 %%PYTHON_LIBDIR%%/test/test_strptime.py
 %%PYTHON_LIBDIR%%/test/test_struct.py
+%%PYTHON_LIBDIR%%/test/test_structmembers.py
 %%PYTHON_LIBDIR%%/test/test_structseq.py
 %%PYTHON_LIBDIR%%/test/test_subprocess.py
 %%PYTHON_LIBDIR%%/test/test_sunaudiodev.py

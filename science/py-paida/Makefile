@@ -23,5 +23,6 @@ BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tki
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=	3.2.1_2.8
 
 .include <bsd.port.mk>

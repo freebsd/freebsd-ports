@@ -17,18 +17,9 @@ DISTNAME=	MyghtyUtils-${PORTVERSION}
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Container and Utility Functions from the Myghty Template Framework
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_PYTHON=	yes
 USE_ZIP=	yes
-USE_PYDISTUTILS=	yes
-
-PYMYGHTYUTILS_EGG=	MyghtyUtils-${PORTVERSION}-py${PYTHON_VER}.egg
-
-PLIST_SUB=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PYMYGHTYUTILS_EGG=${PYMYGHTYUTILS_EGG}
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	MyghtyUtils
 
 .include <bsd.port.mk>

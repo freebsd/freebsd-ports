@@ -1,6 +1,4 @@
-@unexec %%EASY_INSTALL_CMD%% -q -m -S %D/%%PYTHON_SITELIBDIR%% %%PYFUNKLOAD_EGG_VER%%
-%%PYTHON_SITELIBDIR%%/%%PYFUNKLOAD_EGG%%
-@exec %%EASY_INSTALL_CMD%% -q -N -S %D/%%PYTHON_SITELIBDIR%% %%PYFUNKLOAD_EGG_VER%%
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 bin/fl-build-report
 bin/fl-credential-ctl
 bin/fl-import-from-tm-recorder

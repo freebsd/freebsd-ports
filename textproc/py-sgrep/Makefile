@@ -24,6 +24,8 @@ WRKSRC=		${WRKDIR}/sgrep-${SGREP_VER}
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pysgrep
+PYDISTUTILS_PKGVERSION=	1.0a
 
 post-extract:
 	@${TAR} -zxf ${DISTDIR}/pysgrep-${PORTVERSION}.tar.gz -C ${WRKSRC}

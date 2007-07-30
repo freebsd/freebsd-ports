@@ -24,6 +24,9 @@ USE_PYTHON=	2.3+
 #USE_PYDISTUTILS=	yes
 USE_BZIP2=	yes
 
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_PKGVERSION=	1.0.0_svn
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/.svn
 

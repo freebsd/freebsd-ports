@@ -20,6 +20,7 @@ CONFLICTS=	py??-snmp2-[0-9]* py??-snmp4-[0-9]*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	pysnmp
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 

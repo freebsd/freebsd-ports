@@ -24,6 +24,7 @@ RUN_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 MANUAL_PACKAGE_BUILD=Doesn't build in tinderbox environment
+PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 

@@ -24,6 +24,7 @@ USE_GNOME=	atk
 USE_GCC=	3.4+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	OcempGUI
 
 post-patch:
 .if defined(NOPORTDOCS)

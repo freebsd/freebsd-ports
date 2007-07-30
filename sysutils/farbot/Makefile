@@ -21,6 +21,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	farb
+PYDISTUTILS_PKGVERSION=	0.1
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/farbot.conf ${PREFIX}/etc/farbot.conf.sample

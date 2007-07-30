@@ -19,9 +19,12 @@ COMMENT=	Python interface to FLTK window toolkit
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.4
 USE_PYDISTUTILS=	yes
 USE_XLIB=	yes
+
+PYDISTUTILS_PKGNAME=	pyFltk
+PYDISTUTILS_PKGVERSION=	1.1b3
 
 MAKE_ENV+=	FLTK_HOME=${X11BASE}/include OPENGL_HOME=${X11BASE}/include
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

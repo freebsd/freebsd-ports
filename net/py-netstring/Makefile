@@ -16,5 +16,6 @@ COMMENT=	Python module implenting the netstring protocol
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	python-netstring
 
 .include <bsd.port.mk>

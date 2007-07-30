@@ -18,6 +18,7 @@ COMMENT=	A fast implementation of the xmlrpc spec for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	py-xmlrpc
 EXAMPLESDIR=	${PREFIX}/share/examples/py-xmlrpc
 
 .if !defined(NOPORTDOCS)

@@ -19,6 +19,7 @@ COMMENT=	Automated resource-as-package embedding mechanism
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	ResourcePackage
 
 post-install:
 	@${FIND} ${PYTHON_SITELIBDIR}/resourcepackage -type f | \

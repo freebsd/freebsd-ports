@@ -19,7 +19,7 @@ COMMENT=	A python implementation of a JSON (http//:json.org) reader/writer
 
 NO_WRKSUBDIR=	yes
 
-USE_PYTHON=	2.4
+USE_PYTHON=	2.4+
 USE_ZIP=	yes
 
 do-build:
@@ -27,7 +27,7 @@ do-build:
 	cd ${WRKDIR}; \
 	FILES=$$(${FIND} . -name "*.py" ); \
 	for FILE in $${FILES}; do \
-	    ${ECHO} import `basename $${FILE} .py` | python; \
+	    ${ECHO} import `basename $${FILE} .py` | ${PYTHON_CMD}; \
 	done; \
 
 do-install:

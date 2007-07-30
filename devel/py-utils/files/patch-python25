@@ -1,0 +1,35 @@
+--- pythonutils/pathutils.py.orig	Fri Mar 30 06:39:37 2007
++++ pythonutils/pathutils.py	Fri Mar 30 06:39:49 2007
+@@ -14,13 +14,13 @@
+ # Scripts maintained at http://www.voidspace.org.uk/python/index.shtml
+ # E-mail fuzzyman@voidspace.org.uk
+ 
++from __future__ import generators
+ """
+ This module contains convenience functions for working with files and paths.
+ """
+ 
+ __version__ = '0.2.4'
+ 
+-from __future__ import generators
+ import os
+ import sys
+ import time
+--- pythonutils/odict.py.orig	Fri Mar 30 06:41:25 2007
++++ pythonutils/odict.py	Fri Mar 30 06:41:35 2007
+@@ -14,6 +14,7 @@
+ # http://groups.google.com/group/pythonutils/
+ # Comments, suggestions and bug reports welcome.
+ 
++from __future__ import generators
+ """A dict that keeps keys in insertion order"""
+ 
+ __author__ = ('Nicola Larosa <nico-NoSp@m-tekNico.net>,'
+@@ -27,7 +28,6 @@
+ 
+ __all__ = ['OrderedDict', 'SequenceOrderedDict']
+ 
+-from __future__ import generators
+ from warnings import warn
+ from types import SliceType
+ 

@@ -18,5 +18,6 @@ COMMENT=	Provides powerful extensions to the standard datetime module
 USE_BZIP2=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	python-dateutil
 
 .include <bsd.port.mk>

@@ -16,6 +16,7 @@ COMMENT=	An application to keep a local mirror of web comics
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	Dosage
 
 MAN1=		mainline.1
 

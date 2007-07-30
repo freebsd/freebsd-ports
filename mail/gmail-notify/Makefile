@@ -29,10 +29,11 @@ EXTRAS_WRKSRC!=	cd ${PORTSDIR}/x11-toolkits/py-gnome-extras && ${MAKE} -V WRKSRC
 
 post-patch:
 	${SED} -e 's|@DATADIR@|${DATADIR}|' ${FILESDIR}/gmail-notifier > ${WRKSRC}/gmail-notifier
+	${SED} -e 's|@PYTHON_INCLUDEDIR@|${PYTHON_INCLUDEDIR}|' ${FILESDIR}/Makefile.in > ${WRKSRC}/Makefile
 
 pre-configure:
 	${CP} ${EXTRAS_WRKSRC}/egg/tray/eggtrayicon.[ch] ${EXTRAS_WRKSRC}/egg/tray/trayicon* ${WRKSRC}
-	${CP} ${FILESDIR}/config.h ${FILESDIR}/Makefile ${WRKSRC}
+	${CP} ${FILESDIR}/config.h ${WRKSRC}
 	${RM} ${WRKSRC}/pytrayicon.so
 
 do-install:

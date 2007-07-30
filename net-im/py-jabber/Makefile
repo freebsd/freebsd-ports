@@ -21,6 +21,8 @@ RUN_DEPENDS=	${PYEXPAT}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	jabber.py
+PYDISTUTILS_PKGVERSION=	0.3-1
 
 post-install:
 	@${ECHO} "jabber" > ${PYTHON_SITELIBDIR}/jabber.pth

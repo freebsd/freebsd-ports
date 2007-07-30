@@ -19,5 +19,6 @@ COMMENT=	Secure pickle-like module
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Cerealizer
 
 .include <bsd.port.mk>

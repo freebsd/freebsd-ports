@@ -23,6 +23,7 @@ RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pythondialog
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-dialog
 

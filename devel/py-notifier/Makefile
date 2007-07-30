@@ -17,6 +17,7 @@ COMMENT=	A generic notifier/event scheduler abstraction
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pynotifier
 
 EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
 

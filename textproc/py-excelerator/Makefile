@@ -18,6 +18,7 @@ COMMENT=	A Python library for generating Excel 97/2000/XP/2003 files
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pyExcelerator
 USE_ZIP=	yes
 WRKSRC=	${WRKDIR}/pyExcelerator-${PORTVERSION}
 

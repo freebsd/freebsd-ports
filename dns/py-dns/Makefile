@@ -20,6 +20,7 @@ COMMENT=	DNS (Domain Name Service) library for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pydns
 
 DOCS=		README.txt README-guido.txt
 DOCSDIR=	${PREFIX}/share/doc/py-dns

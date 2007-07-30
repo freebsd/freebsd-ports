@@ -22,6 +22,7 @@ RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 USE_PGSQL=	yes
 USE_PYTHON=	yes
 DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
+INSTALLS_EGGINFO=	yes
 
 pre-build:
 	@ cd ${WRKSRC} ; ${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' setup.py

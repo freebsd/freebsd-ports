@@ -31,6 +31,7 @@ WRKSRC=		${WRKDIR}/server
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGVERSION=	3.2.0
 
 MAN1=		tinyerp-server.1
 

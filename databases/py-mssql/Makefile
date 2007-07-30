@@ -20,6 +20,7 @@ LIB_DEPENDS=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	pymssql
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \

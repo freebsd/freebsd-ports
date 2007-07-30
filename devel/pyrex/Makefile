@@ -17,6 +17,7 @@ COMMENT=	Programming Language for writing Python extension modules
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	Pyrex
 
 post-install:
 	@# precompile lexicon pickle

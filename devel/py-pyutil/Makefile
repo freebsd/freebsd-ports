@@ -17,28 +17,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	quakelee@cn.FreeBSD.org
 COMMENT=	A collection of mature utilities for Python programmers
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
-
-USE_PYTHON=	2.4
-USE_PYDISTUTILS=	yes
-PYTHONVER?=	${_PYTHON_VERSION}
-
-PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PYTHONVER=${PYTHONVER} \
-		PYUTIL_EGG=${PYUTIL_EGG} \
-		PYUTIL_EGG_VER="${PORTNAME}==${PORTVERSION}"
-OSINFOS=	${OPSYS:L}-${OSRELEASE}-${ARCH}
-PYUTIL_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}-${OSINFOS}.egg
+USE_PYTHON=	2.4+
+USE_PYDISTUTILS=easy_install
+PYEASYINSTALL_ARCHDEP=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^from\ ez\_setup|#from\ ez\_setup|' \
 	-e 's|^use_setuptools|#use_setuptools|' ${WRKSRC}/${PYSETUP}
 
-.include <bsd.port.pre.mk>
-
-OSRELEASE!=	${DESTDIR}/usr/bin/uname -r
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

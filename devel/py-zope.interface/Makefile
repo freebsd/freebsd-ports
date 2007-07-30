@@ -22,6 +22,8 @@ MANUAL_PACKAGE_BUILD=Doesn't build in tinderbox environment
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	zope.interface
+PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 
 EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
 

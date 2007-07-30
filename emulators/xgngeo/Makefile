@@ -25,6 +25,7 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	XGngeo
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>

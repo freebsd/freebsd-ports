@@ -23,6 +23,8 @@ USE_PYDISTUTILS=yes
 USE_ZOPE=	yes
 .endif
 
+PYDISTUTILS_PKGNAME=	egenix-mx-base
+
 DOCDIR=		${PREFIX}/share/doc/py-mx
 MXHDRDIR=	${PYTHONPREFIX_SITELIBDIR}/mx/stdlib
 

@@ -18,6 +18,7 @@ COMMENT=	Create and display a Tkinter dialog box for editing any Python object
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	EditObj
 WRKSRC=		${WRKDIR}/EditObj-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-editobj
 

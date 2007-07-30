@@ -77,4 +77,10 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VERSION} != ${PYTHON_DEFAULT_VERSION} && defined(PACKAGE_BUILDING)
+IGNORE=	can't be built: the default Python version should be ${PYTHON_VERSION} in order to build a package in the build cluster
+.endif
+
+.include <bsd.port.post.mk>

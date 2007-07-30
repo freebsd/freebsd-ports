@@ -22,6 +22,7 @@ LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex
 PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/speex.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGVERSION=	1.0
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \

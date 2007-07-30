@@ -161,6 +161,7 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	@${RM} -f ${MAILMANDIR}/pythonlib/*.egg-info
 .for dir in cron scripts
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${MAILMANDIR}/${dir}
 .endfor

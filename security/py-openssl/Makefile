@@ -20,6 +20,7 @@ COMMENT=	Python interface to the OpenSSL library
 USE_PYTHON=	yes
 USE_PYTHON_PREFIX=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pyOpenSSL
 USE_OPENSSL=	yes
 
 .include <bsd.port.mk>

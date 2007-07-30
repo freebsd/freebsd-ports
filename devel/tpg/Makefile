@@ -16,6 +16,7 @@ COMMENT=	Parser generator in Python
 
 USE_PYTHON=		2.2+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	TPG
 
 NO_BUILD=	yes
 

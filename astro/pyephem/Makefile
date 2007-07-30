@@ -16,10 +16,9 @@ MAINTAINER=	db@FreeBSD.org
 COMMENT=	Scientific-grade astronomical computations for Python
 
 USE_PYTHON=	2.4+
-NO_BUILD=	yes
+USE_PYDISTUTILS=yes
 
-do-install:
-	(cd ${WRKSRC}; ${PYTHON_CMD} setup.py install)
+post-install:
 .if     !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/pyephem-manual.html ${DOCSDIR}

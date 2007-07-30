@@ -25,6 +25,12 @@ USE_EMACS=	yes
 EMACS_PORT_NAME=xemacs21
 .endif
 
+post-patch:
+.for f in __init__.py pymacs.py
+	${REINPLACE_CMD} -e 's,# Copyright,# coding:latin1 Copyright,g' \
+		${WRKSRC}/Pymacs/$f
+.endfor
+
 # Install the emacs side of things
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pymacs.el ${PREFIX}/${EMACS_SITE_LISPDIR}

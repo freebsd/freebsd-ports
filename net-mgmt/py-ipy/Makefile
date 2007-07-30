@@ -19,6 +19,7 @@ COMMENT=	A Python module for handling IPv4 and IPv6 Addresses and Networks
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	IPy
 
 test: install
 	${PYTHON_CMD} ${WRKSRC}/test/test_IPy.py

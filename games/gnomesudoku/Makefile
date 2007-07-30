@@ -32,6 +32,8 @@ USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 USE_GNOME=	gnomehack gnomeprefix pygnome2 pygnomedesktop
 
+PYDISTUTILS_PKGNAME=	gnome-sudoku
+
 .if !defined(DISPLAY)
 pre-configure:
 	@if [ -f ${WRKDIR}/.Xvfb.pid ]; then \

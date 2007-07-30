@@ -23,6 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
+INSTALLS_EGGINFO=	yes
 
 .include <bsd.port.pre.mk>
 

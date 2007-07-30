@@ -18,6 +18,7 @@ COMMENT=	Apache module that embeds the Python interpreter within the server
 USE_APACHE=	2.0+
 USE_PYTHON=	yes
 
+INSTALLS_EGGINFO=	yes
 LATEST_LINK=	mod_python3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}" \

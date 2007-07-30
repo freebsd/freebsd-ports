@@ -17,5 +17,6 @@ COMMENT=	Python binding for the LZMA compression library
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	pylzma
 
 .include <bsd.port.mk>

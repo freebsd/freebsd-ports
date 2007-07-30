@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 CONFLICTS=	py??-*[Bb]it[Tt]ornado* py??-*[Bb]it[Tt]orrent*
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	BTQueue
 
 DATADIR=	${PREFIX}/share/BTQueue
 DOCSDIR=	${PREFIX}/share/doc/BTQueue

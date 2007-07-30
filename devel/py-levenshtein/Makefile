@@ -22,5 +22,6 @@ WRKSRC=		${WRKDIR}/python-Levenshtein-${PORTVERSION}
 USE_PYTHON=	2.2+
 USE_PYTHON_PREFIX=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	python-Levenshtein
 
 .include <bsd.port.mk>

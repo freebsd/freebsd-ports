@@ -20,6 +20,7 @@ LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pycurl
 USE_OPENSSL=	yes
 
 DOCSDIR=	${TARGETDIR}/share/doc/py-curl

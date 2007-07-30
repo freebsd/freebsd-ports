@@ -18,6 +18,7 @@ COMMENT=	Providing solid, persistent and pooled connections to a database
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	DBUtils
 
 DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
 

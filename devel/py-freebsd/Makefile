@@ -20,6 +20,7 @@ COMMENT=	Python interface to FreeBSD-specific system libraries
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	py-freebsd
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/freebsd.so \
 		%%PYTHON_SITELIBDIR%%/freebsd_compat02.py \

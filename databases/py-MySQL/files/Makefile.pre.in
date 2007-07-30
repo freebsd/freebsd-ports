@@ -92,7 +92,7 @@ VPATH=		.
 TARGET=		python
 
 # Installed python binary (used only by boot target)
-PYTHON=		python
+PYTHON?=	python
 
 # Add more -I and -D options here
 CFLAGS=		$(OPT) -I$(INCLUDEPY) -I$(EXECINCLUDEPY) $(DEFS)

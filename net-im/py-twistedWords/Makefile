@@ -21,5 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_BZIP2=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Twisted_Words
 
 .include <bsd.port.mk>

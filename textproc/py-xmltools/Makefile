@@ -25,4 +25,7 @@ USE_PYDISTUTILS=	yes
 RUN_DEPENDS=	${PYXML} \
 		${PYTHON_SITELIBDIR}/_xmlplus/xpath/__init__.py:${PORTSDIR}/textproc/py-4suite
 
+post-patch:
+	${REINPLACE_CMD} 's/from.*import.*nested_scopes//' ${WRKSRC}/setup.py
+
 .include <bsd.port.post.mk>

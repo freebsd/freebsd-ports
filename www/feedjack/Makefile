@@ -22,6 +22,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedpars
 DIST_SUBDIR=	python
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Feedjack
+PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 
 PLIST_SUB=	FEEDJACKVER=${PORTVERSION}	\
 		PYTHONVER=${_PYTHON_VERSION}

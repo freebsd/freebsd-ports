@@ -18,6 +18,7 @@ COMMENT=	A simple Bayesian classifier written in Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Reverend
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 

@@ -28,6 +28,7 @@ EXAMPLES=	cd2trm.py cdid.py cdlookup.py fileinfolookup.py findartist.py \
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	python-musicbrainz
 PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 DESCR=		${PORTSDIR}/audio/libmusicbrainz/pkg-descr

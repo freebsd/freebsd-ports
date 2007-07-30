@@ -21,6 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	FreenetGrab
 
 post-install:
 	@${MV} ${PREFIX}/bin/fngrab.py ${PREFIX}/bin/fngrab

@@ -17,5 +17,6 @@ COMMENT=	A Python library for generating RSS 2.0 feeds
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	PyRSS2Gen
 
 .include <bsd.port.mk>

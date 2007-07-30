@@ -18,6 +18,8 @@ COMMENT=	Python module for object-oriented HTML generation
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	forgetHTML
+PYDISTUTILS_PKGVERSION=	0.8
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

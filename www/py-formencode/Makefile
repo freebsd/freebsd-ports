@@ -25,6 +25,9 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GETTEXT=	yes
 
+PYDISTUTILS_PKGNAME=	FormEncode
+PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
+
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESSDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 FORMENCODEVER?=	${PORTVERSION}

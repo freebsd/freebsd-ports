@@ -19,6 +19,9 @@ COMMENT=	A Zope-less version of Zope Page Templates
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	ZopePageTemplates
+PYDISTUTILS_PKGVERSION=	0.0.0
+PYDISTUTILS_EGGINFODIR=	${PYTHONPREFIX_SITELIBDIR}/ZopePageTemplates
 WRKSRC=		${WRKDIR}/ZopePageTemplates
 
 .include <bsd.port.mk>

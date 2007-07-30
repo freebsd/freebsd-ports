@@ -21,6 +21,7 @@ RUN_DEPENDS=	${PYNUMERIC}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Pyfort
 WRKSRC=		${WRKDIR}/${DISTNAME:S/p/P/}
 
 .include <bsd.port.mk>

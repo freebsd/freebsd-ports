@@ -22,6 +22,7 @@ RUN_DEPENDS=	${PYXML} \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pyreverse
 
 post-install:
 	@${FIND} ${PYTHON_SITELIBDIR}/logilab/pyreverse ! -type d | \

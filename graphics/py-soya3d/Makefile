@@ -36,6 +36,8 @@ USE_GL=		yes
 USE_GMAKE=	yes
 USE_XLIB=	yes
 
+PYDISTUTILS_PKGNAME=	Soya
+
 MANDIR=	${WRKDIR}/${DISTNAME}/manpage/man1
 MAN1=	soya_editor.1
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}

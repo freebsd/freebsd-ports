@@ -24,5 +24,7 @@ USE_TK_RUN=	yes
 USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	TkinterTreectrl
+PYDISTUTILS_PKGVERSION=	0.4
 
 .include <bsd.port.mk>

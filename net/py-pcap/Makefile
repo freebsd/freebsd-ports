@@ -24,6 +24,7 @@ BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
+PYDISTUTILS_PKGNAME=	pylibpcap
 WRKSRC=		${WRKDIR}/pylibpcap-${PORTVERSION}
 
 .include <bsd.port.pre.mk>

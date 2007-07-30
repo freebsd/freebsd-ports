@@ -18,5 +18,7 @@ COMMENT=	X11 library for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	python-xlib
+PYDISTUTILS_PKGVERSION=	0.12
 
 .include <bsd.port.mk>

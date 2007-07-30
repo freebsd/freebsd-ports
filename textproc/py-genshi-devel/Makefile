@@ -17,17 +17,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python toolkit for stream-based generation of output for the web
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-
-PYGENSHI_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg
-
-PLIST_SUB=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PYGENSHI_EGG=${PYGENSHI_EGG}
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
+USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>

@@ -24,5 +24,6 @@ LIB_DEPENDS=	statgrab.8:${PORTSDIR}/devel/libstatgrab
 DIST_SUBDIR=	i-scream
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pystatgrab
 
 .include <bsd.port.mk>

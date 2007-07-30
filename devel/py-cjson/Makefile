@@ -17,6 +17,7 @@ COMMENT=	Fast JSON encoder/decoder for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	python-cjson
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/cjson.so
 

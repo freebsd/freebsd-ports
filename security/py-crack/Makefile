@@ -33,6 +33,10 @@ CONFIGURE_ENV=	"CPPFLAGS=-I${LOCALBASE}/include" \
 MAKE_ENV=	"CPPFLAGS=-I${LOCALBASE}/include -fPIC" \
 		"LDFLAGS=-L${LOCALBASE}/lib"
 
+post-patch:
+	${REINPLACE_CMD} -e 's/setup(/setup(name="${PORTNAME}",version="${PORTVERSION}",/' \
+		${WRKSRC}/distutil.py
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/crack.py ${PYTHONPREFIX_SITELIBDIR}
 

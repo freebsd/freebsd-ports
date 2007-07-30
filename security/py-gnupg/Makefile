@@ -19,5 +19,6 @@ COMMENT=	Python module for GnuPG interface
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	GnuPGInterface
 
 .include <bsd.port.mk>

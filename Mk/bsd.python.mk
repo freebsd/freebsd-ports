@@ -81,6 +81,12 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  want to build extensions with an older binary.
 #					  default: depends on the version of your python binary
 #
+# PYTHON_DEFAULT_VERSION
+#					- Version of the default python binary in your ${PATH}, in
+#					  the format "python2.5". Set this in your /etc/make.conf
+#					  in case you want to use an older version as a default.
+#					  default: python2.5
+#
 # PYTHON_WRKSRC		- The ${WRKSRC} for your python version. Needed for
 #					  extensions like Tkinter, py-gdbm and py-expat, which
 #					  are built from sources contained in the Python
@@ -122,6 +128,17 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # USE_PYDISTUTILS	- Use distutils as do-configure, do-build and do-install
 #					  targets.
 #
+# PYSETUP			- Name of the setup script used by the distutils package.
+#					  default: setup.py
+#
+# PYDISTUTILS_PKGNAME
+#					- Internal name in the distutils for egg-info.
+#					  default: ${PORTNAME}
+#
+# PYDISTUTILS_PKGVERSION
+#					- Internal version in the distutils for egg-info.
+#					  default: ${PORTVERSION}
+#
 # PYDISTUTILS_CONFIGURE_TARGET
 #					- Pass this command to distutils on configure stage.
 #					  default: config
@@ -146,8 +163,32 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					- Arguments to install with distutils.
 #					  default: -c -O1 --prefix=${PREFIX}
 #
-# PYSETUP			- Name of the setup script used by the distutils package.
-#					  default: setup.py
+# PYDISTUTILS_EGGINFO
+#					- Canonical name for egg-info.
+#					  default: ${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}.egg-info
+#
+# PYDISTUTILS_NOEGGINFO
+#					- Skip an egg-info entry from plist when defined.
+#
+# PYEASYINSTALL_EGG
+#					- Canonical directory name for easy_install egg packages.
+#					  default: ${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg
+#
+# PYEASYINSATLL_OSARCH
+#					- Platform identifier for easy_install.
+#					  default: -${OPSYS:L}-${_OSRELEASE}-${ARCH}
+#							   if PYEASYINSTALL_ARCHDEP is defined.
+#
+# PYEASYINSTALL_CMD - Full file path to easy_install command.
+#					  default: ${LOCALBASE}/bin/easy_install-${PYTHON_VER}
+#
+# PYEASYINSTALL_INSTALL_ARGS
+#					- Arguments to easy_install command for egg installation.
+#					  default: -q -N -S ${PYTHON_SITELIBDIR} ${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION}
+#
+# PYEASYINSTALL_UNINSTALL_ARGS
+#					- Arguments to easy_install command for egg uninstallation.
+#					  default: -q -m -S ${PYTHON_SITELIBDIR} ${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION}
 #
 # USE_TWISTED		- If this option is just yes then build and run
 #					  the dependence to twistedCore is added. Alternatively
@@ -173,8 +214,8 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  specific version of zope.
 #
 
-_PYTHON_PORTBRANCH=		2.4
-_PYTHON_ALLBRANCHES=	2.4 2.5 2.3 # preferred first
+_PYTHON_PORTBRANCH=		2.5
+_PYTHON_ALLBRANCHES=	2.5 2.4 2.3 # preferred first
 _ZOPE_PORTBRANCH=		2.7
 _ZOPE_ALLBRANCHES=		2.7 2.8 2.9 2.10 3.2
 
@@ -237,22 +278,24 @@ PYTHON_VERSION=         python2.4
 
 
 # Determine version number of Python to use
+.if !defined(PYTHON_DEFAULT_VERSION)
+. if exists(${LOCALBASE}/bin/python)
+_PYTHON_DEFAULT_VERSION!=	(${LOCALBASE}/bin/python -c \
+							'import sys; print sys.version[:3]' 2> /dev/null \
+							|| ${ECHO_CMD} ${_PYTHON_PORTBRANCH}) | ${TAIL} -1
+. else
+_PYTHON_DEFAULT_VERSION=	${_PYTHON_PORTBRANCH}
+. endif
+PYTHON_DEFAULT_VERSION=		python${_PYTHON_DEFAULT_VERSION}
+.endif
+
 .if defined(PYTHON_VERSION)
 _PYTHON_VERSION:=	${PYTHON_VERSION:S/^python//}
 _PYTHON_CMD=		${LOCALBASE}/bin/${PYTHON_VERSION}
 .else
-# Determine the currently installed version. If Python is not installed, a
-# default version number is substituted and the corresponding Python
-# distribution will be built through the dependency processing.
-.if defined(PYTHON_CMD)
-_PYTHON_CMD=		${PYTHON_CMD}
-.else
-_PYTHON_CMD=		${LOCALBASE}/bin/python
+_PYTHON_VERSION:=	${PYTHON_DEFAULT_VERSION:S/^python//}
+_PYTHON_CMD=		${LOCALBASE}/bin/${PYTHON_DEFAULT_VERSION}
 .endif
-_PYTHON_VERSION!=	(${_PYTHON_CMD} -c \
-					'import sys; print sys.version[:3]' 2> /dev/null \
-					|| ${ECHO_CMD} ${_PYTHON_PORTBRANCH}) | ${TAIL} -1
-.endif	# defined(PYTHON_VERSION)
 
 .if !defined(USE_PYTHON)
 .if defined(USE_PYTHON_BUILD)
@@ -323,9 +366,9 @@ PYTHON_PORTVERSION=	${_PYTHON_PORTVERSION}
 
 # Python-2.5
 .if ${PYTHON_VERSION} == "python2.5"
-PYTHON_PORTVERSION?=2.5
+PYTHON_PORTVERSION?=2.5.1
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python25
-PYTHON_REL=			250
+PYTHON_REL=			251
 PYTHON_SUFFIX=		25
 PYTHON_VER=			2.5
 
@@ -360,8 +403,8 @@ check-makevars::
 	@${ECHO} "Makefile error: bad value for PYTHON_VERSION: ${PYTHON_VERSION}."
 	@${ECHO} "Legal values are:"
 	@${ECHO} "  python2.3"
-	@${ECHO} "  python2.4 (default)"
-	@${ECHO} "  python2.5"
+	@${ECHO} "  python2.4"
+	@${ECHO} "  python2.5 (default)"
 	@${FALSE}
 .endif
 
@@ -381,10 +424,58 @@ PYTHONPREFIX_INCLUDEDIR=	${PYTHON_INCLUDEDIR:S;${PYTHONBASE};${PREFIX};}
 PYTHONPREFIX_LIBDIR=		${PYTHON_LIBDIR:S;${PYTHONBASE};${PREFIX};}
 PYTHONPREFIX_SITELIBDIR=	${PYTHON_SITELIBDIR:S;${PYTHONBASE};${PREFIX};}
 
+# setuptools support
+.if defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} == "easy_install"
+BUILD_DEPENDS+=		${PYEASYINSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
+RUN_DEPENDS+=		${PYEASYINSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
+
+PYDISTUTILS_BUILD_TARGET?=		bdist_egg
+PYDISTUTILS_INSTALL_TARGET?=	easy_install
+PYDISTUTILS_INSTALLARGS?=		-O 1 -N -S ${PYTHON_SITELIBDIR} ${WRKSRC}/dist/${PYEASYINSTALL_EGG}
+
+.if defined(PYEASYINSTALL_ARCHDEP)
+_OSRELEASE!=					${UNAME} -r
+PYEASYINSTALL_OSARCH?=			-${OPSYS:L}-${_OSRELEASE}-${ARCH}
+.endif
+PYEASYINSTALL_EGG?=				${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg
+PYEASYINSTALL_CMD?=				${LOCALBASE}/bin/easy_install-${PYTHON_VER}
+PYEASYINSTALL_INSTALLARGS?=		-q -N -S ${PYTHON_SITELIBDIR} \
+								${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION}
+PYEASYINSTALL_UNINSTALLARGS?=	-q -m -S ${PYTHON_SITELIBDIR} \
+								${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION}
+
+PLIST_SUB+=		PYEASYINSTALL_EGG=${PYEASYINSTALL_EGG}
+
+add-plist-post: add-plist-easyinstall
+add-plist-easyinstall:
+	@# @unexec line must be located before any other line while @exec must not.
+	@${CAT} ${TMPPLIST} > ${TMPPLIST}.pei_tmp
+	@${ECHO_CMD} "@unexec ${PYEASYINSTALL_CMD} ${PYEASYINSTALL_UNINSTALLARGS}" \
+		> ${TMPPLIST}
+	@${CAT} ${TMPPLIST}.pei_tmp >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${PYEASYINSTALL_CMD} ${PYEASYINSTALL_INSTALLARGS}" \
+		>> ${TMPPLIST}
+.endif		# defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} == "easy_install"
+
+# distutils support
 PYSETUP?=				setup.py
 PYDISTUTILS_CONFIGUREARGS?=
 PYDISTUTILS_BUILDARGS?=
 PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
+PYDISTUTILS_PKGNAME?=	${PORTNAME}
+PYDISTUTILS_PKGVERSION?=${PORTVERSION}
+PYDISTUTILS_EGGINFO?=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}.egg-info
+PYDISTUTILS_EGGINFODIR?=${PYTHON_SITELIBDIR}
+
+.if !defined(PYDISTUTILS_NOEGGINFO) && \
+	(defined(INSTALLS_EGGINFO) ||	\
+		(defined(USE_PYDISTUTILS) && \
+		 ${USE_PYDISTUTILS} != "easy_install")) && \
+	 defined(PYTHON_REL) && ${PYTHON_REL} >= 250
+. for egg in ${PYDISTUTILS_EGGINFO}
+PLIST_FILES+=	${PYDISTUTILS_EGGINFODIR:S;${PREFIX}/;;}/${egg}
+. endfor
+.endif
 
 # Fix for programs that build python from a GNU auto* enviornment
 CONFIGURE_ENV+=	PYTHON="${PYTHON_CMD}"
@@ -436,7 +527,7 @@ PYEXPAT=		${PYTHON_LIBDIR}/lib-dynload/pyexpat.so:${PYTHON_PORTSDIR}
 .if defined(PYTHON_REL) && ${PYTHON_REL} < 250
 PYCTYPES=		${PYTHON_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
 .else
-PYCTYPES=		${PYTHON_LIBDIR}/ctypes/__init__py:${PYTHON_PORTSDIR}
+PYCTYPES=		${PYTHON_LIBDIR}/ctypes/__init__.py:${PYTHON_PORTSDIR}
 .endif
 
 .if defined(PYTHON_REL) && ${PYTHON_REL} < 250

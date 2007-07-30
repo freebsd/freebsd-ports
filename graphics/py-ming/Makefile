@@ -23,6 +23,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/py_ext
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	mingc
+PYDISTUTILS_PKGVERSION=	0.0.3a
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' ${WRKSRC}/setup.py

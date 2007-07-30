@@ -21,6 +21,7 @@ CONFLICTS=	py-zsi-devel-2.*
 
 USE_PYTHON=	2.0+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	ZSI
 
 post-install:
 .if !defined(NOPORTDOCS)

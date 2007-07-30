@@ -26,6 +26,9 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 MAN1=		eyeD3.1
 MANCOMPRESSED=	yes
 
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_PKGNAME=	eyeD3
+
 post-patch:
 	${REINPLACE_CMD} -e 's,PYTHON="",,g' -e 's,/usr/local,${LOCALBASE},g' \
 		-e 's,2\\\.\[23456789\]\\\.,2.[23456789],g' \

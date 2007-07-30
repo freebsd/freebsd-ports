@@ -27,6 +27,8 @@ bin/ucp.py
 %%PYTHON_SITELIBDIR%%/ll/scripts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ll/scripts/__init__.pyo
 %%PYTHON_SITELIBDIR%%/ll/scripts/ucp.py
+%%PYTHON_SITELIBDIR%%/ll/scripts/ucp.pyc
+%%PYTHON_SITELIBDIR%%/ll/scripts/ucp.pyo
 %%PYTHON_SITELIBDIR%%/ll/sisyphus.py
 %%PYTHON_SITELIBDIR%%/ll/sisyphus.pyc
 %%PYTHON_SITELIBDIR%%/ll/sisyphus.pyo

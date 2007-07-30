@@ -21,6 +21,10 @@ INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/src/po
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/# Originally/# coding:latin1/g' \
+		${WRKSRC}/src/po/pygettext.py
+
 pre-build:
 	@${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/pyne.sh
 	@${ECHO_CMD} "exec ${PYTHON_CMD} -O ${PYTHON_SITELIBDIR}/pyne/pyne.py \$$*" >> ${WRKDIR}/pyne.sh

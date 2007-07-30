@@ -17,5 +17,6 @@ COMMENT=	Python support for the Yadis service discovery protocol
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	python-yadis
 
 .include <bsd.port.mk>

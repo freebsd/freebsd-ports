@@ -30,6 +30,7 @@ OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
 USE_GL=		yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	PyOpenGL
 
 .include <bsd.port.pre.mk>
 

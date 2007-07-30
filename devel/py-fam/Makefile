@@ -19,6 +19,7 @@ COMMENT=	Python Interface to the File Alteration Monitor
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_fam.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=	0.0.0
 USE_FAM=	yes
 
 pre-patch:

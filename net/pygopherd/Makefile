@@ -18,6 +18,7 @@ COMMENT=	Multiprotocol Information Server
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=	2.0.15
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN8=	pygopherd.8

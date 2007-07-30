@@ -20,6 +20,8 @@ COMMENT=	High-level Python Web framework
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Django
+PYDISTUTILS_PKGVERSION=	0.96_None
 
 CONFLICTS=	py2[0-9]-django-devel-[0-9]*
 

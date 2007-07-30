@@ -24,6 +24,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	TracAccountManager
+PYDISTUTILS_PKGVERSION=	0.1.3
+PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 WRKSRC=			${WRKDIR}/accountmanagerplugin
 
 EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}

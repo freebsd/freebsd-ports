@@ -35,5 +35,7 @@ PLIST_SUB+=	PYTHON=""
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CFLAGS =.*$$|CFLAGS = @CFLAGS@|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|implemented.*Various||g' ${WRKSRC}/rbgen.in
 
 .include <bsd.port.mk>

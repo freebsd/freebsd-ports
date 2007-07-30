@@ -7,12 +7,13 @@
 
 PORTNAME=	python24
 PORTVERSION=	2.4.4
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT?=	An interpreted object-oriented programming language
 
 DIST_SUBDIR=	python
@@ -22,8 +23,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 MAKE_ENV=	VPATH="${WRKSRC}"
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install
-MAN1=		python.1 ${PYTHON_VERSION}.1
+INSTALL_TARGET=	altinstall
+MAN1=		${PYTHON_VERSION}.1
 
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.4
@@ -35,11 +36,9 @@ PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
 
-.if !exists(/usr/bin/ypcat) # the world with NO_NIS
-PLISTCAT=	${GREP} -v 'nis.so$$' ${PKGDIR}/pkg-plist
-.else
-PLISTCAT=	${CAT} ${PKGDIR}/pkg-plist
-.endif
+BIN_SCRIPTS=    idle pydoc python python-shared smtpd.py
+BINLINKS_SUB=   -e 's,smtpd,smtpd${PYTHON_VER},' \
+                -e 's,(idle|pydoc|python-shared|python),\1${PYTHON_VER},'
 
 OPTIONS=	THREADS "Enable thread support" on \
 		HUGE_STACK_SIZE "Use a larger thread stack" off \
@@ -49,6 +48,13 @@ OPTIONS=	THREADS "Enable thread support" on \
 		FPECTL "Enable floating point exception handling" off
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
+MLINKS=		${PYTHON_VERSION}.1 python.1
+PLIST_SUB+=	IF_DEFAULT=""
+.else
+PLIST_SUB+=	IF_DEFAULT="@comment "
+.endif
 
 # workaround for a bug in base curses.h.
 CFLAGS+=		-D__wchar_t=wchar_t
@@ -89,6 +95,12 @@ PLIST_SUB+=	32BIT_ONLY=""
 .endif
 .if ${ARCH} == sparc64
 CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
+.endif
+
+.if !exists(/usr/bin/ypcat) # the world with NO_NIS
+PLIST_SUB+=	NO_NIS="@comment "
+.else
+PLIST_SUB+=	NO_NIS=""
 .endif
 
 .if !defined(WITHOUT_IPV6) && ${OSVERSION} >= 400014
@@ -166,9 +178,9 @@ pre-su-install:
 .endfor
 
 pre-install:
-	${PLISTCAT} | ${AWK} '{ print $$0; }				\
-	/LIBDIR.*\.py$$/ && !/\/bad/ { print $$0 "o"; print $$0 "c"; }'	\
-	> ${PLIST}
+	${AWK} '{ print $$0; } \
+		/LIBDIR.*\.py$$/ && !/\/bad/ { print $$0 "o"; print $$0 "c"; }'	\
+		${PKGDIR}/pkg-plist > ${PLIST}
 
 post-install:
 	@# shared version of executable and library
@@ -180,8 +192,6 @@ post-install:
 	${INSTALL_PROGRAM} \
 		${SHARED_WRKSRC}/${PYTHON_VERSION:S/thon/thon-shared/} \
 		${PREFIX}/bin
-	cd ${PREFIX}/bin; \
-		${LN} -f ${PYTHON_VERSION:S/thon/thon-shared/} python-shared
 
 	@# additional files installing by ports
 	@${MKDIR} ${MANPREFIX}/man/man1
@@ -189,6 +199,13 @@ post-install:
 		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
 	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.4 ${WRKDIR}/idle2.4 \
 		${WRKDIR}/smtpd2.4.py ${PREFIX}/bin
+
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
+	for f in ${BIN_SCRIPTS}; do \
+		TARGET=`${ECHO_CMD} $$f | ${SED} -E ${BINLINKS_SUB}`; \
+		cd ${PREFIX}/bin && ${LN} -f $$TARGET $$f; \
+	done
+.endif
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${TOOLSDIR}

@@ -24,5 +24,7 @@ USE_SDL=	mixer sdl
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 HAS_CONFIGURE=	yes
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_PKGNAME=	pysolsoundserver
 
 .include <bsd.port.mk>

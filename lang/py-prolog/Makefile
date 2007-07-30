@@ -21,6 +21,7 @@ RUN_DEPENDS=	pl:${PORTSDIR}/lang/swi-pl
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	PyProlog
 
 .include <bsd.port.pre.mk>
 

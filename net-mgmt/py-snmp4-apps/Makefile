@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysnmp/v4/__init__.py:${PORTSDIR}/net-mgmt/py-
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	pysnmp-apps
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 

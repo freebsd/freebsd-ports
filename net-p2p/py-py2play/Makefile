@@ -18,6 +18,7 @@ COMMENT=	Peer-to-peer network game engine
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Py2Play
 EXAMPLESDIR=	${PREFIX}/share/examples/py-py2play
 
 post-install:

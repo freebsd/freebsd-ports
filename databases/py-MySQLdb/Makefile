@@ -19,6 +19,8 @@ COMMENT=	Access a MySQL database through Python
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 USE_MYSQL=		yes
+PYDISTUTILS_PKGNAME=	MySQL-python
+PYDISTUTILS_PKGVERSION=	1.2.2
 
 CONFLICTS=	py*-MySQLdb-devel-[0-9]*
 

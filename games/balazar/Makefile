@@ -34,6 +34,8 @@ USE_GL=		yes
 USE_SDL=	sdl mixer
 USE_GETTEXT=	yes
 
+PYDISTUTILS_PKGNAME=	Balazar
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/setup.cfg
 

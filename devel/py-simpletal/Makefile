@@ -17,5 +17,6 @@ COMMENT=	Stand alone TAL Python implementation to power  HTML & XML templates
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	SimpleTAL
 
 .include <bsd.port.mk>
