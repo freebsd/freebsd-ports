@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	XML-MyXML
-PORTVERSION=	0.09766
+PORTVERSION=	0.09805
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A simple-to-use XML module parsing and creating XML documents
 
 PERL_CONFIGURE=	yes
