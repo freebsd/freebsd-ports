@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	coq
-PORTVERSION=	8.1
-PORTREVISION=	1
+PORTVERSION=	8.1.1
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/coq/V${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.inria.fr/INRIA/coq/V${COQVERSION}/ \
+		ftp://ftp.stack.nl/pub/users/johans/coq/
+DISTNAME=	${PORTNAME}-${COQVERSION}
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	Theorem prover based on lambda-C
@@ -26,6 +27,7 @@ CONFIGURE_ARGS+=	--emacslib ${PREFIX}/share/emacs/site-lisp
 CONFIGURE_ARGS+=	--reals all
 CONFIGURE_ARGS+=	--opt
 
+COQVERSION=	${PORTVERSION:R}pl${PORTVERSION:E}
 PORTDOCS=	CHANGES COPYRIGHT CREDITS INSTALL LICENSE README
 
 .include <bsd.port.pre.mk>

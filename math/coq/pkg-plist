@@ -67,7 +67,9 @@ lib/coq/contrib/setoid_ring/ZArithRing.vo
 @dirrm lib/coq/contrib/setoid_ring
 lib/coq/contrib/subtac/FixSub.vo
 lib/coq/contrib/subtac/FunctionalExtensionality.vo
+lib/coq/contrib/subtac/Heq.vo
 lib/coq/contrib/subtac/Subtac.vo
+lib/coq/contrib/subtac/SubtacTactics.vo
 lib/coq/contrib/subtac/Utils.vo
 @dirrm lib/coq/contrib/subtac
 @dirrm lib/coq/contrib
