@@ -15312,6 +15312,7 @@ templatelite	ports/www/templatelite
 tenebrae	ports/games/tenebrae
 tenshi		ports/sysutils/tenshi
 tentakel	ports/sysutils/tentakel
+termatrix	ports/misc/termatrix
 terminal.app	ports/x11/terminal.app
 terminality	ports/devel/terminality
 terminatorx	ports/audio/terminatorx
