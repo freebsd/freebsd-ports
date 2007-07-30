@@ -15,7 +15,9 @@ DISTNAME=		shape${PORTVERSION:S/.//g}
 MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		A Tk library to access to X Shaped Window Extension
 
-LIB_DEPENDS=		tk84.1:${PORTSDIR}/x11-toolkits/tk84
+USE_TK=			yes
+
+USE_XORG=		x11 xext
 
 PLIST_SUB=		PORTNAME="${PORTNAME}"
 
@@ -31,10 +33,6 @@ MANN=			shape.n
 .endif
 
 WRKSRC=			${WRKDIR}/${PORTNAME:C/^tk//1}${PORTVERSION}
-
-TCL_VER?=		8.4
-TK_VER?=		8.4
-WISH?=			wish${TK_VER}
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
