@@ -8,7 +8,7 @@
 
 PORTNAME=	qt3support
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=0
+PORTREVISION=	1
 CATEGORIES?=	devel x11-toolkits
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -43,6 +43,7 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	--exclude '${DISTNAME}/tools/qtconfig' --exclude '${DISTNAME}/tools/qvfb'
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../
+PATCH_WRKSRC=${CONFIGURE_WRKSRC}
 
 .include <bsd.port.pre.mk>
 

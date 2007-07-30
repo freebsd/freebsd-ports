@@ -8,7 +8,7 @@
 
 PORTNAME=	assistant
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=0
+PORTREVISION=	1
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -42,6 +42,7 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	--exclude '${DISTNAME}/tools/qtconfig' --exclude '${DISTNAME}/tools/qvfb'
 WRKSRC=		${WRKDIR}/${DISTNAME}/tools/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../
+PATCH_WRKSRC=${CONFIGURE_WRKSRC}
 
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
