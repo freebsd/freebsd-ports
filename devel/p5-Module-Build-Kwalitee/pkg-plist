@@ -2,7 +2,6 @@
 %%SITE_PERL%%/Module/Build/Kwalitee/Stub.pm
 %%SITE_PERL%%/Module/Build/Kwalitee/000compile.t
 %%SITE_PERL%%/Module/Build/Kwalitee/001pragmas.t
-%%SITE_PERL%%/Module/Build/Kwalitee/002deps.t
 %%SITE_PERL%%/Module/Build/Kwalitee/003pod.t
 %%SITE_PERL%%/Module/Build/Kwalitee/004uselib.t
 @dirrm %%SITE_PERL%%/Module/Build/Kwalitee
