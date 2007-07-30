@@ -25,6 +25,8 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_NOEGGINFO=	yes
 
+USE_XORG=	x11 xext
+
 CONFFLAGS=	--tk-autoconf --tk-flags="-I${X11BASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 -L${LOCALBASE}/lib -ltk84 -ltcl84 -L${X11BASE}/lib -lX11"
 
 SKETCHDOCS=	BUGS Doc NEWS PROJECTS README TODO
