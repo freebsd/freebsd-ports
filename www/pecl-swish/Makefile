@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	swish
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	www pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
