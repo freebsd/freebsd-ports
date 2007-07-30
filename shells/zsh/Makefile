@@ -8,12 +8,6 @@
 # The following compile-time options are available:
 # NO_SHARED=yes		compile a static version of zsh
 #			(default: use dynamically loadable modules)
-# WITHOUT_ZSH_MEM=yes	disable zsh-mem and zsh-secure-free options
-#			(default: on)
-# WITHOUT_ZSH_MAILDIR=yes disable support for Maildirs in MAIL and MAILPATH
-#			(default: on)
-# WITHOUT_ZSH_MULTIBYTE=yes disable multibyte character support
-# 			(default: on)
 # ZSH_ETCDIR=<dir>	directory for zsh system-wide configuration files:
 #			zshenv, zlogin, zprofile, zshrc, zlogout.
 #			e.g. use this to put config files inside ${PREFIX}
@@ -27,12 +21,12 @@
 #			NOTE: does NOT have to be inside ${PREFIX} tree
 
 PORTNAME=	zsh
-PORTVERSION=	4.3.2
-PORTREVISION=	1
+PORTVERSION=	4.3.4
 CATEGORIES=	shells
-MASTER_SITES=	http://zsh.open-mirror.com/ \
+MASTER_SITES=	SF \
+		http://zsh.open-mirror.com/ \
 		http://www.zsh.org/pub/ \
-		ftp://ftp.zsh.org/pub/ \
+		ftp://ftp.zsh.org/zsh/ \
 		http://mirrors.dotsrc.org/zsh/ \
 		ftp://mirrors.dotsrc.org/zsh/ \
 		ftp://ftp.funet.fi/pub/unix/shells/zsh/ \
@@ -41,48 +35,39 @@ MASTER_SITES=	http://zsh.open-mirror.com/ \
 		http://www.cs.elte.hu/pub/zsh/ \
 		ftp://ftp.cs.elte.hu/pub/zsh/ \
 		ftp://ftp.kfki.hu/pub/packages/zsh/ \
+		http://www.math.technion.ac.il/pub/zsh/ \
 		ftp://ftp.math.technion.ac.il/pub/zsh/ \
 		ftp://ftp.demon.nl/pub/mirrors/zsh/ \
+		ftp://sunsite.icm.edu.pl/pub/unix/shells/zsh/ \
+		ftp://ftp.roedu.net/pub/mirrors/ftp.zsh.org/pub/zsh/ \
 		ftp://ftp.kappa.ro/pub/mirrors/ftp.zsh.org/pub/zsh/ \
 		ftp://ftp.lysator.liu.se/pub/unix/zsh/ \
 		ftp://sunsite.org.uk/package/zsh/
-DISTNAME=	${PORTNAME}-${ZSH_VER}
 .if !defined(NOPORTDOCS)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc${EXTRACT_SUFX}
 .endif
 
-MAINTAINER?=	sergei@FreeBSD.org
-COMMENT?=	The Z shell
+MAINTAINER=	sergei@FreeBSD.org
+COMMENT=	The Z shell
 
 ZSH_VER=	${PORTVERSION}
-# Conflicts with shells/zsh-devel as it installs files into the same locations
-CONFLICTS=	zsh-devel-[0-9]* zsh-4.1.*
 
 USE_BZIP2=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-curses-terminfo --with-tcsetpgrp \
 		--enable-etcdir=${ZSH_ETCDIR} \
 		--enable-fndir=${ZSH_FNDIR} --enable-function-subdirs \
 		--enable-site-fndir=${ZSH_SITEFNDIR}
 
-.if !defined(WITHOUT_ZSH_MEM)
-CONFIGURE_ARGS+=	--enable-zsh-mem --enable-zsh-secure-free
-.endif
-
-.if !defined(WITHOUT_ZSH_MAILDIR)
-CONFIGURE_ARGS+=	--enable-maildir-support
-.endif
-
-.if defined(NO_SHARED)
-CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -static"
-CONFIGURE_ARGS+=	--disable-dynamic
-PLIST_SUB+=		NO_STATIC="@comment "
-.else
-CONFIGURE_ARGS+=	--enable-dynamic
-PLIST_SUB+=		NO_STATIC=""
-.endif
+OPTIONS=	ZSH_MEM		"Enable zsh-mem and zsh-secure-free options" on \
+		ZSH_MAILDIR	"Enable support for Maildirs in MAIL(PATH)" on \
+		ZSH_MULTIBYTE	"Enable multibyte character support" on \
+		ZSH_PCRE	"Enable PCRE support" off
 
 # These variables can be overriden by user
 ZSH_ETCDIR?=	/etc
@@ -96,14 +81,42 @@ PLIST_SUB+=	ZSH_VER="${ZSH_VER}" ZSHETCDIR="${ZSH_ETCDIR}" \
 MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshcompwid.1 zshcompsys.1 \
 		zshcontrib.1 zshexpn.1 zshmisc.1 zshmodules.1 zshoptions.1 \
 		zshparam.1 zshroadmap.1 zshtcpsys.1 zshzftpsys.1 zshzle.1 \
-		zshall.1
+		zshall.1 zshcalsys.1
 DOCS=		LICENCE META-FAQ README Etc/BUGS Etc/CONTRIBUTORS Etc/FAQ \
 		Etc/completion-style-guide Doc/zsh*.html Doc/zsh.dvi
-EXAMPLES=	zlogin zshenv zshrc
+PORTDOCS=	*
+PORTEXAMPLES=	zlogin zshenv zshrc
+SHELLS=		/etc/shells
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000 && !defined(WITHOUT_ZSH_MULTIBYTE)
+.if defined(WITH_ZSH_PCRE)
+CONFIGURE_ARGS+=	--enable-pcre
+LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
+PLIST_SUB+=		PCRE=""
+.else
+CONFIGURE_ARGS+=	--disable-pcre
+PLIST_SUB+=		PCRE="@comment "
+.endif
+
+.if defined(WITH_ZSH_MEM)
+CONFIGURE_ARGS+=	--enable-zsh-mem --enable-zsh-secure-free
+.endif
+
+.if defined(WITH_ZSH_MAILDIR)
+CONFIGURE_ARGS+=	--enable-maildir-support
+.endif
+
+.if defined(NO_SHARED)
+CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -static"
+CONFIGURE_ARGS+=	--disable-dynamic
+PLIST_SUB+=		NO_STATIC="@comment "
+.else
+CONFIGURE_ARGS+=	--enable-dynamic
+PLIST_SUB+=		NO_STATIC=""
+.endif
+
+.if ${OSVERSION} >= 500000 && defined(WITH_ZSH_MULTIBYTE)
 CONFIGURE_ARGS+=	--enable-multibyte
 .endif
 
@@ -112,15 +125,11 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s,link=dynamic,link=either," \
+	@${SED} -i "" -e "s,link=dynamic,link=either," \
 		${WRKSRC}/Src/Modules/*.mdd
-	${REINPLACE_CMD} -e "s,/etc/,${LOCALBASE}/etc/," \
+	@${SED} -i "" -e "s,/etc/,${LOCALBASE}/etc/," \
 		${WRKSRC}/Functions/MIME/zsh-mime-setup
-	${RM} -f ${WRKSRC}/Functions/MIME/zsh-mime-setup.bak
-	${RM} -f ${WRKSRC}/Completion/X/Command/_acroread.orig
-.if ${OSVERSION} >= 503000
-	${RM} -f ${WRKSRC}/Completion/Unix/Type/_tar_archive.orig
-.endif
+	@${FIND} ${WRKSRC}/Completion -type f -iname '*.orig' -delete
 
 post-build:
 	# Fix ".so" macro problem by using "soelim" command.
@@ -132,7 +141,6 @@ post-build:
 	@${MKDIR} ${PREFIX}/info
 	makeinfo --no-split --output=${WRKSRC}/Doc/zsh.info \
 		${WRKSRC}/Doc/zsh.texi
-
 INFO=	zsh
 .endif
 
@@ -140,17 +148,19 @@ post-install:
 	${LN} ${PREFIX}/bin/zsh ${PREFIX}/bin/rzsh
 	${TEST} -d ${ZSH_ETCDIR} || ${MKDIR} ${ZSH_ETCDIR}
 	${TEST} -d ${ZSH_SITEFNDIR} || ${MKDIR} ${ZSH_SITEFNDIR}
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/StartupFiles && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+	cd ${WRKSRC}/StartupFiles && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Doc/zsh.info ${PREFIX}/info/zsh.info
 .endif
-	@${ECHO_MSG} "Updating /etc/shells"
-	@${CP} /etc/shells /etc/shells.bak
-	@(${GREP} -v ${PREFIX}/bin/zsh /etc/shells.bak; \
-	  ${ECHO_CMD} ${PREFIX}/bin/zsh) > /etc/shells
-	@${RM} /etc/shells.bak
+	@${ECHO_MSG} "Updating ${SHELLS}"
+	@${CP} ${SHELLS} ${SHELLS}.bak
+	@(${GREP} -v ${PREFIX}/bin/zsh ${SHELLS}.bak; \
+	  ${ECHO_CMD} ${PREFIX}/bin/zsh) > ${SHELLS}
+	@${RM} ${SHELLS}.bak
 
 .include <bsd.port.post.mk>

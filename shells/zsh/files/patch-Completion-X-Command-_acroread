@@ -1,17 +1,17 @@
---- Completion/X/Command/_acroread	2005/05/10 12:26:24	1.5
-+++ Completion/X/Command/_acroread	2006/03/26 15:15:10	1.6
-@@ -4,12 +4,12 @@
+--- Completion/X/Command/_acroread.orig	Mon Mar 19 10:02:50 2007
++++ Completion/X/Command/_acroread	Tue Jul 24 15:39:18 2007
+@@ -16,12 +16,12 @@
  
- # Try extracting the version number directly from the executable.
- # (This will fail if the executable is a wrapper script for acroread.)
--local ver=${${${(f)"$(<$commands[$words[1]])"}:#^ver=*}##ver=}
-+local ver=${${${(Mf)"$(<$commands[$words[1]])"}:#ver=*}##ver=}
- [[ -n $ver ]] && _acroread_version=$ver
+   # Try extracting the version number directly from the executable.
+   # (This will fail if the executable is a wrapper script for acroread.)
+-  _acroread_version=${${(M)${(f)"$(<$cmdfile)"}:#ver=*}##ver=}
++  _acroread_version=${${${(Mf)"$(<$commands[$words[1]])"}:#ver=*}##ver=}
  
- if (( ! $+_acroread_version )); then
-   local acropath=${${(s. .)${${(f)"$($words[1] -help 2>&1)"}[1]}}[2]}
--  _acroread_version=${${${(f)"$(<$acropath)"}:#^ver=*}##ver=}
-+  _acroread_version=${${${(Mf)"$(<$acropath)"}:#ver=*}##ver=}
+   if [[ -z $_acroread_version ]]; then
+     local acropath=${${(s. .)${${(f)"$($words[1] -help 2>&1)"}[1]}}[2]}
+     if [[ -r $acropath ]]; then
+-      _acroread_version=${${(M)${(f)"$(<$acropath)"}:#ver=*}##ver=}
++      _acroread_version=${${${(Mf)"$(<$acropath)"}:#ver=*}##ver=}
+     fi
+   fi
  fi
- 
- if [[ $_acroread_version == 7.* ]]; then

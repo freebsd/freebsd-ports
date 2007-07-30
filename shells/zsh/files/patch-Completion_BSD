@@ -1,0 +1,81 @@
+diff -ruN ../zsh-4.3.4.orig/Completion/BSD/Command/_csup ./Completion/BSD/Command/_csup
+--- ../zsh-4.3.4.orig/Completion/BSD/Command/_csup	Wed Dec 31 21:00:00 1969
++++ ./Completion/BSD/Command/_csup	Wed Jul 25 17:18:35 2007
+@@ -0,0 +1,23 @@
++#compdef csup
++
++_arguments -s \
++    '-1[disable automatic retries]' \
++    '-4[Force usage of IPv4 addresses]' \
++    '-6[Force usage of IPv6 addresses]' \
++    '-A:local address:_hosts' \
++    '-b:base directory:_files -/' \
++    '-c:collections directory:_files -/' \
++    '-d:maximum number of deleted files:' \
++    '-h:server host:_hosts' \
++    '-i:file pattern:' \
++    '-k[keep temporary copies of failed updates]' \
++    '-l:lock file:_files' \
++    '-L:verbosity level:(0 1 2)' \
++    '-p:port:_ports' \
++    '-r:maximum number of retries:' \
++    '-s[suppress status checks]' \
++    '-v[print version information]' \
++    '(-Z)-z[enable compression]' \
++    '(-z)-Z[disable compression]' \
++    ':csup file:_files' \
++    ':destination directory:_files -/'
+diff -ruN ../zsh-4.3.4.orig/Completion/BSD/Command/_portlint ./Completion/BSD/Command/_portlint
+--- ../zsh-4.3.4.orig/Completion/BSD/Command/_portlint	Wed Dec 31 21:00:00 1969
++++ ./Completion/BSD/Command/_portlint	Wed Jul 25 17:18:35 2007
+@@ -0,0 +1,17 @@
++#compdef portlint
++
++_arguments -s \
++    '-a[additional check for scripts/* and pkg-*]' \
++    '-A[turn on all additional checks (equivalent to -abcNt)]' \
++    '-b[warn $(VARIABLE)]' \
++    '-c[committer mode]' \
++    '-C[pedantic committer mode (equivalent to -abct)]' \
++    '-g[group errors together to avoid duplication (disabled if -v is specified)]' \
++    '-h[show summary of command line options]' \
++    '-v[verbose mode]' \
++    '-t[nit pick about use of spaces]' \
++    '-N[writing a new port]' \
++    '-V[print the version and exit]' \
++    '-M:set make variables to ENV (ex. PORTSDIR=/usr/ports.work):_guard ".#" "environment vars"' \
++    '-B:allow # contiguous blank lines:_guard "[0-9]#" "numeric value"' \
++    ':port directory:_files -/'
+diff -ruN ../zsh-4.3.4.orig/Completion/BSD/Command/_portsnap ./Completion/BSD/Command/_portsnap
+--- ../zsh-4.3.4.orig/Completion/BSD/Command/_portsnap	Wed Dec 31 21:00:00 1969
++++ ./Completion/BSD/Command/_portsnap	Wed Jul 25 17:18:35 2007
+@@ -0,0 +1,29 @@
++#compdef portsnap
++
++local context state line
++typeset -A opt_args
++
++flags=(
++  '(cron)fetch[Fetch a compressed snapshot or update existing one]'
++  '(fetch)cron[Sleep rand(3600) seconds, and then fetch updates]'
++  '(update)extract[Extract snapshot, replacing existing files and dirs]'
++  '(extract)update[Update ports tree to match current snapshot]'
++)
++
++_arguments -C -s \
++    '-d:Store working files in workdir:_files -/' \
++    '-f:Read configuration options from conffile:_files' \
++    '-I[Update INDEX only. (update command only)]' \
++    '-k:Trust an RSA key with SHA256 hash of KEY:_files' \
++    '-l:Merge the specified local describes file into the INDEX:_files' \
++    '-p:Location of uncompressed ports tree:_files -/' \
++    '-s:Server from which to fetch updates:_hosts' \
++    '*:principal:->principal' && ret=0
++
++if [[ $state == principal ]]; then
++  _alternative \
++    ':file flag:_values -S " " -w "commands" $flags[@]' \
++    '*:path:_files -/'
++fi
++
++return ret
