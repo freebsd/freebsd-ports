@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress-mu
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.twaren.net/local-distfiles/wpmu/ \
