@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.1.10
+PORTVERSION=	2.1.11
 CATEGORIES=	net-im
 MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
 DIST_SUBDIR=	jabber
@@ -35,7 +35,7 @@ USE_RC_SUBR=	jabberd
 USE_LDCONFIG=	${TARGETDIR}/lib/jabberd
 CONFIGURE_ARGS+=	--localstatedir=/var \
 		--sysconfdir=${PREFIX}/etc/jabberd \
-		--enable-ssl \
+		--enable-ssl --enable-mio=poll \
 		--with-extra-include-path="${LOCALBASE}/include ${EIP}" \
 		--with-extra-library-path="${LOCALBASE}/lib ${ELP}" \
 		--enable-fs
@@ -60,6 +60,9 @@ DOCFILES=	AUTHORS BUGS COPYING ChangeLog INSTALL NEWS PROTOCOL README \
 		TODO UPGRADE
 
 .include <bsd.port.pre.mk>
+
+ELP+=	${OPENSSLLIB}
+EIP+=	${OPENSSLINC}
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug

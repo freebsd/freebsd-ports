@@ -1,0 +1,104 @@
+Index: sm/mod_privacy.c
+===================================================================
+--- sm/mod_privacy.c	(revision 310)
++++ sm/mod_privacy.c	(working copy)
+@@ -205,7 +205,7 @@
+                                 continue;
+                             }
+ 
+-                            pool_cleanup(zlist->p, free, zitem->jid);
++                            pool_cleanup(zlist->p, jid_free, zitem->jid);
+ 
+                             log_debug(ZONE, "jid item with value '%s'", jid_full(zitem->jid));
+ 
+@@ -696,7 +696,7 @@
+                             return -stanza_err_BAD_REQUEST;
+                         }
+ 
+-                        pool_cleanup(p, free, zitem->jid);
++                        pool_cleanup(p, jid_free, zitem->jid);
+ 
+                         log_debug(ZONE, "jid item with value '%s'", jid_full(zitem->jid));
+ 
+Index: sm/main.c
+===================================================================
+--- sm/main.c	(revision 310)
++++ sm/main.c	(working copy)
+@@ -392,6 +392,7 @@
+     xhash_free(sm->acls);
+     xhash_free(sm->features);
+     xhash_free(sm->xmlns);
++    xhash_free(sm->xmlns_refcount);
+     xhash_free(sm->users);
+ 
+     sx_free(sm->router);
+Index: c2s/main.c
+===================================================================
+--- c2s/main.c	(revision 310)
++++ c2s/main.c	(working copy)
+@@ -698,6 +698,7 @@
+             if(sess->ip != NULL) free(sess->ip);
+             if(sess->result != NULL) nad_free(sess->result);
+             if(sess->jid != NULL) jid_free(sess->jid);
++            if(sess->rate != NULL) rate_free(sess->rate);
+ 
+             free(sess);
+         }
+Index: sx/sasl_gsasl.c
+===================================================================
+--- sx/sasl_gsasl.c	(revision 310)
++++ sx/sasl_gsasl.c	(working copy)
+@@ -338,6 +338,7 @@
+         if(ret != GSASL_OK && ret != GSASL_NEEDS_MORE) {
+             _sx_debug(ZONE, "gsasl_step failed, no sasl for this conn; (%d): %s", ret, gsasl_strerror(ret));
+             _sx_nad_write(s, _sx_sasl_failure(s, _sasl_err_MALFORMED_REQUEST), 0);
++            if(buf != NULL) free(buf);
+             return;
+         }
+     }
+@@ -350,6 +351,7 @@
+         if(ret != GSASL_OK && ret != GSASL_NEEDS_MORE) {
+             _sx_debug(ZONE, "gsasl_step failed, no sasl for this conn; (%d): %s", ret, gsasl_strerror(ret));
+             _sx_nad_write(s, _sx_sasl_failure(s, _sasl_err_MALFORMED_REQUEST), 0);
++            if(buf != NULL) free(buf);
+             return;
+         }
+ 
+Index: mio/mio_impl.h
+===================================================================
+--- mio/mio_impl.h	(revision 310)
++++ mio/mio_impl.h	(working copy)
+@@ -133,6 +133,7 @@
+     FD(m,fd)->type = type_CLOSED;
+     FD(m,fd)->app = NULL;
+     FD(m,fd)->arg = NULL;
++    MIO_FREE_FD(m, fd);
+ }
+ 
+ /** internally accept an incoming connection from a listen sock */
+@@ -259,12 +260,6 @@
+             if(ACT(m, fd, action_WRITE, NULL) == 0)
+                 MIO_UNSET_WRITE(m, FD(m,fd));
+         }
+-
+-        /* deferred closing fd */
+-        if(FD(m,fd)->type == type_CLOSED)
+-        {
+-            MIO_FREE_FD(m, fd);
+-        }
+     }
+ }
+ 
+Index: util/jid.c
+===================================================================
+--- util/jid.c	(revision 310)
++++ util/jid.c	(working copy)
+@@ -332,7 +332,7 @@
+     else {
+         /* allocate new data buffer */
+         jid->jid_data_len = node_l+domain_l+resource_l+3;
+-        jid->jid_data = malloc(jid->jid_data_len);
++        jid->jid_data = realloc(jid->jid_data, jid->jid_data_len);
+     }
+ 
+     /* copy to buffer */
