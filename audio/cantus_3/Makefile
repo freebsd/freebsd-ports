@@ -7,7 +7,7 @@
 
 PORTNAME=	cantus_3
 PORTVERSION=	3.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://dl.debain.org/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtkmm20 \
 		glademm-2.0.1:${PORTSDIR}/devel/libglademm \
 		ogg.5:${PORTSDIR}/audio/libogg \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade2
