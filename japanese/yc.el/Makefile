@@ -17,7 +17,6 @@ MAINTAINER=	t@nakao.org
 COMMENT=	Yet another Canna client for Emacs/XEmacs
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs22
 YC_LISPDIR=		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/yc
 
 MAKE_ARGS+=	LISPDIR=${YC_LISPDIR}
