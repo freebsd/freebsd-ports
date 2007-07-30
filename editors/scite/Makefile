@@ -20,6 +20,10 @@ COMMENT=	A full-featured SCIntilla based Text Editor for GTK/GNOME
 
 LIB_DEPENDS=	scintilla.1:${PORTSDIR}/x11-toolkits/scintilla
 
+IGNORE=		is unusable, writing text does not work
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2007-09-30
+
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
 USE_GMAKE=	yes
@@ -50,7 +54,7 @@ OPTIONS=	GTK2 "Turns on GTK+ 2.x support (Default is GTK+ 1)" off
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "amd64") && defined(WITH_GTK2)
-IGNORE=	coredumps on startup.
+IGNORE=	coredumps on startup
 .endif
 .if defined(WITH_GTK2)
 USE_GNOME+=	gtk20
