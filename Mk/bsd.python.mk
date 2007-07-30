@@ -174,7 +174,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					- Canonical directory name for easy_install egg packages.
 #					  default: ${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg
 #
-# PYEASYINSATLL_OSARCH
+# PYEASYINSTALL_OSARCH
 #					- Platform identifier for easy_install.
 #					  default: -${OPSYS:L}-${_OSRELEASE}-${ARCH}
 #							   if PYEASYINSTALL_ARCHDEP is defined.
