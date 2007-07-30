@@ -7,6 +7,7 @@
 
 PORTNAME=	skytools
 PORTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1354/
 
@@ -18,6 +19,7 @@ USE_GMAKE=	yes
 
 USE_PGSQL=	yes
 USE_PYTHON=	2.4+
+INSTALLS_EGGINFO=	yes
 
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD} \
 		--docdir=${EXAMPLESDIR} \
