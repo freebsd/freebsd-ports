@@ -15,7 +15,8 @@ MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/${PO
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv4/v6 Multicast and unicast audio conferencing tool
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+USE_TK=		82
+USE_XORG=	x11 xext
 
 WRKSRC=		${WRKDIR}/rat-3.0
 
