@@ -7,7 +7,7 @@
 
 PORTNAME=	elinks
 PORTVERSION=	0.11.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://elinks.or.cz/download/ \
 		http://keyserver.kjsl.com/~jharris/distfiles/
@@ -79,6 +79,7 @@ USE_LUA=	5.0
 CONFIGURE_ARGS+=	--with-lua
 CPPFLAGS+=	-I${LUA_INCDIR}
 LDFLAGS+=	-L${LUA_LIBDIR}
+CONFIGURE_ENV+=	"CPPFLAGS=${CPPFLAGS}"
 .else
 CONFIGURE_ARGS+=	--without-lua
 .endif
