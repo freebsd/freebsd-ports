@@ -37,12 +37,15 @@ CFLAGS+=	-DHAVE_UNISTD_H
 CONFIGURE_ARGS+=	--with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/conf/configure.in.x11
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
+		-e's|X11/Intrinsic.h|X11/Xlib.h|g' \
+		${WRKSRC}/configure ${WRKSRC}/conf/configure.in.x11
 	@${REINPLACE_CMD} -e 's|../lib/tcl$$TCL_HI_VERS|${TCL_LIBDIR}|g' \
-		-e 's|../include|${TCL_INCLUDEDIR}/generic|g' ${WRKSRC}/conf/configure.in.tcl
+		-e 's|../include|${TCL_INCLUDEDIR}/generic|g' \
+		${WRKSRC}/conf/configure.in.tcl
 	@${REINPLACE_CMD} -e 's|../lib/tk$$TK_HI_VERS|${TK_LIBDIR}|g' \
-		-e 's|../include|${TK_INCLUDEDIR}/generic|g' ${WRKSRC}/conf/configure.in.tk
+		-e 's|../include|${TK_INCLUDEDIR}/generic|g' \
+		${WRKSRC}/conf/configure.in.tk
 
 post-install:
 	${LN} -sf libotcl.so ${PREFIX}/lib/libotcl.so.1
