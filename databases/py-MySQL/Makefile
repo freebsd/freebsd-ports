@@ -41,7 +41,7 @@ pre-configure:
 .endif
 
 do-configure:
-	cd ${WRKSRC} && ${MAKE} -f Makefile.pre.in boot
+	cd ${WRKSRC} && PYTHON=${PYTHON_CMD} ${MAKE} -f Makefile.pre.in boot
 
 .if !defined(NOPORTDOCS)
 post-install:
