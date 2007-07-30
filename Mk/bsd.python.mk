@@ -182,11 +182,11 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # PYEASYINSTALL_CMD - Full file path to easy_install command.
 #					  default: ${LOCALBASE}/bin/easy_install-${PYTHON_VER}
 #
-# PYEASYINSTALL_INSTALL_ARGS
+# PYEASYINSTALL_INSTALLARGS
 #					- Arguments to easy_install command for egg installation.
 #					  default: -q -N -S ${PYTHON_SITELIBDIR} ${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION}
 #
-# PYEASYINSTALL_UNINSTALL_ARGS
+# PYEASYINSTALL_UNINSTALLARGS
 #					- Arguments to easy_install command for egg uninstallation.
 #					  default: -q -m -S ${PYTHON_SITELIBDIR} ${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION}
 #
