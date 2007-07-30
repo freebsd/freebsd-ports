@@ -26,7 +26,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 OPTIONS=	DEBUG	"Enable debugging support"	off \
 		IPV6	"Enable IPv6 support"		off
 .if ${MACHINE_ARCH} == "amd64"
-WITHOUT_WEB=	yes
+OPTIONS+=	WEB	"Enable the browser plugin and Java Web Start"	off
 .else
 OPTIONS+=	WEB	"Enable the browser plugin and Java Web Start"	on
 .endif
@@ -259,6 +259,11 @@ pre-patch:
 		${BZIP2_CMD} -dc ${DISTDIR}/${PATCHSETFILE} | ${TAR} -xf - && \
 		${CHMOD} -R u+w * && \
 		${PATCH} -p0 < ${WRKDIR}/jdk15.patches
+.if (${ARCH} == amd64) && !defined(WITHOUT_WEB)
+	@cd ${WRKDIR} && \
+		uudecode -o /dev/stdout < ${FILESDIR}/plugin_amd64.bz2.uu | \
+		${BZIP2_CMD} -dc | ${PATCH} -p0
+.endif
 
 post-patch:
 	@for file in ${LOCAL_FILES}; do \
