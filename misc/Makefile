@@ -443,6 +443,7 @@
     SUBDIR += telbook
     SUBDIR += tellico
     SUBDIR += tempcontrol
+    SUBDIR += termatrix
     SUBDIR += terraform
     SUBDIR += tet
     SUBDIR += thailocale
