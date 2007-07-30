@@ -6,30 +6,32 @@
 #
 
 PORTNAME=	Net_CDDB
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	net audio www pear
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PEAR class that access and query CDDB audio-CD servers
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
-		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
+		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request \
+		${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_DOS2UNIX=	yes
 
 CATEGORY=	Net
-FILES=		CDDB.php CDDB/Disc.php CDDB/Track.php CDDB/Utilities.php \
-		CDDB/Protocol.php CDDB/Request.php CDDB/Client.php \
-		CDDB/Server.php CDDB/Reader/test.php CDDB/Reader/cddiscid.php \
-		CDDB/Reader/cdparanoia.php CDDB/Protocol/Http.php \
-		CDDB/Protocol/Cddbp.php CDDB/Protocol/Filesystem.php \
-		CDDB/Request/Http.php
+FILES=		CDDB/Protocol/Cddbp.php CDDB/Protocol/Filesystem.php \
+		CDDB/Protocol/Http.php CDDB/Protocol/Mdb2.php \
+		CDDB/Reader/cddiscid.php CDDB/Reader/cdparanoia.php \
+		CDDB/Reader/test.php CDDB/Request/Http.php CDDB/Client.php \
+		CDDB/Disc.php CDDB/Protocol.php CDDB/Request.php \
+		CDDB/Server.php CDDB/Track.php CDDB/Utilities.php CDDB.php
 DOCS=		CDDB_example_output.txt CDDB_fileformat.txt CDDB_notes.txt \
 		CDDB_protocol.txt CDDB_record.txt
-TESTS=		CDDBTest.php CDDBTest_HTTP.php CDDBTest_CDDBP.php \
-		CDDBTest_Filesystem.php
-EXAMPLES=	CDDB_client_example.php CDDB_server_example.php CDDB_misc_example.php
+TESTS=		CDDBTest.php CDDBTest_CDDBP.php CDDBTest_Filesystem.php \
+		CDDBTest_HTTP.php CDDBTest_MDB2.php
+EXAMPLES=	CDDB_client_example.php CDDB_Mdb2_Import.php \
+		CDDB_misc_example.php CDDB_server_example.php
 _EXAMPLESDIR=	docs/examples
 
 .include <bsd.port.pre.mk>
