@@ -7,8 +7,8 @@
 
 PORTNAME=	tkdnd
 PORTVERSION=	1.0
-PORTREVISION=	1
 DISTVERSION=	1.0.20040304
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	CENKES
 # Distfile prepared from SourceForge CVS
@@ -18,6 +18,7 @@ COMMENT=	Native drag and drop capabilities
 
 USE_BZIP2=	yes
 USE_TK=		yes
+USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
