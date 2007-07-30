@@ -1,0 +1,8 @@
+Ah yes, INI files. We love them. We hate them. We cannot escape
+them. Originally made popular by Windows, INI files are everywhere
+including in Samba[www.samba.org] and Trac[trac.edgewall.org]. This
+gem has one goal: make INI file, structure, and stream manipulation
+as fast, safe, and simple as possible. We take a modal approach
+with a pluggable parser class.
+
+WWW: http://IniFile.RubyForge.org/

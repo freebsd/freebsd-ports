@@ -870,6 +870,7 @@
     SUBDIR += ruby-xtemplate
     SUBDIR += rubygem-ferret
     SUBDIR += rubygem-htmltools
+    SUBDIR += rubygem-ini
     SUBDIR += rubygem-spreadsheet-excel
     SUBDIR += rubygem-syntax
     SUBDIR += rubygem-tidy
