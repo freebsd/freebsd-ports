@@ -1927,3 +1927,4 @@ bin/jrubysrv
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/patches
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/jvyaml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
