@@ -1,5 +1,6 @@
 bin/ocre
 share/locale/es/LC_MESSAGES/ocre.mo
+%%DATADIR%%/conv/cod39a2c
 %%DATADIR%%/conv/maymin
 %%DATADIR%%/conv/minmay
 %%DATADIR%%/conv/puntua
@@ -8,7 +9,6 @@ share/locale/es/LC_MESSAGES/ocre.mo
 %%DATADIR%%/conv/ts-8859-1.ts
 %%DATADIR%%/conv/ts-8859-15.ts
 %%DATADIR%%/conv/ts-8859-2.ts
-%%DATADIR%%/conv/uu001
 %%DATADIR%%/decsWood
 %%DATADIR%%/decsWoodCur/00index
 %%DATADIR%%/decsWoodCur/arbol_u0021=00.id3
@@ -1948,6 +1948,7 @@ share/locale/es/LC_MESSAGES/ocre.mo
 %%DATADIR%%/decsWoodLatin/arbol_u2022=02.id3
 %%DATADIR%%/decsWoodLatin/arbol_u2022=03.id3
 %%DATADIR%%/decsWoodLatin/arbol_u2022=04.id3
+%%DATADIR%%/decsWoodLatin/decsWoodLatin
 @dirrm %%DATADIR%%/conv
 @dirrm %%DATADIR%%/decsWoodCur
 @dirrm %%DATADIR%%/decsWoodLatin
