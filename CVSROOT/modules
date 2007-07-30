@@ -8953,6 +8953,7 @@ p5-Catalyst-Plugin-Authentication	ports/www/p5-Catalyst-Plugin-Authentication
 p5-Catalyst-Plugin-Authentication-CDBI	ports/www/p5-Catalyst-Plugin-Authentication-CDBI
 p5-Catalyst-Plugin-Authentication-OpenID	ports/www/p5-Catalyst-Plugin-Authentication-OpenID
 p5-Catalyst-Plugin-Authentication-Store-DBIC	ports/www/p5-Catalyst-Plugin-Authentication-Store-DBIC
+p5-Catalyst-Plugin-Authentication-Store-DBIx-Class	ports/www/p5-Catalyst-Plugin-Authentication-Store-DBIx-Class
 p5-Catalyst-Plugin-Authentication-Store-Htpasswd	ports/www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd
 p5-Catalyst-Plugin-Authorization-ACL	ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-Catalyst-Plugin-Authorization-Roles	ports/www/p5-Catalyst-Plugin-Authorization-Roles
