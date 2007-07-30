@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qstardict
-PORTVERSION=	0.03
+PORTVERSION=	0.05
 CATEGORIES=	textproc
 MASTER_SITES=	http://qstardict.ylsoftware.com/files/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
@@ -22,12 +22,6 @@ DICPATH=	${PREFIX}/share/gnome/stardict/dic
 
 PORTDOCS=	AUTHORS COPYNG ChangeLog INSTALL README THANKS
 
-.if !defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr|${PREFIX}|g" \
 		${WRKSRC}/qstardict.pro
@@ -38,10 +32,6 @@ post-configure:
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE}
 
 post-install:
-.if !defined(WITHOUT_NLS)
-	@${MKDIR} ${DATADIR}/translations
-	(cd ${WRKSRC}/translations/ && ${COPYTREE_SHARE} '*.qm' ${DATADIR}/translations)
-.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in AUTHORS COPYNG ChangeLog INSTALL README THANKS
