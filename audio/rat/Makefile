@@ -16,12 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv4/v6 Multicast and unicast audio conferencing tool
 
 USE_TK=		yes
-USE_TK_BUILD=	yes
-USE_TCL=	yes
-USE_TCL_BUILD=	yes
+USE_XORG=	x11 xext sm ice
 USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include --enable-ipv6
+CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
+		--enable-ipv6
 
 MAN1=		rat.1
 MANCOMPRESSED=	no
@@ -33,13 +32,19 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+CONFIGURE_ARGS+=	--with-tcltk-version=${TK_VER}
+
 .if ${OSVERSION} >= 700011
 EXTRA_PATCHES=	${FILESDIR}/timet.patch
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/common/configure.in \
-		${WRKSRC}/rat/configure.in
+	@${REINPLACE_CMD} -e "s,-Werror,," \
+		-e 's,^TCL_INC=$${PARENT}.*,TCL_INC=${TCL_INCLUDEDIR},g' \
+		-e 's,^TCL_LIB=$${PARENT}.*,TCL_LIB=${LOCALBASE}/lib,g' \
+		-e 's,^TK_INC=$${PARENT}.*,TK_INC=${TK_INCLUDEDIR},g' \
+		-e 's,^TK_LIB=$${PARENT}.*,TK_LIB=${LOCALBASE}/lib,g' \
+		${WRKSRC}/common/configure.in ${WRKSRC}/rat/configure.in
 
 do-install:
 	@${REINPLACE_CMD} 's|#/|#!/|' ${WRKSRC}/rat/${RAT_SCRIPT}
@@ -51,16 +56,17 @@ do-install:
 	${MKDIR} ${LOCALBASE}/etc/sdr/plugins
 	${INSTALL_DATA} ${WRKSRC}/rat/sdr2.plugin.S02.audio.rtp.*.${RAT} ${LOCALBASE}/etc/sdr/plugins
 
+pre-configure:
+	cd ${WRKSRC}/common && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS}
+	cd ${WRKSRC}/common && ${GMAKE}
+
+do-configure:
+	cd ${WRKSRC}/rat && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS}
+
 do-build:
-	cd ${WRKSRC}/common/src && ${GMAKE}
 	cd ${WRKSRC}/rat && ${GMAKE}
 
 run-autotools::
 	@${DO_NADA}
-
-do-configure:
-	cd ${WRKSRC}/common && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS}
-	cd ${WRKSRC}/rat && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS} \
-		--with-tcl=${LOCALBASE} --with-tk=${LOCALBASE} --with-tcltk-version=${TK_VER}
 
 .include <bsd.port.post.mk>
