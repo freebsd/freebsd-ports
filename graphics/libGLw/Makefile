@@ -23,7 +23,6 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xt
 USE_GL=		gl
-CFLAGS+=	-D__GLX_MOTIF=1
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}/src/glw/

@@ -1,6 +1,6 @@
 # Configuration for mesa-demos port for FreeBSD
 # Taken from Mesa CVS mesa/Mesa/configs/freebsd Rev 1.2
-# $FreeBSD: /tmp/pcvs/ports/graphics/libGLw/files/Attic/config,v 1.1 2007-05-19 20:09:45 flz Exp $
+# $FreeBSD: /tmp/pcvs/ports/graphics/libGLw/files/Attic/config,v 1.2 2007-07-30 07:49:42 pav Exp $
 #
 
 # Set and remember $CFLAGS, $CXXFLAGS, $CC and $CXX before they are
@@ -8,7 +8,7 @@
 
 _CC := $(CC)
 _CXX := $(CXX)
-_CFLAGS := -fPIC -pedantic -I$(X11BASE)/include -DUSE_XSHM -DHZ=100 $(CFLAGS)
+_CFLAGS := -fPIC -pedantic -I$(X11BASE)/include -DUSE_XSHM -DHZ=100 -D__GLX_MOTIF=1 $(CFLAGS)
 _CXXFLAGS := -fPIC -pedantic $(CXXFLAGS)
 
 include $(TOP)/configs/default
