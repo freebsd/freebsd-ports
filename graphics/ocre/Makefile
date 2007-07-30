@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocre
-PORTVERSION=	0.027
+PORTVERSION=	0.028
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lem.eui.upm.es/pub/ocre/ CENKES
 DISTNAME=	${PORTNAME}_v${DISTVERSION:S/./_/}
@@ -39,6 +39,7 @@ post-patch:
 		s|opcionesp.h||'\
 		${WRKSRC}/ddepend
 	@${REINPLACE_CMD} -e 's|, sys_nerr||' ${WRKSRC}/src/errors.c
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|;s|-O2|${CFLAGS}|' ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL} -d ${DATADIR}/
@@ -46,7 +47,6 @@ do-install:
 	@${TAR} xof ${WRKSRC}/ocre-decsWood-${DISTVERSION}.tgz -C ${DATADIR}/
 	@${CHMOD} -h 755 ${DATADIR}/decsWood
 	@${INSTALL_PROGRAM} ${WRKSRC}/ocre ${PREFIX}/bin/
-	@${INSTALL_DATA} ${WRKSRC}/dats/uu001 ${DATADIR}/conv/
 	@${INSTALL_MAN} ${WRKSRC}/ocre.1 ${MAN1PREFIX}/man/man1/
 	@${INSTALL_MAN} ${WRKSRC}/ocre-es.1 ${MAN1PREFIX}/man/es/man1/ocre.1
 	@${INSTALL_DATA} ${WRKSRC}/po/es.mo ${PREFIX}/share/locale/es/LC_MESSAGES/ocre.mo
