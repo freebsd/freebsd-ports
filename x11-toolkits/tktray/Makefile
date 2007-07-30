@@ -7,7 +7,7 @@
 
 PORTNAME=	tktray
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	http://www.sw4me.com/ CENKES
 DISTNAME=	${TKPKG}
@@ -16,6 +16,7 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	System tray icon support
 
 USE_TK=		yes
+USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
