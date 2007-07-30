@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	pbzip2
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.2.0.2
+DISTVERSION=	1.0.2
 CATEGORIES=	archivers
 MASTER_SITES=	http://compression.ca/pbzip2/ CENKES
-DIST_SUBDIR=	rerolled
+DIST_SUBDIR=	${PKGNAME}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Parallel BZIP2
