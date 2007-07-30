@@ -142,6 +142,7 @@
     SUBDIR += latex-mathabx
     SUBDIR += latex-msc
     SUBDIR += latex-pgf
+    SUBDIR += latex-resume
     SUBDIR += latex-subfloat
     SUBDIR += latex-svninfo
     SUBDIR += latex-timing
