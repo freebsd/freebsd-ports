@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	Net-Flickr-Backup
-PORTVERSION=	2.9.6
+PORTVERSION=	2.97
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-2.96
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	OOP for backing up your Flickr photos locally
