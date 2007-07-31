@@ -34,6 +34,61 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0e43a14d-3f3f-11dc-a79a-0016179b2dd5">
+    <topic>xpdf -- stack based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>xpdf</name>
+	<name>zh-xpdf</name>
+	<name>ja-xpdf</name>
+	<name>ko-xpdf</name>
+	<range><lt>3.02_2</lt></range>
+      </package>
+      <package>
+        <name>kdegraphics</name>
+	<range><lt>3.5.7_1</lt></range>
+      </package>
+      <package>
+        <name>cups-base</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+        <name>gpdf</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+        <name>evince</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+        <name>pdftohtml</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The KDE Team reports:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20070730-1.txt">
+	  <p>kpdf, the KDE pdf viewer, shares code with xpdf. xpdf contains
+	    a vulnerability that can cause a stack based buffer overflow
+	    via a PDF file that exploits an integer overflow in
+	    StreamPredictor::StreamPredictor(). Remotely supplied
+	    pdf files can be used to disrupt the kpdf  viewer on
+	    the client machine and possibly execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>25124</bid>
+      <cvename>CVE-2007-3387</cvename>
+      <url>http://www.kde.org/info/security/advisory-20070730-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2007-07-30</discovery>
+      <entry>2007-07-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ff284bf0-3f32-11dc-a79a-0016179b2dd5">
     <topic>tcpdump -- remote integer underflow vulnerability</topic>
     <affects>
