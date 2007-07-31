@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Audio-FLAC-Header
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,10 +21,4 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 MAN3=		Audio::FLAC::Header.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
