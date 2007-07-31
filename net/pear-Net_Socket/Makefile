@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Socket
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	net www pear
 
 MAINTAINER=	bg1tpt@gmail.com
