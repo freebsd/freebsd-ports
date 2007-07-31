@@ -15,25 +15,17 @@ DISTNAME=	WebHelpers-${PORTVERSION}
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	A Python helper functions for writing templates in web applications easier
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
-		${PYTHON_PKGNAMEPREFIX}routes>=1.1:${PORTSDIR}/www/py-routes \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}routes>=1.1:${PORTSDIR}/www/py-routes \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=1.4:${PORTSDIR}/devel/py-simplejson
 
 USE_PYTHON=		2.4+
-USE_PYDISTUTILS=	yes
-
-PYWEBHELPERS_EGG=	WebHelpers-${PORTVERSION}-py${PYTHON_VER}.egg
-
-PLIST_SUB=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PYWEBHELPERS_EGG=${PYWEBHELPERS_EGG}
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	WebHelpers
 
 post-install:
-	${FIND} ${PYTHON_SITELIBDIR}/${PYWEBHELPERS_EGG} \
+	${FIND} ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG} \
 		-type d -exec ${CHMOD} 755 {} +
-	${FIND} ${PYTHON_SITELIBDIR}/${PYWEBHELPERS_EGG} \
+	${FIND} ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG} \
 		-type f -exec ${CHMOD} ${SHAREMODE} {} +
 
 .include <bsd.port.mk>
