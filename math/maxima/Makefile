@@ -39,62 +39,47 @@ PLIST_SUB+=	LISPBIN=${LISPBINARY}
 PLIST_SUB+=	MAXIMABIN=${MAXIMABINARY}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+OPTIONS=	CLISP "Build with Clisp" off \
+		CMUCL "Build with CMU Common Lisp" off \
+		GCL "Build with GNU Common Lisp" off \
+		SBCL "Build with Steel Bank Common Lisp" on
+
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
 MAKE_ENV+=	CC="${CC}"
-.endif
 
 # Lisp to build with. Define only ONE of these!
-#WITH_CLISP=	yes
-#WITH_CMUCL=	yes
-#WITH_GCL=	yes
-WITH_SBCL=	yes
-
-.if defined(WITH_CLISP)
+.if defined(WITH_CLISP) && defined(WITHOUT_CMUCL) && defined(WITHOUT_GCL) && defined(WITHOUT_SBCL)
 LISPSELECT=	--enable-clisp
 LISPPORT=	clisp:${PORTSDIR}/lang/clisp
 BINDIRECTORY=	binary-clisp
 LISPBINARY=	lisp.run
 PLIST_SUB+=	LISPBINARY=""
 MAXIMABINARY=	maxima.mem
-.endif
-
-.if defined(WITH_CMUCL)
+.elif defined(WITHOUT_CLISP) && defined(WITH_CMUCL) && defined(WITHOUT_GCL) && defined(WITHOUT_SBCL)
 LISPSELECT=	--enable-cmucl
 LISPPORT=	lisp:${PORTSDIR}/lang/cmucl
 BINDIRECTORY=	binary-cmucl
 LISPBINARY=	lisp
 PLIST_SUB+=	LISPBINARY=""
 MAXIMABINARY=	maxima.core
-.endif
-
-.if defined(WITH_GCL)
+.elif defined(WITHOUT_CLISP) && defined(WITHOUT_CMUCL) && defined(WITH_GCL) && defined(WITHOUT_SBCL)
 LISPSELECT=	--enable-gcl
 LISPPORT=	gcl:${PORTSDIR}/lang/gcl
 BINDIRECTORY=	binary-gcl
 #LISPBINARY is null so fudge this so deinstall works cleanly
 PLIST_SUB+=	LISPBINARY="@comment "
 MAXIMABINARY=	maxima
-.endif
-
-.if defined(WITH_SBCL)
+.elif defined(WITHOUT_CLISP) && defined(WITHOUT_CMUCL) && defined(WITHOUT_GCL) && defined(WITH_SBCL)
 LISPSELECT=	--enable-sbcl
 LISPPORT=	sbcl:${PORTSDIR}/lang/sbcl
 BINDIRECTORY=	binary-sbcl
 #LISPBINARY is null so fudge this so deinstall works cleanly
 PLIST_SUB+=	LISPBINARY="@comment "
 MAXIMABINARY=	maxima.core
+.else
+IGNORE=		define only one lisp
 .endif
-
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "Maxima has the following tunable options:"
-	@${ECHO} "  WITH_CLISP   Build with Clisp"
-	@${ECHO} "  WITH_CMUCL   Build with CMU Common Lisp"
-	@${ECHO} "  WITH_GCL     Build with GNU Common Lisp"
-	@${ECHO} "  WITH_SBCL    Build with Steel Bank Common Lisp (default)"
-	@${ECHO} ""
 
 # rebuild older aclocal.m4
 pre-configure:
