@@ -17,6 +17,9 @@
 %%MACRODIR%%/ac_check_class.m4
 %%MACRODIR%%/ac_check_classpath.m4
 %%MACRODIR%%/ac_check_curl.m4
+%%MACRODIR%%/ac_check_docbook_dtd.m4
+%%MACRODIR%%/ac_check_docbook_xslt.m4
+%%MACRODIR%%/ac_check_docbook_xslt_min.m4
 %%MACRODIR%%/ac_check_func_in.m4
 %%MACRODIR%%/ac_check_icu.m4
 %%MACRODIR%%/ac_check_java_home.m4
@@ -189,6 +192,7 @@
 %%MACRODIR%%/ac_prog_ps2pdf.m4
 %%MACRODIR%%/ac_prog_scp.m4
 %%MACRODIR%%/ac_prog_ssh.m4
+%%MACRODIR%%/ac_prog_xsltproc.m4
 %%MACRODIR%%/ac_prompt_user.m4
 %%MACRODIR%%/ac_prompt_user_no_define.m4
 %%MACRODIR%%/ac_prototype.m4
@@ -300,6 +304,7 @@
 %%MACRODIR%%/ax_append_to_file.m4
 %%MACRODIR%%/ax_auto_include_headers.m4
 %%MACRODIR%%/ax_boost.m4
+%%MACRODIR%%/ax_boost_asio.m4
 %%MACRODIR%%/ax_boost_base.m4
 %%MACRODIR%%/ax_boost_date_time.m4
 %%MACRODIR%%/ax_boost_filesystem.m4
@@ -309,6 +314,7 @@
 %%MACRODIR%%/ax_boost_regex.m4
 %%MACRODIR%%/ax_boost_serialization.m4
 %%MACRODIR%%/ax_boost_signals.m4
+%%MACRODIR%%/ax_boost_test_exec_monitor.m4
 %%MACRODIR%%/ax_boost_thread.m4
 %%MACRODIR%%/ax_boost_unit_test_framework.m4
 %%MACRODIR%%/ax_boost_wserialization.m4
@@ -436,6 +442,7 @@
 %%MACRODIR%%/ax_path_bdb.m4
 %%MACRODIR%%/ax_path_lib_pcre.m4
 %%MACRODIR%%/ax_path_milter.m4
+%%MACRODIR%%/ax_path_missing.m4
 %%MACRODIR%%/ax_prefix_config_h.m4
 %%MACRODIR%%/ax_print_to_file.m4
 %%MACRODIR%%/ax_prog_doxygen.m4
@@ -450,6 +457,7 @@
 %%MACRODIR%%/ax_split_version.m4
 %%MACRODIR%%/ax_subst_with.m4
 %%MACRODIR%%/ax_sys_perlsharpbang.m4
+%%MACRODIR%%/ax_tls.m4
 %%MACRODIR%%/ax_try_awk_anyout.m4
 %%MACRODIR%%/ax_try_awk_expout.m4
 %%MACRODIR%%/ax_upload.m4
@@ -532,6 +540,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_check_class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_check_classpath.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_check_curl.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ac_check_docbook_dtd.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ac_check_docbook_xslt.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ac_check_docbook_xslt_min.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_check_func_in.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_check_icu.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_check_java_home.html
@@ -704,6 +715,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_prog_ps2pdf.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_prog_scp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_prog_ssh.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ac_prog_xsltproc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_prompt_user.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_prompt_user_no_define.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_prototype.html
@@ -816,6 +828,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_append_to_file.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_auto_include_headers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_asio.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_base.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_date_time.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_filesystem.html
@@ -825,6 +838,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_regex.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_serialization.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_signals.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_test_exec_monitor.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_thread.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_unit_test_framework.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_wserialization.html
@@ -952,6 +966,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_path_bdb.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_path_lib_pcre.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_path_milter.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_path_missing.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_prefix_config_h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_print_to_file.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_prog_doxygen.html
@@ -966,6 +981,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_split_version.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_subst_with.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_sys_perlsharpbang.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_tls.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_try_awk_anyout.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_try_awk_expout.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_upload.html
@@ -995,6 +1011,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/klm_sys_weak_alias.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib_socket_nsl.html
+%%PORTDOCS%%%%DOCSDIR%%/html/macros-by-author.html
 %%PORTDOCS%%%%DOCSDIR%%/html/macros-by-category.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mdl_cxx_function_try_blocks.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mdl_have_opengl.html
