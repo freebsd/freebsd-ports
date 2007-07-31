@@ -417,6 +417,7 @@
     SUBDIR += nctop
     SUBDIR += ndir
     SUBDIR += netdump-server
+    SUBDIR += nitrogen
     SUBDIR += no-login
     SUBDIR += npadmin
     SUBDIR += nrg2iso
