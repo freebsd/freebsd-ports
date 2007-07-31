@@ -24,10 +24,10 @@ do-install:
 	@${DO_NADA}
 
 # Major upgrade support
-PORTUPGRADE?=	${LOCALBASE}/sbin/portupgrade
-PKG_WHICH?=	${LOCALBASE}/sbin/pkg_which
+PORTUPGRADE_CMD?=	${LOCALBASE}/sbin/portupgrade
+PKG_WHICH_CMD?=	${LOCALBASE}/sbin/pkg_which
 upgrade-site-packages:
-	@if [ ! -x ${PORTUPGRADE} ]; then \
+	@if [ ! -x ${PORTUPGRADE_CMD} ]; then \
 		${ECHO_MSG} "Please install ports-mgmt/portupgrade."; \
 		${FALSE}; \
 	 fi
@@ -36,12 +36,12 @@ upgrade-site-packages:
 		if [ -d ${PREFIX}/lib/python$$ver ]; then \
 			UPD=`${FIND} ${PREFIX}/lib/python$$ver \
 					-type f -print0 | \
-				${XARGS} -0 ${PKG_WHICH} | \
+				${XARGS} -0 ${PKG_WHICH_CMD} | \
 				${GREP} -Fv '?' | \
 				${EGREP} -v '^python2?[0-5]?-2' | \
 				${SORT} -u`; \
 			if [ "$$UPD" ]; then \
-				${PORTUPGRADE} -f $$UPD; \
+				${PORTUPGRADE_CMD} -f $$UPD; \
 			fi; \
 		fi; \
 	 done \
