@@ -871,6 +871,7 @@
     SUBDIR += ruby-xslt
     SUBDIR += ruby-xtemplate
     SUBDIR += rubygem-ferret
+    SUBDIR += rubygem-formosa
     SUBDIR += rubygem-htmltools
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-spreadsheet-excel
