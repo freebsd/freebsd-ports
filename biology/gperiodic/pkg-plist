@@ -1,13 +1,16 @@
 bin/gperiodic
+share/applications/gperiodic.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/gnome/applications/gperiodic.desktop
-share/gnome/pixmaps/gperiodic.png
-share/gnome/pixmaps/gperiodic-crystal.png
 share/locale/da/LC_MESSAGES/gperiodic.mo
 share/locale/fr/LC_MESSAGES/gperiodic.mo
+share/locale/gl/LC_MESSAGES/gperiodic.mo
+share/locale/it/LC_MESSAGES/gperiodic.mo
 share/locale/pl/LC_MESSAGES/gperiodic.mo
+share/locale/ru/LC_MESSAGES/gperiodic.mo
 share/locale/sv/LC_MESSAGES/gperiodic.mo
 share/locale/tr/LC_MESSAGES/gperiodic.mo
+share/pixmaps/gperiodic.png
+share/pixmaps/gperiodic-crystal.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
