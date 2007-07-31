@@ -60,6 +60,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|WITH_ICONV=true|WITH_ICONV=false|; \
 		s|NAN_PYTHON=.*|NAN_PYTHON=${LOCALBASE}|; \
+		s|2.4|${PYTHON_VER}|; \
 		s|NAN_JPEG=.*|NAN_JPEG=${LOCALBASE}|; \
 		s|NAN_OPENEXR=.*|NAN_OPENEXR=${LOCALBASE}|; \
 		s|NAN_PNG=.*|NAN_PNG=${LOCALBASE}|' \
