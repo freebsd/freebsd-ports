@@ -1,15 +1,11 @@
-Version 4.4 of the Berkeley Data Base library which offers (key/value) storage
-with optional concurrent access or transactions interface.
+Oracle Berkeley DB is a family of open source embeddable databases
+that allows developers to incorporate within their applications a
+fast, scalable, transactional database engine with industrial grade
+reliability and availability. As a result, customers and end-users
+will experience an application that simply works, reliably manages
+data, can scale under extreme load, but requires no ongoing database
+administration. As a developer, you can focus on your application and
+be confident that Oracle Berkeley DB will manage your persistence
+needs.
 
-This port will install the AES (American Encryption Standard) enabled version.
-
-Utilities are included in the distribution to convert v1.85 databases to v4.4
-databases, and a backwards compatible API is provided to maintain compatibility
-with programs using the v1.85 interface.
-
-For details on compatibility with other DB versions, see:
-http://dev.sleepycat.com/downloads/releasehistorybdb.html
-
--- Matthias Andree
-  
-WWW: http://www.sleepycat.com/products/bdb.html
+WWW:	http://www.oracle.com/database/berkeley-db.html
