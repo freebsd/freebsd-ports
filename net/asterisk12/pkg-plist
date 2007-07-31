@@ -310,6 +310,7 @@ lib/asterisk/modules/cdr_csv.so
 lib/asterisk/modules/cdr_custom.so
 lib/asterisk/modules/cdr_manager.so
 %%WITH_ODBC%%lib/asterisk/modules/cdr_odbc.so
+%%WITH_FREETDS%%lib/asterisk/modules/cdr_tds.so
 lib/asterisk/modules/chan_agent.so
 lib/asterisk/modules/chan_features.so
 %%WITH_H323%%lib/asterisk/modules/chan_h323.so
@@ -381,6 +382,7 @@ sbin/streamplayer
 %%DATADIR%%/images/asterisk-intro.jpg
 %%DATADIR%%/keys/freeworlddialup.pub
 %%DATADIR%%/keys/iaxtel.pub
+%%DATADIR%%/mohmp3/LICENSE
 %%DATADIR%%/mohmp3/fpm-calm-river.mp3
 %%DATADIR%%/mohmp3/fpm-sunshine.mp3
 %%DATADIR%%/mohmp3/fpm-world-mix.mp3

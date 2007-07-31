@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.2.17
-PORTREVISION=	1
+PORTVERSION=	1.2.23
 PKGNAMESUFFIX=	12
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
 
-PATCHFILES=	asterisk-1.2.17-codec-negotiation-20070416.diff.gz
+PATCHFILES=	asterisk-1.2.23-codec-negotiation-20070730.diff.gz
 PATCH_SITES=	http://sobomax.homeunix.org/~sobomax/
 
 #		${PORTNAME}-1.2.4-${BRIVER}.patch.gz:bristuff
@@ -46,6 +45,7 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		CXX="${CXX}"
 PLIST_SUB=	BRISTUFF="@comment "
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
+WITHOUT_FAX=	yes # Doesn't build with spandsp-0.0.3.
 
 .include <bsd.port.pre.mk>
 
@@ -83,6 +83,14 @@ PLIST_SUB+=	WITH_ODBC="@comment "
 LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
 PLIST_SUB+=	WITH_ODBC=""
 MAKE_ENV+=	WITH_ODBC=1
+.endif
+
+.if defined(WITHOUT_FREETDS)
+PLIST_SUB+=	WITH_FREETDS="@comment "
+.else
+LIB_DEPENDS+=	tds.5:${PORTSDIR}/databases/freetds
+PLIST_SUB+=	WITH_FREETDS=""
+MAKE_ENV+=	WITH_FREETDS=1
 .endif
 
 .if defined(WITHOUT_FAX)

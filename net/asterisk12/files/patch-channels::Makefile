@@ -14,7 +14,7 @@ $FreeBSD$
    CHANH323LIB=-pthread
  endif
  
-@@ -75,11 +75,11 @@
+@@ -75,7 +75,7 @@
    SOLINK+=-lrt
  endif
  
@@ -23,12 +23,16 @@ $FreeBSD$
    CHANNEL_LIBS+=chan_phone.so
  endif
  
+@@ -83,7 +83,7 @@
+   CFLAGS+=-DHAVE_LINUX_COMPILER_H
+ endif
+ 
 -ifneq ($(wildcard h323/libchanh323.a),)
 +ifdef WITH_H323
    CHANNEL_LIBS+=chan_h323.so
  endif
  
-@@ -94,12 +94,12 @@
+@@ -102,12 +102,12 @@
    CHANNEL_LIBS+=chan_alsa.so
  endif
  
@@ -43,7 +47,7 @@ $FreeBSD$
    CFLAGS+=-DZAPATA_R2
    ZAPR2=-lmfcr2
  endif
-@@ -112,12 +112,12 @@
+@@ -120,12 +120,12 @@
  endif
  
  ifndef WITHOUT_ZAPTEL
@@ -58,7 +62,7 @@ $FreeBSD$
    endif
    CFLAGS+=-DIAX_TRUNKING
    CHANNEL_LIBS+=chan_zap.so
-@@ -233,8 +233,10 @@
+@@ -241,8 +241,10 @@
  chan_h323.so: chan_h323.o h323/libchanh323.a h323/Makefile.ast
  	$(CC) $(SOLINK) $(H323LDFLAGS) -o $@ $< h323/libchanh323.a $(H323LDLIBS) -lstdc++
  else
@@ -71,7 +75,7 @@ $FreeBSD$
  endif
  
  misdn/chan_misdn_lib.a:
-@@ -253,8 +255,7 @@
+@@ -261,8 +263,7 @@
  #	$(CC) -rdynamic -shared -Xlinker -x -o $@ $<
  
  install: all

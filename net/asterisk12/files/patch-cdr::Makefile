@@ -30,7 +30,7 @@ $FreeBSD$
  #
 -ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/tds.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/tds.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/freetds/tds.h),)
 -  ifeq ($(shell grep -s TDS_VERSION_NO $(CROSS_COMPILE_TARGET)/usr/include/tdsver.h $(CROSS_COMPILE_TARGET)/usr/local/include/tdsver.h $(CROSS_COMPILE_TARGET)/usr/include/freetds/tdsver.h | grep -c 0.64),1)
-+ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/tds.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/tds.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/freetds/tds.h),)
++ifdef WITH_FREETDS
 +  ifeq ($(shell grep -s TDS_VERSION_NO $(CROSS_COMPILE_TARGET)/usr/include/tdsver.h $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/tdsver.h $(CROSS_COMPILE_TARGET)/usr/include/freetds/tdsver.h | grep -c 0.64),1)
      CFLAGS += -DFREETDS_0_64
    else
