@@ -1,0 +1,11 @@
+bin/nitrogen
+share/icons/hicolor/128x128/apps/nitrogen.png
+share/icons/hicolor/16x16/apps/nitrogen.png
+share/icons/hicolor/22x22/apps/nitrogen.png
+share/icons/hicolor/32x32/apps/nitrogen.png
+share/icons/hicolor/48x48/apps/nitrogen.png
+share/icons/hicolor/16x16/devices/video-display.png
+share/icons/hicolor/16x16/actions/wallpaper-bestfit.png
+share/icons/hicolor/16x16/actions/wallpaper-centered.png
+share/icons/hicolor/16x16/actions/wallpaper-scaled.png
+share/icons/hicolor/16x16/actions/wallpaper-tiled.png
