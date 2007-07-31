@@ -9,11 +9,3 @@
  {
      m_signalled = True;
  }
-@@ -526,6 +526,7 @@
- extern int putenv(char *);	/* not POSIX */
- }
- #endif
-+extern "C" int putenv(const char*);
- 
- void WindowManager::spawn()
- {
