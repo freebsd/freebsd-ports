@@ -4,10 +4,20 @@ lib/gnome-subtitles/sublib.dll
 share/gnome/applications/gnome-subtitles.desktop
 share/gnome/help/gnome-subtitles/C/legal.xml
 share/gnome/help/gnome-subtitles/C/gnome-subtitles.xml
+share/gnome/help/gnome-subtitles/ca/gnome-subtitles.xml
+share/gnome/help/gnome-subtitles/sv/gnome-subtitles.xml
 share/gnome/omf/gnome-subtitles/gnome-subtitles-C.omf
+share/gnome/omf/gnome-subtitles/gnome-subtitles-ca.omf
+share/gnome/omf/gnome-subtitles/gnome-subtitles-sv.omf
 share/gnome/pixmaps/gnome-subtitles.png
+share/locale/ca/LC_MESSAGES/gnome-subtitles.mo
+share/locale/es/LC_MESSAGES/gnome-subtitles.mo
+share/locale/sv/LC_MESSAGES/gnome-subtitles.mo
+share/locale/dz/LC_MESSAGES/gnome-subtitles.mo
 @dirrmtry lib/gnome-subtitles
 @dirrmtry share/gnome/omf/gnome-subtitles
 @dirrmtry share/gnome/help/gnome-subtitles/C
+@dirrmtry share/gnome/help/gnome-subtitles/sv
+@dirrmtry share/gnome/help/gnome-subtitles/ca
 @dirrmtry share/gnome/help/gnome-subtitles
 @dirrmtry locale
