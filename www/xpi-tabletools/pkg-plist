@@ -49,16 +49,31 @@
 %%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL/tabletools.properties
 %%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL/tabletoolsOptions.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL/tabletoolsOverlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/pt-BR/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/pt-BR/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/tabletools/pt-BR/tabletools.properties
+%%XPI_XPIDIR%%/chrome/locale/tabletools/pt-BR/tabletoolsOptions.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/pt-BR/tabletoolsOverlay.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/sk-SK/about.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/sk-SK/contents.rdf
 %%XPI_XPIDIR%%/chrome/locale/tabletools/sk-SK/tabletools.properties
 %%XPI_XPIDIR%%/chrome/locale/tabletools/sk-SK/tabletoolsOptions.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/sk-SK/tabletoolsOverlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/tr-TR/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/tr-TR/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/tabletools/tr-TR/tabletools.properties
+%%XPI_XPIDIR%%/chrome/locale/tabletools/tr-TR/tabletoolsOptions.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/tr-TR/tabletoolsOverlay.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN/about.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN/contents.rdf
 %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN/tabletools.properties
 %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN/tabletoolsOptions.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN/tabletoolsOverlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/zh-TW/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/zh-TW/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/tabletools/zh-TW/tabletools.properties
+%%XPI_XPIDIR%%/chrome/locale/tabletools/zh-TW/tabletoolsOptions.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/zh-TW/tabletoolsOverlay.dtd
 %%XPI_XPIDIR%%/chrome/skin/classic/tabletools/contents.rdf
 %%XPI_XPIDIR%%/chrome/skin/classic/tabletools/ttool_large.png
 %%XPI_XPIDIR%%/chrome/skin/classic/tabletools/ttool_small.png
@@ -77,8 +92,11 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/it-IT
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/ja-JP
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL
+@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/pt-BR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/sk-SK
+@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/tr-TR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN
+@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-TW
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools
 @dirrm %%XPI_XPIDIR%%/chrome/locale
 @dirrm %%XPI_XPIDIR%%/chrome/skin/classic/tabletools

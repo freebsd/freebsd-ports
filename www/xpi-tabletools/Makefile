@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	tabletools
-PORTVERSION=	0.1.9
-DISTVERSION=	0.19
+PORTVERSION=	0.2.0
+DISTVERSION=	0.20
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Sort any HTML data table
 
+XPI_NUM=	2637
 XPI_ID=		{7C7F5C11-4ACD-4CDB-9293-2E3F46654E2A}
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
