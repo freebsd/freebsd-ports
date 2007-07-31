@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${DISTDATE}
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	A set of useful GNU Autoconf macros
 
-DISTDATE=	2007-03-12
+DISTDATE=	2007-07-26
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:261:env automake:110:env
 GNU_CONFIGURE=	yes
