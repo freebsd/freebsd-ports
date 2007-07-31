@@ -18,11 +18,8 @@ MAINTAINER=	elvstone@gmail.com
 COMMENT=	Database schema migrations for SQLAlchemy
 
 USE_PYTHON=	2.3+
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
-		PYTHONVERSION=${_PYTHON_VERSION}
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS+=	${LOCALBASE}/share/examples/sqlalchemy/vertical/vertical.py:${PORTSDIR}/databases/py-sqlalchemy
 
 .include <bsd.port.mk>
