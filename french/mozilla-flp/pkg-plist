@@ -3,7 +3,7 @@
 %%MOZDIR%%/chrome/fr-unix.jar
 %%MOZDIR%%/components/myspell/fr-FR.aff
 %%MOZDIR%%/components/myspell/fr-FR.dic
-%%MOZDIR%%/defaults/isp/FR/gmail.rdf
+%%MOZ%%%%MOZDIR%%/defaults/isp/FR/gmail.rdf
 %%MOZDIR%%/defaults/isp/FR/movemail.rdf
 %%MOZDIR%%/defaults/messenger/FR/mailViews.dat
 %%MOZDIR%%/defaults/profile/FR/bookmarks.html
