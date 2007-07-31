@@ -41,4 +41,11 @@ pre-su-install:
 	@${MKDIR} ${PREFIX}/share/automake-${BUILD_VERSION}
 	@${MKDIR} ${PREFIX}/share/aclocal-${BUILD_VERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+CONFIGURE_ARGS+=MAKEINFO=${LOCALBASE}/bin/makeinfo
+.endif
+
+.include <bsd.port.post.mk>
