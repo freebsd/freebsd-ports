@@ -311,6 +311,7 @@ bin/tracd
 %%EXAMPLESDIR%%/trac-pre-commit-hook
 %%DATADIR%%/cgi-bin/trac.cgi
 %%DATADIR%%/cgi-bin/trac.fcgi
+@exec mkdir -p %D/%%DATADIR%%/conf
 %%DATADIR%%/htdocs/README
 %%DATADIR%%/htdocs/asc.png
 %%DATADIR%%/htdocs/attachment.png
@@ -352,6 +353,7 @@ bin/tracd
 %%DATADIR%%/htdocs/trac_logo_mini.png
 %%DATADIR%%/htdocs/wiki.png
 %%DATADIR%%/htdocs/xml.png
+@exec mkdir -p %D/%%DATADIR%%/plugins
 %%DATADIR%%/templates/README
 %%DATADIR%%/templates/about.cs
 %%DATADIR%%/templates/anydiff.cs
