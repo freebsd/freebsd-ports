@@ -7,6 +7,7 @@
 
 PORTNAME=	libmrss
 PORTVERSION=	0.18.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www5.autistici.org/bakunin/libmrss/ GENTOO/distfiles
 
@@ -16,6 +17,8 @@ COMMENT=	A C library for parsing, writing, and creating RSS
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		nxml.18:${PORTSDIR}/textproc/libnxml
+
+OPTIONS=	PHPMRSS "support to PHP" on
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
@@ -28,4 +31,18 @@ WANT_GNOME=	yes
 pre-patch:
 		${gnomehack_PRE_PATCH}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PHPMRSS)
+USE_PHP=	yes
+USE_AUTOTOOLS+=	autoconf:259:env
+BUILD_DEPENDS+=	phpize:${PHP_PORT}
+post-install:
+		@(cd ${WRKSRC}/phpmrss; ${SETENV} ${SCRIPTS_ENV} ${LOCALBASE}/bin/phpize)
+		@(cd ${WRKSRC}/phpmrss; ./configure; ${MAKE} install)
+PLIST_SUB+=	PHPMRSS=""
+.else
+PLIST_SUB+=	PHPMRSS="@comment "
+.endif
+
+.include <bsd.port.post.mk>
