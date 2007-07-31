@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	jetty
-DISTVERSION=	6.1.1
-PORTREVISION=	2
+DISTVERSION=	6.1.5
 CATEGORIES=	www java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://dist.codehaus.org/jetty/${PKGNAME}/
 
 MAINTAINER=	jbq@caraldi.com
 COMMENT=	Full-featured web server implemented entirely in java
