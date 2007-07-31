@@ -50,7 +50,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
         <name>cups-base</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.2.11_3</lt></range>
       </package>
       <package>
         <name>gpdf</name>
@@ -62,6 +62,10 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
         <name>pdftohtml</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+        <name>poppler</name>
 	<range><gt>0</gt></range>
       </package>
     </affects>
