@@ -14179,6 +14179,7 @@ rubygem-facets	ports/devel/rubygem-facets
 rubygem-fastercsv	ports/devel/rubygem-fastercsv
 rubygem-fastthread	ports/devel/rubygem-fastthread
 rubygem-ferret	ports/textproc/rubygem-ferret
+rubygem-formosa	ports/textproc/rubygem-formosa
 rubygem-gd2	ports/graphics/rubygem-gd2
 rubygem-gem_plugin	ports/devel/rubygem-gem_plugin
 rubygem-god	ports/sysutils/rubygem-god
