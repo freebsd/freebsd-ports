@@ -23,6 +23,9 @@ COMMENT=	The GNU Ada Compiler system
 
 ONLY_FOR_ARCHS=	i386
 
+DEPRECATED=	This port was made for initial bootstraping of later versions and is no longer needed
+EXPIRATION_DATE=	2007-09-01
+
 USE_GMAKE=	yes
 USE_PERL5=	yes # Needed? Builds on 6.1 and bootstrapps the 4.1 without Perl.
 USE_BISON=	yes
