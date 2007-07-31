@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Text/Greeking/zh_TW.pm
+@dirrmtry %%SITE_PERL%%/Text/Greeking
+@dirrmtry %%SITE_PERL%%/Text
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text-Greeking-zh_TW/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text-Greeking-zh_TW
