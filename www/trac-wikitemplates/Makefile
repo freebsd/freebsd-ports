@@ -15,14 +15,13 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION:S/p/rc/}
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Templates for the Trac wiki
 
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		${PYTHON_SITELIBDIR}/TracCtxtnavAdd-1.1_r1-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-ctxtnavadd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
-NO_BUILD=	yes
 USE_PYTHON=	2.3+
-USE_PYDISTUTILS=yes
-PLIST_SUB+=	PORTVERSION=${PORTVERSION:S/p/rc/} PYTHONVERSION=${_PYTHON_VERSION}
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	TracWikiTemplates
+PYDISTUTILS_PKGVERSION=	${PORTVERSION:S/p/rc/}
 
 .include <bsd.port.mk>

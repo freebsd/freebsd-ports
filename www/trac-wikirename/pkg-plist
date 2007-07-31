@@ -1,2 +1,2 @@
 bin/trac-wikirename
-%%PYTHON_SITELIBDIR%%/TracWikiRename-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
