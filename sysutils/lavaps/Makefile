@@ -16,25 +16,21 @@ COMMENT=	A lava lamp of currently running processes
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	-x-includes="${X11BASE}/include" -x-libraries="${X11BASE}/lib"
 USE_PERL5_BUILD=	yes
+USE_XORG=	x11 xext sm ice
 
 MAN1=		lavaps.1
 
-TCL_VER?=	8.4
-
-CPPFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER} \
-		-I${LOCALBASE}/include/tk${TCL_VER} \
-		-I${LOCALBASE}/include
-CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER} \
-		-I${LOCALBASE}/include/tk${TCL_VER} \
-		-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 OPTIONS=	GTK	"Build with GTK frontend instead of the default TK" off
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 .include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+=	-x-includes="${X11BASE}/include" \
+			-x-libraries="${X11BASE}/lib"
 
 .if defined(WITH_GTK)
 PKGNAMESUFFIX=	-gtk2
@@ -43,10 +39,15 @@ USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--with-gtk
 PLIST_SUB+=	NLS=""
 .else
-LIB_DEPENDS+=	tk${TCL_VER:S/.//}:${PORTSDIR}/x11-toolkits/tk${TCL_VER:S/.//}
+USE_TK=		84+
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+CPPFLAGS+=	-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}
+CFLAGS+=	-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}
 CONFIGURE_ARGS+=	--with-tcltk --disable-nls \
 			--with-tcl-ver=${TCL_VER} --with-tk-ver=${TCL_VER}
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.post.mk>
