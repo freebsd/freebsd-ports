@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PAR
-PORTVERSION=	0.97.3
+PORTVERSION=	0.97.6
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PAR
@@ -17,9 +17,9 @@ MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Perl Archive Toolkit
 
 BUILD_DEPENDS=	p5-Archive-Zip>=1.00:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-AutoLoader>=5.62:${PORTSDIR}/devel/p5-AutoLoader \
+		p5-AutoLoader>=5.63:${PORTSDIR}/devel/p5-AutoLoader \
 		p5-Compress-Zlib>=1.30:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		p5-PAR-Dist>=0.21:${PORTSDIR}/devel/p5-PAR-Dist
+		p5-PAR-Dist>=0.22:${PORTSDIR}/devel/p5-PAR-Dist
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
