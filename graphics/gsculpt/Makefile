@@ -29,7 +29,7 @@ WRKSRC=		${WRKDIR}/gSculpt-${PORTVERSION}-alpha
 USE_DOS2UNIX=	SConstruct
 USE_SCONS=	yes
 SCONS_BUILDENV=	${SCONS_ENV}
-USE_PYTHON=	2.4
+USE_PYTHON=	2.4+
 USE_XLIB=	yes
 USE_GL=		yes
 USE_GNOME=	pygtk2
@@ -38,7 +38,7 @@ USE_LDCONFIG=	${PREFIX}/lib/gSculpt
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/include/python2.4|${LOCALBASE}/include/python2.4|" \
+	@${REINPLACE_CMD} -e "s|/usr/include/python2.4|${LOCALBASE}/include/python${PYTHON_VER}| ; s|python2.4|python${PYTHON_VER}|" \
 		${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e "s|gsculpt.py|${PYTHONPREFIX_SITELIBDIR}/gSculpt/gsculpt.py|" \
 		${WRKSRC}/gsculpt
