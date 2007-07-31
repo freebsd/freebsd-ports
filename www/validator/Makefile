@@ -7,6 +7,7 @@
 
 PORTNAME=	validator
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://validator.w3.org/dist/ \
 		http://www.cyberbotx.com/w3c-validator/
@@ -17,7 +18,6 @@ COMMENT=	Markup Validation Service from the World Wide Web Consortium (W3C)
 
 RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/opensp \
 		${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General \
-		${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/converters/p5-Encode \
 		${SITE_PERL}/${PERL_ARCH}/Encode/HanExtra.pm:${PORTSDIR}/chinese/p5-Encode-HanExtra \
 		${SITE_PERL}/${PERL_ARCH}/Encode/JIS2K.pm:${PORTSDIR}/converters/p5-Encode-JIS2K \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
