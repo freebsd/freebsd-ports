@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vlgothic
-PORTVERSION=	20070507
+PORTVERSION=	20070731
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://vinelinux.org/~daisuke/vlgothic/
 DISTNAME=	VLGothic-${PORTVERSION}
@@ -17,7 +17,6 @@ COMMENT=	Free Japanese TrueType fonts named 'VLGothic'
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
