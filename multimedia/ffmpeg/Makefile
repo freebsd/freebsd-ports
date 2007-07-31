@@ -237,7 +237,7 @@ post-patch:
 .if ${OSVERSION} <= 601000
 	@${REINPLACE_CMD} -E \
 		-e 's| log2| log|' \
-		${WRKSRC}/libavcodec/x264.c
+		${WRKSRC}/libavcodec/libx264.c
 .endif
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/common.mak
