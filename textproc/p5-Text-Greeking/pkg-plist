@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Text/Greeking.pm
+@dirrmtry %%SITE_PERL%%/Text
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Greeking/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Greeking
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
