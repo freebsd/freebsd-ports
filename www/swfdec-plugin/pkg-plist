@@ -1,3 +1,4 @@
 lib/browser_plugins/libswfdecmozilla.a
 lib/browser_plugins/libswfdecmozilla.la
 lib/browser_plugins/libswfdecmozilla.so
+@dirrmtry lib/browser_plugins
