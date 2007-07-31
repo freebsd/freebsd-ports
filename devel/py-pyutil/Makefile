@@ -25,4 +25,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^from\ ez\_setup|#from\ ez\_setup|' \
 	-e 's|^use_setuptools|#use_setuptools|' ${WRKSRC}/${PYSETUP}
 
+pre-build:
+	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py setopt -c build -o build-platlib -s lib.${PYEASYINSTALL_OSARCH:S/^-//}
+	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py setopt -c build -o build-temp -s temp.${PYEASYINSTALL_OSARCH:S/^-//}-${PYTHON_VER}
+	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py setopt -c bdist_egg -o plat-name -s ${PYEASYINSTALL_OSARCH:S/^-//}
+	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py setopt -c bdist -o plat-name -s ${PYEASYINSTALL_OSARCH:S/^-//}
+
 .include <bsd.port.mk>
