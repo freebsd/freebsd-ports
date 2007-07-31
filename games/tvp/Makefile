@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	games tk82
 MASTER_SITES=	http://www3.sympatico.ca/john.vanderhoek/tim/src/president/
 
-MAINTAINER=	hoek@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the cardgame President (or Ass) against 3 AIs
 
 # Comment-out this (and CFLAGS) to compile only the CLI and ansi interfaces
