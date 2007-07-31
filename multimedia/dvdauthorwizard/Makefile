@@ -7,6 +7,7 @@
 
 PORTNAME=	dvdauthorwizard
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
 DISTNAME=	DVDAuthorWizard-${PORTVERSION}
@@ -24,6 +25,7 @@ RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
 		png2yuv:${PORTSDIR}/multimedia/mjpegtools \
 		sox:${PORTSDIR}/audio/sox \
 		transcode:${PORTSDIR}/multimedia/transcode \
+		kmdr-executor:${PORTSDIR}/www/kdewebdev \
 		kdialog:${PORTSDIR}/x11/kdebase3
 
 do-patch:
