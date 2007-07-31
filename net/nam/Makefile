@@ -7,7 +7,7 @@
 
 PORTNAME=	nam
 PORTVERSION=	1.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTNAME=	nam-src-${PORTVERSION}
@@ -20,7 +20,7 @@ LIB_DEPENDS=	otcl.1:${PORTSDIR}/lang/otcl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_XLIB=	yes
+USE_XORG=	xmu
 GNU_CONFIGURE=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include/tclcl
 CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
