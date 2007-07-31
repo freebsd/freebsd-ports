@@ -129,7 +129,7 @@ $FreeBSD$
  
  fi
  
-@@ -19219,7 +19219,7 @@
+@@ -19219,7 +19338,7 @@
  		DED_LD_FLAG_RUNTIME_LIBRARY_PATH=
  		STATIC_CFLAGS="-mdynamic-no-pic"
  	;;
@@ -138,3 +138,12 @@ $FreeBSD$
  		DED_LD="$CC"
  		DED_LDFLAGS="-shared"
  	;;
+@@ -19530,7 +19649,7 @@
+   /bin/rm -f $ERL_TOP/lib/$a/SKIP
+ done
+ 
+-SSL_DYNAMIC_ONLY=no
++SSL_DYNAMIC_ONLY=yes
+ 
+ if test "x$with_ssl" = "xno"; then
+     SSL_APP=
