@@ -7,6 +7,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Games/.keep_me
 %%INSTDIR%%/resources/AppData/Images/Default.zip
 %%INSTDIR%%/resources/AppData/Plugins/.keep_me
+%%INSTDIR%%/resources/AppData/Skins/.keep_me
 %%INSTDIR%%/resources/AppData/Sounds/MSN Email.wav
 %%INSTDIR%%/resources/AppData/Sounds/MSN Message.wav
 %%INSTDIR%%/resources/AppData/Sounds/MSN Online.wav
@@ -77,6 +78,7 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/AppData/Views
 @dirrm %%INSTDIR%%/resources/AppData/StatusIcons
 @dirrm %%INSTDIR%%/resources/AppData/SplashWindow
+@dirrm %%INSTDIR%%/resources/AppData/Skins
 @dirrm %%INSTDIR%%/resources/AppData/Sounds
 @dirrm %%INSTDIR%%/resources/AppData/Plugins
 @dirrm %%INSTDIR%%/resources/AppData/Images

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	1.9RC7
-PORTEPOCH=	6
+DISTVERSION=	1.9RC7b
+PORTEPOCH=	7
 CATEGORIES=	net-im java
 MASTER_SITES=	${MASTER_SITE_LOCAL}			\
 		http://download.mercury.to/1.9/		\
@@ -38,7 +38,8 @@ INSTDIR=	${PREFIX}/${LINSTDIR}
 PLIST_SUB=	INSTDIR=${LINSTDIR}
 SUB_DIRS=	lib resources
 DIR2PRUNE=	resources/AppData/Games		\
-		resources/AppData/Plugins
+		resources/AppData/Plugins	\
+		resources/AppData/Skins
 
 DESKTOP_ENTRIES="Mercury Messenger" "${COMMENT}"	\
 		"${INSTDIR}/resources/online.png"	\
