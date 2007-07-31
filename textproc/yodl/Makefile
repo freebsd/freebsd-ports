@@ -7,7 +7,7 @@
 
 PORTNAME=	yodl
 PORTVERSION=	1.31.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.lilypond.org/pub/yodl/development/ \
 					http://www.foad.org/zsh/zsh/ \
@@ -35,6 +35,10 @@ MAN1=		yodl.1 \
 		yodlconverters.1
 MAN7=		yodlmacros.7 \
 		yodlmanpage.7
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,tr '.*' '.*',tr '[:lower:]' '[:upper:]'," \
+		${WRKSRC}/src/yodl/GNUmakefile
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/out/striproff ${PREFIX}/bin
