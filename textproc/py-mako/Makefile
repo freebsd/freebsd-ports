@@ -18,19 +18,12 @@ DISTNAME=	Mako-${PORTVERSION}
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Super-fast templating language in Python
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
-		${PYTHON_PKGNAMEPREFIX}beaker>=0.7.3:${PORTSDIR}/www/py-beaker \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beaker>=0.7.3:${PORTSDIR}/www/py-beaker \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0.8.1:${PORTSDIR}/devel/py-babel
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-
-PYMAKO_EGG=	Mako-${PORTVERSION}-py${PYTHON_VER}.egg
-
-PLIST_SUB=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PYMAKO_EGG=${PYMAKO_EGG}
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	Mako
 
 .include <bsd.port.mk>
