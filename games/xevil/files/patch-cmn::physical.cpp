@@ -1,5 +1,5 @@
---- cmn/physical.cpp.orig	Wed Jan 19 20:38:14 2000
-+++ cmn/physical.cpp	Sat Oct 25 21:43:15 2003
+--- cmn/physical.cpp.orig	2000-01-19 20:38:14.000000000 +0100
++++ cmn/physical.cpp	2007-07-31 15:54:01.000000000 +0200
 @@ -33,10 +33,11 @@
  // Include Files
  #include "xdata.h"
@@ -14,3 +14,12 @@
  #endif
  #if WIN32
  #include <strstrea.h>
+@@ -1844,7 +1845,7 @@
+   }
+ 
+   // Use the pixmap resource id as the base.
+-  u_int cmnBitsId = (unsigned int)mc->pixmapBits[baseDir][animNum];
++  u_int cmnBitsId = (unsigned intptr_t)mc->pixmapBits[baseDir][animNum];
+ 
+   // It is ok to call OneTransform::compute_key() even if there is no 
+   // transformation, will just return 0x0.  

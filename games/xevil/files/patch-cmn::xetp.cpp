@@ -1,5 +1,5 @@
---- cmn/xetp.cpp.orig	Wed Jan 19 12:54:30 2000
-+++ cmn/xetp.cpp	Sat Oct 25 21:46:02 2003
+--- cmn/xetp.cpp.orig	2000-01-19 12:54:30.000000000 +0100
++++ cmn/xetp.cpp	2007-07-31 15:51:31.000000000 +0200
 @@ -29,9 +29,10 @@
  
  #include "stdafx.h"
@@ -13,3 +13,12 @@
  #endif
  #if WIN32
  #include <strstrea.h>
+@@ -159,7 +160,7 @@
+   for (n = 0; n < physicals.length(); n++) {
+     PhysicalP p = (PhysicalP)physicals.get(n);
+     // computing object_length twice, but who cares.
+-    _send_object(out,p,turn,(TickType)tickTypes.get(n),
++    _send_object(out,p,turn,(intptr_t)tickTypes.get(n),
+                  compute_object_length(p));
+   }
+   
