@@ -6,39 +6,36 @@
 #    $MCom: ports/biology/gperiodic/Makefile,v 1.1 2006/09/29 23:42:13 ahze Exp $
 
 PORTNAME=	gperiodic
-PORTVERSION=	2.0.8
-PORTREVISION=	4
+PORTVERSION=	2.0.10
 CATEGORIES=	biology
-MASTER_SITES=	http://koti.welho.com/jfrantz/software/
+MASTER_SITES=	http://www.frantz.fi/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a periodic table of the elements
 
 USE_XLIB=	yes
-USE_GNOME=	gnomeprefix gtk20
-ALL_TARGET=	${PORTNAME}
+USE_GNOME=	gtk20
 USE_GETTEXT=	yes
-LANGS=		da fr pl sv tr
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|^CC=|CC?=|g ; \
-		 s|^CFLAGS=|CFLAGS+=|g' ${WRKSRC}/Makefile
+LANGS=		da fr gl it pl ru sv tr
 
-post-build:
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} `pkg-config --cflags --libs gtk+-2.0` \
+		gperiodic.c -o gperiodic
 .for lang in ${LANGS}
 	cd ${WRKSRC}/po && msgfmt -f -v -o ${lang}.mo ${lang}.po
 .endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gperiodic ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/gnome/applications
+	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gperiodic.desktop \
-		${PREFIX}/share/gnome/applications
-	@${MKDIR} ${PREFIX}/share/gnome/pixmaps
+		${PREFIX}/share/applications
+	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/gperiodic.png \
-		${PREFIX}/share/gnome/pixmaps
+		${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/gperiodic-crystal.png \
-		${PREFIX}/share/gnome/pixmaps
+		${PREFIX}/share/pixmaps
 .for lang in ${LANGS}
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
