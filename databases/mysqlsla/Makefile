@@ -5,10 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	mysqlsla
-PORTVERSION=	1.3
+PORTVERSION=	1.5
 CATEGORIES=	databases
 MASTER_SITES=	http://hackmysql.com/scripts/ \
-		${MASTER_SITE_LOCAL}
+		${MASTER_SITE_LOCAL} \
+		http://zaa.pp.ru/distfiles/
 MASTER_SITE_SUBDIR=	miwi
 EXTRACT_SUFX=	.tgz
 
