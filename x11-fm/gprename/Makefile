@@ -2,12 +2,12 @@
 # Date created:				2004-03-15
 # Whom:					trevor
 #
-# $Carpetsmoker: ports/x11-fm/gprename/Makefile,v 1.5 2007/07/12 02:30:53 carpetsmoker Exp $
+# $Carpetsmoker: ports/x11-fm/gprename/Makefile,v 1.6 2007/07/20 07:31:57 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	gprename
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 PORTEPOCH=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
+USE_GETTEXT=	yes
 NO_BUILD=	yes
 PORTDOCS=	README COPYING
 MAN1=		gprename.1
