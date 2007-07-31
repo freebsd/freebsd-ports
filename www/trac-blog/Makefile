@@ -15,15 +15,14 @@ DISTNAME=	trac${PORTNAME}plugin-${PORTVERSION}
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A blog plugin for Trac
 
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		${PYTHON_SITELIBDIR}/TracTags-0.4-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-tags \
 		${PYTHON_SITELIBDIR}/TracWebAdmin-0.1.2dev-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-webadmin
 
 WRKSRC=		${WRKDIR}/trac${PORTNAME}plugin
-NO_BUILD=	yes
 USE_PYTHON=	2.3+
-USE_PYDISTUTILS=yes
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}dev PYTHONVERSION=${_PYTHON_VERSION}
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	tBlog
+PYDISTUTILS_PKGVERSION=	${PORTVERSION}dev
 
 .include <bsd.port.mk>
