@@ -7,7 +7,7 @@
 
 PORTNAME=	otcl
 PORTVERSION=	1.13
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	lang tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_TK=		80+
 USE_TK_NO_THREADS=	yes
+USE_XORG=	xext
 
 USE_AUTOTOOLS=	autoconf:259
 USE_LDCONFIG=	yes
@@ -34,7 +35,8 @@ PORTDOCS=	${DOCS:S/doc\///}
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	-DHAVE_UNISTD_H
-CONFIGURE_ARGS+=	--with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER}
+CONFIGURE_ARGS+=	--with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER} \
+		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
