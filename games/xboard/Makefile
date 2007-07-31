@@ -7,7 +7,7 @@
 
 PORTNAME=	xboard
 PORTVERSION=	4.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.tim-mann.org/xboard/ \
 		${MASTER_SITE_GNU}
@@ -18,11 +18,14 @@ COMMENT=	X frontend for Crafty, GNUChess, Chess Servers, or e-mail chess
 
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 
-USE_XLIB=	yes
+USE_XORG=	xt xpm xaw
 GNU_CONFIGURE=	yes
 STRIP=
 MAN6=		xboard.6 zic2xpm.6
 INFO=		xboard
+
+CONFIGURE_ARGS+=	--x-libraries=${X11BASE}/lib \
+			--x-includes=${X11BASE}/include
 
 .if defined(WITH_XAW3D)
 CONFIGURE_ARGS+=	"--with-Xaw3d"
