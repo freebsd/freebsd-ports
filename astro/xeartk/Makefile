@@ -7,7 +7,7 @@
 
 PORTNAME=	xeartk
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro tk84
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	tkgeomap
@@ -17,7 +17,6 @@ COMMENT=	Small demo for tkgeomap
 
 LIB_DEPENDS=	tkgeomap.0:${PORTSDIR}/astro/tkgeomap
 
-USE_XLIB=	yes
 USE_TK_RUN=	yes
 NO_BUILD=	yes
 DATA_FILES=	README cities land.xdr rivers.xdr water.xdr
