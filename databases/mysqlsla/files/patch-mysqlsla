@@ -1,11 +1,11 @@
---- mysqlsla.orig	Thu Nov 23 18:31:31 2006
-+++ mysqlsla	Thu Nov 23 18:31:47 2006
-@@ -115,7 +115,7 @@ if( (!$op{'general'} && !$op{'slow'} && 
- 
- $op{'host'}   ||= 'localhost';
- $op{'port'}   ||= 3306;
--$op{'socket'} ||= '/var/run/mysqld/mysqld.sock';
-+$op{'socket'} ||= '/tmp/mysql.sock';
- $op{'avg'}    ||= 1;
- $op{'top'}    ||= 0;
- if(have_op 'safe')   { $op{'filter'} = "-*,+SELECT,+USE"; }
+--- mysqlsla.orig	Fri Apr  6 21:43:05 2007
++++ mysqlsla	Mon Jul 30 23:30:04 2007
+@@ -92,7 +92,7 @@ $mycnf{user}   = $op{user}   if $op{user
+ # Default values if nothing else
+ $mycnf{host}   ||= 'localhost';
+ $mycnf{port}   ||= 3306;
+-$mycnf{socket} ||= '/var/run/mysqld/mysqld.sock';
++$mycnf{socket} ||= '/tmp/mysql.sock';
+ $mycnf{user}   ||= $ENV{USER};
+ $op{avg}       ||= 1;
+ $op{top}       ||= 10;
