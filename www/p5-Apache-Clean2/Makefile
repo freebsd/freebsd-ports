@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Apache/GEOFF
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION}_7
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A mod_perl interface into HTML::Clean
 
 BUILD_DEPENDS=	mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
