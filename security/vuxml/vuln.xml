@@ -200,7 +200,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>phpSysInfo</name>
-	<range><lt>2.5.3</lt></range>
+	<range><le>2.5.3</le></range>
       </package>
     </affects>
     <description>
@@ -220,6 +220,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-07-27</discovery>
       <entry>2007-07-28</entry>
+      <modified>2007-08-01</modified>
     </dates>
   </vuln>
 
