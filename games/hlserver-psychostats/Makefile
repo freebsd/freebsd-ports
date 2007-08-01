@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.thaiguy.net/ \
 		http://mirrors.voyager.net/games/halflife/stats/psychostats/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Popular player statistics generator for Half-Life (cs/dod)
 
 USE_PERL5_BUILD=yes
@@ -24,6 +24,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 # files which should be installed with executable perms
 EXECUTABLES=	stats.pl install.pl
+
+DEPRECATED=	outdated, unmaintained
+EXPIRATION_DATE=2007-04-10
 
 post-patch:
 .for files in ${EXECUTABLES}
