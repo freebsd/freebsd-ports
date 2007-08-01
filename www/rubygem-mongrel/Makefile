@@ -6,7 +6,7 @@
 
 PORTNAME=	mongrel
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE} \
     		http://files.rubyforge.mmmultiworks.com/fauna/:PATCH
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	gpgen:${PORTSDIR}/devel/rubygem-gem_plugin \
 		rubygem-fastthread>=0.6.2:${PORTSDIR}/devel/rubygem-fastthread
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PATCHNAME=	cgi_multipart_eof_fix-2.1
+PATCHNAME=	cgi_multipart_eof_fix-2.2
 
 post-install:
 	@${RM} -rf "${PREFIX}/${GEM_LIB_DIR}/ext"
