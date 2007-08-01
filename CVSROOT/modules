@@ -8256,6 +8256,7 @@ ntalk		ports/net/ntalk
 nte		ports/mbone/nte
 ntfsprogs	ports/sysutils/ntfsprogs
 ntl		ports/math/ntl
+ntlmaps		ports/net/ntlmaps
 ntop		ports/net/ntop
 ntraceroute	ports/net/ntraceroute
 nttcp		ports/benchmarks/nttcp
