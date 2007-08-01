@@ -35,6 +35,7 @@ MAKE_ENV+=	CC="${CC}"				\
 post-extract:
 	@${RM} -rf ${WRKSRC}/dssPackageMetaData ${WRKSRC}/pubPackageMetaData ${WRKSRC}/qtssPackageMetaData
 
+.if !defined(PACKAGE_BUILDING)
 pre-fetch:
 	@[ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ] || ( \
 	${ECHO} "********************************************************************";	\
@@ -45,6 +46,7 @@ pre-fetch:
 	${ECHO} "********************************************************************";	\
 	${FALSE}                                                                        \
 	)
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local/,${PREFIX}/,' \
