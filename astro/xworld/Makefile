@@ -7,7 +7,7 @@
 
 PORTNAME=	xworld
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro geography
 MASTER_SITES=	ftp://gutemine.geo.uni-koeln.de/pub/xworld/ \
 		ftp://ftp.Uni-Koeln.DE/misc/
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://gutemine.geo.uni-koeln.de/pub/xworld/ \
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Earth as seen from the direction of the sun
 
-USE_XLIB=	yes
+USE_XORG=	x11
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CAT=${CAT} \
