@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.5
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -191,7 +191,7 @@ _REQUIRE+=		ypserv
 
 .if defined(WITH_VDA)
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/
-PATCHFILES+=		postfix-2.4.3-vda-ng.patch.gz
+PATCHFILES+=		postfix-2.4.4-vda-ng.patch.gz
 PATCH_DIST_STRIP=	-p1
 .endif
 
