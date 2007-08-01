@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.3.17
+PORTVERSION=	3.4.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 .if defined(USE_THOL)
@@ -31,6 +31,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
 		DOCS		"Building docs (depends on TCL)"	on \
 		FTS1		"Enable FTS1 (Full Text Search) module"	off \
+		FTS2		"Enable FTS2 (Full Text Search) module"	off \
 		TCLWRAPPER	"TCL wrapper for SQLITE"		off
 
 # Defaults, for building the docs:
@@ -60,9 +61,15 @@ ALL_TARGET+=		all doc
 PORTDOCS=		*
 .endif
 
-.if defined(WITH_FTS1)
+.if defined(WITH_FTS1) && defined(WITH_FTS2)
+CFLAGS+=		-DSQLITE_ENABLE_FTS1 -DSQLITE_ENABLE_FTS2
+EXTRA_PATCHES+=		${FILESDIR}/fts12_patch-Makefile.in
+.elif defined(WITH_FTS1) && !defined(WITH_FTS2)
 CFLAGS+=		-DSQLITE_ENABLE_FTS1
-EXTRA_PATCHES=		${FILESDIR}/fts1_patch-Makefile.in
+EXTRA_PATCHES+=		${FILESDIR}/fts1_patch-Makefile.in
+.elif defined(WITH_FTS2) && !defined(WITH_FTS1)
+CFLAGS+=		-DSQLITE_ENABLE_FTS2
+EXTRA_PATCHES+=		${FILESDIR}/fts2_patch-Makefile.in
 .endif
 
 .if defined(WITH_TCLWRAPPER)
@@ -80,8 +87,11 @@ CONFIGURE_ARGS+=	--enable-threadsafe
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -E -e "s|^(TLIBS.*)|\1 -lm|g" \
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|tclsh \$$(TOP)|\$$(TCLSH) \$$(TOP)|g" \
 		-e "s|./libtool|${LIBTOOL}|g" \
+		-e "s|--mode=link|--mode=link --tag=CC|g" \
 		-e "s|\$${HAVE_TCL:1=tcl_install}||" \
 			${WRKSRC}/Makefile.in
 	@${ECHO} "config_TARGET_TCL_INC=\"-I${PREFIX}/include/tcl${TCL_V}\"" \
