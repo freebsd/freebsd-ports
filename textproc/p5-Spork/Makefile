@@ -7,6 +7,7 @@
 
 PORTNAME=	Spork
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/I/IN/INGY/
@@ -15,9 +16,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	include@npf.pt.freebsd.org
 COMMENT=	Creating standalone HTML slideshows from Kwiki markup
 
-BUILD_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki
-RUN_DEPENDS=	${BUILD_DEPENDS} \
-		${SITE_PERL}/Kwiki/Cache.pm:${PORTSDIR}/www/p5-Kwiki-Cache
+BUILD_DEPENDS=	${LOCALBASE}/kwiki/lib/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki
+RUN_DEPENDS=	${LOCALBASE}/kwiki/lib/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki
 
 PERL_CONFIGURE=	yes
 
