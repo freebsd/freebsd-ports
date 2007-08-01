@@ -1,16 +1,17 @@
 bin/llk_linux
 share/applications/lianliankan.desktop
-share/doc/llk_linux/AUTHORS
-share/doc/llk_linux/COPYING
-share/doc/llk_linux/ChangeLog
-share/doc/llk_linux/INSTALL
-share/doc/llk_linux/NEWS
-share/doc/llk_linux/README
-share/doc/llk_linux/TODO
+%%PORTDOCS%%share/doc/llk_linux/AUTHORS
+%%PORTDOCS%%share/doc/llk_linux/COPYING
+%%PORTDOCS%%share/doc/llk_linux/ChangeLog
+%%PORTDOCS%%share/doc/llk_linux/INSTALL
+%%PORTDOCS%%share/doc/llk_linux/NEWS
+%%PORTDOCS%%share/doc/llk_linux/README
+%%PORTDOCS%%share/doc/llk_linux/TODO
 share/llk_linux/Cancle.wav
 share/llk_linux/CanntLink.wav
 share/llk_linux/Classical.pak
 share/llk_linux/Click.wav
+share/llk_linux/Diamond.pak
 share/llk_linux/GameOver.wav
 share/llk_linux/Hint.wav
 share/llk_linux/Link.wav
@@ -20,5 +21,5 @@ share/llk_linux/Win.wav
 share/locale/zh_CN/LC_MESSAGES/llk_linux.mo
 share/pixmaps/llk_linux.png
 @dirrm share/llk_linux
-@dirrm share/doc/llk_linux
+%%PORTDOCS%%@dirrm share/doc/llk_linux
 @dirrmtry share/applications
