@@ -1,20 +1,23 @@
 bin/mongrel_rails
-%%GEMS_DIR%%/cgi_multipart_eof_fix-2.1/LICENSE.txt
-%%GEMS_DIR%%/cgi_multipart_eof_fix-2.1/README.txt
-%%GEMS_DIR%%/cgi_multipart_eof_fix-2.1/Rakefile
-%%GEMS_DIR%%/cgi_multipart_eof_fix-2.1/lib/cgi_multipart_eof_fix.rb
-%%GEMS_DIR%%/cgi_multipart_eof_fix-2.1/cgi_multipart_eof_fix_test.rb
+%%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/AFL3-LICENSE
+%%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/CHANGELOG
+%%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/Manifest
+%%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/README
+%%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/RUBY-LICENSE
+%%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/Rakefile
+%%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/lib/cgi_multipart_eof_fix.rb
+%%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/cgi_multipart_eof_fix_test.rb
 %%GEM_CACHE%%
-%%CACHE_DIR%%/cgi_multipart_eof_fix-2.1.gem
-%%DOC_DIR%%/cgi_multipart_eof_fix-2.1/rdoc/rdoc-style.css
-%%DOC_DIR%%/cgi_multipart_eof_fix-2.1/rdoc/files/lib/cgi_multipart_eof_fix_rb.html
-%%DOC_DIR%%/cgi_multipart_eof_fix-2.1/rdoc/classes/CGI.html
-%%DOC_DIR%%/cgi_multipart_eof_fix-2.1/rdoc/classes/CGI/QueryExtension.html
-%%DOC_DIR%%/cgi_multipart_eof_fix-2.1/rdoc/fr_file_index.html
-%%DOC_DIR%%/cgi_multipart_eof_fix-2.1/rdoc/fr_class_index.html
-%%DOC_DIR%%/cgi_multipart_eof_fix-2.1/rdoc/index.html
-%%DOC_DIR%%/cgi_multipart_eof_fix-2.1/rdoc/created.rid
-%%DOC_DIR%%/cgi_multipart_eof_fix-2.1/rdoc/fr_method_index.html
+%%CACHE_DIR%%/cgi_multipart_eof_fix-2.2.gem
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/rdoc-style.css
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/files/lib/cgi_multipart_eof_fix_rb.html
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes/CGI.html
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes/CGI/QueryExtension.html
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/fr_file_index.html
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/fr_class_index.html
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/index.html
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/created.rid
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/fr_method_index.html
 %%GEM_DOC_DIR%%/rdoc/classes/IO.html
 %%GEM_DOC_DIR%%/rdoc/classes/IO.src/M000003.html
 %%GEM_DOC_DIR%%/rdoc/classes/IO.src/M000004.html
@@ -473,7 +476,7 @@ bin/mongrel_rails
 %%GEM_LIB_DIR%%/tools/rakehelp.rb
 %%GEM_LIB_DIR%%/tools/trickletest.rb
 %%GEM_SPEC%%
-%%SPEC_DIR%%/cgi_multipart_eof_fix-2.1.gemspec
+%%SPEC_DIR%%/cgi_multipart_eof_fix-2.2.gemspec
 @dirrm %%GEM_LIB_DIR%%/tools
 @dirrm %%GEM_LIB_DIR%%/test
 @dirrm %%GEM_LIB_DIR%%/lib/mongrel
@@ -571,11 +574,11 @@ bin/mongrel_rails
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
 @dirrm %%GEM_DOC_DIR%%
-@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.1/rdoc/classes/CGI
-@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.1/rdoc/classes
-@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.1/rdoc/files/lib
-@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.1/rdoc/files
-@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.1/rdoc
-@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.1
-@dirrm %%GEMS_DIR%%/cgi_multipart_eof_fix-2.1/lib
-@dirrm %%GEMS_DIR%%/cgi_multipart_eof_fix-2.1
+@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes/CGI
+@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes
+@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/files/lib
+@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/files
+@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc
+@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2
+@dirrm %%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/lib
+@dirrm %%GEMS_DIR%%/cgi_multipart_eof_fix-2.2
