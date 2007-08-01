@@ -16,11 +16,11 @@ MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	GNU screen like utility on Emacsen
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
-.if (${EMACS_PORT_NAME} == "emacs21")
-DEPPORT_SUFFIX=	
-.else
+.include <bsd.port.pre.mk>
+.if (${EMACS_PORT_NAME} == "emacs20")
 DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
+.else
+DEPPORT_SUFFIX=	
 .endif
 
 RUN_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
@@ -36,4 +36,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
