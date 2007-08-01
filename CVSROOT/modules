@@ -9982,8 +9982,6 @@ p5-Jifty	ports/www/p5-Jifty
 p5-Jifty-DBI	ports/databases/p5-Jifty-DBI
 p5-KinoSearch	ports/textproc/p5-KinoSearch
 p5-Kwiki	ports/www/p5-Kwiki
-p5-Kwiki-Icons-Gnome	ports/www/p5-Kwiki-Icons-Gnome
-p5-Kwiki-plugins	ports/www/p5-Kwiki-plugins
 p5-LEGO-RCX	ports/misc/p5-LEGO-RCX
 p5-LJ-Cache	ports/sysutils/p5-LJ-Cache
 p5-LJ-SpellCheck	ports/textproc/p5-LJ-SpellCheck
