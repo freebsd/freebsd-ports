@@ -200,7 +200,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>phpSysInfo</name>
-	<range><le>2.5.3</le></range>
+	<range><lt>2.5.3_1</lt></range>
       </package>
     </affects>
     <description>
