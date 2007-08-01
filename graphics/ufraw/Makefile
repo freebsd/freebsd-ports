@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ufraw
-PORTVERSION=	0.11
-PORTREVISION=	5
+PORTVERSION=	0.12
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
@@ -17,6 +16,7 @@ COMMENT=	Read and manipulate raw images from digital cameras
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
+		gtkimageview.0:${PORTSDIR}/x11-toolkits/gtkimageview \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
 GCONF_SCHEMAS=	${PORTNAME}.schemas
@@ -25,26 +25,23 @@ USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 glib20 gnomehack intltool intlhack libartlgpl2 pkgconfig
-WANT_GNOME=	yes
 
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS=	--enable-mime
 
-.ifndef WITHOUT_EXIF
-LIB_DEPENDS+=	exif:${PORTSDIR}/graphics/libexif
-CONFIGURE_ARGS+=--with-libexif
+PC_FALSE+=	cinepaint
 .ifndef WITHOUT_EXIV2
 LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
-CONFIGURE_ARGS+=--with-exiv2
-.endif
+.else
+PC_FALSE+=	exiv2
 .endif
 .ifndef WITHOUT_GIMP
 LIB_DEPENDS+=	gimp-2.0.200:${PORTSDIR}/graphics/gimp-app
 PLIST_SUB+=	GIMP=""
 .else
-CONFIGURE_ARGS+=--disable-gimp
+PC_FALSE+=	gimp
 PLIST_SUB+=	GIMP="@comment "
 .endif
 
@@ -57,6 +54,10 @@ BROKEN=	Needs memmem(3)
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '18s|^$$|#include <sys/types.h>|' ${WRKSRC}/dcraw.h
 	@${REINPLACE_CMD} -e '/@schemasdir/s|datadir|sysconfdir|' ${WRKSRC}/Makefile.in
+.for i in ${PC_FALSE}
+	@${REINPLACE_CMD} -e '/PKG_CONFIG.*$i/s|$$PKG_CONFIG|${FALSE}|' ${WRKSRC}/configure
+.endfor
 
 .include <bsd.port.post.mk>
