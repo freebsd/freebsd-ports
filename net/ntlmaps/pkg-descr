@@ -1,0 +1,8 @@
+NTLM Authorization Proxy Server (APS) is a proxy software that allows you 
+to authenticate via an MS Proxy Server using the proprietary NTLM protocol. 
+Since version 0.9.5 APS has an ability to behave as a standalone proxy server 
+and authenticate http clients at web servers using NTLM method. It can change 
+arbitrary values in your client's request header so that those requests will 
+look like they were created by MS IE. 
+
+WWW: http://ntlmaps.sourceforge.net/
