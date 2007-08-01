@@ -46,7 +46,6 @@ INFO=		llvm-gcc/cpp \
 		llvm-gcc/gccinstall \
 		llvm-gcc/gccint
 MAN1=		llvm-cpp.1 llvm-g++.1 llvm-gcc.1 llvm-gcov.1
-MAN7=		fsf-funding.7 gpl.7 gfdl.7
 
 post-patch:
 	@${MKDIR} ${WRKSRC}
@@ -59,6 +58,8 @@ post-patch:
 	    	${WRKSRC}/../gcc/Makefile.in
 
 post-install:
+	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
+	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
 	${MV} -f ${PREFIX}/include/mf-runtime.h \
 	         ${TARGLIB}/gcc/${CONFIGURE_TARGET}/4.0.1/include
 	# Add target libraries and include files to packaging list.
