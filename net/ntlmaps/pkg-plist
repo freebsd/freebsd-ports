@@ -1,0 +1,31 @@
+bin/ntlmaps
+%%EXAMPLESDIR%%/server.cfg
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/Install.txt
+%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/research.txt
+%%PYTHON_SITELIBDIR%%/ntlmaps/U32.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/__init__.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/basic_auth.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/config.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/config_affairs.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/des.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/des_c.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/des_data.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/http_header.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/logger.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/main.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/md4.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/monitor_upstream.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/ntlm_auth.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/ntlm_messages.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/ntlm_procs.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/proxy_client.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/server.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/utils.py
+%%PYTHON_SITELIBDIR%%/ntlmaps/www_client.py
+@unexec rm %D/%%PYTHON_SITELIBDIR%%/ntlmaps/*.pyc 2>/dev/null || true
+@dirrm %%PYTHON_SITELIBDIR%%/ntlmaps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%

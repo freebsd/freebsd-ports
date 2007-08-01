@@ -369,6 +369,7 @@
     SUBDIR += nss_ldap
     SUBDIR += nstxd
     SUBDIR += ntalk
+    SUBDIR += ntlmaps
     SUBDIR += ntop
     SUBDIR += ntp
     SUBDIR += ntp-devel
