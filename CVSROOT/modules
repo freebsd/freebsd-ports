@@ -304,7 +304,6 @@ aiksaurus	ports/textproc/aiksaurus
 aiksaurus-gtk	ports/textproc/aiksaurus-gtk
 aim		ports/net-im/aim
 aimsniff	ports/security/aimsniff
-aircrack	ports/net-mgmt/aircrack
 aircrack-ng	ports/net-mgmt/aircrack-ng
 airoflash	ports/misc/airoflash
 airport		ports/net-mgmt/airport
@@ -2468,7 +2467,6 @@ enblend		ports/graphics/enblend
 enca		ports/converters/enca
 enchant		ports/textproc/enchant
 encodings	ports/x11-fonts/encodings
-endeavour	ports/x11-fm/endeavour
 endian		ports/sysutils/endian
 enet		ports/net/enet
 enfle		ports/graphics/enfle
@@ -11419,7 +11417,6 @@ p5-openxpki-client	ports/security/p5-openxpki-client
 p5-openxpki-client-cli	ports/security/p5-openxpki-client-cli
 p5-openxpki-client-html-mason	ports/security/p5-openxpki-client-html-mason
 p5-openxpki-client-scep	ports/security/p5-openxpki-client-scep
-p5-openxpki-client-soap-lite	ports/security/p5-openxpki-client-soap-lite
 p5-openxpki-deployment	ports/security/p5-openxpki-deployment
 p5-openxpki-i18n	ports/security/p5-openxpki-i18n
 p5-orz		ports/devel/p5-orz
