@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	exaile
-DISTVERSION=	0.2.9
-PORTREVISION=	1
+DISTVERSION=	0.2.10
 CATEGORIES=	audio
 MASTER_SITES=	http://www.exaile.org/files/ GENTOO/distfiles
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -15,20 +14,30 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	AmaroK replacement for GTK+
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
-		${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
-		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen \
-		${PYTHON_SITELIBDIR}/gtk-2.0/sexy.so:${PORTSDIR}/x11-toolkits/py-sexy \
-		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
+RUN_DEPENDS=	py*-dbus>=0.82.1:${PORTSDIR}/devel/py-dbus \
+		py*-notify>=0.1.1:${PORTSDIR}/devel/py-notify \
+		py*-elementtree>=1.2.6:${PORTSDIR}/devel/py-elementtree \
+		py*-mutagen>=1.11:${PORTSDIR}/audio/py-mutagen \
+		py*-sexy>=0.1.9:${PORTSDIR}/x11-toolkits/py-sexy \
+		py*-cddb>=1.4:${PORTSDIR}/audio/py-cddb \
+		py*-pysqlite>=2.3.3:${PORTSDIR}/databases/py-pysqlite23
 
 USE_GETTEXT=	yes
 USE_GNOME=	pygtk2 pygnomeextras
-USE_GSTREAMER=	python
+USE_GSTREAMER=	python gnomevfs
 USE_PYTHON=	yes
+MAN1=	${PORTNAME}.1
+MAKE_ENV+=	FIREFOX=${LOCALBASE}/lib/firefox
+ALL_TARGET=	compile
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^PREFIX/d' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e '/^PYTHON_DIR/s|=.*|=${PYTHON_INCLUDEDIR}|' ${WRKSRC}/mmkeys/Makefile
+	@${REINPLACE_CMD} -e '/^PREFIX/d;/LIBDIR/d;/^FIREFOX/d;/install/s|-D||;\
+		/createpot/d;s|/bin/echo|echo|;s|$$[(]PREFIX[)]/share/exaile|${DATADIR}|;\
+		/install.*mmkeys/d;s|$$[(]PREFIX[)]/share/man/man1|${MAN1PREFIX}/man/man1|'\
+			${WRKSRC}/Makefile
+
+#pre-install:
+#	@for i in ca cs es_AR he_IL it_IT nn pl ro tr_TR zh_CN zh_TW;do\
+#		${INSTALL} -d ${PREFIX}/share/locale/$$i/LC_MESSAGES/;done
 
 .include <bsd.port.mk>

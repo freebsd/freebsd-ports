@@ -1,14 +1,6 @@
-share/locale/ca/LC_MESSAGES/exaile.mo
-share/locale/de_DE/LC_MESSAGES/exaile.mo
-share/locale/en_GB/LC_MESSAGES/exaile.mo
-share/locale/es_ES/LC_MESSAGES/exaile.mo
-share/locale/pl/LC_MESSAGES/exaile.mo
-share/locale/pt_BR/LC_MESSAGES/exaile.mo
-share/locale/ru/LC_MESSAGES/exaile.mo
-share/locale/sv/LC_MESSAGES/exaile.mo
-share/locale/zh_CN/LC_MESSAGES/exaile.mo
 bin/exaile
 share/applications/exaile.desktop
+%%DATADIR%%/equalizer.ini
 %%DATADIR%%/exaile.glade
 %%DATADIR%%/exaile.py
 %%DATADIR%%/images/artist.png
@@ -40,79 +32,79 @@ share/applications/exaile.desktop
 %%DATADIR%%/images/nocover.png
 %%DATADIR%%/images/playlist.png
 %%DATADIR%%/images/splash.png
-%%DATADIR%%/images/star.svg
+%%DATADIR%%/images/star.png
 %%DATADIR%%/images/track.png
 %%DATADIR%%/images/trayicon.png
-%%DATADIR%%/mmkeys.so
+%%DATADIR%%/lib/__init__.py
+%%DATADIR%%/lib/__init__.pyc
+%%DATADIR%%/lib/wmainfo.py
+%%DATADIR%%/lib/wmainfo.pyc
 %%DATADIR%%/plugins/__init__.py
-%%DATADIR%%/plugins/alarmclock.py
-%%DATADIR%%/plugins/console.py
-%%DATADIR%%/plugins/desktopcover.py
-%%DATADIR%%/plugins/exailenotify.py
-%%DATADIR%%/plugins/gossip_status.py
 %%DATADIR%%/plugins/gui.py
-%%DATADIR%%/plugins/imstatus.py
-%%DATADIR%%/plugins/ipoddriver.py
 %%DATADIR%%/plugins/manager.py
-%%DATADIR%%/plugins/massstoragedriver.py
-%%DATADIR%%/plugins/minimode.py
-%%DATADIR%%/plugins/notaskbarentry.py
 %%DATADIR%%/plugins/plugins.glade
-%%DATADIR%%/plugins/resume.py
-%%DATADIR%%/plugins/serp.py
-%%DATADIR%%/plugins/sound-juicer.py
-%%DATADIR%%/plugins/streamripper.py
-%%DATADIR%%/po/ca.po
-%%DATADIR%%/po/de_DE.po
-%%DATADIR%%/po/en_GB.po
-%%DATADIR%%/po/es_ES.po
-%%DATADIR%%/po/pl.po
-%%DATADIR%%/po/pt_BR.po
-%%DATADIR%%/po/ru.po
-%%DATADIR%%/po/sv.po
-%%DATADIR%%/po/zh_CN.po
 %%DATADIR%%/sql/changes0001.sql
+%%DATADIR%%/sql/changes0002.sql
 %%DATADIR%%/sql/db.sql
 %%DATADIR%%/xl/__init__.py
+%%DATADIR%%/xl/__init__.pyc
 %%DATADIR%%/xl/audioscrobbler.py
+%%DATADIR%%/xl/audioscrobbler.pyc
 %%DATADIR%%/xl/common.py
+%%DATADIR%%/xl/common.pyc
 %%DATADIR%%/xl/config.py
+%%DATADIR%%/xl/config.pyc
 %%DATADIR%%/xl/config_convert.py
+%%DATADIR%%/xl/config_convert.pyc
 %%DATADIR%%/xl/covers.py
+%%DATADIR%%/xl/covers.pyc
 %%DATADIR%%/xl/db.py
+%%DATADIR%%/xl/db.pyc
 %%DATADIR%%/xl/dbusinterface.py
+%%DATADIR%%/xl/dbusinterface.pyc
+%%DATADIR%%/xl/equalizer.py
+%%DATADIR%%/xl/equalizer.pyc
 %%DATADIR%%/xl/filtergui.py
+%%DATADIR%%/xl/filtergui.pyc
 %%DATADIR%%/xl/media/__init__.py
+%%DATADIR%%/xl/media/__init__.pyc
 %%DATADIR%%/xl/media/flac.py
-%%DATADIR%%/xl/media/m4a.py
+%%DATADIR%%/xl/media/flac.pyc
 %%DATADIR%%/xl/media/mp3.py
+%%DATADIR%%/xl/media/mp3.pyc
+%%DATADIR%%/xl/media/mp4.py
+%%DATADIR%%/xl/media/mp4.pyc
 %%DATADIR%%/xl/media/mpc.py
+%%DATADIR%%/xl/media/mpc.pyc
 %%DATADIR%%/xl/media/ogg.py
+%%DATADIR%%/xl/media/ogg.pyc
 %%DATADIR%%/xl/media/wav.py
+%%DATADIR%%/xl/media/wav.pyc
 %%DATADIR%%/xl/media/wma.py
+%%DATADIR%%/xl/media/wma.pyc
+%%DATADIR%%/xl/mozembed.py
+%%DATADIR%%/xl/mozembed.pyc
 %%DATADIR%%/xl/panels.py
+%%DATADIR%%/xl/panels.pyc
 %%DATADIR%%/xl/player.py
+%%DATADIR%%/xl/player.pyc
 %%DATADIR%%/xl/prefs.py
-%%DATADIR%%/xl/shoutcast.py
+%%DATADIR%%/xl/prefs.pyc
 %%DATADIR%%/xl/track.py
+%%DATADIR%%/xl/track.pyc
 %%DATADIR%%/xl/tracks.py
+%%DATADIR%%/xl/tracks.pyc
 %%DATADIR%%/xl/trackslist.py
+%%DATADIR%%/xl/trackslist.pyc
 %%DATADIR%%/xl/xlmisc.py
+%%DATADIR%%/xl/xlmisc.pyc
 share/pixmaps/exaile.png
 @dirrm %%DATADIR%%/images/default_theme
 @dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%/sql
 @dirrm %%DATADIR%%/xl/media
 @dirrm %%DATADIR%%/xl
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
 @dirrmtry share/applications
