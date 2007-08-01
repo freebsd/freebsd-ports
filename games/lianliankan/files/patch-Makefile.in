@@ -1,11 +1,22 @@
---- Makefile.in.orig	Mon Apr  3 22:53:12 2006
-+++ Makefile.in	Mon Apr  3 22:54:11 2006
-@@ -213,7 +213,7 @@
+--- Makefile.in.orig	2006-01-10 21:33:53.000000000 +0800
++++ Makefile.in	2007-07-30 17:56:35.000000000 +0800
+@@ -212,8 +212,8 @@
+ sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
- SUBDIRS = po src pixmaps data
+-SUBDIRS = po include src pixmaps data
 -llk_linuxdocdir = ${prefix}/doc/llk_linux
-+llk_linuxdocdir = $(PACKAGE_DATA_DIR)/doc/llk_linux
++SUBDIRS = po src pixmaps data
++llk_linuxdocdir = ${PACKAGE_DATA_DIR}/doc/llk_linux
  llk_linuxdoc_DATA = \
  	README\
  	COPYING\
+@@ -635,7 +635,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-llk_linuxdocDATA
++install-data-am:
+ 
+ install-exec-am:
+ 
