@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-zope
 COMMENT=	Python JapaneseCodecs works fine with Zope
 MASTERDIR=	${.CURDIR}/../../japanese/pycodec
@@ -12,6 +13,6 @@ PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist
 PKGMESSAGE=	${MASTERDIR}/pkg-message
 
-PYTHON_VERSION=	python2.3
+USE_ZOPE=	yes
 
 .include "${MASTERDIR}/Makefile"
