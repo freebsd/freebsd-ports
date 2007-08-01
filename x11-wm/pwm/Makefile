@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	pwm
-PORTVERSION=	2006.05.17
-PORTREVISION=	1
+PORTVERSION=	2007.07.20
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://modeemi.fi/~tuomov/dl/
+MASTER_SITES=	http://modeemi.fi/~tuomov/dl/ \
+		http://schot.a-eskwadraat.nl/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	schot@a-eskwadraat.nl
 COMMENT=	A lightweight window manager with emphasis on usability
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	X11_PREFIX="${X11BASE}" HAS_SYSTEM_ASPRINTF=1
 
