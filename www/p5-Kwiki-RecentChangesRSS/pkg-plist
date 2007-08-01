@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Kwiki/RecentChangesRSS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/RecentChangesRSS/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/RecentChangesRSS
-@dirrmtry %%SITE_PERL%%/Kwiki
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki

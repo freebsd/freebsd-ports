@@ -1,4 +1,0 @@
-%%SITE_PERL%%/Kwiki/Cache.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Cache/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Cache
-@dirrmtry %%SITE_PERL%%/Kwiki

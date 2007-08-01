@@ -1,4 +1,0 @@
-%%SITE_PERL%%/Kwiki/UserPreferences.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/UserPreferences/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/UserPreferences
-@dirrmtry %%SITE_PERL%%/Kwiki

@@ -1,6 +1,0 @@
-%%SITE_PERL%%/Kwiki/Notify/Mail.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Notify/Mail/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Notify/Mail
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Notify
-@dirrmtry %%SITE_PERL%%/Kwiki/Notify
-@dirrmtry %%SITE_PERL%%/Kwiki

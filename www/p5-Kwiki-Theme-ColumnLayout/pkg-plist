@@ -1,6 +1,0 @@
-%%SITE_PERL%%/Kwiki/Theme/ColumnLayout.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Theme/ColumnLayout/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Theme/ColumnLayout
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Theme
-@dirrmtry %%SITE_PERL%%/Kwiki/Theme
-@dirrmtry %%SITE_PERL%%/Kwiki

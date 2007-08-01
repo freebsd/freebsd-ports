@@ -1,6 +1,0 @@
-%%SITE_PERL%%/Kwiki/Edit/RequireUserName.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Edit/RequireUserName/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Edit/RequireUserName
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Edit
-@dirrmtry %%SITE_PERL%%/Kwiki/Edit
-@dirrmtry %%SITE_PERL%%/Kwiki

@@ -1,6 +1,0 @@
-%%SITE_PERL%%/Kwiki/Archive/Rcs.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Archive/Rcs/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Archive/Rcs
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Archive
-@dirrmtry %%SITE_PERL%%/Kwiki/Archive
-@dirrmtry %%SITE_PERL%%/Kwiki

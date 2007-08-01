@@ -1,4 +1,0 @@
-%%SITE_PERL%%/Kwiki/UserName.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/UserName/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/UserName
-@dirrmtry %%SITE_PERL%%/Kwiki
