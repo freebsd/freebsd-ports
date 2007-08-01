@@ -1,6 +1,6 @@
---- Makefile.orig	Tue Jan  9 23:10:01 2007
-+++ Makefile	Thu Jan 25 19:09:06 2007
-@@ -6,11 +6,6 @@
+--- Makefile.orig	Mon Jun 11 09:22:47 2007
++++ Makefile	Tue Jul 31 21:41:14 2007
+@@ -6,14 +6,9 @@
  # warranties, including, without limitation, the implied warranties
  # of merchant-ability and fitness for a particular purpose.
  
@@ -11,7 +11,11 @@
 -
  # Uncomment for FreeBSD:
  #CC=gcc
- #CFLAGS=-O2 -Wall -fomit-frame-pointer
+-#CFLAGS=-O2 -Wall -fomit-frame-pointer
++CFLAGS=-O2 -Wall -fomit-frame-pointer
+ #LDFLAGS=-s
+ 
+ # Uncomment for Cygwin:
 @@ -38,12 +33,12 @@
  #CFLAGS=-02 -Wall -fomit-frame-pointer -Zomf -Zsmall-conv
  #LDFLAGS=-s -Zomf -Zsmall-conv
@@ -19,7 +23,7 @@
 -prefix = /usr
 +prefix = ${PREFIX}
  
- VERSION=1.5.1
+ VERSION=1.5.1.1
  TREE_DEST=tree
  BINDIR=${prefix}/bin
 -MAN=tree.1

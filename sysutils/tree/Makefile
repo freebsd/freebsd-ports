@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tree
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/ CENKES
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	Display a tree-view of directories with optional color or HTML output
 
 MAKE_ENV+=	MKDIR="${MKDIR}"
