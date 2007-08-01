@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Photo/Image Mosaic plugin for gimp
 
+DEPRECATED=	Unfetchable; withdrawn by author for legal reasons; for obsolete version of GIMP
+EXPIRATION_DATE=2007-09-01
+
 BUILD_DEPENDS=	gimp-config:${PORTSDIR}/graphics/gimp1
 RUN_DEPENDS=	gimp:${PORTSDIR}/graphics/gimp1
 
