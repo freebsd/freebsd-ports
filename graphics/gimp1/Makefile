@@ -27,6 +27,7 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 DEPRECATED=	New stable release 2.0 can be installed via graphics/gimp port
+EXPIRATION_DATE=2007-09-01
 
 NO_LATEST_LINK=	yes
 
