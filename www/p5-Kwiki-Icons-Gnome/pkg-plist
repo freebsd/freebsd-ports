@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Kwiki/Icons/Gnome.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Icons/Gnome/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Icons/Gnome
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Icons
-@dirrmtry %%SITE_PERL%%/Kwiki/Icons/
