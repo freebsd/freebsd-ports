@@ -12,6 +12,3 @@ share/myspell/magyar.dic
 share/myspell/default.aff
 share/myspell/default.dic
 @dirrm share/myspell
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.myspell
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
