@@ -15,6 +15,9 @@ SNAPSHOT=	20060516
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Free implementation of the Border Gateway Protocol, Version 4
 
+DEPRECATED=	Older version than in openbgpd port, will be removed unless updated
+EXPIRATION_DATE=2007-09-01
+
 CONFLICTS=	zebra-0* quagga-0* openbgpd-devel-*
 
 MASTERDIR=	${.CURDIR}/../openbgpd
