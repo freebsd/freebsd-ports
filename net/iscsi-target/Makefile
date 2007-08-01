@@ -8,7 +8,8 @@
 PORTNAME=	iscsi-target
 PORTVERSION=	20070615
 CATEGORIES=	net
-MASTER_SITES=	http://www.alistaircrooks.co.uk/src/
+MASTER_SITES=	http://www.alistaircrooks.co.uk/src/ \
+                http://www.magnesium.net/~mdf/distfiles/
 DISTNAME=	netbsd-iscsi-${PORTVERSION}
 
 MAINTAINER=	mark@foster.cc
