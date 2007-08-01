@@ -1,0 +1,49 @@
+include/gtkimageview/cursors.h
+include/gtkimageview/gtkanimview.h
+include/gtkimageview/gtkiimagetool.h
+include/gtkimageview/gtkimagenav.h
+include/gtkimageview/gtkimagescrollwin.h
+include/gtkimageview/gtkimagetooldragger.h
+include/gtkimageview/gtkimagetoolselector.h
+include/gtkimageview/gtkimageview.h
+include/gtkimageview/gtkzooms.h
+include/gtkimageview/image_view_drawer.h
+include/gtkimageview/mouse_handler.h
+include/gtkimageview/utils.h
+lib/libgtkimageview.la
+lib/libgtkimageview.so
+lib/libgtkimageview.so.0
+libdata/pkgconfig/gtkimageview.pc
+share/gtk-doc/html/gtkimageview/GtkAnimView.html
+share/gtk-doc/html/gtkimageview/GtkIImageTool.html
+share/gtk-doc/html/gtkimageview/GtkImageNav.html
+share/gtk-doc/html/gtkimageview/GtkImageScrollWin.html
+share/gtk-doc/html/gtkimageview/GtkImageToolDragger.html
+share/gtk-doc/html/gtkimageview/GtkImageToolSelector.html
+share/gtk-doc/html/gtkimageview/GtkImageView.html
+share/gtk-doc/html/gtkimageview/acknowledgements.html
+share/gtk-doc/html/gtkimageview/big-zoom-sel-bug.png
+share/gtk-doc/html/gtkimageview/compiling.html
+share/gtk-doc/html/gtkimageview/dirstructure.html
+share/gtk-doc/html/gtkimageview/ex-mini.png
+share/gtk-doc/html/gtkimageview/ex-monitor-selection.png
+share/gtk-doc/html/gtkimageview/gtkimageview-gtkzooms.html
+share/gtk-doc/html/gtkimageview/gtkimageview-in-window.png
+share/gtk-doc/html/gtkimageview/gtkimageview.devhelp
+share/gtk-doc/html/gtkimageview/gtkimageview.devhelp2
+share/gtk-doc/html/gtkimageview/home.png
+share/gtk-doc/html/gtkimageview/index.html
+share/gtk-doc/html/gtkimageview/index.sgml
+share/gtk-doc/html/gtkimageview/left.png
+share/gtk-doc/html/gtkimageview/navwin-open.png
+share/gtk-doc/html/gtkimageview/overview.html
+share/gtk-doc/html/gtkimageview/releasehistory.html
+share/gtk-doc/html/gtkimageview/right.png
+share/gtk-doc/html/gtkimageview/rn01.html
+share/gtk-doc/html/gtkimageview/sourcecode.html
+share/gtk-doc/html/gtkimageview/style.css
+share/gtk-doc/html/gtkimageview/up.png
+@dirrm include/gtkimageview
+@dirrm share/gtk-doc/html/gtkimageview
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
