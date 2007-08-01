@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.9
 CATEGORIES=	hungarian textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S@$@:code@:S@%SUBDIR%@${PORTNAME}@} \
 		http://magyarispell.sourceforge.net/:data
@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:code hu_HU.zip:data
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Improved Hungarian spelling checker
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -28,6 +28,14 @@ MAN4=		hunspell.4
 PORTDOCS=	README README.myspell
 
 .include <bsd.port.pre.mk>
+
+# Ugly workaround for FreeBSD versions before the import of NetBSD gzip.
+do-extract:
+	@${RM} -rf ${WRKDIR}; \
+	${MKDIR} ${WRKDIR}; \
+ 	cd ${WRKDIR} && ${TAR} -xzf  ${_DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX};\
+		${UNZIP_CMD} -qo ${_DISTDIR}/hu_HU.zip -d ${WRKDIR}
+
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
