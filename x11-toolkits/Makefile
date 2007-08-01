@@ -70,6 +70,7 @@
     SUBDIR += gtkglarea2
     SUBDIR += gtkglext
     SUBDIR += gtkglextmm
+    SUBDIR += gtkimageview
     SUBDIR += gtkmathview
     SUBDIR += gtkmm12
     SUBDIR += gtkmm20

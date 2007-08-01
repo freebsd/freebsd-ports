@@ -1,0 +1,11 @@
+GtkImageView is a simple image viewer widget for GTK. Similar to the
+image viewer panes in gThumb or Eye of Gnome. It makes writing image
+viewing and editing applications easy. Among its features are:
+* Mouse and keyboard zooming
+* Scrolling and dragging
+* Adjustable interpolation
+* Fullscreen mode
+* GIF animation support
+
+WWW: http://trac.bjourne.webfactional.com/
+Author: Bjorn Lindqvist <bjourne@gmail.com>
