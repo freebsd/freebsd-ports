@@ -1,4 +1,0 @@
-%%SITE_PERL%%/Kwiki/Diff.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Diff/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Diff
-@dirrmtry %%SITE_PERL%%/Kwiki

@@ -1,4 +1,0 @@
-%%SITE_PERL%%/Kwiki/Search.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Search/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Search
-@dirrmtry %%SITE_PERL%%/Kwiki

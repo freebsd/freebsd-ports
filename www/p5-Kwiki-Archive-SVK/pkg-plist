@@ -1,6 +1,0 @@
-%%SITE_PERL%%/Kwiki/Archive/SVK.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Archive/SVK/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Archive/SVK
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Archive
-@dirrmtry %%SITE_PERL%%/Kwiki/Archive
-@dirrmtry %%SITE_PERL%%/Kwiki

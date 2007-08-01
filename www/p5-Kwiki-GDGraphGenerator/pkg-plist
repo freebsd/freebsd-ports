@@ -1,5 +1,0 @@
-@comment $FreeBSD$
-%%SITE_PERL%%/Kwiki/GDGraphGenerator.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/GDGraphGenerator/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/GDGraphGenerator
-@dirrmtry %%SITE_PERL%%/Kwiki

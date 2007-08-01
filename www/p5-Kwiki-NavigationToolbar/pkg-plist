@@ -1,4 +1,0 @@
-%%SITE_PERL%%/Kwiki/NavigationToolbar.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/NavigationToolbar/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/NavigationToolbar
-@dirrmtry %%SITE_PERL%%/Kwiki

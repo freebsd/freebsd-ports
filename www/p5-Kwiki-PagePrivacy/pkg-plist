@@ -1,4 +1,0 @@
-%%SITE_PERL%%/Kwiki/PagePrivacy.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/PagePrivacy/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/PagePrivacy
-@dirrmtry %%SITE_PERL%%/Kwiki

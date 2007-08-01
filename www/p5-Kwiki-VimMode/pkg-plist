@@ -1,4 +1,0 @@
-%%SITE_PERL%%/Kwiki/VimMode.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/VimMode/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/VimMode
-@dirrmtry %%SITE_PERL%%/Kwiki

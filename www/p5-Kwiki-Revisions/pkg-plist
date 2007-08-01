@@ -1,4 +1,0 @@
-%%SITE_PERL%%/Kwiki/Revisions.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Revisions/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Revisions
-@dirrmtry %%SITE_PERL%%/Kwiki

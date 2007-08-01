@@ -1,4 +1,0 @@
-%%SITE_PERL%%/Kwiki/Infobox.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Infobox/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Infobox
-@dirrmtry %%SITE_PERL%%/Kwiki
