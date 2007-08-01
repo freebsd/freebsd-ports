@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.dindin.ru/download/
 MAINTAINER=	dindin@dindin.ru
 COMMENT=	Fortunes from bash.org.ru
 
-BROKEN=		Size mismatch
-
 NO_BUILD=	yes
 
 do-install:
