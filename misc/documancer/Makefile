@@ -19,7 +19,7 @@ BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
 		swish-e:${PORTSDIR}/www/swish-e
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PYTHON=	2.4
+USE_PYTHON=	2.4+
 USE_PERL5=	yes
 USE_WX=		2.4
 WX_COMPS=	mozilla python
