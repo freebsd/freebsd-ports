@@ -8,13 +8,13 @@
 PORTNAME=	horde
 DISTVERSIONPREFIX=
 DISTVERSION=	3.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 PKGNAMEPREFIX=
 PKGNAMESUFFIX=	-base
 
 MAINTAINER=	beech@FreeBSD.org
-COMMENT=	Common code-base used by Horde applications, written in PHP
+COMMENT=	Common code-base used by Horde applications
 
 #----------------------------------------------------------------------------
 # You may define these options:
@@ -75,13 +75,14 @@ RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log		\
 		${PEARDIR}/Mail/RFC822.php:${PORTSDIR}/mail/pear-Mail		\
 		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime	\
+		${PEARDIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode	\
 		${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB			\
 		${PEARDIR}/File.php:${PORTSDIR}/sysutils/pear-File		\
 		${PEARDIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP
 
 CONFLICTS=	horde-2.*
 
-USE_GETTEXT=	yes	# Already implied by USE_PHP =gettext, to pet portlint
+USE_GETTEXT=	yes
 USE_PHP=	ctype gettext session
 
 .if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
