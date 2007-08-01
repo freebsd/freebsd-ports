@@ -21,12 +21,12 @@ BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
-.if (${EMACS_PORT_NAME} == emacs21)
-DEPPORT_SUFFIX=
-.else
+.include <bsd.port.pre.mk>
+.if (${EMACS_PORT_NAME} == emacs20)
 DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
 PLIST=	${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
+.else
+DEPPORT_SUFFIX=
 .endif
 
 INFO=		skk
@@ -53,4 +53,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
