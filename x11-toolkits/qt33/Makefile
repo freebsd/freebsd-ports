@@ -75,6 +75,8 @@ PACKAGE_COOKIE=	${WRKDIR}/.package_done.${PORTNAME}.${PREFIX:S/\//_/g}
 
 .include <bsd.port.pre.mk>
 
+PREFIX_REAL!=	/bin/realpath ${PREFIX}
+
 # The previous Qt port versions installed qmake and qmake's specs under X11BASE
 # The new devel/qmake port installs them under LOCALBASE. We can use
 # either one here, but we prefer the newer:
@@ -193,8 +195,8 @@ post-build:
 	@cd ${WRKSRC}/tools/${tool}; ${SETENV} ${MAKE_ENV} ${MAKE}
 .endfor
 	@${RM} -f ${WRKSRC}/doc/html/qmake*
-	${REINPLACE_CMD} -e 's|${PREFIX}/include/q.*h||g' \
-			-e 's|${PREFIX}/include/private/q.*h||g' \
+	${REINPLACE_CMD} -e 's|${PREFIX_REAL}/include/q.*h||g' \
+			-e 's|${PREFIX_REAL}/include/private/q.*h||g' \
 		${WRKSRC}/src/Makefile
 
 # Work around qmake generated dependencies
