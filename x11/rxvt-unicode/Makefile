@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	8.2
-PORTREVISION=	1
+PORTVERSION=	8.3
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -25,7 +24,8 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 USE_X_PREFIX=		yes
 USE_XPM=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--enable-shared --enable-everything --with-term=rxvt
+CONFIGURE_ARGS=		--enable-shared --enable-everything --with-term=rxvt		\
+			--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_BZIP2=		yes
 
@@ -130,13 +130,17 @@ RUN_DEPENDS+=	${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
 PLIST_SUB+=		TERMINFO=""
 .endif
 
+# enable integration with libAfterImage for background images
+#.if defined(WITHOUT_AFTERIMAGE)
+CONFIGURE_ARGS+=	--disable-afterimage	# To be upgraded
+#.else
+#LIB_DEPENDS+=		AfterImage.0:${PORTSDIR}/graphics/libafterimage
+#CONFIGURE_ARGS+=	--enable-afterimage
+#.endif
+
 CONFIGURE_ENV+=		LIBS="-lutil"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		missing wide-character functions in FreeBSD-4.x libc
-.endif
 
 .if ${OSVERSION} < 502110
 RUN_DEPENDS+=	${LOCALBASE}/share/locale/fr_FR.UTF-8/LC_TIME:${PORTSDIR}/misc/utf8locale
@@ -180,7 +184,8 @@ pre-everything::
 	@${ECHO_MSG} "WITHOUT_MOUSEWHEEL	disable support for scrolling via mouse wheel"
 	@${ECHO_MSG} "WITHOUT_SMART_RESIZE	disable smart growth/shrink behaviour"
 	@${ECHO_MSG} "WITHOUT_IMLOCALE_FIX	disable imlocale encoding conversion fix"
-	@${ECHO_MSG} "WITHOUT_TERMINFO		don't register urxvt in the terminfo database"
+	@${ECHO_MSG} "WITHOUT_TERMINFO	don't register urxvt in the terminfo database"
+	#@${ECHO_MSG} "WITHOUT_AFTERIMAGE	disable integration with libAfterImage for background images"
 	@${ECHO_MSG}
 .ifndef(WITH_ENCODING)
 	@${ECHO_MSG} "==> You can compile in support for additional codeset groups by setting the WITH_ENCODING variable"
