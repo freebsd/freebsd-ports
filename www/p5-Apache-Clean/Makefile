@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache/GEOFF
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A mod_perl interface into HTML::Clean
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache.pm:${PORTSDIR}/www/mod_perl \
