@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	API to the C++ port of the Lucene search engine
 
+BROKEN=		Does not compile with clucene-0.9.19
 LIB_DEPENDS=	clucene:${PORTSDIR}/textproc/clucene
 
 PERL_CONFIGURE=	yes
