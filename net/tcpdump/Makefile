@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcpdump
-PORTVERSION=	3.9.6
+PORTVERSION=	3.9.7
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/ \
 		http://www.icrew.org/mirror/tcp_dump/tcpdump_3_9/
@@ -80,7 +80,7 @@ LOCALPCAPBASE=	/usr
 
 LOCALPCAPFILES=	include/pcap.h include/pcap-namedb.h include/pcap-bpf.h \
 		lib/libpcap.a
-WRKPCAPDIR=	${WRKDIR}/libpcap-0.9.4
+WRKPCAPDIR=	${WRKDIR}/libpcap-0.9.7
 
 .include <bsd.port.pre.mk>
 
