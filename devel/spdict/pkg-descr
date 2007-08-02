@@ -1,0 +1,6 @@
+spdict is a library of dictionary algorithms written in C++.
+
+Initial release with support for sorted array, binary search tree,
+red-black tree, skip list and balanced tree algorithms.
+
+WWW: http://code.google.com/p/spdict/
