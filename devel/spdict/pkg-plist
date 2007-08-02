@@ -1,0 +1,10 @@
+include/spdict/sparrayimpl.hpp
+include/spdict/spbstreeimpl.hpp
+include/spdict/spbtreeimpl.hpp
+include/spdict/spcache.hpp
+include/spdict/spdictionary.hpp
+include/spdict/sprbtreeimpl.hpp
+include/spdict/spslistimpl.hpp
+lib/libspdict.so
+lib/libspdict.so.1
+@dirrm include/spdict
