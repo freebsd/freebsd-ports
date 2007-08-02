@@ -34,6 +34,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2dc764fa-40c0-11dc-aeac-02e0185f8d72">
+    <topic>FreeBSD -- Buffer overflow in tcpdump(1)</topic>
+    <affects>
+      <package>
+	<name>tcpdump</name>
+	<range><lt>3.9.6</lt></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.2</gt><lt>6.2_7</lt></range>
+	<range><gt>6.1</gt><lt>6.1_19</lt></range>
+	<range><gt>5.5</gt><lt>5.5_15</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>An un-checked return value in the BGP dissector code can
+	  result in an integer overflow.  This value is used in
+	  subsequent buffer management operations, resulting in a stack
+	  based buffer overflow under certain circumstances.</p>
+	<h1>Impact:</h1>
+	<p>By crafting malicious BGP packets, an attacker could exploit
+	  this vulnerability to execute code or crash the tcpdump
+	  process on the target system.  This code would be executed in
+	  the context of the user running tcpdump(1).  It should be
+	  noted that tcpdump(1) requires privileges in order to open live
+	  network interfaces.</p>
+	<h1>Workaround:</h1>
+	<p>No workaround is available.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-3798</cvename>
+      <freebsdsa>SA-07:06.tcpdump</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2007-08-01</discovery>
+      <entry>2007-08-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3de342fb-40be-11dc-aeac-02e0185f8d72">
     <topic>FreeBSD -- Predictable query ids in named(8)</topic>
     <affects>
@@ -133,36 +175,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="ff284bf0-3f32-11dc-a79a-0016179b2dd5">
-    <topic>tcpdump -- remote integer underflow vulnerability</topic>
-    <affects>
-      <package>
-	<name>tcpdump</name>
-	<range><lt>3.9.6</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SecurityFocus reports:</p>
-	<blockquote cite="http://www.securityfocus.com/bid/24965">
-	  <p>Tcpdump utility is prone to an integer-underflow vulnerability
-	    because it fails to bounds-check user-supplied input before
-	    copying it into an insufficiently sized memory buffer.</p>
-	  <p>An attacker can exploit this issue to execute arbitrary
-	    malicious code in the context of the user running the affected
-	    application. Failed exploit attempts will likely crash the
-	    affected application.</p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <bid>24965</bid>
-      <cvename>CVE-2007-3798</cvename>
-      <url>http://www.gentoo.org/security/en/glsa/glsa-200707-14.xml</url>
-    </references>
-    <dates>
-      <discovery>2007-03-01</discovery>
-      <entry>2007-07-31</entry>
-    </dates>
+    <cancelled/>
   </vuln>
 
   <vuln vid="863f95d3-3df1-11dc-b3d3-0016179b2dd5">
