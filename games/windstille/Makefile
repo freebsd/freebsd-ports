@@ -1,0 +1,47 @@
+# New ports collection makefile for:	windstille
+# Date created:		14 Jun 2007
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	windstille
+PORTVERSION=	0.3.0
+CATEGORIES=	games
+MASTER_SITES=	BERLIOS CENKES
+
+MAINTAINER=	amdmi3@amdmi3.ru
+COMMENT=	Classic 2D jump-n-shoot game
+
+LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
+		physfs-1.0.1:${PORTSDIR}/devel/physfs \
+		ogg.5:${PORTSDIR}/audio/libogg \
+		vorbis.4:${PORTSDIR}/audio/libvorbis \
+		png.5:${PORTSDIR}/graphics/png \
+		GLEW.1:${PORTSDIR}/graphics/glew \
+		squirrel.0:${PORTSDIR}/lang/squirrel
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
+
+USE_BZIP2=	yes
+USE_SCONS=	yes
+USE_GL=		yes
+USE_SDL=	sdl image
+USE_BISON=	yes
+
+post-extract:
+	@${RM} -rf ${WRKSRC}/lib
+
+post-patch:
+	@cd ${WRKSRC}/src/ && ${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' \
+		particles/deform_drawer.cpp windstille_main.cpp objects/shockwave.cpp
+	@${REINPLACE_CMD} -e "s|glew|GLEW|;/LIBS/s|'squirrel'|'squirrel', 'sqstdlib'|"\
+		${WRKSRC}/src/SConscript
+	@${REINPLACE_CMD} -e 's|PHYSFS_getBaseDir()|""|' ${WRKSRC}/src/windstille_main.cpp
+	@${REINPLACE_CMD} -e 's|bison|${LOCALBASE}/bin/&|' ${WRKSRC}/tools/SConscript
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/windstille ${PREFIX}/bin/
+	${INSTALL} -d ${DATADIR}/
+	@cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${DATADIR}/
+
+.include <bsd.port.mk>

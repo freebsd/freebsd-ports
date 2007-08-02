@@ -801,6 +801,7 @@
     SUBDIR += warzone2100
     SUBDIR += wesnoth
     SUBDIR += widelands
+    SUBDIR += windstille
     SUBDIR += wmeyes
     SUBDIR += wmfortune
     SUBDIR += wmminichess
