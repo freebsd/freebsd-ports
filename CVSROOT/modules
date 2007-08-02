@@ -14147,6 +14147,7 @@ rubygem-actionpack	ports/www/rubygem-actionpack
 rubygem-actionwebservice	ports/www/rubygem-actionwebservice
 rubygem-activerecord	ports/databases/rubygem-activerecord
 rubygem-activesupport	ports/devel/rubygem-activesupport
+rubygem-amazon-ecs	ports/www/rubygem-amazon-ecs
 rubygem-analogger	ports/devel/rubygem-analogger
 rubygem-bluecloth	ports/www/rubygem-bluecloth
 rubygem-builder	ports/devel/rubygem-builder
