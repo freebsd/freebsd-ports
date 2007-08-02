@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3de342fb-40be-11dc-aeac-02e0185f8d72">
+    <topic>FreeBSD -- Predictable query ids in named(8)</topic>
+    <affects>
+      <package>
+	<name>named</name>
+	<range><gt>9.4</gt><lt>9.4.1.1</lt></range>
+	<range><gt>9.3</gt><lt>9.3.4.1</lt></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.2</gt><lt>6.2_7</lt></range>
+	<range><gt>6.1</gt><lt>6.1_19</lt></range>
+	<range><gt>5.5</gt><lt>5.5_15</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>When named(8) is operating as a recursive DNS server or
+	  sending NOTIFY requests to slave DNS servers, named(8)
+	  uses a predictable query id.</p>
+	<h1>Impact:</h1>
+	<p>An attacker who can see the query id for some request(s)
+	  sent by named(8) is likely to be able to perform DNS cache
+	  poisoning by predicting the query id for other request(s).</p>
+	<h1>Workaround:</h1>
+	<p>No workaround is available.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-2926</cvename>
+      <freebsdsa>FreeBSD-SA-07:07.bind</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2007-07-24</discovery>
+      <entry>2007-08-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0e43a14d-3f3f-11dc-a79a-0016179b2dd5">
     <topic>xpdf -- stack based buffer overflow</topic>
     <affects>
