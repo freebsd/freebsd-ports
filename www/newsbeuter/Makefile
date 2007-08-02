@@ -5,15 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	newsbeuter
-PORTVERSION=	0.4
-PORTREVISION=	3
+PORTVERSION=	0.5
 CATEGORIES=	www
 MASTER_SITES=	http://synflood.at/newsbeuter/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	An RSS feed reader for the text console
 
-LIB_DEPENDS=	stfl.0:${PORTSDIR}/devel/stfl \
+LIB_DEPENDS=	stfl.1:${PORTSDIR}/devel/stfl \
 		nxml.18:${PORTSDIR}/textproc/libnxml \
 		mrss.18:${PORTSDIR}/textproc/libmrss \
 
