@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Jun  4 05:44:06 2005
-+++ Makefile.in	Thu Jun  9 17:41:53 2005
-@@ -78,7 +78,7 @@
+--- Makefile.in.orig	Thu Aug  2 07:36:22 2007
++++ Makefile.in	Thu Aug  2 23:00:21 2007
+@@ -79,7 +79,7 @@
  MV		= @MV@
  RM		= @RM@
  RMF		= @RM@ -f
@@ -9,7 +9,7 @@
  FIND		= @FIND@
  XARGS		= @XARGS@
  LDCONFIG	= @LDCONFIG@
-@@ -91,16 +91,16 @@
+@@ -92,16 +92,16 @@
  LEXFLAGS	=
  
  INSTALL		= @INSTALL@
@@ -24,7 +24,7 @@
 +INSTALL_LIB	= @INSTALL_DATA@
 +INSTALL_SCRIPT	= @INSTALL_SCRIPT@
  
- INCS_EXTRA	= @XPM_CFLAGS@ @JPEG_CFLAGS@ @PNG_CFLAGS@ @GIF_CFLAGS@ @TIFF_CFLAGS@ @TTF_INCLUDES@
+ INCS_EXTRA	= @XPM_CFLAGS@ @JPEG_CFLAGS@ @PNG_CFLAGS@ @GIF_CFLAGS@ @TIFF_CFLAGS@ @SVG_CFLAGS@ @TTF_INCLUDES@
  INCS_X		= @X_CFLAGS@
  INCS_PRIVATE    = 
 -INCLUDES	= $(INCS_EXTRA) $(INCS_PRIVATE) $(INCS_X)
@@ -32,7 +32,7 @@
  
  USER_LD_FLAGS	= @user_ldflags@
  LIBS_X		= @x_libs@
-@@ -119,7 +119,7 @@
+@@ -120,7 +120,7 @@
  AFTER_MAN_DIR	= $(DESTDIR)@mandir@/man3
  AFTER_APP_MAN_DIR	= $(DESTDIR)@mandir@/man1
  AFTER_SHAREDIR	= $(DESTDIR)@datadir@/$(LIB_DIR_NAME)
@@ -41,10 +41,10 @@
  
  # We want to build both static and dynamic libs, as some service apps may need 
  # static library as they gets run at compile time (ASDocGen for example)
-@@ -155,11 +155,10 @@
+@@ -161,11 +161,10 @@
  install.script:
  
- install.dyn:
+ install.dyn:	mkdir
 -		@( echo "$(INSTALL_LIB) $(LIB_SHARED).$(LIBVER) $(LIBDIR)"; \
 -		$(INSTALL_LIB) $(LIB_SHARED).$(LIBVER) $(LIBDIR); \
 +		@( echo "$(INSTALL_LIB) $(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)"; \
@@ -56,16 +56,16 @@
  		$(LN_S) -f $(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)/$(LIB_SHARED); \
  		if test `uname` = "Linux"; then \
  		   if test $(LIBDIR) = "/lib" || test $(LIBDIR) = "/usr/lib"; then \
-@@ -221,7 +220,7 @@
+@@ -230,7 +229,7 @@
  		)
  
  install.apps: install.lib
--		cd apps; make install; cd ..
-+		cd apps; $(MAKE) install; cd ..
+-		@(cd apps; make install || exit 1)
++		@(cd apps; $(MAKE) install || exit 1)
  
- uninstall.bin:
- 
-@@ -333,11 +332,8 @@
+ # uninstallation targets : 
+ #
+@@ -389,11 +388,8 @@
  $(LIB_SHARED): $(LIB_SHARED).$(LIBVERMAJOR)
  	$(LN_S) -f $(LIB_SHARED).$(LIBVERMAJOR) $(LIB_SHARED)
  
@@ -79,7 +79,18 @@
  	 $(LIB_OBJS)
  
  install.man:
-@@ -364,7 +360,7 @@
+@@ -402,8 +398,8 @@
+ 			cd doc/man; \
+ 			for f in `ls *.man`; do \
+ 				page_name=`echo $$f| awk -F . '{print $$1}'`; \
+-	  			echo $(INSTALL_DATA) $$page_name.man $(AFTER_MAN_DIR)/$$page_name.1x; \
+-	  			$(INSTALL_DATA) $$page_name.man $(AFTER_MAN_DIR)/$$page_name.1x; \
++	  			echo $(INSTALL_DATA) $$page_name.man $(AFTER_MAN_DIR)/$$page_name.3x; \
++	  			$(INSTALL_DATA) $$page_name.man $(AFTER_MAN_DIR)/$$page_name.3x; \
+ 			done; cd ../..; \
+ 		fi
+ 			
+@@ -419,7 +415,7 @@
  			cd ../..; \
  		fi
  
