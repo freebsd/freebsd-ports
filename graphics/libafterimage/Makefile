@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libafterimage
-PORTVERSION=	1.07
-PORTREVISION=	1
+PORTVERSION=	1.15
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	afterstep
@@ -35,6 +34,10 @@ CONFIGURE_ARGS=	--disable-staticlibs --enable-sharedlibs \
 USE_LDCONFIG=	yes
 
 MAN1=	ascompose.1x
+MAN3=	ascmap.3x afterimage.3x ascompose.3x asflip.3x asfont.3x asgrad.3x	\
+	asimage.3x asimagexml.3x asmerge.3x asscale.3x astext.3x astile.3x	\
+	asview.3x asvisual.3x blender.3x char2uni.3x common.3x export.3x	\
+	imencdec.3x import.3x transform.3x ximage.3x
 
 .include <bsd.port.pre.mk>
 
@@ -47,12 +50,11 @@ CONFIGURE_ARGS+=	--disable-mmx-optimization
 post-extract:
 	@${LN} -sf ${WRKSRC} ${WRKDIR}/libAfterImage
 
-post-patch:
-	@${REINPLACE_CMD} -e 's| malloc\.h | |g ; \
+pre-configure:
+	${REINPLACE_CMD} -e 's| malloc\.h | |g ; \
 		 s|-lgif|-lungif|g ; \
 		 s|CFLAGS="-O3"||g ; \
 		 s| -rdynamic||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|; ;|;|g' ${WRKSRC}/asimagexml.c
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/apps/ascompose.man \
