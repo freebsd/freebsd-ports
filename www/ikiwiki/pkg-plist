@@ -99,6 +99,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/otl.pm
 %%SITE_PERL%%/IkiWiki/Plugin/pagecount.pm
 %%SITE_PERL%%/IkiWiki/Plugin/pagestats.pm
+%%SITE_PERL%%/IkiWiki/Plugin/pagetemplate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/passwordauth.pm
 %%SITE_PERL%%/IkiWiki/Plugin/poll.pm
 %%SITE_PERL%%/IkiWiki/Plugin/polygen.pm

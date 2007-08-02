@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	2.1
+PORTVERSION=	2.5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -51,6 +51,7 @@ PLIST_SUB=	W3M="@comment "
 .endif
 
 post-patch:
+	@${RM} ${WRKSRC}/IkiWiki/Plugin/graphviz.pm.orig
 	@${REINPLACE_CMD} -e "s|/usr/bin/markdown|${LOCALBASE}/bin/markdown|" \
 		${WRKSRC}/IkiWiki/Plugin/mdwn.pm
 	@${REINPLACE_CMD} \
