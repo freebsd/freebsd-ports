@@ -1,12 +1,12 @@
---- rungms.orig	Mon Nov 20 08:09:11 2006
-+++ rungms	Thu Mar  8 17:28:51 2007
+--- rungms.orig	Thu Jun  7 07:03:07 2007
++++ rungms	Thu Aug  2 11:17:25 2007
 @@ -1,4 +1,4 @@
 -#!/bin/csh
 +#!/bin/csh -f
  #
- #  27 Mar 06 - MWS 
+ #   9 May 07 - MWS 
  #
-@@ -54,7 +54,14 @@
+@@ -54,7 +54,13 @@
  #       of using LoadLeveler via a "llgms" front end in ~/gamess/misc.
  #
  set TARGET=sockets
@@ -16,13 +16,12 @@
 +        echo "Usage: gamess <input file>"
 +       exit
 +endif
-+set SCR=.
-+set GMSPATH=/usr/local/bin/gms
++set GMSPATH=%%PREFIX%%/bin/gms
 +
  #
  set JOB=$1      # name of the input file xxx.inp, give only the xxx part
  set VERNO=$2    # revision number of the executable created by 'lked' step
-@@ -66,30 +73,40 @@
+@@ -66,35 +73,45 @@
  #
  #  ---- the top third of the script is input and other file assignments ----
  #
@@ -37,7 +36,10 @@
 +#echo under operating system `uname` at `date`
 +#echo "Available scratch disk space (Kbyte units) at beginning of the job is"
 +#df -k $SCR
-+
+ 
+ #        this added as experiment, February 2007
+ limit stacksize 8192
+ 
 +set JOBORG=$JOB
 +set JOB=$JOB:r      # strip off possible .inp
 +
@@ -47,7 +49,7 @@
 +   echo "Input file $JOBORG does not exist.  Please fix and resubmit."
 +   exit 4
 +endif
- 
++
  #  Grab a copy of the input file.
  #  In the case of EXAMnn jobs, this file might be in the "tests" subdirectory.
 -if ($JOB:r.inp == $JOB) set JOB=$JOB:r      # strip off possible .inp
@@ -61,7 +63,9 @@
 -      cp  tests/$JOB.inp  $SCR/$JOB.F05
 -      unset echo
 -   else
--      echo "Input file $JOB.inp does not exist.  Please fix and resubmit."
+-      echo "Input file $JOB.inp does not exist."
+-      echo "This job expected the input file to be in directory `pwd`"
+-      echo "Please fix your file name problem, and resubmit."
 -      exit 4
 -   endif
 -endif
@@ -76,14 +80,16 @@
 +#      cp  tests/$JOB.inp  $SCR/$JOB.F05
 +#      unset echo
 +#   else
-+#      echo "Input file $JOB.inp does not exist.  Please fix and resubmit."
++#      echo "Input file $JOB.inp does not exist."
++#      echo "This job expected the input file to be in directory `pwd`"
++#      echo "Please fix your file name problem, and resubmit."
 +#      exit 4
 +#   endif
 +#endif
  
  #  file assignments.
  #
-@@ -112,16 +129,16 @@
+@@ -117,16 +134,16 @@
  #  d. see NEO plug-in code's documentation regarding the NUCBAS file.
  #         Note that you must edit a+b, but will probably skip c+d.
  #
@@ -105,7 +111,7 @@
  setenv  AOINTS $SCR/$JOB.F08
  setenv  MOINTS $SCR/$JOB.F09
  setenv DICTNRY $SCR/$JOB.F10
-@@ -151,8 +168,8 @@
+@@ -156,8 +173,8 @@
  setenv  SOINTY $SCR/$JOB.F32
  setenv  SOINTZ $SCR/$JOB.F33
  setenv  SORESC $SCR/$JOB.F34
@@ -116,18 +122,3 @@
  setenv GCILIST $SCR/$JOB.F37
  setenv HESSIAN $SCR/$JOB.F38
  setenv SOCCDAT $SCR/$JOB.F40
-@@ -302,10 +319,10 @@
- 
- setenv GMSJOBNAME $JOB  # this values is used only by the VB2000 add-on code
- 
--if ((-e $PUNCH) || (-e $IRCDATA)) then
--   echo Please rename/erase $PUNCH and/or $IRCDATA, and resubmit
--   exit 4
--endif
-+#if ((-e $PUNCH) || (-e $IRCDATA)) then
-+#   echo Please rename/erase $PUNCH and/or $IRCDATA, and resubmit
-+#   exit 4
-+#endif
- 
- #  ---- the middle third of the script is to execute GAMESS ----
- #
