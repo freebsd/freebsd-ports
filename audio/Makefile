@@ -667,6 +667,7 @@
     SUBDIR += xmms-cdread
     SUBDIR += xmms-crossfade
     SUBDIR += xmms-crystality
+    SUBDIR += xmms-curses
     SUBDIR += xmms-defx
     SUBDIR += xmms-efxmms
     SUBDIR += xmms-eq

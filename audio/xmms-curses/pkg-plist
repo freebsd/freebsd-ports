@@ -1,0 +1,4 @@
+bin/xmms-curses
+@unexec if cmp -s %D/etc/xmms-curses.conf.sample %D/etc/xmms-curses.conf; then rm -f %D/etc/xmms-curses.conf; fi
+etc/xmms-curses.conf.sample
+@exec if [ ! %D/etc/xmms-curses.conf ] ; then cp -p %D/%F %D/etc/xmms-curses.conf; fi
