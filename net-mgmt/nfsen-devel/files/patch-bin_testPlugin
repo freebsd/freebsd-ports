@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- bin/testPlugin.orig
++++ bin/testPlugin
+@@ -50,6 +50,7 @@
+ 
+ use NfConf;
+ use NfSen;
++use NfProfile;
+ use Log;
+ 
+ my $VERSION = '$Id: testPlugin 60 2007-01-09 12:26:47Z peter $';
+@@ -164,7 +165,10 @@
+ print "Run plugin '$plugin' with profile '$profile' at '$timeslot'\n";
+ my $sub = "${plugin}::run";
+ no strict 'refs';
+-&$sub($profile, $timeslot);
++&$sub({
++	profile		=>	$profile, 
++	timeslot	=>	$timeslot,
++});
+ use strict 'refs';
+ print "Plugin run successfully, at least as far as I can tell ...\n" ;
+ 
