@@ -7,11 +7,12 @@
 
 PORTNAME=	cmus
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/ \
 		http://mirror.greaterscope.net/cmus/
 
-MAINTAINER=	simon@olofsson.de
+MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	Console-based music player with really cool features
 
 USE_BZIP2=	yes
@@ -33,6 +34,7 @@ OPTIONS=	FLAC "FLAC (Free Lossless Audio Codec) support" Off \
 		MP4 "MPEG-4 AAC support" Off \
 		AAC "AAC support" Off \
 		WAVPACK "Wavpack support" Off \
+		FFMPEG "FFMPEG support" Off \
 		LIBAO "Libao cross-platform audio library" Off \
 		ARTS "ARTS support" Off
 
@@ -126,6 +128,15 @@ PLIST_SUB+=	WAVPACK=""
 .else
 CONFIGURE_ARGS+=CONFIG_WAVPACK=n
 PLIST_SUB+=	WAVPACK="@comment "
+.endif
+
+.if defined(WITH_FFMPEG)
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+CONFIGURE_ARGS+=CONFIG_FFMPEG=y
+PLIST_SUB+=	FFMPEG=""
+.else
+CONFIGURE_ARGS+=CONFIG_FFMPEG=n
+PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 .if defined(WITH_LIBAO)
