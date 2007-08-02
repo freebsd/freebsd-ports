@@ -40,7 +40,7 @@ CONFLICTS=	PenguinTV-devel-[0-9]*
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
 .if defined(WITH_GSTREAMER)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer \
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
 .endif
 
 .if defined(WITHOUT_PYLUCENE)
