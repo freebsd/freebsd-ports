@@ -16906,6 +16906,7 @@ xmms-bonk	ports/audio/xmms-bonk
 xmms-cdread	ports/audio/xmms-cdread
 xmms-crossfade	ports/audio/xmms-crossfade
 xmms-crystality	ports/audio/xmms-crystality
+xmms-curses	ports/audio/xmms-curses
 xmms-dancingparticles	ports/graphics/xmms-dancingparticles
 xmms-defx	ports/audio/xmms-defx
 xmms-dflowers	ports/graphics/xmms-dflowers
