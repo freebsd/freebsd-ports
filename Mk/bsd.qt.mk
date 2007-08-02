@@ -34,7 +34,14 @@ CONFIGURE_ARGS+=-fast -no-exceptions ${CUPS} \
 CONFIGURE_ARGS+=-no-3dnow -no-sse -no-sse2
 .endif #defined(PACKAGE_BUILDING)
 
-.if defined(QT_WANT_VERBOSE_CONFIGURE)
+.if !defined(WANT_QT_DEBUG)
+CONFIGURE_ARGS+=-no-separate-debug-info
+PLIST_SUB+=	DEBUG="@comment "
+.else
+PLIST_SUB+=	DEBUG=""
+.endif
+
+.if defined(WANT_QT_VERBOSE_CONFIGURE)
 CONFIGURE_ARGS+=-v
 .endif
 .endif #defined(QT_DIST)
@@ -101,24 +108,111 @@ uic_DEPENDS=		devel/qt4-uic
 uic3_DEPENDS=		devel/qt4-uic3
 xml_DEPENDS=		textproc/qt4-xml
 
+accessible_build_DEPENDS=	${accessible_DEPENDS}
+assistant_build_DEPENDS=	${assistant_DEPENDS}
+assistantclient_build_DEPENDS=	${assistantclient_DEPENDS}
+assistantclient_build_NAME=	${assistantclient_NAME}
+codecs-cn_build_DEPENDS=	${codecs-cn_DEPENDS}
+codecs-jp_build_DEPENDS=	${codecs-jp_DEPENDS}
+codecs-kr_build_DEPENDS=	${codecs-kr_DEPENDS}
+codecs-tw_build_DEPENDS=	${codecs-tw_DEPENDS}
+corelib_build_DEPENDS=		${corelib_DEPENDS}
+dbus_build_DEPENDS=		${dbus_DEPENDS}
+designer_build_DEPENDS=		${designer_DEPENDS}
+doc_build_DEPENDS=		${doc_DEPENDS}
+gui_build_DEPENDS=		${gui_DEPENDS}
+iconengines_build_DEPENDS=	${iconengines_DEPENDS}
+imageformats_build_DEPENDS=	${imageformats_DEPENDS}
+inputmethods_build_DEPENDS=	${inputmethods_DEPENDS}
+linguist_build_DEPENDS=		${linguist_DEPENDS}
+makeqpf_build_DEPENDS=		${makeqpf_DEPENDS}
+moc_build_DEPENDS=		${moc_DEPENDS}
+network_build_DEPENDS=		${network_DEPENDS}
+opengl_build_DEPENDS=		${opengl_DEPENDS}
+pixeltool_build_DEPENDS=	${pixeltool_DEPENDS}
+porting_build_DEPENDS=		${porting_DEPENDS}
+qdbusviewer_build_DEPENDS=	${qdbusviewer_DEPENDS}
+qmake_build_DEPENDS=		${qmake_DEPENDS}
+qmake_build_QT4_PREFIX=		${qmake_QT4_PREFIX}
+qt3support_build_DEPENDS=	${qt3support_DEPENDS}
+qtconfig_build_DEPENDS=		${qtconfig_DEPENDS}
+qtestlib_build_DEPENDS=		${qtestlib_DEPENDS}
+qvfb_build_DEPENDS=		${qvfb_DEPENDS}
+rcc_build_DEPENDS=		${rcc_DEPENDS}
+script_build_DEPENDS=		${script_DEPENDS}
+sql_build_DEPENDS=		${sql_DEPENDS}
+svg_build_DEPENDS=		${svg_DEPENDS}
+uic_build_DEPENDS=		${uic_DEPENDS}
+uic3_build_DEPENDS=		${uic3_DEPENDS}
+xml_build_DEPENDS=		${xml_DEPENDS}
+
+accessible_run_DEPENDS=		${accessible_DEPENDS}
+assistant_run_DEPENDS=		${assistant_DEPENDS}
+assistantclient_run_DEPENDS=	${assistantclient_DEPENDS}
+assistantclient_run_NAME=	${assistantclient_NAME}
+codecs-cn_run_DEPENDS=		${codecs-cn_DEPENDS}
+codecs-jp_run_DEPENDS=		${codecs-jp_DEPENDS}
+codecs-kr_run_DEPENDS=		${codecs-kr_DEPENDS}
+codecs-tw_run_DEPENDS=		${codecs-tw_DEPENDS}
+corelib_run_DEPENDS=		${corelib_DEPENDS}
+dbus_run_DEPENDS=		${dbus_DEPENDS}
+designer_run_DEPENDS=		${designer_DEPENDS}
+doc_run_DEPENDS=		${doc_DEPENDS}
+gui_run_DEPENDS=		${gui_DEPENDS}
+iconengines_run_DEPENDS=	${iconengines_DEPENDS}
+imageformats_run_DEPENDS=	${imageformats_DEPENDS}
+inputmethods_run_DEPENDS=	${inputmethods_DEPENDS}
+linguist_run_DEPENDS=		${linguist_DEPENDS}
+makeqpf_run_DEPENDS=		${makeqpf_DEPENDS}
+moc_run_DEPENDS=		${moc_DEPENDS}
+network_run_DEPENDS=		${network_DEPENDS}
+opengl_run_DEPENDS=		${opengl_DEPENDS}
+pixeltool_run_DEPENDS=		${pixeltool_DEPENDS}
+porting_run_DEPENDS=		${porting_DEPENDS}
+qdbusviewer_run_DEPENDS=	${qdbusviewer_DEPENDS}
+qmake_run_DEPENDS=		${qmake_DEPENDS}
+qmake_run_QT4_PREFIX=		${qmake_QT4_PREFIX}
+qt3support_run_DEPENDS=		${qt3support_DEPENDS}
+qtconfig_run_DEPENDS=		${qtconfig_DEPENDS}
+qtestlib_run_DEPENDS=		${qtestlib_DEPENDS}
+qvfb_run_DEPENDS=		${qvfb_DEPENDS}
+rcc_run_DEPENDS=		${rcc_DEPENDS}
+script_run_DEPENDS=		${script_DEPENDS}
+sql_run_DEPENDS=		${sql_DEPENDS}
+svg_run_DEPENDS=		${svg_DEPENDS}
+uic_run_DEPENDS=		${uic_DEPENDS}
+uic3_run_DEPENDS=		${uic3_DEPENDS}
+xml_run_DEPENDS=		${xml_DEPENDS}
+
 .if defined(_POSTMKINCLUDED) && !defined(Qt_Post_Include)
 Qt_Post_Include= bsd.qt.mk
 
+.for component in ${_QT_COMPONENTS_ALL}
+_QT_COMPONENTS_SUFFIXED+=${component} ${component}_build ${component}_run
+.endfor
+
 .if defined(QT_COMPONENTS)
 .for ext in ${QT_COMPONENTS}
-${ext}_QT4_PREFIX?=     qt4-
-${ext}_QT4_VERSION?=    ${QT4_VERSION}
-${ext}_NAME?=           ${ext}
-.if ${_QT_COMPONENTS_ALL:M${ext}}!= ""
-BUILD_DEPENDS+= ${${ext}_QT4_PREFIX}${${ext}_NAME}>=${${ext}_QT4_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
-RUN_DEPENDS+=   ${${ext}_QT4_PREFIX}${${ext}_NAME}>=${${ext}_QT4_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
+${ext}_QT4_PREFIX?=	qt4-
+${ext}_QT4_VERSION?=	${QT4_VERSION}
+${ext}_NAME?=		${ext}
+_${ext}=		${ext}
+.if ${_QT_COMPONENTS_SUFFIXED:M${ext}}!= ""
+.if ${_${ext}:M*_build}!= ""
+BUILD_DEPENDS+=	${${ext}_QT4_PREFIX}${${ext}_NAME:S/_build//}>=${${ext}_QT4_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
+.elif ${_${ext}:M*_run}!= ""
+RUN_DEPENDS+=	${${ext}_QT4_PREFIX}${${ext}_NAME:S/_run//}>=${${ext}_QT4_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
+.else
+BUILD_DEPENDS+=	${${ext}_QT4_PREFIX}${${ext}_NAME}>=${${ext}_QT4_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
+RUN_DEPENDS+=	${${ext}_QT4_PREFIX}${${ext}_NAME}>=${${ext}_QT4_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
+.endif
 .else
 IGNORE= cannot install: unknown Qt4 component -- ${ext}
 .endif
 .endfor
 .else
-BUILD_DEPENDS+=         qt4>=${QT4_VERSION}:${PORTSDIR}/devel/qt4
-RUN_DEPENDS+=           qt4>=${QT4_VERSION}:${PORTSDIR}/devel/qt4
+BUILD_DEPENDS+=		qt4>=${QT4_VERSION}:${PORTSDIR}/devel/qt4
+RUN_DEPENDS+=		qt4>=${QT4_VERSION}:${PORTSDIR}/devel/qt4
 .endif
 
 .endif

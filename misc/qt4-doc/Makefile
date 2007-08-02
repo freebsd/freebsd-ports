@@ -47,4 +47,3 @@ do-install:
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../Mk/bsd.qt.mk"
 .include <bsd.port.post.mk>
-

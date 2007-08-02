@@ -21,7 +21,7 @@ COMMENT=	Qt graphical user interface library
 LIB_DEPENDS?=	png:${PORTSDIR}/graphics/png
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc rcc uic corelib
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
@@ -84,7 +84,7 @@ pre-configure:
 
 post-configure:
 	${REINPLACE_CMD} -e 's|${PREFIX}/lib/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		-e 's|.*$$(QMAKE).*||g' -e 's|(test -z.*||g' ${WRKSRC}/Makefile
+		-e 's|.*$$(QMAKE).*||g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \

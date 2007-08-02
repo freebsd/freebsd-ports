@@ -1,2 +1,2 @@
 bin/pixeltool
-bin/pixeltool.debug
+%%DEBUG%%bin/pixeltool.debug

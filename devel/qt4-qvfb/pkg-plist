@@ -1,5 +1,5 @@
 bin/qvfb-qt4
-bin/qvfb-qt4.debug
+%%DEBUG%%bin/qvfb-qt4.debug
 %%DATADIR%%/ClamshellPhone.skin/ClamshellPhone.skin
 %%DATADIR%%/ClamshellPhone.skin/ClamshellPhone1-5-closed.png
 %%DATADIR%%/ClamshellPhone.skin/ClamshellPhone1-5-pressed.png

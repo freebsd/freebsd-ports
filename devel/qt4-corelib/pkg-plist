@@ -419,6 +419,7 @@ lib/libQtCore.so
 lib/libQtCore.so.4
 lib/libQtCore.so.4.3
 lib/libQtCore.so.4.3.0
+%%DEBUG%%lib/libQtCore.so.4.3.0.debug
 lib/plugins/.keep_me
 libdata/pkgconfig/QtCore.pc
 @dirrmtry share/qt4

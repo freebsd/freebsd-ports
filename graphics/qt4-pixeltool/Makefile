@@ -19,7 +19,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt screen magnification utility
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc uic assistantclient corelib gui network
+QT_COMPONENTS=	qmake_build moc_build uic_build assistantclient corelib gui \
+		network
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 

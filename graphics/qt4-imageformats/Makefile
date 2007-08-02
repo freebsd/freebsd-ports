@@ -24,7 +24,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc rcc corelib gui svg xml
+QT_COMPONENTS=	qmake_build moc_build rcc_build corelib gui svg xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
@@ -48,8 +48,6 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/plugins/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../..
 
-.include <bsd.port.pre.mk>
-
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
 	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/lib/plugins/imageformats|g' \
@@ -66,4 +64,4 @@ post-build:
 post-install:
 	cd ${WRKSRC}/gif; make -f Makefile install
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

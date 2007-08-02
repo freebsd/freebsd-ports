@@ -19,7 +19,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Big-5 codec plugin
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake corelib
+QT_COMPONENTS=	qmake_build corelib
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
@@ -43,8 +43,6 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/plugins/${PORTNAME}/tw
 CONFIGURE_WRKSRC=${WRKSRC}/../../../..
 
-.include <bsd.port.pre.mk>
-
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
 	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/lib/plugins/codecs|g' \
@@ -53,4 +51,4 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../../bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../../../bin/moc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

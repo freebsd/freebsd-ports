@@ -18,7 +18,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt utility to assist with porting Qt3 applications to Qt4
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc rcc uic corelib xml
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 

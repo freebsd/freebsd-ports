@@ -1,2 +1,2 @@
 bin/moc-qt4
-bin/moc-qt4.debug
+%%DEBUG%%bin/moc-qt4.debug
