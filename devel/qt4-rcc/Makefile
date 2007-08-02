@@ -18,7 +18,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt resource compiler
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake
+QT_COMPONENTS=	qmake_build
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 

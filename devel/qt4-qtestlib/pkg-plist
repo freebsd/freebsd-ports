@@ -33,5 +33,6 @@ lib/libQtTest.so
 lib/libQtTest.so.4
 lib/libQtTest.so.4.3
 lib/libQtTest.so.4.3.0
+%%DEBUG%%lib/libQtTest.so.4.3.0.debug
 libdata/pkgconfig/QtTest.pc
 @dirrm include/QtTest

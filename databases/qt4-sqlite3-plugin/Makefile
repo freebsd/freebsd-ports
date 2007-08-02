@@ -21,7 +21,7 @@ DB=		sqlite
 LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
 
 USE_QT_VER=	4
-QT_COMPONENTS=	moc sql
+QT_COMPONENTS=	moc_build sql
 QT_NONSTANDARD=	yes
 
 #USE_BZIP2=	yes

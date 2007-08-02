@@ -19,8 +19,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt ui editor
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc rcc uic assistantclient qt3support corelib gui network\
-		script sql xml
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build assistantclient \
+		qt3support corelib gui network script sql xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 

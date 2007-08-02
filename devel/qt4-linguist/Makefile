@@ -19,7 +19,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt localisation tool
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake designer moc rcc uic assistantclient gui network xml
+QT_COMPONENTS=	qmake_build designer moc_build rcc_build uic_build \
+		assistantclient gui network xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 

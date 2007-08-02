@@ -1,9 +1,9 @@
 bin/qdbus
-bin/qdbus.debug
+%%DEBUG%%bin/qdbus.debug
 bin/qdbuscpp2xml
-bin/qdbuscpp2xml.debug
+%%DEBUG%%bin/qdbuscpp2xml.debug
 bin/qdbusxml2cpp
-bin/qdbusxml2cpp.debug
+%%DEBUG%%bin/qdbusxml2cpp.debug
 include/QtDBus/QDBusAbstractAdaptor
 include/QtDBus/QDBusAbstractInterface
 include/QtDBus/QDBusArgument
@@ -40,6 +40,6 @@ lib/libQtDBus.so
 lib/libQtDBus.so.4
 lib/libQtDBus.so.4.3
 lib/libQtDBus.so.4.3.0
-lib/libQtDBus.so.4.3.0.debug
+%%DEBUG%%lib/libQtDBus.so.4.3.0.debug
 libdata/pkgconfig/QtDBus.pc
 @dirrm include/QtDBus

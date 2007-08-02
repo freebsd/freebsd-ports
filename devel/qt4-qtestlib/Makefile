@@ -19,7 +19,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt unit testing library
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc corelib
+QT_COMPONENTS=	qmake_build moc_build corelib
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
@@ -45,8 +45,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/tools/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../
 PATCH_WRKSRC=${CONFIGURE_WRKSRC}
 
-.include <bsd.port.pre.mk>
-
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
 	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/lib|g' \
@@ -57,10 +55,10 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
 post-configure:
 	${REINPLACE_CMD} -e 's|${PREFIX}/lib/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		-e 's|.*$$(QMAKE).*||g' -e 's|(test -z.*||g' ${WRKSRC}/src/Makefile
+		-e 's|.*$$(QMAKE).*||g' ${WRKSRC}/src/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
 		${WRKSRC}/../../lib/pkgconfig/*Qt*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

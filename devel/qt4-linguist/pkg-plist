@@ -1,9 +1,9 @@
 bin/linguist-qt4
-bin/linguist-qt4.debug
+%%DEBUG%%bin/linguist-qt4.debug
 bin/lrelease-qt4
-bin/lrelease-qt4.debug
+%%DEBUG%%bin/lrelease-qt4.debug
 bin/lupdate-qt4
-bin/lupdate-qt4.debug
+%%DEBUG%%bin/lupdate-qt4.debug
 share/qt4/phrasebooks/danish.qph
 share/qt4/phrasebooks/dutch.qph
 share/qt4/phrasebooks/finnish.qph

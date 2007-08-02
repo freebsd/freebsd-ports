@@ -19,8 +19,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt demonstration and example programs
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc rcc uic assistantclient corelib designer gui network opengl\
-		sql svg qtestlib xml imageformats dbus script
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build assistantclient \
+		corelib designer gui network opengl sql svg qtestlib xml \
+		imageformats_run dbus script
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 

@@ -21,7 +21,7 @@ COMMENT=	Qt4 bindings for the D-BUS messaging system
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc rcc corelib gui xml
+QT_COMPONENTS=	qmake_build moc_build rcc_build corelib gui xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
@@ -42,8 +42,6 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	--exclude '${DISTNAME}/tools/qtconfig' --exclude '${DISTNAME}/tools/qvfb'
 WRKSRC=		${WRKDIR}/${DISTNAME}/tools/qdbus
 CONFIGURE_WRKSRC=${WRKSRC}/../../
-
-.include <bsd.port.pre.mk>
 
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
@@ -68,4 +66,4 @@ post-configure:
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
 		${WRKSRC}/../../lib/pkgconfig/*Qt*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

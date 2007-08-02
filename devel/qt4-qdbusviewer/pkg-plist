@@ -1,2 +1,2 @@
 bin/qdbusviewer
-bin/qdbusviewer.debug
+%%DEBUG%%bin/qdbusviewer.debug

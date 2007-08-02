@@ -1,5 +1,5 @@
 bin/designer-qt4
-bin/designer-qt4.debug
+%%DEBUG%%bin/designer-qt4.debug
 include/QtDesigner/QAbstractExtensionFactory
 include/QtDesigner/QAbstractExtensionManager
 include/QtDesigner/QAbstractFormBuilder
@@ -87,17 +87,17 @@ lib/libQtDesigner.so
 lib/libQtDesigner.so.4
 lib/libQtDesigner.so.4.3
 lib/libQtDesigner.so.4.3.0
-lib/libQtDesigner.so.4.3.0.debug
+%%DEBUG%%lib/libQtDesigner.so.4.3.0.debug
 lib/libQtDesignerComponents.prl
 lib/libQtDesignerComponents.so
 lib/libQtDesignerComponents.so.4
 lib/libQtDesignerComponents.so.4.3
 lib/libQtDesignerComponents.so.4.3.0
-lib/libQtDesignerComponents.so.4.3.0.debug
+%%DEBUG%%lib/libQtDesignerComponents.so.4.3.0.debug
 lib/libQtUiTools.a
 lib/libQtUiTools.prl
 lib/plugins/libqt3supportwidgets.so
-lib/plugins/libqt3supportwidgets.so.debug
+%%DEBUG%%lib/plugins/libqt3supportwidgets.so.debug
 libdata/pkgconfig/QtUiTools.pc
 @dirrm include/QtUiTools
 @dirrm include/QtDesigner

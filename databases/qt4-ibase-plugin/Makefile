@@ -20,7 +20,7 @@ DB=		ibase
 
 USE_FIREBIRD=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	moc sql
+QT_COMPONENTS=	moc_build sql
 QT_NONSTANDARD=	yes
 
 #USE_BZIP2=	yes

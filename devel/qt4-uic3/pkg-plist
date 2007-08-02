@@ -1,2 +1,2 @@
 bin/uic3
-bin/uic3.debug
+%%DEBUG%%bin/uic3.debug

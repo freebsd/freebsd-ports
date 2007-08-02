@@ -1,2 +1,2 @@
 bin/makeqpf-qt4
-bin/makeqpf-qt4.debug
+%%DEBUG%%bin/makeqpf-qt4.debug

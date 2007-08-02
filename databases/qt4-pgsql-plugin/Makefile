@@ -19,7 +19,7 @@ COMMENT=	Qt PostgreSQL database plugin
 DB=		psql
 
 USE_QT_VER=	4
-QT_COMPONENTS=	moc sql
+QT_COMPONENTS=	moc_build sql
 QT_NONSTANDARD=	yes
 
 USE_PGSQL=	yes

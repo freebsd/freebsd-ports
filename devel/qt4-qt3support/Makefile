@@ -19,7 +19,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt3 compatibility library
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc corelib gui network sql xml
+QT_COMPONENTS=	qmake_build moc_build corelib gui network sql xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
@@ -45,8 +45,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../
 PATCH_WRKSRC=${CONFIGURE_WRKSRC}
 
-.include <bsd.port.pre.mk>
-
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}	
 	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/lib|g' \
@@ -64,4 +62,4 @@ post-configure:
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
 		${WRKSRC}/../../lib/pkgconfig/*Qt*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

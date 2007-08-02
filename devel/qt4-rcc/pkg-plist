@@ -1,2 +1,2 @@
 bin/rcc
-bin/rcc.debug
+%%DEBUG%%bin/rcc.debug

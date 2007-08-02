@@ -21,7 +21,7 @@ COMMENT=	Qt4 D-BUS viewer
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc rcc corelib dbus gui xml
+QT_COMPONENTS=	qmake_build moc_build rcc_build corelib dbus gui xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
