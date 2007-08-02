@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	gamess
-PORTVERSION=    ${SNAPDATE}.4
+PORTVERSION=    ${SNAPDATE}
 CATEGORIES=	science
 MASTER_SITES=   #http://www.msg.ameslab.gov/GAMESS/GAMESS.html
 DISTNAME=	gamess-current
-DIST_SUBDIR=	${PORTNAME}.${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A freely obtainable ab-initio molecular orbital calculation program
 
 USE_GMAKE=	yes
 WRKSRC=         ${WRKDIR}/gamess
-SNAPDATE=	20060907
+SNAPDATE=	20070524.3
 
 USE_FORTRAN=   yes
 
@@ -84,14 +84,13 @@ pre-build:
 	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd-i386+g' ${WRKSRC}/lked
 .endif
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; \
-			      s+%%PREFIX%%+${PREFIX}+g ; \
+			      s+%%LOCALBASE%%+${LOCALBASE}+g ; \
 			      s+%%LIBSVM%%+${LIBSVM}+g ; \
 			      s+%%LIBG2C%%+${LIBG2C}+g ; \
 			      s+%%BLAS%%+${BLAS}+g ; \
 			      s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g' \
 			 ${WRKSRC}/lked
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; \
-			      s+%%PREFIX%%+${PREFIX}+g ; \
 			      s+%%FFLAGS%%+${FFLAGS}+g ; \
 			      s+%%FORTRAN%%+${FORTRAN}+g' \
 			 ${WRKSRC}/comp

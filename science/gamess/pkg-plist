@@ -49,6 +49,7 @@ share/examples/gamess/exam38.inp
 share/examples/gamess/exam39.inp
 share/examples/gamess/exam40.inp
 share/examples/gamess/exam41.inp
+share/examples/gamess/exam42.inp
 @dirrm bin/gms
 @dirrm share/doc/gamess
 @dirrm share/gamess
