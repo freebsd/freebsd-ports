@@ -14,3 +14,4 @@ share/locale/tr/LC_MESSAGES/gperiodic.mo
 share/pixmaps/gperiodic.png
 share/pixmaps/gperiodic-crystal.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
