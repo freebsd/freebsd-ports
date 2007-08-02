@@ -1,0 +1,6 @@
+This engine allows Catalyst to process multiple requests in parallel within a
+single process.  Much of the internal Catalyst flow now uses POE yield calls.
+Application code will still block of course, but all I/O, header processing,
+and POST body processing is handled asynchronously.
+
+WWW: http://search.cpan.org/dist/Catalyst-Engine-HTTP-POE/

@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Catalyst/Engine/HTTP/POE.pm
+@dirrmtry %%SITE_PERL%%/Catalyst/Engine/HTTP
+@dirrmtry %%SITE_PERL%%/Catalyst/Engine
