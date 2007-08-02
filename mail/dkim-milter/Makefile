@@ -13,7 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	1.2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -49,7 +49,7 @@ PLIST_FILES=	libexec/dkim-filter sbin/gentxt-dkim \
 PLIST_DIRS=	etc/mail
 PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh \
-		draft-hoffman-dac-vbr-00.txt draft-ietf-dkim-overview-05.txt \
+		draft-hoffman-dac-vbr-01.txt draft-ietf-dkim-overview-05.txt \
 		draft-ietf-dkim-ssp-00.txt draft-ietf-dkim-ssp-requirements-04.txt \
 		rfc4686.txt rfc4871.txt
 .if !defined(NOPORTDOCS)
@@ -64,13 +64,10 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_eoh.html \
 		${DOCSDIR_REL}/libdkim/dkim_eom.html \
 		${DOCSDIR_REL}/libdkim/dkim_free.html \
-		${DOCSDIR_REL}/libdkim/dkim_getcanonlen.html \
-		${DOCSDIR_REL}/libdkim/dkim_getkeysize.html \
-		${DOCSDIR_REL}/libdkim/dkim_getselector.html \
-		${DOCSDIR_REL}/libdkim/dkim_getsigdomain.html \
+		${DOCSDIR_REL}/libdkim/dkim_get_user_context.html \
 		${DOCSDIR_REL}/libdkim/dkim_getsighdr.html \
-		${DOCSDIR_REL}/libdkim/dkim_getsignalg.html \
-		${DOCSDIR_REL}/libdkim/dkim_getsigntime.html \
+		${DOCSDIR_REL}/libdkim/dkim_getsiglist.html \
+		${DOCSDIR_REL}/libdkim/dkim_getsignature.html \
 		${DOCSDIR_REL}/libdkim/dkim_header.html \
 		${DOCSDIR_REL}/libdkim/dkim_init.html \
 		${DOCSDIR_REL}/libdkim/dkim_lib.html \
@@ -82,6 +79,7 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_query_t.html \
 		${DOCSDIR_REL}/libdkim/dkim_reportinfo.html \
 		${DOCSDIR_REL}/libdkim/dkim_set_dns_callback.html \
+		${DOCSDIR_REL}/libdkim/dkim_set_final.html \
 		${DOCSDIR_REL}/libdkim/dkim_set_key_lookup.html \
 		${DOCSDIR_REL}/libdkim/dkim_set_policy_lookup.html \
 		${DOCSDIR_REL}/libdkim/dkim_set_prescreen.html \
@@ -90,8 +88,20 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_set_signature_tagvalues.html \
 		${DOCSDIR_REL}/libdkim/dkim_set_signer.html \
 		${DOCSDIR_REL}/libdkim/dkim_set_user_context.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_getbh.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_getcanonlen.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_getcontext.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_getdomain.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_geterror.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_geterrorstr.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_getflags.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_getkeysize.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_getselector.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_getsignalg.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_getsigntime.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_ignore.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_process.html \
+		${DOCSDIR_REL}/libdkim/dkim_sigerror.html \
 		${DOCSDIR_REL}/libdkim/dkim_siginfo.html \
 		${DOCSDIR_REL}/libdkim/dkim_sigkey_t.html \
 		${DOCSDIR_REL}/libdkim/dkim_sign.html \
@@ -166,6 +176,12 @@ SITE_SUB+=	-e 's|%%OPENSSL%%|dnl |g'
 SITE_SUB+=	-e 's|%%OPENSSL%%||g' \
 		-e "s|%%OPENSSLINC%%|${OPENSSLINC}|g" \
 		-e "s|%%OPENSSLLIB%%|${OPENSSLLIB}|g"
+.endif
+.if defined(WITH_DIFFHEADERS) && !defined(WITHOUT_DIFFHEADERS)
+SITE_SUB+=	-e 's|%%LIBTRE%%||g'
+LIB_DEPENDS+=	tre:${PORTSDIR}/textproc/libtre
+.else
+SITE_SUB+=	-e 's|%%LIBTRE%%|dnl |g'
 .endif
 
 pre-fetch:

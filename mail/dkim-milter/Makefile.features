@@ -15,12 +15,12 @@ SITE_SUB+=	-e '/-D_FFR_ANTICIPATE_SENDMAIL_MUNGE/s|^dnl ||'
 SITE_SUB+=	-e '/-D_FFR_CAPTURE_UNKNOWN_ERRORS/s|^dnl ||'
 .endif
 
-.if defined(WITH_FLUSH_HEADERS) && !defined(WITHOUT_FLUSH_HEADERS)
-SITE_SUB+=	-e '/-D_FFR_FLUSH_HEADERS/s|^dnl ||'
+.if defined(WITH_DIFFHEADERS) && !defined(WITHOUT_DIFFHEADERS)
+SITE_SUB+=	-e '/-D_FFR_DIFFHEADERS/s|^dnl ||'
 .endif
 
-.if defined(WITH_HASH_BUFFERING) && !defined(WITHOUT_HASH_BUFFERING)
-SITE_SUB+=	-e '/-D_FFR_HASH_BUFFERING/s|^dnl ||'
+.if defined(WITH_KEY_REUSE) && !defined(WITHOUT_KEY_REUSE)
+SITE_SUB+=	-e '/-D_FFR_KEY_REUSE/s|^dnl ||'
 .endif
 
 .if defined(WITH_QUERY_CACHE) && !defined(WITHOUT_QUERY_CACHE)
