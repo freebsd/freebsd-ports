@@ -10,6 +10,7 @@ lib/cmus/ip/wav.so
 %%MP4%%lib/cmus/ip/mp4.so
 %%AAC%%lib/cmus/ip/aac.so
 %%WAVPACK%%lib/cmus/ip/wavpack.so
+%%FFMPEG%%lib/cmus/ip/ffmpeg.so
 lib/cmus/op/oss.so
 %%AO%%lib/cmus/op/ao.so
 %%ARTS%%lib/cmus/op/arts.so
