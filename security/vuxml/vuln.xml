@@ -65,7 +65,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2007-2926</cvename>
-      <freebsdsa>FreeBSD-SA-07:07.bind</freebsdsa>
+      <freebsdsa>SA-07:07.bind</freebsdsa>
     </references>
     <dates>
       <discovery>2007-07-24</discovery>
@@ -1436,7 +1436,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2007-1536</cvename>
-      <freebsdsa>FreeBSD-SA-07:04.file</freebsdsa>
+      <freebsdsa>SA-07:04.file</freebsdsa>
     </references>
     <dates>
       <discovery>2007-05-23</discovery>
@@ -2445,7 +2445,7 @@ Note:  Please add new entries to the beginning of this file.
 	<name>FreeBSD</name>
 	<range><gt>6.1</gt><lt>6.1_12</lt></range>
 	<range><gt>6.0</gt><lt>6.0_17</lt></range>
-	<range><gt>5.5</gt><lt>5.5_10</lt></range>
+	<range><gt>5.5</gt><lt>5.5_15</lt></range>
       </system>
     </affects>
     <description>
@@ -2495,6 +2495,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-01-11</discovery>
       <entry>2007-02-27</entry>
+      <modified>2007-08-02</modified>
     </dates>
   </vuln>
 
