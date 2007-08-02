@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	dotlrn
-PORTVERSION=	2.3.0
+DISTVERSION=	2.3.0
+PORTREVISION=	1
 MASTER_SITES=	http://openacs.org/projects/dotlrn/download/download/
 EXTRACT_SUFX=	.tgz?revision_id=976988
 
