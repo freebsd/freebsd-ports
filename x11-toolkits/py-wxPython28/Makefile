@@ -35,6 +35,18 @@ WX_PREMK=	yes
 DEMO_DIR=	${PYTHONPREFIX_SITELIBDIR}/wxPython/demo
 WXPORT=		gtk2
 
+.if defined(WITH_COMMON_ONLY)
+PYDISTUTILS_NOEGGINFO=	yes
+.else
+.if defined(WITH_WXPYTHON_UNICODE)
+WX_PYTHON_DIR=	wx-${USE_WX}-${WXPORT}-unicode
+.else
+WX_PYTHON_DIR=	wx-${USE_WX}-${WXPORT}-ansi
+.endif
+PYDISTUTILS_EGGINFO=	${WX_PYTHON_DIR}/wxPython-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info \
+			wxaddons-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
+.endif
+
 post-extract:
 # only keep the scripts we need
 	@${RM} ${WRKSRC}/scripts/*.py
@@ -102,9 +114,6 @@ PKGNAMESUFFIX=	-unicode
 
 PYDISTUTILS_BUILDARGS+=	\
 			UNICODE=1
-WX_PYTHON_DIR=	wx-${WX_VERSION}-${WXPORT}-unicode
-. else
-WX_PYTHON_DIR=wx-${WX_VERSION}-${WXPORT}-ansi
 . endif # defined(WITH_WXPYTHON_UNICODE)
 
 # plist substitutions and library dirs
