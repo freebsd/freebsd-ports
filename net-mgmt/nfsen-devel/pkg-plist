@@ -3,14 +3,17 @@ bin/nfsen.rc
 bin/nfsend
 bin/RebuildHierarchy.pl
 bin/testPlugin
+bin/nfcomm.pl
 @unexec if cmp -s %D/etc/nfsen.conf %D/etc/nfsen-dist.conf; then rm -f %D/etc/nfsen.conf; fi
 @exec [ -f %D/etc/nfsen.conf ] || cp %D/etc/nfsen-dist.conf %D/etc/nfsen.conf
 etc/nfsen-dist.conf
 libexec/%%PORTNAME%%/CopyRecursive.pm
-libexec/%%PORTNAME%%/GenGraph.pl
 libexec/%%PORTNAME%%/Log.pm
+libexec/%%PORTNAME%%/Lookup.pm
+libexec/%%PORTNAME%%/NfAlert.pm
 libexec/%%PORTNAME%%/NfConf.pm
 libexec/%%PORTNAME%%/NfProfile.pm
+libexec/%%PORTNAME%%/NfSen.pm.orig
 libexec/%%PORTNAME%%/NfSen.pm
 libexec/%%PORTNAME%%/NfSenRC.pm
 libexec/%%PORTNAME%%/NfSenRRD.pm
@@ -22,22 +25,60 @@ libexec/%%PORTNAME%%/plugins/demoplugin.pm
 www/%%PORTNAME%%/conf.php
 www/%%PORTNAME%%/EmptyGraph.gif
 www/%%PORTNAME%%/ErrorGraph.gif
+www/%%PORTNAME%%/alerting.php.orig
+www/%%PORTNAME%%/alerting.php
+www/%%PORTNAME%%/colour_palette.html
+www/%%PORTNAME%%/colour_palette_custom.php
+www/%%PORTNAME%%/colour_picker.html
 www/%%PORTNAME%%/css-admin.html
 www/%%PORTNAME%%/css.html
 www/%%PORTNAME%%/details.php
-www/%%PORTNAME%%/edit.png
 www/%%PORTNAME%%/info.php
 www/%%PORTNAME%%/invisible.gif
+www/%%PORTNAME%%/lookup.php
 www/%%PORTNAME%%/navigator.php
-www/%%PORTNAME%%/navigator.php.orig
+www/%%PORTNAME%%/nfsen.php.orig
 www/%%PORTNAME%%/nfsen.php
 www/%%PORTNAME%%/nfsenutil.php
+www/%%PORTNAME%%/noscript.html
 www/%%PORTNAME%%/overview.php
 www/%%PORTNAME%%/pic.php
 www/%%PORTNAME%%/process.php
 www/%%PORTNAME%%/profileadmin.php
 www/%%PORTNAME%%/rrdgraph.php
-www/%%PORTNAME%%/trash.png
+www/%%PORTNAME%%/css/alerting.css
+www/%%PORTNAME%%/css/detail.css
+www/%%PORTNAME%%/css/lookup.css
+www/%%PORTNAME%%/css/nfsen.css
+www/%%PORTNAME%%/css/profileadmin.css
+www/%%PORTNAME%%/icons/arrow.blue.down.png
+www/%%PORTNAME%%/icons/arrow.blue.right.png
+www/%%PORTNAME%%/icons/arrow.yellow.down.png
+www/%%PORTNAME%%/icons/arrow.yellow.right.png
+www/%%PORTNAME%%/icons/close.gif
+www/%%PORTNAME%%/icons/cursor-line.gif
+www/%%PORTNAME%%/icons/cursor-start.gif
+www/%%PORTNAME%%/icons/cursor-stop.gif
+www/%%PORTNAME%%/icons/edit.png
+www/%%PORTNAME%%/icons/help.png
+www/%%PORTNAME%%/icons/invisible.gif
+www/%%PORTNAME%%/icons/minus.gif
+www/%%PORTNAME%%/icons/ok.png
+www/%%PORTNAME%%/icons/plus.gif
+www/%%PORTNAME%%/icons/plus.png
+www/%%PORTNAME%%/icons/progress.png
+www/%%PORTNAME%%/icons/save.png
+www/%%PORTNAME%%/icons/shade.gif
+www/%%PORTNAME%%/icons/shadeactive.gif
+www/%%PORTNAME%%/icons/space.png
+www/%%PORTNAME%%/icons/spyglas.png
+www/%%PORTNAME%%/icons/trash.png
+www/%%PORTNAME%%/js/ColorPicker2.js
+www/%%PORTNAME%%/js/alerting.js
+www/%%PORTNAME%%/js/detail.js
+www/%%PORTNAME%%/js/global.js
+www/%%PORTNAME%%/js/menu.js
+www/%%PORTNAME%%/js/profileadmin.js
 www/%%PORTNAME%%/plugins/demoplugin.php
 www/%%PORTNAME%%/doc/BSD-license.html
 www/%%PORTNAME%%/doc/Bookmark.png
@@ -78,7 +119,10 @@ www/%%PORTNAME%%/doc/selectprofile.png
 www/%%PORTNAME%%/doc/stat.png
 www/%%PORTNAME%%/doc/views-2.png
 www/%%PORTNAME%%/doc/views.png
+@dirrm www/%%PORTNAME%%/css
 @dirrm www/%%PORTNAME%%/plugins
+@dirrm www/%%PORTNAME%%/icons
+@dirrm www/%%PORTNAME%%/js
 @dirrm www/%%PORTNAME%%/doc
 @dirrm www/%%PORTNAME%%
 @exec mkdir -p %D/var/%%PORTNAME%%/profiles/live/upstream1
@@ -86,7 +130,7 @@ var/%%PORTNAME%%/profiles/live/upstream1.rrd
 var/%%PORTNAME%%/profiles/live/profile.dat
 @exec mkdir -p %D/var/%%PORTNAME%%/run
 @exec mkdir -p %D/var/%%PORTNAME%%/filters
-@dirrm var/%%PORTNAME%%/run
+@dirrmtry var/%%PORTNAME%%/run
 @dirrm var/%%PORTNAME%%/filters
 @dirrmtry var/%%PORTNAME%%/profiles/live/upstream1
 @dirrmtry var/%%PORTNAME%%/profiles/live
