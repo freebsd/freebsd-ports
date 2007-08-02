@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	svnkit
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.1.4
 CATEGORIES=	devel java
 MASTER_SITES=	http://svnkit.com/
 DISTNAME=	org.tmatesoft.svn_${PORTVERSION}.standalone
@@ -29,11 +28,12 @@ DATA_FILES=	COPYING GANYMED-LICENSE JAVAHL-LICENSE SEQUENCE-LICENSE \
 		svnkit-cli.jar svnkit-javahl.jar svnkit.jar ganymed.jar \
 		README.txt
 
-PLIST_FILES=	bin/javasvn bin/svnkit bin/svnsync \
+PLIST_FILES=	bin/jsvn bin/jsvnadmin bin/jsvnlook \
+		bin/jsvnsync bin/jsvnversion \
 		${DATA_FILES:S,^,%%DATADIR%%/,}
 PLIST_DIRS=	%%DATADIR%%
 
-SUB_FILES=	javasvn.sh svnsync.sh
+SUB_FILES=	javasvn.sh svnsync.sh jsvnadmin.sh jsvnlook.sh jsvnversion.sh
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -44,9 +44,12 @@ do-install:
 .for file in ${DATA_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
 .endfor
-	${INSTALL_SCRIPT} ${WRKDIR}/svnsync.sh ${PREFIX}/bin/svnsync
-	${INSTALL_SCRIPT} ${WRKDIR}/javasvn.sh ${PREFIX}/bin/javasvn
-	${LN} ${PREFIX}/bin/javasvn ${PREFIX}/bin/svnkit
+	${INSTALL_SCRIPT} ${WRKDIR}/javasvn.sh ${PREFIX}/bin/jsvn
+	${INSTALL_SCRIPT} ${WRKDIR}/svnsync.sh ${PREFIX}/bin/jsvnsync
+	${INSTALL_SCRIPT} ${WRKDIR}/jsvnadmin.sh ${PREFIX}/bin/jsvnadmin
+	${INSTALL_SCRIPT} ${WRKDIR}/jsvnlook.sh ${PREFIX}/bin/jsvnlook
+	${INSTALL_SCRIPT} ${WRKDIR}/jsvnversion.sh ${PREFIX}/bin/jsvnversion
+
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc/javadoc && \
 		${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
