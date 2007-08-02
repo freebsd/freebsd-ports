@@ -1077,6 +1077,7 @@
     SUBDIR += ruby-tmpl
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionwebservice
+    SUBDIR += rubygem-amazon-ecs
     SUBDIR += rubygem-bluecloth
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-hpricot
