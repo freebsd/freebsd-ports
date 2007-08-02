@@ -175,7 +175,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="ff284bf0-3f32-11dc-a79a-0016179b2dd5">
-    <cancelled/>
+    <cancelled superseded="2dc764fa-40c0-11dc-aeac-02e0185f8d72"/>
   </vuln>
 
   <vuln vid="863f95d3-3df1-11dc-b3d3-0016179b2dd5">
