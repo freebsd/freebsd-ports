@@ -322,6 +322,7 @@ akpop3d		ports/mail/akpop3d
 alabastra	ports/devel/alabastra
 alac		ports/audio/alac
 alacarte	ports/deskutils/alacarte
+albumshaper	ports/graphics/albumshaper
 ald		ports/devel/ald
 aldo		ports/comms/aldo
 ale		ports/graphics/ale
