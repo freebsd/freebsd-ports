@@ -38,12 +38,12 @@ PORTDOCS=	AUTHORS CREDITS ChangeLog FAQ README TODO
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LIRC)
-LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=		lirc_client.1:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=	--with-lirc
 .endif
 
 .if !defined(WITHOUT_SIDPLAY)
-LIB_DEPENDS+=	sidplay.1:${PORTSDIR}/audio/libsidplay
+LIB_DEPENDS+=		sidplay.1:${PORTSDIR}/audio/libsidplay
 .else
 CONFIGURE_ARGS+=	--without-sidplay
 .endif
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--without-sidplay
 .if defined(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=	--without-oggvorbis
 .else
-LIB_DEPENDS+=	vorbisfile.5:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=		vorbisfile.5:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if !defined(WITHOUT_SDL)
@@ -59,6 +59,14 @@ CONFIGURE_ARGS+=	--with-sdl
 USE_SDL=	yes
 .else
 CONFIGURE_ARGS+=	--without-sdl
+.endif
+
+.if defined(WITH_NAS)
+CONFIGURE_ARGS+=	--with-nas
+LIB_DEPENDS+=		audio.2:${PORTSDIR}/audio/nas
+LDFLAGS+=		-laudio
+.else
+CONFIGURE_ARGS+=	--without-nas
 .endif
 
 .if ${HAVE_GNOME:Mesound} != ""
