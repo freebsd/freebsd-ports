@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	5.5
+PORTVERSION=	5.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	A source code tag system
 
 GNU_CONFIGURE=	yes
