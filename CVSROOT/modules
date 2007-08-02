@@ -8128,6 +8128,7 @@ nexuiz		ports/games/nexuiz
 nfdump		ports/net-mgmt/nfdump
 nfdump-devel	ports/net-mgmt/nfdump-devel
 nfsen		ports/net-mgmt/nfsen
+nfsen-devel	ports/net-mgmt/nfsen-devel
 nfsshell	ports/net/nfsshell
 ng_car		ports/net/ng_car
 ng_daphne	ports/net/ng_daphne
