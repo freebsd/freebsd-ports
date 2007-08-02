@@ -19,16 +19,24 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-install pkg-deinstall
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui imageformats moc network qmake rcc sql uic xml
+QT_COMPONENTS=	gui imageformats_run moc_build network qmake_build rcc sql \
+		uic_build xml
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ENV+=	X11BASE=${X11BASE}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700042 && ${ARCH} == "amd64"
+USE_GCC=4.2+
+.endif
+
 post-build:
 	cd ${WRKSRC}/src/output/RtAudio && \
-	${QMAKE} -spec freebsd-g++ && make
+	${QMAKE} -spec freebsd-g++ "QMAKE_CXX=${CXX}" "QMAKE_LINK=${CXX}" \
+		"QMAKE_LINK_SHLIB=${CXX}" && make
 	${REINPLACE_CMD} -e 's|`dirname $$0`|${DATADIR}|g' \
 		${WRKSRC}/bin/last.fm
 
@@ -44,4 +52,4 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
