@@ -9,8 +9,12 @@ OPENACS_GROUP=%%OPENACS_GROUP%%
 OPENACS_USER=%%OPENACS_USER%%
 OPENACSBASE=%%OPENACSBASE%%
 
-if ! pw groupshow "${OPENACS_GROUP}" 2>/dev/null 1>&2; then
-	if pw groupadd ${OPENACS_GROUP}; then
+CHMOD=%%CHMOD%%
+CHOWN=%%CHOWN%%
+PW=%%PW%%
+
+if ! ${PW} groupshow "${OPENACS_GROUP}" 2>/dev/null 1>&2; then
+	if ${PW} groupadd ${OPENACS_GROUP}; then
 		echo "Added group \"${OPENACS_GROUP}\"."
 	else
 		echo "Adding group \"${OPENACS_GROUP}\" failed..."
@@ -18,8 +22,8 @@ if ! pw groupshow "${OPENACS_GROUP}" 2>/dev/null 1>&2; then
 	fi
 fi
 
-if ! pw usershow "${OPENACS_USER}" 2>/dev/null 1>&2; then
-	if pw useradd ${OPENACS_USER} -g ${OPENACS_GROUP} -h - \
+if ! ${PW} usershow "${OPENACS_USER}" 2>/dev/null 1>&2; then
+	if ${PW} useradd ${OPENACS_USER} -g ${OPENACS_GROUP} -h - \
 		-s "/bin/sh" -d "${OPENACSBASE}" \
 		-c "OpenACS instance pseudo-user"; \
 	then
@@ -30,5 +34,5 @@ if ! pw usershow "${OPENACS_USER}" 2>/dev/null 1>&2; then
 	fi
 fi
 	echo "Seting permissions of files"
-	chmod -R 770 ${OPENACSBASE}
-	chown -R ${OPENACS_USER}:${OPENACS_GROUP} ${OPENACSBASE}
+	${CHMOD} -R 770 ${OPENACSBASE}
+	${CHOWN} -R ${OPENACS_USER}:${OPENACS_GROUP} ${OPENACSBASE}
