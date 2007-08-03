@@ -15,9 +15,12 @@ include/gstreamer-%%VERSION%%/gst/base/gstbasesink.h
 include/gstreamer-%%VERSION%%/gst/base/gstbasesrc.h
 include/gstreamer-%%VERSION%%/gst/base/gstbasetransform.h
 include/gstreamer-%%VERSION%%/gst/base/gstcollectpads.h
+include/gstreamer-%%VERSION%%/gst/base/gstdataqueue.h
 include/gstreamer-%%VERSION%%/gst/base/gstpushsrc.h
 include/gstreamer-%%VERSION%%/gst/base/gsttypefindhelper.h
 include/gstreamer-%%VERSION%%/gst/controller/gstcontroller.h
+include/gstreamer-%%VERSION%%/gst/controller/gstcontrolsource.h
+include/gstreamer-%%VERSION%%/gst/controller/gstinterpolationcontrolsource.h
 include/gstreamer-%%VERSION%%/gst/dataprotocol/dataprotocol.h
 include/gstreamer-%%VERSION%%/gst/glib-compat.h
 include/gstreamer-%%VERSION%%/gst/gst.h
@@ -29,7 +32,6 @@ include/gstreamer-%%VERSION%%/gst/gstchildproxy.h
 include/gstreamer-%%VERSION%%/gst/gstclock.h
 include/gstreamer-%%VERSION%%/gst/gstcompat.h
 include/gstreamer-%%VERSION%%/gst/gstconfig.h
-include/gstreamer-%%VERSION%%/gst/base/gstdataqueue.h
 include/gstreamer-%%VERSION%%/gst/gstelement.h
 include/gstreamer-%%VERSION%%/gst/gstelementfactory.h
 include/gstreamer-%%VERSION%%/gst/gstenumtypes.h
@@ -50,6 +52,7 @@ include/gstreamer-%%VERSION%%/gst/gstminiobject.h
 include/gstreamer-%%VERSION%%/gst/gstobject.h
 include/gstreamer-%%VERSION%%/gst/gstpad.h
 include/gstreamer-%%VERSION%%/gst/gstpadtemplate.h
+include/gstreamer-%%VERSION%%/gst/gstparamspecs.h
 include/gstreamer-%%VERSION%%/gst/gstparse.h
 include/gstreamer-%%VERSION%%/gst/gstpipeline.h
 include/gstreamer-%%VERSION%%/gst/gstplugin.h
@@ -114,6 +117,7 @@ share/locale/cs/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/da/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/de/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/locale/fi/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/fr/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/gstreamer-%%VERSION%%.mo
@@ -127,10 +131,10 @@ share/locale/uk/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+@dirrm lib/gstreamer-%%VERSION%%
 @dirrm include/gstreamer-%%VERSION%%/gst/net
 @dirrm include/gstreamer-%%VERSION%%/gst/dataprotocol
 @dirrm include/gstreamer-%%VERSION%%/gst/controller
 @dirrm include/gstreamer-%%VERSION%%/gst/base
 @dirrm include/gstreamer-%%VERSION%%/gst
 @dirrm include/gstreamer-%%VERSION%%
-@dirrm lib/gstreamer-%%VERSION%%
