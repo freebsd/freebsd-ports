@@ -7,14 +7,14 @@
 
 PORTNAME=	newt
 PORTVERSION=	0.51.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		# ftp://ftp.redhat.com/pub/redhat/linux/rawhide/SRPMS/SRPMS/
 MASTER_SITE_SUBDIR=	perky
-PKGNAMESUFFIX=	${PYTHONSUFFIX}${TCLSUFFIX}${I18NSUFFIX}
+PKGNAMESUFFIX=	${PYTHONSUFFIX}${TCLSUFFIX}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Not Erik's Windowing Toolkit:  console I/O handling library#'
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
@@ -50,18 +50,11 @@ PLIST_SUB+=	TCLOPT="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 500038
-PATCH_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.freebsd.org/~perky/distfiles/
-PATCH_SITE_SUBDIR=	perky
-PATCHFILES=	newt-${PORTVERSION}-dei18n.diff.gz
-PATCH_DIST_STRIP=	-p1
-I18NSUFFIX=	-noi18n
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's,^\(SONAME=\).*,\1${SOVERSION},g' \
 		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,PyMem_DEL,PyObject_DEL,g' \
+		${WRKSRC}/snackmodule.c
 
 .if defined(WITH_PYTHON)
 post-build:

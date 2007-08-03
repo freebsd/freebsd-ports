@@ -1,6 +1,3 @@
 MD5 (newt-0.51.0.tar.gz) = 33e9bbf29126dfdc0bd4b6bd1509b62d
 SHA256 (newt-0.51.0.tar.gz) = 45c617654c466eeb56cf62eb45a66acea0e84039c7b16ce7172fb5567001642f
 SIZE (newt-0.51.0.tar.gz) = 108158
-MD5 (newt-0.51.0-dei18n.diff.gz) = be97e7220064696c67f3b4c4a581161d
-SHA256 (newt-0.51.0-dei18n.diff.gz) = 6baaa26f2ce56ab3340ee453d3566775f75d030e29ab9bac59f8ca9e0bccecca
-SIZE (newt-0.51.0-dei18n.diff.gz) = 3594
