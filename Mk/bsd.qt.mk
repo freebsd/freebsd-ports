@@ -51,6 +51,11 @@ MOC?=		${QT_PREFIX}/bin/moc-qt4
 UIC?=		${QT_PREFIX}/bin/uic-qt4
 QMAKE?=		${QT_PREFIX}/bin/qmake-qt4
 QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-g++
+QMAKEFLAGS+=	QMAKE_CC="${CC}" QMAKE_CXX="${CXX}" QMAKE_LINK_SHLIB="${CXX}" \
+		QMAKE_LINK="${CXX}" QMAKE_CFLAGS="${CFLAGS}" \
+		QMAKE_CXXFLAGS="${CXXFLAGS}" \
+		QMAKE_CFLAGS_THREAD="${PTHREAD_CFLAGS}" \
+		QMAKE_LFLAGS_THREAD="${PTHREAD_LIBS}"
 
 .if ${OSVERSION} < 700042 && ${ARCH} == "amd64"
 QTCPPFLAGS?=	-fno-gcse
