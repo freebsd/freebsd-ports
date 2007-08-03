@@ -16,14 +16,5 @@ $FreeBSD$
 +char dtd_path[128] = "%%PREFIX%%/share/ndpmon/neighbor_list.dtd";
 +char dtd_config_path[128] = "%%PREFIX%%/share/ndpmon/config_ndpmon.dtd";
  
- #ifdef _MACRESOLUTION_
- manufacturer_t *manuf = NULL;
-@@ -438,7 +438,7 @@
- 
- 
- 	/* open device for reading */
--	descr = pcap_open_live(interface,BUFSIZ,1,-1,errbuf);
-+	descr = pcap_open_live(interface,BUFSIZ,1,1000,errbuf);
- 	if(descr == NULL)
- 	{
- 		fprintf(stderr,"pcap_open_live(): %s\n",errbuf); exit(1);
+ struct action_selector action_low_pri, action_high_pri;
+ int use_reverse_hostlookups;
