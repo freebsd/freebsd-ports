@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cenon
-PORTVERSION=	3.82
-PORTREVISION=	1
+PORTVERSION=	3.83
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://www.vhf-group.com/vhfInterservice/download/source/
 DISTNAME=	Cenon-${PORTVERSION}
