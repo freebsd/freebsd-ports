@@ -5,39 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	postgres
-PORTVERSION=	0.7.1
-PORTREVISION=	2
-CATEGORIES=	databases ruby
-MASTER_SITES=	http://ruby.scripting.ca/postgres/archive/
-PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
-DIST_SUBDIR=	ruby
+PORTNAME=	ruby-postgres
+PORTVERSION=	0.7.1.2006.04.06
+CATEGORIES=	databases rubygems
+MASTER_SITES=   ${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=     ${PORTNAME}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ruby interface to PostgreSQL library
 
 USE_PGSQL=	yes
-USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
 
-CONFIGURE_ARGS=	--with-pgsql-include-dir="${LOCALBASE}/include"
-INSTALL_TARGET=	site-install
+PG_CONFIG=	${LOCALBASE}/bin/pg_config
+CONFIGURE_ARGS=	--with-pgsql-include-dir=`${PG_CONFIG} --includedir` \
+		--with-pgsql-lib-dir=`${PG_CONFIG} --libdir`
 
-DOCS_EN=	ChangeLog README doc/postgres.html
-DOCS_JA=	README.ja doc/postgres.jp.html
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
-.for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
-.endfor
-.endif
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
+.include <bsd.port.post.mk>
