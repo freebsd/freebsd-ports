@@ -27,6 +27,7 @@ MAKE_ENV+=	KMODDIR=${KMODDIR}
 
 PLIST_FILES=	"@cwd %%KMODDIR%%"
 PLIST_FILES+=	mono.ko
+PLIST_FILES+=	"@unexec kldxref ${KMODDIR}"
 
 .include <bsd.port.pre.mk>
 
