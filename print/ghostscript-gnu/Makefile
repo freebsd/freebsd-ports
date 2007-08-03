@@ -94,7 +94,7 @@ XCFLAGS+=	-DA4
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
 CONFLICTS+=	ghostscript-gnu-[0-9]*
 .else
-USE_XLIB=	yes
+USE_XORG=	xt xext
 CONFLICTS+=	ghostscript-gnu-nox11-*
 .endif
 

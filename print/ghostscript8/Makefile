@@ -74,7 +74,7 @@ MSG_PAPERSIZE=	"NOTE: Default paper size will be A4."
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
 .else
-USE_XLIB=	yes
+USE_XORG=	xt xext
 .endif
 
 .if defined(WITH_SVGALIB)
