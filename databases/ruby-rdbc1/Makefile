@@ -18,7 +18,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby Database Connectivity
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/postgres.so:${.CURDIR}/../ruby-postgres
+RUN_DEPENDS=	rubygem-ruby-postgres>=0:${PORTSDIR}/databases/rubygem-postgres
 
 USE_RUBY=	yes
 

@@ -44,7 +44,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/mysql.so:${PORTSDIR}/databases/ruby-mysql
 .endif
 
 .if defined(WITH_NATIVE_POSTGRESQL)
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/postgres.so:${PORTSDIR}/databases/ruby-postgres
+RUN_DEPENDS+=	rubygem-ruby-postgres>=0:${PORTSDIR}/databases/rubygem-postgres
 .endif
 
 .if defined(WITH_NATIVE_SQLITE3)
