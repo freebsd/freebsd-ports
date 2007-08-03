@@ -33,10 +33,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GCC=4.2+
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's|bash|sh|g' -e 's|qmake|${QMAKE}|g' \
+			-E -e 's|(.*"CONFIG-=debug")|\1 ${QMAKEFLAGS}|g' \
+		${WRKSRC}/configure
+
 post-build:
 	cd ${WRKSRC}/src/output/RtAudio && \
-	${QMAKE} -spec freebsd-g++ "QMAKE_CXX=${CXX}" "QMAKE_LINK=${CXX}" \
-		"QMAKE_LINK_SHLIB=${CXX}" && make
+	${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} && make
 	${REINPLACE_CMD} -e 's|`dirname $$0`|${DATADIR}|g' \
 		${WRKSRC}/bin/last.fm
 
