@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.13
+PORTVERSION=	0.10.14
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 		${MASTER_SITE_LOCAL}
