@@ -1,0 +1,8 @@
+twitter.com provides a web 2.0 type of ubiquitous presence.
+This module allows you to set your status, as well as the statuses of
+your friends.
+
+You can view the latest status of Net::Twitter on it's own twitter
+timeline at http://twitter.com/net_twitter
+
+WWW:	http://search.cpan.org/dist/Net-Twitter/
