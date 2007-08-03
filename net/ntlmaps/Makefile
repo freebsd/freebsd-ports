@@ -6,21 +6,27 @@
 
 PORTNAME=	ntlmaps
 PORTVERSION=	0.9.9.0.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A proxy software that authenticates using the NTLM protocol
+COMMENT=	A proxy that authenticates the user using the NTLM protocol
 
 USE_PYTHON=	yes
-NO_BUILD=	yes
 
 DOCS=		COPYING Install.txt changelog.txt readme.txt research.txt
 
 post-patch:
 	${REINPLACE_CMD} -e \
 	    's,^#! /usr/bin/python,#!${PYTHON_CMD},' ${WRKSRC}/main.py
+	@${RM} -rf ${WRKSRC}/main.py.bak
+
+do-build:
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -30,8 +36,8 @@ do-install:
 .endif
 	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
 	@${MKDIR} ${PREFIX}/share/examples/ntlmaps
-	${INSTALL_DATA} ${WRKSRC}/*.py ${PYTHON_SITELIBDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/lib/*.py ${PYTHON_SITELIBDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/*.py* ${PYTHON_SITELIBDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/lib/*.py* ${PYTHON_SITELIBDIR}/${PORTNAME}
 	${CHMOD} +x ${PYTHON_SITELIBDIR}/${PORTNAME}/main.py
 	${LN} -fs ${PYTHON_SITELIBDIR}/${PORTNAME}/main.py ${PREFIX}/bin/ntlmaps
 	${INSTALL_DATA} ${WRKSRC}/server.cfg ${PREFIX}/share/examples/ntlmaps
