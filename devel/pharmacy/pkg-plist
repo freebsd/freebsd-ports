@@ -1,5 +1,5 @@
 bin/pharmacy
-share/gnome/apps/Applications/pharmacy.desktop
+share/gnome/apps/Development/pharmacy.desktop
 share/gnome/help/pharmacy/C/apx1.html
 share/gnome/help/pharmacy/C/checkout.html
 share/gnome/help/pharmacy/C/console.html
@@ -14,6 +14,10 @@ share/gnome/help/pharmacy/C/web.html
 share/gnome/pixmaps/pharmacy.png
 share/locale/de/LC_MESSAGES/pharmacy.mo
 share/locale/fr/LC_MESSAGES/pharmacy.mo
+share/locale/it/LC_MESSAGES/pharmacy.mo
+share/locale/ja/LC_MESSAGES/pharmacy.mo
 share/locale/ko/LC_MESSAGES/pharmacy.mo
+share/locale/pt_BR/LC_MESSAGES/pharmacy.mo
+share/locale/ru/LC_MESSAGES/pharmacy.mo
 @dirrm share/gnome/help/pharmacy/C
 @dirrm share/gnome/help/pharmacy
