@@ -14514,6 +14514,7 @@ shell-include	ports/shells/shell-include
 shellac		ports/audio/shellac
 shelldap	ports/net/shelldap
 shftool		ports/converters/shftool
+shibboleth-sp	ports/security/shibboleth-sp
 shim		ports/graphics/shim
 shishi		ports/security/shishi
 shlock		ports/sysutils/shlock
