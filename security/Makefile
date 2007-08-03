@@ -669,6 +669,7 @@
     SUBDIR += sguil-sensor
     SUBDIR += sguil-server
     SUBDIR += sha
+    SUBDIR += shibboleth-sp
     SUBDIR += shishi
     SUBDIR += shttpscanner
     SUBDIR += sig2dot
