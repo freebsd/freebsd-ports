@@ -128,4 +128,9 @@ post-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
+cklatest:
+	@-ncftpls \
+	    ftp://ftp.cwru.edu/pub/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/\.[0-9a-z]*$//}-patches/ \
+		| ${TAIL}
+
 .include <bsd.port.post.mk>
