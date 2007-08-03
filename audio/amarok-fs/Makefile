@@ -7,7 +7,7 @@
 
 PORTNAME=	amarok-fs
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/ \
 		${MASTER_SITE_GENTOO}

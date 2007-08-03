@@ -1,19 +1,19 @@
 bin/amarokFS
-share/amarok-fs/images/gradient.png
-share/amarok-fs/images/logo.png
-share/amarok-fs/images/logoB.png
-share/amarok-fs/images/player_end.png
-share/amarok-fs/images/player_end2.png
-share/amarok-fs/images/player_pause.png
-share/amarok-fs/images/player_pause2.png
-share/amarok-fs/images/player_play.png
-share/amarok-fs/images/player_play2.png
-share/amarok-fs/images/player_start.png
-share/amarok-fs/images/player_start2.png
-share/amarok-fs/images/player_stop.png
-share/amarok-fs/images/player_stop2.png
-share/amarok-fs/theme.xml
+share/amarokFS/images/gradient.png
+share/amarokFS/images/logo.png
+share/amarokFS/images/logoB.png
+share/amarokFS/images/player_end.png
+share/amarokFS/images/player_end2.png
+share/amarokFS/images/player_pause.png
+share/amarokFS/images/player_pause2.png
+share/amarokFS/images/player_play.png
+share/amarokFS/images/player_play2.png
+share/amarokFS/images/player_start.png
+share/amarokFS/images/player_start2.png
+share/amarokFS/images/player_stop.png
+share/amarokFS/images/player_stop2.png
+share/amarokFS/theme.xml
 share/applications/amarokFS.desktop
 share/icons/hicolor/128x128/apps/amarokFS.png
-@dirrm share/amarok-fs/images
-@dirrm share/amarok-fs
+@dirrm share/amarokFS/images
+@dirrm share/amarokFS
