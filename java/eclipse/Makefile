@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	eclipse
-PORTVERSION=	3.2.1
-PORTREVISION=	3
+PORTVERSION=	3.2.2
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200609210945
+MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200702121330
 DISTNAME=	${PORTNAME}-sourceBuild-srcIncluded-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	dsledge@appriss.com
+MAINTAINER=	freebsd-eclipse@freebsd.org
 COMMENT=	An open extensible IDE for anything and nothing in particular
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
@@ -55,8 +54,8 @@ USE_GNOME=	gtk20 gnomevfs2 libgnome libgnomeui pkgconfig desktopfileutils
 .if defined(WITHOUT_CAIRO)
 MAKE_CAIRO=
 .else
-LIB_DEPENDS=    cairo.2:${PORTSDIR}/graphics/cairo
-MAKE_CAIRO=     make_cairo
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
+MAKE_CAIRO=	make_cairo
 .endif
 
 .include <bsd.port.pre.mk>
@@ -97,7 +96,6 @@ SWTMOZ=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT Mozilla
 post-patch:
 	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/build.sh" ${FILESDIR}/post-patch-plugins-swt-gtk-build.sh
 	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/make_freebsd.mak" ${FILESDIR}/post-patch-plugins-swt-gtk-make_freebsd.mak
-	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/os_custom.h" ${FILESDIR}/post-patch-plugins-swt-gtk-os_custom.h
 	@${PATCH} ${PATCH_DIST_ARGS} "${SWTMOZ}/gtk/org/eclipse/swt/browser/Browser.java" ${FILESDIR}/post-patch-plugins-swt-mozilla-Browser.java
 	@${PATCH} ${PATCH_DIST_ARGS} "${SWTMOZ}/common/org/eclipse/swt/internal/mozilla/XPCOM.java" ${FILESDIR}/post-patch-plugins-swt-mozilla-XPCOM.java
 	@${PATCH} ${PATCH_DIST_ARGS} "${WRKSRC}/plugins/org.eclipse.swt.tools/JNI Generation/org/eclipse/swt/tools/internal/org.eclipse.swt.internal.mozilla.XPCOM.properties" ${FILESDIR}/post-patch-plugins-swt-mozilla-XPCOM.properties
