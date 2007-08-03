@@ -6,6 +6,7 @@
 
 PORTNAME=	newsbeuter
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://synflood.at/newsbeuter/
 
