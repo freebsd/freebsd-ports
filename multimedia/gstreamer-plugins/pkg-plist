@@ -38,6 +38,17 @@ include/gstreamer-%%VERSION%%/gst/rtp/gstbasertpdepayload.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstbasertppayload.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstrtcpbuffer.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstrtpbuffer.h
+include/gstreamer-%%VERSION%%/gst/rtsp/gstrtsp-enumtypes.h
+include/gstreamer-%%VERSION%%/gst/rtsp/gstrtspbase64.h
+include/gstreamer-%%VERSION%%/gst/rtsp/gstrtspconnection.h
+include/gstreamer-%%VERSION%%/gst/rtsp/gstrtspdefs.h
+include/gstreamer-%%VERSION%%/gst/rtsp/gstrtspextension.h
+include/gstreamer-%%VERSION%%/gst/rtsp/gstrtspmessage.h
+include/gstreamer-%%VERSION%%/gst/rtsp/gstrtsprange.h
+include/gstreamer-%%VERSION%%/gst/rtsp/gstrtsptransport.h
+include/gstreamer-%%VERSION%%/gst/rtsp/gstrtspurl.h
+include/gstreamer-%%VERSION%%/gst/sdp/gstsdp.h
+include/gstreamer-%%VERSION%%/gst/sdp/gstsdpmessage.h
 include/gstreamer-%%VERSION%%/gst/tag/tag.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideofilter.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideosink.h
@@ -136,6 +147,14 @@ lib/libgstrtp-%%VERSION%%.a
 lib/libgstrtp-%%VERSION%%.la
 lib/libgstrtp-%%VERSION%%.so
 lib/libgstrtp-%%VERSION%%.so.0
+lib/libgstrtsp-%%VERSION%%.a
+lib/libgstrtsp-%%VERSION%%.la
+lib/libgstrtsp-%%VERSION%%.so
+lib/libgstrtsp-%%VERSION%%.so.0
+lib/libgstsdp-%%VERSION%%.a
+lib/libgstsdp-%%VERSION%%.la
+lib/libgstsdp-%%VERSION%%.so
+lib/libgstsdp-%%VERSION%%.so.0
 lib/libgsttag-%%VERSION%%.a
 lib/libgsttag-%%VERSION%%.la
 lib/libgsttag-%%VERSION%%.so
@@ -162,6 +181,8 @@ share/locale/uk/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/video
 @dirrm include/gstreamer-%%VERSION%%/gst/tag
+@dirrm include/gstreamer-%%VERSION%%/gst/sdp
+@dirrm include/gstreamer-%%VERSION%%/gst/rtsp
 @dirrm include/gstreamer-%%VERSION%%/gst/rtp
 @dirrm include/gstreamer-%%VERSION%%/gst/riff
 @dirrm include/gstreamer-%%VERSION%%/gst/pbutils
