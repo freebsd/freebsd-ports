@@ -1,5 +1,3 @@
-# ex:ts=8
-#
 # New ports collection makefile for:	knowit
 # Date created:			2002/12/08
 # Whom:				Alan Eldridge <ports@geeksrus.net>
@@ -11,7 +9,7 @@ PORTNAME=	knowit
 PORTVERSION=	0.10
 PORTREVISION=	4
 CATEGORIES=	deskutils
-MASTER_SITES=	http://knowit.sourceforge.net/files/
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A note manager with tree organization that uses RTF for storage
