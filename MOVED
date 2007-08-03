@@ -3138,3 +3138,4 @@ www/p5-Kwiki-Icons-Gnome||2007-08-01|Has expired: already bundled in www/p5-Kwik
 x11-fm/endeavour||2007-08-01|Has expired: Development ceased, this port should be updated to Endeavour Mark II
 security/p5-openxpki-client-soap-lite||2007-08-01|Has expired: No longer maintained by Developers.
 net-mgmt/aircrack|net-mgmt/aircrack-ng|2007-08-01|Has expired: Please use net-mgmt/aircrack-ng
+databases/ruby-postgres|databases/rubygem-postgres|2007-08-03|Port updated in rubygem version
