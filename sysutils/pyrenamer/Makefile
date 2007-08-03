@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyrenamer
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	sysutils python gnome
 MASTER_SITES=	http://www.infinicode.org/code/${PORTNAME}/
 
@@ -19,7 +19,10 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/eyeD3/__init__.py:${PORTSDIR}/audio/py-eyed3
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gconf2 pygtk2
 USE_PYTHON=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README
 MAN1=		pyrenamer.1
