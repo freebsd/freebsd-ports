@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORT
 RUN_DEPENDS=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel \
 		migemo:${PORTSDIR}/japanese/migemo
 
+CONFLICTS=	ja-migemo-emacs22-[0-9]*
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD}
 ALL_TARGET=	migemo.elc
