@@ -7,6 +7,7 @@
 
 PORTNAME=	freesynd
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freesynd
@@ -24,11 +25,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 SUB_FILES=	freesynd.sh
 
+post-patch:
+	@${REINPLACE_CMD} 's|-lpng|-lpng -L${LOCALBASE}/lib|g; \
+		s|g++|${CXX}|g; \
+		s|CXXFLAGS +=|CXXFLAGS=${CXXFLAGS} -DSYSTEM_SDL -DUSE_RWOPS|;' \
+		${WRKSRC}/Makefile
+
 do-install:
 	${MKDIR} ${DATADIR}/data
 	${INSTALL_PROGRAM} ${WRKSRC}/freesynd ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/freesynd.sh ${PREFIX}/bin
-	${CP} ${WRKDIR}/${PORTNAME}/assassinate.mp3 ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/*.mp3 ${DATADIR}
 .for datafile in ${WRKDIR}/${PORTNAME}/data/*
 	${INSTALL_DATA} ${WRKDIR}/${datafile} ${DATADIR}/data
 .endfor

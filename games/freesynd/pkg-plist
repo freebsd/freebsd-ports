@@ -384,6 +384,6 @@ bin/freesynd.sh
 %%DATADIR%%/data/sound-1.tab
 %%DATADIR%%/data/syngame.xmi
 %%DATADIR%%/freesynd
+%%DATADIR%%/intro.mp3
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrm share/freesynd
