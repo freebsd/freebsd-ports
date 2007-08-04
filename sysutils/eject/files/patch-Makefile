@@ -1,0 +1,11 @@
+--- Makefile.orig	2007-08-04 13:17:07.000000000 +0400
++++ Makefile	2007-08-04 13:17:14.000000000 +0400
+@@ -5,7 +5,7 @@
+ PROG= eject
+ 
+ BINOWN= root
+-BINMODE= 4555
++BINMODE= 555
+ BINDIR= ${PREFIX}/sbin
+ 
+ MANDIR= ${PREFIX}/man/man

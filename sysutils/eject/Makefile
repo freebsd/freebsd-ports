@@ -7,7 +7,7 @@
 
 PORTNAME=	eject
 PORTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
 		ftp://ftp4.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for ejecting media from CD or optical disk drive
-
-FORBIDDEN=	Setuid root and has security issues
 
 PLIST_FILES=	sbin/eject
 PORTDOCS=	README README-J
@@ -31,5 +29,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

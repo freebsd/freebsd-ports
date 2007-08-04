@@ -1,0 +1,8 @@
+------------------------------------------------------------------------
+NOTE: This port is no longer installed with SETUID, because it allows
+non-privileged users to unmount a filesystem. To enable your users to
+eject the CD-ROM, install security/sudo and enter the following line in
+/usr/local/etc/sudoers:
+
+%users ALL=/usr/local/sbin/eject /dev/acd0
+------------------------------------------------------------------------
