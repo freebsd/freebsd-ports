@@ -26,12 +26,12 @@ INSTALL_TARGET=		site-install
 .include <bsd.port.pre.mk>
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DESTDIR}${RUBY_MODDOCDIR}
+	${MKDIR} ${RUBY_MODDOCDIR}
 	cd ${WRKSRC}/doc; \
-	${FIND} . | ${CPIO} -pdmv ${DESTDIR}${RUBY_MODDOCDIR}
-	${CHMOD} -R ugo+rX,ugo-w ${DESTDIR}${RUBY_MODDOCDIR}
-	${MKDIR} ${DESTDIR}${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${DESTDIR}${RUBY_MODEXAMPLESDIR}
-	${CHMOD} ugo+x ${DESTDIR}${RUBY_MODEXAMPLESDIR}/example-*.rb
+	${FIND} . | ${CPIO} -pdmv ${RUBY_MODDOCDIR}
+	${CHMOD} -R ugo+rX,ugo-w ${RUBY_MODDOCDIR}
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}
+	${CHMOD} ugo+x ${RUBY_MODEXAMPLESDIR}/example-*.rb
 .endif # !defined(NOPORTDOCS)
 .include <bsd.port.post.mk>

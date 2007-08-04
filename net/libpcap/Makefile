@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 .if defined(LIBPCAP_OVERWRITE_BASE)
 PREFIX=		/usr
 PKGNAMESUFFIX=	-overwrite-base
-MANPREFIX=	${TARGETDIR}/share
+MANPREFIX=	${PREFIX}/share
 PLIST_SUB+=	NOTBASE="@comment "
 PLIST_SUB+=	BASE=""
 EXTRA_PATCHES+=	${FILESDIR}/patchbase-Makefile.in

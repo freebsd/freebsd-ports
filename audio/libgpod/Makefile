@@ -25,7 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--without-python
 
 .if !defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--with-html-dir="${TARGETDIR}/share/doc"
+CONFIGURE_ARGS+=	--with-html-dir="${PREFIX}/share/doc"
 .endif
 
 post-extract: .SILENT

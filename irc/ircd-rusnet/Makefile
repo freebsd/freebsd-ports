@@ -26,7 +26,7 @@ USER=		ircd
 GROUP=		${USER}
 NETWORK=	RusNet
 
-VARDIR?=	${DESTDIR}/var
+VARDIR?=	/var
 IRCD_CONFDIR?=	${PREFIX}/etc/ircd-rusnet
 IRCD_CODEPAGES?=	${IRCD_CONFDIR}/codepages
 IRCD_MOTD?=	${IRCD_CONFDIR}/ircd.motd

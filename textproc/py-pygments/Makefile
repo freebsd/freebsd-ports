@@ -21,7 +21,7 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Pygments
 
 .if !defined(NOPORTDOCS)
-DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 FIND_DOCS=	. -type f
 MAN1=	pygmentize.1
 MANCOMPRESSED=	no

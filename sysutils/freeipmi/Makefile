@@ -64,7 +64,7 @@ STRIP=	# empty
 .endif
 
 post-install:
-	@${CHMOD} 0700 ${DESTDIR}${PREFIX}/var/log/freeipmi \
-		${DESTDIR}${PREFIX}/var/lib/freeipmi
+	@${CHMOD} 0700 ${PREFIX}/var/log/freeipmi \
+		${PREFIX}/var/lib/freeipmi
 
 .include <bsd.port.post.mk>

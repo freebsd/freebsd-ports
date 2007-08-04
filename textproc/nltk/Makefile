@@ -27,8 +27,8 @@ BROKEN=		Coredump during build on alpha 4.x
 
 post-install:
 	@${FIND} ${PYTHON_SITELIBDIR}/nltk ! -type d | \
-		${SED} 's,^${TARGETDIR}/,,' >> ${TMPPLIST}
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${PYTHON_SITELIBDIR}/nltk -type d | ${SORT} -r | \
-		${SED} 's,^${TARGETDIR}/,@dirrm ,' >> ${TMPPLIST}
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

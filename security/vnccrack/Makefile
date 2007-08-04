@@ -22,7 +22,7 @@ USE_OPENSSL=	yes
 SUB_FILES+=	pkg-message
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/vnccrack ${TARGETDIR}/bin/vnccrack
+	@${INSTALL_PROGRAM} ${WRKSRC}/vnccrack ${PREFIX}/bin/vnccrack
 
 post-install:
 .if !defined(NOPORTDOCS)

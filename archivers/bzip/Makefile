@@ -24,9 +24,9 @@ pre-install:
 	@${CAT} ${FILESDIR}/COPYRIGHT
 
 do-install:
-	${RM} -f ${PREFIX}/bin/bzip ${TARGETDIR}/bin/bunzip
-	${INSTALL_PROGRAM} ${WRKSRC}/bzip ${TARGETDIR}/bin/bzip
-	${LN} -fs ${TARGETDIR}/bin/bzip ${TARGETDIR}/bin/bunzip
+	${RM} -f ${PREFIX}/bin/bzip ${PREFIX}/bin/bunzip
+	${INSTALL_PROGRAM} ${WRKSRC}/bzip ${PREFIX}/bin/bzip
+	${LN} -fs ${PREFIX}/bin/bzip ${PREFIX}/bin/bunzip
 	${INSTALL_MAN} ${WRKSRC}/bzip.1 ${MAN1PREFIX}/man/man1/bzip.1
 	${INSTALL_MAN} ${WRKSRC}/bzip.1 ${MAN1PREFIX}/man/man1/bunzip.1
 

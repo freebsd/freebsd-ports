@@ -23,7 +23,7 @@ RUN_DEPENDS=	smbspool:${PORTSDIR}/net/samba3 \
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-DATADIR=	${TARGETDIR}/share/cups
+DATADIR=	${PREFIX}/share/cups
 DRIVER_FILES=	cups6.inf cups6.ini cupsps6.dll cupsui6.dll
 
 SUB_FILES=	pkg-message

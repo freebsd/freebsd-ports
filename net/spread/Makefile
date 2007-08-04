@@ -40,7 +40,7 @@ MAN3=		libsp.3 SP_connect.3 SP_disconnect.3 SP_equal_group_ids.3 \
 PERL_CONFIGURE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 
-_MANPAGES+=	${TARGETDIR}/lib/perl5/${PERL_VERSION}/man/man3/Spread.3
+_MANPAGES+=	${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3/Spread.3
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \

@@ -38,7 +38,7 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-bimsphone-module \
 		--disable-static \
-		--with-conf-dir=${TARGETDIR}/etc/${PORTNAME}
+		--with-conf-dir=${PREFIX}/etc/${PORTNAME}
 # oxim requires qinputcontextplugin.h which only exists in Debian package
 CONFIGURE_ARGS+=--disable-qt-immodule
 
@@ -102,12 +102,12 @@ PLIST_SUB+=	NLS=""
 #.endif
 
 post-patch:
-	${REINPLACE_CMD} 's|%%PREFIX%%|${TARGETDIR}|' \
+	${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' \
 			${WRKSRC}/src/gtk-immodule/gtkintl.h
 
 post-install:
 .if !defined(WITHOUT_GTK2)
-	@gtk-query-immodules-2.0 > ${TARGETDIR}/etc/gtk-2.0/gtk.immodules
+	@gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
 .endif
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO} To display this message again, type ${PKG_INFO} -D ${PKGNAME}

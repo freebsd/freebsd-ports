@@ -20,8 +20,8 @@ MAKEFILE=	makefile
 MAN1=		robodoc.1 robohdrs.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Source/robodoc ${TARGETDIR}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/Source/robohdrs ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/Source/robodoc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/Source/robohdrs ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/Docs/robodoc.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/Docs/robohdrs.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)

@@ -182,7 +182,7 @@ USE_PERL5=		yes
 CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=		PERL:=""
 .if !defined(PIDGIN_SLAVE)
-MAN3PREFIX=		${TARGETDIR}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3+=			Purple.3
 .endif
 .else

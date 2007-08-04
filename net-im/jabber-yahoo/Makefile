@@ -28,7 +28,7 @@ USE_ICONV=	yes
 
 WRKSRC=		${WRKDIR}/yahoo-transport-${PORTVERSION}
 
-DOCSDIR=	${TARGETDIR}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 SUB_FILES+=	README.jabberd14 pkg-message
 

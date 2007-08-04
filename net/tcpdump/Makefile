@@ -31,7 +31,7 @@ GNU_CONFIGURE=		yes
 .if defined(TCPDUMP_OVERWRITE_BASE)
 PREFIX=		/usr
 PKGNAMESUFFIX=	-overwrite-base
-MANPREFIX=	${TARGETDIR}/share
+MANPREFIX=	${PREFIX}/share
 PLIST_SUB+=	NOTBASE="@comment "
 PLIST_SUB+=	BASE=""
 PKGMESSAGE=	${FILESDIR}/pkg-message-base

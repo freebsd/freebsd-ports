@@ -30,7 +30,7 @@ MAKE_ARGS+=	MCFLAGS="-shared" \
 		LDFLAGS="-L${LOCALBASE}/lib/pth -L${LOCALBASE}/lib/jabber"
 
 SUB_FILES+=	pkg-message README.jabberd14
-DOCSDIR=	${TARGETDIR}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+DOCSDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 .if !defined(NOPORTDOCS)
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -43,7 +43,7 @@ CFLAGS+=	-fPIC
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/conference.so ${TARGETDIR}/lib/jabber/
+	${INSTALL_PROGRAM} ${WRKSRC}/conference.so ${PREFIX}/lib/jabber/
 
 post-install:
 .if !defined(NOPORTDOCS)

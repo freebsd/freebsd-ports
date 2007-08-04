@@ -75,17 +75,17 @@ test:
 # autogen plist
 post-install:
 	@(cd ${WRKSRC}/blib/man3 ; \
-	  ${FIND} *.3 | ${SED} "s,^,${MAN3PREFIX:S,^${TARGETDIR}/,,}/man/man3/," \
+	  ${FIND} *.3 | ${SED} "s,^,${MAN3PREFIX:S,^${PREFIX}/,,}/man/man3/," \
 		>> ${TMPPLIST} ; \
 	  cd ${WRKSRC}/blib/man1 ; \
 	  ${FIND} *.1 | ${SED} "s,^,man/man1/," >> ${TMPPLIST})
 	@(${FIND} ${SITE_PERL}/${PERL_ARCH}/PDL* -type f | \
-		${SED} "s,^${TARGETDIR}/,," >> ${TMPPLIST} ; \
+		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST} ; \
 	  ${FIND} ${SITE_PERL}/${PERL_ARCH}/PDL* -type d | ${SORT} -r | \
-		${SED} "s,^${TARGETDIR}/,@dirrm ," >> ${TMPPLIST} ; \
+		${SED} "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST} ; \
 	  ${FIND} ${SITE_PERL}/${PERL_ARCH}/auto/PDL -type f | \
-		${SED} "s,^${TARGETDIR}/,," >> ${TMPPLIST} ; \
+		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST} ; \
 	  ${FIND} ${SITE_PERL}/${PERL_ARCH}/auto/PDL -type d | ${SORT} -r | \
-		${SED} "s,^${TARGETDIR}/,@dirrm ," >> ${TMPPLIST})
+		${SED} "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST})
 
 .include <bsd.port.post.mk>

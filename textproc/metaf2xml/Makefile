@@ -15,17 +15,17 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Parses METAR, TAF, and SYNOP messages and stores the components in XML
 
-MAKE_ARGS=	CGI_BIN_DIR=${TARGETDIR}/www/metaf2xml/cgi-bin \
-		HTDOCS_DIR=${TARGETDIR}/www/metaf2xml/htdocs \
-		METAF2XML=${TARGETDIR} \
-		METAF2XML_LIB=${TARGETDIR}/${SITE_PERL_REL} \
+MAKE_ARGS=	CGI_BIN_DIR=${PREFIX}/www/metaf2xml/cgi-bin \
+		HTDOCS_DIR=${PREFIX}/www/metaf2xml/htdocs \
+		METAF2XML=${PREFIX} \
+		METAF2XML_LIB=${PREFIX}/${SITE_PERL_REL} \
 		METAF2XML_XSL=${DATADIR}
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
 pre-install:
-	${MKDIR} ${TARGETDIR}/www/metaf2xml/cgi-bin \
-		${TARGETDIR}/www/metaf2xml/htdocs
+	${MKDIR} ${PREFIX}/www/metaf2xml/cgi-bin \
+		${PREFIX}/www/metaf2xml/htdocs
 
 do-install:
 	cd ${WRKSRC}; ${MAKE} ${MAKE_ARGS} install-all

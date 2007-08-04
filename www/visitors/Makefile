@@ -21,7 +21,7 @@ PLIST_FILES=	bin/visitors
 PORTDOCS=	doc.html
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/visitors ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/visitors ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}

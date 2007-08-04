@@ -5,7 +5,7 @@
  XCOMM for it relative to the BINDIR variable.
  XCOMM
 -BINDIR = /usr/bin
-+BINDIR = $(TARGETDIR)/bin
++BINDIR = $(PREFIX)/bin
  XCOMM MKDIRHIER = /bin/sh /usr/bin/X11/mkdirhier -p
 -MKDIRHIER = mkdirhier 
 +MKDIRHIER = ${X11BASE}/bin/mkdirhier 

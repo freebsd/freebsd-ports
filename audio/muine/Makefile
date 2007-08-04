@@ -29,7 +29,7 @@ INSTALLS_ICONS=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		GACUTIL_FLAGS="/package muine /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir)"
+		GACUTIL_FLAGS="/package muine /gacdir $(libdir) /root $(libdir)"
 
 GCONF_SCHEMAS=	muine.schemas
 

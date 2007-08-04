@@ -31,8 +31,8 @@ pre-install:
 	@${FIND} ${WRKSRC} -name "*.in" -delete
 
 do-install:
-	${MKDIR} ${TARGETDIR}/share/skel/zh_TW.Big5
-	${CP} ${WRKSRC}/* ${TARGETDIR}/share/skel/zh_TW.Big5
+	${MKDIR} ${PREFIX}/share/skel/zh_TW.Big5
+	${CP} ${WRKSRC}/* ${PREFIX}/share/skel/zh_TW.Big5
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

@@ -58,7 +58,7 @@ OPTIONS=	BZ2	 "bzip2 library support" on \
 		MCRYPT   "MCrypt library support" on \
 		MBSTRING "Multi-byte character-set string support" on
 
-PORT_DBDIR?=	${DESTDIR}/var/db/ports
+PORT_DBDIR?=	/var/db/ports
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
@@ -137,7 +137,7 @@ do-install: install-app install-conf
 install-app:
 	cd ${WRKSRC} ; \
 	for src in $$( ${FIND} . ! -name .cvsignore ) ; do \
-	    dst=${TARGETDIR}/${MYADMDIR}$${src#.} ; \
+	    dst=${PREFIX}/${MYADMDIR}$${src#.} ; \
 	    if ${TEST} -d $$src ; then \
 	        ${MKDIR} $$dst ; \
 	    else \
@@ -146,7 +146,7 @@ install-app:
 	done
 
 install-conf: install-app
-	cd ${TARGETDIR}/${MYADMDIR} ; \
+	cd ${PREFIX}/${MYADMDIR} ; \
 	${CHMOD} 0640 ${CFGFILE}.sample ; \
 	${CHGRP} ${MYADMGRP} ${CFGFILE}.sample ; \
 	if ${TEST} ! -f ${CFGFILE} ; then \

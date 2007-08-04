@@ -21,34 +21,34 @@ post-extract:
 	${RM} -f ${WRKSRC}/pgms/select
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/unixbench ${TARGETDIR}/bin/
-	-${MKDIR} ${TARGETDIR}/lib/unixbench
+	${INSTALL_SCRIPT} ${WRKDIR}/unixbench ${PREFIX}/bin/
+	-${MKDIR} ${PREFIX}/lib/unixbench
 	for f in Run ; do \
-		${INSTALL_SCRIPT} ${WRKSRC}/$${f} ${TARGETDIR}/lib/unixbench/ ; \
+		${INSTALL_SCRIPT} ${WRKSRC}/$${f} ${PREFIX}/lib/unixbench/ ; \
 	done
 	for f in Makefile README ; do \
-		${INSTALL_DATA} ${WRKSRC}/$${f} ${TARGETDIR}/lib/unixbench/ ; \
+		${INSTALL_DATA} ${WRKSRC}/$${f} ${PREFIX}/lib/unixbench/ ; \
 	done
-	-${MKDIR} ${TARGETDIR}/lib/unixbench/pgms
+	-${MKDIR} ${PREFIX}/lib/unixbench/pgms
 	for f in ${WRKSRC}/pgms/* ; do \
 		case $$f in \
 	*.awk|*.sh|*perlbench) \
-		${INSTALL_SCRIPT} $${f} ${TARGETDIR}/lib/unixbench/pgms/ ;; \
+		${INSTALL_SCRIPT} $${f} ${PREFIX}/lib/unixbench/pgms/ ;; \
 	*.logo|*.base) \
-		${INSTALL_SCRIPT} $${f} ${TARGETDIR}/lib/unixbench/pgms/ ;; \
+		${INSTALL_SCRIPT} $${f} ${PREFIX}/lib/unixbench/pgms/ ;; \
 	*.orig|*.rej|*~) \
 		;;\
 	*) \
-		${INSTALL_PROGRAM} $${f} ${TARGETDIR}/lib/unixbench/pgms/ ;; \
+		${INSTALL_PROGRAM} $${f} ${PREFIX}/lib/unixbench/pgms/ ;; \
 		esac ; \
 	done
-	-${MKDIR} ${TARGETDIR}/lib/unixbench/results
+	-${MKDIR} ${PREFIX}/lib/unixbench/results
 #	for f in ${WRKSRC}/results/* ; do \
-#		${INSTALL_DATA} $${f} ${TARGETDIR}/lib/unixbench/results/ ; \
+#		${INSTALL_DATA} $${f} ${PREFIX}/lib/unixbench/results/ ; \
 #	done
-	-${MKDIR} ${TARGETDIR}/lib/unixbench/testdir
+	-${MKDIR} ${PREFIX}/lib/unixbench/testdir
 	for f in ${WRKSRC}/testdir/* ; do \
-		${INSTALL_DATA} $${f} ${TARGETDIR}/lib/unixbench/testdir/ ; \
+		${INSTALL_DATA} $${f} ${PREFIX}/lib/unixbench/testdir/ ; \
 	done
 
 .include <bsd.port.mk>

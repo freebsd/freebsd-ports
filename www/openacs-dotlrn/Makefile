@@ -18,7 +18,7 @@ OPENACS_USER?=  dotlrn
 OPENACS_DB?=	dotlrn
 OPENACS_GROUP?= www
 
-OPENACSBASE=	${TARGETDIR}/dotlrn
+OPENACSBASE=	${PREFIX}/dotlrn
 OPENACSNAME=	.LRN
 
 BASE_INSTALL=	bin content-repository-content-files log packages tcl www install.xml

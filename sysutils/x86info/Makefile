@@ -21,6 +21,6 @@ PLIST_FILES=	bin/x86info
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/x86info ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/x86info ${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -24,8 +24,8 @@ RUN_DEPENDS=	pygtk-codegen-2.0:${PORTSDIR}/x11-toolkits/py-gtk2 \
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 USE_BZIP2=	yes
-DOCSDIR=	${TARGETDIR}/share/doc/sndcs
-DATADIR=	${TARGETDIR}/share/sndcs
+DOCSDIR=	${PREFIX}/share/doc/sndcs
+DATADIR=	${PREFIX}/share/sndcs
 
 PYDISTUTILS_PKGNAME=	sndcs
 

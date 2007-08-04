@@ -35,7 +35,7 @@ MAN3=		Perl6::Pugs.3 \
 		Inline::Pugs.3
 
 SITE_PERL6_REL=	lib/perl6
-PERL6_MANPREFIX= ${TARGETDIR}/${SITE_PERL6_REL}/site_perl/auto/pugs/perl5
+PERL6_MANPREFIX= ${PREFIX}/${SITE_PERL6_REL}/site_perl/auto/pugs/perl5
 SITE_PERL6_MAN3=	Class::Rebless.3 \
 			PIL2JS::JSPM.3 \
 			Pugs::Compiler::Perl6.3 \
@@ -57,8 +57,8 @@ PLIST_SUB=      SITE_PERL6_REL=${SITE_PERL6_REL}
 .include <bsd.port.pre.mk>
 
 post-configure:
-	@${REINPLACE_CMD} -e '/^INSTALLPRIVLIB/s,${PREFIX}/lib,${TARGETDIR}/lib/perl6,;' \
-		-e '/^INSTALLARCHLIB/s,${PREFIX}/lib,${TARGETDIR}/lib/perl6/mach,' \
+	@${REINPLACE_CMD} -e '/^INSTALLPRIVLIB/s,${PREFIX}/lib,${PREFIX}/lib/perl6,;' \
+		-e '/^INSTALLARCHLIB/s,${PREFIX}/lib,${PREFIX}/lib/perl6/mach,' \
 		${WRKSRC}/Makefile
 
 .if !defined(NOPORTDOCS)
@@ -67,9 +67,9 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${CP} -R ${EXDIR}/ ${EXAMPLESDIR}
 	@${FIND} -s ${EXAMPLESDIR} -type f | \
-		${SED} -e 's|^${TARGETDIR}/||' >> ${TMPPLIST}
+		${SED} -e 's|^${PREFIX}/||' >> ${TMPPLIST}
 	@${FIND} -d ${EXAMPLESDIR} -type d | \
-		${SED} -e 's|^${TARGETDIR}/|@dirrm |' >> ${TMPPLIST}
+		${SED} -e 's|^${PREFIX}/|@dirrm |' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.post.mk>

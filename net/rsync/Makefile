@@ -83,14 +83,14 @@ pre-configure:
 		${WRKSRC}/rsync.h ${WRKSRC}/zlib/zutil.h
 
 post-install:
-	@${STRIP_CMD} ${DESTDIR}${PREFIX}/bin/rsync
-	@${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${DESTDIR}${PREFIX}/etc/
-	@[ -f ${DESTDIR}${PREFIX}/etc/rsyncd.conf ] || \
-		${CP} ${DESTDIR}${PREFIX}/etc/rsyncd.conf.sample \
-		${DESTDIR}${PREFIX}/etc/rsyncd.conf
+	@${STRIP_CMD} ${PREFIX}/bin/rsync
+	@${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${PREFIX}/etc/
+	@[ -f ${PREFIX}/etc/rsyncd.conf ] || \
+		${CP} ${PREFIX}/etc/rsyncd.conf.sample \
+		${PREFIX}/etc/rsyncd.conf
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DESTDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DESTDIR}${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 test: build

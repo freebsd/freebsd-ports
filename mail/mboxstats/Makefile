@@ -28,6 +28,6 @@ post-patch:
 	@${REINPLACE_CMD} -Ee 's,(stat|mmap|lseek|off)64,\1,g' ${WRKSRC}/br.h ${WRKSRC}/br.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mboxstats ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mboxstats ${PREFIX}/bin
 
 .include <bsd.port.post.mk>

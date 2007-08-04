@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-user=${NUT_USER}
 
 NUT_USER?=	uucp
-STATEDIR=	${DESTDIR}/var/db/nut
+STATEDIR=	/var/db/nut
 
 .include <bsd.port.pre.mk>
 

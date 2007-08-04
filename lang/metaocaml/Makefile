@@ -72,7 +72,7 @@ PLISTDIR=	${PREFIX}/lib/metaocaml \
 .include <bsd.port.pre.mk>
 
 # Have to set this here and can't use ${DATADIR} or MLINKS get screwed up
-MANPREFIX=	${TARGETDIR}/share/metaocaml
+MANPREFIX=	${PREFIX}/share/metaocaml
 
 .if defined(WITH_X11)
 USE_XLIB=	yes

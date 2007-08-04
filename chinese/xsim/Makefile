@@ -40,7 +40,7 @@ post-patch:
 	@${REINPLACE_CMD} "s/-O2/${CFLAGS}/g" ${WRKSRC}/configure
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/xsim.sh ${TARGETDIR}/bin/xsim
+	${INSTALL_DATA} ${WRKDIR}/xsim.sh ${PREFIX}/bin/xsim
 	@${MKDIR} ${DATADIR}/dat
 	@${CP} -R ${WRKDIR}/usr/local/xsim/dat/* ${DATADIR}/dat
 	@${CAT} ${PKGMESSAGE}

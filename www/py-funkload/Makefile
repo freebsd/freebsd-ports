@@ -25,8 +25,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-d
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	easy_install
 
-DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)

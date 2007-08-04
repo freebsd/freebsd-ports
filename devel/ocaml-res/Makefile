@@ -23,8 +23,8 @@ USE_OCAML_FINDLIB=yes
 USE_OCAML_WASH=	yes
 
 DOCS=		README
-DOCSDIR=	${TARGETDIR}/share/doc/ocaml/${PORTNAME}
-EXAMPLESDIR=	${TARGETDIR}/share/examples/ocaml/${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -36,20 +36,20 @@ post-extract:
 
 post-install:
 	@${FIND} ${OCAMLFIND_DESTDIR}/${PORTNAME} -type f | \
-		${SED} "s,^${TARGETDIR}/,," >> ${TMPPLIST}
+		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
 	@${FIND} ${EXAMPLESDIR}/ ! -type d | \
-		${SED} 's,^${TARGETDIR}/,,' >> ${TMPPLIST}
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${EXAMPLESDIR}/ -type d | ${SORT} -r | \
-		${SED} 's,^${TARGETDIR}/,@dirrm ,' >> ${TMPPLIST}
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${FIND} ${DOCSDIR}/ ! -type d | \
-		${SED} 's,^${TARGETDIR}/,,' >> ${TMPPLIST}
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${DOCSDIR}/ -type d | ${SORT} -r | \
-		${SED} 's,^${TARGETDIR}/,@dirrm ,' >> ${TMPPLIST}
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 # XXX: temporary workaround for non-standard PREFIX
 	@${ECHO_CMD} "@unexec rmdir %D/share/doc/ocaml 2>/dev/null || true" \
 		>> ${TMPPLIST}

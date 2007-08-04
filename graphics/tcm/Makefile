@@ -29,7 +29,7 @@ USE_MOTIF=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SUB_FILES+=	pkg-message
 
-MANPREFIX=	${TARGETDIR}/tcm
+MANPREFIX=	${PREFIX}/tcm
 MAN1=		psf.1 tatd.1 tcbd.1 tcm.1 tcmd.1 tcmdv.1 tcmt.1 tcpd.1 tcrd.1 \
 		tdfd.1 tdpd.1 tefd.1 terd.1 tesd.1 text2ps.1 tfet.1 tfrt.1 \
 		tgd.1 tgt.1 tgtt.1 tpsd.1 trpg.1 tscd.1 tsnd.1 tssd.1 tstd.1 \

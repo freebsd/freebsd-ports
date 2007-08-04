@@ -18,7 +18,7 @@ DEFAULT_PGSQL_VER?=74
 
 # can't include <bsd.port.pre.mk> in a slave port
 # so set these instead:
-LOCALBASE?=	${DESTDIR}/usr/local
+LOCALBASE?=	/usr/local
 SED?=		/usr/bin/sed
 
 # Setting/finding PostgreSQL version we want.

@@ -80,6 +80,6 @@ post-patch:
 
 post-install:
 	@cd ${WRKSRC}/blib/man3 && ${FIND} * -name "*.3" | ${SED} \
-		's,^,${MAN3PREFIX:S,^${TARGETDIR}/,,}/man/man3/,' >> ${TMPPLIST}
+		's,^,${MAN3PREFIX:S,^${PREFIX}/,,}/man/man3/,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

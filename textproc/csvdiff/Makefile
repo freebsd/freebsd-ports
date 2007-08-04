@@ -25,7 +25,7 @@ PORTDOCS=	CHANGES README TODO
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
-		${TARGETDIR}/bin/${PORTNAME}
+		${PREFIX}/bin/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}

@@ -23,7 +23,7 @@ WRKSRC=		${WRKSRCTOP}/apache2
 SRC_FILE=	*.c
 PORTDOCS=	*
 DOCS=		CHANGES LICENSE README.TXT modsecurity.conf-minimal doc rules
-DOCSDIR=	${TARGETDIR}/share/doc/${MODULENAME}
+DOCSDIR=	${PREFIX}/share/doc/${MODULENAME}
 SUB_FILES+=	mod_security2.conf
 SUB_LIST+=	APACHEETCDIR="${APACHEETCDIR}"
 

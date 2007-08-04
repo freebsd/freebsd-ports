@@ -36,7 +36,7 @@ post-patch:
 		's:sdl-config:$${SDL_CONFIG}:g' ${WRKSRC}/src/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rocksndiamonds ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/rocksndiamonds ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/rocksndiamonds.1 ${MANPREFIX}/man/man1
 	@${MKDIR} ${DATADIR}
 	${TAR} -C ${WRKSRC} -cf - graphics levels music scores sounds | \

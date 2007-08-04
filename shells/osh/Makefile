@@ -16,10 +16,10 @@ COMMENT=	An implementation of the UNIX 6th Edition shell
 MAN1=		fd2.1 goto.1 if.1 osh.1 sh6.1 glob6.1
 
 post-install:
-	@${ECHO_MSG} "updating ${DESTDIR}/etc/shells"
-	@${CP} ${DESTDIR}/etc/shells ${DESTDIR}/etc/shells.bak
-	@(${GREP} -v ${PREFIX}/bin/osh ${DESTDIR}/etc/shells.bak; \
-	 ${ECHO_CMD} ${PREFIX}/bin/osh) > ${DESTDIR}/etc/shells
-	@${RM} ${DESTDIR}/etc/shells.bak
+	@${ECHO_MSG} "updating /etc/shells"
+	@${CP} /etc/shells /etc/shells.bak
+	@(${GREP} -v ${PREFIX}/bin/osh /etc/shells.bak; \
+	 ${ECHO_CMD} ${PREFIX}/bin/osh) > /etc/shells
+	@${RM} /etc/shells.bak
 
 .include <bsd.port.mk>

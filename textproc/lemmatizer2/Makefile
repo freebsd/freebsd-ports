@@ -21,7 +21,7 @@ COMMENT=	Russian / German / English lemmatizer library
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-DB_DIR?=	${DESTDIR}/var/db/lemmatizer
+DB_DIR?=	/var/db/lemmatizer
 
 DIST_SUBDIR=	${PORTNAME}
 
@@ -32,7 +32,7 @@ pre-fetch:
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
 	@${ECHO} "      DB_DIR=directory        Set alternate directory for database files"
-	@${ECHO} "                              (default is ${DESTDIR}/var/db/lemmatizer)"
+	@${ECHO} "                              (default is /var/db/lemmatizer)"
 	@${ECHO} ""
 
 do-configure:

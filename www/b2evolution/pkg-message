@@ -19,7 +19,7 @@ you may need to perform the following steps.
     [1;32m#
     # Directives to allow use of b2evolution
     #
-    Alias /%%B2EVO_URL%% "%%TARGETDIR%%/%%B2EVO_DIR%%/"[m
+    Alias /%%B2EVO_URL%% "%%PREFIX%%/%%B2EVO_DIR%%/"[m
 
 4.Open b2evo installation page in your web browser 
   and login with b2evouser/b2evopassword

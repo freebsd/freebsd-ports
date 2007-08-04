@@ -39,11 +39,11 @@ post-install:
 .for i in ${MAN3}
 	${INSTALL_MAN} ${WRKSRC}/iflib/${i} ${PREFIX}/man/man3
 .endfor
-	@${ECHO_CMD} "updating ${DESTDIR}/etc/services"
-	@${CP} ${DESTDIR}/etc/services ${DESTDIR}/etc/services.bak
-	@(grep -v ^ifcico ${DESTDIR}/etc/services.bak; \
+	@${ECHO_CMD} "updating /etc/services"
+	@${CP} /etc/services /etc/services.bak
+	@(grep -v ^ifcico /etc/services.bak; \
 	${ECHO_CMD} "ifcico		60179/tcp  #ifcico server (ifmail)") \
-		> ${DESTDIR}/etc/services
+		> /etc/services
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/

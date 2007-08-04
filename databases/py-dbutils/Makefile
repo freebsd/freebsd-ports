@@ -20,7 +20,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	DBUtils
 
-DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)

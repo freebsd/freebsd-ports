@@ -82,19 +82,19 @@ pre-fetch:
 .endif
 
 do-install:
-	@${MKDIR} ${TARGETDIR}/share/xsl/${PORTNAME}
-	${CP} ${WRKSRC}/simian.xsl ${TARGETDIR}/share/xsl/${PORTNAME}
-	@${MKDIR} ${TARGETDIR}/simian
-	@${MKDIR} ${TARGETDIR}/simian/bin
+	@${MKDIR} ${PREFIX}/share/xsl/${PORTNAME}
+	${CP} ${WRKSRC}/simian.xsl ${PREFIX}/share/xsl/${PORTNAME}
+	@${MKDIR} ${PREFIX}/simian
+	@${MKDIR} ${PREFIX}/simian/bin
 .if !defined(WITHOUT_JAVA)
-	${CP} ${WRKSRC}/bin/simian-${PORTVERSION}.jar ${TARGETDIR}/simian/bin
+	${CP} ${WRKSRC}/bin/simian-${PORTVERSION}.jar ${PREFIX}/simian/bin
 .endif
 .if defined(WITH_MONO)
-	${CP} ${WRKSRC}/bin/*.dll ${TARGETDIR}/simian/bin
-	${CP} ${WRKSRC}/bin/simian-${PORTVERSION}.exe ${TARGETDIR}/simian/bin
+	${CP} ${WRKSRC}/bin/*.dll ${PREFIX}/simian/bin
+	${CP} ${WRKSRC}/bin/simian-${PORTVERSION}.exe ${PREFIX}/simian/bin
 .endif
-	${CP} ${WRKSRC}/simian ${TARGETDIR}/bin/simian
-	${CHMOD} a+x ${TARGETDIR}/bin/simian
+	${CP} ${WRKSRC}/simian ${PREFIX}/bin/simian
+	${CHMOD} a+x ${PREFIX}/bin/simian
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} \
 		&& ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; \

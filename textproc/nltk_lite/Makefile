@@ -31,8 +31,8 @@ PLIST_SUB+=	EGG_INFO_FILE=""
 
 post-install:
 	@${FIND} ${PYTHON_SITELIBDIR}/nltk_lite ! -type d | \
-		${SED} 's,^${TARGETDIR}/,,' >> ${TMPPLIST}
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${PYTHON_SITELIBDIR}/nltk_lite -type d | ${SORT} -r | \
-		${SED} 's,^${TARGETDIR}/,@dirrm ,' >> ${TMPPLIST}
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

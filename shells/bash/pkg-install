@@ -5,7 +5,7 @@
 
 BASH="$(echo ${PKG_PREFIX-/usr/local}/bin/bash | /usr/bin/sed -e 's|//|/|g')"
 RBASH="$(echo ${PKG_PREFIX-/usr/local}/bin/rbash | /usr/bin/sed -e 's|//|/|g')"
-SHELLS="${PKG_DESTDIR-}/etc/shells"
+SHELLS="/etc/shells"
 
 case $2 in
 POST-INSTALL)

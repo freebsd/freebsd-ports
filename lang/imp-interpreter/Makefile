@@ -32,7 +32,7 @@ PORTDOCS=	README
 .include <bsd.port.pre.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/main ${TARGETDIR}/bin/IMP
+	${INSTALL_PROGRAM} ${WRKSRC}/main ${PREFIX}/bin/IMP
 
 post-install:
 .if !defined(NOPORTDOCS)

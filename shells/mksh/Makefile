@@ -47,11 +47,11 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/mksh.1 ${MANPREFIX}/man/man1
 
 pre-install:
-	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \
+	@${SETENV} PKG_PREFIX="${PREFIX}" \
 		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \
+	@${SETENV} PKG_PREFIX="${PREFIX}" \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

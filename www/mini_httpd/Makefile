@@ -24,14 +24,14 @@ post-build:
 	-${MV} ${WRKSRC}/htpasswd.1 ${WRKSRC}/htpasswd.8
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mini_httpd ${TARGETDIR}/sbin/
-	${INSTALL_PROGRAM} ${WRKSRC}/htpasswd ${TARGETDIR}/sbin/
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/mini_httpd_wrapper ${TARGETDIR}/sbin/
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/mini_httpd.sh ${TARGETDIR}/etc/rc.d/
+	${INSTALL_PROGRAM} ${WRKSRC}/mini_httpd ${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/htpasswd ${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/mini_httpd_wrapper ${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/mini_httpd.sh ${PREFIX}/etc/rc.d/
 	@for file in ${MAN8}; \
 	do \
-		${INSTALL_MAN} ${WRKSRC}/$$file ${TARGETDIR}/man/man8/; \
+		${INSTALL_MAN} ${WRKSRC}/$$file ${PREFIX}/man/man8/; \
 	done
-	${INSTALL_DATA} ${WRKSRC}/mini_httpd.cnf ${TARGETDIR}/etc/mini_httpd.cnf.sample
+	${INSTALL_DATA} ${WRKSRC}/mini_httpd.cnf ${PREFIX}/etc/mini_httpd.cnf.sample
 
 .include <bsd.port.mk>

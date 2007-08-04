@@ -24,7 +24,7 @@ SUB_FILES=	pkg-message
 REINPLACE_ARGS=	-i ""
 ONLY_FOR_ARCHS=	i386
 
-PLAN9=		${TARGETDIR}/plan9
+PLAN9=		${PREFIX}/plan9
 MANPREFIX=	${PLAN9}
 
 MAN1=		9term.1 acmeevent.1 ascii.1 acme.1 9p.1 basename.1 cal.1 \
@@ -109,14 +109,14 @@ post-build:
 	  ${FIND} plan9 -type f \
 	    -a ! -path "plan9/man/man[0-9]/*.[0-9]*"; \
 	  for D in ${EMPTY_DIRS}; do \
-	    ${ECHO_CMD} "@exec ${MKDIR} ${TARGETDIR}/$${D}"; \
+	    ${ECHO_CMD} "@exec ${MKDIR} ${PREFIX}/$${D}"; \
 	  done; \
 	  ${FIND} plan9 -type d | ${SORT} -r \
 		| ${SED} -e 's|^|@dirrm |'; \
 	) > ${PLIST}
 
 do-install:
-	${CP} -rp ${WRKSRC} ${TARGETDIR}
+	${CP} -rp ${WRKSRC} ${PREFIX}
 
 post-install:
 	cd ${PLAN9} && \

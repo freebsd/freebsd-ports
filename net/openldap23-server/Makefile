@@ -415,24 +415,24 @@ test: build
 
 pre-su-install:
 	@if [ -f ${PKGINSTALL} ]; then \
-		${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
+		${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
 	fi
 .if defined(WITH_MODULES) || !defined(WITHOUT_DYNAMIC_BACKENDS) || defined(WITH_SLAPI)
-	@${MKDIR} ${DESTDIR}${PREFIX}/libexec/openldap
+	@${MKDIR} ${PREFIX}/libexec/openldap
 .endif
 
 post-install:
 .if defined(CLIENT_ONLY)
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DESTDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DESTDIR}${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
 	@for dir in drafts rfc; do \
-		${MKDIR} ${DESTDIR}${DOCSDIR}/$${dir}; \
-		${INSTALL_DATA} ${WRKSRC}/doc/$${dir}/* ${DESTDIR}${DOCSDIR}/$${dir}; \
+		${MKDIR} ${DOCSDIR}/$${dir}; \
+		${INSTALL_DATA} ${WRKSRC}/doc/$${dir}/* ${DOCSDIR}/$${dir}; \
 	done
 .endif
 .else
-	@${MKDIR} ${DESTDIR}${LDAP_RUN_DIR}
+	@${MKDIR} ${LDAP_RUN_DIR}
 	@for schema in ${SCHEMATA}; do \
 		${ECHO_CMD} "@unexec if cmp -s %D/etc/openldap/schema/$${schema}.schema" \
 			"%D/etc/openldap/schema/$${schema}.schema.default; then" \

@@ -34,12 +34,12 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MANPREFIX}/man/man1
-	@${ECHO_MSG} '===> Installing ${TARGETDIR}/etc/icpld.conf.sample file.'
-	${INSTALL_DATA} ${WRKSRC}/icpld.conf.sample ${TARGETDIR}/etc
-	@${ECHO_MSG} '===> Installing ${TARGETDIR}/etc/rc.d/icpld.sh.sample'
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/icpld.sh.sample ${TARGETDIR}/etc/rc.d
+	@${ECHO_MSG} '===> Installing ${PREFIX}/etc/icpld.conf.sample file.'
+	${INSTALL_DATA} ${WRKSRC}/icpld.conf.sample ${PREFIX}/etc
+	@${ECHO_MSG} '===> Installing ${PREFIX}/etc/rc.d/icpld.sh.sample'
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/icpld.sh.sample ${PREFIX}/etc/rc.d
 
 post-install:
 .if !defined(NOPORTDOCS)

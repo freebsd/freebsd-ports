@@ -19,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool	\
 
 NO_BUILD=	yes
 
-DATADIR?=	${DESTDIR}/var/db/mailgraph
+DATADIR?=		/var/db/mailgraph
 MAILGRAPH_USER?=	${WWWOWN}
 MAILGRAPH_GROUP?=	${WWWGRP}
 
@@ -48,11 +48,11 @@ post-patch:
 	@${SED} 's|%%DATADIR%%|${DATADIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 do-install:
-	${MKDIR} ${TARGETDIR}/www/cgi-bin
+	${MKDIR} ${PREFIX}/www/cgi-bin
 	${MKDIR} ${DATADIR}
 	@${CHOWN} -R ${MAILGRAPH_USER}:${MAILGRAPH_GROUP} ${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.pl ${TARGETDIR}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.cgi ${TARGETDIR}/www/cgi-bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.pl ${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.cgi ${PREFIX}/www/cgi-bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	for f in ${DOCS}; do \

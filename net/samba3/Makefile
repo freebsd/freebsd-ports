@@ -29,7 +29,7 @@ LATEST_LINK?=		${PKGNAMEPREFIX}${PORTNAME}3${PKGNAMESUFFIX}
 EXAMPLESDIR=		${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=			${WRKDIR}/${DISTNAME}/source
 # directories
-VARDIR?=		${DESTDIR}/var
+VARDIR?=		/var
 SAMBA_SPOOL=		${VARDIR}/spool/samba
 SAMBA_LOGDIR=		${VARDIR}/log/samba
 SAMBA_RUNDIR=		${VARDIR}/run
@@ -271,8 +271,8 @@ CONFIGURE_ARGS+=	--without-ads
 CONFIGURE_ARGS+=	--with-krb5="${KRB5_HOME}"
 .elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.so)
 CONFIGURE_ARGS+=	--with-krb5="${HEIMDAL_HOME}"
-.elif exists(${DESTDIR}/usr/lib/libkrb5.so) && exists(${DESTDIR}/usr/bin/krb5-config)
-CONFIGURE_ARGS+=	--with-krb5="${DESTDIR}/usr"
+.elif exists(/usr/lib/libkrb5.so) && exists(/usr/bin/krb5-config)
+CONFIGURE_ARGS+=	--with-krb5="/usr"
 .else
 LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=	--with-krb5="${LOCALBASE}"

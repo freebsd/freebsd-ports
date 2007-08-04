@@ -37,7 +37,7 @@ USE_TCL_RUN=	yes
 USE_TK_RUN=	yes
 CFLAGS+=	-I${X11BASE}/include
 
-EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-patch:
 	@${GREP} -lR "share/matplotlib" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \

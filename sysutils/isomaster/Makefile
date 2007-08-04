@@ -30,7 +30,7 @@ PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
-PLIST_SUB+=	DESKTOPDIR="${DESKTOPDIR:S,^${TARGETDIR}/,,}"
+PLIST_SUB+=	DESKTOPDIR="${DESKTOPDIR:S,^${PREFIX}/,,}"
 
 MAN1=	isomaster.1
 

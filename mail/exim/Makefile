@@ -629,45 +629,45 @@ pre-install:
 	if ! /usr/sbin/pw groupshow ${EXIM_GROUP}; then /usr/sbin/pw groupadd ${EXIM_GROUP} -g 125; fi
 	if ! /usr/sbin/pw usershow ${EXIM_USER}; then /usr/sbin/pw useradd ${EXIM_USER} -g ${EXIM_GROUP} -u 125 \
 	-h - -d /var/spool/exim -s /nonexistent -c "Exim User"; fi
-	@[ -d "${DESTDIR}/etc" ] || ${MKDIR} "${DESTDIR}/etc"
-	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@[ -d "/etc" ] || ${MKDIR} "/etc"
+	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .if !defined(WITHOUT_DAEMON)
-	@${MKDIR} ${DESTDIR}${PREFIX}/etc/periodic/daily
+	@${MKDIR} ${PREFIX}/etc/periodic/daily
 .for script in ${DAILY_SCRIPTS}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${DESTDIR}${PREFIX}/etc/periodic/daily/${script}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${PREFIX}/etc/periodic/daily/${script}
 .endfor
 .endif
-	@[ -f ${DESTDIR}${PREFIX}/etc/exim/configure ] || \
-		${CP} ${DESTDIR}${PREFIX}/etc/exim/configure.default ${DESTDIR}${PREFIX}/etc/exim/configure
+	@[ -f ${PREFIX}/etc/exim/configure ] || \
+		${CP} ${PREFIX}/etc/exim/configure.default ${PREFIX}/etc/exim/configure
 .for manfile in ${MAN8}
-	@${INSTALL_MAN} ${WRKSRC}/doc/${manfile} ${DESTDIR}${MAN8PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/doc/${manfile} ${MAN8PREFIX}/man/man8
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DESTDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${DESTDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES.clamd ${DESTDIR}${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES.clamd ${DOCSDIR}
 .for docfile in ${PORTDOC_BASE}
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DESTDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .for docfile in ${PORTDOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DESTDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DOCSDIR}
 .endfor
-	@${MKDIR} ${DESTDIR}${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 .for example in ${PORT_EXAMPLES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/build-${OPSYS}-${ARCH}/${example} ${DESTDIR}${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/build-${OPSYS}-${ARCH}/${example} ${EXAMPLESDIR}
 .endfor
 .endif
 .if defined(WITH_SA_EXIM)
 	@${INSTALL_DATA} ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.conf \
-		${DESTDIR}${PREFIX}/etc/exim/sa-exim.conf.default
-	@[ -f ${DESTDIR}${PREFIX}/etc/exim/sa-exim.conf ] || \
-	    ${CP} ${DESTDIR}${PREFIX}/etc/exim/sa-exim.conf.default \
-	    ${DESTDIR}${PREFIX}/etc/exim/sa-exim.conf
+		${PREFIX}/etc/exim/sa-exim.conf.default
+	@[ -f ${PREFIX}/etc/exim/sa-exim.conf ] || \
+	    ${CP} ${PREFIX}/etc/exim/sa-exim.conf.default \
+	    ${PREFIX}/etc/exim/sa-exim.conf
 .endif
 	@${CAT} ${PKGMESSAGE}
-	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .else
 

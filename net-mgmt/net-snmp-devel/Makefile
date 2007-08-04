@@ -155,7 +155,7 @@ MAN3PERL=	NetSNMP::ASN.3 NetSNMP::OID.3 NetSNMP::agent.3 \
 		NetSNMP::agent::default_store.3 \
 		NetSNMP::default_store.3 \
 		NetSNMP::netsnmp_request_infoPtr.3 SNMP.3
-MAN3PERLPREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
+MAN3PERLPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 _MANPAGES+=	${MAN3PERL:S%^%${MAN3PERLPREFIX}/man/man3/%}
 .endif
 

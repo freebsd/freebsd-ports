@@ -29,7 +29,7 @@ NO_BUILD=	yes
 # after pre.mk. The solution is to set them by ourselves.
 OPTIONS=	GD "Use GD" OFF
 
-PORT_DBDIR?=	${DESTDIR}/var/db/ports
+PORT_DBDIR?=	/var/db/ports
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 

@@ -24,7 +24,7 @@ post-patch:
 
 do-install:
 .for file in ttyrec ttyplay ttytime
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
 .for file in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/${file} ${MAN1PREFIX}/man/man1

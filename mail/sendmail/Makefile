@@ -123,7 +123,7 @@ CONFLICTS2!=	${MAKE_PKGNAMES} | grep -v "${PORTNAME}${PKGNAMESUFFIX}-8."
 CONFLICTS+=	${CONFLICTS2}
 
 # Build site.config.m4
-.if exists(${DESTDIR}/etc/mail/mailer.conf)
+.if exists(/etc/mail/mailer.conf)
 SITE+=	${FILESDIR}/site.config.m4
 .endif
 .if !defined(SENDMAIL_WITHOUT_IPV6)
@@ -143,9 +143,9 @@ USE_OPENSSL=	yes
 .endif
 
 # install directly if no mailwrapper support
-.if ! exists(${DESTDIR}/etc/mail/mailer.conf)
-PREFIX?=	${DESTDIR}/usr
-MANPREFIX?=	${DESTDIR}/usr/share
+.if ! exists(/etc/mail/mailer.conf)
+PREFIX?=	/usr
+MANPREFIX?=	/usr/share
 PLIST_SUB+=	ETCPORT="@comment "
 .else
 PLIST_SUB+=	ETCPORT=""
@@ -290,7 +290,7 @@ post-install:
 	${LN} -sf libmilter.so.${MILTER_SOVER} ${PREFIX}/lib/libmilter.so
 .endif
 .endif
-.if exists(${DESTDIR}/etc/mail/mailer.conf)
+.if exists(/etc/mail/mailer.conf)
 	${INSTALL_SCRIPT} ${WRKSRC}/sm-client.sh \
 		${LOCALBASE}/etc/rc.d/sm-client.sh.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/sendmail.sh \
@@ -332,7 +332,7 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/CYRUS_LOOKUP ${DOCSDIR}/CYRUS_LOOKUP
 .endif
 .endif
-.if exists(${DESTDIR}/etc/mail/mailer.conf)
+.if exists(/etc/mail/mailer.conf)
 	@${CAT} ${PKGMESSAGE}
 
 mailer.base:
@@ -343,9 +343,9 @@ mailer.base:
 	-e "s=^newaliases[ 	]*/.*$$=newaliases	${BASEMAIL}=" \
 	-e "s=^hoststat[ 	]*/.*$$=hoststat	${BASEMAIL}=" \
 	-e "s=^purgestat[ 	]*/.*$$=purgestat	${BASEMAIL}=" \
-	 ${DESTDIR}/etc/mail/mailer.conf > ${DESTDIR}/etc/mail/mailer.conf.new
-	${MV} ${DESTDIR}/etc/mail/mailer.conf.new \
-		${DESTDIR}/etc/mail/mailer.conf
+	 /etc/mail/mailer.conf > /etc/mail/mailer.conf.new
+	${MV} /etc/mail/mailer.conf.new \
+		/etc/mail/mailer.conf
 
 mailer.conf:
 	@${SED} \
@@ -355,21 +355,21 @@ mailer.conf:
 	-e "s=^newaliases[ 	]*/.*$$=newaliases	${SENDMAIL}=" \
 	-e "s=^hoststat[ 	]*/.*$$=hoststat	${SENDMAIL}=" \
 	-e "s=^purgestat[ 	]*/.*$$=purgestat	${SENDMAIL}=" \
-	 ${DESTDIR}/etc/mail/mailer.conf > ${DESTDIR}/etc/mail/mailer.conf.new
-	${MV} ${DESTDIR}/etc/mail/mailer.conf.new \
-		${DESTDIR}/etc/mail/mailer.conf
+	 /etc/mail/mailer.conf > /etc/mail/mailer.conf.new
+	${MV} /etc/mail/mailer.conf.new \
+		/etc/mail/mailer.conf
 .endif
 
 # create sumbit.cf on older systems
 #
-submit.cf:	${DESTDIR}/etc/mail/submit.cf
+submit.cf:	/etc/mail/submit.cf
 
-${DESTDIR}/etc/mail/submit.mc:
+/etc/mail/submit.mc:
 	${INSTALL_DATA} ${PREFIX}/share/sendmail/cf/cf/submit.mc \
-		${DESTDIR}/etc/mail/submit.mc
+		/etc/mail/submit.mc
 
-${DESTDIR}/etc/mail/submit.cf:	${DESTDIR}/etc/mail/submit.mc
-	@( cd ${DESTDIR}/etc/mail && ${MAKE} \
+/etc/mail/submit.cf:	/etc/mail/submit.mc
+	@( cd /etc/mail && ${MAKE} \
 		SENDMAIL_CF_DIR=${PREFIX}/share/sendmail/cf \
 		SENDMAIL_MC=submit )
 
@@ -394,7 +394,7 @@ tls-install:
 help:
 	@${ECHO_CMD} "# additional targets:"
 	@${ECHO_CMD} "#"
-	@${ECHO_CMD} "# configure ${DESTDIR}/etc/mail/mailer.conf"
+	@${ECHO_CMD} "# configure /etc/mail/mailer.conf"
 	@${ECHO_CMD} "# for sendmail from ports"
 	@${ECHO_CMD} "make mailer.conf"
 	@${ECHO_CMD} "# for sendmail in the base"
@@ -420,7 +420,7 @@ SITE+=	${FILESDIR}/site.config.m4.tls
 SITE+=	${FILESDIR}/site.config.m4.local
 .endif
 
-.if exists(${DESTDIR}/etc/mail/mailer.conf) && ${PREFIX} == "/usr"
+.if exists(/etc/mail/mailer.conf) && ${PREFIX} == "/usr"
 pre-everything::
 	@${ECHO_CMD} "#"
 	@${ECHO_CMD} "# You can't override the base sendmail this way."

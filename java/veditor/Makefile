@@ -34,7 +34,7 @@ NO_BUILD=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 
-ECLIPSE=	${TARGETDIR}/eclipse
+ECLIPSE=	${PREFIX}/eclipse
 PLUGINS=	plugins
 
 do-install:

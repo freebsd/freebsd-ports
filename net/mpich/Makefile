@@ -71,7 +71,7 @@ PLIST_SUB+=	JAVA=""
 
 ALL_TARGET=
 
-MANPREFIX=	${TARGETDIR}/mpich
+MANPREFIX=	${PREFIX}/mpich
 
 MAN1=		MPI.1 cleanipcs.1 mpiCC.1 mpicc.1 mpif77.1 mpif90.1 mpiman.1		\
 		mpireconfig.1 mpirun.1 Jumpshots.1 chp4_servs.1 tstmachines.1

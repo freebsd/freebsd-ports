@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		${SQLRELAY_CONFIGURE_ENV}
 
-MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		DBD::SQLRelay.3 SQLRelay::Connection.3 SQLRelay::Cursor.3
 
 .include "${.CURDIR}/../sqlrelay/Makefile.common"

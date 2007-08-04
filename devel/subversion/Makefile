@@ -98,7 +98,7 @@ IGNORE=	subversion\'s Perl bindings need perl 5.8.0 or greater. Upgrade your per
 SWIG_BINDINGS+=		yes
 USE_PERL5=		yes
 PLIST_SUB+=		WITH_PERL=""
-MAN3PREFIX=		${TARGETDIR}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=			SVN::Base.3 \
 			SVN::Client.3 \
 			SVN::Core.3 \

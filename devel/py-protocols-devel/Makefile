@@ -39,6 +39,6 @@ PYPROTOCOLS_VER?=	1.0a0
 
 .include <bsd.port.pre.mk>
 
-OSRELEASE!=	${DESTDIR}/usr/bin/uname -r
+OSRELEASE!=	/usr/bin/uname -r
 
 .include <bsd.port.post.mk>

@@ -32,7 +32,7 @@ DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
 post-install: doc-install
-	${INSTALL_SCRIPT} ${WRKSRC}/rsary.rb ${TARGETDIR}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/rsary.rb ${PREFIX}/bin/
 
 doc-install:
 .if !defined(NOPORTDOCS)

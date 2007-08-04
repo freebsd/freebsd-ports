@@ -45,7 +45,7 @@ post-extract:
 
 .include <bsd.port.pre.mk>
 
-OSRELEASE!=	${DESTDIR}/usr/bin/uname -r
+OSRELEASE!=	/usr/bin/uname -r
 PYPROTOCOLS_EGG!=	${MAKE} -f ${PORTSDIR}/devel/py-protocols-devel/Makefile -V PYPROTOCOLS_EGG
 
 .include <bsd.port.post.mk>

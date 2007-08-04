@@ -48,8 +48,8 @@ post-configure:
 	${CP} ${WRKSRC}/mecabrc ${WRKSRC}/mecabrc.dist
 
 post-install:
-	@if [ ! -f ${TARGETDIR}/etc/mecabrc ]; then \
-		${INSTALL_DATA} ${TARGETDIR}/etc/mecabrc.dist ${TARGETDIR}/etc/mecabrc; \
+	@if [ ! -f ${PREFIX}/etc/mecabrc ]; then \
+		${INSTALL_DATA} ${PREFIX}/etc/mecabrc.dist ${PREFIX}/etc/mecabrc; \
 	fi
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

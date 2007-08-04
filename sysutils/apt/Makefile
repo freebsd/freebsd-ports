@@ -35,8 +35,8 @@ MAN1=		apt-extracttemplates.1 apt-ftparchive.1 apt-sortpkgs.1
 MAN5=		apt.conf.5 apt_preferences.5 sources.list.5
 MAN8=		apt-cache.8 apt-cdrom.8 apt-config.8 apt-get.8 apt-key.8 apt-secure.8
 
-DPKGDIR?=	${DESTDIR}/var/db/dpkg
-APTDIR?=	${DESTDIR}/var/db/apt
+DPKGDIR?=	/var/db/dpkg
+APTDIR?=	/var/db/apt
 PLIST_SUB+=	APTDIR=${APTDIR:C,^/,,}
 
 post-patch:

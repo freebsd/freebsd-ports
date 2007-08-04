@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:259:env automake:19:env
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-LOCALSTATEDIR=${DESTDIR}/var
+LOCALSTATEDIR=	/var
 CONFIGURE_ENV+=	wwwdir=${PREFIX}/www/sipX \
 		INSTALL=`which ginstall`
 CONFIGURE_ARGS+=	--enable-sip-tls \

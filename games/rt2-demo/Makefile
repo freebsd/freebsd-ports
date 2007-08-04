@@ -22,6 +22,6 @@ NO_BUILD=	yes
 USE_LINUX=	yes
 
 do-install:
-		@${SH} ${FILESDIR}/do-install ${TARGETDIR} ${DISTDIR}
+		@${SH} ${FILESDIR}/do-install ${PREFIX} ${DISTDIR}
 
 .include <bsd.port.mk>

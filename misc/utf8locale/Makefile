@@ -21,14 +21,14 @@ LANGS=		af_ZA be_BY bg_BG ca_ES cs_CZ da_DK de_AT de_CH de_DE el_GR \
 		fr_CA fr_CH fr_FR hr_HR hu_HU hy_AM is_IS it_CH it_IT ja_JP \
 		kk_KZ ko_KR lt_LT nl_BE nl_NL no_NO pl_PL pt_BR pt_PT ro_RO \
 		ru_RU sk_SK sl_SI sr_YU sv_SE tr_TR uk_UA zh_CN zh_HK zh_TW
-BASELOCALEDIR=	${DESTDIR}/usr/share/locale
+BASELOCALEDIR=	/usr/share/locale
 PLIST_SUB=	BASELOCALEDIR=${BASELOCALEDIR} \
 		LANGS="${LANGS}"
 PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
 
-_HAVE_SWIDTH!=	${GREP} _CTYPE_SW ${DESTDIR}/usr/include/ctype.h 2>/dev/null \
+_HAVE_SWIDTH!=	${GREP} _CTYPE_SW /usr/include/ctype.h 2>/dev/null \
 		|| ${TRUE}
 .if empty(_HAVE_SWIDTH)
 PKGNAMESUFFIX=	-without-swidth

@@ -42,14 +42,14 @@ pre-install:
 		&& ${ECHO_CMD} @dirrm ${B2EVO_DIR} >> ${PLIST}
 
 do-install:
-	${MKDIR} ${TARGETDIR}/${B2EVO_DIR}
-	@${CHMOD} 755 ${TARGETDIR}/${B2EVO_DIR}
-	@${CP} -R ${WRKSRC}/ ${TARGETDIR}/${B2EVO_DIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${TARGETDIR}/${B2EVO_DIR}
-	@${CHMOD} 665 ${TARGETDIR}/${B2EVO_DIR}/blogs/conf/_config.php
+	${MKDIR} ${PREFIX}/${B2EVO_DIR}
+	@${CHMOD} 755 ${PREFIX}/${B2EVO_DIR}
+	@${CP} -R ${WRKSRC}/ ${PREFIX}/${B2EVO_DIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${B2EVO_DIR}
+	@${CHMOD} 665 ${PREFIX}/${B2EVO_DIR}/blogs/conf/_config.php
 
 post-install:
-	@${SED} -e 's|%%TARGETDIR%%|${TARGETDIR}|' \
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' \
 		-e 's|%%B2EVO_DIR%%|${B2EVO_DIR}|; s|%%B2EVO_URL%%|${B2EVO_URL}|' \
 		${PKGMESSAGE}
 

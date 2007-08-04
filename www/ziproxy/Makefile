@@ -69,7 +69,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/var/ziproxy/error/${FILE} ${DATADIR}/error/${FILE}
 .endfor
 
-	@${INSTALL_SCRIPT} ${WRKSRC}/src/tools/ziproxy_genhtml_stats.sh ${TARGETDIR}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/src/tools/ziproxy_genhtml_stats.sh ${PREFIX}/bin
 
 	@${CAT} ${PKGMESSAGE}
 

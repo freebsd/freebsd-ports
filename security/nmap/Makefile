@@ -53,9 +53,9 @@ post-configure:
 
 post-install:
 .ifndef NOPORTDOCS
-	@${MKDIR} ${DESTDIR}${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	@for doc in CHANGELOG HACKING docs/nmap.dtd; do \
-		${INSTALL_DATA} ${WRKSRC}/$${doc} ${DESTDIR}${DOCSDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/$${doc} ${DOCSDIR}; \
 	done
 .endif
 

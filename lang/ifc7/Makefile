@@ -30,7 +30,7 @@ PLIST_SUB=	COMPILERDIR=${COMPILERDIR}
 PATCH_WRKSRC=	${WRKSRC}/opt/intel/${COMPILERDIR}
 
 MAN1=		ifc.1
-MANPREFIX=	${TARGETDIR}/intel/${COMPILERDIR}/
+MANPREFIX=	${PREFIX}/intel/${COMPILERDIR}/
 
 IFC_SITE=	http://www.intel.com/software/products/compilers/
 

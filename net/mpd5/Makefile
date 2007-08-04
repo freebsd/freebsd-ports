@@ -36,7 +36,7 @@ MANCOMPRESSED=	maybe
 USE_RC_SUBR=	mpd4.sh
 HTMLNUM!=	jot 67 1
 CONFSUF=	conf links secret script
-DOCSDIR=	${TARGETDIR}/share/doc/mpd4
+DOCSDIR=	${PREFIX}/share/doc/mpd4
 PORTDOCS=	${HTMLNUM:S/^/mpd/:S/$/.html/} mpd.html mpd.ps README	\
 		mpd_toc.html
 PLIST_DIRS=	etc/mpd4

@@ -93,10 +93,10 @@ PLIST_SUB+=	ERTS_VSN=${ERTS_VSN} TOOLS_VSN=${TOOLS_VSN}
 
 NOMANCOMPRESS=	yes
 
-MAN1PREFIX=	${TARGETDIR}/lib/erlang
-MAN3PREFIX=	${TARGETDIR}/lib/erlang
-MAN4PREFIX=	${TARGETDIR}/lib/erlang
-MAN6PREFIX=	${TARGETDIR}/lib/erlang
+MAN1PREFIX=	${PREFIX}/lib/erlang
+MAN3PREFIX=	${PREFIX}/lib/erlang
+MAN4PREFIX=	${PREFIX}/lib/erlang
+MAN6PREFIX=	${PREFIX}/lib/erlang
 
 pre-configure:
 # Check if ${JAVAC} exists.
