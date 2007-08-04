@@ -202,6 +202,7 @@
     SUBDIR += migemo
     SUBDIR += migemo-emacs20
     SUBDIR += migemo-emacs21
+    SUBDIR += migemo-emacs22
     SUBDIR += migemo-xemacs-devel-mule
     SUBDIR += mikachan-ttfonts
     SUBDIR += mime_pls
