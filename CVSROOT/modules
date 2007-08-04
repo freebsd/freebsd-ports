@@ -875,6 +875,7 @@ bitflu		ports/net-p2p/bitflu
 bitlbee		ports/irc/bitlbee
 bitmap		ports/x11/bitmap
 bitmap-emacs20	ports/editors/bitmap-emacs20
+bitmap-emacs21	ports/editors/bitmap-emacs21
 bitmap-fonts	ports/x11-fonts/bitmap-fonts
 bitstream-vera	ports/x11-fonts/bitstream-vera
 bittwist	ports/net/bittwist
