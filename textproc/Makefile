@@ -960,6 +960,7 @@
     SUBDIR += ua-ispell
     SUBDIR += uim
     SUBDIR += uim-el
+    SUBDIR += uim-el-emacs21
     SUBDIR += uim-el-xemacs21-mule
     SUBDIR += uim-gnome
     SUBDIR += uim-gtk
