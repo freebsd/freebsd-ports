@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	2.06
+PORTVERSION=	3.01
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,8 +24,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cli --disable-doc
 
-MAN1=		cnee.1
-INFO=		cnee xnee
+MAN1=		cnee.1 xnee.1
+INFO=		cnee
 PLIST_FILES=	bin/cnee \
 		%%DATADIR%%/example1.xns \
 		%%DATADIR%%/pixmaps/xnee.png \
@@ -43,8 +43,16 @@ MAKEINFO=	${LOCALBASE}/bin/makeinfo
 MAKEINFO=	/usr/bin/makeinfo
 .endif
 
+.if ${OSVERSION} < 600000
+BUILD_DEPENDS+=	${MAKEINFO_CMD}:${PORTSDIR}/print/texinfo
+MAKEINFO_CMD=	${LOCALBASE}/bin/makeinfo
+.else
+MAKEINFO_CMD=	/usr/bin/makeinfo
+.endif
+
 .if defined(WITH_GNEE)
 USE_GNOME+=	gtk20
+MAN1+=		gnee.1
 PLIST_FILES+=	bin/gnee
 .else
 CONFIGURE_ARGS+=	--disable-gui
@@ -80,11 +88,9 @@ post-patch:
 		's|cp $$(PNEE)|$$(INSTALL_PROGRAM) $$(PNEE)|g' ${WRKSRC}/pnee/src/Makefile.in
 
 post-build:
-	cd ${WRKSRC}/cnee/src && ${MAKEINFO} --no-split cnee.texi
-	cd ${WRKSRC}/doc && ${MAKEINFO} --no-split xnee.texi
+	cd ${WRKSRC}/cnee/src && ${MAKEINFO_CMD} --no-split cnee.texi
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/cnee/src/cnee.info ${PREFIX}/${INFO_PATH}
-	${INSTALL_DATA} ${WRKSRC}/doc/xnee.info ${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.post.mk>
