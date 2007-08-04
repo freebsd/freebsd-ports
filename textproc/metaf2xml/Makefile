@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	Parses and decodes aviation routine and stores the components in XML
+COMMENT=	Parses METAR, TAF, and SYNOP messages and stores the components in XML
 
 MAKE_ARGS=	CGI_BIN_DIR=${TARGETDIR}/www/metaf2xml/cgi-bin \
 		HTDOCS_DIR=${TARGETDIR}/www/metaf2xml/htdocs \
