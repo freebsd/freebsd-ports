@@ -50,11 +50,15 @@ SHIMBUN=	""
 
 .include <bsd.port.pre.mk>
 
-.if (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22")
+.if (${EMACS_PORT_NAME} == "emacs22")
 FLIM_PORT=	${PORTSDIR}/editors/flim
 SEMI_PORT=	${PORTSDIR}/editors/semi
+INSTALL_TARGET= install install-icons
+.endif
+
+.if (${EMACS_PORT_NAME} == "emacs21")
 MULE_UCS_PORT=	${PORTSDIR}/converters/mule-ucs
-INSTALL_TARGET=	install install-icons
+INSTALL_TARGET= install install-icons
 .endif
 
 FLIM_TRUNK=	1.14
