@@ -16,7 +16,8 @@ DISTNAME=	uim-${PORTVERSION}
 MAINTAINER=	nobutaka@freebsd.org
 COMMENT?=	Emacs lisp for uim input method library
 
-CONFLICTS?=	uim-el-xemacs21-mule-[0-9]*
+CONFLICTS?=	uim-el-xemacs21-mule-[0-9]* \
+		uim-el-emacs21-[0-9]*
 
 RUN_DEPENDS=	uim-el-agent:${PORTSDIR}/textproc/uim
 
@@ -26,7 +27,6 @@ USE_ICONV=	yes
 USE_EMACS=	yes
 GNU_CONFIGURE=	yes
 
-EMACS_PORT_NAME?=	emacs21
 BUILD_WRKSRC=	${WRKSRC}/emacs
 INSTALL_WRKSRC=	${WRKSRC}/emacs
 
