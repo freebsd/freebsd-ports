@@ -4,12 +4,7 @@ bin/ncid
 bin/cidalias
 bin/cidcall
 bin/cidupdate
-etc/ncid/ncidd.alias
-etc/ncid/ncidd.conf
-etc/ncid/ncidrotate.conf
-etc/ncid/ncidscript.conf
-etc/ncid/ncidsip.conf
-etc/ncid/ncid.conf
+bin/yac2ncid
 etc/rc.d/ncidd.sh
 etc/rc.d/ncid.sh
 etc/rc.d/ncidsip.sh
@@ -19,6 +14,6 @@ share/ncid/ncid-page
 share/ncid/ncid-samba
 share/ncid/ncid-speak
 share/ncid/ncid-tivo
+share/ncid/ncid-yac
 share/ncid/README
 @dirrm share/ncid
-@dirrm etc/ncid
