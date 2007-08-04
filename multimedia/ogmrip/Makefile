@@ -27,8 +27,6 @@ RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
 LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread \
 		x264:${PORTSDIR}/multimedia/x264
 
-BROKEN=		Incomplete pkg-plist
-
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	glib20 libxml2 gnomehack
