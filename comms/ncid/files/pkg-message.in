@@ -1,5 +1,5 @@
 ********************************************************************************
 
-  Edit %%PREFIX%%/etc/ncidd.conf to configure your modem.
+===>  Please edit %%ETCDIR%%/ncidd.conf to configure your modem
 
 ********************************************************************************
