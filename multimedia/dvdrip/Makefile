@@ -22,6 +22,7 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		transcode:${PORTSDIR}/multimedia/transcode \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager \
 		xvid4conf:${PORTSDIR}/multimedia/xvid4conf \
+		rar:${PORTSDIR}/archivers/rar \
 		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping \
 		${BUILD_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
