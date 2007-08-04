@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	tom
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tom@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl modules for parsing FreeBSD's Ports INDEX file
 
 USE_BZIP2=	yes
