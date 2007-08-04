@@ -3,10 +3,11 @@
 # Whom:					Ade Lovett <ade@lovett.com>
 #
 # $FreeBSD$
-#    $MCom: ports/devel/libglade2/Makefile,v 1.23 2006/09/10 00:51:09 mezz Exp $
+#   $MCom: ports/devel/libglade2/Makefile,v 1.26 2007/08/01 16:13:48 mezz Exp $
+#
 
 PORTNAME=	libglade2
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
