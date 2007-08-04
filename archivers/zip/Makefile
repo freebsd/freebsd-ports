@@ -20,6 +20,12 @@ MAKEFILE=	unix/Makefile
 ALL_TARGET=	generic
 MAN1=		zip.1
 
+PLIST_FILES=	\
+	bin/zip \
+	bin/zipcloak \
+	bin/zipnote \
+	bin/zipsplit
+
 do-install:
 .for file in zip zipcloak zipnote zipsplit
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
