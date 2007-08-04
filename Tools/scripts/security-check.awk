@@ -34,18 +34,10 @@ FILENAME ~ /\.writable$/ { writable_files[$0] = 1; }
 function print_header() {
 	if (header_printed)
 		return;
-	if (audit != "") {
-		if (destdir == "")
-			print "===> SECURITY REPORT (PARANOID MODE): ";
-		else
-			print "===> SECURITY REPORT FOR", destdir, "(PARANOID MODE): ";
-		}
-	else {
-		if (destdir == "")
-			print "===> SECURITY REPORT: ";
-		else
-			print "===> SECURITY REPORT FOR", destdir, ": ";
-		}
+	if (audit != "")
+		print "===> SECURITY REPORT (PARANOID MODE): ";
+	else
+		print "===> SECURITY REPORT: ";
 	header_printed = 1;
 }
 function note_for_the_stupid(file) { return (file in stupid_binaries) ? (" (USES POSSIBLY INSECURE FUNCTIONS:" stupid_binaries[file] ")") : ""; }
@@ -54,14 +46,8 @@ END {
 	for (file in setuid_binaries) {
 		if (!note_printed) {
 			print_header();
-			if (destdir == "") {
-				print "      This port has installed the following binaries, which execute with";
-				print "      increased privileges.";
-				}
-			else {
-				print "      This port has installed the following binaries into", destdir, ", which";
-				print "      execute with increased privileges.";
-				}
+			print "      This port has installed the following binaries which execute with";
+			print "      increased privileges.";
 			note_printed = 1;
 		}
 		print file note_for_the_stupid(file);
@@ -72,15 +58,8 @@ END {
 	for (file in network_binaries) {
 		if (!note_printed) {
 			print_header();
-			if (destdir == "") {
-				print "      This port has installed the following files, which may act as network";
-				print "      servers and may therefore pose a remote security risk to the system.";
-				}
-			else {
-				print "      This port has installed the following files into", destdir, ", which may";
-				print "      act as network servers and may therefore pose a remote security risk to";
-				print "      the system.";
-				}
+			print "      This port has installed the following files which may act as network";
+			print "      servers and may therefore pose a remote security risk to the system.";
 			note_printed = 1;
 		}
 		print file note_for_the_stupid(file);
@@ -91,14 +70,8 @@ END {
 		for (file in startup_scripts) {
 			if (!note_printed) {
 				print_header();
-			if (destdir == "") {
-				print "      This port has installed the following startup scripts, which may cause";
+				print "      This port has installed the following startup scripts which may cause";
 				print "      these network services to be started at boot time.";
-				}
-			else {
-				print "      This port has installed the following startup scripts into", destdir, ", which";
-				print "      may cause these network services to be started at boot time.";
-				}
 				note_printed = 1;
 			}
 			print file;
@@ -110,10 +83,7 @@ END {
 	for (file in writable_files) {
 		if (!note_printed) {
 			print_header();
-			if (destdir == "")
-				print "      This port has installed the following world-writable files/directories.";
-			else
-				print "      This port has installed the following world-writable files/directories into", destdir, ".";
+			print "      This port has installed the following world-writable files/directories.";
 			note_printed = 1;
 		}
 		print file;

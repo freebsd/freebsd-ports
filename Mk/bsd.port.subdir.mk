@@ -15,9 +15,6 @@
 #				  own install script so that the entire system can be made
 #				  stripped/not-stripped using a single knob. [-s]
 #
-# ECHO_MSG		- Used to print all the '===>' style prompts - override this
-#				  to turn them off [echo].
-#
 # OPSYS			- Get the operating system type [`uname -s`]
 #
 # SUBDIR		- A list of subdirectories that should be built as well.
@@ -43,6 +40,7 @@
 #		Search for ports using either 'make search key=<keyword>'
 #		or 'make search name=<keyword>'.
 
+.include "${PORTSDIR}/Mk/bsd.commands.mk"
 
 .MAIN: all
 
@@ -52,36 +50,33 @@ STRIP?=	-s
 
 .if !defined(NOPRECIOUSMAKEVARS)
 .if !defined(ARCH)
-ARCH!=	${DESTDIR}/usr/bin/uname -p
+ARCH!=	${UNAME} -p
 .endif
 .if !defined(OSREL)
-OSREL!=	${DESTDIR}/usr/bin/uname -r | sed -e 's/[-(].*//'
+OSREL!=	${UNAME} -r | ${SED} -e 's/[-(].*//'
 .endif
 .if !defined(OSVERSION)
-.if exists(/sbin/sysctl)
-OSVERSION!= /sbin/sysctl -n kern.osreldate
+.if exists(/usr/include/sys/param.h)
+OSVERSION!=	${AWK} '/^\#define __FreeBSD_version/ {print $$3}' < /usr/include/sys/param.h
+.elif exists(/usr/src/sys/sys/param.h)
+OSVERSION!=	${AWK} '/^\#define __FreeBSD_version/ {print $$3}' < /usr/src/sys/sys/param.h
 .else
-OSVERSION!= /usr/sbin/sysctl -n kern.osreldate
+OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
 .endif
 .endif
 
-ID?=	${DESTDIR}/usr/bin/id
 UID!=	${ID} -u
-LOCALBASE?=	${DESTDIR}${LOCALBASE_REL}
 .if exists(${LOCALBASE}/sbin/pkg_info)
 PKG_INFO?=	${LOCALBASE}/sbin/pkg_info
 .else
-PKG_INFO?=	${DESTDIR}/usr/sbin/pkg_info
+PKG_INFO?=	/usr/sbin/pkg_info
 .endif
-SED?=		${DESTDIR}/usr/bin/sed
 PKGINSTALLVER!=	${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
 
 .if !defined(OPSYS)
-OPSYS!=	${DESTDIR}/usr/bin/uname -s
+OPSYS!=	${UNAME} -s
 .endif
-
-ECHO_MSG?=	echo
 
 # local customization of the ports tree
 .if exists(${.CURDIR}/Makefile.local)
@@ -193,13 +188,13 @@ checksubdir:
 	      fi; \
 	    done; \
 	    if [ $$found = 0 ]; then \
-	      ${ECHO} "Warning: directory $$d not in SUBDIR"; \
+	      ${ECHO_MSG} "Warning: directory $$d not in SUBDIR"; \
 	    fi; \
 	  fi; \
 	done
 	@for s in ${SUBDIR}; do \
 	  if ! [ -d ${.CURDIR}/$$s ]; then \
-	    ${ECHO} "Warning: directory $$s in SUBDIR does not exist"; \
+	    ${ECHO_MSG} "Warning: directory $$s in SUBDIR does not exist"; \
 	  fi \
 	done
 .endif
@@ -225,11 +220,11 @@ describe: ${SUBDIR:S/^/_/:S/$/.describe/}
 .else
 describe:
 	@for sub in ${SUBDIR}; do \
-	if test -d ${.CURDIR}/$${sub}; then \
+	if ${TEST} -d ${.CURDIR}/$${sub}; then \
 		${ECHO_MSG} "===> ${DIRPRFX}$${sub}"; \
 		cd ${.CURDIR}/$${sub}; \
 		${MAKE} -B describe || \
-			(echo "===> ${DIRPRFX}$${sub} failed" >&2; \
+			(${ECHO_CMD} "===> ${DIRPRFX}$${sub} failed" >&2; \
 			exit 1) ;\
 	else \
 		${ECHO_MSG} "===> ${DIRPRFX}$${sub} non-existent"; \
@@ -242,7 +237,7 @@ describe:
 .if defined(PORTSTOP)
 readmes: readme ${SUBDIR:S/^/_/:S/$/.readmes/}
 	@${ECHO_MSG} "===>   Creating README.html for all ports"
-	@perl ${PORTSDIR}/Tools/make_readmes < ${INDEXDIR}/${INDEXFILE}
+	@${PERL} ${PORTSDIR}/Tools/make_readmes < ${INDEXDIR}/${INDEXFILE}
 .else
 readmes: readme
 .endif
@@ -250,8 +245,8 @@ readmes: readme
 
 .if !target(readme)
 readme:
-	@rm -f README.html
-	@make README.html
+	@${RM} -f README.html
+	@${MAKE} README.html
 .endif
 
 .if (${OPSYS} == "NetBSD")
@@ -276,32 +271,32 @@ INDEXFILE?=	INDEX
 MOVEDDIR?=	${PORTSDIR}
 MOVEDFILE?=	MOVED
 
-HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
+HTMLIFY=	${SED} -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 
 package-name:
-	@echo ${.CURDIR} | sed -e 's^.*/^^'
+	@${ECHO_CMD} ${.CURDIR} | ${SED} -e 's^.*/^^'
 
 README.html:
-	@echo "===>  Creating README.html"
+	@${ECHO_CMD} "===>  Creating README.html"
 	@> $@.tmp
 .for entry in ${SUBDIR}
 .if exists(${entry})
 .if defined(PORTSTOP)
-	@echo -n '<a href="'${entry}/README.html'">'"`echo ${entry} | ${HTMLIFY}`"'</a>: ' >> $@.tmp
+	@${ECHO_CMD} -n '<a href="'${entry}/README.html'">'"`${ECHO_CMD} ${entry} | ${HTMLIFY}`"'</a>: ' >> $@.tmp
 .else
-	@echo -n '<a href="'${entry}/README.html'">'"`cd ${entry}; make package-name | ${HTMLIFY}`</a>: " >> $@.tmp
+	@${ECHO_CMD} -n '<a href="'${entry}/README.html'">'"`cd ${entry}; ${MAKE} package-name | ${HTMLIFY}`</a>: " >> $@.tmp
 .endif
-	@echo `cd ${entry}; make -V COMMENT` | ${HTMLIFY} >> $@.tmp
+	@${ECHO_CMD} `cd ${entry}; ${MAKE} -V COMMENT` | ${HTMLIFY} >> $@.tmp
 .endif
 .endfor
-	@sort -t '>' +1 -2 $@.tmp > $@.tmp2
+	@${SORT} -t '>' +1 -2 $@.tmp > $@.tmp2
 .if exists(${DESCR})
 	@${HTMLIFY} ${DESCR} > $@.tmp3
 .else
 	@> $@.tmp3
 .endif
 .if defined(COMMENT)
-	@echo "${COMMENT}" | ${HTMLIFY} > $@.tmp4
+	@${ECHO_CMD} "${COMMENT}" | ${HTMLIFY} > $@.tmp4
 .else
 .if exists(${COMMENTFILE})
 	@${HTMLIFY} ${COMMENTFILE} > $@.tmp4
@@ -309,8 +304,8 @@ README.html:
 	@> $@.tmp4
 .endif
 .endif
-	@cat ${README} | \
-		sed -e 's/%%CATEGORY%%/'"`basename ${.CURDIR}`"'/g' \
+	@${CAT} ${README} | \
+		${SED} -e 's/%%CATEGORY%%/'"`basename ${.CURDIR}`"'/g' \
 			-e '/%%COMMENT%%/r$@.tmp4' \
 			-e '/%%COMMENT%%/d' \
 			-e '/%%DESCR%%/r$@.tmp3' \
@@ -318,7 +313,7 @@ README.html:
 			-e '/%%SUBDIR%%/r$@.tmp2' \
 			-e '/%%SUBDIR%%/d' \
 		> $@
-	@rm -f $@.tmp $@.tmp2 $@.tmp3 $@.tmp4
+	@${RM} -f $@.tmp $@.tmp2 $@.tmp3 $@.tmp4
 
 .if !defined(NOPRECIOUSMAKEVARS)
 .MAKEFLAGS: \
@@ -339,7 +334,7 @@ PORTSEARCH_MOVED?=1
 _PORTSEARCH=	\
 	here=${.CURDIR}; \
 	if [ ! -r ${INDEXDIR}/${INDEXFILE} ] ; then \
-		echo "The ${.TARGET} target requires ${INDEXFILE}. Please run make index or make fetchindex."; \
+		${ECHO_MSG} "The ${.TARGET} target requires ${INDEXFILE}. Please run make index or make fetchindex."; \
 	else \
 	cd ${PORTSDIR}; \
 	if [ -z "$$key"   -a -z "$$xkey"   -a \
@@ -352,12 +347,12 @@ _PORTSEARCH=	\
 	     -z "$$rdeps" -a -z "$$xrdeps" -a \
 	     -z "$$www"   -a -z "$$xwww"   ]; \
 	then \
-	  echo "The ${.TARGET} target requires a keyword parameter or name parameter,"; \
-	  echo "e.g.: \"make ${.TARGET} key=somekeyword\""; \
-	  echo "or    \"make ${.TARGET} name=somekeyword\""; \
+	  ${ECHO_MSG} "The ${.TARGET} target requires a keyword parameter or name parameter,"; \
+	  ${ECHO_MSG} "e.g.: \"make ${.TARGET} key=somekeyword\""; \
+	  ${ECHO_MSG} "or    \"make ${.TARGET} name=somekeyword\""; \
 	  exit; \
 	fi; \
-	awk -F\| -v there="$$here/" -v top="$$(pwd -P)" \
+	${AWK} -F\| -v there="$$here/" -v top="$$(pwd -P)" \
 	    -v key="$$key"          -v xkey="$$xkey" \
 	    -v name="$$name"        -v xname="$$xname" \
 	    -v path="$$path"        -v xpath="$$xpath" \
@@ -451,7 +446,7 @@ _PORTSEARCH=	\
 	  }' ${INDEXDIR}/${INDEXFILE}; \
 	  if [ "$$name" -o "$$xname" ] && [ ${PORTSEARCH_MOVED} -gt 0 ]; \
 	  then \
-	    awk -F\| -v name="$$name"        -v xname="$$xname" \
+	    ${AWK} -F\| -v name="$$name"        -v xname="$$xname" \
 	        -v icase="$${icase:-${PORTSEARCH_IGNORECASE}}" \
 	    'BEGIN { \
 	        if (icase) { \

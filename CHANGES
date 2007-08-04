@@ -10,6 +10,22 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20070804:
+AUTHOR: gabor@FreeBSD.org
+The following functional changes were made to bsd.*.mk and to
+Tools/scripts/security-check.awk:
+
+  * The variable definitions that cover command line tools, e.g. MKDIR, were
+    extracted from bsd.port.mk into bsd.commands.mk, so that we can
+    reuse them within the infrastructure later.
+
+  * The old DESTDIR implementation was removed both from the infrastructure,
+    and from the individual ports.  Variables like TARGETDIR should not longer
+    be used.
+
+  * A new DESTDIR implementation has been added, implemented in bsd.destdir.mk.
+    The new implementation puts no requirements on the individual ports.
+
 20070730:
 AUTHOR: python@FreeBSD.org
   
