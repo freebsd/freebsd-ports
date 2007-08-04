@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	atari800
-PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTVERSION=	2.0.3
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xf25.zip
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -47,7 +45,7 @@ USE_XLIB=	yes
 .if defined(WITHOUT_SHM)
 CONFIGURE_ARGS+=	--target=x11
 .else
-CONFIGURE_ARGS+=	--target=shm
+CONFIGURE_ARGS+=	--target=x11-shm
 .endif
 .endif
 
@@ -63,8 +61,8 @@ CONFIGURE_ARGS+=	--enable-cripsound
 CONFIGURE_ARGS+=	--enable-pagedattrib
 .endif
 
-.if defined(WITH_BUFFERDLOG)
-CONFIGURE_ARGS+=	--enable-bufferdlog
+.if defined(WITH_BUFFEREDLOG)
+CONFIGURE_ARGS+=	--enable-bufferedlog
 .endif
 
 .if defined(WITH_VERYSLOW)
@@ -79,7 +77,7 @@ pre-everything::
 	@${ECHO_MSG} "	WITH_SERIOSOUND=yes	Use serial in/out sound"
 	@${ECHO_MSG} "	WITH_CLIPSOUND=yes	Use sound clipping"
 	@${ECHO_MSG} "	WITH_PAGEDATTRIB=yes	Use page-based attribute array"
-	@${ECHO_MSG} "	WITH_BUFFERDLOG=yes	Use buffered debug output"
+	@${ECHO_MSG} "	WITH_BUFFEREDLOG=yes	Use buffered debug output"
 	@${ECHO_MSG} "				(until the graphics mode switches back to text mode)"
 	@${ECHO_MSG} "	WITH_VERYSLOW=yes	Use very slow computer support"
 	@${ECHO_MSG} "				(use with the -refresh option)"
