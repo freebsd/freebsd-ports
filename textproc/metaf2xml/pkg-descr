@@ -1,6 +1,6 @@
-metaf2xml parses and decodes aviation routine weather reports and
-aerodrome forecasts (i.e. METAR and TAF messages) and stores the
-components in XML. They can then be converted to text, HTML, or other
-formats.
+metaf2xml parses aviation routine weather reports (METAR, SPECI),
+aerodrome forecasts (TAF), and synoptic observations (SYNOP) and
+stores the components in XML. They can then be converted to plain
+language (text, HTML), or XML with different schemas.
 
 WWW:	http://metaf2xml.sourceforge.net/
