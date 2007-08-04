@@ -5191,6 +5191,7 @@ ja-mh		ports/japanese/mh
 ja-migemo	ports/japanese/migemo
 ja-migemo-emacs20	ports/japanese/migemo-emacs20
 ja-migemo-emacs21	ports/japanese/migemo-emacs21
+ja-migemo-emacs22	ports/japanese/migemo-emacs22
 ja-migemo-xemacs-devel-mule	ports/japanese/migemo-xemacs-devel-mule
 ja-mikachan-ttfonts	ports/japanese/mikachan-ttfonts
 ja-mime_pls	ports/japanese/mime_pls
