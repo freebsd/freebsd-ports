@@ -106,7 +106,6 @@ CONFIGURE_ARGS+=	--enable-notify
 
 .if defined(WITH_EMACS)
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs20
 .include "${PORTSDIR}/Mk/bsd.emacs.mk"
 CONFIGURE_ARGS+=	--with-lispdir=${PREFIX}/${EMACS_SITE_LISPDIR}
 PLIST_SUB+=	EMACS=""
