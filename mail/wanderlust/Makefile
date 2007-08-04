@@ -23,7 +23,7 @@ USE_EMACS=	yes
 .include <bsd.port.pre.mk>
 
 MIMEUI_PORT_NAME?=	${MIMEUI_PRODUCT}
-.if (${EMACS_PORT_NAME} == "emacs21")
+.if (${EMACS_PORT_NAME} == "emacs22")
 BITMAP_PORT_NAME=	bitmap
 .endif
 EMACS_W3M_PORT_NAME?=	emacs-w3m
