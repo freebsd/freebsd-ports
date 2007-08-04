@@ -66,11 +66,11 @@ lib/libogmrip.so.0
 libdata/pkgconfig/ogmdvd.pc
 libdata/pkgconfig/ogmjob.pc
 libdata/pkgconfig/ogmrip.pc
-locale/cs/LC_MESSAGES/ogmrip.mo
-locale/de/LC_MESSAGES/ogmrip.mo
-locale/fr/LC_MESSAGES/ogmrip.mo
-locale/pl/LC_MESSAGES/ogmrip.mo
 %%GUI_SUPPORT%%share/applications/ogmrip.desktop
+share/locale/cs/LC_MESSAGES/ogmrip.mo
+share/locale/de/LC_MESSAGES/ogmrip.mo
+share/locale/fr/LC_MESSAGES/ogmrip.mo
+share/locale/pl/LC_MESSAGES/ogmrip.mo
 %%GUI_SUPPORT%%%%DATADIR%%/ogmrip-crop.glade
 %%GUI_SUPPORT%%%%DATADIR%%/ogmrip-main.glade
 %%GUI_SUPPORT%%%%DATADIR%%/ogmrip-options.glade
@@ -83,14 +83,7 @@ locale/pl/LC_MESSAGES/ogmrip.mo
 %%DATADIR%%/xml.xsd
 %%GUI_SUPPORT%%share/pixmaps/ogmrip.png
 @dirrm %%DATADIR%%
+%%GUI_SUPPORT%%@dirrmtry share/applications
 @dirrm include/ogmrip
 @dirrm include/ogmjob
 @dirrm include/ogmdvd
-@dirrmtry locale/cs/LC_MESSAGES
-@dirrmtry locale/cs
-@dirrmtry locale/de/LC_MESSAGES
-@dirrmtry locale/de
-@dirrmtry locale/fr/LC_MESSAGES
-@dirrmtry locale/fr
-@dirrmtry locale/pl/LC_MESSAGES
-@dirrmtry locale/pl
