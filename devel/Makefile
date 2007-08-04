@@ -284,6 +284,7 @@
     SUBDIR += elib
     SUBDIR += elib-emacs19
     SUBDIR += elib-emacs20
+    SUBDIR += elib-emacs21
     SUBDIR += engrave
     SUBDIR += entity
     SUBDIR += epm
