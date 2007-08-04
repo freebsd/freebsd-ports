@@ -39,6 +39,8 @@ include/pidgin/gtkscrollbook.h
 include/pidgin/gtksession.h
 include/pidgin/gtksound.h
 include/pidgin/gtksourceiter.h
+include/pidgin/gtksourceundomanager.h
+include/pidgin/gtksourceview-marshal.h
 include/pidgin/gtkstatusbox.h
 include/pidgin/gtkthemes.h
 include/pidgin/gtkutils.h
@@ -141,6 +143,7 @@ share/gnome/pixmaps/pidgin/emotes/default/alien.png
 share/gnome/pixmaps/pidgin/emotes/default/angel.png
 share/gnome/pixmaps/pidgin/emotes/default/angry.png
 share/gnome/pixmaps/pidgin/emotes/default/arrogant.png
+share/gnome/pixmaps/pidgin/emotes/default/at-wits-end.png
 share/gnome/pixmaps/pidgin/emotes/default/bad.png
 share/gnome/pixmaps/pidgin/emotes/default/bashful.png
 share/gnome/pixmaps/pidgin/emotes/default/beat-up.png
@@ -191,6 +194,7 @@ share/gnome/pixmaps/pidgin/emotes/default/eat.png
 share/gnome/pixmaps/pidgin/emotes/default/embarrassed.png
 share/gnome/pixmaps/pidgin/emotes/default/excruciating.png
 share/gnome/pixmaps/pidgin/emotes/default/eyeroll.png
+share/gnome/pixmaps/pidgin/emotes/default/female-fighter.png
 share/gnome/pixmaps/pidgin/emotes/default/film.png
 share/gnome/pixmaps/pidgin/emotes/default/fingers-crossed.png
 share/gnome/pixmaps/pidgin/emotes/default/flag.png
@@ -239,6 +243,7 @@ share/gnome/pixmaps/pidgin/emotes/default/msn_online.png
 share/gnome/pixmaps/pidgin/emotes/default/musical-note.png
 share/gnome/pixmaps/pidgin/emotes/default/nailbiting.png
 share/gnome/pixmaps/pidgin/emotes/default/neutral.png
+share/gnome/pixmaps/pidgin/emotes/default/on-the-phone.png
 share/gnome/pixmaps/pidgin/emotes/default/party.png
 share/gnome/pixmaps/pidgin/emotes/default/peace.png
 share/gnome/pixmaps/pidgin/emotes/default/phone.png
@@ -292,6 +297,7 @@ share/gnome/pixmaps/pidgin/emotes/default/terror.png
 share/gnome/pixmaps/pidgin/emotes/default/theme
 share/gnome/pixmaps/pidgin/emotes/default/thinking.png
 share/gnome/pixmaps/pidgin/emotes/default/thunder.png
+share/gnome/pixmaps/pidgin/emotes/default/time-out.png
 share/gnome/pixmaps/pidgin/emotes/default/tongue.png
 share/gnome/pixmaps/pidgin/emotes/default/tremble.png
 share/gnome/pixmaps/pidgin/emotes/default/turtle.png
@@ -405,6 +411,7 @@ share/gnome/pixmaps/pidgin/toolbar/16/font-size-down.png
 share/gnome/pixmaps/pidgin/toolbar/16/font-size-up.png
 share/gnome/pixmaps/pidgin/toolbar/16/insert-image.png
 share/gnome/pixmaps/pidgin/toolbar/16/insert-link.png
+share/gnome/pixmaps/pidgin/toolbar/16/insert.png
 share/gnome/pixmaps/pidgin/toolbar/16/message-new.png
 share/gnome/pixmaps/pidgin/toolbar/16/plugins.png
 share/gnome/pixmaps/pidgin/toolbar/16/send-file.png

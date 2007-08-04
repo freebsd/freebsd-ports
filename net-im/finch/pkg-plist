@@ -13,6 +13,7 @@ include/finch/gntpounce.h
 include/finch/gntprefs.h
 include/finch/gntrequest.h
 include/finch/gntstatus.h
+include/finch/gntsound.h
 include/finch/gntui.h
 include/gnt/gnt.h
 include/gnt/gntbindable.h
@@ -31,6 +32,7 @@ include/gnt/gntmarshal.h
 include/gnt/gntmenu.h
 include/gnt/gntmenuitem.h
 include/gnt/gntmenuitemcheck.h
+include/gnt/gntslider.h
 include/gnt/gntstyle.h
 include/gnt/gnttextview.h
 include/gnt/gnttree.h
@@ -38,6 +40,7 @@ include/gnt/gntutils.h
 include/gnt/gntwidget.h
 include/gnt/gntwindow.h
 include/gnt/gntwm.h
+include/gnt/gntws.h
 lib/finch/gntgf.la
 lib/finch/gntgf.so
 lib/finch/gntclipboard.la
@@ -46,12 +49,15 @@ lib/finch/gnthistory.la
 lib/finch/gnthistory.so
 lib/finch/gntlastlog.la
 lib/finch/gntlastlog.so
-lib/finch/s.la
-lib/finch/s.so
+lib/gnt/irssi.la
+lib/gnt/irssi.so
+lib/gnt/s.la
+lib/gnt/s.so
 lib/libgnt.la
 lib/libgnt.so
 lib/libgnt.so.0
 libdata/pkgconfig/gnt.pc
+@dirrm lib/gnt
 @dirrm lib/finch
 @dirrm include/gnt
 @dirrm include/finch
