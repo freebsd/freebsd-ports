@@ -1,7 +1,0 @@
-bin/garith
-%%PORTDOCS%%share/doc/garith/BUGS
-%%PORTDOCS%%share/doc/garith/COPYING
-%%PORTDOCS%%share/doc/garith/HISTORY
-%%PORTDOCS%%share/doc/garith/README
-%%PORTDOCS%%share/doc/garith/TODO
-%%PORTDOCS%%@dirrm share/doc/garith
