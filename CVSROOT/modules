@@ -2403,6 +2403,7 @@ elftoaout	ports/devel/elftoaout
 elib		ports/devel/elib
 elib-emacs19	ports/devel/elib-emacs19
 elib-emacs20	ports/devel/elib-emacs20
+elib-emacs21	ports/devel/elib-emacs21
 elicit		ports/x11/elicit
 elinks		ports/www/elinks
 elisp-manual	ports/lang/elisp-manual
