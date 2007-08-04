@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	intltool
-PORTVERSION=	0.35.5
-PORTREVISION=	2
+PORTVERSION=	0.36.0
 CATEGORIES=	textproc gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.35
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -32,12 +30,6 @@ MAN8=		intltool-extract.8 intltool-merge.8 intltool-prepare.8 \
 
 CONFLICTS=	xml-i18n-tools-[0-9]*
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires Perl 5.6 or higher
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
 		-E -e '/^mkinstalldirs[[:space:]]*=/s^/\.\.^^g'
@@ -47,4 +39,4 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/OrigTree.pm \
 	    	${PREFIX}/share/intltool/XML/Parser/Style
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
