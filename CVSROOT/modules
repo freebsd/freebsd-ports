@@ -15758,6 +15758,7 @@ uhexen2		ports/games/uhexen2
 uhexen2-extras	ports/games/uhexen2-extras
 uim		ports/textproc/uim
 uim-el		ports/textproc/uim-el
+uim-el-emacs21	ports/textproc/uim-el-emacs21
 uim-el-xemacs21-mule	ports/textproc/uim-el-xemacs21-mule
 uim-gnome	ports/textproc/uim-gnome
 uim-gtk		ports/textproc/uim-gtk
