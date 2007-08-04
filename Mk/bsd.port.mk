@@ -604,11 +604,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  "man/mann/bar.n", set "MAN1=foo.1" and "MANN=bar.n".
 #				  The available sections chars are "123456789LN".
 # MAN<sect>_<lang>
-#				- If your port does not install all man pages for all 
-#				  languages in MANLANG, language specific pages for 
+#				- If your port does not install all man pages for all
+#				  languages in MANLANG, language specific pages for
 #				  a language can be specified with this. For example,
 #				  if the port installs foo.1 in English, Japanese, and
-#				  German, bar.1 in English only, and baz.3 in German 
+#				  German, bar.1 in English only, and baz.3 in German
 #				  only, set
 #					MANLANG=	"" de ja
 #					MAN1=		foo.1
@@ -1069,7 +1069,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # CHECKSUM_ALGORITHMS
 #				- Different checksum algorithms to check for verifying the
 #				  integrity of the distfiles. The absence of the algorithm
-#				  in distinfo doesn't make it fail. 
+#				  in distinfo doesn't make it fail.
 #				  Default: md5 sha256
 # NO_CHECKSUM	- Don't verify the checksum.  Typically used when
 #				  when you noticed the distfile you just fetched has
@@ -2051,6 +2051,9 @@ RUN_DEPENDS+=	${X11BASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
 LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
 .      endif
 .	endif
+.endif
+
+.if defined(USE_XLIB) || defined(USE_XORG)
 # Add explicit X options to avoid problems with false positives in configure
 .if defined(GNU_CONFIGURE)
 CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
