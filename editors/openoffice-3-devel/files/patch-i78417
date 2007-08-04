@@ -1,0 +1,10 @@
+--- sw/source/core/bastyp/swregion.cxx
++++ sw/source/core/bastyp/swregion.cxx
+@@ -79,6 +79,7 @@
+ {
+ 	if( rDel )
+ 	{
++		pData = (SwRect*) pData;
+ 		*(pData+nPos) = rRect;
+ 		rDel = FALSE;
+ 	}
