@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		lwp
-PORTVERSION=		14.7
+PORTVERSION=		14.8
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.message.co.nz/~matt-sarah/ \
 			http://mirror1.liquidweather.net/ \
@@ -41,6 +41,7 @@ PLIST_SUB=		LWPVER=${DISTFILES}
 post-extract:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' \
 		test_gui.py
+	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|14.7|14.8|' maindata.xml
 
 pre-install:
 	@cd ${WRKSRC} && zip -qr ${DISTFILES} *
