@@ -498,7 +498,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  If this is set to a list of files, these files will be
 #				  automatically added to ${SUB_FILES}, some %%VAR%%'s will
 #				  automatically be expanded, they will be installed in
-#				  ${TARGETDIR}/etc/rc.d and added to the packing list.
+#				  ${PREFIX}/etc/rc.d and added to the packing list.
 # USE_RCORDER	- List of rc.d startup scripts to be called early in the boot
 #				  process. This acts exactly like USE_RC_SUBR except that
 #				  scripts are installed in /etc/rc.d.
@@ -524,46 +524,23 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # Various directory definitions and variables to control them.
 # You rarely need to redefine any of these except WRKSRC and NO_WRKSUBDIR.
 #
-# TARGETDIR		- The fully qualified path, where everything is installed.
-#				  See the other variables below.
-#				  Default: ${DESTDIR}${PREFIX}
-#
-# DESTDIR		- The path to the environment we are installing to.  Define
-#				  this if you want to install packages into a jail
-#				  or into an another FreeBSD environment mounted
-#				  elsewhere than /.  ${PREFIX} is relative to
-#				  ${DESTDIR}.  E.g. setting DESTDIR=/bla PREFIX=/opt will
-#				  result packages installed under /bla/opt and registered
-#				  under /bla/var/db/pkg.
-#				  Default: not set (means /)
-#
 # X11BASE		- Where X11 ports install things.
-#				  Default: ${DESTDIR}/${LOCALBASE}
-# X11BASE_REL		- Same as X11BASE, but relative to DESTDIR
 #				  Default: ${LOCALBASE}
 # LOCALBASE		- Where non-X11 ports install things.
-#				  Default: ${DESTDIR}/usr/local
-# LOCALBASE_REL		- Same as LOCALBASE, but relative to DESTDIR
 #				  Default: /usr/local
 # LINUXBASE		- Where Linux ports install things.
-#				  Default: ${DESTDIR}/compat/linux
-# LINUXBASE_REL		- Same as LINUXBASE, but relative to DESTDIR
 #				  Default: /compat/linux
 # PREFIX		- Where *this* port installs its files.
-#				  Default: ${X11BASE_REL} if USE_X_PREFIX is set,
-#				  ${LINUXBASE_REL} if  USE_LINUX_PREFIX is set,
-#				  otherwise ${LOCALBASE_REL}
+#				  Default: ${X11BASE} if USE_X_PREFIX is set,
+#				  ${LINUXBASE} if  USE_LINUX_PREFIX is set,
+#				  otherwise ${LOCALBASE}
 #
 # IGNORE_PATH_CHECKS
-#				- There are some sanity checks against PREFIX and DESTDIR.
+#				- There are some sanity checks against PREFIX.
 #				  You can disable these checks with defining
 #				  this variable, but this is not recommended!
 #				  Only do this if you really know what you are
 #				  doing.  These sanity checks are the following:
-#				    - DESTDIR can't be /.  Just leave it undefined
-#				      if you want to install to /.
-#				    - DESTDIR has to be an absolute path.
-#				    - DESTDIR can't have a trailing slash.
 #				    - PREFIX has to be an absolute path.
 #				    - PREFIX can't have a trailing slash.
 #
@@ -644,7 +621,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  installs its own manpage links so they will show up
 #				  correctly in ${PLIST}.)
 # MANPREFIX		- The directory prefix for ${MAN<sect>} and ${MLINKS}.
-#				  Default: ${TARGETDIR}
+#				  Default: ${PREFIX}
 # MAN<sect>PREFIX
 #				- If manual pages of some sections install in different
 #				  locations than others, use these.
@@ -973,7 +950,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  rest of PLIST, so ${PLIST_SUB} substitutions also
 #				  apply here.  It is recommended that you use
 #				  %%PREFIX%% for ${PREFIX}, %%LOCALBASE%% for
-#				  ${LOCALBASE_REL} and %%X11BASE%% for ${X11BASE_REL}.
+#				  ${LOCALBASE} and %%X11BASE%% for ${X11BASE}.
 #				  Default: %%PREFIX%%/lib
 # USE_LDCONFIG  - If set to "yes", this subsumes the function of the
 #				  deprecated variable INSTALLS_SHLIB and adds ${PREFIX}/lib
@@ -996,22 +973,22 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  internal to bsd.port.mk and must not be set in your Makefile.
 #
 # DOCSDIR		- Name of the directory to install the packages docs in.
-#				  Default: ${TARGETDIR}/share/doc/${PORTNAME}
-# DOCSDIR_REL	- The DOCSDIR relative to ${TARGETDIR}
+#				  Default: ${PREFIX}/share/doc/${PORTNAME}
+# DOCSDIR_REL	- The DOCSDIR relative to ${PREFIX}
 # EXAMPLESDIR	- Name of the directory to install the packages examples in.
-#				  Default: ${TARGETDIR}/share/examples/${PORTNAME}
+#				  Default: ${PREFIX}/share/examples/${PORTNAME}
 # EXAMPLESDIR_REL
-#				- The EXAMPLESDIR relative to ${TARGETDIR}
+#				- The EXAMPLESDIR relative to ${PREFIX}
 # DATADIR		- Name of the directory to install the packages shared data in.
-#				  Default: ${TARGETDIR}/share/${PORTNAME}
-# DATADIR_REL	- The DATADIR relative to ${TARGETDIR}
+#				  Default: ${PREFIX}/share/${PORTNAME}
+# DATADIR_REL	- The DATADIR relative to ${PREFIX}
 #
 # WWWDIR		- Name of the directory to install the packages www data in.
-#				  Default: ${TARGETDIR}/www/${PORTNAME}
-# WWWDIR_REL	- The WWWDIR relative to ${TARGETDIR}
+#				  Default: ${PREFIX}/www/${PORTNAME}
+# WWWDIR_REL	- The WWWDIR relative to ${PREFIX}
 #
 # DESKTOPDIR	- Name of the directory to install ${DESKTOP_ENTRIES} in.
-#				  Default: ${TARGETDIR}/share/applications
+#				  Default: ${PREFIX}/share/applications
 # DESKTOP_ENTRIES
 #				- List of desktop entry files to generate and install in
 #				  ${DESKTOPDIR}. The format is
@@ -1080,9 +1057,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  it attempts to apply them.
 # PKG_DBDIR		- Where package installation is recorded; this directory
 #				  must not contain anything else.
-#				  Default: ${DESTDIR}/var/db/pkg
+#				  Default: /var/db/pkg
 # PORT_DBDIR	- Where port configuration options are recorded.
-#				  Default: ${DESTDIR}/var/db/ports
+#				  Default: /var/db/ports
 # NO_PKG_REGISTER
 #				- Don't register a port installation as a package.
 # FORCE_PKG_REGISTER
@@ -1111,6 +1088,19 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # End of the list of all variables that need to be defined in a port.
 # Most port authors should not need to understand anything after this point.
 #
+
+.include "${PORTSDIR}/Mk/bsd.commands.mk"
+
+#
+# DESTDIR section to start a chrooted process if invoked with DESTDIR set
+#
+
+.if defined(DESTDIR) && !empty(DESTDIR) && !defined(CHROOTED) && \
+	!defined(BEFOREPORTMK) && !defined(INOPTIONSMK)
+
+.include "${PORTSDIR}/Mk/bsd.destdir.mk"
+
+.else
 
 # Look for ${WRKSRC}/.../*.orig files, and (re-)create
 # ${FILEDIR}/patch-* files from them.
@@ -1141,78 +1131,6 @@ NOPRECIOUSSOFTMAKEVARS= yes
 .endif
 .endif
 
-AWK?=		/usr/bin/awk
-BASENAME?=	/usr/bin/basename
-BRANDELF?=	/usr/bin/brandelf
-BZCAT?=		/usr/bin/bzcat
-BZIP2_CMD?=	/usr/bin/bzip2
-CAT?=		/bin/cat
-CHGRP?=		/usr/bin/chgrp
-CHMOD?=		/bin/chmod
-CHOWN?=		/usr/sbin/chown
-CHROOT?=	/usr/sbin/chroot
-COMM?=		/usr/bin/comm
-CP?=		/bin/cp
-CPIO?=		/usr/bin/cpio
-CUT?=		/usr/bin/cut
-DC?=		/usr/bin/dc
-DIALOG?=	/usr/bin/dialog
-DIFF?=		/usr/bin/diff
-DIRNAME?=	/usr/bin/dirname
-EGREP?=		/usr/bin/egrep
-EXPR?=		/bin/expr
-FALSE?=		false				# Shell builtin
-FILE?=		/usr/bin/file
-FIND?=		/usr/bin/find
-FMT?=		/usr/bin/fmt
-GREP?=		/usr/bin/grep
-GUNZIP_CMD?=	/usr/bin/gunzip -f
-GZCAT?=		/usr/bin/gzcat
-GZIP?=		-9
-GZIP_CMD?=	/usr/bin/gzip -nf ${GZIP}
-HEAD?=		/usr/bin/head
-ID?=		/usr/bin/id
-IDENT?=		/usr/bin/ident
-LDCONFIG?=	/sbin/ldconfig
-LN?=		/bin/ln
-LS?=		/bin/ls
-MKDIR?=		/bin/mkdir -p
-MKTEMP?=	/usr/bin/mktemp
-MV?=		/bin/mv
-OBJCOPY?=	/usr/bin/objcopy
-OBJDUMP?=	/usr/bin/objdump
-PASTE?=		/usr/bin/paste
-PAX?=		/bin/pax
-PRINTF?=	/usr/bin/printf
-REALPATH?=	/bin/realpath
-RM?=		/bin/rm
-RMDIR?=		/bin/rmdir
-SED?=		/usr/bin/sed
-SETENV?=	/usr/bin/env
-SH?=		/bin/sh
-SORT?=		/usr/bin/sort
-STRIP_CMD?=	/usr/bin/strip
-SU_CMD?=	/usr/bin/su root -c
-SYSCTL?=	/sbin/sysctl
-TAIL?=		/usr/bin/tail
-TEST?=		test				# Shell builtin
-TR?=		LANG=C /usr/bin/tr
-TRUE?=		true				# Shell builtin
-UNAME?=		/usr/bin/uname
-UNZIP_CMD?=	${LOCALBASE}/bin/unzip
-UNMAKESELF_CMD?=	${LOCALBASE}/bin/unmakeself
-WHICH?=		/usr/bin/which
-XARGS?=		/usr/bin/xargs
-YACC?=		/usr/bin/yacc
-
-# ECHO is defined in /usr/share/mk/sys.mk, which can either be "echo",
-# or "true" if the make flag -s is given.  Use ECHO_CMD where you mean
-# the echo command.
-ECHO_CMD?=	echo				# Shell builtin
-
-# Used to print all the '===>' style prompts - override this to turn them off.
-ECHO_MSG?=		${ECHO_CMD}
-
 # Get the default maintainer
 MAINTAINER?=	ports@FreeBSD.org
 
@@ -1236,10 +1154,10 @@ OSREL!=	${UNAME} -r | ${SED} -e 's/[-(].*//'
 
 # Get __FreeBSD_version
 .if !defined(OSVERSION)
-.if exists(${DESTDIR}/usr/include/sys/param.h)
-OSVERSION!=	${AWK} '/^\#define __FreeBSD_version/ {print $$3}' < ${DESTDIR}/usr/include/sys/param.h
-.elif exists(${DESTDIR}/usr/src/sys/sys/param.h)
-OSVERSION!=	${AWK} '/^\#define __FreeBSD_version/ {print $$3}' < ${DESTDIR}/usr/src/sys/sys/param.h
+.if exists(/usr/include/sys/param.h)
+OSVERSION!=	${AWK} '/^\#define __FreeBSD_version/ {print $$3}' < /usr/include/sys/param.h
+.elif exists(/usr/src/sys/sys/param.h)
+OSVERSION!=	${AWK} '/^\#define __FreeBSD_version/ {print $$3}' < /usr/src/sys/sys/param.h
 .else
 OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
@@ -1285,7 +1203,7 @@ USE_SUBMAKE=	yes
 .endif
 
 # where 'make config' records user configuration options
-PORT_DBDIR?=	${DESTDIR}/var/db/ports
+PORT_DBDIR?=	/var/db/ports
 
 LDCONFIG_DIR=	libdata/ldconfig
 LDCONFIG32_DIR=	libdata/ldconfig32
@@ -1383,24 +1301,16 @@ PORTSDIR?=		/usr/ports
 LOCALBASE?=		/usr/local
 X11BASE?=		${LOCALBASE}
 LINUXBASE?=		/compat/linux
-LOCALBASE_REL:=		${LOCALBASE}
-X11BASE_REL:=		${X11BASE}
-LINUXBASE_REL:=		${LINUXBASE}
-LOCALBASE:=		${DESTDIR}${LOCALBASE_REL}
-X11BASE:=		${DESTDIR}${X11BASE_REL}
-LINUXBASE:=		${DESTDIR}${LINUXBASE_REL}
 DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
 INDEXDIR?=		${PORTSDIR}
 INDEXFILE?=		INDEX-${OSVERSION:C/([0-9]).*/\1/}
 
-TARGETDIR:=		${DESTDIR}${PREFIX}
-
-DOCSDIR?=		${TARGETDIR}/share/doc/${PORTNAME}
-EXAMPLESDIR?=		${TARGETDIR}/share/examples/${PORTNAME}
-DATADIR?=		${TARGETDIR}/share/${PORTNAME}
-WWWDIR?=		${TARGETDIR}/www/${PORTNAME}
-ETCDIR?=		${TARGETDIR}/etc/${PORTNAME}
+DOCSDIR?=		${PREFIX}/share/doc/${PORTNAME}
+EXAMPLESDIR?=		${PREFIX}/share/examples/${PORTNAME}
+DATADIR?=		${PREFIX}/share/${PORTNAME}
+WWWDIR?=		${PREFIX}/www/${PORTNAME}
+ETCDIR?=		${PREFIX}/etc/${PORTNAME}
 
 .if defined(USE_LINUX_RPM)
 .include "${PORTSDIR}/Mk/bsd.linux-rpm.mk"
@@ -1454,32 +1364,21 @@ USE_X_PREFIX=	yes
 USE_XLIB=		yes
 .endif
 .if defined(USE_X_PREFIX)
-PREFIX?=		${X11BASE_REL}
+PREFIX?=		${X11BASE}
 .elif defined(USE_LINUX_PREFIX)
-PREFIX?=		${LINUXBASE_REL}
+PREFIX?=		${LINUXBASE}
 NO_MTREE=		yes
 .else
-PREFIX?=		${LOCALBASE_REL}
+PREFIX?=		${LOCALBASE}
 .endif
 
 .if defined(USE_LINUX_PREFIX)
-.if !defined(DESTDIR)
-LDCONFIG_CMD?=			${LINUXBASE_REL}/sbin/ldconfig -r ${LINUXBASE_REL}
+LDCONFIG_CMD?=			${LINUXBASE}/sbin/ldconfig -r ${LINUXBASE}
 LDCONFIG_PLIST_EXEC_CMD?=	${LDCONFIG_CMD}
 LDCONFIG_PLIST_UNEXEC_CMD?=	${LDCONFIG_CMD}
 .else
-LDCONFIG_CMD?=			${CHROOT} ${DESTDIR} ${LINUXBASE_REL}/sbin/ldconfig -r ${LINUXBASE_REL}
-LDCONFIG_PLIST_EXEC_CMD?=	${LDCONFIG_CMD}
-LDCONFIG_PLIST_UNEXEC_CMD?=	${LINUXBASE_REL}/sbin/ldconfig -r ${LINUXBASE_REL}
-.endif
-.else
-.if !defined(DESTDIR)
 LDCONFIG_CMD?=			${LDCONFIG} -m ${LDCONFIG_RUNLIST}
 LDCONFIG_PLIST_EXEC_CMD?=	${LDCONFIG} -m ${LDCONFIG_PLIST}
-.else
-LDCONFIG_CMD?=			${CHROOT} ${DESTDIR} ${LDCONFIG} -m ${LDCONFIG_RUNLIST}
-LDCONFIG_PLIST_EXEC_CMD?=	${CHROOT} ${DESTDIR} ${LDCONFIG} -m ${LDCONFIG_PLIST}
-.endif
 LDCONFIG_PLIST_UNEXEC_CMD?=	${LDCONFIG} -R
 .endif
 
@@ -1602,7 +1501,6 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.xfce.mk"
 .endif
 
-# These do some path checks if DESTDIR is set correctly.
 # You can force skipping these test by defining IGNORE_PATH_CHECKS
 .if !defined(IGNORE_PATH_CHECKS)
 .if (${PREFIX:C,(^.).*,\1,} != "/")
@@ -1610,27 +1508,6 @@ PERL=		${LOCALBASE}/bin/perl
 	@${ECHO_MSG} "PREFIX must be defined as an absolute path so that when 'make'"
 	@${ECHO_MSG} "is invoked in the work area PREFIX points to the right place."
 	@${FALSE}
-.endif
-.if defined(DESTDIR)
-.if (${DESTDIR:C,(^.).*,\1,} != "/")
-.if ${DESTDIR} == "/"
-.BEGIN:
-	@${ECHO_MSG} "You can't set DESTDIR to /. Please re-run make with"
-	@${ECHO_MSG} "DESTDIR unset."
-	@${FALSE}
-.else
-.BEGIN:
-	@${ECHO_MSG} "DESTDIR must be defined as an absolute path so that when 'make'"
-	@${ECHO_MSG} "is invoked in the work area DESTDIR points to the right place."
-	@${FALSE}
-.endif
-.endif
-.if (${DESTDIR:C,^.*(/)$$,\1,} == "/")
-.BEGIN:
-	@${ECHO_MSG} "DESTDIR can't have a trailing slash. Please remove the trailing"
-	@${ECHO_MSG} "slash and re-run 'make'"
-	@${FALSE}
-.endif
 .endif
 .endif
 
@@ -1671,11 +1548,10 @@ CONFIGURE_WRKSRC?=	${WRKSRC}
 BUILD_WRKSRC?=	${WRKSRC}
 INSTALL_WRKSRC?=${WRKSRC}
 
-PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE_REL} X11BASE=${X11BASE_REL} \
-		DESTDIR=${DESTDIR} TARGETDIR=${TARGETDIR}
-SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE_REL} X11BASE=${X11BASE_REL} \
+PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
+SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
 		DATADIR=${DATADIR} DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR} \
-		WWWDIR=${WWWDIR} ETCDIR=${ETCDIR} DESTDIR=${DESTDIR} TARGETDIR=${TARGETDIR}
+		WWWDIR=${WWWDIR} ETCDIR=${ETCDIR}
 
 PLIST_REINPLACE+=	dirrmtry stopdaemon
 PLIST_REINPLACE_DIRRMTRY=s!^@dirrmtry \(.*\)!@unexec rmdir %D/\1 2>/dev/null || true!
@@ -2059,10 +1935,10 @@ ALL_TARGET?=
 PL_BUILD?=		Build
 CONFIGURE_ARGS+= \
 	create_packlist=0 \
-	install_path=lib="${TARGETDIR}/${SITE_PERL_REL}" \
-	install_path=arch="${TARGETDIR}/${SITE_PERL_REL}/${PERL_ARCH}" \
-	install_path=script="${TARGETDIR}/bin" \
-	install_path=bin="${TARGETDIR}/bin" \
+	install_path=lib="${PREFIX}/${SITE_PERL_REL}" \
+	install_path=arch="${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}" \
+	install_path=script="${PREFIX}/bin" \
+	install_path=bin="${PREFIX}/bin" \
 	install_path=libdoc="${MAN3PREFIX}/man/man3" \
 	install_path=bindoc="${MAN1PREFIX}/man/man1"
 .elif defined(PERL_CONFIGURE)
@@ -2249,8 +2125,8 @@ MD5?=			md5
 .endif
 .if exists(/sbin/sha256)
 SHA256?=		/sbin/sha256
-.elif exists(${LOCALBASE_REL}/sbin/sha256)
-SHA256?=		${LOCALBASE_REL}/sbin/sha256
+.elif exists(${LOCALBASE}/sbin/sha256)
+SHA256?=		${LOCALBASE}/sbin/sha256
 .else
 SHA256?=		NO
 .endif
@@ -2261,8 +2137,8 @@ MD5_FILE?=		${MASTERDIR}/distinfo
 
 MAKE_FLAGS?=	-f
 MAKEFILE?=		Makefile
-MAKE_ENV+=		TARGETDIR=${TARGETDIR} DESTDIR=${DESTDIR} PREFIX=${PREFIX} \
-			LOCALBASE=${LOCALBASE_REL} X11BASE=${X11BASE_REL} \
+MAKE_ENV+=		PREFIX=${PREFIX} \
+			LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
 			MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS}" MANPREFIX="${MANPREFIX}"
 
@@ -2443,42 +2319,23 @@ PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
 .if (${OSVERSION} < 504105 || (${OSVERSION} >= 600000 && ${OSVERSION} < 600103) || (${OSVERSION} >= 700000 && ${OSVERSION} < 700012)) && ${PKGORIGIN} != "ports-mgmt/pkg_install"
 EXTRACT_DEPENDS+=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/ports-mgmt/pkg_install
 .endif
-.if !defined(DESTDIR)
-PKG_CMD?=		${LOCALBASE_REL}/sbin/pkg_create
-PKG_ADD?=		${LOCALBASE_REL}/sbin/pkg_add
-PKG_DELETE?=	${LOCALBASE_REL}/sbin/pkg_delete
-PKG_INFO?=		${LOCALBASE_REL}/sbin/pkg_info
-PKG_VERSION?=		${LOCALBASE_REL}/sbin/pkg_version
+PKG_CMD?=		${LOCALBASE}/sbin/pkg_create
+PKG_ADD?=		${LOCALBASE}/sbin/pkg_add
+PKG_DELETE?=	${LOCALBASE}/sbin/pkg_delete
+PKG_INFO?=		${LOCALBASE}/sbin/pkg_info
+PKG_VERSION?=		${LOCALBASE}/sbin/pkg_version
 .else
-PKG_CMD?=		${LOCALBASE_REL}/sbin/pkg_create
-PKG_ADD?=		${CHROOT} ${DESTDIR} ${LOCALBASE_REL}/sbin/pkg_add
-PKG_DELETE?=		${CHROOT} ${DESTDIR} ${LOCALBASE_REL}/sbin/pkg_delete
-PKG_INFO?=		${CHROOT} ${DESTDIR} ${LOCALBASE_REL}/sbin/pkg_info
-.endif
-.else
-.if !defined(DESTDIR)
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_ADD?=		/usr/sbin/pkg_add
 PKG_DELETE?=	/usr/sbin/pkg_delete
 PKG_INFO?=		/usr/sbin/pkg_info
 PKG_VERSION?=		/usr/sbin/pkg_version
-.else
-PKG_CMD?=		/usr/sbin/pkg_create
-PKG_ADD?=		${CHROOT} ${DESTDIR} /usr/sbin/pkg_add
-PKG_DELETE?=		${CHROOT} ${DESTDIR} /usr/sbin/pkg_delete
-PKG_INFO?=		${CHROOT} ${DESTDIR} /usr/sbin/pkg_info
-PKG_VERSION?=		${CHROOT} ${DESTDIR} /usr/sbin/pkg_version
-.endif
 .endif
 
 # Does the pkg_create tool support conflict checking?
 # XXX Slow?
 .if !defined(PKGINSTALLVER)
-.if !defined(DESTDIR)
 PKGINSTALLVER!= ${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
-.else
-PKGINSTALLVER!= ${CHROOT} ${DESTDIR} ${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
-.endif
 .endif
 .if ${PKGINSTALLVER} < 20030417
 DISABLE_CONFLICTS=	YES
@@ -2501,7 +2358,7 @@ PKG_SUFX?=		.tar
 PKG_SUFX?=		.tbz
 .endif
 # where pkg_add records its dirty deeds.
-PKG_DBDIR?=		${DESTDIR}/var/db/pkg
+PKG_DBDIR?=		/var/db/pkg
 
 MOTIFLIB?=	-L${X11BASE}/lib -lXm -lXp
 
@@ -2976,10 +2833,10 @@ LATEST_LINK?=		${PKGBASE}
 PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${LATEST_LINK}${PKG_SUFX}
 
 .if defined(PERL_CONFIGURE)
-CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${TARGETDIR}" \
-			INSTALLPRIVLIB="${TARGETDIR}/lib" INSTALLARCHLIB="${TARGETDIR}/lib"
+CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
+			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 CONFIGURE_SCRIPT?=	Makefile.PL
-MAN3PREFIX?=		${TARGETDIR}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX?=		${PREFIX}/lib/perl5/${PERL_VERSION}
 .undef HAS_CONFIGURE
 .endif
 
@@ -3014,16 +2871,16 @@ SCRIPTS_ENV+=	CURDIR=${MASTERDIR} DISTDIR=${DISTDIR} \
 		  WRKDIR=${WRKDIR} WRKSRC=${WRKSRC} PATCHDIR=${PATCHDIR} \
 		  SCRIPTDIR=${SCRIPTDIR} FILESDIR=${FILESDIR} \
 		  PORTSDIR=${PORTSDIR} PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
-		  X11BASE=${X11BASE} DESTDIR=${DESTDIR} TARGETDIR=${DESTDIR}
+		  X11BASE=${X11BASE}
 
 .if defined(BATCH)
 SCRIPTS_ENV+=	BATCH=yes
 .endif
 
 .if ${PREFIX} == /usr
-MANPREFIX?=	${DESTDIR}/usr/share
+MANPREFIX?=	/usr/share
 .else
-MANPREFIX?=	${TARGETDIR}
+MANPREFIX?=	${PREFIX}
 .endif
 
 .for sect in 1 2 3 4 5 6 7 8 9
@@ -3119,9 +2976,9 @@ _TMLINKS=
 .if defined(_MANPAGES)
 
 .if defined(NOMANCOMPRESS)
-__MANPAGES:=	${_MANPAGES:S%^${TARGETDIR}/%%}
+__MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%}
 .else
-__MANPAGES:=	${_MANPAGES:S%^${TARGETDIR}/%%:S%$%.gz%}
+__MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%:S%$%.gz%}
 .endif
 
 .if ${MANCOMPRESSED} == "yes"
@@ -3150,11 +3007,11 @@ BROKEN=		only one subdirectory in INFO is allowed
 . endfor
 .endif
 
-DOCSDIR_REL?=	${DOCSDIR:S,^${TARGETDIR}/,,}
-EXAMPLESDIR_REL?=	${EXAMPLESDIR:S,^${TARGETDIR}/,,}
-DATADIR_REL?=	${DATADIR:S,^${TARGETDIR}/,,}
-WWWDIR_REL?=	${WWWDIR:S,^${TARGETDIR}/,,}
-ETCDIR_REL?=	${ETCDIR:S,^${TARGETDIR}/,,}
+DOCSDIR_REL?=	${DOCSDIR:S,^${PREFIX}/,,}
+EXAMPLESDIR_REL?=	${EXAMPLESDIR:S,^${PREFIX}/,,}
+DATADIR_REL?=	${DATADIR:S,^${PREFIX}/,,}
+WWWDIR_REL?=	${WWWDIR:S,^${PREFIX}/,,}
+ETCDIR_REL?=	${ETCDIR:S,^${PREFIX}/,,}
 
 PLIST_SUB+=	DOCSDIR="${DOCSDIR_REL}" \
 		EXAMPLESDIR="${EXAMPLESDIR_REL}" \
@@ -3162,8 +3019,8 @@ PLIST_SUB+=	DOCSDIR="${DOCSDIR_REL}" \
 		WWWDIR="${WWWDIR_REL}" \
 		ETCDIR="${ETCDIR_REL}"
 
-DESKTOPDIR?=		${TARGETDIR}/share/applications
-_DESKTOPDIR_REL=	${DESKTOPDIR:S,^${TARGETDIR}/,,}/
+DESKTOPDIR?=		${PREFIX}/share/applications
+_DESKTOPDIR_REL=	${DESKTOPDIR:S,^${PREFIX}/,,}/
 
 .if ${_DESKTOPDIR_REL} == ${DESKTOPDIR}/
 # DESKTOPDIR is not beneath PREFIX
@@ -3335,7 +3192,7 @@ all:
 	@cd ${.CURDIR} && ${SETENV} CURDIR=${.CURDIR} DISTNAME=${DISTNAME} \
 	  DISTDIR=${DISTDIR} WRKDIR=${WRKDIR} WRKSRC=${WRKSRC} \
 	  PATCHDIR=${PATCHDIR} SCRIPTDIR=${SCRIPTDIR} \
-	  FILESDIR=${FILESDIR} PORTSDIR=${PORTSDIR} DESTDIR=${DESTDIR} PREFIX=${PREFIX} \
+	  FILESDIR=${FILESDIR} PORTSDIR=${PORTSDIR} PREFIX=${PREFIX} \
 	  BUILD_DEPENDS="${BUILD_DEPENDS}" RUN_DEPENDS="${RUN_DEPENDS}" X11BASE=${X11BASE} \
 	  CONFLICTS="${CONFLICTS}" \
 	${ALL_HOOK}
@@ -3513,8 +3370,8 @@ DISTINFO_DATA?=	if [ \( -n "${DISABLE_SIZE}" -a -n "${NO_CHECKSUM}" \) -o ! -f "
 do-fetch:
 	@${MKDIR} ${_DISTDIR}
 	@cd ${_DISTDIR};\
-	 ${_MASTER_SITES_ENV} ; \
-	 for _file in ${DISTFILES}; do \
+	${_MASTER_SITES_ENV} ; \
+	for _file in ${DISTFILES}; do \
 		file=$${_file%%:*}; \
 		if [ $$_file = $$file ];	then	\
 			select='';	\
@@ -3535,7 +3392,7 @@ do-fetch:
 				${ECHO_MSG} "=> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
 				${ECHO_MSG} "=> Please correct this problem and try again."; \
 				exit 1; \
-			fi ; \
+			fi; \
 			if [ -f ${MD5_FILE} -a "x${NO_CHECKSUM}" = "x" ]; then \
 				_md5sum=`alg=MD5; ${DISTINFO_DATA}`; \
 				if [ -z "$$_md5sum" ]; then \
@@ -3556,13 +3413,13 @@ do-fetch:
 					if [ ! -z \$${_MASTER_SITES_$${group}} ] ; then \
 						eval ___MASTER_SITES_TMP="\$${_MASTER_SITES_$${group}}" ; \
 						__MASTER_SITES_TMP="$${__MASTER_SITES_TMP} $${___MASTER_SITES_TMP}" ; \
-					fi \
+					fi; \
 				done; \
 				___MASTER_SITES_TMP= ; \
 				SORTED_MASTER_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__MASTER_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
-			fi ; \
+			fi; \
 			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 			    ${ECHO_MSG} "=> Attempting to fetch from $${site}."; \
 				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
@@ -3573,17 +3430,17 @@ do-fetch:
 				esac; \
 				if ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} ${FETCH_AFTER_ARGS}; then \
 					continue 2; \
-				fi \
+				fi; \
 			done; \
 			${ECHO_MSG} "=> Couldn't fetch it - please try to retrieve this";\
 			${ECHO_MSG} "=> port manually into ${_DISTDIR} and try again."; \
 			exit 1; \
-	    fi \
+	    fi; \
 	 done
 .if defined(PATCHFILES)
 	@cd ${_DISTDIR};\
 	${_PATCH_SITES_ENV} ; \
-	 for _file in ${PATCHFILES}; do \
+	for _file in ${PATCHFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
 		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		force_fetch=false; \
@@ -3600,7 +3457,7 @@ do-fetch:
 				${ECHO_MSG} "=> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
 				${ECHO_MSG} "=> Please correct this problem and try again."; \
 				exit 1; \
-			fi ; \
+			fi; \
 			${ECHO_MSG} "=> $$file doesn't seem to exist in ${_DISTDIR}."; \
 			if [ ! -z "$$select" ] ; then \
 				__PATCH_SITES_TMP= ; \
@@ -3608,13 +3465,13 @@ do-fetch:
 					if [ ! -z \$${_PATCH_SITES_$${group}} ] ; then \
 						eval ___PATCH_SITES_TMP="\$${_PATCH_SITES_$${group}}" ; \
 						__PATCH_SITES_TMP="$${__PATCH_SITES_TMP} $${___PATCH_SITES_TMP}" ; \
-					fi \
+					fi; \
 				done; \
 				___PATCH_SITES_TMP= ; \
 				SORTED_PATCH_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__PATCH_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
-			fi ; \
+			fi; \
 			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP`; do \
 			    ${ECHO_MSG} "=> Attempting to fetch from $${site}."; \
 				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
@@ -3625,12 +3482,12 @@ do-fetch:
 				esac; \
 				if ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} ${FETCH_AFTER_ARGS}; then \
 					continue 2; \
-				fi \
+				fi; \
 			done; \
 			${ECHO_MSG} "=> Couldn't fetch it - please try to retrieve this";\
 			${ECHO_MSG} "=> port manually into ${_DISTDIR} and try again."; \
 			exit 1; \
-	    fi \
+		fi; \
 	 done
 .endif
 .endif
@@ -3645,7 +3502,7 @@ do-extract:
 		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
 		then \
 			exit 1; \
-		fi \
+		fi; \
 	done
 .if !defined(EXTRACT_PRESERVE_OWNERSHIP)
 	@if [ `${ID} -u` = 0 ]; then \
@@ -3824,11 +3681,7 @@ check-conflicts:
 	done; \
 	if [ -n "$${conflicts_with}" ]; then \
 		${ECHO_MSG}; \
-		if [ -z "${DESTDIR}" ] ; then \
-			${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
-		else \
-			${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s) in ${DESTDIR}: "; \
-		fi; \
+		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
 		for entry in $${conflicts_with}; do \
 			${ECHO_MSG} "      $${entry}"; \
 		done; \
@@ -3956,12 +3809,8 @@ delete-package-list: delete-package-links-list
 .if !target(check-already-installed)
 check-already-installed:
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
-.if !defined(DESTDIR)
-		@${ECHO_MSG} "===>  Checking if ${PKGORIGIN} already installed"
-.else
-		@${ECHO_MSG} "===>  Checking if ${PKGORIGIN} already installed in ${DESTDIR}"
-.endif
-		@${MKDIR} ${PKG_DBDIR}; \
+		@${ECHO_MSG} "===>  Checking if ${PKGORIGIN} already installed"; \
+		${MKDIR} ${PKG_DBDIR}; \
 		already_installed=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
 		if [ -n "$${already_installed}" ]; then \
 				for p in $${already_installed}; do \
@@ -3974,20 +3823,12 @@ check-already-installed:
 								fi; \
 						fi; \
 				done; \
-		fi ; \
+		fi; \
 		if [ -d ${PKG_DBDIR}/${PKGNAME} -o -n "$${found_package}" ]; then \
 				if [ -d ${PKG_DBDIR}/${PKGNAME} ]; then \
-					if [ -z "${DESTDIR}" ] ; then \
-						${ECHO_MSG} "===>   ${PKGNAME} is already installed"; \
-					else \
-						${ECHO_MSG} "===>   ${PKGNAME} is already installed in ${DESTDIR}"; \
-					fi; \
+					${ECHO_CMD} "===>   ${PKGNAME} is already installed"; \
 				else \
-					if [ -z "${DESTDIR}" ] ; then \
-						${ECHO_MSG} "===>   An older version of ${PKGORIGIN} is already installed ($${found_package})"; \
-					else \
-						${ECHO_MSG} "===>   An older version of ${PKGORIGIN} is already installed in ${DESTDIR} ($${found_package})"; \
-					fi; \
+					${ECHO_CMD} "===>   An older version of ${PKGORIGIN} is already installed ($${found_package})"; \
 				fi; \
 				${ECHO_MSG} "      You may wish to \`\`make deinstall'' and install this port again"; \
 				${ECHO_MSG} "      by \`\`make reinstall'' to upgrade it properly."; \
@@ -4012,12 +3853,12 @@ check-umask:
 
 .if !target(install-mtree)
 install-mtree:
-	@${MKDIR} ${TARGETDIR}
+	@${MKDIR} ${PREFIX}
 	@if [ `${ID} -u` != 0 ]; then \
-		if [ -w ${TARGETDIR}/ ]; then \
+		if [ -w ${PREFIX}/ ]; then \
 			${ECHO_MSG} "Warning: not superuser, you may get some errors during installation."; \
 		else \
-			${ECHO_MSG} "Error: ${TARGETDIR}/ not writable."; \
+			${ECHO_MSG} "Error: ${PREFIX}/ not writable."; \
 			${FALSE}; \
 		fi; \
 	fi
@@ -4028,9 +3869,9 @@ install-mtree:
 			${ECHO_MSG} "Copy it from a suitable location (e.g., /usr/src/etc/mtree) and try again."; \
 			exit 1; \
 		else \
-			${MTREE_CMD} ${MTREE_ARGS} ${TARGETDIR}/ >/dev/null; \
-			if [ ${PREFIX} = ${LOCALBASE_REL} ]; then \
-				cd ${TARGETDIR}/share/nls; \
+			${MTREE_CMD} ${MTREE_ARGS} ${PREFIX}/ >/dev/null; \
+			if [ ${PREFIX} = ${LOCALBASE} ]; then \
+				cd ${PREFIX}/share/nls; \
 				${LN} -shf C POSIX; \
 				${LN} -shf C en_US.US-ASCII; \
 			fi; \
@@ -4047,21 +3888,11 @@ install-ldconfig-file:
 .if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32) || defined(INSTALLS_SHLIB)
 .if defined(USE_LDCONFIG)
 .if !defined(INSTALL_AS_USER)
-.if !defined(DESTDIR)
 	@${ECHO_MSG} "===>   Running ldconfig"
 	${LDCONFIG} -m ${USE_LDCONFIG}
 .else
-	@${ECHO_MSG} "===>   Running ldconfig in ${DESTDIR}"
-	${CHROOT} ${DESTDIR} ${LDCONFIG} -m ${USE_LDCONFIG}
-.endif
-.else
-.if !defined(DESTDIR)
 	@${ECHO_MSG} "===>   Running ldconfig (errors are ignored)"
 	-${LDCONFIG} -m ${USE_LDCONFIG}
-.else
-	@${ECHO_MSG} "===>   Running ldconfig in ${DESTDIR} (errors are ignored)"
-	${CHROOT} ${DESTDIR} -${LDCONFIG} -m ${USE_LDCONFIG}
-.endif
 .endif
 .if ${USE_LDCONFIG} != "${PREFIX}/lib"
 	@${ECHO_MSG} "===>   Installing ldconfig configuration file"
@@ -4079,21 +3910,11 @@ install-ldconfig-file:
 .endif
 .if defined(USE_LDCONFIG32)
 .if !defined(INSTALL_AS_USER)
-.if !defined(DESTDIR)
 	@${ECHO_MSG} "===>   Running ldconfig"
 	${LDCONFIG} -32 -m ${USE_LDCONFIG32}
 .else
-	@${ECHO_MSG} "===>   Running ldconfig in ${DESTDIR}"
-	${CHROOT} ${DESTDIR} ${LDCONFIG} -32 -m ${USE_LDCONFIG32}
-.endif
-.else
-.if !defined(DESTDIR)
 	@${ECHO_MSG} "===>   Running ldconfig (errors are ignored)"
 	-${LDCONFIG} -32 -m ${USE_LDCONFIG32}
-.else
-	@${ECHO_MSG} "===>   Running ldconfig in ${DESTDIR} (errors are ignored)"
-	${CHROOT} ${DESTDIR} -${LDCONFIG} -32 -m ${USE_LDCONFIG32}
-.endif
 .endif
 	@${ECHO_MSG} "===>   Installing 32-bit ldconfig configuration file"
 .if defined(NO_LDCONFIG_MTREE)
@@ -4116,18 +3937,10 @@ install-ldconfig-file:
 	@${ECHO_MSG} "===>   INSTALLS_SHLIB and USE_LDCONFIG32 both defined."
 .endif
 .if !defined(INSTALL_AS_USER)
-.if !defined(DESTDIR)
 	@${ECHO_MSG} "===>   Running ldconfig"
-.else
-	@${ECHO_MSG} "===>   Running ldconfig in ${DESTDIR}"
-.endif
 	${LDCONFIG_CMD}
 .else
-.if !defined(DESTDIR)
 	@${ECHO_MSG} "===>   Running ldconfig (errors are ignored)"
-.else
-	@${ECHO_MSG} "===>   Running ldconfig in ${DESTDIR} (errors are ignored)"
-.endif
 	-${LDCONFIG_CMD}
 .endif
 .endif
@@ -4162,7 +3975,7 @@ security-check:
 	| ${XARGS} -0 -J % ${FIND} % -prune ! -type l -type f -print0 2> /dev/null \
 	| ${XARGS} -0 -n 1 ${OBJDUMP} -R 2> /dev/null > ${WRKDIR}/.PLIST.objdump; \
 	if \
-		! ${AWK} -v audit="$${PORTS_AUDIT}" -v destdir="${DESTDIR}" -f ${PORTSDIR}/Tools/scripts/security-check.awk \
+		! ${AWK} -v audit="$${PORTS_AUDIT}" -f ${PORTSDIR}/Tools/scripts/security-check.awk \
 		  ${WRKDIR}/.PLIST.flattened ${WRKDIR}/.PLIST.objdump ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.writable; \
 	then \
 		www_site=$$(cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} www-site); \
@@ -4229,57 +4042,30 @@ security-check:
 	${GREP} '^etc/rc.d/' ${TMPPLIST} > ${WRKDIR}/.PLIST.startup; \
 	if [ -s ${WRKDIR}/.PLIST.setuid -o -s ${WRKDIR}/.PLIST.network -o -s ${WRKDIR}/.PLIST.writable ]; then \
 		if [ -n "$$PORTS_AUDIT" ]; then \
-			if [ -z "${DESTDIR}" ] ; then \
-				${ECHO_MSG} "===>  SECURITY REPORT (PARANOID MODE): "; \
-			else \
-				${ECHO_MSG} "===>  SECURITY REPORT FOR ${DESTDIR} (PARANOID MODE): "; \
-			fi; \
+			${ECHO_MSG} "===>  SECURITY REPORT (PARANOID MODE): "; \
 		else \
-			if [ -z "${DESTDIR}" ] ; then \
-				${ECHO_MSG} "===>  SECURITY REPORT: "; \
-			else \
-				${ECHO_MSG} "===>  SECURITY REPORT FOR ${DESTDIR}: "; \
-			fi; \
+			${ECHO_MSG} "===>  SECURITY REPORT: "; \
 		fi; \
 		if [ -s ${WRKDIR}/.PLIST.setuid ] ; then \
-			if [ -z "${DESTDIR}" ] ; then \
-				${ECHO_MSG} "      This port has installed the following binaries,"; \
-			else \
-				${ECHO_MSG} "      This port has installed the following binaries into ${DESTDIR},"; \
-			fi; \
+			${ECHO_MSG} "      This port has installed the following binaries,"; \
 			${ECHO_MSG} "      which execute with increased privileges."; \
 			${CAT} ${WRKDIR}/.PLIST.setuid; \
 			${ECHO_MSG}; \
 		fi; \
 		if [ -s ${WRKDIR}/.PLIST.network ] ; then \
-			if [ -z "${DESTDIR}" ] ; then \
-				${ECHO_MSG} "      This port has installed the following files, which may act as network"; \
-				${ECHO_MSG} "      servers and may therefore pose a remote security risk to the system."; \
-			else \
-				${ECHO_MSG} "      This port has installed the following files into ${DESTDIR}, which may"; \
-				${ECHO_MSG} "      act as network servers and may therefore pose a remote security risk to"; \
-				${ECHO_MSG} "      the system."; \
-			fi; \
+			${ECHO_MSG} "      This port has installed the following files, which may act as network"; \
+			${ECHO_MSG} "      servers and may therefore pose a remote security risk to the system."; \
 			${CAT} ${WRKDIR}/.PLIST.network; \
 			${ECHO_MSG}; \
 			if [ -s ${WRKDIR}/.PLIST.startup ] ; then \
-				if [ -z "${DESTDIR}" ] ; then \
-					${ECHO_MSG} "      This port has installed the following startup scripts,"; \
-				else \
-					${ECHO_MSG} "      This port has installed the following startup scripts into ${DESTDIR},"; \
-				fi; \
+				${ECHO_MSG} "      This port has installed the following startup scripts,"; \
 				${ECHO_MSG} "      which may cause these network services to be started at boot time."; \
 				${SED} s,^,${PREFIX}/, < ${WRKDIR}/.PLIST.startup; \
 				${ECHO_MSG}; \
 			fi; \
 		fi; \
 		if [ -s ${WRKDIR}/.PLIST.writable ] ; then \
-			if [ -z "${DESTDIR}" ] ; then \
-				${ECHO_MSG} "      This port has installed the following world-writable files/directories."; \
-			else \
-				${ECHO_MSG} "      This port has installed the following world-writable files/directories"; \
-				${ECHO_MSG} "      into ${DESTDIR}."; \
-			fi; \
+			${ECHO_MSG} "      This port has installed the following world-writable files/directories."; \
 			${CAT} ${WRKDIR}/.PLIST.writable; \
 			${ECHO_MSG}; \
 		fi; \
@@ -4310,7 +4096,12 @@ security-check:
 # Please note that the order of the following targets is important, and
 # should not be modified.
 
-_SANITY_SEQ=	pre-everything check-makefile check-categories \
+.if defined(CHROOTED)
+_CHROOT_SEQ=	post-chroot
+.else
+_CHROOT_SEQ=
+.endif
+_SANITY_SEQ=	${_CHROOT_SEQ} pre-everything check-makefile check-categories \
 				check-makevars check-desktop-entries check-depends \
 				check-deprecated check-vulnerable buildanyway-message \
 				options-message
@@ -4344,6 +4135,11 @@ _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 _PACKAGE_DEP=	install
 _PACKAGE_SEQ=	package-message pre-package pre-package-script \
 				do-package post-package-script
+
+.if !target(post-chroot)
+post-chroot:
+	@${DO_NADA}
+.endif
 
 .if !target(check-sanity)
 check-sanity: ${_SANITY_SEQ}
@@ -4422,11 +4218,7 @@ configure-message:
 build-message:
 	@${ECHO_MSG} "===>  Building for ${PKGNAME}"
 install-message:
-.if !defined(DESTDIR)
 	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
-.else
-	@${ECHO_MSG} "===>  Installing for ${PKGNAME} into ${DESTDIR}"
-.endif
 package-message:
 	@${ECHO_MSG} "===>  Building package for ${PKGNAME}"
 
@@ -4508,22 +4300,14 @@ deinstall:
 		${SU_CMD} "${MAKE} ${__softMAKEFLAGS} ${.TARGET}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 .else
-.if !defined(DESTDIR)
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
-.else
-	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN} from ${DESTDIR}"
-.endif
 	@found_names=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
 	for p in $${found_names}; do \
 			check_name=`${ECHO_CMD} $${p} | ${SED} -e 's/-[^-]*$$//'`; \
 			if [ "$${check_name}" = "${PKGBASE}" ]; then \
 					prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${SED} -ne '1s|^@cwd ||p'`; \
 					if [ "x${PREFIX}" = "x$${prfx}" ]; then \
-							if [ -z "${DESTDIR}" ] ; then \
-									${ECHO_MSG} "===>   Deinstalling $${p}"; \
-							else \
-									${ECHO_MSG} "===>   Deinstalling $${p} from ${DESTDIR}"; \
-							fi; \
+							${ECHO_MSG} "===>   Deinstalling $${p}"; \
 							${PKG_DELETE} -f $${p}; \
 					else \
 							${ECHO_MSG} "===>   $${p} has a different PREFIX: $${prfx}, skipping"; \
@@ -4531,11 +4315,7 @@ deinstall:
 			fi; \
 	done; \
 	if [ -z "$${found_names}" ]; then \
-			if [ -z "${DESTDIR}" ] ; then \
-					${ECHO_MSG} "===>   ${PKGBASE} not installed, skipping"; \
-			else \
-					${ECHO_MSG} "===>   ${PKGBASE} not installed in ${DESTDIR}, skipping"; \
-			fi; \
+		${ECHO_MSG} "===>   ${PKGBASE} not installed, skipping"; \
 	fi
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 .endif
@@ -4553,30 +4333,18 @@ deinstall-all:
 		${SU_CMD} "${MAKE} ${__softMAKEFLAGS} ${.TARGET}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 .else
-.if !defined(DESTDIR)
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
-.else
-	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN} from ${DESTDIR}"
-.endif
 	@deinstall_names=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
 	for oldpkgorigin in $$(${GREP} "|${PKGORIGIN}|" ${PORTSDIR}/MOVED | ${CUT} -f 1 -d '|' | ${SORT} -u); do \
 		deinstall_names="$${deinstall_names} $$(${PKG_INFO} -q -O $${oldpkgorigin})"; \
 	done; \
 	if [ -n "$${deinstall_names}" ]; then \
 		for d in $${deinstall_names}; do \
-			if [ -z "${DESTDIR}" ] ; then \
-				${ECHO_MSG} "===>   Deinstalling $${d}"; \
-			else \
-				${ECHO_MSG} "===>   Deinstalling $${d} from ${DESTDIR}"; \
-			fi; \
+			${ECHO_MSG} "===>   Deinstalling $${d}"; \
 			${PKG_DELETE} -f $${d}; \
 		done; \
 	else \
-		if [ -z "${DESTDIR}" ] ; then \
-			${ECHO_MSG} "===>   ${PKGORIGIN} not installed, skipping"; \
-		else \
-			${ECHO_MSG} "===>   ${PKGORIGIN} not installed in ${DESTDIR}, skipping"; \
-		fi; \
+		${ECHO_MSG} "===>   ${PKGORIGIN} not installed, skipping"; \
 	fi; \
 	${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 .endif
@@ -4672,13 +4440,13 @@ fetch-list:
 					if [ ! -z \$${_MASTER_SITES_$${group}} ] ; then \
 						eval ___MASTER_SITES_TMP=\$${_MASTER_SITES_$${group}} ; \
 						__MASTER_SITES_TMP="$${__MASTER_SITES_TMP} $${___MASTER_SITES_TMP}" ; \
-					fi \
+					fi; \
 				done; \
 				___MASTER_SITES_TMP= ; \
 				SORTED_MASTER_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__MASTER_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
-			fi ; \
+			fi; \
 			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 				if [ ! -z "`${ECHO_CMD} ${NOFETCHFILES} | ${GREP} -w $${file}`" ]; then \
 					if [ -z "`${ECHO_CMD} ${MASTER_SITE_OVERRIDE} | ${GREP} -w $${site}`" ]; then \
@@ -4694,7 +4462,7 @@ fetch-list:
 				${ECHO_CMD} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
 			${ECHO_CMD} "${ECHO_CMD} $${file} not fetched" ; \
-		fi \
+		fi; \
 	done)
 .if defined(PATCHFILES)
 	@(cd ${_DISTDIR}; \
@@ -4709,13 +4477,13 @@ fetch-list:
 					if [ ! -z \$${_PATCH_SITES_$${group}} ] ; then \
 						eval ___PATCH_SITES_TMP=\$${_PATCH_SITES_$${group}} ; \
 						__PATCH_SITES_TMP="$${__PATCH_SITES_TMP} $${___PATCH_SITES_TMP}" ; \
-					fi \
+				fi; \
 				done; \
 				___PATCH_SITES_TMP= ; \
 				SORTED_PATCH_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__PATCH_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
-			fi ; \
+			fi; \
 			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
 				case $${file} in \
@@ -4725,7 +4493,7 @@ fetch-list:
 				${ECHO_CMD} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
 			${ECHO_CMD} "${ECHO_CMD} $${file} not fetched" ; \
-		fi \
+		fi; \
 	 done)
 .endif
 .endif
@@ -4972,7 +4740,7 @@ checksum: fetch check-checksum-algorithms
 				      OK="true"; \
 				  fi; \
 			fi; \
-		fi ; \
+		fi; \
 		\
 		if [ "$$OK" != "true" -a ${FETCH_REGET} -eq 0 ]; then \
 			${ECHO_MSG} "===>  Giving up on fetching files: $$refetchlist"; \
@@ -4983,7 +4751,7 @@ checksum: fetch check-checksum-algorithms
 		fi; \
 		if [ "$$OK" != "true" ]; then \
 			exit 1; \
-		fi \
+		fi; \
 	elif [ -n "${_CKSUMFILES:M*}" ]; then \
 		${ECHO_MSG} "=> No checksum file (${MD5_FILE})."; \
 	fi
@@ -5039,24 +4807,15 @@ _INSTALL_DEPENDS=	\
 		if [ X${USE_PACKAGE_DEPENDS} != "X" ]; then \
 			subpkgfile=`(cd $$dir; ${MAKE} $$depends_args -V PKGFILE)`; \
 			if [ -r "$${subpkgfile}" -a "$$target" = "${DEPENDS_TARGET}" ]; then \
-				if [ -z "${DESTDIR}" ] ; then \
-					${ECHO_MSG} "===>   Installing existing package $${subpkgfile}"; \
-					${PKG_ADD} $${subpkgfile}; \
-				else \
-					${ECHO_MSG} "===>   Installing existing package $${subpkgfile} into ${DESTDIR}"; \
-					${PKG_ADD} -C ${DESTDIR} $${subpkgfile}; \
-				fi; \
+				${ECHO_MSG} "===>   Installing existing package $${subpkgfile}"; \
+				${PKG_ADD} $${subpkgfile}; \
 			else \
 			  (cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 			fi; \
 		else \
 			(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 		fi; \
-		if [ -z "${DESTDIR}" ] ; then \
-			${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"; \
-		else \
-			${ECHO_MSG} "===>   Returning to build of ${PKGNAME} for ${DESTDIR}"; \
-		fi;
+		${ECHO_MSG} "===>   Returning to build of ${PKGNAME}";
 
 .for deptype in EXTRACT PATCH FETCH BUILD RUN
 ${deptype:L}-depends:
@@ -5086,11 +4845,7 @@ ${deptype:L}-depends:
 					${ECHO_MSG} "Error: ${NONEXISTENT} exists.  Please remove it, and restart the build."; \
 					${FALSE}; \
 				else \
-					if [ -z "${DESTDIR}" ] ; then \
-						${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - found"; \
-					else \
-						${ECHO_MSG} "===>   ${PKGNAME} depends on file in ${DESTDIR}: $$prog - found"; \
-					fi; \
+					${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - found"; \
 					if [ ${_DEPEND_ALWAYS} = 1 ]; then \
 						${ECHO_MSG} "       (but building it anyway)"; \
 						notfound=1; \
@@ -5099,11 +4854,7 @@ ${deptype:L}-depends:
 					fi; \
 				fi; \
 			else \
-				if [ -z "${DESTDIR}" ] ; then \
-					${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - not found"; \
-				else \
-					${ECHO_MSG} "===>   ${PKGNAME} depends on file in ${DESTDIR}: $$prog - not found"; \
-				fi; \
+				${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - not found"; \
 				notfound=1; \
 			fi; \
 		else \
@@ -5113,11 +4864,7 @@ ${deptype:L}-depends:
 			esac; \
 			if [ "$$pkg" != "" ]; then \
 				if ${PKG_INFO} "$$prog" > /dev/null 2>&1 ; then \
-					if [ -z "${DESTDIR}" ] ; then \
-						${ECHO_MSG} "===>   ${PKGNAME} depends on package: $$prog - found"; \
-					else \
-						${ECHO_MSG} "===>   ${PKGNAME} depends on package in ${DESTDIR}: $$prog - found"; \
-					fi; \
+					${ECHO_MSG} "===>   ${PKGNAME} depends on package: $$prog - found"; \
 					if [ ${_DEPEND_ALWAYS} = 1 ]; then \
 						${ECHO_MSG} "       (but building it anyway)"; \
 						notfound=1; \
@@ -5125,11 +4872,7 @@ ${deptype:L}-depends:
 						notfound=0; \
 					fi; \
 				else \
-					if [ -z "${DESTDIR}" ] ; then \
-						${ECHO_MSG} "===>   ${PKGNAME} depends on package: $$prog - not found"; \
-					else \
-						${ECHO_MSG} "===>   ${PKGNAME} depends on package in ${DESTDIR}: $$prog - not found"; \
-					fi; \
+					${ECHO_MSG} "===>   ${PKGNAME} depends on package: $$prog - not found"; \
 					notfound=1; \
 				fi; \
 				if [ $$notfound != 0 ]; then \
@@ -5143,11 +4886,7 @@ ${deptype:L}-depends:
 					fi; \
 				fi; \
 			elif ${WHICH} "$$prog" > /dev/null 2>&1 ; then \
-				if [ -z "${PREFIX}" ] ; then \
-					${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - found"; \
-				else \
-					${ECHO_MSG} "===>   ${PKGNAME} depends on executable in ${DESTDIR}: $$prog - found"; \
-				fi; \
+				${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - found"; \
 				if [ ${_DEPEND_ALWAYS} = 1 ]; then \
 					${ECHO_MSG} "       (but building it anyway)"; \
 					notfound=1; \
@@ -5155,11 +4894,7 @@ ${deptype:L}-depends:
 					notfound=0; \
 				fi; \
 			else \
-				if [ -z "${DESTDIR}" ] ; then \
-					${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - not found"; \
-				else \
-					${ECHO_MSG} "===>   ${PKGNAME} depends on executable in ${DESTDIR}: $$prog - not found"; \
-				fi; \
+				${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - not found"; \
 				notfound=1; \
 			fi; \
 		fi; \
@@ -5195,34 +4930,18 @@ lib-depends:
 		else \
 			dir=$${dir%%:*}; \
 		fi; \
-		if [ -z "${DESTDIR}" ] ; then \
-			${ECHO_MSG} -n "===>   ${PKGNAME} depends on shared library: $$lib"; \
-			if ${LDCONFIG} ${_LDCONFIG_FLAGS} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
-				${ECHO_MSG} " - found"; \
-				if [ ${_DEPEND_ALWAYS} = 1 ]; then \
-					${ECHO_MSG} "       (but building it anyway)"; \
-					notfound=1; \
-				else \
-					notfound=0; \
-				fi; \
-			else \
-				${ECHO_MSG} " - not found"; \
+		${ECHO_MSG} -n "===>   ${PKGNAME} depends on shared library: $$lib"; \
+		if ${LDCONFIG} ${_LDCONFIG_FLAGS} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
+			${ECHO_MSG} " - found"; \
+			if [ ${_DEPEND_ALWAYS} = 1 ]; then \
+				${ECHO_MSG} "       (but building it anyway)"; \
 				notfound=1; \
+			else \
+				notfound=0; \
 			fi; \
 		else \
-			${ECHO_MSG} -n "===>   ${PKGNAME} depends on shared library in ${DESTDIR}: $$lib"; \
-			if ${CHROOT} ${DESTDIR} ${LDCONFIG} ${_LDCONFIG_FLAGS} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
-				${ECHO_MSG} " - found"; \
-				if [ ${_DEPEND_ALWAYS} = 1 ]; then \
-					${ECHO_MSG} "       (but building it anyway)"; \
-					notfound=1; \
-				else \
-					notfound=0; \
-				fi; \
-			else \
-				${ECHO_MSG} " - not found"; \
-				notfound=1; \
-			fi; \
+			${ECHO_MSG} " - not found"; \
+			notfound=1; \
 		fi; \
 		if [ $$notfound != 0 ]; then \
 			${ECHO_MSG} "===>    Verifying $$target for $$lib in $$dir"; \
@@ -5580,7 +5299,7 @@ missing:
 		installed=$$(${PKG_INFO} -qO $${THISORIGIN}); \
 		if [ -z "$$installed" ]; then \
 			${ECHO_CMD} $$THISORIGIN; \
-		fi \
+		fi; \
 	done
 
 ################################################################
@@ -5709,7 +5428,7 @@ _PRETTY_PRINT_DEPENDS_LIST=\
 		${ECHO_MSG} "${.TARGET} requires an INDEX file (${INDEXFILE}). Please run make index or make fetchindex."; \
 	else \
 		target=${.TARGET:C/pretty-print-(.*)-depends-list/\1/} ; \
-		if [ "$$target" = "build" ] ; then fldnum=8 ; else fldnum=9 ; fi ; \
+		if [ "$$target" = "build" ] ; then fldnum=8 ; else fldnum=9 ; fi; \
 		${ECHO_MSG} -n 'This port requires package(s) "' ; \
 		${ECHO_MSG} -n `${AWK} -F\| "\\$$1 ~ /^${PKGNAME}/ {print \\$$$${fldnum};}" ${INDEXDIR}/${INDEXFILE}` ; \
 		${ECHO_MSG} "\" to $$target."; \
@@ -5839,9 +5558,9 @@ add-plist-docs:
 	fi;fi
 .endfor
 	@${FIND} -P ${PORTDOCS:S/^/${DOCSDIR}\//} ! -type d 2>/dev/null | \
-		${SED} -ne 's,^${TARGETDIR}/,,p' >> ${TMPPLIST}
+		${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
 	@${FIND} -P -d ${PORTDOCS:S/^/${DOCSDIR}\//} -type d 2>/dev/null | \
-		${SED} -ne 's,^${TARGETDIR}/,@dirrm ,p' >> ${TMPPLIST}
+		${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${DOCSDIR_REL}" >> ${TMPPLIST}
 .else
 	@${DO_NADA}
@@ -5901,10 +5620,10 @@ add-plist-info:
 # Process GNU INFO files at package install/deinstall time
 .if defined(INFO)
 .for i in ${INFO}
-	install-info --quiet ${TARGETDIR}/${INFO_PATH}/$i.info ${TARGETDIR}/${INFO_PATH}/dir
+	install-info --quiet ${PREFIX}/${INFO_PATH}/$i.info ${PREFIX}/${INFO_PATH}/dir
 	@${ECHO_CMD} "@unexec install-info --quiet --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
-	@${LS} ${TARGETDIR}/${INFO_PATH}/$i.info* | ${SED} -e s:${TARGETDIR}/::g >> ${TMPPLIST}
+	@${LS} ${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${PREFIX}/::g >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec install-info --quiet %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
 .endfor
@@ -5913,7 +5632,7 @@ add-plist-info:
 .endif
 .if (${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec if [ -f %D/${INFO_PATH}/dir ]; then if sed -e '1,/Menu:/d' %D/${INFO_PATH}/dir | grep -q '^[*] '; then true; else rm %D/${INFO_PATH}/dir; fi; fi" >> ${TMPPLIST}
-.if (${PREFIX} != ${LOCALBASE_REL} && ${PREFIX} != ${X11BASE_REL} && ${PREFIX} != ${LINUXBASE_REL})
+.if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${X11BASE} && ${PREFIX} != ${LINUXBASE})
 	@${ECHO_CMD} "@unexec rmdir %D/${INFO_PATH} 2>/dev/null || true" >> ${TMPPLIST}
 .endif
 .endif
@@ -5924,7 +5643,7 @@ add-plist-info:
 # deinstall-time
 .if !target(add-plist-post)
 add-plist-post:
-.if (${PREFIX} != ${LOCALBASE_REL} && ${PREFIX} != ${X11BASE_REL} && ${PREFIX} != ${LINUXBASE_REL} && ${PREFIX} != "/usr")
+.if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${X11BASE} && ${PREFIX} != ${LINUXBASE} && ${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec rmdir %D 2> /dev/null || true" >> ${TMPPLIST}
 .else
 	@${DO_NADA}
@@ -5938,7 +5657,7 @@ install-rc-script:
 	@${ECHO_MSG} "===> Installing early rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd /" >> ${TMPPLIST}
 	@for i in ${USE_RCORDER}; do \
-		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${DESTDIR}/etc/rc.d/$${i%.sh}; \
+		${INSTALL_SCRIPT} ${WRKDIR}/$${i} /etc/rc.d/$${i%.sh}; \
 		${ECHO_CMD} "etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
 	done
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
@@ -5947,7 +5666,7 @@ install-rc-script:
 	@${ECHO_MSG} "===> Installing rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 	@for i in ${USE_RC_SUBR}; do \
-		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${TARGETDIR}/etc/rc.d/$${i%.sh}${RC_SUBR_SUFFIX}; \
+		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${PREFIX}/etc/rc.d/$${i%.sh}${RC_SUBR_SUFFIX}; \
 		${ECHO_CMD} "etc/rc.d/$${i%.sh}${RC_SUBR_SUFFIX}" >> ${TMPPLIST}; \
 	done
 .endif
@@ -6001,11 +5720,7 @@ fake-pkg:
 	@${RM} -rf ${PKG_DBDIR}/${PKGNAME}
 .endif
 	@if [ ! -d ${PKG_DBDIR}/${PKGNAME} ]; then \
-		if [ -z "${DESTDIR}" ] ; then \
-			${ECHO_MSG} "===>   Registering installation for ${PKGNAME}"; \
-		else \
-			${ECHO_MSG} "===>   Registering installation for ${PKGNAME} in ${DESTDIR}"; \
-		fi; \
+		${ECHO_MSG} "===>   Registering installation for ${PKGNAME}"; \
 		${MKDIR} ${PKG_DBDIR}/${PKGNAME}; \
 		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${PKG_DBDIR}/${PKGNAME}/+CONTENTS; \
 		${CP} ${DESCR} ${PKG_DBDIR}/${PKGNAME}/+DESC; \
@@ -6433,3 +6148,6 @@ install-desktop-entries:
 
 .endif
 # End of post-makefile section.
+
+.endif
+# End of the DESTDIR if statement

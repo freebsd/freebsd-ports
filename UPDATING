@@ -6,6 +6,23 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070804:
+  AFFECTS: users of DESTDIR
+  AUTHOR:  gabor@FreeBSD.org
+
+DESTDIR is a feature, that allows installation of ports into separate
+environments, like jails.  The previous implementation, introduced in the
+August 2006, had some problems and was very expensive to maintain.  It was
+completely rolled back, and replaced with a brand new implementation utilizing
+chroot.
+
+When DESTDIR is set, the system will chroot into the specified directory, mount
+devfs, null mount the ports tree, then proceed with building and installing.
+Your kernel must support nullfs (is available as loadable kernel module on
+default installation).  The target environment must be a full FreeBSD
+installation. For advanced use, read comments at the beginning of
+bsd.destdir.mk.
+
 20070730:
   AFFECTS: users of py-*
   AUTHOR: python@FreeBSD.org
