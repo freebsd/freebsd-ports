@@ -36,10 +36,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/example.jwmrc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/jwm ${TARGETDIR}/bin
-	${INSTALL_DATA} ${WRKSRC}/example.jwmrc ${TARGETDIR}/etc/system.jwmrc.sample
-	if ! [ -f ${TARGETDIR}/etc/system.jwmrc ]; then \
-		${INSTALL_DATA} ${WRKSRC}/example.jwmrc ${TARGETDIR}/etc/system.jwmrc; \
+	${INSTALL_PROGRAM} ${WRKSRC}/src/jwm ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/example.jwmrc ${PREFIX}/etc/system.jwmrc.sample
+	if ! [ -f ${PREFIX}/etc/system.jwmrc ]; then \
+		${INSTALL_DATA} ${WRKSRC}/example.jwmrc ${PREFIX}/etc/system.jwmrc; \
 	fi
 	${INSTALL_MAN} ${WRKSRC}/jwm.1 ${MANPREFIX}/man/man1/
 

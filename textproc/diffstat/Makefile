@@ -21,7 +21,7 @@ MAN1=		diffstat.1
 PLIST_FILES=	bin/diffstat
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/diffstat ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/diffstat ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

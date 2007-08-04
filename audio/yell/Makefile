@@ -33,9 +33,9 @@ do-build:
 
 do-install:
 .if defined(WITH_SUID)
-	${INSTALL_PROGRAM} -m 4110 ${WRKSRC}/${PORTNAME} ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} -m 4110 ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 .else
-	${INSTALL_PROGRAM} -m 0100 ${WRKSRC}/${PORTNAME} ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} -m 0100 ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 .endif
 
 .include <bsd.port.post.mk>

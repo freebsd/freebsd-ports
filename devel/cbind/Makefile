@@ -27,9 +27,9 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cbpp ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/cbind.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DESTDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/DOCS ${DESTDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DESTDIR}${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/DOCS ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

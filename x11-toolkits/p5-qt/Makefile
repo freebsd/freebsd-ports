@@ -35,7 +35,7 @@ PLIST_FILES=	bin/pqtapi bin/pqtsh bin/puic include/smoke.h \
 		lib/libsmokeqt.a
 
 MAN1=	puic.1
-MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Qt.3
 
 .include <bsd.port.pre.mk>

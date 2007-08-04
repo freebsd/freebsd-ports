@@ -27,7 +27,7 @@ USE_XPM=	yes
 STRIP=
 HAS_CONFIGURE=	yes
 XEMACS_ARCH=	${MACHINE_ARCH}--freebsd
-CONFIGURE_ARGS=	${XEMACS_ARCH} --prefix=${TARGETDIR} \
+CONFIGURE_ARGS=	${XEMACS_ARCH} --prefix=${PREFIX} \
 		--with-mule \
 		--with-xfs \
 		--with-clash-detection \
@@ -81,21 +81,21 @@ CONFIGURE_ARGS+=	--with-xface=no --with-offix=no
 
 post-install:
 .for file in b2m ctags etags gnuclient ${DISTNAME}
-	strip ${TARGETDIR}/bin/${file}
+	strip ${PREFIX}/bin/${file}
 .endfor
 # ``make install'' does not set the permissions like pkg_add does.
 	${CHMOD} 1777 /var/run/emacs/lock
-	${CHMOD} 755 ${TARGETDIR}/lib/xemacs/site-lisp
-	${CHMOD} 755 ${TARGETDIR}/share/emacs/site-lisp
-	${RM} -f ${TARGETDIR}/bin/send-pr
-	${RM} -f ${TARGETDIR}/lib/xemacs-20.4/lisp/mule/mule-init.el.orig
-# Install xemacs20.sh into ${TARGETDIR}/etc/rc.d
-	@if [ ! -d ${TARGETDIR}/etc/rc.d ]; then ${MKDIR} ${TARGETDIR}/etc/rc.d; fi
-	${INSTALL_SCRIPT} ${FILESDIR}/xemacs20.sh ${TARGETDIR}/etc/rc.d
+	${CHMOD} 755 ${PREFIX}/lib/xemacs/site-lisp
+	${CHMOD} 755 ${PREFIX}/share/emacs/site-lisp
+	${RM} -f ${PREFIX}/bin/send-pr
+	${RM} -f ${PREFIX}/lib/xemacs-20.4/lisp/mule/mule-init.el.orig
+# Install xemacs20.sh into ${PREFIX}/etc/rc.d
+	@if [ ! -d ${PREFIX}/etc/rc.d ]; then ${MKDIR} ${PREFIX}/etc/rc.d; fi
+	${INSTALL_SCRIPT} ${FILESDIR}/xemacs20.sh ${PREFIX}/etc/rc.d
 # Install Chinese Big5 related files.
-	@${MKDIR} ${TARGETDIR}/lib/xemacs-20.4/etc/app-defaults/zh_TW.Big5
-	@${INSTALL_DATA} ${FILESDIR}/Emacs ${TARGETDIR}/lib/xemacs-20.4/etc/app-defaults/zh_TW.Big5
-	@${INSTALL_DATA} ${FILESDIR}/sample.emacs ${TARGETDIR}/lib/xemacs-20.4/etc/app-defaults/zh_TW.Big5
+	@${MKDIR} ${PREFIX}/lib/xemacs-20.4/etc/app-defaults/zh_TW.Big5
+	@${INSTALL_DATA} ${FILESDIR}/Emacs ${PREFIX}/lib/xemacs-20.4/etc/app-defaults/zh_TW.Big5
+	@${INSTALL_DATA} ${FILESDIR}/sample.emacs ${PREFIX}/lib/xemacs-20.4/etc/app-defaults/zh_TW.Big5
 # Display XIM usages.
 	@${CAT} ${PKGMESSAGE}
 

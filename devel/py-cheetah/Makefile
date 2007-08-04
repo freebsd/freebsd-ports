@@ -37,6 +37,6 @@ PYCHEETAH_EGG=	Cheetah-${CHEETAHVER}-py${PYTHON_VERSION:S/^python//}-${OSINFOS}.
 
 .include <bsd.port.pre.mk>
 
-OSRELEASE!=	${DESTDIR}/usr/bin/uname -r
+OSRELEASE!=	/usr/bin/uname -r
 
 .include <bsd.port.post.mk>

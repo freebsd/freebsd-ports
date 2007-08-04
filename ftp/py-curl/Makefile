@@ -23,8 +23,8 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pycurl
 USE_OPENSSL=	yes
 
-DOCSDIR=	${TARGETDIR}/share/doc/py-curl
-EXAMPLESDIR=	${TARGETDIR}/share/examples/py-curl
+DOCSDIR=	${PREFIX}/share/doc/py-curl
+EXAMPLESDIR=	${PREFIX}/share/examples/py-curl
 
 post-patch:
 	${REINPLACE_CMD} \

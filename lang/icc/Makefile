@@ -39,7 +39,7 @@ PATCH_WRKSRC=	${WRKSRC}/opt/${COMPILERDIR}
 
 MAN1=		icc.1
 MLINKS=		icc.1 icpc.1
-MANPREFIX=	${TARGETDIR}/${COMPILERDIR}
+MANPREFIX=	${PREFIX}/${COMPILERDIR}
 
 ICC_SITE=	http://www.intel.com/software/products/compilers/
 

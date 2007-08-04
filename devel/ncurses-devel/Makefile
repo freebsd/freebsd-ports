@@ -38,10 +38,10 @@ PATCHDATE=	${i}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
-CONFIGURE_ARGS=	--datadir=${TARGETDIR}/share/misc --disable-overwrite \
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--enable-termcap --enable-bsdpad --enable-getcap \
 		--enable-colorfgbg --disable-home-terminfo \
-		--includedir=${TARGETDIR}/include/ncurses \
+		--includedir=${PREFIX}/include/ncurses \
 		--with-shared \
 		--without-curses-h --with-termlib --program-prefix= \
 		--enable-rpath --disable-root-environ \
@@ -67,8 +67,8 @@ BUILD_WRKSRC=	${NOWIDEC_WRKSRC}
 INSTALL_WRKSRC=	${NOWIDEC_WRKSRC}
 
 PLIST_SUB+=	PORTVERSION=${RELEASE} \
-		WIDEC_EXAMPLESDIR=${WIDEC_EXAMPLESDIR:S,${TARGETDIR}/,,} \
-		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${TARGETDIR}/,,}
+		WIDEC_EXAMPLESDIR=${WIDEC_EXAMPLESDIR:S,${PREFIX}/,,} \
+		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${PREFIX}/,,}
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

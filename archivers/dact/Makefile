@@ -31,8 +31,8 @@ MAN1=		dact.1
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|prefix = @prefix@|prefix = ${TARGETDIR}|" \
-			-e "s|libdir = @libdir@|libdir = ${TARGETDIR}/lib|" \
+	@${REINPLACE_CMD} -e "s|prefix = @prefix@|prefix = ${PREFIX}|" \
+			-e "s|libdir = @libdir@|libdir = ${PREFIX}/lib|" \
 			${WRKSRC}/Makefile.in
 
 pre-install:
@@ -40,7 +40,7 @@ pre-install:
 	@${RM} -f ${WRKSRC}/libdact.a
 
 post-install:
-	@${CP} -n ${EXAMPLESDIR}/dact.conf ${TARGETDIR}/etc
+	@${CP} -n ${EXAMPLESDIR}/dact.conf ${PREFIX}/etc
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Docs/dact.txt ${DOCSDIR}

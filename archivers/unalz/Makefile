@@ -31,6 +31,6 @@ pre-patch:
 			${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unalz ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/unalz ${PREFIX}/bin
 
 .include <bsd.port.mk>

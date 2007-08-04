@@ -23,7 +23,7 @@ COMMENT=	A fast and lightweight PHP-powered discussion board
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 
 NO_BUILD=	yes
-PUNBBDIR?=	${TARGETDIR}/www/punbb
+PUNBBDIR?=	${PREFIX}/www/punbb
 USE_PHP=	yes
 USE_ZIP=	yes
 

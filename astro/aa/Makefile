@@ -31,8 +31,8 @@ post-patch:
 	@${REINPLACE_CMD} 's|CFLAGS=  -O2|CFLAGS+=|' ${WRKSRC}/makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/aa ${TARGETDIR}/bin
-	@${INSTALL_DATA} ${WRKSRC}/aa.ini ${TARGETDIR}/etc/aa.ini.default
+	@${INSTALL_PROGRAM} ${WRKSRC}/aa ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/aa.ini ${PREFIX}/etc/aa.ini.default
 
 post-install:
 .if !defined(NOPORTDOCS)

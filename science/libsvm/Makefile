@@ -69,9 +69,9 @@ do-install:
 .else
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/svm-train ${TARGETDIR}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/svm-predict ${TARGETDIR}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/svm-scale ${TARGETDIR}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/svm-train ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/svm-predict ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/svm-scale ${PREFIX}/bin/
 	${MKDIR} ${DATADIR}
 	for f in ${TOOLS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DATADIR}; \

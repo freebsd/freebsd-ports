@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} ${CONFIGURE_TARGET}
 USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 		${PREFIX}/${MPIDIR}/lib/openmpi
 
-MANPREFIX=	${TARGETDIR}/${MPIDIR}
+MANPREFIX=	${PREFIX}/${MPIDIR}
 .include "${.CURDIR}/Makefile.man"
 
 .include <bsd.port.pre.mk>

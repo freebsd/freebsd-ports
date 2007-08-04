@@ -23,7 +23,7 @@ PYDISTUTILS_BUILDARGS=	--libs="-l${BDB_LIB_NAME}" --berkeley-db=${LOCALBASE}
 PYDISTUTILS_INSTALLARGS=-c -O1 --prefix=${PREFIX} --berkeley-db=${LOCALBASE}
 
 PORTDOCS=	*
-DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 post-patch:
 	${REINPLACE_CMD} 's,%%DBVERSION%%,${BDB_LIB_NAME},g' ${WRKSRC}/setup.py

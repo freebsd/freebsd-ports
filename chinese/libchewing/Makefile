@@ -19,6 +19,6 @@ USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-DATADIR=	${TARGETDIR}/share/chewing
+DATADIR=	${PREFIX}/share/chewing
 
 .include <bsd.port.mk>

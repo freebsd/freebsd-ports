@@ -53,22 +53,22 @@ pre-install: apply-slist
 	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/polipo ${DESTDIR}${PREFIX}/bin/
-	${MKDIR} ${DESTDIR}${PREFIX}/etc/periodic/daily/
-	${INSTALL_SCRIPT} ${WRKDIR}/400.polipo ${DESTDIR}${PREFIX}/etc/periodic/daily/
-	${INSTALL_MAN} ${WRKSRC}/polipo.man ${DESTDIR}${PREFIX}/man/man1/polipo.1
-	${MKDIR} ${DESTDIR}${PCONFIGDIR}
-	${INSTALL_DATA} ${WRKSRC}/config.sample ${DESTDIR}${PCONFIGDIR}
-	${INSTALL_DATA} ${WRKSRC}/forbidden.sample ${DESTDIR}${PCONFIGDIR}
-	${CHGRP} -R ${PGRP} ${DESTDIR}${PCONFIGDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/polipo ${PREFIX}/bin/
+	${MKDIR} ${PREFIX}/etc/periodic/daily/
+	${INSTALL_SCRIPT} ${WRKDIR}/400.polipo ${PREFIX}/etc/periodic/daily/
+	${INSTALL_MAN} ${WRKSRC}/polipo.man ${PREFIX}/man/man1/polipo.1
+	${MKDIR} ${PCONFIGDIR}
+	${INSTALL_DATA} ${WRKSRC}/config.sample ${PCONFIGDIR}
+	${INSTALL_DATA} ${WRKSRC}/forbidden.sample ${PCONFIGDIR}
+	${CHGRP} -R ${PGRP} ${PCONFIGDIR}
 .if !defined(NO_PTEXINFO)
-	${INSTALL_DATA} ${WRKSRC}/polipo.info ${DESTDIR}${PREFIX}/info/
+	${INSTALL_DATA} ${WRKSRC}/polipo.info ${PREFIX}/info/
 .endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DESTDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/html/* ${DESTDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/localindex.html ${DESTDIR}${DATADIR}/www/index.html
-	${CHGRP} -R ${PGRP} ${DESTDIR}${DATADIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/html/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/localindex.html ${DATADIR}/www/index.html
+	${CHGRP} -R ${PGRP} ${DATADIR}
 .endif
 
 post-install:

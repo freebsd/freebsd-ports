@@ -30,8 +30,8 @@ do-build:
 do-install:
 	@(cd ${WRKSRC}; ${PYTHON_CMD} setup.py install)
 
-DOCSDIR=	${TARGETDIR}/share/doc/py-psycopg2
-EXAMPLESDIR=	${TARGETDIR}/share/examples/py-psycopg2
+DOCSDIR=	${PREFIX}/share/doc/py-psycopg2
+EXAMPLESDIR=	${PREFIX}/share/examples/py-psycopg2
 
 EXAMPLES=	binary.py cursor.py dt.py lastrowid.py notify.py threads.py \
 		whereareyou.jpg copy_from.py dialtone.py encoding.py \

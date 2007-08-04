@@ -20,7 +20,7 @@ RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 .if !defined(NOPORTEXANPLES)
 post-install:

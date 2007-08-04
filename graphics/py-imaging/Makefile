@@ -30,8 +30,8 @@ PYDISTUTILS_EGGINFODIR=	${PYTHON_SITELIBDIR}/PIL
 
 PORTDOCS=	*
 
-DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 OPTIONS=	TKINTER "Build with tkinter for X support" on
 

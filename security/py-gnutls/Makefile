@@ -22,7 +22,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python_gnutls
 
-EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-patch:
 	${REINPLACE_CMD} -e "s|include_dirs=\[\]|include_dirs=\['${LOCALBASE}/include'\]|" ${WRKSRC}/setup.py

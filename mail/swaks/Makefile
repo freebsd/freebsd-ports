@@ -47,8 +47,7 @@ do-build:
 		${WRKSRC}/${DISTNAME} > ${WRKSRC}/${PORTNAME}.pl
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
-		${DESTDIR}${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

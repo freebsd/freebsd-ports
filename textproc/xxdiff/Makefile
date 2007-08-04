@@ -46,7 +46,7 @@ pre-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} QMAKESPEC=${SPEC} ${MAKE} -f Makefile.bootstrap ${MAKE_ARGS} Makefile)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/xxdiff ${TARGETDIR}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/xxdiff ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR} ${SSDIR}
 	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/

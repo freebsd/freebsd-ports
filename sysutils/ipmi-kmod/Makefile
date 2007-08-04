@@ -51,7 +51,7 @@ CFLAGS+=	-I@/contrib/dev/acpica
 do-install:
 	@${MKDIR} ${PREFIX}/include/sys
 	${INSTALL_DATA} ${WRKSRC}/sys/ipmi.h ${PREFIX}/include/sys
-	${INSTALL_PROGRAM} ${WRKSRC}/ipmi.ko ${DESTDIR}${KMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/ipmi.ko ${KMODDIR}
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

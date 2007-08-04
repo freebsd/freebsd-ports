@@ -33,7 +33,7 @@ MAKE_ARGS+=	-DWITH_EXPAT \
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/pflogx ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/pflogx ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

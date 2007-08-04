@@ -23,26 +23,26 @@ NO_BUILD=	yes
 
 post-patch:
 	@${SED} -e \
-		's:= "$$0";:= "${TARGETDIR}/${SITE_PERL_REL}/Bib2HTML";:g' \
+		's:= "$$0";:= "${PREFIX}/${SITE_PERL_REL}/Bib2HTML";:g' \
 		< ${WRKSRC}/bib2html.pl > ${WRKSRC}/bib2html
 	@${SED} -e \
-		's:= "$$0";:= "${TARGETDIR}/${SITE_PERL_REL}/Bib2HTML";:g' \
+		's:= "$$0";:= "${PREFIX}/${SITE_PERL_REL}/Bib2HTML";:g' \
 		< ${WRKSRC}/bib2xml.pl > ${WRKSRC}/bib2xml
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bib2html ${TARGETDIR}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bib2xml ${TARGETDIR}/bin
-	@${MKDIR} ${TARGETDIR}/${SITE_PERL_REL}/Bib2HTML
+	${INSTALL_SCRIPT} ${WRKSRC}/bib2html ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bib2xml ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/${SITE_PERL_REL}/Bib2HTML
 	@cd ${WRKSRC}/Bib2HTML && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} \
-		${TARGETDIR}/${SITE_PERL_REL}/Bib2HTML
-	${FIND} ${TARGETDIR}/${SITE_PERL_REL}/Bib2HTML -type f | \
+		${PREFIX}/${SITE_PERL_REL}/Bib2HTML
+	${FIND} ${PREFIX}/${SITE_PERL_REL}/Bib2HTML -type f | \
 		${XARGS} ${CHMOD} ${LIBMODE}
-	${FIND} ${TARGETDIR}/${SITE_PERL_REL}/Bib2HTML -type d | \
+	${FIND} ${PREFIX}/${SITE_PERL_REL}/Bib2HTML -type d | \
 		${XARGS} ${CHMOD} a+rx
-	@${FIND} ${TARGETDIR}/${SITE_PERL_REL}/Bib2HTML -type f | \
-		${SED} "s,^${TARGETDIR}/,," >> ${TMPPLIST}
-	@${FIND} ${TARGETDIR}/${SITE_PERL_REL}/Bib2HTML -type d | ${SORT} -r | \
-		${SED} "s,^${TARGETDIR}/,@dirrm ," >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${SITE_PERL_REL}/Bib2HTML -type f | \
+		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${SITE_PERL_REL}/Bib2HTML -type d | ${SORT} -r | \
+		${SED} "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
 
 .include <bsd.port.mk>

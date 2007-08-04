@@ -23,6 +23,6 @@ ALL_TARGET=	xcode
 CFLAGS+=	-DD_KOI
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/xcode ${TARGETDIR}/bin
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/xcode ${PREFIX}/bin
 
 .include <bsd.port.mk>

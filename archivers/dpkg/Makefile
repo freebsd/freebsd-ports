@@ -24,7 +24,7 @@ USE_ICONV=	yes
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
 
-DPKGDIR?=	${DESTDIR}/var/db/dpkg
+DPKGDIR?=	/var/db/dpkg
 PLIST_SUB+=	DPKGDIR=${DPKGDIR:C,^/,,}
 
 SUB_FILES=	pkg-install pkg-deinstall

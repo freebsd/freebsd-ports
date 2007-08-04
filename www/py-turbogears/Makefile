@@ -69,7 +69,7 @@ PYTURBOGEARS_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg
 #    www/py-cheerypy
 # When it happens, we shall remove the respective entry from TGDEPEGGS,
 # REG_TGDEPEGGS, distinfo, and add the dependent port to RUN_DEPENDS
-OSRELEASE!=	${DESTDIR}/usr/bin/uname -r
+OSRELEASE!=	/usr/bin/uname -r
 ENVINFO=	py${PYTHON_VER}-${OPSYS:L}-${OSRELEASE}-${ARCH}.egg
 
 TGDEPEGGS=	CherryPy-2.2.1-py2.4.egg cElementTree-1.0.5-20051216.tar.gz \

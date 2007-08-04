@@ -26,7 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 		--with-tk=${LOCALBASE}/lib/tk8.4
-MAKE_ENV=	prefix=${TARGETDIR} exec_prefix=${TARGETDIR}
+MAKE_ENV=	prefix=${PREFIX} exec_prefix=${PREFIX}
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 \
 		-I${LOCALBASE}/include

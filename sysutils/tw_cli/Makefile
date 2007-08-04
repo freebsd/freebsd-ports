@@ -42,13 +42,13 @@ do-configure:
 	${REINPLACE_CMD} 's!/usr/bin/perl!${PERL}!g' ${WRKSRC}/tw_sched
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tw_cli ${DESTDIR}${PREFIX}/sbin/
-	${INSTALL_SCRIPT} ${WRKSRC}/tw_sched ${DESTDIR}${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/tw_cli ${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKSRC}/tw_sched ${PREFIX}/sbin/
 	${INSTALL_MAN} ${WRKSRC}/tw_cli.8.nroff ${MANPREFIX}/man/man8/tw_cli.8
 	${INSTALL_MAN} ${WRKSRC}/tw_sched.8.nroff ${MANPREFIX}/man/man8/tw_sched.8
-	@${MKDIR} ${DESTDIR}${PREFIX}/etc/periodic/daily
+	@${MKDIR} ${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/407.status-3ware-raid \
-		${DESTDIR}${PREFIX}/etc/periodic/daily/
+		${PREFIX}/etc/periodic/daily/
 
 post-install:
 .if !defined(NOPORTDOCS)

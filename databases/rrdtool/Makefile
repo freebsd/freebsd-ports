@@ -73,7 +73,7 @@ MAN1=		bin_dec_hex.1 cdeftutorial.1 rpntutorial.1 rrd-beginners.1 \
 
 .if !defined(WITHOUT_PERL_MODULE)
 MAN3=		RRDp.3 RRDs.3
-MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 .endif
 
 post-extract:

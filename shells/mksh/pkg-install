@@ -4,7 +4,7 @@
 #
 
 MKSH="${PKG_PREFIX-/usr/local}/bin/mksh"
-SHELLS="${PKG_DESTDIR-}/etc/shells"
+SHELLS="/etc/shells"
 
 case $2 in
 POST-INSTALL)

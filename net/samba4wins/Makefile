@@ -24,7 +24,7 @@ USE_AUTOTOOLS=		autoconf:259 autoheader:259
 WRKSRC=			${WRKDIR}/${PORTNAME}/source
 
 # directories
-VARDIR?=		${DESTDIR}/var
+VARDIR?=		/var
 S4W_DATADIR=		${PREFIX}/share/${PORTNAME}
 S4W_LOGDIR=		${VARDIR}/log/${PORTNAME}
 S4W_RUNDIR=		${VARDIR}/run
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 			--with-logfilebase=${S4W_LOGDIR}
 
 CONFIGURE_ARGS+=	--disable-reg-gconf --disable-socket-wrapper \
-			--with-readline=${DESTDIR}/usr --with-included-popt \
+			--with-readline=/usr --with-included-popt \
 			--with-libiconv=${LOCALBASE} --without-sqlite3 \
 			--without-pthreads --without-python
 

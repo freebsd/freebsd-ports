@@ -31,6 +31,6 @@ post-patch:
 	@${PERL} -pi -e "s|/usr/bin/perl|${PERL}|g" ${WRKSRC}/springgraph.pl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/springgraph.pl ${TARGETDIR}/bin/springgraph
+	${INSTALL_SCRIPT} ${WRKSRC}/springgraph.pl ${PREFIX}/bin/springgraph
 
 .include <bsd.port.mk>

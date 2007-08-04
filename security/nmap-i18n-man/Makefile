@@ -88,10 +88,10 @@ do-install:
 		lang="`expr $${token} : '\([^=]*\)'`"; \
 		locale="`expr $${token} : '.*=\([^=]*\)'`"; \
 		charset="`expr $${locale} : '[^.]*\.\([^.]*\)'`"; \
-		${MKDIR} ${DESTDIR}${MAN1PREFIX}/man/$${locale}/man1; \
+		${MKDIR} ${MAN1PREFIX}/man/$${locale}/man1; \
 		${ECHO_CMD} Installing man/$${locale}/man1/nmap.1; \
 		${INSTALL_MAN} ${WRKSRC}/nmap-$${lang}.1.$${charset} \
-			${DESTDIR}${MAN1PREFIX}/man/$${locale}/man1/nmap.1; \
+			${MAN1PREFIX}/man/$${locale}/man1/nmap.1; \
 	done
 
 .include <bsd.port.post.mk>

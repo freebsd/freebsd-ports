@@ -36,6 +36,6 @@ post-patch:
 	@${REINPLACE_CMD} "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
 pre-install:
-	@${MKDIR} ${DESTDIR}${PREFIX}/share/applnk/Utilities
+	@${MKDIR} ${PREFIX}/share/applnk/Utilities
 
 .include <bsd.port.post.mk>

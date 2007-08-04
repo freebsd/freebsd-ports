@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-cxx=gcc --disable-doxygen --prefix=${PREFIX} --includedir=${PREFIX}/include/LTL
-MAKE_ENV=	prefix=${TARGETDIR} exec_prefix=${TARGETDIR}
+MAKE_ENV=	prefix=${PREFIX} exec_prefix=${PREFIX}
 MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 INSTALL_TARGET=	install install-data check distdir

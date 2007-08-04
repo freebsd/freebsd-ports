@@ -18,7 +18,7 @@ COMMENT=	This module provides access to the libidn library
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-libidn=${TARGETDIR}/lib --with-libidn-inc=${TARGETDIR}/include
+CONFIGURE_ARGS+=	--with-libidn=${PREFIX}/lib --with-libidn-inc=${PREFIX}/include
 
 MAN3=		Net::LibIDN.3
 

@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
 
-TEXMFMAIN=	${TARGETDIR}/share/texmf
+TEXMFMAIN=	${PREFIX}/share/texmf
 
 MAN1=		ttf2bdf.1 ttf2tfm.1 ttf2pk.1
 
@@ -46,10 +46,10 @@ post-patch:
 		${WRKSRC}/contrib/ttf2pfb/Makefile.in
 
 post-build:
-	@cd ${WRKSRC}/contrib/ttf2bdf && ./configure --prefix=${TARGETDIR} && ${GMAKE}
-	@cd ${WRKSRC}/contrib/ttf2pfb && ./configure --prefix=${TARGETDIR} && ${GMAKE}
-	@cd ${WRKSRC}/contrib/ttf2pk && ./configure --prefix=${TARGETDIR} --with-kpathsea-dir=${LOCALBASE} && ${GMAKE}
-	@cd ${WRKSRC}/contrib/ttfbanner && ./configure --prefix=${TARGETDIR} && ${GMAKE}
+	@cd ${WRKSRC}/contrib/ttf2bdf && ./configure --prefix=${PREFIX} && ${GMAKE}
+	@cd ${WRKSRC}/contrib/ttf2pfb && ./configure --prefix=${PREFIX} && ${GMAKE}
+	@cd ${WRKSRC}/contrib/ttf2pk && ./configure --prefix=${PREFIX} --with-kpathsea-dir=${LOCALBASE} && ${GMAKE}
+	@cd ${WRKSRC}/contrib/ttfbanner && ./configure --prefix=${PREFIX} && ${GMAKE}
 
 do-install:
 	@cd ${WRKSRC}/contrib/ttf2bdf && ${GMAKE} install

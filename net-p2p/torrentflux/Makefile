@@ -87,7 +87,7 @@ post-install:
 		-type f -print -o -type d -exec echo "@dirrm {}" \; \
 		>>${TMPPLIST}
 	@if [ -f "${PKGINSTALL}" ]; then \
-		${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \
+		${SETENV} PKG_PREFIX="${PREFIX}" \
 			${SH} "${PKGINSTALL}" ${PKGNAME} POST-INSTALL; \
 	fi
 	@if [ -f "${PKGMESSAGE}" ]; then \

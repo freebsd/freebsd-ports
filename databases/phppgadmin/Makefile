@@ -41,8 +41,8 @@ do-install:
 	${MKDIR} ${PREFIX}/${PGADMDIR}
 	${RM} -f ${WRKSRC}/classes/database/Postgres81.php.orig
 	${CP} -Rp ${WRKSRC}/ ${PREFIX}/${PGADMDIR}/
-.if exists(${DESTDIR}${PREFIX}/${PGADMOLDDIR}/conf/config.inc.php)
-	${CP} -np ${DESTDIR}${PREFIX}/${PGADMOLDDIR}/conf/config.inc.php \
+.if exists(${PREFIX}/${PGADMOLDDIR}/conf/config.inc.php)
+	${CP} -np ${PREFIX}/${PGADMOLDDIR}/conf/config.inc.php \
 		${PREFIX}/${PGADMDIR}/conf/config.inc.php
 .endif
 	${CP} -np ${PREFIX}/${PGADMDIR}/conf/config.inc.php-dist \

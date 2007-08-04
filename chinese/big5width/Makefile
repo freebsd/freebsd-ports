@@ -14,7 +14,7 @@ DISTFILES=	# none
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Unicode width dirty fix for Big5 font (${LANG} locale)
 
-BASELOCALEDIR=	${DESTDIR}/usr/share/locale
+BASELOCALEDIR=	/usr/share/locale
 LOCALEDIR=	${PREFIX}/share/locale
 LANG=		zh_TW.UTF-8
 

@@ -18,7 +18,7 @@ COMMENT=	Unit test your websites with code that acts like a web browser
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 .if !defined(NOPORTEXAMPLES)
 post-install:

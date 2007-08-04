@@ -35,8 +35,8 @@ pre-install:
 do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/src && \
-		${INSTALL_PROGRAM} ${PROGRAMS} ${TARGETDIR}/bin && \
-		${INSTALL_SCRIPT} ${SCRIPTS} ${TARGETDIR}/bin
+		${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
+		${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
 	cd ${WRKSRC}/man && \
 		${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1 && \
 	cd ${WRKSRC}/doc && \

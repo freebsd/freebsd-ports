@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.netplex-tech.com/software/downloads/nocol/
 MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	Network/Service monitoring software
 
-MANPREFIX=	${TARGETDIR}/nocol/
+MANPREFIX=	${PREFIX}/nocol/
 MAN1=		netconsole.1
 MAN3=		nocol-prog.3 perlnocol.3
 MAN8=		etherload.8 eventselect.8 genmon.8 multiping.8 noclogd.8 \

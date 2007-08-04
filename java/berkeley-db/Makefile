@@ -68,7 +68,7 @@ post-build:
 
 
 post-patch:
-	@${REINPLACE_CMD} "s,/usr/local,${TARGETDIR}," ${WRKSRC}/build.xml
+	@${REINPLACE_CMD} "s,/usr/local,${PREFIX}," ${WRKSRC}/build.xml
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/build/lib/je.jar ${JAVAJARDIR}

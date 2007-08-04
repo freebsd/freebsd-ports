@@ -22,7 +22,7 @@ do-build:
 	@cd ${WRKSRC} && ${MAKE} ${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/fapg.1 ${MAN1PREFIX}/man/man1
 
 post-install:

@@ -156,7 +156,7 @@ MAN1=		git-add.1 \
 		git-whatchanged.1 \
 		git-write-tree.1 \
 		gitk.1
-MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Git.3
 MAN5=		gitattributes.5 gitignore.5
 MAN7=		git.7

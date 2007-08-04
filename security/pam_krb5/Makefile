@@ -48,7 +48,7 @@ IGNORE=			FreeBSD 5.x already ships with its own version of pam_krb5
 .endif
 MANDIR=			${MANPREFIX}/man
 PREFIX=			/usr
-MANPREFIX=		${TARGETDIR}/usr/share
+MANPREFIX=		/usr/share
 MANDIR=			${PREFIX}/share/man
 KRB5_DIR?=		${LOCALBASE}
 CONFIGURE_ENV=		CFLAGS="${CFLAGS}"

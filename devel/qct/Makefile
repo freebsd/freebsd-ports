@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 
-DOCSDIR=	${TARGETDIR}/share/doc/py-qt4-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/py-qt4-${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)

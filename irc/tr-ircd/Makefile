@@ -24,11 +24,11 @@ TRIRCD_USER?=	trircd
 TRIRCD_GROUP?=	trircd
 TRIRCD_RUNDIR?=	/var/run/tr-ircd
 TRIRCD_LOGDIR?=	/var/log/tr-ircd
-TRIRCD_CONFDIR?=	${TARGETDIR}/etc/tr-ircd
-TRIRCD_LIBDIR=	${TARGETDIR}/lib/tr-ircd
-TRIRCD_INCLUDEDIR=	${TARGETDIR}/include/tr-ircd
+TRIRCD_CONFDIR?=	${PREFIX}/etc/tr-ircd
+TRIRCD_LIBDIR=	${PREFIX}/lib/tr-ircd
+TRIRCD_INCLUDEDIR=	${PREFIX}/include/tr-ircd
 
-CONFIGURE_ARGS=	--prefix=${TARGETDIR} \
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--localstatedir=${TRIRCD_RUNDIR} \
 		--sysconfdir=${TRIRCD_CONFDIR} \
 		--libdir=${TRIRCD_LIBDIR} \

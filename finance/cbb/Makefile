@@ -26,8 +26,8 @@ post-patch:
 			-e "s|WISH = /usr/bin/wish|WISH = ${LOCALBASE}/bin/wish8.2|" \
 			-e "s|DESTDIR =||" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} "s|DESTDIR =||" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|$$destdir/bin|$$destdir/$$prefix/bin|' \
-			-e 's|$$destdir/lib/cbb|$$destdir/$$prefix/lib/cbb|' \
+	@${REINPLACE_CMD} -e 's|$$destdir/bin|$$prefix/bin|' \
+			-e 's|$$destdir/lib/cbb|$$prefix/lib/cbb|' \
 			${WRKSRC}/install.pl
 	@${REINPLACE_CMD} -e "s|=wish|=wish8.2|" -e 's|=""wish""|=""wish8.2""|' \
 			${WRKSRC}/configure

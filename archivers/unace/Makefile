@@ -29,6 +29,6 @@ post-patch:
 			${WRKSRC}/uac_crt.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unace ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/unace ${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -40,7 +40,7 @@ RUN_DEPENEDS+=	nmap:${PORTSDIR}/security/nmap
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local/bin/perl|${PERL}|" ${WRKSRC}/nikto.pl
-	@${REINPLACE_CMD} -Ee "s,(config.txt),${TARGETDIR}/etc/nikto.conf," ${WRKSRC}/nikto.pl
+	@${REINPLACE_CMD} -Ee "s,(config.txt),${PREFIX}/etc/nikto.conf," ${WRKSRC}/nikto.pl
 	@${REINPLACE_CMD} -Ee "s|/usr/bin/nmap|${LOCALBASE}/bin/nmap|g" \
 		-e "s|# (PLUGINDIR=)/usr/local/nikto/plugins|\1${DATADIR}|g" \
 		${WRKSRC}/config.txt
@@ -51,10 +51,10 @@ post-patch:
 	@${MV} ${WRKSRC}/docs/${PORTNAME}-${PORTVERSION}.man ${WRKSRC}/docs/${PORTNAME}.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/nikto.pl ${TARGETDIR}/bin/nikto
-	${INSTALL_DATA} ${WRKSRC}/config.txt ${TARGETDIR}/etc/nikto.conf.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/nikto.pl ${PREFIX}/bin/nikto
+	${INSTALL_DATA} ${WRKSRC}/config.txt ${PREFIX}/etc/nikto.conf.sample
 	[ -f ${PREFIX}/etc/nikto.conf ] || \
-		${INSTALL_DATA} ${WRKSRC}/config.txt ${TARGETDIR}/etc/nikto.conf
+		${INSTALL_DATA} ${WRKSRC}/config.txt ${PREFIX}/etc/nikto.conf
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/plugins/LW.pm ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/plugins/*.db ${DATADIR}

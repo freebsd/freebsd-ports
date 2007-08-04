@@ -107,22 +107,22 @@ pre-build:
 	@${ECHO_CMD} $$((${PORTREVISION}-1)) > ${WRKSRC}/.build
 
 pre-install:
-	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \
+	@${SETENV} PKG_PREFIX="${PREFIX}" \
 		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@cd ${PREFIX}/bin ; ${LN} -sf bash rbash
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DESTDIR}${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .if !defined(WITH_INCLUDED_FAQ)
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/FAQ \
-		${WRKSRC}/doc/INTRO ${DESTDIR}${DOCSDIR}
+		${WRKSRC}/doc/INTRO ${DOCSDIR}
 .else
 	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ \
-		${WRKSRC}/doc/INTRO ${DESTDIR}${DOCSDIR}
+		${WRKSRC}/doc/INTRO ${DOCSDIR}
 .endif
 	@for d in ${PORTDOCS:NFAQ:NINTRO}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${d} ${DESTDIR}${DOCSDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/$${d} ${DOCSDIR}; \
 	done
 .endif
 	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \

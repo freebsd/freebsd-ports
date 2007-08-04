@@ -31,7 +31,7 @@ OPENACS_USER?=	${PORTNAME}
 OPENACS_DB?=	${PORTNAME}
 OPENACS_GROUP?=	www
 PGUSER?=	pgsql
-OPENACSBASE?=	${TARGETDIR}/openacs
+OPENACSBASE?=	${PREFIX}/openacs
 OPENACSNAME?=	OpenACS
 SU?=		/usr/bin/su
 PGREP?=		/usr/bin/pgrep
@@ -80,12 +80,12 @@ pre-install:
 	@ ${FIND} ${WRKSRC} ! -type d ! -path '${WRKSRC}/etc*' \
 		! -path '${WRKSRC}/readme.txt' ! -path '${WRKSRC}/license.txt' \
 		! -path '${WRKSRC}/ChangeLog' | \
-		${SED} 's|${WRKSRC}|${OPENACSBASE:S/${TARGETDIR}\///}|' > ${PLIST}
-	@ ${ECHO} ${OPENACSBASE:S/${TARGETDIR}\///}/etc/${PORTNAME}-config.tcl >> ${PLIST}
-	@ ${ECHO} @dirrm ${OPENACSBASE:S/${TARGETDIR}\///}/etc >> ${PLIST}
+		${SED} 's|${WRKSRC}|${OPENACSBASE:S/${PREFIX}\///}|' > ${PLIST}
+	@ ${ECHO} ${OPENACSBASE:S/${PREFIX}\///}/etc/${PORTNAME}-config.tcl >> ${PLIST}
+	@ ${ECHO} @dirrm ${OPENACSBASE:S/${PREFIX}\///}/etc >> ${PLIST}
 	@ ${FIND} ${WRKSRC} -type d ! -path '${WRKSRC}/etc*' | \
 		${SORT} -r | \
-		${SED} 's|${WRKSRC}|@dirrmtry ${OPENACSBASE:S/${TARGETDIR}\///}|' >> ${PLIST}
+		${SED} 's|${WRKSRC}|@dirrmtry ${OPENACSBASE:S/${PREFIX}\///}|' >> ${PLIST}
 .if defined(WITH_EXAMPLES)
 	@ ${FIND} ${WRKSRC}/etc ! -type d | \
 		${SED} 's|${WRKSRC}/etc|%%EXAMPLESDIR%%|' >> ${PLIST}

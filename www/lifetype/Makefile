@@ -72,9 +72,9 @@ pre-install:
 		&& ${ECHO_CMD} @dirrm ${PLOGDIR} >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${TARGETDIR}/${PLOGDIR}
-	@${CP} -R ${WRKSRC}/ ${TARGETDIR}/${PLOGDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${TARGETDIR}/${PLOGDIR}
+	@${MKDIR} ${PREFIX}/${PLOGDIR}
+	@${CP} -R ${WRKSRC}/ ${PREFIX}/${PLOGDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PLOGDIR}
 
 post-install:
 	@${SED} -e 's|%%PLOGURL%%|${PLOGURL}|' pkg-message > ${PKGMESSAGE}

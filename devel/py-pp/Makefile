@@ -21,6 +21,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's,^#!/usr/bin/python,#!${PYTHON_CMD},' ${WRKSRC}/ppserver.py
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ppserver.py ${TARGETDIR}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/ppserver.py ${PREFIX}/bin/
 
 .include <bsd.port.mk>

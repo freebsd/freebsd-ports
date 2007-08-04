@@ -78,7 +78,7 @@ IGNORE=		requires newer version of ghostscript
 CONFIGURE_ARGS+=	--with-perl=${PERL5}
 PLIST_SUB+=		WITH_PERL=''
 MAN3=			Image::Magick.3
-MAN3PREFIX=		${TARGETDIR}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 .else
 CONFIGURE_ARGS+=	--without-perl
 PLIST_SUB+=		WITH_PERL='@comment '

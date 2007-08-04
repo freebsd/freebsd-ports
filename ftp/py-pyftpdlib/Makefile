@@ -18,8 +18,8 @@ COMMENT=	Python FTP server library
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)

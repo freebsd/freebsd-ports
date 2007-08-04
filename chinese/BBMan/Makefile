@@ -37,6 +37,6 @@ do-build:
 	cd ${WRKSRC} && ${CXX} main.cpp `${WX_CONFIG} --libs --cxxflags` -I${LOCALBASE}/include ${CFLAGS} -o BBMan
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/BBMan ${TARGETDIR}/bin/BBMan
+	${INSTALL_PROGRAM} ${WRKSRC}/BBMan ${PREFIX}/bin/BBMan
 
 .include <bsd.port.post.mk>

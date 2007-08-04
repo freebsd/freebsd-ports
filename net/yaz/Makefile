@@ -31,10 +31,10 @@ MAN8=		yaz-config.8 yaz-ztest.8
 
 pre-install:
 	cd ${WRKSRC}/doc && \
-		${REINPLACE_CMD} -e 's,[$$]{datarootdir}/man,${TARGETDIR}/man,' \
+		${REINPLACE_CMD} -e 's,[$$]{datarootdir}/man,${PREFIX}/man,' \
 		Makefile
 	cd ${WRKSRC}/ziffy && \
-		${REINPLACE_CMD} -e 's,[$$]{datarootdir}/man,${TARGETDIR}/man,' \
+		${REINPLACE_CMD} -e 's,[$$]{datarootdir}/man,${PREFIX}/man,' \
 		Makefile
 
 .include <bsd.port.mk>

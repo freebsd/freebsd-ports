@@ -46,13 +46,13 @@ post-patch:
 		' ${WRKSRC}/tenshi
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/tenshi ${DESTDIR}${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/tenshi.conf ${DESTDIR}${PREFIX}/etc/tenshi.conf.sample
-	@${INSTALL_MAN} ${WRKSRC}/tenshi.8 ${DESTDIR}${MAN8PREFIX}/man/man8
+	@${INSTALL_SCRIPT} ${WRKSRC}/tenshi ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/tenshi.conf ${PREFIX}/etc/tenshi.conf.sample
+	@${INSTALL_MAN} ${WRKSRC}/tenshi.8 ${MAN8PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@for doc in ${PORTDOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/$$doc ${DESTDIR}${DOCSDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/$$doc ${DOCSDIR}; \
 	done
 .endif
 

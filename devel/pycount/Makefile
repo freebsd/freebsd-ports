@@ -29,6 +29,6 @@ do-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKDIR}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${DISTFILES} ${TARGETDIR}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTFILES} ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

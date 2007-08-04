@@ -45,7 +45,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-
 .endif
 
 .if !defined (NOPORTEXAMPLES)
-EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 .endif
 
 .include <bsd.port.post.mk>

@@ -81,16 +81,16 @@ do-configure:
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} configure)
 
 post-install:
-	-${MKDIR} ${DESTDIR}${PREFIX}/info
-	${INSTALL_DATA} ${WRKSRC}/uucp/doc/uucp.info ${DESTDIR}${PREFIX}/info/
+	-${MKDIR} ${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/uucp/doc/uucp.info ${PREFIX}/info/
 	@${CHOWN} uucp:uucp ${PREFIX}/etc/uucp
 	@${CHMOD} 750 ${PREFIX}/etc/uucp
-	@${ECHO_CMD} "updating ${DESTDIR}/etc/services"
-	@${CP} ${DESTDIR}/etc/services ${DESTDIR}/etc/services.bak
-	@(grep -v ^suucp ${DESTDIR}/etc/services.bak; \
+	@${ECHO_CMD} "updating /etc/services"
+	@${CP} /etc/services /etc/services.bak
+	@(grep -v ^suucp /etc/services.bak; \
 	${ECHO_CMD} "suucp           4031/tcp   #UUCP over SSL"; \
 	${ECHO_CMD} "suucp           4031/udp   #UUCP over SSL" ) \
-		> ${DESTDIR}/etc/services
+		> /etc/services
 .if !defined(BATCH)
 	@if test "$$(pw usershow uucp)" != "uucp:*:66:66::0:0:UUCP pseudo-user:/var/spool/uucppublic:${PREFIX}/libexec/uucp/uucico"; then \
 	pw usermod uucp -s ${PREFIX}/libexec/uucp/uucico; fi

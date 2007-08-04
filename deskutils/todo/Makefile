@@ -27,7 +27,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,/bin/sh,${LOCALBASE}/bin/bash," ${WRKSRC}/todo.sh
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/todo.sh ${TARGETDIR}/bin/todo
-	@${INSTALL_DATA} ${WRKSRC}/.todo ${TARGETDIR}/etc/dot.todo
+	@${INSTALL_SCRIPT} ${WRKSRC}/todo.sh ${PREFIX}/bin/todo
+	@${INSTALL_DATA} ${WRKSRC}/.todo ${PREFIX}/etc/dot.todo
 
 .include <bsd.port.mk>

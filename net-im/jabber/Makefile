@@ -33,7 +33,7 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_LDCONFIG=	${TARGETDIR}/lib/jabber
+USE_LDCONFIG=	${PREFIX}/lib/jabber
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN5=		jabber.xml.5
@@ -44,7 +44,7 @@ JABBER_USER=	jabber
 JABBER_UID=	93
 JABBER_GROUP=	${JABBER_USER}
 JABBER_GID=	${JABBER_UID}
-JABBER_ETCDIR=	"${TARGETDIR}/etc"
+JABBER_ETCDIR=	"${PREFIX}/etc"
 JABBER_RUNDIR=	"/var/run/jabberd"
 JABBER_SPOOLDIR="/var/spool/jabberd"
 JABBER_LOGDIR=	"/var/log/jabberd"
@@ -52,8 +52,8 @@ JABBER_LOGDIR=	"/var/log/jabberd"
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--sysconfdir=${JABBER_ETCDIR} \
-		--includedir=${TARGETDIR}/include/jabber \
-		--libdir=${TARGETDIR}/lib/jabber
+		--includedir=${PREFIX}/include/jabber \
+		--libdir=${PREFIX}/lib/jabber
 
 CPPFLAGS+=	-I${LOCALBASE}/include/pth -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib/pth -L${LOCALBASE}/lib
@@ -101,8 +101,8 @@ post-patch:
 	@${LN} -s ${WRKSRC}/man/jabberd.8.in ${WRKSRC}/man/jabberd14.8.in
 
 post-install:
-	@${TOUCH} ${TARGETDIR}/include/jabber/platform-settings
-	@${INSTALL_DATA} ${WRKSRC}/jabber.xml.dist ${TARGETDIR}/etc/jabber.xml.sample
+	@${TOUCH} ${PREFIX}/include/jabber/platform-settings
+	@${INSTALL_DATA} ${WRKSRC}/jabber.xml.dist ${PREFIX}/etc/jabber.xml.sample
 .if !defined(NO_INSTALL_MANPAGES)
 	@cd ${WRKSRC}/man && make install-man
 .endif

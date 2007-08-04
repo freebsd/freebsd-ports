@@ -68,7 +68,7 @@ OPTIONS=	ARTS "Enable aRts support" off \
 MAN1=	xine-config.1
 MAN5=	xine.5
 
-DOCSDIR=	${TARGETDIR}/share/doc/xine-lib
+DOCSDIR=	${PREFIX}/share/doc/xine-lib
 PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/${PORTVERSION}"
 
 .include <bsd.port.pre.mk>

@@ -30,6 +30,6 @@ do-patch:
 	${REINPLACE_CMD} -e s,/usr/bin/python,${PYTHON_CMD}, ${WRKDIR}/${DISTFILES}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${DISTFILES} ${TARGETDIR}/bin/pythontidy
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTFILES} ${PREFIX}/bin/pythontidy
 
 .include <bsd.port.mk>

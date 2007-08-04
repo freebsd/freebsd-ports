@@ -6,23 +6,10 @@ VCHATUSER=%%VCHATUSER%%
 VCHATGROUP=%%VCHATGROUP%%
 UID=128
 GID=128
-
-if [ -n "%%DESTDIR%%" ]; then
-
-	PW="/usr/sbin/chroot %%DESTDIR%% pw"
-	CHOWN="/usr/sbin/chroot %%DESTDIR%% chown"
-	CHMOD="/usr/sbin/chroot %%DESTDIR%% chmod"
-	MKDIR="/usr/sbin/chroot %%DESTDIR%% mkdir -p"
-
-else
-
-	PW="pw"
-	CHOWN="chown"
-	CHMOD="chmod"
-	MKDIR="mkdir"
-
-
-fi
+PW="pw"
+CHOWN="chown"
+CHMOD="chmod"
+MKDIR="mkdir"
 
 
 if [ "$2" = "PRE-INSTALL" ]; then

@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=prefix=${TARGETDIR} mandir=${MANPREFIX}/man \
+CONFIGURE_ARGS+=prefix=${PREFIX} mandir=${MANPREFIX}/man \
 		exampledir=${EXAMPLESDIR}
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

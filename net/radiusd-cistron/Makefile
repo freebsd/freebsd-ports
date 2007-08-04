@@ -53,7 +53,7 @@ do-install:
 .endfor
 .endif
 
-.if exists(${DESTDIR}/etc/pam.d)
+.if exists(/etc/pam.d)
 PLIST_SUB+=	WITH_PAMD=""
 .else
 PLIST_SUB+=	WITH_PAMD="@comment "

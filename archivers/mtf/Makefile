@@ -26,7 +26,7 @@ post-patch:
 			${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mtf ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mtf ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

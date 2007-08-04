@@ -25,9 +25,9 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
-DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 .endif
-EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 .include <bsd.port.pre.mk>
 

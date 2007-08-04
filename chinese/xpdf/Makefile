@@ -45,6 +45,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/xpdf-chinese-traditional/${i} ${DATADIR}/chinese-traditional
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/dot.xpdfrc ${DATADIR}/chinese-traditional
-	@${SETENV} PKG_PREFIX=${TARGETDIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

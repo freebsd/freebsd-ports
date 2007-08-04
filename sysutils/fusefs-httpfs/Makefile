@@ -30,7 +30,7 @@ do-build:
 	 -o httpfs httpfs.c -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lfuse)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/httpfs ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/httpfs ${PREFIX}/bin
 
 .include <bsd.port.pre.mk>
 

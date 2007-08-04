@@ -30,7 +30,7 @@ GS_VERSION=	8.15
 
 WRKSRC=		${WRKDIR}/espgs-${PORTVERSION}
 
-DATADIR=	${TARGETDIR}/share/espgs
+DATADIR=	${PREFIX}/share/espgs
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

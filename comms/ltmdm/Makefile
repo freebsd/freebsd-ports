@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Driver for the Lucent LT Winmodem chipset
 
-DEVDIR=		${DESTDIR}/dev
+DEVDIR=		/dev
 MODULES_WITH_WORLD?=	yes
 ONLY_FOR_ARCHS=	i386
 BUILD_WRKSRC=	${WRKSRC}/sys/modules/ltmdm

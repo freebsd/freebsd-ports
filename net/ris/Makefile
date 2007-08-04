@@ -21,7 +21,7 @@ USE_RC_SUBR=	binlsrv.sh
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-VARDIR=		${DESTDIR}/var
+VARDIR=		/var
 PID_FILE?=	${VARDIR}/run/binlsrv.pid
 DEVLIST_CACHE?=	${VARDIR}/db/devlist.cache
 

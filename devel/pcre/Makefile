@@ -45,11 +45,11 @@ MAN3=		pcre.3 pcre_compile.3 pcre_compile2.3 pcre_config.3 \
 		pcreperform.3 pcreposix.3 pcresample.3 pcrestack.3
 
 post-install:
-	@${STRIP_CMD} ${DESTDIR}${PREFIX}/bin/pcregrep ${DESTDIR}${PREFIX}/bin/pcretest
+	@${STRIP_CMD} ${PREFIX}/bin/pcregrep ${PREFIX}/bin/pcretest
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DESTDIR}${DOCSDIR} ${DESTDIR}${DOCSDIR}/html
-	@cd ${WRKSRC}; ${INSTALL_DATA} ChangeLog NEWS LICENCE doc/*.txt ${DESTDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${DESTDIR}${DOCSDIR}/html
+	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/html
+	@cd ${WRKSRC}; ${INSTALL_DATA} ChangeLog NEWS LICENCE doc/*.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${DOCSDIR}/html
 .endif
 
 .include <bsd.port.mk>

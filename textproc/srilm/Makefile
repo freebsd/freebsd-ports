@@ -87,7 +87,7 @@ post-patch:
 do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/bin/freebsd && \
-		${INSTALL_PROGRAM} ${PROGRAMS} ${TARGETDIR}/bin && \
+		${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
 		${INSTALL_SCRIPT} ${GAWK_SCRIPTS} ${EXAMPLESDIR} && \
 	cd ${WRKSRC}/man/man1 && \
 		${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1 && \

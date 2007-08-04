@@ -26,11 +26,11 @@ PKGMESSAGE=	${WRKSRC}/pkg-message
 DICTFILES=	cedict pydict moecomp netterm
 
 do-install:
-	${SED} 's|%%PREFIX%%|${TARGETDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
-	@${MKDIR} ${TARGETDIR}/lib/dict
+	${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
+	@${MKDIR} ${PREFIX}/lib/dict
 	for f in ${DICTFILES}; do \
-	  ${INSTALL_DATA} ${WRKSRC}/$${f}.dict.dz ${TARGETDIR}/lib/dict; \
-	  ${INSTALL_DATA} ${WRKSRC}/$${f}.index ${TARGETDIR}/lib/dict; \
+	  ${INSTALL_DATA} ${WRKSRC}/$${f}.dict.dz ${PREFIX}/lib/dict; \
+	  ${INSTALL_DATA} ${WRKSRC}/$${f}.index ${PREFIX}/lib/dict; \
 	done
 
 post-install:

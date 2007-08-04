@@ -66,11 +66,11 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Di
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/root,root/root,wheel/" \
-		-e "s,/usr/sbin,${TARGETDIR}/sbin," \
+		-e "s,/usr/sbin,${PREFIX}/sbin," \
 		${WRKSRC}/Net-FTPServer.spec.PL
 	@${REINPLACE_CMD} -e "s/-g root/-g wheel/" \
-		-e "s,$$.PREFIX./sbin,${TARGETDIR}/sbin," \
-		-e "s,$$.SITEPREFIX./sbin,${TARGETDIR}/sbin," \
+		-e "s,$$.PREFIX./sbin,${PREFIX}/sbin," \
+		-e "s,$$.SITEPREFIX./sbin,${PREFIX}/sbin," \
 		${WRKSRC}/Makefile.PL
 
 post-install:
@@ -80,7 +80,7 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	@${PERL} -p -e 's,PREFIX,${TARGETDIR},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
+	@${PERL} -p -e 's,PREFIX,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

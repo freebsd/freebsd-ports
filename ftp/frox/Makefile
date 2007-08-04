@@ -30,8 +30,8 @@ MAN5=		frox.conf.5
 PORTDOCS=	SECURITY CREDITS ChangeLog FAQ.html FAQ-1.html FAQ-2.html \
 		FAQ-3.html FAQ-4.html FAQ-5.html FAQ-6.html FAQ-7.html \
 		FAQ-8.html
-PLIST_FILES=	sbin/frox ${EXAMPLESDIR:S,${TARGETDIR}/,,}/frox.conf
-PLIST_DIRS=	${EXAMPLESDIR:S,${TARGETDIR}/,,}
+PLIST_FILES=	sbin/frox ${EXAMPLESDIR:S,${PREFIX}/,,}/frox.conf
+PLIST_DIRS=	${EXAMPLESDIR:S,${PREFIX}/,,}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=	--enable-run-as-root
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/frox ${TARGETDIR}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/frox ${PREFIX}/sbin
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/frox.conf ${EXAMPLESDIR}/frox.conf
 	${INSTALL_MAN} ${WRKSRC}/doc/frox.man ${MANPREFIX}/man/man1/frox.1
@@ -86,7 +86,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 .endfor
 .endif
-	@${STRIP_CMD} ${TARGETDIR}/sbin/frox; \
+	@${STRIP_CMD} ${PREFIX}/sbin/frox; \
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

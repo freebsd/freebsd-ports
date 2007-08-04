@@ -24,7 +24,7 @@ USE_AUTOTOOLS=	autoconf:259:env automake:19:env
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5_RUN=	yes
-LOCALSTATEDIR=${DESTDIR}/var
+LOCALSTATEDIR=	/var
 CONFIGURE_ENV+=	wwwdir=${PREFIX}/www/sipX \
 		INSTALL=`which ginstall`
 CONFIGURE_ARGS+=	--enable-sip-tls \

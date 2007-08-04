@@ -21,10 +21,10 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bg5ps ${TARGETDIR}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/ttf2psm ${TARGETDIR}/bin
-	${INSTALL_DATA} ${WRKSRC}/bg5ps.conf ${TARGETDIR}/etc/bg5ps.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/gb2312-bg5ps.conf ${TARGETDIR}/etc/gb2312-bg5ps.conf.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/bg5ps ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ttf2psm ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/bg5ps.conf ${PREFIX}/etc/bg5ps.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/gb2312-bg5ps.conf ${PREFIX}/etc/gb2312-bg5ps.conf.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}

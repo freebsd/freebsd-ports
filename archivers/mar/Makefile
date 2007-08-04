@@ -26,7 +26,7 @@ post-patch:
 		${WRKSRC}/src/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/man1/mar.1 ${MAN1PREFIX}/man/man1
 
 .if !defined(NOPORTDOCS)

@@ -27,32 +27,32 @@ do-build:
 	@cd ${WRKSRC}/afay/ayacc/src/gnat_unix && ${SH} ./README
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/afay/aflex/src/aflex ${DESTDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/afay/ayacc/src/ayacc ${DESTDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/aflex.man ${DESTDIR}${PREFIX}/man/man1/aflex.1
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/old_docs/ayacc.manpage ${DESTDIR}${PREFIX}/man/man1/ayacc.1
+	${INSTALL_PROGRAM} ${WRKSRC}/afay/aflex/src/aflex ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/afay/ayacc/src/ayacc ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/aflex.man ${PREFIX}/man/man1/aflex.1
+	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/old_docs/ayacc.manpage ${PREFIX}/man/man1/ayacc.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DESTDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/READ_ME ${DESTDIR}${DOCSDIR}/READ_ME.aflex
-	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/aflex.html ${DESTDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/aflex_user_man.* ${DESTDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/READ_ME ${DESTDIR}${DOCSDIR}/READ_ME.ayacc
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/ayacc.html ${DESTDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/ayacc_user_man.tex ${DESTDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/READ_ME ${DOCSDIR}/READ_ME.aflex
+	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/aflex.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/aflex_user_man.* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/READ_ME ${DOCSDIR}/READ_ME.ayacc
+	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/ayacc.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/ayacc_user_man.tex ${DOCSDIR}
 .endif
-	${MKDIR} ${DESTDIR}${EXAMPLESDIR}
-	${MKDIR} ${DESTDIR}${EXAMPLESDIR}/ada_parser
-	${MKDIR} ${DESTDIR}${EXAMPLESDIR}/calc
-	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/example.l ${DESTDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/test95.l ${DESTDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/afay/ayacc/examples/ada_parser/COMPILE ${DESTDIR}${EXAMPLESDIR}/ada_parser
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/ada_parser/READ.ME ${DESTDIR}${EXAMPLESDIR}/ada_parser
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/ada_parser/ada.y ${DESTDIR}${EXAMPLESDIR}/ada_parser
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/ada_parser/ada_lex.l ${DESTDIR}${EXAMPLESDIR}/ada_parser
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/ada_parser/driver.a ${DESTDIR}${EXAMPLESDIR}/ada_parser
-	${INSTALL_SCRIPT} ${WRKSRC}/afay/ayacc/examples/calc/COMPILE ${DESTDIR}${EXAMPLESDIR}/calc
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/calc/READ.ME ${DESTDIR}${EXAMPLESDIR}/calc
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/calc/calc* ${DESTDIR}${EXAMPLESDIR}/calc
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/calc/driver.a ${DESTDIR}${EXAMPLESDIR}/calc
+	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${EXAMPLESDIR}/ada_parser
+	${MKDIR} ${EXAMPLESDIR}/calc
+	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/example.l ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/test95.l ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/afay/ayacc/examples/ada_parser/COMPILE ${EXAMPLESDIR}/ada_parser
+	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/ada_parser/READ.ME ${EXAMPLESDIR}/ada_parser
+	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/ada_parser/ada.y ${EXAMPLESDIR}/ada_parser
+	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/ada_parser/ada_lex.l ${EXAMPLESDIR}/ada_parser
+	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/ada_parser/driver.a ${EXAMPLESDIR}/ada_parser
+	${INSTALL_SCRIPT} ${WRKSRC}/afay/ayacc/examples/calc/COMPILE ${EXAMPLESDIR}/calc
+	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/calc/READ.ME ${EXAMPLESDIR}/calc
+	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/calc/calc* ${EXAMPLESDIR}/calc
+	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/calc/driver.a ${EXAMPLESDIR}/calc
 
 .include <bsd.port.mk>

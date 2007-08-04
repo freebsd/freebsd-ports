@@ -97,7 +97,7 @@ PLIST_SUB+=		NEED_USE_PERL=""
 .if defined(WITH_GDBM)
 MAN3+=	GDBM_File.3
 .endif
-MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VER}/perl
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}/perl
 
 test:
 	@(cd ${WRKSRC}; make test)

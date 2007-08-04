@@ -52,10 +52,10 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 do-install:
-	@-${MKDIR} ${TARGETDIR}/${SERENDIPITY}
-	@${CHMOD} 755 ${TARGETDIR}/${SERENDIPITY}
-	@(cd ${WRKSRC} && ${CP} -R * ${TARGETDIR}/${SERENDIPITY}/ )
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${TARGETDIR}/${SERENDIPITY}
+	@-${MKDIR} ${PREFIX}/${SERENDIPITY}
+	@${CHMOD} 755 ${PREFIX}/${SERENDIPITY}
+	@(cd ${WRKSRC} && ${CP} -R * ${PREFIX}/${SERENDIPITY}/ )
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${SERENDIPITY}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

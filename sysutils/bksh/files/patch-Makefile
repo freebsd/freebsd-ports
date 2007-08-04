@@ -1,8 +1,9 @@
---- Makefile.orig	Sat Aug  5 11:56:42 2006
-+++ Makefile	Sat Aug  5 11:56:58 2006
-@@ -1,5 +1,7 @@
+--- Makefile.orig	Mon Jun 23 03:11:57 2003
++++ Makefile	Sat Aug  4 00:32:00 2007
+@@ -1,5 +1,8 @@
  .include "local.mk"
  
++DESTDIR=
 +BINDIR=	${PREFIX}/bin
 +
  # Stolen from bsd.port.mk

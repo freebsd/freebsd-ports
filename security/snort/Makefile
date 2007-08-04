@@ -36,7 +36,7 @@ CONFIG_DIR?=	${PREFIX}/etc/snort
 CONFIG_FILES=	classification.config gen-msg.map generators reference.config \
 		sid sid-msg.map snort.conf threshold.conf unicode.map
 RULES_DIR=	${PREFIX}/etc/snort/rules
-LOGS_DIR=	${DESTDIR}/var/log/snort
+LOGS_DIR=	/var/log/snort
 
 MAN8=		snort.8
 DOCS=		RELEASE.NOTES doc/AUTHORS doc/BUGS doc/CREDITS \

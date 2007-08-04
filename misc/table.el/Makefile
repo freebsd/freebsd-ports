@@ -19,8 +19,8 @@ COMMENT=	Create and edit WYSIWYG text based embedded tables in Emacs
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-EMACSLISPDIR=	${TARGETDIR}/share/emacs/site-lisp
-XEMACSLISPDIR=	${TARGETDIR}/lib/xemacs/site-lisp
+EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
+XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 do-extract:
 	${MKDIR} ${WRKDIR}
