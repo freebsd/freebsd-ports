@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	1.17.6
+PORTVERSION=	1.18.0
 CATEGORIES=	sysutils
-MASTER_SITES=	SF http://download.rsyslog.com/rsyslog/
+MASTER_SITES=	http://download.rsyslog.com/rsyslog/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Enhanced syslog daemon
