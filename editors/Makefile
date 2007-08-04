@@ -20,6 +20,7 @@
     SUBDIR += bitedit
     SUBDIR += bitmap
     SUBDIR += bitmap-emacs20
+    SUBDIR += bitmap-emacs21
     SUBDIR += bless
     SUBDIR += boiling-egg
     SUBDIR += bpatch
