@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wikindx
-PORTVERSION=	3.6.5
+PORTVERSION=	3.7
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikindx
@@ -34,7 +34,7 @@ do-install:
 	(cd ${WRKSRC} && ${CP} ${ROOTFILES} ${PREFIX}/${WWWDIR}/ )
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${WWWDIR}
 .for i in ${ROOTDIRS}
-	@(cd ${WRKSRC} && ${CP} -R ${i} ${PREFIX}/${WWWDIR}/ )
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${PREFIX}/${WWWDIR}/ )
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

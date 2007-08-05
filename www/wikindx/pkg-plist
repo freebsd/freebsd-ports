@@ -29,6 +29,7 @@
 %%WWWDIR%%/core/browse/CATEGORYTREE.php
 %%WWWDIR%%/core/cite/CITE.php
 %%WWWDIR%%/core/cite/cite.js
+%%WWWDIR%%/core/cms/CMS.php
 %%WWWDIR%%/core/collection/COLLECTION.php
 %%WWWDIR%%/core/collection/COLLECTIONMAP.php
 %%WWWDIR%%/core/cookie/COOKIE.php
@@ -109,6 +110,7 @@
 %%WWWDIR%%/core/news/NEWS.php
 %%WWWDIR%%/core/notify/NOTIFY.php
 %%WWWDIR%%/core/paging/PAGING.php
+%%WWWDIR%%/core/paging/PAGINGALPHA.php
 %%WWWDIR%%/core/preferences/PREFERENCES.php
 %%WWWDIR%%/core/publisher/PUBLISHER.php
 %%WWWDIR%%/core/publisher/PUBLISHERMAP.php
@@ -507,6 +509,7 @@
 %%WWWDIR%%/templates/blue/footerSUWP.tpl
 %%WWWDIR%%/templates/blue/header.tpl
 %%WWWDIR%%/templates/blue/icons/add.gif
+%%WWWDIR%%/templates/blue/icons/bibtex.gif
 %%WWWDIR%%/templates/blue/icons/checkall.gif
 %%WWWDIR%%/templates/blue/icons/cite.gif
 %%WWWDIR%%/templates/blue/icons/delete.gif
@@ -536,6 +539,7 @@
 %%WWWDIR%%/templates/chocolate/footerSUWP.tpl
 %%WWWDIR%%/templates/chocolate/header.tpl
 %%WWWDIR%%/templates/chocolate/icons/add.gif
+%%WWWDIR%%/templates/chocolate/icons/bibtex.gif
 %%WWWDIR%%/templates/chocolate/icons/checkall.gif
 %%WWWDIR%%/templates/chocolate/icons/cite.gif
 %%WWWDIR%%/templates/chocolate/icons/delete.gif
@@ -563,6 +567,7 @@
 %%WWWDIR%%/templates/classic/footerSUWP.tpl
 %%WWWDIR%%/templates/classic/header.tpl
 %%WWWDIR%%/templates/classic/icons/add.gif
+%%WWWDIR%%/templates/classic/icons/bibtex.gif
 %%WWWDIR%%/templates/classic/icons/checkall.gif
 %%WWWDIR%%/templates/classic/icons/cite.gif
 %%WWWDIR%%/templates/classic/icons/delete.gif
@@ -590,6 +595,7 @@
 %%WWWDIR%%/templates/default/footerSUWP.tpl
 %%WWWDIR%%/templates/default/header.tpl
 %%WWWDIR%%/templates/default/icons/add.gif
+%%WWWDIR%%/templates/default/icons/bibtex.gif
 %%WWWDIR%%/templates/default/icons/checkall.gif
 %%WWWDIR%%/templates/default/icons/cite.gif
 %%WWWDIR%%/templates/default/icons/delete.gif
@@ -618,6 +624,7 @@
 %%WWWDIR%%/templates/green_marble/green_marble.css
 %%WWWDIR%%/templates/green_marble/header.tpl
 %%WWWDIR%%/templates/green_marble/icons/add.gif
+%%WWWDIR%%/templates/green_marble/icons/bibtex.gif
 %%WWWDIR%%/templates/green_marble/icons/checkall.gif
 %%WWWDIR%%/templates/green_marble/icons/cite.gif
 %%WWWDIR%%/templates/green_marble/icons/delete.gif
@@ -655,6 +662,7 @@
 %%WWWDIR%%/templates/notmac/footerSUWP.tpl
 %%WWWDIR%%/templates/notmac/header.tpl
 %%WWWDIR%%/templates/notmac/icons/add.gif
+%%WWWDIR%%/templates/notmac/icons/bibtex.gif
 %%WWWDIR%%/templates/notmac/icons/checkall.gif
 %%WWWDIR%%/templates/notmac/icons/cite.gif
 %%WWWDIR%%/templates/notmac/icons/delete.gif
@@ -685,6 +693,7 @@
 %%WWWDIR%%/templates/simple/footerSUWP.tpl
 %%WWWDIR%%/templates/simple/header.tpl
 %%WWWDIR%%/templates/simple/icons/add.gif
+%%WWWDIR%%/templates/simple/icons/bibtex.gif
 %%WWWDIR%%/templates/simple/icons/checkall.gif
 %%WWWDIR%%/templates/simple/icons/cite.gif
 %%WWWDIR%%/templates/simple/icons/delete.gif
@@ -823,6 +832,7 @@
 @dirrm %%WWWDIR%%/core/creator
 @dirrm %%WWWDIR%%/core/cookie
 @dirrm %%WWWDIR%%/core/collection
+@dirrm %%WWWDIR%%/core/cms
 @dirrm %%WWWDIR%%/core/cite
 @dirrm %%WWWDIR%%/core/browse
 @dirrm %%WWWDIR%%/core/basket
