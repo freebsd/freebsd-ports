@@ -7,6 +7,7 @@
 
 PORTNAME=	XML_Feed_Parser
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,9 +16,9 @@ COMMENT=	Providing a unified API for handling Atom/RSS
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PHP=	tidy
+USE_PHP=	tidy dom
 
-CATEGORY=	XML
+CATEGORY=	XML/Feed
 FILES=		Parser.php Parser/Atom.php Parser/AtomElement.php \
 		Parser/Exception.php \
 		Parser/RSS09.php Parser/RSS09Element.php Parser/RSS1.php \
