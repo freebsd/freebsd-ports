@@ -1,731 +1,780 @@
-%%EVENTUM%%/CONTRIB
-%%EVENTUM%%/COPYING
-%%EVENTUM%%/ChangeLog
-%%EVENTUM%%/FAQ
-%%EVENTUM%%/INSTALL
-%%EVENTUM%%/README
-%%EVENTUM%%/UPGRADE
-%%EVENTUM%%/adv_search.php
-%%EVENTUM%%/associate.php
-%%EVENTUM%%/authorized_replier.php
-%%EVENTUM%%/benchmark.php
-%%EVENTUM%%/clock_status.php
-%%EVENTUM%%/close.php
-%%EVENTUM%%/config.inc.php-dist
-%%EVENTUM%%/confirm.php
-%%EVENTUM%%/convert_note.php
-%%EVENTUM%%/css/dtree.css
-%%EVENTUM%%/css/dynCalendar.css
-%%EVENTUM%%/css/other.css
-%%EVENTUM%%/css/style.css
-%%EVENTUM%%/csv.php
-%%EVENTUM%%/custom_fields.php
-%%EVENTUM%%/customer/example/create_customers.php
-%%EVENTUM%%/customer/example/customer_lookup.php
-%%EVENTUM%%/docs/Customer_API.html
-%%EVENTUM%%/docs/Workflow_API.html
-%%EVENTUM%%/download.php
-%%EVENTUM%%/duplicate.php
-%%EVENTUM%%/emails.php
-%%EVENTUM%%/faq.php
-%%EVENTUM%%/favicon.ico
-%%EVENTUM%%/file_upload.php
-%%EVENTUM%%/forgot_password.php
-%%EVENTUM%%/get_attachment.php
-%%EVENTUM%%/get_remote_data.php
-%%EVENTUM%%/help.php
-%%EVENTUM%%/history.php
-%%EVENTUM%%/images/asc.gif
-%%EVENTUM%%/images/attachment.gif
-%%EVENTUM%%/images/blank.gif
-%%EVENTUM%%/images/computer.gif
-%%EVENTUM%%/images/desc.gif
-%%EVENTUM%%/images/dtree/base.gif
-%%EVENTUM%%/images/dtree/cd.gif
-%%EVENTUM%%/images/dtree/empty.gif
-%%EVENTUM%%/images/dtree/folder.gif
-%%EVENTUM%%/images/dtree/folderopen.gif
-%%EVENTUM%%/images/dtree/globe.gif
-%%EVENTUM%%/images/dtree/imgfolder.gif
-%%EVENTUM%%/images/dtree/join.gif
-%%EVENTUM%%/images/dtree/joinbottom.gif
-%%EVENTUM%%/images/dtree/line.gif
-%%EVENTUM%%/images/dtree/minus.gif
-%%EVENTUM%%/images/dtree/minusbottom.gif
-%%EVENTUM%%/images/dtree/musicfolder.gif
-%%EVENTUM%%/images/dtree/nolines_minus.gif
-%%EVENTUM%%/images/dtree/nolines_plus.gif
-%%EVENTUM%%/images/dtree/page.gif
-%%EVENTUM%%/images/dtree/plus.gif
-%%EVENTUM%%/images/dtree/plusbottom.gif
-%%EVENTUM%%/images/dtree/question.gif
-%%EVENTUM%%/images/dtree/trash.gif
-%%EVENTUM%%/images/dynCalendar.gif
-%%EVENTUM%%/images/excel.jpg
-%%EVENTUM%%/images/file.gif
-%%EVENTUM%%/images/gantt.jpg
-%%EVENTUM%%/images/help.gif
-%%EVENTUM%%/images/icons/clock.gif
-%%EVENTUM%%/images/icons/edit.gif
-%%EVENTUM%%/images/icons/email.gif
-%%EVENTUM%%/images/icons/error.gif
-%%EVENTUM%%/images/icons/minus.gif
-%%EVENTUM%%/images/icons/plus.gif
-%%EVENTUM%%/images/icons/refresh.gif
-%%EVENTUM%%/images/icons/reply.gif
-%%EVENTUM%%/images/icons/report.gif
-%%EVENTUM%%/images/icons/rss.gif
-%%EVENTUM%%/images/icons/signs.gif
-%%EVENTUM%%/images/icons/stats.gif
-%%EVENTUM%%/images/lookup.gif
-%%EVENTUM%%/images/next.gif
-%%EVENTUM%%/images/no_data.gif
-%%EVENTUM%%/images/prev.gif
-%%EVENTUM%%/images/uploading.gif
-%%EVENTUM%%/include/Smarty/Config_File.class.php
-%%EVENTUM%%/include/Smarty/Smarty.class.php
-%%EVENTUM%%/include/Smarty/Smarty_Compiler.class.php
-%%EVENTUM%%/include/Smarty/core/core.assemble_plugin_filepath.php
-%%EVENTUM%%/include/Smarty/core/core.assign_smarty_interface.php
-%%EVENTUM%%/include/Smarty/core/core.create_dir_structure.php
-%%EVENTUM%%/include/Smarty/core/core.display_debug_console.php
-%%EVENTUM%%/include/Smarty/core/core.get_include_path.php
-%%EVENTUM%%/include/Smarty/core/core.get_microtime.php
-%%EVENTUM%%/include/Smarty/core/core.get_php_resource.php
-%%EVENTUM%%/include/Smarty/core/core.is_secure.php
-%%EVENTUM%%/include/Smarty/core/core.is_trusted.php
-%%EVENTUM%%/include/Smarty/core/core.load_plugins.php
-%%EVENTUM%%/include/Smarty/core/core.load_resource_plugin.php
-%%EVENTUM%%/include/Smarty/core/core.process_cached_inserts.php
-%%EVENTUM%%/include/Smarty/core/core.process_compiled_include.php
-%%EVENTUM%%/include/Smarty/core/core.read_cache_file.php
-%%EVENTUM%%/include/Smarty/core/core.rm_auto.php
-%%EVENTUM%%/include/Smarty/core/core.rmdir.php
-%%EVENTUM%%/include/Smarty/core/core.run_insert_handler.php
-%%EVENTUM%%/include/Smarty/core/core.smarty_include_php.php
-%%EVENTUM%%/include/Smarty/core/core.write_cache_file.php
-%%EVENTUM%%/include/Smarty/core/core.write_compiled_include.php
-%%EVENTUM%%/include/Smarty/core/core.write_compiled_resource.php
-%%EVENTUM%%/include/Smarty/core/core.write_file.php
-%%EVENTUM%%/include/Smarty/debug.tpl
-%%EVENTUM%%/include/Smarty/plugins/block.textformat.php
-%%EVENTUM%%/include/Smarty/plugins/compiler.assign.php
-%%EVENTUM%%/include/Smarty/plugins/function.assign_debug_info.php
-%%EVENTUM%%/include/Smarty/plugins/function.calendar.php
-%%EVENTUM%%/include/Smarty/plugins/function.config_load.php
-%%EVENTUM%%/include/Smarty/plugins/function.counter.php
-%%EVENTUM%%/include/Smarty/plugins/function.cycle.php
-%%EVENTUM%%/include/Smarty/plugins/function.debug.php
-%%EVENTUM%%/include/Smarty/plugins/function.eval.php
-%%EVENTUM%%/include/Smarty/plugins/function.fetch.php
-%%EVENTUM%%/include/Smarty/plugins/function.get_display_style.php
-%%EVENTUM%%/include/Smarty/plugins/function.get_innerhtml.php
-%%EVENTUM%%/include/Smarty/plugins/function.get_textarea_size.php
-%%EVENTUM%%/include/Smarty/plugins/function.html_checkboxes.php
-%%EVENTUM%%/include/Smarty/plugins/function.html_image.php
-%%EVENTUM%%/include/Smarty/plugins/function.html_options.php
-%%EVENTUM%%/include/Smarty/plugins/function.html_radios.php
-%%EVENTUM%%/include/Smarty/plugins/function.html_select_date.php
-%%EVENTUM%%/include/Smarty/plugins/function.html_select_time.php
-%%EVENTUM%%/include/Smarty/plugins/function.html_table.php
-%%EVENTUM%%/include/Smarty/plugins/function.mailto.php
-%%EVENTUM%%/include/Smarty/plugins/function.math.php
-%%EVENTUM%%/include/Smarty/plugins/function.popup.php
-%%EVENTUM%%/include/Smarty/plugins/function.popup_init.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.capitalize.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.cat.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.count_characters.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.count_paragraphs.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.count_sentences.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.count_words.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.date_format.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.debug_print_var.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.default.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.escape.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.highlight_quoted.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.indent.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.lower.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.nl2br.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.regex_replace.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.replace.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.spacify.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.string_format.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.strip.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.strip_tags.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.truncate.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.upper.php
-%%EVENTUM%%/include/Smarty/plugins/modifier.wordwrap.php
-%%EVENTUM%%/include/Smarty/plugins/outputfilter.trimwhitespace.php
-%%EVENTUM%%/include/Smarty/plugins/shared.escape_special_chars.php
-%%EVENTUM%%/include/Smarty/plugins/shared.make_timestamp.php
-%%EVENTUM%%/include/class.attachment.php
-%%EVENTUM%%/include/class.auth.php
-%%EVENTUM%%/include/class.authorized_replier.php
-%%EVENTUM%%/include/class.category.php
-%%EVENTUM%%/include/class.custom_field.php
-%%EVENTUM%%/include/class.customer.php
-%%EVENTUM%%/include/class.customer_stats_report.php
-%%EVENTUM%%/include/class.date.php
-%%EVENTUM%%/include/class.db_api.php
-%%EVENTUM%%/include/class.display_column.php
-%%EVENTUM%%/include/class.draft.php
-%%EVENTUM%%/include/class.email_account.php
-%%EVENTUM%%/include/class.email_response.php
-%%EVENTUM%%/include/class.error_handler.php
-%%EVENTUM%%/include/class.faq.php
-%%EVENTUM%%/include/class.filter.php
-%%EVENTUM%%/include/class.group.php
-%%EVENTUM%%/include/class.help.php
-%%EVENTUM%%/include/class.history.php
-%%EVENTUM%%/include/class.impact_analysis.php
-%%EVENTUM%%/include/class.issue.php
-%%EVENTUM%%/include/class.language.php
-%%EVENTUM%%/include/class.link_filter.php
-%%EVENTUM%%/include/class.lock.php
-%%EVENTUM%%/include/class.mail.php
-%%EVENTUM%%/include/class.mail_queue.php
-%%EVENTUM%%/include/class.mime_helper.php
-%%EVENTUM%%/include/class.misc.php
-%%EVENTUM%%/include/class.monitor.php
-%%EVENTUM%%/include/class.news.php
-%%EVENTUM%%/include/class.note.php
-%%EVENTUM%%/include/class.notification.php
-%%EVENTUM%%/include/class.pager.php
-%%EVENTUM%%/include/class.phone_support.php
-%%EVENTUM%%/include/class.prefs.php
-%%EVENTUM%%/include/class.priority.php
-%%EVENTUM%%/include/class.project.php
-%%EVENTUM%%/include/class.release.php
-%%EVENTUM%%/include/class.reminder.php
-%%EVENTUM%%/include/class.reminder_action.php
-%%EVENTUM%%/include/class.reminder_condition.php
-%%EVENTUM%%/include/class.report.php
-%%EVENTUM%%/include/class.resolution.php
-%%EVENTUM%%/include/class.round_robin.php
-%%EVENTUM%%/include/class.routing.php
-%%EVENTUM%%/include/class.scm.php
-%%EVENTUM%%/include/class.search_profile.php
-%%EVENTUM%%/include/class.session.php
-%%EVENTUM%%/include/class.setup.php
-%%EVENTUM%%/include/class.stats.php
-%%EVENTUM%%/include/class.status.php
-%%EVENTUM%%/include/class.support.php
-%%EVENTUM%%/include/class.template.php
-%%EVENTUM%%/include/class.time_tracking.php
-%%EVENTUM%%/include/class.user.php
-%%EVENTUM%%/include/class.validation.php
-%%EVENTUM%%/include/class.workflow.php
-%%EVENTUM%%/include/custom_field/class.developer_list.php
-%%EVENTUM%%/include/custom_field/class.dynamic.php
-%%EVENTUM%%/include/customer/class.abstract_customer_backend.php
-%%EVENTUM%%/include/customer/class.example.php
-%%EVENTUM%%/include/db_access.php
-%%EVENTUM%%/include/jpgraph/COPYING
-%%EVENTUM%%/include/jpgraph/jpgraph.php
-%%EVENTUM%%/include/jpgraph/jpgraph_bar.php
-%%EVENTUM%%/include/jpgraph/jpgraph_canvas.php
-%%EVENTUM%%/include/jpgraph/jpgraph_dir.php
-%%EVENTUM%%/include/jpgraph/jpgraph_error.php
-%%EVENTUM%%/include/jpgraph/jpgraph_gantt.php
-%%EVENTUM%%/include/jpgraph/jpgraph_line.php
-%%EVENTUM%%/include/jpgraph/jpgraph_log.php
-%%EVENTUM%%/include/jpgraph/jpgraph_pie.php
-%%EVENTUM%%/include/jpgraph/jpgraph_pie3d.php
-%%EVENTUM%%/include/jpgraph/jpgraph_scatter.php
-%%EVENTUM%%/include/jpgraph/jpgraph_spider.php
-%%EVENTUM%%/include/pear/Auth/SASL.php
-%%EVENTUM%%/include/pear/Auth/SASL/Anonymous.php
-%%EVENTUM%%/include/pear/Auth/SASL/Common.php
-%%EVENTUM%%/include/pear/Auth/SASL/CramMD5.php
-%%EVENTUM%%/include/pear/Auth/SASL/DigestMD5.php
-%%EVENTUM%%/include/pear/Auth/SASL/Login.php
-%%EVENTUM%%/include/pear/Auth/SASL/Plain.php
-%%EVENTUM%%/include/pear/Benchmark/Timer.php
-%%EVENTUM%%/include/pear/DB.php
-%%EVENTUM%%/include/pear/DB/common.php
-%%EVENTUM%%/include/pear/DB/mysql.php
-%%EVENTUM%%/include/pear/DB/mysqli.php
-%%EVENTUM%%/include/pear/DB/storage.php
-%%EVENTUM%%/include/pear/Date.php
-%%EVENTUM%%/include/pear/Date/Calc.php
-%%EVENTUM%%/include/pear/Date/Human.php
-%%EVENTUM%%/include/pear/Date/Span.php
-%%EVENTUM%%/include/pear/Date/TimeZone.php
-%%EVENTUM%%/include/pear/Detect.php
-%%EVENTUM%%/include/pear/File.php
-%%EVENTUM%%/include/pear/File/Util.php
-%%EVENTUM%%/include/pear/HTTP/HTTP.php
-%%EVENTUM%%/include/pear/HTTP/Request.php
-%%EVENTUM%%/include/pear/Mail.php
-%%EVENTUM%%/include/pear/Mail/RFC822.php
-%%EVENTUM%%/include/pear/Mail/mail.php
-%%EVENTUM%%/include/pear/Mail/mime.php
-%%EVENTUM%%/include/pear/Mail/mimeDecode.php
-%%EVENTUM%%/include/pear/Mail/mimePart.php
-%%EVENTUM%%/include/pear/Mail/null.php
-%%EVENTUM%%/include/pear/Mail/sendmail.php
-%%EVENTUM%%/include/pear/Mail/smtp.php
-%%EVENTUM%%/include/pear/Math/Stats.php
-%%EVENTUM%%/include/pear/Net/DIME.php
-%%EVENTUM%%/include/pear/Net/POP3.php
-%%EVENTUM%%/include/pear/Net/SMTP.php
-%%EVENTUM%%/include/pear/Net/SmartIRC.php
-%%EVENTUM%%/include/pear/Net/SmartIRC/defines.php
-%%EVENTUM%%/include/pear/Net/SmartIRC/irccommands.php
-%%EVENTUM%%/include/pear/Net/SmartIRC/messagehandler.php
-%%EVENTUM%%/include/pear/Net/Socket.php
-%%EVENTUM%%/include/pear/Net/URL.php
-%%EVENTUM%%/include/pear/Net/UserAgent/Detect.php
-%%EVENTUM%%/include/pear/PEAR.php
-%%EVENTUM%%/include/pear/Text_Diff/Diff.php
-%%EVENTUM%%/include/pear/Text_Diff/Diff/Renderer.php
-%%EVENTUM%%/include/pear/Text_Diff/Diff/Renderer/inline.php
-%%EVENTUM%%/include/pear/Text_Diff/Diff/Renderer/unified.php
-%%EVENTUM%%/include/pear/XML_RPC/RPC.php
-%%EVENTUM%%/include/pear/XML_RPC/Server.php
-%%EVENTUM%%/include/private_key.php
-%%EVENTUM%%/include/workflow/class.abstract_workflow_backend.php
-%%EVENTUM%%/include/workflow/class.example.php
-%%EVENTUM%%/index.php
-%%EVENTUM%%/js/autocomplete.js
-%%EVENTUM%%/js/browserSniffer.js
-%%EVENTUM%%/js/dtree.js
-%%EVENTUM%%/js/dynCalendar.js
-%%EVENTUM%%/js/dynamic_custom_field.js.php
-%%EVENTUM%%/js/expandable_cell.js
-%%EVENTUM%%/js/global.js
-%%EVENTUM%%/js/httpclient.js
-%%EVENTUM%%/js/overlib.js
-%%EVENTUM%%/js/overlib_mini.js
-%%EVENTUM%%/js/post_load.js
-%%EVENTUM%%/js/validation.js
-%%EVENTUM%%/list.php
-%%EVENTUM%%/login.php
-%%EVENTUM%%/logout.php
-%%EVENTUM%%/logs/cli.log
-%%EVENTUM%%/logs/errors.log
-%%EVENTUM%%/logs/irc_bot.log
-%%EVENTUM%%/logs/login_attempts.log
-%%EVENTUM%%/mail_queue.php
-%%EVENTUM%%/main.php
-%%EVENTUM%%/manage/account_managers.php
-%%EVENTUM%%/manage/anonymous.php
-%%EVENTUM%%/manage/categories.php
-%%EVENTUM%%/manage/check_email_settings.php
-%%EVENTUM%%/manage/column_display.php
-%%EVENTUM%%/manage/custom_fields.php
-%%EVENTUM%%/manage/customer_notes.php
-%%EVENTUM%%/manage/customize_listing.php
-%%EVENTUM%%/manage/email_accounts.php
-%%EVENTUM%%/manage/email_responses.php
-%%EVENTUM%%/manage/faq.php
-%%EVENTUM%%/manage/field_display.php
-%%EVENTUM%%/manage/general.php
-%%EVENTUM%%/manage/groups.php
-%%EVENTUM%%/manage/index.php
-%%EVENTUM%%/manage/issue_auto_creation.php
-%%EVENTUM%%/manage/link_filters.php
-%%EVENTUM%%/manage/news.php
-%%EVENTUM%%/manage/phone_categories.php
-%%EVENTUM%%/manage/priorities.php
-%%EVENTUM%%/manage/projects.php
-%%EVENTUM%%/manage/releases.php
-%%EVENTUM%%/manage/reminder_actions.php
-%%EVENTUM%%/manage/reminder_conditions.php
-%%EVENTUM%%/manage/reminder_review.php
-%%EVENTUM%%/manage/reminders.php
-%%EVENTUM%%/manage/resolution.php
-%%EVENTUM%%/manage/round_robin.php
-%%EVENTUM%%/manage/statuses.php
-%%EVENTUM%%/manage/time_tracking.php
-%%EVENTUM%%/manage/users.php
-%%EVENTUM%%/misc/blank.html
-%%EVENTUM%%/misc/check_reminders.php
-%%EVENTUM%%/misc/cli/config.inc.php
-%%EVENTUM%%/misc/cli/eventum
-%%EVENTUM%%/misc/cli/eventumrc_example
-%%EVENTUM%%/misc/cli/include/class.command_line.php
-%%EVENTUM%%/misc/cli/include/class.misc.php
-%%EVENTUM%%/misc/cli/include/pear/PEAR.php
-%%EVENTUM%%/misc/cli/include/pear/XML_RPC/RPC.php
-%%EVENTUM%%/misc/download_emails.php
-%%EVENTUM%%/misc/irc/bot.php
-%%EVENTUM%%/misc/irc/restart.php
-%%EVENTUM%%/misc/monitor.php
-%%EVENTUM%%/misc/process_mail_queue.php
-%%EVENTUM%%/misc/route_drafts.php
-%%EVENTUM%%/misc/route_emails.php
-%%EVENTUM%%/misc/route_notes.php
-%%EVENTUM%%/misc/scm/process_cvs_commits.php
-%%EVENTUM%%/misc/upgrade/flush_compiled_templates.php
-%%EVENTUM%%/misc/upgrade/snapshot_to_v1.1/fix_system_account.php
-%%EVENTUM%%/misc/upgrade/snapshot_to_v1.1/set_history_type.php
-%%EVENTUM%%/misc/upgrade/v1.1_to_v1.2/database_changes.php
-%%EVENTUM%%/misc/upgrade/v1.1_to_v1.2/set_support_email_usr_id.php
-%%EVENTUM%%/misc/upgrade/v1.2.1_to_v1.2.2/database_changes.php
-%%EVENTUM%%/misc/upgrade/v1.2.1_to_v1.2.2/fix_email_bodies.php
-%%EVENTUM%%/misc/upgrade/v1.2.2_to_v1.3/database_changes.php
-%%EVENTUM%%/misc/upgrade/v1.2.2_to_v1.3/fix_last_action_date_fields.php
-%%EVENTUM%%/misc/upgrade/v1.2.2_to_v1.3/fix_priorities.php
-%%EVENTUM%%/misc/upgrade/v1.2.2_to_v1.3/set_email_issue_id.php
-%%EVENTUM%%/misc/upgrade/v1.2.2_to_v1.3/update_canned_responses.php
-%%EVENTUM%%/misc/upgrade/v1.3.1_to_v1.4/database_changes.php
-%%EVENTUM%%/misc/upgrade/v1.3.1_to_v1.4/fix_setup_file.php
-%%EVENTUM%%/misc/upgrade/v1.3.1_to_v1.4/index.html
-%%EVENTUM%%/misc/upgrade/v1.3.1_to_v1.4/setup_columns_to_display.php
-%%EVENTUM%%/misc/upgrade/v1.3.1_to_v1.4/upgrade_config.php
-%%EVENTUM%%/misc/upgrade/v1.3_to_v1.3.1/database_changes.php
-%%EVENTUM%%/misc/upgrade/v1.4_to_1.5/database_changes.php
-%%EVENTUM%%/misc/upgrade/v1.4_to_1.5/index.html
-%%EVENTUM%%/misc/upgrade/v1.4_to_1.5/set_user_roles.php
-%%EVENTUM%%/misc/upgrade/v1.4_to_1.5/upgrade_config.php
-%%EVENTUM%%/misc/upgrade/v1.5.1_to_v1.5.2/database_changes.php
-%%EVENTUM%%/misc/upgrade/v1.5.1_to_v1.5.2/flush_compiled_templates.php
-%%EVENTUM%%/misc/upgrade/v1.5.1_to_v1.5.2/index.html
-%%EVENTUM%%/misc/upgrade/v1.5.1_to_v1.5.2/set_priority_ranks.php
-%%EVENTUM%%/misc/upgrade/v1.5.1_to_v1.5.2/upgrade_config.php
-%%EVENTUM%%/misc/upgrade/v1.5.2_to_v1.5.3/database_changes.php
-%%EVENTUM%%/misc/upgrade/v1.5.2_to_v1.5.3/flush_compiled_templates.php
-%%EVENTUM%%/misc/upgrade/v1.5.2_to_v1.5.3/index.html
-%%EVENTUM%%/misc/upgrade/v1.5.2_to_v1.5.3/upgrade_config.php
-%%EVENTUM%%/misc/upgrade/v1.5.3_to_v1.5.4/database_changes.php
-%%EVENTUM%%/misc/upgrade/v1.5.3_to_v1.5.4/flush_compiled_templates.php
-%%EVENTUM%%/misc/upgrade/v1.5.3_to_v1.5.4/index.html
-%%EVENTUM%%/misc/upgrade/v1.5.3_to_v1.5.4/upgrade_config.php
-%%EVENTUM%%/misc/upgrade/v1.5.4_to_v1.5.5/database_changes.php
-%%EVENTUM%%/misc/upgrade/v1.5.4_to_v1.5.5/flush_compiled_templates.php
-%%EVENTUM%%/misc/upgrade/v1.5.4_to_v1.5.5/index.html
-%%EVENTUM%%/misc/upgrade/v1.5.4_to_v1.5.5/upgrade_config.php
-%%EVENTUM%%/misc/upgrade/v1.5.5_to_v1.6.0/database_changes.php
-%%EVENTUM%%/misc/upgrade/v1.5.5_to_v1.6.0/flush_compiled_templates.php
-%%EVENTUM%%/misc/upgrade/v1.5.5_to_v1.6.0/index.html
-%%EVENTUM%%/misc/upgrade/v1.5.5_to_v1.6.0/upgrade_config.php
-%%EVENTUM%%/misc/upgrade/v1.5.5_to_v1.6.0/upgrade_saved_searches.php
-%%EVENTUM%%/misc/upgrade/v1.5_to_v1.5.1/database_changes.php
-%%EVENTUM%%/misc/upgrade/v1.5_to_v1.5.1/index.html
-%%EVENTUM%%/misc/upgrade/v1.6.0_to_v1.6.1/database_changes.php
-%%EVENTUM%%/misc/upgrade/v1.6.0_to_v1.6.1/index.html
-%%EVENTUM%%/misc/upgrade/v1.6.0_to_v1.6.1/upgrade_config.php
-%%EVENTUM%%/misc/upgrade/v1.6.1_to_v1.7.0/database_changes.php
-%%EVENTUM%%/misc/upgrade/v1.6.1_to_v1.7.0/index.html
-%%EVENTUM%%/misc/upgrade/v1.6.1_to_v1.7.0/set_root_message_ids.php
-%%EVENTUM%%/misc/upgrade/v1.6.1_to_v1.7.0/upgrade_config.php
-%%EVENTUM%%/misc/upgrade/v1.7.0_to_v1.7.1/index.html
-%%EVENTUM%%/misc/upgrade/v1.7.0_to_v1.7.1/upgrade_config.php
-%%EVENTUM%%/new.php
-%%EVENTUM%%/news.php
-%%EVENTUM%%/notification.php
-%%EVENTUM%%/offline.php
-%%EVENTUM%%/phone_calls.php
-%%EVENTUM%%/popup.php
-%%EVENTUM%%/post.php
-%%EVENTUM%%/post_note.php
-%%EVENTUM%%/preferences.php
-%%EVENTUM%%/redeem_incident.php
-%%EVENTUM%%/removed_emails.php
-%%EVENTUM%%/reports/custom_fields.php
-%%EVENTUM%%/reports/custom_fields_graph.php
-%%EVENTUM%%/reports/customer_stats.php
-%%EVENTUM%%/reports/customer_stats_graph.php
-%%EVENTUM%%/reports/index.php
-%%EVENTUM%%/reports/issue.php
-%%EVENTUM%%/reports/open_issues.php
-%%EVENTUM%%/reports/recent_activity.php
-%%EVENTUM%%/reports/stalled_issues.php
-%%EVENTUM%%/reports/top.php
-%%EVENTUM%%/reports/tree.php
-%%EVENTUM%%/reports/weekly.php
-%%EVENTUM%%/reports/workload_date_range.php
-%%EVENTUM%%/reports/workload_date_range_graph.php
-%%EVENTUM%%/reports/workload_time_period.php
-%%EVENTUM%%/reports/workload_time_period_graph.php
-%%EVENTUM%%/requirement.php
-%%EVENTUM%%/rpc/xmlrpc.php
-%%EVENTUM%%/rpc/xmlrpc_client.php
-%%EVENTUM%%/rss.php
-%%EVENTUM%%/scm_ping.php
-%%EVENTUM%%/searchbar.php
-%%EVENTUM%%/select_project.php
-%%EVENTUM%%/self_assign.php
-%%EVENTUM%%/send.php
-%%EVENTUM%%/setup.conf.php-dist
-%%EVENTUM%%/setup/changes.sql
-%%EVENTUM%%/setup/check_permissions.php
-%%EVENTUM%%/setup/config.inc.php
-%%EVENTUM%%/setup/index.php
-%%EVENTUM%%/setup/schema.sql
-%%EVENTUM%%/signup.php
-%%EVENTUM%%/spell_check.php
-%%EVENTUM%%/stats_chart.php
-%%EVENTUM%%/switch.php
-%%EVENTUM%%/templates/en/add_phone_entry.tpl.html
-%%EVENTUM%%/templates/en/add_time_tracking.tpl.html
-%%EVENTUM%%/templates/en/adv_search.tpl.html
-%%EVENTUM%%/templates/en/app_info.tpl.html
-%%EVENTUM%%/templates/en/associate.tpl.html
-%%EVENTUM%%/templates/en/attached_emails.tpl.html
-%%EVENTUM%%/templates/en/attachments.tpl.html
-%%EVENTUM%%/templates/en/authorized_replier.tpl.html
-%%EVENTUM%%/templates/en/bulk_update.tpl.html
-%%EVENTUM%%/templates/en/checkins.tpl.html
-%%EVENTUM%%/templates/en/clock_status.tpl.html
-%%EVENTUM%%/templates/en/close.tpl.html
-%%EVENTUM%%/templates/en/confirm.tpl.html
-%%EVENTUM%%/templates/en/convert_note.tpl.html
-%%EVENTUM%%/templates/en/current_filters.tpl.html
-%%EVENTUM%%/templates/en/custom_fields.tpl.html
-%%EVENTUM%%/templates/en/custom_fields_form.tpl.html
-%%EVENTUM%%/templates/en/customer/example/customer_expired.tpl.html
-%%EVENTUM%%/templates/en/customer/example/customer_info.tpl.html
-%%EVENTUM%%/templates/en/customer/example/customer_lookup.tpl.html
-%%EVENTUM%%/templates/en/customer/example/customer_report.tpl.html
-%%EVENTUM%%/templates/en/customer/example/quarantine.tpl.html
-%%EVENTUM%%/templates/en/customer/example/report_form_fields.tpl.html
-%%EVENTUM%%/templates/en/duplicate.tpl.html
-%%EVENTUM%%/templates/en/edit_custom_fields.tpl.html
-%%EVENTUM%%/templates/en/email_drafts.tpl.html
-%%EVENTUM%%/templates/en/email_filter_form.tpl.html
-%%EVENTUM%%/templates/en/emails.tpl.html
-%%EVENTUM%%/templates/en/error_icon.tpl.html
-%%EVENTUM%%/templates/en/expandable_cell/body.tpl.html
-%%EVENTUM%%/templates/en/expandable_cell/buttons.tpl.html
-%%EVENTUM%%/templates/en/faq.tpl.html
-%%EVENTUM%%/templates/en/file_upload.tpl.html
-%%EVENTUM%%/templates/en/footer.tpl.html
-%%EVENTUM%%/templates/en/forgot_password.tpl.html
-%%EVENTUM%%/templates/en/get_emails.tpl.html
-%%EVENTUM%%/templates/en/header.tpl.html
-%%EVENTUM%%/templates/en/help/adv_search.tpl.html
-%%EVENTUM%%/templates/en/help/banner.tpl.html
-%%EVENTUM%%/templates/en/help/column_display.tpl.html
-%%EVENTUM%%/templates/en/help/customize_listing.tpl.html
-%%EVENTUM%%/templates/en/help/email_blocking.tpl.html
-%%EVENTUM%%/templates/en/help/field_display.tpl.html
-%%EVENTUM%%/templates/en/help/index.tpl.html
-%%EVENTUM%%/templates/en/help/link_filters.tpl.html
-%%EVENTUM%%/templates/en/help/list.tpl.html
-%%EVENTUM%%/templates/en/help/main.tpl.html
-%%EVENTUM%%/templates/en/help/notifications.tpl.html
-%%EVENTUM%%/templates/en/help/permission_levels.tpl.html
-%%EVENTUM%%/templates/en/help/preferences.tpl.html
-%%EVENTUM%%/templates/en/help/report.tpl.html
-%%EVENTUM%%/templates/en/help/report_assignment.tpl.html
-%%EVENTUM%%/templates/en/help/report_category.tpl.html
-%%EVENTUM%%/templates/en/help/report_description.tpl.html
-%%EVENTUM%%/templates/en/help/report_estimated_dev_time.tpl.html
-%%EVENTUM%%/templates/en/help/report_priority.tpl.html
-%%EVENTUM%%/templates/en/help/report_release.tpl.html
-%%EVENTUM%%/templates/en/help/report_summary.tpl.html
-%%EVENTUM%%/templates/en/help/scm_integration.tpl.html
-%%EVENTUM%%/templates/en/help/scm_integration_installation.tpl.html
-%%EVENTUM%%/templates/en/help/scm_integration_usage.tpl.html
-%%EVENTUM%%/templates/en/help/segregate_reporter.tpl.html
-%%EVENTUM%%/templates/en/help/support_emails.tpl.html
-%%EVENTUM%%/templates/en/help/view.tpl.html
-%%EVENTUM%%/templates/en/help/view_attachment.tpl.html
-%%EVENTUM%%/templates/en/help/view_impact.tpl.html
-%%EVENTUM%%/templates/en/help/view_note.tpl.html
-%%EVENTUM%%/templates/en/help/view_time.tpl.html
-%%EVENTUM%%/templates/en/help_link.tpl.html
-%%EVENTUM%%/templates/en/history.tpl.html
-%%EVENTUM%%/templates/en/impact_analysis.tpl.html
-%%EVENTUM%%/templates/en/index.tpl.html
-%%EVENTUM%%/templates/en/js/dynamic_custom_field.tpl.js
-%%EVENTUM%%/templates/en/latest_news.tpl.html
-%%EVENTUM%%/templates/en/list.tpl.html
-%%EVENTUM%%/templates/en/login_form.tpl.html
-%%EVENTUM%%/templates/en/lookup_field.tpl.html
-%%EVENTUM%%/templates/en/lookup_layer.tpl.html
-%%EVENTUM%%/templates/en/mail_queue.tpl.html
-%%EVENTUM%%/templates/en/main.tpl.html
-%%EVENTUM%%/templates/en/manage/account_managers.tpl.html
-%%EVENTUM%%/templates/en/manage/anonymous.tpl.html
-%%EVENTUM%%/templates/en/manage/categories.tpl.html
-%%EVENTUM%%/templates/en/manage/column_display.tpl.html
-%%EVENTUM%%/templates/en/manage/custom_fields.tpl.html
-%%EVENTUM%%/templates/en/manage/customer_notes.tpl.html
-%%EVENTUM%%/templates/en/manage/customize_listing.tpl.html
-%%EVENTUM%%/templates/en/manage/email_accounts.tpl.html
-%%EVENTUM%%/templates/en/manage/email_responses.tpl.html
-%%EVENTUM%%/templates/en/manage/faq.tpl.html
-%%EVENTUM%%/templates/en/manage/field_display.tpl.html
-%%EVENTUM%%/templates/en/manage/general.tpl.html
-%%EVENTUM%%/templates/en/manage/groups.tpl.html
-%%EVENTUM%%/templates/en/manage/index.tpl.html
-%%EVENTUM%%/templates/en/manage/issue_auto_creation.tpl.html
-%%EVENTUM%%/templates/en/manage/link_filters.tpl.html
-%%EVENTUM%%/templates/en/manage/manage.tpl.html
-%%EVENTUM%%/templates/en/manage/news.tpl.html
-%%EVENTUM%%/templates/en/manage/phone_categories.tpl.html
-%%EVENTUM%%/templates/en/manage/priorities.tpl.html
-%%EVENTUM%%/templates/en/manage/projects.tpl.html
-%%EVENTUM%%/templates/en/manage/releases.tpl.html
-%%EVENTUM%%/templates/en/manage/reminder_actions.tpl.html
-%%EVENTUM%%/templates/en/manage/reminder_conditions.tpl.html
-%%EVENTUM%%/templates/en/manage/reminders.tpl.html
-%%EVENTUM%%/templates/en/manage/resolution.tpl.html
-%%EVENTUM%%/templates/en/manage/round_robin.tpl.html
-%%EVENTUM%%/templates/en/manage/statuses.tpl.html
-%%EVENTUM%%/templates/en/manage/time_tracking.tpl.html
-%%EVENTUM%%/templates/en/manage/users.tpl.html
-%%EVENTUM%%/templates/en/navigation.tpl.html
-%%EVENTUM%%/templates/en/new.tpl.html
-%%EVENTUM%%/templates/en/news.tpl.html
-%%EVENTUM%%/templates/en/notes.tpl.html
-%%EVENTUM%%/templates/en/notification.tpl.html
-%%EVENTUM%%/templates/en/notifications/account_details.tpl.html
-%%EVENTUM%%/templates/en/notifications/account_details.tpl.text
-%%EVENTUM%%/templates/en/notifications/assigned.tpl.text
-%%EVENTUM%%/templates/en/notifications/closed.tpl.html
-%%EVENTUM%%/templates/en/notifications/closed.tpl.text
-%%EVENTUM%%/templates/en/notifications/files.tpl.html
-%%EVENTUM%%/templates/en/notifications/files.tpl.text
-%%EVENTUM%%/templates/en/notifications/new.tpl.html
-%%EVENTUM%%/templates/en/notifications/new.tpl.text
-%%EVENTUM%%/templates/en/notifications/new_auto_created_issue.tpl.text
-%%EVENTUM%%/templates/en/notifications/new_issue.tpl.html
-%%EVENTUM%%/templates/en/notifications/new_issue.tpl.text
-%%EVENTUM%%/templates/en/notifications/new_user.tpl.html
-%%EVENTUM%%/templates/en/notifications/new_user.tpl.text
-%%EVENTUM%%/templates/en/notifications/notes.tpl.html
-%%EVENTUM%%/templates/en/notifications/notes.tpl.text
-%%EVENTUM%%/templates/en/notifications/notification.tpl.html
-%%EVENTUM%%/templates/en/notifications/updated.tpl.html
-%%EVENTUM%%/templates/en/notifications/updated.tpl.text
-%%EVENTUM%%/templates/en/notifications/updated_account.tpl.html
-%%EVENTUM%%/templates/en/notifications/updated_account.tpl.text
-%%EVENTUM%%/templates/en/notifications/updated_password.tpl.html
-%%EVENTUM%%/templates/en/notifications/updated_password.tpl.text
-%%EVENTUM%%/templates/en/offline.tpl.html
-%%EVENTUM%%/templates/en/permission_denied.tpl.html
-%%EVENTUM%%/templates/en/phone_support.tpl.html
-%%EVENTUM%%/templates/en/popup.tpl.html
-%%EVENTUM%%/templates/en/post.tpl.html
-%%EVENTUM%%/templates/en/post_note.tpl.html
-%%EVENTUM%%/templates/en/preferences.tpl.html
-%%EVENTUM%%/templates/en/quick_filter_form.tpl.html
-%%EVENTUM%%/templates/en/redeem_incident.tpl.html
-%%EVENTUM%%/templates/en/reminders/alert_no_recipients.tpl.text
-%%EVENTUM%%/templates/en/reminders/email_alert.tpl.text
-%%EVENTUM%%/templates/en/reminders/sms_alert.tpl.text
-%%EVENTUM%%/templates/en/removed_emails.tpl.html
-%%EVENTUM%%/templates/en/reports/custom_fields.tpl.html
-%%EVENTUM%%/templates/en/reports/customer_stats.tpl.html
-%%EVENTUM%%/templates/en/reports/index.tpl.html
-%%EVENTUM%%/templates/en/reports/issue_user.tpl.html
-%%EVENTUM%%/templates/en/reports/open_issues.tpl.html
-%%EVENTUM%%/templates/en/reports/recent_activity.tpl.html
-%%EVENTUM%%/templates/en/reports/stalled_issues.tpl.html
-%%EVENTUM%%/templates/en/reports/top.tpl.html
-%%EVENTUM%%/templates/en/reports/tree.tpl.html
-%%EVENTUM%%/templates/en/reports/weekly.tpl.html
-%%EVENTUM%%/templates/en/reports/weekly_data.tpl.html
-%%EVENTUM%%/templates/en/reports/workload_date_range.tpl.html
-%%EVENTUM%%/templates/en/reports/workload_time_period.tpl.html
-%%EVENTUM%%/templates/en/requirement.tpl.html
-%%EVENTUM%%/templates/en/resize_textarea.tpl.html
-%%EVENTUM%%/templates/en/searchbar.tpl.html
-%%EVENTUM%%/templates/en/select_project.tpl.html
-%%EVENTUM%%/templates/en/self_assign.tpl.html
-%%EVENTUM%%/templates/en/send.tpl.html
-%%EVENTUM%%/templates/en/setup.tpl.html
-%%EVENTUM%%/templates/en/signup.tpl.html
-%%EVENTUM%%/templates/en/spell_check.tpl.html
-%%EVENTUM%%/templates/en/support_emails.tpl.html
-%%EVENTUM%%/templates/en/switch.tpl.html
-%%EVENTUM%%/templates/en/time_tracking.tpl.html
-%%EVENTUM%%/templates/en/tips/canned_responses.tpl.html
-%%EVENTUM%%/templates/en/tips/custom_queries.tpl.html
-%%EVENTUM%%/templates/en/tips/keyboard_shortcuts.tpl.html
-%%EVENTUM%%/templates/en/top_link.tpl.html
-%%EVENTUM%%/templates/en/update.tpl.html
-%%EVENTUM%%/templates/en/update_form.tpl.html
-%%EVENTUM%%/templates/en/view.tpl.html
-%%EVENTUM%%/templates/en/view_email.tpl.html
-%%EVENTUM%%/templates/en/view_form.tpl.html
-%%EVENTUM%%/templates/en/view_headers.tpl.html
-%%EVENTUM%%/templates/en/view_note.tpl.html
-%%EVENTUM%%/templates/en/yellow_note.tpl.html
-%%EVENTUM%%/time_tracking.php
-%%EVENTUM%%/update.php
-%%EVENTUM%%/view.php
-%%EVENTUM%%/view_email.php
-%%EVENTUM%%/view_headers.php
-%%EVENTUM%%/view_note.php
-@dirrm %%EVENTUM%%/templates_c
-@dirrm %%EVENTUM%%/templates/en/tips
-@dirrm %%EVENTUM%%/templates/en/reports
-@dirrm %%EVENTUM%%/templates/en/reminders
-@dirrm %%EVENTUM%%/templates/en/notifications
-@dirrm %%EVENTUM%%/templates/en/manage
-@dirrm %%EVENTUM%%/templates/en/js
-@dirrm %%EVENTUM%%/templates/en/help
-@dirrm %%EVENTUM%%/templates/en/expandable_cell
-@dirrm %%EVENTUM%%/templates/en/customer/example
-@dirrm %%EVENTUM%%/templates/en/customer
-@dirrm %%EVENTUM%%/templates/en
-@dirrm %%EVENTUM%%/templates
-@dirrm %%EVENTUM%%/setup
-@dirrm %%EVENTUM%%/rpc
-@dirrm %%EVENTUM%%/reports
-@dirrm %%EVENTUM%%/misc/upgrade/v1.7.0_to_v1.7.1
-@dirrm %%EVENTUM%%/misc/upgrade/v1.6.1_to_v1.7.0
-@dirrm %%EVENTUM%%/misc/upgrade/v1.6.0_to_v1.6.1
-@dirrm %%EVENTUM%%/misc/upgrade/v1.5_to_v1.5.1
-@dirrm %%EVENTUM%%/misc/upgrade/v1.5.5_to_v1.6.0
-@dirrm %%EVENTUM%%/misc/upgrade/v1.5.4_to_v1.5.5
-@dirrm %%EVENTUM%%/misc/upgrade/v1.5.3_to_v1.5.4
-@dirrm %%EVENTUM%%/misc/upgrade/v1.5.2_to_v1.5.3
-@dirrm %%EVENTUM%%/misc/upgrade/v1.5.1_to_v1.5.2
-@dirrm %%EVENTUM%%/misc/upgrade/v1.4_to_1.5
-@dirrm %%EVENTUM%%/misc/upgrade/v1.3_to_v1.3.1
-@dirrm %%EVENTUM%%/misc/upgrade/v1.3.1_to_v1.4
-@dirrm %%EVENTUM%%/misc/upgrade/v1.2.2_to_v1.3
-@dirrm %%EVENTUM%%/misc/upgrade/v1.2.1_to_v1.2.2
-@dirrm %%EVENTUM%%/misc/upgrade/v1.1_to_v1.2
-@dirrm %%EVENTUM%%/misc/upgrade/snapshot_to_v1.1
-@dirrm %%EVENTUM%%/misc/upgrade
-@dirrm %%EVENTUM%%/misc/scm
-@dirrm %%EVENTUM%%/misc/irc
-@dirrm %%EVENTUM%%/misc/cli/include/pear/XML_RPC
-@dirrm %%EVENTUM%%/misc/cli/include/pear
-@dirrm %%EVENTUM%%/misc/cli/include
-@dirrm %%EVENTUM%%/misc/cli
-@dirrm %%EVENTUM%%/misc
-@dirrm %%EVENTUM%%/manage
-@dirrm %%EVENTUM%%/logs
-@dirrm %%EVENTUM%%/locks
-@dirrm %%EVENTUM%%/js
-@dirrm %%EVENTUM%%/include/workflow
-@dirrm %%EVENTUM%%/include/pear/XML_RPC
-@dirrm %%EVENTUM%%/include/pear/Text_Diff/Diff/Renderer
-@dirrm %%EVENTUM%%/include/pear/Text_Diff/Diff
-@dirrm %%EVENTUM%%/include/pear/Text_Diff
-@dirrm %%EVENTUM%%/include/pear/Net/UserAgent
-@dirrm %%EVENTUM%%/include/pear/Net/SmartIRC
-@dirrm %%EVENTUM%%/include/pear/Net
-@dirrm %%EVENTUM%%/include/pear/Math
-@dirrm %%EVENTUM%%/include/pear/Mail
-@dirrm %%EVENTUM%%/include/pear/HTTP
-@dirrm %%EVENTUM%%/include/pear/File
-@dirrm %%EVENTUM%%/include/pear/Date
-@dirrm %%EVENTUM%%/include/pear/DB
-@dirrm %%EVENTUM%%/include/pear/Benchmark
-@dirrm %%EVENTUM%%/include/pear/Auth/SASL
-@dirrm %%EVENTUM%%/include/pear/Auth
-@dirrm %%EVENTUM%%/include/pear
-@dirrm %%EVENTUM%%/include/jpgraph
-@dirrm %%EVENTUM%%/include/customer
-@dirrm %%EVENTUM%%/include/custom_field
-@dirrm %%EVENTUM%%/include/Smarty/plugins
-@dirrm %%EVENTUM%%/include/Smarty/core
-@dirrm %%EVENTUM%%/include/Smarty
-@dirrm %%EVENTUM%%/include
-@dirrm %%EVENTUM%%/images/icons
-@dirrm %%EVENTUM%%/images/dtree
-@dirrm %%EVENTUM%%/images
-@dirrm %%EVENTUM%%/docs
-@dirrm %%EVENTUM%%/customer/example
-@dirrm %%EVENTUM%%/customer
-@dirrm %%EVENTUM%%/css
-@dirrm %%EVENTUM%%
+%%WWWDIR%%/CONTRIB
+%%WWWDIR%%/COPYING
+%%WWWDIR%%/ChangeLog
+%%WWWDIR%%/FAQ
+%%WWWDIR%%/INSTALL
+%%WWWDIR%%/README
+%%WWWDIR%%/TODO
+%%WWWDIR%%/UPGRADE
+%%WWWDIR%%/adv_search.php
+%%WWWDIR%%/associate.php
+%%WWWDIR%%/authorized_replier.php
+%%WWWDIR%%/benchmark.php
+%%WWWDIR%%/clock_status.php
+%%WWWDIR%%/close.php
+%%WWWDIR%%/confirm.php
+%%WWWDIR%%/convert_note.php
+%%WWWDIR%%/css/dtree.css
+%%WWWDIR%%/css/dynCalendar.css
+%%WWWDIR%%/css/style.css
+%%WWWDIR%%/csv.php
+%%WWWDIR%%/custom_fields.php
+%%WWWDIR%%/customer/example/create_customers.php
+%%WWWDIR%%/customer/example/customer_lookup.php
+%%WWWDIR%%/docs/Customer_API.html
+%%WWWDIR%%/docs/Workflow_API.html
+%%WWWDIR%%/download.php
+%%WWWDIR%%/duplicate.php
+%%WWWDIR%%/emails.php
+%%WWWDIR%%/faq.php
+%%WWWDIR%%/favicon.ico
+%%WWWDIR%%/file_upload.php
+%%WWWDIR%%/forgot_password.php
+%%WWWDIR%%/get_attachment.php
+%%WWWDIR%%/get_remote_data.php
+%%WWWDIR%%/help.php
+%%WWWDIR%%/history.php
+%%WWWDIR%%/images/asc.gif
+%%WWWDIR%%/images/attachment.gif
+%%WWWDIR%%/images/blank.gif
+%%WWWDIR%%/images/computer.gif
+%%WWWDIR%%/images/desc.gif
+%%WWWDIR%%/images/dtree/base.gif
+%%WWWDIR%%/images/dtree/cd.gif
+%%WWWDIR%%/images/dtree/empty.gif
+%%WWWDIR%%/images/dtree/folder.gif
+%%WWWDIR%%/images/dtree/folderopen.gif
+%%WWWDIR%%/images/dtree/globe.gif
+%%WWWDIR%%/images/dtree/imgfolder.gif
+%%WWWDIR%%/images/dtree/join.gif
+%%WWWDIR%%/images/dtree/joinbottom.gif
+%%WWWDIR%%/images/dtree/line.gif
+%%WWWDIR%%/images/dtree/minus.gif
+%%WWWDIR%%/images/dtree/minusbottom.gif
+%%WWWDIR%%/images/dtree/musicfolder.gif
+%%WWWDIR%%/images/dtree/nolines_minus.gif
+%%WWWDIR%%/images/dtree/nolines_plus.gif
+%%WWWDIR%%/images/dtree/page.gif
+%%WWWDIR%%/images/dtree/plus.gif
+%%WWWDIR%%/images/dtree/plusbottom.gif
+%%WWWDIR%%/images/dtree/question.gif
+%%WWWDIR%%/images/dtree/trash.gif
+%%WWWDIR%%/images/dynCalendar.gif
+%%WWWDIR%%/images/excel.jpg
+%%WWWDIR%%/images/file.gif
+%%WWWDIR%%/images/gantt.jpg
+%%WWWDIR%%/images/help.gif
+%%WWWDIR%%/images/icons/clock.gif
+%%WWWDIR%%/images/icons/edit.gif
+%%WWWDIR%%/images/icons/email.gif
+%%WWWDIR%%/images/icons/error.gif
+%%WWWDIR%%/images/icons/minus.gif
+%%WWWDIR%%/images/icons/plus.gif
+%%WWWDIR%%/images/icons/refresh.gif
+%%WWWDIR%%/images/icons/reply.gif
+%%WWWDIR%%/images/icons/report.gif
+%%WWWDIR%%/images/icons/rss.gif
+%%WWWDIR%%/images/icons/signs.gif
+%%WWWDIR%%/images/icons/stats.gif
+%%WWWDIR%%/images/lookup.gif
+%%WWWDIR%%/images/next.gif
+%%WWWDIR%%/images/no_data.gif
+%%WWWDIR%%/images/prev.gif
+%%WWWDIR%%/images/uploading.gif
+%%WWWDIR%%/include/Smarty/Config_File.class.php
+%%WWWDIR%%/include/Smarty/Smarty.class.php
+%%WWWDIR%%/include/Smarty/Smarty_Compiler.class.php
+%%WWWDIR%%/include/Smarty/core/core.assemble_plugin_filepath.php
+%%WWWDIR%%/include/Smarty/core/core.assign_smarty_interface.php
+%%WWWDIR%%/include/Smarty/core/core.create_dir_structure.php
+%%WWWDIR%%/include/Smarty/core/core.display_debug_console.php
+%%WWWDIR%%/include/Smarty/core/core.get_include_path.php
+%%WWWDIR%%/include/Smarty/core/core.get_microtime.php
+%%WWWDIR%%/include/Smarty/core/core.get_php_resource.php
+%%WWWDIR%%/include/Smarty/core/core.is_secure.php
+%%WWWDIR%%/include/Smarty/core/core.is_trusted.php
+%%WWWDIR%%/include/Smarty/core/core.load_plugins.php
+%%WWWDIR%%/include/Smarty/core/core.load_resource_plugin.php
+%%WWWDIR%%/include/Smarty/core/core.process_cached_inserts.php
+%%WWWDIR%%/include/Smarty/core/core.process_compiled_include.php
+%%WWWDIR%%/include/Smarty/core/core.read_cache_file.php
+%%WWWDIR%%/include/Smarty/core/core.rm_auto.php
+%%WWWDIR%%/include/Smarty/core/core.rmdir.php
+%%WWWDIR%%/include/Smarty/core/core.run_insert_handler.php
+%%WWWDIR%%/include/Smarty/core/core.smarty_include_php.php
+%%WWWDIR%%/include/Smarty/core/core.write_cache_file.php
+%%WWWDIR%%/include/Smarty/core/core.write_compiled_include.php
+%%WWWDIR%%/include/Smarty/core/core.write_compiled_resource.php
+%%WWWDIR%%/include/Smarty/core/core.write_file.php
+%%WWWDIR%%/include/Smarty/debug.tpl
+%%WWWDIR%%/include/Smarty/plugins/block.t.php
+%%WWWDIR%%/include/Smarty/plugins/block.textformat.php
+%%WWWDIR%%/include/Smarty/plugins/compiler.assign.php
+%%WWWDIR%%/include/Smarty/plugins/function.assign_debug_info.php
+%%WWWDIR%%/include/Smarty/plugins/function.calendar.php
+%%WWWDIR%%/include/Smarty/plugins/function.config_load.php
+%%WWWDIR%%/include/Smarty/plugins/function.counter.php
+%%WWWDIR%%/include/Smarty/plugins/function.cycle.php
+%%WWWDIR%%/include/Smarty/plugins/function.debug.php
+%%WWWDIR%%/include/Smarty/plugins/function.eval.php
+%%WWWDIR%%/include/Smarty/plugins/function.fetch.php
+%%WWWDIR%%/include/Smarty/plugins/function.get_display_style.php
+%%WWWDIR%%/include/Smarty/plugins/function.get_innerhtml.php
+%%WWWDIR%%/include/Smarty/plugins/function.get_textarea_size.php
+%%WWWDIR%%/include/Smarty/plugins/function.html_checkboxes.php
+%%WWWDIR%%/include/Smarty/plugins/function.html_image.php
+%%WWWDIR%%/include/Smarty/plugins/function.html_options.php
+%%WWWDIR%%/include/Smarty/plugins/function.html_radios.php
+%%WWWDIR%%/include/Smarty/plugins/function.html_select_date.php
+%%WWWDIR%%/include/Smarty/plugins/function.html_select_time.php
+%%WWWDIR%%/include/Smarty/plugins/function.html_table.php
+%%WWWDIR%%/include/Smarty/plugins/function.mailto.php
+%%WWWDIR%%/include/Smarty/plugins/function.math.php
+%%WWWDIR%%/include/Smarty/plugins/function.popup.php
+%%WWWDIR%%/include/Smarty/plugins/function.popup_init.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.capitalize.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.cat.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.count_characters.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.count_paragraphs.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.count_sentences.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.count_words.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.date_format.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.debug_print_var.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.default.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.escape.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.highlight_quoted.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.indent.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.lower.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.nl2br.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.regex_replace.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.replace.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.spacify.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.string_format.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.strip.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.strip_tags.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.truncate.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.upper.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.wordwrap.php
+%%WWWDIR%%/include/Smarty/plugins/outputfilter.trimwhitespace.php
+%%WWWDIR%%/include/Smarty/plugins/shared.escape_special_chars.php
+%%WWWDIR%%/include/Smarty/plugins/shared.make_timestamp.php
+%%WWWDIR%%/include/class.attachment.php
+%%WWWDIR%%/include/class.auth.php
+%%WWWDIR%%/include/class.authorized_replier.php
+%%WWWDIR%%/include/class.category.php
+%%WWWDIR%%/include/class.custom_field.php
+%%WWWDIR%%/include/class.customer.php
+%%WWWDIR%%/include/class.customer_stats_report.php
+%%WWWDIR%%/include/class.date.php
+%%WWWDIR%%/include/class.db_api.php
+%%WWWDIR%%/include/class.display_column.php
+%%WWWDIR%%/include/class.draft.php
+%%WWWDIR%%/include/class.email_account.php
+%%WWWDIR%%/include/class.email_response.php
+%%WWWDIR%%/include/class.error_handler.php
+%%WWWDIR%%/include/class.faq.php
+%%WWWDIR%%/include/class.filter.php
+%%WWWDIR%%/include/class.group.php
+%%WWWDIR%%/include/class.help.php
+%%WWWDIR%%/include/class.history.php
+%%WWWDIR%%/include/class.impact_analysis.php
+%%WWWDIR%%/include/class.issue.php
+%%WWWDIR%%/include/class.language.php
+%%WWWDIR%%/include/class.link_filter.php
+%%WWWDIR%%/include/class.lock.php
+%%WWWDIR%%/include/class.mail.php
+%%WWWDIR%%/include/class.mail_queue.php
+%%WWWDIR%%/include/class.mime_helper.php
+%%WWWDIR%%/include/class.misc.php
+%%WWWDIR%%/include/class.monitor.php
+%%WWWDIR%%/include/class.news.php
+%%WWWDIR%%/include/class.note.php
+%%WWWDIR%%/include/class.notification.php
+%%WWWDIR%%/include/class.pager.php
+%%WWWDIR%%/include/class.phone_support.php
+%%WWWDIR%%/include/class.prefs.php
+%%WWWDIR%%/include/class.priority.php
+%%WWWDIR%%/include/class.project.php
+%%WWWDIR%%/include/class.release.php
+%%WWWDIR%%/include/class.reminder.php
+%%WWWDIR%%/include/class.reminder_action.php
+%%WWWDIR%%/include/class.reminder_condition.php
+%%WWWDIR%%/include/class.report.php
+%%WWWDIR%%/include/class.resolution.php
+%%WWWDIR%%/include/class.round_robin.php
+%%WWWDIR%%/include/class.routing.php
+%%WWWDIR%%/include/class.scm.php
+%%WWWDIR%%/include/class.search_profile.php
+%%WWWDIR%%/include/class.session.php
+%%WWWDIR%%/include/class.setup.php
+%%WWWDIR%%/include/class.stats.php
+%%WWWDIR%%/include/class.status.php
+%%WWWDIR%%/include/class.support.php
+%%WWWDIR%%/include/class.template.php
+%%WWWDIR%%/include/class.time_tracking.php
+%%WWWDIR%%/include/class.user.php
+%%WWWDIR%%/include/class.validation.php
+%%WWWDIR%%/include/class.workflow.php
+%%WWWDIR%%/include/custom_field/class.developer_list.php
+%%WWWDIR%%/include/custom_field/class.dynamic.php
+%%WWWDIR%%/include/custom_field/class.reporter_list.php
+%%WWWDIR%%/include/customer/class.abstract_customer_backend.php
+%%WWWDIR%%/include/customer/class.example.php
+%%WWWDIR%%/include/db_access.php
+%%WWWDIR%%/include/jpgraph/COPYING
+%%WWWDIR%%/include/jpgraph/jpgraph.php
+%%WWWDIR%%/include/jpgraph/jpgraph_bar.php
+%%WWWDIR%%/include/jpgraph/jpgraph_canvas.php
+%%WWWDIR%%/include/jpgraph/jpgraph_dir.php
+%%WWWDIR%%/include/jpgraph/jpgraph_error.php
+%%WWWDIR%%/include/jpgraph/jpgraph_gantt.php
+%%WWWDIR%%/include/jpgraph/jpgraph_line.php
+%%WWWDIR%%/include/jpgraph/jpgraph_log.php
+%%WWWDIR%%/include/jpgraph/jpgraph_pie.php
+%%WWWDIR%%/include/jpgraph/jpgraph_pie3d.php
+%%WWWDIR%%/include/jpgraph/jpgraph_scatter.php
+%%WWWDIR%%/include/jpgraph/jpgraph_spider.php
+%%WWWDIR%%/include/pear/Auth/SASL.php
+%%WWWDIR%%/include/pear/Auth/SASL/Anonymous.php
+%%WWWDIR%%/include/pear/Auth/SASL/Common.php
+%%WWWDIR%%/include/pear/Auth/SASL/CramMD5.php
+%%WWWDIR%%/include/pear/Auth/SASL/DigestMD5.php
+%%WWWDIR%%/include/pear/Auth/SASL/Login.php
+%%WWWDIR%%/include/pear/Auth/SASL/Plain.php
+%%WWWDIR%%/include/pear/Benchmark/Timer.php
+%%WWWDIR%%/include/pear/DB.php
+%%WWWDIR%%/include/pear/DB/common.php
+%%WWWDIR%%/include/pear/DB/mysql.php
+%%WWWDIR%%/include/pear/DB/mysqli.php
+%%WWWDIR%%/include/pear/DB/storage.php
+%%WWWDIR%%/include/pear/Date.php
+%%WWWDIR%%/include/pear/Date/Calc.php
+%%WWWDIR%%/include/pear/Date/Human.php
+%%WWWDIR%%/include/pear/Date/Span.php
+%%WWWDIR%%/include/pear/Date/TimeZone.php
+%%WWWDIR%%/include/pear/Detect.php
+%%WWWDIR%%/include/pear/File.php
+%%WWWDIR%%/include/pear/File/Util.php
+%%WWWDIR%%/include/pear/HTTP/HTTP.php
+%%WWWDIR%%/include/pear/HTTP/Request.php
+%%WWWDIR%%/include/pear/Mail.php
+%%WWWDIR%%/include/pear/Mail/RFC822.php
+%%WWWDIR%%/include/pear/Mail/mail.php
+%%WWWDIR%%/include/pear/Mail/mime.php
+%%WWWDIR%%/include/pear/Mail/mimeDecode.php
+%%WWWDIR%%/include/pear/Mail/mimePart.php
+%%WWWDIR%%/include/pear/Mail/null.php
+%%WWWDIR%%/include/pear/Mail/sendmail.php
+%%WWWDIR%%/include/pear/Mail/smtp.php
+%%WWWDIR%%/include/pear/Math/Stats.php
+%%WWWDIR%%/include/pear/Net/DIME.php
+%%WWWDIR%%/include/pear/Net/POP3.php
+%%WWWDIR%%/include/pear/Net/SMTP.php
+%%WWWDIR%%/include/pear/Net/SmartIRC.php
+%%WWWDIR%%/include/pear/Net/SmartIRC/defines.php
+%%WWWDIR%%/include/pear/Net/SmartIRC/irccommands.php
+%%WWWDIR%%/include/pear/Net/SmartIRC/messagehandler.php
+%%WWWDIR%%/include/pear/Net/Socket.php
+%%WWWDIR%%/include/pear/Net/URL.php
+%%WWWDIR%%/include/pear/Net/UserAgent/Detect.php
+%%WWWDIR%%/include/pear/PEAR.php
+%%WWWDIR%%/include/pear/Text_Diff/Diff.php
+%%WWWDIR%%/include/pear/Text_Diff/Diff/Renderer.php
+%%WWWDIR%%/include/pear/Text_Diff/Diff/Renderer/inline.php
+%%WWWDIR%%/include/pear/Text_Diff/Diff/Renderer/unified.php
+%%WWWDIR%%/include/pear/XML_RPC/RPC.php
+%%WWWDIR%%/include/pear/XML_RPC/Server.php
+%%WWWDIR%%/include/php-gettext/AUTHORS
+%%WWWDIR%%/include/php-gettext/COPYING
+%%WWWDIR%%/include/php-gettext/ChangeLog
+%%WWWDIR%%/include/php-gettext/README
+%%WWWDIR%%/include/php-gettext/gettext.inc
+%%WWWDIR%%/include/php-gettext/gettext.php
+%%WWWDIR%%/include/php-gettext/streams.php
+%%WWWDIR%%/include/workflow/class.abstract_workflow_backend.php
+%%WWWDIR%%/include/workflow/class.example.php
+%%WWWDIR%%/index.php
+%%WWWDIR%%/init.php
+%%WWWDIR%%/js/autocomplete.js
+%%WWWDIR%%/js/browserSniffer.js
+%%WWWDIR%%/js/dtree.js
+%%WWWDIR%%/js/dynCalendar.js
+%%WWWDIR%%/js/dynamic_custom_field.js.php
+%%WWWDIR%%/js/expandable_cell.js
+%%WWWDIR%%/js/global.js
+%%WWWDIR%%/js/httpclient.js
+%%WWWDIR%%/js/overlib.js
+%%WWWDIR%%/js/overlib_mini.js
+%%WWWDIR%%/js/post_load.js
+%%WWWDIR%%/js/validation.js
+%%WWWDIR%%/list.php
+%%WWWDIR%%/login.php
+%%WWWDIR%%/logout.php
+%%WWWDIR%%/logs/cli.log
+%%WWWDIR%%/logs/errors.log
+%%WWWDIR%%/logs/irc_bot.log
+%%WWWDIR%%/logs/login_attempts.log
+%%WWWDIR%%/mail_queue.php
+%%WWWDIR%%/main.php
+%%WWWDIR%%/manage/account_managers.php
+%%WWWDIR%%/manage/anonymous.php
+%%WWWDIR%%/manage/categories.php
+%%WWWDIR%%/manage/check_email_settings.php
+%%WWWDIR%%/manage/column_display.php
+%%WWWDIR%%/manage/custom_fields.php
+%%WWWDIR%%/manage/customer_notes.php
+%%WWWDIR%%/manage/customize_listing.php
+%%WWWDIR%%/manage/email_accounts.php
+%%WWWDIR%%/manage/email_responses.php
+%%WWWDIR%%/manage/faq.php
+%%WWWDIR%%/manage/field_display.php
+%%WWWDIR%%/manage/general.php
+%%WWWDIR%%/manage/groups.php
+%%WWWDIR%%/manage/index.php
+%%WWWDIR%%/manage/issue_auto_creation.php
+%%WWWDIR%%/manage/link_filters.php
+%%WWWDIR%%/manage/news.php
+%%WWWDIR%%/manage/phone_categories.php
+%%WWWDIR%%/manage/priorities.php
+%%WWWDIR%%/manage/projects.php
+%%WWWDIR%%/manage/releases.php
+%%WWWDIR%%/manage/reminder_actions.php
+%%WWWDIR%%/manage/reminder_conditions.php
+%%WWWDIR%%/manage/reminder_review.php
+%%WWWDIR%%/manage/reminders.php
+%%WWWDIR%%/manage/resolution.php
+%%WWWDIR%%/manage/round_robin.php
+%%WWWDIR%%/manage/statuses.php
+%%WWWDIR%%/manage/time_tracking.php
+%%WWWDIR%%/manage/users.php
+%%WWWDIR%%/misc/blank.html
+%%WWWDIR%%/misc/check_reminders.php
+%%WWWDIR%%/misc/cli/config.inc.php
+%%WWWDIR%%/misc/cli/eventum
+%%WWWDIR%%/misc/cli/eventumrc_example
+%%WWWDIR%%/misc/cli/include/class.command_line.php
+%%WWWDIR%%/misc/cli/include/class.misc.php
+%%WWWDIR%%/misc/cli/include/pear/PEAR.php
+%%WWWDIR%%/misc/cli/include/pear/XML_RPC/RPC.php
+%%WWWDIR%%/misc/download_emails.php
+%%WWWDIR%%/misc/irc/bot.php
+%%WWWDIR%%/misc/irc/restart.php
+%%WWWDIR%%/misc/localization/de_DE/LC_MESSAGES/eventum.po
+%%WWWDIR%%/misc/localization/en_US/LC_MESSAGES/eventum.po
+%%WWWDIR%%/misc/localization/es_ES/LC_MESSAGES/eventum.po
+%%WWWDIR%%/misc/localization/eventum.c
+%%WWWDIR%%/misc/localization/eventum.po
+%%WWWDIR%%/misc/localization/fi_FI/LC_MESSAGES/eventum.mo
+%%WWWDIR%%/misc/localization/fi_FI/LC_MESSAGES/eventum.po
+%%WWWDIR%%/misc/localization/fr_FR/LC_MESSAGES/eventum.po
+%%WWWDIR%%/misc/localization/it_IT/LC_MESSAGES/eventum.mo
+%%WWWDIR%%/misc/localization/it_IT/LC_MESSAGES/eventum.po
+%%WWWDIR%%/misc/localization/nl_NL/LC_MESSAGES/eventum.po
+%%WWWDIR%%/misc/localization/pl/LC_MESSAGES/eventum.po
+%%WWWDIR%%/misc/localization/ru_RU/LC_MESSAGES/eventum.po
+%%WWWDIR%%/misc/localization/sv_SE/LC_MESSAGES/eventum.mo
+%%WWWDIR%%/misc/localization/sv_SE/LC_MESSAGES/eventum.po
+%%WWWDIR%%/misc/monitor.php
+%%WWWDIR%%/misc/process_mail_queue.php
+%%WWWDIR%%/misc/route_drafts.php
+%%WWWDIR%%/misc/route_emails.php
+%%WWWDIR%%/misc/route_notes.php
+%%WWWDIR%%/misc/scm/process_cvs_commits.php
+%%WWWDIR%%/misc/scm/process_svn_commits.php
+%%WWWDIR%%/misc/upgrade/flush_compiled_templates.php
+%%WWWDIR%%/misc/upgrade/snapshot_to_v1.1/fix_system_account.php
+%%WWWDIR%%/misc/upgrade/snapshot_to_v1.1/set_history_type.php
+%%WWWDIR%%/misc/upgrade/v1.1_to_v1.2/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.1_to_v1.2/set_support_email_usr_id.php
+%%WWWDIR%%/misc/upgrade/v1.2.1_to_v1.2.2/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.2.1_to_v1.2.2/fix_email_bodies.php
+%%WWWDIR%%/misc/upgrade/v1.2.2_to_v1.3/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.2.2_to_v1.3/fix_last_action_date_fields.php
+%%WWWDIR%%/misc/upgrade/v1.2.2_to_v1.3/fix_priorities.php
+%%WWWDIR%%/misc/upgrade/v1.2.2_to_v1.3/set_email_issue_id.php
+%%WWWDIR%%/misc/upgrade/v1.2.2_to_v1.3/update_canned_responses.php
+%%WWWDIR%%/misc/upgrade/v1.3.1_to_v1.4/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.3.1_to_v1.4/fix_setup_file.php
+%%WWWDIR%%/misc/upgrade/v1.3.1_to_v1.4/index.html
+%%WWWDIR%%/misc/upgrade/v1.3.1_to_v1.4/setup_columns_to_display.php
+%%WWWDIR%%/misc/upgrade/v1.3.1_to_v1.4/upgrade_config.php
+%%WWWDIR%%/misc/upgrade/v1.3_to_v1.3.1/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.4_to_1.5/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.4_to_1.5/index.html
+%%WWWDIR%%/misc/upgrade/v1.4_to_1.5/set_user_roles.php
+%%WWWDIR%%/misc/upgrade/v1.4_to_1.5/upgrade_config.php
+%%WWWDIR%%/misc/upgrade/v1.5.1_to_v1.5.2/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.5.1_to_v1.5.2/flush_compiled_templates.php
+%%WWWDIR%%/misc/upgrade/v1.5.1_to_v1.5.2/index.html
+%%WWWDIR%%/misc/upgrade/v1.5.1_to_v1.5.2/set_priority_ranks.php
+%%WWWDIR%%/misc/upgrade/v1.5.1_to_v1.5.2/upgrade_config.php
+%%WWWDIR%%/misc/upgrade/v1.5.2_to_v1.5.3/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.5.2_to_v1.5.3/flush_compiled_templates.php
+%%WWWDIR%%/misc/upgrade/v1.5.2_to_v1.5.3/index.html
+%%WWWDIR%%/misc/upgrade/v1.5.2_to_v1.5.3/upgrade_config.php
+%%WWWDIR%%/misc/upgrade/v1.5.3_to_v1.5.4/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.5.3_to_v1.5.4/flush_compiled_templates.php
+%%WWWDIR%%/misc/upgrade/v1.5.3_to_v1.5.4/index.html
+%%WWWDIR%%/misc/upgrade/v1.5.3_to_v1.5.4/upgrade_config.php
+%%WWWDIR%%/misc/upgrade/v1.5.4_to_v1.5.5/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.5.4_to_v1.5.5/flush_compiled_templates.php
+%%WWWDIR%%/misc/upgrade/v1.5.4_to_v1.5.5/index.html
+%%WWWDIR%%/misc/upgrade/v1.5.4_to_v1.5.5/upgrade_config.php
+%%WWWDIR%%/misc/upgrade/v1.5.5_to_v1.6.0/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.5.5_to_v1.6.0/flush_compiled_templates.php
+%%WWWDIR%%/misc/upgrade/v1.5.5_to_v1.6.0/index.html
+%%WWWDIR%%/misc/upgrade/v1.5.5_to_v1.6.0/upgrade_config.php
+%%WWWDIR%%/misc/upgrade/v1.5.5_to_v1.6.0/upgrade_saved_searches.php
+%%WWWDIR%%/misc/upgrade/v1.5_to_v1.5.1/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.5_to_v1.5.1/index.html
+%%WWWDIR%%/misc/upgrade/v1.6.0_to_v1.6.1/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.6.0_to_v1.6.1/index.html
+%%WWWDIR%%/misc/upgrade/v1.6.0_to_v1.6.1/upgrade_config.php
+%%WWWDIR%%/misc/upgrade/v1.6.1_to_v1.7.0/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.6.1_to_v1.7.0/index.html
+%%WWWDIR%%/misc/upgrade/v1.6.1_to_v1.7.0/set_root_message_ids.php
+%%WWWDIR%%/misc/upgrade/v1.6.1_to_v1.7.0/upgrade_config.php
+%%WWWDIR%%/misc/upgrade/v1.7.0_to_v1.7.1/index.html
+%%WWWDIR%%/misc/upgrade/v1.7.0_to_v1.7.1/upgrade_config.php
+%%WWWDIR%%/misc/upgrade/v1.7.1_to_v2.0/database_changes.php
+%%WWWDIR%%/misc/upgrade/v1.7.1_to_v2.0/index.html
+%%WWWDIR%%/misc/upgrade/v1.7.1_to_v2.0/upgrade_config.php
+%%WWWDIR%%/misc/upgrade/v2.0-beta_to_v2.0/database_changes.php
+%%WWWDIR%%/misc/upgrade/v2.0-beta_to_v2.0/index.html
+%%WWWDIR%%/new.php
+%%WWWDIR%%/news.php
+%%WWWDIR%%/notification.php
+%%WWWDIR%%/offline.php
+%%WWWDIR%%/phone_calls.php
+%%WWWDIR%%/popup.php
+%%WWWDIR%%/post.php
+%%WWWDIR%%/post_note.php
+%%WWWDIR%%/preferences.php
+%%WWWDIR%%/redeem_incident.php
+%%WWWDIR%%/removed_emails.php
+%%WWWDIR%%/reports/custom_fields.php
+%%WWWDIR%%/reports/custom_fields_graph.php
+%%WWWDIR%%/reports/customer_stats.php
+%%WWWDIR%%/reports/customer_stats_graph.php
+%%WWWDIR%%/reports/estimated_dev_time.php
+%%WWWDIR%%/reports/index.php
+%%WWWDIR%%/reports/issue.php
+%%WWWDIR%%/reports/open_issues.php
+%%WWWDIR%%/reports/recent_activity.php
+%%WWWDIR%%/reports/stalled_issues.php
+%%WWWDIR%%/reports/top.php
+%%WWWDIR%%/reports/tree.php
+%%WWWDIR%%/reports/weekly.php
+%%WWWDIR%%/reports/workload_date_range.php
+%%WWWDIR%%/reports/workload_date_range_graph.php
+%%WWWDIR%%/reports/workload_time_period.php
+%%WWWDIR%%/reports/workload_time_period_graph.php
+%%WWWDIR%%/requirement.php
+%%WWWDIR%%/rpc/xmlrpc.php
+%%WWWDIR%%/rpc/xmlrpc_client.php
+%%WWWDIR%%/rss.php
+%%WWWDIR%%/scm_ping.php
+%%WWWDIR%%/searchbar.php
+%%WWWDIR%%/select_project.php
+%%WWWDIR%%/self_assign.php
+%%WWWDIR%%/send.php
+%%WWWDIR%%/setup/changes.sql
+%%WWWDIR%%/setup/check_permissions.php
+%%WWWDIR%%/setup/config.php
+%%WWWDIR%%/setup/index.php
+%%WWWDIR%%/setup/irc_config.php
+%%WWWDIR%%/setup/schema.sql
+%%WWWDIR%%/signup.php
+%%WWWDIR%%/spell_check.php
+%%WWWDIR%%/stats_chart.php
+%%WWWDIR%%/switch.php
+%%WWWDIR%%/templates/add_phone_entry.tpl.html
+%%WWWDIR%%/templates/add_time_tracking.tpl.html
+%%WWWDIR%%/templates/adv_search.tpl.html
+%%WWWDIR%%/templates/app_info.tpl.html
+%%WWWDIR%%/templates/associate.tpl.html
+%%WWWDIR%%/templates/attached_emails.tpl.html
+%%WWWDIR%%/templates/attachments.tpl.html
+%%WWWDIR%%/templates/authorized_replier.tpl.html
+%%WWWDIR%%/templates/bulk_update.tpl.html
+%%WWWDIR%%/templates/checkins.tpl.html
+%%WWWDIR%%/templates/clock_status.tpl.html
+%%WWWDIR%%/templates/close.tpl.html
+%%WWWDIR%%/templates/confirm.tpl.html
+%%WWWDIR%%/templates/convert_note.tpl.html
+%%WWWDIR%%/templates/current_filters.tpl.html
+%%WWWDIR%%/templates/custom_fields.tpl.html
+%%WWWDIR%%/templates/custom_fields_form.tpl.html
+%%WWWDIR%%/templates/customer/example/customer_expired.tpl.html
+%%WWWDIR%%/templates/customer/example/customer_info.tpl.html
+%%WWWDIR%%/templates/customer/example/customer_lookup.tpl.html
+%%WWWDIR%%/templates/customer/example/customer_report.tpl.html
+%%WWWDIR%%/templates/customer/example/quarantine.tpl.html
+%%WWWDIR%%/templates/customer/example/report_form_fields.tpl.html
+%%WWWDIR%%/templates/duplicate.tpl.html
+%%WWWDIR%%/templates/edit_custom_fields.tpl.html
+%%WWWDIR%%/templates/email_drafts.tpl.html
+%%WWWDIR%%/templates/email_filter_form.tpl.html
+%%WWWDIR%%/templates/emails.tpl.html
+%%WWWDIR%%/templates/error_icon.tpl.html
+%%WWWDIR%%/templates/expandable_cell/body.tpl.html
+%%WWWDIR%%/templates/expandable_cell/buttons.tpl.html
+%%WWWDIR%%/templates/faq.tpl.html
+%%WWWDIR%%/templates/file_upload.tpl.html
+%%WWWDIR%%/templates/footer.tpl.html
+%%WWWDIR%%/templates/forgot_password.tpl.html
+%%WWWDIR%%/templates/get_emails.tpl.html
+%%WWWDIR%%/templates/header.tpl.html
+%%WWWDIR%%/templates/help/adv_search.tpl.html
+%%WWWDIR%%/templates/help/banner.tpl.html
+%%WWWDIR%%/templates/help/column_display.tpl.html
+%%WWWDIR%%/templates/help/customize_listing.tpl.html
+%%WWWDIR%%/templates/help/email_blocking.tpl.html
+%%WWWDIR%%/templates/help/field_display.tpl.html
+%%WWWDIR%%/templates/help/index.tpl.html
+%%WWWDIR%%/templates/help/link_filters.tpl.html
+%%WWWDIR%%/templates/help/list.tpl.html
+%%WWWDIR%%/templates/help/main.tpl.html
+%%WWWDIR%%/templates/help/notifications.tpl.html
+%%WWWDIR%%/templates/help/permission_levels.tpl.html
+%%WWWDIR%%/templates/help/preferences.tpl.html
+%%WWWDIR%%/templates/help/report.tpl.html
+%%WWWDIR%%/templates/help/report_assignment.tpl.html
+%%WWWDIR%%/templates/help/report_category.tpl.html
+%%WWWDIR%%/templates/help/report_description.tpl.html
+%%WWWDIR%%/templates/help/report_estimated_dev_time.tpl.html
+%%WWWDIR%%/templates/help/report_priority.tpl.html
+%%WWWDIR%%/templates/help/report_release.tpl.html
+%%WWWDIR%%/templates/help/report_summary.tpl.html
+%%WWWDIR%%/templates/help/scm_integration.tpl.html
+%%WWWDIR%%/templates/help/scm_integration_installation.tpl.html
+%%WWWDIR%%/templates/help/scm_integration_usage.tpl.html
+%%WWWDIR%%/templates/help/segregate_reporter.tpl.html
+%%WWWDIR%%/templates/help/support_emails.tpl.html
+%%WWWDIR%%/templates/help/view.tpl.html
+%%WWWDIR%%/templates/help/view_attachment.tpl.html
+%%WWWDIR%%/templates/help/view_impact.tpl.html
+%%WWWDIR%%/templates/help/view_note.tpl.html
+%%WWWDIR%%/templates/help/view_time.tpl.html
+%%WWWDIR%%/templates/help_link.tpl.html
+%%WWWDIR%%/templates/history.tpl.html
+%%WWWDIR%%/templates/impact_analysis.tpl.html
+%%WWWDIR%%/templates/index.tpl.html
+%%WWWDIR%%/templates/js/dynamic_custom_field.tpl.js
+%%WWWDIR%%/templates/latest_news.tpl.html
+%%WWWDIR%%/templates/list.tpl.html
+%%WWWDIR%%/templates/login_form.tpl.html
+%%WWWDIR%%/templates/lookup_field.tpl.html
+%%WWWDIR%%/templates/lookup_layer.tpl.html
+%%WWWDIR%%/templates/mail_queue.tpl.html
+%%WWWDIR%%/templates/main.tpl.html
+%%WWWDIR%%/templates/manage/account_managers.tpl.html
+%%WWWDIR%%/templates/manage/anonymous.tpl.html
+%%WWWDIR%%/templates/manage/categories.tpl.html
+%%WWWDIR%%/templates/manage/column_display.tpl.html
+%%WWWDIR%%/templates/manage/custom_fields.tpl.html
+%%WWWDIR%%/templates/manage/customer_notes.tpl.html
+%%WWWDIR%%/templates/manage/customize_listing.tpl.html
+%%WWWDIR%%/templates/manage/email_accounts.tpl.html
+%%WWWDIR%%/templates/manage/email_responses.tpl.html
+%%WWWDIR%%/templates/manage/faq.tpl.html
+%%WWWDIR%%/templates/manage/field_display.tpl.html
+%%WWWDIR%%/templates/manage/general.tpl.html
+%%WWWDIR%%/templates/manage/groups.tpl.html
+%%WWWDIR%%/templates/manage/index.tpl.html
+%%WWWDIR%%/templates/manage/issue_auto_creation.tpl.html
+%%WWWDIR%%/templates/manage/link_filters.tpl.html
+%%WWWDIR%%/templates/manage/manage.tpl.html
+%%WWWDIR%%/templates/manage/news.tpl.html
+%%WWWDIR%%/templates/manage/phone_categories.tpl.html
+%%WWWDIR%%/templates/manage/priorities.tpl.html
+%%WWWDIR%%/templates/manage/projects.tpl.html
+%%WWWDIR%%/templates/manage/releases.tpl.html
+%%WWWDIR%%/templates/manage/reminder_actions.tpl.html
+%%WWWDIR%%/templates/manage/reminder_conditions.tpl.html
+%%WWWDIR%%/templates/manage/reminders.tpl.html
+%%WWWDIR%%/templates/manage/resolution.tpl.html
+%%WWWDIR%%/templates/manage/round_robin.tpl.html
+%%WWWDIR%%/templates/manage/statuses.tpl.html
+%%WWWDIR%%/templates/manage/time_tracking.tpl.html
+%%WWWDIR%%/templates/manage/users.tpl.html
+%%WWWDIR%%/templates/navigation.tpl.html
+%%WWWDIR%%/templates/new.tpl.html
+%%WWWDIR%%/templates/news.tpl.html
+%%WWWDIR%%/templates/notes.tpl.html
+%%WWWDIR%%/templates/notification.tpl.html
+%%WWWDIR%%/templates/notifications/account_details.tpl.text
+%%WWWDIR%%/templates/notifications/assigned.tpl.text
+%%WWWDIR%%/templates/notifications/closed.tpl.text
+%%WWWDIR%%/templates/notifications/files.tpl.text
+%%WWWDIR%%/templates/notifications/new.tpl.text
+%%WWWDIR%%/templates/notifications/new_auto_created_issue.tpl.text
+%%WWWDIR%%/templates/notifications/new_issue.tpl.text
+%%WWWDIR%%/templates/notifications/new_user.tpl.text
+%%WWWDIR%%/templates/notifications/notes.tpl.text
+%%WWWDIR%%/templates/notifications/password_confirmation.tpl.text
+%%WWWDIR%%/templates/notifications/updated.tpl.text
+%%WWWDIR%%/templates/notifications/updated_account.tpl.text
+%%WWWDIR%%/templates/notifications/updated_password.tpl.text
+%%WWWDIR%%/templates/notifications/visitor_account.tpl.text
+%%WWWDIR%%/templates/offline.tpl.html
+%%WWWDIR%%/templates/permission_denied.tpl.html
+%%WWWDIR%%/templates/phone_support.tpl.html
+%%WWWDIR%%/templates/popup.tpl.html
+%%WWWDIR%%/templates/post.tpl.html
+%%WWWDIR%%/templates/post_note.tpl.html
+%%WWWDIR%%/templates/preferences.tpl.html
+%%WWWDIR%%/templates/quick_filter_form.tpl.html
+%%WWWDIR%%/templates/redeem_incident.tpl.html
+%%WWWDIR%%/templates/reminders/alert_no_recipients.tpl.text
+%%WWWDIR%%/templates/reminders/email_alert.tpl.text
+%%WWWDIR%%/templates/reminders/sms_alert.tpl.text
+%%WWWDIR%%/templates/removed_emails.tpl.html
+%%WWWDIR%%/templates/reports/custom_fields.tpl.html
+%%WWWDIR%%/templates/reports/customer_stats.tpl.html
+%%WWWDIR%%/templates/reports/estimated_dev_time.tpl.html
+%%WWWDIR%%/templates/reports/index.tpl.html
+%%WWWDIR%%/templates/reports/issue_user.tpl.html
+%%WWWDIR%%/templates/reports/open_issues.tpl.html
+%%WWWDIR%%/templates/reports/recent_activity.tpl.html
+%%WWWDIR%%/templates/reports/stalled_issues.tpl.html
+%%WWWDIR%%/templates/reports/top.tpl.html
+%%WWWDIR%%/templates/reports/tree.tpl.html
+%%WWWDIR%%/templates/reports/weekly.tpl.html
+%%WWWDIR%%/templates/reports/weekly_data.tpl.html
+%%WWWDIR%%/templates/reports/workload_date_range.tpl.html
+%%WWWDIR%%/templates/reports/workload_time_period.tpl.html
+%%WWWDIR%%/templates/requirement.tpl.html
+%%WWWDIR%%/templates/resize_textarea.tpl.html
+%%WWWDIR%%/templates/searchbar.tpl.html
+%%WWWDIR%%/templates/select_project.tpl.html
+%%WWWDIR%%/templates/self_assign.tpl.html
+%%WWWDIR%%/templates/send.tpl.html
+%%WWWDIR%%/templates/setup.tpl.html
+%%WWWDIR%%/templates/signup.tpl.html
+%%WWWDIR%%/templates/spell_check.tpl.html
+%%WWWDIR%%/templates/support_emails.tpl.html
+%%WWWDIR%%/templates/switch.tpl.html
+%%WWWDIR%%/templates/time_tracking.tpl.html
+%%WWWDIR%%/templates/tips/canned_responses.tpl.html
+%%WWWDIR%%/templates/tips/custom_queries.tpl.html
+%%WWWDIR%%/templates/tips/keyboard_shortcuts.tpl.html
+%%WWWDIR%%/templates/top_link.tpl.html
+%%WWWDIR%%/templates/update.tpl.html
+%%WWWDIR%%/templates/update_form.tpl.html
+%%WWWDIR%%/templates/view.tpl.html
+%%WWWDIR%%/templates/view_email.tpl.html
+%%WWWDIR%%/templates/view_form.tpl.html
+%%WWWDIR%%/templates/view_headers.tpl.html
+%%WWWDIR%%/templates/view_note.tpl.html
+%%WWWDIR%%/templates/yellow_note.tpl.html
+%%WWWDIR%%/time_tracking.php
+%%WWWDIR%%/update.php
+%%WWWDIR%%/view.php
+%%WWWDIR%%/view_email.php
+%%WWWDIR%%/view_headers.php
+%%WWWDIR%%/view_note.php
+@dirrm %%WWWDIR%%/templates_c
+@dirrm %%WWWDIR%%/templates/tips
+@dirrm %%WWWDIR%%/templates/reports
+@dirrm %%WWWDIR%%/templates/reminders
+@dirrm %%WWWDIR%%/templates/notifications
+@dirrm %%WWWDIR%%/templates/manage
+@dirrm %%WWWDIR%%/templates/js
+@dirrm %%WWWDIR%%/templates/help
+@dirrm %%WWWDIR%%/templates/expandable_cell
+@dirrm %%WWWDIR%%/templates/customer/example
+@dirrm %%WWWDIR%%/templates/customer
+@dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/setup
+@dirrm %%WWWDIR%%/rpc
+@dirrm %%WWWDIR%%/reports
+@dirrm %%WWWDIR%%/misc/upgrade/v2.0-beta_to_v2.0
+@dirrm %%WWWDIR%%/misc/upgrade/v1.7.1_to_v2.0
+@dirrm %%WWWDIR%%/misc/upgrade/v1.7.0_to_v1.7.1
+@dirrm %%WWWDIR%%/misc/upgrade/v1.6.1_to_v1.7.0
+@dirrm %%WWWDIR%%/misc/upgrade/v1.6.0_to_v1.6.1
+@dirrm %%WWWDIR%%/misc/upgrade/v1.5_to_v1.5.1
+@dirrm %%WWWDIR%%/misc/upgrade/v1.5.5_to_v1.6.0
+@dirrm %%WWWDIR%%/misc/upgrade/v1.5.4_to_v1.5.5
+@dirrm %%WWWDIR%%/misc/upgrade/v1.5.3_to_v1.5.4
+@dirrm %%WWWDIR%%/misc/upgrade/v1.5.2_to_v1.5.3
+@dirrm %%WWWDIR%%/misc/upgrade/v1.5.1_to_v1.5.2
+@dirrm %%WWWDIR%%/misc/upgrade/v1.4_to_1.5
+@dirrm %%WWWDIR%%/misc/upgrade/v1.3_to_v1.3.1
+@dirrm %%WWWDIR%%/misc/upgrade/v1.3.1_to_v1.4
+@dirrm %%WWWDIR%%/misc/upgrade/v1.2.2_to_v1.3
+@dirrm %%WWWDIR%%/misc/upgrade/v1.2.1_to_v1.2.2
+@dirrm %%WWWDIR%%/misc/upgrade/v1.1_to_v1.2
+@dirrm %%WWWDIR%%/misc/upgrade/snapshot_to_v1.1
+@dirrm %%WWWDIR%%/misc/upgrade
+@dirrm %%WWWDIR%%/misc/scm
+@dirrm %%WWWDIR%%/misc/routed_notes
+@dirrm %%WWWDIR%%/misc/routed_emails
+@dirrm %%WWWDIR%%/misc/routed_drafts
+@dirrm %%WWWDIR%%/misc/localization/sv_SE/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/sv_SE
+@dirrm %%WWWDIR%%/misc/localization/ru_RU/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/ru_RU
+@dirrm %%WWWDIR%%/misc/localization/pl/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/pl
+@dirrm %%WWWDIR%%/misc/localization/nl_NL/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/nl_NL
+@dirrm %%WWWDIR%%/misc/localization/it_IT/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/it_IT
+@dirrm %%WWWDIR%%/misc/localization/fr_FR/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/fr_FR
+@dirrm %%WWWDIR%%/misc/localization/fi_FI/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/fi_FI
+@dirrm %%WWWDIR%%/misc/localization/es_ES/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/es_ES
+@dirrm %%WWWDIR%%/misc/localization/en_US/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/en_US
+@dirrm %%WWWDIR%%/misc/localization/de_DE/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/de_DE
+@dirrm %%WWWDIR%%/misc/localization
+@dirrm %%WWWDIR%%/misc/irc
+@dirrm %%WWWDIR%%/misc/cli/include/pear/XML_RPC
+@dirrm %%WWWDIR%%/misc/cli/include/pear
+@dirrm %%WWWDIR%%/misc/cli/include
+@dirrm %%WWWDIR%%/misc/cli
+@dirrm %%WWWDIR%%/misc
+@dirrm %%WWWDIR%%/manage
+@dirrm %%WWWDIR%%/logs
+@dirrm %%WWWDIR%%/locks
+@dirrm %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/include/workflow
+@dirrm %%WWWDIR%%/include/php-gettext
+@dirrm %%WWWDIR%%/include/pear/XML_RPC
+@dirrm %%WWWDIR%%/include/pear/Text_Diff/Diff/Renderer
+@dirrm %%WWWDIR%%/include/pear/Text_Diff/Diff
+@dirrm %%WWWDIR%%/include/pear/Text_Diff
+@dirrm %%WWWDIR%%/include/pear/Net/UserAgent
+@dirrm %%WWWDIR%%/include/pear/Net/SmartIRC
+@dirrm %%WWWDIR%%/include/pear/Net
+@dirrm %%WWWDIR%%/include/pear/Math
+@dirrm %%WWWDIR%%/include/pear/Mail
+@dirrm %%WWWDIR%%/include/pear/HTTP
+@dirrm %%WWWDIR%%/include/pear/File
+@dirrm %%WWWDIR%%/include/pear/Date
+@dirrm %%WWWDIR%%/include/pear/DB
+@dirrm %%WWWDIR%%/include/pear/Benchmark
+@dirrm %%WWWDIR%%/include/pear/Auth/SASL
+@dirrm %%WWWDIR%%/include/pear/Auth
+@dirrm %%WWWDIR%%/include/pear
+@dirrm %%WWWDIR%%/include/jpgraph
+@dirrm %%WWWDIR%%/include/customer
+@dirrm %%WWWDIR%%/include/custom_field
+@dirrm %%WWWDIR%%/include/Smarty/plugins
+@dirrm %%WWWDIR%%/include/Smarty/core
+@dirrm %%WWWDIR%%/include/Smarty
+@dirrm %%WWWDIR%%/include
+@dirrm %%WWWDIR%%/images/icons
+@dirrm %%WWWDIR%%/images/dtree
+@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/docs
+@dirrm %%WWWDIR%%/customer/example
+@dirrm %%WWWDIR%%/customer
+@dirrm %%WWWDIR%%/css
+@dirrm %%WWWDIR%%/config
+@dirrm %%WWWDIR%%
