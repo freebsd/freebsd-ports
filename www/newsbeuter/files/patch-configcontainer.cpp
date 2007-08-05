@@ -1,7 +1,5 @@
-Index: src/configcontainer.cpp
-===================================================================
---- src/configcontainer.cpp	(revision 935)
-+++ src/configcontainer.cpp	(revision 937)
+--- src/configcontainer.cpp.orig	2007-06-06 15:23:55.000000000 +0200
++++ src/configcontainer.cpp	2007-08-05 14:19:34.000000000 +0200
 @@ -85,43 +85,13 @@
  			return AHS_OK;	
  
@@ -47,7 +45,7 @@ Index: src/configcontainer.cpp
  		default:
  			// should not happen
  			return AHS_INVALID_COMMAND;	
-@@ -150,7 +120,35 @@
+@@ -150,7 +120,37 @@
  }
  
  std::string configcontainer::get_configvalue(const std::string& key) {
@@ -73,6 +71,8 @@ Index: src/configcontainer.cpp
 +				filepath.append(homedir);
 +				filepath.append(1,'/');
 +				filepath.append(retval.substr(2,retval.length()-2));
++			} else {
++				filepath.append(retval);
 +			}
 +		} else {
 +			filepath.append(retval);
