@@ -1723,6 +1723,7 @@
     SUBDIR += pear-PHP_Beautifier
     SUBDIR += pear-PHP_Compat
     SUBDIR += pear-PHP_CompatInfo
+    SUBDIR += pear-PHP_Parser
     SUBDIR += pear-PHP_ParserGenerator
     SUBDIR += pear-Pager
     SUBDIR += pear-PhpDocumentor
