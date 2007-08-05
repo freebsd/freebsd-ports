@@ -1,0 +1,11 @@
+Classes that represent and manipulate fractions (x = a/b).
+
+The Math_FractionOp static class contains definitions for:
+- basic arithmetic operations
+- comparing fractions
+- greatest common divisor (gcd) and least common multiple (lcm)
+  of two integers
+- simplifying (reducing) and getting the reciprocal of a fraction
+- converting a float to fraction.
+
+WWW: http://pear.php.net/package/Math_Fraction/
