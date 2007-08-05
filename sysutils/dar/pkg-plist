@@ -42,7 +42,7 @@ bin/dar_xform
 bin/dar_slave
 bin/dar_manager
 bin/dar_cp
-
+bin/dar_static
 %%DOCSDIR%%/samples/dar_par.dcf
 %%DOCSDIR%%/samples/cdbackup.sh
 %%DOCSDIR%%/samples/darrc_sample
