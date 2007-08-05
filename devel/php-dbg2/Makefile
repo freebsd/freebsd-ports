@@ -1,45 +1,29 @@
-# New ports collection makefile for:	dbg_php4
-# Date created:		Sun Jan 26 20:47:49 GMT 2003
-# Whom:			Jens Rehsack <rehsack@liwing.de>
+# New ports collection makefile for:	php-dbg2
+# Date created:		19 July 2007
+# Whom:			Josh Paetzel <josh@tcbug.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	dbg
-PORTVERSION=	2.11.30
+PORTNAME=	dbg2
+PORTVERSION=	2.15.5
 CATEGORIES=	devel
-MASTER_SITES=	http://dd.cron.ru/dbg/dnld/
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	php-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	dbg-${PORTVERSION}
 
 MAINTAINER=	josh@tcbug.org
-COMMENT=	Debugger for PHP4
+COMMENT=	Debugger for PHP
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PHP=	yes
 USE_PHPIZE=	yes
-DEFAULT_PHP_VER=4
-IGNORE_WITH_PHP=5
-CONFIGURE_ARGS=	--enable-dbg=shared --with-dbg-profiler
-#CONFIGURE_ENV=	with_dbg_trace=1
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-post-build:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
-		${.CURDIR}/pkg-message > ${PKGMESSAGE}
-
-do-install:
-	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/modules/dbg.so \
-		${PREFIX}/lib/php/${PHP_EXT_DIR}
+DEFAULT_PHP_VER=5
+CONFIGURE_ARGS=	--enable-dbg=shared --with-dbg-profiler \
+		--with-php-config=${PREFIX}/bin/php-config \
+		--prefix=${PREFIX}/lib/php/${PHP_EXT_DIR}
+PKGMESSAGE=	pkg-message
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
