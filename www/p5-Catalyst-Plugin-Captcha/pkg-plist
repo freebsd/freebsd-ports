@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Captcha/.packlist
+%%SITE_PERL%%/Catalyst/Plugin/Captcha.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Captcha
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst
