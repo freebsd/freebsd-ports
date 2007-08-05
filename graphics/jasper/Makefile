@@ -7,7 +7,7 @@
 
 PORTNAME=	jasper
 PORTVERSION=	1.900.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
 		${MASTER_SITE_IMAGEMAGICK}
@@ -18,6 +18,7 @@ COMMENT=	An implementation of the codec specified in the JPEG-2000 standard
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
+MAKE_ARGS+=	-j`${SYSCTL} -n hw.ncpu`
 USE_AUTOTOOLS=	libtool:15
 USE_ZIP=	yes
 USE_GNOME=	gnometarget lthack
