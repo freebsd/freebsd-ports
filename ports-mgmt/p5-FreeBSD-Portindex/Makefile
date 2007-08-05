@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	FreeBSD-Portindex
-PORTVERSION=	1.9
+PORTVERSION=	2.0
 CATEGORIES=	ports-mgmt perl5
 MASTER_SITES=	http://www.infracaninophile.co.uk/portindex/
 PKGNAMEPREFIX=	p5-
@@ -35,10 +35,6 @@ MAN1=		find-updated.1 cache-init.1 cache-update.1 portindex.1
 ##
 .if ${PERL_LEVEL} < 500601
 IGNORE=		requires perl 5.6.x or (preferably) later.  Install lang/perl5.8 and try again
-.endif
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 .endif
 
 post-install: install-conf install-cache
