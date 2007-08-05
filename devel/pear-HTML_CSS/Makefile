@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_CSS
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -20,14 +20,6 @@ FILES=		CSS.php CSS/Error.php
 DOCS=		TDG/img/admons/caution.png \
 		TDG/img/admons/important.png TDG/img/admons/note.png \
 		TDG/img/admons/tip.png TDG/img/admons/warning.png \
-		TDG/img/callouts/1.gif \
-		TDG/img/callouts/2.gif TDG/img/callouts/3.gif \
-		TDG/img/callouts/4.gif TDG/img/callouts/5.gif \
-		TDG/img/callouts/6.gif TDG/img/callouts/7.gif \
-		TDG/img/callouts/8.gif TDG/img/callouts/9.gif \
-		TDG/img/callouts/10.gif TDG/img/callouts/11.gif \
-		TDG/img/callouts/12.gif TDG/img/callouts/13.gif \
-		TDG/img/callouts/14.gif TDG/img/callouts/15.gif \
 		TDG/img/created-with-docbook.png TDG/img/example.png \
 		TDG/img/external-link.gif TDG/img/pearsmall.gif \
 		TDG/img/rule.gif TDG/book.css TDG/ch01.html \
