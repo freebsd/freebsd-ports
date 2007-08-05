@@ -701,6 +701,7 @@
     SUBDIR += xmms-sapplug
     SUBDIR += xmms-scrobbler
     SUBDIR += xmms-sexypsf
+    SUBDIR += xmms-sexyspc
     SUBDIR += xmms-shn
     SUBDIR += xmms-sid
     SUBDIR += xmms-sndfile
