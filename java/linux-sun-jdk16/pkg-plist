@@ -2,6 +2,8 @@
 %%T%%/COPYRIGHT
 %%T%%/LICENSE
 %%T%%/README.html
+%%T%%/README_ja.html
+%%T%%/README_zh_CN.html
 %%T%%/THIRDPARTYLICENSEREADME.txt
 %%T%%/bin/ControlPanel
 %%T%%/bin/HtmlConverter
@@ -19,18 +21,18 @@
 %%T%%/bin/javap
 %%T%%/bin/javaws
 %%T%%/bin/jconsole
+%%T%%/bin/jcontrol
 %%T%%/bin/jdb
+%%T%%/bin/jhat
 %%T%%/bin/jinfo
 %%T%%/bin/jmap
 %%T%%/bin/jps
+%%T%%/bin/jrunscript
 %%T%%/bin/jsadebugd
 %%T%%/bin/jstack
 %%T%%/bin/jstat
 %%T%%/bin/jstatd
 %%T%%/bin/keytool
-%%T%%/bin/kinit
-%%T%%/bin/klist
-%%T%%/bin/ktab
 %%T%%/bin/native2ascii
 %%T%%/bin/orbd
 %%T%%/bin/pack200
@@ -38,10 +40,14 @@
 %%T%%/bin/rmic
 %%T%%/bin/rmid
 %%T%%/bin/rmiregistry
+%%T%%/bin/schemagen
 %%T%%/bin/serialver
 %%T%%/bin/servertool
 %%T%%/bin/tnameserv
 %%T%%/bin/unpack200
+%%T%%/bin/wsgen
+%%T%%/bin/wsimport
+%%T%%/bin/xjc
 %%T%%/demo/applets.html
 %%T%%/demo/applets/Animator/Animation.class
 %%T%%/demo/applets/Animator/AnimationFrame.class
@@ -266,7 +272,6 @@
 %%T%%/demo/jfc/CodePointIM/src/resources/codepoint_zh_CN.properties
 %%T%%/demo/jfc/FileChooserDemo/FileChooserDemo.jar
 %%T%%/demo/jfc/FileChooserDemo/README.txt
-%%T%%/demo/jfc/FileChooserDemo/src/ExampleFileFilter.java
 %%T%%/demo/jfc/FileChooserDemo/src/ExampleFileView.java
 %%T%%/demo/jfc/FileChooserDemo/src/FileChooserDemo.java
 %%T%%/demo/jfc/FileChooserDemo/src/resources/images/gifIcon.gif
@@ -475,7 +480,6 @@
 %%T%%/demo/jfc/SwingSet2/src/DemoModule.java
 %%T%%/demo/jfc/SwingSet2/src/DirectionPanel.java
 %%T%%/demo/jfc/SwingSet2/src/EmeraldTheme.java
-%%T%%/demo/jfc/SwingSet2/src/ExampleFileFilter.java
 %%T%%/demo/jfc/SwingSet2/src/ExampleFileView.java
 %%T%%/demo/jfc/SwingSet2/src/FileChooserDemo.java
 %%T%%/demo/jfc/SwingSet2/src/HtmlDemo.java
@@ -536,7 +540,6 @@
 %%T%%/demo/jfc/SwingSet2/src/resources/images/Octavo/king.jpg
 %%T%%/demo/jfc/SwingSet2/src/resources/images/Octavo/micro.jpg
 %%T%%/demo/jfc/SwingSet2/src/resources/images/Octavo/seaweed.jpg
-%%T%%/demo/jfc/SwingSet2/src/resources/images/Splash.jpg
 %%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b1.gif
 %%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b1d.gif
 %%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b1p.gif
@@ -641,6 +644,7 @@
 %%T%%/demo/jfc/SwingSet2/src/resources/images/scrollpane/rowheader.jpg
 %%T%%/demo/jfc/SwingSet2/src/resources/images/scrollpane/upperleft.jpg
 %%T%%/demo/jfc/SwingSet2/src/resources/images/scrollpane/upperright.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/splash.png
 %%T%%/demo/jfc/SwingSet2/src/resources/images/splitpane/README
 %%T%%/demo/jfc/SwingSet2/src/resources/images/splitpane/earth.jpg
 %%T%%/demo/jfc/SwingSet2/src/resources/images/splitpane/moon.jpg
@@ -680,6 +684,7 @@
 %%T%%/demo/jfc/SwingSet2/src/resources/seaweed.html
 %%T%%/demo/jfc/SwingSet2/src/resources/swingset.properties
 %%T%%/demo/jfc/SwingSet2/src/resources/swingset_ja.properties
+%%T%%/demo/jfc/SwingSet2/src/resources/swingset_zh_CN.properties
 %%T%%/demo/jfc/SwingSet2/src/resources/title.html
 %%T%%/demo/jfc/SwingSet2/src/resources/tree.txt
 %%T%%/demo/jfc/TableExample/README.txt
@@ -698,20 +703,17 @@
 %%T%%/demo/jvmti/agent_util/src/agent_util.h
 %%T%%/demo/jvmti/gctest/README.txt
 %%T%%/demo/jvmti/gctest/lib/libgctest.so
-%%T%%/demo/jvmti/gctest/lib/libgctest_g.so
 %%T%%/demo/jvmti/gctest/src/gctest.c
 %%T%%/demo/jvmti/gctest/src/sample.makefile.txt
 %%T%%/demo/jvmti/heapTracker/README.txt
 %%T%%/demo/jvmti/heapTracker/heapTracker.jar
 %%T%%/demo/jvmti/heapTracker/lib/libheapTracker.so
-%%T%%/demo/jvmti/heapTracker/lib/libheapTracker_g.so
 %%T%%/demo/jvmti/heapTracker/src/HeapTracker.java
 %%T%%/demo/jvmti/heapTracker/src/heapTracker.c
 %%T%%/demo/jvmti/heapTracker/src/heapTracker.h
 %%T%%/demo/jvmti/heapTracker/src/sample.makefile.txt
 %%T%%/demo/jvmti/heapViewer/README.txt
 %%T%%/demo/jvmti/heapViewer/lib/libheapViewer.so
-%%T%%/demo/jvmti/heapViewer/lib/libheapViewer_g.so
 %%T%%/demo/jvmti/heapViewer/src/heapViewer.c
 %%T%%/demo/jvmti/heapViewer/src/sample.makefile.txt
 %%T%%/demo/jvmti/hprof/README.txt
@@ -719,8 +721,11 @@
 %%T%%/demo/jvmti/hprof/src/debug_malloc.c
 %%T%%/demo/jvmti/hprof/src/debug_malloc.h
 %%T%%/demo/jvmti/hprof/src/hprof.h
+%%T%%/demo/jvmti/hprof/src/hprof_b_spec.h
 %%T%%/demo/jvmti/hprof/src/hprof_blocks.c
 %%T%%/demo/jvmti/hprof/src/hprof_blocks.h
+%%T%%/demo/jvmti/hprof/src/hprof_check.c
+%%T%%/demo/jvmti/hprof/src/hprof_check.h
 %%T%%/demo/jvmti/hprof/src/hprof_class.c
 %%T%%/demo/jvmti/hprof/src/hprof_class.h
 %%T%%/demo/jvmti/hprof/src/hprof_cpu.c
@@ -770,16 +775,20 @@
 %%T%%/demo/jvmti/hprof/src/linux/hprof_md.c
 %%T%%/demo/jvmti/hprof/src/manual.html
 %%T%%/demo/jvmti/hprof/src/sample.makefile.txt
-%%T%%/demo/jvmti/index.html
 %%T%%/demo/jvmti/java_crw_demo/README.txt
-%%T%%/demo/jvmti/java_crw_demo/src/classfile_constants.h
 %%T%%/demo/jvmti/java_crw_demo/src/java_crw_demo.c
 %%T%%/demo/jvmti/java_crw_demo/src/java_crw_demo.h
 %%T%%/demo/jvmti/java_crw_demo/src/sample.makefile.txt
 %%T%%/demo/jvmti/java_crw_demo/src/test_crw.c
+%%T%%/demo/jvmti/minst/README.txt
+%%T%%/demo/jvmti/minst/lib/libminst.so
+%%T%%/demo/jvmti/minst/minst.jar
+%%T%%/demo/jvmti/minst/src/Minst.java
+%%T%%/demo/jvmti/minst/src/minst.c
+%%T%%/demo/jvmti/minst/src/minst.h
+%%T%%/demo/jvmti/minst/src/sample.makefile.txt
 %%T%%/demo/jvmti/mtrace/README.txt
 %%T%%/demo/jvmti/mtrace/lib/libmtrace.so
-%%T%%/demo/jvmti/mtrace/lib/libmtrace_g.so
 %%T%%/demo/jvmti/mtrace/mtrace.jar
 %%T%%/demo/jvmti/mtrace/src/Mtrace.java
 %%T%%/demo/jvmti/mtrace/src/mtrace.c
@@ -787,12 +796,10 @@
 %%T%%/demo/jvmti/mtrace/src/sample.makefile.txt
 %%T%%/demo/jvmti/versionCheck/README.txt
 %%T%%/demo/jvmti/versionCheck/lib/libversionCheck.so
-%%T%%/demo/jvmti/versionCheck/lib/libversionCheck_g.so
 %%T%%/demo/jvmti/versionCheck/src/sample.makefile.txt
 %%T%%/demo/jvmti/versionCheck/src/versionCheck.c
 %%T%%/demo/jvmti/waiters/README.txt
 %%T%%/demo/jvmti/waiters/lib/libwaiters.so
-%%T%%/demo/jvmti/waiters/lib/libwaiters_g.so
 %%T%%/demo/jvmti/waiters/src/Agent.cpp
 %%T%%/demo/jvmti/waiters/src/Agent.hpp
 %%T%%/demo/jvmti/waiters/src/Monitor.cpp
@@ -809,6 +816,8 @@
 %%T%%/demo/management/JTop/JTop.jar
 %%T%%/demo/management/JTop/README.txt
 %%T%%/demo/management/JTop/src/JTop.java
+%%T%%/demo/management/JTop/src/JTopPlugin.java
+%%T%%/demo/management/JTop/src/META-INF/services/com.sun.tools.jconsole.JConsolePlugin
 %%T%%/demo/management/MemoryMonitor/MemoryMonitor.jar
 %%T%%/demo/management/MemoryMonitor/README.txt
 %%T%%/demo/management/MemoryMonitor/src/MemoryMonitor.java
@@ -816,7 +825,98 @@
 %%T%%/demo/management/VerboseGC/VerboseGC.jar
 %%T%%/demo/management/VerboseGC/src/PrintGCStat.java
 %%T%%/demo/management/VerboseGC/src/VerboseGC.java
-%%T%%/demo/management/index.html
+%%T%%/demo/nbproject/README.txt
+%%T%%/demo/nbproject/jfc/FileChooserDemo/build.properties
+%%T%%/demo/nbproject/jfc/FileChooserDemo/build.xml
+%%T%%/demo/nbproject/jfc/FileChooserDemo/nbproject/file-targets.xml
+%%T%%/demo/nbproject/jfc/FileChooserDemo/nbproject/jdk.xml
+%%T%%/demo/nbproject/jfc/FileChooserDemo/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/jfc/FileChooserDemo/nbproject/project.xml
+%%T%%/demo/nbproject/jfc/Font2DTest/build.properties
+%%T%%/demo/nbproject/jfc/Font2DTest/build.xml
+%%T%%/demo/nbproject/jfc/Font2DTest/nbproject/file-targets.xml
+%%T%%/demo/nbproject/jfc/Font2DTest/nbproject/jdk.xml
+%%T%%/demo/nbproject/jfc/Font2DTest/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/jfc/Font2DTest/nbproject/project.xml
+%%T%%/demo/nbproject/jfc/Java2D/build.properties
+%%T%%/demo/nbproject/jfc/Java2D/build.xml
+%%T%%/demo/nbproject/jfc/Java2D/nbproject/file-targets.xml
+%%T%%/demo/nbproject/jfc/Java2D/nbproject/jdk.xml
+%%T%%/demo/nbproject/jfc/Java2D/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/jfc/Java2D/nbproject/project.xml
+%%T%%/demo/nbproject/jfc/Metalworks/build.properties
+%%T%%/demo/nbproject/jfc/Metalworks/build.xml
+%%T%%/demo/nbproject/jfc/Metalworks/nbproject/file-targets.xml
+%%T%%/demo/nbproject/jfc/Metalworks/nbproject/jdk.xml
+%%T%%/demo/nbproject/jfc/Metalworks/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/jfc/Metalworks/nbproject/project.xml
+%%T%%/demo/nbproject/jfc/Notepad/build.properties
+%%T%%/demo/nbproject/jfc/Notepad/build.xml
+%%T%%/demo/nbproject/jfc/Notepad/nbproject/file-targets.xml
+%%T%%/demo/nbproject/jfc/Notepad/nbproject/jdk.xml
+%%T%%/demo/nbproject/jfc/Notepad/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/jfc/Notepad/nbproject/project.xml
+%%T%%/demo/nbproject/jfc/SampleTree/build.properties
+%%T%%/demo/nbproject/jfc/SampleTree/build.xml
+%%T%%/demo/nbproject/jfc/SampleTree/nbproject/file-targets.xml
+%%T%%/demo/nbproject/jfc/SampleTree/nbproject/jdk.xml
+%%T%%/demo/nbproject/jfc/SampleTree/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/jfc/SampleTree/nbproject/project.xml
+%%T%%/demo/nbproject/jfc/Stylepad/build.properties
+%%T%%/demo/nbproject/jfc/Stylepad/build.xml
+%%T%%/demo/nbproject/jfc/Stylepad/nbproject/file-targets.xml
+%%T%%/demo/nbproject/jfc/Stylepad/nbproject/jdk.xml
+%%T%%/demo/nbproject/jfc/Stylepad/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/jfc/Stylepad/nbproject/project.xml
+%%T%%/demo/nbproject/jfc/SwingApplet/build.properties
+%%T%%/demo/nbproject/jfc/SwingApplet/build.xml
+%%T%%/demo/nbproject/jfc/SwingApplet/nbproject/file-targets.xml
+%%T%%/demo/nbproject/jfc/SwingApplet/nbproject/jdk.xml
+%%T%%/demo/nbproject/jfc/SwingApplet/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/jfc/SwingApplet/nbproject/project.xml
+%%T%%/demo/nbproject/jfc/SwingSet2/build.properties
+%%T%%/demo/nbproject/jfc/SwingSet2/build.xml
+%%T%%/demo/nbproject/jfc/SwingSet2/nbproject/file-targets.xml
+%%T%%/demo/nbproject/jfc/SwingSet2/nbproject/jdk.xml
+%%T%%/demo/nbproject/jfc/SwingSet2/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/jfc/SwingSet2/nbproject/project.xml
+%%T%%/demo/nbproject/jfc/TableExample/build.properties
+%%T%%/demo/nbproject/jfc/TableExample/build.xml
+%%T%%/demo/nbproject/jfc/TableExample/nbproject/file-targets.xml
+%%T%%/demo/nbproject/jfc/TableExample/nbproject/jdk.xml
+%%T%%/demo/nbproject/jfc/TableExample/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/jfc/TableExample/nbproject/project.xml
+%%T%%/demo/nbproject/management/FullThreadDump/build.properties
+%%T%%/demo/nbproject/management/FullThreadDump/build.xml
+%%T%%/demo/nbproject/management/FullThreadDump/nbproject/file-targets.xml
+%%T%%/demo/nbproject/management/FullThreadDump/nbproject/jdk.xml
+%%T%%/demo/nbproject/management/FullThreadDump/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/management/FullThreadDump/nbproject/project.xml
+%%T%%/demo/nbproject/management/JTop/build.properties
+%%T%%/demo/nbproject/management/JTop/build.xml
+%%T%%/demo/nbproject/management/JTop/nbproject/file-targets.xml
+%%T%%/demo/nbproject/management/JTop/nbproject/jdk.xml
+%%T%%/demo/nbproject/management/JTop/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/management/JTop/nbproject/project.xml
+%%T%%/demo/nbproject/management/MemoryMonitor/build.properties
+%%T%%/demo/nbproject/management/MemoryMonitor/build.xml
+%%T%%/demo/nbproject/management/MemoryMonitor/nbproject/file-targets.xml
+%%T%%/demo/nbproject/management/MemoryMonitor/nbproject/jdk.xml
+%%T%%/demo/nbproject/management/MemoryMonitor/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/management/MemoryMonitor/nbproject/project.xml
+%%T%%/demo/nbproject/management/VerboseGC/build.properties
+%%T%%/demo/nbproject/management/VerboseGC/build.xml
+%%T%%/demo/nbproject/management/VerboseGC/nbproject/file-targets.xml
+%%T%%/demo/nbproject/management/VerboseGC/nbproject/jdk.xml
+%%T%%/demo/nbproject/management/VerboseGC/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/management/VerboseGC/nbproject/project.xml
+%%T%%/demo/nbproject/project.xml
+%%T%%/demo/nbproject/scripting/jconsole-plugin/build.properties
+%%T%%/demo/nbproject/scripting/jconsole-plugin/build.xml
+%%T%%/demo/nbproject/scripting/jconsole-plugin/nbproject/file-targets.xml
+%%T%%/demo/nbproject/scripting/jconsole-plugin/nbproject/jdk.xml
+%%T%%/demo/nbproject/scripting/jconsole-plugin/nbproject/netbeans-targets.xml
+%%T%%/demo/nbproject/scripting/jconsole-plugin/nbproject/project.xml
 %%T%%/demo/plugin/applets.html
 %%T%%/demo/plugin/applets/Animator/Animation.class
 %%T%%/demo/plugin/applets/Animator/AnimationFrame.class
@@ -1041,7 +1141,6 @@
 %%T%%/demo/plugin/jfc/CodePointIM/src/resources/codepoint_zh_CN.properties
 %%T%%/demo/plugin/jfc/FileChooserDemo/FileChooserDemo.jar
 %%T%%/demo/plugin/jfc/FileChooserDemo/README.txt
-%%T%%/demo/plugin/jfc/FileChooserDemo/src/ExampleFileFilter.java
 %%T%%/demo/plugin/jfc/FileChooserDemo/src/ExampleFileView.java
 %%T%%/demo/plugin/jfc/FileChooserDemo/src/FileChooserDemo.java
 %%T%%/demo/plugin/jfc/FileChooserDemo/src/resources/images/gifIcon.gif
@@ -1250,7 +1349,6 @@
 %%T%%/demo/plugin/jfc/SwingSet2/src/DemoModule.java
 %%T%%/demo/plugin/jfc/SwingSet2/src/DirectionPanel.java
 %%T%%/demo/plugin/jfc/SwingSet2/src/EmeraldTheme.java
-%%T%%/demo/plugin/jfc/SwingSet2/src/ExampleFileFilter.java
 %%T%%/demo/plugin/jfc/SwingSet2/src/ExampleFileView.java
 %%T%%/demo/plugin/jfc/SwingSet2/src/FileChooserDemo.java
 %%T%%/demo/plugin/jfc/SwingSet2/src/HtmlDemo.java
@@ -1311,7 +1409,6 @@
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Octavo/king.jpg
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Octavo/micro.jpg
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Octavo/seaweed.jpg
-%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Splash.jpg
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b1.gif
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b1d.gif
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b1p.gif
@@ -1416,6 +1513,7 @@
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/scrollpane/rowheader.jpg
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/scrollpane/upperleft.jpg
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/scrollpane/upperright.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/splash.png
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/splitpane/README
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/splitpane/earth.jpg
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/splitpane/moon.jpg
@@ -1455,6 +1553,7 @@
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/seaweed.html
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/swingset.properties
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/swingset_ja.properties
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/swingset_zh_CN.properties
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/title.html
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/tree.txt
 %%T%%/demo/plugin/jfc/TableExample/README.txt
@@ -1467,17 +1566,30 @@
 %%T%%/demo/plugin/jfc/TableExample/src/TableExample4.java
 %%T%%/demo/plugin/jfc/TableExample/src/TableMap.java
 %%T%%/demo/plugin/jfc/TableExample/src/TableSorter.java
+%%T%%/demo/scripting/jconsole-plugin/README.txt
+%%T%%/demo/scripting/jconsole-plugin/build.xml
+%%T%%/demo/scripting/jconsole-plugin/jconsole-plugin.jar
+%%T%%/demo/scripting/jconsole-plugin/src/META-INF/services/com.sun.tools.jconsole.JConsolePlugin
+%%T%%/demo/scripting/jconsole-plugin/src/com/sun/demo/scripting/jconsole/EditableAtEndDocument.java
+%%T%%/demo/scripting/jconsole-plugin/src/com/sun/demo/scripting/jconsole/ScriptJConsolePlugin.java
+%%T%%/demo/scripting/jconsole-plugin/src/com/sun/demo/scripting/jconsole/ScriptShellPanel.java
+%%T%%/demo/scripting/jconsole-plugin/src/resources/jconsole.js
+%%T%%/demo/scripting/jconsole-plugin/src/scripts/heapdump.js
+%%T%%/demo/scripting/jconsole-plugin/src/scripts/hello.js
+%%T%%/demo/scripting/jconsole-plugin/src/scripts/invoke.js
+%%T%%/demo/scripting/jconsole-plugin/src/scripts/jstack.js
+%%T%%/demo/scripting/jconsole-plugin/src/scripts/jtop.js
+%%T%%/demo/scripting/jconsole-plugin/src/scripts/sysprops.js
+%%T%%/demo/scripting/jconsole-plugin/src/scripts/verbose.js
+%%T%%/include/classfile_constants.h
 %%T%%/include/jawt.h
 %%T%%/include/jdwpTransport.h
 %%T%%/include/jni.h
-%%T%%/include/jvmdi.h
-%%T%%/include/jvmpi.h
 %%T%%/include/jvmti.h
 %%T%%/include/linux/jawt_md.h
 %%T%%/include/linux/jni_md.h
 %%T%%/jre/.systemPrefs/.system.lock
 %%T%%/jre/.systemPrefs/.systemRootModFile
-%%T%%/jre/CHANGES
 %%T%%/jre/COPYRIGHT
 %%T%%/jre/LICENSE
 %%T%%/jre/README
@@ -1487,10 +1599,8 @@
 %%T%%/jre/bin/java
 %%T%%/jre/bin/java_vm
 %%T%%/jre/bin/javaws
+%%T%%/jre/bin/jcontrol
 %%T%%/jre/bin/keytool
-%%T%%/jre/bin/kinit
-%%T%%/jre/bin/klist
-%%T%%/jre/bin/ktab
 %%T%%/jre/bin/orbd
 %%T%%/jre/bin/pack200
 %%T%%/jre/bin/policytool
@@ -1501,6 +1611,7 @@
 %%T%%/jre/bin/unpack200
 %%T%%/jre/javaws/javaws
 %%T%%/jre/lib/audio/soundbank.gm
+%%T%%/jre/lib/calendars.properties
 %%T%%/jre/lib/charsets.jar
 %%T%%/jre/lib/classlist
 %%T%%/jre/lib/cmm/CIEXYZ.pf
@@ -1511,8 +1622,75 @@
 %%T%%/jre/lib/content-types.properties
 %%T%%/jre/lib/deploy.jar
 %%T%%/jre/lib/deploy/ffjcext.zip
+%%T%%/jre/lib/deploy/java-icon.ico
+%%T%%/jre/lib/deploy/messages.properties
+%%T%%/jre/lib/deploy/messages_de.properties
+%%T%%/jre/lib/deploy/messages_es.properties
+%%T%%/jre/lib/deploy/messages_fr.properties
+%%T%%/jre/lib/deploy/messages_it.properties
+%%T%%/jre/lib/deploy/messages_ja.properties
+%%T%%/jre/lib/deploy/messages_ko.properties
+%%T%%/jre/lib/deploy/messages_sv.properties
+%%T%%/jre/lib/deploy/messages_zh_CN.properties
+%%T%%/jre/lib/deploy/messages_zh_HK.properties
+%%T%%/jre/lib/deploy/messages_zh_TW.properties
+%%T%%/jre/lib/deploy/splash.jpg
+%%T%%/jre/lib/desktop/applications/sun-java.desktop
+%%T%%/jre/lib/desktop/applications/sun-javaws.desktop
+%%T%%/jre/lib/desktop/applications/sun_java.desktop
+%%T%%/jre/lib/desktop/icons/HighContrast/16x16/apps/sun-java.png
+%%T%%/jre/lib/desktop/icons/HighContrast/16x16/apps/sun-javaws.png
+%%T%%/jre/lib/desktop/icons/HighContrast/16x16/apps/sun-jcontrol.png
+%%T%%/jre/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/jre/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/jre/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-text-x-java.png
+%%T%%/jre/lib/desktop/icons/HighContrast/48x48/apps/sun-java.png
+%%T%%/jre/lib/desktop/icons/HighContrast/48x48/apps/sun-javaws.png
+%%T%%/jre/lib/desktop/icons/HighContrast/48x48/apps/sun-jcontrol.png
+%%T%%/jre/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/jre/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/jre/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-text-x-java.png
+%%T%%/jre/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-java.png
+%%T%%/jre/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-javaws.png
+%%T%%/jre/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-jcontrol.png
+%%T%%/jre/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/jre/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/jre/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-mime-text-x-java.png
+%%T%%/jre/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-java.png
+%%T%%/jre/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-javaws.png
+%%T%%/jre/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-jcontrol.png
+%%T%%/jre/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/jre/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/jre/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-mime-text-x-java.png
+%%T%%/jre/lib/desktop/icons/LowContrast/16x16/apps/sun-java.png
+%%T%%/jre/lib/desktop/icons/LowContrast/16x16/apps/sun-javaws.png
+%%T%%/jre/lib/desktop/icons/LowContrast/16x16/apps/sun-jcontrol.png
+%%T%%/jre/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/jre/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/jre/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-text-x-java.png
+%%T%%/jre/lib/desktop/icons/LowContrast/48x48/apps/sun-java.png
+%%T%%/jre/lib/desktop/icons/LowContrast/48x48/apps/sun-javaws.png
+%%T%%/jre/lib/desktop/icons/LowContrast/48x48/apps/sun-jcontrol.png
+%%T%%/jre/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/jre/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/jre/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-text-x-java.png
+%%T%%/jre/lib/desktop/icons/hicolor/16x16/apps/sun-java.png
+%%T%%/jre/lib/desktop/icons/hicolor/16x16/apps/sun-javaws.png
+%%T%%/jre/lib/desktop/icons/hicolor/16x16/apps/sun-jcontrol.png
+%%T%%/jre/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/jre/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/jre/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-text-x-java.png
+%%T%%/jre/lib/desktop/icons/hicolor/48x48/apps/sun-java.png
+%%T%%/jre/lib/desktop/icons/hicolor/48x48/apps/sun-javaws.png
+%%T%%/jre/lib/desktop/icons/hicolor/48x48/apps/sun-jcontrol.png
+%%T%%/jre/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/jre/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/jre/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-text-x-java.png
+%%T%%/jre/lib/desktop/mime/packages/x-java-archive.xml
+%%T%%/jre/lib/desktop/mime/packages/x-java-jnlp-file.xml
 %%T%%/jre/lib/ext/dnsns.jar
 %%T%%/jre/lib/ext/localedata.jar
+%%T%%/jre/lib/ext/meta-index
 %%T%%/jre/lib/ext/sunjce_provider.jar
 %%T%%/jre/lib/ext/sunpkcs11.jar
 %%T%%/jre/lib/flavormap.properties
@@ -1520,20 +1698,12 @@
 %%T%%/jre/lib/fontconfig.RedHat.2.1.properties.src
 %%T%%/jre/lib/fontconfig.RedHat.3.bfc
 %%T%%/jre/lib/fontconfig.RedHat.3.properties.src
-%%T%%/jre/lib/fontconfig.RedHat.8.0.bfc
-%%T%%/jre/lib/fontconfig.RedHat.8.0.properties.src
-%%T%%/jre/lib/fontconfig.RedHat.9.0.bfc
-%%T%%/jre/lib/fontconfig.RedHat.9.0.properties.src
 %%T%%/jre/lib/fontconfig.RedHat.bfc
 %%T%%/jre/lib/fontconfig.RedHat.properties.src
 %%T%%/jre/lib/fontconfig.SuSE.bfc
 %%T%%/jre/lib/fontconfig.SuSE.properties.src
-%%T%%/jre/lib/fontconfig.Sun.2003.bfc
-%%T%%/jre/lib/fontconfig.Sun.2003.properties.src
 %%T%%/jre/lib/fontconfig.Sun.bfc
 %%T%%/jre/lib/fontconfig.Sun.properties.src
-%%T%%/jre/lib/fontconfig.Turbo.8.0.bfc
-%%T%%/jre/lib/fontconfig.Turbo.8.0.properties.src
 %%T%%/jre/lib/fontconfig.Turbo.bfc
 %%T%%/jre/lib/fontconfig.Turbo.properties.src
 %%T%%/jre/lib/fontconfig.bfc
@@ -1547,14 +1717,14 @@
 %%T%%/jre/lib/fonts/LucidaTypewriterBold.ttf
 %%T%%/jre/lib/fonts/LucidaTypewriterRegular.ttf
 %%T%%/jre/lib/fonts/fonts.dir
-%%T%%/jre/lib/i386/awt_robot
 %%T%%/jre/lib/i386/client/Xusage.txt
 %%T%%/jre/lib/i386/client/libjsig.so
 %%T%%/jre/lib/i386/client/libjvm.so
-%%T%%/jre/lib/i386/gtkhelper
 %%T%%/jre/lib/i386/headless/libmawt.so
+%%T%%/jre/lib/i386/jli/libjli.so
 %%T%%/jre/lib/i386/jvm.cfg
 %%T%%/jre/lib/i386/libJdbcOdbc.so
+%%T%%/jre/lib/i386/libattach.so
 %%T%%/jre/lib/i386/libawt.so
 %%T%%/jre/lib/i386/libcmm.so
 %%T%%/jre/lib/i386/libdcpr.so
@@ -1564,6 +1734,8 @@
 %%T%%/jre/lib/i386/libhprof.so
 %%T%%/jre/lib/i386/libinstrument.so
 %%T%%/jre/lib/i386/libioser12.so
+%%T%%/jre/lib/i386/libj2gss.so
+%%T%%/jre/lib/i386/libj2pcsc.so
 %%T%%/jre/lib/i386/libj2pkcs11.so
 %%T%%/jre/lib/i386/libjaas_unix.so
 %%T%%/jre/lib/i386/libjava.so
@@ -1580,10 +1752,13 @@
 %%T%%/jre/lib/i386/libmanagement.so
 %%T%%/jre/lib/i386/libmlib_image.so
 %%T%%/jre/lib/i386/libnative_chmod.so
+%%T%%/jre/lib/i386/libnative_chmod_g.so
 %%T%%/jre/lib/i386/libnet.so
 %%T%%/jre/lib/i386/libnio.so
+%%T%%/jre/lib/i386/libnpt.so
 %%T%%/jre/lib/i386/librmi.so
 %%T%%/jre/lib/i386/libsaproc.so
+%%T%%/jre/lib/i386/libsplashscreen.so
 %%T%%/jre/lib/i386/libunpack.so
 %%T%%/jre/lib/i386/libverify.so
 %%T%%/jre/lib/i386/libzip.so
@@ -1607,21 +1782,9 @@
 %%T%%/jre/lib/images/icons/sun-java_HighContrast.png
 %%T%%/jre/lib/images/icons/sun-java_HighContrastInverse.png
 %%T%%/jre/lib/images/icons/sun-java_LowContrast.png
-%%T%%/jre/lib/javaws.pack
-%%T%%/jre/lib/javaws/Java1.5.ico
-%%T%%/jre/lib/javaws/messages.properties
-%%T%%/jre/lib/javaws/messages_de.properties
-%%T%%/jre/lib/javaws/messages_es.properties
-%%T%%/jre/lib/javaws/messages_fr.properties
-%%T%%/jre/lib/javaws/messages_it.properties
-%%T%%/jre/lib/javaws/messages_ja.properties
-%%T%%/jre/lib/javaws/messages_ko.properties
-%%T%%/jre/lib/javaws/messages_sv.properties
-%%T%%/jre/lib/javaws/messages_zh_CN.properties
-%%T%%/jre/lib/javaws/messages_zh_HK.properties
-%%T%%/jre/lib/javaws/messages_zh_TW.properties
-%%T%%/jre/lib/javaws/miniSplash.jpg
+%%T%%/jre/lib/javaws.jar
 %%T%%/jre/lib/jce.jar
+%%T%%/jre/lib/jexec
 %%T%%/jre/lib/jsse.jar
 %%T%%/jre/lib/jvm.hprof.txt
 %%T%%/jre/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
@@ -1638,10 +1801,12 @@
 %%T%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
 %%T%%/jre/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
 %%T%%/jre/lib/logging.properties
+%%T%%/jre/lib/management-agent.jar
 %%T%%/jre/lib/management/jmxremote.access
 %%T%%/jre/lib/management/jmxremote.password.template
 %%T%%/jre/lib/management/management.properties
 %%T%%/jre/lib/management/snmp.acl.template
+%%T%%/jre/lib/meta-index
 %%T%%/jre/lib/net.properties
 %%T%%/jre/lib/oblique-fonts/LucidaSansDemiOblique.ttf
 %%T%%/jre/lib/oblique-fonts/LucidaSansOblique.ttf
@@ -1651,6 +1816,7 @@
 %%T%%/jre/lib/plugin.jar
 %%T%%/jre/lib/psfont.properties.ja
 %%T%%/jre/lib/psfontj2d.properties
+%%T%%/jre/lib/resources.jar
 %%T%%/jre/lib/rt.jar
 %%T%%/jre/lib/security/US_export_policy.jar
 %%T%%/jre/lib/security/cacerts
@@ -2101,10 +2267,12 @@
 %%T%%/jre/plugin/desktop/sun_java.png
 %%T%%/jre/plugin/i386/ns7-gcc29/libjavaplugin_oji.so
 %%T%%/jre/plugin/i386/ns7/libjavaplugin_oji.so
+%%T%%/lib/ct.sym
 %%T%%/lib/dt.jar
 %%T%%/lib/htmlconverter.jar
 %%T%%/lib/ir.idl
 %%T%%/lib/jconsole.jar
+%%T%%/lib/jexec
 %%T%%/lib/orb.idl
 %%T%%/lib/sa-jdi.jar
 %%T%%/lib/tools.jar
@@ -2123,17 +2291,16 @@
 %%T%%/man/ja_JP.eucJP/man1/javaws.1
 %%T%%/man/ja_JP.eucJP/man1/jconsole.1
 %%T%%/man/ja_JP.eucJP/man1/jdb.1
+%%T%%/man/ja_JP.eucJP/man1/jhat.1
 %%T%%/man/ja_JP.eucJP/man1/jinfo.1
 %%T%%/man/ja_JP.eucJP/man1/jmap.1
 %%T%%/man/ja_JP.eucJP/man1/jps.1
+%%T%%/man/ja_JP.eucJP/man1/jrunscript.1
 %%T%%/man/ja_JP.eucJP/man1/jsadebugd.1
 %%T%%/man/ja_JP.eucJP/man1/jstack.1
 %%T%%/man/ja_JP.eucJP/man1/jstat.1
 %%T%%/man/ja_JP.eucJP/man1/jstatd.1
 %%T%%/man/ja_JP.eucJP/man1/keytool.1
-%%T%%/man/ja_JP.eucJP/man1/kinit.1
-%%T%%/man/ja_JP.eucJP/man1/klist.1
-%%T%%/man/ja_JP.eucJP/man1/ktab.1
 %%T%%/man/ja_JP.eucJP/man1/native2ascii.1
 %%T%%/man/ja_JP.eucJP/man1/orbd.1
 %%T%%/man/ja_JP.eucJP/man1/pack200.1
@@ -2141,10 +2308,14 @@
 %%T%%/man/ja_JP.eucJP/man1/rmic.1
 %%T%%/man/ja_JP.eucJP/man1/rmid.1
 %%T%%/man/ja_JP.eucJP/man1/rmiregistry.1
+%%T%%/man/ja_JP.eucJP/man1/schemagen.1
 %%T%%/man/ja_JP.eucJP/man1/serialver.1
 %%T%%/man/ja_JP.eucJP/man1/servertool.1
 %%T%%/man/ja_JP.eucJP/man1/tnameserv.1
 %%T%%/man/ja_JP.eucJP/man1/unpack200.1
+%%T%%/man/ja_JP.eucJP/man1/wsgen.1
+%%T%%/man/ja_JP.eucJP/man1/wsimport.1
+%%T%%/man/ja_JP.eucJP/man1/xjc.1
 %%T%%/man/man1/appletviewer.1
 %%T%%/man/man1/apt.1
 %%T%%/man/man1/extcheck.1
@@ -2159,17 +2330,16 @@
 %%T%%/man/man1/javaws.1
 %%T%%/man/man1/jconsole.1
 %%T%%/man/man1/jdb.1
+%%T%%/man/man1/jhat.1
 %%T%%/man/man1/jinfo.1
 %%T%%/man/man1/jmap.1
 %%T%%/man/man1/jps.1
+%%T%%/man/man1/jrunscript.1
 %%T%%/man/man1/jsadebugd.1
 %%T%%/man/man1/jstack.1
 %%T%%/man/man1/jstat.1
 %%T%%/man/man1/jstatd.1
 %%T%%/man/man1/keytool.1
-%%T%%/man/man1/kinit.1
-%%T%%/man/man1/klist.1
-%%T%%/man/man1/ktab.1
 %%T%%/man/man1/native2ascii.1
 %%T%%/man/man1/orbd.1
 %%T%%/man/man1/pack200.1
@@ -2177,10 +2347,62 @@
 %%T%%/man/man1/rmic.1
 %%T%%/man/man1/rmid.1
 %%T%%/man/man1/rmiregistry.1
+%%T%%/man/man1/schemagen.1
 %%T%%/man/man1/serialver.1
 %%T%%/man/man1/servertool.1
 %%T%%/man/man1/tnameserv.1
 %%T%%/man/man1/unpack200.1
+%%T%%/man/man1/wsgen.1
+%%T%%/man/man1/wsimport.1
+%%T%%/man/man1/xjc.1
+%%T%%/sample/javac/processing/src/CheckNamesProcessor.java
+%%T%%/sample/jmx/jmx-scandir/build.properties
+%%T%%/sample/jmx/jmx-scandir/build.xml
+%%T%%/sample/jmx/jmx-scandir/docfiles/connect-local-ant-run.jpg
+%%T%%/sample/jmx/jmx-scandir/docfiles/connect-local-java-jar.jpg
+%%T%%/sample/jmx/jmx-scandir/docfiles/connect-local.jpg
+%%T%%/sample/jmx/jmx-scandir/docfiles/remote-connection-failed.jpg
+%%T%%/sample/jmx/jmx-scandir/docfiles/remote-connection.jpg
+%%T%%/sample/jmx/jmx-scandir/docfiles/scandir-config.jpg
+%%T%%/sample/jmx/jmx-scandir/docfiles/scandir-result.jpg
+%%T%%/sample/jmx/jmx-scandir/docfiles/scandir-start.jpg
+%%T%%/sample/jmx/jmx-scandir/docfiles/scandir-start2.jpg
+%%T%%/sample/jmx/jmx-scandir/index.html
+%%T%%/sample/jmx/jmx-scandir/keystore
+%%T%%/sample/jmx/jmx-scandir/logging.properties
+%%T%%/sample/jmx/jmx-scandir/manifest.mf
+%%T%%/sample/jmx/jmx-scandir/nbproject/file-targets.xml
+%%T%%/sample/jmx/jmx-scandir/nbproject/jdk.xml
+%%T%%/sample/jmx/jmx-scandir/nbproject/netbeans-targets.xml
+%%T%%/sample/jmx/jmx-scandir/nbproject/project.xml
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/DirectoryScanner.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/DirectoryScannerMXBean.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ResultLogManager.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ResultLogManagerMXBean.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ScanDirAgent.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ScanDirClient.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ScanDirConfig.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ScanDirConfigMXBean.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ScanManager.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ScanManagerMXBean.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/DirectoryScannerConfig.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/FileMatch.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/ResultLogConfig.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/ResultRecord.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/ScanManagerConfig.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/XmlConfigUtils.java
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/package.html
+%%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/package.html
+%%T%%/sample/jmx/jmx-scandir/src/etc/access.properties
+%%T%%/sample/jmx/jmx-scandir/src/etc/management.properties
+%%T%%/sample/jmx/jmx-scandir/src/etc/password.properties
+%%T%%/sample/jmx/jmx-scandir/src/etc/testconfig.xml
+%%T%%/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/scandir/DirectoryScannerTest.java
+%%T%%/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/scandir/ScanDirConfigTest.java
+%%T%%/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/scandir/ScanManagerTest.java
+%%T%%/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/scandir/TestUtils.java
+%%T%%/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/scandir/config/XmlConfigUtilsTest.java
+%%T%%/sample/jmx/jmx-scandir/truststore
 %%T%%/sample/jnlp/corba/GNUmakefile
 %%T%%/sample/jnlp/corba/README
 %%T%%/sample/jnlp/corba/src/core/HelloClient.java
@@ -2226,7 +2448,7 @@
 %%T%%/sample/jnlp/jreinstaller/src/share/classes/jnlp/sample/JreInstaller/resources/strings_sv.properties
 %%T%%/sample/jnlp/jreinstaller/src/share/classes/jnlp/sample/JreInstaller/resources/strings_zh_CN.properties
 %%T%%/sample/jnlp/jreinstaller/src/share/classes/jnlp/sample/JreInstaller/resources/strings_zh_TW.properties
-%%T%%/sample/jnlp/jreinstaller/src/share/classes/jnlp/sample/JreInstaller/resources/sunLogo.gif
+%%T%%/sample/jnlp/jreinstaller/src/share/classes/jnlp/sample/JreInstaller/resources/sunlogo.png
 %%T%%/sample/jnlp/jreinstaller/src/win32/jreinstallers/WindowsInstaller.c
 %%T%%/sample/jnlp/jreinstaller/src/win32/jreinstallers/registry.cpp
 %%T%%/sample/jnlp/jreinstaller/src/win32/jreinstallers/versionChecker.c
@@ -2291,6 +2513,7 @@
 %%T%%/sample/jnlp/webpad/war/app/version.xml
 %%T%%/sample/jnlp/webpad/war/app/webpad.jnlp
 %%T%%/sample/jnlp/webpad/war/index.html
+%%T%%/sample/nbproject/project.xml
 %%T%%/sample/nio/server/AcceptHandler.java
 %%T%%/sample/nio/server/Acceptor.java
 %%T%%/sample/nio/server/B1.java
@@ -2316,12 +2539,90 @@
 %%T%%/sample/nio/server/Server.java
 %%T%%/sample/nio/server/StringContent.java
 %%T%%/sample/nio/server/URLDumper.java
+%%T%%/sample/scripting/scriptpad/README.txt
+%%T%%/sample/scripting/scriptpad/build.properties
+%%T%%/sample/scripting/scriptpad/build.xml
+%%T%%/sample/scripting/scriptpad/nbproject/file-targets.xml
+%%T%%/sample/scripting/scriptpad/nbproject/jdk.xml
+%%T%%/sample/scripting/scriptpad/nbproject/netbeans-targets.xml
+%%T%%/sample/scripting/scriptpad/nbproject/project.xml
+%%T%%/sample/scripting/scriptpad/src/META-INF/manifest.mf
+%%T%%/sample/scripting/scriptpad/src/com/sun/sample/scriptpad/Main.java
+%%T%%/sample/scripting/scriptpad/src/resources/Main.js
+%%T%%/sample/scripting/scriptpad/src/resources/conc.js
+%%T%%/sample/scripting/scriptpad/src/resources/gui.js
+%%T%%/sample/scripting/scriptpad/src/resources/mm.js
+%%T%%/sample/scripting/scriptpad/src/resources/scriptpad.js
+%%T%%/sample/scripting/scriptpad/src/scripts/README.txt
+%%T%%/sample/scripting/scriptpad/src/scripts/browse.js
+%%T%%/sample/scripting/scriptpad/src/scripts/insertfile.js
+%%T%%/sample/scripting/scriptpad/src/scripts/linewrap.js
+%%T%%/sample/scripting/scriptpad/src/scripts/mail.js
+%%T%%/sample/scripting/scriptpad/src/scripts/memmonitor.js
+%%T%%/sample/scripting/scriptpad/src/scripts/memory.bat
+%%T%%/sample/scripting/scriptpad/src/scripts/memory.js
+%%T%%/sample/scripting/scriptpad/src/scripts/memory.sh
+%%T%%/sample/scripting/scriptpad/src/scripts/textcolor.js
+%%T%%/sample/webservices/EbayClient/build.properties
+%%T%%/sample/webservices/EbayClient/build.xml
+%%T%%/sample/webservices/EbayClient/eBaySvc.wsdl
+%%T%%/sample/webservices/EbayClient/ebay.properties
+%%T%%/sample/webservices/EbayClient/index.html
+%%T%%/sample/webservices/EbayClient/jax-ws-catalog.xml
+%%T%%/sample/webservices/EbayClient/manifest.mf
+%%T%%/sample/webservices/EbayClient/nbproject/file-targets.xml
+%%T%%/sample/webservices/EbayClient/nbproject/jdk.xml
+%%T%%/sample/webservices/EbayClient/nbproject/netbeans-targets.xml
+%%T%%/sample/webservices/EbayClient/nbproject/project.xml
+%%T%%/sample/webservices/EbayClient/src/ebay/client/MainGUIApp.java
+%%T%%/sample/webservices/EbayClient/src/ebay/client/ViewItemDetails.java
+%%T%%/sample/webservices/EbayClient/src/ebay/client/handler/RequesterCredentials.java
+%%T%%/sample/webservices/EbayServer/build.properties
+%%T%%/sample/webservices/EbayServer/build.xml
+%%T%%/sample/webservices/EbayServer/eBaySvc.wsdl
+%%T%%/sample/webservices/EbayServer/images/8d_2.jpg
+%%T%%/sample/webservices/EbayServer/images/Sun_Fire_E20K_Server.jpg
+%%T%%/sample/webservices/EbayServer/images/sun_blade_1000_h400px.jpg
+%%T%%/sample/webservices/EbayServer/index.html
+%%T%%/sample/webservices/EbayServer/manifest.mf
+%%T%%/sample/webservices/EbayServer/nbproject/file-targets.xml
+%%T%%/sample/webservices/EbayServer/nbproject/jdk.xml
+%%T%%/sample/webservices/EbayServer/nbproject/netbeans-targets.xml
+%%T%%/sample/webservices/EbayServer/nbproject/project.xml
+%%T%%/sample/webservices/EbayServer/src/ebay/server/Ebay.java
+%%T%%/sample/webservices/EbayServer/src/ebay/server/ImageProvider.java
+%%T%%/sample/webservices/EbayServer/src/ebay/server/Main.java
 %%T%%/src.zip
 @exec	mkdir -p %D/share/doc/java
 @unexec	rmdir %D/share/doc/java 2>/dev/null || true
 @exec	%%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JDK%%PORTVERSION%%"
+@dirrm %%T%%/sample/webservices/EbayServer/src/ebay/server
+@dirrm %%T%%/sample/webservices/EbayServer/src/ebay
+@dirrm %%T%%/sample/webservices/EbayServer/src
+@dirrm %%T%%/sample/webservices/EbayServer/nbproject
+@dirrm %%T%%/sample/webservices/EbayServer/images
+@dirrm %%T%%/sample/webservices/EbayServer
+@dirrm %%T%%/sample/webservices/EbayClient/src/ebay/client/handler
+@dirrm %%T%%/sample/webservices/EbayClient/src/ebay/client
+@dirrm %%T%%/sample/webservices/EbayClient/src/ebay
+@dirrm %%T%%/sample/webservices/EbayClient/src
+@dirrm %%T%%/sample/webservices/EbayClient/nbproject
+@dirrm %%T%%/sample/webservices/EbayClient
+@dirrm %%T%%/sample/webservices
+@dirrm %%T%%/sample/scripting/scriptpad/src/scripts
+@dirrm %%T%%/sample/scripting/scriptpad/src/resources
+@dirrm %%T%%/sample/scripting/scriptpad/src/com/sun/sample/scriptpad
+@dirrm %%T%%/sample/scripting/scriptpad/src/com/sun/sample
+@dirrm %%T%%/sample/scripting/scriptpad/src/com/sun
+@dirrm %%T%%/sample/scripting/scriptpad/src/com
+@dirrm %%T%%/sample/scripting/scriptpad/src/META-INF
+@dirrm %%T%%/sample/scripting/scriptpad/src
+@dirrm %%T%%/sample/scripting/scriptpad/nbproject
+@dirrm %%T%%/sample/scripting/scriptpad
+@dirrm %%T%%/sample/scripting
 @dirrm %%T%%/sample/nio/server
 @dirrm %%T%%/sample/nio
+@dirrm %%T%%/sample/nbproject
 @dirrm %%T%%/sample/jnlp/webpad/war/app
 @dirrm %%T%%/sample/jnlp/webpad/war/WEB-INF
 @dirrm %%T%%/sample/jnlp/webpad/war
@@ -2380,6 +2681,28 @@
 @dirrm %%T%%/sample/jnlp/corba/src
 @dirrm %%T%%/sample/jnlp/corba
 @dirrm %%T%%/sample/jnlp
+@dirrm %%T%%/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/scandir/config
+@dirrm %%T%%/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/scandir
+@dirrm %%T%%/sample/jmx/jmx-scandir/test/com/sun/jmx/examples
+@dirrm %%T%%/sample/jmx/jmx-scandir/test/com/sun/jmx
+@dirrm %%T%%/sample/jmx/jmx-scandir/test/com/sun
+@dirrm %%T%%/sample/jmx/jmx-scandir/test/com
+@dirrm %%T%%/sample/jmx/jmx-scandir/test
+@dirrm %%T%%/sample/jmx/jmx-scandir/src/etc
+@dirrm %%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config
+@dirrm %%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir
+@dirrm %%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx/examples
+@dirrm %%T%%/sample/jmx/jmx-scandir/src/com/sun/jmx
+@dirrm %%T%%/sample/jmx/jmx-scandir/src/com/sun
+@dirrm %%T%%/sample/jmx/jmx-scandir/src/com
+@dirrm %%T%%/sample/jmx/jmx-scandir/src
+@dirrm %%T%%/sample/jmx/jmx-scandir/nbproject
+@dirrm %%T%%/sample/jmx/jmx-scandir/docfiles
+@dirrm %%T%%/sample/jmx/jmx-scandir
+@dirrm %%T%%/sample/jmx
+@dirrm %%T%%/sample/javac/processing/src
+@dirrm %%T%%/sample/javac/processing
+@dirrm %%T%%/sample/javac
 @dirrm %%T%%/sample
 @dirrm %%T%%/man/man1
 @dirrm %%T%%/man/ja_JP.eucJP/man1
@@ -2437,7 +2760,6 @@
 @dirrm %%T%%/jre/lib/locale/de/LC_MESSAGES
 @dirrm %%T%%/jre/lib/locale/de
 @dirrm %%T%%/jre/lib/locale
-@dirrm %%T%%/jre/lib/javaws
 @dirrm %%T%%/jre/lib/images/icons
 @dirrm %%T%%/jre/lib/images/cursors
 @dirrm %%T%%/jre/lib/images
@@ -2446,11 +2768,45 @@
 @dirrm %%T%%/jre/lib/i386/server
 @dirrm %%T%%/jre/lib/i386/native_threads
 @dirrm %%T%%/jre/lib/i386/motif21
+@dirrm %%T%%/jre/lib/i386/jli
 @dirrm %%T%%/jre/lib/i386/headless
 @dirrm %%T%%/jre/lib/i386/client
 @dirrm %%T%%/jre/lib/i386
 @dirrm %%T%%/jre/lib/fonts
 @dirrm %%T%%/jre/lib/ext
+@dirrm %%T%%/jre/lib/desktop/mime/packages
+@dirrm %%T%%/jre/lib/desktop/mime
+@dirrm %%T%%/jre/lib/desktop/icons/hicolor/48x48/mimetypes
+@dirrm %%T%%/jre/lib/desktop/icons/hicolor/48x48/apps
+@dirrm %%T%%/jre/lib/desktop/icons/hicolor/48x48
+@dirrm %%T%%/jre/lib/desktop/icons/hicolor/16x16/mimetypes
+@dirrm %%T%%/jre/lib/desktop/icons/hicolor/16x16/apps
+@dirrm %%T%%/jre/lib/desktop/icons/hicolor/16x16
+@dirrm %%T%%/jre/lib/desktop/icons/hicolor
+@dirrm %%T%%/jre/lib/desktop/icons/LowContrast/48x48/mimetypes
+@dirrm %%T%%/jre/lib/desktop/icons/LowContrast/48x48/apps
+@dirrm %%T%%/jre/lib/desktop/icons/LowContrast/48x48
+@dirrm %%T%%/jre/lib/desktop/icons/LowContrast/16x16/mimetypes
+@dirrm %%T%%/jre/lib/desktop/icons/LowContrast/16x16/apps
+@dirrm %%T%%/jre/lib/desktop/icons/LowContrast/16x16
+@dirrm %%T%%/jre/lib/desktop/icons/LowContrast
+@dirrm %%T%%/jre/lib/desktop/icons/HighContrastInverse/48x48/mimetypes
+@dirrm %%T%%/jre/lib/desktop/icons/HighContrastInverse/48x48/apps
+@dirrm %%T%%/jre/lib/desktop/icons/HighContrastInverse/48x48
+@dirrm %%T%%/jre/lib/desktop/icons/HighContrastInverse/16x16/mimetypes
+@dirrm %%T%%/jre/lib/desktop/icons/HighContrastInverse/16x16/apps
+@dirrm %%T%%/jre/lib/desktop/icons/HighContrastInverse/16x16
+@dirrm %%T%%/jre/lib/desktop/icons/HighContrastInverse
+@dirrm %%T%%/jre/lib/desktop/icons/HighContrast/48x48/mimetypes
+@dirrm %%T%%/jre/lib/desktop/icons/HighContrast/48x48/apps
+@dirrm %%T%%/jre/lib/desktop/icons/HighContrast/48x48
+@dirrm %%T%%/jre/lib/desktop/icons/HighContrast/16x16/mimetypes
+@dirrm %%T%%/jre/lib/desktop/icons/HighContrast/16x16/apps
+@dirrm %%T%%/jre/lib/desktop/icons/HighContrast/16x16
+@dirrm %%T%%/jre/lib/desktop/icons/HighContrast
+@dirrm %%T%%/jre/lib/desktop/icons
+@dirrm %%T%%/jre/lib/desktop/applications
+@dirrm %%T%%/jre/lib/desktop
 @dirrm %%T%%/jre/lib/deploy
 @dirrm %%T%%/jre/lib/cmm
 @dirrm %%T%%/jre/lib/audio
@@ -2462,6 +2818,18 @@
 @dirrm %%T%%/jre
 @dirrm %%T%%/include/linux
 @dirrm %%T%%/include
+@dirrm %%T%%/demo/scripting/jconsole-plugin/src/scripts
+@dirrm %%T%%/demo/scripting/jconsole-plugin/src/resources
+@dirrm %%T%%/demo/scripting/jconsole-plugin/src/com/sun/demo/scripting/jconsole
+@dirrm %%T%%/demo/scripting/jconsole-plugin/src/com/sun/demo/scripting
+@dirrm %%T%%/demo/scripting/jconsole-plugin/src/com/sun/demo
+@dirrm %%T%%/demo/scripting/jconsole-plugin/src/com/sun
+@dirrm %%T%%/demo/scripting/jconsole-plugin/src/com
+@dirrm %%T%%/demo/scripting/jconsole-plugin/src/META-INF/services
+@dirrm %%T%%/demo/scripting/jconsole-plugin/src/META-INF
+@dirrm %%T%%/demo/scripting/jconsole-plugin/src
+@dirrm %%T%%/demo/scripting/jconsole-plugin
+@dirrm %%T%%/demo/scripting
 @dirrm %%T%%/demo/plugin/jfc/TableExample/src
 @dirrm %%T%%/demo/plugin/jfc/TableExample
 @dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tooltip
@@ -2560,10 +2928,46 @@
 @dirrm %%T%%/demo/plugin/applets/Animator
 @dirrm %%T%%/demo/plugin/applets
 @dirrm %%T%%/demo/plugin
+@dirrm %%T%%/demo/nbproject/scripting/jconsole-plugin/nbproject
+@dirrm %%T%%/demo/nbproject/scripting/jconsole-plugin
+@dirrm %%T%%/demo/nbproject/scripting
+@dirrm %%T%%/demo/nbproject/management/VerboseGC/nbproject
+@dirrm %%T%%/demo/nbproject/management/VerboseGC
+@dirrm %%T%%/demo/nbproject/management/MemoryMonitor/nbproject
+@dirrm %%T%%/demo/nbproject/management/MemoryMonitor
+@dirrm %%T%%/demo/nbproject/management/JTop/nbproject
+@dirrm %%T%%/demo/nbproject/management/JTop
+@dirrm %%T%%/demo/nbproject/management/FullThreadDump/nbproject
+@dirrm %%T%%/demo/nbproject/management/FullThreadDump
+@dirrm %%T%%/demo/nbproject/management
+@dirrm %%T%%/demo/nbproject/jfc/TableExample/nbproject
+@dirrm %%T%%/demo/nbproject/jfc/TableExample
+@dirrm %%T%%/demo/nbproject/jfc/SwingSet2/nbproject
+@dirrm %%T%%/demo/nbproject/jfc/SwingSet2
+@dirrm %%T%%/demo/nbproject/jfc/SwingApplet/nbproject
+@dirrm %%T%%/demo/nbproject/jfc/SwingApplet
+@dirrm %%T%%/demo/nbproject/jfc/Stylepad/nbproject
+@dirrm %%T%%/demo/nbproject/jfc/Stylepad
+@dirrm %%T%%/demo/nbproject/jfc/SampleTree/nbproject
+@dirrm %%T%%/demo/nbproject/jfc/SampleTree
+@dirrm %%T%%/demo/nbproject/jfc/Notepad/nbproject
+@dirrm %%T%%/demo/nbproject/jfc/Notepad
+@dirrm %%T%%/demo/nbproject/jfc/Metalworks/nbproject
+@dirrm %%T%%/demo/nbproject/jfc/Metalworks
+@dirrm %%T%%/demo/nbproject/jfc/Java2D/nbproject
+@dirrm %%T%%/demo/nbproject/jfc/Java2D
+@dirrm %%T%%/demo/nbproject/jfc/Font2DTest/nbproject
+@dirrm %%T%%/demo/nbproject/jfc/Font2DTest
+@dirrm %%T%%/demo/nbproject/jfc/FileChooserDemo/nbproject
+@dirrm %%T%%/demo/nbproject/jfc/FileChooserDemo
+@dirrm %%T%%/demo/nbproject/jfc
+@dirrm %%T%%/demo/nbproject
 @dirrm %%T%%/demo/management/VerboseGC/src
 @dirrm %%T%%/demo/management/VerboseGC
 @dirrm %%T%%/demo/management/MemoryMonitor/src
 @dirrm %%T%%/demo/management/MemoryMonitor
+@dirrm %%T%%/demo/management/JTop/src/META-INF/services
+@dirrm %%T%%/demo/management/JTop/src/META-INF
 @dirrm %%T%%/demo/management/JTop/src
 @dirrm %%T%%/demo/management/JTop
 @dirrm %%T%%/demo/management/FullThreadDump/src
@@ -2578,6 +2982,9 @@
 @dirrm %%T%%/demo/jvmti/mtrace/src
 @dirrm %%T%%/demo/jvmti/mtrace/lib
 @dirrm %%T%%/demo/jvmti/mtrace
+@dirrm %%T%%/demo/jvmti/minst/src
+@dirrm %%T%%/demo/jvmti/minst/lib
+@dirrm %%T%%/demo/jvmti/minst
 @dirrm %%T%%/demo/jvmti/java_crw_demo/src
 @dirrm %%T%%/demo/jvmti/java_crw_demo
 @dirrm %%T%%/demo/jvmti/hprof/src/linux
