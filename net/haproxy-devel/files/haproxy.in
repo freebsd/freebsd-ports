@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/haproxy-devel/files/Attic/haproxy.sh.in,v 1.1 2006-11-01 14:42:14 clement Exp $
+# $FreeBSD: 
 #
 
 # PROVIDE: haproxy
