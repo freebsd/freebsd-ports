@@ -29,6 +29,8 @@ LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
+BROKEN=		Checksum mismatch
+
 WRKSRC=		${WRKDIR}/Amaya/obj
 
 USE_GMAKE=	yes
