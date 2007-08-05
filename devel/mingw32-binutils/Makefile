@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}-${BINUTILVERSION}
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	FSF binutils-2.17 for Windows cross-development
 
+BROKEN=		Size mismatch
+
 BINUTILVERSION=	2.17.50
 
 USE_BZIP2=	yes

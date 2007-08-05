@@ -21,6 +21,8 @@ DISTFILES+=	${OOOBUILD_SOURCE} \
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Community enhanced/bug fixed version of OpenOffice.org
 
+BROKEN=		Size mismatch
+
 DESCR=		${.CURDIR}/pkg-descr
 
 OOOBUILD_VERSION=2.2.1
