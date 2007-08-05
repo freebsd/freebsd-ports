@@ -1,0 +1,285 @@
+# Contains the options and dependencies that are shared
+# among mplayer and mencoder
+#
+# Some of the knobs are not tunable by the OPTIONS framework. These are
+# explained here in detail.
+#
+# CPU features:
+#
+# The following is only of interest if you haven't enabled
+# RTCPU in your OPTIONS selection.
+# The correct instruction set of your processor is normally
+# auto-detected, so there is probably no necessity to change them.
+# Note that disabling SIMD via the OPTIONS framework completely
+# disables utilization of vector engines, i.e. it implies
+# WITHOUT_MMX, WITHOUT_3DNOW and WITHOUT_SSE
+#
+# WITHOUT_MMX
+# default: autodetected
+# disables using of mmx code
+#
+# WITHOUT_3DNOW
+# default: autodetected
+# disables using of 3dNow! instructions on AMD CPUs
+#
+# WITHOUT_SSE
+# default: autodetected
+# disables all mmx2 and sse/sse2 code
+# CAUTION: There are some Athlon CPUs which claim to be sse-able but
+# aren't. If you encounter strange problems on such a CPU, try
+# to build mplayer with this knob and report the problem
+# NOTE: SSE is available only if "options CPU_ENABLE_SSE" in your
+# kernel config. This is standard for 5.x and newer systems on I686_CPU
+# and later. 4.x users will have to define this explicitly.
+#
+# Feature options:
+# These options influence some general behaviour of mplayer. Most of the featues,
+# for example all the codecs, are selected via the OPTIONS framework.
+#
+# WITH_DVD_DEVICE=/path/to/desired/device
+# default 5.x: /dev/acd0
+# default 4.x: /dev/acd0c
+# This option changes the default device where mplayer looks for
+# a DVD medium
+#
+# WITH_CDROM_DEVICE=/path/to/desired/device
+# default 5.x: /dev/acd0
+# default 4.x: /dev/acd0c
+# This option changes the default cdrom device, maybe useful for VCDs
+#
+# WITH_LANG=<your choice>
+# default: en
+# Enables language support bg, cz, de, dk, en, es, fr, gr, hu, it, ko, nl, no, pl, pt_BR, ro, ru, sk, tr, uk, zh
+#
+
+.if defined(WITH_LANG)
+CONFIGURE_ARGS+=--language=${WITH_LANG}
+.endif
+
+#On i386, gcc runs out of general purpose registers when
+#trying to compile a debug version with the default flags.
+.if defined(WITH_DEBUG)
+.if ${ARCH} == "i386"
+DEBUG_FLAGS=	-g -O -fomit-frame-pointer
+.endif
+.else
+.if !defined(WITHOUT_OCFLAGS)
+CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
+.else
+CFLAGS+=	-O -fomit-frame-pointer
+.endif
+.endif
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-inet6
+.else
+CATEGORIES+=	ipv6
+.endif
+
+.if !defined(WITHOUT_LIBUNGIF)
+LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
+#CONFIGURE_ARGS+=	--enable-gif
+.else
+CONFIGURE_ARGS+=	--disable-gif
+.endif
+
+.if defined(WITH_MAD)
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
+
+CONFIGURE_ARGS+=	--enable-mad \
+			--with-madlibdir=${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+=	--disable-mad
+.endif
+
+.if defined(WITH_LIBDV)
+LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
+CONFIGURE_ARGS+=	--enable-libdv
+.else
+CONFIGURE_ARGS+=	--disable-libdv
+.endif
+
+.if defined(WITH_X264)
+LIB_DEPENDS+=	x264.50:${PORTSDIR}/multimedia/x264
+.else
+CONFIGURE_ARGS+=	--disable-x264
+.endif
+
+.if !defined(WITH_TREMOR)
+CONFIGURE_ARGS+=	--disable-tremor-internal
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.endif
+
+.if !defined(WITHOUT_XVID)
+CONFIGURE_ARGS+=	--enable-xvid
+LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
+.else
+CONFIGURE_ARGS+=	--disable-xvid
+.endif
+
+.if defined(WITH_THEORA)
+LIB_DEPENDS+=	theora.2:${PORTSDIR}/multimedia/libtheora
+.else
+CONFIGURE_ARGS+=	--disable-theora
+.endif
+
+.if defined(WITH_LIBMPCDEC)
+LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
+.else
+CONFIGURE_ARGS+=	--disable-musepack
+.endif
+
+.if !defined(WITHOUT_DTS)
+CFLAGS+=		-I${LOCALBASE}/include
+CONFIGURE_ARGS+=	--enable-libdts
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libdca.a:${PORTSDIR}/multimedia/libdca
+.else
+CONFIGURE_ARGS+=	--disable-libdts
+.endif
+
+.if !defined(WITHOUT_SPEEX)
+CONFIGURE_ARGS+=	--enable-speex
+LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
+.else
+CONFIGURE_ARGS+=	--disable-speex
+.endif
+
+.if defined(WITH_XANIM)
+BUILD_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
+CONFIGURE_ARGS+=--enable-xanim --with-xanimlibdir=${X11BASE}/lib/X11/xanim
+.else
+CONFIGURE_ARGS+=--disable-xanim
+.endif
+
+.if defined(WITH_LIVEMEDIA)
+CONFIGURE_ARGS+=	--enable-live \
+			--with-livelibdir=${LOCALBASE}/live
+RUN_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
+BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
+.else
+CONFIGURE_ARGS+=	--disable-live
+.endif
+
+.if defined(WITH_XMMS)
+CONFIGURE_ARGS+=	--enable-xmms
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+.else
+CONFIGURE_ARGS+=	--disable-xmms
+.endif
+
+.if defined(WITH_JACK)
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+.else
+CONFIGURE_ARGS+=	--disable-jack
+.endif
+
+#.if defined(WITH_POLYP)
+#CONFIGURE_ARGS+=	--enable-polyp
+#LIB_DEPENDS+=		polyp-0.7.0:${PORTSDIR}/audio/polypaudio
+#.else
+#CONFIGURE_ARGS+=	--disable-polyp
+#.endif
+
+.if defined(WITH_NAS)
+CONFIGURE_ARGS+=	--enable-nas
+LIB_DEPENDS+=		audio.2:${PORTSDIR}/audio/nas
+.else
+CONFIGURE_ARGS+=	--disable-nas
+.endif
+
+.if defined(WITH_OPENAL)
+LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+.else
+CONFIGURE_ARGS+=	--disable-openal
+.endif
+
+.if defined(WITH_SMB)
+CONFIGURE_ARGS+=	--enable-smb
+LIB_DEPENDS+=		smbclient.0:${PORTSDIR}/net/samba-libsmbclient
+.else
+CONFIGURE_ARGS+=	--disable-smb
+.endif
+
+.if defined(WITH_FRIBIDI)
+LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
+CONFIGURE_ARGS+=	--enable-fribidi
+.else
+CONFIGURE_ARGS+=	--disable-fribidi
+.endif
+
+.if defined(WITH_CDPARANOIA)
+LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
+.else
+CONFIGURE_ARGS+=	--disable-cdparanoia
+.endif
+
+.if defined(WITH_LIBCDIO) && !defined(WITH_CDPARANOIA)
+BUILD_DEPENDS+=	${LOCALBASE}/include/cdio/cdio.h:${PORTSDIR}/sysutils/libcdio
+.else
+CONFIGURE_ARGS+=	--disable-libcdio
+.endif
+
+.if defined(WITH_LADSPA)
+RUN_DEPENDS+=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
+.else
+CONFIGURE_ARGS+=	--disable-ladspa
+.endif
+
+.if defined(WITH_LIBLZO)
+LIB_DEPENDS+=		lzo.1:${PORTSDIR}/archivers/lzo
+.else
+CONFIGURE_ARGS+=	--disable-liblzo
+.endif
+
+.if defined(WITH_DVD_DEVICE)
+DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
+.else
+DEFAULT_DVD_DEVICE=/dev/acd0
+.endif
+
+.if defined(WITH_CDROM_DEVICE)
+DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
+.else
+DEFAULT_CDROM_DEVICE=/dev/acd0
+.endif
+
+# "enable" build for other archs
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if !defined(WITHOUT_RTCPU)
+CONFIGURE_ARGS+=--enable-runtime-cpudetection
+.else #WITH_RTCPU
+.if defined(WITHOUT_MMX) || defined(WITHOUT_SIMD)
+CONFIGURE_ARGS+=--disable-mmx
+.endif
+.if defined(WITHOUT_3DNOW) || defined(WITHOUT_SIMD)
+CONFIGURE_ARGS+=--disable-3dnow --disable-3dnowext
+.endif
+.if defined(WITHOUT_SSE) || defined(WITHOUT_SIMD)
+CONFIGURE_ARGS+=--disable-mmxext --disable-sse --disable-sse2
+.endif
+.endif #WITH_RTCPU
+.if !defined(WITHOUT_WIN32) && !defined(PACKAGE_BUILDING) && ${ARCH} == "i386"
+RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
+CONFIGURE_ARGS+=	--with-win32libdir=${LOCALBASE}/lib/win32
+CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
+CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
+.else
+CONFIGURE_ARGS+=	--disable-win32 \
+			--disable-qtx-codecs
+.endif
+.endif # ARCH == i386/amd64
+
+.if defined(WITH_REALPLAYER)
+CONFIGURE_ARGS+=	--enable-real \
+			--with-reallibdir=${X11BASE}/lib/RealPlayer/codecs
+RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
+BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
+.else
+.if !defined(WITHOUT_WIN32) && !defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=	--enable-real \
+			--with-reallibdir=${LOCALBASE}/lib/win32
+.else
+CONFIGURE_ARGS+=	--disable-real
+.endif
+.endif
+
