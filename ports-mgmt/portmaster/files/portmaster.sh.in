@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.182
+# Local version: 1.183
 # $FreeBSD$
 
 # Copyright (c) 2005-2007 Douglas Barton, All rights reserved
@@ -505,25 +505,27 @@ check_for_updates () {
 
 find_moved_port () {
 	# newportdir and oldportdir are used globally
-	local l m sf
+	local sf IFS l
 
 	sf=$1
 
-	while read l; do
+	# To avoid having each word of the reason treated separately
+	IFS='
+'
+	for l in `grep "^$sf" /usr/ports/MOVED`; do
 		case "$l" in
-		${sf}\|\|*)	m=`echo $l | cut -f 4 -d\|`
-				fail "The $sf port has been deleted: $m"
+		${sf}\|\|*)	fail "The $sf port has been deleted: ${l##*|}"
 				;;
-		${sf}\|*)	newportdir=`echo $l | cut -f 2 -d\|`
-				m=`echo $l | cut -f 4 -d\|`
+		${sf}\|*)	newportdir=${l#*\|}
+				newportdir=${newportdir%%\|*}
 				echo ''
 				echo "===>>> The $sf port moved to $newportdir"
-				echo "===>>> Reason: $m"
+				echo "===>>> Reason: ${l##*|}"
 				echo ''
-				sf=$newportdir
+				find_moved_port $newportdir
 				;;
 		esac
-	done < $pd/MOVED
+	done
 
 	if [ -z "$newportdir" ]; then
 		echo ''
@@ -771,9 +773,9 @@ find_and_delete_distfiles () {
 
 delete_stale_distfiles () {
 	# distfiles is used globally
+	# inherit distdir from the environment, but only modify our copy
 	local distdir dist_subdir file DELORNOT distfile
 
-	distdir=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -V DISTDIR`
 	dist_subdir=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -V DIST_SUBDIR`
 	test -n "$dist_subdir" && distdir="${distdir}/${dist_subdir}"
 
@@ -877,9 +879,6 @@ backup_package () {
 	fi
 }
 
-pd=`make $PM_MAKE_ARGS -f/dev/null -V PORTSDIR 2>/dev/null`
-pdb=`make $PM_MAKE_ARGS -f/dev/null -V PKG_DBDIR 2>/dev/null`
-
 # Read a global rc file first
 if [ -r /etc/portmaster.rc ]; then
 	. /etc/portmaster.rc
@@ -891,8 +890,18 @@ if [ -r "$HOME/.portmasterrc" ]; then
 fi
 
 # Set default values here so that they can be overriden above
-: ${pd:=/usr/ports}
-: ${pdb:=/var/db/pkg}
+if [ -z "$pd" ]; then
+	pd=`make BEFOREPORTMK=yes -f/usr/share/mk/bsd.port.mk -V PORTSDIR`
+	export pd
+fi
+if [ -z "$pdb" ]; then
+	pdb=`make -f/usr/share/mk/bsd.port.mk -V PKG_DBDIR`
+	export pdb
+fi
+if [ -z "$distdir" ]; then
+	distdir=`make BEFOREPORTMK=yes -f/usr/share/mk/bsd.port.mk -V DISTDIR`
+	export distdir
+fi
 
 case "$1" in
 --clean-distfiles)	CLEAN_DISTFILES=yes ;;
@@ -931,7 +940,6 @@ if [ -n "$CLEAN_DISTFILES" ]; then
 	echo "===>>> Gathering distinfo list for installed ports"
 	read_distinfos
 
-	distdir=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -f${pd}/Mk/bsd.port.mk -V DISTDIR`
 	echo "===>>> Checking for stale distfiles"
 	for df in `find $distdir -type f`; do
 		f=${df#$distdir/}
@@ -1159,7 +1167,7 @@ if [ "$$" -eq "$PARENT_PID" ]; then
 	IPC_SAVE=`mktemp -t ipc_save-$PARENT_PID`
 	export CURRENT_DEPS_O CURRENT_DEPS_I IGNOREME_YES DISPLAY_LIST IPC_SAVE
 
-	PORTS_PREFIX=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -f$pd/Mk/bsd.port.mk -VPREFIX`
+	PORTS_PREFIX=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -f/usr/share/mk/bsd.port.mk -VPREFIX`
 	export PORTS_PREFIX
 
 	if [ -n "$INTERACTIVE_UPDATE" ]; then
@@ -1188,7 +1196,7 @@ if [ "$$" -eq "$PARENT_PID" ]; then
 	fi
 
 	if [ -z "$NO_BACKUP" ]; then
-		pkgrep=`make $PM_MAKE_ARGS -f$pd/Mk/bsd.port.mk -VPKGREPOSITORY`
+		pkgrep=`make $PM_MAKE_ARGS -f/usr/share/mk/bsd.port.mk -VPKGREPOSITORY`
 		export pkgrep
 		mkdir -p $pkgrep
 
