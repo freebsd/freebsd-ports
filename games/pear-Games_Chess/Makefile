@@ -6,25 +6,23 @@
 #
 
 PORTNAME=	Games_Chess
-PORTVERSION=	0.9.0
+PORTVERSION=	1.0.1
 CATEGORIES=	games devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PEAR methods for constructing and validating chess games in PGN
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Games
-FILES=		Chess.php \
-		Chess/Crazyhouse.php Chess/Losers.php Chess/Player.php \
-		Chess/Result.php Chess/Standard.php
-
-EXAMPLES=	HTMLChess.php images/B.gif images/N.gif images/Q.gif \
-		images/blank.gif images/K.gif images/P.gif images/R.gif \
-		images/dark/b.gif images/dark/k.gif images/dark/p.gif \
-		images/dark/r.gif images/dark/blank.gif images/dark/n.gif \
-		images/dark/q.gif
+FILES=		Chess/Crazyhouse.php Chess/Losers.php Chess/Standard.php \
+		Chess.php
+EXAMPLES=	images/dark/b.gif images/dark/blank.gif images/dark/k.gif \
+		images/dark/n.gif images/dark/p.gif images/dark/q.gif \
+		images/dark/r.gif images/B.gif images/blank.gif images/K.gif \
+		images/N.gif images/P.gif images/Q.gif images/R.gif \
+		HTMLChess.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
