@@ -1,5 +1,4 @@
 bin/mplayer
-%%MENCODER%%bin/mencoder
 %%GMPLAYER%%bin/gmplayer
 %%PORTDOCS%%%%DOCSDIR%%/advaudio.html
 %%PORTDOCS%%%%DOCSDIR%%/aspect.html
@@ -103,23 +102,10 @@ bin/mplayer
 %%VIDIX%%lib/mplayer/vidix/savage_vid.so
 %%VIDIX%%lib/mplayer/vidix/sis_vid.so
 %%VIDIX%%lib/mplayer/vidix/unichrome_vid.so
-%%DATADIR%%/tools/calcbpp.pl
-%%DATADIR%%/tools/countquant.pl
-%%DATADIR%%/tools/dvd2divxscript.pl
-%%DATADIR%%/tools/menc2pass
-%%DATADIR%%/tools/mencvcd
-%%DATADIR%%/tools/mp.pl
-%%DATADIR%%/tools/subedit.pl
-%%DATADIR%%/tools/subsearch.sh
-%%DATADIR%%/tools/sws-test
-%%DATADIR%%/tools/w32codec_dl.pl
-%%DATADIR%%/tools/wma2ogg.pl
-%%DATADIR%%/tools/x2mpsub.sh
 %%DATADIR%%/examples/etc/example.conf
 %%DATADIR%%/examples/etc/input.conf
 %%DATADIR%%/examples/etc/menu.conf
 %%DATADIR%%/examples/etc/dvb-menu.conf
-@dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%/examples/etc
 @dirrm %%DATADIR%%/examples
 @dirrmtry %%DATADIR%%
