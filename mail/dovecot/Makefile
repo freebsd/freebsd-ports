@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.dovecot.org/releases/
+MASTER_SITES=	http://www.dovecot.org/releases/1.0/
 
 MAINTAINER=	robin@isometry.net
 COMMENT=	Secure and compact IMAP and POP3 servers
