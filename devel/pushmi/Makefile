@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pushmi
-PORTVERSION=	0.994.0
+PORTVERSION=	0.995
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
@@ -31,6 +31,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 PERL_CONFIGURE=	yes
 
 MAN3=		Pushmi.3 \
-		Pushmi::Command::Mirror.3
+		Pushmi::Command::Mirror.3 \
+		Pushmi::Command::Runhook.3 \
+		Pushmi::Command::Sync.3 \
+		Pushmi::Command::Verify.3
 
 .include <bsd.port.mk>
