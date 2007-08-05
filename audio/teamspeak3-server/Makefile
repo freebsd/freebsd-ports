@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	teamspeak_server
-PORTVERSION=	2.0.20.1
-PORTREVISION=	2
+PORTVERSION=	2.0.23.19
 CATEGORIES=	audio net
 MASTER_SITES=	ftp://ftp.freenet.de/pub/4players/teamspeak.org/releases/
-DISTNAME=	ts2_server_rc2_20201
+DISTNAME=	ts2_server_rc2_202319
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	Server side of the TeamSpeak group voice chat system
