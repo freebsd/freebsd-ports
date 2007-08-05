@@ -7,6 +7,7 @@ bin/pushmi
 %%SITE_PERL%%/Pushmi/Test.pm
 %%SITE_PERL%%/Pushmi/Apache/AuthCache.pm
 %%SITE_PERL%%/Pushmi/Apache/AuthCommit.pm
+%%SITE_PERL%%/Pushmi/Apache/RelayProvider.pm
 %%SITE_PERL%%/Pushmi/Command/Help.pm
 %%SITE_PERL%%/Pushmi/Command/Mirror.pm
 %%SITE_PERL%%/Pushmi/Command/Runhook.pm
