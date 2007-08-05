@@ -8986,6 +8986,7 @@ p5-Catalyst-Plugin-PageCache	ports/www/p5-Catalyst-Plugin-PageCache
 p5-Catalyst-Plugin-Params-Nested	ports/www/p5-Catalyst-Plugin-Params-Nested
 p5-Catalyst-Plugin-Pluggable	ports/www/p5-Catalyst-Plugin-Pluggable
 p5-Catalyst-Plugin-Prototype	ports/www/p5-Catalyst-Plugin-Prototype
+p5-Catalyst-Plugin-Server	ports/www/p5-Catalyst-Plugin-Server
 p5-Catalyst-Plugin-Session	ports/www/p5-Catalyst-Plugin-Session
 p5-Catalyst-Plugin-Session-FastMmap	ports/www/p5-Catalyst-Plugin-Session-FastMmap
 p5-Catalyst-Plugin-Session-State-Cookie	ports/www/p5-Catalyst-Plugin-Session-State-Cookie
