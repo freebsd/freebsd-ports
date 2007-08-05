@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_XPath
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -18,6 +18,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 .if defined(PACKAGE_BUILDING)
 IGNORE=		No package building: The default libraries in the PHP package do not support domxml by default.
 .endif
+
+DEFAULT_PHP_VER=	4
+IGNORE_WITH_PHP=	5
+USE_PHP=	domxml
 
 CATEGORY=	XML
 FILES=		XPath.php XPath/common.php XPath/error.php XPath/result.php
