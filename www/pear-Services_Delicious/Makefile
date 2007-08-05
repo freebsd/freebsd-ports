@@ -7,6 +7,7 @@
 
 PORTNAME=	Services_Delicious
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	www pear
 
 MAINTAINER=	chinsan@FreeBSD.org
@@ -18,6 +19,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_DOS2UNIX=	yes
+USE_PHP=	openssl
 
 CATEGORY=	Services
 FILES=		Delicious.php
