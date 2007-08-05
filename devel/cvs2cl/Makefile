@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	cvs2cl
-PORTVERSION=	2.62
+PORTVERSION=	2.67
 CATEGORIES=	devel
 MASTER_SITES=	http://www.red-bean.com/cvs2cl/
-DISTFILES=	${PORTNAME}.pl
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.pl
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	mva@sysfault.org
@@ -28,8 +29,8 @@ do-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKSRC}/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|exec perl -w -x|exec ${PERL} -w -x|" \
-		-e "s|#!perl -w|#!${PERL} -w|" ${WRKSRC}/${PORTNAME}
+	@${REINPLACE_CMD} -e "s|exec ${PERL} -w -x|exec ${PERL} -w -x|" \
+		-e "s|#!${PERL} -w|#!${PERL} -w|" ${WRKSRC}/${PORTNAME}
 
 do-install:
 	@pod2man ${WRKSRC}/${PORTNAME} > ${WRKSRC}/${PORTNAME}.1
