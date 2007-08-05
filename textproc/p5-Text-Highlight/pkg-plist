@@ -1,0 +1,13 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Highlight/.packlist
+%%SITE_PERL%%/Text/Highlight.pm
+%%SITE_PERL%%/Text/Highlight/CPP.pm
+%%SITE_PERL%%/Text/Highlight/CSS.pm
+%%SITE_PERL%%/Text/Highlight/HTML.pm
+%%SITE_PERL%%/Text/Highlight/Java.pm
+%%SITE_PERL%%/Text/Highlight/PHP.pm
+%%SITE_PERL%%/Text/Highlight/Perl.pm
+%%SITE_PERL%%/Text/Highlight/SQL.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Highlight
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrm %%SITE_PERL%%/Text/Highlight
+@dirrmtry %%SITE_PERL%%/Text
