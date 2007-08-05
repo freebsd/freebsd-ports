@@ -11915,6 +11915,7 @@ photoclip	ports/graphics/photoclip
 photopc		ports/graphics/photopc
 php-Auth_OpenID	ports/security/php-Auth_OpenID
 php-dbg		ports/devel/php-dbg
+php-dbg2	ports/devel/php-dbg2
 php-dyn		ports/www/php-dyn
 php-gtk		ports/x11-toolkits/php-gtk
 php-magickwand	ports/graphics/php-magickwand

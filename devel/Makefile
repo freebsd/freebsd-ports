@@ -1760,6 +1760,7 @@
     SUBDIR += perltidy
     SUBDIR += pharmacy
     SUBDIR += php-dbg
+    SUBDIR += php-dbg2
     SUBDIR += php-xdebug
     SUBDIR += php4-dio
     SUBDIR += php4-gettext
