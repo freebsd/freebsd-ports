@@ -533,7 +533,6 @@
 %%WWWDIR%%/components/com_poll/poll.class.php
 %%WWWDIR%%/components/com_poll/poll.html.php
 %%WWWDIR%%/components/com_poll/poll.php
-%%WWWDIR%%/components/com_poll/poll.xml
 %%WWWDIR%%/components/com_poll/poll_bars.css
 %%WWWDIR%%/components/com_registration/index.html
 %%WWWDIR%%/components/com_registration/registration.html.php
@@ -730,7 +729,7 @@
 %%WWWDIR%%/help/screen.trashmanager.html
 %%WWWDIR%%/help/screen.users.acl.html
 %%WWWDIR%%/help/screen.users.edit.html
-%%WWWDIR%%/help/screen.users.edit2.html
+%%WWWDIR%%/help/screen.users.html
 %%WWWDIR%%/help/screen.users.massmail.html
 %%WWWDIR%%/help/screen.users.new.html
 %%WWWDIR%%/help/screen.weblink.edit.html
