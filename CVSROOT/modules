@@ -6957,6 +6957,7 @@ linux-sun-jdk12	ports/java/linux-sun-jdk12
 linux-sun-jdk13	ports/java/linux-sun-jdk13
 linux-sun-jdk14	ports/java/linux-sun-jdk14
 linux-sun-jdk15	ports/java/linux-sun-jdk15
+linux-sun-jdk16	ports/java/linux-sun-jdk16
 linux-sunbird	ports/deskutils/linux-sunbird
 linux-thunderbird	ports/mail/linux-thunderbird
 linux-tiff	ports/graphics/linux-tiff
