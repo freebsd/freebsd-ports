@@ -4426,6 +4426,7 @@ handbrake	ports/multimedia/handbrake
 hangman		ports/games/hangman
 happydoc	ports/devel/happydoc
 haproxy		ports/net/haproxy
+haproxy-devel	ports/net/haproxy-devel
 hapy		ports/devel/hapy
 harbour		ports/lang/harbour
 harvest		ports/www/harvest
