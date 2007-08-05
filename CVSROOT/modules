@@ -11695,6 +11695,7 @@ pear-Mail_Mime	ports/mail/pear-Mail_Mime
 pear-Mail_Queue	ports/mail/pear-Mail_Queue
 pear-Mail_mimeDecode	ports/mail/pear-Mail_mimeDecode
 pear-Math_Combinatorics	ports/math/pear-Math_Combinatorics
+pear-Math_Fraction	ports/devel/pear-Math_Fraction
 pear-Net_CDDB	ports/net/pear-Net_CDDB
 pear-Net_CheckIP	ports/net/pear-Net_CheckIP
 pear-Net_Cyrus	ports/mail/pear-Net_Cyrus
