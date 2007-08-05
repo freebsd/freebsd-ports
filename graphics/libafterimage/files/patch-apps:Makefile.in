@@ -1,5 +1,5 @@
---- apps/Makefile.in.orig	Mon Feb 28 23:52:47 2005
-+++ apps/Makefile.in	Thu Jun  9 16:36:08 2005
+--- ./apps/Makefile.in.orig	Thu Aug  2 07:09:02 2007
++++ ./apps/Makefile.in	Sun Aug  5 21:11:50 2007
 @@ -13,14 +13,14 @@
  MV		= @MV@
  RM		= @RM@
@@ -18,3 +18,12 @@
  
  INCS_X		= @X_CFLAGS@
  INCS_PRIVATE    = 
+@@ -30,7 +30,7 @@
+ LIBS_X		= @x_libs@
+ LIBS_XEXTS	=
+ LIBS_AFTERIMAGE = @AFTERIMAGE_APPS_LIBS@
+-LIBRARIES	= $(USER_LD_FLAGS) $(LIBS_AFTERIMAGE) $(LIBS_X) $(LIBS_XEXTS)
++LIBRARIES	= $(LIBS_AFTERIMAGE) $(USER_LD_FLAGS) $(LIBS_X) $(LIBS_XEXTS)
+ 
+ prefix          = @prefix@
+ exec_prefix     = @exec_prefix@
