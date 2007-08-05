@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../j2se/make/com/sun/java/pack/Makefile.orig	Sun Jul 29 23:03:30 2007
++++ ../../j2se/make/com/sun/java/pack/Makefile	Sun Jul 29 23:03:30 2007
+@@ -68,7 +68,7 @@
+ else
+   LDOUTPUT = -o #Have a space 
+ ifeq ($(PLATFORM), bsd)
+-  LDDFLAGS += -pthread
++  LDDFLAGS += ${PTHREAD_LIBS}
+ else
+   LDDFLAGS += -lc
+ endif

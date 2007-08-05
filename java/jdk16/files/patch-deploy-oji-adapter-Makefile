@@ -1,0 +1,21 @@
+$FreeBSD$
+--- ../../deploy/make/plugin/adapter/oji-adapter/Makefile.orig	Sun Jul 29 23:03:29 2007
++++ ../../deploy/make/plugin/adapter/oji-adapter/Makefile	Sun Jul 29 23:03:29 2007
+@@ -44,7 +44,7 @@
+ LIB_LOCATION=$(OUTPUTDIR)/plugin/$(LIBARCH)/ns7
+ dummy:=$(shell $(MKDIR) -p $(LIB_LOCATION))
+ 
+-X11DIR = /usr/X11R6
++X11DIR = ${X11BASE}
+ 
+ ifeq ($(PLATFORM), solaris)
+ LDLIBS = -lX11 -ldl -lCrun -lc
+@@ -60,7 +60,7 @@
+ 
+ ifeq ($(PLATFORM), bsd)
+ JNIDIR = $(OUTPUTDIR)/include/$(OS_NAME)
+-INTLDIR = /usr/local
++INTLDIR = ${LOCALBASE}
+ INTLHDRDIR = $(INTLDIR)/include
+ else
+ JNIDIR = $(OUTPUTDIR)/include/$(PLATFORM)

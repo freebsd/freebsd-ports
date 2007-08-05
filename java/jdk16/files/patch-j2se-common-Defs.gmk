@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../j2se/make/common/Defs.gmk.orig	Sun Jul 29 23:03:31 2007
++++ ../../j2se/make/common/Defs.gmk	Sun Jul 29 23:03:31 2007
+@@ -111,7 +111,7 @@
+   endif
+ 
+   ifeq ($(OS_VENDOR), FreeBSD)
+-    LDLIBS_COMMON = -pthread
++    LDLIBS_COMMON = ${PTHREAD_LIBS}
+   endif
+ 
+   ifeq ($(OS_VENDOR), OpenBSD)

@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../deploy/make/plugin/jvmexec/Makefile.orig	Sun Jul 29 23:03:30 2007
++++ ../../deploy/make/plugin/jvmexec/Makefile	Sun Jul 29 23:03:30 2007
+@@ -22,7 +22,7 @@
+ endif
+ 
+ ifeq ($(PLATFORM), bsd)
+-LDLIBS = -pthread
++LDLIBS = ${PTHREAD_LIBS}
+ endif
+ 
+ vpath %.cpp $(SRCDIR)

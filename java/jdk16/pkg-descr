@@ -1,5 +1,5 @@
-This is the latest JDK 1.5.0 patchset from the Java 2 FreeBSD porting
-project.  This port allows you to easily build a native JDK1.5.0 for FreeBSD.
+This is the latest JDK 1.6.0 patchset from the BSD Java porting project.
+This port allows you to easily build a native JDK 1.6.0 for FreeBSD.
 
 Please note that due to the current Sun licensing policy the resulting binaries
 can't be distributed and you are only permitted to use/hack it personally.

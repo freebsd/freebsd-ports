@@ -1,0 +1,30 @@
+$FreeBSD$
+
+--- ../../j2se/make/sun/awt/mawt.gmk.orig	Sun Jul 29 23:03:29 2007
++++ ../../j2se/make/sun/awt/mawt.gmk	Sun Jul 29 23:03:29 2007
+@@ -131,11 +131,11 @@
+             LIBXT = -lXt
+         else
+         # Allows for builds on Debian GNU Linux, X11 is in a different place 
+-	    LIBXT = $(firstword $(wildcard /usr/X11R6/lib/libXt.a) \
++	    LIBXT = $(firstword $(wildcard ${X11BASE}/lib/libXt.a) \
+                             $(wildcard /usr/lib/libXt.a))
+-	    LIBSM = $(firstword $(wildcard /usr/X11R6/lib/libSM.a) \
++	    LIBSM = $(firstword $(wildcard ${X11BASE}/lib/libSM.a) \
+                             $(wildcard /usr/lib/libSM.a))
+-	    LIBICE = $(firstword $(wildcard /usr/X11R6/lib/libICE.a) \
++	    LIBICE = $(firstword $(wildcard ${X11BASE}/lib/libICE.a) \
+                              $(wildcard /usr/lib/libICE.a))
+ 	endif
+     endif
+@@ -227,8 +227,8 @@
+ endif
+ 
+ ifeq ($(PLATFORM), bsd)
+-  CPPFLAGS += -I/usr/X11R6/include/X11/extensions \
+-              -I/usr/X11R6/include
++  CPPFLAGS += -I${X11BASE}/include/X11/extensions \
++              -I${X11BASE}/include
+ endif
+ 
+ LDFLAGS += -L$(LIBDIR)/$(LIBARCH)/$(TSOBJDIR) \

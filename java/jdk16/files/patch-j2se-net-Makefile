@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../j2se/make/java/net/Makefile.orig	Sun Jul 29 23:03:31 2007
++++ ../../j2se/make/java/net/Makefile	Sun Jul 29 23:03:31 2007
+@@ -73,7 +73,7 @@
+ ifdef DONT_ENABLE_IPV6
+   OTHER_CFLAGS += -DDONT_ENABLE_IPV6
+ endif
+-  OTHER_LDLIBS = $(JVMLIB) -pthread
++  OTHER_LDLIBS = $(JVMLIB) ${PTHREAD_LIBS}
+ else
+ ifeq ($(PLATFORM), windows)
+   OTHER_LDLIBS = ws2_32.lib $(JVMLIB)
