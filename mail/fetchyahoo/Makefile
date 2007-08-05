@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fetchyahoo
-PORTVERSION=	2.10.8
+PORTVERSION=	2.10.9
 CATEGORIES=	mail
 MASTER_SITES=	http://fetchyahoo.sourceforge.net/ \
 		${MASTER_SITE_LOCAL}
