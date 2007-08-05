@@ -141,6 +141,7 @@ share/gnome/solfege/help/C/chord.html
 share/gnome/solfege/help/C/compareintervals-module.html
 share/gnome/solfege/help/C/dictation-module.html
 share/gnome/solfege/help/C/dictation.html
+share/gnome/solfege/help/C/ear-training-test-printout-editor.html
 share/gnome/solfege/help/C/elembuilder-module.html
 share/gnome/solfege/help/C/elembuilder.html
 share/gnome/solfege/help/C/extending-solfege.html
@@ -191,8 +192,8 @@ share/gnome/solfege/help/C/ly/theory-intervals-seconds.png
 share/gnome/solfege/help/C/ly/theory-intervals-sevenths.png
 share/gnome/solfege/help/C/ly/theory-intervals-sixths.png
 share/gnome/solfege/help/C/ly/theory-intervals-thirds.png
+share/gnome/solfege/help/C/melodicinterval-module.html
 share/gnome/solfege/help/C/melodicinterval.html
-share/gnome/solfege/help/C/melodicintervals-module.html
 share/gnome/solfege/help/C/midi-instrument-names.html
 share/gnome/solfege/help/C/music-theory.html
 share/gnome/solfege/help/C/nameinterval-module.html
@@ -223,6 +224,7 @@ share/gnome/solfege/help/fr/chord.html
 share/gnome/solfege/help/fr/compareintervals-module.html
 share/gnome/solfege/help/fr/dictation-module.html
 share/gnome/solfege/help/fr/dictation.html
+share/gnome/solfege/help/fr/ear-training-test-printout-editor.html
 share/gnome/solfege/help/fr/elembuilder-module.html
 share/gnome/solfege/help/fr/elembuilder.html
 share/gnome/solfege/help/fr/extending-solfege.html
@@ -257,8 +259,8 @@ share/gnome/solfege/help/fr/idtone.html
 share/gnome/solfege/help/fr/index.html
 share/gnome/solfege/help/fr/inverting-intervals.html
 share/gnome/solfege/help/fr/lesson-files.html
+share/gnome/solfege/help/fr/melodicinterval-module.html
 share/gnome/solfege/help/fr/melodicinterval.html
-share/gnome/solfege/help/fr/melodicintervals-module.html
 share/gnome/solfege/help/fr/midi-instrument-names.html
 share/gnome/solfege/help/fr/music-theory.html
 share/gnome/solfege/help/fr/nameinterval-module.html
@@ -289,6 +291,7 @@ share/gnome/solfege/help/no/chord.html
 share/gnome/solfege/help/no/compareintervals-module.html
 share/gnome/solfege/help/no/dictation-module.html
 share/gnome/solfege/help/no/dictation.html
+share/gnome/solfege/help/no/ear-training-test-printout-editor.html
 share/gnome/solfege/help/no/elembuilder-module.html
 share/gnome/solfege/help/no/elembuilder.html
 share/gnome/solfege/help/no/extending-solfege.html
@@ -323,8 +326,8 @@ share/gnome/solfege/help/no/idtone.html
 share/gnome/solfege/help/no/index.html
 share/gnome/solfege/help/no/inverting-intervals.html
 share/gnome/solfege/help/no/lesson-files.html
+share/gnome/solfege/help/no/melodicinterval-module.html
 share/gnome/solfege/help/no/melodicinterval.html
-share/gnome/solfege/help/no/melodicintervals-module.html
 share/gnome/solfege/help/no/midi-instrument-names.html
 share/gnome/solfege/help/no/music-theory.html
 share/gnome/solfege/help/no/nameinterval-module.html
@@ -355,6 +358,7 @@ share/gnome/solfege/help/pt_BR/chord.html
 share/gnome/solfege/help/pt_BR/compareintervals-module.html
 share/gnome/solfege/help/pt_BR/dictation-module.html
 share/gnome/solfege/help/pt_BR/dictation.html
+share/gnome/solfege/help/pt_BR/ear-training-test-printout-editor.html
 share/gnome/solfege/help/pt_BR/elembuilder-module.html
 share/gnome/solfege/help/pt_BR/elembuilder.html
 share/gnome/solfege/help/pt_BR/extending-solfege.html
@@ -388,8 +392,8 @@ share/gnome/solfege/help/pt_BR/idtone.html
 share/gnome/solfege/help/pt_BR/index.html
 share/gnome/solfege/help/pt_BR/inverting-intervals.html
 share/gnome/solfege/help/pt_BR/lesson-files.html
+share/gnome/solfege/help/pt_BR/melodicinterval-module.html
 share/gnome/solfege/help/pt_BR/melodicinterval.html
-share/gnome/solfege/help/pt_BR/melodicintervals-module.html
 share/gnome/solfege/help/pt_BR/midi-instrument-names.html
 share/gnome/solfege/help/pt_BR/music-theory.html
 share/gnome/solfege/help/pt_BR/nameinterval-module.html
@@ -420,6 +424,7 @@ share/gnome/solfege/help/tr/chord.html
 share/gnome/solfege/help/tr/compareintervals-module.html
 share/gnome/solfege/help/tr/dictation-module.html
 share/gnome/solfege/help/tr/dictation.html
+share/gnome/solfege/help/tr/ear-training-test-printout-editor.html
 share/gnome/solfege/help/tr/elembuilder-module.html
 share/gnome/solfege/help/tr/elembuilder.html
 share/gnome/solfege/help/tr/extending-solfege.html
@@ -454,8 +459,8 @@ share/gnome/solfege/help/tr/idtone.html
 share/gnome/solfege/help/tr/index.html
 share/gnome/solfege/help/tr/inverting-intervals.html
 share/gnome/solfege/help/tr/lesson-files.html
+share/gnome/solfege/help/tr/melodicinterval-module.html
 share/gnome/solfege/help/tr/melodicinterval.html
-share/gnome/solfege/help/tr/melodicintervals-module.html
 share/gnome/solfege/help/tr/midi-instrument-names.html
 share/gnome/solfege/help/tr/music-theory.html
 share/gnome/solfege/help/tr/nameinterval-module.html
@@ -805,6 +810,7 @@ share/gnome/solfege/mpd/requests.py
 share/gnome/solfege/mpd/track.py
 share/gnome/solfege/solfege.gtkrc
 share/gnome/solfege/soundcard/__init__.py
+share/gnome/solfege/soundcard/exporter.py
 share/gnome/solfege/soundcard/fakesynth.py
 share/gnome/solfege/soundcard/midifilesynth.py
 share/gnome/solfege/soundcard/oss_common.py
@@ -814,6 +820,7 @@ share/gnome/solfege/soundcard/solfege_c_midi.py
 share/gnome/solfege/soundcard/soundcardexceptions.py
 share/gnome/solfege/soundcard/synth_common.py
 share/gnome/solfege/soundcard/winsynth.py
+share/gnome/solfege/src/ElementTree.py
 share/gnome/solfege/src/__init__.py
 share/gnome/solfege/src/abstract.py
 share/gnome/solfege/src/app.py
@@ -830,7 +837,7 @@ share/gnome/solfege/src/docviewer.py
 share/gnome/solfege/src/elembuilder.py
 share/gnome/solfege/src/example.py
 share/gnome/solfege/src/exceptiondialog.py
-share/gnome/solfege/src/gethomedir.py
+share/gnome/solfege/src/filesystem.py
 share/gnome/solfege/src/gpath.py
 share/gnome/solfege/src/gu.py
 share/gnome/solfege/src/harmonicinterval.py
@@ -856,6 +863,7 @@ share/gnome/solfege/src/nameinterval.py
 share/gnome/solfege/src/notenamespinbutton.py
 share/gnome/solfege/src/osutils.py
 share/gnome/solfege/src/pmwiki.py
+share/gnome/solfege/src/practisesheetdlg.py
 share/gnome/solfege/src/reportbug.py
 share/gnome/solfege/src/reportlib.py
 share/gnome/solfege/src/rhythm.py
@@ -869,6 +877,7 @@ share/gnome/solfege/src/specialwidgets.py
 share/gnome/solfege/src/statistics.py
 share/gnome/solfege/src/statisticsviewer.py
 share/gnome/solfege/src/stock.py
+share/gnome/solfege/src/testlib.py
 share/gnome/solfege/src/tracebackwindow.py
 share/gnome/solfege/src/trainingsetdlg.py
 share/gnome/solfege/src/tree.py
@@ -876,6 +885,7 @@ share/gnome/solfege/src/tuner.py
 share/gnome/solfege/src/twelvetone.py
 share/gnome/solfege/src/utils.py
 share/gnome/solfege/src/uuid.py
+share/gnome/solfege/src/winreg.py
 share/gnome/solfege/src/xrandom.py
 share/gnome/solfege/themes/svg/chord-voicing.svg
 share/gnome/solfege/themes/svg/chord.svg
