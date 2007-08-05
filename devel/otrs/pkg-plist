@@ -75,6 +75,7 @@ otrs/scripts/database/otrs-schema.mysql.sql
 otrs/scripts/database/otrs-schema.oracle.sql
 otrs/scripts/database/otrs-schema.postgresql.sql
 otrs/scripts/database/otrs-schema.xml
+otrs/scripts/database/update/otrs-upgrade-to-2.2.xml
 otrs/scripts/login.php
 otrs/scripts/login.pl
 otrs/scripts/restore.pl
@@ -512,6 +513,8 @@ otrs/Kernel/System/AuthSession/FS.pm
 otrs/Kernel/System/AuthSession/IPC.pm
 otrs/Kernel/System/AutoResponse.pm
 otrs/Kernel/System/CSV.pm
+otrs/Kernel/System/Cache.pm
+otrs/Kernel/System/Cache/File.pm
 otrs/Kernel/System/CheckItem.pm
 otrs/Kernel/System/Config.pm
 otrs/Kernel/System/Crypt.pm
@@ -544,6 +547,7 @@ otrs/Kernel/System/FileTemp.pm
 otrs/Kernel/System/GenericAgent.pm
 otrs/Kernel/System/GenericAgent/AutoPriorityIncrease.pm
 otrs/Kernel/System/GenericAgent/NotifyAgentGroupOfCustomQueue.pm
+otrs/Kernel/System/GenericAgent/NotifyAgentGroupWithWritePermission.pm
 otrs/Kernel/System/Group.pm
 otrs/Kernel/System/LinkObject.pm
 otrs/Kernel/System/LinkObject/Ticket.pm
@@ -650,6 +654,7 @@ otrs/Kernel/cpan-lib/HTML/Safe.pm
 @dirrm otrs/Kernel/System/CustomerUser
 @dirrm otrs/Kernel/System/CustomerAuth
 @dirrm otrs/Kernel/System/Crypt
+@dirrm otrs/Kernel/System/Cache
 @dirrm otrs/Kernel/System/AuthSession
 @dirrm otrs/Kernel/System/Auth
 @dirrm otrs/Kernel/System
@@ -680,6 +685,7 @@ otrs/Kernel/cpan-lib/HTML/Safe.pm
 @dirrmtry otrs/var
 @dirrm otrs/scripts/tools
 @dirrm otrs/scripts/test
+@dirrm otrs/scripts/database/update
 @dirrm otrs/scripts/database
 @dirrm otrs/scripts
 @dirrm otrs/bin/fcgi-bin
@@ -708,7 +714,8 @@ otrs/Kernel/cpan-lib/HTML/Safe.pm
 %%PORTDOCS%%%%DOCSDIR%%/test-email-7-euro-iso-8859-15.box
 %%PORTDOCS%%%%DOCSDIR%%/test-email-8-bulgarian-cp1251.box
 %%PORTDOCS%%%%DOCSDIR%%/test-email-9-html-multicharset.box
-%%PORTDOCS%%%%DOCSDIR%%/manual/en/otrs_admin_book.pdf
+%%PORTDOCS%%%%DOCSDIR%%/manual/en/pdf/otrs_admin_book.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en/pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
