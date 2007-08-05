@@ -1,0 +1,15 @@
+bin/rpc_client
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Server/.packlist
+%%SITE_PERL%%/Catalyst/Plugin/Server.pm
+%%SITE_PERL%%/Catalyst/Plugin/Server/XMLRPC.pm
+%%SITE_PERL%%/Catalyst/Plugin/Server/XMLRPC/DispatchType/XMLRPCPath.pm
+%%SITE_PERL%%/Catalyst/Plugin/Server/XMLRPC/DispatchType/XMLRPCRegex.pm
+%%SITE_PERL%%/Catalyst/Plugin/Server/XMLRPC/Tutorial.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/Server/XMLRPC/DispatchType
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/Server/XMLRPC
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/Server
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst
