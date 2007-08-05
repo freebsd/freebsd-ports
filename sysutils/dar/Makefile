@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	dar
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	sysutils archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full featured command-line backup tool, aimed for disks
