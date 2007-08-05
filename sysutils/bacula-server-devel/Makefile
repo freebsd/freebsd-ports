@@ -7,6 +7,7 @@
 
 PORTNAME=	bacula
 DISTVERSION=	2.1.28
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -141,7 +142,7 @@ DBTYPE=			postgresql
 SUB_LIST+=		REQ_MYSQL="" REQ_PGSQL=postgresql
 .elif defined(WITH_SQLITE3)
 CONFIGURE_ARGS+=	--with-sqlite3=yes
-LIB_DEPENDS+=		sqlite3-threads>=0:${PORTSDIR}/databases/sqlite3-threads
+LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3-threads
 DBTYPE=			sqlite3
 .else
 CONFIGURE_ARGS+=	--with-sqlite=yes
