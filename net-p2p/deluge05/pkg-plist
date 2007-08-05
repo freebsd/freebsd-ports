@@ -2,6 +2,9 @@ bin/deluge
 %%PYTHON_SITELIBDIR%%/deluge/__init__.py
 %%PYTHON_SITELIBDIR%%/deluge/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deluge/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/browser.py
+%%PYTHON_SITELIBDIR%%/deluge/browser.pyc
+%%PYTHON_SITELIBDIR%%/deluge/browser.pyo
 %%PYTHON_SITELIBDIR%%/deluge/common.py
 %%PYTHON_SITELIBDIR%%/deluge/common.pyc
 %%PYTHON_SITELIBDIR%%/deluge/common.pyo
@@ -18,6 +21,9 @@ bin/deluge
 %%PYTHON_SITELIBDIR%%/deluge/dialogs.py
 %%PYTHON_SITELIBDIR%%/deluge/dialogs.pyc
 %%PYTHON_SITELIBDIR%%/deluge/dialogs.pyo
+%%PYTHON_SITELIBDIR%%/deluge/files.py
+%%PYTHON_SITELIBDIR%%/deluge/files.pyc
+%%PYTHON_SITELIBDIR%%/deluge/files.pyo
 %%PYTHON_SITELIBDIR%%/deluge/interface.py
 %%PYTHON_SITELIBDIR%%/deluge/interface.pyc
 %%PYTHON_SITELIBDIR%%/deluge/interface.pyo
@@ -30,12 +36,20 @@ bin/deluge
 %%PYTHON_SITELIBDIR%%/deluge/pref.py
 %%PYTHON_SITELIBDIR%%/deluge/pref.pyc
 %%PYTHON_SITELIBDIR%%/deluge/pref.pyo
+%%PYTHON_SITELIBDIR%%/deluge/tab_details.py
+%%PYTHON_SITELIBDIR%%/deluge/tab_details.pyc
+%%PYTHON_SITELIBDIR%%/deluge/tab_details.pyo
+%%PYTHON_SITELIBDIR%%/deluge/update.py
+%%PYTHON_SITELIBDIR%%/deluge/update.pyc
+%%PYTHON_SITELIBDIR%%/deluge/update.pyo
 share/applications/deluge.desktop
 %%DATADIR%%/glade/aboutdialog.glade
 %%DATADIR%%/glade/delugegtk.glade
 %%DATADIR%%/glade/dgtkpopups.glade
 %%DATADIR%%/glade/edit_trackers.glade
 %%DATADIR%%/glade/file_tab_menu.glade
+%%DATADIR%%/glade/files_dialog.glade
+%%DATADIR%%/glade/merge_dialog.glade
 %%DATADIR%%/glade/plugin_dialog.glade
 %%DATADIR%%/glade/preferences_dialog.glade
 %%DATADIR%%/glade/torrent_menu.glade
@@ -46,7 +60,255 @@ share/applications/deluge.desktop
 %%DATADIR%%/pixmaps/deluge22.png
 %%DATADIR%%/pixmaps/deluge256.png
 %%DATADIR%%/pixmaps/deluge32.png
+%%DATADIR%%/pixmaps/deluge48.png
 %%DATADIR%%/pixmaps/downloading16.png
+%%DATADIR%%/pixmaps/flags/ad.png
+%%DATADIR%%/pixmaps/flags/ae.png
+%%DATADIR%%/pixmaps/flags/af.png
+%%DATADIR%%/pixmaps/flags/ag.png
+%%DATADIR%%/pixmaps/flags/ai.png
+%%DATADIR%%/pixmaps/flags/al.png
+%%DATADIR%%/pixmaps/flags/am.png
+%%DATADIR%%/pixmaps/flags/an.png
+%%DATADIR%%/pixmaps/flags/ao.png
+%%DATADIR%%/pixmaps/flags/aq.png
+%%DATADIR%%/pixmaps/flags/ar.png
+%%DATADIR%%/pixmaps/flags/as.png
+%%DATADIR%%/pixmaps/flags/at.png
+%%DATADIR%%/pixmaps/flags/au.png
+%%DATADIR%%/pixmaps/flags/aw.png
+%%DATADIR%%/pixmaps/flags/ax.png
+%%DATADIR%%/pixmaps/flags/az.png
+%%DATADIR%%/pixmaps/flags/ba.png
+%%DATADIR%%/pixmaps/flags/bb.png
+%%DATADIR%%/pixmaps/flags/bd.png
+%%DATADIR%%/pixmaps/flags/be.png
+%%DATADIR%%/pixmaps/flags/bf.png
+%%DATADIR%%/pixmaps/flags/bg.png
+%%DATADIR%%/pixmaps/flags/bh.png
+%%DATADIR%%/pixmaps/flags/bi.png
+%%DATADIR%%/pixmaps/flags/bj.png
+%%DATADIR%%/pixmaps/flags/bm.png
+%%DATADIR%%/pixmaps/flags/bn.png
+%%DATADIR%%/pixmaps/flags/bo.png
+%%DATADIR%%/pixmaps/flags/br.png
+%%DATADIR%%/pixmaps/flags/bs.png
+%%DATADIR%%/pixmaps/flags/bt.png
+%%DATADIR%%/pixmaps/flags/bv.png
+%%DATADIR%%/pixmaps/flags/bw.png
+%%DATADIR%%/pixmaps/flags/by.png
+%%DATADIR%%/pixmaps/flags/bz.png
+%%DATADIR%%/pixmaps/flags/ca.png
+%%DATADIR%%/pixmaps/flags/cc.png
+%%DATADIR%%/pixmaps/flags/cd.png
+%%DATADIR%%/pixmaps/flags/cf.png
+%%DATADIR%%/pixmaps/flags/cg.png
+%%DATADIR%%/pixmaps/flags/ch.png
+%%DATADIR%%/pixmaps/flags/ci.png
+%%DATADIR%%/pixmaps/flags/ck.png
+%%DATADIR%%/pixmaps/flags/cl.png
+%%DATADIR%%/pixmaps/flags/cm.png
+%%DATADIR%%/pixmaps/flags/cn.png
+%%DATADIR%%/pixmaps/flags/co.png
+%%DATADIR%%/pixmaps/flags/cr.png
+%%DATADIR%%/pixmaps/flags/cs.png
+%%DATADIR%%/pixmaps/flags/cu.png
+%%DATADIR%%/pixmaps/flags/cv.png
+%%DATADIR%%/pixmaps/flags/cx.png
+%%DATADIR%%/pixmaps/flags/cy.png
+%%DATADIR%%/pixmaps/flags/cz.png
+%%DATADIR%%/pixmaps/flags/de.png
+%%DATADIR%%/pixmaps/flags/dj.png
+%%DATADIR%%/pixmaps/flags/dk.png
+%%DATADIR%%/pixmaps/flags/dm.png
+%%DATADIR%%/pixmaps/flags/do.png
+%%DATADIR%%/pixmaps/flags/dz.png
+%%DATADIR%%/pixmaps/flags/ec.png
+%%DATADIR%%/pixmaps/flags/ee.png
+%%DATADIR%%/pixmaps/flags/eg.png
+%%DATADIR%%/pixmaps/flags/eh.png
+%%DATADIR%%/pixmaps/flags/er.png
+%%DATADIR%%/pixmaps/flags/es.png
+%%DATADIR%%/pixmaps/flags/et.png
+%%DATADIR%%/pixmaps/flags/fi.png
+%%DATADIR%%/pixmaps/flags/fj.png
+%%DATADIR%%/pixmaps/flags/fk.png
+%%DATADIR%%/pixmaps/flags/fm.png
+%%DATADIR%%/pixmaps/flags/fo.png
+%%DATADIR%%/pixmaps/flags/fr.png
+%%DATADIR%%/pixmaps/flags/fx.png
+%%DATADIR%%/pixmaps/flags/ga.png
+%%DATADIR%%/pixmaps/flags/gb.png
+%%DATADIR%%/pixmaps/flags/gd.png
+%%DATADIR%%/pixmaps/flags/ge.png
+%%DATADIR%%/pixmaps/flags/gf.png
+%%DATADIR%%/pixmaps/flags/gg.png
+%%DATADIR%%/pixmaps/flags/gh.png
+%%DATADIR%%/pixmaps/flags/gi.png
+%%DATADIR%%/pixmaps/flags/gl.png
+%%DATADIR%%/pixmaps/flags/gm.png
+%%DATADIR%%/pixmaps/flags/gn.png
+%%DATADIR%%/pixmaps/flags/gp.png
+%%DATADIR%%/pixmaps/flags/gq.png
+%%DATADIR%%/pixmaps/flags/gr.png
+%%DATADIR%%/pixmaps/flags/gs.png
+%%DATADIR%%/pixmaps/flags/gt.png
+%%DATADIR%%/pixmaps/flags/gu.png
+%%DATADIR%%/pixmaps/flags/gw.png
+%%DATADIR%%/pixmaps/flags/gy.png
+%%DATADIR%%/pixmaps/flags/hk.png
+%%DATADIR%%/pixmaps/flags/hm.png
+%%DATADIR%%/pixmaps/flags/hn.png
+%%DATADIR%%/pixmaps/flags/hr.png
+%%DATADIR%%/pixmaps/flags/ht.png
+%%DATADIR%%/pixmaps/flags/hu.png
+%%DATADIR%%/pixmaps/flags/id.png
+%%DATADIR%%/pixmaps/flags/ie.png
+%%DATADIR%%/pixmaps/flags/il.png
+%%DATADIR%%/pixmaps/flags/in.png
+%%DATADIR%%/pixmaps/flags/io.png
+%%DATADIR%%/pixmaps/flags/iq.png
+%%DATADIR%%/pixmaps/flags/ir.png
+%%DATADIR%%/pixmaps/flags/is.png
+%%DATADIR%%/pixmaps/flags/it.png
+%%DATADIR%%/pixmaps/flags/je.png
+%%DATADIR%%/pixmaps/flags/jm.png
+%%DATADIR%%/pixmaps/flags/jo.png
+%%DATADIR%%/pixmaps/flags/jp.png
+%%DATADIR%%/pixmaps/flags/ke.png
+%%DATADIR%%/pixmaps/flags/kg.png
+%%DATADIR%%/pixmaps/flags/kh.png
+%%DATADIR%%/pixmaps/flags/ki.png
+%%DATADIR%%/pixmaps/flags/km.png
+%%DATADIR%%/pixmaps/flags/kn.png
+%%DATADIR%%/pixmaps/flags/kp.png
+%%DATADIR%%/pixmaps/flags/kr.png
+%%DATADIR%%/pixmaps/flags/kw.png
+%%DATADIR%%/pixmaps/flags/ky.png
+%%DATADIR%%/pixmaps/flags/kz.png
+%%DATADIR%%/pixmaps/flags/la.png
+%%DATADIR%%/pixmaps/flags/lb.png
+%%DATADIR%%/pixmaps/flags/lc.png
+%%DATADIR%%/pixmaps/flags/li.png
+%%DATADIR%%/pixmaps/flags/lk.png
+%%DATADIR%%/pixmaps/flags/lr.png
+%%DATADIR%%/pixmaps/flags/ls.png
+%%DATADIR%%/pixmaps/flags/lt.png
+%%DATADIR%%/pixmaps/flags/lu.png
+%%DATADIR%%/pixmaps/flags/lv.png
+%%DATADIR%%/pixmaps/flags/ly.png
+%%DATADIR%%/pixmaps/flags/ma.png
+%%DATADIR%%/pixmaps/flags/mc.png
+%%DATADIR%%/pixmaps/flags/md.png
+%%DATADIR%%/pixmaps/flags/me.png
+%%DATADIR%%/pixmaps/flags/mg.png
+%%DATADIR%%/pixmaps/flags/mh.png
+%%DATADIR%%/pixmaps/flags/mk.png
+%%DATADIR%%/pixmaps/flags/ml.png
+%%DATADIR%%/pixmaps/flags/mm.png
+%%DATADIR%%/pixmaps/flags/mn.png
+%%DATADIR%%/pixmaps/flags/mo.png
+%%DATADIR%%/pixmaps/flags/mp.png
+%%DATADIR%%/pixmaps/flags/mq.png
+%%DATADIR%%/pixmaps/flags/mr.png
+%%DATADIR%%/pixmaps/flags/ms.png
+%%DATADIR%%/pixmaps/flags/mt.png
+%%DATADIR%%/pixmaps/flags/mu.png
+%%DATADIR%%/pixmaps/flags/mv.png
+%%DATADIR%%/pixmaps/flags/mw.png
+%%DATADIR%%/pixmaps/flags/mx.png
+%%DATADIR%%/pixmaps/flags/my.png
+%%DATADIR%%/pixmaps/flags/mz.png
+%%DATADIR%%/pixmaps/flags/na.png
+%%DATADIR%%/pixmaps/flags/nc.png
+%%DATADIR%%/pixmaps/flags/ne.png
+%%DATADIR%%/pixmaps/flags/nf.png
+%%DATADIR%%/pixmaps/flags/ng.png
+%%DATADIR%%/pixmaps/flags/ni.png
+%%DATADIR%%/pixmaps/flags/nl.png
+%%DATADIR%%/pixmaps/flags/no.png
+%%DATADIR%%/pixmaps/flags/np.png
+%%DATADIR%%/pixmaps/flags/nr.png
+%%DATADIR%%/pixmaps/flags/nu.png
+%%DATADIR%%/pixmaps/flags/nz.png
+%%DATADIR%%/pixmaps/flags/om.png
+%%DATADIR%%/pixmaps/flags/pa.png
+%%DATADIR%%/pixmaps/flags/pe.png
+%%DATADIR%%/pixmaps/flags/pf.png
+%%DATADIR%%/pixmaps/flags/pg.png
+%%DATADIR%%/pixmaps/flags/ph.png
+%%DATADIR%%/pixmaps/flags/pk.png
+%%DATADIR%%/pixmaps/flags/pl.png
+%%DATADIR%%/pixmaps/flags/pm.png
+%%DATADIR%%/pixmaps/flags/pn.png
+%%DATADIR%%/pixmaps/flags/pr.png
+%%DATADIR%%/pixmaps/flags/ps.png
+%%DATADIR%%/pixmaps/flags/pt.png
+%%DATADIR%%/pixmaps/flags/pw.png
+%%DATADIR%%/pixmaps/flags/py.png
+%%DATADIR%%/pixmaps/flags/qa.png
+%%DATADIR%%/pixmaps/flags/re.png
+%%DATADIR%%/pixmaps/flags/ro.png
+%%DATADIR%%/pixmaps/flags/rs.png
+%%DATADIR%%/pixmaps/flags/ru.png
+%%DATADIR%%/pixmaps/flags/rw.png
+%%DATADIR%%/pixmaps/flags/sa.png
+%%DATADIR%%/pixmaps/flags/sb.png
+%%DATADIR%%/pixmaps/flags/sc.png
+%%DATADIR%%/pixmaps/flags/sd.png
+%%DATADIR%%/pixmaps/flags/se.png
+%%DATADIR%%/pixmaps/flags/sg.png
+%%DATADIR%%/pixmaps/flags/sh.png
+%%DATADIR%%/pixmaps/flags/si.png
+%%DATADIR%%/pixmaps/flags/sj.png
+%%DATADIR%%/pixmaps/flags/sk.png
+%%DATADIR%%/pixmaps/flags/sl.png
+%%DATADIR%%/pixmaps/flags/sm.png
+%%DATADIR%%/pixmaps/flags/sn.png
+%%DATADIR%%/pixmaps/flags/so.png
+%%DATADIR%%/pixmaps/flags/sr.png
+%%DATADIR%%/pixmaps/flags/st.png
+%%DATADIR%%/pixmaps/flags/sv.png
+%%DATADIR%%/pixmaps/flags/sy.png
+%%DATADIR%%/pixmaps/flags/sz.png
+%%DATADIR%%/pixmaps/flags/tc.png
+%%DATADIR%%/pixmaps/flags/td.png
+%%DATADIR%%/pixmaps/flags/tf.png
+%%DATADIR%%/pixmaps/flags/tg.png
+%%DATADIR%%/pixmaps/flags/th.png
+%%DATADIR%%/pixmaps/flags/tj.png
+%%DATADIR%%/pixmaps/flags/tk.png
+%%DATADIR%%/pixmaps/flags/tl.png
+%%DATADIR%%/pixmaps/flags/tm.png
+%%DATADIR%%/pixmaps/flags/tn.png
+%%DATADIR%%/pixmaps/flags/to.png
+%%DATADIR%%/pixmaps/flags/tp.png
+%%DATADIR%%/pixmaps/flags/tr.png
+%%DATADIR%%/pixmaps/flags/tt.png
+%%DATADIR%%/pixmaps/flags/tv.png
+%%DATADIR%%/pixmaps/flags/tw.png
+%%DATADIR%%/pixmaps/flags/tz.png
+%%DATADIR%%/pixmaps/flags/ua.png
+%%DATADIR%%/pixmaps/flags/ug.png
+%%DATADIR%%/pixmaps/flags/um.png
+%%DATADIR%%/pixmaps/flags/us.png
+%%DATADIR%%/pixmaps/flags/uy.png
+%%DATADIR%%/pixmaps/flags/uz.png
+%%DATADIR%%/pixmaps/flags/va.png
+%%DATADIR%%/pixmaps/flags/vc.png
+%%DATADIR%%/pixmaps/flags/ve.png
+%%DATADIR%%/pixmaps/flags/vg.png
+%%DATADIR%%/pixmaps/flags/vi.png
+%%DATADIR%%/pixmaps/flags/vn.png
+%%DATADIR%%/pixmaps/flags/vu.png
+%%DATADIR%%/pixmaps/flags/wf.png
+%%DATADIR%%/pixmaps/flags/ws.png
+%%DATADIR%%/pixmaps/flags/ye.png
+%%DATADIR%%/pixmaps/flags/yt.png
+%%DATADIR%%/pixmaps/flags/yu.png
+%%DATADIR%%/pixmaps/flags/za.png
+%%DATADIR%%/pixmaps/flags/zm.png
+%%DATADIR%%/pixmaps/flags/zw.png
 %%DATADIR%%/pixmaps/inactive16.png
 %%DATADIR%%/pixmaps/seeding16.png
 %%DATADIR%%/plugins/BlocklistImport/__init__.py
@@ -60,19 +322,31 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/BlocklistImport/text.py
 %%DATADIR%%/plugins/BlocklistImport/ui.py
 %%DATADIR%%/plugins/DesiredRatio/__init__.py
-%%DATADIR%%/plugins/ExamplePlugin/__init__.py
-%%DATADIR%%/plugins/ExamplePlugin/example-plugin.png
-%%DATADIR%%/plugins/ExamplePlugin/example.glade
-%%DATADIR%%/plugins/ExamplePlugin/plugin.py
-%%DATADIR%%/plugins/HelloWorld/__init__.py
+%%DATADIR%%/plugins/EventLogging/__init__.py
+%%DATADIR%%/plugins/EventLogging/event_logging_preferences.glade
+%%DATADIR%%/plugins/EventLogging/tab_log.py
+%%DATADIR%%/plugins/Locations/__init__.py
+%%DATADIR%%/plugins/Locations/plugin.py
 %%DATADIR%%/plugins/NetworkGraph/__init__.py
-%%DATADIR%%/plugins/NetworkGraph/plugin.py
+%%DATADIR%%/plugins/NetworkGraph/tab_graph.py
 %%DATADIR%%/plugins/NetworkHealth/__init__.py
 %%DATADIR%%/plugins/NetworkHealth/plugin.py
-%%DATADIR%%/plugins/Scheduler/__init__.py
-%%DATADIR%%/plugins/Scheduler/plugin.py
+%%DATADIR%%/plugins/RSS/__init__.py
+%%DATADIR%%/plugins/RSS/feedparser.py
+%%DATADIR%%/plugins/RSS/plugin.py
+%%DATADIR%%/plugins/RSS/rss.glade
+%%DATADIR%%/plugins/RSS/rss.png
+%%DATADIR%%/plugins/SpeedLimiter/__init__.py
 %%DATADIR%%/plugins/TorrentCreator/__init__.py
 %%DATADIR%%/plugins/TorrentCreator/torrentcreator.glade
+%%DATADIR%%/plugins/TorrentFiles/__init__.py
+%%DATADIR%%/plugins/TorrentFiles/tab_files.py
+%%DATADIR%%/plugins/TorrentNotification/__init__.py
+%%DATADIR%%/plugins/TorrentNotification/notification_preferences.glade
+%%DATADIR%%/plugins/TorrentPeers/__init__.py
+%%DATADIR%%/plugins/TorrentPeers/tab_peers.py
+%%DATADIR%%/plugins/TorrentPieces/__init__.py
+%%DATADIR%%/plugins/TorrentPieces/tab_pieces.py
 %%DATADIR%%/plugins/TorrentSearch/__init__.py
 %%DATADIR%%/plugins/TorrentSearch/plugin.py
 %%DATADIR%%/plugins/TorrentSearch/searchdlg.glade
@@ -102,9 +376,11 @@ share/locale/id/LC_MESSAGES/deluge.mo
 share/locale/it/LC_MESSAGES/deluge.mo
 share/locale/ja/LC_MESSAGES/deluge.mo
 share/locale/ko/LC_MESSAGES/deluge.mo
+share/locale/ku/LC_MESSAGES/deluge.mo
 share/locale/la/LC_MESSAGES/deluge.mo
 share/locale/lt/LC_MESSAGES/deluge.mo
 share/locale/lv/LC_MESSAGES/deluge.mo
+share/locale/mk/LC_MESSAGES/deluge.mo
 share/locale/nb/LC_MESSAGES/deluge.mo
 share/locale/nl/LC_MESSAGES/deluge.mo
 share/locale/pl/LC_MESSAGES/deluge.mo
@@ -122,24 +398,32 @@ share/locale/tr/LC_MESSAGES/deluge.mo
 share/locale/uk/LC_MESSAGES/deluge.mo
 share/locale/zh_CN/LC_MESSAGES/deluge.mo
 share/locale/zh_TW/LC_MESSAGES/deluge.mo
-share/pixmaps/deluge.xpm
+share/pixmaps/deluge.png
 @dirrmtry share/locale/tlh/LC_MESSAGES
 @dirrmtry share/locale/tlh
 @dirrmtry share/locale/la/LC_MESSAGES
 @dirrmtry share/locale/la
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/plugins/TorrentSearch
+@dirrm %%DATADIR%%/plugins/TorrentPieces
+@dirrm %%DATADIR%%/plugins/TorrentPeers
+@dirrm %%DATADIR%%/plugins/TorrentNotification
+@dirrm %%DATADIR%%/plugins/TorrentFiles
 @dirrm %%DATADIR%%/plugins/TorrentCreator
-@dirrm %%DATADIR%%/plugins/Scheduler
+@dirrm %%DATADIR%%/plugins/SpeedLimiter
+@dirrm %%DATADIR%%/plugins/RSS
 @dirrm %%DATADIR%%/plugins/NetworkHealth
 @dirrm %%DATADIR%%/plugins/NetworkGraph
-@dirrm %%DATADIR%%/plugins/HelloWorld
-@dirrm %%DATADIR%%/plugins/ExamplePlugin
+@dirrm %%DATADIR%%/plugins/Locations
+@dirrm %%DATADIR%%/plugins/EventLogging
 @dirrm %%DATADIR%%/plugins/DesiredRatio
 @dirrm %%DATADIR%%/plugins/BlocklistImport
 @dirrmtry %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/pixmaps/flags
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
 @dirrmtry %%DATADIR%%
