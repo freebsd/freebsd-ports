@@ -5,36 +5,34 @@
 # $FreeBSD$
 #
 
-PORTNAME=		Nagios-Plugin
-PORTVERSION=		0.17
-CATEGORIES=		net-mgmt perl5
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
+PORTNAME=	Nagios-Plugin
+PORTVERSION=	0.17
+PORTREVISION=	1
+CATEGORIES=	net-mgmt perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/G/GA/GAVINC
-PKGNAMEPREFIX=		p5-
+PKGNAMEPREFIX=	p5-
 
-MAINTAINER=		gerrit.beine@gmx.de
-COMMENT=		Modules to streamline writing Nagios plugins
+MAINTAINER=	gerrit.beine@gmx.de
+COMMENT=	Modules to streamline writing Nagios plugins
 
-PERL_CONFIGURE=		yes
+PERL_CONFIGURE=	yes
 
-BUILD_DEPENDS=		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-			${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
-RUN_DEPENDS=		${BUILD_DEPENDS}
+BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
+		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
+		${SITE_PERL}/Math/Calc/Units.pm:${PORTSDIR}/math/p5-Math-Calc-Units
+RUN_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
+		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
+		${SITE_PERL}/Math/Calc/Units.pm:${PORTSDIR}/math/p5-Math-Calc-Units
 
-MAN3=			Nagios::Plugin.3 \
-			Nagios::Plugin::Config.3 \
-			Nagios::Plugin::ExitResult.3 \
-			Nagios::Plugin::Functions.3 \
-			Nagios::Plugin::Getopt.3 \
-			Nagios::Plugin::Performance.3 \
-			Nagios::Plugin::Range.3 \
-			Nagios::Plugin::Threshold.3 \
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		This port requires FreeBSD 5-STABLE.
-.endif
+MAN3=		Nagios::Plugin.3 \
+		Nagios::Plugin::Config.3 \
+		Nagios::Plugin::ExitResult.3 \
+		Nagios::Plugin::Functions.3 \
+		Nagios::Plugin::Getopt.3 \
+		Nagios::Plugin::Performance.3 \
+		Nagios::Plugin::Range.3 \
+		Nagios::Plugin::Threshold.3 \
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
@@ -45,4 +43,4 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
