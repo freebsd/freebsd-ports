@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	LiveUser_Admin
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.9
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -25,9 +25,12 @@ OPTIONS=	PEAR_DB "PEAR::DB support" off \
 
 CATEGORY=	LiveUser/Admin
 FILES=		Auth/Common.php Auth/DB.php Auth/MDB.php Auth/MDB2.php \
+		Auth/PDO.php Auth/Storage/DB.php Auth/Storage/MDB.php \
+		Auth/Storage/MDB2.php Auth/Storage/PDO.php \
 		Perm/Storage/DB.php Perm/Storage/MDB.php Perm/Storage/MDB2.php \
-		Perm/Complex.php Perm/Medium.php Perm/Simple.php Storage/DB.php \
-		Storage/MDB.php Storage/MDB2.php Storage/SQL.php Admin.php Storage.php
+		Perm/Storage/PDO.php Perm/Complex.php Perm/Medium.php Perm/Simple.php \
+		Storage/DB.php Storage/MDB.php Storage/MDB2.php Storage/SQL.php \
+		Storage/PDO.php Admin.php Storage.php
 EXAMPLES=	example1/Application.php example1/Area.php \
 		example1/Area_Admin_Areas.php example1/config.inc.php \
 		example1/Group.php example1/GroupRights.php \
@@ -40,9 +43,6 @@ EXAMPLES=	example1/Application.php example1/Area.php \
 		example3/main.php example3/nav.php example3/testarea.php README \
 
 _EXAMPLESDIR=	docs/examples
-
-post-extract:
-	@${MV} ${WRKSRC}/docs/examples/example\ 1 ${WRKSRC}/docs/examples/example1
 
 .include <bsd.port.pre.mk>
 
