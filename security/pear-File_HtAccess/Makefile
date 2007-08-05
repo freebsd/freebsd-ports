@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_HtAccess
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
