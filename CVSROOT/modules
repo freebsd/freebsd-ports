@@ -11740,6 +11740,7 @@ pear-PHPUnit3	ports/devel/pear-PHPUnit3
 pear-PHP_Beautifier	ports/devel/pear-PHP_Beautifier
 pear-PHP_Compat	ports/devel/pear-PHP_Compat
 pear-PHP_CompatInfo	ports/devel/pear-PHP_CompatInfo
+pear-PHP_ParserGenerator	ports/devel/pear-PHP_ParserGenerator
 pear-PHP_Shell	ports/shells/pear-PHP_Shell
 pear-Pager	ports/devel/pear-Pager
 pear-PhpDocumentor	ports/devel/pear-PhpDocumentor
