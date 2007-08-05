@@ -1,5 +1,6 @@
 lib/teamspeak_server/INSTALL
 lib/teamspeak_server/INSTALL.mysql
+lib/teamspeak_server/LICENSE
 lib/teamspeak_server/Manual/C1H_HTML.css
 lib/teamspeak_server/Manual/DocToHelp.js
 lib/teamspeak_server/Manual/RC2servermanual-blank.htm
@@ -57,7 +58,6 @@ lib/teamspeak_server/Manual/whatsnewinteamspeakreleasecandidate21.htm
 lib/teamspeak_server/Manual/windowsinstalling.htm
 lib/teamspeak_server/Manual/yourips1.htm
 lib/teamspeak_server/README
-lib/teamspeak_server/changelog.txt
 lib/teamspeak_server/httpdocs/choice_box.html
 lib/teamspeak_server/httpdocs/database_client_manager.html
 lib/teamspeak_server/httpdocs/database_client_manager_add.html
@@ -136,49 +136,8 @@ lib/teamspeak_server/mysql_sql/create_bans.sql
 lib/teamspeak_server/mysql_sql/create_channel_privileges.sql
 lib/teamspeak_server/mysql_sql/create_channels.sql
 lib/teamspeak_server/mysql_sql/create_clients.sql
-lib/teamspeak_server/mysql_sql/create_nicks.sql
 lib/teamspeak_server/mysql_sql/create_server_privileges.sql
 lib/teamspeak_server/mysql_sql/create_servers.sql
-lib/teamspeak_server/mysql_sql/create_settings.sql
-lib/teamspeak_server/mysql_sql/delete_ban.sql
-lib/teamspeak_server/mysql_sql/delete_ban_ip.sql
-lib/teamspeak_server/mysql_sql/delete_channel.sql
-lib/teamspeak_server/mysql_sql/delete_channel_privilege.sql
-lib/teamspeak_server/mysql_sql/delete_client.sql
-lib/teamspeak_server/mysql_sql/delete_server.sql
-lib/teamspeak_server/mysql_sql/edit_channel.sql
-lib/teamspeak_server/mysql_sql/edit_channel_privilege.sql
-lib/teamspeak_server/mysql_sql/edit_client.sql
-lib/teamspeak_server/mysql_sql/edit_client_lastonline.sql
-lib/teamspeak_server/mysql_sql/edit_server.sql
-lib/teamspeak_server/mysql_sql/edit_server_privilege.sql
-lib/teamspeak_server/mysql_sql/new_ban.sql
-lib/teamspeak_server/mysql_sql/new_channel.sql
-lib/teamspeak_server/mysql_sql/new_channel_privilege.sql
-lib/teamspeak_server/mysql_sql/new_client.sql
-lib/teamspeak_server/mysql_sql/new_server.sql
-lib/teamspeak_server/mysql_sql/new_server_privilege.sql
-lib/teamspeak_server/mysql_sql/read_active_servers.sql
-lib/teamspeak_server/mysql_sql/read_bans.sql
-lib/teamspeak_server/mysql_sql/read_channel.sql
-lib/teamspeak_server/mysql_sql/read_channel_privilege.sql
-lib/teamspeak_server/mysql_sql/read_channel_privileges.sql
-lib/teamspeak_server/mysql_sql/read_channels.sql
-lib/teamspeak_server/mysql_sql/read_client_channels_privileges.sql
-lib/teamspeak_server/mysql_sql/read_client_login.sql
-lib/teamspeak_server/mysql_sql/read_clients.sql
-lib/teamspeak_server/mysql_sql/read_clients_id.sql
-lib/teamspeak_server/mysql_sql/read_clients_name.sql
-lib/teamspeak_server/mysql_sql/read_server.sql
-lib/teamspeak_server/mysql_sql/read_server_port.sql
-lib/teamspeak_server/mysql_sql/read_server_privilege.sql
-lib/teamspeak_server/mysql_sql/read_servers.sql
-lib/teamspeak_server/mysql_sql/remove_bans.sql
-lib/teamspeak_server/mysql_sql/remove_moderatedattribs.sql
-lib/teamspeak_server/mysql_sql/search_client.sql
-lib/teamspeak_server/mysql_sql/upgrade_1.sql
-lib/teamspeak_server/mysql_sql/upgrade_2.sql
-lib/teamspeak_server/mysql_sql/upgrade_3.sql
 lib/teamspeak_server/server_linux
 lib/teamspeak_server/sqlite.so
 lib/teamspeak_server/sqlite_sql/create_bans.sql
@@ -285,11 +244,11 @@ lib/teamspeak_server/tcpquerydocs/slogin.txt
 lib/teamspeak_server/tcpquerydocs/sppriv.txt
 lib/teamspeak_server/tcpquerydocs/ver.txt
 lib/teamspeak_server/teamspeak2-server_startscript
-@dirrm lib/teamspeak_server/Manual
-@dirrm lib/teamspeak_server/httpdocs/gfx
-@dirrm lib/teamspeak_server/httpdocs/help
-@dirrm lib/teamspeak_server/httpdocs
-@dirrm lib/teamspeak_server/mysql_sql
-@dirrm lib/teamspeak_server/sqlite_sql
 @dirrm lib/teamspeak_server/tcpquerydocs
+@dirrm lib/teamspeak_server/sqlite_sql
+@dirrm lib/teamspeak_server/mysql_sql
+@dirrm lib/teamspeak_server/httpdocs/help
+@dirrm lib/teamspeak_server/httpdocs/gfx
+@dirrm lib/teamspeak_server/httpdocs
+@dirrm lib/teamspeak_server/Manual
 @dirrm lib/teamspeak_server
