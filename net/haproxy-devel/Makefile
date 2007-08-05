@@ -1,63 +1,43 @@
-# New ports collection Makefile for:	haproxy
-# Date created:				Apr 30, 2003
-# Whom:					Clement Laforet
+# New ports collection makefile for:    haproxy-devel
+# Date created:         Thu May  3 16:30:19 WEST 2007
+# Whom:                 Hugo Saro <hugo@barafranca.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.2.16
-PORTREVISION=	1
-CATEGORIES=	net www
-MASTER_SITES=	http://haproxy.1wt.eu/download/1.2/src/
+PORTVERSION=	1.3.12
+CATEGORIES=	net
+MASTER_SITES=	http://haproxy.1wt.eu/download/1.3/src/
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	clement@FreeBSD.org
-COMMENT=	High-performance and highly-robust TCP/HTTP load balancer
+MAINTAINER=	hugo@barafranca.com
+COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 
-USE_RC_SUBR=	haproxy.sh
-
-STATS_INTERVAL?=	0
-CFLAGS+=	-DSTATTIME=${STATS_INTERVAL}
-
-.if defined(WITH_TPROXY)
-CFLAGS+=	-DTPROXY
-.endif
-
-.if defined(WITH_PCRE)
-PKGNAMESUFFIX=	-pcre
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
-MAKE_ENV+=	"REGEX=pcre"
-CFLAGS+=	-DUSE_PCRE -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lpcreposix -lpcre
-.endif
-
-.if defined(WITH_SMALLOPTS)
-CFLAGS+=	-DBUFSIZE=8030 -DMAXREWRITE=1030 -DSYSTEM_MAXCONN=1024
-.endif
+CONFLICTS=	haproxy-1.2*
+USE_RC_SUBR=	haproxy
 
 MAKEFILE=	Makefile.bsd
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Available options:"
-	@${ECHO_MSG} "WITH_PCRE:            Use pcre regex engine"
-	@${ECHO_MSG} "WITH_TPROXY:         Enable Transparent proxy support"
-	@${ECHO_MSG} "WITH_SMALLOPTS:         Enable low memory footprint support"
-	@${ECHO_MSG} "STATS_INTERVAL=###:   Statistics interval in milliseconds,"
-	@${ECHO_MSG} "                         (default to 0, disabled)"
-	@${ECHO_MSG} ""
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
+	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} design-thoughts ${DOCSDIR}/)
+	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} internals ${DOCSDIR}/)
 	@${INSTALL_DATA} ${WRKSRC}/examples/haproxy.cfg \
-			${EXAMPLESDIR}/haproxy.cfg
+				${LOCALBASE}/etc/haproxy.conf-dist
 .endif
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "haproxy ${PORTVERSION} is now installed."
+	@${ECHO_MSG} "To configure it, rename ${LOCALBASE}/etc/haproxy.conf-dist"
+	@${ECHO_MSG} "and add haproxy_enable=\"YES\" to /etc/rc.conf"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>

@@ -1,7 +1,30 @@
 sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/architecture.txt
+%%PORTDOCS%%%%DOCSDIR%%/gpl.txt
+%%PORTDOCS%%%%DOCSDIR%%/lgpl.txt
 %%PORTDOCS%%%%DOCSDIR%%/haproxy-en.txt
 %%PORTDOCS%%%%DOCSDIR%%/haproxy-fr.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/haproxy.cfg
+%%PORTDOCS%%%%DOCSDIR%%/tcp-splicing.txt
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/backends-v0.txt
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/backends.txt
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/be-fe-changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/buffers.fig
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/config-language.txt
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/cttproxy-changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/how-it-works.txt
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/http_load_time.url
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/sess_par_sec.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/connection-scale.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/connect-status.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/header-parser-speed.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/header-tree.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/http-docs.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/http-parsing.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/naming.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/repartition-be-fe-fi.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/stats-v2.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/todo.cttproxy
+etc/haproxy.conf-dist
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/design-thoughts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/internals
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
