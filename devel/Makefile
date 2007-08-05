@@ -1713,6 +1713,7 @@
     SUBDIR += pear-HTML_Template_Sigma
     SUBDIR += pear-HTML_TreeMenu
     SUBDIR += pear-I18N
+    SUBDIR += pear-Math_Fraction
     SUBDIR += pear-OLE
     SUBDIR += pear-PEAR_Info
     SUBDIR += pear-PEAR_PackageFileManager
