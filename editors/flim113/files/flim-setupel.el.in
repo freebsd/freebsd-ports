@@ -1,8 +1,0 @@
-;;
-;; @(#)flim-setupel.el -- flim emacs load-path setup elisp file.
-;;                                            --  by shige@FreeBSD.ORG
-
-(setq load-path (append '(
-	"@@LOCALBASE@@/@@EMACS_VERSION_SITE_LISPDIR@@/flim"
- ) load-path))
-(provide 'flim-setupel)

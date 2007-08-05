@@ -54,7 +54,6 @@
     SUBDIR += flim-emacs20
     SUBDIR += flim-emacs21
     SUBDIR += flim-xemacs21-mule
-    SUBDIR += flim113
     SUBDIR += fpc-ide
     SUBDIR += fte
     SUBDIR += gate
@@ -141,7 +140,6 @@
     SUBDIR += semi-emacs20
     SUBDIR += semi-emacs21
     SUBDIR += semi-xemacs21-mule
-    SUBDIR += semi113
     SUBDIR += setedit
     SUBDIR += slime
     SUBDIR += softmaker-office

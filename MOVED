@@ -3139,3 +3139,5 @@ x11-fm/endeavour||2007-08-01|Has expired: Development ceased, this port should b
 security/p5-openxpki-client-soap-lite||2007-08-01|Has expired: No longer maintained by Developers.
 net-mgmt/aircrack|net-mgmt/aircrack-ng|2007-08-01|Has expired: Please use net-mgmt/aircrack-ng
 databases/ruby-postgres|databases/rubygem-postgres|2007-08-03|Port updated in rubygem version
+editors/flim113||2007-08-05|Expired: distfile no longer available
+editors/semi113||2007-08-05|Expired: distfile no longer available
