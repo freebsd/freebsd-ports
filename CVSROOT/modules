@@ -791,6 +791,7 @@ beecrypt	ports/security/beecrypt
 beep		ports/audio/beep
 beep-media-player	ports/multimedia/beep-media-player
 beforelight	ports/x11/beforelight
+belooted	ports/games/belooted
 belote		ports/french/belote
 belvu		ports/biology/belvu
 berkeley-db	ports/java/berkeley-db
