@@ -6,6 +6,7 @@
 
 PORTNAME=		squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
 PORTVERSION=		1.1
+PORTREVISION=		1
 CATEGORIES=		mail www
 MASTER_SITES=		http://www.squirrelmail.org/plugins/
 DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.4.3
@@ -14,8 +15,7 @@ DIST_SUBDIR=		squirrelmail
 MAINTAINER=		gerrit.beine@gmx.de
 COMMENT=		Using the QmailAdmin cgi interface from SquirrelMail
 
-RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
-			${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
+RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
 
 SQUIRREL_PLUGIN_NAME=	qmailadmin_login
 
