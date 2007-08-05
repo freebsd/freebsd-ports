@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Asterisk
-PORTVERSION=		0.09
+PORTVERSION=		0.10
 CATEGORIES=		misc perl5
 MASTER_SITES=		http://asterisk.gnuinter.net/files/
 PKGNAMEPREFIX=		p5-
