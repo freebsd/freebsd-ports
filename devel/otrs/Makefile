@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -56,10 +56,10 @@ PM_DIRS_LIST=	Kernel Kernel/Config Kernel/Config/Files Kernel/Language \
 		Kernel/Output/HTML/Standard System System/Auth System/AuthSession \
 		System/Crypt System/CustomerAuth System/CustomerUser \
 		System/CustomerUser/ System/
-DOCS_DIRS_LIST=	"" manual/en
+DOCS_DIRS_LIST=	"" manual/en/pdf
 DOCS_FILES_LIST=	C* INSTALL RE* TODO UPGRADING
 
-SCRIPTS_DIRS_LIST=	"" database test tools
+SCRIPTS_DIRS_LIST=	"" database/update test tools
 CLEAN_CPAN_DIRS=	Algorithm Authen Crypt Date Email IO Mail MIME Text XML auto
 CLEAN_FILES=	scripts/apache2-httpd.include.conf scripts/suse* \
 		scripts/redhat* scripts/DBUpdate*
@@ -137,7 +137,8 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${OTRSDIR}/Kernel
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.[ps][lh] ${OTRSDIR}/scripts/
 	@${INSTALL_DATA} ${WRKSRC}/scripts/*.p[hm]* ${WRKSRC}/scripts/apache* ${OTRSDIR}/scripts/
-	@${INSTALL_DATA} ${WRKSRC}/scripts/database/* ${OTRSDIR}/scripts/database/
+	@${INSTALL_DATA} ${WRKSRC}/scripts/database/update/*.* ${OTRSDIR}/scripts/database/update/
+	@${INSTALL_DATA} ${WRKSRC}/scripts/database/*.* ${OTRSDIR}/scripts/database/
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/test/*.pl ${OTRSDIR}/scripts/test/
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/tools/*.pl ${OTRSDIR}/scripts/tools/
 .ifndef NOPORTDOCS
