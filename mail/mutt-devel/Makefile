@@ -20,9 +20,9 @@
 # The two most important knobs are:
 #
 # In general you can choose between using ncurses (WITH_MUTT_NCURSES)
-# and SLANG (WITH_MUTT_SLANG) which is the default. Note that you may
-# have to set the variables COLORTERM=yes and COLORFGBG="color1;color2" in your
-# environment to get slang function properly.
+# and SLANG (WITH_MUTT_SLANG). Note that you may have to set the variables
+# COLORTERM=yes and COLORFGBG="color1;color2" in your environment to get slang
+# function properly.
 # The default version for slang is 1.x. Define WITH_MUTT_SLANG2 if you want
 # to use the slang version 2.x
 # The default version for ncurses is that which comes with the operating
@@ -104,10 +104,13 @@
 # If you want to enable the `greeting' option define:
 #  WITH_MUTT_GREETING_PATCH
 #
+# If you want to enable the internal SMTP relay support define:
+#  WITH_MUTT_SMTP
+#
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.16
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -203,6 +206,11 @@ WITH_MUTT_IMAP_HEADER_CACHE=	yes
 IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not compatible
 .endif
 .endif
+.if ${OSVERSION} >= 700033 || (${OSVERSION} < 700000 && ${OSVERSION} >= 602107)
+NCURSES_IS_DEFAULT=	yes
+.else
+SLANG_IS_DEFAULT=	yes
+.endif
 
 .if defined (MUTT_LITE)
 WITHOUT_MUTT_XML=			yes
@@ -261,8 +269,12 @@ MUTT_USES_SLANG2=	yes
 MUTT_USES_NCURSES=	yes
 .endif
 .if !defined(MUTT_USES_SLANG) && !defined(WITHOUT_MUTT_SLANG) && !defined(MUTT_USES_NCURSES)
+.if defined(SLANG_IS_DEFAULT)
 MUTT_USES_SLANG=	yes
 MUTT_USES_SLANG1=	yes
+.elif defined(NCURSES_IS_DEFAULT)
+MUTT_USES_NCURSES=	yes
+.endif
 .endif
 .if defined(WITHOUT_MUTT_SGMLFORMAT)
 XML_USED=	no
@@ -381,6 +393,11 @@ CONFIGURE_ARGS+=	--with-gss=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-gss
 USE_KRB5_SYS=YES
 .endif
+.endif
+.if defined(WITH_MUTT_SMTP)
+CONFIGURE_ARGS+=	--enable-smtp
+.else
+CONFIGURE_ARGS+=	--disable-smtp
 .endif
 
 PATCH_DIST_STRIP=	-p1
