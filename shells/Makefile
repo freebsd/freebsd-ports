@@ -22,6 +22,7 @@
     SUBDIR += p5-Term-ShellUI
     SUBDIR += pash
     SUBDIR += pdksh
+    SUBDIR += pear-PHP_Shell
     SUBDIR += perlsh
     SUBDIR += rc
     SUBDIR += rssh
