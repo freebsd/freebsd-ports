@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../deploy/make/plugin/jvmnative/Makefile.orig	Sun Jul 29 23:03:29 2007
++++ ../../deploy/make/plugin/jvmnative/Makefile	Sun Jul 29 23:03:29 2007
+@@ -14,7 +14,7 @@
+ 
+ include $(DEPLOY_TOPDIR)/make/plugin/common/Defs.gmk
+ 
+-X11DIR = /usr/X11R6
++X11DIR = ${X11BASE}
+ 
+ ifeq ($(PLATFORM), bsd)
+ LDLIBS = -L$(X11DIR)/lib -lX11

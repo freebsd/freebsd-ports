@@ -1,32 +1,31 @@
-# New ports collection makefile for:	jdk15
-# Date created:				12 January 2005
-# Whom:					Alexey Zelkin <phantom@FreeBSD.org>
+# New ports collection makefile for:	jdk16
+# Date created:				17 June 2007
+# Whom:					Greg Lewis <glewis@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
-PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://download.java.net/tiger/
-#		 http://www.eyesbeyond.com/freebsddom/java/jdk15.html
+#		 http://www.eyesbeyond.com/freebsddom/java/jdk16.html
 #		 http://java.sun.com/javase/downloads/index.jsp
-DISTFILES=	${JRL_SRCFILE} ${JRL_BINFILE} ${PATCHSETFILE}
-EXTRACT_ONLY=	${JRL_SRCFILE} ${JRL_BINFILE}
+DISTFILES=	${JRL_SRCFILE} ${JRL_BINFILE} ${JRL_MOZFILE} ${PATCHSETFILE}
+EXTRACT_ONLY=	${JRL_SRCFILE} ${JRL_BINFILE} ${JRL_MOZFILE}
 
 MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	Java Development Kit 1.5.0
+COMMENT=	Java Development Kit 1.6.0
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		zip:${PORTSDIR}/archivers/zip \
+BUILD_DEPENDS=  zip:${PORTSDIR}/archivers/zip \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
+LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 
 OPTIONS=	DEBUG	"Enable debugging support"	off \
 		IPV6	"Enable IPv6 support"		off
 .if ${MACHINE_ARCH} == "amd64"
-OPTIONS+=	WEB	"Enable the browser plugin and Java Web Start"	off
+WITHOUT_WEB=	yes
 .else
 OPTIONS+=	WEB	"Enable the browser plugin and Java Web Start"	on
 .endif
@@ -46,32 +45,34 @@ WRKSRC=		${WRKDIR}/control/make
 
 USE_ZIP=	YES
 
-JRL_SRCFILE=	jdk-${JDK_VERSION:S/./_/g}_${JDK_UPDATE_VERSION}-fcs-src-b${JDK_BUILD_NUMBER}-jrl-${JDK_BUILD_DATE}.jar
-JRL_BINFILE=	jdk-${JDK_VERSION:S/./_/g}_${JDK_UPDATE_VERSION}-fcs-bin-b${JDK_BUILD_NUMBER}-jrl-${JDK_BUILD_DATE}.jar
-PATCHSETFILE=	bsd-jdk15-patches-${JDK_PATCHSET_VERSION}.tar.bz2
-POLICYFILE=	jce_policy-${JDK_VERSION:S/./_/g}.zip
+JRL_SRCFILE=	jdk-${JDK_MAJOR_VERSION}u${JDK_UPDATE_VERSION}-fcs-src-b${JDK_BUILD_NUMBER}-jrl-${JDK_BUILD_DATE}.jar
+JRL_BINFILE=	jdk-${JDK_MAJOR_VERSION}u${JDK_UPDATE_VERSION}-fcs-bin-b${JDK_BUILD_NUMBER}-jrl-${JDK_BUILD_DATE}.jar
+JRL_MOZFILE=	jdk-${JDK_MAJOR_VERSION}u${JDK_UPDATE_VERSION}-fcs-mozilla_headers-b${JDK_BUILD_NUMBER}-unix-${JDK_BUILD_DATE}.jar
+PATCHSETFILE=	bsd-jdk16-patches-${JDK_PATCHSET_VERSION}.tar.bz2
+POLICYFILE=	jce_policy-${JDK_MAJOR_VERSION}.zip
 TZUPDATEFILE=	tzupdater-${TZUPDATE_VERSION:S/./_/g}-${TZUPDATE_TZVERSION}.zip
 
-JDK_VERSION=	1.5.0
-JDK_UPDATE_VERSION=	12
-JDK_PATCHSET_VERSION=	6
-JDK_BUILD_NUMBER=	04
-JDK_BUILD_DATE=		02_may_2007
-LATEST_LINK=	jdk15
+JDK_VERSION=	1.6.0
+JDK_MAJOR_VERSION=	6
+JDK_UPDATE_VERSION=	1
+JDK_PATCHSET_VERSION=	1
+JDK_BUILD_NUMBER=	06
+JDK_BUILD_DATE=		14_mar_2007
+LATEST_LINK=	jdk16
 
 TZUPDATE_VERSION=	1.2.1
 TZUPDATE_TZVERSION=	2007f
 
-SUN_LINUX_JDK_VERSION=	1.5.0
+SUN_LINUX_JDK_VERSION=	1.6.0
 
 .if !defined(WITH_LINUX_BOOTSTRAP)
-NATIVE_BOOTSTRAP_JDKS+=	${LOCALBASE}/diablo-jdk1.5.0 \
-			${LOCALBASE}/jdk1.5.0 \
-			${LOCALBASE}/jdk1.4.2
+NATIVE_BOOTSTRAP_JDKS+= ${LOCALBASE}/diablo-jdk1.5.0 \
+			${LOCALBASE}/jdk1.6.0 \
+			${LOCALBASE}/jdk1.5.0
 .endif
 
-LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.5.0 \
-			${LOCALBASE}/linux-sun-jdk1.4.2
+LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.6.0 \
+			${LOCALBASE}/linux-sun-jdk1.5.0
 
 .include <bsd.port.pre.mk>
 
@@ -113,13 +114,12 @@ WITH_LINUX_BOOTSTRAP=	YES
 BOOTSTRAPJDKDIR?=	${LOCALBASE}/linux-sun-jdk${SUN_LINUX_JDK_VERSION}
 .endif
 
-BUILD_DEPENDS+=	${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk15
+BUILD_DEPENDS+=	${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk16
 
 .if defined(WITHOUT_WEB)
 MAKE_ENV+=	DONT_BUILD_DEPLOY="YES"
 .else
 USE_GNOME=	desktopfileutils
-LIB_DEPENDS=    nspr4.1:$(PORTSDIR)/devel/nspr
 .endif
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -130,13 +130,15 @@ NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 
 MAKE_ENV+=	ALT_BOOTDIR="${BOOTSTRAPJDKDIR}" \
 		ALT_MOTIF_DIR="${X11BASE}" \
-		SYS_CFLAGS="${CFLAGS}" \
-		LANG="C" \
+		ALT_DEVTOOLS_PATH="${LOCALBASE}" \
 		JAVA_HOME="" \
 		CLASSPATH="" \
 		LD_LIBRARY_PATH="" \
 		MAKEFLAGS="" \
-		SKIP_COMPARE_IMAGES="YES"
+		SKIP_COMPARE_IMAGES="YES" \
+		LOCALBASE="${LOCALBASE}" \
+		X11BASE="${X11BASE}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 .if !defined(WITH_IPV6)
 MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
 .endif
@@ -149,7 +151,7 @@ ALL_TARGET=	all
 PLIST_FILES=	jdk${JDK_VERSION}/jre/.systemPrefs/.system.lock \
 		jdk${JDK_VERSION}/jre/.systemPrefs/.systemRootModFile
 .if !defined(WITHOUT_WEB)
-PLIST_FILES+=	share/applications/sun_java15.desktop
+PLIST_FILES+=	share/applications/sun_java16.desktop
 .endif
 PLIST_DIRS=	jdk${JDK_VERSION}/jre/.systemPrefs
 
@@ -162,29 +164,24 @@ HOTSPOTARCH=i586
 JDKIMAGEDIR=	${WRKSRC}/../build/bsd-${HOTSPOTARCH}/j2sdk-image
 JDKIMAGEDIR_G=	${WRKSRC}/../build/bsd-${HOTSPOTARCH}/j2sdk-debug-image
 
-LOCAL_FILES=	../../hotspot/src/os/bsd/vm/os_bsd.cpp
-PTHREAD_FILES=	../../hotspot/build/bsd/makefiles/vm.make \
-		../../j2se/make/com/sun/java/pack/Makefile \
-		../../j2se/make/common/Defs.gmk \
-		../../j2se/make/common/Defs-bsd.gmk \
-		../../j2se/make/common/Program.gmk \
-		../../j2se/make/java/hpi/native/Makefile \
-		../../j2se/make/java/net/Makefile \
-		../../j2se/make/java/nio/Makefile \
-		../../j2se/make/jpda/transport/socket/Makefile \
-		../../j2se/make/sun/cmm/Makefile \
-		../../j2se/make/sun/xawt/Makefile
-X11_FILES=	../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/GTKLookAndFeel.java \
+LOCAL_FILES=	../../hotspot/make/jprt.config \
 		../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java \
+		../../j2se/src/share/classes/sun/net/www/MimeTable.java \
+		../../j2se/src/share/classes/sun/net/www/protocol/doc/DocURLConnection.java \
+		../../j2se/src/share/classes/sun/net/www/protocol/doc/Handler.java \
+		../../j2se/src/solaris/bin/java-rmi.cgi.sh \
+		../../j2se/src/solaris/bin/java_md.c \
+		../../j2se/src/solaris/classes/sun/security/smartcardio/PlatformPCSC.java
+X11_FILES=	../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java \
 		../../j2se/src/solaris/native/sun/awt/fontpath.c
 
 # Check for JDK sources and patch file
-.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
+.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE}) || !exists(${DISTDIR}/${JRL_MOZFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
 ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n
-.if !exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE})#{
-IGNORE += Please open http://download.java.net/tiger/\n\
+.if !exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE}) || !exists(${DISTDIR}/${JRL_MOZFILE})#{
+IGNORE += Please open http://download.java.net/jdk6/6u${JDK_UPDATE_VERSION}/promoted/b${JDK_BUILD_NUMBER}/index.html\n\
 in a web browser.  Download the\n
 .if !exists(${DISTDIR}/${JRL_SRCFILE})#{
 IGNORE += Update ${JDK_UPDATE_VERSION} Source, ${JRL_SRCFILE}
@@ -195,13 +192,18 @@ IGNORE += and the\n
 .endif#}
 IGNORE += Source Binaries, ${JRL_BINFILE}
 .endif#}
+.if !exists(${DISTDIR}/${JRL_MOZFILE})#{
+.if !exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE})#{
+IGNORE += and the\n
+.endif#}
+IGNORE += Mozilla Headers, ${JRL_MOZFILE}
+.endif#}
 IGNORE += .\n\n
 .endif#}
 .if defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})#{
-IGNORE += Please open http://java.sun.com/javase/downloads/index_jdk5.jsp\n\
+IGNORE += Please open http://java.sun.com/javase/downloads/index.jsp\n\
 in a web browser and follow the \"Download\" link for\n\
-\"Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy\n\
-Files 5.0\" to obtain the JCE policy file, ${POLICYFILE}.\n\n
+\"Other Downloads\" to obtain the JCE policy file, ${POLICYFILE}.\n\n
 .endif#}
 .if defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})#{
 IGNORE += Please open http://java.sun.com/javase/downloads/index.jsp\n\
@@ -211,7 +213,7 @@ time zone update file, ${TZUPDATEFILE}.\n\n
 .endif#}
 .if !exists(${DISTDIR}/${PATCHSETFILE})#{
 IGNORE += Please download the patchset, ${PATCHSETFILE}, from\n\
-http://www.eyesbeyond.com/freebsddom/java/jdk15.html.\n\n
+http://www.eyesbeyond.com/freebsddom/java/jdk16.html.\n\n
 .endif#}
 IGNORE += Please place the downloaded file(s) in ${DISTDIR}
 IGNORE += \n and restart the build.\n\n
@@ -219,12 +221,12 @@ IGNORE += \n and restart the build.\n\n
 
 pre-fetch:
 	@${ECHO_MSG}
-	@${ECHO_MSG} "IMPORTANT: To build JDK 1.5.0 port, you should have at least"
-	@${ECHO_MSG} "2.5Gb of free disk space in build area!"
+	@${ECHO_MSG} "IMPORTANT: To build the JDK 1.6.0 port, you should have at least"
+	@${ECHO_MSG} "2.5Gb of free disk space in the build area!"
 	@${ECHO_MSG}
 .if defined(WITH_LINUX_BOOTSTRAP)
-	@${ECHO_MSG} "IMPORTANT: To build JDK 1.5.0 port, you should have linux emulation"
-	@${ECHO_MSG} "enabled in the kernel and linux procfs (linprocfs) filesystem"
+	@${ECHO_MSG} "IMPORTANT: To build the JDK 1.6.0 port, you should have linux emulation"
+	@${ECHO_MSG} "enabled in the kernel and the linux procfs (linprocfs) filesystem"
 	@${ECHO_MSG} "mounted."
 	@${ECHO_MSG}
 .endif
@@ -254,33 +256,32 @@ do-extract:
 		fi \
 	done
 
+post-extract:
+	@${MV} ${WRKDIR}/share/plugin ${WRKDIR}/deploy/src/plugin/share/
+	@${RMDIR} ${WRKDIR}/share
+	@${MKDIR} ${WRKDIR}/hotspot/build/bsd
+	@${CP} ${WRKDIR}/hotspot/build/solaris/Queens.class \
+		${WRKDIR}/hotspot/build/bsd
+	@${TOUCH} ${WRKDIR}/j2se/src/solaris/native/sun/tools/attach/BSDVirtualMachine.c
+
 pre-patch:
 	@cd ${WRKDIR} &&  \
 		${BZIP2_CMD} -dc ${DISTDIR}/${PATCHSETFILE} | ${TAR} -xf - && \
 		${CHMOD} -R u+w * && \
-		${PATCH} -p0 < ${WRKDIR}/jdk15.patches
-.if (${ARCH} == amd64) && !defined(WITHOUT_WEB)
-	@cd ${WRKDIR} && \
-		uudecode -o /dev/stdout < ${FILESDIR}/plugin_amd64.bz2.uu | \
-		${BZIP2_CMD} -dc | ${PATCH} -p0
-.endif
+		${PATCH} -p0 < ${WRKDIR}/jdk16.patches
 
 post-patch:
 	@for file in ${LOCAL_FILES}; do \
 		${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 			${WRKSRC}/$${file}; \
 	done
-	@for file in ${PTHREAD_FILES}; do \
-		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" \
-			${WRKSRC}/$${file}; \
-	done
 	@for file in ${X11_FILES}; do \
 		${REINPLACE_CMD} -e "s:%%X11BASE%%:${X11BASE}:" \
 			${WRKSRC}/$${file}; \
 	done
-	${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" \
-		-e "s:%%JDK_VERSION%%:${JDK_VERSION}:g"\
-		${WRKSRC}/../../deploy/src/plugin/solaris/controlpanel/sun_java.desktop
+#	${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" \
+#		-e "s:%%JDK_VERSION%%:${JDK_VERSION}:g"\
+#		${WRKSRC}/../../deploy/src/plugin/solaris/controlpanel/sun_java.desktop
 
 .if defined(WITH_LINUX_BOOTSTRAP)
 pre-build:
@@ -306,7 +307,7 @@ pre-build:
 	@if [ "`/sbin/mount | grep ^linprocfs`" = "" ]; \
 	then \
 		${ECHO_MSG} "ERROR: You must have LINPROCFS mounted before" ; \
-		${ECHO_MSG} "starting to build the native JDK 1.5.0." ; \
+		${ECHO_MSG} "starting to build the native JDK 1.6.0." ; \
 		${ECHO_MSG} "" ; \
 		${ECHO_MSG} "You may do it with the following commands:" ; \
 		${ECHO_MSG} "" ; \
@@ -332,7 +333,7 @@ post-build:
 .if defined(WITH_TZUPDATE)
 	@# Update time zones
 	@-${JDKIMAGEDIR}/bin/java -jar \
-		${WRKDIR}/tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}/tzupdater.jar -u -bc
+		${WRKDIR}/tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}/tzupdater.jar -u
 	@-${RM} -rf ${JDKIMAGEDIR}/jre/lib/zi.tzdata*
 .endif
 
@@ -342,7 +343,7 @@ do-install:
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .if !defined(WITHOUT_WEB)
 	${INSTALL_DATA} ${JDKIMAGEDIR}/jre/plugin/desktop/sun_java.desktop \
-		${PREFIX}/share/applications/sun_java15.desktop
+		${PREFIX}/share/applications/sun_java16.desktop
 .endif
 	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/jdk${JDK_VERSION}/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${JDKIMAGEDIR} -not -type d | \

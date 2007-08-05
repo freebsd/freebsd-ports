@@ -1,0 +1,30 @@
+$FreeBSD$
+
+--- ../../j2se/make/sun/xawt/Makefile.orig	Sun Jul 29 23:03:29 2007
++++ ../../j2se/make/sun/xawt/Makefile	Sun Jul 29 23:03:29 2007
+@@ -40,7 +40,7 @@
+ 
+ ifeq ($(PLATFORM), bsd)
+ FILES_c += Xinerama.c
+-LDFLAGS += -pthread
++LDFLAGS += ${PTHREAD_LIBS}
+ dummy := $(shell $(MKDIR) -p $(LIB_LOCATION))
+ endif
+ 
+@@ -118,14 +118,14 @@
+ 
+ ifeq ($(PLATFORM), linux)
+ # Allows for builds on Debian GNU Linux, X11 is in a different place 
+-  CPPFLAGS += -I/usr/X11R6/include/X11/extensions \
++  CPPFLAGS += -I${X11BASE}/include/X11/extensions \
+               -I/usr/include/X11/extensions \
+               -I$(MOTIF_DIR)/include \
+               -I$(OPENWIN_HOME)/include 
+ endif
+ 
+ ifeq ($(PLATFORM), bsd)
+-  CPPFLAGS += -I/usr/X11R6/include/X11/extensions -I$(MOTIF_DIR)/include -I$(OPENWIN_HOME)/include
++  CPPFLAGS += -I${X11BASE}/include/X11/extensions -I$(MOTIF_DIR)/include -I$(OPENWIN_HOME)/include
+ endif
+ 
+ ifeq ($(PLATFORM), solaris)

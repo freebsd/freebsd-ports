@@ -1,0 +1,22 @@
+$FreeBSD$
+
+--- ../../deploy/make/plugin/nscore/unix/Makefile.orig	Sun Jul 29 23:03:29 2007
++++ ../../deploy/make/plugin/nscore/unix/Makefile	Sun Jul 29 23:03:29 2007
+@@ -16,7 +16,7 @@
+ 
+ include $(DEPLOY_TOPDIR)/make/plugin/common/Defs.gmk
+ 
+-X11DIR = /usr/X11R6
++X11DIR = ${X11BASE}
+ 
+ ifeq ($(PLATFORM), linux)
+ LDLIBS = -lX11 -ldl -lc
+@@ -34,7 +34,7 @@
+ endif
+ 
+ ifeq ($(PLATFORM), bsd)
+-INTLDIR = /usr/local
++INTLDIR = ${LOCALBASE}
+ INTLHDRDIR = $(INTLDIR)/include
+ else
+ INTLHDRDIR =

@@ -1,0 +1,22 @@
+$FreeBSD$
+
+--- ../../j2se/make/common/shared/Defs-bsd.gmk.orig	Sun Jul 29 23:03:30 2007
++++ ../../j2se/make/common/shared/Defs-bsd.gmk	Sun Jul 29 23:03:30 2007
+@@ -30,7 +30,7 @@
+ endef
+ 
+ # Location on system where jdk installs might be
+-USRJDKINSTANCES_PATH =/usr/local
++USRJDKINSTANCES_PATH =${LOCALBASE}
+ 
+ # UNIXCOMMAND_PATH: path to where the most common Unix commands are.
+ #  NOTE: Must end with / so that it could be empty, allowing PATH usage.
+@@ -105,7 +105,7 @@
+ LIBM=-lm
+ 
+ # CUPS
+-_CUPS_HEADERS_PATH=/usr/local/include
++_CUPS_HEADERS_PATH=${LOCALBASE}/include
+ 
+ # JDK_IMPORT_PATH: location of previously built JDK (this version).
+ ifdef ALT_JDK_IMPORT_PATH

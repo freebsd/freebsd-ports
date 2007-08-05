@@ -1,0 +1,29 @@
+$FreeBSD$
+
+--- ../../deploy/make/common/Defs-bsd.gmk.orig	Sun Jul 29 23:03:29 2007
++++ ../../deploy/make/common/Defs-bsd.gmk	Sun Jul 29 23:03:29 2007
+@@ -23,8 +23,8 @@
+ JUMP_EXE       = $(BIN_DIR)/javaws
+ CLASSPATH_SEP  = $(CLASSPATH_SEPARATOR)
+ PATH_SEP       = /
+-X11DIR         = /usr/X11R6
+-LOCALDIR       = /usr/local
++X11DIR         = ${X11BASE}
++LOCALDIR       = ${LOCALBASE}
+ ifneq ($(OS_VENDOR), NetBSD)
+ LIBS           = -L$(X11DIR)/lib -lX11 -L$(LOCALDIR)/lib -liconv
+ else
+@@ -43,11 +43,11 @@
+ 	$(BSD_INCLUDES) -D_ALLBSD_SOURCE
+ 
+ ifeq ($(OS_VENDOR), FreeBSD)
+-LINK_FLAGS_COMMON = -pthread
++LINK_FLAGS_COMMON = ${PTHREAD_LIBS}
+ endif
+ 
+ ifeq ($(OS_VENDOR), OpenBSD)
+-LINK_FLAGS_COMMON = -pthread
++LINK_FLAGS_COMMON = ${PTHREAD_LIBS}
+ endif
+ 
+ C_FLAGS_OPT =

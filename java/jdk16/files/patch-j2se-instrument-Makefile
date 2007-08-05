@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../j2se/make/java/instrument/Makefile.orig	Sun Jul 29 23:03:30 2007
++++ ../../j2se/make/java/instrument/Makefile	Sun Jul 29 23:03:30 2007
+@@ -106,7 +106,7 @@
+ endif # PLATFORM
+ 
+ ifeq ($(PLATFORM), bsd)
+-  ICONV_DIR = /usr/local
++  ICONV_DIR = ${LOCALBASE}
+   CPPFLAGS += -I$(ICONV_DIR)/include
+   OTHER_LDLIBS += -L$(ICONV_DIR)/lib -liconv
+ endif

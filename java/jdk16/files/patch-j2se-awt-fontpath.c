@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- ../../j2se/src/solaris/native/sun/awt/fontpath.c.orig	Sun Dec 10 21:57:02 2006
-+++ ../../j2se/src/solaris/native/sun/awt/fontpath.c	Sun Dec 10 21:58:43 2006
+--- ../../j2se/src/solaris/native/sun/awt/fontpath.c.orig	Sun Jul 29 23:03:29 2007
++++ ../../j2se/src/solaris/native/sun/awt/fontpath.c	Sun Jul 29 23:03:29 2007
 @@ -98,18 +98,18 @@
   * various flavors of Linux
   */

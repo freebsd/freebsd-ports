@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../j2se/make/java/nio/Makefile.orig	Sun Jul 29 23:03:31 2007
++++ ../../j2se/make/java/nio/Makefile	Sun Jul 29 23:03:31 2007
+@@ -121,7 +121,7 @@
+ OTHER_LDLIBS += -L$(LIBDIR)/$(LIBARCH) -ljava -lnet -lpthread -ldl
+ endif
+ ifeq ($(PLATFORM), bsd)
+-OTHER_LDLIBS += -L$(LIBDIR)/$(LIBARCH) -ljava -lnet -pthread
++OTHER_LDLIBS += -L$(LIBDIR)/$(LIBARCH) -ljava -lnet ${PTHREAD_LIBS}
+ endif
+ ifeq ($(PLATFORM), solaris)
+ OTHER_LDLIBS += $(JVMLIB) -lsocket -lposix4 -ldl \

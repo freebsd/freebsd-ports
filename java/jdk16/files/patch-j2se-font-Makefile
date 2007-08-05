@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../j2se/make/sun/font/Makefile.orig	Sun Jul 29 23:03:29 2007
++++ ../../j2se/make/sun/font/Makefile	Sun Jul 29 23:03:29 2007
+@@ -123,7 +123,7 @@
+ 
+ # setup the list of libraries to link in...
+ ifeq ($(PLATFORM), bsd)
+-OTHER_INCLUDES += -I/usr/X11R6/include
++OTHER_INCLUDES += -I${X11BASE}/include
+ OTHER_LDLIBS  += -lawt $(LIBM) $(LIBCXX)
+ else
+ ifeq ($(PLATFORM), linux)

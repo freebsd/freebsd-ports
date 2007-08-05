@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../j2se/make/jpda/transport/socket/Makefile.orig	Sun Jul 29 23:03:31 2007
++++ ../../j2se/make/jpda/transport/socket/Makefile	Sun Jul 29 23:03:31 2007
+@@ -30,7 +30,7 @@
+ 
+ ifeq ($(PLATFORM), bsd)
+   LIBSOCKET = 
+-  OTHER_LDLIBS += -pthread
++  OTHER_LDLIBS += ${PTHREAD_LIBS}
+ endif
+ 
+ ifeq ($(PLATFORM), solaris)

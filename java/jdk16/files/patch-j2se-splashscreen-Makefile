@@ -1,0 +1,18 @@
+$FreeBSD$
+
+--- ../../j2se/make/sun/splashscreen/Makefile.orig	Sun Jul 29 23:03:30 2007
++++ ../../j2se/make/sun/splashscreen/Makefile	Sun Jul 29 23:03:30 2007
+@@ -46,11 +46,11 @@
+ ifneq ($(PLATFORM), windows)
+   CFLAGS += -DWITH_X11
+   ifeq ($(PLATFORM), bsd)
+-    ICONV_DIR=/usr/local
++    ICONV_DIR=${LOCALBASE}
+     CPPFLAGS += -I$(OPENWIN_HOME)/include \
+                 -I$(OPENWIN_HOME)/include/X11/extensions \
+ 		-I$(ICONV_DIR)/include
+-    OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11 -lXext -L$(ICONV_DIR)/lib -liconv $(LIBM) -pthread
++    OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11 -lXext -L$(ICONV_DIR)/lib -liconv $(LIBM) ${PTHREAD_LIBS}
+   else
+     CPPFLAGS += -I$(OPENWIN_HOME)/include -I$(OPENWIN_HOME)/include/X11/extensions
+     OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11 -lXext $(LIBM) -lpthread

@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../j2se/make/common/Defs-bsd.gmk.orig	Sun Jul 29 23:03:29 2007
++++ ../../j2se/make/common/Defs-bsd.gmk	Sun Jul 29 23:03:29 2007
+@@ -293,7 +293,7 @@
+ override LIBTHREAD               =
+ override MOOT_PRIORITIES         = true
+ override NO_INTERRUPTIBLE_IO     = false
+-override OPENWIN_HOME            = /usr/X11R6
++override OPENWIN_HOME            = ${X11BASE}
+ override OPENWIN_LIB             = $(OPENWIN_HOME)/lib
+ override OTHER_M4FLAGS           = -D__GLIBC__ -DGNU_ASSEMBLER
+ override SUN_CMM_SUBDIR          =

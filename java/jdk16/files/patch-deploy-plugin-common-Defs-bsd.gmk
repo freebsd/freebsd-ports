@@ -1,0 +1,10 @@
+$FreeBSD$
+
+--- ../../deploy/make/plugin/common/Defs-bsd.gmk.orig	Sun Jul 29 23:03:29 2007
++++ ../../deploy/make/plugin/common/Defs-bsd.gmk	Sun Jul 29 23:03:29 2007
+@@ -34,4 +34,4 @@
+ 
+ PLUGIN_PLATFORM_SRC := $(DEPLOY_TOPDIR)/src/plugin/solaris
+ 
+-OTHER_LDFLAGS = -L/usr/X11R6/lib
++OTHER_LDFLAGS = -L${X11BASE}/lib

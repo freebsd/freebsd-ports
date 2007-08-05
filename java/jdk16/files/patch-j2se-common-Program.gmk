@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../j2se/make/common/Program.gmk.orig	Sun Jul 29 23:03:31 2007
++++ ../../j2se/make/common/Program.gmk	Sun Jul 29 23:03:31 2007
+@@ -155,7 +155,7 @@
+ endif # USE_PTHREADS
+ 
+ ifeq ($(PLATFORM), bsd)
+-THREADLIBS = -pthread
++THREADLIBS = ${PTHREAD_LIBS}
+ endif
+ 
+ #
