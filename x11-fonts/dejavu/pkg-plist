@@ -13,15 +13,11 @@
 %%FONTSDIR%%/DejaVuSansMono.ttf
 %%FONTSDIR%%/DejaVuSerif-Bold.ttf
 %%FONTSDIR%%/DejaVuSerif-BoldItalic.ttf
-%%FONTSDIR%%/DejaVuSerif-BoldOblique.ttf
 %%FONTSDIR%%/DejaVuSerif-Italic.ttf
-%%FONTSDIR%%/DejaVuSerif-Oblique.ttf
 %%FONTSDIR%%/DejaVuSerif.ttf
 %%FONTSDIR%%/DejaVuSerifCondensed-Bold.ttf
 %%FONTSDIR%%/DejaVuSerifCondensed-BoldItalic.ttf
-%%FONTSDIR%%/DejaVuSerifCondensed-BoldOblique.ttf
 %%FONTSDIR%%/DejaVuSerifCondensed-Italic.ttf
-%%FONTSDIR%%/DejaVuSerifCondensed-Oblique.ttf
 %%FONTSDIR%%/DejaVuSerifCondensed.ttf
 %%FONTSDIR%%/fonts.dir
 @exec %%LOCALBASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
