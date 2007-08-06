@@ -67,6 +67,7 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/son.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/swing.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/tango.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/trance.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/vienesewaltz.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/waltz.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/zydeco.html
@@ -301,17 +302,18 @@ bin/mma
 %%DATADIR%%/MMA/volume.py
 %%DATADIR%%/MMA/volume.pyc
 %%DATADIR%%/includes/README
+%%DATADIR%%/includes/aria/.keepme
 %%DATADIR%%/includes/init.mma
 %%DATADIR%%/includes/reset.mma
 %%DATADIR%%/includes/stdpats.mma
 %%DATADIR%%/includes/stdpats34.mma
 %%DATADIR%%/includes/stdpats54.mma
-%%DATADIR%%/includes/aria/.keepme
 %%DATADIR%%/lib/README
 %%DATADIR%%/lib/kara/.mmaDB
 %%DATADIR%%/lib/kara/K50s_rock.mma
 %%DATADIR%%/lib/kara/README
 %%DATADIR%%/lib/kara/twi.mma
+%%DATADIR%%/lib/stdlib/#waltz.mma#
 %%DATADIR%%/lib/stdlib/.mmaDB
 %%DATADIR%%/lib/stdlib/50srock.mma
 %%DATADIR%%/lib/stdlib/60srock.mma
@@ -376,6 +378,7 @@ bin/mma
 %%DATADIR%%/lib/stdlib/son.mma
 %%DATADIR%%/lib/stdlib/swing.mma
 %%DATADIR%%/lib/stdlib/tango.mma
+%%DATADIR%%/lib/stdlib/trance.mma
 %%DATADIR%%/lib/stdlib/vienesewaltz.mma
 %%DATADIR%%/lib/stdlib/waltz.mma
 %%DATADIR%%/lib/stdlib/zydeco.mma
