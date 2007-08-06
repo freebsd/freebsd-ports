@@ -1,8 +1,6 @@
 EasyTAG is an utility for viewing and editing tags for MP3, MP2, FLAC, Ogg
 Vorbis, MusePack and Monkey's Audio files. 
 
-The big new feature of this development version is GTK2 support.
-
 Features:
 
 - Auto tagging: parse filename and directory to complete automatically the

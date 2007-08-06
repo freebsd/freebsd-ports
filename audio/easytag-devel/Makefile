@@ -38,4 +38,10 @@ CONFIGURE_ARGS+=	--enable-wavpack
 CONFIGURE_ARGS+=	--disable-wavpack
 .endif
 
+.if defined(WITHOUT_ID3V23)
+CONFIGURE_ARGS+=	--disable-id3v23
+.else
+LIB_DEPENDS+=		id3tag.0:${PORTSDIR}/audio/libid3tag
+.endif
+
 .include <bsd.port.mk>
