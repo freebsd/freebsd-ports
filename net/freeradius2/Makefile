@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION?=	1.1.6
+PORTVERSION?=	1.1.7
 PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
@@ -37,7 +37,7 @@ CONFLICTS+=	freeradius-mysql-[0-9].* freeradius-[02-9].*
 .endif
 
 USE_RC_SUBR=	radiusd.sh
-USE_AUTOTOOLS=	libltdl:15 libtool:15
+USE_AUTOTOOLS=	libltdl:15 libtool:15 autoconf:261
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -220,8 +220,18 @@ post-patch:
 # Clean up after the last operation (so as not to get unwanted files when installing doc/)
 	@${FIND} -E ${WRKSRC} -regex '.*/Makefile(\.in)?\.(orig|bak)$$' -delete
 .if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's/-DNO_OPENSSL//' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/-DNO_OPENSSL//' ${WRKSRC}/configure.in
 .endif
+
+pre-configure:
+# Force the rebuild of some configures from configure.in, as we're patching
+# the configure.in
+# NOTE: ${WRKSRC}/configure is rebuilt automatically once autoconf:261 is
+# added to USE_AUTOTOOLS
+	@cd ${WRKSRC}/src/modules/rlm_ldap && ${AUTOCONF} -I ${WRKSRC}
+	@cd ${WRKSRC}/src/modules/rlm_sql/drivers/rlm_sql_mysql \
+		&& ${AUTOCONF} -I ${WRKSRC}
+	@cd ${WRKSRC}/src/modules/rlm_python && ${AUTOCONF} -I ${WRKSRC}
 
 post-install:
 # Create (if necessary) ${PREFIX}/etc/raddb and subdirectories using

@@ -50,6 +50,7 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/oraclesql.conf
 %%EXAMPLESDIR%%/raddb/otp.conf
 %%EXAMPLESDIR%%/raddb/postgresql.conf
+%%EXAMPLESDIR%%/raddb/postgresqlippool.conf
 %%EXAMPLESDIR%%/raddb/preproxy_users
 %%EXAMPLESDIR%%/raddb/proxy.conf
 %%EXAMPLESDIR%%/raddb/radiusd.conf
@@ -312,11 +313,11 @@ lib/rlm_sqlcounter.so
 %%EXPM%%lib/rlm_sqlhpwippool.a
 %%EXPM%%lib/rlm_sqlhpwippool.la
 %%EXPM%%lib/rlm_sqlhpwippool.so
-%%EXPM%%lib/rlm_sqlippool-%%PORTVERSION%%.la
-%%EXPM%%lib/rlm_sqlippool-%%PORTVERSION%%.so
-%%EXPM%%lib/rlm_sqlippool.a
-%%EXPM%%lib/rlm_sqlippool.la
-%%EXPM%%lib/rlm_sqlippool.so
+lib/rlm_sqlippool-%%PORTVERSION%%.la
+lib/rlm_sqlippool-%%PORTVERSION%%.so
+lib/rlm_sqlippool.a
+lib/rlm_sqlippool.la
+lib/rlm_sqlippool.so
 lib/rlm_unix-%%PORTVERSION%%.la
 lib/rlm_unix-%%PORTVERSION%%.so
 lib/rlm_unix.a
@@ -355,6 +356,7 @@ sbin/rc.radiusd
 %%PORTDOCS%%%%DOCSDIR%%/examples/openldap.schema
 %%PORTDOCS%%%%DOCSDIR%%/examples/oracle.sql
 %%PORTDOCS%%%%DOCSDIR%%/examples/postgresql.sql
+%%PORTDOCS%%%%DOCSDIR%%/examples/postgresql.sql.extra
 %%PORTDOCS%%%%DOCSDIR%%/ldap_howto.txt
 %%PORTDOCS%%%%DOCSDIR%%/load-balance.txt
 %%PORTDOCS%%%%DOCSDIR%%/misc-nas
