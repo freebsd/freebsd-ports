@@ -51,7 +51,7 @@ $FreeBSD$
 +###########################################
 +######## Copy examples
 +
-+if not os.getenv('WITHOUT_EXAMPLES'):
++if not os.getenv('NOPORTEXAMPLES'):
 +    examplesdir = '%%EXAMPLESDIR%%'
 +    print "Copying example files to", examplesdir
 +    shutil.copytree( "egs", examplesdir)

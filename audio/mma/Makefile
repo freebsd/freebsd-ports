@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mma
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
+#PORTREVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mellowood.ca/${PORTNAME}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -27,40 +27,32 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-bin-${PORTVERSION}
 WRKDOC=	${WRKDIR}/${PORTNAME}-pdf-${PORTVERSION}
 
 CP_INSTALL_MMA=	${WRKSRC}/cp-install
-FIND_FILES=	${WRKSRC} -type f -and \( -name "*.py" -or -name 'cp-install' -or -name 'mkall' \)
+FIND_FILES=	${WRKSRC} -type f -and \( -name "*.py" -or -name 'cp-install' -or -name 'mkall' \) -print0
 FIND_FILES_BAK=	${WRKSRC} -type f -and \( -name "*.orig" -or -name "*.bak" \)
-FIND_DOCS=	. -type f -name "*.pdf"
 
 .if !defined (NOPORTDOCS)
 DISTFILES+=	${PORTNAME}-pdf-${PORTVERSION}.tar.gz
 .endif
 
+.include <bsd.port.pre.mk>
 
-PLIST_SUB=	PORTEXAMPLES=${PORTEXAMPLES}
+XARGS_ARGS=	-0
+REINPLACE_ARGS=	-i.bak -e 's,/usr/local/share/mma,${DATADIR},' \
+		-e 's,/usr/local/etc,${LOCALBASE}/etc,' \
+		-e 's,%%DOCSDIR%%,${DOCSDIR},' \
+		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},' \
+		-e 's,%%PREFIX%%,${PREFIX},' \
+		-e 's,/usr/bin/env python,&${PYTHON_VER},'
 
 post-patch:
-	@${FIND} ${FIND_FILES} -exec ${REINPLACE_CMD} \
-	    -e 's,/usr/local/share/mma,${DATADIR},' \
-	    -e 's,/usr/local/etc,${LOCALBASE}/etc,' \
-	    -e 's,%%DOCSDIR%%,${DOCSDIR},' \
-	    -e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},' \
-	    -e 's,%%PREFIX%%,${PREFIX},' \
-	    -e 's,#!/usr/bin/env python,&${PYTHON_VER},' {} ";"
+	@${FIND} ${FIND_FILES} | ${XARGS} ${XARGS_ARGS} ${REINPLACE_CMD}
 	@${FIND} ${FIND_FILES_BAK} -delete
 	@${TOUCH} ${WRKSRC}/includes/aria/.keepme
 
 do-install:
-	@cd ${WRKSRC} && ${ENV} NOPORTDOCS=${NOPORTDOCS} WITHOUT_EXAMPLES=${WITHOUT_EXAMPLES} ${CP_INSTALL_MMA}
+	@cd ${WRKSRC} && ${CP_INSTALL_MMA}
 .if !defined(NOPORTDOCS)
-	@cd ${WRKDOC} && ${MKDIR} ${DOCSDIR}/pdf && ${FIND} ${FIND_DOCS} -exec ${INSTALL_DATA} {} ${DOCSDIR}/pdf/ ";"
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if defined (WITHOUT_EXAMPLES)
-PORTEXAMPLES=	"@comment "
-.else
-PORTEXAMPLES=	""
+	@${MKDIR} ${DOCSDIR}/pdf && ${CP} ${WRKDOC}/*.pdf ${DOCSDIR}/pdf/
 .endif
 
 .if defined (WITH_TIMIDITY)
