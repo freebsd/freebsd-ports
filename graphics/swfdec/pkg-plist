@@ -17,11 +17,11 @@ include/swfdec-%%VERSION%%/libswfdec/swfdec_url.h
 lib/libswfdec-%%VERSION%%.a
 lib/libswfdec-%%VERSION%%.la
 lib/libswfdec-%%VERSION%%.so
-lib/libswfdec-%%VERSION%%.so.0
+lib/libswfdec-%%VERSION%%.so.1
 lib/libswfdec-gtk-%%VERSION%%.a
 lib/libswfdec-gtk-%%VERSION%%.la
 lib/libswfdec-gtk-%%VERSION%%.so
-lib/libswfdec-gtk-%%VERSION%%.so.0
+lib/libswfdec-gtk-%%VERSION%%.so.1
 libdata/pkgconfig/swfdec-%%VERSION%%.pc
 libdata/pkgconfig/swfdec-gtk-%%VERSION%%.pc
 share/gtk-doc/html/swfdec/SwfdecAsContext.html
