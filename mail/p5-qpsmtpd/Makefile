@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	qpsmtpd
-PORTVERSION=	0.32
+PORTVERSION=	0.40
 CATEGORIES=	mail
+MASTER_SITES=	http://smtpd.develooper.com/files/
+PKGNAMEPREFIX=	p5-
 DISTNAME=	qpsmtpd-${PORTVERSION}
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	A flexible SMTP daemon written in Perl and featuring a plugin API
 
-#none for Net::Milter yet... meaning the milter plugin does not work and thus deleted when installed
-#none for Clamd yet... meaning the plugins/virus/clamd does not work and thus deleted when installed
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
@@ -25,19 +25,16 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		${SITE_PERL}/${PERL_ARCH}/Geo/IP.pm:${PORTSDIR}/net/p5-Geo-IP \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
-
-MASTER_SITES=	http://smtpd.develooper.com/files/
-
-PKGNAMEPREFIX=	p5-
+		${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC \
+		clamd:${PORTSDIR}/security/clamav
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-
 PERL_CONFIGURE=	yes
 
-MAN3=		Qpsmtpd::Constants.3 \
+MAN3=		Qpsmtpd::Command.3 \
+		Qpsmtpd::Constants.3 \
 		Qpsmtpd::DSN.3 \
-		Qpsmtpd::Auth.3 \
+		Qpsmtpd::ConfigServer.3 \
 		Qpsmtpd::Transaction.3 \
 		Qpsmtpd::Address.3 \
 		Qpsmtpd.3 \
@@ -48,15 +45,18 @@ MAN3=		Qpsmtpd::Constants.3 \
 USE_RC_SUBR=	qpsmtpd.sh
 
 pre-configure:
-	@${RM} -v ${WRKSRC}/plugins/milter
-	@${RM} -v ${WRKSRC}/plugins/virus/clamdscan
+	@${RM} ${WRKSRC}/plugins/milter
 
 post-install:
-	@${MKDIR} -v ${PREFIX}/share/examples/${PORTNAME}
-	@${CP} -v ${WRKSRC}/config.sample/* ${PREFIX}/share/examples/${PORTNAME}
-	@${MKDIR} -v ${PREFIX}/share/${PORTNAME}
-	@${MKDIR} -v ${PREFIX}/share/${PORTNAME}/plugins
-	@${CP} -vr ${WRKSRC}/plugins/ ${PREFIX}/share/${PORTNAME}/plugins
+	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}/plugins
+	@(cd ${WRKSRC}/plugins/ && ${COPYTREE_SHARE} \* ${DATADIR}/plugins/)
+	@(cd ${WRKSRC}/config.sample/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_SHARE} ${WRKSRC}/README* ${DOCSDIR}/
+.endif
 	@${ECHO_MSG}
 	@${ECHO_MSG}
 	@${ECHO_MSG} '*****************************************************************'
