@@ -1,0 +1,11 @@
+--- src/dar_suite/Makefile.am.orig	2007-08-06 15:54:52.000000000 +0200
++++ src/dar_suite/Makefile.am	2007-08-06 15:55:09.000000000 +0200
+@@ -91,7 +91,7 @@
+ #
+ 
+ bin_PROGRAMS = dar dar_xform dar_slave dar_manager dar_cp $(ALSO_BUILD)
+-LDADD = -L../libdar -l$(MYLIB)
++LDADD=../libdar/lib$(MYLIB).la
+ if DEBUG_STATIC
+ AM_LDFLAGS = -all-static @LTLIBINTL@ $(LD_PROF)
+ else
