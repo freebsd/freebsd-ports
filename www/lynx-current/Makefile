@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.7d5
-PORTREVISION=	1
+PORTVERSION=	2.8.7d7
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
-DISTNAME=	${PORTNAME}2.8.7dev.5
+DISTNAME=	${PORTNAME}2.8.7dev.7
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A non-graphical, text-based World-Wide Web client
@@ -52,7 +51,6 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
-CONFIGURE_ENV+= CC="${CC} -Ichrtrans"
 MAKE_FLAGS=	helpdir=${L_HELP} docdir=${L_DOC} -f
 MAKEFILE=	makefile
 INSTALL_TARGET=	install-full
