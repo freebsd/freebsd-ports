@@ -327,6 +327,7 @@ lib/libmangosscript.so.0
 %%DATADIR%%/sql/updates/3845_account.sql
 %%DATADIR%%/sql/updates/3845_command.sql
 %%DATADIR%%/sql/updates/3859_spell_affect.sql
+%%DATADIR%%/sql/updates/3860_creature_template.sql
 %%DATADIR%%/sql/updates/3862_prospecting_loot_template.sql
 %%DATADIR%%/sql/updates/3874_spell_scripts.sql
 %%DATADIR%%/sql/updates/3875_item_template.sql
@@ -365,6 +366,35 @@ lib/libmangosscript.so.0
 %%DATADIR%%/sql/updates/4059_spell_learn_spell.sql
 %%DATADIR%%/sql/updates/4076_playercreateinfo_spell.sql
 %%DATADIR%%/sql/updates/4076_character_spell.sql
+%%DATADIR%%/sql/updates/4081_command.sql
+%%DATADIR%%/sql/updates/4096_pet.sql
+%%DATADIR%%/sql/updates/4116_creature_template.sql
+%%DATADIR%%/sql/updates/4133_command.sql
+%%DATADIR%%/sql/updates/4133_spell_chain.sql
+%%DATADIR%%/sql/updates/4134_command.sql
+%%DATADIR%%/sql/updates/4139_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4140_command.sql
+%%DATADIR%%/sql/updates/4145_character_reputation.sql
+%%DATADIR%%/sql/updates/4154_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4176_character.sql
+%%DATADIR%%/sql/updates/4176_command.sql
+%%DATADIR%%/sql/updates/4187_command.sql
+%%DATADIR%%/sql/updates/4204_command.sql
+%%DATADIR%%/sql/updates/4205_creature_template.sql
+%%DATADIR%%/sql/updates/4224_character_aura.sql
+%%DATADIR%%/sql/updates/4224_pet_aura.sql
+%%DATADIR%%/sql/updates/4235_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4239_spell_chain.sql
+%%DATADIR%%/sql/updates/4239_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4242_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4243_spell_affect.sql
+%%DATADIR%%/sql/updates/4248_spell_chain.sql
+%%DATADIR%%/sql/updates/4248_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4252_spell_threat.sql
+%%DATADIR%%/sql/updates/4255_spell_chain.sql
+%%DATADIR%%/sql/updates/4258_command.sql
+%%DATADIR%%/sql/updates/4259_spell_chain.sql
+%%DATADIR%%/sql/updates/4259_spell_proc_event.sql
 %%DATADIR%%/sql/updates/README
 %%DBC%%%%DATADIR%%/dbc/AnimationData.dbc
 %%DBC%%%%DATADIR%%/dbc/AreaPOI.dbc
@@ -543,6 +573,7 @@ lib/libmangosscript.so.0
 %%DBC%%%%DATADIR%%/dbc/gtRegenHPPerSpt.dbc
 %%DBC%%%%DATADIR%%/dbc/gtRegenMPPerSpt.dbc
 %%SD2%%share/scriptdev2/sql/scriptdev_full.sql
+%%SD2%%share/scriptdev2/sql/scriptdev_additional_req.sql
 %%SD2%%share/scriptdev2/sql/updates/09_BraveWindfeather.sql
 %%SD2%%share/scriptdev2/sql/updates/11_SilvaFilnaveth.sql
 %%SD2%%share/scriptdev2/sql/updates/27_Vaelastraz.sql
@@ -553,6 +584,9 @@ lib/libmangosscript.so.0
 %%SD2%%share/scriptdev2/sql/updates/r72.sql
 %%SD2%%share/scriptdev2/sql/updates/r78.sql
 %%SD2%%share/scriptdev2/sql/updates/r81.sql
+%%SD2%%share/scriptdev2/sql/updates/r91.sql
+%%SD2%%share/scriptdev2/sql/updates/r92.sql
+%%SD2%%share/scriptdev2/sql/updates/r97.sql
 @dirrm %%DATADIR%%/sql/updates
 @dirrm %%DATADIR%%/sql
 %%DBC%%@dirrm %%DATADIR%%/dbc
