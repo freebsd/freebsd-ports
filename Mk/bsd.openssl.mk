@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.35 2007-08-04 11:37:23 gabor Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.36 2007-08-06 10:39:24 dinoex Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
@@ -62,7 +62,7 @@ WITH_OPENSSL_BASE=yes
 OPENSSLBASE=		/usr
 OPENSSLDIR=		/etc/ssl
 
-.if !exists(/usr/lib/libcrypto.so)
+.if !exists(${DESTDIR}/usr/lib/libcrypto.so)
 check-depends::
 	@${ECHO_CMD} "Dependency error: this port requires the OpenSSL library, which is part of"
 	@${ECHO_CMD} "the FreeBSD crypto distribution but not installed on your"
@@ -121,7 +121,7 @@ OPENSSL_SHLIBVER?=	3
 .if	!defined(OPENSSL_PORT) && \
 	exists(${LOCALBASE}/lib/libcrypto.so)
 # find installed port and use it for dependency
-PKG_DBDIR?=		/var/db/pkg
+PKG_DBDIR?=		${DESTDIR}/var/db/pkg
 OPENSSL_INSTALLED!=	grep -l -r "^lib/libssl.so." "${PKG_DBDIR}" | \
 			while read contents; do \
 				sslprefix=`grep "^@cwd " "$${contents}" | ${HEAD} -n 1`; \
