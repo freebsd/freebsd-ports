@@ -1,0 +1,15 @@
+$FreeBSD$
+
+--- ../../deploy/src/desktop/freedesktop/applications/sun-java.desktop.orig	Thu Apr 12 04:55:27 2007
++++ ../../deploy/src/desktop/freedesktop/applications/sun-java.desktop	Wed Jun 13 16:57:20 2007
+@@ -18,8 +18,8 @@
+ Encoding=UTF-8
+ Name=Java
+ Comment=Java Virtual Machine
+-Exec=java -jar
+-Icon=sun-java.png
++Exec=%%PREFIX%%/jdk%%JDK_VERSION%%/bin/java -jar
++Icon=%%PREFIX%%/jdk%%JDK_VERSION%%/jre/lib/desktop/icons/hicolor/48x48/apps/sun-java.png
+ Terminal=false
+ Type=Application
+ NoDisplay=true

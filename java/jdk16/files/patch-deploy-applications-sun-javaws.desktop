@@ -1,0 +1,15 @@
+$FreeBSD$
+
+--- ../../deploy/src/desktop/freedesktop/applications/sun-javaws.desktop.orig	Thu Apr 12 04:55:27 2007
++++ ../../deploy/src/desktop/freedesktop/applications/sun-javaws.desktop	Wed Jun 13 16:58:15 2007
+@@ -15,8 +15,8 @@
+ Encoding=UTF-8
+ Name=JavaWS
+ Comment=Java Web Start
+-Exec=javaws
+-Icon=sun-javaws.png
++Exec=%%PREFIX%%/jdk%%JDK_VERSION%%/bin/javaws
++Icon=%%PREFIX%%/jdk%%JDK_VERSION%%/jre/lib/desktop/icons/hicolor/48x48/apps/sun-javaws.png
+ Terminal=false
+ Type=Application
+ NoDisplay=true
