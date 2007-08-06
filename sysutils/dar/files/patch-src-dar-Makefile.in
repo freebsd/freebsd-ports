@@ -1,0 +1,11 @@
+--- src/dar_suite/Makefile.in.orig	2007-08-06 15:55:23.000000000 +0200
++++ src/dar_suite/Makefile.in	2007-08-06 15:55:32.000000000 +0200
+@@ -282,7 +282,7 @@
+ @USE_UPX_TRUE@UPX = @UPX_PROG@
+ @BUILD_DAR_STATIC_FALSE@@USE_UPX_TRUE@ALSO_BUILD_INST = 
+ @BUILD_DAR_STATIC_TRUE@@USE_UPX_TRUE@ALSO_BUILD_INST = $(ALSO_BUILD)$(EXEEXT)
+-LDADD = -L../libdar -l$(MYLIB)
++LDADD=../libdar/lib$(MYLIB).la
+ @DEBUG_STATIC_FALSE@AM_LDFLAGS = @LTLIBINTL@ $(LD_PROF)
+ @DEBUG_STATIC_TRUE@AM_LDFLAGS = -all-static @LTLIBINTL@ $(LD_PROF)
+ dar_SOURCES = command_line.cpp command_line.hpp config_file.cpp config_file.hpp dar.cpp dar.hpp dar_suite.cpp dar_suite.hpp hide_file.cpp hide_file.hpp no_comment.cpp no_comment.hpp shell_interaction.cpp shell_interaction.hpp dar.usage getopt_decision.h my_getopt_long.h
