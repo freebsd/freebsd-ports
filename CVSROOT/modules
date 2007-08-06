@@ -2915,6 +2915,7 @@ flexbackup	ports/sysutils/flexbackup
 flexjson	ports/devel/flexjson
 fli2gif		ports/graphics/fli2gif
 flick		ports/devel/flick
+flickcurl	ports/www/flickcurl
 flightgear	ports/games/flightgear
 flightgear-aircrafts	ports/games/flightgear-aircrafts
 flightgear-atlas	ports/games/flightgear-atlas
