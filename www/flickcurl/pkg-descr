@@ -1,0 +1,9 @@
+Flickcurl is a C library for the Flickr API, handling creating the requests,
+signing, token management, calling the API, marshalling request parameters
+and decoding responses. It uses libcurl to call the REST web service and
+libxml2 to manipulate the XML responses. The current version supports part of
+the API (see Flickcurl API coverage) primarily the functions for reading
+photo, people and tags description, uploading photos, changing tags and
+comments.
+
+WWW: http://librdf.org/flickcurl/

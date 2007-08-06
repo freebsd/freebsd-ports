@@ -169,6 +169,7 @@
     SUBDIR += firefox15
     SUBDIR += flashplugin-mozilla
     SUBDIR += flat-frog
+    SUBDIR += flickcurl
     SUBDIR += flock
     SUBDIR += flood
     SUBDIR += fluxcms
