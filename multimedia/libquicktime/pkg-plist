@@ -26,6 +26,8 @@ lib/libquicktime/lqt_dv.la
 lib/libquicktime/lqt_dv.so
 %%LAME%%lib/libquicktime/lqt_lame.so
 %%LAME%%lib/libquicktime/lqt_lame.la
+lib/libquicktime/lqt_faad2.la
+lib/libquicktime/lqt_faad2.so
 lib/libquicktime/lqt_ffmpeg.la
 lib/libquicktime/lqt_ffmpeg.so
 lib/libquicktime/lqt_mjpeg.la
