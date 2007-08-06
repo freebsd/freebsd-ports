@@ -7,9 +7,9 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
-MASTER_SITES=	# http://download.java.net/tiger/
+MASTER_SITES=	# http://download.java.net/jdk6/
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk16.html
 #		 http://java.sun.com/javase/downloads/index.jsp
 DISTFILES=	${JRL_SRCFILE} ${JRL_BINFILE} ${JRL_MOZFILE} ${PATCHSETFILE}
