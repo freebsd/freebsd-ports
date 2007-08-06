@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://download.java.net/tiger/
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk16.html
@@ -17,7 +18,7 @@ EXTRACT_ONLY=	${JRL_SRCFILE} ${JRL_BINFILE} ${JRL_MOZFILE}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit 1.6.0
 
-BUILD_DEPENDS=  zip:${PORTSDIR}/archivers/zip \
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
@@ -66,7 +67,7 @@ TZUPDATE_TZVERSION=	2007f
 SUN_LINUX_JDK_VERSION=	1.6.0
 
 .if !defined(WITH_LINUX_BOOTSTRAP)
-NATIVE_BOOTSTRAP_JDKS+= ${LOCALBASE}/diablo-jdk1.5.0 \
+NATIVE_BOOTSTRAP_JDKS+=	${LOCALBASE}/diablo-jdk1.5.0 \
 			${LOCALBASE}/jdk1.6.0 \
 			${LOCALBASE}/jdk1.5.0
 .endif
@@ -114,7 +115,7 @@ WITH_LINUX_BOOTSTRAP=	YES
 BOOTSTRAPJDKDIR?=	${LOCALBASE}/linux-sun-jdk${SUN_LINUX_JDK_VERSION}
 .endif
 
-BUILD_DEPENDS+=	${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk16
+BUILD_DEPENDS+=	${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk15
 
 .if defined(WITHOUT_WEB)
 MAKE_ENV+=	DONT_BUILD_DEPLOY="YES"
@@ -135,23 +136,36 @@ MAKE_ENV+=	ALT_BOOTDIR="${BOOTSTRAPJDKDIR}" \
 		CLASSPATH="" \
 		LD_LIBRARY_PATH="" \
 		MAKEFLAGS="" \
-		SKIP_COMPARE_IMAGES="YES" \
+		SKIP_COMPARE_IMAGES="true" \
+		SKIP_FASTDEBUG_BUILD="true" \
 		LOCALBASE="${LOCALBASE}" \
 		X11BASE="${X11BASE}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+.if defined(WITH_DEBUG)
+MAKE_ENV+=	SKIP_DEBUG_BUILD="false"
+.endif
+
 .if !defined(WITH_IPV6)
 MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
 .endif
+
 .if defined(HOTSPOT_BUILD_JOBS)
-MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}
+MAKE_ENV+=	HOTSPOT_BUILD_JOBS="${HOTSPOT_BUILD_JOBS}"
+.endif
+
+.if defined(PARALLEL_BUILD_JOBS)
+MAKE_ENV+=	ALT_PARALLEL_BUILD_JOBS="${PARALLEL_BUILD_JOBS}"
 .endif
 
 ALL_TARGET=	all
 
 PLIST_FILES=	jdk${JDK_VERSION}/jre/.systemPrefs/.system.lock \
-		jdk${JDK_VERSION}/jre/.systemPrefs/.systemRootModFile
+		jdk${JDK_VERSION}/jre/.systemPrefs/.systemRootModFile \
+		share/applications/sun-java16.desktop \
+		share/applications/sun-javaws16.desktop
 .if !defined(WITHOUT_WEB)
-PLIST_FILES+=	share/applications/sun_java16.desktop
+PLIST_FILES+=	share/applications/sun-jcontrol16.desktop
 .endif
 PLIST_DIRS=	jdk${JDK_VERSION}/jre/.systemPrefs
 
@@ -165,6 +179,7 @@ JDKIMAGEDIR=	${WRKSRC}/../build/bsd-${HOTSPOTARCH}/j2sdk-image
 JDKIMAGEDIR_G=	${WRKSRC}/../build/bsd-${HOTSPOTARCH}/j2sdk-debug-image
 
 LOCAL_FILES=	../../hotspot/make/jprt.config \
+		../../hotspot/src/os/bsd/vm/os_bsd.cpp \
 		../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java \
 		../../j2se/src/share/classes/sun/net/www/MimeTable.java \
 		../../j2se/src/share/classes/sun/net/www/protocol/doc/DocURLConnection.java \
@@ -172,8 +187,13 @@ LOCAL_FILES=	../../hotspot/make/jprt.config \
 		../../j2se/src/solaris/bin/java-rmi.cgi.sh \
 		../../j2se/src/solaris/bin/java_md.c \
 		../../j2se/src/solaris/classes/sun/security/smartcardio/PlatformPCSC.java
+
 X11_FILES=	../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java \
 		../../j2se/src/solaris/native/sun/awt/fontpath.c
+
+DESKTOP_FILES=	../../deploy/src/desktop/freedesktop/applications/sun-java.desktop \
+		../../deploy/src/desktop/freedesktop/applications/sun-javaws.desktop \
+		../../deploy/src/plugin/solaris/controlpanel/sun_java.desktop
 
 # Check for JDK sources and patch file
 .if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE}) || !exists(${DISTDIR}/${JRL_MOZFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
@@ -279,9 +299,11 @@ post-patch:
 		${REINPLACE_CMD} -e "s:%%X11BASE%%:${X11BASE}:" \
 			${WRKSRC}/$${file}; \
 	done
-#	${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" \
-#		-e "s:%%JDK_VERSION%%:${JDK_VERSION}:g"\
-#		${WRKSRC}/../../deploy/src/plugin/solaris/controlpanel/sun_java.desktop
+	@for file in ${DESKTOP_FILES}; do \
+		${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" \
+			-e "s:%%JDK_VERSION%%:${JDK_VERSION}:g" \
+			${WRKSRC}/$${file}; \
+	done
 
 .if defined(WITH_LINUX_BOOTSTRAP)
 pre-build:
@@ -333,7 +355,7 @@ post-build:
 .if defined(WITH_TZUPDATE)
 	@# Update time zones
 	@-${JDKIMAGEDIR}/bin/java -jar \
-		${WRKDIR}/tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}/tzupdater.jar -u
+		${WRKDIR}/tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}/tzupdater.jar -u -bc
 	@-${RM} -rf ${JDKIMAGEDIR}/jre/lib/zi.tzdata*
 .endif
 
@@ -341,9 +363,13 @@ do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	cd ${JDKIMAGEDIR} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+	${INSTALL_DATA} ${JDKIMAGEDIR}/jre/lib/desktop/applications/sun-java.desktop \
+		${PREFIX}/share/applications/sun-java16.desktop
+	${INSTALL_DATA} ${JDKIMAGEDIR}/jre/lib/desktop/applications/sun-javaws.desktop \
+		${PREFIX}/share/applications/sun-javaws16.desktop
 .if !defined(WITHOUT_WEB)
-	${INSTALL_DATA} ${JDKIMAGEDIR}/jre/plugin/desktop/sun_java.desktop \
-		${PREFIX}/share/applications/sun_java16.desktop
+	${INSTALL_DATA} ${JDKIMAGEDIR}/jre/lib/desktop/applications/sun_java.desktop \
+		${PREFIX}/share/applications/sun-jcontrol16.desktop
 .endif
 	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/jdk${JDK_VERSION}/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${JDKIMAGEDIR} -not -type d | \

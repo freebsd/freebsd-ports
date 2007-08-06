@@ -1,0 +1,15 @@
+$FreeBSD$
+
+--- ../../deploy/src/plugin/solaris/controlpanel/sun_java.desktop.orig	Wed Jun 13 16:44:31 2007
++++ ../../deploy/src/plugin/solaris/controlpanel/sun_java.desktop	Wed Jun 13 16:59:32 2007
+@@ -15,8 +15,8 @@
+ Encoding=UTF-8
+ Name=Java
+ Comment=Java Control Panel
+-Exec=jcontrol
+-Icon=sun-jcontrol.png
++Exec=%%PREFIX%%/jdk%%JDK_VERSION%%/bin/jcontrol
++Icon=%%PREFIX%%/jdk%%JDK_VERSION%%/jre/lib/desktop/icons/hicolor/48x48/apps/sun-jcontrol.png
+ Terminal=false
+ Type=Application
+ Categories=Application;Settings;Java;
