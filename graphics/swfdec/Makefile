@@ -21,7 +21,6 @@ LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 
 USE_XLIB=	yes
 USE_GNOME=	gnomehack gtk20
-USE_GSTREAMER=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
