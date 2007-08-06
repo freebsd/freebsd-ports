@@ -1,0 +1,47 @@
+bin/madedit
+share/locale/zh_CN/LC_MESSAGES/madedit.mo
+share/locale/zh_TW/LC_MESSAGES/madedit.mo
+share/locale/it_IT/LC_MESSAGES/madedit.mo
+share/pixmaps/madedit.xpm
+%%DATADIR%%/syntax/extension.list
+%%DATADIR%%/syntax/filename.list
+%%DATADIR%%/syntax/firstline.list
+%%DATADIR%%/syntax/Dark.sch
+%%DATADIR%%/syntax/DarkBlue.sch
+%%DATADIR%%/syntax/Gray.sch
+%%DATADIR%%/syntax/syntax_actionscript.syn
+%%DATADIR%%/syntax/syntax_angelscript.syn
+%%DATADIR%%/syntax/syntax_awk.syn
+%%DATADIR%%/syntax/syntax_batch.syn
+%%DATADIR%%/syntax/syntax_conf.syn
+%%DATADIR%%/syntax/syntax_cpp.syn
+%%DATADIR%%/syntax/syntax_csharp.syn
+%%DATADIR%%/syntax/syntax_css.syn
+%%DATADIR%%/syntax/syntax_diff.syn
+%%DATADIR%%/syntax/syntax_fortran.syn
+%%DATADIR%%/syntax/syntax_html.syn
+%%DATADIR%%/syntax/syntax_javascript.syn
+%%DATADIR%%/syntax/syntax_java.syn
+%%DATADIR%%/syntax/syntax_js_html.syn
+%%DATADIR%%/syntax/syntax_jsp.syn
+%%DATADIR%%/syntax/syntax_latex.syn
+%%DATADIR%%/syntax/syntax_lua.syn
+%%DATADIR%%/syntax/syntax_nfo.syn
+%%DATADIR%%/syntax/syntax_pas.syn
+%%DATADIR%%/syntax/syntax_perl.syn
+%%DATADIR%%/syntax/syntax_php.syn
+%%DATADIR%%/syntax/syntax_python.syn
+%%DATADIR%%/syntax/syntax_reg.syn
+%%DATADIR%%/syntax/syntax_ruby.syn
+%%DATADIR%%/syntax/syntax_sh.syn
+%%DATADIR%%/syntax/syntax_squirrel.syn
+%%DATADIR%%/syntax/syntax_syn.syn
+%%DATADIR%%/syntax/syntax_txt.syn
+%%DATADIR%%/syntax/syntax_vbscript_asp.syn
+%%DATADIR%%/syntax/syntax_visualbasic.syn
+%%DATADIR%%/syntax/syntax_x86asm.syn
+%%DATADIR%%/syntax/syntax_xml.syn
+share/applications/madedit.desktop
+@dirrmtry %%DATADIR%%/syntax
+@dirrmtry share/locale/it_IT/LC_MESSAGES
+@dirrmtry share/locale/it_IT
