@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mocked
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/L/LU/LUKEC
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	mocked.3
+MAN3=	mocked.3 \
+	unmocked.3
 
 .include <bsd.port.mk>
