@@ -7160,6 +7160,7 @@ macutils	ports/archivers/macutils
 mad		ports/audio/mad
 mad_fcl		ports/net/mad_fcl
 madbomber	ports/games/madbomber
+madedit		ports/editors/madedit
 madman		ports/audio/madman
 madplay		ports/audio/madplay
 maelstrom	ports/games/maelstrom
