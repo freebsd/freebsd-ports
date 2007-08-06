@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.60
+PORTVERSION=	0.61
 CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -20,7 +20,7 @@ RUN_DEPENDS=	ipcount:${PORTSDIR}/net-mgmt/p5-Net-IP \
 		${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--online-tests
+CONFIGURE_ARGS+=	--no-online-tests
 
 MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::Question.3 Net::DNS::RR.3 Net::DNS::RR::A.3 \
@@ -49,12 +49,6 @@ OPTIONS=	IPV6 "Enable functionality over IPv6 transport" on
 
 .if !defined(WITHOUT_IPV6)
 RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
-.endif
-
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/INET.pm:${PORTSDIR}/devel/p5-IO
-post-patch:
-	${PERL} -pi -e 's/=(.*);/\($$1\);/ if m{errorstring}' ${WRKSRC}/lib/Net/DNS/Resolver/Recurse.pm
 .endif
 
 .if ${PERL_LEVEL} < 500800
