@@ -96,6 +96,7 @@
     SUBDIR += leo
     SUBDIR += lfhex
     SUBDIR += lpe
+    SUBDIR += madedit
     SUBDIR += manedit
     SUBDIR += mg
     SUBDIR += mined

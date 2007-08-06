@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2007-02-27 23:06:16.000000000 +0800
++++ ./Makefile.in	2007-08-07 00:06:33.304370715 +0800
+@@ -283,7 +283,7 @@
+ target_alias = @target_alias@
+ SUBDIRS = syntax po
+ INCLUDES = -I$(top_srcdir)/wxFlatNotebook/include -I$(top_srcdir)/wxAUI/include -I$(top_srcdir)/charset-detector/include -I$(top_srcdir)/charset-detector/src -I$(top_srcdir)/charset-detector/src/tables
+-madedit_CXXFLAGS = -DwxUSE_AUI=1 -DWXDLLIMPEXP_AUI= -DDATA_DIR=\"${datadir}\"
++madedit_CXXFLAGS = -DwxUSE_AUI=1 -DWXDLLIMPEXP_AUI= -DDATA_DIR=\"${datadir}\" $(glib_gtk2_CFLAGS)
+ madedit_SOURCES = src/MadAboutDialog.cpp \
+ 	src/MadAboutDialog.h \
+ 	src/MadCommand.h \
