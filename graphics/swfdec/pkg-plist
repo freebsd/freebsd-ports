@@ -10,8 +10,10 @@ include/swfdec-%%VERSION%%/libswfdec/swfdec_as_types.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_audio.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_buffer.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_enums.h
+include/swfdec-%%VERSION%%/libswfdec/swfdec_file_loader.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_loader.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_player.h
+include/swfdec-%%VERSION%%/libswfdec/swfdec_url.h
 lib/libswfdec-%%VERSION%%.a
 lib/libswfdec-%%VERSION%%.la
 lib/libswfdec-%%VERSION%%.so
@@ -46,6 +48,7 @@ share/gtk-doc/html/swfdec/swfdec-SwfdecAsFunction.html
 share/gtk-doc/html/swfdec/swfdec-SwfdecAsObject.html
 share/gtk-doc/html/swfdec/swfdec-SwfdecAsValue.html
 share/gtk-doc/html/swfdec/swfdec-SwfdecBuffer.html
+share/gtk-doc/html/swfdec/swfdec-SwfdecURL.html
 share/gtk-doc/html/swfdec/swfdec.devhelp
 share/gtk-doc/html/swfdec/swfdec.devhelp2
 share/gtk-doc/html/swfdec/up.png
