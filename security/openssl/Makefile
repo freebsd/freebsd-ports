@@ -886,7 +886,7 @@ MLINKS+=	\
 
 .include <bsd.port.pre.mk>
 
-OPENSSL_BASE_SONAME!=	readlink /usr/lib/libcrypto.so || true
+OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so || true
 OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
 OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
 
@@ -937,7 +937,7 @@ pre-everything::
 	@${FALSE}
 
 .endif
-.if exists(/usr/lib/libcrypto.so.3) && ${OPENSSL_SHLIBVER} != 3
+.if exists(${DESTDIR}/usr/lib/libcrypto.so.3) && ${OPENSSL_SHLIBVER} != 3
 pre-everything::
 	@${ECHO_CMD} "#"
 	@${ECHO_CMD} "# this ports conflicts with your base system"
