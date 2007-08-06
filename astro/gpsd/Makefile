@@ -7,14 +7,17 @@
 
 PORTNAME=	gpsd
 PORTVERSION=	2.32
+PORTREVISION=	1
 CATEGORIES=	astro geography
-MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	toxa@toxahost.ru
 COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 MAN1=	gps.1 gpsfake.1 gpsflash.1 gpspipe.1 gpsprof.1 rtcmdecode.1 sirfmon.1
@@ -43,8 +46,6 @@ OPTIONS=	XGPS "Build xgps and xgpsspeed (require X)" off \
 
 SUB_FILES=	pkg-message
 CONFIGURE_ARGS+=--disable-garmin
-
-INSTALLS_SHLIB=	yes
 
 .if defined(WITH_XGPS)
 CONFIGURE_ARGS+=--with-x
