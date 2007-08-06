@@ -49,44 +49,74 @@ OPTIONS=	BDB_3		"Use BerkeleyDB v3"	on \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
 		BDB_43		"Use BerkeleyDB v4.3"	off \
-		BDB_44		"Use BerkeleyDB v4.4"	off
+		BDB_44		"Use BerkeleyDB v4.4"	off \
+		BDB_45		"Use BerkeleyDB v4.5"	off \
+		BDB_46		"Use BerkeleyDB v4.6"	off
 .elif ${USE_BDB_VER} == 4
 OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	on \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
 		BDB_43		"Use BerkeleyDB v4.3"	off \
-		BDB_44		"Use BerkeleyDB v4.4"	off
+		BDB_44		"Use BerkeleyDB v4.4"	off \
+		BDB_45		"Use BerkeleyDB v4.5"	off \
+		BDB_46		"Use BerkeleyDB v4.6"	off
 .elif ${USE_BDB_VER} == 41
 OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	on \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
 		BDB_43		"Use BerkeleyDB v4.3"	off \
-		BDB_44		"Use BerkeleyDB v4.4"	off
+		BDB_44		"Use BerkeleyDB v4.4"	off \
+		BDB_45		"Use BerkeleyDB v4.5"	off \
+		BDB_46		"Use BerkeleyDB v4.6"	off
 .elif ${USE_BDB_VER} == 42
 OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	on \
 		BDB_43		"Use BerkeleyDB v4.3"	off \
-		BDB_44		"Use BerkeleyDB v4.4"	off
+		BDB_44		"Use BerkeleyDB v4.4"	off \
+		BDB_45		"Use BerkeleyDB v4.5"	off \
+		BDB_46		"Use BerkeleyDB v4.6"	off
 .elif ${USE_BDB_VER} == 43
 OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
 		BDB_43		"Use BerkeleyDB v4.3"	on \
-		BDB_44		"Use BerkeleyDB v4.4"	off
+		BDB_44		"Use BerkeleyDB v4.4"	off \
+		BDB_45		"Use BerkeleyDB v4.5"	off \
+		BDB_46		"Use BerkeleyDB v4.6"	off
 .elif ${USE_BDB_VER} == 44
 OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
 		BDB_43		"Use BerkeleyDB v4.3"	off \
-		BDB_44		"Use BerkeleyDB v4.4"	on
+		BDB_44		"Use BerkeleyDB v4.4"	on \
+		BDB_45		"Use BerkeleyDB v4.5"	off \
+		BDB_46		"Use BerkeleyDB v4.6"	off
+.elif ${USE_BDB_VER} == 45
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
+		BDB_4		"Use BerkeleyDB v4"	off \
+		BDB_41		"Use BerkeleyDB v4.1"	off \
+		BDB_42		"Use BerkeleyDB v4.2"	off \
+		BDB_43		"Use BerkeleyDB v4.3"	off \
+		BDB_44		"Use BerkeleyDB v4.4"	off \
+		BDB_45		"Use BerkeleyDB v4.5"	on \
+		BDB_46		"Use BerkeleyDB v4.6"	off
+.elif ${USE_BDB_VER} == 46
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
+		BDB_4		"Use BerkeleyDB v4"	off \
+		BDB_41		"Use BerkeleyDB v4.1"	off \
+		BDB_42		"Use BerkeleyDB v4.2"	off \
+		BDB_43		"Use BerkeleyDB v4.3"	off \
+		BDB_44		"Use BerkeleyDB v4.4"	off \
+		BDB_45		"Use BerkeleyDB v4.5"	off \
+		BDB_46		"Use BerkeleyDB v4.6"	on
 .else
-IGNORE=		"cannot install: WITH_BDB_VER must be 3, 4, 41, 42, 43 or 44"
+IGNORE=		"cannot install: WITH_BDB_VER must be 3, 4, 41, 42, 43, 44, 45 or 46"
 .endif
 
 OPTIONS+=	DRAC		"Enable DRAC support"			off
@@ -100,7 +130,7 @@ OPTIONS+=	REPLICATION	"Enable replication"			off
 OPTIONS+=	SNMP_4		"Enable SNMP support using net-snmp v4"	off \
 		SNMP_5		"Enable SNMP support using net-snmp v5"	off
 
-BDB_VERS=	3 4 41 42 43 44
+BDB_VERS=	3 4 41 42 43 44 45 46
 
 .include <bsd.port.pre.mk>
 
@@ -134,6 +164,10 @@ USE_BDB=	42
 USE_BDB=	43
 .elif defined(WITH_BDB_44)
 USE_BDB=	44
+.elif defined(WITH_BDB_45)
+USE_BDB=	45
+.elif defined(WITH_BDB_46)
+USE_BDB=	46
 .endif
 CONFIGURE_ARGS+=--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 		--with-bdb=${BDB_LIB_NAME}
