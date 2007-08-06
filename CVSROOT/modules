@@ -1780,6 +1780,7 @@ db42-nocrypto	ports/databases/db42-nocrypto
 db43		ports/databases/db43
 db44		ports/databases/db44
 db45		ports/databases/db45
+db46		ports/databases/db46
 db4o-mono	ports/databases/db4o-mono
 dbXML		ports/databases/dbXML
 dbacl		ports/textproc/dbacl
