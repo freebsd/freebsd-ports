@@ -85,12 +85,12 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/uucp/doc/uucp.info ${PREFIX}/info/
 	@${CHOWN} uucp:uucp ${PREFIX}/etc/uucp
 	@${CHMOD} 750 ${PREFIX}/etc/uucp
-	@${ECHO_CMD} "updating /etc/services"
-	@${CP} /etc/services /etc/services.bak
-	@(grep -v ^suucp /etc/services.bak; \
+	@${ECHO_CMD} "updating ${ROOTDIR}/etc/services"
+	@${CP} ${ROOTDIR}/etc/services ${ROOTDIR}/etc/services.bak
+	@(grep -v ^suucp ${ROOTDIR}/etc/services.bak; \
 	${ECHO_CMD} "suucp           4031/tcp   #UUCP over SSL"; \
 	${ECHO_CMD} "suucp           4031/udp   #UUCP over SSL" ) \
-		> /etc/services
+		> ${ROOTDIR}/etc/services
 .if !defined(BATCH)
 	@if test "$$(pw usershow uucp)" != "uucp:*:66:66::0:0:UUCP pseudo-user:/var/spool/uucppublic:${PREFIX}/libexec/uucp/uucico"; then \
 	pw usermod uucp -s ${PREFIX}/libexec/uucp/uucico; fi
