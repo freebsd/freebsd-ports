@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	swfdec-plugin
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	www
 MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec-mozilla/0.5/
 DISTNAME=	swfdec-mozilla-${PORTVERSION}
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Flash rendering plugin
 
-BUILD_DEPENDS=	swfdec>=0.5:${PORTSDIR}/graphics/swfdec
-RUN_DEPENDS=	swfdec>=0.5:${PORTSDIR}/graphics/swfdec
+LIB_DEPENDS=	swfdec-0.5.1:${PORTSDIR}/graphics/swfdec
 
 USE_GETOPT_LONG=	yes
 USE_AUTOTOOLS=	libtool:15
