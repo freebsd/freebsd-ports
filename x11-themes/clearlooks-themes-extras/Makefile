@@ -9,13 +9,12 @@ PORTNAME=	clearlooks-themes-extras
 PORTVERSION=	0.6
 PORTREVISION=	3
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www.kernow-webhosting.com/~bvc/theme/gtk/clearlooks/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	laszlof
 DISTNAME=	Clearlooks-Big_Pack-${PORTVERSION}.x
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extras colour schemes for Clearlooks engine theme
-
-BROKEN=		Checksum mismatch
 
 NO_BUILD=	yes
 USE_GNOME=	gtk20
