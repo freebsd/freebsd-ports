@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	1.4.0.74
-DISTVERSIONSUFFIX=	-static
+PORTVERSION=	1.4.0.94
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 PKGNAMESUFFIX=	-devel
+DISTNAME=	skype_static-${DISTVERSION}
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	P2P VoIP software
