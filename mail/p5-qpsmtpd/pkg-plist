@@ -1,23 +1,36 @@
 bin/qpsmtpd-forkserver
 bin/qpsmtpd
 %%SITE_PERL%%/Qpsmtpd.pm
-%%SITE_PERL%%/Qpsmtpd/SelectServer.pm
-%%SITE_PERL%%/Qpsmtpd/Utils.pm
-%%SITE_PERL%%/Qpsmtpd/TcpServer.pm
-%%SITE_PERL%%/Qpsmtpd/Constants.pm
-%%SITE_PERL%%/Qpsmtpd/Auth.pm
-%%SITE_PERL%%/Qpsmtpd/DSN.pm
-%%SITE_PERL%%/Qpsmtpd/Transaction.pm
 %%SITE_PERL%%/Qpsmtpd/Address.pm
-%%SITE_PERL%%/Qpsmtpd/Plugin.pm
-%%SITE_PERL%%/Qpsmtpd/SMTP.pm
-%%SITE_PERL%%/Qpsmtpd/Postfix.pm
+%%SITE_PERL%%/Qpsmtpd/Auth.pm
+%%SITE_PERL%%/Qpsmtpd/Command.pm
 %%SITE_PERL%%/Qpsmtpd/Connection.pm
+%%SITE_PERL%%/Qpsmtpd/Constants.pm
+%%SITE_PERL%%/Qpsmtpd/ConfigServer.pm
+%%SITE_PERL%%/Qpsmtpd/DSN.pm
+%%SITE_PERL%%/Qpsmtpd/Plugin.pm
+%%SITE_PERL%%/Qpsmtpd/Postfix.pm
+%%SITE_PERL%%/Qpsmtpd/SelectServer.pm
+%%SITE_PERL%%/Qpsmtpd/SMTP.pm
+%%SITE_PERL%%/Qpsmtpd/TcpServer.pm
+%%SITE_PERL%%/Qpsmtpd/Transaction.pm
+%%SITE_PERL%%/Qpsmtpd/Utils.pm
+%%SITE_PERL%%/Qpsmtpd/PollServer.pm
+%%SITE_PERL%%/Qpsmtpd/Postfix/Constants.pm
+%%SITE_PERL%%/Qpsmtpd/Postfix/pf2qp.pl
+%%SITE_PERL%%/Qpsmtpd/SMTP/Prefork.pm
+%%SITE_PERL%%/Qpsmtpd/TcpServer/Prefork.pm
+%%SITE_PERL%%/Danga/Client.pm
+%%SITE_PERL%%/Danga/TimeoutSocket.pm
 %%SITE_PERL%%/Apache/Qpsmtpd.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/qpsmtpd/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/qpsmtpd
+@dirrm %%SITE_PERL%%/Qpsmtpd/Postfix/
+@dirrm %%SITE_PERL%%/Qpsmtpd/SMTP/
+@dirrm %%SITE_PERL%%/Qpsmtpd/TcpServer/
 @dirrm %%SITE_PERL%%/Qpsmtpd/
 @dirrm %%SITE_PERL%%/Apache/
+@dirrm %%SITE_PERL%%/Danga/
 %%EXAMPLESDIR%%/IP
 %%EXAMPLESDIR%%/badhelo
 %%EXAMPLESDIR%%/badrcptto_patterns
@@ -26,10 +39,14 @@ bin/qpsmtpd
 %%EXAMPLESDIR%%/logging
 %%EXAMPLESDIR%%/loglevel
 %%EXAMPLESDIR%%/plugins
+%%EXAMPLESDIR%%/rcpthosts
 %%EXAMPLESDIR%%/relayclients
 %%EXAMPLESDIR%%/require_resolvable_fromhost
 %%EXAMPLESDIR%%/rhsbl_zones
 %%EXAMPLESDIR%%/size_threshold
+%%EXAMPLESDIR%%/tls_before_auth
+%%EXAMPLESDIR%%/tls_ciphers
+%%EXAMPLESDIR%%/flat_auth_pw
 @dirrm %%EXAMPLESDIR%%
 %%DATADIR%%/plugins/ident/geoip
 %%DATADIR%%/plugins/ident/p0f
@@ -41,6 +58,10 @@ bin/qpsmtpd
 %%DATADIR%%/plugins/auth/authdeny
 %%DATADIR%%/plugins/auth/authnull
 @dirrm %%DATADIR%%/plugins/auth
+%%DATADIR%%/plugins/async/check_earlytalker
+%%DATADIR%%/plugins/async/dnsbl
+%%DATADIR%%/plugins/async/require_resolvable_fromhost
+@dirrm %%DATADIR%%/plugins/async
 %%DATADIR%%/plugins/queue/exim-bsmtp
 %%DATADIR%%/plugins/queue/maildir
 %%DATADIR%%/plugins/queue/postfix-queue
@@ -57,12 +78,15 @@ bin/qpsmtpd
 %%DATADIR%%/plugins/virus/bitdefender
 %%DATADIR%%/plugins/virus/check_for_hi_virus
 %%DATADIR%%/plugins/virus/clamav
+%%DATADIR%%/plugins/virus/clamdscan
 %%DATADIR%%/plugins/virus/hbedv
 %%DATADIR%%/plugins/virus/kavscanner
 %%DATADIR%%/plugins/virus/klez_filter
 %%DATADIR%%/plugins/virus/sophie
 %%DATADIR%%/plugins/virus/aveclient
 @dirrm %%DATADIR%%/plugins/virus
+%%DATADIR%%/plugins/check_badmailfrom
+%%DATADIR%%/plugins/check_basicheaders
 %%DATADIR%%/plugins/check_earlytalker
 %%DATADIR%%/plugins/check_loop
 %%DATADIR%%/plugins/check_norelay
@@ -72,21 +96,28 @@ bin/qpsmtpd
 %%DATADIR%%/plugins/count_unrecognized_commands
 %%DATADIR%%/plugins/dns_whitelist_soft
 %%DATADIR%%/plugins/dnsbl
+%%DATADIR%%/plugins/domainkeys
+%%DATADIR%%/plugins/dont_require_anglebrackets
 %%DATADIR%%/plugins/greylisting
 %%DATADIR%%/plugins/hosts_allow
 %%DATADIR%%/plugins/http_config
-%%DATADIR%%/plugins/check_badrcptto_patterns
 %%DATADIR%%/plugins/check_badrcptto
+%%DATADIR%%/plugins/check_badrcptto_patterns
 %%DATADIR%%/plugins/check_badmailfromto
+%%DATADIR%%/plugins/parse_addr_withhelo
 %%DATADIR%%/plugins/quit_fortune
 %%DATADIR%%/plugins/rcpt_ok
+%%DATADIR%%/plugins/relay_only
 %%DATADIR%%/plugins/require_resolvable_fromhost
 %%DATADIR%%/plugins/rhsbl
 %%DATADIR%%/plugins/sender_permitted_from
 %%DATADIR%%/plugins/spamassassin
 %%DATADIR%%/plugins/tls
 %%DATADIR%%/plugins/tls_cert
-%%DATADIR%%/plugins/check_basicheaders
-%%DATADIR%%/plugins/check_badmailfrom
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.authentication
+%%PORTDOCS%%%%DOCSDIR%%/README.logging
+%%PORTDOCS%%%%DOCSDIR%%/README.plugins
 @dirrm %%DATADIR%%/plugins/
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
