@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	espeak
-PORTVERSION=	1.24
+PORTVERSION=	1.28
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,15 +39,13 @@ FIND_DOCS=	docs
 
 LN_OPTS=	-sf
 
-REPLACE_FILES=	 ${BUILD_WRKSRC}/Makefile  ${BUILD_WRKSRC}/speech.h
+REINPLACE_FILES=	${BUILD_WRKSRC}/Makefile  ${BUILD_WRKSRC}/speech.h
+REINPLACE_ARGS=	-i.bak -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		-e "s|%%DATADIR%%|${DATADIR}|g" \
+		-e "s|%%PREFIX%%|${PREFIX}|g"
 
 post-patch:
-	@for FILE in ${REPLACE_FILES}; do \
-	    ${REINPLACE_CMD} \
-		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		-e "s|%%DATADIR%%|${DATADIR}|g" \
-		-e "s|%%PREFIX%%|${PREFIX}|g" $${FILE} ;\
-	done;
+	@${REINPLACE_CMD} ${REINPLACE_FILES}
 
 post-install:
 .if !defined(NOPORTDOCS)
