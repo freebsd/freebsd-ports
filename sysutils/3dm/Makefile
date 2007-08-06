@@ -7,6 +7,7 @@
 
 PORTNAME=	3dm
 PORTVERSION=	2.04.00.035
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://3ware.com/download/Escalade9650SE-Series/9.4.0.1/
@@ -96,10 +97,11 @@ do-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/3dm2.conf.sample ${PREFIX}/etc/3dm2/
-	[ -f ${PREFIX}/etc/3dm2/3dm2.conf ] || \
-		${CP} ${PREFIX}/etc/3dm2/3dm2.conf.sample \
-		${PREFIX}/etc/3dm2/3dm2.conf
-	@${CHMOD} 600 ${PREFIX}/etc/3dm2/3dm2.conf.sample ${PREFIX}/etc/3dm2/3dm2.conf
+	${CHMOD} 400 ${PREFIX}/etc/3dm2/3dm2.conf.sample
+	[ -f ${PREFIX}/etc/3dm2/3dm2.conf ] || ( \
+		${INSTALL_DATA} ${WRKSRC}/3dm2.conf.sample ${PREFIX}/etc/3dm2/3dm2.conf && \
+		${CHMOD} 600 ${PREFIX}/etc/3dm2/3dm2.conf \
+	)
 
 # 3ware uses a hardcoded config dir location that doesn't match hier(9)
 
