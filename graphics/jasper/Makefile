@@ -18,7 +18,6 @@ COMMENT=	An implementation of the codec specified in the JPEG-2000 standard
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
-MAKE_ARGS+=	-j`${SYSCTL} -n hw.ncpu`
 USE_AUTOTOOLS=	libtool:15
 USE_ZIP=	yes
 USE_GNOME=	gnometarget lthack
