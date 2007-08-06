@@ -1,5 +1,8 @@
 @comment $FreeBSD$
 bin/sonata
+%%PYTHON_SITELIBDIR%%/audioscrobbler.py
+%%PYTHON_SITELIBDIR%%/audioscrobbler.pyc
+%%PYTHON_SITELIBDIR%%/audioscrobbler.pyo
 %%PYTHON_SITELIBDIR%%/mmkeys.so
 %%PYTHON_SITELIBDIR%%/mpdclient3.py
 %%PYTHON_SITELIBDIR%%/mpdclient3.pyc
@@ -8,19 +11,27 @@ bin/sonata
 %%PYTHON_SITELIBDIR%%/sonata.pyc
 %%PYTHON_SITELIBDIR%%/sonata.pyo
 share/applications/sonata.desktop
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/TRANSLATORS
 share/locale/de/LC_MESSAGES/sonata.mo
+share/locale/es/LC_MESSAGES/sonata.mo
+share/locale/fi/LC_MESSAGES/sonata.mo
 share/locale/fr/LC_MESSAGES/sonata.mo
 share/locale/pl/LC_MESSAGES/sonata.mo
 share/locale/ru/LC_MESSAGES/sonata.mo
+share/locale/sv/LC_MESSAGES/sonata.mo
 share/locale/uk/LC_MESSAGES/sonata.mo
+share/locale/zh_CN/LC_MESSAGES/sonata.mo
 share/pixmaps/sonata-album.png
 share/pixmaps/sonata-artist.png
+share/pixmaps/sonata-stock_volume-max.png
+share/pixmaps/sonata-stock_volume-med.png
+share/pixmaps/sonata-stock_volume-min.png
+share/pixmaps/sonata-stock_volume-mute.png
 share/pixmaps/sonata.png
+share/pixmaps/sonata_disconnect.png
 share/pixmaps/sonata_large.png
+share/pixmaps/sonata_pause.png
+share/pixmaps/sonata_play.png
 share/pixmaps/sonatacd.png
 share/pixmaps/sonatacd_large.png
 @dirrmtry share/applications

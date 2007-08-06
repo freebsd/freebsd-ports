@@ -3,6 +3,7 @@ It aims to be efficient (no toolbar, main menu, or statusbar), user-friendly,
 and clean.
 
 FEATURES:
+
 	+ Expanded and collapsed views
 	+ Automatic remote or local album art
 	+ Automatic fetching of lyrics
@@ -10,7 +11,9 @@ FEATURES:
 	+ Support for editing song tags
 	+ System tray icon with tooltip
 	+ Popup notification
-	+ Library searching by artist, song, etc.
+	+ Library searching and playlist filtering
+	+ Audioscrobbler (last.fm) support
+	+ Multiple MPD profiles
 	+ Keyboard friendly
 	+ Support for multimedia keys
 	+ Commandline control
