@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mangos
-PORTVERSION=	4154
+PORTVERSION=	4261
 CATEGORIES=	games
 MASTER_SITES=	CENKES http://mangos-port.by.ru/ \
 		http://neon.heavennet.ru/mangos/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
-SCRIPTDEV2REV=	84
+SCRIPTDEV2REV=	103
 
 MAINTAINER=    	neon_cyrex@mail.ru
 COMMENT=	Free dedicated-server for World of Warcraft
@@ -61,12 +61,12 @@ post-extract:
 	@${LN} -s ${LTMAIN} ${WRKSRC}/
 
 post-patch:
-	@${REINPLACE_CMD} -Ee 's!../etc/(mangos|realm)d.conf!${PREFIX}/etc/\1d.conf!g' \
-		${WRKSRC}/src/shared/SystemConfig.h.in
 	@${REINPLACE_CMD} -e 's|@MANGOSD_DATA@|${PREFIX}/share/mangos|g' \
 		${WRKSRC}/src/mangosd/mangosd.conf.in
 	@${REINPLACE_CMD} -e '/^sysconf_DATA/,/conf/d' \
 		${WRKSRC}/src/mangosd/Makefile.am ${WRKSRC}/src/realmd/Makefile.am
+	@cd ${WRKSRC}/sql/updates/&&${REINPLACE_CMD} -e '/pkgdata_DATA/,$$d' Makefile.am\
+		&&${ECHO_CMD} "pkgdata_DATA=`echo *.sql README`">>Makefile.am
 
 run-autotools-automake:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} ${AUTOMAKE_ARGS})
