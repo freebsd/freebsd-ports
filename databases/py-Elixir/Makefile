@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	Elixir
-PORTVERSION=	0.1.0
+PORTVERSION=	0.3.0
 #PORTREVISION=	0
-#PORTEPOCH=	0
 CATEGORIES=	databases python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/E/Elixir/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,28 +15,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Declarative Mapper for SQLAlchemy
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/${PYALCHEMY_EGG}:${PORTSDIR}/databases/py-sqlalchemy
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.3.10:${PORTSDIR}/databases/py-sqlalchemy
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 
-PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
-PYDISTUTILS_BUILD_TARGET=	bdist_egg
-PYDISTUTILS_INSTALL_TARGET=	easy_install
-PYDISTUTILS_INSTALLARGS=	-O 1 -N -S ${PYTHON_SITELIBDIR} ${WRKSRC}/dist/${PYELIXIR_EGG}
+PLIST_FILES=	${PYTHON_SITELIBDIR:S|${PREFIX}/||}/${PYEASYINSTALL_EGG}
 
-PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PYELIXIR_EGG=${PYELIXIR_EGG} \
-		PYELIXIR_EGG_VER="${PORTNAME}==${PORTVERSION}"
-
-PYELIXIR_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
-
-.include <bsd.port.pre.mk>
-
-PYALCHEMY_EGG!=	${MAKE} -f ${PORTSDIR}/databases/py-sqlalchemy/Makefile -V PYALCHEMY_EGG
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
