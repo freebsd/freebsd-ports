@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		FreeMat
-PORTVERSION=		3.2
-PORTREVISION=	1
+PORTVERSION=		3.3
 CATEGORIES=		math science
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -57,6 +56,10 @@ LIB_DEPENDS+=	arpack.1:${PORTSDIR}/math/arpack
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall
 .endif
 
+.if !defined(WITHOUT_PORTAUDIO)
+LIB_DEPENDS+=	portaudio.0:${PORTSDIR}/audio/portaudio
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
@@ -92,6 +95,7 @@ pre-everything::
 	@${ECHO_MSG} '* - WITHOUT_ARPACK    remove Arpack support              *'
 	@${ECHO_MSG} '* - WITHOUT_AVCALL    remove FFCALL support              *'
 	@${ECHO_MSG} '* - WITHOUT_UMFPACK   remove UMFPACK support             *'
+	@${ECHO_MSG} '* - WITHOUT_PORTAUDIO remove Audio I/O support           *'
 	@${ECHO_MSG} '**********************************************************'
 .endif
 
