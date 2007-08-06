@@ -1,12 +1,12 @@
-# New ports collection makefile for:	db45
-# Date created:		2007-05-10
+# New ports collection makefile for:	db46
+# Date created:		2007-07-26
 # Whom:			Gea-Suan Lin <gslin@gslin.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	db45
-PORTVERSION=	4.5.20.0
+PORTNAME=	db46
+PORTVERSION=	4.6.18.0
 CATEGORIES=	databases
 MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
 		http://download-east.oracle.com/berkeley-db/ \
@@ -18,7 +18,7 @@ DIST_SUBDIR=	bdb
 # I allow matthias.andree@gmx.de and all freebsd committer to do changes
 # to this package.
 MAINTAINER=	gslin@gslin.org
-COMMENT=	The Berkeley DB package, revision 4.5
+COMMENT=	The Berkeley DB package, revision 4.6
 
 BDBVER=		${PORTVERSION:R:R}
 CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 --enable-cxx \
