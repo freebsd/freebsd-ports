@@ -47,7 +47,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimed
 .if defined(WITHOUT_PYLUCENE)
 #BROKEN=		Cannot be run without PyLucene
 .else
-RUN_DEPENDS+=	${LOCALBASE}/lib/python2.4/site-packages/PyLucene.py:${PORTSDIR}/textproc/py-lucene
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyLucene.py:${PORTSDIR}/textproc/py-lucene
 .endif
 
 do-build:
