@@ -377,6 +377,7 @@
     SUBDIR += kaid
     SUBDIR += kamikaze
     SUBDIR += kanatest
+    SUBDIR += kardsgt
     SUBDIR += kbilliards
     SUBDIR += kcheckers
     SUBDIR += kdegames3
