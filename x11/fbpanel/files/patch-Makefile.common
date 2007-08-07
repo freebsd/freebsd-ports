@@ -21,12 +21,3 @@
  ifeq (1,$(DEVEL))
  override CFLAGS += -g
  endif
-@@ -113,7 +111,7 @@
- 
- %.dep : %.c
- 	$(call summary,DEP ,$@)
--	$(Q)$(CC) $(CPPFLAGS) $(INCS) -MM $< | sed 's/\($*\).o[ :]*/\1.o $@ :/' > $@
-+	$(Q)$(CC) $(CPPFLAGS) $(INCS) -MM $< | sed 's/\($*\)\.o[ :]*/\1.o $@ :/' > $@
- 
- 
- #########################################
