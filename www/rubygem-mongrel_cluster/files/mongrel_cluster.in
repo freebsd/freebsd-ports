@@ -38,7 +38,7 @@ mongrel_cmd()
 	warn "${mongrel_cluster_conf_dir} is not a directory."
 	return 1
     fi
-    ${command} $1 ${mongrel_cluster_flags} ${command_args} 2>&1 | grep -v "procfs"
+    ${command} $1 ${mongrel_cluster_flags} ${command_args} 2>&1 | grep -v "procfs" | grep -v "up-to-date"
 }
 			    
 run_rc_command "$1"
