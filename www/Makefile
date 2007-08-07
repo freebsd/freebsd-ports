@@ -593,6 +593,7 @@
     SUBDIR += p5-CGI-modules
     SUBDIR += p5-CGI.pm
     SUBDIR += p5-CGI_Lite
+    SUBDIR += p5-Catalyst-Action-REST
     SUBDIR += p5-Catalyst-Action-RenderView
     SUBDIR += p5-Catalyst-Component-ACCEPT_CONTEXT
     SUBDIR += p5-Catalyst-Controller-BindLex
