@@ -6,5 +6,3 @@ Strace is similar to the native BSD ``truss'' utility, but it's
 output style is more convenient in most cases.
 
 WWW: http://sourceforge.net/projects/strace/
-
-Maintains: Alex Semenyaka (alex@rinet.ru)
