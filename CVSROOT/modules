@@ -5703,6 +5703,7 @@ kannel		ports/www/kannel
 kappdock	ports/x11-wm/kappdock
 kaptain		ports/devel/kaptain
 karamba		ports/deskutils/karamba
+kardsgt		ports/games/kardsgt
 kasablanca	ports/ftp/kasablanca
 kash3		ports/math/kash3
 kaskade		ports/math/kaskade
