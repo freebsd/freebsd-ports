@@ -25,7 +25,7 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		xml2:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${DATADIR}
+CONFIGURE_ARGS=	--datadir=${DATADIR} --verbose
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		EXTRA_BINARIES="wine-kthread"
@@ -47,6 +47,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if ${OSVERSION} < 503000
 IGNORE=		fails to work on versions of FreeBSD before 5.3 (due to problems with threading support)
+.endif
+
+post-patch:
+.if ${OSVERSION} < 700041
+	${REINPLACE_CMD} 's/-lpthread/-lthr/g' ${WRKSRC}/configure
 .endif
 
 pre-build:
