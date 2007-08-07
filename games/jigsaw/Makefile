@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gpuzzle
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/GPuzzle2/
-DISTNAME=	GPuzzle2
+DISTNAME=	Jigsaw
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.org
