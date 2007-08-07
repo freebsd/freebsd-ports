@@ -7,6 +7,7 @@
 
 PORTNAME=	qpsmtpd
 PORTVERSION=	0.40
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://smtpd.develooper.com/files/
 PKGNAMEPREFIX=	p5-
@@ -55,7 +56,7 @@ post-install:
 	@(cd ${WRKSRC}/config.sample/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_SHARE} ${WRKSRC}/README* ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}/
 .endif
 	@${ECHO_MSG}
 	@${ECHO_MSG}
