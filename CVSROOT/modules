@@ -12615,6 +12615,7 @@ ppl		ports/devel/ppl
 ppm2fli		ports/multimedia/ppm2fli
 ppmcaption	ports/graphics/ppmcaption
 ppmd		ports/archivers/ppmd
+ppminfo		ports/graphics/ppminfo
 ppmtoTbmp	ports/palm/ppmtoTbmp
 ppower4		ports/textproc/ppower4
 pppd23		ports/net/pppd23
