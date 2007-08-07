@@ -17,7 +17,6 @@ MAINTAINER=	yasu@utahime.org
 COMMENT=	Signature insertion tool for Emacs
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 
 EMACS_NO_BUILD_DEPENDS=	yes
 
