@@ -1,0 +1,15 @@
+bin/mencoder
+%%DATADIR%%/tools/calcbpp.pl
+%%DATADIR%%/tools/countquant.pl
+%%DATADIR%%/tools/dvd2divxscript.pl
+%%DATADIR%%/tools/menc2pass
+%%DATADIR%%/tools/mencvcd
+%%DATADIR%%/tools/mp.pl
+%%DATADIR%%/tools/subedit.pl
+%%DATADIR%%/tools/subsearch.sh
+%%DATADIR%%/tools/sws-test
+%%DATADIR%%/tools/w32codec_dl.pl
+%%DATADIR%%/tools/wma2ogg.pl
+%%DATADIR%%/tools/x2mpsub.sh
+@dirrm %%DATADIR%%/tools
+@dirrmtry %%DATADIR%%
