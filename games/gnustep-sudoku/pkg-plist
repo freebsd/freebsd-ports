@@ -1,0 +1,8 @@
+Local/Applications/Sudoku.app/Resources/Info-gnustep.plist
+Local/Applications/Sudoku.app/Resources/Sudoku.desktop
+Local/Applications/Sudoku.app/Resources/Sudoku.tiff
+Local/Applications/Sudoku.app/Sudoku
+Local/Applications/Sudoku.app/stamp.make
+Local/Tools/Sudoku
+@dirrm Local/Applications/Sudoku.app/Resources
+@dirrm Local/Applications/Sudoku.app
