@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -147,7 +147,7 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Affiche:deskutils/affiche \
 	ProjectManager:devel/projectmanager \
 	GMastermind2:games/gmastermind \
-	GPuzzle2:games/gpuzzle \
+	Jigsaw:games/gpuzzle \
 	Ticker:www/gnustep-ticker \
 	NoteBook:deskutils/gnustep-notebook \
 	HelpViewer:deskutils/helpviewer \
