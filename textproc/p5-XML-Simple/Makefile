@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	XML-Simple
-PORTVERSION=	2.16
-PORTREVISION=	1
+PORTVERSION=	2.17
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -24,15 +23,4 @@ PERL_CONFIGURE=	YES
 
 MAN3=		XML::Simple.3 XML::Simple::FAQ.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-EXTRA_PATCHES=	${PATCHDIR}/5.005_03-lib::XML::Simple.pm ${PATCHDIR}/5.005_03-Makefile.PL
-
-post-patch:
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
-
-post-configure:
-	${PERL} -pi -e 's/(\(POD2MAN_EXE\))/$$1 --lax/' ${WRKSRC}/Makefile
-
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
