@@ -19,7 +19,7 @@ LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
 USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-sse \
 		--with-libiconv-prefix="${LOCALBASE}" \
@@ -33,7 +33,7 @@ MAKE_ENV=	DOC=""
 MAKE_ENV=	DOC=doc
 .endif
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAN1=		flac.1 metaflac.1
 
 .include <bsd.port.pre.mk>
