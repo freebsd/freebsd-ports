@@ -3,23 +3,14 @@ $FreeBSD$
 
 --- Makefile.orig
 +++ Makefile
-@@ -6,7 +6,7 @@
- #
- ############################################################################
- 
--CC          = cc
-+CC          ?= cc
- 
- #
- # ADD_CFLAGS: Add -DVI_KEYS if you want vi-cursor-keys
 @@ -32,8 +32,8 @@
  COLOR       = -DCOLOR_SUPPORT 
- #CLOCK	    = -DCLOCK_SUPPORT # Experimental!
+ CLOCK	    = -DCLOCK_SUPPORT # Experimental!
  READLINE    = -DREADLINE_SUPPORT
 -CFLAGS      = -D_GNU_SOURCE $(ADD_CFLAGS) $(COLOR) $(CLOCK) $(READLINE)
--LIBS        = -lncurses -lreadline
+-LDFLAGS     = -lncurses -lreadline
 +#CFLAGS      = -D_GNU_SOURCE $(ADD_CFLAGS) $(COLOR) $(CLOCK) $(READLINE)
-+#LIBS        = -lncurses -lreadline
++#LDFLAGS     = -lncurses -lreadline
  
  ###########################
  # LINUX with Wide character support (testet with ncurses 5.4)
@@ -28,9 +19,9 @@ $FreeBSD$
  # FreeBSD (Thanks to Peter Brevik)
  ###########################
 -#CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
--#LIBS        = -lncurses -lmytinfo -lcompat
+-#LDFLAGS     = -lncurses -lmytinfo -lcompat
 +CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
-+LIBS        = -lreadline -lncurses -lcompat
++LDFLAGS     = -lncurses -lmytinfo -lcompat
  
  ###########################
  # MAC OS X
