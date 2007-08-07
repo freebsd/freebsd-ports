@@ -14794,6 +14794,7 @@ solitaire	ports/math/solitaire
 sonata		ports/audio/sonata
 sonice		ports/audio/sonice
 sonytv		ports/misc/sonytv
+soothsayer	ports/textproc/soothsayer
 sopwith		ports/games/sopwith
 soqt		ports/x11-toolkits/soqt
 sortmail	ports/mail/sortmail
