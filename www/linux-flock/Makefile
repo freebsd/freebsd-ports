@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flock
-PORTVERSION=	0.9.0.1
+PORTVERSION=	0.9.0.2
 DISTVERSIONSUFFIX=	.en-US.linux-i686
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.acc.umu.se/mirror/%SUBDIR%/ \
