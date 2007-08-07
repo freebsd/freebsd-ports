@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.12
-PORTREVISION=	2
+PORTVERSION=	2.14
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -35,6 +34,7 @@ MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1 \
 		dotty.1 gc.1 gvcolor.1 gvpack.1 gvpr.1 gxl2dot.1 \
 		lneato.1 nop.1 prune.1 sccmap.1 tred.1 unflatten.1
 MAN3=		agraph.3 cdt.3 expr.3 graph.3 gvc.3 pathplan.3
+MAN7=		graphviz.7
 MLINKS=		dot.1 circo.1 \
 		gxl2dot.1 dot2gxl.1 \
 		dot.1 fdp.1 \
@@ -185,8 +185,8 @@ CONFIGURE_ARGS+=	--enable-lua
 PLIST_SUB+=		WITH_LUA=""
 USE_LUA=		yes
 .include "${PORTSDIR}/Mk/bsd.lua.mk"
-CPPFLAGS+=		-I${LUA_INCDIR}
-LDFLAGS+=		-L${LUA_LIBDIR}
+CFLAGS+=		-I${LUA_INCDIR}
+LDFLAGS+=		-L${LUA_LIBDIR} -lm
 CONFIGURE_ENV+=		LUA="${LUA_BINDIR}/lua"
 . endif
 
