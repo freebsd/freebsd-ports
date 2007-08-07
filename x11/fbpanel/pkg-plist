@@ -2,6 +2,7 @@ bin/fbpanel
 %%DATADIR%%/default
 %%DATADIR%%/images/bottom-left.xpm
 %%DATADIR%%/images/bottom-right.xpm
+%%DATADIR%%/images/dclock_glyphs.png
 %%DATADIR%%/images/default.xpm
 %%DATADIR%%/images/gnome-applications.png
 %%DATADIR%%/images/gnome-devel.svg
