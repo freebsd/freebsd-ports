@@ -7331,6 +7331,7 @@ memgrep		ports/sysutils/memgrep
 memtest		ports/sysutils/memtest
 memtest86	ports/sysutils/memtest86
 mencal		ports/deskutils/mencal
+mencoder	ports/multimedia/mencoder
 menhir		ports/devel/menhir
 menumaker	ports/deskutils/menumaker
 menushki	ports/misc/menushki
