@@ -7,17 +7,18 @@
 
 PORTNAME=	pantry
 PORTVERSION=	0.${DISTVERSION}
-DISTVERSION=	11
+DISTVERSION=	15
 CATEGORIES=	misc
 MASTER_SITES=	SF
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Command-line nutrition analysis program
 
+RUN_DEPENDS=	py*-bsddb>=2:${PORTSDIR}/databases/py-bsddb
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 MAN1=	${PORTNAME}.1
-PORTDATA=	master
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 
 post-extract:
