@@ -15354,6 +15354,7 @@ texmaker	ports/editors/texmaker
 texpower	ports/print/texpower
 textedit	ports/editors/textedit
 textedit.app	ports/editors/textedit.app
+textmail	ports/mail/textmail
 textmaze	ports/games/textmaze
 textogif	ports/textproc/textogif
 textpattern	ports/www/textpattern
