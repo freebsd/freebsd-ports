@@ -1,6 +1,7 @@
 bin/FBReader
 lib/libzlcore.so.0
 lib/libzltext.so.0
+lib/zlibrary/ui/zlui-qt4.so
 share/FBReader/default/config.xml
 share/FBReader/default/external.xml
 share/FBReader/default/keymap.xml
@@ -78,7 +79,8 @@ share/zlibrary/resources/en.xml
 share/zlibrary/resources/fr.xml
 share/zlibrary/resources/ru.xml
 share/zlibrary/resources/uk.xml
-share/zlibrary/ui/zlui-qt4.so
+@dirrm lib/zlibrary/ui
+@dirrm lib/zlibrary
 @dirrm share/FBReader/default
 @dirrm share/FBReader/formats/html
 @dirrm share/FBReader/formats/xhtml
@@ -89,6 +91,5 @@ share/zlibrary/ui/zlui-qt4.so
 @dirrm share/pixmaps/FBReader
 @dirrm share/zlibrary/encodings
 @dirrm share/zlibrary/resources
-@dirrm share/zlibrary/ui
 @dirrm share/zlibrary
 @dirrmtry share/applications
