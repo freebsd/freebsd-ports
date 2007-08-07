@@ -1,0 +1,8 @@
+FotoFix is a simple image viewer with simple capabilities to take care
+of freshly downloaded photos from your camera - can walk image lists,
+rotate images, and remove red eyes (if lucky). It was inspired by
+IrfanView for Windows, a great but unfortunately non-portable and
+closed-source product.
+
+WWW: http://www.prima.eu.org/fotofix/
+Author: Dmitry Karasik <dmitry@karasik.eu.org>
