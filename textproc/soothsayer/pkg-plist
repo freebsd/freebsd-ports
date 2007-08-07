@@ -1,0 +1,15 @@
+bin/soothsayerDemo
+bin/soothsayerDemoText
+bin/soothsayerSimulator
+bin/text2ngram
+etc/soothsayer.xml
+include/soothsayer.h
+lib/libsoothsayer.la
+lib/libsoothsayer.so
+lib/libsoothsayer.so.0
+var/soothsayer/abbreviations_en.txt
+var/soothsayer/abbreviations_it.txt
+var/soothsayer/database_en.db
+var/soothsayer/database_it.db
+@dirrm var/soothsayer
+@dirrmtry var

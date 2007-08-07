@@ -1,0 +1,14 @@
+Soothsayer is an intelligent predictive text entry platform. Soothsayer
+exploits redundant information embedded in natural languages to generate
+predictions. Soothsayer's modular and pluggable architecture allows its
+language model to be extended and customized to utilize statistical,
+syntactic, and semantic information sources.
+
+A predictive text entry system attempts to improve ease and speed of
+textual input. Word prediction consists in computing which word tokens
+or word completions are most likely to be entered next. The system
+analyses the text already entered and combines the information thus
+extracted with other information sources to calculate a set of most
+probable tokens.
+
+WWW: http://soothsayer.sourceforge.net/

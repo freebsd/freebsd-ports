@@ -915,6 +915,7 @@
     SUBDIR += slides
     SUBDIR += smartdoc
     SUBDIR += smartdoc-devel
+    SUBDIR += soothsayer
     SUBDIR += source-highlight
     SUBDIR += sowing
     SUBDIR += sp
