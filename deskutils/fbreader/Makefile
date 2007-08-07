@@ -7,7 +7,7 @@
 
 PORTNAME=	fbreader
 DISTVERSIONPREFIX=	sources-
-DISTVERSION=	0.8.5a
+DISTVERSION=	0.8.6
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/ CENKES
 EXTRACT_SUFX=	.tgz
@@ -27,8 +27,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lcompat
 MAKE_ENV+=	TARGET_ARCH=desktop UI_TYPE=qt4 TARGET_STATUS=release \
 		ROOTDIR=${WRKSRC} EXTERNALINCLUDE="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS}" INSTALLDIR="${PREFIX}" LIBDIR=${PREFIX}/lib \
-		BUILD_SHARED_LIBRARY=yes
-MAKE_ARGS+=	MAKE=gmake
+		BUILD_SHARED_LIBRARY=yes LD="${CXX}"
+MAKE_ARGS+=	MAKE=gmake LIBDIR=${PREFIX}/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 INSTALL_TARGET=	do_install
 
@@ -38,9 +38,11 @@ post-patch:
 		${WRKSRC}/makefiles/config.mk ${WRKSRC}/zlibrary/core/Makefile
 	@${REINPLACE_CMD} -e '/TARGET =/s|\.so\..*|.so.0|;s|$$[(]LIBDIR[)]|${PREFIX}/lib|'\
 		${WRKSRC}/zlibrary/[ct]*/Makefile
-	@${FIND} ${WRKSRC} -name Makefile -or -name \*.mk|\
-		${XARGS} ${REINPLACE_CMD} -e 's/make /gmake /g;\
-		s|/usr/local|%%PREFIX%%|g;s|/usr|%%PREFIX%%|g;s|%%PREFIX%%|${PREFIX}|g'
+	@${FIND} ${WRKSRC} -name Makefile -or -name \*.mk -or -name rules|\
+		${XARGS} ${REINPLACE_CMD} -e 's/make /gmake /g;s|	@|	|;\
+		s|/usr/local|%%PREFIX%%|g;s|/usr|%%PREFIX%%|g;s|%%PREFIX%%|${PREFIX}|g;\
+		/^CC =/d;/^LD =/d;s|-pipe||;s|-O3|${CFLAGS}|'
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 # fuzpath: FBReader zlibrary libzl
 
