@@ -8947,6 +8947,7 @@ p5-Carp-Assert	ports/devel/p5-Carp-Assert
 p5-Carp-Assert-More	ports/devel/p5-Carp-Assert-More
 p5-Carp-Clan	ports/devel/p5-Carp-Clan
 p5-Carp-Datum	ports/devel/p5-Carp-Datum
+p5-Catalyst-Action-REST	ports/www/p5-Catalyst-Action-REST
 p5-Catalyst-Action-RenderView	ports/www/p5-Catalyst-Action-RenderView
 p5-Catalyst-Component-ACCEPT_CONTEXT	ports/www/p5-Catalyst-Component-ACCEPT_CONTEXT
 p5-Catalyst-Controller-BindLex	ports/www/p5-Catalyst-Controller-BindLex
