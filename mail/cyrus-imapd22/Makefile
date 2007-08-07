@@ -27,117 +27,34 @@ LATEST_LINK=	${PORTNAME}22
 USE_RC_SUBR=	imapd.sh
 USE_OPENSSL=	yes
 USE_PERL5=	yes
+USE_BDB=	yes
+INVALID_BDB_VER=2 45+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-cyrus-user=${CYRUS_USER} \
 		--with-cyrus-group=${CYRUS_GROUP} \
 		--with-sasl=${LOCALBASE} \
+		--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 		--with-bdb-libdir=${LOCALBASE}/lib \
+		--with-bdb=${BDB_LIB_NAME} \
 		--with-com_err \
 		--with-openssl=${OPENSSLBASE} \
 		--with-perl=${PERL5}
 
-.if defined(WITH_BDB_VER)
-USE_BDB_VER=	${WITH_BDB_VER}
-.else
-USE_BDB_VER=	3
-.endif
-.if ${USE_BDB_VER} == 3
-OPTIONS=	BDB_3		"Use BerkeleyDB v3"	on \
-		BDB_4		"Use BerkeleyDB v4"	off \
-		BDB_41		"Use BerkeleyDB v4.1"	off \
-		BDB_42		"Use BerkeleyDB v4.2"	off \
-		BDB_43		"Use BerkeleyDB v4.3"	off \
-		BDB_44		"Use BerkeleyDB v4.4"	off
-.elif ${USE_BDB_VER} == 4
-OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
-		BDB_4		"Use BerkeleyDB v4"	on \
-		BDB_41		"Use BerkeleyDB v4.1"	off \
-		BDB_42		"Use BerkeleyDB v4.2"	off \
-		BDB_43		"Use BerkeleyDB v4.3"	off \
-		BDB_44		"Use BerkeleyDB v4.4"	off
-.elif ${USE_BDB_VER} == 41
-OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
-		BDB_4		"Use BerkeleyDB v4"	off \
-		BDB_41		"Use BerkeleyDB v4.1"	on \
-		BDB_42		"Use BerkeleyDB v4.2"	off \
-		BDB_43		"Use BerkeleyDB v4.3"	off \
-		BDB_44		"Use BerkeleyDB v4.4"	off
-.elif ${USE_BDB_VER} == 42
-OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
-		BDB_4		"Use BerkeleyDB v4"	off \
-		BDB_41		"Use BerkeleyDB v4.1"	off \
-		BDB_42		"Use BerkeleyDB v4.2"	on \
-		BDB_43		"Use BerkeleyDB v4.3"	off \
-		BDB_44		"Use BerkeleyDB v4.4"	off
-.elif ${USE_BDB_VER} == 43
-OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
-		BDB_4		"Use BerkeleyDB v4"	off \
-		BDB_41		"Use BerkeleyDB v4.1"	off \
-		BDB_42		"Use BerkeleyDB v4.2"	off \
-		BDB_43		"Use BerkeleyDB v4.3"	on \
-		BDB_44		"Use BerkeleyDB v4.4"	off
-.elif ${USE_BDB_VER} == 44
-OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
-		BDB_4		"Use BerkeleyDB v4"	off \
-		BDB_41		"Use BerkeleyDB v4.1"	off \
-		BDB_42		"Use BerkeleyDB v4.2"	off \
-		BDB_43		"Use BerkeleyDB v4.3"	off \
-		BDB_44		"Use BerkeleyDB v4.4"	on
-.else
-IGNORE=		"cannot install: WITH_BDB_VER must be 3, 4, 41, 42, 43 or 44"
-.endif
-
-OPTIONS+=	DRAC		"Enable DRAC support"			off
-OPTIONS+=	IDLE_IDLED	"Enable IMAP IDLE method idled"		off \
-		IDLE_POLL	"Enable IMAP IDLE method idle-polling"	on
-OPTIONS+=	LDAP_PTLOADER	"Enable LDAP ptloader (experimantal)"	off
-OPTIONS+=	LISTEXT		"Enable IMAP List extensions"		off
-OPTIONS+=	MURDER		"Enable IMAP Murder support"		off
-OPTIONS+=	NETSCAPEHACK	"Enable X-NETSCAPE extensions"		off
-OPTIONS+=	NNTP		"Enable NNTP support"			off
-OPTIONS+=	SNMP_4		"Enable SNMP support using net-snmp v4"	off \
-		SNMP_5		"Enable SNMP support using net-snmp v5"	off
-OPTIONS+=	PASS8BITHACK	"Add pass8bit option (not recommended)"	off
-
-BDB_VERS=	3 4 41 42 43 44
+OPTIONS=	DRAC		"Enable DRAC support"			off \
+		IDLE_IDLED	"Enable IMAP IDLE method idled"		off \
+		IDLE_POLL	"Enable IMAP IDLE method idle-polling"	on \
+		LDAP_PTLOADER	"Enable LDAP ptloader (experimantal)"	off \
+		LISTEXT		"Enable IMAP List extensions"		off \
+		MURDER		"Enable IMAP Murder support"		off \
+		NETSCAPEHACK	"Enable X-NETSCAPE extensions"		off \
+		NNTP		"Enable NNTP support"			off \
+		SNMP_4		"Enable SNMP support using net-snmp v4"	off \
+		SNMP_5		"Enable SNMP support using net-snmp v5"	off \
+		PASS8BITHACK	"Add pass8bit option (not recommended)"	off
 
 .include <bsd.port.pre.mk>
-
-BDB_W:=
-BDB_WO:=
-.for v in ${BDB_VERS}
-BDB_W:=		${BDB_W} ${WITH_BDB_${v}}
-BDB_WO:=	${BDB_WO} ${WITHOUT_BDB_${v}}
-.endfor
-BDB_NUM_W!=	${ECHO_CMD} ${BDB_W} | wc -w
-BDB_NUM_WO!=	${ECHO_CMD} ${BDB_WO} | wc -w
-BDB_NUM_VERS!=	${ECHO_CMD} ${BDB_VERS} | wc -w
-
-.if ${BDB_NUM_W} == 0
-.if ${BDB_NUM_WO} == ${BDB_NUM_VERS}
-BROKEN=		You need to select one BDB version.  Run 'make config' again!
-.endif
-WITH_BDB_${USE_BDB_VER}=	true
-.elif ${BDB_NUM_W} != 1
-BROKEN=		Multiple BDB versions selected.  Run 'make config' again!
-.endif
-.if defined(WITH_BDB_3)
-USE_BDB=	3
-.elif defined(WITH_BDB_4)
-USE_BDB=	40
-.elif defined(WITH_BDB_41)
-USE_BDB=	41
-.elif defined(WITH_BDB_42)
-USE_BDB=	42
-.elif defined(WITH_BDB_43)
-USE_BDB=	43
-.elif defined(WITH_BDB_44)
-USE_BDB=	44
-.endif
-CONFIGURE_ARGS+=--with-bdb-incdir=${BDB_INCLUDE_DIR} \
-		--with-bdb=${BDB_LIB_NAME}
 
 .if defined(WITH_NNTP)
 CONFIGURE_ARGS+=--enable-nntp
