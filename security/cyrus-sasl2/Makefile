@@ -54,15 +54,25 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-rc4=openssl \
 		--with-saslauthd=${SASLAUTHD_RUNPATH}
 
-.if defined(WITH_BDB_VER)
-.if ${WITH_BDB_VER} == 4
-USE_BDB=	40
-.elif ${WITH_BDB_VER} != 3 && ${WITH_BDB_VER} != 41 && \
-      ${WITH_BDB_VER} != 42 && ${WITH_BDB_VER} != 43 && \
-      ${WITH_BDB_VER} != 44 && ${WITH_BDB_VER} != 45 && ${WITH_BDB_VER} != 46
-IGNORE=		"cannot install: WITH_BDB_VER must be 3, 4, 41, 42, 43, 44, 45 or 46"
-.endif
-USE_BDB?=	${WITH_BDB_VER}
+OPTIONS=	BDB		"Use Berkeley DB"			off \
+		MYSQL		"Use MySQL"				off \
+		PGSQL		"Use PostgreSQL"			off \
+		SQLITE		"Use SQLite"				off \
+		DEV_URANDOM	"Use /dev/urandom"			off \
+		ALWAYSTRUE	"Enable the alwaystrue password verifier" off \
+		KEEP_DB_OPEN	"Keep handle to Berkeley DB open"	off \
+		AUTHDAEMOND	"Enable use of authdaemon"		on \
+		LOGIN		"Enable LOGIN authentication"		on \
+		PLAIN		"Enable PLAIN authentication"		on \
+		CRAM		"Enable CRAM-MD5 authentication"	on \
+		DIGEST		"Enable DIGEST-MD5 authentication"	on \
+		OTP		"Enable OTP authentication"		on \
+		NTLM		"Enable NTLM authentication"		on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_BDB)
+USE_BDB=	yes
 CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${LOCALBASE}/lib \
 		--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 		--with-bdb=${BDB_LIB_NAME}
@@ -72,12 +82,6 @@ CONFIGURE_ARGS+=--with-dblib=ndbm
 SASLDB_NAME=	sasldb2.db
 .endif
 
-.if defined(WITH_MYSQL_VER)
-WITH_MYSQL=	yes
-.if ${WITH_MYSQL_VER} == 3
-WANT_MYSQL_VER=	323
-.endif
-.endif
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
@@ -153,8 +157,6 @@ NTLM=	"@comment "
 .else
 CONFIGURE_ARGS+=--enable-ntlm
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 CPPFLAGS+=	-fPIC
