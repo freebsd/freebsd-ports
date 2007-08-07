@@ -7,13 +7,11 @@
 #
 
 PORTNAME=	libcwd
-PORTVERSION=	0.99.45
-PORTREVISION=	1
+PORTVERSION=	0.99.47
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	The C++ Debugging Support Library
 
 USE_AUTOTOOLS=	libtool:15
@@ -22,7 +20,6 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 USE_GETOPT_LONG=yes
-USE_GCC=	3.4+
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,test x"\$$libcwd_config_alloc" = x"yes",false,g' \
