@@ -1,0 +1,8 @@
+The "mencoder" component of the MPlayer project is a tool which
+allows creation of video streams. It supports almost the same set
+of input sources as the player component and supports encoding from
+these sources through various codecs, including the popular ffmpeg,
+XviD and x264 families. "Transcoding" DVDs into avi files is also
+possible.
+
+WWW: http://www.mplayerhq.hu/

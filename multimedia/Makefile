@@ -127,6 +127,7 @@
     SUBDIR += mandvd
     SUBDIR += manencode
     SUBDIR += manslide
+    SUBDIR += mencoder
     SUBDIR += mjpegtools
     SUBDIR += mjpegtools-yuvfilters
     SUBDIR += mkvtoolnix
