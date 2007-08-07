@@ -1,0 +1,9 @@
+Create any number of Sudokus and solve them. Store Sudokus for in-depth study.
+Solvability guaranteed. Drag digits from the palette or click on the board
+and wait for the desired digit to appear. Neither method will let you place
+double digits.
+
+Includes automatic markup.
+You can input external sudokus for solution.
+
+WWW: http://www.gnustep.it/marko/Sudoku/index.html

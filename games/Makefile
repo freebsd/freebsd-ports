@@ -296,6 +296,7 @@
     SUBDIR += gnurobots
     SUBDIR += gnushogi
     SUBDIR += gnustep-ladder
+    SUBDIR += gnustep-sudoku
     SUBDIR += golddig
     SUBDIR += gomoku.app
     SUBDIR += goonies
