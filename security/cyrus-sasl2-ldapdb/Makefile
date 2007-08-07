@@ -35,9 +35,6 @@ GNU_CONFIGURE=	yes
 .if defined(WITH_OPENLDAP_VER)
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
-.if defined(WANT_OPENLDAP_VER) && ${WANT_OPENLDAP_VER} == 12
-BROKEN=		"this port requires OpenLDAP >= 2.0"
-.endif
 USE_OPENLDAP=	yes
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
