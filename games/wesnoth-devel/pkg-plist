@@ -4878,6 +4878,14 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/units/human-outlaws/trapper-attack3.png
 %%DATADIR%%/images/units/human-outlaws/trapper-bow-defend.png
 %%DATADIR%%/images/units/human-outlaws/trapper-defend.png
+%%DATADIR%%/images/units/human-outlaws/trapper-die-1.png
+%%DATADIR%%/images/units/human-outlaws/trapper-die-2.png
+%%DATADIR%%/images/units/human-outlaws/trapper-die-3.png
+%%DATADIR%%/images/units/human-outlaws/trapper-die-4.png
+%%DATADIR%%/images/units/human-outlaws/trapper-die-5.png
+%%DATADIR%%/images/units/human-outlaws/trapper-die-6.png
+%%DATADIR%%/images/units/human-outlaws/trapper-die-7.png
+%%DATADIR%%/images/units/human-outlaws/trapper-die-8.png
 %%DATADIR%%/images/units/human-outlaws/trapper.png
 %%DATADIR%%/images/units/merfolk/diviner-defend.png
 %%DATADIR%%/images/units/merfolk/diviner-magic1.png
