@@ -42,16 +42,14 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-rc4=openssl \
 		--with-saslauthd=${SASLAUTHD_RUNPATH}
 
-.if defined(WITH_BDB_VER)
-.if ${WITH_BDB_VER} == 4
-USE_BDB=	40
-.elif ${WITH_BDB_VER} != 3 && ${WITH_BDB_VER} != 41 && \
-      ${WITH_BDB_VER} != 42 && ${WITH_BDB_VER} != 43 && \
-      ${WITH_BDB_VER} != 44 && ${WITH_BDB_VER} != 45 && ${WITH_BDB_VER} != 46
-IGNORE=		"cannot install: WITH_BDB_VER must be 3, 4, 41, 42, 43, 44, 45 or 46"
-.endif
-USE_BDB?=	${WITH_BDB_VER}
-BDB_SUFFIX?=	${WITH_BDB_VER}
+OPTIONS=	BDB		"Use Berkeley DB"			off \
+		OPENLDAP	"Use OpenLDAP"				off \
+		HTTPFORM	"Enable HTTP form authentication"	off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_BDB)
+USE_BDB=	yes
 CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${LOCALBASE}/lib \
 		--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 		--with-bdb=${BDB_LIB_NAME}
@@ -59,13 +57,9 @@ CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${LOCALBASE}/lib \
 CONFIGURE_ARGS+=--with-dblib=ndbm
 .endif
 
-.if defined(WITH_OPENLDAP_VER)
-WITH_OPENLDAP=		yes
-WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
-.endif
 .if defined(WITH_OPENLDAP)
-.if defined(WANT_OPENLDAP_VER) && ${WANT_OPENLDAP_VER} == 12
-BROKEN=		"this port requires OpenLDAP >= 2.0"
+.if defined(WITH_OPENLDAP_VER)
+WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
@@ -74,8 +68,6 @@ CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 .if defined(WITH_HTTPFORM)
 CONFIGURE_ARGS+=--enable-httpform
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.so)
 CONFIGURE_ARGS+=--enable-gssapi=${KRB5_HOME} --with-gss_impl=mit
