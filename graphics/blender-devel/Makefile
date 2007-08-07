@@ -25,6 +25,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		alut.1:${PORTSDIR}/audio/freealut \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 
+CONFLICTS=	blender-[0-9]*
 PLIST_FILES=	bin/blender
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
