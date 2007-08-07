@@ -6,34 +6,42 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	0.72
+PORTVERSION=	0.80
 PORTREVISION?=	0
 CATEGORIES=	net-p2p
-#MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.freebsd.org/~mezz/distfiles/
-MASTER_SITE_SUBDIR=mezz
+MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 DISTNAME=	Transmission-${PORTVERSION}
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT?=	A free BitTorrent client written from scratch in C
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
+SLAVE_TRANS?=	no
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS?=--prefix=${PREFIX} \
+		--disable-daemon \
 		--disable-gtk
+
+DOCS=		AUTHORS LICENSE NEWS README
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude beos \
 			--exclude macosx \
 			--exclude Transmission.xcodeproj
 
-DOCS=		AUTHORS LICENSE NEWS README
+.if !defined(MASTERDIR)
+EXTRACT_AFTER_ARGS+=	--exclude daemon \
+			--exclude gtk \
+			--exclude libevent \
+			--exclude wx
+MAN1=			transmissioncli.1
+.endif
 
-.if defined(SLAVE_TRANS)
-EXTRACT_AFTER_ARGS+=--exclude cli
-.else
-EXTRACT_AFTER_ARGS+=--exclude gtk
-MAN1=		transmissioncli.1
+.if ${SLAVE_TRANS}=="gtk2"
+EXTRACT_AFTER_ARGS+=	--exclude cli \
+			--exclude daemon \
+			--exclude libevent \
+			--exclude wx
 .endif
 
 .if defined(WITHOUT_OPENSSL)
@@ -50,8 +58,7 @@ pre-everything::
 .endif
 
 general-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g ; \
-		s|/usr/X11R6/|${X11BASE}/|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' \
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
 		s|-g -Wall -W -O3 -funroll-loops|-Wall -W|g' \

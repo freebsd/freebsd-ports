@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	0
 PKGNAMESUFFIX=	-gtk2
 
 COMMENT=	A free BitTorrent client written from scratch in C with GTK+2
@@ -15,9 +15,10 @@ PLIST=		${.CURDIR}/pkg-plist
 
 USE_XLIB=	yes
 USE_GNOME=	gtk20 desktopfileutils
-SLAVE_TRANS=	yes
+SLAVE_TRANS=	gtk2
 USE_GETTEXT=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--disable-daemon
 
 MAN1=		transmission-gtk.1
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
