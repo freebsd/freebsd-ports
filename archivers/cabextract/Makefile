@@ -8,7 +8,7 @@
 PORTNAME=	cabextract
 PORTVERSION=	1.2
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.kyz.uklinux.net/downloads/
+MASTER_SITES=	http://www.cabextract.org.uk/
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	A program to extract Microsoft cabinet (.CAB) files
