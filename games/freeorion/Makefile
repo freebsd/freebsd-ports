@@ -16,7 +16,7 @@ COMMENT=	Open-source, platform independent galactic conquest game
 
 LIB_DEPENDS=	GiGi.0:${PORTSDIR}/x11-toolkits/gigi \
 		alut.1:${PORTSDIR}/audio/freealut \
-		graph.3:${PORTSDIR}/graphics/graphviz \
+		graph:${PORTSDIR}/graphics/graphviz \
 		log4cpp.4:${PORTSDIR}/devel/log4cpp \
 		vorbisfile.5:${PORTSDIR}/audio/libvorbis
 
