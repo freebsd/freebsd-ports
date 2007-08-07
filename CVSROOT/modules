@@ -1097,6 +1097,7 @@ c-hey		ports/misc/c-hey
 c-icap		ports/www/c-icap
 c-nocem		ports/news/c-nocem
 c-sig		ports/mail/c-sig
+c-sig-emacs21		ports/mail/c-sig-emacs21
 c2html		ports/textproc/c2html
 c2lib		ports/devel/c2lib
 c2man		ports/devel/c2man
