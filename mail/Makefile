@@ -613,6 +613,7 @@
     SUBDIR += t-prot
     SUBDIR += teapop
     SUBDIR += teapop-devel
+    SUBDIR += textmail
     SUBDIR += thunderbird
     SUBDIR += thunderbird-dictionaries
     SUBDIR += thunderbird-i18n

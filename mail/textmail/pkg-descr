@@ -1,0 +1,11 @@
+Textmail filters a mail message or mbox, replacing MS Word, MS Excel,
+HTML, RTF, and PDF attachments with the plain text contained therein.
+By default, the following attachments are also deleted: image, audio,
+video, and MS Windows executables. MS winmail.dat attachments are
+replaced by any attachments contained therein, which are then replaced
+by text or deleted in the same fashion. Any of these actions can be
+suppressed with the command line options. Mail headers can also be
+selectively deleted.
+
+WWW: http://raf.org/textmail/
+Author: raf <raf@raf.org>
