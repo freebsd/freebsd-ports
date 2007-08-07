@@ -3,48 +3,84 @@
 # Whom:                 Jimmy Olgeni <olgeni@uli.it>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	blender
-PORTVERSION=	2.25
-PORTREVISION=	3
+PORTVERSION=	2.44.1
 CATEGORIES=	graphics games
-MASTER_SITES=	http://download.blender.org/release/Publisher${PORTVERSION}/
-DISTNAME=	blender-publisher-${PORTVERSION}-freebsd-4.2-i386
-DIST_SUBDIR=	blender
+MASTER_SITES=	CENKES
 
 MAINTAINER=	dyeske@gmail.com
-COMMENT=	Fully functional 3D modeling/rendering/animation/gaming package
+COMMENT=	3D modeling/rendering/animation/gaming package
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		SDL.11:${PORTSDIR}/devel/sdl12 \
+		Half.4:${PORTSDIR}/graphics/OpenEXR \
+		openal.0:${PORTSDIR}/audio/openal \
+		alut.1:${PORTSDIR}/audio/freealut \
+		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 
-USE_X_PREFIX=	YES
-NO_BUILD=	YES
-ONLY_FOR_ARCHS=	i386
+CONFLICTS=	blender-devel-[0-9]*
+PLIST_FILES=	bin/blender
+USE_XORG=	x11 xext xmu xi
+USE_GETTEXT=	yes
+USE_PYTHON=	2.5+
+USE_SDL=	sdl
+USE_GL=	gl glu
+USE_GMAKE=	yes
+
+PORTDOCS=	README bf-members.txt blender-scons.txt  python-dev-guide.txt \
+		blender-cmake.txt blender-guardedalloc.txt \
+		interface_API.txt blender-scons-dev.txt oldbugs.txt
+
+OPTIONS=	OCFLAGS "With Optimized Cflags" off \
+		NOPORTDOCS "Don't Install Docs" off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+MAKE_ENV+=	NAN_CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
+		-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/OpenEXR \
+		-I${PYTHON_INCLUDEDIR}"
+MAKE_ENV+=	NAN_FREETYPE="${LOCALBASE}"
+MAKE_ENV+=	NAN_OPENEXR="${LOCALBASE}"
+MAKE_ENV+=	WITH_BF_BLENDERPLAYER="false"
+
+.if defined(WITH_OCFLAGS)
+CFLAGS+=	-O3 -ffast-math
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|sdl11-config|${SDL_CONFIG}|; \
+		s|2.3|${PYTHON_VER}|' \
+		${WRKSRC}/source/nan_definitions.mk
+
+	@${REINPLACE_CMD} -e \
+		's|gcc|${CC}|; \
+		s|g++|${CXX}|; \
+		s|-pipe||; \
+		s|-O2|${CFLAGS}|; \
+		s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|; \
+		s|/usr/X11R6|${X11BASE}|' \
+		${WRKSRC}/source/nan_compile.mk
+
+	@${REINPLACE_CMD} -e \
+		's|-lc_r||; \
+		s|-pthread|-lintl -lIlmThread ${PTHREAD_LIBS}|' \
+		${WRKSRC}/source/nan_link.mk
+
+	@${REINPLACE_CMD} -e \
+		's|-FIX_NAN_WARN||' \
+		${WRKSRC}/source/nan_warn.mk
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/blenderplayer ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/blenderpublisher ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/doc/blender
-	${MKDIR} ${PREFIX}/lib/blender/plugins/texture \
-		${PREFIX}/lib/blender/plugins/sequence
-.for SEQ in blur.so scatter.so showzbuf.so
-	${INSTALL_PROGRAM} ${WRKSRC}/plugins/sequence/${SEQ} \
-		${PREFIX}/lib/blender/plugins/sequence
-.endfor
-.for TEXT in clouds2.so tiles.so
-	${INSTALL_PROGRAM} ${WRKSRC}/plugins/texture/${TEXT} \
-		${PREFIX}/lib/blender/plugins/texture
-.endfor
-	${MKDIR} ${PREFIX}/share/doc/blender
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/blender
-	${INSTALL_DATA} ${WRKSRC}/copyright.txt ${PREFIX}/share/doc/blender
-	${INSTALL_DATA} ${WRKSRC}/playerlicense.txt ${PREFIX}/share/doc/blender
+	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd/bin/blender ${PREFIX}/bin
+.if !defined(WITH_NOPORTDOCS)
+	@${MV} ${WRKSRC}/README ${WRKSRC}/doc/
+	@${INSTALL} -d ${DOCSDIR}/
+	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+.endif
 
 .include <bsd.port.post.mk>
