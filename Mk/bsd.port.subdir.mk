@@ -40,6 +40,21 @@
 #		Search for ports using either 'make search key=<keyword>'
 #		or 'make search name=<keyword>'.
 
+PORTSDIR?=		/usr/ports
+TEMPLATES?=		${PORTSDIR}/Templates
+.if defined(PORTSTOP)
+README=			${TEMPLATES}/README.top
+.else
+README=			${TEMPLATES}/README.category
+.endif
+MOVEDDIR?=		${PORTSDIR}
+MOVEDFILE?=		MOVED
+
+# XXX Are these needed here?  DESCR was set wrong for a few years
+MASTERDIR?=     ${.CURDIR}
+PKGDIR?=		${MASTERDIR}
+DESCR?=			${PKGDIR}/pkg-descr
+
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
 .MAIN: all
@@ -65,6 +80,9 @@ OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
 .endif
 .endif
+
+INDEXDIR?=	${PORTSDIR}
+INDEXFILE?=	INDEX-${OSVERSION:C/([0-9]).*/\1/}
 
 UID!=	${ID} -u
 .if exists(${LOCALBASE}/sbin/pkg_info)
@@ -249,28 +267,6 @@ readme:
 	@${MAKE} README.html
 .endif
 
-.if (${OPSYS} == "NetBSD")
-PORTSDIR ?= /usr/opt
-.else
-PORTSDIR ?= /usr/ports
-.endif
-TEMPLATES ?= ${PORTSDIR}/Templates
-.if defined(PORTSTOP)
-README=	${TEMPLATES}/README.top
-.else
-README=	${TEMPLATES}/README.category
-.endif
-COMMENTFILE?=	${.CURDIR}/pkg/COMMENT
-DESCR?=		${.CURDIR}/pkg/DESCR
-INDEXDIR?=	${PORTSDIR}
-.if ${OSVERSION} >= 500036
-INDEXFILE?=	INDEX-${OSVERSION:C/([0-9]).*/\1/}
-.else
-INDEXFILE?=	INDEX
-.endif
-MOVEDDIR?=	${PORTSDIR}
-MOVEDFILE?=	MOVED
-
 HTMLIFY=	${SED} -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 
 package-name:
@@ -298,11 +294,7 @@ README.html:
 .if defined(COMMENT)
 	@${ECHO_CMD} "${COMMENT}" | ${HTMLIFY} > $@.tmp4
 .else
-.if exists(${COMMENTFILE})
-	@${HTMLIFY} ${COMMENTFILE} > $@.tmp4
-.else
 	@> $@.tmp4
-.endif
 .endif
 	@${CAT} ${README} | \
 		${SED} -e 's/%%CATEGORY%%/'"`basename ${.CURDIR}`"'/g' \
@@ -415,7 +407,7 @@ _PORTSEARCH=	\
                        break; \
                  }\
 	      } \
-      	    if (toprint == 1 ) disp[fields[d[i]]] = 1; \
+	    if (toprint == 1 ) disp[fields[d[i]]] = 1; \
 	    } \
 	  } \
 	  { \
