@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	gnome-blog
-PORTVERSION=	0.8
-PORTREVISION=	3
+PORTVERSION=	0.9.1
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-blog/0.8
+MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME app to post to blogs
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_PYTHON=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix pygnome2 intlhack
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/libs"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	gnomeblog.schemas
 
