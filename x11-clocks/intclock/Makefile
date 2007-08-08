@@ -30,4 +30,7 @@ post-patch:
 		s|/usr/share/intclock|${DATADIR}|' ${WRKSRC}/data/intclock.desktop
 	@${FIND} ${WRKSRC} -name \*.bak -delete
 
+pre-install:
+	@${INSTALL} -d ${PREFIX}/share/applications/
+
 .include <bsd.port.mk>
