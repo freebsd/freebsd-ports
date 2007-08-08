@@ -8,9 +8,9 @@
 PORTNAME=	lookup
 PORTVERSION=	1.4.1
 PORTREVISION=	1
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/lookup/dist/
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search interface on ${EMACS_PORT_NAME} for CD-ROM books, etc
@@ -19,9 +19,10 @@ FILESDIR=	${.CURDIR}/../lookup/files
 PKGDIR=		${.CURDIR}/../lookup
 PLIST=		${.CURDIR}/pkg-plist
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 
 INFO?=		lookup lookup-guide
+
+.include <bsd.port.pre.mk>
 
 .if (${EMACS_PORT_NAME} == "xemacs21-mule")
 EMACSDIR=	${PREFIX}/lib/xemacs/site-packages
@@ -34,7 +35,7 @@ PORTINFODIR=	${PREFIX}/info
 PLIST_SUB=	ELISPDIR=${EMACS_VERSION_SITE_LISPDIR}
 .endif
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-emacs=${EMACS_CMD} \
+CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 		--with-lispdir=${ELISPDIR}
 
 post-install:
@@ -48,4 +49,4 @@ post-install:
 		${EMACSDIR}/pkginfo/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
