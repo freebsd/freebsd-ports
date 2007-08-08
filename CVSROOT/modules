@@ -15210,6 +15210,7 @@ talkfilters	ports/misc/talkfilters
 talksoup	ports/irc/talksoup
 tamago		ports/editors/tamago
 tamago-emacs20	ports/editors/tamago-emacs20
+tamago-emacs21	ports/editors/tamago-emacs21
 tank		ports/games/tank
 tap-plugins	ports/audio/tap-plugins
 tapidbus	ports/net/tapidbus
