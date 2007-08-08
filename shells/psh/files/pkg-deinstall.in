@@ -3,8 +3,8 @@
 # $FreeBSD$
 #
 
-PSH="${PKG_PREFIX-/usr/local}/bin/psh"
-SHELLS="${PKG_DESTDIR-}/etc/shells"
+PSH="%%PREFIX%%/bin/psh"
+SHELLS="/etc/shells"
 
 case $2 in
 DEINSTALL)

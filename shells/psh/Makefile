@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	perlsh
-PORTVERSION=	1.8
+PORTVERSION=	1.8.1
 CATEGORIES=	shells perl5
-MASTER_SITES=	http://www.cpan.org/authors/id/G/GR/GREGOR/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/modules\/by-module\/%SUBDIR%/authors\/id\/G\/GR\/GREGOR/}
 DISTNAME=	psh-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
@@ -16,8 +16,13 @@ COMMENT=	New shell made entirely out of a Perl script
 
 PERL_CONFIGURE=	yes
 
-MAN1=	psh.1 pshcomplete.1 pshconfig.1 pshdevel.1
+SUB_FILES=	pkg-install pkg-deinstall
+DATADIR=	${PREFIX}/share/psh
 
+MAN1=	psh.1 \
+	pshcomplete.1 \
+	pshconfig.1 \
+	pshdevel.1
 MAN3=	Psh::Completion.3 \
 	Psh::Joblist.3 \
 	Psh::Locale.3 \
