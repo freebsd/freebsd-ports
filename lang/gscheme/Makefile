@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gscheme
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	lang gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/GScheme/
 DISTNAME=	GScheme
 EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	repacked
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep-aware scheme interpreter
