@@ -7,6 +7,7 @@
 
 PORTNAME=	mussh
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^#!/bin/bash,#!/usr/bin/env bash,g" \
+			  -e "s,seq 1 ,jot 1 ,g" \
 		${WRKSRC}/${PORTNAME}
 
 do-install:
