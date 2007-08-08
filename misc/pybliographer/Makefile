@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolki
 
 USE_GNOME=	glib12 gnomehack gnomeprefix
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
