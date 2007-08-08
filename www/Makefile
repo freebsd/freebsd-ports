@@ -1009,6 +1009,7 @@
     SUBDIR += py-forgethtml
     SUBDIR += py-formencode
     SUBDIR += py-funkload
+    SUBDIR += py-html5lib
     SUBDIR += py-httplib2
     SUBDIR += py-imdbpy
     SUBDIR += py-jonpy
