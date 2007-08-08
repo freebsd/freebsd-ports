@@ -99,7 +99,6 @@
     SUBDIR += hot-babe
     SUBDIR += howm
     SUBDIR += ical
-    SUBDIR += intclock
     SUBDIR += ithought
     SUBDIR += jlj
     SUBDIR += karamba

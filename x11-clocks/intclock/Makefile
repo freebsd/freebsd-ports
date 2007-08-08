@@ -7,7 +7,7 @@
 
 PORTNAME=	intclock
 PORTVERSION=	2.10
-CATEGORIES=	deskutils perl5
+CATEGORIES=	x11-clocks perl5
 MASTER_SITES=	http://www.peterverthez.net/projects/${PORTNAME}/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org

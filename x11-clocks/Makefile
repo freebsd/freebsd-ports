@@ -25,6 +25,7 @@
     SUBDIR += gdesklets-ebichuclock
     SUBDIR += glclock
     SUBDIR += gtubeclock
+    SUBDIR += intclock
     SUBDIR += kdetoys3
     SUBDIR += lmclock
     SUBDIR += mlclock
