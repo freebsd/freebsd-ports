@@ -1,3 +1,4 @@
 bin/tbdcmd
+bin/tbdchat
 etc/tbd.conf.sample
 libexec/tbd
