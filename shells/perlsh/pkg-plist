@@ -1,31 +1,31 @@
 @comment $FreeBSD$
 bin/psh
-share/psh/complete/debian
-share/psh/complete/perl
-share/psh/complete/standard
-share/psh/themes/aix
-share/psh/themes/blank
-share/psh/themes/blight
-share/psh/themes/bold
-share/psh/themes/clock
-share/psh/themes/combo
-share/psh/themes/cyngus
-share/psh/themes/elite2
-share/psh/themes/fade
-share/psh/themes/gilbert
-share/psh/themes/hermann
-share/psh/themes/kax
-share/psh/themes/largo
-share/psh/themes/lxtips2
-share/psh/themes/nate
-share/psh/themes/nextstep
-share/psh/themes/openbsd
-share/psh/themes/plan-9
-share/psh/themes/rasterman
-share/psh/themes/simple
-share/psh/themes/stereophonic
-share/psh/themes/sunos
-share/psh/themes/vms
+%%DATADIR%%/complete/debian
+%%DATADIR%%/complete/perl
+%%DATADIR%%/complete/standard
+%%DATADIR%%/themes/aix
+%%DATADIR%%/themes/blank
+%%DATADIR%%/themes/blight
+%%DATADIR%%/themes/bold
+%%DATADIR%%/themes/clock
+%%DATADIR%%/themes/combo
+%%DATADIR%%/themes/cyngus
+%%DATADIR%%/themes/elite2
+%%DATADIR%%/themes/fade
+%%DATADIR%%/themes/gilbert
+%%DATADIR%%/themes/hermann
+%%DATADIR%%/themes/kax
+%%DATADIR%%/themes/largo
+%%DATADIR%%/themes/lxtips2
+%%DATADIR%%/themes/nate
+%%DATADIR%%/themes/nextstep
+%%DATADIR%%/themes/openbsd
+%%DATADIR%%/themes/plan-9
+%%DATADIR%%/themes/rasterman
+%%DATADIR%%/themes/simple
+%%DATADIR%%/themes/stereophonic
+%%DATADIR%%/themes/sunos
+%%DATADIR%%/themes/vms
 %%SITE_PERL%%/Psh.pm
 %%SITE_PERL%%/Psh/Builtins/Alias.pm
 %%SITE_PERL%%/Psh/Builtins/Bg.pm
@@ -113,9 +113,9 @@ share/psh/themes/vms
 %%SITE_PERL%%/Psh/Support/TiedOption.pm
 %%SITE_PERL%%/Psh/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/psh/.packlist
-@dirrm share/psh/complete
-@dirrm share/psh/themes
-@dirrm share/psh
+@dirrm %%DATADIR%%/complete
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/psh
 @dirrm %%SITE_PERL%%/Psh/Builtins/Fallback
 @dirrm %%SITE_PERL%%/Psh/Builtins
