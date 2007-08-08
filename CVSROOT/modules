@@ -4925,6 +4925,7 @@ ircd-ratbox-devel	ports/irc/ircd-ratbox-devel
 ircd-ru		ports/irc/ircd-ru
 ircd-rusnet	ports/irc/ircd-rusnet
 ircg		ports/irc/ircg
+irchat-jp	ports/irc/irchat-jp
 irchat-pj-emacs20	ports/irc/irchat-pj-emacs20
 irchat-pj-emacs21	ports/irc/irchat-pj-emacs21
 irchat-pj-xemacs21-mule	ports/irc/irchat-pj-xemacs21-mule
