@@ -1,0 +1,9 @@
+HTML parser designed to follow the WHATWG HTML5 specification. The parser is
+designed to handle all flavours of HTML and parses invalid documents using
+well-defined error handling rules compatible with the behaviour of major
+desktop web browsers.
+
+Output is to a tree structure; the current release supports output to a custom
+tree similar to DOM and to ElementTree.
+
+WWW: http://code.google.com/p/html5lib/ 
