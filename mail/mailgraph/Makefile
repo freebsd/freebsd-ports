@@ -7,6 +7,7 @@
 
 PORTNAME=	mailgraph
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://mailgraph.schweikert.ch/pub/ \
 		http://mailgraph.schweikert.ch/pub/old/
@@ -26,9 +27,6 @@ MAILGRAPH_GROUP?=	${WWWGRP}
 USE_RC_SUBR=	${PORTNAME}
 SUB_LIST+=	MAILGRAPH_USER=${MAILGRAPH_USER} MAILGRAPH_GROUP=${MAILGRAPH_GROUP}
 
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKSRC}/pkg-message
-
 DOCS=		README CHANGES
 .if !defined(NOPORTDOCS)
 PORTDOCS=	${DOCS}
@@ -38,14 +36,12 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may set following options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "DATADIR=/var/db/mailgraph		Where do you put RRD databases?"
-	@${ECHO_MSG} "MAILGRAPH_USER=www			User to run mailgraph (Default: ${WWWOWN})"
-	@${ECHO_MSG} "MAILGRAPH_GROUP=www			Group to run mailgraph (Default: ${WWWGRP})"
+	@${ECHO_MSG} "DATADIR=/var/db/mailgraph	Where do you put RRD databases?"
+	@${ECHO_MSG} "MAILGRAPH_USER=www		User to run mailgraph (Default: ${WWWOWN})"
 	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR}," ${WRKSRC}/mailgraph.cgi
-	@${SED} 's|%%DATADIR%%|${DATADIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 do-install:
 	${MKDIR} ${PREFIX}/www/cgi-bin

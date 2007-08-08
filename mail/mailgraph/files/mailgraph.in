@@ -12,10 +12,10 @@
 
 . %%RC_SUBR%%
 
-name=mailgraph
+name="mailgraph"
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/sbin/mailgraph.pl > /dev/null 2>&1
+command=%%PREFIX%%/sbin/${name}.pl > /dev/null 2>&1
 command_interpreter=/usr/bin/perl
 stop_postcmd=stop_postcmd
 
@@ -24,12 +24,11 @@ stop_postcmd()
     rm -f $pidfile
 }
 
-mailgraph_enable=${mailgraph_enable:-"NO"}
-mailgraph_pidfile=${mailgraph_pidfile:-"%%DATADIR%%/mailgraph.pid"}
-mailgraph_flags=${mailgraph_flags:-"--logfile /var/log/maillog --daemon-rrd=%%DATADIR%% --ignore-localhost --daemon --daemon-pid=${mailgraph_pidfile}"}
-mailgraph_user=${mailgraph_user:-"%%MAILGRAPH_USER%%"}
-mailgraph_group=${mailgraph_group:-"%%MAILGRAPH_GROUP%%"}
-mailgraph_chdir=${mailgraph_chdir:-"%%DATADIR%%"}
+: ${mailgraph_enable="NO"}
+: ${mailgraph_pidfile="%%DATADIR%%/mailgraph.pid"}
+: ${mailgraph_flags="--logfile /var/log/maillog --daemon-rrd=%%DATADIR%% --ignore-localhost --daemon --daemon-pid=${mailgraph_pidfile}"}
+: ${mailgraph_user="%%MAILGRAPH_USER%%"}
+: ${mailgraph_chdir="%%DATADIR%%"}
 
 load_rc_config $name
 
