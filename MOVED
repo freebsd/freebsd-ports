@@ -3141,3 +3141,4 @@ net-mgmt/aircrack|net-mgmt/aircrack-ng|2007-08-01|Has expired: Please use net-mg
 databases/ruby-postgres|databases/rubygem-postgres|2007-08-03|Port updated in rubygem version
 editors/flim113||2007-08-05|Expired: distfile no longer available
 editors/semi113||2007-08-05|Expired: distfile no longer available
+deskutils/intclock|x11-clocks/intclock|2007-08-08|Moved to a more appropriate category
