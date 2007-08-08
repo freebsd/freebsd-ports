@@ -45,6 +45,7 @@
     SUBDIR += ircd-ru
     SUBDIR += ircd-rusnet
     SUBDIR += ircg
+    SUBDIR += irchat-jp
     SUBDIR += irchat-pj-emacs20
     SUBDIR += irchat-pj-emacs21
     SUBDIR += irchat-pj-xemacs21-mule
