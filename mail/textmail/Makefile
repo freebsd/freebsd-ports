@@ -7,7 +7,7 @@
 
 PORTNAME=	textmail
 PORTVERSION=	20070803
-CATEGORIES=	graphics
+CATEGORIES=	mail
 MASTER_SITES=	http://raf.org/textmail/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
