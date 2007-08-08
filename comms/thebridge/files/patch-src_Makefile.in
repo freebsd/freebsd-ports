@@ -1,27 +1,32 @@
---- src/Makefile.in.orig	Sat Jan  8 19:01:27 2005
-+++ src/Makefile.in	Mon May  8 15:53:09 2006
-@@ -145,11 +145,11 @@
-               eventhook.c eventhook.h avrs.c avrs.h
- 
- 
--tbd_LDADD = $(top_builddir)/common/libcommon.a $(top_builddir)/zlib/libzlib.a \
--            -lm
-+tbd_LDADD = $(top_builddir)/common/libcommon.a \
-+            -lz -lm
- 
- 
--AM_CPPFLAGS = -I$(top_srcdir)/inc -I$(top_srcdir)/zlib
-+AM_CPPFLAGS = -I$(top_srcdir)/inc -Izlib
- AM_CFLAGS = -Wall -DSYSCON_DIR=\"$(sysconfdir)\"
- subdir = src
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -163,8 +163,7 @@
- 	dirclient.$(OBJEXT) thebridge.$(OBJEXT) users.$(OBJEXT) \
- 	hostfile.$(OBJEXT) eventhook.$(OBJEXT) avrs.$(OBJEXT)
+--- src/Makefile.in.orig	Mon Jul  2 22:45:43 2007
++++ src/Makefile.in	Sat Jul 21 00:59:05 2007
+@@ -105,7 +105,7 @@
+ @LINK_BOX_FALSE@	avrs.$(OBJEXT)
  tbd_OBJECTS = $(am_tbd_OBJECTS)
--tbd_DEPENDENCIES = $(top_builddir)/common/libcommon.a \
--	$(top_builddir)/zlib/libzlib.a
-+tbd_DEPENDENCIES = $(top_builddir)/common/libcommon.a 
- tbd_LDFLAGS =
+ @LINK_BOX_FALSE@tbd_DEPENDENCIES = $(top_builddir)/common/libcommon.a \
+-@LINK_BOX_FALSE@	$(top_builddir)/zlib/libzlib.a
++@LINK_BOX_FALSE@	-lz -lm
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+ am__depfiles_maybe = depfiles
+@@ -207,9 +207,9 @@
+ @LINK_BOX_TRUE@		  dirclient.c dirclient.h thebridge.c users.c users.h \
+ @LINK_BOX_TRUE@		  hostfile.c hostfile.h eventhook.c eventhook.h avrs.c avrs.h 
  
- DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+-@LINK_BOX_FALSE@AM_CPPFLAGS = -I$(top_srcdir)/inc -I$(top_srcdir)/zlib -I$(top_srcdir)/spandsp
++@LINK_BOX_FALSE@AM_CPPFLAGS = -I$(top_srcdir)/inc -Izlib -I$(top_srcdir)/spandsp
+ @LINK_BOX_TRUE@AM_CPPFLAGS = -I$(top_srcdir)/inc -I$(top_srcdir)/gsm/inc -DLINK_BOX \
+-@LINK_BOX_TRUE@        -I$(top_srcdir)/zlib -I$(top_srcdir)/linkbox
++@LINK_BOX_TRUE@        -Izlib -I$(top_srcdir)/linkbox
+ 
+ @LINK_BOX_FALSE@AM_CFLAGS = -Wall -DSYSCON_DIR=\"$(sysconfdir)\" -lm
+ @LINK_BOX_TRUE@AM_CFLAGS = -Wall -DSYSCON_DIR=\"$(sysconfdir)\"
+@@ -217,7 +217,7 @@
+ @LINK_BOX_FALSE@        dirclient.h thebridge.c users.c users.h hostfile.c hostfile.h \
+ @LINK_BOX_FALSE@        eventhook.c eventhook.h avrs.c avrs.h
+ 
+-@LINK_BOX_FALSE@tbd_LDADD = $(top_builddir)/common/libcommon.a $(top_builddir)/zlib/libzlib.a
++@LINK_BOX_FALSE@tbd_LDADD = $(top_builddir)/common/libcommon.a -lz
+ all: all-am
+ 
+ .SUFFIXES:

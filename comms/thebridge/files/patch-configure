@@ -1,6 +1,6 @@
---- configure.orig	Mon May  8 15:46:41 2006
-+++ configure	Mon May  8 15:47:02 2006
-@@ -4352,7 +4352,7 @@
+--- configure.orig	Mon Jul  2 22:44:49 2007
++++ configure	Sat Jul 21 00:33:56 2007
+@@ -4668,7 +4668,7 @@
  _ACEOF
  
  
@@ -9,7 +9,7 @@
  cat >confcache <<\_ACEOF
  # This file is a shell script that caches the results of configure
  # tests run on this system so they can be shared between configure
-@@ -4906,7 +4906,6 @@
+@@ -5230,7 +5230,6 @@
    "common/Makefile" ) CONFIG_FILES="$CONFIG_FILES common/Makefile" ;;
    "inc/Makefile" ) CONFIG_FILES="$CONFIG_FILES inc/Makefile" ;;
    "tbdcmd/Makefile" ) CONFIG_FILES="$CONFIG_FILES tbdcmd/Makefile" ;;
