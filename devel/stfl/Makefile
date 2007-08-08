@@ -32,8 +32,8 @@ NCURSES_INC=	ncurses/
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\.a|.so|g;/ranlib/d;s|ar qc|${CC} ${CFLAGS} -shared -fPIC -o|;\
-		s|sed -r|sed -E|;s|-Os||;/gcc/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|\.a|.so|g;/ranlib/d;s|ar qc|$${CC} $${CFLAGS} -shared -fPIC -o|;\
+		s|sed -r|sed -E|;s|-Os||;/gcc/d;/-MM/s|-I.|$${CFLAGS}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|alloca.h|stdlib.h|' ${WRKSRC}/widgets/*.c
 	@${REINPLACE_CMD} -e 's|ncursesw/|${NCURSES_INC}|' ${WRKSRC}/stfl_internals.h
 	@${ECHO_CMD} 'prefix = ${PREFIX}' > ${WRKSRC}/Makefile.cfg
