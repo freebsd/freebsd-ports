@@ -53,6 +53,38 @@ libexec/blog_applet.py
 share/gnome/applications/gnome-blog.desktop
 share/gnome/gnome-2.0/ui/GNOME_BlogApplet.xml
 share/gnome/pixmaps/gnome-blog.png
+share/locale/az/LC_MESSAGES/gnome-blog.mo
+share/locale/bg/LC_MESSAGES/gnome-blog.mo
+share/locale/ca/LC_MESSAGES/gnome-blog.mo
+share/locale/cs/LC_MESSAGES/gnome-blog.mo
+share/locale/de/LC_MESSAGES/gnome-blog.mo
+share/locale/en_CA/LC_MESSAGES/gnome-blog.mo
+share/locale/en_GB/LC_MESSAGES/gnome-blog.mo
+share/locale/es/LC_MESSAGES/gnome-blog.mo
+share/locale/et/LC_MESSAGES/gnome-blog.mo
+share/locale/fi/LC_MESSAGES/gnome-blog.mo
+share/locale/fr/LC_MESSAGES/gnome-blog.mo
+share/locale/gl/LC_MESSAGES/gnome-blog.mo
+share/locale/hr/LC_MESSAGES/gnome-blog.mo
+share/locale/hu/LC_MESSAGES/gnome-blog.mo
+share/locale/it/LC_MESSAGES/gnome-blog.mo
+share/locale/ja/LC_MESSAGES/gnome-blog.mo
+share/locale/ms/LC_MESSAGES/gnome-blog.mo
+share/locale/nb/LC_MESSAGES/gnome-blog.mo
+share/locale/ne/LC_MESSAGES/gnome-blog.mo
+share/locale/nl/LC_MESSAGES/gnome-blog.mo
+share/locale/pl/LC_MESSAGES/gnome-blog.mo
+share/locale/pt/LC_MESSAGES/gnome-blog.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-blog.mo
+share/locale/rw/LC_MESSAGES/gnome-blog.mo
+share/locale/sq/LC_MESSAGES/gnome-blog.mo
+share/locale/sr/LC_MESSAGES/gnome-blog.mo
+share/locale/sr@Latn/LC_MESSAGES/gnome-blog.mo
+share/locale/sv/LC_MESSAGES/gnome-blog.mo
+share/locale/uk/LC_MESSAGES/gnome-blog.mo
+share/locale/vi/LC_MESSAGES/gnome-blog.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-blog.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-blog.mo
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrm %%PYTHON_SITELIBDIR%%/gnomeblog
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
