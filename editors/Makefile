@@ -156,6 +156,7 @@
     SUBDIR += sted
     SUBDIR += tamago
     SUBDIR += tamago-emacs20
+    SUBDIR += tamago-emacs21
     SUBDIR += tea
     SUBDIR += teco
     SUBDIR += ted
