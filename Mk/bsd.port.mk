@@ -1089,6 +1089,17 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # Most port authors should not need to understand anything after this point.
 #
 
+# These need to be absolute since we don't know how deep in the ports
+# tree we are and thus can't go relative.  They can, of course, be overridden
+# by individual Makefiles or local system make configuration.
+PORTSDIR?=		/usr/ports
+LOCALBASE?=		/usr/local
+X11BASE?=		${LOCALBASE}
+LINUXBASE?=		/compat/linux
+DISTDIR?=		${PORTSDIR}/distfiles
+_DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
+INDEXDIR?=		${PORTSDIR}
+
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
 #
@@ -1294,16 +1305,6 @@ PKGVERSION=	${PORTVERSION:C/[-_,]/./g}${_SUF1}${_SUF2}
 PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PKGVERSION}
 DISTNAME?=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
 
-# These need to be absolute since we don't know how deep in the ports
-# tree we are and thus can't go relative.  They can, of course, be overridden
-# by individual Makefiles or local system make configuration.
-PORTSDIR?=		/usr/ports
-LOCALBASE?=		/usr/local
-X11BASE?=		${LOCALBASE}
-LINUXBASE?=		/compat/linux
-DISTDIR?=		${PORTSDIR}/distfiles
-_DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
-INDEXDIR?=		${PORTSDIR}
 INDEXFILE?=		INDEX-${OSVERSION:C/([0-9]).*/\1/}
 
 DOCSDIR?=		${PREFIX}/share/doc/${PORTNAME}
@@ -2300,7 +2301,6 @@ COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 .undef NO_PACKAGE
 .endif
 
-COMMENTFILE?=	${PKGDIR}/pkg-comment
 DESCR?=			${PKGDIR}/pkg-descr
 PLIST?=			${PKGDIR}/pkg-plist
 PKGINSTALL?=	${PKGDIR}/pkg-install
