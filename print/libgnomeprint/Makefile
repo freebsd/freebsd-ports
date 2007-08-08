@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	libgnomeprint
-PORTVERSION=	2.18.0
-PORTREVISION?=	3
+PORTVERSION=	2.18.1
+PORTREVISION?=	0
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -61,8 +61,6 @@ post-patch:
 		's|<malloc[.]h>|<stdlib.h>|'
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s|tests||" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s|doc||" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|UTF8|UTF-8|g' \
-		${WRKSRC}/libgnomeprint/modules/cups/gnome-print-cups.c
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts
