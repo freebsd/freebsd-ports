@@ -21,6 +21,7 @@
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize/YAML
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize/XML
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize/Data
+@dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Deserialize/XML
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Deserialize/Data
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Deserialize
