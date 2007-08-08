@@ -1,23 +1,26 @@
-$FreeBSD$
-
---- qmHandle.orig	Thu Jan 16 10:05:21 2003
-+++ qmHandle	Thu Jan 16 10:31:33 2003
-@@ -26,8 +26,12 @@
- #my ($startqmail) = '/usr/local/bin/svc -u /service/qmail-send';
+--- qmHandle.old	Tue Aug  7 17:32:57 2007
++++ qmHandle	Tue Aug  7 17:34:55 2007
+@@ -26,13 +26,17 @@
+ # ### Be sure to uncomment only ONE of each variable declarations ###
+ 
+ # For instance, this is if you have DJB's daemontools
+-my ($stopqmail) = '/usr/local/bin/svc -d /service/qmail-deliver';
+-my ($startqmail) = '/usr/local/bin/svc -u /service/qmail-deliver';
++#my ($stopqmail) = '/usr/local/bin/svc -d /service/qmail-deliver';
++#my ($startqmail) = '/usr/local/bin/svc -u /service/qmail-deliver';
  
  # While this is if you have a Debian GNU/Linux with its qmail package
--my ($stopqmail) = '/etc/init.d/qmail stop';
--my ($startqmail) = '/etc/init.d/qmail start';
-+#my ($stopqmail) = '/etc/init.d/qmail stop';
-+#my ($startqmail) = '/etc/init.d/qmail start';
-+
+ #my ($stopqmail) = '/etc/init.d/qmail stop';
+ #my ($startqmail) = '/etc/init.d/qmail start';
+ 
 +# This is if you have FreeBSD with its qmail package
 +my ($stopqmail) = '%%LOCALBASE%%/etc/rc.d/qmail.sh stop';
 +my ($startqmail) = '%%LOCALBASE%%/etc/rc.d/qmail.sh start';
- 
++
  # If you don't have scripts, leave $stopqmail blank (the process will
  # be hunted and killed by qmHandle):
-@@ -43,7 +47,10 @@
+ #my ($stopqmail) = '';
+@@ -47,7 +51,10 @@
  #####
  # Enter here the system command which returns qmail PID. The following
  # should work on most Unixes:
@@ -29,6 +32,3 @@ $FreeBSD$
  
  ####################  USER CONFIGURATION END  ####################
  
-
-
-

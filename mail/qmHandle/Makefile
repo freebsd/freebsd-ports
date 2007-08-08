@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmHandle
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qmhandle
@@ -17,7 +17,6 @@ COMMENT=	Tool to view and manage a qmail queue
 
 USE_QMAIL_RUN=	yes
 
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
