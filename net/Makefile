@@ -180,6 +180,7 @@
     SUBDIR += gtic
     SUBDIR += gutenfetch
     SUBDIR += haproxy
+    SUBDIR += haproxy-devel
     SUBDIR += hawknl
     SUBDIR += hawknl-devel
     SUBDIR += hf6to4
