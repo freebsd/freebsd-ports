@@ -1,0 +1,8 @@
+%%SITE_PERL%%/SVN/Dump.pm
+%%SITE_PERL%%/SVN/Dump/Headers.pm
+%%SITE_PERL%%/SVN/Dump/Property.pm
+%%SITE_PERL%%/SVN/Dump/Reader.pm
+%%SITE_PERL%%/SVN/Dump/Record.pm
+%%SITE_PERL%%/SVN/Dump/Text.pm
+@dirrmtry %%SITE_PERL%%/SVN/Dump
+@dirrmtry %%SITE_PERL%%/SVN
