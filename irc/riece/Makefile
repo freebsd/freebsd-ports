@@ -16,7 +16,6 @@ MAINTAINER=	yasu@utahime.org
 COMMENT=	IRC client for Emacs
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
