@@ -5182,6 +5182,7 @@ ja-linux-JM	ports/japanese/linux-JM
 ja-lipsf	ports/japanese/lipsf
 ja-lookup	ports/japanese/lookup
 ja-lookup-emacs20	ports/japanese/lookup-emacs20
+ja-lookup-emacs21	ports/japanese/lookup-emacs21
 ja-ls		ports/japanese/jls
 ja-lsd-fpw	ports/japanese/lsd-fpw
 ja-lynx		ports/japanese/lynx
