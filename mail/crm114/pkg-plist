@@ -16,21 +16,19 @@ bin/osbf-util
 %%PORTDOCS%%%%DOCSDIR%%/things_to_do.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/procmailrc.recipe
-%%EXAMPLESDIR%%/classifytest.crm
-%%EXAMPLESDIR%%/exectest.crm
-%%EXAMPLESDIR%%/inserttest_a.crm
-%%EXAMPLESDIR%%/inserttest_b.crm
-%%EXAMPLESDIR%%/learntest.crm
 %%EXAMPLESDIR%%/mailfilter.crm
-%%EXAMPLESDIR%%/mailreaver.crm
-%%EXAMPLESDIR%%/maillib.crm
-%%EXAMPLESDIR%%/mailtrainer.crm
-%%EXAMPLESDIR%%/shuffle.crm
-%%EXAMPLESDIR%%/matchtest.crm
-%%EXAMPLESDIR%%/overalterisolatedtest.crm
-%%EXAMPLESDIR%%/windowtest.crm
 %%EXAMPLESDIR%%/mailfilter.cf
+%%EXAMPLESDIR%%/mailreaver.crm
+%%EXAMPLESDIR%%/mailtrainer.crm
+%%EXAMPLESDIR%%/maillib.crm
+%%EXAMPLESDIR%%/shuffle.crm
+%%EXAMPLESDIR%%/rewriteutil.crm
+%%EXAMPLESDIR%%/rewrites.mfp
+%%EXAMPLESDIR%%/whitelist.mfp
 %%EXAMPLESDIR%%/blacklist.mfp
 %%EXAMPLESDIR%%/priolist.mfp
-%%EXAMPLESDIR%%/whitelist.mfp
+%%EXAMPLESDIR%%/priolist.mfp.example
+%%EXAMPLESDIR%%/blacklist.mfp.example
+%%EXAMPLESDIR%%/whitelist.mfp.example
+%%EXAMPLESDIR%%/crm114-mode.el
 @dirrm %%EXAMPLESDIR%%
