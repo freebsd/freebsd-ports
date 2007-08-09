@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	crm114
-PORTVERSION=	20070622
+PORTVERSION=	20070731
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
@@ -20,10 +20,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Markov based SpamFilter
 
 LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre
-# there is no other then formail on this planet
-RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
-
-BROKEN=		Unfetchable
 
 CRM114RELEASENAME=BlameTheInterns
 
@@ -40,11 +36,11 @@ LIBS+=		-L${LOCALBASE}/lib -liconv -lintl
 
 INSTALL_TARGET=	install_binary_only
 
-CRM_FILES=	mailfilter.crm mailtrainer.crm procmailrc.recipe mailfilter.cf \
-		priolist.mfp whitelist.mfp blacklist.mfp classifytest.crm \
-		exectest.crm inserttest_a.crm inserttest_b.crm learntest.crm \
-		matchtest.crm overalterisolatedtest.crm windowtest.crm \
-		mailreaver.crm shuffle.crm maillib.crm
+CRM_FILES=	mailfilter.crm mailfilter.cf mailreaver.crm mailtrainer.crm \
+		maillib.crm shuffle.crm rewriteutil.crm rewrites.mfp \
+		whitelist.mfp blacklist.mfp priolist.mfp priolist.mfp.example \
+		blacklist.mfp.example whitelist.mfp.example crm114-mode.el \
+		procmailrc.recipe
 
 post-patch:
 	@${REINPLACE_CMD} -Ee \
@@ -70,7 +66,7 @@ post-install:
 	  ${WRKSRC}/mailfilter.cf
 .endif
 	@${MKDIR} ${EXAMPLESDIR}
-	@for i in ${CRM_FILES}; do \
+	for i in ${CRM_FILES}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} ${EXAMPLESDIR}; \
 	done
 .ifndef(NOPORTDOCS)
