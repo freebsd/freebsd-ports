@@ -15,9 +15,6 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search interface on ${EMACS_PORT_NAME} for CD-ROM books, etc
 
-FILESDIR=	${.CURDIR}/../lookup/files
-PKGDIR=		${.CURDIR}/../lookup
-PLIST=		${.CURDIR}/pkg-plist
 USE_EMACS=	yes
 
 INFO?=		lookup lookup-guide

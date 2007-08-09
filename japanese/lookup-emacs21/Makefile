@@ -5,47 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	lookup
-PORTVERSION=	1.4.1
-PORTREVISION=	1
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-CATEGORIES=	japanese elisp
-MASTER_SITES=	http://openlab.ring.gr.jp/edict/lookup/dist/
+MASTERDIR=	${.CURDIR}/../lookup
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Search interface on ${EMACS_PORT_NAME} for CD-ROM books, etc
-
-FILESDIR=	${.CURDIR}/../lookup/files
-PKGDIR=		${.CURDIR}/../lookup
-PLIST=		${.CURDIR}/pkg-plist
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
+EMACS_PORT_NAME=	emacs21
 
-INFO?=		lookup lookup-guide
-
-.if (${EMACS_PORT_NAME} == "xemacs21-mule")
-EMACSDIR=	${PREFIX}/lib/xemacs/site-packages
-ELISPDIR=	${EMACSDIR}/lisp/lookup
-PORTINFODIR=	${EMACSDIR}/info
-MANIFEST=	MANIFEST.lookup
-.else
-ELISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/lookup
-PORTINFODIR=	${PREFIX}/info
-PLIST_SUB=	ELISPDIR=${EMACS_VERSION_SITE_LISPDIR}
-.endif
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-emacs=${EMACS_CMD} \
-		--with-lispdir=${ELISPDIR}
-
-post-install:
-.if (${EMACS_PORT_NAME} == "xemacs21-mule")
-	${RM} -f ${WRKDIR}/${MANIFEST}
-	emacsdir=`${ECHO_CMD} ${EMACSDIR} | ${SED} -e "s;^${PREFIX}/;;"`; \
-	${CAT} ${PLIST} | ${GREP} -e "^$${emacsdir}" | \
-		${SED} -e "s;^$${emacsdir}/;;" > ${WRKDIR}/${MANIFEST}
-	${MKDIR} ${EMACSDIR}/pkginfo
-	${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
-		${EMACSDIR}/pkginfo/
-.endif
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
