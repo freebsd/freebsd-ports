@@ -3,3 +3,4 @@ You can paste stuff from the X selection to stdout and copy stuff from stdin
 to X selection.
 
 WWW: http://www.niksula.cs.hut.fi/~vherva/xsel/
+Author: Ville Herva <v@iki.fi>

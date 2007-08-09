@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	xsel
 # Date created:			Jan 14, 2003
 # Whom:				ijliao
@@ -8,31 +7,32 @@
 
 PORTNAME=	xsel
 PORTVERSION=	0.04.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
-MASTER_SITES=	http://www.niksula.cs.hut.fi/~vherva/xsel/
-DISTFILES=	xsel.c xsel.man
+MASTER_SITES=	CENKES
+#http://www.niksula.cs.hut.fi/~vherva/xsel/xsel.{c,man}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access X selection from command line
 
-EXTRACT_CMD=	${CP}
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	${WRKDIR}
-USE_XLIB=	yes
-USE_GNOME=	gtk12
-NO_WRKSUBDIR=	yes
-CFLAGS+=	`${GTK_CONFIG} --cflags`
-LDFLAGS+=	`${GTK_CONFIG} --libs` -lXt -lXaw
-
-MAN1=		xsel.1
-PLIST_FILES=	bin/xsel
+CONFLICTS=	xsel-conrad-[0-9]*
+USE_BZIP2=	yes
+USE_XORG=	xmu xaw xt xproto xkbfile
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -lXt -lXaw
+MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	${PORTNAME}.html
 
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} xsel.c -o xsel ${LDFLAGS})
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} xsel.c -o xsel ${LDFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xsel ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xsel.man ${MAN1PREFIX}/man/man1/xsel.1
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${MAN1PREFIX}/man/man1/${PORTNAME}.1
+.ifndef NOPORTDOCS
+	@${INSTALL} -d ${DOCSDIR}/
+	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>
