@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	paintlib
-PORTVERSION=	2.6.1
-PORTREVISION=	3
+PORTVERSION=	2.6.2
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.paintlib.de/paintlib/
 
@@ -26,8 +25,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-SDL --disable-dfb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-
-PLIST_SUB+=	DOCSDIR=${DOCSDIR:S,^${PREFIX}/,,}
 
 MAN1=		paintlib-config.1
 
