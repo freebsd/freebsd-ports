@@ -1,8 +1,10 @@
 Index: qemu/vl.c
-@@ -78,6 +78,8 @@
+@@ -78,8 +78,10 @@
  #endif
  #ifdef __FreeBSD__
+ #include <sys/param.h>
  #include <sys/module.h>
+ #include <sys/linker.h>
 +#include <dev/ppbus/ppi.h>
 +#include <dev/ppbus/ppbconf.h>
  #endif
