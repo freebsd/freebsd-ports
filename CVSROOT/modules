@@ -17239,6 +17239,7 @@ xscreensaver-gnome-hacks	ports/x11/xscreensaver-gnome-hacks
 xscreensaver-kde	ports/x11/xscreensaver-kde
 xscreensaver.app	ports/x11/xscreensaver.app
 xsel		ports/x11/xsel
+xsel-conrad	ports/x11/xsel-conrad
 xset		ports/x11/xset
 xsetmode	ports/x11/xsetmode
 xsetpointer	ports/x11/xsetpointer
