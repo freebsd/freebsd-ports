@@ -781,6 +781,7 @@
     SUBDIR += uhexen
     SUBDIR += uhexen2
     SUBDIR += uhexen2-extras
+    SUBDIR += ultimatestunts
     SUBDIR += umark
     SUBDIR += untahris
     SUBDIR += uox3
