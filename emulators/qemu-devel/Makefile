@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.9.0s.20070702
+PORTVERSION=	0.9.0s.20070802
 CATEGORIES=	emulators
 MASTER_SITES=	http://qemu.org/:release \
 		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \
@@ -15,7 +15,7 @@ MASTER_SITES=	http://qemu.org/:release \
 		http://people.brandeis.edu/~jcoiner/qemu_idedma/:idedma \
 		http://people.freebsd.org/~maho/qemu/:misc
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-snapshot-2007-07-02_05
+DISTNAME=	${PORTNAME}-snapshot-2007-08-02_05
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 DIST_SUBDIR=	qemu
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

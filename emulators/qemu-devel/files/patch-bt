@@ -1,15 +1,17 @@
 Index: qemu/vl.c
-@@ -76,6 +76,9 @@
+@@ -76,6 +76,11 @@
  #endif
  #endif
  #endif
 +#ifdef __FreeBSD__
++#include <sys/param.h>
 +#include <sys/module.h>
++#include <sys/linker.h>
 +#endif
  
  #if defined(CONFIG_SLIRP)
  #include "libslirp.h"
-@@ -1059,6 +1062,34 @@
+@@ -3407,6 +3410,34 @@
  
  #endif /* CONFIG_SLIRP */
  
@@ -42,9 +44,9 @@ Index: qemu/vl.c
 +#endif
 +
  #if !defined(_WIN32)
- #ifdef _BSD
- static int tun_open(char *ifname, int ifname_size)
-@@ -1067,11 +1098,55 @@
+ 
+ typedef struct TAPState {
+@@ -3470,11 +3501,59 @@
      char *dev;
      struct stat s;
  
@@ -61,12 +63,14 @@ Index: qemu/vl.c
 +    i = 0;
 +#endif
 +    for (; i < 10; i++) {
-+        if (i == -1)
-+	    strcpy(dname, "/dev/tap");
++        if (*ifname)
++            snprintf(dname, sizeof dname, "/dev/%s", ifname);
++        else if (i == -1)
++            strcpy(dname, "/dev/tap");
 +        else
-+	    snprintf(dname, sizeof dname, "%s%d",
-+		     "/dev/tap", i);
-+        fd = open(dname, O_RDWR);
++            snprintf(dname, sizeof dname, "%s%d",
++        	     "/dev/tap", i);
++        TFR(fd = open(dname, O_RDWR));
 +        if (fd >= 0)
 +            break;
 +        else if (errno == ENXIO || errno == ENOENT) {
@@ -81,17 +85,19 @@ Index: qemu/vl.c
 +            }
 +            if (errno != ENOENT || ++enoentcount > 3) {
 +                err = errno;
-+	        break;
++                break;
 +            }
 +        } else
 +            err = errno;
++        if (*ifname)
++            break;
 +    }
 +    if (fd < 0) {
 +        fprintf(stderr, "warning: could not open %s (%s): no virtual network emulation\n", dname, strerror(err));
 +        return -1;
 +    }
 +#else
-     fd = open("/dev/tap", O_RDWR);
+     TFR(fd = open("/dev/tap", O_RDWR));
      if (fd < 0) {
 -        fprintf(stderr, "warning: could not open /dev/tap: no virtual network emulation\n");
 +        fprintf(stderr, "warning: could not open /dev/tap (%s): no virtual network emulation\n", strerror(errno));
