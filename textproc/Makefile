@@ -1035,6 +1035,7 @@
     SUBDIR += yamcha
     SUBDIR += yi-aspell
     SUBDIR += yodl
+    SUBDIR += yould
     SUBDIR += zu-aspell
 
 .include <bsd.port.subdir.mk>
