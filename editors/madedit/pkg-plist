@@ -42,6 +42,8 @@ share/pixmaps/madedit.xpm
 %%DATADIR%%/syntax/syntax_x86asm.syn
 %%DATADIR%%/syntax/syntax_xml.syn
 share/applications/madedit.desktop
+@dirrmtry share/applications
 @dirrmtry %%DATADIR%%/syntax
+@dirrmtry %%DATADIR%%
 @dirrmtry share/locale/it_IT/LC_MESSAGES
 @dirrmtry share/locale/it_IT
