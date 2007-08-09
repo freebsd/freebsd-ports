@@ -1355,6 +1355,7 @@ clamav-devel	ports/security/clamav-devel
 clamcour	ports/security/clamcour
 clamfilter	ports/mail/clamfilter
 clamsmtp	ports/security/clamsmtp
+clamtk		ports/security/clamtk
 clanbomber	ports/games/clanbomber
 clanlib		ports/devel/clanlib
 clanlib-devel	ports/devel/clanlib-devel
