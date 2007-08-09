@@ -1,6 +1,6 @@
---- update-mime-database.c.orig	Fri Dec  3 15:46:28 2004
-+++ update-mime-database.c	Fri Mar 25 14:51:30 2005
-@@ -408,7 +408,8 @@
+--- update-mime-database.c.orig	2007-06-27 15:46:53.000000000 -0400
++++ update-mime-database.c	2007-08-09 15:21:39.000000000 -0400
+@@ -445,7 +445,8 @@ static void remove_old(Type *type, xmlNo
  		}
  	}
  
@@ -10,12 +10,12 @@
  }
  
  /* 'node' is a <mime-type> node from a source file, whose type is 'type'.
-@@ -1458,7 +1459,7 @@
+@@ -1510,7 +1511,7 @@ static void check_in_path_xdg_data(const
  
  	env = getenv("XDG_DATA_DIRS");
  	if (!env)
--		env = "/usr/local/share/:/usr/share/";
-+		env = "/usr/local/share/gnome/:/usr/local/share/:/usr/share/";
- 	dirs = g_strsplit(env, ":", 0);
+-		env = "/usr/local/share/"PATH_SEPARATOR"/usr/share/";
++		env = "/usr/local/gnome/share/"PATH_SEPARATOR"/usr/local/share/"PATH_SEPARATOR"/usr/share/";
+ 	dirs = g_strsplit(env, PATH_SEPARATOR, 0);
  	g_return_if_fail(dirs != NULL);
  	for (n = 0; dirs[n]; n++)
