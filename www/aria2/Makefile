@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	0.11.1+1
+DISTVERSION=	0.11.2
 CATEGORIES=	www
 MASTER_SITES=	SFE
 
@@ -18,7 +18,8 @@ COMMENT=	Yet another download tool
 #CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
 #MAKE_ENV=	DONTSTRIP=
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-openssl \
-		--with-libxml2 --without-gnutls --without-libares --without-libcares
+		--with-libxml2 --without-gnutls --without-libares --without-libcares \
+		--program-transform-name=""
 
 USE_GCC=	3.4+
 USE_BZIP2=	yes
@@ -30,5 +31,8 @@ PLIST_FILES=	bin/aria2c \
 		share/locale/ja/LC_MESSAGES/aria2c.mo \
 		share/locale/ru/LC_MESSAGES/aria2c.mo
 MAN1=		aria2c.1
+
+post-configure:
+	@${REINPLACE_CMD} -e '/SETMODE/d' ${WRKSRC}/config.h
 
 .include <bsd.port.mk>
