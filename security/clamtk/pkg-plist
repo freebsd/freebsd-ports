@@ -1,0 +1,17 @@
+bin/clamtk
+share/applications/clamtk.desktop
+share/locale/cs_CZ/LC_MESSAGES/clamtk.mo
+share/locale/da/LC_MESSAGES/clamtk.mo
+share/locale/de/LC_MESSAGES/clamtk.mo
+share/locale/es/LC_MESSAGES/clamtk.mo
+share/locale/fr/LC_MESSAGES/clamtk.mo
+share/locale/it/LC_MESSAGES/clamtk.mo
+share/locale/pl/LC_MESSAGES/clamtk.mo
+share/locale/pt_BR/LC_MESSAGES/clamtk.mo
+share/locale/ru/LC_MESSAGES/clamtk.mo
+share/locale/sv/LC_MESSAGES/clamtk.mo
+share/locale/zh_CN/LC_MESSAGES/clamtk.mo
+share/pixmaps/clamtk.png
+@dirrmtry share/applications
+@dirrmtry share/locale/cs_CZ/LC_MESSAGES
+@dirrmtry share/locale/cs_CZ
