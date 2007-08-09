@@ -322,6 +322,7 @@
     SUBDIR += misterproper
     SUBDIR += mmv
     SUBDIR += mshell
+    SUBDIR += mtail
     SUBDIR += mtx
     SUBDIR += nagios-base-logos
     SUBDIR += najitool
