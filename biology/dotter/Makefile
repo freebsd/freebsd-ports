@@ -19,17 +19,10 @@ MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A viewer for multiple sequence alignments
 
 USE_LINUX=	yes
+ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME} bin/${DISTNAME}
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-IGNORE=		there are also executables for Alpha and Sparc \
-		but they are for OSF and Solaris ... do they  \
-		run on FreeBSD-Sparc and FreeBSD-alpha?
-.endif
 
 do-install:
 	${BRANDELF} -t Linux ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}
@@ -37,4 +30,4 @@ do-install:
 	${PREFIX}/bin
 	( cd ${PREFIX}/bin && ${LN} -s ${DISTNAME} ${PORTNAME} )
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
