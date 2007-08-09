@@ -23,6 +23,8 @@ LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre
 # there is no other then formail on this planet
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
+BROKEN=		Unfetchable
+
 CRM114RELEASENAME=BlameTheInterns
 
 USE_GETTEXT=	yes
