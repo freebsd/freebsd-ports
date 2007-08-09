@@ -2,6 +2,7 @@ bin/paintlib-config
 include/paintlib/Filter/pl2passscale.h
 include/paintlib/Filter/plcontribdefs.h
 include/paintlib/Filter/plfilter.h
+include/paintlib/Filter/plfiltercolorize.h
 include/paintlib/Filter/plfiltercontrast.h
 include/paintlib/Filter/plfiltercrop.h
 include/paintlib/Filter/plfilterfill.h
@@ -24,6 +25,7 @@ include/paintlib/Filter/plfilterrotate.h
 include/paintlib/Filter/plfilterthreshold.h
 include/paintlib/Filter/plfiltervideoinvert.h
 include/paintlib/Filter/plhsvconvert.h
+include/paintlib/Filter/plinplacefilter.h
 include/paintlib/config.h
 include/paintlib/jmemdest.h
 include/paintlib/jmemsrc.h
@@ -38,7 +40,7 @@ include/paintlib/plcountedpointer.h
 include/paintlib/pldatasink.h
 include/paintlib/pldatasrc.h
 include/paintlib/pldebug.h
-include/paintlib/pldirectfbbmp.h
+include/paintlib/pldecoderfactory.h
 include/paintlib/plexcept.h
 include/paintlib/plexif.h
 include/paintlib/plfilesink.h
@@ -65,6 +67,7 @@ include/paintlib/plpixel24.h
 include/paintlib/plpixel32.h
 include/paintlib/plpixel8.h
 include/paintlib/plpixeldefs.h
+include/paintlib/plpixelformat.h
 include/paintlib/plpngdec.h
 include/paintlib/plpngenc.h
 include/paintlib/plpoint.h
@@ -73,9 +76,7 @@ include/paintlib/plppmdec.h
 include/paintlib/plprognot.h
 include/paintlib/plpsddec.h
 include/paintlib/plrect.h
-include/paintlib/plsdlbmp.h
 include/paintlib/plsgidec.h
-include/paintlib/plstdpch.h
 include/paintlib/plsubbmp.h
 include/paintlib/pltga.h
 include/paintlib/pltgadec.h
@@ -92,6 +93,7 @@ include/paintlib/test/pltestdecoders.h
 include/paintlib/test/pltester.h
 include/paintlib/test/pltestexif.h
 include/paintlib/test/pltestfilters.h
+include/paintlib/test/pltestpixelformat.h
 include/paintlib/test/testfilterresizebilinear.h
 include/paintlib/test/testpsddecoder.h
 lib/libpaintlib.a
