@@ -1,5 +1,5 @@
 *** pine/osdep/os-bsf.h.orig	Fri May 23 09:05:21 2003
---- pine/osdep/os-bsf.h	Fri Sep  5 01:44:20 2003
+--- pine/osdep/os-bsf.h	Thu Aug  9 00:30:23 2007
 ***************
 *** 87,93 ****
      NOTE: You'll also have to make sure the appropriate osdep/postreap.*
@@ -29,6 +29,22 @@
      The default printer when pine starts up for the first time with no printer
    ----*/
 ***************
+*** 250,255 ****
+--- 252,264 ----
+  #define MAX_SCREEN_COLS  (170) 
+  #define MAX_SCREEN_ROWS  (200) 
+  
++ /*----------------------------------------------------------------------
++     File name used to store the user's server/id/password triple between
++  session.  It is rooted in the same directory as the PINERC.
++  ----*/
++ #ifdef WITH_PASSFILE
++ #define PASSFILE        "@@PASSFILE@@"
++ #endif
+  
+  /*----------------------------------------------------------------------
+      Where to put the output of pine in debug mode. Files are created
+***************
 *** 280,286 ****
          8
          9 logs gross details of command execution
@@ -37,7 +53,7 @@
   
   
   
---- 282,288 ----
+--- 289,295 ----
          8
          9 logs gross details of command execution
    ----*/

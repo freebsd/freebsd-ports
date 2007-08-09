@@ -23,6 +23,7 @@ COMMENT=	PINE(tm) -- a Program for Internet News & Email
 
 OPTIONS=	PICO "Build and install pico, the default editor" on \
 		MAILDIR "Add a patch that provides maildir support" off \
+		PASSFILE "Support for a stored Password File (DANGEROUS)" off \
 		LDAP "Add support for LDAP" off \
 		IPV6 "Add support for IPv6" off
 
@@ -57,6 +58,11 @@ EXTRA_OPTS+=	SSLTYPE=unix.nopwd
 
 .if defined(WITH_IPV6)
 EXTRA_OPTS+=	IP=6
+.endif
+
+.if defined(WITH_PASSFILE)
+PASSFILE?=	.pine.pwd
+EXTRA_OPTS+= EXTRACFLAGS="-DWITH_PASSFILE"
 .endif
 
 MAN1=		pine.1 pilot.1 rpdump.1 rpload.1
@@ -96,6 +102,7 @@ post-patch:
 		${SED}	-e "s:/usr/local/etc/:${PREFIX}/etc/:g" \
 			-e "s:/usr/local/lib/:${PREFIX}/etc/:g" \
 			-e "s:@@PREFIX@@:${PREFIX}:g" \
+			-e "s:@@PASSFILE@@:${PASSFILE}:g" \
 			-e "s:/usr/local/pine.conf:${PREFIX}/etc/pine.conf:g" \
 			$$i.presed > $$i ; \
 	done

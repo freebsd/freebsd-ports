@@ -1,0 +1,10 @@
+--- pine/pine.hlp.orig	2007-08-09 00:17:46.000000000 -0700
++++ pine/pine.hlp	2007-08-09 00:23:00.000000000 -0700
+@@ -996,6 +996,7 @@
+  executable     &lt;Unix search path&gt;/pine
+  persnl cfg     ~/.pinerc
+  except cfg     ~/.pinercex
++ password       ~/@@PASSFILE@@
+  global cfg     <!--#echo var="PINE_CONF_PATH"-->
+  fixed cfg      <!--#echo var="PINE_CONF_FIXED_PATH"-->
+  local help     <!--#echo var="PINE_INFO_PATH"-->
