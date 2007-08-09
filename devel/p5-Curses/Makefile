@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Curses
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Curses
@@ -24,13 +24,4 @@ pre-configure:
 	@${LN} -s ${WRKSRC}/hints/c-freebsd.ncurses.h \
 		${WRKSRC}/c-config.h
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-post-patch:
-	${REINPLACE_CMD} -e '/warnings/d' ${WRKSRC}/Makefile.PL ${WRKSRC}/test.syms
-	${REINPLACE_CMD} -e "s/.<.,//" ${WRKSRC}/test.syms
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
