@@ -431,6 +431,7 @@
     SUBDIR += xscreensaver-kde
     SUBDIR += xscreensaver.app
     SUBDIR += xsel
+    SUBDIR += xsel-conrad
     SUBDIR += xset
     SUBDIR += xsetmode
     SUBDIR += xsetpointer
