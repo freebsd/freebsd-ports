@@ -64,7 +64,7 @@ case "${quagga_cmd}" in
 	    /sbin/ldconfig -m ${quagga_extralibs_path}
 	fi
 	;;
-    stop)
+    stop|restart)
 	quagga_daemons=$(reverse_list ${quagga_daemons})
 	;;
 esac
@@ -79,8 +79,12 @@ for daemon in ${quagga_daemons}; do
     if [ ${quagga_cmd} = "stop" -a -z $(check_process ${command}) ]; then
 		continue
     fi
+    if [ ${quagga_cmd} = "restart" -a -z $(check_process ${command}) ]; then
+		continue
+    fi
     eval flags=\$\{${daemon}_flags:-\"${quagga_flags}\"\}
     run_rc_command "$1"
+    _rc_restart_done=false
 done
 
 if [ "${quagga_delay}" != "0" ]; then
