@@ -130,6 +130,7 @@ NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 MAKE_ENV+=	ALT_BOOTDIR="${BOOTSTRAPJDKDIR}" \
 		ALT_MOTIF_DIR="${X11BASE}" \
 		ALT_DEVTOOLS_PATH="${LOCALBASE}" \
+		LANG="C" \
 		JAVA_HOME="" \
 		CLASSPATH="" \
 		LD_LIBRARY_PATH="" \
@@ -276,6 +277,8 @@ do-extract:
 
 post-extract:
 	@${MV} ${WRKDIR}/share/plugin ${WRKDIR}/deploy/src/plugin/share/
+	@${CP} -fp ${WRKDIR}/deploy/src/plugin/share/plugin/mozilla_headers_18/nspr/md/_freebsd.cfg \
+		${WRKDIR}/deploy/src/plugin/share/plugin/mozilla_headers_18/nspr/prcpucfg.h
 	@${RMDIR} ${WRKDIR}/share
 	@${MKDIR} ${WRKDIR}/hotspot/build/bsd
 	@${CP} ${WRKDIR}/hotspot/build/solaris/Queens.class \
