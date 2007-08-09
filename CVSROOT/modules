@@ -17402,6 +17402,7 @@ yi-aspell	ports/textproc/yi-aspell
 yodl		ports/textproc/yodl
 yorick		ports/lang/yorick
 yorick-doc	ports/lang/yorick-doc
+yould		ports/textproc/yould
 youtube_dl	ports/www/youtube_dl
 yptransitd	ports/net/yptransitd
 ysm		ports/net-im/ysm
