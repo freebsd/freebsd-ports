@@ -3,6 +3,7 @@ libdata/pkgconfig/shared-mime-info.pc
 @unexec [ -f %D/share/mime/XMLnamespaces ] && rm -f %D/share/mime/XMLnamespaces || true
 share/locale/az/LC_MESSAGES/shared-mime-info.mo
 share/locale/bg/LC_MESSAGES/shared-mime-info.mo
+share/locale/ca/LC_MESSAGES/shared-mime-info.mo
 share/locale/cs/LC_MESSAGES/shared-mime-info.mo
 share/locale/cy/LC_MESSAGES/shared-mime-info.mo
 share/locale/da/LC_MESSAGES/shared-mime-info.mo
@@ -55,6 +56,7 @@ share/mime/application/pgp-signature.xml
 share/mime/application/pkcs7-mime.xml
 share/mime/application/pkcs7-signature.xml
 share/mime/application/postscript.xml
+share/mime/application/prs.plucker.xml
 share/mime/application/ram.xml
 share/mime/application/rss+xml.xml
 share/mime/application/rtf.xml
@@ -104,6 +106,7 @@ share/mime/application/vnd.sun.xml.math.xml
 share/mime/application/vnd.sun.xml.writer.global.xml
 share/mime/application/vnd.sun.xml.writer.template.xml
 share/mime/application/vnd.sun.xml.writer.xml
+share/mime/application/vnd.symbian.install.xml
 share/mime/application/vnd.wordperfect.xml
 share/mime/application/x-7z-compressed.xml
 share/mime/application/x-abiword.xml
@@ -230,7 +233,7 @@ share/mime/application/x-n64-rom.xml
 share/mime/application/x-nautilus-link.xml
 share/mime/application/x-nes-rom.xml
 share/mime/application/x-netcdf.xml
-share/mime/application/x-netscape-bookmarks.xml
+share/mime/application/x-nintendo-ds-rom.xml
 share/mime/application/x-object.xml
 share/mime/application/x-ole-storage.xml
 share/mime/application/x-oleo.xml
@@ -300,8 +303,10 @@ share/mime/audio/AMR.xml
 share/mime/audio/ac3.xml
 share/mime/audio/basic.xml
 share/mime/audio/midi.xml
+share/mime/audio/mp2.xml
 share/mime/audio/mp4.xml
 share/mime/audio/mpeg.xml
+share/mime/audio/ogg.xml
 share/mime/audio/prs.sid.xml
 share/mime/audio/vnd.rn-realaudio.xml
 share/mime/audio/x-adpcm.xml
@@ -311,6 +316,7 @@ share/mime/audio/x-aiffc.xml
 share/mime/audio/x-ape.xml
 share/mime/audio/x-flac+ogg.xml
 share/mime/audio/x-flac.xml
+share/mime/audio/x-iriver-pla.xml
 share/mime/audio/x-it.xml
 share/mime/audio/x-matroska.xml
 share/mime/audio/x-minipsf.xml
@@ -326,6 +332,7 @@ share/mime/audio/x-riff.xml
 share/mime/audio/x-s3m.xml
 share/mime/audio/x-scpls.xml
 share/mime/audio/x-speex+ogg.xml
+share/mime/audio/x-speex.xml
 share/mime/audio/x-stm.xml
 share/mime/audio/x-tta.xml
 share/mime/audio/x-voc.xml
@@ -366,6 +373,7 @@ share/mime/image/x-compressed-xcf.xml
 share/mime/image/x-dcraw.xml
 share/mime/image/x-dds.xml
 share/mime/image/x-dib.xml
+share/mime/image/x-emf.xml
 share/mime/image/x-eps.xml
 share/mime/image/x-fits.xml
 share/mime/image/x-fpx.xml
@@ -458,6 +466,8 @@ share/mime/text/spreadsheet.xml
 share/mime/text/tab-separated-values.xml
 share/mime/text/troff.xml
 share/mime/text/vnd.rn-realtext.xml
+share/mime/text/vnd.sun.j2me.app-descriptor.xml
+share/mime/text/vnd.wap.wmlscript.xml
 share/mime/text/vnd.wap.wml.xml
 share/mime/text/x-adasrc.xml
 share/mime/text/x-authors.xml
@@ -475,6 +485,7 @@ share/mime/text/x-dsl.xml
 share/mime/text/x-dsrc.xml
 share/mime/text/x-dtd.xml
 share/mime/text/x-emacs-lisp.xml
+share/mime/text/x-erlang.xml
 share/mime/text/x-fortran.xml
 share/mime/text/x-gettext-translation-template.xml
 share/mime/text/x-gettext-translation.xml
@@ -523,6 +534,7 @@ share/mime/video/dv.xml
 share/mime/video/isivideo.xml
 share/mime/video/mp4.xml
 share/mime/video/mpeg.xml
+share/mime/video/ogg.xml
 share/mime/video/quicktime.xml
 share/mime/video/vivo.xml
 share/mime/video/vnd.rn-realvideo.xml
@@ -538,6 +550,8 @@ share/mime/video/x-nsv.xml
 share/mime/video/x-ogm+ogg.xml
 share/mime/video/x-sgi-movie.xml
 share/mime/video/x-theora+ogg.xml
+share/mime/x-epoc/x-sisx-app.xml
+@dirrmtry share/mime/x-epoc
 @dirrmtry share/mime/video
 @dirrmtry share/mime/text
 @dirrmtry share/mime/packages
