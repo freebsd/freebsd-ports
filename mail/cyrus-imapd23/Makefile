@@ -27,22 +27,19 @@ LATEST_LINK=	${PORTNAME}23
 USE_RC_SUBR=	imapd.sh
 USE_OPENSSL=	yes
 USE_PERL5=	yes
-USE_BDB=	yes
-INVALID_BDB_VER=2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-cyrus-user=${CYRUS_USER} \
 		--with-cyrus-group=${CYRUS_GROUP} \
 		--with-sasl=${LOCALBASE} \
-		--with-bdb-incdir=${BDB_INCLUDE_DIR} \
-		--with-bdb-libdir=${LOCALBASE}/lib \
 		--with-bdb=${BDB_LIB_NAME} \
 		--with-com_err \
 		--with-openssl=${OPENSSLBASE} \
 		--with-perl=${PERL5}
 
-OPTIONS=	DRAC		"Enable DRAC support"			off \
+OPTIONS=	BDB		"Use Berkeley DB"			on \
+		DRAC		"Enable DRAC support"			off \
 		IDLED		"Enable IMAP idled support"		off \
 		LDAP_PTLOADER	"Enable LDAP ptloader"			off \
 		LISTEXT		"Enable IMAP List extensions"		off \
@@ -54,6 +51,15 @@ OPTIONS=	DRAC		"Enable DRAC support"			off \
 		SNMP_5		"Enable SNMP support using net-snmp v5"	off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_BDB)
+BDB_LIB_NAME=	no
+.else
+USE_BDB=	yes
+INVALID_BDB_VER=2
+CONFIGURE_ARGS+=--with-bdb-incdir=${BDB_INCLUDE_DIR} \
+		--with-bdb-libdir=${LOCALBASE}/lib
+.endif
 
 .if defined(WITH_NNTP)
 CONFIGURE_ARGS+=--enable-nntp
