@@ -1,54 +1,67 @@
 %%GEM_CACHE%%
 %%GEM_DOC_DIR%%/rdoc/classes/Hash.html
 %%GEM_DOC_DIR%%/rdoc/classes/Hash.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/String.html
+%%GEM_DOC_DIR%%/rdoc/classes/String.src/M000004.html
 %%GEM_DOC_DIR%%/rdoc/classes/Time.html
 %%GEM_DOC_DIR%%/rdoc/classes/Time.src/M000002.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/AuthenticatedUserMixin.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/AuthenticatedUserMixin.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/AuthenticatedUserMixin.src/M000005.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/AuthenticatedUserMixin/InstanceMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/AuthenticatedUserMixin/InstanceMethods.src/M000005.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/AuthenticatedUserMixin/InstanceMethods.src/M000006.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/AuthenticatedUserMixin/InstanceMethods.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/AuthenticatedUserMixin/InstanceMethods.src/M000008.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000024.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000025.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000026.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000027.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000028.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000029.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000030.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000031.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000032.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000033.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000034.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000035.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000045.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Config.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Config.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Config.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch/ClassMethods.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch/ClassMethods.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch/InstanceMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch/InstanceMethods.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch/InstanceMethods.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch/InstanceMethods.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch/InstanceMethods.src/M000015.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Message.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Message.src/M000008.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Message.src/M000009.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Message.src/M000010.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Message.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Message.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Message.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Message.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Message.src/M000019.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTError.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTError.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTError.src/M000026.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTInterfaceSpec.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTMethodSpec.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTParameterSpec.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTParameterSpec.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTParameterSpec.src/M000046.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Status.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Status.src/M000012.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Status.src/M000013.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Status.src/M000014.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Status.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Status.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Status.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Status.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Status.src/M000023.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src/M000018.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src/M000019.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src/M000020.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src/M000021.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src/M000022.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src/M000032.html
 %%GEM_DOC_DIR%%/rdoc/created.rid
 %%GEM_DOC_DIR%%/rdoc/files/lib/twitter/client/base_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/twitter/client/friendship_rb.html
@@ -65,6 +78,7 @@
 %%GEM_DOC_DIR%%/rdoc/files/lib/twitter/extras_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/twitter/meta_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/twitter/model_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/twitter/rails_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/twitter/version_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/twitter_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/twitter_rb.src/M000001.html
@@ -89,8 +103,8 @@
 %%GEM_LIB_DIR%%/lib/twitter/extras.rb
 %%GEM_LIB_DIR%%/lib/twitter/meta.rb
 %%GEM_LIB_DIR%%/lib/twitter/model.rb
+%%GEM_LIB_DIR%%/lib/twitter/rails.rb
 %%GEM_LIB_DIR%%/lib/twitter/version.rb
-%%GEM_LIB_DIR%%/spec/spec_helper.rb
 %%GEM_LIB_DIR%%/spec/twitter/client/base_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/client/friendship_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/client/messaging_spec.rb
@@ -104,6 +118,7 @@
 %%GEM_LIB_DIR%%/spec/twitter/ext/stdlib_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/extras_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/meta_spec.rb
+%%GEM_LIB_DIR%%/spec/twitter/rails_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/model_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/version_spec.rb
 %%GEM_SPEC%%
@@ -125,6 +140,10 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Twitter4r
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Status.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch/InstanceMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTParameterSpec.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTError.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Message.src
@@ -135,6 +154,7 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Twitter/AuthenticatedUserMixin
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Twitter
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Time.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/String.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Hash.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
