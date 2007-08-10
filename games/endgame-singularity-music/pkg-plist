@@ -1,0 +1,6 @@
+%%DATADIR%%/music/Advanced Simulacra.ogg
+%%DATADIR%%/music/By-Product.ogg
+%%DATADIR%%/music/Coherence.ogg
+%%DATADIR%%/music/Media Threat.ogg
+@dirrmtry %%DATADIR%%/music
+@dirrmtry %%DATADIR%%

@@ -182,6 +182,8 @@
     SUBDIR += emacs-chess
     SUBDIR += ember
     SUBDIR += empire
+    SUBDIR += endgame-singularity
+    SUBDIR += endgame-singularity-music
     SUBDIR += enigma
     SUBDIR += ensemblist
     SUBDIR += euchre
