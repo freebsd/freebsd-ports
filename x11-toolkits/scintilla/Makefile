@@ -6,8 +6,7 @@
 #    $MCom: ports/x11-toolkits/scintilla/Makefile,v 1.3 2006/09/17 21:58:56 marcus Exp $
 
 PORTNAME=	scintilla
-PORTVERSION=	1.73
-PORTREVISION=	1
+PORTVERSION=	1.74
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/
@@ -15,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	scite${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	A full-featured free source code editing component for GTK+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
@@ -29,9 +28,11 @@ USE_LDCONFIG=	yes
 .if defined(WITH_GTK2)
 USE_GNOME=	gtk20
 PKGNAMESUFFIX:=	-gtk2
+PLIST_SUB+=	GTK2="" GTK1="@comment "
 .else
 USE_GNOME=	gtk12
 MAKE_ARGS+=	GTK1=yes
+PLIST_SUB+=	GTK2="@comment " GTK1=""
 .endif
 
 .include <bsd.port.pre.mk>
@@ -49,5 +50,12 @@ do-install:
 	${LN} -sf ${PREFIX}/lib/libscintilla.so.1 ${PREFIX}/lib/libscintilla.so
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin/libscintilla_lexers.so.1 ${PREFIX}/lib
 	${LN} -sf ${PREFIX}/lib/libscintilla_lexers.so.1 ${PREFIX}/lib/libscintilla_lexers.so
+
+post-install:
+.if defined(WITH_GTK2)
+	${TOUCH} ${PREFIX}/include/scintilla/.scintilla-gtk2
+.else
+	${TOUCH} ${PREFIX}/include/scintilla/.scintilla-gtk1
+.endif
 
 .include <bsd.port.post.mk>
