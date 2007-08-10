@@ -3278,6 +3278,7 @@ fusefs-sqlfs	ports/sysutils/fusefs-sqlfs
 fusefs-sshfs	ports/sysutils/fusefs-sshfs
 fusefs-unionfs	ports/sysutils/fusefs-unionfs
 fusefs-wdfs	ports/sysutils/fusefs-wdfs
+fusefs-wikipediafs	ports/sysutils/fusefs-wikipediafs
 fusenshi	ports/deskutils/fusenshi
 fuser		ports/sysutils/fuser
 fuzz		ports/security/fuzz
