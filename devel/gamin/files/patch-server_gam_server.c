@@ -1,5 +1,5 @@
---- server/gam_server.c.orig	Wed Sep 21 18:21:05 2005
-+++ server/gam_server.c	Tue Feb  7 13:12:02 2006
+--- server/gam_server.c.orig	2007-07-04 09:36:49.000000000 -0400
++++ server/gam_server.c	2007-08-10 15:09:14.000000000 -0400
 @@ -32,7 +32,7 @@
  #include "gam_server.h"
  #include "gam_channel.h"
@@ -9,16 +9,7 @@
  #ifdef ENABLE_INOTIFY
  #include "gam_inotify.h"
  #endif
-@@ -164,7 +164,7 @@
- #endif	
- 	}
- 
--	if (gam_poll_generic_init()) {
-+	if (gam_poll_basic_init()) {
- 		GAM_DEBUG(DEBUG_INFO, "Using poll as backend\n");
- 		return(TRUE);
- 	}
-@@ -427,7 +427,7 @@
+@@ -438,7 +438,7 @@ gam_server_get_kernel_handler (void)
  GamPollHandler
  gam_server_get_poll_handler (void)
  {
