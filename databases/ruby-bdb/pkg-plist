@@ -14,15 +14,15 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/wordlist
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/wordtest
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/zeroc.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/b.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/cl.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/base/b.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/base/cl.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/base/ma.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/base/mc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/base/op.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/example
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/ma.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/mc.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/op.rb
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/replication/test1
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/replication/test2
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/replication/test3
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/mgr/b.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/replication/base
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/replication/mgr
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/replication
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tmp
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/zippy
