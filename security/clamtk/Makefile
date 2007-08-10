@@ -39,7 +39,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
 	@cd ${WRKSRC}/po/&&for i in *.mo;do\
-		${MKDIR} ${PREFIX}/share/locale/$${i%.mo};\
+		${MKDIR} ${PREFIX}/share/locale/$${i%.mo}/LC_MESSAGES/;\
 		${INSTALL_DATA} $$i ${PREFIX}/share/locale/$${i%.mo}/LC_MESSAGES/${PORTNAME}.mo;\
 	done
 .ifndef NOPORTDOCS
