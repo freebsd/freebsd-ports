@@ -1,14 +1,19 @@
 %%PYTHON_SITELIBDIR%%/fuse.py
 %%PYTHON_SITELIBDIR%%/fuse.pyc
 %%PYTHON_SITELIBDIR%%/fuse.pyo
+%%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/top_level.txt
 %%PYTHON_SITELIBDIR%%/fuseparts/__init__.py
 %%PYTHON_SITELIBDIR%%/fuseparts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/fuseparts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/fuseparts/_fusemodule.so
 %%PYTHON_SITELIBDIR%%/fuseparts/setcompatwrap.py
 %%PYTHON_SITELIBDIR%%/fuseparts/setcompatwrap.pyc
 %%PYTHON_SITELIBDIR%%/fuseparts/setcompatwrap.pyo
 %%PYTHON_SITELIBDIR%%/fuseparts/subbedopts.py
 %%PYTHON_SITELIBDIR%%/fuseparts/subbedopts.pyc
 %%PYTHON_SITELIBDIR%%/fuseparts/subbedopts.pyo
-%%PYTHON_SITELIBDIR%%/fuseparts/_fusemodule.so
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
 @dirrm %%PYTHON_SITELIBDIR%%/fuseparts
