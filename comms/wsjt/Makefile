@@ -6,33 +6,30 @@
 #
 
 PORTNAME=	wsjt
-PORTVERSION=	5.9.6
-PORTREVISION=	3
+PORTVERSION=	5.9.7
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	wsjt
-DISTNAME=	wsjt-5.9.6.r309
+DISTNAME=	wsjt-5.9.7.r386
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Weak signal ham radio communication pakage
 
-BUILD_DEPENDS=	gfortran42:${PORTSDIR}/lang/gcc42 \
-		${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
 		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
 		${PYNUMPY}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter/ \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate
 
-WANT_FORTRAN=	yes	#dummy
+USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-portaudio-include-dir=${LOCALBASE}/include/portaudio2 \
+		--with-portaudio-lib-dir=${LOCALBASE}/lib/portaudio2
 USE_GMAKE=	yes
 USE_PYTHON=	2.4+
 USE_AUTOTOOLS=	libtool:15
-
-post-extract:
-	@${MV} ${WRKDIR}/wsjt596r309 ${WRKDIR}/wsjt-5.9.6.r309
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -53,8 +50,9 @@ do-install:
 .endfor
 .if	!defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for d in ${WRKSRC}/Announce.txt ${WRKSRC}/UpdateHistory.txt\
-	${WRKSRC}/LICENSE.TXT WSJT_Source_Code.txt
+.for d in ${WRKSRC}/WSJT_Quick_Reference.pdf  ${WRKSRC}/WSJT_Source_Code.txt \
+	${WRKSRC}/WSJT_User_600.pdf ${WRKSRC}/UpdateHistory.txt \
+	${WRKSRC}/WSJT_Source_Code.txt ${WRKSRC}/LICENSE.TXT
 	@${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}
 .endfor
 	@${ECHO} ""
