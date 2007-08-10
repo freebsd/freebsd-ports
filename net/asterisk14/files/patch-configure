@@ -12,23 +12,7 @@ $FreeBSD$
       ;;
       *)
       ac_default_prefix=/usr
-@@ -26066,6 +26064,7 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
-+#include <ptlib.h>
- #include <${OPENH323DIR}/include/h323.h>
- _ACEOF
- rm -f conftest.$ac_objext
-@@ -26106,6 +26105,7 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#include <ptlib.h>
- #include <${OPENH323DIR}/include/h323.h>
- _ACEOF
- if { (ac_try="$ac_cpp conftest.$ac_ext"
-@@ -26202,6 +26202,7 @@
+@@ -26228,6 +26226,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -36,7 +20,7 @@ $FreeBSD$
  #include <${HOME}/openh323/include/h323.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -26242,6 +26243,7 @@
+@@ -26268,6 +26267,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -44,7 +28,7 @@ $FreeBSD$
  #include <${HOME}/openh323/include/h323.h>
  _ACEOF
  if { (ac_try="$ac_cpp conftest.$ac_ext"
-@@ -26336,6 +26338,7 @@
+@@ -26365,6 +26365,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -52,7 +36,7 @@ $FreeBSD$
  #include </usr/local/include/openh323/h323.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -26376,6 +26379,7 @@
+@@ -26405,6 +26406,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -60,23 +44,7 @@ $FreeBSD$
  #include </usr/local/include/openh323/h323.h>
  _ACEOF
  if { (ac_try="$ac_cpp conftest.$ac_ext"
-@@ -26475,6 +26479,7 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
-+#include <ptlib.h>
- #include </usr/include/openh323/h323.h>
- _ACEOF
- rm -f conftest.$ac_objext
-@@ -26515,6 +26520,7 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#include <ptlib.h>
- #include </usr/include/openh323/h323.h>
- _ACEOF
- if { (ac_try="$ac_cpp conftest.$ac_ext"
-@@ -26700,7 +26706,7 @@
+@@ -26652,7 +26654,7 @@
  
  	fi
  
@@ -85,3 +53,19 @@ $FreeBSD$
  
  	if test "${HAS_OPENH323:-unset}" != "unset"; then
  	   { echo "$as_me:$LINENO: checking OpenH323 installation validity" >&5
+@@ -31800,6 +31802,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <ptlib.h>
+ #include <h323.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -31840,6 +31843,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <ptlib.h>
+ #include <h323.h>
+ _ACEOF
+ if { (ac_try="$ac_cpp conftest.$ac_ext"
