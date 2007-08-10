@@ -1,6 +1,12 @@
---- configure.orig     Sun May  4 23:36:44 2003
-+++ configure  Sun May  4 23:40:21 2003
-@@ -10,45 +10,54 @@
+--- configure.orig	2003-05-05 14:25:10.000000000 -0800
++++ configure	2007-07-16 13:41:43.000000000 -0800
+@@ -5,50 +5,59 @@
+ #
+ 
+ VERSION=0.5
+-DESTDIR='/usr/local'
++DESTDIR=${PREFIX}
+ SHAREDIR="$DESTDIR/share"
  BINDIR="$DESTDIR/bin"
  MANDIR="$DESTDIR/man/man1"
  
