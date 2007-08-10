@@ -22,6 +22,12 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
+.if !exists(${PREFIX}/include/scintilla/.scintilla-gtk1)
+IGNORE=	requires x11-toolkits/scintilla to be built with GTK+1
+.endif
+
 do-install:
 	${MKDIR} ${PREFIX}/include/scintilla
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/scintilla
@@ -29,4 +35,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libgtkscintilla.so.0 ${PREFIX}/lib
 	${LN} -sf ${PREFIX}/lib/libgtkscintilla.so.0 ${PREFIX}/lib/libgtkscintilla.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
