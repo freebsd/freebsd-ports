@@ -1,11 +1,6 @@
---- wmake/wmake.orig	Mon Apr  2 10:24:58 2007
-+++ wmake/wmake	Tue Apr 17 19:05:13 2007
-@@ -159,11 +159,11 @@
- then
-     if [ -e Allwmake ]
-     then
--        Allwmake
-+        ./Allwmake
+--- ./wmake/wmake.orig	Thu May 10 11:11:28 2007
++++ ./wmake/wmake	Sat Aug  4 00:01:13 2007
+@@ -163,7 +163,7 @@
          exit $?
      elif [ ! -d $MakeDir ]
      then

@@ -1,15 +1,16 @@
---- ./.OpenFOAM-1.4/apps/paraview/cshrc.orig	Wed Apr 11 10:25:55 2007
-+++ ./.OpenFOAM-1.4/apps/paraview/cshrc	Thu Apr 12 21:31:17 2007
-@@ -38,22 +38,13 @@
+--- ./.OpenFOAM-1.4.1/apps/paraview/cshrc.orig	Tue May  8 21:05:06 2007
++++ ./.OpenFOAM-1.4.1/apps/paraview/cshrc	Fri Aug  3 19:08:03 2007
+@@ -38,22 +38,15 @@
      endif
  endif
  
--setenv CMAKE_HOME $WM_PROJECT_INST_DIR/$WM_ARCH/cmake-2.4.2
+-setenv CMAKE_HOME $WM_PROJECT_INST_DIR/$WM_ARCH/cmake-2.4.6
 -
 -if ( -r $CMAKE_HOME ) then
 -    set path=($CMAKE_HOME/bin $path)
 -endif
--
++setenv CMAKE_HOME /usr/local
+ 
  setenv ParaView_VERSION 2.4.4
  
 -setenv ParaView_INST_DIR $WM_PROJECT_INST_DIR/$WM_ARCH/paraview-$ParaView_VERSION

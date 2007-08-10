@@ -1,10 +1,10 @@
---- ./.OpenFOAM-1.4/apps/paraview/bashrc.orig	Wed Apr 11 10:06:39 2007
-+++ ./.OpenFOAM-1.4/apps/paraview/bashrc	Thu Apr 12 21:24:33 2007
+--- ./.OpenFOAM-1.4.1/apps/paraview/bashrc.orig	Tue May  8 21:05:21 2007
++++ ./.OpenFOAM-1.4.1/apps/paraview/bashrc	Fri Aug  3 19:06:33 2007
 @@ -38,22 +38,15 @@
      fi
  fi
  
--export CMAKE_HOME=$WM_PROJECT_INST_DIR/$WM_ARCH/cmake-2.4.2
+-export CMAKE_HOME=$WM_PROJECT_INST_DIR/$WM_ARCH/cmake-2.4.6
 -
 -if [ -r $CMAKE_HOME ]; then
 -    export PATH=$CMAKE_HOME/bin:$PATH

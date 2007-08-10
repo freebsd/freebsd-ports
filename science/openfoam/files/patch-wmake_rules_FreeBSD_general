@@ -1,11 +1,11 @@
---- ./wmake/rules/FreeBSD/general.orig	Wed Jan 17 11:20:37 2007
-+++ ./wmake/rules/FreeBSD/general	Thu Apr 12 22:22:50 2007
+--- ./wmake/rules/FreeBSD/general.orig	Fri May 18 15:26:03 2007
++++ ./wmake/rules/FreeBSD/general	Sun Aug  5 11:39:03 2007
 @@ -1,7 +1,6 @@
 -CPP        = /lib/cpp $(GFLAGS)
 -LD         = ld -melf_i386
 +CPP        += -D$(WM_ARCH)
  
--PROJECT_LIBS = -l$(WM_PROJECT) -liberty -ldl
+-PROJECT_LIBS = -l$(WM_PROJECT) -ldl
 +PROJECT_LIBS = -l$(WM_PROJECT) -L/usr/local/lib -liberty -lexecinfo
  
  include $(RULES)/X

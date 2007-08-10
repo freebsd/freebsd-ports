@@ -1,5 +1,5 @@
---- .OpenFOAM-1.4/bashrc.orig	Wed Apr 11 15:57:15 2007
-+++ .OpenFOAM-1.4/bashrc	Thu Apr 12 21:38:50 2007
+--- .OpenFOAM-1.4.1/bashrc.orig	Thu Aug  2 23:28:12 2007
++++ .OpenFOAM-1.4.1/bashrc	Fri Aug  3 19:23:19 2007
 @@ -41,15 +41,15 @@
  #
  # Location of FOAM installation
@@ -23,16 +23,16 @@
  
  # Compiler (if set to "" use the system compiler)
  # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--export WM_COMPILER=Gcc4
-+#export WM_COMPILER=Gcc4
+-export WM_COMPILER=Gcc
++#export WM_COMPILER=Gcc
 +export WM_COMPILER=
  export WM_COMPILER_ARCH=
  export WM_COMPILER_LIB_ARCH=
  
 @@ -128,6 +129,15 @@
-     #export WM_MPLIB=MPICH
      #export WM_MPLIB=MPICH-GM
      #export WM_MPLIB=GAMMA
+     #export WM_MPLIB=MPIGAMMA
 +    #export WM_MPLIB=MPI
 +
 +# FreeBSD workstation

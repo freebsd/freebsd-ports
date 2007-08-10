@@ -27,6 +27,8 @@ mkdir -p $HOME/.%%REALNAME%%-%%VER%%/apps
 cp -R %%PREFIX%%/%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX	\
 $HOME/.%%REALNAME%%-%%VER%%/apps
 
+and set FOAMX_CONFIG to $HOME/.%%REALNAME%%-%%VER%%/apps/FoamX
+
 Then, you could run foamInstallationTest to check your installaton.
 See %%PREFIX%%/%%REALNAME%%/README, § 6, to get started.
 --------------------------------------------------------------------------------
