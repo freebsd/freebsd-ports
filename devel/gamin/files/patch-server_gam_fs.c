@@ -1,5 +1,5 @@
---- server/gam_fs.c.orig	Fri Aug  5 18:31:46 2005
-+++ server/gam_fs.c	Sat Feb 11 01:44:04 2006
+--- server/gam_fs.c.orig	2007-07-04 09:36:49.000000000 -0400
++++ server/gam_fs.c	2007-08-10 15:05:41.000000000 -0400
 @@ -7,6 +7,11 @@
  #include <string.h>
  #include <errno.h>
@@ -116,7 +116,7 @@
 +
 +			if (!g_hash_table_lookup (fs_hash, fs->fsname)) {
 +				if (fs->flags & MNT_LOCAL)
-+					gam_fs_set (fs->fsname, GFS_MT_KERNEL, 0);
++					gam_fs_set (fs->fsname, GFS_MT_DEFAULT, 0);
 +				else
 +					gam_fs_set (fs->fsname, GFS_MT_POLL, 5);
 +
@@ -147,21 +147,15 @@
  }
  
  gam_fs_mon_type
-@@ -209,10 +300,13 @@ gam_fs_get_mon_type (const char *path)
- 
+@@ -210,7 +301,11 @@ gam_fs_get_mon_type (const char *path)
  	props = gam_fs_find_fs_props (path);
  
--	if (!props)
--		return GFS_MT_KERNEL;
--
--	return props->mon_type;
-+#if (defined(ENABLE_INOTIFY) || defined(ENABLE_DNOTIFY) || defined(ENABLE_KQUEUE) || defined(ENABLE_HURD_MACH_NOTIFY)) && defined(USE_GAMIN_POLLER)
-+	if (props)
-+		return props->mon_type;
-+#elif !defined(USE_GAMIN_POLLER)
-+	return GFS_MT_KERNEL;
+ 	if (!props)
++#ifdef USE_GAMIN_POLLER
++		return GFS_MT_POLL;
++#else
+ 		return GFS_MT_DEFAULT;
 +#endif
-+	return GFS_MT_POLL;
- }
  
- int
+ 	return props->mon_type;
+ }

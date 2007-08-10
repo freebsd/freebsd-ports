@@ -1,5 +1,5 @@
---- server/gam_kqueue.c.orig	Wed Aug 10 17:50:32 2005
-+++ server/gam_kqueue.c	Wed May 23 23:50:39 2007
+--- server/gam_kqueue.c.orig	2007-07-04 09:50:41.000000000 -0400
++++ server/gam_kqueue.c	2007-08-10 15:03:59.000000000 -0400
 @@ -10,9 +10,10 @@
   *       FAM should do: we do not call g_dir_open() if the file is a
   *       symbolic link).
@@ -37,15 +37,6 @@
  #include <sys/types.h>
  #include <sys/sysctl.h>
  #include <sys/stat.h>
-@@ -63,7 +66,7 @@
- #include "gam_kqueue.h"
- #include "gam_event.h"
- #include "gam_server.h"
--#include "gam_poll.h"
-+#include "gam_poll_basic.h"
- 
- /*** tunable constants, modify to tweak the backend aggressivity *************/
- 
 @@ -326,7 +329,7 @@ gam_kqueue_isdir (const char *pathname, 
  static gboolean
  gam_kqueue_get_uint_sysctl (const char *name, unsigned int *value)
@@ -126,24 +117,13 @@
      }
  }
  
-@@ -1167,11 +1187,15 @@ gam_kqueue_init (void)
+@@ -1167,6 +1187,9 @@ gam_kqueue_init (void)
    channel = g_io_channel_unix_new(kq);
    g_io_add_watch(channel, G_IO_IN, gam_kqueue_kevent_cb, NULL);
  
--  
--  gam_poll_set_kernel_handler(NULL, NULL, GAMIN_K_KQUEUE);
--  gam_backend_add_subscription = gam_kqueue_add_subscription;
--  gam_backend_remove_subscription = gam_kqueue_remove_subscription;
--  gam_backend_remove_all_for = gam_kqueue_remove_all_for;
 +#ifdef USE_GAMIN_POLLER
-+  gam_poll_basic_init (); 
++  gam_poll_basic_init ();
 +#endif
-+  gam_server_install_kernel_hooks (GAMIN_K_KQUEUE,
-+                                   gam_kqueue_add_subscription,
-+                                   gam_kqueue_remove_subscription,
-+                                   gam_kqueue_remove_all_for,
-+                                   NULL,
-+                                   NULL);
- 
-   return TRUE;
- }
+   
+   gam_server_install_kernel_hooks(GAMIN_K_KQUEUE,
+   				  gam_kqueue_add_subscription,
