@@ -38,7 +38,7 @@ FICHIERS=	chrome/FR.jar chrome/fr-FR.jar chrome/fr-unix.jar			\
 .include "${PORTSDIR}/www/mozex/Makefile.xpi"
 
 .if ${GECKO} == seamonkey
-MOZVERSION=	1.1.3
+MOZVERSION=	1.1.4
 DISTURL=	/SeaMonkey
 MD5_FILE=	${MASTERDIR}/distinfo.seamonkey
 PLIST_SUB+=	MOZ="@comment "
