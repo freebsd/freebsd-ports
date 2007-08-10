@@ -19,6 +19,10 @@ SITE_SUB+=	-e '/-D_FFR_CAPTURE_UNKNOWN_ERRORS/s|^dnl ||'
 SITE_SUB+=	-e '/-D_FFR_DIFFHEADERS/s|^dnl ||'
 .endif
 
+.if defined(WITH_DNS_UPGRADE) && !defined(WITHOUT_DNS_UPGRADE)
+SITE_SUB+=	-e '/-D_FFR_DNS_UPGRADE/s|^dnl ||'
+.endif
+
 .if defined(WITH_KEY_REUSE) && !defined(WITHOUT_KEY_REUSE)
 SITE_SUB+=	-e '/-D_FFR_KEY_REUSE/s|^dnl ||'
 .endif
