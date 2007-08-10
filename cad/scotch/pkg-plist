@@ -6,6 +6,10 @@ bin/amk_hy
 bin/amk_m2
 bin/amk_p2
 bin/atst
+%%MPI%%bin/dgord
+%%MPI%%bin/dgscat
+%%MPI%%bin/dgtst
+bin/gbase
 bin/gcv
 bin/gmap
 bin/gmk_hy
@@ -24,12 +28,17 @@ bin/mmk_m3
 bin/mord
 bin/mtst
 include/common.h
+%%MPI%%include/ptscotch.h
+%%MPI%%include/ptscotchf.h
 include/scotch.h
 include/scotchf.h
 lib/libcommon.a
+%%MPI%%lib/libptscotch.a
+%%MPI%%lib/libptscotcherr.a
 lib/libscotch.a
 lib/libscotcherr.a
 lib/libscotcherrcom.a
+lib/libscotchmetis.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/grf/3elt.grf.gz
 %%PORTDOCS%%%%EXAMPLESDIR%%/grf/3elt.xyz.gz
 %%PORTDOCS%%%%EXAMPLESDIR%%/grf/4elt.grf.gz
@@ -108,6 +117,9 @@ lib/libscotcherrcom.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/tgt/vcmplt.tgt
 %%PORTDOCS%%%%EXAMPLESDIR%%/tgt/vhcub.tgt
 %%PORTDOCS%%%%EXAMPLESDIR%%/tgt/void.tgt
+%%DATADIR%%/CeCILL-C_V1-en.txt
+%%DATADIR%%/CeCILL-C_V1-fr.txt
+%%PORTDOCS%%@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tgt
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/grf
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

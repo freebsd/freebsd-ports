@@ -6,39 +6,72 @@
 #
 
 PORTNAME=	scotch
-PORTVERSION=	4.0.0
-PORTREVISION=	1
+PORTVERSION=	5.0.0
 CATEGORIES=	cad science
-MASTER_SITES=	http://gforge.inria.fr/frs/download.php/464/
+MASTER_SITES=	http://gforge.inria.fr/frs/download.php/2607/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A package for graph and mesh partitioning and sparse matrix ordering
 
 USE_GMAKE=	yes
+.if defined(MAINTAINER_MODE)
+USE_FORTRAN=	yes
+.endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:R}
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/bin
+ALL_TARGET=	scotch
 
-F77?=		f77
-
+VER=		${PORTVERSION:R}
 BINS=		acpl amk_ccc amk_fft2 amk_grf amk_hy amk_m2 amk_p2 atst	\
-		gcv gmap gmk_hy gmk_m2 gmk_m3 gmk_msh gmk_ub2 gmtst gord\
+		gbase gcv gmap gmk_hy gmk_m2 gmk_m3 gmk_msh gmk_ub2 gmtst gord\
 		gotst gout gtst mcv mmk_m2 mmk_m3 mord mtst
 INCS=		common.h scotch.h scotchf.h
-LIBS=		libcommon.a libscotch.a libscotcherr.a libscotcherrcom.a
-PORTDOCS=	scotch_user4.0.pdf
+LIBS=		libcommon.a libscotch.a libscotcherr.a libscotcherrcom.a\
+		libscotchmetis.a
+LICDOCS=	CeCILL-C_V1-en.txt CeCILL-C_V1-fr.txt
+PORTDOCS=	scotch_user${VER}.pdf
 EXAMPLES=	scotch_example.f
+
+PKGMESSAGE=	${WRKSRC}/LICENSE_en.txt
+
+.if !defined(WITHOUT_MPI)
+BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/mpich2/lib/libmpich.so.0:${PORTSDIR}/net/mpich2
+
+ALL_TARGET+=	ptscotch
+MAKE_ENV+=	PATH=${PATH}:${LOCALBASE}/mpich2/bin
+
+INCS+=		ptscotch.h ptscotchf.h
+LIBS+=		libptscotch.a libptscotcherr.a
+BINS+=		dgord dgscat dgtst
+
+PLIST_SUB+=	MPI=""
+.else
+PLIST_SUB+=	MPI="@comment "
+.endif
+
+pre-evrything::
+.if !defined(WITHOUT_MPI)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Define WITHOUT_MPI if PT-Scotch is not wanted."
+	@${ECHO_MSG}
+.endif
 
 pre-configure:
 	${LN} -sf ${WRKSRC}/src/Make.inc/Makefile.inc.freebsd	\
 		${WRKSRC}/src/Makefile.inc
+	${REINPLACE_CMD} -e 's|in subdirectory "doc"|under ${DATADIR}|'	\
+		${WRKSRC}/LICENSE_en.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${BINS:S|^|${INSTALL_WRKSRC}/|} ${PREFIX}/bin
 	${INSTALL_DATA} ${INCS:S|^|${INSTALL_WRKSRC}/|} ${PREFIX}/include
 	${INSTALL_DATA} ${LIBS:S|^|${INSTALL_WRKSRC}/|} ${PREFIX}/lib
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${LICDOCS:S|^|${WRKSRC}/doc/|} ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}/grf ${EXAMPLESDIR}/tgt
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
@@ -49,15 +82,23 @@ do-install:
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
+post-install:
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
+
 .if defined(MAINTAINER_MODE)
-test:	install
+regression-test:	install
 	(amk_ccc 3 | acpl - ${WRKDIR}/ccc3.tgt &&	\
 	${GUNZIP_CMD} -c ${EXAMPLESDIR}/grf/bump.grf.gz |	\
 	gmap - ${WRKDIR}/ccc3.tgt ${WRKDIR}/brol.map)
 	(cd ${WRKSRC}/doc &&	\
-	${F77} -o scotch_test scotch_example.f	\
+	${FC} -o scotch_test scotch_example.f	\
 		-I${PREFIX}/include -L${PREFIX}/lib -lscotch -lscotcherr -lm	\
 	&& ./scotch_test)
+. if !defined(WITHOUT_MPI)
+	(${GUNZIP_CMD} -c ${EXAMPLESDIR}/grf/bump.grf.gz | dgtst)
+. endif
 .endif
 
 .include <bsd.port.mk>
