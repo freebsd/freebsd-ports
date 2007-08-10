@@ -14,6 +14,9 @@ MASTER_SITES=	http://dev.null.dk/~goth/nsc/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netsaint Console monitor
 
+DEPRECATED=	Project abandoned
+EXPIRATION_DATE=	2007-10-05
+
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
 
 NO_WRKSUBDIR=	yes
