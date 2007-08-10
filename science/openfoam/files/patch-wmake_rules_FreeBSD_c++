@@ -1,16 +1,16 @@
---- ./wmake/rules/FreeBSD/c++.orig	Tue Nov  7 23:16:13 2006
-+++ ./wmake/rules/FreeBSD/c++	Thu Apr 12 22:15:28 2007
-@@ -1,21 +1,19 @@
+--- ./wmake/rules/FreeBSD/c++.orig	Mon Apr 30 12:27:24 2007
++++ ./wmake/rules/FreeBSD/c++	Sun Aug  5 18:31:44 2007
+@@ -1,21 +1,20 @@
  .SUFFIXES: .C .cxx .cc .cpp
  
--c++WARN     = -Wall -W -Wno-unused-parameter -Wold-style-cast
--
+-c++WARN     = -Wall -Wno-strict-aliasing -Wextra -Wno-unused-parameter -Wold-style-cast
++c++WARN     = -Wall -Wno-strict-aliasing -Wextra -Wno-unused-parameter
+ 
 -CC          = g++ -m32
-+c++WARN     = -Wall -W -Wno-unused-parameter
  
  include $(RULES)/c++$(WM_COMPILE_OPTION)
  
- ptFLAGS     = -DNoRepository -ftemplate-depth-30
+ ptFLAGS     = -DNoRepository -ftemplate-depth-40
  
 -c++FLAGS    = $(GFLAGS) $(c++WARN) $(c++OPT) $(c++DBUG) $(ptFLAGS) $(LIB_HEADER_DIRS) -fPIC -pthread
 +c++FLAGS    = $(GFLAGS) $(c++WARN) $(c++OPT) $(c++DBUG) $(ptFLAGS) $(LIB_HEADER_DIRS) -fPIC $(PTHREAD_CFLAGS)

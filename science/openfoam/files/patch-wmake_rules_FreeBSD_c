@@ -1,5 +1,5 @@
---- wmake/rules/FreeBSD/c.orig	Mon Nov 22 18:30:37 2004
-+++ wmake/rules/FreeBSD/c	Sat Dec 17 23:56:13 2005
+--- ./wmake/rules/FreeBSD/c.orig	Mon Apr 30 12:27:24 2007
++++ ./wmake/rules/FreeBSD/c	Sun Aug  5 11:11:55 2007
 @@ -2,7 +2,7 @@
  
  cWARN        = -Wall

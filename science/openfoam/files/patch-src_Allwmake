@@ -1,15 +1,16 @@
---- src/Allwmake.orig	Mon Aug 15 11:37:17 2005
-+++ src/Allwmake	Thu Dec 29 22:25:52 2005
-@@ -1,6 +1,7 @@
- #!/bin/sh
+--- ./src/Allwmake.orig	Fri Jul 27 17:54:28 2007
++++ ./src/Allwmake	Sat Aug  4 23:53:46 2007
+@@ -3,7 +3,8 @@
+ 
+ (cd $FOAM_SRC/OpenFOAM ; wmakeLnInclude . )
  
 -wmake libso zlib-1.2.1
-+# Use system zlib
++# Don't build zlib
 +#wmake libso zlib-1.2.1
- wmake libso foamUser
  
- FOAM_SRC_DIR=`pwd`
-@@ -123,7 +124,8 @@
+ if [ "$WM_MPLIB" = "OPENMPI" -a ! -r $OPENMPI_ARCH_PATH/lib/libmpi.a -a ! -r $OPENMPI_ARCH_PATH/lib/libmpi.so ]
+ then
+@@ -139,7 +140,8 @@
  
  wmake libso Gstream
  
