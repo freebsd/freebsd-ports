@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- Makefile.orig
-+++ Makefile
+--- Makefile.orig	Fri Aug 10 17:08:31 2007
++++ Makefile	Fri Aug 10 17:18:00 2007
 @@ -210,7 +210,7 @@
  
  ifeq ($(OSARCH),FreeBSD)
@@ -158,10 +155,10 @@ $FreeBSD$
  		( \
  		echo "[directories]" ; \
  		echo "astetcdir => $(ASTETCDIR)" ; \
-@@ -544,20 +536,23 @@
- 		echo ";astctlowner = root" ; \
- 		echo ";astctlgroup = apache" ; \
- 		echo ";astctl = asterisk.ctl" ; \
+@@ -585,20 +577,23 @@
+ 		echo "; Default: strict"; \
+ 		echo ";"; \
+ 		echo ";translation_algorithm = strict"; \
 -		) > $(DESTDIR)$(ASTCONFPATH) ; \
 +		) > $(DESTDIR)$(ASTCONFPATH)-dist ; \
 +		if [ ! -f $(DESTDIR)$(ASTCONFPATH) ]; then \
@@ -186,7 +183,7 @@ $FreeBSD$
  	done
  	@echo " +--------- Asterisk Web Voicemail ----------+"  
  	@echo " +                                           +"
-@@ -584,10 +579,10 @@
+@@ -625,10 +620,10 @@
  
  __rpm: include/asterisk/version.h include/asterisk/buildopts.h spec
  	rm -rf /tmp/asterisk ; \
@@ -199,7 +196,7 @@ $FreeBSD$
  	cp -f contrib/init.d/rc.redhat.asterisk /tmp/asterisk/etc/rc.d/init.d/asterisk ; \
  	rpmbuild --rcfile /usr/lib/rpm/rpmrc:redhat/rpmrc -bb asterisk.spec
  
-@@ -598,19 +593,19 @@
+@@ -639,19 +634,19 @@
  config:
  	@if [ "${OSARCH}" = "linux-gnu" ]; then \
  		if [ -f /etc/redhat-release -o -f /etc/fedora-release ]; then \
