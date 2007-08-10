@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sharutils
-PORTVERSION=	4.6.3
+PORTVERSION=	4.7
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}/REL-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Pack, send and unpack shell archives; synchronize via e-mail
 
 USE_PERL5=	yes
