@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Catalyst-Manual
-PORTVERSION=	5.700701
+PORTVERSION=	5.700704
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Catalyst
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
@@ -35,7 +34,8 @@ MAN3=	Catalyst::Manual.3 \
 	Catalyst::Manual::Tutorial::CatalystBasics.3 \
 	Catalyst::Manual::Tutorial::Debugging.3 \
 	Catalyst::Manual::Tutorial::Intro.3 \
-	Catalyst::Manual::Tutorial::Testing.3
+	Catalyst::Manual::Tutorial::Testing.3 \
+	Catalyst::Manual::WritingPlugins.3
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
