@@ -14,10 +14,10 @@
  where.lo:	$(TOP)/src/where.c $(HDR)
  	$(LTCOMPILE) -c $(TOP)/src/where.c
  
-+fts1.lo:	$(TOP)/ext/fts1/fts1.c $(HDR)
++fts1.lo:		$(TOP)/ext/fts1/fts1.c $(HDR)
 +	$(LTCOMPILE) -c $(TOP)/ext/fts1/fts1.c
 +
-+fts1_hash.lo:	$(TOP)/ext/fts1/fts1_hash.c $(HDR)
++fts1_hash.lo:		$(TOP)/ext/fts1/fts1_hash.c $(HDR)
 +	$(LTCOMPILE) -c $(TOP)/ext/fts1/fts1_hash.c
 +
 +fts1_porter.lo:	$(TOP)/ext/fts1/fts1_porter.c $(HDR)
