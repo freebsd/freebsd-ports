@@ -17,6 +17,7 @@
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/Debugging.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/Intro.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/Testing.pod
+%%SITE_PERL%%/Catalyst/Manual/WritingPlugins.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Manual/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Manual
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
