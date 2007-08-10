@@ -12,7 +12,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.rwhois.net/ftp/ \
 		http://www.rwhois.net/ftp/older_releases/
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Internic referral whois server
 
 OPTIONS=	IPV6 "Enable IPV6 support" On \
