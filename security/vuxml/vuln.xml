@@ -916,7 +916,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>flac123</name>
-	<range><lt>0.9.10</lt></range>
+	<range><lt>0.0.10</lt></range>
       </package>
     </affects>
     <description>
@@ -935,6 +935,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-06-05</discovery>
       <entry>2007-06-28</entry>
+      <modified>2007-08-10</modified>
     </dates>
   </vuln>
 
