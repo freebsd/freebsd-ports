@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	1.7.15
+PORTVERSION=	1.7.16
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 		ftp://ftp.gnutls.org/pub/gnutls/ \
