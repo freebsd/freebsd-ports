@@ -1,3 +1,5 @@
+%%GTK1%%include/scintilla/.scintilla-gtk1
+%%GTK2%%include/scintilla/.scintilla-gtk2
 include/scintilla/Accessor.h
 include/scintilla/KeyWords.h
 include/scintilla/Platform.h
