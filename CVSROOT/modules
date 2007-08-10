@@ -2474,6 +2474,7 @@ enblend		ports/graphics/enblend
 enca		ports/converters/enca
 enchant		ports/textproc/enchant
 encodings	ports/x11-fonts/encodings
+endgame-singularity	ports/games/endgame-singularity
 endian		ports/sysutils/endian
 enet		ports/net/enet
 enfle		ports/graphics/enfle
