@@ -230,7 +230,6 @@
     SUBDIR += jakarta-commons-net
     SUBDIR += java-beepcore
     SUBDIR += jcifs
-    SUBDIR += jrobin
     SUBDIR += jsch
     SUBDIR += jumpgate
     SUBDIR += jwhois
