@@ -15,7 +15,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	KDE MEncoder frontend
 
 BUILD_DEPENDS=	avimerge:${PORTSDIR}/multimedia/transcode \
-		mencoder:${PORTSDIR}/multimedia/mplayer
+		mencoder:${PORTSDIR}/multimedia/mencoder
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
 USE_KDELIBS_VER=3

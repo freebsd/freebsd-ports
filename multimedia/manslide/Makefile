@@ -14,7 +14,7 @@ MAINTAINER=	trebestie@gmail.com
 COMMENT=	Utility to simply create your own slideshow
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
-		mencoder:${PORTSDIR}/multimedia/mplayer \
+		mencoder:${PORTSDIR}/multimedia/mencoder \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		mjpegtools>=1.8.0:${PORTSDIR}/multimedia/mjpegtools \
 		ImageMagick>=6.3.2.9:${PORTSDIR}/graphics/ImageMagick \

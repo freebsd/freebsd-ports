@@ -18,7 +18,7 @@ COMMENT=	Utility to simply create dvd-video
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	dvd-slideshow>=0.7.5:${PORTSDIR}/multimedia/dvd-slideshow \
-		mencoder:${PORTSDIR}/multimedia/mplayer \
+		mencoder:${PORTSDIR}/multimedia/mencoder \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		cdrtools>=2.01:${PORTSDIR}/sysutils/cdrtools \
 		xine>0.99.4:${PORTSDIR}/multimedia/xine \
