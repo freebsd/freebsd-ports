@@ -16,7 +16,7 @@ MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	C++ Editor writen with QT4
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc gui xml uic rcc
+QT_COMPONENTS=	gui xml qmake_build moc_build uic_build rcc_build
 
 WRKSRC=		${WRKDIR}/Alabastra-${PORTVERSION}
 

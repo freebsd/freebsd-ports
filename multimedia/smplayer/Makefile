@@ -18,7 +18,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-qt4"
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake porting moc uic qt3support uic3 corelib gui
+QT_COMPONENTS=	qt3support corelib gui qmake_build moc_build uic_build uic3_build porting_build
 
 ALL_TARGET=	prep src/smplayer
 .else

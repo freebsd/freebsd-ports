@@ -15,7 +15,7 @@ MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	Blog management application based on Qt 4
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui network corelib qmake uic xml moc
+QT_COMPONENTS=	gui network corelib xml qmake_build uic_build moc_build
 PLIST_FILES=	bin/QTM
 
 PORTDOCS=	COPYING Changelog INSTALL README

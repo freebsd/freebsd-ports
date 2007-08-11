@@ -18,7 +18,7 @@ COMMENT=	bluedj contains many popular online games
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake gui moc qt3support uic rcc
+QT_COMPONENTS=	gui qt3support qmake_build uic_build rcc_build moc_build
 
 QMAKE?=		qmake-qt4
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++

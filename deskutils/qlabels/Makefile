@@ -17,7 +17,7 @@ COMMENT=	A labels and business cards creating and printing software
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	xml gui corelib qmake uic moc rcc
+QT_COMPONENTS=	xml gui corelib qmake_build uic_build moc_build rcc_build
 WRKSRC=		${WRKDIR}/${DISTNAME:C/_/-/}
 
 DESKTOP_ENTRIES=	"qlabels" \
