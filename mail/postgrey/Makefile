@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgrey
-PORTVERSION=	1.28
+PORTVERSION=	1.30
 CATEGORIES=	mail
 MASTER_SITES=	http://postgrey.schweikert.ch/pub/ LOCAL/beech
 
