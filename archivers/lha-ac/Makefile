@@ -7,14 +7,14 @@
 
 PORTNAME=	lha
 PORTVERSION=	1.14i
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP} \
 		http://qgpop.dl.sourceforge.jp/%SUBDIR%/ \
 		http://osdn.dl.sourceforge.jp/%SUBDIR%/
-MASTER_SITE_SUBDIR=	lha/16650
+MASTER_SITE_SUBDIR=	lha/22231
 PKGNAMESUFFIX=	-ac${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-ac20050924
+DISTNAME=	${PORTNAME}-${PORTVERSION}-ac20050924p1
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
@@ -25,7 +25,7 @@ PLIST_FILES=	bin/lha
 #PLIST_DIRS=	man/ja/man1
 GNU_CONFIGURE=	yes
 
-RESTRICTED=	"no permission to redistribute"
+RESTRICTED=	no permission to redistribute
 
 .if !defined(WITHOUT_NLS)
 CONFIGURE_ARGGS+=	--disable-multibyte-filename
