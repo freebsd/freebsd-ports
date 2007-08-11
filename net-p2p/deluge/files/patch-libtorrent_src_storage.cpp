@@ -1,15 +1,15 @@
---- libtorrent/src/storage.cpp.orig	2007-08-06 17:01:24.000000000 -0500
-+++ libtorrent/src/storage.cpp	2007-08-06 17:05:26.000000000 -0500
-@@ -981,7 +981,7 @@
- 			return true;
+--- libtorrent/src/storage.cpp.orig	2007-08-11 01:51:04.000000000 -0500
++++ libtorrent/src/storage.cpp	2007-08-11 01:52:15.000000000 -0500
+@@ -1027,7 +1027,7 @@
+ 		return false;
  #endif
  
--#if defined(__APPLE__) || defined(__linux__)
-+#if defined(__APPLE__) || defined(__linux__) || defined(__FreeBSD__)
- 		// find the last existing directory of the save path
- 		fs::path query_path = p;
- 		while (!query_path.empty() && !exists(query_path))
-@@ -1058,7 +1058,11 @@
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__)
+ 		struct statfs buf;
+ 		int err = statfs(query_path.native_directory_string().c_str(), &buf);
+ 		if (err == 0)
+@@ -1060,7 +1060,11 @@
  #endif
  
  		// TODO: POSIX implementation
