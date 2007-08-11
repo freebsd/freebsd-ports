@@ -16,7 +16,7 @@ MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Very advanced network monitoring and control system
 
 RUN_DEPENDS=	neato:${PORTSDIR}/graphics/graphviz \
-		rrdtool:${PORTSDIR}/net/rrdtool10 \
+		rrdtool:${PORTSDIR}/databases/rrdtool10 \
 		nmap:${PORTSDIR}/security/nmap \
 		${LOCALBASE}/sbin/tmpwatch:${PORTSDIR}/sysutils/tmpwatch
 
