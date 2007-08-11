@@ -15863,7 +15863,6 @@ upclient	ports/misc/upclient
 updatedd	ports/dns/updatedd
 uplog		ports/net/uplog
 upnp		ports/devel/upnp
-upnp104		ports/devel/upnp104
 upp		ports/devel/upp
 uppaal		ports/devel/uppaal
 uppc-kmod	ports/palm/uppc-kmod
