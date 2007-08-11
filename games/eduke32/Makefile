@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}${EXTRACT_SUFX} \
 		txbuild_src_${PORTVERSION}${EXTRACT_SUFX}
 
-PATCH_SITES=	http://mephisto.ma.cx/mephisto/patches/
+PATCH_SITES=	http://gid0.free.fr/eduke32/
 PATCHFILES=	${PORTNAME}_src_${PORTVERSION}.patch \
 		txbuild_src_${PORTVERSION}.patch
 PATCH_DIST_STRIP=	-p0
@@ -21,8 +21,6 @@ MAINTAINER=	olivier@gid0.org
 COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-
-BROKEN=		Unfetchable
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	uses i386 assembly code
