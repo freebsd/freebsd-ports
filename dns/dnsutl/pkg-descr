@@ -1,20 +1,21 @@
-       The dnsutl package is a bunch of	programs I wrote to make
-       using DNS easier.  These	include:
+The dnsutl package is a collection tools to make administering DNS easier.
+These include programs for:
 
-       dns-rev
-	       Take the	forward	DNS mapping and	generate the
-	       reverse mapping.
+ * Generating the reverse DNS mapping by using the DNS forward mapping.
+   This is useful for producing a self-consistent DNS configuration.
+ * Generating the /etc/ethers file by using a bogus record type.
+ * Generating the /etc/hosts file by using the DNS forward mapping.
+ * Generating the /etc/bootptab file by using the MAC and IP information.
+ * Generating the /etc/netgroup file by using the DNS forward mapping.
+ * Generating the Sun /etc/bootparams file by using the MAC and IP information.
+ * Checking the new-style /etc/named.conf files for self-consistency.
+ * Checking the old-style /etc/named.boot files for self-consistency.
+ * Generating the DNS forward mapping by using the /etc/hosts file.
+   This could be a first step to configuring your DNS server.
+ * Generating the /etc/dhcp.conf file by using the MAC and IP information.
 
-       dns-hosts
-	       Take the	forward	DNS mapping and	generate the
-	       /etc/hosts file.
+All of these programs are both faster than shell scripts, and more
+robust when faced with all the peculiar semantics of DNS resource files.
+They even understand the $include directive.
 
-       dns-ng
-	       Take the	forward	DNS mapping and	generate the
-	       /etc/netgroup file.
-
-       All of these programs are both faster than shell	scripts,
-       and more	robust when faced with all the peculiar	semantics
-       of DNS resource files.
-
-WWW: http://www.canb.auug.org.au/~millerp/dnsutl/
+WWW: http://dnsutl.sourceforge.net/

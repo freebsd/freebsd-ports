@@ -1,18 +1,6 @@
---- Makefile.in.orig	Mon Jul  5 15:54:45 1999
-+++ Makefile.in	Sun Dec 26 14:40:21 1999
-@@ -124,6 +124,11 @@
- LIBEXT = a
- 
- #
-+#
-+#
-+SOELIM = @SOELIM@
-+
-+#
- # You should not need to alter anything below this point.
- #------------------------------------------------------------
- 
-@@ -644,7 +649,7 @@
+--- Makefile.in.orig	Tue Aug  7 10:19:05 2007
++++ Makefile.in	Tue Aug  7 10:43:51 2007
+@@ -743,7 +743,7 @@
  	awk -f etc/txt2c.awk man1/dns-boot-check.1 > $@
  
  $(mandir)/man1/dns-boot-check.1: man1/dns-boot-check.1 man1/.mandir
@@ -21,7 +9,7 @@
  	$(INSTALL_DATA) tmp $@
  	@rm tmp
  
-@@ -652,7 +657,7 @@
+@@ -751,7 +751,7 @@
  	awk -f etc/txt2c.awk man1/dns-bootp.1 > $@
  
  $(mandir)/man1/dns-bootp.1: man1/dns-bootp.1 man1/.mandir
@@ -30,7 +18,7 @@
  	$(INSTALL_DATA) tmp $@
  	@rm tmp
  
-@@ -660,7 +665,7 @@
+@@ -759,7 +759,7 @@
  	awk -f etc/txt2c.awk man1/dns-bootparams.1 > $@
  
  $(mandir)/man1/dns-bootparams.1: man1/dns-bootparams.1 man1/.mandir
@@ -39,7 +27,25 @@
  	$(INSTALL_DATA) tmp $@
  	@rm tmp
  
-@@ -669,7 +674,7 @@
+@@ -767,7 +767,7 @@
+ 	awk -f etc/txt2c.awk man1/dns-conf-check.1 > $@
+ 
+ $(mandir)/man1/dns-conf-check.1: man1/dns-conf-check.1 man1/.mandir
+-	$(SOELIM) -Iman1 man1/dns-conf-check.1 > tmp
++	(cd man1; $(SOELIM) dns-conf-check.1) > tmp
+ 	$(INSTALL_DATA) tmp $@
+ 	@rm tmp
+ 
+@@ -775,7 +775,7 @@
+ 	awk -f etc/txt2c.awk man1/dns-dhcp.1 > $@
+ 
+ $(mandir)/man1/dns-dhcp.1: man1/dns-dhcp.1 man1/.mandir
+-	$(SOELIM) -Iman1 man1/dns-dhcp.1 > tmp
++	(cd man1; $(SOELIM) dns-dhcp.1) > tmp
+ 	$(INSTALL_DATA) tmp $@
+ 	@rm tmp
+ 
+@@ -784,7 +784,7 @@
  
  $(mandir)/man1/dns-ethers-import.1: man1/dns-ethers-import.1 \
  		man1/.mandir 
@@ -48,7 +54,7 @@
  	$(INSTALL_DATA) tmp $@
  	@rm tmp
  
-@@ -677,7 +682,7 @@
+@@ -792,7 +792,7 @@
  	awk -f etc/txt2c.awk man1/dns-ethers.1 > $@
  
  $(mandir)/man1/dns-ethers.1: man1/dns-ethers.1 man1/.mandir
@@ -57,7 +63,7 @@
  	$(INSTALL_DATA) tmp $@
  	@rm tmp
  
-@@ -685,7 +690,7 @@
+@@ -800,7 +800,7 @@
  	awk -f etc/txt2c.awk man1/dns-filter.1 > $@
  
  $(mandir)/man1/dns-filter.1: man1/dns-filter.1 man1/.mandir
@@ -66,7 +72,7 @@
  	$(INSTALL_DATA) tmp $@
  	@rm tmp
  
-@@ -693,7 +698,7 @@
+@@ -808,7 +808,7 @@
  	awk -f etc/txt2c.awk man1/dns-hosts-import.1 > $@
  
  $(mandir)/man1/dns-hosts-import.1: man1/dns-hosts-import.1 man1/.mandir
@@ -75,7 +81,7 @@
  	$(INSTALL_DATA) tmp $@
  	@rm tmp
  
-@@ -701,7 +706,7 @@
+@@ -816,7 +816,7 @@
  	awk -f etc/txt2c.awk man1/dns-hosts.1 > $@
  
  $(mandir)/man1/dns-hosts.1: man1/dns-hosts.1 man1/.mandir
@@ -84,7 +90,7 @@
  	$(INSTALL_DATA) tmp $@
  	@rm tmp
  
-@@ -709,7 +714,7 @@
+@@ -824,7 +824,7 @@
  	awk -f etc/txt2c.awk man1/dns-license.1 > $@
  
  $(mandir)/man1/dns-license.1: man1/dns-license.1 man1/.mandir
@@ -93,7 +99,7 @@
  	$(INSTALL_DATA) tmp $@
  	@rm tmp
  
-@@ -717,7 +722,7 @@
+@@ -832,7 +832,7 @@
  	awk -f etc/txt2c.awk man1/dns-ng.1 > $@
  
  $(mandir)/man1/dns-ng.1: man1/dns-ng.1 man1/.mandir
@@ -102,7 +108,7 @@
  	$(INSTALL_DATA) tmp $@
  	@rm tmp
  
-@@ -725,7 +730,7 @@
+@@ -840,7 +840,7 @@
  	awk -f etc/txt2c.awk man1/dns-rev.1 > $@
  
  $(mandir)/man1/dns-rev.1: man1/dns-rev.1 man1/.mandir
