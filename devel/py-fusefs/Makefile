@@ -20,6 +20,7 @@ LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GNOME=	pkgconfig
+USE_ICONV=	yes
 PORTDOCS=	AUTHORS Changelog FAQ INSTALL README.1st README.historic \
 		README.new_fusepy_api
 PORTEXAMPLES=	_find_fuse_parts.py hello.py xmp.py
