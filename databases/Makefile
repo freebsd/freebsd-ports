@@ -467,6 +467,7 @@
     SUBDIR += rdfdb
     SUBDIR += rrdman
     SUBDIR += rrdtool
+    SUBDIR += rrdtool10
     SUBDIR += ruby-bdb
     SUBDIR += ruby-bdb1
     SUBDIR += ruby-cdb
