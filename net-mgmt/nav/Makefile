@@ -48,7 +48,7 @@ BUILD_DEPENDS+=		${TOMCAT_DEPEND}
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg \
 		${SITE_PERL}/${PERL_ARCH}/Pg.pm:${PORTSDIR}/databases/p5-Pg \
-		${PYTHON_SITELIBDIR}/rrdtool/_rrdtool.so:${PORTSDIR}/net/py-rrdtool_lgpl \
+		${PYTHON_SITELIBDIR}/rrdtool/_rrdtool.so:${PORTSDIR}/databases/py-rrdtool_lgpl \
 		${PYTHON_SITELIBDIR}/psycopgmodule.so:${PORTSDIR}/databases/py-psycopg \
 		${LOCALBASE}/cricket/cricket/collect-subtrees:${PORTSDIR}/net-mgmt/cricket \
 		${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc \
