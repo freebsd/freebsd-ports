@@ -38,7 +38,7 @@ OPTIONS=	CACA "Enable libcaca output" off \
 		NLS "Enable Native Language Support" on \
 		XFT "Enable Xft support" on
 
-DOCSDIR=	${TARGETDIR}/share/doc/xine-ui
+DOCSDIR=	${PREFIX}/share/doc/xine-ui
 
 .include <bsd.port.pre.mk>
 
