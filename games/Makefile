@@ -302,7 +302,6 @@
     SUBDIR += golddig
     SUBDIR += gomoku.app
     SUBDIR += goonies
-    SUBDIR += gpuzzle
     SUBDIR += gracer
     SUBDIR += grande
     SUBDIR += greed
@@ -370,6 +369,7 @@
     SUBDIR += jetpack
     SUBDIR += jfduke3d
     SUBDIR += jfk
+    SUBDIR += jigsaw
     SUBDIR += jin
     SUBDIR += joequake
     SUBDIR += jools
