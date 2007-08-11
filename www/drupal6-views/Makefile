@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
 MAINTAINER=	g_glasson@jimali.dyndns.org
-COMMENT=	The book review module allows a site to publish book reviews.
+COMMENT=	Controls how content lists are generated
 
 DRUPAL5_MODULE=	yes
 MODULE_DIRS=	po modules
