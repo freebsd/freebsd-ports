@@ -13,7 +13,7 @@ MASTER_SITES=	http://csgib36.ifrance.com/Manencode/
 MAINTAINER=	trebestie@gmail.com
 COMMENT=	Utility to simply transcode your videos
 
-RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer  \
+RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder  \
 		transcode:${PORTSDIR}/multimedia/transcode
 
 USE_GMAKE=	yes
