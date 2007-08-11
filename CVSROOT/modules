@@ -4053,7 +4053,6 @@ gpstk		ports/astro/gpstk
 gpt31		ports/misc/gpt31
 gpte		ports/sysutils/gpte
 gputils		ports/devel/gputils
-gpuzzle		ports/games/gpuzzle
 gq		ports/net/gq
 gqlplus		ports/databases/gqlplus
 gqmpeg		ports/audio/gqmpeg
@@ -5606,6 +5605,7 @@ jgv		ports/graphics/jgv
 jhead		ports/graphics/jhead
 jid3lib		ports/audio/jid3lib
 jigdo		ports/net-p2p/jigdo
+jigsaw		ports/games/jigsaw
 jikes		ports/java/jikes
 jin		ports/games/jin
 jing		ports/textproc/jing
