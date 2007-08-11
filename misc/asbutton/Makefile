@@ -7,7 +7,7 @@
 
 PORTNAME=	asbutton
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asbutton/
 
