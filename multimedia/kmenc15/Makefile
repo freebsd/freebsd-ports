@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=kmenc15
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE advanced MEncoder frontend, ala, VirtualDub
 
-RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer
+RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=	3

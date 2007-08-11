@@ -14,7 +14,7 @@ MASTER_SITES=	SOURCEFORGE
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Cross-platform frontend to mencoder
 
-RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer
+RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder
 
 USE_JAVA=	yes
 USE_BZIP2=	yes

@@ -20,7 +20,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A collection of video disc authoring tools
 
 BUILD_DEPENDS=	txt2tags:${PORTSDIR}/textproc/txt2tags
-RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
+RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
 		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		composite:${PORTSDIR}/graphics/ImageMagick \
