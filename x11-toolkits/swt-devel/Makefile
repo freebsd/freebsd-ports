@@ -19,6 +19,8 @@ COMMENT=	Standard Widget Toolkit for Java
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-${ARCH}-os.c
+
 SWT_VERSION=	3346
 OUTPUT_JAR=	swt-devel.jar
 
