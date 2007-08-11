@@ -545,7 +545,6 @@
     SUBDIR += p5-POE-Component-Generic
     SUBDIR += p5-POE-Component-Jabber
     SUBDIR += p5-POE-Component-Pcap
-    SUBDIR += p5-POE-Component-RRDTool
     SUBDIR += p5-POE-Component-Spread
     SUBDIR += p5-Parallel-MPI
     SUBDIR += p5-Parallel-Pvm
