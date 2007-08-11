@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gammu
-PORTVERSION=	1.10.0
+PORTVERSION=	1.12.0
 CATEGORIES=	comms
 MASTER_SITES=	ftp://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com/gammu/releases/
@@ -14,34 +14,27 @@ MASTER_SITES=	ftp://dl.cihar.com/gammu/releases/ \
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	GNU All Mobile Management Utilities
 
-MAN1=		gammu.1
-USE_GMAKE=	yes
+BUILD_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
+
+CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
+		-DCMAKE_INSTALL_PREFIX=${PREFIX}
+
+MAN1=		gammu.1 gammu-config.1
 USE_GNOME=	pkgconfig
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:259:env
-USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
-CONFIGURE_ARGS=	--disable-bluerfsearch
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fPIC"
+do-configure:
+	@(cd ${WRKSRC}; \
+	${LOCALBASE}/bin/cmake ${CMAKE_ARGS})
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile with gcc 2.95
-.endif
-
 post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|%zd|%d|g' -e 's|%zi|%i|g' \
-		${WRKSRC}/common/phone/at/atgen.c \
-		${WRKSRC}/common/phone/obex/obexgen.c \
-		${WRKSRC}/gammu/depend/nokia/dct3trac/wmx-gsm.c
+.if ${OSVERSION} < 700042
+	@${REINPLACE_CMD} -e 's@ -Wno-pointer-sign@@g' ${WRKSRC}/CMakeLists.txt
 .endif
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's@ installdocs@@g' \
-		${WRKSRC}/cfg/Makefile.glo
+EXTRA_PATCHES=files/extra-patch-CMakeLists.txt
 .endif
 
 .include <bsd.port.post.mk>

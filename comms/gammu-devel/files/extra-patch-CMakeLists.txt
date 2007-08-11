@@ -1,0 +1,39 @@
+--- CMakeLists.txt.orig	2007-08-11 19:35:06.000000000 +0400
++++ CMakeLists.txt	2007-08-11 19:35:43.000000000 +0400
+@@ -693,36 +693,6 @@
+     )
+ 
+ install (
+-    FILES ${DOCS}
+-    DESTINATION "${INSTALL_DOC_DIR}"
+-    COMPONENT "basic-documentation"
+-    )
+-
+-install (
+-    FILES ${SYMBIAN_FILES}
+-    DESTINATION "${INSTALL_DOC_DIR}/symbian"
+-    COMPONENT "gnapplet"
+-    )
+-
+-foreach (DOC ${DEVELDOCS})
+-    string (REGEX REPLACE "docs/develop(.*)/[^/]*$" "\\1" DIRNAME ${DOC})
+-    install (
+-        FILES ${DOC}
+-        DESTINATION "${INSTALL_DOC_DIR}/devel/${DIRNAME}"
+-        COMPONENT "developer-documentation"
+-        )
+-endforeach (DOC)
+-
+-foreach (EXAMPLE ${EXAMPLES})
+-    string (REGEX REPLACE "(docs/examples|other/php)(.*)/[^/]*$" "\\2" DIRNAME ${EXAMPLE})
+-    install (
+-        FILES ${EXAMPLE}
+-        DESTINATION "${INSTALL_DOC_DIR}/examples/${DIRNAME}"
+-        COMPONENT "developer-documentation"
+-        )
+-endforeach (EXAMPLE)
+-
+-install (
+     FILES ${MAN1_PAGES}
+     DESTINATION "${INSTALL_MAN_DIR}/man1"
+     COMPONENT "basic-documentation"

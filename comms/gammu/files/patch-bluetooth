@@ -1,5 +1,5 @@
---- common/device/bluetoth/bluez.c.orig	Wed Sep 14 21:47:08 2005
-+++ common/device/bluetoth/bluez.c	Wed Nov 23 22:11:16 2005
+--- common/device/bluetoth/bluez.c.orig	2007-03-10 19:47:59.000000000 +0300
++++ common/device/bluetoth/bluez.c	2007-06-29 20:00:48.000000000 +0400
 @@ -23,6 +23,8 @@
  #ifdef GSM_ENABLE_BLUETOOTHDEVICE
  #ifdef GSM_ENABLE_BLUEZ
@@ -22,7 +22,7 @@
  
  #include "../../gsmcomon.h"
  #include "../devfunc.h"
-@@ -44,21 +42,21 @@
+@@ -44,7 +42,7 @@
  GSM_Error bluetooth_connect(GSM_StateMachine *s, int port, char *device)
  {
  	GSM_Device_BlueToothData 	*d = &s->Device.Data.BlueTooth;
@@ -30,6 +30,8 @@
 +	struct sockaddr_rfcomm 		laddr, raddr;
  	bdaddr_t			bdaddr;
  	int 				fd;
+ 
+@@ -53,15 +51,15 @@
  
  	smprintf(s, "Connecting to RF channel %i\n",port);
  
@@ -49,7 +51,7 @@
  
  	if (bind(fd, (struct sockaddr *)&laddr, sizeof(laddr)) < 0) {
  		dbgprintf("Can't bind socket\n");
-@@ -67,9 +65,9 @@
+@@ -70,9 +68,9 @@
  	}
  
  	str2ba(device, &bdaddr);

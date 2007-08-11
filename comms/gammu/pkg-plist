@@ -1,114 +1,32 @@
 bin/gammu
-%%DATADIR%%/gammu_cs.txt
-%%DATADIR%%/gammu_de.txt
-%%DATADIR%%/gammu_es.txt
-%%DATADIR%%/gammu_it.txt
-%%DATADIR%%/gammu_pl.txt
-%%DATADIR%%/gammu_ru.txt
-%%DATADIR%%/gammu_us.txt
-libdata/pkgconfig/gammu.pc
-lib/libGammu.a
-lib/libGammu.so
-lib/libGammu.so.1
-include/gammu/config.h
+bin/gammu-config
+include/gammu/gammu-backup.h
+include/gammu/gammu-bitmap.h
+include/gammu/gammu-calendar.h
+include/gammu/gammu-call.h
+include/gammu/gammu-callback.h
+include/gammu/gammu-category.h
+include/gammu/gammu-config.h
+include/gammu/gammu-datetime.h
+include/gammu/gammu-debug.h
+include/gammu/gammu-error.h
+include/gammu/gammu-file.h
+include/gammu/gammu-info.h
+include/gammu/gammu-inifile.h
+include/gammu/gammu-keys.h
+include/gammu/gammu-limits.h
+include/gammu/gammu-memory.h
+include/gammu/gammu-message.h
+include/gammu/gammu-misc.h
+include/gammu/gammu-nokia.h
+include/gammu/gammu-ringtone.h
+include/gammu/gammu-security.h
+include/gammu/gammu-settings.h
+include/gammu/gammu-statemachine.h
+include/gammu/gammu-types.h
+include/gammu/gammu-unicode.h
+include/gammu/gammu-wap.h
 include/gammu/gammu.h
-include/gammu/gsmcomon.h
-include/gammu/gsmerror.h
-include/gammu/gsmstate.h
-include/gammu/device/devfunc.h
-include/gammu/device/bluetoth/affix.h
-include/gammu/device/bluetoth/blue_w32.h
-include/gammu/device/bluetoth/bluetoth.h
-include/gammu/device/bluetoth/bluez.h
-include/gammu/device/irda/irda.h
-include/gammu/device/irda/irda_unx.h
-include/gammu/device/irda/irda_w32.h
-include/gammu/device/serial/ser_djg.h
-include/gammu/device/serial/ser_unx.h
-include/gammu/device/serial/ser_w32.h
-include/gammu/misc/cfg.h
-include/gammu/misc/misc.h
-include/gammu/misc/coding/coding.h
-include/gammu/misc/coding/md5.h
-include/gammu/phone/pfunc.h
-include/gammu/phone/alcatel/alcatel.h
-include/gammu/phone/at/atfunc.h
-include/gammu/phone/at/atgen.h
-include/gammu/phone/at/samsung.h
-include/gammu/phone/at/siemens.h
-include/gammu/phone/nokia/ncommon.h
-include/gammu/phone/nokia/nfunc.h
-include/gammu/phone/nokia/nfuncold.h
-include/gammu/phone/nokia/dct3/dct3comm.h
-include/gammu/phone/nokia/dct3/dct3func.h
-include/gammu/phone/nokia/dct3/n0650.h
-include/gammu/phone/nokia/dct3/n6110.h
-include/gammu/phone/nokia/dct3/n7110.h
-include/gammu/phone/nokia/dct3/n9210.h
-include/gammu/phone/nokia/dct4s40/dct4func.h
-include/gammu/phone/nokia/dct4s40/n3320.h
-include/gammu/phone/nokia/dct4s40/6510/6510cal.h
-include/gammu/phone/nokia/dct4s40/6510/6510file.h
-include/gammu/phone/nokia/dct4s40/6510/n6510.h
-include/gammu/phone/nokia/wd2/n3650.h
-include/gammu/phone/obex/obexgen.h
-include/gammu/phone/obex/obexfunc.h
-include/gammu/phone/sonyeric/sefunc.h
-include/gammu/phone/sonyeric/sonyeric.h
-include/gammu/phone/symbian/gnapgen.h
-include/gammu/protocol/protocol.h
-include/gammu/protocol/alcatel/alcabus.h
-include/gammu/protocol/at/at.h
-include/gammu/protocol/nokia/fbus2.h
-include/gammu/protocol/nokia/mbus2.h
-include/gammu/protocol/nokia/phonet.h
-include/gammu/protocol/obex/obex.h
-include/gammu/protocol/symbian/gnapbus.h
-include/gammu/service/gsmcal.h
-include/gammu/service/gsmcall.h
-include/gammu/service/gsmdata.h
-include/gammu/service/gsmlogo.h
-include/gammu/service/gsmmisc.h
-include/gammu/service/gsmnet.h
-include/gammu/service/gsmpbk.h
-include/gammu/service/gsmprof.h
-include/gammu/service/gsmring.h
-include/gammu/service/backup/backgen.h
-include/gammu/service/backup/backics.h
-include/gammu/service/backup/backldif.h
-include/gammu/service/backup/backlmb.h
-include/gammu/service/backup/backtext.h
-include/gammu/service/backup/backvcf.h
-include/gammu/service/backup/backvcs.h
-include/gammu/service/backup/gsmback.h
-include/gammu/service/sms/gsmems.h
-include/gammu/service/sms/gsmmulti.h
-include/gammu/service/sms/gsmsms.h
-@dirrm include/gammu/service/sms
-@dirrm include/gammu/service/backup
-@dirrm include/gammu/service
-@dirrm include/gammu/protocol/symbian
-@dirrm include/gammu/protocol/obex
-@dirrm include/gammu/protocol/nokia
-@dirrm include/gammu/protocol/at
-@dirrm include/gammu/protocol/alcatel
-@dirrm include/gammu/protocol
-@dirrm include/gammu/phone/symbian
-@dirrm include/gammu/phone/sonyeric
-@dirrm include/gammu/phone/obex
-@dirrm include/gammu/phone/nokia/dct3
-@dirrm include/gammu/phone/nokia/dct4s40/6510
-@dirrm include/gammu/phone/nokia/dct4s40
-@dirrm include/gammu/phone/nokia/wd2
-@dirrm include/gammu/phone/nokia
-@dirrm include/gammu/phone/at
-@dirrm include/gammu/phone/alcatel
-@dirrm include/gammu/phone
-@dirrm include/gammu/misc/coding
-@dirrm include/gammu/misc
-@dirrm include/gammu/device/serial
-@dirrm include/gammu/device/irda
-@dirrm include/gammu/device/bluetoth
-@dirrm include/gammu/device
+lib/libGammu.a
+libdata/pkgconfig/gammu.pc
 @dirrm include/gammu
-@dirrm %%DATADIR%%
