@@ -808,7 +808,6 @@
     SUBDIR += smb4k
     SUBDIR += smbldap-tools
     SUBDIR += smm++
-    SUBDIR += smokeping
     SUBDIR += sniffit
     SUBDIR += sntop
     SUBDIR += sobby
