@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	fig2pstricks
-PORTVERSION=	0.6.8
+PORTVERSION=	0.6.9
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.vuw.ac.nz/staff/chirok_han/fig2pstricks/
+MASTER_SITES=	http://homes.eco.auckland.ac.nz/chan079/fig2pstricks/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert xfig to pstricks
