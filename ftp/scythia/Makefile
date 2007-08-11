@@ -16,7 +16,7 @@ MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	A small ftp client unpretentious based on QT4
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui network corelib qmake uic moc rcc
+QT_COMPONENTS=	gui network corelib qmake_build uic_build moc_build rcc_build
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

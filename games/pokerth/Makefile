@@ -24,7 +24,7 @@ MANUAL_PACKAGE_BUILD=	requires large memory to build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui corelib qmake moc rcc uic
+QT_COMPONENTS=	gui corelib qmake_build moc_build rcc_build uic_build
 USE_SDL=	mixer
 
 WRKSRC=		${WRKDIR}/PokerTH-${PORTVERSION}
