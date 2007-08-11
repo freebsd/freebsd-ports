@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -147,7 +147,7 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Affiche:deskutils/affiche \
 	ProjectManager:devel/projectmanager \
 	GMastermind2:games/gmastermind \
-	Jigsaw:games/gpuzzle \
+	Jigsaw:games/jigsaw \
 	Ticker:www/gnustep-ticker \
 	NoteBook:deskutils/gnustep-notebook \
 	HelpViewer:deskutils/helpviewer \
@@ -199,6 +199,7 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Mollusk:www/etoile-mollusk \
 	BioCocoa:biology/biococoa \
 	Yap:graphics/yap \
+	Sudoku:games/gnustep-sudoku \
 
 #	CameraTransfer:graphics/cameratransfer \
 #	Mantella:www/etoile-mantella \
