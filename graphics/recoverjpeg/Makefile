@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	recoverjpeg
-PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTVERSION=	1.1.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.rfc1149.net/download/recoverjpeg/ \
 		http://critical.ch/distfiles/ \
@@ -20,7 +19,7 @@ GNU_CONFIGURE=	yes
 MANCOMPRESSED=	no
 
 # recoverjpeg scripts require many dependencies
-OPTIONS=	SCRIPTS	"Install sort-pictures and remove-duplicates scripts" on
+OPTIONS=	SCRIPTS	"Install sort-pictures script" off
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
@@ -32,14 +31,14 @@ MAN1=		recoverjpeg.1
 .if !defined(WITHOUT_SCRIPTS)
 RUN_DEPENDS=	exif:${PORTSDIR}/graphics/exif \
 		identify:${PORTSDIR}/graphics/ImageMagick
-PLIST_FILES+=	bin/sort-pictures bin/remove-duplicates
+PLIST_FILES+=	bin/sort-pictures
 MAN1+=		sort-pictures.1
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 .if !defined(WITHOUT_SCRIPTS)
-.for f in sort-pictures remove-duplicates
+.for f in sort-pictures
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
 .endif
