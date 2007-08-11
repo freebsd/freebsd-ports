@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	intclock
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 CATEGORIES=	x11-clocks perl5
 MASTER_SITES=	http://www.peterverthez.net/projects/${PORTNAME}/ CENKES
 
