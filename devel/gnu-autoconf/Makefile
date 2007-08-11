@@ -16,6 +16,9 @@ DISTNAME=	autoconf-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms (GNU unmodified)
 
+DEPRECATED=	Use devel/autotools instead
+EXPIRATION_DATE=	2007-09-11
+
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
