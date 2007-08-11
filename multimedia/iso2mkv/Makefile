@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Front-end shell script to convert DVD image, device, or VIDEO_TS to mkv with xvid and ogg or mp3 audio
 
-RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
+RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
 		bash:${PORTSDIR}/shells/bash \
 		mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix \
 		lame:${PORTSDIR}/audio/lame \

@@ -15,12 +15,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application and libraries for encoding DVDs into DivX/OGM files
 
-BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
+BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
 		lame:${PORTSDIR}/audio/lame \
 		gsed:${PORTSDIR}/textproc/gsed
-RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
+RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
 		lame:${PORTSDIR}/audio/lame
