@@ -552,7 +552,6 @@
     SUBDIR += p5-REST-Application
     SUBDIR += p5-RPC-Simple
     SUBDIR += p5-RPC-XML
-    SUBDIR += p5-RRD-Simple
     SUBDIR += p5-ResourcePool-Resource-Net-LDAP
     SUBDIR += p5-ResourcePool-Resource-SOAP-Lite
     SUBDIR += p5-S3
