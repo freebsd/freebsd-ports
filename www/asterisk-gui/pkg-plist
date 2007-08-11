@@ -2,6 +2,9 @@ etc/asterisk/gui_custommenus.conf
 share/asterisk/scripts/graphs.sh
 share/asterisk/scripts/gui_sysinfo
 share/asterisk/scripts/listfiles
+share/asterisk/scripts/mastercsvexists
+share/asterisk/static-http/config/cdr.html
+share/asterisk/static-http/config/cdr_conf.html
 share/asterisk/static-http/config/graphs/graph_cpu.svgz
 share/asterisk/static-http/config/images/1.gif
 share/asterisk/static-http/config/images/accordion-icon.gif
