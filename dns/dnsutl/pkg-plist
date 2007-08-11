@@ -2,10 +2,10 @@ bin/dns-boot-check
 bin/dns-bootp
 bin/dns-bootparams
 bin/dns-dhcp
-bin/dns-ethers-import
 bin/dns-ethers
+bin/dns-ethers-import
 bin/dns-filter
-bin/dns-hosts-import
 bin/dns-hosts
+bin/dns-hosts-import
 bin/dns-ng
 bin/dns-rev
