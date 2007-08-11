@@ -677,7 +677,6 @@
     SUBDIR += py-pypcap
     SUBDIR += py-qt4-network
     SUBDIR += py-radix
-    SUBDIR += py-rrdtool_lgpl
     SUBDIR += py-rt
     SUBDIR += py-s3cmd
     SUBDIR += py-samba
