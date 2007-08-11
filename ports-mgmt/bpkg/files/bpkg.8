@@ -23,7 +23,7 @@
 .\" SUCH DAMAGE.
 .\"
 .\"
-.Dd July 9, 2007
+.Dd August 7, 2007
 .Dt BPKG 8
 .Os
 .Sh NAME
@@ -31,7 +31,7 @@
 .Nd a simple tool for managing FreeBSD packages/ports.
 .Sh SYNOPSIS
 .Nm
-.Op Fl bdDeEfFgiIkLmMnNoOprsSwz
+.Op Fl bBdDeEfFgiIkLmMnoOprsSwz
 .Ar pkg-name ...
 .Nm
 .Op Fl aAcChltvZ
@@ -54,12 +54,14 @@ in .tbz format made from a port.
 The following command line arguments are supported:
 .Bl -tag -width F1
 .It Ar pkg-name ...
-with no additional arguments, upgrade/install the specified packages/ports.
+with no additional arguments, upgrade/install the specified packages.
 .It Fl a
 upgrade all installed packages (interactive mode). [no arguments]
 .It Fl A
 upgrade all installed packages (non-interactive mode). [no arguments]
 .It Fl b
+upgrade/install the specified ports.
+.It Fl B
 create backup package file in /usr/tmp/ from a locally installed package.
 .It Fl c
 clean all distfiles in /usr/ports/distfiles/* [no arguments]
@@ -85,9 +87,9 @@ package.
 .It Fl h
 display help. [no arguments]
 .It Fl i
-display info about the package/port.
+display info about the package/port (priority - installed packages). 
 .It Fl I
-display short info about the package/port.
+display short info about the package/port (priority - installed packages).
 .It Fl k
 show the deinstall script (if any) for the installed package.
 .It Fl l
@@ -100,20 +102,18 @@ display package/port's Makefile.
 show the install-message file for the installed package.
 .It Fl n
 simulation mode, do not actually install a package/port.
-.It Fl N
-perform non-interactive installation of the binary package.
 .It Fl o
 display config options for the specified package/port.
 .It Fl O
 remove config options for the specified package/port.
 .It Fl p
-search the ports tree for the specified port's name and display its path.
+search the ports tree and display short info about the port.
 .It Fl r
 show the list of all package/port's dependencies.
 .It Fl s
 show the total size occupied by files installed within the package.
 .It Fl S
-search the ports tree for the specified string.
+search the ports tree and display info about the port.
 .It Fl t
 list all installed packages and dates of their installation. [no arguments]
 .It Fl w
@@ -135,7 +135,11 @@ command:
 .Pp
 .Dl Ar "# bpkg foo"
 .Pp
-Upgrade or install a package/port named foo (root privileges required).
+Upgrade or install a package named foo (root privileges required).
+.Pp
+.Dl Ar "# bpkg -b foo"
+.Pp
+Upgrade or install a port named foo (root privileges required).
 .Pp
 .Dl Ar "> bpkg -i 'foo bar'" 
 .Pp
