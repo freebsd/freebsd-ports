@@ -2,6 +2,7 @@ bin/intclock
 %%SITE_PERL%%/Intclock/Config.pm
 %%SITE_PERL%%/Intclock/L10N/de.pm
 %%SITE_PERL%%/Intclock/L10N/en.pm
+%%SITE_PERL%%/Intclock/L10N/es.pm
 %%SITE_PERL%%/Intclock/L10N/fr.pm
 %%SITE_PERL%%/Intclock/L10N/nl.pm
 %%SITE_PERL%%/Intclock/L10N/pl.pm
