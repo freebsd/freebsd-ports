@@ -360,6 +360,7 @@
     SUBDIR += php4-odbc
     SUBDIR += php4-oracle
     SUBDIR += php4-pgsql
+    SUBDIR += php4-rrdtool
     SUBDIR += php4-sybase_ct
     SUBDIR += php5-creole
     SUBDIR += php5-dba
