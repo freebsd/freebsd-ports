@@ -7,7 +7,7 @@
 
 PORTNAME=	tovid
 PORTVERSION=	0.30
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tovid
@@ -20,7 +20,8 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A collection of video disc authoring tools
 
 BUILD_DEPENDS=	txt2tags:${PORTSDIR}/textproc/txt2tags
-RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
+RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
+		mencoder:${PORTSDIR}/multimedia/mencoder \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
 		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		composite:${PORTSDIR}/graphics/ImageMagick \
