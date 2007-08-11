@@ -7,6 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.14
+PORTREVISION=	1
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -40,6 +41,21 @@ MLINKS=		dot.1 circo.1 \
 		dot.1 fdp.1 \
 		dot.1 neato.1 \
 		dot.1 twopi.1
+FIX_INCLUDE=	ast_common.h \
+		lib/cdt/dthdr.h \
+		lib/graph/libgraph.h lib/graph/triefa.h \
+		lib/graph/parser.h lib/graph/agxbuf.h \
+		lib/agraph/aghdr.h lib/agraph/agraph.h \
+		lib/agraph/malloc.h lib/agraph/vmstub.h \
+		lib/agraph/grammar.h \
+		lib/pathplan/tri.h lib/pathplan/pathplan.h \
+		lib/pathplan/pathutil.h lib/pathplan/solvers.h \
+		lib/pathplan/vis.h lib/pathplan/vispath.h \
+		lib/common/arith.h lib/common/logic.h \
+		lib/common/globals.h \
+		lib/gvc/gvcint.h \
+		lib/expr/exlib.h lib/expr/exgram.h \
+		lib/expr/expr.h
 
 PATCH_TCL_SCRIPTS=	tclpkg/gv/Makefile.in tclpkg/tcldot/demo/doted \
 			tclpkg/tclpathplan/demo/pathplan tclpkg/tkspline/demo/spline
@@ -242,6 +258,8 @@ post-install-script:
 .endif
 
 post-install: install-ldconfig-file
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} ${FIX_INCLUDE} ${PREFIX}/include/graphviz/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/html
 	@${MKDIR} ${DOCSDIR}/pdf
