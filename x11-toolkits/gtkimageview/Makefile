@@ -20,6 +20,8 @@ USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 
 post-patch:
+	@${REINPLACE_CMD} -e '/^gtkimageview-marshal.[ch]:/s|$$[(]GLIB_GENMARSHAL[)]||'\
+		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e '/^CFLAGS/s|-Werror||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^pkgconfigdir/s|=.*|=${PREFIX}/libdata/pkgconfig|'\
 		${WRKSRC}/Makefile.in
