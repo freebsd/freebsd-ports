@@ -5,7 +5,7 @@ _OBJS!=	${MAKE} -f Makefile.unix -V OBJS -V QOBJS
 # next to -DHAVE_CONFIG_CPP below: 
 #_OBJS:=	${_OBJS:S/qconfig.o//}
 SRCS:=	${_OBJS:.o=.cpp}
-NOMAN=	true	# qmake.1 anyone?
+NO_MAN=	true	# qmake.1 anyone?
 
 .PATH:	${.CURDIR} ${.CURDIR:H}/src/corelib/tools ${.CURDIR:H}/src/corelib/io \
 	${.CURDIR:H}/src/corelib/global ${.CURDIR:H}/src/corelib/plugin \
