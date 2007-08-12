@@ -15,8 +15,6 @@ COMMENT=	A very small, yet very fast HTTP server
 CFLAGS+=	-DFREEBSD_SENDFILE
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
-BROKEN=		Size mismatch
-
 DOCS=	CHANGES cgi.txt config.txt running.txt sample.cfg syntax.txt
 
 post-install:
