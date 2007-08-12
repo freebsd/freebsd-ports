@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-lml
-PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTVERSION=	0.9.10.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
