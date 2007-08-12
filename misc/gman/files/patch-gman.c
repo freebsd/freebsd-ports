@@ -1,5 +1,14 @@
 --- gman.c.orig	Mon Dec 13 22:25:03 2004
 +++ gman.c	Mon Dec 13 22:26:54 2004
+@@ -47,7 +47,7 @@
+ 	pthread_mutex_init(&context_lock,NULL);
+ 	pthread_mutex_init(&loading_man_path_lock,NULL);
+ 	init_context();
+-	debuging = (int)context->get_value("debuging");
++	debuging = (intptr_t)context->get_value("debuging");
+ 	pthread_mutex_lock(&gtk_lock);
+     gtk_init (&argc, &argv);
+ 	window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 @@ -62,6 +62,8 @@
  
  	//gtk_main();
