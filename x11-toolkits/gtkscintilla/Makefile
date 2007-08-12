@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${PREFIX}/include/scintilla/.scintilla-gtk1)
+.if !exists(${LOCALBASE}/include/scintilla/.scintilla-gtk1)
 IGNORE=	requires x11-toolkits/scintilla to be built with GTK+1
 .endif
 
