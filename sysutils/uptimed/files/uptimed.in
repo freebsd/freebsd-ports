@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# PROVIDE: uptimed
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable uptimed:
+#
+# uptimed_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name="uptimed"
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/${name}
+stop_postcmd="uptimed_poststop"
+
+uptimed_poststop()
+{
+    rm -f $pidfile
+}
+
+load_rc_config ${name}
+
+: ${uptimed_enable="NO"}
+: ${uptimed_pidfile="/var/run/${name}.pid"}
+
+pidfile=${uptimed_pidfile}
+uptimed_flags="-p ${pidfile}"
+
+run_rc_command "$1"

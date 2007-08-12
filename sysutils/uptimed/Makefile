@@ -5,29 +5,28 @@
 # $FreeBSD$
 
 PORTNAME=	uptimed
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.11
 CATEGORIES=	sysutils
 MASTER_SITES=	http://podgorny.cz/uptimed/releases/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	andy@athame.co.uk
 COMMENT=	Rob Kaper's uptime daemon
 
-PREFIX=		${LOCALBASE}
-
+USE_RC_SUBR=	${PORTNAME}
 USE_LDCONFIG=	yes
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${LOCALBASE}
 USE_GMAKE=	yes
 
 MAN1=		uprecords.1
 MAN8=		uptimed.8
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/lib/sendmail|/usr/sbin/sendmail|' ${WRKSRC}/etc/uptimed.conf-dist
+	@${REINPLACE_CMD} -e 's|/var/run/uptimed|/var/run/uptimed.pid|' ${WRKSRC}/etc/uptimed.conf-dist
+
 post-install:
-	${INSTALL_SCRIPT}	${FILESDIR}/uptimed.sh.sample ${PREFIX}/etc/rc.d/
-	if [ ! -d "${PREFIX}/www/cgi-bin/" ]; then \
-	    ${MKDIR} ${PREFIX}/www/cgi-bin; \
-	fi
+	${MKDIR} ${PREFIX}/www/cgi-bin
 	${INSTALL_PROGRAM}	${PREFIX}/bin/uprecords ${PREFIX}/www/cgi-bin/uprecords.cgi
 	${INSTALL_DATA}		${WRKSRC}/sample-cgi/* ${PREFIX}/www/cgi-bin/
 
