@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	vidalia
-PORTVERSION=	0.0.12
+PORTVERSION=	0.0.13
 CATEGORIES=	net-mgmt security
-MASTER_SITES=	http://vidalia-project.net:8001/\
+MASTER_SITES=	http://www.vidalia-project.net:8001/vidalia/\
 		http://tor.eff.org/dist/vidalia-bundles/
 
 MAINTAINER=	fk@fabiankeil.de
