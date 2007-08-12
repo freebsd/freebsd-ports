@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2007-07-12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -16,6 +16,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Hyper fast realtime audio/video encoder/converter, streaming server
 
 HAS_CONFIGURE=	yes
+CONFIGURE_LOG=	config.err
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_SDL=	yes
@@ -32,8 +33,7 @@ CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--extra-ldflags="-L${LOCALBASE}/lib" \
 		--extra-libs="${PTHREAD_LIBS}" \
 		--enable-gpl \
-		--enable-pthreads \
-		--enable-swscaler
+		--enable-pthreads
 CONFIGURE_ENV+=	LANG=C
 MAKE_ENV=	INSTALL="${INSTALL}"
 SHLIB_VER=	1
@@ -96,9 +96,6 @@ CONFIGURE_ARGS+=	--enable-libfaad \
 .endif
 USE_RC_SUBR=		ffserver
 
-#### BROKEN LIST #####
-WITHOUT_THEORA=	yes
-
 .if ${MACHINE_CPU:Mmmx}==""
 CONFIGURE_ARGS+=	--disable-mmx
 
@@ -134,6 +131,16 @@ MAN1+=	ffplay.1
 .else
 CONFIGURE_ARGS+=	--disable-ffplay
 .endif
+
+## swscaler
+.if defined(WITH_SWSCALER)
+CONFIGURE_ARGS+=	--enable-swscaler
+PLIST_SUB+=	SWSCAL=""
+.else
+PLIST_SUB+=	SWSCAL="@comment "
+.endif
+
+## theora
 .if !defined(WITHOUT_THEORA)
 WITH_OGG=	yes
 LIB_DEPENDS+=		theora.2:${PORTSDIR}/multimedia/libtheora
@@ -216,6 +223,15 @@ pre-everything::
 	@${ECHO_MSG} 'by defining WITH_OPTIMIZED_CFLAGS'
 	@${ECHO_MSG}
 .endif
+.ifndef(WITH_SWSCALER)
+	@${ECHO_MSG} 'Define WITH_SWSCALER to enable software scaler support'
+	@${ECHO_MSG} 'Warning: swscaler does not work with VLC!'
+	@${ECHO_MSG}
+.endif
+.ifndef(WITHOUT_THEORA)
+	@${ECHO_MSG} 'Define WITHOUT_THEORA to disable libtheora support'
+	@${ECHO_MSG}
+.endif
 .ifndef(WITHOUT_VORBIS)
 	@${ECHO_MSG} 'Define WITHOUT_VORBIS to enable libvorbisenc VORBIS codec'
 	@${ECHO_MSG}
@@ -289,13 +305,13 @@ post-patch:
 .endif
 
 post-configure:
-.ifdef(WITH_DTS)
-	@${REINPLACE_CMD} -E \
-		-e 's|-ldts|${LOCALBASE}/lib/libdts_pic.a|' \
-		-e 's|(-lx264)|-L${LOCALBASE}/lib \1|' \
-			${WRKSRC}/config.mak \
-			${WRKSRC}/libavcodec/Makefile
-.endif
+#.ifdef(WITH_DTS)
+#	@${REINPLACE_CMD} -E \
+#		-e 's|-ldts|${LOCALBASE}/lib/libdts_pic.a|' \
+#		-e 's|(-lx264)|-L${LOCALBASE}/lib \1|' \
+#			${WRKSRC}/config.mak \
+#			${WRKSRC}/libavcodec/Makefile
+#.endif
 .ifdef(WITHOUT_THEORA)
 	@${REINPLACE_CMD} -E \
 		-e 's|^(CONFIG_LIBTHEORA).*$$|\1=no|' \
