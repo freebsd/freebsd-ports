@@ -1,6 +1,6 @@
 mod_musicindex is an Apache module aimed at being a C implementation of 
 the Perl module Apache::MP3. It allows nice displaying of directories 
-containing MP3 or Ogg Vorbis files, including sorting them on various 
+containing several kinds of audio files, including sorting them on various 
 fields, streaming/downloading them, constructing playlists, and searching.
 
 WWW: http://www.parisc-linux.org/~varenet/musicindex/
