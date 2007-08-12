@@ -8039,6 +8039,7 @@ neXtaw		ports/x11-toolkits/neXtaw
 nec2c		ports/comms/nec2c
 nedi		ports/net-mgmt/nedi
 nedit		ports/editors/nedit
+nefarious	ports/irc/nefarious
 nefu		ports/net-mgmt/nefu
 nehquake	ports/games/nehquake
 nekobee		ports/audio/nekobee

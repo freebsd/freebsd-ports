@@ -1,0 +1,18 @@
+--- ircd/Makefile.in.orig	Sun Aug 12 15:43:23 2007
++++ ircd/Makefile.in	Sun Aug 12 15:44:03 2007
+@@ -295,13 +295,8 @@
+ 	  ${CHOWN} ${IRCDOWN} ${DPATH}; \
+ 	  ${CHGRP} ${IRCDGRP} ${DPATH}; \
+ 	fi
+-	@echo `date +%Y%m%d%H%M` > /tmp/ircd.tag;
+-	@echo "Installing new ircd as ${BINDIR}/ircd.`cat /tmp/ircd.tag` :"
+-	${INSTALL} -m ${IRCDMODE} -o ${IRCDOWN} -g ${IRCDGRP} ircd ${BINDIR}/ircd.`cat /tmp/ircd.tag`
+-	@( cd ${BINDIR}; \
+-	  ${RM} -f ${SYMLINK}; \
+-	  ${LN_S} ircd.`cat /tmp/ircd.tag` ${SYMLINK}; )
+-	@${RM} /tmp/ircd.tag
++	@echo "Installing new ircd as ${BINDIR}/ircd :"
++	${INSTALL} -m ${IRCDMODE} -o ${IRCDOWN} -g ${IRCDGRP} ircd ${BINDIR}/ircd
+ 	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} chkconf ${BINDIR}
+ 	${INSTALL} -m 600 -o ${IRCDOWN} -g ${IRCDGRP} ${top_srcdir}/doc/example.conf ${DPATH}
+ 	${INSTALL} -m 600 -o ${IRCDOWN} -g ${IRCDGRP} ${top_srcdir}/doc/ircd.quotes ${DPATH}
