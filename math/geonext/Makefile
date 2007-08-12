@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	geonext
-PORTVERSION=	1.51
-PORTREVISION=	1
+PORTVERSION=	1.71
 CATEGORIES+=	math graphics java
 MASTER_SITES=	http://geonext.uni-bayreuth.de/data/download/\
 		http://home.arcor.de/fehlner/site/download/\
@@ -23,7 +22,9 @@ USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 DATA=	cacerts didmat.crt geonext.html geonext.jar license.txt index.html\
-	geonext-batik.jar help.jar help_fr.jar
+	geonext-batik.jar help.jar help_fr.jar help_de.jar help_it.jar \
+	help_uk.jar
+
 IMG=	geoint.png gxt.gif ubt.gif x.ico
 
 # available languages:	al, bg, cz, de, en, es, fr, hu, it, ja, lv,
