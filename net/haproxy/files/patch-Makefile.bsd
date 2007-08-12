@@ -1,5 +1,5 @@
---- Makefile.bsd.orig	Sun May 21 21:32:29 2006
-+++ Makefile.bsd	Sun Sep 24 10:06:30 2006
+--- ./Makefile.bsd.orig	2007-03-18 05:04:39.000000000 +0800
++++ ./Makefile.bsd	2007-07-24 20:38:01.803049803 +0800
 @@ -5,22 +5,22 @@
  TARGET = openbsd
  
@@ -55,20 +55,31 @@
  
  # global options
  TARGET_OPTS=$(COPTS.$(TARGET))
-@@ -75,13 +75,13 @@
+@@ -75,14 +75,14 @@
  COPTS=-I. $(ADDINC) $(CPU_OPTS) $(TARGET_OPTS) $(REGEX_OPTS) $(SMALL_OPTS) $(DEFINE)
  LIBS=$(LIBS.$(TARGET)) $(LIBS.$(REGEX)) $(ADDLIB)
  
 -CFLAGS = -Wall $(COPTS) $(DEBUG)
 -LDFLAGS = -g
 +CFLAGS+= -Wall $(COPTS)
-+LDFLAGS+= #-g /lib/crt0.o  -lc 
++LDFLAGS+= #-g /lib/crt0.o  -lc
  
  all: haproxy
  
- haproxy: src/list.o src/chtbl.o src/hashpjw.o haproxy.o src/base64.o src/uri_auth.o
+ haproxy: src/list.o src/chtbl.o src/hashpjw.o haproxy.o src/base64.o \
+ 	 src/uri_auth.o src/rbtree.o
 -	$(LD) $(LDFLAGS) -o $@ $> $(LIBS)
 +	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $> $(LIBS)
  
  src/base64.o:	src/base64.c
  	$(CC) $(CFLAGS) -c -o $@ $<
+@@ -99,6 +99,9 @@
+ src/hashpjw.o:	src/hashpjw.c
+ 	$(CC) $(CFLAGS) -c -o $@ $<
+ 
++src/rbtree.o:	src/rbtree.c
++	$(CC) $(CFLAGS) -c -o $@ $<
++
+ haproxy.o:	haproxy.c
+ 	$(CC) $(CFLAGS) -c -o $@ $<
+ 
