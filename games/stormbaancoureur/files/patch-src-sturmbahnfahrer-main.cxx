@@ -1,10 +1,9 @@
---- main.cxx.orig	Mon Sep  4 20:04:09 2006
-+++ main.cxx	Wed Sep  6 05:03:34 2006
-@@ -655,13 +655,7 @@
-   fprintf(stderr,"plib is (c) by Steve Baker\n");
+--- src-sturmbahnfahrer/main.cxx.orig	Thu May 17 20:02:03 2007
++++ src-sturmbahnfahrer/main.cxx	Thu Aug  9 02:21:33 2007
+@@ -656,12 +656,7 @@
    fprintf(stderr,"OpenDE is (c) by Russel L. Smith\n");
  
--  char *bindirname  = dirname(argv[0]);
+   char *bindirname  = dirname(argv[0]);
 -  if (!strcmp(bindirname,"."))
      dirprefix="/usr/share/games/sturmbahnfahrer";
 -  else
