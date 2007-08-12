@@ -37,8 +37,8 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	doesn't build
+.if ${OSVERSION} > 700050
+BROKEN=		does not build
 .endif
 
 .include <bsd.port.post.mk>
