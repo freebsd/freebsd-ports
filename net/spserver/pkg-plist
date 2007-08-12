@@ -5,6 +5,8 @@ include/spserver/spexecutor.hpp
 include/spserver/sphandler.hpp
 include/spserver/sphttp.hpp
 include/spserver/sphttpmsg.hpp
+include/spserver/spiochannel.hpp
+include/spserver/spioutils.hpp
 include/spserver/splfserver.hpp
 include/spserver/spmsgblock.hpp
 include/spserver/spmsgdecoder.hpp
