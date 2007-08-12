@@ -100,3 +100,6 @@ SIZE (ncurses/ncurses-5.6-20070716.patch.gz) = 1947
 MD5 (ncurses/ncurses-5.6-20070721.patch.gz) = 70b43dc1544faea3a8d77544660fcd8c
 SHA256 (ncurses/ncurses-5.6-20070721.patch.gz) = c27700333df89670790cdf3a2cd1352370c288f5e38827761ced409ca950d80f
 SIZE (ncurses/ncurses-5.6-20070721.patch.gz) = 13252
+MD5 (ncurses/ncurses-5.6-20070728.patch.gz) = 0b27dc5c8c4cda5709776dadd88729ac
+SHA256 (ncurses/ncurses-5.6-20070728.patch.gz) = 0d87fc3594b3c17679bda56918036b557fec6c42e96fd549f4aa512fee4f842f
+SIZE (ncurses/ncurses-5.6-20070728.patch.gz) = 63045
