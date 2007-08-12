@@ -1,0 +1,12 @@
+bin/untahris
+%%DATADIR%%/VeraBd.ttf
+%%DATADIR%%/birth.wav
+%%DATADIR%%/blue.wav
+%%DATADIR%%/death.wav
+%%DATADIR%%/graph16.unt
+%%DATADIR%%/green.wav
+%%DATADIR%%/hit.wav
+%%DATADIR%%/place.wav
+%%DATADIR%%/red.wav
+%%DATADIR%%/shoot.wav
+@dirrm %%DATADIR%%
