@@ -1,9 +1,0 @@
-Simulates a jigsaw puzzle and illustrates the use of clipping paths.
-
-You need a medium-sized TIFF file to play this game.
-Left-click and drag to move a piece or cluster.
-Ctrl-left-click and drag to connect knobs to slots.
-Right-click to disassemble a cluster.
-Ctrl-right-click to extract a piece from a cluster.
-
-WWW: http://www.gnustep.it/marko/GPuzzle2/
