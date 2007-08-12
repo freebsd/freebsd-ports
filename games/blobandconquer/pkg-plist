@@ -1,4 +1,6 @@
 bin/blobAndConquer
+%%DATADIR%%/data/bsp/ambush.bsp
+%%DATADIR%%/data/bsp/ambush.map
 %%DATADIR%%/data/bsp/ancientTomb1.bsp
 %%DATADIR%%/data/bsp/ancientTomb1.map
 %%DATADIR%%/data/bsp/ancientTomb2.bsp
@@ -47,6 +49,8 @@ bin/blobAndConquer
 %%DATADIR%%/data/bsp/enemyBase3_3.map
 %%DATADIR%%/data/bsp/enemyTest.bsp
 %%DATADIR%%/data/bsp/enemyTest.map
+%%DATADIR%%/data/bsp/finalBattle.bsp
+%%DATADIR%%/data/bsp/finalBattle.map
 %%DATADIR%%/data/bsp/floodedTunnel.bsp
 %%DATADIR%%/data/bsp/floodedTunnel.map
 %%DATADIR%%/data/bsp/floodedTunnel2.bsp
@@ -66,10 +70,27 @@ bin/blobAndConquer
 %%DATADIR%%/data/combatResources/models
 %%DATADIR%%/data/combatResources/sounds
 %%DATADIR%%/data/combatResources/textures
-%%DATADIR%%/data/cutscenes/ancientTomb3End
-%%DATADIR%%/data/cutscenes/grasslands2Start
-%%DATADIR%%/data/cutscenes/hub
-%%DATADIR%%/data/cutscenes/wasteDisposalStart
+%%DATADIR%%/data/cutscenes/scripts/ancientTomb1Start
+%%DATADIR%%/data/cutscenes/scripts/ancientTomb3End
+%%DATADIR%%/data/cutscenes/scripts/assimilatorStart
+%%DATADIR%%/data/cutscenes/scripts/communicationStart
+%%DATADIR%%/data/cutscenes/scripts/grasslands2Start
+%%DATADIR%%/data/cutscenes/scripts/hub
+%%DATADIR%%/data/cutscenes/scripts/innerTowerStart
+%%DATADIR%%/data/cutscenes/scripts/supplyExit
+%%DATADIR%%/data/cutscenes/scripts/supplyStart
+%%DATADIR%%/data/cutscenes/scripts/unknownStart
+%%DATADIR%%/data/cutscenes/scripts/wasteDisposalStart
+%%DATADIR%%/data/cutscenes/text/en/ambushEnd
+%%DATADIR%%/data/cutscenes/text/en/ancientTomb1Start
+%%DATADIR%%/data/cutscenes/text/en/assimilatorStart
+%%DATADIR%%/data/cutscenes/text/en/communicationsStart
+%%DATADIR%%/data/cutscenes/text/en/grasslands2Start
+%%DATADIR%%/data/cutscenes/text/en/innerTowerStart
+%%DATADIR%%/data/cutscenes/text/en/supplyExit
+%%DATADIR%%/data/cutscenes/text/en/supplyStart
+%%DATADIR%%/data/cutscenes/text/en/unknownStart
+%%DATADIR%%/data/cutscenes/text/en/wasteStart
 %%DATADIR%%/data/fonts/909.ttf
 %%DATADIR%%/data/fonts/tele.ttf
 %%DATADIR%%/data/fonts/tycho.ttf
@@ -85,113 +106,8 @@ bin/blobAndConquer
 %%DATADIR%%/data/gameDefs/specialist
 %%DATADIR%%/data/gameDefs/spiderBlobCommander
 %%DATADIR%%/data/gameDefs/weapons
-%%DATADIR%%/data/locale/ca/additional
-%%DATADIR%%/data/locale/ca/battle
-%%DATADIR%%/data/locale/ca/cheats
-%%DATADIR%%/data/locale/ca/controls
-%%DATADIR%%/data/locale/ca/enemies
-%%DATADIR%%/data/locale/ca/hubLocale
-%%DATADIR%%/data/locale/ca/items
-%%DATADIR%%/data/locale/ca/laserGrid
-%%DATADIR%%/data/locale/ca/loadSave
-%%DATADIR%%/data/locale/ca/mastermind
-%%DATADIR%%/data/locale/ca/mission01Locale
-%%DATADIR%%/data/locale/ca/mission02Locale
-%%DATADIR%%/data/locale/ca/mission03Locale
-%%DATADIR%%/data/locale/ca/mission04Locale
-%%DATADIR%%/data/locale/ca/options
-%%DATADIR%%/data/locale/ca/status
-%%DATADIR%%/data/locale/ca/system
-%%DATADIR%%/data/locale/ca/weapons
-%%DATADIR%%/data/locale/de/additional
-%%DATADIR%%/data/locale/de/battle
-%%DATADIR%%/data/locale/de/cheats
-%%DATADIR%%/data/locale/de/controls
-%%DATADIR%%/data/locale/de/enemies
-%%DATADIR%%/data/locale/de/hubLocale
-%%DATADIR%%/data/locale/de/items
-%%DATADIR%%/data/locale/de/laserGrid
-%%DATADIR%%/data/locale/de/loadSave
-%%DATADIR%%/data/locale/de/mastermind
-%%DATADIR%%/data/locale/de/mission01Locale
-%%DATADIR%%/data/locale/de/mission02Locale
-%%DATADIR%%/data/locale/de/mission03Locale
-%%DATADIR%%/data/locale/de/mission04Locale
-%%DATADIR%%/data/locale/de/mission05Locale
-%%DATADIR%%/data/locale/de/mission06Locale
-%%DATADIR%%/data/locale/de/mission07Locale
-%%DATADIR%%/data/locale/de/mission08Locale
-%%DATADIR%%/data/locale/de/mission09Locale
-%%DATADIR%%/data/locale/de/mission10Locale
-%%DATADIR%%/data/locale/de/mission11Locale
-%%DATADIR%%/data/locale/de/mission12Locale
-%%DATADIR%%/data/locale/de/mission13Locale
-%%DATADIR%%/data/locale/de/mission14Locale
-%%DATADIR%%/data/locale/de/mission15Locale
-%%DATADIR%%/data/locale/de/mission17Locale
-%%DATADIR%%/data/locale/de/mission18Locale
-%%DATADIR%%/data/locale/de/mission19Locale
-%%DATADIR%%/data/locale/de/mission21Locale
-%%DATADIR%%/data/locale/de/mission22Locale
-%%DATADIR%%/data/locale/de/mission23Locale
-%%DATADIR%%/data/locale/de/mission24Locale
-%%DATADIR%%/data/locale/de/mission25Locale
-%%DATADIR%%/data/locale/de/mission26Locale
-%%DATADIR%%/data/locale/de/mission29Locale
-%%DATADIR%%/data/locale/de/mission30Locale
-%%DATADIR%%/data/locale/de/mission31Locale
-%%DATADIR%%/data/locale/de/options
-%%DATADIR%%/data/locale/de/status
-%%DATADIR%%/data/locale/de/system
-%%DATADIR%%/data/locale/de/trainingLocale
-%%DATADIR%%/data/locale/de/weapons
-%%DATADIR%%/data/locale/en/additional
-%%DATADIR%%/data/locale/en/battle
-%%DATADIR%%/data/locale/en/cheats
-%%DATADIR%%/data/locale/en/controls
-%%DATADIR%%/data/locale/en/enemies
-%%DATADIR%%/data/locale/en/hubLocale
-%%DATADIR%%/data/locale/en/items
-%%DATADIR%%/data/locale/en/laserGrid
-%%DATADIR%%/data/locale/en/loadSave
-%%DATADIR%%/data/locale/en/mastermind
-%%DATADIR%%/data/locale/en/mission01Locale
-%%DATADIR%%/data/locale/en/mission02Locale
-%%DATADIR%%/data/locale/en/mission03Locale
-%%DATADIR%%/data/locale/en/mission04Locale
-%%DATADIR%%/data/locale/en/mission05Locale
-%%DATADIR%%/data/locale/en/mission06Locale
-%%DATADIR%%/data/locale/en/mission07Locale
-%%DATADIR%%/data/locale/en/mission08Locale
-%%DATADIR%%/data/locale/en/mission09Locale
-%%DATADIR%%/data/locale/en/mission10Locale
-%%DATADIR%%/data/locale/en/mission11Locale
-%%DATADIR%%/data/locale/en/mission12Locale
-%%DATADIR%%/data/locale/en/mission13Locale
-%%DATADIR%%/data/locale/en/mission14Locale
-%%DATADIR%%/data/locale/en/mission15Locale
-%%DATADIR%%/data/locale/en/mission16Locale
-%%DATADIR%%/data/locale/en/mission17Locale
-%%DATADIR%%/data/locale/en/mission18Locale
-%%DATADIR%%/data/locale/en/mission19Locale
-%%DATADIR%%/data/locale/en/mission20Locale
-%%DATADIR%%/data/locale/en/mission21Locale
-%%DATADIR%%/data/locale/en/mission22Locale
-%%DATADIR%%/data/locale/en/mission23Locale
-%%DATADIR%%/data/locale/en/mission24Locale
-%%DATADIR%%/data/locale/en/mission25Locale
-%%DATADIR%%/data/locale/en/mission26Locale
-%%DATADIR%%/data/locale/en/mission27Locale
-%%DATADIR%%/data/locale/en/mission28Locale
-%%DATADIR%%/data/locale/en/mission29Locale
-%%DATADIR%%/data/locale/en/mission30Locale
-%%DATADIR%%/data/locale/en/mission31Locale
-%%DATADIR%%/data/locale/en/options
-%%DATADIR%%/data/locale/en/status
-%%DATADIR%%/data/locale/en/system
-%%DATADIR%%/data/locale/en/trainingLocale
-%%DATADIR%%/data/locale/en/weapons
-%%DATADIR%%/data/locale/index
+%%DATADIR%%/data/misc/en/laserGrid
+%%DATADIR%%/data/misc/en/mastermind
 %%DATADIR%%/data/misc/letterFrequencyTable
 %%DATADIR%%/data/missions/bossTest
 %%DATADIR%%/data/missions/hub
@@ -243,6 +159,16 @@ bin/blobAndConquer
 %%DATADIR%%/data/widgets/masterMind
 %%DATADIR%%/data/widgets/status
 %%DATADIR%%/data/widgets/title
+%%DATADIR%%/gfx/cutscenes/mission04Start.jpg
+%%DATADIR%%/gfx/cutscenes/mission07Start.jpg
+%%DATADIR%%/gfx/cutscenes/mission09Start.jpg
+%%DATADIR%%/gfx/cutscenes/mission11Start.jpg
+%%DATADIR%%/gfx/cutscenes/mission13Start.jpg
+%%DATADIR%%/gfx/cutscenes/mission17Start.jpg
+%%DATADIR%%/gfx/cutscenes/mission21Start.jpg
+%%DATADIR%%/gfx/cutscenes/mission24Start.jpg
+%%DATADIR%%/gfx/cutscenes/mission29Start.jpg
+%%DATADIR%%/gfx/cutscenes/mission30Start.png
 %%DATADIR%%/gfx/game/0.png
 %%DATADIR%%/gfx/game/1.png
 %%DATADIR%%/gfx/game/2.png
@@ -258,6 +184,7 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/game/colon.png
 %%DATADIR%%/gfx/game/cypher1.png
 %%DATADIR%%/gfx/game/cypher2.png
+%%DATADIR%%/gfx/game/desimilator.png
 %%DATADIR%%/gfx/game/dot.png
 %%DATADIR%%/gfx/game/episode2.png
 %%DATADIR%%/gfx/game/eyedroidcommander.png
@@ -266,10 +193,10 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/game/hook.png
 %%DATADIR%%/gfx/game/icegun.png
 %%DATADIR%%/gfx/game/missionFailed.png
-%%DATADIR%%/gfx/game/orderIcon1.png
-%%DATADIR%%/gfx/game/orderIcon2.png
-%%DATADIR%%/gfx/game/orderIcon3.png
-%%DATADIR%%/gfx/game/orderIcon4.png
+%%DATADIR%%/gfx/game/orderIcon1.tga
+%%DATADIR%%/gfx/game/orderIcon2.tga
+%%DATADIR%%/gfx/game/orderIcon3.tga
+%%DATADIR%%/gfx/game/orderIcon4.tga
 %%DATADIR%%/gfx/game/plasmapistol.blend.tga
 %%DATADIR%%/gfx/game/plasmarifle.blend.tga
 %%DATADIR%%/gfx/game/rifle.png
@@ -277,6 +204,7 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/game/rocketlauncher.png
 %%DATADIR%%/gfx/game/shieldbelt.png
 %%DATADIR%%/gfx/game/spiderblob.png
+%%DATADIR%%/gfx/game/stickyc4.png
 %%DATADIR%%/gfx/game/switch.png
 %%DATADIR%%/gfx/game/tankbase.png
 %%DATADIR%%/gfx/game/tanktop1.png
@@ -305,6 +233,7 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/primitive/cryptBoss.primitive
 %%DATADIR%%/gfx/primitive/darkBlob.primitive
 %%DATADIR%%/gfx/primitive/darkEyeDroid.primitive
+%%DATADIR%%/gfx/primitive/energyBall.primitive
 %%DATADIR%%/gfx/primitive/eyeDroidCommander.primitive
 %%DATADIR%%/gfx/primitive/eyedroid.primitive
 %%DATADIR%%/gfx/primitive/gunStand.primitive
@@ -326,6 +255,7 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/rw2/debris3.blend.raw
 %%DATADIR%%/gfx/rw2/debris4.blend.raw
 %%DATADIR%%/gfx/rw2/debris5.blend.raw
+%%DATADIR%%/gfx/rw2/desimilator.blend.raw
 %%DATADIR%%/gfx/rw2/diamond.blend.raw
 %%DATADIR%%/gfx/rw2/eyedroidcommander.blend.raw
 %%DATADIR%%/gfx/rw2/flamethrower.blend.raw
@@ -344,6 +274,7 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/rw2/rocketlauncher.blend.raw
 %%DATADIR%%/gfx/rw2/shieldbelt.blend.raw
 %%DATADIR%%/gfx/rw2/spiderblob.blend.raw
+%%DATADIR%%/gfx/rw2/stickyc4.blend.raw
 %%DATADIR%%/gfx/rw2/switch.blend.raw
 %%DATADIR%%/gfx/rw2/tankbase.blend.raw
 %%DATADIR%%/gfx/rw2/tanktop1.blend.raw
@@ -361,6 +292,7 @@ bin/blobAndConquer
 %%DATADIR%%/music/Liquid Crystal.xm
 %%DATADIR%%/music/Longstabben.xm
 %%DATADIR%%/music/Neutral Zone.xm
+%%DATADIR%%/music/Return To Napali.s3m
 %%DATADIR%%/music/Scene Music.xm
 %%DATADIR%%/music/Sodom of Evil.xm
 %%DATADIR%%/music/Super Robot Fighter.xm
@@ -399,6 +331,8 @@ bin/blobAndConquer
 %%DATADIR%%/sound/combat/death2.ogg
 %%DATADIR%%/sound/combat/death3.ogg
 %%DATADIR%%/sound/combat/death4.ogg
+%%DATADIR%%/sound/combat/desimilated.ogg
+%%DATADIR%%/sound/combat/desimilator.ogg
 %%DATADIR%%/sound/combat/doorOpened.ogg
 %%DATADIR%%/sound/combat/doorStart.ogg
 %%DATADIR%%/sound/combat/drowning.ogg
@@ -440,6 +374,7 @@ bin/blobAndConquer
 %%DATADIR%%/sound/combat/pain1.ogg
 %%DATADIR%%/sound/combat/pistol.ogg
 %%DATADIR%%/sound/combat/pistolReload.ogg
+%%DATADIR%%/sound/combat/plantBomb.ogg
 %%DATADIR%%/sound/combat/plasma1.ogg
 %%DATADIR%%/sound/combat/plasmaHit.ogg
 %%DATADIR%%/sound/combat/rico1.ogg
@@ -513,7 +448,9 @@ bin/blobAndConquer
 %%DATADIR%%/textures/game/demolitionPlate08.png
 %%DATADIR%%/textures/game/demolitionPlate09.png
 %%DATADIR%%/textures/game/demolitionPlate10.png
+%%DATADIR%%/textures/game/desimilator.png
 %%DATADIR%%/textures/game/dusk.jpg
+%%DATADIR%%/textures/game/energyShot.png
 %%DATADIR%%/textures/game/explosion.png
 %%DATADIR%%/textures/game/explosionMark01.tga
 %%DATADIR%%/textures/game/explosionMark02.tga
@@ -583,6 +520,8 @@ bin/blobAndConquer
 %%DATADIR%%/textures/game/spiderBlobCommander.png
 %%DATADIR%%/textures/game/spotLightMap.png
 %%DATADIR%%/textures/game/starsky.png
+%%DATADIR%%/textures/game/starsky2.png
+%%DATADIR%%/textures/game/stickyc4.png
 %%DATADIR%%/textures/game/sunset.png
 %%DATADIR%%/textures/game/switch1.png
 %%DATADIR%%/textures/game/switch2.png
@@ -638,6 +577,7 @@ bin/blobAndConquer
 %%DATADIR%%/textures/liquid/cryptpool.jpg
 %%DATADIR%%/textures/liquid/lava01.jpg
 %%DATADIR%%/textures/liquid/lava02.jpg
+%%DATADIR%%/textures/liquid/mist.jpg
 %%DATADIR%%/textures/liquid/slime.jpg
 %%DATADIR%%/textures/liquid/waste01.jpg
 %%DATADIR%%/textures/liquid/water01.jpg
@@ -730,17 +670,18 @@ bin/blobAndConquer
 @dirrm %%DATADIR%%/gfx/md2
 @dirrm %%DATADIR%%/gfx/gui
 @dirrm %%DATADIR%%/gfx/game
+@dirrm %%DATADIR%%/gfx/cutscenes
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%/data/widgets
 @dirrm %%DATADIR%%/data/texturespecs
 @dirrm %%DATADIR%%/data/missions
+@dirrm %%DATADIR%%/data/misc/en
 @dirrm %%DATADIR%%/data/misc
-@dirrm %%DATADIR%%/data/locale/en
-@dirrm %%DATADIR%%/data/locale/de
-@dirrm %%DATADIR%%/data/locale/ca
-@dirrm %%DATADIR%%/data/locale
 @dirrm %%DATADIR%%/data/gameDefs
 @dirrm %%DATADIR%%/data/fonts
+@dirrm %%DATADIR%%/data/cutscenes/text/en
+@dirrm %%DATADIR%%/data/cutscenes/text
+@dirrm %%DATADIR%%/data/cutscenes/scripts
 @dirrm %%DATADIR%%/data/cutscenes
 @dirrm %%DATADIR%%/data/combatResources
 @dirrm %%DATADIR%%/data/bsp
