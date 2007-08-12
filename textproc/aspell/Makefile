@@ -24,14 +24,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--enable-dict-dir=${DATADIR}	\
 			--enable-docdir=${DOCSDIR}	\
-			--enable-static	
+			--enable-static
 PTHREAD_CFLAGS=		# Disable threading
 PTHREAD_LIBS=		# libaspell may be used by unthreaded apps.
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS} ${PTHREAD_LIBS}"
 USE_GMAKE=		yes
 USE_ICONV=		yes
-USE_GETTEXT=		yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
 
@@ -70,6 +69,7 @@ PLIST_SUB+=		SCRIPTS="@comment "
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .else
+USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .endif
 
