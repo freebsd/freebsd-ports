@@ -8,14 +8,16 @@
 PORTNAME=		kicad
 DISTVERSION=		2007-07-02
 CATEGORIES=		cad
-MASTER_SITES=		ftp://iut-tice.ujf-grenoble.fr/cao/:dat		\
-			ftp://ftp.lis.inpg.fr/uploads/kicad/:dat	\
-			http://iut-tice.ujf-grenoble.fr/cao/:dat	\
-			ftp://iut-tice.ujf-grenoble.fr/cao/:src	\
-			ftp://ftp.lis.inpg.fr/uploads/kicad/:src\
-			http://iut-tice.ujf-grenoble.fr/cao/:src
-DISTFILES=		${PORTNAME}-${DISTVERSION}.tgz:dat		\
-			${PORTNAME}-sources--${DISTVERSION}${EXTRACT_SUFX}:src
+#MASTER_SITES=		ftp://iut-tice.ujf-grenoble.fr/cao/:dat		\
+#			ftp://ftp.lis.inpg.fr/uploads/kicad/:dat	\
+#			http://iut-tice.ujf-grenoble.fr/cao/:dat	\
+#			ftp://iut-tice.ujf-grenoble.fr/cao/:src		\
+#			ftp://ftp.lis.inpg.fr/uploads/kicad/:src	\
+#			http://iut-tice.ujf-grenoble.fr/cao/:src
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	thierry/${PORTNAME}
+DISTFILES=		${PORTNAME}-${DISTVERSION}.tgz	\
+			${PORTNAME}-sources--${DISTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${PORTNAME}-sources--${DISTVERSION}${EXTRACT_SUFX}
 
@@ -23,7 +25,7 @@ MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Schematic and PCB editing software
 
 .if !defined(NOPORTDOCS)
-DISTFILES+=	doc_components-${DOCVERSION}.tgz:dat
+DISTFILES+=	doc_components-${DOCVERSION}.tgz
 DOCVERSION=	2007-07-02
 .endif
 
