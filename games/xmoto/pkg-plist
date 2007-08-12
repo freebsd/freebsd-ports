@@ -1,13 +1,54 @@
 bin/xmoto
-%%NLS%%share/locale/ca/LC_MESSAGES/xmoto.mo
-%%NLS%%share/locale/de/LC_MESSAGES/xmoto.mo
-%%NLS%%share/locale/es/LC_MESSAGES/xmoto.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/xmoto.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/ca_ES/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/cs_CZ/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/de_DE/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/es_ES/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/fi_FI/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/fr_FR/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/it_IT/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/lv_LV/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/nb_NO/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/nn_NO/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/no_NO/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/pl_PL/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/ru_RU/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/sk_SK/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/sv_SE/LC_MESSAGES/xmoto.mo
+%%DATADIR%%/Textures/Fonts/DejaVuSans.ttf
 %%DATADIR%%/Textures/Musics/batcave.ogg
+%%DATADIR%%/Textures/Musics/legolodio.ogg
 %%DATADIR%%/Textures/Musics/menu.ogg
 %%DATADIR%%/Textures/Musics/ridealong.ogg
 %%DATADIR%%/xmoto.bin
+%%DATADIR%%/xmoto_icone_x.ico
+%%NLS%%@dirrmtry share/locale/ca_ES/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca_ES
+%%NLS%%@dirrmtry share/locale/cs_CZ/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs_CZ
+%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_DE
+%%NLS%%@dirrmtry share/locale/fi_FI/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi_FI
+%%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it_IT
+%%NLS%%@dirrmtry share/locale/lv_LV/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lv_LV
+%%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb_NO
+%%NLS%%@dirrmtry share/locale/nn_NO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nn_NO
+%%NLS%%@dirrmtry share/locale/no_NO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/no_NO
+%%NLS%%@dirrmtry share/locale/pl_PL/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl_PL
+%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru_RU
+%%NLS%%@dirrmtry share/locale/sk_SK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk_SK
+%%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv_SE
 @dirrm %%DATADIR%%/Textures/Musics
+@dirrm %%DATADIR%%/Textures/Fonts
 @dirrm %%DATADIR%%/Textures
 @dirrm %%DATADIR%%
