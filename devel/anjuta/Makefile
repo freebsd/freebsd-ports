@@ -8,7 +8,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -23,9 +23,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		gbf-1.0:${PORTSDIR}/devel/gnome-build \
 		gladeui-1.5:${PORTSDIR}/devel/glade3 \
 		devhelp-1.0:${PORTSDIR}/devel/devhelp
-RUN_DEPENDS=	${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoconf \
-		${LOCALBASE}/gnu-autotools/bin/automake:${PORTSDIR}/devel/gnu-automake \
-		bash:${PORTSDIR}/shells/bash \
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		autogen:${PORTSDIR}/devel/autogen \
 		neato:${PORTSDIR}/graphics/graphviz \
 		libtool:${PORTSDIR}/devel/libtool15 \
@@ -33,6 +31,7 @@ RUN_DEPENDS=	${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoc
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
+USE_AUTOTOOLS=	autotools:run
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
@@ -87,8 +86,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-	${MV} ${PREFIX}/bin/anjuta ${PREFIX}/bin/anjuta-bin
-	${INSTALL_SCRIPT} ${WRKDIR}/anjuta ${PREFIX}/bin
 	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.post.mk>

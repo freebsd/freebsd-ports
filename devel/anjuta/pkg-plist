@@ -1,5 +1,4 @@
 bin/anjuta
-bin/anjuta-bin
 bin/anjuta-shell
 bin/anjuta_import.sh
 bin/anjuta_launcher
