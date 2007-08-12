@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	bmpx
-PORTVERSION=	0.36.1
-PORTREVISION=	5
+PORTVERSION=	0.40.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://files.beep-media-player.org/releases/0.36/
+MASTER_SITES=	http://files.beep-media-player.org/releases/0.40/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Media player geared towards usability, technical efficiency and looks
@@ -23,11 +22,15 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		rsvg-2:${PORTSDIR}/graphics/librsvg2 \
 		boost_date_time.4:${PORTSDIR}/devel/boost \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		hal.1:${PORTSDIR}/sysutils/hal \
+		sexymm.2:${PORTSDIR}/x11-toolkits/libsexymm \
+		ofa.0:${PORTSDIR}/audio/libofa \
+		soup-2.2.8:${PORTSDIR}/devel/libsoup
 
 CONFLICTS=	bmpx-devel-[0-9]*
 
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_FAM=	yes
@@ -38,8 +41,7 @@ INSTALLS_ICONS=	yes
 USE_GSTREAMER=	good mp3 ogg vorbis cdparanoia
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--disable-hal \
-			--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \
+CONFIGURE_ARGS+=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \
 			--with-dbus-services-dir="${PREFIX}/share/dbus-1/services" \
 			--with-libintl-prefix="${LOCALBASE}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -64,11 +66,6 @@ USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .endif
 
-.if defined(WITH_OFA)
-CONFIGURE_ARGS+=	--enable-ofa
-LIB_DEPENDS+=		ofa.0:${PORTSDIR}/audio/libofa
-.endif
-
 .if defined(WITH_SIDPLAY)
 CONFIGURE_ARGS+=	--enable-sid
 USE_GSTREAMER+=		sidplay
@@ -88,10 +85,4 @@ PLIST_SUB+=		MPEG4IP=""
 PLIST_SUB+=		MPEG4IP="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile on 5.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
