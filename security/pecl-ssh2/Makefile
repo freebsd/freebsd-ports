@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ssh2
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	security pear
-MASTER_SITES=	http://pecl.php.net/get/
+MASTER_SITES=	LOCAL/chinsan/PECL/
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
@@ -21,7 +21,9 @@ LIB_DEPENDS=	ssh2:${PORTSDIR}/security/libssh2
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's, -ldl,,' ${WRKSRC}/config.m4
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${EXTRA_LIBS}"
+
+CONFIGURE_ARGS=	--with-ssh2
 
 .include <bsd.port.mk>
