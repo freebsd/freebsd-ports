@@ -14,7 +14,9 @@
 %%SITE_PERL%%/Mail/DKIM/Canonicalization/relaxed.pm
 %%SITE_PERL%%/Mail/DKIM/Canonicalization/simple.pm
 %%SITE_PERL%%/Mail/DKIM/Common.pm
+%%SITE_PERL%%/Mail/DKIM/DNS.pm
 %%SITE_PERL%%/Mail/DKIM/DkSignature.pm
+%%SITE_PERL%%/Mail/DKIM/DkimPolicy.pm
 %%SITE_PERL%%/Mail/DKIM/Key.pm
 %%SITE_PERL%%/Mail/DKIM/KeyValueList.pm
 %%SITE_PERL%%/Mail/DKIM/MessageParser.pm

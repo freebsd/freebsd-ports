@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-DKIM
-PORTVERSION=	0.26
+PORTVERSION=	0.28
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -33,6 +33,7 @@ MAN3=		Mail::DKIM.3 \
 		Mail::DKIM::Algorithm::rsa_sha256.3 \
 		Mail::DKIM::Canonicalization::Base.3 \
 		Mail::DKIM::Canonicalization::DkimCommon.3 \
+		Mail::DKIM::DkimPolicy.3 \
     		Mail::DKIM::DkSignature.3 \
 		Mail::DKIM::Policy.3 \
 		Mail::DKIM::Signature.3 \
