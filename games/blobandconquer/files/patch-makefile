@@ -1,6 +1,6 @@
---- makefile.orig	Tue Jan  9 19:54:33 2007
-+++ makefile	Sat Jan 27 12:37:37 2007
-@@ -12,15 +12,15 @@
+--- makefile.orig	Fri Aug 10 01:56:59 2007
++++ makefile	Fri Aug 10 01:58:10 2007
+@@ -12,21 +12,20 @@
  
  PREFIX = $(DESTDIR)/usr
  BINDIR = $(PREFIX)/games
@@ -10,24 +10,20 @@
 +DOCDIR = $(DOCSDIR)/
  ICONDIR = $(PREFIX)/share/icons
  MENUDIR = $(PREFIX)/share/applications
+ LOCALEDIR = $(PREFIX)/share/locale/
  
--CFLAGS += `sdl-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK) -DDEV=$(DEV)
--CFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DGAMEPLAYMANUAL=\"$(DOCDIR)index.html\" -Wall -pedantic
+-CXXFLAGS = $(CFLAGS)
+ CXXFLAGS += -Wformat=2 -Wformat-security -Wstrict-aliasing=2
+ CXXFLAGS += -Wmissing-format-attribute -Wmissing-noreturn
+ CXXFLAGS += -Wdisabled-optimization
+-CXXFLAGS += `sdl-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK) -DDEV=$(DEV)
++CXXFLAGS += -I$(X11BASE)/include `$(SDL_CONFIG) --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK) -DDEV=$(DEV)
+ CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DGAMEPLAYMANUAL=\"$(DOCDIR)/index.html\" -Wall -pedantic
+ CXXFLAGS += -DLOCALEDIR=\"$(LOCALEDIR)\"
 -LIBPATH = -L/usr/X11/lib -L/usr/X11R6/lib
 -LIBS = -lGL -lGLU `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz
-+CXXFLAGS += -I$(X11BASE)/include `$(SDL_CONFIG) --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK) -DDEV=$(DEV)
-+CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DGAMEPLAYMANUAL=\"$(DOCDIR)index.html\" -Wall -pedantic
 +LIBPATH = -L$(X11BASE)/lib
-+LIBS = -lGL -lGLU `$(SDL_CONFIG) --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz
++LIBS = -lGL -lGLU `$(SDL_CONFIG) --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz -lintl
  
  # Yes, it means compiling is a little slower... but it's less hassle
  SEARCHPATH += src/ src/3d/ src/bosses/ src/combat src/common/ src/effects/ src/entities/ src/game/ src/gui/ 
-@@ -70,7 +70,7 @@
- all: $(PROG)
- 
- %.o: %.cpp %.h data/gameDefs/defines.h defs.h headers.h
--	$(CXX) $(CFLAGS) -c $<
-+	$(CXX) $(CXXFLAGS) -c $<
- 
- # linking the program.
- $(PROG): $(OBJS) main.o 

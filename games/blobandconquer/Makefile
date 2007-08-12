@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	blobandconquer
-DISTVERSION=	0.8-2
-PORTREVISION=	1
+DISTVERSION=	0.91-1
 CATEGORIES=	games
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 		http://www.parallelrealities.co.uk/download.php?type=zip&file=
@@ -22,10 +21,11 @@ USE_SDL=	sdl mixer image ttf
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_DOS2UNIX=	makefile src/headers.h src/main.cpp
+USE_GETTEXT=	yes
 
 FETCH_CMD=	/usr/bin/fetch
 
-WRKSRC=		${WRKDIR}/blobAndConquer-${DISTVERSION:C/^([0-9]\.[0-9]).*/\1/}
+WRKSRC=		${WRKDIR}/blobAndConquer-${DISTVERSION:C/^([0-9]\.[0-9][0-9]).*/\1/}
 PORTDOCS=	*
 
 MAKEFILE=	makefile
@@ -39,7 +39,6 @@ DESKTOP_ENTRIES="Blob and Conquer" \
 		false
 
 post-patch:
-	@${RM} -f ${WRKSRC}/doc/LICENSE
 	@${FIND} ${WRKSRC} -type d -empty -exec ${TOUCH} "{}/.keep_me" \;
 
 do-install:
