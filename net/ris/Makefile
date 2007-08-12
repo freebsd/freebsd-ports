@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	ris
-PORTVERSION=	0.1
+PORTVERSION=	0.3
 CATEGORIES=	net
 MASTER_SITES=	http://oss.netfarm.it/guides/ \
-		http://freebsd.komi.mtsnet.ru/ports/distfiles/
-DISTNAME=	ris-linux
+		http://m.komi.mtsnet.ru/FreeBSD/distfiles/
+DISTNAME=	ris-linux-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tiamat@komi.mts.ru
 COMMENT=	OpenSource alternative to Microsoft Windows RIS
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/in.tftpd:${PORTSDIR}/ftp/tftp-hpa
@@ -23,28 +23,43 @@ NO_BUILD=	yes
 
 VARDIR=		/var
 PID_FILE?=	${VARDIR}/run/binlsrv.pid
+LOG_FILE?=	${VARDIR}/log/binlsrv.log
 DEVLIST_CACHE?=	${VARDIR}/db/devlist.cache
 
-PLIST_FILES=	sbin/binlsrv.py sbin/decode.py \
-		sbin/fixloader.py sbin/infparser.py \
-		sbin/fixup-repository.sh
+SCRIPTS=	binlsrv.py decode.py		\
+		fixloader.py hexdump.py		\
+		infdump.py infparser.py		\
+		modldr.py fixup-repository.sh
 
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
-		PID_FILE=${PID_FILE} \
+
+SUB_FILES=	pkg-message
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}	\
+		PID_FILE=${PID_FILE}		\
+		LOG_FILE=${LOG_FILE}		\
 		DEVLIST_CACHE=${DEVLIST_CACHE}
 
 post-patch:
-.for SCRIPT in ${PLIST_FILES}
+.for SCRIPT in ${SCRIPTS}
 	@${REINPLACE_CMD} -e \
-		's|@PYTHON_CMD@|${PYTHON_CMD}|; \
-		s|@PID_FILE@|${PID_FILE}|; \
-		s|@DEVLIST_CACHE@|${DEVLIST_CACHE}|' \
-		${WRKSRC}/${SCRIPT:S/sbin\///}
+		's|@PYTHON_CMD@|${PYTHON_CMD}|;		\
+		s|@PID_FILE@|${PID_FILE}|;		\
+		s|@LOG_FILE@|${LOG_FILE}|;		\
+		s|@DEVLIST_CACHE@|${DEVLIST_CACHE}|'	\
+		${WRKSRC}/${SCRIPT}
 .endfor
 
 do-install:
-.for SCRIPT in ${PLIST_FILES}
-	${INSTALL_SCRIPT} ${WRKSRC}/${SCRIPT:S/sbin\///} ${PREFIX}/sbin
+	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}/inf
+	@${MKDIR} ${DATADIR}/sys
+	@${INSTALL_DATA} ${WRKSRC}/winnt.sif ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/winnt-ris.sif ${DATADIR}
+	@${INSTALL_DATA} ${FILESDIR}/tftp.map ${DATADIR}
+.for SCRIPT in ${SCRIPTS}
+	@${INSTALL_SCRIPT} ${WRKSRC}/${SCRIPT} ${DATADIR}
 .endfor
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
