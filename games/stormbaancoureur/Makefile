@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sturmbahnfahrer
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	http://www.stolk.org/sturmbahnfahrer/download/ \
 		http://www.amdmi3.ru/distfiles/
@@ -20,21 +19,19 @@ BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
 USE_GL=		yes
-USE_GCC=	3.4+
 
 MAKE_ENV=	DATADIR="${DATADIR}"
+
+BUILD_WRKSRC=	${WRKSRC}/src-sturmbahnfahrer
+INSTALL_WRKSRC=	${WRKSRC}/src-sturmbahnfahrer
 
 PORTDOCS=	README
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile on FreeBSD 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/games/sturmbahnfahrer|${DATADIR}|' \
-		${WRKSRC}/main.cxx
+		${WRKSRC}/src-sturmbahnfahrer/main.cxx
 
 .if !defined(NOPORTDOCS)
 post-install:

@@ -1,6 +1,6 @@
---- soundenginealsa.cxx.orig	Mon Sep  4 19:47:37 2006
-+++ soundenginealsa.cxx	Wed Sep  6 04:43:37 2006
-@@ -38,85 +38,20 @@
+--- src-common/soundenginealsa.cxx.orig	Thu May 17 20:02:03 2007
++++ src-common/soundenginealsa.cxx	Thu Aug  9 02:19:21 2007
+@@ -38,93 +38,20 @@
    complexfeed(0),
    enginefeed(0),
    activefeed(0),
@@ -10,6 +10,14 @@
    framelag(lag),
    lpfilter(0.0)
  {
+-  // test endiness
+-  unsigned int scratch=0;
+-  unsigned char *p = (unsigned char*) &scratch;
+-  *p = 1;
+-  assert(scratch == 1 || scratch == 16777216);
+-  SoundClip::bigendian = (scratch == 16777216);
+-  //fprintf(stderr,"soundenginealsa.cxx: %s endian\n", (SoundClip::bigendian)?"big":"little");
+-
 -  /* Open PCM device for playback. */
 -  int rc = snd_pcm_open(&handle, "default", SND_PCM_STREAM_PLAYBACK, 0);
 -  if (rc < 0)
@@ -27,7 +35,7 @@
 -  /* Interleaved mode */
 -  snd_pcm_hw_params_set_access(handle, params, SND_PCM_ACCESS_RW_INTERLEAVED);
 -  /* Signed 16-bit little-endian format */
--  snd_pcm_hw_params_set_format(handle, params, SND_PCM_FORMAT_S16_LE);
+-  snd_pcm_hw_params_set_format(handle, params, (SoundClip::bigendian)?SND_PCM_FORMAT_S16_BE:SND_PCM_FORMAT_S16_LE);
 -  /* Two channels (stereo) */
 -  snd_pcm_hw_params_set_channels(handle, params, 2);
 -  /* 44100 bits/second sampling rate (CD quality) */
@@ -80,18 +88,59 @@
  }
  
   
- void SoundEngineAlsa::Play(const std::string &fname, int delay)
+ void SoundEngineAlsa::Play(const std::string &fname, int delay, bool looping)
  {
--  activefeed->Paste(fname, delay);
+-  activefeed->Paste(fname, delay, looping);
  }
  
  
-@@ -173,58 +108,7 @@
+@@ -136,40 +63,11 @@
+ 
+ void SoundEngineAlsa::SetMode(const std::string &modename)
+ {
+-  if (modename=="complex")
+-  {
+-    activefeed = complexfeed;
+-    return;
+-  }
+-  if (modename=="simple")
+-  {
+-    activefeed = simplefeed;
+-    return;
+-  }
+-  if (modename=="modulated")
+-  {
+-    activefeed = modulatedfeed;
+-    return;
+-  }
+-  if (modename=="engine")
+-  {
+-    activefeed = enginefeed;
+-    return;
+-  }
+-  if (modename=="none")
+-  {
+-    activefeed = 0;
+-    return;
+-  }
+-  assert(0);
+ }
+ 
+ 
+ void SoundEngineAlsa::SetModulation(float freq, float ampl)
+ {
+-  modulatedfeed->SetModulation(freq, ampl);
+-  complexfeed->SetModulation(freq, ampl);
+-  enginefeed->SetModulation(freq, ampl);
+ }
+ 
+ 
+@@ -182,58 +80,6 @@
  
  float SoundEngineAlsa::Sustain(void)
  {
 -  if (!activefeed)
-     return 0.0;
+-    return 0.0;
 -  snd_pcm_sframes_t delay;
 -  int avail = snd_pcm_avail_update(handle);
 -  int rc = snd_pcm_delay(handle, &delay);
@@ -113,7 +162,7 @@
 -
 -#if 0
 -  if (delay<0)
--    fprintf(stderr,"delay=%d, avail=%d, periodsz=%d\n", delay, avail, periodsz);
+-    fprintf(stderr,"delay=%d, avail=%d, periodsz=%d\n", (int) delay, (int) avail, (int) periodsz);
 -#else
 -  (void) avail;
 -#endif
