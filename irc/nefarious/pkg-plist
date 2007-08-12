@@ -1,0 +1,10 @@
+%%INSTALL_PREFIX%%/bin/ircd
+%%INSTALL_PREFIX%%/bin/chkconf
+%%INSTALL_PREFIX%%/lib/example.conf
+%%INSTALL_PREFIX%%/lib/ircd.quotes
+%%INSTALL_PREFIX%%/lib/ircd.rules
+%%INSTALL_PREFIX%%/lib/ircd.opermotd
+%%INSTALL_PREFIX%%/lib/ircd.motd
+@dirrm %%INSTALL_PREFIX%%/bin
+@dirrm %%INSTALL_PREFIX%%/lib
+@dirrm %%INSTALL_PREFIX%%

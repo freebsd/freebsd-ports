@@ -68,6 +68,7 @@
     SUBDIR += lostirc
     SUBDIR += miau
     SUBDIR += muh
+    SUBDIR += nefarious
     SUBDIR += nethirc
     SUBDIR += netwalker-ircc
     SUBDIR += ngircd
