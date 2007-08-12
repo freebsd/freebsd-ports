@@ -160,10 +160,12 @@ PLIST_SUB=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
 #WITH_OPENLDAP=		yes
 #WITH_OPENLDAP_VER=	23
 
-# WITH_BDB_VER is the version of the Berkeley DB library to use, and
-# may be 1, which corresponds to version 1.85 in the base system, 4,
-# 41, 42 or 43 which depends on the databases/db4[123] ports.
-WITH_BDB_VER?=1
+# Define WITH_BDB or WITH_BDB_VER to link against the Berkeley DB library.
+# Define WITH_BDB_VER to specify a particular version of Berkeley DB to use.
+# Values may be 1, which corresponds to version 1.85 in the base system, 4,
+# 41, 42, 43, ... which depends on the databases/db4* ports.
+#WITH_BDB=		yes
+#WITH_BDB_VER?=		1
 
 # When Exim is decoding MIME "words" in header lines it converts any foreign
 # character sets to the one that is set in the headers_charset option.
@@ -323,32 +325,21 @@ SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
 BROKEN=		deprecated option DB_LIB_VERSION used, use WITH_BDB_VER
 .endif
 
-.if ${WITH_BDB_VER} == 1
+.if defined(WITH_BDB_VER)
+.if ${WITH_BDB_VER} > 1
+WITH_BDB=	yes
+.endif
+.endif
+
+.if defined(WITH_BDB)
+USE_BDB= yes
+INVALID_BDB_VER=	2 3
+DB_LIBS=	-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}
+DB_INCLUDES=	-I${BDB_INCLUDE_DIR}
+.else
 DB_LIBS=
 DB_INCLUDES=
 SEDLIST+=	-e 's,^(DBMLIB=),\# \1,'
-.elif (${WITH_BDB_VER} == 4)
-DB_LIBS=	-L${LOCALBASE}/lib -ldb4
-DB_INCLUDES=	-I${LOCALBASE}/include/db4
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
-.elif (${WITH_BDB_VER} == 41)
-DB_LIBS=	-L${LOCALBASE}/lib -ldb41
-DB_INCLUDES=	-I${LOCALBASE}/include/db41
-LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
-.elif (${WITH_BDB_VER} == 42)
-DB_LIBS=	-L${LOCALBASE}/lib -ldb-4.2
-DB_INCLUDES=	-I${LOCALBASE}/include/db42
-LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
-.elif (${WITH_BDB_VER} == 43)
-DB_LIBS=	-L${LOCALBASE}/lib -ldb-4.3
-DB_INCLUDES=	-I${LOCALBASE}/include/db43
-LIB_DEPENDS+=	db-4.3.0:${PORTSDIR}/databases/db43
-.elif (${WITH_BDB_VER} == 44)
-DB_LIBS=	-L${LOCALBASE}/lib -ldb-4.4
-DB_INCLUDES=	-I${LOCALBASE}/include/db44
-LIB_DEPENDS+=	db-4.4.0:${PORTSDIR}/databases/db44
-.else
-BROKEN=		WITH_BDB_VER must be either 1, 4, 41, 42, 43 or 44
 .endif
 SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES},'
@@ -437,7 +428,7 @@ SEDLIST+=	-e 's,XX_PGSQL_[^ ]*_XX,,'
 .endif
 
 .if !defined(WITH_PGSQL) && !defined(WITH_MYSQL) && !defined(LDAP_LIB_TYPE) && \
-    ${WITH_BDB_VER} == 1
+    !defined(WITH_BDB)
 SEDLIST+=	-e 's,^(LOOKUP_LIBS=),\# \1,' \
 		-e 's,^(LOOKUP_INCLUDE=),\# \1,'
 .endif
@@ -479,10 +470,10 @@ SEDLIST+=	-e 's,^\# (LOOKUP_PASSWD=),\1,'
 .endif
 
 .if defined(WITH_SQLITE)
+USE_SQLITE=	yes
 SEDLIST+=	-e 's,XX_SQLITE_LIBS_XX,-L${LOCALBASE}/lib -lsqlite3,' \
 		-e 's,XX_SQLITE_FLAGS_XX,-I${LOCALBASE}/include,' \
 		-e 's,^\# (LOOKUP_SQLITE=),\1,'
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 .else
 SEDLIST+=	-e 's,XX_SQLITE_LIBS_XX,,' \
 		-e 's,XX_SQLITE_FLAGS_XX,,'
