@@ -25,6 +25,7 @@ getpr   - downloads a problem report from GNATS and attempts to extract
           this probably needs to be checked for potential security problems.
 gnomedepends - Analyse pkg/PLIST and give an advice as to which GNOME ports
                should be listes in {RUN,LIB}_DEPENDS for this port
+neededlibs.sh - Extract direct library dependencies from binaries.
 plist - automate (mostly, at least) pkg-plist generation
 prpatch - just does `patch $1 < pr-patch' (pr-patch is created by getpr)
 prdone  - checks in the port, attempting to fill out the commit message using
@@ -33,6 +34,8 @@ prdone  - checks in the port, attempting to fill out the commit message using
 portsearch - A utility for searching the ports tree. It allows more detailed
              search criteria than ``make search key=<string>'' and accepts
              all perl(1) regular expressions.
+resolveportsfromlibs.sh - Prints the name(s) of ports(s) given a library
+                          filename, suitable for direct use in LIB_DEPENDS.
 splitpatch.pl - A small script to convert multi-file patches to several
                 appropriately named single-file patches.
 tindex - script used to build INDEXes for supported FreeBSD branches, which
