@@ -27,7 +27,11 @@ USE_BDB=	40+
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	-fPIC
+.if ${OSVERSION} < 700000
 MAKE_ARGS+=	gcclib=`${CXX} -print-file-name=libgcc_pic.a`
+.else
+MAKE_ARGS+=	gcclib=`${CXX} -print-file-name=libgcc_s.so`
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
