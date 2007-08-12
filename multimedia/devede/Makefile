@@ -7,7 +7,7 @@
 
 PORTNAME=	devede
 DISTVERSION=	3.01
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.rastersoft.com/descargas/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.rastersoft.com/descargas/ \
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Create video DVDs, VCDs, sVCDs or CVDs from any number of video files
 
-RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
+RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
 		spumux:${PORTSDIR}/multimedia/dvdauthor \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager
 
@@ -42,11 +42,6 @@ DEVEDE_LIBS=	devede_convert.py devede_gtk_helper.py devede_other.py
 .if defined(WITH_PSYCO)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 .endif
-
-pre-everything::
-	@${ECHO_MSG} "========================================================================"
-	@${ECHO_MSG} "To use devede you need to build multimedia/mplayer with option MENCODER!"
-	@${ECHO_MSG} "========================================================================"
 
 do-install:
 	@${MKDIR} ${DATADIR}
