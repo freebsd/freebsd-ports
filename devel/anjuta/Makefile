@@ -66,9 +66,6 @@ PLIST_SUB+=	SVN="@comment "
 .endif
 
 post-configure:
-	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		s|%%PREFIX%%|${PREFIX}|g' < ${FILESDIR}/anjuta \
-		> ${WRKDIR}/anjuta
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash| ; \
 	    	s|/usr/local|${PREFIX}| ; \
 		s|share/anjuta|share/gnome/anjuta|' \
