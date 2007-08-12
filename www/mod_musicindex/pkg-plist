@@ -1,12 +1,16 @@
 %%APACHEMODDIR%%/mod_musicindex.so
 @exec %D/sbin/apxs -e -A -n musicindex %D/%F
 @unexec %D/sbin/apxs -e -A -n musicindex %D/%F
-www/musicindex/directory.png
-www/musicindex/fetch.png
-www/musicindex/general.png
-www/musicindex/musicindex.css
-www/musicindex/right_arrow.gif
-www/musicindex/sound.png
-%%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm www/musicindex
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/musicindex.css
+%%DATADIR%%/directory.png
+%%DATADIR%%/fetch.png
+%%DATADIR%%/general.png
+%%DATADIR%%/right_arrow.gif
+%%DATADIR%%/sound.png
+%%DATADIR%%/shuffle.png
+%%DATADIR%%/rss.png
+%%DATADIR%%/fetchok.png
+%%DATADIR%%/soundok.png
+%%NLS%%share/locale/fr/LC_MESSAGES/mod_musicindex.mo
+%%NLS%%share/locale/it/LC_MESSAGES/mod_musicindex.mo
+@dirrm %%DATADIR%%
