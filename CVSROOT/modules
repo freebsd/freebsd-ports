@@ -5645,7 +5645,7 @@ jpilot-db	ports/palm/jpilot-db
 jps		ports/sysutils/jps
 jre		ports/java/jre
 jrefentry	ports/textproc/jrefentry
-jrobin		ports/net/jrobin
+jrobin		ports/databases/jrobin
 jrtplib		ports/devel/jrtplib
 jruby		ports/lang/jruby
 jsap		ports/devel/jsap
@@ -10540,7 +10540,7 @@ p5-POE-Component-LaDBI	ports/databases/p5-POE-Component-LaDBI
 p5-POE-Component-Logger	ports/devel/p5-POE-Component-Logger
 p5-POE-Component-Pcap	ports/net/p5-POE-Component-Pcap
 p5-POE-Component-Pluggable	ports/devel/p5-POE-Component-Pluggable
-p5-POE-Component-RRDTool	ports/net/p5-POE-Component-RRDTool
+p5-POE-Component-RRDTool	ports/databases/p5-POE-Component-RRDTool
 p5-POE-Component-RSS	ports/devel/p5-POE-Component-RSS
 p5-POE-Component-RSSAggregator	ports/devel/p5-POE-Component-RSSAggregator
 p5-POE-Component-SMTP	ports/mail/p5-POE-Component-SMTP
@@ -10678,7 +10678,7 @@ p5-REST-Application	ports/net/p5-REST-Application
 p5-RIFF-Info	ports/multimedia/p5-RIFF-Info
 p5-RPC-Simple	ports/net/p5-RPC-Simple
 p5-RPC-XML	ports/net/p5-RPC-XML
-p5-RRD-Simple	ports/net/p5-RRD-Simple
+p5-RRD-Simple	ports/databases/p5-RRD-Simple
 p5-RRDTool-OO	ports/devel/p5-RRDTool-OO
 p5-RT-Client-REST	ports/www/p5-RT-Client-REST
 p5-RTF-Parser	ports/textproc/p5-RTF-Parser
@@ -12000,7 +12000,7 @@ php4-posix	ports/sysutils/php4-posix
 php4-pspell	ports/textproc/php4-pspell
 php4-readline	ports/devel/php4-readline
 php4-recode	ports/converters/php4-recode
-php4-rrdtool	ports/net/php4-rrdtool
+php4-rrdtool	ports/databases/php4-rrdtool
 php4-session	ports/www/php4-session
 php4-shmop	ports/devel/php4-shmop
 php4-snmp	ports/net-mgmt/php4-snmp
@@ -13157,7 +13157,7 @@ py-ro		ports/devel/py-ro
 py-routes	ports/www/py-routes
 py-roxlib	ports/devel/py-roxlib
 py-rrdpipe	ports/databases/py-rrdpipe
-py-rrdtool_lgpl	ports/net/py-rrdtool_lgpl
+py-rrdtool_lgpl	ports/databases/py-rrdtool_lgpl
 py-rss2gen	ports/textproc/py-rss2gen
 py-rt		ports/net/py-rt
 py-rtf		ports/print/py-rtf
@@ -13851,7 +13851,7 @@ rpy		ports/math/rpy
 rqm		ports/mbone/rqm
 rrdman		ports/databases/rrdman
 rrdtool		ports/databases/rrdtool
-rrdtool10	ports/net/rrdtool10
+rrdtool10	ports/databases/rrdtool10
 rscheme		ports/lang/rscheme
 rshell		ports/net/rshell
 rsibreak	ports/x11/rsibreak
@@ -14730,7 +14730,7 @@ sml-mode.el	ports/lang/sml-mode.el
 sml-nj		ports/lang/sml-nj
 sml-nj-devel	ports/lang/sml-nj-devel
 smm++		ports/net/smm++
-smokeping	ports/net/smokeping
+smokeping	ports/net-mgmt/smokeping
 smpeg		ports/multimedia/smpeg
 smpeg-xmms	ports/multimedia/smpeg-xmms
 smplayer	ports/multimedia/smplayer
