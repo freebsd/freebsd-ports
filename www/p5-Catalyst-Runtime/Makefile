@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.7007
+PORTVERSION=	5.7008
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Catalyst
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-File-Modified>=0:${PORTSDIR}/devel/p5-File-Modified \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-HTTP-Body>=0.6:${PORTSDIR}/www/p5-HTTP-Body \
+		p5-HTTP-Body>=0.9:${PORTSDIR}/www/p5-HTTP-Body \
 		p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		p5-HTTP-Request-AsCGI>=0.5:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
 		p5-Module-Pluggable>=3.01:${PORTSDIR}/devel/p5-Module-Pluggable \
