@@ -338,6 +338,7 @@ include/hat-2.05/TimeBuiltinTypes.hx
 %%GHC%%@dirrm imports/hat-2.05/ghc-606/Hat
 %%GHC%%@dirrm imports/hat-2.05/ghc-606
 %%GHC%%@dirrm imports/hat-2.05
+%%GHC%%@dirrm imports
 %%GHC%%@dirrm lib/hat-2.05/ix86-FreeBSD/ghc-606
 %%GHC%%@dirrm lib/hat-2.05/ix86-FreeBSD
 %%GHC%%@dirrm lib/hat-2.05
