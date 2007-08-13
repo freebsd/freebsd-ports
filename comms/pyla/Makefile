@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyla
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.7.1
 CATEGORIES=	comms python
 MASTER_SITES=	http://www.teamsw.it/pyla/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
