@@ -2165,6 +2165,7 @@
     SUBDIR += spdict
     SUBDIR += spin
     SUBDIR += splint
+    SUBDIR += srecord
     SUBDIR += st
     SUBDIR += stfl
     SUBDIR += stlfilt
