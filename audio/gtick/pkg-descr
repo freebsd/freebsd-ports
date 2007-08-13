@@ -1,6 +1,6 @@
-Gtick is a metronome application written using the GTK+ widget set.
+GNU GTick is a metronome application. It features a scale from 10 beats
+per minute to 1000 BPM and arbitrary beat modes (meters). It uses GTK+2
+and OSS.
 
 WWW: http://www.antcom.de/gtick/
-
--Liam J. Foy
-liamfoy@sepulcrum.org
+Author: Roland Stigge <stigge@antcom.de>
