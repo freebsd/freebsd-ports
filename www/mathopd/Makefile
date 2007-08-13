@@ -10,7 +10,7 @@ PORTVERSION=	1.5p6
 CATEGORIES=	www
 MASTER_SITES=	http://www.mathopd.org/dist/
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	michiel@boland.org
 COMMENT=	A very small, yet very fast HTTP server
 CFLAGS+=	-DFREEBSD_SENDFILE
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
