@@ -13427,7 +13427,6 @@ qlabels		ports/deskutils/qlabels
 qlas		ports/misc/qlas
 qlogtools	ports/sysutils/qlogtools
 qlwm		ports/x11-wm/qlwm
-qmHandle	ports/mail/qmHandle
 qmail		ports/mail/qmail
 qmail-activedir	ports/mail/qmail-activedir
 qmail-auditor	ports/mail/qmail-auditor
@@ -13452,6 +13451,7 @@ qmake		ports/devel/qmake
 qmake4		ports/devel/qmake4
 qmc		ports/misc/qmc
 qmc2		ports/emulators/qmc2
+qmhandle	ports/mail/qmhandle
 qmls		ports/cad/qmls
 qmpdclient	ports/audio/qmpdclient
 qmqtool		ports/mail/qmqtool
