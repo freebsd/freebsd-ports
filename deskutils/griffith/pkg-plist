@@ -102,6 +102,7 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/plugins/movie/PluginMovieFilmAffinity.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieFilmDb.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieFilmeVonAZ.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieFilmtipset.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieFilmweb.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieIMDB-de.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieIMDB-es.py
@@ -132,11 +133,14 @@ share/locale/el/LC_MESSAGES/griffith.mo
 share/locale/es/LC_MESSAGES/griffith.mo
 share/locale/fr/LC_MESSAGES/griffith.mo
 share/locale/it/LC_MESSAGES/griffith.mo
+share/locale/ja/LC_MESSAGES/griffith.mo
 share/locale/nl/LC_MESSAGES/griffith.mo
 share/locale/pl/LC_MESSAGES/griffith.mo
 share/locale/pt/LC_MESSAGES/griffith.mo
 share/locale/pt_BR/LC_MESSAGES/griffith.mo
+share/locale/ru/LC_MESSAGES/griffith.mo
 share/locale/sv/LC_MESSAGES/griffith.mo
+share/locale/tr/LC_MESSAGES/griffith.mo
 share/locale/zh_CN/LC_MESSAGES/griffith.mo
 share/pixmaps/griffith.png
 share/pixmaps/griffith.xpm
