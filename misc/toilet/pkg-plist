@@ -1,0 +1,15 @@
+bin/caca2tlf
+bin/toilet
+share/figlet/bigmono12.tlf
+share/figlet/bigmono9.tlf
+share/figlet/circle.tlf
+share/figlet/emboss.tlf
+share/figlet/emboss2.tlf
+share/figlet/future.tlf
+share/figlet/mono12.tlf
+share/figlet/mono9.tlf
+share/figlet/smblock.tlf
+share/figlet/smbraille.tlf
+share/figlet/smmono12.tlf
+share/figlet/smmono9.tlf
+@dirrmtry share/figlet

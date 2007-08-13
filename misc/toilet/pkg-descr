@@ -1,0 +1,17 @@
+The TOIlet project attempts to create a free replacement for the FIGlet
+utility. TOIlet stands for "The Other Implementation's letters", coined
+after FIGlet's "Frank, Ian and Glen's letters".
+
+TOIlet is in its very early development phase. It uses the powerful
+libcucul library to achieve various text-based effects. TOIlet
+implements or plans to implement the following features:
+* The ability to load FIGlet fonts
+* Support for Unicode input and output
+* Support for colour output
+* Support for various output formats: HTML, IRC, ANSI...
+
+TOIlet also aims for full FIGlet compatibility. It is currently able to
+load FIGlet fonts and perform horizontal smushing. 
+
+WWW: http://libcaca.zoy.org/toilet.html
+Author: Sam Hocevar <sam@zoy.org>
