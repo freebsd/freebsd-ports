@@ -16048,6 +16048,7 @@ visprint	ports/graphics/visprint
 visualos	ports/emulators/visualos
 visualworks	ports/lang/visualworks
 viz		ports/misc/viz
+vizone		ports/dns/vizone
 vlc		ports/multimedia/vlc
 vlc-devel	ports/multimedia/vlc-devel
 vlock		ports/security/vlock
