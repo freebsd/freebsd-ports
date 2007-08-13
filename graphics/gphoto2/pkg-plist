@@ -2,6 +2,7 @@ bin/gphoto2
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/test-hook.sh
 %%NLS%%share/locale/az/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gphoto2.mo

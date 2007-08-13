@@ -211,6 +211,7 @@ lib/libgphoto2_port.a
 lib/libgphoto2_port.la
 lib/libgphoto2_port.so
 lib/libgphoto2_port.so.0
+lib/udev/check-mtp-device
 lib/udev/check-ptp-camera
 libdata/pkgconfig/libgphoto2.pc
 libdata/pkgconfig/libgphoto2_port.pc
@@ -221,7 +222,6 @@ libdata/pkgconfig/libgphoto2_port.pc
 %%PORTDOCS%%%%DOCSDIR%%/camlibs/README.adc65
 %%PORTDOCS%%%%DOCSDIR%%/camlibs/README.agfa-cl20
 %%PORTDOCS%%%%DOCSDIR%%/camlibs/README.aox
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.barbie
 %%PORTDOCS%%%%DOCSDIR%%/camlibs/README.canon
 %%PORTDOCS%%%%DOCSDIR%%/camlibs/README.clicksmart310
 %%PORTDOCS%%%%DOCSDIR%%/camlibs/README.digigr8

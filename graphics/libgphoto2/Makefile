@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgphoto2
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -21,10 +21,11 @@ USE_BZIP2=	yes
 USE_GNOME=	gnometarget pkgconfig ltverhack
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:15 libltdl:15
 LIBTOOLFILES=	configure libgphoto2_port/configure
 USE_LDCONFIG=	yes
-PLIST_SUB=	VERSION="${PORTVERSION}" VERSION_PORT=0.7.1
+CONFIGURE_ENV=	LTDLINCL="-I${LOCALBASE}/include" LIBLTDL="-L${LOCALBASE}/lib -lltdl"
+PLIST_SUB=	VERSION="${PORTVERSION}" VERSION_PORT=0.8.0
 
 MAN3=		libgphoto2.3 libgphoto2_port.3
 
@@ -43,8 +44,6 @@ post-patch:
 		 s|-g -O2||g' ${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e 's|linux-hotplug ||' ${WRKSRC}/packaging/Makefile.in
-	@${REINPLACE_CMD} -e 's|$$(CPPFLAGS) $$(AM_CPPFLAGS)|$$(AM_CPPFLAGS) $$(CPPFLAGS)|' \
-		${WRKSRC}/camlibs/directory/Makefile.in ${WRKSRC}/camlibs/sierra/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
