@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pipemeter
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ports.abditum.com/pipemeter/ \
 		http://spamaps.org/files/pipemeter/
