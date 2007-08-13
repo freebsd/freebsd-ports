@@ -479,7 +479,6 @@
     SUBDIR += pyzor
     SUBDIR += qar-bufo
     SUBDIR += qconfirm
-    SUBDIR += qmHandle
     SUBDIR += qmail
     SUBDIR += qmail-activedir
     SUBDIR += qmail-auditor
@@ -500,6 +499,7 @@
     SUBDIR += qmailadmin
     SUBDIR += qmailanalog
     SUBDIR += qmailmrtg7
+    SUBDIR += qmhandle
     SUBDIR += qmqtool
     SUBDIR += qmrtg
     SUBDIR += qpopper

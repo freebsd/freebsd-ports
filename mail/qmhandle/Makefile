@@ -5,12 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	qmHandle
+PORTNAME=	qmhandle
 PORTVERSION=	1.3.0
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	qmhandle
-DISTNAME=	qmhandle-${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Tool to view and manage a qmail queue
