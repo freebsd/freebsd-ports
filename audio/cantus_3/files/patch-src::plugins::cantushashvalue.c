@@ -1,5 +1,5 @@
 --- src/plugins/cantushashvalue.c.orig	2007-08-03 14:31:22.000000000 +0200
-+++ src/plugins/cantushashvalue.c	2007-08-03 14:35:10.000000000 +0200
++++ source/cantus/cantushashvalue.c	2007-08-03 14:35:10.000000000 +0200
 @@ -81,7 +81,7 @@
    g_assert(hvalue != NULL);
    switch (type) {
