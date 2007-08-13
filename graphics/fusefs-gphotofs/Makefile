@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gphotofs
-PORTVERSION=	0.3
+PORTVERSION=	0.4.0
 CATEGORIES=	graphics sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -30,8 +30,5 @@ PLIST_FILES=	bin/gphotofs
 .if ${OSVERSION} < 600000
 IGNORE=		depends on kernel module that requires FreeBSD 6 or later
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|USE_VERSION=22|USE_VERSION=25|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
