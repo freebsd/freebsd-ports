@@ -8321,6 +8321,7 @@ nxserver	ports/net/nxserver
 nxtvepg		ports/multimedia/nxtvepg
 ny-aspell	ports/textproc/ny-aspell
 nyello		ports/audio/nyello
+nyh-hoc		ports/math/nyh-hoc
 nylon		ports/net/nylon
 nzbget		ports/news/nzbget
 nzbperl		ports/news/nzbperl
