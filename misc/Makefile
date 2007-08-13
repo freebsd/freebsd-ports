@@ -41,6 +41,7 @@
     SUBDIR += cloc
     SUBDIR += clpbar
     SUBDIR += cmatrix
+    SUBDIR += color-theme.el
     SUBDIR += colortail
     SUBDIR += compat3x
     SUBDIR += compat4x
