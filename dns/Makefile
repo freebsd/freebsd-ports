@@ -117,6 +117,7 @@
     SUBDIR += tinystats
     SUBDIR += totd
     SUBDIR += updatedd
+    SUBDIR += vizone
     SUBDIR += walker
     SUBDIR += zonecheck
     SUBDIR += zonenotify
