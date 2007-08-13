@@ -167,6 +167,7 @@
     SUBDIR += nsc2ke
     SUBDIR += ntl
     SUBDIR += numdiff
+    SUBDIR += nyh-hoc
     SUBDIR += ocaml-ocamlgraph
     SUBDIR += octave
     SUBDIR += octave-devel
