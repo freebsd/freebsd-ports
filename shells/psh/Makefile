@@ -5,12 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	perlsh
+PORTNAME=	psh
 PORTVERSION=	1.8.1
 CATEGORIES=	shells perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/G/GR/GREGOR
-DISTNAME=	psh-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	New shell made entirely out of a Perl script
@@ -18,7 +17,6 @@ COMMENT=	New shell made entirely out of a Perl script
 PERL_CONFIGURE=	yes
 
 SUB_FILES=	pkg-install pkg-deinstall
-DATADIR=	${PREFIX}/share/psh
 
 MAN1=	psh.1 \
 	pshcomplete.1 \

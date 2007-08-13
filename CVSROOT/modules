@@ -11883,7 +11883,6 @@ perl5.8		ports/lang/perl5.8
 perlbal		ports/www/perlbal
 perldap		ports/net/perldap
 perlftlib	ports/print/perlftlib
-perlsh		ports/shells/perlsh
 perltidy	ports/devel/perltidy
 permute		ports/textproc/permute
 personality	ports/sysutils/personality
@@ -12712,6 +12711,7 @@ psgml		ports/editors/psgml
 psgml-emacs19	ports/editors/psgml-emacs19
 psgml-emacs20	ports/editors/psgml-emacs20
 psgml-mule	ports/editors/psgml-mule
+psh		ports/shells/psh
 psi		ports/net-im/psi
 psi-gentoo	ports/net-im/psi-gentoo
 psi3		ports/science/psi3
