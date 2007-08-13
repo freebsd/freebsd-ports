@@ -15534,6 +15534,7 @@ tochnog		ports/cad/tochnog
 todo		ports/deskutils/todo
 togl		ports/graphics/togl
 toh		ports/devel/toh
+toilet		ports/misc/toilet
 tolkien-ttf	ports/x11-fonts/tolkien-ttf
 tolua		ports/lang/tolua
 tolua++		ports/lang/tolua++
