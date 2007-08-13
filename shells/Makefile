@@ -23,7 +23,7 @@
     SUBDIR += pash
     SUBDIR += pdksh
     SUBDIR += pear-PHP_Shell
-    SUBDIR += perlsh
+    SUBDIR += psh
     SUBDIR += rc
     SUBDIR += rssh
     SUBDIR += sash
