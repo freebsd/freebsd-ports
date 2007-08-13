@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Catalyst-Devel
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Catalyst
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
@@ -19,7 +18,7 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Action-RenderView>=0.04:${PORTSDIR}/www/p5-Catalyst-Action-RenderView \
 		p5-Catalyst-Manual>=5.7000:${PORTSDIR}/www/p5-Catalyst-Manual \
 		p5-Catalyst-Plugin-ConfigLoader>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-ConfigLoader \
-		p5-Catalyst-Plugin-Static-Simple>=0.14:${PORTSDIR}/www/p5-Catalyst-Plugin-Static-Simple \
+		p5-Catalyst-Plugin-Static-Simple>=0.16:${PORTSDIR}/www/p5-Catalyst-Plugin-Static-Simple \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 		p5-Module-Install>=0.64:${PORTSDIR}/devel/p5-Module-Install \
