@@ -46,8 +46,8 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		H323		"Enable H.323 support" on \
 		FREETDS		"Enable FreeTDS support" on \
 		JABBER		"Enable Jabber and Gtalk support" on \
-		SQLITE          "Enable SQLITE support" on
-#		CODEC_PATCH	"Apply codec nego patch" off
+		SQLITE          "Enable SQLITE support" on \
+		CODEC_PATCH	"Apply codec negotiation patch" off
 
 .include <bsd.port.pre.mk>
 
@@ -157,7 +157,7 @@ LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2
 
 .if defined(WITH_CODEC_PATCH)
 PATCHFILES=	asterisk-1.4.10-codec-negotiation-20070810.diff.gz
-PATCH_SITES=	http://www.sippysoft.com/~bamby/
+PATCH_SITES=	http://www.sippysoft.com/~sobomax/
 EXTRA_PATCHES=	${PATCHDIR}/codecnego-patch-Makefile
 .else
 EXTRA_PATCHES=	${PATCHDIR}/nocodecnego-patch-Makefile
