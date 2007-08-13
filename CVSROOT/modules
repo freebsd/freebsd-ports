@@ -1460,6 +1460,7 @@ coldsync	ports/palm/coldsync
 cole		ports/textproc/cole
 collections	ports/java/collections
 color-mate	ports/editors/color-mate
+color-theme.el	ports/misc/color-theme.el
 colordiff	ports/textproc/colordiff
 colorer		ports/devel/colorer
 colorize	ports/sysutils/colorize
