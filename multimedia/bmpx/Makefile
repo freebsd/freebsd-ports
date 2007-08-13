@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bmpx
-PORTVERSION=	0.40.0
+PORTVERSION=	0.40.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.beep-media-player.org/releases/0.40/
 
@@ -40,6 +40,7 @@ USE_GNOME=	gtk20 libglade2 desktopfileutils
 INSTALLS_ICONS=	yes
 USE_GSTREAMER=	good mp3 ogg vorbis cdparanoia
 USE_LDCONFIG=	yes
+USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \
 			--with-dbus-services-dir="${PREFIX}/share/dbus-1/services" \
