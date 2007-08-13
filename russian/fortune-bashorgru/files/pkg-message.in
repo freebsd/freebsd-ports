@@ -1,0 +1,8 @@
+
+Usage:
+/usr/games/fortune %%PREFIX%%/share/games/fortune/rus/%%PORTNAME%%
+or
+/usr/games/fortune %%PREFIX%%/share/games/fortune/rus/%%PORTNAME%%-freebsd
+
+Example script to keep your fortune up to date placed in
+%%EXAMPLESDIR%%/

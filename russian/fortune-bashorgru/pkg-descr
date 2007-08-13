@@ -1,4 +1,5 @@
-This package contains fortune files maked from popular russian site bash.org.ru.
+This package contains fortune files made from popular russian site bash.org.ru
+and from another site, http://freebsd.rusnet.org.ru/bash.
 Also it contains example script to keep your bash.org.ru fortunes up to date.
 
 WWW:	http://bash.org.ru
