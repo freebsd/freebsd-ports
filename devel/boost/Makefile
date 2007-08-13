@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	boost
-PORTVERSION=	1.34.0
+PORTVERSION=	1.34.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -24,8 +24,12 @@ MAKE_ENV+=	CXX=${CXX} CC=${CC}
 .if defined(WITH_PYTHON) || defined (WITH_PYSTE)
 USE_PYTHON=	2.4+
 
+CONFLICTS=	boost-1*
+
 # Python implies threads
 WITH_THREADS=IMPLIED_BY_PYTHON
+.else
+CONFLICTS=	boost-python-1*
 .endif
 
 OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
