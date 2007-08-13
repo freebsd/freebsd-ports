@@ -22,6 +22,8 @@ LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
+.elif ${ARCH} == "ia64"
+BROKEN=		Does not compile
 .endif
 
 USE_GMAKE=	yes
