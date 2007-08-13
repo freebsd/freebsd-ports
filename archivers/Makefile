@@ -133,6 +133,7 @@
     SUBDIR += unalz
     SUBDIR += unarj
     SUBDIR += undms
+    SUBDIR += unfoo
     SUBDIR += unlzx
     SUBDIR += unmakeself
     SUBDIR += unrar
