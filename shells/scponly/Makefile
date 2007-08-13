@@ -71,7 +71,7 @@
 
 PORTNAME=	scponly
 PORTVERSION=	4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	http://www.sublimation.org/scponly/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -84,9 +84,19 @@ COMMENT=	A tiny shell that only permits scp and sftp
 MAN8=		scponly.8
 
 GNU_CONFIGURE=	yes
-PLIST_SUB+=	SCPONLY_CHROOT="@comment "
 
 PATCH_STRIP=	-p1
+
+OPTIONS=	SCPONLY_WILDCARDS "wildcards processing" on \
+	SCPONLY_GFTP "gftp compatibility" on \
+	SCPONLY_CHROOT "chroot functionality" off \
+	SCPONLY_RSYNC "rsync compatibility" off \
+	SCPONLY_SCP "vanilla scp compatibility" off \
+	SCPONLY_SFTP_LOGGING "sftp logging compatibility" off \
+	SCPONLY_SVN "subversion compatibility" off \
+	SCPONLY_SVNSERVE "subversion compatibility svn+ssh://" off \
+	SCPONLY_UNISON "unison compatibility" off \
+	SCPONLY_WINSCP "WinSCP compatibility" off
 
 .include <bsd.port.pre.mk>
 
@@ -103,8 +113,10 @@ CONFIGURE_ARGS+=--disable-gftp-compat
 .endif
 
 .if defined(WITH_SCPONLY_CHROOT)
-PLIST_SUB=	SCPONLY_CHROOT=""
+PLIST_SUB+=	SCPONLY_CHROOT=""
 CONFIGURE_ARGS+=--enable-chrooted-binary
+.else
+PLIST_SUB+=	SCPONLY_CHROOT="@comment "
 .endif
 
 .if defined(WITH_SCPONLY_RSYNC)
