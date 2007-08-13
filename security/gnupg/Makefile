@@ -97,6 +97,9 @@ pre-configure:
 
 post-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.if defined(WITH_SUID_GPG)
+	${CHMOD} u+s ${PREFIX}/bin/gpg
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
