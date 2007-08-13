@@ -1,16 +1,18 @@
---- sa-compile.raw.orig	Tue May  1 09:54:33 2007
-+++ sa-compile.raw	Thu May  3 13:35:23 2007
-@@ -643,7 +643,7 @@
+--- sa-compile.raw.orig	2007-08-08 05:19:47.000000000 -0800
++++ sa-compile.raw	2007-08-11 12:31:07.000000000 -0800
+@@ -659,9 +659,9 @@
    -p prefs, --prefspath=file, --prefs-file=file
                                  Set user preferences file
    --siteconfigpath=path         Path for site configs
 -                                (default: /etc/mail/spamassassin)
-+                                (default: @@LOCAL_RULES_DIR@@)
++                               (default: @@LOCAL_RULES_DIR@@)
    --updatedir=path              Directory to place updates
--                     (default: /var/lib/spamassassin/compiled/<version>)
-+                     (default: @@LOCAL_STATE_DIR@@/compiled/<version>)
+-                      (default: /var/lib/spamassassin/compiled/<version>)
++                      (default: @@LOCAL_STATE_DIR@@/compiled/<version>)
    --cf='config line'            Additional line of configuration
-@@ -692,12 +692,12 @@
+   -D, --debug [area=n,...]	Print debugging messages
+   -V, --version			Print version
+@@ -708,12 +708,12 @@
  =item B<-C> I<path>, B<--configpath>=I<path>, B<--config-file>=I<path>
  
  Use the specified path for locating the distributed configuration files.
