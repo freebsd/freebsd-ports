@@ -24,7 +24,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT,leo,sunsite
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
 
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 USE_RC_SUBR=	fetchmail
 FETCHMAILRC=	${PREFIX}/etc/fetchmailrc
