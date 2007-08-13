@@ -114,6 +114,7 @@
     SUBDIR += evas
     SUBDIR += evince
     SUBDIR += evolvotron
+    SUBDIR += exact-image
     SUBDIR += exhibit
     SUBDIR += exif
     SUBDIR += exifprobe
