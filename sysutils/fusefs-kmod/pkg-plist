@@ -2,7 +2,7 @@ modules/fuse.ko
 sbin/mount_fusefs
 @unexec kldxref %D/modules
 @dirrmtry modules
-%%PORTDOCS%%%%DOCSDIR%%/kmod/doc.txt
+%%PORTDOCS%%%%DOCSDIR%%/kmod/doc.text
 %%PORTDOCS%%%%DOCSDIR%%/kmod/html/Faq.html
 %%PORTDOCS%%%%DOCSDIR%%/kmod/html/Implementation.html
 %%PORTDOCS%%%%DOCSDIR%%/kmod/html/Quickstart.html
