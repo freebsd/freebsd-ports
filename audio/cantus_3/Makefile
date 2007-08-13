@@ -5,32 +5,38 @@
 # $FreeBSD$
 #
 
-PORTNAME=	cantus_3
-PORTVERSION=	3.0.0
-PORTREVISION=	5
+PORTNAME=	cantus
+PORTVERSION=	3.0.2
+DISTVERSIONSUFFIX=	-testing.src
 CATEGORIES=	audio
-MASTER_SITES=	http://dl.debain.org/${PORTNAME}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for tagging and renaming MP3 and OGG/Vorbis files
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtkmm20 \
-		glademm-2.0.1:${PORTSDIR}/devel/libglademm \
+LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		ogg.5:${PORTSDIR}/audio/libogg \
+		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
+CONFLICTS=	cantus-1*
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix libglade2
-USE_XLIB=	yes
+USE_GNOME=	gnomehack gnomeprefix libglade2 glib20
+USE_LDCONFIG=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--program-transform-name="" --disable-static
+WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
 
-BASH?=		${LOCALBASE}/bin/bash
-
-do-build:
-	@cd ${WRKSRC} && ${BASH} build.sh --prefix '${PREFIX}'
-
-do-install:
-	@cd ${WRKSRC} && ${BASH} build.sh --install --prefix '${PREFIX}'
+post-patch:
+	@${REINPLACE_CMD} -Ee 's|-ldld||g;s|-ldl||g;/ALL_LINGUAS=/s|=(.*)|="\1"|'\
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/source/cantus/Makefile.in
+	@${REINPLACE_CMD} -e 's|PACKAGE_LIB_DIR "cantus-3.glade"|PACKAGE_DATA_DIR "/cantus/glade/cantus.glade"|'\
+		${WRKSRC}/source/cantus/gui_controller.cc
 
 .include <bsd.port.mk>

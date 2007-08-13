@@ -4,4 +4,4 @@ generate a tag out of the filename, filter definitions for renaming, recursive
 actions, CDDB (Freedb) lookup (no CD needed), copy between ID3V1 and ID3V2 tags,
 and a lot more.
 
-WWW: http://www.debain.org/software/cantus/
+WWW: http://cantus.sourceforge.net/
