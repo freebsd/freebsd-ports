@@ -7,7 +7,7 @@
 
 PORTNAME=	sudo
 PORTVERSION=	1.6.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://probsd.org/sudoftp/ \
@@ -26,6 +26,7 @@ COMMENT=	Allow others to run commands as root
 
 GNU_CONFIGURE=	yes
 
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--disable-log-wrap \
 		--with-ignore-dot \
@@ -33,13 +34,20 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-env-editor \
 		--with-logincap \
 		--with-long-otp-prompt \
-		--with-pam
+		--with-pam \
+		--with-noexec=${PREFIX}/libexec/sudo_noexec.so
 
 OPTIONS=	LDAP	"With LDAP support" off \
 		INSULTS "With all insults" off \
 		SHELL_SETS_HOME "Set HOME env to target user in shell mode" off
 
 .include <bsd.port.pre.mk>
+
+# SUDO_SECURE_PATH is a PATH string that will override the user's PATH.
+# ex: make SUDO_SECURE_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
+.if defined(SUDO_SECURE_PATH)
+CONFIGURE_ARGS+=--with-secure-path="${SUDO_SECURE_PATH}"
+.endif
 
 .if defined(WITH_INSULTS)
 CONFIGURE_ARGS+=--with-insults
@@ -64,12 +72,11 @@ MAN8=		sudo.8 visudo.8
 MLINKS=		sudo.8 sudoedit.8
 
 post-install:
-	${RM} ${PREFIX}/libexec/sudo_noexec.la
 	${INSTALL_DATA} ${WRKSRC}/sudoers ${PREFIX}/etc/sudoers.default
 	${INSTALL_DATA} ${FILESDIR}/pam.conf ${PREFIX}/etc/pam.d/sudo.default
 
 	if [ ! -e ${PREFIX}/etc/pam.d/sudo ]; then \
-		cp -p ${PREFIX}/etc/pam.d/sudo.default \
+		${CP} -p ${PREFIX}/etc/pam.d/sudo.default \
 		${PREFIX}/etc/pam.d/sudo ;\
 	fi
 
