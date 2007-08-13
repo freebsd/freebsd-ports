@@ -4,7 +4,7 @@ vibrational frequencies from the basic principle of quantum mechanics.
 
 A site license for GAMESS is available at no cost to both academic
 and industrial users. Please refer
-http://wwwmsg.fi.ameslab.gov/GAMESS/dist.menu.html
+http://www.msg.ameslab.gov/gamess/download.html
 for details.
 
 We also included simple launcher called `gamess'
@@ -13,4 +13,4 @@ to run gamess. Just type
 % gamess <somefile.inp>
 is enough.
 
-WWW: http://wwwmsg.fi.ameslab.gov/GAMESS/
+WWW: http://www.msg.ameslab.gov/gamess/gamess.html
