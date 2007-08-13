@@ -63,14 +63,6 @@ CONFIGURE_ARGS+=	--with-gphoto2=no
 PLIST_SUB+=		GPHOTO2="@comment "
 .endif
 
-pre-everithing::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "*** ATTENTION ***"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Older versions than 1.0.17_1 do not check if you change config files."
-	@${ECHO_MSG} "If that's the case for you, press CTRL+C and backup your config files."
-	@${ECHO_MSG} ""
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|= \.\./libtool|= @LIBTOOL@|g'
