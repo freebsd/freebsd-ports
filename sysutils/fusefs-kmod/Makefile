@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	fusefs
-PORTVERSION=	0.3.0
-PORTREVISION=	5
+DISTVERSION=	0.3.9-pre1
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://fuse4bsd.creo.hu/downloads/ \
 		http://am-productions.biz/docs/
 PKGNAMESUFFIX=	-kmod
-DISTNAME=	fuse4bsd-${PORTVERSION}
+DISTNAME=	fuse4bsd-${DISTVERSION}
 
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Kernel module for fuse
 
+USE_BZIP2=	yes
 BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
+
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	deplate:${PORTSDIR}/textproc/ruby-deplate
+.endif
 
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
 
@@ -29,7 +33,7 @@ USE_RC_SUBR=	fusefs
 SETUP=		setup.sh
 
 MAN8=		mount_fusefs.8
-TXT_DOCS=	doc.txt
+TXT_DOCS=	doc.text
 HTML_DOCS=	Faq.html \
 		Implementation.html \
 		Quickstart.html \
@@ -58,8 +62,17 @@ IGNORE=		requires FreeBSD 6 or above. Please consider porting it to 5.x or even 
 IGNORE=		requires the Kernel source to be installed. Set SRC_BASE if it is not in /usr/src
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/deplate.rb/deplate/g' \
+		${WRKSRC}/doc/Makefile
+
 post-configure:
 	@${CP} ${LOCALBASE}/include/fuse/fuse_kernel.h ${WRKSRC}/fuse_module
+
+post-build:
+.if !defined(NOPORTDOCS)
+	@cd ${WRKSRC}/doc && make plaintext html_chunked
+.endif
 
 pre-install:
 	@${MKDIR} ${KMODDIR}
