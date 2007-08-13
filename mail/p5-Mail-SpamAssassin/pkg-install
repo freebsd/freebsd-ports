@@ -1,5 +1,5 @@
 #!/bin/sh
-PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+PKG_PREFIX=${PKG_PREFIX:-/usr/local}
 
 ask() {
         local question default answer
