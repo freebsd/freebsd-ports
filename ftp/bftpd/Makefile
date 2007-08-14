@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	bftpd
-PORTVERSION=	1.9
+PORTVERSION=	1.9.1
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Very configurable FTP server that can do chroot easily
 
+WRKSRC=	${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-pam
 
