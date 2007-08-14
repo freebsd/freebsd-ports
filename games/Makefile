@@ -806,6 +806,7 @@
     SUBDIR += warsow-data
     SUBDIR += warzone2100
     SUBDIR += wesnoth
+    SUBDIR += whichwayisup
     SUBDIR += widelands
     SUBDIR += windstille
     SUBDIR += wmeyes
