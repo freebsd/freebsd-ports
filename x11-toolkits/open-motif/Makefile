@@ -8,7 +8,7 @@
 
 PORTNAME=	open-motif
 PORTVERSION=	2.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.motifzone.com/%SUBDIR%/                              
 MASTER_SITE_SUBDIR=	om${PORTVERSION}/src
@@ -21,9 +21,8 @@ COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
 
 USE_AUTOTOOLS=	libtool:15
 CONFLICTS=	lesstif-*
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_XORG=	xbitmaps
+USE_XORG=	xaw xbitmaps
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-DCSRG_BASED -DXUSE_MTSAFE_API -DXNO_MTSAFE_PWDAPI"
 INSTALLS_SHLIB=	yes
