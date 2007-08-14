@@ -13,7 +13,7 @@ MASTER_SITES=	http://openwebmail.acatysmoof.com/download/%SUBDIR%/ \
 		http://openwebmail.org/openwebmail/download/%SUBDIR%/
 MASTER_SITE_SUBDIR?=	release
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A webmail system designed to manage big mail folder files efficiently
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
