@@ -1,0 +1,7 @@
+%%SITE_PERL%%/DBIx/Class/Validation.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Validation/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Validation
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/DBIx
