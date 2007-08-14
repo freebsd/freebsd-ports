@@ -1,0 +1,11 @@
+SpeedCrunch is a multiplatform desktop calculator for power users.
+It is designed to be enjoyed using keyboard. Result is shown in
+scrollable display, history of expressions is available with up
+and down arrow.
+
+Some other features:
+optional keypad, syntax highlight, matched parenthesis indicator,
+just-in-time calculation (show result even before you finish typing)
+and autocomplete for variables.
+
+WWW: http://speedcrunch.digitalfanatics.org/

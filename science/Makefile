@@ -101,6 +101,7 @@
     SUBDIR += ruby-dcl
     SUBDIR += ruby-gphys
     SUBDIR += simlib
+    SUBDIR += speedcrunch
     SUBDIR += svmlight
     SUBDIR += szip
     SUBDIR += udunits
