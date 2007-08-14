@@ -13,7 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -51,7 +51,7 @@ PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh \
 		draft-hoffman-dac-vbr-01.txt draft-ietf-dkim-overview-05.txt \
 		draft-ietf-dkim-ssp-00.txt draft-ietf-dkim-ssp-requirements-04.txt \
-		rfc4686.txt rfc4871.txt
+		draft-kucherawy-sender-auth-header-06.txt rfc4686.txt rfc4871.txt
 .if !defined(NOPORTDOCS)
 LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/overview.html \
@@ -65,6 +65,8 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_eom.html \
 		${DOCSDIR_REL}/libdkim/dkim_free.html \
 		${DOCSDIR_REL}/libdkim/dkim_get_user_context.html \
+		${DOCSDIR_REL}/libdkim/dkim_getpresult.html \
+		${DOCSDIR_REL}/libdkim/dkim_getpresultstr.html \
 		${DOCSDIR_REL}/libdkim/dkim_getsighdr.html \
 		${DOCSDIR_REL}/libdkim/dkim_getsiglist.html \
 		${DOCSDIR_REL}/libdkim/dkim_getsignature.html \
@@ -76,6 +78,7 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_param_t.html \
 		${DOCSDIR_REL}/libdkim/dkim_policy.html \
 		${DOCSDIR_REL}/libdkim/dkim_policy_t.html \
+		${DOCSDIR_REL}/libdkim/dkim_presult.html \
 		${DOCSDIR_REL}/libdkim/dkim_query_t.html \
 		${DOCSDIR_REL}/libdkim/dkim_reportinfo.html \
 		${DOCSDIR_REL}/libdkim/dkim_set_dns_callback.html \
