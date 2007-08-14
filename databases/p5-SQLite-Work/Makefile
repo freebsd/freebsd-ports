@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	SQLite-Work
-PORTVERSION=	0.09
+PORTVERSION=	0.10.01
 CATEGORIES=	databases www perl5
 MASTER_SITES=	http://www.cpan.org/authors/id/R/RU/RUBYKAT/
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Report on and update an SQLite database
