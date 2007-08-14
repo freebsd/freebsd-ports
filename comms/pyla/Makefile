@@ -37,6 +37,7 @@ do-build:
 pre-install:
 	@${ECHO_CMD} '@exec ${MKDIR} %D/lib/pyla' > ${PLIST}
 	@${ECHO_CMD} 'bin/pyla' >> ${PLIST}
+	@${ECHO_CMD} 'lib/pyla/pyla.pyw' >> ${PLIST}
 	@${FIND} ${WRKSRC}/ -type f | \
 		${SED} -e "s:^${WRKSRC}/:lib/pyla/:g" >> ${PLIST}
 	@${FIND} -d ${WRKSRC} -type d | \
