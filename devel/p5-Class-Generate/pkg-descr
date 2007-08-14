@@ -8,3 +8,5 @@ Class::Generate is much, much more concise.  And futhermore,
 it's much less error prone: if you are using Perl's -w flag,
 Class::Generate will catch many class specification and usage
 errors.
+
+WWW: http://search.cpan.org/dist/Class-Generate/
