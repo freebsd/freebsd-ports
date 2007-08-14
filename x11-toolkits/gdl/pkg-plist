@@ -26,6 +26,7 @@ libdata/pkgconfig/gdl-1.0.pc
 libdata/pkgconfig/gdl-gnome-1.0.pc
 share/gnome/gdl/glade/layout.glade
 share/locale/am/LC_MESSAGES/gdl-1.mo
+share/locale/ar/LC_MESSAGES/gdl-1.mo
 share/locale/az/LC_MESSAGES/gdl-1.mo
 share/locale/ca/LC_MESSAGES/gdl-1.mo
 share/locale/cs/LC_MESSAGES/gdl-1.mo
@@ -39,10 +40,12 @@ share/locale/es/LC_MESSAGES/gdl-1.mo
 share/locale/fi/LC_MESSAGES/gdl-1.mo
 share/locale/fr/LC_MESSAGES/gdl-1.mo
 share/locale/ga/LC_MESSAGES/gdl-1.mo
+share/locale/gl/LC_MESSAGES/gdl-1.mo
 share/locale/hr/LC_MESSAGES/gdl-1.mo
 share/locale/hu/LC_MESSAGES/gdl-1.mo
 share/locale/it/LC_MESSAGES/gdl-1.mo
 share/locale/ja/LC_MESSAGES/gdl-1.mo
+share/locale/lv/LC_MESSAGES/gdl-1.mo
 share/locale/mk/LC_MESSAGES/gdl-1.mo
 share/locale/ml/LC_MESSAGES/gdl-1.mo
 share/locale/nb/LC_MESSAGES/gdl-1.mo
