@@ -1,0 +1,4 @@
+Module that allows validation of data before submission to a 
+database.
+
+WWW: http://search.cpan.org/dist/DBIx-Class-Validation/

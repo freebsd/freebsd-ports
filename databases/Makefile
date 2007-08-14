@@ -245,6 +245,7 @@
     SUBDIR += p5-DBIx-Class-Loader
     SUBDIR += p5-DBIx-Class-Schema-Loader
     SUBDIR += p5-DBIx-Class-UUIDColumns
+    SUBDIR += p5-DBIx-Class-Validation
     SUBDIR += p5-DBIx-Class-WebForm
     SUBDIR += p5-DBIx-ContextualFetch
     SUBDIR += p5-DBIx-DBSchema
