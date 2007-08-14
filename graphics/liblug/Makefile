@@ -7,7 +7,7 @@
 
 PORTNAME=		liblug
 PORTVERSION=		1.0.6
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/graphics
@@ -18,7 +18,7 @@ COMMENT=	A multi-format graphics manipulation library
 LIB_DEPENDS=		tiff.4:${PORTSDIR}/graphics/tiff
 
 PLIST_FILES=		lib/liblug.a
-USE_XLIB=		yes
+USE_XORG=		x11
 
 WRKSRC=			${WRKDIR}/lug
 MAKEFILE=		Makefile.linux
