@@ -8,7 +8,7 @@
 
 PORTNAME=	earthview
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc geography
 MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/privat2/
 EXTRACT_SUFX=	.tgz
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produces a view output of an arbitrary region of the Earth
 
-USE_XLIB=	yes
+USE_XORG=	xpm
 CFLAGS+=	-I${X11BASE}/include
 ALL_TARGET=	earthview
 
