@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Search-AltaVista
-PORTVERSION=	2.146
+PORTVERSION=	2.147
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -33,10 +33,4 @@ MAN3=		WWW::Search::AltaVista.3 \
 		WWW::Search::AltaVista::Intranet.3 \
 		WWW::Search::AltaVista::Intranet3.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
