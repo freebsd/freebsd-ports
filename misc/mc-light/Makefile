@@ -19,7 +19,7 @@ RUN_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 
 CONFLICTS=	mc-4.6*
 
-OPTIONS=	NLS "Enable gettext support (broken)" on \
+OPTIONS=	NLS "Enable gettext support" on \
 		SUBSHELL "Build with subshell support (only for bash!)" off \
 		MC_IN_MC "Allow run mc inside mc (useful for mcedit)" off
 
@@ -43,14 +43,13 @@ MAN8=		mcserv.8
 CONFIGURE_ARGS+=--without-subshell
 .endif
 
-# XXX: ru.po is broken with gettext-0.16.1
-# XXX: .if !defined(WITHOUT_NLS)
-# XXX: USE_GETTEXT=	yes
-# XXX: PLIST_SUB+=	NLS=""
-# XXX: .else
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-# XXX: .endif
+.endif
 
 .if defined(WITH_MC_IN_MC)
 CONFIGURE_ENV+=	CPPFLAGS=-DMC_IN_MC_ALLOWED
