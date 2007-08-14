@@ -16230,6 +16230,7 @@ whatmask	ports/net-mgmt/whatmask
 whatpix		ports/sysutils/whatpix
 when		ports/deskutils/when
 whichman	ports/misc/whichman
+whichwayisup	ports/games/whichwayisup
 whirlgif	ports/graphics/whirlgif
 whistlerk	ports/x11-themes/whistlerk
 white_dune	ports/graphics/white_dune
