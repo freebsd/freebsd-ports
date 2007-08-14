@@ -1,6 +1,6 @@
---- src/cf.data.pre.orig	Thu Oct 12 22:48:48 2006
-+++ src/cf.data.pre	Wed Nov  8 18:56:47 2006
-@@ -1183,6 +1183,21 @@
+--- src/cf.data.pre.orig	Tue Jun 26 01:34:57 2007
++++ src/cf.data.pre	Mon Jul 16 20:02:21 2007
+@@ -1207,6 +1207,21 @@
  
  	Note that for coss, max-size must be less than COSS_MEMBUF_SZ
  	(hard coded at 1 MB).
@@ -22,7 +22,18 @@
  DOC_END
  
  NAME: logformat
-@@ -3280,12 +3295,12 @@
+@@ -1439,6 +1454,10 @@
+ LOC: Config.pidFilename
+ DOC_START
+ 	A filename to write the process-id to.  To disable, enter "none".
++
++	Note: If you change this setting, you need to set squid_pidfile
++	in /etc/rc.conf to reflect the new value. Please see
++	%%PREFIX%%/etc/rc.d/squid for details.
+ DOC_END
+ 
+ NAME: debug_options
+@@ -3275,12 +3294,12 @@
  
  NAME: cache_effective_user
  TYPE: string
