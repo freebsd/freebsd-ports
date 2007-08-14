@@ -1,6 +1,6 @@
 %%GEM_CACHE%%
 %%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000116.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000117.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000001.html
@@ -23,6 +23,7 @@
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000018.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000020.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Base.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Button.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/CheckBox.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/CheckBox.src/M000047.html
@@ -44,8 +45,8 @@
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Field.src/M000085.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Field.src/M000086.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/File.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/File.src/M000113.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/File.src/M000114.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/File.src/M000115.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/FileSaver.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/FileSaver.src/M000068.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/FileUpload.html
@@ -77,11 +78,12 @@
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/History.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/History.src/M000105.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/History.src/M000106.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/History.src/M000108.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/History.src/M000107.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/History.src/M000109.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/History.src/M000110.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/History.src/M000111.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/History.src/M000112.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/History.src/M000113.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ImageButton.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ImageButton.src/M000057.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ImageButton.src/M000058.html
@@ -227,6 +229,8 @@
 %%GEM_LIB_DIR%%/test/htdocs/no_title_test.html
 %%GEM_LIB_DIR%%/test/htdocs/relative/tc_relative_links.html
 %%GEM_LIB_DIR%%/test/htdocs/tc_bad_links.html
+%%GEM_LIB_DIR%%/test/htdocs/tc_base_link.html
+%%GEM_LIB_DIR%%/test/htdocs/tc_blank_form.html
 %%GEM_LIB_DIR%%/test/htdocs/tc_checkboxes.html
 %%GEM_LIB_DIR%%/test/htdocs/tc_encoded_links.html
 %%GEM_LIB_DIR%%/test/htdocs/tc_follow_meta.html
@@ -238,9 +242,11 @@
 %%GEM_LIB_DIR%%/test/htdocs/tc_referer.html
 %%GEM_LIB_DIR%%/test/htdocs/tc_relative_links.html
 %%GEM_LIB_DIR%%/test/htdocs/tc_textarea.html
+%%GEM_LIB_DIR%%/test/htdocs/unusual______.html
 %%GEM_LIB_DIR%%/test/ssl_server.rb
 %%GEM_LIB_DIR%%/test/tc_authenticate.rb
 %%GEM_LIB_DIR%%/test/tc_bad_links.rb
+%%GEM_LIB_DIR%%/test/tc_blank_form.rb
 %%GEM_LIB_DIR%%/test/tc_checkboxes.rb
 %%GEM_LIB_DIR%%/test/tc_cookie_class.rb
 %%GEM_LIB_DIR%%/test/tc_cookie_jar.rb
