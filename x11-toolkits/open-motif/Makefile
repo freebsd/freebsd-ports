@@ -8,7 +8,7 @@
 
 PORTNAME=	open-motif
 PORTVERSION=	2.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.motifzone.com/%SUBDIR%/                              
 MASTER_SITE_SUBDIR=	om${PORTVERSION}/src
@@ -18,8 +18,6 @@ DIST_SUBDIR=	openmotif
 
 MAINTAINER=	steve@FreeBSD.org
 COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
-
-RUN_DEPENDS=	imake:${X_IMAKE_PORT}
 
 USE_AUTOTOOLS=	libtool:15
 CONFLICTS=	lesstif-*
