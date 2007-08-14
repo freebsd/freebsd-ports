@@ -45,7 +45,7 @@ OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
 .endif
 # ================
 
-USE_GCC=		3.4+
+NOT_FOR_ARCHS=		sparc64
 
 CONFIGURE_ARGS=		--enable-cd --disable-mini-stl --enable-threads
 
