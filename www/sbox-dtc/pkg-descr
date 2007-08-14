@@ -8,3 +8,5 @@ scripts in a chroot'ed shell restricted to the author's home directories.
 
 sbox is compatible with all Web servers running under BSD-derived flavors of
 Unix. You can use and redistribute it freely.
+
+WWW: http://www.gplhost.com/software-sboxdtc.html
