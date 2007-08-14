@@ -7,7 +7,7 @@
 
 PORTNAME=	lincity
 PORTVERSION=	1.13.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,7 +33,7 @@ LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB=	PROG="bin/lincity"
 .else
-USE_XLIB=	yes
+USE_XORG=	sm xext
 CONFIGURE_ARGS+=	--without-svga
 PLIST_SUB=	PROG="bin/xlincity"
 .endif
