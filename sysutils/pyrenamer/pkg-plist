@@ -23,7 +23,7 @@ bin/pyrenamer
 %%PYTHON_SITELIBDIR%%/pyrenamer/treefilebrowser.py
 %%PYTHON_SITELIBDIR%%/pyrenamer/treefilebrowser.pyc
 %%PYTHON_SITELIBDIR%%/pyrenamer/treefilebrowser.pyo
-share/applications/pyrenamer.desktop
+share/gnome/applications/pyrenamer.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -32,11 +32,11 @@ share/applications/pyrenamer.desktop
 %%EXAMPLESDIR%%/treefilebrowser_example.py
 share/locale/en/LC_MESSAGES/pyrenamer.mo
 share/locale/es/LC_MESSAGES/pyrenamer.mo
-share/pixmaps/pyrenamer.png
-%%DATADIR%%/pyrenamer.glade
-%%DATADIR%%/pyrenamer.png
-%%DATADIR%%/pyrenamer.svg
-@dirrm %%DATADIR%%
+share/gnome/pixmaps/pyrenamer.png
+share/gnome/pyrenamer/pyrenamer.glade
+share/gnome/pyrenamer/pyrenamer.png
+share/gnome/pyrenamer/pyrenamer.svg
+@dirrm share/gnome/pyrenamer
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
