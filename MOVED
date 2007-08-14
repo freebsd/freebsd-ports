@@ -3150,7 +3150,7 @@ net/p5-RRD-Simple|databases/p5-RRD-Simple|2007-08-11|Moved to a more appropriate
 net/php4-rrdtool|databases/php4-rrdtool|2007-08-11|Moved to a more appropriate category
 net/py-rrdtool_lgpl|databases/py-rrdtool_lgpl|2007-08-11|Moved to a more appropriate category
 games/gpuzzle|games/jigsaw|2007-08-11|Project renamed
-devel/upnp104||2007-08-12|Removed
+devel/upnp104|devel/upnp|2007-08-12|Obsoleted by newer version
 shells/perlsh|shells/psh|2007-08-13|Renamed to reflect correct project's name
 mail/qmHandle|mail/qmhandle|2007-08-13|Renamed to reflect correct project's name
 science/speedcrunch|math/speedcrunch|2007-08-14|Moved to a more appropriate category
