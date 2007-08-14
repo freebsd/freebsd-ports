@@ -24,6 +24,10 @@ PORTDOCS=	*
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.ifdef NOPORTDOCS
+IGNORE=	this port is only documentation, please undefine NOPORTDOCS and try again
+.endif
+
 do-install:
 	@${ECHO_MSG} -n ">> Creating directory ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
