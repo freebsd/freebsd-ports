@@ -2,7 +2,7 @@ CTorrent is a BitTorrent (be know as BT usually) Client program
 written in C for FreeBSD and Linux. Fast and small are CTorrent`s
 two strengths.
 
-WWW: http://ctorrent.sourceforge.net/
+WWW: http://www.rahul.net/dholmes/ctorrent/
 
 - Florent Thoumie
 flz@xbsd.org
