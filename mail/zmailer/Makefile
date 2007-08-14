@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	zmailer
-PORTVERSION=	2.99.56
+PORTVERSION=	2.99.57
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/mail/zmailer/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A fully functional fast, robust SMTP server and transport agent
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.*
@@ -25,10 +25,6 @@ CONFIGURE_ARGS=	--without-openssl
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 CONFIGURE_ARGS+=--prefix=${PREFIX}/ \
 		--with-mailbin=${PREFIX}/sbin \
@@ -56,29 +52,18 @@ MAN8=		hold.8zm router.8zm scheduler.8zm sendmail.8zm sm.8zm smtp.8zm \
 		smtpserver.8zm mprobe.8zm expirer.8zm errormail.8zm mailbox.8zm \
 		manual-expirer.8zm manual-rerouter.8zm reroute.8zm
 
-PKGMESSAGE=	${WRKDIR}/MESSAGE
+SUB_FILES=	pkg-install
 PKGINSTALL=	${WRKDIR}/pkg-install
+USE_RC_SUBR=	zmailer.sh
 
-# local variable
-# this pipe is run before bsd.port.mk is brought in - therefore it is
-# not possible to use ${SED}
-DOMAIN!=	/bin/hostname | /usr/bin/sed -e "s:^"`/bin/hostname -s`\.*::g
+# local variable (we can't use ${SED} here)
+DOMAIN!=	/bin/hostname | ${SED} -e "s:^"`/bin/hostname -s`"\.*::g"
 .if (${DOMAIN} == "")
 DOMAIN=		"mydomain.com"
 .endif
 
-post-configure:
-	${SED} -e s:@PREFIX@:${PREFIX}:g -e s:@PORTSDIR@:${PORTSDIR}:g \
-		${PKGDIR}/pkg-message > ${PKGMESSAGE}
-
 post-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/zmailer.sh.sample \
-		 ${PREFIX}/etc/rc.d/zmailer.sh.sample
-
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${FILESDIR}/pkg-install.in > \
-		${PKGINSTALL}
 	@${SETENV} PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
 # set up the initial mail.conf with reasonable settings.
 	@${ECHO_CMD} "# Where am I?" > ${PREFIX}/etc/zmailer/mail.conf.sample
 	@${ECHO_CMD} "orgdomain="${DOMAIN} >> ${PREFIX}/etc/zmailer/mail.conf.sample
@@ -86,41 +71,6 @@ post-install:
 	@${ECHO_CMD} "hostname="`/bin/hostname -s`'.$$orgdomain' >> ${PREFIX}/etc/zmailer/mail.conf.sample
 	@${ECHO_CMD} "# Who do I claim to be?" >> ${PREFIX}/etc/zmailer/mail.conf.sample
 	@${ECHO_CMD} 'mydomain=$$orgdomain' >> ${PREFIX}/etc/zmailer/mail.conf.sample
-
-# obtained directly from ports/mail/postfix
-# with minor hacks by the originator of this port <veers@disturbed.net>
-replace:
-	@${ECHO_MSG} "===> Replacing sendmail"
-	@if [ -e /usr/sbin/sendmail ]; then \
-		${MV} -f /usr/sbin/sendmail /usr/sbin/sendmail.OFF; \
-		${CHMOD} 0 /usr/sbin/sendmail.OFF; \
-	fi
-	@if [ -e ${PREFIX}/sbin/sendmail ]; then \
-		${LN} -s ${PREFIX}/sbin/sendmail /usr/sbin/sendmail; \
-	fi
-	@${ECHO_MSG} "===> Replacing mailq"
-	@if [ -e /usr/bin/mailq ]; then \
-		${MV} -f /usr/bin/mailq /usr/bin/mailq.OFF; \
-		${CHMOD} 0 /usr/bin/mailq.OFF; \
-	fi
-	@if [ -e ${PREFIX}/sbin/mailq ]; then \
-		${LN} -s ${PREFIX}/sbin/mailq /usr/bin/mailq; \
-	fi
-	@${ECHO_MSG} "===> Replacing newaliases"
-	@if [ -e /usr/bin/newaliases ]; then \
-		${MV} -f /usr/bin/newaliases /usr/bin/newaliases.OFF; \
-		${CHMOD} 0 /usr/bin/newaliases.OFF; \
-	fi
-	@if [ -e ${PREFIX}/sbin/newaliases ]; then \
-		${LN} -s ${PREFIX}/sbin/newaliases /usr/bin/newaliases; \
-	fi
-	@${ECHO_MSG} "===> Replacing rmail"
-	@if [ -e /bin/rmail ]; then \
-		${MV} -f /bin/rmail /bin/rmail.OFF; \
-		${CHMOD} 0 /bin/rmail.OFF; \
-	fi
-	@if [ -e ${PREFIX}/sbin/rmail ]; then \
-		${LN} -s ${PREFIX}/sbin/rmail /bin/rmail; \
-	fi
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

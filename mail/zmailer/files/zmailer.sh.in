@@ -1,0 +1,61 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mail
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable zmailer:
+#
+#zmailer_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=zmailer
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/zmailer
+required_files=%%PREFIX%%/etc/zmailer/mail.conf
+
+start_precmd=start_precmd
+start_cmd=start_cmd
+stop_cmd=stop_cmd
+
+start_precmd()
+{
+  case $sendmail_enable in
+  [Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
+    warn "sendmail_enable should be set to NONE"
+    ;;
+  [Nn][Oo]|[Ff][Aa][Ll][Ss][Ee]|[Oo][Ff][Ff]|0)
+    case $sendmail_submit_enable in
+    [Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
+      warn "sendmail_submit_enable should be set to NO"
+      ;;
+    esac
+    ;;
+  [Nn][Oo][Nn][Ee])
+    ;;
+  esac
+}
+
+start_cmd()
+{
+  $command start
+}
+
+stop_cmd()
+{
+  $command stop
+}
+
+# set defaults
+
+zmailer_enable=${zmailer_enable:-"NO"}
+
+load_rc_config $name
+run_rc_command "$1"

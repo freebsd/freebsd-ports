@@ -53,7 +53,6 @@ etc/zmailer/forms/proto/loopexceeded.md5
 etc/zmailer/forms/proto/nonewsgroup.md5
 etc/zmailer/forms/proto/norealname.md5
 etc/zmailer/forms/proto/norecipients.md5
-etc/zmailer/forms/proto/nosuchuser.md5
 etc/zmailer/forms/proto/unresolvable.md5
 etc/zmailer/forms/proto/vms-in-pros.md5
 etc/zmailer/forms/proto/wrongname.md5
@@ -71,7 +70,6 @@ etc/zmailer/forms/loopexceeded
 etc/zmailer/forms/nonewsgroup
 etc/zmailer/forms/norealname
 etc/zmailer/forms/norecipients
-etc/zmailer/forms/nosuchuser
 etc/zmailer/forms/unresolvable
 etc/zmailer/forms/vms-in-pros
 etc/zmailer/forms/wrongname
@@ -91,7 +89,6 @@ etc/zmailer/cf/proto/p-uucp.cf.md5
 etc/zmailer/cf/proto/p-usenet.cf.md5
 etc/zmailer/cf/proto/p-smtp.cf.md5
 etc/zmailer/cf/proto/p-routes.cf.md5
-etc/zmailer/cf/proto/p-ldap.cf.md5
 etc/zmailer/cf/proto/p-iproutes.cf.md5
 etc/zmailer/cf/proto/p-ean.cf.md5
 etc/zmailer/cf/proto/p-bitnet.cf.md5
@@ -116,7 +113,6 @@ etc/zmailer/cf/proto/UTGPU.cf.md5
 etc/zmailer/cf/proto/UTAI.cf.md5
 etc/zmailer/cf/proto/TELE-FI.cf.md5
 etc/zmailer/cf/proto/SMTP.cf.md5
-etc/zmailer/cf/proto/tryme.cf.md5
 etc/zmailer/cf/SMTP+UUCP.cf
 etc/zmailer/cf/trusted.cf
 etc/zmailer/cf/standard.cf
@@ -127,7 +123,6 @@ etc/zmailer/cf/p-uucp.cf
 etc/zmailer/cf/p-usenet.cf
 etc/zmailer/cf/p-smtp.cf
 etc/zmailer/cf/p-routes.cf
-etc/zmailer/cf/p-ldap.cf
 etc/zmailer/cf/p-iproutes.cf
 etc/zmailer/cf/p-ean.cf
 etc/zmailer/cf/p-bitnet.cf
@@ -152,7 +147,6 @@ etc/zmailer/cf/UTGPU.cf
 etc/zmailer/cf/UTAI.cf
 etc/zmailer/cf/TELE-FI.cf
 etc/zmailer/cf/SMTP.cf
-etc/zmailer/cf/tryme.cf
 etc/zmailer/scheduler.conf
 etc/zmailer/sm.conf
 etc/zmailer/smtpserver.conf
@@ -184,7 +178,6 @@ etc/zmailer/forms/proto/loopexceeded
 etc/zmailer/forms/proto/nonewsgroup
 etc/zmailer/forms/proto/norealname
 etc/zmailer/forms/proto/norecipients
-etc/zmailer/forms/proto/nosuchuser
 etc/zmailer/forms/proto/unresolvable
 etc/zmailer/forms/proto/vms-in-pros
 etc/zmailer/forms/proto/wrongname
@@ -200,6 +193,7 @@ etc/zmailer/guides/smtpauth-login-pam-support
 etc/zmailer/guides/smtp-policy
 etc/zmailer/guides/smtp-msa-mode
 etc/zmailer/guides/smtp-etrn
+etc/zmailer/guides/smtpserver-spf
 etc/zmailer/guides/scheduler-ta-protocol
 etc/zmailer/guides/relations
 etc/zmailer/guides/procmail
@@ -229,7 +223,6 @@ etc/zmailer/cf/proto/p-uucp.cf
 etc/zmailer/cf/proto/p-usenet.cf
 etc/zmailer/cf/proto/p-smtp.cf
 etc/zmailer/cf/proto/p-routes.cf
-etc/zmailer/cf/proto/p-ldap.cf
 etc/zmailer/cf/proto/p-iproutes.cf
 etc/zmailer/cf/proto/p-ean.cf
 etc/zmailer/cf/proto/p-bitnet.cf
@@ -254,7 +247,6 @@ etc/zmailer/cf/proto/UTGPU.cf
 etc/zmailer/cf/proto/UTAI.cf
 etc/zmailer/cf/proto/TELE-FI.cf
 etc/zmailer/cf/proto/SMTP.cf
-etc/zmailer/cf/proto/tryme.cf
 etc/zmailer/vacation.msg
 etc/zmailer/mail.conf.sample
 @exec mkdir -p %D/etc/zmailer/lists
@@ -276,7 +268,6 @@ etc/zmailer/mail.conf.sample
 @dirrm etc/zmailer/bak
 @dirrm etc/zmailer
 @unexec /bin/rm -f %D/bin/vacation
-etc/rc.d/zmailer.sh.sample
 lib/libzmailer.a
 sbin/autoanswer.pl
 sbin/bitbucket
@@ -308,6 +299,7 @@ sbin/smtpserver-log-parser.pl
 sbin/vacation.exe
 sbin/vacation.sh
 sbin/zmailer
+sbin/zrfilter
 sbin/ta/bitbucket
 sbin/ta/errormail
 sbin/ta/expirer
