@@ -75,32 +75,38 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	squid
-PORTVERSION=	2.6.13
+PORTVERSION=	2.6.14
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
-		ftp://ftp.vistech.net/pub/squid/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
 		ftp://ftp.belnet.be/packages/squid/pub/%SUBDIR%/ \
 		ftp://ftp.nl.uu.net/pub/unix/www/squid/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/www/Squid/%SUBDIR%/ \
 		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,} \
+		http://www.squid-cache.org/Versions/v2/2.6/ \
+		http://www3.us.squid-cache.org/Versions/v2/2.6/ \
+		http://www1.at.squid-cache.org/Versions/v2/2.6/ \
+		http://www2.nl.squid-cache.org/Versions/v2/2.6/ \
+		http://www1.ru.squid-cache.org/Versions/v2/2.6/ \
+		http://www1.uk.squid-cache.org/Versions/v2/2.6/ \
+		http://www1.jp.squid-cache.org/Versions/v2/2.6/ \
+		http://www2.tw.squid-cache.org/Versions/v2/2.6/
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.6.STABLE13
+DISTNAME=	squid-2.6.STABLE14
 DIST_SUBDIR=	squid2.6
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
-		http://www2.us.squid-cache.org/%SUBDIR%/ \
 		http://www3.us.squid-cache.org/%SUBDIR%/ \
 		http://www1.at.squid-cache.org/%SUBDIR%/ \
 		http://www2.nl.squid-cache.org/%SUBDIR%/ \
 		http://www1.ru.squid-cache.org/%SUBDIR%/ \
 		http://www1.uk.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
-		http://www1.tw.squid-cache.org/%SUBDIR%/
+		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v2/2.6/changesets
-PATCHFILES=
+PATCHFILES=	11534.patch 11547.patch 11548.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -118,6 +124,7 @@ SQUID_GID?=	squid
 MAN8=		cachemgr.cgi.8 squid.8
 docs=		QUICKSTART README RELEASENOTES.html doc/debug-sections.txt
 PORTDOCS=	${docs:T}
+PORTEXAMPLES=	passwd.sql
 SUB_FILES+=	pkg-deinstall pkg-install pkg-message
 SUB_LIST+=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 
@@ -175,10 +182,11 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_SOCKET_FAILURE ERR_TOO_BIG ERR_UNSUP_REQ \
 		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT
 
-libexec=	cachemgr.cgi digest_pw_auth diskd-daemon ip_user_check \
+libexec=	cachemgr.cgi digest_pw_auth diskd-daemon \
+		ip_user_check \
 		msnt_auth ncsa_auth ntlm_auth \
-		pam_auth smb_auth smb_auth.sh squid_session squid_unix_group \
-		wbinfo_group.pl
+		pam_auth smb_auth smb_auth.sh squid_db_auth squid_session \
+		squid_unix_group wbinfo_group.pl
 .if !defined(SQUID_CONFIGURE_ARGS) || ${SQUID_CONFIGURE_ARGS:M*--disable-unlinkd*} == ""
 libexec+=	unlinkd
 .endif
@@ -200,10 +208,11 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 
 # Authentication methods and modules:
 
-basic_auth=	NCSA PAM MSNT SMB
+basic_auth=	DB NCSA PAM MSNT SMB
 digest_auth=	password
 external_acl=	ip_user session unix_group wbinfo_group
-MAN8+=		ncsa_auth.8 pam_auth.8 squid_session.8 squid_unix_group.8
+MAN8+=		ncsa_auth.8 pam_auth.8 squid_db_auth.8 squid_session.8 \
+		squid_unix_group.8
 .if defined(WITH_SQUID_LDAP_AUTH)
 USE_OPENLDAP=	yes
 CFLAGS+=	-I${LOCALBASE}/include
@@ -231,6 +240,12 @@ CONFIGURE_ARGS+=	--enable-auth="basic ntlm digest" \
 			--enable-digest-auth-helpers="${digest_auth}" \
 			--enable-external-acl-helpers="${external_acl}" \
 			--enable-ntlm-auth-helpers="SMB"
+.if !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
+# XXX This currently only works with heimdal from the base system,
+#     see files/patch-helpers_negotiate_auth-squid_kerb_auth_*
+CONFIGURE_ARGS+=	--enable-negotiate-auth-helpers="squid_kerb_auth"
+libexec+=	squid_kerb_auth
+.endif
 
 # Storage schemes:
 
@@ -352,10 +367,10 @@ CONFIGURE_ARGS+=	--disable-kqueue
 .if defined(WITH_SQUID_LARGEFILE)
 CONFIGURE_ARGS+=	--with-large-files --enable-large-cache-files
 .endif
-.if defined(WITH_SQUID_STACKTRACES) || defined(WITH_DEBUG)
+.if defined(WITH_SQUID_STACKTRACES)
 CONFIGURE_ARGS+=	--enable-stacktraces
 CFLAGS+=	-g
-STRIP=			""
+STRIP=
 .endif
 
 # Languages:
@@ -409,6 +424,8 @@ pre-su-install:
 	    ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/helpers/basic_auth/DB/passwd.sql ${EXAMPLESDIR}
 .if defined(WITH_SQUID_PINGER)
 	${CHMOD} 4510 ${PREFIX}/libexec/squid/pinger; \
 	${CHGRP} ${SQUID_GID} ${PREFIX}/libexec/squid/pinger
