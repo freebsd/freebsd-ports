@@ -34,6 +34,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dht.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dirac.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/eigen/eigen.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/eigen/gensymm.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/eigen/herm.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/eigen/narray.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/eigen/nonsymm.rb
@@ -52,9 +53,8 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/realradix2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/sunspot.dat
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/sunspot.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/data.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/expdata.dat
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/expfit.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/fit.dat
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/gaussfit.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/gaussian_2peaks.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/hi.dat
@@ -94,6 +94,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/histogram/gsl-histogram.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/histogram/histo2d.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/histogram/histo3d.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/histogram/histogram-pdf.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/histogram/histogram.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/histogram/integral.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/histogram/poisson.rb
