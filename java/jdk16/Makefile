@@ -253,7 +253,7 @@ pre-fetch:
 # Get JRL agreement
 .if !defined(PACKAGE_BUILDING)
 pre-extract:
-	${SH} ${FILESDIR}/pkg-install.in ${PKGNAME} PRE-INSTALL
+	${SH} ${FILESDIR}/license.sh
 .endif
 
 # Extract the files
