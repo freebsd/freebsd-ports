@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	1.21
-PORTREVISION=	2
+PORTVERSION=	1.22
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
-		http://fresh.t-systems-sfr.com/linux/src/ \
+MASTER_SITES=	http://www.viceteam.org/online/ \
+		http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/
 PKGNAMESUFFIX?=	${GNOME_SUFFIX}${PKGNAMESUFFIX2}
 
@@ -79,13 +78,12 @@ PLIST_SUB+=		NLS="@comment "
 .if !defined(WITHOUT_SDL)
 USE_SDL=		sdl
 CONFIGURE_ARGS+=	--with-sdl
-CFLAGS+=		-DHAVE_LIBSDL=1 -DHAVE_SDL_SDL_AUDIO_H=1
-CPPFLAGS+=		-I${LOCALBASE}/include/SDL11
+CPPFLAGS+=		-I${LOCALBASE}/include/SDL
 .endif
 
 .if defined(WITH_ESOUND)
 LIB_DEPENDS+=		esd.2:${PORTSDIR}/audio/esound
-CFLAGS+=		-DHAVE_LIBESD=1 -DHAVE_SDL_SDL_AUDIO_H=1
+CONFIGURE_ARGS+=	--with-esd
 .else
 CONFIGURE_ARGS+=	--without-esd
 .endif
@@ -101,8 +99,6 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/man/vice.1
-	${REINPLACE_CMD} -e "s|machine/joystick.h|sys/joystick.h|g" \
-		${WRKSRC}/configure
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's| doc||' ${WRKSRC}/Makefile.in
 .endif

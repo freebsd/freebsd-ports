@@ -15,8 +15,9 @@ bin/xvic
 %%NLS%%share/locale/nl/LC_MESSAGES/vice.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/vice.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/vice.mo
-lib/vice/C128/amiga_sym.vkm
+lib/vice/C128/ROdflt.vkm
 lib/vice/C128/amiga_pos.vkm
+lib/vice/C128/amiga_sym.vkm
 lib/vice/C128/basic64
 lib/vice/C128/basichi
 lib/vice/C128/basiclo
@@ -29,12 +30,6 @@ lib/vice/C128/chargde
 lib/vice/C128/chargen
 lib/vice/C128/chargfr
 lib/vice/C128/chargse
-lib/vice/C128/kernalde
-lib/vice/C128/kernalfi
-lib/vice/C128/kernalfr
-lib/vice/C128/kernalit
-lib/vice/C128/kernalno
-lib/vice/C128/kernalse
 lib/vice/C128/default.vpl
 lib/vice/C128/default.vrs
 lib/vice/C128/dos_pos.vkm
@@ -43,7 +38,15 @@ lib/vice/C128/frodo.vpl
 lib/vice/C128/godot.vpl
 lib/vice/C128/kernal
 lib/vice/C128/kernal64
+lib/vice/C128/kernalde
+lib/vice/C128/kernalfi
+lib/vice/C128/kernalfr
+lib/vice/C128/kernalit
+lib/vice/C128/kernalno
+lib/vice/C128/kernalse
 lib/vice/C128/os2.vkm
+lib/vice/C128/osx_pos.vkm
+lib/vice/C128/osx_sym.vkm
 lib/vice/C128/pc64.vpl
 lib/vice/C128/vdc_deft.vpl
 lib/vice/C128/vice.vpl
@@ -51,8 +54,9 @@ lib/vice/C128/win_pos.vkm
 lib/vice/C128/win_sym.vkm
 lib/vice/C128/x11_pos.vkm
 lib/vice/C128/x11_sym.vkm
-lib/vice/C64/amiga_sym.vkm
+lib/vice/C64/ROdflt.vkm
 lib/vice/C64/amiga_pos.vkm
+lib/vice/C64/amiga_sym.vkm
 lib/vice/C64/basic
 lib/vice/C64/beos_pos.vkm
 lib/vice/C64/beos_sym.vkm
@@ -70,6 +74,8 @@ lib/vice/C64/godot.vpl
 lib/vice/C64/kernal
 lib/vice/C64/os2.vkm
 lib/vice/C64/os2_sym.vkm
+lib/vice/C64/osx_pos.vkm
+lib/vice/C64/osx_sym.vkm
 lib/vice/C64/pc64.vpl
 lib/vice/C64/vice.vpl
 lib/vice/C64/win_pos.vkm
@@ -77,6 +83,7 @@ lib/vice/C64/win_sym_de.vkm
 lib/vice/C64/win_sym_us.vkm
 lib/vice/C64/x11_pos.vkm
 lib/vice/C64/x11_sym.vkm
+lib/vice/CBM-II/ROdflt.vkm
 lib/vice/CBM-II/amber.vpl
 lib/vice/CBM-II/amiga_bukp.vkm
 lib/vice/CBM-II/amiga_buks.vkm
@@ -85,8 +92,8 @@ lib/vice/CBM-II/basic.256
 lib/vice/CBM-II/basic.500
 lib/vice/CBM-II/beos_bukp.vkm
 lib/vice/CBM-II/beos_buks.vkm
-lib/vice/CBM-II/c64s.vpl
 lib/vice/CBM-II/c64hq.vpl
+lib/vice/CBM-II/c64s.vpl
 lib/vice/CBM-II/ccs64.vpl
 lib/vice/CBM-II/chargen.500
 lib/vice/CBM-II/chargen.600
@@ -111,17 +118,19 @@ lib/vice/CBM-II/win_pos_uk.vkm
 lib/vice/CBM-II/win_sym_uk.vkm
 lib/vice/CBM-II/x11_buks.vkm
 lib/vice/DRIVES/d1541II
+lib/vice/DRIVES/d1571cr
 lib/vice/DRIVES/dos1001
 lib/vice/DRIVES/dos1541
 lib/vice/DRIVES/dos1551
 lib/vice/DRIVES/dos1570
 lib/vice/DRIVES/dos1571
-lib/vice/DRIVES/d1571cr
 lib/vice/DRIVES/dos1581
 lib/vice/DRIVES/dos2031
 lib/vice/DRIVES/dos2040
 lib/vice/DRIVES/dos3040
 lib/vice/DRIVES/dos4040
+lib/vice/PET/RObusi.vkm
+lib/vice/PET/ROgrph.vkm
 lib/vice/PET/amber.vpl
 lib/vice/PET/amiga_bgrs.vkm
 lib/vice/PET/amiga_buks.vkm
@@ -159,10 +168,11 @@ lib/vice/PET/x11_bdep.vkm
 lib/vice/PET/x11_bdes.vkm
 lib/vice/PET/x11_bgrs.vkm
 lib/vice/PET/x11_buks.vkm
+lib/vice/PLUS4/ROdflt.vkm
 lib/vice/PLUS4/3plus1hi
 lib/vice/PLUS4/3plus1lo
-lib/vice/PLUS4/amiga_sym.vkm
 lib/vice/PLUS4/amiga_pos.vkm
+lib/vice/PLUS4/amiga_sym.vkm
 lib/vice/PLUS4/basic
 lib/vice/PLUS4/beos_pos.vkm
 lib/vice/PLUS4/beos_sym.vkm
@@ -178,12 +188,13 @@ lib/vice/PLUS4/win_sym.vkm
 lib/vice/PLUS4/x11_pos.vkm
 lib/vice/PLUS4/x11_sym.vkm
 lib/vice/PRINTER/cbm1526
-lib/vice/PRINTER/nl10-cbm
 lib/vice/PRINTER/mps801
 lib/vice/PRINTER/mps803
 lib/vice/PRINTER/mps803.vpl
-lib/vice/VIC20/amiga_sym.vkm
+lib/vice/PRINTER/nl10-cbm
+lib/vice/VIC20/ROdflt.vkm
 lib/vice/VIC20/amiga_pos.vkm
+lib/vice/VIC20/amiga_sym.vkm
 lib/vice/VIC20/basic
 lib/vice/VIC20/beos_pos.vkm
 lib/vice/VIC20/beos_sym.vkm
@@ -222,6 +233,7 @@ lib/vice/fonts/vice-cbm.pcf
 %%PORTDOCS%%%%DOCSDIR%%/drive_info.txt
 %%PORTDOCS%%%%DOCSDIR%%/iec-bus.txt
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/macosx.html
 %%PORTDOCS%%%%DOCSDIR%%/mon.txt
 %%PORTDOCS%%%%DOCSDIR%%/new.gif
 %%PORTDOCS%%%%DOCSDIR%%/openGLsync-howto.txt
@@ -246,13 +258,13 @@ lib/vice/fonts/vice-cbm.pcf
 %%PORTDOCS%%%%DOCSDIR%%/vice_toc.html
 %%PORTDOCS%%%%DOCSDIR%%/vice-logo.jpg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/vice/fonts
 @dirrm lib/vice/VIC20
-@dirrm lib/vice/PLUS4
 @dirrm lib/vice/PRINTER
+@dirrm lib/vice/PLUS4
 @dirrm lib/vice/PET
 @dirrm lib/vice/DRIVES
 @dirrm lib/vice/CBM-II
 @dirrm lib/vice/C64
 @dirrm lib/vice/C128
-@dirrm lib/vice/fonts
 @dirrm lib/vice
