@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dropbear
-PORTVERSION=	0.49
-PORTREVISION=	1
+PORTVERSION=	0.50
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://matt.ucc.asn.au/dropbear/releases/
 
@@ -17,13 +16,13 @@ COMMENT=	An SSH 2 server, designed to be usable in small memory environments
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 
-OPTIONS=   STATIC  "Build statically"  off
+OPTIONS=	STATIC  "Build statically"  off
 
 USE_RC_SUBR=	${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WANT_STATIC) || defined(WITH_STATIC)
+.if defined(WITH_STATIC)
 CONFIGURE_ENV=	LDFLAGS=-static
 .endif
 
@@ -37,9 +36,5 @@ post-patch:
 post-install:
 	@${MKDIR} ${PREFIX}/etc/dropbear
 	@${ECHO_MSG} ""
-.if defined(WANT_STATIC)
-	@${ECHO_MSG} " WARNING: deprecated option WANT_STATIC used, use 'make config' instead"
-	@${ECHO_MSG} ""
-.endif
 
 .include <bsd.port.post.mk>
