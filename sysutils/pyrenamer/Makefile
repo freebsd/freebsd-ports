@@ -7,6 +7,7 @@
 
 PORTNAME=	pyrenamer
 DISTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils python gnome
 MASTER_SITES=	http://www.infinicode.org/code/${PORTNAME}/
 
@@ -29,10 +30,8 @@ MAN1=		pyrenamer.1
 GCONF_SCHEMAS=	pyrenamer.schemas
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|[(]datadir[)]/doc|(prefix)/share/examples|g' \
+	@${REINPLACE_CMD} -e 's|[$$][(]datadir[)]/doc/pyrenamer|${EXAMPLESDIR}|g' \
 		${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e 's|[(]datadir[)]/applications|(prefix)/share/applications|g' \
-		${WRKSRC}/data/Makefile.in
 
 .ifndef (NOPORTDOCS)
 post-install:
