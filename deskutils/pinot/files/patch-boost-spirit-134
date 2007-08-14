@@ -1,0 +1,22 @@
+--- Search/SherlockParser.cpp.orig	Tue Jun 19 16:15:11 2007
++++ Search/SherlockParser.cpp	Tue Aug 14 12:45:25 2007
+@@ -535,7 +535,8 @@
+ 					userInput, nextInput, nextFactor, nextValue);
+ 
+ 				parse_info<> parseInfo = boost::spirit::parse(pData, plugin, skip);
+-				fullParsing = parseInfo.full;
++				//fullParsing = parseInfo.full;
++				fullParsing = parseInfo.hit;
+ 			}
+ 			else
+ 			{
+@@ -543,7 +544,8 @@
+ 				plugin_min_grammar plugin(searchParams);
+ 
+ 				parse_info<> parseInfo = boost::spirit::parse(pData, plugin, skip);
+-				fullParsing = parseInfo.full;
++				//fullParsing = parseInfo.full;
++				fullParsing = parseInfo.hit;
+ 			}
+ 		}
+ 		catch (const exception &e)
