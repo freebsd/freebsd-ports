@@ -24,6 +24,12 @@ ALL_TARGET=	pmake
 PMAKE_ENV=	${MAKE_ENV} MAKE=${PREFIX}/bin/pmake
 MAN1=		pmake.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+IGNORE=		does not support ${OPSYS}-${OSREL} at this time
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} '/memmove/d' ${WRKSRC}/lib/include/sprite.h
 
@@ -54,4 +60,4 @@ do-install::
 	${INSTALL_MAN} ${WRKSRC}/doc/pmake.1 ${PREFIX}/man/man1
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
