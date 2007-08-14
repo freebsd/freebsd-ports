@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	toycars
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.3.3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	toycars
+MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Physics-based 2D racing game
+
+LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
+		alut.1:${PORTSDIR}/audio/freealut
 
 USE_SDL=	mixer image sdl
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}lib -L${X11BASE}/lib"
 
 PORTDOCS=	README
 
