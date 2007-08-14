@@ -5220,7 +5220,6 @@ www/data-dist/phpgroupware/phpgwapi/inc/class.contacts_sql.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.country.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.crypto.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.data_cleaner.inc.php
-www/data-dist/phpgroupware/phpgwapi/inc/class.datetime.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.db.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.db_msql.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.db_mssql.inc.php
@@ -5252,6 +5251,8 @@ www/data-dist/phpgroupware/phpgwapi/inc/class.net_http_client.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.network.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.nextmatchs.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.phpgw.inc.php
+www/data-dist/phpgroupware/phpgwapi/inc/class.phpgw_datetime.inc.php
+www/data-dist/phpgroupware/phpgwapi/inc/class.phpgw_soapclient.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.ping.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.portalbox.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.preferences.inc.php
@@ -5281,7 +5282,6 @@ www/data-dist/phpgroupware/phpgwapi/inc/class.setup_translation.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.soap_client.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.soap_parser.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.soap_server.inc.php
-www/data-dist/phpgroupware/phpgwapi/inc/class.soapclient.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.soapmsg.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.soapval.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.sql.inc.php
@@ -6457,17 +6457,26 @@ www/data-dist/phpgroupware/phpgwapi/themes/theme.template
 www/data-dist/phpgroupware/phpgwapi/themes/theme2template.pl
 www/data-dist/phpgroupware/phpgwapi/themes/yellows.theme
 www/data-dist/phpgroupware/phpsysinfo/admin.php
+www/data-dist/phpgroupware/phpsysinfo/config.php
+www/data-dist/phpgroupware/phpsysinfo/distros.ini
 www/data-dist/phpgroupware/phpsysinfo/doc/COPYING
 www/data-dist/phpgroupware/phpsysinfo/doc/ChangeLog
 www/data-dist/phpgroupware/phpsysinfo/doc/README
 www/data-dist/phpgroupware/phpsysinfo/inc/functions.inc.php
 www/data-dist/phpgroupware/phpsysinfo/inc/hook_admin.inc.php
 www/data-dist/phpgroupware/phpsysinfo/includes/XPath.class.php
+www/data-dist/phpgroupware/phpsysinfo/includes/class.Template.inc.php
+www/data-dist/phpgroupware/phpsysinfo/includes/class.error.inc.php
 www/data-dist/phpgroupware/phpsysinfo/includes/color_scheme.php
 www/data-dist/phpgroupware/phpsysinfo/includes/common_functions.php
+www/data-dist/phpgroupware/phpsysinfo/includes/index.html
+www/data-dist/phpgroupware/phpsysinfo/includes/indicator.php
+www/data-dist/phpgroupware/phpsysinfo/includes/lang/ar_utf8.php
+www/data-dist/phpgroupware/phpsysinfo/includes/lang/bg.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/big5.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/br.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/ca.php
+www/data-dist/phpgroupware/phpsysinfo/includes/lang/cn.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/cs.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/ct.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/da.php
@@ -6478,28 +6487,44 @@ www/data-dist/phpgroupware/phpsysinfo/includes/lang/et.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/eu.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/fi.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/fr.php
+www/data-dist/phpgroupware/phpsysinfo/includes/lang/gr.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/he.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/hu.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/id.php
+www/data-dist/phpgroupware/phpsysinfo/includes/lang/index.html
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/is.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/it.php
+www/data-dist/phpgroupware/phpsysinfo/includes/lang/ja.php
+www/data-dist/phpgroupware/phpsysinfo/includes/lang/jp.php
+www/data-dist/phpgroupware/phpsysinfo/includes/lang/ko.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/kr.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/lt.php
+www/data-dist/phpgroupware/phpsysinfo/includes/lang/lv.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/nl.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/no.php
+www/data-dist/phpgroupware/phpsysinfo/includes/lang/pa_utf8.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/pl.php
+www/data-dist/phpgroupware/phpsysinfo/includes/lang/pt-br.php
+www/data-dist/phpgroupware/phpsysinfo/includes/lang/pt.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/ro.php
+www/data-dist/phpgroupware/phpsysinfo/includes/lang/ru.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/se.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/sk.php
+www/data-dist/phpgroupware/phpsysinfo/includes/lang/sr.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/sv.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/tr.php
 www/data-dist/phpgroupware/phpsysinfo/includes/lang/tw.php
 www/data-dist/phpgroupware/phpsysinfo/includes/os/class.BSD.common.inc.php
 www/data-dist/phpgroupware/phpsysinfo/includes/os/class.Darwin.inc.php
 www/data-dist/phpgroupware/phpsysinfo/includes/os/class.FreeBSD.inc.php
+www/data-dist/phpgroupware/phpsysinfo/includes/os/class.HP-UX.inc.php
 www/data-dist/phpgroupware/phpsysinfo/includes/os/class.Linux.inc.php
 www/data-dist/phpgroupware/phpsysinfo/includes/os/class.NetBSD.inc.php
 www/data-dist/phpgroupware/phpsysinfo/includes/os/class.OpenBSD.inc.php
+www/data-dist/phpgroupware/phpsysinfo/includes/os/class.SunOS.inc.php
+www/data-dist/phpgroupware/phpsysinfo/includes/os/class.WINNT.inc.php
+www/data-dist/phpgroupware/phpsysinfo/includes/os/class.parseProgs.inc.php
+www/data-dist/phpgroupware/phpsysinfo/includes/os/index.html
 www/data-dist/phpgroupware/phpsysinfo/includes/system_footer.php
 www/data-dist/phpgroupware/phpsysinfo/includes/system_functions.php
 www/data-dist/phpgroupware/phpsysinfo/includes/system_header.php
@@ -6510,10 +6535,15 @@ www/data-dist/phpgroupware/phpsysinfo/includes/table_network.php
 www/data-dist/phpgroupware/phpsysinfo/includes/table_vitals.php
 www/data-dist/phpgroupware/phpsysinfo/includes/xml/filesystems.php
 www/data-dist/phpgroupware/phpsysinfo/includes/xml/hardware.php
+www/data-dist/phpgroupware/phpsysinfo/includes/xml/hddtemp.php
+www/data-dist/phpgroupware/phpsysinfo/includes/xml/index.html
+www/data-dist/phpgroupware/phpsysinfo/includes/xml/mbinfo.php
 www/data-dist/phpgroupware/phpsysinfo/includes/xml/memory.php
 www/data-dist/phpgroupware/phpsysinfo/includes/xml/network.php
 www/data-dist/phpgroupware/phpsysinfo/includes/xml/vitals.php
 www/data-dist/phpgroupware/phpsysinfo/index.php
+www/data-dist/phpgroupware/phpsysinfo/ioreg-with.txt
+www/data-dist/phpgroupware/phpsysinfo/parse.php
 www/data-dist/phpgroupware/phpsysinfo/phpsysinfo.dtd
 www/data-dist/phpgroupware/phpsysinfo/setup/README.translators
 www/data-dist/phpgroupware/phpsysinfo/setup/phpgw_de.lang
@@ -6539,12 +6569,14 @@ www/data-dist/phpgroupware/phpsysinfo/templates/aq/images/coinsupg.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/aq/images/d.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/aq/images/fond.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/aq/images/g.gif
+www/data-dist/phpgroupware/phpsysinfo/templates/aq/images/index.html
 www/data-dist/phpgroupware/phpsysinfo/templates/aq/images/inf.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/aq/images/redbar_left.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/aq/images/redbar_middle.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/aq/images/redbar_right.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/aq/images/space15_15.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/aq/images/sup.gif
+www/data-dist/phpgroupware/phpsysinfo/templates/aq/index.html
 www/data-dist/phpgroupware/phpsysinfo/templates/black/black.css
 www/data-dist/phpgroupware/phpsysinfo/templates/black/box.tpl
 www/data-dist/phpgroupware/phpsysinfo/templates/black/form.tpl
@@ -6559,12 +6591,14 @@ www/data-dist/phpgroupware/phpsysinfo/templates/black/images/coinsupg.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/black/images/d.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/black/images/fond.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/black/images/g.gif
+www/data-dist/phpgroupware/phpsysinfo/templates/black/images/index.html
 www/data-dist/phpgroupware/phpsysinfo/templates/black/images/inf.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/black/images/redbar_left.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/black/images/redbar_middle.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/black/images/redbar_right.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/black/images/space15_15.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/black/images/sup.gif
+www/data-dist/phpgroupware/phpsysinfo/templates/black/index.html
 www/data-dist/phpgroupware/phpsysinfo/templates/blue/blue.css
 www/data-dist/phpgroupware/phpsysinfo/templates/blue/box.tpl
 www/data-dist/phpgroupware/phpsysinfo/templates/blue/form.tpl
@@ -6574,6 +6608,7 @@ www/data-dist/phpgroupware/phpsysinfo/templates/blue/images/bar_middle.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/blue/images/bar_middle.png
 www/data-dist/phpgroupware/phpsysinfo/templates/blue/images/bar_right.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/blue/images/bar_right.png
+www/data-dist/phpgroupware/phpsysinfo/templates/blue/images/index.html
 www/data-dist/phpgroupware/phpsysinfo/templates/blue/images/redbar_left.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/blue/images/redbar_left.png
 www/data-dist/phpgroupware/phpsysinfo/templates/blue/images/redbar_middle.gif
@@ -6582,6 +6617,7 @@ www/data-dist/phpgroupware/phpsysinfo/templates/blue/images/redbar_right.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/blue/images/redbar_right.png
 www/data-dist/phpgroupware/phpsysinfo/templates/blue/images/trans.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/blue/images/trans.png
+www/data-dist/phpgroupware/phpsysinfo/templates/blue/index.html
 www/data-dist/phpgroupware/phpsysinfo/templates/classic/box.tpl
 www/data-dist/phpgroupware/phpsysinfo/templates/classic/classic.css
 www/data-dist/phpgroupware/phpsysinfo/templates/classic/form.tpl
@@ -6591,6 +6627,7 @@ www/data-dist/phpgroupware/phpsysinfo/templates/classic/images/bar_middle.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/classic/images/bar_middle.png
 www/data-dist/phpgroupware/phpsysinfo/templates/classic/images/bar_right.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/classic/images/bar_right.png
+www/data-dist/phpgroupware/phpsysinfo/templates/classic/images/index.html
 www/data-dist/phpgroupware/phpsysinfo/templates/classic/images/redbar_left.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/classic/images/redbar_left.png
 www/data-dist/phpgroupware/phpsysinfo/templates/classic/images/redbar_middle.gif
@@ -6599,6 +6636,7 @@ www/data-dist/phpgroupware/phpsysinfo/templates/classic/images/redbar_right.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/classic/images/redbar_right.png
 www/data-dist/phpgroupware/phpsysinfo/templates/classic/images/trans.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/classic/images/trans.png
+www/data-dist/phpgroupware/phpsysinfo/templates/classic/index.html
 www/data-dist/phpgroupware/phpsysinfo/templates/default/admin.tpl
 www/data-dist/phpgroupware/phpsysinfo/templates/default/box.tpl
 www/data-dist/phpgroupware/phpsysinfo/templates/default/form.tpl
@@ -6654,6 +6692,7 @@ www/data-dist/phpgroupware/phpsysinfo/templates/idsociety/images/space15_15.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/idsociety/images/space15_15.png
 www/data-dist/phpgroupware/phpsysinfo/templates/idsociety/images/sup.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/idsociety/images/sup.png
+www/data-dist/phpgroupware/phpsysinfo/templates/index.html
 www/data-dist/phpgroupware/phpsysinfo/templates/metal/box.tpl
 www/data-dist/phpgroupware/phpsysinfo/templates/metal/form.tpl
 www/data-dist/phpgroupware/phpsysinfo/templates/metal/images/bar_left.gif
@@ -6666,6 +6705,7 @@ www/data-dist/phpgroupware/phpsysinfo/templates/metal/images/coinsupg.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/metal/images/d.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/metal/images/fond.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/metal/images/g.gif
+www/data-dist/phpgroupware/phpsysinfo/templates/metal/images/index.html
 www/data-dist/phpgroupware/phpsysinfo/templates/metal/images/inf.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/metal/images/metal_background.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/metal/images/redbar_left.gif
@@ -6673,17 +6713,21 @@ www/data-dist/phpgroupware/phpsysinfo/templates/metal/images/redbar_middle.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/metal/images/redbar_right.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/metal/images/space15_15.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/metal/images/sup.gif
+www/data-dist/phpgroupware/phpsysinfo/templates/metal/index.html
 www/data-dist/phpgroupware/phpsysinfo/templates/metal/metal.css
 www/data-dist/phpgroupware/phpsysinfo/templates/orange/box.tpl
 www/data-dist/phpgroupware/phpsysinfo/templates/orange/form.tpl
 www/data-dist/phpgroupware/phpsysinfo/templates/orange/images/bar_left.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/orange/images/bar_middle.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/orange/images/bar_right.gif
+www/data-dist/phpgroupware/phpsysinfo/templates/orange/images/index.html
 www/data-dist/phpgroupware/phpsysinfo/templates/orange/images/redbar_left.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/orange/images/redbar_middle.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/orange/images/redbar_right.gif
 www/data-dist/phpgroupware/phpsysinfo/templates/orange/images/trans.gif
+www/data-dist/phpgroupware/phpsysinfo/templates/orange/index.html
 www/data-dist/phpgroupware/phpsysinfo/templates/orange/orange.css
+www/data-dist/phpgroupware/phpsysinfo/templates/probusiness/dont-delete
 www/data-dist/phpgroupware/polls/admin.php
 www/data-dist/phpgroupware/polls/admin_addanswer.php
 www/data-dist/phpgroupware/polls/admin_addquestion.php
@@ -8245,6 +8289,7 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/polls/images
 @dirrm www/data-dist/phpgroupware/polls/doc
 @dirrm www/data-dist/phpgroupware/polls
+@dirrm www/data-dist/phpgroupware/phpsysinfo/templates/probusiness
 @dirrm www/data-dist/phpgroupware/phpsysinfo/templates/orange/images
 @dirrm www/data-dist/phpgroupware/phpsysinfo/templates/orange
 @dirrm www/data-dist/phpgroupware/phpsysinfo/templates/metal/images
