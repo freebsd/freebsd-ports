@@ -136,6 +136,7 @@
     SUBDIR += unfoo
     SUBDIR += unlzx
     SUBDIR += unmakeself
+    SUBDIR += unmass
     SUBDIR += unrar
     SUBDIR += unshield
     SUBDIR += untar
