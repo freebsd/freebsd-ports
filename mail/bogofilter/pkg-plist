@@ -24,5 +24,6 @@ etc/bogofilter.cf.example
 %%CONTRIB%%%%DOCSDIR%%/contrib/spamitarium.pl
 %%CONTRIB%%%%DOCSDIR%%/contrib/stripsearch.pl
 %%CONTRIB%%%%DOCSDIR%%/contrib/trainbogo.sh
+%%CONTRIB%%%%DOCSDIR%%/contrib/vm-bogofilter.el
 %%CONTRIB%%@dirrm %%DOCSDIR%%/contrib
 %%CONTRIB%%@dirrm %%DOCSDIR%%
