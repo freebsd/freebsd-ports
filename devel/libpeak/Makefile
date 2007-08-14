@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	libpeak
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	0.1.2
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	peak
@@ -20,13 +20,10 @@ ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnometarget
 MAKE_ARGS=	CFLAGS="${CFLAGS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-	${WRKSRC}/configure
+USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.mk>
