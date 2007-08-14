@@ -6,7 +6,7 @@
 
 PORTNAME=	mongrel
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE} \
     		http://files.rubyforge.mmmultiworks.com/fauna/:PATCH
@@ -20,8 +20,6 @@ BUILD_DEPENDS=	gpgen:${PORTSDIR}/devel/rubygem-gem_plugin \
 		rubygem-daemons>=0.4.4:${PORTSDIR}/devel/rubygem-daemons \
 		rubygem-fastthread>=0.6.2:${PORTSDIR}/devel/rubygem-fastthread
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Size mismatch
 
 PATCHNAME=	cgi_multipart_eof_fix-2.2
 

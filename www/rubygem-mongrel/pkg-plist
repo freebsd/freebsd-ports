@@ -6,13 +6,20 @@ bin/mongrel_rails
 %%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/RUBY-LICENSE
 %%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/Rakefile
 %%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/lib/cgi_multipart_eof_fix.rb
-%%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/cgi_multipart_eof_fix_test.rb
+%%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/lib/rake_task_redefine_task.rb
+%%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/test/cgi_multipart_eof_fix_test.rb
 %%GEM_CACHE%%
 %%CACHE_DIR%%/cgi_multipart_eof_fix-2.2.gem
 %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/rdoc-style.css
 %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/files/lib/cgi_multipart_eof_fix_rb.html
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/files/lib/rake_task_redefine_task_rb.html
 %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes/CGI.html
 %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes/CGI/QueryExtension.html
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes/Rake.html
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes/Rake/Task.html
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes/Rake/Task.src/M000002.html
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes/Rake/TaskManager.html
+%%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes/Rake/TaskManager.src/M000001.html
 %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/fr_file_index.html
 %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/fr_class_index.html
 %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/index.html
@@ -574,11 +581,15 @@ bin/mongrel_rails
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
 @dirrm %%GEM_DOC_DIR%%
+@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes/Rake/TaskManager.src
+@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes/Rake/Task.src
+@dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes/Rake
 @dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes/CGI
 @dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/classes
 @dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/files/lib
 @dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc/files
 @dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2/rdoc
 @dirrm %%DOC_DIR%%/cgi_multipart_eof_fix-2.2
+@dirrm %%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/test
 @dirrm %%GEMS_DIR%%/cgi_multipart_eof_fix-2.2/lib
 @dirrm %%GEMS_DIR%%/cgi_multipart_eof_fix-2.2
