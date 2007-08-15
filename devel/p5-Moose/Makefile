@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
@@ -32,6 +32,7 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Recipe4.3 \
 	Moose::Cookbook::Recipe5.3 \
 	Moose::Cookbook::Recipe6.3 \
+	Moose::Cookbook::Recipe7.3 \
 	Moose::Cookbook::WTF.3 \
 	Moose::Meta::Attribute.3 \
 	Moose::Meta::Class.3 \
@@ -43,12 +44,16 @@ MAN3=	Moose.3 \
 	Moose::Meta::Method::Overriden.3 \
 	Moose::Meta::Role.3 \
 	Moose::Meta::Role::Method.3 \
+	Moose::Meta::Role::Method::Required.3 \
 	Moose::Meta::TypeCoercion.3 \
 	Moose::Meta::TypeConstraint.3 \
 	Moose::Meta::TypeConstraint::Union.3 \
 	Moose::Object.3 \
 	Moose::Role.3 \
-	Moose::Util::TypeConstraints.3
+	Moose::Spec::Role.3 \
+	Moose::Util.3 \
+	Moose::Util::TypeConstraints.3 \
+	Test::Moose.3
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Build.PL
