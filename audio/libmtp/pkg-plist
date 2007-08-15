@@ -13,6 +13,7 @@ bin/mtp-hotplug
 bin/mtp-newfolder
 bin/mtp-newplaylist
 bin/mtp-playlists
+bin/mtp-reset
 bin/mtp-sendfile
 bin/mtp-sendtr
 bin/mtp-thumb
@@ -22,5 +23,5 @@ include/libmtp.h
 lib/libmtp.a
 lib/libmtp.la
 lib/libmtp.so
-lib/libmtp.so.7
+lib/libmtp.so.6
 libdata/pkgconfig/libmtp.pc

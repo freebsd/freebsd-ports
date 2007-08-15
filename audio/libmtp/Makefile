@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmtp
-PORTVERSION=	0.1.5
+PORTVERSION=	0.2.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,5 +24,8 @@ USE_LDCONFIG=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -liconv
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
