@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cgiwrap
-PORTVERSION=	3.9
-PORTREVISION=	3
+PORTVERSION=	4.0
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -62,6 +61,7 @@ CONFIGURE_ARGS=	--with-httpd-user=${WWWOWN} \
 		--with-cgi-dir=${USER_CGIDIR} \
 		--with-allow-file=${ALLOW_FILE} \
 		--with-deny-file=${DENY_FILE} \
+		--with-check-shell \
 		--with-wall
 
 .include <bsd.port.pre.mk>
