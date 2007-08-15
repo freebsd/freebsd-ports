@@ -7,6 +7,7 @@
 
 PORTNAME=	qdevelop
 PORTVERSION=	0.23.1
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	http://qdevelop.org/download/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
@@ -16,7 +17,8 @@ MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	A development environment entirely dedicated to Qt4
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
+RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
+		qt4-sqlite-plugin>=0:${PORTSDIR}/databases/qt4-sqlite3-plugin
 
 CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DCMAKE_C_COMPILER:STRING='${CC}' \
@@ -32,7 +34,7 @@ DESKTOP_ENTRIES=	"QDevelop" \
 			"A development environment entirely dedicated to Qt4" \
 			"QDevelop" \
 			"QDevelop" \
-			"Application;Development;" \
+			"Qt;KDE;Development;" \
 			"false"
 
 .if !defined(WITHOUT_NLS)
