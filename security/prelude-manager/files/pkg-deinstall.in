@@ -1,0 +1,17 @@
+#!/bin/sh -
+#
+# $FreeBSD$
+#
+
+PRELUDEUSER=%%PRELUDEUSER%%
+PRELUDEGROUP=%%PRELUDEGROUP%%
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+  if /usr/sbin/pw group show "${PRELUDEGROUP}" 2>&1 >/dev/null; then
+    echo "You should manually remove the \"${PRELUDEGROUP}\" group."
+  fi
+
+  if /usr/sbin/pw user show "${PRELUDEUSER}" 2>&1 >/dev/null; then
+    echo "You should manually remove the \"${PRELUDEUSER}\" user."
+  fi
+fi
