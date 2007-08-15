@@ -1,0 +1,55 @@
+@comment $FreeBSD$
+bin/xgettext-perl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Report/.packlist
+%%SITE_PERL%%/Log/Report.pm
+%%SITE_PERL%%/Log/Report.pod
+%%SITE_PERL%%/Log/Report/Die.pm
+%%SITE_PERL%%/Log/Report/Die.pod
+%%SITE_PERL%%/Log/Report/Dispatcher.pm
+%%SITE_PERL%%/Log/Report/Dispatcher.pod
+%%SITE_PERL%%/Log/Report/Dispatcher/File.pm
+%%SITE_PERL%%/Log/Report/Dispatcher/File.pod
+%%SITE_PERL%%/Log/Report/Dispatcher/Log4perl.pm
+%%SITE_PERL%%/Log/Report/Dispatcher/Log4perl.pod
+%%SITE_PERL%%/Log/Report/Dispatcher/LogDispatch.pm
+%%SITE_PERL%%/Log/Report/Dispatcher/LogDispatch.pod
+%%SITE_PERL%%/Log/Report/Dispatcher/Perl.pm
+%%SITE_PERL%%/Log/Report/Dispatcher/Perl.pod
+%%SITE_PERL%%/Log/Report/Dispatcher/Syslog.pm
+%%SITE_PERL%%/Log/Report/Dispatcher/Syslog.pod
+%%SITE_PERL%%/Log/Report/Dispatcher/Try.pm
+%%SITE_PERL%%/Log/Report/Dispatcher/Try.pod
+%%SITE_PERL%%/Log/Report/Exception.pm
+%%SITE_PERL%%/Log/Report/Exception.pod
+%%SITE_PERL%%/Log/Report/Extract/PerlPPI.pm
+%%SITE_PERL%%/Log/Report/Extract/PerlPPI.pod
+%%SITE_PERL%%/Log/Report/Lexicon/Index.pm
+%%SITE_PERL%%/Log/Report/Lexicon/Index.pod
+%%SITE_PERL%%/Log/Report/Lexicon/PO.pm
+%%SITE_PERL%%/Log/Report/Lexicon/PO.pod
+%%SITE_PERL%%/Log/Report/Lexicon/POT.pm
+%%SITE_PERL%%/Log/Report/Lexicon/POT.pod
+%%SITE_PERL%%/Log/Report/Lexicon/POTcompact.pm
+%%SITE_PERL%%/Log/Report/Lexicon/POTcompact.pod
+%%SITE_PERL%%/Log/Report/Message.pm
+%%SITE_PERL%%/Log/Report/Message.pod
+%%SITE_PERL%%/Log/Report/Translator.pm
+%%SITE_PERL%%/Log/Report/Translator.pod
+%%SITE_PERL%%/Log/Report/Translator/Gettext.pm
+%%SITE_PERL%%/Log/Report/Translator/Gettext.pod
+%%SITE_PERL%%/Log/Report/Translator/POT.pm
+%%SITE_PERL%%/Log/Report/Translator/POT.pod
+%%SITE_PERL%%/Log/Report/Util.pm
+%%SITE_PERL%%/Log/Report/Util.pod
+%%SITE_PERL%%/Log/Report/messages/log-report.utf-8.po
+%%SITE_PERL%%/Log/Report/messages/log-report/nl_NL.po
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Report
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
+@dirrmtry %%SITE_PERL%%/Log/Report/messages/log-report
+@dirrmtry %%SITE_PERL%%/Log/Report/messages
+@dirrmtry %%SITE_PERL%%/Log/Report/Translator
+@dirrmtry %%SITE_PERL%%/Log/Report/Lexicon
+@dirrmtry %%SITE_PERL%%/Log/Report/Extract
+@dirrmtry %%SITE_PERL%%/Log/Report/Dispatcher
+@dirrmtry %%SITE_PERL%%/Log/Report
+@dirrmtry %%SITE_PERL%%/Log
