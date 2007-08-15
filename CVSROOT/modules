@@ -681,6 +681,7 @@ avr-gdb		ports/devel/avr-gdb
 avr-libc	ports/devel/avr-libc
 avra		ports/devel/avra
 avrdude		ports/devel/avrdude
+awale		ports/games/awale
 awele		ports/games/awele
 awka		ports/lang/awka
 awstats		ports/www/awstats
