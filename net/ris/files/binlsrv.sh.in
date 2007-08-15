@@ -21,11 +21,11 @@ load_rc_config "${name}"
 
 # Set defaults
 : ${binlsrv_enable:="NO"}
-: ${binlsrv_infdir:="%%PREFIX%%/share/ris/inf"}
+: ${binlsrv_infdir:="%%DATADIR%%/inf"}
 
 pidfile="%%PID_FILE%%"
 command="%%PYTHON_CMD%%"
-command_args="%%PREFIX%%/share/ris/${name}.py -d"
+command_args="%%DATADIR%%/${name}.py -d"
 required_dirs="$binlsrv_infdir"
 
 start_precmd="binlsrv_start_precmd"
