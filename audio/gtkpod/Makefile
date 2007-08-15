@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkpod
 PORTVERSION=	0.99.10
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,17 +25,39 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2 libgnomecanvas
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+WANT_GNOME=	yes
 
-OPTIONS=	MPEG4IP	"Enable AAC and H.264 support with MPEG4IP" off
+OPTIONS=	MPEG4IP	 "Enable AAC and H.264 support with MPEG4IP"	off \
+		VORBIS	 "Enable Ogg/Vorbis support"			on \
+		FLAC	 "Enable FLAC support"				on \
+		GNOMEVFS "Enable iPod autodetection support"		off \
+		HAL	 "Enable HAL support"				off \
+		CURL	 "Build with coverart download support"		off
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libmp4v2.so)
-WITH_MPEG4IP=	YES
+.if defined(WITH_MPEG4IP) || exists(${LOCALBASE}/lib/libmp4v2.so)
+LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 .endif
 
-.if defined(WITH_MPEG4IP)
-LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+.if defined(WITH_VORBIS) || exists(${LOCALBASE}/lib/libvorbis.so)
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.endif
+
+.if defined(WITH_FLAC) || exists(${LOCALBASE}/lib/libFLAC.so)
+LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+.endif
+
+.if defined(WITH_GNOMEVFS) || ${HAVE_GNOME:Mgnomevfs2}
+USE_GNOME+=	gnomevfs2
+.endif
+
+.if defined(WITH_HAL) || exists(${LOCALBASE}/lib/libhal.so)
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+.endif
+
+.if defined(WITH_CURL) || exists(${LOCALBASE}/lib/libcurl.so)
+LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
 .endif
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
