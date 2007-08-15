@@ -9,20 +9,21 @@ PORTNAME=	felt
 PORTVERSION=	3.06
 PORTREVISION=	2
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	felt
+MASTER_SITES=	SF
 EXTRACT_SUFX=	-devel.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system for Finite Element Analysis
 
-BROKEN=		Does not build
+LIB_DEPENDS=	GLw.1:${PORTSDIR}/graphics/libGLw
 
-USE_X_PREFIX=	yes
-USE_GL=		yes
 WRKSRC=		${WRKDIR}/FElt-${PORTVERSION}
+
+USE_MOTIF=	yes
+USE_GL=		glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-defaults=${X11BASE}/lib/X11/app-defaults
+CFLAGS+=	-D__GLX_MOTIF
 
 MAN1=		burlap.1 corduroy.1 felt.1 patchwork.1 velvet.1 yardstick.1
 MAN3=		Drawing.3
@@ -31,24 +32,23 @@ MAN4=		corduroy.4 felt.4
 DOCSDIR=	${PREFIX}/share/doc/FElt
 EXAMPLESDIR=	${PREFIX}/share/examples/FElt
 
+post-extract:
+	@cd ${WRKSRC}/include && ${RM} -rf X11
+
 post-patch:
-	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>, ; s,"malloc.h",<stdlib.h>,' \
-	${WRKSRC}/lib/Felt/parser.c \
-	${WRKSRC}/lib/Widgets/xwd.c ${WRKSRC}/lib/Matrix/data.c	\
-	${WRKSRC}/lib/Matrix/factor.c ${WRKSRC}/lib/Matrix/eigen.c \
-	${WRKSRC}/lib/Matrix/c_data.c ${WRKSRC}/lib/Matrix/c_factor.c \
-	${WRKSRC}/src/Velvet/error.c \
-	${WRKSRC}/src/Burlap/interactive.c \
-	${WRKSRC}/src/Burlap/parser.c \
-	${WRKSRC}/src/Corduroy/parser.c	\
-	${WRKSRC}/src/Patchwork/util.c
+	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|["<]malloc\.h[">]|<stdlib.h>|g'
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	${MKDIR} ${DOCSDIR}
-	${CP} ${WRKSRC}/*.html ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.ans ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.flt ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
