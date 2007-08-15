@@ -1,16 +1,16 @@
 bin/gq
 share/applications/gq.desktop
 %%DATADIR%%/gq.glade
-%%DATADIR%%/hide.xpm
-%%DATADIR%%/new.xpm
 share/mime/packages/gq-ldif.xml
-share/mime/text/x-ldif.xml
 share/pixmaps/gq/bomb.xpm
 share/pixmaps/gq/entry.png
 share/pixmaps/gq/gq.xpm
+share/pixmaps/gq/hide.xpm
+share/pixmaps/gq/new.xpm
 share/pixmaps/gq/textview.png
 share/pixmaps/gq/warning.xpm
 @dirrm share/pixmaps/gq
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
+@exec %%PREFIX%%/bin/update-mime-database %%PREFIX%%/share/mime
 @unexec %%PREFIX%%/bin/update-mime-database %%PREFIX%%/share/mime
