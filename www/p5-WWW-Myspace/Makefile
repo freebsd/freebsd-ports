@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	WWW-Myspace
-PORTVERSION=	0.68
+PORTVERSION=	0.69
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	WWW
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -29,6 +28,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
 		${SITE_PERL}/Math/Round.pm:${PORTSDIR}/math/p5-Math-Round \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-Class-Factory-Util>=1.3:${PORTSDIR}/devel/p5-Class-Factory-Util \
+		p5-Crypt-SSLeay>=0.53:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-Spiffy>=0.24:${PORTSDIR}/devel/p5-Spiffy \
 		p5-YAML>=0.39:${PORTSDIR}/textproc/p5-YAML
 BUILD_DEPENDS=	${RUN_DEPENDS}
