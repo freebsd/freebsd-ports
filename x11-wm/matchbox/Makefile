@@ -6,29 +6,25 @@
 #
 
 PORTNAME=	matchbox
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
+DISTVERSIONPREFIX=	window-manager-
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://projects.o-hand.com/matchbox/sources/matchbox-window-manager/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTNAME=	${PORTNAME}-window-manager-${PORTVERSION}
+MASTER_SITES=	http://matchbox-project.org/sources/matchbox-window-manager/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager suitable for low-resolution screens
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget
+USE_XORG=	xfixes xcursor xext
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-PORTDOCS=	${DOCS}
 PLIST_FILES=	bin/matchbox-window-manager bin/matchbox-remote \
 		etc/matchbox/kbdconfig
 PLIST_DIRS=	etc/matchbox
-
-DOCS=		AUTHORS ChangeLog NEWS README
+PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 .include <bsd.port.pre.mk>
 
@@ -39,16 +35,18 @@ LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--enable-standalone-xft
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/GCC_/s|-g -Wall -fno-strict-aliasing||g' ${WRKSRC}/configure
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/matchbox-remote ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/matchbox-window-manager ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/etc/matchbox
 	${INSTALL_DATA} ${WRKSRC}/data/kbdconfig ${PREFIX}/etc/matchbox
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	@${INSTALL} -d ${DOCSDIR}/
+	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>
