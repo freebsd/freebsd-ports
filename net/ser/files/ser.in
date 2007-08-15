@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ser
+# REQUIRE: DAEMON mysql postgresql
+#
+prefix=%%PREFIX%%
+
+# Add the following lines to /etc/rc.conf to enable ser:
+#
+# ser_enable="YES"
+
+. %%RC_SUBR%%
+
+name="ser"
+rcvar=`set_rcvar`
+command="${prefix}/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+command_args="-P ${pidfile} > /dev/null"
+
+load_rc_config $name
+
+: ${ser_enable="NO"}
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+  rm -f $pidfile
+}
+
+run_rc_command "$1"

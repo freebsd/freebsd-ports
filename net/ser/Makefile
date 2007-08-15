@@ -7,7 +7,7 @@
 
 PORTNAME=	ser
 PORTVERSION=	0.9.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/ser/ \
 		http://download2.berlios.de/ser/
@@ -19,6 +19,7 @@ COMMENT=	A very fast and configurable SIP proxy
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GMAKE=	yes
+USE_RC_SUBR=	ser
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	"LDFLAGS=-L${LOCALBASE}/lib"
 
