@@ -1,6 +1,6 @@
 # New ports collection makefile for:   portcheck
 # Date created:        01 January 2007
-# Whom:                Kim Naim Lesmer <naim@bitcare.dk>
+# Whom:                Kim Naim Lesmer <kim@usebsd.com>
 #
 # $FreeBSD$
 #
@@ -10,6 +10,7 @@ PORTVERSION=	1.12
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.usebsd.com/pub/portcheck/files/
 EXTRACT_SUFX=	.tbz
+DIST_SUBDIR=	rerolled
 
 MAINTAINER=	kim@usebsd.com
 COMMENT=	Maintains the ports tree and checks up the installed packages
@@ -29,6 +30,7 @@ do-install:
 	@${ECHO} ""
 
 .include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 504104
 IGNORE=	doesn't work on your system, it needs portsnap, please update your system to at least 5-STABLE
 .endif
