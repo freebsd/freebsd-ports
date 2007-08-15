@@ -193,6 +193,8 @@ bin/prewikka-httpd
 %%DATADIR%%/htdocs/images/bg2.gif
 %%DATADIR%%/htdocs/images/led_N.gif
 %%DATADIR%%/htdocs/images/led_Y.gif
+%%DATADIR%%/htdocs/images/pause.png
+%%DATADIR%%/htdocs/images/play.png
 %%DATADIR%%/htdocs/css/style.css
 %%DATADIR%%/htdocs/js/functions.js
 %%DATADIR%%/database/sqlite.sql
