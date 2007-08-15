@@ -1,0 +1,5 @@
+lib/postgresql/table_log.so
+share/postgresql/contrib/table_log_init.sql
+@dirrmtry lib/postgresql
+@dirrmtry share/postgresql/contrib
+@dirrmtry share/postgresql
