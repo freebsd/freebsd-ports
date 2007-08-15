@@ -72,6 +72,11 @@ post-patch:
 	@${ECHO} 'DisablePinger=yes' >> ${WRKSRC}/misc/conf/zabbix_server.conf
 .endif
 
+pre-configure:
+	@if ldd ${LOCALBASE}/lib/libsqlite3.so 2>&- |${GREP} -q thr;then\
+		${REINPLACE_CMD} -e 's|-lsqlite3|-lsqlite3 ${PTHREAD_LIBS}|'\
+			${WRKSRC}/configure; fi
+
 .if ${ARCH} == "amd64"
 post-configure:
 	${ECHO_CMD} "#define HAVE_VA_COPY 1" >> ${WRKSRC}/include/config.h
