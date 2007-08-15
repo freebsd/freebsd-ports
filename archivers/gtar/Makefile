@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tar
-PORTVERSION=	1.17
-PORTREVISION=	1
+PORTVERSION=	1.18
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -42,8 +41,10 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 # avoid triggering auto framework rebuilds
+# FreeBSD 5.5 makeinfo can't rebuild tar.info
 post-patch:
 	@${TOUCH} -r ${WRKSRC}/configure.orig ${WRKSRC}/configure
+	@${TOUCH} ${WRKSRC}/doc/tar.info* ${WRKSRC}/stamp-vti
 
 test: build
 	@cd ${WRKSRC} && ${MAKE} check
