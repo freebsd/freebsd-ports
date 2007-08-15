@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	fracplanet
-PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTVERSION=	0.3.3
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive generator of planets and terrain
@@ -21,15 +19,15 @@ LIB_DEPENDS=	boost_program_options.4:${PORTSDIR}/devel/boost
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_X_PREFIX=	yes
 USE_QT_VER=	3
-USE_GL=		yes
+USE_GL=		glu
 USE_GMAKE=	yes
 MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 		QMAKESPEC="${QMAKESPEC}" \
 		VERSION_NUMBER="${PORTVERSION}"
 
-PORTDOCS=	fracplanet.htm fracplanet.css
+MAN1=		${PORTNAME}.1
+PORTDOCS=	${PORTNAME}.css ${PORTNAME}.htm
 PLIST_FILES=	bin/${PORTNAME}
 
 BASH?=		${LOCALBASE}/bin/bash
@@ -46,6 +44,7 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
