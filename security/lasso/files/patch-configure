@@ -1,5 +1,25 @@
---- configure.orig	Mon Jul 16 17:17:17 2007
-+++ configure	Mon Jul 16 17:18:09 2007
+--- configure.orig	2007-08-03 10:03:45.000000000 +0800
++++ configure	2007-08-03 10:08:48.000000000 +0800
+@@ -21215,8 +21215,8 @@
+   PHP4_INCLUDES=`$PHP4_CONFIG --includes`
+   PHP4_LDFLAGS=`$PHP4_CONFIG --ldflags`
+   PHP4_LIBS=`$PHP4_CONFIG --libs`
+-  PHP4_UNPREFIXED_EXTENSION_DIR=`$PHP4_CONFIG --extension-dir | $SED 's/\/usr//g'`
+   PHP4_PREFIX=`$PHP4_CONFIG --prefix`
++  PHP4_UNPREFIXED_EXTENSION_DIR=`$PHP4_CONFIG --extension-dir | $SED "s,^$PHP4_PREFIX,,g"`
+ else
+   # We assume PHP are in /usr/local directory.
+   if test $MINGW -eq 1; then
+@@ -21446,8 +21446,8 @@
+   PHP5_INCLUDES=`$PHP5_CONFIG --includes`
+   PHP5_LDFLAGS=`$PHP5_CONFIG --ldflags`
+   PHP5_LIBS=`$PHP5_CONFIG --libs`
+-  PHP5_UNPREFIXED_EXTENSION_DIR=`$PHP5_CONFIG --extension-dir | $SED 's/\/usr//g'`
+   PHP5_PREFIX=`$PHP5_CONFIG --prefix`
++  PHP5_UNPREFIXED_EXTENSION_DIR=`$PHP5_CONFIG --extension-dir | $SED "s,^$PHP5_PREFIX,,g"`
+ else
+   # We assume PHP are in /usr/local directory.
+   if test $MINGW -eq 1; then
 @@ -22477,12 +22477,12 @@
          pkg_cv_LASSO_CFLAGS="$LASSO_CFLAGS"
      else
