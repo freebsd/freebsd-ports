@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.inaccessnetworks.com/projects/asterisk-oh323/download/
 
-MAINTAINER=	bamby@portaone.com
+MAINTAINER=	bamby@sippysoft.com
 COMMENT=	A H.323 support module for the Asterisk soft PBX
 
 BUILD_DEPENDS= 	${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk12
