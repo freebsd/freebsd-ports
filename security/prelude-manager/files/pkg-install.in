@@ -1,0 +1,74 @@
+#!/bin/sh -
+#
+# $FreeBSD$
+#
+
+PRELUDEDIR=%%PRELUDEDIR%%
+PRELUDEUSER=%%PRELUDEUSER%%
+PRELUDEGROUP=%%PRELUDEGROUP%%
+PRELUDEUID=%%PRELUDEUID%%
+PRELUDEGID=%%PRELUDEGID%%
+
+ask() {
+  local question default answer
+
+  question=$1
+  default=$2
+  if [ -z "${PACKAGE_BUILDING}" ]; then
+    read -p "${question} [${default}]? " answer
+  fi
+  if [ "x${answer}" = "x" ]; then
+    answer=${default}
+  fi
+  echo ${answer}
+}
+
+yesno() {
+  local default question answer
+
+  question=$1
+  default=$2
+  while :; do
+    answer=$(ask "${question}" "${default}")
+    case "${answer}" in
+      [Yy][Ee][Ss]|[Yy])
+        return 0
+        ;;
+      [Nn][Oo]|[Nn])
+        return 1
+        ;;
+    esac
+    echo "Please answer yes or no."
+   done
+}
+
+if [ "$2" = "PRE-INSTALL" ]; then
+  if /usr/sbin/pw group show "${PRELUDEGROUP}" 2>&1 >/dev/null; then
+    echo "You already have a \"${PRELUDEGROUP}\" group, so I will use it."
+  else
+    echo "You need a \"${PRELUDEGROUP}\" group."
+    if yesno "Would you like me to create it" "YES"; then
+      /usr/sbin/pw groupadd "${PRELUDEGROUP}" -g "${PRELUDEGID}" -h - || \
+        /usr/sbin/pw groupadd "${PRELUDEGROUP}" -h - || exit
+      echo "Done."
+    else
+      echo "Please create the \"${PRELUDEGROUP}\" group manually and try again."
+      exit 1
+    fi
+  fi
+
+  if /usr/sbin/pw user show "${PRELUDEUSER}" 2>&1 >/dev/null; then
+    echo "You already have a \"${PRELUDEUSER}\" user, so I will use it."
+  else
+    echo "You need a \"${PRELUDEUSER}\" user."
+    if yesno "Would you like me to create it" "YES"; then
+      /usr/sbin/pw useradd "${PRELUDEUSER}" -u "${PRELUDEUID}" -g "${PRELUDEGROUP}" -h - -d "${PRELUDEDIR}" \
+        -s /sbin/nologin -c "Prelude pseudo-user" || \
+        /usr/sbin/pw useradd "${PRELUDEUSER}" -g "${PRELUDEGROUP}" -h - -d "${PRELUDEDIR}" \
+        -s /sbin/nologin -c "Prelude pseudo-user" || exit
+    else
+      echo "Please create the \"${PRELUDEUSER}\" user manually and try again."
+      exit 1
+    fi
+  fi
+fi

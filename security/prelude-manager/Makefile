@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-manager
-PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTVERSION=	0.9.9
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -32,10 +31,21 @@ PRELUDEDIR?=	/nonexistent
 PRELUDEUID=	281
 PRELUDEGID=	${PRELUDEUID}
 
+MAN1=		prelude-manager.1
+
 .include <bsd.port.pre.mk>
 
+PLIST_SUB+=	PRELUDEDIR=${PRELUDEDIR} \
+		PRELUDEUSER=${PRELUDEUSER} \
+		PRELUDEGROUP=${PRELUDEGROUP}
+
+SUB_FILES=	pkg-install \
+		pkg-deinstall
+
+SUB_LIST=	${PLIST_SUB}
+
 .if defined(WITHOUT_XML)
-PLIST_SUB+=	WITH_XML="@comment "
+PLIST_SUB+=		WITH_XML="@comment "
 CONFIGURE_ARGS+=	--disable-xmltest --without-xml
 .else
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
