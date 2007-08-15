@@ -1,5 +1,5 @@
---- src/Velvet/opengl.c.orig	Sun Jul 27 17:27:34 2003
-+++ src/Velvet/opengl.c	Sun Jul 27 17:27:45 2003
+--- src/Velvet/opengl.c.orig	Wed Mar 22 11:41:45 2000
++++ src/Velvet/opengl.c	Sun Jul 22 23:36:45 2007
 @@ -35,7 +35,6 @@
  #include <X11/Shell.h>
  #include <X11/Xaw/Command.h>
@@ -8,3 +8,15 @@
  #include <GL/gl.h>
  #include <GL/glu.h>
  #include <GL/GLwDrawA.h> 
+@@ -789,7 +788,11 @@
+                                    shell, args, n);
+ 
+ 
++#ifdef __GLX_MOTIF
++   mesa = XtVaCreateManagedWidget ("mesa", glwMDrawingAreaWidgetClass, layout,
++#else
+    mesa = XtVaCreateManagedWidget ("mesa", glwDrawingAreaWidgetClass, layout,
++#endif
+     				     GLwNvisualInfo, vi, 
+ 			  	     GLwNinstallColormap, True, 
+ 				     XtNheight, 500, 
