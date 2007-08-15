@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--with-chroot=${INSTALL_PREFIX}
 CONFIGURE_ARGS+=	--with-domain=${DOMAIN}
 .endif
 
-CONFIGURE_ARGS+=	--prefix=${INSTALL_PREFIX} --mandir=${PREFIX}/man --infodir=${PREFIX}/info
+CONFIGURE_ARGS+=	--prefix=${INSTALL_PREFIX} --mandir=${MANPREFIX}/man --infodir=${PREFIX}/${INFO_PATH}
 
 pre-configure:
 	@${ECHO_CMD} ""
