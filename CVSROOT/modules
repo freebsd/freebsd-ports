@@ -15215,6 +15215,7 @@ t_coffee	ports/biology/t_coffee
 ta-aspell	ports/textproc/ta-aspell
 ta2as		ports/converters/ta2as
 table.el	ports/misc/table.el
+tablelog	ports/databases/tablelog
 tableutil	ports/net/tableutil
 tablix		ports/math/tablix
 tac_plus-libradius	ports/net/tac_plus-libradius
