@@ -17,6 +17,9 @@
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/lasso/lasso.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/lasso/lasso.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/lasso.pm
+%%WITH_PHP5%%lib/php/%%PHP_EXT_DIR%%/lasso.a
+%%WITH_PHP5%%lib/php/%%PHP_EXT_DIR%%/lasso.la
+%%WITH_PHP5%%lib/php/%%PHP_EXT_DIR%%/lasso.so
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_lasso.a
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_lasso.la
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_lasso.so
@@ -154,5 +157,8 @@ libdata/pkgconfig/lasso.pc
 @dirrmtry include/lasso/id-ff
 @dirrmtry include/lasso
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/lasso
+%%WITH_PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
+%%WITH_PHP5%%@dirrmtry lib/php/%%PHP_EXT_DIR%%
+%%WITH_PHP5%%@dirrmtry lib/php
 %%WITH_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/lasso
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
