@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	libGL
-PORTVERSION?=	7.0
+PORTVERSION?=	7.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/drm
 GLHEADERS=	gl.h glext.h glx.h glxext.h
+MAKE_ARGS=	SHELL=${SH}
 
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}
 PREFIX?=	${X11BASE}
