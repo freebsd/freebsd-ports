@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	demos
-PORTVERSION=	7.0
+PORTVERSION=	7.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mesa3d/
@@ -21,10 +21,11 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_ARGS=	SHELL=${SH} \
+		SUBDIRS="progs/demos progs/xdemos"
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
-ALL_TARGET=
-MAKE_ARGS=	SUBDIRS="progs/demos progs/xdemos"
+ALL_TARGET=	default
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}
 DATADIR=	${PREFIX}/share/mesa-demos
 
