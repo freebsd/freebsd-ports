@@ -36,6 +36,7 @@
     SUBDIR += alienblaster
     SUBDIR += alienwave
     SUBDIR += allacrost
+    SUBDIR += amoebax
     SUBDIR += amphetamine
     SUBDIR += amy
     SUBDIR += an
