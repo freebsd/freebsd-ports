@@ -1,10 +1,10 @@
 Index: vcl/unx/gtk/app/gtkinst.cxx
 ===================================================================
 RCS file: /cvs/gsl/vcl/unx/gtk/app/gtkinst.cxx,v
-retrieving revision 1.14.88.1
-diff -u -r1.14.88.1 gtkinst.cxx
---- vcl/unx/gtk/app/gtkinst.cxx	10 Aug 2006 14:53:08 -0000	1.14.88.1
-+++ vcl/unx/gtk/app/gtkinst.cxx	21 Aug 2006 05:38:21 -0000
+retrieving revision 1.14
+diff -u -r1.14 gtkinst.cxx
+--- vcl/unx/gtk/app/gtkinst.cxx	19 Jun 2006 19:44:33 -0000	1.14
++++ vcl/unx/gtk/app/gtkinst.cxx	27 Jun 2006 02:11:09 -0000
 @@ -43,6 +43,7 @@
  #include <plugins/gtk/atkbridge.hxx>
  
@@ -13,14 +13,15 @@ diff -u -r1.14.88.1 gtkinst.cxx
  
  #if OSL_DEBUG_LEVEL > 1
  #include <stdio.h>
-@@ -111,13 +112,28 @@
+@@ -111,13 +112,27 @@
  		GtkHookedYieldMutex *pYieldMutex = GET_YIELD_MUTEX();
  		pYieldMutex->ThreadsLeave();
  	}
 -	static bool hookLocks( oslModule pModule )
 +	static bool hookLocks( void )
  	{
- 		typedef void (*GdkLockFn) (GCallback enter_fn, GCallback leave_fn);
+-		typedef void (*GdkLockFn) (GCallback enter_fn, GCallback leave_fn);
++		typedef void (*GdkLockFn) ( GCallback enter_fn, GCallback leave_fn );
  		rtl::OUString aSymbolName( RTL_CONSTASCII_USTRINGPARAM( "gdk_threads_set_lock_functions") );
  
 +		/* XXX GDK library path should be set by configure. */
@@ -37,14 +38,13 @@ diff -u -r1.14.88.1 gtkinst.cxx
 +#endif
 +			return false;
 +		}
-+
  		GdkLockFn gdk_threads_set_lock_functions =
 -				(GdkLockFn) osl_getFunctionSymbol( pModule, aSymbolName.pData );
 +				(GdkLockFn) osl_getFunctionSymbol( aMod, aSymbolName.pData );
  		if ( !gdk_threads_set_lock_functions )
  		{
  #if OSL_DEBUG_LEVEL > 1
-@@ -150,7 +166,7 @@
+@@ -150,7 +165,7 @@
  		if ( !g_thread_supported() )
  			g_thread_init( NULL );
  
