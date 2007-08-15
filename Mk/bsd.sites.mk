@@ -1287,12 +1287,11 @@ MASTER_SITE_VIM+= \
 	ftp://ftp9.us.vim.org/pub/vim/unix/ \
 	ftp://ftp.ca.vim.org/pub/vim/unix/ \
 	ftp://ftp.nl.vim.org/pub/vim/unix/ \
-	ftp://ftp.de.vim.org/pub/vim/unix/ \
+	ftp://ftp.de.vim.org/unix/ \
 	ftp://ftp3.de.vim.org/pub/vim/unix/ \
 	ftp://ftp.uk.vim.org/pub/vim/unix/ \
 	ftp://ftp.ie.vim.org/pub/vim/unix/ \
 	ftp://ftp.at.vim.org/pub/vim/unix/ \
-	ftp://ftp.se.vim.org/pub/vim/unix/ \
 	ftp://ftp.pt.vim.org/pub/vim/unix/ \
 	ftp://ftp.is.vim.org/pub/vim/unix/ \
 	ftp://ftp.il.vim.org/pub/vim/unix/ \
