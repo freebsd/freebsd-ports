@@ -1,0 +1,45 @@
+--- configure.old	Wed Jan 24 09:29:16 2007
++++ configure	Wed Aug 15 11:19:50 2007
+@@ -1306,7 +1306,7 @@
+   --with-install-dir=PATH
+ 	  path to installation directory
+  --with-cgiwrapd
+-	 disable installation of cgiwrapd
++	 install cgiwrapd
+  --without-nph
+ 	 disable installation of nph-cgiwrap
+   --with-cgi-dir=PATH  (public_html/cgi-bin)
+@@ -6323,20 +6323,25 @@
+ 
+ 
+ 
+-{ echo "$as_me:$LINENO: checking for whether to disable cgiwrapd" >&5
+-echo $ECHO_N "checking for whether to disable cgiwrapd... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for whether to install cgiwrapd" >&5
++echo $ECHO_N "checking for whether to install cgiwrapd... $ECHO_C" >&6; }
+ 
+ # Check whether --with-cgiwrapd was given.
+ if test "${with_cgiwrapd+set}" = set; then
+   withval=$with_cgiwrapd;
+-		{ echo "$as_me:$LINENO: result: enabled" >&5
+-echo "${ECHO_T}enabled" >&6; }
+-		DOINSTALLCGIWRAPD=""
+-
++		if test x"$withval" != xno; then
++			{ echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6; }
++			DOINSTALLCGIWRAPD=""
++		else
++			{ echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6; }
++			DOINSTALLCGIWRAPD="#"
++		fi
+ else
+ 
+-		{ echo "$as_me:$LINENO: result: disabled" >&5
+-echo "${ECHO_T}disabled" >&6; }
++		{ echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6; }
+ 		DOINSTALLCGIWRAPD="#"
+ 
+ fi
