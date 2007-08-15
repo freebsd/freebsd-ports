@@ -15,6 +15,9 @@ COMMENT=	Keep track of the computers configuration and software
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
+DEPRECATED=	Use net-mgmt/ocsinventory-agent instead
+EXPIRATION_DATE=2007-09-15
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
