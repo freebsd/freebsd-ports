@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+%%BINDING_PHP%%%%DATADIR%%/php5/xapian.php
 %%BINDING_PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/bindings.html
 %%BINDING_PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/examples/simpleexpand.php4
 %%BINDING_PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/examples/simpleexpand.php5
@@ -7,16 +8,22 @@
 %%BINDING_PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/examples/simplesearch.php4
 %%BINDING_PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/examples/simplesearch.php5
 %%BINDING_PHP%%lib/php/%%PHP_EXT_DIR%%/xapian.so
-%%BINDING_PHP%%@dirrmtry lib/php/%%PHP_EXT_DIR%%
 %%BINDING_PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/bindings.html
 %%BINDING_PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/examples/simpleexpand.py
 %%BINDING_PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/examples/simpleindex.py
 %%BINDING_PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/examples/simplematchdecider.py
 %%BINDING_PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/examples/simplesearch.py
+%%BINDING_PYTHON%%%%PYTHON_SITELIBDIR%%/_xapian.so
 %%BINDING_PYTHON%%%%PYTHON_SITELIBDIR%%/xapian.py
 %%BINDING_PYTHON%%%%PYTHON_SITELIBDIR%%/xapian.pyc
+%%BINDING_PYTHON%%%%PYTHON_SITELIBDIR%%/xapian.pyo
+%%BINDING_PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
 %%BINDING_PYTHON%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/python/examples
 %%BINDING_PYTHON%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/python
+%%BINDING_PHP%%@dirrmtry lib/php/%%PHP_EXT_DIR%%
+%%BINDING_PHP%%@dirrmtry lib/php
+%%BINDING_PHP%%@dirrmtry %%DATADIR%%/php5
+%%BINDING_PHP%%@dirrmtry %%DATADIR%%
 %%BINDING_PHP%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/php/examples
 %%BINDING_PHP%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/php
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
