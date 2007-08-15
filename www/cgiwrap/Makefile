@@ -7,6 +7,7 @@
 
 PORTNAME=	cgiwrap
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -103,11 +104,11 @@ CONFIGURE_ARGS+=	--without-nph
 PLIST_SUB+=		NPHFLAG=
 .endif
 
-.if !defined(WITH_DEBUG)
-PLIST_SUB+=		DEBUGFLAG="@comment "
-CONFIGURE_ARGS+=	--without-cgiwrapd
-.else
+.if defined(WITH_DEBUG)
 PLIST_SUB+=		DEBUGFLAG=
+CONFIGURE_ARGS+=	--with-cgiwrapd
+.else
+PLIST_SUB+=		DEBUGFLAG="@comment "
 .endif
 
 .if !defined(NOPORTDOCS)
