@@ -31,6 +31,7 @@ BASEDIR=	${WRKSRC}/nextstep/build/Emacs.app
 CONFIGURE_ARGS+=	--without-gcc --with-ns --without-x --with-pop \
 		--prefix=${BASEDIR}/Resources --exec-prefix=${BASEDIR} --libexecdir=${BASEDIR}/libexec \
 		${CONFIGURE_TARGET}
+USE_GMAKE=	yes
 USE_MAKEFILE=	yes
 MAKE_ENV+=	MAKE="${GMAKE}" EMACSLOADPATH="${WRKSRC}/lisp:${WRKSRC}/leim"
 
