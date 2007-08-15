@@ -14,6 +14,7 @@
 %%SITE_PERL%%/Brackup/GPGProcess.pm
 %%SITE_PERL%%/Brackup/InventoryDatabase.pm
 %%SITE_PERL%%/Brackup/Manual/Overview.pod
+%%SITE_PERL%%/Brackup/Metafile.pm
 %%SITE_PERL%%/Brackup/PositionedChunk.pm
 %%SITE_PERL%%/Brackup/Restore.pm
 %%SITE_PERL%%/Brackup/Root.pm
