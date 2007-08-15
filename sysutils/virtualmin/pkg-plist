@@ -236,6 +236,7 @@ lib/webmin/virtual-server/index.cgi
 lib/webmin/virtual-server/lang/de
 lib/webmin/virtual-server/lang/en
 lib/webmin/virtual-server/lang/es
+lib/webmin/virtual-server/lang/fi
 lib/webmin/virtual-server/lang/fr
 lib/webmin/virtual-server/lang/tr
 lib/webmin/virtual-server/lang/zh_CN
@@ -310,6 +311,7 @@ lib/webmin/virtual-server/writelogs.pl
 @dirrm lib/webmin/virtual-server/images
 @dirrm lib/webmin/virtual-server/help
 @dirrm lib/webmin/virtual-server
+@dirrmtry lib/webmin
 @exec [ -e %D/etc/webmin/virtual-server ] || mkdir %D/etc/webmin/virtual-server
 @dirrmtry etc/webmin/virtual-server
 @dirrmtry etc/webmin
