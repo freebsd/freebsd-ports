@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	BitchX
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.0.1
 CATEGORIES+=	irc
 MASTER_SITES=	ftp://ftp.bitchx.org/pub/BitchX/source/ \
 		CENKES
-DISTNAME=	ircii-pana-${PORTVERSION}-final
+DISTNAME=	ircii-pana-1.1a-final
 
 MAINTAINER?=	beech@FreeBSD.org
 COMMENT?=	ircII color client with GTK/GNOME support
