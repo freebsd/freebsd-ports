@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Bigtop
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Bigtop
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -18,6 +17,9 @@ COMMENT=	A web application data language processor
 RUN_DEPENDS=	${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General \
 		${SITE_PERL}/IO/Prompt.pm:${PORTSDIR}/devel/p5-IO-Prompt \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
+		p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-Gantry>=3.38:${PORTSDIR}/www/p5-Gantry \
 		p5-Inline>=0.40:${PORTSDIR}/devel/p5-Inline \
 		p5-Inline-TT>=0.06:${PORTSDIR}/devel/p5-Inline-TT \
