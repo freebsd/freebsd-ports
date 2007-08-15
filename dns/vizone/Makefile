@@ -27,7 +27,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/updserial ${PREFIX}/bin
 
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example.tld ${EXAMPLESDIR}
 .endif
