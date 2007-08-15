@@ -18,6 +18,12 @@ USE_AUTOTOOLS=	autoconf:259
 
 MAN1=		y.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=		Does not compile on 64-bit arch
+.endif
+
 post-install:
 	${LN} -sf ${PREFIX}/lib/yui/help_eng.html ${PREFIX}/lib/yui/yhelp.html
 
@@ -28,4 +34,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
