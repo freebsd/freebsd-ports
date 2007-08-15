@@ -222,7 +222,6 @@ post-patch:
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/eotmodel-src-stored-dev.c.patch
 .endif
 
-
 pre-install:
 	if [ ! -d "${BACULA_DIR}" ]; then \
 		${ECHO_CMD} "creating ${BACULA_DIR}" ; \

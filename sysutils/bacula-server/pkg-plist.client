@@ -6,4 +6,3 @@ sbin/bconsole
 @exec mkdir -p %%BACULA_DIR%%
 @dirrmtry %%BACULA_DIR%%
 @dirrm share/bacula
-
