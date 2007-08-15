@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Business-ISBN
-PORTVERSION=		1.84
+PORTVERSION=		2.01
 CATEGORIES=		misc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Business
@@ -20,9 +20,11 @@ RUN_DEPENDS=		${BUILD_DEPENDS}
 
 PERL_CONFIGURE=		yes
 
-MAN3=			Business::ISBN.3
+MAN3=			ISBN.3 ISBN10.3 ISBN13.3
 
 PLIST_FILES=		${SITE_PERL_REL}/Business/ISBN.pm \
+			${SITE_PERL_REL}/Business/ISBN10.pm \
+			${SITE_PERL_REL}/Business/ISBN13.pm \
 			${SITE_PERL_REL}/${PERL_ARCH}/auto/Business/ISBN/.packlist
 
 .include <bsd.port.mk>
