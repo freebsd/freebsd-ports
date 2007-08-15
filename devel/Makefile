@@ -1309,6 +1309,7 @@
     SUBDIR += p5-Log-Log4perl
     SUBDIR += p5-Log-Message
     SUBDIR += p5-Log-Message-Simple
+    SUBDIR += p5-Log-Report
     SUBDIR += p5-Log-Simple
     SUBDIR += p5-Log-Trace
     SUBDIR += p5-Log-TraceMessages
