@@ -517,6 +517,7 @@
     SUBDIR += sybase-ocsd
     SUBDIR += sybase_ase
     SUBDIR += sybtcl
+    SUBDIR += tablelog
     SUBDIR += tcl-Mysql
     SUBDIR += tdb
     SUBDIR += tinycdb
