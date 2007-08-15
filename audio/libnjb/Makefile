@@ -27,9 +27,11 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 PLIST_SUB=	DOCS="" PORTVERSION=${PORTVERSION}
 .else
 PLIST_SUB=	DOCS="@comment "
+NODOC=		/^SUBDIRS/s|doc||
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|;\
+		${NODOC}' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
