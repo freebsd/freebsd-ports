@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	2.0.3
+DISTVERSION=	2.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -42,7 +42,8 @@ CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 		--with-working-dir=${BACULA_DIR} \
 		--with-scriptdir=${PREFIX}/share/${PORTNAME} \
 		--with-readline=yes \
-		--disable-conio
+		--disable-conio \
+		--enable-batch-insert
 
 .if defined(WITH_CLIENT_ONLY)
 CONFIGURE_ARGS+=		--with-fd-user=root \
@@ -70,8 +71,8 @@ IS_INTERACTIVE=	yes
 .endif
 
 .if defined(WITH_CLIENT_ONLY)
-OPTIONS+=	WXCONSOLE "Build with wxGTK based GUI console" off
-OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console" off
+OPTIONS+=	WXCONSOLE "Build with wxGTK based GUI console: deprecated" off
+OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console: deprecated" off
 .else
 OPTIONS=	SQLITE3 "Use SqLite-3 database instead of SqLite-2" off
 OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
@@ -83,7 +84,7 @@ OPTIONS+=	AUTOSETEOT "Enable auto seteotmodel" off
 OPTIONS+=	NLS "Native Language Support via gettext utilities" on
 OPTIONS+=	OPENSSL "Enable OpenSSL for encrypted communication" off
 
-# Prepare if gnome-console is selected this must be happen before
+# Prepare if bgnome-console is selected this must be happen before
 # include of bsd.port.pre.mk!
 WANT_GNOME=	yes
 .if defined(WITH_GNOMECONSOLE)
@@ -108,7 +109,7 @@ CONFIGURE_ARGS+=	--enable-client-only
 
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.client
 PKGINSTALL=	${PKGDIR}/pkg-install.client
-# Build gnome-console
+# Build bgnome-console
 .if defined(WITH_GNOMECONSOLE)
 CONFIGURE_ARGS+=	--enable-gnome
 PLIST_SUB+=		GNOMECONS=""
@@ -117,10 +118,10 @@ PLIST_SUB+=		GNOMECONS=""
 WITHOUT_GNOME=		yes
 PLIST_SUB+=		GNOMECONS="@comment "
 .endif
-# Build wx-console
+# Build bwx-console
 .if defined(WITH_WXCONSOLE)
 USE_WX=			2.4
-CONFIGURE_ARGS+=	--enable-wx-console
+CONFIGURE_ARGS+=	--enable-bwx-console
 CONFIGURE_ENV+=		WXCONFIG="${WX_CONFIG}"
 PLIST_SUB+=		WXCONS=""
 .else
@@ -167,7 +168,7 @@ CONFIGURE_ARGS+=	--with-openssl
 MAN8=bacula-fd.8 bconsole.8
 .else
 MAN8=bacula.8 bacula-dir.8 bacula-sd.8 bcopy.8 bextract.8 bls.8 bscan.8 btape.8 btraceback.8 dbcheck.8
-MAN1=bsmtp.1 bacula-console-gnome.1 bacula-tray-monitor.1 bacula-wxconsole.1
+MAN1=bsmtp.1 bacula-bgnome-console.1 bacula-tray-monitor.1 bacula-bwxconsole.1
 .endif
 MAKE_ARGS+=	-E MAN8 -E MAN1
 MAKE_ENV+=	MAN8="${MAN8}" MAN1="${MAN1}"
@@ -249,19 +250,19 @@ post-install:
 		${ECHO_CMD} "etc/bconsole.conf.sample" >> ${TMPPLIST}; \
 	fi
 .if defined(WITH_WXCONSOLE)
-	if [ -f ${PREFIX}/etc/wx-console.conf.new ]; then \
-		${ECHO_CMD} "etc/wx-console.conf.new" >> ${TMPPLIST}; \
-	elif [ -f ${PREFIX}/etc/wx-console.conf ]; then \
-		${MV} ${PREFIX}/etc/wx-console.conf ${PREFIX}/etc/wx-console.conf.sample; \
-		${ECHO_CMD} "etc/wx-console.conf.sample" >> ${TMPPLIST}; \
+	if [ -f ${PREFIX}/etc/bwx-console.conf.new ]; then \
+		${ECHO_CMD} "etc/bwx-console.conf.new" >> ${TMPPLIST}; \
+	elif [ -f ${PREFIX}/etc/bwx-console.conf ]; then \
+		${MV} ${PREFIX}/etc/bwx-console.conf ${PREFIX}/etc/bwx-console.conf.sample; \
+		${ECHO_CMD} "etc/bwx-console.conf.sample" >> ${TMPPLIST}; \
 	fi
 .endif
 .if defined(WITH_GNOMECONSOLE)
-	if [ -f ${PREFIX}/etc/gnome-console.conf.new ]; then \
-		${ECHO_CMD} "etc/gnome-console.conf.new" >> ${TMPPLIST}; \
-	elif [ -f ${PREFIX}/etc/gnome-console.conf ]; then \
-		${MV} ${PREFIX}/etc/gnome-console.conf ${PREFIX}/etc/gnome-console.conf.sample; \
-		${ECHO_CMD} "etc/gnome-console.conf.sample" >> ${TMPPLIST}; \
+	if [ -f ${PREFIX}/etc/bgnome-console.conf.new ]; then \
+		${ECHO_CMD} "etc/bgnome-console.conf.new" >> ${TMPPLIST}; \
+	elif [ -f ${PREFIX}/etc/bgnome-console.conf ]; then \
+		${MV} ${PREFIX}/etc/bgnome-console.conf ${PREFIX}/etc/bgnome-console.conf.sample; \
+		${ECHO_CMD} "etc/bgnome-console.conf.sample" >> ${TMPPLIST}; \
 	fi
 .endif
 
