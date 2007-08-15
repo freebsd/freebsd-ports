@@ -56,6 +56,7 @@
     SUBDIR += atris
     SUBDIR += atris-sounds
     SUBDIR += avanor
+    SUBDIR += awale
     SUBDIR += awele
     SUBDIR += balazar
     SUBDIR += balazarbrothers

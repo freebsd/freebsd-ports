@@ -1,0 +1,20 @@
+bin/awale
+bin/xawale
+%%DATADIR%%/Awale.gif
+%%DATADIR%%/README
+%%DATADIR%%/Trou00.gif
+%%DATADIR%%/Trou01.gif
+%%DATADIR%%/Trou02.gif
+%%DATADIR%%/Trou03.gif
+%%DATADIR%%/Trou04.gif
+%%DATADIR%%/Trou05.gif
+%%DATADIR%%/Trou06.gif
+%%DATADIR%%/Trou07.gif
+%%DATADIR%%/Trou08.gif
+%%DATADIR%%/Trou09.gif
+%%DATADIR%%/awale.png
+%%DATADIR%%/copyright.gif
+%%DATADIR%%/fr.gif
+%%DATADIR%%/uk.gif
+%%DATADIR%%/xawale.tcl
+@dirrm %%DATADIR%%
