@@ -7,7 +7,7 @@
 
 PORTNAME=	deepforest
 PORTVERSION=	1.0a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers windowmaker tkstep80
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kiri
@@ -20,9 +20,10 @@ COMMENT=	A simple compress utilty using on JDE
 RUN_DEPENDS=	${LOCALBASE}/lib/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
 LIB_DEPENDS=	img.1:${PORTSDIR}/graphics/libimg-tkstep80
 
+PREFIX?=	${X11BASE}
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 REINPLACE_ARGS=
 TKSTEPVERSION=	8.0
 PIXMAPPATH?=	${PREFIX}/share/WindowMaker/Pixmaps
