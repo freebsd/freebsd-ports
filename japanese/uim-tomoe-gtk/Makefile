@@ -28,6 +28,6 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/uim-tomoe-gtk \
 		share/locale/ja/LC_MESSAGES/uim-tomoe-gtk.mo
 
-CONFIGURE_ENV+=	GMSGFMT='/usr/local/bin/msgfmt'
+CONFIGURE_ENV+=	GMSGFMT="${LOCALBASE}/bin/msgfmt"
 
 .include <bsd.port.mk>

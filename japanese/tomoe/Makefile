@@ -93,7 +93,7 @@ PLIST_SUB+=	UNIHAN="@comment "
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		PYTHON_VERSION=${PYTHON_VERSION:S;python;;} \
 		pyexecdir=${PYTHON_SITELIBDIR} \
-		GMSGFMT='/usr/local/bin/msgfmt'
+		GMSGFMT="${LOCALBASE}/bin/msgfmt"
 
 .if defined(WITH_UNIHAN)
 post-extract:
