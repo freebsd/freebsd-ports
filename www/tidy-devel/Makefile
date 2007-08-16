@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	tidy
-DISTVERSION=	070614-cvs
+DISTVERSION=	070813-cvs
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 #MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
