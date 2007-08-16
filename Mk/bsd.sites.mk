@@ -1429,6 +1429,7 @@ MASTER_SITES_SUBDIRS=	\
 			DEBIAN:pool/main/${PORTNAME:C/^((lib)?.).*$/\1/}/${PORTNAME} \
 			GCC:releases/${DISTNAME} \
 			GNOME:sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
+			GNU:${PORTNAME} \
 			HORDE:${PORTNAME} \
 			MOZDEV:${PORTNAME:L} \
 			PERL_CPAN:${PORTNAME:C/-.*//} \
