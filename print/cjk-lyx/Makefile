@@ -1,4 +1,4 @@
-# New ports collection makefile for:	lyx
+# New ports collection makefile for:	cjk-lyx
 # Date created:		Sa  12 Okt 1996 19:20:51 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
@@ -7,7 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print chinese japanese korean
 MASTER_SITES=	ftp://cellular.phys.pusan.ac.kr/CJK-LyX/qt/ \
 		ftp://ftp.u-aizu.ac.jp/pub/tex/cjk-lyx/qt/ \
@@ -30,8 +30,6 @@ LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost \
 		qt-mt:${PORTSDIR}/x11-toolkits/qt33
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 
-BROKEN=		Does not build
-
 OPTIONS=	ASPELL	"Utilize ASPELL library"	on \
 		ISPELL	"Depend on ISPELL as well"	off
 .if defined(LANG) && ${LANG:C/_.*//} == "ja"
@@ -47,16 +45,12 @@ USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - --exclude ${PORTNAME}-${PORTVERSION}/intl/*.[ch] --exclude ${PORTNAME}-${PORTVERSION}/boost
 CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
-		--without-included-boost \
 		--with-extra-inc="${LOCALBASE}/include" \
 		--with-frontend=qt \
 		--program-prefix="${PKGNAMEPREFIX}"
 CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
 CFLAGS=		${PTHREAD_CFLAGS}
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
 MAN1=		${PKGNAMEPREFIX}lyx.1 ${PKGNAMEPREFIX}tex2lyx.1 ${PKGNAMEPREFIX}lyxclient.1
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
@@ -66,17 +60,6 @@ MAKE_ENV=	TMPDIR=/tmp
 
 post-extract:
 	${MV} ${WRKSRC}/po/lyx.pot ${WRKSRC}/po/${PKGNAMEPREFIX}lyx.pot
-
-post-patch:
-	# Removing mention of the bundled boost
-	${REINPLACE_CMD} -e 's, boost/[^ ]*Makefile,,g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's,detail/nullstream,utils/nullstream,' \
-	    ${WRKSRC}/src/pch.h ${WRKSRC}/src/support/pch.h \
-	    ${WRKSRC}/src/support/debugstream.h
-	${REINPLACE_CMD} -e 's,boost/regex\.hpp,boost/cregex.hpp,' \
-	    ${WRKSRC}/src/support/filetools.C
-	${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,'      \
-	    ${WRKSRC}/src/support/tests/test_*
 
 post-configure:
 	# Removing explicit linking with -lc
