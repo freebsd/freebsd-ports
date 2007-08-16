@@ -1,0 +1,87 @@
+--- src/qgsproject.h	2005-05-11 19:21:56.000000000 -0800
++++ src2/qgsproject.h	2007-08-14 00:23:04.000000000 -0800
+@@ -95,9 +95,9 @@
+        write()
+      */
+     //@{
+-    bool QgsProject::dirty() const;
++    bool dirty() const;
+ 
+-    void QgsProject::dirty( bool b );
++    void dirty( bool b );
+     //@}
+ 
+ 
+--- src/qgsrasterlayerproperties.h	2005-07-30 21:03:14.000000000 -0800
++++ src2/qgsrasterlayerproperties.h	2007-08-14 00:29:06.000000000 -0800
+@@ -69,7 +69,7 @@
+         /** \brief slot executed when the three band radio button is pressed. */
+         void rbtnThreeBand_toggled( bool );
+         /** \brief slot executed when user wishes to refresh raster histogram */
+-        void QgsRasterLayerProperties::pbnHistRefresh_clicked();
++        void pbnHistRefresh_clicked();
+         /** Override the SRS specified when the layer was loaded */
+         void pbnChangeSpatialRefSys_clicked();
+ 
+--- src/qgsprojectproperties.h	2005-10-23 16:00:18.000000000 -0800
++++ src2/qgsprojectproperties.h	2007-08-14 00:32:22.000000000 -0800
+@@ -60,7 +60,7 @@
+   /*! Accessor for projection */
+   QString projectionWKT();
+   /*! Indicates that the projection switch is on */
+-  bool QgsProjectProperties::isProjected();
++  bool isProjected();
+ public slots:
+   /*! 
+    * Slot called when a new button (unit) is selected
+
+--- src/qgslabel.h.orig	2005-06-03 01:42:55.000000000 -0800
++++ src/qgslabel.h	2007-08-14 02:12:34.000000000 -0800
+@@ -91,7 +91,7 @@
+     void addRequiredFields ( std::list<int> *fields );
+ 
+     //! Available vector fields
+-    std::vector<QgsField> & QgsLabel::fields ( void );
++    std::vector<QgsField> & fields ( void );
+ 
+     //! Pointer to default attributes
+     QgsLabelAttributes *layerAttributes ( void );
+
+--- providers/gpx/qgsgpxprovider.h.orig	2005-02-11 14:36:49.000000000 -0900
++++ providers/gpx/qgsgpxprovider.h	2007-08-14 12:03:47.000000000 -0800
+@@ -142,7 +142,7 @@
+ 			     const std::map<QString, QString>& attrs);
+   
+   /** Adds one feature (used by addFeatures()) */
+-  bool QgsGPXProvider::addFeature(QgsFeature* f);
++  bool addFeature(QgsFeature* f);
+   
+   /**Returns the default value for attribute @c attr for feature @c f. */
+   QString getDefaultValue(const QString& attr, QgsFeature* f);
+
+--- plugins/georeferencer/datapointacetate.h.orig	2005-05-01 12:23:17.000000000 -0800
++++ plugins/georeferencer/datapointacetate.h	2007-08-14 12:34:48.000000000 -0800
+@@ -13,7 +13,7 @@
+ class DataPointAcetate : public QgsAcetateObject {
+ public:
+   
+-  DataPointAcetate::DataPointAcetate(const QgsPoint& pixelCoords,
++  DataPointAcetate(const QgsPoint& pixelCoords,
+ 				     const QgsPoint& mapCoords)
+   // UGLY!
+     : QgsAcetateObject(const_cast<QgsPoint&>(pixelCoords)),
+
+--- plugins/grid_maker/graticulecreator.h.orig	2005-05-29 12:04:47.000000000 -0800
++++ plugins/grid_maker/graticulecreator.h	2007-08-14 13:13:03.000000000 -0800
+@@ -19,8 +19,8 @@
+                          double theXEndPointDouble,
+                          double theYEndPointDouble);
+         ~GraticuleCreator() {};
+-        DBFHandle GraticuleCreator::createDbf (QString theDbfName ) ;
+-        SHPHandle GraticuleCreator::createShapeFile(QString theFileName ); 
++        DBFHandle createDbf (QString theDbfName ) ;
++        SHPHandle createShapeFile(QString theFileName ); 
+         void writeDbfRecord (DBFHandle theDbfHandle, int theRecordIdInt, QString theLabel) ;
+         void writePoint(SHPHandle theShapeHandle, int theRecordInt, double theXDouble, double y ); 
+         //! Writes a WGS 84 .prj file for the generated grid
+
