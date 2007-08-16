@@ -31,6 +31,7 @@ OPTIONS=	AA		"Enable AA support" on \
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
 USE_XPM=	yes
 USE_XLIB=	yes
 CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
