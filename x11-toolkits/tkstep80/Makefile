@@ -22,6 +22,9 @@ COMMENT=	The Tk toolkit with a NeXTSTEP look and more
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+DEPRECATED=	development stalled, outdated, unmaintained
+EXPIRATION_DATE=	2007-11-18
+
 USE_TCL=	80
 USE_XORG=	xpm
 PATCH_DIST_ARGS=	-p1 -d ${WRKDIR}/tk8.0.4 -E --quiet

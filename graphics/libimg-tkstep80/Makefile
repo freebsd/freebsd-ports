@@ -13,4 +13,7 @@ MAINTAINER=	martin@matuska.org
 USE_TKSTEP80=	yes
 MASTERDIR=	${.CURDIR}/../libimg
 
+DEPRECATED=	tkstep80 scheduled for expiration
+EXPIRATION_DATE=	2007-11-18
+
 .include "${MASTERDIR}/Makefile"
