@@ -9,11 +9,10 @@ PORTNAME=	qgis
 PORTVERSION=	0.7.4
 PORTREVISION=	3
 CATEGORIES=	graphics geography
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	lrntct@gmail.com
-COMMENT=	A Geographical Information System (GIS) data viewer
+MAINTAINER=	dyeske@gmail.com
+COMMENT=	Geographical Information System (GIS) data viewer
 
 LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 		proj:${PORTSDIR}/graphics/proj \
@@ -30,16 +29,12 @@ MAN1=		qgis.1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-qtdir=${QTDIR}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 OPTIONS=	GRASS "Enable GRASS support" Off \
 		POSTGIS "Enable PostGIS support" Off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not build on FreeBSD versions prior to 5
-.endif
 
 .if !defined (QTDIR)
 QTDIR=		${QT_PREFIX}

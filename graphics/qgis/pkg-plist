@@ -586,9 +586,9 @@ share/aclocal/qgis.m4
 @dirrm %%DATADIR%%/doc/plugins/geoprocessing
 @dirrm %%DATADIR%%/doc/plugins
 @dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/grass/config
-@dirrm %%DATADIR%%/grass/modules
-@dirrm %%DATADIR%%/grass
+%%GRASS%%@dirrm %%DATADIR%%/grass/config
+%%GRASS%%@dirrm %%DATADIR%%/grass/modules
+%%GRASS%%@dirrm %%DATADIR%%/grass
 @dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%/images/developers
 @dirrm %%DATADIR%%/images/icons
@@ -603,7 +603,7 @@ share/aclocal/qgis.m4
 @dirrm %%DATADIR%%/svg/north_arrows
 @dirrm %%DATADIR%%/svg/symbol
 @dirrm %%DATADIR%%/svg
-@dirrm %%DATADIR%%/themes/default/grass
+%%GRASS%%@dirrm %%DATADIR%%/themes/default/grass
 @dirrm %%DATADIR%%/themes/default
 @dirrm %%DATADIR%%/themes/nkids
 @dirrm %%DATADIR%%/themes
