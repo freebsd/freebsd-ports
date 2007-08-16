@@ -20,7 +20,8 @@ COMMENT=	A simple compress utilty using on JDE
 RUN_DEPENDS=	${LOCALBASE}/lib/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
 LIB_DEPENDS=	img.1:${PORTSDIR}/graphics/libimg-tkstep80
 
-PREFIX?=	${X11BASE}
+DEPRECATED=	development stalled for years, outdated, unmaintained
+EXPIRATION_DATE=	2007-11-16
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

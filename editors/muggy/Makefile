@@ -7,7 +7,7 @@
 
 PORTNAME=	muggy
 PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors windowmaker tkstep80
 MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/ \
 		${MASTER_SITE_LOCAL}
@@ -21,9 +21,11 @@ COMMENT=	A simple text editor for the X on TkStep
 RUN_DEPENDS=	${LOCALBASE}/lib/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
 LIB_DEPENDS=	img.1:${PORTSDIR}/graphics/libimg-tkstep80
 
+DEPRECATED=	development stalled for years, unmaintained
+EXPIRATION_DATE=	2007-11-16
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 REINPLACE_ARGS=
 TKSTEPVERSION=	8.0
 PIXMAPPATH?=	${PREFIX}/share/WindowMaker/Pixmaps
