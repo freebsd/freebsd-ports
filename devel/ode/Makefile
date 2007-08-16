@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ode
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.8
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -30,16 +29,22 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"
 
-OPTIONS=	OPCODE	"Enable code required by TriList (trimesh) class" on \
+OPTIONS=	GIMPACT	"Enable gimpact instead of opcode support" off \
 		GYROSCOPIC "Configure ODE to work with gyroscopic term" on \
-		DOUBLE	"Enable double precision" off
+		DOUBLE  "Enable double precision (BROKEN with GIMPACT)" off
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_OPCODE)
-CONFIGURE_ARGS+=	--disable-opcode
+.if defined(WITH_GIMPACT) && defined(WITH_DOUBLE)
+IGNORE=	currently double precision is not supported by gimpact
+.endif
+
+.if !defined(WITH_GIMPACT)
+CONFIGURE_ARGS+=	--with-trimesh=opcode
+.else
+CONFIGURE_ARGS+=	--with-trimesh=gimpact
 .endif
 
 .if defined(WITHOUT_GYROSCOPIC)
@@ -60,7 +65,7 @@ post-patch:
 		-e '/^DEFAULT_INCLUDES/ s|$$| -I$$(top_builddir)/include|' \
 		-e '/CFLAGS/ s|-O[12]||'
 	@${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
-		-i "" -e 's|<malloc.h>|<stdlib.h>|g'
+		-i "" -e 's|malloc.h|stdlib.h|g'
 
 post-install:
 	${SED} -e '/PACKAGE/ s|^|//|; /VERSION/ s|^|//|' ${WRKSRC}/include/ode/config.h \
