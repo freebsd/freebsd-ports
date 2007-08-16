@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tea
-DISTVERSION=	17.0.0
+DISTVERSION=	17.1.4
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tea-editor
@@ -23,8 +23,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 OPTIONS=	TEA_ONLY	"Build original GTK-only version"	on \
 		ASPELL		"Build with GNU aspell support"		on
-
-BROKEN=		Does not build
 
 .include <bsd.port.pre.mk>
 
