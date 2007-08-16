@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	xotcl
-PORTVERSION=	1.5.3
-PORTREVISION=	5
+PORTVERSION=	1.5.4
 CATEGORIES?=	lang tcl84
 MASTER_SITES=	http://media.wu-wien.ac.at/download/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Object-oriented scripting language based on Tcl
 
-USE_TCL=		84+
+USE_TCL=		84
 USE_TCL_THREADS=	yes
 
 INSTALL_TARGET=	install
@@ -31,6 +30,8 @@ OPTIONS=	ACTIWEB		"Include actiweb"		on \
 .else
 AOLSERVERBASE?=	aolserver
 .endif
+
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
@@ -92,12 +93,10 @@ post-install:
 	-exec ${INSTALL_DATA} ${WRKSRC}/{} ${EXAMPLESDIR}/tutorial/html \;
 .endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${DOCSDIR}/announces
+	${MKDIR} ${DOCSDIR}
 .for FILE in COPYRIGHT ChangeLog README README.aol doc/TODO
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
-	@cd ${WRKSRC}; ${FIND} doc/ -name 'Announce-*' -type f \
-	-exec ${INSTALL_DATA} ${WRKSRC}/{} ${DOCSDIR}/announces \;
 .endif
 .if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/man/xotclsh.1 ${PREFIX}/man/man1/
