@@ -5,6 +5,6 @@
 %%SITE_PERL%%/Data/FormValidator/Constraints/Upload.pm
 %%SITE_PERL%%/Data/FormValidator/Filters.pm
 %%SITE_PERL%%/Data/FormValidator/Results.pm
-@dirrm %%SITE_PERL%%/Data/FormValidator/Constraints
-@dirrm %%SITE_PERL%%/Data/FormValidator
+@dirrmtry %%SITE_PERL%%/Data/FormValidator/Constraints
+@dirrmtry %%SITE_PERL%%/Data/FormValidator
 @dirrmtry %%SITE_PERL%%/Data
