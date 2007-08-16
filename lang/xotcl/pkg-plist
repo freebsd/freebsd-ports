@@ -142,34 +142,6 @@ lib/xotcl%%PORTVERSION%%/serialize/ScriptCreator.xotcl
 lib/xotcl%%PORTVERSION%%/serialize/Serializer.xotcl
 lib/xotcl%%PORTVERSION%%/serialize/pkgIndex.tcl
 lib/xotcl%%PORTVERSION%%/xotclConfig.sh
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.aol
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-0.9.3
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-0.9.4
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.0
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.0.1
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.0.2
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.1.0
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.1.1
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.2.0
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.3.0
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.3.1
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.3.3
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.3.4
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.3.5
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.3.6
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.3.7
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.3.8
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.3.9
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.4.0
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.4.1
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.5.0
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.5.1
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.5.2
-%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.5.3
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/JufGdbmStorage-xotcl.html
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/MemStorage-xotcl.html
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/MultiStorage-xotcl.html
@@ -232,8 +204,6 @@ lib/xotcl%%PORTVERSION%%/xotclConfig.sh
 %%TUTORIAL%%@dirrm %%EXAMPLESDIR%%/tutorial/pdf
 %%TUTORIAL%%@dirrm %%EXAMPLESDIR%%/tutorial
 %%TUTORIAL%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/announces
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%ACTIWEB%%@dirrm lib/xotcl%%PORTVERSION%%/actiweb
 %%ACTIWEB%%@dirrm lib/xotcl%%PORTVERSION%%/rdf
 %%ACTIWEB%%@dirrm lib/xotcl%%PORTVERSION%%/registry
