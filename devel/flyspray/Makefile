@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flyspray
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.9.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.flyspray.org/
 
@@ -15,13 +15,14 @@ COMMENT=	A simple, easy-to-use web based bug tracking system
 
 RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:${PORTSDIR}/databases/adodb
 
-USE_PHP=	mysql pcre session
-USE_ZIP=	yes
+USE_PHP=	mysql pcre session zlib xml gd
+USE_BZIP2=	yes
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
 
-NO_WRKSUBDIR=	yes
+OPTIONS=	GRAPHVIZ "Install Graphviz for task dependency graphs" off
+
 FLYSPRAYDIR=	${PREFIX}/share/${PORTNAME}
 ATTACHMENTDIR=	${DBDIR}/${PORTNAME}/attachments
 DBDIR=		/var/db
@@ -39,7 +40,13 @@ FLYSPRAY_FILES=	cache docs/licences/gnu_lgpl.html \
 		index.php javascript lang plugins robots.txt schedule.php \
 		scripts setup templates themes
 
-PKGMESSAGE=	${WRKSRC}/pkg-message
+SUB_FILES=	pkg-message
+
+.include <bsd.port.pre.mk>
+
+.ifdef WITH_GRAPHVIZ
+RUN_DEPENDS+=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
+.endif
 
 post-patch:
 	@${CP} ${PKGDIR}/files/README.FreeBSD ${WRKSRC}/docs/
@@ -53,8 +60,8 @@ do-install:
 	${CHMOD} 755 ${FLYSPRAYDIR}
 	${TOUCH} ${FLYSPRAYDIR}/flyspray.conf.php
 	cd ${WRKSRC} && \
-		tar cf - ${FLYSPRAY_FILES} | \
-		(cd ${FLYSPRAYDIR} && tar -xf -)
+		${TAR} cf - ${FLYSPRAY_FILES} | \
+		(cd ${FLYSPRAYDIR} && ${TAR} -xf -)
 	${LN} -s ${ATTACHMENTDIR} ${FLYSPRAYDIR}/attachments
 	${LN} -s ${PREFIX}/share/adodb ${FLYSPRAYDIR}
 	@${MKDIR} ${ATTACHMENTDIR}
@@ -64,7 +71,6 @@ do-install:
 	${CHOWN} ${WWWOWN}:${WWWGRP} ${FLYSPRAYDIR}/flyspray.conf.php
 
 post-install: install-doc
-	@${SED} -e 's|%%DOCSDIR%%|${DOCSDIR}|g' pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 install-doc:
@@ -75,4 +81,4 @@ install-doc:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

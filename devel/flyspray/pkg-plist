@@ -20,29 +20,72 @@
 %%DATADIR%%/includes/constants.inc.php
 %%DATADIR%%/includes/events.inc.php
 %%DATADIR%%/includes/external/Validate.php
-%%DATADIR%%/includes/external/swift-mailer/CREDITS
-%%DATADIR%%/includes/external/swift-mailer/LICENSE
-%%DATADIR%%/includes/external/swift-mailer/README
-%%DATADIR%%/includes/external/swift-mailer/Swift.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/CRAMMD5.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/LOGIN.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/PLAIN.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/POP3SMTP_.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/README
-%%DATADIR%%/includes/external/swift-mailer/Swift/Connection/Multi.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Events/ListenerMapper.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Events/ResponseEvent.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Events/CommandEvent.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Events/SendEvent.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Events/DisconnectEvent.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Events/ConnectEvent.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Events/Listener.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/ClassLoader.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/RecipientList.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/BatchMailer.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Cache.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Connection/Sendmail.php
 %%DATADIR%%/includes/external/swift-mailer/Swift/Connection/NativeMail.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Connection/Multi.php
 %%DATADIR%%/includes/external/swift-mailer/Swift/Connection/Rotator.php
 %%DATADIR%%/includes/external/swift-mailer/Swift/Connection/SMTP.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Connection/Sendmail.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/AntiFlood.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Connection/Exception.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/CacheFactory.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Message/EmbeddedFile.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Message/Encoder.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Message/Image.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Message/Headers.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Message/Attachment.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Message/Part.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Message/Mime.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Message/MimeException.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Connection.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Events.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Errors.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Log.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/ConnectionBase.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/FileException.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/File.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/PopB4Smtp/Pop3Connection.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/PLAIN.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/CRAMMD5.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/LOGIN.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/$PopB4Smtp$.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/BadResponseException.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Iterator/Array.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Iterator/MySQLResult.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Message.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Exception.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Address.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/AddressContainer.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/EasySwiftResponseTracker.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/Decorator/Replacements.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/FileEmbedder.php
 %%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/ConnectionRotator.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/Errors.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/Example.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/Template.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Stream.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Stream/MailProxy.php
-%%DATADIR%%/includes/external/swift-mailer/Swift/Stream/Processor.php
-%%DATADIR%%/includes/external/swift-mailer/VERSION
+%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/VerboseSending/DefaultView.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/VerboseSending/AbstractView.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/Throttler.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/Decorator.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/AntiFlood.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/VerboseSending.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/BandwidthMonitor.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/MailSend.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Log/Base.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Log/DefaultLog.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Cache/OutputStream.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Cache/JointOutputStream.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Cache/Disk.php
+%%DATADIR%%/includes/external/swift-mailer/Swift/Cache/Memory.php
+%%DATADIR%%/includes/external/swift-mailer/Swift.php
+%%DATADIR%%/includes/external/swift-mailer/EasySwift.php
 %%DATADIR%%/includes/fix.inc.php
 %%DATADIR%%/includes/i18n.inc.php
 %%DATADIR%%/includes/modify.inc.php
@@ -141,6 +184,7 @@
 %%DATADIR%%/javascript/script.aculo.us/javascripttest.rb
 %%DATADIR%%/javascript/script.aculo.us/scriptaculous.js
 %%DATADIR%%/javascript/script.aculo.us/slider.js
+%%DATADIR%%/javascript/script.aculo.us/sound.js
 %%DATADIR%%/javascript/script.aculo.us/unittest.js
 %%DATADIR%%/javascript/tablecontrol.js
 %%DATADIR%%/javascript/tabs.js
@@ -156,6 +200,7 @@
 %%DATADIR%%/lang/nl.php
 %%DATADIR%%/lang/pl.php
 %%DATADIR%%/lang/pt_br.php
+%%DATADIR%%/lang/sv_SE.php
 %%DATADIR%%/lang/ru.php
 %%DATADIR%%/lang/zh_cn.php
 %%DATADIR%%/plugins/.htaccess
@@ -391,6 +436,11 @@
 %%DATADIR%%/setup/upgrade/0.9.9/rename_columns.php
 %%DATADIR%%/setup/upgrade/0.9.9/upgrade.info
 %%DATADIR%%/setup/upgrade/0.9.9/upgrade_assignments.php
+%%DATADIR%%/setup/upgrade/0.9.9.2/lowercase_emails.php
+%%DATADIR%%/setup/upgrade/0.9.9.2/update_users.xml
+%%DATADIR%%/setup/upgrade/0.9.9.2/upgrade.info
+%%DATADIR%%/setup/upgrade/0.9.9.2/flyspray.conf.php
+%%DATADIR%%/setup/upgrade/0.9.9.2/flyspray-install.xml
 %%DATADIR%%/templates/.htaccess
 %%DATADIR%%/templates/admin.cat.tpl
 %%DATADIR%%/templates/admin.editgroup.tpl
@@ -545,14 +595,20 @@
 %%PORTDOCS%%%%DOCSDIR%%/jsCalendar.licence.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/cache/dokuwiki
 @dirrm %%DATADIR%%/cache
 @dirrm %%DATADIR%%/docs/licences
 @dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator
+@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Events
 @dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Connection
+@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Message
+@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator/PopB4Smtp
+@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Authenticator
+@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Iterator
+@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/Decorator
+@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Plugin/VerboseSending
 @dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Plugin
-@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Stream
+@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Log
+@dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Cache
 @dirrm %%DATADIR%%/includes/external/swift-mailer/Swift
 @dirrm %%DATADIR%%/includes/external/swift-mailer
 @dirrm %%DATADIR%%/includes/external
@@ -587,6 +643,7 @@
 @dirrm %%DATADIR%%/setup/styles
 @dirrm %%DATADIR%%/setup/templates
 @dirrm %%DATADIR%%/setup/upgrade/0.9.9
+@dirrm %%DATADIR%%/setup/upgrade/0.9.9.2
 @dirrm %%DATADIR%%/setup/upgrade
 @dirrm %%DATADIR%%/setup
 @dirrm %%DATADIR%%/templates

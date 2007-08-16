@@ -20,7 +20,7 @@ Configuration Instructions for Flyspray
                 Allow from all
         </Directory>
 
-3) Point your browser to http://yourserver.example.com/flyspray/setup/ and you should
+3) Point your browser to http://yourserver.example.com/flyspray/ and you should
    see the Flyspray installer.
 
 4) Once the setup procedure has been completed, you must remove the "setup"
@@ -55,7 +55,7 @@ You can upgrade from a previous version of Flyspray by doing the following:
 
 sql> update flyspray_prefs set pref_value = "0.9.9 dev" where pref_name = "fs_ver";
 
-3) That's it! Flyspray has been upgraded to 0.9.9.  If you messed up
+3) That's it! Flyspray has been upgraded to 0.9.9.2.  If you messed up
    somehow, you will probably have lost data in the process, and may need to
    re-install your database from your backup, but that's ok because you took
    a backup, right?
