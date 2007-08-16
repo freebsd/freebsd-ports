@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	uim-tomoe-gtk
-PORTVERSION=	0.5.0
-PORTREVISION=	3
+PORTVERSION=	0.6.0
+#PORTREVISION=	0
 CATEGORIES=	japanese
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=tomoe/23342
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=tomoe
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	UIM helper program for Tomoe
@@ -22,9 +22,12 @@ LIB_DEPENDS=	tomoe.1:${PORTSDIR}/japanese/tomoe \
 USE_GNOME=	lthack gtk20
 USE_X_LIB=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/uim-tomoe-gtk
-#PLIST_FILES+=	share/locale/ja/LC_MESSAGES/uim-tomoe-gtk.mo
+PLIST_FILES=	bin/uim-tomoe-gtk \
+		share/locale/ja/LC_MESSAGES/uim-tomoe-gtk.mo
+
+CONFIGURE_ENV+=	GMSGFMT='/usr/local/bin/msgfmt'
 
 .include <bsd.port.mk>

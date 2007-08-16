@@ -1,22 +1,31 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	Fri Jan 12 01:41:01 2007
-+++ configure	Fri Jan 12 01:47:51 2007
-@@ -21716,7 +21716,7 @@
+--- configure.orig	2007-08-16 02:29:47.000000000 +0900
++++ configure	2007-08-16 04:00:10.000000000 +0900
+@@ -23914,7 +23914,7 @@
+ echo "${ECHO_T}yes" >&6; }
+ 	use_est=yes
  fi
- 
- 
--if test "$est_exists" = "yes"; then
-+if test x"$with_est" = "xyes" -a "$est_exists" = "yes"; then
-   WITH_EST_TRUE=
-   WITH_EST_FALSE='#'
+- if test x"$use_est" = "xyes"; then
++ if test x"$with_est" = "xyes" -a x"$use_est" = "xyes"; then
+   USE_EST_TRUE=
+   USE_EST_FALSE='#'
  else
-@@ -22374,7 +22374,7 @@
- fi
+@@ -24970,7 +24970,7 @@
+ 
  
  
 -if test "x$MYSQL_CONFIG" != "xmysql_config-not-found"; then
 +if test x"$with_mysql" = "xyes" -a "x$MYSQL_CONFIG" != "xmysql_config-not-found"; then
-   enable_mysql=yes
+   use_mysql=yes
    MYSQL_CFLAGS=`$MYSQL_CONFIG --cflags`
    MYSQL_LIBS=`$MYSQL_CONFIG --libs`
+@@ -26677,7 +26677,7 @@
+     "modify-itlocaledir":C)
+ sed \
+   -i'' \
+-  -e "s/^itlocaledir = /itlocaledir = \$(datadir)\/locale\n#itlocaledir = /" \
++  -e "s/^itlocaledir = .*/itlocaledir = \$(datadir)\/locale/" \
+   po/Makefile
+  ;;
+     "po/stamp-it":C)

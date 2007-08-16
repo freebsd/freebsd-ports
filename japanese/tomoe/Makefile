@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tomoe
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.0
 #PORTREVISION=	0
 CATEGORIES=	japanese
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=tomoe/23908
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=tomoe
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -18,7 +18,9 @@ MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Tegaki Online MOji-ninshiki Engine
 
 USE_GNOME=	lthack gnomehack
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_RUBY=	yes
 
@@ -31,7 +33,8 @@ ARCH!=		${UNAME} -p
 
 OPTIONS=DICT_RUBY	"Enable Ruby based dictionary module"		off \
 	EST		"Enable Hyper Estraier dictionary module"	off \
-	MYSQL		"Enable MySQL dictionary module"		off
+	MYSQL		"Enable MySQL dictionary module"		off \
+	PYTHON		"Enable Python module"				on
 .if ${ARCH} == "sparc64"
 OPTIONS+=UNIHAN		"Enable Unihan database dictionary module"	off
 .else
@@ -62,6 +65,15 @@ PLIST_SUB+=	MYSQL=""
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
+.if defined(WITHOUT_PYTHON)
+CONFIGURE_ARGS+=--with-python=no
+PLIST_SUB+=	PYTHON="@comment "
+.else
+USE_PYTHON=	yes
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+PLIST_SUB+=	PYTHON=""
+.endif
+
 .if defined(WITH_UNIHAN)
 .if ${ARCH} == "sparc64"
 BROKEN=	Not buildable with Unihan on sparc64
@@ -78,7 +90,10 @@ CONFIGURE_ARGS+=--disable-unihan
 PLIST_SUB+=	UNIHAN="@comment "
 .endif
 
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		PYTHON_VERSION=${PYTHON_VERSION:S;python;;} \
+		pyexecdir=${PYTHON_SITELIBDIR} \
+		GMSGFMT='/usr/local/bin/msgfmt'
 
 .if defined(WITH_UNIHAN)
 post-extract:

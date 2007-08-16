@@ -1,0 +1,13 @@
+Index: configure
+diff -u configure.orig configure
+--- configure.orig	2007-08-16 03:48:43.000000000 +0900
++++ configure	2007-08-16 03:48:56.000000000 +0900
+@@ -25862,7 +25862,7 @@
+     "modify-itlocaledir":C)
+ sed \
+   -i'' \
+-  -e "s/^itlocaledir = /itlocaledir = \$(datadir)\/locale\n#itlocaledir = /" \
++  -e "s/^itlocaledir = .*/itlocaledir = \$(datadir)\/locale/" \
+   po/Makefile
+  ;;
+     "po/stamp-it":C)
