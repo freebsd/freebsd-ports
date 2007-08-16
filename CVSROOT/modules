@@ -1834,6 +1834,7 @@ ddc		ports/net/ddc
 ddclient	ports/dns/ddclient
 ddd		ports/devel/ddd
 ddos_scan	ports/security/ddos_scan
+ddrescue	ports/sysutils/ddrescue
 de-BBBike	ports/german/BBBike
 de-alt-aspell	ports/german/alt-aspell
 de-aspell	ports/german/aspell
