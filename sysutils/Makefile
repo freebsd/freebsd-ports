@@ -115,6 +115,7 @@
     SUBDIR += dc42wrap
     SUBDIR += dcfldd
     SUBDIR += dd_rescue
+    SUBDIR += ddrescue
     SUBDIR += deleted
     SUBDIR += deltup
     SUBDIR += desktopbsd-tools
