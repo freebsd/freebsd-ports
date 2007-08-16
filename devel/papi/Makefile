@@ -7,7 +7,7 @@
 
 PORTNAME=	papi
 PORTVERSION=	3.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://papi-for-freebsd.googlecode.com/files/:source1
 DISTFILES=	papi-3.5.0-freebsd-rev45.tar.bz2:source1
@@ -23,11 +23,19 @@ HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/PAPI/src
 WRKMAN=		${WRKDIR}/PAPI/man
 
+# Although the package may not install the fortran binaries, it requires the
+# fortran compiler
+USE_FORTRAN=	yes
+
 OPTIONS=	CTESTS "Install C tests" On
 OPTIONS+=	FTESTS "Install Fortran tests" On
 OPTIONS+=	DEBUG  "Add debug information (increased verbosity)" Off
 
 .include <bsd.port.pre.mk>
+
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	HWPMC kernel module is only available for I386 and \
+  AMD64 machines
 
 .if defined(WITHOUT_CTESTS)
 PLIST_SUB+=	CTESTS="@comment "
@@ -39,7 +47,6 @@ PLIST_SUB+=	CTESTS=""
 PLIST_SUB+=	FTESTS="@comment "
 .else
 PLIST_SUB+=	FTESTS=""
-USE_FORTRAN=	yes
 .endif
 
 .if defined(WITHOUT_DEBUG)
@@ -276,6 +283,6 @@ do-install:
 .endfor
 
 post-install:
-	${CAT} pkg-message
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
