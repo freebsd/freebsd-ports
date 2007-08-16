@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	POE-Component-Generic
-PORTVERSION=	0.10.03
+PORTVERSION=	0.10.05
 DISTVERSION=	${PORTVERSION:C/\.(..)$/\1/}
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Provides non-blocking access to a blocking object
 
 RUN_DEPENDS=	p5-POE>=0.31:${PORTSDIR}/devel/p5-POE \
