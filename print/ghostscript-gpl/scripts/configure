@@ -75,6 +75,7 @@ else
 		gdi \
 		jj100 \
 		sj48 t4693d2 t4693d4 t4693d8 tek4696 \
+		xes \
 		bmpmono bmpgray bmp16 bmp256 bmp16m bmp32b bmpsep1 bmpsep8 \
 		ccr \
 		cgmmono cgm8 cgm24 \
@@ -96,7 +97,8 @@ else
 		tiffcrle tiffg3 tiffg32d tiffg4 tiffgray \
 		tiff12nc tiff24nc tiff32nc tiffsep tifflzw tiffpack \
 		bbox \
-		devicen perm spotcmyk
+		devicen perm spotcmyk \
+		imdi wtsimdi wtscmyk
 fi
 
 for i; do
@@ -402,6 +404,9 @@ Have fun with this new configuration style !     -andreas \n\n\
   "devicen"  "DeviceN process color model device" "$status_devicen" \
   "perm"     "DeviceN which permutes color components" "$status_perm" \
   "spotcmyk" "DeviceN with CMYK and spot color support" "$status_spotcmyk" \
+  "imdi"     "IMDI color converting device" "$status_imdi" \
+  "wtsimdi"  "WTS halftoning device" "$status_wtsimdi" \
+  "wtscmyk"  "WTS halftoning CMYK device" "$status_wtscmyk" \
 2> $tempfile
 
 	retval=$?

@@ -1,16 +1,20 @@
---- src/fapi_ft.c.orig	Mon Mar 13 17:18:19 2006
-+++ src/fapi_ft.c	Sun Mar 18 16:23:21 2007
-@@ -26,11 +26,14 @@
- #include "math_.h"
+--- src/fapi_ft.c.orig	Wed Jul 11 09:26:24 2007
++++ src/fapi_ft.c	Fri Aug 10 02:40:41 2007
+@@ -28,11 +28,14 @@
+ #include "gserror.h"
  
  /* FreeType headers */
 -#include "freetype/freetype.h"
+-#include "freetype/ftincrem.h"
+-#include "freetype/ftglyph.h"
+-#include "freetype/ftoutln.h"
+-#include "freetype/fttrigon.h"
 +#include "ft2build.h"
 +#include FT_FREETYPE_H
- #include "freetype/ftincrem.h"
- #include "freetype/ftglyph.h"
- #include "freetype/ftoutln.h"
- #include "freetype/fttrigon.h"
++#include FT_INCREMENTAL_H
++#include FT_GLYPH_H
++#include FT_OUTLINE_H
++#include FT_TRIGONOMETRY_H
 +#include "gserrors.h"
 +#include "gserror.h"
  
