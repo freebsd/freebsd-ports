@@ -1,0 +1,8 @@
+This package provides constraint routines for Data::FormValidator for
+dealing with dates and times.  It provides an easy mechanism for
+validating dates of any format (using strptime(3)) and transforming
+those dates (as long as you 'untaint' the fields) into valid DateTime
+objects, or into strings that would be properly formatted for various
+database engines.
+
+WWW: http://search.cpan.org/dist/Data-FormValidator-Constraints-DateTime/
