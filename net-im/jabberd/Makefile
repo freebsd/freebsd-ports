@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.1.13
+PORTVERSION=	2.1.14
 CATEGORIES=	net-im
 MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
 DIST_SUBDIR=	jabber
@@ -32,7 +32,7 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes
 USE_RC_SUBR=	jabberd
-USE_LDCONFIG=	${TARGETDIR}/lib/jabberd
+USE_LDCONFIG=	${PREFIX}/lib/jabberd
 CONFIGURE_ARGS+=	--localstatedir=/var \
 		--sysconfdir=${PREFIX}/etc/jabberd \
 		--enable-ssl --enable-mio=poll \
@@ -44,7 +44,7 @@ JABBER_USER=	jabber
 JABBER_UID=	93
 JABBER_GROUP=	${JABBER_USER}
 JABBER_GID=	${JABBER_UID}
-JABBER_ETCDIR=	"${TARGETDIR}/etc/jabberd"
+JABBER_ETCDIR=	"${PREFIX}/etc/jabberd"
 JABBER_RUNDIR=	"/var/jabberd"
 
 SUB_LIST+=	JABBER_USER=${JABBER_USER} JABBER_UID=${JABBER_UID} \
