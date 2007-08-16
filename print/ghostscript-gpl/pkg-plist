@@ -350,7 +350,6 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/doc/Issues.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Language.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Lib.htm
-%%DATADIR%%/%%GS_VERSION%%/doc/Maintain.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Make.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/News.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Projects.htm

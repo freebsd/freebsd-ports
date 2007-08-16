@@ -12,22 +12,13 @@ PORTEPOCH=	${GS_EPOCH}
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
 		http://www.humblesoft.com/pub/:epag \
-		http://www.openprinting.org/download/printing/esp-gpl-ghostscript-merge/:contrib \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${GS_VERSION:S/.//}/:gs_srcs
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs
 PKGNAMESUFFIX=	-gpl
 DISTFILES=	${GS_SRCS}:gs_srcs \
-		${EPAG_SRCS}:epag \
-		${DISTNAME}-contrib-drivers.tar.gz:contrib
+		${EPAG_SRCS}:epag
 DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SRCS}
-
-PATCH_SITES=	http://www.openprinting.org/download/printing/esp-gpl-ghostscript-merge/
-PATCHFILES+=	${DISTNAME}-bjc880j-lips2p-lips4-lips4v.patch
-PATCHFILES+=	${DISTNAME}-ijs-krgb.patch
-PATCHFILES+=	${DISTNAME}-ljet4pjl-lj4dithp-dj505j-picty180.patch
-PATCHFILES+=	${DISTNAME}-pxl-duplex.patch
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPL Postscript interpreter
@@ -40,7 +31,8 @@ CONFLICTS=	ghostscript-afpl* ghostscript-gnu*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
-		XCFLAGS="${XCFLAGS}" XLDFLAGS="${XLDFLAGS}"
+		XCFLAGS="${XCFLAGS}" XLDFLAGS="${XLDFLAGS}" \
+		EXTRALIBS="${EXTRALIBS}"
 PLIST_SUB=	GS_VERSION="${GS_VERSION}" \
 		CIDFONTDIR="${CIDFONTDIR}"
 
@@ -60,7 +52,7 @@ MLINKS=		gslp.1 gsbj.1 \
 		ps2pdf.1 ps2pdf13.1 \
 		ps2ps.1 eps2eps.1
 
-XCFLAGS=	-DUPD_SIGNAL=0 -DHAVE_HYPOT=1 ${PTHREAD_CFLAGS}
+XCFLAGS=	${PTHREAD_CFLAGS}
 XLDFLAGS=	${PTHREAD_LIBS}
 
 MSG_PAPERSIZE=	"NOTE: Type \"make A4=yes\" to use A4 paper size by default."
@@ -83,7 +75,13 @@ LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 
 .if defined(WITH_ICONV)
 USE_ICONV=	yes
-XLDFLAGS+=	-liconv
+EXTRALIBS+=	-liconv
+.endif
+
+.if defined(WITH_FONTCONFIG)
+LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+XCFLAGS+=	-DHAVE_FONTCONFIG=1
+EXTRALIBS+=	-lfontconfig
 .endif
 
 .if defined(WITH_FT_BRIDGE)
@@ -92,8 +90,14 @@ MAKE_ENV+=	FT_BRIDGE=1 FT_ROOT="${WRKSRC}/freetype" FT_LIB_EXT=".a"
 .endif
 
 .if defined(WITH_SHLIB)
-.undef WITHOUT_X11
+.if defined(WITHOUT_X11)
+MAKE_ENV+=	SOC_LOADER="dxmainc.c"
+.else
 USE_GNOME=	gtk20
+MAKE_ENV+=	SOC_LOADER="dxmain.c" \
+		SOC_CFLAGS="`pkg-config --cflags gtk+-2.0`" \
+		SOC_LIBS="`pkg-config --libs gtk+-2.0`"
+.endif
 ALL_TARGET=	so pcl3opts
 INSTALL_TARGET=	soinstall
 USE_LDCONFIG=	yes
@@ -125,7 +129,6 @@ pre-everything::
 
 post-extract:
 	${ECHO_MSG} ">>> in post-extract ..."
-	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}-contrib-drivers.tar.gz
 # ** 3rd party driver **
 # Note: don't forget to add those devices in scripts/configure,
 # which update unix-gcc.mak to build gs with these new devices!
