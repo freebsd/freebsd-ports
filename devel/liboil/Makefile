@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--disable-glib
-CFLAGS+=	-O2
+CFLAGS:=	${CFLAGS:N-O*} -O2
 
 .include <bsd.port.pre.mk>
 
