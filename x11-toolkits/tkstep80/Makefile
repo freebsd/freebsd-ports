@@ -7,7 +7,7 @@
 
 PORTNAME=	tkstep
 PORTVERSION=	8.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_0
@@ -19,12 +19,11 @@ PATCHFILES=	tk8.0.4-to-tkstep8.0.4-2.patch.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Tk toolkit with a NeXTSTEP look and more
 
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
-FILE_DEPENDS=	${PORTSDIR}/x11-toolkits/tk80
 
-USE_XPM=	yes
+USE_TCL=	80
+USE_XORG=	xpm
 PATCH_DIST_ARGS=	-p1 -d ${WRKDIR}/tk8.0.4 -E --quiet
 WRKSRC=		${WRKDIR}/tk8.0.4/unix
 USE_LDCONFIG=	yes
@@ -38,7 +37,7 @@ PKGDEINSTALL=	${PORTSDIR}/x11-toolkits/tk82/pkg-deinstall.wish
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Build fails on sparc64"
+BROKEN=		Build fails on sparc64
 .endif
 
 post-install:
