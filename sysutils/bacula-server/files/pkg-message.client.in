@@ -10,14 +10,6 @@ bconsole.conf.sample, bacula-barcodes.sample, bacula-fd.conf.sample
 
   as installed by docs port for the upgrade procedure.
 
-IMPORTANT UPGRADE NOTES:
-
-- A database upgrade is required.
-- Your Director and SD must be simultaneously upgraded.
-- The "Accept Any Volume" directive has been removed.
-
-- Lots of new features
-
 Read the ReleaseNotes for further information.
 
 ################################################################################

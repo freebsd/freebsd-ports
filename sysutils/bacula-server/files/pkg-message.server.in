@@ -55,11 +55,8 @@ ReleaseNotes
 
 IMPORTANT UPGRADE NOTES FOR THIS RELEASE:
 
-- A database upgrade is required.
-- Your Director and SD must be simultaneously upgraded.
-- The "Accept Any Volume" directive has been removed.
-
-- Lots of new features
+- bacula-client and bacula-server do not need to be simultaneously 
+upgraded.
 
 Read the ReleaseNotes for further information.
 
