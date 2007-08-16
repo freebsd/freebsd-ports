@@ -1,5 +1,6 @@
 etc/tomoe/config
 @dirrm etc/tomoe
+%%PYTHON%%include/tomoe/pytomoe-utils.h
 include/tomoe/tomoe-candidate.h
 include/tomoe/tomoe-char.h
 include/tomoe/tomoe-config.h
@@ -19,34 +20,32 @@ lib/libtomoe.a
 lib/libtomoe.la
 lib/libtomoe.so
 lib/libtomoe.so.1
-%%EST%%lib/tomoe/module/dict/libest.a
-%%EST%%lib/tomoe/module/dict/libest.la
-%%EST%%lib/tomoe/module/dict/libest.so
-%%EST%%lib/tomoe/module/dict/libest.so.1
-%%MYSQL%%lib/tomoe/module/dict/libmysql.a
-%%MYSQL%%lib/tomoe/module/dict/libmysql.la
-%%MYSQL%%lib/tomoe/module/dict/libmysql.so
-%%MYSQL%%lib/tomoe/module/dict/libmysql.so.1
-%%DICT_RUBY%%lib/tomoe/module/dict/libruby.a
-%%DICT_RUBY%%lib/tomoe/module/dict/libruby.la
-%%DICT_RUBY%%lib/tomoe/module/dict/libruby.so
-%%DICT_RUBY%%lib/tomoe/module/dict/libruby.so.1
-%%UNIHAN%%lib/tomoe/module/dict/libunihan.a
-%%UNIHAN%%lib/tomoe/module/dict/libunihan.la
-%%UNIHAN%%lib/tomoe/module/dict/libunihan.so
-%%UNIHAN%%lib/tomoe/module/dict/libunihan.so.1
-lib/tomoe/module/dict/libxml.a
-lib/tomoe/module/dict/libxml.la
-lib/tomoe/module/dict/libxml.so
-lib/tomoe/module/dict/libxml.so.1
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/tomoe.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/tomoe.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/tomoe.so
+%%EST%%lib/tomoe/module/dict/est.a
+%%EST%%lib/tomoe/module/dict/est.la
+%%EST%%lib/tomoe/module/dict/est.so
+%%MYSQL%%lib/tomoe/module/dict/mysql.a
+%%MYSQL%%lib/tomoe/module/dict/mysql.la
+%%MYSQL%%lib/tomoe/module/dict/mysql.so
+%%DICT_RUBY%%lib/tomoe/module/dict/ruby.a
+%%DICT_RUBY%%lib/tomoe/module/dict/ruby.la
+%%DICT_RUBY%%lib/tomoe/module/dict/ruby.so
+%%UNIHAN%%lib/tomoe/module/dict/unihan.a
+%%UNIHAN%%lib/tomoe/module/dict/unihan.la
+%%UNIHAN%%lib/tomoe/module/dict/unihan.so
+lib/tomoe/module/dict/xml.a
+lib/tomoe/module/dict/xml.la
+lib/tomoe/module/dict/xml.so
 @dirrm lib/tomoe/module/dict
-lib/tomoe/module/recognizer/libsimple.a
-lib/tomoe/module/recognizer/libsimple.la
-lib/tomoe/module/recognizer/libsimple.so
-lib/tomoe/module/recognizer/libsimple.so.1
+lib/tomoe/module/recognizer/simple.a
+lib/tomoe/module/recognizer/simple.la
+lib/tomoe/module/recognizer/simple.so
 @dirrm lib/tomoe/module/recognizer
 @dirrm lib/tomoe/module
 @dirrm lib/tomoe
+%%PYTHON%%libdata/pkgconfig/pytomoe.pc
 libdata/pkgconfig/tomoe.pc
 share/gtk-doc/html/tomoe/TomoeCandidate.html
 share/gtk-doc/html/tomoe/TomoeChar.html
@@ -73,9 +72,13 @@ share/gtk-doc/html/tomoe/up.png
 @dirrm share/gtk-doc/html/tomoe
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
+share/locale/ja/LC_MESSAGES/tomoe.mo
 @dirrm share/tomoe/dict
 share/tomoe/dict.dtd
-share/tomoe/recognizer/handwriting.xml
+%%PYTHON%%share/tomoe/python/tomoe.defs
+%%PYTHON%%@dirrm share/tomoe/python
+share/tomoe/recognizer/handwriting-ja.xml
+share/tomoe/recognizer/handwriting-zh_CN.xml
 @dirrm share/tomoe/recognizer
 share/tomoe/xml2est.rb
 @dirrm share/tomoe
@@ -83,5 +86,4 @@ share/tomoe/xml2est.rb
 %%RUBY_SITEARCHLIBDIR%%/tomoe.a
 %%RUBY_SITEARCHLIBDIR%%/tomoe.la
 %%RUBY_SITEARCHLIBDIR%%/tomoe.so
-%%RUBY_SITEARCHLIBDIR%%/tomoe.so.1
 %%RUBY_SITELIBDIR%%/tomoe.rb

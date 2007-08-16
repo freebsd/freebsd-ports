@@ -5,7 +5,9 @@ include/tomoe/gtk/tomoe-edit-char.h
 include/tomoe/gtk/tomoe-edit-meta.h
 include/tomoe/gtk/tomoe-edit-strokes.h
 include/tomoe/gtk/tomoe-gtk.h
-include/tomoe/gtk/tomoe-gucharmap.h
+include/tomoe/gtk/tomoe-gtk-config.h
+include/tomoe/gtk/tomoe-gtk-enum-types.h
+%%GUCHARMAP%%include/tomoe/gtk/tomoe-gucharmap.h
 include/tomoe/gtk/tomoe-handwriting.h
 include/tomoe/gtk/tomoe-reading-search.h
 include/tomoe/gtk/tomoe-scrollable.h
@@ -16,13 +18,16 @@ lib/libtomoe-gtk.a
 lib/libtomoe-gtk.la
 lib/libtomoe-gtk.so
 lib/libtomoe-gtk.so.1
-libdata/pkgconfig/libtomoe-gtk.pc
-share/libtomoe-gtk/tomoe-data-view.png
-share/libtomoe-gtk/tomoe-dictionary.png
-share/libtomoe-gtk/tomoe-gucharmap.png
-share/libtomoe-gtk/tomoe-handwriting.png
-share/libtomoe-gtk/tomoe-search.png
-@dirrm share/libtomoe-gtk
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gtk-2.0/tomoegtk.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gtk-2.0/tomoegtk.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gtk-2.0/tomoegtk.so
+libdata/pkgconfig/tomoe-gtk.pc
+share/tomoe-gtk/tomoe-data-view.png
+share/tomoe-gtk/tomoe-dictionary.png
+share/tomoe-gtk/tomoe-gucharmap.png
+share/tomoe-gtk/tomoe-handwriting.png
+share/tomoe-gtk/tomoe-search.png
+@dirrm share/tomoe-gtk
 share/gtk-doc/html/libtomoe-gtk/TomoeCanvas.html
 share/gtk-doc/html/libtomoe-gtk/TomoeCharTable.html
 share/gtk-doc/html/libtomoe-gtk/TomoeHandwriting.html
