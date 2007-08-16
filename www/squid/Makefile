@@ -424,8 +424,10 @@ pre-su-install:
 	    ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/helpers/basic_auth/DB/passwd.sql ${EXAMPLESDIR}
+.endif
 .if defined(WITH_SQUID_PINGER)
 	${CHMOD} 4510 ${PREFIX}/libexec/squid/pinger; \
 	${CHGRP} ${SQUID_GID} ${PREFIX}/libexec/squid/pinger
