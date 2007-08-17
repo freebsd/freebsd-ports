@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	klavaro
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	games
 MASTER_SITES=	SF
-DIST_SUBDIR=	rerolled
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Touchtyping trainer
