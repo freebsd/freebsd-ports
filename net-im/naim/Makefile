@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.11.8.2.1
+PORTVERSION=	0.11.8.3.1
 CATEGORIES=	net-im irc
 MASTER_SITES=	http://naim.googlecode.com/files/
 
