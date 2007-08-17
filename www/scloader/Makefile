@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scloader
-PORTVERSION=	0.29
+PORTVERSION=	0.31
 CATEGORIES=	www java
 MASTER_SITES=	SF
 DISTNAME=	loader${PORTVERSION:C/\.//}
@@ -16,6 +16,7 @@ COMMENT=	Configurable web graber/spider
 
 USE_ZIP=	yes
 USE_JAVA=	yes
+JAVA_VERSION=	1.5+
 USE_DOS2UNIX=	yes
 
 NO_WRKSUBDIR=	yes
