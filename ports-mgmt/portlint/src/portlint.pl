@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.137 2007/06/09 19:00:58 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.143 2007/08/17 17:04:56 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_g $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -46,7 +46,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 9;
-my $micro = 4;
+my $micro = 5;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -187,6 +187,7 @@ my @varlist =  qw(
 	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
 	PLIST_FILES OPTIONS INSTALLS_OMF USE_GETTEXT USE_RC_SUBR
 	DIST_SUBDIR ALLFILES IGNOREFILES CHECKSUM_ALGORITHMS INSTALLS_ICONS
+	GNU_CONFIGURE CONFIGURE_ARGS
 );
 
 my $cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @varlist);
@@ -745,6 +746,9 @@ sub checkplist {
 				&perror("WARN", $file, $., "\@$1 should not be needed");
 			} elsif ($_ =~ /^\@(dirrm|option)/) {
 				; # no check made
+			} elsif ($_ eq "\@cwd") {
+				; # @cwd by itself means change directory back to the original
+				  # PREFIX.
 			} else {
 				&perror("WARN", $file, $.,
 					"unknown pkg-plist directive \"$_\"");
@@ -773,7 +777,7 @@ sub checkplist {
 				"for more details.");
 		}
 
-		if ($_ =~ m|lib/pkgconfig/[^\.]+.pc$|) {
+		if ($_ =~ m|lib/pkgconfig/[^\/]+.pc$|) {
 			&perror("FATAL", $file, $., "installing pkg-config files into ".
 				"lib/pkgconfig.  All pkg-config files must be installed ".
 				"into libdata/pkgconfig for them to be found by pkg-config.");
@@ -829,20 +833,32 @@ sub checkplist {
 		}
 
 		if ($_ =~ /^(\%\%PORTDOCS\%\%)?share\/doc\//) {
-			&perror("WARN", $file, $., "consider using DOCSDIR macro");
+			&perror("WARN", $file, $., "IFF your port is DOCSDIR-safe ".
+					"(that is, a user can override EXAMPLESDIR when building ".
+					"this port and the port will still work correctly) ".
+					"consider using DOCSDIR macro; if you are unsure if this ".
+					"this port is DOCSDIR-safe, then ignore this warning");
 			$sharedocused++;
 		} elsif ($_ =~ /^(\%\%PORTDOCS\%\%)?\%\%DOCSDIR\%\%/) {
 			$sharedocused++;
 		}
 
 		if ($_ =~ /^share\/examples\//) {
-			&perror("WARN", $file, $., "consider using EXAMPLESDIR macro");
+			&perror("WARN", $file, $., "IFF your port is EXAMPLESDIR-safe ".
+				"(that is, a user can override EXAMPLESDIR when building ".
+				"this port and the port will still work correctly) consider ".
+				"using EXAMPLESDIR macro; if you are unsure if this port is ".
+				"EXAMPLESDIR-safe, then ignore this warning");
 		}
 
 		{
 			my $tmpportname = quotemeta($makevar{PORTNAME});
 			if ($_ =~ /^share\/$tmpportname\//) {
-				&perror("WARN", $file, $., "consider using DATADIR macro");
+				&perror("WARN", $file, $., "IFF your port is DATADIR-safe ".
+					"(that is, a user can override DATADIR when building ".
+					"this port and the port will still work correctly) ".
+					"consider using DATADIR macro; if you are unsure if ".
+					"this port is DATADIR-safe, then ignore this warning");
 			}
 		}
 
@@ -1660,6 +1676,15 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 	}
 
 	#
+	# whole file: check for --mandir and --infodir when GNU_CONFIGURE
+	#
+	if ($makevar{GNU_CONFIGURE} ne '' &&
+		$makevar{CONFIGURE_ARGS} =~ /(man|info)dir/) {
+		&perror("WARN", $file, -1, "--mandir and --infodir are not needed ".
+			"in CONFIGURE_ARGS as they are already set in bsd.port.mk");
+	}
+
+	#
 	# slave port check
 	#
 	my $masterdir = $makevar{MASTERDIR};
@@ -1705,6 +1730,7 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 	$tmp = $rawwhole;
 	# keep comment, blank line, comment in the same section
 	$tmp =~ s/(#.*\n)\n+(#.*)/$1$2/g;
+	$tmp =~ s/\\\n\n/\n/g;
 	@sections = split(/\n\n+/, $tmp);
 	for ($i = 0; $i <= $#sections; $i++) {
 		if ($sections[$i] !~ /\n$/) {
@@ -2421,6 +2447,7 @@ FETCH_DEPENDS DEPENDS_TARGET
 				}
 			}
 		}
+
 		foreach my $i (@linestocheck) {
 			$tmp =~ s/$i[?+]?=[^\n]+\n//g;
 		}
