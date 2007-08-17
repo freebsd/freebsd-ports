@@ -8,8 +8,10 @@ bin/klavaro
 %%DATADIR%%/C_help.txt
 %%DATADIR%%/C_intro.txt
 %%DATADIR%%/C_velo_intro.txt
+%%DATADIR%%/alphagrip5.kbd
 %%DATADIR%%/azerty_be.kbd
 %%DATADIR%%/azerty_fr.kbd
+%%DATADIR%%/azerty_fr_ibook.kbd
 %%DATADIR%%/basic_lessons.txt
 %%DATADIR%%/cs_CZ.paragraphs
 %%DATADIR%%/cs_CZ.words
@@ -35,15 +37,15 @@ bin/klavaro
 %%DATADIR%%/dvorak_us_br.kbd
 %%DATADIR%%/dvorak_us_es.kbd
 %%DATADIR%%/dvorak_us_se.kbd
-%%DATADIR%%/eo_EO.paragraphs
-%%DATADIR%%/eo_EO.words
-%%DATADIR%%/eo_EO_about.txt
-%%DATADIR%%/eo_EO_adapt_intro.txt
-%%DATADIR%%/eo_EO_basic_intro.txt
-%%DATADIR%%/eo_EO_fluid_intro.txt
-%%DATADIR%%/eo_EO_help.txt
-%%DATADIR%%/eo_EO_intro.txt
-%%DATADIR%%/eo_EO_velo_intro.txt
+%%DATADIR%%/eo_XX.paragraphs
+%%DATADIR%%/eo_XX.words
+%%DATADIR%%/eo_XX_about.txt
+%%DATADIR%%/eo_XX_adapt_intro.txt
+%%DATADIR%%/eo_XX_basic_intro.txt
+%%DATADIR%%/eo_XX_fluid_intro.txt
+%%DATADIR%%/eo_XX_help.txt
+%%DATADIR%%/eo_XX_intro.txt
+%%DATADIR%%/eo_XX_velo_intro.txt
 %%DATADIR%%/es_ES.paragraphs
 %%DATADIR%%/es_ES.words
 %%DATADIR%%/es_ES_about.txt
@@ -140,7 +142,7 @@ bin/klavaro
 %%DATADIR%%/sv_SE_velo_intro.txt
 share/locale/cs_CZ/LC_MESSAGES/klavaro.mo
 share/locale/de_DE/LC_MESSAGES/klavaro.mo
-share/locale/eo_EO/LC_MESSAGES/klavaro.mo
+share/locale/eo_XX/LC_MESSAGES/klavaro.mo
 share/locale/es_ES/LC_MESSAGES/klavaro.mo
 share/locale/fr_FR/LC_MESSAGES/klavaro.mo
 share/locale/hu_HU/LC_MESSAGES/klavaro.mo
@@ -155,8 +157,8 @@ share/locale/sv_SE/LC_MESSAGES/klavaro.mo
 @dirrmtry share/locale/cs_CZ
 @dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
-@dirrmtry share/locale/eo_EO/LC_MESSAGES
-@dirrmtry share/locale/eo_EO
+@dirrmtry share/locale/eo_XX/LC_MESSAGES
+@dirrmtry share/locale/eo_XX
 @dirrmtry share/locale/hu_HU/LC_MESSAGES
 @dirrmtry share/locale/hu_HU
 @dirrmtry share/locale/nl_BE/LC_MESSAGES
