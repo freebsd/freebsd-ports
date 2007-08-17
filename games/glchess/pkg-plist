@@ -65,6 +65,21 @@ bin/glchess
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/chessview.py
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/chessview.pyc
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/chessview.pyo
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/network.py
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/network.pyc
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/network.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ggz/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/ggz/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ggz/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ggz/chess.py
+%%PYTHON_SITELIBDIR%%/glchess/ggz/chess.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ggz/chess.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ggz/client.py
+%%PYTHON_SITELIBDIR%%/glchess/ggz/client.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ggz/client.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ggz/protocol.py
+%%PYTHON_SITELIBDIR%%/glchess/ggz/protocol.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ggz/protocol.pyo
 %%PYTHON_SITELIBDIR%%/glchess/main.py
 %%PYTHON_SITELIBDIR%%/glchess/main.pyc
 %%PYTHON_SITELIBDIR%%/glchess/main.pyo
@@ -212,6 +227,7 @@ share/pixmaps/glchess.svg
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/scene
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/gtkui
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/chess/fics
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/ggz
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/chess
 @dirrm %%PYTHON_SITELIBDIR%%/glchess
 @exec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime
