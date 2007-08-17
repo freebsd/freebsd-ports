@@ -84,6 +84,18 @@ main() {
 
 				echo ""
 				if [ ! -z "$e_installed" ]; then
+					if [ ! -z "`grep $e /root/ports.lst`" ]; then
+						echo "It seems you installed this package using ports."
+						echo "It is strongly recommended to upgrade it using also ports."
+						echo -n "Do you want to cancel this binary upgrade process? [y] "
+						read key
+						case $key in
+							n) 
+							sed -i '' s,$e,,g /root/ports.lst ;;
+							*) exit 0;;
+						esac
+					fi
+
 					echo "Upgrading installed package:"
 					pkg_delete -f $e_installed 1>/dev/null 2>&1
 					if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
@@ -193,6 +205,7 @@ build_port() {
 				echo ""
 				if [ ! -z "$e_installed" ]; then
 					echo "Upgrading installed port:"
+					[ -z "`grep $e /root/ports.lst`" ] && echo $e >> /root/ports.lst
 					pkg_delete -f $e_installed 1>/dev/null 2>&1
 					if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
 						echo "*** cannot proceed without first removing the package ***"
@@ -200,6 +213,7 @@ build_port() {
 					fi
 				else
 					echo "Installing new port:"
+					echo $e >> /root/ports.lst
 				fi
 
 				echo -n "Do you want to explicitly set config options now? [n] "
@@ -541,6 +555,9 @@ pkg_delete-xr() {
 
 	echo -e "\033[33m*** installed ***\033[0m"
 	pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
+	for e in $pkg; do 
+		sed -i '' s,.*$e,,g /root/ports.lst 
+	done
 	echo ""
 	echo -n "Do you want to use recursive removal? [n] "
 	read key
