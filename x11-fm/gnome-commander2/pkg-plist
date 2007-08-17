@@ -4,10 +4,6 @@ lib/gnome-commander/libgcmd.a
 lib/gnome-commander/libgcmd.la
 lib/gnome-commander/libgcmd.so
 lib/gnome-commander/libgcmd.so.0
-lib/gnome-commander/libgviewer.a
-lib/gnome-commander/libgviewer.la
-lib/gnome-commander/libgviewer.so
-lib/gnome-commander/libgviewer.so.0
 lib/gnome-commander/plugins/libcvs.a
 lib/gnome-commander/plugins/libcvs.la
 lib/gnome-commander/plugins/libcvs.so
@@ -16,6 +12,12 @@ lib/gnome-commander/plugins/libfileroller.a
 lib/gnome-commander/plugins/libfileroller.la
 lib/gnome-commander/plugins/libfileroller.so
 lib/gnome-commander/plugins/libfileroller.so.0
+lib/gnome-commander/plugins/md5sum.py
+lib/gnome-commander/plugins/md5sum.pyc
+lib/gnome-commander/plugins/md5sum.pyo
+lib/gnome-commander/plugins/sha1sum.py
+lib/gnome-commander/plugins/sha1sum.pyc
+lib/gnome-commander/plugins/sha1sum.pyo
 share/gnome/applications/gnome-commander.desktop
 share/gnome/help/gnome-commander/C/figures/create_archive.png
 share/gnome/help/gnome-commander/C/figures/dev_cd.png
@@ -26,12 +28,8 @@ share/gnome/help/gnome-commander/C/figures/gnome-commander_dialog_file_permissio
 share/gnome/help/gnome-commander/C/figures/gnome-commander_dialog_file_properties.png
 share/gnome/help/gnome-commander/C/figures/gnome-commander_dialog_ftp.png
 share/gnome/help/gnome-commander/C/figures/gnome-commander_dialog_search.png
-share/gnome/help/gnome-commander/C/figures/gnome-commander_options_data.png
-share/gnome/help/gnome-commander/C/figures/gnome-commander_options_dev.png
-share/gnome/help/gnome-commander/C/figures/gnome-commander_options_filter.png
 share/gnome/help/gnome-commander/C/figures/gnome-commander_options_general.png
 share/gnome/help/gnome-commander/C/figures/gnome-commander_options_layout.png
-share/gnome/help/gnome-commander/C/figures/gnome-commander_options_prog.png
 share/gnome/help/gnome-commander/C/figures/gnome-commander_window.png
 share/gnome/help/gnome-commander/C/figures/mounting.png
 share/gnome/help/gnome-commander/C/gnome-commander.xml
@@ -74,6 +72,7 @@ share/gnome/pixmaps/gnome-commander/gnome_cmd_arrow_down.xpm
 share/gnome/pixmaps/gnome-commander/gnome_cmd_arrow_up.xpm
 share/gnome/pixmaps/gnome-commander/home.xpm
 share/gnome/pixmaps/gnome-commander/internal-viewer.xpm
+share/gnome/pixmaps/gnome-commander/python-plugin.svg
 share/gnome/pixmaps/gnome-commander/key.xpm
 share/gnome/pixmaps/gnome-commander/lock.xpm
 share/gnome/pixmaps/gnome-commander/menu_bookmark.xpm
@@ -137,9 +136,11 @@ share/gnome/pixmaps/gnome-commander/toggle_horizontal.xpm
 share/gnome/pixmaps/gnome-commander/toggle_vertical.xpm
 share/gnome/pixmaps/gnome-commander.png
 share/locale/ar/LC_MESSAGES/gnome-commander.mo
+share/locale/bg/LC_MESSAGES/gnome-commander.mo
 share/locale/ca/LC_MESSAGES/gnome-commander.mo
 share/locale/cs/LC_MESSAGES/gnome-commander.mo
 share/locale/de/LC_MESSAGES/gnome-commander.mo
+share/locale/dz/LC_MESSAGES/gnome-commander.mo
 share/locale/el/LC_MESSAGES/gnome-commander.mo
 share/locale/en_CA/LC_MESSAGES/gnome-commander.mo
 share/locale/en_GB/LC_MESSAGES/gnome-commander.mo
@@ -169,8 +170,11 @@ share/locale/sr@Latn/LC_MESSAGES/gnome-commander.mo
 share/locale/sv/LC_MESSAGES/gnome-commander.mo
 share/locale/uk/LC_MESSAGES/gnome-commander.mo
 share/locale/vi/LC_MESSAGES/gnome-commander.mo
+share/locale/oc/LC_MESSAGES/gnome-commander.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-commander.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-commander.mo
+@dirrm share/locale/oc/LC_MESSAGES
+@dirrm share/locale/oc
 @dirrm share/gnome/pixmaps/gnome-commander/mime-icons
 @dirrm share/gnome/pixmaps/gnome-commander/file-type-icons
 @dirrm share/gnome/pixmaps/gnome-commander/device-icons
