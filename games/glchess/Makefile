@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	glchess
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,9 +20,16 @@ RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 USE_GNOME=	gconf2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_GETTEXT=	yes
 
 GCONF_SCHEMAS=	glchess.schemas
+
+.if defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS="@comment"
+CONFIGURE_ARGS+=	--disable-nls
+.else
+PLIST_SUB+=	NLS=""
+USE_GETTEXT=	yes
+.endif
 
 post-patch:
 	@${GREP} -lR "/usr/share/games/glchess" ${WRKSRC} | ${XARGS} \
