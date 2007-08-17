@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fem
-PORTVERSION=	5.3.1
+PORTVERSION=	5.3.2
 CATEGORIES=	science tk84
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer-

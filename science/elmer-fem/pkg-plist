@@ -4,10 +4,10 @@ bin/GebhardtFactors
 bin/ViewFactors
 bin/elmerf90
 lib/libelmersolver.so
-include/binio.mod
 %%DATADIR%%/include/adaptive.mod
 %%DATADIR%%/include/bandmatrix.mod
 %%DATADIR%%/include/bandwidthoptimize.mod
+%%DATADIR%%/include/binio.mod
 %%DATADIR%%/include/coordinatesystems.mod
 %%DATADIR%%/include/crsmatrix.mod
 %%DATADIR%%/include/defutils.mod
@@ -61,6 +61,7 @@ include/binio.mod
 %%DATADIR%%/include/exchangecorrelations.mod
 %%DATADIR%%/include/harmonicsolve.mod
 %%DATADIR%%/include/vtklegacyfile.mod
+%%DATADIR%%/include/kinds.mod
 %%DATADIR%%/lib/AdvectionDiffusion.so
 %%DATADIR%%/lib/ArteryOutlet.so
 %%DATADIR%%/lib/ArtificialCompressibility.so
