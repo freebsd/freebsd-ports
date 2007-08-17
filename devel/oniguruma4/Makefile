@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oniguruma
-PORTVERSION=	4.7.0
+PORTVERSION=	4.7.1
 CATEGORIES=	devel textproc
 MASTER_SITES=	http://www.geocities.jp/kosako3/oniguruma/archive/
 DISTNAME=	onig-${PORTVERSION}
