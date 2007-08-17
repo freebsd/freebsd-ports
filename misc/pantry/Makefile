@@ -7,9 +7,9 @@
 
 PORTNAME=	pantry
 PORTVERSION=	0.${DISTVERSION}
-DISTVERSION=	15
+DISTVERSION=	17
 CATEGORIES=	misc
-MASTER_SITES=	SF
+MASTER_SITES=	http://www.smileystation.com/pantry/downloads/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Command-line nutrition analysis program
@@ -23,15 +23,14 @@ PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 
 post-extract:
 	@${MV} ${WRKSRC}/docs/${PORTNAME}.1 ${WRKSRC}/
+	@${MV} ${WRKSRC}/CHANGELOG ${WRKSRC}/docs/
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
 .ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}/
 	@cd ${WRKSRC}/docs/&&${COPYTREE_SHARE} . ${DOCSDIR}/
 .endif
 .ifndef NOPORTEXAMPLES
-	@${INSTALL} -d ${EXAMPLESDIR}/
 	@cd ${WRKSRC}/examples/&&${COPYTREE_SHARE} . ${EXAMPLESDIR}/
 .endif
 .ifndef NOPORTDATA

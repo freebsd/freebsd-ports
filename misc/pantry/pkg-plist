@@ -81,9 +81,8 @@ bin/pantry-addTo
 %%PYTHON_SITELIBDIR%%/pantry/lib/xmlproc/xmlval.py
 %%PYTHON_SITELIBDIR%%/pantry/lib/xmlproc/xmlval.pyc
 %%PYTHON_SITELIBDIR%%/pantry/lib/xmlproc/xmlval.pyo
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/entities
-%%PORTDOCS%%%%DOCSDIR%%/examples
-%%PORTDOCS%%%%DOCSDIR%%/files
 %%PORTDOCS%%%%DOCSDIR%%/html-chunk/apa.html
 %%PORTDOCS%%%%DOCSDIR%%/html-chunk/apb.html
 %%PORTDOCS%%%%DOCSDIR%%/html-chunk/ch01.html
@@ -128,7 +127,6 @@ bin/pantry-addTo
 %%PORTDOCS%%%%DOCSDIR%%/html-chunk/re01.html
 %%PORTDOCS%%%%DOCSDIR%%/pantry-user-guide-USLetter.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pantry-user-guide.html
-%%PORTDOCS%%%%DOCSDIR%%/pantry-user-guide.txt
 %%PORTDOCS%%%%DOCSDIR%%/pantry-user-guide.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/foods.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pantry.xml
