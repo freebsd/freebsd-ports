@@ -79,7 +79,6 @@ OPTIONS=	SQLITE3 "Use SqLite-3 database instead of SqLite-2" off
 OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
 OPTIONS+=	POSTGRESQL "Use PostgreSQL database instead of SqLite" off
 OPTIONS+=	MTX "Install mtx for control of autochanger devices" off
-OPTIONS+=	AUTOSETEOT "Enable auto seteotmodel" off
 .endif
 
 OPTIONS+=	NLS "Native Language Support via gettext utilities" on
@@ -198,9 +197,6 @@ pre-everything::
 	@${ECHO_MSG} "The default DB is SQLite-2!"
 .endif
 	@${ECHO_MSG} "  WITH_OPENSSL=yes  	Enable OpenSSL for encrypted communication."
-.if !defined(WITH_AUTOSETEOT)
-	@${ECHO_MSG} "  WITH_AUTOSETEOT=yes  	Enable auto seteotmodel (especially useful with TWO EOF = no.)"
-.endif
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "===> Using ${DBTYPE} as the bacula database."
 	@${ECHO_MSG} ""
@@ -219,9 +215,6 @@ post-patch:
 .else
 #	In server port don't install filed
 	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' ${WRKSRC}/Makefile.in
-.endif
-.if defined(WITH_AUTOSETEOT)
-	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/eotmodel-src-stored-dev.c.patch
 .endif
 
 pre-install:
