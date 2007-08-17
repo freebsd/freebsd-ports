@@ -24,8 +24,10 @@ RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	SABnzbd
 
 PLIST_SUB=	PORTNAME=${PORTNAME}
+SUB_LIST+=	PORTNAME=${PORTNAME}
 SUB_FILES=	pkg-message
 
 OPTIONS=	PAR2CMDLINE "Required for postprocessing of par files." on \
@@ -45,6 +47,9 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedpar
 .if !defined(WITHOUT_UNRAR)
 RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PORTNAME%%|${PORTNAME}|' ${WRKSRC}/setup.py
 
 post-install:
 	${CHMOD} -R go+r ${PREFIX}/share/${PORTNAME}/
