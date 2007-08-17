@@ -183,6 +183,7 @@ MAN3=	\
 	gnutls_openpgp_privkey_get_pk_algorithm.3 \
 	gnutls_openpgp_privkey_import.3 \
 	gnutls_openpgp_privkey_init.3 \
+	gnutls_openpgp_privkey_sign_hash.3 \
 	gnutls_openpgp_send_key.3 \
 	gnutls_openpgp_set_recv_key_function.3 \
 	gnutls_openpgp_trustdb_deinit.3 \
@@ -280,6 +281,8 @@ MAN3=	\
 	gnutls_set_default_export_priority.3 \
 	gnutls_set_default_priority.3 \
 	gnutls_sign_algorithm_get_name.3 \
+	gnutls_sign_callback_set.3 \
+	gnutls_sign_callback_get.3 \
 	gnutls_srp_allocate_client_credentials.3 \
 	gnutls_srp_allocate_server_credentials.3 \
 	gnutls_srp_base64_decode.3 \
@@ -423,6 +426,7 @@ MAN3=	\
 	gnutls_x509_privkey_import_rsa_raw.3 \
 	gnutls_x509_privkey_init.3 \
 	gnutls_x509_privkey_sign_data.3 \
+	gnutls_x509_privkey_sign_hash.3 \
 	gnutls_x509_privkey_verify_data.3 \
 	gnutls_x509_rdn_get.3 \
 	gnutls_x509_rdn_get_by_oid.3 \
