@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cerealizer
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	security python
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
