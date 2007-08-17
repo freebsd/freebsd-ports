@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.14
-PORTREVISION=	1
+PORTVERSION=	2.14.1
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -159,6 +158,7 @@ PLIST_SUB+=		WITH_PERL="@comment "
 CONFIGURE_ARGS+=	--enable-perl
 PLIST_SUB+=		WITH_PERL=""
 USE_PERL5=	yes
+MANN+=			gv_perl.n
 . endif
 
 . if !defined(WITH_PHP)
@@ -170,6 +170,7 @@ PLIST_SUB+=		WITH_PHP=""
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 CPPFLAGS+=		-I${LOCALBASE}/include/php/Zend
+MANN+=			gv_php.n
 . endif
 
 . if !defined(WITH_PYTHON)
@@ -181,6 +182,7 @@ PLIST_SUB+=		WITH_PYTHON=""
 USE_PYTHON_BUILD=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 LDFLAGS+=		"-L${PYTHON_LIBDIR}"
+MANN+=			gv_python.n
 . endif
 
 . if !defined(WITH_RUBY)
@@ -204,6 +206,7 @@ USE_LUA=		yes
 CFLAGS+=		-I${LUA_INCDIR}
 LDFLAGS+=		-L${LUA_LIBDIR} -lm
 CONFIGURE_ENV+=		LUA="${LUA_BINDIR}/lua"
+MANN+=			gv_lua.n
 . endif
 
 . if !defined(WITH_TCL)
@@ -212,6 +215,7 @@ PLIST_SUB+=		WITH_TCL="@comment "
 . else
 CONFIGURE_ARGS+=	--enable-tcl
 PLIST_SUB+=		WITH_TCL=""
+MANN+=			gv_tcl.n
 . endif
 
 . if !defined(WITH_GUILE)
@@ -221,6 +225,7 @@ PLIST_SUB+=		WITH_GUILE="@comment "
 CONFIGURE_ARGS+=	--enable-guile
 PLIST_SUB+=		WITH_GUILE=""
 LIB_DEPENDS+=		guile.15:${PORTSDIR}/lang/guile
+MANN+=			gv_guile.n
 . endif
 
 pre-patch:
