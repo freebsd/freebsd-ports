@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dangerdeep
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,10 +34,6 @@ MAN6=		dangerdeep.6
 PORTDOCS=	CREDITS README
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not build on FreeBSD 4.x
-.endif
 
 .if defined(PACKAGE_BUILDING)
 SCONS_ARGS+=	usex86sse=-1	# disable MMX/SSE on the build cluster
