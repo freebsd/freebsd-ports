@@ -16,6 +16,7 @@
 
 name="qpsmtpd"
 rcvar=`set_rcvar`
+load_rc_config $name
 
 command="%%PREFIX%%/bin/qpsmtpd-forkserver"
 pidfile="/var/run/qpsmtpd/qpsmtpd.pid"
