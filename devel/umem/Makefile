@@ -16,7 +16,7 @@ COMMENT=	A port of the Solaris memory allocator
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/ -ldl//g' ${WRKSRC}/Makefile.in
