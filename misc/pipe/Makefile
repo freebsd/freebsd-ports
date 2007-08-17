@@ -7,18 +7,16 @@
 #
 
 PORTNAME=	pipe
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.4.5
 CATEGORIES=	misc java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pipe2
-DISTNAME=	PIPE2_V2_0
+DISTNAME=	PipeV2-45
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Platform Independent Petri-Net Editor 2
+MAINTAINER=	stefan@fh-mainz.de
+COMMENT=	A tool for creating and analysing Petri nets
 
 USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/Pipe
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
@@ -43,9 +41,9 @@ do-install:
 	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/doc && \
+	cd ${WRKSRC}/docs && \
 		${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/javadoc/{} \;
-	cd ${WRKSRC}/doc && \
+	cd ${WRKSRC}/docs && \
 		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/javadoc/{} \;
 .endif
 
