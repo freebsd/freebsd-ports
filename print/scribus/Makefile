@@ -24,6 +24,8 @@ LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
 
+BROKEN=		Incorrect pkg-plist
+
 USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_GNOME=	gnometarget libartlgpl2 libxml2
