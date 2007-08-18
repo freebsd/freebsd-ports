@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Hope is lazy interpriter for HOPE applicative language
 
+BROKEN=		Patch fails
+
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX \
 		latex2html:${PORTSDIR}/textproc/latex2html
