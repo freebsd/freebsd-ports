@@ -14,6 +14,8 @@ MASTER_SITES=	http://havtknut.tihlde.org/qmpdclient/files/ \
 MAINTAINER=	uyamba@gmail.com
 COMMENT=	Easy to use musicpd client written in QT4
 
+BROKEN=		Does not build
+
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	4

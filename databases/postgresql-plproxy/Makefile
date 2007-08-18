@@ -16,6 +16,8 @@ COMMENT=	PL/Proxy is database partitioning system
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
+BROKEN=		Does not build
+
 USE_PGSQL=	yes
 USE_GMAKE=	yes
 
