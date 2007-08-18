@@ -1,0 +1,32 @@
+bin/netsurf
+libexec/netsurf
+%%PORTDOCS%%%%DOCSDIR%%/00-overview
+%%PORTDOCS%%%%DOCSDIR%%/01-content
+%%PORTDOCS%%%%DOCSDIR%%/02-layout
+%%PORTDOCS%%%%DOCSDIR%%/03-css
+%%PORTDOCS%%%%DOCSDIR%%/04-errors
+%%PORTDOCS%%%%DOCSDIR%%/05-memory
+%%PORTDOCS%%%%DOCSDIR%%/06-frames
+%%PORTDOCS%%%%DOCSDIR%%/BUILDING-GTK
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/Doxyfile
+%%PORTDOCS%%%%DOCSDIR%%/ReadMe
+%%PORTDOCS%%%%DOCSDIR%%/TODO-CSS
+%%PORTDOCS%%%%DOCSDIR%%/TODO-HTML
+%%DATADIR%%/adblock.css
+%%DATADIR%%/ca-bundle.txt
+%%DATADIR%%/default.css
+%%DATADIR%%/docs/about.html
+%%DATADIR%%/docs/intro_en.html
+%%DATADIR%%/docs/libcurl
+%%DATADIR%%/docs/libmng
+%%DATADIR%%/docs/libxml2
+%%DATADIR%%/docs/openssl
+%%DATADIR%%/messages
+%%DATADIR%%/netsurf-logo.png
+%%DATADIR%%/netsurf.glade
+%%DATADIR%%/netsurf.xpm
+%%DATADIR%%/throbber.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%

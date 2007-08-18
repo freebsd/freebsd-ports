@@ -455,6 +455,7 @@
     SUBDIR += netoffice
     SUBDIR += netrik
     SUBDIR += netstiff
+    SUBDIR += netsurf
     SUBDIR += newsbeuter
     SUBDIR += newsfeed
     SUBDIR += nginx
