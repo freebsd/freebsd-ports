@@ -23,4 +23,9 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyOpenSSL
 USE_OPENSSL=	yes
 
+pre-configure:
+	@${ECHO_CMD} "[build_ext]" >> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "include-dirs = ${OPENSSLINC}" >> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "library-dirs = ${OPENSSLLIB}" >> ${WRKSRC}/setup.cfg
+
 .include <bsd.port.mk>
