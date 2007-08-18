@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mednafen
-PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTVERSION=	0.8.1
 CATEGORIES=	emulators games
 MASTER_SITES=	SF
 
@@ -18,13 +17,12 @@ LIB_DEPENDS=	cdio.7:${PORTSDIR}/sysutils/libcdio \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
-BROKEN=		Configure fails
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl net
-USE_GL=		yes
+USE_GL=		gl
+USE_XLIB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
