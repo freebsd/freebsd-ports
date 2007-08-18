@@ -27,6 +27,14 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/rst2html) && !defined(NOPORTDOCS)
+PLIST_SUB+=	HTML=""
+.else
+PLIST_SUB+=	HTML="@comment "
+.endif
+
 post-install:
 .if defined(NOPORTDOCS)
 	@${RM} -rf ${DOCSDIR}
@@ -35,4 +43,4 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
