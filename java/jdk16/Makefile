@@ -19,6 +19,7 @@ MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit 1.6.0
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		unzip:${PORTSDIR}/archivers/unzip \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
