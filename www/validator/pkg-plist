@@ -20,6 +20,7 @@ www/validator/htdocs/dev/tests/2342-opensp_type_X.html
 www/validator/htdocs/dev/tests/4476-svg_nodoctype.svg
 www/validator/htdocs/dev/tests/4520-iso88591-meta.html
 www/validator/htdocs/dev/tests/4520-iso88591-no_meta.html
+www/validator/htdocs/dev/tests/4892-entity.html
 www/validator/htdocs/dev/tests/REC-SVG-1_0-minimal.html
 www/validator/htdocs/dev/tests/REC-SVG-1_0-minimal.svg
 www/validator/htdocs/dev/tests/SMIL21.smil
