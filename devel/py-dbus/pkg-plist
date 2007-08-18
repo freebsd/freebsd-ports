@@ -1,11 +1,17 @@
 include/dbus-1.0/dbus/dbus-python.h
 libdata/pkgconfig/dbus-python.pc
 %%PORTDOCS%%%%DOCSDIR%%/API_CHANGES.txt
+%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/API_CHANGES.html
 %%PORTDOCS%%%%DOCSDIR%%/HACKING.txt
+%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/HACKING.html
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/NEWS.html
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/TODO.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.txt
+%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/example-async-client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/example-client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/example-service.py
