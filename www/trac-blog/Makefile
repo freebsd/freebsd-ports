@@ -7,6 +7,7 @@
 
 PORTNAME=	blog
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
@@ -16,10 +17,8 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A blog plugin for Trac
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
-		${PYTHON_SITELIBDIR}/TracTags-0.4-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-tags \
+		${PYTHON_SITELIBDIR}/TracTags-0.4.1-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-tags \
 		${PYTHON_SITELIBDIR}/TracWebAdmin-0.1.2dev-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-webadmin
-
-BROKEN=		Broken dependency
 
 WRKSRC=		${WRKDIR}/trac${PORTNAME}plugin
 USE_PYTHON=	2.3+
