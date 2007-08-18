@@ -7,7 +7,7 @@
 
 PORTNAME=	xanim
 PORTVERSION=	2.92.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	ftp://ftp.informatik.uni-hamburg.de/pub/soft/graphics/xanim/:main \
 		${MASTER_SITE_LOCAL} \
