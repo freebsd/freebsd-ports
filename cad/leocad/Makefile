@@ -22,7 +22,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		glut.4:${PORTSDIR}/graphics/libglut
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 
@@ -30,12 +30,12 @@ MAKE_ENV+=	CXX=${CXX}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000 && ${OSVERSION} >= 504105
+.if ${OSVERSION} < 600000
 BROKEN=		Does not compile on FreeBSD 5.x
 .endif
 
 post-extract:
-	@unzip -q -o ${DISTDIR}/leocad-pieces-20030330.zip -d ${WRKDIR}/pieces
+	@${UNZIP_CMD} -q -o ${DISTDIR}/leocad-pieces-20030330.zip -d ${WRKDIR}/pieces
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -44,6 +44,10 @@ post-patch:
 		s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
 		${WRKSRC}/config.mk
+	@cd ${WRKSRC}/linux/&&${REINPLACE_CMD} -e 's|[(]int[)]data|(intptr_t)data|'\
+		dialogs.cpp dlgpiece.cpp main.cpp toolbar.cpp
+	@${REINPLACE_CMD} -Ee 's|[(]int[)](.*Group)|(intptr_t)\1|'\
+		${WRKSRC}/common/project.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/leocad ${PREFIX}/bin
