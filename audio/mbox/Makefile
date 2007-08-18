@@ -17,6 +17,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/__init__.py:${PORTSDIR}/audio/py-ogg \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		mplayer:${PORTSDIR}/multimedia/mplayer
 
+BROKEN=		Incorrect pkg-plist
+
 WRKSRC=		${WRKDIR}/mBox-${PORTVERSION}
 
 USE_BZIP2=	yes
