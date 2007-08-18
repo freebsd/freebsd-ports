@@ -372,6 +372,11 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/map/electronik/config.xml
 %%DATADIR%%/map/electronik/preview.jpg
 %%DATADIR%%/map/electronik/sky.jpg
+%%DATADIR%%/map/funkyIsland/clouds.png
+%%DATADIR%%/map/funkyIsland/config.xml
+%%DATADIR%%/map/funkyIsland/island.png
+%%DATADIR%%/map/funkyIsland/island_bg.jpg
+%%DATADIR%%/map/funkyIsland/preview.jpg
 %%DATADIR%%/map/goodandevil/config.xml
 %%DATADIR%%/map/goodandevil/goodandevil.png
 %%DATADIR%%/map/goodandevil/preview.jpg
@@ -434,6 +439,10 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/map/random/texture.png
 %%DATADIR%%/map/random/tresor1.png
 %%DATADIR%%/map/random/tresor2.png
+%%DATADIR%%/map/randomamoebas/config.xml
+%%DATADIR%%/map/randomamoebas/preview.jpg
+%%DATADIR%%/map/randomamoebas/sky.jpg
+%%DATADIR%%/map/randomamoebas/texture.png
 %%DATADIR%%/map/space2/config.xml
 %%DATADIR%%/map/space2/map.png
 %%DATADIR%%/map/space2/preview.jpg
@@ -446,8 +455,8 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/map/wildwestdv/config.xml
 %%DATADIR%%/map/wildwestdv/preview.jpg
 %%DATADIR%%/map/wildwestdv/wildwestdv.png
-%%DATADIR%%/menu/arrow-left.png
-%%DATADIR%%/menu/arrow-right.png
+%%DATADIR%%/menu/annulus_background.png
+%%DATADIR%%/menu/annulus_foreground.png
 %%DATADIR%%/menu/audio_label.png
 %%DATADIR%%/menu/background.png
 %%DATADIR%%/menu/background_credits.png
@@ -459,6 +468,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/menu/button.png
 %%DATADIR%%/menu/cancel.png
 %%DATADIR%%/menu/check.png
+%%DATADIR%%/menu/config_label.png
 %%DATADIR%%/menu/disabled_back.png
 %%DATADIR%%/menu/disabled_front.png
 %%DATADIR%%/menu/display_energy.png
@@ -466,8 +476,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/menu/display_wind_particles.png
 %%DATADIR%%/menu/down.png
 %%DATADIR%%/menu/enabled.png
-%%DATADIR%%/menu/full_circle.png
-%%DATADIR%%/menu/full_circle_border.png
+%%DATADIR%%/menu/fps.png
 %%DATADIR%%/menu/fullscreen.png
 %%DATADIR%%/menu/ico_maps.png
 %%DATADIR%%/menu/ico_skins.png
@@ -488,7 +497,6 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/menu/teams_label.png
 %%DATADIR%%/menu/timing_end_turn.png
 %%DATADIR%%/menu/timing_turn.png
-%%DATADIR%%/menu/title.png
 %%DATADIR%%/menu/up.png
 %%DATADIR%%/menu/validate.png
 %%DATADIR%%/menu/video_label.png
@@ -682,6 +690,8 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/weapon/sound/aircraft_bomb_falling.ogg
 %%DATADIR%%/weapon/sound/aircraft_flying.ogg
 %%DATADIR%%/weapon/sound/airhammer.ogg
+%%DATADIR%%/weapon/sound/airhammer_selected.ogg
+%%DATADIR%%/weapon/sound/airhammer_used.ogg
 %%DATADIR%%/weapon/sound/alleluia.ogg
 %%DATADIR%%/weapon/sound/anvil_collision.ogg
 %%DATADIR%%/weapon/sound/anvil_fall.ogg
@@ -724,6 +734,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/wormux_256x256.png
 %%DATADIR%%/wormux_32x32.png
 %%DATADIR%%/wormux_32x32.xpm
+%%DATADIR%%/wormux_default_config.xml
 @dirrm %%DATADIR%%/weapon/teleportation
 @dirrm %%DATADIR%%/weapon/syringe
 @dirrm %%DATADIR%%/weapon/supertux
@@ -783,6 +794,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 @dirrm %%DATADIR%%/map/wildwestdv
 @dirrm %%DATADIR%%/map/vulcano
 @dirrm %%DATADIR%%/map/space2
+@dirrm %%DATADIR%%/map/randomamoebas
 @dirrm %%DATADIR%%/map/random
 @dirrm %%DATADIR%%/map/qingqong
 @dirrm %%DATADIR%%/map/prehistorik
@@ -796,6 +808,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 @dirrm %%DATADIR%%/map/grenouilles
 @dirrm %%DATADIR%%/map/greehills
 @dirrm %%DATADIR%%/map/goodandevil
+@dirrm %%DATADIR%%/map/funkyIsland
 @dirrm %%DATADIR%%/map/electronik
 @dirrm %%DATADIR%%/map/easterisland
 @dirrm %%DATADIR%%/map/desert
