@@ -27,5 +27,8 @@ LDFLAGS=	-L${LOCALBASE}/lib -liconv
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
+# Change the order of cflags so that the right (new) header gets picked up
+	@${REINPLACE_CMD} -Ee 's|(\$$[(]CPPFLAGS[)]) (\$$[(]AM_CFLAGS[)])|\2 \1|'\
+		${WRKSRC}/examples/Makefile.in
 
 .include <bsd.port.mk>
