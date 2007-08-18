@@ -22,10 +22,14 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 PLIST_FILES=	lib/xmms/Input/libspeex.so
 WRKSRC=		${WRKDIR}/speex-xmms
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -fPIC"
+
+post-patch:
+	@${REINPLACE_CMD} -Ee 's|([(][(]int\*[)] packet[)])\+\+|packet=\1+1|'\
+		${WRKSRC}/speexutil.c
 
 .include <bsd.port.mk>
