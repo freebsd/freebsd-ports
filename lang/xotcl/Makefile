@@ -24,14 +24,13 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 .if !defined(AOLSERVER_XOTCL)
 USE_LDCONFIG=	${PREFIX}/lib/xotcl${PORTVERSION}
 GNU_CONFIGURE=	yes
+PORTDOCS=	*
 
 OPTIONS=	ACTIWEB		"Include actiweb"		on \
 		TUTORIAL	"Install XOTcl tutorial" 	off
 .else
 AOLSERVERBASE?=	aolserver
 .endif
-
-PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
