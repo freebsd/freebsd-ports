@@ -8120,6 +8120,7 @@ netspeed_applet	ports/net/netspeed_applet
 netspoc		ports/net-mgmt/netspoc
 netstiff	ports/www/netstiff
 netstrain	ports/net/netstrain
+netsurf		ports/www/netsurf
 nettest		ports/net/nettest
 nettle		ports/security/nettle
 nettoe		ports/games/nettoe
