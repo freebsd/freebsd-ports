@@ -7,6 +7,7 @@
 
 PORTNAME=	twig
 PORTVERSION=	2.8.3
+PORTREVISION=	1
 CATEGORIES=	www mail
 MASTER_SITES=	http://informationgateway.org/download/ \
 		ftp://ftp.informationgateway.org/pub/
@@ -19,7 +20,7 @@ USE_PHP=	ctype imap openssl pgsql pcre posix session tokenizer xml zlib
 .endif
 
 NO_BUILD=	YES
-TWIG?=		www/data-dist/twig
+TWIG?=		www/twig
 PLIST_SUB+=	TWIG=${TWIG}
 ROOTFILES=	index.php test.php goto.php
 CONFFILES=	.htaccess mailfooter.inc.php3.sample
