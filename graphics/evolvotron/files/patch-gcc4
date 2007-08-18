@@ -1,0 +1,33 @@
+diff -Nru evolvotron.vanilla/libevolvotron/function_node.h evolvotron/libevolvotron/function_node.h
+--- libevolvotron/function_node.h	2006-09-03 17:42:30.000000000 +0200
++++ libevolvotron/function_node.h	2006-09-03 17:46:11.000000000 +0200
+@@ -133,7 +133,7 @@
+   static const std::vector<FunctionNode*> stubargs(const MutationParameters& parameters,uint n,bool exciting=false);
+ 
+   //! Return a suitable starting value for a node's iteration count (assuming it's iterative).
+-  static const uint FunctionNode::stubiterations(const MutationParameters& parameters);
++  static const uint stubiterations(const MutationParameters& parameters);
+ 
+   //! Constructor given an array of params and args and an iteration count.
+   /*! These MUST be provided; there are no alterative constructors.
+diff -Nru evolvotron.vanilla/libevolvotron/mutation_parameters.h evolvotron/libevolvotron/mutation_parameters.h
+--- libevolvotron/mutation_parameters.h	2006-09-03 17:42:30.000000000 +0200
++++ libevolvotron/mutation_parameters.h	2006-09-03 17:43:19.000000000 +0200
+@@ -266,7 +266,7 @@
+   //! This returns a new random bit of tree.
+   /*! Setting the "exciting" flag avoids the most basic node types, but only at the top level of the stub tree.
+    */
+-  FunctionNode*const MutationParameters::random_function_stub(bool exciting) const;
++  FunctionNode*const random_function_stub(bool exciting) const;
+     
+   void change_function_weighting(const FunctionRegistration* fn,float w);
+ 
+@@ -277,7 +277,7 @@
+  protected:
+ 
+   //! Return a random function appropriately biased by current settings
+-  FunctionNode*const MutationParameters::random_function() const;
++  FunctionNode*const random_function() const;
+ 
+   //! Return a random function registration, appropriately biased by current settings
+   const FunctionRegistration*const random_weighted_function_registration() const;

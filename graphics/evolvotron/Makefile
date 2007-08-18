@@ -8,8 +8,7 @@ PORTNAME=	evolvotron
 PORTVERSION=	0.4.0
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	dyeske@gmail.com
 COMMENT=	Generative software that evolves images/textures/patterns
@@ -20,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_QT_VER=	3
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
 MAKE_ENV=	QTDIR=${QT_PREFIX} MOC=${MOC}
@@ -32,9 +31,11 @@ post-patch:
 		${WRKSRC}/common.pro
 
 do-configure:
-	cd ${WRKSRC} && ./text_to_markup.py -html < USAGE > evolvotron.html
-	cd ${WRKSRC} && ./text_to_markup.py -qml -s < USAGE > libevolvotron/usage_text.h
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ VERSION_NUMBER=${PORTVERSION} main.pro
+	@cd ${WRKSRC} && ./text_to_markup.py -html < USAGE > evolvotron.html
+	@cd ${WRKSRC} && ./text_to_markup.py -qml -s < USAGE > libevolvotron/usage_text.h
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake -spec \
+		${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
+			VERSION_NUMBER=${PORTVERSION} main.pro
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/evolvotron/evolvotron ${PREFIX}/bin
