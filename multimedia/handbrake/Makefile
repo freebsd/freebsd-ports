@@ -32,6 +32,8 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		x264.50:${PORTSDIR}/multimedia/x264 \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
+BROKEN=		Does not compile
+
 WRKSRC=		${WRKDIR}/HandBrake-${PORTVERSION}
 HAS_CONFIGURE=	yes
 PLIST_FILES=	bin/handbrake
