@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scourge
@@ -20,7 +20,15 @@ COMMENT=	S.C.O.U.R.G.E data files
 NO_BUILD=	yes
 
 DATADIR=	share/${PKGNAMEPREFIX:S/-//}
-WRKSRC=	${WRKDIR}/${PKGNAMEPREFIX:S/-/_/}${PORTNAME}
+PLIST=		${WRKDIR}/pkg-plist
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX:S/-/_/}${PORTNAME}
+
+pre-install:
+	@${RM} -f ${PLIST}
+	@cd ${WRKSRC} && \
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
+			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
+	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
 
 do-install:
 	@cd ${WRKSRC} && \

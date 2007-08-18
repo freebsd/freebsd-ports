@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scourge
-PORTVERSION=	0.17
-PORTREVISION=	1
+PORTVERSION=	0.18
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,8 +17,9 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	S.C.O.U.R.G.E. is a rogue-like game
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	${DATADIR}/world/gui.txt:${PORTSDIR}/games/scourge-data
+RUN_DEPENDS=	${DATADIR}/config/scourge.cfg:${PORTSDIR}/games/scourge-data
 
+USE_AUTOTOOLS=	autoconf:261:env
 USE_GL=		yes
 USE_SDL=	sdl mixer net
 USE_GMAKE=	yes
@@ -39,13 +39,12 @@ OPTIONS=	DEBUG	"Produce an executable with debugging symbols"	off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Some dependencies do not compile on 4.x
-.endif
-
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
+
+pre-configure:
+	@cd ${WRKSRC} && ${AUTORECONF} -i
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/
