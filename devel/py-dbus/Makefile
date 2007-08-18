@@ -22,16 +22,16 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${PYTHON_INCLUDEDIR}"
+CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-install:
 .if defined(NOPORTDOCS)
-	@${RM} -rf ${PREFIX}/share/doc/dbus-python
+	@${RM} -rf ${DOCSDIR}
 .else
-	@${MV} ${PREFIX}/share/doc/dbus-python ${DOCSDIR} && \
-		${MKDIR} ${EXAMPLESDIR} && \
+	${MKDIR} ${EXAMPLESDIR} && \
 		${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
 .endif
 
