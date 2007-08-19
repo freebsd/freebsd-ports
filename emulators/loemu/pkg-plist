@@ -26,6 +26,8 @@ bin/loemu-builder
 %%DATADIR%%/glade/Loemu.glade
 %%DATADIR%%/glade/Preferences.glade
 %%DATADIR%%/glade/penguin-revolt-128.png
+share/locale/ca/LC_MESSAGES/loemu.mo
+share/locale/sv/LC_MESSAGES/loemu.mo
 @dirrm %%DATADIR%%/snaps
 @dirrm %%DATADIR%%/roms
 @dirrm %%DATADIR%%/glade
