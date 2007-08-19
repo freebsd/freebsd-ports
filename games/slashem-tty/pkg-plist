@@ -1,19 +1,19 @@
-bin/slashem-tty
-share/slashem-tty/slashem-tty
-@exec mkdir %D/share/slashem-tty/save
-@exec chmod -R 775 %D/share/slashem-tty
-@exec chmod 2755 %D/share/slashem-tty/save
-@exec chown games:games %D/share/slashem-tty/save
-@unexec rm -rf %D/share/slashem-tty/save
-%%PORTDOCS%%share/doc/slashem-tty/Guidebook.txt
-%%PORTDOCS%%share/doc/slashem-tty/slamfaq.txt
-%%PORTDOCS%%share/doc/slashem-tty/sample.slashemrc
-share/slashem-tty/license
-share/slashem-tty/nhshare
-share/slashem-tty/nhushare
-@mode 664
-share/slashem-tty/logfile
-share/slashem-tty/record
-share/slashem-tty/perm
-@dirrm share/slashem-tty
-%%PORTDOCS%%@dirrm share/doc/slashem-tty
+bin/slashem
+%%PORTDOCS%%%%DOCSDIR%%/Guidebook.txt
+%%PORTDOCS%%%%DOCSDIR%%/sample.slashemrc
+%%PORTDOCS%%%%DOCSDIR%%/slamfaq.txt
+%%DATADIR%%/license
+%%DATADIR%%/logfile
+%%DATADIR%%/nhshare
+%%DATADIR%%/nhushare
+%%DATADIR%%/perm
+%%DATADIR%%/record
+%%DATADIR%%/recover
+%%DATADIR%%/slashem
+@exec mkdir %D/%%DATADIR%%/save
+@exec chmod -R 775 %D/%%DATADIR%%
+@exec chmod 2755 %D/%%DATADIR%%/save
+@exec chown games:games %D/%%DATADIR%%/save
+@dirrmtry %%DATADIR%%/save
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
