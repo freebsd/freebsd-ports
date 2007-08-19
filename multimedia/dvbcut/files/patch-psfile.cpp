@@ -1,11 +1,12 @@
---- src/psfile.cpp~	Fri Apr 13 19:36:27 2007
-+++ src/psfile.cpp	2007-07-17 01:11:44 +0200
+--- src/psfile.cpp~	2007-04-13 19:36:27.000000000 +0200
++++ src/psfile.cpp	2007-08-19 11:51:11.554951537 +0200
 @@ -19,7 +19,9 @@
  #include "psfile.h"
  #include "streamhandle.h"
  #include "stream.h"
 +extern "C" {
- #include <ffmpeg/avcodec.h>
+-#include <ffmpeg/avcodec.h>
++#include <ffmpeg/allcodecs.h>
 +}
  
  psfile::psfile(const std::string &filename, inbuffer &b, int initial_offset)
