@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PhpDocumentor
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -146,8 +146,10 @@ FILES=		HTML_TreeMenu-1.1.2/TreeMenu.php \
 		scripts/tokenizer_test.php \
 		scripts/add_cvs.php \
 		scripts/create_examples.php \
+		scripts/makedoc.sh \
 		phpDocumentor.ini
-DOCS=		Documentation/Release-old/Release-0.2.5 \
+DOCS=		Documentation/Release-old/Release-0.2.4 \
+		Documentation/Release-old/Release-0.2.5 \
 		Documentation/Release-old/Release-0.2.6 \
 		Documentation/Release-old/Release-0.3.0 \
 		Documentation/Release-old/Release-0.4.0 \
@@ -170,7 +172,11 @@ DOCS=		Documentation/Release-old/Release-0.2.5 \
 		Documentation/Release-old/Release-1.2.3.1 \
 		Documentation/Release-old/Release-1.3.0 \
 		Documentation/Release-old/Release-1.3.1 \
-		Documentation/Release-old/Release-0.2.4 \
+		Documentation/Release-old/Release-1.3.2 \
+		Documentation/Release-old/Release-1.4.0alpha1 \
+		Documentation/Release-old/Release-1.4.0alpha2 \
+		Documentation/Release-old/Release-1.4.0rc1 \
+		Documentation/Release-old/Release-1.4.0rc2 \
 		Documentation/TODO \
 		Documentation/RoadMap \
 		tutorials/Converters/CHMdefault/CHMdefaultConverter.cls \
@@ -223,10 +229,12 @@ DOCS=		Documentation/Release-old/Release-0.2.5 \
 		tutorials/phpDocumentor/tags.license.pkg \
 		tutorials/phpDocumentor/tags.pkg \
 		tutorials/phpDocumentor/tags.link.pkg \
+		tutorials/phpDocumentor/tags.method.pkg \
 		tutorials/phpDocumentor/tags.name.pkg \
 		tutorials/phpDocumentor/tags.package.pkg \
 		tutorials/phpDocumentor/tags.param.pkg \
 		tutorials/phpDocumentor/tags.pkg.ini \
+		tutorials/phpDocumentor/tags.property.pkg \
 		tutorials/phpDocumentor/tags.return.pkg \
 		tutorials/phpDocumentor/tags.see.pkg \
 		tutorials/phpDocumentor/tags.since.pkg \
@@ -246,7 +254,7 @@ DOCS=		Documentation/Release-old/Release-0.2.5 \
 		INSTALL \
 		LICENSE \
 		README \
-		Release-1.3.2 \
+		Release-1.4.0 \
 		Authors
 TESTS=		Documentation/tests/bug-557861/bug-557861.php \
 		Documentation/tests/DocBlock_Lexer/test_br.phpt \
@@ -319,9 +327,20 @@ TESTS=		Documentation/tests/bug-557861/bug-557861.php \
 		Documentation/tests/bug-pageleveldocsblocks.php \
 		Documentation/tests/bug-quote_new_parser.php \
 		Documentation/tests/bug-shortdesc.php \
-		Documentation/tests/bug1602961.php \
-		Documentation/tests/bug1620470.php \
 		Documentation/tests/phpt_test.php.inc \
+		Documentation/tests/HighlightParserGetInlineTagsTests.php \
+		Documentation/tests/HighlightParserTests.php \
+		Documentation/tests/IntermediateParserAddPrivatePageTests.php \
+		Documentation/tests/IntermediateParserTests.php \
+		Documentation/tests/ParserClassGetSourceLocationTests.php \
+		Documentation/tests/ParserClassTests.php \
+		Documentation/tests/ParserPageGetSourceLocationTests.php \
+		Documentation/tests/ParserPageTests.php \
+		Documentation/tests/phpDocumentorSetupCleanConverterNamePieceTests.php \
+		Documentation/tests/phpDocumentorSetupDecideOnOrOffTests.php \
+		Documentation/tests/phpDocumentorSetupTests.php \
+		Documentation/tests/phpDocumentorTParserGetInlineTagsTests.php \
+		Documentation/tests/phpDocumentorTParserTests.php \
 		Documentation/.peardummy
 DATA=		docbuilder/images/ss_CHM_default_default.png \
 		docbuilder/images/ss_HTML_frames_default.png \
@@ -1192,6 +1211,7 @@ DATA=		docbuilder/images/ss_CHM_default_default.png \
 		user/makedocs.ini \
 		user/testdocbook.ini \
 		user/default.ini \
+		user/pear-makedocs.ini \
 		new_phpdoc.php \
 		phpdoc.php \
 		phpDocumentor.ini \
