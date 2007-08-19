@@ -269,30 +269,6 @@ share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/images/throbber.gif
 share/dbus-1/services/org.beepmediaplayer.sentinel.service
 share/dbus-1/services/org.mpris.bmp.service
-%%DOCSDIR%%/html/apa.html
-%%DOCSDIR%%/html/ch01.html
-%%DOCSDIR%%/html/ch02.html
-%%DOCSDIR%%/html/ch02s01.html
-%%DOCSDIR%%/html/ch03.html
-%%DOCSDIR%%/html/ch03s01.html
-%%DOCSDIR%%/html/ch03s02.html
-%%DOCSDIR%%/html/ch04.html
-%%DOCSDIR%%/html/ch05.html
-%%DOCSDIR%%/html/ch06.html
-%%DOCSDIR%%/html/ch07.html
-%%DOCSDIR%%/html/ch08.html
-%%DOCSDIR%%/html/ch09.html
-%%DOCSDIR%%/html/index.html
-%%DOCSDIR%%/images/active-source.png
-%%DOCSDIR%%/images/bmp-logo-small.png
-%%DOCSDIR%%/images/bmp.png
-%%DOCSDIR%%/images/favicon.ico
-%%DOCSDIR%%/images/gradient.png
-%%DOCSDIR%%/images/important.png
-%%DOCSDIR%%/images/main-window.png
-%%DOCSDIR%%/images/playing-source.png
-%%DOCSDIR%%/images/rect1869.png
-%%DOCSDIR%%/images/tip.png
 share/icons/hicolor/48x48/apps/bmpx.png
 %%NLS%%share/locale/af/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/bmpx.mo
@@ -322,11 +298,6 @@ share/icons/hicolor/48x48/apps/bmpx.png
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
-@dirrmtry share/dbus-1/services
-@dirrmtry share/dbus-1
 @dirrm %%DATADIR%%/images/svg
 @dirrm %%DATADIR%%/images/stock
 @dirrm %%DATADIR%%/images/sources
