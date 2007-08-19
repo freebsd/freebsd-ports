@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Params-Util
-PORTVERSION=	0.26
+PORTVERSION=	0.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Params
@@ -18,9 +18,6 @@ COMMENT=	Utility functions to aid in parameter checking
 PERL_CONFIGURE=	yes
 
 MAN3=	Params::Util.3
-
-post-patch:
-	@${PERL} -pi -e '$$_="" if m/Test::More/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 
