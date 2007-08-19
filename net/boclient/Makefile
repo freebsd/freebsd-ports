@@ -8,8 +8,7 @@
 PORTNAME=	boclient
 PORTVERSION=	1.21
 CATEGORIES=	net security
-MASTER_SITES=	http://www2.ennui.net/~crioux/ \
-		http://orifice.rotten.com/cDc/
+MASTER_SITES=	http://www.cultdeadcow.com/tools/
 DISTNAME=	bo121unix
 
 MAINTAINER=	ports@FreeBSD.org
