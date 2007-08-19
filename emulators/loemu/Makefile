@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	loemu
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	emulators python
 MASTER_SITES=	http://loemu.pegueroles.com/dists/
 
@@ -18,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.pth:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt
 
+USE_GETTEXT=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 NO_BUILD=		yes
