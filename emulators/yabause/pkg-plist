@@ -1,4 +1,3 @@
-bin/gen68k
 bin/yabause
 %%DATADIR%%/c68k_ini.inc
 share/applications/yabause.desktop
