@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gloox
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 
