@@ -3170,3 +3170,13 @@ mail/emh-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete
 lang/tuareg-mode.el||2007-08-19|Has expired: emacs20 and related ports are obsolete; this port needs an update
 korean/hanemacs||2007-08-19|Has expired: depends on emacs19 which is obsolete
 japanese/weather-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+mail/mew3-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+japanese/skk10-elisp-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+japanese/mule-sj3+wnn7||2007-08-19|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/mule-sj3+wnn6||2007-08-19|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/mule-freewnn+sj3||2007-08-19|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/mule-canna+freewnn||2007-08-19|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/migemo-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+japanese/lookup-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+japanese/emacs20-emcws||2007-08-19|Has expired: editors/emacs20 is also deprecated
+japanese/ddskk-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
