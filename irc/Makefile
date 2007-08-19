@@ -99,7 +99,6 @@
     SUBDIR += ratbox-services
     SUBDIR += rbot
     SUBDIR += riece
-    SUBDIR += riece-emacs20
     SUBDIR += riece-emacs21
     SUBDIR += roxirc
     SUBDIR += ruby-irc

@@ -3948,9 +3948,7 @@ gnuplot		ports/math/gnuplot
 gnuplot+	ports/math/gnuplot+
 gnupod		ports/audio/gnupod
 gnurobots	ports/games/gnurobots
-gnus-emacs20	ports/news/gnus-emacs20
 gnuserv		ports/editors/gnuserv
-gnuserv-emacs20	ports/editors/gnuserv-emacs20
 gnusget		ports/ftp/gnusget
 gnushogi	ports/games/gnushogi
 gnustep		ports/devel/gnustep
@@ -4779,7 +4777,6 @@ ifstat		ports/net/ifstat
 ifstated	ports/net/ifstated
 iftop		ports/net-mgmt/iftop
 igal		ports/www/igal
-iiimecf		ports/editors/iiimecf
 iiimf-client-lib	ports/textproc/iiimf-client-lib
 iiimf-csconv	ports/textproc/iiimf-csconv
 iiimf-gnome-im-switcher	ports/textproc/iiimf-gnome-im-switcher
@@ -6232,7 +6229,6 @@ leaktracer	ports/devel/leaktracer
 led		ports/editors/led
 ledger		ports/finance/ledger
 ledit		ports/sysutils/ledit
-leim20		ports/editors/leim20
 leim21		ports/editors/leim21
 lemmatizer	ports/textproc/lemmatizer
 lemmatizer2	ports/textproc/lemmatizer2
@@ -12697,9 +12693,6 @@ psearch		ports/ports-mgmt/psearch
 pserv		ports/www/pserv
 psgconf		ports/sysutils/psgconf
 psgml		ports/editors/psgml
-psgml-emacs19	ports/editors/psgml-emacs19
-psgml-emacs20	ports/editors/psgml-emacs20
-psgml-mule	ports/editors/psgml-mule
 psh		ports/shells/psh
 psi		ports/net-im/psi
 psi-gentoo	ports/net-im/psi-gentoo
@@ -13760,7 +13753,6 @@ richtext	ports/editors/richtext
 ricochet	ports/mail/ricochet
 rid		ports/security/rid
 riece		ports/irc/riece
-riece-emacs20	ports/irc/riece-emacs20
 riece-emacs21	ports/irc/riece-emacs21
 rinetd		ports/net/rinetd
 rinfo		ports/devel/rinfo
@@ -14455,7 +14447,6 @@ seizedesktop	ports/misc/seizedesktop
 selectwm	ports/x11-wm/selectwm
 selenium	ports/www/selenium
 semantic	ports/devel/semantic
-semantic-emacs20	ports/devel/semantic-emacs20
 semi		ports/editors/semi
 semi-emacs20	ports/editors/semi-emacs20
 semi-emacs21	ports/editors/semi-emacs21
@@ -15212,7 +15203,6 @@ taipan		ports/games/taipan
 talkfilters	ports/misc/talkfilters
 talksoup	ports/irc/talksoup
 tamago		ports/editors/tamago
-tamago-emacs20	ports/editors/tamago-emacs20
 tamago-emacs21	ports/editors/tamago-emacs21
 tank		ports/games/tank
 tap-plugins	ports/audio/tap-plugins
