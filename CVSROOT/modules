@@ -7319,6 +7319,7 @@ memcheck	ports/devel/memcheck
 memdump		ports/sysutils/memdump
 memfetch	ports/sysutils/memfetch
 memgrep		ports/sysutils/memgrep
+memonix		ports/games/memonix
 memtest		ports/sysutils/memtest
 memtest86	ports/sysutils/memtest86
 mencal		ports/deskutils/mencal
