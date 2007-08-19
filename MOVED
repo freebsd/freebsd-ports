@@ -3154,3 +3154,4 @@ devel/upnp104|devel/upnp|2007-08-12|Obsoleted by newer version
 shells/perlsh|shells/psh|2007-08-13|Renamed to reflect correct project's name
 mail/qmHandle|mail/qmhandle|2007-08-13|Renamed to reflect correct project's name
 science/speedcrunch|math/speedcrunch|2007-08-14|Moved to a more appropriate category
+chinese/CJK|print/latex-cjk|2007-08-19|Better category
