@@ -1,33 +1,35 @@
---- sys/unix/Makefile.doc.good	Thu Nov 23 01:01:16 2000
-+++ sys/unix/Makefile.doc	Thu Nov 23 01:04:09 2000
-@@ -52,10 +52,10 @@
- # Guidebook.dvi:	Guidebook.mn
+$FreeBSD$
+
+--- sys/unix/Makefile.doc.orig	Sat Dec 30 05:08:31 2006
++++ sys/unix/Makefile.doc	Fri Aug 17 23:19:06 2007
+@@ -53,16 +53,16 @@
  #	tbl tmac.n Guidebook.mn | groff -Wall -Tdvi > Guidebook.dvi
  
--GAME    = slashem
-+GAME    = slashem-tty
- #GAME    = nethack
--MANDIR	= /games/slash/doc
--MANEXT	= 1n
-+MANDIR	= ${PREFIX}/man/man
-+MANEXT	= 6
+ GAME    = slashem
+-MANDIR	= /usr/man/man6
++MANDIR	= ${MANPREFIX}/man/man6
+ MANEXT	= 6
+ FRMANDIR= $(MANDIR:man6=fr/man6)
  
  # manual installation for most BSD-style systems
- GAMEMANCREATE = cp $(GAME).6
-@@ -72,11 +72,11 @@
- # DLBMANCREATE = groff -Wall -mtty-char -Tascii -man dlb.6 >
- 
- manpages:
--	-$(GAMEMANCREATE) $(MANDIR)/$(GAME).$(MANEXT)
--	-$(LEVMANCREATE) $(MANDIR)/lev_comp.$(MANEXT)
--	-$(DGNMANCREATE) $(MANDIR)/dgn_comp.$(MANEXT)
--	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
--	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
-+	-$(GAMEMANCREATE) $(MANDIR)${MANEXT}/$(GAME).$(MANEXT)
-+	-$(LEVMANCREATE) $(MANDIR)${MANEXT}/lev_comp.$(MANEXT)
-+	-$(DGNMANCREATE) $(MANDIR)${MANEXT}/dgn_comp.$(MANEXT)
-+	-$(RCVRMANCREATE) $(MANDIR)${MANEXT}/recover.$(MANEXT)
-+	-$(DLBMANCREATE) $(MANDIR)${MANEXT}/dlb.$(MANEXT)
+-GAMEMANCREATE = cp $(GAME).6
+-LEVMANCREATE = cp lev_comp.6
+-DGNMANCREATE = cp dgn_comp.6
+-RCVRMANCREATE = cp recover.6
+-DLBMANCREATE = cp dlb.6
++GAMEMANCREATE = ${BSD_INSTALL_MAN} $(GAME).6
++LEVMANCREATE = ${BSD_INSTALL_MAN} lev_comp.6
++DGNMANCREATE = ${BSD_INSTALL_MAN} dgn_comp.6
++RCVRMANCREATE = ${BSD_INSTALL_MAN} recover.6
++DLBMANCREATE = ${BSD_INSTALL_MAN} dlb.6
+ FRGAMEMANCREATE = cp fr/$(GAME).6
+ # manual installation for most SYSV-style systems
+ # and for man files readable in less (eg dos DJGPP+GNU)
+@@ -79,7 +79,6 @@
+ 	-$(DGNMANCREATE) $(MANDIR)/dgn_comp.$(MANEXT)
+ 	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
+ 	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
+-	-$(FRGAMEMANCREATE) $(FRMANDIR)/$(GAME).$(MANEXT)
  
  # manual creation for distribution
  DISTRIB = Guidebook.txt $(GAME).txt lev_comp.txt dgn_comp.txt recover.txt dlb.txt

@@ -1,0 +1,10 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" = "POST-DEINSTALL" -a -d "%%DATADIR%%" ]; then
+	echo ""
+	echo "    If slashem is being removed permanently, please remove"
+	echo ""
+        echo "        %%DATADIR%%"
+	echo ""
+fi
