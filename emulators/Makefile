@@ -31,6 +31,7 @@
     SUBDIR += e-uae
     SUBDIR += extract-xiso
     SUBDIR += fceu
+    SUBDIR += fceu-server
     SUBDIR += fmsx
     SUBDIR += frodo
     SUBDIR += fuse

@@ -1,0 +1,4 @@
+bin/fceu-server
+@unexec if cmp -s %%PREFIX%%/etc/fceu-server/fceu-standard.conf %%PREFIX%%/etc/fceu-server/fceu-server.conf.sample; then rm %%PREFIX%%/etc/fceu-server/fceu-standard.conf; fi
+etc/fceu-server/fceu-server.conf.sample
+@dirrmtry etc/fceu-server
