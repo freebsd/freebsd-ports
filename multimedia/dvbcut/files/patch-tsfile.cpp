@@ -1,11 +1,12 @@
---- src/tsfile.cpp~	Fri Apr 13 19:36:27 2007
-+++ src/tsfile.cpp	2007-07-17 01:12:25 +0200
+--- src/tsfile.cpp~	2007-04-13 19:36:27.000000000 +0200
++++ src/tsfile.cpp	2007-08-19 11:51:32.753587432 +0200
 @@ -22,7 +22,9 @@
  #include <list>
  #include <utility>
  
 +extern "C" {
- #include <ffmpeg/avcodec.h>
+-#include <ffmpeg/avcodec.h>
++#include <ffmpeg/allcodecs.h>
 +}
  
  tsfile::tsfile(const std::string &filename, inbuffer &b, int initial_offset)
