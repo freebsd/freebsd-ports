@@ -7,7 +7,7 @@
 
 PORTNAME=	transset-df
 PORTVERSION=	5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://forchheimer.se/transset-df/
 
