@@ -1,0 +1,61 @@
+------------------------------------------------------------------------
+r700053 | mueller | 2007-08-14 18:37:30 +0200 (Tue, 14 Aug 2007) | 2 lines
+
+be more robust against addressbar spoofing (CVE-2007-4225)
+
+------------------------------------------------------------------------
+--- kdecore/tests/kurltest.cpp
++++ kdecore/tests/kurltest.cpp
+@@ -288,6 +288,16 @@ int main(int argc, char *argv[])
+   check("KURL::prettyURL()", url15582.prettyURL(), "http://alain.knaff.linux.lu/bug-reports/kde/percentage%in%url.html");
+   check("KURL::url()", url15582.url(), "http://alain.knaff.linux.lu/bug-reports/kde/percentage%25in%25url.html");
+ 
++  KURL whitespaceInUser("http://www.google.com%20%20%20%20%20@foobar.com/");
++  check("KURL::prettyURL()", whitespaceInUser.prettyURL(), "http://www.google.com%20%20%20%20%20@foobar.com/");
++
++  KURL whitespaceInPath("http://www.google.com/foo%20bar/");
++  check("KURL::prettyURL()", whitespaceInPath.prettyURL(), "http://www.google.com/foo bar/");
++
++   KURL whitespaceInPath2("http://www.google.com/foo%20%20%20%20%20%20%20bar/");
++  check("KURL::prettyURL()", whitespaceInPath2.prettyURL(),
++          "http://www.google.com/foo%20%20%20%20%20%20 bar/");
++
+   KURL carsten;
+   carsten.setPath("/home/gis/src/kde/kdelibs/kfile/.#kfiledetailview.cpp.1.18");
+   check("KURL::path()", carsten.path(), "/home/gis/src/kde/kdelibs/kfile/.#kfiledetailview.cpp.1.18");
+@@ -594,6 +604,15 @@ int main(int argc, char *argv[])
+   check("http: URL with empty path string path", waba1.path(),
+         "");
+ 
++  waba1 = "http://www.meinestadt.de&url_plain=http";
++  check("http: URL with empty path string", waba1.host(),
++         "www.meinestadt.de&url_plain=http");
++  check("http: URL with empty path string", waba1.htmlURL(),
++         "http://www.meinestadt.de&amp;url_plain=http");
++ 
++  check("http: URL with empty path string", waba1.path(),
++         "");
++
+   waba1 = "http://a:389#b=c";
+   check( "http: URL with port, ref, and empty path; url", waba1.url(), "http://a:389#b=c" );
+   check( "http: URL with port, ref, and empty path; host", waba1.host(), "a" );
+--- kdecore/kurl.cpp
++++ kdecore/kurl.cpp
+@@ -183,7 +183,7 @@ static QString lazy_encode( const QStrin
+         (character == '?') || // Start of query delimiter
+         ((character == '@') && encodeAt) || // Username delimiter
+         (character == '#') || // Start of reference delimiter
+-        ((character == 32) && (i+1 == old_length))) // A trailing space
++        ((character == 32) && (i+1 == old_length || segment[i+1] == ' '))) // A trailing space
+     {
+       new_segment[ new_length++ ] = '%';
+ 
+@@ -1540,7 +1540,7 @@ QString KURL::prettyURL( int _trailing )
+     u += "//";
+     if ( hasUser() )
+     {
+-      u += lazy_encode(m_strUser);
++      u += encode(m_strUser, 0, 0);
+       // Don't show password!
+       u += "@";
+     }
