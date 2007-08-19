@@ -99,6 +99,7 @@
     SUBDIR += pidgin
     SUBDIR += pidgin-guifications
     SUBDIR += pidgin-hotkeys
+    SUBDIR += pidgin-latex
     SUBDIR += pidgin-libnotify
     SUBDIR += pidgin-rhythmbox
     SUBDIR += pork
