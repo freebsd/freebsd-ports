@@ -18,12 +18,21 @@ COMMENT=	Java Development Environment for Emacs
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
-.if ${EMACS_PORT_NAME} != "emacs21"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
+.include <bsd.port.pre.mk>
+
+.if ${EMACS_PORT_NAME} == "emacs22"
+CEDETPORTSUFFIX=${PKGNAMESUFFIX}
+ELIBPORTSUFFIX=	
+.elif ${EMACS_PORT_NAME} == "emacs21"
+CEDETPORTSUFFIX=	
+ELIBPORTSUFFIX=	${PKGNAMESUFFIX}
+.else
+CEDETPORTSUFFIX=${PKGNAMESUFFIX}
+ELIBPORTSUFFIX=	${PKGNAMESUFFIX}
 .endif
 
-BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/cedet/common/cedet.el:${PORTSDIR}/devel/cedet${PORTNAMESUFFIX} \
-		${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/elib/avltree.el:${PORTSDIR}/devel/elib${PORTNAMESUFFIX}
+BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/cedet/common/cedet.el:${PORTSDIR}/devel/cedet${CEDETPORTSUFFIX} \
+		${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/elib/avltree.el:${PORTSDIR}/devel/elib${ELIBPORTSUFFIX}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -70,4 +79,4 @@ post-install:
 	${LN} -sf ${DOCSDIR} ${LISPDIR}/doc
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
