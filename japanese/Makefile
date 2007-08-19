@@ -403,7 +403,6 @@
     SUBDIR += w3m-img
     SUBDIR += waeijiro-fpw
     SUBDIR += wdic-fpw
-    SUBDIR += weather-emacs20
     SUBDIR += web1913-fpw
     SUBDIR += webalizer
     SUBDIR += weblint97

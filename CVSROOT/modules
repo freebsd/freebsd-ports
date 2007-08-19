@@ -2437,7 +2437,6 @@ emacs-chess	ports/games/emacs-chess
 emacs-devel	ports/editors/emacs-devel
 emacs-lisp-intro	ports/lang/emacs-lisp-intro
 emacs-w3m		ports/www/emacs-w3m
-emacs-w3m-emacs20	ports/www/emacs-w3m-emacs20
 emacs-w3m-emacs21	ports/www/emacs-w3m-emacs21
 emacs-w3m-xemacs21-mule	ports/www/emacs-w3m-xemacs21-mule
 emacs-wget	ports/ftp/emacs-wget
@@ -2456,7 +2455,6 @@ emerald		ports/x11-wm/emerald
 emerald-themes	ports/x11-themes/emerald-themes
 emesene		ports/net-im/emesene
 emh		ports/mail/emh
-emh-emacs20	ports/mail/emh-emacs20
 emh-xemacs21-mule	ports/mail/emh-xemacs21-mule
 emiclock	ports/x11-clocks/emiclock
 emil		ports/mail/emil
@@ -5406,7 +5404,6 @@ ja-w3m		ports/japanese/w3m
 ja-w3m-img	ports/japanese/w3m-img
 ja-waeijiro-fpw	ports/japanese/waeijiro-fpw
 ja-wdic-fpw	ports/japanese/wdic-fpw
-ja-weather-emacs20	ports/japanese/weather-emacs20
 ja-web1913-fpw	ports/japanese/web1913-fpw
 ja-webalizer	ports/japanese/webalizer
 ja-weblint97	ports/japanese/weblint97
@@ -5971,7 +5968,6 @@ ko-ghostscript-gnu-korfont	ports/korean/ghostscript-gnu-korfont
 ko-gtkcomm	ports/korean/gtkcomm
 ko-h2ps		ports/korean/h2ps
 ko-hanIM	ports/korean/hanIM
-ko-hanemacs	ports/korean/hanemacs
 ko-hanmiscutils	ports/korean/hanmiscutils
 ko-hanterm	ports/korean/hanterm
 ko-hanterm-xf86	ports/korean/hanterm-xf86
@@ -7385,9 +7381,7 @@ metis-edf	ports/math/metis-edf
 metisse		ports/x11/metisse
 metromap	ports/misc/metromap
 mew		ports/mail/mew
-mew-emacs20	ports/mail/mew-emacs20
 mew2		ports/mail/mew2
-mew2-emacs20	ports/mail/mew2-emacs20
 mew3		ports/mail/mew3
 mew3-emacs20	ports/mail/mew3-emacs20
 mftrace		ports/print/mftrace
@@ -13801,7 +13795,6 @@ rlwrap		ports/devel/rlwrap
 rlytest		ports/mail/rlytest
 rman		ports/textproc/rman
 rmap		ports/astro/rmap
-rmime		ports/mail/rmime
 rmonitor	ports/sysutils/rmonitor
 rmsg		ports/net/rmsg
 rname		ports/misc/rname
@@ -15715,7 +15708,6 @@ ttt		ports/net/ttt
 ttyload		ports/sysutils/ttyload
 ttyrec		ports/misc/ttyrec
 tua		ports/sysutils/tua
-tuareg-mode.el	ports/lang/tuareg-mode.el
 tuc		ports/converters/tuc
 tulip		ports/graphics/tulip
 tumgreyspf	ports/mail/tumgreyspf
@@ -16159,7 +16151,6 @@ wamcc		ports/lang/wamcc
 wampager	ports/x11-wm/wampager
 wanderer	ports/games/wanderer
 wanderlust	ports/mail/wanderlust
-wanderlust-emacs20	ports/mail/wanderlust-emacs20
 wanderlust-emacs21	ports/mail/wanderlust-emacs21
 wanderlust-xemacs21-mule	ports/mail/wanderlust-xemacs21-mule
 wapsh		ports/shells/wapsh

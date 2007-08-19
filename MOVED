@@ -3161,3 +3161,12 @@ deskutils/mhc-emacs20||2007-08-19|Has expired: emacs20 and related ports are obs
 devel/elib-emacs19||2007-08-19|Has expired: emacs19 is obsolete; please use a more recent version
 devel/elib-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
 devel/pcl-cvs-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+www/emacs-w3m-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+mail/wanderlust-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+mail/rmime||2007-08-19|Has expired: emacs20 and related ports are obsolete; also, distfile is unfetchable
+mail/mew2-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+mail/mew-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+mail/emh-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+lang/tuareg-mode.el||2007-08-19|Has expired: emacs20 and related ports are obsolete; this port needs an update
+korean/hanemacs||2007-08-19|Has expired: depends on emacs19 which is obsolete
+japanese/weather-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version

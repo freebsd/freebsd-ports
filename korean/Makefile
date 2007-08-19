@@ -20,7 +20,6 @@
     SUBDIR += gtkcomm
     SUBDIR += h2ps
     SUBDIR += hanIM
-    SUBDIR += hanemacs
     SUBDIR += hanmiscutils
     SUBDIR += hanterm
     SUBDIR += hanterm-xf86

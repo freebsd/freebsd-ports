@@ -322,7 +322,6 @@
     SUBDIR += tolua++
     SUBDIR += tolua4
     SUBDIR += treecc
-    SUBDIR += tuareg-mode.el
     SUBDIR += twelf
     SUBDIR += vala
     SUBDIR += visualworks

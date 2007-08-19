@@ -1,5 +1,0 @@
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/weather/weather.el
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/weather/weather.elc
-@dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/weather
-%%PORTDOCS%%share/doc/weather/README
-%%PORTDOCS%%@dirrm share/doc/weather
