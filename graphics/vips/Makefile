@@ -6,169 +6,85 @@
 #
 
 PORTNAME=	vips
-PORTVERSION=	7.10.21
-PORTREVISION=	1
+PORTVERSION=	7.12.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-7.10/
+MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-${PORTVERSION:R}/
 
-MAINTAINER=	lev@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Free image processing system
+
+OPTIONS=	MAGICK	"Use ImageMagick for more image-types" ${IMPRESENT}
+OPTIONS+=	LIBOIL	"Use liboil for CPU-optimized primitives" on
+# Making Python a proper option awaits portmgr's resolving the current
+# chicken-and-egg problem of OPTIONS vs. USE_* knobs
+#OPTIONS+=	PYTHON	"Create Python bindings" ${PYPRESENT}
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff \
+		Iex:${PORTSDIR}/graphics/OpenEXR \
 		png:${PORTSDIR}/graphics/png \
 		lcms:${PORTSDIR}/graphics/lcms
 
+IMPRESENT!=	which mogrify > /dev/null && echo on || echo off
+PYPRESENT!=	which python > /dev/null && echo on || echo off
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack glib20 pkgconfig pango
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
-
-CONFIGURE_ARGS=	--without-magick --without-x
-
-MAN1=	batch_crop.1 batch_image_convert.1 \
-	batch_rubber_sheet.1 binfile.1 cooc.1 cooc_features.1 \
-	debugim.1 edvips.1 glds.1 glds_features.1 header.1 \
-	light_correct.1 printlines.1 simcontr.1 \
-	sines.1 squares.1 vdump.1 vips.1
-
-MAN3=	IM_ARRAY.3 IM_IMAGE_ADDR.3 IM_IMAGE_N_ELEMENTS.3 \
-	IM_IMAGE_SIZEOF_ELEMENT.3 IM_IMAGE_SIZEOF_LINE.3 \
-	IM_IMAGE_SIZEOF_PEL.3 IM_MAX.3 IM_MIN.3 IM_NEW.3 IM_NUMBER.3 \
-	IM_RECT_BOTTOM.3 IM_RECT_HCENTRE.3 IM_RECT_RIGHT.3 \
-	IM_RECT_VCENTRE.3 IM_REGION_ADDR.3 IM_REGION_LSKIP.3 \
-	IM_REGION_N_ELEMENTS.3 IM_REGION_SIZEOF_LINE.3 IM_RINT.3 \
-	error_exit.3 im_BandFmt2char.3 im_Coding2char.3 \
-	im_Compression2char.3 im_LCh2Lab.3 im_LCh2UCS.3 im_Lab2LCh.3 \
-	im_Lab2LabQ.3 im_Lab2LabS.3 im_Lab2UCS.3 im_Lab2XYZ.3 \
-	im_Lab2disp.3 im_LabQ2Lab.3 im_LabQ2LabS.3 im_LabQ2XYZ.3 \
-	im_LabQ2disp.3 im_LabQ2disp_build_table.3 im_LabQ2disp_table.3 \
-	im_LabS2Lab.3 im_LabS2LabQ.3 im_Type2char.3 im_UCS2LCh.3 \
-	im_UCS2Lab.3 im_UCS2XYZ.3 im_XYZ2Lab.3 im_XYZ2UCS.3 \
-	im_XYZ2Yxy.3 im_XYZ2disp.3 im_XYZ2sRGB.3 im_Yxy2XYZ.3 im_abs.3 \
-	im_acostra.3 im_add.3 im_add_close_callback.3 \
-	im_add_eval_callback.3 im_add_evalend_callback.3 \
-	im_addgnoise.3 im_affine.3 im_allocate_input_array.3 \
-	im_amiMSBfirst.3 im_and_vec.3 im_andconst.3 im_andimage.3 \
-	im_append_Hist.3 im_asintra.3 im_atantra.3 im_avg.3 \
-	im_bandjoin.3 im_binfile.3 im_black.3 im_blend.3 im_c2amph.3 \
-	im_c2imag.3 im_c2ps.3 im_c2real.3 im_c2rect.3 im_cache.3 \
-	im_ceil.3 im_char2BandFmt.3 im_char2Coding.3 \
-	im_char2Compression.3 im_char2Type.3 im_circle.3 im_clip.3 \
-	im_clip2c.3 im_clip2cm.3 im_clip2d.3 im_clip2dcm.3 im_clip2f.3 \
-	im_clip2fmt.3 im_clip2i.3 im_clip2s.3 im_clip2ui.3 \
-	im_clip2us.3 im_close.3 im_cmulnorm.3 im_cntlines.3 \
-	im_col_C2Cucs.3 im_col_Ch2ab.3 im_col_Ch2hucs.3 \
-	im_col_Chucs2h.3 im_col_Cucs2C.3 im_col_L2Lucs.3 \
-	im_col_Lab2XYZ.3 im_col_Lucs2L.3 im_col_XYZ2Lab.3 \
-	im_col_XYZ2rgb.3 im_col_ab2Ch.3 im_col_dECMC.3 \
-	im_col_display.3 im_col_make_tables_RGB.3 \
-	im_col_make_tables_UCS.3 im_col_pythagoras.3 im_col_rgb2XYZ.3 \
-	im_compass.3 im_conv.3 im_conv_raw.3 im_convf.3 im_convf_raw.3 \
-	im_convsep.3 im_convsep_raw.3 im_convsepf.3 im_convsepf_raw.3 \
-	im_convsub.3 im_cooc_asm.3 im_cooc_contrast.3 \
-	im_cooc_correlation.3 im_cooc_entropy.3 im_cooc_matrix.3 \
-	im_copy.3 im_copy_set.3 im_copy_swap.3 im_correl.3 im_costra.3 \
-	im_cp_desc.3 im_create_dmask.3 im_create_fmask.3 \
-	im_create_imask.3 im_dE00_fromLab.3 im_dECMC_fromLab.3 \
-	im_dECMC_fromdisp.3 im_dE_fromLab.3 im_dE_fromXYZ.3 \
-	im_dE_fromdisp.3 im_debugim.3 im_demand_hint.3 \
-	im_demand_hint_array.3 im_deviate.3 im_diag.3 im_dif_std.3 \
-	im_dilate.3 im_dilate_raw.3 im_disp2Lab.3 im_disp2XYZ.3 \
-	im_disp_ps.3 im_divide.3 im_dup_dmask.3 im_dup_imask.3 \
-	im_embed.3 im_eor_vec.3 im_eorconst.3 im_eorimage.3 im_equal.3 \
-	im_equal_vec.3 im_equalconst.3 im_erode.3 im_erode_raw.3 \
-	im_error.3 im_error_buffer.3 im_error_clear.3 im_exp10tra.3 \
-	im_expntra.3 im_expntra_vec.3 im_exptra.3 im_extract.3 \
-	im_extract_area.3 im_extract_band.3 im_extract_bands.3 \
-	im_eye.3 im_falsecolour.3 im_fastcor.3 im_fastline.3 \
-	im_fastlineuser.3 im_fav4.3 im_feye.3 im_fgrey.3 im_fliphor.3 \
-	im_flipver.3 im_flood.3 im_flood_blob.3 im_floor.3 \
-	im_flt_imag_freq.3 im_fractsurf.3 im_free.3 im_free_dmask.3 \
-	im_free_imask.3 im_freqflt.3 im_fwfft.3 im_fzone.3 im_gadd.3 \
-	im_gaddim.3 im_gammacorrect.3 im_gauss_dmask.3 \
-	im_gauss_imask.3 im_gaussnoise.3 im_gbandjoin.3 im_generate.3 \
-	im_gfadd.3 im_glds_asm.3 im_glds_contrast.3 im_glds_entropy.3 \
-	im_glds_matrix.3 im_glds_mean.3 im_global_balance.3 \
-	im_global_balance_float.3 im_gradient.3 im_grey.3 \
-	im_guess_prefix.3 im_header.3 im_header_double.3 \
-	im_header_int.3 im_header_string.3 im_heq.3 im_hist.3 \
-	im_histcum.3 im_histeq.3 im_histgr.3 im_histlin.3 im_histnD.3 \
-	im_histnorm.3 im_histplot.3 im_histspec.3 im_hsp.3 \
-	im_icc_ac2rc.3 im_icc_export.3 im_icc_export_depth.3 \
-	im_icc_import.3 im_icc_present.3 im_icc_transform.3 \
-	im_identity.3 im_identity_ushort.3 im_ifthenelse.3 im_image.3 \
-	im_image_sanity.3 im_incheck.3 im_init.3 im_initdesc.3 \
-	im_insert.3 im_insertplace.3 im_invert.3 im_invertlut.3 \
-	im_invfft.3 im_invfftr.3 im_iocheck.3 im_isMSBfirst.3 \
-	im_iscomplex.3 im_isfile.3 im_isfloat.3 im_isint.3 im_isjpeg.3 \
-	im_ispartial.3 im_ispng.3 im_isppm.3 im_istiff.3 \
-	im_istifftiled.3 im_isuint.3 im_isvips.3 im_iterate.3 \
-	im_jpeg2vips.3 im_jpeg2vips_header.3 im_lab_morph.3 im_less.3 \
-	im_less_vec.3 im_lessconst.3 im_lesseq.3 im_lesseq_vec.3 \
-	im_lesseqconst.3 im_lhisteq.3 im_lhisteq_raw.3 im_lindetect.3 \
-	im_line.3 im_lintra.3 im_lintra_vec.3 im_list_add.3 \
-	im_list_append.3 im_list_eq.3 im_list_fix.3 im_list_fold.3 \
-	im_list_free.3 im_list_index.3 im_list_insert.3 im_list_len.3 \
-	im_list_map.3 im_list_map_rev.3 im_list_member.3 im_list_pos.3 \
-	im_list_remove.3 im_litecor.3 im_log10tra.3 im_log_dmask.3 \
-	im_log_imask.3 im_logtra.3 im_lowpass.3 im_lrjoin.3 \
-	im_lrmerge.3 im_lrmosaic.3 im_magick2vips.3 \
-	im_magick2vips_header.3 im_make_xy.3 im_makerw.3 im_malloc.3 \
-	im_maplut.3 im_mask2vips.3 im_matcat.3 im_match_linear.3 \
-	im_match_linear_search.3 im_matinv.3 im_matmul.3 im_mattrn.3 \
-	im_max.3 im_maxpos.3 im_maxvalue.3 im_mean_std_double_buffer.3 \
-	im_mean_std_int_buffer.3 im_measure.3 im_min.3 im_minpos.3 \
-	im_mmapin.3 im_mmapinrw.3 im_more.3 im_more_vec.3 \
-	im_moreconst.3 im_moreeq.3 im_moreeq_vec.3 im_moreeqconst.3 \
-	im_mpercent.3 im_multiply.3 im_notequal.3 im_notequal_vec.3 \
-	im_notequalconst.3 im_offsets45.3 im_offsets90.3 im_open.3 \
-	im_open_local.3 im_open_local_array.3 im_openout.3 im_or_vec.3 \
-	im_orconst.3 im_orimage.3 im_outcheck.3 im_paintrect.3 \
-	im_partial.3 im_pincheck.3 im_piocheck.3 im_plotmask.3 \
-	im_plotpoint.3 im_png2vips.3 im_png2vips_header.3 \
-	im_poutcheck.3 im_powtra.3 im_powtra_vec.3 im_ppm2vips.3 \
-	im_ppm2vips_header.3 im_prepare.3 im_prepare_to.3 im_print.3 \
-	im_print_dmask.3 im_print_imask.3 im_printdesc.3 im_printhd.3 \
-	im_printlines.3 im_profile.3 im_quantim.3 im_quantlut.3 \
-	im_rank.3 im_rank_image.3 im_read_dmask.3 im_read_imask.3 \
-	im_readpoint.3 im_recomb.3 im_rect_dup.3 im_rect_equalsrect.3 \
-	im_rect_includespoint.3 im_rect_includesrect.3 \
-	im_rect_intersectrect.3 im_rect_isempty.3 \
-	im_rect_marginadjust.3 im_rect_normalise.3 im_rect_unionrect.3 \
-	im_region_create.3 im_region_free.3 im_region_image.3 \
-	im_region_local.3 im_region_position.3 im_region_region.3 \
-	im_remainder.3 im_remainderconst.3 im_remosaic.3 im_render.3 \
-	im_render_fade.3 im_replicate.3 im_ri2c.3 im_rint.3 \
-	im_rot180.3 im_rot270.3 im_rot90.3 im_rotate_dmask45.3 \
-	im_rotate_dmask90.3 im_rotate_imask45.3 im_rotate_imask90.3 \
-	im_rotquad.3 im_sRGB2XYZ.3 im_scale.3 im_scale_dmask.3 \
-	im_scaleps.3 im_setbuf.3 im_setupout.3 im_sharpen.3 \
-	im_shiftleft.3 im_shiftright.3 im_shrink.3 im_sign.3 \
-	im_simcontr.3 im_similarity.3 im_similarity_area.3 im_sines.3 \
-	im_sintra.3 im_slice.3 im_smear.3 im_smudge.3 im_spatres.3 \
-	im_spcor.3 im_start_many.3 im_start_one.3 im_stats.3 \
-	im_stdif.3 im_stop_many.3 im_stop_one.3 im_stretch3.3 \
-	im_subsample.3 im_subtract.3 im_system.3 im_tantra.3 \
-	im_tbjoin.3 im_tbmerge.3 im_tbmosaic.3 im_text.3 im_thresh.3 \
-	im_tiff2vips.3 im_tiff2vips_header.3 im_tone_analyse.3 \
-	im_tone_build.3 im_tone_map.3 im_updatehist.3 im_verror.3 \
-	im_version.3 im_version_string.3 im_video_v4l1.3 \
-	im_vips2bufjpeg.3 im_vips2jpeg.3 im_vips2mask.3 \
-	im_vips2mimejpeg.3 im_vips2png.3 im_vips2ppm.3 im_vips2tiff.3 \
-	im_warn.3 im_wrapmany.3 im_wrapone.3 im_write_dmask.3 \
-	im_write_dmask_name.3 im_write_imask.3 im_write_imask_name.3 \
-	im_writeline.3 im_zerox.3 im_zone.3 im_zoom.3
-
-post-patch:
-	@${RM} ${WRKSRC}/po/malkovich.po
+ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} '217D' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} '682,684s/^/#/' ${WRKSRC}/Makefile.in
+# Don't extract doc/ subdirectory - the simplest way:
+EXTRACT_AFTER_ARGS=	| ${TAR} -xpf - --exclude doc
+post-install:
+	${RMDIR} ${DOCSDIR}
+.else
+# Don't extract html-ized man-pages in either case:
+EXTRACT_AFTER_ARGS=	| ${TAR} -xpf - --exclude doc/html/man
+.endif
+PLIST_SUB+=	VERSION=${PORTVERSION:R}
+
+CONFIGURE_ARGS=	--without-x --mandir=${PREFIX}/man
+
+# This is used to generate the list of man-pages and MLINKS. It
+# looks through the available man-pages and filters out those,
+# which consist of ``.so another/page''. Instead of installing
+# these stubs, we handle them as MLINKS.
+# Only use this target, if upgrading the port.
+.PHONY:	Makefile.man
+Makefile.man:
+	@${ECHO_MSG} "# This file is auto-generated" > $@
+	${FIND} ${WRKSRC} -name '*.[13]' | ${XARGS} ${AWK} '	\
+		/\.so/ {	\
+			page=substr($$2, 6, 100);	\
+			sub(".*/", "", FILENAME);	\
+			print "MLINKS+=\t" page "\t" FILENAME;	\
+			nextfile;	\
+		} {	\
+			sub(".*/", "", FILENAME);	\
+			ext = FILENAME;	\
+			sub(".*\\.", "", ext);	\
+			print "MAN" ext "+=\t" FILENAME;	\
+			nextfile;	\
+		}' >> $@
+
+.include "Makefile.man"
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MAGICK)
+LIB_DEPENDS+=	Magick:${PORTSDIR}/graphics/ImageMagick
+.else
+CONFIGURE_ARGS+=	--without-magick
 .endif
 
-.include <bsd.port.mk>
+.if defined(WITH_LIBOIL)
+LIB_DEPENDS+=	oil:${PORTSDIR}/devel/liboil
+.else
+CONFIGURE_ARGS+=	--without-liboil
+.endif
+
+.include <bsd.port.post.mk>
