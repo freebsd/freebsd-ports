@@ -469,6 +469,7 @@
     SUBDIR += mangos
     SUBDIR += marsnomercy
     SUBDIR += masterserver
+    SUBDIR += memonix
     SUBDIR += meqcc
     SUBDIR += merlin
     SUBDIR += mindfocus
