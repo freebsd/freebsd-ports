@@ -4,7 +4,9 @@
 %%DATADIR%%/README.txt
 %%DATADIR%%/VERSION.txt
 %%DATADIR%%/demos/Zend/Feeds/consume-feed.php
+%%DATADIR%%/demos/Zend/Gdata/Blogger.php
 %%DATADIR%%/demos/Zend/Gdata/Calendar.php
+%%DATADIR%%/demos/Zend/Gdata/Gapps.php
 %%DATADIR%%/demos/Zend/Gdata/Spreadsheet-ClientLogin.php
 %%DATADIR%%/demos/Zend/Mail/SimpleMailer.php
 %%DATADIR%%/demos/Zend/Mail/maildir/maildir.tar
@@ -31,125 +33,6 @@
 %%DATADIR%%/demos/Zend/WebServices/Flickr/flickr-search.php
 %%DATADIR%%/demos/Zend/WebServices/Protocols/xmlrpc-upc-lookup.php
 %%DATADIR%%/demos/Zend/WebServices/Yahoo/yahoo-multi-search.php
-%%DATADIR%%/incubator/README.txt
-%%DATADIR%%/incubator/demos/Zend/Gdata/Calendar-expanded.php
-%%DATADIR%%/incubator/demos/Zend/Locale/AllLanguages.php
-%%DATADIR%%/incubator/library/Zend/Auth/Adapter/DbSelect.php
-%%DATADIR%%/incubator/library/Zend/Auth/ResultProposed.php
-%%DATADIR%%/incubator/library/Zend/Calendar.php
-%%DATADIR%%/incubator/library/Zend/Db/Adapter/Pdo/Ibm.php
-%%DATADIR%%/incubator/library/Zend/Db/Statement/Pdo/Ibm.php
-%%DATADIR%%/incubator/library/Zend/Db/Xml/Db2.php
-%%DATADIR%%/incubator/library/Zend/Db/Xml/XmlContent.php
-%%DATADIR%%/incubator/library/Zend/Db/Xml/XmlContentStore.php
-%%DATADIR%%/incubator/library/Zend/Db/Xml/XmlException.php
-%%DATADIR%%/incubator/library/Zend/Db/Xml/XmlIterator.php
-%%DATADIR%%/incubator/library/Zend/Db/Xml/XmlUtil.php
-%%DATADIR%%/incubator/library/Zend/Environment.php
-%%DATADIR%%/incubator/library/Zend/Environment/Container/Abstract.php
-%%DATADIR%%/incubator/library/Zend/Environment/Exception.php
-%%DATADIR%%/incubator/library/Zend/Environment/Field.php
-%%DATADIR%%/incubator/library/Zend/Environment/Module/Abstract.php
-%%DATADIR%%/incubator/library/Zend/Environment/Module/Core.php
-%%DATADIR%%/incubator/library/Zend/Environment/Module/Extension.php
-%%DATADIR%%/incubator/library/Zend/Environment/Module/Ini.php
-%%DATADIR%%/incubator/library/Zend/Environment/Module/Interface.php
-%%DATADIR%%/incubator/library/Zend/Environment/Module/Os.php
-%%DATADIR%%/incubator/library/Zend/Environment/Module/Security.php
-%%DATADIR%%/incubator/library/Zend/Environment/ModuleRegistry.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Field.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/CGI.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/CGI/ForceRedirect.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core/AllowUrlFopen.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core/AllowUrlInclude.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core/DisplayErrors.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core/ExposePHP.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core/FileUploads.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core/GID.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core/MagicQuotesGPC.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core/OpenBasedir.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core/PostMaxSize.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core/RegisterGlobals.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core/UID.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core/UploadMaxFilesize.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core/UploadTmpDir.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Curl.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Curl/FileSupport.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Session.php
-%%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Session/UseTransSid.php
-%%DATADIR%%/incubator/library/Zend/Environment/View.php
-%%DATADIR%%/incubator/library/Zend/Environment/View/Html.php
-%%DATADIR%%/incubator/library/Zend/Environment/View/Html/Common.php
-%%DATADIR%%/incubator/library/Zend/Environment/View/Html/Core.php
-%%DATADIR%%/incubator/library/Zend/Environment/View/Html/Extension.php
-%%DATADIR%%/incubator/library/Zend/Environment/View/Html/Ini.php
-%%DATADIR%%/incubator/library/Zend/Environment/View/Html/Os.php
-%%DATADIR%%/incubator/library/Zend/Environment/View/Html/Security.php
-%%DATADIR%%/incubator/library/Zend/Environment/View/Text.php
-%%DATADIR%%/incubator/library/Zend/Environment/View/Text/Common.php
-%%DATADIR%%/incubator/library/Zend/Environment/View/Text/Core.php
-%%DATADIR%%/incubator/library/Zend/Environment/View/Text/Extension.php
-%%DATADIR%%/incubator/library/Zend/Environment/View/Text/Ini.php
-%%DATADIR%%/incubator/library/Zend/Environment/View/Text/Os.php
-%%DATADIR%%/incubator/library/Zend/Environment/View/Text/Security.php
-%%DATADIR%%/incubator/library/Zend/Http/Client/Adapter/Curl.php
-%%DATADIR%%/incubator/library/Zend/Json.php
-%%DATADIR%%/incubator/library/Zend/Json/Server.php
-%%DATADIR%%/incubator/library/Zend/Json/Server/Exception.php
-%%DATADIR%%/incubator/library/Zend/Mail/TODO.txt
-%%DATADIR%%/incubator/library/Zend/Mail/Transport/Smtp.php
-%%DATADIR%%/incubator/library/Zend/Mime/Message.php
-%%DATADIR%%/incubator/library/Zend/Soap/AutoDiscover.php
-%%DATADIR%%/incubator/library/Zend/Soap/Server.php
-%%DATADIR%%/incubator/library/Zend/Soap/Server/Exception.php
-%%DATADIR%%/incubator/library/Zend/Soap/Wsdl.php
-%%DATADIR%%/incubator/library/Zend/Soap/Wsdl/CodeGenerator.php
-%%DATADIR%%/incubator/library/Zend/Soap/Wsdl/Parser.php
-%%DATADIR%%/incubator/library/Zend/Soap/Wsdl/Parser/Result.php
-%%DATADIR%%/incubator/library/Zend/TimeSync.php
-%%DATADIR%%/incubator/library/Zend/TimeSync/Exception.php
-%%DATADIR%%/incubator/library/Zend/TimeSync/Ntp.php
-%%DATADIR%%/incubator/library/Zend/TimeSync/Protocol.php
-%%DATADIR%%/incubator/library/Zend/TimeSync/Sntp.php
-%%DATADIR%%/incubator/tests/AllTests.php
-%%DATADIR%%/incubator/tests/TestConfiguration.php.dist
-%%DATADIR%%/incubator/tests/TestHelper.php
-%%DATADIR%%/incubator/tests/Zend/AllTests.php
-%%DATADIR%%/incubator/tests/Zend/Currency/AllTests.php
-%%DATADIR%%/incubator/tests/Zend/CurrencyTest.php
-%%DATADIR%%/incubator/tests/Zend/Db/Adapter/Pdo/IbmTest.php
-%%DATADIR%%/incubator/tests/Zend/Db/AllTests.php
-%%DATADIR%%/incubator/tests/Zend/Db/Select/Pdo/IbmTest.php
-%%DATADIR%%/incubator/tests/Zend/Db/Statement/Pdo/IbmTest.php
-%%DATADIR%%/incubator/tests/Zend/Db/Table/Pdo/IbmTest.php
-%%DATADIR%%/incubator/tests/Zend/Db/Table/Relationships/Pdo/IbmTest.php
-%%DATADIR%%/incubator/tests/Zend/Db/Table/Row/Pdo/IbmTest.php
-%%DATADIR%%/incubator/tests/Zend/Db/Table/Rowset/Pdo/IbmTest.php
-%%DATADIR%%/incubator/tests/Zend/Db/TestUtil/Db2.php
-%%DATADIR%%/incubator/tests/Zend/Db/TestUtil/Pdo/Ibm.php
-%%DATADIR%%/incubator/tests/Zend/Json/AllTests.php
-%%DATADIR%%/incubator/tests/Zend/Json/ServerTest.php
-%%DATADIR%%/incubator/tests/Zend/Json/Zend_xml2json_test.php
-%%DATADIR%%/incubator/tests/Zend/Json/test1.xml
-%%DATADIR%%/incubator/tests/Zend/Json/test2.xml
-%%DATADIR%%/incubator/tests/Zend/Json/test3.xml
-%%DATADIR%%/incubator/tests/Zend/Json/test4.xml
-%%DATADIR%%/incubator/tests/Zend/Json/test5.xml
-%%DATADIR%%/incubator/tests/Zend/Json/test6.xml
-%%DATADIR%%/incubator/tests/Zend/Json/test7.xml
-%%DATADIR%%/incubator/tests/Zend/Soap/AllTests.php
-%%DATADIR%%/incubator/tests/Zend/Soap/AutoDiscoverTest.php
-%%DATADIR%%/incubator/tests/Zend/Soap/ServerTest.php
-%%DATADIR%%/incubator/tests/Zend/Soap/schemas/wsdl.xsd
-%%DATADIR%%/incubator/tests/Zend/TimeSyncTest.php
-%%DATADIR%%/incubator/tools/http_server/server-start.php
-%%DATADIR%%/incubator/tools/http_server/src/AbstractHandler.php
-%%DATADIR%%/incubator/tools/http_server/src/DefaultHandler.php
-%%DATADIR%%/incubator/tools/http_server/src/Exception.php
-%%DATADIR%%/incubator/tools/http_server/src/Request.php
-%%DATADIR%%/incubator/tools/http_server/src/Server.php
 %%DATADIR%%/library/Zend/Acl.php
 %%DATADIR%%/library/Zend/Acl/Assert/Interface.php
 %%DATADIR%%/library/Zend/Acl/Exception.php
@@ -387,6 +270,27 @@
 %%DATADIR%%/library/Zend/Gdata/Extension/Where.php
 %%DATADIR%%/library/Zend/Gdata/Extension/Who.php
 %%DATADIR%%/library/Zend/Gdata/Feed.php
+%%DATADIR%%/library/Zend/Gdata/Gapps.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/EmailListEntry.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/EmailListFeed.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/EmailListQuery.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/EmailListRecipientEntry.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/EmailListRecipientFeed.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/EmailListRecipientQuery.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/Error.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/Extension/EmailList.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/Extension/Login.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/Extension/Name.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/Extension/Nickname.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/Extension/Quota.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/NicknameEntry.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/NicknameFeed.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/NicknameQuery.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/Query.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/ServiceException.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/UserEntry.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/UserFeed.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/UserQuery.php
 %%DATADIR%%/library/Zend/Gdata/Kind/EventEntry.php
 %%DATADIR%%/library/Zend/Gdata/Query.php
 %%DATADIR%%/library/Zend/Gdata/Spreadsheets.php
@@ -424,6 +328,7 @@
 %%DATADIR%%/library/Zend/Loader.php
 %%DATADIR%%/library/Zend/Locale.php
 %%DATADIR%%/library/Zend/Locale/Data.php
+%%DATADIR%%/library/Zend/Locale/Data/Translation.php
 %%DATADIR%%/library/Zend/Locale/Data/aa.xml
 %%DATADIR%%/library/Zend/Locale/Data/aa_DJ.xml
 %%DATADIR%%/library/Zend/Locale/Data/aa_ER.xml
@@ -966,12 +871,12 @@
 %%DATADIR%%/library/Zend/Pdf/FileParserDataSource.php
 %%DATADIR%%/library/Zend/Pdf/FileParserDataSource/File.php
 %%DATADIR%%/library/Zend/Pdf/FileParserDataSource/String.php
-%%DATADIR%%/library/Zend/Pdf/Filter.php
 %%DATADIR%%/library/Zend/Pdf/Filter/Ascii85.php
 %%DATADIR%%/library/Zend/Pdf/Filter/AsciiHex.php
 %%DATADIR%%/library/Zend/Pdf/Filter/Compression.php
 %%DATADIR%%/library/Zend/Pdf/Filter/Compression/Flate.php
 %%DATADIR%%/library/Zend/Pdf/Filter/Compression/Lzw.php
+%%DATADIR%%/library/Zend/Pdf/Filter/Interface.php
 %%DATADIR%%/library/Zend/Pdf/Font.php
 %%DATADIR%%/library/Zend/Pdf/Image.php
 %%DATADIR%%/library/Zend/Pdf/Page.php
@@ -1055,6 +960,7 @@
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Boolean.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Empty.php
+%%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Insignificant.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/MultiTerm.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Phrase.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Term.php
@@ -1566,6 +1472,41 @@
 %%DATADIR%%/tests/Zend/Gdata/EventStatusTest.php
 %%DATADIR%%/tests/Zend/Gdata/ExtendedPropertyTest.php
 %%DATADIR%%/tests/Zend/Gdata/FeedLinkTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/EmailListEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/EmailListFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/EmailListQueryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/EmailListRecipientEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/EmailListRecipientFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/EmailListRecipientQueryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/EmailListTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/ErrorTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/LoginTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/NameTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/NicknameEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/NicknameFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/NicknameQueryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/NicknameTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/QuotaTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/ServiceExceptionTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/UserEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/UserFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/UserQueryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gapps/_files/AppsForYourDomainElementSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/Gapps/_files/EmailListElementSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/Gapps/_files/EmailListEntryDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/Gapps/_files/EmailListFeedDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/Gapps/_files/EmailListRecipientEntryDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/Gapps/_files/EmailListRecipientFeedDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/Gapps/_files/LoginElementSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/Gapps/_files/NameElementSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/Gapps/_files/NicknameElementSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/Gapps/_files/NicknameEntryDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/Gapps/_files/NicknameFeedDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/Gapps/_files/QuotaElementSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/Gapps/_files/UserEntryDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/Gapps/_files/UserFeedDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/GappsOnlineTest.php
+%%DATADIR%%/tests/Zend/Gdata/GappsTest.php
 %%DATADIR%%/tests/Zend/Gdata/GdataOnlineTest.php
 %%DATADIR%%/tests/Zend/Gdata/GdataTest.php
 %%DATADIR%%/tests/Zend/Gdata/OpenSearchItemsPerPageTest.php
@@ -1972,19 +1913,6 @@
 %%DATADIR%%/tests/Zend/_files/_testDir1/ClassNonexistent.php
 %%DATADIR%%/tests/Zend/_files/_testDir1/Interface1.php
 %%DATADIR%%/tests/Zend/_files/_testDir2/Class2.php
-@exec mkdir -p %D/%%DATADIR%%/incubator/demos/Zend/Acl
-@exec mkdir -p %D/%%DATADIR%%/incubator/demos/Zend/Service/Audioscrobbler
-@exec mkdir -p %D/%%DATADIR%%/incubator/library/Zend/Cache/Backend
-@exec mkdir -p %D/%%DATADIR%%/incubator/library/Zend/Controller/Action/Helper
-@exec mkdir -p %D/%%DATADIR%%/incubator/library/Zend/Filter
-@exec mkdir -p %D/%%DATADIR%%/incubator/library/Zend/Registry
-@exec mkdir -p %D/%%DATADIR%%/incubator/library/Zend/Service
-@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Cache
-@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Filter/_files
-@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Http
-@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Registry
-@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Service
-@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Soap/Wsdl
 @exec mkdir -p %D/%%DATADIR%%/library/Zend/View/Filter
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/filters
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/helpers
@@ -2070,6 +1998,8 @@
 @dirrm %%DATADIR%%/tests/Zend/Gdata/_files
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Spreadsheets/_files
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Spreadsheets
+@dirrm %%DATADIR%%/tests/Zend/Gdata/Gapps/_files
+@dirrm %%DATADIR%%/tests/Zend/Gdata/Gapps
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Calendar/_files
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Calendar
 @dirrm %%DATADIR%%/tests/Zend/Gdata/App/_files
@@ -2245,6 +2175,8 @@
 @dirrm %%DATADIR%%/library/Zend/Gdata/Spreadsheets/Extension
 @dirrm %%DATADIR%%/library/Zend/Gdata/Spreadsheets
 @dirrm %%DATADIR%%/library/Zend/Gdata/Kind
+@dirrm %%DATADIR%%/library/Zend/Gdata/Gapps/Extension
+@dirrm %%DATADIR%%/library/Zend/Gdata/Gapps
 @dirrm %%DATADIR%%/library/Zend/Gdata/Extension
 @dirrm %%DATADIR%%/library/Zend/Gdata/Calendar/Extension
 @dirrm %%DATADIR%%/library/Zend/Gdata/Calendar
@@ -2299,90 +2231,6 @@
 @dirrm %%DATADIR%%/library/Zend/Acl
 @dirrm %%DATADIR%%/library/Zend
 @dirrm %%DATADIR%%/library
-@dirrm %%DATADIR%%/incubator/tools/http_server/src
-@dirrm %%DATADIR%%/incubator/tools/http_server
-@dirrm %%DATADIR%%/incubator/tools
-@dirrm %%DATADIR%%/incubator/tests/Zend/Soap/schemas
-@dirrm %%DATADIR%%/incubator/tests/Zend/Soap/Wsdl
-@dirrm %%DATADIR%%/incubator/tests/Zend/Soap
-@dirrm %%DATADIR%%/incubator/tests/Zend/Service
-@dirrm %%DATADIR%%/incubator/tests/Zend/Registry
-@dirrm %%DATADIR%%/incubator/tests/Zend/Json
-@dirrm %%DATADIR%%/incubator/tests/Zend/Http
-@dirrm %%DATADIR%%/incubator/tests/Zend/Filter/_files
-@dirrm %%DATADIR%%/incubator/tests/Zend/Filter
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/TestUtil/Pdo
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/TestUtil
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/Table/Rowset/Pdo
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/Table/Rowset
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/Table/Row/Pdo
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/Table/Row
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/Table/Relationships/Pdo
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/Table/Relationships
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/Table/Pdo
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/Table
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/Statement/Pdo
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/Statement
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/Select/Pdo
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/Select
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/Adapter/Pdo
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db/Adapter
-@dirrm %%DATADIR%%/incubator/tests/Zend/Db
-@dirrm %%DATADIR%%/incubator/tests/Zend/Currency
-@dirrm %%DATADIR%%/incubator/tests/Zend/Cache
-@dirrm %%DATADIR%%/incubator/tests/Zend
-@dirrm %%DATADIR%%/incubator/tests
-@dirrm %%DATADIR%%/incubator/library/Zend/TimeSync
-@dirrm %%DATADIR%%/incubator/library/Zend/Soap/Wsdl/Parser
-@dirrm %%DATADIR%%/incubator/library/Zend/Soap/Wsdl
-@dirrm %%DATADIR%%/incubator/library/Zend/Soap/Server
-@dirrm %%DATADIR%%/incubator/library/Zend/Soap
-@dirrm %%DATADIR%%/incubator/library/Zend/Service
-@dirrm %%DATADIR%%/incubator/library/Zend/Registry
-@dirrm %%DATADIR%%/incubator/library/Zend/Mime
-@dirrm %%DATADIR%%/incubator/library/Zend/Mail/Transport
-@dirrm %%DATADIR%%/incubator/library/Zend/Mail
-@dirrm %%DATADIR%%/incubator/library/Zend/Json/Server
-@dirrm %%DATADIR%%/incubator/library/Zend/Json
-@dirrm %%DATADIR%%/incubator/library/Zend/Http/Client/Adapter
-@dirrm %%DATADIR%%/incubator/library/Zend/Http/Client
-@dirrm %%DATADIR%%/incubator/library/Zend/Http
-@dirrm %%DATADIR%%/incubator/library/Zend/Filter
-@dirrm %%DATADIR%%/incubator/library/Zend/Environment/View/Text
-@dirrm %%DATADIR%%/incubator/library/Zend/Environment/View/Html
-@dirrm %%DATADIR%%/incubator/library/Zend/Environment/View
-@dirrm %%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Session
-@dirrm %%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Curl
-@dirrm %%DATADIR%%/incubator/library/Zend/Environment/Security/Test/Core
-@dirrm %%DATADIR%%/incubator/library/Zend/Environment/Security/Test/CGI
-@dirrm %%DATADIR%%/incubator/library/Zend/Environment/Security/Test
-@dirrm %%DATADIR%%/incubator/library/Zend/Environment/Security
-@dirrm %%DATADIR%%/incubator/library/Zend/Environment/Module
-@dirrm %%DATADIR%%/incubator/library/Zend/Environment/Container
-@dirrm %%DATADIR%%/incubator/library/Zend/Environment
-@dirrm %%DATADIR%%/incubator/library/Zend/Db/Xml
-@dirrm %%DATADIR%%/incubator/library/Zend/Db/Statement/Pdo
-@dirrm %%DATADIR%%/incubator/library/Zend/Db/Statement
-@dirrm %%DATADIR%%/incubator/library/Zend/Db/Adapter/Pdo
-@dirrm %%DATADIR%%/incubator/library/Zend/Db/Adapter
-@dirrm %%DATADIR%%/incubator/library/Zend/Db
-@dirrm %%DATADIR%%/incubator/library/Zend/Controller/Action/Helper
-@dirrm %%DATADIR%%/incubator/library/Zend/Controller/Action
-@dirrm %%DATADIR%%/incubator/library/Zend/Controller
-@dirrm %%DATADIR%%/incubator/library/Zend/Cache/Backend
-@dirrm %%DATADIR%%/incubator/library/Zend/Cache
-@dirrm %%DATADIR%%/incubator/library/Zend/Auth/Adapter
-@dirrm %%DATADIR%%/incubator/library/Zend/Auth
-@dirrm %%DATADIR%%/incubator/library/Zend
-@dirrm %%DATADIR%%/incubator/library
-@dirrm %%DATADIR%%/incubator/demos/Zend/Service/Audioscrobbler
-@dirrm %%DATADIR%%/incubator/demos/Zend/Service
-@dirrm %%DATADIR%%/incubator/demos/Zend/Locale
-@dirrm %%DATADIR%%/incubator/demos/Zend/Gdata
-@dirrm %%DATADIR%%/incubator/demos/Zend/Acl
-@dirrm %%DATADIR%%/incubator/demos/Zend
-@dirrm %%DATADIR%%/incubator/demos
-@dirrm %%DATADIR%%/incubator
 @dirrm %%DATADIR%%/demos/Zend/WebServices/Yahoo
 @dirrm %%DATADIR%%/demos/Zend/WebServices/Protocols
 @dirrm %%DATADIR%%/demos/Zend/WebServices/Flickr
