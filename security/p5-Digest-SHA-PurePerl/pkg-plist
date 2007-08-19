@@ -6,3 +6,5 @@ bin/shasum
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/
 @dirrmtry %%SITE_PERL%%/Digest/SHA/
 @dirrmtry %%SITE_PERL%%/Digest/
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dups
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

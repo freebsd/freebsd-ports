@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	Digest-SHA-PurePerl
-PORTVERSION=	5.44
+PORTVERSION=	5.45
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Digest
@@ -26,6 +26,12 @@ RUN_DEPENDS+=	${SITE_PERL}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 .if ${PERL_LEVEL} < 500803
 RUN_DEPENDS+=	${SITE_PERL}/Digest/base.pm:${PORTSDIR}/security/p5-Digest
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/dups ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
