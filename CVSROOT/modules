@@ -2766,6 +2766,7 @@ fbsd-icons	ports/x11/fbsd-icons
 fc++		ports/devel/fc++
 fcalc		ports/misc/fcalc
 fceu		ports/emulators/fceu
+fceu-server	ports/emulators/fceu-server
 fcgi		ports/www/fcgi
 fconv		ports/converters/fconv
 fcplay		ports/audio/fcplay
