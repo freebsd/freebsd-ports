@@ -21,7 +21,7 @@ DISTFILES=	# none
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Supportive tools for Chinese docproj build
 
-RUN_DEPENDS=	gbklatex:${PORTSDIR}/chinese/CJK
+RUN_DEPENDS=	gbklatex:${PORTSDIR}/print/latex-cjk
 
 USE_ICONV=	yes
 
