@@ -3155,3 +3155,9 @@ shells/perlsh|shells/psh|2007-08-13|Renamed to reflect correct project's name
 mail/qmHandle|mail/qmhandle|2007-08-13|Renamed to reflect correct project's name
 science/speedcrunch|math/speedcrunch|2007-08-14|Moved to a more appropriate category
 chinese/CJK|print/latex-cjk|2007-08-19|Better category
+databases/bbdb-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+databases/lsdb-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+deskutils/mhc-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+devel/elib-emacs19||2007-08-19|Has expired: emacs19 is obsolete; please use a more recent version
+devel/elib-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+devel/pcl-cvs-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version

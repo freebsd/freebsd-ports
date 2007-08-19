@@ -11,7 +11,6 @@
     SUBDIR += aolserver-nsmysql
     SUBDIR += aolserver-nspostgres
     SUBDIR += bbdb
-    SUBDIR += bbdb-emacs20
     SUBDIR += cdb
     SUBDIR += clip
     SUBDIR += courier-authlib-mysql
@@ -120,7 +119,6 @@
     SUBDIR += linux-oracle-instantclient-sdk
     SUBDIR += linux-oracle-instantclient-sqlplus
     SUBDIR += lsdb
-    SUBDIR += lsdb-emacs20
     SUBDIR += mantis
     SUBDIR += mdbtools
     SUBDIR += memcached

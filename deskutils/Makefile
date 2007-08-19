@@ -134,7 +134,6 @@
     SUBDIR += menumaker
     SUBDIR += metabar
     SUBDIR += mhc
-    SUBDIR += mhc-emacs20
     SUBDIR += mical
     SUBDIR += moregroupware
     SUBDIR += mrundlg
