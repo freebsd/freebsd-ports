@@ -753,7 +753,6 @@ bbappconf	ports/x11/bbappconf
 bbconf		ports/x11-wm/bbconf
 bbdate		ports/x11-clocks/bbdate
 bbdb		ports/databases/bbdb
-bbdb-emacs20	ports/databases/bbdb-emacs20
 bbdock		ports/x11/bbdock
 bbe		ports/textproc/bbe
 bbftp		ports/ftp/bbftp
@@ -2409,8 +2408,6 @@ elfrc		ports/devel/elfrc
 elfsh		ports/devel/elfsh
 elftoaout	ports/devel/elftoaout
 elib		ports/devel/elib
-elib-emacs19	ports/devel/elib-emacs19
-elib-emacs20	ports/devel/elib-emacs20
 elib-emacs21	ports/devel/elib-emacs21
 elicit		ports/x11/elicit
 elinks		ports/www/elinks
@@ -7102,7 +7099,6 @@ lr		ports/misc/lr
 lrmi		ports/devel/lrmi
 lrzsz		ports/comms/lrzsz
 lsdb		ports/databases/lsdb
-lsdb-emacs20	ports/databases/lsdb-emacs20
 lsdvd		ports/multimedia/lsdvd
 lsh		ports/security/lsh
 lsof		ports/sysutils/lsof
@@ -7411,7 +7407,6 @@ mguesser	ports/textproc/mguesser
 mgv		ports/print/mgv
 mhash		ports/security/mhash
 mhc		ports/deskutils/mhc
-mhc-emacs20	ports/deskutils/mhc-emacs20
 mhgui		ports/graphics/mhgui
 mhonarc		ports/www/mhonarc
 mhwaveedit	ports/audio/mhwaveedit
@@ -11589,7 +11584,6 @@ pcgen		ports/games/pcgen
 pchar		ports/net/pchar
 pciids		ports/misc/pciids
 pciutils	ports/sysutils/pciutils
-pcl-cvs-emacs20	ports/devel/pcl-cvs-emacs20
 pclock		ports/x11-clocks/pclock
 pclprint	ports/print/pclprint
 pcmanfm		ports/x11-fm/pcmanfm

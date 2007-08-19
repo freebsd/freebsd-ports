@@ -282,8 +282,6 @@
     SUBDIR += elfsh
     SUBDIR += elftoaout
     SUBDIR += elib
-    SUBDIR += elib-emacs19
-    SUBDIR += elib-emacs20
     SUBDIR += elib-emacs21
     SUBDIR += engrave
     SUBDIR += entity
@@ -1680,7 +1678,6 @@
     SUBDIR += pas2dox
     SUBDIR += patch
     SUBDIR += pccts
-    SUBDIR += pcl-cvs-emacs20
     SUBDIR += pcre
     SUBDIR += pcre++
     SUBDIR += pcsc-lite
