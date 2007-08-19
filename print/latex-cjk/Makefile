@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	CJK
+PORTNAME=	latex-cjk
 PORTVERSION=	4.7.0
 PORTREVISION=	1
-CATEGORIES=	chinese
+CATEGORIES=	print chinese japanese korean
 MASTER_SITES=	http://cjk.ffii.org/ \
 		ftp://freebsd.csie.ntu.edu.tw/users/rafan/
 DISTNAME=	cjk-${PORTVERSION}
