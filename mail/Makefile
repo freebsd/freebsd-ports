@@ -245,7 +245,6 @@
     SUBDIR += mew
     SUBDIR += mew2
     SUBDIR += mew3
-    SUBDIR += mew3-emacs20
     SUBDIR += milter-bogom
     SUBDIR += milter-greylist
     SUBDIR += milter-greylist-devel

@@ -33,7 +33,6 @@
     SUBDIR += ctags
     SUBDIR += dbskkd-cdb
     SUBDIR += ddskk
-    SUBDIR += ddskk-emacs20
     SUBDIR += devil-fpw
     SUBDIR += diclookup-emacs20
     SUBDIR += diclookup-mule
@@ -60,7 +59,6 @@
     SUBDIR += elvis
     SUBDIR += emacs-emcws
     SUBDIR += emacs-manual
-    SUBDIR += emacs20-emcws
     SUBDIR += epic4
     SUBDIR += epson-ttfonts
     SUBDIR += epwutil
@@ -181,7 +179,6 @@
     SUBDIR += linux-JM
     SUBDIR += lipsf
     SUBDIR += lookup
-    SUBDIR += lookup-emacs20
     SUBDIR += lookup-emacs21
     SUBDIR += lsd-fpw
     SUBDIR += lynx
@@ -201,7 +198,6 @@
     SUBDIR += mg
     SUBDIR += mh
     SUBDIR += migemo
-    SUBDIR += migemo-emacs20
     SUBDIR += migemo-emacs21
     SUBDIR += migemo-emacs22
     SUBDIR += migemo-xemacs-devel-mule
@@ -218,7 +214,6 @@
     SUBDIR += msdosfs
     SUBDIR += mtools
     SUBDIR += mule-canna
-    SUBDIR += mule-canna+freewnn
     SUBDIR += mule-canna+freewnn+sj3
     SUBDIR += mule-canna+sj3
     SUBDIR += mule-canna+sj3+wnn6
@@ -226,10 +221,7 @@
     SUBDIR += mule-canna+wnn6
     SUBDIR += mule-canna+wnn7
     SUBDIR += mule-freewnn
-    SUBDIR += mule-freewnn+sj3
     SUBDIR += mule-sj3
-    SUBDIR += mule-sj3+wnn6
-    SUBDIR += mule-sj3+wnn7
     SUBDIR += mule-wnn6
     SUBDIR += mule-wnn7
     SUBDIR += multiskkserv
@@ -355,7 +347,6 @@
     SUBDIR += skk-jisyo
     SUBDIR += skk-jisyo-cdb
     SUBDIR += skk-tools
-    SUBDIR += skk10-elisp-emacs20
     SUBDIR += skkfep
     SUBDIR += skkinput
     SUBDIR += skkinput3

@@ -5037,7 +5037,6 @@ ja-csrd		ports/japanese/csrd
 ja-ctags	ports/japanese/ctags
 ja-dbskkd-cdb	ports/japanese/dbskkd-cdb
 ja-ddskk	ports/japanese/ddskk
-ja-ddskk-emacs20	ports/japanese/ddskk-emacs20
 ja-devil-fpw	ports/japanese/devil-fpw
 ja-diclookup-emacs20	ports/japanese/diclookup-emacs20
 ja-diclookup-mule	ports/japanese/diclookup-mule
@@ -5064,7 +5063,6 @@ ja-elisp-manual	ports/japanese/elisp-manual
 ja-elvis	ports/japanese/elvis
 ja-emacs-emcws	ports/japanese/emacs-emcws
 ja-emacs-manual	ports/japanese/emacs-manual
-ja-emacs20-emcws	ports/japanese/emacs20-emcws
 ja-epic4	ports/japanese/epic4
 ja-epson-ttfonts	ports/japanese/epson-ttfonts
 ja-epwutil	ports/japanese/epwutil
@@ -5183,7 +5181,6 @@ ja-libtomoe-gtk	ports/japanese/libtomoe-gtk
 ja-linux-JM	ports/japanese/linux-JM
 ja-lipsf	ports/japanese/lipsf
 ja-lookup	ports/japanese/lookup
-ja-lookup-emacs20	ports/japanese/lookup-emacs20
 ja-lookup-emacs21	ports/japanese/lookup-emacs21
 ja-ls		ports/japanese/jls
 ja-lsd-fpw	ports/japanese/lsd-fpw
@@ -5203,7 +5200,6 @@ ja-mendexk-euc	ports/japanese/mendexk-euc
 ja-mg		ports/japanese/mg
 ja-mh		ports/japanese/mh
 ja-migemo	ports/japanese/migemo
-ja-migemo-emacs20	ports/japanese/migemo-emacs20
 ja-migemo-emacs21	ports/japanese/migemo-emacs21
 ja-migemo-emacs22	ports/japanese/migemo-emacs22
 ja-migemo-xemacs-devel-mule	ports/japanese/migemo-xemacs-devel-mule
@@ -5220,7 +5216,6 @@ ja-mplusfonts	ports/japanese/mplusfonts
 ja-msdosfs	ports/japanese/msdosfs
 ja-mtools	ports/japanese/mtools
 ja-mule-canna	ports/japanese/mule-canna
-ja-mule-canna+freewnn	ports/japanese/mule-canna+freewnn
 ja-mule-canna+freewnn+sj3	ports/japanese/mule-canna+freewnn+sj3
 ja-mule-canna+sj3	ports/japanese/mule-canna+sj3
 ja-mule-canna+sj3+wnn6	ports/japanese/mule-canna+sj3+wnn6
@@ -5228,10 +5223,7 @@ ja-mule-canna+sj3+wnn7	ports/japanese/mule-canna+sj3+wnn7
 ja-mule-canna+wnn6	ports/japanese/mule-canna+wnn6
 ja-mule-canna+wnn7	ports/japanese/mule-canna+wnn7
 ja-mule-freewnn	ports/japanese/mule-freewnn
-ja-mule-freewnn+sj3	ports/japanese/mule-freewnn+sj3
 ja-mule-sj3	ports/japanese/mule-sj3
-ja-mule-sj3+wnn6	ports/japanese/mule-sj3+wnn6
-ja-mule-sj3+wnn7	ports/japanese/mule-sj3+wnn7
 ja-mule-wnn6	ports/japanese/mule-wnn6
 ja-mule-wnn7	ports/japanese/mule-wnn7
 ja-multiskkserv	ports/japanese/multiskkserv
@@ -5357,7 +5349,6 @@ ja-skk		ports/japanese/skk
 ja-skk-jisyo	ports/japanese/skk-jisyo
 ja-skk-jisyo-cdb	ports/japanese/skk-jisyo-cdb
 ja-skk-tools	ports/japanese/skk-tools
-ja-skk10-elisp-emacs20	ports/japanese/skk10-elisp-emacs20
 ja-skkfep	ports/japanese/skkfep
 ja-skkinput	ports/japanese/skkinput
 ja-skkinput3	ports/japanese/skkinput3
@@ -7383,7 +7374,6 @@ metromap	ports/misc/metromap
 mew		ports/mail/mew
 mew2		ports/mail/mew2
 mew3		ports/mail/mew3
-mew3-emacs20	ports/mail/mew3-emacs20
 mftrace		ports/print/mftrace
 mg		ports/editors/mg
 mga_hal		ports/x11-servers/mga_hal
