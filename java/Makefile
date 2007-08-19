@@ -107,6 +107,7 @@
     SUBDIR += jdk15
     SUBDIR += jdk15-doc
     SUBDIR += jdk16
+    SUBDIR += jdk16-doc
     SUBDIR += jdom
     SUBDIR += jfc
     SUBDIR += jflex
