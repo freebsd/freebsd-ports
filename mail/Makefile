@@ -98,7 +98,6 @@
     SUBDIR += elmo
     SUBDIR += elmo-devel
     SUBDIR += emh
-    SUBDIR += emh-emacs20
     SUBDIR += emh-xemacs21-mule
     SUBDIR += emil
     SUBDIR += enigmail
@@ -244,9 +243,7 @@
     SUBDIR += meta1
     SUBDIR += metamail
     SUBDIR += mew
-    SUBDIR += mew-emacs20
     SUBDIR += mew2
-    SUBDIR += mew2-emacs20
     SUBDIR += mew3
     SUBDIR += mew3-emacs20
     SUBDIR += milter-bogom
@@ -525,7 +522,6 @@
     SUBDIR += ricochet
     SUBDIR += ripmime
     SUBDIR += rlytest
-    SUBDIR += rmime
     SUBDIR += roundcube
     SUBDIR += ruby-rfilter
     SUBDIR += ruby-rmail
@@ -636,7 +632,6 @@
     SUBDIR += vqregister
     SUBDIR += vrfy
     SUBDIR += wanderlust
-    SUBDIR += wanderlust-emacs20
     SUBDIR += wanderlust-emacs21
     SUBDIR += wanderlust-xemacs21-mule
     SUBDIR += wbl
