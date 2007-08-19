@@ -1,0 +1,49 @@
+--- konqueror/konq_combo.cc
++++ konqueror/konq_combo.cc
+@@ -158,6 +158,9 @@ void KonqCombo::setURL( const QString& u
+         kapp->dcopClient()->send( "konqueror*", "KonquerorIface",
+                                   "addToCombo(QString,QCString)", data);
+     }
++    // important security consideration: always display the beginning
++    // of the url rather than its end to prevent spoofing attempts.
++    lineEdit()->setCursorPosition( 0 );
+ }
+ 
+ void KonqCombo::setTemporary( const QString& text )
+--- konqueror/konq_mainwindow.cc
++++ konqueror/konq_mainwindow.cc
+@@ -611,12 +611,11 @@ void KonqMainWindow::openURL( KonqView *
+   }
+   else // no known serviceType, use KonqRun
+   {
+-      if ( ( view && view == m_currentView ) ||
+-              ( !view && !req.newTab ) ) // startup with argument
++      if ( ( !view || view->url().isEmpty() ) && !req.newTab ) // startup with argument
+       {
+           // Show it for now in the location bar, but we'll need to store it in the view
+           // later on (can't do it yet since either view == 0 or updateHistoryEntry will be called).
+-          kdDebug(1202) << "setLocationBarURL : url = " << url << endl;
++          kdDebug(1202) << "setLocationBarURL (startup) : url = " << url << endl;
+           setLocationBarURL( url );
+       }
+ 
+@@ -819,8 +818,6 @@ bool KonqMainWindow::openView( QString s
+         if ( childView )
+         {
+             enableAllActions( true );
+-
+-            m_pViewManager->setActivePart( childView->part() );
+             m_currentView = childView;
+         }
+       }
+--- konqueror/konq_viewmgr.cc
++++ konqueror/konq_viewmgr.cc
+@@ -1395,6 +1395,8 @@ void KonqViewManager::slotActivePartChan
+ 
+ void KonqViewManager::emitActivePartChanged()
+ {
++    // prevent unnecessary multiple calls to slotPartActivated:
++    m_activePartChangedTimer->stop();
+     m_pMainWindow->slotPartActivated( activePart() );
+ }
+ 
