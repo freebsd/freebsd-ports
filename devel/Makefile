@@ -2125,7 +2125,6 @@
     SUBDIR += sdts++
     SUBDIR += sedsed
     SUBDIR += semantic
-    SUBDIR += semantic-emacs20
     SUBDIR += sfio
     SUBDIR += sfslite
     SUBDIR += sfslite-dbg

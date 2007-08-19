@@ -65,7 +65,6 @@
     SUBDIR += gnome2-office
     SUBDIR += gnotepad+
     SUBDIR += gnuserv
-    SUBDIR += gnuserv-emacs20
     SUBDIR += gobby
     SUBDIR += gphpedit
     SUBDIR += hexcurse
@@ -73,7 +72,6 @@
     SUBDIR += hexpert
     SUBDIR += hnb
     SUBDIR += hte
-    SUBDIR += iiimecf
     SUBDIR += impress
     SUBDIR += jed
     SUBDIR += jedit
@@ -91,7 +89,6 @@
     SUBDIR += le
     SUBDIR += leafpad
     SUBDIR += led
-    SUBDIR += leim20
     SUBDIR += leim21
     SUBDIR += leo
     SUBDIR += lfhex
@@ -126,9 +123,6 @@
     SUBDIR += pico
     SUBDIR += poedit
     SUBDIR += psgml
-    SUBDIR += psgml-emacs19
-    SUBDIR += psgml-emacs20
-    SUBDIR += psgml-mule
     SUBDIR += puff
     SUBDIR += qemacs
     SUBDIR += richtext
@@ -155,7 +149,6 @@
     SUBDIR += staroffice70
     SUBDIR += sted
     SUBDIR += tamago
-    SUBDIR += tamago-emacs20
     SUBDIR += tamago-emacs21
     SUBDIR += tea
     SUBDIR += teco
