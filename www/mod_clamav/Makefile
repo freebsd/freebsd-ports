@@ -14,6 +14,8 @@ MASTER_SITES=	http://software.othello.ch/mod_clamav/
 MAINTAINER=	tmueko@kommunity.net
 COMMENT=	Scans content delivered by the Apache2 proxy module for viruses
 
+BROKEN=		doesn't work since cl_buildtrie() and cl_freetrie() where removed from clamlib (upstream problem)
+
 LIB_DEPENDS+=	clamav:${PORTSDIR}/${CLAMAV_PORT}
 
 USE_AUTOTOOLS=	libtool:15
