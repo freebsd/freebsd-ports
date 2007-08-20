@@ -413,6 +413,7 @@
     SUBDIR += pear-Net_LMTP
     SUBDIR += pecl-esmtp
     SUBDIR += pecl-mailparse
+    SUBDIR += pecl-pop3
     SUBDIR += perdition
     SUBDIR += pflogstats
     SUBDIR += pflogsumm
