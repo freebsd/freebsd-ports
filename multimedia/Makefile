@@ -46,6 +46,7 @@
     SUBDIR += gdvrecv
     SUBDIR += ggrab
     SUBDIR += gmencoder
+    SUBDIR += gmimms
     SUBDIR += gnome-subtitles
     SUBDIR += gnustep-mplayer
     SUBDIR += goggles
