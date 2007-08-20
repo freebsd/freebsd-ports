@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--with-openssl
 CONFIGURE_ARGS=	--without-openssl
 .endif
 
-BROKEN=		does not work properly yet
+IGNORE=		hangs after mail to: command
 
 .include <bsd.port.pre.mk>
 
