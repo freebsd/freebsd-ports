@@ -121,6 +121,7 @@ share/gnome/liferea/xslt/vfolder.xml
 share/gnome/liferea/xslt/vfolder.xml.in
 share/icons/hicolor/48x48/apps/liferea.png
 share/locale/ar/LC_MESSAGES/liferea.mo
+share/locale/be@latin/LC_MESSAGES/liferea.mo
 share/locale/ca/LC_MESSAGES/liferea.mo
 share/locale/cs/LC_MESSAGES/liferea.mo
 share/locale/de/LC_MESSAGES/liferea.mo
