@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	el
-PORTVERSION=	133
-PORTREVISION=	2
+PORTVERSION=	140
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	acm/${PORTNAME}
+MASTER_SITES=	http://bsdistfiles.googlecode.com/files/ \
+		${MASTER_SITE_LOCAL:S,$,acm/${PORTNAME}/,}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -23,12 +22,10 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		alut.1:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:${PORTSDIR}/games/el-data
 
-BROKEN=		Does not build
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
-USE_SDL=	sdl net
+USE_SDL=	sdl net image
 USE_GL=		yes
 USE_XLIB=	yes
 
@@ -40,10 +37,6 @@ PLIST=		${WRKDIR}/pkg-plist
 
 .if ${ARCH} == amd64
 CFLAGS+=	-DX86_64
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
 .endif
 
 .if ${ARCH} == "sparc64"
