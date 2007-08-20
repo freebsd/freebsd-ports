@@ -7,7 +7,7 @@
 
 PORTNAME=	pantry
 PORTVERSION=	0.${DISTVERSION}
-DISTVERSION=	17
+DISTVERSION=	18
 CATEGORIES=	misc
 MASTER_SITES=	http://www.smileystation.com/pantry/downloads/ CENKES
 
