@@ -60,6 +60,7 @@
     SUBDIR += ccrypt
     SUBDIR += cfs
     SUBDIR += cfv
+    SUBDIR += chaosreader
     SUBDIR += checkpassword
     SUBDIR += checkpassword-pam
     SUBDIR += chkrootkit
