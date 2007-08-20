@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 USE_GNOME=	libglade2 libxml2
 MAKEFILE=	makefile
 ALL_TARGET=	gtk
-CFLAGS+=	-fgnu89-inline
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 MAKE_ARGS=	CC="${CC}" SYSTEM_CC="${CC}" WARNFLAGS=
 
