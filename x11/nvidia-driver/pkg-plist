@@ -1,9 +1,9 @@
 @comment I can't add the below files to the package because pkg_delete
 @comment will complain when removing this package:
-@comment     %%MODULESDIR%%/extensions/XXX-libglx.so.%%XLIBVERSION%%
-@comment     %%MODULESDIR%%/extensions/XXX-libGLcore.so.%%XLIBVERSION%%
-@comment     lib/XXX-libGL.a.%%XLIBVERSION%%
-@comment     lib/XXX-libGL.so.1.%%XLIBVERSION%%
+@comment     %%MODULESDIR%%/extensions/XXX-libglx.so.%%%%.%%XSERVVERSION%%
+@comment     %%MODULESDIR%%/extensions/XXX-libGLcore.so.%%%%.%%XSERVVERSION%%
+@comment     lib/XXX-libGL.a.%%%%.%%XLIBVERSION%%
+@comment     lib/XXX-libGL.so.1.%%%%.%%XLIBVERSION%%
 @comment They are however restored when this package is removed:
 %%XORG%%@exec mv -f %D/%%MODULESDIR%%/extensions/libglx.la %D/%%MODULESDIR%%/extensions/XXX-libglx.la.%%%%.%%XSERVVERSION%%
 %%XORG%%@unexec mv -f %D/%%MODULESDIR%%/extensions/XXX-libglx.la.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/extensions/libglx.la
@@ -18,7 +18,7 @@
 lib/libGL.so.1
 @unexec mv -f %D/lib/XXX-libGL.so.1.%%%%.%%XLIBVERSION%% %D/lib/libGL.so.1
 @exec ln -sf %D/lib/libGL.so.1 %D/lib/libGL.so
-@comment no rm -f %D/lib/libGL.so because default XFree needs this also
+@comment No rm -f %D/lib/libGL.so because default XFree needs this also
 lib/libGLcore.so.1
 @exec ln -sf %D/lib/libGLcore.so.1 %D/lib/libGLcore.so
 @unexec rm -f %D/lib/libGLcore.so
@@ -54,3 +54,5 @@ nvidia.ko
 %%LINUX%%@unexec rm -f %D/usr/lib/libGL.so.1
 %%LINUX%%@unexec rm -f %D/usr/lib/libGLcore.so.1
 %%LINUX%%@unexec rm -f %D/usr/lib/libnvidia-tls.so.1
+%%LINUX%%@exec %D/sbin/ldconfig -r %D
+%%LINUX%%@unexec %D/sbin/ldconfig -r %D

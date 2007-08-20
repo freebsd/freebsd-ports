@@ -8,8 +8,7 @@ or adding
 
 	nvidia_load="YES"
 
-to your /boot/loader.conf (normally done automatically when installing
-the port).
+to your /boot/loader.conf.
 
 If you build this port with WITH_FREEBSD_AGP=yes, make sure you have
 agp.ko kernel module compiled and installed, since nvidia.ko will
@@ -19,7 +18,12 @@ correct ``Option "NvAGP"'' in ``Device'' section of your X11 configu-
 ration file.
 
 When building with Linux compatibility (WITH_LINUX=yes), make sure
-linux.ko is available as well (or have it compiled in kernel).
+linux.ko is available as well (or have it compiled in kernel).  It can
+be loaded via /boot/loader.conf (or later in boot process if you add
+
+	linux_enable="YES"
+
+to your /etc/rc.conf.
 
 Note that this driver does not support PAE-enabled kernels.
 

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	1.0-9746
-PORTREVISION?=	5
+DISTVERSION?=	100.14.11
+PORTREVISION?=	0			# For consistency with slave ports
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 MASTER_SITE_SUBDIR=	freebsd/${DISTVERSION}
@@ -20,7 +20,7 @@ ONLY_FOR_ARCHS=	i386
 
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 USE_GL=		gl
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 SUB_FILES+=	pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 PORTDOCS=	*
@@ -31,7 +31,7 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 		LINUX		"Build with support for Linux compatibility" on
 
 # Starting with version 7667, NVidia has dropped support for numerous
-# "legacy" GPUs.  Consult NVidia README (Appendix A) to find out whether
+# "legacy" GPUs.  Consult NVidia README (the Appendix) to find out whether
 # you need to use legacy driver version and install one of corresponding
 # `x11/nvidia-driver-71xx' or `x11/nvidia-driver-96xx' slave ports.
 #
@@ -41,12 +41,7 @@ NVVERSION=	${DISTVERSION:S/1.0-//}
 NVVERSION=	${DISTVERSION:S/.//g}
 .endif
 
-.if ${NVVERSION} == 7184
-EXTRA_PATCHES+=	${FILESDIR}/6113-patch-lib::Makefile
-.else
-EXTRA_PATCHES+=	${FILESDIR}/7667-* \
-		${FILESDIR}/crash-patch-by-zander-1759235
-.endif
+EXTRA_PATCHES+=	${FILESDIR}/7667-patch-lib::Makefile
 
 .include <bsd.port.pre.mk>
 
@@ -94,12 +89,6 @@ post-patch: .SILENT
 .if ${NVVERSION} >= 7174
 	${REINPLACE_CMD} '24,26d' ${WRKSRC}/src/nv-freebsd.h
 .endif
-.if ${OSVERSION} > 600028
-	${REINPLACE_CMD} '/bus_memio\.h/d' ${WRKSRC}/src/nv-freebsd.h
-.endif
-.if ${OSVERSION} > 700030
-	${REINPLACE_CMD} -e 's/nvidia_intr/NULL, &/' ${WRKSRC}/src/nvidia_pci.c
-.endif
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
@@ -116,10 +105,16 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's/define (NV_SUPPORT_LINUX_COMPAT)/undef \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
+# Don't build any binaries (nvidia-settings and nvidia-xconfig)
 .if ${NVVERSION} < 9746
 	${REINPLACE_CMD} -E 's/(extension).*/\1/' ${WRKSRC}/x11/Makefile
 .else
 	${REINPLACE_CMD} -E 's/(lib).*/\1/' ${WRKSRC}/x11/Makefile
+.endif
+	${REINPLACE_CMD} '/bin/d ; /man/d' ${WRKSRC}/x11/Makefile
+# Conditionally install documentation (but you generally want it)
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -E 's/(x11).*/\1/ ; /doc/d' ${WRKSRC}/Makefile
 .endif
 .if ${X_WINDOW_SYSTEM} == "xorg"
 	${REINPLACE_CMD} -e 's|lib/modules|lib/xorg/modules|' \
@@ -130,9 +125,13 @@ post-patch: .SILENT
 		${WRKSRC}/x11/lib/Makefile
 .endif
 .endif
-	${REINPLACE_CMD} '/bin/d ; /man/d' ${WRKSRC}/x11/Makefile
+# Do not execute afterinstall target (prevent automatic module registration)
+	${REINPLACE_CMD} -e 's/afterinstall/dontexecute/' ${WRKSRC}/Makefile
 
 pre-su-install:
+.if empty(XSERVVERSION)
+IGNORE=		needs an X server implementation installed
+.endif
 	@${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
 
 post-install:
