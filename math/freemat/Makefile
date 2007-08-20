@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		FreeMat
-PORTVERSION=		3.3
+PORTVERSION=		3.4
 CATEGORIES=		math science
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -101,6 +101,11 @@ pre-everything::
 
 pre-configure:
 	${REINPLACE_CMD} -e 's| == x| = x|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+
+post-configure:
+	# Avoid conflict with QT3
+	${FIND} ${WRKSRC} -name Makefile | ${XARGS}	\
+		${REINPLACE_CMD} -e '/^QT_CFLAGS/s|-I${LOCALBASE}/include ||'
 
 post-install:
 	@${ECHO_MSG}
