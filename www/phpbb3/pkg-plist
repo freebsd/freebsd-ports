@@ -125,6 +125,7 @@
 %%PHPBBDIR%%/adm/swatch.php
 %%PHPBBDIR%%/cache/.htaccess
 %%PHPBBDIR%%/cache/index.htm
+%%PHPBBDIR%%/.htaccess
 %%PHPBBDIR%%/common.php
 %%PHPBBDIR%%/cron.php
 %%PHPBBDIR%%/docs/AUTHORS
@@ -358,6 +359,7 @@
 %%PHPBBDIR%%/includes/utf/data/case_fold_c.php
 %%PHPBBDIR%%/includes/utf/data/case_fold_f.php
 %%PHPBBDIR%%/includes/utf/data/case_fold_s.php
+%%PHPBBDIR%%/includes/utf/data/confusables.php
 %%PHPBBDIR%%/includes/utf/data/recode_basic.php
 %%PHPBBDIR%%/includes/utf/data/recode_cjk.php
 %%PHPBBDIR%%/includes/utf/data/search_indexer_0.php
@@ -392,6 +394,7 @@
 %%PHPBBDIR%%/index.php
 %%PHPBBDIR%%/install/convertors/convert_phpbb20.php
 %%PHPBBDIR%%/install/convertors/functions_phpbb20.php
+%%PHPBBDIR%%/install/data/confusables.php
 %%PHPBBDIR%%/install/database_update.php
 %%PHPBBDIR%%/install/index.php
 %%PHPBBDIR%%/install/install_convert.php
@@ -930,6 +933,7 @@
 @dirrm %%PHPBBDIR%%/language/en/acp
 @dirrm %%PHPBBDIR%%/language/en
 @dirrm %%PHPBBDIR%%/language
+@dirrm %%PHPBBDIR%%/install/data
 @dirrm %%PHPBBDIR%%/install/schemas
 @dirrm %%PHPBBDIR%%/install/convertors
 @dirrm %%PHPBBDIR%%/install
