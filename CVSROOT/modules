@@ -11828,6 +11828,7 @@ pecl-operator	ports/devel/pecl-operator
 pecl-pdflib	ports/print/pecl-pdflib
 pecl-pecl_http	ports/www/pecl-pecl_http
 pecl-perl	ports/lang/pecl-perl
+pecl-pop3	ports/mail/pecl-pop3
 pecl-ps		ports/print/pecl-ps
 pecl-qrencode	ports/graphics/pecl-qrencode
 pecl-radius	ports/net/pecl-radius
