@@ -74,6 +74,7 @@
     SUBDIR += curator
     SUBDIR += cuttlefish
     SUBDIR += danpei
+    SUBDIR += darknock
     SUBDIR += dataplot
     SUBDIR += dc20ctrl
     SUBDIR += dc20pack

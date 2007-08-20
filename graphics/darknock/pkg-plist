@@ -1,0 +1,9 @@
+bin/darknock
+%%NLS%%%%DATADIR%%/locale/darknock_it.qm
+%%NLS%%%%DATADIR%%/locale/darknock_pl.qm
+%%NLS%%%%DATADIR%%/locale/darknock_ro.qm
+%%NLS%%%%DATADIR%%/locale/darknock_sv.qm
+%%NLS%%%%DATADIR%%/locale/darknock_tr.qm
+share/pixmaps/darknock.png
+%%NLS%%@dirrm %%DATADIR%%/locale
+%%NLS%%@dirrm %%DATADIR%%
