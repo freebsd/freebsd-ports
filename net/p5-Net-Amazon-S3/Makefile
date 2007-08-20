@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Net-Amazon-S3
-PORTVERSION=	0.38
-CATEGORIES=	net
+PORTVERSION=	0.39
+CATEGORIES=	net perl
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -19,6 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML
 		${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
 		${SITE_PERL}/Digest/HMAC_SHA1.pm:${PORTSDIR}/security/p5-Digest-HMAC \
+		${SITE_PERL}/Digest/MD5/File.pm:${PORTSDIR}/security/p5-Digest-MD5-File \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
