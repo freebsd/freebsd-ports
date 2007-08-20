@@ -1,11 +1,17 @@
---- src/freebsd.c.orig	Sat Apr 14 20:21:32 2007
-+++ src/freebsd.c	Sat Apr 14 20:21:54 2007
-@@ -530,7 +530,7 @@
- 	snprintf(p_client_buffer, client_buffer_size, p_format,
- 		(float)((cycles[1] - cycles[0]) / microseconds) / divisor);
- #else
--	get_freq(p_client_buffer, client_buffer_size, p_format, divisor);
-+	get_freq(p_client_buffer, client_buffer_size, p_format, divisor, 1);
+--- src/freebsd.c.orig	2007-08-05 08:48:13.000000000 +0400
++++ src/freebsd.c	2007-08-19 23:15:54.000000000 +0400
+@@ -43,6 +43,14 @@
+ #define	FREEBSD_DEBUG
  #endif
- }
  
++#if __FreeBSD_version > 700050
++struct wi_req {
++	u_int16_t wi_len;
++	u_int16_t wi_type;
++	u_int16_t wi_val[WI_MAX_DATALEN];
++};
++#endif
++
+ inline void proc_find_top(struct process **cpu, struct process **mem);
+ 
+ u_int64_t diskio_prev = 0;
