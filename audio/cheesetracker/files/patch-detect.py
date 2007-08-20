@@ -1,6 +1,6 @@
---- detect.py.orig	Fri Apr 23 05:21:08 2004
-+++ detect.py	Wed Mar 28 22:49:07 2007
-@@ -49,35 +49,11 @@
+--- detect.py.orig	Mon Aug  6 21:04:11 2007
++++ detect.py	Mon Aug 20 16:41:41 2007
+@@ -104,35 +104,11 @@
  
  def check_libdl(libdata):
  
@@ -38,9 +38,29 @@
 -	return 1;
 +	return 0;
  
- def check_alsa(libdata):
- 
-@@ -148,6 +124,7 @@
+ def check_need_gmp(libdata):
+ 	print "Checking if GMP is needed...",
+@@ -152,7 +128,9 @@
+ 		print "Checking if GMP is available...",
+ 		res = check_cpp_compile(
+ 			"#include <gmp.h>\n" +
+-			"int main() {return 0;}\n", "-lgmp");
++			"int main() {\n" +
++			"	return 0;\n" +
++			"}\n", "-I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib -lgmp");
+ 		if(res == 0):
+ 			print "No."
+ 			print "\n\n**** CANNOT FIND GMP LIBRARY ****\n\n";
+@@ -213,7 +191,7 @@
+ 		"int main() {\n" +
+ 		"	afNewFileSetup();\n" +
+ 		"	return 0;\n" +
+-		"}\n", "-laudiofile -lm");
++		"}\n", "-I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib -laudiofile -lm");
+ 	if(res == 0):
+ 		print " no. Access to lots of file formats is lost.";
+ 		libdata.have_libaudiofile=0;
+@@ -401,6 +379,7 @@
  
  	#list of dirs I can test..
  	qt_unix_library_dirs = [\
@@ -48,7 +68,7 @@
  		"",\
  		"/usr/lib",\
  		"/usr/X11R6/lib",\
-@@ -158,6 +135,7 @@
+@@ -411,6 +390,7 @@
  	];
  
  	qt_unix_bin_dirs = [\
@@ -56,7 +76,7 @@
                  "",\
  		"/usr/bin",\
  		"/usr/X11R6/bin",\
-@@ -168,6 +146,7 @@
+@@ -421,6 +401,7 @@
  	];
  
  	qt_unix_include_dirs = [\
@@ -64,7 +84,7 @@
  		"/usr/include",\
  		"/usr/include/qt3",\
  		"/usr/X11R6/include",\
-@@ -271,7 +250,10 @@
+@@ -524,7 +505,10 @@
  
  	print "Looking for QT 3.x 'moc' Binary:";
  
@@ -76,19 +96,3 @@
  
          for x in qt_unix_bin_dirs:
  		if (not qt_lib_found):
-@@ -299,7 +281,6 @@
-        		libdata.moc_bin=command;
- 		break;
- 
--
-         if (not qt_found):
- 		print("I Couldnt find QT in your system :(\n");
- 		print("If you think it is actually installed, you could try the following:\n");
-@@ -312,7 +293,6 @@
- 	else:
- 		print("QT was found!\n");
- 		return 0;
--
- 
- 
- def check_system(libdata):
