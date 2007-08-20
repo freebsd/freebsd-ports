@@ -1262,6 +1262,7 @@ ch		ports/shells/ch
 chaco		ports/math/chaco
 chameleon	ports/lang/chameleon
 chanta		ports/games/chanta
+chaosreader	ports/security/chaosreader
 charmap		ports/deskutils/charmap
 charva		ports/devel/charva
 chbg		ports/graphics/chbg
