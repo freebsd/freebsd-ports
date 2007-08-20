@@ -7,7 +7,7 @@
 
 PORTNAME=	tomoe
 PORTVERSION=	0.6.0
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=tomoe
@@ -23,8 +23,10 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_RUBY=	yes
+USE_PERL5_BUILD=yes
 
-BUILD_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
+BUILD_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2 \
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 
 # We cannot use ${ARCH} nor ${UNAME} which are defined in bsd.port.mk, here.
