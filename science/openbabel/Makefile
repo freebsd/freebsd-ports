@@ -7,17 +7,15 @@
 #
 
 PORTNAME=	openbabel
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chemistry file translation program
 
-USE_GCC=	3.4+
 USE_GNOME=	gnomehack gnometarget libxml2
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
 MAN1=		obchiral.1 obfit.1 obgrep.1 obprop.1 obrotate.1 openbabel.1

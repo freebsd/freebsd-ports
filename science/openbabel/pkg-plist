@@ -8,6 +8,7 @@ bin/obrotamer
 bin/obrotate
 bin/openbabel
 bin/roundtrip
+include/inchi/inchi_api.h
 include/openbabel-2.0/openbabel/atom.h
 include/openbabel-2.0/openbabel/babelconfig.h
 include/openbabel-2.0/openbabel/base.h
@@ -20,12 +21,11 @@ include/openbabel-2.0/openbabel/chemdrawcdx.h
 include/openbabel-2.0/openbabel/chiral.h
 include/openbabel-2.0/openbabel/data.h
 include/openbabel-2.0/openbabel/dlhandler.h
-include/openbabel-2.0/openbabel/forcefield.h
 include/openbabel-2.0/openbabel/fingerprint.h
+include/openbabel-2.0/openbabel/forcefield.h
 include/openbabel-2.0/openbabel/generic.h
 include/openbabel-2.0/openbabel/grid.h
 include/openbabel-2.0/openbabel/groupcontrib.h
-include/openbabel-2.0/openbabel/inchi_api.h
 include/openbabel-2.0/openbabel/internalcoord.h
 include/openbabel-2.0/openbabel/kinetics.h
 include/openbabel-2.0/openbabel/lineend.h
@@ -92,12 +92,12 @@ lib/openbabel/cacaoformat.so
 lib/openbabel/cacheformat.a
 lib/openbabel/cacheformat.la
 lib/openbabel/cacheformat.so
-lib/openbabel/carformat.a
-lib/openbabel/carformat.la
-lib/openbabel/carformat.so
 lib/openbabel/cansmilesformat.a
 lib/openbabel/cansmilesformat.la
 lib/openbabel/cansmilesformat.so
+lib/openbabel/carformat.a
+lib/openbabel/carformat.la
+lib/openbabel/carformat.so
 lib/openbabel/cccformat.a
 lib/openbabel/cccformat.la
 lib/openbabel/cccformat.so
@@ -286,3 +286,4 @@ libdata/pkgconfig/openbabel-2.0.pc
 @dirrm include/openbabel-2.0/openbabel/math
 @dirrm include/openbabel-2.0/openbabel
 @dirrm include/openbabel-2.0
+@dirrm include/inchi
