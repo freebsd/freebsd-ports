@@ -395,6 +395,21 @@ lib/libmangosscript.so.0
 %%DATADIR%%/sql/updates/4258_command.sql
 %%DATADIR%%/sql/updates/4259_spell_chain.sql
 %%DATADIR%%/sql/updates/4259_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4262_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4266_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4267_command.sql
+%%DATADIR%%/sql/updates/4270_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4272_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4274_character_pet.sql
+%%DATADIR%%/sql/updates/4275_game_event.sql
+%%DATADIR%%/sql/updates/4288_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4294_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4296_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4317_spell_affect.sql
+%%DATADIR%%/sql/updates/4320_spell_affect.sql
+%%DATADIR%%/sql/updates/4331_spell_chain.sql
+%%DATADIR%%/sql/updates/4331_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4341_game_event.sql
 %%DATADIR%%/sql/updates/README
 %%DBC%%%%DATADIR%%/dbc/AnimationData.dbc
 %%DBC%%%%DATADIR%%/dbc/AreaPOI.dbc
@@ -587,6 +602,7 @@ lib/libmangosscript.so.0
 %%SD2%%share/scriptdev2/sql/updates/r91.sql
 %%SD2%%share/scriptdev2/sql/updates/r92.sql
 %%SD2%%share/scriptdev2/sql/updates/r97.sql
+%%SD2%%share/scriptdev2/sql/updates/r104.sql
 @dirrm %%DATADIR%%/sql/updates
 @dirrm %%DATADIR%%/sql
 %%DBC%%@dirrm %%DATADIR%%/dbc
