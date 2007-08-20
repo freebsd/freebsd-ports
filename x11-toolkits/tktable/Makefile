@@ -6,37 +6,34 @@
 #
 
 PORTNAME=	tktable
-PORTVERSION=	2.8
-PORTREVISION=	2
+PORTVERSION=	2.9
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME:S/tk/Tk/}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A table/matrix widget extension to tk/tcl
+MAINTAINER=	mm@FreeBSD.org
+COMMENT=	A table/matrix widget extension to Tk
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
-
-USE_XLIB=	yes
+USE_XORG=	x11
+USE_TK=		84+
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
-		--with-tk=${LOCALBASE}/lib/tk${TK_VER} \
-		--with-tclinclude=${LOCALBASE}/include/tcl${TK_VER} \
-		--with-tkinclude=${LOCALBASE}/include/tk${TK_VER} \
+PORTDOCS=	*
+
+PLIST_SUB=	DISTNAME=${DISTNAME}
+
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR} \
+		--with-tclinclude=${TCL_INCLUDEDIR} \
+		--with-tkinclude=${TK_INCLUDEDIR} \
 		--with-x
 
-TK_VER=		8.4
-PLIST_SUB=	DESTDIR=lib/${DISTNAME}
-
 post-patch:
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e "s:install-libraries install-doc:install-libraries:" \
-		${WRKSRC}/Makefile.in
-.else
-	@${REINPLACE_CMD} -e "s:%%DOCSDIR%%:${DOCSDIR}:g" ${WRKSRC}/Makefile.in
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET=	install install-doc
 .endif
 
 post-install:
@@ -50,4 +47,4 @@ test: build
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
