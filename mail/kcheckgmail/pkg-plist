@@ -7,15 +7,16 @@ share/apps/kcheckgmail/icons/crystalsvg/22x22/apps/kcheckgmail.png
 share/apps/kcheckgmail/icons/crystalsvg/32x32/apps/kcheckgmail.png
 share/apps/kcheckgmail/icons/crystalsvg/48x48/apps/kcheckgmail.png
 share/apps/kcheckgmail/icons/crystalsvg/64x64/apps/kcheckgmail.png
-%%DOCSDIR%%/common
-%%DOCSDIR%%/index.cache.bz2
-%%DOCSDIR%%/index.docbook
+%%PORTDOCS%%%%DOCSDIR%%/common
+%%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
+%%PORTDOCS%%%%DOCSDIR%%/index.docbook
 share/icons/crystalsvg/128x128/apps/kcheckgmail.png
 share/icons/crystalsvg/16x16/apps/kcheckgmail.png
 share/icons/crystalsvg/22x22/apps/kcheckgmail.png
 share/icons/crystalsvg/32x32/apps/kcheckgmail.png
 share/icons/crystalsvg/48x48/apps/kcheckgmail.png
 share/icons/crystalsvg/64x64/apps/kcheckgmail.png
+%%NLS%%share/locale/ar/LC_MESSAGES/kcheckgmail.mo
 %%NLS%%share/locale/de/LC_MESSAGES/kcheckgmail.mo
 %%NLS%%share/locale/es/LC_MESSAGES/kcheckgmail.mo
 %%NLS%%share/locale/et/LC_MESSAGES/kcheckgmail.mo
@@ -25,6 +26,7 @@ share/icons/crystalsvg/64x64/apps/kcheckgmail.png
 %%NLS%%share/locale/ko/LC_MESSAGES/kcheckgmail.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/kcheckgmail.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/kcheckgmail.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/kcheckgmail.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/kcheckgmail.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/kcheckgmail.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/kcheckgmail.mo
@@ -59,4 +61,4 @@ share/icons/crystalsvg/64x64/apps/kcheckgmail.png
 @dirrm share/apps/kcheckgmail/icons/crystalsvg
 @dirrm share/apps/kcheckgmail/icons
 @dirrm share/apps/kcheckgmail
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
