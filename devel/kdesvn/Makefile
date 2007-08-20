@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	kdesvn
-PORTVERSION=	0.12.1
+PORTVERSION=	0.13.0
 CATEGORIES=	devel kde
-MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/${PORTVERSION:R}.x/ \
-		http://www.yuanjue.net/download/
+MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/${PORTVERSION:R}.x/
 
 MAINTAINER=	yuanjue@FreeBSD.org
 COMMENT=	KDE frontend for Subversion
@@ -33,6 +32,7 @@ USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-DOCSDIR=	${PREFIX}/share/doc/HTML/en/kdesvn
+DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
 
 MAN1=	kdesvn.1 kdesvnaskpass.1
 
