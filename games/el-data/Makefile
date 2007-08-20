@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	133
+PORTVERSION=	140
 CATEGORIES=	games
-MASTER_SITES=	http://el.other-life.com/downloads/:data \
-		http://www.eternalmusik.org/music/:sound \
-		http://www.el-development.com/music/:sound
+MASTER_SITES=	http://el.beplacid.net/downloads/
 PKGNAMEPREFIX=	el-
-DISTFILES=	${EL_DATA}:data \
-		${EL_SOUND}:sound
+DISTFILES=	${EL_DATA}
 DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -24,14 +21,13 @@ NO_BUILD=	yes
 USE_DOS2UNIX=	*.ini *.txt
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
-WRKSRC=		${WRKDIR}/Eternal\ Lands-${PORTVERSION:S/1/1./}
-EL_DATA=	${PKGNAMEPREFIX:S/-/_/}${PORTVERSION}_linux_full.zip
-EL_SOUND=	music_full.zip
+PLIST=		${WRKDIR}/pkg-plist
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX:S/-//}_install
+EL_DATA=	${PKGNAMEPREFIX:S/-/_/}linux_install_${PORTVERSION}.zip
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${UNZIP_CMD} -q ${_DISTDIR}/${EL_DATA} -d ${WRKDIR}
-	@${UNZIP_CMD} -q ${_DISTDIR}/${EL_SOUND} -d ${WRKSRC}/music
 
 post-extract:
 	@${FIND} ${WRKSRC} -type d -name CVS -print0 | \
@@ -40,11 +36,15 @@ post-extract:
 		${XARGS} -0 ${RM} -R
 	@${FIND} ${WRKSRC} -type f -name "*.exe" -print0 | \
 		${XARGS} -0 ${RM} -R
-	@${RM} ${WRKSRC}/el-${PORTVERSION}.* \
-		${WRKSRC}/languages/en/strings/options.xml~
-.for DIRE in languages/po/books languages/po/strings languages/tr/strings
-	@${RMDIR} ${WRKSRC}/${DIRE}
-.endfor
+	@${FIND} ${WRKSRC} -type f -name "*.bin" -print0 | \
+		${XARGS} -0 ${RM} -R
+
+pre-install:
+	@${RM} -f ${PLIST}
+	@cd ${WRKSRC} && \
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
+			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
+	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${DATADIR}

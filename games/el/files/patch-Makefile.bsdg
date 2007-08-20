@@ -1,11 +1,11 @@
---- Makefile.bsdg	Fri Nov 24 13:42:55 2006
-+++ Makefile.bsdg	Fri Nov 24 14:05:16 2006
+--- Makefile.bsdg	Sun Aug 19 19:21:10 2007
++++ Makefile.bsdg	Sun Aug 19 19:21:36 2007
 @@ -1,7 +1,7 @@
  .PHONY: clean release docs
  
  # tune these for your setup & compile options
 -OPTIONS=-DLINUX -DELC -DPNG_SCREENSHOT -DUSE_FRAMEBUFFER -DNEW_FRUSTUM -DBUG_FIX_3D_OBJECTS_MIN_MAX -DNEW_TEX -DOPTIONS_I18N -DATI_9200_FIX -DNEW_ACTOR_ANIMATION -DAUTO_UPDATE -DCOUNTERS
-+OPTIONS=-DFREEBSD -DELC -DPNG_SCREENSHOT -DUSE_FRAMEBUFFER -DNEW_FRUSTUM -DBUG_FIX_3D_OBJECTS_MIN_MAX -DNEW_TEX -DOPTIONS_I18N -DATI_9200_FIX -DNEW_ACTOR_ANIMATION -DAUTO_UPDATE -DCOUNTERS
++OPTIONS=-DFREEBSD -DELC -DPNG_SCREENSHOT -DUSE_FRAMEBUFFER -DNEW_FRUSTUM -DBUG_FIX_3D_OBJECTS_MIN_MAX -DNEW_TEX -DOPTIONS_I18N -DATI_9200_FIX -DNEW_ACTOR_ANIMATION -DCOUNTERS
  
  #-DX86_64
  #-DTIMER_CHECK
@@ -26,17 +26,26 @@
 -_CFLAGS=$(PLATFORM) -O3 -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) $(shell sdl11-config --cflags) $(shell xml2-config --cflags)
 -CXXFLAGS=$(PLATFORM) $(CPPWARN) -O -ggdb -pipe -I/usr/local/include $(OPTIONS)
 -_CXXFLAGS=$(PLATFORM) -O3 -fomit-frame-pointer -ffast-math -pipe $(OPTIONS)
-+CFLAGS+=$(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -I$(X11BASE)/include/ -I$(LOCALBASE)/include
-+_CFLAGS=$(CFLAGS) -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags)
++CFLAGS+=$(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -I/usr/X11R6/include/
++_CFLAGS=$(CFLAGS) $(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags)
 +CXXFLAGS+=-I$(LOCALBASE)/include -I$(X11BASE)/include $(OPTIONS)
-+_CXXFLAGS=$(CXXFLAGS) -fomit-frame-pointer -ffast-math $(OPTIONS)
++_CXXFLAGS=$(CXXFLAGS) -fomit-frame-pointer -ffast-math -pipe $(OPTIONS)
  
--LDFLAGS=$(shell sdl11-config --libs) $(shell xml2-config --libs) -lSDL_net -lopenal $(XDIR) -lGL -lGLU -lvorbis -lvorbisfile -lcal3d -lm -lpng
-+LDFLAGS+=$(shell sdl-config --libs) $(shell xml2-config --libs) -lSDL_net -lopenal $(XDIR) -lalut -lGL -lGLU -lvorbis -lvorbisfile -lcal3d -lm -lpng
+-LDFLAGS=$(shell sdl11-config --libs) $(shell xml2-config --libs) -lSDL_net -lSDL_image -lopenal $(XDIR) -lGL -lGLU -lvorbis -lvorbisfile -lcal3d -lm -lpng
++LDFLAGS=$(shell sdl-config --libs) $(shell xml2-config --libs) -lSDL_net -lSDL_image -lopenal $(XDIR) -lalut -lGL -lGLU -lvorbis -lvorbisfile -lcal3d -lm -lpng
  _LDFLAGS=$(XDIR) -lGL -lpthread -lz
  STATICLIBS=libs/libSDL_net.a libs/libSDL.a libs/libopenal.a libs/libvorbisfile.a libs/libvorbis.a libs/libogg.a libs/libxml2.a libs/libcal3d.a
  
-@@ -68,11 +67,11 @@
+@@ -54,7 +53,7 @@
+ 	ignore.o init.o interface.o items.o	\
+ 	keys.o knowledge.o lights.o list.o loading_win.o loginwin.o	\
+ 	main.o manufacture.o map_io.o mapwin.o	\
+-	md2loader.o md5.o misc.o multiplayer.o	\
++	md5.o misc.o multiplayer.o	\
+ 	new_actors.o new_character.o notepad.o	\
+ 	openingwin.o	\
+ 	particles.o paste.o pathfinder.o pm_log.o	\
+@@ -78,11 +77,11 @@
  
  OBJS=$(COBJS) $(CXXOBJS)
  
