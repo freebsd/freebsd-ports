@@ -27,6 +27,7 @@
     SUBDIR += aolserver-nsgd
     SUBDIR += aqsis
     SUBDIR += autopano-sift
+    SUBDIR += autoq3d
     SUBDIR += autotrace
     SUBDIR += aview
     SUBDIR += ayam
