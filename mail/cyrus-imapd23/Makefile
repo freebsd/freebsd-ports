@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.3.8
-PORTREVISION=	1
+PORTVERSION=	2.3.9
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
+MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus/ \
+		http://ftp.andrew.cmu.edu/pub/cyrus/ \
 		http://www.transit.hanse.de/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/cyrus-mail/&,}
 
@@ -101,8 +102,7 @@ CONFIGURE_ARGS+=--enable-netscapehack
 
 .if defined(WITH_DRAC)
 EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal::berkdb.m4 \
-		${FILESDIR}/extra-patch-cmulocal::ucdsnmp.m4 \
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal::ucdsnmp.m4 \
 		${FILESDIR}/extra-patch-configure.in
 USE_AUTOTOOLS=	autoconf:259 autoheader:259
 CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
@@ -146,8 +146,8 @@ MAN5=		cyrus.conf.5 imapd.conf.5 krb.equiv.5
 CYRUS_MAN3=	Cyrus::IMAP.3 Cyrus::IMAP::Admin.3 Cyrus::IMAP::IMSP.3 \
 		Cyrus::IMAP::Shell.3 Cyrus::SIEVE::managesieve.3
 CYRUS_MAN8=	arbitron.8 chk_cyrus.8 nntpd.8 ctl_cyrusdb.8 ctl_deliver.8 \
-		cyr_expire.8 ctl_mboxlist.8 cvt_cyrusdb.8 deliver.8 \
-		fetchnews.8 fud.8 idled.8 imapd.8 ipurge.8 lmtpd.8 \
+		cyr_dbtool.8 cyr_expire.8 ctl_mboxlist.8 cvt_cyrusdb.8 \
+		deliver.8 fetchnews.8 fud.8 idled.8 imapd.8 ipurge.8 lmtpd.8 \
 		make_md5.8 master.8 mbexamine.8 mbpath.8 notifyd.8 pop3d.8 \
 		quota.8 reconstruct.8 rmnews.8 smmapd.8 squatter.8 \
 		sync_client.8 sync_reset.8 sync_server.8 syncnews.8 \
