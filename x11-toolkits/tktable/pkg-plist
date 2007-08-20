@@ -1,9 +1,4 @@
-%%DESTDIR%%/libTktable2.8.so
-%%DESTDIR%%/tkTable.tcl
-%%DESTDIR%%/pkgIndex.tcl
-%%DESTDIR%%/license.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/tkTable.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DESTDIR%%
+lib/%%DISTNAME%%/lib%%DISTNAME%%.so
+lib/%%DISTNAME%%/tkTable.tcl
+lib/%%DISTNAME%%/pkgIndex.tcl
+@dirrm lib/%%DISTNAME%%
