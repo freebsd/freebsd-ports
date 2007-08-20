@@ -1,5 +1,4 @@
 bin/pantry
-bin/pantry-addTo
 %%PYTHON_SITELIBDIR%%/pantry/__init__.py
 %%PYTHON_SITELIBDIR%%/pantry/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pantry/__init__.pyo
