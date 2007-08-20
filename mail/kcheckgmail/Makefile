@@ -1,15 +1,13 @@
 # New ports collection makefile for:	kcheckgmail
 # Date created:				17 June 2007
-# Whom:					Yuan Jue <yuanjue@FreeBSD.org>
+# Whom:					YUAN Jue <yuanjue@FreeBSD.org>
 #
 # $FreeBSD$
 
 PORTNAME=	kcheckgmail
-PORTVERSION=	0.5.6
+PORTVERSION=	0.5.7
 CATEGORIES=	mail kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.yuanjue.net/download/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.yuanjue.net/download/
 
 MAINTAINER=	yuanjue@FreeBSD.org
 COMMENT=	A Gmail Notifier for KDE
@@ -19,6 +17,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_KDELIBS_VER=3
+INSTALLS_ICONS=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -30,10 +29,11 @@ PLIST_SUB+=	NLS="@comment "
 
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
 
-post-patch:
-	@${TOUCH} -t 200501251945 ${WRKSRC}/acinclude.m4
-	@${TOUCH} -t 200704011036 ${WRKSRC}/aclocal.m4
-	@${TOUCH} -t 200704011037 ${WRKSRC}/Makefile.in
-	@${TOUCH} -t 200704011038 ${WRKSRC}/configure
+MAN1=		kcheckgmail.1
+
+post-extract:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/subdirs
+.endif
 
 .include <bsd.port.mk>
