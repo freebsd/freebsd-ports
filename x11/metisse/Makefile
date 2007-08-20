@@ -7,6 +7,7 @@
 
 PORTNAME=	metisse
 DISTVERSION=	0.4.0-rc4
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/latest/
 
@@ -17,8 +18,6 @@ CONFLICTS=	fvwm-1.* fvwm-2.5.*
 
 LIB_DEPENDS=	Nucleo.0:${PORTSDIR}/x11-toolkits/nucleo
 RUN_DEPENDS=	${X11BASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
-
-BROKEN=		Incomplete pkg-plist
 
 USE_BZIP2=	yes
 PATCH_STRIP=	-p1
@@ -118,6 +117,9 @@ PLIST_SUB+=	GTK="@comment "
 post-extract: .SILENT
 # Fix KDE tray
 	${REINPLACE_CMD} -e '4723d' ${WRKSRC}/fvwm-insitu/fvwm/events.c
+# Fix pager mode border color
+	${REINPLACE_CMD} -e 's/0.1,0.5,0.4/0.7,0.71,0.7/' \
+		${WRKSRC}/FvwmCompositor/main/compositor.cxx
 # Fix desktop entries path
 	${REINPLACE_CMD} -E 's,^(configdir =).*,\1 ${DESKTOPDIR},' \
 		${WRKSRC}/fvwm-insitu/opale/session/Makefile.in

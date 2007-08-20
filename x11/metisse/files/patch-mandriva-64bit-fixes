@@ -1,0 +1,429 @@
+2007-01-17  Gwenole Beauchesne  <gbeauchesne@mandriva.com>
+
+	* 64-bit fixes.
+
+--- metisse-20070112/FvwmCompositor/desktop/MetisseDesktop.cxx.64bit-fixes	2007-01-10 23:56:27.000000000 +0100
++++ metisse-20070112/FvwmCompositor/desktop/MetisseDesktop.cxx	2007-01-17 20:09:18.000000000 +0100
+@@ -1059,7 +1059,7 @@ MetisseDesktop::MetisseDesktop(
+ 		return ;
+ 	}
+ 
+-	_xroot = DefaultRootWindow(_xdisplay);
++	_xroot = XDefaultRootWindow(_xdisplay);
+ 
+ 	_metisseSource = new MetisseSource(this, encoding, uri, use_shm);
+ 	if (!_metisseSource)
+@@ -1181,7 +1181,7 @@ MetisseDesktop::HandleXCursor(
+ 			  << __FILE__ << ", " << __LINE__ << ")" << std::endl;
+ 	}
+ 	dpy = (Display*)castedWin->getDisplay();
+-	dr = DefaultRootWindow(dpy);
++	dr = XDefaultRootWindow(dpy);
+ 
+ 	if (width * height)
+ 	{
+@@ -1337,7 +1337,7 @@ void MetisseDesktop::_closeWindow(Metiss
+ // ------------------------------------------------------------
+ 
+ // FIXME FIXME
+-void MetisseDesktop::_setSubFacadeProperty(unsigned long win, FacadeMapping facade)
++void MetisseDesktop::_setSubFacadeProperty(Window win, FacadeMapping facade)
+ {
+ 	char cmd[256];
+ 	FacadeMapping::iterator iter;
+--- metisse-20070112/FvwmCompositor/main/AScreen.cxx.64bit-fixes	2007-01-12 23:00:08.000000000 +0100
++++ metisse-20070112/FvwmCompositor/main/AScreen.cxx	2007-01-17 18:02:00.000000000 +0100
+@@ -704,7 +704,7 @@ int AScreen::_myPickClosest(
+ #if DEBUG_PUSH_NAME
+ 		 for (j = 0; j < numNames-1; j++)
+ 		 {
+-			 sgNode *sg = (sgNode *)*hit;
++			 sgNode *sg = sgNode::lookupId(*hit);
+ 			 std::cerr << "  names " << j << ": " << sg
+ 				   << std::endl;
+ 			 hit++;
+@@ -713,7 +713,7 @@ int AScreen::_myPickClosest(
+ 		 hit += numNames-1;
+ #endif
+ 
+-		 WindowRenderer *sel = (WindowRenderer *)*hit++;
++		 WindowRenderer *sel = dynamic_cast<WindowRenderer *>(sgNode::lookupId(*hit++));
+ #if DEBUG_PUSH_NAME
+ 		 std::cerr << "  sel pointer: "<< sel << " " << sizeof(GLuint)
+ 			   << " " << sizeof(WindowRenderer *) << std::endl;
+@@ -890,8 +890,8 @@ void AScreen::_dragResetSelection(bool s
+ 
+ 	if (selectionBufferSize)
+ 	{
+-		selection = (WindowRenderer *)
+-			selectionBuffer[selectionBufferSize-1];
++		selection = dynamic_cast<WindowRenderer *>(sgNode::lookupId(
++			selectionBuffer[selectionBufferSize-1]));
+ 	}
+ 	else
+ 	{
+@@ -943,8 +943,8 @@ void AScreen::resetSelection(bool sendEv
+ 
+ 	if (_over_selectionBufferSize)
+ 	{
+-		_over_selection = (WindowRenderer *)
+-			_over_selectionBuffer[_over_selectionBufferSize-1];
++		_over_selection = dynamic_cast<WindowRenderer *>(sgNode::lookupId(
++			_over_selectionBuffer[_over_selectionBufferSize-1]));
+ 	}
+ 	else
+ 	{
+@@ -953,8 +953,8 @@ void AScreen::resetSelection(bool sendEv
+ 
+ 	if (_selectionBufferSize)
+ 	{
+-		_selection = (WindowRenderer *)
+-			_selectionBuffer[_selectionBufferSize-1];
++		_selection = dynamic_cast<WindowRenderer *>(sgNode::lookupId(
++			_selectionBuffer[_selectionBufferSize-1]));
+ 	}
+ 	else
+ 	{
+@@ -1078,7 +1078,7 @@ bool AScreen::unprojectOverWindow(
+ 	{
+ 		 GLuint numNames = *hit ;
+ 		 GLuint *names = hit+3 ;
+-		 MetisseWindow *w = (MetisseWindow *)names[numNames-2];
++		 MetisseWindow *w = dynamic_cast<MetisseWindow *>(sgNode::lookupId(names[numNames-2]));
+ 		 if (w == win)
+ 		 {
+ 			 z = *(hit+1) / 4294967295.0 ;
+@@ -1099,9 +1099,9 @@ bool AScreen::unprojectOverWindow(
+ 	GLuint selBuffer[3] ;
+ 	GLuint selSize=3;
+ 
+-	selBuffer[2] = (GLuint )(win->getRenderer());
+-	selBuffer[1] = (GLuint )(win);
+-	selBuffer[0] = (GLuint )(root);
++	selBuffer[2] = (win->getRenderer())->getId();
++	selBuffer[1] = (win)->getId();
++	selBuffer[0] = (root)->getId();
+ 
+ 	unproject(x, y, z, _viewpoint, selBuffer, selSize, ox, oy, oz) ;
+ #if 0
+@@ -1125,9 +1125,9 @@ bool AScreen::projectOverWindow(
+ 
+ 	GLuint selBuffer[3] ;
+ 	GLuint selSize=3;
+-	selBuffer[2] = (GLuint )(win->getRenderer());
+-	selBuffer[1] = (GLuint )(win);
+-	selBuffer[0] = (GLuint )(root);
++	selBuffer[2] = (win->getRenderer())->getId();
++	selBuffer[1] = (win)->getId();
++	selBuffer[0] = (root)->getId();
+ 
+ 	_viewpoint->project(
+ 			ox, oy, 0.0, selBuffer, selSize, px, py, pz);
+--- metisse-20070112/FvwmCompositor/main/AUtils.cxx.64bit-fixes	2006-12-19 11:18:21.000000000 +0100
++++ metisse-20070112/FvwmCompositor/main/AUtils.cxx	2007-01-17 18:02:00.000000000 +0100
+@@ -576,7 +576,7 @@ unproject(int x, int y, sgViewpoint *vie
+   glGetDoublev(GL_PROJECTION_MATRIX, projmatrix) ;
+ 
+   for (int i=0; i<selectionBufferSize; ++i) {
+-    sgNode *o = (sgNode *)selectionBuffer[i] ;
++    sgNode *o = sgNode::lookupId(selectionBuffer[i]) ;
+     
+ #if 0
+     std::cerr << o->getName() << " < " << std::flush ;
+@@ -632,7 +632,7 @@ unproject(
+ 	glGetDoublev(GL_PROJECTION_MATRIX, projmatrix) ;
+ 
+ 	for (int i=0; i<selectionBufferSize; ++i) {
+-		sgNode *o = (sgNode *)selectionBuffer[i] ;
++		sgNode *o = sgNode::lookupId(selectionBuffer[i]) ;
+ 		o->applyTransformations() ;
+ 	}
+ 
+--- metisse-20070112/FvwmCompositor/main/LayerManager.cxx.64bit-fixes	2007-01-12 23:00:08.000000000 +0100
++++ metisse-20070112/FvwmCompositor/main/LayerManager.cxx	2007-01-17 18:02:00.000000000 +0100
+@@ -1108,7 +1108,7 @@ void LayerManager::x11project(int x, int
+ 
+ 	GLuint selBuffer[1] ;
+ 	GLuint selSize=1;
+-	selBuffer[0] = (GLuint )(this);
++	selBuffer[0] = (this)->getId();
+ 
+ 	unproject(
+ 		  (int)x, (int)y, 0, _viewpoint, selBuffer,
+@@ -1182,9 +1182,9 @@ bool LayerManager::getWinBoundingBox(
+ 	GLuint selBuffer[3] ;
+ 	GLuint selSize=3;
+ 
+-	selBuffer[2] = (GLuint )(win->getRenderer());
+-	selBuffer[1] = (GLuint )(win);
+-	selBuffer[0] = (GLuint )(this);
++	selBuffer[2] = (win->getRenderer())->getId();
++	selBuffer[1] = (win)->getId();
++	selBuffer[0] = (this)->getId();
+ 
+ 	GLdouble left, top, right, bottom, px, py, pz = 0;
+ 	bool ret;
+@@ -1455,9 +1455,9 @@ void LayerManager::scaleWindow(
+ 	GLuint selBuffer[3] ;
+ 	GLuint selSize=3;
+ 
+-	selBuffer[2] = (GLuint )(win->getRenderer());
+-	selBuffer[1] = (GLuint )(win);
+-	selBuffer[0] = (GLuint )(this);
++	selBuffer[2] = (win->getRenderer())->getId();
++	selBuffer[1] = (win)->getId();
++	selBuffer[0] = (this)->getId();
+ 
+ 	float tsX = _scaleX;
+ 	float tsY = _scaleY;
+@@ -1587,9 +1587,9 @@ void LayerManager::rotateWindow(
+ 	GLuint selBuffer[3] ;
+ 	GLuint selSize=3;
+ 
+-	selBuffer[2] = (GLuint )(win->getRenderer());
+-	selBuffer[1] = (GLuint )(win);
+-	selBuffer[0] = (GLuint )(this);
++	selBuffer[2] = (win->getRenderer())->getId();
++	selBuffer[1] = (win)->getId();
++	selBuffer[0] = (this)->getId();
+ 
+ 	float tsX = _scaleX;
+ 	float tsY = _scaleY;
+@@ -1758,17 +1758,17 @@ void LayerManager::attachWindow(MetisseW
+ 	GLuint selBuffer[3] ;
+ 	GLuint selSize=3;
+ 
+-	selBuffer[2] = (GLuint )(main->getRenderer());
+-	selBuffer[1] = (GLuint )(main);
+-	selBuffer[0] = (GLuint )(this);
++	selBuffer[2] = (main->getRenderer())->getId();
++	selBuffer[1] = (main)->getId();
++	selBuffer[0] = (this)->getId();
+ 
+ 	ret =_viewpoint->project(
+ 		-mw/2 + (sx-mx) -tx, mh/2 + (my-sy) +ty,  0.0,
+ 		selBuffer, selSize, &mleft, &mtop, &pz);
+ 
+-	selBuffer[2] = (GLuint )(sub->getRenderer());
+-	selBuffer[1] = (GLuint )(sub);
+-	selBuffer[0] = (GLuint )(this);
++	selBuffer[2] = (sub->getRenderer())->getId();
++	selBuffer[1] = (sub)->getId();
++	selBuffer[0] = (this)->getId();
+ 
+ 	ret =_viewpoint->project(
+ 		-sw/2, sh/2,  0.0, selBuffer, selSize, &sleft, &stop, &pz);
+@@ -2025,7 +2025,7 @@ bool LayerManager::getPointerEvent(
+ 
+ 	GLuint selBuffer[1] ;
+ 	GLuint selSize=1;
+-	selBuffer[0] = (GLuint )(this);
++	selBuffer[0] = this->getId() ;
+ 
+ 	unproject(
+ 		  (int)x, (int)y, 0, _viewpoint, selBuffer,
+--- metisse-20070112/bin/facade-holder.c.64bit-fixes	2006-10-19 14:47:19.000000000 +0200
++++ metisse-20070112/bin/facade-holder.c	2007-01-17 19:00:08.000000000 +0100
+@@ -295,6 +295,7 @@ void resizeMe(int w, int h)
+ 	XFree(size_hints);
+ }
+ 
++void
+ setup_layout(int startup)
+ {
+ 	int max_width = 0;
+@@ -436,7 +437,7 @@ void clearWindows(void)
+ void set_facade_property(Atom atom_type)
+ {
+ 	unsigned long *duplicate_hints;
+-	unsigned long duplicate_count;
++	int duplicate_count;
+ 	int i;
+ 	flist *l;
+ 
+@@ -450,7 +451,7 @@ void set_facade_property(Atom atom_type)
+ 		l = l->next;
+ 	}
+ 
+-	duplicate_hints = (CARD32 *)safemalloc(7*i*sizeof(CARD32));
++	duplicate_hints = (unsigned long *)safemalloc(7*i*sizeof(*duplicate_hints));
+ 
+ 	l = Facade;	
+ 	while(l != NULL)
+--- metisse-20070112/bin/metisse-dummy-win.c.64bit-fixes	2006-04-08 23:26:41.000000000 +0200
++++ metisse-20070112/bin/metisse-dummy-win.c	2007-01-17 18:59:47.000000000 +0100
+@@ -391,11 +391,11 @@ static
+ void set_metisse_properties(Atom atom_type)
+ {
+ 	unsigned long *duplicate_hints;
+-	unsigned long duplicate_count;
++	int duplicate_count;
+ 	int i;
+ 
+ 	duplicate_count = 0;
+-	duplicate_hints = (CARD32 *)malloc(7*_num_facade*sizeof(CARD32));
++	duplicate_hints = (unsigned long *)malloc(7*_num_facade*sizeof(*duplicate_hints));
+ 	for (i = 0; i < _num_facade; i++)
+ 	{
+ 		duplicate_hints[duplicate_count++] = (CARD32)_facade[i].fid;
+--- metisse-20070112/libutils/atoms.c.64bit-fixes	2006-10-05 23:49:35.000000000 +0200
++++ metisse-20070112/libutils/atoms.c	2007-01-17 18:02:00.000000000 +0100
+@@ -24,6 +24,8 @@
+ #include <X11/Xatom.h>
+ #include <X11/Xproto.h>
+ 
++#include "safemalloc.h"
++
+ static int atom_size(int format)
+ {
+ 	if (format == 32)
+--- metisse-20070112/xserver/include/X11/Xfuncs.h.64bit-fixes	2004-02-01 01:53:15.000000000 +0100
++++ metisse-20070112/xserver/include/X11/Xfuncs.h	2007-01-17 18:02:00.000000000 +0100
+@@ -48,10 +48,16 @@ void bcopy();
+ #else
+ #include <string.h>
+ #define _XFUNCS_H_INCLUDED_STRING_H
++#ifndef bcopy
+ #define bcopy(b1,b2,len) memmove(b2, b1, (size_t)(len))
++#endif
++#ifndef bzero
+ #define bzero(b,len) memset(b, 0, (size_t)(len))
++#endif
++#ifndef bcmp
+ #define bcmp(b1,b2,len) memcmp(b1, b2, (size_t)(len))
+ #endif
++#endif
+ #endif /* X_USEBFUNCS */
+ 
+ /* the new Xfuncs.h */
+--- metisse-20070112/xserver/metisse/rootlessCommon.h.64bit-fixes	2006-11-16 14:38:27.000000000 +0100
++++ metisse-20070112/xserver/metisse/rootlessCommon.h	2007-01-18 16:25:01.000000000 +0100
+@@ -227,7 +227,7 @@ extern RegionRec rootlessHugeRoot;
+                             ((int)(_x) * _pPix->drawable.bitsPerPixel/8 + \
+                              (int)(_y) * _pPix->devKind);		\
+     if (0 && _pPix->drawable.bitsPerPixel != FB_UNIT) {			\
+-        unsigned _diff = ((unsigned) _pPix->devPrivate.ptr) & 		\
++        unsigned _diff = ((char *)_pPix->devPrivate.ptr - (char *)0) &	\
+                          (FB_UNIT / CHAR_BIT - 1);			\
+ 	_pPix->devPrivate.ptr = (char *) (_pPix->devPrivate.ptr) - 	\
+                                 _diff;					\
+--- metisse-20070112/xserver/metisse/rfbserver.c.64bit-fixes	2006-12-13 14:50:20.000000000 +0100
++++ metisse-20070112/xserver/metisse/rfbserver.c	2007-01-17 18:02:00.000000000 +0100
+@@ -111,7 +111,7 @@ rfbClientPtr rfbNewClient(sock)
+     rfbProtocolVersionMsg pv;
+     rfbClientPtr cl;
+     struct sockaddr_in addr;
+-    int addrlen = sizeof(struct sockaddr_in);
++    socklen_t addrlen = sizeof(struct sockaddr_in);
+ 
+     if (rfbClientHead == NULL) {
+ 	/* no other clients - make sure we don't think any keys are pressed */
+--- metisse-20070112/fvwm-insitu/fvwm/add_window.c.64bit-fixes	2006-12-07 14:47:06.000000000 +0100
++++ metisse-20070112/fvwm-insitu/fvwm/add_window.c	2007-01-17 18:02:00.000000000 +0100
+@@ -85,6 +85,7 @@
+ #include "colormaps.h"
+ #include "decorations.h"
+ #include "functions.h"
++#include "builtins.h"
+ 
+ /* ---------------------------- local definitions -------------------------- */
+ 
+--- metisse-20070112/fvwm-insitu/fvwm/move_resize.c.64bit-fixes	2006-12-20 00:31:44.000000000 +0100
++++ metisse-20070112/fvwm-insitu/fvwm/move_resize.c	2007-01-17 18:02:00.000000000 +0100
+@@ -93,10 +93,10 @@ static rectangle sizew_g =
+ 	-1
+ };
+ 
+-static int move_interactive_finish_button_mask =
+-	((1<<(NUMBER_OF_EXTENDED_MOUSE_BUTTONS))-1) & ~0x2;
+-static int move_drag_finish_button_mask =
+-	((1<<(NUMBER_OF_EXTENDED_MOUSE_BUTTONS))-1) & ~0x3;
++static unsigned int move_interactive_finish_button_mask =
++	((1U<<(NUMBER_OF_EXTENDED_MOUSE_BUTTONS))-1) & ~0x2;
++static unsigned int move_drag_finish_button_mask =
++	((1U<<(NUMBER_OF_EXTENDED_MOUSE_BUTTONS))-1) & ~0x3;
+ 
+ /* ----- end of move globals ----- */
+ 
+@@ -1475,14 +1475,14 @@ int placement_binding(int button, KeySym
+ 			{
+ 				move_interactive_finish_button_mask =
+ 				move_drag_finish_button_mask =
+-					(1<<NUMBER_OF_EXTENDED_MOUSE_BUTTONS)-1;
++					(1U<<NUMBER_OF_EXTENDED_MOUSE_BUTTONS)-1;
+ 			}
+ 			else if (button > 0 && button <=
+ 				 NUMBER_OF_EXTENDED_MOUSE_BUTTONS)
+ 			{
+ 				move_drag_finish_button_mask |= (1<<(button-1));
+ 				move_interactive_finish_button_mask |=
+-					(1<<(button-1));
++					(1U<<(button-1));
+ 			}
+ 		}
+ 	}
+@@ -1493,7 +1493,7 @@ int placement_binding(int button, KeySym
+ 			if (button == 0)
+ 			{
+ 				move_drag_finish_button_mask =
+-					(1<<NUMBER_OF_EXTENDED_MOUSE_BUTTONS)-1;
++					(1U<<NUMBER_OF_EXTENDED_MOUSE_BUTTONS)-1;
+ 			}
+ 			else if (button > 0 && button <=
+ 				 NUMBER_OF_EXTENDED_MOUSE_BUTTONS)
+@@ -1509,7 +1509,7 @@ int placement_binding(int button, KeySym
+ 			if (button == 0)
+ 			{
+ 				move_interactive_finish_button_mask =
+-					(1<<NUMBER_OF_EXTENDED_MOUSE_BUTTONS)-1;
++					(1U<<NUMBER_OF_EXTENDED_MOUSE_BUTTONS)-1;
+ 			}
+ 			else if (button > 0 && button <=
+ 				 NUMBER_OF_EXTENDED_MOUSE_BUTTONS)
+--- metisse-20070112/fvwm-insitu/fvwm/builtins.c.64bit-fixes	2007-01-08 14:35:43.000000000 +0100
++++ metisse-20070112/fvwm-insitu/fvwm/builtins.c	2007-01-17 18:02:00.000000000 +0100
+@@ -65,6 +65,7 @@
+ #include "style.h"
+ #include "move_resize.h"
+ #include "menus.h"
++#include "focus.h"
+ #ifdef HAVE_STROKE
+ #include "stroke.h"
+ #endif /* HAVE_STROKE */
+--- metisse-20070112/fvwm-insitu/fvwm/ewmh.c.64bit-fixes	2006-12-16 01:26:51.000000000 +0100
++++ metisse-20070112/fvwm-insitu/fvwm/ewmh.c	2007-01-17 18:02:00.000000000 +0100
+@@ -1563,6 +1563,8 @@ int ewmh_HandleSplash(EWMH_CMD_ARGS)
+ 	FPS_FOCUS_CLICK_ICON(S_FOCUS_POLICY(SCC(*style)), 1);
+ 	FPS_FOCUS_BY_FUNCTION(S_FOCUS_POLICY(SCM(*style)), 1);
+ 	FPS_FOCUS_BY_FUNCTION(S_FOCUS_POLICY(SCC(*style)), 1);
++
++	return 0; // is 0 the expected value??
+ }
+ 
+ int ewmh_HandleToolBar(EWMH_CMD_ARGS)
+--- metisse-20070112/fvwm-insitu/fvwm/gnome.c.64bit-fixes	2006-11-23 02:02:16.000000000 +0100
++++ metisse-20070112/fvwm-insitu/fvwm/gnome.c	2007-01-17 18:02:00.000000000 +0100
+@@ -943,10 +943,12 @@ CMD_GnomeShowDesks(F_CMD_ARGS)
+ 	int n;
+ 	Atom atom_set;
+ 	long val[1];
++	int intVal;
+ 
+ 	atom_set = XInternAtom(dpy, XA_WIN_WORKSPACE_COUNT, False);
+ 	DBUG("GNOME_ShowDesks","Routine Entered");
+-	n = GetIntegerArguments(action, NULL, (int *)val, 1);
++	n = GetIntegerArguments(action, NULL, &intVal, 1);
++	val[0] = intVal;
+ 	if(n != 1)
+ 	{
+ 		fvwm_msg(ERR, "GnomeShowDesks", "requires one argument");
+--- metisse-20070112/fvwm-insitu/modules/FvwmIconMan/fvwm.c.64bit-fixes	2006-11-23 02:02:17.000000000 +0100
++++ metisse-20070112/fvwm-insitu/modules/FvwmIconMan/fvwm.c	2007-01-17 18:02:00.000000000 +0100
+@@ -182,6 +182,7 @@ WinData *id_to_win(Ulong id)
+ 
+ static void set_win_configuration(WinData *win, FvwmPacketBody *body)
+ {
++	extern void set_attention(WinData *win);
+ 	win->desknum = body->add_config_data.desk;
+ 	win->x = body->add_config_data.frame_x;
+ 	win->y = body->add_config_data.frame_y;
