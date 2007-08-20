@@ -2,8 +2,10 @@ bin/kbackup
 share/locale/de/LC_MESSAGES/kbackup.mo
 share/locale/fr/LC_MESSAGES/kbackup.mo
 share/locale/it/LC_MESSAGES/kbackup.mo
+share/locale/pt/LC_MESSAGES/kbackup.mo
 share/locale/ru/LC_MESSAGES/kbackup.mo
 share/locale/sk/LC_MESSAGES/kbackup.mo
+share/locale/sv/LC_MESSAGES/kbackup.mo
 share/apps/kbackup/icons/hicolor/22x22/apps/kbackup_runs.mng
 share/apps/kbackup/icons/hicolor/22x22/actions/kbackup_cancel.png
 share/apps/kbackup/icons/hicolor/22x22/actions/kbackup_start.png
