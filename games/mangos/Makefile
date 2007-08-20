@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mangos
-PORTVERSION=	4261
+PORTVERSION=	4345
 CATEGORIES=	games
 MASTER_SITES=	CENKES http://mangos-port.by.ru/ \
 		http://neon.heavennet.ru/mangos/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
-SCRIPTDEV2REV=	103
+SCRIPTDEV2REV=	107
 
 MAINTAINER=    	neon_cyrex@mail.ru
 COMMENT=	Free dedicated-server for World of Warcraft
@@ -67,6 +67,11 @@ post-patch:
 		${WRKSRC}/src/mangosd/Makefile.am ${WRKSRC}/src/realmd/Makefile.am
 	@cd ${WRKSRC}/sql/updates/&&${REINPLACE_CMD} -e '/pkgdata_DATA/,$$d' Makefile.am\
 		&&${ECHO_CMD} "pkgdata_DATA=`echo *.sql README`">>Makefile.am
+.ifdef WITH_SCRIPTDEV2
+	@cd ${WRKSRC}/src/bindings/ScriptDev2/sql/Updates/&&\
+		${REINPLACE_CMD} -e '/pkgdata_DATA/,$$d' Makefile.am\
+		&&${ECHO_CMD} "pkgdata_DATA=`echo *.sql`">>Makefile.am
+.endif
 
 run-autotools-automake:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} ${AUTOMAKE_ARGS})
