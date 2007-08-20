@@ -653,6 +653,7 @@ automake18	ports/devel/automake18
 automake19	ports/devel/automake19
 autopano-sift	ports/graphics/autopano-sift
 autopsy		ports/sysutils/autopsy
+autoq3d		ports/graphics/autoq3d
 autorespond	ports/mail/autorespond
 autosig		ports/mail/autosig
 autossh		ports/security/autossh
