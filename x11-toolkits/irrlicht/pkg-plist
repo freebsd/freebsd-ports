@@ -1,3 +1,7 @@
+include/irrlicht/CMeshBuffer.h
+include/irrlicht/ECullingTypes.h
+include/irrlicht/EDebugSceneTypes.h
+include/irrlicht/EDriverFeatures.h
 include/irrlicht/EDriverTypes.h
 include/irrlicht/EGUIElementTypes.h
 include/irrlicht/ESceneNodeAnimatorTypes.h
@@ -195,7 +199,6 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/d3d9.hlsl
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/d3d9.psh
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/d3d9.vsh
-%%EXAMPLES%%%%EXAMPLESDIR%%/media/demoback.bmp
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/demoback.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/detailmap3.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/directxlogo.png
