@@ -172,6 +172,7 @@
     SUBDIR += pybookreader
     SUBDIR += pypanel
     SUBDIR += qlabels
+    SUBDIR += qorganizer
     SUBDIR += qrfcview
     SUBDIR += qtm
     SUBDIR += recoll
