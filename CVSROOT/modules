@@ -3753,6 +3753,7 @@ gmidimonitor	ports/audio/gmidimonitor
 gmime		ports/mail/gmime
 gmime2		ports/mail/gmime2
 gmime2-sharp	ports/mail/gmime2-sharp
+gmimms		ports/multimedia/gmimms
 gmines		ports/games/gmines
 gmixer		ports/audio/gmixer
 gmp-ecm		ports/math/gmp-ecm
