@@ -9,9 +9,11 @@ PORTNAME=	irchat-jp
 PORTVERSION=	26.d
 #PORTREVISION=	0
 CATEGORIES=	irc elisp
-MASTER_SITES=	http://www.ircnet.jp/dist/irchat/
+MASTER_SITES=	http://www.ircnet.jp/dist/irchat/:master \
+		${MASTER_SITE_LOCAL:S/$/:backup/}
+MASTER_SITE_SUBDIR= "":master matusita/${PORTNAME}/:backup
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${DISTNAME}.tgz:master,backup
 
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=	IRC client for Emacs, derived from irchat
