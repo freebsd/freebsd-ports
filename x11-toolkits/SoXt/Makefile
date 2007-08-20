@@ -18,6 +18,7 @@ LIB_DEPENDS=	Coin.44:${PORTSDIR}/graphics/Coin
 
 USE_GL=		yes
 USE_MOTIF=	yes
+USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${X11BASE}
