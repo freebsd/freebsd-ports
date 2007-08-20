@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	kompose
-PORTVERSION=	0.5.1
-PORTREVISION=	5
+PORTVERSION=	0.5.2
 CATEGORIES=	deskutils kde
-MASTER_SITES=	http://download.berlios.de/kompose/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	Full-screen task manager similar to Expose(tm)
 
 LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
@@ -22,6 +22,9 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
+INSTALLS_ICONS=	yes
+
+DOCSDIR=	share/doc/HTML/en/${PORTNAME}
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
