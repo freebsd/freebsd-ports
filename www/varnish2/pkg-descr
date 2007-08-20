@@ -1,11 +1,7 @@
 This is the Varnish high-performance HTTP accelerator.
 
 Documentation and additional information about Varnish is available on
-the following web sites:
-
-  http://www.varnish-cache.org/         Official web site
-
-  http://varnish.projects.linpro.no/    Developer site and wiki
+<URL:http://varnish.projects.linpro.no/>.
 
 Technical questions about Varnish and this release should be addressed
 to <varnish-dev@projects.linpro.no>.
