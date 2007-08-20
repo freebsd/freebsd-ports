@@ -105,7 +105,7 @@ etc/xneur/xneurrc-fr.dist
 include/xneur/xnconfig.h
 include/xneur/list_char.h
 lib/xneur/libxnconfig.la
-lib/xneur/libxnconfig.so.6
+lib/xneur/libxnconfig.so.0
 lib/xneur/libxnconfig.so
 libdata/pkgconfig/xnconfig.pc
 @dirrm lib/xneur
