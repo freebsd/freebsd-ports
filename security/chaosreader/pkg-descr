@@ -1,0 +1,12 @@
+Chaosreader is a perl script that parses snoop or tcpdump logs
+and extracts sessions for a number of different appplications:
+ssh, telnet, smtp, irc, ftp, etc.  The data are formatted into
+an html file and can be used to replay some sessions.
+
+Sshkeydata is a perl script that attempts to recreate ssh
+sessions extracted by chaosreader by estimating what commands
+may have been typed.
+
+Both scripts are installed in ${PREFIX}/bin
+
+WWW: http://sourceforge.net/projects/chaosreader
