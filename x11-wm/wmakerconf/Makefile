@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	wmakerconf
-PORTVERSION=	2.11
-PORTREVISION=	4
+PORTVERSION=	2.12
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.starplot.org/wmakerconf/
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A configuration tool for Window Maker
@@ -18,13 +18,16 @@ COMMENT=	A configuration tool for Window Maker
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-USE_X_PREFIX=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_XLIB=	yes
 USE_GNOME=	gnometarget gtk20
 USE_PERL5=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-wmakerdir="${X11BASE}/share/WindowMaker"
+CONFIGURE_ARGS=	--with-wmakerdataprefix="${LOCALBASE}/share" \
+		--with-wmakeretcprefix="${LOCALBASE}/share"
 
 MAN1=		mkpreview.1 wmakerconf.1
 
@@ -32,19 +35,14 @@ post-extract:
 	@${FIND} ${WRKSRC} -name "*.gmo" -delete
 
 pre-configure:
-	@${PERL} -pi -e 's|lynx wget|lynx fetch|g' ${WRKSRC}/configure
-	@${PERL} -pi -e 's|: install-data-local|:|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|lynx wget|lynx fetch|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/chmod 0/d' ${WRKSRC}/Makefile.in
 .for file in data/WMWmakerconf data/WMWmakerconf.gettext
-	@${PERL} -pi -e 's|/usr/local/share|${LOCALBASE}|g ; \
+	@${REINPLACE_CMD} -e 's|/usr/local/share|${LOCALBASE}|g ; \
 		 s|/usr/share|${X11BASE}|g' ${WRKSRC}/${file}
 .endfor
 .for file in data/po/ja.po po/ja.po
-	@${PERL} -pi -e 's|JISX-0208-1983-0|euc-jp|g' ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e 's|JISX-0208-1983-0|euc-jp|g' ${WRKSRC}/${file}
 .endfor
-
-post-install:
-	@${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/wmakerconf.desktop \
-		${PREFIX}/share/applications
 
 .include <bsd.port.mk>
