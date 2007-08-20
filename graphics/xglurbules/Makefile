@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xglurbules
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://stephenroome.com/xglurbules/
 
