@@ -1,11 +1,36 @@
 bin/ufo
-%%SERVER%%bin/ufoded
+%%UFOSERVER%%bin/ufoded
 %%UFO2MAP%%bin/ufo2map
+%%UFOMASTER%%bin/ufomaster
+lib/ufoai/base/game.so
+lib/ufoai/base/i18n/cs/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/da/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/de/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/en/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/es/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/es_ES/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/est/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/fi/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/fr/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/it/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/pl/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/pt_BR/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/ru/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/slo/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/sv/LC_MESSAGES/ufoai.mo
+lib/ufoai/ufo
+%%UFOSERVER%%lib/ufoai/ufoded
+%%UFO2MAP%%lib/ufoai/ufo2map
+%%UFOMASTER%%lib/ufoai/ufo2map
+lib/ufoai/ref_glx.so
+lib/ufoai/ref_sdl.so
+%%ARTS%%lib/ufoai/snd_arts.so
+lib/ufoai/snd_sdl.so
+lib/ufoai/snd_oss.so
 lib/ufoai/base/autoexec.cfg
 lib/ufoai/base/dedicated.cfg
 lib/ufoai/base/default.cfg
 lib/ufoai/base/keys.cfg
-lib/ufoai/base/game.so
 lib/ufoai/base/maps
 lib/ufoai/base/mapshots.cfg
 lib/ufoai/base/media
@@ -16,26 +41,8 @@ lib/ufoai/base/shaders
 lib/ufoai/base/sound
 lib/ufoai/base/textures
 lib/ufoai/base/ufos
-lib/ufoai/base/i18n/cs/LC_MESSAGES/ufoai.mo
-lib/ufoai/base/i18n/da/LC_MESSAGES/ufoai.mo
-lib/ufoai/base/i18n/de/LC_MESSAGES/ufoai.mo
-lib/ufoai/base/i18n/en/LC_MESSAGES/ufoai.mo
-lib/ufoai/base/i18n/es/LC_MESSAGES/ufoai.mo
-lib/ufoai/base/i18n/est/LC_MESSAGES/ufoai.mo
-lib/ufoai/base/i18n/fr/LC_MESSAGES/ufoai.mo
-lib/ufoai/base/i18n/it/LC_MESSAGES/ufoai.mo
-lib/ufoai/base/i18n/pl/LC_MESSAGES/ufoai.mo
-lib/ufoai/base/i18n/pt_BR/LC_MESSAGES/ufoai.mo
-lib/ufoai/base/i18n/ru/LC_MESSAGES/ufoai.mo
-lib/ufoai/base/i18n/slo/LC_MESSAGES/ufoai.mo
-lib/ufoai/ufo
-%%SERVER%%lib/ufoai/ufoded
-%%UFO2MAP%%lib/ufoai/ufo2map
-lib/ufoai/ref_glx.so
-lib/ufoai/ref_sdl.so
-%%ARTS%%lib/ufoai/snd_arts.so
-lib/ufoai/snd_sdl.so
-lib/ufoai/snd_oss.so
+@dirrm lib/ufoai/base/i18n/sv/LC_MESSAGES
+@dirrm lib/ufoai/base/i18n/sv
 @dirrm lib/ufoai/base/i18n/slo/LC_MESSAGES
 @dirrm lib/ufoai/base/i18n/slo
 @dirrm lib/ufoai/base/i18n/ru/LC_MESSAGES
@@ -46,12 +53,16 @@ lib/ufoai/snd_oss.so
 @dirrm lib/ufoai/base/i18n/pl
 @dirrm lib/ufoai/base/i18n/it/LC_MESSAGES
 @dirrm lib/ufoai/base/i18n/it
+@dirrm lib/ufoai/base/i18n/fi/LC_MESSAGES
+@dirrm lib/ufoai/base/i18n/fi
 @dirrm lib/ufoai/base/i18n/fr/LC_MESSAGES
 @dirrm lib/ufoai/base/i18n/fr
 @dirrm lib/ufoai/base/i18n/est/LC_MESSAGES
 @dirrm lib/ufoai/base/i18n/est
 @dirrm lib/ufoai/base/i18n/es/LC_MESSAGES
 @dirrm lib/ufoai/base/i18n/es
+@dirrm lib/ufoai/base/i18n/es_ES/LC_MESSAGES
+@dirrm lib/ufoai/base/i18n/es_ES
 @dirrm lib/ufoai/base/i18n/en/LC_MESSAGES
 @dirrm lib/ufoai/base/i18n/en
 @dirrm lib/ufoai/base/i18n/de/LC_MESSAGES
