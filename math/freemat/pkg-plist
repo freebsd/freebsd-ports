@@ -261,6 +261,7 @@ bin/FreeMat
 %%DATADIR%%/help/html/freemat_help.html
 %%DATADIR%%/help/html/freemat_helpwin.html
 %%DATADIR%%/help/html/freemat_import.html
+%%DATADIR%%/help/html/freemat_jitcontrol.html
 %%DATADIR%%/help/html/freemat_loadlib.html
 %%DATADIR%%/help/html/freemat_mfilename.html
 %%DATADIR%%/help/html/freemat_path.html
@@ -1046,6 +1047,7 @@ bin/FreeMat
 %%DATADIR%%/help/text/isstr.mdc
 %%DATADIR%%/help/text/isstruct.mdc
 %%DATADIR%%/help/text/isvector.mdc
+%%DATADIR%%/help/text/jitcontrol.mdc
 %%DATADIR%%/help/text/keyboard.mdc
 %%DATADIR%%/help/text/keywords.mdc
 %%DATADIR%%/help/text/lasterr.mdc
@@ -1804,6 +1806,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/bbtest_isstr.m
 %%DATADIR%%/toolbox/test/bbtest_isstruct.m
 %%DATADIR%%/toolbox/test/bbtest_isvector.m
+%%DATADIR%%/toolbox/test/bbtest_jitcontrol.m
 %%DATADIR%%/toolbox/test/bbtest_keyboard.m
 %%DATADIR%%/toolbox/test/bbtest_keywords.m
 %%DATADIR%%/toolbox/test/bbtest_lasterr.m
@@ -2336,6 +2339,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/test_switch5.m
 %%DATADIR%%/toolbox/test/test_switch6.m
 %%DATADIR%%/toolbox/test/test_switch7.m
+%%DATADIR%%/toolbox/test/test_switch8.m
 %%DATADIR%%/toolbox/test/test_test1.m
 %%DATADIR%%/toolbox/test/test_test2.m
 %%DATADIR%%/toolbox/test/test_test3.m
