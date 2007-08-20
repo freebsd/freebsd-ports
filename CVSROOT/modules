@@ -13452,6 +13452,7 @@ qnetchess	ports/games/qnetchess
 qnetwalk	ports/games/qnetwalk
 qnxstyle	ports/x11-themes/qnxstyle
 qonk		ports/games/qonk
+qorganizer	ports/deskutils/qorganizer
 qpage		ports/comms/qpage
 qpopper		ports/mail/qpopper
 qpxtool		ports/sysutils/qpxtool
