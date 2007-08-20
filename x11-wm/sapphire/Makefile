@@ -6,29 +6,25 @@
 #
 
 PORTNAME=	sapphire
-PORTVERSION=	0.15.6
-PORTREVISION=	2
+PORTVERSION=	0.15.7
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	Small window manager
 
 USE_GMAKE=	yes
 REINPLACE_ARGS=	-i'' -E
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
 
 post-extract:
 
 post-patch:
 	${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/data.inst
-.for ii in data/menu/default configure data.inst src/sapphire.hh
+.for ii in data/menu/default data.inst sapphire.hh
 	${REINPLACE_CMD} "s|/usr/local|${PREFIX}|g" ${WRKSRC}/${ii}
 .endfor
 	${CP} ${WRKSRC}/data.inst ${WRKSRC}/sapphire.inst
-	${REINPLACE_CMD} "s|/usr/X11R6|${X11BASE}|g" ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sapphire.inst ${PREFIX}/bin
@@ -40,8 +36,8 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/sapphire/themes
 	${INSTALL_DATA} ${WRKSRC}/data/themes/*.theme ${PREFIX}/share/sapphire/themes
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/sapphire
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/sapphire
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

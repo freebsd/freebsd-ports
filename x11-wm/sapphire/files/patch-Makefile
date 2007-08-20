@@ -1,0 +1,15 @@
+--- Makefile.orig	2001-11-03 10:51:57.000000000 -0500
++++ Makefile	2007-08-13 11:16:04.000000000 -0400
+@@ -3,10 +3,10 @@
+ # frankhale@yahoo.com
+ # 27 Oct 2001
+ 
+-CC       = g++
++CC       = ${CXX}
+ CFLAGS   = -g -O2 -Wall #-arch=686
+ 
+-prefix   = /usr/X11R6
++prefix   = ${PREFIX}
+ XROOT    = $(prefix)
+ DESTDIR  =
+ INCLUDES = -I$(XROOT)/include
