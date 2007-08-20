@@ -1763,6 +1763,7 @@ darcnes		ports/emulators/darcnes
 darcs		ports/devel/darcs
 darkbot		ports/irc/darkbot
 darkice		ports/audio/darkice
+darknock	ports/graphics/darknock
 darkplaces	ports/games/darkplaces
 darkstat	ports/net-mgmt/darkstat
 darts		ports/devel/darts
