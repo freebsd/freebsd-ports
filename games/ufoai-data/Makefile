@@ -6,35 +6,31 @@
 #
 
 PORTNAME=	data
-DISTVERSION=	2.0rc5
+PORTVERSION=	2.1.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 PKGNAMEPREFIX=	ufoai-
-DISTNAME=	${PKGNAMEPREFIX}${DISTVERSION:S/r/-r/}-linux
-EXTRACT_SUFX=	.run
+DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}-${PORTNAME}
+EXTRACT_SUFX=	.tar
 DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	UFO alien invasion data files
 
-NO_PACKAGE=	Package will be 160MB, set FORCE_PACKAGE if you really want it
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
+NO_PACKAGE=	Package will be 250MB, set FORCE_PACKAGE if you really want it
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST=		${WRKDIR}/pkg-plist
 DATADIR=	share/${PKGNAMEPREFIX:S/-//}
+PLIST=		${WRKDIR}/pkg-plist
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@cd ${WRKSRC} && \
-		${TAIL} -c +9390 ${_DISTDIR}/${DISTFILES} | ${TAR} xf -
-	@cd ${WRKSRC} && \
-		${TAR} -xjf ${PORTNAME}.tar.bz2
-
-post-patch:
-	@cd ${WRKSRC}/base && \
-		${RM} -rf i18n game.so
+post-extract:
+	@cd ${WRKDIR}/base && \
+		${FIND} * -type f -exec ${UNZIP_CMD} "{}" -d ${WRKDIR}/base \;
+	@${RM} ${WRKDIR}/base/*.pk3
 
 pre-install:
 	@${RM} -f ${PLIST}
