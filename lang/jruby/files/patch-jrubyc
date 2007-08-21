@@ -1,12 +1,18 @@
---- bin/jrubyc.orig	Fri Apr  6 13:58:12 2007
-+++ bin/jrubyc	Fri Apr  6 14:00:36 2007
-@@ -26,6 +26,9 @@
- esac
+--- bin/jrubyc.orig	2007-08-21 19:06:20.355621590 +0800
++++ bin/jrubyc	2007-08-21 19:08:23.020781206 +0800
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ # -----------------------------------------------------------------------------
+ # jruby.sh - Start Script for the JRuby interpreter
+ #
+@@ -27,6 +27,9 @@
  
  # ----- Verify and Set Required Environment Variables -------------------------
-+JAVA_HOME=%%JAVA_HOME%%
-+JRUBY_HOME=%%JRUBY_HOME%
-+
  
++JAVA_HOME=%%JAVA_HOME%%
++JRUBY_HOME=%%JRUBY_HOME%%
++
  if [ -z "$JRUBY_HOME" ] ; then
    ## resolve links - $0 may be a link to  home
+   PRG=$0
