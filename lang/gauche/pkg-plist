@@ -77,6 +77,7 @@ lib/gauche/%%VERSION%%/include/gauche/uvector.h
 lib/gauche/%%VERSION%%/include/gauche/vector.h
 lib/gauche/%%VERSION%%/include/gauche/vm.h
 lib/gauche/%%VERSION%%/include/gauche/vminsn.h
+lib/gauche/%%VERSION%%/include/gauche/weak.h
 lib/gauche/%%VERSION%%/include/gc.h
 lib/gauche/%%VERSION%%/include/gc_config_macros.h
 lib/gauche/%%VERSION%%/include/gc_pthread_redirects.h
@@ -104,6 +105,9 @@ share/aclocal/gauche.m4
 %%DATADIR%%/%%VERSION%%/lib/gauche/array.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/auxsys.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/cgen.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/cgen/cise.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/cgen/literal.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/cgen/unit.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/charconv.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/collection.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/common-macros.scm
@@ -125,6 +129,7 @@ share/aclocal/gauche.m4
 %%DATADIR%%/%%VERSION%%/lib/gauche/logical.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/macroutil.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/matrix.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/miscutil.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/modutil.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/mop/instance-pool.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/mop/propagate.scm
@@ -265,6 +270,7 @@ share/aclocal/gauche.m4
 @dirrm %%DATADIR%%/%%VERSION%%/lib/gauche/package
 @dirrm %%DATADIR%%/%%VERSION%%/lib/gauche/mop
 @dirrm %%DATADIR%%/%%VERSION%%/lib/gauche/interactive
+@dirrm %%DATADIR%%/%%VERSION%%/lib/gauche/cgen
 @dirrm %%DATADIR%%/%%VERSION%%/lib/gauche
 @dirrm %%DATADIR%%/%%VERSION%%/lib/file
 @dirrm %%DATADIR%%/%%VERSION%%/lib/dbm
