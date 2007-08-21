@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.ORG
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Session Announcement Protocol (rfc2974) packet parser
 
 RUN_DEPENDS=	${SITE_PERL}/Net/SDP.pm:${PORTSDIR}/net/p5-Net-SDP \
