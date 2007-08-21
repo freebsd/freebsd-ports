@@ -49,6 +49,7 @@ start_precmd()
   *)
     chown "$slapd_owner" "%%LDAP_RUN_DIR%%"
     chown -RL "$slapd_owner" "%%DATABASEDIR%%"
+    chmod 700 "%%DATABASEDIR%%"
     chown "$slapd_owner" "%%PREFIX%%/etc/openldap/slapd.conf"
 
     slapd_ownername="${slapd_owner%:*}"
