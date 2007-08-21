@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="af8e3a0c-5009-11dc-8a43-003048705d5a">
+    <topic>rsync -- off by one stack overflow</topic>
+    <affects>
+      <package>
+	<name>rsync</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>BugTraq reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/25336/discuss">
+	  <p>The rsync utility is prone to an off-by-one buffer-overflow
+	    vulnerability. This issue is due to a failure of the application
+	    to properly bounds-check user-supplied input.</p>
+	  <p>Successfully exploiting this issue may allow arbitrary
+	    code-execution in the context of the affected utility.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>25336</bid>
+      <cvename>CVE-2007-4091</cvename>
+    </references>
+    <dates>
+      <discovery>2007-08-15</discovery>
+      <entry>2007-08-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="df4a7d21-4b17-11dc-9fc2-001372ae3ab9">
     <topic>opera -- Vulnerability in javascript handling</topic>
     <affects>
