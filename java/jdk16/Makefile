@@ -370,6 +370,7 @@ do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	cd ${JDKIMAGEDIR} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${JDKIMAGEDIR}/jre/lib/desktop/applications/sun-java.desktop \
 		${PREFIX}/share/applications/sun-java16.desktop
 	${INSTALL_DATA} ${JDKIMAGEDIR}/jre/lib/desktop/applications/sun-javaws.desktop \
