@@ -9796,6 +9796,7 @@ p5-HTML-EscapeEvil	ports/textproc/p5-HTML-EscapeEvil
 p5-HTML-FillInForm	ports/www/p5-HTML-FillInForm
 p5-HTML-FillInForm-ForceUTF8	ports/www/p5-HTML-FillInForm-ForceUTF8
 p5-HTML-Format	ports/textproc/p5-HTML-Format
+p5-HTML-FormatText-WithLinks	ports/textproc/p5-HTML-FormatText-WithLinks
 p5-HTML-Fraction	ports/textproc/p5-HTML-Fraction
 p5-HTML-FromANSI	ports/www/p5-HTML-FromANSI
 p5-HTML-FromText	ports/www/p5-HTML-FromText
