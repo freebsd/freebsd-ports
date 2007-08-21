@@ -7949,6 +7949,7 @@ mywwwatcher	ports/databases/mywwwatcher
 nInvaders	ports/games/nInvaders
 nab		ports/biology/nab
 nadar		ports/games/nadar
+nagaina		ports/deskutils/nagaina
 nagcon		ports/net-mgmt/nagcon
 nagios		ports/net-mgmt/nagios
 nagios-base-logos	ports/misc/nagios-base-logos
