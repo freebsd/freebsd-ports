@@ -1,0 +1,7 @@
+HTML::Entities::ImodePictogram handles HTML entities for i-mode
+pictogram (emoji), which are assigned in Shift_JIS private area.
+
+See http://www.nttdocomo.co.jp/i/tag/emoji/index.html for details
+about i-mode pictogram.
+
+WWW: http://search.cpan.org/dist/HTML-Entities-ImodePictogram/
