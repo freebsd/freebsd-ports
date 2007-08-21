@@ -84,6 +84,7 @@
     SUBDIR += p5-Net-DNS-ZoneCheck
     SUBDIR += p5-Net-DNS-ZoneFile
     SUBDIR += p5-Net-DNS-ZoneFile-Fast
+    SUBDIR += p5-Net-DNSBL-MultiDaemon
     SUBDIR += p5-Net-Domain-ExpireDate
     SUBDIR += p5-Net-Domain-TLD
     SUBDIR += p5-Net-LibIDN
