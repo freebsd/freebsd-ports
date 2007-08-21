@@ -1318,6 +1318,7 @@ cider		ports/cad/cider
 cidr		ports/net-mgmt/cidr
 cil		ports/devel/cil
 cim		ports/lang/cim
+cint		ports/lang/cint
 cimg		ports/graphics/cimg
 cinc		ports/emulators/cinc
 cinepaint	ports/graphics/cinepaint
