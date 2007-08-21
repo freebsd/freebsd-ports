@@ -738,6 +738,7 @@
     SUBDIR += pear-XML_Wddx
     SUBDIR += pecl-ctemplate
     SUBDIR += pecl-stem
+    SUBDIR += pecl-syck
     SUBDIR += pecl-xdiff
     SUBDIR += perl2html
     SUBDIR += permute
