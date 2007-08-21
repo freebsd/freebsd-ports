@@ -197,6 +197,7 @@
     SUBDIR += cut
     SUBDIR += cutils
     SUBDIR += cvs+ipv6
+    SUBDIR += cvs-syncmail
     SUBDIR += cvs2cl
     SUBDIR += cvs2darcs
     SUBDIR += cvs2html
