@@ -142,6 +142,7 @@
     SUBDIR += multisync-backup
     SUBDIR += multisync-syncml
     SUBDIR += mywiki
+    SUBDIR += nagaina
     SUBDIR += narval
     SUBDIR += nautilus-actions
     SUBDIR += nautilus-locked-folder
