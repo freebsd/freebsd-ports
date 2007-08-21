@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	geoip
-PORTVERSION=	0.2.0
+PORTVERSION=	1.0.0
 CATEGORIES=	net www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Map IP address to geographic places
 
 LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
