@@ -1567,6 +1567,7 @@
     SUBDIR += p5-Test-Object
     SUBDIR += p5-Test-Output
     SUBDIR += p5-Test-Parser
+    SUBDIR += p5-Test-Perl-Critic
     SUBDIR += p5-Test-Pod
     SUBDIR += p5-Test-Pod-Coverage
     SUBDIR += p5-Test-RandomResults
