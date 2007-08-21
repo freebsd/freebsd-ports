@@ -1,0 +1,37 @@
+--- smtpserver/mxverify.c.orig	Fri Apr 16 15:45:46 2004
++++ smtpserver/mxverify.c	Fri Apr 16 15:46:38 2004
+@@ -607,7 +607,6 @@
+ 	if (retmode == '+') {
+ 	  if (rc == -EX_NOHOST      ||
+ 	      rc == -EX_UNAVAILABLE ||
+-	      rc == EAI_NODATA      ||
+ 	      rc == EAI_NONAME)
+ 	    return -2; /* Definitely hard errors */
+ 	  if (rc == 2)
+--- transports/smtp/smtp.c.orig	Fri Apr 16 15:48:44 2004
++++ transports/smtp/smtp.c	Fri Apr 16 15:54:18 2004
+@@ -2912,6 +2912,7 @@
+ 		return EX_DEFERALL;
+ 	      }
+ 
++#if 0 /* FreeBSD 5.x doesn't have it */
+ 	      if ( r == EAI_NODATA ) {
+ 		sprintf(SS->remotemsg,"smtp; 500 (getaddrinfo<%.200s>: No data)",host);
+ 		time(&endtime);
+@@ -2925,6 +2926,7 @@
+ 		  return EX_DEFERALL;
+ 		return EX_UNAVAILABLE;
+ 	      }
++#endif
+ 
+ 	      r = EX_UNAVAILABLE; /* This gives instant rejection */
+ 	      if (rc == EX_TEMPFAIL) r = rc;
+@@ -2944,7 +2946,7 @@
+ 		  if (r != EX_TEMPFAIL)
+ 		    r = EX_NOHOST;
+ #endif
+-		} else if (gai_err == EAI_NONAME || gai_err == EAI_NODATA) {
++		} else if (gai_err == EAI_NONAME)  {
+ 		  sprintf(SS->remotemsg,
+ 			  "smtp; 500 (nameserver data inconsistency. No MX, no address: '%.200s' (%s))",
+ 			  host, gai_err == EAI_NONAME ? "NONAME" : "NODATA");

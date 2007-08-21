@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	zmailer
-PORTVERSION=	2.99.57
+PORTVERSION=	2.99.56
+PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/mail/zmailer/src/
 
@@ -23,8 +24,6 @@ CONFIGURE_ARGS=	--with-openssl
 .else
 CONFIGURE_ARGS=	--without-openssl
 .endif
-
-IGNORE=		hangs after mail to: command
 
 .include <bsd.port.pre.mk>
 

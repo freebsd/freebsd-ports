@@ -1,0 +1,10 @@
+--- transports/smtp/getmxrr.c.orig	Mon Jun 23 12:04:35 2003
++++ transports/smtp/getmxrr.c	Fri Dec 26 11:30:58 2003
+@@ -416,7 +416,6 @@
+ 	      break;
+ 	    case EAI_NONAME:
+ 	    case EAI_FAIL:
+-	    case EAI_NODATA:
+ 	    case EAI_SERVICE:
+ 	    default:
+ 	      break;
