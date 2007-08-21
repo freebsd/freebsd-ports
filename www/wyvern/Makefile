@@ -37,6 +37,10 @@ OPTIONS=	OPENSSL "OpenSSL support" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == amd64 && ${OSREL} == 7.0
+BROKEN=		doens't work; authors works on the problem
+.endif
+
 .if defined(WITH_OPENSSL)
 CONFIGURE_ARGS+=	--with-openssl=yes
 .endif
