@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------
+
+Browse http://your.host.tld/%%PORTNAME%%/install.php to configure your blog
+
+---------------------------------------------------------------------------
+To make pluxml available through your web site, I suggest
+that you add something like the following to httpd.conf:
+
+    Alias /pluxml/ "%%WWWDIR%%/"
+
+    <Directory "%%WWWDIR%%/">
+        Options none
+        AllowOverride Limit
+        Order Deny,Allow
+        Allow from all
+    </Directory>
