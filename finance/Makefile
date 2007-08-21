@@ -6,6 +6,7 @@
     SUBDIR += aqbanking
     SUBDIR += aqmoney
     SUBDIR += cbb
+    SUBDIR += eqonomize
     SUBDIR += expense
     SUBDIR += gfp
     SUBDIR += gnofin
