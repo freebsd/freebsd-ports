@@ -18,6 +18,7 @@ include/libpurple/core.h
 include/libpurple/dbus-maybe.h
 %%DBUS%%include/libpurple/dbus-purple.h
 %%DBUS%%include/libpurple/dbus-server.h
+%%DBUS%%include/libpurple/dbus-types.h
 %%DBUS%%include/libpurple/dbus-useful.h
 include/libpurple/debug.h
 include/libpurple/desktopitem.h
@@ -135,6 +136,11 @@ lib/libpurple.so.1
 libdata/pkgconfig/purple.pc
 share/aclocal/purple.m4
 share/gnome/applications/pidgin.desktop
+share/gnome/sounds/purple/alert.wav
+share/gnome/sounds/purple/login.wav
+share/gnome/sounds/purple/logout.wav
+share/gnome/sounds/purple/receive.wav
+share/gnome/sounds/purple/send.wav
 share/locale/af/LC_MESSAGES/pidgin.mo
 share/locale/am/LC_MESSAGES/pidgin.mo
 share/locale/ar/LC_MESSAGES/pidgin.mo
@@ -251,6 +257,7 @@ share/locale/zh_TW/LC_MESSAGES/pidgin.mo
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
+@dirrm share/gnome/sounds/purple
 %%PERL:%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Purple
 @dirrm lib/purple-2
 @dirrm include/libpurple
