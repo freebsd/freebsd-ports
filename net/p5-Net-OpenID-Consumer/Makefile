@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Net-OpenID-Consumer
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	net security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library for consumers of OpenID identities
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
