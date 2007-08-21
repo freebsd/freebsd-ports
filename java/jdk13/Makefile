@@ -49,6 +49,7 @@ LATEST_LINK=	jdk13
 ONLY_FOR_ARCHS=	i386
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_XORG=	ice sm x11 xext xp xt xtst
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 MAKE_ENV=	ALT_BOOTDIR="${JDK13DIR}" \
