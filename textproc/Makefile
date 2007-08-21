@@ -363,6 +363,7 @@
     SUBDIR += p5-HTML-Entities-Numbered
     SUBDIR += p5-HTML-EscapeEvil
     SUBDIR += p5-HTML-Format
+    SUBDIR += p5-HTML-FormatText-WithLinks
     SUBDIR += p5-HTML-Fraction
     SUBDIR += p5-HTML-SBC
     SUBDIR += p5-HTML-TagFilter
