@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	upx
-PORTVERSION=	3.00
+PORTVERSION=	3.01
 CATEGORIES=	archivers
 MASTER_SITES=	http://upx.sourceforge.net/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
