@@ -10445,6 +10445,7 @@ p5-Net-Whois-Raw	ports/net/p5-Net-Whois-Raw
 p5-Net-Write	ports/net/p5-Net-Write
 p5-Net-XMPP	ports/net-im/p5-Net-XMPP
 p5-Net-XWhois	ports/net/p5-Net-XWhois
+p5-Net-YASA	ports/textproc/p5-Net-YASA
 p5-Net-Yadis	ports/net/p5-Net-Yadis
 p5-Net-Z3950	ports/net/p5-Net-Z3950
 p5-Net-Z3950-SimpleServer	ports/net/p5-Net-Z3950-SimpleServer
