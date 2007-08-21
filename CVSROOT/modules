@@ -11850,6 +11850,7 @@ pecl-stats	ports/math/pecl-stats
 pecl-stem	ports/textproc/pecl-stem
 pecl-svn	ports/devel/pecl-svn
 pecl-swish	ports/www/pecl-swish
+pecl-syck	ports/textproc/pecl-syck
 pecl-tcpwrap	ports/security/pecl-tcpwrap
 pecl-tidy	ports/www/pecl-tidy
 pecl-timezonedb	ports/misc/pecl-timezonedb
