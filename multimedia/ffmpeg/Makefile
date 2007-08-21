@@ -23,7 +23,7 @@ WANT_SDL=	yes
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
+CONFIGURE_ARGS+=--cc="${CC}" --prefix="${PREFIX}" \
 		--make="${GMAKE}" \
 		--disable-debug \
 		--enable-memalign-hack \
@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--enable-gpl \
 		--enable-pthreads
 CONFIGURE_ENV+=	LANG=C
-MAKE_ENV=	INSTALL="${INSTALL}"
+MAKE_ENV+=	INSTALL="${INSTALL}"
 SHLIB_VER=	1
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	yes
