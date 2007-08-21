@@ -18,6 +18,8 @@ DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	An implementation of Ruby Interpreter in Pure Java
 
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
