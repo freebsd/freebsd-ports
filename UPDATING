@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070821:
+  AFFECTS: users of net-im/pidgin
+  AUTHOR:  marcus@FreeBSD.org
+
+Because sound support was added to finch 2.1.1, the sound files used by
+pidgin have been moved from the pidgin port to the libpurple port.  This
+makes updating a bit tricky.  To properly update to pidgin 2.1.1 and retain
+sounds, you must first upgrade libpurple and pidgin as you normally would,
+then force a rebuild of libpurple.  For example, using portupgrade:
+
+  # portupgrade net-im/libpurple net-im/pidgin
+  # portupgrade -f net-im/libpurple
+
 20070804:
   AFFECTS: users of DESTDIR
   AUTHOR:  gabor@FreeBSD.org
