@@ -14606,6 +14606,7 @@ sim4		ports/biology/sim4
 sim6811		ports/emulators/sim6811
 simage		ports/graphics/simage
 simd-viterbi	ports/math/simd-viterbi
+simdock		ports/x11/simdock
 simgear		ports/devel/simgear
 simh		ports/emulators/simh
 simian		ports/devel/simian
