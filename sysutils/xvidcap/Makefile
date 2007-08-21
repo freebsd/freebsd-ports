@@ -48,21 +48,10 @@ NULLDOCS=		COPYING
 
 MAN1=			xvidcap.1
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libavutil.so)
-# To be removed after ffmep-devel'upgrade
-BROKEN=	Cannot compile when ffmpeg-devel is installed
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=	Compilation error with gcc-2.95.
-.endif
-
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-install:
 	@${RM} ${NULLDOCS:S|^|${DOCSDIR}/|}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
