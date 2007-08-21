@@ -2541,6 +2541,7 @@ epstools	ports/mail/epstools
 epydoc		ports/devel/epydoc
 epylog		ports/sysutils/epylog
 eqe		ports/textproc/eqe
+eqonomize	ports/finance/eqonomize
 erc		ports/irc/erc
 eric		ports/devel/eric
 eric4		ports/devel/eric4
