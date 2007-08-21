@@ -1,0 +1,27 @@
+--- sa-learn.raw.orig	Wed Aug  8 06:19:47 2007
++++ sa-learn.raw	Mon Aug 20 19:05:06 2007
+@@ -101,6 +101,7 @@ GetOptions(
+   'local|L'              => \$opt{'local'},
+   'no-sync|nosync'       => \$opt{'nosync'},
+   'showdots'             => \$opt{'showdots'},
++  'quiet|q'              => \$opt{'quiet'},
+   'progress'             => \$opt{'progress'},
+   'use-ignores'          => \$opt{'use-ignores'},
+   'no-rebuild|norebuild' => sub { $opt{'nosync'} = 1; warn "The --no-rebuild option has been deprecated.  Please use --no-sync instead.\n" },
+@@ -433,7 +434,7 @@ eval {
+   $progress->final() if ($opt{progress} && $progress);
+ 
+   my $phrase = defined $forget ? "Forgot" : "Learned";
+-  print "$phrase tokens from $learnedcount message(s) ($messagecount message(s) examined)\n";
++  print "$phrase tokens from $learnedcount message(s) ($messagecount message(s) examined)\n" if (!$opt{quiet});
+ 
+   # If we needed to make a tempfile, go delete it.
+   if ( defined $tempfile ) {
+@@ -601,6 +602,7 @@ Options:
+                        (default: /etc/mail/spamassassin)
+  --cf='config line'    Additional line of configuration
+  -D, --debug [area=n,...]  Print debugging messages
++ -q, --quiet           Reduce amount of information printed out
+  -V, --version         Print version
+  -h, --help            Print usage message
+ 
