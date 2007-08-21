@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Authen-Htpasswd
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	security perl5 www
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Authen
@@ -28,10 +28,4 @@ MAN3=	Authen::Htpasswd.3 \
 	Authen::Htpasswd::User.3 \
 	Authen::Htpasswd::Util.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
