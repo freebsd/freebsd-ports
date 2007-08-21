@@ -15,6 +15,10 @@ DRUPAL4_MODULE=	yes
 .endif
 .endif
 
+.if defined(DRUPAL_MODULE)
+DRUPAL_MODTYPE=	modules
+.endif
+
 # Make sure DRUPAL_PORT is defined.  If no DRUPAL*_module defined, then define DRUPAL4_PORT
 .if defined(DRUPAL4_PORT) || defined(DRUPAL5_PORT)
 DRUPAL_PORT?=	yes
@@ -24,7 +28,13 @@ DRUPAL4_PORT=	yes
 .endif
 .endif
 
-.if defined(DRUPAL5_MODULE) || defined(DRUPAL5_PORT)
+# Make sure DRUPAL_THEME is defined
+.if defined(DRUPAL5_THEME)
+DRUPAL_THEME?=	yes
+DRUPAL_MODTYPE=	themes
+.endif
+
+.if defined(DRUPAL5_MODULE) || defined(DRUPAL5_PORT) || defined(DRUPAL5_THEME)
 DRUPAL_BASE?=	www/drupal5
 .else
 DRUPAL_BASE?=	www/drupal4
@@ -38,31 +48,44 @@ SUB_LIST+=	DRUPAL_BASE=${DRUPAL_BASE} DRUPAL_DIR=${DRUPAL_DIR}
 DOCSDIR?=	${DRUPAL_DOCSDIR}
 .endif
 
-.if defined(DRUPAL_MODULE)
+.if defined(DRUPAL_MODULE) || defined (DRUPAL_THEME)
 
 .if defined(DRUPAL4_MODULE)
 PKGNAMEPREFIX=	drupal4-
 DRUPAL_VERSION?=	4.7.0
 .if defined(DRUPAL_MODSUBDIR)
-DRUPAL_MODDIR?= ${DRUPAL_BASE}/modules/${DRUPAL_MODSUBDIR}
+DRUPAL_MODDIR?= ${DRUPAL_BASE}/${DRUPAL_MODTYPE}/${DRUPAL_MODSUBDIR}
 .else 
-DRUPAL_MODDIR?= ${DRUPAL_BASE}/modules
+DRUPAL_MODDIR?= ${DRUPAL_BASE}/${DRUPAL_MODTYPE}
 .endif
 .endif
 
-.if defined(DRUPAL5_MODULE)
+.if defined(DRUPAL5_MODULE) || defined (DRUPAL5_THEME)
 PKGNAMEPREFIX=	drupal5-
 DRUPAL_VERSION?=	5.0
 .if defined(DRUPAL_MODSUBDIR)
-DRUPAL_MODDIR?= ${DRUPAL_BASE}/sites/all/modules/${DRUPAL_MODSUBDIR}
+DRUPAL_MODDIR?= ${DRUPAL_BASE}/sites/all/${DRUPAL_MODTYPE}/${DRUPAL_MODSUBDIR}
 .else
-DRUPAL_MODDIR?= ${DRUPAL_BASE}/sites/all/modules/${PORTNAME}
+DRUPAL_MODDIR?= ${DRUPAL_BASE}/sites/all/${DRUPAL_MODTYPE}/${PORTNAME}
 .endif
 .endif
 
 DOCSDIR?=	${DRUPAL_DOCSDIR}/${PORTNAME}
 
-MASTER_SITES?=	http://ftp.osuosl.org/pub/drupal/files/projects/
+.if defined(DRUPAL_MOD_SNAPSHOT)
+MASTER_SITE_DRUPAL+= \
+	${MASTER_SITE_LOCAL}
+MASTER_SITE_DRUPAL_SUBDIR=	pav/drupal
+.else
+MASTER_SITE_DRUPAL+= \
+	http://ftp.drupal.org/files/projects/ \
+	http://ftp.osuosl.org/pub/drupal/files/projects/
+MASTER_SITE_DRUPAL_SUBDIR=
+.endif
+
+MASTER_SITES?=	${MASTER_SITE_DRUPAL}
+MASTER_SITE_SUBDIR?=	${MASTER_SITE_DRUPAL_SUBDIR}
+
 DIST_SUBDIR=	drupal
 
 NO_BUILD?=	yes
@@ -83,7 +106,7 @@ PLIST_SUB+=	DRUPAL_MODDIR=${DRUPAL_MODDIR}
 PLIST_FILES+=	${MODULE_FILES:C|^|%%DRUPAL_MODDIR%%/|}
 PLIST_FILES+=	${MODULE_CONF_FILES:C|^|%%DRUPAL_MODDIR%%/|:C|$|-dist|}
 PLIST_DIRS+=	${MODULE_DIRS:C|^|%%DRUPAL_MODDIR%%/|}
-.if defined(DRUPAL5_MODULE)
+.if defined(DRUPAL5_MODULE) || defined(DRUPAL5_THEME)
 PLIST_DIRS+=	${DRUPAL_MODDIR}
 .endif
 .if defined(DRUPAL_MODSUBDIR)
@@ -96,7 +119,7 @@ PLIST_DIRS+=	%%DOCSDIR%%
 .endif
 
 do-install:
-.if defined(DRUPAL5_MODULE)
+.if defined(DRUPAL5_MODULE) || defined(DRUPAL5_THEME)
 	@${MKDIR} ${DRUPAL_MODDIR:C|^|${PREFIX}/|}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${DRUPAL_MODDIR:C|^|${PREFIX}/|}
 .endif
