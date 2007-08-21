@@ -7,20 +7,18 @@
 
 PORTNAME=	nice_menus
 DISTVERSION=	5.x-1.x-dev
-PORTREVISION=	20070609
+PORTREVISION=	20070816
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	CSS / Javascript pull-down menus for Drupal
 
-BROKEN=		Checksum mismatch
-
 DRUPAL5_MODULE=	yes
+DRUPAL_MOD_SNAPSHOT=	yes
 
-MODULE_FILES=	arrow-down.png arrow-left.png arrow-right.png ie.css \
+MODULE_FILES=	arrow-down.png arrow-left.png arrow-right.png \
 		nice_menus.css nice_menus.info nice_menus.js \
-		nice_menus.module
+		nice_menus.module nice_menus_default.css
 
 DOC_FILES=	README.txt UPGRADE.txt LICENSE.txt
 
