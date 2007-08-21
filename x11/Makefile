@@ -260,6 +260,7 @@
     SUBDIR += settitle
     SUBDIR += setxkbmap
     SUBDIR += silo
+    SUBDIR += simdock
     SUBDIR += sisctrl
     SUBDIR += slim
     SUBDIR += slock
