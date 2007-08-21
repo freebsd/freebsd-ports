@@ -8032,6 +8032,7 @@ nedit		ports/editors/nedit
 nefarious	ports/irc/nefarious
 nefu		ports/net-mgmt/nefu
 nehquake	ports/games/nehquake
+neko		ports/lang/neko
 nekobee		ports/audio/nekobee
 nemesis		ports/net/nemesis
 nenscript	ports/print/nenscript
