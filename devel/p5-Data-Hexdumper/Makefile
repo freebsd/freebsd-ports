@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	Data-Hexdumper
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Data
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A module for displaying binary data in a readable format
 
 PERL_CONFIGURE=	yes
