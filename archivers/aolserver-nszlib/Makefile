@@ -7,7 +7,7 @@
 
 PORTNAME=	nszlib
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers www
 MASTER_SITES=	ftp://ftp.crystalballinc.com/pub/vlad/
 MASTER_SITE_SUBDIR=	aolserver
@@ -21,7 +21,7 @@ COMMENT=	Zlib library interface for AOLserver
 AOLSERVERBASE?=	aolserver
 
 BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 
 USE_GMAKE=	yes
 

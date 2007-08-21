@@ -7,6 +7,7 @@
 
 PORTNAME=	nsmcrypt
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.aolserver.cz/download/
 PKGNAMEPREFIX=	aolserver-
@@ -21,7 +22,7 @@ WRKSRC=		${WRKDIR}
 AOLSERVERBASE?=	aolserver
 LIB_DEPENDS+=	mcrypt.8:${PORTSDIR}/security/mcrypt
 BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 
 USE_GMAKE=	yes
 MAKEFILE=	Makefile.ns

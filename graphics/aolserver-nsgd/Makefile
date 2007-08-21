@@ -7,7 +7,7 @@
 
 PORTNAME=	nsgd
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics www
 MASTER_SITES=	http://www.aolserver.cz/download/
 PKGNAMEPREFIX=	aolserver-
@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}
 AOLSERVERBASE?=	aolserver
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 
 USE_GMAKE=	yes
 
