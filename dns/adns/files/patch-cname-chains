@@ -1,0 +1,56 @@
+Index: src/query.c
+===================================================================
+--- src/query.c	(revision 14)
++++ src/query.c	(working copy)
+@@ -63,6 +63,10 @@
+ 
+   qu->cname_dgram= 0;
+   qu->cname_dglen= qu->cname_begin= 0;
++  /* Patch to allow CNAME chains */
++  /* Credits: Brad Spencer, see http://www.chiark.greenend.org.uk/pipermail/adns-discuss/2006/001161.html */
++  /* Allow CNAME chains up to some sane limit */
++  qu->cname_alias_hops_left = 10;
+ 
+   adns__vbuf_init(&qu->search_vb);
+   qu->search_origlen= qu->search_pos= qu->search_doneabs= 0;
+Index: src/internal.h
+===================================================================
+--- src/internal.h	(revision 14)
++++ src/internal.h	(working copy)
+@@ -231,6 +231,11 @@
+   int cname_dglen, cname_begin;
+   /* If non-0, has been allocated using . */
+ 
++  /* Patch to allow CNAME chains */
++  /* Credits: Brad Spencer, see http://www.chiark.greenend.org.uk/pipermail/adns-discuss/2006/001161.html */
++  int cname_alias_hops_left;
++  /* The number of cname alias hops we will allow */
++
+   vbuf search_vb;
+   int search_origlen, search_pos, search_doneabs;
+   /* Used by the searching algorithm.  The query domain in textual form
+Index: src/reply.c
+===================================================================
+--- src/reply.c	(revision 14)
++++ src/reply.c	(working copy)
+@@ -190,12 +190,17 @@
+       if (qu->flags & adns_qf_cname_forbid) {
+ 	adns__query_fail(qu,adns_s_prohibitedcname);
+ 	return;
+-      } else if (qu->cname_dgram) { /* Ignore second and subsequent CNAME(s) */
++      }
++
++    /* Patch to allow CNAME chains */
++    /* Credits: Brad Spencer, see http://www.chiark.greenend.org.uk/pipermail/adns-discuss/2006/001161.html */
++    else if (qu->cname_dgram && --(qu->cname_alias_hops_left) <= 0) { /* Don't follow "too long" CNAME chains */
+ 	adns__debug(ads,serv,qu,"allegedly canonical name %s"
+-		    " is actually alias for %s", qu->answer->cname,
++           " is actually alias for %s and aliases too deep",
++                    qu->answer->cname,
+ 		    adns__diag_domain(ads,serv,qu, &qu->vb,
+ 				      dgram,dglen,rdstart));
+-	adns__query_fail(qu,adns_s_prohibitedcname);
++    adns__query_fail(qu,adns_s_norecurse);
+ 	return;
+       } else if (wantedrrs) { /* Ignore CNAME(s) after RR(s). */
+ 	adns__debug(ads,serv,qu,"ignoring CNAME (to %s) coexisting with RR",
