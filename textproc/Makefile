@@ -417,6 +417,7 @@
     SUBDIR += p5-MKDoc-XML
     SUBDIR += p5-Makefile-Parser
     SUBDIR += p5-MathML-Entities
+    SUBDIR += p5-Net-YASA
     SUBDIR += p5-NetAddr-IP-Find
     SUBDIR += p5-Number-Format
     SUBDIR += p5-Number-Spell
