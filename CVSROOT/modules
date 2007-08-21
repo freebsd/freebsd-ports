@@ -9794,6 +9794,7 @@ p5-HTML-Element-Library	ports/www/p5-HTML-Element-Library
 p5-HTML-Email-Obfuscate	ports/security/p5-HTML-Email-Obfuscate
 p5-HTML-Embperl	ports/www/p5-HTML-Embperl
 p5-HTML-Encoding	ports/www/p5-HTML-Encoding
+p5-HTML-Entities-ImodePictogram	ports/textproc/p5-HTML-Entities-ImodePictogram
 p5-HTML-Entities-Numbered	ports/textproc/p5-HTML-Entities-Numbered
 p5-HTML-EscapeEvil	ports/textproc/p5-HTML-EscapeEvil
 p5-HTML-FillInForm	ports/www/p5-HTML-FillInForm
