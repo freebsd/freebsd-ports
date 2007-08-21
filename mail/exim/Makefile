@@ -409,7 +409,7 @@ SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-lradius,' \
 .elif ${WITH_RADIUS_TYPE:L} == radiusclient
 LIB_DEPENDS+=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
 SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-L${LOCALBASE}/lib -lradiusclient-ng,' \
-		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1${LOCALBASE}/radiusclient-ng/radiusclient.conf,' \
+		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1${LOCALBASE}/etc/radiusclient-ng/radiusclient.conf,' \
 		-e 's,^\# (RADIUS_LIB_TYPE=).*,\1RADIUSCLIENTNEW,'
 .else
 IGNORE=		the variable WITH_RADIUS_TYPE must be either RADLIB or RADIUSCLIENT
