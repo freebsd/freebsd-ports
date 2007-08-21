@@ -1,0 +1,31 @@
+--- tool/INSTALLBIN.orig	Tue Aug 21 15:08:47 2007
++++ tool/INSTALLBIN	Tue Aug 21 15:14:16 2007
+@@ -96,17 +96,17 @@
+ #####################################################################
+ # Copy lib files
+ #####################################################################
+-mkdir -p $LIBDIR/src
+ for i in include/*; do
+   if test -d $i; then mkdir -p $LIBDIR/$i; fi
+ done
+ mkdir -p $LIBDIR/lib/prec_stl
+ mkdir -p $LIBDIR/lib/longlong
+ mkdir -p $LIBDIR/stl
++mkdir -p $LIBDIR/inc
+ mkdir -p $LIBDIR/main
+ 
+ # Copy lib files
+-FILELIST="MAKEINFO include/* include/*/* stl/* lib/prec_stl/* lib/longlong/longlong.h G__ci.h main/*"
++FILELIST="include/* include/*/* stl/* lib/prec_stl/* lib/longlong/longlong.h inc/* main/*"
+ # Add either shared or static library to $FILELIST
+ if test -f libcint.so; then
+   FILELIST="$FILELIST libcint.so"
+@@ -115,7 +115,7 @@
+ fi
+ for i in $FILELIST; do
+   case $i in
+-  include/make*|include/Make*|*/setup*)
++  include/make*|include/Make*|*/setup*|*/CVS|*/CVS/*)
+     ;;
+   *)
+     if ! test -d $i; then echo -n "$i "; cp $i $LIBDIR/$i; fi

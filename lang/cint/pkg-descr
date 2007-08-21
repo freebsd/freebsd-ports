@@ -1,0 +1,12 @@
+CINT is a C/C++ interpreter aimed at processing C/C++ scripts.
+
+CINT covers about 95% of ANSI C and 85% of C++. A CINT script can call
+compiled classes/functions and compiled code can make callbacks to CINT
+user defined functions. Utilities, like makecint and rootcint, automate
+the process of embedding compiled C/C++ library code as shared objects
+(as Dynamic Link Library, DLL, or shared library, .so). Source files
+and shared objects can be dynamically loaded/unloaded without stopping
+the CINT process. CINT offers a gdb like debugging environment for
+interpreted programs.
+
+WWW:	http://root.cern.ch/twiki/bin/view/ROOT/CINT

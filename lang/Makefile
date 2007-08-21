@@ -24,6 +24,7 @@
     SUBDIR += chameleon
     SUBDIR += chicken
     SUBDIR += cim
+    SUBDIR += cint
     SUBDIR += clips
     SUBDIR += clisp
     SUBDIR += cmucl
