@@ -177,6 +177,10 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/regtests.m4
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/rgraph.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/showverb.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/splitmesh3.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/splitmesh3.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/splitmesh6.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/splitmesh6.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/strversionnumber.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/testFE-P3.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/testFE-P3dc.edp
