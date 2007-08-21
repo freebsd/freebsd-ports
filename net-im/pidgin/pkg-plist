@@ -154,6 +154,7 @@ share/gnome/pixmaps/pidgin/emotes/default/bomb.png
 share/gnome/pixmaps/pidgin/emotes/default/bowl.png
 share/gnome/pixmaps/pidgin/emotes/default/boy.png
 share/gnome/pixmaps/pidgin/emotes/default/brb.png
+share/gnome/pixmaps/pidgin/emotes/default/bulgy-eyes.png
 share/gnome/pixmaps/pidgin/emotes/default/bye.png
 share/gnome/pixmaps/pidgin/emotes/default/cake.png
 share/gnome/pixmaps/pidgin/emotes/default/call-me.png
@@ -178,6 +179,7 @@ share/gnome/pixmaps/pidgin/emotes/default/crying.png
 share/gnome/pixmaps/pidgin/emotes/default/curl-lip.png
 share/gnome/pixmaps/pidgin/emotes/default/curse.png
 share/gnome/pixmaps/pidgin/emotes/default/cute.png
+share/gnome/pixmaps/pidgin/emotes/default/cyclops.png
 share/gnome/pixmaps/pidgin/emotes/default/dance.png
 share/gnome/pixmaps/pidgin/emotes/default/dazed.png
 share/gnome/pixmaps/pidgin/emotes/default/desire.png
@@ -214,25 +216,31 @@ share/gnome/pixmaps/pidgin/emotes/default/handshake.png
 share/gnome/pixmaps/pidgin/emotes/default/highfive.png
 share/gnome/pixmaps/pidgin/emotes/default/hug-left.png
 share/gnome/pixmaps/pidgin/emotes/default/hug-right.png
-share/gnome/pixmaps/pidgin/emotes/default/hungry.png
 share/gnome/pixmaps/pidgin/emotes/default/hypnotized.png
 share/gnome/pixmaps/pidgin/emotes/default/in-love.png
 share/gnome/pixmaps/pidgin/emotes/default/island.png
 share/gnome/pixmaps/pidgin/emotes/default/jump.png
 share/gnome/pixmaps/pidgin/emotes/default/kiss.png
+share/gnome/pixmaps/pidgin/emotes/default/kissed.png
+share/gnome/pixmaps/pidgin/emotes/default/kissing.png
 share/gnome/pixmaps/pidgin/emotes/default/knife.png
 share/gnome/pixmaps/pidgin/emotes/default/lamp.png
 share/gnome/pixmaps/pidgin/emotes/default/lashes.png
 share/gnome/pixmaps/pidgin/emotes/default/laugh.png
 share/gnome/pixmaps/pidgin/emotes/default/liquor.png
+share/gnome/pixmaps/pidgin/emotes/default/loser.png
 share/gnome/pixmaps/pidgin/emotes/default/love-over.png
 share/gnome/pixmaps/pidgin/emotes/default/love.png
 share/gnome/pixmaps/pidgin/emotes/default/lying.png
-share/gnome/pixmaps/pidgin/emotes/default/mad-tongue.png
+share/gnome/pixmaps/pidgin/emotes/default/madtongue.png
 share/gnome/pixmaps/pidgin/emotes/default/mail.png
+share/gnome/pixmaps/pidgin/emotes/default/male-fighter1.png
+share/gnome/pixmaps/pidgin/emotes/default/male-fighter2.png
 share/gnome/pixmaps/pidgin/emotes/default/mean.png
 share/gnome/pixmaps/pidgin/emotes/default/meeting.png
+share/gnome/pixmaps/pidgin/emotes/default/messed.png
 share/gnome/pixmaps/pidgin/emotes/default/mobile.png
+share/gnome/pixmaps/pidgin/emotes/default/mohawk.png
 share/gnome/pixmaps/pidgin/emotes/default/moneymouth.png
 share/gnome/pixmaps/pidgin/emotes/default/monkey.png
 share/gnome/pixmaps/pidgin/emotes/default/moon.png
@@ -240,6 +248,7 @@ share/gnome/pixmaps/pidgin/emotes/default/msn-away.png
 share/gnome/pixmaps/pidgin/emotes/default/msn-busy.png
 share/gnome/pixmaps/pidgin/emotes/default/msn.png
 share/gnome/pixmaps/pidgin/emotes/default/msn_online.png
+share/gnome/pixmaps/pidgin/emotes/default/music.png
 share/gnome/pixmaps/pidgin/emotes/default/musical-note.png
 share/gnome/pixmaps/pidgin/emotes/default/nailbiting.png
 share/gnome/pixmaps/pidgin/emotes/default/neutral.png
@@ -249,6 +258,7 @@ share/gnome/pixmaps/pidgin/emotes/default/peace.png
 share/gnome/pixmaps/pidgin/emotes/default/phone.png
 share/gnome/pixmaps/pidgin/emotes/default/pig.png
 share/gnome/pixmaps/pidgin/emotes/default/pill.png
+share/gnome/pixmaps/pidgin/emotes/default/pirate.png
 share/gnome/pixmaps/pidgin/emotes/default/pissed-off.png
 share/gnome/pixmaps/pidgin/emotes/default/pizza.png
 share/gnome/pixmaps/pidgin/emotes/default/plate.png
@@ -274,8 +284,10 @@ share/gnome/pixmaps/pidgin/emotes/default/shock.png
 share/gnome/pixmaps/pidgin/emotes/default/shout.png
 share/gnome/pixmaps/pidgin/emotes/default/shut-mouth.png
 share/gnome/pixmaps/pidgin/emotes/default/sick.png
+share/gnome/pixmaps/pidgin/emotes/default/sidefrown.png
 share/gnome/pixmaps/pidgin/emotes/default/sigarette.png
 share/gnome/pixmaps/pidgin/emotes/default/silly.png
+share/gnome/pixmaps/pidgin/emotes/default/sinister.png
 share/gnome/pixmaps/pidgin/emotes/default/skeleton.png
 share/gnome/pixmaps/pidgin/emotes/default/skywalker.png
 share/gnome/pixmaps/pidgin/emotes/default/sleepy.png
@@ -289,9 +301,11 @@ share/gnome/pixmaps/pidgin/emotes/default/soccerball.png
 share/gnome/pixmaps/pidgin/emotes/default/soldier.png
 share/gnome/pixmaps/pidgin/emotes/default/star.png
 share/gnome/pixmaps/pidgin/emotes/default/starving.png
+share/gnome/pixmaps/pidgin/emotes/default/stop.png
 share/gnome/pixmaps/pidgin/emotes/default/struggle.png
 share/gnome/pixmaps/pidgin/emotes/default/sun.png
 share/gnome/pixmaps/pidgin/emotes/default/sweat.png
+share/gnome/pixmaps/pidgin/emotes/default/talktohand.png
 share/gnome/pixmaps/pidgin/emotes/default/teeth.png
 share/gnome/pixmaps/pidgin/emotes/default/terror.png
 share/gnome/pixmaps/pidgin/emotes/default/theme
@@ -307,6 +321,7 @@ share/gnome/pixmaps/pidgin/emotes/default/vampire.png
 share/gnome/pixmaps/pidgin/emotes/default/victory.png
 share/gnome/pixmaps/pidgin/emotes/default/waiting.png
 share/gnome/pixmaps/pidgin/emotes/default/watermelon.png
+share/gnome/pixmaps/pidgin/emotes/default/waving.png
 share/gnome/pixmaps/pidgin/emotes/default/weep.png
 share/gnome/pixmaps/pidgin/emotes/default/wilt.png
 share/gnome/pixmaps/pidgin/emotes/default/wink.png
@@ -359,6 +374,14 @@ share/gnome/pixmaps/pidgin/protocols/48/silc.png
 share/gnome/pixmaps/pidgin/protocols/48/simple.png
 share/gnome/pixmaps/pidgin/protocols/48/yahoo.png
 share/gnome/pixmaps/pidgin/protocols/48/zephyr.png
+share/gnome/pixmaps/pidgin/status/11/available.png
+share/gnome/pixmaps/pidgin/status/11/away.png
+share/gnome/pixmaps/pidgin/status/11/busy.png
+share/gnome/pixmaps/pidgin/status/11/chat.png
+share/gnome/pixmaps/pidgin/status/11/extended-away.png
+share/gnome/pixmaps/pidgin/status/11/invisible.png
+share/gnome/pixmaps/pidgin/status/11/offline.png
+share/gnome/pixmaps/pidgin/status/11/person.png
 share/gnome/pixmaps/pidgin/status/16/available.png
 share/gnome/pixmaps/pidgin/status/16/away.png
 share/gnome/pixmaps/pidgin/status/16/busy.png
@@ -367,10 +390,11 @@ share/gnome/pixmaps/pidgin/status/16/extended-away.png
 share/gnome/pixmaps/pidgin/status/16/invisible.png
 share/gnome/pixmaps/pidgin/status/16/log-in.png
 share/gnome/pixmaps/pidgin/status/16/log-out.png
-share/gnome/pixmaps/pidgin/status/16/message-pending.png
 share/gnome/pixmaps/pidgin/status/16/offline.png
 share/gnome/pixmaps/pidgin/status/16/person.png
 share/gnome/pixmaps/pidgin/status/16/rtl/extended-away.png
+share/gnome/pixmaps/pidgin/status/16/rtl/log-in.png
+share/gnome/pixmaps/pidgin/status/16/rtl/log-out.png
 share/gnome/pixmaps/pidgin/status/22/available.png
 share/gnome/pixmaps/pidgin/status/22/away.png
 share/gnome/pixmaps/pidgin/status/22/busy.png
@@ -382,6 +406,8 @@ share/gnome/pixmaps/pidgin/status/22/log-out.png
 share/gnome/pixmaps/pidgin/status/22/offline.png
 share/gnome/pixmaps/pidgin/status/22/person.png
 share/gnome/pixmaps/pidgin/status/22/rtl/extended-away.png
+share/gnome/pixmaps/pidgin/status/22/rtl/log-in.png
+share/gnome/pixmaps/pidgin/status/22/rtl/log-out.png
 share/gnome/pixmaps/pidgin/status/32/available.png
 share/gnome/pixmaps/pidgin/status/32/away.png
 share/gnome/pixmaps/pidgin/status/32/busy.png
@@ -393,6 +419,8 @@ share/gnome/pixmaps/pidgin/status/32/log-out.png
 share/gnome/pixmaps/pidgin/status/32/offline.png
 share/gnome/pixmaps/pidgin/status/32/person.png
 share/gnome/pixmaps/pidgin/status/32/rtl/extended-away.png
+share/gnome/pixmaps/pidgin/status/32/rtl/log-in.png
+share/gnome/pixmaps/pidgin/status/32/rtl/log-out.png
 share/gnome/pixmaps/pidgin/status/48/available.png
 share/gnome/pixmaps/pidgin/status/48/away.png
 share/gnome/pixmaps/pidgin/status/48/busy.png
@@ -551,17 +579,12 @@ share/gnome/pixmaps/purple/buddy_icons/qq/qq_96.png
 share/gnome/pixmaps/purple/buddy_icons/qq/qq_97.png
 share/gnome/pixmaps/purple/buddy_icons/qq/qq_98.png
 share/gnome/pixmaps/purple/buddy_icons/qq/qq_99.png
-share/gnome/sounds/pidgin/alert.wav
-share/gnome/sounds/pidgin/login.wav
-share/gnome/sounds/pidgin/logout.wav
-share/gnome/sounds/pidgin/receive.wav
-share/gnome/sounds/pidgin/send.wav
 share/icons/hicolor/16x16/apps/pidgin.png
+share/icons/hicolor/22x22/apps/pidgin.png
 share/icons/hicolor/24x24/apps/pidgin.png
 share/icons/hicolor/32x32/apps/pidgin.png
 share/icons/hicolor/48x48/apps/pidgin.png
 share/icons/hicolor/scalable/apps/pidgin.svg
-@dirrm share/gnome/sounds/pidgin
 @dirrm share/gnome/pixmaps/purple/buddy_icons/qq
 @dirrm share/gnome/pixmaps/purple/buddy_icons
 @dirrm share/gnome/pixmaps/purple
@@ -581,6 +604,7 @@ share/icons/hicolor/scalable/apps/pidgin.svg
 @dirrm share/gnome/pixmaps/pidgin/status/22
 @dirrm share/gnome/pixmaps/pidgin/status/16/rtl
 @dirrm share/gnome/pixmaps/pidgin/status/16
+@dirrm share/gnome/pixmaps/pidgin/status/11
 @dirrm share/gnome/pixmaps/pidgin/status
 @dirrm share/gnome/pixmaps/pidgin/protocols/48
 @dirrm share/gnome/pixmaps/pidgin/protocols/22
