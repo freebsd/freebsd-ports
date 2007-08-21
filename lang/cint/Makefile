@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://root.cern.ch/root/
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	C/C++ interpreter
 
-BUILD_DEPENDS=	bash:../../shells/bash
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 HAS_CONFIGURE=	yes
