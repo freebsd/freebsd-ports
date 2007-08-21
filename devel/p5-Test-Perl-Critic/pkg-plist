@@ -1,4 +1,0 @@
-@comment $FreeBSD$
-%%SITE_PERL%%/Test/Perl/Critic.pm
-@dirrmtry %%SITE_PERL%%/Test/Perl
-@dirrmtry %%SITE_PERL%%/Test
