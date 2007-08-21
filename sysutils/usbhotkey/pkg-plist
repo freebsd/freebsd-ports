@@ -1,14 +1,4 @@
-share/usbhotkey-0.2/X11_keycodes.rb
-share/usbhotkey-0.2/ag5/level0.png
-share/usbhotkey-0.2/ag5/level1.png
-share/usbhotkey-0.2/ag5/level2.png
-share/usbhotkey-0.2/ag5/level3.png
-share/usbhotkey-0.2/ag5/level4.png
-share/usbhotkey-0.2/ag5/level5.png
-share/usbhotkey-0.2/ag5/level6.png
-share/usbhotkey-0.2/ag5/level7.png
-share/usbhotkey-0.2/ag5-3colors.rb
-share/usbhotkey-0.2/ag5-replicate-colours.rb
+share/usbhotkey-0.3/ag5-3colors.rb
+share/usbhotkey-0.3/ag5-replicate-colours.rb
 bin/usbhotkey
-@dirrm share/usbhotkey-0.2/ag5
-@dirrm share/usbhotkey-0.2
+@dirrm share/usbhotkey-0.3
