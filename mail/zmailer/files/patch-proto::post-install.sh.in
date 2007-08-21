@@ -1,0 +1,11 @@
+--- proto/post-install.sh.in.orig	Fri Apr 16 12:45:45 2004
++++ proto/post-install.sh.in	Fri Apr 16 12:46:00 2004
+@@ -373,7 +373,7 @@
+ ", $POSTOFFICE);
+ 
+ if (! -d "$POSTOFFICE/.") {
+-    mymysystem("$MKDIR -p $POSTOFFICE");
++    mysystem("$MKDIR -p $POSTOFFICE");
+     
+ }
+ mysystem("chmod 2755 $POSTOFFICE/.");
