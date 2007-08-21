@@ -163,6 +163,7 @@
     SUBDIR += mpd
     SUBDIR += munger
     SUBDIR += nawk
+    SUBDIR += neko
     SUBDIR += newlisp
     SUBDIR += nhc98
     SUBDIR += nickle
