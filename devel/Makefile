@@ -176,6 +176,7 @@
     SUBDIR += cogito
     SUBDIR += colorer
     SUBDIR += commoncpp
+    SUBDIR += compiz-bcop
     SUBDIR += configgen
     SUBDIR += cons
     SUBDIR += cons-test

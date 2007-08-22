@@ -1,0 +1,35 @@
+# New ports collection makefile for:	compiz-bcop
+# Date created:				2007-08-15
+# Whom:					Robert Noland <rnoland@2hip.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	compiz-bcop
+PORTVERSION=	0.5.2
+#PORTREVISION=	0
+CATEGORIES=	devel x11-wm
+MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
+
+MAINTAINER=	rnoland@2hip.net
+COMMENT=	Code generator for Compiz Fusion Plugins
+
+# This annoys me...
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+
+USE_GNOME=	pkgconfig libxslt
+
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
+		${WRKSRC}/src/bcop.in
+	@${REINPLACE_CMD} -e \
+		's|[(]datadir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.in
+
+.include <bsd.port.pre.mk>
+.include <bsd.port.post.mk>
