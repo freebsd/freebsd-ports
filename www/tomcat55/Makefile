@@ -7,7 +7,7 @@
 
 PORTNAME=	tomcat
 PORTVERSION=	5.5.23
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-5/v${PORTVERSION}/bin
@@ -136,7 +136,6 @@ do-install:
 	@${FIND} ${APP_HOME} -type d | while read a; do\
 		${CHMOD} 755 "$$a"; \
 	done
-	@${CHMOD} 755 `${FIND} ${APP_HOME} -type d`
 	@${ECHO_MSG} " [ DONE ]"
 
 post-install:
