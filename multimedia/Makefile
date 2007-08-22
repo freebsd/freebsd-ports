@@ -215,6 +215,7 @@
     SUBDIR += tovid
     SUBDIR += toxine
     SUBDIR += transcode
+    SUBDIR += transkode
     SUBDIR += tunapie
     SUBDIR += tv_grab_au
     SUBDIR += umr
