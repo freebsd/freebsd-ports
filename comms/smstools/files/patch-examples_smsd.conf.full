@@ -1,13 +1,12 @@
---- examples/smsd.conf.full	Fri Apr 21 11:25:01 2006
-+++ examples/smsd.conf.full	Fri Apr 21 15:00:32 2006
-@@ -6,20 +6,20 @@
+--- examples/smsd.conf.full.orig	Sat Jul 29 14:58:42 2006
++++ examples/smsd.conf.full	Fri Jul 20 09:39:38 2007
+@@ -6,21 +6,21 @@
  #failed = /var/spool/sms/failed
  incoming = /var/spool/sms/incoming
  #sent = /var/spool/sms/sent
 -mypath = /usr/local/bin
--#logfile = /var/log/smsd.log
 +mypath = %%PREFIX%%/bin
-+logfile = /var/log/smsd.log
+ #logfile = /var/log/smsd.log
  loglevel = 7
 -#alarmhandler = /usr/local/bin/alarmevent
 +#alarmhandler = %%PREFIX%%/bin/alarmevent
@@ -19,16 +18,15 @@
 +#eventhandler = %%PREFIX%%/bin/smsevent
  #stats = /var/log/smsd_stats
  #stats_interval = 3600
--#blacklist = /etc/smsd.black
--#whitelist = /etc/smsd.white
+ #stats_no_zeroes = no
+ #blacklist = /etc/smsd.black
+ #whitelist = /etc/smsd.white
 -#checkhandler = /usr/local/bin/smscheck
-+#blacklist = %%PREFIX%%/etc/smsd.black
-+#whitelist = %%PREFIX%%/etc/smsd.white
 +#checkhandler = %%PREFIX%%/bin/smscheck
  receive_before_send = no
- number_parts = yes
- 
-@@ -45,8 +45,8 @@
+ # autosplit 0=no 1=yes 2=with text numbers 3=concatenated
+ autosplit = 3
+@@ -47,8 +47,8 @@
  
  [GSM1]
  init = ATE0+CPMS="SM"+CNMI=2,0,0,2,1
@@ -39,7 +37,7 @@
  incoming = yes
  queues = OTHER
  #You don't need a PIN for mobile phones
-@@ -58,12 +58,12 @@
+@@ -60,12 +60,12 @@
  cs_convert = yes
  report = no
  memory_start = 1
@@ -55,7 +53,7 @@
  incoming = yes
  queues = OTHER
  #You don't need a PIN for mobile phones
-@@ -75,4 +75,4 @@
+@@ -77,4 +77,4 @@
  cs_convert = yes
  report = no
  memory_start = 1
