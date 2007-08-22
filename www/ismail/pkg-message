@@ -19,4 +19,3 @@ Note: The default configuration data store requires domxml
 to be compiled in to to mod_php4. For alternate datastores,
 check %%EXAMPLESDIR%% for sample postgresql and mysql
 schemas and set the ismail.conf file accordingly.
-
