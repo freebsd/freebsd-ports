@@ -146,6 +146,7 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Africa/Accra.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Africa/Addis_Ababa.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Africa/Algiers.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/Africa/Asmara.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Africa/Asmera.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Africa/Bamako.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Africa/Bangui.rb
@@ -265,8 +266,10 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Indiana/Knox.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Indiana/Marengo.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Indiana/Petersburg.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Indiana/Tell_City.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Indiana/Vevay.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Indiana/Vincennes.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Indiana/Winamac.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Indianapolis.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Inuvik.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Iqaluit.rb
@@ -315,6 +318,7 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Rankin_Inlet.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Recife.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Regina.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Resolute.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Rio_Branco.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Rosario.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Santiago.rb
@@ -443,6 +447,7 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Atlantic/Canary.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Atlantic/Cape_Verde.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Atlantic/Faeroe.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/Atlantic/Faroe.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Atlantic/Jan_Mayen.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Atlantic/Madeira.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Atlantic/Reykjavik.rb
@@ -456,6 +461,7 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Australia/Canberra.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Australia/Currie.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Australia/Darwin.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/Australia/Eucla.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Australia/Hobart.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Australia/LHI.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Australia/Lindeman.rb
