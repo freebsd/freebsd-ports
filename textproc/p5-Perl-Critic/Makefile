@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.06.1
+PORTVERSION=	1.07
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Perl
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
+#DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Critique Perl source for style and standards
@@ -32,10 +32,12 @@ MAN1=	perlcritic.1
 MAN3=	Perl::Critic.3 \
 	Perl::Critic::Config.3 \
 	Perl::Critic::DEVELOPER.3 \
-	Perl::Critic::Defaults.3 \
 	Perl::Critic::ConfigErrors.3 \
+	Perl::Critic::Defaults.3 \
 	Perl::Critic::Document.3 \
 	Perl::Critic::Policy.3 \
+	Perl::Critic::Policy::BuiltinFunctions::ProhibitBooleanGrep.3 \
+	Perl::Critic::Policy::BuiltinFunctions::ProhibitComplexMappings.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitLvalueSubstr.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitReverseSortBlock.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitSleepViaSelect.3 \
@@ -67,12 +69,14 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUnlessBlocks.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUnreachableCode.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUntilBlocks.3 \
+	Perl::Critic::Policy::Documentation::PodSpelling.3 \
 	Perl::Critic::Policy::Documentation::RequirePodAtEnd.3 \
 	Perl::Critic::Policy::Documentation::RequirePodSections.3 \
 	Perl::Critic::Policy::ErrorHandling::RequireCarping.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitBacktickOperators.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitBarewordFileHandles.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitInteractiveTest.3 \
+	Perl::Critic::Policy::InputOutput::ProhibitJoinedReadline.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitOneArgSelect.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitReadlineInForLoop.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitTwoArgOpen.3 \
@@ -102,8 +106,11 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitBuiltinHomonyms.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitExcessComplexity.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitExplicitReturnUndef.3 \
+	Perl::Critic::Policy::Subroutines::ProhibitManyArgs.3 \
+	Perl::Critic::Policy::Subroutines::ProhibitNestedSubs.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitSubroutinePrototypes.3 \
 	Perl::Critic::Policy::Subroutines::ProtectPrivateSubs.3 \
+	Perl::Critic::Policy::Subroutines::RequireArgUnpacking.3 \
 	Perl::Critic::Policy::Subroutines::RequireFinalReturn.3 \
 	Perl::Critic::Policy::TestingAndDebugging::ProhibitNoStrict.3 \
 	Perl::Critic::Policy::TestingAndDebugging::ProhibitNoWarnings.3 \
@@ -115,6 +122,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitConstantPragma.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitEmptyQuotes.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitEscapedCharacters.3 \
+	Perl::Critic::Policy::ValuesAndExpressions::ProhibitImplicitNewlines.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitInterpolationOfLiterals.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitLeadingZeros.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitLongChainsOfMethodCalls.3 \
@@ -136,6 +144,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Variables::ProtectPrivateVars.3 \
 	Perl::Critic::Policy::Variables::RequireInitializationForLocalVars.3 \
 	Perl::Critic::Policy::Variables::RequireLexicalLoopIterators.3 \
+	Perl::Critic::Policy::Variables::RequireLocalizedPunctuationVars.3 \
 	Perl::Critic::Policy::Variables::RequireNegativeIndices.3 \
 	Perl::Critic::PolicyFactory.3 \
 	Perl::Critic::PolicyListing.3 \
@@ -146,6 +155,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Theme.3 \
 	Perl::Critic::UserProfile.3 \
 	Perl::Critic::Utils.3 \
+	Perl::Critic::Utils::Constants.3 \
 	Perl::Critic::Utils::McCabe.3 \
 	Perl::Critic::Utils::PPI.3 \
 	Perl::Critic::Violation.3
