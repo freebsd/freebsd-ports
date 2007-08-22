@@ -1,3 +1,6 @@
-This store plugin is a bit of a wrapper for Cache::FastMmap
+This plugin is deprecated because Cache::FastMmap no longer needs to be
+wrapped to store plain values. It is still available on the CPAN for
+backwards compatibility and will still work with newer versions of
+Cache::FastMmap with a slight performance degredation.
 
 WWW: http://search.cpan.org/dist/Catalyst-Plugin-Cache-Store-FastMmap/

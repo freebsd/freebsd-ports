@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Cache-Store-FastMmap
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -22,6 +22,8 @@ BUILD_DEPENDS=	p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+
+DEPRECATED=	Refer to the documentation for details on how to reconfigure your Catalyst application to avoid this module
 
 MAN3=	Catalyst::Plugin::Cache::Backend::FastMmap.3 \
 	Catalyst::Plugin::Cache::Store::FastMmap.3
