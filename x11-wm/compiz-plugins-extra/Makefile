@@ -39,5 +39,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'	\
 		${WRKSRC}/src/group/group-internal.h	\
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
