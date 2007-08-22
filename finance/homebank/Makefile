@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	homebank
-PORTVERSION=	3.3
-PORTREVISION=	1
+PORTVERSION=	3.5
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -29,7 +28,7 @@ DOCS=		AUTHORS COPYING ChangeLog NEWS README
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomehier}!=""
-USE_GNOME=	gnomehier
+USE_GNOME+=	gnomehier
 PLIST_SUB+=	GNOME:=""
 GNOME_ENABLED=	yes
 .else
