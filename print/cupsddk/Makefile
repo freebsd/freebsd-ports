@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cupsddk
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	print devel
 MASTER_SITES=	EASYSW
 MASTER_SITE_SUBDIR=	${PORTNAME}/${DISTVERSION}
@@ -22,9 +22,8 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-MAN1=	commandtoescpx.1 commandtopclx.1 cupsprofile.1 \
-	ppdc.1 ppdhtml.1 ppdi.1 ppdmerge.1 ppdpo.1 \
-	rastertoescpx.1 rastertopclx.1
+MAN1=	commandtoescpx.1 commandtopclx.1 cupsprofile.1 ppdc.1 ppdhtml.1 \
+	ppdi.1 ppdmerge.1 ppdpo.1 rastertoescpx.1 rastertopclx.1
 MAN5=	ppdcfile.5
 
 .if defined(WITH_DEBUG)
