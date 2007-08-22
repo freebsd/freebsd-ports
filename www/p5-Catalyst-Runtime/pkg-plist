@@ -23,7 +23,7 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter/Watcher.pm
 %%SITE_PERL%%/Catalyst/Exception.pm
 %%SITE_PERL%%/Catalyst/Log.pm
-%%SITE_PERL%%/Catalyst/Manual.pod
+%%SITE_PERL%%/Catalyst/Manual.pm
 %%SITE_PERL%%/Catalyst/Manual/Installation.pod
 %%SITE_PERL%%/Catalyst/Manual/Installation/CentOS4.pod
 %%SITE_PERL%%/Catalyst/Model.pm
