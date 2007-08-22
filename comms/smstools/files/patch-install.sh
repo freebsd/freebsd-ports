@@ -1,13 +1,6 @@
---- install.sh	Fri Apr 21 11:25:01 2006
-+++ install.sh	Fri Apr 21 14:59:22 2006
-@@ -40,32 +40,42 @@
-   fi
- }
- 
--echo ""
- if [ ! -f src/smsd ] && [ ! -f src/smsd.exe ]; then 
-   echo 'Please run "make -s install" instead.'
-   exit 1
+--- install.sh.orig	Sat Jul 29 14:50:42 2006
++++ install.sh	Fri Jul 20 09:49:08 2007
+@@ -47,24 +47,35 @@
  fi
  
  echo "Installing binary program files"
@@ -24,14 +17,12 @@
 -delete /usr/local/bin/putsms
  
  echo "Installing some scripts"
--copy scripts/pkill /usr/local/bin/pkill
 -copy scripts/sendsms /usr/local/bin/sendsms
 -copy scripts/sms2html /usr/local/bin/sms2html
 -copy scripts/sms2unicode /usr/local/bin/sms2unicode
 -copy scripts/unicode2sms /usr/local/bin/unicode2sms
 +copy scripts/sendsms %%PREFIX%%/bin/sendsms
 +copy scripts/sms2html %%PREFIX%%/bin/sms2html
-+copy scripts/sms2xml %%PREFIX%%/bin/sms2xml
 +copy scripts/sms2unicode %%PREFIX%%/bin/sms2unicode
 +copy scripts/unicode2sms %%PREFIX%%/bin/unicode2sms
  
@@ -56,7 +47,7 @@
  
  echo "Creating minimum spool directories"
  makedir /var/spool
-@@ -74,15 +84,5 @@
+@@ -73,15 +84,5 @@
  makedir /var/spool/sms/outgoing
  makedir /var/spool/sms/checked
  

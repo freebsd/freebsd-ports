@@ -1,7 +1,6 @@
 bin/sendsms
 bin/sms2html
 bin/sms2unicode
-bin/sms2xml
 bin/smsd
 bin/unicode2sms
 etc/smsd.conf.sample
@@ -17,7 +16,7 @@ etc/smsd.conf.sample
 %%EXAMPLESDIR%%/smsd.conf.full
 %%EXAMPLESDIR%%/smsevent
 %%EXAMPLESDIR%%/sql_demo
-@dirrm share/examples/smstools
+@dirrm %%EXAMPLESDIR%%
 @cwd /
 @dirrm var/spool/sms/outgoing
 @dirrm var/spool/sms/incoming

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smstools
-PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTVERSION=	2.2.18
 CATEGORIES=	comms
 MASTER_SITES=	http://www.meinemullemaus.de/software/smstools/packages/
 

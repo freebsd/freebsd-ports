@@ -1,5 +1,5 @@
---- examples/smsd.conf.easy	Fri Apr 21 11:25:01 2006
-+++ examples/smsd.conf.easy	Fri Apr 21 12:32:59 2006
+--- examples/smsd.conf.easy.orig	Sat Feb  4 14:52:06 2006
++++ examples/smsd.conf.easy	Fri Jul 20 09:41:03 2007
 @@ -5,6 +5,7 @@
  loglevel = 7
  
