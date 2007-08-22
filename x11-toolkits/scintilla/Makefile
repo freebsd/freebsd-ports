@@ -24,6 +24,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 MAKEFILE=	makefile
 USE_LDCONFIG=	yes
+MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
 .if defined(WITH_GTK2)
 USE_GNOME=	gtk20
@@ -42,6 +43,10 @@ MAKE_ARGS+=	PICFLAGS=-DPIC
 .else
 MAKE_ARGS+=	PICFLAGS="-DPIC -fPIC -fpic"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|[(]CC[)]|(CXX)|g ; s|[(]CCOMP[)]|(CC)|g ; \
+		s| -Os||g' ${WRKSRC}/makefile
 
 do-install:
 	${MKDIR} ${PREFIX}/include/scintilla
