@@ -34,8 +34,9 @@ bin/inline_package
 %%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000027.html
 %%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000028.html
 %%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000030.html
 %%GEM_DOC_DIR%%/rdoc/classes/Inline/Packager.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inline/Packager.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/Packager.src/M000036.html
 %%GEM_DOC_DIR%%/rdoc/classes/Inline/Packager.src/M000031.html
 %%GEM_DOC_DIR%%/rdoc/classes/Inline/Packager.src/M000032.html
 %%GEM_DOC_DIR%%/rdoc/classes/Inline/Packager.src/M000033.html
@@ -45,6 +46,9 @@ bin/inline_package
 %%GEM_DOC_DIR%%/rdoc/classes/Module.src/M000002.html
 %%GEM_DOC_DIR%%/rdoc/created.rid
 %%GEM_DOC_DIR%%/rdoc/files/lib/inline_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/History_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/Manifest_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/README_txt.html
 %%GEM_DOC_DIR%%/rdoc/fr_class_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_file_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
