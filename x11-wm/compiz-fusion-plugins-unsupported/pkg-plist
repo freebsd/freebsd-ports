@@ -1,0 +1,28 @@
+@comment $FreeBSD$
+lib/compiz/libfakeargb.so
+lib/compiz/libfakeargb.la
+lib/compiz/libfakeargb.a
+lib/compiz/libmswitch.so
+lib/compiz/libmswitch.la
+lib/compiz/libmswitch.a
+lib/compiz/libsnow.so
+lib/compiz/libsnow.la
+lib/compiz/libsnow.a
+lib/compiz/libtile.so
+lib/compiz/libtile.la
+lib/compiz/libtile.a
+share/locale/de/LC_MESSAGES/compiz-fusion-plugins-unsupported.mo
+share/locale/el/LC_MESSAGES/compiz-fusion-plugins-unsupported.mo
+share/locale/fr/LC_MESSAGES/compiz-fusion-plugins-unsupported.mo
+share/locale/it/LC_MESSAGES/compiz-fusion-plugins-unsupported.mo
+share/locale/ja/LC_MESSAGES/compiz-fusion-plugins-unsupported.mo
+share/locale/pt_PT/LC_MESSAGES/compiz-fusion-plugins-unsupported.mo
+share/locale/zh_CN/LC_MESSAGES/compiz-fusion-plugins-unsupported.mo
+share/locale/pl_PL/LC_MESSAGES/compiz-fusion-plugins-unsupported.mo
+share/compiz/fakeargb.xml
+share/compiz/mswitch.xml
+share/compiz/snow.xml
+share/compiz/tile.xml
+share/compiz/snowflake.png
+@dirrmtry share/locale/pl_PL/LC_MESSAGES
+@dirrmtry share/locale/pl_PL
