@@ -7,6 +7,7 @@
 
 PORTNAME=	eps
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/eps/
 
@@ -24,7 +25,8 @@ post-patch:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libeps.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/
+	${MKDIR} ${PREFIX}/include/eps
+	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/eps
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
