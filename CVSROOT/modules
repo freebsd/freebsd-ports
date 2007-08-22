@@ -1834,7 +1834,6 @@ dctc-gui	ports/net-p2p/dctc-gui
 dctc-gui-qt	ports/net-p2p/dctc-gui-qt
 dd_rescue	ports/sysutils/dd_rescue
 ddate		ports/misc/ddate
-ddc		ports/net/ddc
 ddclient	ports/dns/ddclient
 ddd		ports/devel/ddd
 ddos_scan	ports/security/ddos_scan
@@ -4116,7 +4115,6 @@ gromacs		ports/science/gromacs
 gromit		ports/x11/gromit
 groovy		ports/lang/groovy
 grouch		ports/net-im/grouch
-groundhog	ports/games/groundhog
 groupoffice	ports/www/groupoffice
 growspd		ports/sysutils/growspd
 grpn		ports/math/grpn
