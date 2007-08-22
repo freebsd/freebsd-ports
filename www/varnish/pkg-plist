@@ -19,6 +19,10 @@ lib/libvarnishapi.so.0
 lib/libvarnishapi.so
 lib/libvarnishapi.la
 lib/libvarnishapi.a
+lib/libvarnishcompat.so.0
+lib/libvarnishcompat.so
+lib/libvarnishcompat.la
+lib/libvarnishcompat.a
 lib/libvcl.so.0
 lib/libvcl.so
 lib/libvcl.la
