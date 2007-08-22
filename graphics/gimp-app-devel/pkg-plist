@@ -1,9 +1,9 @@
 bin/gimp
-bin/gimp-2.3
+bin/gimp-2.4
 bin/gimp-console
-bin/gimp-console-2.3
+bin/gimp-console-2.4
 bin/gimp-remote
-bin/gimp-remote-2.3
+bin/gimp-remote-2.4
 bin/gimptool-2.0
 etc/gimp/2.2/controllerrc
 etc/gimp/2.2/gimprc
@@ -176,6 +176,8 @@ include/gimp-2.0/libgimpwidgets/gimpcolordisplay.h
 include/gimp-2.0/libgimpwidgets/gimpcolordisplaystack.h
 include/gimp-2.0/libgimpwidgets/gimpcolorhexentry.h
 include/gimp-2.0/libgimpwidgets/gimpcolornotebook.h
+include/gimp-2.0/libgimpwidgets/gimpcolorprofilecombobox.h
+include/gimp-2.0/libgimpwidgets/gimpcolorprofilestore.h
 include/gimp-2.0/libgimpwidgets/gimpcolorscale.h
 include/gimp-2.0/libgimpwidgets/gimpcolorscales.h
 include/gimp-2.0/libgimpwidgets/gimpcolorselect.h
@@ -194,6 +196,7 @@ include/gimp-2.0/libgimpwidgets/gimphintbox.h
 include/gimp-2.0/libgimpwidgets/gimpintcombobox.h
 include/gimp-2.0/libgimpwidgets/gimpintstore.h
 include/gimp-2.0/libgimpwidgets/gimpmemsizeentry.h
+include/gimp-2.0/libgimpwidgets/gimpnumberpairentry.h
 include/gimp-2.0/libgimpwidgets/gimpoffsetarea.h
 include/gimp-2.0/libgimpwidgets/gimpoldwidgets.h
 include/gimp-2.0/libgimpwidgets/gimppageselector.h
@@ -204,7 +207,6 @@ include/gimp-2.0/libgimpwidgets/gimppreview.h
 include/gimp-2.0/libgimpwidgets/gimppreviewarea.h
 include/gimp-2.0/libgimpwidgets/gimppropwidgets.h
 include/gimp-2.0/libgimpwidgets/gimpquerybox.h
-include/gimp-2.0/libgimpwidgets/gimpratioentry.h
 include/gimp-2.0/libgimpwidgets/gimpscrolledpreview.h
 include/gimp-2.0/libgimpwidgets/gimpsizeentry.h
 include/gimp-2.0/libgimpwidgets/gimpstock.h
@@ -685,6 +687,8 @@ share/doc/gimp/libgimpwidgets/GimpColorDisplay.html
 share/doc/gimp/libgimpwidgets/GimpColorDisplayStack.html
 share/doc/gimp/libgimpwidgets/GimpColorHexEntry.html
 share/doc/gimp/libgimpwidgets/GimpColorNotebook.html
+share/doc/gimp/libgimpwidgets/GimpColorProfileComboBox.html
+share/doc/gimp/libgimpwidgets/GimpColorProfileStore.html
 share/doc/gimp/libgimpwidgets/GimpColorScale.html
 share/doc/gimp/libgimpwidgets/GimpColorScales.html
 share/doc/gimp/libgimpwidgets/GimpColorSelect.html
@@ -700,6 +704,7 @@ share/doc/gimp/libgimpwidgets/GimpFrame.html
 share/doc/gimp/libgimpwidgets/GimpIntComboBox.html
 share/doc/gimp/libgimpwidgets/GimpIntStore.html
 share/doc/gimp/libgimpwidgets/GimpMemsizeEntry.html
+share/doc/gimp/libgimpwidgets/GimpNumberPairEntry.html
 share/doc/gimp/libgimpwidgets/GimpOffsetArea.html
 share/doc/gimp/libgimpwidgets/GimpPageSelector.html
 share/doc/gimp/libgimpwidgets/GimpPathEditor.html
@@ -707,17 +712,18 @@ share/doc/gimp/libgimpwidgets/GimpPickButton.html
 share/doc/gimp/libgimpwidgets/GimpPixmap.html
 share/doc/gimp/libgimpwidgets/GimpPreview.html
 share/doc/gimp/libgimpwidgets/GimpPreviewArea.html
-share/doc/gimp/libgimpwidgets/GimpRatioEntry.html
 share/doc/gimp/libgimpwidgets/GimpScrolledPreview.html
 share/doc/gimp/libgimpwidgets/GimpSizeEntry.html
 share/doc/gimp/libgimpwidgets/GimpStringComboBox.html
 share/doc/gimp/libgimpwidgets/GimpUnitMenu.html
+share/doc/gimp/libgimpwidgets/GimpZoomModel.html
 share/doc/gimp/libgimpwidgets/gimp-browser.png
 share/doc/gimp/libgimpwidgets/gimp-button.png
 share/doc/gimp/libgimpwidgets/gimp-chain-button.png
 share/doc/gimp/libgimpwidgets/gimp-color-area.png
 share/doc/gimp/libgimpwidgets/gimp-color-button.png
 share/doc/gimp/libgimpwidgets/gimp-color-hex-entry.png
+share/doc/gimp/libgimpwidgets/gimp-color-profile-combo-box.png
 share/doc/gimp/libgimpwidgets/gimp-color-scale.png
 share/doc/gimp/libgimpwidgets/gimp-color-selection.png
 share/doc/gimp/libgimpwidgets/gimp-dialog.png
@@ -728,12 +734,12 @@ share/doc/gimp/libgimpwidgets/gimp-frame.png
 share/doc/gimp/libgimpwidgets/gimp-hint-box.png
 share/doc/gimp/libgimpwidgets/gimp-int-combo-box.png
 share/doc/gimp/libgimpwidgets/gimp-memsize-entry.png
+share/doc/gimp/libgimpwidgets/gimp-number-pair-entry.png
 share/doc/gimp/libgimpwidgets/gimp-offset-area.png
 share/doc/gimp/libgimpwidgets/gimp-page-selector.png
 share/doc/gimp/libgimpwidgets/gimp-path-editor.png
 share/doc/gimp/libgimpwidgets/gimp-pick-button.png
 share/doc/gimp/libgimpwidgets/gimp-preview-area.png
-share/doc/gimp/libgimpwidgets/gimp-ratio-entry.png
 share/doc/gimp/libgimpwidgets/gimp-string-combo-box.png
 share/doc/gimp/libgimpwidgets/gimp-unit-menu.png
 share/doc/gimp/libgimpwidgets/home.png
@@ -1507,7 +1513,6 @@ share/gimp/scripts/circuit.scm
 share/gimp/scripts/clothify.scm
 share/gimp/scripts/coffee.scm
 share/gimp/scripts/comic-logo.scm
-share/gimp/scripts/contactsheet.scm
 share/gimp/scripts/coolmetal-logo.scm
 share/gimp/scripts/copy-visible.scm
 share/gimp/scripts/crystal-logo.scm
@@ -1515,7 +1520,6 @@ share/gimp/scripts/difference-clouds.scm
 share/gimp/scripts/distress-selection.scm
 share/gimp/scripts/drop-shadow.scm
 share/gimp/scripts/erase-rows.scm
-share/gimp/scripts/fade-outline.scm
 share/gimp/scripts/flatland.scm
 share/gimp/scripts/font-map.scm
 share/gimp/scripts/frosty-logo.scm

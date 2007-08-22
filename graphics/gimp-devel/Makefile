@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION?=	2.3.19
+DISTVERSION?=	2.4.0-rc1
 PORTEPOCH?=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES?=	# empty
