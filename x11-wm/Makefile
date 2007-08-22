@@ -28,6 +28,7 @@
     SUBDIR += boxtools
     SUBDIR += clementine
     SUBDIR += compiz
+    SUBDIR += compiz-fusion-plugins-main
     SUBDIR += ctwm
     SUBDIR += devilspie
     SUBDIR += dwm
