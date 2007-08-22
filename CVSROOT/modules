@@ -15646,6 +15646,7 @@ trans-proxy-tor	ports/security/trans-proxy-tor
 transcalc	ports/cad/transcalc
 transcode	ports/multimedia/transcode
 transfig	ports/print/transfig
+transkode	ports/multimedia/transkode
 translate	ports/misc/translate
 translator	ports/misc/translator
 transmission	ports/net-p2p/transmission
