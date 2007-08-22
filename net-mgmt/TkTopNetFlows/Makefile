@@ -7,7 +7,7 @@
 
 PORTNAME=	TkTopNetFlows
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://vfom.narod.ru/download/
 
@@ -16,7 +16,7 @@ COMMENT=	GUI tool for NetFlow data visualisation
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		${LOCALBASE}/lib/libBLT24.so.3:${PORTSDIR}/x11-toolkits/blt \
-		${LOCALBASE}/lib/Tktable2.8/libTktable2.8.so:${PORTSDIR}/x11-toolkits/tktable \
+		${LOCALBASE}/lib/Tktable2.9/libTktable2.9.so:${PORTSDIR}/x11-toolkits/tktable \
 		${SITE_PERL}/${PERL_ARCH}/Cflow.pm:${PORTSDIR}/net-mgmt/p5-Cflow
 
 NO_MTREE=	yes

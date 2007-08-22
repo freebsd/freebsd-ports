@@ -7,7 +7,7 @@
 
 PORTNAME=	tknetmon
 PORTVERSION=	2.0.7a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://vfom.narod.ru/download/
@@ -19,7 +19,7 @@ COMMENT=	GUI for network monitoring tool "netmond" ( net-mgmt/netmond )
 BUILD_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		${LOCALBASE}/lib/libBLT24.so.3:${PORTSDIR}/x11-toolkits/blt \
-		${LOCALBASE}/lib/Tktable2.8/libTktable2.8.so:${PORTSDIR}/x11-toolkits/tktable \
+		${LOCALBASE}/lib/Tktable2.9/libTktable2.9.so:${PORTSDIR}/x11-toolkits/tktable \
 		${LOCALBASE}/lib/tcl8.4/sql1.0/libTclMySQL.so.1:${PORTSDIR}/databases/tcl-Mysql \
 		${LOCALBASE}/lib/snack2.2/libsnack.so:${PORTSDIR}/audio/snack \
 		${LOCALBASE}/bin/snmpget:${PORTSDIR}/net-mgmt/net-snmp \
