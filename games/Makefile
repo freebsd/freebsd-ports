@@ -310,7 +310,6 @@
     SUBDIR += gretools
     SUBDIR += grhino
     SUBDIR += gridlock
-    SUBDIR += groundhog
     SUBDIR += gru
     SUBDIR += grubik
     SUBDIR += grubinvaders
