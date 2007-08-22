@@ -93,7 +93,6 @@
     SUBDIR += danamics
     SUBDIR += dante
     SUBDIR += datapipe
-    SUBDIR += ddc
     SUBDIR += delegate
     SUBDIR += despoof
     SUBDIR += dgd
