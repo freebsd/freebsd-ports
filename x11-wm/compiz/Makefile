@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	compiz
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.2
 #PORTREVISION=	1
 CATEGORIES=	x11-wm
 
@@ -19,13 +19,48 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 XORG_CAT=	app
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
+USE_TGZ=	yes
+USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GL=		glu
-USE_GNOME=	gnomehack gnomeprefix gconf2
+USE_GNOME=	gnomehack gconf2
 USE_XORG=	xcomposite xfixes xdamage xrandr xrender ice sm xinerama glproto
 USE_LDCONFIG=	yes
-GCONF_SCHEMAS=	compiz.schemas gwd.schemas
+USE_AUTOTOOLS=	libtool:15
+
+GCONF_SCHEMAS=	gwd.schemas \
+		compiz-annotate.schemas \
+		compiz-blur.schemas \
+		compiz-clone.schemas \
+		compiz-core.schemas \
+		compiz-cube.schemas \
+		compiz-dbus.schemas \
+		compiz-decoration.schemas \
+		compiz-fade.schemas \
+		compiz-fs.schemas \
+		compiz-gconf.schemas \
+		compiz-glib.schemas \
+		compiz-ini.schemas \
+		compiz-inotify.schemas \
+		compiz-minimize.schemas \
+		compiz-move.schemas \
+		compiz-place.schemas \
+		compiz-plane.schemas \
+		compiz-png.schemas \
+		compiz-regex.schemas \
+		compiz-resize.schemas \
+		compiz-rotate.schemas \
+		compiz-scale.schemas \
+		compiz-screenshot.schemas \
+		compiz-svg.schemas \
+		compiz-switcher.schemas \
+		compiz-video.schemas \
+		compiz-water.schemas \
+		compiz-wobbly.schemas \
+		compiz-zoom.schemas
+
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 

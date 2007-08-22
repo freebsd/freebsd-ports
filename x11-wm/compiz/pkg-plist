@@ -2,7 +2,9 @@
 bin/compiz
 %%GTK%%bin/gtk-window-decorator
 include/compiz/compiz.h
+include/compiz/cube.h
 include/compiz/decoration.h
+include/compiz/scale.h
 lib/libdecoration.so.0
 lib/libdecoration.so
 lib/libdecoration.la
@@ -10,6 +12,9 @@ lib/libdecoration.a
 lib/compiz/libgconf.so
 lib/compiz/libgconf.la
 lib/compiz/libgconf.a
+lib/compiz/libglib.so
+lib/compiz/libglib.la
+lib/compiz/libglib.a
 lib/compiz/libdecoration.so
 lib/compiz/libdecoration.la
 lib/compiz/libdecoration.a
@@ -85,10 +90,43 @@ lib/compiz/libini.a
 lib/compiz/libannotate.so
 lib/compiz/libannotate.la
 lib/compiz/libannotate.a
-libdata/pkgconfig/libdecoration.pc
 libdata/pkgconfig/compiz.pc
-share/gnome/compiz/icon.png
-share/gnome/compiz/freedesktop.png
+libdata/pkgconfig/compiz-cube.pc
+libdata/pkgconfig/compiz-scale.pc
+libdata/pkgconfig/compiz-gconf.pc
+libdata/pkgconfig/libdecoration.pc
+%%DATADIR%%/icon.png
+%%DATADIR%%/freedesktop.png
+%%DATADIR%%/core.xml
+%%DATADIR%%/annotate.xml
+%%DATADIR%%/blur.xml
+%%DATADIR%%/clone.xml
+%%DATADIR%%/cube.xml
+%%DATADIR%%/dbus.xml
+%%DATADIR%%/decoration.xml
+%%DATADIR%%/fade.xml
+%%DATADIR%%/fs.xml
+%%DATADIR%%/gconf.xml
+%%DATADIR%%/glib.xml
+%%DATADIR%%/ini.xml
+%%DATADIR%%/inotify.xml
+%%DATADIR%%/minimize.xml
+%%DATADIR%%/move.xml
+%%DATADIR%%/place.xml
+%%DATADIR%%/plane.xml
+%%DATADIR%%/png.xml
+%%DATADIR%%/regex.xml
+%%DATADIR%%/resize.xml
+%%DATADIR%%/rotate.xml
+%%DATADIR%%/scale.xml
+%%DATADIR%%/screenshot.xml
+%%DATADIR%%/svg.xml
+%%DATADIR%%/switcher.xml
+%%DATADIR%%/video.xml
+%%DATADIR%%/water.xml
+%%DATADIR%%/wobbly.xml
+%%DATADIR%%/zoom.xml
+%%DATADIR%%/schemas.xslt
 %%GNOME%%@cwd %%WINDOWSETTINGSDATADIR%%
 %%GNOME%%share/gnome/wm-properties/compiz.desktop
 %%GNOME%%@cwd %%WINDOWSETTINGSLIBDIR%%
@@ -161,6 +199,6 @@ share/locale/zu/LC_MESSAGES/compiz.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
-@dirrmtry share/gnome/compiz
+@dirrmtry %%DATADIR%%
 @dirrmtry lib/compiz
 @dirrmtry include/compiz
