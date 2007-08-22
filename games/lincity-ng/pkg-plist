@@ -1308,7 +1308,6 @@ share/applications/lincity-ng.desktop
 %%DATADIR%%/sounds/WindowClose.wav
 %%DATADIR%%/sounds/WindowOpen.wav
 share/pixmaps/lincity-ng.png
-@dirrm share/pixmaps
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/opening
 @dirrm %%DATADIR%%/music
