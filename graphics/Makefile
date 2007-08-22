@@ -190,6 +190,7 @@
     SUBDIR += gimp-app
     SUBDIR += gimp-app-devel
     SUBDIR += gimp-devel
+    SUBDIR += gimp-gap
     SUBDIR += gimp-greycstoration
     SUBDIR += gimp-help
     SUBDIR += gimp-manual-html
