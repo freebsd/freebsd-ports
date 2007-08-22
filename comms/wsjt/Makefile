@@ -8,13 +8,13 @@
 PORTNAME=	wsjt
 PORTVERSION=	5.9.7
 CATEGORIES=	comms hamradio
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	wsjt
+MASTER_SITES=	${MASTER_SITE_BERLIOS:S/%SUBDIR%/wsjt/} \
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/db/}
 DISTNAME=	wsjt-5.9.7.r386
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	db@FreeBSD.org
-COMMENT=	Weak signal ham radio communication pakage
+COMMENT=	Weak signal ham radio communication package
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
 		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
