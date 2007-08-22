@@ -1,0 +1,12 @@
+--- fuse_module/Makefile.orig	2007-06-19 14:35:22.000000000 +0200
++++ fuse_module/Makefile	2007-08-16 18:31:50.000000000 +0200
+@@ -21,7 +21,8 @@
+ .endif
+ 
+ .if defined(KERNCONF)
+-KERNCONFDIR= /usr/obj/usr/src/sys/${KERNCONF}
++KERNCONF1!= echo ${KERNCONF} | sed -e 's/ .*//g'
++KERNCONFDIR= /usr/obj/usr/src/sys/${KERNCONF1}
+ .endif
+ 
+ .if defined(KERNCONFDIR)
