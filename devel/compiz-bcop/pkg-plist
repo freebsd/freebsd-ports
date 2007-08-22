@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+bin/bcop
+libdata/pkgconfig/bcop.pc
+share/bcop/bcop.xslt
+@dirrmtry share/bcop
