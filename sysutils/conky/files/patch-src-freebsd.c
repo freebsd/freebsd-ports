@@ -1,5 +1,5 @@
---- src/freebsd.c.orig	2007-08-05 08:48:13.000000000 +0400
-+++ src/freebsd.c	2007-08-21 22:22:37.000000000 +0400
+--- src/freebsd.c.orig	Sun Aug  5 08:48:13 2007
++++ src/freebsd.c	Wed Aug 22 10:22:24 2007
 @@ -43,6 +43,14 @@
  #define	FREEBSD_DEBUG
  #endif
@@ -15,12 +15,11 @@
  inline void proc_find_top(struct process **cpu, struct process **mem);
  
  u_int64_t diskio_prev = 0;
-@@ -832,7 +840,7 @@
+@@ -831,6 +839,7 @@
+ {
  	int fd;
  	struct apm_info info;
++	char *out;
  
--	out = (char *)calloc(16, sizeof (char));
-+	(char *)out = (char *)calloc(16, sizeof (char));
+ 	out = (char *)calloc(16, sizeof (char));
  
- 	fd = open(APMDEV, O_RDONLY);
- 	if (fd < 0) {
