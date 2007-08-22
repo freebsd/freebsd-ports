@@ -1,6 +1,7 @@
 bin/SciTE
 share/applications/SciTE.desktop
 share/pixmaps/Sci48M.png
+%%DATADIR%%/CommandValues.html
 %%DATADIR%%/Embedded.properties
 %%DATADIR%%/PrintHi.png
 %%DATADIR%%/SciBreak2.jpg
@@ -30,10 +31,12 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/blitzbasic.properties
 %%DATADIR%%/bullant.properties
 %%DATADIR%%/caml.properties
+%%DATADIR%%/cmake.properties
 %%DATADIR%%/conf.properties
 %%DATADIR%%/cpp.properties
 %%DATADIR%%/csound.properties
 %%DATADIR%%/css.properties
+%%DATADIR%%/d.properties
 %%DATADIR%%/demo.png
 %%DATADIR%%/eiffel.properties
 %%DATADIR%%/erlang.properties
@@ -42,6 +45,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/forth.properties
 %%DATADIR%%/fortran.properties
 %%DATADIR%%/freebasic.properties
+%%DATADIR%%/gap.properties
 %%DATADIR%%/html.properties
 %%DATADIR%%/inno.properties
 %%DATADIR%%/kix.properties

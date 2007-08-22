@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scite
-PORTVERSION=	1.71
-PORTREVISION=	4
+PORTVERSION=	1.74
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/
@@ -15,68 +14,36 @@ MASTER_SITE_SUBDIR=	scintilla
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	A full-featured SCIntilla based Text Editor for GTK/GNOME
 
 LIB_DEPENDS=	scintilla.1:${PORTSDIR}/x11-toolkits/scintilla
 
-IGNORE=		is unusable, writing text does not work
-DEPRECATED=	${IGNORE}
-EXPIRATION_DATE=2007-09-30
-
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
 USE_GMAKE=	yes
-WANT_GNOME=	yes
+USE_GNOME=	gtk20
 MAKEFILE=	makefile
-MAKE_ENV=	CC="${CXX}"
-EXTRA_PATCH_FILES=	lua/include/lauxlib.h \
-			lua/include/lua.h \
-			lua/src/lobject.h \
-			lua/src/lopcodes.c \
-			lua/src/lopcodes.h \
-			lua/src/lstate.c \
-			lua/src/lstate.h \
-			lua/src/ldo.h \
-			lua/src/lmem.h \
-			lua/src/lgc.c \
-			lua/src/lvm.h \
-			lua/src/lstring.h \
-			lua/src/ldo.c \
-			lua/src/lfunc.c \
-			lua/src/llex.h \
-			lua/src/llex.c \
-			lua/src/lparser.c \
-			lua/src/lib/lauxlib.c
-
-OPTIONS=	GTK2 "Turns on GTK+ 2.x support (Default is GTK+ 1)" off
-
-.include <bsd.port.pre.mk>
-
-.if (${ARCH} == "amd64") && defined(WITH_GTK2)
-IGNORE=	coredumps on startup
-.endif
-.if defined(WITH_GTK2)
-USE_GNOME+=	gtk20
-PKGNAMESUFFIX:=	-gtk2
-.else
-USE_GNOME+=	gtk12
-MAKE_ARGS=	GTK1=yes
-.endif
+MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
 MAN1=		scite.1
 
+.if defined(PACKAGE_BUILDING)
+IGNORE=		x11-toolkits/scintilla does not build with GTK+2 support by default
+.endif
+
+pre-configure:
+	@if [ -n "`${PKG_INFO} -E 'scintilla-[0-9]*' 2> /dev/null`" ]; then \
+		${ECHO_CMD} "${PKGNAME}: requires x11-toolkits/scintilla to be built with GTK+2."; \
+		${FALSE}; \
+	fi
+
 post-patch:
-	@cd ${WRKSRC} && ${MV} SciTE.desktop SciTE.desktop.pre_tr \
-		&& ${TR} -d "\r" < SciTE.desktop.pre_tr > SciTE.desktop
-	@${ECHO_CMD} 'Categories=Application;Development;' >> ${WRKSRC}/SciTE.desktop
-# deal with dos end-of-line symbols break build with gcc 2.95.
-.for file in ${EXTRA_PATCH_FILES}
-	@${CP} ${WRKSRC}/../${file} \
-		${WRKSRC}/../${file}.orig
-	@col < ${WRKSRC}/../${file}.orig \
-		> ${WRKSRC}/../${file}
-.endfor
+	@${REINPLACE_CMD} -e 's|[(]CC[)]|(CXX)|g ; s|gcc|$$(CC)|g ; s| -Os||g' \
+		${WRKSRC}/makefile
+.if defined(WITH_FULL_BUFFER_MENU)
+	@${REINPLACE_CMD} -e 's|30, "/Buffers|props.GetInt("buffers") > 30 ? props.GetInt("buffers") - 10 : 30, "/Buffers|g' ${WRKSRC}/SciTEGTK.cxx
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin/SciTE ${PREFIX}/bin
@@ -91,4 +58,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.png ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../src/*.properties ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,50 +1,57 @@
---- makefile.bak	Mon Feb 13 07:27:08 2006
-+++ makefile		Sat Jun 24 09:06:54 2006
+--- makefile.orig	2007-06-14 19:37:56.000000000 -0500
++++ makefile	2007-08-21 11:16:18.000000000 -0500
 @@ -5,7 +5,7 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
-
+ 
  .SUFFIXES: .cxx .o .h .a .c
 -CC = g++
-+CC ?= g++
++#CC = g++
  AR = ar
-
+ 
  # If explicit setting of GTK1 or GTK2 then use that else look for
-@@ -28,10 +28,10 @@
+@@ -26,12 +26,12 @@
+ CONFIGFLAGS=$(shell pkg-config --cflags gtk+-2.0)
+ CONFIGLIB=$(shell pkg-config --libs gtk+-2.0 gthread-2.0)
  CONFIGTHREADS=
- gnomeprefix:=$(shell pkg-config --variable=prefix gtk+-2.0 2>/dev/null)
+-gnomeprefix:=$(shell pkg-config --variable=prefix gtk+-2.0 2>/dev/null)
++gnomeprefix:=$(PREFIX)
  else
--CONFIGFLAGS=gtk-config --cflags
--CONFIGLIB=gtk-config --libs
-+CONFIGFLAGS=pkg-config --cflags gtk+
-+CONFIGLIB=pkg-config --libs gtk+
- CONFIGTHREADS=glib-config --libs gthread
+-CONFIGFLAGS=$(shell gtk-config --cflags)
+-CONFIGLIB=$(shell gtk-config --libs)
++CONFIGFLAGS=$(shell pkg-config --cflags gtk+)
++CONFIGLIB=$(shell pkg-config --libs gtk+)
+ CONFIGTHREADS=$(shell glib-config --libs gthread)
 -gnomeprefix:=$(shell gnome-config --prefix 2>/dev/null)
 +gnomeprefix:=$(PREFIX)
  endif
  ifndef prefix
  ifdef gnomeprefix
-@@ -59,9 +59,9 @@
- CXXBASEFLAGS=-W -Wall -pedantic -Os -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
-
- ifdef DEBUG
--CXXTFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
-+CXXTFLAGS+=-DDEBUG -g $(CXXBASEFLAGS)
+@@ -76,12 +76,12 @@
+ 
+ INCLUDEDIRS=-I ../../scintilla/include -I ../src -I../lua/include
+ $(LUA_CORE_OBJS): ../lua/src/*.c
+-	gcc $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/*.c
++	gcc $(CFLAGS) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/*.c
+ $(LUA_LIB_OBJS): ../lua/src/lib/*.c
+-	gcc $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/lib/*.c
+-CXXFLAGS=$(CXXTFLAGS)
++	gcc $(CFLAGS) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/lib/*.c
++CXXFLAGS+=$(CXXTFLAGS)
  else
--CXXTFLAGS=-DNDEBUG -Os $(CXXBASEFLAGS)
-+CXXTFLAGS+=-DNDEBUG $(CXXBASEFLAGS)
+-CXXFLAGS=$(CXXTFLAGS) -DNO_LUA
++CXXFLAGS+=$(CXXTFLAGS) -DNO_LUA
  endif
-
- ifndef NO_LUA
-@@ -102,9 +102,9 @@
-
+ 
+ ifeq ($(shell uname), Darwin)
+@@ -102,8 +102,9 @@
+ 
  $(PROG): SciTEGTK.o FilePath.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o \
  MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o \
 -	$(COMPLIB) $(LUA_OBJS)
--	$(CC) `$(CONFIGTHREADS)` -DGTK $^ -o $@ `$(CONFIGLIB)`
--
+-	$(CC) `$(CONFIGTHREADS)` -DGTK $^ -o $@ $(CONFIGLIB)
 +	$(LUA_OBJS)
-+	$(CC) `$(CONFIGLIB)` -lscintilla -lscintilla_lexers \
-+	`$(CONFIGTHREADS)` -DGTK $^ -o $@
++	$(CC) $(CONFIGLIB) -lscintilla -lscintilla_lexers \
++	$(CONFIGTHREADS) -DGTK $^ -o $@
+ 
  # Automatically generate header dependencies with "make deps"
  include deps.mak
-
