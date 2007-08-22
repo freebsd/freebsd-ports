@@ -8,10 +8,10 @@
 PORTNAME=	ismail
 PORTVERSION=	2.1
 CATEGORIES=	www mail
-MASTER_SITES=	ftp://ftp.insidesystems.net/ISMail/
+MASTER_SITES=	http://mail.electro-com.ru/~az/ISMail/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	kelley@insidesystems.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP-based webmail client
 
 USE_BZIP2=	yes
