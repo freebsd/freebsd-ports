@@ -341,8 +341,6 @@ bin/zentest
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Test/Rails
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Test
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/RubyFork.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RspecRailsAutotest.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RailsAutotest.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Module.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/HelperTestCaseController.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTML/Text.src
@@ -352,7 +350,6 @@ bin/zentest
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTML/CDATA.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTML
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/FunctionalTestMatrix.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/CampingAutotest.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Autotest/Snarl.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Autotest/Shame.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Autotest/Screen.src
@@ -360,7 +357,6 @@ bin/zentest
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Autotest/Pretty.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Autotest/Notify.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Autotest/Menu.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Autotest/LibNotify.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Autotest/KDENotify.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Autotest/HtmlConsole.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Autotest/Heckle.src
