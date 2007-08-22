@@ -1485,6 +1485,7 @@ compat6x	ports/misc/compat6x
 compiz		ports/x11-wm/compiz
 compiz-bcop	ports/devel/compiz-bcop
 compiz-fusion-plugins-main	ports/x11-wm/compiz-fusion-plugins-main
+compiz-fusion-plugins-extra	ports/x11-wm/compiz-fusion-plugins-extra
 compositeext	ports/x11/compositeext
 compositeproto	ports/x11/compositeproto
 compupic	ports/graphics/compupic
