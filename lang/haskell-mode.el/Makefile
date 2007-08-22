@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haskell-mode
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://www.iro.umontreal.ca/~monnier/elisp/
 
@@ -16,17 +16,17 @@ COMMENT=	An Emacs lisp mode for editing haskell programs
 NO_BUILD=	yes
 
 ELISPDIR=	${PREFIX}/${PLIST_DIRS}
-ELISPFILES=	haskell-decl-scan.el haskell-doc.el haskell-font-lock.el \
-		haskell-ghci.el haskell-hugs.el haskell-indent.el \
-		haskell-mode.el haskell-simple-indent.el haskell-site-file.el \
-		inf-haskell.el
+ELISPFILES=	haskell-cabal.el haskell-decl-scan.el haskell-doc.el \
+		haskell-font-lock.el haskell-ghci.el haskell-hugs.el \
+		haskell-indent.el haskell-mode.el haskell-simple-indent.el \
+		haskell-site-file.el inf-haskell.el
 
 PLIST_DIRS=	share/emacs/site-lisp/${PORTNAME}/
 PLIST_FILES=	${ELISPFILES:C/^| [^ ]/${PLIST_DIRS}/g}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog NEWS fontlock.hs indent.hs \
-		README index.html
+		README
 .endif
 
 do-install:
