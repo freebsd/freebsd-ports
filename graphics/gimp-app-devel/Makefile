@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gimp-app
-PORTVERSION=	2.3.19
+DISTVERSION=	2.4.0-rc1
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -17,8 +17,9 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
 		http://www.mirrorservice.org/sites/ftp.gimp.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/%SUBDIR%,}
-MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}
-DISTNAME=	gimp-${PORTVERSION}
+#MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	gimp/v2.4/testing
+DISTNAME=	gimp-${DISTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program development version
@@ -77,13 +78,13 @@ LIB_DEPENDS+=	gimp-2.0.0:${PORTSDIR}/graphics/gimp-app-devel
 
 CONFLICTS=	gimp-1.* gimp-app-[0-9]*
 
-MAN1+=	gimp-2.3.1 gimp-remote-2.3.1 gimptool-2.0.1
-MAN5+=	gimprc-2.3.5
-MLINKS=	gimp-2.3.1 gimp.1 \
-	gimp-2.3.1 gimp-console-2.3.1 \
-	gimp-console-2.3.1 gimp-console.1 \
-	gimp-remote-2.3.1 gimp-remote.1 \
-	gimprc-2.3.5 gimprc.5
+MAN1+=	gimp-2.4.1 gimp-remote-2.4.1 gimptool-2.0.1
+MAN5+=	gimprc-2.4.5
+MLINKS=	gimp-2.4.1 gimp.1 \
+	gimp-2.4.1 gimp-console-2.4.1 \
+	gimp-console-2.4.1 gimp-console.1 \
+	gimp-remote-2.4.1 gimp-remote.1 \
+	gimprc-2.4.5 gimprc.5
 
 .if defined(WITHOUT_RSVG)
 CONFIGURE_ARGS+=	--without-librsvg
