@@ -19,7 +19,7 @@ COMMENT=	The build utility of the Qt project
 REINPLACE_ARGS=	-i ""
 WRKSRC=		${WRKDIR}/${DISTNAME}/qmake
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-#MAKE_ARGS+=	-j2
+ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 PLIST_SUB+=	_PREFIX="${PREFIX}"
 MAKE_ENV+=	FILESDIR="${FILESDIR}"
 
