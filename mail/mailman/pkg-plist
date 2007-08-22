@@ -443,6 +443,9 @@
 %%MMDIR%%/messages/ru/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/ru/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/ru/README.ru
+%%SUB_SLOVAK%%%%MMDIR%%/messages/sk/LC_MESSAGES/mailman.mo
+%%SUB_SLOVAK%%%%MMDIR%%/messages/sk/LC_MESSAGES/mailman.po
+%%SUB_SLOVAK%%%%MMDIR%%/messages/sk/README.sk
 %%MMDIR%%/messages/sl/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/sl/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/sr/LC_MESSAGES/mailman.mo
@@ -1670,6 +1673,50 @@
 %%MMDIR%%/templates/ru/unsubauth.txt
 %%MMDIR%%/templates/ru/userpass.txt
 %%MMDIR%%/templates/ru/verify.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/admindbdetails.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/admindbpreamble.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/admindbsummary.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/adminsubscribeack.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/adminunsubscribeack.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/admlogin.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/approve.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archidxentry.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archidxfoot.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archidxhead.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archlistend.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archliststart.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archtoc.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archtocentry.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archtocnombox.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/article.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/bounce.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/checkdbs.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/convert.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/cronpass.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/disabled.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/emptyarchive.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/headfoot.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/help.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/invite.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/listinfo.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/masthead.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/newlist.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/nomoretoday.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/options.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/postack.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/postauth.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/postheld.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/private.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/probe.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/refuse.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/roster.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/subauth.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/subscribe.html
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/subscribeack.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/unsub.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/unsubauth.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/userpass.txt
+%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/verify.txt
 %%MMDIR%%/templates/sl/admindbdetails.html
 %%MMDIR%%/templates/sl/admindbpreamble.html
 %%MMDIR%%/templates/sl/admindbsummary.html
@@ -2108,6 +2155,7 @@
 @dirrm %%MMDIR%%/templates/sv
 @dirrm %%MMDIR%%/templates/sr
 @dirrm %%MMDIR%%/templates/sl
+%%SUB_SLOVAK%%@dirrm %%MMDIR%%/templates/sk
 @dirrm %%MMDIR%%/templates/ru
 @dirrm %%MMDIR%%/templates/ro
 @dirrm %%MMDIR%%/templates/pt_BR
@@ -2165,6 +2213,8 @@
 @dirrm %%MMDIR%%/messages/sr
 @dirrm %%MMDIR%%/messages/sl/LC_MESSAGES
 @dirrm %%MMDIR%%/messages/sl
+%%SUB_SLOVAK%%@dirrm %%MMDIR%%/messages/sk/LC_MESSAGES
+%%SUB_SLOVAK%%@dirrm %%MMDIR%%/messages/sk
 @dirrm %%MMDIR%%/messages/ru/LC_MESSAGES
 @dirrm %%MMDIR%%/messages/ru
 @dirrm %%MMDIR%%/messages/ro/LC_MESSAGES

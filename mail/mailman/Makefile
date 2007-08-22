@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.list.org/
@@ -24,6 +24,7 @@ OPTIONS=	SENDMAIL "for use with sendmail" off \
 		POSTFIX "for use with postfix" off \
 		COURIER "for use with courier" off \
 		CHINESE "support for Chinese mailing lists" off \
+		SLOVAK "add Slovak translation" off \
 		HTDIG "htdig integration patches" off
 
 HAS_CONFIGURE=	yes
@@ -119,6 +120,14 @@ RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 PLIST_SUB+=	SUB_HTDIG=""
 .else
 PLIST_SUB+=	SUB_HTDIG="@comment "
+.endif
+
+.if defined(WITH_SLOVAK)
+PATCH_SITES+=	http://people.freebsd.org/~mm/mailman/patches/
+PATCHFILES+=	sk-2.1.9-0.1.patch.gz
+PLIST_SUB+=	SUB_SLOVAK=""
+.else
+PLIST_SUB+=	SUB_SLOVAK="@comment "
 .endif
 
 pre-fetch:
