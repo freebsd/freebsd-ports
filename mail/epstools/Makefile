@@ -17,7 +17,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PORTDOCS=	README
 
-MAKE_ENV+=	DEFS="-I${LOCALBASE}/include ${CFLAGS}"
+MAKE_ENV+=	DEFS="-I${LOCALBASE}/include/eps ${CFLAGS}"
 SUB_FILES=	pkg-message
 
 EXAMPLE_FILES=	addr.1 addr.2 addr.3 addr.4 email.1 email.2 virus.email
