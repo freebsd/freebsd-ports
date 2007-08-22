@@ -7,3 +7,6 @@ SIZE (mailman/indexing-2.1.9-0.1.patch.gz) = 8652
 MD5 (mailman/htdig-2.1.9-0.1.patch.gz) = 6a52c422d2fbf573ae529665677afbad
 SHA256 (mailman/htdig-2.1.9-0.1.patch.gz) = dd6aa2d67b47c335ed7e866108ba6df00841dd70410169822dc65350b85027c4
 SIZE (mailman/htdig-2.1.9-0.1.patch.gz) = 61093
+MD5 (mailman/sk-2.1.9-0.1.patch.gz) = f124d3fafed676c6d3897c94200554f0
+SHA256 (mailman/sk-2.1.9-0.1.patch.gz) = 0eb9d713637690ea0b700bd705bee97ffcc63151b006fecfd9839befc05c9208
+SIZE (mailman/sk-2.1.9-0.1.patch.gz) = 143300
