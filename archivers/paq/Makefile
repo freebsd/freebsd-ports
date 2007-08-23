@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	paq
-PORTVERSION=	8.l
+PORTVERSION=	8.n
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cs.fit.edu/~mmahoney/compression/
-DISTNAME=	paq8l
+DISTNAME=	paq8n
 
 MAINTAINER=	bf2006a@yahoo.com
 COMMENT=	An archiver with an extremely high compression ratio
@@ -23,25 +23,21 @@ PLIST_SUB=	DISTNAME=${DISTNAME}
 
 .if !defined(WITHOUT_ASM) && ${ARCH} == "i386" && !defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-CXXFLAGS+=	-DUNIX -Os
+CXXFLAGS+=	-DUNIX -O3
 ASM1?=	nasm -f elf -o
 ASM2?=
-.if !defined(WITH_SSE)
 ASMFILE=	paq7asm
-.else
-ASMFILE=	paq7asmsse
-.endif
 STRIP=
 .elif !defined(WITHOUT_ASM) && ${ARCH} == "amd64" && !defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
-CXXFLAGS+=	-DUNIX -Os
+CXXFLAGS+=	-DUNIX -O3
 ASM1?=	yasm -f elf64 -o
 ASM2?=	-a x86 -m amd64
 ASMFILE=	paq7asm-x86_64
 STRIP=
 .else
 WITHOUT_ASM=	yes
-CXXFLAGS+=	-DUNIX -DNOASM -Os
+CXXFLAGS+=	-DUNIX -DNOASM -O3
 .endif
 
 pre-everything::
@@ -51,10 +47,6 @@ pre-everything::
 	@${ECHO_MSG} "instead of the equivalent assembly language routines that are"
 	@${ECHO_MSG} "enabled by default on x86 and amd64 architectures, hit Ctrl-C"
 	@${ECHO_MSG} "now and use \"make WITHOUT_ASM=yes\"."
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you wish to use the version of the assembly code that is"
-	@${ECHO_MSG} "optimized for x86 (not amd64) processors with SSE instruction"
-	@${ECHO_MSG} "support, hit Ctrl-C now and use \"make WITH_SSE=yes\"."
 	@${ECHO_MSG}
 
 do-build:
