@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
 MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/\1/}
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Monitor arp & rarp requests
 
 GNU_CONFIGURE=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	j-ftp
 DISTNAME=	j-ftp-${PORTVERSION}
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Java Network Browser
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper

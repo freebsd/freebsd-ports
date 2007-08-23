@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-plugin
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.2.8
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	This plugin will automatically turn on SSL security during login
 
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail

@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://fresh.t-systems-sfr.com/linux/src/ \
 		http://www.goodking.ca/pub/files/
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	View the end of a file like tail(1), but save state between sessions
 
 MAN1=		since.1

@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-plugin
 DISTNAME=	${PORTNAME}-${PORTVERSION}-0.5
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Automatically logs a user out if they're idle for a set amount of time
 
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \

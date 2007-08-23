@@ -10,7 +10,7 @@ PORTVERSION=	0.15.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Small window manager
 
 USE_GMAKE=	yes

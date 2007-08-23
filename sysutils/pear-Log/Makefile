@@ -10,7 +10,7 @@ PORTVERSION=	1.9.11
 PORTREVISION=	1
 CATEGORIES=	sysutils www pear
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	PEAR logging utilities
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

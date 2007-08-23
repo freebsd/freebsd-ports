@@ -11,7 +11,7 @@ CATEGORIES=	german net comms linux
 MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-de-${PORTVERSION}
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif

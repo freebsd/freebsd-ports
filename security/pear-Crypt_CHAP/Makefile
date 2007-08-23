@@ -9,7 +9,7 @@ PORTNAME=	Crypt_CHAP
 PORTVERSION=	1.0.1
 CATEGORIES=	security www pear
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	PEAR class for generating CHAP packets
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

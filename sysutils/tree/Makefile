@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/ CENKES
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Display a tree-view of directories with optional color or HTML output
 
 MAKE_ENV+=	MKDIR="${MKDIR}"

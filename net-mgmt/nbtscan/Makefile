@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.inetcat.net/software/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	NetBIOS name network scanner
 
 GNU_CONFIGURE=	yes
