@@ -13357,6 +13357,7 @@ pypanda		ports/misc/pypanda
 pypanel		ports/deskutils/pypanel
 pypersrc	ports/devel/pypersrc
 pypvm		ports/net/pypvm
+pyrad		ports/net/pyrad
 pyrenamer	ports/sysutils/pyrenamer
 pyrex		ports/devel/pyrex
 pyro		ports/graphics/pyro
