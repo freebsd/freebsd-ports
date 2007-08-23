@@ -6,6 +6,7 @@
 
 PORTNAME=	ntfs
 PORTVERSION=	1.710
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ntfs-3g.org/:ntfs \
 		${MASTER_SITE_LOCAL:S|$|alepulver/:ublio|}
