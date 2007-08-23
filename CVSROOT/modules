@@ -3286,6 +3286,7 @@ fusefs-httpfs	ports/sysutils/fusefs-httpfs
 fusefs-kmod	ports/sysutils/fusefs-kmod
 fusefs-libs	ports/sysutils/fusefs-libs
 fusefs-ntfs	ports/sysutils/fusefs-ntfs
+fusefs-pod	ports/sysutils/fusefs-pod
 fusefs-smbnetfs	ports/sysutils/fusefs-smbnetfs
 fusefs-sqlfs	ports/sysutils/fusefs-sqlfs
 fusefs-sshfs	ports/sysutils/fusefs-sshfs
