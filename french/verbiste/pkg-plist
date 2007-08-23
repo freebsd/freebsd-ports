@@ -11,23 +11,23 @@ lib/libverbiste-0.1.la
 lib/libverbiste-0.1.so
 lib/libverbiste-0.1.so.0
 libdata/pkgconfig/verbiste-0.1.pc
-share/locale/fr/LC_MESSAGES/verbiste.mo
-share/verbiste-0.1/conjugation-fr.xml
-share/verbiste-0.1/verbs-fr.xml
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/HACKING
-%%DOCSDIR%%/LISEZMOI
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/LISEZMOI
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%EXAMPLESDIR%%/FrenchDeconjugatorTester.java
 %%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/conjugator.c
 %%EXAMPLESDIR%%/deconjugator.c
 %%EXAMPLESDIR%%/test-french-deconjugator.pl
 %%EXAMPLESDIR%%/trans-tenses.pl
+%%DATADIR%%-0.1/COPYING
+%%DATADIR%%-0.1/conjugation-fr.xml
+%%DATADIR%%-0.1/verbs-fr.xml
+@dirrm %%DATADIR%%-0.1
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/verbiste-0.1/verbiste
 @dirrm include/verbiste-0.1
-@dirrm share/verbiste-0.1
-@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%

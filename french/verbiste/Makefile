@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	verbiste
-PORTVERSION=	0.1.15
+PORTVERSION=	0.1.20
 CATEGORIES=	french textproc
-MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
+MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	French verb conjugator/deconjugator
 
 USE_GETTEXT=	yes
@@ -24,16 +24,12 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if !defined(PKGNAMEPREFIX)
 
-USE_GETOPT_LONG=yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	3.4+
 
 MAN1=		french-conjugator.1 french-deconjugator.1
 MAN3=		verbiste.3
 MANLANG=	"" fr
-
-EXTRA_PATCHES=	${FILESDIR}/lib-patch-*
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
