@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	File_Gettext
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4.0
 CATEGORIES=	sysutils devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	PEAR GNU Gettext file parser
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
@@ -21,12 +21,5 @@ CATEGORY=	File
 FILES=		Gettext.php Gettext/MO.php Gettext/PO.php
 
 .include <bsd.port.pre.mk>
-
-PHP_VERS=	${PHP_VERSION:S/.//g}
-
-.if defined(PHP_VERS) && ${PHP_VERS} < 410
-IGNORE=		"You need PHP 4.1.0 or later to install PEAR::File_Gettext"
-.endif
-
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
