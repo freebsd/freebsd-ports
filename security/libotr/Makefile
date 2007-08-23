@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	libotr
-PORTVERSION=	3.0.0
-PORTREVISION=	3
+PORTVERSION=	3.1.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.cypherpunks.ca/otr/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@mcdermottroe.com
 COMMENT=	The portable OTR Messaging Library and toolkit
@@ -28,5 +29,8 @@ MLINKS=		otr_toolkit.1 otr_parse.1 \
 		otr_toolkit.1 otr_readforge.1 \
 		otr_toolkit.1 otr_modify.1 \
 		otr_toolkit.1 otr_remac.1
+
+verify: checksum
+	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
 .include <bsd.port.mk>
