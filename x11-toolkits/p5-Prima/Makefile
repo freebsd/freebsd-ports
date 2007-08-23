@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Prima
-PORTVERSION=	1.21
-PORTREVISION=	1
+PORTVERSION=	1.22
 CATEGORIES=	x11-toolkits perl5 graphics
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Prima
@@ -41,14 +40,14 @@ MAN3=	Prima::Clipboard.3.gz Prima::Drawable.3.gz Prima::File.3.gz Prima::Image.3
 	Prima::Themes.3.gz Prima::Utils.3.gz Prima::Widgets.3.gz Prima::Classes.3.gz  \
 	Prima::FileDialog.3.gz Prima::PodView.3.gz Prima::Sliders.3.gz Prima::FrameSet.3.gz  \
 	Prima::TextView.3.gz Prima::Tie.3.gz Prima::HelpViewer.3.gz Prima::Calendar.3.gz Prima::X11.3.gz  \
-	Prima::EventHook.3.gz Prima::sys::win32::FileDialog.3.gz Prima::tutorial.3.gz
+	Prima::EventHook.3.gz Prima::sys::win32::FileDialog.3.gz Prima::tutorial.3.gz \
+	Prima::sys::gtk2::FileDialog.3.gz
 
 CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALL_MAN3="${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3" \
 			INSTALL_MAN1="${PREFIX}/man/man1" X11BASE="${X11BASE}"
 CONFIGURE_SCRIPT=	Makefile.PL
-USE_XPM=		1
-USE_XLIB=		1
+USE_XORG=		x11 xpm xext xrender
 USE_PERL5=		yes
 MAN3PREFIX=		lib/perl5/${PERL_VERSION}
 NOMANCOMPRESS=	yes
@@ -65,12 +64,17 @@ post-install:
 .if defined (WITHOUT_XFT)
 CONFIGURE_ARGS+=	WITH_XFT=0
 .else
-LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/libXft
+USE_XORG+=		xft
 .if defined (WITHOUT_ICONV)
 CONFIGURE_ARGS+=	WITH_ICONV=0
 .else
 USE_ICONV=	yes
 .endif
+.endif
+
+.if defined(WITH_GTK)
+USE_GNOME=	gtk20
+CONFIGURE_ARGS+=	WITH_GTK2=1
 .endif
 
 .include <bsd.port.mk>
