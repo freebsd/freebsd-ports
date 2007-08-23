@@ -21,7 +21,6 @@ LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs\
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 USE_BZIP2=	yes
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 MAN1=		fusepod.1
