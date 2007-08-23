@@ -697,6 +697,7 @@
     SUBDIR += pygopherd
     SUBDIR += pynids
     SUBDIR += pypvm
+    SUBDIR += pyrad
     SUBDIR += pythondirector
     SUBDIR += qadsl
     SUBDIR += qt4-network
