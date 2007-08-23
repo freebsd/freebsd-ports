@@ -273,6 +273,7 @@ PLIST_SUB+=		BACK_BDB="@comment " \
 .else
 
 WITH_BDB_VER?=		44
+INVALID_BDB_VER=	46
 USE_BDB=		yes
 
 .if ${WITH_BDB_VER} >= 42
