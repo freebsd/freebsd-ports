@@ -1,5 +1,4 @@
 bin/emesene
-share/applications/emesene.desktop
 %%DATADIR%%/Avatar.py
 %%DATADIR%%/Avatar.pyc
 %%DATADIR%%/Avatar.pyo
@@ -28,18 +27,21 @@ share/applications/emesene.desktop
 %%DATADIR%%/ConversationWindow.py
 %%DATADIR%%/ConversationWindow.pyc
 %%DATADIR%%/ConversationWindow.pyo
+%%DATADIR%%/CustomEmoticons.py
+%%DATADIR%%/CustomEmoticons.pyc
+%%DATADIR%%/CustomEmoticons.pyo
 %%DATADIR%%/Dialogs.py
 %%DATADIR%%/Dialogs.pyc
 %%DATADIR%%/Dialogs.pyo
+%%DATADIR%%/FancyAvatarRenderer.py
+%%DATADIR%%/FancyAvatarRenderer.pyc
+%%DATADIR%%/FancyAvatarRenderer.pyo
 %%DATADIR%%/FilterEntry.py
 %%DATADIR%%/FilterEntry.pyc
 %%DATADIR%%/FilterEntry.pyo
 %%DATADIR%%/GroupMenu.py
 %%DATADIR%%/GroupMenu.pyc
 %%DATADIR%%/GroupMenu.pyo
-%%DATADIR%%/Hotmail.py
-%%DATADIR%%/Hotmail.pyc
-%%DATADIR%%/Hotmail.pyo
 %%DATADIR%%/ImageFileChooser.py
 %%DATADIR%%/ImageFileChooser.pyc
 %%DATADIR%%/ImageFileChooser.pyo
@@ -76,6 +78,9 @@ share/applications/emesene.desktop
 %%DATADIR%%/SlashCommands.py
 %%DATADIR%%/SlashCommands.pyc
 %%DATADIR%%/SlashCommands.pyo
+%%DATADIR%%/SmileyRenderer.py
+%%DATADIR%%/SmileyRenderer.pyc
+%%DATADIR%%/SmileyRenderer.pyo
 %%DATADIR%%/SmilieWindow.py
 %%DATADIR%%/SmilieWindow.pyc
 %%DATADIR%%/SmilieWindow.pyo
@@ -100,9 +105,14 @@ share/applications/emesene.desktop
 %%DATADIR%%/UserPanel.py
 %%DATADIR%%/UserPanel.pyc
 %%DATADIR%%/UserPanel.pyo
+%%DATADIR%%/Widgets.py
+%%DATADIR%%/Widgets.pyc
+%%DATADIR%%/Widgets.pyo
 %%DATADIR%%/conversation_themes/default/theme
 %%DATADIR%%/conversation_themes/gtalk/theme
 %%DATADIR%%/conversation_themes/irc/theme
+%%DATADIR%%/conversation_themes/messenger/theme
+%%DATADIR%%/conversation_themes/pidgin/theme
 %%DATADIR%%/desktop.py
 %%DATADIR%%/desktop.pyc
 %%DATADIR%%/desktop.pyo
@@ -111,27 +121,28 @@ share/applications/emesene.desktop
 %%DATADIR%%/docs/emeseneUML.dia
 %%DATADIR%%/docs/emeseneUML.png
 %%DATADIR%%/emesene
-%%DATADIR%%/emesene.bak
 %%DATADIR%%/emesene.bat
 %%DATADIR%%/emesenecommon.py
 %%DATADIR%%/emesenecommon.pyc
 %%DATADIR%%/emesenecommon.pyo
-%%DATADIR%%/emesenelib howto.txt
 %%DATADIR%%/emesenelib/ContactData.py
 %%DATADIR%%/emesenelib/ContactData.pyc
 %%DATADIR%%/emesenelib/ContactData.pyo
-%%DATADIR%%/emesenelib/DefaultSignalHandler.py
-%%DATADIR%%/emesenelib/DefaultSignalHandler.pyc
-%%DATADIR%%/emesenelib/DefaultSignalHandler.pyo
+%%DATADIR%%/emesenelib/Hotmail.py
+%%DATADIR%%/emesenelib/Hotmail.pyc
+%%DATADIR%%/emesenelib/Hotmail.pyo
 %%DATADIR%%/emesenelib/MsnOIM.py
 %%DATADIR%%/emesenelib/MsnOIM.pyc
 %%DATADIR%%/emesenelib/MsnOIM.pyo
-%%DATADIR%%/emesenelib/MsnP2P.py
-%%DATADIR%%/emesenelib/MsnP2P.pyc
-%%DATADIR%%/emesenelib/MsnP2P.pyo
 %%DATADIR%%/emesenelib/Msnobj.py
 %%DATADIR%%/emesenelib/Msnobj.pyc
 %%DATADIR%%/emesenelib/Msnobj.pyo
+%%DATADIR%%/emesenelib/ProfileManager.py
+%%DATADIR%%/emesenelib/ProfileManager.pyc
+%%DATADIR%%/emesenelib/ProfileManager.pyo
+%%DATADIR%%/emesenelib/SignalHandler.py
+%%DATADIR%%/emesenelib/SignalHandler.pyc
+%%DATADIR%%/emesenelib/SignalHandler.pyo
 %%DATADIR%%/emesenelib/SoapManager.py
 %%DATADIR%%/emesenelib/SoapManager.pyc
 %%DATADIR%%/emesenelib/SoapManager.pyo
@@ -147,28 +158,44 @@ share/applications/emesene.desktop
 %%DATADIR%%/emesenelib/__init__.py
 %%DATADIR%%/emesenelib/__init__.pyc
 %%DATADIR%%/emesenelib/__init__.pyo
+%%DATADIR%%/emesenelib/common.py
+%%DATADIR%%/emesenelib/common.pyc
+%%DATADIR%%/emesenelib/common.pyo
 %%DATADIR%%/emesenelib/core.py
 %%DATADIR%%/emesenelib/core.pyc
 %%DATADIR%%/emesenelib/core.pyo
-%%DATADIR%%/emesenelib/docp2p.txt
+%%DATADIR%%/emesenelib/msn_p2p.py
+%%DATADIR%%/emesenelib/msn_p2p.pyc
+%%DATADIR%%/emesenelib/msn_p2p.pyo
 %%DATADIR%%/emesenelib/uuid.py
 %%DATADIR%%/emesenelib/uuid.pyc
 %%DATADIR%%/emesenelib/uuid.pyo
-%%DATADIR%%/ex1.py
-%%DATADIR%%/ex1.pyc
-%%DATADIR%%/ex1.pyo
-%%DATADIR%%/example1.py
-%%DATADIR%%/example1.pyc
-%%DATADIR%%/example1.pyo
 %%DATADIR%%/hotmlog.htm
 %%DATADIR%%/htmltextview.py
-%%DATADIR%%/htmltextview.py.orig
 %%DATADIR%%/htmltextview.pyc
 %%DATADIR%%/htmltextview.pyo
+%%DATADIR%%/logViewer/FilterPanel.py
+%%DATADIR%%/logViewer/FilterPanel.pyc
+%%DATADIR%%/logViewer/FilterPanel.pyo
+%%DATADIR%%/logViewer/Log.py
+%%DATADIR%%/logViewer/Log.pyc
+%%DATADIR%%/logViewer/Log.pyo
+%%DATADIR%%/logViewer/LogView.py
+%%DATADIR%%/logViewer/LogView.pyc
+%%DATADIR%%/logViewer/LogView.pyo
+%%DATADIR%%/logViewer/LogViewerMenu.py
+%%DATADIR%%/logViewer/LogViewerMenu.pyc
+%%DATADIR%%/logViewer/LogViewerMenu.pyo
+%%DATADIR%%/logViewer/LogViewerWindow.py
+%%DATADIR%%/logViewer/LogViewerWindow.pyc
+%%DATADIR%%/logViewer/LogViewerWindow.pyo
 %%DATADIR%%/messages.po
-%%DATADIR%%/msnPlusMarkup.py
-%%DATADIR%%/msnPlusMarkup.pyc
-%%DATADIR%%/msnPlusMarkup.pyo
+%%DATADIR%%/plugins_base/AvatarHistory.py
+%%DATADIR%%/plugins_base/AvatarHistory.pyc
+%%DATADIR%%/plugins_base/AvatarHistory.pyo
+%%DATADIR%%/plugins_base/Commands.py
+%%DATADIR%%/plugins_base/Commands.pyc
+%%DATADIR%%/plugins_base/Commands.pyo
 %%DATADIR%%/plugins_base/CurrentSong.py
 %%DATADIR%%/plugins_base/CurrentSong.pyc
 %%DATADIR%%/plugins_base/CurrentSong.pyo
@@ -181,13 +208,6 @@ share/applications/emesene.desktop
 %%DATADIR%%/plugins_base/LibNotify.py
 %%DATADIR%%/plugins_base/LibNotify.pyc
 %%DATADIR%%/plugins_base/LibNotify.pyo
-%%DATADIR%%/plugins_base/Listen.py
-%%DATADIR%%/plugins_base/Listen.pyc
-%%DATADIR%%/plugins_base/Listen.pyo
-%%DATADIR%%/plugins_base/MPD-r2.patch
-%%DATADIR%%/plugins_base/MPD.py
-%%DATADIR%%/plugins_base/MPD.pyc
-%%DATADIR%%/plugins_base/MPD.pyo
 %%DATADIR%%/plugins_base/Notification.py
 %%DATADIR%%/plugins_base/Notification.pyc
 %%DATADIR%%/plugins_base/Notification.pyo
@@ -197,6 +217,12 @@ share/applications/emesene.desktop
 %%DATADIR%%/plugins_base/Plugin.py
 %%DATADIR%%/plugins_base/Plugin.pyc
 %%DATADIR%%/plugins_base/Plugin.pyo
+%%DATADIR%%/plugins_base/Plus.py
+%%DATADIR%%/plugins_base/Plus.pyc
+%%DATADIR%%/plugins_base/Plus.pyo
+%%DATADIR%%/plugins_base/PlusColorPanel.py
+%%DATADIR%%/plugins_base/PlusColorPanel.pyc
+%%DATADIR%%/plugins_base/PlusColorPanel.pyo
 %%DATADIR%%/plugins_base/SickLogger.py
 %%DATADIR%%/plugins_base/SickLogger.pyc
 %%DATADIR%%/plugins_base/SickLogger.pyo
@@ -206,21 +232,51 @@ share/applications/emesene.desktop
 %%DATADIR%%/plugins_base/Spell.py
 %%DATADIR%%/plugins_base/Spell.pyc
 %%DATADIR%%/plugins_base/Spell.pyo
+%%DATADIR%%/plugins_base/StatusHistory.py
+%%DATADIR%%/plugins_base/StatusHistory.pyc
+%%DATADIR%%/plugins_base/StatusHistory.pyo
+%%DATADIR%%/plugins_base/Wikipedia.py
+%%DATADIR%%/plugins_base/Wikipedia.pyc
+%%DATADIR%%/plugins_base/Wikipedia.pyo
 %%DATADIR%%/plugins_base/WindowTremblingNudge.py
 %%DATADIR%%/plugins_base/WindowTremblingNudge.pyc
 %%DATADIR%%/plugins_base/WindowTremblingNudge.pyo
+%%DATADIR%%/plugins_base/Wordpress.py
+%%DATADIR%%/plugins_base/Wordpress.pyc
+%%DATADIR%%/plugins_base/Wordpress.pyo
+%%DATADIR%%/plugins_base/Youtube.py
+%%DATADIR%%/plugins_base/Youtube.pyc
+%%DATADIR%%/plugins_base/Youtube.pyo
 %%DATADIR%%/plugins_base/__init__.py
 %%DATADIR%%/plugins_base/__init__.pyc
 %%DATADIR%%/plugins_base/__init__.pyo
 %%DATADIR%%/plugins_base/currentSong/Amarok.py
 %%DATADIR%%/plugins_base/currentSong/Amarok.pyc
 %%DATADIR%%/plugins_base/currentSong/Amarok.pyo
+%%DATADIR%%/plugins_base/currentSong/Audacious.py
+%%DATADIR%%/plugins_base/currentSong/Audacious.pyc
+%%DATADIR%%/plugins_base/currentSong/Audacious.pyo
+%%DATADIR%%/plugins_base/currentSong/Banshee.py
+%%DATADIR%%/plugins_base/currentSong/Banshee.pyc
+%%DATADIR%%/plugins_base/currentSong/Banshee.pyo
 %%DATADIR%%/plugins_base/currentSong/CurrentSong.py
 %%DATADIR%%/plugins_base/currentSong/CurrentSong.pyc
 %%DATADIR%%/plugins_base/currentSong/CurrentSong.pyo
 %%DATADIR%%/plugins_base/currentSong/Exaile.py
 %%DATADIR%%/plugins_base/currentSong/Exaile.pyc
 %%DATADIR%%/plugins_base/currentSong/Exaile.pyo
+%%DATADIR%%/plugins_base/currentSong/Listen.py
+%%DATADIR%%/plugins_base/currentSong/Listen.pyc
+%%DATADIR%%/plugins_base/currentSong/Listen.pyo
+%%DATADIR%%/plugins_base/currentSong/Mpd.py
+%%DATADIR%%/plugins_base/currentSong/Mpd.pyc
+%%DATADIR%%/plugins_base/currentSong/Mpd.pyo
+%%DATADIR%%/plugins_base/currentSong/QuodLibet.py
+%%DATADIR%%/plugins_base/currentSong/QuodLibet.pyc
+%%DATADIR%%/plugins_base/currentSong/QuodLibet.pyo
+%%DATADIR%%/plugins_base/currentSong/Rhythmbox.py
+%%DATADIR%%/plugins_base/currentSong/Rhythmbox.pyc
+%%DATADIR%%/plugins_base/currentSong/Rhythmbox.pyo
 %%DATADIR%%/plugins_base/currentSong/Winamp.py
 %%DATADIR%%/plugins_base/currentSong/Winamp.pyc
 %%DATADIR%%/plugins_base/currentSong/Winamp.pyo
@@ -230,6 +286,12 @@ share/applications/emesene.desktop
 %%DATADIR%%/plugins_base/currentSong/__init__.py
 %%DATADIR%%/plugins_base/currentSong/__init__.pyc
 %%DATADIR%%/plugins_base/currentSong/__init__.pyo
+%%DATADIR%%/plugins_base/gmailNotify.py
+%%DATADIR%%/plugins_base/gmailNotify.pyc
+%%DATADIR%%/plugins_base/gmailNotify.pyo
+%%DATADIR%%/plugins_base/mailChecker.py
+%%DATADIR%%/plugins_base/mailChecker.pyc
+%%DATADIR%%/plugins_base/mailChecker.pyo
 %%DATADIR%%/po/ar/LC_MESSAGES/emesen.mo
 %%DATADIR%%/po/ar/LC_MESSAGES/emesen.po
 %%DATADIR%%/po/de/LC_MESSAGES/emesene.mo
@@ -252,8 +314,8 @@ share/applications/emesene.desktop
 %%DATADIR%%/po/nl/LC_MESSAGES/emesene.po
 %%DATADIR%%/po/pt/LC_MESSAGES/emesene.mo
 %%DATADIR%%/po/pt/LC_MESSAGES/emesene.po
-%%DATADIR%%/po/pt_br/LC_MESSAGES/emesene.mo
-%%DATADIR%%/po/pt_br/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/pt_BR/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/pt_BR/LC_MESSAGES/emesene.po
 %%DATADIR%%/po/sv/LC_MESSAGES/emesene.mo
 %%DATADIR%%/po/sv/LC_MESSAGES/emesene.po
 %%DATADIR%%/po/tr/LC_MESSAGES/emesene.mo
@@ -262,14 +324,14 @@ share/applications/emesene.desktop
 %%DATADIR%%/po/tr/LC_MESSAGES/plugin_notification.po
 %%DATADIR%%/po/tr/LC_MESSAGES/plugin_sound.mo
 %%DATADIR%%/po/tr/LC_MESSAGES/plugin_sound.po
-%%DATADIR%%/po/zh-cn/LC_MESSAGES/emesene.mo
-%%DATADIR%%/po/zh-cn/LC_MESSAGES/emesene.po
-%%DATADIR%%/po/zh-tw/LC_MESSAGES/emesene.mo
-%%DATADIR%%/po/zh-tw/LC_MESSAGES/emesene.po
-%%DATADIR%%/po/zh-tw/LC_MESSAGES/plugin_notification.mo
-%%DATADIR%%/po/zh-tw/LC_MESSAGES/plugin_notification.po
-%%DATADIR%%/po/zh-tw/LC_MESSAGES/plugin_sound.mo
-%%DATADIR%%/po/zh-tw/LC_MESSAGES/plugin_sound.po
+%%DATADIR%%/po/zh_CN/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/zh_CN/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/zh_TW/LC_MESSAGES/emesene.mo
+%%DATADIR%%/po/zh_TW/LC_MESSAGES/emesene.po
+%%DATADIR%%/po/zh_TW/LC_MESSAGES/plugin_notification.mo
+%%DATADIR%%/po/zh_TW/LC_MESSAGES/plugin_notification.po
+%%DATADIR%%/po/zh_TW/LC_MESSAGES/plugin_sound.mo
+%%DATADIR%%/po/zh_TW/LC_MESSAGES/plugin_sound.po
 %%DATADIR%%/setup
 %%DATADIR%%/smilies/default/Airplane.png
 %%DATADIR%%/smilies/default/Auto.png
@@ -355,7 +417,6 @@ share/applications/emesene.desktop
 %%DATADIR%%/sounds/offline.wav
 %%DATADIR%%/sounds/online.wav
 %%DATADIR%%/sounds/type.wav
-%%DATADIR%%/svn.log
 %%DATADIR%%/themes/default/away.png
 %%DATADIR%%/themes/default/blocked.png
 %%DATADIR%%/themes/default/brb.png
@@ -380,9 +441,12 @@ share/applications/emesene.desktop
 %%DATADIR%%/themes/default/phone.png
 %%DATADIR%%/themes/default/reverse.png
 %%DATADIR%%/themes/default/space.png
+%%DATADIR%%/themes/default/status-away.png
 %%DATADIR%%/themes/default/status-blocked.png
+%%DATADIR%%/themes/default/status-busy.png
 %%DATADIR%%/themes/default/trayicon.ico
 %%DATADIR%%/themes/default/trayicon.png
+%%DATADIR%%/themes/default/trayicon2.png
 %%DATADIR%%/themes/default/typing.png
 %%DATADIR%%/themes/default/userPanel.png
 %%DATADIR%%/themes/tango/away.png
@@ -405,8 +469,12 @@ share/applications/emesene.desktop
 %%DATADIR%%/themes/tango/phone.png
 %%DATADIR%%/themes/tango/reverse.png
 %%DATADIR%%/themes/tango/space.png
+%%DATADIR%%/themes/tango/status-away.png
+%%DATADIR%%/themes/tango/status-blocked.png
+%%DATADIR%%/themes/tango/status-busy.png
 %%DATADIR%%/themes/tango/trayicon.ico
 %%DATADIR%%/themes/tango/trayicon.png
+%%DATADIR%%/themes/tango/trayicon2.png
 %%DATADIR%%/themes/tango/typing.png
 %%DATADIR%%/themes/tango/userPanel.png
 @dirrm %%DATADIR%%/themes/tango
@@ -415,16 +483,16 @@ share/applications/emesene.desktop
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/smilies/default
 @dirrm %%DATADIR%%/smilies
-@dirrm %%DATADIR%%/po/zh-tw/LC_MESSAGES
-@dirrm %%DATADIR%%/po/zh-tw
-@dirrm %%DATADIR%%/po/zh-cn/LC_MESSAGES
-@dirrm %%DATADIR%%/po/zh-cn
+@dirrm %%DATADIR%%/po/zh_TW/LC_MESSAGES
+@dirrm %%DATADIR%%/po/zh_TW
+@dirrm %%DATADIR%%/po/zh_CN/LC_MESSAGES
+@dirrm %%DATADIR%%/po/zh_CN
 @dirrm %%DATADIR%%/po/tr/LC_MESSAGES
 @dirrm %%DATADIR%%/po/tr
 @dirrm %%DATADIR%%/po/sv/LC_MESSAGES
 @dirrm %%DATADIR%%/po/sv
-@dirrm %%DATADIR%%/po/pt_br/LC_MESSAGES
-@dirrm %%DATADIR%%/po/pt_br
+@dirrm %%DATADIR%%/po/pt_BR/LC_MESSAGES
+@dirrm %%DATADIR%%/po/pt_BR
 @dirrm %%DATADIR%%/po/pt/LC_MESSAGES
 @dirrm %%DATADIR%%/po/pt
 @dirrm %%DATADIR%%/po/nl/LC_MESSAGES
@@ -446,11 +514,13 @@ share/applications/emesene.desktop
 @dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%/plugins_base/currentSong
 @dirrm %%DATADIR%%/plugins_base
+@dirrm %%DATADIR%%/logViewer
 @dirrm %%DATADIR%%/emesenelib
 @dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%/conversation_themes/pidgin
+@dirrm %%DATADIR%%/conversation_themes/messenger
 @dirrm %%DATADIR%%/conversation_themes/irc
 @dirrm %%DATADIR%%/conversation_themes/gtalk
 @dirrm %%DATADIR%%/conversation_themes/default
 @dirrm %%DATADIR%%/conversation_themes
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

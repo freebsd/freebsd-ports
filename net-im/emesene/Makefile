@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	emesene
-PORTVERSION=	0.20070703
+PORTVERSION=	0.20070820
 CATEGORIES=	net-im python
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-030707
+DISTNAME=	${PORTNAME}-r801
 
 MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	MSN Messenger client
@@ -23,8 +23,14 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	pygtk2
+REINPLACE_ARGS=	-i ""
 
-SUB_FILES=	emesene.desktop
+DESKTOP_ENTRIES="${PORTNAME}" \
+		"${COMMENT}" \
+		"${DATADIR}/themes/default/userPanel.png" \
+		"${PORTNAME}" \
+		"Network;InstantMessaging;GTK;" \
+		"false"
 
 post-patch:
 	@${CHMOD} a+x ${WRKSRC}/emesene
@@ -39,9 +45,7 @@ do-build:
 
 do-install:
 	@${INSTALL} -d ${DATADIR}/
-	@${INSTALL} -d ${PREFIX}/share/applications/
 	@${CP} -R ${WRKSRC}/ ${DATADIR}/
-	@${INSTALL_DATA} ${WRKDIR}/emesene.desktop ${PREFIX}/share/applications/
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
