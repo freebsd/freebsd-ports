@@ -7,12 +7,13 @@
 #
 
 PORTNAME=	otr
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.1.0
 CATEGORIES=	security net
-MASTER_SITES=	http://www.cyberdyne.org/~icebrkr/files/
+MASTER_SITES=	http://www.cypherpunks.ca/otr/
 PKGNAMEPREFIX=	pidgin-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	perlfu@gmail.com
 COMMENT=	Allows deniable private conversations using Pidgin
@@ -23,12 +24,17 @@ LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
 		purple.1:${PORTSDIR}/net-im/libpurple
 
 USE_XLIB=	yes
+USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-libotr-prefix=${LOCALBASE}/lib \
 		--with-libotr-inc-prefix=${LOCALBASE}/include
+
+verify: checksum
+	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
