@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	google-ctemplate
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	textproc
 MASTER_SITES=	http://google-ctemplate.googlecode.com/files/
 DISTNAME=	ctemplate-${PORTVERSION}
