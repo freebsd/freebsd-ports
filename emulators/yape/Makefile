@@ -26,7 +26,7 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 503001
-IGNORE=	Build only in 5.3 or uppper (Need fmax(3) and fmin(3) function)
+IGNORE=	build only in 5.3 or uppper (Need fmax(3) and fmin(3) function)
 .endif
 
 post-extract:
@@ -36,6 +36,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG}|" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s|TAP::TAP|TAP|" ${WRKSRC}/tape.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/yape ${PREFIX}/bin
