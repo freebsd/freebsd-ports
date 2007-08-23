@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.2
-PORTREVISION=	20070815
+PORTREVISION=	20070822
 CATEGORIES=	lang java
 VERSIONSTRING=	4.2-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -28,6 +28,9 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 SUFFIX=		42
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	alpha ia64
+# Building libgcj with lang/gcc295 installed is causing a failure about
+# "hidden symbol `__eprintf'" in libgcc.a(_eprintf.o).
+CONFLICTS=	gcc-2.95.*
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
