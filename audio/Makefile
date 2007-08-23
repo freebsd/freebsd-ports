@@ -464,6 +464,7 @@
     SUBDIR += pacpl
     SUBDIR += padevchooser
     SUBDIR += paman
+    SUBDIR += paprefs
     SUBDIR += pavucontrol
     SUBDIR += pd
     SUBDIR += pecl-id3
