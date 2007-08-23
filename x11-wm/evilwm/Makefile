@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	evilwm
-PORTVERSION=	0.99.25
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.6809.org.uk/evilwm/
 
