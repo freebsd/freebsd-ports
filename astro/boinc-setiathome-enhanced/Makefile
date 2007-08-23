@@ -5,8 +5,7 @@
 #
 
 PORTNAME=	boinc-setiathome-enhanced
-PORTVERSION=	5.13
-PORTREVISION=	1
+PORTVERSION=	5.27
 CATEGORIES=	astro
 MASTER_SITES=	http://home.tiscali.nl/rladan/distfiles/
 
@@ -18,6 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
 # fftw3f is statically linked :
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
+
+USE_GMAKE=	yes
 
 # The compiler flags below are copied from m4/optimizations.m4,
 # leaving out the -march flag which is set by /usr/share/mk/bsd.cpu.mk
@@ -52,8 +53,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" \
 		BOINCDIR="${LOCALBASE}"
-CONFIGURE_ARGS=	--disable-server \
-		--disable-graphics
 
 # these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
 BOINC_USER?=	boinc

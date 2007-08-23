@@ -10,8 +10,8 @@ variable in /etc/make.conf
 Note that there is currently no screensaver support in this version.
 
 The source archive is a repackaged version of
-setiathome_enhanced-client-cvs-2006-05-12.tar.gz at
-http://setiathome.berkeley.edu/seti_source/nightly/old/ :
+setiathome_enhanced-client-cvs-2007-08-08.tar.gz at
+http://setiathome.berkeley.edu/seti_source/nightly[/old]/ :
 * The screensaver and server code is removed
 * The configure and Makefile scripts are regenerated to match the
   net/boinc-client port
