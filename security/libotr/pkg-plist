@@ -14,12 +14,13 @@ include/libotr/privkey.h
 include/libotr/privkey-t.h
 include/libotr/proto.h
 include/libotr/serial.h
+include/libotr/sm.h
 include/libotr/tlv.h
 include/libotr/userstate.h
 include/libotr/version.h
 lib/libotr.a
 lib/libotr.la
 lib/libotr.so
-lib/libotr.so.2
+lib/libotr.so.3
 share/aclocal/libotr.m4
 @dirrm include/libotr
