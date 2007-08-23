@@ -10836,6 +10836,7 @@ p5-Sort-ArrayOfArrays	ports/devel/p5-Sort-ArrayOfArrays
 p5-Sort-Fields	ports/textproc/p5-Sort-Fields
 p5-Sort-Key	ports/devel/p5-Sort-Key
 p5-Sort-Key-DateTime	ports/devel/p5-Sort-Key-DateTime
+p5-Sort-Key-Top	ports/devel/p5-Sort-Key-Top
 p5-Sort-Maker	ports/devel/p5-Sort-Maker
 p5-Sort-Naturally	ports/textproc/p5-Sort-Naturally
 p5-Sort-Tree		ports/devel/p5-Sort-Tree
