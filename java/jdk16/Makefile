@@ -116,9 +116,7 @@ BOOTSTRAPJDKDIR?=	${LOCALBASE}/diablo-jdk1.5.0
 
 BUILD_DEPENDS+=	${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk15
 
-.if defined(WITHOUT_WEB)
-MAKE_ENV+=	DONT_BUILD_DEPLOY="YES"
-.else
+.if !defined(WITHOUT_WEB)
 USE_GNOME=	desktopfileutils
 .endif
 
@@ -161,11 +159,11 @@ MAKE_ENV+=	ALT_PARALLEL_BUILD_JOBS="${PARALLEL_BUILD_JOBS}"
 ALL_TARGET=	all
 
 PLIST_FILES=	jdk${JDK_VERSION}/jre/.systemPrefs/.system.lock \
-		jdk${JDK_VERSION}/jre/.systemPrefs/.systemRootModFile \
-		share/applications/sun-java16.desktop \
-		share/applications/sun-javaws16.desktop
+		jdk${JDK_VERSION}/jre/.systemPrefs/.systemRootModFile
 .if !defined(WITHOUT_WEB)
-PLIST_FILES+=	share/applications/sun-jcontrol16.desktop
+PLIST_FILES+=	share/applications/sun-java16.desktop \
+		share/applications/sun-javaws16.desktop \
+		share/applications/sun-jcontrol16.desktop
 .endif
 PLIST_DIRS=	jdk${JDK_VERSION}/jre/.systemPrefs
 
@@ -311,6 +309,9 @@ post-patch:
 			-e "s:%%JDK_VERSION%%:${JDK_VERSION}:g" \
 			${WRKSRC}/$${file}; \
 	done
+.if defined(WITHOUT_WEB)
+	@${RM} ${WRKDIR}/deploy/make/Makefile
+.endif
 
 .if defined(WITH_LINUX_BOOTSTRAP)
 pre-build:
@@ -370,12 +371,12 @@ do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	cd ${JDKIMAGEDIR} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+.if !defined(WITHOUT_WEB)
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${JDKIMAGEDIR}/jre/lib/desktop/applications/sun-java.desktop \
 		${PREFIX}/share/applications/sun-java16.desktop
 	${INSTALL_DATA} ${JDKIMAGEDIR}/jre/lib/desktop/applications/sun-javaws.desktop \
 		${PREFIX}/share/applications/sun-javaws16.desktop
-.if !defined(WITHOUT_WEB)
 	${INSTALL_DATA} ${JDKIMAGEDIR}/jre/lib/desktop/applications/sun_java.desktop \
 		${PREFIX}/share/applications/sun-jcontrol16.desktop
 .endif
