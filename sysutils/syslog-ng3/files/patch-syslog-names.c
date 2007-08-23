@@ -1,5 +1,5 @@
---- src/syslog-names.c.orig	Wed Nov  8 14:43:03 2006
-+++ src/syslog-names.c	Wed Nov  8 14:50:06 2006
+--- src/syslog-names.c.orig	Wed Feb 28 10:19:12 2007
++++ src/syslog-names.c	Wed Aug 22 15:48:07 2007
 @@ -45,6 +45,7 @@
  #ifdef LOG_AUTHPRIV
    {"authpriv", LOG_AUTHPRIV},

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.balabit.com/downloads/syslog-ng/2.0/src/
+MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/stable/src/
 
 MAINTAINER=	ivan.lago@ifom-ieo-campus.it
 COMMENT=	A powerful syslogd replacement
 
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet 
 LIB_DEPENDS=	evtlog.0:${PORTSDIR}/sysutils/eventlog
 
 MAN5=		syslog-ng.conf.5
@@ -27,7 +27,13 @@ NO_LATEST_LINK=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
-CONFIGURE_ARGS=	--enable-dynamic-linking
+LIBNET_CONFIG?= ${LOCALBASE}/bin/libnet11-config
+
+CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
+		--enable-dynamic-linking --mandir=${PREFIX}/man \
+		--with-libnet=${LOCALBASE}/bin
+CONFIGURE_ENV=  CFLAGS="`${LIBNET_CONFIG} --cflags`" \
+		LDFLAGS="`${LIBNET_CONFIG} --libs`"
 
 .if defined(WITH_TCP_WRAPPERS)
 CONFIGURE_ARGS+=--enable-tcp-wrapper
@@ -35,6 +41,7 @@ CONFIGURE_ARGS+=--enable-tcp-wrapper
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/src/syslog-ng.h
+	@${REINPLACE_CMD} -e 's:libnet-config:libnet11-config:g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
