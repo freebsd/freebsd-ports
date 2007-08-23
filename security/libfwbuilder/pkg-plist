@@ -125,6 +125,7 @@ share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.8.xslt
 share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.9.xslt
 share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.10.xslt
 share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.11.xslt
+share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.12.xslt
 share/libfwbuilder%%BUILD_VERSION%%/fwbuilder.dtd
 @dirrm share/libfwbuilder%%BUILD_VERSION%%/migration
 @dirrm share/libfwbuilder%%BUILD_VERSION%%
