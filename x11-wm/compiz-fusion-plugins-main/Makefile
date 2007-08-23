@@ -7,7 +7,7 @@
 
 PORTNAME=	compiz-fusion-plugins-main
 PORTVERSION=	0.5.2
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
@@ -30,8 +30,29 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 
+GCONF_SCHEMAS=	compiz-animation.schemas \
+		compiz-colorfilter.schemas \
+		compiz-expo.schemas \
+		compiz-ezoom.schemas \
+		compiz-imgjpeg.schemas \
+		compiz-neg.schemas \
+		compiz-opacify.schemas \
+		compiz-put.schemas \
+		compiz-resizeinfo.schemas \
+		compiz-ring.schemas \
+		compiz-snap.schemas \
+		compiz-text.schemas \
+		compiz-thumbnail.schemas \
+		compiz-wall.schemas \
+		compiz-winrules.schemas \
+		compiz-workarounds.schemas \
+		compiz-scaleaddon.schemas \
+		compiz-vpswitch.schemas \
+		compiz-shift.schemas
+
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ARGS=	--enable-schemas
 
 .include <bsd.port.mk>
