@@ -44,11 +44,11 @@ include/ulxmlrpcpp/ulxr_xmlparse_base.h
 lib/libulxmlrpcpp.a
 lib/libulxmlrpcpp.la
 lib/libulxmlrpcpp.so
-lib/libulxmlrpcpp.so.20
+lib/libulxmlrpcpp.so.21
 lib/libulxmlrpcpp_contrib.a
 lib/libulxmlrpcpp_contrib.la
 lib/libulxmlrpcpp_contrib.so
-lib/libulxmlrpcpp_contrib.so.20
+lib/libulxmlrpcpp_contrib.so.21
 libdata/pkgconfig/ulxmlrpcpp.pc
 %%DATADIR%%/httpd/index.html
 %%DATADIR%%/httpd/logo-ulxmlrpcpp.png
