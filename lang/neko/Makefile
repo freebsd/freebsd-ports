@@ -7,6 +7,7 @@
 
 PORTNAME=	neko
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://nekovm.org/_media/
 
@@ -28,7 +29,9 @@ OPTIONS=	APACHE13 "Build with mod_neko for Apache 1.3.x" off \
 
 # Neko needs boehm-gc with POSIX thread support.
 BC_DIR!=	cd ${PORTSDIR}/devel/boehm-gc && ${MAKE} -V WRKSRC
+BC_MAKEARGS=	BATCH=yes WITH_THREADING=true
 
+BC_CFLAGS:= ${CFLAGS}
 CFLAGS=	-I${WRKSRC} -I${PREFIX}/include
 LDFLAGS= -L${BC_DIR}/.libs -L${PREFIX}/lib
 LIBKEYNAME=
@@ -91,6 +94,7 @@ PLIST_SUB+=	GTK2="@comment "
 .endif
 
 .if ${ARCH} == "amd64"
+BC_CFLAGS+=	-fPIC
 CFLAGS+=	-D_64BITS -fPIC
 .endif
 
@@ -137,7 +141,7 @@ post-patch:
 
 pre-build:
 	@(cd ${PORTSDIR}/devel/boehm-gc/ && \
-	    ${MAKE} BATCH=yes WITH_THREADING=true clean all)
+	    ${MAKE} CFLAGS="${BC_CFLAGS}" ${BC_MAKEARGS} clean all)
 	@${RM} -f ${BC_DIR}/.libs/*.so*
 	@for BLIB in `${LS} ${BC_DIR}/.libs/libgc.*`; do \
 	    ${MV} $${BLIB} `echo $${BLIB} | ${SED} -e 's/libgc/libnekogc/'`; \
