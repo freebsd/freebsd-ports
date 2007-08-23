@@ -11577,6 +11577,7 @@ pathological	ports/games/pathological
 pathrate	ports/benchmarks/pathrate
 pavucontrol	ports/audio/pavucontrol
 pavuk		ports/ftp/pavuk
+pavumeter	ports/audio/pavumeter
 pawm		ports/x11-wm/pawm
 pax-utils	ports/sysutils/pax-utils
 pbasic		ports/lang/pbasic
