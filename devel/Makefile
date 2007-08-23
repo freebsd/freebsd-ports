@@ -1488,6 +1488,7 @@
     SUBDIR += p5-Sort-ArrayOfArrays
     SUBDIR += p5-Sort-Key
     SUBDIR += p5-Sort-Key-DateTime
+    SUBDIR += p5-Sort-Key-Top
     SUBDIR += p5-Sort-Maker
     SUBDIR += p5-Sort-Tree
     SUBDIR += p5-Sort-Versions
