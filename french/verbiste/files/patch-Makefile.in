@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Thu Aug  2 08:50:55 2007
++++ Makefile.in	Thu Aug  2 08:53:57 2007
+@@ -308,11 +308,9 @@
+ 	COPYING
+ 
+ # COPYING contains the license; main-window.cpp expects it there.
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ doc_DATA = \
+ 	AUTHORS \
+-	COPYING \
+-	INSTALL \
+ 	NEWS \
+ 	README \
+ 	TODO \
