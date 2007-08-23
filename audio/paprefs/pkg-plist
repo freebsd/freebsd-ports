@@ -1,0 +1,5 @@
+bin/paprefs
+share/applications/paprefs.desktop
+%%DATADIR%%/paprefs.glade
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
