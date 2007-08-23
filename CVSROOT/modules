@@ -11574,6 +11574,7 @@ pathload	ports/benchmarks/pathload
 pathneck	ports/net/pathneck
 pathological	ports/games/pathological
 pathrate	ports/benchmarks/pathrate
+pavucontrol	ports/audio/pavucontrol
 pavuk		ports/ftp/pavuk
 pawm		ports/x11-wm/pawm
 pax-utils	ports/sysutils/pax-utils
