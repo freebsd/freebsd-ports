@@ -1,5 +1,5 @@
---- libntfs-3g/unix_io.c.orig	Fri Jun  8 23:35:33 2007
-+++ libntfs-3g/unix_io.c	Mon Jul 16 07:58:02 2007
+--- libntfs-3g/unix_io.c.orig	Fri Jun  8 18:35:33 2007
++++ libntfs-3g/unix_io.c	Wed Jul 11 17:55:03 2007
 @@ -54,6 +54,22 @@
  #include <linux/fd.h>
  #endif
@@ -264,7 +264,7 @@
  
  	if (!NDevOpen(dev)) {
  		errno = EBADF;
-@@ -160,12 +330,19 @@
+@@ -160,12 +330,18 @@
  			return -1;
  		}
  
@@ -274,7 +274,6 @@
  	flk.l_whence = SEEK_SET;
  	flk.l_start = flk.l_len = 0LL;
 -	if (fcntl(DEV_FD(dev), F_SETLK, &flk))
-+
 +	if (!NDevBlock(dev) && fcntl(DEV_FD(dev), F_SETLK, &flk))
  		ntfs_log_perror("Could not unlock %s", dev->d_name);
 +#endif
@@ -285,7 +284,7 @@
  	if (close(DEV_FD(dev))) {
  		ntfs_log_perror("Failed to close device %s", dev->d_name);
  		return -1;
-@@ -189,9 +366,234 @@
+@@ -189,9 +365,234 @@
  static s64 ntfs_device_unix_io_seek(struct ntfs_device *dev, s64 offset,
  		int whence)
  {
@@ -520,7 +519,7 @@
  /**
   * ntfs_device_unix_io_read - Read from the device, from the current location
   * @dev:
-@@ -205,6 +607,29 @@
+@@ -205,6 +606,29 @@
  static s64 ntfs_device_unix_io_read(struct ntfs_device *dev, void *buf,
  		s64 count)
  {
@@ -550,7 +549,7 @@
  	return read(DEV_FD(dev), buf, count);
  }
  
-@@ -226,6 +651,28 @@
+@@ -226,6 +650,28 @@
  		return -1;
  	}
  	NDevSetDirty(dev);
@@ -579,7 +578,7 @@
  	return write(DEV_FD(dev), buf, count);
  }
  
-@@ -243,6 +690,13 @@
+@@ -243,6 +689,13 @@
  static s64 ntfs_device_unix_io_pread(struct ntfs_device *dev, void *buf,
  		s64 count, s64 offset)
  {
@@ -593,7 +592,7 @@
  	return pread(DEV_FD(dev), buf, count, offset);
  }
  
-@@ -265,6 +719,13 @@
+@@ -265,6 +718,13 @@
  		return -1;
  	}
  	NDevSetDirty(dev);
@@ -607,17 +606,18 @@
  	return pwrite(DEV_FD(dev), buf, count, offset);
  }
  
-@@ -281,6 +742,13 @@
+@@ -281,7 +741,14 @@
  	int res = 0;
  	
  	if (!NDevReadOnly(dev)) {
 +#if USE_UBLIO
-+		if (DEV_HANDLE(dev)->ublio_fh) {
-+			res = ublio_fsync(DEV_HANDLE(dev)->ublio_fh);
-+			if (res)
-+				return res;
-+		}
-+#endif
++		if (DEV_HANDLE(dev)->ublio_fh)
++ 			res = ublio_fsync(DEV_HANDLE(dev)->ublio_fh);
++		if (!DEV_HANDLE(dev)->ublio_fh || !res)
++			res = fsync(DEV_FD(dev));
++#else
  		res = fsync(DEV_FD(dev));
++#endif
  		if (res)
  			ntfs_log_perror("Failed to sync device %s", dev->d_name);
+ 		else

@@ -21,11 +21,10 @@ BUILD_DEPENDS=	fusefs-libs>=2.6.0:${PORTSDIR}/sysutils/fusefs-libs
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
-ONLY_FOR_ARCHS=	i386 amd64
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --mandir=${MANPREFIX}/man
 
 OPTIONS=	LOCK "Lock the device when mounting (avoids access)" off \
 		UBLIO "Enable user space cache for improved speed" on
@@ -35,6 +34,10 @@ MAN8=		ntfs-3g.8
 UBLIO_SRC=	libublio-20070103
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+IGNORE=		depends on kernel module that requires FreeBSD 6 or later
+.endif
 
 .if defined(WITH_LOCK)
 CFLAGS+=	-DUSE_LOCK
