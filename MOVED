@@ -3155,40 +3155,40 @@ shells/perlsh|shells/psh|2007-08-13|Renamed to reflect correct project's name
 mail/qmHandle|mail/qmhandle|2007-08-13|Renamed to reflect correct project's name
 science/speedcrunch|math/speedcrunch|2007-08-14|Moved to a more appropriate category
 chinese/CJK|print/latex-cjk|2007-08-19|Better category
-databases/bbdb-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-databases/lsdb-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-deskutils/mhc-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-devel/elib-emacs19||2007-08-19|Has expired: emacs19 is obsolete; please use a more recent version
-devel/elib-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+databases/bbdb-emacs20|databases/bbdb|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+databases/lsdb-emacs20|databases/lsdb|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+deskutils/mhc-emacs20|deskutils/mhc|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+devel/elib-emacs19|devel/elib|2007-08-19|Has expired: emacs19 is obsolete; please use a more recent version
+devel/elib-emacs20|devel/elib|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
 devel/pcl-cvs-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-www/emacs-w3m-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-mail/wanderlust-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+www/emacs-w3m-emacs20|www/emacs-w3m|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+mail/wanderlust-emacs20|mail/wanderlust|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
 mail/rmime||2007-08-19|Has expired: emacs20 and related ports are obsolete; also, distfile is unfetchable
-mail/mew2-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-mail/mew-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-mail/emh-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+mail/mew2-emacs20|mail/mew2|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+mail/mew-emacs20|mail/mew|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+mail/emh-emacs20|mail/emh|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
 lang/tuareg-mode.el||2007-08-19|Has expired: emacs20 and related ports are obsolete; this port needs an update
 korean/hanemacs||2007-08-19|Has expired: depends on emacs19 which is obsolete
 japanese/weather-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-mail/mew3-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+mail/mew3-emacs20|mail/mew3|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
 japanese/skk10-elisp-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
 japanese/mule-sj3+wnn7||2007-08-19|Has expired: emacs19 and related ports are obsolete; please use a more recent version
 japanese/mule-sj3+wnn6||2007-08-19|Has expired: emacs19 and related ports are obsolete; please use a more recent version
 japanese/mule-freewnn+sj3||2007-08-19|Has expired: emacs19 and related ports are obsolete; please use a more recent version
 japanese/mule-canna+freewnn||2007-08-19|Has expired: emacs19 and related ports are obsolete; please use a more recent version
-japanese/migemo-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-japanese/lookup-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-japanese/emacs20-emcws||2007-08-19|Has expired: editors/emacs20 is also deprecated
-japanese/ddskk-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-irc/riece-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+japanese/migemo-emacs20|japanese/migemo|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+japanese/lookup-emacs20|japanese/lookup|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+japanese/emacs20-emcws|japanese/emacs-emcws|2007-08-19|Has expired: editors/emacs20 is also deprecated
+japanese/ddskk-emacs20|japanses/ddskk|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+irc/riece-emacs20|irc/riece|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
 news/gnus-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-editors/tamago-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-editors/psgml-mule||2007-08-19|Has expired: emacs19 and related ports are obsolete; please use a more recent version
-editors/psgml-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-editors/psgml-emacs19||2007-08-19|Has expired: emacs19 is obsolete; please use a more recent version
-editors/leim20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+editors/tamago-emacs20|editors/tamago|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+editors/psgml-mule|editors/psgml|2007-08-19|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+editors/psgml-emacs20|editors/psgml|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+editors/psgml-emacs19|editors/psgml|2007-08-19|Has expired: emacs19 is obsolete; please use a more recent version
+editors/leim20|editors/leim21|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
 editors/iiimecf||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-editors/gnuserv-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
-devel/semantic-emacs20||2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+editors/gnuserv-emacs20|editors/gnuserv|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+devel/semantic-emacs20|devel/semantic|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
 net/ddc||2007-08-22|Usability expired
 games/groundhog||2007-08-22|Game is not worth keeping
