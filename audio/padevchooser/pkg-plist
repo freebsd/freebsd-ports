@@ -1,0 +1,5 @@
+bin/padevchooser
+share/applications/padevchooser.desktop
+%%DATADIR%%/padevchooser.glade
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
