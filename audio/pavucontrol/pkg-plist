@@ -1,0 +1,5 @@
+bin/pavucontrol
+share/applications/pavucontrol.desktop
+%%DATADIR%%/pavucontrol.glade
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
