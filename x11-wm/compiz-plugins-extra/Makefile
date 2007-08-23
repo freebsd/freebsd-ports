@@ -7,7 +7,7 @@
 
 PORTNAME=	compiz-fusion-plugins-extra
 PORTVERSION=	0.5.2
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
@@ -31,9 +31,29 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 
+GCONF_SCHEMAS=	compiz-addhelper.schemas \
+		compiz-bench.schemas \
+		compiz-crashhandler.schemas \
+		compiz-cubecaps.schemas \
+		compiz-cubereflex.schemas \
+		compiz-extrawm.schemas \
+		compiz-fadedesktop.schemas \
+		compiz-firepaint.schemas \
+		compiz-gears.schemas \
+		compiz-gotovp.schemas \
+		compiz-group.schemas \
+		compiz-mblur.schemas \
+		compiz-reflex.schemas \
+		compiz-scalefilter.schemas \
+		compiz-showdesktop.schemas \
+		compiz-splash.schemas \
+		compiz-trailfocus.schemas \
+		compiz-widget.schemas
+
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ARGS=	--enable-schemas
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'	\
