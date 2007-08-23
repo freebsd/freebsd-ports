@@ -1,6 +1,6 @@
 --- src/Makefile.in.orig	Thu May 22 13:39:52 2003
-+++ src/Makefile.in	Sat Nov 18 22:55:18 2006
-@@ -126,7 +126,7 @@
++++ src/Makefile.in	Thu Aug 23 23:11:20 2007
+@@ -126,18 +126,18 @@
  
  WARNS = -W -Wall -Wshadow -Wpointer-arith 
  IFLAGS = 
@@ -9,3 +9,25 @@
  VERBOSE = -DVERBOSE
  AM_CFLAGS = $(IFLAGS) $(VERBOSE) $(WARNS) $(FLAGS)
  AM_LDFLAGS = -g
+ 
+ noinst_HEADERS = \
+-	common.h constants.h fingerprint.h textcat.h wg_mempool.h
++	common.h constants.h fingerprint.h textcat.h wg_mempool.h utf8misc.h
+ 
+ 
+ lib_LTLIBRARIES = libtextcat.la
+ libtextcat_la_SOURCES = \
+-	common.c fingerprint.c textcat.c wg_mempool.c
++	common.c fingerprint.c textcat.c wg_mempool.c utf8misc.c
+ 
+ 
+ bin_PROGRAMS = createfp
+@@ -156,7 +156,7 @@
+ libtextcat_la_LDFLAGS =
+ libtextcat_la_LIBADD =
+ am_libtextcat_la_OBJECTS = common.lo fingerprint.lo textcat.lo \
+-	wg_mempool.lo
++	wg_mempool.lo utf8misc.lo
+ libtextcat_la_OBJECTS = $(am_libtextcat_la_OBJECTS)
+ bin_PROGRAMS = createfp$(EXEEXT)
+ noinst_PROGRAMS = testtextcat$(EXEEXT)

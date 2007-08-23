@@ -1,3 +1,6 @@
 MD5 (libtextcat-2.2.tar.gz) = 128cfc86ed5953e57fe0f5ae98b62c2e
 SHA256 (libtextcat-2.2.tar.gz) = 5677badffc48a8d332e345ea4fe225e3577f53fc95deeec8306000b256829655
 SIZE (libtextcat-2.2.tar.gz) = 540999
+MD5 (libtextcat-2.2-OOo.patch) = 1d5f1026392365c58f7a7406e923f886
+SHA256 (libtextcat-2.2-OOo.patch) = c8ffa9db08ec841536be120f847ad871746f14f77b305705c3781182d2449383
+SIZE (libtextcat-2.2-OOo.patch) = 21557

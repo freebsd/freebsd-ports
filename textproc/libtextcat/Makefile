@@ -7,8 +7,13 @@
 
 PORTNAME=	libtextcat
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://software.wise-guys.nl/download/
+
+#PATCH_SITES=	http://cvs.fedora.redhat.com/viewcvs/*checkout*/rpms/libtextcat/devel/
+#PATCHFILES=	${PORTNAME}-${PORTVERSION}-OOo.patch
+#PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Language guessing by N-Gram-Based Text Categorization
