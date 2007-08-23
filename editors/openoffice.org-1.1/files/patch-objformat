@@ -125,7 +125,9 @@ retrieving revision 1.2
 diff -u -r1.2 freetype-2.1.4.patch
 --- freetype/freetype-2.1.4.patch	17 Apr 2003 15:11:01 -0000	1.2
 +++ freetype/freetype-2.1.4.patch	3 May 2007 01:15:56 -0000
-@@ -131,3 +131,22 @@
+@@ -147,5 +147,24 @@
+ !         if( !unicmap )     /* HDU: #107980# Saraswati workaround */
+ !            unicmap = cur;  /* record we found a Unicode charmap */
    
            /* XXX If some new encodings to represent UCS-4 are added,  */
            /*     they should be added here.                           */
@@ -148,7 +150,6 @@ diff -u -r1.2 freetype-2.1.4.patch
 +    version_type=freebsd-$objformat
 +    case $version_type in
 +      freebsd-elf*)
-
 Index: sndfile/libsndfile-1.0.9.patch
 ===================================================================
 RCS file: /cvs/external/sndfile/libsndfile-1.0.9.patch,v
