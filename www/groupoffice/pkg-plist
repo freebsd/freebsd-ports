@@ -2416,6 +2416,7 @@
 %%WWWDIR%%/modules/filesystem/compress.inc
 %%WWWDIR%%/modules/filesystem/download.php
 %%WWWDIR%%/modules/filesystem/edit.php
+%%WWWDIR%%/modules/filesystem/fckconfig.js
 %%WWWDIR%%/modules/filesystem/filesystem.admin.inc
 %%WWWDIR%%/modules/filesystem/filesystem.js
 %%WWWDIR%%/modules/filesystem/filesystem.settings.inc
