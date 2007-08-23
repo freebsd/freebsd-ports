@@ -1,0 +1,34 @@
+%%PYTHON_SITELIBDIR%%/pyrad/__init__.py
+%%PYTHON_SITELIBDIR%%/pyrad/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyrad/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyrad/bidict.py
+%%PYTHON_SITELIBDIR%%/pyrad/bidict.pyc
+%%PYTHON_SITELIBDIR%%/pyrad/bidict.pyo
+%%PYTHON_SITELIBDIR%%/pyrad/client.py
+%%PYTHON_SITELIBDIR%%/pyrad/client.pyc
+%%PYTHON_SITELIBDIR%%/pyrad/client.pyo
+%%PYTHON_SITELIBDIR%%/pyrad/curved.py
+%%PYTHON_SITELIBDIR%%/pyrad/curved.pyc
+%%PYTHON_SITELIBDIR%%/pyrad/curved.pyo
+%%PYTHON_SITELIBDIR%%/pyrad/dictionary.py
+%%PYTHON_SITELIBDIR%%/pyrad/dictionary.pyc
+%%PYTHON_SITELIBDIR%%/pyrad/dictionary.pyo
+%%PYTHON_SITELIBDIR%%/pyrad/host.py
+%%PYTHON_SITELIBDIR%%/pyrad/host.pyc
+%%PYTHON_SITELIBDIR%%/pyrad/host.pyo
+%%PYTHON_SITELIBDIR%%/pyrad/packet.py
+%%PYTHON_SITELIBDIR%%/pyrad/packet.pyc
+%%PYTHON_SITELIBDIR%%/pyrad/packet.pyo
+%%PYTHON_SITELIBDIR%%/pyrad/server.py
+%%PYTHON_SITELIBDIR%%/pyrad/server.pyc
+%%PYTHON_SITELIBDIR%%/pyrad/server.pyo
+%%PYTHON_SITELIBDIR%%/pyrad/tools.py
+%%PYTHON_SITELIBDIR%%/pyrad/tools.pyc
+%%PYTHON_SITELIBDIR%%/pyrad/tools.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pyrad
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/acct.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dictionary
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dictionary.attingo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/server.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

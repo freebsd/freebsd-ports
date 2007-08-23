@@ -1,0 +1,5 @@
+pyrad is a Python implementation of a RADIUS client as described in RFC2865.
+It takes care of all the details like building RADIUS packets, sending them
+and decoding responses.
+
+WWW: http://www.wiggy.net/code/pyrad/
