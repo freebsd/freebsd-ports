@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pinot
-PORTVERSION=	0.75
-PORTREVISION=	2
+PORTVERSION=	0.76
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
@@ -70,6 +69,10 @@ PORTDOCS=	AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 LM2FIX=		textcat_conf.txt textcat3_conf.txt
 SHR2FIX=	Search/pinot-search.1 README
 UL2FIX=		Utils/xdgmime/xdgmime.c
+
+post-extract:
+# remove pre-generated messages catalogs
+	${FIND} ${WRKSRC}/po -name "*.gmo" -delete
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
