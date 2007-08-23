@@ -1,16 +1,16 @@
---- configure.orig	Wed Nov 23 13:10:32 2005
-+++ configure	Wed Nov 23 13:10:55 2005
-@@ -23960,12 +23960,11 @@
+--- configure.orig	Thu Aug  2 09:13:16 2007
++++ configure	Thu Aug  2 09:14:19 2007
+@@ -26629,12 +26629,11 @@
  #ifdef __cplusplus
  "C"
  #endif
--const char *_nl_expand_alias ();
+-const char *_nl_expand_alias (const char *);
  int
  main ()
  {
  bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
-+return (int) gettext ("") + _nl_msg_cat_cntr
+-return * gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias ("")
++return * gettext ("") + _nl_msg_cat_cntr
    ;
    return 0;
  }
