@@ -22,10 +22,6 @@ MAN1=		alevt.1x alevt-date.1 alevt-cap.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 .if defined(WITH_PNG)
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 MAKE_ARGS+=	-DWITH_PNG
