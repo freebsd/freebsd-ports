@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	eventwatcher
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	sysutils kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	eventwatcher
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	KDE log file/event viewer
 
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
@@ -21,7 +19,9 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_GETTEXT=	yes
+USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.pre.mk>
 
