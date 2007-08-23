@@ -59,6 +59,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/leadings.gif
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/win32/sysimage.gif
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/win32/FileDialog.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/gtk2/FileDialog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image/GBM.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image/TransparencyControl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image/gif.pm
@@ -255,6 +256,7 @@ bin/podview
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE/generic
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/win32
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/gtk2
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/themes
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PS/fonts
