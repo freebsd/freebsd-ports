@@ -466,6 +466,7 @@
     SUBDIR += paman
     SUBDIR += paprefs
     SUBDIR += pavucontrol
+    SUBDIR += pavumeter
     SUBDIR += pd
     SUBDIR += pecl-id3
     SUBDIR += penguinsap

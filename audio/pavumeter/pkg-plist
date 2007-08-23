@@ -1,0 +1,3 @@
+bin/pavumeter
+share/applications/pavumeter.desktop
+@dirrmtry share/applications
