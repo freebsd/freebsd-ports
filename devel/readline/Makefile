@@ -7,6 +7,7 @@
 
 PORTNAME=	readline
 PORTVERSION=	5.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cwru.edu/pub/bash/
@@ -14,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 PATCH_SITES=	ftp://ftp.gnu.org/gnu/readline/${PORTNAME}-${PORTVERSION}-patches/ \
 		ftp://ftp.cwru.edu/pub/bash/${PORTNAME}-${PORTVERSION}-patches/
-PATCHFILES=	readline52-001
+PATCHFILES=	readline52-001 readline52-002 readline52-003 readline52-004 \
+		readline52-005 readline52-006 readline52-007
 
 MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	A library for editing command lines as they are typed
