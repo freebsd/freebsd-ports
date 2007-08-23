@@ -1,0 +1,17 @@
+--- lib/Makefile.in.orig	Thu Aug 23 21:10:12 2007
++++ lib/Makefile.in	Thu Aug 23 21:11:54 2007
+@@ -220,10 +220,10 @@
+ @CHARSET_FALSE@LIBFILES_ADD = 
+ @CHARSET_TRUE@LIBFILES_ADD = mc.charsets
+ LIBFILES_OUT = mc.ext
+-LIBFILES_CONST = mc.hint mc.hint.cs mc.hint.es mc.hint.hu mc.hint.it	\
+-	mc.hint.nl mc.hint.pl mc.hint.ru mc.hint.sr mc.hint.uk		\
+-	mc.hint.zh mc.lib mc.menu mc.menu.sr cedit.menu edit.indent.rc	\
+-	edit.spell.rc
++LIBFILES_CONST = mc.hint mc.lib mc.menu cedit.menu edit.indent.rc edit.spell.rc
++LIBFILES_ADD += mc.hint.cs mc.hint.es mc.hint.hu mc.hint.it \
++	mc.hint.nl mc.hint.pl mc.hint.ru mc.hint.sr mc.hint.uk \
++	mc.hint.zh mc.menu.sr
+ 
+ noinst_DATA = README.xterm mcserv.init mcserv.pamd xterm.ad
+ SCRIPTS_IN = mc.csh.in mc.sh.in mc-wrapper.csh.in mc-wrapper.sh.in
