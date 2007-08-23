@@ -7,7 +7,7 @@
 
 PORTNAME=	compiz-fusion-plugins-unsupported
 PORTVERSION=	0.5.2
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
@@ -29,9 +29,15 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 
+GCONF_SCHEMAS=	compiz-fakeargb.schemas \
+		compiz-mswitch.schemas \
+		compiz-snow.schemas \
+		compiz-tile.schemas
+
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ARGS=	--enable-schemas
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>
