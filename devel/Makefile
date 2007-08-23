@@ -1750,6 +1750,7 @@
     SUBDIR += pear-XML_Util
     SUBDIR += pear-XML_XPath
     SUBDIR += pear-apd
+    SUBDIR += pecl-bbcode
     SUBDIR += pecl-bcompiler
     SUBDIR += pecl-expect
     SUBDIR += pecl-hidef
