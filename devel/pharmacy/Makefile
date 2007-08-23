@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	GNOME frontend for CVS
 
 USE_X_PREFIX=	yes

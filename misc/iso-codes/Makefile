@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/ \
 		http://freebsd.powered.net/distfiles/
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Lists of the country, language and currency iso names
 
 BUILD_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml

@@ -11,7 +11,7 @@ CATEGORIES=	deskutils kde
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Full-screen task manager similar to Expose(tm)
 
 LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2

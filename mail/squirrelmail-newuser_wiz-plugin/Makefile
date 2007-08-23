@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-plugin
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Force user to enter Full name and Email address at initial logon
 
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \

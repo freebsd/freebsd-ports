@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MD5/GAAS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Perl5 interface to MD5 Message-Digest Algorithm
 
 PERL_CONFIGURE=	yes

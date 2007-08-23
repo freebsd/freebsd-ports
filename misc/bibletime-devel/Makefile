@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A powerful Bible study application for KDE3
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libsword.so:${PORTSDIR}/misc/sword \

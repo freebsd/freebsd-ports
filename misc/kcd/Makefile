@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Change directory in full-screen visual mode
 
 USE_GETTEXT=	yes

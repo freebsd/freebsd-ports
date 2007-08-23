@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-plugin
 DISTNAME=	${PORTNAME}.${PORTVERSION}-1.4.2
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Checks for plugin updates by parsing the SM site
 
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail

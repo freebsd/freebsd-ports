@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	squirrelmail-
 PKGNAMESUFFIX=	-plugin
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Required by many plugins for compatibility with SquirrelMail
 
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail

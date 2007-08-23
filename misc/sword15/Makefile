@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.5/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bibletime
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A project framework for manipulating Bible texts
 
 USE_GNOME=	pkgconfig

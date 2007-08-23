@@ -9,7 +9,7 @@ PORTNAME=	XML_Util
 PORTVERSION=	1.1.4
 CATEGORIES=	devel www pear
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	PEAR XML utility class
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

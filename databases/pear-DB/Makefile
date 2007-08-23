@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	databases www pear
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/RC/}
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	PEAR Database Abstraction Layer
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

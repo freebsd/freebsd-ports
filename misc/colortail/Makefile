@@ -13,7 +13,7 @@ MASTER_SITES=	http://joakimandersson.se/files/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	thomas@goodking.ca
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A colour-able replacement for tail(1)
 
 USE_GETOPT_LONG=	yes
