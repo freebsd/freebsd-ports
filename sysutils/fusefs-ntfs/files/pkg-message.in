@@ -20,11 +20,10 @@ UBLIO_BLOCKSIZE	- 1048576 (1MB). Larger improves reading/writing speed of
 		  (creation, deletion, moving, find(1)) perform faster.
 		  Try 2/4MB and 512/256KB for the different approaches. Note
 		  that after that points performance descreases again.
-UBLIO_ITEMS	- 64. When greater, increases speed of filesystem operations,
-		  but consumes more memory. Try 128.
+UBLIO_ITEMS	- 64. Higher increases speed of filesystem operations. Try 128.
 UBLIO_GRACE	- 32. Makes the cache items have more chances to be reused.
 UBLIO_SYNC_IO	- 0. If enabled, highly decreases writing speed, but the data
-		  is written immediatly to the disk.
+		  is immediatly written to the disk.
 
 For example (improves performance over large files):
 
@@ -33,5 +32,9 @@ For example (improves performance over large files):
 It is also possible to enforce block aligned I/O on regular files by setting
 the FORCE_ALIGNED_IO variable (it will be set to 512 bytes), but this is only
 useful for testing purposes and in practice has no use.
+
+Note that higher values for UBLIO_BLOCKSIZE and UBLIO_ITEMS increase the
+memory usage by their product in bytes. By default it consumes 64MB. To
+decrease it to 16MB set UBLIO_BLOCKSIZE to 256KB for example.
 
 ==============================================================================
