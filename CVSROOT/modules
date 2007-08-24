@@ -8394,6 +8394,7 @@ ocrad		ports/graphics/ocrad
 ocre		ports/graphics/ocre
 ocs-unix-agent	ports/net-mgmt/ocs-unix-agent
 ocsigen		ports/www/ocsigen
+ocsinventory-agent	ports/net-mgmt/ocsinventory-agent
 octave		ports/math/octave
 octave-devel	ports/math/octave-devel
 octave-forge	ports/math/octave-forge
