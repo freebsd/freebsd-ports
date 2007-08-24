@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yolk
-PORTVERSION=	0.1.0
+PORTVERSION=	0.3.0
 CATEGORIES=	misc python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP} \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -25,8 +25,6 @@ USE_PYDISTUTILS=	easy_install
 .if !defined (NO_INSTALL_MAN)
 MAN1=	${PORTNAME}.1
 .endif
-
-PLIST_SUB=	PORTEXAMPLES=${PORTEXAMPLES}
 
 .include <bsd.port.pre.mk>
 
