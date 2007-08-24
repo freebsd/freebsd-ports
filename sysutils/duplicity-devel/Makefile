@@ -6,25 +6,35 @@
 #
 
 PORTNAME=	duplicity
-PORTVERSION=	0.4.2
-PORTREVISION=	3
+PORTVERSION=	0.4.3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Untrusted backup using rsync algorithm
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
+		${PYTHON_SITELIBDIR}/GnuPGInterface.py:${PORTSDIR}/security/py-gnupg
 
-USE_PYTHON=	yes
+PEXPECT_DIR=	misc/py-pexpect
+OPTIONS=	PEXPECT "Depend on ${PEXPECT_DIR}, needed for ssh backend" On
+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 
 MAN1=		duplicity.1 rdiffdir.1
 
 DOCFILES=	CHANGELOG COPYING README
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_PEXPECT)
+PEXPECT_DEP=	${PYTHON_SITELIBDIR}/pexpect.py:${PORTSDIR}/${PEXPECT_DIR}
+BUILD_DEPENDS+=	${PEXPECT_DEP}
+RUN_DEPENDS+=	${PEXPECT_DEP}
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/duplicity.1 ${PREFIX}/man/man1
@@ -36,4 +46,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
