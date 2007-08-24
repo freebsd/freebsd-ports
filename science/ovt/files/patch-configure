@@ -1,0 +1,55 @@
+--- configure.orig	Tue Mar 23 22:21:46 2004
++++ configure	Thu Oct  5 13:48:28 2006
+@@ -2496,8 +2496,8 @@
+ echo "${ECHO_T}$ac_cv_jdk_version" >&6
+ case "$ac_cv_jdk_version" in
+ 1.1|1.2*)
+-	{ { echo "$as_me:$LINENO: error: Java 1.3.x or 1.4.x is needed" >&5
+-echo "$as_me: error: Java 1.3.x or 1.4.x is needed" >&2;}
++	{ { echo "$as_me:$LINENO: error: Java >=1.3.x is needed" >&5
++echo "$as_me: error: Java >=1.3.x is needed" >&2;}
+    { (exit 1); exit 1; }; }
+ 	;;
+ 1.3*)
+@@ -2507,6 +2507,7 @@
+ 	JAVAHFLAGS=""
+ 	JAVA_INCLUDES="$ac_cv_java_home/include"
+ 	JAVA_INCLUDES_OS="$ac_cv_java_home/include/$PLATFORM"
++	JAVA_LIBS_OS=""
+ 	;;
+ 1.4*)
+ 	JDK_VERSION_STRING=$ac_cv_jdk_version
+@@ -2515,7 +2516,16 @@
+ 	JAVAHFLAGS=""
+ 	JAVA_INCLUDES="$ac_cv_java_home/include"
+ 	JAVA_INCLUDES_OS="$ac_cv_java_home/include/$JNI_MD_H_SUBDIR"
+-#	AC_MSG_ERROR(jdk 1.4 is not yet supported)
++	JAVA_LIBS_OS=""
++	;;
++1.5*)
++	JDK_VERSION_STRING=$ac_cv_jdk_version
++	JDK_VERSION=15
++	JAVACFLAGS="-classpath ."
++	JAVAHFLAGS=""
++	JAVA_INCLUDES="$ac_cv_java_home/include"
++	JAVA_INCLUDES_OS="$ac_cv_java_home/include/$JNI_MD_H_SUBDIR"
++	JAVA_LIBS_OS="$ac_cv_java_home/jre/lib/i386:$ac_cv_java_home/jre/lib/i386/xawt"
+ 	;;
+ *)
+ 	{ { echo "$as_me:$LINENO: error: unrecognized JDK version:$ac_cv_jdk_version" >&5
+@@ -2527,6 +2537,7 @@
+ 
+ 
+ 
++
+ # Extract the first word of "javac", so it can be a program name with args.
+ set dummy javac; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+@@ -3627,6 +3638,7 @@
+ s,@JAVA@,$JAVA,;t t
+ s,@JAVA_INCLUDES@,$JAVA_INCLUDES,;t t
+ s,@JAVA_INCLUDES_OS@,$JAVA_INCLUDES_OS,;t t
++s,@JAVA_LIBS_OS@,$JAVA_LIBS_OS,;t t
+ s,@ac_cv_javac@,$ac_cv_javac,;t t
+ s,@ac_cv_jikes@,$ac_cv_jikes,;t t
+ s,@JAVAC@,$JAVAC,;t t

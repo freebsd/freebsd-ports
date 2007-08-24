@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Oct  5 13:12:51 2006
++++ Makefile.in	Thu Oct  5 13:13:25 2006
+@@ -151,7 +151,7 @@
+ 
+ install-odata:
+ 	$(mkinstalldirs) $(ovt_datadir)/$(ODATA_DIR) ;\
+-	${INSTALL} -m 644 $(ODATA_DIR)/*.tle $(ODATA_DIR)/*.spin\
++	${INSTALL} -m 644 $(ODATA_DIR)/*.tle $(ODATA_DIR)/*.spin \
+ 	$(ODATA_DIR)/*.ltof $(ovt_datadir)/$(ODATA_DIR)
+ 
+ install-conf: $(conf-files)
