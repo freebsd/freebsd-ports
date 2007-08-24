@@ -5,5 +5,8 @@
 %%SITE_PERL%%/Config/Any/Perl.pm
 %%SITE_PERL%%/Config/Any/XML.pm
 %%SITE_PERL%%/Config/Any/YAML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Any/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Any
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
 @dirrmtry %%SITE_PERL%%/Config/Any
 @dirrmtry %%SITE_PERL%%/Config
