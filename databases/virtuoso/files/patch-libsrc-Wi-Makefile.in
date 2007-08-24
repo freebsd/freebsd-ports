@@ -1,0 +1,51 @@
+--- libsrc/Wi/Makefile.in.orig	Fri Aug 24 12:11:18 2007
++++ libsrc/Wi/Makefile.in	Fri Aug 24 12:14:27 2007
+@@ -174,7 +174,7 @@
+ 	bif_regexp.c blob.c blobio.c datesupp.c ddlrun.c dks_esc.c \
+ 	disk.c eqlcomp.c gate.c http.c insert.c bitmap.c lisprdr.c \
+ 	lock.c log.c meta.c mtwrite.c multibyte.c neodisk.c numeric.c \
+-	obackup.c recovery.c regist.c rltrx.c row.c search.c hash.c \
++	obackup.c recovery.c regist.c rltrx.c row.c search.c search_in.c hash.c \
+ 	security.c sort.c space.c sqlbif.c sqlbif2.c sqlcomp.c \
+ 	sqlcomp2.c sqlcr.c sqlexp.c sqlintrp.c sqlorder.c sqloinx.c \
+ 	sqlpfn.c sqlprocc.c sqlo.c sqldf.c sqloby.c sqlcost.c \
+@@ -229,7 +229,7 @@
+ 	libwi_odbc_la-neodisk.lo libwi_odbc_la-numeric.lo \
+ 	libwi_odbc_la-obackup.lo libwi_odbc_la-recovery.lo \
+ 	libwi_odbc_la-regist.lo libwi_odbc_la-rltrx.lo \
+-	libwi_odbc_la-row.lo libwi_odbc_la-search.lo \
++	libwi_odbc_la-row.lo libwi_odbc_la-search.lo libwi_odbc_la-search_in.lo \
+ 	libwi_odbc_la-hash.lo libwi_odbc_la-security.lo \
+ 	libwi_odbc_la-sort.lo libwi_odbc_la-space.lo \
+ 	libwi_odbc_la-sqlbif.lo libwi_odbc_la-sqlbif2.lo \
+@@ -649,7 +649,7 @@
+ 	blob.c blobio.c datesupp.c ddlrun.c dks_esc.c disk.c eqlcomp.c \
+ 	gate.c http.c insert.c bitmap.c lisprdr.c lock.c log.c meta.c \
+ 	mtwrite.c multibyte.c neodisk.c numeric.c obackup.c recovery.c \
+-	regist.c rltrx.c row.c search.c hash.c security.c sort.c \
++	regist.c rltrx.c row.c search.c search_in.c hash.c security.c sort.c \
+ 	space.c sqlbif.c sqlbif2.c sqlcomp.c sqlcomp2.c sqlcr.c \
+ 	sqlexp.c sqlintrp.c sqlorder.c sqloinx.c sqlpfn.c sqlprocc.c \
+ 	sqlo.c sqldf.c sqloby.c sqlcost.c sqloprt.c sqlgen.c sqlhash.c \
+@@ -1136,6 +1136,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libwi_odbc_la-schspace.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libwi_odbc_la-scn3.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libwi_odbc_la-search.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libwi_odbc_la-search_in.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libwi_odbc_la-security.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libwi_odbc_la-shuric.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libwi_odbc_la-sort.Plo@am__quote@
+@@ -2624,6 +2625,13 @@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='search.c' object='libwi_odbc_la-search.lo' libtool=yes @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libwi_odbc_la_CFLAGS) $(CFLAGS) -c -o libwi_odbc_la-search.lo `test -f 'search.c' || echo '$(srcdir)/'`search.c
++
++libwi_odbc_la-search_in.lo: search_in.c
++@am__fastdepCC_TRUE@	if $(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libwi_odbc_la_CFLAGS) $(CFLAGS) -MT libwi_odbc_la-search_in.lo -MD -MP -MF "$(DEPDIR)/libwi_odbc_la-search_in.Tpo" -c -o libwi_odbc_la-search_in.lo `test -f 'search_in.c' || echo '$(srcdir)/'`search_in.c; \
++@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libwi_odbc_la-search_in.Tpo" "$(DEPDIR)/libwi_odbc_la-search_in.Plo"; else rm -f "$(DEPDIR)/libwi_odbc_la-search_in.Tpo"; exit 1; fi
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='search_in.c' object='libwi_odbc_la-search_in.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libwi_odbc_la_CFLAGS) $(CFLAGS) -c -o libwi_odbc_la-search_in.lo `test -f 'search_in.c' || echo '$(srcdir)/'`search_in.c
+ 
+ libwi_odbc_la-hash.lo: hash.c
+ @am__fastdepCC_TRUE@	if $(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libwi_odbc_la_CFLAGS) $(CFLAGS) -MT libwi_odbc_la-hash.lo -MD -MP -MF "$(DEPDIR)/libwi_odbc_la-hash.Tpo" -c -o libwi_odbc_la-hash.lo `test -f 'hash.c' || echo '$(srcdir)/'`hash.c; \

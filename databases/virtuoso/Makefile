@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	virtuoso
-PORTVERSION=	4.5.7
-PORTREVISION=	2
+PORTVERSION=	5.0.1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,12 +25,10 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"\
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
 
-BROKEN=		Install fails
-
 OPTIONS=	IMAGEMAGICK "ImageMagick support" off\
 		KERBEROS "Kerberos extension" off\
 		OPENLDAP "OpenLDAP support" off
-#		JDBC "JDBC driver" off\
+#		JDBC "JDBC driver" off
 #		PERL "Perl hosting" off
 #		PYTHON "Python hosting" off
 #		MONO "Mono extension" off\
