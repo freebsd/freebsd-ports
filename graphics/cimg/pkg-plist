@@ -28,6 +28,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard3.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard4.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard5.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/postcard6.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/project-support.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/screenshots_item.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_blobs.jpg
@@ -37,6 +38,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_dtmri.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_hough.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_imgfade.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/ss_jawbreaker.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_landscape.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mandelbrot.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_metaballs.jpg
@@ -64,10 +66,13 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000021.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000022.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000023.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000024.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000025.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_odykill.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_optflow.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_paint.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_plasma.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/ss_reflection.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_render3d.png
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_restoration.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_rotozoom.jpg
@@ -219,6 +224,8 @@ include/CImg.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/title.bmp
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/tomato.bmp
 %%PORTDOCS%%%%EXAMPLESDIR%%/inrcast.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/jawbreaker.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/jpeg_buffer.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/mcf_levelsets.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/mcf_levelsets3D.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/nlmeans.cpp
@@ -227,6 +234,8 @@ include/CImg.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/pde_heatflow2D.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/pslider.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tetris.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/toolbox3d.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tron.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/wavelet_atrous.cpp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
