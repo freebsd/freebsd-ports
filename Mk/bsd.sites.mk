@@ -1093,9 +1093,15 @@ MASTER_SITE_SAMBA+= \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/samba/&,}
 .endif
 
+# List:		http://dl.sv.gnu.org/releases/00_MIRRORS.html
 .if !defined(IGNORE_MASTER_SITE_SAVANNAH)
 MASTER_SITE_SAVANNAH+= \
-	http://download.savannah.nongnu.org/releases/%SUBDIR%/
+	http://download.savannah.nongnu.org/releases/%SUBDIR%/ \
+	http://www.de-mirrors.de/nongnu/%SUBDIR%/ \
+	http://ftp.cc.uoc.gr/mirrors/nongnu.org/%SUBDIR%/ \
+	http://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
+	ftp://ftp.cc.uoc.gr/mirrors/nongnu.org/%SUBDIR%/ \
+	ftp://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
