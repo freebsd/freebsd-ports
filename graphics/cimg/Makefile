@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cimg
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 PORTEPOCH=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -27,6 +27,7 @@ MAKE_ENV=	CPPFLAGS="${CFLAGS} ${LAPACK_DEF} ${PTHREAD_CFLAGS}"	\
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 USE_GCC=	3.4+
 REINPLACE_ARGS=	-i ""
+LIB_DEPENDS+=	board.0:${PORTSDIR}/graphics/libboard
 . if !defined(WITHOUT_LAPACK)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas -lf77blas -L`${CAT} ${WRKSRC}/LIBDIR`/../../.. -lgfortran -latlas
@@ -63,7 +64,7 @@ pre-configure:
 	${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 .if !defined(NOPORTDOCS)
 	${GREP} -lR 'img/' ${BUILD_WRKSRC} |	\
-		${XARGS} ${REINPLACE_CMD} -e 's|img/|${EXAMPLESDIR}/img/|g'
+		${XARGS} ${REINPLACE_CMD} -e 's|"img/|"${EXAMPLESDIR}/img/|g'
 .else
 	${REINPLACE_CMD} -e 's|^OPTFLAGS|#OPTFLAGS|' ${BUILD_WRKSRC}/Makefile
 .endif

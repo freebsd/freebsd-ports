@@ -1,9 +1,9 @@
---- examples/Makefile.orig	Wed Jul  4 13:23:28 2007
-+++ examples/Makefile	Wed Jul  4 23:23:43 2007
-@@ -38,10 +38,10 @@
+--- examples/Makefile.orig	Fri Aug 24 16:52:42 2007
++++ examples/Makefile	Fri Aug 24 22:14:27 2007
+@@ -41,10 +41,10 @@
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = 1.22
+ CIMG_VERSION = 1.23
 -CC           = g++
 -X11PATH      = /usr/X11R6
 -CFLAGS       = -Wall -W -ansi -pedantic -ffast-math
@@ -15,7 +15,13 @@
  
  #--------------------------------------------------
  # Set compilation flags allowing to customize CImg
-@@ -77,6 +77,9 @@
+@@ -81,11 +81,14 @@
+ CIMG_LAPACK_FLAGS = -Dcimg_use_lapack -lblas -lg2c -llapack
+ 
+ # Flags to enable the use of the Board library
+-CIMG_BOARD_FLAGS = -Dcimg_use_board -I../board-0.8/include -L../board-0.8/lib -lboard
++CIMG_BOARD_FLAGS = -Dcimg_use_board -lboard
+ 
  # Flags to compile on Solaris
  CIMG_SOLARIS_FLAGS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
  
@@ -25,18 +31,18 @@
  # Set default compilation flags.
  # Uncomment lines here, if you want to customize your default configuration
  CIMG_DEFAULT_FLAGS = $(CIMG_X11_FLAGS) \
-@@ -130,7 +133,7 @@
+@@ -142,7 +145,7 @@
  all: $(CIMG_FILES)
  
  clean:
--	rm -f *.exe *~ $(CIMG_FILES)
-+	rm -f *.exe *~ $(CIMG_FILES) Makefile.orig
+-	rm -f *.exe *~ jpeg_buffer greycstoration4gimp $(CIMG_FILES)
++	rm -f *.exe *~ jpeg_buffer greycstoration4gimp $(CIMG_FILES) Makefile.orig
  
- # Linux/Mac OSX targets
- linux:
-@@ -156,3 +159,9 @@
- Msolaris:
- 	make "ARCHFLAGS=-Dcimg_display_type=0 -O3 $(CIMG_ALL_FLAGS)" all
+ greycstoration4gimp: greycstoration4gimp.cpp
+ 	@echo
+@@ -162,6 +165,12 @@
+ Mlinux:
+ 	make "ARCHFLAGS=-O3 $(CIMG_ALL_FLAGS)" all jpeg_buffer greycstoration4gimp
  
 +# FreeBSD targets
 +dFreeBSD:
@@ -44,3 +50,6 @@
 +
 +oFreeBSD:
 +	make "ARCHFLAGS=$(CIMG_FREEBSD_FLAGS) $(CIMG_ALL_FLAGS)" all
+ # Sun Solaris targets
+ solaris:
+ 	make "ARCHFLAGS=$(CIMG_SOLARIS_FLAGS) $(CIMG_DEFAULT_FLAGS)" all
