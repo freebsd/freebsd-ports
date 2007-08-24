@@ -7,28 +7,26 @@
 
 PORTNAME=	ovt
 PORTVERSION=	2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science astro java
 MASTER_SITES=	# http://ovt.irfu.se/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_${OVTBUILD}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@irfu.se
 COMMENT=	The Orbit Visualization Tool
 
 LIB_DEPENDS=	vtkCommonJava:${PORTSDIR}/math/vtk-java
-
-BROKEN=		Does not build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 OVTBUILD=	3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4
+JAVA_VERSION=	1.4+
 JAVA_OS=	native
 
 CONFIGURE_ARGS=	--with-jdk=${JAVA_HOME}
