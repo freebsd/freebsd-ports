@@ -338,6 +338,7 @@
     SUBDIR += libart
     SUBDIR += libart_lgpl
     SUBDIR += libaux
+    SUBDIR += libboard
     SUBDIR += libcaca
     SUBDIR += libdrm
     SUBDIR += libemf

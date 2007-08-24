@@ -1,0 +1,11 @@
+include/Board.h
+include/board/Board.h
+include/board/Color.h
+include/board/Point.h
+include/board/Rect.h
+include/board/Shapes.h
+include/board/Transforms.h
+lib/libboard.a
+lib/libboard.so
+lib/libboard.so.0
+@dirrm include/board
