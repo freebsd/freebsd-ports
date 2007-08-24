@@ -6348,6 +6348,7 @@ libbfd		ports/devel/libbfd
 libbgpdump	ports/net/libbgpdump
 libbinio	ports/devel/libbinio
 libbnr		ports/devel/libbnr
+libboard	ports/graphics/libboard
 libbonobo	ports/devel/libbonobo
 libbonobo-reference	ports/devel/libbonobo-reference
 libbonobomm	ports/devel/libbonobomm
