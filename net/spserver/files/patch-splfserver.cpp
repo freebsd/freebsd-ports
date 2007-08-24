@@ -1,8 +1,8 @@
---- splfserver.cpp.orig	Mon Jul  2 21:20:29 2007
-+++ splfserver.cpp	Mon Jul  2 21:20:36 2007
-@@ -17,7 +17,7 @@
- #include "spexecutor.hpp"
+--- spserver/splfserver.cpp.orig	Wed Aug 22 22:04:05 2007
++++ spserver/splfserver.cpp	Thu Aug 23 07:33:35 2007
+@@ -18,7 +18,7 @@
  #include "sputils.hpp"
+ #include "spioutils.hpp"
  
 -#include "config.h"
 +//#include "config.h"

@@ -1,8 +1,8 @@
---- spsession.cpp.orig	Mon Jun 18 12:40:32 2007
-+++ spsession.cpp	Mon Jun 18 12:40:40 2007
-@@ -15,7 +15,7 @@
- #include "sputils.hpp"
+--- spserver/spsession.cpp.orig	Wed Aug 22 22:04:05 2007
++++ spserver/spsession.cpp	Thu Aug 23 07:33:45 2007
+@@ -16,7 +16,7 @@
  #include "sprequest.hpp"
+ #include "spiochannel.hpp"
  
 -#include "config.h"
 +//#include "config.h"

@@ -1,0 +1,20 @@
+--- openssl/Makefile.orig	Wed Aug 22 22:03:27 2007
++++ openssl/Makefile	Fri Aug 24 15:46:20 2007
+@@ -5,7 +5,7 @@
+ AR = ar cru
+ CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
+ SOFLAGS = -shared
+-LDFLAGS = -lstdc++ -lpthread -lresolv
++LDFLAGS = -lstdc++ -lpthread
+ 
+ LINKER = $(CC)
+ LINT = lint -c
+@@ -14,7 +14,7 @@
+ OPENSSL_INCL = -I/usr/include/openssl/
+ OPENSSL_LIB  = -L/usr/lib -lssl -lcrypto
+ 
+-LIBEVENT_LIB  = -L$(HOME)/libevent -levent
++LIBEVENT_LIB  = -L%PREFIX%/lib -levent
+ 
+ SPSERVER_INCL = -I../spserver
+ SPSERVER_LIB  = -L../spserver -lspserver

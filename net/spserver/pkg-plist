@@ -10,12 +10,15 @@ include/spserver/spioutils.hpp
 include/spserver/splfserver.hpp
 include/spserver/spmsgblock.hpp
 include/spserver/spmsgdecoder.hpp
+include/spserver/spopenssl.hpp
 include/spserver/sprequest.hpp
 include/spserver/spresponse.hpp
 include/spserver/spserver.hpp
 include/spserver/spsession.hpp
 include/spserver/spthreadpool.hpp
 include/spserver/sputils.hpp
+lib/libspopenssl.so
+lib/libspopenssl.so.1
 lib/libspserver.so
 lib/libspserver.so.1
 @dirrm include/spserver
