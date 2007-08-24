@@ -7,6 +7,7 @@
 
 PORTNAME=	ctorrent
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.rahul.net/dholmes/ctorrent/
 DISTNAME=	${PORTNAME}-dnh${PORTVERSION}
@@ -20,7 +21,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/ctorrent
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-PORTDOCS=	README-DNH.TXT
+PORTDOCS=	README-DNH.TXT UserGuide
 
 .if !defined(NOPORTDOCS)
 post-install:
