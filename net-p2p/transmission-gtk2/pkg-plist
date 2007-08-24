@@ -11,8 +11,11 @@ share/locale/fr/LC_MESSAGES/transmission-gtk.mo
 share/locale/it/LC_MESSAGES/transmission-gtk.mo
 share/locale/nl/LC_MESSAGES/transmission-gtk.mo
 share/locale/pl/LC_MESSAGES/transmission-gtk.mo
+share/locale/pt/LC_MESSAGES/transmission-gtk.mo
+share/locale/pt_BR/LC_MESSAGES/transmission-gtk.mo
 share/locale/ro/LC_MESSAGES/transmission-gtk.mo
 share/locale/ru/LC_MESSAGES/transmission-gtk.mo
+share/locale/sk/LC_MESSAGES/transmission-gtk.mo
 share/locale/sv/LC_MESSAGES/transmission-gtk.mo
 share/pixmaps/transmission.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
