@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mywwwatcher
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	databases www
 MASTER_SITES=	http://www.the.cz/mywwwatcher/files/
 DISTNAME=	mywwwatcher-${PORTVERSION}
@@ -16,21 +16,21 @@ COMMENT=	Simply web-based mysql client + tools (dump, import, scheme, ...)
 
 WRKSRC=		${WRKDIR}/mywwwatcher
 
-DEFAULT_PHP_VER=	4
+WANT_PHP_WEB=		yes
+DEFAULT_PHP_VER=	5
 USE_PHP=		pcre session mysql
+IGNORE_WITH_PHP=	3
 
 NO_BUILD=	yes
 
-PKGMESSAGE=	${PKGDIR}/pkg-message
-PLIST_SUB+=	INSTALLDIR=${INSTALLDIR}
-
-INSTALLDIR=	www/${PORTNAME}
+SUB_FILES=	pkg-message
 
 do-install:
-	@${MKDIR} ${PREFIX}/${INSTALLDIR}
-	@${CP} -Rp ${WRKSRC}/* ${PREFIX}/${INSTALLDIR}
-	@${CHMOD} 775 ${PREFIX}/${INSTALLDIR}/ini
-	@${CHMOD} 775 ${PREFIX}/${INSTALLDIR}/query_archive
+	@${MKDIR} ${WWWDIR}
+	@${CP} -Rp ${WRKSRC}/* ${WWWDIR}
+	@${CHMOD} 775 ${WWWDIR}/ini
+	@${CHMOD} 775 ${WWWDIR}/query_archive
+	@${CHOWN} www ${WWWDIR}
 	@${ECHO_CMD} ""
 
 post-install:
