@@ -1,5 +1,5 @@
---- testhttpmsg.cpp.orig	Mon Jun 18 12:46:36 2007
-+++ testhttpmsg.cpp	Mon Jun 18 12:47:00 2007
+--- spserver/testhttpmsg.cpp.orig	Wed Aug 22 22:04:05 2007
++++ spserver/testhttpmsg.cpp	Thu Aug 23 07:33:58 2007
 @@ -76,7 +76,7 @@
  		//printf( "%d, %d\n", i, parsedLen );
  	}

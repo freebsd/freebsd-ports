@@ -1,15 +1,15 @@
---- spdispatcher.cpp.orig	Sat Jun 23 20:21:18 2007
-+++ spdispatcher.cpp	Sat Jun 23 20:21:40 2007
-@@ -20,7 +20,7 @@
- #include "spsession.hpp"
- #include "spexecutor.hpp"
+--- spserver/spdispatcher.cpp.orig	Wed Aug 22 22:04:05 2007
++++ spserver/spdispatcher.cpp	Thu Aug 23 07:33:12 2007
+@@ -23,7 +23,7 @@
+ #include "spiochannel.hpp"
+ #include "spioutils.hpp"
  
 -#include "config.h"
 +//#include "config.h"
  #include "event_msgqueue.h"
  
  SP_Dispatcher :: SP_Dispatcher( SP_CompletionHandler * completionHandler, int maxThreads )
-@@ -110,7 +110,7 @@
+@@ -95,7 +95,7 @@
  	ret = pthread_create( &thread, &attr, reinterpret_cast<void*(*)(void*)>(eventLoop), this );
  	pthread_attr_destroy( &attr );
  	if( 0 == ret ) {

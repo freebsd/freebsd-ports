@@ -1,5 +1,5 @@
---- testthreadpool.cpp.orig	2007-08-09 17:14:03.000000000 +0800
-+++ testthreadpool.cpp	2007-08-09 17:15:20.000000000 +0800
+--- spserver/testthreadpool.cpp.orig	Wed Aug 22 22:04:05 2007
++++ spserver/testthreadpool.cpp	Thu Aug 23 07:34:14 2007
 @@ -16,10 +16,10 @@
  
  void threadFunc( void *arg )

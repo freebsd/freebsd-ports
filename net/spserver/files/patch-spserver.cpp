@@ -1,15 +1,15 @@
---- spserver.cpp.orig	Mon Jun 18 12:42:58 2007
-+++ spserver.cpp	Mon Jun 18 12:43:52 2007
-@@ -19,7 +19,7 @@
- #include "spsession.hpp"
- #include "spexecutor.hpp"
+--- spserver/spserver.cpp.orig	Wed Aug 22 22:04:05 2007
++++ spserver/spserver.cpp	Thu Aug 23 07:33:42 2007
+@@ -22,7 +22,7 @@
+ #include "spiochannel.hpp"
+ #include "spioutils.hpp"
  
 -#include "config.h"
 +//#include "config.h"
  #include "event_msgqueue.h"
  
  SP_Server :: SP_Server( const char * bindIP, int port,
-@@ -94,7 +94,7 @@
+@@ -106,7 +106,7 @@
  	ret = pthread_create( &thread, &attr, reinterpret_cast<void*(*)(void*)>(eventLoop), this );
  	pthread_attr_destroy( &attr );
  	if( 0 == ret ) {

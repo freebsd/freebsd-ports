@@ -1,5 +1,5 @@
---- speventcb.cpp.orig	Sat Aug 11 12:23:46 2007
-+++ speventcb.cpp	Sat Aug 11 20:49:04 2007
+--- spserver/speventcb.cpp.orig	Wed Aug 22 22:04:05 2007
++++ spserver/speventcb.cpp	Thu Aug 23 07:33:14 2007
 @@ -26,7 +26,7 @@
  #include "spiochannel.hpp"
  #include "spioutils.hpp"

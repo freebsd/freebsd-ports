@@ -1,5 +1,5 @@
---- spioutils.cpp.orig	Sat Aug 11 20:49:44 2007
-+++ spioutils.cpp	Sat Aug 11 20:50:00 2007
+--- spserver/spioutils.cpp.orig	Wed Aug 22 22:04:05 2007
++++ spserver/spioutils.cpp	Thu Aug 23 07:33:27 2007
 @@ -3,6 +3,7 @@
   * For license terms, see the file COPYING along with this library.
   */

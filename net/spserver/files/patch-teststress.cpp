@@ -1,5 +1,5 @@
---- teststress.cpp.orig	Mon Jun 18 12:45:59 2007
-+++ teststress.cpp	Mon Jun 18 12:46:06 2007
+--- spserver/teststress.cpp.orig	Wed Aug 22 22:04:05 2007
++++ spserver/teststress.cpp	Thu Aug 23 07:34:03 2007
 @@ -18,7 +18,7 @@
  /* For inet_ntoa. */
  #include <arpa/inet.h>

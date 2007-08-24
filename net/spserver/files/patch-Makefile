@@ -1,17 +1,24 @@
---- Makefile.orig	Mon Jun 18 12:27:34 2007
-+++ Makefile	Mon Jun 18 12:28:01 2007
-@@ -15,11 +15,11 @@
- 	version = 0.4
- endif
- 
--LIBEVENT_INCL = -I../libevent/
--LIBEVENT_LIB  = -L../libevent -levent
-+LIBEVENT_INCL = -I%PREFIX%/include
-+LIBEVENT_LIB  = -L%PREFIX%/lib -levent
- 
- CFLAGS  += $(LIBEVENT_INCL)
--LDFLAGS += $(LIBEVENT_LIB) -lpthread -lresolv
-+LDFLAGS += $(LIBEVENT_LIB) -lpthread
- 
+--- Makefile.orig	Fri Aug 24 15:38:46 2007
++++ Makefile	Fri Aug 24 15:39:05 2007
+@@ -8,10 +8,10 @@
  #--------------------------------------------------------------------
  
+ all:
+-	@( cd spserver; make )
++	@( cd spserver; gmake )
+ 
+ ssl:
+-	@( cd openssl;  make )
++	@( cd openssl;  gmake )
+ 
+ dist: clean spserver-$(version).src.tar.gz
+ 
+@@ -22,7 +22,7 @@
+ 	@(cd ..; rm spserver-$(version))
+ 
+ clean:
+-	@( cd spserver; make clean )
++	@( cd spserver; gmake clean )
+ 	@( cd openssl;  make clean )
+ 	@( cd matrixssl;  make clean )
+ 	@( cd sptunnel;  make clean )
