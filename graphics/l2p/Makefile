@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	l2p
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
+#PORTREVISION=	0
 CATEGORIES=	graphics print perl5
 MASTER_SITES=	http://www.redsymbol.net/software/l2p/dist/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -37,9 +37,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
