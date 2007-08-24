@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www5.frugalware.org/packages/frugalware/pub/frugalware/frugalware-stable/source/gnome-extra/gtk+2-engines-murrine/
+MASTER_SITE_SUBDIR=	itetcu
 DISTNAME=	Murrina-Aqua
 
 MAINTAINER=	pneumann@gmail.com
