@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTVERSION=	1.8.2
 CATEGORIES=	audio
 MASTER_SITES=	http://herrie.info/distfiles/ \
 		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
