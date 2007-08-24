@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%WWWDIR%%/blank.gif
 %%WWWDIR%%/easy/load.js
+%%WWWDIR%%/extensions/AMSmath.js
 %%WWWDIR%%/extensions/AMSsymbols.js
 %%WWWDIR%%/extensions/HTML.js
 %%WWWDIR%%/extensions/bbox.js
