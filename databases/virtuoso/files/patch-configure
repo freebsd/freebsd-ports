@@ -1,17 +1,15 @@
---- configure.orig	Tue Dec  5 16:15:01 2006
-+++ configure	Sat Dec  9 19:38:53 2006
-@@ -31793,8 +31793,8 @@
+--- configure.orig	Sat Apr  7 00:04:34 2007
++++ configure	Fri May  4 13:19:37 2007
+@@ -31831,7 +31831,7 @@
  	   openldap_LDFLAGS="-lldap -llber"
- 	   LDFLAGS="$LDFLAGS $openldap_LDFLAGS" ;;
+ 	   ;;
  	*)
--	   openssl_CFLAGS="-I$with_ldap/include"
--	   openssl_LDFLAGS="-L$with_ldap/lib -lldap -llber"
+-	   openldap="-I$with_ldap/include"
 +	   openldap_CFLAGS="-I$with_ldap/include"
-+	   openldap_LDFLAGS="-L$with_ldap/lib -lldap -llber"
- 	   CPPFLAGS="$CPPFLAGS $openldap_CFLAGS"
- 	   LDFLAGS="$LDFLAGS $openldap_LDFLAGS"
- 	   LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$with_ldap/lib" ;;
-@@ -35834,13 +35834,13 @@
+ 	   openldap_LDFLAGS="-L$with_ldap/lib -lldap -llber"
+ 	   LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$with_ldap/lib"
+ 	   export LD_LIBRARY_PATH
+@@ -35996,13 +35996,13 @@
  ##  various destination dirs                      			##
  ##									##
  ##########################################################################
