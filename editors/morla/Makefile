@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	morla
-PORTVERSION=	0.11
-PORTREVISION=	2
+PORTVERSION=	0.13
+#PORTREVISION=	0
 CATEGORIES=	editors textproc
-MASTER_SITES=	http://www2.autistici.org/bakunin/morla/ \
+MASTER_SITES=	http://www.morlardf.net/src/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A RDF editor
 
 LIB_DEPENDS=	nxml.18:${PORTSDIR}/textproc/libnxml \
-		rdf.0:${PORTSDIR}/textproc/redland
+		rdf.0:${PORTSDIR}/textproc/redland \
+		curl.4:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 
@@ -25,6 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I/${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GETTEXT=	yes
 USE_GNOME=	libgtkhtml libxslt
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 MAN1=	morla.1
 
