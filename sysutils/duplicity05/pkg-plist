@@ -1,8 +1,5 @@
 bin/duplicity
 bin/rdiffdir
-%%PYTHON_SITELIBDIR%%/duplicity/GnuPGInterface.py
-%%PYTHON_SITELIBDIR%%/duplicity/GnuPGInterface.pyc
-%%PYTHON_SITELIBDIR%%/duplicity/GnuPGInterface.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/__init__.py
 %%PYTHON_SITELIBDIR%%/duplicity/__init__.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/__init__.pyo
