@@ -1,44 +1,44 @@
-%%INSTALLDIR%%/README
-%%INSTALLDIR%%/README.cz
-%%INSTALLDIR%%/copying
-%%INSTALLDIR%%/export.php
-%%INSTALLDIR%%/function.php
-%%INSTALLDIR%%/graphics/cursor_down.gif
-%%INSTALLDIR%%/graphics/cursor_up.gif
-%%INSTALLDIR%%/graphics/intro.gif
-%%INSTALLDIR%%/graphics/intro.gif.cz
-%%INSTALLDIR%%/graphics/outro.gif
-%%INSTALLDIR%%/import.php
-%%INSTALLDIR%%/include/compress.inc.php
-%%INSTALLDIR%%/include/foot.inc.php
-%%INSTALLDIR%%/include/frameset.inc.php
-%%INSTALLDIR%%/include/headers.inc.php
-%%INSTALLDIR%%/include/indexes.inc.php
-%%INSTALLDIR%%/include/sqltips.inc.php
-%%INSTALLDIR%%/include/sqltips.inc.php.cz
-%%INSTALLDIR%%/include/words.inc.php
-%%INSTALLDIR%%/index.php
-%%INSTALLDIR%%/indexes.php
-%%INSTALLDIR%%/ini/default.ini
-%%INSTALLDIR%%/ini/default.ini.cz
-%%INSTALLDIR%%/insert.php
-%%INSTALLDIR%%/lang/cz.lng
-%%INSTALLDIR%%/lang/en.lng
-%%INSTALLDIR%%/logout.php
-%%INSTALLDIR%%/menu.php
-%%INSTALLDIR%%/output.php
-%%INSTALLDIR%%/queries.php
-%%INSTALLDIR%%/query_archive.php
-%%INSTALLDIR%%/query_archive/root.txt
-%%INSTALLDIR%%/scheme.php
-%%INSTALLDIR%%/scripts.js
-%%INSTALLDIR%%/settings.php
-%%INSTALLDIR%%/stat.php
-%%INSTALLDIR%%/styly.css
-%%INSTALLDIR%%/top.php
-@dirrm %%INSTALLDIR%%/query_archive
-@dirrm %%INSTALLDIR%%/lang
-@dirrm %%INSTALLDIR%%/ini
-@dirrm %%INSTALLDIR%%/graphics
-@dirrm %%INSTALLDIR%%/include
-@dirrm %%INSTALLDIR%%
+%%WWWDIR%%/README
+%%WWWDIR%%/README.cz
+%%WWWDIR%%/charset.php
+%%WWWDIR%%/copying
+%%WWWDIR%%/export.php
+%%WWWDIR%%/function.php
+%%WWWDIR%%/graphics/cursor_down.gif
+%%WWWDIR%%/graphics/cursor_up.gif
+%%WWWDIR%%/graphics/intro.gif
+%%WWWDIR%%/graphics/intro.gif.cz
+%%WWWDIR%%/graphics/outro.gif
+%%WWWDIR%%/import.php
+%%WWWDIR%%/include/compress.inc.php
+%%WWWDIR%%/include/foot.inc.php
+%%WWWDIR%%/include/frameset.inc.php
+%%WWWDIR%%/include/headers.inc.php
+%%WWWDIR%%/include/indexes.inc.php
+%%WWWDIR%%/include/sqltips.inc.php
+%%WWWDIR%%/include/sqltips.inc.php.cz
+%%WWWDIR%%/include/words.inc.php
+%%WWWDIR%%/index.php
+%%WWWDIR%%/indexes.php
+%%WWWDIR%%/ini/default.ini
+%%WWWDIR%%/ini/default.ini.cz
+%%WWWDIR%%/insert.php
+%%WWWDIR%%/lang/cz.lng
+%%WWWDIR%%/lang/en.lng
+%%WWWDIR%%/logout.php
+%%WWWDIR%%/menu.php
+%%WWWDIR%%/output.php
+%%WWWDIR%%/queries.php
+%%WWWDIR%%/query_archive.php
+%%WWWDIR%%/scheme.php
+%%WWWDIR%%/scripts.js
+%%WWWDIR%%/settings.php
+%%WWWDIR%%/stat.php
+%%WWWDIR%%/style.css
+%%WWWDIR%%/top.php
+@dirrm %%WWWDIR%%/query_archive
+@dirrm %%WWWDIR%%/lang
+@dirrm %%WWWDIR%%/ini
+@dirrm %%WWWDIR%%/graphics
+@dirrm %%WWWDIR%%/include
+@dirrm %%WWWDIR%%
