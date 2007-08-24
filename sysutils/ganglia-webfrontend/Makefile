@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webfrontend
-PORTVERSION=	3.0.1
-PORTREVISION=	3
+PORTVERSION=	3.0.4
 CATEGORIES=	sysutils net parallel www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
@@ -15,7 +14,7 @@ PKGNAMEPREFIX=	ganglia-
 DISTNAME=	ganglia-${PORTVERSION}
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	"Ganglia cluster monitor, web frontend"
+COMMENT=	Ganglia cluster monitor, web frontend
 
 RUN_DEPENDS+=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
 
@@ -28,7 +27,6 @@ SUB_LIST+=	WEBFRONTDIR="${WEBFRONTDIR}"
 PLIST_SUB+=	WEBFRONTDIR="${WEBFRONTDIR}"
 
 USE_PHP=	gd pcre xml
-USE_BZIP2=	yes
 WANT_PHP_MOD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/web
 
@@ -72,6 +70,7 @@ do-build:
 	    -a -prune -o -print \
 	    | ${TAR} cTf - - | ${TAR} xUCf ${TMP_WEBFRONTDIR} -
 	@${CP} ${WRKSRC}/conf.php ${TMP_WEBFRONTDIR}/conf.php.sample
+	@${CP} ${FILESDIR}/version.php ${TMP_WEBFRONTDIR}/version.php
 
 do-install:
 	@${MKDIR} -m 0755 ${PREFIX}/${WEBFRONTDIR}
@@ -93,7 +92,7 @@ build-plist:
 	@${FIND} ${TMP_WEBFRONTDIR}/* -type d | \
 	    ${SED} -e 's|${TMP_WEBFRONTDIR}|@dirrm %%WEBFRONTDIR%%|' | \
 	    ${SORT} -r >> ${PLIST}
-	@${ECHO_CMD} '@dirrmtry rmdir %D/%%WEBFRONTDIR%%' >> ${PLIST}
+	@${ECHO_CMD} '@dirrmtry ${RMDIR} %D/%%WEBFRONTDIR%%' >> ${PLIST}
 	@${ECHO_CMD} '@unexec (test -d %D/%%WEBFRONTDIR%% && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%WEBFRONTDIR%% and its contents manually.")) || true' >> ${PLIST}
 
 .include <bsd.port.mk>
