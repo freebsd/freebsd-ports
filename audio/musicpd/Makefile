@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.12.2
-PORTREVISION=	1
+PORTVERSION=	0.13.0
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://musicpd.org/uploads/files/
 MASTER_SITE_SUBDIR=	${PORTNAME}
