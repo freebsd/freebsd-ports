@@ -26,24 +26,22 @@ COMMENT=	A Tk extension (with shared libs)
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
-
 WRKSRC=		${WRKDIR}/blt2.4z
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--exec_prefix=${PREFIX} \
-		--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
-		--with-tk=${LOCALBASE}/lib/tk${TK_VER} \
-		--with-tcllibs=${LOCALBASE}/lib/ \
-		--with-tklibs=${LOCALBASE}/lib/ \
-		--with-tclincls=${LOCALBASE}/include/tcl${TK_VER} \
-		--with-tkincls=${LOCALBASE}/include/tk${TK_VER} \
-		--x-libraries=${X11BASE}/lib \
-		--x-includes=${X11BASE}/include
 
-TK_VER?=	8.4
+USE_TK=		80+
+INVALID_TK_VER=	85
+USE_XORG=	x11
 
 .include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+=	--exec_prefix=${PREFIX} \
+		--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR} \
+		--with-tcllibs=${LOCALBASE}/lib/ \
+		--with-tklibs=${LOCALBASE}/lib/ \
+		--with-tclincls=${TCL_INCLUDEDIR} \
+		--with-tkincls=${TK_INCLUDEDIR}
 
 post-install:
 	${LN} -sf libBLT24.so.3 ${PREFIX}/lib/libBLT24.so
