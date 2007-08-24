@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mapyrus
-PORTVERSION=	0.702
-PORTREVISION=	1
+PORTVERSION=	0.704
+#PORTREVISION=	0
 CATEGORIES=	graphics print java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,27 +32,20 @@ MAPYRUSDOCS=	${PORTNAME}.pdf
 FIND_DATA=	-type f -not \( -iname "copying" -or -iname "*.tex" \)
 FIND_HERE=	userdoc
 
-.if defined(WITH_EXAMPLES)
-PLIST_SUB=	PORTEXAMPLES=""
-.else
-PLIST_SUB=	PORTEXAMPLES="@comment "
-.endif
-
 do-install:
 	${MKDIR} ${DATADIR}
-	cd ${WRKDIR} && ${INSTALL_DATA} ${MAPYRUSJAR} ${DATADIR}/${MAPYRUSJAR}
+	${INSTALL_DATA} ${WRKDIR}/${MAPYRUSJAR} ${DATADIR}/${MAPYRUSJAR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKDIR} && ${INSTALL_DATA} ${MAPYRUSDOCS} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKDIR}/${MAPYRUSDOCS} ${DOCSDIR}/
 .endif
-.if defined(WITH_EXAMPLES)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKDIR} && ${FIND} ${FIND_HERE} ${FIND_DATA} -exec ${INSTALL_DATA} {} ${EXAMPLESDIR} \;
 .endif
 
 post-install:
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
