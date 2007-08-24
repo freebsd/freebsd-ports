@@ -1,21 +1,78 @@
 @comment $FreeBSD$
 bin/wbar
 %%DATADIR%%/dot.wbar
-%%DATADIR%%/wbar.icons/VeraBd.ttf
-%%DATADIR%%/wbar.icons/acroread.png
-%%DATADIR%%/wbar.icons/firefox.png
-%%DATADIR%%/wbar.icons/gimp.png
-%%DATADIR%%/wbar.icons/gnutella.png
-%%DATADIR%%/wbar.icons/gulls.png
-%%DATADIR%%/wbar.icons/license
-%%DATADIR%%/wbar.icons/osxbarback.png
-%%DATADIR%%/wbar.icons/osxbarback.xcf
-%%DATADIR%%/wbar.icons/power.png
-%%DATADIR%%/wbar.icons/psi.png
-%%DATADIR%%/wbar.icons/term.png
-%%DATADIR%%/wbar.icons/xcalc.png
-%%DATADIR%%/wbar.icons/xmms.png
+%%DATADIR%%/iconpack/comic.ttf
+%%DATADIR%%/iconpack/wbar.ice/acroread.png
+%%DATADIR%%/iconpack/wbar.ice/beagle.png
+%%DATADIR%%/iconpack/wbar.ice/blank.png
+%%DATADIR%%/iconpack/wbar.ice/blender.png
+%%DATADIR%%/iconpack/wbar.ice/cedega.png
+%%DATADIR%%/iconpack/wbar.ice/firefox.png
+%%DATADIR%%/iconpack/wbar.ice/font.ttf
+%%DATADIR%%/iconpack/wbar.ice/gearth.png
+%%DATADIR%%/iconpack/wbar.ice/gimp.png
+%%DATADIR%%/iconpack/wbar.ice/gmplayer.png
+%%DATADIR%%/iconpack/wbar.ice/gnucash.png
+%%DATADIR%%/iconpack/wbar.ice/gqview.png
+%%DATADIR%%/iconpack/wbar.ice/inkscape.png
+%%DATADIR%%/iconpack/wbar.ice/mlgui.png
+%%DATADIR%%/iconpack/wbar.ice/nautilus.png
+%%DATADIR%%/iconpack/wbar.ice/ooffice.png
+%%DATADIR%%/iconpack/wbar.ice/osxbarback.png
+%%DATADIR%%/iconpack/wbar.ice/picasa.png
+%%DATADIR%%/iconpack/wbar.ice/psi.png
+%%DATADIR%%/iconpack/wbar.ice/skype.png
+%%DATADIR%%/iconpack/wbar.ice/thunderbird.png
+%%DATADIR%%/iconpack/wbar.ice/vmware.png
+%%DATADIR%%/iconpack/wbar.ice/xmms.png
+%%DATADIR%%/iconpack/wbar.nuvoux/acroread.png
+%%DATADIR%%/iconpack/wbar.nuvoux/beagle.png
+%%DATADIR%%/iconpack/wbar.nuvoux/blender.png
+%%DATADIR%%/iconpack/wbar.nuvoux/cedega.png
+%%DATADIR%%/iconpack/wbar.nuvoux/firefox.png
+%%DATADIR%%/iconpack/wbar.nuvoux/font.ttf
+%%DATADIR%%/iconpack/wbar.nuvoux/gearth.png
+%%DATADIR%%/iconpack/wbar.nuvoux/gimp.png
+%%DATADIR%%/iconpack/wbar.nuvoux/gmplayer.png
+%%DATADIR%%/iconpack/wbar.nuvoux/gnucash.png
+%%DATADIR%%/iconpack/wbar.nuvoux/gqview.png
+%%DATADIR%%/iconpack/wbar.nuvoux/inkscape.png
+%%DATADIR%%/iconpack/wbar.nuvoux/mlgui.png
+%%DATADIR%%/iconpack/wbar.nuvoux/nautilus.png
+%%DATADIR%%/iconpack/wbar.nuvoux/ooffice.png
+%%DATADIR%%/iconpack/wbar.nuvoux/osxbarback.png
+%%DATADIR%%/iconpack/wbar.nuvoux/picasa.png
+%%DATADIR%%/iconpack/wbar.nuvoux/psi.png
+%%DATADIR%%/iconpack/wbar.nuvoux/skype.png
+%%DATADIR%%/iconpack/wbar.nuvoux/thunderbird.png
+%%DATADIR%%/iconpack/wbar.nuvoux/vmware.png
+%%DATADIR%%/iconpack/wbar.nuvoux/xmms.png
+%%DATADIR%%/iconpack/wbar.osx/acroread.png
+%%DATADIR%%/iconpack/wbar.osx/beagle.png
+%%DATADIR%%/iconpack/wbar.osx/blender.png
+%%DATADIR%%/iconpack/wbar.osx/cedega.png
+%%DATADIR%%/iconpack/wbar.osx/firefox.png
+%%DATADIR%%/iconpack/wbar.osx/font.ttf
+%%DATADIR%%/iconpack/wbar.osx/gearth.png
+%%DATADIR%%/iconpack/wbar.osx/gimp.png
+%%DATADIR%%/iconpack/wbar.osx/gmplayer.png
+%%DATADIR%%/iconpack/wbar.osx/gnucash.png
+%%DATADIR%%/iconpack/wbar.osx/gqview.png
+%%DATADIR%%/iconpack/wbar.osx/inkscape.png
+%%DATADIR%%/iconpack/wbar.osx/mlgui.png
+%%DATADIR%%/iconpack/wbar.osx/nautilus.png
+%%DATADIR%%/iconpack/wbar.osx/ooffice.png
+%%DATADIR%%/iconpack/wbar.osx/osxbarback.png
+%%DATADIR%%/iconpack/wbar.osx/picasa.png
+%%DATADIR%%/iconpack/wbar.osx/psi.png
+%%DATADIR%%/iconpack/wbar.osx/skype.png
+%%DATADIR%%/iconpack/wbar.osx/thunderbird.png
+%%DATADIR%%/iconpack/wbar.osx/vmware.png
+%%DATADIR%%/iconpack/wbar.osx/xmms.png
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm %%DATADIR%%/wbar.icons
-@dirrm %%DATADIR%%/
+@dirrm %%DATADIR%%/iconpack/wbar.ice
+@dirrm %%DATADIR%%/iconpack/wbar.nuvoux
+@dirrm %%DATADIR%%/iconpack/wbar.osx
+@dirrm %%DATADIR%%/iconpack
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
