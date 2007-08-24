@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monitor-core
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	sysutils net parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
@@ -33,7 +33,7 @@ SUB_FILES=	pkg-install
 
 .if defined (GMETAD_CONF)
 .if !exists (${GMETAD_CONF})
-IGNORE=		 "GMETAD_CONF must point to an existing file when defined"
+IGNORE=		GMETAD_CONF must point to an existing file when defined
 .endif
 .else
 GMETAD_CONF=	${WRKSRC}/gmetad/gmetad.conf
@@ -41,7 +41,7 @@ GMETAD_CONF=	${WRKSRC}/gmetad/gmetad.conf
 
 .if defined (GMOND_CONF)
 .if !exists (${GMOND_CONF})
-IGNORE=		"GMOND_CONF must point to an existing file when defined"
+IGNORE=		GMOND_CONF must point to an existing file when defined
 .endif
 .else
 GMOND_CONF=	${WRKDIR}/gmond.conf
@@ -61,7 +61,6 @@ USE_RC_SUBR+=	gmetad.sh
 USE_RC_SUBR=	ganglia.sh
 .endif
 
-
 .if defined (WITH_GMETAD)
 LIB_DEPENDS=	rrd.2:${PORTSDIR}/databases/rrdtool
 CONFIGURE_ARGS+=	--with-gmetad
@@ -73,7 +72,7 @@ SUB_LIST+=	GMETAD="\#"
 .endif
 
 .if defined (WITH_LIBGANGLIA)
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_SUB+=	LIBGANGLIA=
 .else
 PLIST_SUB+=	LIBGANGLIA="@comment "
