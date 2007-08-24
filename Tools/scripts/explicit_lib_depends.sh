@@ -100,7 +100,7 @@ for i in $@; do
 			}
 		}
 
-		/^bin\// {
+		/^s*bin\// {
 			printf "%s/%s\n", CWD, $1;
 		}
 
