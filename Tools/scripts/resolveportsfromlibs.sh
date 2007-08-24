@@ -77,7 +77,17 @@ if [ -z "${bases}" ]; then
 	bases=/usr/local
 fi
 
+if [ -z "${PORTSDIR}" ]; then
+	PORTSDIR=$(make -f /etc/make.conf -V PORTSDIR)
+fi
+
+if [ -z "${PORTSDIR}" -o ! -d "${PORTSDIR}" ]; then
+	PORTSDIR=/usr/ports
+fi
+
 for i in $@; do
+	result=""
+
 	if [ -e /lib/$i -o -e /usr/lib/$i ]; then
 		# base system lib, skipping
 		shift
@@ -99,6 +109,33 @@ for i in $@; do
 		fi
 	done
 
-	echo ${lib}:${origin}
+	XORG="$(egrep ${origin}\$ ${PORTSDIR}/Mk/bsd.xorg.mk 2>/dev/null \
+		| grep _LIB | sed -e 's:_LIB.*::')"
+
+	GNOME="$(egrep ${origin}\$ ${PORTSDIR}/Mk/bsd.gnome.mk 2>/dev/null \
+		| grep _LIB | sed -e 's:_LIB.*::')"
+
+	if [ -n "${XORG}" ]; then
+		result="USE_XORG+=${XORG}"
+	fi
+
+	if [ -n "${GNOME}" ]; then
+		result="USE_GNOME+=${GNOME}"
+	fi
+
+	case ${origin} in
+	devel/gettext)
+		result="USE_GETTEXT=yes"
+		;;
+	converters/libiconv)
+		result="USE_ICONV=yes"
+		;;
+	esac
+
+	if [ -z "${result}" ]; then
+		result="${lib}:${origin}"
+	fi
+
+	echo ${result}
 	shift
 done | sort -u
