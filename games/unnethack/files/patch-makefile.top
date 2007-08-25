@@ -32,7 +32,7 @@ $FreeBSD$
  
  # Defs. for non file areas support.
 -GAMEDIR  = $(PREFIX)/local/slashemdir
-+GAMEDIR  = $(PREFIX)/share/${GAME}
++GAMEDIR  = $(DATADIR)
  VARDIR = $(GAMEDIR)
  FILE_AREA_VAR = $(VARDIR)
  FILE_AREA_SAVE = $(VARDIR)/save
