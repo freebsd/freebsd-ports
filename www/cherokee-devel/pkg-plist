@@ -38,9 +38,9 @@ include/cherokee/module.h
 include/cherokee/nonce.h
 include/cherokee/plugin.h
 include/cherokee/plugin_loader.h
+include/cherokee/post.h
 include/cherokee/resolv_cache.h
 include/cherokee/server.h
-include/cherokee/table.h
 include/cherokee/url.h
 include/cherokee/util.h
 include/cherokee/version.h
