@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.wiggy.net/files/ \
 		http://www.sourcefiles.org/Networking/Tools/Authentication/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	steve@energistic.com
 COMMENT=	Python implementation of RADIUS client
 
 USE_PYTHON=	yes
