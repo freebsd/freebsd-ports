@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	libsndfile
 # Date created:			Jul 20, 2001
 # Whom:				ijliao
@@ -8,6 +7,7 @@
 
 PORTNAME=	libsndfile
 PORTVERSION=	1.0.17
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/
 
@@ -16,23 +16,18 @@ COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-justsrc --disable-gcc-pipe
+CONFIGURE_ARGS=	--enable-justsrc \
+		--disable-gcc-pipe \
+		--disable-sqlite
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
 MAN1=		sndfile-convert.1 sndfile-info.1 sndfile-play.1
 
-OPTIONS=	FLAC "Enable flac support" On \
-		SQLITE3 "Enable Sqlite3 support" Off
+OPTIONS=	FLAC "Enable flac support" On
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_SQLITE3)
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
-.else
-CONFIGURE_ARGS=	--disable-sqlite
-.endif
 
 .if !defined(WITHOUT_FLAC) || exists(${LOCALBASE}/lib/libFLAC.a)
 LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
