@@ -33,7 +33,7 @@ stop_postcmd="binlsrv_stop_postcmd"
 
 binlsrv_start_precmd()
 {
-	%%PREFIX%%/share/ris/infparser.py ${binlsrv_infdir}
+	%%DATADIR%%/infparser.py ${binlsrv_infdir}
 }
 
 binlsrv_stop_postcmd()
