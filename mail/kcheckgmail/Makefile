@@ -31,7 +31,7 @@ DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
 
 MAN1=		kcheckgmail.1
 
-post-extract:
+post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/subdirs
 .endif
