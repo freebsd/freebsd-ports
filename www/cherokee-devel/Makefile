@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cherokee
-DISTVERSION=	0.6.0b700
-PORTREVISION=	1
+DISTVERSION=	0.6.0b863
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/0.6/${PORTVERSION:R}/ \
 		CENKES LOCAL/beech
