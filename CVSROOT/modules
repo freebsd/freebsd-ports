@@ -9796,6 +9796,7 @@ p5-HTML-Breadcrumbs	ports/www/p5-HTML-Breadcrumbs
 p5-HTML-CalendarMonthSimple	ports/www/p5-HTML-CalendarMonthSimple
 p5-HTML-Chunks	ports/www/p5-HTML-Chunks
 p5-HTML-Clean	ports/www/p5-HTML-Clean
+p5-HTML-Copy	ports/textproc/p5-HTML-Copy
 p5-HTML-Diff	ports/www/p5-HTML-Diff
 p5-HTML-Element-Extended	ports/www/p5-HTML-Element-Extended
 p5-HTML-Element-Library	ports/www/p5-HTML-Element-Library
