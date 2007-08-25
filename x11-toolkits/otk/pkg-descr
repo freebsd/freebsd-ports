@@ -1,19 +1,17 @@
 Otk is a portable widget library for making graphical user interfaces for
 application programs. It emphasizes simplicity without eliminating capability.
-It is based on OpenGL, and C. Otk provides the following basic widgets:
+It is based on OpenGL and C. Otk provides the following basic widgets:
+* Panel -		The "container" widget,
+* Text Label -		Text labels,
+* Button -		Buttons with labels and call-backs
+		  	to user functions,
+* Text Form Box -	Accept text with function call-back,
+			also scrollable editor window,
+* Pull-down Menu -	Display hierarchical menu-lists with user
+			function call-backs on mouse release,
+* Slider Control -	Slider control with call-back,
+* Sub-windows -		Detachable self-managed windows,
+* Gadgets -		High level widgets
 
- * Panel -		The "container" widget,
- * Text Label -		Text labels,
- * Button -		Buttons with labels and call-backs
-		  	  to user functions,
- * Text Form Box -	Accept text with function call-back,
-			  also scrollable editor window,
- * Pull-down Menu -	Display hierarchical menu-lists with user
-			  function call-backs on mouse release,
- * Slider Control -	Slider control with call-back,
- * Sub-windows -	Detachable self-managed windows,
- * Gadgets -		High level widgets
-
-and many others.
-
-WWW:	http://otk.sourceforge.net/
+WWW: http://otk.sourceforge.net/
+Author: Carl Kindman <carlkindman@yahoo.com>
