@@ -1,0 +1,10 @@
+--- src/sqlite3/Makefile.in.orig	2007-08-25 13:54:21.000000000 -0500
++++ src/sqlite3/Makefile.in	2007-08-25 13:54:28.000000000 -0500
+@@ -321,7 +321,6 @@
+ INCLUDES = \
+ 	 $(SQLITE_OS)			\
+ 	 -DHAVE_USLEEP=1 		\
+-	 -DHAVE_FDATASYNC=1 		\
+ 	 -DNDEBUG			\
+ 	 -DTHREADSAFE=1			\
+ 	 -DSQLITE_THREAD_OVERRIDE_LOCK=-1	\
