@@ -79,16 +79,8 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>An advisory from Opera reports:</p>
 	<blockquote cite="http://www.opera.com/support/search/view/865/">
-	  <p>A specially crafted JavaScript can make Opera execute arbitrary code.</p>
-	  <h1>Severity:</h1>
-	  <p>Highly severe</p>
-	  <h1>Problem description</h1>
-	  <p>A virtual function call on an invalid pointer that may reference
-	    data crafted by the attacker can be used to execute arbitrary code.</p>
-	  <h1>Opera's response</h1>
-	  <p>Opera Software has released Opera 9.23, where this issue has been fixed.</p>
-	  <h1>Credits</h1>
-	  <p>Thanks to Mozilla.org for providing their JavaScript fuzzer.</p>
+	  <p>A specially crafted JavaScript can make Opera execute
+	    arbitrary code.</p>
 	</blockquote>
       </body>
     </description>
@@ -98,6 +90,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-08-03</discovery>
       <entry>2007-08-15</entry>
+      <modified>2007-08-25</modified>
     </dates>
   </vuln>
 
