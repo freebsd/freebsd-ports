@@ -7,7 +7,7 @@
 
 PORTNAME=	pantry
 PORTVERSION=	0.${DISTVERSION}
-DISTVERSION=	18
+DISTVERSION=	20
 CATEGORIES=	misc
 MASTER_SITES=	http://www.smileystation.com/pantry/downloads/ CENKES
 
@@ -37,5 +37,8 @@ post-install:
 	@${INSTALL} -d ${DATADIR}/
 	@${INSTALL_DATA} ${WRKSRC}/master ${DATADIR}/
 .endif
+
+test:
+	${PREFIX}/bin/pantry --ignore-case --name apple --print names ${DATADIR}/master
 
 .include <bsd.port.mk>
