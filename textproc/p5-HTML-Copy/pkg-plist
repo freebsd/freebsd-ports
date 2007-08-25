@@ -1,0 +1,6 @@
+bin/htmlcopy
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Copy/.packlist
+%%SITE_PERL%%/HTML/Copy.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Copy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML
