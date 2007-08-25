@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ireport
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	devel databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,12 +20,14 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper					\
 		${JAVALIBDIR}/dom4j.jar:${PORTSDIR}/textproc/dom4j			\
 		${JAVALIBDIR}/antlr.jar:${PORTSDIR}/devel/antlr				\
 		${JAVALIBDIR}/looks.jar:${PORTSDIR}/devel/looks				\
+		${JAVALIBDIR}/jaxen-full.jar:${PORTSDIR}/java/jaxen			\
 		${JAVALIBDIR}/tinylaf.jar:${PORTSDIR}/devel/tinylaf			\
 		${JAVALIBDIR}/bcel.jar:${PORTSDIR}/java/jakarta-bcel			\
 		${JAVALIBDIR}/jcmdline.jar:${PORTSDIR}/devel/jcmdline			\
 		${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j		\
 		${JAVALIBDIR}/jasperreports.jar:${PORTSDIR}/databases/jasperreports	\
 		${JAVALIBDIR}/commons-dbcp.jar:${PORTSDIR}/java/jakarta-commons-dbcp	\
+		${JAVALIBDIR}/commons-math.jar:${PORTSDIR}/math/jakarta-commons-math	\
 		${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool
 
 USE_JAVA=	yes
@@ -37,17 +39,17 @@ PLIST_SUB=	VER=${PORTVERSION} VERMAN=0.2.0
 JARFILES=	JasperBabylon-1.0.0.jar LICENSE.asm-attr.txt LICENSE.asm.txt	\
 		LICENSE.barbecue-1.1.txt LICENSE.jta.txt LICENSE.microba.txt	\
 		asm-attrs.jar asm.jar barbecue-1.1.jar cglib-2.1.jar		\
-		cincom-jr-xmla.jar commons-javaflow-20060411.jar ehcache-1.1.jar\
-		eigenbase-properties.jar eigenbase-resgen.jar eigenbase-xom.jar	\
-		flexdock-0.4.1.jar groovy-all-1.0.jar hibernate3.jar	\
-		iReport.jar jasperreports-extensions-1.3.1.jar javacup.jar	\
-		jdt-compiler-3.1.1.jar jpa.jar jr-bsh-compiler.jar		\
-		jsmoothgen-ant-0.9.7.jar jta.jar jxl-2.6.jar			\
-		microba-0.4.1-bin.jar mondrian-2.0.1.jar nsisant-1.1.jar	\
-		png-encoder-1.5.jar rex-20070125.jar saaj-api-1.3.jar		\
-		servlet.jar spring-2.0-m2.jar spring-context-2.0-m2.jar		\
-		spring-hibernate3-2.0-m2.jar sqleonardo-2007.03.jar		\
-		swingx-2007_05_13.jar toniclf.jar
+		cincom-jr-xmla.jar commons-javaflow-20060411.jar		\
+		commons-vfs-1.0.jar ehcache-1.1.jar eigenbase-properties.jar	\
+		eigenbase-resgen.jar eigenbase-xom.jar flexdock-0.4.1.jar	\
+		groovy-all-1.0.jar hibernate3.jar iReport.jar			\
+		jasperreports-extensions-1.3.1.jar javacup.jar			\
+		jdt-compiler-3.1.1.jar jpa.jar jsmoothgen-ant-0.9.7.jar jta.jar	\
+		jxl-2.6.jar microba-0.4.1-bin.jar mondrian-2.3.2.8944.jar	\
+		nsisant-1.1.jar png-encoder-1.5.jar rex-20070125.jar		\
+		saaj-api-1.3.jar servlet.jar spring-2.0-m2.jar			\
+		spring-context-2.0-m2.jar spring-hibernate3-2.0-m2.jar		\
+		sqleonardo-2007.03.jar swingx-2007_05_13.jar toniclf.jar
 BASEFILES=	Changelog.txt notice.txt relnotes${PORTVERSION}.html
 SUBDIRS=	fonts plugins templates
 
@@ -55,17 +57,18 @@ SUBDIRS=	fonts plugins templates
 CLSSPTH=	JasperBabylon-1.0.0 antlr asm-attrs asm barbecue-1.1 bsh	\
 		cglib-2.1 cincom-jr-xmla commons-beanutils commons-collections	\
 		commons-dbcp commons-digester commons-javaflow-20060411		\
-		commons-logging commons-logging-api commons-pool dom4j		\
-		ehcache-1.1 eigenbase-properties eigenbase-resgen eigenbase-xom	\
-		flexdock-0.4.1 groovy-all-1.0 hibernate3 iReport itext	\
-		bcel jasperreports jasperreports-extensions-1.3.1 javacup	\
-		jcmdline jcommon jdt-compiler-3.1.1 jfreechart jpa		\
-		jr-bsh-compiler jsmoothgen-ant-0.9.7 jta jxl-2.6 log4j looks	\
-		microba-0.4.1-bin mondrian-2.0.1 mysql-connector-java		\
-		nsisant-1.1 png-encoder-1.5 poi postgresql rex-20070125		\
-		saaj-api-1.3 servlet spring-2.0-m2 spring-context-2.0-m2	\
-		spring-hibernate3-2.0-m2 sqleonardo-2007.03 swingx-2007_05_13	\
-		tinylaf toniclf xalan xercesImpl xml-apis ${CLSSHSQLDB}
+		commons-logging commons-logging-api commons-math commons-pool	\
+		commons-vfs-1.0 dom4j ehcache-1.1 eigenbase-properties		\
+		eigenbase-resgen eigenbase-xom flexdock-0.4.1 groovy-all-1.0	\
+		hibernate3 iReport itext bcel jasperreports			\
+		jasperreports-extensions-1.3.1 javacup jaxen-full jcmdline	\
+		jcommon jdt-compiler-3.1.1 jfreechart jpa			\
+		jsmoothgen-ant-0.9.7 jta jxl-2.6 log4j looks microba-0.4.1-bin	\
+		mondrian-2.3.2.8944 mysql-connector-java nsisant-1.1		\
+		png-encoder-1.5 poi postgresql rex-20070125 saaj-api-1.3 servlet\
+		spring-2.0-m2 spring-context-2.0-m2 spring-hibernate3-2.0-m2	\
+		sqleonardo-2007.03 swingx-2007_05_13 tinylaf toniclf xalan	\
+		xercesImpl xml-apis ${CLSSHSQLDB}
 
 .include <bsd.port.pre.mk>
 

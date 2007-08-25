@@ -59,6 +59,7 @@ bin/iReport
 %%JAVAJARDIR%%/cglib-2.1.jar
 %%JAVAJARDIR%%/cincom-jr-xmla.jar
 %%JAVAJARDIR%%/commons-javaflow-20060411.jar
+%%JAVAJARDIR%%/commons-vfs-1.0.jar
 %%JAVAJARDIR%%/ehcache-1.1.jar
 %%JAVAJARDIR%%/eigenbase-properties.jar
 %%JAVAJARDIR%%/eigenbase-resgen.jar
@@ -71,12 +72,11 @@ bin/iReport
 %%JAVAJARDIR%%/javacup.jar
 %%JAVAJARDIR%%/jdt-compiler-3.1.1.jar
 %%JAVAJARDIR%%/jpa.jar
-%%JAVAJARDIR%%/jr-bsh-compiler.jar
 %%JAVAJARDIR%%/jsmoothgen-ant-0.9.7.jar
 %%JAVAJARDIR%%/jta.jar
 %%JAVAJARDIR%%/jxl-2.6.jar
 %%JAVAJARDIR%%/microba-0.4.1-bin.jar
-%%JAVAJARDIR%%/mondrian-2.0.1.jar
+%%JAVAJARDIR%%/mondrian-2.3.2.8944.jar
 %%JAVAJARDIR%%/nsisant-1.1.jar
 %%JAVAJARDIR%%/png-encoder-1.5.jar
 %%JAVAJARDIR%%/rex-20070125.jar
