@@ -141,11 +141,7 @@ CONFIGURE_ARGS+=--disable-nls
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
-.if ${OSVERSION} < 500000
-DEFAULT_DVD_DEVICE=/dev/acd0c
-.else
 DEFAULT_DVD_DEVICE=/dev/acd0
-.endif
 .endif
 
 .if !defined(WITHOUT_GNOMEVFS)
@@ -158,11 +154,7 @@ CONFIGURE_ARGS+=	--disable-gnomevfs
 .if defined(WITH_CDROM_DEVICE)
 DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
 .else
-.if ${OSVERSION} < 500000
-DEFAULT_CDROM_DEVICE=/dev/acd0c
-.else
 DEFAULT_CDROM_DEVICE=/dev/acd0
-.endif
 .endif
 
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
@@ -554,10 +546,6 @@ CONFIGURE_ARGS+=--enable-release \
 		--enable-optimizations
 .else
 CONFIGURE_ARGS+=--enable-release
-.endif
-
-.if ${OSVERSION} < 500000
-CONFIGURE_ENV+=	LIBS="-L/usr/lib -lcipher"
 .endif
 
 .include "${.CURDIR}/Makefile.inc"
