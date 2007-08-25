@@ -22,10 +22,11 @@ SUB_FILES+=	pkg-deinstall
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 recover.6 slashem.6
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([A-Z])./\1/g}
+MAKE_ENV+=	DATADIR="${DATADIR}"
 
 post-patch:
 	${REINPLACE_CMD} -e \
-		"s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/include/config.h
+		"s@%%DATADIR%%@${DATADIR}@g" ${WRKSRC}/include/config.h
 
 pre-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh

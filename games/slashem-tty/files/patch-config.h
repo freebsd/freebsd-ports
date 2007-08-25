@@ -33,7 +33,7 @@ $FreeBSD$
  #    define HACKDIR "nethackdir"      /* nethack directory */
  #  else
 -#    define HACKDIR "."
-+#    define HACKDIR "%%PREFIX%%/share/slashem"	/* nethack directory */
++#    define HACKDIR "%%DATADIR%%"	/* nethack directory */
  #  endif
  # endif
  
