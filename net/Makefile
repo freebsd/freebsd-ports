@@ -173,6 +173,7 @@
     SUBDIR += gotthard
     SUBDIR += gq
     SUBDIR += grdesktop
+    SUBDIR += grsync
     SUBDIR += gsk
     SUBDIR += gspoof
     SUBDIR += gstreamer-plugins-libmms
