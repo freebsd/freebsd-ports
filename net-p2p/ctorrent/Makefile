@@ -26,7 +26,9 @@ PORTDOCS=	README-DNH.TXT UserGuide
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}/
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}/
+.endfor
 .endif
 
 .include <bsd.port.mk>
