@@ -1,16 +1,17 @@
 *****************************************************************
 
- Please consider adding the following 3 lines to your httpd.conf
+ Please consider adding the following 4 lines to your httpd.conf
 	
 	<Directory "%%WWWDIR%%">
 		AllowOverride Options FileInfo
+		allow from all
 	</Directory>
 
  Then restart apache: 'apachectl graceful'
 
 *****************************************************************
 
- Please visit 'http://{host.domain}/%%WWWDIR_REL%%/' in a
+ Please visit 'http://{host.domain}/gallery/' in a
  web-browser and follow the configuration instructions.
 
 *****************************************************************
