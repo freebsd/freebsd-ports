@@ -29,8 +29,8 @@ CONFIGURE_ARGS+=--cc="${CC}" --prefix="${PREFIX}" \
 		--enable-memalign-hack \
 		--enable-shared \
 		--enable-pp \
-		--extra-cflags="${CFLAGS} -I${LOCALBASE}/include" \
-		--extra-ldflags="-L${LOCALBASE}/lib" \
+		--extra-cflags="${FFMPEG_CFLAGS} -I${LOCALBASE}/include" \
+		--extra-ldflags="-L${LOCALBASE}/lib ${FFMPEG_LDFLAGS}" \
 		--extra-libs="${PTHREAD_LIBS}" \
 		--enable-gpl \
 		--enable-pthreads
@@ -63,7 +63,9 @@ MAN1+=	ffmpeg.1 ffserver.1
 .endif
 
 .ifdef(WITH_OPTIMIZED_CFLAGS)
-FFMPEG_CFLAGS+=		-O3 -ffast-math -fomit-frame-pointer
+CFLAGS:=		${CFLAGS:N-O*} -O3 -ffast-math -fomit-frame-pointer
+.else
+CFLAGS:=		${CFLAGS:N-O0} -O2
 .endif
 
 ## a52
@@ -72,7 +74,7 @@ LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
 
 CONFIGURE_ARGS+=	--enable-liba52 \
 			--enable-liba52bin
-FFMPEG_LDFLAGS+=		-la52
+FFMPEG_LDFLAGS+=	-la52
 .else
 CONFIGURE_ARGS+=	--disable-liba52
 .endif
