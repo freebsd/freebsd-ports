@@ -25,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 
 OPTIONS=	LOCK "Lock the device when mounting (avoids access)" off \
 		UBLIO "Enable user space cache for improved speed" on
