@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	when
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.5
 CATEGORIES=	deskutils
 MASTER_SITES=	CENKES
 #http://www.lightandmatter.com/when/when.tar.gz
