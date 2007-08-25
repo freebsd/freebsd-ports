@@ -1,6 +1,8 @@
 bin/cntraining
 bin/mftraining
 bin/tesseract
+bin/unicharset_extractor
+bin/wordlist2dawg
 include/tesseract/adaptions.h
 include/tesseract/adaptive.h
 include/tesseract/adaptmatch.h
@@ -36,7 +38,6 @@ include/tesseract/clst.h
 include/tesseract/cluster.h
 include/tesseract/clusttool.h
 include/tesseract/cmndwin.h
-include/tesseract/cnTraining.dsp
 include/tesseract/const.h
 include/tesseract/context.h
 include/tesseract/control.h
@@ -51,6 +52,7 @@ include/tesseract/debugwin.h
 include/tesseract/djmenus.h
 include/tesseract/dlltest.cpp
 include/tesseract/dlltest.dsp
+include/tesseract/dlltest.vcproj
 include/tesseract/docqual.h
 include/tesseract/drawedg.h
 include/tesseract/drawfx.h
@@ -113,9 +115,11 @@ include/tesseract/labls.h
 include/tesseract/linlsq.h
 include/tesseract/listio.h
 include/tesseract/lmedsq.h
+include/tesseract/lookdawg.h
 include/tesseract/lsterr.h
 include/tesseract/mainblk.h
 include/tesseract/makechop.h
+include/tesseract/makedawg.h
 include/tesseract/makerow.h
 include/tesseract/matchdefs.h
 include/tesseract/matchtab.h
@@ -128,7 +132,6 @@ include/tesseract/memryerr.h
 include/tesseract/mergenf.h
 include/tesseract/metrics.h
 include/tesseract/mf.h
-include/tesseract/mfTraining.dsp
 include/tesseract/mfcpch.cpp
 include/tesseract/mfcpch.h
 include/tesseract/mfdefs.h
@@ -187,6 +190,7 @@ include/tesseract/quadratc.h
 include/tesseract/quspline.h
 include/tesseract/ratngs.h
 include/tesseract/rect.h
+include/tesseract/reduce.h
 include/tesseract/rejctmap.h
 include/tesseract/reject.h
 include/tesseract/render.h
@@ -261,13 +265,26 @@ lib/libtesseract_classify.a
 lib/libtesseract_cutil.a
 lib/libtesseract_dict.a
 lib/libtesseract_display.a
+lib/libtesseract_full.a
 lib/libtesseract_image.a
 lib/libtesseract_main.a
 lib/libtesseract_textord.a
 lib/libtesseract_training.a
 lib/libtesseract_viewer.a
 lib/libtesseract_wordrec.a
+share/tessdata/configs/box.train
+share/tessdata/configs/inter
+share/tessdata/configs/makebox
+share/tessdata/configs/unlv
 share/tessdata/confsets
+share/tessdata/deu.DangAmbigs
+share/tessdata/deu.freq-dawg
+share/tessdata/deu.inttemp
+share/tessdata/deu.normproto
+share/tessdata/deu.pffmtable
+share/tessdata/deu.unicharset
+share/tessdata/deu.user-words
+share/tessdata/deu.word-dawg
 share/tessdata/eng.DangAmbigs
 share/tessdata/eng.freq-dawg
 share/tessdata/eng.inttemp
@@ -276,5 +293,45 @@ share/tessdata/eng.pffmtable
 share/tessdata/eng.unicharset
 share/tessdata/eng.user-words
 share/tessdata/eng.word-dawg
+share/tessdata/fra.DangAmbigs
+share/tessdata/fra.freq-dawg
+share/tessdata/fra.inttemp
+share/tessdata/fra.normproto
+share/tessdata/fra.pffmtable
+share/tessdata/fra.unicharset
+share/tessdata/fra.user-words
+share/tessdata/fra.word-dawg
+share/tessdata/ita.DangAmbigs
+share/tessdata/ita.freq-dawg
+share/tessdata/ita.inttemp
+share/tessdata/ita.normproto
+share/tessdata/ita.pffmtable
+share/tessdata/ita.unicharset
+share/tessdata/ita.user-words
+share/tessdata/ita.word-dawg
+share/tessdata/nld.DangAmbigs
+share/tessdata/nld.freq-dawg
+share/tessdata/nld.inttemp
+share/tessdata/nld.normproto
+share/tessdata/nld.pffmtable
+share/tessdata/nld.unicharset
+share/tessdata/nld.user-words
+share/tessdata/nld.word-dawg
+share/tessdata/spa.DangAmbigs
+share/tessdata/spa.freq-dawg
+share/tessdata/spa.inttemp
+share/tessdata/spa.normproto
+share/tessdata/spa.pffmtable
+share/tessdata/spa.unicharset
+share/tessdata/spa.user-words
+share/tessdata/spa.word-dawg
+share/tessdata/tessconfigs/batch
+share/tessdata/tessconfigs/batch.nochop
+share/tessdata/tessconfigs/matdemo
+share/tessdata/tessconfigs/msdemo
+share/tessdata/tessconfigs/nobatch
+share/tessdata/tessconfigs/segdemo
 @dirrm include/tesseract
+@dirrm share/tessdata/configs
+@dirrm share/tessdata/tessconfigs
 @dirrm share/tessdata
