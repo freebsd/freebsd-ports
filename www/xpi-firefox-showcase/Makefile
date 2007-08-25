@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox-showcase
-PORTVERSION=	0.9.3.2
+PORTVERSION=	0.9.3.3
 DISTVERSIONSUFFIX=	-fx+fl
 CATEGORIES=	www
 
