@@ -30,6 +30,6 @@ do-install:
 	    --bindir=${PREFIX}/bin\
 	    --libdir=${PREFIX}/lib/cint\
 	    --docdir=${PREFIX}/share/doc/cint\
-	    --mandir=${PREFIX}/man
+	    --mandir=${MANPREFIX}/man
 
 .include <bsd.port.mk>
