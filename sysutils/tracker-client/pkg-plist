@@ -1,25 +1,39 @@
-bin/htmless
 bin/o3totxt
 bin/tracker-extract
 bin/tracker-files
 bin/tracker-meta-folder
+bin/tracker-preferences
 bin/tracker-query
 bin/tracker-search
 bin/tracker-search-tool
 bin/tracker-stats
+bin/tracker-status
 bin/tracker-tag
 bin/tracker-thumbnailer
 bin/trackerd
 etc/xdg/autostart/trackerd.desktop
+include/libtracker-gtk/tracker-gtk.h
+include/libtracker-gtk/tracker-keyword-store.h
+include/libtracker-gtk/tracker-metadata-tile.h
+include/libtracker-gtk/tracker-tag-bar.h
+include/libtracker-gtk/tracker-ui.h
+include/libtracker-gtk/tracker-utils.h
 include/tracker-client.h
 include/tracker.h
 lib/deskbar-applet/handlers/tracker-handler.py
+lib/libtracker-gtk.a
+lib/libtracker-gtk.la
+lib/libtracker-gtk.so
+lib/libtracker-gtk.so.0
 lib/libtrackerclient.a
 lib/libtrackerclient.la
 lib/libtrackerclient.so
 lib/libtrackerclient.so.0
+lib/tracker/filters/application/csv_filter
 lib/tracker/filters/application/msword_filter
 lib/tracker/filters/application/pdf_filter
+lib/tracker/filters/application/tab-separated-values_filter
+lib/tracker/filters/application/vnd.ms-excel_filter
 lib/tracker/filters/application/vnd.oasis.opendocument.presentation-template_filter
 lib/tracker/filters/application/vnd.oasis.opendocument.presentation_filter
 lib/tracker/filters/application/vnd.oasis.opendocument.spreadsheet-template_filter
@@ -29,12 +43,19 @@ lib/tracker/filters/application/vnd.oasis.opendocument.text_filter
 lib/tracker/filters/application/vnd.stardivision.writer_filter
 lib/tracker/filters/application/vnd.sun.xml.calc.template_filter
 lib/tracker/filters/application/vnd.sun.xml.calc_filter
+lib/tracker/filters/application/vnd.sun.xml.draw_filter
 lib/tracker/filters/application/vnd.sun.xml.impress.template_filter
 lib/tracker/filters/application/vnd.sun.xml.impress_filter
 lib/tracker/filters/application/vnd.sun.xml.writer.template_filter
 lib/tracker/filters/application/vnd.sun.xml.writer_filter
 lib/tracker/filters/application/x-abiword_filter
+lib/tracker/filters/application/x-gnumeric_filter
+lib/tracker/filters/text/csv_filter
+lib/tracker/filters/text/djvu_filter
 lib/tracker/filters/text/html_filter
+lib/tracker/filters/text/spreadsheet_filter
+lib/tracker/filters/text/tab-separated-values_filter
+lib/tracker/filters/text/x-comma-separated-values_filter
 lib/tracker/filters/text/x-tex_filter
 lib/tracker/filters/text/xml_filter
 lib/tracker/thumbnailers/application/pdf_thumbnailer
@@ -44,11 +65,12 @@ lib/tracker/thumbnailers/application/vnd.oasis.opendocument.spreadsheet_thumbnai
 lib/tracker/thumbnailers/application/vnd.oasis.opendocument.text_thumbnailer
 lib/tracker/thumbnailers/image/jpeg_thumbnailer
 lib/tracker/thumbnailers/image/png_thumbnailer
+libdata/pkgconfig/libtracker-gtk.pc
 libdata/pkgconfig/tracker.pc
 share/dbus-1/services/tracker.service
+share/gnome/applications/tracker-preferences.desktop
 share/gnome/applications/tracker-search-tool.desktop
-share/gnome/pixmaps/tracker/thumbnail_frame.png
-share/gnome/pixmaps/tracker/tracker.png
+share/gnome/tracker/icons/thumbnail_frame.png
 share/gnome/tracker/languages/stopwords.da
 share/gnome/tracker/languages/stopwords.de
 share/gnome/tracker/languages/stopwords.en
@@ -61,11 +83,38 @@ share/gnome/tracker/languages/stopwords.nl
 share/gnome/tracker/languages/stopwords.pt
 share/gnome/tracker/languages/stopwords.ru
 share/gnome/tracker/languages/stopwords.sv
+share/gnome/tracker/services/application.metadata
+share/gnome/tracker/services/audio.metadata
+share/gnome/tracker/services/default.metadata
+share/gnome/tracker/services/default.service
+share/gnome/tracker/services/document.metadata
+share/gnome/tracker/services/email.metadata
+share/gnome/tracker/services/file.metadata
+share/gnome/tracker/services/image.metadata
+share/gnome/tracker/services/video.metadata
+share/gnome/tracker/sqlite-cache.sql
+share/gnome/tracker/sqlite-email.sql
+share/gnome/tracker/sqlite-metadata.sql
+share/gnome/tracker/sqlite-service-stored-procs.sql
+share/gnome/tracker/sqlite-service-triggers.sql
+share/gnome/tracker/sqlite-service-types.sql
+share/gnome/tracker/sqlite-service.sql
 share/gnome/tracker/sqlite-stored-procs.sql
+share/gnome/tracker/sqlite-tracker-triggers.sql
 share/gnome/tracker/sqlite-tracker.sql
+share/gnome/tracker/sqlite-user-data.sql
 share/gnome/tracker/tracker-introspect.xml
+share/gnome/tracker/tracker-preferences.glade
+share/icons/hicolor/16x16/apps/tracker.png
+share/icons/hicolor/22x22/apps/tracker.png
+share/icons/hicolor/24x24/apps/tracker.png
+share/icons/hicolor/32x32/apps/tracker.png
+share/icons/hicolor/48x48/apps/tracker.png
+share/icons/hicolor/scalable/apps/tracker.svg
 share/locale/ar/LC_MESSAGES/tracker.mo
+share/locale/ca/LC_MESSAGES/tracker.mo
 share/locale/de/LC_MESSAGES/tracker.mo
+share/locale/dz/LC_MESSAGES/tracker.mo
 share/locale/en_GB/LC_MESSAGES/tracker.mo
 share/locale/es/LC_MESSAGES/tracker.mo
 share/locale/et/LC_MESSAGES/tracker.mo
@@ -73,12 +122,14 @@ share/locale/fi/LC_MESSAGES/tracker.mo
 share/locale/fr/LC_MESSAGES/tracker.mo
 share/locale/gl/LC_MESSAGES/tracker.mo
 share/locale/it/LC_MESSAGES/tracker.mo
+share/locale/mk/LC_MESSAGES/tracker.mo
 share/locale/nb/LC_MESSAGES/tracker.mo
+share/locale/oc/LC_MESSAGES/tracker.mo
+share/locale/pt/LC_MESSAGES/tracker.mo
+share/locale/ru/LC_MESSAGES/tracker.mo
 share/locale/sl/LC_MESSAGES/tracker.mo
 share/locale/sv/LC_MESSAGES/tracker.mo
-@dirrm share/gnome/tracker/languages
-@dirrm share/gnome/tracker
-@dirrm share/gnome/pixmaps/tracker
+@dirrm include/libtracker-gtk
 @dirrm lib/tracker/thumbnailers/image
 @dirrm lib/tracker/thumbnailers/application
 @dirrm lib/tracker/thumbnailers
@@ -86,7 +137,15 @@ share/locale/sv/LC_MESSAGES/tracker.mo
 @dirrm lib/tracker/filters/application
 @dirrm lib/tracker/filters
 @dirrm lib/tracker
-@dirrmtry lib/deskbar-applet/handlers
-@dirrmtry lib/deskbar-applet
+@dirrm share/gnome/tracker/services
+@dirrm share/gnome/tracker/languages
+@dirrm share/gnome/tracker/icons
+@dirrm share/gnome/tracker
 @dirrmtry etc/xdg/autostart
 @dirrmtry etc/xdg
+@dirrmtry lib/deskbar-applet/handlers
+@dirrmtry lib/deskbar-applet
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
