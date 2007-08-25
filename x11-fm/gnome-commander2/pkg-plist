@@ -173,8 +173,10 @@ share/locale/vi/LC_MESSAGES/gnome-commander.mo
 share/locale/oc/LC_MESSAGES/gnome-commander.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-commander.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-commander.mo
-@dirrm share/locale/oc/LC_MESSAGES
-@dirrm share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrm share/gnome/pixmaps/gnome-commander/mime-icons
 @dirrm share/gnome/pixmaps/gnome-commander/file-type-icons
 @dirrm share/gnome/pixmaps/gnome-commander/device-icons
