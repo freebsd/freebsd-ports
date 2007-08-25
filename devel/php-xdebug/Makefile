@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	xdebug
-DISTVERSION=	2.0.0RC4
+DISTVERSION=	2.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xdebug.org/files/
 PKGNAMEPREFIX=	php-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wmoran@collaborativefusion.com
 COMMENT=	Xdebug extension for PHP
 
 USE_PHP=	yes
