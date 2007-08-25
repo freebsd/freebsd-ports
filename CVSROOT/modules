@@ -4125,6 +4125,7 @@ groupoffice	ports/www/groupoffice
 growspd		ports/sysutils/growspd
 grpn		ports/math/grpn
 grpplaylist	ports/multimedia/grpplaylist
+grsync		ports/net/grsync
 gru		ports/games/gru
 grub		ports/sysutils/grub
 grubik		ports/games/grubik
