@@ -10,74 +10,74 @@ upgrades.
   AFFECTS: users of net-im/pidgin
   AUTHOR:  marcus@FreeBSD.org
 
-Because sound support was added to finch 2.1.1, the sound files used by
-pidgin have been moved from the pidgin port to the libpurple port.  This
-makes updating a bit tricky.  To properly update to pidgin 2.1.1 and retain
-sounds, you must first upgrade libpurple and pidgin as you normally would,
-then force a rebuild of libpurple.  For example, using portupgrade:
+  Because sound support was added to finch 2.1.1, the sound files used by
+  pidgin have been moved from the pidgin port to the libpurple port.  This
+  makes updating a bit tricky.  To properly update to pidgin 2.1.1 and retain
+  sounds, you must first upgrade libpurple and pidgin as you normally would,
+  then force a rebuild of libpurple.  For example, using portupgrade:
 
-  # portupgrade net-im/libpurple net-im/pidgin
-  # portupgrade -f net-im/libpurple
+    # portupgrade net-im/libpurple net-im/pidgin
+    # portupgrade -f net-im/libpurple
 
 20070804:
   AFFECTS: users of DESTDIR
   AUTHOR:  gabor@FreeBSD.org
 
-DESTDIR is a feature, that allows installation of ports into separate
-environments, like jails.  The previous implementation, introduced in the
-August 2006, had some problems and was very expensive to maintain.  It was
-completely rolled back, and replaced with a brand new implementation utilizing
-chroot.
+  DESTDIR is a feature, that allows installation of ports into separate
+  environments, like jails.  The previous implementation, introduced in the
+  August 2006, had some problems and was very expensive to maintain.  It was
+  completely rolled back, and replaced with a brand new implementation utilizing
+  chroot.
 
-When DESTDIR is set, the system will chroot into the specified directory, mount
-devfs, null mount the ports tree, then proceed with building and installing.
-Your kernel must support nullfs (is available as loadable kernel module on
-default installation).  The target environment must be a full FreeBSD
-installation. For advanced use, read comments at the beginning of
-bsd.destdir.mk.
+  When DESTDIR is set, the system will chroot into the specified directory, mount
+  devfs, null mount the ports tree, then proceed with building and installing.
+  Your kernel must support nullfs (is available as loadable kernel module on
+  default installation).  The target environment must be a full FreeBSD
+  installation. For advanced use, read comments at the beginning of
+  bsd.destdir.mk.
 
 20070730:
   AFFECTS: users of py-*
   AUTHOR: python@FreeBSD.org
 
-The default version of Python has been changed from 2.4.x to 2.5.x.
-If you have 2.4.x installed, perform an upgrade of lang/python24 to
-lang/python25 with a command like:
+  The default version of Python has been changed from 2.4.x to 2.5.x.
+  If you have 2.4.x installed, perform an upgrade of lang/python24 to
+  lang/python25 with a command like:
 
-  # portupgrade -o lang/python25 lang/python24
+    # portupgrade -o lang/python25 lang/python24
 
-If want to keep 2.4.x installed alongside 2.5.x, set the PYTHON_DEFAULT_VERSION
-variable to 'python2.5' without quotes in make.conf, then go to lang/python and
-execute
+  If want to keep 2.4.x installed alongside 2.5.x, set the PYTHON_DEFAULT_VERSION
+  variable to 'python2.5' without quotes in make.conf, then go to lang/python and
+  execute
 
-  # portupgrade -R python
+    # portupgrade -R python
 
-Once the installed Python has been updated to 2.5, by using one of the methods
-above, it is required to run the upgrade-site-packages target in lang/python to
-assure that site-packages are made available to the new Python version.
+  Once the installed Python has been updated to 2.5, by using one of the methods
+  above, it is required to run the upgrade-site-packages target in lang/python to
+  assure that site-packages are made available to the new Python version.
 
-  # cd /usr/ports/lang/python && make upgrade-site-packages
+    # cd /usr/ports/lang/python && make upgrade-site-packages
 
-This Makefile target requires ports-mgmt/portupgrade to be installed.
+  This Makefile target requires ports-mgmt/portupgrade to be installed.
 
 20070727:
   AFFECTS: autotools
   AUTHOR:  ade@FreeBSD.org
 
-Extensive reworking of the autotools ports has occurred, putting them in
-the canonical locations, along with a suitable wrapper port to make
-developing autotools-using code (as opposed to just building ports)
-considerably easier.
+  Extensive reworking of the autotools ports has occurred, putting them in
+  the canonical locations, along with a suitable wrapper port to make
+  developing autotools-using code (as opposed to just building ports)
+  considerably easier.
 
-Upgrade path is as follows for portupgrade, substitute the appropriate
-commands if you are using portmaster:
+  Upgrade path is as follows for portupgrade, substitute the appropriate
+  commands if you are using portmaster:
 
-   1.   portupgrade -f 'autoconf*' 'automake*'
-   2.   cd /usr/ports/devel/autotools; make install
-   3.   portupgrade -a
+    1.   portupgrade -f 'autoconf*' 'automake*'
+    2.   cd /usr/ports/devel/autotools; make install
+    3.   portupgrade -a
 
-The second step is optional, but is recommended to bring in all versions
-of autoconf and automake.
+  The second step is optional, but is recommended to bring in all versions
+  of autoconf and automake.
 
 20070723:
   AFFECTS: users of x11/nvidia-driver and slave ports
