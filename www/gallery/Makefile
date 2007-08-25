@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gallery
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.7
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LANGPACKS}
 DIST_SUBDIR=	gallery
 
@@ -25,6 +24,7 @@ WANT_PHP_WEB=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_PHP+=	gettext
+USE_GETTEXT=	yes	# Pet portlint
 
 LANGPACKS=	af_ZA-1.5.2${EXTRACT_SUFX} \
 		ar_EG-1.5.1-cvs${EXTRACT_SUFX} \
@@ -86,7 +86,7 @@ WWWDIR=	${GALLERYDIR}
 .endif
 
 do-extract:
-	@ ${MKDIR} ${WRKDIR}
+	@ ${INSTALL} -d ${WRKDIR}
 	@ cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
 	@ for i in ${LANGPACKS}; do \
 		if ! (cd ${WRKDIR}/gallery/locale && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/$$i ${EXTRACT_AFTER_ARGS});\
@@ -96,13 +96,13 @@ do-extract:
 	done
 
 do-install:
-	@ ${MKDIR} -m 0755 ${WWWDIR}
+	@ ${INSTALL} -d -m 0755 ${WWWDIR}
 	@ cd ${WRKSRC} && ${FIND} * -name \*.bat -o -name \*.orig -o -name \*Changelog ${EXCEPTFILES:S/^/-o -name /} \
 	  -o -print | ${CPIO} ${CPIOARGS} ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
+	@ ${INSTALL} -d ${DOCSDIR}
 	@ cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 .if !defined(BATCH)
