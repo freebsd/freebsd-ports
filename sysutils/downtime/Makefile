@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	downtime
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nickwithers.com/downtime/
 
@@ -17,7 +16,8 @@ COMMENT=	A GTK-based shutdown manager using shutdown(8)
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
-PLIST_FILES=	bin/downtime
+PLIST_FILES=	bin/downtime \
+		share/applications/downtime.desktop
 
 MAN1=		downtime.1
 MANCOMPRESSED=	yes
