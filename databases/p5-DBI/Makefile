@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.58
+PORTVERSION=	1.59
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	The perl5 Database Interface.  Required for DBD::* modules
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
