@@ -123,7 +123,11 @@ for i in $@; do
 		result="USE_GNOME+=${GNOME}"
 	fi
 
+	# USE_xxx exceptions, sorting key is the USE_xxx name
 	case ${origin} in
+	print/freetype2)
+		result="USE_FREETYPE=yes"
+		;;
 	devel/gettext)
 		result="USE_GETTEXT=yes"
 		;;
@@ -133,7 +137,7 @@ for i in $@; do
 	esac
 
 	if [ -z "${result}" ]; then
-		result="${lib}:${origin}"
+		result="${lib}:\${PORTSDIR}/${origin}"
 	fi
 
 	echo ${result}
