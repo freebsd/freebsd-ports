@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-eBay
-PORTVERSION=	0.40
+PORTVERSION=	0.42
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -38,7 +38,7 @@ pre-configure:
 	${MV} ${WRKSRC}/*.pl ${WRKSRC}/examples
 
 post-install:
-.ifndef(NOPORTDOCS)
+.ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
