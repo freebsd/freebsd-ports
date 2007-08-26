@@ -1,7 +1,7 @@
---- config.mk.orig	Mon May 21 14:37:17 2007
-+++ config.mk	Mon May 21 18:20:11 2007
-@@ -4,18 +4,18 @@
- # Customize below to fit your system
+--- config.mk.orig	Mon Aug 20 00:36:39 2007
++++ config.mk	Mon Aug 20 00:48:16 2007
+@@ -7,19 +7,19 @@
+ SRC = tile.c
  
  # paths
 -PREFIX = /usr/local
@@ -20,12 +20,13 @@
  
  # flags
 -CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
-+CFLAGS+= ${INCS} -DVERSION=\"${VERSION}\"
 -LDFLAGS = -s ${LIBS}
++CFLAGS+= ${INCS} -DVERSION=\"${VERSION}\"
 +LDFLAGS+= ${LIBS}
  #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
  #LDFLAGS = -g ${LIBS}
-@@ -26,4 +26,4 @@
+ 
+@@ -29,4 +29,4 @@
  #CFLAGS += -xtarget=ultra
  
  # compiler and linker
