@@ -181,17 +181,17 @@ include/scribus/werktoolb.h
 lib/scribus/dicts/README_ca_ES.txt
 lib/scribus/dicts/README_cs_CZ.txt
 lib/scribus/dicts/README_cy_GB.txt
-lib/scribus/dicts/README_da_DK.txt
 lib/scribus/dicts/README_de_DE.txt
 lib/scribus/dicts/README_en_EN.txt
 lib/scribus/dicts/README_en_GB.txt
 lib/scribus/dicts/README_es_ES.txt
 lib/scribus/dicts/README_fi_FI.txt
 lib/scribus/dicts/README_hu_HU.txt
+lib/scribus/dicts/README_hyph_da_DK.txt
 lib/scribus/dicts/README_hyph_is_IS.txt
+lib/scribus/dicts/README_hyph_pl_PL.txt
 lib/scribus/dicts/README_lt_LT.txt
 lib/scribus/dicts/README_no_NO.txt
-lib/scribus/dicts/README_pl_PL.txt
 lib/scribus/dicts/README_pt_BR.txt
 lib/scribus/dicts/README_pt_PT.txt
 lib/scribus/dicts/README_ru_RU_0.txt
@@ -212,6 +212,7 @@ lib/scribus/dicts/hyph_fr.dic
 lib/scribus/dicts/hyph_ga.dic
 lib/scribus/dicts/hyph_hr.dic
 lib/scribus/dicts/hyph_hu.dic
+lib/scribus/dicts/hyph_id.dic
 lib/scribus/dicts/hyph_is.dic
 lib/scribus/dicts/hyph_it.dic
 lib/scribus/dicts/hyph_lt.dic
@@ -290,21 +291,26 @@ lib/scribus/plugins/libsvgexplugin.so.0
 lib/scribus/plugins/libsvgimplugin.la
 lib/scribus/plugins/libsvgimplugin.so
 lib/scribus/plugins/libsvgimplugin.so.0
-lib/scribus/profiles/Fogra27L.icm
+lib/scribus/profiles/GenericCMYK.icm
+lib/scribus/profiles/GenericCMYK.txt
 lib/scribus/profiles/ReadMe
 lib/scribus/profiles/sRGB.icm
 lib/scribus/profiles/srgb.license
 lib/scribus/scribus.af.qm
 lib/scribus/scribus.bg.qm
+lib/scribus/scribus.br.qm
 lib/scribus/scribus.ca.qm
 lib/scribus/scribus.cs.qm
 lib/scribus/scribus.cy.qm
 lib/scribus/scribus.da.qm
 lib/scribus/scribus.de.qm
+lib/scribus/scribus.de_CH.qm
 lib/scribus/scribus.de_ol.qm
 lib/scribus/scribus.dz.qm
 lib/scribus/scribus.el.qm
+lib/scribus/scribus.en_AU.qm
 lib/scribus/scribus.en_GB.qm
+lib/scribus/scribus.en_US.qm
 lib/scribus/scribus.eo.qm
 lib/scribus/scribus.es.qm
 lib/scribus/scribus.es_LA.qm
@@ -553,7 +559,7 @@ share/mime/packages/scribus.xml
 %%DATADIR%%/icons/rotate_cw.png
 %%DATADIR%%/icons/scrap.png
 %%DATADIR%%/icons/screen.png
-%%DATADIR%%/icons/scribus_logo.jpg
+%%DATADIR%%/icons/scribus_logo.png
 %%DATADIR%%/icons/scribusdoc.png
 %%DATADIR%%/icons/scribusdoc16.png
 %%DATADIR%%/icons/scribusicon.png
@@ -633,6 +639,9 @@ share/mime/packages/scribus.xml
 %%DATADIR%%/icons/wordsOnly.png
 %%DATADIR%%/loremipsum/arabic.xml
 %%DATADIR%%/loremipsum/czech.xml
+%%DATADIR%%/loremipsum/dutch.xml
+%%DATADIR%%/loremipsum/english.xml
+%%DATADIR%%/loremipsum/eo.xml
 %%DATADIR%%/loremipsum/finnish.xml
 %%DATADIR%%/loremipsum/german.xml
 %%DATADIR%%/loremipsum/greek.xml
@@ -640,6 +649,7 @@ share/mime/packages/scribus.xml
 %%DATADIR%%/loremipsum/italian.xml
 %%DATADIR%%/loremipsum/loremipsum.xml
 %%DATADIR%%/loremipsum/russian.xml
+%%DATADIR%%/loremipsum/slovenian.xml
 %%DATADIR%%/plugins/barcode.ps
 %%DATADIR%%/plugins/scribus-short-words.rc
 %%DATADIR%%/samples/3columnA4.py
@@ -815,6 +825,7 @@ share/mime/packages/scribus.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/cms3.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/cms4.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/codingstandards.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/color1.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/contributions.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/cross-platform.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/cups.html
@@ -850,6 +861,7 @@ share/mime/packages/scribus.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/before_short_words.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/cmsmodify1.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/cmspanel.png
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/colormanager1.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/colormanager2.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/colormgmtscreen.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/cups1.png
@@ -859,9 +871,14 @@ share/mime/packages/scribus.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/docinfo.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/docinfo2.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fontpref1.png
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fontpref2.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fontpref3.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fontpref4.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fontprev.png
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fonts.png
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fonts2.png
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fonts3.png
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fonts4.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fontsampler.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fontsampler2.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/formularz_export_PDF.png
@@ -870,6 +887,7 @@ share/mime/packages/scribus.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/formularz_nowy.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/formularz_pole_num.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/gammagrayscale.png
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/gimpoptions1.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/gimpoptions2.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/gimpoptions3.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/gsadv1.png
@@ -880,9 +898,12 @@ share/mime/packages/scribus.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/hyphen1.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/hyphen2.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/hyphen3.png
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/imageeffects.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/inkscape.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/kfontinstaller.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/ksnapshot.png
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/layers1.png
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/layers2.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/monprof1.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/monprof2.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/monprof3.png
@@ -930,12 +951,6 @@ share/mime/packages/scribus.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/wlasciwosci_pola.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/wyslij_formularz.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/xnview.png
-%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fontpref2.png
-%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fonts.png
-%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fonts2.png
-%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fonts3.png
-%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/fonts4.png
-%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images/gimpoptions1.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/importhints.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/importhints1.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/importhints2.html
@@ -947,10 +962,12 @@ share/mime/packages/scribus.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/install1.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/install2.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/install3.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/install4.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/intro.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/irc.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/javascriptpdf.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/keys.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/layers.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/lipsum.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/machints1.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/machints2.html
@@ -958,6 +975,7 @@ share/mime/packages/scribus.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/moncal.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/mouse.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/otherinfo.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/pagenumber.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/pagetemplate1.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/parallel-install.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/pdf_form.html
@@ -972,6 +990,8 @@ share/mime/packages/scribus.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/print1.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/print2.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/print3.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/psd.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/readme-os2.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/readme-win32.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/readme.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/resources.html
@@ -995,7 +1015,6 @@ share/mime/packages/scribus.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/scripterapi-manobj.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/scripterapi-object.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/scripterapi-page.html
-%%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/scripterapi-pydoc.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/scripterapi-select.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/scripterapi-setobjprop.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/scripterapi-textframes.html
@@ -1026,6 +1045,43 @@ share/mime/packages/scribus.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/tutorials/scribus-short-words/menu.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/tutorials/scribus-short-words/menu.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/tutorials/scribus-short-words/short-words-manual.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/cms.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/cms2.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/cms3.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/cms4.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/codingstandards.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/cross-platform.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/developers.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/gettexthowto.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/lipsum.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/machints1.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/machints2.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/moncal.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/plugin_howto.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/readme-win32.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scribusfileformat.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripter-extensions.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripter-faq.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripter1.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-ImageExport.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-PDFfile.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-Printer.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-color.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-constants.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-dialogs.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-doc.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-font.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-getobjprop.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-layer.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-manobj.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-object.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-page.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-pydoc.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-select.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-setobjprop.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi-textframes.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/scripterapi.html
+%%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/short-words-manual.html
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/tutorials/scribus-short-words/after_short_words.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/tutorials/scribus-short-words/before_short_words.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/tutorials/scribus-short-words/dialog.png
@@ -1038,41 +1094,41 @@ share/mime/packages/scribus.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/pl/tutorials/scribus-short-words/menu.png
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/pl/tutorials/scribus-short-words/menu.xml
 %%DOCSDIR%%-%%SCRIBUS_VERSION%%/pl/tutorials/scribus-short-words/short-words-manual.html
-@dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/tutorials/scribus-short-words
-@dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/tutorials
-@dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images
-@dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en
+@dirrm include/scribus
+@dirrm lib/scribus/dicts
+@dirrm lib/scribus/keysets
+@dirrm lib/scribus/plugins/gettext
+@dirrm lib/scribus/plugins
+@dirrm lib/scribus/profiles
+@dirrm lib/scribus/swatches
+@dirrm lib/scribus
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
 @dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/cs/tutorials/scribus-short-words
 @dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/cs/tutorials
 @dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/cs
+@dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/de
+@dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/images
+@dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/tutorials/scribus-short-words
+@dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en/tutorials
+@dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/en
 @dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/tutorials/scribus-short-words
 @dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr/tutorials
 @dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/fr
 @dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/pl/tutorials/scribus-short-words
 @dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/pl/tutorials
 @dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/pl
-@dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%/de
 @dirrm %%DOCSDIR%%-%%SCRIBUS_VERSION%%
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/templates/nl1
-@dirrm %%DATADIR%%/templates/nl2
-@dirrm %%DATADIR%%/templates/br1
-@dirrm %%DATADIR%%/templates/sc_presentation
-@dirrm %%DATADIR%%/templates/textbased
-@dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/dtd
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/loremipsum
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/templates/br1
+@dirrm %%DATADIR%%/templates/nl1
+@dirrm %%DATADIR%%/templates/nl2
+@dirrm %%DATADIR%%/templates/sc_presentation
+@dirrm %%DATADIR%%/templates/textbased
+@dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
-@dirrm lib/scribus/dicts
-@dirrm lib/scribus/keysets
-@dirrm lib/scribus/profiles
-@dirrm lib/scribus/swatches
-@dirrm lib/scribus/plugins/gettext
-@dirrm lib/scribus/plugins
-@dirrm lib/scribus
-@dirrm include/scribus
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
