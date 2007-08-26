@@ -7,7 +7,7 @@
 
 PORTNAME=	claws-mail
 PORTVERSION=	2.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -18,7 +18,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
-LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan
+LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
+		cairo:${PORTSDIR}/graphics/cairo \
+		expat:${PORTSDIR}/textproc/expat2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		png:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 CONFLICTS=	sylpheed-claws
@@ -30,8 +34,10 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_XLIB=	yes
-USE_GNOME=	gnomehack pkgconfig gtk20
+USE_FREETYPE=	yes
+USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xi xinerama xrandr \
+		xrender
+USE_GNOME=	gnomehack pkgconfig gtk20 glib20 atk libartlgpl2 pango libxml2
 #USE_AUTOTOOLS=	autoconf:259 libtool:15
 GNU_CONFIGURE=	yes
 USE_GCC=	3.3+
@@ -81,7 +87,7 @@ CONFIGURE_ARGS+=	--disable-openssl
 
 .if ${HAVE_GNOME:Mgnomeprint} != "" || defined(WITH_GNOMEPRINT)
 PLIST_SUB+=		GNOMEPRINT=""
-USE_GNOME+=		libgnomeprint libgnomeprintui
+USE_GNOME+=		libgnomeprint libgnomeprintui libgnomecanvas
 CONFIGURE_ARGS+=	--enable-gnomeprint
 .else
 PLIST_SUB+=		GNOMEPRINT="@comment "
@@ -137,7 +143,8 @@ PLIST_SUB+=		SA_PLUG="@comment "
 PLIST_SUB+=		GPGME=""
 CONFIGURE_ARGS+=	--enable-pgpmime-plugin --enable-pgpcore-plugin \
 			--enable-pgpinline-plugin
-LIB_DEPENDS+=		gpgme:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=		gpgme:${PORTSDIR}/security/gpgme \
+			gpg-error:${PORTSDIR}/security/libgpg-error
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 .else
 PLIST_SUB+=		GPGME="@comment "
