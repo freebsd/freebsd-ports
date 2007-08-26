@@ -5,3 +5,5 @@ Paraphrasing since(1):
   since the last time since was run.  If since has not been run
   before, the entire file is displayed.  since is useful for watching
   over log files.
+
+WWW:  http://welz.org.za/projects/since
