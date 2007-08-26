@@ -8,7 +8,7 @@
 PORTNAME?=	ipw-firmware
 RELNAME?=	ipw2100
 PORTVERSION?=	1.3
-PORTREVISION?=	8
+PORTREVISION?=	9
 CATEGORIES=	net sysutils kld
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flz/ipw
@@ -29,6 +29,7 @@ FIRMWARES?=	${RELNAME}-${PORTVERSION}-i.fw:${DRIVERNAME}-i.fw \
  
 # Dummy OSVERSION for ipw.
 MIN7OSVERSION?=	999999
+MAX6OSVERSION?=	700000
 
 # Try to guess sensible defaults.
 .if ${OSVERSION} > ${MIN7OSVERSION}
@@ -75,7 +76,7 @@ IS_INTERACTIVE=	yes
 IGNORE=		needs at least FreeBSD 5.3-RELEASE
 .endif
 
-.if ( ${OSVERSION} >= 700014 )
+.if ( ${OSVERSION} >= 700014 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= ${MAX6OSVERSION} ) )
 IGNORE=		is now obsolete, install net/${DRIVERNAME}-firmware-kmod instead
 .endif
 
