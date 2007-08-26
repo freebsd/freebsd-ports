@@ -92,6 +92,9 @@ for i in $@; do
 		fi
 	fi
 
+	myorigin=$(awk -F : '/@comment ORIGIN:/ {print $2}' \
+		${current_port}/+CONTENTS)
+
 	awk '
 		/^@cwd / {
 			CWD=$2;
@@ -109,7 +112,7 @@ for i in $@; do
 		}
 	' < ${current_port}/+CONTENTS | \
 		xargs ${PORTSDIR}/Tools/scripts/neededlibs.sh | \
-		xargs ${PORTSDIR}/Tools/scripts/resolveportsfromlibs.sh ${bases}
-
+		xargs ${PORTSDIR}/Tools/scripts/resolveportsfromlibs.sh ${bases} | \
+		egrep -v "${myorigin}\$"
  
 done | sort -u
