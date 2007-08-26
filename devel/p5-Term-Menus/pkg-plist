@@ -1,5 +1,4 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/Term/Menus.pm
-%%SITE_PERL%%/Term/Menus/ConfigData.pm
 @dirrmtry %%SITE_PERL%%/Term/Menus
 @dirrmtry %%SITE_PERL%%/Term
