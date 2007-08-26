@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	Term-Menus
-PORTVERSION=	1.20
+PORTVERSION=	1.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Term
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Create Powerful Terminal, Console and CMD Enviroment Menus
 
 PERL_MODBUILD=	yes
 
-MAN3=		Term::Menus.3 Term::Menus::ConfigData.3
+MAN3=		Term::Menus.3
 
 .include <bsd.port.mk>
