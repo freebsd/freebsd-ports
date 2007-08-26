@@ -3,18 +3,18 @@
 # Date created:			Mar 15, 2002
 # Whom:				ijliao
 #
+# $Carpetsmoker: ports/print/scribus/Makefile,v 1.1 2007/07/22 00:53:09 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	scribus
-PORTVERSION=	1.3.3.4
-PORTREVISION=	1
+PORTVERSION=	1.3.3.8
 CATEGORIES=	print editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scribus.net/downloads/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	A comprehensive desktop publishing program
 
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
@@ -23,8 +23,6 @@ LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
-
-BROKEN=		Incorrect pkg-plist
 
 USE_BZIP2=	yes
 USE_QT_VER=	3
