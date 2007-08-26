@@ -8,7 +8,7 @@
 
 PORTNAME=	bounce
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net security
 MASTER_SITES=	http://www.iagora.com/~espel/ \
 		${MASTER_SITE_LOCAL}

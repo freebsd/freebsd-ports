@@ -1,0 +1,58 @@
+--- bounce.c.orig	Sun Aug 26 14:24:58 2007
++++ bounce.c	Sun Aug 26 14:34:57 2007
+@@ -31,6 +31,7 @@
+ #define    DEFAULT_PORT   1523
+ 
+ char sbuf[16384], cbuf[16384];
++int t=0;
+ 
+ void sigchld() {
+   signal(SIGCHLD, sigchld);
+@@ -46,12 +47,15 @@
+ 
+     struct itimerval itime;
+ 
++    if (t)
++    {
+     itime.it_interval.tv_sec=0;
+     itime.it_interval.tv_usec=0;
+-    itime.it_value.tv_sec=21600;
++    itime.it_value.tv_sec=t;
+     itime.it_value.tv_usec=0;
+     setitimer(ITIMER_REAL,&itime,NULL);
+     /* arbitrary connection time limit: 6 hours (in case the client hangs) */
++    }
+ 
+     chead=ctail=cbuf;
+     cpos=0;
+@@ -153,7 +157,7 @@
+ 
+     /* Process arguments */
+ 
+-    while( (ch = getopt(argc, argv, "p:a:b:d")) != -1  ) {
++    while( (ch = getopt(argc, argv, "p:a:b:d:t:")) != -1  ) {
+       switch(ch) { 
+       case 'b': b = 1;
+       case 'd': d = 1; break;
+@@ -172,6 +176,12 @@
+ 	  exit(-1);
+ 	}
+ 	break;
++      case 't':
++	if ((t=atoi(optarg)) == 0)  {
++	  fprintf(stderr, "Bad timer value.\n");
++	  exit(-1);
++	}
++	break;
+       }
+     }
+ 
+@@ -179,7 +189,7 @@
+     argv += optind;
+ 
+     if (argc!=2) {
+-	fprintf(stderr,"Use: %s [-a localaddr | -b localaddr] [-p localport] [-d] machine port \n",myname);
++	fprintf(stderr,"Use: %s [-a localaddr | -b localaddr] [-d] [-p localport] [-t timer] machine port \n",myname);
+ 	exit(-1);
+     }
+     if ((remoteport=atoi(argv[1]))<=0) {
