@@ -20,6 +20,8 @@ de-pkg-comment - converts pkg-comment to COMMENT (will be obsoleted when
 distclean - compare md5 sums of distfiles in ports/distfiles with currently
             installed ports collection in ports/* and prompt to remove
             unmatched entries
+explicit_lib_depends.sh - shows the current explicit dependency list of libs
+                          for a given installed port
 getpr   - downloads a problem report from GNATS and attempts to extract
           the patch, shar, uuencoded file from it.
           this probably needs to be checked for potential security problems.
