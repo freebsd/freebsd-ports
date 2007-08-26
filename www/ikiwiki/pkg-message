@@ -1,10 +1,8 @@
 ===============================================================================
-
 Some of the non-default ikiwiki plug-ins may require additional perl
-modules installed. Please see the following URL for more information:
+modules. Please see the following URL for more information:
 
 http://ikiwiki.info/plugins/
 
 NOTE: Remember to regenerate any ikiwiki wrappers after upgrading.
-
 ===============================================================================

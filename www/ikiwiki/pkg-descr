@@ -1,6 +1,10 @@
 ikiwiki is a wiki compiler. It converts wiki pages into html pages
 suitable for publishing on a website. Unlike many wikis, ikiwiki does
 not have its own ad-hoc means of storing page history, and instead
-uses a revision control system such as Subversion.
+uses a revision control system (currently supported is git, mercurial,
+monotone, tla and subversion).
+
+There are many other features, including support for blogging, as well
+as a large array of plugins.
 
 WWW: http://ikiwiki.info/

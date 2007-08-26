@@ -73,6 +73,9 @@
 %%SITE_PERL%%/IkiWiki/Plugin/camelcase.pm
 %%SITE_PERL%%/IkiWiki/Plugin/conditional.pm
 %%SITE_PERL%%/IkiWiki/Plugin/ddate.pm
+%%SITE_PERL%%/IkiWiki/Plugin/editdiff.pm
+%%SITE_PERL%%/IkiWiki/Plugin/embed.pm
+%%SITE_PERL%%/IkiWiki/Plugin/external.pm
 %%SITE_PERL%%/IkiWiki/Plugin/favicon.pm
 %%SITE_PERL%%/IkiWiki/Plugin/fortune.pm
 %%SITE_PERL%%/IkiWiki/Plugin/goodstuff.pm
@@ -118,6 +121,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/tag.pm
 %%SITE_PERL%%/IkiWiki/Plugin/template.pm
 %%SITE_PERL%%/IkiWiki/Plugin/testpagespec.pm
+%%SITE_PERL%%/IkiWiki/Plugin/teximg.pm
 %%SITE_PERL%%/IkiWiki/Plugin/textile.pm
 %%SITE_PERL%%/IkiWiki/Plugin/toc.pm
 %%SITE_PERL%%/IkiWiki/Plugin/toggle.pm
@@ -126,6 +130,7 @@
 %%SITE_PERL%%/IkiWiki/Rcs/Stub.pm
 %%SITE_PERL%%/IkiWiki/Rcs/git.pm
 %%SITE_PERL%%/IkiWiki/Rcs/mercurial.pm
+%%SITE_PERL%%/IkiWiki/Rcs/monotone.pm
 %%SITE_PERL%%/IkiWiki/Rcs/svn.pm
 %%SITE_PERL%%/IkiWiki/Rcs/tla.pm
 %%SITE_PERL%%/IkiWiki/Render.pm
@@ -134,6 +139,7 @@
 %%SITE_PERL%%/IkiWiki/UserInfo.pm
 %%SITE_PERL%%/IkiWiki/Wrapper.pm
 bin/ikiwiki
+lib/ikiwiki/plugins/externaldemo
 %%W3M%%libexec/w3m/cgi-bin/ikiwiki-w3m.cgi
 sbin/ikiwiki-mass-rebuild
 share/locale/bg/LC_MESSAGES/ikiwiki.mo
@@ -144,6 +150,8 @@ share/locale/gu/LC_MESSAGES/ikiwiki.mo
 share/locale/pl/LC_MESSAGES/ikiwiki.mo
 share/locale/sv/LC_MESSAGES/ikiwiki.mo
 share/locale/vi/LC_MESSAGES/ikiwiki.mo
+@dirrm lib/ikiwiki/plugins
+@dirrm lib/ikiwiki
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IkiWiki
 @dirrm %%DATADIR%%/basewiki/smileys
 @dirrm %%DATADIR%%/basewiki/subpage
