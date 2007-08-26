@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Params-Util
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Params
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Utility functions to aid in parameter checking
 
 PERL_CONFIGURE=	yes
