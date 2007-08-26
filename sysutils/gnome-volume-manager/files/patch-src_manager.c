@@ -205,14 +205,14 @@
  		endutent ();
  	}
 +#else
-+	if ((fd = open (_PATH_WTMP, O_RDONLY, 0)) < 0 || fstat(fd, &sb) == -1) {
++	if ((fd = open (_PATH_UTMP, O_RDONLY, 0)) < 0 || fstat(fd, &sb) == -1) {
 +		close (fd);
 +		return TRUE;
 +	}
 +
 +	len = (sb.st_size + sizeof(buf) - 1) / sizeof(buf);
 +
-+	while (!local && --len >= 0) {
++	while (!local && len-- > 0) {
 +		if (lseek(fd, (off_t) (len * sizeof(buf)), L_SET) == -1 ||
 +				(bytes = read (fd, buf, sizeof(buf))) == -1) {
 +			close (fd);
