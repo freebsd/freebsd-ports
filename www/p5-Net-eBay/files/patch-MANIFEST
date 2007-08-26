@@ -1,6 +1,6 @@
---- MANIFEST.orig	Sat May 27 18:13:17 2006
-+++ MANIFEST	Sat May 27 18:13:27 2006
-@@ -7,11 +7,3 @@ lib/Net/eBay.pm
+--- MANIFEST.orig	Thu Mar 15 22:25:15 2007
++++ MANIFEST	Sat Aug 25 19:01:03 2007
+@@ -7,14 +7,3 @@ lib/Net/eBay.pm
  t/00-load.t
  t/pod-coverage.t
  t/pod.t
@@ -12,3 +12,6 @@
 -ebay-get-seller-list.pl
 -ebay-get-suggested-categories.pl
 -ebay-search.pl
+-ebay-revise-item.pl
+-ebay-get-item.pl
+-ebay-leave-feedback.pl
