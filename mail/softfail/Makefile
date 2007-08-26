@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	softfail
-PORTVERSION=	1.18
+PORTVERSION=	1.20
 CATEGORIES=	mail
 MASTER_SITES=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/ \
 		${MASTER_SITE_LOCAL}
@@ -26,11 +26,11 @@ USE_BZIP2=	yes
 USE_MYSQL=	yes
 USE_QMAIL=	yes
 
-.if defined(QMAIL_SLAVEPORT) && ${QMAIL_SLAVEPORT} != "spamcontrol"
-IGNORE=		this software only works with qmail-spamcontrol
-.endif
-
+.if defined(QMAIL_SLAVEPORT) && ( ${QMAIL_SLAVEPORT} != "spamcontrol" && ${QMAIL_SLAVEPORT} != "ldap" )
+IGNORE=		software only works with qmail-spamcontrol or qmail-ldap
+.else
 QMAIL_SLAVEPORT=	spamcontrol
+.endif
 
 SUB_FILES=	pkg-message
 
