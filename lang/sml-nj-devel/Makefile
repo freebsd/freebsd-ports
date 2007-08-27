@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.60
+PORTVERSION=	110.65
+PKGNAMESUFFIX=	-devel
 CATEGORIES=	lang
 MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/ \
 		ftp://mirror.free.de/http/smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
@@ -20,13 +21,13 @@ DIST_SUBDIR=	sml-nj/${PORTVERSION}
 NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
 
-NO_LATEST_LINK=	yes
-CONFLICTS=	smlnj-110.0.*
-
 ONLY_FOR_ARCHS=	i386
 
 OPTIONS=	EVERYTHING "install everything from the SML/NJ distribution" off \
 		RECOMPILE "recompile the SML compiler - implies EVERYTHING" off
+
+PKGINSTALL=	${WRKDIR}/.pkg-install
+PKGDEINSTALL=	${PKGINSTALL}
 
 .include <bsd.port.pre.mk>
 
@@ -37,8 +38,8 @@ DISTFILES+=	boot.x86-unix.tgz
 #MLARCH=		alpha32
 #DISTFILES+=	boot.alpha32-unix.tgz
 .endif
-DISTFILES+=	MLRISC.tgz ckit.tgz cml.tgz heap2asm.tgz lexgen.tgz \
-		ml-lex.tgz ml-yacc.tgz smlnj-lib.tgz
+DISTFILES+=	MLRISC.tgz ckit.tgz cml.tgz heap2asm.tgz ml-lpt.tgz \
+		ml-lex.tgz ml-yacc.tgz smlnj-lib.tgz trace-debug-profile.tgz
 
 PLIST_SUB=	MLARCH=${MLARCH}
 
@@ -47,27 +48,28 @@ WITH_EVERYTHING?=	${WITH_RECOMPILE}
 .endif
 
 .if defined(WITH_EVERYTHING)
-DISTFILES+=	cm.tgz compiler.tgz eXene.tgz ml-burg.tgz ml-lpt.tgz \
-		nlffi.tgz pgraph.tgz smlnj-c.tgz system.tgz \
-		trace-debug-profile.tgz
+DISTFILES+=	cm.tgz compiler.tgz eXene.tgz ml-burg.tgz \
+		nlffi.tgz pgraph.tgz smlnj-c.tgz system.tgz
 .endif
 
 MLROOTRELATIVE=	smlnj
 MLROOT=		${PREFIX}/${MLROOTRELATIVE}
+MLBINRELATIVE=	${MLROOTRELATIVE}/bin
 MLBIN=		${MLROOT}/bin
 MLLIB=		${MLROOT}/lib
-MLSRCDIRS=	base ckit cml eXene heap2asm lexgen ml-burg ml-lex ml-lpt \
+MLSRCDIRS=	base ckit cml eXene heap2asm ml-burg ml-lex ml-lpt \
 		ml-yacc nlffi pgraph smlnj-c smlnj-lib
 MLSRCS=
 .for srcdir in ${MLSRCDIRS}
 MLSRCS+=	${MLROOT}/${srcdir}
 .endfor
 MLTARGETS=	heap2asm
-MLEXE=		heap2exec lexgen ml-build ml-lex ml-makedepend ml-yacc sml
+MLEXE=		heap2exec ml-antlr ml-build ml-lex ml-makedepend \
+		ml-ulex ml-yacc sml
 .if defined(WITH_EVERYTHING)
-MLTARGETS+=	eXene ml-antlr ml-burg ml-nlffi-lib ml-nlffigen ml-ulex \
-		mlrisc-tools nowhere pgraph-util tdp-util src-smlnj
-MLEXE+=		ml-antlr ml-burg ml-nlffigen ml-ulex nowhere
+MLTARGETS+=	eXene ml-burg ml-nlffi-lib ml-nlffigen \
+		mlrisc-tools nowhere pgraph-util src-smlnj
+MLEXE+=		ml-burg ml-nlffigen nowhere
 PLIST=		${WRKDIR}/.PLIST
 MLRUNTIMEPLIST=	${WRKDIR}/.PLIST-runtime
 MLSRCPLIST=	${WRKDIR}/.PLIST-src
@@ -117,9 +119,15 @@ do-configure:
 .if defined(WITH_RECOMPILE)
 	( ${ECHO_CMD} "request	ml-yacc" && \
 	  ${ECHO_CMD} "request	ml-lex" && \
+	  ${ECHO_CMD} "request	ml-lex-mllex-tool" && \
 	  ${ECHO_CMD} "request	src-smlnj" ) \
 	> "${WRKDIR}/config/targets.customized"
 .endif
+# The text of the pkg-install script depends on the programs which will
+# be installed, see "post-install" below.
+	${SED} -e 's?%%EXENAMES%%?${MLEXE}?g' \
+	-e 's?%%EXEBINDIR%%?${MLBINRELATIVE}?g' \
+	${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 
 # The build target patches, builds, and installs the system within WRKDIR.
 # base/runtime is not cleaned afterwards to avoid its recompilation during
@@ -271,9 +279,24 @@ do-install:
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/bin
-.for f in ${MLEXE}
-	${LN} -s ${MLBIN}/$f ${PREFIX}/bin/$f
-.endfor
+	PKG_PREFIX=${PREFIX} MULTIEXEC_WRAPPER_VERBOSE=yes \
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+.ifndef MULTIEXEC_WRAPPER_VERBOSE
+deinstall:
+	export MULTIEXEC_WRAPPER_VERBOSE=yes && \
+	cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} deinstall
+.endif
+
+# This target may be used by dependent ports to set SMLNJ_DEVEL_VERSION
+# either to the currently installed sml-nj-devel package's version
+# or else to this port's version. SMLNJ_DEVEL_VERSION is an environment
+# variable used by multiexec-wrapper to select the executable
+# from that smlnj-* package matching SMLNJ_DEVEL_VERSION.
+smlnj-devel-version:
+#	XXX PKG_INFO not in bsd.commands.mk (20070818)
+	@${EXPR} `pkg_info -q -O lang/sml-nj-devel` : '.*-\(.*\)' \
+		2>/dev/null || \
+	${ECHO_CMD} ${PKGVERSION}
 
 .include <bsd.port.post.mk>
