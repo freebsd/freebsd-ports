@@ -1,5 +1,5 @@
 bin/zabbix_server
-etc/zabbix/zabbix_server.conf.sample
+%%ETCDIR%%/zabbix_server.conf.sample
 %%DATADIR%%/create/data/data.sql
 %%DATADIR%%/create/data/images_mysql.sql
 %%DATADIR%%/create/data/images_oracle.sql
@@ -154,6 +154,7 @@ etc/zabbix/zabbix_server.conf.sample
 %%DATADIR%%/php/include/images.inc.php
 %%DATADIR%%/php/include/import.inc.php
 %%DATADIR%%/php/include/items.inc.php
+%%DATADIR%%/php/include/js.inc.php
 %%DATADIR%%/php/include/locales/cn_zh.inc.php
 %%DATADIR%%/php/include/locales/de_de.inc.php
 %%DATADIR%%/php/include/locales/en_gb.inc.php
@@ -186,6 +187,7 @@ etc/zabbix/zabbix_server.conf.sample
 %%DATADIR%%/php/js/cookies.js
 %%DATADIR%%/php/js/menu.js
 %%DATADIR%%/php/js/services.js
+%%DATADIR%%/php/js/showhint.js
 %%DATADIR%%/php/js/tree.js
 %%DATADIR%%/php/latest.php
 %%DATADIR%%/php/map.php
@@ -244,7 +246,7 @@ etc/zabbix/zabbix_server.conf.sample
 @dirrm %%DATADIR%%/php/include/locales
 @dirrm %%DATADIR%%/php/include
 @dirrm %%DATADIR%%/php/js
+@dirrmtry %%ETCDIR%%
 @dirrmtry %%DATADIR%%/php/conf
 @dirrmtry %%DATADIR%%/php
 @dirrmtry %%DATADIR%%
-@dirrmtry etc/zabbix

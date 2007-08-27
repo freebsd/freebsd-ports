@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
@@ -26,19 +26,18 @@ ZABBIX_CFG=	agent agentd
 ZABBIX_BINFILES=${ZABBIX_BIN:S|^|zabbix_|:C|.+|&/&|:S|agentd/|agent/|}
 ZABBIX_CFGFILES=${ZABBIX_CFG:S|^|zabbix_|:S|$|.conf|}
 PLIST_FILES=	${ZABBIX_BIN:S|^|bin/zabbix_|} \
-		${ZABBIX_CFG:S|^|etc/zabbix/zabbix_|:S|$|.conf.sample|}
+		${ZABBIX_CFG:S|^|%%ETCDIR%%/zabbix_|:S|$|.conf.sample|}
 
 post-patch:
 	@${FIND} ${WRKSRC}/src/ -type f|${XARGS} \
-		${REINPLACE_CMD} -Ee 's|(/etc/zabbix)|${PREFIX}\1|;s|/usr/sbin|${LOCALBASE}/sbin|'
+		${REINPLACE_CMD} -e 's|/etc/zabbix|${ETCDIR}|;s|/usr/sbin|${LOCALBASE}/sbin|'
 
 do-install:
-	@${ECHO_CMD} '@unexec rmdir %D/etc/zabbix 2>/dev/null || true' >> ${TMPPLIST}
+	@${ECHO_CMD} '@unexec rmdir %D/${ETCDIR_REL} 2>/dev/null || true' >> ${TMPPLIST}
 	@${INSTALL_PROGRAM} ${ZABBIX_BINFILES:S,^,${WRKSRC}/src/,} ${PREFIX}/bin/
-	@${INSTALL} -d ${PREFIX}/etc/zabbix/
-.for FILE in ${ZABBIX_CFGFILES}
-	${INSTALL_DATA} ${WRKSRC}/misc/conf/${FILE} ${PREFIX}/etc/zabbix/${FILE}.sample
-.endfor
-	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${INSTALL} -d ${ETCDIR}/
+	@for i in ${ZABBIX_CFGFILES};do\
+		${INSTALL_DATA} ${WRKSRC}/misc/conf/$$i ${ETCDIR}/$$i.sample;done
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 .include <bsd.port.mk>
