@@ -67,10 +67,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-daemon_slave.c
 .endif
 
 .if defined(WITH_CONSOLEKIT)
-CONFIGURE_ARGS=	--with-console-kit=yes
-LIB_DEPENDS=	ck-connector.0:${PORTSDIR}/sysutils/consolekit
+CONFIGURE_ARGS+=--with-console-kit=yes
+LIB_DEPENDS+=	ck-connector.0:${PORTSDIR}/sysutils/consolekit
 .else
-CONFIGURE_ARGS=	--with-console-kit=no
+CONFIGURE_ARGS+=--with-console-kit=no
 .endif
 
 post-patch:
