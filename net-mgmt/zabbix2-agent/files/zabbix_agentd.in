@@ -11,7 +11,6 @@ load_rc_config $name
 eval : \${${rcvar}='NO'}
 
 command="%%PREFIX%%/bin/${name}"
-required_files="%%PREFIX%%/etc/zabbix/${name}.conf"
-
+required_files="%%ETCDIR%%/${name}.conf"
 
 run_rc_command "$1"

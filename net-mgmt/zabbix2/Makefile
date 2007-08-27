@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTVERSION=	1.4.2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
@@ -65,17 +64,13 @@ IGNORE=	zabbix needs a database backend
 
 post-patch:
 	@${FIND} ${WRKSRC}/src/ -type f|${XARGS} \
-		${REINPLACE_CMD} -Ee 's|(/etc/zabbix)|${PREFIX}\1|;s|/usr/sbin|${LOCALBASE}/sbin|'
-	@${REINPLACE_CMD} -e '/test.*rf/s|-rf|-f|;/LDFLAGS/s|-static||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -i '' -e '/^SDI.*pg_connection_string/d' ${WRKSRC}/frontends/php/include/db.inc.php
+		${REINPLACE_CMD} -e 's|/etc/zabbix|${ETCDIR}|;s|/usr/sbin|${LOCALBASE}/sbin|'
+	@${REINPLACE_CMD} -e '/test.*rf/s|-rf|-f|;/LDFLAGS/s|-static||;\
+		/LIBS="-lnetsnmp/s|="|="-lcrypto |;s|-lsqlite3|-lsqlite3 ${PTHREAD_LIBS}|'\
+			${WRKSRC}/configure
 .ifdef WITHOUT_FPING
 	@${ECHO} 'DisablePinger=yes' >> ${WRKSRC}/misc/conf/zabbix_server.conf
 .endif
-
-pre-configure:
-	@if ldd ${LOCALBASE}/lib/libsqlite3.so 2>&- |${GREP} -q thr;then\
-		${REINPLACE_CMD} -e 's|-lsqlite3|-lsqlite3 ${PTHREAD_LIBS}|'\
-			${WRKSRC}/configure; fi
 
 .if ${ARCH} == "amd64"
 post-configure:
@@ -84,11 +79,12 @@ post-configure:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/zabbix_server/zabbix_server ${PREFIX}/bin/
-	@${INSTALL} -d ${PREFIX}/etc/zabbix/ ${DATADIR}/create/
+	@${INSTALL} -d ${ETCDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/misc/conf/zabbix_server.conf\
-		${PREFIX}/etc/zabbix/zabbix_server.conf.sample
-	@${CP} -Rf ${WRKSRC}/frontends/ ${WRKSRC}/upgrades/dbpatches ${DATADIR}/
-	@${CP} -Rf ${WRKSRC}/create/data ${WRKSRC}/create/schema ${DATADIR}/create/
+		${ETCDIR}/zabbix_server.conf.sample
+	@cd ${WRKSRC}/frontends/&&${COPYTREE_SHARE} . ${DATADIR}/
+	@cd ${WRKSRC}/upgrades/&&${COPYTREE_SHARE} dbpatches ${DATADIR}/
+	@cd ${WRKSRC}/create/&&${COPYTREE_SHARE} "data schema" ${DATADIR}/create/
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
