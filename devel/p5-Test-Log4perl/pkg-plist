@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/Log4perl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Log4perl/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Log4perl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test
