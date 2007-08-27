@@ -44,12 +44,13 @@ MAN3=		pcre.3 pcre_compile.3 pcre_compile2.3 pcre_config.3 \
 		pcrecpp.3 pcrematching.3 pcrepattern.3 \
 		pcreperform.3 pcreposix.3 pcresample.3 pcrestack.3
 
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -E -e '/^install-data-am/,/^$$/ s,install-(dist_doc|dist_html|html)DATA,,g' \
+		${WRKSRC}/Makefile.in
+.endif
+
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/pcregrep ${PREFIX}/bin/pcretest
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/html
-	@cd ${WRKSRC}; ${INSTALL_DATA} ChangeLog NEWS LICENCE doc/*.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${DOCSDIR}/html
-.endif
 
 .include <bsd.port.mk>
