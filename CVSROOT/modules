@@ -9561,6 +9561,7 @@ p5-Email-LocalDelivery-Ezmlm	ports/mail/p5-Email-LocalDelivery-Ezmlm
 p5-Email-MIME	ports/mail/p5-Email-MIME
 p5-Email-MIME-Attachment-Stripper	ports/mail/p5-Email-MIME-Attachment-Stripper
 p5-Email-MIME-ContentType	ports/mail/p5-Email-MIME-ContentType
+p5-Email-MIME-CreateHTML	ports/mail/p5-Email-MIME-CreateHTML
 p5-Email-MIME-Creator	ports/mail/p5-Email-MIME-Creator
 p5-Email-MIME-Encodings	ports/mail/p5-Email-MIME-Encodings
 p5-Email-MIME-Modifier	ports/mail/p5-Email-MIME-Modifier
