@@ -1,5 +1,3 @@
-
-
 bin/R
 bin/Rscript
 lib/R/COPYING
@@ -4672,6 +4670,7 @@ lib/R/library/mgcv/R-ex/get.var.R
 lib/R/library/mgcv/R-ex/magic.R
 lib/R/library/mgcv/R-ex/mgcv-package.R
 lib/R/library/mgcv/R-ex/mgcv.R
+lib/R/library/mgcv/R-ex/model.matrix.gam.R
 lib/R/library/mgcv/R-ex/mono.con.R
 lib/R/library/mgcv/R-ex/mroot.R
 lib/R/library/mgcv/R-ex/new.name.R
@@ -4734,6 +4733,7 @@ lib/R/library/mgcv/help/magic.post.proc
 lib/R/library/mgcv/help/mgcv
 lib/R/library/mgcv/help/mgcv-package
 lib/R/library/mgcv/help/mgcv.control
+lib/R/library/mgcv/help/model.matrix.gam
 lib/R/library/mgcv/help/mono.con
 lib/R/library/mgcv/help/mroot
 lib/R/library/mgcv/help/new.name
@@ -4796,6 +4796,7 @@ lib/R/library/mgcv/html/magic.post.proc.html
 lib/R/library/mgcv/html/mgcv-package.html
 lib/R/library/mgcv/html/mgcv.control.html
 lib/R/library/mgcv/html/mgcv.html
+lib/R/library/mgcv/html/model.matrix.gam.html
 lib/R/library/mgcv/html/mono.con.html
 lib/R/library/mgcv/html/mroot.html
 lib/R/library/mgcv/html/new.name.html
@@ -4857,6 +4858,7 @@ lib/R/library/mgcv/latex/magic.tex
 lib/R/library/mgcv/latex/mgcv-package.tex
 lib/R/library/mgcv/latex/mgcv.control.tex
 lib/R/library/mgcv/latex/mgcv.tex
+lib/R/library/mgcv/latex/model.matrix.gam.tex
 lib/R/library/mgcv/latex/mono.con.tex
 lib/R/library/mgcv/latex/mroot.tex
 lib/R/library/mgcv/latex/new.name.tex
