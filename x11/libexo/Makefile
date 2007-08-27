@@ -7,14 +7,11 @@
 
 PORTNAME=	libexo
 PORTVERSION=	0.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 xfce
 DISTNAME=	exo-${PORTVERSION}
 MASTER_SITES=	${MASTER_SITES_XFCE}
-
 DIST_SUBDIR=	xfce4
-PATCH_SITES=	http://people.freebsd.org/~oliver/xfce/
-PATCHFILES=	gcc295-libexo.patch
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Terminal library, extensions to Xfce by os-cillation
