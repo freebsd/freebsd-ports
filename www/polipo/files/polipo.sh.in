@@ -20,7 +20,7 @@ required_files=$config_file
 command="%%PREFIX%%/bin/polipo"
 config_args="-c ${config_file}"
 command_args="$config_args daemonise=true pidFile=${pidfile}"
-start_precmd="rm ${pidfile}"
+start_precmd="rm -f ${pidfile}"
 
 extra_commands=expire
 
