@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	setuptools
-PORTVERSION=	0.6c5
+PORTVERSION=	0.6c6
 CATEGORIES=	devel python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/s/setuptools/
+MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
+MASTER_SITE_SUBDIR=	source/s/setuptools
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
