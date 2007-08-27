@@ -395,6 +395,7 @@
 %%PHPBBDIR%%/install/convertors/convert_phpbb20.php
 %%PHPBBDIR%%/install/convertors/functions_phpbb20.php
 %%PHPBBDIR%%/install/data/confusables.php
+%%PHPBBDIR%%/install/data/new_normalizer.php
 %%PHPBBDIR%%/install/database_update.php
 %%PHPBBDIR%%/install/index.php
 %%PHPBBDIR%%/install/install_convert.php
