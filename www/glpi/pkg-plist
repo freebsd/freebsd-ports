@@ -46,7 +46,6 @@ www/glpi/files/_sessions/remove.txt
 www/glpi/files/_uploads/remove.txt
 www/glpi/front/_relpos.php
 www/glpi/front/backup.php
-www/glpi/front/backup.php~
 www/glpi/front/cartridge.edit.php
 www/glpi/front/cartridge.form.php
 www/glpi/front/cartridge.php
@@ -232,7 +231,6 @@ www/glpi/inc/state.function.php
 www/glpi/inc/timer.class.php
 www/glpi/inc/tracking.class.php
 www/glpi/inc/tracking.function.php
-www/glpi/inc/tracking.function.php~
 www/glpi/inc/typedoc.class.php
 www/glpi/inc/user.class.php
 www/glpi/inc/user.function.php

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	glpi
-PORTVERSION=	0.68.3
-PORTREVISION=	1
+DISTVERSION=	0.68.3-2
 CATEGORIES=	www
 MASTER_SITES=	http://glpi-project.org/IMG/gz/ \
-		http://download.gna.org/kanicule/
+		http://download.gna.org/kanicule/freebsd/distfiles/
 
 MAINTAINER=	mathias@monnerville.com
 COMMENT=	Free IT and asset management software
@@ -26,6 +25,9 @@ CPIOARGS=	--quiet -pdum -R
 GLPIDIR?=	www/${PORTNAME}
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+	@${FIND} ${WRKSRC} -name '*~' -delete
 
 post-configure:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
