@@ -1104,6 +1104,7 @@
     SUBDIR += p5-Devel-DProf
     SUBDIR += p5-Devel-DProfPP
     SUBDIR += p5-Devel-Diagram
+    SUBDIR += p5-Devel-EvalContext
     SUBDIR += p5-Devel-Leak
     SUBDIR += p5-Devel-LeakTrace
     SUBDIR += p5-Devel-LexAlias
