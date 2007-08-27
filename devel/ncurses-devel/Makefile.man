@@ -9,7 +9,6 @@ MAN1=	\
 	clear.1 \
 	infocmp.1m \
 	infotocap.1m \
-	tack.1 \
 	tic.1m \
 	toe.1m \
 	tput.1 \
