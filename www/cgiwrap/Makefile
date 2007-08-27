@@ -7,7 +7,7 @@
 
 PORTNAME=	cgiwrap
 PORTVERSION=	4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +24,8 @@ OPTIONS=	CGI_OWNER "Check CGI file owner" on \
 		CGI_SETGID "Check CGI file setgid permissions" on \
 		CGI_GROUP_WRITABLE "Check CGI g+w file permissions" on \
 		CGI_WORLD_WRITABLE "Check CGI o+w file permissions" on \
+		USE_SCRIPT_URL "Use REDIRECT_URL to build SCRIPT_NAME" off \
+		USE_SCRIPT_URL "Use SCRIPT_URL to build SCRIPT_NAME" off \
 		NPH "Enable nph binaries" off \
 		DEBUG "Enable cgiwrapd binaries" off
 
@@ -95,6 +97,12 @@ CONFIGURE_ARGS+=	--without-check-group-writable
 .endif
 .if !defined(WITH_CGI_WORLD_WRITABLE)
 CONFIGURE_ARGS+=	--without-check-world-writable
+.endif
+.if defined(WITH_USE_REDIRECT_URL)
+CONFIGURE_ARGS+=	--with-use-redirect-url
+.endif
+.if defined(WITH_USE_SCRIPT_URL)
+CONFIGURE_ARGS+=	--with-use-script-url
 .endif
 
 .if !defined(WITH_NPH)
