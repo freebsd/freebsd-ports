@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Lingua-ZH-Segment
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	chinese perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Chinese Text Segmentation
 
 PERL_CONFIGURE=	yes
