@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	nekobee
-PORTVERSION=	0.1.5
-PORTREVISION=	1
+PORTVERSION=	0.1.6
 CATEGORIES=	audio
-MASTER_SITES=	http://static.nekosynth.co.uk/releases/
+MASTER_SITES=	http://www.nekosynth.co.uk/releases/
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	DSSI plugin that emulates the sound of the TB-303 Bassline
