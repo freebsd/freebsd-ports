@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bdb
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
