@@ -43,7 +43,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>2.10.0_3</lt></range>
       </package>
       <package>
-        <name>sylpheed</name>
+        <name>sylpheed2</name>
 	<range><lt>2.4.4</lt></range>
       </package>
     </affects>
