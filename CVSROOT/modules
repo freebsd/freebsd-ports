@@ -13815,6 +13815,7 @@ ripmime		ports/mail/ripmime
 ripole		ports/textproc/ripole
 ripperx		ports/audio/ripperx
 ris		ports/net/ris
+ristretto	ports/graphics/ristretto
 rkhunter	ports/security/rkhunter
 rkive		ports/news/rkive
 rkward		ports/math/rkward
