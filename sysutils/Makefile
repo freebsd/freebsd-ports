@@ -93,6 +93,7 @@
     SUBDIR += condor
     SUBDIR += conky
     SUBDIR += consolehm
+    SUBDIR += consolekit
     SUBDIR += contool
     SUBDIR += copytape
     SUBDIR += coreutils
