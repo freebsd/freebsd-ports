@@ -305,6 +305,7 @@
     SUBDIR += p5-Email-MIME
     SUBDIR += p5-Email-MIME-Attachment-Stripper
     SUBDIR += p5-Email-MIME-ContentType
+    SUBDIR += p5-Email-MIME-CreateHTML
     SUBDIR += p5-Email-MIME-Creator
     SUBDIR += p5-Email-MIME-Encodings
     SUBDIR += p5-Email-MIME-Modifier
