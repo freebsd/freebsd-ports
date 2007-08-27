@@ -33,7 +33,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomehier libgnomeui librsvg2 gnomedocutils \
 		gnomeprefix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-console-kit=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GTKDOC="false"
@@ -46,7 +45,8 @@ GNOME_LOCALSTATEDIR=	/var
 MAN1=		gdm.1
 
 OPTIONS=	IPV6 "Enable IPv6 support" on \
-		LOG_LIMIT "Limit ~/.xsession-errors size" on
+		LOG_LIMIT "Limit ~/.xsession-errors size" on \
+		CONSOLEKIT "Enable ConsoleKit support" off
 
 .include <bsd.port.pre.mk>
 
@@ -64,6 +64,13 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if defined(WITHOUT_LOG_LIMIT)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-daemon_slave.c
+.endif
+
+.if defined(WITH_CONSOLEKIT)
+CONFIGURE_ARGS=	--with-console-kit=yes
+LIB_DEPENDS=	ck-connector.0:${PORTSDIR}/sysutils/consolekit
+.else
+CONFIGURE_ARGS=	--with-console-kit=no
 .endif
 
 post-patch:
