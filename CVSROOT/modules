@@ -11256,6 +11256,7 @@ p5-WWW-BitTorrent	ports/net-p2p/p5-WWW-BitTorrent
 p5-WWW-Comic	ports/www/p5-WWW-Comic
 p5-WWW-Curl	ports/www/p5-WWW-Curl
 p5-WWW-Dilbert	ports/www/p5-WWW-Dilbert
+p5-WWW-Facebook-API	ports/www/p5-WWW-Facebook-API
 p5-WWW-GMail	ports/mail/p5-WWW-GMail
 p5-WWW-Google-Calculator	ports/www/p5-WWW-Google-Calculator
 p5-WWW-Google-News	ports/www/p5-WWW-Google-News
