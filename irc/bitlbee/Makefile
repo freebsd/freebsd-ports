@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	1.0.3
-PORTREVISION=	4
+PORTVERSION=	1.0.4
+PORTREVISION=	0
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/
 
@@ -33,7 +33,7 @@ OPTIONS=	MSN "Enable MSN protocol support" On \
 		OPENSSL "Use openssl rather than gnutls" Off \
 		IPV6 "Compile IPV6 support" On
 
-CONFIGURE_ARGS= --config=${PREFIX}/etc/bitlbee
+CONFIGURE_ARGS=	--config=${PREFIX}/etc/bitlbee
 
 .include <bsd.port.pre.mk>
 
