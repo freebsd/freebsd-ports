@@ -228,6 +228,5 @@
 %%SITE_PERL%%/DateTime/Locale/zh_Hant_MO.pm
 %%SITE_PERL%%/DateTime/Locale/zu.pm
 %%SITE_PERL%%/DateTime/LocaleCatalog.pm
-@dirrm %%SITE_PERL%%/DateTime/Locale/Alias
 @dirrm %%SITE_PERL%%/DateTime/Locale
 @dirrmtry %%SITE_PERL%%/DateTime
