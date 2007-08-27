@@ -1,0 +1,9 @@
+%%SITE_PERL%%/File/Policy.pm
+%%SITE_PERL%%/File/Policy/Default.pm
+%%SITE_PERL%%/File/Slurp/WithinPolicy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Policy/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Policy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/File/Slurp
+@dirrmtry %%SITE_PERL%%/File/Policy
+@dirrmtry %%SITE_PERL%%/File
