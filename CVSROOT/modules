@@ -9650,6 +9650,7 @@ p5-File-Next	ports/sysutils/p5-File-Next
 p5-File-Path-Expand	ports/devel/p5-File-Path-Expand
 p5-File-PathConvert	ports/devel/p5-File-PathConvert
 p5-File-Pid	ports/devel/p5-File-Pid
+p5-File-Policy	ports/devel/p5-File-Policy
 p5-File-Random	ports/devel/p5-File-Random
 p5-File-ReadBackwards	ports/devel/p5-File-ReadBackwards
 p5-File-Remove	ports/devel/p5-File-Remove
