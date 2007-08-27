@@ -1,0 +1,20 @@
+%%SITE_PERL%%/WWW/Facebook/API.pm
+%%SITE_PERL%%/WWW/Facebook/API/Auth.pm
+%%SITE_PERL%%/WWW/Facebook/API/Canvas.pm
+%%SITE_PERL%%/WWW/Facebook/API/Events.pm
+%%SITE_PERL%%/WWW/Facebook/API/FBML.pm
+%%SITE_PERL%%/WWW/Facebook/API/FQL.pm
+%%SITE_PERL%%/WWW/Facebook/API/Feed.pm
+%%SITE_PERL%%/WWW/Facebook/API/Friends.pm
+%%SITE_PERL%%/WWW/Facebook/API/Groups.pm
+%%SITE_PERL%%/WWW/Facebook/API/Notifications.pm
+%%SITE_PERL%%/WWW/Facebook/API/Photos.pm
+%%SITE_PERL%%/WWW/Facebook/API/Profile.pm
+%%SITE_PERL%%/WWW/Facebook/API/Users.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Facebook/API/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Facebook/API
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Facebook
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Facebook/API
+@dirrmtry %%SITE_PERL%%/WWW/Facebook
+@dirrmtry %%SITE_PERL%%/WWW
