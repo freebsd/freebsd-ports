@@ -7,6 +7,7 @@
 
 PORTNAME=	qemu-launcher
 PORTVERSION=	1.7.4
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.gna.org/qemulaunch/1.7.x/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -28,6 +29,7 @@ USE_GETTEXT=	yes
 MAN1=	qemu-launcher.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,usr,usr/local,g' ${WRKSRC}/qemu-launcher.pl
+	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},g' ${WRKSRC}/qemu-launcher.pl
+	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
