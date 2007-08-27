@@ -2,23 +2,24 @@
 # Date created:				2005-11-04
 # Whom:			Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 #
-# $Tecnik: ports/editors/rospell/Makefile,v 1.4 2006/05/15 10:49:31 itetcu Exp $
 # $FreeBSD$
 
 PORTNAME=	rospell
 DISTVERSION=	2007.01.rc3
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	editors textproc # this should/will be romanian ;)
 MASTER_SITES=	SF
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	QT-based editor with support for romanian charsets and spell checking
 
-BUILD_DEPENDS+=	${LOCALBASE}/include/readtags.h:${PORTSDIR}/devel/ctags
-RUN_DEPENDS+=	${LOCALBASE}/lib/readtags.o:${PORTSDIR}/devel/ctags
+BUILD_DEPENDS+=	exctags:${PORTSDIR}/devel/ctags
+RUN_DEPENDS+=	exctags:${PORTSDIR}/devel/ctags
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 
-USE_XLIB=	yes
+USE_XORG=	x11 xext
 USE_QT_VER=	3
+
 MAKE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 
