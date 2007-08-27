@@ -1,0 +1,16 @@
+bin/ck-list-sessions
+etc/ConsoleKit/seats.d/00-primary.seat
+etc/dbus-1/system.d/ConsoleKit.conf
+include/ConsoleKit/ck-connector/ck-connector.h
+lib/libck-connector.la
+lib/libck-connector.so
+lib/libck-connector.so.0
+libdata/pkgconfig/ck-connector.pc
+libexec/ck-collect-session-info
+libexec/ck-get-x11-display-device
+libexec/ck-get-x11-server-pid
+sbin/console-kit-daemon
+@dirrm include/ConsoleKit/ck-connector
+@dirrm include/ConsoleKit
+@dirrm etc/ConsoleKit/seats.d
+@dirrm etc/ConsoleKit

@@ -1,0 +1,57 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: consolekit
+# REQUIRE: DAEMON dbus
+#
+# Add the following line to /etc/rc.conf to enable the ConsoleKit daemon:
+#
+# consolekit_enable="YES"
+#
+
+. %%RC_SUBR%%
+. %%GNOME_SUBR%%
+
+consolekit_enable=${consolekit_enable-${gnome_enable}}
+
+name=consolekit
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/console-kit-daemon"
+pidfile="/var/run/${name}.pid"
+
+start_precmd="consolekit_precmd"
+stop_postcmd="consolekit_postcmd"
+
+local_force_depend()
+{
+    _depend="$1"
+    if [ -f %%LOCALBASE%%/etc/rc.d/${_depend}.sh ]; then
+	_depend="${_depend}.sh"
+    fi
+
+    if ! %%LOCALBASE%%/etc/rc.d/${_depend} forcestatus 1>/dev/null 2>&1 &&
+       ! %%LOCALBASE%%/etc/rc.d/${_depend} forcestart; then
+       return 1
+   fi
+   return 0
+}
+
+consolekit_precmd()
+{
+    if ! checkyesno dbus_enable
+    then
+	local_force_depend dbus || return 1
+    fi
+
+    mkdir -p $(dirname $pidfile)
+}
+
+consolekit_postcmd()
+{
+    	rm -f $pidfile
+}
+
+load_rc_config ${name}
+run_rc_command "$1"
