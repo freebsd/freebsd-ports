@@ -398,6 +398,7 @@
     SUBDIR += openmcu
     SUBDIR += openmpi
     SUBDIR += openntpd
+    SUBDIR += openospfd
     SUBDIR += openospfd-devel
     SUBDIR += openpbx.org
     SUBDIR += openradius
