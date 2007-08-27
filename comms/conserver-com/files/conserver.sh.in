@@ -13,11 +13,44 @@ name="conserver"
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/${name}
-pidfile=/var/run/conserver.pid
-required_files=%%PREFIX%%/etc/conserver.cf
+pidfile=/var/run/${name}.pid
+required_files=%%PREFIX%%/etc/${name}.cf
+extra_commands="reload reconnect reinit"
+reconnect_cmd="reconnect_cmd"
+reinit_cmd="reinit_cmd"
 
 load_rc_config $name
 : ${conserver_enable="NO"}
 : ${conserver_flags="-d"}
+
+kill_cmd()
+{
+	_msg=$1
+	_sig=$2
+
+	if [ -z "$rc_pid" ]; then
+		if [ -n "$pidfile" ]; then
+			echo 1>&2 \
+		    "${name} not running? (check $pidfile)."
+		else
+			echo 1>&2 "${name} not running?"
+		fi
+		return 1
+	fi
+	echo "$_msg"
+	kill -${_sig:-HUP} $rc_pid
+	_return=$?
+	[ $_return -ne 0 ] && [ -z "$rc_force" ] && return 1
+}
+
+reconnect_cmd()
+{
+	kill_cmd "Try to reconnect all downed consoles." USR1
+}
+
+reinit_cmd()
+{
+	kill_cmd "Try to close and reopen all log files and downed connections." USR2
+}
 
 run_rc_command "$1"
