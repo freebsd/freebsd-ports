@@ -1,0 +1,577 @@
+#!/bin/sh
+# This file was automatically created - don't modify it!
+#%%SOURCEINFO-START%%
+# source version: $Id: pkg-install.in,v 1.15 2007/08/19 17:04:15 joemann Exp $
+# installed by port/package: %%SOURCEINFO-PACKAGE%%
+# installed from file: %%SOURCEINFO-FILE%%
+#%%SOURCEINFO-END%%
+if [ -n "$MULTIEXEC_WRAPPER_VERBOSE" ]
+then
+	QUIET=0
+else
+	QUIET=1
+fi
+#%%PKG-INSTALL-START%%
+# ===== IMPORTANT =====
+# If you modify any byte of this script outside of the
+# %%SOURCEINFO-*%% and #%%PKG-INSTALL-*%% sections, then
+# don't forget to bump the MINOR version variable below!
+#
+case "$2" in
+	# no-op cases if called as port/package de/installation script
+	PRE-INSTALL|POST-DEINSTALL)
+		exit 0
+		;;
+esac
+#%%PKG-INSTALL-END%%
+
+ME=multiexec-wrapper
+CALLED_NAME="`basename $0`"
+PREFIX=%%PREFIX%%
+CONFIG="$PREFIX/etc/$ME.conf"
+
+lookup_executable() {
+	local calledname pkgname name executable rest \
+		portname version envvarname envvarversion result
+	# use global variable for the result to avoid subshell
+	lookup_executable_result=
+	[ -r "$CONFIG" ] || return 1
+	calledname="$1"
+	result=
+	while read pkgname name executable rest
+	do
+		if [ "$name" = "$calledname" -a -n "$executable" ]
+		then
+			result="$executable"
+			portname=`expr "$pkgname" : "\(.*\)-"`
+			envvarname="`echo -n "$portname" | \
+					tr "[:lower:]" "[:upper:]" | \
+					tr -cs "[:alnum:]" "_"`"
+			# <PORTNAME> variable selects package if name matches
+			eval envvarvalue='$'"$envvarname"
+			if [ -n "$envvarvalue" ]
+			then
+				break
+			fi
+			# <PORTNAME>_VERSION variable selects package version
+			version=`expr "$pkgname" : ".*-\([^-_,]*\)"`
+			eval envvarversion='$'"$envvarname"_VERSION
+			if [ "$envvarversion" = "$version" ]
+			then
+				break
+			fi
+		fi
+	done < "$CONFIG"
+	lookup_executable_result="$result"
+}
+
+warn () {
+	echo "${ME}: $1" 1>&2
+}
+
+die () {
+	warn "$1"
+	exit 1
+}
+
+# Normal usage: if called through a symlink,
+#               lookup and exec a registered executable.
+
+if [ -L "$0" -a "$CALLED_NAME" != "$ME" ]
+then
+	lookup_executable "$CALLED_NAME"
+	executable="$lookup_executable_result"
+	if [ -x "$executable" ]
+	then
+		exec "$executable" "$@"
+	elif [ -z "$executable" ]
+	then
+		die "no executable registered for '$CALLED_NAME'."
+	elif [ ! -e "$executable" ]
+	then
+		die "$executable does not exist."
+	else
+		die "$executable is not executable."
+	fi
+fi
+
+EPOCH=1
+CONFIG_FORMAT=1
+MAJOR=1
+MINOR=0
+VERSION=$EPOCH.$CONFIG_FORMAT.$MAJOR.$MINOR
+
+usage() {
+	echo "usage: $ME <cmd> <arg> ..."
+	echo "       with one of the following <cmd>s:"
+#%%PKG-INSTALL-START%%
+	echo "  install-self-to <prefix> <pkgname>"
+	echo "  deinstall-self-from <prefix>"
+#%%PKG-INSTALL-END%%
+	echo "  deinstall-pkg <pkgname>"
+	echo "  register <pkgname> <name> <executable>"
+	echo "  unregister <pkgname> <name> <executable>"
+	echo "  version"
+	echo "  which <name>"
+	echo "  list-all-packages"
+	echo "  list-packages-for-name <name>"
+	exit 1
+}
+
+say () {
+	[ $QUIET -gt 0 ] || echo "${ME}: $1"
+}
+
+version() {
+	echo "$VERSION"
+	exit 0
+}
+
+which() {
+	local name executable
+	name="$1"
+	lookup_executable "$CALLED_NAME"
+	executable="$lookup_executable_result"
+	[ -z "$executable" ] && return 1
+	echo "$executable"
+}
+
+#%%PKG-INSTALL-START%%
+install_self_to() {
+	local pkgname myself target oldversion
+	PREFIX="$1"
+	pkgname="$2"
+	myself=`realpath "$0"`
+	target="$PREFIX/bin/$ME"
+	MYSELF_INSTALLED="$target"
+	if [ -e "$target" ]
+	then
+		if [ ! -x "$target" ]
+		then
+			die "$target already exists but is not executable."
+		else
+			oldversion=`$target version 2>/dev/null`
+			if [ $? -ne 0 ]
+			then
+				die "bogus $target already exists."
+			elif [ "$oldversion" = "$VERSION" ]
+			then
+				oldmd5=`sed -e '/^#%%PKG-INSTALL-START%%$/,/^#%%PKG-INSTALL-END%%$/d' \
+	    					-e '/^#%%SOURCEINFO-START%%$/,/^#%%SOURCEINFO-END%%$/d' \
+	    					-e 's?%%PREFIX%%?'"$PREFIX"'?g' "$target" | \
+				        md5 -q`
+				newmd5=`sed -e '/^#%%PKG-INSTALL-START%%$/,/^#%%PKG-INSTALL-END%%$/d' \
+	    					-e '/^#%%SOURCEINFO-START%%$/,/^#%%SOURCEINFO-END%%$/d' \
+	    					-e 's?%%PREFIX%%?'"$PREFIX"'?g' "$myself" | \
+				       md5 -q`
+				if [ "$newmd5" = "$oldmd5" ]
+				then
+					say "$myself (version $VERSION) already installed as $target."
+					return
+				else
+					die "$myself and $target have same version ($VERSION) but differ."
+				fi
+			elif [ `pkg_version -t "$oldversion" "$VERSION"` != "<" ]
+			then
+				say "$myself (version $VERSION) is not newer than $target (version $oldversion)."
+			fi
+		fi
+	fi
+	if sed -e '/^#%%PKG-INSTALL-START%%$/,/^#%%PKG-INSTALL-END%%$/d' \
+	       -e 's?%%SOURCEINFO-PACKAGE%%?'"$pkgname"'?g' \
+	       -e 's?%%SOURCEINFO-FILE%%?'"$myself"'?g' \
+	       -e 's?%%PREFIX%%?'"$PREFIX"'?g' "$0" > "$target" && \
+	   chmod +x "$target"
+	then
+		say "$0 (version $VERSION) installed as $target."
+		return
+	else
+		die "failed to install $ME (version $VERSION) as $target."
+	fi
+}
+
+deinstall_self_from() {
+	local config_empty=1
+	PREFIX="$1"
+	MYSELF_INSTALLED="$PREFIX/bin/$ME"
+	CONFIG="$PREFIX/etc/$ME.conf"
+	if [ ! -e "$CONFIG" ]
+	then
+		say "$CONFIG does not exist."
+	elif grep -v -q "^/SELF/" "$CONFIG"
+	then
+		say "$CONFIG is not empty."
+		config_empty=0
+	elif rm -f "$CONFIG"
+	then
+		say "$CONFIG removed."
+	else
+		warn "failed to remove $CONFIG."
+	fi
+	if [ "$config_empty" -eq 1 ]
+	then
+		if [ ! -e "$MYSELF_INSTALLED" ]
+		then
+			warn "$MYSELF_INSTALLED does not exist."
+		elif rm -f "$MYSELF_INSTALLED"
+		then
+			say "$MYSELF_INSTALLED removed."
+		else
+			warn "failed to remove $MYSELF_INSTALLED."
+		fi
+	fi
+}
+
+#%%PKG-INSTALL-END%%
+
+config_init() {
+	local format oldformat pkgname name executable rest
+	format="$EPOCH.$CONFIG_FORMAT"
+	if [ -r "$CONFIG" -a -s "$CONFIG" ]
+	then
+		oldformat=`cat "$CONFIG" | \
+			while read pkgname name executable rest
+			do
+				if [ "$pkgname" = "/SELF/" -a "$name" = "/FORMAT/" ]
+				then
+					echo "$executable"
+					break
+				fi
+			done`
+		if [ -z "$oldformat" ]
+		then
+			say "old $CONFIG has no format information - backing up ..."
+			if mv "$CONFIG" "$CONFIG.bak"
+			then
+				say "... done"
+			else
+				die "failed to backup old $CONFIG."
+			fi
+		elif [ "$oldformat" = "$format" ]
+		then
+			say "matching format statement found in $CONFIG."
+		else
+			# XXX compare versions and try to upgrade if appropriate
+			die "differing format statement found in $CONFIG ($executable instead of $format)."
+		fi
+	elif echo "/SELF/	/FORMAT/	$format" > "$CONFIG"
+	then
+		say "$CONFIG initialized."
+	else
+		die "failed to initialize $CONFIG"
+	fi
+}
+
+lookup_matches() {
+	local pkgname name executable rest p n e r
+	pkgname="$1"
+	name="$2"
+	executable="$3"
+	[ -r "$CONFIG" ] || return 1
+	cat "$CONFIG" | \
+	while read p n e r
+	do
+		[ "$pkgname" = "" -o "$p" = "$pkgname" ] && \
+		[ "$name" = "" -o "$n" = "$name" ] && \
+		[ "$executable" = "" -o "$e" = "$executable" ] && \
+		echo "$p	$n	$e"
+	done
+	return 0
+}
+
+config_add() {
+	local pkgname name executable matches
+	pkgname="$1"
+	name="$2"
+	executable="$3"
+	if [ ! -e "$CONFIG" ]
+	then
+		config_init
+	fi
+	if [ ! -r "$CONFIG" ]
+	then
+		die "$CONFIG not readable."
+	else
+		matches=`lookup_matches "$pkgname" "$name" "$executable"`
+		if [ -n "$matches" ]
+		then
+			say "already registered in $CONFIG: $pkgname $name $executable"
+			return
+		elif [ ! -w "$CONFIG" ]
+		then
+			die "$CONFIG is not writeable"
+		fi
+	fi
+	if echo "$pkgname	$name	$executable" >> "$CONFIG"
+	then
+		say "now added to config: $pkgname $name $executable"
+	else
+		die "write failed while trying to add to $CONFIG: $pkgname $name $executable"
+	fi
+}
+
+config_delete() {
+	local pkgname name executable matches
+	pkgname="$1"
+	name="$2"
+	executable="$3"
+	if [ ! -e "$CONFIG" ]
+	then
+		die "failed to delete from config: $CONFIG does not exist."
+	elif [ ! -r "$CONFIG" ]
+	then
+		die "$CONFIG not readable."
+	else
+		matches=`lookup_matches "$pkgname" "$name" "$executable"`
+		if [ -z "$matches" ]
+		then
+			say "no entry found in config for: $pkgname $name $executable."
+		elif [ ! -w "$CONFIG" ]
+		then
+			die "$CONFIG is not writeable."
+		elif [ ! -w `dirname "$CONFIG"` ]
+		then
+			die "config directory `dirname $CONFIG` is not writeable."
+		elif awk '$1 != "'"$pkgname"'" || \
+			  $2 != "'"$name"'" || \
+			  $3 != "'"$executable"'"' \
+			 "$CONFIG" > "$CONFIG.new"
+		then
+			if diff -q "$CONFIG" "$CONFIG.new" >/dev/null
+			then
+				say "failed to delete from config (match problem): $pkgname $name $executable."
+				rm "$CONFIG.new"
+			elif mv -f "$CONFIG.new" "$CONFIG"
+			then
+				say "deleted from config: $pkgname $name $executable."
+			else
+				die "failed to update $CONFIG."
+			fi
+		else
+			die "failed to create new config $CONFIG.new."
+		fi
+	fi
+}
+
+register() {
+	local pkgname name executable savedwd
+	pkgname="$1"
+	name="$2"
+	executable="$3"
+	savedwd=$PWD
+	if [ ! -e "$executable" ]
+	then
+		die "won't register ${name}: $executable does not exist"
+	elif [ ! -x "$executable" ]
+	then
+		die "won't register ${name}: $executable is not executable"
+	elif cd "$PREFIX/bin"
+	then
+		if [ -e "$name" ]
+		then
+			if [ -L "$name" ]
+			then
+				target=`readlink $name`
+				if [ "$target" = "$ME" ]
+				then
+					say "symlink $name -> $ME already exists."
+				else
+					die "symlink $name already exists, but does not point to $ME (instead to $target)."
+				fi
+			else
+				die "$name already exists, but is not a symlink."
+			fi
+		else
+			if ln -s "$ME" "$name"
+			then
+				say "symlink $name -> $ME created."
+			else
+				die "failed to create symlink $name -> $ME."
+			fi
+		fi
+		config_add "$pkgname" "$name" "$executable"
+	else
+		die "can't cd to $PREFIX/bin."
+	fi
+	cd "$savedwd"
+}
+
+unregister() {
+	local pkgname name executable savedwd matches count
+	pkgname="$1"
+	name="$2"
+	executable="$3"
+	savedwd=$PWD
+	if [ ! -e "$executable" ]
+	then
+		say "while unregistering ${name}: $executable does not exist"
+	elif [ ! -x "$executable" ]
+	then
+		say "while unregistering ${name}: $executable is not executable"
+	fi
+	if cd "$PREFIX/bin"
+	then
+		if [ ! -e "$name" ]
+		then
+			say "symlink $name does not exist."
+		elif [ ! -L "$name" ]
+		then
+			say "$name exists, but is not a symlink."
+		else		
+			target=`readlink $name`
+			if [ "$target" != "$ME" ]
+			then
+				say "symlink $name exists, but does not point to $ME (instead to $target)."
+			else
+				matches=`lookup_matches "" "$name"`
+				count=`printf "%s" "$matches" | wc -l`
+				if [ "$count" -eq 0 -o \
+					\( "$count" -eq 1 -a \
+					   `expr "$matches" : "${pkgname}-"` -gt 0 \) ]
+				then
+					if rm -f "$name"
+					then
+						say "symlink $name removed."
+					else
+						die "failed to remove symlink $name -> $ME."
+					fi
+				else
+					say "not removing symlink $name because of further config entries."
+				fi
+			fi
+		fi
+		config_delete "$pkgname" "$name" "$executable"
+	else
+		die "can't cd to $PREFIX/bin."
+	fi
+	cd "$savedwd"
+}
+
+deinstall_pkg() {
+	local pkgname matches count p n e r
+	pkgname="$1"
+	matches=`lookup_matches "$pkgname"`
+	if [ $? -ne 0 ]
+	then
+		die "reading $CONFIG failed."
+	elif [ -z "$matches" ]
+	then
+		say "no entries for package $package in $CONFIG."
+	else
+		count=`printf "%s" "$matches" | wc -l`
+		say "trying to unregister $count entries for package $pkgname."
+		cat "$CONFIG" | \
+		while read p n e r
+		do
+			if [ "$p" = "$pkgname" ]
+			then
+				if [ -z "$n" ]
+				then
+					warn "in $CONFIG: incomplete config entry (no name) found for package $pkgname."
+				elif [ -z "$e" ]
+				then
+					warn "in $CONFIG: incomplete config entry (no executable) found for package $pkgname, name $name."
+				else
+					unregister  "$pkgname" "$n" "$e"
+				fi
+			fi
+		done
+	fi
+}
+
+
+#%%PKG-INSTALL-START%%
+case "$2" in
+	POST-INSTALL)
+		PKGNAME="$1"
+		install_self_to "$PKG_PREFIX" "$PKGNAME"
+		"$MYSELF_INSTALLED" config-init || die "config-init of $CONFIG failed."
+		for exename in %%EXENAMES%%
+		do
+			exepath="$PKG_PREFIX/%%EXEBINDIR%%/$exename"
+			if [ -x "$exepath" ]
+			then
+				"$MYSELF_INSTALLED" register "$PKGNAME" "$exename" "$exepath" \
+				|| die "failure during registration - aborting."
+			else
+				die "not an executable: $exepath."
+			fi
+		done
+		;;
+	DEINSTALL)
+		PKGNAME="$1"
+		PREFIX="$PKG_PREFIX"
+		CONFIG="$PREFIX/etc/$ME.conf"
+		MYSELF_INSTALLED="$PREFIX/bin/$ME"
+		doitmyself=0
+		if [ ! -e "$MYSELF_INSTALLED" ]
+		then
+			say "$ME was not (or is no longer) installed as $MYSELF_INSTALLED."
+			doitmyself=1
+		elif [ ! -x "$MYSELF_INSTALLED" ]
+		then
+			say "$MYSELF_INSTALLED is not executable."
+			doitmyself=1
+		fi
+		if [ "$doitmyself" -eq 0 ]
+		then
+			"$MYSELF_INSTALLED" deinstall-pkg "$PKGNAME"
+		else
+			deinstall_pkg "$PKGNAME"
+		fi
+		deinstall_self_from "$PKG_PREFIX"
+		;;
+esac
+#%%PKG-INSTALL-END%%
+
+list_all_packages() {
+	grep -v "^/" "$CONFIG" | \
+	awk '{ print $1 }' | \
+	uniq
+}
+
+list_packages_for_name() {
+	local name="$1"
+	lookup_matches "" "$name" "" | \
+	awk '{ print $1 }'
+}
+
+# main
+
+case "$1" in
+""|-h|--help)
+	usage
+	;;
+#%%PKG-INSTALL-START%%
+install-self-to)
+	install_self_to "$2" "$3"
+	;;
+deinstall-self-from)
+	deinstall_self_from "$2"
+	;;
+#%%PKG-INSTALL-END%%
+version)
+	version
+	;;
+which)
+	which "$2"
+	;;
+config-init)
+	config_init
+	;;
+register)
+	register "$2" "$3" "$4"
+	;;
+unregister)
+	unregister "$2" "$3" "$4"
+	;;
+deinstall-pkg)
+	deinstall_pkg "$2"
+	;;
+list-all-packages)
+	list_all_packages "$2"
+	;;
+list-packages-for-name)
+	list_packages_for_name "$2"
+	;;
+esac

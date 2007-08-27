@@ -1,22 +1,16 @@
-bin/ml-antlr
-bin/ml-burg
-bin/ml-nlffigen
-bin/ml-ulex
-bin/nowhere
-smlnj/bin/.heap/ml-antlr.%%MLARCH%%-bsd
 smlnj/bin/.heap/ml-burg.%%MLARCH%%-bsd
 smlnj/bin/.heap/ml-nlffigen.%%MLARCH%%-bsd
-smlnj/bin/.heap/ml-ulex.%%MLARCH%%-bsd
 smlnj/bin/.heap/nowhere.%%MLARCH%%-bsd
-smlnj/bin/ml-antlr
 smlnj/bin/ml-burg
 smlnj/bin/ml-nlffigen
-smlnj/bin/ml-ulex
 smlnj/bin/nowhere
+smlnj/lib/burg-ext.cm/.cm/%%MLARCH%%-unix/burg-ext.cm
 smlnj/lib/c/.cm/%%MLARCH%%-unix/c.cm
 smlnj/lib/c/internals/.cm/%%MLARCH%%-unix/c-int.cm
 smlnj/lib/c/memory/.cm/%%MLARCH%%-unix/memory.cm
+smlnj/lib/ckit-lib.cm/.cm/%%MLARCH%%-unix/ckit-lib.cm
 smlnj/lib/eXene.cm/.cm/%%MLARCH%%-unix/eXene.cm
+smlnj/lib/mlburg-tool.cm/.cm/%%MLARCH%%-unix/mlburg-tool.cm
 smlnj/lib/mlrisc-tools/.cm/%%MLARCH%%-unix/match-compiler.cm
 smlnj/lib/mlrisc-tools/.cm/%%MLARCH%%-unix/parser.cm
 smlnj/lib/mlrisc-tools/.cm/%%MLARCH%%-unix/pp.cm
@@ -24,12 +18,9 @@ smlnj/lib/mlrisc-tools/.cm/%%MLARCH%%-unix/prec-parser.cm
 smlnj/lib/mlrisc-tools/.cm/%%MLARCH%%-unix/sml-ast.cm
 smlnj/lib/mlrisc-tools/.cm/%%MLARCH%%-unix/source-map.cm
 smlnj/lib/pgraph-util.cm/.cm/%%MLARCH%%-unix/pgraph-util.cm
-smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix/back-trace.cm
-smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix/coverage.cm
-smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix/plugins.cm
-@dirrm smlnj/lib/eXene.cm/.cm/%%MLARCH%%-unix
-@dirrm smlnj/lib/eXene.cm/.cm
-@dirrm smlnj/lib/eXene.cm
+@dirrm smlnj/lib/burg-ext.cm/.cm/%%MLARCH%%-unix
+@dirrm smlnj/lib/burg-ext.cm/.cm
+@dirrm smlnj/lib/burg-ext.cm
 @dirrm smlnj/lib/c/memory/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/c/memory/.cm
 @dirrm smlnj/lib/c/memory
@@ -39,12 +30,18 @@ smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix/plugins.cm
 @dirrm smlnj/lib/c/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/c/.cm
 @dirrm smlnj/lib/c
+@dirrm smlnj/lib/ckit-lib.cm/.cm/%%MLARCH%%-unix
+@dirrm smlnj/lib/ckit-lib.cm/.cm
+@dirrm smlnj/lib/ckit-lib.cm
+@dirrm smlnj/lib/eXene.cm/.cm/%%MLARCH%%-unix
+@dirrm smlnj/lib/eXene.cm/.cm
+@dirrm smlnj/lib/eXene.cm
+@dirrm smlnj/lib/mlburg-tool.cm/.cm/%%MLARCH%%-unix
+@dirrm smlnj/lib/mlburg-tool.cm/.cm
+@dirrm smlnj/lib/mlburg-tool.cm
 @dirrm smlnj/lib/mlrisc-tools/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/mlrisc-tools/.cm
 @dirrm smlnj/lib/mlrisc-tools
 @dirrm smlnj/lib/pgraph-util.cm/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/pgraph-util.cm/.cm
 @dirrm smlnj/lib/pgraph-util.cm
-@dirrm smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix
-@dirrm smlnj/lib/smlnj-tdp/.cm
-@dirrm smlnj/lib/smlnj-tdp

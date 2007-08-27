@@ -1,0 +1,10 @@
+--- config/allsources.orig	Fri Nov 10 21:26:00 2006
++++ config/allsources	Sun Jun 17 01:22:22 2007
+@@ -10,7 +10,6 @@
+ system
+ ml-yacc
+ ml-lex
+-lexgen
+ ml-burg
+ ml-nlffigen
+ ml-nlffi-lib
