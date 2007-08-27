@@ -1,0 +1,17 @@
+--- sudoers.orig	2007-07-08 09:06:33.000000000 -0400
++++ sudoers	2007-08-27 15:37:00.868840000 -0400
+@@ -12,6 +12,14 @@
+ # Cmnd alias specification
+ 
+ # Defaults specification
++# Uncomment if needed to preserve environmental variables related to the
++# FreeBSD pkg_* utilities.
++#Defaults	env_keep += "PKG_PATH PKG_DBDIR PKG_TMPDIR TMPDIR PACKAGEROOT PACKAGESITE PKGDIR"
++
++# Uncomment if needed to preserve environmental variables related to
++# portupgrade. (portupgrade uses some of the same variables as the pkg_*
++# tools so their Defaults above should be uncommented if needed too.)
++#Defaults	env_keep += "PORTSDIR PORTS_INDEX PORTS_DBDIR PACKAGES PKGTOOLS_CONF"
+ 
+ # Runas alias specification
+ 
