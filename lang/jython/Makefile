@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	jython
-PORTVERSION=	2.1
-PORTREVISION=	3
+PORTVERSION=	2.2
 CATEGORIES=	lang python java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.class
+DISTNAME=	jython_installer-${PORTVERSION}
+EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	An implementation of Python Interpreter in Pure Java
 
 USE_JAVA=	yes
@@ -23,8 +22,7 @@ JAVA_VERSION=	1.3+
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
 
-INST_PACKAGES?=	demo lib source
-INST_TARGET?=	${DISTNAME:S/-//g}
+INST_TARGET?=	lib/jython${PORTVERSION:S/.//g}
 JYTHON_PREFIX=	${PREFIX}/${INST_TARGET}
 PLIST_SUB+=	JYTHON_DIR=${INST_TARGET}
 
@@ -36,8 +34,9 @@ do-install:
 	@# not root).  Furthermore, don't leave a cachedir around from either a
 	@# port install or a package install, but do cache the *.py files in Lib
 	@# during a port install or a package install.
-	cd ${DISTDIR} && ${JAVA} ${CACHEDIR_SPEC} -classpath . ${DISTNAME} \
-	    -o ${JYTHON_PREFIX} ${INST_PACKAGES}
+	cd ${DISTDIR} && ${JAVA} ${CACHEDIR_SPEC} \
+		-jar ${DISTNAME}${EXTRACT_SUFX} \
+		--silent -d ${JYTHON_PREFIX} -t standard
 	${REINPLACE_CMD} \
 		's/-cl/"-Dpython.cachedir=$${HOME}\/.jython-cachedir" -cl/g' \
 		${JYTHON_PREFIX}/jython
