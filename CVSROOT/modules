@@ -10996,6 +10996,7 @@ p5-Test-HasVersion	ports/devel/p5-Test-HasVersion
 p5-Test-Inline	ports/devel/p5-Test-Inline
 p5-Test-JSON	ports/devel/p5-Test-JSON
 p5-Test-LectroTest	ports/devel/p5-Test-LectroTest
+p5-Test-Log4perl	ports/devel/p5-Test-Log4perl
 p5-Test-LongString	ports/devel/p5-Test-LongString
 p5-Test-Manifest	ports/devel/p5-Test-Manifest
 p5-Test-MockModule	ports/devel/p5-Test-MockModule
