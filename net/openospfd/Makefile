@@ -5,26 +5,24 @@
 # $FreeBSD$
 #
 
-PORTNAME=	openospfd-devel
-PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	2
+PORTNAME=	openospfd
+PORTVERSION=	4.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenOSPFD/:openbsd \
+MASTER_SITES=	ftp://ftp.dkuug.dk/pub/OpenBSD/OpenBGPD/:openbsd \
 		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
 MASTER_SITE_SUBDIR=	flz/openospfd/:freebsd
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:freebsd \
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:openbsd \
 		if_media.h:freebsd hash.h:freebsd
-DIST_SUBDIR=	openospfd
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Free implementation of the Open Shortest Path First Protocol
 
 LIB_DEPENDS=	event-1.3b:${PORTSDIR}/devel/libevent
 
 CONFLICTS=	zebra-0* quagga-0*
 
-SNAPSHOT=	20060516
 WRKSRC=		${WRKDIR}
 MANCOMPRESSED=	yes
 USE_RC_SUBR=	openospfd.sh
@@ -43,12 +41,6 @@ MAN8=		ospfctl.8	\
 SUBDIRS=	ospfd \
 		ospfctl
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500037
-IGNORE=		requires macros present in <sys/tree.h>
-.endif
-
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/if_media.h ${WRKSRC}/ospfctl/
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/hash.h ${WRKSRC}/ospfd/
@@ -58,6 +50,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|<net/if_media.h>|\"if_media.h\"|" ${WRKSRC}/ospfctl/ospfctl.c
 	@${REINPLACE_CMD} -e "s|rtm_fmask|rtm_use|" ${WRKSRC}/ospfd/kroute.c
 	@${REINPLACE_CMD} -e "/rc.conf.local/d" ${WRKSRC}/ospfd/ospfd.conf.5
+	@${REINPLACE_CMD} -e "s|SIMPLEQ|STAILQ|" ${WRKSRC}/ospfd/*.[chy]
 	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|g" \
 		${WRKSRC}/ospfd/ospfd.h \
 		${WRKSRC}/ospfd/ospfd.8 \
@@ -80,4 +73,4 @@ do-install:
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
