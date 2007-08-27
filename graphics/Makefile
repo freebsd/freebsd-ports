@@ -620,6 +620,7 @@
     SUBDIR += recoverjpeg
     SUBDIR += renderpark
     SUBDIR += rgbpaint
+    SUBDIR += ristretto
     SUBDIR += robot
     SUBDIR += ruby-cairo
     SUBDIR += ruby-edje
