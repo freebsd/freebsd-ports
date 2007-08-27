@@ -7,10 +7,9 @@
 
 PORTNAME=	smlnj
 PORTVERSION=	110.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/release/110.0.7/ \
-		http://smlnj.cs.uchicago.edu/dist/release/110.0.7/ \
+MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/release/110.0.7/ \
 		ftp://flint.cs.yale.edu/pub/smlnj/release/110.0.7/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,11 +30,13 @@ DIST_SUBDIR=	sml-nj/${PORTVERSION}
 NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
 
-CONFLICTS=	smlnj-110.[1-9][0-9]*
-
 ONLY_FOR_ARCHS=	i386
 
-SML_BASE=	${PREFIX}/lib/sml-nj
+PKGINSTALL=	${WRKDIR}/.pkg-install
+PKGDEINSTALL=	${PKGINSTALL}
+
+SML_BASERELATIVE=	lib/sml-nj
+SML_BASE=	${PREFIX}/${SML_BASERELATIVE}
 SML_LIBDIR=	${SML_BASE}/lib
 SML_BINDIR=	${SML_BASE}/bin
 SML_SRCDIR=	${SML_BASE}/src
@@ -88,8 +89,18 @@ do-install:
 	done
 	@${CHOWN} -R ${BINOWN}:${BINGRP} ${SML_BINDIR}
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${SML_SRCDIR}
-.for file in ${SML_EXES}
-	-${LN} -s ${SML_BINDIR}/${file} ${PREFIX}/bin/${file}
-.endfor
+
+post-install:
+	${SED} -e 's?%%EXENAMES%%?${SML_EXES}?g' \
+	-e 's?%%EXEBINDIR%%?${SML_BASERELATIVE}/bin?g' \
+	${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+	PKG_PREFIX=${PREFIX} MULTIEXEC_WRAPPER_VERBOSE=yes \
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+.ifndef MULTIEXEC_WRAPPER_VERBOSE
+deinstall:
+	export MULTIEXEC_WRAPPER_VERBOSE=yes && \
+	cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} deinstall
+.endif
 
 .include <bsd.port.mk>

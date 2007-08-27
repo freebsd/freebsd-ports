@@ -1,8 +1,3 @@
-bin/ml-burg
-bin/ml-lex
-bin/ml-yacc
-bin/sml
-bin/sml-cm
 lib/sml-nj/bin/.arch-n-opsys
 lib/sml-nj/bin/.heap/ml-burg.x86-bsd
 lib/sml-nj/bin/.heap/ml-lex.x86-bsd
