@@ -9475,6 +9475,7 @@ p5-Devel-Cycle	ports/devel/p5-Devel-Cycle
 p5-Devel-DProf	ports/devel/p5-Devel-DProf
 p5-Devel-DProfPP	ports/devel/p5-Devel-DProfPP
 p5-Devel-Diagram	ports/devel/p5-Devel-Diagram
+p5-Devel-EvalContext	ports/devel/p5-Devel-EvalContext
 p5-Devel-Leak	ports/devel/p5-Devel-Leak
 p5-Devel-LeakTrace	ports/devel/p5-Devel-LeakTrace
 p5-Devel-LexAlias	ports/devel/p5-Devel-LexAlias
