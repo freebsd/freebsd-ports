@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	20070822
+PORTVERSION=	20070826
 CATEGORIES=	irc
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://mirror.irssi.org/snapshots/ \
+		http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -28,7 +29,7 @@ OPTIONS=	PERL "Enable Perl support" on \
 		IPV6 "Enable IPv6" on \
 		BOT "Enable bot" off
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.12-svn
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.12-rc1
 
 # USE_OPENSSL must be defined before bsd.port.pre.mk so use old schema
 # for WITH_SSL option
