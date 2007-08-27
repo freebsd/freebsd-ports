@@ -1509,6 +1509,7 @@ cons-test	ports/devel/cons-test
 conserver	ports/comms/conserver
 conserver-com	ports/comms/conserver-com
 consolehm	ports/sysutils/consolehm
+consolekit	ports/sysutils/consolekit
 construo	ports/games/construo
 contact-lookup-applet	ports/mail/contact-lookup-applet
 contacts	ports/deskutils/contacts
