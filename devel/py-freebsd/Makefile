@@ -7,7 +7,7 @@
 
 PORTNAME=	freebsd
 PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~perky/distfiles/
@@ -27,4 +27,10 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/freebsd.so \
 		%%PYTHON_SITELIBDIR%%/freebsd_compat02.pyc \
 		%%PYTHON_SITELIBDIR%%/freebsd_compat02.pyo
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+EXTRA_PATCHES+=	${FILESDIR}/freebsd7_patch-src-netstat.c
+.endif
+
+.include <bsd.port.post.mk>
