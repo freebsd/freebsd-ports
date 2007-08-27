@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.6.9.3
-PORTREVISION=	2
+PORTVERSION=	1.6.9.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://probsd.org/sudoftp/ \
@@ -19,7 +18,7 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://pluto.cdpa.nsysu.edu.tw/sudo/ \
 		ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/ \
 		ftp://ftp.stikman.com/pub/sudo/
-DISTNAME=	${PORTNAME}-1.6.9p3
+DISTNAME=	${PORTNAME}-1.6.9p4
 
 MAINTAINER=	tmclaugh@FreeBSD.org
 COMMENT=	Allow others to run commands as root
@@ -34,8 +33,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-env-editor \
 		--with-logincap \
 		--with-long-otp-prompt \
-		--with-pam \
-		--with-noexec=${PREFIX}/libexec/sudo_noexec.so
+		--with-pam
 
 OPTIONS=	LDAP	"With LDAP support" off \
 		INSULTS "With all insults" off \
