@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.16.1
-PORTREVISION=	1
+PORTVERSION=	7.16.3
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -124,7 +123,6 @@ CONFIGURE_ARGS+=	--without-libidn
 .endif
 
 .if defined(WITH_LIBSSH2)
-BROKEN=		does not work with libssh2-0.15
 LIB_DEPENDS+=	ssh2.1:${PORTSDIR}/security/libssh2
 CONFIGURE_ARGS+=	--with-libssh2=${LOCALBASE}
 .else
@@ -148,7 +146,8 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -r ${WRKSRC}/docs/* ${DOCSDIR}/
+	(cd ${WRKSRC}/docs && exec ${COPYTREE_SHARE} \* ${DOCSDIR} \
+		"! -name Makefile ! -name Makefile.am ! -name Makefile.in ! -name curl.1 ! -name curl-config.1 ! -name *.3")
 .endif
 
 # Setting LC_ALL=C is a kludge; maybe curl/libcurl shouldn't actually use

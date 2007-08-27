@@ -1,6 +1,15 @@
---- configure.orig	Thu Jun  8 09:12:53 2006
-+++ configure	Wed Jul 12 16:44:43 2006
-@@ -26690,8 +26690,10 @@
+--- configure.old	Fri Apr 13 18:29:31 2007
++++ configure	Fri Apr 13 18:29:33 2007
+@@ -5497,7 +5497,7 @@
+ { echo "$as_me:$LINENO: checking if arch-OS host is AMD64-linux (to build static libraries with PIC)" >&5
+ echo $ECHO_N "checking if arch-OS host is AMD64-linux (to build static libraries with PIC)... $ECHO_C" >&6; }
+ case $host in
+-  x86_64*linux*)
++  x86_64*linux*|amd64*freebsd*|ia64*freebsd*)
+     { echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6; }
+     with_pic=yes
+@@ -24467,8 +24467,10 @@
          PKGTEST="no"
      PREFIX_OPENSSL=$OPT_SSL
      LIB_OPENSSL="$PREFIX_OPENSSL/lib$libsuff"
