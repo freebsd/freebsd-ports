@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.183
+# Local version: 1.184
 # $FreeBSD$
 
 # Copyright (c) 2005-2007 Douglas Barton, All rights reserved
@@ -217,7 +217,8 @@ safe_exit () {
 		fi
 
 		if [ -z "$TRAP" -a \
-		    -e "${TMPDIR}/f-${PARENT_PID}-package-flag" ]; then
+		    -e "${TMPDIR}/f-${PARENT_PID}-package-flag" -a \
+		    -n "$pkgrep" ]; then
 find ${pkgrep}/ -type f -newer ${TMPDIR}/f-${PARENT_PID}-package-flag -delete
 		fi
 
@@ -850,14 +851,18 @@ delete_all_distfiles () {
 	fi
 }
 
-backup_package () {
-	# bu_pkg_name is used globally
+init_pkgrep () {
+	pkgrep=`make $PM_MAKE_ARGS -f/usr/share/mk/bsd.port.mk -VPKGREPOSITORY`
+	export pkgrep
+	mkdir -p $pkgrep
+}
 
+backup_package () {
 	echo "===>>> Creating a backup package for old version $1"
+	[ -n "$pkgrep" ] || fail "No package repository variable set"
+	cd $pkgrep || fail "Cannot cd into the $pkgrep directory for backup"
 	if pkg_create -b $1; then
-		bu_pkg_name=`echo ${1}.*`
-		mv $bu_pkg_name $pkgrep/ &&
-		    echo "	===>>> Package can be found in $pkgrep"
+		echo "	===>>> Package can be found in $pkgrep"
 	else
 		local PROCEED
 
@@ -1079,7 +1084,10 @@ if [ -n "$EXPUNGE" ]; then
 			exit 1
 		fi
 
-		[ -n "$BACKUP" ] && backup_package $EXPUNGE
+		if [ -n "$BACKUP" ]; then
+			init_pkgrep
+			backup_package $EXPUNGE
+		fi
 
 		find_contents_distfiles $EXPUNGE
 
@@ -1125,7 +1133,10 @@ if [ -n "$CLEAN_STALE" ]; then
 		echo -n "===>>> ${iport} is no longer depended on, delete? [n] "
 		read YESNO
 		case "$YESNO" in
-		[yY])	[ -n "$BACKUP" ] && backup_package $iport
+		[yY])	if [ -n "$BACKUP" ]; then
+				[ -z "$pkgrep" ] && init_pkgrep
+				backup_package $iport
+			fi
 
 			find_contents_distfiles $iport
 
@@ -1196,10 +1207,7 @@ if [ "$$" -eq "$PARENT_PID" ]; then
 	fi
 
 	if [ -z "$NO_BACKUP" ]; then
-		pkgrep=`make $PM_MAKE_ARGS -f/usr/share/mk/bsd.port.mk -VPKGREPOSITORY`
-		export pkgrep
-		mkdir -p $pkgrep
-
+		init_pkgrep
 		if [ -z "$BACKUP" ]; then
 			touch ${TMPDIR}/f-${PARENT_PID}-package-flag
 		fi
