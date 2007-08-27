@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d9867f50-54d0-11dc-b80b-0016179b2dd5">
+    <topic>claws-mail -- POP3 Format String Vulnerability</topic>
+    <affects>
+      <package>
+	<name>claws-mail</name>
+	<name>sylpheed-claws</name>
+	<range><lt>2.10.0_3</lt></range>
+      </package>
+      <package>
+        <name>sylpheed</name>
+	<range><lt>2.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/26550/">
+	  <p>A format string error in the "inc_put_error()" function in
+	    src/inc.c when displaying a POP3 server's error response can
+	    be exploited via specially crafted POP3 server replies containing
+	    format specifiers.</p>
+	  <p>Successful exploitation may allow execution of arbitrary code,
+	    but requires that the user is tricked into connecting to a malicious
+	    POP3 server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/26550/</url>
+      <url>http://secunia.com/secunia_research/2007-70/advisory/</url>
+    </references>
+    <dates>
+      <discovery>2007-08-24</discovery>
+      <entry>2007-08-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="af8e3a0c-5009-11dc-8a43-003048705d5a">
     <topic>rsync -- off by one stack overflow</topic>
     <affects>
