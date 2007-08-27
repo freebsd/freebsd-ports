@@ -114,6 +114,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Indiana/Knox.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Indiana/Marengo.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Indiana/Petersburg.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Indiana/Tell_City.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Indiana/Vevay.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Indiana/Vincennes.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Indiana/Winamac.pm
