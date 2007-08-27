@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	2.6
+PORTVERSION=	2.6.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	henrik@brixandersen.dk
 COMMENT=	A wiki compiler
 
-BUILD_DEPENDS=	markdown:${PORTSDIR}/textproc/markdown \
+BUILD_DEPENDS=	${SITE_PERL}/Text/Markdown.pm:${PORTSDIR}/textproc/p5-Text-Markdown \
 		${SITE_PERL}/HTML/Scrubber.pm:${PORTSDIR}/www/p5-HTML-Scrubber \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
