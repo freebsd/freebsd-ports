@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Email/MIME/CreateHTML.pm
+%%SITE_PERL%%/Email/MIME/CreateHTML/Resolver.pm
+%%SITE_PERL%%/Email/MIME/CreateHTML/Resolver/Cached.pm
+%%SITE_PERL%%/Email/MIME/CreateHTML/Resolver/Filesystem.pm
+%%SITE_PERL%%/Email/MIME/CreateHTML/Resolver/LWP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/CreateHTML/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/CreateHTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
+@dirrmtry %%SITE_PERL%%/Email/MIME/CreateHTML/Resolver
+@dirrmtry %%SITE_PERL%%/Email/MIME/CreateHTML
+@dirrmtry %%SITE_PERL%%/Email/MIME
+@dirrmtry %%SITE_PERL%%/Email
