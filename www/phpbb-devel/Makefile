@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	3.0r4
+PORTVERSION=	3.0r5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpbb
 PKGNAMESUFFIX=	-devel
-DISTNAME=	phpBB-3.0.RC4
+DISTNAME=	phpBB-3.0.RC5
 
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	A PHP-based bulletin board / discussion forum system
