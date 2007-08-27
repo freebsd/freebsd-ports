@@ -9356,6 +9356,7 @@ p5-DNS-ZoneParse	ports/dns/p5-DNS-ZoneParse
 p5-DWH_File	ports/databases/p5-DWH_File
 p5-Danga-Socket	ports/devel/p5-Danga-Socket
 p5-Data-ACL	ports/devel/p5-Data-ACL
+p5-Data-Alias	ports/devel/p5-Data-Alias
 p5-Data-Bind	ports/devel/p5-Data-Bind
 p5-Data-Buffer	ports/misc/p5-Data-Buffer
 p5-Data-Compare	ports/devel/p5-Data-Compare
