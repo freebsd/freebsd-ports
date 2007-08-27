@@ -8,9 +8,9 @@
 
 PORTNAME=	Perl-Critic
 PORTVERSION=	1.07
+PORTREVISION=	1
 CATEGORIES=	textproc devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Perl
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 #DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
@@ -23,7 +23,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-Lis
 		${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable \
 		${SITE_PERL}/PPI.pm:${PORTSDIR}/textproc/p5-PPI \
 		${SITE_PERL}/Perl/Tidy.pm:${PORTSDIR}/devel/perltidy \
-		${SITE_PERL}/String/Format.pm:${PORTSDIR}/textproc/p5-String-Format
+		${SITE_PERL}/String/Format.pm:${PORTSDIR}/textproc/p5-String-Format \
+		${SITE_PERL}/${PERL_ARCH}/Readonly.pm:${PORTSDIR}/devel/p5-Readonly
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
