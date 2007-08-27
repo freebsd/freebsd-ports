@@ -1,9 +1,9 @@
---- ./Makefile.orig	Mon Feb 20 22:30:52 2006
-+++ ./Makefile	Tue Jan  2 18:06:34 2007
+--- Makefile.orig	Mon Aug 27 15:18:11 2007
++++ Makefile	Mon Aug 27 15:18:14 2007
 @@ -2,7 +2,7 @@
  BUILD	= jethro kraut cockney jive nyc ken ky00te newspeak nethackify
  OTHER	= eleet b1ff chef jibberish upside-down rasterman studly fudd \
- 	  censor spammer uniencode pirate kenny
+ 	  censor spammer uniencode pirate kenny scottish
 -CFLAGS	= -O2 -lfl
 +LDFLAGS+=	-lfl
  INSTALL_PROGRAM = install
