@@ -3,10 +3,12 @@ bin/gdir_server
 bin/gpaop
 bin/gpcat
 bin/gpcut
+bin/gpedit
 bin/gplist
 bin/gpmath
 bin/gpmaxmin
 bin/gpprint
+bin/gpvect
 bin/gpview
 bin/grads2nc_with_gphys
 %%RUBY_SITELIBDIR%%/numru/dclext_datetime_ax.rb
