@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gatling
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	www benchmarks ftp ipv6
 MASTER_SITES=	http://dl.fefe.de/
 
@@ -27,15 +26,12 @@ MAKEFILE=	GNUmakefile
 MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 bin=		dl
-examples=	run-gatling cgi
-examplesdir=	${EXAMPLESDIR:S,^${PREFIX}/,,}
 sbin=		gatling
 MAN8=		gatling.8
-.if !defined(NOPORTDOCS)
 PORTDOCS=	CHANGES README README.cgi README.ftp README.htaccess \
 		README.http README.performance README.prefetch README.proxy \
 		README.redirect
-.endif
+PORTEXAMPLES=	run-gatling cgi acc hcat referrer
 
 OPTIONS=	GATLING_BENCHMARKS "Install some benchmark programs" on \
 		GATLING_ICONV "Use charset conversion" off \
@@ -45,7 +41,7 @@ OPTIONS=	GATLING_BENCHMARKS "Install some benchmark programs" on \
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_BENCHMARKS) && !defined(WITHOUT_GATLING_BENCHMARKS)
+.if defined(WITH_GATLING_BENCHMARKS) || defined(WITH_BENCHMARKS)
 PORTDOCS+=	README.bindbench README.forkbench README.httpbench \
 		README.manymapbench README.mmapbench
 bin+=		bindbench forkbench forksbench httpbench ioerr manymapbench \
@@ -54,22 +50,22 @@ examples+=	prep run-bench
 MAKE_ENV+=	BENCHMARKS=1
 .endif
 
-.if !defined(WITHOUT_GATLING_OPTIMIZED_CFLAGS)
+.if defined(WITH_GATLING_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O2 -fomit-frame-pointer
 .endif
 
 .if defined(WITH_GATLING_ICONV)
 USE_ICONV=	yes
-CFLAGS+=	-I${PREFIX}/include
+CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	ICONV=1
 .endif
 
 .if defined(WITH_GATLING_TLS)
 .if defined(WITH_GATLING_ZLIB)
 # For reasons unknown, gatling with both HTTPS and zlib support only compiles
-# with gcc 3.1 and above. Depend on gcc 3.2+ because 3.1 is already marked
-# deprecated in the ports collection.
-USE_GCC=	3.2+
+# with gcc 3.1 and above. Depend on gcc 3.4+ since this is the default
+# compiler on supported FreeBSD systems anyway.
+USE_GCC=	3.4+
 .endif
 MAKE_ENV+=	TLSGATLING=1
 sbin+=		tlsgatling
@@ -80,9 +76,7 @@ portdocs+=	README.tls
 MAKE_ENV+=	ZLIB=1
 .endif
 
-PLIST_DIRS=	${examplesdir}
-PLIST_FILES=	${bin:S,^,bin/,} ${examples:S,^,${examplesdir}/,} \
-		${sbin:S,^,sbin/,}
+PLIST_FILES=	${bin:S,^,bin/,} ${sbin:S,^,sbin/,}
 
 pre-install:
 	@cd ${WRKSRC} && ${CP} gatling.1 gatling.8
@@ -90,8 +84,10 @@ pre-install:
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${bin} ${PREFIX}/bin
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${sbin} ${PREFIX}/sbin
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${examples} ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${PORTEXAMPLES} ${EXAMPLESDIR}
+.endif
 	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
