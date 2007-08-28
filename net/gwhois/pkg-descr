@@ -1,0 +1,12 @@
+gwhois is a generic whois client. It strives to know for all existing
+tlds and all ip address range the appropiate whois server to ask. You
+can simple call gwhois with a query for some domain or some ip and it
+will ask the right server for you! It can even query webforms which
+are unfortunately the only query type supported by many bad nics.
+
+gwhois can also be used as a whois server. You can call it from the
+inetd and make it accessable via a normal standard whois client. This
+allows for example using a windows client and still make use of the
+enhanced features of gwhois.
+
+WWW: http://freshmeat.net/projects/gwhois/
