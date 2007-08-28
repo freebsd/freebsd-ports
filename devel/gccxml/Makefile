@@ -31,6 +31,7 @@ do-configure:
 	${REINPLACE_CMD} -e "s,x86_64,amd64," \
 		${WRKSRC}/../gccxml-0.6.0/GCC/gcc/config.gcc
 	cd ${WRKSRC} && \
+	${SETENV} ${CONFIGURE_ENV} \
 	${LOCALBASE}/bin/cmake ../${DISTNAME} -DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
 	  -DGCCXML_MAN_DIR:PATH="/man"
 
@@ -39,7 +40,16 @@ do-configure:
 .if ${ARCH} == "alpha"
 BROKEN=		Build fails on alpha
 .elif ${OSVERSION} >= 700000
-BROKEN=		Does not compile
+# GCC-XML has some constructs that GCC 4.2 does not like. Namely,
+# the use of casted-pointer-dereferences as an lvalue to post-increment
+# operations.
+USE_GCC= 3.4
+CONFIGURE_ENV+=	CC=${LOCALBASE}/bin/gcc34 \
+		CPP="${CC} -E" \
+		CXX=${LOCALBASE}/bin/g++34
+MAKE_ENV+=	CC=${LOCALBASE}/bin/gcc34 \
+		CPP="${CC} -E" \
+		CXX=${LOCALBASE}/bin/g++34
 .endif
 
 .include <bsd.port.post.mk>
