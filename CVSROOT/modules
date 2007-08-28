@@ -15216,6 +15216,7 @@ synce-trayicon	ports/palm/synce-trayicon
 syncterm	ports/comms/syncterm
 syndigator	ports/www/syndigator
 synergy		ports/sysutils/synergy
+synfig		ports/devel/synfig
 synonym		ports/mail/synonym
 sysbench	ports/benchmarks/sysbench
 sysconftool	ports/devel/sysconftool
