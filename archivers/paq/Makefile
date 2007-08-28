@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	paq
-PORTVERSION=	8.n
+PORTVERSION=	8.o2
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cs.fit.edu/~mmahoney/compression/
-DISTNAME=	paq8n
+DISTNAME=	paq8o2
 
 MAINTAINER=	bf2006a@yahoo.com
 COMMENT=	An archiver with an extremely high compression ratio
@@ -17,7 +17,8 @@ COMMENT=	An archiver with an extremely high compression ratio
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 SUB_FILES=	pkg-message
-PLIST_SUB=	DISTNAME=${DISTNAME}
+CPPFILE=	paq8o
+PLIST_SUB=	CPPFILE=${CPPFILE}
 
 .include <bsd.port.pre.mk>
 
@@ -26,7 +27,11 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 CXXFLAGS+=	-DUNIX -O3
 ASM1?=	nasm -f elf -o
 ASM2?=
+.if !defined(WITH_SSE)
 ASMFILE=	paq7asm
+.else
+ASMFILE=	paq7asmsse
+.endif
 STRIP=
 .elif !defined(WITHOUT_ASM) && ${ARCH} == "amd64" && !defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
@@ -37,7 +42,7 @@ ASMFILE=	paq7asm-x86_64
 STRIP=
 .else
 WITHOUT_ASM=	yes
-CXXFLAGS+=	-DUNIX -DNOASM -O3
+CXXFLAGS+=-DUNIX -DNOASM -O3
 .endif
 
 pre-everything::
@@ -48,25 +53,29 @@ pre-everything::
 	@${ECHO_MSG} "enabled by default on x86 and amd64 architectures, hit Ctrl-C"
 	@${ECHO_MSG} "now and use \"make WITHOUT_ASM=yes\"."
 	@${ECHO_MSG}
+	@${ECHO_MSG} "If you wish to use the version of the assembly code that is"
+	@${ECHO_MSG} "optimized for x86 (not amd64) processors with SSE instruction"
+	@${ECHO_MSG} "support, hit Ctrl-C now and use \"make WITH_SSE=yes\"."
+	@${ECHO_MSG}
 
 do-build:
 .if !defined(WITHOUT_ASM)
 	${ASM1} ${WRKSRC}/${ASMFILE}.o ${ASM2} ${WRKSRC}/${ASMFILE}.asm
-	${CXX} ${WRKSRC}/${DISTNAME}.cpp ${CXXFLAGS} -o ${WRKSRC}/${DISTNAME} ${WRKSRC}/${ASMFILE}.o
+	${CXX} ${WRKSRC}/${CPPFILE}.cpp ${CXXFLAGS} -o ${WRKSRC}/${CPPFILE} ${WRKSRC}/${ASMFILE}.o
 .else
-	${CXX} ${WRKSRC}/${DISTNAME}.cpp ${CXXFLAGS} -o ${WRKSRC}/${DISTNAME}
+	${CXX} ${WRKSRC}/${CPPFILE}.cpp ${CXXFLAGS} -o ${WRKSRC}/${CPPFILE}
 .endif
 
 do-install:
 .if !exists(${PREFIX}/bin)
 	${MKDIR} ${PREFIX}/bin
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${CPPFILE} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 .if !exists(${DOCSDIR})
 	${MKDIR} ${DOCSDIR}
 .endif
-	${INSTALL_MAN} ${WRKSRC}/${DISTNAME}.cpp ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${CPPFILE}.cpp ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/readme.txt ${DOCSDIR}
 .endif
 	${CAT} ${PKGMESSAGE}
