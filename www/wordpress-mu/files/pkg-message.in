@@ -1,6 +1,6 @@
 
                   **** NOTE ****
         Before the first use of WordPress MU, copy wp-config-sample.php to wp-config.php
-        in ${PREFIX}/${WORDPRESSMU}
+        in %%WWWDIR%% .
         And Modify it to fit your MySQL.
         Maybe you need 'mysqladmin create wordpressmu' first
