@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openct
-DISTVERSION=	0.6.12
+DISTVERSION=	0.6.13
 CATEGORIES=	security
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
