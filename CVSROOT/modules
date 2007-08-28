@@ -15217,6 +15217,7 @@ syncterm	ports/comms/syncterm
 syndigator	ports/www/syndigator
 synergy		ports/sysutils/synergy
 synfig		ports/devel/synfig
+synfigstudio	ports/graphics/synfigstudio
 synonym		ports/mail/synonym
 sysbench	ports/benchmarks/sysbench
 sysconftool	ports/devel/sysconftool
