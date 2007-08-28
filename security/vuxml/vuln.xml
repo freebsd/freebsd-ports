@@ -44,7 +44,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
         <name>sylpheed2</name>
-	<range><lt>2.4.4</lt></range>
+	<range><lt>2.4.4_1</lt></range>
       </package>
     </affects>
     <description>
@@ -68,6 +68,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-08-24</discovery>
       <entry>2007-08-27</entry>
+      <modified>2007-08-28</modified>    
     </dates>
   </vuln>
 
