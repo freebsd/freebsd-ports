@@ -1,0 +1,10 @@
+--- metadata/widget.xml.in.orig	2007-08-13 08:12:47.000000000 -0400
++++ metadata/widget.xml.in	2007-08-24 17:56:48.000000000 -0400
+@@ -6,6 +6,7 @@
+ 		<deps>
+ 			<relation type="before">
+ 				<plugin>fade</plugin>
++				<plugin>animation</plugin>
+ 			</relation>
+ 		</deps>
+ 		<display>
