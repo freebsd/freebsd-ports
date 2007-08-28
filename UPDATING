@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070828:
+  AFFECTS: users of databases/mysql51-client
+  AUTHOR:  ale@FreeBSD.org
+
+  Since libmysqlclient version number is increased, all ports depending
+  on it must be recompiled. Run something like:
+
+   # portmaster -r mysql-client
+
 20070821:
   AFFECTS: users of net-im/pidgin
   AUTHOR:  marcus@FreeBSD.org
