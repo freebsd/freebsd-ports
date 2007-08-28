@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libowfat
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://dl.fefe.de/
 
@@ -24,7 +24,7 @@ OPTIONS=	LIBOWFAT_OPTIMIZED_CFLAGS "Use optimized CFLAGS" on
 
 MAKE_ENV+=	INSTALL="${INSTALL}" CC="${CC}"
 
-.if !defined(WITHOUT_LIBOWFAT_OPTIMIZED_CFLAGS)
+.if defined(WITH_LIBOWFAT_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O2 -fomit-frame-pointer
 .endif
 
