@@ -101,6 +101,7 @@ prelude:*:281:281:Prelude user:/nonexistent:/sbin/nologin
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/sbin/nologin
 dkfilter:*:325:325:DK Filter Owner:/nonexistent:/sbin/nologin
 wildfire:*:340:340::0:0:Wildfire Daemon:/nonexistent:/sbin/nologin
+stunnel:*:341:341::0:0:Stunnel Daemon:/nonexistent:/sbin/nologin
 ldap:*:389:389:OpenLDAP Server:/nonexistent:/sbin/nologin
 tiarra:*:398:398:Tiarra IRC Proxy:/nonexistent:/usr/sbin/nologin
 drweb:*:426:426:Dr.Web Mail Scanner:/nonexistent:/sbin/nologin
