@@ -2195,6 +2195,7 @@
     SUBDIR += swig11
     SUBDIR += swig13
     SUBDIR += swigruby
+    SUBDIR += synfig
     SUBDIR += sysconftool
     SUBDIR += t1lib
     SUBDIR += tailor
