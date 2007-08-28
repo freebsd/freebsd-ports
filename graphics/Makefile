@@ -687,6 +687,7 @@
     SUBDIR += swfmill
     SUBDIR += swftools
     SUBDIR += synaesthesia
+    SUBDIR += synfigstudio
     SUBDIR += tcm
     SUBDIR += telak
     SUBDIR += tesseract
