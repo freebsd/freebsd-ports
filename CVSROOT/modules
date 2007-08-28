@@ -4407,6 +4407,7 @@ gwenhywfar	ports/devel/gwenhywfar
 gwenview	ports/graphics/gwenview
 gwenview-i18n	ports/misc/gwenview-i18n
 gwhich		ports/misc/gwhich
+gwhois		ports/net/gwhois
 gwm		ports/x11-wm/gwm
 gworkspace	ports/deskutils/gworkspace
 gworkspace-clipbook	ports/deskutils/gworkspace-clipbook
