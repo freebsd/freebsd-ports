@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	dwm
-PORTVERSION=	4.4
+PORTVERSION=	4.4.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.suckless.org/download/ \
 		http://schot.a-eskwadraat.nl/files/
 
 MAINTAINER=	schot@a-eskwadraat.nl
 COMMENT=	A dynamic, small, fast and simple window manager
+
+RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 
 USE_XLIB=	yes
 
