@@ -21,6 +21,10 @@ INPUTDIR=	${PREFIX}/lib/xorg/modules/input
 
 NO_BUILD=	yes
 
+.if !defined(ARCH)
+ARCH!=  /usr/bin/uname -p
+.endif
+
 VIDEO_ON=	ati \
 		i810 \
 		nv \
@@ -36,8 +40,13 @@ VIDEO_OFF=	apm ark				\
 		rendition \
 		s3 s3virge savage siliconmotion	sis \
 		tdfx tga trident tseng \
-		vmware voodoo \
-		sunffb
+		vmware voodoo
+
+.if ${ARCH} == "sparc64"
+VIDEO_ON+=	sunffb
+.else
+VIDEO_OFF+=	sunffb
+.endif
 
 INPUT_ON=	mouse \
 		keyboard
