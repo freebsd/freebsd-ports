@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.10
 CATEGORIES=	hungarian textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S@$@:code@:S@%SUBDIR%@${PORTNAME}@} \
 		http://magyarispell.sourceforge.net/:data
@@ -35,7 +35,6 @@ do-extract:
 	${MKDIR} ${WRKDIR}; \
  	cd ${WRKDIR} && ${TAR} -xzf  ${_DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX};\
 		${UNZIP_CMD} -qo ${_DISTDIR}/hu_HU.zip -d ${WRKDIR}
-
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
