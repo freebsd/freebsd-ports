@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	Data-Dump-Streamer
-PORTVERSION=	2.03.30
+PORTVERSION=	2.05.36
+DISTVERSION=	${PORTVERSION:C/\.(..)$/-\1/}
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Data
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/-\1/}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Stream a highly accurate breadth first data dump in Perl code
