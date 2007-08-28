@@ -296,6 +296,7 @@
     SUBDIR += error
     SUBDIR += esdl
     SUBDIR += esvn
+    SUBDIR += etl
     SUBDIR += etoile-collectionkit
     SUBDIR += etoile-foundation
     SUBDIR += etoile-unitkit
