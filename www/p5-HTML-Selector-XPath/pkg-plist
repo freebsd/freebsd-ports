@@ -1,0 +1,7 @@
+%%SITE_PERL%%/HTML/Selector/XPath.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Selector/XPath/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Selector/XPath
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Selector
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/Selector
+@dirrmtry %%SITE_PERL%%/HTML

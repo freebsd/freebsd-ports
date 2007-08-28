@@ -718,6 +718,7 @@
     SUBDIR += p5-HTML-ResolveLink
     SUBDIR += p5-HTML-Scrubber
     SUBDIR += p5-HTML-Seamstress
+    SUBDIR += p5-HTML-Selector-XPath
     SUBDIR += p5-HTML-SimpleLinkExtor
     SUBDIR += p5-HTML-SimpleParse
     SUBDIR += p5-HTML-StickyQuery
