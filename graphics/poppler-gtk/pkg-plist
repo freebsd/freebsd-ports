@@ -3,6 +3,7 @@ include/poppler/glib/poppler-attachment.h
 include/poppler/glib/poppler-document.h
 include/poppler/glib/poppler-enums.h
 include/poppler/glib/poppler-features.h
+include/poppler/glib/poppler-form-field.h
 include/poppler/glib/poppler-page.h
 include/poppler/glib/poppler.h
 lib/libpoppler-glib.a
