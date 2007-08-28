@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20070828:
+  AFFECTS: users of www/wordpress-mu
+  AUTHOR:  araujo@FreeBSD.org
+
+  To follow the standards this port has received a small reworking.
+
+  WORDPRESSMU (that defaulted to PREFIX/www/data/wordpress-mu) is depreciated, use WWWDIR (default to PREFIX/www/wordpress-mu).
+
+20070828:
   AFFECTS: users of databases/mysql51-client
   AUTHOR:  ale@FreeBSD.org
 
