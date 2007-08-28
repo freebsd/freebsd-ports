@@ -18,7 +18,7 @@ EXTRACT_ONLY?=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The "meta-port" for The Gimp
 
-RUN_DEPENDS=	gimp-2.3:${PORTSDIR}/graphics/gimp-app-devel
+RUN_DEPENDS=	gimp-2.4:${PORTSDIR}/graphics/gimp-app-devel
 
 OPTIONS=	PYTHON "Python-fu support" Off \
 		PRINT "Gutenprint (gimp-print) plugin" On
