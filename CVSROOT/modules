@@ -2589,6 +2589,7 @@ etherape	ports/net-mgmt/etherape
 etherboot	ports/net/etherboot
 etk		ports/x11-toolkits/etk
 etktab		ports/audio/etktab
+etl		ports/devel/etl
 etlfonts	ports/x11-fonts/etlfonts
 etoile		ports/x11/etoile
 etoile-azalea	ports/x11-wm/etoile-azalea
