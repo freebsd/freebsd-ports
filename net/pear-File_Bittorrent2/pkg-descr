@@ -1,0 +1,7 @@
+This package consists of three classes which handles the encoding
+and decoding of data in Bittorrent format. You can also extract
+useful informations from .torrent files, create .torrent files
+and query the torrent's scrape page to get its statistics.
+PHP5 only.
+
+WWW: http://pear.php.net/package/File_Bittorrent2/
