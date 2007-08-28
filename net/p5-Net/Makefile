@@ -5,18 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-Net
-PORTVERSION=	1.21
+PORTNAME=	Net
+PORTVERSION=	1.22
 PORTEPOCH=	1
 CATEGORIES=	net perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Net
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 DISTNAME=	libnet-${PORTVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Perl5 modules to access and use network protocols
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	< /dev/null
@@ -32,11 +33,4 @@ MAN3=		Net::Cmd.3 \
 		Net::Time.3 \
 		Net::libnetFAQ.3
 
-.include <bsd.port.pre.mk>
-
-# Authen-SASL is not available under perl 5.005_03
-.if ${PERL_LEVEL} >= 500600
-RUN_DEPENDS+=	${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
