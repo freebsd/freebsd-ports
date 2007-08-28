@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	7.0.0p3
+PORTVERSION=	7.0.2
 CATEGORIES=	print
-MASTER_SITES=	http://www.pdflib.com/binaries/PDFlib/${PORTVERSION:S/.//g:S/p3//}/
+MASTER_SITES=	http://www.pdflib.com/binaries/PDFlib/${PORTVERSION:S/.//g}/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
