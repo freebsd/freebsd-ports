@@ -31,11 +31,9 @@
 %%DATADIR%%/hyena.jpg
 %%DATADIR%%/index.mhtml
 %%DATADIR%%/login_form.mas
-%%DATADIR%%/make_url
 %%DATADIR%%/move_column.mhtml
 %%DATADIR%%/move_table.mhtml
 %%DATADIR%%/new_schema.mhtml
-%%DATADIR%%/redirect
 %%DATADIR%%/reverse_engineer.mhtml
 %%DATADIR%%/schema_menubar
 %%DATADIR%%/syshandler
