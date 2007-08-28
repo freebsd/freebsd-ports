@@ -11676,6 +11676,7 @@ pear-Event_Dispatcher	ports/devel/pear-Event_Dispatcher
 pear-FSM	ports/devel/pear-FSM
 pear-File	ports/sysutils/pear-File
 pear-File_Archive	ports/archivers/pear-File_Archive
+pear-File_Bittorrent2	ports/net/pear-File_Bittorrent2
 pear-File_DNS	ports/dns/pear-File_DNS
 pear-File_Find	ports/sysutils/pear-File_Find
 pear-File_Fortune	ports/textproc/pear-File_Fortune
