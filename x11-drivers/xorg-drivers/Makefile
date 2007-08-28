@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-drivers
 PORTVERSION=	7.2
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -15,75 +16,64 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org drivers meta-port
 
-USE_X_PREFIX=	yes
 VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers
 INPUTDIR=	${PREFIX}/lib/xorg/modules/input
 
-RUN_DEPENDS=	${INPUTDIR}/acecad_drv.so:${PORTSDIR}/x11-drivers/xf86-input-acecad \
-		${INPUTDIR}/calcomp_drv.so:${PORTSDIR}/x11-drivers/xf86-input-calcomp \
-		${INPUTDIR}/citron_drv.so:${PORTSDIR}/x11-drivers/xf86-input-citron \
-		${INPUTDIR}/digitaledge_drv.so:${PORTSDIR}/x11-drivers/xf86-input-digitaledge \
-		${INPUTDIR}/dmc_drv.so:${PORTSDIR}/x11-drivers/xf86-input-dmc \
-		${INPUTDIR}/dynapro_drv.so:${PORTSDIR}/x11-drivers/xf86-input-dynapro \
-		${INPUTDIR}/elo2300_drv.so:${PORTSDIR}/x11-drivers/xf86-input-elo2300 \
-		${INPUTDIR}/elographics_drv.so:${PORTSDIR}/x11-drivers/xf86-input-elographics \
-		${INPUTDIR}/fpit_drv.so:${PORTSDIR}/x11-drivers/xf86-input-fpit \
-		${INPUTDIR}/hyperpen_drv.so:${PORTSDIR}/x11-drivers/xf86-input-hyperpen \
-		${INPUTDIR}/js_x_drv.so:${PORTSDIR}/x11-drivers/xf86-input-jamstudio \
-		${INPUTDIR}/joystick_drv.so:${PORTSDIR}/x11-drivers/xf86-input-joystick \
-		${INPUTDIR}/keyboard_drv.so:${PORTSDIR}/x11-drivers/xf86-input-keyboard \
-		${INPUTDIR}/magellan_drv.so:${PORTSDIR}/x11-drivers/xf86-input-magellan \
-		${INPUTDIR}/magictouch_drv.so:${PORTSDIR}/x11-drivers/xf86-input-magictouch \
-		${INPUTDIR}/microtouch_drv.so:${PORTSDIR}/x11-drivers/xf86-input-microtouch \
-		${INPUTDIR}/mouse_drv.so:${PORTSDIR}/x11-drivers/xf86-input-mouse \
-		${INPUTDIR}/mutouch_drv.so:${PORTSDIR}/x11-drivers/xf86-input-mutouch \
-		${INPUTDIR}/palmax_drv.so:${PORTSDIR}/x11-drivers/xf86-input-palmax \
-		${INPUTDIR}/penmount_drv.so:${PORTSDIR}/x11-drivers/xf86-input-penmount \
-		${INPUTDIR}/spaceorb_drv.so:${PORTSDIR}/x11-drivers/xf86-input-spaceorb \
-		${INPUTDIR}/summa_drv.so:${PORTSDIR}/x11-drivers/xf86-input-summa \
-		${INPUTDIR}/tek4957_drv.so:${PORTSDIR}/x11-drivers/xf86-input-tek4957 \
-		${INPUTDIR}/void_drv.so:${PORTSDIR}/x11-drivers/xf86-input-void \
-		${VIDEODIR}/apm_drv.so:${PORTSDIR}/x11-drivers/xf86-video-apm \
-		${VIDEODIR}/ark_drv.so:${PORTSDIR}/x11-drivers/xf86-video-ark \
-		${VIDEODIR}/ati_drv.so:${PORTSDIR}/x11-drivers/xf86-video-ati \
-		${VIDEODIR}/chips_drv.so:${PORTSDIR}/x11-drivers/xf86-video-chips \
-		${VIDEODIR}/cirrus_drv.so:${PORTSDIR}/x11-drivers/xf86-video-cirrus \
-		${VIDEODIR}/cyrix_drv.so:${PORTSDIR}/x11-drivers/xf86-video-cyrix \
-		${VIDEODIR}/dummy_drv.so:${PORTSDIR}/x11-drivers/xf86-video-dummy \
-		${VIDEODIR}/fbdev_drv.so:${PORTSDIR}/x11-drivers/xf86-video-fbdev \
-		${VIDEODIR}/glint_drv.so:${PORTSDIR}/x11-drivers/xf86-video-glint \
-		${VIDEODIR}/i128_drv.so:${PORTSDIR}/x11-drivers/xf86-video-i128 \
-		${VIDEODIR}/i740_drv.so:${PORTSDIR}/x11-drivers/xf86-video-i740 \
-		${VIDEODIR}/i810_drv.so:${PORTSDIR}/x11-drivers/xf86-video-i810 \
-		${VIDEODIR}/imstt_drv.so:${PORTSDIR}/x11-drivers/xf86-video-imstt \
-		${VIDEODIR}/mga_drv.so:${PORTSDIR}/x11-drivers/xf86-video-mga \
-		${VIDEODIR}/neomagic_drv.so:${PORTSDIR}/x11-drivers/xf86-video-neomagic \
-		${VIDEODIR}/newport_drv.so:${PORTSDIR}/x11-drivers/xf86-video-newport \
-		${VIDEODIR}/nsc_drv.so:${PORTSDIR}/x11-drivers/xf86-video-nsc \
-		${VIDEODIR}/nv_drv.so:${PORTSDIR}/x11-drivers/xf86-video-nv \
-		${VIDEODIR}/rendition_drv.so:${PORTSDIR}/x11-drivers/xf86-video-rendition \
-		${VIDEODIR}/s3_drv.so:${PORTSDIR}/x11-drivers/xf86-video-s3 \
-		${VIDEODIR}/s3virge_drv.so:${PORTSDIR}/x11-drivers/xf86-video-s3virge \
-		${VIDEODIR}/savage_drv.so:${PORTSDIR}/x11-drivers/xf86-video-savage \
-		${VIDEODIR}/siliconmotion_drv.so:${PORTSDIR}/x11-drivers/xf86-video-siliconmotion \
-		${VIDEODIR}/sis_drv.so:${PORTSDIR}/x11-drivers/xf86-video-sis \
-		${VIDEODIR}/tdfx_drv.so:${PORTSDIR}/x11-drivers/xf86-video-tdfx \
-		${VIDEODIR}/tga_drv.so:${PORTSDIR}/x11-drivers/xf86-video-tga \
-		${VIDEODIR}/trident_drv.so:${PORTSDIR}/x11-drivers/xf86-video-trident \
-		${VIDEODIR}/tseng_drv.so:${PORTSDIR}/x11-drivers/xf86-video-tseng \
-		${VIDEODIR}/vesa_drv.so:${PORTSDIR}/x11-drivers/xf86-video-vesa \
-		${VIDEODIR}/vga_drv.so:${PORTSDIR}/x11-drivers/xf86-video-vga \
-		${VIDEODIR}/via_drv.so:${PORTSDIR}/x11-drivers/xf86-video-via \
-		${VIDEODIR}/vmware_drv.so:${PORTSDIR}/x11-drivers/xf86-video-vmware \
-		${VIDEODIR}/voodoo_drv.so:${PORTSDIR}/x11-drivers/xf86-video-voodoo \
+NO_BUILD=	yes
+
+VIDEO_ON=	ati \
+		i810 \
+		nv \
+		vesa vga via
+VIDEO_OFF=	apm ark				\
+		chips cirrus cyrix		\
+		dummy \
+		fbdev \
+		glint \
+		i128 i740 imstt	\
+		mga \
+		neomagic newport nsc \
+		rendition \
+		s3 s3virge savage siliconmotion	sis \
+		tdfx tga trident tseng \
+		vmware voodoo \
+		sunffb
+
+INPUT_ON=	mouse \
+		keyboard
+INPUT_OFF=	acecad \
+		calcomp citron \
+		digitaledge dmc	dynapro \
+		elo2300	elographics \
+		fpit \
+		hyperpen \
+		jamstudio joystick \
+		magellan magictouch microtouch mutouch \
+		palmax penmount \
+		spaceorb summa \
+		tek4957 \
+		void
+
+.for default in on off
+. for type in input video
+.  for i in ${${type:U}_${default:U}}
+OPTIONS+=	${i:U} "Install ${i} ${type} driver" ${default}
+.  endfor
+. endfor
+.endfor
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-RUN_DEPENDS+= 	${VIDEODIR}/sunffb_drv.so:${PORTSDIR}/x11-drivers/xf86-video-sunffb
-.endif
-
-NO_BUILD=	yes
+.for default in on off
+. for type in input video
+.  for i in ${${type:U}_${default:U}}
+DEFAULT=${default}
+.   if (${DEFAULT} == "on" && !defined(WITHOUT_${i:U})) || (${DEFAULT} == "off" &&  defined(WITH_${i:U}))
+RUN_DEPENDS+=	${${type:U}DIR}/${i:C/jamstudio/js_x/}_drv.so:${PORTSDIR}/x11-drivers/xf86-${type}-${i}
+.   endif
+.  endfor
+. endfor
+.endfor
 
 do-install:
 		${MKDIR} ${PREFIX}/libdata/xorg
