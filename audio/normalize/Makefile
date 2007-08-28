@@ -7,6 +7,7 @@
 
 PORTNAME=	normalize
 PORTVERSION=	0.7.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.savannah.gnu.org/releases/normalize/
 
@@ -16,16 +17,19 @@ COMMENT=	A tool for adjusting the volume of wave/MP3 files to a standard level
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad
 
 USE_BZIP2=		yes
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=		--disable-helper-search
 CPPFLAGS=		-I${LOCALBASE}/include
 LDFLAGS=		-L${LOCALBASE}/lib
 
 MAN1=		normalize.1 normalize-mp3.1
 
-OPTIONS=	XMMS "Build XMMS plugin" off
+OPTIONS=	XMMS "Build XMMS plugin" off \
+		MP3 "MP3 support" on \
+		OGG "OGG support" off \
+		FLAG "FLAC support" off
 
 .include <bsd.port.pre.mk>
 
@@ -34,8 +38,21 @@ LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 PLIST_SUB+=	XMMS=""
 PLIST_SUB+=	X11BASE="${X11BASE}"
 .else
-CONFIGURE_ARGS=	--disable-xmms
+CONFIGURE_ARGS+=--disable-xmms
 PLIST_SUB+=	XMMS="@comment "
+.endif
+
+.if defined(WITH_MP3)
+RUN_DEPENDS+=	madplay:${PORTSDIR}/audio/madplay \
+		lame:${PORTSDIR}/audio/lame
+.endif
+
+.if defined(WITH_OGG)
+RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
+.endif
+
+.if defined(WITH_FLAC)
+RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 .endif
 
 .if !defined(WITHOUT_NLS)
