@@ -7,7 +7,7 @@
 
 PORTNAME=	compiz-fusion-plugins-extra
 PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
