@@ -15,6 +15,8 @@ but not file attributes.  There are no commands to update an existing
 archive or to extract part of an archive.  Files and archives larger than
 2GB are not supported (but might work on 64-bit machines, not tested).
 File names with nonprintable characters are not supported (spaces
-are OK).
+are OK). Note that different versions of paq are usually incompatible, so
+steps must be taken to ensure that the contents of archives made with older 
+versions of paq will still be accessible after updating paq.
 
 WWW: http://www.cs.fit.edu/~mmahoney/compression/

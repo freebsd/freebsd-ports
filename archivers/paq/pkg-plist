@@ -1,4 +1,4 @@
-bin/%%DISTNAME%%
-%%PORTDOCS%%%%DOCSDIR%%/%%DISTNAME%%.cpp
+bin/%%CPPFILE%%
+%%PORTDOCS%%%%DOCSDIR%%/%%CPPFILE%%.cpp
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
