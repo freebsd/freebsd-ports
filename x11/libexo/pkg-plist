@@ -42,15 +42,15 @@ lib/libexo-hal-0.3.a
 lib/libexo-hal-0.3.la
 lib/libexo-hal-0.3.so
 lib/libexo-hal-0.3.so.4
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/site-packages/exo-0.3/_exo.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/site-packages/exo-0.3/_exo.la
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/site-packages/exo-0.3/_exo.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/site-packages/exo-0.3/exo/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/site-packages/exo-0.3/exo/__init__.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/site-packages/exo-0.3/exo/__init__.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/site-packages/pyexo.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/site-packages/pyexo.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/site-packages/pyexo.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/exo-0.3/_exo.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/exo-0.3/_exo.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/exo-0.3/_exo.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/exo-0.3/exo/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/exo-0.3/exo/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/exo-0.3/exo/__init__.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.pyo
 %%MCS_MANAGER%%lib/xfce4/mcs-plugins/exo-preferred-applications-settings.a
 %%MCS_MANAGER%%lib/xfce4/mcs-plugins/exo-preferred-applications-settings.la
 %%MCS_MANAGER%%lib/xfce4/mcs-plugins/exo-preferred-applications-settings.so
@@ -194,8 +194,8 @@ share/xfce4/helpers/xterm.desktop
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/site-packages/exo-0.3/exo
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/site-packages/exo-0.3
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/exo-0.3/exo
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/exo-0.3
 %%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
 %%PYTHON%%@dirrm share/pygtk/2.0/defs/exo-0.3
 %%PYTHON%%@dirrmtry share/pygtk/2.0/defs
