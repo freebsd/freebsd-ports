@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress-mu
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.twaren.net/local-distfiles/wpmu/ \
@@ -21,35 +21,21 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PHP=	mysql pcre xml
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
-WORDPRESSMU?=	www/data/wordpress-mu
-PLIST_SUB+=	WORDPRESSMU=${WORDPRESSMU}
-PLIST=		${WRKDIR}/pkg-plist
-
-PORTDOCS=	license.txt README.txt
+SUB_FILES=	pkg-message
 
 pre-everything::
-	@${ECHO_CMD} "If you want to upgrade, you must read upgrade document."
-	@${ECHO_CMD} ""
-	@sleep 1
-
-pre-install:
-	cd ${WRKSRC} && ${FIND} -s * -type f | \
-		${SED} -e 's|^|${WORDPRESSMU}/|' > ${PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${WORDPRESSMU}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${WORDPRESSMU} >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
+.ifdef WORDPRESSMU
+	@${ECHO_CMD} "WORDPRESSMU is depreciated, use WWWDIR instead!"
+	@${ECHO_CMD} "${PKGNAME} installs in WWWDIR=${WWWDIR}"
+.endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/${WORDPRESSMU}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${WORDPRESSMU}
-	@${CHMOD} 755 ${PREFIX}/${WORDPRESSMU}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${WORDPRESSMU}
+	@${MKDIR} ${WWWDIR}
+	@${CHMOD} 755 ${WWWDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR})
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	@${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 .endif
 
 post-install:
