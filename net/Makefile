@@ -179,6 +179,7 @@
     SUBDIR += gstreamer-plugins-libmms
     SUBDIR += gtic
     SUBDIR += gutenfetch
+    SUBDIR += gwhois
     SUBDIR += haproxy
     SUBDIR += haproxy-devel
     SUBDIR += hawknl
