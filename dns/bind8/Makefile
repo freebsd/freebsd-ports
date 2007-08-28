@@ -26,6 +26,8 @@ COMMENT=	The Berkeley Internet Name Domain, an implementation of DNS
 
 CONFLICTS=	bind84-8.* bind9* host-* zh-bind-8.*
 
+FORBIDDEN=	EOL - http://www.isc.org/sw/bind/bind8-eol.php
+
 OPTIONS=	REPLACE_BASE "Replace base BIND with this version" off \
 		REPLACE_BASE_INCLUDES "Replace includes as well as binaries" off
 
