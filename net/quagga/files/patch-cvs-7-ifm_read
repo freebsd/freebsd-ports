@@ -1,0 +1,18 @@
+--- zebra/kernel_socket.c.orig	17 Aug 2007 14:16:30 -0000	1.46
++++ zebra/kernel_socket.c	21 Aug 2007 14:30:40 -0000
+@@ -472,6 +472,15 @@
+             if_delete_update (ifp);
+           }
+ #endif /* RTM_IFANNOUNCE */
++      if (if_is_up (ifp))
++      {
++#if defined(__bsdi__)
++        if_kvm_get_mtu (ifp);
++#else
++        if_get_mtu (ifp);
++#endif /* __bsdi__ */
++        if_get_metric (ifp);
++      }
+     }
+ 
+ #ifdef HAVE_NET_RT_IFLIST
