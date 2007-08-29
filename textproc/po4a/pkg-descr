@@ -1,16 +1,16 @@
-tools for helping translation of documentation
-
 The po4a (po for anything) project goal is to ease translations
 (and more interestingly, the maintenance of translations) using
-gettext tools on areas where they were not expected like documentation.
+gettext tools in areas where they were not expected, like
+documentation.
 
-This package contains the main libraries of po4a, and the following sub-modules:
+po4a supports currently the following formats:
+* manpages
+* pod
+* xml (generic, docbook, xhtml, dia, or guide)
+* sgml
+* TeX (generic, LaTeX, or Texinfo)
+* text (simple text files with some formatting)
+* ini
+* KernelHelp
 
-  - KernelHelp: Help messages of each kernel compilation option.
-  - Man: Good old manual page format.
-  - Pod: Perl documentation format.
-  - Sgml: either debiandoc or docbook DTD.
-  - Dia: uncompressed Dia diagrams.
-  - LaTeX: generic TeX or LaTeX format
-
-WWW: http://packages.debian.org/unstable/text/po4a
+WWW: http://po4a.alioth.debian.org/
