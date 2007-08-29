@@ -297,6 +297,7 @@
     SUBDIR += mathml-xsd
     SUBDIR += meld
     SUBDIR += metaf2xml
+    SUBDIR += metauml
     SUBDIR += mgdiff
     SUBDIR += mguesser
     SUBDIR += mi-aspell

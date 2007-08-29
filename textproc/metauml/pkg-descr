@@ -1,0 +1,10 @@
+MetaUML is a GNU GPL MetaPost library for typesetting UML diagrams,
+using a human-friendly textual notation.
+
+Here's what you can do with MetaUML (also see the FAQ):
+
+    * Create UML diagrams readily usable in a LaTeX article or book.
+    * Create independent PDF-s
+    * Create jpeg-s, png-s etc.
+
+WWW:	http://metauml.sourceforge.net/
