@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freeorion
-PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTVERSION=	0.3.1.20070726
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
 
@@ -21,24 +20,19 @@ LIB_DEPENDS=	GiGi.0:${PORTSDIR}/x11-toolkits/gigi \
 		vorbisfile.5:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
+USE_PYTHON=	yes
 USE_SCONS=	yes
 SCONS_ARGS=	release=yes with_builtin_sdlnet=0
+SCONS_BUILDENV=	PYTHON_LIB=${PYTHON_VERSION}
 USE_SDL=	sdl net
 WRKSRC=		${WRKDIR}/${PORTNAME}/FreeOrion
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/freeorion* ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${DATADIR}
-	${CP} -R ${WRKSRC}/default ${DATADIR}
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 maint-gen-distfile:
 	@if [ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
 		${ECHO_CMD} "ERROR: the distfile already exists."; \
 		${FALSE}; \
 	fi
-	svn export https://svn.sourceforge.net/svnroot/${PORTNAME}/trunk ${PORTNAME}
+	svn export https://${PORTNAME}.svn.sourceforge.net/svnroot/${PORTNAME}/trunk ${PORTNAME}
 	tar cjf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}
 	${RM} -rf ${PORTNAME}
 

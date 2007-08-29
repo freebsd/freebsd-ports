@@ -5,12 +5,12 @@ bin/freeoriond
 %%DATADIR%%/DejaVuSans-BoldOblique.ttf
 %%DATADIR%%/DejaVuSans-Oblique.ttf
 %%DATADIR%%/DejaVuSans.ttf
+%%DATADIR%%/default/AI/FreeOrionAI.py
 %%DATADIR%%/default/COPYING
 %%DATADIR%%/default/buildings.txt
 %%DATADIR%%/default/credits.xml
 %%DATADIR%%/default/data/art/arrows.png
 %%DATADIR%%/default/data/art/building_icons/Generic_Building.png
-%%DATADIR%%/default/data/art/fo_logo.png
 %%DATADIR%%/default/data/art/gp_cluster.png
 %%DATADIR%%/default/data/art/gp_elliptical.png
 %%DATADIR%%/default/data/art/gp_irregular.png
@@ -57,11 +57,53 @@ bin/freeoriond
 %%DATADIR%%/default/data/art/icons/rightarrowclicked.png
 %%DATADIR%%/default/data/art/icons/rightarrowmouseover.png
 %%DATADIR%%/default/data/art/icons/rightarrownormal.png
+%%DATADIR%%/default/data/art/icons/specials_tiny/ancient_ruins.png
+%%DATADIR%%/default/data/art/icons/specials_tiny/eccentric_orbit.png
+%%DATADIR%%/default/data/art/icons/specials_tiny/high_axial_tilt.png
+%%DATADIR%%/default/data/art/icons/specials_tiny/homeworld.png
+%%DATADIR%%/default/data/art/icons/specials_tiny/minerals.png
+%%DATADIR%%/default/data/art/icons/specials_tiny/slow_rotation.png
+%%DATADIR%%/default/data/art/icons/specials_tiny/solid_core.png
+%%DATADIR%%/default/data/art/icons/specials_tiny/starvation.png
+%%DATADIR%%/default/data/art/icons/specials_tiny/techtonic_instability.png
+%%DATADIR%%/default/data/art/icons/specials_tiny/tidal_lock.png
+%%DATADIR%%/default/data/art/icons/specials_tiny/tunnels.png
+%%DATADIR%%/default/data/art/icons/tech/algorithmic_elegance.png
+%%DATADIR%%/default/data/art/icons/tech/architectural_monofilaments.png
+%%DATADIR%%/default/data/art/icons/tech/architecture_psychology.png
+%%DATADIR%%/default/data/art/icons/tech/artificial_black_hole.png
+%%DATADIR%%/default/data/art/icons/tech/artificial_heavenly_bodies.png
+%%DATADIR%%/default/data/art/icons/tech/artificial_minds.png
+%%DATADIR%%/default/data/art/icons/tech/asymptotic_materials.png
+%%DATADIR%%/default/data/art/icons/tech/deep_core_mining.png
+%%DATADIR%%/default/data/art/icons/tech/fusion_generation.png
+%%DATADIR%%/default/data/art/icons/tech/genome_bank.png
+%%DATADIR%%/default/data/art/icons/tech/gravitonics.png
+%%DATADIR%%/default/data/art/icons/tech/infrastructure_ecology.png
+%%DATADIR%%/default/data/art/icons/tech/lifecycle_manipulation.png
+%%DATADIR%%/default/data/art/icons/tech/medical_pathology.png
+%%DATADIR%%/default/data/art/icons/tech/metroplex_infrastructure.png
+%%DATADIR%%/default/data/art/icons/tech/mind_of_the_void.png
+%%DATADIR%%/default/data/art/icons/tech/miniature_suns.png
+%%DATADIR%%/default/data/art/icons/tech/monument_to_exodus.png
+%%DATADIR%%/default/data/art/icons/tech/psionics.png
+%%DATADIR%%/default/data/art/icons/tech/pure-energy_metabolism.png
+%%DATADIR%%/default/data/art/icons/tech/robotic_production.png
+%%DATADIR%%/default/data/art/icons/tech/sentient_autofactories.png
+%%DATADIR%%/default/data/art/icons/tech/stellar_tomography.png
+%%DATADIR%%/default/data/art/icons/tech/symbiosis_biology.png
+%%DATADIR%%/default/data/art/icons/tech/temporal_mechanics.png
+%%DATADIR%%/default/data/art/icons/tech/translingustic_thought.png
+%%DATADIR%%/default/data/art/icons/tech/unified_conscious.png
+%%DATADIR%%/default/data/art/icons/tech/urban_farming.png
+%%DATADIR%%/default/data/art/icons/tech/xenoarchaeology.png
+%%DATADIR%%/default/data/art/icons/tech/zero_point_energy.png
 %%DATADIR%%/default/data/art/icons/trade.png
 %%DATADIR%%/default/data/art/icons/trade_mono.png
 %%DATADIR%%/default/data/art/icons/uparrowclicked.png
 %%DATADIR%%/default/data/art/icons/uparrowmouseover.png
 %%DATADIR%%/default/data/art/icons/uparrownormal.png
+%%DATADIR%%/default/data/art/logo.png
 %%DATADIR%%/default/data/art/misc/base1.png
 %%DATADIR%%/default/data/art/misc/colony1.png
 %%DATADIR%%/default/data/art/misc/colonyicon.png
@@ -78,11 +120,16 @@ bin/freeoriond
 %%DATADIR%%/default/data/art/misc/system_mouseover.png
 %%DATADIR%%/default/data/art/misc/system_selection.png
 %%DATADIR%%/default/data/art/nebula1.png
+%%DATADIR%%/default/data/art/nebula10.png
+%%DATADIR%%/default/data/art/nebula11.png
 %%DATADIR%%/default/data/art/nebula2.png
 %%DATADIR%%/default/data/art/nebula3.png
 %%DATADIR%%/default/data/art/nebula4.png
 %%DATADIR%%/default/data/art/nebula5.png
 %%DATADIR%%/default/data/art/nebula6.png
+%%DATADIR%%/default/data/art/nebula7.png
+%%DATADIR%%/default/data/art/nebula8.png
+%%DATADIR%%/default/data/art/nebula9.png
 %%DATADIR%%/default/data/art/planets/Barren-bump01.png
 %%DATADIR%%/default/data/art/planets/Barren-bump02.png
 %%DATADIR%%/default/data/art/planets/Barren01.png
@@ -935,13 +982,7 @@ bin/freeoriond
 %%DATADIR%%/default/data/art/planets_bg/toxic1.png
 %%DATADIR%%/default/data/art/planets_bg/tundra1.png
 %%DATADIR%%/default/data/art/special_icons/Generic_Special.png
-%%DATADIR%%/default/data/art/splash.jpg
-%%DATADIR%%/default/data/art/splash00.png
-%%DATADIR%%/default/data/art/splash01.png
-%%DATADIR%%/default/data/art/splash02.png
-%%DATADIR%%/default/data/art/splash10.png
-%%DATADIR%%/default/data/art/splash11.png
-%%DATADIR%%/default/data/art/splash12.png
+%%DATADIR%%/default/data/art/splash.png
 %%DATADIR%%/default/data/art/starfield1.png
 %%DATADIR%%/default/data/art/starfield2.png
 %%DATADIR%%/default/data/art/starfield3.png
@@ -993,13 +1034,9 @@ bin/freeoriond
 %%DATADIR%%/default/data/art/stars_sidepanel/white01.png
 %%DATADIR%%/default/data/art/stars_sidepanel/yellow00.png
 %%DATADIR%%/default/data/art/stars_sidepanel/yellow01.png
-%%DATADIR%%/default/data/art/tech_icons/Algorithmic_Elegance.png
-%%DATADIR%%/default/data/art/tech_icons/Architectural_Monofilaments.png
-%%DATADIR%%/default/data/art/tech_icons/Architecture_Psychology.png
-%%DATADIR%%/default/data/art/tech_icons/Artificial_Heavenly_Bodies.png
-%%DATADIR%%/default/data/art/tech_icons/Artificial_Minds.png
 %%DATADIR%%/default/data/art/tech_icons/Asteroid_Mining.png
-%%DATADIR%%/default/data/art/tech_icons/Deep_Core_Mining.png
+%%DATADIR%%/default/data/art/tech_icons/Asteroid_Mining_I.png
+%%DATADIR%%/default/data/art/tech_icons/Asteroid_Mining_II.png
 %%DATADIR%%/default/data/art/tech_icons/Economic_Fluidity.png
 %%DATADIR%%/default/data/art/tech_icons/Economic_Hegemony.png
 %%DATADIR%%/default/data/art/tech_icons/Economic_Prescience.png
@@ -1008,25 +1045,27 @@ bin/freeoriond
 %%DATADIR%%/default/data/art/tech_icons/Environmental_Encapsulation.png
 %%DATADIR%%/default/data/art/tech_icons/Force-Field_Assembly.png
 %%DATADIR%%/default/data/art/tech_icons/Force-Field_Harmonics.png
-%%DATADIR%%/default/data/art/tech_icons/Fusion_Generation.png
+%%DATADIR%%/default/data/art/tech_icons/Force_Energy_Structures.png
 %%DATADIR%%/default/data/art/tech_icons/Galactic_Exploration.png
 %%DATADIR%%/default/data/art/tech_icons/Galactic_Monetary_Policy.png
 %%DATADIR%%/default/data/art/tech_icons/Genetic_Engineering.png
 %%DATADIR%%/default/data/art/tech_icons/Genetic_Medicine.png
-%%DATADIR%%/default/data/art/tech_icons/Gravitonics.png
+%%DATADIR%%/default/data/art/tech_icons/Habitation_Domes.png
+%%DATADIR%%/default/data/art/tech_icons/Hyperspatial_Dam.png
+%%DATADIR%%/default/data/art/tech_icons/Industrial_Centre_I.png
+%%DATADIR%%/default/data/art/tech_icons/Industrial_Centre_II.png
+%%DATADIR%%/default/data/art/tech_icons/Industrial_Centre_III.png
 %%DATADIR%%/default/data/art/tech_icons/Industrial_Cloning.png
 %%DATADIR%%/default/data/art/tech_icons/Industrial_Farming.png
-%%DATADIR%%/default/data/art/tech_icons/Infrastructure_Ecology.png
 %%DATADIR%%/default/data/art/tech_icons/Interstellar_Co-Production.png
 %%DATADIR%%/default/data/art/tech_icons/Interstellar_Trade.png
-%%DATADIR%%/default/data/art/tech_icons/Lifecycle_Manipulation.png
+%%DATADIR%%/default/data/art/tech_icons/Looking_Glass.png
 %%DATADIR%%/default/data/art/tech_icons/Market_Economics.png
 %%DATADIR%%/default/data/art/tech_icons/Matter-Energy_Conversion.png
 %%DATADIR%%/default/data/art/tech_icons/Matter-Energy_Replication.png
-%%DATADIR%%/default/data/art/tech_icons/Medical_Pathology.png
-%%DATADIR%%/default/data/art/tech_icons/Metroplex_Infrastructure.png
 %%DATADIR%%/default/data/art/tech_icons/Microgravity_Manufacturing.png
-%%DATADIR%%/default/data/art/tech_icons/Mind_of_the_Void.png
+%%DATADIR%%/default/data/art/tech_icons/N-Dimensional_Assembly.png
+%%DATADIR%%/default/data/art/tech_icons/N-Dimensional_Structures.png
 %%DATADIR%%/default/data/art/tech_icons/N-Dimensional_Subspace.png
 %%DATADIR%%/default/data/art/tech_icons/Nanotech_Cybernetics.png
 %%DATADIR%%/default/data/art/tech_icons/Nanotech_Medicine.png
@@ -1039,19 +1078,12 @@ bin/freeoriond
 %%DATADIR%%/default/data/art/tech_icons/Planetary_Ecology.png
 %%DATADIR%%/default/data/art/tech_icons/Planetary_Geology.png
 %%DATADIR%%/default/data/art/tech_icons/Planned_Economics.png
-%%DATADIR%%/default/data/art/tech_icons/Psionics.png
-%%DATADIR%%/default/data/art/tech_icons/Pure-Energy_Metabolism.png
-%%DATADIR%%/default/data/art/tech_icons/Robotic_Production.png
-%%DATADIR%%/default/data/art/tech_icons/Sentient_Autofactories.png
 %%DATADIR%%/default/data/art/tech_icons/Singularity_Generation.png
 %%DATADIR%%/default/data/art/tech_icons/Singularity_of_Transcendence.png
-%%DATADIR%%/default/data/art/tech_icons/Symbiosis_Biology.png
-%%DATADIR%%/default/data/art/tech_icons/Temporal_Mechanics.png
+%%DATADIR%%/default/data/art/tech_icons/Stellar_Navigation.png
 %%DATADIR%%/default/data/art/tech_icons/The_Physical_Brain.png
 %%DATADIR%%/default/data/art/tech_icons/The_Theory_of_Everything.png
-%%DATADIR%%/default/data/art/tech_icons/Translingustic_Thought.png
-%%DATADIR%%/default/data/art/tech_icons/Unified_Conscious.png
-%%DATADIR%%/default/data/art/tech_icons/Xenoarchaeology.png
+%%DATADIR%%/default/data/art/tech_icons/Transcendent_Architecture.png
 %%DATADIR%%/default/data/art/tech_icons/Xenological_Genetics.png
 %%DATADIR%%/default/data/art/tech_icons/Xenological_Hybridization.png
 %%DATADIR%%/default/data/art/tech_icons/categories/construction.png
@@ -1088,6 +1120,7 @@ bin/freeoriond
 %%DATADIR%%/default/planet_specials.txt
 %%DATADIR%%/default/planet_tables.txt
 %%DATADIR%%/default/production_tables.txt
+%%DATADIR%%/default/shipnames.txt
 %%DATADIR%%/default/specials.txt
 %%DATADIR%%/default/starnames.txt
 %%DATADIR%%/default/techs.txt
@@ -1107,9 +1140,12 @@ bin/freeoriond
 @dirrm %%DATADIR%%/default/data/art/planets/asteroids
 @dirrm %%DATADIR%%/default/data/art/planets
 @dirrm %%DATADIR%%/default/data/art/misc
+@dirrm %%DATADIR%%/default/data/art/icons/tech
+@dirrm %%DATADIR%%/default/data/art/icons/specials_tiny
 @dirrm %%DATADIR%%/default/data/art/icons
 @dirrm %%DATADIR%%/default/data/art/building_icons
 @dirrm %%DATADIR%%/default/data/art
 @dirrm %%DATADIR%%/default/data
+@dirrm %%DATADIR%%/default/AI
 @dirrm %%DATADIR%%/default
 @dirrm %%DATADIR%%
