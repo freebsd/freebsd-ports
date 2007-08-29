@@ -7,6 +7,7 @@
 
 PORTNAME=	b2evolution
 PORTVERSION=	1.10.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	evocms
@@ -27,12 +28,18 @@ WANT_PHP_WEB=	YES
 
 TMPDIR?=	${PORTNAME}
 WRKSRC=		${WRKDIR}/${TMPDIR}
-
 B2EVO_URL?=	b2evo
 B2EVO_DIR?=	www/${B2EVO_URL}
 PLIST=		${WRKDIR}/pkg-plist
 
+OPTIONS=	LOCAL_DB_SERVER "Want to use local MySQL server?" on
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_LOCAL_DB_SERVER)
+USE_MYSQL=	YES
+RUN_DEPENDS+=	mysql-server>=0:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+.endif
 
 pre-install:
 	@cd ${WRKSRC} && ${FIND} -s . -type f | \

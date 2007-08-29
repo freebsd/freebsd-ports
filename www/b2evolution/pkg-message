@@ -2,34 +2,38 @@
 b2evolution is now installed. If you install it for the first time,
 you may need to perform the following steps.
 
-1. Create the MySQL database:
+1. Make sure your mysql-server is running.
 
-  # mysqladmin --user=root -p create b2evolution
+2. Create a new MySQL database:
 
-2. Create a mysql user/password for the b2evolution database:
+   # mysqladmin --user=root -p create b2evolution
+
+   (in mysql root's password is empty unless you have set it in advance).
+
+3. Create a mysql user/password for the b2evolution database:
   (change user and/or password if required)
 
-  # mysql -u root -p
-  mysql> GRANT ALL ON b2evolution.* TO b2evouser@localhost 
-	 IDENTIFIED BY 'b2evopassword';
-  mysql> FLUSH PRIVILEGES;
-  mysql> QUIT;
+   # mysql -u root -p
+   mysql> GRANT ALL ON b2evolution.* TO b2evouser@localhost 
+ 	  IDENTIFIED BY 'b2evopassword';
+   mysql> FLUSH PRIVILEGES;
+   mysql> QUIT;
 
-3. Please add the following to your apache config, and restart.
-    [1;32m#
-    # Directives to allow use of b2evolution
-    #
-    Alias /%%B2EVO_URL%% "%%PREFIX%%/%%B2EVO_DIR%%/"[m
+4. Add the following to your apache config, and restart.
+   #
+   # Directives to allow use of b2evolution
+   #
+   Alias /%%B2EVO_URL%% "%%PREFIX%%/%%B2EVO_DIR%%/"
+   #
 
-4.Open b2evo installation page in your web browser 
-  and login with b2evouser/b2evopassword
+5. Open b2evo installation page in your web browser 
+   and login with b2evouser/b2evopassword
 
-  http://www.your.host/%%B2EVO_URL%%/blogs/install/
+   http://www.your.host/%%B2EVO_URL%%/blogs/install/
 
-  If you are doing a fresh install...
-  Note that password carefully! It is a random password that is given to you 
-  when you install b2evolution.
-  If you lose it, you will have to delete the database tables and reinstall.
+   (if you are doing a fresh install...)
+   Note that password carefully! It is a random password that is given to you 
+   when you install b2evolution.
+   If you lose it, you will have to delete the database tables and reinstall.
 
-  Have fun!
 ==================================================================
