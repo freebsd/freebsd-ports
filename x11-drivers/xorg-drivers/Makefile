@@ -7,7 +7,7 @@
 
 PORTNAME=	xorg-drivers
 PORTVERSION=	7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-drivers
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -34,7 +34,7 @@ VIDEO_OFF=	apm ark				\
 		dummy \
 		fbdev \
 		glint \
-		i128 i740 imstt	\
+		i128 i740 imstt	intel \
 		mga \
 		neomagic newport nsc \
 		rendition \
@@ -72,6 +72,10 @@ OPTIONS+=	${i:U} "Install ${i} ${type} driver" ${default}
 .endfor
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_INTEL) && !defined(WITHOUT_I810)
+IGNORE=		You can't choose both i810 and intel drivers as they are conflicting
+.endif
 
 .for default in on off
 . for type in input video
