@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	librsvg2
-PORTVERSION=	2.18.1
+PORTVERSION=	2.18.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -31,7 +31,6 @@ USE_GNOME=	gnomehack gnomeprefix libgsf gtk20 ltverhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-svgz \
-		--disable-gtk-doc \
 		--without-gimp \
 		--with-croco \
 		--disable-gnome-vfs \
