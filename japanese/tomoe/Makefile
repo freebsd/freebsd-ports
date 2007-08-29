@@ -7,7 +7,7 @@
 
 PORTNAME=	tomoe
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=tomoe
@@ -73,6 +73,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .else
 USE_PYTHON=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
+USE_GNOME+=	pygtk2
 PLIST_SUB+=	PYTHON=""
 .endif
 
