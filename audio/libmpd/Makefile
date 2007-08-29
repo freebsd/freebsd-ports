@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	libmpd
-PORTVERSION=	0.12.0
+PORTVERSION=	0.14.0
 CATEGORIES=	audio
-MASTER_SITES=	http://download.qballcow.nl/programs/gmpc-0.13/
+MASTER_SITES=	http://download.sarine.nl/gmpc-0.15.0/ \
+				http://download.gna.org/kanicule/freebsd/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mathias@monnerville.com
 COMMENT=	Abstraction around libmpdclient
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
