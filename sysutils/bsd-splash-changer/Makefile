@@ -13,12 +13,12 @@ CATEGORIES=	sysutils
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	gamato@pobox.sk
+MAINTAINER=	gamato@users.sf.net
 COMMENT=	Boot Splash Image Changer
 
 USE_RC_SUBR=	change_splash.sh
-NO_BUILD=	yes
 SUB_FILES=	pkg-message
+NO_BUILD=	yes
 
 do-fetch:
 	@${DO_NADA}
