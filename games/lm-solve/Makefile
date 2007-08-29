@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lm-solve
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Games
@@ -19,6 +19,11 @@ COMMENT=	A Computerized Solver for Logic Mazes
 PERL_CONFIGURE=	yes
 
 MAN1=	lm-solve.1
-MAN3=	Games::LMSolve.3 Games::LMSolve::Base.3 Games::LMSolve::Input.3
+MAN3=	Games::LMSolve.3 Games::LMSolve::Base.3 Games::LMSolve::Input.3 \
+	Games::LMSolve::Minotaur.3 Games::LMSolve::Tilt::RedBlue.3 \
+	Games::LMSolve::Tilt::Single.3 Games::LMSolve::Tilt::Multi.3 \
+	Games::LMSolve::Numbers.3 Games::LMSolve::Alice.3 \
+	Games::LMSolve::Plank::Hex.3 Games::LMSolve::Plank::Base.3 \
+	Games::LMSolve::Registry.3 Games::LMSolve::Tilt::Base.3
 
 .include <bsd.port.mk>
