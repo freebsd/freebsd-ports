@@ -52,22 +52,12 @@ include/GG/dialogs/ThreeButtonDlg.h
 include/GG/gen_signals.py
 include/GG/ltdl.h
 include/GG/ltdl_config.h
-include/GG/net/SDL_net.h
-include/GG/net/SDLnetsys.h
-include/GG/net/fastevents.h
-include/GG/net/net2.h
-include/GG/net/queue.h
-include/GG/net/trace.h
 lib/libGiGi.so
 lib/libGiGi.so.%%SHLIB_VER%%
-lib/libGiGiNet.so
-lib/libGiGiNet.so.%%SHLIB_VER%%
 lib/libGiGiSDL.so
 lib/libGiGiSDL.so.%%SHLIB_VER%%
 libdata/pkgconfig/GiGi.pc
-libdata/pkgconfig/GiGiNet.pc
 libdata/pkgconfig/GiGiSDL.pc
-@dirrm include/GG/net
 @dirrm include/GG/dialogs
 @dirrm include/GG/SDL
 @dirrm include/GG/OgreSDL
