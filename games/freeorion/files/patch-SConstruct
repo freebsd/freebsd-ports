@@ -1,79 +1,43 @@
---- ./SConstruct.orig	Tue Aug 22 23:20:52 2006
-+++ ./SConstruct	Sun Apr 29 18:13:40 2007
-@@ -53,9 +53,6 @@
- options.Add('with_log4cpp', 'Root directory of Log4cpp installation')
- options.Add('with_log4cpp_include', 'Specify exact include dir for Log4cpp headers')
- options.Add('with_log4cpp_libdir', 'Specify exact library dir for Log4cpp library')
--options.Add('with_fmod', 'Root directory of FMOD installation')
--options.Add('with_fmod_include', 'Specify exact include dir for FMOD headers')
--options.Add('with_fmod_libdir', 'Specify exact library dir for FMOD library')
- options.Add('with_graphviz', 'Root directory of GraphViz installation')
- options.Add('with_graphviz_include', 'Specify exact include dir for GraphViz headers')
- options.Add('with_graphviz_libdir', 'Specify exact library dir for GraphViz library')
-@@ -66,6 +63,10 @@
-     options.Add('with_zlib', 'Root directory of zlib installation')
-     options.Add('with_zlib_include', 'Specify exact include dir for zlib headers')
-     options.Add('with_zlib_libdir', 'Specify exact library dir for zlib library')
-+options.Add('CXX', 'C++ compiler')
-+options.Add('CCFLAGS', 'C compiler flags', Split(''))
-+options.Add('CPPPATH', 'Compiler include path', Split(''))
-+options.Add('LIBPATH', 'Linker library path', Split(''))
+--- ./SConstruct.orig	Sat Jul 21 15:53:06 2007
++++ ./SConstruct	Wed Aug  1 08:00:59 2007
+@@ -188,6 +188,15 @@
+         else:
+             print 'Configuring unknown system (assuming the system is POSIX-like) ...'
  
- ##################################################
- # build vars                                     #
-@@ -105,6 +106,10 @@
- 
- options.Update(env)
- 
-+env['CCFLAGS'] = Split(env['CCFLAGS'])
-+env['CPPPATH'] = Split(env['CPPPATH'])
-+env['LIBPATH'] = Split(env['LIBPATH'])
++        # pthreads
++        if str(Platform()) == 'posix':
++            if env['multithreaded']:
++                if conf.CheckCHeader('pthread.h') and conf.CheckLib('pthread', 'pthread_create', autoadd = 0):
++                    env.AppendUnique(CCFLAGS = ['-pthread'])
++                    env.AppendUnique(LINKFLAGS = ['-pthread'])
++                else:
++                    Exit(1)
 +
- if env.has_key('use_distcc') and env['use_distcc']:
-     env['CC'] = 'distcc %s' % env['CC']
-     env['CXX'] = 'distcc %s' % env['CXX']
-@@ -219,8 +224,8 @@
-             if str(Platform()) == 'posix':
-                 if env['multithreaded']:
-                     if conf.CheckCHeader('pthread.h') and conf.CheckLib('pthread', 'pthread_create', autoadd = 0):
+         # Python
+         import distutils.sysconfig
+         if str(Platform()) == 'win32':
+@@ -207,6 +216,8 @@
+             matches = regex.findall(distutils.sysconfig.get_config_var('LDLIBRARY'))
+             if len(matches):
+                 python_libname = matches[0]
++	    elif os.environ.has_key('PYTHON_LIB'):
++	        python_libname = os.environ['PYTHON_LIB']
+             else:
+                 print 'Unable to determine the name of the Python runtime library.  Terminating....'
+                 Exit(1)
+@@ -253,15 +264,6 @@
+                 env.AppendUnique(LIBS = [
+                     BoostLibWin32Name('python', env)
+                     ])
+-
+-            # pthreads
+-            if str(Platform()) == 'posix':
+-                if env['multithreaded']:
+-                    if conf.CheckCHeader('pthread.h') and conf.CheckLib('pthread', 'pthread_create', autoadd = 0):
 -                        env.AppendUnique(CCFLAGS = ' -pthread')
 -                        env.AppendUnique(LINKFLAGS = ' -pthread')
-+                        env.AppendUnique(CCFLAGS = Split('-pthread'))
-+                        env.AppendUnique(LINKFLAGS = '-pthread')
-                     else:
-                         Exit(1)
+-                    else:
+-                        Exit(1)
  
-@@ -308,25 +313,6 @@
-         # End of GG requirements #
-         ##########################
- 
--        # FMOD
--        AppendPackagePaths('fmod', env)
--        found_it_with_pkg_config = False
--        if pkg_config:
--            if conf.CheckPkg('fmod', fmod_version):
--                env.ParseConfig('pkg-config --cflags --libs fmod')
--                found_it_with_pkg_config = True
--        if not found_it_with_pkg_config:
--            version_regex = re.compile(r'FMOD_VERSION\s*(\d+\.\d+)', re.DOTALL)
--            if not conf.CheckVersionHeader('fmod', 'fmod.h', version_regex, fmod_version, True):
--                Exit(1)
--        if not conf.CheckCHeader('fmod.h'):
--            Exit(1)
--        if str(Platform()) != 'win32':
--            if not conf.CheckLib('fmod-' + fmod_version, 'FSOUND_GetVersion', header = '#include <fmod.h>'):
--                Exit(1)
--        else:
--            env.AppendUnique(LIBS = [fmod_win32_lib_name])
--
-         # GraphViz
-         AppendPackagePaths('graphviz', env)
-         if pkg_config:
-@@ -507,6 +493,7 @@
- # define human objects
- env['target_define'] = 'FREEORION_BUILD_HUMAN'
- human_objects = SConscript(os.path.normpath('SConscript'))
-+env.Append(LIBS = ['vorbisfile', 'alut'])
- if str(Platform()) == 'win32':
-     rc_file = open('win32_resources.rc', 'w')
-     rc_file.write('IDI_ICON ICON "client/human/HumanClient.ico"')
+             # GL and GLU
+             if str(Platform()) == 'win32':
