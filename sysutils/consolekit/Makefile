@@ -17,7 +17,7 @@ COMMENT=	Framework for defining and tracking users
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 RELVERSION=	0.2.2
-SNAPSHOT=	20070827
+SNAPSHOT=	20070829
 
 WRKSRC=		${WRKDIR}/ConsoleKit-${RELVERSION}
 USE_BZIP2=	yes
