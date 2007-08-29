@@ -1,0 +1,36 @@
+%%MPDIR%%/metauml.mp
+%%MPDIR%%/metauml_activity.mp
+%%MPDIR%%/metauml_base.mp
+%%MPDIR%%/metauml_behavioral_common.mp
+%%MPDIR%%/metauml_class.mp
+%%MPDIR%%/metauml_class_assoc.mp
+%%MPDIR%%/metauml_class_clipart.mp
+%%MPDIR%%/metauml_class_relations.mp
+%%MPDIR%%/metauml_component.mp
+%%MPDIR%%/metauml_component_relations.mp
+%%MPDIR%%/metauml_defaults.mp
+%%MPDIR%%/metauml_instance.mp
+%%MPDIR%%/metauml_links.mp
+%%MPDIR%%/metauml_note.mp
+%%MPDIR%%/metauml_package.mp
+%%MPDIR%%/metauml_package_relations.mp
+%%MPDIR%%/metauml_paths.mp
+%%MPDIR%%/metauml_skin_simple.mp
+%%MPDIR%%/metauml_state.mp
+%%MPDIR%%/metauml_stereotype.mp
+%%MPDIR%%/metauml_templates.mp
+%%MPDIR%%/metauml_usecase.mp
+%%MPDIR%%/metauml_usecase_clipart.mp
+%%MPDIR%%/util_commons.mp
+%%MPDIR%%/util_group.mp
+%%MPDIR%%/util_infrastructure.mp
+%%MPDIR%%/util_log.mp
+%%MPDIR%%/util_margins.mp
+%%MPDIR%%/util_object.mp
+%%MPDIR%%/util_picture.mp
+%%MPDIR%%/util_picture_stack.mp
+%%MPDIR%%/util_positioning.mp
+%%MPDIR%%/util_shade.mp
+@dirrm %%MPDIR%%
+@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
+@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%
