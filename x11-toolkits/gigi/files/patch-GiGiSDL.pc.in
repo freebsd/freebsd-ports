@@ -1,11 +1,11 @@
---- ./GiGiSDL.pc.in.orig	Sun Jan 15 16:32:32 2006
-+++ ./GiGiSDL.pc.in	Tue May  1 15:59:09 2007
+--- GiGiSDL.pc.in.orig	Fri Jul 20 19:21:38 2007
++++ GiGiSDL.pc.in	Thu Jul 26 14:20:45 2007
 @@ -4,7 +4,7 @@
  
  Name: GiGiSDL
  Description: An SDL-based input driver and application framework for use with libGiGi.
--Requires: GiGi = ${version}, GiGiNet = ${version}
-+Requires: GiGi = ${version}, GiGiNet = ${version}, sdl
+-Requires: GiGi = ${version}
++Requires: GiGi = ${version}, sdl
  Version: ${version}
  Libs: -lGiGiSDL %(gigi_sdl_libs)s
- Cflags: %(sdl_include)s
+ Cflags: 
