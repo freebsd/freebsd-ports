@@ -83,6 +83,7 @@ bin/dvdrip-thumb
 %%SITE_PERL%%/Video/DVDRip/TranscodeRC.pm
 %%SITE_PERL%%/Video/DVDRip/icon.xpm
 %%SITE_PERL%%/Video/DVDRip/license.txt
+%%SITE_PERL%%/Video/DVDRip/splash.ca.png
 %%SITE_PERL%%/Video/DVDRip/splash.de.png
 %%SITE_PERL%%/Video/DVDRip/splash.en.png
 %%SITE_PERL%%/Video/DVDRip/splash.es.png
