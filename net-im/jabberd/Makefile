@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.1.14
-PORTREVISION=	1
+PORTVERSION=	2.1.15
 CATEGORIES=	net-im
 MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
 DIST_SUBDIR=	jabber
@@ -19,15 +18,16 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		gsasl.10:${PORTSDIR}/security/gsasl \
 		idn.16:${PORTSDIR}/dns/libidn
 
-OPTIONS=	POSTGRESQL "Use PostgreSQL for storage and authentication" off \
-		MYSQL "Use MySQL for storage and authentication" off \
-		LDAP "Use LDAP for authentication" off \
-		BDB "Use BDB for storage and authentication" off \
-		SQLITE "Use SQLITE3 for storage" off \
-		PAM "Use PAM for authentication" off \
-		PIPE "Enable pipe auth/reg support" off \
-		ANON "Enable anonymous auth/reg support" off \
-		DEBUG "Compile with debug information" on
+OPTIONS=	MYSQL "Support MySQL (storage/auth/reg)" on \
+		POSTGRESQL "Support PostgreSQL (storage/auth/reg)" off \
+		LDAP "Support OpenLDAP (storage/auth/reg)" off \
+		BDB "Support BerkeleyDB (storage/auth/reg)" off \
+		SQLITE "Support SQLite3 (storage/auth/reg)" off \
+		PAM "Enable PAM (auth/reg)" off \
+		PIPE "Enable pipe (auth/reg)" off \
+		ANON "Enable anonymous (auth/reg)" off \
+		FS "Filesystem storage (only for testing)" off \
+		DEBUG "Compile with debug messages" on
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
@@ -38,8 +38,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var \
 		--sysconfdir=${PREFIX}/etc/jabberd \
 		--enable-ssl --enable-mio=poll \
 		--with-extra-include-path="${LOCALBASE}/include ${EIP}" \
-		--with-extra-library-path="${LOCALBASE}/lib ${ELP}" \
-		--enable-fs
+		--with-extra-library-path="${LOCALBASE}/lib ${ELP}"
 
 JABBER_USER=	jabber
 JABBER_UID=	93
@@ -65,7 +64,7 @@ DOCFILES=	AUTHORS BUGS COPYING ChangeLog INSTALL NEWS PROTOCOL README \
 ELP+=	${OPENSSLLIB}
 EIP+=	${OPENSSLINC}
 
-.if defined(WITH_DEBUG)
+.if !defined(WITHOUT_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
@@ -88,7 +87,7 @@ CONFIGURE_ARGS+=--disable-sqlite
 PLIST_SUB+=	SUB_SQLITE="@comment "
 .endif
 
-.if defined(WITH_MYSQL)
+.if !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--enable-mysql
 EIP+=:${LOCALBASE}/include/mysql
@@ -100,7 +99,7 @@ PLIST_SUB+=	SUB_MYSQL="@comment "
 .endif
 
 .if defined(WITH_BDB)
-USE_BDB=	yes
+USE_BDB=	41+
 CONFIGURE_ARGS+=--enable-db
 CONFIGURE_ARGS+=--oldincludedir=/nonexistant
 EIP+=:${BDB_INCLUDE_DIR}
@@ -118,6 +117,14 @@ PLIST_SUB+=	SUB_LDAP=""
 .else
 CONFIGURE_ARGS+=--disable-ldap
 PLIST_SUB+=	SUB_LDAP="@comment "
+.endif
+
+.if defined(WITH_FS)
+CONFIGURE_ARGS+=--enable-fs
+PLIST_SUB+=	SUB_FS=""
+.else
+CONFIGURE_ARGS+=--disable-fs
+PLIST_SUB+=	SUB_FS="@comment "
 .endif
 
 .if defined(WITH_PAM)

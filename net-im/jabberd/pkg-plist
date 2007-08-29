@@ -108,8 +108,8 @@ lib/jabberd/mod_vacation.so.0
 lib/jabberd/mod_validate.la
 lib/jabberd/mod_validate.so
 lib/jabberd/mod_validate.so.0
-lib/jabberd/storage_fs.la
-lib/jabberd/storage_fs.so
+%%SUB_FS%%lib/jabberd/storage_fs.la
+%%SUB_FS%%lib/jabberd/storage_fs.so
 %%SUB_BDB%%lib/jabberd/storage_db.la
 %%SUB_BDB%%lib/jabberd/storage_db.so
 %%SUB_MYSQL%%lib/jabberd/storage_mysql.la
