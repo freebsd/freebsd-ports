@@ -26,6 +26,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GL=		yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-allegro
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 OPTIONS=	SDL "Enable SDL support" off
