@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpd
-DISTVERSION=	4.2.2
+DISTVERSION=	4.3
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	mpd
@@ -17,16 +17,33 @@ COMMENT=	Multi-link PPP daemon based on netgraph(4)
 
 LIB_DEPENDS=	pdel.0:${PORTSDIR}/devel/libpdel
 
-LATEST_LINK=    mpd4
+LATEST_LINK=	mpd4
+
+OPTIONS=	NG_CAR "Use ng_car kernel module from port (< 7.0 only)" off\
+		NG_IPACCT "Use ng_ipacct kernel module from port" off
+
+HAS_CONFIGURE=	YES
+CONFIGURE_WRKSRC=	"${WRKSRC}/src"
+
+USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700041
-BUILD_DEPENDS=	/usr/local/include/netgraph/ng_car.h:${PORTSDIR}/net/ng_car
+.if ${OSVERSION} < 700041 && defined(WITH_NG_CAR)
+BUILD_DEPENDS+=	${LOCALBASE}/include/netgraph/ng_car.h:${PORTSDIR}/net/ng_car
 .if exists(${KMODDIR}/ng_car.ko)
-RUN_DEPENDS=	${KMODDIR}/ng_car.ko:${PORTSDIR}/net/ng_car
+RUN_DEPENDS+=	${KMODDIR}/ng_car.ko:${PORTSDIR}/net/ng_car
 .else
-RUN_DEPENDS=	/boot/modules/ng_car.ko:${PORTSDIR}/net/ng_car
+RUN_DEPENDS+=	/boot/modules/ng_car.ko:${PORTSDIR}/net/ng_car
+.endif
+.endif
+
+.if defined(WITH_NG_IPACCT)
+BUILD_DEPENDS+=	${LOCALBASE}/include/netgraph/ng_ipacct.h:${PORTSDIR}/net-mgmt/ng_ipacct
+.if exists(${KMODDIR}/ng_ipacct.ko)
+RUN_DEPENDS+=	${KMODDIR}/ng_ipacct.ko:${PORTSDIR}/net-mgmt/ng_ipacct
+.else
+RUN_DEPENDS+=	/boot/modules/ng_ipacct.ko:${PORTSDIR}/net-mgmt/ng_ipacct
 .endif
 .endif
 
@@ -41,7 +58,5 @@ PORTDOCS=	${HTMLNUM:S/^/mpd/:S/$/.html/} mpd.html mpd.ps README	\
 		mpd_toc.html
 PLIST_DIRS=	etc/mpd4
 PLIST_FILES=	${CONFSUF:S/^/etc\/mpd4\/mpd./:S/$/.sample/} sbin/mpd4
-
-USE_OPENSSL=	yes
 
 .include <bsd.port.post.mk>
