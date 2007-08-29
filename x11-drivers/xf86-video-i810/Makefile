@@ -18,7 +18,7 @@ CONFLICTS=	xf86-video-intel-[0-9]*
 USE_GL=		gl
 
 XORG_CAT=	driver
-USE_XORG=	xvmc xf86driproto xextproto x11 xextproto glproto xineramaproto
+USE_XORG=	xvmc xf86driproto xextproto x11 glproto xineramaproto
 MAN4=		i810.4x
 
 .include <bsd.port.mk>
