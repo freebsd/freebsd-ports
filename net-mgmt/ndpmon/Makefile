@@ -7,6 +7,7 @@
 
 PORTNAME=	ndpmon
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +18,7 @@ COMMENT=	On-link icmpv6 message monitoring and reporting daemon
 
 USE_GNOME=	libxml2
 USE_PERL5_RUN=	yes
+USE_RC_SUBR=	ndpmonitor
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes

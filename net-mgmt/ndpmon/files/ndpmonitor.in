@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: ndpmonitor
+# REQUIRE: DAEMON NETWORKING
+#
+
+. %%RC_SUBR%%
+
+name="ndpmonitor"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/ndpmon"
+required_files=%%PREFIX%%/etc/config_ndpmon.xml
+
+load_rc_config $name
+
+: ${ndpmonitor_enable="NO"}
+
+command_args=">/dev/null &"
+
+run_rc_command "$1"
