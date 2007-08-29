@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	qsf
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A small fast spam filter intended to be used with procmail
