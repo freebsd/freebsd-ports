@@ -7385,6 +7385,7 @@ metamail	ports/mail/metamail
 metaocaml	ports/lang/metaocaml
 metapixel	ports/graphics/metapixel
 metasploit	ports/security/metasploit
+metauml		ports/textproc/metauml
 metis		ports/math/metis
 metis-edf	ports/math/metis-edf
 metisse		ports/x11/metisse
