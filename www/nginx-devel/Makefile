@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.6.8
+PORTVERSION=	0.6.9
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -42,10 +42,10 @@ HTTP_PORT?=	80
 CONFLICTS?=	nginx-0.5.*
 USE_RC_SUBR=	nginx.sh
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--prefix=${PREFIX}/etc/nginx \
+CONFIGURE_ARGS+=--prefix=${ETCDIR} \
 		--with-cc-opt="-I ${LOCALBASE}/include" \
 		--with-ld-opt="-L ${LOCALBASE}/lib" \
-		--conf-path=${PREFIX}/etc/nginx/nginx.conf \
+		--conf-path=${ETCDIR}/nginx.conf \
 		--sbin-path=${PREFIX}/sbin/nginx \
 		--pid-path=${NGINX_RUNDIR}/nginx.pid \
 		--error-log-path=${NGINX_LOGDIR}/nginx-error.log \
@@ -144,16 +144,16 @@ do-build:
 	@cd ${WRKSRC} && ${MAKE}
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/nginx ${NGINX_TMPDIR}
+	${MKDIR} ${ETCDIR} ${NGINX_TMPDIR}
 	${CHOWN} ${WWWOWN}:${WWWGRP} ${NGINX_TMPDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${PREFIX}/sbin
 .for i in koi-win koi-utf win-utf fastcgi_params
-	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${PREFIX}/etc/nginx
+	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}
 .endfor
 .for i in mime.types nginx.conf
-	[ -f ${PREFIX}/etc/nginx/${i} ] || \
-		${INSTALL_DATA} ${WRKSRC}/conf/${i} ${PREFIX}/etc/nginx
-	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${PREFIX}/etc/nginx/${i}-dist
+	[ -f ${ETCDIR}/${i} ] || \
+		${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}/${i}-dist
 .endfor
 .if defined(WITH_HTTP_MODULE) && defined(WITH_WWW)
 	${MKDIR} ${PREFIX}/www/nginx-dist
