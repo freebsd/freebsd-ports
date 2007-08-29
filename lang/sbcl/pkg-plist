@@ -82,6 +82,7 @@ lib/sbcl/sb-cltl2/sb-cltl2.fasl
 lib/sbcl/sb-cltl2/test-passed
 lib/sbcl/sb-cltl2/tests.fasl
 lib/sbcl/sb-cltl2/tests.lisp
+lib/sbcl/sb-cover/.cvsignore
 lib/sbcl/sb-cover/Makefile
 lib/sbcl/sb-cover/cover.lisp
 lib/sbcl/sb-cover/sb-cover.asd
