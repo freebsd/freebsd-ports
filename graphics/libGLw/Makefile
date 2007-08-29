@@ -6,38 +6,22 @@
 #
 
 PORTNAME=	libGLw
-PORTVERSION=	6.5.3
+PORTVERSION=	${MESAVERSION}
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	 mesa3d
-DISTNAME=	MesaLib-${PORTVERSION}
 
-MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL widgets library
 
-CONFLICTS=	XFree86-libraries-* xorg-libraries-6.*
-
+BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS+=	Xm.3:${PORTSDIR}/x11-toolkits/open-motif
 
-USE_BZIP2=	yes
-USE_LDCONFIG=	yes
-USE_XORG=	xt
 USE_GL=		gl
+USE_XORG=	xt
 
-USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}/src/glw/
+CFLAGS+=	-D__GLX_MOTIF=1
+SRCDIR=		glw
 
-ALL_TARGET=	libGLw.so
-GLWHEADERS=	GLwDrawA.h GLwDrawAP.h GLwMDrawA.h GLwMDrawAP.h
+HEADERS=	GLwDrawA.h GLwDrawAP.h GLwMDrawA.h GLwMDrawAP.h
+HEADERSDIR=	src/glw
 
-post-patch:
-	${CP} ${FILESDIR}/config ${WRKDIR}/Mesa-${PORTVERSION}/configs/current
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/libGLw.so.1 ${PREFIX}/lib
-	${LN} -sf libGLw.so.1 ${PREFIX}/lib/libGLw.so
-.for i in ${GLWHEADERS}
-	${INSTALL_DATA} ${WRKDIR}/Mesa-${PORTVERSION}/src/glw/$i ${PREFIX}/include/GL
-.endfor
-
+.include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
 .include <bsd.port.mk>
