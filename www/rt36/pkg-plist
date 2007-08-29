@@ -105,6 +105,8 @@
 %%RTPLIST%%/lib/RT/I18N/pl.po
 %%RTPLIST%%/lib/RT/I18N/pt_br.po
 %%RTPLIST%%/lib/RT/I18N/ru.po
+%%RTPLIST%%/lib/RT/I18N/sv.po
+%%RTPLIST%%/lib/RT/I18N/tr.po
 %%RTPLIST%%/lib/RT/I18N/zh_cn.po
 %%RTPLIST%%/lib/RT/I18N/zh_tw.po
 %%RTPLIST%%/lib/RT/Interface/CLI.pm
@@ -512,6 +514,7 @@
 %%RTPLIST%%/share/html/REST/1.0/Forms/ticket/links
 %%RTPLIST%%/share/html/REST/1.0/Forms/ticket/merge
 %%RTPLIST%%/share/html/REST/1.0/Forms/ticket/take
+%%RTPLIST%%/share/html/REST/1.0/Forms/transaction/default
 %%RTPLIST%%/share/html/REST/1.0/Forms/user/default
 %%RTPLIST%%/share/html/REST/1.0/Forms/user/ns
 %%RTPLIST%%/share/html/REST/1.0/NoAuth/mail-gateway
@@ -655,6 +658,7 @@
 @dirrm %%RTPLIST%%/share/html/REST/1.0/search
 @dirrm %%RTPLIST%%/share/html/REST/1.0/NoAuth
 @dirrm %%RTPLIST%%/share/html/REST/1.0/Forms/user
+@dirrm %%RTPLIST%%/share/html/REST/1.0/Forms/transaction
 @dirrm %%RTPLIST%%/share/html/REST/1.0/Forms/ticket
 @dirrm %%RTPLIST%%/share/html/REST/1.0/Forms/queue
 @dirrm %%RTPLIST%%/share/html/REST/1.0/Forms
