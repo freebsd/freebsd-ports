@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dtc
-PORTVERSION=	0.24.6.1
-PORTREVISION=	4
+PORTVERSION=	0.25.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.gplhost.com/pub/dtc/bsd/
 
@@ -18,17 +17,13 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Crypt/CBC.php:${PORTSDIR}/security/pear-Cry
 		${LOCALBASE}/libexec/apache22/mod_log_sql.so:${PORTSDIR}/www/mod_log_sql2-dtc \
 		${LOCALBASE}/www/cgi-bin/sbox:${PORTSDIR}/www/sbox-dtc \
 		${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo \
-		${LOCALBASE}/bin/run-mailcap:${PORTSDIR}/misc/mime-support \
 		${LOCALBASE}/lib/nss_mysql.so:${PORTSDIR}/net/libnss-mysql \
 		${LOCALBASE}/sbin/chrootuid:${PORTSDIR}/security/chrootuid \
 		${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
+		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
 		${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
 		${X11BASE}/lib/X11/fonts/webfonts/verdana.ttf:${PORTSDIR}/x11-fonts/webfonts \
 		${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql50-server
-
-BROKEN=		Broken dependency
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
 
 NO_BUILD=	yes
 USE_PHP=	mysql pcre session
@@ -82,7 +77,7 @@ DTCDIR=		${PREFIX}/${DTCROOT}
 PLIST_SUB+=	DTCROOT="${DTCROOT}"
 
 SUB_FILES=	dtc-install dtc-deinstall
-SUB_LIST+=	QMAIL_DIR="${QMAIL_DIR}"
+SUB_LIST+=	QMAIL_DIR="${QMAIL_DIR}" DTCROOT="${DTCROOT}"
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/dtc-install ${PREFIX}/sbin/dtc-install
