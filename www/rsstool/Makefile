@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsstool
-DISTVERSION=	1.0.0rc2
+DISTVERSION=	1.0.0rc3
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	www
 MASTER_SITES=	BERLIOS CENKES
@@ -20,13 +20,9 @@ USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 HAS_CONFIGURE=	yes
-PLIST_FILES=	bin/${PORTNAME}
-PORTDOCS=	*
-PORTEXAMPLES=	*
 
 post-patch:
-	@cd ${BUILD_WRKSRC}/&&${REINPLACE_CMD} -e '/^CFLAGS=/s|-O3||;\
-		/^CFLAGS=/s|=|+=|;s|gcc|${CC}|' Makefile configure.in
+	@cd ${BUILD_WRKSRC}/&&${REINPLACE_CMD} -e 's|gcc|${CC}|' Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin/
