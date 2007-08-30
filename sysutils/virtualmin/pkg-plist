@@ -45,6 +45,7 @@ lib/webmin/virtual-server/edit_afile.cgi
 lib/webmin/virtual-server/edit_alias.cgi
 lib/webmin/virtual-server/edit_database.cgi
 lib/webmin/virtual-server/edit_domain.cgi
+lib/webmin/virtual-server/edit_exclude.cgi
 lib/webmin/virtual-server/edit_ffile.cgi
 lib/webmin/virtual-server/edit_limits.cgi
 lib/webmin/virtual-server/edit_newbw.cgi
@@ -247,6 +248,8 @@ lib/webmin/virtual-server/list_databases.cgi
 lib/webmin/virtual-server/list_users.cgi
 lib/webmin/virtual-server/local-template
 lib/webmin/virtual-server/log_parser.pl
+lib/webmin/virtual-server/mass_aedit.cgi
+lib/webmin/virtual-server/mass_aedit_form.cgi
 lib/webmin/virtual-server/migrate.cgi
 lib/webmin/virtual-server/migrate_form.cgi
 lib/webmin/virtual-server/migration-cpanel.pl
@@ -269,6 +272,7 @@ lib/webmin/virtual-server/save_afile.cgi
 lib/webmin/virtual-server/save_alias.cgi
 lib/webmin/virtual-server/save_database.cgi
 lib/webmin/virtual-server/save_domain.cgi
+lib/webmin/virtual-server/save_exclude.cgi
 lib/webmin/virtual-server/save_expframe.cgi
 lib/webmin/virtual-server/save_ffile.cgi
 lib/webmin/virtual-server/save_frame.cgi
@@ -291,6 +295,7 @@ lib/webmin/virtual-server/save_user.cgi
 lib/webmin/virtual-server/save_vfile.cgi
 lib/webmin/virtual-server/search.cgi
 lib/webmin/virtual-server/showpass.cgi
+lib/webmin/virtual-server/simple-lib.pl
 lib/webmin/virtual-server/start_feature.cgi
 lib/webmin/virtual-server/stop_feature.cgi
 lib/webmin/virtual-server/subdomain-template
