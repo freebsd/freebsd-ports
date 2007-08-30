@@ -1,0 +1,31 @@
+--- configure.in.orig	Wed Jun 20 08:41:34 2007
++++ configure.in	Fri Jul 20 14:20:13 2007
+@@ -6,7 +6,6 @@
+ 
+ AC_INIT(base/nagios.c)
+ AC_CONFIG_HEADER(include/config.h include/snprintf.h include/nagios.h include/cgiutils.h)
+-AC_PREFIX_DEFAULT(/usr/local/nagios)
+ 
+ PKG_NAME=nagios
+ PKG_VERSION="3.0a5"
+@@ -196,7 +195,7 @@
+ AC_SUBST(nagios_grp)
+ AC_DEFINE_UNQUOTED(DEFAULT_NAGIOS_USER,"$nagios_user")
+ AC_DEFINE_UNQUOTED(DEFAULT_NAGIOS_GROUP,"$nagios_grp")
+-INSTALL_OPTS="-o $nagios_user -g $nagios_grp"
++INSTALL_OPTS="-o root -g wheel"
+ AC_SUBST(INSTALL_OPTS)
+ 
+ AC_ARG_WITH(command_user,--with-command-user=<user> sets user name for command access,command_user=$withval,command_user=$nagios_user)
+@@ -520,9 +519,9 @@
+ fi
+ 
+ dnl Try and locate glib
+-GLIB_INCLUDE=`pkg-config --cflags glib-2.0`
++GLIB_INCLUDE=""
+ AC_SUBST(GLIB_INCLUDE)
+-GLIB_LIBS=`pkg-config --libs glib-2.0`
++GLIB_LIBS=""
+ AC_SUBST(GLIB_LIBS)
+ if test x$GLIB_LIBS != x; then
+ 	AC_DEFINE_UNQUOTED(HAVE_GLIB)

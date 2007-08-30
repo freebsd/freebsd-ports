@@ -1,0 +1,14 @@
+--- cgi/Makefile.in.orig	Wed Dec 13 02:57:57 2006
++++ cgi/Makefile.in	Fri Jul 20 13:35:18 2007
+@@ -190,9 +190,9 @@
+ 	$(MAKE) install-basic
+ 
+ install-basic:
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CGIDIR)
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CGIDIR)
+ 	for file in *.cgi; do \
+-		$(INSTALL) -m 775 $(INSTALL_OPTS) $$file $(DESTDIR)$(CGIDIR); \
++		$(INSTALL) -m 755 $(INSTALL_OPTS) $$file $(DESTDIR)$(CGIDIR); \
+ 	done
+ 
+ strip-post-install:
