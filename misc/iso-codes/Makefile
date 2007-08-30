@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iso-codes
-DISTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	misc
 MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/ \
 		http://freebsd.powered.net/distfiles/
