@@ -1,0 +1,11 @@
+--- include/locations.h.in.orig	Tue May  1 08:15:57 2007
++++ include/locations.h.in	Fri Jul 20 15:52:49 2007
+@@ -20,7 +20,7 @@
+ 
+ #define DEFAULT_TEMP_FILE			"@localstatedir@/tempfile"
+ #define DEFAULT_TEMP_PATH                       "/tmp"
+-#define DEFAULT_CHECK_RESULT_PATH		"@localstatedir@/spool/checkresults"
++#define DEFAULT_CHECK_RESULT_PATH		"@localstatedir@/checkresults"
+ #define DEFAULT_STATUS_FILE			"@localstatedir@/status.dat"
+ #define DEFAULT_LOG_FILE			"@localstatedir@/nagios.log"
+ #define DEFAULT_LOG_ARCHIVE_PATH		"@localstatedir@/archives/"
