@@ -13302,6 +13302,7 @@ py-urlimport	ports/devel/py-urlimport
 py-urljr	ports/www/py-urljr
 py-urwid	ports/devel/py-urwid
 py-usb		ports/devel/py-usb
+py-utidy	ports/www/py-utidy
 py-utils	ports/devel/py-utils
 py-vertex	ports/net-p2p/py-vertex
 py-visual	ports/graphics/py-visual
