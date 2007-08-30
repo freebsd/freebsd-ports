@@ -66,7 +66,6 @@ bin/qsmhook
 bin/sendmail
 bin/splogger
 bin/tcp-env
-%%NOT_LDAP%%boot/rcNG
 %%NOT_LDAP%%boot/binm1
 %%NOT_LDAP%%boot/binm1+df
 %%NOT_LDAP%%boot/binm2
