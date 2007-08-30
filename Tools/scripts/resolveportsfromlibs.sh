@@ -124,14 +124,15 @@ for i in $@; do
 	fi
 
 	# USE_xxx exceptions, sorting key is the USE_xxx name
-	case ${origin} in
-	print/freetype2)
+	# START and STOP are needed for a perfect match
+	case "START${origin}STOP" in
+	STARTprint/freetypeSTOP)
 		result="USE_FREETYPE=yes"
 		;;
-	devel/gettext)
+	STARTdevel/gettextSTOP)
 		result="USE_GETTEXT=yes"
 		;;
-	converters/libiconv)
+	STARTconverters/libiconvSTOP)
 		result="USE_ICONV=yes"
 		;;
 	esac
