@@ -1,0 +1,117 @@
+Index: jToolkit/data/indexer.py
+===================================================================
+--- jToolkit/data/indexer.py	(révision 4)
++++ jToolkit/data/indexer.py	(copie de travail)
+@@ -25,6 +25,18 @@
+ 	except:
+ 		return None, False
+ 
++def Occur(required, prohibited):
++	if   required == True  and prohibited == False:
++		return PyLucene.BooleanClause.Occur.MUST
++	elif required == False and prohibited == False:
++		return PyLucene.BooleanClause.Occur.SHOULD
++	elif required == False and prohibited == True:
++		return PyLucene.BooleanClause.Occur.MUST_NOT
++	else:
++		# It is an error to specify a clause as both required
++		# and prohibited
++		return None
++
+ class Wrapper:
+ 	def __init__(self, **kwargs):
+ 		for key, value in kwargs.iteritems():
+@@ -331,11 +343,11 @@
+ 			contents = unicode(fp.read(), self.encoding)
+ 			fp.close()
+ 			doc = indexer.Document()
+-			doc.add(indexer.Field("file_name",os.path.basename(file),True,True,True))
++			doc.add(indexer.Field("file_name",os.path.basename(file),PyLucene.Field.Store.YES, PyLucene.Field.Index.TOKENIZED))
+ 			if len(contents) > 0:
+-				doc.add(indexer.Field("file_contents", contents, True, True, True))
++				doc.add(indexer.Field("file_contents", contents, PyLucene.Field.Store.YES, PyLucene.Field.Index.TOKENIZED))
+ 			if ID is not None:
+-				doc.add(indexer.Field("recordID",ID,True,True,True))
++				doc.add(indexer.Field("recordID",ID,PyLucene.Field.Store.YES, PyLucene.Field.Index.TOKENIZED))
+ 			self.writer.addDocument(doc)
+ 			self.errorhandler.logtrace("indexer.py: Indexing file %s" % file)
+ 
+@@ -359,7 +371,7 @@
+ 						value = value.decode("charmap")
+ 				if not isinstance(value, (str, unicode)):
+ 					value = str(value)
+-				doc.add(indexer.Field(str(field), value, True, True, True))
++				doc.add(indexer.Field(str(field), value, PyLucene.Field.Store.YES, PyLucene.Field.Index.TOKENIZED))
+ 			self.writer.addDocument(doc)
+ 
+ 	def startIndex(self):
+@@ -376,7 +388,7 @@
+ 		self.dirLock.acquire()
+ 		try:
+ 			self.writer = indexer.IndexWriter(self.storeDir, self.analyzer, create)
+-			self.writer.maxFieldLength = 1048576
++			self.writer.setMaxFieldLength(1048576)
+ 			success = True
+ 		except Exception,e:
+ 			self.errorhandler.logerror("Failed to create index.  %s" % self.errorhandler.traceback_str())
+@@ -484,15 +496,15 @@
+ 		combinedquery = indexer.BooleanQuery()
+ 		for fieldSearch in fieldSearches:
+ 			if isinstance(fieldSearch, indexer.BooleanQuery):
+-				clause = indexer.BooleanClause(fieldSearch, requireall, False)
++				clause = indexer.BooleanClause(fieldSearch, Occur(requireall, False))
+ 				combinedquery.add(clause)
+ 			elif isinstance(fieldSearch, tuple):
+ 				fieldName, search = fieldSearch
+ 				analyzer = self.analyzer
+ 				if isinstance(analyzer, PerFieldAnalyzer):
+ 					analyzer = analyzer.getAnalyzer(fieldName)
+-				query = indexer.QueryParser.parse(search, fieldName, analyzer)
+-				combinedquery.add(query, requireall, False)
++				query = indexer.QueryParser(fieldName,analyzer).parse(search)
++				combinedquery.add(query, Occur(requireall, False))
+ 			else:
+ 				raise ValueError("unexpected value in fieldSearch: %r" % fieldSearch)
+ 		return combinedquery
+@@ -500,7 +512,7 @@
+ 	def notQuery(self, query):
+ 		"""returns a query that matches everything but the query"""
+ 		notquery = indexer.BooleanQuery()
+-		clause = indexer.BooleanClause(query, False, True)
++		clause = indexer.BooleanClause(query, Occur(False, True))
+ 		notquery.add(clause)
+ 		return notquery
+ 
+@@ -645,7 +657,7 @@
+ 		query = indexer.BooleanQuery()
+ 		analyzer = indexer.StandardAnalyzer()
+ 		for keyfield in IDFields.keys():
+-			query.add(indexer.QueryParser.parse(IDFields[keyfield], keyfield, analyzer), True, False)
++			query.add(indexer.QueryParser.parse(IDFields[keyfield], keyfield, analyzer), Occur(True, False))
+ 		hits = self.search(query)
+ 		modifiedFields.update(IDFields)
+ 		for hit, doc in hits:
+
+Index: jToolkit/data/indexer.py
+===================================================================
+--- jToolkit/data/indexer.py	(révision 4)
++++ jToolkit/data/indexer.py	(copie de travail)
+@@ -197,7 +209,7 @@
+ 		self.encoding = encoding
+ 		self.errorhandler = errorhandler
+ 		self.storeDir = config.indexdir
+-		lockname = os.path.join(tempfile.gettempdir(),self.storeDir.replace('/','_').replace('\\','_').replace(':','_'))
++		lockname = self.storeDir+".lock"
+ 		self.dirLock = glock.GlobalLock(lockname)
+ 		if not os.path.exists(self.storeDir):
+ 			os.mkdir(self.storeDir)
+@@ -437,7 +449,7 @@
+ 		self.errorhandler = errorhandler
+ 		self.storeDir = storeDir
+ 		self.indexReader = self.indexVersion = self.indexSearcher = None
+-		lockname = os.path.join(tempfile.gettempdir(),self.storeDir.replace('/','_').replace('\\','_').replace(':','_'))
++		lockname = self.storeDir+".lock"
+ 		self.dirLock = glock.GlobalLock(lockname)
+ 		# if we can't acquire the lock, someone is busy writing, and we should wait for them
+ 		self.dirLock.acquire(blocking=True)
+

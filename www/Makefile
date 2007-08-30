@@ -250,6 +250,7 @@
     SUBDIR += jetspeed
     SUBDIR += jetty
     SUBDIR += joomla
+    SUBDIR += jtoolkit
     SUBDIR += junkbuster
     SUBDIR += kannel
     SUBDIR += kazehakase

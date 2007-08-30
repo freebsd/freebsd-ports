@@ -1,0 +1,11 @@
+jToolkit is a Python web application framework built on modpython and
+Apache. There is also a simple command line webserver for running
+applications from.
+
+It is aimed at dynamically generated pages rather than mostly-static
+pages (for which there are templating solutions). Pages can be produced
+using a variety of widgets. It handles sessions and database
+connections (and multi-database portability).
+
+WWW: http://jtoolkit.sourceforge.net/
+Author: St James Software <info@sjsoft.com>
