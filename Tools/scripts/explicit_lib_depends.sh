@@ -92,6 +92,11 @@ for i in $@; do
 		fi
 	fi
 
+	if [ ! -f ${current_port}/+CONTENTS ]; then
+		echo $i is not a valid port
+		continue
+	fi
+
 	myorigin=$(awk -F : '/@comment ORIGIN:/ {print $2}' \
 		${current_port}/+CONTENTS)
 
