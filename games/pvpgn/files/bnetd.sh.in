@@ -32,10 +32,9 @@ stop_postcmd()
   rm -f $pidfile
 }
 
-# set defaults
-
-bnetd_enable=${bnetd_enable:-"NO"}
-bnetd_flags=${bnetd_flags:-""}
-
 load_rc_config $name
+
+: ${bnetd_enable="NO"}
+: ${bnetd_flags=""}
+
 run_rc_command "$1"

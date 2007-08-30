@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pvpgn
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	pvpgn
@@ -32,9 +32,10 @@ PLIST_SUB+=	RC_SUFX=${RC_SUFX}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc/pvpgn \
-		--localstatedir=${DATADIR} --with-libraries=${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/pvpgn \
+		--localstatedir=${DATADIR} \
+		--with-libraries=${LOCALBASE}/lib
 
 USE_RC_SUBR=	bnetd.sh
 
