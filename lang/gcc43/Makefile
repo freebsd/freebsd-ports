@@ -23,7 +23,7 @@ MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 4.3
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
-		mpfr.1:${PORTSDIR}/math/mpfr
+		mpfr.2:${PORTSDIR}/math/mpfr
 
 SUFFIX=		43
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}

@@ -7,7 +7,7 @@
 
 PORTNAME=	genius
 PORTVERSION=	0.7.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://ftp.5z.com/pub/genius/
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9].[0-9]).*/\1/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arbitrary precision calculator for Gnome Desktop Environment
 
-LIB_DEPENDS=	mpfr.1:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	mpfr.2:${PORTSDIR}/math/mpfr
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtksourceview intlhack \
