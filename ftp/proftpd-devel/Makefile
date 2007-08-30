@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1rc3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -15,7 +15,9 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://spirit.bentel.sk/mirrors/Proftpd/distrib/source/ \
 		ftp://proftpd.networkedsystems.co.uk/distrib/source/ \
 		http://mirrors.ibiblio.org/pub/mirrors/proftpd/distrib/source/ \
-		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/
+		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/ \
+		CENKES:clam
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	beech@FreeBSD.org
 COMMENT?=	Highly configurable ftp daemon
@@ -53,7 +55,7 @@ CONFIGURE_ARGS=	--localstatedir=/var/run \
 
 OPTIONS=	IPV6 "Use IPv6" off \
 		LDAP "Use LDAP" off \
-		LDAP_TLS "Use LDAP TLS (Requires LDAP)" off\
+		LDAP_TLS "Use LDAP TLS (Requires LDAP, OPENSSL)" off\
 		MYSQL "Use MySQL" off \
 		PGSQL "Use Postgres" off \
 		OPENSSL "Include mod_tls" off \
@@ -61,16 +63,17 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		IFSESSION "Include mod_ifsession" on \
 		README "Include mod_readme" on \
 		RATIO "Include mod_ratio" on \
-		CTRLS "include controls" off \
+		CTRLS "Include controls" off \
 		REWRITE "Include mod_rewrite" on \
 		WRAP "Include mod_wrap2" on \
-		WRAP_FILE "include mod_wrap2_file" off \
-		WRAP_SQL "include mod_wrap2_sql" off \
+		WRAP_FILE "Include mod_wrap2_file" off \
+		WRAP_SQL "Include mod_wrap2_sql" off \
 		RADIUS "Include mod_radius" off \
 		QUOTATAB_RADIUS "include mod_quotatab_radius" off \
-		BAN "include mod_ban (Requires CTRLS)" off \
+		BAN "Include mod_ban (Requires CTRLS)" off \
 		NLS "Use nls (builds mod_lang)" off \
-		CYRFIX "Use patch for fix cyrillic encoding" off
+		CYRFIX "Patch to fix cyrillic encoding" off \
+		CLAMAV "Include mod_clamav " off
 
 MODULES?=
 LIBDIRS?=
@@ -160,6 +163,7 @@ USE_OPENLDAP=	yes
 MODULES:=${MODULES}:mod_ldap
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-contrib-mod_ldap.c
 .endif
 
 .if defined(WITH_MYSQL)
@@ -186,9 +190,6 @@ CFLAGS+=	-DHAVE_OPENSSL
 .include <${PORTSDIR}/Mk/bsd.openssl.mk>
 PROFTPD_LIBS+=	-lssl -lcrypto -L${LOCALBASE}/lib
 MODULES:=${MODULES}:mod_tls
-.if defined(WITH_LDAP_TLS)
-EXTRA_PATCHES+=	${FILESDIR}/extra_patch-ldap-tls-mod_ldap.c
-.endif
 .endif
 
 .if defined(WITH_CTRLS)
@@ -208,6 +209,16 @@ MODULES:=${MODULES}:mod_quotatab_ldap
 .if defined(WITH_PGSQL) || defined(WITH_MYSQL)
 MODULES:=${MODULES}:mod_quotatab_sql
 .endif
+.endif
+
+.if defined(WITH_CLAMAV)
+#http://www.uglyboxindustries.com/mod_clamav_new.c
+DISTFILES+=	mod_clamav-0.5.tar.bz2:clam
+USE_CLAMAV=	yes
+MODULES:=${MODULES}:mod_clamav
+LIB_DEPENDS+=   clamav.2:${PORTSDIR}/security/clamav
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 .endif
 
 # mod_ifsession should be the last item in the modules list
@@ -232,9 +243,18 @@ CONFIGURE_ARGS+=	--with-libraries=${LIBDIRS}
 
 MODULES!=${ECHO} ${MODULES} | ${SED} -e 's,^:,,' -e 's,:$$,,'
 
+post-extract:
+.if defined(WITH_CLAMAV)
+	@${MV} ${WRKDIR}/mod_clamav_new.c ${WRKSRC}/modules/mod_clamav.c
+.endif
+
 post-patch:
 .if defined(WITH_NLS)
 	@${REINPLACE_CMD} -e 's|-lsupp|-lsupp -lintl|g' ${WRKSRC}/Makefile.in
+.endif
+.if defined(WITH_LDAP_TLS)
+	@${REINPLACE_CMD} -e 's:/\* #define USE_LDAP_TLS \*/:#define USE_LDAP_TLS:' \
+		${WRKSRC}/contrib/mod_ldap.c
 .endif
 	@${REINPLACE_CMD} -e 's|proftpd\.conf|proftpd.conf.sample|g' ${WRKSRC}/Makefile.in
 
