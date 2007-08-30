@@ -20,6 +20,7 @@ lib/gthumb/modules/libwebexporter.so
 lib/libgthumb.a
 lib/libgthumb.la
 lib/libgthumb.so
+libdata/bonobo/servers/GNOME_GThumb.server
 share/gnome/applications/gthumb.desktop
 share/gnome/gthumb/albumthemes/BestFit/back.png
 share/gnome/gthumb/albumthemes/BestFit/BestFit.css
@@ -111,12 +112,18 @@ share/gnome/help/gthumb/C/figures/nav-button.png
 share/gnome/help/gthumb/C/figures/preferences.png
 share/gnome/help/gthumb/C/gthumb.xml
 share/gnome/help/gthumb/C/legal.xml
+share/gnome/help/gthumb/es/figures/comment.png
+share/gnome/help/gthumb/es/figures/main-win.png
+share/gnome/help/gthumb/es/figures/nav-button.png
+share/gnome/help/gthumb/es/figures/preferences.png
+share/gnome/help/gthumb/es/gthumb.xml
 share/gnome/help/gthumb/sv/figures/comment.png
 share/gnome/help/gthumb/sv/figures/main-win.png
 share/gnome/help/gthumb/sv/figures/nav-button.png
 share/gnome/help/gthumb/sv/figures/preferences.png
 share/gnome/help/gthumb/sv/gthumb.xml
 share/gnome/omf/gthumb/gthumb-C.omf
+share/gnome/omf/gthumb/gthumb-es.omf
 share/gnome/omf/gthumb/gthumb-sv.omf
 share/icons/hicolor/48x48/apps/gthumb.png
 share/locale/am/LC_MESSAGES/gthumb.mo
@@ -179,6 +186,8 @@ share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm share/gnome/omf/gthumb
 @dirrm share/gnome/help/gthumb/sv/figures
 @dirrm share/gnome/help/gthumb/sv
+@dirrm share/gnome/help/gthumb/es/figures
+@dirrm share/gnome/help/gthumb/es
 @dirrm share/gnome/help/gthumb/C/figures
 @dirrm share/gnome/help/gthumb/C
 @dirrm share/gnome/help/gthumb
