@@ -104,9 +104,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/xml/bugzilla.ent
 %%PORTDOCS%%%%DOCSDIR%%/xml/conventions.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/customization.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/dbschema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/xml/faq.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/filetemp.patch
 %%PORTDOCS%%%%DOCSDIR%%/xml/gfdl.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/glossary.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/index.xml
