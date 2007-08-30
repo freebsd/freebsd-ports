@@ -5669,6 +5669,7 @@ json-c		ports/devel/json-c
 jspice3		ports/cad/jspice3
 jtag		ports/devel/jtag
 jtans		ports/games/jtans
+jtoolkit	ports/www/jtoolkit
 jtop		ports/sysutils/jtop
 jts		ports/math/jts
 jude-community	ports/devel/jude-community
