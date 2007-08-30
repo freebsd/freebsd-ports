@@ -1,0 +1,9 @@
+An integrated interface to current and future infrastructural services
+offered by Amazon Web Services. Currently, this includes:
+
+  * Simple Storage Service (S3)
+  * Simple Queue Service (SQS)
+  * Elastic Compute Cloud (EC2)
+  * Mechanical Turk
+
+WWW: http://code.google.com/p/boto
