@@ -7,7 +7,7 @@
 
 PORTNAME=	drweb
 PORTVERSION=	4.33
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/61/:f61 \
 		ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/55/:f55 \
@@ -22,6 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 IA32_BINARY_PORT=	yes
 NO_BUILD=		yes
+USE_RC_SUBR=		drwebd.sh
 
 .include <bsd.port.pre.mk>
 
@@ -70,8 +71,6 @@ do-install:
 		${CP} ${PREFIX}/etc/drweb/email.ini-distr \
 		${PREFIX}/etc/drweb/email.ini; \
 	fi
-	@${INSTALL_SCRIPT} -m 0750 -b ${WRKSRC}${LOCALBASE}/etc/rc.d/00.drwebd.sh \
-		${PREFIX}/etc/rc.d/001.drwebd.sh
 
 post-install:
 .if !defined(NOPORTDOCS)
