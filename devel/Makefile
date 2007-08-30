@@ -1854,6 +1854,7 @@
     SUBDIR += py-astng
     SUBDIR += py-babel
     SUBDIR += py-bison
+    SUBDIR += py-boto
     SUBDIR += py-celementtree
     SUBDIR += py-cheetah
     SUBDIR += py-ciphon
