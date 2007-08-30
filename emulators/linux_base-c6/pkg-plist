@@ -120,7 +120,7 @@ lib/libdb_cxx-4.1.so
 lib/libdb_cxx-4.2.so
 lib/libdl-%%GLIBCVER%%.so
 lib/libdl.so.2
-lib/libgcc_s-4.1.1-20070105.so.1
+lib/libgcc_s-4.1.2-20070626.so.1
 lib/libgcc_s.so.1
 lib/libglib-2.0.so.0
 lib/libglib-2.0.so.0.1200.9
@@ -568,7 +568,7 @@ usr/lib/libdb-4.3.so
 usr/lib/libdb_cxx-4.3.so
 usr/lib/libdes425.so.3
 usr/lib/libdes425.so.3.0
-usr/lib/libelf-0.126.so
+usr/lib/libelf-0.128.so
 usr/lib/libelf.so.1
 usr/lib/libform.so.5
 usr/lib/libform.so.5.5
@@ -622,7 +622,7 @@ usr/lib/libreadline.so.5
 usr/lib/libreadline.so.5.1
 usr/lib/libselinux.so
 usr/lib/libslang.so.2
-usr/lib/libslang.so.2.0.6
+usr/lib/libslang.so.2.0.7
 usr/lib/libstdc++-3-libc6.2-2-2.10.0.so
 usr/lib/libstdc++-libc6.2-2.so.3
 usr/lib/libstdc++.so.5
@@ -4531,6 +4531,30 @@ usr/lib/locale/sr_ME/LC_NUMERIC
 usr/lib/locale/sr_ME/LC_PAPER
 usr/lib/locale/sr_ME/LC_TELEPHONE
 usr/lib/locale/sr_ME/LC_TIME
+usr/lib/locale/sr_RS/LC_ADDRESS
+usr/lib/locale/sr_RS/LC_COLLATE
+usr/lib/locale/sr_RS/LC_CTYPE
+usr/lib/locale/sr_RS/LC_IDENTIFICATION
+usr/lib/locale/sr_RS/LC_MEASUREMENT
+usr/lib/locale/sr_RS/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/sr_RS/LC_MONETARY
+usr/lib/locale/sr_RS/LC_NAME
+usr/lib/locale/sr_RS/LC_NUMERIC
+usr/lib/locale/sr_RS/LC_PAPER
+usr/lib/locale/sr_RS/LC_TELEPHONE
+usr/lib/locale/sr_RS/LC_TIME
+usr/lib/locale/sr_RS@latin/LC_ADDRESS
+usr/lib/locale/sr_RS@latin/LC_COLLATE
+usr/lib/locale/sr_RS@latin/LC_CTYPE
+usr/lib/locale/sr_RS@latin/LC_IDENTIFICATION
+usr/lib/locale/sr_RS@latin/LC_MEASUREMENT
+usr/lib/locale/sr_RS@latin/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/sr_RS@latin/LC_MONETARY
+usr/lib/locale/sr_RS@latin/LC_NAME
+usr/lib/locale/sr_RS@latin/LC_NUMERIC
+usr/lib/locale/sr_RS@latin/LC_PAPER
+usr/lib/locale/sr_RS@latin/LC_TELEPHONE
+usr/lib/locale/sr_RS@latin/LC_TIME
 usr/lib/locale/ss_ZA/LC_ADDRESS
 usr/lib/locale/ss_ZA/LC_COLLATE
 usr/lib/locale/ss_ZA/LC_CTYPE
@@ -5541,7 +5565,7 @@ usr/share/doc/grep-2.5.1/README
 usr/share/doc/grep-2.5.1/THANKS
 usr/share/doc/grep-2.5.1/TODO
 usr/share/doc/info-4.8/COPYING
-usr/share/doc/libgcc-4.1.1/COPYING.LIB
+usr/share/doc/libgcc-4.1.2/COPYING.LIB
 usr/share/doc/ncurses-5.5/ANNOUNCE
 usr/share/doc/ncurses-5.5/README
 usr/share/doc/ncurses-5.5/announce.html
@@ -5570,8 +5594,8 @@ usr/share/doc/rpm-4.4.2/tsort
 usr/share/doc/setserial-2.17/README
 usr/share/doc/setserial-2.17/rc.serial
 usr/share/doc/setup-2.6.1.1/uidgid
-usr/share/doc/slang-2.0.6/COPYING
-usr/share/doc/slang-2.0.6/changes.txt
+usr/share/doc/slang-2.0.7/COPYING
+usr/share/doc/slang-2.0.7/changes.txt
 usr/share/doc/zlib-1.2.3/README
 usr/share/eula/eula.en_US
 usr/share/firstboot/modules/eula.py
@@ -5991,6 +6015,8 @@ usr/share/i18n/locales/so_SO
 usr/share/i18n/locales/sq_AL
 usr/share/i18n/locales/sr_CS
 usr/share/i18n/locales/sr_ME
+usr/share/i18n/locales/sr_RS
+usr/share/i18n/locales/sr_RS@latin
 usr/share/i18n/locales/ss_ZA
 usr/share/i18n/locales/st_ZA
 usr/share/i18n/locales/sv_FI
@@ -10315,13 +10341,13 @@ var/mail
 @dirrm usr/share/eula
 @dirrm usr/share/empty
 @dirrm usr/share/doc/zlib-1.2.3
-@dirrm usr/share/doc/slang-2.0.6
+@dirrm usr/share/doc/slang-2.0.7
 @dirrm usr/share/doc/setup-2.6.1.1
 @dirrm usr/share/doc/setserial-2.17
 @dirrm usr/share/doc/rpm-4.4.2
 @dirrm usr/share/doc/pcre-6.6
 @dirrm usr/share/doc/ncurses-5.5
-@dirrm usr/share/doc/libgcc-4.1.1
+@dirrm usr/share/doc/libgcc-4.1.2
 @dirrm usr/share/doc/info-4.8
 @dirrm usr/share/doc/grep-2.5.1
 @dirrm usr/share/doc/glibc-common-%%GLIBCVER%%
@@ -10484,6 +10510,10 @@ var/mail
 @dirrm usr/lib/locale/ss_ZA
 @dirrm usr/lib/locale/sr_ME/LC_MESSAGES
 @dirrm usr/lib/locale/sr_ME
+@dirrm usr/lib/locale/sr_RS/LC_MESSAGES
+@dirrm usr/lib/locale/sr_RS
+@dirrm usr/lib/locale/sr_RS@latin/LC_MESSAGES
+@dirrm usr/lib/locale/sr_RS@latin
 @dirrm usr/lib/locale/sr_CS/LC_MESSAGES
 @dirrm usr/lib/locale/sr_CS.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/sr_CS.utf8
