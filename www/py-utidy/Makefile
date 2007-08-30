@@ -1,6 +1,6 @@
 # New ports collection makefile for:	utidy
 # Date created:				Wed Aug 29 21:37:35 CEST 2007
-# Who:					Stefan Esser <se@FreeBSD.org>
+# Whom:					Stefan Esser <se@FreeBSD.org>
 #
 # $FreeBSD$
 #
