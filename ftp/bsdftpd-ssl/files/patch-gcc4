@@ -1,0 +1,257 @@
+diff -urN bsdftpd-ssl-1.1.0.ORI/contrib/ls/print.c contrib/ls/print.c
+--- bsdftpd-ssl-1.1.0.ORI/contrib/ls/print.c	2005-01-11 13:04:34.000000000 +0300
++++ contrib/ls/print.c	2007-08-26 15:41:36.000000000 +0400
+@@ -681,12 +681,12 @@
+ 		unit = unit_adjust(&dbytes);
+ 
+ 		if (dbytes == 0)
+-			(void)printf("%*s ", width, "0B");
++			(void)printf("%*s ", (int)width, "0B");
+ 		else
+-			(void)printf("%*.*f%c ", width - 1, dbytes > 10 ? 0 : 1,
++			(void)printf("%*.*f%c ", (int)(width - 1), dbytes > 10 ? 0 : 1,
+ 			    dbytes, "BKMGTPE"[unit]);
+ 	} else
+-		(void)printf("%*jd ", width, (intmax_t)bytes);
++		(void)printf("%*jd ", (int)width, (intmax_t)bytes);
+ }
+ 
+ /*
+diff -urN bsdftpd-ssl-1.1.0.ORI/ftp/extern.h ftp/extern.h
+--- bsdftpd-ssl-1.1.0.ORI/ftp/extern.h	2004-05-31 02:24:47.000000000 +0400
++++ ftp/extern.h	2007-08-26 14:53:23.000000000 +0400
+@@ -170,7 +170,7 @@
+ void	usage __P((void));
+ void	user __P((int, char **));
+ 
+-extern struct	cmd cmdtab[];
++/*extern struct	cmd cmdtab[];*/
+ extern FILE    *cout;
+ extern int	data;
+ extern char    *home;
+diff -urN bsdftpd-ssl-1.1.0.ORI/ftp/ftp.c ftp/ftp.c
+--- bsdftpd-ssl-1.1.0.ORI/ftp/ftp.c	2004-12-19 21:17:07.000000000 +0300
++++ ftp/ftp.c	2007-08-26 14:53:23.000000000 +0400
+@@ -132,7 +132,8 @@
+ 	const char *host0;
+ 	char *port;
+ {
+-	int s, len, tos, error;
++	socklen_t len;
++	int s, tos, error;
+ 	struct addrinfo hints, *res, *res0;
+ 	static char hostnamebuf[MAXHOSTNAMELEN];
+ 	static char hostaddrbuf[NI_MAXHOST];
+@@ -1346,7 +1347,8 @@
+ initconn()
+ {
+ 	char *p, *a;
+-	int result, len, tmpno = 0;
++	socklen_t len;
++	int result, tmpno = 0;
+ 	int on = 1;
+ 	int error, ports;
+ 	u_int af;
+@@ -1774,7 +1776,8 @@
+ 	const char *lmode;
+ {
+ 	union sockunion from;
+-	int s, fromlen, tos;
++	socklen_t fromlen;
++	int s, tos;
+ #ifdef USE_SSL
+ 	int ret;
+ 	char *ssl_version;
+diff -urN bsdftpd-ssl-1.1.0.ORI/ftp/ftp_var.h ftp/ftp_var.h
+--- bsdftpd-ssl-1.1.0.ORI/ftp/ftp_var.h	2004-12-19 21:44:39.000000000 +0300
++++ ftp/ftp_var.h	2007-08-26 14:53:23.000000000 +0400
+@@ -201,6 +201,8 @@
+ struct macel macros[16];
+ char macbuf[4096];
+ 
++extern struct	cmd cmdtab[];
++
+ #include "sslapp.h"
+ #include "ssl_port_ftps.h"
+ 
+diff -urN bsdftpd-ssl-1.1.0.ORI/ftp/main.c ftp/main.c
+--- bsdftpd-ssl-1.1.0.ORI/ftp/main.c	2004-12-19 21:44:39.000000000 +0300
++++ ftp/main.c	2007-08-26 15:51:27.000000000 +0400
+@@ -102,15 +102,15 @@
+ 	if (out == NULL) return(ret);
+ 
+ 	if (cmd == (BIO_CB_READ | BIO_CB_RETURN)) {
+-		BIO_printf(out, "read from %08X (%d bytes => %ld (%X))\n",
+-			  bio, argi, ret, ret);
++/*		BIO_printf(out, "read from %08X (%d bytes => %ld (%X))\n",
++			  bio, argi, ret, ret);*/
+ 		BIO_dump(out,argp,(int)ret);
+-		BIO_flush(out);
++		(void)BIO_flush(out);
+ 	} else if (cmd == (BIO_CB_WRITE | BIO_CB_RETURN)) {
+-		BIO_printf(out, "write to %08X (%d bytes => %ld (%X))\n",
+-			  bio, argi, ret, ret);
++/*		BIO_printf(out, "write to %08X (%d bytes => %ld (%X))\n",
++			  bio, argi, ret, ret);*/
+ 		BIO_dump(out, argp, (int)ret);
+-		BIO_flush(out);
++		(void)BIO_flush(out);
+ 	}
+ 	return((cmd & BIO_CB_RETURN) ? ret : 1);
+ }
+@@ -121,7 +121,7 @@
+ 	if (con != NULL) {
+ 		if (ssl_debug_flag) {
+ 			BIO_set_callback(SSL_get_rbio(con), bio_dump_cb);
+-			BIO_set_callback_arg(SSL_get_rbio(con), bio_err);
++			BIO_set_callback_arg(SSL_get_rbio(con), (char *)bio_err);
+ 		}
+ 	}
+ 	return 0;
+diff -urN bsdftpd-ssl-1.1.0.ORI/ftpd/ftpd.c ftpd/ftpd.c
+--- bsdftpd-ssl-1.1.0.ORI/ftpd/ftpd.c	2005-01-12 01:54:32.000000000 +0300
++++ ftpd/ftpd.c	2007-08-26 14:53:23.000000000 +0400
+@@ -340,7 +340,8 @@
+ int
+ main(int argc, char *argv[], char **envp)
+ {
+-	int addrlen, ch, on = 1, tos;
++	socklen_t addrlen;
++	int ch, on = 1, tos;
+ 	char *cp, line[LINE_MAX];
+ 	FILE *fd;
+ 	char	*bindname = NULL;
+@@ -2538,7 +2539,8 @@
+ 	if (pdata >= 0) {
+ 		union sockunion from;
+ 		int flags;
+-		int s, fromlen =
++		int s;
++		socklen_t fromlen =
+ #ifdef LINUX /* Linux port */
+ 		SU_LEN(ctrl_addr);
+ #else /* BSD source */
+@@ -3818,7 +3820,8 @@
+ void
+ passive(void)
+ {
+-	int len, on;
++	socklen_t len;
++	int on;
+ 	char *p, *a;
+ 
+ 	if (pdata >= 0)		/* close old port if one set */
+@@ -3915,7 +3918,8 @@
+ void
+ long_passive(char *cmd, int pf)
+ {
+-	int len, on;
++	socklen_t len;
++	int on;
+ 	char *p, *a;
+ 
+ 	if (pdata >= 0)		/* close old port if one set */
+diff -urN bsdftpd-ssl-1.1.0.ORI/ftpd/logwtmp.c ftpd/logwtmp.c
+--- bsdftpd-ssl-1.1.0.ORI/ftpd/logwtmp.c	2004-12-19 21:44:42.000000000 +0300
++++ ftpd/logwtmp.c	2007-08-26 15:37:16.000000000 +0400
+@@ -50,7 +50,7 @@
+ 
+ #include <fcntl.h>
+ #include <time.h>
+-#if 0 /* Original FreeBSD 5.0 code */
++#if 1 /* Original FreeBSD 5.0 code */
+ #include <timeconv.h>
+ #endif
+ #include <netdb.h>
+@@ -94,7 +94,7 @@
+ 		(void)strncpy(ut.ut_line, line, sizeof(ut.ut_line));
+ 		(void)strncpy(ut.ut_name, name, sizeof(ut.ut_name));
+ 		(void)strncpy(ut.ut_host, host, sizeof(ut.ut_host));
+-#if 0 /* Original FreeBSD 5.0 code */
++#if 1 /* Original FreeBSD 5.0 code */
+ 		ut.ut_time = _time_to_time32(time(NULL));
+ #else /* Portable code from FreeBSD 4.8 */
+ 		(void)time(&ut.ut_time);
+diff -urN bsdftpd-ssl-1.1.0.ORI/port/bsd_prog.mk port/bsd_prog.mk
+--- bsdftpd-ssl-1.1.0.ORI/port/bsd_prog.mk	2003-04-05 13:42:20.000000000 +0400
++++ port/bsd_prog.mk	2007-08-26 14:53:23.000000000 +0400
+@@ -43,7 +43,8 @@
+ ${PROG}: ${OBJS}
+ 	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${OBJS} ${LDDESTDIR} ${LDADD}
+ 
+-.else !defined(SRCS)
++.else
++#!defined(SRCS)
+ 
+ .if !target(${PROG})
+ SRCS=	${PROG}.c
+diff -urN bsdftpd-ssl-1.1.0.ORI/ssl/sslapp.c ssl/sslapp.c
+--- bsdftpd-ssl-1.1.0.ORI/ssl/sslapp.c	2005-01-11 02:34:59.000000000 +0300
++++ ssl/sslapp.c	2007-08-26 15:48:40.000000000 +0400
+@@ -108,8 +108,8 @@
+      * export things work... If so we generate one now!
+      */
+     if (server) {
+-	    const char ctx_sid[] = "BSDftpd-ssl";
+-	    SSL_CTX_set_session_id_context(ssl_ctx, ctx_sid, strlen(ctx_sid));
++	    const unsigned char ctx_sid[] = "BSDftpd-ssl";
++	    SSL_CTX_set_session_id_context(ssl_ctx, ctx_sid, strlen((const char*)ctx_sid));
+ 
+ 	    if (SSL_CTX_need_tmp_RSA(ssl_ctx)) {
+ 		    RSA *rsa;
+@@ -474,12 +474,12 @@
+     va_end(ap);
+     if (outputbuf == NULL) {
+ 	    BIO_printf(bio, "\r\nRan out of memory.\r\n");
+-	    BIO_flush(bio);
++	    (void)BIO_flush(bio);
+ 	    return;
+     }
+ 
+     BIO_printf(bio, "%s", outputbuf);
+-    BIO_flush(bio);
++    (void)BIO_flush(bio);
+ 
+     free(outputbuf);
+ }
+@@ -498,12 +498,12 @@
+     va_end(ap);
+     if (outputbuf == NULL) {
+ 	    BIO_printf(bio, "\r\nRan out of memory.\r\n");
+-	    BIO_flush(bio);
++	    (void)BIO_flush(bio);
+ 	    return;
+     }
+ 
+     BIO_printf(bio, "\r\n%s\r\n", outputbuf);
+-    BIO_flush(bio);
++    (void)BIO_flush(bio);
+ 
+     free(outputbuf);
+ }
+@@ -519,7 +519,7 @@
+     vasprintf(&tmp, fmt, ap);
+     if (tmp == NULL) {
+ 	    BIO_printf(bio, "\r\nRan out of memory.\r\n");
+-	    BIO_flush(bio);
++	    (void)BIO_flush(bio);
+ 	    if (ssl_logerr_syslog)
+ 		    syslog(LOG_ERR, "Ran out of memory.");
+ 	    return;
+@@ -531,14 +531,14 @@
+     free(tmp);
+     if (outputbuf == NULL) {
+ 	    BIO_printf(bio, "\r\nRan out of memory.\r\n");
+-	    BIO_flush(bio);
++	    (void)BIO_flush(bio);
+ 	    if (ssl_logerr_syslog)
+ 		    syslog(LOG_ERR, "Ran out of memory.");
+ 	    return;
+     }
+ 
+     BIO_printf(bio, "%s\r\n", outputbuf);
+-    BIO_flush(bio);
++    (void)BIO_flush(bio);
+     if (ssl_logerr_syslog)
+ 	    syslog(LOG_WARNING, "%s", outputbuf);
+     free(outputbuf);
