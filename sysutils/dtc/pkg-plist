@@ -10,6 +10,7 @@
 %%DTCROOT%%/admin/deamons_state_strings.php
 %%DTCROOT%%/admin/favicon.ico
 %%DTCROOT%%/admin/index.php
+%%DTCROOT%%/admin/ip_change.sh
 %%DTCROOT%%/admin/mailgraph.cgi
 %%DTCROOT%%/admin/memgraph.cgi
 %%DTCROOT%%/admin/netusegraph.cgi
@@ -25,6 +26,7 @@
 %%DTCROOT%%/admin/genfiles/change_debconf_ip.sh
 %%DTCROOT%%/admin/genfiles/gen_awstats.php
 %%DTCROOT%%/admin/genfiles/gen_backup_script.php
+%%DTCROOT%%/admin/genfiles/gen_customer_ssl_cert.sh
 %%DTCROOT%%/admin/genfiles/gen_email_account.php
 %%DTCROOT%%/admin/genfiles/gen_maildrop_userdb.php
 %%DTCROOT%%/admin/genfiles/gen_mailfilter.sh
@@ -39,7 +41,6 @@
 %%DTCROOT%%/admin/genfiles/genfiles.php
 %%DTCROOT%%/admin/genfiles/mailfilter_vacation_template
 %%DTCROOT%%/admin/genfiles/remote_mail_list.php
-%%DTCROOT%%/admin/genfiles/gen_customer_ssl_cert.sh
 %%DTCROOT%%/admin/inc/adddomain.png
 %%DTCROOT%%/admin/inc/databases.png
 %%DTCROOT%%/admin/inc/dedic-server.png
@@ -71,6 +72,16 @@
 %%DTCROOT%%/admin/inc/ticket.png
 %%DTCROOT%%/admin/inc/tools.png
 %%DTCROOT%%/admin/inc/virtual-server.png
+%%DTCROOT%%/admin/install/bsd_config
+%%DTCROOT%%/admin/install/debian_config
+%%DTCROOT%%/admin/install/functions
+%%DTCROOT%%/admin/install/gentoo_config
+%%DTCROOT%%/admin/install/install
+%%DTCROOT%%/admin/install/interactive_installer
+%%DTCROOT%%/admin/install/mk_root_mailbox.php
+%%DTCROOT%%/admin/install/osx_config
+%%DTCROOT%%/admin/install/redhat_config
+%%DTCROOT%%/admin/install/uninstall
 %%DTCROOT%%/admin/memgraph/createrrd.sh
 %%DTCROOT%%/admin/memgraph/get_meminfo.sh
 %%DTCROOT%%/admin/netusegraph/createrrd.sh
@@ -78,6 +89,11 @@
 %%DTCROOT%%/admin/queuegraph/count_postfix.sh
 %%DTCROOT%%/admin/queuegraph/count_qmail.sh
 %%DTCROOT%%/admin/queuegraph/createrrd.sh
+%%DTCROOT%%/admin/reminders_msg/server_expired_already.txt
+%%DTCROOT%%/admin/reminders_msg/server_expired_last_warning.txt
+%%DTCROOT%%/admin/reminders_msg/server_expired_shutdown.txt
+%%DTCROOT%%/admin/reminders_msg/server_expired_today.txt
+%%DTCROOT%%/admin/reminders_msg/server_will_expire.txt
 %%DTCROOT%%/admin/reminders_msg/shared_expired_already.txt
 %%DTCROOT%%/admin/reminders_msg/shared_expired_last_warning.txt
 %%DTCROOT%%/admin/reminders_msg/shared_expired_shutdown.txt
@@ -94,6 +110,7 @@
 %%DTCROOT%%/admin/tables/commande.sql
 %%DTCROOT%%/admin/tables/config.sql
 %%DTCROOT%%/admin/tables/cron_job.sql
+%%DTCROOT%%/admin/tables/dedicated.sql
 %%DTCROOT%%/admin/tables/domain.sql
 %%DTCROOT%%/admin/tables/email_accouting.sql
 %%DTCROOT%%/admin/tables/fetchmail.sql
@@ -113,11 +130,13 @@
 %%DTCROOT%%/admin/tables/pending_renewal.sql
 %%DTCROOT%%/admin/tables/pop_access.sql
 %%DTCROOT%%/admin/tables/product.sql
+%%DTCROOT%%/admin/tables/scheduled_updates.sql
 %%DTCROOT%%/admin/tables/secpayconf.sql
 %%DTCROOT%%/admin/tables/smtp_logs.sql
 %%DTCROOT%%/admin/tables/ssh_access.sql
 %%DTCROOT%%/admin/tables/ssh_groups.sql
 %%DTCROOT%%/admin/tables/ssh_user_group.sql
+%%DTCROOT%%/admin/tables/ssl_ips.sql
 %%DTCROOT%%/admin/tables/subdomain.sql
 %%DTCROOT%%/admin/tables/tik_admins.sql
 %%DTCROOT%%/admin/tables/tik_cats.sql
@@ -127,8 +146,6 @@
 %%DTCROOT%%/admin/tables/vps_server.sql
 %%DTCROOT%%/admin/tables/whitelist.sql
 %%DTCROOT%%/admin/tables/whois.sql
-%%DTCROOT%%/admin/tables/scheduled_updates.sql
-%%DTCROOT%%/admin/ip_change.sh
 %%DTCROOT%%/admin/dtc_db.php
 %%DTCROOT%%/admin/restor_db.php
 %%DTCROOT%%/client/bw_per_month.php
@@ -183,20 +200,14 @@
 %%DTCROOT%%/client/inc/virtual-server.png
 %%DTCROOT%%/doc/changelog
 %%DTCROOT%%/doc/LICENSE
-%%DTCROOT%%/doc/bind_conf/etc/bind/db.1.2.3.4
-%%DTCROOT%%/doc/bind_conf/etc/bind/db.0
-%%DTCROOT%%/doc/bind_conf/etc/bind/db.local
-%%DTCROOT%%/doc/bind_conf/etc/bind/db.127
-%%DTCROOT%%/doc/bind_conf/etc/bind/db.255
-%%DTCROOT%%/doc/bind_conf/etc/bind/db.root
-%%DTCROOT%%/doc/bind_conf/etc/named.conf
-%%DTCROOT%%/doc/bind_conf/db.root
-%%DTCROOT%%/doc/README.gentoo
-%%DTCROOT%%/doc/todo
-%%DTCROOT%%/doc/update_stable_rtag.sh
 %%DTCROOT%%/doc/daemonconf_howto/ftp_http_logging_to_mysql
 %%DTCROOT%%/doc/daemonconf_howto/my_init.d_qmail.startup.script
 %%DTCROOT%%/doc/daemonconf_howto/qmail_anti_spam_measures
+%%DTCROOT%%/doc/README.gentoo
+%%DTCROOT%%/doc/build_debian_upload.sh
+%%DTCROOT%%/doc/dns_transfer.sh
+%%DTCROOT%%/doc/todo
+%%DTCROOT%%/doc/update_stable_rtag.sh
 %%DTCROOT%%/doc/dtc_storefront/README
 %%DTCROOT%%/doc/dtc_storefront/dtc_storefront/dbconnect.php
 %%DTCROOT%%/doc/dtc_storefront/dtc_storefront.php
@@ -250,10 +261,10 @@
 %%DTCROOT%%/doc/iglobalwall/doc.txt
 %%DTCROOT%%/doc/iglobalwall/iglobalwall.tar.gz
 %%DTCROOT%%/doc/iglobalwall/mail_header.rar
-%%DTCROOT%%/doc/dns_transfer.sh
-%%DTCROOT%%/doc/build_debian_upload.sh
 %%DTCROOT%%/email/index.php
 %%DTCROOT%%/email/api.php
+%%DTCROOT%%/email/gfx
+%%DTCROOT%%/email/imgcache
 %%DTCROOT%%/email/inc/domain.png
 %%DTCROOT%%/email/inc/domains.png
 %%DTCROOT%%/email/inc/img.php
@@ -273,6 +284,7 @@
 %%DTCROOT%%/shared/drawlib/dtc_functions.php
 %%DTCROOT%%/shared/drawlib/skin.php
 %%DTCROOT%%/shared/drawlib/skinLib.php
+%%DTCROOT%%/shared/drawlib/templates.php
 %%DTCROOT%%/shared/drawlib/tree_menu.php
 %%DTCROOT%%/shared/dtcrm/srs/CHANGELOG
 %%DTCROOT%%/shared/dtcrm/srs/OPS.php
@@ -329,6 +341,7 @@
 %%DTCROOT%%/shared/gfx/dtc/reinit_named.gif
 %%DTCROOT%%/shared/gfx/dtc_logo_small.gif
 %%DTCROOT%%/shared/gfx/generate_pass.png
+%%DTCROOT%%/shared/gfx/help.png
 %%DTCROOT%%/shared/gfx/see_password.png
 %%DTCROOT%%/shared/gfx/stock_add_24.png
 %%DTCROOT%%/shared/gfx/stock_apply_20.png
@@ -498,6 +511,7 @@
 %%DTCROOT%%/shared/gfx/skin/tex/skin.php
 %%DTCROOT%%/shared/inc/forms/admin_stats.php
 %%DTCROOT%%/shared/inc/forms/database.php
+%%DTCROOT%%/shared/inc/forms/dedicated.php
 %%DTCROOT%%/shared/inc/forms/dns.php
 %%DTCROOT%%/shared/inc/forms/domain_info.php
 %%DTCROOT%%/shared/inc/forms/domain_stats.php
@@ -544,47 +558,11 @@
 %%DTCROOT%%/shared/inc/sql/ticket.php
 %%DTCROOT%%/shared/inc/sql/vps.php
 %%DTCROOT%%/shared/inc/sql/vps_strings.php
-%%DTCROOT%%/shared/package-installer/drupal/drupal-4.7.2.tar.gz
-%%DTCROOT%%/shared/package-installer/drupal/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/drupal/dtc-pkg-install.php
-%%DTCROOT%%/shared/package-installer/horde/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/horde/dtc-pkg-install.php
-%%DTCROOT%%/shared/package-installer/horde/horde-3.0.4.tar.gz
-%%DTCROOT%%/shared/package-installer/joomla/Joomla_1.0.8-Stable-Full_Package.tar.bz2
-%%DTCROOT%%/shared/package-installer/joomla/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/joomla/dtc-pkg-install.php
-%%DTCROOT%%/shared/package-installer/joomla_pl/Joomla_1.0.10_rev2.tar.bz2
-%%DTCROOT%%/shared/package-installer/joomla_pl/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/joomla_pl/dtc-pkg-install.php
-%%DTCROOT%%/shared/package-installer/oscommerce/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/oscommerce/dtc-pkg-install.php
-%%DTCROOT%%/shared/package-installer/oscommerce/oscommerce-2.2ms2.tar.gz
-%%DTCROOT%%/shared/package-installer/oscommerce-creloaded/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/oscommerce-creloaded/dtc-pkg-install.php
-%%DTCROOT%%/shared/package-installer/oscommerce-creloaded/oscommerce-creloaded_6.15-1.tar.gz
-%%DTCROOT%%/shared/package-installer/phpbb/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/phpbb/dtc-pkg-install.php
-%%DTCROOT%%/shared/package-installer/phpbb/phpBB-2.0.17.tar.bz2
-%%DTCROOT%%/shared/package-installer/phpnuke/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/phpnuke/dtc-pkg-install.php
-%%DTCROOT%%/shared/package-installer/phpnuke/phpnuke-7.7.tar.gz
-%%DTCROOT%%/shared/package-installer/phpsurveyor/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/phpsurveyor/dtc-pkg-install.php
-%%DTCROOT%%/shared/package-installer/phpsurveyor/phpsurveyor.tar.gz
-%%DTCROOT%%/shared/package-installer/smf/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/smf/dtc-pkg-install.php
-%%DTCROOT%%/shared/package-installer/smf/smf.tar.bz2
-%%DTCROOT%%/shared/package-installer/vtiger/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/vtiger/dtc-pkg-install.php
-%%DTCROOT%%/shared/package-installer/vtiger/vtigercrm-5.0.0.tar.gz
-%%DTCROOT%%/shared/package-installer/wanewsletter/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/wanewsletter/dtc-pkg-install.php
-%%DTCROOT%%/shared/package-installer/wanewsletter/wanewsletter-2.3.0.tar.gz
 %%DTCROOT%%/shared/securepay/gateways/enets.php
 %%DTCROOT%%/shared/securepay/gateways/paypal.php
 %%DTCROOT%%/shared/securepay/gateways/worldpay.php
-%%DTCROOT%%/shared/securepay/RENAME_ME_paiement_config.php
 %%DTCROOT%%/shared/securepay/paiement.php
+%%DTCROOT%%/shared/securepay/paiement_config.php
 %%DTCROOT%%/shared/securepay/pay_functions.php
 %%DTCROOT%%/shared/template/dtc_logo.gif
 %%DTCROOT%%/shared/template/favicon.ico
@@ -602,24 +580,10 @@
 %%DTCROOT%%/client/imgcache
 sbin/dtc-install
 sbin/dtc-deinstall
-/share
 @dirrm %%DTCROOT%%/shared/vars
 @dirrm %%DTCROOT%%/shared/template
 @dirrm %%DTCROOT%%/shared/securepay/gateways
 @dirrm %%DTCROOT%%/shared/securepay
-@dirrm %%DTCROOT%%/shared/package-installer/wanewsletter
-@dirrm %%DTCROOT%%/shared/package-installer/vtiger
-@dirrm %%DTCROOT%%/shared/package-installer/smf
-@dirrm %%DTCROOT%%/shared/package-installer/phpsurveyor
-@dirrm %%DTCROOT%%/shared/package-installer/phpnuke
-@dirrm %%DTCROOT%%/shared/package-installer/phpbb
-@dirrm %%DTCROOT%%/shared/package-installer/oscommerce-creloaded
-@dirrm %%DTCROOT%%/shared/package-installer/oscommerce
-@dirrm %%DTCROOT%%/shared/package-installer/joomla_pl
-@dirrm %%DTCROOT%%/shared/package-installer/joomla
-@dirrm %%DTCROOT%%/shared/package-installer/horde
-@dirrm %%DTCROOT%%/shared/package-installer/drupal
-@dirrm %%DTCROOT%%/shared/package-installer
 @dirrm %%DTCROOT%%/shared/inc/sql
 @dirrm %%DTCROOT%%/shared/inc/forms
 @dirrm %%DTCROOT%%/shared/inc
@@ -665,9 +629,6 @@ sbin/dtc-deinstall
 @dirrm %%DTCROOT%%/doc/dtc_storefront/dtc_storefront
 @dirrm %%DTCROOT%%/doc/dtc_storefront
 @dirrm %%DTCROOT%%/doc/daemonconf_howto
-@dirrm %%DTCROOT%%/doc/bind_conf/etc/bind
-@dirrm %%DTCROOT%%/doc/bind_conf/etc
-@dirrm %%DTCROOT%%/doc/bind_conf
 @dirrm %%DTCROOT%%/doc
 @dirrm %%DTCROOT%%/client/inc
 @dirrm %%DTCROOT%%/client
@@ -676,10 +637,12 @@ sbin/dtc-deinstall
 @dirrm %%DTCROOT%%/admin/queuegraph
 @dirrm %%DTCROOT%%/admin/netusegraph
 @dirrm %%DTCROOT%%/admin/memgraph
+@dirrm %%DTCROOT%%/admin/install
 @dirrm %%DTCROOT%%/admin/inc
 @dirrm %%DTCROOT%%/admin/genfiles
 @dirrm %%DTCROOT%%/admin/dtcrm
 @dirrm %%DTCROOT%%/admin/cpugraph
+@dirrm %%DTCROOT%%/admin
 @dirrm %%DTCROOT%%/etc/zones
 @dirrm %%DTCROOT%%/etc
 @dirrm %%DTCROOT%%
