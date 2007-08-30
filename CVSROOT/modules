@@ -15686,6 +15686,7 @@ transcode	ports/multimedia/transcode
 transfig	ports/print/transfig
 transkode	ports/multimedia/transkode
 translate	ports/misc/translate
+translate-toolkit	ports/textproc/translate-toolkit
 translator	ports/misc/translator
 transmission	ports/net-p2p/transmission
 transmission-gtk2	ports/net-p2p/transmission-gtk2
