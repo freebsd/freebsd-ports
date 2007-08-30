@@ -3552,6 +3552,7 @@ getleft		ports/www/getleft
 getmail		ports/mail/getmail
 gettext		ports/devel/gettext
 gettext-lint	ports/devel/gettext-lint
+gettext-msghack	ports/devel/gettext-msghack
 getxml		ports/devel/getxml
 gexpr		ports/math/gexpr
 gfax		ports/comms/gfax
