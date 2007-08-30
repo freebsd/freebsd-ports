@@ -1,0 +1,5 @@
+Msghack can be used to alter gettext .po files in ways no sane mind
+would think about. It is a reimplementation of the original msghack
+in Python.
+
+Author: Trond Eivind Glomsroed <teg@redhat.com>
