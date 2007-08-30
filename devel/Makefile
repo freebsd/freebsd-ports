@@ -374,6 +374,7 @@
     SUBDIR += genproto
     SUBDIR += gettext
     SUBDIR += gettext-lint
+    SUBDIR += gettext-msghack
     SUBDIR += getxml
     SUBDIR += gflags
     SUBDIR += gindent
