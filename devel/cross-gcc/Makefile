@@ -7,7 +7,7 @@
 
 PORTNAME?=	gcc
 PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC:S,$,:gcc,} \
 		${MASTER_SITE_SOURCEWARE:S,$,:newlib,}
@@ -151,7 +151,7 @@ TGTLANGS:=	"${TGTLANGS},objc"
 .if defined(WITH_FORTRAN)
 TGTLANGS:=	"${TGTLANGS},fortran"
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4 \
-		mpfr.1:${PORTSDIR}/math/mpfr
+		mpfr.2:${PORTSDIR}/math/mpfr
 CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
 PLIST_FILES+=	bin/${OURTARGET}-gfortran \
 		${OURTARGET}/bin/gfortran

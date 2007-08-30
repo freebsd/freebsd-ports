@@ -7,6 +7,7 @@
 
 PORTNAME=	wcalc
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	w-calc
@@ -16,7 +17,7 @@ MAINTAINER=	amarendra.godbole@gmail.com
 COMMENT=	A natural-expression command-line calculator
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
-		mpfr.1:${PORTSDIR}/math/mpfr
+		mpfr.2:${PORTSDIR}/math/mpfr
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -8,6 +8,7 @@
 
 PORTNAME=	gretl
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -16,7 +17,7 @@ COMMENT=	Gnu Regression, Econometrics and Time-series Library
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3 \
-		mpfr.1:${PORTSDIR}/math/mpfr
+		mpfr.2:${PORTSDIR}/math/mpfr
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_BZIP2=	yes

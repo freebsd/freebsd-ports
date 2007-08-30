@@ -9,6 +9,7 @@
 
 PORTNAME=		gnat-gcc
 PORTVERSION=		4.3.0
+PORTREVISION=		1
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_GCC} \
 			http://lovetemple.net/data/:boot
@@ -22,7 +23,7 @@ MAINTAINER=		karel@lovetemple.net
 COMMENT=		The GNU Ada Compiler system
 
 LIB_DEPENDS=		gmp.7:${PORTSDIR}/math/libgmp4 \
-			mpfr.1:${PORTSDIR}/math/mpfr
+			mpfr.2:${PORTSDIR}/math/mpfr
 
 ONLY_FOR_ARCHS=		i386
 
