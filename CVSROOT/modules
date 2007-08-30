@@ -14715,6 +14715,7 @@ slbd		ports/net/slbd
 sleuth		ports/dns/sleuth
 sleuthkit	ports/sysutils/sleuthkit
 slffea		ports/cad/slffea
+slgrace		ports/math/slgrace
 slib		ports/lang/slib
 slib-gauche	ports/lang/slib-gauche
 slib-guile	ports/lang/slib-guile
