@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpfr
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.0
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.mpfr.org/mpfr-current/
 DIST_SUBDIR=	mpfr
@@ -18,8 +18,7 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gmp=${LOCALBASE} \
-		--enable-shared
+CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
 USE_LDCONFIG=	yes
 
 INFO=		mpfr
