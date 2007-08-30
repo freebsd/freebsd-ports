@@ -1,4 +1,4 @@
-@unexec if [ -f /var/drweb/run/drwebd.pid ] ; then %D/etc/rc.d/001.drwebd.sh stop ; fi
+@unexec if [ -f /var/drweb/run/drwebd.pid ] ; then %D/etc/rc.d/drwebd stop ; fi
 drweb/drweb
 drweb/drwebd
 drweb/drwebdc
@@ -15,7 +15,6 @@ etc/drweb/drweb32.ini-distr
 @unexec if [ -f %D/etc/drweb/email.ini ] && cmp -s %D/etc/drweb/email.ini %D/etc/drweb/email.ini-distr; then rm -f %D/etc/drweb/email.ini ; fi
 etc/drweb/email.ini-distr
 @exec if [ ! -f %B/email.ini ] ; then cp -p %B/%F %B/email.ini ; fi
-etc/rc.d/001.drwebd.sh
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.rus
 %%PORTDOCS%%%%DOCSDIR%%/FAQ

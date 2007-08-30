@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# PROVIDE: drwebd
+# REQUIRE: DAEMON
+# BEFORE: mail
+
+. %%RC_SUBR%%
+
+name="drwebd"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${drwebd_enable="NO"}
+: ${drwebd_pidfile="/var/drweb/run/drwebd.pid"}
+: ${drwebd_procname="%%PREFIX%%/drweb/drwebd"}
+
+command=$drwebd_procname
+pidfile=$drwebd_pidfile
+
+run_rc_command "$1"
+
