@@ -7,10 +7,9 @@
 
 PORTNAME=	simscan
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.inter7.com/simscan/
-MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	toxa@toxahost.ru
@@ -22,8 +21,13 @@ GNU_CONFIGURE=	yes
 
 WORKDIR?=	${QMAIL_PREFIX}/${PORTNAME}
 QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
-PLIST_SUB=	QMAIL_PREFIX=${QMAIL_PREFIX} \
+
+SUB_FILES=	pkg-message \
+		pkg-install \
+		pkg-deinstall
+SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX} \
 		SIMSCAN_DIR=${PORTNAME}
+PLIST_SUB=	QMAIL_PREFIX=${QMAIL_PREFIX}
 
 OPTIONS=	CLAMAV "Support for ClamAV Virus Scanning" on \
 		RIPMIME "Ripmime Processing (if Clamav ScanMail disabled)" on \
@@ -110,22 +114,26 @@ if ! ${TEST} -f ${QMAIL_QUEUE}; then \
 	exit 1; \
 fi
 
+post-patch:
+	@${REINPLACE_CMD} -E 's,($f/daily.cvd"),\1 || test -d "$f/daily.inc",' \
+		${WRKSRC}/configure
+
 pre-configure:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~="
 	@${ECHO_MSG} "You may also use the following build options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "QMAIL_PREFIX		Base qmail directory. Default is /var/qmail"
-	@${ECHO_MSG} "WORKDIR		Directory to unpack emails. Default is /var/qmail/simscan"
-	@${ECHO_MSG} "QMAIL_QUEUE		Define full path and name of the qmail-queue program"
-	@${ECHO_MSG} "			Incoming mail is passed to this program after being"
-	@${ECHO_MSG} "			scanned by SimScan. Default is /var/qmail/bin/qmail-queue"
-	@${ECHO_MSG} "SPAMC_ARGS		Define the arguments to pass to spamc."
-	@${ECHO_MSG} "			Be sure to place quotes around the options you define"
-	@${ECHO_MSG} "SPAM_HITS		Reject spam only above this hit level"
-	@${ECHO_MSG} "			Default is 10.0. Useful without PASSTHRU option"
-	@${ECHO_MSG} "QUARANTINE_DIR		Directory to keep spam and/or infected emails"
-	@${ECHO_MSG} "			Default is disabled"
+	@${ECHO_MSG} "QMAIL_PREFIX	Base qmail directory. Default is ${QMAIL_PREFIX}"
+	@${ECHO_MSG} "WORKDIR		Directory to unpack emails. Default is ${QMAIL_PREFIX}/${PORTNAME}"
+	@${ECHO_MSG} "QMAIL_QUEUE	Define full path and name of the qmail-queue program"
+	@${ECHO_MSG} "		Incoming mail is passed to this program after being"
+	@${ECHO_MSG} "		scanned by SimScan. Default is ${QMAIL_PREFIX}/bin/qmail-queue"
+	@${ECHO_MSG} "SPAMC_ARGS	Define the arguments to pass to spamc."
+	@${ECHO_MSG} "		Be sure to place quotes around the options you define"
+	@${ECHO_MSG} "SPAM_HITS	Reject spam only above this hit level"
+	@${ECHO_MSG} "		Default is 10.0. Useful without PASSTHRU option"
+	@${ECHO_MSG} "QUARANTINE_DIR	Directory to keep spam and/or infected emails"
+	@${ECHO_MSG} "		Default is disabled"
 	@${ECHO_MSG} "=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~="
 	@${ECHO_MSG} ""
 

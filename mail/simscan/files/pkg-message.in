@@ -5,13 +5,13 @@ NOTES:
 * You have to configure your anti-virus and anti-spam products!
 
 * You have to modify your qmail startup files to call simscan.
-In most cases, you just need to edit /var/qmail/tcp.smtp in
+In most cases, you just need to edit %%QMAIL_PREFIX%%/tcp.smtp in
 order to call simscan instead of qmail-queue, by setting up
 QMAILQUEUE variable. For example:
 
 127.0.0.1:allow,RELAYCLIENT=""
-192.168.0.:allow,RELAYCLIENT="",QMAILQUEUE="/var/qmail/bin/simscan"
-:allow,QMAILQUEUE="/var/qmail/bin/simscan"
+192.168.0.:allow,RELAYCLIENT="",QMAILQUEUE="%%QMAIL_PREFIX%%/bin/simscan"
+:allow,QMAILQUEUE="%%QMAIL_PREFIX%%/bin/simscan"
 
 * Don't forget to rebuild tcp.smtp.cdb from new tcp.smtp using tcprules!
 
