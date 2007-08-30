@@ -942,6 +942,11 @@ bin/projectSynchro
 %%DATADIR%%/sm_generator/142592.bodies
 %%DATADIR%%/sm_generator/142848.bodies
 %%DATADIR%%/sm_generator/143104.bodies
+%%DATADIR%%/sm_generator/144384.bodies
+%%DATADIR%%/sm_generator/144640.bodies
+%%DATADIR%%/sm_generator/144768.bodies
+%%DATADIR%%/sm_generator/144896.bodies
+%%DATADIR%%/sm_generator/145152.bodies
 %%DATADIR%%/sm_generator/1536.bodies
 %%DATADIR%%/sm_generator/1664.bodies
 %%DATADIR%%/sm_generator/1792.bodies
