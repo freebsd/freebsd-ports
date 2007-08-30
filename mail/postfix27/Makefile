@@ -104,18 +104,12 @@ POSTFIX_CCARGS+=	-DNO_PCRE
 .endif
 
 .if defined(WITH_SASL2)
-.if defined(WITH_DOVECOT)
-BROKEN=			Select only one SASL authentication method
-.endif
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 .endif
 
 .if defined(WITH_DOVECOT)
-.if defined(WITH_SASL2)
-BROKEN=			Select only one SASL authentication method
-.endif
 RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SERVER_SASL_TYPE=\\\"dovecot\\\"
 .endif
