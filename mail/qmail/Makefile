@@ -679,9 +679,6 @@ do-install:
 .for i in ${BOOTFILES}
 	${INSTALL_SCRIPT} ${WRKDIR}/${i:T} ${PREFIX}/boot
 .endfor
-. if !defined(SLAVE_LDAP)
-	${INSTALL_SCRIPT} ${FILESDIR}/rcNG ${PREFIX}/boot
-.endif
 .for i in 1 5 7 8
 	@${MKDIR} ${PREFIX}/man/man$i
 . for j in ${MAN${i}}
