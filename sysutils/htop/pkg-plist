@@ -1,0 +1,4 @@
+bin/htop
+share/applications/htop.desktop
+share/pixmaps/htop.png
+@dirrmtry share/applications
