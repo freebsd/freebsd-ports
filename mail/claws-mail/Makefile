@@ -7,7 +7,7 @@
 
 PORTNAME=	claws-mail
 PORTVERSION=	2.10.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -22,6 +22,7 @@ LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
 		cairo:${PORTSDIR}/graphics/cairo \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		freetype:${PORTSDIR}/print/freetype2 \
 		png:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
@@ -34,7 +35,6 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_FREETYPE=	yes
 USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xi xinerama xrandr \
 		xrender
 USE_GNOME=	gnomehack pkgconfig gtk20 glib20 atk libartlgpl2 pango libxml2
