@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-3g-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:ntfs
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Mount NTFS partitions and disk images
 
 BUILD_DEPENDS=	fusefs-libs>=2.6.0:${PORTSDIR}/sysutils/fusefs-libs
