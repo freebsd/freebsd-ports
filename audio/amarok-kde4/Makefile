@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	1.4.5
-PORTREVISION=	8
+PORTVERSION=	1.4.7
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -36,6 +35,7 @@ OPTIONS=	GPOD "iPod support" on \
 		AMAZON "Amazon cover fetching support" on \
 		MYSQL "Use MySQL as collection backend" off \
 		POSTGRESQL "Use PostgreSQL as collection backend" off \
+		HIDEMENUBAR "Revert the 'Hide Menubar' feature" off \
 
 .include <bsd.port.pre.mk>
 
@@ -85,6 +85,10 @@ CONFIGURE_ARGS+=--enable-mysql
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-postgresql
+.endif
+
+.if defined(WITH_HIDEMENUBAR)
+EXTRA_PATCHES=	${PATCHDIR}/hide-main-menu-bar-feature.patch
 .endif
 
 .if defined(DEBUG)
