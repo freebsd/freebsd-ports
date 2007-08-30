@@ -295,6 +295,7 @@
     SUBDIR += hilite
     SUBDIR += hourglass
     SUBDIR += hoz
+    SUBDIR += htop
     SUBDIR += httplog
     SUBDIR += i855vidctl10
     SUBDIR += iat

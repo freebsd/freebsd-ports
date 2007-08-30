@@ -1,0 +1,20 @@
+htop is an enhanced version of top, the interactive process viewer,
+which can display the list of processes in a tree form.
+
+Comparison between 'htop' and 'top'
+
+	* In 'htop' you can scroll the list vertically and horizontally
+	to see all processes and full command lines.
+	* In 'top' you are subject to a delay for each unassigned
+	key you press (especially annoying when multi-key escape
+	sequences are triggered by accident).
+	* 'htop' starts faster ('top' seems to collect data for a while
+	before displaying anything).
+	* In 'htop' you don't need to type the process number to
+	kill a process, in 'top' you do.
+	* In 'htop' you don't need to type the process number or
+	the priority value to renice a process, in 'top' you do.
+	* In 'htop' you can kill multiple processes at once.
+	* 'top' is older, hence, more tested.
+
+WWW: http://htop.sourceforge.net/
