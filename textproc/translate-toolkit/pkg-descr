@@ -1,0 +1,17 @@
+The Translate Toolkit is a set of software and documentation designed
+to help make the lives of localizers both more productive and less
+frustrating.  The software includes programs to covert localization
+formats to the common PO format and programs to check and manage PO
+files.  The documentation includes guides on using the tools, running a
+localization project and how to localize various projects from
+OpenOffice.org to Mozilla.
+
+At its core the software contains a set of classes for handling various 
+localization storage formats: DTD, properties, OpenOffice.org GSI/SDF,
+CSV and of course PO and XLIFF.  It also provides scripts to convert
+between these formats.
+
+Also part of the Toolkit are Python programs to create word counts,
+merge translations and perform various checks on PO and XLIFF files.
+
+WWW: http://translate.sourceforge.net/

@@ -962,6 +962,7 @@
     SUBDIR += tnef2txt
     SUBDIR += tr-aspell
     SUBDIR += trang
+    SUBDIR += translate-toolkit
     SUBDIR += tth
     SUBDIR += txt2html
     SUBDIR += txt2man
