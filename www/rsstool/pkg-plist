@@ -1,0 +1,18 @@
+bin/rsstool
+%%PORTDOCS%%%%DOCSDIR%%/changes.html
+%%PORTDOCS%%%%DOCSDIR%%/contrib.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/images/feed.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/images/rss.png
+%%PORTDOCS%%%%DOCSDIR%%/images/rss_blue.png
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/readme.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/config.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/sql.php
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/htdocs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
