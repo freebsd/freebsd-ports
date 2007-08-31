@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	eventxx
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.llucax.com.ar/~luca/eventxx/releases/
 
