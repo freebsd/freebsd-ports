@@ -8,8 +8,7 @@
 PORTNAME=		Attribute-Handlers-Prospective
 PORTVERSION=		0.01
 CATEGORIES=		devel perl5
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Attribute
+MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		mat@FreeBSD.org
@@ -23,10 +22,4 @@ PERL_CONFIGURE=		yes
 
 MAN3=			Attribute::Handlers::Prospective.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		Need perl 5.6.1, try installing lang/perl5
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

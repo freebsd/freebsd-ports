@@ -8,8 +8,7 @@
 PORTNAME=	HTTP-Proxy
 PORTVERSION=	0.20
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	HTTP
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
@@ -39,10 +38,4 @@ MAN3=		\
 		HTTP::Proxy::HeaderFilter::simple.3 \
 		HTTP::Proxy::HeaderFilter::standard.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

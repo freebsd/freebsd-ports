@@ -8,8 +8,7 @@
 PORTNAME=	DateTime-Functions
 PORTVERSION=	0.01
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	DateTime
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
@@ -22,11 +21,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		DateTime::Functions.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if /use 5.0/' ${WRKSRC}/Makefile.PL
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

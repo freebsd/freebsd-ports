@@ -27,10 +27,4 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		Need perl 5.6.1, try installing lang/perl5
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -8,8 +8,7 @@
 PORTNAME=	B-Deobfuscate
 PORTVERSION=	0.18
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	B
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
@@ -23,10 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		B::Deobfuscate.3 B::Deobfuscate::Dict::Flowers.3 B::Deobfuscate::Dict::PGPHashWords.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601 # textproc/p5-YAML
-IGNORE=		requires perl 5.6.1 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

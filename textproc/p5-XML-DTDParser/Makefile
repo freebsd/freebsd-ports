@@ -7,8 +7,7 @@
 PORTNAME=	XML-DTDParser
 PORTVERSION=	2.01
 CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	XML
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
@@ -27,12 +26,4 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-post-patch:
-	@${PERL} -pi -e 's/^our ([^\s;]+)/use vars qw($$1); $$1/;' \
-		     ${WRKSRC}/DTDParser.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

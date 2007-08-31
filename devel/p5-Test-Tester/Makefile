@@ -35,12 +35,6 @@ post-install:
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/Test/Builder.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS+=	${BUILD_DEPENDS}
-.if ${PERL_LEVEL} < 500601
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if /(use|no) warnings/g;' \
-		${WRKSRC}/lib/Test/Tester.pm ${WRKSRC}/lib/Test/Tester/Delegate.pm \
-		${WRKSRC}/t/*
-.endif
 .endif
 
 .include <bsd.port.post.mk>

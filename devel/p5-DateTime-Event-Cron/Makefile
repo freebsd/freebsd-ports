@@ -8,8 +8,7 @@
 PORTNAME=	DateTime-Event-Cron
 PORTVERSION=	0.07
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	DateTime
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
@@ -24,13 +23,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		DateTime::Event::Cron.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if /use (5.006|warnings)/g;' \
-		     -e 's/->\$$_->l/->{\$$_}->/g;' \
-		     ${WRKSRC}/lib/DateTime/Event/Cron.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

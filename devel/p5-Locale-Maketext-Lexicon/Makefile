@@ -8,8 +8,7 @@
 PORTNAME=	Locale-Maketext-Lexicon
 PORTVERSION=	0.64
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Locale
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
@@ -41,13 +40,4 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if /no warnings/;' \
-		-e 's/^our (\S+);/use vars qw{$$1};/;' \
-		${WRKSRC}/lib/Locale/Maketext/Lexicon.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
