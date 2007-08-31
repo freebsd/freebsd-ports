@@ -30,7 +30,7 @@
      /* Process arguments */
  
 -    while( (ch = getopt(argc, argv, "p:a:b:d")) != -1  ) {
-+    while( (ch = getopt(argc, argv, "p:a:b:d:t:")) != -1  ) {
++    while( (ch = getopt(argc, argv, "p:a:b:dt:")) != -1  ) {
        switch(ch) { 
        case 'b': b = 1;
        case 'd': d = 1; break;
