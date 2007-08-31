@@ -40,8 +40,8 @@ post-extract:
 	@${RM} -rf ${WRKSRC}/agg-2.4/
 
 post-patch:
-	@${REINPLACE_CMD} -e '1s|/.*|/bin/sh|;s|libpng|libpng12|'\
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '1s|/.*|/bin/sh|;s|libpng|libpng12|;\
+		/parse_options/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^Q =/d;s|$$[(]COMPILE.cc[)]|${CXX} $${CPPFLAGS} -c|;\
 		s|$$[(]CXX[)]|${CXX}|;s|$$[(]COMPILE.c[)]|${CC} $${CPPFLAGS} -c|'\
 			${WRKSRC}/build/bottom.make
@@ -49,8 +49,8 @@ post-patch:
 		/mtune=/d;/call cc-option/d;' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/CFLAGS=/s|".*"|"${CFLAGS} -I${LOCALBASE}/include"|;\
 		/LIBS=/s|".*"|"-L${LOCALBASE}/lib -lX11"|' ${WRKSRC}/config/pkgcheck-x11.c
-	@${REINPLACE_CMD} -e 's|$$prg|$$prg -I${LOCALBASE}/include|'\
-		${WRKSRC}/config/functions
+	@${REINPLACE_CMD} -e 's|$$prg|$$prg -I${LOCALBASE}/include|;\
+		/^var_remove/,/^}/d;/^parse_options/,/^}/d' ${WRKSRC}/config/functions
 
 post-configure:
 	@${REINPLACE_CMD} -e '/EVASGL/s|1|0|' ${WRKSRC}/config.h
