@@ -7,10 +7,10 @@
 
 PORTNAME=	fceu-server
 PORTVERSION=	0.0.5
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fceultra
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ninjin@kth.se
 COMMENT=	The network play server for the NES/Famicom emulator fceu
@@ -26,18 +26,15 @@ IGNORE=	does not build on FreeBSD 5.X
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/fceu-standard.conf|${PREFIX}/etc/${PORTNAME}/fceu-standard.conf|g' \
+	@${REINPLACE_CMD} -e 's|/etc/fceu-standard.conf|${ETCDIR}/fceu-standard.conf|g' \
 		${WRKSRC}/server.cpp
 
 do-install:
-	@${MKDIR} ${PREFIX}/etc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/fceu-server.conf ${PREFIX}/etc/${PORTNAME}/fceu-server.conf.sample
+	@${MKDIR} ${ETCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/fceu-server.conf ${ETCDIR}/fceu-server.conf.sample
 	@${INSTALL_PROGRAM} ${WRKSRC}/fceu-server ${PREFIX}/bin
-
-post-install:
-	@${MKDIR} ${PREFIX}/etc/${PORTNAME}
-	@[ -f ${PREFIX}/etc/${PORTNAME}/fceu-standard.conf ] || \
+	@[ -f ${ETCDIR}/fceu-standard.conf ] || \
 		${INSTALL_DATA} ${WRKSRC}/fceu-server.conf \
-			${PREFIX}/etc/${PORTNAME}/fceu-standard.conf
+			${ETCDIR}/fceu-standard.conf
 
 .include <bsd.port.post.mk>
