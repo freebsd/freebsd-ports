@@ -1,0 +1,24 @@
+DataDraw is an ultra-fast persistent database for high performance programs
+written in C. It's so fast that many programs keep all their data in a
+DataDraw database, even while being manipulated in inner loops of compute
+intensive applications. Unlike slow SQL databases, DataDraw databases are
+compiled, and directly link into your C programs. DataDraw databases are
+resident in memory, making data manipulation even faster than if they were
+stored in native C data structures (really). Further, they can automatically
+support infinite undo/redo, greatly simplifying many applications.
+
+DataDraw databases can be persistent. Modifications to persistent data are
+written to disk as they are made, which of course dramatically slows write
+times. However, DataDraw databases can also be volatile. Volatile databases
+exist only in memory, and only for the duration that your program needs it.
+Volatile databases can be directly manipulated faster than C structures,
+since data is better organized in memory to optimize cache performance.
+DataDraw supports modular design. An application can have one or more common
+persistent databases, and multiple volatile databases to support various
+tools' data structures. Classes in a tool's database can extend classes in
+the common database. DataDraw is also 64-bit optimized, allowing programs to
+run much faster and in less memory than standard C programs using 64-bit
+pointers. This is because DataDraw databases support over 4 billion objects
+of a given class with 32-bit object references.
+
+WWW: http://datadraw.sourceforge.net/

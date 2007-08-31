@@ -234,6 +234,7 @@
     SUBDIR += darcs
     SUBDIR += darts
     SUBDIR += datadesigner
+    SUBDIR += datadraw
     SUBDIR += dbus
     SUBDIR += dbus-glib
     SUBDIR += dbus-qt3

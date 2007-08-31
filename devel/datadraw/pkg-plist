@@ -1,0 +1,13 @@
+bin/datadraw
+include/ddutil.h
+include/utdatabase.h
+include/utdatabasep.h
+include/utdatabaseu.h
+include/utdatabaseup.h
+include/utmem.h
+include/utpersist.h
+include/uttypes.h
+lib/libddutil.a
+lib/libddutilp.a
+lib/libddutilu.a
+lib/libddutilup.a
