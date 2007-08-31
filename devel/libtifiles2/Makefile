@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	libtifiles2
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtktiemu
-DISTNAME=	${PORTNAME}-20070207
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator file types library
 
 LIB_DEPENDS=	ticonv.2:${PORTSDIR}/converters/libticonv
-
-WRKSRC=		${WRKDIR}/libtifiles
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
