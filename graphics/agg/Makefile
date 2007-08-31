@@ -17,7 +17,7 @@ COMMENT=	A High Quality Rendering Engine for C++
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
-USE_X_LIB=	yes
+USE_XLIB=	yes
 USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
