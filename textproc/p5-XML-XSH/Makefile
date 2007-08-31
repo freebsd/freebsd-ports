@@ -32,10 +32,6 @@ MAN3=		XSH.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		"requires perl 5.6.x or later. Install lang/perl5 and try again"
-.endif
-
 test: build
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test

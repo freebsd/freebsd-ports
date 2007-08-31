@@ -26,10 +26,6 @@ MAN3=		DDS.3 Data::Dump::Streamer.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6 or above
-.endif
-
 .if ${PERL_LEVEL} >= 500800
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/PadWalker.pm:${PORTSDIR}/devel/p5-PadWalker
 .endif

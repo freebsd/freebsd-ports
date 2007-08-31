@@ -8,8 +8,7 @@
 PORTNAME=	Class-Accessor-Chained
 PORTVERSION=	0.01
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Class
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
@@ -23,12 +22,4 @@ PERL_MODBUILD=	yes
 MAN3=		Class::Accessor::Chained.3 \
 		Class::Accessor::Chained::Fast.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-post-patch:
-	${PERL} -pi -e 's/our ([^ ]+)/use vars qw($$1); $$1/;' \
-		${WRKSRC}/lib/Class/Accessor/Chained.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

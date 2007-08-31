@@ -66,9 +66,5 @@ post-patch:
 		     -e 's/"-lc"/"-L\$$CCLIENT_DIR\/lib "/g;' \
 		     -e 's/ -lpam_misc//g;' \
 		 ${WRKSRC}/Makefile.PL
-.if ${PERL_LEVEL} < 500600
-	@${PERL} -pi -e 's/HEADERS, ">", /HEADERS, ">". /' \
-		${WRKSRC}/Makefile.PL
-.endif
 
 .include <bsd.port.post.mk>

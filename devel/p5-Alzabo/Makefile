@@ -8,8 +8,7 @@
 PORTNAME=	Alzabo
 PORTVERSION=	0.91
 CATEGORIES=	devel databases perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Alzabo
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
@@ -106,9 +105,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Stora
 		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6+, install lang/perl5 or lang/perl5.8 and try again
-.endif
 .endif
 
 .include <bsd.port.post.mk>
