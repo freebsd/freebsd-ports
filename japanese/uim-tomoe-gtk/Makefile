@@ -7,7 +7,7 @@
 
 PORTNAME=	uim-tomoe-gtk
 PORTVERSION=	0.6.0
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=tomoe
@@ -20,7 +20,7 @@ LIB_DEPENDS=	tomoe.1:${PORTSDIR}/japanese/tomoe \
 		uim.4:${PORTSDIR}/textproc/uim
 
 USE_GNOME=	lthack gtk20
-USE_X_LIB=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
