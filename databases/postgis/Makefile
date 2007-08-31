@@ -20,6 +20,7 @@ RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 USE_GCC=	3.2+
 USE_PGSQL=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 USE_PERL5_BUILD=	yes
 
 INSTALL_TARGET=	install
@@ -41,6 +42,8 @@ BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 MAKE_ARGS+=	WITH-DOC=yes
 MAN1=		pgsql2shp.1 shp2pgsql.1
 PORTDOCS=	*
+.else
+MAKE_ARGS+=	NOPORTSDOC=yes
 .endif
 
 .if defined(WITH_UTF8)

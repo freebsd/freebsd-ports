@@ -1,5 +1,5 @@
---- GNUmakefile	2007-07-10 18:12:42.000000000 -0300
-+++ GNUmakefile	2007-08-01 08:23:45.000000000 -0300
+--- GNUmakefile.orig	2007-07-11 05:12:42.000000000 +0800
++++ GNUmakefile	2007-08-31 17:41:49.000000000 +0800
 @@ -4,9 +4,9 @@
  #
  #-----------------------------------------------------
@@ -12,7 +12,31 @@
  
  uninstall: liblwgeom-uninstall loaderdumper-uninstall docs-uninstall 
  
-@@ -87,6 +87,9 @@
+@@ -72,21 +72,31 @@
+ 	$(MAKE) -C extras/template_gis uninstall
+ 
+ docs: Makefile.config
+-	$(MAKE) -C doc 
++ifndef NOPORTSDOC
++	$(MAKE) -C doc
++endif
+ 
+ docs-clean: Makefile.config
++ifndef NOPORTSDOC
+ 	$(MAKE) -C doc clean
+-
++endif
+ 
+ docs-install:
++ifndef NOPORTSDOC
+ 	$(MAKE) -C doc install
++endif
+ 
+ docs-uninstall:
++ifndef NOPORTSDOC
+ 	$(MAKE) -C doc uninstall
++endif
+ 
  utils:
  	$(MAKE) -C utils
  
