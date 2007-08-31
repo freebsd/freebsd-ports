@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Leak/Object/.packlist
+%%SITE_PERL%%/Devel/Leak/Object.pm
+@dirrmtry %%SITE_PERL%%/Devel/Leak
+@dirrmtry %%SITE_PERL%%/Devel
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Leak/Object
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Leak
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
