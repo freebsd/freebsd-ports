@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slimserver
-PORTVERSION=	6.5.3
+PORTVERSION=	6.5.4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
 DISTNAME=	SlimServer_v${PORTVERSION}.no-cpan-arch
@@ -27,9 +27,7 @@ OPTIONS=	APE "Support Monkey's Audio Codec input" on \
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
-# XXX: someone botched the 6.5.3 tarball
-#WRKSRC=	${WRKDIR}/SlimServer_v${PORTVERSION}
-WRKSRC=		${WRKDIR}/SlimServer_6.5_v2007-07-11
+WRKSRC=	${WRKDIR}/SlimServer_v${PORTVERSION}
 
 BUILD_DEPENDS+=	${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which
 RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder \
