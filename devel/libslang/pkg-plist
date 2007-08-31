@@ -4,3 +4,6 @@ include/slcurses.h
 lib/libslang.a
 lib/libslang.so
 lib/libslang.so.1
+%%UTF8%%lib/libslang-utf8.a
+%%UTF8%%lib/libslang-utf8.so
+%%UTF8%%lib/libslang-utf8.so.1

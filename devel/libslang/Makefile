@@ -12,14 +12,15 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/ \
 		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v1.4/ \
 		ftp://ftp.ntua.gr/pub/lang/slang/slang/v1.4/ \
 		ftp://ftp.plig.org/pub/slang/v1.4/
-DISTNAME=	slang-${PORTVERSION}
+DISTFILES=	slang-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Routines for rapid alpha-numeric terminal applications development
 
-OPTIONS=	UTF8	"Enable UTF-8 support - EXPERIMENTAL"	off
+OPTIONS=	UTF8	"Enable UTF-8 support"	off
 
-USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/slang-${PORTVERSION}
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -34,17 +35,26 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_UTF8)
-PATCH_SITES+=	http://www.emaillab.org/mutt/tools/
-PATCHFILES+=	slang-1.4.8-utf8.diff.gz
-PATCH_DIST_STRIP+=	-p1
-
-EXTRA_PATCHES=	${FILESDIR}/extra-utf8-acs.patch
+MASTER_SITES+=		${MASTER_SITE_GENTOO:S/$/:utf8/}
+MASTER_SITE_SUBDIR+=	distfiles/:utf8
+DISTFILES+=		slang-${PORTVERSION}-patches.tar.gz:utf8
+PLIST_SUB=		UTF8=""
 
 post-patch:
-	@${REINPLACE_CMD} 's,slang-utf8,slang,' ${WRKSRC}/src/Makefile.in
+	@for p in ${WRKDIR}/slang*utf8*.patch; do \
+		${PATCH} --silent -d ${WRKSRC} -p1 < $$p; \
+	done
+.else
+PLIST_SUB=		UTF8="@comment "
 .endif
 
 post-install:
+.if defined(WITH_UTF8)
+. for ext in a so so.1
+	${LN} -sf ${PREFIX}/lib/libslang-utf8.${ext} ${PREFIX}/lib/libslang.${ext}
+. endfor
+.endif
+
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}/src && ${MAKE} install_docs
 .endif
