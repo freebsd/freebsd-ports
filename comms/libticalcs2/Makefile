@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libticalcs2
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.6
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtktiemu
-DISTNAME=	${PORTNAME}-20070207
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator library
@@ -18,8 +17,6 @@ COMMENT=	TI calculator library
 LIB_DEPENDS=	ticables2.1:${PORTSDIR}/comms/libticables2 \
 		ticonv.2:${PORTSDIR}/converters/libticonv \
 		tifiles2.3:${PORTSDIR}/devel/libtifiles2
-
-WRKSRC=		${WRKDIR}/libticalcs
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
