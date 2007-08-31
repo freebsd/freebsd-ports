@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	DateTime-Format-Builder
-PORTVERSION=	0.78.07
+PORTVERSION=	0.79
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	DateTime
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Create DateTime parser classes and objects
@@ -45,10 +43,4 @@ post-install:
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires at least Perl 5.6 due to dependencies.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
