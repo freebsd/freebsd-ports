@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	libticables2
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtktiemu
-DISTNAME=	${PORTNAME}-20070207
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator link cables library
 
 LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
-
-WRKSRC=		${WRKDIR}/libticables
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
