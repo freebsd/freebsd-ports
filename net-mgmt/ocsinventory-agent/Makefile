@@ -1,4 +1,4 @@
-# New ports collection makefile for:	ocs-unix-agent
+# New ports collection makefile for:   ocsinventory-agent
 # Date created:				14 August 2007
 # Whom:					Dennis Cabooter
 #
@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Ocsinventory
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.6.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://nana.rulezlan.org/~goneri/ocsinventory-agent/
 PKGNAMESUFFIX=	-Agent
