@@ -1778,6 +1778,7 @@ darkstat	ports/net-mgmt/darkstat
 darts		ports/devel/darts
 dasher		ports/accessibility/dasher
 datadesigner	ports/devel/datadesigner
+datadraw	ports/devel/datadraw
 datapipe	ports/net/datapipe
 dataplot	ports/graphics/dataplot
 datedif		ports/misc/datedif
