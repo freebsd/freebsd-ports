@@ -108,6 +108,9 @@ bin/easy_install-%%PYVER%%
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/tests/doctest.py
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/tests/doctest.pyc
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/tests/doctest.pyo
+%%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/tests/test_packageindex.py
+%%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/tests/test_packageindex.pyc
+%%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/tests/test_packageindex.pyo
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/tests/test_resources.py
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/tests/test_resources.pyc
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/tests/test_resources.pyo
