@@ -1,6 +1,6 @@
 ===============================================================
 You can prepare a database for zabbix this way:
-% cd %%DATADIR%%/
+% cd %%DATADIR%%/create
 % cat schema/<db>.sql data/data.sql data/images_<db>.sql\
 % | <db_client>
 where <db> is your preferred database engine.
