@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d944719e-42f4-4864-89ed-f045b541919f">
+    <topic>gtar -- Directory traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>gtar</name>
+	<range><lt>1.18_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Red Hat reports:</p>
+	<blockquote cite="http://rhn.redhat.com/errata/RHSA-2007-0860.html">
+	  <p>A path traversal flaw was discovered in the way GNU
+	  tar extracted archives.  A malicious user could create a
+	  tar archive that could write to arbitrary files to which
+	  the user running GNU tar had write access.</p>
+	</blockquote>
+	<p>Red Hat credits Dmitry V. Levin for reporting the issue.</p>
+      </body>
+    </description>
+    <references>
+      <bid>25417</bid>
+      <cvename>CVE-2007-4131</cvename>
+      <url>http://rhn.redhat.com/errata/RHSA-2007-0860.html</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=251921</url>
+    </references>
+    <dates>
+      <discovery>2007-08-23</discovery>
+      <entry>2007-09-01</entry>
+    </dates>
+  </vuln>  
+
   <vuln vid="d9867f50-54d0-11dc-b80b-0016179b2dd5">
     <topic>claws-mail -- POP3 Format String Vulnerability</topic>
     <affects>
