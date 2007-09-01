@@ -9,7 +9,8 @@ PORTNAME=	grsync
 PORTVERSION=	0.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.opbyte.it/release/ \
-		${MASTER_SITE_LOCAL}
+		GENTOO/distfiles \
+		LOCAL/chinsan
 
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	GTK frontend for rsync
