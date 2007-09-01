@@ -7,7 +7,7 @@
 
 PORTNAME=	gpsd
 PORTVERSION=	2.32
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	astro geography
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	toxa@toxahost.ru
 COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 
+USE_RC_SUBR=	gpsd
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
