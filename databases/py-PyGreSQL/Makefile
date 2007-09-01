@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PyGreSQL
-PORTVERSION=	3.8
+PORTVERSION=	3.8.1
 PORTEPOCH=	1
 CATEGORIES=	databases python
 MASTER_SITES=	ftp://ftp.pygresql.org/pub/distrib/
@@ -39,9 +39,9 @@ post-install:
 	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -lf \
 	  ${PYTHONPREFIX_SITELIBDIR}
 .if !defined(NOPORTDOCS)
-.for docfile in announce.txt changelog.txt
+.for docfile in announce.txt changelog.txt pg.txt pgdb.txt
 	@ ${MKDIR} ${DOCSDIR}
-	  ${INSTALL_DATA} ${WRKSRC}/${docfile} \
+	  ${INSTALL_DATA} ${WRKSRC}/docs/${docfile} \
 	  ${DOCSDIR}
 .endfor
 .endif

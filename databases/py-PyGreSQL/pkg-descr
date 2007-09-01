@@ -4,9 +4,7 @@ From the README:
   embeds the PostgreSQL query library to allow easy use of the powerful
   PostgreSQL features from a Python script.
 
-As of version 3.2, PyGreSQL was folded into the PostgreSQL development tree.
 PyGreSQL includes a DB-API 2.0 compliant API wrapper.
 
 Author:   D'Arcy J.M. Cain <darcy@druid.net>
-WWW:      http://www.druid.net/pygresql/
-See also: http://www.postgresql.org/idocs/index.php?pygresql.html
+WWW:      http://www.pygresql.org
