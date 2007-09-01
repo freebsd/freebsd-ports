@@ -24,6 +24,9 @@ bin/olive-gtk
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchbox.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchbox.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchbox.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/checkout.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/checkout.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/checkout.pyo
@@ -54,6 +57,9 @@ bin/olive-gtk
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/merge.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/merge.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/merge.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/mergedirective.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/mergedirective.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/mergedirective.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/missing.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/missing.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/missing.pyo
@@ -194,22 +200,23 @@ bin/olive-gtk
 %%PYTHON_SITELIBDIR%%/olive/rename.pyo
 share/olive/olive.glade
 share/olive/cmenu.ui
-share/olive/commit.png
-share/olive/commit16.png
-share/olive/diff.png
-share/olive/diff16.png
-share/olive/log.png
-share/olive/log16.png
-share/olive/oliveicon2.png
-share/olive/pull.png
-share/olive/pull16.png
-share/olive/push.png
-share/olive/push16.png
-share/olive/refresh.png
+share/olive/icons/commit.png
+share/olive/icons/commit16.png
+share/olive/icons/diff.png
+share/olive/icons/diff16.png
+share/olive/icons/log.png
+share/olive/icons/log16.png
+share/olive/icons/oliveicon2.png
+share/olive/icons/pull.png
+share/olive/icons/pull16.png
+share/olive/icons/push.png
+share/olive/icons/push16.png
+share/olive/icons/refresh.png
 share/applications/bazaar-properties.desktop
 share/applications/bzr-notify.desktop
 share/applications/olive-gtk.desktop
 share/pixmaps/olive-gtk.png
+@dirrm share/olive/icons
 @dirrm share/olive
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/olive
