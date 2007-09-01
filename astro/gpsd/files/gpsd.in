@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: gpsd
+# REQUIRE: NETWORKING DAEMON cleanvar devfs
+# BEFORE:  ntpd
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable gpsd:
+#
+# gpsd_enable (bool):   Set to "NO" by default.
+#                       Set it to "YES" to enable gpsd.
+#
+# gpsd_flags (str):     Set to "" by default.
+#                       See gpsd(8) for flags.
+#
+# gpsd_devices (str):   Set to "" by default.
+#                       Example: "/dev/cuaU0" for a USB serial GPS.
+#
+
+. %%RC_SUBR%%
+
+name=gpsd
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+# Set defaults
+: ${gpsd_enable:="NO"}
+: ${gpsd_flags:=""}
+: ${gpsd_devices:=""}
+
+pidfile=/var/run/$name.pid
+command=%%PREFIX%%/sbin/$name
+command_args="-P $pidfile $gpsd_devices"
+
+run_rc_command "$1"
