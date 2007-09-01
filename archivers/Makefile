@@ -105,6 +105,7 @@
     SUBDIR += php5-bz2
     SUBDIR += php5-zlib
     SUBDIR += ppmd
+    SUBDIR += ppmd-7z
     SUBDIR += ppunpack
     SUBDIR += py-lzma
     SUBDIR += py-tarfile
