@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p7zip
-PORTVERSION=	4.51
+PORTVERSION=	4.53
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src_all
@@ -51,7 +51,7 @@ post-patch:
 
 do-install:
 	${INSTALL} -d ${DLLDIR}/
-	${INSTALL_PROGRAM} ${7ZBIN:S|^|${WRKSRC}/bin/|} ${DLLDIR}/
+	cd ${WRKSRC}/bin/&&${INSTALL_PROGRAM} ${7ZBIN} ${DLLDIR}/
 	${INSTALL_SCRIPT} ${FILESDIR}/7z ${PREFIX}/bin/
 	${LN} -sf 7z ${PREFIX}/bin/7za
 	${LN} -sf 7z ${PREFIX}/bin/7zr
@@ -62,9 +62,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/7z.so ${DLLDIR}/
 .endif
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}/
 	@cd ${WRKSRC}/DOCS/&&${COPYTREE_SHARE} . ${DOCSDIR}/
 .endif
-	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/man1/,} ${MAN1PREFIX}/man/man1/
+	@cd ${WRKSRC}/man1/&&${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.post.mk>
