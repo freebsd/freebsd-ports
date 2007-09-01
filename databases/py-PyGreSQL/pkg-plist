@@ -1,5 +1,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/announce.txt
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/pg.txt
+%%PORTDOCS%%%%DOCSDIR%%/pgdb.txt
 %%PYTHON_SITELIBDIR%%/_pg.so
 %%PYTHON_SITELIBDIR%%/pg.py
 %%PYTHON_SITELIBDIR%%/pg.pyc
