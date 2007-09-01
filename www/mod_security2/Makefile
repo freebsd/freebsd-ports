@@ -60,6 +60,12 @@ USE_GNOME=	libxml2
 
 REINPLACE_ARGS=	-i ""
 
+.include <bsd.port.pre.mk>
+
+.if ${APACHE_VERSION} == 22
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '\
 		s|SecRuleEngine On|SecRuleEngine DetectionOnly|; \
@@ -79,4 +85,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
