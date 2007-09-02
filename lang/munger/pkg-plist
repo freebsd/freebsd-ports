@@ -1,5 +1,5 @@
 bin/munger
-lib/libmunger.so.29
+lib/libmunger.so.30
 %%DKNS_BIN%%
 %%DATADIR%%/ipdatabase.munger
 %%DATADIR%%/httpd.munger
@@ -11,18 +11,17 @@ lib/libmunger.so.29
 %%DATADIR%%/xml2sqlite.munger
 %%DATADIR%%/xmlsqlite.munger
 %%DATADIR%%/login.css
-%%DATADIR%%/login.fcgi
+%%DATADIR%%/login.cgi
 %%DATADIR%%/incorporation.munger
 %%DATADIR%%/blog.css
-%%DATADIR%%/blog.fcgi
+%%DATADIR%%/blog.cgi
 %%DATADIR%%/rss.munger
 %%DATADIR%%/mime2munger.munger
 %%DATADIR%%/ed.munger
 %%DATADIR%%/xmlquery.munger
 %%DATADIR%%/filter.munger
-%%DATADIR%%/fcgi.munger
 %%DATADIR%%/cgi.munger
-%%DATADIR%%/client.fcgi
+%%DATADIR%%/client.cgi
 %%DATADIR%%/err.munger
 %%DATADIR%%/options.munger
 %%DATADIR%%/fmt.munger
@@ -32,7 +31,6 @@ lib/libmunger.so.29
 %%DATADIR%%/transform.munger
 %%DATADIR%%/view.munger
 %%DATADIR%%/tk.munger
-%%DATADIR%%/expander.fcgi
 %%DATADIR%%/cal.munger
 %%DATADIR%%/xml2buffer.munger
 @dirrm %%DATADIR%%
