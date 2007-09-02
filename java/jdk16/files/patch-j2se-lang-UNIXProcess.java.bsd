@@ -1,0 +1,15 @@
+$FreeBSD$
+
+--- ../../j2se/src/solaris/classes/java/lang/UNIXProcess.java.bsd	28 Apr 2007 18:05:52 -0000	1.1
++++ ../../j2se/src/solaris/classes/java/lang/UNIXProcess.java.bsd	28 Aug 2007 06:42:17 -0000	1.2
+@@ -195,4 +195,10 @@
+         }
+     }
+ 
++    /* This routine initializes JNI field offsets for the class */
++    private static native void initIDs();
++
++    static {
++	initIDs();
++    }
+ }
