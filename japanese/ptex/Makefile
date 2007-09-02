@@ -6,7 +6,7 @@
 
 PORTNAME=	ptex
 PORTVERSION=	3.1.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/:1 \
@@ -124,10 +124,7 @@ pre-configure:
 			--with-t1lib-include=${LIBT1_PREFIX}/include \
 			--without-xdvik --without-oxdvik \
 			--without-dvipsk --without-odvipsk \
-			--without-x11 --without-dvipdfm \
-			--without-pdftex --without-pdfetex --without-pdfxtex \
-			--without-omega --without-eomega
-			--without-etex && \
+			--without-x11 --without-dvipdfm && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${ALL_TARGET}
 
 post-install:
