@@ -1,46 +1,45 @@
 @comment $FreeBSD$
 bin/xmlroff
-include/libfo-0.5/area/fo-area.h
-include/libfo-0.5/datatype/fo-datatype.h
-include/libfo-0.5/datatype/fo-enum.h
-include/libfo-0.5/fo-context.h
-include/libfo-0.5/fo-node.h
-include/libfo-0.5/fo-object.h
-include/libfo-0.5/fo/fo-fo.h
-include/libfo-0.5/libfo/fo-doc-cairo-private.h
+include/libfo-0.5/libfo/area/fo-area.h
+include/libfo-0.5/libfo/fo/fo-fo.h
+include/libfo-0.5/libfo/datatype/fo-datatype.h
+include/libfo-0.5/libfo/datatype/fo-enum.h
+include/libfo-0.5/libfo/property/fo-property.h
+include/libfo-0.5/libfo/util/fo-hash-table.h
+include/libfo-0.5/libfo/util/fo-image.h
+include/libfo-0.5/libfo/util/fo-pixbuf.h
+include/libfo-0.5/libfo/fo-object.h
+include/libfo-0.5/libfo/fo-node.h
+include/libfo-0.5/libfo/fo-context.h
 include/libfo-0.5/libfo/fo-doc-cairo.h
-include/libfo-0.5/libfo/fo-doc-gp-private.h
-include/libfo-0.5/libfo/fo-doc-gp.h
-include/libfo-0.5/libfo/fo-doc-private.h
-include/libfo-0.5/libfo/fo-doc.h
-include/libfo-0.5/libfo/fo-font-desc-private.h
-include/libfo-0.5/libfo/fo-font-desc.h
-include/libfo-0.5/libfo/fo-layout-cairo-private.h
+include/libfo-0.5/libfo/fo-doc-cairo-private.h
 include/libfo-0.5/libfo/fo-layout-cairo.h
-include/libfo-0.5/libfo/fo-layout-gp-private.h
+include/libfo-0.5/libfo/fo-layout-cairo-private.h
+include/libfo-0.5/libfo/fo-doc-gp.h
+include/libfo-0.5/libfo/fo-doc-gp-private.h
 include/libfo-0.5/libfo/fo-layout-gp.h
-include/libfo-0.5/libfo/fo-layout-private.h
+include/libfo-0.5/libfo/fo-layout-gp-private.h
+include/libfo-0.5/libfo/fo-doc.h
+include/libfo-0.5/libfo/fo-doc-private.h
+include/libfo-0.5/libfo/fo-utils.h
+include/libfo-0.5/libfo/fo-font-desc.h
 include/libfo-0.5/libfo/fo-layout.h
+include/libfo-0.5/libfo/fo-font-desc-private.h
+include/libfo-0.5/libfo/fo-layout-private.h
+include/libfo-0.5/libfo/fo-libfo.h
 include/libfo-0.5/libfo/fo-libfo-basic.h
 include/libfo-0.5/libfo/fo-libfo-context.h
-include/libfo-0.5/libfo/fo-libfo.h
-include/libfo-0.5/libfo/fo-utils.h
 include/libfo-0.5/libfo/fo-xml-doc-private.h
 include/libfo-0.5/libfo/fo-xml-doc.h
 include/libfo-0.5/libfo/fo-xml-node-private.h
 include/libfo-0.5/libfo/fo-xml-node.h
-include/libfo-0.5/libfo/fo-xsl-formatter.c
 include/libfo-0.5/libfo/fo-xsl-formatter.h
 include/libfo-0.5/libfo/fo-xslt-transformer.h
 include/libfo-0.5/libfo/libfo-compat.h
-include/libfo-0.5/property/fo-property.h
-include/libfo-0.5/util/fo-hash-table.h
-include/libfo-0.5/util/fo-image.h
-include/libfo-0.5/util/fo-pixbuf.h
 lib/libfo-0.5.a
 lib/libfo-0.5.la
 lib/libfo-0.5.so
-lib/libfo-0.5.so.500
+lib/libfo-0.5.so.502
 libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/FoArea.html
 %%DOCSDIR%%/FoAreaArea.html
@@ -67,6 +66,7 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/FoBlockWhitespace.html
 %%DOCSDIR%%/FoBoolean.html
 %%DOCSDIR%%/FoChar.html
+%%DOCSDIR%%/FoCharacter.html
 %%DOCSDIR%%/FoColor.html
 %%DOCSDIR%%/FoContext.html
 %%DOCSDIR%%/FoDatatype.html
@@ -98,13 +98,13 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/FoTree.html
 %%DOCSDIR%%/FoUnknown.html
 %%DOCSDIR%%/FoUriSpecification.html
+%%DOCSDIR%%/FoWrapper.html
 %%DOCSDIR%%/FoWrapperBlock.html
 %%DOCSDIR%%/FoWrapperInline.html
 %%DOCSDIR%%/FoWrapperWhitespace.html
 %%DOCSDIR%%/areas.html
 %%DOCSDIR%%/backends.html
 %%DOCSDIR%%/basic-interface.html
-%%DOCSDIR%%/block.html
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/conformance.html
 %%DOCSDIR%%/context.html
@@ -114,9 +114,9 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/fo-area-c-file.html
 %%DOCSDIR%%/fo-c-file.html
 %%DOCSDIR%%/fo-h-file.html
+%%DOCSDIR%%/home.png
 %%DOCSDIR%%/formatting-objects.html
 %%DOCSDIR%%/generating-source.html
-%%DOCSDIR%%/home.png
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/interfaces.html
@@ -132,8 +132,8 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/utility-modules.html
 %%DOCSDIR%%/utility-objects.html
 %%DOCSDIR%%/xmlroff-Additional-Pango-attributes-needed-by-LibFO.html
-%%DOCSDIR%%/xmlroff-FoCharacter.html
 %%DOCSDIR%%/xmlroff-FoDoc.html
+%%DOCSDIR%%/xmlroff-FoPcw.html
 %%DOCSDIR%%/xmlroff-FoDocCairo.html
 %%DOCSDIR%%/xmlroff-FoDocGP.html
 %%DOCSDIR%%/xmlroff-FoError.html
@@ -143,10 +143,8 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/xmlroff-FoLayoutCairo.html
 %%DOCSDIR%%/xmlroff-FoLibfoContext.html
 %%DOCSDIR%%/xmlroff-FoNeutralFoIface.html
-%%DOCSDIR%%/xmlroff-FoPcw.html
 %%DOCSDIR%%/xmlroff-FoPixbuf.html
 %%DOCSDIR%%/xmlroff-FoTblr.html
-%%DOCSDIR%%/xmlroff-FoWrapper.html
 %%DOCSDIR%%/xmlroff-FoWrapperInlineEmpty.html
 %%DOCSDIR%%/xmlroff-FoWsc.html
 %%DOCSDIR%%/xmlroff-FoXmlDoc.html
@@ -163,6 +161,7 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/xmlroff-bidi-override.html
 %%DOCSDIR%%/xmlroff-block-container.html
 %%DOCSDIR%%/xmlroff-block-progression-dimension.html
+%%DOCSDIR%%/xmlroff-block.html
 %%DOCSDIR%%/xmlroff-block-progression-dimensionmaximum.html
 %%DOCSDIR%%/xmlroff-block-progression-dimensionminimum.html
 %%DOCSDIR%%/xmlroff-block-progression-dimensionoptimum.html
@@ -173,11 +172,11 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/xmlroff-border-before-color.html
 %%DOCSDIR%%/xmlroff-border-before-precedence.html
 %%DOCSDIR%%/xmlroff-border-before-style.html
+%%DOCSDIR%%/xmlroff-border-bottom.html
 %%DOCSDIR%%/xmlroff-border-before-width.html
 %%DOCSDIR%%/xmlroff-border-bottom-color.html
 %%DOCSDIR%%/xmlroff-border-bottom-style.html
 %%DOCSDIR%%/xmlroff-border-bottom-width.html
-%%DOCSDIR%%/xmlroff-border-bottom.html
 %%DOCSDIR%%/xmlroff-border-collapse.html
 %%DOCSDIR%%/xmlroff-border-end-color.html
 %%DOCSDIR%%/xmlroff-border-end-precedence.html
@@ -198,9 +197,9 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/xmlroff-border-start-width.html
 %%DOCSDIR%%/xmlroff-border-style.html
 %%DOCSDIR%%/xmlroff-border-top-color.html
+%%DOCSDIR%%/xmlroff-border-top.html
 %%DOCSDIR%%/xmlroff-border-top-style.html
 %%DOCSDIR%%/xmlroff-border-top-width.html
-%%DOCSDIR%%/xmlroff-border-top.html
 %%DOCSDIR%%/xmlroff-border-width.html
 %%DOCSDIR%%/xmlroff-border.html
 %%DOCSDIR%%/xmlroff-break-after.html
@@ -227,6 +226,7 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/xmlroff-flow.html
 %%DOCSDIR%%/xmlroff-fo-area-graphic.html
 %%DOCSDIR%%/xmlroff-fo-area-inline.html
+%%DOCSDIR%%/xmlroff-font-size.html
 %%DOCSDIR%%/xmlroff-fo-doc-commands.html
 %%DOCSDIR%%/xmlroff-fo-layout-gp.html
 %%DOCSDIR%%/xmlroff-fo-libfo-basic.html
@@ -234,7 +234,6 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/xmlroff-fo-property-border-color.html
 %%DOCSDIR%%/xmlroff-fo-retrieve-marker.html
 %%DOCSDIR%%/xmlroff-font-family.html
-%%DOCSDIR%%/xmlroff-font-size.html
 %%DOCSDIR%%/xmlroff-font-stretch.html
 %%DOCSDIR%%/xmlroff-font-style.html
 %%DOCSDIR%%/xmlroff-font-variant.html
@@ -253,8 +252,8 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/xmlroff-inline-progression-dimensionminimum.html
 %%DOCSDIR%%/xmlroff-inline-progression-dimensionoptimum.html
 %%DOCSDIR%%/xmlroff-inline.html
-%%DOCSDIR%%/xmlroff-instream-foreign-object.html
 %%DOCSDIR%%/xmlroff-keep-together.html
+%%DOCSDIR%%/xmlroff-instream-foreign-object.html
 %%DOCSDIR%%/xmlroff-keep-togetherwithin-column.html
 %%DOCSDIR%%/xmlroff-keep-togetherwithin-line.html
 %%DOCSDIR%%/xmlroff-keep-togetherwithin-page.html
@@ -264,9 +263,9 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/xmlroff-keep-with-nextwithin-page.html
 %%DOCSDIR%%/xmlroff-keep-with-previous.html
 %%DOCSDIR%%/xmlroff-keep-with-previouswithin-column.html
+%%DOCSDIR%%/xmlroff-layout-master-set.html
 %%DOCSDIR%%/xmlroff-keep-with-previouswithin-line.html
 %%DOCSDIR%%/xmlroff-keep-with-previouswithin-page.html
-%%DOCSDIR%%/xmlroff-layout-master-set.html
 %%DOCSDIR%%/xmlroff-leader.html
 %%DOCSDIR%%/xmlroff-letter-value.html
 %%DOCSDIR%%/xmlroff-line-height.html
@@ -379,16 +378,16 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/xmlroff-writing-mode.html
 %%DOCSDIR%%/xmlroff.devhelp
 %%DOCSDIR%%/xmlroff.devhelp2
-share/xml/libfo-0.5.0/catalog.xml
-share/xml/libfo-0.5.0/libfo-compat.xsl
-share/xml/libfo-0.5.0/xmlroff.fo
-share/xml/libfo-0.5.0/xmlroff.xml
-@dirrm share/xml/libfo-0.5.0
+share/xml/libfo-0.5.2/catalog.xml
+share/xml/libfo-0.5.2/libfo-compat.xsl
+share/xml/libfo-0.5.2/xmlroff.fo
+share/xml/libfo-0.5.2/xmlroff.xml
+@dirrm share/xml/libfo-0.5.2
 @dirrm %%DOCSDIR%%
-@dirrm include/libfo-0.5/util
-@dirrm include/libfo-0.5/property
+@dirrm include/libfo-0.5/libfo/util
+@dirrm include/libfo-0.5/libfo/property
+@dirrm include/libfo-0.5/libfo/fo
+@dirrm include/libfo-0.5/libfo/datatype
+@dirrm include/libfo-0.5/libfo/area
 @dirrm include/libfo-0.5/libfo
-@dirrm include/libfo-0.5/fo
-@dirrm include/libfo-0.5/datatype
-@dirrm include/libfo-0.5/area
 @dirrm include/libfo-0.5
