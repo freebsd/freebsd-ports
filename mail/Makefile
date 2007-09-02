@@ -287,6 +287,7 @@
     SUBDIR += nullpop
     SUBDIR += offlineimap
     SUBDIR += openwebmail
+    SUBDIR += ovs
     SUBDIR += p3scan
     SUBDIR += p5-Email-Abstract
     SUBDIR += p5-Email-Address
