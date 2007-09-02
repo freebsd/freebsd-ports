@@ -1,6 +1,7 @@
-MD5 (tw_cli-freebsd-x86_64-9.4.1.tgz) = f92753c73e6b67b196a33690ea8fcde5
-SHA256 (tw_cli-freebsd-x86_64-9.4.1.tgz) = 6c82128d336c4ca53a8dec4883660c2bdb5ca82a3979c46d9c1f9bcdedded996
-SIZE (tw_cli-freebsd-x86_64-9.4.1.tgz) = 658797
-MD5 (tw_cli-freebsd-x86-9.4.1.tgz) = 0f68b1b2f0dc4672722ebe66fa924f8a
-SHA256 (tw_cli-freebsd-x86-9.4.1.tgz) = 932a3553cb9f4b740e9ac40cd33ca70774167fcd4a121d22b9fb317b7e020a3a
-SIZE (tw_cli-freebsd-x86-9.4.1.tgz) = 644010
+MD5 (tw_cli-freebsd-x86-9.4.1.2.tgz) = b741a0c9728a52ca8b3952a1b9c6741a
+SHA256 (tw_cli-freebsd-x86-9.4.1.2.tgz) = 4bb0d12d543e5ae84f08e8e0ca894cd7fe3d5c144b943e1cd4a11c677104fdad
+SIZE (tw_cli-freebsd-x86-9.4.1.2.tgz) = 644013
+MD5 (tw_cli-freebsd-x86_64-9.4.1.2.tgz) = c393ecc599dd866dabd5dbfd46ed5479
+SHA256 (tw_cli-freebsd-x86_64-9.4.1.2.tgz) = e214dc734c750c559d112b2aa2195dbc86e17de8c2f24ec9d7419521999aa719
+SIZE (tw_cli-freebsd-x86_64-9.4.1.2.tgz) = 658798
+
