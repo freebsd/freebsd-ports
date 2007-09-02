@@ -1,9 +1,9 @@
---- include/ca.h.org	Sun Apr 16 09:51:14 2006
-+++ include/ca.h	Thu Apr 20 15:45:58 2006
-@@ -2640,3 +2640,6 @@
- void mulnbp(VL vl,NBP p1,NBP p2, NBP *rp);
- void pwrnbp(VL vl,NBP p1,Q n, NBP *rp);
- int compnbp(VL vl,NBP p1,NBP p2);
+--- include/ca.h.orig	Tue Aug  2 16:16:42 2005
++++ include/ca.h	Fri Nov 10 01:35:17 2006
+@@ -2607,3 +2607,6 @@
+ void bcopy(const void *,void *,int);
+ char *index(char *,int);
+ #endif
 +
 +/* pari-2.2.16-beta change rename 'prec' -> 'precreal' [ from paripriv.h ] */
 +#define prec precreal
