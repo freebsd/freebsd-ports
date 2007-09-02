@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	noweb
-PORTVERSION=	2.10a
-PORTREVISION=	1
+PORTVERSION=	2.11b
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	tg
+MASTER_SITES=	http://www.eecs.harvard.edu/~nr/noweb/dist/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	A simple, extensible literate-programming tool
@@ -18,7 +17,7 @@ COMMENT=	A simple, extensible literate-programming tool
 BUILD_DEPENDS=	icont:${PORTSDIR}/lang/icon
 RUN_DEPENDS=	iconx:${PORTSDIR}/lang/icon
 
-WRKSRC=		${WRKDIR}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 INSTALL_TARGET=	install-code install-man install-elisp
 MAN1=		cpif.1 htmltoc.1 nodefs.1 noindex.1 noroff.1 noroots.1 \
 		notangle.1 noweb.1 nuweb2noweb.1 sl2h.1
