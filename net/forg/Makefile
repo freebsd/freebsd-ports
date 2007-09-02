@@ -8,7 +8,7 @@
 
 PORTNAME=	forg
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net python
 MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/
 # Old home website doesn't seem to work anymore (19/05/03)
@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Gopher client
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw
+		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw
 
 NO_SIZE=	yes
 USE_PYTHON=	yes

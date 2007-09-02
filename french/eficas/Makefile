@@ -7,13 +7,14 @@
 
 PORTNAME=	eficas
 DISTVERSION=	1.12.0-1
+PORTREVISION=	1
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASter Command FIle Editor
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw		\
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw		\
 		${PYTHON_SITELIBDIR}/mx:${PORTSDIR}/lang/py-mx-base		\
 		${PYNUMERIC}							\
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
