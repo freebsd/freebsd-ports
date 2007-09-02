@@ -1,7 +1,7 @@
 #!/bin/sh
 # This file was automatically created - don't modify it!
 #%%SOURCEINFO-START%%
-# source version: $Id: pkg-install.in,v 1.15 2007/08/19 17:04:15 joemann Exp $
+# source version: $Id: pkg-install.in,v 1.17 2007/08/30 13:09:47 joemann Exp $
 # installed by port/package: %%SOURCEINFO-PACKAGE%%
 # installed from file: %%SOURCEINFO-FILE%%
 #%%SOURCEINFO-END%%
@@ -98,7 +98,7 @@ fi
 EPOCH=1
 CONFIG_FORMAT=1
 MAJOR=1
-MINOR=0
+MINOR=1
 VERSION=$EPOCH.$CONFIG_FORMAT.$MAJOR.$MINOR
 
 usage() {
@@ -130,7 +130,7 @@ version() {
 which() {
 	local name executable
 	name="$1"
-	lookup_executable "$CALLED_NAME"
+	lookup_executable "$name"
 	executable="$lookup_executable_result"
 	[ -z "$executable" ] && return 1
 	echo "$executable"
