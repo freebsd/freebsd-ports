@@ -11,14 +11,17 @@
 # you can generally build it cleanly from the source. - Doug
 
 PORTNAME=	bind84
-PORTVERSION=	8.4.7
+PORTVERSION=	8.4.7.1
 CATEGORIES?=	dns net ipv6
-MASTER_SITES=	${MASTER_SITE_ISC} \
-		http://dougbarton.us/Downloads/%SUBDIR%/
-MASTER_SITE_SUBDIR=	bind/src/${PORTVERSION}
+MASTER_SITES=	ftp://ftp.isc.org/isc/%SUBDIR%/ \
+		http://dougbarton.us/Downloads/%SUBDIR%/ \
+		ftp://ftp.isc.org/isc/bind8/src/8.4.7-P1/:patch \
+		http://dougbarton.us/Downloads/bind8/src/8.4.7-P1/:patch
+MASTER_SITE_SUBDIR=	bind8/src/8.4.7
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz \
-		bind-src.tar.gz.asc bind-doc.tar.gz.asc
-DIST_SUBDIR=	bind-${PORTVERSION}
+		bind-src.tar.gz.asc bind-doc.tar.gz.asc \
+		8.4.7-p1.patch:patch 8.4.7-p1.patch.asc:patch
+DIST_SUBDIR=	bind-8.4.7
 EXTRACT_ONLY=	bind-src.tar.gz bind-doc.tar.gz
 
 MAINTAINER=	DougB@FreeBSD.org
@@ -69,6 +72,15 @@ WRKSRC=		${WRKDIR}/src
 verify:	checksum
 	gpg --verify ${DISTDIR}/${DIST_SUBDIR}/bind-src.tar.gz.asc
 	gpg --verify ${DISTDIR}/${DIST_SUBDIR}/bind-doc.tar.gz.asc
+	gpg --verify ${DISTDIR}/${DIST_SUBDIR}/8.4.7-p1.patch.asc
+
+pre-patch:
+	@${SED} -e 's#^\*\*\* bind8/#*** #' -e 's#^\-\-\- bind8/#--- #' \
+	    -e 's#\-c bind8/#-c #' -e 's#^Index:.*##' \
+	    ${DISTDIR}/${DIST_SUBDIR}/8.4.7-p1.patch > \
+	    ${WRKDIR}/8.4.7-p1
+
+EXTRA_PATCHES=	${WRKDIR}/8.4.7-p1
 
 post-patch:
 	@${SED} -e "s#\'DESTETC=.*#'DESTETC=${BIND_DESTETC}'#" \
