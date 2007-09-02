@@ -18,9 +18,9 @@ COMMENT=	Multiplatform C++ application framework (metaport)
 
 OPTIONS=	SQL_PLUGINS "Database connectivity plugins for QtSql" off
 
-RUN_DEPENDS=	${LOCALBASE}/lib/plugins/accessible/libqtaccessiblecompatwidgets.so:${PORTSDIR}/accessibility/qt4-accessible \
-		${LOCALBASE}/lib/plugins/codecs/libqcncodecs.so:${PORTSDIR}/chinese/qt4-codecs-cn \
-		${LOCALBASE}/lib/plugins/codecs/libqtwcodecs.so:${PORTSDIR}/chinese/qt4-codecs-tw \
+RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/accessible/libqtaccessiblecompatwidgets.so:${PORTSDIR}/accessibility/qt4-accessible \
+		${LOCALBASE}/lib/qt4/plugins/codecs/libqcncodecs.so:${PORTSDIR}/chinese/qt4-codecs-cn \
+		${LOCALBASE}/lib/qt4/plugins/codecs/libqtwcodecs.so:${PORTSDIR}/chinese/qt4-codecs-tw \
 		${LOCALBASE}/lib/libQtSql.so:${PORTSDIR}/databases/qt4-sql \
 		qdbus:${PORTSDIR}/devel/dbus-qt4 \
 		qdbusviewer:${PORTSDIR}/devel/qt4-qdbusviewer \
@@ -40,17 +40,17 @@ RUN_DEPENDS=	${LOCALBASE}/lib/plugins/accessible/libqtaccessiblecompatwidgets.so
 		uic-qt4:${PORTSDIR}/devel/qt4-uic \
 		uic3:${PORTSDIR}/devel/qt4-uic3 \
 		${LOCALBASE}/lib/libQtTest.so:${PORTSDIR}/devel/qt4-qtestlib \
-		${LOCALBASE}/lib/plugins/imageformats/libqgif.so:${PORTSDIR}/graphics/qt4-imageformats \
+		${LOCALBASE}/lib/qt4/plugins/imageformats/libqgif.so:${PORTSDIR}/graphics/qt4-imageformats \
 		${LOCALBASE}/lib/libQtSvg.so:${PORTSDIR}/graphics/qt4-svg \
-		${LOCALBASE}/lib/plugins/iconengines/libqsvg.so:${PORTSDIR}/graphics/qt4-iconengines \
+		${LOCALBASE}/lib/qt4/plugins/iconengines/libqsvg.so:${PORTSDIR}/graphics/qt4-iconengines \
 		pixeltool:${PORTSDIR}/graphics/qt4-pixeltool \
-		${LOCALBASE}/lib/plugins/codecs/libqjpcodecs.so:${PORTSDIR}/japanese/qt4-codecs-jp \
-		${LOCALBASE}/lib/plugins/codecs/libqkrcodecs.so:${PORTSDIR}/korean/qt4-codecs-kr \
+		${LOCALBASE}/lib/qt4/plugins/codecs/libqjpcodecs.so:${PORTSDIR}/japanese/qt4-codecs-jp \
+		${LOCALBASE}/lib/qt4/plugins/codecs/libqkrcodecs.so:${PORTSDIR}/korean/qt4-codecs-kr \
 		qtconfig-qt4:${PORTSDIR}/misc/qt4-qtconfig \
 		${LOCALBASE}/lib/libQtNetwork.so:${PORTSDIR}/net/qt4-network \
 		${LOCALBASE}/lib/libQtXml.so:${PORTSDIR}/textproc/qt4-xml \
 		${LOCALBASE}/lib/libQtOpenGL.so:${PORTSDIR}/x11/qt4-opengl \
-		${LOCALBASE}/lib/plugins/inputmethods/libqimsw-multi.so:${PORTSDIR}/x11/qt4-inputmethods \
+		${LOCALBASE}/lib/qt4/plugins/inputmethods/libqimsw-multi.so:${PORTSDIR}/x11/qt4-inputmethods \
 		${LOCALBASE}/lib/libQtGui.so:${PORTSDIR}/x11-toolkits/qt4-gui
 
 NO_BUILD=	yes
@@ -59,12 +59,12 @@ NO_BUILD=	yes
 .include "${.CURDIR}/../../Mk/bsd.qt.mk"
 
 .if defined(WITH_SQL_PLUGINS)
-RUN_DEPENDS+=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlibase.so:${PORTSDIR}/databases/qt4-ibase-plugin \
-		${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin \
-		${LOCALBASE}/lib/plugins/sqldrivers/libqsqlodbc.so:${PORTSDIR}/databases/qt4-odbc-plugin \
-		${LOCALBASE}/lib/plugins/sqldrivers/libqsqlpgsql.so:${PORTSDIR}/databases/qt4-pgsql-plugin \
-		${LOCALBASE}/lib/plugins/sqldrivers/libqsqlsqlite.so:${PORTSDIR}/databases/qt4-sqlite-plugin \
-		${LOCALBASE}/lib/plugins/sqldrivers/libqsqlsqlite3.so:${PORTSDIR}/databases/qt4-sqlite3-plugin
+RUN_DEPENDS+=	${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlibase.so:${PORTSDIR}/databases/qt4-ibase-plugin \
+		${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin \
+		${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlodbc.so:${PORTSDIR}/databases/qt4-odbc-plugin \
+		${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlpsql.so:${PORTSDIR}/databases/qt4-pgsql-plugin \
+		${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlsqlite2.so:${PORTSDIR}/databases/qt4-sqlite-plugin \
+		${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlsqlite.so:${PORTSDIR}/databases/qt4-sqlite3-plugin
 .endif
 
 do-install:	#empty

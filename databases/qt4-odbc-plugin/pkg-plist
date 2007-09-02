@@ -1,2 +1,2 @@
-lib/plugins/sqldrivers/libqsql%%DB%%.so
-@dirrm lib/plugins/sqldrivers
+lib/qt4/plugins/sqldrivers/libqsql%%DB%%.so
+@dirrm lib/qt4/plugins/sqldrivers

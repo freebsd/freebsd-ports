@@ -48,8 +48,6 @@ CONFIGURE_WRKSRC=${WRKSRC}/../../../..
 
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
-	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/lib/plugins/codecs|g' \
-		${WRKSRC}/jp.pro
 	${MKDIR} ${WRKSRC}/../../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../../bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../../../bin/moc

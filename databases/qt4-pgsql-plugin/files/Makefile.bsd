@@ -12,7 +12,7 @@ MOC?=		${LOCALBASE}/bin/moc-qt4
 LDADD=		-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lQtSql -lpq
 SRCS=		main.cpp qsql_${DB}.cpp moc_qsql_${DB}.cpp
 
-LIBDIR=		${PREFIX}/lib/plugins/sqldrivers
+LIBDIR=		${PREFIX}/lib/qt4/plugins/sqldrivers
 
 ${LIBDIR}:
 	mkdir -p ${LIBDIR}

@@ -1,61 +1,61 @@
 bin/qvfb-qt4
 %%DEBUG%%bin/qvfb-qt4.debug
-%%DATADIR%%/ClamshellPhone.skin/ClamshellPhone.skin
-%%DATADIR%%/ClamshellPhone.skin/ClamshellPhone1-5-closed.png
-%%DATADIR%%/ClamshellPhone.skin/ClamshellPhone1-5-pressed.png
-%%DATADIR%%/ClamshellPhone.skin/ClamshellPhone1-5.png
-%%DATADIR%%/ClamshellPhone.skin/defaultbuttons.conf
-%%DATADIR%%/DualScreenPhone.skin/DualScreen-pressed.png
-%%DATADIR%%/DualScreenPhone.skin/DualScreen.png
-%%DATADIR%%/DualScreenPhone.skin/DualScreenPhone.skin
-%%DATADIR%%/DualScreenPhone.skin/defaultbuttons.conf
-%%DATADIR%%/PDAPhone.skin/PDAPhone.skin
-%%DATADIR%%/PDAPhone.skin/defaultbuttons.conf
-%%DATADIR%%/PDAPhone.skin/finger.png
-%%DATADIR%%/PDAPhone.skin/pda_down.png
-%%DATADIR%%/PDAPhone.skin/pda_up.png
-%%DATADIR%%/PortableMedia.skin/PortableMedia.skin
-%%DATADIR%%/PortableMedia.skin/defaultbuttons.conf
-%%DATADIR%%/PortableMedia.skin/portablemedia-pressed.png
-%%DATADIR%%/PortableMedia.skin/portablemedia.png
-%%DATADIR%%/PortableMedia.skin/portablemedia.xcf
-%%DATADIR%%/SmartPhone.skin/SmartPhone-pressed.png
-%%DATADIR%%/SmartPhone.skin/SmartPhone.png
-%%DATADIR%%/SmartPhone.skin/SmartPhone.skin
-%%DATADIR%%/SmartPhone.skin/defaultbuttons.conf
-%%DATADIR%%/SmartPhone2.skin/SmartPhone2-pressed.png
-%%DATADIR%%/SmartPhone2.skin/SmartPhone2.png
-%%DATADIR%%/SmartPhone2.skin/SmartPhone2.skin
-%%DATADIR%%/SmartPhone2.skin/defaultbuttons.conf
-%%DATADIR%%/SmartPhoneWithButtons.skin/SmartPhoneWithButtons-pressed.png
-%%DATADIR%%/SmartPhoneWithButtons.skin/SmartPhoneWithButtons.png
-%%DATADIR%%/SmartPhoneWithButtons.skin/SmartPhoneWithButtons.skin
-%%DATADIR%%/SmartPhoneWithButtons.skin/defaultbuttons.conf
-%%DATADIR%%/TouchscreenPhone.skin/TouchscreenPhone-pressed.png
-%%DATADIR%%/TouchscreenPhone.skin/TouchscreenPhone.png
-%%DATADIR%%/TouchscreenPhone.skin/TouchscreenPhone.skin
-%%DATADIR%%/TouchscreenPhone.skin/defaultbuttons.conf
-%%DATADIR%%/Trolltech-Keypad.skin/Trolltech-Keypad-closed.png
-%%DATADIR%%/Trolltech-Keypad.skin/Trolltech-Keypad-down.png
-%%DATADIR%%/Trolltech-Keypad.skin/Trolltech-Keypad.png
-%%DATADIR%%/Trolltech-Keypad.skin/Trolltech-Keypad.skin
-%%DATADIR%%/Trolltech-Keypad.skin/defaultbuttons.conf
-%%DATADIR%%/Trolltech-Touchscreen.skin/Trolltech-Touchscreen-down.png
-%%DATADIR%%/Trolltech-Touchscreen.skin/Trolltech-Touchscreen.png
-%%DATADIR%%/Trolltech-Touchscreen.skin/Trolltech-Touchscreen.skin
-%%DATADIR%%/Trolltech-Touchscreen.skin/defaultbuttons.conf
-%%DATADIR%%/pda.qrc
-%%DATADIR%%/pda.skin
-%%DATADIR%%/pda_down.png
-%%DATADIR%%/pda_up.png
-@dirrm %%DATADIR%%/Trolltech-Touchscreen.skin
-@dirrm %%DATADIR%%/Trolltech-Keypad.skin
-@dirrm %%DATADIR%%/TouchscreenPhone.skin
-@dirrm %%DATADIR%%/SmartPhoneWithButtons.skin
-@dirrm %%DATADIR%%/SmartPhone2.skin
-@dirrm %%DATADIR%%/SmartPhone.skin
-@dirrm %%DATADIR%%/PortableMedia.skin
-@dirrm %%DATADIR%%/PDAPhone.skin
-@dirrm %%DATADIR%%/DualScreenPhone.skin
-@dirrm %%DATADIR%%/ClamshellPhone.skin
-@dirrm %%DATADIR%%
+share/qvfb/ClamshellPhone.skin/ClamshellPhone.skin
+share/qvfb/ClamshellPhone.skin/ClamshellPhone1-5-closed.png
+share/qvfb/ClamshellPhone.skin/ClamshellPhone1-5-pressed.png
+share/qvfb/ClamshellPhone.skin/ClamshellPhone1-5.png
+share/qvfb/ClamshellPhone.skin/defaultbuttons.conf
+share/qvfb/DualScreenPhone.skin/DualScreen-pressed.png
+share/qvfb/DualScreenPhone.skin/DualScreen.png
+share/qvfb/DualScreenPhone.skin/DualScreenPhone.skin
+share/qvfb/DualScreenPhone.skin/defaultbuttons.conf
+share/qvfb/PDAPhone.skin/PDAPhone.skin
+share/qvfb/PDAPhone.skin/defaultbuttons.conf
+share/qvfb/PDAPhone.skin/finger.png
+share/qvfb/PDAPhone.skin/pda_down.png
+share/qvfb/PDAPhone.skin/pda_up.png
+share/qvfb/PortableMedia.skin/PortableMedia.skin
+share/qvfb/PortableMedia.skin/defaultbuttons.conf
+share/qvfb/PortableMedia.skin/portablemedia-pressed.png
+share/qvfb/PortableMedia.skin/portablemedia.png
+share/qvfb/PortableMedia.skin/portablemedia.xcf
+share/qvfb/SmartPhone.skin/SmartPhone-pressed.png
+share/qvfb/SmartPhone.skin/SmartPhone.png
+share/qvfb/SmartPhone.skin/SmartPhone.skin
+share/qvfb/SmartPhone.skin/defaultbuttons.conf
+share/qvfb/SmartPhone2.skin/SmartPhone2-pressed.png
+share/qvfb/SmartPhone2.skin/SmartPhone2.png
+share/qvfb/SmartPhone2.skin/SmartPhone2.skin
+share/qvfb/SmartPhone2.skin/defaultbuttons.conf
+share/qvfb/SmartPhoneWithButtons.skin/SmartPhoneWithButtons-pressed.png
+share/qvfb/SmartPhoneWithButtons.skin/SmartPhoneWithButtons.png
+share/qvfb/SmartPhoneWithButtons.skin/SmartPhoneWithButtons.skin
+share/qvfb/SmartPhoneWithButtons.skin/defaultbuttons.conf
+share/qvfb/TouchscreenPhone.skin/TouchscreenPhone-pressed.png
+share/qvfb/TouchscreenPhone.skin/TouchscreenPhone.png
+share/qvfb/TouchscreenPhone.skin/TouchscreenPhone.skin
+share/qvfb/TouchscreenPhone.skin/defaultbuttons.conf
+share/qvfb/Trolltech-Keypad.skin/Trolltech-Keypad-closed.png
+share/qvfb/Trolltech-Keypad.skin/Trolltech-Keypad-down.png
+share/qvfb/Trolltech-Keypad.skin/Trolltech-Keypad.png
+share/qvfb/Trolltech-Keypad.skin/Trolltech-Keypad.skin
+share/qvfb/Trolltech-Keypad.skin/defaultbuttons.conf
+share/qvfb/Trolltech-Touchscreen.skin/Trolltech-Touchscreen-down.png
+share/qvfb/Trolltech-Touchscreen.skin/Trolltech-Touchscreen.png
+share/qvfb/Trolltech-Touchscreen.skin/Trolltech-Touchscreen.skin
+share/qvfb/Trolltech-Touchscreen.skin/defaultbuttons.conf
+share/qvfb/pda.qrc
+share/qvfb/pda.skin
+share/qvfb/pda_down.png
+share/qvfb/pda_up.png
+@dirrm share/qvfb/Trolltech-Touchscreen.skin
+@dirrm share/qvfb/Trolltech-Keypad.skin
+@dirrm share/qvfb/TouchscreenPhone.skin
+@dirrm share/qvfb/SmartPhoneWithButtons.skin
+@dirrm share/qvfb/SmartPhone2.skin
+@dirrm share/qvfb/SmartPhone.skin
+@dirrm share/qvfb/PortableMedia.skin
+@dirrm share/qvfb/PDAPhone.skin
+@dirrm share/qvfb/DualScreenPhone.skin
+@dirrm share/qvfb/ClamshellPhone.skin
+@dirrm share/qvfb

@@ -1,15 +1,15 @@
 bin/qtdemo
 %%DEBUG%%bin/qtdemo.debug
-lib/plugins/designer/libarthurplugin.so
-%%DEBUG%%lib/plugins/designer/libarthurplugin.so.debug
-lib/plugins/designer/libcontainerextension.so
-%%DEBUG%%lib/plugins/designer/libcontainerextension.so.debug
-lib/plugins/designer/libcustomwidgetplugin.so
-%%DEBUG%%lib/plugins/designer/libcustomwidgetplugin.so.debug
-lib/plugins/designer/libtaskmenuextension.so
-%%DEBUG%%lib/plugins/designer/libtaskmenuextension.so.debug
-lib/plugins/designer/libworldtimeclockplugin.so
-%%DEBUG%%lib/plugins/designer/libworldtimeclockplugin.so.debug
+lib/qt4/plugins/designer/libarthurplugin.so
+%%DEBUG%%lib/qt4/plugins/designer/libarthurplugin.so.debug
+lib/qt4/plugins/designer/libcontainerextension.so
+%%DEBUG%%lib/qt4/plugins/designer/libcontainerextension.so.debug
+lib/qt4/plugins/designer/libcustomwidgetplugin.so
+%%DEBUG%%lib/qt4/plugins/designer/libcustomwidgetplugin.so.debug
+lib/qt4/plugins/designer/libtaskmenuextension.so
+%%DEBUG%%lib/qt4/plugins/designer/libtaskmenuextension.so.debug
+lib/qt4/plugins/designer/libworldtimeclockplugin.so
+%%DEBUG%%lib/qt4/plugins/designer/libworldtimeclockplugin.so.debug
 share/qt4/demos/README
 share/qt4/demos/affine/affine
 %%DEBUG%%share/qt4/demos/affine/affine.debug
@@ -301,6 +301,7 @@ share/qt4/demos/undo/undo
 share/qt4/demos/undo/undo.pro
 share/qt4/demos/undo/undo.qrc
 share/qt4/examples/README
+share/qt4/examples/assistant/README
 share/qt4/examples/assistant/assistant.pro
 share/qt4/examples/assistant/simpletextviewer/documentation/about.txt
 share/qt4/examples/assistant/simpletextviewer/documentation/browse.html
@@ -571,7 +572,6 @@ share/qt4/examples/graphicsview/portedasteroids/portedasteroids.pro
 share/qt4/examples/graphicsview/portedasteroids/portedasteroids.qrc
 share/qt4/examples/graphicsview/portedasteroids/sounds/Explosion.wav
 share/qt4/examples/graphicsview/portedasteroids/sprites.h
-share/qt4/examples/graphicsview/portedasteroids/sprites/.pbm
 share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits.ini
 share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits.pov
 share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0000.png
@@ -1050,6 +1050,18 @@ share/qt4/examples/network/loopback/loopback
 share/qt4/examples/network/loopback/loopback.pro
 share/qt4/examples/network/loopback/main.cpp
 share/qt4/examples/network/network.pro
+share/qt4/examples/network/securesocketclient/certificateinfo.cpp
+share/qt4/examples/network/securesocketclient/certificateinfo.h
+share/qt4/examples/network/securesocketclient/certificateinfo.ui
+share/qt4/examples/network/securesocketclient/main.cpp
+share/qt4/examples/network/securesocketclient/securesocketclient
+%%DEBUG%%share/qt4/examples/network/securesocketclient/securesocketclient.debug
+share/qt4/examples/network/securesocketclient/securesocketclient.pro
+share/qt4/examples/network/securesocketclient/securesocketclient.qrc
+share/qt4/examples/network/securesocketclient/sslclient.cpp
+share/qt4/examples/network/securesocketclient/sslclient.h
+share/qt4/examples/network/securesocketclient/sslclient.ui
+share/qt4/examples/network/securesocketclient/sslerrors.ui
 share/qt4/examples/network/threadedfortuneserver/dialog.cpp
 share/qt4/examples/network/threadedfortuneserver/dialog.h
 share/qt4/examples/network/threadedfortuneserver/fortuneserver.cpp
@@ -1532,9 +1544,10 @@ share/qt4/examples/tools/customcompleter/mainwindow.h
 share/qt4/examples/tools/customcompleter/resources/wordlist.txt
 share/qt4/examples/tools/customcompleter/textedit.cpp
 share/qt4/examples/tools/customcompleter/textedit.h
+share/qt4/examples/tools/echoplugin/echoplugin
+%%DEBUG%%share/qt4/examples/tools/echoplugin/echoplugin.debug
 share/qt4/examples/tools/echoplugin/echoplugin.pro
 share/qt4/examples/tools/echoplugin/echowindow/echointerface.h
-share/qt4/examples/tools/echoplugin/echowindow/echoplugin
 share/qt4/examples/tools/echoplugin/echowindow/echowindow.cpp
 share/qt4/examples/tools/echoplugin/echowindow/echowindow.h
 share/qt4/examples/tools/echoplugin/echowindow/echowindow.pro
@@ -1627,11 +1640,12 @@ share/qt4/examples/tools/styleplugin/plugin/simplestyle.cpp
 share/qt4/examples/tools/styleplugin/plugin/simplestyle.h
 share/qt4/examples/tools/styleplugin/plugin/simplestyleplugin.cpp
 share/qt4/examples/tools/styleplugin/plugin/simplestyleplugin.h
+share/qt4/examples/tools/styleplugin/styleplugin
+%%DEBUG%%share/qt4/examples/tools/styleplugin/styleplugin.debug
 share/qt4/examples/tools/styleplugin/styleplugin.pro
+share/qt4/examples/tools/styleplugin/styles/libsimplestyleplugin.so
+%%DEBUG%%share/qt4/examples/tools/styleplugin/styles/libsimplestyleplugin.so.debug
 share/qt4/examples/tools/styleplugin/stylewindow/main.cpp
-share/qt4/examples/tools/styleplugin/stylewindow/styleplugin
-share/qt4/examples/tools/styleplugin/stylewindow/styles/libsimplestyleplugin.so
-%%DEBUG%%share/qt4/examples/tools/styleplugin/stylewindow/styles/libsimplestyleplugin.so.debug
 share/qt4/examples/tools/styleplugin/stylewindow/stylewindow.cpp
 share/qt4/examples/tools/styleplugin/stylewindow/stylewindow.h
 share/qt4/examples/tools/styleplugin/stylewindow/stylewindow.pro
@@ -1751,6 +1765,7 @@ share/qt4/examples/tutorial/t9/t9
 %%DEBUG%%share/qt4/examples/tutorial/t9/t9.debug
 share/qt4/examples/tutorial/t9/t9.pro
 share/qt4/examples/tutorial/tutorial.pro
+share/qt4/examples/uitools/uitools.pro
 share/qt4/examples/widgets/README
 share/qt4/examples/widgets/analogclock/analogclock
 share/qt4/examples/widgets/analogclock/analogclock.cpp
@@ -1766,6 +1781,12 @@ share/qt4/examples/widgets/calculator/calculator.cpp
 share/qt4/examples/widgets/calculator/calculator.h
 share/qt4/examples/widgets/calculator/calculator.pro
 share/qt4/examples/widgets/calculator/main.cpp
+share/qt4/examples/widgets/calendarwidget/calendarwidget
+%%DEBUG%%share/qt4/examples/widgets/calendarwidget/calendarwidget.debug
+share/qt4/examples/widgets/calendarwidget/calendarwidget.pro
+share/qt4/examples/widgets/calendarwidget/main.cpp
+share/qt4/examples/widgets/calendarwidget/window.cpp
+share/qt4/examples/widgets/calendarwidget/window.h
 share/qt4/examples/widgets/charactermap/charactermap
 %%DEBUG%%share/qt4/examples/widgets/charactermap/charactermap.debug
 share/qt4/examples/widgets/charactermap/charactermap.pro
@@ -2011,9 +2032,11 @@ share/qt4/examples/xml/xmlstreamlint/xmlstreamlint.pro
 @dirrm share/qt4/examples/widgets/groupbox
 @dirrm share/qt4/examples/widgets/digitalclock
 @dirrm share/qt4/examples/widgets/charactermap
+@dirrm share/qt4/examples/widgets/calendarwidget
 @dirrm share/qt4/examples/widgets/calculator
 @dirrm share/qt4/examples/widgets/analogclock
 @dirrm share/qt4/examples/widgets
+@dirrm share/qt4/examples/uitools
 @dirrm share/qt4/examples/tutorial/t9
 @dirrm share/qt4/examples/tutorial/t8
 @dirrm share/qt4/examples/tutorial/t7
@@ -2032,8 +2055,8 @@ share/qt4/examples/xml/xmlstreamlint/xmlstreamlint.pro
 @dirrm share/qt4/examples/tools/undoframework
 @dirrm share/qt4/examples/tools/treemodelcompleter/resources
 @dirrm share/qt4/examples/tools/treemodelcompleter
-@dirrm share/qt4/examples/tools/styleplugin/stylewindow/styles
 @dirrm share/qt4/examples/tools/styleplugin/stylewindow
+@dirrm share/qt4/examples/tools/styleplugin/styles
 @dirrm share/qt4/examples/tools/styleplugin/plugin
 @dirrm share/qt4/examples/tools/styleplugin
 @dirrm share/qt4/examples/tools/settingseditor/inifiles
@@ -2120,6 +2143,7 @@ share/qt4/examples/xml/xmlstreamlint/xmlstreamlint.pro
 @dirrm share/qt4/examples/network/torrent/3rdparty
 @dirrm share/qt4/examples/network/torrent
 @dirrm share/qt4/examples/network/threadedfortuneserver
+@dirrm share/qt4/examples/network/securesocketclient
 @dirrm share/qt4/examples/network/loopback
 @dirrm share/qt4/examples/network/http
 @dirrm share/qt4/examples/network/ftp/images
@@ -2245,4 +2269,3 @@ share/qt4/examples/xml/xmlstreamlint/xmlstreamlint.pro
 @dirrm share/qt4/demos/arthurplugin
 @dirrm share/qt4/demos/affine
 @dirrm share/qt4/demos
-@dirrm lib/plugins/designer

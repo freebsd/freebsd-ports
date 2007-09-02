@@ -8,7 +8,7 @@
 
 PORTNAME=	gui
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -73,9 +73,6 @@ pre-configure:
 		-e 's|flat_headers.path.*|flat_headers.path=${PREFIX}/include/Qt|g' \
 		-e 's|targ_headers.path.*|targ_headers.path=${PREFIX}/include/$$$$TARGET|g' \
 		${WRKSRC}/${PORTNAME}.pro ${WRKSRC}/../qt_install.pri
-	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/lib/plugins/imageformats|g' \
-		${WRKSRC}/../plugins/imageformats/gif/gif.pro  \
-		${WRKSRC}/../plugins/imageformats/jpeg/jpeg.pro
 	${MKDIR} ${WRKSRC}/../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc

@@ -86,18 +86,19 @@ lib/libQtDesigner.prl
 lib/libQtDesigner.so
 lib/libQtDesigner.so.4
 lib/libQtDesigner.so.4.3
-lib/libQtDesigner.so.4.3.0
-%%DEBUG%%lib/libQtDesigner.so.4.3.0.debug
+lib/libQtDesigner.so.4.3.1
+%%DEBUG%%lib/libQtDesigner.so.4.3.1.debug
 lib/libQtDesignerComponents.prl
 lib/libQtDesignerComponents.so
 lib/libQtDesignerComponents.so.4
 lib/libQtDesignerComponents.so.4.3
-lib/libQtDesignerComponents.so.4.3.0
-%%DEBUG%%lib/libQtDesignerComponents.so.4.3.0.debug
+lib/libQtDesignerComponents.so.4.3.1
+%%DEBUG%%lib/libQtDesignerComponents.so.4.3.1.debug
 lib/libQtUiTools.a
 lib/libQtUiTools.prl
-lib/plugins/libqt3supportwidgets.so
-%%DEBUG%%lib/plugins/libqt3supportwidgets.so.debug
+lib/qt4/plugins/designer/libqt3supportwidgets.so
+%%DEBUG%%lib/qt4/plugins/designer/libqt3supportwidgets.so.debug
 libdata/pkgconfig/QtUiTools.pc
+@dirrm lib/qt4/plugins/designer
 @dirrm include/QtUiTools
 @dirrm include/QtDesigner

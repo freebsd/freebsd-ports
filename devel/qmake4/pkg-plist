@@ -144,6 +144,8 @@ share/qt4/mkspecs/linux-g++/qmake.conf
 share/qt4/mkspecs/linux-g++/qplatformdefs.h
 share/qt4/mkspecs/linux-icc/qmake.conf
 share/qt4/mkspecs/linux-icc/qplatformdefs.h
+share/qt4/mkspecs/linux-icc-32/qmake.conf
+share/qt4/mkspecs/linux-icc-32/qplatformdefs.h
 share/qt4/mkspecs/linux-icc-64/qmake.conf
 share/qt4/mkspecs/linux-icc-64/qplatformdefs.h
 share/qt4/mkspecs/linux-kcc/qmake.conf
@@ -261,6 +263,7 @@ share/qt4/mkspecs/win32-g++/qplatformdefs.h
 @dirrm share/qt4/mkspecs/linux-lsb-g++
 @dirrm share/qt4/mkspecs/linux-kcc
 @dirrm share/qt4/mkspecs/linux-icc-64
+@dirrm share/qt4/mkspecs/linux-icc-32
 @dirrm share/qt4/mkspecs/linux-icc
 @dirrm share/qt4/mkspecs/linux-g++-64
 @dirrm share/qt4/mkspecs/linux-g++-32
