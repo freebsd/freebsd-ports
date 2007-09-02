@@ -178,7 +178,7 @@
     SUBDIR += phat
     SUBDIR += php-gtk
     SUBDIR += plib
-    SUBDIR += pmw
+    SUBDIR += py-Pmw
     SUBDIR += py-SciParam
     SUBDIR += py-anygui
     SUBDIR += py-fltk

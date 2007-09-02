@@ -12374,7 +12374,6 @@ pmars-sdl	ports/games/pmars-sdl
 pmd		ports/devel/pmd
 pmf		ports/net/pmf
 pmk		ports/devel/pmk
-pmw		ports/x11-toolkits/pmw
 pmwiki		ports/www/pmwiki
 pnet		ports/lang/pnet
 pnet-base	ports/lang/pnet-base
@@ -12859,6 +12858,7 @@ py-PySQLite10	ports/databases/py-PySQLite10
 py-PySQLite11	ports/databases/py-PySQLite11
 py-PyX		ports/graphics/py-PyX
 py-SQLDict	ports/databases/py-SQLDict
+py-Pmw		ports/x11-toolkits/py-Pmw
 py-SciParam	ports/x11-toolkits/py-SciParam
 py-TurboJinja	ports/devel/py-TurboJinja
 py-adns		ports/dns/py-adns
