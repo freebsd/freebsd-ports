@@ -7,6 +7,7 @@
 
 PORTNAME=	aguri
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	ftp://ftp.csl.sony.co.jp/pub/kjc/
 
@@ -15,10 +16,13 @@ COMMENT=	An Aggregation-based Traffic Profiler
 
 .if defined(WITH_X11)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile
-USE_XLIB=	yes
+USE_XORG=	x11
 .endif
 
 MAN1=		aguri.1
+
+post-patch:
+	${REINPLACE_CMD} -e "s,/usr/X11R6,${X11BASE}," ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/aguri ${PREFIX}/bin
