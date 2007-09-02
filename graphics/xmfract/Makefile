@@ -19,11 +19,14 @@ COMMENT=	The dos based 'fractint' with an X/Motif front end
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-editres	\
+	--with-motif="motif_includes=${X11BASE}/include motif_libraries=${X11BASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${OSVERSION} >= 600034
-BROKEN=		Internal compiler error during build on FreeBSD >= 6.0 and !i386
+.if ${ARCH} != "i386"
+USE_GCC=4.2+
+IGNORE=		fails to run with: XCreateImage failed
 .endif
 
 .include <bsd.port.post.mk>
