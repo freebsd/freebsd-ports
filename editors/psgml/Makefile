@@ -18,20 +18,23 @@ PATCH_SITE_SUBDIR=	hrs
 PATCHFILES=	psgml-symbol-conflict-050503.diff.gz
 
 MAINTAINER?=	hrs@FreeBSD.org
-COMMENT?=	A major mode for editing SGML and XML documents for emacs21
-
-INFO=		psgml psgml-api
-
-PSGML_STARTUPEL=	psgml-startup.el
+COMMENT=	A major mode for editing SGML and XML documents for ${EMACS_PORT_NAME}
 
 SUB_FILES=	${PSGML_STARTUPEL}
 SUB_LIST=	PSGML_LISPDIR=${PSGML_LISPDIR}
 PLIST_SUB=	PSGML_STARTUPEL=${PSGML_STARTUPEL}
 NOT_FOR_ARCHS=	ia64
-
-# This is a master port.
+GNU_CONFIGURE=	YES
+CONFIGURE_ARGS=	--lispdir=${PSGML_LISPDIR}
+CONFIGURE_ENV=	EMACS=${EMACS_CMD}
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
+
+INFO=		psgml psgml-api
+
+PSGML_STARTUPEL=	psgml-startup.el
+PSGML_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/psgml
+
+.include <bsd.port.pre.mk>
 
 .if ${EMACS_PORT_NAME} == xemacs21-mule
 PLIST_SUB+=	XEMACS="" \
@@ -39,23 +42,6 @@ PLIST_SUB+=	XEMACS="" \
 .else
 PLIST_SUB+=	XEMACS="@comment " \
 		NON_XEMACS=""
-.endif
-
-.include <bsd.port.pre.mk>
-
-#
-# emacs ports setup
-#
-.if defined(EMACS_PORT_NAME)
-PSGML_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/psgml
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--lispdir=${PSGML_LISPDIR}
-CONFIGURE_ENV=	EMACS=${EMACS_CMD}
-.else
-.BEGIN:
-	@${ECHO} "Error: Bad port."
-	@${ECHO} "You must define EMACS_PORT_NAME."
-	@${FALSE}
 .endif
 
 post-install:
