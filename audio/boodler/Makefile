@@ -9,8 +9,7 @@ PORTNAME=	boodler
 PORTVERSION=	1.5.3
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.eblong.com/zarf/boodler/ \
-		http://s89813419.onlinehome.us/
+MASTER_SITES=	http://www.eblong.com/zarf/boodler/
 DISTFILES=	boodler-153.tar.gz boodler-snd-021902.tar.gz
 
 MAINTAINER=	daniel+boodler@pelleg.org
@@ -23,7 +22,7 @@ USE_PYTHON=	yes
 DRIVER?=	oss
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BHOME=		${PREFIX}/share/boodler
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/share/boodler/boodle
 
 pre-everything::
@@ -55,6 +54,10 @@ PKGNAMESUFFIX=	-file
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 PIC=	--PIC
+.endif
+
+.if ${ARCH} == "sparc64"
+BROKEN=		does not compile on sparc64
 .endif
 
 post-patch:
