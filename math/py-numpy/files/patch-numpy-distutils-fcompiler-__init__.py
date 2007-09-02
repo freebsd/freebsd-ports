@@ -1,6 +1,15 @@
---- numpy/distutils/fcompiler/__init__.py.orig	Wed Oct 11 22:28:42 2006
-+++ numpy/distutils/fcompiler/__init__.py	Sat Dec  9 22:51:47 2006
-@@ -273,11 +273,7 @@
+--- numpy/distutils/fcompiler/__init__.py.orig	2007-08-20 21:00:55.000000000 -0500
++++ numpy/distutils/fcompiler/__init__.py	2007-08-27 19:26:14.000000000 -0500
+@@ -78,7 +78,7 @@
+         'ranlib'       : None,
+         }
+ 
+-    compile_switch = "-c"
++    compile_switch = "-c -fPIC"
+     object_switch = "-o "   # Ending space matters! It will be stripped
+                             # but if it is missing then object_switch
+                             # will be prefixed to object file name by
+@@ -278,11 +278,7 @@
          f90 = self.__get_cmd('compiler_f90','F90',(conf,'f90exec'))
          # Temporarily setting f77,f90 compilers so that
          # version_cmd can use their executables.
