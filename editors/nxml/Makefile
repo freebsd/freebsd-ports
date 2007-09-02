@@ -10,45 +10,39 @@ PORTVERSION=	${NXML_VER}
 PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.thaiopensource.com/download/
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A major mode for editing XML documents for emacs21
+COMMENT=	A major mode for editing XML documents for ${EMACS_PORT_NAME}
 
-# distfile version
-NXML_VER=	20041004
-NXML_STARTUPEL=	nxml-startup.el
 USE_EMACS=	yes
-EMACS_PORT_NAME?=emacs21
 
 INFO=		nxml-mode
-DOCUMENTS=	README NEWS VERSION TODO COPYING \
+PORTDOCS=	README NEWS VERSION TODO COPYING \
 		nxml-mode.xml nxml-mode.rnc test.invalid.xml test.valid.xml
+
+NXML_VER=	20041004
+NXML_STARTUPEL=	nxml-startup.el
 NXML_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/nxml
-
-post-build:
-	cd ${WRKSRC}; \
-		${MAKE} nxml-mode.info
-
-pre-su-install:
-	@${MKDIR} ${NXML_LISPDIR}
+NXML_INSTDIRS=	. char-name char-name/unicode schema
+NXML_INCLEXP=	\.el$$\|\.elc$$\|\.rnc$$\|\.xml$$
+NXML_EXCLEXP=	nxml-mode.xml\|nxml-mode.rnc\|test.invalid.xml\|test.valid.xml
 
 do-install:
-	cd ${INSTALL_WRKSRC}; \
-		${INSTALL_DATA} *.el ${NXML_LISPDIR}; \
-		${INSTALL_DATA} *.elc ${NXML_LISPDIR}
-.for DIR in char-name schema
-	cd ${INSTALL_WRKSRC}; \
-		${FIND} ${DIR} -type d -exec ${MKDIR} ${NXML_LISPDIR}/\{} \; ;\
-		${FIND} ${DIR} -type f -exec ${INSTALL_DATA} \{} ${NXML_LISPDIR}/\{} \;
+	@${MKDIR} ${NXML_INSTDIRS:S,^,${NXML_LISPDIR}/,}
+.for D in ${NXML_INSTDIRS}
+	@cd ${INSTALL_WRKSRC}/${D} && \
+		${LS} \
+		| ${GREP} '${NXML_INCLEXP}' | ${GREP} -v '${NXML_EXCLEXP}' \
+		| ${XARGS} -J % ${INSTALL_DATA} % ${NXML_LISPDIR}/${D}
 .endfor
 
 post-install:
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/nxml-mode.info ${PREFIX}/info
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/nxml-mode.info ${PREFIX}/info
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for F in ${DOCUMENTS}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/${F} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	@cd ${INSTALL_WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
