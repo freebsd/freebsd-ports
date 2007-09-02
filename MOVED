@@ -3192,3 +3192,4 @@ editors/gnuserv-emacs20|editors/gnuserv|2007-08-19|Has expired: emacs20 and rela
 devel/semantic-emacs20|devel/semantic|2007-08-19|Has expired: emacs20 and related ports are obsolete; please use a more recent version
 net/ddc||2007-08-22|Usability expired
 games/groundhog||2007-08-22|Game is not worth keeping
+x11-toolkits/pmw|x11-toolkits/py-Pmw|2007-09-02|Port renamed for consistency
