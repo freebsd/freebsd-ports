@@ -6,12 +6,14 @@
 #    $MCom: ports/lang/vala/Makefile,v 1.1 2007/07/09 12:48:15 ahze Exp $
 
 PORTNAME=	vala
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Programming language and compiler that converts Vala code into C code
+
+LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomeprefix
