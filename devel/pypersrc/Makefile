@@ -7,7 +7,7 @@
 
 PORTNAME=	pypersrc
 PORTVERSION=	20060325
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.jimbrooks.org/pypersrc/ \
 		${MASTER_SITE_LOCAL}
@@ -18,7 +18,7 @@ MAINTAINER=	jkoshy@FreeBSD.org
 COMMENT=	Python/Tkinter based source browser
 
 BUILD_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
-		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw
+		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

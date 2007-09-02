@@ -7,7 +7,7 @@
 
 PORTNAME=	cuecat
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.mired.org/downloads/
 
@@ -16,7 +16,7 @@ COMMENT=	Tools for decoding and using the output of a :Cue:Cat(TM) wand scanner
 
 .if !defined(WITHOUT_X11)
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/pmw
+		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/py-Pmw
 .endif
 
 NO_BUILD=	yes

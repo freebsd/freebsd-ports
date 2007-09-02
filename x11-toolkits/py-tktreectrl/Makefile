@@ -7,7 +7,7 @@
 
 PORTNAME=	tktreectrl
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	http://klappnase.zexxo.net/TkinterTreectrl/ CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ COMMENT=	TkTreectrl Python bindings
 
 LIB_DEPENDS=	treectrl.0:${PORTSDIR}/x11-toolkits/tktreectrl
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/pmw
+		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/py-Pmw
 
 USE_TK_RUN=	yes
 USE_ZIP=	yes

@@ -6,7 +6,7 @@
 
 PORTNAME=	pymol
 PORTVERSION=	0.99rc6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pymol
@@ -18,7 +18,7 @@ COMMENT=	Free and Open-Source molecular modeling system
 
 BUILD_DEPENDS=	${PYNUMERIC}
 RUN_DEPENDS=	${PYNUMERIC} \
-		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw
+		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
 		png.5:${PORTSDIR}/graphics/png
 
