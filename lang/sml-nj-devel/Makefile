@@ -7,17 +7,17 @@
 
 PORTNAME=	smlnj
 PORTVERSION=	110.65
-PKGNAMESUFFIX=	-devel
 CATEGORIES=	lang
 MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/ \
 		ftp://mirror.free.de/http/smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
+PKGNAMESUFFIX=	-devel
 DISTFILES=	config.tgz runtime.tgz
+DIST_SUBDIR=	sml-nj/${PORTVERSION}
 EXTRACT_ONLY=	config.tgz
 
 MAINTAINER=	joemann@beefree.free.de
 COMMENT=	A popular functional language from Bell Labs
 
-DIST_SUBDIR=	sml-nj/${PORTVERSION}
 NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
 
@@ -26,7 +26,8 @@ ONLY_FOR_ARCHS=	i386
 OPTIONS=	EVERYTHING "install everything from the SML/NJ distribution" off \
 		RECOMPILE "recompile the SML compiler - implies EVERYTHING" off
 
-PKGINSTALL=	${WRKDIR}/.pkg-install
+SUB_FILES=	pkg-install
+SUB_LIST=	EXEBINDIR=${MLBINRELATIVE} EXENAMES="${MLEXE}"
 PKGDEINSTALL=	${PKGINSTALL}
 
 .include <bsd.port.pre.mk>
@@ -82,10 +83,8 @@ pre-fetch:
 .if !defined(WITH_EVERYTHING)
 	@${ECHO} 'Use make WITH_EVERYTHING=yes to also build/install'
 	@${ECHO} ' eXene (X Windows toolkit),'
-	@${ECHO} ' ml-antlr (LL(k) parser generator),'
 	@${ECHO} ' ml-burg (tree transformer),'
 	@${ECHO} ' ml-nlffi (foreign function interface to C code),'
-	@${ECHO} ' ml-ulex (lexer generator with unicode support),'
 	@${ECHO} ' nowhere (preprocessor for conditional patterns),'
 	@${ECHO} ' various libraries, and all the sources.'
 .endif
@@ -123,11 +122,6 @@ do-configure:
 	  ${ECHO_CMD} "request	src-smlnj" ) \
 	> "${WRKDIR}/config/targets.customized"
 .endif
-# The text of the pkg-install script depends on the programs which will
-# be installed, see "post-install" below.
-	${SED} -e 's?%%EXENAMES%%?${MLEXE}?g' \
-	-e 's?%%EXEBINDIR%%?${MLBINRELATIVE}?g' \
-	${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 
 # The build target patches, builds, and installs the system within WRKDIR.
 # base/runtime is not cleaned afterwards to avoid its recompilation during
@@ -292,7 +286,7 @@ deinstall:
 # either to the currently installed sml-nj-devel package's version
 # or else to this port's version. SMLNJ_DEVEL_VERSION is an environment
 # variable used by multiexec-wrapper to select the executable
-# from that smlnj-* package matching SMLNJ_DEVEL_VERSION.
+# from that smlnj-devel-* package matching SMLNJ_DEVEL_VERSION.
 smlnj-devel-version:
 #	XXX PKG_INFO not in bsd.commands.mk (20070818)
 	@${EXPR} `pkg_info -q -O lang/sml-nj-devel` : '.*-\(.*\)' \
