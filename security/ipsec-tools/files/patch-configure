@@ -72,6 +72,6 @@
 +  LIBS="$LIBS -liconv"
 +fi
 +
- 	echo "$as_me:$LINENO: checking if iconv second argument needs const" >&5
- echo $ECHO_N "checking if iconv second argument needs const... $ECHO_C" >&6
+ 	{ echo "$as_me:$LINENO: checking if iconv second argument needs const" >&5
+ echo $ECHO_N "checking if iconv second argument needs const... $ECHO_C" >&6; }
  	saved_CFLAGS=$CFLAGS
