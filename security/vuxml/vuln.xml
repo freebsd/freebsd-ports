@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="45500f74-5947-11dc-87c1-000e2e5785ad">
+    <topic>fetchmail -- denial of service on reject of local warning
+      message</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><ge>4.6.8</ge><lt>6.3.8_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2007-02.txt">
+	  <p>fetchmail will generate warning messages in certain
+	    circumstances (for instance, when leaving oversized messages
+	    on the server or login to the upstream fails) and send them
+	    to the local postmaster or the user running it.</p>
+	  <p>If this warning message is then refused by the SMTP listener
+	    that fetchmail is forwarding the message to, fetchmail
+	    crashes and does not collect further messages until it is
+	    restarted.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-4565</cvename>
+      <url>http://www.fetchmail.info/fetchmail-SA-2007-02.txt</url>
+    </references>
+    <dates>
+      <discovery>2007-07-29</discovery>
+      <entry>2007-09-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d944719e-42f4-4864-89ed-f045b541919f">
     <topic>gtar -- Directory traversal vulnerability</topic>
     <affects>
