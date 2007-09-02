@@ -1,5 +1,5 @@
---- numpy/core/include/numpy/ufuncobject.h.orig	Mon Oct 23 15:13:40 2006
-+++ numpy/core/include/numpy/ufuncobject.h	Sat Dec  9 22:51:47 2006
+--- numpy/core/include/numpy/ufuncobject.h.orig	2007-08-20 21:00:58.000000000 -0500
++++ numpy/core/include/numpy/ufuncobject.h	2007-08-27 15:08:11.000000000 -0500
 @@ -262,7 +262,10 @@
  /* Solaris --------------------------------------------------------*/
  /* --------ignoring SunOS ieee_flags approach, someone else can
@@ -16,8 +16,8 @@
  	(void) fpsetsticky(0);						\
  	}
  
--#elif defined(linux) || defined(__APPLE__) || defined(__CYGWIN__) || defined(__MINGW32__)
-+#elif defined(linux) || defined(__APPLE__) || defined(__CYGWIN__) || defined(__MINGW32__) || (defined(__FreeBSD__) && (__FreeBSD_version >= 502114))
+-#elif defined(__GLIBC__) || defined(__APPLE__) || defined(__CYGWIN__) || defined(__MINGW32__)
++#elif defined(__GLIBC__) || defined(__APPLE__) || defined(__CYGWIN__) || defined(__MINGW32__) || (defined(__FreeBSD__) && (__FreeBSD_version >= 502114))
  
 -#if defined(__GLIBC__) || defined(__APPLE__) || defined(__MINGW32__)
 +#if defined(__GLIBC__) || defined(__APPLE__) || defined(__MINGW32__) || (defined(__FreeBSD__) && (__FreeBSD_version >= 502114))

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numpy
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3.1
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://numpy.scipy.org/:doc \
@@ -17,7 +17,7 @@ DISTFILES=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}:source \
 		numpy.pdf:doc
 EXTRACT_ONLY=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	llwang@infor.org
 COMMENT=	The New Numeric Extension to Python
 
 CONFLICTS=	f2py-*
