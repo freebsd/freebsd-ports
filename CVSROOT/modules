@@ -8623,6 +8623,7 @@ otter		ports/misc/otter
 ourmon		ports/net-mgmt/ourmon
 outerspace	ports/games/outerspace
 outguess	ports/security/outguess
+ovs		ports/mail/ovs
 ovt		ports/science/ovt
 p-interp	ports/emulators/p-interp
 p0f		ports/net-mgmt/p0f
