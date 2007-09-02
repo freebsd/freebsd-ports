@@ -8327,6 +8327,7 @@ nvu		ports/www/nvu
 nwndata		ports/games/nwndata
 nwreckdum	ports/archivers/nwreckdum
 nx		ports/devel/nx
+nxml		ports/editors/nxml
 nxml-emacs21	ports/editors/nxml-emacs21
 nxserver	ports/net/nxserver
 nxtvepg		ports/multimedia/nxtvepg

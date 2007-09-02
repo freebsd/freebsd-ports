@@ -200,13 +200,3 @@
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/nxml/char-name
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/nxml/schema
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/nxml
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/VERSION
-%%PORTDOCS%%%%DOCSDIR%%/nxml-mode.xml
-%%PORTDOCS%%%%DOCSDIR%%/nxml-mode.rnc
-%%PORTDOCS%%%%DOCSDIR%%/test.invalid.xml
-%%PORTDOCS%%%%DOCSDIR%%/test.valid.xml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

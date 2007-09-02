@@ -112,6 +112,7 @@
     SUBDIR += nvi-devel
     SUBDIR += nvi-m17n
     SUBDIR += nvi-perl
+    SUBDIR += nxml
     SUBDIR += nxml-emacs21
     SUBDIR += ooo-build
     SUBDIR += openoffice.org-1.0
