@@ -1,3 +1,5 @@
-lib/plugins/codecs/libqjpcodecs.so
-%%DEBUG%%lib/plugins/codecs/libqjpcodecs.so.debug
-@dirrm lib/plugins/codecs
+lib/qt4/plugins/codecs/libqjpcodecs.so
+%%DEBUG%%lib/qt4/plugins/codecs/libqjpcodecs.so.debug
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+@dirrm lib/qt4/plugins/codecs

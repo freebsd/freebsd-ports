@@ -27,7 +27,7 @@ lib/libQtScript.prl
 lib/libQtScript.so
 lib/libQtScript.so.4
 lib/libQtScript.so.4.3
-lib/libQtScript.so.4.3.0
-%%DEBUG%%lib/libQtScript.so.4.3.0.debug
+lib/libQtScript.so.4.3.1
+%%DEBUG%%lib/libQtScript.so.4.3.1.debug
 libdata/pkgconfig/QtScript.pc
 @dirrm include/QtScript

@@ -1,11 +1,11 @@
-lib/plugins/imageformats/libqgif.so
-%%DEBUG%%lib/plugins/imageformats/libqgif.so.debug
-lib/plugins/imageformats/libqjpeg.so
-%%DEBUG%%lib/plugins/imageformats/libqjpeg.so.debug
-lib/plugins/imageformats/libqmng.so
-%%DEBUG%%lib/plugins/imageformats/libqmng.so.debug
-lib/plugins/imageformats/libqsvg.so
-%%DEBUG%%lib/plugins/imageformats/libqsvg.so.debug
-lib/plugins/imageformats/libqtiff.so
-%%DEBUG%%lib/plugins/imageformats/libqtiff.so.debug
-@dirrm lib/plugins/imageformats
+lib/qt4/plugins/imageformats/libqgif.so
+%%DEBUG%%lib/qt4/plugins/imageformats/libqgif.so.debug
+lib/qt4/plugins/imageformats/libqjpeg.so
+%%DEBUG%%lib/qt4/plugins/imageformats/libqjpeg.so.debug
+lib/qt4/plugins/imageformats/libqmng.so
+%%DEBUG%%lib/qt4/plugins/imageformats/libqmng.so.debug
+lib/qt4/plugins/imageformats/libqsvg.so
+%%DEBUG%%lib/qt4/plugins/imageformats/libqsvg.so.debug
+lib/qt4/plugins/imageformats/libqtiff.so
+%%DEBUG%%lib/qt4/plugins/imageformats/libqtiff.so.debug
+@dirrm lib/qt4/plugins/imageformats

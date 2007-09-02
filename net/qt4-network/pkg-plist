@@ -64,7 +64,7 @@ lib/libQtNetwork.prl
 lib/libQtNetwork.so
 lib/libQtNetwork.so.4
 lib/libQtNetwork.so.4.3
-lib/libQtNetwork.so.4.3.0
-%%DEBUG%%lib/libQtNetwork.so.4.3.0.debug
+lib/libQtNetwork.so.4.3.1
+%%DEBUG%%lib/libQtNetwork.so.4.3.1.debug
 libdata/pkgconfig/QtNetwork.pc
 @dirrm include/QtNetwork

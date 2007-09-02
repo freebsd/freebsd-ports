@@ -50,9 +50,6 @@ CONFIGURE_WRKSRC=${WRKSRC}/../../..
 
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
-	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/lib/plugins/imageformats|g' \
-		${WRKSRC}/gif/gif.pro  \
-		${WRKSRC}/jpeg/jpeg.pro
 	${MKDIR} ${WRKSRC}/../../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../../bin/moc

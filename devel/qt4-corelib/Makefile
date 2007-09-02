@@ -8,7 +8,7 @@
 
 PORTNAME=	corelib
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -65,7 +65,7 @@ post-configure:
 		${WRKSRC}/../../lib/pkgconfig/*Qt*
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/plugins
-	${TOUCH} ${PREFIX}/lib/plugins/.keep_me
+	${MKDIR} ${PREFIX}/lib/qt4/plugins
+	${TOUCH} ${PREFIX}/lib/qt4/plugins/.keep_me
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-lib/plugins/accessible/libqtaccessiblecompatwidgets.so
-%%DEBUG%%lib/plugins/accessible/libqtaccessiblecompatwidgets.so.debug
-lib/plugins/accessible/libqtaccessiblewidgets.so
-%%DEBUG%%lib/plugins/accessible/libqtaccessiblewidgets.so.debug
-@dirrm lib/plugins/accessible
+lib/qt4/plugins/accessible/libqtaccessiblecompatwidgets.so
+%%DEBUG%%lib/qt4/plugins/accessible/libqtaccessiblecompatwidgets.so.debug
+lib/qt4/plugins/accessible/libqtaccessiblewidgets.so
+%%DEBUG%%lib/qt4/plugins/accessible/libqtaccessiblewidgets.so.debug
+@dirrm lib/qt4/plugins/accessible

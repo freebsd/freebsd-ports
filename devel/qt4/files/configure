@@ -589,6 +589,7 @@ l_FLAGS=
 QCONFIG_FLAGS=
 XPLATFORM=
 PLATFORM=$QMAKESPEC
+QT_CROSS_COMPILE=no
 OPT_CONFIRM_LICENSE=no
 OPT_SHADOW=maybe
 OPT_FAST=auto
@@ -2013,6 +2014,7 @@ else
   XQMAKESPEC="$relpath/mkspecs/${XPLATFORM}"
 fi
 if [ "$PLATFORM" != "$XPLATFORM" ]; then
+    QT_CROSS_COMPILE=yes
     QMAKE_CONFIG="$QMAKE_CONFIG cross_compile"
 fi
 
@@ -2161,7 +2163,7 @@ else
         ARCH=i386
         ;;
     *:*:x86_64|*:*:amd64)
-        if [ "$PLATFORM" = "linux-g++-32" ]; then
+        if [ "$PLATFORM" = "linux-g++-32" -o "$PLATFORM" = "linux-icc-32" ]; then
             if [ "$OPT_VERBOSE" = "yes" ]; then
                 echo "    32 bit on 64-bit AMD 80x86 (i386)"
             fi
@@ -2191,6 +2193,18 @@ else
     	fi
     	ARCH=s390
     	;;
+    *:*:arm*)
+        if [ "$OPT_VERBOSE" = "yes" ]; then
+            echo "    ARM (arm)"
+        fi
+        ARCH=arm
+        ;;
+    Linux:*:sparc*) 
+        if [ "$OPT_VERBOSE" = "yes" ]; then 
+            echo "    Linux on SPARC" 
+        fi 
+        ARCH=sparc 
+        ;; 
     *:*:*)
         if [ "$OPT_VERBOSE" = "yes" ]; then
             echo "    Trying '$UNAME_MACHINE'..."
@@ -2696,8 +2710,8 @@ Third Party Libraries:
  +  -system-zlib ....... Use zlib from the operating system.
                          See http://www.gzip.org/zlib
 
- *  -no-gif ............ Do not compile the plugin for GIF reading support.
-    -qt-gif ............ Compile the plugin for GIF reading support.
+    -no-gif ............ Do not compile the plugin for GIF reading support.
+ *  -qt-gif ............ Compile the plugin for GIF reading support.
                          See also src/plugins/imageformats/gif/qgifhandler.h
 
     -no-libtiff ........ Do not compile the plugin for TIFF support.
@@ -2971,7 +2985,7 @@ Qtopia Core only:
                           default ($CFG_QCONFIG).
 
     -depths <list> ...... Comma-separated list of supported bit-per-pixel
-                          depths, from: 4, 8, 16, 18, 24, and 32.
+                          depths, from: 1, 4, 8, 16, 18, 24, and 32.
 
     -qt-decoration-<style> ....Enable a decoration <style> in the QtGui library,
                                by default all available decorations are on.
@@ -3486,10 +3500,11 @@ if false; then ###[ '!' -f "$outpath/bin/qmake" ];
         fi
         if [ "$PLATFORM_MAC" = "yes" ]; then
             echo "export MACOSX_DEPLOYMENT_TARGET = 10.3" >>"$mkfile"
-            echo "CARBON_LFLAGS =-framework CoreServices -framework CoreFoundation" >>"$mkfile"
+            echo "CARBON_LFLAGS =-framework ApplicationServices" >>"$mkfile"
+            echo "CARBON_CFLAGS =-fconstant-cfstrings" >>"$mkfile"
             EXTRA_LFLAGS="$EXTRA_LFLAGS \$(CARBON_LFLAGS)"
             EXTRA_CFLAGS="$EXTRA_CFLAGS \$(CARBON_CFLAGS)"
-            EXTRA_CXXFLAGS="$EXTRA_CFLAGS \$(CARBON_CXXFLAGS)"
+            EXTRA_CXXFLAGS="$EXTRA_CXXFLAGS \$(CARBON_CFLAGS)"
             EXTRA_OBJS="qsettings_mac.o qcore_mac.o"
             EXTRA_SRCS="\"$relpath/src/corelib/io/qsettings_mac.cpp\" \"$relpath/src/corelib/kernel/qcore_mac.cpp\""
 	    if echo "$CFG_MAC_ARCHS" | grep x86 > /dev/null 2>&1; then
@@ -3888,7 +3903,7 @@ for _SQLDR in $CFG_SQL_AVAILABLE; do
             if [ "$CFG_SQL_sqlite" != "no" ]; then
                 SQLITE_AUTODETECT_FAILED="no"
                 if [ "$CFG_SQLITE" = "system" ]; then
-                    if $WHICH pkg-config >/dev/null 2>&1; then
+                    if [ "$QT_CROSS_COMPILE" = "no" ] && $WHICH pkg-config >/dev/null 2>&1; then
                         QT_CFLAGS_SQLITE=`pkg-config --cflags sqlite3`
                         QT_LFLAGS_SQLITE=`pkg-config --libs sqlite3`
                     fi
@@ -3984,7 +3999,7 @@ fi
 
 # auto-detect libdbus-1 support
 if [ "$CFG_QDBUS" != "no" ]; then
-    if "$WHICH" pkg-config >/dev/null 2>&1 && \
+    if [ "$QT_CROSS_COMPILE" = "no" ] && "$WHICH" pkg-config >/dev/null 2>&1 && \
         pkg-config --atleast-version="$MIN_DBUS_1_VERSION" dbus-1 2>/dev/null; then
         QT_CFLAGS_DBUS=`pkg-config --cflags dbus-1`
         QT_LIBS_DBUS=`pkg-config --libs dbus-1`
@@ -4202,7 +4217,7 @@ if [ "$PLATFORM_X11" = "yes" ]; then
 
     # auto-detect Glib support
     if [ "$CFG_GLIB" != "no" ]; then
-        if "$WHICH" pkg-config >/dev/null 2>&1; then
+        if [ "$QT_CROSS_COMPILE" = "no" ] && "$WHICH" pkg-config >/dev/null 2>&1; then
             QT_CFLAGS_GLIB=`pkg-config --cflags glib-2.0 gthread-2.0`
             QT_LIBS_GLIB=`pkg-config --libs glib-2.0 gthread-2.0`
         fi
@@ -4491,6 +4506,7 @@ if [ "$CFG_QWS_DEPTHS" = "prompted" -a "$PLATFORM_QWS" = "yes" ]; then
     echo
     echo "Choose pixel-depths to support:"
     echo
+    echo "   1. 1bpp black/white"
     echo "   4. 4bpp grayscale"
     echo "   8. 8bpp"
     echo "  16. 16bpp"
@@ -4507,7 +4523,7 @@ fi
 if [ -n "$CFG_QWS_DEPTHS" -a "$PLATFORM_QWS" = "yes" ]; then
     for D in `echo "$CFG_QWS_DEPTHS" | sed -e 's/,/ /g'`; do
 	case $D in
-	    4|8|16|18|24|32) QCONFIG_FLAGS="$QCONFIG_FLAGS QT_QWS_DEPTH_$D";;
+	    1|4|8|16|18|24|32) QCONFIG_FLAGS="$QCONFIG_FLAGS QT_QWS_DEPTH_$D";;
 	esac
     done
 fi

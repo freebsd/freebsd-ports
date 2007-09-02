@@ -8,7 +8,7 @@
 
 PORTNAME=	designer
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -45,15 +45,8 @@ PATCH_WRKSRC=${CONFIGURE_WRKSRC}
 
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
-	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/bin|g' \
-			-e 's|^TARGET.*|TARGET=designer-qt4|g' \
+	${REINPLACE_CMD} -e 's|^TARGET.*|TARGET=designer-qt4|g' \
 		${WRKSRC}/src/designer/${PORTNAME}.pro
-	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/lib/plugins|g' \
-		${WRKSRC}/src/plugins/plugins.pri
-	${REINPLACE_CMD} -e \
-	's|designer_headers.path.*|designer_headers.path=${PREFIX}/include/QtDesigner|g' \
-	-e 's|target.path.*|target.path=${PREFIX}/lib|g' \
-		${WRKSRC}/src/lib/lib.pro ${WRKSRC}/src/components/lib/lib.pro
 	${MKDIR} ${WRKSRC}/../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc

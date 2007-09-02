@@ -1,2 +1,4 @@
 bin/rcc
 %%DEBUG%%bin/rcc.debug
+share/nls/POSIX
+share/nls/en_US.US-ASCII

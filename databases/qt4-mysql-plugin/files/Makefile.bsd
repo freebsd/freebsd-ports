@@ -11,7 +11,7 @@ LDADD=		-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql ${PTHREAD_LIBS} -lQtSql -lmy
 MOC?=		${LOCALBASE}/bin/moc-qt4
 SRCS=		main.cpp qsql_${DB}.cpp moc_qsql_${DB}.cpp
 
-LIBDIR=		${PREFIX}/lib/plugins/sqldrivers
+LIBDIR=		${PREFIX}/lib/qt4/plugins/sqldrivers
 
 ${LIBDIR}:
 	mkdir -p ${LIBDIR}

@@ -22,7 +22,7 @@ CONFIGURE_ARGS+=-fast -no-exceptions ${CUPS} \
                 -prefix ${PREFIX} \
                 -docdir ${PREFIX}/share/doc/qt4 \
                 -headerdir ${PREFIX}/include \
-                -plugindir ${PREFIX}/lib/plugins \
+                -plugindir ${PREFIX}/lib/qt4/plugins \
                 -datadir ${PREFIX}/share/qt4 \
                 -libdir ${PREFIX}/lib \
                 -translationdir ${PREFIX}/share/qt4/translations \
@@ -66,7 +66,7 @@ QTCGFLIBS?=
 
 .endif # !defined(_POSTMKINCLUDED) && !defined(Qt_Pre_Include)
 
-QT4_VERSION?=		4.3.0
+QT4_VERSION?=		4.3.1
 
 _QT_COMPONENTS_ALL=	accessible assistant assistantclient codecs-cn \
 			codecs-jp codecs-kr codecs-tw corelib dbus designer \
