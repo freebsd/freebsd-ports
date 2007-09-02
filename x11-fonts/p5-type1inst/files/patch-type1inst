@@ -1,5 +1,5 @@
 --- type1inst.orig	Wed Feb 11 20:00:13 1998
-+++ type1inst	Mon Jun 14 16:44:27 2004
++++ type1inst	Tue Jun 26 00:53:33 2007
 @@ -78,15 +78,18 @@
  @foundries = (
  	      "Adobe:adobe",
@@ -131,3 +131,12 @@
  	system("gunzip -c $filename > foo");
  	($x, $gs) = &process_font("foo");
  	system("rm foo");
+@@ -1248,7 +1261,7 @@
+ 
+ if ($dox) {
+     &write_fonts_scale(%fs);
+-    system("mkfontdir");      # Generate fonts.dir
++    (system("mkfontdir") == 0) or system("echo 0 > fonts.dir");
+     system("chmod 0755 fonts.dir") && log_msg("Couldn't chmod \"fonts.dir\" ... continuing on anyway\n");
+ }
+ if ($dogs) {
