@@ -21,3 +21,5 @@ locale	wmlbrowser	tr-TR	jar:chrome/wmlbrowser.jar!/locale/tr-TR/wmlbrowser/
 locale	wmlbrowser	el	jar:chrome/wmlbrowser.jar!/locale/el/wmlbrowser/
 
 locale	wmlbrowser	de	jar:chrome/wmlbrowser.jar!/locale/de/wmlbrowser/
+
+locale	wmlbrowser	ru-RU	jar:chrome/wmlbrowser.jar!/locale/ru-RU/wmlbrowser/
