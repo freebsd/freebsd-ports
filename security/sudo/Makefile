@@ -88,6 +88,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/sample.sudoers ${DOCSDIR}
 .if defined(WITH_LDAP)
 	${INSTALL_DATA} ${WRKSRC}/README.LDAP ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/schema.OpenLDAP ${DOCSDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/sudoers2ldif ${DOCSDIR}
 .endif
 .endif

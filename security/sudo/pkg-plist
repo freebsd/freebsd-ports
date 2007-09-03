@@ -14,5 +14,6 @@ sbin/visudo
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCSDIR%%/sample.sudoers
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/README.LDAP
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.OpenLDAP
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/sudoers2ldif
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
