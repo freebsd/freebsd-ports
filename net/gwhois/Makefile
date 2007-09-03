@@ -18,7 +18,6 @@ RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		lynx:${PORTSDIR}/www/lynx \
 		curl:${PORTSDIR}/ftp/curl
 
-CONFLICTS=	whois-[0-9]*
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
