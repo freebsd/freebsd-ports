@@ -38,8 +38,8 @@
 -	install -m 0755 whois $(BASEDIR)$(prefix)/bin/
 -	install -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
 -	cd po && $(MAKE) $@
-+	install -m 0755 whois ${PREFIX}/bin/gwhois
-+	install -m 0644 whois.1 ${PREFIX}/man/man1/gwhois.1
++	install -m 0755 whois ${PREFIX}/bin/mwhois
++	install -m 0644 whois.1 ${PREFIX}/man/man1/mwhois.1
  
  install-mkpasswd: mkpasswd
        install -m 0755 mkpasswd $(BASEDIR)$(prefix)/bin/
