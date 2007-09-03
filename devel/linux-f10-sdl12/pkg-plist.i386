@@ -4,5 +4,5 @@ usr/share/doc/SDL-%%SDLVER%%/CREDITS
 usr/share/doc/SDL-%%SDLVER%%/README-SDL.txt
 usr/lib/libSDL-1.1.so.0
 usr/lib/libSDL-1.2.so.0
-usr/lib/libSDL-1.2.so.0.7.3
+usr/lib/libSDL-1.2.so.0.11.1
 @dirrm usr/share/doc/SDL-%%SDLVER%%
