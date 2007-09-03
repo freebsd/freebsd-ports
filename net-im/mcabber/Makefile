@@ -13,12 +13,9 @@ MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Small Jabber console client
 
-LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme \
-		aspell.16:${PORTSDIR}/textproc/aspell
-
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ssl --enable-aspell=yes
+CONFIGURE_ARGS=	--with-ssl
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_OPENSSL=	yes
 USE_ICONV=	yes
@@ -30,6 +27,9 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 MAN1=		mcabber.1
 
+OPTIONS=	GPGME "Use security/gpgme for PGP support" off \
+		ASPELL "Use textproc/aspell for spell checking" off
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 503000
@@ -38,6 +38,20 @@ BROKEN=	Unicoded ncurses require 5.3
 
 .if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
 LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
+.endif
+
+.if defined(WITH_GPGME)
+LIB_DEPENDS+=	gpgme.17:${PORTSDIR}/security/gpgme
+CONFIGURE_ARGS+=--enable-gpgme
+.else
+CONFIGURE_ARGS+=--disable-gpgme
+.endif
+
+.if defined(WITH_ASPELL)
+LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
+CONFIGURE_ARGS+=--enable-aspell
+.else
+CONFIGURE_ARGS+=--disable-aspell
 .endif
 
 post-patch:
