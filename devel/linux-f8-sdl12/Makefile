@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	1.2.10
-PORTREVISION=	1
+PORTVERSION=	1.2.12
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.libsdl.org/release/ \
 		ftp://ftp.icm.edu.pl/vol/rzm9/linux-pld/pool/s/SDL/
