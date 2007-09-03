@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ucarp
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.ucarp.org/pub/ucarp/
+MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/ucarp/
+#		http://download.pureftpd.org/pub/ucarp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userlevel Common Address Redundancy Protocol
