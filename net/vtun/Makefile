@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	vtun
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
@@ -21,7 +20,7 @@ MAN8=		vtund.8
 MLINKS=		vtund.8 vtun.8
 
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	autoconf:259
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-ssl-headers=${OPENSSLBASE}/include/openssl \
 		--with-ssl-lib=${OPENSSLBASE}/lib \
