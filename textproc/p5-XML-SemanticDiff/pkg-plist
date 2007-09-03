@@ -1,4 +1,3 @@
-bin/xmlsemdiff
 %%SITE_PERL%%/XML/SemanticDiff.pm
 %%SITE_PERL%%/XML/SemanticDiff/BasicHandler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SemanticDiff/.packlist
