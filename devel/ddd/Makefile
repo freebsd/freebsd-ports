@@ -49,12 +49,6 @@ LIBXMDIR!=	${ECHO_CMD} ${MOTIFLIB} | ${SED} -e 's/-L//g' | ${AWK} '{print $$1}'
 LIBXMDIR=	${X11BASE}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-.endif
-
 pre-patch:
 	@${RM} -fv ${WRKSRC}/ddd/ddd.info*
 	@${RM} -fv ${WRKSRC}/ddd/ddd-themes.info*
@@ -78,4 +72,4 @@ post-install:
 check:
 	(cd ${WRKSRC} ; ${GMAKE} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
