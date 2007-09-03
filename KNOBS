@@ -22,6 +22,7 @@
 A52			ATSC A/52 audio decoding (used in most DVDs)
 APACHE2			Use www/apache2 port
 ARTS			aRts support via the KDE sound daemon
+ASPELL			Use textproc/aspell for spell checking
 AVIFILE			Adds support for AVI multimedia
 BDB			Adds Berkeley DB Support
 CACA			Libcaca colored ASCII graphics
@@ -48,6 +49,7 @@ FLAC			Flac audio support
 GHC			Prefer/use Glasgow Haskell Compiler
 GNOME			Adds GNOME support
 GNUTLS			Adds GnuTLS support
+GPGME			Use security/gpgme for PGP support
 GSASL			Adds GSASL support
 GSM			GSM audio codec support
 GSSAPI			GSSAPI (Kerberos) support
