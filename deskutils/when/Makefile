@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	when
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.7
 CATEGORIES=	deskutils
 MASTER_SITES=	CENKES
 #http://www.lightandmatter.com/when/when.tar.gz
@@ -23,5 +23,11 @@ MAN1=		${PORTNAME}.1
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
+
+make-dist:
+	@${RM} -rf ${WRKDIR};${MKDIR} ${WRKDIR};cd ${WRKDIR};\
+	${FETCH_CMD} http://www.lightandmatter.com/when/when.tar.gz;\
+	${TAR} xf when.tar.gz;${MV} when_dist ${DISTNAME};\
+	${TAR} cjvf ${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}
 
 .include <bsd.port.mk>
