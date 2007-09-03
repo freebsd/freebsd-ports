@@ -21,7 +21,6 @@ LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		gpg-error:${PORTSDIR}/security/libgpg-error \
 		ksba.17:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth
-RUN_DEPENDS=	bin/pinentry:${PORTSDIR}/security/pinentry
 
 CONFLICTS=	gnupg-devel-[0-9]*
 
@@ -51,7 +50,7 @@ OPTIONS=	LDAP "LDAP keyserver interface" off \
 CONFIGURE_ARGS+=--disable-gpgsm
 PLIST_SUB+=	GPGSM="@comment "
 .else
-RUN_DEPENDS+=	dirmngr:${PORTSDIR}/security/dirmngr
+RUN_DEPENDS=	dirmngr:${PORTSDIR}/security/dirmngr
 WITH_LDAP=	YES
 PLIST_SUB+=	GPGSM=""
 .endif
