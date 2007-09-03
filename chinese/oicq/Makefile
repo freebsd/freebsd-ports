@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oicq
-PORTVERSION=	1.3
+PORTVERSION=	1.6
 CATEGORIES=	chinese net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	perl-oicq
@@ -32,6 +32,6 @@ IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/qq ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/demo1 ${PREFIX}/bin/qq-demo1
+	${INSTALL_SCRIPT} ${WRKSRC}/demo1 ${PREFIX}/bin/qq-demo1
 
 .include <bsd.port.post.mk>
