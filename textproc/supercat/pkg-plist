@@ -1,0 +1,5 @@
+bin/spc
+%%ETCDIR%%/spcrc-c
+%%ETCDIR%%/spcrc-emerge
+%%ETCDIR%%/spcrc-py
+@dirrmtry %%ETCDIR%%
