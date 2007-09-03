@@ -7,20 +7,16 @@
 #
 
 PORTNAME=	argtable
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	2.7
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ANSI C library for parsing GNU style command line arguments
 
-USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget
-USE_GETOPT_LONG=yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
 MAN3=		argtable2.3
@@ -38,6 +34,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example/*.c ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example/*.h ${EXAMPLESDIR}
