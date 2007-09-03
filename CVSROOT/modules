@@ -15151,6 +15151,7 @@ sup_port	ports/net/sup
 super		ports/security/super
 super-smack	ports/benchmarks/super-smack
 super_methane_brothers	ports/games/super_methane_brothers
+supercat	ports/textproc/supercat
 superkaramba-lwp	ports/deskutils/superkaramba-lwp
 superlu		ports/math/superlu
 superlu_mt	ports/math/superlu_mt
