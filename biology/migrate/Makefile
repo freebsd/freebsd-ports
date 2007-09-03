@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	migrate
-PORTVERSION=	2.1.3
+PORTVERSION=	2.3
 CATEGORIES=	biology
 MASTER_SITES=	http://popgen.csit.fsu.edu/currentversion/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -15,41 +15,51 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to estimate population sizes and migration rates
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-MAKE_ARGS=	CFLAGS="${CFLAGS}"
+MAKE_ARGS=	HARDWARECFLAGS="${CFLAGS}" \
+		MYCPPFLAGS="${CFLAGS} -DNOJPEG -DNOPNG -DNOZLIB"
 
 MAN1=		migrate.1
 MLINKS=		migrate.1 migrate-n.1
 
-DOCS=		HISTORY HOWTO-PARALLEL README migrate.html
-EXAMPLES=	README infile.ep infile.msat infile.seq \
-		outfile-bayes-saved outfile-ml-saved \
-		parmfile parmfile.testbayes parmfile.testml
-
-post-patch:
-	@${REINPLACE_CMD} 's,-falign-loops=16,,g' ${WRKSRC}/configure
-
-do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/migrate-n ${PREFIX}/bin
-	@ cd ${PREFIX}/bin && ${LN} -s migrate-n migrate
-	@ ${INSTALL_MAN} ${WRKSRC}/migrate.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}/graphics
-.for i in ${DOCS}
-	@ ${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
-.endfor
-	@ ${MKDIR} ${EXAMPLESDIR}
-.for i in ${EXAMPLES}
-	@ ${INSTALL_DATA} ${WRKSRC}/../example/${i} ${EXAMPLESDIR}
-.endfor
-	@ ${INSTALL_DATA} ${WRKSRC}/../graphics/* ${DOCSDIR}/graphics
-.endif
-
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		Does not compile
+NOT_FOR_ARCHS=	alpha
+ONLY_FOR_ARCHS_REASON=	Does not compile
+
+.if defined(WITH_THREAD_PRETTY)
+ALL_TARGET=	thread-pretty
+.elif defined(WITH_PRETTY)
+ALL_TARGET=	pretty
+.elif defined(WITH_THREAD)
+ALL_TARGET=	thread
+.else
+ALL_TARGET=	all
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|@CFLAGS@||g ; \
+		 s|make -f|$$(MAKE) -f|g' ${WRKSRC}/Makefile.in
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/migrate-n ${PREFIX}/bin
+	${LN} -sf migrate-n ${PREFIX}/bin/migrate
+	${INSTALL_MAN} ${WRKSRC}/migrate.1 ${MAN1PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in HISTORY HOWTO-PARALLEL README migrate.html
+	${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
+.endfor
+	@${MKDIR} ${DOCSDIR}/graphics
+	${INSTALL_DATA} ${WRKSRC}/../graphics/* ${DOCSDIR}/graphics
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/../example/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
