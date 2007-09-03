@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-proc=/compat/linux/proc
 MAN1=	htop.1
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
+pre-configure:
+	@[ -f /compat/linux/proc/stat ] || { ${CAT} ${PKGMESSAGE}; ${FALSE}; }
 
 .include <bsd.port.mk>
