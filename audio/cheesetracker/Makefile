@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cheesetracker
-PORTVERSION=	0.9.15.1
+PORTVERSION=	0.9.15.2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -22,9 +22,9 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 
 USE_BZIP2=	yes
 USE_QT_VER=	3
-MAKE_ENV+=	QTDIR="${QT_PREFIX}"
+#MAKE_ENV+=	QTDIR="${QT_PREFIX}"
+SCONS_BUILDENV+=QTDIR="${QT_PREFIX}"
 USE_SCONS=	yes
-SCONS_ENV+=	CXX="${CXX}"
 
 PORTEXAMPLES=	beek-dolphinisland.it ll-globule.it reduz-maschizo.it \
 		xerxes-mfc.xm
