@@ -1,8 +1,5 @@
 bin/liferea
 bin/liferea-add-feed
-%%XPI%%lib/firefox/extensions/{79ea0ec1-3fc3-4ade-8220-262d4c4825ab}/chrome/feedbag.jar
-%%XPI%%lib/firefox/extensions/{79ea0ec1-3fc3-4ade-8220-262d4c4825ab}/chrome.manifest
-%%XPI%%lib/firefox/extensions/{79ea0ec1-3fc3-4ade-8220-262d4c4825ab}/install.rdf
 lib/liferea/liblihtmlg.la
 lib/liferea/liblihtmlg.so
 %%MOZ%%lib/liferea/liblihtmlm.la
@@ -12,10 +9,12 @@ lib/liferea/liblihtmlg.so
 %%NOTIFY%%lib/liferea/liblinotiflibnotify.la
 %%NOTIFY%%lib/liferea/liblinotiflibnotify.so
 %%NOTIFY%%lib/liferea/liblinotiflibnotify.so.0
-lib/liferea/liblinotifpopup.la
-lib/liferea/liblinotifpopup.so
-lib/liferea/liblinotifpopup.so.0
 share/gnome/applications/liferea.desktop
+share/gnome/liferea/bloglines_source.glade
+share/gnome/liferea/google_source.glade
+share/gnome/liferea/liferea.glade
+share/gnome/liferea/node_source.glade
+share/gnome/liferea/opml_source.glade
 share/gnome/liferea/css/adblock.css
 share/gnome/liferea/css/liferea.css
 share/gnome/liferea/doc/html/about_de.html
@@ -33,25 +32,28 @@ share/gnome/liferea/doc/html/headlines_de.html
 share/gnome/liferea/doc/html/headlines_en.html
 share/gnome/liferea/doc/html/help_feed_default.png
 share/gnome/liferea/doc/html/help_feed_error.png
-share/gnome/liferea/doc/html/help_feed_prop_adv_1.2.0.png
-share/gnome/liferea/doc/html/help_feed_prop_cache_1.2.0.png
-share/gnome/liferea/doc/html/help_feed_prop_downl_1.2.0.png
-share/gnome/liferea/doc/html/help_feed_prop_general_1.2.0.png
-share/gnome/liferea/doc/html/help_feed_prop_source_1.2.0.png
+share/gnome/liferea/doc/html/help_feed_prop_adv_1.4.0.png
+share/gnome/liferea/doc/html/help_feed_prop_cache_1.4.0.png
+share/gnome/liferea/doc/html/help_feed_prop_downl_1.4.0.png
+share/gnome/liferea/doc/html/help_feed_prop_general_1.4.0.png
+share/gnome/liferea/doc/html/help_feed_prop_source_1.4.0.png
 share/gnome/liferea/doc/html/help_folder.png
 share/gnome/liferea/doc/html/help_item_flag.png
 share/gnome/liferea/doc/html/help_item_unread.png
 share/gnome/liferea/doc/html/help_opml.png
-share/gnome/liferea/doc/html/help_prefs_browser_1.2.0.png
-share/gnome/liferea/doc/html/help_prefs_enclosures_1.2.0.png
-share/gnome/liferea/doc/html/help_prefs_feeds_1.2.0.png
-share/gnome/liferea/doc/html/help_prefs_folders_1.2.0.png
-share/gnome/liferea/doc/html/help_prefs_gui_1.2.0.png
-share/gnome/liferea/doc/html/help_prefs_headlines_1.2.0.png
-share/gnome/liferea/doc/html/help_prefs_proxy_1.2.0.png
-share/gnome/liferea/doc/html/help_search_1.2.0.png
-share/gnome/liferea/doc/html/help_subscribe_1.2.0.png
-share/gnome/liferea/doc/html/help_vfolder_1.2.0.png
+share/gnome/liferea/doc/html/help_prefs_browser_1.4.0.png
+share/gnome/liferea/doc/html/help_prefs_enclosures_1.4.0.png
+share/gnome/liferea/doc/html/help_prefs_feeds_1.4.0.png
+share/gnome/liferea/doc/html/help_prefs_folders_1.4.0.png
+share/gnome/liferea/doc/html/help_prefs_gui_1.4.0.png
+share/gnome/liferea/doc/html/help_prefs_headlines_1.4.0.png
+share/gnome/liferea/doc/html/help_prefs_proxy_1.4.0.png
+share/gnome/liferea/doc/html/help_search_1.4.0.png
+share/gnome/liferea/doc/html/help_source_add_1.4.0.png
+share/gnome/liferea/doc/html/help_subscribe_1.4.0.png
+share/gnome/liferea/doc/html/help_vfolder_1.4.0.png
+share/gnome/liferea/doc/html/newsbin_de.html
+share/gnome/liferea/doc/html/newsbin_en.html
 share/gnome/liferea/doc/html/preferences_de.html
 share/gnome/liferea/doc/html/preferences_en.html
 share/gnome/liferea/doc/html/reference.css
@@ -79,7 +81,6 @@ share/gnome/liferea/opml/feedlist_eu.opml
 share/gnome/liferea/opml/feedlist_fr.opml
 share/gnome/liferea/opml/feedlist_nl.opml
 share/gnome/liferea/opml/feedlist_pl.opml
-share/gnome/liferea/opml/feedlist_pt_BR.opml
 share/gnome/liferea/opml/feedlist_sk.opml
 share/gnome/liferea/opml/feedlist_sv.opml
 share/gnome/liferea/pixmaps/arrow.png
@@ -93,6 +94,8 @@ share/gnome/liferea/pixmaps/directory.png
 share/gnome/liferea/pixmaps/edit.png
 share/gnome/liferea/pixmaps/empty.png
 share/gnome/liferea/pixmaps/empty_offline.png
+share/gnome/liferea/pixmaps/fl_bloglines.png
+share/gnome/liferea/pixmaps/fl_google.png
 share/gnome/liferea/pixmaps/fl_opml.png
 share/gnome/liferea/pixmaps/flag.png
 share/gnome/liferea/pixmaps/grayflag.png
@@ -123,7 +126,6 @@ share/icons/hicolor/48x48/apps/liferea.png
 share/locale/ar/LC_MESSAGES/liferea.mo
 share/locale/be@latin/LC_MESSAGES/liferea.mo
 share/locale/ca/LC_MESSAGES/liferea.mo
-share/locale/cs/LC_MESSAGES/liferea.mo
 share/locale/de/LC_MESSAGES/liferea.mo
 share/locale/es/LC_MESSAGES/liferea.mo
 share/locale/eu/LC_MESSAGES/liferea.mo
@@ -147,5 +149,3 @@ share/locale/tr/LC_MESSAGES/liferea.mo
 @dirrmtry man/pl/man1
 @dirrmtry man/pl
 @dirrm lib/liferea
-%%XPI%%@dirrm lib/firefox/extensions/{79ea0ec1-3fc3-4ade-8220-262d4c4825ab}/chrome
-%%XPI%%@dirrm lib/firefox/extensions/{79ea0ec1-3fc3-4ade-8220-262d4c4825ab}
