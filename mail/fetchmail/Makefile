@@ -11,7 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		${MASTER_SITE_SUNSITE:S/$/:sunsite/}\
@@ -51,12 +51,13 @@ OPTIONS=	X11	"Python/Tkinter dependencies for fetchmailconf" off \
 		POP2	"Build pop2 support (obsolete)." off \
 		GSSAPI	"Build GSSAPI support (requires KRB5_HOME to be set)" off
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_X11)
 USE_PYTHON=	yes
+.include "${PORTSDIR}/Mk/bsd.python.mk"
 RUN_DEPENDS+=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
-
-.include <bsd.port.pre.mk>
 
 # Pop2 is obsolete
 .if defined(WITH_POP2)
