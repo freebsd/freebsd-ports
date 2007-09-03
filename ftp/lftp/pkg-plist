@@ -30,4 +30,4 @@ lib/liblftp-tasks.a
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lftp.mo
 @dirrm %%DATADIR%%
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
