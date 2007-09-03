@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eaccelerator
-DISTVERSION=	0.9.5.1
+DISTVERSION=	0.9.5.2
 CATEGORIES=	www
 MASTER_SITES=	http://bart.eaccelerator.net/source/${DISTVERSION}/
 
