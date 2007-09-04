@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Server for Digital Audio Access Protocol
 
+DEPRECATED=	Development stalled, outdated. Does not support newer versions of DAAP protocol.
+EXPIRATION_DATE=	2007-11-04
+
 BUILD_DEPENDS=	daaplib>=0.1.1a_2:${PORTSDIR}/audio/daaplib \
 		libhttpd-persistent>=1.3h_1:${PORTSDIR}/www/libhttpd-persistent
 RUN_DEPENDS=	${BUILD_DEPENDS}
