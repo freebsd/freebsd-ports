@@ -126,7 +126,7 @@ pre-configure:
 
 do-install:
 .for i in ${VSCAN_NAME}
-	@${MKDIR} -p ${PREFIX}/${VFSDIR}
+	@${MKDIR} ${PREFIX}/${VFSDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/${VFSDIR}
 .endfor
 	@${MKDIR} ${PREFIX}/${ETCDIR}
