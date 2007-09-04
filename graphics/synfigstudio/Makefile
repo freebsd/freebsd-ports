@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=synfig
 MAINTAINER=	relaxbsd@gmail.com
 COMMENT=	Vector-based 2D animation software package
 
-LIB_DEPENDS=	synfig.0:${PORTSDIR}/devel/synfig
+LIB_DEPENDS=	synfig.0:${PORTSDIR}/devel/synfig \
+		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ETL.pc:${PORTSDIR}/devel/etl
 
 GNU_CONFIGURE=	yes
