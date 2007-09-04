@@ -8,8 +8,7 @@
 PORTNAME=	irssi
 PORTVERSION=	20070826
 CATEGORIES=	irc
-MASTER_SITES=	http://mirror.irssi.org/snapshots/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -41,6 +40,8 @@ USE_OPENSSL=	yes
 .endif
 
 .include <bsd.port.pre.mk>
+
+BROKEN=	distfile size mismatch
 
 # Process options.
 
