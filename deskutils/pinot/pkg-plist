@@ -32,6 +32,7 @@ share/locale/pt/LC_MESSAGES/pinot.mo
 share/locale/pt_BR/LC_MESSAGES/pinot.mo
 share/locale/ru/LC_MESSAGES/pinot.mo
 share/locale/sv/LC_MESSAGES/pinot.mo
+share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/AmazonAPI.src
 %%DATADIR%%/engines/A9.src
 %%DATADIR%%/engines/Accoona.src
