@@ -8,6 +8,7 @@
 
 PORTNAME=	evince
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -105,8 +106,9 @@ RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|execinfo.h|#|g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|execinfo.h|#|g ; s|[$$]POPPLER_VERSION|9|g ; \
+		s| poppler-glib <= [$$]POPPLER_MAX_REQUIRED||g' \
+			${WRKSRC}/configure
 
 post-install:
 	@-update-desktop-database
