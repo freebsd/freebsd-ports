@@ -65,6 +65,7 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/rc/save.png
 share/locale/ca/LC_MESSAGES/dvdstyler.mo
 share/locale/cs/LC_MESSAGES/dvdstyler.mo
+share/locale/da/LC_MESSAGES/dvdstyler.mo
 share/locale/de/LC_MESSAGES/dvdstyler.mo
 share/locale/es/LC_MESSAGES/dvdstyler.mo
 share/locale/eu/LC_MESSAGES/dvdstyler.mo
@@ -79,6 +80,7 @@ share/locale/pt_BR/LC_MESSAGES/dvdstyler.mo
 share/locale/ru/LC_MESSAGES/dvdstyler.mo
 share/locale/sk/LC_MESSAGES/dvdstyler.mo
 share/locale/sr/LC_MESSAGES/dvdstyler.mo
+share/locale/sv/LC_MESSAGES/dvdstyler.mo
 share/pixmaps/dvdstyler.png
 @dirrm %%DATADIR%%/rc
 @dirrm %%DATADIR%%/objects

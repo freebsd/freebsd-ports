@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvdstyler
-PORTVERSION=	1.5
+DISTVERSION=	1.5.1_2
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -67,7 +67,7 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/applications
-	@${INSTALL_DATA} ${WRKSRC}/install.win32/dvdstyler.desktop \
+	@${INSTALL_DATA} ${WRKSRC}/data/dvdstyler.desktop \
 		${PREFIX}/share/applications/
 	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/src/rc/dvdstyler.png \
