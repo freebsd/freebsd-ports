@@ -15,11 +15,11 @@
 %%RCUBEDIR%%/program/blank.gif
 %%RCUBEDIR%%/program/blocked.gif
 %%RCUBEDIR%%/program/include/bugs.inc
-%%RCUBEDIR%%/program/include/cache.inc
 %%RCUBEDIR%%/program/include/main.inc
 %%RCUBEDIR%%/program/include/rcmail_template.inc
 %%RCUBEDIR%%/program/include/rcube_contacts.inc
 %%RCUBEDIR%%/program/include/rcube_db.inc
+%%RCUBEDIR%%/program/include/rcube_html.inc
 %%RCUBEDIR%%/program/include/rcube_imap.inc
 %%RCUBEDIR%%/program/include/rcube_ldap.inc
 %%RCUBEDIR%%/program/include/rcube_mdb2.inc
@@ -340,6 +340,8 @@
 %%RCUBEDIR%%/program/localization/fi/messages.inc
 %%RCUBEDIR%%/program/localization/fr/labels.inc
 %%RCUBEDIR%%/program/localization/fr/messages.inc
+%%RCUBEDIR%%/program/localization/ga_IE/labels.inc
+%%RCUBEDIR%%/program/localization/ga_IE/messages.inc
 %%RCUBEDIR%%/program/localization/hi/labels.inc
 %%RCUBEDIR%%/program/localization/hi/messages.inc
 %%RCUBEDIR%%/program/localization/hr/labels.inc
@@ -359,6 +361,8 @@
 %%RCUBEDIR%%/program/localization/lt/messages.inc
 %%RCUBEDIR%%/program/localization/lv/labels.inc
 %%RCUBEDIR%%/program/localization/lv/messages.inc
+%%RCUBEDIR%%/program/localization/mk/labels.inc
+%%RCUBEDIR%%/program/localization/mk/messages.inc
 %%RCUBEDIR%%/program/localization/nb_NO/labels.inc
 %%RCUBEDIR%%/program/localization/nb_NO/messages.inc
 %%RCUBEDIR%%/program/localization/nl_BE/labels.inc
@@ -393,6 +397,8 @@
 %%RCUBEDIR%%/program/localization/th/messages.inc
 %%RCUBEDIR%%/program/localization/tr/labels.inc
 %%RCUBEDIR%%/program/localization/tr/messages.inc
+%%RCUBEDIR%%/program/localization/uk/labels.inc
+%%RCUBEDIR%%/program/localization/uk/messages.inc
 %%RCUBEDIR%%/program/localization/vn/labels.inc
 %%RCUBEDIR%%/program/localization/vn/messages.inc
 %%RCUBEDIR%%/program/localization/zh_CN/labels.inc
@@ -615,6 +621,7 @@
 @dirrm %%RCUBEDIR%%/program/localization/zh_TW
 @dirrm %%RCUBEDIR%%/program/localization/zh_CN
 @dirrm %%RCUBEDIR%%/program/localization/vn
+@dirrm %%RCUBEDIR%%/program/localization/uk
 @dirrm %%RCUBEDIR%%/program/localization/tr
 @dirrm %%RCUBEDIR%%/program/localization/th
 @dirrm %%RCUBEDIR%%/program/localization/sr_latin
@@ -632,6 +639,7 @@
 @dirrm %%RCUBEDIR%%/program/localization/nl_NL
 @dirrm %%RCUBEDIR%%/program/localization/nl_BE
 @dirrm %%RCUBEDIR%%/program/localization/nb_NO
+@dirrm %%RCUBEDIR%%/program/localization/mk
 @dirrm %%RCUBEDIR%%/program/localization/lv
 @dirrm %%RCUBEDIR%%/program/localization/lt
 @dirrm %%RCUBEDIR%%/program/localization/kur_KU
@@ -641,6 +649,7 @@
 @dirrm %%RCUBEDIR%%/program/localization/hu
 @dirrm %%RCUBEDIR%%/program/localization/hr
 @dirrm %%RCUBEDIR%%/program/localization/hi
+@dirrm %%RCUBEDIR%%/program/localization/ga_IE
 @dirrm %%RCUBEDIR%%/program/localization/fr
 @dirrm %%RCUBEDIR%%/program/localization/fi
 @dirrm %%RCUBEDIR%%/program/localization/fa
