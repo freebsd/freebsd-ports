@@ -29,7 +29,7 @@ OPTIONS=	SENDMAIL "for use with sendmail" off \
 
 HAS_CONFIGURE=	yes
 USE_PYTHON=	yes
-CONFIGURE_ARGS=	--prefix=${MAILMANDIR} --with-python=${PYTHON_CMD} \
+CONFIGURE_ARGS+=	--prefix=${MAILMANDIR} --with-python=${PYTHON_CMD} \
 		--with-username=${MM_USERNAME} \
 		--with-groupname=${MM_GROUPNAME} \
 		--with-mail-gid=${MAIL_GID} --with-cgi-gid=${CGI_GID}
