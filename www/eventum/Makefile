@@ -27,6 +27,5 @@ do-install:
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 	${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
