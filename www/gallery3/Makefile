@@ -1,44 +1,41 @@
-# New ports collection makefile for:   gallery2
-# Date created:                29 Aug 2005
-# Whom:                        Alex Varju <freebsd-ports@varju.ca>
+# New ports collection makefile for:	gallery2
+# Date created:		29 Aug 2005
+# Whom:			Alex Varju <freebsd-ports@varju.ca>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gallery2
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.2.3
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gallery
-DISTNAME=	gallery-2.2.2-full
+DISTNAME=	gallery-${PORTVERSION}-full
 DIST_SUBDIR=	gallery2
 
 MAINTAINER=	freebsd-ports@varju.ca
-COMMENT=	Gallery is a web based photo album written using PHP
+COMMENT=	Web based photo album organizer written in PHP
 
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 
-WRKSRC=		${WRKDIR}/${DIST_SUBDIR}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
-CPIOARGS=	--quiet -pdum -R
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
-SUB_LIST+=	WWWDIR_REL=${WWWDIR_REL}
 
-# Note that USE_PHP must be set before bsd.port.pre.mk is included, so
-# OPTIONS can't be used right now without making portlint angry
-#OPTIONS=	NETPBM "Enable netpbm support" off \
-#		IMAGEMAGICK "Enable imagemagick support" on \
-#		GRAPHICSMAGICK "Use graphicsmagick instead of imagemagick" off \
-#		PGSQL "Use PostgreSQL instead of MySQL" off \
-#		JHEAD "Enable jhead support" on \
-#		UNZIP "Enable unzip support" on \
-#		GD "Enable gd support" off \
-#		DCRAW "Enable dcraw support" off \
-#		FFMPEG "Enable ffmpeg support" off
+OPTIONS=	NETPBM "Enable netpbm support" off \
+		IMAGEMAGICK "Enable imagemagick support" on \
+		GRAPHMAGICK "Enable graphicsmagick support" off \
+		PGSQL "Use PostgreSQL instead of MySQL" off \
+		JHEAD "Enable jhead support" on \
+		UNZIP "Enable unzip support" on \
+		GD "Enable gd support" off \
+		DCRAW "Enable dcraw support" off \
+		FFMPEG "Enable ffmpeg support" off \
+		NLS "Enable National Language Support" on
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_PGSQL)
 USE_PHP+=	pgsql
@@ -49,50 +46,49 @@ USE_PHP+=	mysql
 USE_PHP+=	gd
 RUN_DEPENDS+=	pngtogd:${PORTSDIR}/graphics/gd
 .endif
-.if !defined(WITHOUT_NLS)
+.if defined(WITH_NLS)
 USE_PHP+=	gettext
+USE_GETTEXT=	yes	# Pet portlint
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_NETPBM)
 RUN_DEPENDS+=	giftopnm:${PORTSDIR}/graphics/netpbm
 .endif
 
-.if defined(WITH_GRAPHICSMAGICK)
-RUN_DEPENDS+=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
-.elif !defined(WITHOUT_IMAGEMAGICK)
+.if defined(WITH_GRAPHMAGICK)
+RUN_DEPENDS+=	gm:${PORTSDIR}/graphics/GraphicsMagick
+.endif
+
+.if defined(WITH_IMAGEMAGICK)
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
-.if !defined(WITHOUT_JHEAD)
+.if defined(WITH_JHEAD)
 RUN_DEPENDS+=	jhead:${PORTSDIR}/graphics/jhead
 .endif
-.if !defined(WITHOUT_UNZIP)
+
+.if defined(WITH_UNZIP)
 RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .endif
+
 .if defined(WITH_FFMPEG)
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+
 .endif
 .if defined(WITH_DCRAW)
 RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
 .endif
 
-pre-everything::
 .if defined(GALLERY2DIR)
+# Continue to support legacy GALLERY2DIR variable
 WWWDIR=	${GALLERY2DIR}
-.else
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define GALLERY2DIR to override default of ${WWWDIR}."
-	@${ECHO_MSG} ""
 .endif
 
 do-install:
-	@ ${MKDIR} -m 0755 ${WWWDIR}
-	@ cd ${WRKSRC} && ${FIND} * -print | ${CPIO} ${CPIOARGS} ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@ ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@cd ${WRKSRC}/&&${COPYTREE_SHARE} . ${WWWDIR}/
+	@ ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
 
-post-install:
 .if !defined(BATCH)
 	@ ${CAT} ${PKGMESSAGE}
 .endif
