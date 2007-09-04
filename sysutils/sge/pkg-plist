@@ -420,10 +420,6 @@
 %%SGE_BASE%%/util/resources/schemas/qstat/detailed_job_info.xsd
 %%SGE_BASE%%/util/resources/schemas/qstat/message.xsd
 %%SGE_BASE%%/util/resources/schemas/qstat/qstat.xsd
-%%SGE_BASE%%/util/resources/spooling/disable_history.sql
-%%SGE_BASE%%/util/resources/spooling/history.sh
-%%SGE_BASE%%/util/resources/spooling/init_postgres.sh
-%%SGE_BASE%%/util/resources/spooling/init_postgres.sql
 %%SGE_BASE%%/util/resources/starter_methods/settaskid.sh
 %%SGE_BASE%%/util/resources/usersets/deadlineusers
 %%SGE_BASE%%/util/resources/usersets/defaultdepartment
@@ -433,7 +429,6 @@
 %%SGE_BASE%%/util/sgeCA/sge_ssl.cnf
 %%SGE_BASE%%/util/sgeCA/sge_ssl_template.cnf
 %%SGE_BASE%%/util/sge_aliases
-%%SGE_BASE%%/util/sge_log_tee
 %%SGE_BASE%%/util/sge_request
 %%SGE_BASE%%/util/sgeremoterun
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/adminrun
@@ -470,6 +465,7 @@
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/spoolinit
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/testsuidroot
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/uidgid
+%%PORTDOCS%%%%DOCSDIR%%/README-ARCo.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-Autoinstall.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-DRMAA-Java.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-DRMAA.txt
@@ -785,7 +781,6 @@
 @dirrm %%SGE_BASE%%/util/sgeCA
 @dirrm %%SGE_BASE%%/util/resources/usersets
 @dirrm %%SGE_BASE%%/util/resources/starter_methods
-@dirrm %%SGE_BASE%%/util/resources/spooling
 @dirrm %%SGE_BASE%%/util/resources/schemas/qstat
 @dirrm %%SGE_BASE%%/util/resources/schemas
 @dirrm %%SGE_BASE%%/util/resources/pe
@@ -846,4 +841,4 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/devel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%SGE_BASE%%
-@unexec test -d %D/%%SGE_BASE%% && ( echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%SGE_BASE%% and its contents manually.")
+@unexec test ! -d %D/%%SGE_BASE%% || ( echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%SGE_BASE%% and its contents manually.")

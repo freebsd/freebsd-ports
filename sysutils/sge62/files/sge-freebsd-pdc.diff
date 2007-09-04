@@ -51,7 +51,7 @@
 +      kvm_close(kd);
 +      return;
 +   }
-+   for (; nprocs >= 0; nprocs--, procs++) {
++   for (; nprocs > 0; nprocs--, procs++) {
 +      for (i = 0; i < procs->ki_ngroups; i++) {
 +         if (procs->ki_groups[i] == add_grp_id) {
 +	    char err_str[256];
@@ -108,7 +108,7 @@
 +         DEXIT;
 +         return -1;
 +      }
-+      for (; nprocs >= 0; nprocs--, procs++) {
++      for (; nprocs > 0; nprocs--, procs++) {
 +         for (curr=job_list.next; curr != &job_list; curr=curr->next) {
 +            job_elem = LNK_DATA(curr, job_elem_t, link);
 +

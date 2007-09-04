@@ -7,12 +7,11 @@
 
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/122/
+MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/142/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
-DISTNAME=	sge-V60u10_TAG-src
+DISTNAME=	sge-V60u11_TAG-src
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Sun Grid Engine, a batch queueing system
@@ -46,8 +45,8 @@ SGE_BASE?=	sge
 SGE_ROOT=	${PREFIX}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
 SGE_BUILD_ARCH=	FREEBSD_${ARCH:U}
-SGE_VERSION=	6.0.10
-SGE_RELEASE=	6.0u10
+SGE_VERSION=	6.0.11
+SGE_RELEASE=	6.0u11
 
 PLIST_SUB+=	SGE_ARCH=${SGE_ARCH}
 PLIST_SUB+=	SGE_BASE=${SGE_BASE}
@@ -236,7 +235,7 @@ build-plist: build
 	    ${SED} -e 's|${WRKSRC}/../doc|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' \
 	    >> ${PLIST}
 	@echo '@dirrmtry %%SGE_BASE%%' >> ${PLIST}
-	@echo '@unexec test -d %D/%%SGE_BASE%% && ( echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%SGE_BASE%% and its contents manually.")' >> ${PLIST}
+	@echo '@unexec test ! -d %D/%%SGE_BASE%% || ( echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%SGE_BASE%% and its contents manually.")' >> ${PLIST}
 	@echo "# Do not edit!  Auto-generated file." > ${.CURDIR}/Makefile.man
 	@echo "# See build-plist target in Makefile." >> ${.CURDIR}/Makefile.man
 	@echo "#" >> ${.CURDIR}/Makefile.man
