@@ -3639,7 +3639,6 @@ giram		ports/graphics/giram
 gish-demo	ports/games/gish-demo
 git		ports/misc/git
 gj		ports/java/gj
-gj-jdk11	ports/java/gj-jdk11
 gjdoc		ports/java/gjdoc
 gkermit		ports/comms/gkermit
 gkfreq		ports/sysutils/gkfreq
