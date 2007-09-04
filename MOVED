@@ -3193,3 +3193,4 @@ devel/semantic-emacs20|devel/semantic|2007-08-19|Has expired: emacs20 and relate
 net/ddc||2007-08-22|Usability expired
 games/groundhog||2007-08-22|Game is not worth keeping
 x11-toolkits/pmw|x11-toolkits/py-Pmw|2007-09-02|Port renamed for consistency
+java/gj-jdk11||2007-09-03|Has expired: Modern versions of jdk support generics natively
