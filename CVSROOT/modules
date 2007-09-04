@@ -13488,6 +13488,7 @@ qmail-qfilter	ports/mail/qmail-qfilter
 qmail-rblchk	ports/mail/qmail-rblchk
 qmail-remove	ports/mail/qmail-remove
 qmail-scanner	ports/mail/qmail-scanner
+qmail-scanner1	ports/mail/qmail-scanner1
 qmail-spamcontrol	ports/mail/qmail-spamcontrol
 qmail-tls	ports/mail/qmail-tls
 qmail-vida	ports/mail/qmail-vida
