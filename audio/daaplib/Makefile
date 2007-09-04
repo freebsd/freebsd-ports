@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	A C++ library for DAAP memory streams
 
+DEPRECATED=	Development stalled for years, outdated. Does not support newer versions of DAAP protocol.
+EXPIRATION_DATE=	2007-11-04
+
 USE_GCC=	3.4+
 USE_ZIP=	yes
 USE_GMAKE=	yes
@@ -34,4 +37,10 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.x
+.endif
+
+.include <bsd.port.post.mk>
