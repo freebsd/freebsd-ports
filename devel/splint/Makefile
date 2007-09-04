@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.src.tgz
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	A tool for statically checking sourcecode for security vulnerabilities
 
-BROKEN=		Size mismatch
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
