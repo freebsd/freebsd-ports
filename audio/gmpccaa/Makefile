@@ -16,7 +16,7 @@ COMMENT=	Amazon cover art provider for gmpc
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
 		curl.4:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	${X11BASE}/include/gmpc/cover-art.h:${PORTSDIR}/audio/gmpc
+BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPEND=	gmpc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes
