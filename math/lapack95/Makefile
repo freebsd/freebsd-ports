@@ -7,7 +7,7 @@
 
 PORTNAME=	lapack95
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack95/
 DISTNAME=	${PORTNAME}
@@ -30,7 +30,7 @@ WITH_ATLAS=	yes
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas -latlas
-LAPACK=		-lalapack
+LAPACK=		-lalapack -lcblas
 .else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
@@ -52,12 +52,18 @@ pre-build:
 		 s,%%FORTRAN_FIXED%%,${FORTRAN_FIXED},g ; \
 		 s,%%FORTRAN_FREE%%,${FORTRAN_FREE},g ; \
 		 s,%%FFLAGS%%,${FFLAGS},g ; \
+		 s,%%BLAS%%,${BLAS},g ; \
+		 s,%%LAPACK%%,${LAPACK},g ; \
+		 s,%%PREFIX%%,${PREFIX},g ; \
 		 s,%%LOCALBASE%%,${LOCALBASE},g' \
 		${WRKSRC}/make.inc
 	@${REINPLACE_CMD} -e 's,%%FC%%,${FC},g ; \
 		 s,%%FORTRAN_FIXED%%,${FORTRAN_FIXED},g ; \
 		 s,%%FORTRAN_FREE%%,${FORTRAN_FREE},g ; \
 		 s,%%FFLAGS%%,${FFLAGS} ${PICFLAG},g ; \
+		 s,%%BLAS%%,${BLAS},g ; \
+		 s,%%LAPACK%%,${LAPACK},g ; \
+		 s,%%PREFIX%%,${PREFIX},g ; \
 		 s,%%LOCALBASE%%,${LOCALBASE},g' \
 		${WRKSRC}_SHARED/make.inc
 do-build:
@@ -69,6 +75,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}_SHARED/liblapack95.so.1 ${PREFIX}/lib
 	${LN} -sf liblapack95.so.1 ${PREFIX}/lib/liblapack95.so
 
+	${MKDIR} ${PREFIX}/lib/lapack95_modules
+	${INSTALL_DATA} ${WRKSRC}_SHARED/lapack95_modules/*.mod ${PREFIX}/lib/lapack95_modules
 	@${MKDIR} ${EXAMPLESDIR}
 	@${MKDIR} ${EXAMPLESDIR}/EXAMPLES1
 	@${MKDIR} ${EXAMPLESDIR}/EXAMPLES2
