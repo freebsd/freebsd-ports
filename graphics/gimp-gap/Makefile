@@ -29,6 +29,7 @@ RUN_DEPENDS=	wavplay:${PORTSDIR}/audio/wavplay
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNOME=	intltool
 CONFIGURE_ARGS=	--disable-libmpeg3
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ffmpeg" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
