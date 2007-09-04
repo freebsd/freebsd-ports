@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://linux.bydg.org/~yogin/
 
-MAINTAINER=	semionov@mail.bg
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Qt LAN chat, compatible with Vypress Chat
 
 USE_QT_VER=	3
@@ -37,4 +37,10 @@ CONFIGURE_ARGS+=--without-libao
 LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>
