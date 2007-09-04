@@ -22,6 +22,12 @@ USE_LDCONFIG=		yes
 
 PORTDOCS=	*
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != i386
+CFLAGS+=	-fPIC
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|-O3|${CXXFLAGS}|' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
@@ -40,4 +46,4 @@ regression-test:
 .endfor
 	${LS} -l ${WRKDIR}/arithm* ${WRKDIR}/draw*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
