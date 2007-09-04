@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Library for embedded web servers
 
+DEPRECATED=	Development stalled for years, outdated.
+EXPIRATION_DATE=	2007-11-04
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}-persistent-${LEVEL}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -39,4 +42,10 @@ post-install:
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.x
+.endif
+
+.include <bsd.port.post.mk>
