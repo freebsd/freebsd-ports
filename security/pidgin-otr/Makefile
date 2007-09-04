@@ -25,6 +25,7 @@ LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_GNOME=	intltool
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 
