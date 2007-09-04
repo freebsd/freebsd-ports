@@ -18,6 +18,9 @@ COMMENT=	SCEPTRE is a general purpose circuit analysis program
 
 USE_FORTRAN=	g77
 FFLAGS+=	-fno-automatic -O
+.if ${ARCH} == "sparc64"
+BROKEN=		Internal compiler error
+.endif
 
 NO_WRKSUBDIR=	YES
 
