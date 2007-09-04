@@ -16184,6 +16184,7 @@ vym		ports/deskutils/vym
 vyqchat		ports/net/vyqchat
 w3		ports/www/w3
 w3-4		ports/www/w3-4
+w3af		ports/security/w3af
 w3m		ports/www/w3m
 w3m-img		ports/www/w3m-img
 w3m-m17n	ports/www/w3m-m17n
