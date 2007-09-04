@@ -492,6 +492,7 @@
     SUBDIR += qmail-rblchk
     SUBDIR += qmail-remove
     SUBDIR += qmail-scanner
+    SUBDIR += qmail-scanner1
     SUBDIR += qmail-spamcontrol
     SUBDIR += qmail-tls
     SUBDIR += qmail-vida

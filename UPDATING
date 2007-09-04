@@ -6,6 +6,34 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070904:
+  AFFECTS: users of mail/qmail-scanner
+  AUTHOR: lippe@freebsdbrasil.com.br
+
+  qmail-scanner was updated to 2.x, and 1.x version was repocopied to
+  mail/qmail-scanner1. There are some differences between these 2 versions:
+
+  quarantine-attachments.txt has been renamed to quarantine-events.txt, it is
+  used to quarantine more than just attachments, and the format of that file
+  has been changed.
+  
+  Quarantine directory is now separated into THREE subdirs: "spam", "viruses"
+  and "policy". This is so sites can arrange different auto-delete jobs to
+  control the size of these areas if they so wish.
+  
+  Some features that were hard-wired into the main body of Q-S have been moved
+  into quarantine-events.txt where they should have been all along. This makes
+  it possible to change settings without reconfiguring the main body of qmail-
+  scanner-queue.pl. You will need to rewrite any rules you had in place within
+  the old quarantine-attachments.txt into the new format quarantine-events.txt
+  
+  Changed setuid to 6755 - ie it's now setuid and setgid. Forcing all files to
+  be group qscand will allow those who wish to do so to keep their AV daemons
+  running as other accounts. They just need to ensure those daemons are members
+  of the qscand group - and as such should be able to read the necessary files.
+  e.g. clamd could run as "clamav", but as long as account "clamav" is a member
+  of group "qscand", clamd is able to read the mail enough to scan it.
+  
 20070903:
   AFFECTS: users of net/whois, net/gwhois
   AUTHOR:  nivo+kw+ports.bfa274@is-root.com
