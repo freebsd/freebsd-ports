@@ -1,0 +1,22 @@
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Congratulations! Qmail-Scanner is now installed!
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+ - Please, configure correctly your anti-virus and anti-spam;
+ - You HAVE to reinstall this port each time you add or remo-;
+ve one;
+ - Now configure the environment variable to use qmail-scanner:
+
+ You just need to add for your tcpserver file (generally called
+as: tcp.smtp):
+ QMAILQUEUE="%%PREFIX%%/bin/qmail-scanner-queue.pl"
+
+ Or create an new file in /service/smtpd/env, with the following
+content and called as "QMAILQUEUE":
+ %%PREFIX%%/bin/qmail-scanner-queue.pl
+
+NOTE: always you change anything in your environment dir, you just
+need to restart your smtpd, for it use: "svc -k /service/smtpd".
+
+You can test your installation by running 'make test' in port dir.
+

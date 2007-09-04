@@ -14,13 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	lippe@freebsdbrasil.com.br
 COMMENT=	Content/Anti-virus Scanner for qmail
-
-MANUAL_PACKAGE_BUILD=	Requires qmail built with non-standard setting
 
 BUILD_DEPENDS=	reformime:${PORTSDIR}/mail/maildrop \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+
+MANUAL_PACKAGE_BUILD=	Requires qmail built with non-standard setting
+
+CONFLICTS=	qmail-scanner-2.*
 
 QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
 

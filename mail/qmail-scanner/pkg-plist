@@ -1,23 +1,29 @@
-@comment $FreeBSD$
 bin/qmail-scanner-queue.pl
-bin/qs2mrtg.pl
-share/examples/qs2mrtg/mrtg-qmail-scanner.cfg
-@dirrm share/examples/qs2mrtg
-@unexec if cmp -s %D/%%SPOOLDIR%%/quarantine-attachments.txt %D/%%SPOOLDIR%%/quarantine-attachments.sample; then rm -f %D/%%SPOOLDIR%%/quarantine-attachments.txt && rm -f %D/%%SPOOLDIR%%/quarantine-attachments.db; fi
-%%SPOOLDIR%%/quarantine-attachments.sample
-@exec [ ! -f %D/%%SPOOLDIR%%/quarantine-attachments.txt ] && cp %D/%%SPOOLDIR%%/quarantine-attachments.sample %D/%%SPOOLDIR%%/quarantine-attachments.txt
-%%SPOOLDIR%%/qmail-scanner-queue-version.txt
-@dirrmtry %%SPOOLDIR%%/archives/cur
-@dirrmtry %%SPOOLDIR%%/archives/new
-@dirrmtry %%SPOOLDIR%%/archives/tmp
-@dirrmtry %%SPOOLDIR%%/archives
-@dirrmtry %%SPOOLDIR%%/quarantine/cur
-@dirrmtry %%SPOOLDIR%%/quarantine/new
-@dirrmtry %%SPOOLDIR%%/quarantine/tmp
-@dirrmtry %%SPOOLDIR%%/quarantine
-@dirrmtry %%SPOOLDIR%%/working/cur
-@dirrmtry %%SPOOLDIR%%/working/new
-@dirrmtry %%SPOOLDIR%%/working/tmp
-@dirrmtry %%SPOOLDIR%%/working
-@dirrmtry %%SPOOLDIR%%/tmp
-@dirrmtry %%SPOOLDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/contrib/logging_first_80_chars.eml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/patch_for_nod32_single_user.eml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/reformime-test.eml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/spamc-nasty.eml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/spamc-nice.eml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/vpopmail-issues.eml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/check_AV_daemons
+%%PORTDOCS%%%%DOCSDIR%%/contrib/logrotate.qmail-scanner
+%%PORTDOCS%%%%DOCSDIR%%/contrib/mrtg-qmail-scanner.cfg
+%%PORTDOCS%%%%DOCSDIR%%/contrib/qmail-scanner-queue.c
+%%PORTDOCS%%%%DOCSDIR%%/contrib/qs2mrtg.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/qs_config.sh
+%%PORTDOCS%%%%DOCSDIR%%/contrib/qscan-spam-to-users.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/rbl_scanner.txt
+%%PORTDOCS%%%%DOCSDIR%%/contrib/sub-avpdaemon.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/sub-sender-cache.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/test-avgd.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/test-clamd.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/test-sophie.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/test-trophie.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/test_installation.sh
+%%PORTDOCS%%%%DOCSDIR%%/contrib/test_password.zip
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec echo ""
+@unexec echo "If you are permanently removing qmail-scanner, you should also:" | /usr/bin/fmt
+@unexec echo "'rm -rf %%SPOOLDIR%%' and remove user/group 'qscand'." | /usr/bin/fmt
+@unexec echo ""

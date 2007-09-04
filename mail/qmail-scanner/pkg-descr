@@ -1,11 +1,10 @@
-Qmail-Scanner is e-mail content scanner that enables a qmail server to
-scan all messages it receives for certain characteristics (normally viruses),
-and react accordingly.
+Qmail-Scanner is an add-on that enables a Qmail email server to scan gatewayed
+email for certain characteristics (i.e. a content scanner). It is typically used
+for its anti-virus and anti-spam protection functions, in which case it is used
+in conjunction with external scanners.
 
-If you have a commercial virus scanner (eg, Sophos sweep, McAfee
-uvscan, etc) installed when you build qmail-scanner, qmail-scanner
-will configure itself to use that.  Otherwise, it will only use its
-internal content filter which only allows you to block mail based
-on text in the subject/body, general types of attachments, etc.
+It also enables a site (at a server/site level) to create "Policy blocks":
+i.e. react to email that contains specific strings in particular headers, or
+particular attachment filenames or types (e.g. *.VBS attachments).
 
 WWW:	http://qmail-scanner.sourceforge.net/

@@ -6,165 +6,249 @@
 #
 
 PORTNAME=	qmail-scanner
-PORTVERSION=	1.25
-PORTREVISION=	2
+PORTVERSION=	2.01
 CATEGORIES=	mail security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
+MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	lippe@freebsdbrasil.com.br
 COMMENT=	Content/Anti-virus Scanner for qmail
 
 MANUAL_PACKAGE_BUILD=	Requires qmail built with non-standard setting
 
-BUILD_DEPENDS=	reformime:${PORTSDIR}/mail/maildrop \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+BUILD_DEPENDS+=	reformime:${PORTSDIR}/mail/maildrop \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
 
 USE_PERL5=	yes
 NO_BUILD=	yes
 
-# Barely optionnal
-.if !defined(WITHOUT_TNEF)
+USE_QMAIL=	yes
+
+CONFLICTS=	qmail-scanner-1.*
+
+QS_USER?=	qscand
+QS_ADMIN?=	postmaster
+QS_ID?=		85
+
+DOCS=		logging_first_80_chars.eml patch_for_nod32_single_user.eml \
+		reformime-test.eml spamc-nasty.eml spamc-nice.eml vpopmail-issues.eml
+CONTRIB=	mrtg-qmail-scanner.cfg check_AV_daemons logrotate.qmail-scanner \
+		qs2mrtg.pl qs_config.sh qscan-spam-to-users.pl rbl_scanner.txt \
+		sub-avpdaemon.pl sub-sender-cache.pl test-avgd.pl test-clamd.pl \
+		test-sophie.pl test-trophie.pl test_installation.sh test_password.zip \
+		qmail-scanner-queue.c
+
+SPOOLDIR?=	/var/spool/qscand
+PLIST_SUB=	SPOOLDIR=${SPOOLDIR}
+
+OPTIONS=	TNEF "Mark Simpson's Patch (Recommended)" on \
+		FIX_MIME "Fix broken MIME messages" off \
+		REDUNDANT "Scan attachments and body mails" on \
+		NORMALIZE "Decode encoded headers per MIME Base64" off \
+		UNZIP "Force UNZIP all zip files" off
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=--qmaildir "${QMAIL_PREFIX}" \
+		--spooldir "${SPOOLDIR}" \
+		--bindir "${PREFIX}/bin" \
+		--qmail-queue-binary "${QMAIL_QUEUE}" \
+		--mime-unpacker "reformime" \
+		--batch
+
+SUB_FILES=	pkg-message
+SUB_LIST=	SPOOLDIR="${SPOOLDIR}" \
+		QS_USER=${QS_USER} \
+		QS_ID=${QS_ID}
+
+PKGINSTALL?=	${WRKDIR}/pkg-install
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TNEF)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 .endif
 
-# Options
-QMAILSCAN_ADMIN?=	root
-.if defined(QMAILSCAN_ADMINREALNAME)
-CONFIGURE_ARGS+=	--admin-realname "${QMAILSCAN_ADMINREALNAME}"
+.if !defined(WITH_FIX_MIME)
+CONFIGURE_ARGS+=	--fix-mime no
 .endif
-.if defined(QMAILSCAN_ARCHIVE)
-CONFIGURE_ARGS+=	--archive yes
+
+.if !defined(WITH_REDUNDANT)
+CONFIGURE_ARGS+=	--redundant no
 .endif
-QMAILSCAN_NOTIFY?=	psender,precips
-.if defined(QMAILSCAN_LANG)
-CONFIGURE_ARGS+=	--lang "${QMAILSCAN_LANG}"
+
+.if !defined(WITH_NORMALIZE)
+CONFIGURE_ARGS+=	--normalize no
 .endif
-.if defined(QMAILSCAN_LOCALDOMAINS) && !empty(QMAILSCAN_LOCALDOMAINS)
-CONFIGURE_ARGS+=	--local-domains "${QMAILSCAN_LOCALDOMAINS}"
-.endif
-.if defined(QMAILSCAN_LOGCRYPTO)
-CONFIGURE_ARGS+=	--log-crypto yes
-.endif
-.if defined(QMAILSCAN_NOTUNZIP)
-CONFIGURE_ARGS+=	--unzip no
-.else
+
+.if defined(WITH_UNZIP)
 CONFIGURE_ARGS+=	--unzip yes
-.if defined(QMAILSCAN_MAXZIPSIZE)
-CONFIGURE_ARGS+=	--max-zip-size "${QMAILSCAN_MAXZIPSIZE}"
-.endif
-.if !defined(QMAILSCAN_NOTBLKZIPPW)
-BUILD_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
-CONFIGURE_ARGS+=	--block-password-protected yes
-.endif
-.endif
-.if defined(QMAILSCAN_SCANNERS)
-CONFIGURE_ARGS+=	--scanners "${QMAILSCAN_SCANNERS}"
-.else
-CONFIGURE_ARGS+=	--scanners auto
-.endif
-QMAILSCAN_SILENTVIRUSES?=	auto
-.if defined(QMAILSCAN_SPAMSREDIRECT)
-CONFIGURE_ARGS+=	--spams-redirect "${QMAILSCAN_SPAMSREDIRECT}"
-.endif
-.if defined(QMAILSCAN_SPAMSTOSUFFIX)
-CONFIGURE_ARGS+=	--spams-tosuffix "${QMAILSCAN_SPAMSTOSUFFIX}"
 .endif
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
+.if !defined(QS_USER)
+CONFIGURE_ARGS+=	--qs-user "${QS_USER}"
+.endif
 
-USE_QMAIL=	yes
+.if !defined(QS_ADMIN)
+CONFIGURE_ARGS+=	--admin "${QS_ADMIN}"
+.endif
 
-SPOOLDIR=	${PREFIX}/qmailscan
-PLIST_SUB=	SPOOLDIR="${SPOOLDIR:S,${PREFIX}/,,}"
+.if defined(QS_ADMIN_DESC)
+CONFIGURE_ARGS+=	--admin-description "${QS_ADMIN_DESC}"
+.endif
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	\
-		--qmaildir "${QMAIL_PREFIX}" --spooldir "${SPOOLDIR}" \
-		--bindir "${PREFIX}/bin" --qmail-queue-binary "${QMAIL_QUEUE}" \
-		--admin "${QMAILSCAN_ADMIN}" --notify "${QMAILSCAN_NOTIFY}" \
-		--silent-viruses "${QMAILSCAN_SILENTVIRUSES}" \
-		--redundant yes \
-		--add-dscr-hdrs yes \
-		--log-details syslog --debug no \
-		--batch
+.if defined(QS_SCANNERS)
+CONFIGURE_ARGS+=	--scanners "${QS_SCANNERS}"
+.endif
+
+.if defined(QS_SKIP_MSGS)
+CONFIGURE_ARGS+=	--skip-text-msgs "${QS_SKIP_MSGS}"
+.endif
+
+.if !defined(QS_NOTIFY)
+CONFIGURE_ARGS+=	--notify psender,precips
+.endif
+
+.if defined(QS_LOCALDOMAINS) && !empty(QS_LOCALDOMAINS)
+CONFIGURE_ARGS+=	--local-domains "${QS_LOCALDOMAINS}"
+.endif
+
+.if defined(QS_SA_QUARANTINE)
+CONFIGURE_ARGS+=	--sa-quarantine "${QS_SA_QUARANTINE}"
+.endif
+
+.if defined(QS_LANG)
+CONFIGURE_ARGS+=	--lang "${QS_LANG}"
+.endif
+
+.if defined(QS_ARCHIVE)
+CONFIGURE_ARGS+=	--archive "${QS_ARCHIVE}"
+.endif
+
+.if defined(QS_MAX_SCAN_SIZE)
+CONFIGURE_ARGS+=	--max-scan-size "${QS_MAX_SCAN_SIZE}"
+.endif
+
+.if defined(QS_LOGDETAILS)
+CONFIGURE_ARGS+=	--log-details "${QS_LOGDETAILS}"
+.endif
+
+.if defined(QS_LOGCRYPTO)
+CONFIGURE_ARGS+=	--log-crypto "${QS_LOGCRYPTO}"
+.endif
+
+.if defined(QS_EOLCHECK)
+CONFIGURE_ARGS+=	--ignore-eol-check "${QS_EOLCHECK}"
+.endif
+
+.if defined(QS_HEADERS)
+CONFIGURE_ARGS+=	--add-dscr-hdrs "${QS_HEADERS}"
+.endif
+
+.if defined(QS_DEBUG)
+CONFIGURE_ARGS+=	--debug "${QS_DEBUG}"
+.endif
+
+.if defined(QS_MAX_ZIP_SIZE)
+CONFIGURE_ARGS+=	--max-zip-size "${QS_MAX_ZIP_SIZE}"
+.endif
 
 pre-configure:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "----------------------------------------"
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "QMAILSCAN_ADMIN          email adress of qmail-scanner admin for alerts"
-	@${ECHO_MSG} "QMAILSCAN_ADMINREALNAME* name to use when sending alerts"
-	@${ECHO_MSG} "QMAILSCAN_LANG           specify languages for QS mails (notify, etc..)"
-	@${ECHO_MSG} "                         supported languages are: af_ZA, cs_CZ, da_DK, de_DE,"
-	@${ECHO_MSG} "                         en_GB, en_PL, enlt_LT, enlt_LT_short, es_ES, fr_FR,"
-	@${ECHO_MSG} "                         it_IT, ja_JP.EUC, nl_NL, no_NO, pl_PL, pt_BR, pt_PT,"
-	@${ECHO_MSG} "                         sk_SK, sv_SE, tr_TR, tr_TR_ascii and tw_BIG5"
-	@${ECHO_MSG} "                         default depends on your LANG variable"
-	@${ECHO_MSG} "                         (en_GB if LANG is not set)"
-	@${ECHO_MSG} "QMAILSCAN_LOCALDOMAINS   domains classified as local domains preventing alerts"
-	@${ECHO_MSG} "                         of externals users (and mailing-lists...)"
-	@${ECHO_MSG} "QMAILSCAN_LOGCRYPTO      simply notes in the log record if the message"
-	@${ECHO_MSG} "                         contained any form of digital signing or encryption"
-	@${ECHO_MSG} "                         (S/MIME, PGP and password protected files)"
-	@${ECHO_MSG} "                         default is disabled"
-	@${ECHO_MSG} "QMAILSCAN_MAXZIPSIZE     zip that would have unpacked into more diskspace"
-	@${ECHO_MSG} "                         than this value will be blocked (prevent DoS)"
-	@${ECHO_MSG} "                         default is 1000000000"
-	@${ECHO_MSG} "QMAILSCAN_NOTBLKZIPPW    zip password protected are blocked by default"
-	@${ECHO_MSG} "                         setting this variable to disable this function"
-	@${ECHO_MSG} "QMAILSCAN_NOTIFY         who has to be notify of viruses/spams"
-	@${ECHO_MSG} "                         defaults to 'psender,precips'"
-	@${ECHO_MSG} "QMAILSCAN_SCANNERS       list of installed content scanner"
-	@${ECHO_MSG} "                         default is automatic, so you do not need to set this"
-	@${ECHO_MSG} "QMAILSCAN_SILENTVIRUSES  viruses that qs shoud not notify about"
-	@${ECHO_MSG} "QMAILSCAN_SPAMSREDIRECT* set this if you want to redirect all spams to a"
-	@${ECHO_MSG} "                         specific email address"
-	@${ECHO_MSG} "QMAILSCAN_SPAMSTOSUFFIX* suffix to alter spams recipients with"
+	@${ECHO_MSG} "QS_USER			User to run Q-S"
+	@${ECHO_MSG} "			(Default: qscand)"
+	@${ECHO_MSG} "QS_ADMIN		Administrator Q-S Address"
+	@${ECHO_MSG} "			(Default: postmaster)"
+	@${ECHO_MSG} "QS_ADMIN_DESC		Real Name of Administrator Q-S"
+	@${ECHO_MSG} "			(Default: System Anti-Virus Administrator)"
+	@${ECHO_MSG} "QS_SCANNERS		List of scanners installed, e.g. bitdefender,nod32"
+	@${ECHO_MSG} "			(Default: auto)"
+	@${ECHO_MSG} "QS_SKIP_MSGS		Q-S will skip running any anti-virus scanners on"
+	@${ECHO_MSG} "			any messages it works out are text-only."
+	@${ECHO_MSG} "			(Default: yes|no)"
+	@${ECHO_MSG} "QS_NOTIFY		Who has to be notify of viruses/spams"
+	@${ECHO_MSG} "			(Default: 'psender|precips')"
+	@${ECHO_MSG} "QS_LOCALDOMAINS	Domains classified as local domains preventing alerts"
+	@${ECHO_MSG} "			of externals users (and mailing-lists...)"
+	@${ECHO_MSG} "QS_SA_QUARANTINE	If SA tags a message as having a score higher than"
+	@${ECHO_MSG} "			'required_hits', then that message will be quarantined"
+	@${ECHO_MSG} "			into a new maildir '/.spam/' and not delivered to end-user"
+	@${ECHO_MSG} "			(Default: disabled, Options: Any positive number)"
+	@${ECHO_MSG} "QS_LANG			Specify languages for Q-S mails alerts"
+	@${ECHO_MSG} "			Supported languages are: af_ZA, cs_CZ, da_DK, de_DE,"
+	@${ECHO_MSG} "			en_GB, en_PL, enlt_LT, enlt_LT_short, es_ES, fr_FR,"
+	@${ECHO_MSG} "			it_IT, ja_JP.EUC, nl_NL, no_NO, pl_PL, pt_BR, pt_PT,"
+	@${ECHO_MSG} "			sk_SK, sv_SE, tr_TR, tr_TR_ascii and tw_BIG5"
+	@${ECHO_MSG} "			Default depends on your LANG variable"
+	@${ECHO_MSG} "			(Default: en_GB if LANG is not set)"
+	@${ECHO_MSG} "QS_ARCHIVE		If "yes", all copies of processed mail will be moved into the"
+	@${ECHO_MSG} "			maildir '$SPOOLDIR/$ARCHIVEDIR/'. Any other string besides 'yes'"
+	@${ECHO_MSG} "			and 'no' will be treated as a REGEX. Only mail from or to an"
+	@${ECHO_MSG} "			address that contains that regex will be archived."
+	@${ECHO_MSG} "			e.g. 'jhaar|harry'"
+	@${ECHO_MSG} "			(Default: no, Options: yes|no|regex)"
+	@${ECHO_MSG} "QS_LOGDETAILS		Whether or not to log to mailstats.csv/via syslog the attachment"
+	@${ECHO_MSG} "			structure of every Email message. Logs to "syslog"  by default."
+	@${ECHO_MSG} "			(Default: syslog, Options: yes|syslog|no)"
+	@${ECHO_MSG} "QS_LOGCRYPTO		Simply notes in the log record if the message"
+	@${ECHO_MSG} "			contained any form of digital signing or encryption"
+	@${ECHO_MSG} "			(S/MIME, PGP and password protected files)"
+	@${ECHO_MSG} "			(Default: no, Options: yes|no)"
+	@${ECHO_MSG} "QS_MAXSCANSIZE		Email messages (raw size) larger than this number (in bytes)"
+	@${ECHO_MSG} "			will skip all AV and Spam scanning checks. It's to stop Q-S"
+	@${ECHO_MSG} "			scanning 300Mbyte TIFF file messages and the like."
+	@${ECHO_MSG} "			(Default: 100Mbytes)"
+	@${ECHO_MSG} "QS_MAXZIPSIZE		Zip that would have unpacked into more diskspace"
+	@${ECHO_MSG} "			than this value will be blocked (prevent DoS)"
+	@${ECHO_MSG} "			(Default: 1Gbytes)"
+	@${ECHO_MSG} "QS_EOLCHECK		Making this "yes" stops Qmail-Scanner from treating '\r' or '\0'"
+	@${ECHO_MSG} "			chars in the headers of MIME mail messages as being suspicious"
+	@${ECHO_MSG} "			enough to quarantine mail over."
+	@${ECHO_MSG} "			(Default: no, Options: yes|no)"
+	@${ECHO_MSG} "QS_HEADERS		This adds the now old-fashion X-Qmail-Scanner headers to the message."
+	@${ECHO_MSG} "			"all" adds the "rcpt to" headers too - this is a privacy hole."
+	@${ECHO_MSG} "			(Default: no, Options: yes|no|all)"
+	@${ECHO_MSG} "QS_DEBUG		Whether or not debugging is turned on. Can be also set to a number."
+	@${ECHO_MSG} "			NOTE: Numbers over 100 cause Q-S to not cleanup working files"
+	@${ECHO_MSG} "			(Default: yes, Options: yes|no|number)"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "When you set the last option to 'spam', a detected spam will be delivered to"
-	@${ECHO_MSG} "'user-spam@domain' instead of 'user@domain'."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "* Please note these options are only available with FreeBSD ports "
-	@${ECHO_MSG} "So please, do not report relatives bugs to qmail-scanner team, but maintainer."
-	@${ECHO_MSG} "----------------------------------------"
-	@${ECHO_MSG} ""
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} PRE-INSTALL
-	@if ! ${TEST} -f ${QMAIL_QUEUE}; then \
-		${ECHO_MSG} "Unable to found qmail-queue binary trying '${QMAIL_QUEUE}'.";  \
-		${ECHO_MSG} "Please set QMAIL_PREFIX to your qmail installation directory !"; \
-		exit 1; \
-	fi
 
-post-configure:
-	${TEST} -f ${WRKSRC}/qmail-scanner-queue.pl
+do-configure:
+	@${SED} -e 's,%%SPOOLDIR%%,${SPOOLDIR},g; s,%%QS_USER%%,${QS_USER},g; \
+		s,%%QS_ID%%,${QS_ID},g; s,%%PREFIX%%,${PREFIX},g' \
+		${FILESDIR}/pkg-install.in > ${WRKDIR}/pkg-install
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	-${TEST} -f ${PREFIX}/bin/qmail-scanner-queue.pl && \
-		${MV} ${PREFIX}/bin/qmail-scanner-queue.pl \
-			${PREFIX}/bin/qmail-scanner-queue.pl.old
-	${INSTALL_SCRIPT} ${WRKSRC}/qmail-scanner-queue.pl ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/qs2mrtg.pl ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/quarantine-attachments.txt \
-		${SPOOLDIR}/quarantine-attachments.sample
-	${TEST} -f ${SPOOLDIR}/quarantine-attachments.txt || \
-		${INSTALL_DATA} ${WRKSRC}/quarantine-attachments.txt ${SPOOLDIR}
-	${INSTALL_DATA} ${WRKSRC}/contrib/mrtg-qmail-scanner.cfg \
-		${PREFIX}/share/examples/qs2mrtg
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/contrib
+. for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib
+. endfor
+. for j in ${CONTRIB}
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/${j} ${DOCSDIR}/contrib
+. endfor
+.endif
+	@${MKDIR} ${SPOOLDIR}
+	@${INSTALL_DATA} ${WRKSRC}/quarantine-events.txt ${SPOOLDIR}/quarantine-events.txt.sample
+	@${INSTALL_SCRIPT} ${WRKSRC}/qmail-scanner-queue.template ${PREFIX}/bin/qmail-scanner-queue.pl
+	@${ECHO_MSG} ""
 	@${CAT} ${PKGMESSAGE}
 
+post-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
 post-deinstall:
-	@${ECHO_MSG}
+	@${ECHO_MSG} ""
 	@${ECHO_MSG} "If you're not updating this port, you can delete directory '${SPOOLDIR}'."
 	@${ECHO_MSG} ""
 
 test:
 	@${WRKSRC}/contrib/test_installation.sh -doit
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
