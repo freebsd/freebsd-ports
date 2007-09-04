@@ -6,6 +6,7 @@
 
 PORTNAME=	boinc-setiathome-enhanced
 PORTVERSION=	5.27
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://home.tiscali.nl/rladan/distfiles/
 
