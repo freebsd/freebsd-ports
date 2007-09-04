@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	samba-vscan
-PORTVERSION=	0.3.6b
-PORTREVISION=	1
+PORTVERSION=	0.3.6c
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	openantivirus
+MASTER_SITES=	http://www.openantivirus.org/download/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-beta4
 
 MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	On-access virus scanning with Samba
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/${VSCAN_SAMBA_PORT}:configure
-
-BROKEN=		Does not compile
 
 OPTIONS=	VSCAN_ANTIVIR "for use with AntiVir" off \
 		VSCAN_CLAMAV "for use with Clam AntiVirus Daemon" off \
@@ -34,7 +31,6 @@ OPTIONS=	VSCAN_ANTIVIR "for use with AntiVir" off \
 PORTDOCS=	AUTHORS COPYING ChangeLog FAQ INSTALL NEWS README
 
 USE_AUTOTOOLS=	autoconf:259
-USE_BZIP2=	yes
 VSCAN_SAMBA_PORT?=	samba3
 SAMBA_WRKSRC!=	cd ${.CURDIR}/../../net/${VSCAN_SAMBA_PORT}; ${MAKE} -V WRKSRC
 HAS_CONFIGURE=	yes
@@ -130,6 +126,7 @@ pre-configure:
 
 do-install:
 .for i in ${VSCAN_NAME}
+	@${MKDIR} -p ${PREFIX}/${VFSDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/${VFSDIR}
 .endfor
 	@${MKDIR} ${PREFIX}/${ETCDIR}
