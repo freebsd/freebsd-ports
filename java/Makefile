@@ -48,7 +48,6 @@
     SUBDIR += eclipse-webtools
     SUBDIR += eclipseme
     SUBDIR += gj
-    SUBDIR += gj-jdk11
     SUBDIR += gjdoc
     SUBDIR += gnu-regexp
     SUBDIR += guavac
