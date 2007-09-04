@@ -755,6 +755,7 @@
     SUBDIR += vscan
     SUBDIR += vuxml
     SUBDIR += vxquery
+    SUBDIR += w3af
     SUBDIR += webfwlog
     SUBDIR += wipe
     SUBDIR += wpa_supplicant
