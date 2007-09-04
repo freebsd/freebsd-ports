@@ -83,6 +83,15 @@ if [ -z "${PKG_DBDIR} -o ! -d "${PKG_DBDIR}" ]; then
 	PKG_DBDIR=/var/db/pkg
 fi
 
+libtool=$(which libtool 2>/dev/null)
+if [ -x ${libtool} ]; then
+	libtool_deplibs=$(grep link_all_deplibs ${libtool} | head -1 | \
+		cut -d = -f 2)
+	if [ "X${libtool_deplibs}" != Xno ]; then
+		echo WARNING: your libtool records dependencies recursively, you can not trust the following output. | fmt
+	fi
+fi
+
 for i in $@; do
 	if [ -d "${i}" ]; then
 		current_port="${i}"
@@ -118,6 +127,34 @@ for i in $@; do
 	' < ${current_port}/+CONTENTS | \
 		xargs ${PORTSDIR}/Tools/scripts/neededlibs.sh | \
 		xargs ${PORTSDIR}/Tools/scripts/resolveportsfromlibs.sh ${bases} | \
-		egrep -v "${myorigin}\$"
+		egrep -v "(\(${myorigin}\)|${myorigin})\$"
  
 done | sort -u
+
+exit 0
+
+# NOT YET: untested, just an outline of what needs to be done
+awk '	/USE_GNOME+=/ {
+		if (have_gnome != 1) {
+			use_gnome = sprintf("%s", $2);
+		} else {
+			use_gnome = sprintf("%s %s", use_gnome, $2);
+			have_gnome = 1;
+		}
+	}
+	/USE_XORG+=/ {
+		if (have_gnome != 1) {
+			use_gnome = sprintf("%s", $2);
+		} else {
+			use_gnome = sprintf("%s %s", use_gnome, $2);
+			have_gnome = 1;
+		}
+	}
+	END {
+		if (have_gnome == 1) {
+			printf("USE_GNOME=	%s\n", have_gnome);
+		}
+		if (have_xorg == 1) {
+			printf("USE_XORG=	%s\n", have_xorg);
+		}
+	}'
