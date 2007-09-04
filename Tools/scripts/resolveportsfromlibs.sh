@@ -88,6 +88,13 @@ fi
 for i in $@; do
 	result=""
 
+	case $i in
+	libcrypto.so|libssl.so)
+		echo "USE_OPENSSL=	yes"
+		continue
+		;;
+	esac
+
 	if [ -e /lib/$i -o -e /usr/lib/$i ]; then
 		# base system lib, skipping
 		shift
@@ -95,45 +102,107 @@ for i in $@; do
 	fi
 
 
-	lib="$(echo $i | sed -e 's:^lib:: ; s:\.so.*::')"
+	lib=${i##*/}
+	lib="$(echo ${lib} | sed -e 's:^lib:: ; s:\.so.*::')"
+	# I didn't managed to make awk accept a pattern with a '/' inside,
+	# so don't complain about using grep+awk instead of awk only.
+	lib_pathname=$(ldconfig -r | grep $i | awk '{print $3}')
 
 	origin=unknown
 	for base in ${bases}; do
 		port=$(pkg_which "${base}/lib/$i")
 
 		if [ -f /var/db/pkg/$port/+CONTENTS ]; then
-			origin=$(grep "@comment ORIGIN:" /var/db/pkg/$port/+CONTENTS | sed -e 's/@comment ORIGIN://')
+			origin=$(grep "@comment ORIGIN:" \
+				/var/db/pkg/$port/+CONTENTS \
+				| sed -e 's/@comment ORIGIN://')
 			break
 		else
 			continue
 		fi
 	done
 
-	XORG="$(egrep ${origin}\$ ${PORTSDIR}/Mk/bsd.xorg.mk 2>/dev/null \
-		| grep _LIB | sed -e 's:_LIB.*::')"
+	if [ ${origin} = unknown ]; then
+		if [ -f ${lib_pathname} ]; then
+			port=$(pkg_which "${lib_pathname}")
+			if [ -f /var/db/pkg/$port/+CONTENTS ]; then
+				origin=$(grep "@comment ORIGIN:" \
+					/var/db/pkg/$port/+CONTENTS \
+					| sed -e 's/@comment ORIGIN://')
+			else
+				result="${lib} ($i) not found, unknown origin"
+			fi
+		fi
+	fi
 
-	GNOME="$(egrep ${origin}\$ ${PORTSDIR}/Mk/bsd.gnome.mk 2>/dev/null \
-		| grep _LIB | sed -e 's:_LIB.*::')"
+	if [ ${origin} != unknown ]; then
+		category=${origin%/*}
+		portname=${origin##*/}
+
+		XORG="$(egrep ${origin}\$ ${PORTSDIR}/Mk/bsd.xorg.mk \
+			2>/dev/null | grep _LIB | sed -e 's:_LIB.*::')"
+
+		GNOME="$(egrep ${origin}\$ ${PORTSDIR}/Mk/bsd.gnome.mk \
+			2>/dev/null | grep _LIB | sed -e 's:_LIB.*::')"
+
+		EFL="$([ "X$(make ${PORTSDIR}/Mk/bsd.efl.mk -V \
+			_${portname}_CATEGORY )" = "X${category}" ] && \
+			echo ${portname})"
+
+		GL="$(egrep  ${origin}\$ ${PORTSDIR}/Mk/bsd.port.mk \
+			2>/dev/null | grep _LIB_DEPENDS \
+			| sed -e 's:_GL_:: ; s:_LIB_DEPENDS.*::')"
+
+	fi
 
 	if [ -n "${XORG}" ]; then
-		result="USE_XORG+=${XORG}"
+		result="USE_XORG+=	${XORG}		(${origin})"
+		if [ $(echo ${XORG} | wc -w) -ne 1 ]; then
+			result="${result}        # result ambiguous, check yourself: ${lib}"
+		fi
 	fi
 
 	if [ -n "${GNOME}" ]; then
-		result="USE_GNOME+=${GNOME}"
+		result="USE_GNOME+=	${GNOME}		(${origin})"
+		if [ $(echo ${GNOME} | wc -w) -ne 1 ]; then
+			result="${result}        # result ambiguous, check yourself: ${lib}"
+		fi
+	fi
+
+	if [ -n "${EFL}" ]; then
+		result="USE_EFL+=	${EFL}		(${origin})"
+	fi
+
+	if [ -n "${GL}" ]; then
+		result="USE_GL+=       ${GL}		(${origin})"
 	fi
 
 	# USE_xxx exceptions, sorting key is the USE_xxx name
 	# START and STOP are needed for a perfect match
 	case "START${origin}STOP" in
+	STARTdevel/famSTOP|STARTdevel/gaminSTOP)
+		result="USE_FAM=	yes		(${origin})"
+		;;
 	STARTprint/freetypeSTOP)
-		result="USE_FREETYPE=yes"
+		result="USE_FREETYPE=	yes		(${origin})"
 		;;
 	STARTdevel/gettextSTOP)
-		result="USE_GETTEXT=yes"
+		result="USE_GETTEXT=	yes		(${origin})"
 		;;
 	STARTconverters/libiconvSTOP)
-		result="USE_ICONV=yes"
+		result="USE_ICONV=	yes		(${origin})"
+		;;
+	STARTnet/openldap*sasl*clientSTOP)
+		result="USE_OPENLDAP=	yes	WANT_OPENLDAP_SASL=	yes"
+		;;
+	STARTnet/openldap*clientSTOP)
+		result="USE_OPENLDAP=	yes		(${origin})"
+		;;
+	STARTdevel/sdl12STOP)
+		result="USE_SDL=	sdl		(${origin})"
+		;;
+	/sdl_)
+		result="USE_SDL=	$(echo $origin | sed -e 's:.*/sdl_::g')		(${origin})"
 		;;
 	esac
 
@@ -141,6 +210,6 @@ for i in $@; do
 		result="${lib}:\${PORTSDIR}/${origin}"
 	fi
 
-	echo ${result}
+	echo "${result}"
 	shift
 done | sort -u

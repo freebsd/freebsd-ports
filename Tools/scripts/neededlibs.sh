@@ -48,7 +48,7 @@ for i in "$@"; do
 	kind=$(file -bi "$i")
 
 	case "${kind}" in
-	application/x-executable*)
+	application/x-executable*|application/x-sharedlib*)
 		# ok, fall through
 		;;
 	*)
