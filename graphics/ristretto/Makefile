@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ristretto
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	Is an image-viewer with xfce-integration
+COMMENT=	An image-viewer with xfce-integration
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
@@ -20,7 +20,5 @@ INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_XFCE=	configenv libutil thunar
 USE_XLIB=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-
 
 .include <bsd.port.mk>
