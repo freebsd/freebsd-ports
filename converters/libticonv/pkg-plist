@@ -5,6 +5,6 @@ include/tilp2/ticonv.h
 lib/libticonv.a
 lib/libticonv.la
 lib/libticonv.so
-lib/libticonv.so.2
+lib/libticonv.so.3
 libdata/pkgconfig/ticonv.pc
 @dirrmtry include/tilp2
