@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	libgsf
-PORTVERSION=	1.14.5
-PORTREVISION?=	2
+PORTVERSION=	1.14.6
+PORTREVISION?=	0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -28,7 +28,7 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GNOME?=	gnomehack gnomeprefix glib20 libxml2 gconf2 ltverhack intlhack
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS?=--without-gnome --without-python
+CONFIGURE_ARGS?=--without-gnome --without-python --without-gvfs
 CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
