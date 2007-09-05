@@ -6,7 +6,7 @@
 
 PORTNAME=	wxglade
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel x11-toolkits python
 MASTER_SITES=	SF
 DISTNAME=	wxGlade-${PORTVERSION}
@@ -33,7 +33,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/*.py ${PYTHON_SITELIBDIR}/${PORTNAME}
-.for f in codegen edit_sizers res widgets
+.for f in codegen edit_sizers icons res widgets
 	${CP} -R ${WRKSRC}/${f} ${PYTHON_SITELIBDIR}/${PORTNAME}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/debian/wxglade.1 ${MAN1PREFIX}/man/man1
