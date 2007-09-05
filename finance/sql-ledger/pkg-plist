@@ -100,7 +100,6 @@ sql-ledger/ct.pl
 sql-ledger/doc/COPYING
 sql-ledger/doc/COPYRIGHT
 sql-ledger/doc/README
-sql-ledger/doc/README.DB2
 sql-ledger/doc/UPGRADE-1.6-1.8
 sql-ledger/doc/UPGRADE-1.8-1.8.3
 sql-ledger/doc/UPGRADE-1.8.3-1.8.4
@@ -120,7 +119,8 @@ sql-ledger/doc/UPGRADE-2.6.0-2.6.27
 sql-ledger/doc/UPGRADE-2.6.27-2.8.0
 sql-ledger/doc/UPGRADE-2.8.0-2.8.2
 sql-ledger/doc/UPGRADE-2.8.2-2.8.4
-sql-ledger/doc/UPGRADE-2.8.4-2.8.5
+sql-ledger/doc/UPGRADE-2.8.4-2.8.6
+sql-ledger/doc/UPGRADE-2.8.6-2.8.7
 sql-ledger/doc/faq.html
 sql-ledger/favicon.ico
 sql-ledger/gl.pl
@@ -1961,6 +1961,8 @@ sql-ledger/sql/Pg-upgrade-2.8.0-2.8.2.sql
 sql-ledger/sql/Pg-upgrade-2.8.2-2.8.3.sql
 sql-ledger/sql/Pg-upgrade-2.8.3-2.8.4.sql
 sql-ledger/sql/Pg-upgrade-2.8.4-2.8.5.sql
+sql-ledger/sql/Pg-upgrade-2.8.5-2.8.6.sql
+sql-ledger/sql/Pg-upgrade-2.8.6-2.8.7.sql
 sql-ledger/sql/Poland-chart.sql
 sql-ledger/sql/Simplified-Chinese_Default-UTF8-chart.sql
 sql-ledger/sql/Simplified-Chinese_Default-chart.sql
