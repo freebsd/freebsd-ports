@@ -81,8 +81,8 @@ OPTIONS=	ELM_ICONV "libiconv support" on \
 #
 
 ELM_VERSION=	2.4
-ELM_REVISION=	123
-ELM_PATCHLEVEL=	f	# a...z = patch-level, _ means no patch-level.
+ELM_REVISION=	124
+ELM_PATCHLEVEL=	_	# a...z = patch-level, _ means no patch-level.
 
 ELM_PATCHDONE=	false
 .for level in _ a b c d e f g h i j k l m n o p q r s t u v w x y z
@@ -241,7 +241,8 @@ post-install: install-nls-files \
 	      install-doc-files install-mime-types \
 	      install-conf-files restore-conf-files \
 	      merge-global-rc-file \
-	      remove-catman-files remove-catman-links
+	      remove-catman-files remove-catman-links \
+	      remove-tempfiles
 
 install-nls-files:
 	@cd ${WRKSRC}/nls; ${MAKE} install
@@ -281,6 +282,8 @@ remove-catman-files:
 .for sect in ${MSECS}
 . for page in ${MAN${sect}}
 	@${RM} -f ${MAN${sect}PREFIX}/man/cat${sect}/${page}
+	@${RM} -f ${MAN${sect}PREFIX}/man/cat${sect}/${page}~_~
+	@${RM} -f ${MAN${sect}PREFIX}/man/man${sect}/${page}~_~
 . endfor
 .endfor
 
@@ -289,8 +292,15 @@ remove-catman-links:
 . for page in ${MLINKS}
 .  if ${MAN${sect}:M${page}} == ""
 	@${RM} -f ${MAN${sect}PREFIX}/man/cat${sect}/${page}
+	@${RM} -f ${MAN${sect}PREFIX}/man/cat${sect}/${page}~_~
+	@${RM} -f ${MAN${sect}PREFIX}/man/man${sect}/${page}~_~
 .  endif
 . endfor
+.endfor
+
+remove-tempfiles:
+.for file in ${PREFIX}/bin/wnewmail ${PREFIX}/bin/nfrm ${LIB_DIR}/elmuninstall
+	@${RM} -f ${file}~_~
 .endfor
 
 # some sketchy hackery
