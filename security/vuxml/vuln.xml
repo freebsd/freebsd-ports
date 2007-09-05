@@ -33,6 +33,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Note:  Please add new entries to the beginning of this file.
 
 -->
+<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f14ad681-5b88-11dc-812d-0011098b2f36">
+    <topic>rkhunter -- insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>rkhunter</name>
+	<range><lt>1.2.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gentoo reports:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200504-25.xml">
+	  <p>Sune Kloppenborg Jeppesen and Tavis Ormandy of the Gentoo Linux
+	    Security Team have reported that the check_update.sh script and
+	    the main rkhunter script insecurely creates several temporary
+	    files with predictable filenames.</p>
+	  <p>A local attacker could create symbolic links in the temporary
+	    files directory, pointing to a valid file somewhere on the
+	    filesystem.  When rkhunter or the check_update.sh script runs,
+	    this would result in the file being overwritten with the rights of
+	    the user running the utility, which could be the root user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>13399</bid>
+      <cvename>CVE-2005-1270</cvename>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200504-25.xml</url>
+    </references>
+    <dates>
+      <discovery>2005-04-26</discovery>
+      <entry>2007-09-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="72cdf2ab-5b87-11dc-812d-0011098b2f36">
     <topic> lsh -- multiple vulnerabilities</topic>
     <affects>
