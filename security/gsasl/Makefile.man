@@ -50,6 +50,7 @@ MAN3+=	gsasl_done.3
 MAN3+=	gsasl_encode.3
 MAN3+=	gsasl_encode_inline.3
 MAN3+=	gsasl_finish.3
+MAN3+=	gsasl_free.3
 MAN3+=	gsasl_hmac_md5.3
 MAN3+=	gsasl_init.3
 MAN3+=	gsasl_md5.3
