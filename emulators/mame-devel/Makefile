@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdlmame
-PORTVERSION=	0.117
+PORTVERSION=	0.118u3
 CATEGORIES=	emulators
 MASTER_SITES=	http://rbelmont.mameworld.info/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -24,10 +24,10 @@ SUB_FILES=	${PORTNAME} pkg-message
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
-.for f in obj/sdl/mame/file2str obj/sdl/mame/png2bdc mame testkeys romcmp \
+	${MKDIR} ${PREFIX}/libexec/sdlmame
+.for f in obj/sdl/mame/build/file2str obj/sdl/mame/build/png2bdc mame testkeys romcmp \
 	  chdman jedutil makemeta regrep srcclean
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/libexec/sdlmame
 .endfor
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/ui.bdf ${DATADIR}

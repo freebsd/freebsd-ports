@@ -14,6 +14,8 @@ libexec/sdlmame/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/docs/mame.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/newvideo.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/config.txt
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew_0118u3.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
 %%DATADIR%%/keymaps/km-ch.txt
 %%DATADIR%%/keymaps/km-de.txt
