@@ -1,5 +1,8 @@
 ==========================================================================
-IlohaMail has now been installed.
+ilohamail-devel has now been installed.
+
+Please send comments about the devel branch to the testers mailing list(https://lists.sourceforge.net/lists/listinfo/ilohamail-testers)  
+The devel branch is a rapidly moving target, and is not recommended for deployment. 
 
 Create a redirect one of the following methods:
  - add an alias to apache's httpd.conf pointing to %%ILOHADIR%%/source

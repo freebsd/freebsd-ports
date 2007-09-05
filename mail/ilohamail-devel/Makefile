@@ -1,20 +1,19 @@
-# New ports collection makefile for:	ilohamail
-# Date created:		2004-01-20
-# Whom:			TAKATSU Tomonari <tota@rtfm.jp>
+# New ports collection makefile for:	ilohamail-devel
+# Date created:		3 April 2007
+# Whom:			craig001@lerwick.hopto.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	ilohamail
-PORTVERSION=	0.8.13
-PORTREVISION=	1
+PORTNAME=	ilohamail-devel
+PORTVERSION=	0.9.20050415
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ilohamail
-DISTNAME=	IlohaMail-${PORTVERSION}
+DISTNAME=	IlohaMail-0.9-20050415
 
-MAINTAINER=	tota@rtfm.jp
-COMMENT=	IlohaMail is a lightweight multilingual webmail program
+MAINTAINER=     craig001@lerwick.hopto.org
+COMMENT=	IlohaMail is a lightweight webmail program (devel version)
 
 NO_BUILD=	yes
 USE_PHP=	pcre
@@ -28,9 +27,9 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if !defined(WITHOUT_WWWDIR)
-ILOHADIR=	${PREFIX}/www/ilohamail
+ILOHADIR=	${PREFIX}/www/ilohamail-devel
 .else
-ILOHADIR=	${PREFIX}/ilohamail
+ILOHADIR=	${PREFIX}/ilohamail-devel
 .endif
 
 PLIST_SUB+=	ILOHADIR="${ILOHADIR:S,^${PREFIX}/,,}"
@@ -44,7 +43,13 @@ pre-everything::
 do-install:
 	@${MKDIR} ${ILOHADIR}
 	${CP} -Rp ${WRKSRC}/IlohaMail/ ${ILOHADIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${ILOHADIR}/data
+	@${MKDIR} ${ILOHADIR}/data
+	@${MKDIR} ${ILOHADIR}/data/users
+	@${MKDIR} ${ILOHADIR}/data/sessions
+	@${MKDIR} ${ILOHADIR}/data/cache
+	@${MKDIR} ${ILOHADIR}/data/uploads
+	@${MKDIR} ${ILOHADIR}/data/gpg
+#	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${ILOHADIR}/data
 .if !defined(WITHOUT_MYSQL)
 	@${MKDIR} ${DATADIR}
 	${CP} -Rp ${WRKSRC}/MySQL ${DATADIR}
@@ -60,6 +65,7 @@ post-install:
 		-e 's|%%DATADIR%%|${DATADIR}|g' \
 		-e 's|%%DOCSDIR%%|${DOCSDIR}|g' \
 		< ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${ILOHADIR}/data
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
