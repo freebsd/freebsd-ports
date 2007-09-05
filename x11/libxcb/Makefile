@@ -7,7 +7,7 @@
 
 PORTNAME=	libxcb
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	XORG/current/src/extras
 
@@ -21,12 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-proto.pc:${PORTSDIR}/x11/xcb-proto \
 		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
 
-.if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--disable-build-docs BUILD_DOCS=no
-.else
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
-		dot:${PORTSDIR}/graphics/graphviz
-.endif
+CONFIGURE_ARGS+=	--disable-build-docs --without-doxygen
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack

@@ -9,13 +9,3 @@
  pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = \
  xcb.pc \
-@@ -269,6 +269,10 @@
- xcb-xtest.pc.in \
- xcb-xv.pc.in \
- xcb-xvmc.pc.in
-+
-+ifeq ($(BUILD_DOCS),yes)
-+SUBDIRS += doc
-+endif
- 
- all: all-recursive
