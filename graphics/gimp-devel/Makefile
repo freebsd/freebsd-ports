@@ -37,7 +37,7 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/environ/pygimp.env:${PORTSDIR}/graph
 .endif
 
 .if !defined(WITHOUT_PRINT)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/plug-ins/print:${PORTSDIR}/print/gimp-devel-gutenprint
+RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/plug-ins/gutenprint:${PORTSDIR}/print/gimp-devel-gutenprint
 .endif
 
 do-install:	# empty
