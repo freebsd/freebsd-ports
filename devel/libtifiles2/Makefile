@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	libtifiles2
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtktiemu
+MASTER_SITE_SUBDIR=	tilp
+DISTFILES=	tilibs2-20070829${EXTRACT_SUFX}
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator file types library
 
-LIB_DEPENDS=	ticonv.2:${PORTSDIR}/converters/libticonv
+LIB_DEPENDS=	ticonv.3:${PORTSDIR}/converters/libticonv
 
 USE_AUTOTOOLS=	libtool:15
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack pkgconfig
 USE_LDCONFIG=	yes
@@ -33,4 +33,9 @@ PLIST_SUB=	NLS="@comment "
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-extract:
+	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/tilibs2/${DISTNAME}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
+
+.include <bsd.port.post.mk>
