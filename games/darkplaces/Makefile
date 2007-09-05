@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	darkplaces
-PORTVERSION=	20060725
-PORTREVISION=	3
+PORTVERSION=	20070711
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/twilight/darkplaces/files/
 DISTNAME=	${PORTNAME}engine${PORTVERSION}
@@ -17,6 +16,7 @@ COMMENT=	Quake engine modification
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	DP_FS_BASEDIR="${Q1DIR}"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKEFILE=	makefile
@@ -24,11 +24,11 @@ ALL_TARGET=	#
 
 OPTIONS=	CLIENT "Build GLX client" on \
 		DEDICATED "Build dedicated server" on \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
 		SDL "Build SDL client" on
 
 PLIST_FILES=	%%DATADIR%%/dummy
 PLIST_DIRS=	%%DATADIR%%
+PORTDOCS=	darkplaces.txt
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
@@ -58,10 +58,6 @@ EXE_TARGETS+=	${PORTNAME}-dedicated
 PLIST_FILES+=	bin/${PORTNAME}-dedicated
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
-MAKE_ENV+=	WITH_OPTIMIZED_CFLAGS=YES
-.endif
-
 .if defined(WITH_SDL)
 USE_SDL=	sdl
 ALL_TARGET+=	sdl-release
@@ -80,5 +76,9 @@ do-install:
 .endfor
 	@${MKDIR} ${DATADIR}
 	@${TOUCH} ${DATADIR}/dummy
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/darkplaces.txt ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
