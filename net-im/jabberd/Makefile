@@ -7,6 +7,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.1.15
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
 DIST_SUBDIR=	jabber
@@ -15,7 +16,6 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		gsasl.10:${PORTSDIR}/security/gsasl \
 		idn.16:${PORTSDIR}/dns/libidn
 
 OPTIONS=	MYSQL "Support MySQL (storage/auth/reg)" on \
@@ -27,6 +27,8 @@ OPTIONS=	MYSQL "Support MySQL (storage/auth/reg)" on \
 		PIPE "Enable pipe (auth/reg)" off \
 		ANON "Enable anonymous (auth/reg)" off \
 		FS "Filesystem storage (only for testing)" off \
+		GSASL "Authenticate via GNU SASL" on \
+		CYRUS_SASL "Authenticate via Cyrus SASL" off \
 		DEBUG "Compile with debug messages" on
 
 GNU_CONFIGURE=	yes
@@ -79,7 +81,7 @@ PLIST_SUB+=	SUB_PGSQL="@comment "
 
 .if defined(WITH_SQLITE)
 CONFIGURE_ARGS+=--enable-sqlite
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3-threads
 CFLAGS+=	${PTHREAD_CFLAGS}
 PLIST_SUB+=	SUB_SQLITE=""
 .else
@@ -147,6 +149,18 @@ CONFIGURE_ARGS+=--enable-anon
 PLIST_SUB+=	SUB_ANON=""
 .else
 PLIST_SUB+=	SUB_ANON="@comment "
+.endif
+
+.if defined(WITH_GSASL) && defined(WITH_CYRUS_SASL)
+IGNORE=	cannot be compiled with both, gsasl and cyrus-sasl. Please (re)run 'make config' and deselect either GSASL or CYRUS_SASL
+.elif defined(WITHOUT_GSASL) && !defined(WITH_CYRUS_SASL)
+IGNORE=	is useless without a sasl library. Please (re)run 'make config' and choose either GSASL or CYRUS_SASL
+.elif defined(WITH_GSASL)
+CONFIGURE_ARGS+=	--enable-sasl=gsasl
+LIB_DEPENDS+=		gsasl.10:${PORTSDIR}/security/gsasl
+.elif defined(WITH_CYRUS_SASL)
+CONFIGURE_ARGS+=	--enable-sasl=cyrus
+LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 
 MAN8=		c2s.8 jabberd.8 resolver.8 router.8 s2s.8 sm.8
