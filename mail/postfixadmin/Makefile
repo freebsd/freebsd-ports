@@ -9,8 +9,8 @@ PORTNAME=	postfixadmin
 PORTVERSION=	2.1.0
 PORTREVISION=	7
 CATEGORIES=	mail www
-MASTER_SITES=	http://high5.net/postfixadmin/ \
-		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	postfixadmin
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports.maintainer@evilphi.com
