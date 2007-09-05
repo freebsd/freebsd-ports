@@ -4816,6 +4816,7 @@ iksemel		ports/textproc/iksemel
 ilbc		ports/net/ilbc
 ilias		ports/www/ilias
 ilohamail	ports/mail/ilohamail
+ilohamail-devel	ports/mail/ilohamail-devel
 im		ports/mail/im
 im-ja		ports/japanese/im-ja
 imageindex	ports/graphics/imageindex
