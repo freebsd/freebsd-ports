@@ -3,4 +3,7 @@ multilingual webmail program that is easy to use and install. It runs on a
 stock, default build of PHP, and does not require databases (although
 database support is available).  IlohaMail supports IMAP and POP3.
 
+The devel branch is a rapidly moving target, and is not recommended for
+deployment. 
+
 WWW:	http://ilohamail.org/
