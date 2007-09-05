@@ -1,0 +1,11 @@
+--- modules/c/src/common/Makefile.in.orig	2007-07-17 18:37:16.000000000 +0000
++++ modules/c/src/common/Makefile.in	2007-08-27 04:04:48.776074307 +0000
+@@ -13,7 +13,7 @@
+ OBJ_PICS=stream.lo config.lo memory.lo
+ INCLUDES=@INCLUDES@
+ 
+-all	: common.o $(OBJ_PICS)
++all	: $(OBJ) $(OBJ_PICS)
+ 
+ common.o	: $(OBJ)
+ 	$(LD) -r -o $@ $(OBJ)

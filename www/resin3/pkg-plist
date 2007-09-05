@@ -5,9 +5,6 @@
 %%APP_NAME%%/lib/j2ee-management-10.jar
 %%APP_NAME%%/lib/javamail-14.jar
 %%APP_NAME%%/lib/jaxb-api.jar
-%%APP_NAME%%/lib/jaxb-impl.jar
-%%APP_NAME%%/lib/jaxb-xjc.jar
-%%APP_NAME%%/lib/jaxb1-impl.jar
 %%APP_NAME%%/lib/jaxrpc-15.jar
 %%APP_NAME%%/lib/jca-15.jar
 %%APP_NAME%%/lib/jms-11.jar
@@ -23,7 +20,7 @@
 %%APP_NAME%%/lib/webutil.jar
 %%APP_NAME%%/webapps/ROOT/index.jsp
 %%APP_NAME%%/webapps/resin-doc.war
-%%APP_NAME%%/libexec/libresin_os.so
+%%APP_NAME%%/%%RESIN_LIBEXEC%%/libresin_os.so
 etc/%%APP_NAME%%/app-default.xml
 etc/rc.d/%%APP_NAME%%.sh
 sbin/%%APP_NAME%%ctl
@@ -33,7 +30,7 @@ sbin/%%APP_NAME%%ctl
 @dirrm %%APP_NAME%%/lib
 @dirrm %%APP_NAME%%/webapps/ROOT
 @dirrm %%APP_NAME%%/webapps
-@dirrm %%APP_NAME%%/libexec
+@dirrm %%APP_NAME%%/%%RESIN_LIBEXEC%%
 @dirrm %%APP_NAME%%
 @unexec if cmp -s %D/etc/%%APP_NAME%%/resin.xml %D/etc/%%APP_NAME%%/resin.xml-dist; then rm -f %D/etc/%%APP_NAME%%/resin.xml ; else echo If permanently deleting this package, %D/etc/%%APP_NAME%%/resin.xml must be removed manually; fi
 etc/%%APP_NAME%%/resin.xml-dist
