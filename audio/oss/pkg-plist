@@ -11,10 +11,10 @@ sbin/ossdetect
 sbin/ossctl
 sbin/soundon
 sbin/soundoff
-lib/libOSSlib.so
+@comment lib/libOSSlib.so
 include/sys/soundcard.h
 @dirrmtry include/sys
-include/midiparser.h
+@comment include/midiparser.h
 lib/oss/modules/osscore.ko
 lib/oss/modules/ali5455.ko
 lib/oss/modules/allegro.ko
@@ -53,6 +53,7 @@ lib/oss/modules/ymf7xx.ko
 lib/oss/etc/devices.list
 @unexec rm -f %D/lib/oss/etc/installed_drivers
 @unexec rm -f %D/lib/oss/etc/legacy_devices
+@dirrm lib/oss/logs
 @dirrm lib/oss/etc
 lib/oss/version.dat
 lib/oss/sysfiles.list

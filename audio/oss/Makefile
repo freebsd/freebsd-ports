@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oss
-DISTVERSION=	4.0-build1004
+DISTVERSION=	4.0-build1006
 CATEGORIES=	audio kld
 MASTER_SITES=	http://developer.opensound.com/sources/stable/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-cddl
@@ -40,13 +40,15 @@ BROKEN=		Does not compile on 5.x.
 .endif
 
 pre-patch:
-	${FIND} ${WRKDIR}/${DISTNAME} -type f -name '*.[hc]' -or -name '*.man' | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|"/usr/include/stdarg.h"|<machine/stdarg.h>|g' \
-		-e 's|/usr/|${PREFIX}/|g' \
-		-e 's|/etc/oss|${PREFIX}/etc/oss|g'
-	${REINPLACE_CMD} -e "s|<i386/include/intr_machdep.h>|<${ARCH}/include/intr_machdep.h>|g" \
+	${REINPLACE_CMD} -e 's|"/usr/include/stdarg.h"|<${ARCH}/include/stdarg.h>|g' \
+		-e "s|<i386/include/intr_machdep.h>|<${ARCH}/include/intr_machdep.h>|g" \
+		${WRKDIR}/${DISTNAME}/setup/FreeBSD/oss/build/module.inc \
 		${WRKDIR}/${DISTNAME}/setup/FreeBSD/oss/build/osscore.c
 	${REINPLACE_CMD} -e "s|mkdir|mkdir -p|" ${WRKDIR}/${DISTNAME}/setup/FreeBSD/build.sh
+	${FIND} ${WRKDIR}/${DISTNAME} -type f -name '*.[hc]' -or -name '*.man' | \
+		${XARGS} ${REINPLACE_CMD} \
+		-e 's|/usr/|${PREFIX}/|g' \
+		-e 's|/etc/oss|${PREFIX}/etc/oss|g'
 
 post-patch:
 	${FIND} ${WRKDIR} -name soundon -or -name soundoff -or -name build.sh | ${XARGS} ${REINPLACE_CMD} \
@@ -64,13 +66,14 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/sbin/ossctl ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/prototype/usr/sbin/soundon ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/prototype/usr/sbin/soundoff ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/lib/oss/lib/libOSSlib.so ${PREFIX}/lib
+	#${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/lib/oss/lib/libOSSlib.so ${PREFIX}/lib
 	@# oss.conf does not contain any user-configurable data; it's ok to overwrite it.
 	${INSTALL_DATA} ${WRKSRC}/prototype/etc/oss.conf ${PREFIX}/etc/oss.conf
 	${MKDIR} ${PREFIX}/include/sys
 	${INSTALL_DATA} ${WRKSRC}/prototype/usr/lib/oss/include/sys/soundcard.h ${PREFIX}/include/sys
-	${INSTALL_DATA} ${WRKSRC}/prototype/usr/lib/oss/include/midiparser.h ${PREFIX}/include
+	#${INSTALL_DATA} ${WRKSRC}/prototype/usr/lib/oss/include/midiparser.h ${PREFIX}/include
 	${MKDIR} ${PREFIX}/lib/oss
+	${MKDIR} ${PREFIX}/lib/oss/logs
 	${MKDIR} ${PREFIX}/lib/oss/etc
 	${INSTALL_DATA} ${WRKSRC}/prototype/usr/lib/oss/etc/devices.list ${PREFIX}/lib/oss/etc
 	${INSTALL_DATA} ${WRKSRC}/prototype/usr/lib/oss/version.dat ${PREFIX}/lib/oss
