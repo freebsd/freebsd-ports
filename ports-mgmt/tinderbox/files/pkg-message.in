@@ -103,9 +103,10 @@ The following walkthrough is the webserver setup:
 
 Turn on "mod_alias" and add the following lines:
 
-alias.url = ( "/tb/packages/" => "%%PREFIX%%/tinderbox/packages/",
-              "/tb/errors/" => "%%PREFIX%%/tinderbox/errors/",
-              "/tb/" => "%%PREFIX%%/tinderbox/scripts/www-exp/" )
+alias.url = (	"/tb/logs/" => "%%PREFIX%%/tinderbox/logs/",
+		"/tb/packages/" => "%%PREFIX%%/tinderbox/packages/",
+		"/tb/errors/" => "%%PREFIX%%/tinderbox/errors/",
+		"/tb/" => "%%PREFIX%%/tinderbox/scripts/www-exp/" )
 dir-listing.activate = "enable"
 
   Check your system by going to http://localhost/tb/
