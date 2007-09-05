@@ -36,6 +36,7 @@
     SUBDIR += chryzodus
     SUBDIR += clarence
     SUBDIR += cln
+    SUBDIR += clp
     SUBDIR += concorde
     SUBDIR += convertall
     SUBDIR += coq
