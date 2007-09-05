@@ -11,6 +11,9 @@ lib/libemeraldengine.so.0
 lib/emerald/engines/liblegacy.so
 lib/emerald/engines/liblegacy.la
 lib/emerald/engines/liblegacy.a
+lib/emerald/engines/libline.so
+lib/emerald/engines/libline.la
+lib/emerald/engines/libline.a
 lib/emerald/engines/libvrunner.so
 lib/emerald/engines/libvrunner.la
 lib/emerald/engines/libvrunner.a
@@ -53,23 +56,23 @@ share/locale/cs/LC_MESSAGES/emerald.mo
 share/locale/de_DE/LC_MESSAGES/emerald.mo
 share/locale/en_GB/LC_MESSAGES/emerald.mo
 share/locale/es_AR/LC_MESSAGES/emerald.mo
-share/locale/es_ES/LC_MESSAGES/emerald.mo
-share/locale/fr_FR/LC_MESSAGES/emerald.mo
 share/locale/gu_IN/LC_MESSAGES/emerald.mo
 share/locale/hu_HU/LC_MESSAGES/emerald.mo
-share/locale/it/LC_MESSAGES/emerald.mo
 share/locale/ja/LC_MESSAGES/emerald.mo
-share/locale/ko_KR/LC_MESSAGES/emerald.mo
 share/locale/nb_NO/LC_MESSAGES/emerald.mo
 share/locale/nl/LC_MESSAGES/emerald.mo
 share/locale/pt_BR/LC_MESSAGES/emerald.mo
-share/locale/pt_PT/LC_MESSAGES/emerald.mo
 share/locale/sv_FI/LC_MESSAGES/emerald.mo
 share/locale/sv_SE/LC_MESSAGES/emerald.mo
 share/locale/tr_TR/LC_MESSAGES/emerald.mo
 share/locale/zh_CN/LC_MESSAGES/emerald.mo
 share/locale/zh_HK/LC_MESSAGES/emerald.mo
 share/locale/zh_TW/LC_MESSAGES/emerald.mo
+share/locale/es/LC_MESSAGES/emerald.mo
+share/locale/fr/LC_MESSAGES/emerald.mo
+share/locale/ko/LC_MESSAGES/emerald.mo
+share/locale/pt/LC_MESSAGES/emerald.mo
+share/locale/it_IT/LC_MESSAGES/emerald.mo
 share/pixmaps/emerald-theme-manager-icon.png
 @dirrmtry share/mime-info
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -82,8 +85,6 @@ share/pixmaps/emerald-theme-manager-icon.png
 @dirrmtry share/locale/sv_FI
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
 @dirrmtry share/locale/nb_NO
-@dirrmtry share/locale/ko_KR/LC_MESSAGES
-@dirrmtry share/locale/ko_KR
 @dirrmtry share/locale/ja_JP/LC_MESSAGES
 @dirrmtry share/locale/ja_JP
 @dirrmtry share/locale/it_IT/LC_MESSAGES

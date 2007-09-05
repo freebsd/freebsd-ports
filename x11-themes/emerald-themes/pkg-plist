@@ -466,46 +466,63 @@ share/emerald/themes/Adonis/buttons.min.png
 share/emerald/themes/Adonis/buttons.unabove.png
 share/emerald/themes/Adonis/buttons.sticky.png
 share/emerald/themes/Adonis/buttons.unsticky.png
-@dirrm share/emerald/themes/Adonis_Mod
-@dirrm share/emerald/themes/Beryl_Default
-@dirrm share/emerald/themes/Blue_Satin
-@dirrm share/emerald/themes/ButtonLess
-@dirrm share/emerald/themes/Canopy
-@dirrm share/emerald/themes/Compiz-Gilouche
-@dirrm share/emerald/themes/Crystal-ICE
-@dirrm share/emerald/themes/Fayal
-@dirrm share/emerald/themes/LimeRefresh
-@dirrm share/emerald/themes/Minimal
-@dirrm share/emerald/themes/Mirage
-@dirrm share/emerald/themes/Orangeglass
-@dirrm share/emerald/themes/Orangeglow
-@dirrm share/emerald/themes/Paper
-@dirrm share/emerald/themes/Pinx
-@dirrm share/emerald/themes/PlatinUm
-@dirrm share/emerald/themes/Red-Alice
-@dirrm share/emerald/themes/Rezlooks-Candy-1pxb
-@dirrm share/emerald/themes/Rezlooks-Candy
-@dirrm share/emerald/themes/Rezlooks-Graphite-1pxb
-@dirrm share/emerald/themes/Rezlooks-Graphite
-@dirrm share/emerald/themes/Rezlooks-PastelGreen-1pxb
-@dirrm share/emerald/themes/SlateHorn_Blue
-@dirrm share/emerald/themes/Rezlooks-PastelGreen
-@dirrm share/emerald/themes/Scaled_Black_Mod
-@dirrm share/emerald/themes/Sky
-@dirrm share/emerald/themes/SlateHorn_Green
-@dirrm share/emerald/themes/SlateHorn_Red
-@dirrm share/emerald/themes/SlateHorn_Yellow
-@dirrm share/emerald/themes/SolidSlateModified
-@dirrm share/emerald/themes/TiSkin_Classic
-@dirrm share/emerald/themes/VRunner-Quicksilver
-@dirrm share/emerald/themes/Wombat_Black
-@dirrm share/emerald/themes/Wombat_Gray
-@dirrm share/emerald/themes/euh
-@dirrm share/emerald/themes/frame
-@dirrm share/emerald/themes/funky
-@dirrm share/emerald/themes/human-ubuntulooks
-@dirrm share/emerald/themes/orangelook-colonel
-@dirrm share/emerald/themes/orangelook
-@dirrm share/emerald/themes/Adonis
-@dirrm share/emerald/themes
+share/emerald/themes/BlackLine/theme.screenshot.png
+share/emerald/themes/BlackLine/buttons.close.png
+share/emerald/themes/BlackLine/buttons.restore.png
+share/emerald/themes/BlackLine/buttons.max.png
+share/emerald/themes/BlackLine/buttons.min.png
+share/emerald/themes/BlackLine/theme.ini
+share/emerald/themes/Fogo/theme.screenshot.png
+share/emerald/themes/Fogo/theme.ini
+share/emerald/themes/gray-neu/buttons.close.png
+share/emerald/themes/gray-neu/buttons.max.png
+share/emerald/themes/gray-neu/buttons.restore.png
+share/emerald/themes/gray-neu/theme.ini
+share/emerald/themes/gray-neu/buttons.min.png
+share/emerald/themes/gray-neu/theme.screenshot.png
+@dirrmtry share/emerald/themes/Adonis_Mod
+@dirrmtry share/emerald/themes/Beryl_Default
+@dirrmtry share/emerald/themes/Blue_Satin
+@dirrmtry share/emerald/themes/ButtonLess
+@dirrmtry share/emerald/themes/Canopy
+@dirrmtry share/emerald/themes/Compiz-Gilouche
+@dirrmtry share/emerald/themes/Crystal-ICE
+@dirrmtry share/emerald/themes/Fayal
+@dirrmtry share/emerald/themes/LimeRefresh
+@dirrmtry share/emerald/themes/Minimal
+@dirrmtry share/emerald/themes/Mirage
+@dirrmtry share/emerald/themes/Orangeglass
+@dirrmtry share/emerald/themes/Orangeglow
+@dirrmtry share/emerald/themes/Paper
+@dirrmtry share/emerald/themes/Pinx
+@dirrmtry share/emerald/themes/PlatinUm
+@dirrmtry share/emerald/themes/Red-Alice
+@dirrmtry share/emerald/themes/Rezlooks-Candy-1pxb
+@dirrmtry share/emerald/themes/Rezlooks-Candy
+@dirrmtry share/emerald/themes/Rezlooks-Graphite-1pxb
+@dirrmtry share/emerald/themes/Rezlooks-Graphite
+@dirrmtry share/emerald/themes/Rezlooks-PastelGreen-1pxb
+@dirrmtry share/emerald/themes/SlateHorn_Blue
+@dirrmtry share/emerald/themes/Rezlooks-PastelGreen
+@dirrmtry share/emerald/themes/Scaled_Black_Mod
+@dirrmtry share/emerald/themes/Sky
+@dirrmtry share/emerald/themes/SlateHorn_Green
+@dirrmtry share/emerald/themes/SlateHorn_Red
+@dirrmtry share/emerald/themes/SlateHorn_Yellow
+@dirrmtry share/emerald/themes/SolidSlateModified
+@dirrmtry share/emerald/themes/TiSkin_Classic
+@dirrmtry share/emerald/themes/VRunner-Quicksilver
+@dirrmtry share/emerald/themes/Wombat_Black
+@dirrmtry share/emerald/themes/Wombat_Gray
+@dirrmtry share/emerald/themes/euh
+@dirrmtry share/emerald/themes/frame
+@dirrmtry share/emerald/themes/funky
+@dirrmtry share/emerald/themes/human-ubuntulooks
+@dirrmtry share/emerald/themes/orangelook-colonel
+@dirrmtry share/emerald/themes/orangelook
+@dirrmtry share/emerald/themes/Adonis
+@dirrmtry share/emerald/themes/gray-neu
+@dirrmtry share/emerald/themes/Fogo
+@dirrmtry share/emerald/themes/BlackLine
+@dirrmtry share/emerald/themes
 @dirrmtry share/emerald
