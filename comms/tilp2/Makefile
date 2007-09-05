@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tilp2
-PORTVERSION=	1.02
+PORTVERSION=	1.07
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tilp
@@ -16,11 +16,9 @@ COMMENT=	TI Linking Program
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	ticables2.1:${PORTSDIR}/comms/libticables2 \
-		tifiles2.3:${PORTSDIR}/devel/libtifiles2 \
-		ticalcs2.5:${PORTSDIR}/comms/libticalcs2 \
-		ticonv.2:${PORTSDIR}/converters/libticonv
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.01
+		tifiles2.4:${PORTSDIR}/devel/libtifiles2 \
+		ticalcs2.6:${PORTSDIR}/comms/libticalcs2 \
+		ticonv.3:${PORTSDIR}/converters/libticonv
 
 USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
@@ -35,9 +33,10 @@ CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .endif
 
+CONFIGURE_ARGS+=	--without-kde
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
 
-MAN1=	tilp-2.1
+MAN1=	tilp.1
 
 .include <bsd.port.mk>
