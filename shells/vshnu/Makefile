@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vshnu
-PORTVERSION=	1.0211
+PORTVERSION=	1.0300
 CATEGORIES=	shells perl5
 MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/vshnu/
 
