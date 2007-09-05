@@ -4,7 +4,6 @@ clients, utilities and development tools.
 This package includes the following major components:
 
  * slapd - a stand-alone LDAP directory server
- * slurpd - a stand-alone LDAP replication server
  * LDIF tools - data conversion tools for use with slapd
 
 These releases are meant for testing purposes only, they are not for

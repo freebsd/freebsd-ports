@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-DISTVERSION=		2.4.4alpha
+DISTVERSION=		2.4.5beta
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -38,8 +38,8 @@ WANT_OPENLDAP_VER?=	24
 BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
-PORTREVISION_CLIENT=	1
-PORTREVISION_SERVER=	3
+PORTREVISION_CLIENT=	0
+PORTREVISION_SERVER=	0
 
 .if !defined(CLIENT_ONLY)
 OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
@@ -73,8 +73,7 @@ OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
 		VALSORT "With Value Sorting overlay" off \
 		ACI "With per-object ACIs (experimental)" off \
 		DYNACL "With run-time loadable ACLs (experimental)" off \
-		DYNAMIC_BACKENDS "Build dynamic backends" on \
-		SLURPD "Build slurpd replication daemon" on
+		DYNAMIC_BACKENDS "Build dynamic backends" on
 .endif
 
 .if defined(CLIENT_ONLY)
@@ -132,11 +131,9 @@ SCHEMATA=		collective corba core cosine duaconf dyngroup \
 LDAP_RUN_DIR?=		/var/run/openldap
 LOCALSTATEDIR?=		/var/db
 DATABASEDIR?=		${LOCALSTATEDIR}/openldap-data
-SLURPDIR?=		${LOCALSTATEDIR}/openldap-slurp
 
 SUB_LIST+=		LDAP_RUN_DIR=${LDAP_RUN_DIR} \
 			DATABASEDIR=${DATABASEDIR} \
-			SLURPDIR=${SLURPDIR} \
 			PKGNAME=${PKGNAME}
 
 CONFIGURE_ARGS=		--with-threads=posix \
@@ -169,7 +166,7 @@ USE_LDCONFIG=		yes
 
 USE_LDCONFIG=		${PREFIX}/libexec/openldap
 SUB_FILES+=		pkg-install pkg-message pkg-deinstall
-USE_RC_SUBR=		slapd.sh ${SLURPDSH}
+USE_RC_SUBR=		slapd.sh
 
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
@@ -289,11 +286,11 @@ PLIST_SUB+=		BACK_BDB="@comment " \
 			BACK_HDB="@comment "
 .else
 
-WITH_BDB_VER?=		44
-INVALID_BDB_VER=	46
+WITH_BDB_VER?=		46
+INVALID_BDB_VER=	42
 USE_BDB=		yes
 
-.if ${WITH_BDB_VER} >= 42
+.if ${WITH_BDB_VER} >= 43
 CONFIGURE_ARGS+=	--enable-bdb=${BACKEND_ENABLE} \
 			--enable-hdb=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_BDB=${BACKEND_PLIST} \
@@ -390,14 +387,6 @@ PLIST_SUB+=		SLAPI="@comment "
 .if defined(WITH_SLP)
 CONFIGURE_ARGS+=	--enable-slp
 LIB_DEPENDS+=		slp.1:${PORTSDIR}/net/openslp
-.endif
-
-.if defined(WANT_OPENLDAP_THREADS) && !defined(WITHOUT_SLURPD)
-SLURPDSH=		slurpd.sh
-PLIST_SUB+=		SLURPD=""
-.else
-PLIST_SUB+=		SLURPD="@comment "
-CONFIGURE_ARGS+=	--disable-slurpd
 .endif
 
 # Include tcp-wrapper support

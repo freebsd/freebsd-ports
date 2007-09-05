@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 @unexec %%RC_DIR%%/etc/rc.d/slapd%%RC_SUFX%% stop 2>&1 >/dev/null || true
-%%SLURPD%%@unexec %%RC_DIR%%/etc/rc.d/slurpd%%RC_SUFX%% stop 2>&1 >/dev/null || true
 etc/openldap/schema/README
 etc/openldap/schema/core.ldif
 etc/openldap/schema/cosine.ldif
@@ -66,7 +65,6 @@ etc/openldap/DB_CONFIG.example
 %%BACK_SQL%%libexec/openldap/back_sql.la
 %%BACK_SQL%%libexec/openldap/back_sql.so
 libexec/slapd
-%%SLURPD%%libexec/slurpd
 @dirrmtry libexec/openldap
 sbin/slapacl
 sbin/slapadd
@@ -81,6 +79,4 @@ sbin/slaptest
 @dirrmtry %%LDAP_RUN_DIR%%
 @exec mkdir -p %%DATABASEDIR%%
 @dirrmtry %%DATABASEDIR%%
-%%SLURPD%%@exec mkdir -p %%SLURPDIR%%
-%%SLURPD%%@dirrmtry %%SLURPDIR%%
 @cwd %%PREFIX%%
