@@ -1,6 +1,6 @@
---- setup/FreeBSD/sbin/soundon.orig	Tue Feb 20 23:36:33 2007
-+++ setup/FreeBSD/sbin/soundon	Mon Jun 25 14:21:10 2007
-@@ -1,13 +1,13 @@
+--- setup/FreeBSD/sbin/soundon.orig	2007-08-28 03:30:00.000000000 -0400
++++ setup/FreeBSD/sbin/soundon	2007-09-05 14:22:59.000000000 -0400
+@@ -1,10 +1,10 @@
  #!/bin/sh
  
 -if test -f /etc/oss.conf
@@ -13,12 +13,8 @@
 +  OSSLIBDIR=%%PREFIX%%/lib/oss
  fi
  
--LOG=$OSSLIBDIR/logs/soundon.log
-+LOG=/var/log/soundon.log
- echo "Open Sound System starting" `date` > $LOG
- echo "OSS version: " `cat $OSSLIBDIR/version.dat` >> $LOG 2>&1
- echo "Kernel version: " `uname -a` >> $LOG
-@@ -29,7 +29,7 @@
+ mkdir $OSSLIBDIR/logs > /dev/null 2>&1
+@@ -31,7 +31,7 @@
  
  if test -f $OSSLIBDIR/etc/license.asc
  then
@@ -27,7 +23,7 @@
  fi
  
  if ! /sbin/kldload $OSSLIBDIR/modules/osscore.ko
-@@ -50,7 +50,7 @@
+@@ -52,7 +52,7 @@
  done
  
  echo "+++ ossinfo -v3 +++" >> $LOG
@@ -36,7 +32,7 @@
  echo "+++ /dev/sndstat +++" >> $LOG
  cat /dev/sndstat >> $LOG 2>&1
  echo "+++ dmesg +++" >> $LOG
-@@ -65,7 +65,7 @@
+@@ -67,7 +67,7 @@
  	sh $OSSLIBDIR/etc/legacy_devices >> $LOG 2>&1
  fi
  
@@ -45,7 +41,7 @@
  
  if test ! -f /dev/dsp
  then
-@@ -74,7 +74,7 @@
+@@ -76,7 +76,7 @@
  
  ls -l /dev/dsp* /dev/sndstat /dev/mixer* /dev/oss/*/* >> $LOG 2>&1
  

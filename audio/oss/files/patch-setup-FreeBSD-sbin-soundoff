@@ -1,5 +1,5 @@
---- setup/FreeBSD/sbin/soundoff.orig	Fri Jun 22 15:30:11 2007
-+++ setup/FreeBSD/sbin/soundoff	Fri Jun 22 15:30:38 2007
+--- setup/FreeBSD/sbin/soundoff.orig	2007-07-18 19:22:00.000000000 -0400
++++ setup/FreeBSD/sbin/soundoff	2007-09-05 13:18:02.000000000 -0400
 @@ -1,10 +1,10 @@
  #!/bin/sh
  
@@ -14,3 +14,12 @@
  fi
  
  if ! /sbin/kldstat | grep -q osscore.ko
+@@ -22,7 +22,7 @@
+ # Save mixer settings automatically if requested
+ if test -f $OSSLIBDIR/etc/userdefs && grep -q "autosave_mixer yes" $OSSLIBDIR/etc/userdefs
+ then
+-	/usr/sbin/savemixer 
++	%%PREFIX%%/sbin/savemixer 
+ fi
+ 
+ for n in `cat $OSSLIBDIR/etc/installed_drivers | sed 's/ .*//'`
