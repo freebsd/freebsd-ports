@@ -37,7 +37,7 @@ BSF_JAR=	bsf.jar
 DEST_BSF_JAR=	ibm-${BSF_JAR}
 
 JYTHON_PORT=	${PORTSDIR}/lang/jython
-JYTHON_PREFIX=	${LOCALBASE}/jython22
+JYTHON_PREFIX=	${LOCALBASE}/lib/jython22
 JYTHON_JAR=	jython.jar
 
 JARFILES=	${DEST_ISQL_JAR} \

@@ -45,7 +45,7 @@ PORTDOCS=	\
 .endif
 
 # jython
-JYTHON_PREFIX=	${LOCALBASE}/jython22
+JYTHON_PREFIX=	${LOCALBASE}/lib/jython22
 JYTHON_JAR=	${JYTHON_PREFIX}/jython.jar
 
 post-extract:
