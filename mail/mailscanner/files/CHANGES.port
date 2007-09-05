@@ -1,3 +1,10 @@
+Version 4.62.9
+==============
+- Upgrade to 4.62.9
+- update_spamassassin and update_spamassassin.cron are untouched again. I
+  currently do not have enough time to get this running the FreeBSD way.
+  Patches are welcome.
+
 Version 4.61.7
 ==============
 - Upgrade to 4.61.7

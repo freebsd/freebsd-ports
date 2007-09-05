@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.61.7
+PORTVERSION=	4.62.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -51,7 +51,7 @@ OPTIONS=	SPAMASSASSIN "Install SpamAssassin" on \
 
 CONFLICTS=	MailScanner-devel-[0-9]*
 
-PATCHLEVEL=	1
+PATCHLEVEL=	3
 
 USE_PERL5=	yes
 
@@ -125,7 +125,7 @@ USE_RC_SUBR=	mailscanner mta
 SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
 post-extract:
-	cd ${WRKSRC} && ${TAR} xvzf perl-tar/MailScanner-${PORTVERSION}-${PATCHLEVEL}.tar.gz > /dev/null && ${MV} MailScanner-${PORTVERSION}/* .
+	cd ${WRKSRC} && ${TAR} xvzf perl-tar/MailScanner-${PORTVERSION}-${PATCHLEVEL}.tar.gz > /dev/null && ${MV} MailScanner-${PORTVERSION}-${PATCHLEVEL}/* .
 
 do-build:
 	${PERL} -pi -e \
