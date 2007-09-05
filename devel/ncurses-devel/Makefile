@@ -28,7 +28,7 @@ PATCHES=	20061223 20061230 20070106 20070113 20070120 20070127 20070128 \
 		20070317 20070324 20070331 20070407 20070414 20070421 20070428 \
 		20070505 20070512 20070526 20070602 20070609 20070612 20070623 \
 		20070630 20070707 20070714 20070716 20070721 20070728 20070812 \
-		20070818 20070825
+		20070818 20070825 20070901
 
 RELEASE=	5.6
 
@@ -136,8 +136,10 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's,$$(INSTALL_PROG) ncurses-config,@INSTALL_SCRIPT@ ncurses-config,' ${WRKSRC}/misc/Makefile.in
 	@${RM} -rf ${WRKSRC}/tack \
-	 ${WRKSRC}/Ada95/src/terminal_interface-curses.adb
+	 ${WRKSRC}/Ada95/src/terminal_interface-curses.adb \
 	 ${WRKSRC}/mkinstalldirs
+	@${REINPLACE_CMD} -i "" -E -e 's,(wgetparent|wgetscrreg) \(,\1(,' \
+		${WRKSRC}/man/curs_opaque.3x
 
 post-configure:
 .if !defined(WITHOUT_WIDEC)
