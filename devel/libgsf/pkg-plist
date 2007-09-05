@@ -1,6 +1,8 @@
 bin/gsf
 bin/gsf-office-thumbnailer
 bin/gsf-vba-dump
+include/libgsf-1/gsf-gvfs/gsf-input-gvfs.h
+include/libgsf-1/gsf-gvfs/gsf-output-gvfs.h
 include/libgsf-1/gsf-win32/gsf-input-win32.h
 include/libgsf-1/gsf-win32/gsf-output-win32.h
 include/libgsf-1/gsf/gsf-blob.h
@@ -91,8 +93,16 @@ share/doc/gsf/sources.html
 share/doc/gsf/style.css
 share/doc/gsf/up.png
 share/locale/es/LC_MESSAGES/libgsf.mo
+share/locale/oc/LC_MESSAGES/libgsf.mo
 share/locale/sv/LC_MESSAGES/libgsf.mo
+share/locale/zh_HK/LC_MESSAGES/libgsf.mo
+share/locale/zh_TW/LC_MESSAGES/libgsf.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrm share/doc/gsf
 @dirrm include/libgsf-1/gsf-win32
+@dirrm include/libgsf-1/gsf-gvfs
 @dirrm include/libgsf-1/gsf
 @dirrm include/libgsf-1

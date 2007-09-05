@@ -21,7 +21,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 USE_GNOME=	gnomehack libgsf gnomevfs2 ltverhack intlhack
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc/gsf \
-		--with-bz2 --with-gnome
+		--with-bz2 --with-gnome --without-gvfs
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgsf-1"
 
