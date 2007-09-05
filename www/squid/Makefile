@@ -75,7 +75,7 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	squid
-PORTVERSION=	2.6.14
+PORTVERSION=	2.6.15
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -94,7 +94,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/Versions/v2/2.6/ \
 		http://www2.tw.squid-cache.org/Versions/v2/2.6/
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.6.STABLE14
+DISTNAME=	squid-2.6.STABLE15
 DIST_SUBDIR=	squid2.6
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -106,7 +106,7 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v2/2.6/changesets
-PATCHFILES=	11534.patch 11547.patch 11548.patch
+PATCHFILES=	11624.patch 11629.patch 11631.patch 11635.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -378,9 +378,9 @@ STRIP=
 # If you do not define SQUID_LANGUAGES yourself, all available language files
 # will be installed; the default language will be English.
 
-SQUID_LANGUAGES?=	Azerbaijani Bulgarian Catalan Czech Danish Dutch \
-			English Estonian Finnish French German Greek Hebrew \
-			Hungarian Italian Japanese Korean Lithuanian \
+SQUID_LANGUAGES?=	Armenian Azerbaijani Bulgarian Catalan Czech Danish \
+			Dutch English Estonian Finnish French German Greek \
+			Hebrew Hungarian Italian Japanese Korean Lithuanian \
 			Polish Portuguese Romanian Russian-1251 Russian-koi8-r \
 			Serbian Simplify_Chinese Slovak Spanish Swedish \
 			Traditional_Chinese Turkish
@@ -406,7 +406,9 @@ PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
 PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+	    -e 's|VERSION=.*2\.6\.STABLE15|&+PatchSets-20070903|' \
+	    ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%SQUID_UID%%|${SQUID_UID}|g' \
 	    -e 's|%%SQUID_GID%%|${SQUID_GID}|g' \
 	    -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/cf.data.pre
