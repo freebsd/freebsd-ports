@@ -1,8 +1,8 @@
-NOPROFILE=	yes
+NO_PROFILE=	yes
 LIB=		itcl
 ITCL_LIBRARY=	${PREFIX}/lib/itcl${MAJOR}.${MINOR}
 CFLAGS+=	-I. -I./../generic \
-		-I${PREFIX}/include/tcl8.4/generic \
+		-I${TCL_INCLUDEDIR}/generic \
 		-DHAVE_GETCWD=1 -DNO_VALUES_H=1 -DHAVE_UNISTD_H=1 -DUSE_TERMIOS=1\
 		-DHAVE_SYS_TIME_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_TM_ZONE=1\
 		-DHAVE_TM_GMTOFF=1 -DHAVE_ST_BLKSIZE=1 -DSTDC_HEADERS=1\
@@ -11,7 +11,11 @@ CFLAGS+=	-I. -I./../generic \
 		-DHAVE_SYS_FILIO_H=1 \
 		-DRETSIGTYPE=void \
 		-DITCL_LIBRARY=\"${ITCL_LIBRARY}\"
-LDADD+=		-L${PREFIX}/lib -ltcl84
+LDADD+=		-L${PREFIX}/lib -ltcl${USE_TCL}
+
+.if ${USE_TCL} >= 85
+LDADD+=		-ltclstub${USE_TCL}
+.endif
 
 .PATH:	${.CURDIR}/unix ${.CURDIR}/generic ${.CURDIR}/man
 
