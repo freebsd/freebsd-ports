@@ -2,14 +2,11 @@
 #
 # The executable needs to be run from its data directory, and needs to store
 # configuration in it. We therefore mirror the data directory hierarchy in
-# ~/.cube, and create symlinks to the data files.
+# ~/.sdlmame, and create symlinks to the data files.
 #
 
-if [ -d ~/.sdlmame ]
+if [ ! -d ~/.sdlmame ]
 then
-	echo "Using existing ~/.sdlmame directory."
-else
-	echo "Creating ~/.sdlmame directory."
 	cd %%DATADIR%% || exit 1
 	find * -type d -exec mkdir -p ~/.sdlmame/{} \;
 	find * -type f -exec ln -s %%DATADIR%%/{} ~/.sdlmame/{} \; 2>/dev/null
