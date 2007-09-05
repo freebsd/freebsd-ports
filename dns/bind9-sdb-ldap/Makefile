@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bind9
-PORTVERSION=	9.3.2
+PORTVERSION=	9.4.1.1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -23,7 +23,7 @@ USE_OPENLDAP=	yes
 CONFLICTS=	bind-8.* bind84-8.* bind9-9.* bind9-dlz-* host-* skalibs-*
 
 # ISC releases things like 9.3.0rc1, which our versioning doesn't like
-ISCVERSION=	9.3.2
+ISCVERSION=	9.4.1-P1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --with-openssl \
@@ -86,6 +86,7 @@ MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
 MAN5=	named.conf.5 rndc.conf.5
 MAN8=	dnssec-keygen.8 dnssec-signzone.8 lwresd.8 named-checkconf.8 \
 	named-checkzone.8 named.8 nsupdate.8 rndc-confgen.8 rndc.8
+MLINKS=	named-checkzone.8 named-compilezone.8
 
 pre-fetch:
 .if defined(PORT_REPLACES_BASE_BIND9)

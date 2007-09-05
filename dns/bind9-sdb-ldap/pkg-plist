@@ -130,6 +130,7 @@ include/isc/resultclass.h
 include/isc/rwlock.h
 include/isc/serial.h
 include/isc/sha1.h
+include/isc/sha2.h
 include/isc/sockaddr.h
 include/isc/socket.h
 include/isc/stdio.h
@@ -159,6 +160,7 @@ include/isccc/symtype.h
 include/isccc/types.h
 include/isccc/util.h
 include/isccc/version.h
+include/isccfg/aclconf.h
 include/isccfg/cfg.h
 include/isccfg/grammar.h
 include/isccfg/log.h
@@ -189,6 +191,7 @@ sbin/lwresd
 sbin/named
 sbin/named-checkconf
 sbin/named-checkzone
+sbin/named-compilezone
 sbin/rndc
 sbin/rndc-confgen
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
@@ -204,6 +207,7 @@ sbin/rndc-confgen
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch07.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch08.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch09.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch10.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.html
 %%PORTDOCS%%%%DOCSDIR%%/misc/dnssec
 %%PORTDOCS%%%%DOCSDIR%%/misc/format-options.pl
