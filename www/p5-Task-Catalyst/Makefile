@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Task-Catalyst
-PORTVERSION=	2.0000
+PORTVERSION=	2.0001
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Task
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
@@ -20,6 +19,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7007:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Catalyst-Log-Log4perl>=0.1:${PORTSDIR}/www/p5-Catalyst-Log-Log4perl \
 		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
+		p5-Catalyst-Plugin-HTML-Widget>=1.1:${PORTSDIR}/www/p5-Catalyst-Plugin-HTML-Widget \
 		p5-Catalyst-Controller-FormBuilder>=0.03:${PORTSDIR}/www/p5-Catalyst-Controller-FormBuilder \
 		p5-Catalyst-Plugin-StackTrace>=0.02:${PORTSDIR}/www/p5-Catalyst-Plugin-StackTrace \
 		p5-Catalyst-Plugin-Prototype>=1.32:${PORTSDIR}/www/p5-Catalyst-Plugin-Prototype \
