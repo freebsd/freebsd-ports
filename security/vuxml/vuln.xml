@@ -33,7 +33,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Note:  Please add new entries to the beginning of this file.
 
 -->
-<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="72cdf2ab-5b87-11dc-812d-0011098b2f36">
+    <topic> lsh -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>lsh</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/14609">
+	  <p>A vulnerability has been reported in LSH, which potentially
+	    can be exploited by malicious people to cause a DoS (Denial
+	    of Service).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2003-0826</cvename>
+      <cvename>CVE-2005-0814</cvename>
+      <url>http://secunia.com/advisories/14609</url>
+    </references>
+    <dates>
+      <discovery>2005-03-17</discovery>
+      <entry>2007-09-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="45500f74-5947-11dc-87c1-000e2e5785ad">
     <topic>fetchmail -- denial of service on reject of local warning
       message</topic>
