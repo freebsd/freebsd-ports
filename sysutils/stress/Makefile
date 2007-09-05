@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stress
-PORTVERSION=	0.18.8
+PORTVERSION=	0.18.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://weather.ou.edu/~apw/projects/stress/ \
 		http://fresh.t-systems-sfr.com/unix/src/privat2/
