@@ -6,7 +6,7 @@
 %%DATADIR%%/feed.php
 %%DATADIR%%/header.php
 %%DATADIR%%/htaccess.dist
-%%DATADIR%%/flyspray.conf.php
+%%DATADIR%%/flyspray.conf.php-dist
 %%DATADIR%%/includes/.htaccess
 %%DATADIR%%/includes/class.backend.php
 %%DATADIR%%/includes/class.database.php

@@ -20,8 +20,13 @@ Configuration Instructions for Flyspray
                 Allow from all
         </Directory>
 
-3) Point your browser to http://yourserver.example.com/flyspray/ and you should
-   see the Flyspray installer.
+3) If this is a new Flyspray installation, install the default configuration
+   file and edit to taste:
+
+# cp %%FLYSPRAYDIR%%/flyspray.conf.php-dist %%FLYSPRAYDIR%%/flyspray.conf.php
+
+   Then point your browser to http://yourserver.example.com/flyspray/ and
+   you should see the Flyspray installer.
 
 4) Once the setup procedure has been completed, you must remove the "setup"
    directory:

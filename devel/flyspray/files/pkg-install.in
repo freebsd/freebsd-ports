@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+case $2 in
+	POST-INSTALL)
+		if [ ! -d %%ATTACHMENTDIR%% ]; then
+			%%MKDIR%% %%ATTACHMENTDIR%%
+		fi
+		%%CHMOD%% 750 %%ATTACHMENTDIR%%
+		%%CHOWN%% %%WWWOWN%%:%%WWWGRP%% %%ATTACHMENTDIR%%
+	;;
+esac
