@@ -1,10 +1,13 @@
 #!/bin/sh
+#
+# $FreeBSD$
 
 SCOREDIR="/var/games"
 SCOREBASE="/var/games/powermanga.hi"
 
 [ "$2" != "POST-INSTALL" ] && exit 0
 
+echo "Creating hiscore directory..."
 mkdir -p $SCOREDIR
 
 for suffix in "-easy" "" "-hard"; do

@@ -5,56 +5,48 @@
 # $FreeBSD$
 #
 
-PORTNAME=		powermanga
-PORTVERSION=		0.80
-PORTREVISION=		2
-CATEGORIES=		games
-MASTER_SITES=		http://linux.tlk.fr/games/Powermanga/download/
-EXTRACT_SUFX=		.tgz
+PORTNAME=	powermanga
+PORTVERSION=	0.90
+CATEGORIES=	games
+MASTER_SITES=	http://linux.tlk.fr/games/Powermanga/download/ \
+		http://www.amdmi3.ru/distfiles/
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		An arcade 2D shoot-em-up
+MAINTAINER=	amdmi3@amdmi3.ru
+COMMENT=	An arcade 2D shoot-em-up
 
-USE_XLIB=		yes
-USE_SDL=		sdl mixer
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--program-prefix=""
+USE_XLIB=	yes
+USE_SDL=	sdl mixer
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN6=			powermanga.6
+PORTDOCS=	AUTHORS CHANGES
+
+MAN6=		powermanga.6
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^CXXFLAGS="-O3.*||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^CFLAGS="-O3.*|CFLAGS="$$CFLAGS -std=c99"|' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		's|/usr/share/games/\(powermanga/graphics\)|${PREFIX}/share/\1|; \
-		 s|/usr/share/games/\(powermanga\)/sound|${PREFIX}/share/\1/sounds|' \
+		's|/usr/share/games/powermanga|${DATADIR}|;s|/sound|&s|' \
 		${WRKSRC}/powermanga.6
-	@${REINPLACE_CMD} -e 's|(mandir)|&/man6|' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|(mandir)|&/man6|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|\((prefix)\)/games|\1/bin|' \
 		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|games/\(powermanga\)|\1|' \
-		${WRKSRC}/graphics/Makefile.in \
-		${WRKSRC}/sounds/Makefile.in \
-		${WRKSRC}/src/linuxroutines.cpp
-	@${REINPLACE_CMD} -e 's|SDL/||' \
-		${WRKSRC}/src/powermanga.hpp \
-		${WRKSRC}/src/sdl_mixer.cpp
-	@${REINPLACE_CMD} -e 's|Lang=fr|Lang=en|' \
-		${WRKSRC}/texts/config.ini
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|games/powermanga|powermanga|'
+	@${REINPLACE_CMD} -e 's|games/powermanga|powermanga|' \
+		${WRKSRC}/src/tools.c
+	@${REINPLACE_CMD} -e 's|Lang=fr|Lang=en|' ${WRKSRC}/texts/config.ini
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${MKDIR} ${DATADIR}/texts
-	@cd ${WRKSRC}/texts && \
-	  (for i in *.ini *.txt; do \
-	    ${INSTALL_DATA} $${i} ${DATADIR}/texts; \
-	  done)
+	${INSTALL_DATA} ${WRKSRC}/texts/config.ini ${DATADIR}/texts
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} \
-		${WRKSRC}/AUTHORS \
-		${WRKSRC}/CHANGES \
-		${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
