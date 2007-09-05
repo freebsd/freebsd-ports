@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	emerald
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.5.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://releases.beryl-project.org/${PORTVERSION}/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	flz/beryl/
+MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
 MAINTAINER=	rnoland@2hip.net
 COMMENT=	Emerald Window Decorator
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/beryl.pc:${PORTSDIR}/x11-wm/beryl-core
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 INSTALLS_ICONS=	yes
@@ -24,10 +21,11 @@ GNU_CONFIGURE=	yes
 USE_GL=		gl
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 libwnck pango gnomehack
+USE_GNOME=	gnomehack gtk20 libwnck pango
 USE_XORG=	xrender
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool:15
 
 MAN1=		emerald.1 \
 		emerald-theme-manager.1

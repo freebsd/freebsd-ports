@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	emerald-themes
-PORTVERSION=	0.2.1
+PORTVERSION=	0.5.2
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://releases.beryl-project.org/${PORTVERSION}/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	flz/beryl/
+MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
 MAINTAINER=	rnoland@2hip.net
 COMMENT=	Themes for the Emerald Window Decorator
