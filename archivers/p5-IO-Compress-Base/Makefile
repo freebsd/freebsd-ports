@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	IO-Compress-Base
-PORTVERSION=	2.005
+PORTVERSION=	2.006
 CATEGORIES=	archivers perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	IO
+MASTER_SITES=	CPAN \
+		http://cpan.sunsite.ualberta.ca/authors/id/P/PM/PMQS/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tabthorpe@FreeBSD.org
