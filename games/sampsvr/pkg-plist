@@ -1,16 +1,19 @@
 @unexec if cmp -s %D/etc/sampsvr.cfg %D/etc/sampsvr.cfg.dist; then rm -f %D/etc/sampsvr.cfg; fi
 etc/sampsvr.cfg.dist
 @exec [ -f %B/sampsvr.cfg ] || cp %B/%f %B/sampsvr.cfg
-%%SAMPDIR%%/samp02svr
+%%SAMPDIR%%/samp022svr
 %%SAMPDIR%%/announce
 %%SAMPDIR%%/server.cfg
 %%SAMPDIR%%/filterscripts
 %%SAMPDIR%%/gamemodes
+%%DATADIR%%/filterscripts/DEBUG_05.amx
 %%DATADIR%%/filterscripts/actions.amx
 %%DATADIR%%/filterscripts/actions.pwn
 %%DATADIR%%/filterscripts/adminspec.amx
 %%DATADIR%%/filterscripts/adminspec.pwn
 %%DATADIR%%/filterscripts/olddance.pwn
+%%DATADIR%%/filterscripts/vactions.pwn
+%%DATADIR%%/filterscripts/vactions.amx
 %%DATADIR%%/gamemodes/area51.amx
 %%DATADIR%%/gamemodes/area51.pwn
 %%DATADIR%%/gamemodes/barron.amx
@@ -33,10 +36,13 @@ etc/sampsvr.cfg.dist
 %%DATADIR%%/gamemodes/monster.pwn
 %%DATADIR%%/gamemodes/rivershell.amx
 %%DATADIR%%/gamemodes/rivershell.pwn
+%%DATADIR%%/gamemodes/rivershell2.amx
 %%DATADIR%%/gamemodes/sftdm.amx
 %%DATADIR%%/gamemodes/sftdm.pwn
 %%DATADIR%%/gamemodes/sniper.amx
 %%DATADIR%%/gamemodes/sniper.pwn
+%%DATADIR%%/gamemodes/timertest.pwn
+%%DATADIR%%/gamemodes/timertest.amx
 @dirrmtry %%DATADIR%%/gamemodes
 @dirrmtry %%DATADIR%%/filterscripts
 @dirrmtry %%DATADIR%%

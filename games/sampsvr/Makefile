@@ -5,20 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	sampsvr
-DISTVERSION=	0.2.1.2
+DISTVERSION=	0.2.2
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.sa-mp.com/files/ \
 		http://eu.littlewhitey.com/ \
 		http://dedi.azer.nl/upload/ \
-		http://www.kfcgang.com/files/
-DISTNAME=	samp021r2.svr
+		http://www.kfcgang.com/files/ \
+		http://files.gtanet.com/samp/ \
+		http://thegtaplanet.net/download/ \
+		http://sa-mp.popznet.com/files/
+DISTNAME=	samp022svr
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Rockstar's GTA: San Andreas multiplayer modification dedicated server
 
 USE_LINUX=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/samp02
+WRKSRC=		${WRKDIR}/samp022
 USE_DOS2UNIX=	server.cfg *.pwn
 USE_RC_SUBR=	sampd
 SAMPDIR=	${PREFIX}/lib/${PORTNAME}
@@ -36,7 +39,7 @@ SUB_LIST+=	NOTEWORK=""
 
 do-install:
 	${MKDIR} ${SAMPDIR}
-.for i in samp02svr announce
+.for i in samp022svr announce
 	${BRANDELF} -t Linux ${WRKSRC}/${i}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${SAMPDIR}
 .endfor
