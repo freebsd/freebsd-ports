@@ -1,0 +1,77 @@
+--- Index/DBusXapianIndex.cpp	2007-08-22 21:58:20.000000000 +0800
++++ Index/DBusXapianIndex.cpp	2007-09-01 11:23:26.000000000 +0800
+@@ -17,15 +17,6 @@
+  */
+ 
+ #include <iostream>
+-extern "C"
+-{
+-#if DBUS_VERSION < 1000000
+-#define DBUS_API_SUBJECT_TO_CHANGE
+-#endif
+-#include <dbus/dbus.h>
+-#include <dbus/dbus-glib.h>
+-#include <dbus/dbus-glib-lowlevel.h>
+-}
+ 
+ #include "Languages.h"
+ #include "XapianDatabaseFactory.h"
+@@ -302,7 +293,7 @@
+ /// Asks the D-Bus service to reload its configuration.
+ bool DBusXapianIndex::reload(void)
+ {
+-	bool reloading = false;
++	gboolean reloading = FALSE;
+ 
+ 	DBusGConnection *pBus = getBusConnection();
+ 	if (pBus == NULL)
+@@ -333,7 +324,12 @@
+ 	g_object_unref(pBusProxy);
+ 	// FIXME: don't we have to call dbus_g_connection_unref(pBus); ?
+ 
+-	return reloading;
++	if (reloading == TRUE)
++	{
++		return true;
++	}
++
++	return false;
+ }
+ 
+ 
+--- Index/DBusXapianIndex.h	2007-08-22 21:54:40.000000000 +0800
++++ Index/DBusXapianIndex.h	2007-09-01 11:23:37.000000000 +0800
+@@ -21,12 +21,15 @@
+ 
+ #include <string>
+ #include <set>
++#include "config.h"
+ extern "C"
+ {
+ #if DBUS_VERSION < 1000000
+ #define DBUS_API_SUBJECT_TO_CHANGE
+ #endif
+ #include <dbus/dbus.h>
++#include <dbus/dbus-glib.h>
++#include <dbus/dbus-glib-lowlevel.h>
+ }
+ 
+ #include "XapianIndex.h"
+--- UI/GTK2/src/pinot.cc	2007-08-22 22:01:28.000000000 +0800
++++ UI/GTK2/src/pinot.cc	2007-09-01 10:55:10.000000000 +0800
+@@ -29,6 +29,7 @@
+ #include <glibmm/ustring.h>
+ #include <glibmm/miscutils.h>
+ #include <glibmm/convert.h>
++#include "config.h"
+ extern "C"
+ {
+ #if DBUS_VERSION < 1000000
+@@ -50,7 +51,6 @@
+ #include "ViewHistory.h"
+ #include "DownloaderInterface.h"
+ #include "XapianIndex.h"
+-#include "config.h"
+ #include "NLS.h"
+ #include "PinotSettings.h"
+ #include "mainWindow.hh"
