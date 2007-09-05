@@ -7,21 +7,23 @@
 
 PORTNAME=	itk
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=incrtcl
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	[incr Tk] (A.K.A. "itk")
+MAINTAINER=	erik@smluc.org
+COMMENT=	Object-oriented extension to Tk [incr Tk]
 
-LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
-		itcl.${MAJOR}:${PORTSDIR}/lang/itcl
+LIB_DEPENDS=	itcl.${MAJOR}:${PORTSDIR}/lang/itcl
 
+USE_TK=		84+
 USE_LDCONFIG=	yes
 MAKE_ENV+=	${PLIST_SUB} \
-		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
+		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
+		USE_TK=${USE_TK} TCL_INCLUDEDIR=${TCL_INCLUDEDIR} \
+		TK_INCLUDEDIR=${TK_INCLUDEDIR}
 
 MAKEFILE=	${FILESDIR}/Makefile.lib
 SHLIB_MAJOR=	${MAJOR}
@@ -46,6 +48,6 @@ post-build:
 
 test:
 	cd ${WRKSRC} && ${SETENV} ITK_LIBRARY=${WRKSRC}/library \
-		${PREFIX}/bin/wish8.4 tests/all.tcl -load "load ./${ITK_LIB}; package require Tk"
+		${WISH} tests/all.tcl -load "load ./${ITK_LIB}; package require Tk"
 
 .include <bsd.port.mk>

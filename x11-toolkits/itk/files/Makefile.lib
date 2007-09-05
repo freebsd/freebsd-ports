@@ -2,9 +2,9 @@ NOPROFILE=	yes
 LIB=		itk
 ITK_LIBRARY=	${PREFIX}/lib/itk${MAJOR}.${MINOR}
 CFLAGS+=	-I. -I./../generic \
-		-I${PREFIX}/include/tcl8.4/generic \
+		-I${TCL_INCLUDEDIR}/generic \
 		-I${PREFIX}/include/itcl${MAJOR}.${MINOR}/ \
-		-I${PREFIX}/include/tk8.4/generic \
+		-I${TK_INCLUDEDIR}/generic \
 		-I${X11BASE}/include \
 		-DHAVE_GETCWD=1 -DNO_VALUES_H=1 -DHAVE_UNISTD_H=1 -DUSE_TERMIOS=1\
 		-DHAVE_SYS_TIME_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_TM_ZONE=1\
@@ -14,7 +14,7 @@ CFLAGS+=	-I. -I./../generic \
 		-DHAVE_SYS_FILIO_H=1 \
 		-DRETSIGTYPE=void \
 		-DITK_LIBRARY=\"${ITK_LIBRARY}\"
-LDADD+=		-L${PREFIX}/lib -litcl -L${X11BASE}/lib -lX11 -ltk84
+LDADD+=		-L${PREFIX}/lib -litcl -L${X11BASE}/lib -lX11 -ltk${USE_TK}
 
 .PATH:		${.CURDIR}/generic
 
