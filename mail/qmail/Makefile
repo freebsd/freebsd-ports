@@ -107,64 +107,67 @@ QMAIL_VERSION?=		1.03
 SMTP_AUTH_VERSION=	0.31
 SMTP_AUTH_DIR=		${WRKDIR}/${PORTNAME}-smtpd-auth-${SMTP_AUTH_VERSION}
 
-OPTIONS+=	SMTP_AUTH_PATCH "Provide SMTP Authentication" off
+OPTIONS+=	SMTP_AUTH_PATCH		"Provide SMTP Authentication" off
 .endif
 .if !defined(BARRIER_QMAILQUEUE_PATCH)
-OPTIONS+=	QMAILQUEUE_PATCH "run a QMAILQUEUE program" off
+OPTIONS+=	QMAILQUEUE_PATCH	"run a QMAILQUEUE program" off
 .endif
 .if !defined(BARRIER_BIG_TODO_PATCH)
-OPTIONS+=	BIG_TODO_PATCH "enable big_todo qmail patch" off
+OPTIONS+=	BIG_TODO_PATCH		"enable big_todo qmail patch" off
 .endif
 .if !defined(BARRIER_BIG_CONCURRENCY_PATCH)
-OPTIONS+=	BIG_CONCURRENCY_PATCH "use a concurrency greater than 240" off
+OPTIONS+=	BIG_CONCURRENCY_PATCH	"use a concurrency greater than 240" off
 .endif
 .if !defined(BARRIER_OUTGOINGIP_PATCH)
-OPTIONS+=	OUTGOINGIP_PATCH "set the IP address to send messages" off
+OPTIONS+=	OUTGOINGIP_PATCH	"set the IP address to send messages" off
 .endif
 .if !defined(BARRIER_LOCALTIME_PATCH)
-OPTIONS+=	LOCALTIME_PATCH "emit dates in the local timezone" off
+OPTIONS+=	LOCALTIME_PATCH		"emit dates in the local timezone" off
 .endif
 .if !defined(BARRIER_QMTPC_PATCH)
-OPTIONS+=	QMTPC_PATCH "send email using qmtp protocol" off
+OPTIONS+=	QMTPC_PATCH		"send email using qmtp protocol" off
 .endif
 .if !defined(BARRIER_MAILDIRQUOTA_PATCH)
-OPTIONS+=	MAILDIRQUOTA_PATCH "Maildir++ support" off
+OPTIONS+=	MAILDIRQUOTA_PATCH	"Maildir++ support" off
 .endif
 .if !defined(BARRIER_BLOCKEXEC_PATCH)
-OPTIONS+=	BLOCKEXEC_PATCH "block many windows viruses/worms" off
+OPTIONS+=	BLOCKEXEC_PATCH		"block many windows viruses/worms" off
 .endif
 .if !defined(BARRIER_DISCBOUNCES_PATCH)
-OPTIONS+=	DISCBOUNCES_PATCH "discard double-bounces" off
+OPTIONS+=	DISCBOUNCES_PATCH	"discard double-bounces" off
 .endif
 .if !defined(BARRIER_SPF_PATCH)
-OPTIONS+=	SPF_PATCH "Implement SPF checker" off
+OPTIONS+=	SPF_PATCH		"Implement SPF checker" off
 .endif
 .if !defined(BARRIER_TARPIT_PATCH)
-OPTIONS+=	TARPIT_PATCH "Implement TARPIT functions" off
+OPTIONS+=	TARPIT_PATCH		"Implement TARPIT functions" off
 .endif
 .if !defined(BARRIER_EXTTODO_PATCH)
-OPTIONS+=	EXTTODO_PATCH "extern high-perform. todo processing" off
+OPTIONS+=	EXTTODO_PATCH		"extern high-perform. todo processing" off
 .endif
+
 .if defined(SLAVE_TLS)
-OPTIONS+=	TLS_DEBUG "enable additional debug information" off
+OPTIONS+=	TLS_DEBUG	"enable additional debug information" off
 .elif defined(SLAVE_LDAP)
-OPTIONS+=	TLS "SMTP TLS support" on \
-		ALTQUEUE "run a QMAILQUEUE external queue" off \
-		BIGBROTHER "use the control/bigbrother program" off \
-		BIGTODO "use big_todo qmail patch" off \
-		BIND_8_COMPAT "Needed if compile fails building dns.c" off \
-		CLEARTEXTPASSWD "use cleartext passwords (Dangerous!)" off \
-		DASH_EXT "dash_ext extended mail addresses add" on \
-		DATA_COMPRESS "smtp on the fly DATA compression" on \
-		EXTERNAL_TODO "external high-performance todo processing" on \
-		IGNOREVERISIGN "disallow dns wildchar matches on gtlds" off \
-		QLDAP_CLUSTER "cluster support" on \
-		QMQP_COMPRESS "QMQP on the fly compression" on \
-		QUOTATRASH "include the Trash in the quota" off \
-		SMTPEXECCHECK "smtp DOS/Windows executable detection" on \
-		AUTOMAILDIRMAKE "the auto-maildir-make feature" on \
-		AUTOHOMEDIRMAKE "auto-homedir-make feature" on \
-		LDAP_DEBUG "possibility to log and debug imap/pop" off
+OPTIONS+=	TLS		"SMTP TLS support" on \
+		ALTQUEUE	"run a QMAILQUEUE external queue" off \
+		BIGBROTHER	"use the control/bigbrother program" off \
+		BIGTODO		"use big_todo qmail patch" off \
+		BIND_8_COMPAT	"Needed if compile fails building dns.c" off \
+		CLEARTEXTPASSWD	"use cleartext passwords (Dangerous!)" off \
+		DASH_EXT	"dash_ext extended mail addresses add" on \
+		DATA_COMPRESS	"smtp on the fly DATA compression" on \
+		EXTERNAL_TODO	"external high-performance todo processing" on \
+		IGNOREVERISIGN	"disallow dns wildchar matches on gtlds" off \
+		QLDAP_CLUSTER	"cluster support" on \
+		QMQP_COMPRESS	"QMQP on the fly compression" on \
+		QUOTATRASH	"include the Trash in the quota" off \
+		SMTPEXECCHECK	"smtp DOS/Windows executable detection" on \
+		AUTOMAILDIRMAKE	"the auto-maildir-make feature" on \
+		AUTOHOMEDIRMAKE	"auto-homedir-make feature" on \
+		LDAP_DEBUG	"possibility to log and debug imap/pop" off \
+		SMTPEXTFORK	"Allow qmail-smtpd fork external progs" off \
+		XF_QUITASAP	"Close SMTP session ASAP (SMTPEXTFORK)" off
 
 LDAP_PARAMS=	ALTQUEUE BIGBROTHER BIGTODO BIND_8_COMPAT\
 		CLEARTEXTPASSWD DASH_EXT DATA_COMPRESS\
@@ -181,10 +184,10 @@ OPTIONS+=	RELAYMAILFROM	"Open relay based on mailfrom" off \
 		XF_QUITASAP	"Close SMTP session ASAP (SMTPEXTFORK)" off
 .endif
 
-OPTIONS+=	QEXTRA "enable QUEUE_EXTRA copy feature" off
+OPTIONS+=	QEXTRA		"enable QUEUE_EXTRA copy feature" off
 
 .if !defined(SLAVE_LDAP)
-OPTIONS+=	RCDLINK "create rc.d/qmail.sh" on
+OPTIONS+=	RCDLINK		"create rc.d/qmail.sh" on
 .endif
 
 ALL_TARGET+=	default dot-qmail.5 qmail-control.5 qmail-getpw.8 \
@@ -461,10 +464,17 @@ PATCH_SITES+=	http://www.palomine.net/qmail/:tarpit
 PATCHFILES+=	tarpit.patch:tarpit
 .endif
 
-.if defined(WITH_SMTPEXTFORK) && defined(SLAVE_SPAMCONTROL)
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:extfork/}
+.if defined(WITH_SMTPEXTFORK) && ( defined(SLAVE_SPAMCONTROL) || defined(SLAVE_LDAP) )
+. if defined(SLAVE_SPAMCONTROL)
+SMTPEXTFORK_PATCH=	smtpextfork-spamcontrol-${SPAMCONTROL_VERSION}_1.patch
+. else
+SMTPEXTFORK_PATCH=	smtpextfork-ldap-${LDAP_PATCH_DATE}.patch
+. endif
+
+MASTER_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/patches/:extfork \
+		${MASTER_SITE_LOCAL:S/$/:extfork/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:extfork
-DISTFILES+=	smtpextfork-spamcontrol-${SPAMCONTROL_VERSION}_1.patch:extfork \
+DISTFILES+=	${SMTPEXTFORK_PATCH:S/$/:extfork/} \
 		README.smtpextfork:extfork
 .endif
 
@@ -586,7 +596,7 @@ post-patch:
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/outgoingip.patch-spamcontrol
 . endif
 . if defined(WITH_SMTPEXTFORK)
-	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/smtpextfork-spamcontrol-${SPAMCONTROL_VERSION}_1.patch
+	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SMTPEXTFORK_PATCH}
 .  if defined(WITH_XF_QUITASAP)
 	@${REINPLACE_CMD} 's!//#define XF_QUITASAP!#define XF_QUITASAP!g' \
 		${WRKSRC}/qmail-smtpd.c
@@ -603,6 +613,13 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} "s|^#SHADOWLIBS=-lcrypt$$|SHADOWLIBS=-lcrypt|" \
 		${WRKSRC}/Makefile
+. if defined(WITH_SMTPEXTFORK)
+	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SMTPEXTFORK_PATCH}
+.  if defined(WITH_XF_QUITASAP)
+	@${REINPLACE_CMD} 's!//#define XF_QUITASAP!#define XF_QUITASAP!g' \
+		${WRKSRC}/qmail-smtpd.c
+.  endif
+. endif
 . if !defined(WITHOUT_TLS)
 	@${REINPLACE_CMD} "s|^#TLS=|TLS=|; \
 			   s|^#TLSINCLUDES=-I/usr/local/include|TLSINCLUDES=-I${OPENSSLBASE}/include|; \
@@ -692,7 +709,7 @@ do-install:
 	${INSTALL_DATA} ${${sub}}/${doc} ${DOCSDIR}
 .  endfor
 . endfor
-. if defined(SLAVE_SPAMCONTROL) && defined(WITH_SMTPEXTFORK)
+. if defined(WITH_SMTPEXTFORK) && ( defined(SLAVE_SPAMCONTROL) || defined(SLAVE_LDAP) )
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/README.smtpextfork ${DOCSDIR}
 . endif
 . if defined(PACKAGE_BUILDING)
