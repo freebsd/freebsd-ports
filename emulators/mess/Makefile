@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdlmess
-PORTVERSION=	0.116
+PORTVERSION=	0.118
 CATEGORIES=	emulators
 MASTER_SITES=	http://rbelmont.mameworld.info/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -24,10 +24,11 @@ SUB_FILES=	${PORTNAME} pkg-message
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
-.for f in obj/sdlmess/file2str sdlmess testkeys dat2html messtest messdocs \
-	  imgtool romcmp chdman jedutil makemeta regrep srcclean
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/libexec/${f:T:S/sdl//}
+	${MKDIR} ${PREFIX}/libexec/sdlmess
+.for f in obj/sdl/mess/build/file2str obj/sdl/mess/build/png2bdc mess \
+	testkeys dat2html messtest messdocs imgtool romcmp chdman jedutil \
+	makemeta regrep srcclean
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/libexec/sdlmess
 .endfor
 	${MKDIR} ${DATADIR}
 .for f in artwork hash keymaps sysinfo.dat
