@@ -1,4 +1,4 @@
-share/usbhotkey-0.3/ag5-3colors.rb
-share/usbhotkey-0.3/ag5-replicate-colours.rb
+share/usbhotkey-0.3.1/ag5-3colors.rb
+share/usbhotkey-0.3.1/ag5-replicate-colours.rb
 bin/usbhotkey
-@dirrm share/usbhotkey-0.3
+@dirrm share/usbhotkey-0.3.1
