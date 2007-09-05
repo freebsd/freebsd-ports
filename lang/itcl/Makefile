@@ -7,22 +7,21 @@
 
 PORTNAME=	itcl
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang tcl84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=incrtcl
 DISTNAME=	itcl${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	[incr Tcl] (A.K.A. "itcl")
+MAINTAINER=	erik@smluc.org
+COMMENT=	Object extension to Tcl [incr Tcl]
 
-LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84
+USE_TCL=	84+
 
 USE_LDCONFIG=	yes
-PKGINSTALL=	${PORTSDIR}/lang/tcl84/pkg-install.tclsh
-PKGDEINSTALL=	${PORTSDIR}/lang/tcl84/pkg-deinstall.tclsh
 MAKE_ENV+=	${PLIST_SUB} \
-		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
+		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
+		USE_TCL=${USE_TCL} TCL_INCLUDEDIR=${TCL_INCLUDEDIR}
 
 .if defined(MAKE_JOBS)
 MAKE_ARGS+=	-j${MAKE_JOBS}
@@ -43,12 +42,17 @@ MAN3=		RegisterC.3 Stack.3
 
 ITCL_LIB_FILE=	${ITCL_LIB}.${SHLIB_MAJOR}
 
+.include <bsd.port.pre.mk>
+
 post-build test:
 	cd ${WRKSRC} && ${SETENV} ITCL_LIBRARY=${WRKSRC}/library \
-		${PREFIX}/bin/tclsh8.4 tests/all.tcl -load "load ./${ITCL_LIB}"
+		${TCLSH} tests/all.tcl -load "load ./${ITCL_LIB}"
+.if ${USE_TCL} == 85
+	@${ECHO} "ensemble.test fails due to changed error message. It's OK."
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.n ${PREFIX}/man/mann/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.3 ${PREFIX}/man/man3/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
