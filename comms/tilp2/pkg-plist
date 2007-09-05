@@ -1,5 +1,4 @@
 bin/tilp
-%%NLS%%share/locale/de/LC_MESSAGES/tilp2.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/tilp2.mo
 %%DATADIR%%/COPYING
 %%DATADIR%%/Manpage.txt
@@ -64,6 +63,7 @@ bin/tilp
 %%DATADIR%%/help/tb_calc_send.png
 %%DATADIR%%/help/tilp.png
 %%DATADIR%%/help/tilp2.png
+%%DATADIR%%/help/usb_driver.html
 %%DATADIR%%/icons/App_Var.ico
 %%DATADIR%%/icons/Application.ico
 %%DATADIR%%/icons/Asm_Program.ico
