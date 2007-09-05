@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	tth
-PORTVERSION=	3.76
-PORTREVISION=	1
+PORTVERSION=	3.77
 CATEGORIES=	textproc
-MASTER_SITES=	http://hutchinson.belmont.ma.us/tth/tth-noncom/
+MASTER_SITES=	http://hutchinson.belmont.ma.us/tth/tth-noncom/ \
+		http://redundancy.redundancy.org/mirror/
 DISTNAME=	tth_C
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A TeX to HTML translator
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
