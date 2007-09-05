@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	websvn
-PORTVERSION=	1.61
+PORTVERSION=	2.0
 CATEGORIES=	devel www
-MASTER_SITES=	http://websvn.tigris.org/files/documents/1380/14334/
-DISTNAME=	WebSVN_${PORTVERSION:S/.//}
+MASTER_SITES=	http://websvn.tigris.org/files/documents/1380/39378/
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Subversion repository web frontend
 
-USE_PHP=	pcre zlib
+USE_PHP=	iconv pcre xml
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/WebSVN
 
-WEBSVNDIR?=	www/data/WebSVN
+WEBSVNDIR?=	www/data/websvn
 PLIST=		${WRKDIR}/pkg-plist
 
+SUB_FILES=	pkg-message
+SUB_LIST+=	WEBSVNDIR="${WEBSVNDIR}"
+
 pre-install:
-	@${TR} -d '\r' < ${WRKSRC}/include/distconfig.inc > ${WRKSRC}/include/config.inc
-	cd ${WRKSRC} && ${FIND} -s * -type f | \
+	@cd ${WRKSRC} && ${RMDIR} temp www
+	@cd ${WRKSRC} && ${FIND} -s * -type f | \
 		${SED} -e 's|^|${WEBSVNDIR}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${WEBSVNDIR}/|' >> ${PLIST} \

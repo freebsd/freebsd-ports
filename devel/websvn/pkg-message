@@ -1,2 +1,0 @@
-To make websvn workable, please
-Edit ${PREFIX}/${WEBSVNDIR}/include/config.inc manually.
