@@ -700,28 +700,27 @@ diff -ruN ../bind-9.3.1.org/bin/named/ldapdb.c ./bin/named/ldapdb.c
 diff -ruN ../bind-9.3.1.org/bin/named/main.c ./bin/named/main.c
 --- ../bind-9.3.1.org/bin/named/main.c	Wed Jun 22 22:34:55 2005
 +++ ./bin/named/main.c	Wed Jun 22 22:47:38 2005
-@@ -71,6 +71,7 @@
+@@ -72,6 +72,7 @@
   * Include header files for database drivers here.
   */
  /* #include "xxdb.h" */
 +#include <ldapdb.h> 
  
- static isc_boolean_t	want_stats = ISC_FALSE;
- static char		program_name[ISC_DIR_NAMEMAX] = "named";
-@@ -656,6 +657,7 @@
+ /*
+  * Include DLZ drivers if appropriate.
+@@ -681,6 +682,7 @@
  	 * Add calls to register sdb drivers here.
  	 */
  	/* xxdb_init(); */
 +	ldapdb_init();
  
- 	ns_server_create(ns_g_mctx, &ns_g_server);
- }
-@@ -672,7 +674,7 @@
- 	 * Add calls to unregister sdb drivers here.
+ #ifdef DLZ
+        /*
+@@ -707,6 +709,7 @@
+	 * Add calls to unregister sdb drivers here.
  	 */
  	/* xxdb_clear(); */
--
 +	ldapdb_clear();
- 	isc_log_write(ns_g_lctx, NS_LOGCATEGORY_GENERAL, NS_LOGMODULE_MAIN,
- 		      ISC_LOG_NOTICE, "exiting");
- 	ns_log_shutdown();
+
+ #ifdef DLZ
+        /*
