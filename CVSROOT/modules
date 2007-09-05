@@ -1415,6 +1415,7 @@ clockspeed	ports/sysutils/clockspeed
 clockspeed-conf	ports/sysutils/clockspeed-conf
 clog		ports/net-mgmt/clog
 cloop-utils	ports/sysutils/cloop-utils
+clp		ports/math/clp
 clpbar		ports/misc/clpbar
 clucene		ports/textproc/clucene
 clustalw	ports/biology/clustalw
