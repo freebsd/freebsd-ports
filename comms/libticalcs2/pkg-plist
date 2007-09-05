@@ -5,11 +5,10 @@ include/tilp2/keys89.h
 include/tilp2/keys92p.h
 include/tilp2/stdints3.h
 include/tilp2/ticalcs.h
-include/tilp2/tnode.h
 lib/libticalcs2.a
 lib/libticalcs2.la
 lib/libticalcs2.so
-lib/libticalcs2.so.5
+lib/libticalcs2.so.6
 libdata/pkgconfig/ticalcs2.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/libticalcs2.mo
 @dirrmtry include/tilp2
