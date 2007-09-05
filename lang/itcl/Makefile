@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=incrtcl
 DISTNAME=	itcl${PORTVERSION}
 
 MAINTAINER=	erik@smluc.org
-COMMENT=	Object extension to Tcl [incr Tcl]
+COMMENT=	Object-oriented extension to Tcl [incr Tcl]
 
 USE_TCL=	84+
 
