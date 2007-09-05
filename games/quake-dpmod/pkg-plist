@@ -1,5 +1,4 @@
 %%DATADIR%%/ChangeLog
-%%DATADIR%%/ChangeLog.bak
 %%DATADIR%%/cubemaps/201nx.tga
 %%DATADIR%%/cubemaps/201ny.tga
 %%DATADIR%%/cubemaps/201nz.tga
@@ -16,6 +15,7 @@
 %%DATADIR%%/env/sky1_dpzoo_lf.tga
 %%DATADIR%%/env/sky1_dpzoo_rt.tga
 %%DATADIR%%/env/sky1_dpzoo_up.tga
+%%DATADIR%%/ghostly.txt
 %%DATADIR%%/maps/b_batt0.bsp
 %%DATADIR%%/maps/b_batt1.bsp
 %%DATADIR%%/maps/b_bh10.bsp
@@ -90,8 +90,8 @@
 %%DATADIR%%/qc/domination.qc
 %%DATADIR%%/qc/doors.qc
 %%DATADIR%%/qc/dpextensions.qc
-%%DATADIR%%/qc/error.log
 %%DATADIR%%/qc/fight.qc
+%%DATADIR%%/qc/fteqcc.log
 %%DATADIR%%/qc/halflife.qc
 %%DATADIR%%/qc/havocbot.qc
 %%DATADIR%%/qc/havocbot_roles.qc
@@ -140,7 +140,6 @@
 %%DATADIR%%/qc/plats.qc
 %%DATADIR%%/qc/player.qc
 %%DATADIR%%/qc/playermovement.qc
-%%DATADIR%%/qc/progdefs.h
 %%DATADIR%%/qc/progs.src
 %%DATADIR%%/qc/projectiles.qc
 %%DATADIR%%/qc/subs.qc
@@ -159,6 +158,7 @@
 %%DATADIR%%/qc/world.qc
 %%DATADIR%%/quake.rc
 %%DATADIR%%/romi_rtlights.pk3
+%%DATADIR%%/romi_rtlights_dm.pk3
 %%DATADIR%%/sound/explo2.wav
 %%DATADIR%%/sound/fire/burn.wav
 %%DATADIR%%/sound/fire/launch.wav
