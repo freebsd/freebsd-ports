@@ -21,6 +21,74 @@ bin/wxglade
 %%PYTHON_SITELIBDIR%%/wxglade/edit_windows.py
 %%PYTHON_SITELIBDIR%%/wxglade/events_mixin.py
 %%PYTHON_SITELIBDIR%%/wxglade/font_dialog.py
+%%PYTHON_SITELIBDIR%%/wxglade/icons/application.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/bitmap_button.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/button.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/calendar_ctrl.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/checkbox.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/choice.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/closed_folder.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/combo_box.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/custom.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/datepicker_ctrl.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/dialog.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/frame.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gauge.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/grid.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/grid_sizer.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gtk/about.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gtk/copy.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gtk/cut.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gtk/exit.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gtk/generate.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gtk/new.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gtk/open.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gtk/paste.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gtk/prefs.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gtk/refresh.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gtk/remove.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gtk/save.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gtk/save_as.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/gtk/tutorial.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/icon.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/icon16.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/list_box.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/list_ctrl.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/menubar.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/msw/copy.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/msw/cut.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/msw/exit.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/msw/generate.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/msw/new.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/msw/open.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/msw/paste.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/msw/prefs.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/msw/refresh.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/msw/remove.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/msw/save.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/msw/save_as.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/msw/tutorial.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/notebook.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/panel.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/radio_box.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/radio_button.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/sizer.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/slider.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/spacer.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/spin_ctrl.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/spinbtn.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/splitter_window.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/static_bitmap.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/static_line.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/static_text.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/statusbar.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/text_ctrl.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/toggle_button.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/toolbar.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/tree_ctrl.xpm
+%%PYTHON_SITELIBDIR%%/wxglade/icons/wxg_file.ico
+%%PYTHON_SITELIBDIR%%/wxglade/icons/wxglade.ico
+%%PYTHON_SITELIBDIR%%/wxglade/icons/wxglade_small.png
 %%PYTHON_SITELIBDIR%%/wxglade/kdefiledialog.py
 %%PYTHON_SITELIBDIR%%/wxglade/layout_option_property.py
 %%PYTHON_SITELIBDIR%%/wxglade/main.py
@@ -321,6 +389,9 @@ bin/wxglade
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/widgets/bitmap_button
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/widgets
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/res
+@dirrm %%PYTHON_SITELIBDIR%%/wxglade/icons/msw
+@dirrm %%PYTHON_SITELIBDIR%%/wxglade/icons/gtk
+@dirrm %%PYTHON_SITELIBDIR%%/wxglade/icons
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/edit_sizers
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/codegen
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade
