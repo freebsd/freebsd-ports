@@ -7,20 +7,31 @@ ICAP patchset.
 
 Please see icap-2.6-core.patch for further information.
 
-Patch last updated: 2007-07-16
+Patch last updated: 2007-09-01
 
---- configure.orig	Sun Jul 15 16:21:59 2007
-+++ configure	Mon Jul 16 22:37:43 2007
-@@ -312,7 +312,7 @@
- # include <unistd.h>
- #endif"
- 
--ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot AMTAR am__tar am__untar MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE build build_cpu build_vendor build_os host host_cpu host_vendor host_os PKGCONFIG CGIEXT ENABLE_WIN32SPECIFIC_TRUE ENABLE_WIN32SPECIFIC_FALSE ENABLE_MINGW32SPECIFIC_TRUE ENABLE_MINGW32SPECIFIC_FALSE WIN32_PSAPI CACHE_HTTP_PORT CACHE_ICP_PORT LIBDLMALLOC LIB_MALLOC STORE_OBJS STORE_LIBS STORE_MODULES NEED_DISKD_TRUE NEED_DISKD_FALSE USE_AIOPS_WIN32_TRUE USE_AIOPS_WIN32_FALSE NEED_COSSDUMP_TRUE NEED_COSSDUMP_FALSE REPL_POLICIES REPL_OBJS REPL_LIBS ENABLE_PINGER_TRUE ENABLE_PINGER_FALSE USE_DELAY_POOLS_TRUE USE_DELAY_POOLS_FALSE USE_SNMP_TRUE USE_SNMP_FALSE SNMPLIB makesnmplib ENABLE_HTCP_TRUE ENABLE_HTCP_FALSE ENABLE_SSL_TRUE ENABLE_SSL_FALSE NEED_OWN_MD5_TRUE NEED_OWN_MD5_FALSE SSLLIB ERR_DEFAULT_LANGUAGE ERR_LANGUAGES MAKE_LEAKFINDER_TRUE MAKE_LEAKFINDER_FALSE USE_DNSSERVER_TRUE USE_DNSSERVER_FALSE OPT_DEFAULT_HOSTS AUTH_MODULES AUTH_OBJS AUTH_LIBS BASIC_AUTH_HELPERS NTLM_AUTH_HELPERS DIGEST_AUTH_HELPERS NEGOTIATE_AUTH_HELPERS EXTERNAL_ACL_HELPERS CPP EGREP LIBSASL ENABLE_UNLINKD_TRUE ENABLE_UNLINKD_FALSE RANLIB ac_ct_RANLIB LN_S SH FALSE TRUE RM MV MKDIR LN PERL AR AR_R ALLOCA CRYPTLIB LIB_EPOLL LIB_LDAP LIB_LBER LIB_DB USE_POLL_TRUE USE_POLL_FALSE USE_EPOLL_TRUE USE_EPOLL_FALSE USE_SELECT_TRUE USE_SELECT_FALSE USE_SELECT_SIMPLE_TRUE USE_SELECT_SIMPLE_FALSE USE_SELECT_WIN32_TRUE USE_SELECT_WIN32_FALSE USE_KQUEUE_TRUE USE_KQUEUE_FALSE USE_DEVPOLL_TRUE USE_DEVPOLL_FALSE NEED_OWN_SNPRINTF_TRUE NEED_OWN_SNPRINTF_FALSE NEED_OWN_STRSEP_TRUE NEED_OWN_STRSEP_FALSE REGEXLIB LIBREGEX LIBOBJS XTRA_OBJS XTRA_LIBS LTLIBOBJS'
-+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot AMTAR am__tar am__untar MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE build build_cpu build_vendor build_os host host_cpu host_vendor host_os PKGCONFIG CGIEXT ENABLE_WIN32SPECIFIC_TRUE ENABLE_WIN32SPECIFIC_FALSE ENABLE_MINGW32SPECIFIC_TRUE ENABLE_MINGW32SPECIFIC_FALSE WIN32_PSAPI CACHE_HTTP_PORT CACHE_ICP_PORT LIBDLMALLOC LIB_MALLOC STORE_OBJS STORE_LIBS STORE_MODULES NEED_DISKD_TRUE NEED_DISKD_FALSE USE_AIOPS_WIN32_TRUE USE_AIOPS_WIN32_FALSE NEED_COSSDUMP_TRUE NEED_COSSDUMP_FALSE REPL_POLICIES REPL_OBJS REPL_LIBS ENABLE_PINGER_TRUE ENABLE_PINGER_FALSE USE_DELAY_POOLS_TRUE USE_DELAY_POOLS_FALSE USE_ICAP_TRUE USE_ICAP_FALSE USE_SNMP_TRUE USE_SNMP_FALSE SNMPLIB makesnmplib ENABLE_HTCP_TRUE ENABLE_HTCP_FALSE ENABLE_SSL_TRUE ENABLE_SSL_FALSE NEED_OWN_MD5_TRUE NEED_OWN_MD5_FALSE SSLLIB ERR_DEFAULT_LANGUAGE ERR_LANGUAGES MAKE_LEAKFINDER_TRUE MAKE_LEAKFINDER_FALSE USE_DNSSERVER_TRUE USE_DNSSERVER_FALSE OPT_DEFAULT_HOSTS AUTH_MODULES AUTH_OBJS AUTH_LIBS BASIC_AUTH_HELPERS NTLM_AUTH_HELPERS DIGEST_AUTH_HELPERS NEGOTIATE_AUTH_HELPERS EXTERNAL_ACL_HELPERS CPP EGREP LIBSASL ENABLE_UNLINKD_TRUE ENABLE_UNLINKD_FALSE RANLIB ac_ct_RANLIB LN_S SH FALSE TRUE RM MV MKDIR LN PERL AR AR_R ALLOCA CRYPTLIB LIB_EPOLL LIB_LDAP LIB_LBER LIB_DB USE_POLL_TRUE USE_POLL_FALSE USE_EPOLL_TRUE USE_EPOLL_FALSE USE_SELECT_TRUE USE_SELECT_FALSE USE_SELECT_SIMPLE_TRUE USE_SELECT_SIMPLE_FALSE USE_SELECT_WIN32_TRUE USE_SELECT_WIN32_FALSE USE_KQUEUE_TRUE USE_KQUEUE_FALSE USE_DEVPOLL_TRUE USE_DEVPOLL_FALSE NEED_OWN_SNPRINTF_TRUE NEED_OWN_SNPRINTF_FALSE NEED_OWN_STRNSTR_TRUE NEED_OWN_STRNSTR_FALSE NEED_OWN_STRCASESTR_TRUE NEED_OWN_STRCASESTR_FALSE NEED_OWN_STRSEP_TRUE NEED_OWN_STRSEP_FALSE REGEXLIB LIBREGEX LIBOBJS XTRA_OBJS XTRA_LIBS LTLIBOBJS'
- ac_subst_files=''
- 
- # Initialize some variables set by options.
-@@ -890,6 +890,7 @@
+--- configure.orig	Fri Aug 31 16:55:13 2007
++++ configure	Sat Sep  1 16:56:36 2007
+@@ -728,6 +728,8 @@
+ ENABLE_PINGER_FALSE
+ USE_DELAY_POOLS_TRUE
+ USE_DELAY_POOLS_FALSE
++USE_ICAP_TRUE
++USE_ICAP_FALSE
+ USE_SNMP_TRUE
+ USE_SNMP_FALSE
+ SNMPLIB
+@@ -794,6 +796,10 @@
+ USE_DEVPOLL_FALSE
+ NEED_OWN_SNPRINTF_TRUE
+ NEED_OWN_SNPRINTF_FALSE
++NEED_OWN_STRNSTR_TRUE
++NEED_OWN_STRNSTR_FALSE
++NEED_OWN_STRCASESTR_TRUE
++NEED_OWN_STRCASESTR_FALSE
+ NEED_OWN_STRSEP_TRUE
+ NEED_OWN_STRSEP_FALSE
+ REGEXLIB
+@@ -1427,6 +1433,7 @@
  			  to build your custom policy
    --enable-icmp           Enable ICMP pinging
    --enable-delay-pools    Enable delay pools to limit bandwidth usage
@@ -28,17 +39,17 @@ Patch last updated: 2007-07-16
    --enable-useragent-log  Enable logging of User-Agent header
    --enable-referer-log    Enable logging of Referer header
    --disable-wccp          Disable Web Cache Coordination V1 Protocol
-@@ -1819,7 +1820,7 @@
+@@ -2349,7 +2356,7 @@
  
  # Define the identity of the package.
   PACKAGE='squid'
-- VERSION='2.6.STABLE14'
-+ VERSION='2.6.STABLE14+ICAP'
+- VERSION='2.6.STABLE15'
++ VERSION='2.6.STABLE15+ICAP'
  
  
  cat >>confdefs.h <<_ACEOF
-@@ -3955,6 +3956,40 @@
- fi;
+@@ -4543,6 +4550,40 @@
+ 
  
  
 +
@@ -50,10 +61,9 @@ Patch last updated: 2007-07-16
 +  USE_ICAP_FALSE=
 +fi
 +
-+# Check whether --enable-icap-support or --disable-icap-support was given.
++# Check whether --enable-icap-support was given.
 +if test "${enable_icap_support+set}" = set; then
-+  enableval="$enable_icap_support"
-+   if test "$enableval" = "yes" ; then
++  enableval=$enable_icap_support;  if test "$enableval" = "yes" ; then
 +    echo "ICAP support enabled"
 +
 +cat >>confdefs.h <<\_ACEOF
@@ -72,22 +82,14 @@ Patch last updated: 2007-07-16
 +
 +  fi
 +
-+fi;
++fi
 +
 +
- # Check whether --enable-useragent-log or --disable-useragent-log was given.
++
+ # Check whether --enable-useragent-log was given.
  if test "${enable_useragent_log+set}" = set; then
-   enableval="$enable_useragent_log"
-@@ -24144,6 +24179,8 @@
- 
- 
- 
-+
-+
- for ac_func in \
- 	bcopy \
- 	backtrace_symbols_fd \
-@@ -24192,6 +24229,8 @@
+   enableval=$enable_useragent_log;  if test "$enableval" = "yes" ; then
+@@ -24504,6 +24545,8 @@
  	srand48 \
  	srandom \
  	statfs \
@@ -96,7 +98,7 @@ Patch last updated: 2007-07-16
  	strsep \
  	strtoll \
  	sysconf \
-@@ -24888,6 +24927,52 @@
+@@ -25209,6 +25252,52 @@
  
  
  if false; then
@@ -149,7 +151,7 @@ Patch last updated: 2007-07-16
    NEED_OWN_STRSEP_TRUE=
    NEED_OWN_STRSEP_FALSE='#'
  else
-@@ -26405,6 +26490,20 @@
+@@ -26799,6 +26888,20 @@
  Usually this means the macro was only invoked conditionally." >&2;}
     { (exit 1); exit 1; }; }
  fi
@@ -170,50 +172,70 @@ Patch last updated: 2007-07-16
  if test -z "${USE_SNMP_TRUE}" && test -z "${USE_SNMP_FALSE}"; then
    { { echo "$as_me:$LINENO: error: conditional \"USE_SNMP\" was never defined.
  Usually this means the macro was only invoked conditionally." >&5
-@@ -26559,17 +26658,17 @@
+@@ -26960,6 +27063,34 @@
  Usually this means the macro was only invoked conditionally." >&2;}
     { (exit 1); exit 1; }; }
  fi
--if test -z "${NEED_OWN_SNPRINTF_TRUE}" && test -z "${NEED_OWN_SNPRINTF_FALSE}"; then
--  { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_SNPRINTF\" was never defined.
 +if test -z "${NEED_OWN_STRNSTR_TRUE}" && test -z "${NEED_OWN_STRNSTR_FALSE}"; then
 +  { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_STRNSTR\" was never defined.
- Usually this means the macro was only invoked conditionally." >&5
--echo "$as_me: error: conditional \"NEED_OWN_SNPRINTF\" was never defined.
++Usually this means the macro was only invoked conditionally." >&5
 +echo "$as_me: error: conditional \"NEED_OWN_STRNSTR\" was never defined.
- Usually this means the macro was only invoked conditionally." >&2;}
-    { (exit 1); exit 1; }; }
- fi
--if test -z "${NEED_OWN_STRSEP_TRUE}" && test -z "${NEED_OWN_STRSEP_FALSE}"; then
--  { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_STRSEP\" was never defined.
++Usually this means the macro was only invoked conditionally." >&2;}
++   { (exit 1); exit 1; }; }
++fi
++if test -z "${NEED_OWN_STRNSTR_TRUE}" && test -z "${NEED_OWN_STRNSTR_FALSE}"; then
++  { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_STRNSTR\" was never defined.
++Usually this means the macro was only invoked conditionally." >&5
++echo "$as_me: error: conditional \"NEED_OWN_STRNSTR\" was never defined.
++Usually this means the macro was only invoked conditionally." >&2;}
++   { (exit 1); exit 1; }; }
++fi
 +if test -z "${NEED_OWN_STRCASESTR_TRUE}" && test -z "${NEED_OWN_STRCASESTR_FALSE}"; then
 +  { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_STRCASESTR\" was never defined.
- Usually this means the macro was only invoked conditionally." >&5
--echo "$as_me: error: conditional \"NEED_OWN_STRSEP\" was never defined.
++Usually this means the macro was only invoked conditionally." >&5
 +echo "$as_me: error: conditional \"NEED_OWN_STRCASESTR\" was never defined.
- Usually this means the macro was only invoked conditionally." >&2;}
-    { (exit 1); exit 1; }; }
- fi
-@@ -27235,6 +27334,8 @@
- s,@ENABLE_PINGER_FALSE@,$ENABLE_PINGER_FALSE,;t t
- s,@USE_DELAY_POOLS_TRUE@,$USE_DELAY_POOLS_TRUE,;t t
- s,@USE_DELAY_POOLS_FALSE@,$USE_DELAY_POOLS_FALSE,;t t
-+s,@USE_ICAP_TRUE@,$USE_ICAP_TRUE,;t t
-+s,@USE_ICAP_FALSE@,$USE_ICAP_FALSE,;t t
- s,@USE_SNMP_TRUE@,$USE_SNMP_TRUE,;t t
- s,@USE_SNMP_FALSE@,$USE_SNMP_FALSE,;t t
- s,@SNMPLIB@,$SNMPLIB,;t t
-@@ -27301,6 +27402,10 @@
- s,@USE_DEVPOLL_FALSE@,$USE_DEVPOLL_FALSE,;t t
- s,@NEED_OWN_SNPRINTF_TRUE@,$NEED_OWN_SNPRINTF_TRUE,;t t
- s,@NEED_OWN_SNPRINTF_FALSE@,$NEED_OWN_SNPRINTF_FALSE,;t t
-+s,@NEED_OWN_STRNSTR_TRUE@,$NEED_OWN_STRNSTR_TRUE,;t t
-+s,@NEED_OWN_STRNSTR_FALSE@,$NEED_OWN_STRNSTR_FALSE,;t t
-+s,@NEED_OWN_STRCASESTR_TRUE@,$NEED_OWN_STRCASESTR_TRUE,;t t
-+s,@NEED_OWN_STRCASESTR_FALSE@,$NEED_OWN_STRCASESTR_FALSE,;t t
- s,@NEED_OWN_STRSEP_TRUE@,$NEED_OWN_STRSEP_TRUE,;t t
- s,@NEED_OWN_STRSEP_FALSE@,$NEED_OWN_STRSEP_FALSE,;t t
- s,@REGEXLIB@,$REGEXLIB,;t t
++Usually this means the macro was only invoked conditionally." >&2;}
++   { (exit 1); exit 1; }; }
++fi
++if test -z "${NEED_OWN_STRCASESTR_TRUE}" && test -z "${NEED_OWN_STRCASESTR_FALSE}"; then
++  { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_STRCASESTR\" was never defined.
++Usually this means the macro was only invoked conditionally." >&5
++echo "$as_me: error: conditional \"NEED_OWN_STRCASESTR\" was never defined.
++Usually this means the macro was only invoked conditionally." >&2;}
++   { (exit 1); exit 1; }; }
++fi
+ if test -z "${NEED_OWN_STRSEP_TRUE}" && test -z "${NEED_OWN_STRSEP_FALSE}"; then
+   { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_STRSEP\" was never defined.
+ Usually this means the macro was only invoked conditionally." >&5
+@@ -27705,6 +27836,8 @@
+ ENABLE_PINGER_FALSE!$ENABLE_PINGER_FALSE$ac_delim
+ USE_DELAY_POOLS_TRUE!$USE_DELAY_POOLS_TRUE$ac_delim
+ USE_DELAY_POOLS_FALSE!$USE_DELAY_POOLS_FALSE$ac_delim
++USE_ICAP_TRUE!$USE_ICAP_TRUE$ac_delim
++USE_ICAP_FALSE!$USE_ICAP_FALSE$ac_delim
+ USE_SNMP_TRUE!$USE_SNMP_TRUE$ac_delim
+ USE_SNMP_FALSE!$USE_SNMP_FALSE$ac_delim
+ SNMPLIB!$SNMPLIB$ac_delim
+@@ -27771,6 +27904,10 @@
+ USE_DEVPOLL_FALSE!$USE_DEVPOLL_FALSE$ac_delim
+ NEED_OWN_SNPRINTF_TRUE!$NEED_OWN_SNPRINTF_TRUE$ac_delim
+ NEED_OWN_SNPRINTF_FALSE!$NEED_OWN_SNPRINTF_FALSE$ac_delim
++NEED_OWN_STRNSTR_TRUE!$NEED_OWN_STRNSTR_TRUE$ac_delim
++NEED_OWN_STRNSTR_FALSE!$NEED_OWN_STRNSTR_FALSE$ac_delim
++NEED_OWN_STRCASESTR_TRUE!$NEED_OWN_STRCASESTR_TRUE$ac_delim
++NEED_OWN_STRCASESTR_FALSE!$NEED_OWN_STRCASESTR_FALSE$ac_delim
+ NEED_OWN_STRSEP_TRUE!$NEED_OWN_STRSEP_TRUE$ac_delim
+ NEED_OWN_STRSEP_FALSE!$NEED_OWN_STRSEP_FALSE$ac_delim
+ REGEXLIB!$REGEXLIB$ac_delim
+@@ -27781,7 +27918,7 @@
+ LTLIBOBJS!$LTLIBOBJS$ac_delim
+ _ACEOF
+ 
+-  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 89; then
++  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 95; then
+     break
+   elif $ac_last_try; then
+     { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5
 --- include/autoconf.h.in.orig	Sat Jun 23 23:51:56 2007
 +++ include/autoconf.h.in	Mon Jul 16 22:21:25 2007
 @@ -457,6 +457,9 @@
