@@ -7,7 +7,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.1.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
 DIST_SUBDIR=	jabber
@@ -157,7 +157,7 @@ IGNORE=	cannot be compiled with both, gsasl and cyrus-sasl. Please (re)run 'make
 IGNORE=	is useless without a sasl library. Please (re)run 'make config' and choose either GSASL or CYRUS_SASL
 .elif defined(WITH_GSASL)
 CONFIGURE_ARGS+=	--enable-sasl=gsasl
-LIB_DEPENDS+=		gsasl.10:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=		gsasl.11:${PORTSDIR}/security/gsasl
 .elif defined(WITH_CYRUS_SASL)
 CONFIGURE_ARGS+=	--enable-sasl=cyrus
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2

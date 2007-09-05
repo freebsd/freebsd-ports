@@ -7,7 +7,7 @@
 
 PORTNAME=	libvmime
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vmime
@@ -17,7 +17,7 @@ COMMENT=	An all-in-one Internet mail library
 
 # XXX Need a newer gnutls version before enabling this
 #LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
-LIB_DEPENDS+=	gsasl.10:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=	gsasl.11:${PORTSDIR}/security/gsasl
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
