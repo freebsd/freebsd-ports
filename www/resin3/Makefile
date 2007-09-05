@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		resin
-PORTVERSION=		3.1.0
-PORTREVISION=	1
+PORTVERSION=		3.1.2
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
@@ -53,9 +52,18 @@ REPLACE_FILES=		${FILESDIR}/pkg-install \
 			${WRKSRC}/conf/resin.conf \
 			${FILESDIR}/resinctl \
 			${FILESDIR}/resin.sh.in
-COPYDIRS=		lib libexec webapps
 
 .include <bsd.port.pre.mk>
+
+.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
+COPYDIRS=		lib libexec64 webapps
+CFLAGS+=		-fPIC
+CONFIGURE_ARGS+=	--enable-64bit
+RESIN_LIBEXEC=		libexec64
+.else
+COPYDIRS=		lib libexec webapps
+RESIN_LIBEXEC=		libexec
+.endif
 
 # Pass JAVA_HOME as determined by bsd.java.mk
 CONFIGURE_ARGS+=	--with-java-home=${JAVA_HOME} \
@@ -93,6 +101,7 @@ PLIST_SUB+=		APACHE="@comment "
 
 PLIST_SUB+=		APP_NAME=${APP_NAME}
 PLIST_SUB+=		APXS=${APXS}
+PLIST_SUB+=		RESIN_LIBEXEC=${RESIN_LIBEXEC}
 
 SUBSTITUTIONS=		-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 			-e "s|%%APP_NAME%%|${APP_NAME}|g" \
@@ -115,11 +124,6 @@ SUBSTITUTIONS=		-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 			-e "s|%%WRKDIR%%|${WRKDIR}|g" \
 			-e "s|%%WRKSRC%%|${WRKSRC}|g"
 
-# Avoid build error on 64-bit architectures
-.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
-CFLAGS+=	-fPIC
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} ${SUBSTITUTIONS} ${REINPLACE_FILES}
 	@for FILE in ${REPLACE_FILES} ; do \
@@ -139,6 +143,8 @@ defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
 	@${ECHO_CMD} "    ResinConfigServer localhost 6802" >> ${PKGMESSAGE}
 	@${ECHO_CMD} "</IfModule>" >> ${PKGMESSAGE}
 .endif
+	@${REINPLACE_CMD} -e 's,libexec/,${RESIN_LIBEXEC}/,' \
+		${WRKSRC}/Makefile.in
 
 post-build:
 	cd ${WRKSRC}/modules/c/src/resin_os && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} install
