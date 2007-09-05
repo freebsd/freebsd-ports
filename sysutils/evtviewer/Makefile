@@ -8,8 +8,8 @@
 PORTNAME=	evtViewer
 PORTVERSION=	0.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://contribs.martymac.com/evtViewer/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://contribs.martymac.com/evtViewer/
 MASTER_SITE_SUBDIR=	evtviewer
 EXTRACT_SUFX=	.tgz
 
