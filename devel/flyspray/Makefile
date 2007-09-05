@@ -7,7 +7,8 @@
 
 PORTNAME=	flyspray
 PORTVERSION=	0.9.9.2
-CATEGORIES=	devel
+PORTREVISION=	1
+CATEGORIES=	devel www
 MASTER_SITES=	http://www.flyspray.org/
 
 MAINTAINER=	nick@foobar.org
@@ -35,12 +36,19 @@ DOC_FILES=	AUTHORS.txt BUGS.txt CHANGELOG.txt INSTALL.txt \
 		licences/NuvolaIcons.licence.txt \
 		licences/jsCalendar.licence.txt
 
-FLYSPRAY_FILES=	cache docs/licences/gnu_lgpl.html \
-		favicon.ico feed.php header.php htaccess.dist includes \
-		index.php javascript lang plugins robots.txt schedule.php \
-		scripts setup templates themes
+FLYSPRAY_FILES=	cache docs/licences/gnu_lgpl.html favicon.ico \
+		flyspray.conf.php-dist feed.php header.php htaccess.dist \
+		includes index.php javascript lang plugins robots.txt \
+		schedule.php scripts setup templates themes
 
-SUB_FILES=	pkg-message
+SUB_FILES+=	pkg-message pkg-install
+SUB_LIST+=	FLYSPRAYDIR="${FLYSPRAYDIR}" \
+		ATTACHMENTDIR="${ATTACHMENTDIR}" \
+		MKDIR="${MKDIR}" \
+		CHOWN="${CHOWN}" \
+		CHMOD="${CHMOD}" \
+		WWWGRP="${WWWGRP}" \
+		WWWOWN="${WWWOWN}"
 
 .include <bsd.port.pre.mk>
 
@@ -56,19 +64,16 @@ post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} '{}' ';'
 
 do-install:
-	@${MKDIR} ${FLYSPRAYDIR}
+	${MKDIR} ${FLYSPRAYDIR}
 	${CHMOD} 755 ${FLYSPRAYDIR}
-	${TOUCH} ${FLYSPRAYDIR}/flyspray.conf.php
+	${CP} ${WRKSRC}/setup/upgrade/${PORTVERSION}/flyspray.conf.php ${WRKSRC}/flyspray.conf.php-dist
 	cd ${WRKSRC} && \
 		${TAR} cf - ${FLYSPRAY_FILES} | \
 		(cd ${FLYSPRAYDIR} && ${TAR} -xf -)
 	${LN} -s ${ATTACHMENTDIR} ${FLYSPRAYDIR}/attachments
 	${LN} -s ${PREFIX}/share/adodb ${FLYSPRAYDIR}
-	@${MKDIR} ${ATTACHMENTDIR}
-	${CHMOD} 750 ${ATTACHMENTDIR}
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${ATTACHMENTDIR}
 	${CHOWN} ${WWWOWN}:${WWWGRP} ${FLYSPRAYDIR}/cache
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${FLYSPRAYDIR}/flyspray.conf.php
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 post-install: install-doc
 	@${CAT} ${PKGMESSAGE}
