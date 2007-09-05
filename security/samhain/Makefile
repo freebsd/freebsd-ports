@@ -6,6 +6,7 @@
 
 PORTNAME=	samhain
 PORTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://redundancy.redundancy.org/mirror/
@@ -92,7 +93,7 @@ CONFIGURE_ARGS+=	--with-logserver=${WITH_LOG_SERVER}
 CONFIGURE_ARGS+=	--with-altlogserver=${WITH_ALT_LOG_SERVER}
 .endif
 .if defined(WITH_PRELUDE)
-LIB_DEPENDS+=		prelude.12:${PORTSDIR}/security/libprelude
+LIB_DEPENDS+=		prelude.13:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--with-prelude
 .endif
 
