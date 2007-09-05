@@ -7,20 +7,22 @@
 
 PORTNAME=	File-HStore
 PORTVERSION=	0.09
+PORTREVISION=	1
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/A/AD/ADULAU
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Store files on a filesystem using a very simple hash-based storage
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA2.pm:${PORTSDIR}/security/p5-Digest-SHA2
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA.pm:${PORTSDIR}/security/p5-Digest-SHA
 
 PERL_CONFIGURE=	yes
 
 MAN3=		File::HStore.3
+
+post-patch:
+		@${RM} ${WRKSRC}/lib/File/HStore.pm.orig
 
 .include <bsd.port.pre.mk>
 
