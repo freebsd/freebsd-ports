@@ -314,6 +314,8 @@ MLINKS+=\
 	curs_opaque.3x is_scrollok.3x \
 	curs_opaque.3x is_syncok.3x \
 	curs_opaque.3x is_timeout.3x \
+	curs_opaque.3x wgetparent.3x \
+	curs_opaque.3x wgetscrreg.3x \
 	curs_outopts.3x clearok.3x \
 	curs_outopts.3x idcok.3x \
 	curs_outopts.3x idlok.3x \
