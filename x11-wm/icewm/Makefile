@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.30
-PORTREVISION=	3
+PORTVERSION=	1.2.32
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
@@ -18,8 +17,7 @@ WANT_GNOME=	yes
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-shaped-decorations \
 		--enable-guievents \
 		--with-cfgdir=${DATADIR} \
