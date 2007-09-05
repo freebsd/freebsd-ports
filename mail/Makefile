@@ -168,6 +168,7 @@
     SUBDIR += hotwayd
     SUBDIR += ifile
     SUBDIR += ilohamail
+    SUBDIR += ilohamail-devel
     SUBDIR += im
     SUBDIR += imap-uw
     SUBDIR += imapfilter
