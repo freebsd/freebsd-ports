@@ -1569,7 +1569,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>mod_jk</name>
 	<name>mod_jk-ap2</name>
-	<range><lt>1.2.23</lt></range>
+	<range><lt>1.2.23,1</lt></range>
       </package>
     </affects>
     <description>
@@ -1592,6 +1592,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-05-18</discovery>
       <entry>2007-06-05</entry>
+      <modified>2007-09-05</modified>
     </dates>
   </vuln>
 
