@@ -1,14 +1,11 @@
-etc/ldapscripts/ldapscripts.conf
-etc/ldapscripts/runtime
-etc/ldapscripts/ldapaddgroup.template.sample
-etc/ldapscripts/ldapadduser.template.sample
-etc/ldapscripts/ldapaddmachine.template.sample
-etc/ldapscripts/README
-etc/ldapscripts/CHANGELOG
-etc/ldapscripts/COPYING
-etc/ldapscripts/VERSION
-etc/ldapscripts/TODO
-@dirrmtry etc/ldapscripts
+@unexec if cmp -s %D/%%ETCDIR%%/ldapscripts.conf.sample %D/%%ETCDIR%%/ldapscripts.conf; then rm -f %D/%%ETCDIR%%/ldapscripts.conf; fi
+%%ETCDIR%%/ldapscripts.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/ldapscripts.conf ] ; then cp -p %D/%F %B/ldapscripts.conf; fi
+%%ETCDIR%%/runtime
+%%ETCDIR%%/ldapaddgroup.template.sample
+%%ETCDIR%%/ldapadduser.template.sample
+%%ETCDIR%%/ldapaddmachine.template.sample
+@dirrmtry %%ETCDIR%%
 bin/_ldapdeletemachine
 bin/_ldapinit
 bin/_lsldap
@@ -25,3 +22,6 @@ bin/_ldaprenamemachine
 bin/_ldaprenamegroup
 bin/_ldappasswd
 bin/_ldapfinger
+bin/_ldapmodifygroup
+bin/_ldapmodifymachine
+bin/_ldapmodifyuser
