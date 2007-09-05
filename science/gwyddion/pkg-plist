@@ -86,6 +86,7 @@ lib/gwyddion/modules/process/fft_filter_2d.so
 lib/gwyddion/modules/process/fit_2d.so
 lib/gwyddion/modules/process/fraccor.so
 lib/gwyddion/modules/process/gradient.so
+lib/gwyddion/modules/process/grain_cross.so
 lib/gwyddion/modules/process/grain_dist.so
 lib/gwyddion/modules/process/grain_mark.so
 lib/gwyddion/modules/process/grain_rem_threshold.so
@@ -176,6 +177,7 @@ include/gwyddion/libprocess/elliptic.h
 include/gwyddion/libprocess/filters.h
 include/gwyddion/libprocess/fractals.h
 include/gwyddion/libprocess/grains.h
+include/gwyddion/libprocess/gwygrainvalue.h
 include/gwyddion/libprocess/gwyprocess.h
 include/gwyddion/libprocess/gwyprocessenums.h
 include/gwyddion/libprocess/gwyprocesstypes.h
@@ -210,6 +212,7 @@ include/gwyddion/libgwydgets/gwydgets.h
 include/gwyddion/libgwydgets/gwydgetenums.h
 include/gwyddion/libgwydgets/gwydgettypes.h
 include/gwyddion/libgwydgets/gwydgetutils.h
+include/gwyddion/libgwydgets/gwygrainvaluemenu.h
 include/gwyddion/libgwydgets/gwygraphcurvemodel.h
 include/gwyddion/libgwydgets/gwygraphdata.h
 include/gwyddion/libgwydgets/gwygraphmodel.h
@@ -475,6 +478,7 @@ share/icons/hicolor/48x48/apps/gwyddion.png
 %%DATADIR%%/gradients/Warm
 %%DATADIR%%/gradients/Yellow
 %%DATADIR%%/gradients/Zones
+%%DATADIR%%/ui/toolbox.xml
 share/applications/gwyddion.desktop
 share/mime/application/x-bcr-spm.xml
 share/mime/application/x-bcrf-spm.xml
@@ -505,6 +509,7 @@ share/mime/application/x-zygo-spm.xml
 @dirrm share/gwyddion/gradients
 @dirrm share/gwyddion/glmaterials
 @dirrm share/gwyddion/pixmaps
+@dirrm share/gwyddion/ui
 @dirrm share/gwyddion
 @dirrm libexec/gwyddion/plugins/process
 @dirrm libexec/gwyddion/plugins/file
