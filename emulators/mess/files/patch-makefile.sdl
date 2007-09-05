@@ -1,9 +1,9 @@
---- makefile.sdl.orig	Thu Apr 12 22:23:24 2007
-+++ makefile.sdl	Sat Apr 21 13:35:00 2007
-@@ -63,11 +63,13 @@
+--- makefile.sdl.orig	Fri Aug 31 10:41:30 2007
++++ makefile.sdl	Fri Aug 31 11:22:15 2007
+@@ -66,11 +66,13 @@
  # uncomment next line to include the debugger
- # DEBUG = 1    
-  
+ # DEBUG = 1
+ 
 +ifeq ($(ARCH),i386)
  # uncomment next line to use DRC MIPS3 engine
  X86_MIPS3_DRC = 1
@@ -12,164 +12,73 @@
  X86_PPC_DRC = 1
 +endif
  
- #-------------------------------------------------
- # specify build options; see each option below 
-@@ -128,17 +130,6 @@
- PPC = 1
- endif
+ # uncomment next line to use DRC Voodoo rasterizers
+ # X86_VOODOO_DRC = 1
+@@ -96,7 +98,9 @@
+ # CELL = 1
  
--ifdef PPC
--X86_MIPS3_DRC =
--X86_PPC_DRC =
--endif
--
--# disable DRC cores for 64-bit builds
--ifdef PTR64
--X86_MIPS3_DRC =
--X86_PPC_DRC =
--endif
--
- # Mac builds always need EXPAT and ZLIB built
- ifeq ($(SUBARCH),macosx)
+ # uncomment next line if you are building for a 64-bit target
+-# PTR64 = 1
++ifeq ($(ARCH),amd64)
++PTR64 = 1
++endif
+ 
+ # uncomment next line to build expat as part of MAME build
  BUILD_EXPAT = 1
-@@ -174,8 +165,8 @@
+@@ -160,8 +164,8 @@
  
  # compiler, linker and utilities
  AR = @ar
 -CC = @gcc
 -LD = @gcc
 +CC := @$(CC)
-+LD = $(CC)
- MD = -mkdir
++LD = @$(CC)
+ HHC = @-hhc
+ MD = -mkdir$(EXE)
  RM = @rm -f
- 
-@@ -191,49 +182,8 @@
+@@ -258,8 +262,8 @@
  endif
  
- # by default, don't compile for a specific target CPU
--NAME = $(PREFIX)$(TARGET)
--ARCH = 
--
--# architecture-specific builds get extra options
--ifdef ATHLON
--NAME = $(PREFIX)$(TARGET)at
--ARCH = -march=athlon
--endif
--
--ifdef I686
--NAME = $(PREFIX)$(TARGET)pp
--ARCH = -march=pentiumpro
--endif
--
--ifdef P4
--NAME = $(PREFIX)$(TARGET)p4
--ARCH = -march=pentium4
--endif
--
--ifdef AMD64
--NAME = $(PREFIX)$(TARGET)64
--ARCH = -march=athlon64
--endif
--
--ifdef PM
--NAME = $(PREFIX)$(TARGET)pm
--ARCH = -march=pentium3 -msse2
--endif
--
--ifdef G4
--NAME = $(PREFIX)$(TARGET)g4
--ARCH = -mcpu=G4
--endif
--
--ifdef G5
--NAME = $(PREFIX)$(TARGET)g5
--ARCH = -mcpu=G5
--endif
--
--ifdef CELL
--NAME = $(PREFIX)$(TARGET)cbe
-+NAME = sdl$(TARGET)
- ARCH = 
--endif
+ # fullname is prefix+name+suffix
+-FULLNAME = $(PREFIX)$(NAME)$(SUFFIX)
+-FULLGUINAME = $(PREFIX)$(NAME)gui$(SUFFIX)
++FULLNAME = $(NAME)
++FULLGUINAME = $(NAME)gui
  
- # debug builds just get the 'd' suffix and nothing more
- ifdef DEBUG
-@@ -253,18 +203,22 @@
- # compile-time definitions
+ # add an EXE suffix to get the final emulator name
+ EMULATORCLI = $(FULLNAME)$(EXE)
+@@ -325,7 +329,7 @@
  #-------------------------------------------------
  
--ifdef PPC
--DEFS = -DPPC_ASM -DINLINE="static __inline__" -Dasm=__asm__ -DPI=M_PI -Dstrnicmp=strncasecmp -D_scalb=scalb -DCRLF=2 -DGL_GLEXT_PROTOTYPES=1 -Dbool=int
--else
--ifdef PTR64
- DEFS = -DLSB_FIRST -DINLINE="static __inline__" -Dasm=__asm__ -DPI=M_PI -Dstrnicmp=strncasecmp -D_scalb=scalb -DCRLF=2 -DGL_GLEXT_PROTOTYPES=1
--else
--DEFS = -DX86_ASM -DLSB_FIRST -DINLINE="static __inline__" -Dasm=__asm__ -DPI=M_PI -Dstrnicmp=strncasecmp -D_scalb=scalb -DCRLF=2 -DGL_GLEXT_PROTOTYPES=1
-+
-+ifeq ($(ARCH),i386)
-+DEFS += -DX86_ASM
- endif
-+
-+ifeq ($(ARCH),powerpc)
-+DEFS += -DPPC_ASM -Dbool=int
-+endif
-+
-+ifneq ($(shell echo $(ARCH) | grep -v 64),)
-+PTR64 = yes
- endif
+ # we compile to C89 standard with GNU extensions
+-CFLAGS = -std=gnu89
++CFLAGS += -std=gnu89
  
- ifdef PTR64
--DEFS += -DPTR64
-+DEFS += -DLSB_FIRST -DPTR64
- endif
+ # add -g if we need symbols
+ ifdef SYMBOLS
+@@ -356,7 +360,7 @@
+ # and make all errors into warnings
+ # but not on 64-bit or debug builds
+ ifneq ($(OPTIMIZE),0)
+-CFLAGS += $(ARCH) -fno-strict-aliasing
++CFLAGS += -fno-strict-aliasing
  
- ifdef DEBUG
-@@ -275,7 +229,7 @@
- # compile and linking flags
- #-------------------------------------------------
- 
--CFLAGS = \
-+CFLAGS += \
- 	$(OPT_FLAGS) \
- 	-std=gnu89 \
- 	-I$(SRC)/$(TARGET) \
-@@ -287,6 +241,7 @@
+ # only -Werror if not PTR64 and not DEBUG
+ ifndef PTR64
+@@ -397,6 +401,7 @@
  	-I$(SRC)/lib/util \
  	-I$(SRC)/osd \
- 	-I$(SRC)/osd/$(MAMEOS) \
-+	-I$(LOCALBASE)/include -I$(X11BASE)/include
+ 	-I$(SRC)/osd/$(OSD) \
++        -I$(LOCALBASE)/include
  
  ifdef MESS
  CFLAGS += \
-@@ -305,7 +260,7 @@
- endif	# PPC
- endif	# SYMBOLS
+@@ -412,7 +417,7 @@
  
--CFLAGS += $(ARCH) \
-+CFLAGS += \
- 	-Wall \
- 	-Wpointer-arith \
- 	-Wbad-function-cast \
-@@ -317,7 +272,7 @@
- 	-Wdeclaration-after-statement
- 
- ifneq ($(OPTIMIZE),0)
--CFLAGS += -DNDEBUG $(ARCH) -fno-strict-aliasing
-+CFLAGS += -DNDEBUG -fno-strict-aliasing
- endif
- 
- CFLAGS += -O$(OPTIMIZE)
-@@ -325,11 +280,9 @@
- # extra options needed *only* for the osd files
- CFLAGSOSDEPEND = $(CFLAGS)
- 
--LDFLAGS = -WO
-+LDFLAGS = -WO -L$(LOCALBASE)/lib -L$(X11BASE)/lib
- 
--ifdef SYMBOLS
+ # LDFLAGS are used generally; LDFLAGSEMULATOR are additional
+ # flags only used when linking the core emulator
 -LDFLAGS = 
--else
-+ifndef SYMBOLS
- LDFLAGS += -s
- endif
++LDFLAGS += -L$(LOCALBASE)/lib 
+ LDFLAGSEMULATOR =
  
+ # strip symbols and other metadata in non-symbols builds
