@@ -31,6 +31,11 @@ bin/boswars
 %%DATADIR%%/campaigns/elites/level10.sms
 %%DATADIR%%/campaigns/elites/level10.txt
 %%DATADIR%%/campaigns/tutorial/campaign.lua
+%%DATADIR%%/campaigns/tutorial/level01.wav
+%%DATADIR%%/campaigns/tutorial/level01-01.wav
+%%DATADIR%%/campaigns/tutorial/level01-03.wav
+%%DATADIR%%/campaigns/tutorial/level01-04.wav
+%%DATADIR%%/campaigns/tutorial/level01-05.wav
 %%DATADIR%%/campaigns/tutorial/level01.smp
 %%DATADIR%%/campaigns/tutorial/level01.sms
 %%DATADIR%%/campaigns/tutorial/level02.smp
@@ -40,11 +45,6 @@ bin/boswars
 %%DATADIR%%/graphics/elites/missile/grenade.png
 %%DATADIR%%/graphics/elites/missile/nuke.png
 %%DATADIR%%/graphics/elites/missile/rocket.png
-%%DATADIR%%/graphics/elites/research/res_ddril.png
-%%DATADIR%%/graphics/elites/research/res_expl.png
-%%DATADIR%%/graphics/elites/research/res_expl2.png
-%%DATADIR%%/graphics/elites/research/res_pdril.png
-%%DATADIR%%/graphics/elites/research/res_tdril.png
 %%DATADIR%%/graphics/elites/ui/elites_claw.png
 %%DATADIR%%/graphics/elites/ui/ui_1024_bpanel.png
 %%DATADIR%%/graphics/elites/ui/ui_1280_bpanel.png
@@ -99,21 +99,26 @@ bin/boswars
 %%DATADIR%%/graphics/ui/rosace1.png
 %%DATADIR%%/graphics/ui/x_startpoint.png
 %%DATADIR%%/languages/bg.po
+%%DATADIR%%/languages/bos-cs.po
 %%DATADIR%%/languages/bos-da.po
 %%DATADIR%%/languages/bos-de.po
-%%DATADIR%%/languages/bos-en.po
+%%DATADIR%%/languages/bos-es.po
 %%DATADIR%%/languages/bos-fi.po
 %%DATADIR%%/languages/bos-fr.po
+%%DATADIR%%/languages/bos-tr.po
 %%DATADIR%%/languages/bos.pot
+%%DATADIR%%/languages/cs.po
 %%DATADIR%%/languages/da.po
 %%DATADIR%%/languages/de.po
-%%DATADIR%%/languages/en.po
 %%DATADIR%%/languages/engine.pot
+%%DATADIR%%/languages/es.po
 %%DATADIR%%/languages/fi.po
 %%DATADIR%%/languages/fr.po
 %%DATADIR%%/languages/genpot.sh
 %%DATADIR%%/languages/makesame.py
 %%DATADIR%%/languages/pl.po
+%%DATADIR%%/languages/tr.po
+%%DATADIR%%/languages/updatepo.sh
 %%DATADIR%%/maps/C1_M10_Fort_Savoy.smp
 %%DATADIR%%/maps/C1_M10_Fort_Savoy.sms
 %%DATADIR%%/maps/C1_M1_the_river.smp
@@ -194,8 +199,6 @@ bin/boswars
 %%DATADIR%%/maps/river/setup.sms
 %%DATADIR%%/maps/river/terrain.lua
 %%DATADIR%%/maps/river/terrain.png
-%%DATADIR%%/maps/test.smp
-%%DATADIR%%/maps/test.sms
 %%DATADIR%%/maps/tutorial.smp
 %%DATADIR%%/maps/tutorial/access-unpassable.lua
 %%DATADIR%%/maps/tutorial/setup.sms
@@ -211,6 +214,7 @@ bin/boswars
 %%DATADIR%%/scripts/ai.lua
 %%DATADIR%%/scripts/ais/passive.lua
 %%DATADIR%%/scripts/ais/rush.lua
+%%DATADIR%%/scripts/ais/tankrush.lua
 %%DATADIR%%/scripts/anim.lua
 %%DATADIR%%/scripts/bos.lua
 %%DATADIR%%/scripts/buttons.lua
@@ -218,7 +222,6 @@ bin/boswars
 %%DATADIR%%/scripts/cheats.lua
 %%DATADIR%%/scripts/commands.lua
 %%DATADIR%%/scripts/cursors.lua
-%%DATADIR%%/scripts/dependency.lua
 %%DATADIR%%/scripts/editor.lua
 %%DATADIR%%/scripts/fonts.lua
 %%DATADIR%%/scripts/guichan.lua
@@ -231,7 +234,6 @@ bin/boswars
 %%DATADIR%%/scripts/menus/ingame/game.lua
 %%DATADIR%%/scripts/menus/network.lua
 %%DATADIR%%/scripts/menus/options.lua
-%%DATADIR%%/scripts/menus/widgetsdemo.lua
 %%DATADIR%%/scripts/missiles.lua
 %%DATADIR%%/scripts/sound.lua
 %%DATADIR%%/scripts/spells.lua
@@ -241,10 +243,17 @@ bin/boswars
 %%DATADIR%%/scripts/ui.lua
 %%DATADIR%%/scripts/uilayout.lua
 %%DATADIR%%/scripts/units.lua
-%%DATADIR%%/scripts/upgrade.lua
 %%DATADIR%%/sounds/bazoo_g_hit.wav
 %%DATADIR%%/sounds/grenadier_g_hit.wav
+%%DATADIR%%/sounds/ui/chatmessage.wav
 %%DATADIR%%/sounds/ui/click.wav.gz
+%%DATADIR%%/units/aircraftfactory/aircraftfactory.completed.wav
+%%DATADIR%%/units/aircraftfactory/aircraftfactory.underattack.wav
+%%DATADIR%%/units/aircraftfactory/unit-aircraftfactory.lua
+%%DATADIR%%/units/aircraftfactory/aircraftfactory.png
+%%DATADIR%%/units/aircraftfactory/aircraftfactory_c.png
+%%DATADIR%%/units/aircraftfactory/aircraftfactory_i.png
+%%DATADIR%%/units/aircraftfactory/aircraftfactory_s.png
 %%DATADIR%%/units/antharus/antharus.png
 %%DATADIR%%/units/antharus/icon.png
 %%DATADIR%%/units/antharus/unit-antharus.lua
@@ -337,15 +346,6 @@ bin/boswars
 %%DATADIR%%/units/chopper/unit_chopper_s.png
 %%DATADIR%%/units/corpses/build-dead-2.png
 %%DATADIR%%/units/corpses/unit-corpses.lua
-%%DATADIR%%/units/crystals/ico_crys.png
-%%DATADIR%%/units/crystals/res_crys.png
-%%DATADIR%%/units/crystals/res_crys_s.png
-%%DATADIR%%/units/crystals/unit-crystals.lua
-%%DATADIR%%/units/developmentyard/development_yard.png
-%%DATADIR%%/units/developmentyard/development_yard_c.png
-%%DATADIR%%/units/developmentyard/development_yard_i.png
-%%DATADIR%%/units/developmentyard/development_yard_s.png
-%%DATADIR%%/units/developmentyard/unit-developmentyard.lua
 %%DATADIR%%/units/dorcoz/ico_dorcoz.png
 %%DATADIR%%/units/dorcoz/mis_plasma_sml.png
 %%DATADIR%%/units/dorcoz/unit-dorcoz.lua
@@ -361,15 +361,6 @@ bin/boswars
 %%DATADIR%%/units/engineer/unit_engineer.png
 %%DATADIR%%/units/engineer/unit_engineer_c.png
 %%DATADIR%%/units/engineer/unit_engineer_s.png
-%%DATADIR%%/units/generator/generator.png
-%%DATADIR%%/units/generator/generator_c.png
-%%DATADIR%%/units/generator/generator_i.png
-%%DATADIR%%/units/generator/generator_s.png
-%%DATADIR%%/units/generator/power.plant.completed.wav
-%%DATADIR%%/units/generator/power.plant.underattack.wav
-%%DATADIR%%/units/generator/sfx_pplnt.die.wav
-%%DATADIR%%/units/generator/sfx_pplnt.select.wav
-%%DATADIR%%/units/generator/unit-generator.lua
 %%DATADIR%%/units/grenadier/grenadier.ready.wav
 %%DATADIR%%/units/grenadier/grenadier.underattack.wav
 %%DATADIR%%/units/grenadier/grenadier_action.wav
@@ -409,6 +400,9 @@ bin/boswars
 %%DATADIR%%/units/hospital/sfx_hosp.die.wav
 %%DATADIR%%/units/hospital/sfx_hosp.select.wav
 %%DATADIR%%/units/hospital/unit-hospital.lua
+%%DATADIR%%/units/hotspot/unit-hotspot.lua
+%%DATADIR%%/units/hotspot/hotspot.png
+%%DATADIR%%/units/hotspot/hotspot_i.png
 %%DATADIR%%/units/jet/ico_jet.png
 %%DATADIR%%/units/jet/jet.ready.wav
 %%DATADIR%%/units/jet/jet.underattack.wav
@@ -416,6 +410,15 @@ bin/boswars
 %%DATADIR%%/units/jet/unit-jet.lua
 %%DATADIR%%/units/jet/unit_jet.png
 %%DATADIR%%/units/jet/unit_jet_s.png
+%%DATADIR%%/units/magmapump/magmapump.completed.wav
+%%DATADIR%%/units/magmapump/magmapump.select.wav
+%%DATADIR%%/units/magmapump/magmapump.underattack.wav
+%%DATADIR%%/units/magmapump/unit-magmapump.lua
+%%DATADIR%%/units/magmapump/magmapump.png
+%%DATADIR%%/units/magmapump/magmapump_c.png
+%%DATADIR%%/units/magmapump/magmapump_i.png
+%%DATADIR%%/units/magmapump/magmapump_s.png
+%%DATADIR%%/units/magmapump/sfx_pplnt.die.wav
 %%DATADIR%%/units/medic/heal.png
 %%DATADIR%%/units/medic/ico_heal.png
 %%DATADIR%%/units/medic/ico_medic.png
@@ -465,6 +468,22 @@ bin/boswars
 %%DATADIR%%/units/nukeplant/sfx_pplnt.die.wav
 %%DATADIR%%/units/nukeplant/sfx_pplnt.select.wav
 %%DATADIR%%/units/nukeplant/unit-nukeplant.lua
+%%DATADIR%%/units/powerplant/power.plant.completed.wav
+%%DATADIR%%/units/powerplant/power.plant.underattack.wav
+%%DATADIR%%/units/powerplant/unit-powerplant.lua
+%%DATADIR%%/units/powerplant/sfx_pplnt.die.wav
+%%DATADIR%%/units/powerplant/sfx_pplnt.select.wav
+%%DATADIR%%/units/powerplant/powerplant.png
+%%DATADIR%%/units/powerplant/powerplant_c.png
+%%DATADIR%%/units/powerplant/powerplant_i.png
+%%DATADIR%%/units/powerplant/powerplant_s.png
+%%DATADIR%%/units/plants/pitcher_icon.png
+%%DATADIR%%/units/plants/rafflesia_icon.png
+%%DATADIR%%/units/plants/unit-plant.lua
+%%DATADIR%%/units/plants/pitcher.png
+%%DATADIR%%/units/plants/pitcher_shadow.png
+%%DATADIR%%/units/plants/rafflesia.png
+%%DATADIR%%/units/plants/rafflesia_shadow.png
 %%DATADIR%%/units/radar/radar.completed.wav
 %%DATADIR%%/units/radar/radar.png
 %%DATADIR%%/units/radar/radar.underattack.wav
@@ -472,16 +491,6 @@ bin/boswars
 %%DATADIR%%/units/radar/radar_s.png
 %%DATADIR%%/units/radar/sfx_rdar.select.wav
 %%DATADIR%%/units/radar/unit-radar.lua
-%%DATADIR%%/units/research/research.completed.wav
-%%DATADIR%%/units/research/research.facility.completed.wav
-%%DATADIR%%/units/research/research.facility.underattack.wav
-%%DATADIR%%/units/research/research_c.png
-%%DATADIR%%/units/research/research_facility.png
-%%DATADIR%%/units/research/research_facility_i.png
-%%DATADIR%%/units/research/research_facility_s.png
-%%DATADIR%%/units/research/sfx_rfac.die.wav
-%%DATADIR%%/units/research/sfx_rfac.select.wav
-%%DATADIR%%/units/research/unit-research.lua
 %%DATADIR%%/units/rocks/rock_1.png
 %%DATADIR%%/units/rocks/rock_1i.png
 %%DATADIR%%/units/rocks/rock_1s.png
@@ -530,10 +539,10 @@ bin/boswars
 %%DATADIR%%/units/tree04/tree04.png
 %%DATADIR%%/units/tree04/tree04_s.png
 %%DATADIR%%/units/tree04/unit-tree04.lua
-%%DATADIR%%/units/vault/elite.fort.completed.wav
-%%DATADIR%%/units/vault/elite.fort.underattack.wav
 %%DATADIR%%/units/vault/sfx_fort.die.wav
 %%DATADIR%%/units/vault/sfx_fort.select.wav
+%%DATADIR%%/units/vault/vault.completed.wav
+%%DATADIR%%/units/vault/vault.underattack.wav
 %%DATADIR%%/units/vault/vault-i.png
 %%DATADIR%%/units/vault/vault.lua
 %%DATADIR%%/units/vault/vault.png
@@ -548,6 +557,9 @@ bin/boswars
 %%DATADIR%%/units/vehiclefactory/vehicle_factory_i.png
 %%DATADIR%%/units/vehiclefactory/vehicle_factory_s.png
 %%DATADIR%%/units/vehiclefactory/vehiclefactory.lua
+%%DATADIR%%/units/weakhotspot/unit-weakhotspot.lua
+%%DATADIR%%/units/weakhotspot/hotspot.png
+%%DATADIR%%/units/weakhotspot/hotspot_i.png
 %%DATADIR%%/video/boswars_intro.ogg
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
@@ -581,6 +593,7 @@ bin/boswars
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/video
+@dirrm %%DATADIR%%/units/weakhotspot
 @dirrm %%DATADIR%%/units/vehiclefactory
 @dirrm %%DATADIR%%/units/vault
 @dirrm %%DATADIR%%/units/tree04
@@ -591,22 +604,22 @@ bin/boswars
 @dirrm %%DATADIR%%/units/rtank
 @dirrm %%DATADIR%%/units/rocksfield
 @dirrm %%DATADIR%%/units/rocks
-@dirrm %%DATADIR%%/units/research
 @dirrm %%DATADIR%%/units/radar
+@dirrm %%DATADIR%%/units/plants
+@dirrm %%DATADIR%%/units/powerplant
 @dirrm %%DATADIR%%/units/nukeplant
 @dirrm %%DATADIR%%/units/morels
 @dirrm %%DATADIR%%/units/missilesilo
 @dirrm %%DATADIR%%/units/medic
+@dirrm %%DATADIR%%/units/magmapump
 @dirrm %%DATADIR%%/units/jet
+@dirrm %%DATADIR%%/units/hotspot
 @dirrm %%DATADIR%%/units/hospital
 @dirrm %%DATADIR%%/units/harvester
 @dirrm %%DATADIR%%/units/gturret
 @dirrm %%DATADIR%%/units/grenadier
-@dirrm %%DATADIR%%/units/generator
 @dirrm %%DATADIR%%/units/engineer
 @dirrm %%DATADIR%%/units/dorcoz
-@dirrm %%DATADIR%%/units/developmentyard
-@dirrm %%DATADIR%%/units/crystals
 @dirrm %%DATADIR%%/units/corpses
 @dirrm %%DATADIR%%/units/chopper
 @dirrm %%DATADIR%%/units/cannon
@@ -619,6 +632,7 @@ bin/boswars
 @dirrm %%DATADIR%%/units/artil
 @dirrm %%DATADIR%%/units/apcs
 @dirrm %%DATADIR%%/units/antharus
+@dirrm %%DATADIR%%/units/aircraftfactory
 @dirrm %%DATADIR%%/units
 @dirrm %%DATADIR%%/sounds/ui
 @dirrm %%DATADIR%%/sounds
@@ -647,7 +661,6 @@ bin/boswars
 @dirrm %%DATADIR%%/graphics/general
 @dirrm %%DATADIR%%/graphics/elites/units
 @dirrm %%DATADIR%%/graphics/elites/ui
-@dirrm %%DATADIR%%/graphics/elites/research
 @dirrm %%DATADIR%%/graphics/elites/missile
 @dirrm %%DATADIR%%/graphics/elites
 @dirrm %%DATADIR%%/graphics
