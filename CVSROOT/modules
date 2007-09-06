@@ -191,6 +191,7 @@ abridge		ports/games/abridge
 abs		ports/math/abs
 abuse		ports/games/abuse
 abuse_sdl	ports/games/abuse_sdl
+abyssws		ports/www/abyssws
 accessibility_orca	ports/accessibility/orca
 accessx		ports/x11/accessx
 accrete		ports/astro/accrete
