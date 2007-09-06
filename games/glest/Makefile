@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	glest
-PORTVERSION=	2.0.0
-PORTREVISION=	6
+PORTVERSION=	2.0.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,11 +21,12 @@ LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
-RUN_DEPENDS=	${LOCALBASE}/lib/${PORTNAME}/configuration.xml:${PORTSDIR}/games/glest-data
+RUN_DEPENDS=	${DATADIR}/configuration.xml:${PORTSDIR}/games/glest-data
 
 USE_XLIB=	yes
 USE_AUTOTOOLS=	automake:15:env autoconf:259:env
 USE_ZIP=	yes
+USE_DOS2UNIX=	yes
 USE_GCC=	3.2+
 USE_SDL=	yes
 USE_GL=		yes
@@ -35,21 +35,15 @@ CONFIGURE_SCRIPT=	mk/linux/configure
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 			LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
+SUB_FILES=		glest-wrapper pkg-message
 
-GLESTDIRE=	lib/${PORTNAME}
-
-PLIST_SUB=	GLESTDIRE=${GLESTDIRE}
-SUB_FILES=	glest-wrapper
+JAM_CMD=		${LOCALBASE}/bin/jam -qa
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=	does not build on 4.x
-.endif
-
-post-extract:
-	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|cpp|h|txt|sh|ac|sub|ini|m4|jam|guess|rpath)" \
-		-print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
+pre-extract:
+	@${MKDIR} ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%ACLOCAL%%|${ACLOCAL}|g" -e "s|%%AUTOCONF%%|${AUTOCONF}|g" \
@@ -64,21 +58,19 @@ pre-configure:
 	@cd ${WRKSRC}/mk/linux && ${SH} autogen.sh
 
 do-build:
-	@cd ${WRKSRC} && jam -q
+	@cd ${WRKSRC} && ${JAM_CMD}
 
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/license.txt ${DOCSDIR}/license-game.txt
 .endif
-	${MKDIR} ${PREFIX}/${GLESTDIRE}
-	${INSTALL_PROGRAM} ${WRKSRC}/glest ${PREFIX}/${GLESTDIRE}
-	${INSTALL_DATA} ${WRKSRC}/mk/linux/glest.ini ${PREFIX}/${GLESTDIRE}
-	${INSTALL_SCRIPT} ${WRKDIR}/glest-wrapper ${PREFIX}/bin/glest
+	@${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/glest ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/mk/linux/glest.ini ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/glest-wrapper ${PREFIX}/bin/${PORTNAME}
 
 post-install:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "* Configuration file ${PREFIX}/${GLESTDIRE}/glest.ini"
-	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
