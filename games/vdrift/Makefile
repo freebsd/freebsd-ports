@@ -7,7 +7,7 @@
 
 PORTNAME=	vdrift
 PORTVERSION=	20070323
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -62,6 +62,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e "s|'openal'|'openal','alut'|g" ${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e 's|^os.system.*||g' ${WRKSRC}/src/SConscript
+	@${REINPLACE_CMD} -e 's|GLvoid|void|g' ${WRKSRC}/src/main.cpp
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} scons ${SCONS_ARGS}
