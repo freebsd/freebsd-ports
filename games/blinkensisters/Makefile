@@ -26,6 +26,12 @@ MAKE_ARGS=	CC="${CXX}"
 
 PORTDOCS=	AUTHORS HOWTOPLAY INSTALL README SCRIPTING
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 700000
+BROKEN=		Doesn't build
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/LostPixels ${PREFIX}/bin/${PORTNAME}
 
@@ -43,4 +49,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
