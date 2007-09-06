@@ -1,0 +1,25 @@
+diff -Nur zebra/ChangeLog quagga/zebra/ChangeLog
+--- zebra/ChangeLog	2007-08-21 20:15:32.000000000 +0400
++++ zebra/ChangeLog	2007-09-06 18:23:30.000000000 +0400
+@@ -1,3 +1,9 @@
++2007-09-06 Denis Ovsienko
++
++	* rtread_sysctl.c: (route_read) Set RTF_DONE on the routing
++	  messages when fetching initial kernel FIB, so rtm_read()
++	  doesn't skip them.
++
+ 2007-08-21 Denis Ovsienko
+ 
+ 	* ioctl_solaris.c: (if_get_mtu) Don't break things if either
+diff -Nur zebra/rtread_sysctl.c zebra/rtread_sysctl.c
+--- zebra/rtread_sysctl.c	2005-11-24 18:15:17.000000000 +0300
++++ zebra/rtread_sysctl.c	2007-09-06 18:12:14.000000000 +0400
+@@ -68,6 +68,8 @@
+   for (end = buf + bufsiz; buf < end; buf += rtm->rtm_msglen) 
+     {
+       rtm = (struct rt_msghdr *) buf;
++      /* We must set RTF_DONE here, so rtm_read() doesn't ignore the message. */
++      SET_FLAG (rtm->rtm_flags, RTF_DONE);
+       rtm_read (rtm);
+     }
+ 
