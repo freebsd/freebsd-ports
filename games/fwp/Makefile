@@ -32,6 +32,12 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 700000
+BROKEN=		Doesn't build
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/LDFLAGS=/ s|$$LIBS|$$LDFLAGS|' \
 		${WRKSRC}/configure
@@ -40,4 +46,4 @@ post-patch:
 post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
