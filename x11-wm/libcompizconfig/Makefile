@@ -1,0 +1,41 @@
+# New ports collection makefile for:	libcompizconfig
+# Date created:				2007-08-16
+# Whom:					Robert Noland <rnoland@2hip.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libcompizconfig
+PORTVERSION=	0.5.2
+#PORTREVISION=	0
+CATEGORIES=	x11-wm
+MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
+
+MAINTAINER=	rnoland@2hip.net
+COMMENT=	An alternative configuration system for Compiz
+
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool:15
+
+USE_GNOME=	gnomehack intltool libxml2
+
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'	\
+		${WRKSRC}/src/main.c			\
+		${WRKSRC}/src/lists.c			\
+		${WRKSRC}/src/compiz.c			\
+		${WRKSRC}/src/filewatch.c		\
+		${WRKSRC}/src/ini.c			\
+		${WRKSRC}/backend/ini.c
+
+.include <bsd.port.pre.mk>
+.include <bsd.port.post.mk>

@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+include/compizconfig/ccs.h
+include/compizconfig/ccs-backend.h
+lib/libcompizconfig.so.0
+lib/libcompizconfig.so
+lib/libcompizconfig.la
+lib/libcompizconfig.a
+lib/compizconfig/backends/libini.so
+lib/compizconfig/backends/libini.la
+lib/compizconfig/backends/libini.a
+lib/compiz/libccp.so
+lib/compiz/libccp.la
+lib/compiz/libccp.a
+libdata/pkgconfig/libcompizconfig.pc
+share/compizconfig/global.xml
+@dirrmtry share/compizconfig
+@dirrmtry lib/compizconfig/backends
+@dirrmtry lib/compizconfig
+@dirrmtry include/compizconfig

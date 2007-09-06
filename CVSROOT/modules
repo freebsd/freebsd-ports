@@ -6383,6 +6383,7 @@ libchipcard	ports/devel/libchipcard
 libchipcard-kde	ports/devel/libchipcard-kde
 libchk		ports/sysutils/libchk
 libcii		ports/devel/libcii
+libcompizconfig	ports/x11-wm/libcompizconfig
 libcomprex	ports/archivers/libcomprex
 libconfuse	ports/devel/libconfuse
 libconnect	ports/net/libconnect
