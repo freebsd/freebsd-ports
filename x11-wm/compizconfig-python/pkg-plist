@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/compizconfig.so
+%%PYTHON_SITELIBDIR%%/compizconfig.la
+%%PYTHON_SITELIBDIR%%/compizconfig.a
+libdata/pkgconfig/compizconfig-python.pc
