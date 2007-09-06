@@ -6,53 +6,70 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	glest
 PKGNAMEPREFIX=	glest-
-DISTNAME=	glest_${PORTNAME}_2.0rc5
+DISTNAME=	glest_${PORTNAME}_${PORTVERSION}
 DIST_SUBDIR=	glest
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Glest data files
 
 USE_ZIP=	yes
+USE_DOS2UNIX=	*.log *.ini *.html *.txt *.lng
 NO_BUILD=	yes
 
+PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/glest_game
 
-DOCSDIR=	${PREFIX}/share/doc/glest
-GLESTDIRE=	lib/glest
-GLESTDATADIRE=	data maps screens techs tilesets
+DATADIR=	share/${PKGNAMEPREFIX:S/-//}
+DOCSDIR=	share/doc/${PKGNAMEPREFIX:S/-//}
+GLESTDATADIRE=	data maps scenarios techs tilesets
 GLESTDOCSDIRE=	tech
 
-PLIST_SUB=	GLESTDIRE=${GLESTDIRE}
-
 post-extract:
-	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(log|ini|html|txt|lng)" \
-		-print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
+	@${MV} ${WRKSRC}/docs/license.txt ${WRKSRC}/docs/license-data.txt
+	@${RMDIR} ${WRKSRC}/screens ${WRKSRC}/shaders/standard
 
-post-patch:
-	@${FIND} -E ${WRKSRC} -type f -name '*.bak' -o -name '*.orig' | ${XARGS} ${RM}
+pre-install:
+	@${RM} -f ${PLIST}
+
+.	for FILE in configuration.xml glest.ico glest.url
+		@${ECHO_CMD} "%%DATADIR%%/${FILE}" >> ${PLIST}
+.	endfor
+
+.	for DIRE in ${GLESTDATADIRE}
+		@cd ${WRKSRC} && \
+			${FIND} ${DIRE} -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
+				${FIND} ${DIRE} -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
+.	endfor
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
+
+.	if !defined(NOPORTDOCS)
+		@cd ${WRKSRC}/docs && \
+			${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%PORTDOCS%%%%DOCSDIR%%/|' >> ${PLIST} && \
+				${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|%%PORTDOCS%%@dirrm %%DOCSDIR%%/|' >> ${PLIST}
+	@${ECHO_CMD} "%%PORTDOCS%%@dirrmtry %%DOCSDIR%%" >> ${PLIST}
+.	endif
 
 do-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/${GLESTDOCSDIRE}
-	${INSTALL_DATA} ${WRKSRC}/docs/license.txt ${DOCSDIR}/license-data.txt
-	${INSTALL_DATA} ${WRKSRC}/docs/readme.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/${GLESTDOCSDIRE}/* ${DOCSDIR}/${GLESTDOCSDIRE}
+	@${MKDIR} ${PREFIX}/${DOCSDIR}/${GLESTDOCSDIRE}
+	${INSTALL_DATA} ${WRKSRC}/docs/license-data.txt ${PREFIX}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/readme.txt ${PREFIX}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${GLESTDOCSDIRE}/* ${PREFIX}/${DOCSDIR}/${GLESTDOCSDIRE}
 .endif
-	@${MKDIR} ${PREFIX}/${GLESTDIRE}
-.for FILE in configuration.xml glest.ico glest.log glest.url
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${GLESTDIRE}
+	@${MKDIR} ${PREFIX}/${DATADIR}
+.for FILE in configuration.xml glest.ico glest.url
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${DATADIR}
 .endfor
-	@cd ${WRKSRC} && \
-		${FIND} ${GLESTDATADIRE} -type d -exec ${MKDIR} "${PREFIX}/${GLESTDIRE}/{}" \; && \
-		${FIND} ${GLESTDATADIRE} -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/${GLESTDIRE}/{}" \;
 
-post-install:
-	@${CHMOD} 666 ${PREFIX}/${GLESTDIRE}/glest.log
+.for DIRE in ${GLESTDATADIRE}
+	@cd ${WRKSRC} && \
+		${FIND} ${DIRE} -type d -exec ${MKDIR} "${PREFIX}/${DATADIR}/{}" \; && \
+			${FIND} ${DIRE} -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/${DATADIR}/{}" \;
+.endfor
 
 .include <bsd.port.mk>
