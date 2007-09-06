@@ -302,6 +302,7 @@
     SUBDIR += mediawiki18
     SUBDIR += mediawiki19
     SUBDIR += mergelog
+    SUBDIR += metacafe_dl
     SUBDIR += mgstat
     SUBDIR += mhonarc
     SUBDIR += micro_httpd
