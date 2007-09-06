@@ -7,7 +7,7 @@
 
 PORTNAME=	notification
 PORTVERSION=	0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -17,8 +17,8 @@ MAINTAINER=	c0rn@o2.pl
 COMMENT=	New/unread mail notification plugin for claws-mail
 
 LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
-BUILD_DEPENDS=	claws-mail>=2.10:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=2.10:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.0.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.0.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
