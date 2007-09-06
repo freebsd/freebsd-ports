@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	pioneers
-PORTVERSION=	0.10.2
-PORTREVISION=	2
+PORTVERSION=	0.11.2
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	pio
 
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	An Internet playable version of the Settlers of Catan for GNOME/GTK+
+
+RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -86,6 +86,7 @@ share/gnome/games/pioneers/themes/plain.png
 share/gnome/games/pioneers/themes/sea.png
 share/gnome/games/pioneers/x.game
 share/gnome/help/pioneers/C/images/actions.png
+share/gnome/help/pioneers/C/images/brick.png
 share/gnome/help/pioneers/C/images/chat.png
 share/gnome/help/pioneers/C/images/client.png
 share/gnome/help/pioneers/C/images/connect-dialog.png
@@ -96,14 +97,18 @@ share/gnome/help/pioneers/C/images/discards.png
 share/gnome/help/pioneers/C/images/field.png
 share/gnome/help/pioneers/C/images/forest.png
 share/gnome/help/pioneers/C/images/gameover-dialog.png
+share/gnome/help/pioneers/C/images/gold.png
+share/gnome/help/pioneers/C/images/grain.png
 share/gnome/help/pioneers/C/images/hill.png
 share/gnome/help/pioneers/C/images/identity.png
 share/gnome/help/pioneers/C/images/join-private-dialog.png
 share/gnome/help/pioneers/C/images/legend-dialog.png
+share/gnome/help/pioneers/C/images/lumber.png
 share/gnome/help/pioneers/C/images/map.png
 share/gnome/help/pioneers/C/images/messages.png
 share/gnome/help/pioneers/C/images/monopoly-dialog.png
 share/gnome/help/pioneers/C/images/mountain.png
+share/gnome/help/pioneers/C/images/ore.png
 share/gnome/help/pioneers/C/images/pasture.png
 share/gnome/help/pioneers/C/images/place-robber.png
 share/gnome/help/pioneers/C/images/player-summary.png
@@ -116,6 +121,7 @@ share/gnome/help/pioneers/C/images/servers-dialog.png
 share/gnome/help/pioneers/C/images/status.png
 share/gnome/help/pioneers/C/images/steal-from.png
 share/gnome/help/pioneers/C/images/trade.png
+share/gnome/help/pioneers/C/images/wool.png
 share/gnome/help/pioneers/C/legal.xml
 share/gnome/help/pioneers/C/pioneers.xml
 share/gnome/omf/pioneers/pioneers-C.omf
@@ -125,6 +131,7 @@ share/gnome/pixmaps/pioneers.png
 share/gnome/pixmaps/pioneers/brick.png
 share/gnome/pixmaps/pioneers/bridge.png
 share/gnome/pixmaps/pioneers/city.png
+share/gnome/pixmaps/pioneers/city_wall.png
 share/gnome/pixmaps/pioneers/develop.png
 share/gnome/pixmaps/pioneers/dice.png
 share/gnome/pixmaps/pioneers/finish.png
@@ -136,13 +143,24 @@ share/gnome/pixmaps/pioneers/settlement.png
 share/gnome/pixmaps/pioneers/ship.png
 share/gnome/pixmaps/pioneers/ship_move.png
 share/gnome/pixmaps/pioneers/splash.png
+share/gnome/pixmaps/pioneers/style-ai.png
+share/gnome/pixmaps/pioneers/style-human-1.png
+share/gnome/pixmaps/pioneers/style-human-2.png
+share/gnome/pixmaps/pioneers/style-human-3.png
+share/gnome/pixmaps/pioneers/style-human-4.png
+share/gnome/pixmaps/pioneers/style-human-5.png
+share/gnome/pixmaps/pioneers/style-human-6.png
+share/gnome/pixmaps/pioneers/style-human-7.png
+share/gnome/pixmaps/pioneers/style-human.png
 share/gnome/pixmaps/pioneers/trade.png
 share/gnome/pixmaps/pioneers/wool.png
+share/locale/af/LC_MESSAGES/pioneers.mo
 share/locale/de/LC_MESSAGES/pioneers.mo
 share/locale/es/LC_MESSAGES/pioneers.mo
 share/locale/fr/LC_MESSAGES/pioneers.mo
 share/locale/hu/LC_MESSAGES/pioneers.mo
 share/locale/it/LC_MESSAGES/pioneers.mo
+share/locale/ja/LC_MESSAGES/pioneers.mo
 share/locale/nl/LC_MESSAGES/pioneers.mo
 share/locale/sv/LC_MESSAGES/pioneers.mo
 @dirrm share/gnome/games/pioneers/themes/FreeCIV-like
