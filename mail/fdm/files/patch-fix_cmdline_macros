@@ -1,0 +1,42 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 05fix_cmdline_macros.dpatch by Frank Terbeck <ft@bewatermyfriend.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Quick fix for a bug that breaks macros defined on the command line.
+##     Written by Nicholas Marriott (fdm upstream). He will fix this issue
+##     the upstream CVS repository as well.
+
+@DPATCH@
+diff -urNad fdm-1.3c~/fdm.c fdm-1.3c/fdm.c
+--- fdm-1.3c~/fdm.c	Wed Aug  1 11:58:54 2007
++++ fdm.c	Thu Aug 30 14:51:35 2007
+@@ -271,6 +271,8 @@
+ 	conf.queue_high = -1;
+ 	conf.queue_low = -1;
+ 
++	TAILQ_INIT(&parse_macros);
++
+ 	ARRAY_INIT(&conf.incl);
+ 	ARRAY_INIT(&conf.excl);
+ 
+diff -u ../fdm-1.3c.orig/parse.y ./parse.y
+--- ../fdm-1.3c.orig/parse.y	Wed Aug  1 11:58:56 2007
++++ parse.y	Thu Aug 30 14:51:25 2007
+@@ -70,8 +70,6 @@
+ 	strb_create(&parse_tags);
+ 	default_tags(&parse_tags, NULL);
+ 
+-	TAILQ_INIT(&parse_macros);
+-
+         yyparse();
+ 
+ 	if (!ARRAY_EMPTY(&parse_rulestack))
+@@ -667,7 +665,7 @@
+ 			  macro->fixed = 0;
+ 			  strlcpy(macro->name, $1, sizeof macro->name);
+ 			  TAILQ_INSERT_HEAD(&parse_macros, macro, entry);
+-		  } else
++		  } else if  (!macro->fixed)
+ 			  xfree(macro->value.str);
+ 		  if (!macro->fixed) {
+ 			  macro->type = MACRO_STRING;

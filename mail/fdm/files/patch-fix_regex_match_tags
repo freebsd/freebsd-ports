@@ -1,0 +1,23 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 06fix_regex_match_tags.dpatch by Frank Terbeck <ft@bewatermyfriend.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: This is a fix for broken behaviour if regex matches are used on
+##     messages with a From_ header, in which case the replacement tags
+##     (like %1) break.
+##     Written by Nicholas Marriott (fdm upstream).
+
+@DPATCH@
+diff -urNad fdm-1.3c~/replace.c fdm-1.3c/replace.c
+--- fdm-1.3c~/replace.c	Wed Aug  1 11:58:54 2007
++++ replace.c	Thu Aug 30 14:51:35 2007
+@@ -257,7 +257,7 @@ replace(char *src, struct strb *tags, st
+ 				if (!rml->list[idx].valid)
+ 					continue;
+ 
+-				tptr = m->base + rml->list[idx].so;
++				tptr = m->data + rml->list[idx].so;
+ 				tlen = rml->list[idx].eo - rml->list[idx].so;
+ 				break;
+ 			}
+
