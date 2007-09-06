@@ -15264,6 +15264,7 @@ t3x		ports/lang/t3x
 tRNAscan-SE	ports/biology/tRNAscan-SE
 t_coffee	ports/biology/t_coffee
 ta-aspell	ports/textproc/ta-aspell
+ta-lib		ports/devel/ta-lib
 ta2as		ports/converters/ta2as
 table.el	ports/misc/table.el
 tablelog	ports/databases/tablelog
