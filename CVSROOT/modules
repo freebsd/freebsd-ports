@@ -8064,6 +8064,7 @@ neonpp		ports/www/neonpp
 neowebscript	ports/www/neowebscript
 nepenthes	ports/net/nepenthes
 nepim		ports/net/nepim
+nesasm		ports/lang/nesasm
 nessus		ports/security/nessus
 nessus-libnasl	ports/security/nessus-libnasl
 nessus-libraries	ports/security/nessus-libraries
