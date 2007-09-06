@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		glob2
-PORTVERSION=		0.8.23
-PORTREVISION=		2
+PORTVERSION=		0.9.1
 CATEGORIES=		games
 MASTER_SITES=		http://dl.sv.nongnu.org/releases/glob2/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	thierry
@@ -24,10 +23,10 @@ LIB_DEPENDS=		vorbis.4:${PORTSDIR}/audio/libvorbis	\
 USE_SDL=		image net sdl ttf
 USE_GL=			yes
 USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=		CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include"	\
-			LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
+USE_SCONS=		yes
+SCONS_BUILDENV=		${SCONS_ENV}
+LINKFLAGS=		${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib
+CFLAGS+=		${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include
 
 .include <bsd.port.pre.mk>
 
@@ -35,15 +34,10 @@ CONFIGURE_ENV=		CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/
 BROKEN=			Does not build on ${ARCH}
 .endif
 
-pre-configure:
-	${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|"	\
-		${WRKSRC}/configure
-	${REINPLACE_CMD} -e "s|Icon=|Icon=${DATADIR}/pixmaps/|;	\
-		s|x48|x48.png|" ${WRKSRC}/data/glob2.desktop
+pre-install:
+	${CP} ${FILESDIR}/glob2.desktop ${WRKSRC}/data/
 
 post-install:
-	${MKDIR} ${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/data/glob2.desktop ${DESKTOPDIR}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}

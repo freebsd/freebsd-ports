@@ -1,13 +1,10 @@
 bin/glob2
 share/applications/glob2.desktop
-%%DATADIR%%/AUTHORS
-%%DATADIR%%/campaigns/Joey_mission_1.map
-%%DATADIR%%/campaigns/Joey_mission_2.map
-%%DATADIR%%/campaigns/Joey_mission_3.map
-%%DATADIR%%/campaigns/Joey_mission_4.map
-%%DATADIR%%/campaigns/Joey_mission_5.map
-%%DATADIR%%/campaigns/Joey_mission_6.map
-%%DATADIR%%/campaigns/Joey_mission_7.map
+%%DATADIR%%/campaigns/Tutorial_Campaign.txt
+%%DATADIR%%/campaigns/tutorial-part1.map
+%%DATADIR%%/campaigns/tutorial-part2.map
+%%DATADIR%%/campaigns/tutorial-part3.map
+%%DATADIR%%/campaigns/tutorial-part4.map
 %%DATADIR%%/data/buildings.default.txt
 %%DATADIR%%/data/buildings.txt
 %%DATADIR%%/data/fonts/sans.ttf
@@ -1646,9 +1643,18 @@ share/applications/glob2.desktop
 %%DATADIR%%/data/gui/editor9.png
 %%DATADIR%%/data/gui/yog0.png
 %%DATADIR%%/data/gui/yog1.png
+%%DATADIR%%/data/icons/glob2-icon-128x128.png
+%%DATADIR%%/data/icons/glob2-icon-16x16.png
+%%DATADIR%%/data/icons/glob2-icon-24x24.png
+%%DATADIR%%/data/icons/glob2-icon-32x32.png
+%%DATADIR%%/data/icons/glob2-icon-48x48.png
+%%DATADIR%%/data/icons/glob2-icon-64x64.png
+%%DATADIR%%/data/keyboard-gui.default.txt
+%%DATADIR%%/data/keyboard-mapedit.default.txt
 %%DATADIR%%/data/pal.txt
 %%DATADIR%%/data/ressources.txt
 %%DATADIR%%/data/texts.ar.txt
+%%DATADIR%%/data/texts.br.txt
 %%DATADIR%%/data/texts.ca.txt
 %%DATADIR%%/data/texts.cz.txt
 %%DATADIR%%/data/texts.de.txt
@@ -1658,6 +1664,7 @@ share/applications/glob2.desktop
 %%DATADIR%%/data/texts.eu.txt
 %%DATADIR%%/data/texts.fr.txt
 %%DATADIR%%/data/texts.hu.txt
+%%DATADIR%%/data/texts.incomplete.txt
 %%DATADIR%%/data/texts.it.txt
 %%DATADIR%%/data/texts.keys.txt
 %%DATADIR%%/data/texts.list.txt
@@ -1671,6 +1678,7 @@ share/applications/glob2.desktop
 %%DATADIR%%/data/texts.sr.txt
 %%DATADIR%%/data/texts.sv.txt
 %%DATADIR%%/data/texts.tr.txt
+%%DATADIR%%/data/texts.zh-tw.txt
 %%DATADIR%%/data/units.txt
 %%DATADIR%%/data/unitsSkins.txt
 %%DATADIR%%/data/zik/a1.ogg
@@ -1687,32 +1695,29 @@ share/applications/glob2.desktop
 %%DATADIR%%/maps/Isles.map
 %%DATADIR%%/maps/Migration.map
 %%DATADIR%%/maps/Muka.map
-%%DATADIR%%/maps/No_name.map
 %%DATADIR%%/maps/One_on_One.map
 %%DATADIR%%/maps/Playground.map
+%%DATADIR%%/maps/Scarse_Supply.map
 %%DATADIR%%/maps/SmallForTwo.map
 %%DATADIR%%/maps/Tower_Defense_for_2.map
-%%DATADIR%%/maps/TriangIe.map
 %%DATADIR%%/maps/Triangle.map
 %%DATADIR%%/maps/WaterInTheDesert.map
-%%DATADIR%%/maps/WaterInTheDesert2.map
 %%DATADIR%%/maps/Wild_River.map
 %%DATADIR%%/maps/a_new_try.map
 %%DATADIR%%/maps/newislands_green_blue.map
 %%DATADIR%%/maps/stone_bases.map
 %%DATADIR%%/maps/strange2.map
 %%DATADIR%%/maps/the_sand_square.map
-%%DATADIR%%/maps/tutorial.map
 %%DATADIR%%/maps/weakness.map
-%%DATADIR%%/pixmaps/glob2-icon-128x128.png
-%%DATADIR%%/pixmaps/glob2-icon-16x16.png
-%%DATADIR%%/pixmaps/glob2-icon-24x24.png
-%%DATADIR%%/pixmaps/glob2-icon-32x32.png
-%%DATADIR%%/pixmaps/glob2-icon-48x48.png
-%%DATADIR%%/pixmaps/glob2-icon-64x64.png
+%%DATADIR%%/scripts/tutorial_part1.sgsl
+%%DATADIR%%/scripts/tutorial_part2.sgsl
+%%DATADIR%%/scripts/tutorial_part3.sgsl
+%%DATADIR%%/scripts/tutorial_part4.sgsl
+@dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/maps
 @dirrm %%DATADIR%%/data/zik
+@dirrm %%DATADIR%%/data/icons
 @dirrm %%DATADIR%%/data/gui
 @dirrm %%DATADIR%%/data/gfx/cursor
 @dirrm %%DATADIR%%/data/gfx
