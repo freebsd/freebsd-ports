@@ -1,5 +1,5 @@
 --- make.inc.orig	Thu Nov 30 22:18:37 2000
-+++ make.inc	Tue Sep  4 17:20:52 2007
++++ make.inc	Thu Sep  6 11:57:35 2007
 @@ -3,8 +3,8 @@
  #     UNI-C, Denmark; Univ. of Tennessee, USA; NAG Ltd., UK
  #     August 5, 2000
@@ -11,7 +11,7 @@
  # -dcfuns  Enable recognition of non-standard double
  #          precision  complex intrinsic functions
  # -dusty   Allows the compilation and execution of "legacy"
-@@ -13,21 +13,21 @@
+@@ -13,27 +13,27 @@
  # -ieee=full enables all IEEE arithmetic facilities
  #          including non-stop arithmetic.
  
@@ -40,3 +40,10 @@
  SUF      = f90
  
  XX = 'rm' -f $@; \
+         'rm' -f $@.res; \
+ 	$(FC) $(OPTS0) -o $@ $(MODLIB) $@.$(SUF) $(OPTLIB) $(LIBS); \
+-        $@ < $@.dat > $@.res; \
++        ./$@ < $@.dat > $@.res; \
+         'rm' -f $@
+ 
+ YY = $(FC) $(OPTS0) -o $@ $(MODLIB) $@.$(SUF) $(OPTLIB) $(LIBS)
