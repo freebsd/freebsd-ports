@@ -1,0 +1,17 @@
+Libcompizconfig is an alternative configuration system for 
+compiz and provides the following features:
+	- Automatic plugin list generation.
+ 	- Import/Export of the current configuration.
+ 	- Configuration profiles.
+ 	- Parsing of Compiz metadata files to provide an easy to use API for 
+		configuration managers.
+ 	- Conflict handling for plugins and actions.
+ 	- Support for different configuration storage backends.
+ 	- Desktop environment integration.  If a backend provides desktop 
+		environment integration, then Compiz will share the keybindings
+		and settings with the default desktop environment window
+		manager like metacity or kwin.
+ 	- Its own Compiz configuration plugin "ccp" to provide all features
+		of libcompizconfig with compiz.
+
+WWW:	http://forums.compiz-fusion.org/

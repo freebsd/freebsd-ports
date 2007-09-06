@@ -76,6 +76,7 @@
     SUBDIR += kappdock
     SUBDIR += kompmgr
     SUBDIR += larswm
+    SUBDIR += libcompizconfig
     SUBDIR += libdockapp
     SUBDIR += lwm
     SUBDIR += matchbox
