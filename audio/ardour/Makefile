@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ardour
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://ardour.org/files/releases/
 DISTFILES=	ardour-${DISTVERSION}.tar.bz2
@@ -24,10 +24,11 @@ LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26 \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		lo.6:${PORTSDIR}/audio/liblo \
-		SoundTouch.0:${PORTSDIR}/audio/soundtouch
+		SoundTouch.0:${PORTSDIR}/audio/soundtouch \
+		usb:${PORTSDIR}/devel/libusb
 
 USE_SCONS=	yes
-SCONS_ENV+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes FPU_OPTIMIZATION=0
+SCONS_ENV+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes
 CFLAGS+=	-I${LOCALBASE}/include
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 libxslt libgnomecanvas intltool
@@ -65,8 +66,21 @@ PLIST_SUB+=	VST="@comment "
 
 # Upstream uses these flags by default.
 .if !defined(WITHOUT_OPTIMIZED_CFLAGS)
-# XXX: what about SSE?
 CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math -fstrength-reduce
+
+.if ${ARCH} == "amd64"
+SCONS_ENV+=	DIST_TARGET=x86_64
+SCONS_ENV+=	FPU_OPTIMIZATION=1
+.elif ${MACHINE_CPU:Msse}
+SCONS_ENV+=	DIST_TARGET=i686
+SCONS_ENV+=	FPU_OPTIMIZATION=1
+.else
+SCONS_ENV+=	DIST_TARGET=i386
+SCONS_ENV+=	FPU_OPTIMIZATION=0
+.endif
+
+.else
+SCONS_ENV+=	FPU_OPTIMIZATION=0
 .endif
 
 CFLAGS:=	${CFLAGS:N-fno-strict-aliasing}

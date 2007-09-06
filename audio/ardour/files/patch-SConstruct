@@ -1,5 +1,5 @@
---- SConstruct.orig	Mon Jul  2 19:14:26 2007
-+++ SConstruct	Wed Jul  4 14:23:38 2007
+--- SConstruct.orig	2007-08-01 07:04:48.000000000 +0200
++++ SConstruct	2007-09-06 11:09:13.000000000 +0200
 @@ -38,7 +38,7 @@
      BoolOption('FPU_OPTIMIZATION', 'Build runtime checked assembler code', 1),
      BoolOption('LIBLO', 'Compile with support for liblo library', 1),
@@ -18,7 +18,33 @@
      if os.path.isfile('.personal_use_only'):
          print "Enabling VST support. Note that distributing a VST-enabled ardour\nis a violation of several different licences.\nBuild with VST=false if you intend to distribute ardour to others."
      else:
-@@ -668,13 +668,7 @@
+@@ -597,9 +597,9 @@
+     opt_flags.extend (["-mhard-float", "-mpowerpc-gfxopt"])
+     opt_flags.extend (["-Os"])
+ 
+-elif ((re.search ("i[0-9]86", config[config_cpu]) != None) or (re.search ("x86_64", config[config_cpu]) != None)) and env['DIST_TARGET'] != 'none':
++elif ((re.search ("i[0-9]86", env['DIST_TARGET']) != None) or (re.search ("x86_64", env['DIST_TARGET']) != None)):
+     
+-    build_host_supports_sse = 0
++    build_host_supports_sse = 1
+     
+     debug_flags.append ("-DARCH_X86")
+     opt_flags.append ("-DARCH_X86")
+@@ -644,12 +644,7 @@
+             print "\nWarning: you are building Ardour with SSE support even though your system does not support these instructions. (This may not be an error, especially if you are a package maintainer)"
+ # end optimization section
+ 
+-# handle x86/x86_64 libdir properly
+-
+-if env['DIST_TARGET'] == 'x86_64':
+-    env['LIBDIR']='lib64'
+-else:
+-    env['LIBDIR']='lib'
++env['LIBDIR']='lib'
+ 
+ #
+ # save off guessed arch element in an env
+@@ -668,13 +663,7 @@
  # prepend boiler plate optimization flags
  #
  
@@ -33,7 +59,15 @@
  
  if env['DEBUG'] == 1:
      env.Append(CCFLAGS=" ".join (debug_flags))
-@@ -771,6 +765,7 @@
+@@ -719,6 +708,7 @@
+ 
+ libraries['usb'] = LibraryInfo ()
+ prep_libcheck(env, libraries['usb'])
++libraries['usb'].Append(CCFLAGS="-I/usr/local/include", LINKFLAGS="-L/usr/local/lib")
+ 
+ conf = Configure (libraries['usb'])
+ if conf.CheckLib ('usb', 'usb_interrupt_write'):
+@@ -777,6 +767,7 @@
  if env['LIBLO']:
      libraries['lo'] = LibraryInfo ()
      prep_libcheck(env, libraries['lo'])
@@ -41,7 +75,7 @@
  
      conf = Configure (libraries['lo'])
      if conf.CheckLib ('lo', 'lo_server_new') == False:
-@@ -784,6 +779,7 @@
+@@ -790,6 +781,7 @@
  
  libraries['dmalloc'] = LibraryInfo ()
  prep_libcheck(env, libraries['dmalloc'])
@@ -49,7 +83,7 @@
  
  #
  # look for the threaded version
-@@ -815,8 +811,10 @@
+@@ -821,8 +813,10 @@
      subst_dict['%MIDITAG%'] = "ardour"
      subst_dict['%MIDITYPE%'] = "coremidi"
  else:
@@ -62,7 +96,7 @@
  
  env = conf.Finish()
  
-@@ -986,8 +984,7 @@
+@@ -992,8 +986,7 @@
  surface_subdirs = [ 'libs/surfaces/control_protocol',
                      'libs/surfaces/generic_midi',
                      'libs/surfaces/tranzport',
@@ -72,7 +106,7 @@
                      ]
  
  if env['SURFACES']:
-@@ -1090,8 +1087,8 @@
+@@ -1106,8 +1099,8 @@
      subst_dict['%JACK_INPUT%'] = "coreaudio:Built-in Audio:in"
      subst_dict['%JACK_OUTPUT%'] = "coreaudio:Built-in Audio:out"
  else:
