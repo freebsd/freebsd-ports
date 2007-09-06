@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-input-vmmouse
-PORTVERSION=	12.4.0
+PORTVERSION=	12.4.1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	sa2c@sa2c.net
