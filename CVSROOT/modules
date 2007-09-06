@@ -1488,6 +1488,7 @@ compat5x	ports/misc/compat5x
 compat6x	ports/misc/compat6x
 compiz		ports/x11-wm/compiz
 compizconfig-backend-gconf	ports/x11-wm/compizconfig-backend-gconf
+compizconfig-python	ports/x11-wm/compizconfig-python
 compiz-bcop	ports/devel/compiz-bcop
 compiz-fusion-plugins-extra	ports/x11-wm/compiz-fusion-plugins-extra
 compiz-fusion-plugins-main	ports/x11-wm/compiz-fusion-plugins-main

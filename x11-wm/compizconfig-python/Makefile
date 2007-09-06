@@ -1,0 +1,37 @@
+# New ports collection makefile for:	compizconfig-python
+# Date created:				2007-08-17
+# Whom:					Robert Noland <rnoland@2hip.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	compizconfig-python
+PORTVERSION=	0.5.2
+#PORTREVISION=	0
+CATEGORIES=	x11-wm
+MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
+
+MAINTAINER=	rnoland@2hip.net
+COMMENT=	Python bindings for the compizconfig library
+
+BUILD_DEPENDS=	\
+	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz \
+	${LOCALBASE}/libdata/pkgconfig/libcompizconfig.pc:${PORTSDIR}/x11-wm/libcompizconfig \
+	${PYTHON_SITELIBDIR}/Pyrex/Distutils/__init__.py:${PORTSDIR}/devel/pyrex
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_PYTHON=	yes
+USE_GNOME=	gnomehack glib20
+USE_AUTOTOOLS=	libtool:15
+
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.in
+
+.include <bsd.port.pre.mk>
+.include <bsd.port.post.mk>
