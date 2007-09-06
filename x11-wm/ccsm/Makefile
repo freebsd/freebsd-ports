@@ -1,0 +1,29 @@
+# New ports collection makefile for:	ccsm
+# Date created:		2007-08-17
+# Whom:			Robert Noland <rnoland@2hip.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ccsm
+PORTVERSION=	0.5.2
+#PORTREVISION=	0
+CATEGORIES=	x11-wm
+MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
+
+MAINTAINER=	rnoland@2hip.net
+COMMENT=	A Python/GTK based settings manager for CompizConfig
+
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compizconfig-python.pc:${PORTSDIR}/x11-wm/compizconfig-python
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GETTEXT=	yes
+USE_GNOME=	pygtk2
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+#PYDISTUTILS_PKGNAME=	ccm
+
+INSTALLS_ICONS=	yes
+
+.include <bsd.port.mk>
