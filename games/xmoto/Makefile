@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
 		http://www.amdmi3.ru/distfiles/
@@ -18,13 +18,13 @@ COMMENT=	Challenging 2D motocross platform game
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		curl.4:${PORTSDIR}/ftp/curl \
-		sqlite3:${PORTSDIR}/databases/sqlite3
+		curl.4:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LUA=	5.1
+USE_SQLITE=	yes
 USE_SDL=	sdl mixer ttf
 USE_DOS2UNIX=	src/*.cpp src/*.h
 
@@ -39,7 +39,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	README ChangeLog
 
 OPTIONS=	ZOOM	"Enable zooming"	on \
-		SDL_GFX	"Use sdl_gfx rendering instead of OpenGL"	off
+		SDL_GFX	"Use sdl_gfx rendering instead of OpenGL (broken)"	off
 
 MAN6=		xmoto.6
 
@@ -59,15 +59,14 @@ USE_GL=		yes
 CONFIGURE_ARGS+=--with-renderer-sdlGfx=0 --with-renderer-openGl=1
 .endif
 
-# won't compile WITHOUT_NLS ATM
-#.if !defined(WITHOUT_NLS)
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 CONFIGURE_ENV+=	LIBS="-lintl"
-#.else
-#CONFIGURE_ARGS+=	--disable-nls
-#PLIST_SUB+=	NLS="@comment "
-#.endif
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/||; s|endian.h|sys/endian.h|' \
@@ -76,7 +75,7 @@ post-patch:
 		${WRKSRC}/src/image/tim_memory_crt.cpp
 	@${REINPLACE_CMD} -e \
 		'/LIBS/ s|-lSDL_mixer|`${SDL_CONFIG} --libs` &|; \
-		 s|function displayRequirement|displayRequirement()|; \
+		 s|^function \([a-zA-Z]*\)|\1()|; \
 		 /Locales/ s|libc|libintl|; s|lua50|luaxx|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/mang|/man6|' ${WRKSRC}/Makefile.in

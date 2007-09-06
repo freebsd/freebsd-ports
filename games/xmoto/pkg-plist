@@ -12,6 +12,7 @@ bin/xmoto
 %%NLS%%share/locale/no_NO/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/pl_PL/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/sk_SK/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/xmoto.mo
@@ -30,6 +31,8 @@ bin/xmoto
 %%NLS%%@dirrmtry share/locale/de_DE
 %%NLS%%@dirrmtry share/locale/fi_FI/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fi_FI
+%%NLS%%@dirrmtry share/locale/fr_FR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr_FR
 %%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/it_IT
 %%NLS%%@dirrmtry share/locale/lv_LV/LC_MESSAGES
