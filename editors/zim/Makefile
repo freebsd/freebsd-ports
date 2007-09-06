@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zim
-PORTVERSION=	0.19
-PORTREVISION=	1
+PORTVERSION=	0.20
 CATEGORIES=	editors perl5
 MASTER_SITES=	http://pardus-larus.student.utwente.nl/~pardus/downloads/Zim/
 DISTNAME=	Zim-${PORTVERSION}
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 		${SITE_PERL}/File/DesktopEntry.pm:${PORTSDIR}/devel/p5-File-DesktopEntry
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 desktopfileutils
 PERL_MODBUILD=	yes
 MAN1=		zim.1
 MAN3=		Gtk2::Ex::DesktopEntryMenu.3 \
@@ -52,13 +51,15 @@ MAN3=		Gtk2::Ex::DesktopEntryMenu.3 \
 		Zim::Formats::Html.3 \
 		Zim::Formats::Wiki.3 \
 		Zim::History.3 \
+		Zim::OS::Win32.3 \
 		Zim::Page.3 \
-		Zim::Repository.3 \
-		Zim::Repository::Files.3 \
-		Zim::Repository::Man.3 \
+		Zim::Store.3 \
+		Zim::Store::Cached.3 \
+		Zim::Store::Files.3 \
+		Zim::Store::Man.3 \
 		Zim::Template.3 \
 		Zim::TextBuffer.3 \
-		Zim::Win32.3
+		Zim::Utils.3
 
 OPTIONS=	TRAYICON	"Support trayicon"	on \
 		SPELL	"Support spell"	on
@@ -66,7 +67,7 @@ OPTIONS=	TRAYICON	"Support trayicon"	on \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=	Perl 5.8.0 or newer required, please install lang/perl5.8 and try again.
+IGNORE=		perl 5.8.0 or newer required, please install lang/perl5.8 and try again
 .endif
 
 .if !defined(WITHOUT_TRAYICON)
@@ -76,5 +77,8 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2/TrayIcon.pm:${PORTSDIR}/x11-toolk
 .if !defined(WITHOUT_SPELL)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2/Spell.pm:${PORTSDIR}/devel/p5-Gtk2-Spell
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 83,84d ${WRKSRC}/Build.PL
 
 .include <bsd.port.post.mk>
