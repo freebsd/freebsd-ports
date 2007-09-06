@@ -8474,6 +8474,7 @@ openacs		ports/www/openacs
 openacs-dotlrn	ports/www/openacs-dotlrn
 openal		ports/audio/openal
 openam		ports/net/openam
+openarena	ports/games/openarena
 openbabel	ports/science/openbabel
 openbgpd	ports/net/openbgpd
 openbgpd-devel	ports/net/openbgpd-devel
