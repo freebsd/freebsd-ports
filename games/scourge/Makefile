@@ -7,6 +7,7 @@
 
 PORTNAME=	scourge
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -42,6 +43,9 @@ OPTIONS=	DEBUG	"Produce an executable with debugging symbols"	off
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|GLvoid|void|g' ${WRKSRC}/src/sdlhandler.cpp ${WRKSRC}/src/sdlhandler.h
 
 pre-configure:
 	@cd ${WRKSRC} && ${AUTORECONF} -i
