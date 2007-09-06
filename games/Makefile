@@ -531,6 +531,7 @@
     SUBDIR += oneko-sakura
     SUBDIR += oolite
     SUBDIR += oonsoo
+    SUBDIR += openarena
     SUBDIR += openglad
     SUBDIR += openmortal
     SUBDIR += openttd
