@@ -39,6 +39,11 @@ MODULESDIR=	/boot/kernel
 .endif
 PLIST_SUB=	MODULESDIR=${MODULESDIR}
 
+.if ${OSVERSION} >= 700031
+EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-dev::cxm::cxm.h \
+		${PATCHDIR}/extra-patch-dev::cxm::cxm.c
+.endif
+
 .if !exists(${DISTDIR}/hcwPVRP2.sys)
 IGNORE=		You need the file hcwPVRP2.sys from the CD coming with the PVR-250/350 card. Please place this file in ${DISTDIR} and run make again.
 .endif
