@@ -1,0 +1,16 @@
+Abyss Web Server is a compact and easy to use web server.
+
+Despite its small footprint, it supports HTTP/1.1, dynamic content generation
+through CGI/FastCGI scripts, ISAPI extensions, native ASP.NET support, Server
+Side Includes (SSI), custom error pages, password protection, IP address 
+control, anti-leeching, and bandwidth throttling.
+
+It also features an automatic antihacking system as well as a multilingual 
+remote web management interface that makes its configuration as easy as 
+browsing a web site.
+
+It supports a wide range of Web technologies and can run advanced PHP, Perl, 
+Python, ASP, ASP.NET, and Ruby on Rails Web applications which can be backed 
+by databases such as MySQL, SQLite, MS SQL Server, MS Access, or Oracle.
+
+WWW: http://www.aprelium.com/
