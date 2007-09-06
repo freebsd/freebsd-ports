@@ -25,19 +25,20 @@ bin/zim
 %%SITE_PERL%%/Zim/GUI/TrayIcon.pm
 %%SITE_PERL%%/Zim/GUI/TreeView.pm
 %%SITE_PERL%%/Zim/History.pm
+%%SITE_PERL%%/Zim/OS/Win32.pm
 %%SITE_PERL%%/Zim/Page.pm
-%%SITE_PERL%%/Zim/Repository.pm
-%%SITE_PERL%%/Zim/Repository/Files.pm
-%%SITE_PERL%%/Zim/Repository/Man.pm
+%%SITE_PERL%%/Zim/Store.pm
+%%SITE_PERL%%/Zim/Store/Cached.pm
+%%SITE_PERL%%/Zim/Store/Files.pm
+%%SITE_PERL%%/Zim/Store/Man.pm
 %%SITE_PERL%%/Zim/Selection.pm
 %%SITE_PERL%%/Zim/Template.pm
 %%SITE_PERL%%/Zim/TextBuffer.pm
-%%SITE_PERL%%/Zim/Win32.pm
+%%SITE_PERL%%/Zim/Utils.pm
 share/applications/zim.desktop
 share/pixmaps/zim.png
 share/pixmaps/zim/gtk-connect.png
 share/pixmaps/zim/stock_calendar-view-month.png
-%%DATADIR%%/album.conf
 %%DATADIR%%/dates.list
 %%DATADIR%%/default.conf
 %%DATADIR%%/entities.list
@@ -49,6 +50,8 @@ share/pixmaps/zim/stock_calendar-view-month.png
 %%DATADIR%%/doc/zim/changelog.txt
 %%DATADIR%%/doc/zim/faq.txt
 %%DATADIR%%/doc/zim/features.txt
+%%DATADIR%%/doc/zim/install.txt
+%%DATADIR%%/doc/zim/install/unix.txt
 %%DATADIR%%/doc/zim/usage.txt
 %%DATADIR%%/doc/zim/usage/autoformat.txt
 %%DATADIR%%/doc/zim/usage/commandline.txt
@@ -64,29 +67,37 @@ share/pixmaps/zim/stock_calendar-view-month.png
 %%DATADIR%%/doc/zim/usage/repositories.txt
 %%DATADIR%%/doc/zim/usage/searching.txt
 %%DATADIR%%/doc/zim/usage/strategies.txt
+%%DATADIR%%/doc/zim/usage/styles.txt
 %%DATADIR%%/doc/zim/usage/syntax.txt
+%%DATADIR%%/doc/zim/usage/templates.txt
+%%DATADIR%%/doc/zim/install/windows.txt
 %%DATADIR%%/plugins/PrintToBrowser.pl
 %%DATADIR%%/plugins/Spell.pl
 %%DATADIR%%/plugins/Subversion.pl
 %%DATADIR%%/plugins/TrayIcon.pl
 %%DATADIR%%/reader.conf
+%%DATADIR%%/style.conf
 %%DATADIR%%/templates/html/Default.html
 %%DATADIR%%/templates/html/Presentation.html
 %%DATADIR%%/templates/html/Print.html
 %%DATADIR%%/templates/html/SlideShow_(S5).html
 %%DATADIR%%/templates/txt2tags/Default.t2t
+%%DATADIR%%/templates/wiki/_New.txt
 %%DATADIR%%/urls.list
 %%DATADIR%%/zim.svg
 @dirrmtry %%SITE_PERL%%/Gtk2/Ex
 @dirrmtry %%SITE_PERL%%/Gtk2
+@dirrm %%SITE_PERL%%/Zim/Store
+@dirrm %%SITE_PERL%%/Zim/OS
 @dirrm %%SITE_PERL%%/Zim/GUI
-@dirrm %%SITE_PERL%%/Zim/Repository
 @dirrm %%SITE_PERL%%/Zim/Formats
 @dirrm %%SITE_PERL%%/Zim
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/doc/zim/usage
+@dirrm %%DATADIR%%/doc/zim/install
 @dirrm %%DATADIR%%/doc/zim
 @dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/templates/wiki
 @dirrm %%DATADIR%%/templates/txt2tags
 @dirrm %%DATADIR%%/templates/html
 @dirrm %%DATADIR%%/templates
