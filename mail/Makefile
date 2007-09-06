@@ -55,6 +55,7 @@
     SUBDIR += claws-mail-perl
     SUBDIR += claws-mail-rssyl
     SUBDIR += claws-mail-smime
+    SUBDIR += claws-mail-spamreport
     SUBDIR += claws-mail-synce
     SUBDIR += claws-mail-vcalendar
     SUBDIR += cmail
