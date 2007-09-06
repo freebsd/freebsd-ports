@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	etpub
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.1
 CATEGORIES=	games linux
 MASTER_SITES=	http://et.tjw.org/etpub/dist/
 PKGNAMEPREFIX=	linux-enemyterritory-
@@ -25,7 +25,7 @@ USE_LINUX=	yes
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
 
-CLIENT_PK3=	${PORTNAME}_client-20060818.pk3
+CLIENT_PK3=	${PORTNAME}_client-20070801.pk3
 PLIST_SUB=	CLIENT_PK3="${CLIENT_PK3}"
 
 pre-patch:
@@ -53,7 +53,7 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.   for f in ChangeLog.txt Install.txt Upgrade-0.7.txt
+.   for f in ChangeLog.txt Install.txt Upgrade-0.8.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .   endfor
 	${CP} -R ${WRKSRC}/docs ${DOCSDIR}
