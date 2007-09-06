@@ -7369,6 +7369,7 @@ messagewall	ports/mail/messagewall
 meta-cvs	ports/devel/meta-cvs
 meta1		ports/mail/meta1
 metabar		ports/deskutils/metabar
+metacafe_dl	ports/www/metacafe_dl
 metacam		ports/graphics/metacam
 metacity	ports/x11-wm/metacity
 metacity-aluminumalloy-cryogenic-theme	ports/x11-themes/metacity-aluminumalloy-cryogenic-theme
