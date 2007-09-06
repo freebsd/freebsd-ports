@@ -66,7 +66,7 @@ include/qwt/qwt_valuelist.h
 include/qwt/qwt_wheel.h
 lib/libqwt.so
 lib/libqwt.so.5
-%%DESIGNER_PLUGIN%%lib/plugins/designer/libqwt_designer_plugin.so
+%%DESIGNER_PLUGIN%%lib/qt4/plugins/designer/libqwt_designer_plugin.so
 %%PORTDOCS%%%%DOCSDIR%%/analogclock.png
 %%PORTDOCS%%%%DOCSDIR%%/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_abstract_scale-members.html
