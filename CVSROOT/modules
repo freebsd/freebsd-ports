@@ -930,6 +930,7 @@ blue		ports/games/blue
 bluecurve-themes	ports/x11-themes/bluecurve-themes
 bluefish	ports/www/bluefish
 bluej		ports/java/bluej
+bluez-firmware	ports/comms/bluez-firmware
 blwm		ports/x11-wm/blwm
 bmeps		ports/graphics/bmeps
 bmf		ports/mail/bmf
