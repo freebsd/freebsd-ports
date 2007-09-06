@@ -11,16 +11,17 @@ lib/ardour2/libgtkmm2ext.so
 lib/ardour2/libardour_cp.so
 lib/ardour2/surfaces/libardour_genericmidi.so
 lib/ardour2/surfaces/libardour_mackie.so
+lib/ardour2/surfaces/libardour_tranzport.so
 @dirrm lib/ardour2/surfaces
 lib/ardour2/engines/libclearlooks.so
 @dirrm lib/ardour2/engines
 @dirrm lib/ardour2
-etc/ardour2/ardour2_ui.rc
 etc/ardour2/ardour.menus
 etc/ardour2/ardour.bindings
-etc/ardour2/ardour.colors
 etc/ardour2/ardour_system.rc
-etc/ardour2/ardour.rc
+etc/ardour2/ardour2_ui_dark.rc
+etc/ardour2/ardour2_ui_light.rc
+etc/ardour2/ardour2_ui_default.conf
 @dirrmtry etc/ardour2
 share/ardour2/splash.png
 share/ardour2/pixmaps/hslider00.xpm
