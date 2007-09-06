@@ -1,0 +1,9 @@
+--- SConstruct.orig	Sun Sep  2 05:14:53 2007
++++ SConstruct	Tue Sep  4 23:02:18 2007
+@@ -1,5 +1,6 @@
+ def establish_options(env):
+     opts = Options('options_cache.py')
++    opts.Add("CCFLAGS", "Manually add to the CCFLAGS", "")
+     opts.Add("CXXFLAGS", "Manually add to the CXXFLAGS", "-g")
+     opts.Add("LINKFLAGS", "Manually add to the LINKFLAGS", "")
+     opts.Add("INSTALLDIR", "Installation Directory", "/usr/local/share")
