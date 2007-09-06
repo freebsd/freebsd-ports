@@ -29,9 +29,10 @@ bin/jrubysrv
 %%PORTDOCS%%%%EXAMPLESDIR%%/java2.rb
 %%PORTDOCS%%%%EXAMPLESDIR%%/javascript.rb
 %%PORTDOCS%%%%EXAMPLESDIR%%/scripting.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/swing.rb
 %%PORTDOCS%%%%EXAMPLESDIR%%/swing2.rb
 %%PORTDOCS%%%%EXAMPLESDIR%%/xslt.rb
+%%PORTDOCS%%%%EXAMPLESDIR%%/error.rb
+%%PORTDOCS%%%%EXAMPLESDIR%%/thread.rb
 %%DATADIR%%/lib/asm-2.2.3.jar
 %%DATADIR%%/lib/asm-commons-2.2.3.jar
 %%DATADIR%%/lib/backport-util-concurrent.jar
@@ -541,733 +542,17 @@ bin/jrubysrv
 %%DATADIR%%/lib/ruby/1.8/xsd/xmlparser/rexmlparser.rb
 %%DATADIR%%/lib/ruby/1.8/xsd/xmlparser/xmlparser.rb
 %%DATADIR%%/lib/ruby/1.8/xsd/xmlparser/xmlscanner.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/pending_example.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/dsl/errors.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/plugins/mock_frameworks/rr.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/autotest/discover_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/autotest/rspec_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/dsl/example_matcher_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/bug_report_11545_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/autotest_helper.rb
 %%DATADIR%%/lib/ruby/gems/1.8/cache/rake-0.7.3.gem
-%%DATADIR%%/lib/ruby/gems/1.8/cache/rspec-1.0.5.gem
+%%DATADIR%%/lib/ruby/gems/1.8/cache/rspec-1.0.8.gem
 %%DATADIR%%/lib/ruby/gems/1.8/cache/sources-0.0.1.gem
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/CompositePublisher.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/FileUtils.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Module.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/Application.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/Cloneable.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/CompositePublisher.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/DefaultLoader.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/EarlyTime.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/FileCreationTask.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/FileList.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/FileTask.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/FtpFile.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/FtpUploader.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/GemPackageTask.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/MakefileLoader.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/MultiTask.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/NameSpace.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/PackageTask.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/RDocTask.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/RubyForgePublisher.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/RuleRecursionOverflowError.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/SshDirPublisher.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/SshFilePublisher.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/SshFreshDirPublisher.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/Task.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/TaskLib.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/TaskManager.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake/TestTask.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/RakeFileUtils.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/SshDirPublisher.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/SshFilePublisher.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/SshFreshDirPublisher.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/String.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Sys.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Test.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Test/Unit.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Test/Unit/Collector.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Test/Unit/Collector/Dir.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Time.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/created.rid
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/CHANGES.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/MIT-LICENSE.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/README.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/TODO.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/glossary_rdoc.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/proto_rake_rdoc.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/rakefile_rdoc.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/rational_rdoc.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/release_notes/rake-0_4_14_rdoc.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/release_notes/rake-0_4_15_rdoc.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/release_notes/rake-0_5_0_rdoc.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/release_notes/rake-0_5_3_rdoc.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/release_notes/rake-0_5_4_rdoc.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/release_notes/rake-0_6_0_rdoc.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/release_notes/rake-0_7_0_rdoc.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/release_notes/rake-0_7_1_rdoc.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/release_notes/rake-0_7_2_rdoc.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/release_notes/rake-0_7_3_rdoc.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/classic_namespace_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/clean_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/contrib/compositepublisher_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/contrib/ftptools_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/contrib/publisher_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/contrib/rubyforgepublisher_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/contrib/sshpublisher_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/contrib/sys_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/gempackagetask_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/loaders/makefile_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/packagetask_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/rake_test_loader_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/rdoctask_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/ruby182_test_unit_fix_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/runtest_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/tasklib_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/testtask_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/fr_class_index.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/fr_file_index.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/fr_method_index.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/index.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/rdoc-style.css
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/ri/created.rid
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Autotest.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Autotest/Rspec.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Kernel.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Object.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/RCov.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/RCov/VerifyTask.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/Behaviour.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/BehaviourCallbacks.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/BehaviourEval.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/BehaviourEval/InstanceMethods.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/BehaviourEval/ModuleMethods.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/BehaviourFactory.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/CompositeProcBuilder.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/Configuration.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/Description.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/Description/ClassMethods.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/EvalModule.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/Example.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/ExampleMatcher.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/ExampleShouldRaiseHandler.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Expectations.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Expectations/Differs.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Expectations/Differs/Default.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Expectations/ExpectationMatcherHandler.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Expectations/ExpectationNotMetError.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Expectations/MatcherHandlerHelper.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Expectations/NegativeExpectationMatcherHandler.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Expectations/ObjectExpectations.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Expectations/StringHelpers.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Matchers.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Matchers/BaseOperatorMatcher.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Matchers/MatcherError.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Matchers/ModuleMethods.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/AmbiguousReturnError.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/AnyArgConstraint.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/AnyArgsConstraint.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/ArgumentConstraintMatchers.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/ArgumentExpectation.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/BaseExpectation.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/BooleanArgConstraint.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/DuckTypeArgConstraint.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/ErrorGenerator.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/LiteralArgConstraint.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/MatcherConstraint.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/MessageExpectation.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/MethodStub.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/Methods.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/Mock.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/MockExpectationError.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/NegativeMessageExpectation.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/NoArgsConstraint.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/NumericArgConstraint.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/OrderGroup.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/Proxy.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/RegexpArgConstraint.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/Space.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/SpecMethods.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks/StringArgConstraint.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Rake.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Rake/SpecTask.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/BacktraceTweaker.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/BehaviourRunner.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/CommandLine.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/DrbCommandLine.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Formatter.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Formatter/BaseFormatter.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Formatter/BaseTextFormatter.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Formatter/FailingBehavioursFormatter.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Formatter/FailingExamplesFormatter.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Formatter/HtmlFormatter.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Formatter/ProgressBarFormatter.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Formatter/RdocFormatter.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Formatter/SnippetExtractor/NullConverter.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Formatter/SpecdocFormatter.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/HeckleRunner.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Heckler.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/NoisyBacktraceTweaker.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/OptionParser.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Options.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/QuietBacktraceTweaker.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Reporter.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Reporter/Failure.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/SpecParser.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Translator.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/VERSION.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/String.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Symbol.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Test.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Test/Unit.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Test/Unit/TestCase.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/created.rid
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/CHANGES.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/MIT-LICENSE.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/README.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/UPGRADE.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/autotest/discover_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/autotest/rspec_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/dsl/behaviour_callbacks_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/dsl/behaviour_eval_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/dsl/behaviour_factory_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/dsl/behaviour_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/dsl/composite_proc_builder_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/dsl/configuration_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/dsl/description_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/dsl/example_matcher_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/dsl/example_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/dsl/example_should_raise_handler_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/dsl_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/expectations/differs/default_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/expectations/errors_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/expectations/extensions/object_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/expectations/extensions/string_and_symbol_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/expectations/extensions_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/expectations/handler_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/expectations_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/extensions/object_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/extensions_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers/be_close_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers/be_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers/change_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers/eql_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers/equal_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers/has_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers/have_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers/include_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers/match_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers/operator_matcher_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers/raise_error_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers/respond_to_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers/satisfy_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers/throw_symbol_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks/argument_constraint_matchers_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks/argument_expectation_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks/error_generator_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks/errors_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks/extensions/object_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks/message_expectation_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks/methods_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks/mock_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks/order_group_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks/proxy_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks/space_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks/spec_methods_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/rake/spectask_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/rake/verify_rcov_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/backtrace_tweaker_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/behaviour_runner_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/command_line_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/drb_command_line_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/extensions/kernel_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/extensions/object_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/formatter/base_formatter_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/formatter/base_text_formatter_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/formatter/failing_behaviours_formatter_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/formatter/failing_examples_formatter_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/formatter/html_formatter_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/formatter/progress_bar_formatter_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/formatter/rdoc_formatter_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/formatter/snippet_extractor_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/formatter/specdoc_formatter_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/formatter_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/heckle_runner_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/heckle_runner_unsupported_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/option_parser_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/options_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/reporter_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/spec_parser_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/test_case_adapter_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/translator_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/version_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec_rb.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/fr_class_index.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/fr_file_index.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/fr_method_index.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/index.html
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/rdoc-style.css
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Autotest/Rspec/add_options_if_present-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Autotest/Rspec/cdesc-Rspec.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Autotest/Rspec/consolidate_failures-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Autotest/Rspec/handle_results-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Autotest/Rspec/make_test_cmd-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Autotest/Rspec/spec_command-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Autotest/Rspec/tests_for_file-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Autotest/cdesc-Autotest.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Kernel/cdesc-Kernel.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Kernel/context-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Kernel/describe-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Kernel/respond_to-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Object/args_and_options-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Object/cdesc-Object.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Object/metaclass-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/RCov/VerifyTask/cdesc-VerifyTask.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/RCov/VerifyTask/define-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/RCov/VerifyTask/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/RCov/cdesc-RCov.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/add_shared_behaviour-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/before_eval-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/cdesc-Behaviour.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/described_type-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/description-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/execution_context-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/find_shared_behaviour-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/include-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/matches%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/method_missing-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/methods-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/number_of_examples-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/plugin_mock_framework-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/prepare_execution_context_class-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/retain_examples_matching%21-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/run-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/run_after_all-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/run_before_all-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/shared%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/shared_behaviours-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour/weave_in_included_modules-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourCallbacks/add-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourCallbacks/after-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourCallbacks/append_after-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourCallbacks/append_before-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourCallbacks/before-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourCallbacks/cdesc-BehaviourCallbacks.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourCallbacks/prepend_after-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourCallbacks/prepend_before-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourCallbacks/scope_and_options-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourCallbacks/setup-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourCallbacks/teardown-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/InstanceMethods/cdesc-InstanceMethods.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/InstanceMethods/inspect-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/InstanceMethods/violated-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods/after_all_proc-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods/after_each_proc-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods/before_all_proc-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods/before_each_proc-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods/cdesc-ModuleMethods.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods/examples-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods/include-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods/included_modules-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods/inherit-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods/it-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods/it_should_behave_like-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods/method_missing-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods/predicate_matchers-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods/specify-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/cdesc-BehaviourEval.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourFactory/add_behaviour_class-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourFactory/cdesc-BehaviourFactory.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourFactory/create-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourFactory/remove_behaviour_class-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/CompositeProcBuilder/cdesc-CompositeProcBuilder.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/CompositeProcBuilder/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/CompositeProcBuilder/proc-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Configuration/after-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Configuration/append_after-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Configuration/append_before-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Configuration/before-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Configuration/cdesc-Configuration.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Configuration/include-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Configuration/mock_with-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Configuration/predicate_matchers-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Configuration/prepend_after-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Configuration/prepend_before-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Description/%3d%3d-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Description/%5b%5d%3d-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Description/%5b%5d-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Description/ClassMethods/cdesc-ClassMethods.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Description/ClassMethods/generate_description-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Description/cdesc-Description.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Description/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Description/to_s-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/EvalModule/cdesc-EvalModule.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Example/cdesc-Example.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Example/matches%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Example/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Example/run-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/ExampleMatcher/cdesc-ExampleMatcher.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/ExampleMatcher/matches%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/ExampleMatcher/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/ExampleShouldRaiseHandler/build_message-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/ExampleShouldRaiseHandler/cdesc-ExampleShouldRaiseHandler.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/ExampleShouldRaiseHandler/determine_error_class-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/ExampleShouldRaiseHandler/determine_error_message-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/ExampleShouldRaiseHandler/error_matches%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/ExampleShouldRaiseHandler/handle-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/ExampleShouldRaiseHandler/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/cdesc-DSL.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/Differs/Default/cdesc-Default.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/Differs/Default/diff_as_object-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/Differs/Default/diff_as_string-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/Differs/Default/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/Differs/cdesc-Differs.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/ExpectationMatcherHandler/cdesc-ExpectationMatcherHandler.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/ExpectationMatcherHandler/handle_matcher-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/ExpectationNotMetError/cdesc-ExpectationNotMetError.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/MatcherHandlerHelper/cdesc-MatcherHandlerHelper.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/MatcherHandlerHelper/describe-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/NegativeExpectationMatcherHandler/cdesc-NegativeExpectationMatcherHandler.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/NegativeExpectationMatcherHandler/handle_matcher-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/ObjectExpectations/cdesc-ObjectExpectations.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/ObjectExpectations/should-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/ObjectExpectations/should_not-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/StringHelpers/cdesc-StringHelpers.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/StringHelpers/starts_with%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/cdesc-Expectations.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/BaseOperatorMatcher/%3c%3d-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/BaseOperatorMatcher/%3c-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/BaseOperatorMatcher/%3d%3d%3d-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/BaseOperatorMatcher/%3d%3d-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/BaseOperatorMatcher/%3d%7e-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/BaseOperatorMatcher/%3e%3d-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/BaseOperatorMatcher/%3e-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/BaseOperatorMatcher/cdesc-BaseOperatorMatcher.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/BaseOperatorMatcher/fail_with_message-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/BaseOperatorMatcher/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Be/cdesc-Be.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/BeClose/cdesc-BeClose.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Change/cdesc-Change.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Eql/cdesc-Eql.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Equal/cdesc-Equal.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Has/cdesc-Has.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Have/cdesc-Have.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Include/cdesc-Include.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Match/cdesc-Match.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/MatcherError/cdesc-MatcherError.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/ModuleMethods/cdesc-ModuleMethods.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/ModuleMethods/description_generated-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/ModuleMethods/generated_description%3d-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/ModuleMethods/unregister_description_generated-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/NegativeOperatorMatcher/cdesc-NegativeOperatorMatcher.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/PositiveOperatorMatcher/cdesc-PositiveOperatorMatcher.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/RaiseError/cdesc-RaiseError.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/RespondTo/cdesc-RespondTo.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Satisfy/cdesc-Satisfy.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/ThrowSymbol/cdesc-ThrowSymbol.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/be-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/be_close-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/cdesc-Matchers.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/change-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/eql-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/equal-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/have-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/have_at_least-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/have_at_most-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/have_exactly-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/include-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/match-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/raise_error-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/respond_to-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/satisfy-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/throw_symbol-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/AmbiguousReturnError/cdesc-AmbiguousReturnError.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/AnyArgConstraint/%3d%3d-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/AnyArgConstraint/cdesc-AnyArgConstraint.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/AnyArgConstraint/matches%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/AnyArgConstraint/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/AnyArgsConstraint/cdesc-AnyArgsConstraint.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/AnyArgsConstraint/description-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentConstraintMatchers/any_args-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentConstraintMatchers/anything-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentConstraintMatchers/boolean-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentConstraintMatchers/cdesc-ArgumentConstraintMatchers.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentConstraintMatchers/duck_type-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentConstraintMatchers/no_args-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentExpectation/cdesc-ArgumentExpectation.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentExpectation/check_args-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentExpectation/constraints_match%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentExpectation/convert_constraint-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentExpectation/is_matcher%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentExpectation/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentExpectation/process_arg_constraints-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentExpectation/warn_deprecated-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BaseExpectation/and_raise-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BaseExpectation/and_return-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BaseExpectation/and_throw-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BaseExpectation/and_yield-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BaseExpectation/cdesc-BaseExpectation.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BaseExpectation/expected_args-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BaseExpectation/invoke-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BaseExpectation/invoke_consecutive_return_block-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BaseExpectation/invoke_method_block-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BaseExpectation/invoke_return_block-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BaseExpectation/invoke_with_yield-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BaseExpectation/matches-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BaseExpectation/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BooleanArgConstraint/%3d%3d-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BooleanArgConstraint/cdesc-BooleanArgConstraint.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BooleanArgConstraint/matches%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BooleanArgConstraint/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/DuckTypeArgConstraint/cdesc-DuckTypeArgConstraint.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/DuckTypeArgConstraint/description-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/DuckTypeArgConstraint/matches%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/DuckTypeArgConstraint/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ErrorGenerator/cdesc-ErrorGenerator.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ErrorGenerator/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ErrorGenerator/opts-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ErrorGenerator/raise_block_failed_error-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ErrorGenerator/raise_expectation_error-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ErrorGenerator/raise_missing_block_error-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ErrorGenerator/raise_out_of_order_error-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ErrorGenerator/raise_unexpected_message_args_error-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ErrorGenerator/raise_unexpected_message_error-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ErrorGenerator/raise_wrong_arity_error-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/LiteralArgConstraint/cdesc-LiteralArgConstraint.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/LiteralArgConstraint/matches%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/LiteralArgConstraint/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MatcherConstraint/cdesc-MatcherConstraint.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MatcherConstraint/matches%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MatcherConstraint/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/any_number_of_times-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/at_least-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/at_most-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/cdesc-MessageExpectation.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/exactly-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/matches_name_but_not_args-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/negative_expectation_for%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/never-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/once-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/ordered-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/set_expected_received_count-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/times-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/twice-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/verify_messages_received-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation/with-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MethodStub/cdesc-MethodStub.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MethodStub/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Methods/cdesc-Methods.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Methods/should_not_receive-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Methods/should_receive-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Methods/stub%21-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Mock/cdesc-Mock.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Mock/inspect-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Mock/method_missing-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Mock/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MockExpectationError/cdesc-MockExpectationError.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/NegativeMessageExpectation/cdesc-NegativeMessageExpectation.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/NegativeMessageExpectation/negative_expectation_for%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/NegativeMessageExpectation/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/NoArgsConstraint/%3d%3d-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/NoArgsConstraint/cdesc-NoArgsConstraint.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/NoArgsConstraint/description-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/NumericArgConstraint/cdesc-NumericArgConstraint.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/NumericArgConstraint/matches%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/NumericArgConstraint/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/OrderGroup/cdesc-OrderGroup.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/OrderGroup/consume-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/OrderGroup/handle_order_constraint-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/OrderGroup/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/OrderGroup/ready_for%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/OrderGroup/register-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Proxy/add_message_expectation-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Proxy/add_negative_message_expectation-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Proxy/add_stub-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Proxy/cdesc-Proxy.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Proxy/has_negative_expectation%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Proxy/message_received-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Proxy/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Proxy/null_object%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Proxy/raise_unexpected_message_args_error-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Proxy/raise_unexpected_message_error-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Proxy/received_message%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Proxy/reset-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/RegexpArgConstraint/cdesc-RegexpArgConstraint.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/RegexpArgConstraint/matches%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/RegexpArgConstraint/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Space/add-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Space/cdesc-Space.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Space/reset_all-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Space/verify_all-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/SpecMethods/cdesc-SpecMethods.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/SpecMethods/mock-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/SpecMethods/stub-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/StringArgConstraint/cdesc-StringArgConstraint.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/StringArgConstraint/matches%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/StringArgConstraint/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/cdesc-Mocks.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Rake/SpecTask/cdesc-SpecTask.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Rake/SpecTask/define-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Rake/SpecTask/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Rake/SpecTask/spec_files%3d-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Rake/cdesc-Rake.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/BacktraceTweaker/cdesc-BacktraceTweaker.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/BacktraceTweaker/clean_up_double_slashes-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/BehaviourRunner/add_behaviour-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/BehaviourRunner/cdesc-BehaviourRunner.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/BehaviourRunner/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/BehaviourRunner/number_of_examples-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/BehaviourRunner/run-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/BehaviourRunner/run_behaviours-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/BehaviourRunner/sort_paths-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/BehaviourRunner/sorter-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/CommandLine/cdesc-CommandLine.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/CommandLine/run-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/DrbCommandLine/cdesc-DrbCommandLine.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/DrbCommandLine/run-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseFormatter/add_behaviour-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseFormatter/cdesc-BaseFormatter.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseFormatter/dump_failure-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseFormatter/dump_summary-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseFormatter/example_failed-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseFormatter/example_not_implemented-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseFormatter/example_passed-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseFormatter/example_started-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseFormatter/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseFormatter/start-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseFormatter/start_dump-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseTextFormatter/backtrace_line-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseTextFormatter/cdesc-BaseTextFormatter.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseTextFormatter/colour%3d-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseTextFormatter/colour-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseTextFormatter/dump_failure-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseTextFormatter/dump_summary-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseTextFormatter/format_backtrace-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseTextFormatter/green-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseTextFormatter/magenta-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseTextFormatter/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseTextFormatter/output_to_tty%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseTextFormatter/red-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseTextFormatter/yellow-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/FailingBehavioursFormatter/add_behaviour-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/FailingBehavioursFormatter/cdesc-FailingBehavioursFormatter.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/FailingBehavioursFormatter/dump_failure-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/FailingBehavioursFormatter/dump_summary-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/FailingBehavioursFormatter/example_failed-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/FailingExamplesFormatter/add_behaviour-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/FailingExamplesFormatter/cdesc-FailingExamplesFormatter.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/FailingExamplesFormatter/dump_failure-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/FailingExamplesFormatter/dump_summary-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/FailingExamplesFormatter/example_failed-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/add_behaviour-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/cdesc-HtmlFormatter.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/current_behaviour_number-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/current_example_number-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/dump_failure-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/dump_summary-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/escape-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/example_failed-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/example_not_implemented-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/example_passed-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/extra_failure_content-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/global_scripts-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/global_styles-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/html_header-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/move_progress-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/report_header-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/start-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter/start_dump-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/ProgressBarFormatter/add_behaviour-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/ProgressBarFormatter/cdesc-ProgressBarFormatter.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/ProgressBarFormatter/example_failed-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/ProgressBarFormatter/example_not_implemented-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/ProgressBarFormatter/example_passed-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/ProgressBarFormatter/start_dump-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/RdocFormatter/add_behaviour-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/RdocFormatter/cdesc-RdocFormatter.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/RdocFormatter/example_failed-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/RdocFormatter/example_not_implemented-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/RdocFormatter/example_passed-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/SnippetExtractor/NullConverter/cdesc-NullConverter.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/SnippetExtractor/NullConverter/convert-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/SnippetExtractor/cdesc-SnippetExtractor.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/SpecdocFormatter/add_behaviour-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/SpecdocFormatter/cdesc-SpecdocFormatter.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/SpecdocFormatter/example_failed-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/SpecdocFormatter/example_not_implemented-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/SpecdocFormatter/example_passed-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/cdesc-Formatter.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/HeckleRunner/cdesc-HeckleRunner.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/HeckleRunner/heckle_class_or_module-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/HeckleRunner/heckle_method-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/HeckleRunner/heckle_with-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/HeckleRunner/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/HeckleRunner/verify_constant-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Heckler/cdesc-Heckler.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Heckler/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Heckler/tests_pass%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/NoisyBacktraceTweaker/cdesc-NoisyBacktraceTweaker.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/NoisyBacktraceTweaker/tweak_backtrace-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/OptionParser/cdesc-OptionParser.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/OptionParser/create_behaviour_runner-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/OptionParser/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/OptionParser/parse-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/OptionParser/parse_drb-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/OptionParser/parse_help-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/OptionParser/parse_options_file-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/OptionParser/parse_version-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/OptionParser/set_spec_from_line_number-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Options/cdesc-Options.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Options/create_behaviour_runner-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Options/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Options/parse_diff-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Options/parse_example-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Options/parse_format-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Options/parse_generate_options-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Options/parse_heckle-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Options/parse_require-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Options/parse_runner-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/QuietBacktraceTweaker/cdesc-QuietBacktraceTweaker.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/QuietBacktraceTweaker/tweak_backtrace-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Reporter/Failure/cdesc-Failure.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Reporter/Failure/expectation_not_met%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Reporter/Failure/header-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Reporter/Failure/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Reporter/add_behaviour-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Reporter/cdesc-Reporter.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Reporter/dump-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Reporter/end-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Reporter/example_finished-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Reporter/example_started-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Reporter/new-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Reporter/start-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/SpecParser/behaviour_at_line-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/SpecParser/cdesc-SpecParser.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/SpecParser/example_at_line-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/SpecParser/find_above-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/SpecParser/lines_above_reversed-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/SpecParser/parse_description-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/SpecParser/spec_name_for-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/cdesc-Runner.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/configure-c.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Translator/cdesc-Translator.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Translator/standard_matcher%3f-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Translator/translate-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Translator/translate_dir-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Translator/translate_file-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Translator/translate_line-i.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/VERSION/cdesc-VERSION.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/cdesc-Spec.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/String/cdesc-String.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Symbol/cdesc-Symbol.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Test/Unit/TestCase/cdesc-TestCase.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Test/Unit/cdesc-Unit.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Test/cdesc-Test.yaml
-%%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/created.rid
 %%DATADIR%%/lib/ruby/gems/1.8/gems/rake-0.7.3/CHANGES
 %%DATADIR%%/lib/ruby/gems/1.8/gems/rake-0.7.3/MIT-LICENSE
 %%DATADIR%%/lib/ruby/gems/1.8/gems/rake-0.7.3/README
@@ -1355,214 +640,213 @@ bin/jrubysrv
 %%DATADIR%%/lib/ruby/gems/1.8/gems/rake-0.7.3/test/test_tasks.rb
 %%DATADIR%%/lib/ruby/gems/1.8/gems/rake-0.7.3/test/test_test_task.rb
 %%DATADIR%%/lib/ruby/gems/1.8/gems/rake-0.7.3/test/test_top_level_functions.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/CHANGES
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/EXAMPLES.rd
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/MIT-LICENSE
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/README
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/Rakefile
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/UPGRADE
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/bin/spec
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/bin/spec_translator
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/auto_spec_description_example.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/before_and_after_example.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/behave_as_example.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/custom_expectation_matchers.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/custom_formatter.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/dynamic_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/file_accessor.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/file_accessor_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/greeter_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/helper_method_example.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/io_processor.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/io_processor_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/legacy_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/mocking_example.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/multi_threaded_behaviour_runner.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/not_yet_implemented_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/partial_mock_example.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/predicate_example.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/priority.txt
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/shared_behaviours_example.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/spec_helper.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/stack.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/stack_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/stubbing_example.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/test_case_adapter_example.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples/test_case_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/autotest/discover.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/autotest/rspec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/dsl.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/dsl/behaviour.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/dsl/behaviour_callbacks.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/dsl/behaviour_eval.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/dsl/behaviour_factory.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/dsl/composite_proc_builder.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/dsl/configuration.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/dsl/description.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/dsl/example.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/dsl/example_matcher.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/dsl/example_should_raise_handler.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/expectations.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/expectations/differs/default.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/expectations/errors.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/expectations/extensions.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/expectations/extensions/object.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/expectations/extensions/string_and_symbol.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/expectations/handler.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/extensions.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/extensions/object.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers/be.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers/be_close.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers/change.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers/eql.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers/equal.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers/has.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers/have.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers/include.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers/match.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers/operator_matcher.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers/raise_error.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers/respond_to.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers/satisfy.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers/throw_symbol.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks/argument_constraint_matchers.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks/argument_expectation.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks/error_generator.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks/errors.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks/extensions/object.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks/message_expectation.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks/methods.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks/mock.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks/order_group.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks/proxy.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks/space.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks/spec_methods.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/rake/spectask.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/rake/verify_rcov.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/backtrace_tweaker.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/behaviour_runner.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/command_line.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/drb_command_line.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/extensions/kernel.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/extensions/object.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/formatter.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/formatter/base_formatter.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/formatter/base_text_formatter.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/formatter/failing_behaviours_formatter.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/formatter/failing_examples_formatter.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/formatter/html_formatter.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/formatter/progress_bar_formatter.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/formatter/rdoc_formatter.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/formatter/snippet_extractor.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/formatter/specdoc_formatter.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/heckle_runner.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/heckle_runner_unsupported.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/option_parser.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/options.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/reporter.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/spec_parser.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/test_case_adapter.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/translator.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/version.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/plugins/mock_frameworks/flexmock.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/plugins/mock_frameworks/mocha.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/plugins/mock_frameworks/rspec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/dsl/behaviour_eval_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/dsl/behaviour_factory_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/dsl/behaviour_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/dsl/composite_proc_builder_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/dsl/configuration_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/dsl/description_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/dsl/example_class_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/dsl/example_instance_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/dsl/example_should_raise_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/dsl/predicate_matcher_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/dsl/shared_behaviour_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/expectations/differs/default_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/expectations/extensions/object_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/expectations/fail_with_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/be_close_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/be_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/change_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/description_generation_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/eql_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/equal_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/exist_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/handler_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/has_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/have_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/include_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/match_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/matcher_methods_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/mock_constraint_matchers_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/operator_matcher_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/raise_error_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/respond_to_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/satisfy_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers/throw_symbol_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/any_number_of_times_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/argument_expectation_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/at_least_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/at_most_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/bug_report_10260_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/bug_report_7611_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/bug_report_7805_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/bug_report_8165_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/bug_report_8302_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/failing_mock_argument_constraints_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/mock_ordering_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/mock_space_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/mock_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/multiple_return_value_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/null_object_mock_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/once_counts_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/options_hash_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/partial_mock_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/partial_mock_using_mocks_directly_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/passing_mock_argument_constraints_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/precise_counts_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/record_messages_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/stub_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks/twice_counts_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/package/bin_spec_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/behaviour_runner_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/command_line_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/context_matching_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/drb_command_line_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/example_matcher_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/execution_context_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/extensions/kernel_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/formatter/failing_behaviours_formatter_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/formatter/failing_examples_formatter_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/formatter/html_formatter_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/formatter/progress_bar_formatter_dry_run_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/formatter/progress_bar_formatter_failure_dump_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/formatter/progress_bar_formatter_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/formatter/rdoc_formatter_dry_run_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/formatter/rdoc_formatter_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/formatter/snippet_extractor_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/formatter/specdoc_formatter_dry_run_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/formatter/specdoc_formatter_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/heckle_runner_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/heckler_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/noisy_backtrace_tweaker_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/object_ext_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/option_parser_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/options_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/quiet_backtrace_tweaker_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/reporter_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/spec_parser_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/spec_classes.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/translator_spec.rb
-%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec_helper.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/CHANGES
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/EXAMPLES.rd
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/MIT-LICENSE
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/README
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/Rakefile
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/UPGRADE
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/bin/spec
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/bin/spec_translator
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/auto_spec_description_example.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/before_and_after_example.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/behave_as_example.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/custom_expectation_matchers.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/custom_formatter.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/dynamic_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/file_accessor.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/file_accessor_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/greeter_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/helper_method_example.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/io_processor.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/io_processor_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/legacy_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/mocking_example.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/multi_threaded_behaviour_runner.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/partial_mock_example.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/predicate_example.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/priority.txt
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/shared_behaviours_example.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/spec_helper.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/stack.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/stack_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/stubbing_example.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/test_case_adapter_example.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples/test_case_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/autotest/discover.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/autotest/rspec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/dsl.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/dsl/behaviour.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/dsl/behaviour_callbacks.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/dsl/behaviour_eval.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/dsl/behaviour_factory.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/dsl/composite_proc_builder.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/dsl/configuration.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/dsl/description.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/dsl/example.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/dsl/example_matcher.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/dsl/example_should_raise_handler.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/expectations.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/expectations/differs/default.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/expectations/errors.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/expectations/extensions.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/expectations/extensions/object.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/expectations/extensions/string_and_symbol.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/expectations/handler.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/extensions.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/extensions/object.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers/be.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers/be_close.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers/change.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers/eql.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers/equal.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers/has.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers/have.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers/include.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers/match.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers/operator_matcher.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers/raise_error.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers/respond_to.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers/satisfy.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers/throw_symbol.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks/argument_constraint_matchers.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks/argument_expectation.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks/error_generator.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks/errors.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks/extensions/object.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks/message_expectation.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks/methods.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks/mock.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks/order_group.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks/proxy.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks/space.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks/spec_methods.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/rake/spectask.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/rake/verify_rcov.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/backtrace_tweaker.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/behaviour_runner.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/command_line.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/drb_command_line.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/extensions/kernel.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/extensions/object.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/formatter.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/formatter/base_formatter.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/formatter/base_text_formatter.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/formatter/failing_behaviours_formatter.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/formatter/failing_examples_formatter.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/formatter/html_formatter.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/formatter/progress_bar_formatter.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/formatter/rdoc_formatter.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/formatter/snippet_extractor.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/formatter/specdoc_formatter.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/heckle_runner.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/heckle_runner_unsupported.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/option_parser.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/options.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/reporter.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/spec_parser.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/test_case_adapter.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/translator.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/version.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/plugins/mock_frameworks/flexmock.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/plugins/mock_frameworks/mocha.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/plugins/mock_frameworks/rspec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/dsl/behaviour_eval_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/dsl/behaviour_factory_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/dsl/behaviour_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/dsl/composite_proc_builder_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/dsl/configuration_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/dsl/description_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/dsl/example_class_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/dsl/example_instance_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/dsl/example_should_raise_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/dsl/predicate_matcher_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/dsl/shared_behaviour_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/expectations/differs/default_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/expectations/extensions/object_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/expectations/fail_with_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/be_close_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/be_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/change_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/description_generation_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/eql_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/equal_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/exist_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/handler_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/has_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/have_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/include_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/match_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/matcher_methods_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/mock_constraint_matchers_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/operator_matcher_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/raise_error_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/respond_to_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/satisfy_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers/throw_symbol_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/any_number_of_times_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/argument_expectation_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/at_least_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/at_most_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/bug_report_10260_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/bug_report_7611_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/bug_report_7805_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/bug_report_8165_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/bug_report_8302_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/failing_mock_argument_constraints_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/mock_ordering_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/mock_space_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/mock_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/multiple_return_value_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/null_object_mock_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/once_counts_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/options_hash_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/partial_mock_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/partial_mock_using_mocks_directly_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/passing_mock_argument_constraints_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/precise_counts_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/record_messages_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/stub_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks/twice_counts_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/package/bin_spec_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/behaviour_runner_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/command_line_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/context_matching_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/drb_command_line_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/execution_context_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/extensions/kernel_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/extensions/bug_report_10577_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/formatter/failing_behaviours_formatter_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/formatter/failing_examples_formatter_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/formatter/html_formatter_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/formatter/progress_bar_formatter_dry_run_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/formatter/progress_bar_formatter_failure_dump_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/formatter/progress_bar_formatter_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/formatter/rdoc_formatter_dry_run_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/formatter/rdoc_formatter_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/formatter/snippet_extractor_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/formatter/specdoc_formatter_dry_run_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/formatter/specdoc_formatter_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/heckle_runner_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/heckler_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/noisy_backtrace_tweaker_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/object_ext_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/option_parser_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/options_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/quiet_backtrace_tweaker_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/reporter_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/spec_parser_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/spec_classes.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/translator_spec.rb
+%%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec_helper.rb
 %%DATADIR%%/lib/ruby/gems/1.8/gems/sources-0.0.1/lib/sources.rb
 %%DATADIR%%/lib/ruby/gems/1.8/source_cache
 %%DATADIR%%/lib/ruby/gems/1.8/specifications/rake-0.7.3.gemspec
-%%DATADIR%%/lib/ruby/gems/1.8/specifications/rspec-1.0.5.gemspec
+%%DATADIR%%/lib/ruby/gems/1.8/specifications/rspec-1.0.8.gemspec
 %%DATADIR%%/lib/ruby/gems/1.8/specifications/sources-0.0.1.gemspec
 %%DATADIR%%/lib/ruby/site_ruby/1.8/gemconfigure.rb
 %%DATADIR%%/lib/ruby/site_ruby/1.8/rbconfig/datadir.rb
@@ -1630,38 +914,39 @@ bin/jrubysrv
 @dirrm %%DATADIR%%/lib/ruby/gems/1.8/specifications
 @dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/sources-0.0.1/lib
 @dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/sources-0.0.1
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/formatter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner/extensions
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/runner
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/package
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/mocks
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/matchers
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/expectations/extensions
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/expectations/differs
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/expectations
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec/dsl
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec/spec
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/spec
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/plugins/mock_frameworks
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/plugins
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/formatter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner/extensions
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/runner
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/rake
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks/extensions
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/mocks
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/matchers
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/extensions
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/expectations/extensions
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/expectations/differs
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/expectations
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec/dsl
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/spec
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib/autotest
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/lib
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/examples
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5/bin
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.5
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/autotest
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/formatter
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner/extensions
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/runner
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/package
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/mocks
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/matchers
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/expectations/extensions
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/expectations/differs
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/expectations
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec/dsl
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec/spec
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/spec
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/plugins/mock_frameworks
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/plugins
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/formatter
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner/extensions
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/runner
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/rake
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks/extensions
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/mocks
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/matchers
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/extensions
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/expectations/extensions
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/expectations/differs
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/expectations
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec/dsl
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/spec
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib/autotest
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/lib
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/examples
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8/bin
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rspec-1.0.8
 @dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rake-0.7.3/test/data/unittest
 @dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rake-0.7.3/test/data/rbext
 @dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rake-0.7.3/test/data/rakelib
@@ -1685,170 +970,8 @@ bin/jrubysrv
 @dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rake-0.7.3/bin
 @dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/rake-0.7.3
 @dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Test/Unit/TestCase
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Test/Unit
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Test
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Symbol
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/String
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/VERSION
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Translator
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/SpecParser
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Reporter/Failure
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Reporter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/QuietBacktraceTweaker
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Options
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/OptionParser
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/NoisyBacktraceTweaker
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Heckler
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/HeckleRunner
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/SpecdocFormatter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/SnippetExtractor/NullConverter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/SnippetExtractor
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/RdocFormatter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/ProgressBarFormatter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/HtmlFormatter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/FailingExamplesFormatter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/FailingBehavioursFormatter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseTextFormatter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter/BaseFormatter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/Formatter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/DrbCommandLine
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/CommandLine
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/BehaviourRunner
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner/BacktraceTweaker
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Runner
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Rake/SpecTask
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Rake
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/StringArgConstraint
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/SpecMethods
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Space
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/RegexpArgConstraint
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Proxy
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/OrderGroup
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/NumericArgConstraint
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/NoArgsConstraint
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/NegativeMessageExpectation
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MockExpectationError
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Mock
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/Methods
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MethodStub
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MessageExpectation
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/MatcherConstraint
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/LiteralArgConstraint
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ErrorGenerator
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/DuckTypeArgConstraint
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BooleanArgConstraint
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/BaseExpectation
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentExpectation
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/ArgumentConstraintMatchers
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/AnyArgsConstraint
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/AnyArgConstraint
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks/AmbiguousReturnError
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Mocks
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/ThrowSymbol
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Satisfy
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/RespondTo
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/RaiseError
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/PositiveOperatorMatcher
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/NegativeOperatorMatcher
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/ModuleMethods
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/MatcherError
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Match
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Include
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Have
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Has
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Equal
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Eql
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Change
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/BeClose
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/Be
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers/BaseOperatorMatcher
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Matchers
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/StringHelpers
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/ObjectExpectations
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/NegativeExpectationMatcherHandler
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/MatcherHandlerHelper
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/ExpectationNotMetError
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/ExpectationMatcherHandler
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/Differs/Default
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations/Differs
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/Expectations
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/ExampleShouldRaiseHandler
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/ExampleMatcher
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Example
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/EvalModule
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Description/ClassMethods
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Description
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Configuration
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/CompositeProcBuilder
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourFactory
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/ModuleMethods
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval/InstanceMethods
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourEval
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/BehaviourCallbacks
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL/Behaviour
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec/DSL
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Spec
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/RCov/VerifyTask
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/RCov
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Object
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Kernel
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Autotest/Rspec
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri/Autotest
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/ri
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/formatter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner/extensions
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/runner
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/rake
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks/extensions
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/mocks
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/matchers
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/extensions
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/expectations/extensions
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/expectations/differs
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/expectations
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec/dsl
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/spec
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib/autotest
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files/lib
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/files
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Test/Unit
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Test
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Reporter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Formatter/SnippetExtractor
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner/Formatter
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Runner
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Rake
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Mocks
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Matchers
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Expectations/Differs
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/Expectations
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/Description
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL/BehaviourEval
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec/DSL
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Spec
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/RCov
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes/Autotest
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc/classes
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5/rdoc
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rspec-1.0.5
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/ri
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/loaders
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake/contrib
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib/rake
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/lib
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc/release_notes
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files/doc
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/files
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Test/Unit/Collector
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Test/Unit
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Test
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes/Rake
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc/classes
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3/rdoc
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc/rake-0.7.3
-@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc
 @dirrm %%DATADIR%%/lib/ruby/gems/1.8/cache
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/doc
 @dirrm %%DATADIR%%/lib/ruby/gems/1.8
 @dirrm %%DATADIR%%/lib/ruby/gems
 @dirrm %%DATADIR%%/lib/ruby/1.8/xsd/xmlparser

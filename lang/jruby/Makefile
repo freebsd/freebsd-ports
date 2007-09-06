@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jruby
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://dist.codehaus.org/jruby/ \
 		http://repo2.maven.org/maven/jruby/misc/ \
