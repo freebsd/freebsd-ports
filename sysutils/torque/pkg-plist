@@ -78,6 +78,8 @@ bin/pbs-config
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_groups
 @exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/server_priv/accounting
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/accounting
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/server_priv/disallowed_types
+@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/disallowed_types
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv
 @exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/undelivered
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/undelivered
