@@ -1,5 +1,5 @@
---- work/dev/uox3.h.orig	Sun Feb 14 18:56:03 1999
-+++ work/dev/uox3.h	Sun Feb 27 11:28:45 2000
+--- work/dev/uox3.h.orig	1999-02-14 18:56:03.000000000 -0600
++++ work/dev/uox3.h	2007-09-06 05:37:55.229539705 -0500
 @@ -3,10 +3,10 @@
  //#define VER "0.69.02 (Test Build 03)"  //Increment to 01 when putting out official test build
  #define PRODUCT "Ultima Offline eXperiment 3"
@@ -42,6 +42,17 @@
  #endif
  #include "im.h"
  #include "uoxlist.h"
+@@ -51,8 +57,8 @@
+ #include "worldmain.h"
+ // LINUX Definitions
+ #ifndef __NT__
+-#define max(a,b) (a) >? (b)
+-#define min(a,b) (a) <? (b)
++#define max(a,b) ((a) >= (b) ? (a) : (b))
++#define min(a,b) ((a) <= (b) ? (a) : (b))
+ char *strlwr(char *);
+ char *strupr(char *);
+ #endif
 @@ -349,7 +355,7 @@
   unsigned long int regen, regen2, regen3;
   int runenumb; // Used for naming runes
