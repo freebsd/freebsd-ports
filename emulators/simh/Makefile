@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	simh
-PORTVERSION=	3.7.2
-PORTREVISION=	1
+PORTVERSION=	3.7.3
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
-DISTNAME=	${PORTNAME}v37-2
+DISTNAME=	${PORTNAME}v37-3
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
@@ -18,7 +17,6 @@ COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qoa
 USE_GMAKE=	yes
-RESTRICTED=	Non-commercial use only
 MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes
 
