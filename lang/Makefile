@@ -165,6 +165,7 @@
     SUBDIR += munger
     SUBDIR += nawk
     SUBDIR += neko
+    SUBDIR += nesasm
     SUBDIR += newlisp
     SUBDIR += nhc98
     SUBDIR += nickle
