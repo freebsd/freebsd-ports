@@ -5,6 +5,7 @@ lib/lapack95_modules/f77_lapack.mod
 lib/lapack95_modules/f95_lapack.mod
 lib/lapack95_modules/la_auxmod.mod
 lib/lapack95_modules/la_precision.mod
+@dirrm lib/lapack95_modules
 %%EXAMPLESDIR%%/make.inc
 %%EXAMPLESDIR%%/EXAMPLES1/gbsv.ma
 %%EXAMPLESDIR%%/EXAMPLES1/la_gesv_example.f90
@@ -1059,5 +1060,3 @@ lib/lapack95_modules/la_precision.mod
 @dirrm %%EXAMPLESDIR%%/EXAMPLES1
 @dirrm %%EXAMPLESDIR%%/EXAMPLES2
 @dirrm %%EXAMPLESDIR%%
-
-
