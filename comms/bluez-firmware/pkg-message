@@ -1,0 +1,39 @@
+
+NOTICE
+======
+
+You need to have the ubtbcmfw(8) and ng_ubt(8) kernel modules
+in our kernel. This can be accomplished by adding the following
+lines to /boot/loader.conf:
+
+ ubtbcmfw_load=yes
+ ng_ubt_load=yes
+
+Furthermore you need to ensure that the bcmfw(1) utility downloads
+the firmware into the dongle on insertion. This can be done by
+adding the followign lines to /etc/devd.conf:
+
+ # Requires the port BCM2033 to be installed
+ # and the ubtbcmfw(8) and ng_ubt(8) kernel modules
+ # to be loaded prior to insertion.
+ #
+ attach 100 {
+ match "vendor" "0x0a5c";
+ match "product" "0x2033";
+ action "if test -d /usr/local/lib/firmware; then bcmfw -n $device-name -m /usr/local/lib/firmware/BCM2033-MD.hex -f /usr/local/lib/firmware/BCM2033-FW.bin; fi";
+ }
+
+or alternatively load these files manually with:
+
+ cd /usr/local/lib/firmware
+ bcmfw -n ubtbcmfw0 -m BCM2033-MD.hex -f BCM2033-FW.bin
+
+you should then see the following lines in your dmesg(8):
+
+ ubtbcmfw0: <vendor 0x0a5c product 0x2033, class 224/1, rev 1.01/0.a0, addr 7> on uhub0
+ ubtbcmfw0: at uhub0 port 2 (addr 7) disconnected
+ ubtbcmfw0: detached
+ ubt0: <Broadcom Corp. BCM2033, class 224/1, rev 1.01/0.a0, addr 7> on uhub0
+ ubt0: Interface 0 endpoints: interrupt=0x81, bulk-in=0x82, bulk-out=0x2
+ ubt0: Interface 1 (alt.config 4) endpoints: isoc-in=0x83, isoc-out=0x3; wMaxPacketSize=64; nframes=5, buffer size=320
+

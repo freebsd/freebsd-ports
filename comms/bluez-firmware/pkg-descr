@@ -1,0 +1,3 @@
+Formware for the Broadcom BCM2033 chip based Bluetooth USB devices. To
+be downloaded with bcmfw(1). The ubtbcmfw(4) and ng_ubt(4) kernel
+modules need to be installed.
