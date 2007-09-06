@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yabause
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -24,6 +24,7 @@ USE_XLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 SUB_FILES=	pkg-message
+WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=	yabause.1
 
 post-install:
