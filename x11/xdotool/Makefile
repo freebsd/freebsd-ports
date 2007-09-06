@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdotool
-DISTVERSION=	20070713
+DISTVERSION=	20070903
 CATEGORIES=	x11
 MASTER_SITES=	http://www.semicomplete.com/files/xdotool/ \
 		http://www.atarininja.org/~wxs/distfiles/
