@@ -2202,6 +2202,7 @@
     SUBDIR += synfig
     SUBDIR += sysconftool
     SUBDIR += t1lib
+    SUBDIR += ta-lib
     SUBDIR += tailor
     SUBDIR += tavrasm
     SUBDIR += tcl-memchan

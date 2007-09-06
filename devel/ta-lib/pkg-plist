@@ -1,0 +1,23 @@
+bin/ta-lib-config
+include/ta-lib/ta_abstract.h
+include/ta-lib/ta_common.h
+include/ta-lib/ta_defs.h
+include/ta-lib/ta_func.h
+include/ta-lib/ta_libc.h
+lib/libta_abstract.a
+lib/libta_abstract.la
+lib/libta_abstract.so
+lib/libta_abstract.so.0
+lib/libta_abstract_gc.a
+lib/libta_abstract_gc.la
+lib/libta_abstract_gc.so
+lib/libta_abstract_gc.so.0
+lib/libta_common.a
+lib/libta_common.la
+lib/libta_common.so
+lib/libta_common.so.0
+lib/libta_func.a
+lib/libta_func.la
+lib/libta_func.so
+lib/libta_func.so.0
+@dirrm include/ta-lib
