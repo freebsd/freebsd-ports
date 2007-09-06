@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mailgraph
-PORTVERSION=	1.13
-PORTREVISION=	1
+PORTVERSION=	1.14
 CATEGORIES=	mail
 MASTER_SITES=	http://mailgraph.schweikert.ch/pub/ \
 		http://mailgraph.schweikert.ch/pub/old/
@@ -45,10 +44,12 @@ post-patch:
 
 do-install:
 	${MKDIR} ${PREFIX}/www/cgi-bin
+	${MKDIR} ${PREFIX}/www/data/mailgraph
 	${MKDIR} ${DATADIR}
 	@${CHOWN} -R ${MAILGRAPH_USER}:${MAILGRAPH_GROUP} ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.pl ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.cgi ${PREFIX}/www/cgi-bin
+	@${INSTALL_DATA} ${WRKSRC}/mailgraph.css ${PREFIX}/www/data/mailgraph
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	for f in ${DOCS}; do \
