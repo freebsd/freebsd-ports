@@ -1,0 +1,5 @@
+The gconf backend for CompizConfig.  It uses the 
+Gnome configuration system and provides integration into the Gnome desktop 
+environment.
+
+WWW:	http://forums.compiz-fusion.org/

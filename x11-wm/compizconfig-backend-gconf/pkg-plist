@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+lib/compizconfig/backends/libgconf.so
+lib/compizconfig/backends/libgconf.la
+lib/compizconfig/backends/libgconf.a
