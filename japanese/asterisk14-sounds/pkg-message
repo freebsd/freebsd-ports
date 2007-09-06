@@ -1,0 +1,19 @@
+
+=============================================================================
+[FYI]
+ There is 2 patch files for Japanese grammar of Asterisk to a ftp server.
+
+ - set patch files into  ports/asterisk/files 
+	patch-apps::app_voicemail.c
+	patch-main::say.c
+   see ftp://ftp.voip-info.jp/asterisk/patch/
+ 
+ - recompile of Asterisk ports
+
+
+ You have to validate next two lines in asterisk.conf. 
+
+ [options]
+ languageprefix=yes
+
+=============================================================================

@@ -18,6 +18,7 @@
     SUBDIR += alias-fonts
     SUBDIR += another-htmllint
     SUBDIR += anthy
+    SUBDIR += asterisk-sound
     SUBDIR += aterm
     SUBDIR += bible_names-fpw
     SUBDIR += bookview
