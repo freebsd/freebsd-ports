@@ -1,0 +1,8 @@
+lib/firmware/BCM2033-MD.hex
+lib/firmware/BCM2033-FW.bin
+lib/firmware/BCM-LEGAL.txt
+lib/firmware/STLC2500_R4_00_03.ptc
+lib/firmware/STLC2500_R4_00_06.ssf
+lib/firmware/STLC2500_R4_02_02_WLAN.ssf
+lib/firmware/STLC2500_R4_02_04.ptc
+@dirrmtry lib/firmware

@@ -11,6 +11,7 @@
     SUBDIR += bforce
     SUBDIR += bforce-kst
     SUBDIR += birda
+    SUBDIR += bluez-firmware
     SUBDIR += bpl+
     SUBDIR += cdr_read
     SUBDIR += chu
