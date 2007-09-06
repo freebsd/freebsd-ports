@@ -303,6 +303,7 @@ share/gnome/goffice/%%VERSION%%/glade/gog-object-prefs.glade
 share/gnome/goffice/%%VERSION%%/glade/gog-plot-prefs.glade
 share/gnome/goffice/%%VERSION%%/glade/gog-reg-curve-prefs.glade
 share/gnome/goffice/%%VERSION%%/glade/gog-reg-eqn-prefs.glade
+share/gnome/goffice/%%VERSION%%/glade/gog-series-prefs.glade
 share/gnome/goffice/%%VERSION%%/glade/gog-style-prefs.glade
 share/gnome/goffice/%%VERSION%%/patterns/svg-patterns.xml
 share/gnome/pixmaps/goffice/%%VERSION%%/area.xpm
@@ -442,6 +443,7 @@ share/locale/ms/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/nn/LC_MESSAGES/goffice-%%VERSION%%.mo
+share/locale/oc/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/pl/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/pt/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/pt_BR/LC_MESSAGES/goffice-%%VERSION%%.mo
@@ -456,6 +458,8 @@ share/locale/uk/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/goffice-%%VERSION%%.mo
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrm share/gnome/pixmaps/goffice/%%VERSION%%
