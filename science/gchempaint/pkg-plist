@@ -13,9 +13,9 @@ lib/gchempaint/plugins/templates.la
 lib/gchempaint/plugins/templates.so
 lib/gchempaint/plugins/text.la
 lib/gchempaint/plugins/text.so
-lib/goffice/0.4.2/plugins/gchempaint/gchempaint.la
-lib/goffice/0.4.2/plugins/gchempaint/gchempaint.so
-lib/goffice/0.4.2/plugins/gchempaint/plugin.xml
+lib/goffice/0.4.3/plugins/gchempaint/gchempaint.la
+lib/goffice/0.4.3/plugins/gchempaint/gchempaint.so
+lib/goffice/0.4.3/plugins/gchempaint/plugin.xml
 lib/libgcpcanvas.la
 lib/libgcpcanvas.so
 lib/libgcpcanvas.so.0
