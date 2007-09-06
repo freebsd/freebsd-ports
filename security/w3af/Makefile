@@ -28,7 +28,7 @@ USE_PYTHON=	2.5+
 
 post-patch:
 	@${GREP} -lr '/usr/bin/python' ${WRKSRC} | \
-		${XARGS} ${REINPLACE_CMD} -I "" \
+		${XARGS} ${REINPLACE_CMD} -i "" \
 			-E "s!/usr/bin/python2?!${PYTHON_CMD}!"
 
 do-build:
