@@ -1385,6 +1385,7 @@ claws-mail-pdf_viewer	ports/mail/claws-mail-pdf_viewer
 claws-mail-perl	ports/mail/claws-mail-perl
 claws-mail-rssyl	ports/mail/claws-mail-rssyl
 claws-mail-smime	ports/mail/claws-mail-smime
+claws-mail-spamreport	ports/mail/claws-mail-spamreport
 claws-mail-synce	ports/mail/claws-mail-synce
 claws-mail-vcalendar	ports/mail/claws-mail-vcalendar
 cle		ports/editors/cle
