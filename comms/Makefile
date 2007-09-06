@@ -11,6 +11,7 @@
     SUBDIR += bforce
     SUBDIR += bforce-kst
     SUBDIR += birda
+    SUBDIR += bluegps
     SUBDIR += bluez-firmware
     SUBDIR += bpl+
     SUBDIR += cdr_read
