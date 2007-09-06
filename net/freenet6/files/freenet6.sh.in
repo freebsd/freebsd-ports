@@ -5,8 +5,8 @@
 
 #
 # PROVIDE: freenet6
-# REQUIRE: NETWORKING
-# BEFORE: SERVERS
+# REQUIRE: NETWORKING netif
+# BEFORE: ip6addrctl
 # KEYWORD: shutdown
 #
 
