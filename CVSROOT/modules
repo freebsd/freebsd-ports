@@ -15477,7 +15477,6 @@ tilda		ports/x11/tilda
 tile		ports/x11-toolkits/tile
 tilem		ports/emulators/tilem
 tileworld	ports/games/tileworld
-tilp		ports/comms/tilp
 tilp2		ports/comms/tilp2
 timeless	ports/graphics/timeless
 timelimit	ports/sysutils/timelimit
