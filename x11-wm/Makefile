@@ -26,6 +26,7 @@
     SUBDIR += blackbox
     SUBDIR += blwm
     SUBDIR += boxtools
+    SUBDIR += ccsm
     SUBDIR += clementine
     SUBDIR += compiz
     SUBDIR += compizconfig-backend-gconf

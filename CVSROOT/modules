@@ -1187,6 +1187,7 @@ ccmsn		ports/net-im/ccmsn
 ccrtp		ports/devel/ccrtp
 ccrypt		ports/security/ccrypt
 ccscript	ports/lang/ccscript
+ccsm		port/x11-wm/ccsm
 ccxstream	ports/net/ccxstream
 ccze		ports/sysutils/ccze
 cd-console	ports/audio/cd-console
