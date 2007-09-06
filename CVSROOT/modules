@@ -930,6 +930,7 @@ blt		ports/x11-toolkits/blt
 blue		ports/games/blue
 bluecurve-themes	ports/x11-themes/bluecurve-themes
 bluefish	ports/www/bluefish
+bluegps		ports/comms/bluegps
 bluej		ports/java/bluej
 bluez-firmware	ports/comms/bluez-firmware
 blwm		ports/x11-wm/blwm
