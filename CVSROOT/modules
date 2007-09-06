@@ -8479,7 +8479,6 @@ openam		ports/net/openam
 openarena	ports/games/openarena
 openbabel	ports/science/openbabel
 openbgpd	ports/net/openbgpd
-openbgpd-devel	ports/net/openbgpd-devel
 openbox		ports/x11-wm/openbox
 openbox-themes	ports/x11-themes/openbox-themes
 openbsm		ports/security/openbsm
