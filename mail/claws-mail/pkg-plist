@@ -43,6 +43,7 @@ include/claws-mail/common/ssl_certificate.h
 include/claws-mail/common/string_match.h
 include/claws-mail/common/stringtable.h
 include/claws-mail/common/claws.h
+include/claws-mail/common/tags.h
 include/claws-mail/common/template.h
 include/claws-mail/common/timing.h
 include/claws-mail/common/utils.h
@@ -62,6 +63,8 @@ include/claws-mail/editgroup.h
 include/claws-mail/editjpilot.h
 include/claws-mail/editldap.h
 include/claws-mail/editldap_basedn.h
+include/claws-mail/editaddress_other_attributes_ldap.h
+include/claws-mail/edittags.h
 include/claws-mail/editvcard.h
 include/claws-mail/enriched.h
 include/claws-mail/etpan/etpan-errors.h
