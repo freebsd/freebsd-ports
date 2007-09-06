@@ -7,6 +7,7 @@
 
 PORTNAME=	qwt
 PORTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
@@ -17,7 +18,7 @@ COMMENT=	Qt Widgets for Technical Applications
 CONFLICTS=	qwt-4.*
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc qmake
+QT_COMPONENTS=	gui moc_build qmake_build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
@@ -25,7 +26,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS=	DESIGNER_PLUGIN "Install plugin for Qt Designer" on
 
-PLUGINDIR=	${PREFIX}/lib/plugins/designer
+PLUGINDIR=	${PREFIX}/lib/qt4/plugins/designer
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.man>
@@ -33,7 +34,7 @@ PLUGINDIR=	${PREFIX}/lib/plugins/designer
 QPRO_DIRS=	src
 .if !defined(WITHOUT_DESIGNER_PLUGIN)
 QPRO_DIRS+=	designer
-#QT_COMPONENTS+=	designer xml rcc
+#QT_COMPONENTS+=	designer xml rcc_build
 BUILD_DEPENDS+=	${LOCALBASE}/bin/rcc:${PORTSDIR}/devel/qt4-rcc
 LIB_DEPENDS+=	QtXml:${PORTSDIR}/textproc/qt4-xml \
 		QtDesigner:${PORTSDIR}/devel/qt4-designer
@@ -54,10 +55,7 @@ post-configure:
 	${REINPLACE_CMD} -e \
 		's|^CC .*|CC=${CC}|; \
 		 s|^CXX .*|CXX=${CXX}|; \
-		 s|^LINK .*|LINK=${CXX}|; \
-		 s|-pipe||; \
-		 s|^\(CFLAGS .*= \)|\1${CFLAGS}|; \
-		 s|^\(CXXFLAGS = \)|\1${CXXFLAGS}|' \
+		 s|^LINK .*|LINK=${CXX}|' \
 		${WRKSRC}/${d}/Makefile)
 .endfor
 
