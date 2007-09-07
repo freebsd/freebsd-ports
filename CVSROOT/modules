@@ -8566,6 +8566,7 @@ openverse	ports/net/openverse
 openvmps	ports/net-mgmt/openvmps
 openvpn		ports/security/openvpn
 openvpn-admin	ports/security/openvpn-admin
+openvpn-auth-ldap	ports/security/openvpn-auth-ldap
 openvpn-devel	ports/security/openvpn-devel
 openvrml	ports/www/openvrml
 openwebmail	ports/mail/openwebmail
