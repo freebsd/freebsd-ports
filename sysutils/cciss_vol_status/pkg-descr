@@ -1,0 +1,4 @@
+Very lightweight program to report the status of logical drives on Smart Array
+controllers ciss(4).
+
+WWW: http://cciss.sourceforge.net
