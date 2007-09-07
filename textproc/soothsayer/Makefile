@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	soothsayer
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Intelligent predictive text entry platform
+
+BUILD_DEPENDS=	swig>=1.3.31:${PORTSDIR}/devel/swig13
 
 USE_LDCONFIG=	yes
 USE_SQLITE=	3
@@ -24,8 +26,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 PORT_VERBS=	${PORTNAME} text2ngram
 
 post-patch:
-	@${GREP} -rl 'sqlite.h' ${WRKSRC}/src|${XARGS} ${REINPLACE_CMD} -e\
-		's|sqlite\.h|sqlite3.h|g'
 	@${REINPLACE_CMD} -e 's|\$$\^|$${.ALLSRC}|' ${WRKSRC}/resources/Makefile.in
 	@${REINPLACE_CMD} -e '1s|/.*|/bin/sh|'\
 		${WRKSRC}/resources/profiles/generate_soothsayer_config.sh
