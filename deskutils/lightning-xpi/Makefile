@@ -7,7 +7,7 @@
 
 PORTNAME=	lightning
 PORTVERSION=	${ARCH_PORTVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -30,7 +30,7 @@ _IGNORE_MSG=	precompiled binaries, contact ahze@FreeBSD.org for build informatio
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
-ARCH_PORTVERSION?=	0.3.1
+ARCH_PORTVERSION?=	0.5
 
 .if ${ARCH}=="i386"
 . if ${OSVERSION} < 600000 && ${OSVERSION} > 500000
@@ -39,16 +39,24 @@ OS_VER=	5
 OS_VER=	6
 . elif ${OSVERSION} > 700000
 OS_VER=	7
-ARCH_PORTVERSION=0.5
 . else
 IGNORE=	${_IGNORE_MSG}
 . endif
 .elif ${ARCH}=="sparc64"
-. if ${OSVERSION} > 600000
+. if ${OSVERSION} > 600000 && ${OSVERSION} < 700000
 OS_VER=	6
-ARCH_PORTVERSION=0.5
+. elif ${OSVERSION} > 700000
+OS_VER=	7
 . else
 IGNORE=	${_IGNORE_MSG}
+. endif
+.elif ${ARCH}=="amd64"
+. if ${OSVERSION} < 600000 && ${OSVERSION} > 500000
+OS_VER=	5
+. elif ${OSVERSION} > 600000 && ${OSVERSION} < 700000
+OS_VER=	6
+. elif ${OSVERSION} > 700000
+OS_VER=	7
 . endif
 .else
 IGNORE=	${_IGNORE_MSG}
