@@ -884,6 +884,7 @@
     SUBDIR += xlaby
     SUBDIR += xlife
     SUBDIR += xlines
+    SUBDIR += xlogical
     SUBDIR += xmahjongg
     SUBDIR += xmastermind
     SUBDIR += xmball
