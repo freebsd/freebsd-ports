@@ -664,6 +664,7 @@
     SUBDIR += scanlogd
     SUBDIR += scanssh
     SUBDIR += seahorse
+    SUBDIR += seccure
     SUBDIR += secpanel
     SUBDIR += sectok
     SUBDIR += secure_delete

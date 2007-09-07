@@ -1,0 +1,8 @@
+bin/seccure-key
+bin/seccure-encrypt
+bin/seccure-decrypt
+bin/seccure-sign
+bin/seccure-verify
+bin/seccure-signcrypt
+bin/seccure-veridec
+bin/seccure-dh
