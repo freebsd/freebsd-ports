@@ -4988,6 +4988,7 @@ isc-dhcp3-server	ports/net/isc-dhcp3-server
 iscsi-target	ports/net/iscsi-target
 isearch		ports/textproc/isearch
 iselect		ports/misc/iselect
+iserverd	ports/net-im/iserverd
 ish		ports/converters/ish
 ishido		ports/games/ishido
 isic		ports/net-mgmt/isic
