@@ -9,9 +9,9 @@ PORTNAME=	blas
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/blas/ \
+MASTER_SITES=	http://www.netlib.org/blas/ \
 		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/blas/ \
-		http://www.netlib.org/blas/
+		ftp://netlib.bell-labs.com/netlib/blas/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
@@ -19,9 +19,8 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Basic Linear Algebra, level 1, 2, and 3
 
 USE_LDCONFIG=	yes
-
-NO_WRKSUBDIR=	yes
 USE_FORTRAN=	yes
+WRKSRC=		${WRKDIR}/BLAS
 
 PLIST_FILES=	lib/libblas.a lib/libblas.so lib/libblas.so.2
 
