@@ -98,6 +98,7 @@ ICAClient/keystore/cacerts/Class4PCA_G2_v2.crt
 ICAClient/keystore/cacerts/GTECTGlobalRoot.crt
 ICAClient/keystore/cacerts/Pcs3ss_v4.crt
 ICAClient/keystore/cacerts/SecureServer.crt
+%%HAVE_ICA_CERTS%%@unexec for f in %%ICA_CERTS%%; do rm %%CERTDIR%%/${f}; done
 ICAClient/libctxssl.so
 ICAClient/nls/en/UTF-8/Wfcmgr
 ICAClient/nls/en/UTF-8/Wfica
