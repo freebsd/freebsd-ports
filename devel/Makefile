@@ -515,6 +515,7 @@
     SUBDIR += lasi
     SUBDIR += lbpp
     SUBDIR += leaktracer
+    SUBDIR += legoctl
     SUBDIR += lemon
     SUBDIR += lexi
     SUBDIR += lhs2TeX
