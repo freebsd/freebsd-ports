@@ -1,0 +1,10 @@
+libexec/xfce4/panel-plugins/xfce4-time-out-plugin
+share/icons/hicolor/48x48/apps/xfce4-time-out-plugin.png
+share/icons/hicolor/scalable/apps/xfce4-time-out-plugin.svg
+share/locale/de/LC_MESSAGES/xfce4-time-out-plugin.mo
+share/locale/hu/LC_MESSAGES/xfce4-time-out-plugin.mo
+share/xfce4/panel-plugins/xfce4-time-out-plugin.desktop
+@dirrm share/xfce4/panel-plugins
+@dirrm share/xfce4
+@dirrm libexec/xfce4/panel-plugins
+@dirrm libexec/xfce4
