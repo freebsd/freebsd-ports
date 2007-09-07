@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	notification
-PORTVERSION=	0.11
-PORTREVISION=	2
+PORTVERSION=	0.12
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -25,7 +24,7 @@ USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:261
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
-	--with-libintl-prefix=${LOCALBASE}
+		--with-libintl-prefix=${LOCALBASE}
 
 PLIST_FILES=	lib/claws-mail/plugins/notification_plugin.a \
 		lib/claws-mail/plugins/notification_plugin.la \
@@ -34,6 +33,7 @@ PLIST_FILES=	lib/claws-mail/plugins/notification_plugin.a \
 		share/locale/cs/LC_MESSAGES/notification_plugin.mo \
 		share/locale/hu/LC_MESSAGES/notification_plugin.mo \
 		share/locale/pt_BR/LC_MESSAGES/notification_plugin.mo \
-		share/locale/zh_CN/LC_MESSAGES/notification_plugin.mo
+		share/locale/zh_CN/LC_MESSAGES/notification_plugin.mo \
+		share/locale/fi/LC_MESSAGES/notification_plugin.mo
 
 .include <bsd.port.mk>
