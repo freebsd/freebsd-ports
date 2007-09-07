@@ -1,0 +1,8 @@
+**********************************************************************
+To use yaml-mode, you should add following lines to your .emacs file:
+
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
+**********************************************************************

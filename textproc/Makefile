@@ -1043,6 +1043,7 @@
     SUBDIR += y2l
     SUBDIR += yamcha
     SUBDIR += yaml-mode.el
+    SUBDIR += yaml-mode.el-emacs21
     SUBDIR += yi-aspell
     SUBDIR += yodl
     SUBDIR += yould

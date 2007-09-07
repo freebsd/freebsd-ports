@@ -1,0 +1,17 @@
+--- Makefile.orig	Thu Jan 25 15:51:27 2007
++++ Makefile	Sat Jul  7 21:41:49 2007
+@@ -1,10 +1,10 @@
+ VERSION=0.0.3
+-EMACS = emacs
+-PREFIX = /usr/local
+-INSTALLLIBDIR = $(PREFIX)/share/emacs/site-lisp
++EMACS = $(EMACS_CMD)
++#PREFIX = /usr/local
++INSTALLLIBDIR = $(LISPDIR)
+ FLAGS = -batch -L $(INSTALLLIBDIR) -q -f batch-byte-compile
+ SRC = yaml-mode.el
+-INSTALL = /usr/bin/install -c -m 444
++INSTALL = $(BSD_INSTALL_DATA)
+ 
+ all: bytecompile
+ 
