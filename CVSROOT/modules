@@ -5263,6 +5263,7 @@ ja-nkf		ports/japanese/nkf
 ja-nvi-euc-jp	ports/japanese/nvi-euc-jp
 ja-nvi-iso-2022-jp	ports/japanese/nvi-iso-2022-jp
 ja-nvi-sjis	ports/japanese/nvi-sjis
+ja-ochusha	ports/japanese/ochusha
 ja-okphone	ports/japanese/okphone
 ja-oleo		ports/japanese/oleo
 ja-onew-canna	ports/japanese/onew-canna
