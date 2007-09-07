@@ -44,6 +44,7 @@ include/cvc3/memory_manager_chunks.h
 include/cvc3/memory_manager_context.h
 include/cvc3/memory_manager_malloc.h
 include/cvc3/notifylist.h
+include/cvc3/os.h
 include/cvc3/parser.h
 include/cvc3/parser_exception.h
 include/cvc3/pretty_printer.h
@@ -65,6 +66,8 @@ include/cvc3/theorem_manager.h
 include/cvc3/theorem_producer.h
 include/cvc3/theory.h
 include/cvc3/theory_arith.h
+include/cvc3/theory_arith_new.h
+include/cvc3/theory_arith_old.h
 include/cvc3/theory_array.h
 include/cvc3/theory_bitvector.h
 include/cvc3/theory_core.h
