@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.5.21
-PORTREVISION=	1
+PORTVERSION=	2.5.23
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -53,7 +52,8 @@ CONFIGURE_ARGS+=	--disable-iconv
 .else
 USE_ICONV=		yes
 CONFIGURE_ARGS+=	--with-iconv-library=${LOCALBASE}/lib \
-			--with-iconv-includes=${LOCALBASE}/include
+			--with-iconv-includes=${LOCALBASE}/include \
+			--mandir=${LOCALBASE}/man
 .endif
 
 .if defined(WITH_STROKE)
