@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	anjuta
-PORTVERSION=	2.2.0
-PORTREVISION=	5
+PORTVERSION=	2.2.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 		bash:${PORTSDIR}/shells/bash \
 		neato:${PORTSDIR}/graphics/graphviz
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
-		gbf-1.0:${PORTSDIR}/devel/gnome-build \
+		gbf-1.1:${PORTSDIR}/devel/gnome-build \
 		gladeui-1.5:${PORTSDIR}/devel/glade3 \
 		devhelp-1.0:${PORTSDIR}/devel/devhelp
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
