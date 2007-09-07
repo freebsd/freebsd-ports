@@ -1747,6 +1747,7 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Indiana/Indianapolis
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Indiana/Knox
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Indiana/Marengo
 %%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Indiana/Petersburg
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Indiana/Tell_City
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Indiana/Vevay
 %%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Indiana/Vincennes
 %%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Indiana/Winamac
@@ -2054,19 +2055,6 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Tongatapu
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Truk
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Wake
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Wallis
-%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV/AST4
-%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV/AST4ADT
-%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV/CST6
-%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV/CST6CDT
-%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV/EST5
-%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV/EST5EDT
-%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV/HST10
-%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV/MST7
-%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV/MST7MDT
-%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV/PST8
-%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV/PST8PDT
-%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV/YST9
-%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV/YST9YDT
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/WET
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/ZoneInfoMappings
 %%WEB%%diablo-jdk%%JDK_VERSION%%/jre/plugin/desktop/sun_java.desktop
@@ -2358,7 +2346,6 @@ diablo-jdk%%JDK_VERSION%%/src.zip
 %%WEB%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/plugin/%%ARCH%%
 %%WEB%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/plugin/desktop
 %%WEB%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/plugin
-%%TZUPDATE%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV
 @dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific
 @dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Indian
 @dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Europe
