@@ -4439,6 +4439,7 @@ hagelslag	ports/net-p2p/hagelslag
 hal		ports/sysutils/hal
 hal-device-manager	ports/sysutils/hal-device-manager
 halflifeserver	ports/games/halflifeserver
+hamachi		ports/security/hamachi
 hamfax		ports/comms/hamfax
 hamlib		ports/comms/hamlib
 hammerhead	ports/sysutils/hammerhead
