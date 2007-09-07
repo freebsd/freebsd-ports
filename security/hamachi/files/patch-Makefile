@@ -1,0 +1,26 @@
+--- Makefile.orig	Tue Jun 20 21:47:28 2006
++++ Makefile	Thu Mar 22 14:02:01 2007
+@@ -2,12 +2,12 @@
+ #
+ #	Where hamachi and its symbolic link hamachi-init goes
+ #
+-HAMACHI_DST ?= /usr/bin
++HAMACHI_DST ?= /usr/local/bin
+ 
+ #
+ #	Where root-level tunnel device configuration daemon tuncfg goes
+ #
+-TUNCFG_DST  ?= /sbin
++TUNCFG_DST  ?= /usr/local/sbin
+ 
+ .phony: install
+ 
+@@ -26,7 +26,7 @@
+ 	fi;
+ 	
+ 	@echo Copying tuncfg into $(TUNCFG_DST) ..
+-	@install -s -m 700 tuncfg/tuncfg $(TUNCFG_DST)
++	@install -s -m 700 tuncfg/tuncfg $(TUNCFG_DST)/hamachi-tuncfg
+ 
+ 	@echo
+ 	@echo "Hamachi is installed. See README for what to do next." 
