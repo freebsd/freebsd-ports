@@ -14824,6 +14824,7 @@ snett		ports/audio/snett
 sng		ports/graphics/sng
 sniff		ports/security/sniff
 sniffit		ports/net/sniffit
+snmp++		ports/net-mgmt/snmp++
 snmptt		ports/net-mgmt/snmptt
 snns		ports/math/snns
 snobol		ports/lang/snobol
