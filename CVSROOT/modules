@@ -12809,6 +12809,7 @@ ptlink-services	ports/irc/ptlink-services
 ptmalloc	ports/devel/ptmalloc
 ptoc		ports/lang/ptoc
 ptunnel		ports/net/ptunnel
+pty		ports/devel/pty
 ptypes		ports/devel/ptypes
 pubcookie-login-server	ports/www/pubcookie-login-server
 publib		ports/devel/publib
