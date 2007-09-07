@@ -1180,6 +1180,7 @@ cccc		ports/devel/cccc
 ccd2iso		ports/sysutils/ccd2iso
 ccdoc		ports/devel/ccdoc
 cchess		ports/games/cchess
+cciss_vol_status	ports/sysutils/cciss_vol_status
 cclient		ports/mail/cclient
 ccmalloc	ports/devel/ccmalloc
 ccmath		ports/math/ccmath
