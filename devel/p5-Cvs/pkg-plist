@@ -1,0 +1,36 @@
+%%SITE_PERL%%/Cvs.pm
+%%SITE_PERL%%/Cvs/Cvsroot.pm
+%%SITE_PERL%%/Cvs/Command/Checkout.pm
+%%SITE_PERL%%/Cvs/Command/Tag.pm
+%%SITE_PERL%%/Cvs/Command/Rdiff.pm
+%%SITE_PERL%%/Cvs/Command/Release.pm
+%%SITE_PERL%%/Cvs/Command/Login.pm
+%%SITE_PERL%%/Cvs/Command/Base.pm
+%%SITE_PERL%%/Cvs/Command/Export.pm
+%%SITE_PERL%%/Cvs/Command/Logout.pm
+%%SITE_PERL%%/Cvs/Command/Update.pm
+%%SITE_PERL%%/Cvs/Command/Rtag.pm
+%%SITE_PERL%%/Cvs/Command/Commit.pm
+%%SITE_PERL%%/Cvs/Command/Status.pm
+%%SITE_PERL%%/Cvs/Command/Diff.pm
+%%SITE_PERL%%/Cvs/Result/Release.pm
+%%SITE_PERL%%/Cvs/Result/RdiffItem.pm
+%%SITE_PERL%%/Cvs/Result/DiffList.pm
+%%SITE_PERL%%/Cvs/Result/StatusItem.pm
+%%SITE_PERL%%/Cvs/Result/RdiffList.pm
+%%SITE_PERL%%/Cvs/Result/Rtag.pm
+%%SITE_PERL%%/Cvs/Result/Commit.pm
+%%SITE_PERL%%/Cvs/Result/Base.pm
+%%SITE_PERL%%/Cvs/Result/Update.pm
+%%SITE_PERL%%/Cvs/Result/DiffItem.pm
+%%SITE_PERL%%/Cvs/Result/Login.pm
+%%SITE_PERL%%/Cvs/Result/Tag.pm
+%%SITE_PERL%%/Cvs/Result/Checkout.pm
+%%SITE_PERL%%/Cvs/Result/Export.pm
+%%SITE_PERL%%/Cvs/Result/Logout.pm
+%%SITE_PERL%%/Cvs/Result/StatusList.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cvs/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cvs
+@dirrm %%SITE_PERL%%/Cvs/Command
+@dirrm %%SITE_PERL%%/Cvs/Result
+@dirrm %%SITE_PERL%%/Cvs
