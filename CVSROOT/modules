@@ -14508,6 +14508,7 @@ searchmonkey	ports/sysutils/searchmonkey
 seatools	ports/sysutils/seatools
 seaview		ports/biology/seaview
 sec		ports/sysutils/sec
+seccure		ports/security/seccure
 secpanel	ports/security/secpanel
 sectar		ports/archivers/sectar
 sectok		ports/security/sectok
