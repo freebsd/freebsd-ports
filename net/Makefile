@@ -144,6 +144,7 @@
     SUBDIR += gacxtool
     SUBDIR += gastman
     SUBDIR += gatekeeper
+    SUBDIR += gateway6
     SUBDIR += generic-nqs
     SUBDIR += geotrace
     SUBDIR += ggsd
