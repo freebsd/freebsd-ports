@@ -6,7 +6,6 @@ CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home="${LOCALBASE}/sh
 
 .if defined(WITH_VBA)
 CONFIGURE_ARGS+=        --enable-vba --with-vba-package-format="builtin"
-EXTRA_PATCHES+=	${FILESDIR}/cws-npower7.diff
 .endif
 
 .if defined(WITH_KDE)
