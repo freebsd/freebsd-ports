@@ -6955,6 +6955,7 @@ linux-padjoy	ports/emulators/linux-padjoy
 linux-pam-docs	ports/security/linux-pam-docs
 linux-pango	ports/x11-toolkits/linux-pango
 linux-panorama-tools	ports/graphics/linux-panorama-tools
+linux-par2cmdline	ports/archivers/linux-par2cmdline
 linux-peops-softgpu	ports/emulators/linux-peops-softgpu
 linux-peops-spu	ports/emulators/linux-peops-spu
 linux-pete-mesagpu	ports/emulators/linux-pete-mesagpu
