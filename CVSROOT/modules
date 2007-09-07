@@ -16820,6 +16820,7 @@ xfce4-session	ports/x11-wm/xfce4-session
 xfce4-smartbookmark-plugin	ports/www/xfce4-smartbookmark-plugin
 xfce4-systemload-plugin	ports/sysutils/xfce4-systemload-plugin
 xfce4-taskmanager	ports/x11/xfce4-taskmanager
+xfce4-timer-out-plugin	ports/x11-clocks/xfce4-timer-out-plugin
 xfce4-timer-plugin	ports/x11-clocks/xfce4-timer-plugin
 xfce4-utils	ports/sysutils/xfce4-utils
 xfce4-wavelan-plugin	ports/sysutils/xfce4-wavelan-plugin
