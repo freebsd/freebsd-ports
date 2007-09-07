@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070905:
+  AFFECTS: testers of net/openldap24-server
+  AUTHOR: delphij@FreeBSD.org
+
+  openldap24-server was updated to 2.4.5-beta.  This is the first beta
+  release of the OpenLDAP 2.4.x series, and contains significant changes
+  compared to its previous release.
+
+  Berkeley DB 4.2 support was dropped and Berkeley DB 4.6 is now
+  default.  As this is still a beta release, it should be treated
+  accordingly and should not be used in critical environment e.g.
+  production environment.
+
 20070904:
   AFFECTS: users of mail/qmail-scanner
   AUTHOR: lippe@freebsdbrasil.com.br
