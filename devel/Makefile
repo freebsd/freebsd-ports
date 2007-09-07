@@ -1846,6 +1846,7 @@
     SUBDIR += pth
     SUBDIR += pth-hard
     SUBDIR += ptmalloc
+    SUBDIR += pty
     SUBDIR += ptypes
     SUBDIR += publib
     SUBDIR += pushmi
