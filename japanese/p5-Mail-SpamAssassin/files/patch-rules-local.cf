@@ -1,0 +1,10 @@
+--- rules/local.cf.orig	Sat Dec 30 07:18:59 2006
++++ rules/local.cf	Sat Dec 30 07:20:48 2006
+@@ -51,3 +51,7 @@
+ # bayes_ignore_header X-Spam-Flag
+ # bayes_ignore_header X-Spam-Status
+ 
++
++#   Normalize charset to UTF-8 (default:0)
++#
++# normalize_charset 1

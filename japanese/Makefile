@@ -268,6 +268,7 @@
     SUBDIR += p5-Jcode
     SUBDIR += p5-Lingua-JA-Numbers
     SUBDIR += p5-Lingua-JA-Summarize-Extract
+    SUBDIR += p5-Mail-SpamAssassin
     SUBDIR += p5-MeCab
     SUBDIR += p5-Number-Phone-JP
     SUBDIR += p5-PDFJ
