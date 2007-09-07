@@ -6262,6 +6262,7 @@ leaktracer	ports/devel/leaktracer
 led		ports/editors/led
 ledger		ports/finance/ledger
 ledit		ports/sysutils/ledit
+legoctl		ports/devel/legoctl
 leim21		ports/editors/leim21
 lemmatizer	ports/textproc/lemmatizer
 lemmatizer2	ports/textproc/lemmatizer2
