@@ -3196,3 +3196,19 @@ x11-toolkits/pmw|x11-toolkits/py-Pmw|2007-09-02|Port renamed for consistency
 java/gj-jdk11||2007-09-03|Has expired: Modern versions of jdk support generics natively
 comms/tilp||2007-09-06|Superseded by comms/tilp2
 net/openbgpd-devel|net/openbgpd|2007-09-06|Older version than in openbgpd port
+net-im/gaim|net-im/pidgin|2007-09-06|Project renamed
+audio/gaim-festival||2007-09-06|Depends on obsolete net-im/gaim
+irc/gaim-irchelper||2007-09-06|Depends on obsolete net-im/gaim
+japanese/gaim||2007-09-06|Depends on obsolete net-im/gaim
+multimedia/gaim-xmms-remote||2007-09-06|Depends on obsolete net-im/gaim
+net-im/gaim-assistant||2007-09-06|Depends on obsolete net-im/gaim
+net-im/gaim-bangexec||2007-09-06|Depends on obsolete net-im/gaim
+net-im/gaim-extprefs||2007-09-06|Depends on obsolete net-im/gaim
+net-im/gaim-guifications|net-im/pidgin-guifications|2007-09-06|Project renamed
+net-im/gaim-ignorance||2007-09-06|Depends on obsolete net-im/gaim
+net-im/gaim-latex|net-im/pidgin-latex|2007-09-06|Project renamed
+net-im/gaim-openq||2007-09-06|Depends on obsolete net-im/gaim
+net-im/gaim-slashexec||2007-09-06|Depends on obsolete net-im/gaim
+net-im/meanwhile-gaim|net-im/pidgin|2007-09-06|Incorporated into net-im/pidgin
+security/gaim-encryption|security/pidgin-encryption|2007-09-06|Project renamed
+security/gaim-otr|security/pidgin-otr|2007-09-06|Project renamed
