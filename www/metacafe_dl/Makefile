@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.arrakis.es/~rggi3/metacafe-dl/
 DISTNAME=	metacafe-dl-${PORTVERSION}
 EXTRACT_SUFX=
+EXTRACT_ONLY=
 
 MAINTAINER=	fernando@secret.org
 COMMENT=	A program for downloading videos from metacafe.com
@@ -23,9 +24,6 @@ USE_PYTHON=	2.4+
 PLIST_FILES=	bin/metacafe-dl
 
 .include <bsd.port.pre.mk>
-
-do-extract:
-	@${NOPE}
 
 post-extract:
 	@${CP} ${DISTDIR}/metacafe-dl-${PORTVERSION} ${WRKSRC}/metacafe-dl
