@@ -714,6 +714,7 @@
     SUBDIR += sslproxy
     SUBDIR += sslsniffer
     SUBDIR += sslwrap
+    SUBDIR += ssss
     SUBDIR += sst
     SUBDIR += starttls
     SUBDIR += stegdetect

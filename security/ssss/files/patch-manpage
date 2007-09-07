@@ -1,0 +1,227 @@
+--- ssss.manpage.xml.orig	Sun Jan 15 12:10:01 2006
++++ ssss.manpage.xml	Sat Mar 10 23:58:04 2007
+@@ -1,162 +1,62 @@
+-<?xml version="1.0" standalone='no'?>
+-<!DOCTYPE manpage SYSTEM "http://masqmail.cx/xmltoman/xmltoman.dtd">
+-
+-<?xml-stylesheet type="text/xsl"
+-href="http://masqmail.cx/xmltoman/xmltoman.xsl" ?>
+-
+-<manpage name="ssss" section="1" 
+-  desc="Split and Combine Secrets using Shamir's Secret Sharing Scheme.">
+-
+-<synopsis>
+-      <cmd>ssss-split -t <arg>threshold</arg> -n <arg>shares</arg> [-w <arg>token</arg>] 
+-         [-s <arg>level</arg>] [-x] [-q] [-Q] [-D] [-v]</cmd>
+-      <cmd>ssss-combine -t <arg>threshold</arg> [-x] [-q] [-Q] [-D] [-v]</cmd>
+-</synopsis>
+-
+-<description>
+-<p>ssss is an implementation of Shamir's Secret Sharing Scheme. The
+-program suite does both: the generation of shares for a known secret,
+-and the reconstruction of a secret using user-provided shares.</p>
+-</description>
+-
+-<section name ="Commands">
+-      <p><opt>ssss-split</opt>: prompt the user for a secret and generate a set of
+-      corresponding shares.</p>
+-      
+-      <p><opt>ssss-combine</opt>: read in a set of shares and reconstruct
+-      the secret.</p>
+-</section>
+-
+-<options>
+-
+-      <option>
+-<p><opt>-t <arg>threshold</arg></opt></p> <optdesc>
+-<p>Specify the number of
+-      shares necessary to reconstruct the secret.</p></optdesc>
+-    
+-</option>
+-
+-      <option>
+-<p><opt>-n <arg>shares</arg></opt></p>
+-<optdesc>
+-      <p>Specify the number of shares to be generated.</p>
+-</optdesc>
+-</option>      
+-      
+-      <option><p><opt>-w <arg>token</arg></opt></p>
+-<optdesc>
+-      <p>Text token to name shares in order to avoid confusion in case one
+-      utilizes secret sharing to protect several independent secrets. The
+-      generated shares are prefixed by these tokens.</p>
+-</optdesc>
+-</option>      
+-      
+-      <option><p><opt>-s <arg>level</arg></opt></p>
+-<optdesc>
+-      <p>Enforce the scheme's security level (in bits). This option
+-      implies an upper bound for the length of the shared secret
+-      (shorter secrets are padded). Only multiples of 8 in the range
+-      from 8 to 1024 are allowed. If this option is ommitted (or the
+-      value given is 0) the security level is chosen automatically
+-      depending on the secret's length.  The security level directly
+-      determines the length of the shares.</p>
+-</optdesc>
+-</option>      
+-
+-      <option><p><opt>-x</opt></p>
+-<optdesc>
+-      <p>Hex mode: use hexadecimal digits in place of ASCII characters for
+-      I/O. This is useful if one wants to protect binary data, like
+-      block cipher keys.</p>
+-</optdesc>
+-</option>      
+-
+-      <option><p><opt>-q</opt></p>
+-<optdesc>
+-      <p>Quiet mode: disable all unnecessary output. Useful in scripts.
+-      </p>
+-</optdesc>
+-</option>      
+-      <option><p><opt>-Q</opt></p>
+-<optdesc>
+-      <p>Extra quiet mode: like <opt>-q</opt>, but also suppress
+-warnings.</p>
+-</optdesc>
+-</option>      
+-
+-      <option><p><opt>-D</opt></p>
+-<optdesc>
+-      <p>Disable the diffusion layer added in version 0.2. This option
+-      is needed when shares are combined that where generated with
+-      ssss version 0.1.</p>
+-</optdesc>
+-</option>      
+-
+-      <option><p><opt>-v</opt></p>
+-<optdesc>
+-      <p>Print version information.</p>
+-</optdesc>
+-</option>      
+-</options>
+-
+-<section name="Example">
+-<p>
+-        In case you want to protect your login password with a set of ten
+-        shares in such a way that any three of them can reconstruct the
+-        password, you simply run the command
+-</p>
+-
+-<p>
+-          ssss-split -t 3 -n 10 -w passwd
+-</p>
+-
+-<p>
+-        To reconstruct the password pass three of the generated shares
+-        (in any order) to
+-</p>
+-
+-<p>
+-          ssss-combine -t 3
+-</p>
+-
+-</section>
+-<section name="Notes">
+-<p>
+-To protect a secret larger than 1024 bits a hybrid technique has to be
+-applied: encrypt the secret with a block cipher and apply secret
+-sharing to just the key. Among others openssl and gpg can do the
+-encryption part:
+-</p>
+-<p>
+-openssl bf -e &lt; file.plain &gt; file.encrypted
+-</p>
+-<p>
+-gpg -c &lt; file.plain &gt; file.encrypted
+-</p>
+-
+-</section>
+-
+-<section name="Security">
+-<p>
+-<opt>ssss</opt> tries to lock its virtual address space into RAM for
+-privacy reasons. But this may fail for two reasons: either the current uid
+-doesn't permit page locking, or the RLIMIT_MEMLOCK is set too
+-low. After printing a warning message <opt>ssss</opt> will run even without
+-obtaining the desired mlock.
+-</p>
+-
+-</section>
+-
+-<section name="Author">
+-        This software (v0.5) was written in 2006 by B. Poettering
+-        (ssss AT point-at-infinity.org). Find the newest version of
+-        ssss on the project's homepage: <url
+-        href="http://point-at-infinity.org/ssss/"/>.
+-</section>
+-
+-<section name="Further reading">
+-        <url href="http://en.wikipedia.org/wiki/Secret_sharing"/>
+-</section>
+-
+-
+-</manpage>
++.TH ssss 1 User Manuals
++.SH NAME
++ssss \- Split and Combine Secrets using Shamir's Secret Sharing Scheme.
++.SH SYNOPSIS
++\fBssss-split -t \fIthreshold\fB -n \fIshares\fB [-w \fItoken\fB] [-s \fIlevel\fB] [-x] [-q] [-Q] [-D] [-v]
++
++ssss-combine -t \fIthreshold\fB [-x] [-q] [-Q] [-D] [-v]
++\f1
++.SH DESCRIPTION
++ssss is an implementation of Shamir's Secret Sharing Scheme. The program suite does both: the generation of shares for a known secret, and the reconstruction of a secret using user-provided shares.
++.SH COMMANDS
++\fBssss-split\f1: prompt the user for a secret and generate a set of corresponding shares.
++
++\fBssss-combine\f1: read in a set of shares and reconstruct the secret.
++.SH OPTIONS
++.TP
++\fB-t \fIthreshold\fB\f1
++Specify the number of shares necessary to reconstruct the secret.
++.TP
++\fB-n \fIshares\fB\f1
++Specify the number of shares to be generated.
++.TP
++\fB-w \fItoken\fB\f1
++Text token to name shares in order to avoid confusion in case one utilizes secret sharing to protect several independent secrets. The generated shares are prefixed by these tokens.
++.TP
++\fB-s \fIlevel\fB\f1
++Enforce the scheme's security level (in bits). This option implies an upper bound for the length of the shared secret (shorter secrets are padded). Only multiples of 8 in the range from 8 to 1024 are allowed. If this option is ommitted (or the value given is 0) the security level is chosen automatically depending on the secret's length. The security level directly determines the length of the shares.
++.TP
++\fB-x\f1
++Hex mode: use hexadecimal digits in place of ASCII characters for I/O. This is useful if one wants to protect binary data, like block cipher keys.
++.TP
++\fB-q\f1
++Quiet mode: disable all unnecessary output. Useful in scripts. 
++.TP
++\fB-Q\f1
++Extra quiet mode: like \fB-q\f1, but also suppress warnings.
++.TP
++\fB-D\f1
++Disable the diffusion layer added in version 0.2. This option is needed when shares are combined that where generated with ssss version 0.1.
++.TP
++\fB-v\f1
++Print version information.
++.SH EXAMPLE
++In case you want to protect your login password with a set of ten shares in such a way that any three of them can reconstruct the password, you simply run the command 
++
++ssss-split -t 3 -n 10 -w passwd 
++
++To reconstruct the password pass three of the generated shares (in any order) to 
++
++ssss-combine -t 3 
++.SH NOTES
++To protect a secret larger than 1024 bits a hybrid technique has to be applied: encrypt the secret with a block cipher and apply secret sharing to just the key. Among others openssl and gpg can do the encryption part: 
++
++openssl bf -e < file.plain > file.encrypted 
++
++gpg -c < file.plain > file.encrypted 
++.SH SECURITY
++\fBssss\f1 tries to lock its virtual address space into RAM for privacy reasons. But this may fail for two reasons: either the current uid doesn't permit page locking, or the RLIMIT_MEMLOCK is set too low. After printing a warning message \fBssss\f1 will run even without obtaining the desired mlock. 
++.SH AUTHOR
++This software (v0.5) was written in 2006 by B. Poettering (ssss AT point-at-infinity.org). Find the newest version of ssss on the project's homepage: \fBhttp://point-at-infinity.org/ssss/\f1. 
++.SH FURTHER READING
++\fBhttp://en.wikipedia.org/wiki/Secret_sharing\f1

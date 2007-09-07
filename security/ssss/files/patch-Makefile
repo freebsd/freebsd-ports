@@ -1,0 +1,31 @@
+--- Makefile.orig	Thu Aug 30 17:28:27 2007
++++ Makefile	Thu Aug 30 18:06:38 2007
+@@ -1,17 +1,19 @@
+-all: ssss-split ssss-combine ssss.1 ssss.1.html
++DESTDIR=/usr/local
++
++all: ssss-split ssss-combine 
+ 
+ ssss-split: ssss.c
+-	$(CC) -W -Wall -O2 -lgmp -o ssss-split ssss.c
++	$(CC) -W -Wall -O2 -I/usr/local/include -L/usr/local/lib -lgmp -o ssss-split ssss.c
+ 	strip ssss-split
++	mv ssss.manpage.xml ssss.1
+ 
+ ssss-combine: ssss-split
+ 	ln -f ssss-split ssss-combine
+ 
+-ssss.1: ssss.manpage.xml
+-	xmltoman ssss.manpage.xml > ssss.1
+-
+-ssss.1.html: ssss.manpage.xml
+-	xmlmantohtml ssss.manpage.xml > ssss.1.html
+-
+ clean:
+-	rm -rf ssss-split ssss-combine ssss.1 ssss.1.html
++	rm -rf ssss-split ssss-combine ssss.1 
++
++install: all
++	install -m0755 ssss-split $(DESTDIR)/bin
++	install -m0755 ssss-combine $(DESTDIR)/bin
++	install -m0644 ssss.1 $(DESTDIR)/man/man1

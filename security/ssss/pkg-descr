@@ -1,0 +1,10 @@
+ssss is an implementation of Shamir's secret sharing scheme for
+UNIX/linux machines. It is free software, the code is licensed under
+the GNU GPL. ssss does both: the generation of shares for a known
+secret and the reconstruction of a secret using user provided shares.
+The software was written in 2006 by B. Poettering, it links against
+the GNU libgmp  multiprecision library (version 4.1.4 works well)
+and requires the /dev/random entropy source.
+
+WWW: http://point-at-infinity.org/ssss/ 
+Author: B. Poettering
