@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/mach/auto/Catalyst/View/Email/.packlist
+%%SITE_PERL%%/Catalyst/View/Email.pm
+%%SITE_PERL%%/Catalyst/View/Email/Template.pm
+%%SITE_PERL%%/Catalyst/Helper/View/Email.pm
+%%SITE_PERL%%/Catalyst/Helper/View/Email/Template.pm
+@dirrmtry %%SITE_PERL%%/mach/auto/Catalyst/View/Email
+@dirrmtry %%SITE_PERL%%/Catalyst/View/Email
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Email
