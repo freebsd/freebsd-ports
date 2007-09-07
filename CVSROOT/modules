@@ -7520,6 +7520,7 @@ mktool		ports/sysutils/mktool
 mkvtoolnix	ports/multimedia/mkvtoolnix
 mkxvcd		ports/multimedia/mkxvcd
 ml		ports/mail/ml
+ml-doc		ports/devel/ml-doc
 ml-pnet		ports/lang/ml-pnet
 mlan		ports/comms/mlan
 mlan3		ports/comms/mlan3
