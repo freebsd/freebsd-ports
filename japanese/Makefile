@@ -248,6 +248,7 @@
     SUBDIR += nvi-euc-jp
     SUBDIR += nvi-iso-2022-jp
     SUBDIR += nvi-sjis
+    SUBDIR += ochusha
     SUBDIR += okphone
     SUBDIR += oleo
     SUBDIR += onew-canna
