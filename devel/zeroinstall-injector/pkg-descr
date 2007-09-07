@@ -1,0 +1,11 @@
+A running process is created by combining many different libraries
+(and other components). In the Zero Install world, we have all
+versions of each library available at all times. The problem then
+is how to choose which versions to use.
+
+The injector solves this problem by selecting components to meet a
+program's requirements, according to a policy you give it. The
+injector finds out which versions are available, and downloads and
+runs the ones you choose.
+
+WWW:	http://www.0install.net
