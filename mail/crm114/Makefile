@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	crm114
-PORTVERSION=	20070731
+PORTVERSION=	20070810
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
@@ -21,7 +21,7 @@ COMMENT=	An Markov based SpamFilter
 
 LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre
 
-CRM114RELEASENAME=BlameTheInterns
+CRM114RELEASENAME=BlameTheSegfault
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
