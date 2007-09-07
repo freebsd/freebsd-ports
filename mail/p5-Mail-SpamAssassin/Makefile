@@ -28,6 +28,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		p5-Archive-Tar>=1.23:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${SITE_PERL}/mach/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect
 
+CONFLICTS=	ja-p5-Mail-SpamAssassin-[0-9]*
+
 PERL_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
