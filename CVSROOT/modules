@@ -16827,6 +16827,7 @@ xfce4-wavelan-plugin	ports/sysutils/xfce4-wavelan-plugin
 xfce4-weather-plugin	ports/misc/xfce4-weather-plugin
 xfce4-wm	ports/x11-wm/xfce4-wm
 xfce4-wm-themes	ports/misc/xfce4-wm-themes
+xfce4-wmdock-plugin	ports/x11/xfce4-wmdock-plugin
 xfce4-xfapplet-plugin	ports/x11/xfce4-xfapplet-plugin
 xfce4-xkb-plugin	ports/deskutils/xfce4-xkb-plugin
 xfce4-xmms-controller-plugin	ports/multimedia/xfce4-xmms-controller-plugin
