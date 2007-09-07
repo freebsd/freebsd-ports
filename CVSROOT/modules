@@ -6249,6 +6249,7 @@ leafpak		ports/graphics/leafpak
 leaktracer	ports/devel/leaktracer
 led		ports/editors/led
 ledger		ports/finance/ledger
+ledgersmb	ports/finance/ledgersmb
 ledit		ports/sysutils/ledit
 legoctl		ports/devel/legoctl
 leim21		ports/editors/leim21
