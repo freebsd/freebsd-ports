@@ -56,7 +56,6 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmWharf
 libexec/fvwm/%%FVWM_VERSION%%/FvwmWinList
 libexec/fvwm/%%FVWM_VERSION%%/FvwmWindowMenu
 @comment The following are here because they are symlinks
-man/man1/fvwm2.1.gz
 man/man1/xpmroot.1.gz
 @comment End of symlink list
 %%ICONS%%%%DATADIR%%/pixmaps/Jlock.xpm
@@ -381,7 +380,6 @@ man/man1/xpmroot.1.gz
 %%DATADIR%%/ConfigFvwmIconBox
 %%DATADIR%%/ConfigFvwmIconMan
 %%DATADIR%%/ConfigFvwmIdent
-%%DATADIR%%/ConfigFvwmMenuDefaults
 %%DATADIR%%/ConfigFvwmPager
 %%DATADIR%%/ConfigFvwmProxyDefaults
 %%DATADIR%%/ConfigFvwmTabs
@@ -435,23 +433,6 @@ man/man1/xpmroot.1.gz
 %%DATADIR%%/perllib/FVWM/Tracker/WindowList.pm
 %%DATADIR%%/perllib/General/FileSystem.pm
 %%DATADIR%%/perllib/General/Parse.pm
-%%NLS%%share/locale/ar/LC_MESSAGES/fvwm.mo
-%%NLS%%share/locale/ar/LC_MESSAGES/FvwmTaskBar.mo
-%%NLS%%share/locale/ar/LC_MESSAGES/FvwmScript.mo
-%%NLS%%share/locale/de/LC_MESSAGES/fvwm.mo
-%%NLS%%share/locale/de/LC_MESSAGES/FvwmTaskBar.mo
-%%NLS%%share/locale/de/LC_MESSAGES/FvwmScript.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/fvwm.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/FvwmTaskBar.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/FvwmScript.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/fvwm.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/FvwmTaskBar.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/FvwmScript.mo
-%%NLS%%share/locale/sv_SE/LC_MESSAGES/fvwm.mo
-%%NLS%%share/locale/sv_SE/LC_MESSAGES/FvwmTaskBar.mo
-%%NLS%%share/locale/sv_SE/LC_MESSAGES/FvwmScript.mo
-@dirrmtry %%NLS%%share/locale/sv_SE/LC_MESSAGES
-@dirrmtry %%NLS%%share/locale/sv_SE
 @dirrm %%DATADIR%%/perllib/General
 @dirrm %%DATADIR%%/perllib/FVWM/Tracker
 @dirrm %%DATADIR%%/perllib/FVWM/Module
@@ -459,5 +440,11 @@ man/man1/xpmroot.1.gz
 @dirrm %%DATADIR%%/perllib
 %%ICONS%%@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%/commands
+@dirrm %%DOCSDIR%%/fvwm
+@dirrm %%DOCSDIR%%/images/svg_rendering
+@dirrm %%DOCSDIR%%/images
+@dirrm %%DOCSDIR%%/modules
+@dirrm %%DOCSDIR%%
 @dirrm libexec/fvwm/%%FVWM_VERSION%%
 @dirrm libexec/fvwm
