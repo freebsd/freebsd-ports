@@ -1,6 +1,0 @@
-SlashExec is a Gaim Plugin that lets you execute commands from within a
-Gaim conversation. SlashExec provides a limited command-line interpreter
-for this purpose. SlashExec can also either display the command's output
-locally or send the output as a message in the current conversation.
-
-WWW: http://guifications.sourceforge.net/SlashExec/

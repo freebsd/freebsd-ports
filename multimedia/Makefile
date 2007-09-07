@@ -39,7 +39,6 @@
     SUBDIR += ffmpeg
     SUBDIR += freevo
     SUBDIR += fxtv
-    SUBDIR += gaim-xmms-remote
     SUBDIR += gaupol
     SUBDIR += gavl
     SUBDIR += gcfilms
