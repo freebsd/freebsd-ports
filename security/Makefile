@@ -179,6 +179,7 @@
     SUBDIR += gwee
     SUBDIR += hackbot
     SUBDIR += hafiye
+    SUBDIR += hamachi
     SUBDIR += hashish
     SUBDIR += heimdal
     SUBDIR += hlfl
