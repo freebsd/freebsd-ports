@@ -7,7 +7,7 @@
 
 PORTNAME=	view3ds
 PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -19,7 +19,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple realtime 3DS file previewer based on the Lib3ds Library
 
-LIB_DEPENDS=	3ds.1:${PORTSDIR}/graphics/lib3ds \
+LIB_DEPENDS=	3ds-1.3:${PORTSDIR}/graphics/lib3ds \
 		glut.4:${PORTSDIR}/graphics/libglut
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

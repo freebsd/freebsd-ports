@@ -7,7 +7,7 @@
 
 PORTNAME=	giram
 PORTVERSION=	0.3.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.giram.org/downloads/ \
 		http://freebsd.nsu.ru/distfiles/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.giram.org/downloads/ \
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A POV-Ray oriented modeller
 
-LIB_DEPENDS=	3ds.1:${PORTSDIR}/graphics/lib3ds
+LIB_DEPENDS=	3ds-1.3:${PORTSDIR}/graphics/lib3ds
 
 USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes

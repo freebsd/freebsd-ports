@@ -7,7 +7,7 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	0.99
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crystal
@@ -120,7 +120,7 @@ CONFIGURE_ARGS+=	--without-ogg \
 .endif
 
 .if !defined(WITHOUT_3DS)
-LIB_DEPENDS+=	3ds.1:${PORTSDIR}/graphics/lib3ds
+LIB_DEPENDS+=	3ds-1.3:${PORTSDIR}/graphics/lib3ds
 .else
 CONFIGURE_ARGS+=	--without-3ds
 .endif
