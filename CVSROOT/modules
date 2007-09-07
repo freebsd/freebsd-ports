@@ -3354,20 +3354,6 @@ gai-visual-audio	ports/audio/gai-visual-audio
 gaia		ports/astro/gaia
 gail		ports/accessibility/gail
 gail-reference	ports/accessibility/gail-reference
-gaim		ports/net-im/gaim
-gaim-assistant	ports/net-im/gaim-assistant
-gaim-bangexec	ports/net-im/gaim-bangexec
-gaim-encryption	ports/security/gaim-encryption
-gaim-extprefs	ports/net-im/gaim-extprefs
-gaim-festival	ports/audio/gaim-festival
-gaim-guifications	ports/net-im/gaim-guifications
-gaim-ignorance	ports/net-im/gaim-ignorance
-gaim-irchelper	ports/irc/gaim-irchelper
-gaim-latex	ports/net-im/gaim-latex
-gaim-openq	ports/net-im/gaim-openq
-gaim-otr	ports/security/gaim-otr
-gaim-slashexec	ports/net-im/gaim-slashexec
-gaim-xmms-remote	ports/multimedia/gaim-xmms-remote
 gajim		ports/net-im/gajim
 gajim-devel	ports/net-im/gajim-devel
 gal		ports/x11-toolkits/gal
@@ -5107,7 +5093,6 @@ ja-flower-fpw	ports/japanese/flower-fpw
 ja-foldoc-fpw	ports/japanese/foldoc-fpw
 ja-freepwing	ports/japanese/freepwing
 ja-fumeikai-fpw	ports/japanese/fumeikai-fpw
-ja-gaim		ports/japanese/gaim
 ja-gawk		ports/japanese/gawk
 ja-gd		ports/japanese/gd
 ja-ghostscript-gnu-jpnfont	ports/japanese/ghostscript-gnu-jpnfont
@@ -7337,7 +7322,6 @@ mdnsd		ports/dns/mdnsd
 mdpop3d		ports/mail/mdpop3d
 mdtest		ports/benchmarks/mdtest
 meanwhile	ports/net-im/meanwhile
-meanwhile-gaim	ports/net-im/meanwhile-gaim
 mediaproxy	ports/net/mediaproxy
 mediatomb	ports/net/mediatomb
 mediawiki	ports/www/mediawiki
