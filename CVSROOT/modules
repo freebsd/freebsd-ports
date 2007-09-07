@@ -17460,6 +17460,7 @@ yalias		ports/x11/yalias
 yamcha		ports/textproc/yamcha
 yamdi		ports/multimedia/yamdi
 yaml-mode.el	ports/textproc/yaml-mode.el
+yaml-mode.el-emacs21	ports/textproc/yaml-mode.el-emacs21
 yammi		ports/audio/yammi
 yamsweeper	ports/games/yamsweeper
 yamt		ports/audio/yamt
