@@ -16933,6 +16933,7 @@ xloadface	ports/sysutils/xloadface
 xloadimage	ports/x11/xloadimage
 xlockmore	ports/x11/xlockmore
 xlog		ports/comms/xlog
+xlogical	ports/games/xlogical
 xlogmaster	ports/sysutils/xlogmaster
 xlogo		ports/x11/xlogo
 xlogout		ports/x11/xlogout
