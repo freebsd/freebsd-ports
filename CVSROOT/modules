@@ -3391,6 +3391,7 @@ gastex		ports/textproc/gastex
 gastman		ports/net/gastman
 gate		ports/editors/gate
 gatekeeper	ports/net/gatekeeper
+gateway6	ports/net/gateway6
 gatling		ports/www/gatling
 gauche		ports/lang/gauche
 gauche-gaunit	ports/devel/gauche-gaunit
