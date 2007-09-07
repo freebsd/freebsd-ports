@@ -15054,6 +15054,7 @@ sslwrap		ports/security/sslwrap
 ssmping		ports/net/ssmping
 ssmtp		ports/mail/ssmtp
 ssserver	ports/www/ssserver
+ssss		ports/security/ssss
 sst		ports/security/sst
 ssvnc		ports/net/ssvnc
 sswf		ports/graphics/sswf
