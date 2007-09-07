@@ -10,4 +10,15 @@ Linux to access virtualized applications. Other important capabilities
 are powerful management and configuration tools and faster, more
 flexible printing.
 
+
+If your Citrix server does not have one of the supplied root-certificates,
+you can copy the certificate to /usr/ports/distfiles and add the
+following line to your /etc/make.conf:
+
+	ICA_CERTS=mycert.crt
+
+It will then automatically be installed and removed with the normal
+FreeBSD package tools.
+
+
 WWW: http://www.citrix.com/English/ps2/products/product.asp?contentID=186
