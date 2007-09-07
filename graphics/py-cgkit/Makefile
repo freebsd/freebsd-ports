@@ -46,7 +46,7 @@ BROKEN=	does not compile
 .endif
 
 .if defined(WITH_LIB3DS)
-LIB_DEPENDS+=	3ds.1:${PORTSDIR}/graphics/lib3ds
+LIB_DEPENDS+=	3ds-1.3:${PORTSDIR}/graphics/lib3ds
 .endif
 
 DOS2UNIX_FILES=	viewer.py render.py utilities/postbake.py

@@ -7,7 +7,7 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	20061105
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://alex.foxybanana.com/freebsd/
 PKGNAMESUFFIX=	-devel
@@ -116,7 +116,7 @@ CONFIGURE_ARGS+=	--without-ogg \
 .endif
 
 .if !defined(WITHOUT_3DS)
-LIB_DEPENDS+=	3ds.1:${PORTSDIR}/graphics/lib3ds
+LIB_DEPENDS+=	3ds-1.3:${PORTSDIR}/graphics/lib3ds
 .else
 CONFIGURE_ARGS+=	--without-3ds
 .endif
