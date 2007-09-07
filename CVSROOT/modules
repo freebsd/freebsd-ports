@@ -17499,6 +17499,7 @@ zend-framework	ports/www/zend-framework
 zenity		ports/x11/zenity
 zephulor	ports/games/zephulor
 zeroer		ports/sysutils/zeroer
+zeroinstall-injector	ports/devel/zeroinstall-injector
 zerowait-httpd	ports/www/zerowait-httpd
 zgv		ports/graphics/zgv
 zh-BBMan	ports/chinese/BBMan
