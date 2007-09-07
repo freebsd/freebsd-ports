@@ -23,15 +23,6 @@
     SUBDIR += finch
     SUBDIR += firetalk
     SUBDIR += fugu
-    SUBDIR += gaim
-    SUBDIR += gaim-assistant
-    SUBDIR += gaim-bangexec
-    SUBDIR += gaim-extprefs
-    SUBDIR += gaim-guifications
-    SUBDIR += gaim-ignorance
-    SUBDIR += gaim-latex
-    SUBDIR += gaim-openq
-    SUBDIR += gaim-slashexec
     SUBDIR += gajim
     SUBDIR += gajim-devel
     SUBDIR += gale
@@ -87,7 +78,6 @@
     SUBDIR += loudmouth
     SUBDIR += mcabber
     SUBDIR += meanwhile
-    SUBDIR += meanwhile-gaim
     SUBDIR += mercury
     SUBDIR += micq
     SUBDIR += mu-conference

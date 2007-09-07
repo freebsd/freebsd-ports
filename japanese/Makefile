@@ -76,7 +76,6 @@
     SUBDIR += foldoc-fpw
     SUBDIR += freepwing
     SUBDIR += fumeikai-fpw
-    SUBDIR += gaim
     SUBDIR += gawk
     SUBDIR += gd
     SUBDIR += ghostscript-gnu-jpnfont
