@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Bio-Das
-PORTVERSION=	1.03
-PORTREVISION=	1
+PORTVERSION=	1.06
 CATEGORIES=	biology
 MASTER_SITES=	http://www.biodas.org/download/Bio::Das/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -38,10 +37,4 @@ MAN3=	Bio::Das.3 Bio::Das::AGPServer::Config.3 Bio::Das::AGPServer::Daemon.3 \
 	Bio::Das::Request::Types.3 Bio::Das::Segment.3 Bio::Das::Stylesheet.3 \
 	Bio::Das::Type.3 Bio::Das::TypeHandler.3 Bio::Das::Util.3
 
-.include <bsd.port.pre.mk>
-
-.if (${PERL_LEVEL} < 500601)
-BROKEN=	Some dependencies requires at least 5.6.1  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
