@@ -63,6 +63,7 @@
     SUBDIR += bubblemon2
     SUBDIR += burn
     SUBDIR += ccd2iso
+    SUBDIR += cciss_vol_status
     SUBDIR += ccze
     SUBDIR += cd9660_unicode
     SUBDIR += cdargs
