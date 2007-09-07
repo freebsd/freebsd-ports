@@ -6962,6 +6962,7 @@ linux-pete-mesagpu	ports/emulators/linux-pete-mesagpu
 linux-pete-xgl2gpu	ports/emulators/linux-pete-xgl2gpu
 linux-png	ports/graphics/linux-png
 linux-png10	ports/graphics/linux-png10
+linux-procfs	ports/sysutils/linux-procfs
 linux-qt33	ports/x11-toolkits/linux-qt33
 linux-quake3	ports/games/linux-quake3
 linux-quake3-demo	ports/games/linux-quake3-demo
