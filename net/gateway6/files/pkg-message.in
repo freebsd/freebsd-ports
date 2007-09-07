@@ -1,0 +1,12 @@
+Now that the package is installed, please finish it with the following steps:
+
+- Check the values of %%PREFIX%%/etc/gw6c.conf. If you have registered at
+  the website, fill in your userid and password there.
+- Run '%%PREFIX%%/etc/rc.d/gateway6 start' to start the tunnel.
+- Try to ping a IPv6 host, for example: ping6 www.jp.freebsd.org
+
+Net/gateway6 supports rc.subr.
+Please add 'gateway6_enable="YES"' to your /etc/rc.conf to make it
+start autoamtically at startup.
+
+WWW: http://www.go6.net/
