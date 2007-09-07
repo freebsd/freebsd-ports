@@ -127,6 +127,7 @@
     SUBDIR += netustad
     SUBDIR += netwag
     SUBDIR += netwox
+    SUBDIR += netxms
     SUBDIR += nfdump
     SUBDIR += nfdump-devel
     SUBDIR += nfsen

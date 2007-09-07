@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: nxhttpd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+#
+# Add the following line to /etc/rc.conf[.local] to enable nxhttpd
+#
+# nxhttpd_enable (bool):        Set to "NO" by default.
+#                               Set it to "YES" to enable nxagentd.
+#
+
+. %%RC_SUBR%%
+
+name="nxhttpd"
+nxhttpd_user="netxms"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${nxhttpd_enable="NO"}
+
+command="%%PREFIX%%/bin/nxhttpd"
+required_files="%%PREFIX%%/etc/nxhttpd.conf"
+command_args="-c %%PREFIX%%/etc/nxhttpd.conf -d"
+
+run_rc_command "$1"

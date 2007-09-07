@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: nxagentd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+#
+# Add the following line to /etc/rc.conf[.local] to enable nxagentd
+#
+# nxagentd_enable (bool):        Set to "NO" by default.
+#                               Set it to "YES" to enable nxagentd.
+#
+
+. %%RC_SUBR%%
+
+name="nxagentd"
+nxagentd_user="netxms"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${nxagentd_enable="NO"}
+
+command="%%PREFIX%%/bin/nxagentd"
+required_files="%%PREFIX%%/etc/nxagentd.conf"
+command_args="-c %%PREFIX%%/etc/nxagentd.conf -d"
+
+run_rc_command "$1"

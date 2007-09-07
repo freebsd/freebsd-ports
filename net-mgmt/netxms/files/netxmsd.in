@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: netxmsd
+# REQUIRE: mysql postgresql
+# KEYWORD: shutdown
+#
+#
+#
+# Add the following line to /etc/rc.conf[.local] to enable netxmsd
+#
+# netxmsd_enable (bool):        Set to "NO" by default.
+#                               Set it to "YES" to enable netxmsd.
+#
+
+. %%RC_SUBR%%
+
+name="netxmsd"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${netxmsd_enable="NO"}
+
+command="%%PREFIX%%/bin/netxmsd"
+required_files="%%PREFIX%%/etc/netxmsd.conf"
+command_args="--config %%PREFIX%%/etc/netxmsd.conf --check-db"
+
+run_rc_command "$1"

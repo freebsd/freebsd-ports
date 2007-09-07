@@ -1,0 +1,12 @@
+NetXMS is new and rapidly developing monitoring system,
+released under GPL2 license. It can be used for monitoring
+entire IT infrastructure, starting with SNMP-capable
+hardware (like switches and routers) and ending with
+applications on your servers. NetXMS is an extremely
+reliable and powerful monitoring system, enabling you
+to improve your network availability and service levels.
+
+WWW: http://www.netxms.org/
+
+- Vladimir Ermakov
+samflanker@gmail.com
