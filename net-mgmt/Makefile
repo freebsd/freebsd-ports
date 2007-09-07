@@ -218,6 +218,7 @@
     SUBDIR += sjitter
     SUBDIR += slate
     SUBDIR += smokeping
+    SUBDIR += snmp++
     SUBDIR += snmptt
     SUBDIR += softflowd
     SUBDIR += subcalc
