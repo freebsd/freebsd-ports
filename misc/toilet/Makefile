@@ -22,9 +22,8 @@ MAN1=		${PORTNAME}.1
 PORT_VERBS=	${PORTNAME} caca2tlf share/figlet/*tlf
 
 post-patch:
-	@${REINPLACE_CMD} -e '/CFLAGS=/d;\
-		s| date.*stamp| date -jf"%Y-%m-%d" "$$stamp" +"%e %B %Y|'\
-			${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/CFLAGS=/d;/ac_build_date=/s|=.*|="$$stamp"|'\
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|\$$\^|$${.ALLSRC}|' ${WRKSRC}/doc/Makefile.in
 
 post-install:
