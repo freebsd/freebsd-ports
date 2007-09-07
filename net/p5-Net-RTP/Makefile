@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Net-RTP
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Send and receive RTP packets (RFC3550)
 
 RUN_DEPENDS=	p5-IO-Socket-Multicast6>=0.02:${PORTSDIR}/net/p5-IO-Socket-Multicast6 \
@@ -25,7 +25,8 @@ PERL_MODBUILD=	yes
 MAN1=		rtpdump.pl.1 \
 		rtplosslog.pl.1 \
 		rtpsend-pcmu.pl.1 \
-		rtpstats.pl.1
+		rtpstats.pl.1 \
+		rtptimer.pl.1
 
 MAN3=		Net::RTP.3 \
 		Net::RTP::Packet.3

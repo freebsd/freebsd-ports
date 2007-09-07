@@ -3,6 +3,7 @@ bin/rtpdump.pl
 bin/rtplosslog.pl
 bin/rtpsend-pcmu.pl
 bin/rtpstats.pl
+bin/rtptimer.pl
 %%SITE_PERL%%/Net/RTP.pm
 %%SITE_PERL%%/Net/RTP/Packet.pm
 @dirrm %%SITE_PERL%%/Net/RTP
