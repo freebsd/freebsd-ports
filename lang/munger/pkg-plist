@@ -1,5 +1,5 @@
 bin/munger
-lib/libmunger.so.30
+lib/libmunger.so.31
 %%DKNS_BIN%%
 %%DATADIR%%/ipdatabase.munger
 %%DATADIR%%/httpd.munger
@@ -17,7 +17,6 @@ lib/libmunger.so.30
 %%DATADIR%%/blog.cgi
 %%DATADIR%%/rss.munger
 %%DATADIR%%/mime2munger.munger
-%%DATADIR%%/ed.munger
 %%DATADIR%%/xmlquery.munger
 %%DATADIR%%/filter.munger
 %%DATADIR%%/cgi.munger
