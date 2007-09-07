@@ -5283,6 +5283,7 @@ ja-p5-FormValidator-Simple-Plugin-Number-Phone-JP	ports/japanese/p5-FormValidato
 ja-p5-Jcode	ports/japanese/p5-Jcode
 ja-p5-Lingua-JA-Numbers	ports/japanese/p5-Lingua-JA-Numbers
 ja-p5-Lingua-JA-Summarize-Extract	ports/japanese/p5-Lingua-JA-Summarize-Extract
+ja-p5-Mail-SpamAssassin	ports/japanese/p5-Mail-SpamAssassin
 ja-p5-MeCab	ports/japanese/p5-MeCab
 ja-p5-Number-Phone-JP	ports/japanese/p5-Number-Phone-JP
 ja-p5-PDFJ	ports/japanese/p5-PDFJ
