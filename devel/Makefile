@@ -738,6 +738,7 @@
     SUBDIR += mk
     SUBDIR += mkcmd
     SUBDIR += mkmf
+    SUBDIR += ml-doc
     SUBDIR += mm
     SUBDIR += mob
     SUBDIR += mono-tools
