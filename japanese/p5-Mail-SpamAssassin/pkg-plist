@@ -1,0 +1,176 @@
+@unexec %D/etc/rc.d/sa-spamd.sh stop > /dev/null 2>&1 || true
+@unexec %D/etc/rc.d/sa-spamd stop > /dev/null 2>&1 || true
+bin/sa-learn
+bin/sa-update
+bin/spamassassin
+bin/spamc
+bin/spamd
+etc/mail/spamassassin/local.cf.sample
+@unexec if cmp -s %B/init.pre.sample %B/init.pre; then rm -f %B/init.pre; fi
+etc/mail/spamassassin/init.pre.sample
+@exec [ -f %B/init.pre ] || cp %B/%f %B/init.pre
+@unexec if cmp -s %B/tokenizer.pre.sample %B/tokenizer.pre; then rm -f %B/tokenizer.pre; fi
+etc/mail/spamassassin/tokenizer.pre.sample
+@exec [ -f %B/tokenizer.pre ] || cp %B/%f %B/init.pre
+@unexec if cmp -s %B/v310.pre.sample %B/v310.pre; then rm -f %B/v310.pre; fi
+etc/mail/spamassassin/v310.pre.sample
+@exec [ -f %B/v310.pre ] || cp %B/%f %B/v310.pre
+@unexec if cmp -s %B/v312.pre.sample %B/v312.pre; then rm -f %B/v312.pre; fi
+etc/mail/spamassassin/v312.pre.sample
+@exec [ -f %B/v312.pre ] || cp %B/%f %B/v312.pre
+%%SITE_PERL%%/Mail/SpamAssassin.pm
+%%SITE_PERL%%/Mail/SpamAssassin/AICache.pm
+%%SITE_PERL%%/Mail/SpamAssassin/ArchiveIterator.pm
+%%SITE_PERL%%/Mail/SpamAssassin/AutoWhitelist.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Bayes.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Bayes/CombineChi.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Bayes/CombineNaiveBayes.pm
+%%SITE_PERL%%/Mail/SpamAssassin/BayesStore.pm
+%%SITE_PERL%%/Mail/SpamAssassin/BayesStore/DBM.pm
+%%SITE_PERL%%/Mail/SpamAssassin/BayesStore/MySQL.pm
+%%SITE_PERL%%/Mail/SpamAssassin/BayesStore/PgSQL.pm
+%%SITE_PERL%%/Mail/SpamAssassin/BayesStore/SDBM.pm
+%%SITE_PERL%%/Mail/SpamAssassin/BayesStore/SQL.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Client.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Conf.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Conf/LDAP.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Conf/Parser.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Conf/SQL.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Constants.pm
+%%SITE_PERL%%/Mail/SpamAssassin/DBBasedAddrList.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Dns.pm
+%%SITE_PERL%%/Mail/SpamAssassin/DnsResolver.pm
+%%SITE_PERL%%/Mail/SpamAssassin/EvalTests.pm
+%%SITE_PERL%%/Mail/SpamAssassin/HTML.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Locales.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Locker.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Locker/Flock.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Locker/UnixNFSSafe.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Locker/Win32.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Logger.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Logger/File.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Logger/Stderr.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Logger/Syslog.pm
+%%SITE_PERL%%/Mail/SpamAssassin/MailingList.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Message.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Message/Metadata.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Message/Metadata/Received.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Message/Node.pm
+%%SITE_PERL%%/Mail/SpamAssassin/NetSet.pm
+%%SITE_PERL%%/Mail/SpamAssassin/PerMsgLearner.pm
+%%SITE_PERL%%/Mail/SpamAssassin/PerMsgStatus.pm
+%%SITE_PERL%%/Mail/SpamAssassin/PersistentAddrList.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/AWL.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/AccessDB.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/AntiVirus.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/AutoLearnThreshold.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/DCC.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/DKIM.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/DomainKeys.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Hashcash.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/MIMEHeader.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Pyzor.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Razor2.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/RelayCountry.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/ReplaceTags.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/SPF.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/SpamCop.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Test.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/TextCat.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Tokenizer.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Tokenizer/MeCab.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Tokenizer/SimpleJA.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/URIDNSBL.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/WhiteListSubject.pm
+%%SITE_PERL%%/Mail/SpamAssassin/PluginHandler.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Reporter.pm
+%%SITE_PERL%%/Mail/SpamAssassin/SQLBasedAddrList.pm
+%%SITE_PERL%%/Mail/SpamAssassin/SpamdForkScaling.pm
+%%SITE_PERL%%/Mail/SpamAssassin/SubProcBackChannel.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Timeout.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Util.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Util/Charset.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Util/DependencyInfo.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Util/Progress.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Util/RegistrarBoundaries.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin/.packlist
+%%SITE_PERL%%/spamassassin-run.pod
+%%DATADIR%%/10_misc.cf
+%%DATADIR%%/20_advance_fee.cf
+%%DATADIR%%/20_anti_ratware.cf
+%%DATADIR%%/20_body_tests.cf
+%%DATADIR%%/20_compensate.cf
+%%DATADIR%%/20_dnsbl_tests.cf
+%%DATADIR%%/20_drugs.cf
+%%DATADIR%%/20_fake_helo_tests.cf
+%%DATADIR%%/20_head_tests.cf
+%%DATADIR%%/20_html_tests.cf
+%%DATADIR%%/20_meta_tests.cf
+%%DATADIR%%/20_net_tests.cf
+%%DATADIR%%/20_phrases.cf
+%%DATADIR%%/20_porn.cf
+%%DATADIR%%/20_ratware.cf
+%%DATADIR%%/20_uri_tests.cf
+%%DATADIR%%/23_bayes.cf
+%%DATADIR%%/25_accessdb.cf
+%%DATADIR%%/25_antivirus.cf
+%%DATADIR%%/25_body_tests_es.cf
+%%DATADIR%%/25_body_tests_pl.cf
+%%DATADIR%%/25_dcc.cf
+%%DATADIR%%/25_dkim.cf
+%%DATADIR%%/25_domainkeys.cf
+%%DATADIR%%/25_hashcash.cf
+%%DATADIR%%/25_pyzor.cf
+%%DATADIR%%/25_razor2.cf
+%%DATADIR%%/25_replace.cf
+%%DATADIR%%/25_spf.cf
+%%DATADIR%%/25_textcat.cf
+%%DATADIR%%/25_uribl.cf
+%%DATADIR%%/30_text_de.cf
+%%DATADIR%%/30_text_fr.cf
+%%DATADIR%%/30_text_it.cf
+%%DATADIR%%/30_text_nl.cf
+%%DATADIR%%/30_text_pl.cf
+%%DATADIR%%/30_text_pt_br.cf
+%%DATADIR%%/50_scores.cf
+%%DATADIR%%/60_awl.cf
+%%DATADIR%%/60_whitelist.cf
+%%DATADIR%%/60_whitelist_dk.cf
+%%DATADIR%%/60_whitelist_dkim.cf
+%%DATADIR%%/60_whitelist_spf.cf
+%%DATADIR%%/60_whitelist_subject.cf
+%%DATADIR%%/languages
+%%DATADIR%%/triplets.txt
+%%DATADIR%%/sa-update-pubkey.txt
+%%DATADIR%%/user_prefs.template
+%%TOOLS%%%%DATADIR%%/tools/README.speedtest
+%%TOOLS%%%%DATADIR%%/tools/check_whitelist
+%%TOOLS%%%%DATADIR%%/tools/convert_awl_dbm_to_sql
+%%TOOLS%%%%DATADIR%%/tools/desc_length.pl
+%%TOOLS%%%%DATADIR%%/tools/mboxsplit
+%%TOOLS%%%%DATADIR%%/tools/sa-stats.pl
+%%TOOLS%%%%DATADIR%%/tools/speedtest
+%%TOOLS%%%%DATADIR%%/tools/split_corpora
+%%TOOLS%%%%DATADIR%%/tools/sysreport
+%%TOOLS%%%%DATADIR%%/tools/test_extract
+%%TOOLS%%%%DATADIR%%/tools/triplets.pl
+%%TOOLS%%@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Util
+@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Tokenizer
+@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Plugin
+@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Message/Metadata
+@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Message
+@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Logger
+@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Locker
+@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Conf
+@dirrm %%SITE_PERL%%/Mail/SpamAssassin/BayesStore
+@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Bayes
+@dirrm %%SITE_PERL%%/Mail/SpamAssassin
+@dirrmtry %%SITE_PERL%%/Mail
+@dirrmtry etc/mail/spamassassin
+@dirrmtry etc/mail
+@dirrmtry /var/run/spamd

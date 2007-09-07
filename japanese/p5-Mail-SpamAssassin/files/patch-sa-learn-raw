@@ -1,0 +1,14 @@
+--- sa-learn.raw	(revision 507745)
++++ sa-learn.raw	(working copy)
+@@ -402,7 +402,10 @@
+ 
+     # make sure the target list is in the normal AI format
+     if ($targets[$elem] !~ /^[^:]*:[a-z]+:/) {
+-      $targets[$elem] = target($targets[$elem]);
++      my $item = splice @targets, $elem, 1;
++      $elem--; # go back to this element again
++      target($item); # add back to the list
++      next;
+     }
+   }
+
