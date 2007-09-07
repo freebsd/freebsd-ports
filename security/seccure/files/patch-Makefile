@@ -1,0 +1,36 @@
+--- Makefile.orig	Wed Aug 16 22:13:57 2006
++++ Makefile	Thu Aug 30 13:33:58 2007
+@@ -1,4 +1,7 @@
+-CFLAGS = -O2 # -D NOBEEP # -D NOMEMLOCK
++CFLAGS = -L/usr/local/lib -I/usr/local/include -O2 -DNOBEEP -DNOMEMLOCK
++DESTDIR = /usr/local
++
++all: default
+ 
+ default: binaries # doc
+ 
+@@ -8,15 +11,15 @@
+ doc: seccure.1 seccure.1.html
+ 
+ install: default
+-	install -m0755 seccure-key $(DESTDIR)/usr/bin
+-	ln -f $(DESTDIR)/usr/bin/seccure-key $(DESTDIR)/usr/bin/seccure-encrypt
+-	ln -f $(DESTDIR)/usr/bin/seccure-key $(DESTDIR)/usr/bin/seccure-decrypt
+-	ln -f $(DESTDIR)/usr/bin/seccure-key $(DESTDIR)/usr/bin/seccure-sign
+-	ln -f $(DESTDIR)/usr/bin/seccure-key $(DESTDIR)/usr/bin/seccure-verify
+-	ln -f $(DESTDIR)/usr/bin/seccure-key $(DESTDIR)/usr/bin/seccure-signcrypt
+-	ln -f $(DESTDIR)/usr/bin/seccure-key $(DESTDIR)/usr/bin/seccure-veridec
+-	ln -f $(DESTDIR)/usr/bin/seccure-key $(DESTDIR)/usr/bin/seccure-dh
+-	install -m0644 seccure.1 $(DESTDIR)/usr/share/man/man1
++	install -m0755 seccure-key $(DESTDIR)/bin
++	ln -f $(DESTDIR)/bin/seccure-key $(DESTDIR)/bin/seccure-encrypt
++	ln -f $(DESTDIR)/bin/seccure-key $(DESTDIR)/bin/seccure-decrypt
++	ln -f $(DESTDIR)/bin/seccure-key $(DESTDIR)/bin/seccure-sign
++	ln -f $(DESTDIR)/bin/seccure-key $(DESTDIR)/bin/seccure-verify
++	ln -f $(DESTDIR)/bin/seccure-key $(DESTDIR)/bin/seccure-signcrypt
++	ln -f $(DESTDIR)/bin/seccure-key $(DESTDIR)/bin/seccure-veridec
++	ln -f $(DESTDIR)/bin/seccure-key $(DESTDIR)/bin/seccure-dh
++	install -m0644 seccure.1 $(DESTDIR)/man/man1
+ 
+ clean:
+ 	rm -f *.o seccure-key seccure-encrypt seccure-decrypt seccure-sign \
