@@ -9054,6 +9054,7 @@ p5-Catalyst-Plugin-Unicode	ports/www/p5-Catalyst-Plugin-Unicode
 p5-Catalyst-Plugin-XMLRPC	ports/www/p5-Catalyst-Plugin-XMLRPC
 p5-Catalyst-Runtime	ports/www/p5-Catalyst-Runtime
 p5-Catalyst-View-ClearSilver	ports/www/p5-Catalyst-View-ClearSilver
+p5-Catalyst-View-Email	ports/www/p5-Catalyst-View-Email
 p5-Catalyst-View-GraphViz	ports/www/p5-Catalyst-View-GraphViz
 p5-Catalyst-View-HTML-Template	ports/www/p5-Catalyst-View-HTML-Template
 p5-Catalyst-View-HTML-Template-Compiled	ports/www/p5-Catalyst-View-HTML-Template-Compiled
