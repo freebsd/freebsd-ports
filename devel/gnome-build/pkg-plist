@@ -17,10 +17,10 @@ lib/gnome-build-1.0/backends/libgbf-mkfile.la
 lib/gnome-build-1.0/backends/libgbf-mkfile.so
 lib/libgbf-1.la
 lib/libgbf-1.so
-lib/libgbf-1.so.0
+lib/libgbf-1.so.1
 lib/libgbf-widgets-1.la
 lib/libgbf-widgets-1.so
-lib/libgbf-widgets-1.so.0
+lib/libgbf-widgets-1.so.1
 libdata/pkgconfig/gnome-build-1.0.pc
 share/gnome/gnome-build/GBF/AmFiles.pm
 share/gnome/gnome-build/GBF/General.pm
