@@ -8141,6 +8141,7 @@ netwag		ports/net-mgmt/netwag
 netwalker-ircc	ports/irc/netwalker-ircc
 netwib		ports/net/netwib
 netwox		ports/net-mgmt/netwox
+netxms		ports/net-mgmt/netxms
 neverball	ports/games/neverball
 newer		ports/misc/newer
 newfile		ports/devel/newfile
