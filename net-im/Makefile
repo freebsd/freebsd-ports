@@ -50,6 +50,7 @@
     SUBDIR += icqlib
     SUBDIR += icqnd
     SUBDIR += imcom
+    SUBDIR += iserverd
     SUBDIR += jabber.el
     SUBDIR += jabberd
     SUBDIR += jabber
