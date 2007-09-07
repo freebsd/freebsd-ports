@@ -20,12 +20,13 @@ COMMENT=	Fast, stable, compatible, and secure Quake II client
 USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_GL=		yes
+USE_DOS2UNIX=	src/vanctf/g_local.h
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
 		OPENGL_CFLAGS="-I${X11BASE}/include" OPENGL_LIBS="-L${X11BASE}/lib"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
@@ -40,16 +41,11 @@ OPTIONS=	GAME		"Build a main game .so file"		off \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
-
 .if !defined(WITHOUT_GAME)
 PLIST_SUB+=	GAME=""
 Q2GAMES+=	baseq2
 .else
 PLIST_SUB+=	GAME="@comment "
-Q2GAMES_NOT+=	baseq2
 .endif
 
 .if defined(WITH_CTF)
