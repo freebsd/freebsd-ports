@@ -313,6 +313,7 @@
     SUBDIR += openssl-stable
     SUBDIR += openvpn
     SUBDIR += openvpn-admin
+    SUBDIR += openvpn-auth-ldap
     SUBDIR += openvpn-devel
     SUBDIR += opieprint
     SUBDIR += osiris
