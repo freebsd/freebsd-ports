@@ -1042,6 +1042,7 @@
     SUBDIR += xxdiff-scripts
     SUBDIR += y2l
     SUBDIR += yamcha
+    SUBDIR += yaml-mode.el
     SUBDIR += yi-aspell
     SUBDIR += yodl
     SUBDIR += yould
