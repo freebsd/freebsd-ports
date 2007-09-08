@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+bin/gearmand
+%%SITE_PERL%%/Gearman/Server/Job.pm
+%%SITE_PERL%%/Gearman/Server/Client.pm
+%%SITE_PERL%%/Gearman/Server.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/Server/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman
+@dirrmtry %%SITE_PERL%%/Gearman/Server
+@dirrmtry %%SITE_PERL%%/Gearman
