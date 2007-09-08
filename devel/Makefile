@@ -1219,6 +1219,7 @@
     SUBDIR += p5-Filter-Template
     SUBDIR += p5-FreezeThaw
     SUBDIR += p5-Gearman
+    SUBDIR += p5-Gearman-Client-Async
     SUBDIR += p5-Gearman-Server
     SUBDIR += p5-Geo-ShapeFile
     SUBDIR += p5-Getargs-Long
