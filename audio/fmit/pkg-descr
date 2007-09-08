@@ -1,0 +1,15 @@
+Free Music Instrument Tuner.  
+
+Current features:
+
+ - Error history
+ - Volume history
+ - Wave shape
+ - Harmonic ratios
+ - Statistics
+ - Microtonal tuning (with Scala file support)
+ - Discrete Fourier Transform view
+ - JACK, OSS, ALSA, Portaudio support
+ - Translations for: french
+
+WWW:	http://home.gna.org/fmit/
