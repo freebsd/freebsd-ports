@@ -440,6 +440,7 @@ www/cgi-bin-dist/printenv
 www/cgi-bin-dist/test-cgi
 @exec chmod a-w %D/www/cgi-bin-dist
 www/icons/README
+www/icons/README.html
 www/icons/a.gif
 www/icons/a.png
 www/icons/alert.black.gif
@@ -564,7 +565,6 @@ www/icons/screw2.gif
 www/icons/screw2.png
 www/icons/script.gif
 www/icons/script.png
-www/icons/small/README.txt
 www/icons/small/back.gif
 www/icons/small/back.png
 www/icons/small/binary.gif
