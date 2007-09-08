@@ -41,6 +41,8 @@ USE_GMAKE=	yes
 USE_IMAKE=	yes
 ONLY_FOR_ARCHS=	i386
 
+BROKEN=		this port fails to build with xorg-7.2
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500014
