@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/fsck-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/memcache-support.txt
+%%PORTDOCS%%%%DOCSDIR%%/testing.txt
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mogilefs-server/.packlist
 %%SITE_PERL%%/MogileFS/Class.pm
 %%SITE_PERL%%/MogileFS/Config.pm
@@ -29,6 +30,7 @@
 %%SITE_PERL%%/MogileFS/Store.pm
 %%SITE_PERL%%/MogileFS/Store/MySQL.pm
 %%SITE_PERL%%/MogileFS/Store/SQLite.pm
+%%SITE_PERL%%/MogileFS/Store/Postgres.pm
 %%SITE_PERL%%/MogileFS/Sys.pm
 %%SITE_PERL%%/MogileFS/Util.pm
 %%SITE_PERL%%/MogileFS/Worker.pm
@@ -44,6 +46,7 @@
 %%SITE_PERL%%/Mogstored/ChildProcess/IOStat.pm
 %%SITE_PERL%%/Mogstored/FIDStatter.pm
 %%SITE_PERL%%/Mogstored/HTTPServer.pm
+%%SITE_PERL%%/Mogstored/HTTPServer/Apache.pm
 %%SITE_PERL%%/Mogstored/HTTPServer/Lighttpd.pm
 %%SITE_PERL%%/Mogstored/HTTPServer/Perlbal.pm
 %%SITE_PERL%%/Mogstored/SideChannelClient.pm

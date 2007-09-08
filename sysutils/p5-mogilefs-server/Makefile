@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mogilefs-server
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADFITZ
@@ -29,7 +29,8 @@ MAN3=		MogileFS::DevFID.3 MogileFS::FID.3 MogileFS::IOStatWatcher.3 \
 		MogileFS::ReplicationPolicy::MultipleHosts.3 \
 		MogileFS::Server.3 MogileFS::Store.3 \
 		MogileFS::Store::MySQL.3 MogileFS::Store::SQLite.3 \
-		MogileFS::Worker::Query.3 MogileFS::Worker::Replicate.3
+		MogileFS::Worker::Query.3 MogileFS::Worker::Replicate.3 \
+		MogileFS::Store::Postgres.3
 
 post-install:
 .ifndef(NOPORTDOCS)
