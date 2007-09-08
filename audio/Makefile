@@ -177,6 +177,7 @@
     SUBDIR += fluidsynth
     SUBDIR += fluidsynth-dssi
     SUBDIR += fmio
+    SUBDIR += fmit
     SUBDIR += freealut
     SUBDIR += funktrackergold
     SUBDIR += gai-album

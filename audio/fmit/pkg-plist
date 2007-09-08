@@ -1,0 +1,9 @@
+bin/fmit
+lib/libCppAddons.a
+lib/libMusic.a
+lib/libmodules.a
+share/fmit/tr/fmit_fr.qm
+@dirrm share/fmit/tr
+@dirrm share/fmit
+share/applications/fmit.desktop
+@dirrmtry share/applications
