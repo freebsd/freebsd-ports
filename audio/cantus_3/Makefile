@@ -33,9 +33,9 @@ CONFIGURE_ARGS=	--program-transform-name="" --disable-static
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
 
 post-patch:
-	@${REINPLACE_CMD} -Ee 's|-ldld||g;s|-ldl||g;/ALL_LINGUAS=/s|=(.*)|="\1"|'\
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/source/cantus/Makefile.in
+	@${REINPLACE_CMD} -Ee 's|-ldld||g;s|-ldl||g;/ALL_LINGUAS=/s|=(.*)|="\1"|;\
+		/LIBS=/s|-lgthr|${PTHREAD_LIBS} &|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-ldl||;s|-lrt||' ${WRKSRC}/source/cantus/Makefile.in
 	@${REINPLACE_CMD} -e 's|PACKAGE_LIB_DIR "cantus-3.glade"|PACKAGE_DATA_DIR "/cantus/glade/cantus.glade"|'\
 		${WRKSRC}/source/cantus/gui_controller.cc
 
