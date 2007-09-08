@@ -14324,6 +14324,7 @@ rubygem-yadis	ports/net/rubygem-yadis
 rubygem-zentest	ports/devel/rubygem-zentest
 rubyphoto	ports/graphics/rubyphoto
 rude		ports/net/rude
+rudeconfig	ports/devel/rudeconfig
 rudiments	ports/devel/rudiments
 runit		ports/sysutils/runit
 runwhen		ports/sysutils/runwhen
