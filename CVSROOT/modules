@@ -371,6 +371,7 @@ amavisd		ports/security/amavisd
 amavisd-milter	ports/security/amavisd-milter
 amavisd-new	ports/security/amavisd-new
 amaya		ports/www/amaya
+amb-plugins	ports/audio/amb-plugins
 amiwm		ports/x11-wm/amiwm
 amoebax		ports/games/amoebax
 amp		ports/audio/amp
