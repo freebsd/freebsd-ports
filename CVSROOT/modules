@@ -3001,6 +3001,7 @@ flyway		ports/misc/flyway
 fmars		ports/games/fmars
 fmio		ports/audio/fmio
 fmirror		ports/ftp/fmirror
+fmit		ports/audio/fmit
 fmsx		ports/emulators/fmsx
 fnccheck	ports/devel/fnccheck
 fnlib		ports/graphics/fnlib
