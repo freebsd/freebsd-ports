@@ -2,10 +2,12 @@ bin/emp_client
 bin/emp_server
 lib/wolfpack/emp_server
 lib/wolfpack/empire
+lib/wolfpack/empsched
 lib/wolfpack/pconfig
 lib/wolfpack/files
 lib/wolfpack/fairland
 etc/wolfpack/econfig.orig
+etc/wolfpack/schedule
 %%DATADIR%%/README
 %%DATADIR%%/builtin/infra.config
 %%DATADIR%%/builtin/item.config
@@ -192,7 +194,6 @@ etc/wolfpack/econfig.orig
 %%DATADIR%%/info.nr/market
 %%DATADIR%%/info.nr/mine
 %%DATADIR%%/info.nr/mission
-%%DATADIR%%/info.nr/mobupdate
 %%DATADIR%%/info.nr/morale
 %%DATADIR%%/info.nr/motd
 %%DATADIR%%/info.nr/move
@@ -233,6 +234,7 @@ etc/wolfpack/econfig.orig
 %%DATADIR%%/info.nr/recon
 %%DATADIR%%/info.nr/reject
 %%DATADIR%%/info.nr/relations
+%%DATADIR%%/info.nr/reload
 %%DATADIR%%/info.nr/repay
 %%DATADIR%%/info.nr/report
 %%DATADIR%%/info.nr/reset
@@ -288,7 +290,6 @@ etc/wolfpack/econfig.orig
 %%DATADIR%%/info.nr/update
 %%DATADIR%%/info.nr/upgrade
 %%DATADIR%%/info.nr/version
-%%DATADIR%%/info.nr/wait
 %%DATADIR%%/info.nr/wall
 %%DATADIR%%/info.nr/wingadd
 %%DATADIR%%/info.nr/wipe
