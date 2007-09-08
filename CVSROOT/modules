@@ -2331,6 +2331,7 @@ ebnf2yacc	ports/devel/ebnf2yacc
 eboard		ports/games/eboard
 eboxy		ports/devel/eboxy
 ebuttons	ports/x11/ebuttons
+ecamegapedal	ports/audio/ecamegapedal
 ecartis		ports/mail/ecartis
 ecasound	ports/audio/ecasound
 ecawave	ports/audio/ecawave
