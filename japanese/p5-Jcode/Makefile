@@ -26,9 +26,9 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 MAN3+=		Jcode::Unicode.3 Jcode::Unicode::Constants.3 \
 		Jcode::Unicode::NoXS.3
-PLIST_SUB=	WRAPPER="@comment " REALMOD=""
+PLIST_SUB+=	WRAPPER="@comment " REALMOD=""
 .else
-PLIST_SUB=	WRAPPER="" REALMOD="@comment "
+PLIST_SUB+=	WRAPPER="" REALMOD="@comment "
 .endif
 
 .include <bsd.port.post.mk>
