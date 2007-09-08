@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Jul  1 11:45:44 2007
++++ Makefile.in	Sun Jul  1 11:46:00 2007
+@@ -157,7 +157,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ mtpfs_SOURCES = id3read.c mtpfs.c mtpfs.h id3read.h
+-mtpfs_CPPFLAGS = -DFUSE_USE_VERSION=22 $(FUSE_CFLAGS)
++mtpfs_CPPFLAGS = -DFUSE_USE_VERSION=25 $(FUSE_CFLAGS)
+ mtpfs_LDADD = $(FUSE_LIBS)
+ all: all-am
+ 
