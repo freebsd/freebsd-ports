@@ -24,6 +24,11 @@ IGNORE=		Requires kernel source (/usr/src/sys) to build
 
 .include <bsd.port.pre.mk>
 
+# Don't strip module on amd64 systems
+.if ${ARCH} == "amd64"
+STRIP=
+.endif
+
 post-build:
 	@${REINPLACE_CMD} -e 's|%%INITIAL_INSTALLDIR%%|${PREFIX}/lib|g' ${BUILD_WRKSRC}/uppcsetup
 	@${REINPLACE_CMD} -e 's|%%INITIAL_MODDIR%%|${KMODDIR}|g' ${WRKSRC}/uppcsetup
