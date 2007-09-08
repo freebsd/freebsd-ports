@@ -1385,6 +1385,10 @@ LDCONFIG_PLIST_UNEXEC_CMD?=	${LDCONFIG} -R
 
 PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
+# XXX to remain undefined until all ports that require Perl are fixed
+# to set one of the conditionals that force the inclusion of bsd.perl.mk
+.if !defined(_PERL_REFACTORING_COMPLETE)
+
 PERL_VERSION?=	5.8.8
 PERL_VER?=	5.8.8
 
@@ -1418,6 +1422,13 @@ SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
 PERL=		${LOCALBASE}/bin/perl
 
+PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
+				PERL_VER=${PERL_VER} \
+				PERL_ARCH=${PERL_ARCH} \
+				SITE_PERL=${SITE_PERL_REL}
+
+.endif  # !defined(_PERL_REFACTORING_COMPLETE)
+
 .if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
@@ -1432,6 +1443,10 @@ PERL=		${LOCALBASE}/bin/perl
 
 .if defined(USE_GNUSTEP)
 .include "${PORTSDIR}/Mk/bsd.gnustep.mk"
+.endif
+
+.if defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
+.include "${PORTSDIR}/Mk/bsd.perl.mk"
 .endif
 
 .if defined(USE_PHP)
@@ -1921,47 +1936,6 @@ RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
 BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
 .endif
 
-PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
-				PERL_VER=${PERL_VER} \
-				PERL_ARCH=${PERL_ARCH} \
-				SITE_PERL=${SITE_PERL_REL}
-
-.if defined(PERL_MODBUILD)
-PERL_CONFIGURE=		yes
-CONFIGURE_SCRIPT?=	Build.PL
-.if ${PORTNAME} != Module-Build
-BUILD_DEPENDS+=		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
-.endif
-ALL_TARGET?=
-PL_BUILD?=		Build
-CONFIGURE_ARGS+= \
-	create_packlist=0 \
-	install_path=lib="${PREFIX}/${SITE_PERL_REL}" \
-	install_path=arch="${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}" \
-	install_path=script="${PREFIX}/bin" \
-	install_path=bin="${PREFIX}/bin" \
-	install_path=libdoc="${MAN3PREFIX}/man/man3" \
-	install_path=bindoc="${MAN1PREFIX}/man/man1"
-.elif defined(PERL_CONFIGURE)
-CONFIGURE_ARGS+=	INSTALLDIRS="site"
-.endif
-
-.if defined(PERL_CONFIGURE)
-USE_PERL5=	yes
-.if (defined(BATCH) && !defined(IS_INTERACTIVE))
-CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT="YES"
-.endif
-.endif
-
-.if defined(USE_PERL5) || defined(USE_PERL5_BUILD)
-EXTRACT_DEPENDS+=${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
-PATCH_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
-BUILD_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
-.endif
-.if defined(USE_PERL5) || defined(USE_PERL5_RUN)
-RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
-.endif
-
 .if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
@@ -1998,6 +1972,10 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 
 .if defined(USE_SDL) || defined(WANT_SDL)
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
+.endif
+
+.if defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
+.include "${PORTSDIR}/Mk/bsd.perl.mk"
 .endif
 
 .if defined(USE_PHP)
@@ -2835,14 +2813,6 @@ PKGBASE?=			${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 LATEST_LINK?=		${PKGBASE}
 PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${LATEST_LINK}${PKG_SUFX}
 
-.if defined(PERL_CONFIGURE)
-CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
-			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
-CONFIGURE_SCRIPT?=	Makefile.PL
-MAN3PREFIX?=		${PREFIX}/lib/perl5/${PERL_VERSION}
-.undef HAS_CONFIGURE
-.endif
-
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_TARGET?=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_LOG?=		config.log
@@ -3637,15 +3607,6 @@ do-configure:
 			 ${FALSE}; \
 		fi)
 .endif
-.if defined(PERL_CONFIGURE)
-	@cd ${CONFIGURE_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} \
-		${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
-.if !defined(PERL_MODBUILD)
-	@cd ${CONFIGURE_WRKSRC} && \
-		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
-.endif
-.endif
 .if defined(USE_IMAKE)
 	@(cd ${CONFIGURE_WRKSRC}; ${SETENV} ${MAKE_ENV} ${XMKMF})
 .endif
@@ -3658,11 +3619,7 @@ do-build:
 .if defined(USE_GMAKE)
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .else
-.if defined(PERL_MODBUILD)
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${MAKE_ARGS} ${ALL_TARGET})
-.else
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
-.endif
 .endif
 .endif
 
@@ -3706,13 +3663,9 @@ do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man)
 .endif
 .else # !defined(USE_GMAKE)
-.if defined(PERL_MODBUILD)
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${MAKE_ARGS} ${INSTALL_TARGET})
-.else
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .if defined(USE_IMAKE) && !defined(NO_INSTALL_MANPAGES)
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man)
-.endif
 .endif
 .endif
 .endif
