@@ -16,6 +16,10 @@ DISTNAME=	${PORTNAME}-1.2.9-4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for netsaint
 
+DEPRECATED=	Now developed as Nagios, see net-mgmt/nagios port
+BROKEN=		script/configure is very out of date
+EXPIRATION_DATE=2007-10-31
+
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/netsaint/sbin \

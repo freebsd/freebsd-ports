@@ -22,6 +22,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/netsaint/check_netsaint:${PORTSDIR}/net-mgmt/netsaint-plugins
 
 DEPRECATED=	Now developed as Nagios, see net-mgmt/nagios port
+EXPIRATION_DATE=2007-10-31
 
 USE_PERL5=	yes
 USE_GETOPT_LONG=	yes
