@@ -1633,6 +1633,7 @@ cscope		ports/devel/cscope
 cscout		ports/devel/cscout
 csharp-mode.el	ports/lang/csharp-mode.el
 csmash		ports/games/csmash
+csocks		ports/net/csocks
 csound		ports/audio/csound
 csound-manual	ports/audio/csound-manual
 css-mode.el	ports/www/css-mode.el
