@@ -1420,6 +1420,7 @@ cloc		ports/misc/cloc
 clockspeed	ports/sysutils/clockspeed
 clockspeed-conf	ports/sysutils/clockspeed-conf
 clog		ports/net-mgmt/clog
+clonehdd	ports/sysutils/clonehdd
 cloop-utils	ports/sysutils/cloop-utils
 clp		ports/math/clp
 clpbar		ports/misc/clpbar
