@@ -23,10 +23,5 @@ MAN3=		IO::Socket::INET6.3
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES=	${PATCHDIR}/5.005_03.diff
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 

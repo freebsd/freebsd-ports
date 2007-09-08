@@ -32,13 +32,4 @@ post-install:
 	${INSTALL_DATA} ${SRCDIR}/req.conf ${EXAMPLESDIR}/req.conf
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-SSLeay.xs
-
-post-patch:
-	${PERL} -pi -e 's/\$\^V/\$\]/' ${WRKSRC}/Net-SSLeay-Handle-*/Handle.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

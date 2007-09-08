@@ -37,10 +37,6 @@ BROKEN=		does not build
 IGNORE=		does not build
 .endif
 
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
-.endif
-
 post-patch:
 	@${RM} -f ${WRKSRC}/config.status ${WRKSRC}/config.cache
 	@${ECHO_CMD} "LDFLAGS += -L${LOCALBASE}/lib" >> ${WRKSRC}/toolkit/components/Makefile.in

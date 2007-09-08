@@ -212,11 +212,11 @@ lib/gnumeric/%%VERSION%%/plugins/oleo/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/openoffice/openoffice.la
 lib/gnumeric/%%VERSION%%/plugins/openoffice/openoffice.so
 lib/gnumeric/%%VERSION%%/plugins/openoffice/plugin.xml
-%%PERL%%lib/gnumeric/%%VERSION%%/plugins/perl-func/perl_func.pl
-%%PERL%%lib/gnumeric/%%VERSION%%/plugins/perl-func/plugin.xml
-%%PERL%%lib/gnumeric/%%VERSION%%/plugins/perl-loader/perl_loader.la
-%%PERL%%lib/gnumeric/%%VERSION%%/plugins/perl-loader/perl_loader.so
-%%PERL%%lib/gnumeric/%%VERSION%%/plugins/perl-loader/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/perl-func/perl_func.pl
+lib/gnumeric/%%VERSION%%/plugins/perl-func/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/perl-loader/perl_loader.la
+lib/gnumeric/%%VERSION%%/plugins/perl-loader/perl_loader.so
+lib/gnumeric/%%VERSION%%/plugins/perl-loader/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/plan_perfect/plan_perfect.la
 lib/gnumeric/%%VERSION%%/plugins/plan_perfect/plan_perfect.so
 lib/gnumeric/%%VERSION%%/plugins/plan_perfect/plugin.xml
@@ -904,8 +904,8 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/py-func
 @dirrm lib/gnumeric/%%VERSION%%/plugins/psiconv
 @dirrm lib/gnumeric/%%VERSION%%/plugins/plan_perfect
-%%PERL%%@dirrm lib/gnumeric/%%VERSION%%/plugins/perl-loader
-%%PERL%%@dirrm lib/gnumeric/%%VERSION%%/plugins/perl-func
+@dirrm lib/gnumeric/%%VERSION%%/plugins/perl-loader
+@dirrm lib/gnumeric/%%VERSION%%/plugins/perl-func
 @dirrm lib/gnumeric/%%VERSION%%/plugins/openoffice
 @dirrm lib/gnumeric/%%VERSION%%/plugins/oleo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/numtheory

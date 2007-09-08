@@ -25,19 +25,8 @@ MAN3=		Pod::Checker.3 Pod::Find.3 Pod::InputObjects.3 \
 		Pod::ParseUtils.3 Pod::Parser.3 Pod::PlainText.3 Pod::Select.3 \
 		Pod::Usage.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-PLIST_SUB+=	PL_FILES=""
-.else
-.undef		MAN1
-PLIST_SUB+=	PL_FILES="@comment "
-.endif
-
 post-patch:
-.if ${PERL_LEVEL} >= 500600
 	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
-.endif
 	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} {} \;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -169,12 +169,4 @@ MAN3=	Locale::RecodeData::IBM862.3 \
 	Locale::RecodeData::IBM290.3 \
 	Locale::RecodeData::IBM903.3 \
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} > 500600
-PLIST_SUB=	NEWPERL=""
-.else
-PLIST_SUB=	NEWPERL="@comment "
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

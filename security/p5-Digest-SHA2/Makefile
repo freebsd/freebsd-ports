@@ -26,15 +26,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Digest::SHA2.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch-SHA2.xs
-
-post-patch:
-	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/SHA2.pm
-	${PERL} -pi -e '$$_="" if m{warnings}' ${WRKSRC}/SHA2.pm ${WRKSRC}/t/*.t
-	${PERL} -pi -e 's/\)/, char **env\)/ if m{int main}' ${WRKSRC}/_sha2.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

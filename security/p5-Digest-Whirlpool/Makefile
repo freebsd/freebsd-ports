@@ -21,15 +21,4 @@ PERL_CONFIGURE=	yes
 MAN1=	whirlpoolsum.1
 MAN3=	Digest::Whirlpool.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch-Whirlpool.xs
-
-post-patch:
-	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/Whirlpool.pm
-	${PERL} -pi -e '$$_="" if m{warnings}' ${WRKSRC}/Whirlpool.pm ${WRKSRC}/t/*.t
-	${PERL} -pi -e 's/\)/, char **env\)/ if m{int main}' ${WRKSRC}/_whirlpool.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

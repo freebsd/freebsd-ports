@@ -50,15 +50,6 @@ post-configure:
 		     -e 'if (/manifypods :/) {$$_ .= "\tlib/CGI/Kwiki/Config.pm \\\n\tlib/CGI/Kwiki/Config_yaml.pm \\\n" };' \
 		     -e 'if (/\@\$$\(POD2MAN\)/) { $$_ .= "\tlib/CGI/Kwiki/Config.pm \\\n\t\$$(INST_MAN3DIR)/CGI::Kwiki::Config.\$$(MAN3EXT) \\\n\tlib/CGI/Kwiki/Config_yaml.pm \\\n\t\$$(INST_MAN3DIR)/CGI::Kwiki::Config_yaml.\$$(MAN3EXT) \\\n"};' \
 			${WRKSRC}/Makefile
-.if ${PERL_LEVEL} < 500601
-EXTRA_PATCHES=	${FILESDIR}/p5005-patch-CGI-Kwiki-Template.pm
-post-patch:
-	${PERL} -pi -e '$$_ = "" if /warnings/;' \
-	             -e 's/\$$\w+(->\w+)?->\$$\w+\b(?!\()/$$&()/g;' \
-		     ${WRKSRC}/lib/CGI/Kwiki/New.pm \
-		     ${WRKSRC}/lib/CGI/Kwiki/Prefs.pm
-	@${FIND} ${WRKSRC} -name \*.orig | ${XARGS} ${RM}
-.endif
 .endif
 
 .include <bsd.port.post.mk>

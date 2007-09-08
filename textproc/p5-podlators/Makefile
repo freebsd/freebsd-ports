@@ -22,26 +22,13 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=		pod2man.1 pod2text.1
 MAN3=		Pod::Man.3 Pod::ParseLink.3 Pod::Text.3 Pod::Text::Color.3 \
 		Pod::Text::Overstrike.3 Pod::Text::Termcap.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500600
-.undef MAN1
-PLIST_SUB=	PL_FILES="@comment "
-.else
-RUN_DEPENDS+=	${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
-PLIST_SUB=	PL_FILES=""
-.endif
-
 post-patch:
-.if ${PERL_LEVEL} >= 500600
 	@${REINPLACE_CMD} -Ee '/(pod2man|pod2text)/d' ${WRKSRC}/Makefile.PL
-.endif
 	@${REINPLACE_CMD} -e 's/->\$$method;/->\$$method\(\);/g' ${WRKSRC}/lib/Pod/*.pm
 	@${REINPLACE_CMD} -e 's/\$${char}/(\$${char})/g' ${WRKSRC}/lib/Pod/Text/*.pm
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
