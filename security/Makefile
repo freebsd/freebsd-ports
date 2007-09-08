@@ -10,6 +10,7 @@
     SUBDIR += acid
     SUBDIR += aescrypt
     SUBDIR += aespipe
+    SUBDIR += afterglow
     SUBDIR += aide
     SUBDIR += aimsniff
     SUBDIR += altivore
