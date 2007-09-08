@@ -1,7 +1,6 @@
 %%CLIENT%%bin/alienarena
 %%DEDICATED%%bin/alienarena-ded
 %%SDL%%bin/alienarena-sdl
-%%LIBDIR%%/arena/ctf.cfg
 %%LIBDIR%%/arena/default.cfg
 %%LIBDIR%%/arena/game.so
 %%LIBDIR%%/arena/maps.lst
@@ -9,11 +8,9 @@
 %%LIBDIR%%/arena/pics
 %%LIBDIR%%/arena/server.cfg
 %%LIBDIR%%/botinfo
-%%DEDICATED%%%%LIBDIR%%/crded
-%%CLIENT%%%%LIBDIR%%/crx
-%%SDL%%%%LIBDIR%%/crx.sdl
 %%LIBDIR%%/data1/default.cfg
 %%LIBDIR%%/data1/env
+%%LIBDIR%%/data1/fonts
 %%LIBDIR%%/data1/game.so
 %%LIBDIR%%/data1/gfx
 %%LIBDIR%%/data1/levelshots
