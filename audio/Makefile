@@ -117,6 +117,7 @@
     SUBDIR += easytag-devel
     SUBDIR += eawpats
     SUBDIR += eawplus
+    SUBDIR += ecamegapedal
     SUBDIR += ecasound
     SUBDIR += ecawave
     SUBDIR += emms
