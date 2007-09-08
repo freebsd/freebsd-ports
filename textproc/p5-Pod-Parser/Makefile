@@ -20,7 +20,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=		pod2usage.1 podchecker.1 podselect.1
 MAN3=		Pod::Checker.3 Pod::Find.3 Pod::InputObjects.3 \
 		Pod::ParseUtils.3 Pod::Parser.3 Pod::PlainText.3 Pod::Select.3 \
 		Pod::Usage.3
