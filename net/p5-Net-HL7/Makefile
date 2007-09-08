@@ -29,16 +29,10 @@ MAN3=		Net::HL7.3 \
 		Net::HL7::Segments::MSH.3 \
 		Net::HL7::Messages::ACK.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6 or better. Please install lang/perl5.8 and retry
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

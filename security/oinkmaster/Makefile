@@ -26,12 +26,6 @@ PLIST_FILES=	bin/oinkmaster etc/oinkmaster.conf.sample
 PORTDOCS=	README
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		needs at least perl 5.6.1
-.endif
-
 MAN1=		oinkmaster.1
 MANCOMPRESSED=	no
 
@@ -49,4 +43,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

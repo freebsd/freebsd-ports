@@ -45,10 +45,4 @@ post-patch:
 ONLY_FOR_ARCHS=		i386 amd64 alpha
 ONLY_FOR_ARCHS_REASON=	Big endian architectures not supported yet
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=	perl 5.6.1 or newer required. Install lang/perl5 or lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

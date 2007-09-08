@@ -18,14 +18,8 @@ COMMENT=	Easy way to use the associate option from HTML::Template
 RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		HTML::Template::HashWrapper.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

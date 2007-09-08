@@ -25,10 +25,4 @@ MAN3=		XML::DOM2.3 XML::DOM2::DOM::Element.3 XML::DOM2::Element.3 \
 		XML::DOM2::Element::DocumentType.3 XML::DOM2::Parser.3 \
 		XML::DOM2::XPath.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -20,18 +20,12 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-D
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/Crypt/OICQ.pm:${PORTSDIR}/security/p5-Crypt-OICQ
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Net::OICQ.3
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800 # inherits from security/p5-Crypt-OICQ
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
-.endif
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/qq ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/demo1 ${PREFIX}/bin/qq-demo1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -27,18 +27,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 SUB_FILES=	pkg-message
 
 MAN1=		ldapsh.1
-MAN3=		Net::LDAP::Shell.3 \
+MAN3=		Net::LDAP::Shell.3 Net::LDAP::Config.3 \
 		Net::LDAP::Shell::Parse.3 Net::LDAP::Shell::Util.3
+		
 
 PERL_CONFIGURE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} > 500600
-MAN3+=		Net::LDAP::Config.3
-.else
-BUILD_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/local/bin/perl,${PERL}," ${WRKSRC}/ldapsh
@@ -49,4 +42,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/ldapsh_config ${EXAMPLESDIR}/
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

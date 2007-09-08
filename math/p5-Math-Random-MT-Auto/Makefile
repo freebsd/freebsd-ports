@@ -18,15 +18,11 @@ COMMENT=	Auto-seeded Mersenne Twister PRNGs
 RUN_DEPENDS=	${SITE_PERL}/Object/InsideOut.pm:${PORTSDIR}/devel/p5-Object-InsideOut \
 		p5-Exception-Class>=1.22:${PORTSDIR}/devel/p5-Exception-Class
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+	# Inherited from p5-Object-InsideOut
 
 MAN3=		Math::Random::MT::Auto.3 Math::Random::MT::Auto::Range.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800	# Inherited from p5-Object-InsideOut
-IGNORE=		requires perl 5.8 or later. Install lang/perl5.8 and try again
-.endif
 
 .if ${PERL_LEVEL} < 500808
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.18:${PORTSDIR}/lang/p5-Scalar-List-Utils

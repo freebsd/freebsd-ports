@@ -17,13 +17,6 @@ COMMENT=	Calculate Distances and Closest Locations
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-# Module from CPAN written for 5.6 or later
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
-.endif
-
 MAN3=		Geo::Distance.3
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

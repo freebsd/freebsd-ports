@@ -28,10 +28,6 @@ OPTIONS=	X11	"Enable X11 Clipboard support"	off
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
 .if defined(WITH_X11)
 BUILD_DEPENDS+=	${SITE_PERL}/Clipboard.pm:${PORTSDIR}/x11/p5-Clipboard
 .else

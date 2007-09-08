@@ -45,10 +45,6 @@ PLIST_SUB+=	NLS=""
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500806
-IGNORE=		needs Perl 5.8.6 or above (lang/perl5.8)
-.endif
-
 .if !defined(WITHOUT_FASTCGI)
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 BUILD_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
@@ -71,7 +67,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-
 .endif
 
 HAS_CONFIGURE=	yes
-USE_PERL5=	yes
+USE_PERL5=	5.8.6+
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-confdir=${PREFIX}/etc/sympa \
 		--with-initdir=${PREFIX}/etc/rc.d \

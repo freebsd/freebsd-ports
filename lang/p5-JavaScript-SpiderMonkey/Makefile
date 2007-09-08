@@ -28,14 +28,4 @@ post-patch:
 
 MAN3=		JavaScript::SpiderMonkey.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000 #inherited from lang/spidermonkey
-BROKEN=	does not compile on FreeBSD 4.x
-.endif
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

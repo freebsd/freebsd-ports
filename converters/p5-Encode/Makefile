@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Provides interfaces between strings and the rest of the system
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.7.3+
 
 MAN3=		Encode.3 \
 		Encode::Alias.3 \
@@ -37,10 +37,6 @@ MAN3=		Encode.3 \
 		encoding.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-IGNORE=		requires Perl 5.7.3 or above
-.endif
 
 .if ${PERL_LEVEL} > 500800
 post-patch:

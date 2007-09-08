@@ -42,7 +42,7 @@ p5-Catalyst-Plugin-Authentication>=0.07:${PORTSDIR}/www/p5-Catalyst-Plugin-Authe
 	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 	p5-version>=0:${PORTSDIR}/devel/p5-version
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN1=	instantcrud.pl.1
 MAN3=	Catalyst::Example::Controller::InstantCRUD.3 \
@@ -55,8 +55,4 @@ MAN3=	Catalyst::Example::Controller::InstantCRUD.3 \
 	Catalyst::Plugin::Auth::Utils.3 \
 	HTML::Widget::Element::DoubleSelect.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

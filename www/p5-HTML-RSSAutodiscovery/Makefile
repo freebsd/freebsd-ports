@@ -21,12 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600	# Inherited from both dependencies
-IGNORE=		requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
-.endif
-
 MAN3=		HTML::RSSAutodiscovery.3
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

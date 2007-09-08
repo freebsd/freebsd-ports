@@ -15,14 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Detect encoding of the current terminal
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.7.2+
 
 MAN3=		Term::Encoding.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500702
-IGNORE=		requires perl 5.7.2 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

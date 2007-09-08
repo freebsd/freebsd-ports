@@ -28,13 +28,7 @@ PLIST_FILES=	bin/latexdiff \
 		bin/latexdiff-so \
 		bin/latexrevise
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6 or above. Please use the lang/perl port to install it
-.endif
-
 do-build:
 # empty
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

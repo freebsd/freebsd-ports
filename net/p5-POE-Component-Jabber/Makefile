@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.8+	# required by vendor
 CONFIGURE_ARGS=	</dev/null
 
 MAN3=		POE::Component::Jabber.3 POE::Component::Jabber::Error.3 \
@@ -41,10 +41,4 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500808 # required by vendor
-IGNORE=	requires at least Perl 5.8.8.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

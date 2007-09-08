@@ -21,15 +21,11 @@ BUILD_DEPENDS=	p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 DEPRECATED=	Refer to the documentation for details on how to reconfigure your Catalyst application to avoid this module
 
 MAN3=	Catalyst::Plugin::Cache::Backend::FastMmap.3 \
 	Catalyst::Plugin::Cache::Store::FastMmap.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500801
-IGNORE=	requires at least Perl 5.8.1. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

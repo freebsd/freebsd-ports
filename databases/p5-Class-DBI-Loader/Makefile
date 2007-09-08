@@ -45,10 +45,6 @@ OPTIONS=	PGSQL "Enable support for PostgreSQL" Off \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or higher. Please install lang/perl5.8 and try again
-.endif
-
 .if defined(WITH_PGSQL)
 RUN_DEPENDS+=	${SITE_PERL}/Class/DBI/Pg.pm:${PORTSDIR}/databases/p5-Class-DBI-Pg
 .endif

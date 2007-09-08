@@ -17,13 +17,9 @@ COMMENT=	MeCab library module for Perl5
 
 LIB_DEPENDS=	mecab.1:${PORTSDIR}/japanese/mecab
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl 5.8.x or later.  Install lang/perl5.8 and try again
-.endif
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 

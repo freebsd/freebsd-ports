@@ -20,13 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
 PERL_CONFIGURE=	yes
 MAN3=		SSN::Validate.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6 or higher
-.endif
-
 test: all
 	cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -22,7 +22,7 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		icudata.36:${PORTSDIR}/devel/icu
 
 USE_GCC=	3.4+
-USE_PERL5=	yes
+USE_PERL5=	5.8.0+
 USE_GMAKE=	yes
 
 INSTALLS_SHLIB=	yes
@@ -77,10 +77,6 @@ PLIST_SUB+=	JIT="@comment "
 
 .if ${ARCH} == ia64
 BROKEN=		Does not compile on ia64
-.endif
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	perl 5.8 or newer required. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>

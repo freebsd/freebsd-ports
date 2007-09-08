@@ -27,8 +27,4 @@ MAN3=		HTTP::Body::OctetStream.3 \
 		HTTP::Body.3 \
 		HTTP::Body::MultiPart.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500601
-IGNORE=	requires at least Perl 5.6.1. Install lang/perl5, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

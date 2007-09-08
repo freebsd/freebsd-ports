@@ -14,14 +14,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		mat@FreeBSD.org
 COMMENT=		Read and write vCard files (RFC 2426)
 
-PERL_CONFIGURE=		yes
+PERL_CONFIGURE=		5.8.0+
 
 MAN3=			Net::vFile.3 Net::vCard.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE="Need at least perl 5.8 to build"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

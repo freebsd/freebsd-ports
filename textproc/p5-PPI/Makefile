@@ -109,10 +109,4 @@ MAN3=	PPI.3 \
 	PPI::Tokenizer.3 \
 	PPI::Transform.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=	requires Perl 5.6.1 or newer. Install lang/perl5 or lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

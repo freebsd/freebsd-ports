@@ -26,12 +26,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/Template/Plugin/Class.pm:${PORTSDIR}/www/p5-Template-Plugin-Class
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=		Catalyst::Helper::Controller::Scaffold.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500801
-IGNORE= requires at least Perl 5.8.1. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

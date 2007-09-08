@@ -22,12 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	POE::XS::Queue::Array.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
-RUN_DEPENDS+=	${SITE_PERL}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
-
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

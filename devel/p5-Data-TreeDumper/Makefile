@@ -26,15 +26,4 @@ MAN3=		Data::TreeDumper.3
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e 's/^our (\S+)/use vars q{$$1};$$1/g;' \
-		-e '$$_ = "" if /warnings|5.006/;' \
-		-e 's/}\(/}->(/g;' \
-		-e '$$_ .= "->" if $$. == 442;' \
-		${WRKSRC}/TreeDumper.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

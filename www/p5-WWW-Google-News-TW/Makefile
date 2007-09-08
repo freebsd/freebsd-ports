@@ -19,14 +19,8 @@ BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+	# inherited from dependency upon utf8.pm
 
 MAN3=		WWW::Google::News::TW.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800 # inherited from dependency upon utf8.pm
-IGNORE=		requires perl 5.8 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

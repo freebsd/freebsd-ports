@@ -27,10 +27,4 @@ MAN3=		POE::Component::SNMP.3
 post-patch:
 	@${TOUCH} ${WRKSRC}/config.cache
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600 # inherited from p5-Net-SNMP
-IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

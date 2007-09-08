@@ -15,14 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A module for merging hierarchies using the C3 algorithm
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.0+
 
 MAN3=		Algorithm::C3.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later, install lang/perl5.8
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

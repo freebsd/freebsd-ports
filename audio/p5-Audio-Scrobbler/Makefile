@@ -25,10 +25,4 @@ PERL_CONFIGURE=	yes
 MAN1=		scrobbler-helper.1
 MAN3=		Audio::Scrobbler.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		needs at least Perl 5.6 for the UTF-8 handling
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

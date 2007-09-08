@@ -29,11 +29,4 @@ MAN3=		XML::Sablotron.3 XML::Sablotron::DOM.3 \
 		XML::Sablotron::DOM::DOMHandler.3 XML::Sablotron::SAXBuilder.3 \
 		XML::Sablotron::Situation::DOMHandlerDispatcher.3
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${PERL_LEVEL} < 500600
-	@${PERL} -pi -e 's/^our //; $$_="use vars qw(\$$libs \@extras);\n" if $$.==47' ${WRKSRC}/Makefile.PL
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

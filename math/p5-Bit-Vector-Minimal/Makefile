@@ -19,10 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Bit::Vector::Minimal.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	This port requires perl 5.6 or above.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

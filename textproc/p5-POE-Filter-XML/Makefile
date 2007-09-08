@@ -23,17 +23,11 @@ BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${SITE_PERL}/Filter/Template.pm:${PORTSDIR}/devel/p5-Filter-Template
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.1+	# required by vendor
 
 MAN3=		POE::Filter::XML.3 \
 		POE::Filter::XML::NS.3 \
 		POE::Filter::XML::Node.3 \
 		POE::Filter::XML::Utils.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801 # required by vendor
-IGNORE=	requires at least Perl 5.8.1.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

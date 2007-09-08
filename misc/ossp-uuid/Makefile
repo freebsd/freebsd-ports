@@ -27,7 +27,7 @@ MAN1=	uuid-config.1 uuid.1
 MAN3=	uuid.3
 
 .if defined(WITH_PERL)
-USE_PERL5=	yes
+USE_PERL5=	5.8.0+
 CONFIGURE_ENV+=	PERL=${PERL5}
 CONFIGURE_ARGS+=	--with-perl
 PLIST_SUB+=	WITH_PERL=''
@@ -37,15 +37,9 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 PLIST_SUB+=	WITH_PERL='@comment '
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_PERL) && ${PERL_LEVEL} < 500800
-IGNORE=	supports Perl 5.8.0 or above only
-.endif
-
 regression-test: test
 
 test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -25,10 +25,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Application::Plugin::HTDot.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		needs Perl 5.6.1 or above (lang/perl5.8)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

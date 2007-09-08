@@ -18,15 +18,9 @@ RUN_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
+USE_PERL5=	5.8.0+
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/contrib/client-side
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
 
 do-build:
 	${SED} -E \
@@ -43,4 +37,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/svn_load_dirs.README ${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -26,10 +26,4 @@ MAN3=		XML::AutoWriter.3 \
 post-patch:
 	${RM} ${WRKSRC}/lib/XML/*.orig
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS=	${SITE_PERL}/fields.pm:${PORTSDIR}/devel/p5-base
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

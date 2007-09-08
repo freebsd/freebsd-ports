@@ -88,8 +88,4 @@ RUN_DEPENDS+=	${SITE_PERL}/Finance/Currency/Convert/WebserviceX.pm:${PORTSDIR}/f
 RUN_DEPENDS+=	${SITE_PERL}/Locale/Currency.pm:${PORTSDIR}/misc/p5-Locale-Codes
 .endif
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=	perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again
-.endif
-
 .include <bsd.port.post.mk>

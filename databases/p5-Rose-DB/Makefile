@@ -28,7 +28,7 @@ BUILD_DEPENDS=	p5-Rose-DateTime>=0.532:${PORTSDIR}/devel/p5-Rose-DateTime \
 		${SITE_PERL}/${PERL_ARCH}/YAML/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	Rose::DB.3 \
 	Rose::DB::Constants.3 \
@@ -42,10 +42,4 @@ MAN3=	Rose::DB.3 \
 	Rose::DB::SQLite.3 \
 	Rose::DB::Tutorial.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl 5.8 or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

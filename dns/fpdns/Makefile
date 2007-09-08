@@ -23,12 +23,6 @@ PERL_CONFIGURE=	yes
 
 MAN1=		fpdns.1
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		Requires at least Perl version 5.6.0
-.endif
-
 verify:	checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
 
@@ -41,4 +35,4 @@ post-build:
 post-install:
 	${RM} ${SITE_PERL}/${PERL_ARCH}/auto/Net/DNS/Fingerprint/.packlist
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

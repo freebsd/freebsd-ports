@@ -29,17 +29,13 @@ RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/opensp \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5_RUN=	5.8.0+
 
 SUB_FILES=	pkg-message validator.conf.sample
 
 OPTIONS=	HTML_TIDY "Enable HTML Markup Cleaning" On
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires Perl 5.8.0 or better to run
-.endif
 
 .if !defined(WITHOUT_HTML_TIDY)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/HTML/Tidy.pm:${PORTSDIR}/textproc/p5-HTML-Tidy

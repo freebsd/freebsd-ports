@@ -15,17 +15,13 @@ MASTER_SITES=	http://critical.ch/distfiles/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Merges patch-rejects and runs a merge program to verify the changes
 
-USE_PERL5=	yes
+USE_PERL5=	5.8.6+
 NO_BUILD=	yes
 
 PORTDOCS=	CHANGELOG README vimrc
 PLIST_FILES=	bin/rej bin/rej-qp bin/rej-mp
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500806
-IGNORE=		needs Perl 5.8.6 or above (lang/perl5.8)
-.endif
 
 post-patch:
 .for f in ${PORTNAME} qp mp

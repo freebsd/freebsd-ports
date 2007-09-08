@@ -17,12 +17,6 @@ COMMENT=	Converts numeric values to and from their Japanese string equivalents
 
 MAN3=	Lingua::JA::Numbers.3
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801 # as set by vendor
-IGNORE=	requires at least Perl 5.8.1.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

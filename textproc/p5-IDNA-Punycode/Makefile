@@ -22,10 +22,4 @@ PERL_CONFIGURE=	YES
 
 MAN3=		IDNA::Punycode.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6.0 or later. Install lang/per5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

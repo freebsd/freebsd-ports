@@ -17,10 +17,4 @@ COMMENT=	Unicode Normalization Forms
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires at least Perl5.6
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

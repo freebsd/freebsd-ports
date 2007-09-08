@@ -46,10 +46,6 @@ OPTIONS+=	THREADS	"Use pthreads"				off
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.x or later to build. Install lang/perl5.8 then try again
-.endif
-
 .if defined(WITH_AVCODEC)
 CONFIGURE_ARGS+=--with-lavc
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg

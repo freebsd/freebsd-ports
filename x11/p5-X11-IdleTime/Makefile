@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_XLIB=	yes
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MANPREFIX=	${SITE_PERL}
 MAN3=		X11::IdleTime.3
@@ -32,13 +32,4 @@ post-patch:
 	@${PERL} -pi -e "s,[\d\.]+,${PORTVERSION:C/0./0.0/}, if m{VERSION}" ${WRKSRC}/${i}
 .endfor
 
-.include <bsd.port.pre.mk>
-
-##
-## this port requires PERL 5.8.x or later
-##
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

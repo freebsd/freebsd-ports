@@ -15,15 +15,13 @@ PKGNAMEPREFIX=	p5-Devel-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl code profiler
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.6.0-
+USE_PERL5_REASON=	Version included in perl distribution is newer
+
+DEPRECATED=	only works for old, unsupported Perl versions
+EXPIRATION_DATE=	2007-09-11
 
 MAN1=		dprofpp.1
 MAN3=		Devel::DProf.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500600
-IGNORE=		"Version included in perl distribution is newer"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -24,10 +24,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Flickr::API.3 Flickr::API::Request.3 Flickr::API::Response.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

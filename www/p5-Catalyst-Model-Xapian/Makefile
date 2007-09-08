@@ -21,13 +21,9 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Search-Xapian>=0.9.2.4:${PORTSDIR}/databases/p5-Search-Xapian
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.1+
 
 MAN3=	Catalyst::Model::Xapian.3 \
 	Catalyst::Helper::Model::Xapian.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500800
-IGNORE=	requires Perl 5.8. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

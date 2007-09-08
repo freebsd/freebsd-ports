@@ -34,10 +34,6 @@ CONFIGURE_ARGS+=	--enable-ipv6
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.1 or later. Install lang/perl5 then try again
-.endif
-
 .if ${ARCH} != "i386"
 BROKEN=		Does not compile on !i386
 .endif

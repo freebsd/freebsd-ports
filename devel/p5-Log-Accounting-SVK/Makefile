@@ -23,15 +23,9 @@ BUILD_DEPENDS=	${SITE_PERL}/SVK.pm:${PORTSDIR}/devel/svk \
 		${SITE_PERL}/Algorithm/Accounting.pm:${PORTSDIR}/devel/p5-Algorithm-Accounting
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN1=	svk-accounting.pl.1 svk-developer-graph.pl.1
 MAN3=	Log::Accounting::SVK.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	currently requires at least Perl 5.8.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

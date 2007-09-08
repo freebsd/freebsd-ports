@@ -19,15 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Lingua::Han::Utils.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
-.endif
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Encode/Guess.pm:${PORTSDIR}/converters/p5-Encode
-BUILD_DEPENDS=	${RUN_DEPENDS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

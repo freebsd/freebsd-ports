@@ -19,14 +19,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/Class/DBI/Sweet.pm:${PORTSDIR}/databases/p5-Class-DBI-Sweet
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.2+
 
 MAN3=		Catalyst::Model::CDBI::Sweet.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 500801
-IGNORE=		Install lang/perl5.8, and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

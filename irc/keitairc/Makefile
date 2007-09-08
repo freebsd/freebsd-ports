@@ -30,6 +30,8 @@ EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=	-p
 EXTRACT_AFTER_ARGS=	${WRKDIR}
 
+USE_PERL5=	yes
+
 post-patch:
 	${REINPLACE_CMD} -e "s,^#!/usr/bin/perl$$,#!${PERL}," ${WRKSRC}/keitairc
 

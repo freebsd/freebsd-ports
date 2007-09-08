@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
 		${RT_PATH}/lib/RT.pm:${PORTSDIR}/www/rt34
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	5.8.3+
 
 RT_PATH?=	${LOCALBASE}/rt3
 PLIST_SUB=	RT_PATH=${RT_PATH}  RTPLIST=${RT_PATH:S/^${PREFIX}\///}
@@ -29,10 +29,4 @@ do-configure:
 		${SETENV} ${CONFIGURE_ENV} \
 		${PERL5} Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500803
-IGNORE=	requires at least Perl5.8.3 due to dependencies
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

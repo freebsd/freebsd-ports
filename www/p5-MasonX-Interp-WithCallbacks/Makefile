@@ -19,14 +19,8 @@ BUILD_DEPENDS=	${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/Params/CallbackRequest.pm:${PORTSDIR}/devel/p5-Params-CallbackRequest
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.0+	# inherited from devel/p5-Exception-Class
 
 MAN3=		MasonX::Interp::WithCallbacks.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800 # inherited from devel/p5-Exception-Class
-IGNORE=	requires at least Perl 5.8.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

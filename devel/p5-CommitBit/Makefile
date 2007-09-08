@@ -20,7 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/Module/CoreList.pm:${PORTSDIR}/devel/p5-Module-CoreLis
 		p5-Jifty>=0.60728:${PORTSDIR}/www/p5-Jifty \
 		p5-Text-Password-Pronounceable>=0:${PORTSDIR}/security/p5-Text-Password-Pronounceable
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.3+
 
 MAN3=		CommitBit.3 \
 		CommitBit::Action::ConfirmEmail.3 \
@@ -29,10 +29,4 @@ MAN3=		CommitBit.3 \
 		CommitBit::Notification::ConfirmAddress.3 \
 		CommitBit::Notification::InviteToProject.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500803 # from p5-Jifty
-IGNORE=		requires perl 5.8.3 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

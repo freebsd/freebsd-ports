@@ -20,12 +20,4 @@ PERL_MODBUILD=	yes
 
 MAN3=	Authen::Libwrap.3
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${PERL} -pi -e 's/\s(0\.20);/ q($$1);/' ${WRKSRC}/lib/Authen/Libwrap.pm
-.if ${PERL_LEVEL} < 500600
-	@${PERL} -pi -e 'undef $$_ if /^\s*(?:no|use) warnings/o' ${WRKSRC}/Build.PL ${WRKSRC}/lib/Authen/Libwrap.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

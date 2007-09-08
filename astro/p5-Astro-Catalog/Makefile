@@ -59,12 +59,6 @@ MAN3=		Astro::Catalog.3 \
 		Astro::Catalog::Transport::WebService.3 \
 		Tk::AstroCatalog.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
 post-patch:
 	@${PERL} -pi -e "s!^(my.*cfg_to_install).*!\$$1=\"\";!;" ${WRKSRC}/Makefile.PL
 
@@ -76,4 +70,4 @@ post-install:
 .endif
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

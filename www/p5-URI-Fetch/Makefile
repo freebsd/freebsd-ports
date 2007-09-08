@@ -45,7 +45,4 @@ MAN3=	URI::Fetch.3 \
 post-patch:
 	${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires Perl 5.6 or later. Please install lang/perl5 or lang/perl5.8 and try again
-.endif
 .include <bsd.port.post.mk>

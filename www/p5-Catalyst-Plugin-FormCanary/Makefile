@@ -18,15 +18,11 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Plugin-Session>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Catalyst::Plugin::FormCanary.3
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,build_requires,' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500801
-IGNORE=	requires at least Perl 5.8.1. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

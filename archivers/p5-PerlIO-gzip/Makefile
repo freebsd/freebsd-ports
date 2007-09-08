@@ -15,14 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Perl extension to provide a PerlIO layer to gzip/gunzip
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		PerlIO::gzip.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	Perl 5.8 or newer required. Install lang/perl5.8 and try again.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

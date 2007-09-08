@@ -25,7 +25,7 @@ BUILD_DEPENDS=	\
 	p5-DBIx-Class-Schema-Loader>=0.03006:${PORTSDIR}/databases/p5-DBIx-Class-Schema-Loader
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Catalyst::Helper::Model::DBIC::Schema.3 \
 	Catalyst::Model::DBIC::Schema.3
@@ -33,8 +33,4 @@ MAN3=	Catalyst::Helper::Model::DBIC::Schema.3 \
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,^feature, .. m,;$$,' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500800
-IGNORE=	requires Perl 5.8. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

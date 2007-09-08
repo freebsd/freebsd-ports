@@ -21,7 +21,7 @@ RUN_DEPENDS=	\
 	p5-Sub-Name>=0.02:${PORTSDIR}/devel/p5-Sub-Name \
 	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.0+
 
 MAN3=	Moose.3 \
 	Moose::Cookbook.3 \
@@ -58,8 +58,4 @@ MAN3=	Moose.3 \
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Build.PL
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

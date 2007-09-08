@@ -23,10 +23,4 @@ PERL_CONFIGURE=	yes
 MAN1=		poepp.1
 MAN3=		POE::Devel::Profiler.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	Perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

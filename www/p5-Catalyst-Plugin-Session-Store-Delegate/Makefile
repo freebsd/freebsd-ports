@@ -19,14 +19,8 @@ BUILD_DEPENDS=	p5-Catalyst-Plugin-Session>=0.12:${PORTSDIR}/www/p5-Catalyst-Plug
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.2+
 
 MAN3=	Catalyst::Plugin::Session::Store::Delegate.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 500801
-IGNORE=	requires Perl 5.8.1. Install lang/perl5.8, and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

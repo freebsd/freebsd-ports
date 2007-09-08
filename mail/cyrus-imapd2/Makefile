@@ -134,10 +134,6 @@ post-patch:
 				  -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
 				  -e "s|%%CYRUS_GROUP%%|${CYRUS_GROUP}|g" \
 			${WRKSRC}/tools/mkimap
-.if ${PERL_LEVEL} < 500600
-		@${REINPLACE_CMD} -e "s|exec perl -x|exec perl -I${SITE_PERL} -x|" \
-			${WRKSRC}/perl/sieve/scripts/sieveshell.pl
-.endif
 
 post-install:
 .for f in ${CYRUS_MAN3}

@@ -18,14 +18,8 @@ COMMENT=	DBI Exception objects
 RUN_DEPENDS=	${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.0+
 
 MAN3=		Exception::Class::DBI.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800 # inherited from devel/p5-Exception-Class
-IGNORE=	requires at least Perl 5.8.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

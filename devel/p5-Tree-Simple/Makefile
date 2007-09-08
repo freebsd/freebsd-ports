@@ -25,8 +25,5 @@ MAN3=		Tree::Simple.3 Tree::Simple::Visitor.3
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
-.if ${PERL_LEVEL} < 500601
-IGNORE=		perl 5.8 or newer required. Install lang/perl5.8 and try again
-.endif
 
 .include <bsd.port.post.mk>

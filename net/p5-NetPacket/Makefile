@@ -22,10 +22,4 @@ MAN3=	NetPacket::LACP.3 NetPacket::IGMP.3 NetPacket::IP.3 \
 	NetPacket.3 NetPacket::UDP.3 NetPacket::Ethernet.3 \
 	NetPacket::ICMP.3 NetPacket::TCP.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -25,13 +25,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Search::Estraier.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600	# inherited from www/p5-libwww
-IGNORE=		requires at least Perl 5.6.  Please install lang/perl5.8 and try again
-.endif
-
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

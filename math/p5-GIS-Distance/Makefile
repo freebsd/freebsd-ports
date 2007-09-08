@@ -25,10 +25,4 @@ MAN3=		GIS::Distance.3 GIS::Distance::Cosine.3 \
 		GIS::Distance::Haversine.3 GIS::Distance::MathTrig.3 \
 		GIS::Distance::Polar.3 GIS::Distance::Vincenty.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601	# Inherited from devel/p5-Class-Measure
-IGNORE=		requires Perl 5.6.1 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

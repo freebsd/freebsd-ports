@@ -63,10 +63,6 @@ MAN7=	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 BROKEN=		Build fails on amd64 or ia64 (needs to build shared libraries with -fPIC)
 .endif
 
-.if ${PERL_LEVEL} < 500600
-BROKEN=		Does not compile with perl ${PERL_VERSION}
-.endif
-
 #   catpages are usually not installed, so they are not compressed.
 #   But they are really needed as docs, so we compress manually...
 .if !defined(NOMANCOMPRESS)

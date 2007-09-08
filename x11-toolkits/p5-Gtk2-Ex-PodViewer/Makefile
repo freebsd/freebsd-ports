@@ -22,15 +22,9 @@ BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN1=	podviewer.1
 MAN3=	${PORTNAME:S/-/::/g}.3 ${PORTNAME:S/-/::/g}::Parser.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl5.8 from ports
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

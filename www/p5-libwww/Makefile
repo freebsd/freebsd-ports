@@ -44,10 +44,4 @@ post-patch:
 		${WRKSRC}/lib/LWP/Protocol/mailto.pm
 	@${PERL} -pi -e 's!(?=prompt\()!1 || !g' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600 #inherited from Module::Build and security/p5-Authen-SASL
-IGNORE=	requires at least Perl 5.6 due to dependencies.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

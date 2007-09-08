@@ -15,14 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Fetch info from MPEG-4 files
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.7.3+	#inherited from p5-Encode
 
 MAN3=	MP4::Info.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703 #inherited from p5-Encode
-IGNORE=	requires at least Perl 5.7.3 to run.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -20,7 +20,7 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools
 
 USE_BZIP2=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5_RUN=	5.8.0+
 NO_BUILD=	yes
 USE_RC_SUBR=	gnump3d.sh
 SUB_LIST+=	PERL=${PERL}
@@ -31,10 +31,7 @@ CONFDIR=	${PREFIX}/etc/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-IGNORE=	needs at least perl 5.8. Do not use FreeBSD 4.x' system perl,\
-	it's outdated. Install lang/perl5.8 and issue 'use.perl port'
-.elif ${PERL_LEVEL} < 500806
+.if ${PERL_LEVEL} < 500806
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/converters/p5-Encode
 .endif
 

@@ -21,10 +21,4 @@ CONFIGURE_ARGS=	-noxs
 
 MAN3=		NetAddr::IP::UtilPP.3 NetAddr::IP::Util.3 NetAddr::IP::Lite.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.1 or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

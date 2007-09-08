@@ -37,10 +37,6 @@ OPTIONS	=	PYTHON	"Define if you want PYTHON bindings" OFF \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		required Perl 5.6 or newer. Install lang/perl5.8 or lang/perl5 and try again
-.endif
-
 .if defined(WITH_XML)
 USE_GNOME+=		libxml2
 PLIST_SUB+=		XML=""

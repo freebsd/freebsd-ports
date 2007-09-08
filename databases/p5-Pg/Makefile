@@ -19,11 +19,10 @@ MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	An interface for using perl5 to access PostgreSQL databases
 
 USE_PGSQL=	yes
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Pg.3
 
-PERL_CONFIGURE=	YES
 CONFIGURE_ENV=	POSTGRES_INCLUDE=${LOCALBASE}/include POSTGRES_LIB=${LOCALBASE}/lib
 
 .include <bsd.port.mk>

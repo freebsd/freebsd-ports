@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Net::SFTP::Foreign - Secure File Transfer Protocol client
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Net::SFTP::Foreign.3 \
 		Net::SFTP::Foreign::Attributes.3 \
@@ -25,10 +25,4 @@ MAN3=		Net::SFTP::Foreign.3 \
 		Net::SFTP::Foreign::Constants.3 \
 		Net::SFTP::Foreign::Local.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	This port requires perl 5.8.X.	Please install lang/perl5.8.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

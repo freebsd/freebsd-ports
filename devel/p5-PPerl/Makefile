@@ -17,7 +17,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Make perl scripts persistent in memory
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN1=	pperl.1

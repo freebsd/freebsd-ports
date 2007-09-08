@@ -23,7 +23,7 @@ BUILD_DEPENDS=	p5-Rose-DB>=0.734,1:${PORTSDIR}/databases/p5-Rose-DB \
 		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 OPTIONS=	FAST_CLONE	"use Scalar::Util::Clone (requires perl5.8+)"	off
 
@@ -100,9 +100,5 @@ MAN3=	Rose::DB::Object.3 \
 	Rose::DB::Object::Std::Metadata.3 \
 	Rose::DB::Object::Tutorial.3 \
 	Rose::DB::Object::Util.3
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl 5.8 or later. Install lang/perl5 then try again
-.endif
 
 .include <bsd.port.post.mk>

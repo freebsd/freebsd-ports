@@ -17,12 +17,6 @@ COMMENT=	Perl bindings for the PC/SC Lite Framework
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		Requires perl-5.6.0 or better to build correctly
-.endif
-
 PERL_CONFIGURE=	yes
 MAKE_ENV=	"LOCALBASE=$(LOCALBASE)"
 
@@ -33,4 +27,4 @@ post-patch:
 		${WRKSRC}/Makefile.PL
 
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

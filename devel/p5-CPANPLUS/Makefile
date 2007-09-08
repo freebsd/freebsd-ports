@@ -45,10 +45,6 @@ OPTIONS=	TEST_REPORTER "Send reports to cpan-testers" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.1 or later. Install lang/perl5 then try again
-.endif
-
 .if defined(WITH_TEST_REPORTER)
 BUILD_DEPENDS+=	${SITE_PERL}/Test/Reporter.pm:${PORTSDIR}/devel/p5-Test-Reporter
 RUN_DEPENDS+=	${SITE_PERL}/Test/Reporter.pm:${PORTSDIR}/devel/p5-Test-Reporter

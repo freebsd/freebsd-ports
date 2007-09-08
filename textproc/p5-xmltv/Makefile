@@ -59,10 +59,6 @@ PORTDOCS=	COPYING \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} <= 500600
-IGNORE=	perl 5.6 or higher is required to build this port
-.endif
-
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	\
 	${SITE_PERL}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize \

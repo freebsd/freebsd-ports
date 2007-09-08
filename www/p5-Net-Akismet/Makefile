@@ -34,10 +34,4 @@ post-patch:
 test:		build
 		@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		needs Perl 5.6 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

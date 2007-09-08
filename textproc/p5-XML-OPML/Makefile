@@ -20,14 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 		${SITE_PERL}/XML/SimpleObject.pm:${PORTSDIR}/textproc/p5-XML-SimpleObject
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	XML::OPML.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires Perl5.8
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -26,10 +26,4 @@ MAN1=		crypt_file.1
 MAN3=		Filter::Crypto.3 Filter::Crypto::CryptFile.3 \
 		Filter::Crypto::Decrypt.3 PAR::Filter::Crypto.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

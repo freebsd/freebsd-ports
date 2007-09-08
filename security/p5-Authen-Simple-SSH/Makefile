@@ -21,12 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Authen::Simple::SSH.3
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.0+
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires at least Perl 5.8 due to dependencies.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

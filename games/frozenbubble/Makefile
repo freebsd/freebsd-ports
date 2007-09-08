@@ -23,8 +23,6 @@ USE_SDL=	mixer sdl pango
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 CONFIGURE_WRKSRC=	${WRKSRC}/c_stuff

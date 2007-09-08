@@ -26,11 +26,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balan
 		${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p5-Filter
 RUN_DEPENDS+=	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced \
 		${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p5-Filter
-.if ${PERL_LEVEL} < 500601
-post-patch:
-	@${PERL} -i -pe '$$_ = "" if /no warnings/' \
-		${WRKSRC}/lib/Filter/Simple.pm
-.endif
 .endif
 
 .include <bsd.port.post.mk>

@@ -21,13 +21,9 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.2+
 
 MAN3=	Catalyst::Helper::View::TTControllerLocal.3 \
 	Catalyst::View::TT::ControllerLocal.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500801
-IGNORE=	requires Perl 5.8. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

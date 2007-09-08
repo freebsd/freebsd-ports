@@ -15,14 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Symbolic link PerlIO layers
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		PerlIO::via::symlink.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		This program only support perl 5.8.0 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

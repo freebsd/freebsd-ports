@@ -22,14 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		WWW::Shorten::KUSO.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e 's/^our ([\$$\@]\w+)/use vars qw($$1); $$1/;' \
-		     -e '$$_ = "" if /use 5.006/;' \
-		     -e '$$_ = "" if /use warnings/;' \
-		 $$(${FIND} ${WRKSRC} -name '*.pm')
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

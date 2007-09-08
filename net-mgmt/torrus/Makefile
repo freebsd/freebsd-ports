@@ -42,7 +42,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
 		${SITE_PERL}/${PERL_ARCH}/APR/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .endif
 
-USE_PERL5_RUN=	YES
+USE_PERL5_RUN=	5.8.1+
 GNU_CONFIGURE=	YES
 
 TORRUS_USER?=	torrus
@@ -64,10 +64,6 @@ MAN7=		torrus_action_printemail.7 torrus_action_snmptrap.7 \
 		torrus_action_notify.7
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-IGNORE=		Port requires perl 5.8.1 or later. Install lang/perl5.8 then try again
-.endif
 
 pre-fetch:
 	@${ECHO_CMD} PREFIX = ${PREFIX}

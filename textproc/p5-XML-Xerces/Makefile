@@ -23,10 +23,4 @@ PERL_CONFIGURE=	YES
 CONFIGURE_ENV+=	XERCES_LIB="${LOCALBASE}/lib" \
 		XERCES_INCLUDE="${LOCALBASE}/include" \
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		this port requires perl 5.6.1 or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -18,14 +18,8 @@ COMMENT=	Extract data from an HTML table
 BUILD_DEPENDS=	p5-HTML-Parser>=3.34:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		HTML::TableParser.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later due to Unicode escapes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

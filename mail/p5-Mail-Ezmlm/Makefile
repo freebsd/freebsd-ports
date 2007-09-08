@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${EZMLM_DIR}/bin/ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
 
 EZMLM_DIR?=	${LOCALBASE}
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 .if defined(PACKAGE_BUILDING)

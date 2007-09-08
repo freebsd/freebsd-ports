@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${SITE_PERL}/Net/Server/Mail/ESMTP.pm:${PORTSDIR}/mail/p5-Net-Ser
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::Server::Mail::ESMTP::AUTH.3

@@ -31,10 +31,4 @@ MAN3=	WWW::Mechanize::Pluggable.3 \
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600 # inherited from devel/p5-Data-Dump-Streamer
-IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

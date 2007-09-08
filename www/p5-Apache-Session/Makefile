@@ -51,9 +51,6 @@ MAN3=		Apache::Session.3 \
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
-.endif
 .endif
 
 .include <bsd.port.post.mk>

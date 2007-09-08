@@ -26,12 +26,6 @@ PLIST_FILES+=	%%EXAMPLESDIR%%/100.ipfcount
 SUB_FILES=	pkg-message
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6 or higher - see the lang/perl5.8 port
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '1s,^#![^ ]*,#!${PERL},' ${WRKSRC}/ipfcount
 
@@ -51,4 +45,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

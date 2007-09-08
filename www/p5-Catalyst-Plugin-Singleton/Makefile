@@ -19,12 +19,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.1+
 
 MAN3=	Catalyst::Plugin::Singleton.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500801
-IGNORE=	requires at least Perl 5.8.1. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

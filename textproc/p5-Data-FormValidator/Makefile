@@ -26,7 +26,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod
 
-PERL_MODBUILD=		yes
+PERL_MODBUILD=	5.8.0+
 
 MAN3=		Data::FormValidator.3 \
 		Data::FormValidator::ConstraintsFactory.3 \
@@ -36,11 +36,4 @@ MAN3=		Data::FormValidator.3 \
 		Data::FormValidator::Filters.3 \
 		Data::FormValidator::Results.3
 
-.include <bsd.port.pre.mk>
-
-# fails a lot of tests with 5.6.X, so require 5.8.X
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

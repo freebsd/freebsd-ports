@@ -15,13 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	These are experimental Perl5 modules to handle various Unicode issues
 
+PERL_CONFIGURE=	5.7.2+
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500804
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 .endif
-
-PERL_CONFIGURE=	yes
 
 MAN3=		Unicode::CharName.3 Unicode::String.3
 

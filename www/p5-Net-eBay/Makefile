@@ -27,12 +27,6 @@ PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
 MAN3=		Net::eBay.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		needs Perl 5.6 or later
-.endif
-
 pre-configure:
 	${MKDIR} ${WRKSRC}/examples
 	${MV} ${WRKSRC}/*.pl ${WRKSRC}/examples
@@ -44,4 +38,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

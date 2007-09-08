@@ -27,11 +27,6 @@ MAN3=		Test::Harness.3 Test::Harness::Assert.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
-RUN_DEPENDS+=	${BUILD_DEPENDS}
-.endif
-
 .if ${PERL_LEVEL} >= 500800
 .undef MAN1
 PLIST_SUB+=	PL_FILES="@comment "
@@ -41,9 +36,6 @@ PLIST_SUB+=	PL_FILES=""
 
 post-patch:
 	@${REINPLACE_CMD} -e '/INSTALLDIRS/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
-.if ${PERL_LEVEL} < 500600
-	@${REINPLACE_CMD} -e 's/\^V/\]/;s/\%vd/\%d/' ${WRKSRC}/bin/prove
-.endif
 
 post-configure:
 .if ${PERL_LEVEL} >= 500800

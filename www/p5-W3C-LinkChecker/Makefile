@@ -28,12 +28,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 MAN1=		checklink.1
 MANCOMPRESSED=	no
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires at least Perl 5.8.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

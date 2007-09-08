@@ -19,10 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Config::Fast.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		needs at least perl 5.6 to run
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

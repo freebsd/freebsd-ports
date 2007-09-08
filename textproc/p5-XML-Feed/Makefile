@@ -27,7 +27,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.5+ # p5-XML-Atom needs 5.8.5
 
 MAN3=		XML::Feed.3 \
 		XML::Feed::Content.3 \
@@ -36,11 +36,4 @@ MAN3=		XML::Feed.3 \
 post-patch:
 	${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-# p5-XML-Atom needs 5.8.5
-.if ${PERL_LEVEL} < 500805
-IGNORE=		requires perl 5.8.5 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -44,10 +44,8 @@ do-extract:
 	${RM} -rf ${WRKSRC}/src/api/perl/CVS
 
 post-patch:
-.if ${PERL_LEVEL} >= 500600
 	${REINPLACE_CMD} -e 's/installman3dir/siteman3dir/g' \
 		${WRKSRC}/src/api/perl/*/Makefile
-.endif
 
 do-build:
 	for dir in ${WRKSRC}/src/api/perl/*; do \

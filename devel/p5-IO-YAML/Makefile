@@ -24,10 +24,6 @@ MAN3=		IO::YAML.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601	# Inherited from textproc/p5-YAML
-IGNORE=		requires perl 5.6.1 or later. Install lang/perl5.8 and try again
-.endif
-
 .if ${PERL_LEVEL} < 500801
 RUN_DEPENDS+=	${SITE_PERL}/Errno.pm:${PORTSDIR}/devel/p5-Errno
 .endif

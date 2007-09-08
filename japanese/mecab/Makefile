@@ -17,7 +17,7 @@ COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 
 USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5_BUILD=	5.8.0+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -34,10 +34,6 @@ MAN1=		mecab.1
 DOCS=		AUTHORS README doc/*.html
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later.  Install lang/perl5.8 and try again
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \

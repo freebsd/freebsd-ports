@@ -21,7 +21,7 @@ BUILD_DEPENDS=		${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-D
 			${SITE_PERL}/${PERL_ARCH}/Gtk2/CodeGen.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
 RUN_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
 
-PERL_CONFIGURE=		yes
+PERL_CONFIGURE=		5.8.0+
 USE_GNOME=		gconf2
 
 MAN3=			Gnome2::GConf.3 \
@@ -35,10 +35,4 @@ MAN3=			Gnome2::GConf.3 \
 			Gnome2::GConf::main.3 \
 			Gnome2::GConf::version.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=			"Needs perl 5.8.0 or higher, install lang/perl5.8 and try again"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

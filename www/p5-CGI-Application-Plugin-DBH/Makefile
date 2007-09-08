@@ -22,14 +22,8 @@ BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Applicatio
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.6+
 
 MAN3=		CGI::Application::Plugin::DBH.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500806
-IGNORE=		needs Perl 5.8.6 or above (lang/perl5.8)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

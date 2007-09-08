@@ -27,7 +27,7 @@ RUN_DEPENDS=	p5-HTML-Tree>=3.22:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=	HTML::Widget.3 \
 	HTML::Widget::Accessor.3 \
@@ -90,8 +90,4 @@ MAN3=	HTML::Widget.3 \
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500801
-IGNORE=	requires Perl 5.8.1. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${ARCH_PERL}/Safe/Hole.pm:${PORTSDIR}/security/p5-Safe-Hole \
 		${SITE_PERL}/Set/Crontab.pm:${PORTSDIR}/devel/p5-Set-Crontab \
 		${SITE_PERL}/Business/OnlinePayment.pm:${PORTSDIR}/finance/p5-Business-OnlinePayment
 
-USE_PERL5=	yes
 USE_BZIP2=	yes
 PERL_CONFIGURE=	yes
 

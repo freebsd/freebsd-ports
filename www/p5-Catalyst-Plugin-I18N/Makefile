@@ -19,14 +19,12 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Catalyst::Plugin::I18N.3
 
 .include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires at least Perl 5.8. Install lang/perl5.8, and try again
-.elif ${PERL_LEVEL} < 500805
+.if ${PERL_LEVEL} < 500805
 BUILD_DEPENDS+=	p5-I18N-LangTags-Detect>=0:${PORTSDIR}/misc/p5-I18N-LangTags
 RUN_DEPENDS+=	p5-I18N-LangTags-Detect>=0:${PORTSDIR}/misc/p5-I18N-LangTags
 .endif

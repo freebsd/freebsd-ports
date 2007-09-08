@@ -18,14 +18,8 @@ COMMENT=	Perl5 interface to the Sendmail access.db list
 BUILD_DEPENDS=	${SITE_PERL}/mach/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.6+
 
 MAN3=		Sendmail::AccessDB.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500806
-IGNORE=		needs Perl 5.8.6 or above (lang/perl5.8)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

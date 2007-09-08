@@ -24,12 +24,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Module::Pluggable::Ordered.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
-post-configure:
-	${PERL} -pi -e 's/-I\S+PERL\S+ //g if m{PERL_DL_NONLAZY}' ${WRKSRC}/Makefile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

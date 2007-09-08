@@ -30,10 +30,6 @@ PORTDOCS=		README Changelog
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=			requires are least Perl 5.6
-.endif
-
 .if ${PERL_LEVEL} < 500800
 RUN_DEPENDS+=		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
 .endif

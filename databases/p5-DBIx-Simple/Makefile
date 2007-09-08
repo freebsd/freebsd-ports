@@ -44,8 +44,4 @@ RUN_DEPENDS+=	p5-DBIx-XHTML_Table>=0:${PORTSDIR}/databases/p5-DBIx-XHTML_Table
 RUN_DEPENDS+=	p5-Text-Table>=0:${PORTSDIR}/textproc/p5-Text-Table
 .endif
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		need at least Perl 5.6; install lang/perl or lang/perl5.8
-.endif
-
 .include <bsd.port.post.mk>

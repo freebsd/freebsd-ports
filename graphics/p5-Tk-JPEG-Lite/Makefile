@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN1=	tkjpeg-lite.1
 MAN3=	Tk::JPEG::Lite.3
@@ -31,10 +31,4 @@ post-patch:
 		${WRKSRC}/Makefile.PL ${WRKSRC}/MANIFEST
 	@${MV} ${WRKSRC}/tkjpeg ${WRKSRC}/tkjpeg-lite
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		needs Perl 5.8.0 or greater, please upgrade your Perl
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

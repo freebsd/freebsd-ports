@@ -26,10 +26,4 @@ MAN3=		XML::Generator.3 XML::Generator::DOM.3
 test:
 	@(cd ${WRKSRC} && make test)
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

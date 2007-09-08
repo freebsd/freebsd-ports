@@ -33,7 +33,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
 		p5-YAML>=0.39:${PORTSDIR}/textproc/p5-YAML
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.4+
 
 MAN1=		approve_friends.1 comment_myspace.1 \
 		message_group.1
@@ -41,10 +41,4 @@ MAN3=		WWW::Myspace.3 WWW::Myspace::Comment.3 \
 		WWW::Myspace::FriendChanges.3 \
 		WWW::Myspace::Message.3 WWW::Myspace::MyBase.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500804	# Locale::SubCountry needs Perl 5.8.4
-IGNORE=		requires Perl 5.8.4 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

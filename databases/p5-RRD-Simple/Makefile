@@ -24,10 +24,4 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_MODBUILD=	yes
 MAN3=		RRD::Simple.3 RRD::Simple::Examples.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6.0 or higher. Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

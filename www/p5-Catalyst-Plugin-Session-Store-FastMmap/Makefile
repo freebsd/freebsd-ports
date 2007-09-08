@@ -20,12 +20,8 @@ BUILD_DEPENDS=	p5-Cache-FastMmap>=1.13:${PORTSDIR}/devel/p5-Cache-FastMmap \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.1+
 
 MAN3=	Catalyst::Plugin::Session::Store::FastMmap.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500801
-IGNORE=	requires Perl 5.8.1. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

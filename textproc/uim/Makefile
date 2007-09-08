@@ -62,12 +62,7 @@ PLIST_SUB+=	X11=""
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-uim_editline.c
 .endif
 
-.if ${PERL_LEVEL} >= 500600
 USE_PERL5_BUILD=yes
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/perl:${PORTSDIR}/lang/perl5
-CONFIGURE_ENV+=	INTLTOOL_PERL="${LOCALBASE}/bin/perl"
-.endif
 
 .for _x in x xft gtk2 qt gnome2 anthy canna m17nlib prime scim dict
 .if ${CONFIGURE_ARGS:M--with-${_x}} == ""

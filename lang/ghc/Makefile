@@ -44,10 +44,6 @@ IGNORE=		unsupported at the moment
 IGNORE=		unsupported at the moment
 .endif
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires newer version of perl
-.endif
-
 USE_AUTOTOOLS=	autoconf:259:env
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		readline.5:${PORTSDIR}/devel/readline

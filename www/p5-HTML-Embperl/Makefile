@@ -44,10 +44,4 @@ MAN3=		HTML::Embperl.3 HTML::Embperl::Faq.3 HTML::Embperl::Changes.3 \
 
 MAN1=		embpexec.pl.1
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-BROKEN=		Incorrect pkg-plist
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

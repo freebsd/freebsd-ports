@@ -17,14 +17,12 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Net::SNMP for pre-5.6 perl
 
 CONFLICTS=	p5-Net-SNMP
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.6.0-
+USE_PERL5_REASON=	This port is only for pre-5.6 perl. Install net-mgmt/p5-Net-SNMP instead
 
 MAN3=		Net::SNMP.3
 
-.include <bsd.port.pre.mk>
+DEPRECATED=	only runs with old, unsupported Perl versions
+EXPIRATION_DATE=	2007-09-11
 
-.if ${PERL_LEVEL} >= 500600
-IGNORE=	This port is only for pre-5.6 perl. Install net-mgmt/p5-Net-SNMP instead.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

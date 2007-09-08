@@ -18,7 +18,8 @@ COMMENT=	Debugging and profiling tools for mod_perl
 PERL_CONFIGURE=	yes
 USE_APACHE=	yes
 
-MAN3=		Apache::DB.3 Apache::DProf.3 Apache::SmallProf.3
+MAN3=		Apache::DB.3 Apache::DProf.3 Apache::perl5db.3 \
+		Apache::SmallProf.3
 
 .include <bsd.port.pre.mk>
 
@@ -26,12 +27,6 @@ MAN3=		Apache::DB.3 Apache::DProf.3 Apache::SmallProf.3
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 .else
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
-.endif
-
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Devel/DProf.pm:${PORTSDIR}/devel/p5-Devel-DProf
-.else
-MAN3+=		Apache::perl5db.3
 .endif
 
 .include <bsd.port.post.mk>

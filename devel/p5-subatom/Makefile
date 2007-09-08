@@ -18,15 +18,9 @@ COMMENT=	Produce an atom feed from subversion commits
 BUILD_DEPENDS=	${SITE_PERL}/XML/Atom/SimpleFeed.pm:${PORTSDIR}/textproc/p5-XML-Atom-SimpleFeed
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.0+
 PLIST_FILES=	bin/subatom
 
 MAN1=		subatom.1
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800	# Inherited from textproc/XML-Atom-SimpleFeed
-IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

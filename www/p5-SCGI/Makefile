@@ -15,17 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vivek@khera.org
 COMMENT=	SCGI server interface
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.0+
 
 MAN3=	SCGI.3 SCGI::Request.3
 
 PLIST_FILES=	${SITE_PERL_REL}/SCGI.pm ${SITE_PERL_REL}/SCGI/Request.pm
 PLIST_DIRS=	${SITE_PERL_REL}/SCGI
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl 5.8.0 or later.  Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -23,8 +23,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Test::MockModule.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires weak references, which were introduced in Perl 5.6. Install lang/perl5 or lang/perl5.8 and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

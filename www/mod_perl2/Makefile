@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BS
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_APACHE=	2.0+
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 GMAKE=		yes
 
 # Using apxs in this way is problematic if apache2 is installed under a
@@ -65,11 +65,6 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 PLIST_SUB=	THREADMUTEX=""
 .else
 PLIST_SUB=	THREADMUTEX="@comment "
-.endif
-
-# it is time to require perl 5.8.x
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
 .endif
 
 pre-configure:

@@ -16,5 +16,6 @@ PKGINSTALL=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.scripts
 
 SCRIPTS_ONLY=	yes
+USE_PERL5=	yes
 
 .include "${MASTERDIR}/Makefile"

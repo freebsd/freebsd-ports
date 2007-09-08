@@ -24,12 +24,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exceptio
 		${SITE_PERL}/Test/WWW/Mechanize.pm:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
 		${SITE_PERL}/CGI/Application/Plugin/Redirect.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-Redirect
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.0+
 
 MAN3=	CGI::Application::Server.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires Perl 5.8 or newer. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -35,13 +35,7 @@ SUB_LIST=	USER=${DKFILTER_USERNAME} \
 		GROUP=${DKFILTER_GROUPNAME} \
 		GID=${DKFILTER_GROUPID}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	require Perl 5.8 or newer. Install lang/perl5.8 and try again
-.endif
-
 pre-install:
 	${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -16,17 +16,13 @@ DISTNAME=	Term-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Perl 5 module that allows Term::ReadLine to use GNU readline
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libreadline.so)
 CONFIGURE_ARGS+=--includedir=${LOCALBASE}/include
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
-.endif
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	this port requires Perl 5.8 or newer. Install lang/perl5.8 and try again
 .endif
 
 MAN3=		Term::ReadLine::Gnu.3

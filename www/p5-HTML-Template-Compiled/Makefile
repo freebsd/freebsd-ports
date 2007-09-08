@@ -41,11 +41,4 @@ MAN3=		HTML::Template::Compiled.3 \
 		HTML::Template::Compiled::Token.3 \
 	       	HTML::Template::Compiled::Utils.3
 
-.include <bsd.port.pre.mk>
-
-# Inherited from www/p5-HTML-Parser and www/p5-Data-TreeDumper-Renderer-DHTML
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

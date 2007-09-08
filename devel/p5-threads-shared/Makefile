@@ -18,14 +18,8 @@ COMMENT=	Perl extension for sharing data structures between threads
 RUN_DEPENDS=	p5-threads>=1.59:${PORTSDIR}/devel/p5-threads
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	threads::shared.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl 5.8.0 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

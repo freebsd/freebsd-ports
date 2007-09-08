@@ -22,10 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		XML::Literal.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6.0 or newer, install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

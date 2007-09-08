@@ -94,13 +94,7 @@ BUILD_DEPENDS=	\
 		p5-version>0:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.3+
 
 .include "Makefile.man"
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500803
-IGNORE=		requires perl 5.8.3 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

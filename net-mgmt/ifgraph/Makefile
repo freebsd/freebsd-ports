@@ -16,7 +16,8 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Simple grapher of SNMP data with RRD
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
-		p5-Color-Rgb>0:${PORTSDIR}/graphics/p5-Color-Rgb
+		p5-Color-Rgb>0:${PORTSDIR}/graphics/p5-Color-Rgb \
+		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_PERL5=	yes
@@ -77,14 +78,4 @@ post-install:
 	@ ${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP3
-RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP3
-.else
-BUILD_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
-RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

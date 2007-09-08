@@ -27,7 +27,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
 		p5-XML-LibXML>=1.54:${PORTSDIR}/textproc/p5-XML-LibXML
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.5+
 
 MAN3=		XML::Atom.3 \
 		XML::Atom::Client.3 \
@@ -37,10 +37,4 @@ MAN3=		XML::Atom.3 \
 		XML::Atom::Server.3 \
 		XML::Atom::Util.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500805
-IGNORE=		requires perl 5.8.5 or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

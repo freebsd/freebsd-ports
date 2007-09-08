@@ -20,19 +20,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Apache2 mod_perl2 SOAP Server
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	5.8.0+
 USE_APACHE=	2.0+
 
 MAN3=		Apache2::SOAP.3
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.0 or higher. Please install lang/perl5.8 and try again
-.endif
 
 BUILD_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_perl.so:${PORTSDIR}/www/mod_perl2
 BUILD_DEPENDS+=	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

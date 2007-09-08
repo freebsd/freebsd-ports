@@ -20,7 +20,6 @@ OPTIONS=        MYSQL "MySQL Support" off
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 RESTRICTED=	"Commercial software"

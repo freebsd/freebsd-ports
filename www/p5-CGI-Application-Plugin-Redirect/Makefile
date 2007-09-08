@@ -18,12 +18,8 @@ COMMENT=	Easy external redirects in CGI::Application
 RUN_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.0+
 
 MAN3=	CGI::Application::Plugin::Redirect.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires Perl 5.8 or newer. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

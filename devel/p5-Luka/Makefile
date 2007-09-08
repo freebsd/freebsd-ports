@@ -32,10 +32,6 @@ MAN3=		Luka.3 Luka::Conf.3 Luka::Exceptions.3 Luka::Mailer.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600	# Inherited from many dependencies
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
-.endif
-
 .if ${PERL_LEVEL} < 500702
 BUILD_DEPENDS+=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 .endif

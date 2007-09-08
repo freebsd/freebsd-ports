@@ -23,12 +23,4 @@ PERL_CONFIGURE=	YES
 
 MAN3=		Test::Pod::Coverage.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if m|use warnings;|;' \
-		     -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' \
-		${WRKSRC}/Makefile.PL \
-		${WRKSRC}/Coverage.pm
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

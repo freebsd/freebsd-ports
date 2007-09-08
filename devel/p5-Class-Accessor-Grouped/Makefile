@@ -18,12 +18,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	Class::Accessor::Grouped.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

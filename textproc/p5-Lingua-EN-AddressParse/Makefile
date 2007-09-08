@@ -25,10 +25,4 @@ PERL_CONFIGURE=	yes
 MAN3=	Lingua::EN::AddressGrammar.3 \
 	Lingua::EN::AddressParse.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

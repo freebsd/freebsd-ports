@@ -24,10 +24,6 @@ MAN3=		Net::CSTA.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
-.endif
-
 .if ${PERL_LEVEL} < 500703
 RUN_DEPENDS+=	${SITE_PERL}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 .endif

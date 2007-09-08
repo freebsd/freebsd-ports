@@ -18,14 +18,8 @@ COMMENT=	Keeps track of file creation times
 BUILD_DEPENDS=	${SITE_PERL}/File/Attributes.pm:${PORTSDIR}/devel/p5-File-Attributes
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	File::CreationTime.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		has a dependency that wants perl5.8
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -30,7 +30,7 @@ RUN_DEPENDS=	p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-DateTime-Format-Strptime>=1.07:${PORTSDIR}/devel/p5-DateTime-Format-Strptime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		FormValidator::Simple.3 \
 		FormValidator::Simple::Results.3
@@ -40,10 +40,4 @@ MAN3=		FormValidator::Simple.3 \
 post-extract:
 	@${PERL} -i.bak -ne 'print unless /^requires/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

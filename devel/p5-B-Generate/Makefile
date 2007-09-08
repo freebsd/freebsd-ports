@@ -19,10 +19,4 @@ PERL_MODBUILD=	yes
 
 MAN3=	B::Generate.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

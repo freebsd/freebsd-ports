@@ -15,12 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Perl extension for STL-like object management
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.7+
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500807
-IGNORE=	requires at least Perl 5.8.7.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

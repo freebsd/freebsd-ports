@@ -20,14 +20,4 @@ PERL_CONFIGURE=	YES
 MAN3=		MIME::Base64.3 \
 		MIME::QuotedPrint.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
-RUN_DEPENDS+=	${SITE_PERL}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
-
-post-patch:
-	${REINPLACE_CMD} -e '/require 5.006/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -20,12 +20,6 @@ NO_BUILD=	yes
 MAN1=		netspoc.1
 DOCS=		CSPM.html NEWS.html index.html language.html netspoc.html
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		"This port needs Perl 5.6.0 or greater"
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/netspoc ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/Netspoc.pm ${PREFIX}/bin
@@ -37,4 +31,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

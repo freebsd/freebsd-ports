@@ -23,11 +23,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Mail::Webmail::Gmail.3
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${PERL_LEVEL} < 500601
-	@${PERL} -pi -e 's/\r//g;s/^our/my/g' ${WRKSRC}/lib/Mail/Webmail/Gmail.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -17,16 +17,10 @@ COMMENT=	API to the C++ port of the Lucene search engine
 
 LIB_DEPENDS=	clucene:${PORTSDIR}/textproc/clucene
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 CC=		${CXX}
 CONFIGURE_ARGS+="INC=-I${LOCALBASE}/include -I${LOCALBASE}/lib"
 
 MAN3=	Lucene.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

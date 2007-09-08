@@ -27,11 +27,5 @@ MAN3=		Games::AlphaBeta.3 Games::AlphaBeta::Position.3 \
 		Games::AlphaBeta::Reversi.3 \
 		Games::Sequential.3 Games::Sequential::Position.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=         requires Perl 5.6.1 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 

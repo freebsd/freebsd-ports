@@ -24,12 +24,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAN3=	XML::Atom::Stream.3
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.5+	# inherited from textproc/p5-XML-Atom
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500805 # inherited from textproc/p5-XML-Atom
-IGNORE=	requires at least Perl 5.8.5 due to dependencies.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

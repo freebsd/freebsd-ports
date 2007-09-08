@@ -26,12 +26,6 @@ NO_BUILD=	yes
 PLIST_SUB+=	PORTNAME=${PORTNAME}
 USE_RC_SUBR=	nfsen.sh
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires at least perl 5.6.0
-.endif
-
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "*****************************************************"
@@ -63,4 +57,4 @@ do-install:
 	@${ECHO_MSG} "Configure your ${LOCALBASE}/etc/nfsen.conf to have necessary sources ";
 	@${ECHO_MSG} "Then run 'nfsen -R ${LOCALBASE}/etc/nfsen.conf' to correctly setup source, RRD, and profile files";
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

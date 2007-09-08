@@ -116,7 +116,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-
 .endif
 .endif
 
-USE_PERL5=	yes
+USE_PERL5=	5.8.3+
 RT_PATH?=	${PREFIX}/rt3
 PLIST_SUB=	RT_PATH=${RT_PATH}  RTPLIST=${RT_PATH:S/^${PREFIX}\///}
 LAYOUT?=	RT3
@@ -140,10 +140,6 @@ UPGRADES+=	3.3.0 3.3.11
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500803
-IGNORE=		This program only support perl 5.8.3 or above
-.endif
 
 pre-fetch:
 	@${ECHO} ""

@@ -66,19 +66,12 @@ MAKE_ENV+=	USE_DEFAULTS=freebsd
 # Skip 1.8.5
 PREVIOUS_VERSIONS=	1.8.0 1.8.1 1.8.2 1.8.3 1.8.4 1.8.6 1.8.7 1.8.8 1.8.9 1.9.0 1.9.1 1.10.0 1.10.1 1.10.2
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+	# Needs perl 5.8.x or later for decent unicode support
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 INSTALL_TARGET=	install_files
 
 .include <bsd.port.pre.mk>
-
-# Needs perl 5.8.x or later for decent unicode support
-# Easier to make this a requirement than deal with issues
-# for unicode users
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
-.endif
 
 # Optional dependencies. Use them if they're installed.
 .if exists(${SITE_PERL}/HTML/Template/Expr.pm)

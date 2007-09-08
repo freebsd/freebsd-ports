@@ -81,10 +81,6 @@ PKGDEINSTALL=	${PKGDIR}/pkg-install
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		This port requires perl 5.6 or newer
-.endif
-
 post-patch:
 	@(${FIND} ${WRKSRC} -name '*.py' -print0 | \
 		${ENV} PYTHON_CMD=${PYTHON_CMD} \

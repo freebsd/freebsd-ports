@@ -29,6 +29,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 		${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_PERL5=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800

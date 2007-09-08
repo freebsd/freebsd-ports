@@ -39,10 +39,4 @@ Net::Packet::OSPF.3 Net::Packet::PPP.3 Net::Packet::PPPLCP.3 Net::Packet::PPPoE.
 Net::Packet::SLL.3 Net::Packet::STP.3 Net::Packet::TCP.3 Net::Packet::UDP.3 Net::Packet::Utils.3 \
 Net::Packet::VLAN.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6.0 or higher. Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -19,11 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::Netmask.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 500503
-post-configure:
-	${PERL} -pi -e '$$_="" if /use warnings/;' ${WRKSRC}/Netmask.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

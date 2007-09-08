@@ -20,11 +20,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Regexp::Bind.3
 
-.include <bsd.port.pre.mk>
-
-# can't pass 'make test'
-.if ${PERL_LEVEL} < 500600
-IGNORE=		needs perl 5.6.0 or higher, install lang/perl5 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

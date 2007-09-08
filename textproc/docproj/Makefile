@@ -16,6 +16,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	doceng@freebsd.org
 COMMENT=	The "meta-port" for the FreeBSD Documentation Project
 
+USE_PERL5_RUN=	yes
+
 # This dependency list should be kept in sync with the list of
 # required ports in src/release/Makefile.inc.docports.
 
@@ -75,7 +77,6 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Di
 
 NO_BUILD=		yes
 USE_GHOSTSCRIPT_RUN=	yes
-USE_PERL5_RUN=		yes
 PLIST_FILES=		#empty
 
 DEPENDS_ARGS+=	BATCH=yes

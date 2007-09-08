@@ -19,14 +19,8 @@ RUN_DEPENDS=	${SITE_PERL}/Term/ReadPassword.pm:${PORTSDIR}/devel/p5-Term-ReadPas
 		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=		Sudo.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-IGNORE=		requires Perl >= 5.8.1. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

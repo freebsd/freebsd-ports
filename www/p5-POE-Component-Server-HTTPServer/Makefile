@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		POE::Component::Server::HTTPServer.3 \
 		POE::Component::Server::HTTPServer::BasicAuthenHandler.3 \
@@ -34,10 +34,4 @@ MAN3=		POE::Component::Server::HTTPServer.3 \
 		POE::Component::Server::HTTPServer::StaticHandler.3 \
 		POE::Component::Server::HTTPServer::TemplateHandler.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl 5.8.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

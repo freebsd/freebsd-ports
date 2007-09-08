@@ -21,13 +21,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Class::DBI::Plugin::RetrieveAll.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
-		    -e '$$_="" if /use warnings/;' \
-		${WRKSRC}/lib/Class/DBI/Plugin/RetrieveAll.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

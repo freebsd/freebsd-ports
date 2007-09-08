@@ -19,16 +19,10 @@ BUILD_DEPENDS=	p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
 		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=		Visio.3 Visio::Hyperlink.3 Visio::Layout.3 Visio::Line.3 \
 		Visio::Master.3 Visio::Page.3 Visio::PageProps.3 \
 		Visio::PageSheet.3 Visio::Shape.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

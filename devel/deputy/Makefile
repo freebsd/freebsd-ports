@@ -29,12 +29,6 @@ INCFILES=	annots.h checks.h
 LIBFILES=	Cilly.pm KeptFile.pm OutputFile.pm TempFile.pm
 EXECFILES=	deputy.asm.exe deputy.byte.exe deputy_libc.o
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		does not work with perl < 5.6.1
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's:@CILHOME@/lib:${SITE_PERL}/CIL:g; s:\@CILHOME\@:${PREFIX}:g' ${WRKSRC}/cil/bin/CilConfig.pm.in
 	@${REINPLACE_CMD} -e 's|^use KeptFile;|use CIL::KeptFile;|; s|^use OutputFile;|use CIL::OutputFile;|; s|^use TempFile;|use CIL::TempFile;|' ${WRKSRC}/cil/lib/Cilly.pm
@@ -62,4 +56,4 @@ do-install:
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/doc/deputy.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -31,7 +31,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize \
 		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Plucene.3 \
 	Plucene::Analysis::Analyzer.3 \
@@ -101,10 +101,4 @@ MAN3=	Plucene.3 \
 	Plucene::TestCase.3 \
 	Plucene::Utils.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-IGNORE=	requires perl 5.8.1 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

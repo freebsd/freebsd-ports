@@ -37,22 +37,12 @@ OPTIONS=	SUBTITLE	"Enable support for getting subtitles"	on \
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	SKIP_UNPACK_REQUIRED_MODULES=1
-USE_PERL5=	yes
 USE_CDRTOOLS=	yes
 USE_GETTEXT=	yes
 
 MAN1=		dvdrip.1 dvdrip-progress.1 dvdrip-splitpipe.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Broken dependencies
-.endif
-
-.if ${PERL_LEVEL} < 500600
-BROKEN=		You need at least perl 5.6.0. Do not use FreeBSD 4.x' system perl, \
-		it's outdated. Install lang/perl5 and issue 'use.perl port'
-.endif
 
 .if !defined(WITHOUT_VORBIS)
 RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools \

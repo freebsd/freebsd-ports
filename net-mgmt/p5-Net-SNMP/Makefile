@@ -29,9 +29,6 @@ MAN3=		Net::SNMP.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 or lang/perl5.8 and try again
-.endif
 .if ${PERL_LEVEL} < 500800
 RUN_DEPENDS+=	${ARCH_PERL}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 .endif

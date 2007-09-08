@@ -19,13 +19,6 @@ NO_BUILD=	yes
 
 MAN1=		colordiff.1
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long
-RUN_DEPENDS=	${BUILD_DEPENDS}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/bin/perl|${PERL}|; s|/etc|${PREFIX}/etc|' \
@@ -40,4 +33,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/colordiffrc ${PREFIX}/etc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

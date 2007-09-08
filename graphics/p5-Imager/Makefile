@@ -24,17 +24,11 @@ LIB_DEPENDS=	\
 		ungif:${PORTSDIR}/graphics/libungif
 
 USE_FREETYPE=	yes
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib" \
 		IM_CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 		IM_INCPATH="${LOCALBASE}/include/freetype1/freetype"
 
 .include "Makefile.man"
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

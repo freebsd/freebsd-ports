@@ -44,10 +44,4 @@ MAN3=		UI::Dialog.3 UI::Dialog::Backend::XDialog.3 \
 		UI::Dialog::Backend::Nautilus.3 UI::Dialog::Backend::GDialog.3 \
 		UI::Dialog::Backend::XOSD.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.006 or above; please upgrade
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

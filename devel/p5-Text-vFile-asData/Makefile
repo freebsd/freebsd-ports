@@ -23,10 +23,4 @@ PERL_MODBUILD=	yes
 MAN1=		holidays_ical.1 rota_ical.cgi.1
 MAN3=		Text::vFile::asData.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BROKEN=		"Not supported."
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

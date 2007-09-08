@@ -22,7 +22,7 @@ RUN_DEPENDS=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${SITE_PERL}/Test/Deep.pm:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 WRKSRC=		${WRKDIR}/AutoClass
 
 MAN3=		Class::AutoClass::Root.3 Class::AutoClass.3 Class::AutoClass::Args.3
@@ -32,10 +32,6 @@ MAN3=		Class::AutoClass::Root.3 Class::AutoClass.3 Class::AutoClass::Args.3
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-.endif
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	currently only supports Perl 5.8+.  This will hopefully change.  For now, please install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>

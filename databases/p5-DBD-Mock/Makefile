@@ -18,14 +18,8 @@ COMMENT=	Simple mock DBD implementation used for testing
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.6+
 
 MAN3=		DBD::Mock.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500806
-IGNORE=		needs Perl 5.8.6 or above (lang/perl5.8)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

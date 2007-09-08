@@ -17,12 +17,6 @@ USE_PERL5=	yes
 
 MAN1=		maildirsync.1
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6.0 or higher
-.endif
-
 do-build:
 	${PERL} -pi -e 's!/usr/bin/perl!${PERL}!' ${WRKSRC}/maildirsync.pl
 	pod2man ${WRKSRC}/maildirsync.pod > ${WRKSRC}/maildirsync.1
@@ -38,4 +32,4 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/contrib/mailbalance-0.2.0/* ${EXAMPLESDIR}/mailbalance
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

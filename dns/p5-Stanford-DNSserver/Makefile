@@ -18,10 +18,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Stanford::DNS.3 Stanford::DNSserver.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		does not work with the IO::Socket::INET module in Perl 5.00503
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

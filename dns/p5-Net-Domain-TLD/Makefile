@@ -24,12 +24,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Net::Domain::TLD.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -pi -e 's/^\s*our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
-		-e 's/.*warnings.*//' ${WRKSRC}/lib/Net/Domain/TLD.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

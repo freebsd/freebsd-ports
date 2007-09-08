@@ -15,15 +15,11 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Access to extended attributes of the files
 
-PERL_CONFIGURE=		yes
+PERL_CONFIGURE=		5.8.0+
 
 MAN3=			File::ExtAttr.3 File::ExtAttr::Tie.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=			needs Perl 5.8 or later
-.endif
 
 .if ${OSVERSION} < 500018
 IGNORE=			extended attributes require FreeBSD 5.x at least after 20010326

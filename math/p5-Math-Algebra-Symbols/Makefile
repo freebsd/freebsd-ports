@@ -23,12 +23,6 @@ MAN3=	Math::Algebra::Symbols.3 \
 	Math::Algebra::Symbols::Symbols.3 \
 	Math::Algebra::Symbols::Term.3
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	currently requires Perl 5.8.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

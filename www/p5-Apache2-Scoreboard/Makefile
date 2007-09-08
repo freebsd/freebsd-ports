@@ -19,7 +19,7 @@ COMMENT=	Perl interface to the Apache scoreboard structure
 BUILD_DEPENDS=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Apache::Scoreboard.3 Apache::DummyScoreboard.3
 
@@ -30,10 +30,4 @@ post-patch:
 	${SED} -i.bak 's@%%LOCALBASE%%@${LOCALBASE}@g' ${WRKSRC}/Makefile.PL
 	${SED} -i.bak 's@%%LOCALBASE%%@${LOCALBASE}@g' ${WRKSRC}/Dummy/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

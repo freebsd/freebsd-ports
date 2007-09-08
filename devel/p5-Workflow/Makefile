@@ -32,7 +32,7 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.6+
 
 MAN3=	Workflow.3 \
 	Workflow::Action.3 \
@@ -92,10 +92,4 @@ post-install:
 	@${ECHO_MSG} "===> Docs are installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500806
-IGNORE=	requires newer Perl, but you can install required old additional perl modules from CPAN instead
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

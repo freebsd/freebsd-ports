@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-AMF-Perl>=0.15:${PORTSDIR}/www/p5-AMF-Perl \
 		p5-SWF-File>=0.033:${PORTSDIR}/graphics/p5-SWF-File
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN1=		flv2mp3.1 flv2flv.1 flv2swf.1 flvinfo.1 swf2flv.1
 MAN3=		FLV::AMFReader.3 FLV::AMFWriter.3 FLV::AudioTag.3 \
@@ -33,10 +33,4 @@ MAN3=		FLV::AMFReader.3 FLV::AMFWriter.3 FLV::AudioTag.3 \
 post-patch:
 	${REINPLACE_CMD} -e '/Readonly/d' ${WRKSRC}/*.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -19,10 +19,4 @@ PERL_CONFIGURE=	YES
 
 MAN3=		ExtUtils::Command.3 Shell::Command.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

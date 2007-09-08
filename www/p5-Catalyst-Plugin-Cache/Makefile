@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Catalyst::Plugin::Cache.3 \
 	Catalyst::Plugin::Cache::Backend.3 \
@@ -32,8 +32,4 @@ MAN3=	Catalyst::Plugin::Cache.3 \
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,ok|Test::,' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500801
-IGNORE=	requires at least Perl 5.8.1. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

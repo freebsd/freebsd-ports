@@ -18,14 +18,8 @@ COMMENT=	Implements the Perl 6 'is export(...)' trait
 BUILD_DEPENDS=	${SITE_PERL}/Filter/Simple.pm:${PORTSDIR}/textproc/p5-Filter-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	Perl6::Export.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		This program only support perl 5.8.0 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

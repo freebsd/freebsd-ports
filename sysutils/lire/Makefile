@@ -262,10 +262,6 @@ MAN7=		lire.7
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		sysutils/lire requires are least Perl 5.6.1, while Perl 5.8.2 is recommended. Please install lang/perl5.8
-.endif
-
 .ifdef(WITH_CHARTS)
 RUN_DEPENDS+=	ploticus:${PORTSDIR}/math/ploticus-nox11
 BUILD_DEPENDS+=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph

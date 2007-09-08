@@ -26,12 +26,6 @@ WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	"requires Perl 5.6.0 or greater. Please install lang/perl5 and retry"
-.endif
-
 do-build:
 	cd ${WRKSRC} && package/compile
 
@@ -48,4 +42,4 @@ do-install:
 	cd ${WRKSRC}/src && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-
 		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN1=	cpandb.1
 MAN3=	CPAN::SQLite::Index.3 \
@@ -37,10 +37,4 @@ MAN3=	CPAN::SQLite::Index.3 \
 	CPAN::SQLite::Info.3 \
 	CPAN::SQLite::Search.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=Needs perl 5.8.0 or higher, install lang/perl5.8 and try again.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

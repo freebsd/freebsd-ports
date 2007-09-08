@@ -19,11 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Sys::Hostname::Long.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -i -pe 's/}\(/}->(/' ${WRKSRC}/lib/Sys/Hostname/Long.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

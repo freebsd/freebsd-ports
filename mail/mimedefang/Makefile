@@ -55,10 +55,6 @@ CONFIGURE_ARGS+= --with-milterinc=${LOCALBASE}/include
 CONFIGURE_ARGS+= --with-milterlib=${LOCALBASE}/lib
 .endif
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.1 or later. Install lang/perl5 or lang/perl5.8 then try again
-.endif
-
 pre-install:
 	@${REINPLACE_CMD} -e '/LOCAL_STATE_DIR/s,/var/lib,/var/db,' ${WRKSRC}/mimedefang.pl
 

@@ -23,6 +23,7 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
 OPTIONS=	SLANG		"Build with SLang library" on \

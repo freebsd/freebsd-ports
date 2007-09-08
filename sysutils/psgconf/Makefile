@@ -185,10 +185,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 .endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6 or newer
-.endif
-
 PKGINSTALL=	${WRKSRC}/postinstall
 PKGDEINSTALL=	${WRKSRC}/postinstall
 

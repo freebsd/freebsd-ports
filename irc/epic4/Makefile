@@ -57,9 +57,6 @@ CONFIGURE_ARGS+=	--with-tcl
 # SITE_PERL and PERL_VER to create the path.
 #
 .if defined(WITH_PERL)
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.1 or newer; we recommend perl 5.8.5
-.endif
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VER}/mach/CORE
 .endif

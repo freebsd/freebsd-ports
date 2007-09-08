@@ -23,7 +23,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	OpenXPKI::Client.3 \
 	OpenXPKI::Client::API.3
-USE_PERL5=	yes
 USE_GMAKE=	yes
 PERL_CONFIGURE=	yes
 

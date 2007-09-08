@@ -24,7 +24,7 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0.19:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Net>0:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Email::Send.3 \
 	Email::Send::IO.3 \
@@ -34,10 +34,4 @@ MAN3=	Email::Send.3 \
 	Email::Send::Sendmail.3 \
 	Email::Send::Test.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-IGNORE=		requires perl 5.8.1 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

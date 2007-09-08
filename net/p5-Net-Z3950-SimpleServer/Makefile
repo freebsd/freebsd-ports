@@ -29,10 +29,4 @@ pre-configure:
 	cd ${WRKSRC} && \
 		${REINPLACE_CMD} -e 's,LOG_WARN,YLOG_WARN,' SimpleServer.xs
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	requires at least Perl 5. Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

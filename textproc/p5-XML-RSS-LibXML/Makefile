@@ -23,20 +23,14 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML
 		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.7.3+	# inherited from converters/p5-Encode
 
 MAN3=		XML::RSS::LibXML.3 XML::RSS::LibXML::ImplBase.3 \
 		XML::RSS::LibXML::MagicElement.3 \
 		XML::RSS::LibXML::Namespaces.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703	# inherited from converters/p5-Encode
-IGNORE=		requires perl 5.7.3 or later. Install lang/perl5.8 then try again
-.endif
-
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/benchmark.pl ${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -20,16 +20,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Compress::LZW.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
 post-patch:
 	${PERL} -pi -e 's/\@hattmoward/\\\@hattmoward/' ${WRKSRC}/Makefile.PL
-.if ${PERL_LEVEL} < 500600
-	${REINPLACE_CMD} -e '/warnings/d' ${WRKSRC}/*
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

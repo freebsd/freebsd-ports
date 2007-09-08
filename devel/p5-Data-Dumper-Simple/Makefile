@@ -25,8 +25,5 @@ MAN3=		Data::Dumper::Simple.3
 BUILD_DEPENDS+=	${SITE_PERL}/Filter/Simple.pm:${PORTSDIR}/textproc/p5-Filter-Simple
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
-.if ${PERL_LEVEL} < 500601
-IGNORE="Need at least perl 5.6.1 to build"
-.endif
 
 .include <bsd.port.post.mk>

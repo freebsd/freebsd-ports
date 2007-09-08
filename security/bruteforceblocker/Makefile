@@ -29,10 +29,6 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or newer. Install lang/perl5 or lang/perl5.8 and try again
-.endif
-
 .if ${OSVERSION} < 502106
 IGNORE=		requires at least FreeBSD 5.2
 .endif

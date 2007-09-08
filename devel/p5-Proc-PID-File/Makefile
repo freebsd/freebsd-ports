@@ -18,15 +18,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Proc::PID::File.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 500503
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if /no warnings/' ${WRKSRC}/File.pm
-
-# make PREFIX-clean under perl 5.005_03
-post-configure:
-	@${PERL} -pi -e 's,/usr/local/,\$$(PREFIX)/,g' ${WRKSRC}/Makefile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

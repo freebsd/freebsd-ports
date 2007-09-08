@@ -18,15 +18,11 @@ COMMENT=	An object oriented perl interface to jail(2)
 BUILD_DEPENDS=\
 	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.6+
 
 MAN3=		BSD::Jail::Object.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500806
-IGNORE=		requires perl 5.8.6 or later. Install lang/perl5.8 then try again
-.endif
 
 .if ${OSVERSION} < 503100 # ref: jail.h v1.17
 IGNORE=		require xprison structure defined

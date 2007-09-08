@@ -27,10 +27,4 @@ MAN3=	HTML::Lint.3 \
 	HTML::Lint::HTML4.3 \
 	Test::HTML::Lint.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
