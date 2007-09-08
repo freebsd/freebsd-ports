@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Radiator
-PORTVERSION=	3.16
+PORTVERSION=	3.17.1
 CATEGORIES=	net
 MASTER_SITES=	# fetch manually
 EXTRACT_SUFX=	.tgz
