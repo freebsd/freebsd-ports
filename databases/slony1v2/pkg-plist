@@ -105,7 +105,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.enablesubscription-integer-integer-integer.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.failednode-integer-integer.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.failednode2-integer-integer-integer-bigint-bigint.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/function.failoverset-int-integer-integer-integer.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/function.failoverset-int-integer-integer-integer-bigint.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.forwardconfirm-integer-integer-bigint-timestamp-without-time-zone.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.generate-sync-event-interval.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.getlocalnodeid-name.html
@@ -121,7 +121,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.logtrigger.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.mergeset-int-integer-integer.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.mergeset-integer-integer.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/function.moveset-int-integer-integer-integer.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/function.moveset-int-integer-integer-integer-bigint.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.moveset-integer-integer.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.reachablefromnode-integer-integerarray.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.rebuildlistenentries.html
@@ -178,7 +178,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.upgradeschema-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/hdrcmds.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/help.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/i11536.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/i11597.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/listenpaths.html
@@ -246,6 +246,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/stmtwaitevent.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/subscribenodes.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/supportedplatforms.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/table.sl-config-lock.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/table.sl-confirm.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/table.sl-event.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/table.sl-listen.html
