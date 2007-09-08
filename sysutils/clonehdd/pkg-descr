@@ -1,0 +1,8 @@
+Tool for copying partitions to another HDD.
+Program correctly understand size diference between two HDD
+and change size of each partition proportionally for filling entire HDD
+
+WWW: http://sourceforge.net/projects/clonehdd/
+
+- Anton Lysenok
+bart@tapolsky.net.ua

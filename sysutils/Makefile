@@ -84,6 +84,7 @@
     SUBDIR += clean
     SUBDIR += clockspeed
     SUBDIR += clockspeed-conf
+    SUBDIR += clonehdd
     SUBDIR += cloop-utils
     SUBDIR += cmdwatch
     SUBDIR += cmospwd
