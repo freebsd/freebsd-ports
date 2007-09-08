@@ -13921,6 +13921,7 @@ rscheme		ports/lang/rscheme
 rshell		ports/net/rshell
 rsibreak	ports/x11/rsibreak
 rsnapshot	ports/sysutils/rsnapshot
+rss2email	ports/mail/rss2email
 rssh		ports/shells/rssh
 rssowl		ports/www/rssowl
 rsstail		ports/www/rsstail
