@@ -2,24 +2,8 @@ bin/wahcade
 bin/wahcade-layout-editor
 bin/wahcade-setup
 share/applications/wahcade.desktop
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/INI_FILES
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/KEYS
-%%PORTDOCS%%%%DOCSDIR%%/LAYOUT_EDITOR
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/SETUP_EDITOR
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/file_formats/fav_format.txt
-%%PORTDOCS%%%%DOCSDIR%%/file_formats/filter_format.txt
-%%PORTDOCS%%%%DOCSDIR%%/file_formats/gamelist_format.txt
-%%PORTDOCS%%%%DOCSDIR%%/file_formats/layout_format.txt
-%%PORTDOCS%%%%DOCSDIR%%/xmame/xmame-x11rc
-%%PORTDOCS%%%%DOCSDIR%%/xmame/xmame-x11rc.pre88
-%%PORTDOCS%%%%DOCSDIR%%/xmame/xmamerc
-%%PORTDOCS%%%%DOCSDIR%%/xmame/xmamerc.post105
-%%PORTDOCS%%%%DOCSDIR%%/xmame/xmamerc.pre88
+%%PORTDOCS%%%%DOCSDIR%%
+share/pixmaps/wahcade.png
 %%DATADIR%%/config.dist/cpviewer.ini
 %%DATADIR%%/config.dist/ctrlr/.dir
 %%DATADIR%%/config.dist/ctrlr/default.ini
@@ -42,7 +26,29 @@ share/applications/wahcade.desktop
 %%DATADIR%%/config.dist/layouts/histview/example.lay
 %%DATADIR%%/config.dist/wahcade.ini
 %%DATADIR%%/constants.py
+%%DATADIR%%/doc/CHANGELOG
+%%DATADIR%%/doc/COPYING
+%%DATADIR%%/doc/INI_FILES
+%%DATADIR%%/doc/INSTALL
+%%DATADIR%%/doc/KEYS
+%%DATADIR%%/doc/LAYOUT_EDITOR
+%%DATADIR%%/doc/README
+%%DATADIR%%/doc/SETUP_EDITOR
+%%DATADIR%%/doc/TODO
+%%DATADIR%%/doc/file_formats/fav_format.txt
+%%DATADIR%%/doc/file_formats/filter_format.txt
+%%DATADIR%%/doc/file_formats/gamelist_format.txt
+%%DATADIR%%/doc/file_formats/layout_format.txt
+%%DATADIR%%/doc/xmame/xmame-x11rc
+%%DATADIR%%/doc/xmame/xmame-x11rc.pre88
+%%DATADIR%%/doc/xmame/xmamerc
+%%DATADIR%%/doc/xmame/xmamerc.post105
+%%DATADIR%%/doc/xmame/xmamerc.pre88
+%%DATADIR%%/en.po
+%%DATADIR%%/en_GB.po
+%%DATADIR%%/es.po
 %%DATADIR%%/filters.py
+%%DATADIR%%/fr.po
 %%DATADIR%%/glade/layout_editor.glade
 %%DATADIR%%/glade/wahcade_setup.glade
 %%DATADIR%%/glade/win_cpviewer.png
@@ -52,17 +58,19 @@ share/applications/wahcade.desktop
 %%DATADIR%%/glade/win_options.png
 %%DATADIR%%/glade/win_scrsave.png
 %%DATADIR%%/glade2.py
+%%DATADIR%%/gst_video.py
 %%DATADIR%%/key_consts.py
 %%DATADIR%%/layout_editor.py
 %%DATADIR%%/layout_props.py
 %%DATADIR%%/layout_scr_props.py
+%%DATADIR%%/locale/de/LC_MESSAGES/wahcade.mo
 %%DATADIR%%/locale/en/LC_MESSAGES/wahcade.mo
 %%DATADIR%%/locale/en_GB/LC_MESSAGES/wahcade.mo
 %%DATADIR%%/locale/es/LC_MESSAGES/wahcade.mo
 %%DATADIR%%/locale/fr/LC_MESSAGES/wahcade.mo
 %%DATADIR%%/locale/sv/LC_MESSAGES/wahcade.mo
 %%DATADIR%%/mamewah_ini.py
-%%DATADIR%%/mplayer.py
+%%DATADIR%%/messages.pot
 %%DATADIR%%/pixmaps/empty.png
 %%DATADIR%%/pixmaps/wahcade-logo.png
 %%DATADIR%%/pixmaps/wahcade.ico
@@ -73,8 +81,10 @@ share/applications/wahcade.desktop
 %%DATADIR%%/pixmaps/win_msg.png
 %%DATADIR%%/pixmaps/win_options.png
 %%DATADIR%%/pixmaps/win_scrsave.png
+%%DATADIR%%/run_emu.bat
 %%DATADIR%%/scrolled_list.py
 %%DATADIR%%/setup.py
+%%DATADIR%%/sv.po
 %%DATADIR%%/templates/new_emulator-0.ini
 %%DATADIR%%/templates/new_emulator-1.ini
 %%DATADIR%%/templates/new_emulator.ini
@@ -102,8 +112,13 @@ share/applications/wahcade.desktop
 @dirrm %%DATADIR%%/locale/en_GB
 @dirrm %%DATADIR%%/locale/en/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/en
+@dirrm %%DATADIR%%/locale/de/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/de
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/doc/xmame
+@dirrm %%DATADIR%%/doc/file_formats
+@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/config.dist/layouts/histview
 @dirrm %%DATADIR%%/config.dist/layouts/cpviewer
 @dirrm %%DATADIR%%/config.dist/layouts/classic_800x600
@@ -115,7 +130,4 @@ share/applications/wahcade.desktop
 @dirrm %%DATADIR%%/config.dist/ctrlr
 @dirrm %%DATADIR%%/config.dist
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/xmame
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/file_formats
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications

@@ -36,33 +36,32 @@ RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 .endif
 
+post-extract:
+	@cd ${WRKSRC} && ${RM} install && ${MV} wahcade.desktop ..
+
 do-build:
+	@${MKDIR} ${WRKDIR}/bin
 .for f in ${WRAPPERS}
 	@(${ECHO_CMD} "#!${SH}"; \
 	  ${ECHO_CMD} "cd ${DATADIR} || exit 1"; \
 	  ${ECHO_CMD} 'exec ${PYTHON_CMD} ${f}.py "$$@"') \
-	  > ${WRKSRC}/${f}
+	  > ${WRKDIR}/bin/${f}
 .endfor
 
 do-install:
 .for f in ${WRAPPERS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/bin/${f} ${PREFIX}/bin
 .endfor
 	${MKDIR} ${DATADIR}
-.for f in *.py config.dist glade locale pixmaps templates
-	${CP} -R ${WRKSRC}/${f} ${DATADIR}
-.endfor
-	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
-		${PREFIX}/share/applications
+	${CP} -R ${WRKSRC}/* ${DATADIR}
 	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
 	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
-	@${FIND} ${DOCSDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
-	@${FIND} ${DOCSDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
+	${LN} -sf ${DATADIR}/doc ${DOCSDIR}
 .endif
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKDIR}/wahcade.desktop ${PREFIX}/share/applications
+	${LN} -sf ${DATADIR}/pixmaps/wahcade.png ${PREFIX}/share/pixmaps
 
 post-install:
 	@${ECHO_CMD}
