@@ -45,10 +45,4 @@ MAN3=	Oryx.3 Oryx::Association.3 Oryx::Association::Array.3 Oryx::Attribute.3 \
 	Oryx::DBM::Association.3 Oryx::DBM::Class.3 Oryx::DBI::Parent.3 \
 	Oryx::Association::Reference.3 Oryx::DBM::Util.3 Oryx::Value::Text.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

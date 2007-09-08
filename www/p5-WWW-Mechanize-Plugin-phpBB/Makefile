@@ -25,10 +25,4 @@ MAN3=	WWW::Mechanize::Plugin::phpBB.3
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600 # inherited from p5-WWW-Mechanize-Pluggable
-IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

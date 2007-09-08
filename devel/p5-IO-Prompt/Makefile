@@ -31,7 +31,4 @@ post-patch:
 	@${PERL} -pi -e '$$_ = "" if m|use 5.008;|' \
 		${WRKSRC}/lib/IO/Prompt.pm
 .endif
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires Perl 5.6. Install lang/perl5 or lang/perl5.8, and try again
-.endif
 .include <bsd.port.post.mk>

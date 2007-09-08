@@ -20,14 +20,8 @@ RUN_DEPENDS=	p5-Exception-Class>=1.22:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	Object::InsideOut.3 Object::InsideOut::Metadata.3 Bundle::Object::InsideOut.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800 # inherited from p5-Exception-Class
-IGNORE=		requires perl 5.8 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -38,11 +38,6 @@ post-install:
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e 's/\r\n/\n/;' -e 's/^use warnings;//' ${WRKSRC}/lib/File/Modified.pm
-.endif
 .endif
 
 .include <bsd.port.post.mk>

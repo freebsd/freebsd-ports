@@ -22,16 +22,10 @@ BUILD_DEPENDS=	${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Plug
 		p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	File::Attributes.3 \
 	File::Attributes::Base.3 \
 	File::Attributes::Simple.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		fails its tests on this version of perl
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

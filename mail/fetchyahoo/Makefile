@@ -35,10 +35,6 @@ USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or newer. Install lang/perl5.8 and try again
-.endif
-
 .if ${PERL_LEVEL} < 500800
 RUN_DEPENDS+=	${SITE_PERL}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net
 .endif

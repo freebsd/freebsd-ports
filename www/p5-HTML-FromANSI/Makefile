@@ -23,10 +23,4 @@ PERL_CONFIGURE=	yes
 MAN1=		ansi2html.1
 MAN3=		HTML::FromANSI.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601 # from p5-HTML-Parser
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

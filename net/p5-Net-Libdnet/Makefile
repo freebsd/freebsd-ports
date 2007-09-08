@@ -16,14 +16,8 @@ COMMENT=	Libdnet interface
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 CONFIGURE_ARGS=	INC='-I${LOCALBASE}/include'
 MAN3=		${PORTNAME:S/-/::/g}.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires at least Perl 5.8.  Please install lang/perl58 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

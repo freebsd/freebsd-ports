@@ -30,10 +30,4 @@ MAN3=		Smart::Comments.3
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} -f {} \;
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		Perl5.6 or greater required. Please install lang/perl5 or lang/perl5.8
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

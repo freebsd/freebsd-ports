@@ -20,12 +20,6 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 MAN3=	URI::OpenURL.3
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+	# uses the utf8 pragma
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	uses the utf8 pragma and therefore requires at least Perl5.8
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

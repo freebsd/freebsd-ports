@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GNOME=	gtk20 desktopfileutils
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.0+
 MAN1=		zim.1
 MAN3=		Gtk2::Ex::DesktopEntryMenu.3 \
 		Gtk2::Ex::HyperTextBuffer.3 \
@@ -65,10 +65,6 @@ OPTIONS=	TRAYICON	"Support trayicon"	on \
 		SPELL	"Support spell"	on
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		perl 5.8.0 or newer required, please install lang/perl5.8 and try again
-.endif
 
 .if !defined(WITHOUT_TRAYICON)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2/TrayIcon.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2-TrayIcon

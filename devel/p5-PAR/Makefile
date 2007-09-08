@@ -35,10 +35,4 @@ MAN3=		PAR.3 \
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		only supports the ports versions of Perl,
-IGNORE+=If you have installed a Perl port, and are getting this message,
-IGNORE+=please make sure you have given the command \'use.perl port\'
-.endif # ${PERL_LEVEL} < 500601
-
 .include <bsd.port.post.mk>

@@ -38,12 +38,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	INSTALL DEINSTALL pkg-message
 SUB_LIST+=	AMAVISUSER=${AMAVISUSER} AMAVISGROUP=${AMAVISGROUP}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		Need at least perl 5.6.1 to build
-.endif
-
 pre-install: apply-slist
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
@@ -66,4 +60,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

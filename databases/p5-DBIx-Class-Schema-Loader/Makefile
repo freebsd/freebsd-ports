@@ -26,7 +26,7 @@ RUN_DEPENDS=	p5-Data-Dump>=1.06:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-DBIx-Class>=0.07006:${PORTSDIR}/databases/p5-DBIx-Class \
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	DBIx::Class::Schema::Loader.3 \
 	DBIx::Class::Schema::Loader::Base.3 \
@@ -48,10 +48,6 @@ OPTIONS=	SQLITE "SQLite Support" Off \
 		ORACLE "Oracle Support (experimental)" Off
 		
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 500800
-IGNORE=	requires Perl 5.8. Install lang/perl5.8, and try again
-.endif
 
 .if defined(WITH_SQLITE)
 RUN_DEPENDS+=	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite \

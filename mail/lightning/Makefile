@@ -48,10 +48,6 @@ GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 pthread | ${SED} -e 's|^.*%{
 IGNORE=	does not build
 .endif
 
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
-.endif
-
 pre-everything::
 	@if [ -n "`${PKG_INFO} -xI '^thunderbird-[0-9].[0-9]*'`" ]; then \
 		${ECHO_CMD} "${PKGNAME}: thunderbird conflicts with ${PORTNAME}, if you wish to not"; \

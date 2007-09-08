@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${LOCALBASE}/bin/checklink:${PORTSDIR}/www/p5-W3C-LinkChecker
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.2+	# inherited from www/p5-webservice-validator-css-w3c
 
 MAN3=	W3C::LogValidator.3 \
 	W3C::LogValidator::Basic.3 \
@@ -36,12 +36,6 @@ MAN3=	W3C::LogValidator.3 \
 	W3C::LogValidator::Output::Raw.3 \
 	W3C::LogValidator::SurveyEngine.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500802 # inherited from www/p5-webservice-validator-css-w3c
-IGNORE=	requires at least Perl 5.8.2.  Please install lang/perl5.8 and try again
-.endif
-
 .ifndef (NOPORTDOCS)
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
@@ -50,4 +44,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/samples/logprocess.conf ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

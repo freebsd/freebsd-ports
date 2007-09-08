@@ -26,8 +26,4 @@ MAN3=	Test::SubCalls.3
 post-patch:
 	@${PERL} -pi -e '$$_="" if m/Test::More/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500601  # inherited from devel/p5-Hook-LexWrap
-IGNORE=	requires perl 5.6.1 or newer. Install lang/perl5 or lang/perl5.8 and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

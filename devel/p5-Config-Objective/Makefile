@@ -27,10 +27,4 @@ MAN3=		Config::Objective::List.3 Config::Objective::Boolean.3 \
 		Config::Objective::Hash.3 Config::Objective::Integer.3 \
 		Config::Objective::String.3 Config::Objective::DataType.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		This port requires perl 5.6 or newer
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

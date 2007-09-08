@@ -28,6 +28,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 		${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_PERL5=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
@@ -36,10 +38,6 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 
 PERL_CONFIGURE=	yes
-
-.if ${PERL_LEVEL} < 500600
-BROKEN=		"Does not compile with perl ${PERL_VERSION}"
-.endif
 
 MAN1=		vcp.1
 MAN3=		RevML::Doctype.3 \

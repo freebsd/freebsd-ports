@@ -28,7 +28,7 @@ RUN_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-Class-Accessor-Grouped>=0.05002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-JSON>=1.00:${PORTSDIR}/converters/p5-JSON
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN1=	dbicadmin.1
 MAN3=	DBIx::Class.3 \
@@ -101,8 +101,4 @@ MAN3=	DBIx::Class.3 \
 post-extract:
 	@${PERL} -i.bak -ne 'print unless /^\s*build_requires/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500801
-IGNORE=	requires at least Perl 5.8.1. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

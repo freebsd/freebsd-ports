@@ -26,16 +26,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Business::PayPal::EWP.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	#${PERL} -pi -e 's!^our \((.*?)(?=\);)!join("","use vars qw(",split(/,/,$$1))!e' ${WRKSRC}/lib/Business/PayPal/EWP.pm
-	${PERL} -pi -e 's/^our /my /' ${WRKSRC}/lib/Business/PayPal/EWP.pm
-.endif
-
 post-configure:
 	${PERL} -pi -e 's/\x0d//' ${WRKSRC}/ppport.h
 	${PERL} -pi -e 's/\x0d//' ${WRKSRC}/lib/Business/PayPal/EWP.pm
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

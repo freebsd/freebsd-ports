@@ -18,7 +18,7 @@ COMMENT=	Reserved SQL words by ANSI/ISO
 BUILD_DEPENDS=	${SITE_PERL}/Sub/Exporter.pm:${PORTSDIR}/devel/p5-Sub-Exporter
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN1=	sqlrw.1
 MAN3=	SQL::ReservedWords.3 \
@@ -31,8 +31,4 @@ MAN3=	SQL::ReservedWords.3 \
 	SQL::ReservedWords::SQLite.3 \
 	SQL::ReservedWords::Sybase.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

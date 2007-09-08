@@ -53,11 +53,4 @@ pre-build:
 	cd ${WRKSRC}/gcc &&\
 		makeinfo -I doc -I doc/include --no-split -o doc/gcc.info doc/gcc.texi
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BROKEN=		System's Pod::Man too old to generate the documentation.
-IGNORE=		you need a newer version of Perl to build the documentation
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

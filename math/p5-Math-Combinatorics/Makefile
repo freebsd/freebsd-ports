@@ -19,10 +19,4 @@ MAN3=		Math::Combinatorics.3
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or greater.  Please install lang/perl58 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

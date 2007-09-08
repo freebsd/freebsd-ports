@@ -43,15 +43,9 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/
 		${SITE_PERL}/enum.pm:${PORTSDIR}/devel/p5-enum
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.7.3+
 
 MAN1=		bbsboard.1 bbscomd.1 bbsmail.1
 MAN3=		OurNet::BBS.3 OurNet::BBS::Roadmap.3 OurNet::BBS::Tutorial.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-IGNORE=		requires perl 5.7.3 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

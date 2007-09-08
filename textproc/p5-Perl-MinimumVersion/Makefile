@@ -22,16 +22,12 @@ RUN_DEPENDS=	p5-File-Find-Rule>0:${PORTSDIR}/devel/p5-File-Find-Rule \
 		p5-version>=0.72.03:${PORTSDIR}/devel/p5-version
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN1=	perlver.1
 MAN3=	Perl::MinimumVersion.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500801
-IGNORE=	requires Perl 5.8.1 or newer. Install lang/perl5.8 and try again
-.endif
-
 post-patch:
 	@${PERL} -pi -e '$$_="" if m/Test::/' ${WRKSRC}/Makefile.PL
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>

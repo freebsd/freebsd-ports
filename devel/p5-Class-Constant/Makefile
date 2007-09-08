@@ -21,10 +21,6 @@ MAN3=		Class::Constant.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6.0 or newer. Please install lang/perl5.8 and try again
-.endif
-
 .if ${PERL_LEVEL} < 500703
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 BUILD_DEPENDS=	${RUN_DEPENDS}

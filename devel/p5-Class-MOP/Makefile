@@ -17,7 +17,7 @@ COMMENT=	A Meta Object Protocol for Perl 5
 RUN_DEPENDS=	p5-Sub-Name>=0.02:${PORTSDIR}/devel/p5-Sub-Name
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.0+
 
 MAN3=	Class::MOP.3 \
 	Class::MOP::Attribute.3 \
@@ -41,8 +41,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

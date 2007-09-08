@@ -41,10 +41,4 @@ MAN3=	Net::DBus::ASyncReply.3 Net::DBus::Annotation.3 Net::DBus::Tutorial.3 \
 	Net::DBus::Error.3 Net::DBus::Test::MockIterator.3 \
 	Net::DBus::Test::MockMessage.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.006 or better
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

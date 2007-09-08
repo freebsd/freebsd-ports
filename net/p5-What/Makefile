@@ -26,10 +26,6 @@ MAN3=		What.3 What::MTA.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600	# Inherited from devel/p5-Error
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 then try again
-.endif
-
 .if ${PERL_LEVEL} < 500702
 BUILD_DEPENDS+=	${SITE_PERL}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net
 .endif

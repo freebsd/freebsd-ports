@@ -19,12 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Math::Base85.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-post-patch:
-	@${PERL} -pi -e 's/use Math::Big/#$$&/;' \
-		     -e 's|^use constant\s*(.*?)\s*=>.s*(.*)$$|sub $$1 { $$2 }|' ${WRKSRC}/Base85.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

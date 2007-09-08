@@ -18,14 +18,10 @@ COMMENT=	Runtime cgiapp info in a popup window
 BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	CGI::Application::Plugin::DevPopup.3 \
 	CGI::Application::Plugin::DevPopup::HTTPHeaders.3 \
 	CGI::Application::Plugin::DevPopup::Timing.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires Perl 5.8 or newer. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

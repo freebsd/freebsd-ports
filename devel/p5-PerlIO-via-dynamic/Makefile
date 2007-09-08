@@ -15,14 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Dynamic PerlIO layers
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		PerlIO::via::dynamic.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		this module only supports perl 5.8.0 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

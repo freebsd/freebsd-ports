@@ -18,7 +18,7 @@ COMMENT=	An extensible database with SQL and DBI
 RUN_DEPENDS=	${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.7.3+
 
 MAN1=		gendba.pl.1 genexp.pl.1
 MAN3=		Genezzo.3 Genezzo::Block::RDBArray.3 \
@@ -55,10 +55,4 @@ MAN3=		Genezzo.3 Genezzo::Block::RDBArray.3 \
 		Genezzo::Util.3 Genezzo::XEval.3 Genezzo::XEval::Prepare.3 \
 		Genezzo::XEval::SQLAlter.3 Genezzo::gendba.3 Genezzo::genexp.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-IGNORE=		requires Perl 5.7.3 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

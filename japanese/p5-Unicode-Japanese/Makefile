@@ -14,16 +14,12 @@ MASTER_SITE_SUBDIR=	../../authors/id/H/HI/HIO
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Perl5 module to handle Japanese character encodings
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 MAN1=		ujconv.1
 MAN3=		Unicode::Japanese.3 Unicode::Japanese::JA.3
 
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		needs perl 5.8.0 or higher, install lang/perl5.8 and try again
-.endif
 
 .include <bsd.port.post.mk>

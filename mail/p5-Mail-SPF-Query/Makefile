@@ -26,10 +26,4 @@ PERL_CONFIGURE=	yes
 MAN1=		spfd.1 spfquery.1
 MAN3=		Mail::SPF::Query.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

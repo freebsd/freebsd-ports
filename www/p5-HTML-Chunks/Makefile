@@ -17,17 +17,11 @@ COMMENT=	A simple nested template engine for HTML, XML and XHTML
 
 RUN_DEPENDS=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.6+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=		HTML::Chunks.3 HTML::Chunks::Local.3 HTML::Chunks::Super.3 \
 		HTML::ChunksLocal.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500806
-IGNORE=		needs Perl 5.8.6 or above (lang/perl5.8)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

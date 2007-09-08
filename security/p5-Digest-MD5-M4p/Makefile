@@ -25,13 +25,4 @@ MAN3=		Digest::MD5::M4p.3
 post-extract:
 	@${PERL} -pi -e 's/\r//g' ${WRKSRC}/M4p.xs
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 500503
-post-configure:
-	@${PERL} -pi -e '$$_="" if /use warnings/' ${WRKSRC}/M4p.pm
-	# make PREFIX-clean under perl 5.005_03
-	@${PERL} -pi -e 's,/usr/local/,\$${PREFIX}/,g' ${WRKSRC}/Makefile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

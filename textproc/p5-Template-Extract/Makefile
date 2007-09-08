@@ -25,10 +25,4 @@ MAN3=	Template::Extract.3 \
 	Template::Extract::Parser.3 \
 	Template::Extract::Run.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	"Requires perl 5.6.x or higher"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

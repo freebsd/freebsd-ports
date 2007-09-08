@@ -23,10 +23,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Class::DBI::DATA::Schema.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 500600
-IGNORE=	requires at least Perl 5.6 due to dependencies.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

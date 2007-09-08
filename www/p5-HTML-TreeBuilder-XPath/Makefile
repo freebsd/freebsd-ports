@@ -24,12 +24,6 @@ MAN3=		HTML::TreeBuilder::XPath.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -pi -e '$$_ = "" if /^use (5\.006|vars|warnings)/' \
-		${WRKSRC}/Makefile.PL ${WRKSRC}/lib/HTML/TreeBuilder/XPath.pm
-.endif
-
 .if ${PERL_LEVEL} < 500703
 RUN_DEPENDS+=	${SITE_PERL}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif

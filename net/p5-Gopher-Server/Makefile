@@ -29,10 +29,4 @@ MAN3=		Gopher::Server::ParseRequest.3 \
 		Gopher::Server::Response.3 \
 		Gopher::Server::TypeMapper.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		"needs at least perl 5.6.0 to work"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

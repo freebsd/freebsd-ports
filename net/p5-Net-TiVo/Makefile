@@ -20,16 +20,10 @@ BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=		Net::TiVo.3 \
 		Net::TiVo::Show.3 \
 		Net::TiVo::Folder.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-IGNORE=		requires perl 5.8.x or later. Install lang/perl58 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

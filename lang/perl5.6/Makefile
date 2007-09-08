@@ -23,6 +23,8 @@ COMMENT=	Practical Extraction and Report Language
 PERL_VER=	5.6.2
 PERL_ARCH=	mach
 PERL_VERSION=	${PERL_VER}
+SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
+SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
@@ -46,6 +48,11 @@ MAKE_ENV+=	${LOCALE_CLEANUP}
 
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
+
+PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
+		PERL_VER=${PERL_VER} \
+		PERL_ARCH=${PERL_ARCH} \
+		SITE_PERL=${SITE_PERL:S|^${LOCALBASE}/||}
 
 .if defined(ENABLE_SUIDPERL)
 CONFIGURE_ARGS+=	-Dd_dosuid=define

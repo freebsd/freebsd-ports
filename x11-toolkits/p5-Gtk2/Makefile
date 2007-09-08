@@ -21,18 +21,12 @@ BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-De
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
 
 USE_GNOME=	gtk20 pango
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 USE_GMAKE=	yes
 CONFIGURE_ENV+=	FORCE_GMAKE=yes
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 then try again
-.endif
 
 post-install:
 	@cd ${WRKSRC}/blib/man3 && ${FIND} * -name "*.3" | ${SED} \
 		's,^,${MAN3PREFIX:S,^${PREFIX}/,,}/man/man3/,' >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

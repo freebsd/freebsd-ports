@@ -13,6 +13,8 @@ MASTER_SITES=		http://www.naney.org/comp/distrib/WiKicker/archive/
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Wiki like system by perl5
 
+USE_PERL5=		yes
+
 # ============================================================================
 # =  You have to appoint GPG to use a function to upload an image.           =
 # =  If it is necessary, it seems to be    WITH_IMAGEUPLOAD=yes		     =

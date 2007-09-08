@@ -15,17 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PadWalker - play with Perl lexical variables
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	PadWalker.3
 
 post-patch:
 	${PERL} -i -pe '$$_ = "" if /DEBUGGING/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	This port requires perl 5.8.X.  Please install lang/perl5.8.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -22,7 +22,7 @@ MODULE_DEPENDS=	p5-Lingua-StopWords>=0.02:${PORTSDIR}/textproc/p5-Lingua-StopWor
 RUN_DEPENDS+=	${MODULE_DEPENDS}
 BUILD_DEPENDS+=	${MODULE_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.0+
 
 MAN3=	KinoSearch.3 \
 	KinoSearch::Analysis::Analyzer.3 \
@@ -114,10 +114,4 @@ MAN3=	KinoSearch.3 \
 	KinoSearch::Util::ToolSet.3 \
 	KinoSearch::Util::VerifyArgs.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl 5.8.0 or later.  Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

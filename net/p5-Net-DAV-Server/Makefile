@@ -32,11 +32,7 @@ MAN3=		Net::DAV::Server.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600	# Inherited from www/p5-libwww
-IGNORE=		requires Perl 5.6.0 or newer. Please install lang/perl5.8 and try again
-.endif
-
-.if ${PERL_LEVEL} < 500602 || ${PERL_LEVEL} == 500701
+.if ${PERL_LEVEL} == 500701
 RUN_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 

@@ -52,10 +52,6 @@ RESTRICTED=	License does not permit distribution
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or above
-.endif
-
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	\
 : Because of licensing restrictions, you must fetch the source distribution\
@@ -69,9 +65,6 @@ ECHO_MSG=${ECHO_CMD}
 .if ${PERL_LEVEL} < 500800
 RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
-.endif
-.if ${PERL_LEVEL} < 500601
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
 .endif
 
 pre-everything::

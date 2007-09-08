@@ -19,13 +19,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Time::Human.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES+=	${PATCHDIR}/Human.pm-5005.patch
-.endif
-
 test:		build
 		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

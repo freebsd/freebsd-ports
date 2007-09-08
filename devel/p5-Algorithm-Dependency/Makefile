@@ -29,11 +29,4 @@ MAN3=	Algorithm::Dependency.3 \
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-IGNORE=	requires perl 5.6 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

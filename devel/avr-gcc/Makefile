@@ -61,9 +61,4 @@ INFO=		cpp gcc gccint cppinternals gccinstall
 post-extract:
 	cd ${WRKDIR} && ${MKDIR} build
 
-.if ${PERL_LEVEL} < 500600
-BROKEN=		system's Pod::Man too old to generate the documentation.
-IGNORE=		you need a newer version of Perl to build the documentation
-.endif
-
 .include <bsd.port.post.mk>

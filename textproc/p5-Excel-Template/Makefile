@@ -57,9 +57,7 @@ MAN3=		Excel::Template.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600 # as required by vendor
-IGNORE=		requires at least Perl 5.6.  Please install lang/perl5.8 and try again
-.elif ${PERL_LEVEL} < 500800
+.if ${PERL_LEVEL} < 500800
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String
 CONFIGURE_ARGS+=	USE_UNICODE=1
 .endif

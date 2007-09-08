@@ -20,16 +20,10 @@ BUILD_DEPENDS=	${SITE_PERL}/Catalyst/Plugin/SubRequest.pm:${PORTSDIR}/www/p5-Cat
 		${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	Catalyst::Helper::View::GraphView.3 \
 	Catalyst::Helper::View::GraphViz.3 \
 	Catalyst::View::GraphViz.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE= requires Perl 5.8. Install lang/perl5.8, and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

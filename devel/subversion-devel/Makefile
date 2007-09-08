@@ -92,9 +92,7 @@ PLIST_SUB+=		WITHOUT_BDB=""
 .endif
 
 .if defined(WITH_PERL)
-.if ${PERL_LEVEL} < 500800
-IGNORE=	subversion\'s Perl bindings need perl 5.8.0 or greater. Upgrade your perl and try again
-.endif
+USE_PERL5=		5.8.0+
 SWIG_BINDINGS+=		yes
 USE_PERL5=		yes
 PLIST_SUB+=		WITH_PERL=""

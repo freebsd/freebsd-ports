@@ -34,8 +34,4 @@ MAN3=		Net::Frame::Dump.3 \
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 .endif
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
-.endif
-
 .include <bsd.port.post.mk>

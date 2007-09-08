@@ -31,12 +31,4 @@ post-extract:
 	${RM} -f ${WRKSRC}/._GCrypt.pm
 	${RM} -f ${WRKSRC}/._GCrypt.xs
 
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -pi -e 's/^our (\W\w+);/use vars q($$1);/o;' \
-	    -e 's/^our\s+(\W\w+)(?!;)/use vars q($$1); $$1/o;' \
-	    -e 'undef $$_ if /^\s*(no|use) warnings/o;' \
-	    ${WRKSRC}/GCrypt.pm ${WRKSRC}/Makefile.PL
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

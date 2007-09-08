@@ -25,14 +25,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	POE::Component::Client::Telnet.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
-.endif
-
-.if ${PERL_LEVEL} < 500602
-BUILD_DEPENDS+=	p5-Test-Simple>=0.32:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

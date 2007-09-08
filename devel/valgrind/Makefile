@@ -54,10 +54,6 @@ PLIST_SUB+=	RELENG_7="@comment "
 .endif
 .endif
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		can\'t be built. Your Perl version is too old. Please use lang/perl5.8 port to upgrade your Perl
-.endif
-
 PROCFS!=	/sbin/mount | ${GREP} '^procfs' | ${AWK} '{print $1}'
 
 pre-everything::

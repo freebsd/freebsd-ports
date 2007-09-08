@@ -20,11 +20,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		XML::NamespaceSupport.3
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${PERL_LEVEL} < 500600
-	${PERL} -pi -e '$$_="" if /warnings/' ${WRKSRC}/NamespaceSupport.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

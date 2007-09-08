@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.r/rc/}
 MAINTAINER=	lupe@lupe-christoph.de
 COMMENT=	Node-specific part of Munin
 
+USE_PERL5=	yes
+
 RUN_DEPENDS=	${SITE_PERL}/Net/Server/Fork.pm:${PORTSDIR}/net/p5-Net-Server
 BUILD_DEPENDS=	${RUN_DEPENDS}
 

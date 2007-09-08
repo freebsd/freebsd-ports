@@ -20,14 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Filter/Simple.pm:${PORTSDIR}/textproc/p5-Filter-Simp
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.4+
 
 MAN3=	Perl6::Subs.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500804
-IGNORE=		requires perl 5.8.4 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -19,10 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		AutoLoader.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		this program only support perl 5.6.1 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -35,8 +35,4 @@ RUN_DEPENDS+=	p5-Storable>=2.04:${PORTSDIR}/devel/p5-Storable
 .endif
 .endif
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.1 or later. Install lang/perl5.8 then try again
-.endif
-
 .include <bsd.port.post.mk>

@@ -17,14 +17,8 @@ COMMENT=	Store sessions using a Catalyst::Plugin::Cache
 BUILD_DEPENDS=	p5-Catalyst-Plugin-Session>=0.06:${PORTSDIR}/www/p5-Catalyst-Plugin-Session
 RUN_DEPENDS=	p5-Catalyst-Plugin-Session>=0.06:${PORTSDIR}/www/p5-Catalyst-Plugin-Session
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Catalyst::Plugin::Session::Store::Cache.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 500801
-IGNORE=	requires Perl 5.8.1. Install lang/perl5.8, and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

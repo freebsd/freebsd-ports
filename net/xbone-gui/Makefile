@@ -43,14 +43,4 @@ INSTALL_TARGET=	gui
 MAN5=		xbone-gui.conf.5
 MAN8=		xb-gui-control.8 xb-apache-config.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 470000
-IGNORE=		X-Bone ${PORTVERSION} does not support FreeBSD prior to 4.7
-.endif
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		X-Bone requires Perl version 5.6.1 or higher. Install lang/perl5.8 and try again.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

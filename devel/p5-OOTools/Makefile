@@ -27,10 +27,4 @@ MAN3=		Class::constr.3 \
 		Package::groups.3 \
 		Package::props.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.1 or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

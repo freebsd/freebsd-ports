@@ -31,12 +31,6 @@ PLIST_SUB=	TIARRA_USER=${TIARRA_USER} \
 TIARRA_USER=	tiarra
 TIARRA_GROUP=	tiarra
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		needs perl 5.6.0 or higher, install lang/perl5.8 and try again
-.endif
-
 do-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${MKDIR} ${PREFIX}/tiarra
@@ -51,4 +45,4 @@ do-install:
 	@${CHMOD} o-rwx ${PREFIX}/tiarra/log
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

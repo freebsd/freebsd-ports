@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${SITE_PERL}/GD/Text/Align.pm:${PORTSDIR}/graphics/p5-GD-TextUtil
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		GD::Graph.3 \
 		GD::Graph::Data.3 \
@@ -33,10 +33,4 @@ MAN3=		GD::Graph.3 \
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -print0 | ${XARGS} -0 ${RM} -f
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

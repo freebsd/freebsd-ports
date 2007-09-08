@@ -21,13 +21,9 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/DBI/Loader.pm:${PORTSDIR}/databases/p5-Class-D
 		${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Catalyst::Helper::Model::CDBI.3 \
 	Catalyst::Model::CDBI.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500800
-IGNORE=	requires Perl 5.8. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -20,10 +20,4 @@ MAN3=		Array::Iterator.3 Array::Iterator::Circular.3 \
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

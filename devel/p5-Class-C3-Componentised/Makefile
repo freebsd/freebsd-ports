@@ -18,17 +18,11 @@ RUN_DEPENDS=	p5-Class-C3>=0:${PORTSDIR}/devel/p5-Class-C3 \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+	# Inherited from devel/p5-Algorithm-C3-Componentised
 
 MAN3=		Class::C3::Componentised.3
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800	# Inherited from devel/p5-Algorithm-C3-Componentised
-IGNORE=		requires perl 5.8.x or later, install lang/perl5.8
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

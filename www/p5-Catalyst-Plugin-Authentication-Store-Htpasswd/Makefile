@@ -20,14 +20,10 @@ BUILD_DEPENDS=	p5-Catalyst-Plugin-Authentication>=0.01:${PORTSDIR}/www/p5-Cataly
 		p5-Authen-Htpasswd>=0.13:${PORTSDIR}/security/p5-Authen-Htpasswd
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.1+
 
 MAN3=	Catalyst::Plugin::Authentication::Store::Htpasswd::User.3 \
 	Catalyst::Plugin::Authentication::Store::Htpasswd.3 \
 	Catalyst::Plugin::Authentication::Store::Htpasswd::Backend.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500801
-IGNORE=	requires at least Perl 5.8.1. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

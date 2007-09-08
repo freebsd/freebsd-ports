@@ -28,10 +28,4 @@ post-patch:
 	${PERL} -i -pe 's|TT_QUIET\s*=\s*0|TT_QUIET = 1|' ${WRKSRC}/Makefile.PL
 	${PERL} -i -pe 's|TT_ACCEPT\s*=\s*0|TT_ACCEPT = 1|' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

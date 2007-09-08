@@ -21,12 +21,4 @@ MAN3=	HTTP::Server::Simple.3 \
 	HTTP::Server::Simple::CGI.3 \
 	HTTP::Server::Simple::CGI::Environment.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -pi -e '$$_ = "" if m!(use|no) warnings!' \
-		${WRKSRC}/lib/HTTP/Server/Simple/CGI/Environment.pm \
-		${WRKSRC}/lib/HTTP/Server/Simple/CGI.pm \
-		${WRKSRC}/lib/HTTP/Server/Simple.pm
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

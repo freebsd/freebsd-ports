@@ -26,16 +26,12 @@ RUN_DEPENDS=	p5-Algorithm-C3>=0.06:${PORTSDIR}/devel/p5-Algorithm-C3
 .endif
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Class::C3.3 \
 		Class::C3::next.3
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,^if, .. m,}$$,' ${WRKSRC}/Makefile.PL
-
-.if ${PERL_LEVEL} < 500800	# Inherited from devel/p5-Algorithm-C3
-IGNORE=		requires perl 5.8.x or later, install lang/perl5.8
-.endif
 
 .include <bsd.port.post.mk>

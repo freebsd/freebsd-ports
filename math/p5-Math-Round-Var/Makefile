@@ -19,10 +19,4 @@ MAN3=	Math::Round::Var.3
 
 PERL_MODBUILD=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

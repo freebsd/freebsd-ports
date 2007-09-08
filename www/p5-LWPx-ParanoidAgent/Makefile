@@ -25,10 +25,6 @@ MAN3=		LWPx::ParanoidAgent.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
-.endif
-
 .if ${PERL_LEVEL} < 500703
 BUILD_DEPENDS+=	${SITE_PERL}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 .endif

@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/SWF/Element.pm:${PORTSDIR}/graphics/p5-SWF-File \
 		${SITE_PERL}/Font/TTF/Font.pm:${PORTSDIR}/x11-fonts/p5-Font-TTF
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		SWF::Builder.3 SWF::Builder::ActionScript.3 \
 		SWF::Builder::Character::Bitmap.3 \
@@ -39,10 +39,4 @@ post-patch:
 post-configure:
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

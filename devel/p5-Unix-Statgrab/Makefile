@@ -26,11 +26,4 @@ CONFIGURE_ARGS+=	INC="`pkg-config libstatgrab --cflags`" \
 
 MAN3=		Unix::Statgrab.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -i -pe 's/}\(/}->(/' ${WRKSRC}/lib/Unix/Statgrab.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

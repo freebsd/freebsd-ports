@@ -27,11 +27,4 @@ MAN3=		Net::Gopher.3 \
 		Net::Gopher::Response::InformationBlock.3 \
 		Net::Gopher::Response::MenuItem.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket.pm:${PORTSDIR}/devel/p5-IO
-BUILD_DEPENDS=	${RUN_DEPENDS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -92,13 +92,9 @@ SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
 
 .if defined(WITH_EMBEDDED_PERL)
-.if ${PERL_LEVEL} >= 500800
-USE_PERL5=	yes
+USE_PERL5=	5.8.0+
 CONFIGURE_ARGS+=	--enable-embedded-perl \
 		--with-perlcache
-.else
-IGNORE=		embedded Perl requires Perl 5.8 or higher (see lang/perl5.8)
-.endif
 PLIST_SUB+=	EMBEDDED_PERL=""
 .else
 PLIST_SUB+=	EMBEDDED_PERL="@comment "

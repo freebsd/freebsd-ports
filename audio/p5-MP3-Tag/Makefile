@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Module for reading tags of MP3 audio files
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN1=		audio_rename.1 typeset_audio_dir.1 mp3info2.1
 MAN3=		MP3::Tag.3 MP3::Tag::ID3v1.3 MP3::Tag::File.3 \
@@ -24,10 +24,4 @@ MAN3=		MP3::Tag.3 MP3::Tag::ID3v1.3 MP3::Tag::File.3 \
 
 CONFLICTS=	p5-tagged-0.*
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires Perl 5.8 or newer
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

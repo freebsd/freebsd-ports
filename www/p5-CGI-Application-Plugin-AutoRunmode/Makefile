@@ -23,8 +23,4 @@ PERL_CONFIGURE=	yes
 MAN3=	CGI::Application::Plugin::AutoRunmode.3 \
     	CGI::Application::Plugin::AutoRunmode::FileDelegate.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires Perl 5.8 or newer. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

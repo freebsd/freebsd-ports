@@ -18,11 +18,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Filesys::Virtual.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 500503
-post-patch:
-	@${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/Virtual.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

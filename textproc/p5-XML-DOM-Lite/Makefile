@@ -15,16 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lite Pure Perl XML DOM Parser Kit
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.3+
 
 MAN3=		XML::DOM::Lite.3 XML::DOM::Lite::Document.3 \
 		XML::DOM::Lite::NodeList.3 XML::DOM::Lite::Parser.3 \
 		XML::DOM::Lite::XPath.3 XML::DOM::Lite::XSLT.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500803
-IGNORE=		requires Perl 5.8.3 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

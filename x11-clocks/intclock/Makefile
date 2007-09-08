@@ -17,7 +17,6 @@ BUILD_DEPENDS=	p5-Gtk2>=1.144:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		iso-codes>=1.3:${PORTSDIR}/misc/iso-codes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 post-patch:

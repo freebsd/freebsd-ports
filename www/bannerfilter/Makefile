@@ -17,7 +17,7 @@ COMMENT=	A squid redirect script for filtering web banners
 
 RUN_DEPENDS=	squid:${PORTSDIR}/www/squid
 
-USE_PERL5=	yes
+USE_PERL5=	5.8.6+
 NO_BUILD=	yes
 
 WWW_ROOT?=	www
@@ -25,12 +25,6 @@ PLIST_SUB+=	WWW_ROOT="${WWW_ROOT}"
 CONFIG_FILES=	bannerfilter.conf banners.data banners.local.data \
 		exceptions.data exceptions.local.data frames.data \
 		frames.local.data popups.data popups.local.data
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500806
-IGNORE=		needs Perl 5.8.6 or above (lang/perl5.8)
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -70,4 +64,4 @@ post-install:
 	@${ECHO_MSG} "==========================================================================="
 	@${ECHO_MSG} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

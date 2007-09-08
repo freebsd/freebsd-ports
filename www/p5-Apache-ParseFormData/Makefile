@@ -18,18 +18,11 @@ COMMENT=	Module allows you to easily decode/parse form and query data
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+	# mod_perl 2 requires it
 
 MAN3=		Apache::ParseFormData.3
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
-.include <bsd.port.pre.mk>
-
-# mod_perl 2 requires it
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

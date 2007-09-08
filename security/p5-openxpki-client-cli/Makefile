@@ -25,7 +25,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 BROKEN=		has broken distribution. To be fixed. Use p5-openxpki-client-html-mason instead
 
 MAN3=	OpenXPKI::Client::CLI.3
-USE_PERL5=	yes
 USE_GMAKE=	yes
 PERL_CONFIGURE=	yes
 

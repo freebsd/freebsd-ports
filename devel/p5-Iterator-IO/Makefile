@@ -20,12 +20,6 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 MAN3=	Iterator::IO.3
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires at least Perl5.8 due to dependencies
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

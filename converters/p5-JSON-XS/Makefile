@@ -16,13 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	JSON serialising/deserialising, done correctly and fast
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 MAN3=		JSON::XS.3 JSON::XS::Boolean.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

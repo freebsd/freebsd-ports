@@ -19,14 +19,8 @@ RUN_DEPENDS=	${SITE_PERL}/XML/Liberal.pm:${PORTSDIR}/textproc/p5-XML-Liberal	\
 		${SITE_PERL}/XML/RSS/LibXML.pm:${PORTSDIR}/textproc/p5-XML-RSS-LibXML
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.7.3+	# inherited from textprocs/p5-XML-RSS-LibXML
 
 MAN3=		XML::RSS::Liberal.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703	# inherited from textprocs/p5-XML-RSS-LibXML
-IGNORE=	requires perl 5.7.3 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

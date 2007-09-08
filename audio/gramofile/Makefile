@@ -32,13 +32,7 @@ ALL_TARGET=	gramofile perl-swig
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-PERLCOREDIR=	/usr/libdata/perl/${PERL_VERSION}/mach/CORE
-.else
 PERLCOREDIR=	${LOCALBASE}/lib/perl5/${PERL_VERSION}/mach/CORE
-.endif
 MAKE_ARGS+=	PERLCOREDIR=${PERLCOREDIR}
 
 pre-everything::
@@ -77,4 +71,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/wav2mp3.pl ${EXAMPLESDIR}
 	${LN} -s bplay_gramo ${PREFIX}/bin/brec_gramo
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

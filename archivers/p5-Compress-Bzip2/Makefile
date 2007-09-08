@@ -15,14 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl5 interface to bzip2 compression library
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
 
 MAN3=		Compress::Bzip2.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		This module only support perl 5.6.1 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

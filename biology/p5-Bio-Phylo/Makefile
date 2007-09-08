@@ -75,12 +75,6 @@ MAN3=	Bio::Phylo.3 \
 	Bio::Phylo::Util::IDPool.3 \
 	Bio::Phylo::Util::XMLWritable.3
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.7.2+
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500702
-IGNORE=	requires at least Perl 5.7.2 due to dependencies.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -24,11 +24,4 @@ USE_RC_SUBR=	spampd
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/spampd ${PREFIX}/sbin
 
-.include <bsd.port.pre.mk>
-
-# spampd -> p5-Mail-SpamAssassin
-.if ${PERL_LEVEL} < 500601
-IGNORE=		needs perl 5.6.1 or higher, install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

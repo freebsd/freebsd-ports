@@ -25,14 +25,10 @@ USE_JAVA=       yes
 JAVA_VERSION=   1.4+
 JAVA_OS=        native
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 CONFIGURE_ARGS=	J2SDK=${JAVA_HOME} </dev/null
 
 MAN3=		Inline::Java.3 \
 		Inline::Java::Callback.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500801
-IGNORE=	requires at least Perl 5.8.1. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

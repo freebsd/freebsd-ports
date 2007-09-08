@@ -21,7 +21,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Net::Analysis.3 \
 		Net::Analysis::Constants.3 \
@@ -38,10 +38,4 @@ MAN3=		Net::Analysis.3 \
 		Net::Analysis::TCPSession.3 \
 		Net::Analysis::Time.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL}	< 500800
-IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

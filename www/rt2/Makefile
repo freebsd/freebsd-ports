@@ -42,7 +42,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
 		${SITE_PERL}/CGI/Cookie.pm:${PORTSDIR}/www/p5-CGI.pm
 
-USE_PERL5=	yes
+USE_PERL5=	5.8.0+	# dependencies require it
 ALL_TARGETS=	testdeps fixdeps
 
 WRKSRC=		${WRKDIR}/rt-${RT_VERSION}
@@ -69,10 +69,6 @@ MAN3=		RT::Links.3 RT::Watchers.3 RT::Group.3 RT::Keyword.3 \
 		RT::Handle.3 RT::ACL.3 RT::Attachments.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		dependencies require perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
 
 .if ${DB_TYPE} == "Pg"
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg

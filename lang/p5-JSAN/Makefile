@@ -37,14 +37,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=	JSAN::Shell.3 JSAN.3 JSAN::Indexer::Creator.3 JSAN::Indexer.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "40 s,new,new(\'jsan\')," ${WRKSRC}/lib/JSAN.pm
 	${FIND} ${WRKSRC}/lib -name "*.bak" -delete
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

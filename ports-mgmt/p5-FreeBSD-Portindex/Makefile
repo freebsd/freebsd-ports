@@ -28,15 +28,6 @@ CFG_FILE=	portindex.cfg
 
 MAN1=		find-updated.1 cache-init.1 cache-update.1 portindex.1
 
-.include <bsd.port.pre.mk>
-
-##
-## Needs a recent version of perl, preferably 5.8.8, but 5.6.1 should work
-##
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or (preferably) later.  Install lang/perl5.8 and try again
-.endif
-
 post-install: install-conf install-cache
 
 install-conf:
@@ -58,4 +49,4 @@ install-cache:
 	    ${CHMOD} ${CACHE_MODE} ${CACHE_DIR} ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

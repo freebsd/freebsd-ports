@@ -22,10 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Algorithm::CurveFit.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600	# inherited from math/p5-Math-Symbolic
-IGNORE=		requires 5.6.0 or newer. Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

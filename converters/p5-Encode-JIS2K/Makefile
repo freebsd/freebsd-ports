@@ -15,12 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	JIS X 0212 (aka JIS 2000) Encodings
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.7.3+
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-IGNORE=		requires Perl 5.7.3 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

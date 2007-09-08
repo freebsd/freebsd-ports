@@ -15,16 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Perl module for natively copying Perl data structures
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.5+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=		Clone::More.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500805
-IGNORE=		requires perl 5.8.5 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

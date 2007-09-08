@@ -22,13 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	"This port requires perl 5.6 or newer"
-.endif
-
 MAN3=	Plucene::Plugin::Analyzer::SnowballAnalyzer.3 \
 	Plucene::Plugin::Analyzer::SnowballFilter.3
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

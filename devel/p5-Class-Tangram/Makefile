@@ -28,10 +28,4 @@ MAN3=		Class::Tangram.3 Class::Tangram::Containers.3 \
 post-patch:
 		@${PERL} -pi -e 's/\@/\\@/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

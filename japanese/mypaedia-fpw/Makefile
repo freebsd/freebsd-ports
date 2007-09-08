@@ -20,6 +20,7 @@ BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
 
 IS_INTERACTIVE= YES
 RESTRICTED=	"The original dictionary is not free"
+USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/mypaedia-fpw${PORTVERSION}
 DICT_PATH?=	/cdrom
 

@@ -43,8 +43,4 @@ MAN3=		Cache.3 \
 		Cache::RemovalStrategy::LRU.3 \
 		Cache::Tester.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5 or lang/perl5.8 and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

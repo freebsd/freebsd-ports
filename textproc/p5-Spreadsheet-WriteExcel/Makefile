@@ -37,17 +37,9 @@ MAN3=		Spreadsheet::WriteExcel.3 \
 		Spreadsheet::WriteExcel::WorkbookBig.3 \
 		Spreadsheet::WriteExcel::Worksheet.3
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.p[lm]"| \
 	${XARGS} ${PERL} -pi -e 's/\x0D(?=\x0A)//g'
-
-.if ${PERL_LEVEL} < 500600
-post-configure:
-# dirty hack to deceive irritable pod2man
-	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
-.endif
 
 post-install:
 .ifndef(NOPORTDOCS)
@@ -64,4 +56,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/charts/* ${EXAMPLESDIR}/charts
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

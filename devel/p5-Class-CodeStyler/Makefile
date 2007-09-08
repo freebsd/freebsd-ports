@@ -18,12 +18,6 @@ COMMENT=	Perl extension for code generation program formatting and execution
 BUILD_DEPENDS=	${SITE_PERL}/Class/STL/Containers.pm:${PORTSDIR}/devel/p5-Class-STL-Containers
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.7+
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500807
-IGNORE=	requires at least Perl 5.8.7.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

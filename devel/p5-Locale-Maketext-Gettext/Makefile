@@ -17,7 +17,7 @@ COMMENT=	Joins gettext and Maketext frameworks
 BUILD_DEPENDS=	${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	5.8.0+
 
 MAN1=		maketext.1
 MAN3=		Locale::Maketext::Gettext.3 \
@@ -31,10 +31,5 @@ post-install:
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
-.include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-IGNORE="Need at least perl 5.8 to build"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

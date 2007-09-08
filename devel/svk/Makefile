@@ -50,7 +50,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-L
 		p5-version>=0.68:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN1=		svk.1
 MAN3=		SVK.3 \
@@ -150,10 +150,6 @@ MAN3=		SVK.3 \
 		SVK::XD.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-IGNORE=		this program only support perl 5.8.1 or above
-.endif
 
 .if ${PERL_LEVEL} < 500807
 BUILD_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/converters/p5-Encode

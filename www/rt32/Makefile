@@ -109,7 +109,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-
 .endif
 .endif
 
-USE_PERL5=	yes
+USE_PERL5=	5.8.3+
 RT_PATH?=	${PREFIX}/rt3
 LAYOUT?=	RT3
 
@@ -180,10 +180,4 @@ post-install:
 	@${SED} s!%%RT_PATH%%!${RT_PATH}!g ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500803
-IGNORE=		This program only support perl 5.8.3 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

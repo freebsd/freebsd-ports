@@ -20,13 +20,7 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 PLIST_FILES=	bin/${PORTNAME}.pl
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		 requires perl 5.6.0 or later. Install lang/perl5.8 and try again
-.endif
-
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

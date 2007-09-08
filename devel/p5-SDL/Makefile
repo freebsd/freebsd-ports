@@ -17,6 +17,7 @@ COMMENT=	Perl Bindings for SDL
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_PERL5=	yes
 USE_SDL=	sdl
 
 .include <bsd.port.pre.mk>
@@ -41,16 +42,11 @@ USE_SDL+=	image
 USE_SDL+=	mixer
 .endif
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		This port requires perl 5.6 or newer
-.endif
-
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
-USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 INSTALL_TARGET=	pure_install
 

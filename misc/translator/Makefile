@@ -20,15 +20,15 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 
 		${SITE_PERL}/WWW/Babelfish.pm:${PORTSDIR}/www/p5-WWW-Babelfish
 
 USE_X_PREFIX=	yes
-USE_PERL5=	yes
+USE_PERL5=	5.8.0+
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
 HAVE_THREADS!=	${PERL} -mthreads -e '' >/dev/null 2>&1 && ${ECHO_CMD} 'yes' || true
 
-.if ${PERL_LEVEL} < 500800 || empty(HAVE_THREADS)
-IGNORE=		needs threaded perl 5.8.0 or higher, install lang/perl5.8 with threads support and try again
+.if empty(HAVE_THREADS)
+IGNORE=		needs threaded perl
 .endif
 
 post-patch:

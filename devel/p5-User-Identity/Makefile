@@ -32,10 +32,4 @@ MAN3=		Mail::Identity.3 \
 		User::Identity::Location.3 \
 		User::Identity::System.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or newer
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

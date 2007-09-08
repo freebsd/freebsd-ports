@@ -19,7 +19,7 @@ BUILD_DEPENDS=	taglib-config:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_ICONV=	YES
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	5.8.3+
 CONFIGURE_ARGS+=	CC="${CXX}" LD="${CXX}"
 
 MAN3=		Audio::TagLib.3 Audio::TagLib::APE::Footer.3 \
@@ -72,10 +72,4 @@ MAN3=		Audio::TagLib.3 Audio::TagLib::APE::Footer.3 \
 post-configure:
 	${REINPLACE_CMD} -e "s,^CC = .*\$$,CC = ${CXX}," ${WRKSRC}/Makefile
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500803
-IGNORE=	perl 5.8.3 or newer required. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -22,15 +22,4 @@ MAN3=		GSSAPI.3 \
 		GSSAPI::OID::Set.3 \
 		GSSAPI::Status.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.if ${OSVERSION} < 500000
-BUILD_DEPENDS+=		krb5-config:${PORTSDIR}/security/krb5
-LIB_DEPENDS+=		krb5:${PORTSDIR}/security/krb5
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

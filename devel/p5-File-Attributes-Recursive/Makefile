@@ -20,14 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Directory/Scratch.pm:${PORTSDIR}/devel/p5-Directory-
 		${SITE_PERL}/File/Attributes.pm:${PORTSDIR}/devel/p5-File-Attributes
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	File::Attributes::Recursive.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		one of the dependencies requires perl5.8
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

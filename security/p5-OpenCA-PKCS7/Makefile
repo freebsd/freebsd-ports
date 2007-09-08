@@ -20,12 +20,4 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${PERL_LEVEL} < 500600
-	@${PERL} -pi -e 's!^our \((.*?)(?=\);)!join("","use vars qw(",split(/,/,$$1))!e' \
-		${WRKSRC}/*.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

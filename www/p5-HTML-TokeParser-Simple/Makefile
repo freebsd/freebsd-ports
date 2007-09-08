@@ -30,10 +30,4 @@ MAN3=		HTML::TokeParser::Simple.3 HTML::TokeParser::Simple::Token.3 \
 		HTML::TokeParser::Simple::Token::Tag::Start.3 \
 		HTML::TokeParser::Simple::Token::Text.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600 #inherted from www/p5-HTML-Parser
-IGNORE=	requires at least Perl 5.6 due to dependencies.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -23,13 +23,4 @@ MAN3=	IO::Capture.3 \
 	IO::Capture::Stdout.3 \
 	IO::Capture::Tie_STDx.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if m/5.006|use warnings;/' \
-		${WRKSRC}/Makefile.PL \
-		${WRKSRC}/lib/IO/Capture/Stderr.pm
-	@${PERL} -pi -e '$$_ = "return 1;" if m/lt v5/;' \
-		${WRKSRC}/lib/IO/Capture/Stderr.pm
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -20,7 +20,6 @@ RUN_DEPENDS=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		${SITE_PERL}/Parallel/ForkManager.pm:${PORTSDIR}/devel/p5-Parallel-ForkManager
 
 WRKSRC=		${WRKDIR}/Pancho-${PORTVERSION}
-USE_PERL5=	YES
 PERL_CONFIGURE=	YES
 
 MAN1=		pancho.1

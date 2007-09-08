@@ -33,10 +33,6 @@ MAN3=		Apache::Peek.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Devel/Peek.pm:${PORTSDIR}/devel/p5-Devel-Peek
-.endif
-
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 post-patch:

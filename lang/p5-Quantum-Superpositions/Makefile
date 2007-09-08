@@ -22,13 +22,4 @@ MAN3=	Quantum::Superpositions.3
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e 's/^our (\$$VERSION)/use vars qw($$1); $$1/;' \
-		     -e '$$_ = "" if /use warnings/;' \
-		${WRKSRC}/lib/Quantum/Superpositions.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

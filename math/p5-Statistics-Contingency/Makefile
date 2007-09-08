@@ -22,10 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Statistics::Contingency.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		This port will require perl 5.6.x or later in the future. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

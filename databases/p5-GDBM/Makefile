@@ -20,7 +20,7 @@ COMMENT=	GNU Data Base Manager (gdbm) interface
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${DISTNAME}/ext/GDBM_File
 WRKSRC=		${WRKDIR}/${DISTNAME}/ext/GDBM_File
 CFLAGS=		-I${LOCALBASE}/include
@@ -29,10 +29,4 @@ MAN3=		GDBM_File.3
 post-patch:
 	@${REINPLACE_CMD} -e '/MAN3PODS/s|.*||' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl from ports. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

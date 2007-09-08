@@ -43,10 +43,4 @@ MAN3=		Net::DNS::ToolKit.3 \
 		Net::DNS::ToolKit::RR::Template.3 \
 		Net::DNS::ToolKit::Utilities.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-CONFIGURE_ARGS+=	LDFLAGS="-Wl,-E -L${LOCALBASE}/lib"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -20,14 +20,8 @@ COMMENT=	Seamlessly enable SVG output from scripts written using GD
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${SITE_PERL}/SVG.pm:${PORTSDIR}/textproc/p5-SVG
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+	#inherited from graphics/p5-GD
 
 MAN3=		GD::SVG.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800 #inherited from graphics/p5-GD
-IGNORE=	requires at least Perl 5.8 due to dependencies.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

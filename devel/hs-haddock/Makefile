@@ -35,12 +35,6 @@ USE_AUTOTOOLS=	autoconf:259:env
 PLIST_SUB+=	HADDOCK_VERSION=${PORTVERSION}
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		needs perl >= 5.6
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/share/sgml/catalog||' ${WRKSRC}/doc/configure.ac
 
@@ -68,4 +62,4 @@ post-install:
 	@(cd ${WRKSRC}/doc && ${CP} -R haddock ${PREFIX}/share/doc)
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

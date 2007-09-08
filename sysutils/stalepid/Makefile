@@ -14,11 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Check for stale pid files and remove them
 
-.include <bsd.port.pre.mk>
 RUN_DEPENDS=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${SITE_PERL}/Errno.pm:${PORTSDIR}/devel/p5-Errno
-.endif
 
 USE_PERL5_RUN=	yes
 
@@ -28,4 +24,4 @@ MAN1=		stalepid.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/stalepid
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -34,11 +34,4 @@ MAN3=	GnuPG::Fingerprint.3 \
 	GnuPG::SubKey.3 \
 	GnuPG::UserId.3
 
-.include <bsd.port.pre.mk>
-
-# p5-GnuPG-Interface -> p5-Class-MethodMaker
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

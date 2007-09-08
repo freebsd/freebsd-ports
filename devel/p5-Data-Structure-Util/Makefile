@@ -25,10 +25,4 @@ PERL_MODBUILD=	yes
 MAN1=		packages.pl.1
 MAN3=		Data::Structure::Util.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600 # restricted by vendor
-IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

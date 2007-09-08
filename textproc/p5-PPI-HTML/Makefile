@@ -27,11 +27,4 @@ MAN3=	PPI::HTML.3
 post-patch:
 	@${PERL} -pi -e '$$_="" if m/Test::More/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-# version limitation inherited from textproc/p5-PPI
-IGNORE=	requires Perl 5.6 or newer. Install lang/perl5 or lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

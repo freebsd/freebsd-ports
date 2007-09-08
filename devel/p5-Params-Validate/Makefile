@@ -22,13 +22,9 @@ MAN3=		Attribute::Params::Validate.3 Params::ValidateXS.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} >= 500600 && ${PERL_LEVEL} < 500800
+.if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/Attribute/Handlers.pm:${PORTSDIR}/devel/p5-Attribute-Handlers
 RUN_DEPENDS+=	${SITE_PERL}/Attribute/Handlers.pm:${PORTSDIR}/devel/p5-Attribute-Handlers
-.endif
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>

@@ -57,10 +57,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Tim
 post-patch:
 	@${PERL} -i -pe '$$_ = "" if $$. == 3' \
 		${WRKSRC}/lib/Spoon/Base.pm
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.1 or later. Install lang/perl5 then try again
-.endif
 .else
 MAN3+=		Spoon::Config.3
 .endif

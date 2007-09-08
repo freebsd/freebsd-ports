@@ -94,13 +94,9 @@ BROKEN=	Does not compile
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 .endif
 
-# Allow building Embeded perl when >= 5.6
-.if ${PERL_LEVEL} > 500600
+# Allow building Embedded Perl
 CONFIGURE_ARGS+=	--with-perl
 USE_PERL5=	YES
-.else
-CONFIGURE_ARGS+=	--without-perl
-.endif
 
 .if defined(WITHOUT_RELOCATABLE_DUMPED_MODULES)
 CONFIGURE_ARGS+=	--without-relocatable-dumped-modules

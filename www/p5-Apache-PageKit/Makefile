@@ -38,19 +38,13 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 EXAMPLESDIR?=	${PREFIX}/share/examples/${PORTNAME}
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Apache::ErrorReport.3 \
 		Apache::PageKit.3 \
 		Apache::PageKit::FAQ.3 \
 		Apache::PageKit::Model.3 \
 		Apache::PageKit::Session.3
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later because of textproc/p5-Data-FormValidator. Install lang/perl5 then try again
-.endif
 
 post-build:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
@@ -87,4 +81,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

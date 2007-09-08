@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Crypt/DH.pm:${PORTSDIR}/security/p5-Crypt-DH \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=		Net::OpenID::JanRain::Consumer.3 \
 		Net::OpenID::JanRain::Server.3 \
@@ -33,10 +33,4 @@ MAN3=		Net::OpenID::JanRain::Consumer.3 \
 		Net::OpenID::JanRain::Stores::SQLStore.3 \
 		Net::OpenID::JanRain::Stores::SQLiteStore.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

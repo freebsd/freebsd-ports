@@ -30,7 +30,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Un
 		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6 \
 		p5-Net-Server>=0.93:${PORTSDIR}/net/p5-Net-Server
 
-USE_PERL5_RUN=	yes
+USE_PERL5_RUN=	5.8.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-user=${AMAVISUSER} --with-runtime-dir=${AMAVISDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/helper-progs
@@ -277,9 +277,5 @@ do-install:
 post-install:
 	${LN} -s ${PREFIX}/sbin/amavisd-release ${PREFIX}/sbin/amavisd-requeue
 	@${CAT} ${PKGMESSAGE}
-
-.if ${PERL_LEVEL} < 500802
-IGNORE=		requires perl 5.8.2 or higher
-.endif
 
 .include <bsd.port.post.mk>

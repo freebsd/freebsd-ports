@@ -23,6 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freep
 MANUAL_PACKAGE_BUILD=Needs data from CDROM
 RESTRICTED=	"The original dictionary is not free"
 USE_GMAKE=	yes
+USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/otojiro-fpw${PORTVERSION:S/.a/a/}
 DICT_PATH?=	/cdrom
 SRCFILE?=	otojiro.txt

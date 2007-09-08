@@ -19,7 +19,7 @@ COMMENT=	Net::Jabber provides Perl Developer access to the Jabber protocol
 BUILD_DEPENDS=	${SITE_PERL}/Net/XMPP.pm:${PORTSDIR}/net-im/p5-Net-XMPP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Net::Jabber.3 Net::Jabber::Client.3 Net::Jabber::Component.3 \
 		Net::Jabber::Data.3 Net::Jabber::Debug.3 \
@@ -31,10 +31,4 @@ MAN3=		Net::Jabber.3 Net::Jabber::Client.3 Net::Jabber::Component.3 \
 		Net::Jabber::Server.3 Net::Jabber::Stanza.3 \
 		Net::Jabber::XDB.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

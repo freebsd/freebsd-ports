@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Facility for creating read-only scalars, arrays, hashes
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 CONFIGURE_ARGS=	DIR="${PORTNAME}-XS-${PORTVERSION_XS}"
 PORTVERSION_XS=	1.04
 
@@ -28,10 +28,4 @@ post-patch:
 	${MV} ${WRKDIR}/${PORTNAME}-XS-${PORTVERSION_XS} ${WRKSRC}
 	${RM} ${WRKSRC}/*.pl
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	Perl 5.8 or newer required. Install lang/perl5.8 and try again.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

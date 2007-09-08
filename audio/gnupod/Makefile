@@ -30,7 +30,7 @@ MAN1=		gnupod_addsong.pl.1 gnupod_check.pl.1 gnupod_INIT.pl.1 \
 		tunes2pod.pl.1
 MANCOMPRESSED=	yes
 
-USE_PERL5=	yes
+USE_PERL5=	5.8.0+
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 
@@ -42,10 +42,6 @@ CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
 OPTIONS=	FLAC "Enable FLAC support" off
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=	gnupod only support perl 5.8 or above
-.endif
 
 .if exists(${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm)
 WITH_FLAC=	YES

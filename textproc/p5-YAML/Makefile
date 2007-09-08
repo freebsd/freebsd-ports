@@ -39,10 +39,6 @@ MAN3=	\
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.1 or later. Install lang/perl5.8 and try again
-.endif
-
 .if ${PERL_LEVEL} < 500803
 post-install:
 	@${ECHO_MSG} ""

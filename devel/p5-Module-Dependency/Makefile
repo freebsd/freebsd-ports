@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Collection of modules for examining dependencies
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN1=		pmd_indexer.plx.1 pmd_grapher.plx.1 pmd_dump.pl.1
 MAN3=		Module::Dependency.3 \
@@ -24,10 +24,4 @@ MAN3=		Module::Dependency.3 \
 		Module::Dependency::Grapher.3 \
     		Module::pmd_dump.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

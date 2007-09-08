@@ -84,7 +84,7 @@ PLIST_SUB+=	TCL="@comment "
 BROKEN=	does not build on 4.X
 .endif
 
-.if ${PERL_LEVEL} < 500600 || defined(WITHOUT_PERL)
+.if defined(WITHOUT_PERL)
 CONFIGURE_ARGS+=--disable-perl
 PLIST_SUB+=	PERL="@comment "
 .else

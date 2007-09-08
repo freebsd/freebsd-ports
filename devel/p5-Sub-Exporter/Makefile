@@ -19,15 +19,11 @@ BUILD_DEPENDS=	p5-Sub-Install>=0.92:${PORTSDIR}/devel/p5-Sub-Install \
 		p5-Params-Util>=0.14:${PORTSDIR}/devel/p5-Params-Util
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	Sub::Exporter.3 \
 	Sub::Exporter::Cookbook.3 \
 	Sub::Exporter::Tutorial.3 \
 	Sub::Exporter::Util.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

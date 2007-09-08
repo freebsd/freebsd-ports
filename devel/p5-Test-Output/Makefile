@@ -18,14 +18,8 @@ COMMENT=	Utilities to test STDOUT and STDERR messages
 RUN_DEPENDS=	${SITE_PERL}/Sub/Exporter.pm:${PORTSDIR}/devel/p5-Sub-Exporter \
 		${SITE_PERL}/Test/Tester.pm:${PORTSDIR}/devel/p5-Test-Tester
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Test::Output::Tie.3 Test::Output.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800	# Inherited from devel/p5-Sub-Exporter
-IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

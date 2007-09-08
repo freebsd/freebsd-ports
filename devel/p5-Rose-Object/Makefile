@@ -29,10 +29,4 @@ MAN3=	Rose::Class.3 \
 	Rose::Object::MakeMethods::Generic.3 \
 	Rose::Object::MixIn.3 \
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6 or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -15,15 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A Perl5 backend for fix subtitles timing
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN1=	subs.1
 MAN3=	Subtitles.3
 
 .include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-IGNORE= requires at least Perl 5.8. Install lang/perl5.8, and try again
-.endif
 
 .if defined(WITH_SUBTITLES_SUBPLAY)
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Prima.pm:${PORTSDIR}/x11-toolkits/p5-Prima \

@@ -21,10 +21,4 @@ PERL_CONFIGURE=	yes
 MAN3=		Tie::Array::Sorted.3 \
 		Tie::Array::Sorted::Lazy.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

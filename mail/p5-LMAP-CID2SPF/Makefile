@@ -17,7 +17,6 @@ COMMENT=	Module to convert between Microsoft's Caller-ID and SPF		#'
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Makefile.PL
 
@@ -29,10 +28,4 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} cid2spf ${PREFIX}/bin
 	cd ${WRKSRC} && ${INSTALL_DATA} CID2SPF.pm ${SITE_PERL}/LMAP
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires Perl 5.6 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

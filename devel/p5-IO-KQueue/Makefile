@@ -33,9 +33,4 @@ post-install:
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
-# dXSTARG is not defined in perl 5.00503
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or better
-.endif
-
 .include <bsd.port.post.mk>

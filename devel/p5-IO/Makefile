@@ -15,17 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Various IO modules for Perl
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.6.0-
+USE_PERL5_REASON=	this module is already included in perl 5.6.x and later
 CONFIGURE_ARGS=	INSTALLDIRS=site POLLUTE=1
 
 MAN3=		IO.3 IO::Dir.3 IO::File.3 IO::Handle.3 IO::Pipe.3 IO::Poll.3 \
 		IO::Seekable.3 IO::Select.3 IO::Socket.3 IO::Socket::INET.3 \
 		IO::Socket::UNIX.3
 
-.include <bsd.port.pre.mk>
+DEPRECATED=	only works with old, unsupported Perl versions
+EXPIRATION_DATE=	2007-09-11
 
-.if ${PERL_LEVEL} > 500600
-IGNORE=		this module is already included in perl 5.6.x and later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -15,13 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for telling fully qualified name of the method
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 MAN3=		UNIVERSAL::which.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-IGNORE= requires Perl 5.8.1 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

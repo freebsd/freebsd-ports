@@ -21,15 +21,9 @@ BUILD_DEPENDS=	p5-XML-Atom>=0:${PORTSDIR}/textproc/p5-XML-Atom \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.5+	# inherited from textproc/p5-XML-Atom
 
 MAN3=		Net::Google::Calendar.3 Net::Google::Calendar::Entry.3 \
 		Net::Google::Calendar::Person.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500805 # inherited from textproc/p5-XML-Atom
-IGNORE=	requires at least Perl 5.8.5.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

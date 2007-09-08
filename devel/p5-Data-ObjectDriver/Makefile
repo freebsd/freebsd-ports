@@ -23,7 +23,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/Text/SimpleTable.pm:${PORTSDIR}/textproc/p5-Text-SimpleTable
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Data::ObjectDriver.3 Data::ObjectDriver::BaseObject.3 \
 		Data::ObjectDriver::Driver::BaseCache.3 \
@@ -37,10 +37,4 @@ MAN3=		Data::ObjectDriver.3 Data::ObjectDriver::BaseObject.3 \
 		Data::ObjectDriver::Errors.3 Data::ObjectDriver::Profiler.3 \
 		Data::ObjectDriver::SQL.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires Perl 5.8 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -23,10 +23,6 @@ MAN3=		Devel::LeakTrace.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE= Perl 5.6 or newer required. Install lang/perl5.8 and try again.
-.endif
-
 .if ${PERL_LEVEL} < 500702
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 .endif

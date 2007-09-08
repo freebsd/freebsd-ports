@@ -14,12 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Ensure that a platform has weaken support
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.5+
 
 MAN3=	Task::Weaken.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500805
-IGNORE=	requires at least Perl 5.8.5. (Re-)install lang/perl5.8 and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

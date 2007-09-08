@@ -28,7 +28,6 @@ MAN3=	OpenXPKI::Client::HTML::Mason.3 \
 	OpenXPKI::Client::HTML::Mason::Config.3 \
 	OpenXPKI::Client::HTML::Mason::Javascript.3 \
 	OpenXPKI::Client::HTML::Mason::Menu.3
-USE_PERL5=	yes
 USE_GMAKE=	yes
 PERL_CONFIGURE=	yes
 

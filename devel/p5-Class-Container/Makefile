@@ -28,8 +28,4 @@ MAN3=		Class::Container.3
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
 
-.if ${PERL_LEVEL} < 500600
-IGNORE="require perl 5.6.x or higher"
-.endif
-
 .include <bsd.port.post.mk>

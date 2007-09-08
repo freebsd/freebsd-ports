@@ -22,19 +22,13 @@ RUN_DEPENDS=	p5-Event>=0.89:${PORTSDIR}/devel/p5-Event \
 		${SITE_PERL}/${PERL_ARCH}/IO/AIO.pm:${PORTSDIR}/devel/p5-IO-AIO
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Coro.3 Coro::AIO.3 Coro::Channel.3 Coro::Handle.3 \
 		Coro::LWP.3 Coro::MakeMaker.3 Coro::RWLock.3 Coro::Select.3 \
 		Coro::Semaphore.3 Coro::SemaphoreSet.3 Coro::Signal.3 \
 		Coro::Socket.3 Coro::Specific.3 Coro::State.3 Coro::Storable.3 \
 		Coro::Timer.3 Coro::Util.3 Coro::Event.3
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
-.endif
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
@@ -44,4 +38,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/cede-vs-schedule ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

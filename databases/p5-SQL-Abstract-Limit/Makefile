@@ -26,10 +26,4 @@ PERL_MODBUILD=	yes
 
 MAN3=		SQL::Abstract::Limit.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6.x or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

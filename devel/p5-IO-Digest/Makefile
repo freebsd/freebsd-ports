@@ -19,14 +19,8 @@ BUILD_DEPENDS=	${SITE_PERL}/PerlIO/via/dynamic.pm:${PORTSDIR}/devel/p5-PerlIO-vi
 		${SITE_PERL}/Digest.pm:${PORTSDIR}/security/p5-Digest
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		IO::Digest.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		This module only supports perl 5.8.0 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -798,9 +798,6 @@ MAN3=		Bio::Align::AlignI.3 \
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.if ${PERL_LEVEL} < 500600
-IGNORE=			"This port requires Perl 5.6 or better"
-.endif
 .endif
 
 # now install all extra stuff (docs, examples, scripts, models)

@@ -26,9 +26,7 @@ PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DH \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6.x or later. Install lang/perl5 then try again
-.elif ${PERL_LEVEL} < 500800
+.if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS=	${SITE_PERL}/Math/BigInt.pm:${PORTSDIR}/math/p5-Math-BigInt
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif

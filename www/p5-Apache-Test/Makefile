@@ -33,9 +33,7 @@ MAN3=		Apache::Test.3 Apache::TestConfig.3 Apache::TestConfigData.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600 # inherited from www/p5-libwww
-IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
-.elif ${PERL_LEVEL} < 500800
+.if ${PERL_LEVEL} < 500800
 EXTRA_PATCHES=	${PATCHDIR}/500503-Makefile.PL
 .endif
 
@@ -44,12 +42,6 @@ post-patch:
 	@${PERL} -pi -e '$$_="" if $$.==11;' ${WRKSRC}/lib/Apache/Test5005compat.pm
 .if ${PERL_LEVEL} < 500800
 	@${PERL} -pi.bak -e 's/PERLRUN/PERL/;' ${WRKSRC}/install-pl
-.endif
-.if ${PERL_LEVEL} < 500600
-	@${PERL} -pi -e 's/\b(?:use|no) warnings[^;]*;//g' \
-	${WRKSRC}/lib/Apache/*.pm ${WRKSRC}/Makefile.PL ${WRKSRC}/install-pl
-	${PERL} -pi -e '$$_="" if $$. == 24' \
-		${WRKSRC}/lib/Apache/Test5005compat.pm
 .endif
 
 post-configure:

@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	muttprint
 MAINTAINER?=	obraun@FreeBSD.org
 COMMENT?=	Utility to print mail for most any mail client
 
+USE_PERL5=	yes
+
 .if !defined(PAPERSIZE)
 PAPERSIZE=	letter
 .endif

@@ -20,10 +20,4 @@ PERL_CONFIGURE=	yes
 MAN1=		perl.prov.1 perl.req.1
 MAN3=		B::PerlReq.3 PerlReq::Utils.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

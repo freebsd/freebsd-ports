@@ -65,10 +65,6 @@ MLINKS=		MailScanner.8 mailscanner.8
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		dependency requires newer Perl
-.endif
-
 .if defined(WITH_SPAMASSASSIN)
 RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 PLIST_SUB+=	SPAMASSASSIN=""

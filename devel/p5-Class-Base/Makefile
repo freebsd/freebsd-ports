@@ -18,12 +18,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Class::Base.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-post-patch:
-	@${PERL} -i -pe 's/^our ([^\s;]+)/use vars qw($$1); $$1/;' \
-		${WRKSRC}/lib/Class/Base.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

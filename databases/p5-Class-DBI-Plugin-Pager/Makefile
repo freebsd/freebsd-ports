@@ -24,10 +24,4 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
 PERL_CONFIGURE=	yes
 MAN3=		Class::DBI::Plugin::Pager.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	perl 5.6 or newer required by Class::DBI. Install lang/perl5.8 or lang/perl5 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

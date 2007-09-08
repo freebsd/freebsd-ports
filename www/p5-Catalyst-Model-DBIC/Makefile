@@ -21,15 +21,11 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-DBIx-Class-Loader>=0:${PORTSDIR}/databases/p5-DBIx-Class-Loader
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 DEPRECATED=	This module is obsoleted by www/p5-Catalyst-Model-DBIC-Schema
 
 MAN3=	Catalyst::Helper::Model::DBIC.3 \
 	Catalyst::Model::DBIC.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500800
-IGNORE=	requires Perl 5.8. Install lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

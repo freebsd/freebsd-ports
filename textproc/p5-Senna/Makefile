@@ -27,10 +27,4 @@ MAN3=		Senna.3 \
 	Senna::Records.3 Senna::Set.3 Senna::Snippet.3 Senna::Symbol.3 \
 	Senna::Values.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

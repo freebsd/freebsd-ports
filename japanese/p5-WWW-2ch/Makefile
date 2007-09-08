@@ -27,10 +27,4 @@ MAN3=		WWW::2ch.3	\
 	WWW::2ch::Dat.3		\
 	WWW::2ch::Plugin::Jbbs.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 50600
-IGNORE=	requires perl 5.6.0 or higher. Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

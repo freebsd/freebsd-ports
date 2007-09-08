@@ -33,8 +33,4 @@ BUILD_DEPENDS+=	p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
-.endif
-
 .include <bsd.port.post.mk>

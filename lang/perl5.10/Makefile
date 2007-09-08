@@ -26,6 +26,8 @@ COMMENT=	Practical Extraction and Report Language
 PERL_VER=	5.8.8
 PERL_ARCH=	mach
 PERL_VERSION=	${PERL_VER}
+SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
+SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
@@ -50,6 +52,11 @@ MAKE_ENV+=	${LOCALE_CLEANUP}
 
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
+
+PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
+		PERL_VER=${PERL_VER} \
+		PERL_ARCH=${PERL_ARCH} \
+		SITE_PERL=${SITE_PERL:S|^${LOCALBASE}/||}
 
 .if defined(WITH_DEBUGGING)
 CONFIGURE_ARGS+=	-Doptimize="-g" -DDEBUGGING

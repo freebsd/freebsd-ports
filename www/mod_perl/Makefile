@@ -26,7 +26,7 @@ CONFIGURE_ARGS+=	USE_APXS=1 EVERYTHING=1 INSTALLSITELIB=${SITE_PERL} \
 
 MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		Apache::FakeRequest.3 Apache::File.3 Apache::Leak.3 \
-		Apache::Log.3 Apache::Options.3 \
+		Apache::Log.3 Apache::MyConfig.3 Apache::Options.3 \
 		Apache::PerlRun.3 Apache::PerlRunXS.3 \
 		Apache::RedirectLogFix.3 \
 		Apache::Registry.3 Apache::SizeLimit.3 \
@@ -49,12 +49,6 @@ WITH_APACHE_IPV6=	YES
 CFLAGS+=	-DAPACHE6
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500602
-MAN3+=		Apache::MyConfig.3
-.endif
-
 post-install:
 	${MKDIR} ${PREFIX}/include/apache/modules/perl
 	${INSTALL_DATA} ${WRKSRC}/src/modules/perl/*.h \
@@ -65,4 +59,4 @@ post-install:
 post-deinstall:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

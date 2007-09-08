@@ -17,7 +17,7 @@ MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A re-port of a perl5 interface to Tk8.4
 
 USE_XLIB=	yes
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 CONFIGURE_ARGS=	X11LIB=${X11BASE}/lib X11INC=${X11BASE}/include
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -142,10 +142,6 @@ MAN3=		Tie::Watch.3 \
 		Tk::demos::widget_lib::trace2.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		this port needs Perl 5.8.0 or greater, please upgrade your Perl!
-.endif
 
 .if defined(WITH_XFT)
 CONFIGURE_ARGS=	XFT=1

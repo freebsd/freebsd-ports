@@ -21,12 +21,6 @@ USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
-USE_PERL5=	yes
+USE_PERL5=	5.8.0+
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		this library only supports perl 5.8.0 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
