@@ -1,0 +1,6 @@
+include/rude/config.h
+lib/librudeconfig.a
+lib/librudeconfig.la
+lib/librudeconfig.so
+lib/librudeconfig.so.5
+@dirrm include/rude
