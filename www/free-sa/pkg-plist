@@ -16,13 +16,13 @@ share/free-sa/fr.iso88591
 share/free-sa/it.iso88591
 share/free-sa/ru.koi8r
 share/free-sa/sk.iso88592
-share/doc/free-sa-1.3.2/COPYING
-share/doc/free-sa-1.3.2/INSTALL
-share/doc/free-sa-1.3.2/README
-share/doc/free-sa-1.3.2/README.DEV
-share/doc/free-sa-1.3.2/ChangeLog     
-share/doc/free-sa-1.3.2/FAQ
-share/doc/free-sa-1.3.2/THANKS
+share/doc/free-sa-1.3.4/COPYING
+share/doc/free-sa-1.3.4/INSTALL
+share/doc/free-sa-1.3.4/README
+share/doc/free-sa-1.3.4/README.DEV
+share/doc/free-sa-1.3.4/ChangeLog     
+share/doc/free-sa-1.3.4/FAQ
+share/doc/free-sa-1.3.4/THANKS
 www/data/free-sa/sa.js
 www/data/free-sa/c.png
 www/data/free-sa/d.png
@@ -31,6 +31,7 @@ www/data/free-sa/s.png
 www/data/free-sa/gsa.css
 www/data/free-sa/lsa.css
 www/data/free-sa/rsa.css
+www/data/free-sa/cgi-bin/free-sa.cgi
 www/data/free-sa/themes/default
 www/data/free-sa/themes/rbsec/c.png
 www/data/free-sa/themes/rbsec/d.png
@@ -70,12 +71,13 @@ www/data/free-sa/themes/blues/rsa.css
 www/data/free-sa/themes/sa.js
 @dirrm etc/free-sa
 @dirrm share/free-sa
-@dirrm share/doc/free-sa-1.3.2
+@dirrm share/doc/free-sa-1.3.4
 @dirrm www/data/free-sa/themes/rbsec
 @dirrm www/data/free-sa/themes/sarg
 @dirrm www/data/free-sa/themes/silver
 @dirrm www/data/free-sa/themes/qbiq
 @dirrm www/data/free-sa/themes/blues
 @dirrm www/data/free-sa/themes
+@dirrm www/data/free-sa/cgi-bin
 @dirrm www/data/free-sa
 @dirrmtry www/data
