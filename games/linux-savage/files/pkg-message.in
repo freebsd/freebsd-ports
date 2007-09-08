@@ -10,10 +10,6 @@ The Savage game (Linux version) was installed
 
    # linux-savage
 
-   Dedicated Server
-
-   # linux-savage_server
-
 2) The sound doesn't work by default, if you want to solve the problem, you must 
    to set the value of sound_softwareMode at:
 

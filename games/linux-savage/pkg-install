@@ -11,5 +11,8 @@ if ! [ -e $scripts_file ]; then
 	chmod 666 $scripts_file
 fi
 
-chown root:wheel $startup_file 2>/dev/null
-chmod 666 $startup_file
+if ! [ -e $startup_file ]; then
+	touch $startup_file
+	chown root:wheel $startup_file 2>/dev/null
+	chmod 666 $startup_file
+fi
