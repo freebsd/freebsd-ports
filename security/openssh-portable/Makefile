@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openssh
-DISTVERSION=	4.6p1
-PORTREVISION=	1
+DISTVERSION=	4.7p1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \
@@ -100,6 +99,7 @@ CONFIGURE_ARGS+=	--disable-suid-ssh
 .if !defined(WITHOUT_KERBEROS)
 .if defined(KRB5_HOME) && exists(${KRB5_HOME}) || defined(WITH_GSSAPI)
 .if defined(WITH_KERB_GSSAPI)
+BROKEN=			Waiting new upstream patch
 PATCH_DIST_STRIP=	-p0
 PATCH_SITES+=		http://www.sxw.org.uk/computing/patches/
 PATCHFILES+=		openssh-4.6p1-gsskex-20070312.patch
@@ -147,7 +147,7 @@ BROKEN=			HPN and LPK patches are incompatible
 .if defined(WITH_HPN)
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
-PATCHFILES+=		openssh-4.6p1-hpn12v17.diff.gz
+PATCHFILES+=		openssh-4.7p1-hpn12v18.diff.gz
 .endif
 
 # See http://dev.inversepath.com/trac/openssh-lpk
