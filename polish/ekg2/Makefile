@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	ekg2
-PORTVERSION=	20070303
-PORTREVISION=	1
+PORTVERSION=	0.1.1
+PORTEPOCH=	1
 CATEGORIES=	polish net-im
-MASTER_SITES=	http://www.ekg2.org/archive/
+MASTER_SITES=	http://pl.ekg2.org/
 
 MAINTAINER=	alex@bsdguru.org
 COMMENT=	Text-mode Gadu-Gadu, Jabber and IRC client

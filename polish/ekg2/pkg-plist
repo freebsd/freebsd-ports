@@ -133,6 +133,7 @@ libexec/ioctld
 %%DATADIR%%/themes/blue_sea_dragon.theme
 %%DATADIR%%/themes/irc-irssi.theme
 share/locale/pl/LC_MESSAGES/ekg2.mo
+share/locale/de/LC_MESSAGES/ekg2.mo
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/plugins/logs
 @dirrm %%DATADIR%%/plugins/mail
