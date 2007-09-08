@@ -1,4 +1,6 @@
+@unexec if cmp -s %D/etc/pdnsd.conf %D/etc/pdnsd.conf.sample; then rm %D/etc/pdnsd.conf; fi
 etc/pdnsd.conf.sample
+@exec [ -f %D/etc/pdnsd.conf ] || install -m 644 %D/etc/pdnsd.conf.sample %D/etc/pdnsd.conf
 sbin/pdnsd
 sbin/pdnsd-ctl
 %%PORTDOCS%%%%DOCSDIR%%/dl.html
