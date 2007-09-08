@@ -7,7 +7,7 @@
 
 PORTNAME=	fxtv
 PORTVERSION=	1.03
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	rhh
@@ -30,10 +30,6 @@ ONLY_FOR_ARCHS=	alpha i386 ia64 amd64
 OPTIONS=	EXTRA "Extra programs required to record/playback/save" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 # This program does not actually require the programs below unless you
 #   use audio/video recording and/or playback and save to a non-raw format.
