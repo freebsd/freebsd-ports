@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:S/p/-pre/}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FXP (server-to-server FTP) client
 
+USE_PERL5=	yes
+
 .include <bsd.port.pre.mk>
 
 RUN_DEPENDS=	${PERL_SITELIBDIR}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
@@ -27,7 +29,6 @@ RUN_DEPENDS=	${PERL_SITELIBDIR}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-
 RUN_DEPENDS+=	${PERL_SITELIBDIR}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
 .endif
 
-USE_PERL5=	yes
 PERL_SITELIBDIR=	${SITE_PERL}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
@@ -37,6 +38,6 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/profxpv3.pl ${PREFIX}/bin/profxp
-	${CP} -R ${WRKSRC}/profxp ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+	${CP} -R ${WRKSRC}/profxp ${SITE_PERL}
 
 .include <bsd.port.post.mk>
