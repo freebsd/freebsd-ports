@@ -16,6 +16,13 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	Nice and powerfull editor
 
+USE_GMAKE=	yes
+USE_PERL5=	yes
+MAKEFILE=	makefile
+ALL_TARGET=	ne
+MAKE_ARGS=	CFLAGS="${CFLAGS} -DNOWCHAR" CC="${CC}" \
+		GLOBALDIR="${DATADIR}"
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400010
@@ -23,13 +30,6 @@ LIB_DEPENDS+=	ncurses:${PORTSDIR}/devel/ncurses
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-
-USE_GMAKE=	yes
-USE_PERL5=	yes
-MAKEFILE=	makefile
-ALL_TARGET=	ne
-MAKE_ARGS=	CFLAGS="${CFLAGS} -DNOWCHAR" CC="${CC}" \
-		GLOBALDIR="${DATADIR}"
 
 MAN1=	ne.1
 PORTDOCS=	ne.txt
