@@ -1,0 +1,7 @@
+AfterGlow is a collection of scripts which facilitate the process of
+generating event graphs and treemaps. AfterGlow 1.x is written in Perl
+and generates output that can be read by GraphViz or LGL.
+All the scripts and other files for afterglow are installed in
+${DATADIR}
+
+WWW: http://sourceforge.net/projects/afterglow

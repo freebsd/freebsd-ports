@@ -1,0 +1,39 @@
+%%DATADIR%%/data/example.dot
+%%DATADIR%%/data/firewall.count.csv
+%%DATADIR%%/data/firewall.count.tm3
+%%DATADIR%%/data/firewall.csv
+%%DATADIR%%/data/firewall.tm3
+%%DATADIR%%/data/generate.pl
+%%DATADIR%%/data/userLogin.csv
+%%DATADIR%%/data/userLogin.csv2
+%%DATADIR%%/data/vulnerabilities.2.csv
+%%DATADIR%%/data/vulnerabilities.csv
+%%DATADIR%%/data/vulnerabilities.list
+%%DATADIR%%/database/README
+%%DATADIR%%/database/attackchains.pl
+%%DATADIR%%/database/createDB.sql
+%%DATADIR%%/database/deltacalc.pl
+%%DATADIR%%/database/deltacalc2.pl
+%%DATADIR%%/database/iptolong.pl
+%%DATADIR%%/database/snortalert.pl
+%%DATADIR%%/database/snortdirection.pl
+%%DATADIR%%/database/snortservice.pl
+%%DATADIR%%/database/subquery.pl
+%%DATADIR%%/database/tcpdump2sql.pl
+%%DATADIR%%/graph/README
+%%DATADIR%%/graph/afterglow-lgl.pl
+%%DATADIR%%/graph/afterglow-lgl2.pl
+%%DATADIR%%/graph/afterglow-walrus.pl
+%%DATADIR%%/graph/afterglow.pl
+%%DATADIR%%/graph/color.properties
+%%DATADIR%%/parsers/README
+%%DATADIR%%/parsers/color.properties
+%%DATADIR%%/parsers/color.sendmail.properties
+%%DATADIR%%/parsers/pf2csv.pl
+%%DATADIR%%/parsers/sendmail_parser.pl
+%%DATADIR%%/parsers/tcpdump2csv.pl
+@dirrm %%DATADIR%%/parsers
+@dirrm %%DATADIR%%/graph
+@dirrm %%DATADIR%%/database
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
