@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdnsd
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.phys.uu.nl/~rombouts/pdnsd/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-par
@@ -32,9 +32,13 @@ DOCSRCDIR=	${WRKSRC}/doc
 DOC_FILES=	html/dl.html html/doc.html html/faq.html html/index.html
 DOC_FILES+=	txt/faq.txt txt/intro.txt txt/manual.txt
 
+CFLAGS+=	${PTHREAD_LIBS}
+
+OPTIONS=	IPV6	"IPv6 support"	on
+
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_IPV6)
+.if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
@@ -43,6 +47,8 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DOC_FILES:S@^@${DOCSRCDIR}/@} ${DOCSDIR}
 .endif
+	@[ -f ${PREFIX}/etc/pdnsd.conf ] || \
+		${INSTALL_DATA} ${PREFIX}/etc/pdnsd.conf.sample ${PREFIX}/etc/pdnsd.conf
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
