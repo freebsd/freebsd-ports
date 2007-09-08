@@ -66,10 +66,6 @@ MOZ_OPTIONS+=	--disable-svg
 #MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
 #.endif
 
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
-.endif
-
 post-extract::
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
 		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \

@@ -19,8 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		File::BaseDir.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-EXTRA_PATCHES=	${PATCHDIR}/500503-*
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

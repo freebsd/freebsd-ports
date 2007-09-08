@@ -22,13 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/makefiles/Linux
 SUBDIRS=	${DOCSDIR} ${DOCSDIR}/misc ${EXAMPLESDIR} \
 		${EXAMPLESDIR}/include ${EXAMPLESDIR}/tab ${EXAMPLESDIR}/tpl
 
-.include <bsd.port.pre.mk>
-
-pre-fetch:
-.if !defined(WITH_FIXPERL) && ${PERL_LEVEL} <= 500503
-IGNORE=	Follow instructions in pkg-message and restart with -DWITH_FIXPERL
-.endif
-
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${SUBDIRS}
@@ -42,4 +35,4 @@ post-install:
 	${CP} ${WRKSRC}/../../doc/example.cfg/tpl/*.tpl ${EXAMPLESDIR}/tpl
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

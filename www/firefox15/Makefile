@@ -63,10 +63,6 @@ IGNORE=	core dumps on ${ARCH}, kern.osreldate>=601101 needed
 MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
 .endif
 
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
-.endif
-
 post-extract::
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' \
 		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${MOZILLA}.desktop

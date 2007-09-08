@@ -68,11 +68,4 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Resurrector.3 \
 		Log::Log4perl::Util.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} == 500602
-EXTRA_PATCHES=	${FILESDIR}/500602-patch-lib__Log__Log4perl__Config__DOMConfigurator.pm
-
-post-patch:
-	${RM} ${WRKSRC}/lib/Log/Log4perl/Config/DOMConfigurator.pm.orig
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

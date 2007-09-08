@@ -46,12 +46,6 @@ OPTIONS=	GNOMEDB "Enable libgnomedb support" off
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-PLIST_SUB+=	PERL="@comment "
-.else
-PLIST_SUB+=	PERL=""
-.endif
-
 .if defined(WITH_GNOMEDB)
 USE_GNOME+=		libgnomedb
 CONFIGURE_ARGS+=	--with-gda

@@ -26,10 +26,4 @@ PERL_ABASE=	${SITE_PERL}/${PERL_ARCH}
 
 MAN3=		XML::LibXSLT.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES=	${FILESDIR}/500503-*
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

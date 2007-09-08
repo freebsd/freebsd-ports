@@ -145,11 +145,11 @@
 %%SITE_PERL%%/Locale/Recode.pm
 %%SITE_PERL%%/Locale/gettext_xs.pod
 %%SITE_PERL%%/Locale/Messages.pm
-%%NEWPERL%%%%SITE_PERL%%/Locale/gettext_xs.pm
-%%NEWPERL%%%%SITE_PERL%%/mach/auto/Locale/gettext_xs/gettext_xs.so
-%%NEWPERL%%%%SITE_PERL%%/mach/auto/Locale/gettext_xs/gettext_xs.bs
-%%NEWPERL%%@dirrm %%SITE_PERL%%/mach/auto/Locale/gettext_xs
-%%NEWPERL%%@unexec rmdir %D/%%SITE_PERL%%/mach/auto/Locale
+%%SITE_PERL%%/Locale/gettext_xs.pm
+%%SITE_PERL%%/mach/auto/Locale/gettext_xs/gettext_xs.so
+%%SITE_PERL%%/mach/auto/Locale/gettext_xs/gettext_xs.bs
+@dirrm %%SITE_PERL%%/mach/auto/Locale/gettext_xs
+@unexec rmdir %D/%%SITE_PERL%%/mach/auto/Locale
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libintl-perl
 @dirrm %%SITE_PERL%%/Locale/RecodeData
 @dirrm %%SITE_PERL%%/Locale/Recode
