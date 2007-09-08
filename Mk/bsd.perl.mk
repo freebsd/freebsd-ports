@@ -223,8 +223,8 @@ Perl_Post_Include=		bsd.perl.mk
 
 .if defined(PERL_CONFIGURE)
 .if !target(do-configure)
+# XXX MCL had to duplicate the first block; implies more refactoring needed
 do-configure:
-	# XXX MCL had to duplicate this block; implies more refactoring needed
 	@if [ -f ${SCRIPTDIR}/configure ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 		  ${SCRIPTDIR}/configure; \
