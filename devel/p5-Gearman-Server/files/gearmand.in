@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: %%NAME%%
+# REQUIRE: DAEMON
+
+# Add the following line to /etc/rc.conf to enable `%%NAME%%':
+#
+#%%NAME%%_enable="YES"
+
+. "%%RC_SUBR%%"
+
+name="%%NAME%%"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/gearmand"
+command_interpreter="%%PREFIX%%/bin/perl"
+command_args="--daemon"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${%%NAME%%_enable="NO"}
+
+run_rc_command "$1"
