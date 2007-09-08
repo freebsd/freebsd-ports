@@ -528,6 +528,7 @@
     SUBDIR += ripmime
     SUBDIR += rlytest
     SUBDIR += roundcube
+    SUBDIR += rss2email
     SUBDIR += ruby-rfilter
     SUBDIR += ruby-rmail
     SUBDIR += ruby-tmail
