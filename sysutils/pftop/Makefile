@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pftop
-PORTVERSION=	0.5
-#PORTREVISION=	2
+PORTVERSION=	0.6
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -33,12 +32,19 @@ CFLAGS+=	-DHAVE_ALTQ=1
 .elif ${OSVERSION} < 600025
 MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=35
 CFLAGS+=	-DHAVE_ALTQ=1 -DHAVE_RULE_ANCHOR=1
-.else
+.elif ${OSVERSION} < 700049
 MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=37
+CFLAGS+=	-DHAVE_ALTQ=1
+.else
+MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=41
 CFLAGS+=	-DHAVE_ALTQ=1
 .endif
 
 PLIST_FILES=	sbin/pftop
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|<sys/queue.h>|"${FILESDIR}/queue.h"|g' \
+	    ${WRKSRC}/engine.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pftop ${PREFIX}/sbin
