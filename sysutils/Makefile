@@ -411,6 +411,7 @@
     SUBDIR += mountsmb2
     SUBDIR += mpiexec
     SUBDIR += msyslog
+    SUBDIR += mtpfs
     SUBDIR += mtxorbd
     SUBDIR += multitail
     SUBDIR += munin-main
