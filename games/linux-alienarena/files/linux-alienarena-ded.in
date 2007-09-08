@@ -2,4 +2,4 @@
 
 cd %%LIBDIR%% || exit 1
 
-exec ./crded +set game arena +set port 27910 "$@"
+exec ./crded +set port 27910 "$@"

@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2007.604
-PORTREVISION=	1
+PORTVERSION=	2007.605
 CATEGORIES=	games
-MASTER_SITES=	http://cor.planetquake.gamespy.com/codered/files/
+MASTER_SITES=	http://offload1.icculus.org/alienarena/files/ \
+		http://distfiles.gentoo.org/distfiles/
 PKGNAMESUFFIX=	-data
-DISTNAME=	${PORTNAME}2007-linux20070225-x86
+DISTNAME=	${PORTNAME}2007-20070613-linux
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (data)
@@ -19,7 +19,7 @@ COMMENT=	Alien Arena 2006 (data)
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Package will be 185MB, set FORCE_PACKAGE if you want it
-WRKSRC=		${WRKDIR}/${DISTNAME:C/-linux.*//}
+WRKSRC=		${WRKDIR}/${PORTNAME}2007
 
 .include <bsd.port.pre.mk>
 
@@ -32,11 +32,9 @@ do-install:
 	cd ${WRKSRC} && ${CP} -R arena botinfo data1 ${DATADIR}
 	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
 	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	${MKDIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/alienarena.xpm ${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

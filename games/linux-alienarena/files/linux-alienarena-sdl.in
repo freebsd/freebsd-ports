@@ -2,4 +2,4 @@
 
 cd %%LIBDIR%% || exit 1
 
-exec ./crx +set  "$@"
+exec ./crx.sdl "$@"
