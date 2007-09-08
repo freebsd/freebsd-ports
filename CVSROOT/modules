@@ -283,6 +283,7 @@ afni		ports/science/afni
 afnix		ports/lang/afnix
 afsp		ports/audio/afsp
 aft		ports/textproc/aft
+afterglow	ports/security/afterglow
 afternoonstalker	ports/games/afternoonstalker
 afterstep	ports/x11-wm/afterstep
 afterstep-i18n	ports/x11-wm/afterstep-i18n
