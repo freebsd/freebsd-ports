@@ -1,0 +1,9 @@
+bin/ecamegapedal
+share/ecamegapedal/pixmaps/forward_idx.png
+share/ecamegapedal/pixmaps/rewind_idx.png
+share/ecamegapedal/pixmaps/quit_idx.png
+share/ecamegapedal/pixmaps/begin_idx.png
+share/ecamegapedal/pixmaps/start_idx.png
+share/ecamegapedal/pixmaps/stop_idx.png
+@dirrm share/ecamegapedal/pixmaps
+@dirrm share/ecamegapedal

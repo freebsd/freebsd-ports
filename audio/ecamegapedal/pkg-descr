@@ -1,0 +1,10 @@
+Ecamegapedal is a real-time effect processor software with a graphical user
+interface for controlling the effect parameters. It is meant to be used as
+a virtual guitar-fx or studio effect box. In addition to real-time operation,
+Ecamegapedal also supports reading from and writing to audio files.
+All audio object and effect plugin types provided by the Ecasound libraries
+are supported. This includes ALSA, JACK, OSS, aRts, over 20 file formats,
+over 30 effect types, LADSPA plugins and multi-operator effect presets.
+Ecamegapedal's implementation is based on Ecasound and Qt libraries.
+
+WWW: http://www.wakkanet.fi/~kaiv/ecamegapedal/
