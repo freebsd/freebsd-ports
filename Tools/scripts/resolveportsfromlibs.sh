@@ -81,8 +81,20 @@ if [ -z "${PORTSDIR}" ]; then
 	PORTSDIR=$(make -f /etc/make.conf -V PORTSDIR)
 fi
 
-if [ -z "${PORTSDIR}" -o ! -d "${PORTSDIR}" ]; then
+if [ -z "${PORTSDIR}" ]; then
 	PORTSDIR=/usr/ports
+fi
+if [ ! -d "${PORTSDIR}" ]; then
+	echo "PORTSDIR = ${PORTSDIR} is not a directory."
+	exit 1
+fi
+
+if [ -z "${PKG_DBDIR}" ]; then
+	PKG_DBDIR=/var/db/pkg
+fi
+if [ ! -d "${PKG_DBDIR}" ]; then
+	echo "PKG_DBDIR = ${PKG_DBDIR} is not a directory."
+	exit 1
 fi
 
 for i in $@; do
@@ -112,9 +124,9 @@ for i in $@; do
 	for base in ${bases}; do
 		port=$(pkg_which "${base}/lib/$i")
 
-		if [ -f /var/db/pkg/$port/+CONTENTS ]; then
+		if [ -f $PKG_DBDIR/$port/+CONTENTS ]; then
 			origin=$(grep "@comment ORIGIN:" \
-				/var/db/pkg/$port/+CONTENTS \
+				$PKG_DBDIR/$port/+CONTENTS \
 				| sed -e 's/@comment ORIGIN://')
 			break
 		else
