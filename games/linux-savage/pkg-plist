@@ -1,8 +1,5 @@
 bin/linux-savage
 bin/linux-savage_editor
-bin/linux-savage_server
-%%SAVAGEDIR%%/agp_error.txt
-%%SAVAGEDIR%%/eula.txt
 %%SAVAGEDIR%%/game/CTF.cfg
 %%SAVAGEDIR%%/game/DC.cfg
 %%SAVAGEDIR%%/game/DCM.cfg
@@ -16,6 +13,9 @@ bin/linux-savage_server
 %%SAVAGEDIR%%/game/TS_frenzy.cfg
 %%SAVAGEDIR%%/game/TS_normal.cfg
 %%SAVAGEDIR%%/game/autoexec.cfg
+%%SAVAGEDIR%%/game/banlist.cfg
+%%SAVAGEDIR%%/game/bans.cfg
+%%SAVAGEDIR%%/game/buddies.cfg
 %%SAVAGEDIR%%/game/commander_keys.cfg
 %%SAVAGEDIR%%/game/default.cfg
 %%SAVAGEDIR%%/game/demos/demos.txt
@@ -24,19 +24,6 @@ bin/linux-savage_server
 %%SAVAGEDIR%%/game/frenzy.cfg
 %%SAVAGEDIR%%/game/game.so
 %%SAVAGEDIR%%/game/gamefont.ttf
-%%SAVAGEDIR%%/game/gamelist_full.dat
-%%SAVAGEDIR%%/game/gui0.s2z
-%%SAVAGEDIR%%/game/gui1.s2z
-%%SAVAGEDIR%%/game/gui2.s2z
-%%SAVAGEDIR%%/game/gui3.s2z
-%%SAVAGEDIR%%/game/gui4.s2z
-%%SAVAGEDIR%%/game/gui5.s2z
-%%SAVAGEDIR%%/game/gui6.s2z
-%%SAVAGEDIR%%/game/images0.s2z
-%%SAVAGEDIR%%/game/images1.s2z
-%%SAVAGEDIR%%/game/images2.s2z
-%%SAVAGEDIR%%/game/intro.cfg
-%%SAVAGEDIR%%/game/latest_gamelist_packet.dat
 %%SAVAGEDIR%%/game/music/a_new_earth.ogg
 %%SAVAGEDIR%%/game/music/bg_test.ogg
 %%SAVAGEDIR%%/game/music/lost_hills.ogg
@@ -49,15 +36,7 @@ bin/linux-savage_server
 %%SAVAGEDIR%%/game/playerkeys.cfg
 %%SAVAGEDIR%%/game/rotation.cfg
 %%SAVAGEDIR%%/game/savage0.s2z
-%%SAVAGEDIR%%/game/savage1.s2z
-%%SAVAGEDIR%%/game/savage2.s2z
-%%SAVAGEDIR%%/game/savage3.s2z
-%%SAVAGEDIR%%/game/savage4.s2z
-%%SAVAGEDIR%%/game/savage5.s2z
-%%SAVAGEDIR%%/game/savage6.s2z
-%%SAVAGEDIR%%/game/savage7.s2z
-%%SAVAGEDIR%%/game/savage_intro.bik
-%%SAVAGEDIR%%/game/savage_intro.ogg
+%%SAVAGEDIR%%/game/savage9.s2z
 %%SAVAGEDIR%%/game/screenshots/screenshots.txt
 %%SAVAGEDIR%%/game/settings/commander_keys.cfg
 %%SAVAGEDIR%%/game/settings/current.cfg
@@ -75,22 +54,25 @@ bin/linux-savage_server
 %%SAVAGEDIR%%/game/settings/user_sound_options.cfg
 %%SAVAGEDIR%%/game/settings/user_tlgraphics_options.cfg
 %%SAVAGEDIR%%/game/settings/userkeys.cfg
-%%SAVAGEDIR%%/game/sounds0.s2z
-%%SAVAGEDIR%%/game/sounds1.s2z
 %%SAVAGEDIR%%/game/startup.cfg
 %%SAVAGEDIR%%/game/ui_game.cfg
 %%SAVAGEDIR%%/game/ui_main.cfg
 %%SAVAGEDIR%%/game/world/2castles.s2z
+%%SAVAGEDIR%%/game/world/2towers.s2z
+%%SAVAGEDIR%%/game/world/3Tiny_Beta.s2z
 %%SAVAGEDIR%%/game/world/3_addisabeba05.s2z
 %%SAVAGEDIR%%/game/world/3_junctionB.s2z
 %%SAVAGEDIR%%/game/world/3_kingdoms2.s2z
+%%SAVAGEDIR%%/game/world/3_mayhem2.mcfg
 %%SAVAGEDIR%%/game/world/3_mayhem2.s2z
+%%SAVAGEDIR%%/game/world/3_snowdeath.mcfg
 %%SAVAGEDIR%%/game/world/3_snowdeath.s2z
 %%SAVAGEDIR%%/game/world/3_torque_sep.s2z
 %%SAVAGEDIR%%/game/world/_undo_.s2z
 %%SAVAGEDIR%%/game/world/aftermath2_sep.s2z
 %%SAVAGEDIR%%/game/world/alpenglow.s2z
 %%SAVAGEDIR%%/game/world/alpenglow_b.s2z
+%%SAVAGEDIR%%/game/world/alpenglow_b_overhead.jpg
 %%SAVAGEDIR%%/game/world/alpenglow_overhead.tga
 %%SAVAGEDIR%%/game/world/alpinevalley.s2z
 %%SAVAGEDIR%%/game/world/alpinevalley_overhead.tga
@@ -119,8 +101,10 @@ bin/linux-savage_server
 %%SAVAGEDIR%%/game/world/duel_dj.s2z
 %%SAVAGEDIR%%/game/world/eden.s2z
 %%SAVAGEDIR%%/game/world/eden2.s2z
+%%SAVAGEDIR%%/game/world/eden2_overhead.s2g
 %%SAVAGEDIR%%/game/world/eden2_overhead.tga
 %%SAVAGEDIR%%/game/world/eden_overhead.tga
+%%SAVAGEDIR%%/game/world/edge_1a.s2z
 %%SAVAGEDIR%%/game/world/evening_sep.s2z
 %%SAVAGEDIR%%/game/world/evergreen2.s2z
 %%SAVAGEDIR%%/game/world/falls2.s2z
@@ -150,7 +134,10 @@ bin/linux-savage_server
 %%SAVAGEDIR%%/game/world/nohope.s2z
 %%SAVAGEDIR%%/game/world/oceanv5.s2z
 %%SAVAGEDIR%%/game/world/omo_sep.s2z
+%%SAVAGEDIR%%/game/world/omo_tehe_dero2.s2z
+%%SAVAGEDIR%%/game/world/omo_tehe_dero2_overhead.jpg
 %%SAVAGEDIR%%/game/world/pirate2_sep.s2z
+%%SAVAGEDIR%%/game/world/rainforest3.s2z
 %%SAVAGEDIR%%/game/world/redmeridian.s2z
 %%SAVAGEDIR%%/game/world/redwood_canyon_sep.s2z
 %%SAVAGEDIR%%/game/world/riverbend_sep.s2z
@@ -166,6 +153,8 @@ bin/linux-savage_server
 %%SAVAGEDIR%%/game/world/snowblind_overhead.tga
 %%SAVAGEDIR%%/game/world/standard.cfg
 %%SAVAGEDIR%%/game/world/tenshi.s2z
+%%SAVAGEDIR%%/game/world/the_gate_beta.s2z
+%%SAVAGEDIR%%/game/world/the_gate_beta_overhead.jpg
 %%SAVAGEDIR%%/game/world/thorn_sep.s2z
 %%SAVAGEDIR%%/game/world/tiny2_sep.s2z
 %%SAVAGEDIR%%/game/world/tropical.s2z
@@ -213,9 +202,15 @@ bin/linux-savage_server
 %%SAVAGEDIR%%/graveyard/brushes/standard/brush8.tga
 %%SAVAGEDIR%%/graveyard/brushes/standard/brush9.tga
 %%SAVAGEDIR%%/graveyard/buddies.cfg
+%%SAVAGEDIR%%/graveyard/game.dll
 %%SAVAGEDIR%%/graveyard/game.so
 %%SAVAGEDIR%%/graveyard/gamefont.ttf
-%%SAVAGEDIR%%/graveyard/gamelist_full.dat
+%%SAVAGEDIR%%/graveyard/groups/NPCs/Monkits.objgroup
+%%SAVAGEDIR%%/graveyard/groups/Water/Waterfall 1.objgroup
+%%SAVAGEDIR%%/graveyard/groups/Water/Waterfall 2.objgroup
+%%SAVAGEDIR%%/graveyard/groups/Water/Waterfall 3.objgroup
+%%SAVAGEDIR%%/graveyard/groups/Water/Waterfall 4.objgroup
+%%SAVAGEDIR%%/graveyard/groups/Water/Waterfall 5.objgroup
 %%SAVAGEDIR%%/graveyard/gui/graveyard/1_nl_selected120x16.tga
 %%SAVAGEDIR%%/graveyard/gui/graveyard/b_jesse.tga
 %%SAVAGEDIR%%/graveyard/gui/graveyard/bl_jesse.tga
@@ -270,8 +265,6 @@ bin/linux-savage_server
 %%SAVAGEDIR%%/graveyard/gui/graveyard/ui_texture_mode.cfg
 %%SAVAGEDIR%%/graveyard/gui/graveyard/ui_util.cfg
 %%SAVAGEDIR%%/graveyard/gui/graveyard/ui_util_mode.cfg
-%%SAVAGEDIR%%/graveyard/latest_gamelist_packet.dat
-%%SAVAGEDIR%%/graveyard/screenshots/Thumbs.db
 %%SAVAGEDIR%%/graveyard/startup.cfg
 %%SAVAGEDIR%%/graveyard/ui_game.cfg
 %%SAVAGEDIR%%/graveyard/ui_main.cfg
@@ -283,41 +276,28 @@ bin/linux-savage_server
 %%SAVAGEDIR%%/graveyard/world/blank512.s2z
 %%SAVAGEDIR%%/graveyard/world/blank64.s2z
 %%SAVAGEDIR%%/graveyard/world/blank96.s2z
-%%SAVAGEDIR%%/icon.xpm
-%%SAVAGEDIR%%/libs/libSDL-1.2.so.0
 %%SAVAGEDIR%%/libs/libcrypto.so.0.9.8
 %%SAVAGEDIR%%/libs/libcurl.so.3
+%%SAVAGEDIR%%/libs/libfmod-3.75.so
 %%SAVAGEDIR%%/libs/libfmod.so
-%%SAVAGEDIR%%/libs/libfreetype.so.6
-%%SAVAGEDIR%%/libs/libgcc_s.so.1
-%%SAVAGEDIR%%/libs/libglib-2.0.so.0
 %%SAVAGEDIR%%/libs/libgssapi_krb5.so.2
 %%SAVAGEDIR%%/libs/libidn.so.11
 %%SAVAGEDIR%%/libs/libk5crypto.so.3
 %%SAVAGEDIR%%/libs/libkrb5.so.3
 %%SAVAGEDIR%%/libs/libkrb5support.so.0
-%%SAVAGEDIR%%/libs/libmd5.so.0
 %%SAVAGEDIR%%/libs/libpng12.so.0
 %%SAVAGEDIR%%/libs/libssl.so.0.9.8
 %%SAVAGEDIR%%/libs/libstdc++.so.6
-%%SAVAGEDIR%%/logo.png
 %%SAVAGEDIR%%/scripts.log
 %%SAVAGEDIR%%/silverback.bin
-%%SAVAGEDIR%%/sep_dedicated.bin
-%%SAVAGEDIR%%/update
-%%SAVAGEDIR%%/updater/lastpatch.txt
-%%SAVAGEDIR%%/updater/patchindex.txt
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/commander_controls.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses.txt
 @dirrm %%SAVAGEDIR%%/graveyard/brushes/standard
 @dirrm %%SAVAGEDIR%%/graveyard/brushes
+@dirrm %%SAVAGEDIR%%/graveyard/groups/NPCs
 @dirrm %%SAVAGEDIR%%/graveyard/groups/Water
-@dirrm %%SAVAGEDIR%%/graveyard/groups/Buildings
 @dirrm %%SAVAGEDIR%%/graveyard/groups
 @dirrm %%SAVAGEDIR%%/graveyard/gui/graveyard
 @dirrm %%SAVAGEDIR%%/graveyard/gui
-@dirrm %%SAVAGEDIR%%/graveyard/screenshots
 @dirrm %%SAVAGEDIR%%/graveyard/world
 @dirrm %%SAVAGEDIR%%/graveyard
 @dirrm %%SAVAGEDIR%%/game/demos
@@ -329,7 +309,6 @@ bin/linux-savage_server
 @dirrm %%SAVAGEDIR%%/game/settings
 @dirrm %%SAVAGEDIR%%/game/world
 @dirrm %%SAVAGEDIR%%/game
-@dirrm %%SAVAGEDIR%%/updater
 @dirrm %%SAVAGEDIR%%/libs
 @dirrm %%SAVAGEDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
