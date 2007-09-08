@@ -1,0 +1,88 @@
+diff -ru ../fping-2.4b2_to-ipv6-orig/fping.c ./fping.c
+--- ../fping-2.4b2_to-ipv6-orig/fping.c	Sun Jan 20 19:06:30 2002
++++ ./fping.c	Fri Apr 13 14:36:02 2007
+@@ -283,6 +283,12 @@
+ u_int count = 1;
+ u_int trials;
+ u_int report_interval = 0;
++int src_addr_present = 0;
++#ifndef IPV6
++struct in_addr src_addr;
++#else
++struct in6_addr src_addr;
++#endif
+ 
+ /* global stats */
+ long max_reply = 0;
+@@ -408,6 +414,11 @@
+ 	struct protoent *proto;
+ 	char *buf;
+ 	uid_t uid;
++#ifndef IPV6
++	struct sockaddr_in sa;
++#else
++	struct sockaddr_in6 sa;
++#endif
+ 	/* check if we are root */
+ 
+ 	if( geteuid() )
+@@ -491,7 +502,7 @@
+ 
+ 	/* get command line options */
+ 
+-	while( ( c = getopt( argc, argv, "gedhlmnqusaAvz:t:i:p:f:r:c:b:C:Q:B:" ) ) != EOF )
++	while( ( c = getopt( argc, argv, "gedhlmnqusaAvz:t:i:p:f:r:c:b:C:Q:B:S:" ) ) != EOF )
+ 	{
+ 		switch( c )
+ 		{
+@@ -639,6 +650,16 @@
+ 			generate_flag = 1;
+ 			break;
+ 
++		case 'S':
++#ifndef IPV6
++			if( ! inet_pton( AF_INET, optarg, &src_addr ) )
++#else
++			if( ! inet_pton( AF_INET6, optarg, &src_addr ) )
++#endif
++				usage();
++			src_addr_present = 1;
++			break;
++
+ 		default:
+ 			usage();
+ 			break;
+@@ -962,6 +983,22 @@
+ 	if( !num_hosts )
+ 		exit( 2 );
+ 
++	/* set the source address */
++
++	if( src_addr_present )
++	{
++		memset( &sa, 0, sizeof( sa ) );
++#ifndef IPV6
++		sa.sin_family = AF_INET;
++		sa.sin_addr = src_addr;
++#else
++		sa.sin6_family = AF_INET6;
++		sa.sin6_addr = src_addr;
++#endif
++		if ( bind( s, (struct sockaddr *)&sa, sizeof( sa ) ) < 0 )
++			errno_crash_and_burn( "cannot bind source address" );
++	}
++
+ 	/* allocate array to hold outstanding ping requests */
+ 
+ 	table = ( HOST_ENTRY** )malloc( sizeof( HOST_ENTRY* ) * num_hosts );
+@@ -2732,6 +2769,7 @@
+ 	fprintf( stderr, "   -Q n       same as -q, but show summary every n seconds\n" );
+ 	fprintf( stderr, "   -r n       number of retries (default %d)\n", retry );
+ 	fprintf( stderr, "   -s         print final stats\n" );
++	fprintf( stderr, "   -S addr    set source address\n" );
+ 	fprintf( stderr, "   -t n       individual target initial timeout (in millisec) (default %d)\n", timeout / 100 );
+ 	fprintf( stderr, "   -u         show targets that are unreachable\n" );
+ 	fprintf( stderr, "   -v         show version\n" );
+
+
+

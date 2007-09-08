@@ -8,6 +8,7 @@
 
 PORTNAME=	fping
 PORTVERSION=	2.4b2
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/
 #MASTER_SITES=	http://www.fping.com/download/
