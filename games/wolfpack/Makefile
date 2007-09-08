@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	wolfpack
-PORTVERSION=	4.3.8
+PORTVERSION=	4.3.10
 CATEGORIES=	games
-MASTER_SITES=	http://rc.wolfpackempire.com/Downloads/server/ \
-		http://empire-rc.gletsjer.net/Downloads/server/ \
-		http://www.wolfpackempire.com/Downloads/server/ \
-		http://www.wolfpackempire.com/Downloads/server/oldversions/ \
-		http://empire.gletsjer.net/Downloads/server/oldversions/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	empserver
 DISTNAME=	empire-${PORTVERSION}
 
 MAINTAINER=	johans@stack.nl
@@ -28,8 +25,7 @@ CONFIGURE_ARGS+=	--bindir=${BINDIR} --sbindir=${BINDIR}
 USE_RC_SUBR=	wolfpack
 SUB_FILES+=	pkg-message
 
-MAN1=		fairland.1 files.1 pconfig.1
-MAN6=		empire.6 emp_server.6
+MAN6=		empire.6 emp_server.6 empsched.6 fairland.6 files.6 pconfig.6
 
 .include <bsd.port.pre.mk>
 
