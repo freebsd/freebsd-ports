@@ -26,6 +26,7 @@
     SUBDIR += alienwah
     SUBDIR += amarok
     SUBDIR += amarok-fs
+    SUBDIR += amb-plugins
     SUBDIR += amp
     SUBDIR += ample
     SUBDIR += amrcoder

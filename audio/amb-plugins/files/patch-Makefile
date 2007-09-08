@@ -1,0 +1,25 @@
+--- Makefile.orig	2006-12-19 23:02:17.000000000 +0100
++++ Makefile	2007-08-28 23:33:25.000000000 +0200
+@@ -1,19 +1,19 @@
+ 
+-CPPFLAGS += -I. -fPIC -D_REENTRANT -Wall -O3
++CPPFLAGS += -I. -fPIC -D_REENTRANT -Wall
+ 
+ 
+ all:	ambisonic1.so ambisonic2.so
+ 
+ 
+ ambisonic1.so:	ambisonic1.o ambisonic1_if.o filter1.o
+-	g++ -shared -o $@ ambisonic1.o ambisonic1_if.o filter1.o
++	$(CXX) -shared -o $@ ambisonic1.o ambisonic1_if.o filter1.o
+ 
+ ambisonic1.o:	ladspaplugin.h ambisonic1.h filter1.h
+ ambisonic1_if.o:	ladspaplugin.h ambisonic1.h
+ 
+ 
+ ambisonic2.so:	ambisonic2.o ambisonic2_if.o 
+-	g++ -shared -o $@ ambisonic2.o ambisonic2_if.o
++	$(CXX) -shared -o $@ ambisonic2.o ambisonic2_if.o
+ 
+ ambisonic2.o:	ladspaplugin.h ambisonic2.h
+ ambisonic2_if.o:	ladspaplugin.h ambisonic2.h
