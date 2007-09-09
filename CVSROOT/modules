@@ -6981,6 +6981,7 @@ linux-realplayer	ports/multimedia/linux-realplayer
 linux-relview	ports/math/linux-relview
 linux-runrev	ports/devel/linux-runrev
 linux-savage	ports/games/linux-savage
+linux-savage-samuraiwars	ports/games/linux-savage-samuraiwars
 linux-sdl12	ports/devel/linux-sdl12
 linux-sdl_image	ports/graphics/linux-sdl_image
 linux-sdl_mixer	ports/audio/linux-sdl_mixer
