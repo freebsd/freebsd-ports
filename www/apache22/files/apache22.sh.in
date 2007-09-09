@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.3 2007-03-17 16:03:24 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.4 2007-09-09 14:55:17 clement Exp $
 #
 
 # PROVIDE: apache22
@@ -88,21 +88,17 @@ if [ -n "$2" ]; then
 	fi
 else
 	if [ "x${apache22_profiles}" != "x" -a "x$1" != "x" ]; then
-		if [ "x$1" != "xrestart" ]; then
-			for profile in ${apache22_profiles}; do
-				echo "===> apache22 profile: ${profile}"
-				%%PREFIX%%/etc/rc.d/apache22%%RC_SUBR_SUFFIX%% $1 ${profile}
-				retcode="$?"
-				if [ "0${retcode}" -ne 0 ]; then
-					failed="${profile} (${retcode}) ${failed:-}"
-				else
-					success="${profile} ${success:-}"
-				fi
-			done
-			exit 0
-		else
-			restart_precmd=""
-		fi
+		for profile in ${apache22_profiles}; do
+			echo "===> apache22 profile: ${profile}"
+			%%PREFIX%%/etc/rc.d/apache22%%RC_SUBR_SUFFIX%% $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+			fi
+		done
+		exit 0
 	fi
 fi
 

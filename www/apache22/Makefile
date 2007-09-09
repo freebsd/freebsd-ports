@@ -8,14 +8,13 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.2.4
-PORTREVISION=	2
+PORTVERSION=	2.2.6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%\//clement\/:aprmysql/}
 DISTNAME=	httpd-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.bz2 \
-		apr_dbd_mysql.rev-57.c:aprmysql
+		apr_dbd_mysql.rev-93.c:aprmysql
 DIST_SUBDIR=	apache22
 EXTRACT_ONLY=	${DISTNAME}.tar.bz2
 
@@ -175,7 +174,7 @@ show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
 
 post-extract:
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/apr_dbd_mysql.rev-57.c \
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/apr_dbd_mysql.rev-93.c \
 		${WRKSRC}/srclib/apr-util/dbd/apr_dbd_mysql.c
 
 post-patch:

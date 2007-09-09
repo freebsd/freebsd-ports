@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Nov 13 06:33:15 2005
-+++ Makefile.in	Sat Dec  3 22:10:42 2005
+--- Makefile.in.orig	Tue Apr 24 13:08:01 2007
++++ Makefile.in	Sun Sep  9 11:57:06 2007
 @@ -31,9 +31,11 @@
  install-conf:
  	@echo Installing configuration files
@@ -40,7 +40,7 @@
  	  $(RSYNC) --exclude .svn -rlpt --numeric-ids $(top_srcdir)/docs/manual/ $(DESTDIR)$(manualdir)/; \
  	else \
  	  cd $(top_srcdir)/docs/manual && cp -rp * $(DESTDIR)$(manualdir); \
- 	  cd $(DESTDIR)$(manualdir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null; \
+ 	  cd $(DESTDIR)$(manualdir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
  	fi
 +.endif
  
