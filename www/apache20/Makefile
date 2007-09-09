@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.0.59
+PORTVERSION=	2.0.61
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/$/:powerlogo/}
@@ -50,7 +50,7 @@ SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 USE_ICONV=		yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_PERL5=		yes
-USE_RC_SUBR=		yes
+USE_RC_SUBR=		apache2.sh
 USE_APACHE=		common20
 LIBTOOLFILES=		configure
 USE_LDCONFIG=		${PREFIX}/lib/apache2
@@ -187,8 +187,6 @@ post-patch:
 		ALT="[Powered by FreeBSD]"><IMG SRC="apache_pb2_ani,g' $$f \
 	 ); done
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/apache.sh > ${WRKDIR}/apache2.sh
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 	@${RM} -f ${WRKSRC}/docs/conf/highperformance-std.conf
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
@@ -213,16 +211,7 @@ post-configure:
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
-install-startup-script:
-.if !exists(${WRKDIR}/apache2.sh)
-	@${MKDIR} ${WRKDIR}
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/apache.sh > ${WRKDIR}/apache2.sh
-.endif
-	@${ECHO_CMD} "=> Installing ${PREFIX}/etc/rc.d/apache2.sh startup script."
-	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh
-
-post-install: install-startup-script
+post-install:
 	@${MKDIR} ${PREFIX}/etc/apache2/envvars.d
 	@${MKDIR} ${PREFIX}/etc/apache2/Includes
 	@${ECHO_CMD} ""

@@ -12,7 +12,6 @@
 @unexec if cmp -s %D/etc/apache2/ssl.conf %D/%%EXAMPLESDIR%%/ssl-std.conf; then rm -f %D/etc/apache2/ssl.conf; fi
 %%EXAMPLESDIR%%/ssl-std.conf
 @exec [ -f %D/etc/apache2/ssl.conf ] || cp %D/%%EXAMPLESDIR%%/ssl-std.conf %D/etc/apache2/ssl.conf
-etc/rc.d/apache2.sh
 include/apache2/ap_compat.h
 include/apache2/ap_config.h
 include/apache2/ap_config_auto.h
@@ -293,6 +292,7 @@ share/apache2/build/special.mk
 %%ERROR%%@exec [ ! -d %D/www/error ] && ln -fs %D/www/error-dist %D/www/error
 %%ICONS%%@unexec if [ -L %D/www/icons ]; then rm -f %D/www/icons; fi
 %%ICONS%%www/icons-dist/README
+%%ICONS%%www/icons-dist/README.html
 %%ICONS%%www/icons-dist/a.gif
 %%ICONS%%www/icons-dist/a.png
 %%ICONS%%www/icons-dist/alert.black.gif
@@ -421,7 +421,6 @@ share/apache2/build/special.mk
 %%ICONS%%www/icons-dist/screw2.png
 %%ICONS%%www/icons-dist/script.gif
 %%ICONS%%www/icons-dist/script.png
-%%ICONS%%www/icons-dist/small/README.txt
 %%ICONS%%www/icons-dist/small/back.gif
 %%ICONS%%www/icons-dist/small/back.png
 %%ICONS%%www/icons-dist/small/binary.gif
