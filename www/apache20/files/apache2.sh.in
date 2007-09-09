@@ -1,0 +1,123 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: apache2
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable apache2:
+# apache2_enable (bool):      Set to "NO" by default.
+#                             Set it to "YES" to enable apache2
+# apache2_profiles (str):     Set to "" by default.
+#                              Define your profiles here.
+# apache2limits_enable (bool):Set to "NO" by default.
+#                             Set it to yes to run `limits $limits_args`
+#                             just before apache starts.
+# apache2_flags (str):        Set to "" by default.
+#                             Extra flags passed to start command.
+# apache2limits_args (str):   Default to "-e -C daemon"
+#                             Arguments of pre-start limits run.
+
+. %%RC_SUBR%%
+
+name="apache2"
+rcvar=`set_rcvar`
+
+start_precmd="apache2_precmd"
+restart_precmd="apache2_checkconfig"
+reload_precmd="apache2_checkconfig"
+reload_cmd="apache2_graceful"
+graceful_cmd="apache2_graceful"
+configtest_cmd="apache2_checkconfig"
+command="%%PREFIX%%/sbin/httpd"
+_pidprefix="/var/run/httpd"
+pidfile="${_pidprefix}.pid"
+required_files=%%PREFIX%%/etc/apache2/httpd.conf
+
+[ -z "$apache2_enable" ]       && apache2_enable="NO"
+[ -z "$apache2_profiles" ]     && apache2_profiles=""
+[ -z "$apache2_flags" ]        && apache2_flags=""
+[ -z "$apache2limits_enable" ] && apache2limits_enable="NO"
+[ -z "$apache2limits_args" ]   && apache2limits_args="-e -C daemon"
+
+load_rc_config $name
+
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ "x${apache2_profiles}" != "x" ]; then
+		pidfile="${_pidprefix}.${profile}.pid"
+		eval apache2_configfile="\${apache2_${profile}_configfile:-}"
+		if [ "x${apache2_configfile}" = "x" ]; then
+			echo "You must define a configuration file (apache2_${profile}_configfile)"
+			exit 1
+		fi
+		required_files="${apache2_configfile}"
+		eval apache2_enable="\${apache2_${profile}_enable:-${apache2_enable}}"
+		eval apache2_flags="\${apache2_${profile}_flags:-${apache2_flags}}"
+		eval apache2_http_accept_enable="\${apache2_${profile}_http_accept_enable:-${apache2_http_accept_enable}}"
+		eval apache2limits_enable="\${apache2limits_${profile}_enable:-${apache2limits_enable}}"
+		eval apache2limits_args="\${apache2limits_${profile}_args:-${apache2limits_args}}"
+		apache2_flags="-f ${apache2_configfile} -c \"PidFile ${pidfile}\" ${apache2_flags}"
+	else
+		echo "$0: extra argument ignored"
+	fi
+else
+	if [ "x${apache2_profiles}" != "x" -a "x$1" != "x" ]; then
+		for profile in ${apache2_profiles}; do
+			echo "===> apache2 profile: ${profile}"
+			%%PREFIX%%/etc/rc.d/apache2%%RC_SUBR_SUFFIX%% $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+			fi
+		done
+		exit 0
+	fi
+fi
+
+apache2_requirepidfile()
+{
+	if [ ! "0`check_pidfile ${pidfile} ${command}`" -gt 1 ]; then
+		echo "${name} not running? (check $pidfile)."
+		exit 1
+	fi
+}
+
+apache2_checkconfig()
+{
+	echo "Performing sanity check on apache2 configuration:"
+	eval ${command} ${apache2_flags} -t
+}
+
+apache2_graceful() {
+	apache2_requirepidfile
+
+	echo "Performing a graceful restart"
+	eval ${command} ${apache2_flags} -k graceful
+}
+
+apache2_precmd() 
+{
+	apache2_checkconfig
+
+	if test -f %%PREFIX%%/sbin/envvars
+	then
+		. %%PREFIX%%/sbin/envvars
+	fi
+
+	if checkyesno apache2limits_enable
+	then
+		eval `/usr/bin/limits ${apache2limits_args}` 2>/dev/null
+	else
+		return 0
+        fi
+
+}
+
+extra_commands="reload graceful configtest"
+run_rc_command "$1"
