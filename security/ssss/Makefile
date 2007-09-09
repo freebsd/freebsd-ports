@@ -7,6 +7,7 @@
 
 PORTNAME=	ssss
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://point-at-infinity.org/ssss/
 
