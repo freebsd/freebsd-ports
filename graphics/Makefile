@@ -611,6 +611,7 @@
     SUBDIR += qt4-imageformats
     SUBDIR += qt4-pixeltool
     SUBDIR += qt4-svg
+    SUBDIR += qtpfsgui
     SUBDIR += quat
     SUBDIR += quat-gui
     SUBDIR += quesa
