@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cjson
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	devel python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/p/python-cjson/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-cjson-${PORTVERSION}
 
