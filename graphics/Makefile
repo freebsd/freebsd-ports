@@ -525,6 +525,7 @@
     SUBDIR += photoclip
     SUBDIR += photopc
     SUBDIR += php-magickwand
+    SUBDIR += php4-chartdirector
     SUBDIR += php4-exif
     SUBDIR += php4-ffmpeg
     SUBDIR += php4-gd
