@@ -8,8 +8,8 @@ share/pixmaps/mrxvt.xpm
 etc/mrxvt/mrxvtrc.sample
 etc/mrxvt/default.menu.sample
 etc/mrxvt/submenus.menu.sample
-%%EXAMPLESDIR%%/scripts/mrxvtset.pl
-%%EXAMPLESDIR%%/scripts/settitle.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/mrxvtset.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/settitle.c
 %%DOCSDIR%%/README.greek
 %%DOCSDIR%%/README.xvt
 %%DOCSDIR%%/hack-mrxvt.txt
@@ -19,6 +19,6 @@ etc/mrxvt/submenus.menu.sample
 %%DOCSDIR%%/mrxvt_seq.txt
 %%DOCSDIR%%/xterm-ctlseqs.txt
 @dirrmtry etc/mrxvt
-@dirrm %%EXAMPLESDIR%%/scripts
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mrxvt-devel
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.5.3
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	materm
 DISTNAME=	mrxvt-${PORTVERSION}
 
@@ -131,10 +130,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/share/mrxvtrc ${PREFIX}/etc/mrxvt/mrxvtrc.sample
 	${INSTALL_DATA} ${WRKSRC}/share/default.menu ${PREFIX}/etc/mrxvt/default.menu.sample
 	${INSTALL_DATA} ${WRKSRC}/share/submenus.menu ${PREFIX}/etc/mrxvt/submenus.menu.sample
+	${INSTALL_MAN} ${WRKSRC}/doc/mrxvt.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/scripts
 	${INSTALL_DATA} ${WRKSRC}/share/scripts/mrxvtset.pl ${EXAMPLESDIR}/scripts
 	${INSTALL_DATA} ${WRKSRC}/share/scripts/settitle.c ${EXAMPLESDIR}/scripts
-	${INSTALL_MAN} ${WRKSRC}/doc/mrxvt.1 ${MANPREFIX}/man/man1
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
