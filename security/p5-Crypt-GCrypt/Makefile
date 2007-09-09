@@ -31,4 +31,4 @@ post-extract:
 	${RM} -f ${WRKSRC}/._GCrypt.pm
 	${RM} -f ${WRKSRC}/._GCrypt.xs
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
