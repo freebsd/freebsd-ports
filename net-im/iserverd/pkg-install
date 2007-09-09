@@ -26,7 +26,7 @@ POST-INSTALL)
                echo "You already have a user \"${USER}\", so I will use it."
        else
                if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-                       -d /var/spool/iserv -m -s /bin/sh -c "iserverd user"
+                       -d /var/spool/iserv -s /bin/sh -c "iserverd user"
                then
                        echo "Added user \"${USER}\"."
                else
