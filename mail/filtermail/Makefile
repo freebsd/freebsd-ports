@@ -9,15 +9,15 @@
 #
 
 PORTNAME=	filtermail
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.7.2
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://home.in.tum.de/baueran/%SUBDIR%/
 MASTER_SITE_SUBDIR=	mailfilter
 DISTNAME=	mailfilter-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filter mail on a pop3 server: saves downloading spam
 
 # This port is filtermail, but the author called it mailfilter. To avoid a

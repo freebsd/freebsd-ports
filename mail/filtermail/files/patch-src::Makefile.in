@@ -34,23 +34,3 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/header.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/imap.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filtermail.Po@am__quote@
-@@ -571,8 +567,8 @@
- rcparser.hh: y.tab.c
- y.tab.c: rcfile.yy
- 	   $(YACC) -p rc $(YFLAGS) -o$@ $^;   \
--	   mv --force y.tab.c rcparser.cc;    \
--	   mv --force y.tab.h rcparser.hh;    \
-+	   mv -f y.tab.c rcparser.cc;    \
-+	   mv -f y.tab.h rcparser.hh;    \
- 	   $(CXXCOMPILE) -c rcparser.cc;      \
- 	   touch y.tab.c
- 
-@@ -583,7 +579,7 @@
- rfc822parser.hh: rfc822parser.cc
- rfc822parser.cc: rfc822.yy
- 		   $(YACC) $(YFLAGS) -p rfc -o$@ $^;  \
--		   mv --force y.tab.h rfc822parser.hh;\
-+		   mv -f y.tab.h rfc822parser.hh;\
- 		   $(CXXCOMPILE) -c rfc822parser.cc;  \
- 		   touch y.tab.c
- 
