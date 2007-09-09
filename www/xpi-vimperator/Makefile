@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vimperator
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Vim look and feel for Firefox
 
 XPI_ID=		vimperator@mozdev.org
-XPI_FILES=	AUTHORS ChangeLog Donators Makefile TODO chrome/vimperator.jar\
+XPI_FILES=	AUTHORS Donators Makefile NEWS TODO chrome/vimperator.jar\
 		chrome.manifest install.rdf
 XPI_DIRS=	chrome
 
