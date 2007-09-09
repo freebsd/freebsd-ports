@@ -430,6 +430,7 @@ www/cgi-bin-dist/printenv
 @exec [ -d %D/www/cgi-bin/ ] || ln -fs %B %D/www/cgi-bin
 www/cgi-bin-dist/test-cgi
 www/icons/README
+www/icons/README.html
 www/icons/a.gif
 www/icons/alert.black.gif
 www/icons/alert.red.gif
@@ -493,7 +494,6 @@ www/icons/right.gif
 www/icons/screw1.gif
 www/icons/screw2.gif
 www/icons/script.gif
-www/icons/small/README.txt
 www/icons/small/back.gif
 www/icons/small/binary.gif
 www/icons/small/binhex.gif
@@ -701,6 +701,7 @@ www/icons/world2.png
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/Table.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/URI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/fork.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/httpd_conf.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/src.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/testold.pm
