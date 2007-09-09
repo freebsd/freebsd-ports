@@ -281,9 +281,6 @@
 %%SERENDIPITY%%/bundled-libs/XML/RPC.php
 %%SERENDIPITY%%/bundled-libs/XML/RPC/Dump.php
 %%SERENDIPITY%%/bundled-libs/XML/RPC/Server.php
-%%SERENDIPITY%%/bundled-libs/YahooUI/treeview/YAHOO.js
-%%SERENDIPITY%%/bundled-libs/YahooUI/treeview/license.txt
-%%SERENDIPITY%%/bundled-libs/YahooUI/treeview/treeview.js
 %%SERENDIPITY%%/bundled-libs/create_release.sh
 %%SERENDIPITY%%/bundled-libs/docs/HomePage.wiki.txt
 %%SERENDIPITY%%/bundled-libs/docs/SamplePage.wiki.txt
@@ -294,8 +291,6 @@
 %%SERENDIPITY%%/bundled-libs/docs/WordsSmashedTogether.wiki.txt
 %%SERENDIPITY%%/bundled-libs/docs/free links.wiki.txt
 %%SERENDIPITY%%/bundled-libs/docs/stylesheet.css
-%%SERENDIPITY%%/bundled-libs/dragdrop.js
-%%SERENDIPITY%%/bundled-libs/imgedit.js
 %%SERENDIPITY%%/bundled-libs/tests/README
 %%SERENDIPITY%%/comment.php
 %%SERENDIPITY%%/deployment/archives/.ignore
@@ -528,8 +523,10 @@
 %%SERENDIPITY%%/include/db/db.inc.php
 %%SERENDIPITY%%/include/db/mysql.inc.php
 %%SERENDIPITY%%/include/db/mysqli.inc.php
+%%SERENDIPITY%%/include/db/pdo-postgres.inc.php
 %%SERENDIPITY%%/include/db/postgres.inc.php
 %%SERENDIPITY%%/include/db/sqlite.inc.php
+%%SERENDIPITY%%/include/db/sqlite3.inc.php
 %%SERENDIPITY%%/include/functions.inc.php
 %%SERENDIPITY%%/include/functions_calendars.inc.php
 %%SERENDIPITY%%/include/functions_comments.inc.php
@@ -775,6 +772,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_ko.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_ru.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_bg.inc.php
@@ -787,6 +785,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_ko.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/lang_ru.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/serendipity_event_karma.php
@@ -999,6 +998,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_fr.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_ja.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_nl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_tn.inc.php
@@ -1012,6 +1012,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_fr.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_ja.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_nl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_tn.inc.php
@@ -1107,6 +1108,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/serendipity_event_trackexits.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_bg.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_fr.inc.php
@@ -1116,6 +1118,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_zh.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_bg.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_es.inc.php
@@ -1438,15 +1441,112 @@
 %%SERENDIPITY%%/sql/db_update_1.1-beta3_1.1-beta4_mysql.sql
 %%SERENDIPITY%%/sql/db_update_1.1-beta3_1.1-beta4_postgres.sql
 %%SERENDIPITY%%/sql/db_update_1.1-beta3_1.1-beta4_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha1_1.2_alpha2_mysql.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha1_1.2_alpha2_postgres.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha1_1.2_alpha2_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_mysql.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_postgres.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_mysql.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_postgres.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_sqlite.sql
 %%SERENDIPITY%%/templates/HOWTO
 %%SERENDIPITY%%/templates/blue/htmlarea.css
-%%SERENDIPITY%%/templates/blue/img/back.png
-%%SERENDIPITY%%/templates/blue/img/down.png
-%%SERENDIPITY%%/templates/blue/img/forward.png
-%%SERENDIPITY%%/templates/blue/img/up.png
 %%SERENDIPITY%%/templates/blue/info.txt
 %%SERENDIPITY%%/templates/blue/preview.png
+%%SERENDIPITY%%/templates/blue/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/blue/style.css
+%%SERENDIPITY%%/templates/bulletproof/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/templates/bulletproof/UTF-8/lang_en.inc.php
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_adminframe.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_banner.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_banner_fluid.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_default.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_default_a.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_default_h.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_frontpage.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_frontpage_a.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_frontpage_h.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_logout.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_logout_a.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_logout_h.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_personal.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_personal_a.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_personal_h.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_weblog.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_weblog_a.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_weblog_h.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_footer.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_infopane.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_infopane_fluid.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_prettybutton.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_admin.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_appearance.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_body.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_default.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_entries.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_foot.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_further.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_media.png
+%%SERENDIPITY%%/templates/bulletproof/admin/style.css
+%%SERENDIPITY%%/templates/bulletproof/admin/style_fluid.css
+%%SERENDIPITY%%/templates/bulletproof/base.css
+%%SERENDIPITY%%/templates/bulletproof/blank_style.css
+%%SERENDIPITY%%/templates/bulletproof/blue_style.css
+%%SERENDIPITY%%/templates/bulletproof/commentform.tpl
+%%SERENDIPITY%%/templates/bulletproof/commentpopup.tpl
+%%SERENDIPITY%%/templates/bulletproof/comments.tpl
+%%SERENDIPITY%%/templates/bulletproof/config.inc.php
+%%SERENDIPITY%%/templates/bulletproof/content.tpl
+%%SERENDIPITY%%/templates/bulletproof/entries.tpl
+%%SERENDIPITY%%/templates/bulletproof/entries_archives.tpl
+%%SERENDIPITY%%/templates/bulletproof/entries_summary.tpl
+%%SERENDIPITY%%/templates/bulletproof/green_style.css
+%%SERENDIPITY%%/templates/bulletproof/ie6.css
+%%SERENDIPITY%%/templates/bulletproof/ie7.css
+%%SERENDIPITY%%/templates/bulletproof/img/back.png
+%%SERENDIPITY%%/templates/bulletproof/img/blank.png
+%%SERENDIPITY%%/templates/bulletproof/img/blue_back.png
+%%SERENDIPITY%%/templates/bulletproof/img/blue_forward.png
+%%SERENDIPITY%%/templates/bulletproof/img/blue_graph_bar.png
+%%SERENDIPITY%%/templates/bulletproof/img/blue_header.jpg
+%%SERENDIPITY%%/templates/bulletproof/img/blue_xml.png
+%%SERENDIPITY%%/templates/bulletproof/img/bulletproof_button.png
+%%SERENDIPITY%%/templates/bulletproof/img/forward.png
+%%SERENDIPITY%%/templates/bulletproof/img/graph_bar_horisontal.png
+%%SERENDIPITY%%/templates/bulletproof/img/green_back.png
+%%SERENDIPITY%%/templates/bulletproof/img/green_closequote.png
+%%SERENDIPITY%%/templates/bulletproof/img/green_forward.png
+%%SERENDIPITY%%/templates/bulletproof/img/green_graph_bar.png
+%%SERENDIPITY%%/templates/bulletproof/img/green_openquote.png
+%%SERENDIPITY%%/templates/bulletproof/img/green_xml.png
+%%SERENDIPITY%%/templates/bulletproof/img/purple_back.png
+%%SERENDIPITY%%/templates/bulletproof/img/purple_body.jpg
+%%SERENDIPITY%%/templates/bulletproof/img/purple_forward.png
+%%SERENDIPITY%%/templates/bulletproof/img/purple_graph_bar.png
+%%SERENDIPITY%%/templates/bulletproof/img/purple_header.jpg
+%%SERENDIPITY%%/templates/bulletproof/img/purple_nav.png
+%%SERENDIPITY%%/templates/bulletproof/img/purple_xml.png
+%%SERENDIPITY%%/templates/bulletproof/img/quicksearch.png
+%%SERENDIPITY%%/templates/bulletproof/img/s9y_banner_small.png
+%%SERENDIPITY%%/templates/bulletproof/img/xml.gif
+%%SERENDIPITY%%/templates/bulletproof/index.tpl
+%%SERENDIPITY%%/templates/bulletproof/info.txt
+%%SERENDIPITY%%/templates/bulletproof/js/p7_eqCols2_10.js
+%%SERENDIPITY%%/templates/bulletproof/lang_de.inc.php
+%%SERENDIPITY%%/templates/bulletproof/lang_en.inc.php
+%%SERENDIPITY%%/templates/bulletproof/plugin_calendar.tpl
+%%SERENDIPITY%%/templates/bulletproof/plugin_contactform.tpl
+%%SERENDIPITY%%/templates/bulletproof/plugin_dynamicform.tpl
+%%SERENDIPITY%%/templates/bulletproof/plugin_staticpage.tpl
+%%SERENDIPITY%%/templates/bulletproof/plugin_staticpage_aboutpage.tpl
+%%SERENDIPITY%%/templates/bulletproof/plugin_staticpage_searchresults.tpl
+%%SERENDIPITY%%/templates/bulletproof/preview.png
+%%SERENDIPITY%%/templates/bulletproof/preview_fullsize.jpg
+%%SERENDIPITY%%/templates/bulletproof/preview_iframe.tpl
+%%SERENDIPITY%%/templates/bulletproof/purple_style.css
+%%SERENDIPITY%%/templates/bulletproof/sidebar.tpl
+%%SERENDIPITY%%/templates/bulletproof/style.css
 %%SERENDIPITY%%/templates/carl_contest/admin/img/background.png
 %%SERENDIPITY%%/templates/carl_contest/admin/img/button_background.png
 %%SERENDIPITY%%/templates/carl_contest/admin/img/infobar_background.png
@@ -1467,6 +1567,7 @@
 %%SERENDIPITY%%/templates/carl_contest/info.txt
 %%SERENDIPITY%%/templates/carl_contest/plugin_calendar.tpl
 %%SERENDIPITY%%/templates/carl_contest/preview.png
+%%SERENDIPITY%%/templates/carl_contest/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/carl_contest/screenshot.png
 %%SERENDIPITY%%/templates/carl_contest/style.css
 %%SERENDIPITY%%/templates/competition/admin/img/background.jpg
@@ -1487,13 +1588,11 @@
 %%SERENDIPITY%%/templates/competition/index.tpl
 %%SERENDIPITY%%/templates/competition/info.txt
 %%SERENDIPITY%%/templates/competition/preview.png
+%%SERENDIPITY%%/templates/competition/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/competition/style.css
 %%SERENDIPITY%%/templates/contest/admin/img/Thumbs.db
 %%SERENDIPITY%%/templates/contest/admin/img/button_background.png
-%%SERENDIPITY%%/templates/contest/admin/img/header_bar.png
-%%SERENDIPITY%%/templates/contest/admin/img/header_logo.png
 %%SERENDIPITY%%/templates/contest/admin/img/menuheader_background.png
-%%SERENDIPITY%%/templates/contest/admin/img/sidebar_left.jpg
 %%SERENDIPITY%%/templates/contest/admin/style.css
 %%SERENDIPITY%%/templates/contest/content.tpl
 %%SERENDIPITY%%/templates/contest/entries.tpl
@@ -1512,6 +1611,7 @@
 %%SERENDIPITY%%/templates/contest/info.txt
 %%SERENDIPITY%%/templates/contest/plugin_calendar.tpl
 %%SERENDIPITY%%/templates/contest/preview.png
+%%SERENDIPITY%%/templates/contest/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/contest/style.css
 %%SERENDIPITY%%/templates/default-php/IMPORTANT-TODO
 %%SERENDIPITY%%/templates/default-php/commentform.tpl
@@ -1542,6 +1642,8 @@
 %%SERENDIPITY%%/templates/default-rtl/admin/img/infobar_background.png
 %%SERENDIPITY%%/templates/default-rtl/admin/img/menu_background.png
 %%SERENDIPITY%%/templates/default-rtl/admin/img/menuheader_background.png
+%%SERENDIPITY%%/templates/default-rtl/admin/img/next.png
+%%SERENDIPITY%%/templates/default-rtl/admin/img/previous.png
 %%SERENDIPITY%%/templates/default-rtl/admin/style.css
 %%SERENDIPITY%%/templates/default-rtl/entries_archives.tpl
 %%SERENDIPITY%%/templates/default-rtl/entries_summary.tpl
@@ -1550,12 +1652,21 @@
 %%SERENDIPITY%%/templates/default-rtl/info.txt
 %%SERENDIPITY%%/templates/default-rtl/plugin_calendar.tpl
 %%SERENDIPITY%%/templates/default-rtl/preview.png
+%%SERENDIPITY%%/templates/default-rtl/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/default-rtl/style.css
 %%SERENDIPITY%%/templates/default-xml/index.tpl
 %%SERENDIPITY%%/templates/default-xml/info.txt
 %%SERENDIPITY%%/templates/default-xml/preview.png
 %%SERENDIPITY%%/templates/default-xml/template.inc.php
+%%SERENDIPITY%%/templates/default/YahooUI/treeview/YAHOO.js
+%%SERENDIPITY%%/templates/default/YahooUI/treeview/license.txt
+%%SERENDIPITY%%/templates/default/YahooUI/treeview/treeview.js
+%%SERENDIPITY%%/templates/default/admin/category_selector.js
+%%SERENDIPITY%%/templates/default/admin/entries.tpl
 %%SERENDIPITY%%/templates/default/admin/img/accept.png
+%%SERENDIPITY%%/templates/default/admin/img/admin_msg_error.png
+%%SERENDIPITY%%/templates/default/admin/img/admin_msg_note.png
+%%SERENDIPITY%%/templates/default/admin/img/admin_msg_success.png
 %%SERENDIPITY%%/templates/default/admin/img/background.jpg
 %%SERENDIPITY%%/templates/default/admin/img/banner_background.png
 %%SERENDIPITY%%/templates/default/admin/img/big_delete.png
@@ -1599,6 +1710,7 @@
 %%SERENDIPITY%%/templates/default/admin/img/user_editor.png
 %%SERENDIPITY%%/templates/default/admin/img/zoom.png
 %%SERENDIPITY%%/templates/default/admin/imgedit.css
+%%SERENDIPITY%%/templates/default/admin/index.tpl
 %%SERENDIPITY%%/templates/default/admin/media_choose.tpl
 %%SERENDIPITY%%/templates/default/admin/media_imgedit.tpl
 %%SERENDIPITY%%/templates/default/admin/media_imgedit_done.tpl
@@ -1615,6 +1727,7 @@
 %%SERENDIPITY%%/templates/default/comments.tpl
 %%SERENDIPITY%%/templates/default/comments_by_author.tpl
 %%SERENDIPITY%%/templates/default/content.tpl
+%%SERENDIPITY%%/templates/default/dragdrop.js
 %%SERENDIPITY%%/templates/default/entries.tpl
 %%SERENDIPITY%%/templates/default/entries_archives.tpl
 %%SERENDIPITY%%/templates/default/entries_summary.tpl
@@ -1655,11 +1768,13 @@
 %%SERENDIPITY%%/templates/default/img/up.png
 %%SERENDIPITY%%/templates/default/img/xml.gif
 %%SERENDIPITY%%/templates/default/img/zoom.png
+%%SERENDIPITY%%/templates/default/imgedit.js
 %%SERENDIPITY%%/templates/default/index.tpl
 %%SERENDIPITY%%/templates/default/info.txt
 %%SERENDIPITY%%/templates/default/plugin_calendar.tpl
 %%SERENDIPITY%%/templates/default/plugin_categories.tpl
 %%SERENDIPITY%%/templates/default/preview.png
+%%SERENDIPITY%%/templates/default/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/default/preview_iframe.tpl
 %%SERENDIPITY%%/templates/default/sidebar.tpl
 %%SERENDIPITY%%/templates/default/style.css
@@ -1684,6 +1799,7 @@
 %%SERENDIPITY%%/templates/idea/img/quote.gif
 %%SERENDIPITY%%/templates/idea/info.txt
 %%SERENDIPITY%%/templates/idea/preview.png
+%%SERENDIPITY%%/templates/idea/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/idea/style.css
 %%SERENDIPITY%%/templates/kubrick/comments.tpl
 %%SERENDIPITY%%/templates/kubrick/config.inc.php
@@ -1695,16 +1811,13 @@
 %%SERENDIPITY%%/templates/kubrick/images/kubrickheader.jpg
 %%SERENDIPITY%%/templates/kubrick/images/kubricklogo.jpg
 %%SERENDIPITY%%/templates/kubrick/images/kubrickportrait.png
-%%SERENDIPITY%%/templates/kubrick/img/back.png
-%%SERENDIPITY%%/templates/kubrick/img/down.png
-%%SERENDIPITY%%/templates/kubrick/img/forward.png
-%%SERENDIPITY%%/templates/kubrick/img/up.png
 %%SERENDIPITY%%/templates/kubrick/index.tpl
 %%SERENDIPITY%%/templates/kubrick/info.txt
 %%SERENDIPITY%%/templates/kubrick/lang_de.inc.php
 %%SERENDIPITY%%/templates/kubrick/lang_en.inc.php
 %%SERENDIPITY%%/templates/kubrick/lang_ko.inc.php
 %%SERENDIPITY%%/templates/kubrick/preview.png
+%%SERENDIPITY%%/templates/kubrick/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/kubrick/sidebar.tpl
 %%SERENDIPITY%%/templates/kubrick/style.css
 %%SERENDIPITY%%/templates/kubrick/trackbacks.tpl
@@ -1716,29 +1829,27 @@
 %%SERENDIPITY%%/templates/moz-modern/index.tpl
 %%SERENDIPITY%%/templates/moz-modern/info.txt
 %%SERENDIPITY%%/templates/moz-modern/preview.png
+%%SERENDIPITY%%/templates/moz-modern/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/moz-modern/style.css
 %%SERENDIPITY%%/templates/mt-clean/info.txt
 %%SERENDIPITY%%/templates/mt-clean/preview.png
+%%SERENDIPITY%%/templates/mt-clean/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt-clean/style.css
 %%SERENDIPITY%%/templates/mt-georgiablue/info.txt
 %%SERENDIPITY%%/templates/mt-georgiablue/preview.png
+%%SERENDIPITY%%/templates/mt-georgiablue/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt-georgiablue/style.css
-%%SERENDIPITY%%/templates/mt-gettysburg/img/back.png
-%%SERENDIPITY%%/templates/mt-gettysburg/img/down.png
-%%SERENDIPITY%%/templates/mt-gettysburg/img/forward.png
-%%SERENDIPITY%%/templates/mt-gettysburg/img/up.png
 %%SERENDIPITY%%/templates/mt-gettysburg/info.txt
 %%SERENDIPITY%%/templates/mt-gettysburg/preview.png
+%%SERENDIPITY%%/templates/mt-gettysburg/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt-gettysburg/style.css
 %%SERENDIPITY%%/templates/mt-plainjane/info.txt
 %%SERENDIPITY%%/templates/mt-plainjane/preview.png
+%%SERENDIPITY%%/templates/mt-plainjane/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt-plainjane/style.css
-%%SERENDIPITY%%/templates/mt-rusty/img/back.png
-%%SERENDIPITY%%/templates/mt-rusty/img/down.png
-%%SERENDIPITY%%/templates/mt-rusty/img/forward.png
-%%SERENDIPITY%%/templates/mt-rusty/img/up.png
 %%SERENDIPITY%%/templates/mt-rusty/info.txt
 %%SERENDIPITY%%/templates/mt-rusty/preview.png
+%%SERENDIPITY%%/templates/mt-rusty/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt-rusty/style.css
 %%SERENDIPITY%%/templates/mt-stormy/inactive.txt
 %%SERENDIPITY%%/templates/mt-stormy/info.txt
@@ -1748,22 +1859,23 @@
 %%SERENDIPITY%%/templates/mt-trendy/img/forward.png
 %%SERENDIPITY%%/templates/mt-trendy/info.txt
 %%SERENDIPITY%%/templates/mt-trendy/preview.png
+%%SERENDIPITY%%/templates/mt-trendy/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt-trendy/style.css
-%%SERENDIPITY%%/templates/mt3-chalkboard/img/back.png
-%%SERENDIPITY%%/templates/mt3-chalkboard/img/down.png
-%%SERENDIPITY%%/templates/mt3-chalkboard/img/forward.png
-%%SERENDIPITY%%/templates/mt3-chalkboard/img/up.png
 %%SERENDIPITY%%/templates/mt3-chalkboard/info.txt
 %%SERENDIPITY%%/templates/mt3-chalkboard/preview.png
+%%SERENDIPITY%%/templates/mt3-chalkboard/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt3-chalkboard/style.css
 %%SERENDIPITY%%/templates/mt3-gettysburg/info.txt
 %%SERENDIPITY%%/templates/mt3-gettysburg/preview.png
+%%SERENDIPITY%%/templates/mt3-gettysburg/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt3-gettysburg/style.css
 %%SERENDIPITY%%/templates/mt3-independence/info.txt
 %%SERENDIPITY%%/templates/mt3-independence/preview.png
+%%SERENDIPITY%%/templates/mt3-independence/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt3-independence/style.css
 %%SERENDIPITY%%/templates/mt3-squash/info.txt
 %%SERENDIPITY%%/templates/mt3-squash/preview.png
+%%SERENDIPITY%%/templates/mt3-squash/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt3-squash/style.css
 %%SERENDIPITY%%/templates/newspaper/htmlarea.css
 %%SERENDIPITY%%/templates/newspaper/img/shadowb.png
@@ -1774,6 +1886,7 @@
 %%SERENDIPITY%%/templates/newspaper/info.txt
 %%SERENDIPITY%%/templates/newspaper/layout.php
 %%SERENDIPITY%%/templates/newspaper/preview.png
+%%SERENDIPITY%%/templates/newspaper/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/newspaper/style.css
 %%SERENDIPITY%%/templates/wp/atom.css
 %%SERENDIPITY%%/templates/wp/commentform.tpl
@@ -1782,7 +1895,6 @@
 %%SERENDIPITY%%/templates/wp/entries.tpl
 %%SERENDIPITY%%/templates/wp/entries_archives.tpl
 %%SERENDIPITY%%/templates/wp/entries_summary.tpl
-%%SERENDIPITY%%/templates/wp/htmlarea.css
 %%SERENDIPITY%%/templates/wp/index.tpl
 %%SERENDIPITY%%/templates/wp/info.txt
 %%SERENDIPITY%%/templates/wp/plugin_calendar.tpl
@@ -1824,6 +1936,8 @@
 @dirrm %%SERENDIPITY%%/templates/default/img
 @dirrm %%SERENDIPITY%%/templates/default/admin/img
 @dirrm %%SERENDIPITY%%/templates/default/admin
+@dirrm %%SERENDIPITY%%/templates/default/YahooUI/treeview
+@dirrm %%SERENDIPITY%%/templates/default/YahooUI
 @dirrm %%SERENDIPITY%%/templates/default-xml
 @dirrm %%SERENDIPITY%%/templates/default-rtl/img
 @dirrm %%SERENDIPITY%%/templates/default-rtl/admin/img
@@ -1843,6 +1957,12 @@
 @dirrm %%SERENDIPITY%%/templates/carl_contest/admin/img
 @dirrm %%SERENDIPITY%%/templates/carl_contest/admin
 @dirrm %%SERENDIPITY%%/templates/carl_contest
+@dirrm %%SERENDIPITY%%/templates/bulletproof/js
+@dirrm %%SERENDIPITY%%/templates/bulletproof/img
+@dirrm %%SERENDIPITY%%/templates/bulletproof/admin/img
+@dirrm %%SERENDIPITY%%/templates/bulletproof/admin
+@dirrm %%SERENDIPITY%%/templates/bulletproof/UTF-8
+@dirrm %%SERENDIPITY%%/templates/bulletproof
 @dirrm %%SERENDIPITY%%/templates/blue/img
 @dirrm %%SERENDIPITY%%/templates/blue
 @dirrm %%SERENDIPITY%%/templates
@@ -1939,8 +2059,6 @@
 @dirrm %%SERENDIPITY%%/deployment
 @dirrm %%SERENDIPITY%%/bundled-libs/tests
 @dirrm %%SERENDIPITY%%/bundled-libs/docs
-@dirrm %%SERENDIPITY%%/bundled-libs/YahooUI/treeview
-@dirrm %%SERENDIPITY%%/bundled-libs/YahooUI
 @dirrm %%SERENDIPITY%%/bundled-libs/XML/RPC
 @dirrm %%SERENDIPITY%%/bundled-libs/XML
 @dirrm %%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule
