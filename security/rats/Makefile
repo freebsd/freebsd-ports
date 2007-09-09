@@ -9,11 +9,11 @@ PORTNAME=	rats
 PORTVERSION=	2.1
 PORTREVISION=	2
 CATEGORIES=	security devel
-MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
-		http://www.securesoftware.com/rats/
+MASTER_SITES=	http://www.fortifysoftware.com/servlet/downloads/public/ \
+		${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/security
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Source code auditing tool
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
