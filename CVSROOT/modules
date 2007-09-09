@@ -5918,6 +5918,7 @@ kimwitu++	ports/devel/kimwitu++
 kinemage	ports/biology/kinemage
 kino		ports/multimedia/kino
 kinterbasdb	ports/databases/kinterbasdb
+kio_locate	ports/deskutils/kio_locate
 kio_p7zip	ports/archivers/kio_p7zip
 kipi-plugins	ports/graphics/kipi-plugins
 kismet		ports/net-mgmt/kismet
