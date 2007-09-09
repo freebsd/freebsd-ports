@@ -15,11 +15,10 @@ bin/freedroidRPG
 %%DATADIR%%/dialogs/Ernie.dialog
 %%DATADIR%%/dialogs/Ewald.dialog
 %%DATADIR%%/dialogs/Francis.dialog
-%%DATADIR%%/dialogs/Jack.dialog
 %%DATADIR%%/dialogs/Jasmine.dialog
-%%DATADIR%%/dialogs/Julie.dialog
 %%DATADIR%%/dialogs/Kevin.dialog
 %%DATADIR%%/dialogs/KevinGuard.dialog
+%%DATADIR%%/dialogs/Koan.dialog
 %%DATADIR%%/dialogs/Lukas.dialog
 %%DATADIR%%/dialogs/MER.dialog
 %%DATADIR%%/dialogs/MSFacilityGateGuardLeader.dialog
@@ -28,14 +27,17 @@ bin/freedroidRPG
 %%DATADIR%%/dialogs/OldTownGateGuardLeader.dialog
 %%DATADIR%%/dialogs/Pendragon.dialog
 %%DATADIR%%/dialogs/RMS.dialog
+%%DATADIR%%/dialogs/SACD.dialog
+%%DATADIR%%/dialogs/SADD.dialog
 %%DATADIR%%/dialogs/Skippy.dialog
 %%DATADIR%%/dialogs/Sorenson.dialog
 %%DATADIR%%/dialogs/Spencer.dialog
 %%DATADIR%%/dialogs/StandardBotAfterTakeover.dialog
 %%DATADIR%%/dialogs/StandardMSFacilityGateGuard.dialog
-%%DATADIR%%/dialogs/StandardNewTownGateGuard.dialog
 %%DATADIR%%/dialogs/StandardOldTownGateGuard.dialog
 %%DATADIR%%/dialogs/Stone.dialog
+%%DATADIR%%/dialogs/Tania.dialog
+%%DATADIR%%/dialogs/Template.dialog
 %%DATADIR%%/dialogs/Tybalt.dialog
 %%DATADIR%%/dialogs/de/614.dialog
 %%DATADIR%%/dialogs/de/Bender.dialog
@@ -50,11 +52,10 @@ bin/freedroidRPG
 %%DATADIR%%/dialogs/de/Ernie.dialog
 %%DATADIR%%/dialogs/de/Ewald.dialog
 %%DATADIR%%/dialogs/de/Francis.dialog
-%%DATADIR%%/dialogs/de/Jack.dialog
 %%DATADIR%%/dialogs/de/Jasmine.dialog
-%%DATADIR%%/dialogs/de/Julie.dialog
 %%DATADIR%%/dialogs/de/Kevin.dialog
 %%DATADIR%%/dialogs/de/KevinGuard.dialog
+%%DATADIR%%/dialogs/de/Koan.dialog
 %%DATADIR%%/dialogs/de/Lukas.dialog
 %%DATADIR%%/dialogs/de/MER.dialog
 %%DATADIR%%/dialogs/de/MSFacilityGateGuardLeader.dialog
@@ -63,20 +64,24 @@ bin/freedroidRPG
 %%DATADIR%%/dialogs/de/OldTownGateGuardLeader.dialog
 %%DATADIR%%/dialogs/de/Pendragon.dialog
 %%DATADIR%%/dialogs/de/RMS.dialog
+%%DATADIR%%/dialogs/de/SACD.dialog
+%%DATADIR%%/dialogs/de/SADD.dialog
 %%DATADIR%%/dialogs/de/Skippy.dialog
 %%DATADIR%%/dialogs/de/Sorenson.dialog
 %%DATADIR%%/dialogs/de/Spencer.dialog
 %%DATADIR%%/dialogs/de/Spencer1.dialog
 %%DATADIR%%/dialogs/de/StandardBotAfterTakeover.dialog
 %%DATADIR%%/dialogs/de/StandardMSFacilityGateGuard.dialog
-%%DATADIR%%/dialogs/de/StandardNewTownGateGuard.dialog
 %%DATADIR%%/dialogs/de/StandardOldTownGateGuard.dialog
 %%DATADIR%%/dialogs/de/Stone.dialog
+%%DATADIR%%/dialogs/de/Template.dialog
 %%DATADIR%%/dialogs/de/Tybalt.dialog
 %%DATADIR%%/dialogs/de/subdlg_Benjamin.dialog
 %%DATADIR%%/dialogs/de/subdlg_Benjamin_bribe.dialog
 %%DATADIR%%/dialogs/de/subdlg_Butch.dialog
 %%DATADIR%%/dialogs/de/subdlg_Darwin.dialog
+%%DATADIR%%/dialogs/de/subdlg_Duncan.dialog
+%%DATADIR%%/dialogs/de/subdlg_Duncan_quest.dialog
 %%DATADIR%%/dialogs/de/subdlg_Kevin.dialog
 %%DATADIR%%/dialogs/de/subdlg_Pendragon.dialog
 %%DATADIR%%/dialogs/de/subdlg_Sorenson.dialog
@@ -84,10 +89,60 @@ bin/freedroidRPG
 %%DATADIR%%/dialogs/de/subdlg_Spencer_funeral.dialog
 %%DATADIR%%/dialogs/de/subdlg_Stone.dialog
 %%DATADIR%%/dialogs/de/subdlg_kevin_reward1.dialog
+%%DATADIR%%/dialogs/fr/614.dialog
+%%DATADIR%%/dialogs/fr/Bender.dialog
+%%DATADIR%%/dialogs/fr/Benjamin.dialog
+%%DATADIR%%/dialogs/fr/Bruce.dialog
+%%DATADIR%%/dialogs/fr/Butch.dialog
+%%DATADIR%%/dialogs/fr/Chandra.dialog
+%%DATADIR%%/dialogs/fr/Darwin.dialog
+%%DATADIR%%/dialogs/fr/Dixon.dialog
+%%DATADIR%%/dialogs/fr/DocMoore.dialog
+%%DATADIR%%/dialogs/fr/Duncan.dialog
+%%DATADIR%%/dialogs/fr/Ernie.dialog
+%%DATADIR%%/dialogs/fr/Ewald.dialog
+%%DATADIR%%/dialogs/fr/Francis.dialog
+%%DATADIR%%/dialogs/fr/Jasmine.dialog
+%%DATADIR%%/dialogs/fr/Kevin.dialog
+%%DATADIR%%/dialogs/fr/KevinGuard.dialog
+%%DATADIR%%/dialogs/fr/Koan.dialog
+%%DATADIR%%/dialogs/fr/Lukas.dialog
+%%DATADIR%%/dialogs/fr/MER.dialog
+%%DATADIR%%/dialogs/fr/MSFacilityGateGuardLeader.dialog
+%%DATADIR%%/dialogs/fr/Melfis.dialog
+%%DATADIR%%/dialogs/fr/Michelangelo.dialog
+%%DATADIR%%/dialogs/fr/OldTownGateGuardLeader.dialog
+%%DATADIR%%/dialogs/fr/Pendragon.dialog
+%%DATADIR%%/dialogs/fr/RMS.dialog
+%%DATADIR%%/dialogs/fr/SACD.dialog
+%%DATADIR%%/dialogs/fr/SADD.dialog
+%%DATADIR%%/dialogs/fr/Skippy.dialog
+%%DATADIR%%/dialogs/fr/Sorenson.dialog
+%%DATADIR%%/dialogs/fr/Spencer.dialog
+%%DATADIR%%/dialogs/fr/StandardBotAfterTakeover.dialog
+%%DATADIR%%/dialogs/fr/StandardMSFacilityGateGuard.dialog
+%%DATADIR%%/dialogs/fr/StandardOldTownGateGuard.dialog
+%%DATADIR%%/dialogs/fr/Stone.dialog
+%%DATADIR%%/dialogs/fr/Template.dialog
+%%DATADIR%%/dialogs/fr/Tybalt.dialog
+%%DATADIR%%/dialogs/fr/subdlg_Benjamin.dialog
+%%DATADIR%%/dialogs/fr/subdlg_Benjamin_bribe.dialog
+%%DATADIR%%/dialogs/fr/subdlg_Butch.dialog
+%%DATADIR%%/dialogs/fr/subdlg_Darwin.dialog
+%%DATADIR%%/dialogs/fr/subdlg_Duncan.dialog
+%%DATADIR%%/dialogs/fr/subdlg_Duncan_quest.dialog
+%%DATADIR%%/dialogs/fr/subdlg_Kevin.dialog
+%%DATADIR%%/dialogs/fr/subdlg_Pendragon.dialog
+%%DATADIR%%/dialogs/fr/subdlg_Sorenson.dialog
+%%DATADIR%%/dialogs/fr/subdlg_Spencer_eval.dialog
+%%DATADIR%%/dialogs/fr/subdlg_Stone.dialog
+%%DATADIR%%/dialogs/fr/subdlg_kevin_reward1.dialog
 %%DATADIR%%/dialogs/subdlg_Benjamin.dialog
 %%DATADIR%%/dialogs/subdlg_Benjamin_bribe.dialog
 %%DATADIR%%/dialogs/subdlg_Butch.dialog
 %%DATADIR%%/dialogs/subdlg_Darwin.dialog
+%%DATADIR%%/dialogs/subdlg_Duncan.dialog
+%%DATADIR%%/dialogs/subdlg_Duncan_quest.dialog
 %%DATADIR%%/dialogs/subdlg_Kevin.dialog
 %%DATADIR%%/dialogs/subdlg_Pendragon.dialog
 %%DATADIR%%/dialogs/subdlg_Sorenson.dialog
@@ -121,7 +176,6 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/backgrounds/loadingmachine.png
 %%DATADIR%%/graphics/backgrounds/number_selector.png
 %%DATADIR%%/graphics/backgrounds/quest_browser.png
-%%DATADIR%%/graphics/backgrounds/scientist.jpg
 %%DATADIR%%/graphics/backgrounds/shoppe.jpg
 %%DATADIR%%/graphics/backgrounds/startup1.jpg
 %%DATADIR%%/graphics/backgrounds/title.jpg
@@ -1128,22 +1182,6 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/droids/476/portrait_0032.jpg
 %%DATADIR%%/graphics/droids/493.png
 %%DATADIR%%/graphics/droids/493/493.tux_image_archive
-%%DATADIR%%/graphics/droids/493/ingame_0001.offset
-%%DATADIR%%/graphics/droids/493/ingame_0001.png
-%%DATADIR%%/graphics/droids/493/ingame_0002.offset
-%%DATADIR%%/graphics/droids/493/ingame_0002.png
-%%DATADIR%%/graphics/droids/493/ingame_0003.offset
-%%DATADIR%%/graphics/droids/493/ingame_0003.png
-%%DATADIR%%/graphics/droids/493/ingame_0004.offset
-%%DATADIR%%/graphics/droids/493/ingame_0004.png
-%%DATADIR%%/graphics/droids/493/ingame_0005.offset
-%%DATADIR%%/graphics/droids/493/ingame_0005.png
-%%DATADIR%%/graphics/droids/493/ingame_0006.offset
-%%DATADIR%%/graphics/droids/493/ingame_0006.png
-%%DATADIR%%/graphics/droids/493/ingame_0007.offset
-%%DATADIR%%/graphics/droids/493/ingame_0007.png
-%%DATADIR%%/graphics/droids/493/ingame_0008.offset
-%%DATADIR%%/graphics/droids/493/ingame_0008.png
 %%DATADIR%%/graphics/droids/493/portrait.png
 %%DATADIR%%/graphics/droids/493/portrait_0001.jpg
 %%DATADIR%%/graphics/droids/493/portrait_0002.jpg
@@ -1179,22 +1217,6 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/droids/493/portrait_0032.jpg
 %%DATADIR%%/graphics/droids/516.png
 %%DATADIR%%/graphics/droids/516/516.tux_image_archive
-%%DATADIR%%/graphics/droids/516/ingame_0001.offset
-%%DATADIR%%/graphics/droids/516/ingame_0001.png
-%%DATADIR%%/graphics/droids/516/ingame_0002.offset
-%%DATADIR%%/graphics/droids/516/ingame_0002.png
-%%DATADIR%%/graphics/droids/516/ingame_0003.offset
-%%DATADIR%%/graphics/droids/516/ingame_0003.png
-%%DATADIR%%/graphics/droids/516/ingame_0004.offset
-%%DATADIR%%/graphics/droids/516/ingame_0004.png
-%%DATADIR%%/graphics/droids/516/ingame_0005.offset
-%%DATADIR%%/graphics/droids/516/ingame_0005.png
-%%DATADIR%%/graphics/droids/516/ingame_0006.offset
-%%DATADIR%%/graphics/droids/516/ingame_0006.png
-%%DATADIR%%/graphics/droids/516/ingame_0007.offset
-%%DATADIR%%/graphics/droids/516/ingame_0007.png
-%%DATADIR%%/graphics/droids/516/ingame_0008.offset
-%%DATADIR%%/graphics/droids/516/ingame_0008.png
 %%DATADIR%%/graphics/droids/516/portrait.png
 %%DATADIR%%/graphics/droids/516/portrait_0001.jpg
 %%DATADIR%%/graphics/droids/516/portrait_0002.jpg
@@ -1230,22 +1252,6 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/droids/516/portrait_0032.jpg
 %%DATADIR%%/graphics/droids/571.png
 %%DATADIR%%/graphics/droids/571/571.tux_image_archive
-%%DATADIR%%/graphics/droids/571/ingame_0001.offset
-%%DATADIR%%/graphics/droids/571/ingame_0001.png
-%%DATADIR%%/graphics/droids/571/ingame_0002.offset
-%%DATADIR%%/graphics/droids/571/ingame_0002.png
-%%DATADIR%%/graphics/droids/571/ingame_0003.offset
-%%DATADIR%%/graphics/droids/571/ingame_0003.png
-%%DATADIR%%/graphics/droids/571/ingame_0004.offset
-%%DATADIR%%/graphics/droids/571/ingame_0004.png
-%%DATADIR%%/graphics/droids/571/ingame_0005.offset
-%%DATADIR%%/graphics/droids/571/ingame_0005.png
-%%DATADIR%%/graphics/droids/571/ingame_0006.offset
-%%DATADIR%%/graphics/droids/571/ingame_0006.png
-%%DATADIR%%/graphics/droids/571/ingame_0007.offset
-%%DATADIR%%/graphics/droids/571/ingame_0007.png
-%%DATADIR%%/graphics/droids/571/ingame_0008.offset
-%%DATADIR%%/graphics/droids/571/ingame_0008.png
 %%DATADIR%%/graphics/droids/571/portrait.png
 %%DATADIR%%/graphics/droids/571/portrait_0001.jpg
 %%DATADIR%%/graphics/droids/571/portrait_0002.jpg
@@ -1770,32 +1776,10 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/droids/999/portrait_0030.jpg
 %%DATADIR%%/graphics/droids/999/portrait_0031.jpg
 %%DATADIR%%/graphics/droids/999/portrait_0032.jpg
-%%DATADIR%%/graphics/droids/Benjamin.png
-%%DATADIR%%/graphics/droids/Chandra.png
-%%DATADIR%%/graphics/droids/DefaultPortrait.png
-%%DATADIR%%/graphics/droids/Francis.png
-%%DATADIR%%/graphics/droids/Sorenson.png
-%%DATADIR%%/graphics/droids/Stone.png
 %%DATADIR%%/graphics/droids/bartender/bartender.tux_image_archive
 %%DATADIR%%/graphics/droids/bartender/portrait.png
 %%DATADIR%%/graphics/droids/blue_guard/blue_guard.tux_image_archive
 %%DATADIR%%/graphics/droids/blue_guard/portrait.png
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0001.offset
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0001.png
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0002.offset
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0002.png
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0003.offset
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0003.png
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0004.offset
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0004.png
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0005.offset
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0005.png
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0006.offset
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0006.png
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0007.offset
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0007.png
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0008.offset
-%%DATADIR%%/graphics/droids/brown_worker/ingame_0008.png
 %%DATADIR%%/graphics/droids/cook/cook.tux_image_archive
 %%DATADIR%%/graphics/droids/cook/portrait.png
 %%DATADIR%%/graphics/droids/default_dead_body_00_0001.offset
@@ -1814,26 +1798,12 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/droids/default_dead_body_12_0001.png
 %%DATADIR%%/graphics/droids/default_dead_body_14_0001.offset
 %%DATADIR%%/graphics/droids/default_dead_body_14_0001.png
+%%DATADIR%%/graphics/droids/default_dead_human_00_0001.offset
+%%DATADIR%%/graphics/droids/default_dead_human_00_0001.png
 %%DATADIR%%/graphics/droids/default_male/default_male.tux_image_archive
 %%DATADIR%%/graphics/droids/default_male/portrait.png
 %%DATADIR%%/graphics/droids/female_scientist/female_scientist.tux_image_archive
 %%DATADIR%%/graphics/droids/female_scientist/portrait.png
-%%DATADIR%%/graphics/droids/green_guard/ingame_0001.offset
-%%DATADIR%%/graphics/droids/green_guard/ingame_0001.png
-%%DATADIR%%/graphics/droids/green_guard/ingame_0002.offset
-%%DATADIR%%/graphics/droids/green_guard/ingame_0002.png
-%%DATADIR%%/graphics/droids/green_guard/ingame_0003.offset
-%%DATADIR%%/graphics/droids/green_guard/ingame_0003.png
-%%DATADIR%%/graphics/droids/green_guard/ingame_0004.offset
-%%DATADIR%%/graphics/droids/green_guard/ingame_0004.png
-%%DATADIR%%/graphics/droids/green_guard/ingame_0005.offset
-%%DATADIR%%/graphics/droids/green_guard/ingame_0005.png
-%%DATADIR%%/graphics/droids/green_guard/ingame_0006.offset
-%%DATADIR%%/graphics/droids/green_guard/ingame_0006.png
-%%DATADIR%%/graphics/droids/green_guard/ingame_0007.offset
-%%DATADIR%%/graphics/droids/green_guard/ingame_0007.png
-%%DATADIR%%/graphics/droids/green_guard/ingame_0008.offset
-%%DATADIR%%/graphics/droids/green_guard/ingame_0008.png
 %%DATADIR%%/graphics/droids/hot_mama/hot_mama.tux_image_archive
 %%DATADIR%%/graphics/droids/hot_mama/portrait.png
 %%DATADIR%%/graphics/droids/jasmine/jasmine.tux_image_archive
@@ -2361,41 +2331,6 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/items/basic_armour3/portrait_0030.jpg
 %%DATADIR%%/graphics/items/basic_armour3/portrait_0031.jpg
 %%DATADIR%%/graphics/items/basic_armour3/portrait_0032.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/ingame.offset
-%%DATADIR%%/graphics/items/bi_pedal_drive/ingame.png
-%%DATADIR%%/graphics/items/bi_pedal_drive/inv_image.png
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0001.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0002.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0003.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0004.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0005.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0006.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0007.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0008.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0009.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0010.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0011.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0012.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0013.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0014.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0015.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0016.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0017.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0018.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0019.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0020.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0021.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0022.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0023.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0024.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0025.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0026.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0027.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0028.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0029.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0030.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0031.jpg
-%%DATADIR%%/graphics/items/bi_pedal_drive/portrait_0032.jpg
 %%DATADIR%%/graphics/items/blue_energy_drink/ingame.offset
 %%DATADIR%%/graphics/items/blue_energy_drink/ingame.png
 %%DATADIR%%/graphics/items/blue_energy_drink/inv_image.png
@@ -3235,16 +3170,10 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/items/inventory_image_18.png
 %%DATADIR%%/graphics/items/inventory_image_2.png
 %%DATADIR%%/graphics/items/inventory_image_21.png
-%%DATADIR%%/graphics/items/inventory_image_22.png
 %%DATADIR%%/graphics/items/inventory_image_25.png
 %%DATADIR%%/graphics/items/inventory_image_26.png
-%%DATADIR%%/graphics/items/inventory_image_28.png
 %%DATADIR%%/graphics/items/inventory_image_3.png
-%%DATADIR%%/graphics/items/inventory_image_39.png
-%%DATADIR%%/graphics/items/inventory_image_40.png
-%%DATADIR%%/graphics/items/inventory_image_46.png
 %%DATADIR%%/graphics/items/inventory_image_7.png
-%%DATADIR%%/graphics/items/inventory_image_8.png
 %%DATADIR%%/graphics/items/large_shield/ingame.offset
 %%DATADIR%%/graphics/items/large_shield/ingame.png
 %%DATADIR%%/graphics/items/large_shield/inv_image.png
@@ -3264,6 +3193,41 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/items/large_shield/portrait_0014.jpg
 %%DATADIR%%/graphics/items/large_shield/portrait_0015.jpg
 %%DATADIR%%/graphics/items/large_shield/portrait_0016.jpg
+%%DATADIR%%/graphics/items/laser_dagger/ingame.offset
+%%DATADIR%%/graphics/items/laser_dagger/ingame.png
+%%DATADIR%%/graphics/items/laser_dagger/inv_image.png
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0001.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0002.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0003.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0004.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0005.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0006.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0007.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0008.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0009.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0010.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0011.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0012.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0013.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0014.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0015.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0016.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0017.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0018.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0019.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0020.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0021.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0022.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0023.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0024.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0025.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0026.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0027.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0028.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0029.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0030.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0031.jpg
+%%DATADIR%%/graphics/items/laser_dagger/portrait_0032.jpg
 %%DATADIR%%/graphics/items/laser_staff/ingame.offset
 %%DATADIR%%/graphics/items/laser_staff/ingame.png
 %%DATADIR%%/graphics/items/laser_staff/inv_image.png
@@ -3721,40 +3685,6 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/items/plasma_transistor/portrait_0014.jpg
 %%DATADIR%%/graphics/items/plasma_transistor/portrait_0015.jpg
 %%DATADIR%%/graphics/items/plasma_transistor/portrait_0016.jpg
-%%DATADIR%%/graphics/items/plasma_triple/ingame.offset
-%%DATADIR%%/graphics/items/plasma_triple/ingame.png
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0001.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0002.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0003.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0004.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0005.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0006.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0007.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0008.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0009.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0010.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0011.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0012.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0013.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0014.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0015.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0016.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0017.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0018.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0019.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0020.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0021.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0022.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0023.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0024.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0025.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0026.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0027.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0028.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0029.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0030.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0031.jpg
-%%DATADIR%%/graphics/items/plasma_triple/portrait_0032.jpg
 %%DATADIR%%/graphics/items/red_dilitium_crystal/ingame.offset
 %%DATADIR%%/graphics/items/red_dilitium_crystal/ingame.png
 %%DATADIR%%/graphics/items/red_dilitium_crystal/inv_image.png
@@ -3956,76 +3886,6 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/items/tachyon_converter/portrait_0014.jpg
 %%DATADIR%%/graphics/items/tachyon_converter/portrait_0015.jpg
 %%DATADIR%%/graphics/items/tachyon_converter/portrait_0016.jpg
-%%DATADIR%%/graphics/items/track_drive/ingame.offset
-%%DATADIR%%/graphics/items/track_drive/ingame.png
-%%DATADIR%%/graphics/items/track_drive/inv_image.png
-%%DATADIR%%/graphics/items/track_drive/portrait_0001.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0002.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0003.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0004.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0005.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0006.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0007.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0008.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0009.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0010.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0011.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0012.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0013.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0014.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0015.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0016.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0017.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0018.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0019.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0020.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0021.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0022.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0023.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0024.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0025.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0026.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0027.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0028.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0029.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0030.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0031.jpg
-%%DATADIR%%/graphics/items/track_drive/portrait_0032.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/ingame.offset
-%%DATADIR%%/graphics/items/tri_pedal_drive/ingame.png
-%%DATADIR%%/graphics/items/tri_pedal_drive/inv_image.png
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0001.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0002.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0003.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0004.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0005.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0006.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0007.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0008.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0009.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0010.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0011.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0012.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0013.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0014.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0015.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0016.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0017.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0018.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0019.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0020.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0021.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0022.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0023.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0024.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0025.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0026.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0027.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0028.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0029.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0030.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0031.jpg
-%%DATADIR%%/graphics/items/tri_pedal_drive/portrait_0032.jpg
 %%DATADIR%%/graphics/items/vmx_grenade/ingame.offset
 %%DATADIR%%/graphics/items/vmx_grenade/ingame.png
 %%DATADIR%%/graphics/items/vmx_grenade/inv_image.png
@@ -4061,60 +3921,6 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/items/vmx_grenade/portrait_0030.jpg
 %%DATADIR%%/graphics/items/vmx_grenade/portrait_0031.jpg
 %%DATADIR%%/graphics/items/vmx_grenade/portrait_0032.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/ingame.offset
-%%DATADIR%%/graphics/items/warrior_wristband/ingame.png
-%%DATADIR%%/graphics/items/warrior_wristband/inv_image.png
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0001.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0002.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0003.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0004.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0005.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0006.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0007.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0008.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0009.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0010.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0011.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0012.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0013.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0014.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0015.jpg
-%%DATADIR%%/graphics/items/warrior_wristband/portrait_0016.jpg
-%%DATADIR%%/graphics/items/wheel_drive/ingame.offset
-%%DATADIR%%/graphics/items/wheel_drive/ingame.png
-%%DATADIR%%/graphics/items/wheel_drive/inv_image.png
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0001.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0002.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0003.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0004.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0005.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0006.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0007.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0008.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0009.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0010.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0011.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0012.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0013.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0014.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0015.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0016.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0017.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0018.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0019.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0020.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0021.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0022.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0023.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0024.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0025.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0026.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0027.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0028.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0029.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0030.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0031.jpg
-%%DATADIR%%/graphics/items/wheel_drive/portrait_0032.jpg
 %%DATADIR%%/graphics/level_editor_floor_cursor.offset
 %%DATADIR%%/graphics/level_editor_floor_cursor.png
 %%DATADIR%%/graphics/level_editor_map_label_indicator.offset
@@ -4320,6 +4126,14 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/obstacles/iso_autogun_0003.png
 %%DATADIR%%/graphics/obstacles/iso_autogun_0004.offset
 %%DATADIR%%/graphics/obstacles/iso_autogun_0004.png
+%%DATADIR%%/graphics/obstacles/iso_autogun_shadow_0001.offset
+%%DATADIR%%/graphics/obstacles/iso_autogun_shadow_0001.png
+%%DATADIR%%/graphics/obstacles/iso_autogun_shadow_0002.offset
+%%DATADIR%%/graphics/obstacles/iso_autogun_shadow_0002.png
+%%DATADIR%%/graphics/obstacles/iso_autogun_shadow_0003.offset
+%%DATADIR%%/graphics/obstacles/iso_autogun_shadow_0003.png
+%%DATADIR%%/graphics/obstacles/iso_autogun_shadow_0004.offset
+%%DATADIR%%/graphics/obstacles/iso_autogun_shadow_0004.png
 %%DATADIR%%/graphics/obstacles/iso_bathroom_furniture_0000.offset
 %%DATADIR%%/graphics/obstacles/iso_bathroom_furniture_0000.png
 %%DATADIR%%/graphics/obstacles/iso_bathroom_furniture_0001.offset
@@ -4450,6 +4264,18 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/obstacles/iso_brick_wall_0016.png
 %%DATADIR%%/graphics/obstacles/iso_brick_wall_0017.offset
 %%DATADIR%%/graphics/obstacles/iso_brick_wall_0017.png
+%%DATADIR%%/graphics/obstacles/iso_brick_wall_cables_0001.offset
+%%DATADIR%%/graphics/obstacles/iso_brick_wall_cables_0001.png
+%%DATADIR%%/graphics/obstacles/iso_brick_wall_cables_0002.offset
+%%DATADIR%%/graphics/obstacles/iso_brick_wall_cables_0002.png
+%%DATADIR%%/graphics/obstacles/iso_brick_wall_cables_0004.offset
+%%DATADIR%%/graphics/obstacles/iso_brick_wall_cables_0004.png
+%%DATADIR%%/graphics/obstacles/iso_brick_wall_cables_0005.offset
+%%DATADIR%%/graphics/obstacles/iso_brick_wall_cables_0005.png
+%%DATADIR%%/graphics/obstacles/iso_brick_wall_cables_0006.offset
+%%DATADIR%%/graphics/obstacles/iso_brick_wall_cables_0006.png
+%%DATADIR%%/graphics/obstacles/iso_brick_wall_cables_0007.offset
+%%DATADIR%%/graphics/obstacles/iso_brick_wall_cables_0007.png
 %%DATADIR%%/graphics/obstacles/iso_cave_wall_0001.offset
 %%DATADIR%%/graphics/obstacles/iso_cave_wall_0001.png
 %%DATADIR%%/graphics/obstacles/iso_cave_wall_0002.offset
@@ -4654,6 +4480,18 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/obstacles/iso_counter_0011.png
 %%DATADIR%%/graphics/obstacles/iso_counter_0012.offset
 %%DATADIR%%/graphics/obstacles/iso_counter_0012.png
+%%DATADIR%%/graphics/obstacles/iso_crystal_fields_0001.offset
+%%DATADIR%%/graphics/obstacles/iso_crystal_fields_0001.png
+%%DATADIR%%/graphics/obstacles/iso_crystal_fields_0002.offset
+%%DATADIR%%/graphics/obstacles/iso_crystal_fields_0002.png
+%%DATADIR%%/graphics/obstacles/iso_crystal_fields_0003.offset
+%%DATADIR%%/graphics/obstacles/iso_crystal_fields_0003.png
+%%DATADIR%%/graphics/obstacles/iso_crystal_fields_0004.offset
+%%DATADIR%%/graphics/obstacles/iso_crystal_fields_0004.png
+%%DATADIR%%/graphics/obstacles/iso_crystal_fields_0005.offset
+%%DATADIR%%/graphics/obstacles/iso_crystal_fields_0005.png
+%%DATADIR%%/graphics/obstacles/iso_crystal_fields_0006.offset
+%%DATADIR%%/graphics/obstacles/iso_crystal_fields_0006.png
 %%DATADIR%%/graphics/obstacles/iso_disautogun_0001.offset
 %%DATADIR%%/graphics/obstacles/iso_disautogun_0001.png
 %%DATADIR%%/graphics/obstacles/iso_disautogun_0002.offset
@@ -5035,6 +4873,14 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/obstacles/iso_outer_walls_0019.png
 %%DATADIR%%/graphics/obstacles/iso_outer_walls_0020.offset
 %%DATADIR%%/graphics/obstacles/iso_outer_walls_0020.png
+%%DATADIR%%/graphics/obstacles/iso_restaurant_desk_0001.offset
+%%DATADIR%%/graphics/obstacles/iso_restaurant_desk_0001.png
+%%DATADIR%%/graphics/obstacles/iso_restaurant_desk_0002.offset
+%%DATADIR%%/graphics/obstacles/iso_restaurant_desk_0002.png
+%%DATADIR%%/graphics/obstacles/iso_restaurant_desk_0003.offset
+%%DATADIR%%/graphics/obstacles/iso_restaurant_desk_0003.png
+%%DATADIR%%/graphics/obstacles/iso_restaurant_desk_0004.offset
+%%DATADIR%%/graphics/obstacles/iso_restaurant_desk_0004.png
 %%DATADIR%%/graphics/obstacles/iso_restaurant_furniture_0001.offset
 %%DATADIR%%/graphics/obstacles/iso_restaurant_furniture_0001.png
 %%DATADIR%%/graphics/obstacles/iso_restaurant_furniture_0002.offset
@@ -5183,6 +5029,14 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/obstacles/iso_tree_0000.png
 %%DATADIR%%/graphics/obstacles/iso_tree_0001.offset
 %%DATADIR%%/graphics/obstacles/iso_tree_0001.png
+%%DATADIR%%/graphics/obstacles/iso_wall_corners_0001.offset
+%%DATADIR%%/graphics/obstacles/iso_wall_corners_0001.png
+%%DATADIR%%/graphics/obstacles/iso_wall_corners_0002.offset
+%%DATADIR%%/graphics/obstacles/iso_wall_corners_0002.png
+%%DATADIR%%/graphics/obstacles/iso_wall_corners_0003.offset
+%%DATADIR%%/graphics/obstacles/iso_wall_corners_0003.png
+%%DATADIR%%/graphics/obstacles/iso_wall_corners_0004.offset
+%%DATADIR%%/graphics/obstacles/iso_wall_corners_0004.png
 %%DATADIR%%/graphics/obstacles/iso_walls_0001.offset
 %%DATADIR%%/graphics/obstacles/iso_walls_0001.png
 %%DATADIR%%/graphics/obstacles/iso_walls_0002.offset
@@ -5285,98 +5139,34 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/red_fire_2.png
 %%DATADIR%%/graphics/red_fire_3.png
 %%DATADIR%%/graphics/skill_buttons.png
+%%DATADIR%%/graphics/skill_icons/BadPacket.png
+%%DATADIR%%/graphics/skill_icons/BlueScreen.png
+%%DATADIR%%/graphics/skill_icons/BroadcastVirus.png
 %%DATADIR%%/graphics/skill_icons/Calculate_PI.png
 %%DATADIR%%/graphics/skill_icons/ChestAndDeadBodyLoot.png
 %%DATADIR%%/graphics/skill_icons/DetectItemsSpell.png
+%%DATADIR%%/graphics/skill_icons/DispellSmoke.png
 %%DATADIR%%/graphics/skill_icons/ExplosionCircleSpell.png
-%%DATADIR%%/graphics/skill_icons/ExplosionRaySpell.png
-%%DATADIR%%/graphics/skill_icons/ExtractAntimatterConverter.png
-%%DATADIR%%/graphics/skill_icons/ExtractEntropyInverter.png
-%%DATADIR%%/graphics/skill_icons/ExtractPlasmaTransistor.png
-%%DATADIR%%/graphics/skill_icons/ExtractSuperconductor.png
-%%DATADIR%%/graphics/skill_icons/ExtractTachyonCondensator.png
+%%DATADIR%%/graphics/skill_icons/ExtractBotParts.png
 %%DATADIR%%/graphics/skill_icons/FirstAidSpell.png
 %%DATADIR%%/graphics/skill_icons/IdentifySkill.png
+%%DATADIR%%/graphics/skill_icons/Invisibility.png
+%%DATADIR%%/graphics/skill_icons/Light.png
+%%DATADIR%%/graphics/skill_icons/Nethack.png
 %%DATADIR%%/graphics/skill_icons/NoSkillAvailable.png
-%%DATADIR%%/graphics/skill_icons/PlasmaBoltSpell.png
-%%DATADIR%%/graphics/skill_icons/PoisonBoltSpell.png
-%%DATADIR%%/graphics/skill_icons/RadialEMPWaveSpell.png
+%%DATADIR%%/graphics/skill_icons/Poke.png
 %%DATADIR%%/graphics/skill_icons/RadialPlasmaWaveSpell.png
-%%DATADIR%%/graphics/skill_icons/RadialVMXWaveSpell.png
 %%DATADIR%%/graphics/skill_icons/RepairSkill.png
-%%DATADIR%%/graphics/skill_icons/StoningBoltSpell.png
+%%DATADIR%%/graphics/skill_icons/ReverseEngineer.png
+%%DATADIR%%/graphics/skill_icons/SatelliteImage.png
+%%DATADIR%%/graphics/skill_icons/Shutdown.png
 %%DATADIR%%/graphics/skill_icons/TakeoverTalkSkill.png
 %%DATADIR%%/graphics/skill_icons/TeleportHomeSpell.png
+%%DATADIR%%/graphics/skill_icons/Virus.png
 %%DATADIR%%/graphics/skill_icons/WeaponSkill.png
-%%DATADIR%%/graphics/speed_o_meter.png
-%%DATADIR%%/graphics/speed_o_meter_arrow_energy.png
-%%DATADIR%%/graphics/speed_o_meter_arrow_mana.png
+%%DATADIR%%/graphics/skill_icons/cflag.png
 %%DATADIR%%/graphics/to_background.jpg
 %%DATADIR%%/graphics/to_elem.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0001.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0001.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0002.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0002.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0003.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0003.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0004.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0004.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0005.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0005.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0006.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0006.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0007.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0007.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0008.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0008.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0009.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0009.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0010.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0010.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0011.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0011.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0012.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0012.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0013.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0013.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0014.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0014.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0015.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0015.png
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0016.offset
-%%DATADIR%%/graphics/tux_flags/flag_dexterity_0016.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0001.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0001.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0002.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0002.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0003.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0003.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0004.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0004.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0005.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0005.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0006.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0006.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0007.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0007.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0008.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0008.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0009.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0009.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0010.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0010.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0011.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0011.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0012.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0012.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0013.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0013.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0014.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0014.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0015.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0015.png
-%%DATADIR%%/graphics/tux_flags/flag_power_0016.offset
-%%DATADIR%%/graphics/tux_flags/flag_power_0016.png
 %%DATADIR%%/graphics/tux_icon_on_automap.offset
 %%DATADIR%%/graphics/tux_icon_on_automap.png
 %%DATADIR%%/graphics/tux_motion_parts/CropItApart.sh
@@ -5417,6 +5207,7 @@ bin/freedroidRPG
 %%DATADIR%%/map/freedroid.droid_archetypes
 %%DATADIR%%/map/freedroid.item_archetypes
 %%DATADIR%%/map/freedroid.prefix_archetypes
+%%DATADIR%%/map/freedroid.program_archetypes
 %%DATADIR%%/map/freedroid.ruleset
 %%DATADIR%%/map/titles/EndOfGame.title
 %%DATADIR%%/map/titles/StartOfGame.title
@@ -5425,94 +5216,142 @@ bin/freedroidRPG
 %%DATADIR%%/map/titles/de/StartOfGame.title
 %%DATADIR%%/map/titles/de/TakeoverInstructions.title
 %%DATADIR%%/map/titles/de/level_editor_help.title
+%%DATADIR%%/map/titles/fr/EndOfGame.title
+%%DATADIR%%/map/titles/fr/StartOfGame.title
+%%DATADIR%%/map/titles/fr/TakeoverInstructions.title
+%%DATADIR%%/map/titles/fr/level_editor_help.title
 %%DATADIR%%/map/titles/level_editor_help.title
-%%DATADIR%%/sound/effects/Blast_Sound_0.wav
-%%DATADIR%%/sound/effects/Bullet_Reflected_Sound_0.wav
-%%DATADIR%%/sound/effects/CameraTakesPicture.wav
-%%DATADIR%%/sound/effects/Cant_Use_That_Here_0.wav
-%%DATADIR%%/sound/effects/Cant_Use_That_Here_1.wav
-%%DATADIR%%/sound/effects/Collision_Sound_0.wav
-%%DATADIR%%/sound/effects/Cry_Sound_0.wav
-%%DATADIR%%/sound/effects/Enemy_Got_Hit_Sound_0.wav
-%%DATADIR%%/sound/effects/Enemy_Hit_But_Not_Dead_Sound_0.wav
-%%DATADIR%%/sound/effects/EnterElevator_Sound_0.wav
-%%DATADIR%%/sound/effects/Fire_Bullet_Exterminator_Sound_0.wav
-%%DATADIR%%/sound/effects/Fire_Bullet_Flash_Sound_0.wav
-%%DATADIR%%/sound/effects/Fire_Bullet_Laser_Rifle_Sound_0.wav
-%%DATADIR%%/sound/effects/Fire_Bullet_Military_Sound_0.wav
-%%DATADIR%%/sound/effects/Fire_Bullet_Plasma_Pistol_Sound_0.wav
-%%DATADIR%%/sound/effects/Fire_Bullet_Pulse_Sound_0.wav
-%%DATADIR%%/sound/effects/Fire_Bullet_Single_Laser_Sound_0.wav
-%%DATADIR%%/sound/effects/Fire_Bullet_Single_Pulse_Sound_0.wav
-%%DATADIR%%/sound/effects/Fire_Bullet_Sword_Sound_0.wav
-%%DATADIR%%/sound/effects/GotIntoBlast_Sound_0.wav
-%%DATADIR%%/sound/effects/Got_Hit_Sound_0.wav
-%%DATADIR%%/sound/effects/I_See_No_Chest_Sound_0.wav
-%%DATADIR%%/sound/effects/Influencer_Scream_Sound_0.wav
-%%DATADIR%%/sound/effects/Influencer_Scream_Sound_1.wav
-%%DATADIR%%/sound/effects/Influencer_Scream_Sound_2.wav
-%%DATADIR%%/sound/effects/Influencer_Scream_Sound_3.wav
-%%DATADIR%%/sound/effects/Influencer_Scream_Sound_4.wav
-%%DATADIR%%/sound/effects/LeaveElevator_Sound_0.wav
-%%DATADIR%%/sound/effects/MSMachinesClose_0.wav
-%%DATADIR%%/sound/effects/Menu_Item_Deselected_Sound_0.wav
-%%DATADIR%%/sound/effects/Menu_Item_Selected_Sound_0.wav
-%%DATADIR%%/sound/effects/Menu_Item_Selected_Sound_1.wav
-%%DATADIR%%/sound/effects/Mission_Status_Change_Sound_0.wav
-%%DATADIR%%/sound/effects/MoveElevator_Sound_0.wav
-%%DATADIR%%/sound/effects/Move_Menu_Position_Sound_0.wav
-%%DATADIR%%/sound/effects/No_Ammo_Sound_0.wav
-%%DATADIR%%/sound/effects/Not_Enough_Mana_1.wav
-%%DATADIR%%/sound/effects/Refresh_Sound_0.wav
-%%DATADIR%%/sound/effects/Shield_Sound_1.wav
-%%DATADIR%%/sound/effects/Shop_ItemBoughtSound_0.wav
-%%DATADIR%%/sound/effects/Shop_ItemIdentifiedSound_0.wav
-%%DATADIR%%/sound/effects/Shop_ItemRepairedSound_0.wav
-%%DATADIR%%/sound/effects/Shop_ItemSoldSound_0.wav
-%%DATADIR%%/sound/effects/Spell_DetectItems_Sound_0.wav
-%%DATADIR%%/sound/effects/Spell_ForceToEnergy_Sound_0.wav
-%%DATADIR%%/sound/effects/TakeoverSetCapsule_Sound_0.wav
-%%DATADIR%%/sound/effects/Takeover_Game_Deadlock_Sound_0.wav
-%%DATADIR%%/sound/effects/Takeover_Game_Lost_Sound_0.wav
-%%DATADIR%%/sound/effects/Takeover_Game_Start_Sound_0.wav
-%%DATADIR%%/sound/effects/Takeover_Game_Won_Sound_0.wav
-%%DATADIR%%/sound/effects/Takeover_Sound_0.wav
-%%DATADIR%%/sound/effects/ThouArtDefeated_Sound_0.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_0.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_1.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_10.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_11.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_12.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_13.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_14.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_15.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_16.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_17.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_18.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_2.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_3.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_4.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_5.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_6.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_7.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_8.wav
-%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_9.wav
-%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_0.wav
-%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_1.wav
-%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_10.wav
-%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_11.wav
-%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_12.wav
-%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_13.wav
-%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_14.wav
-%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_15.wav
-%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_16.wav
-%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_17.wav
-%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_18.wav
-%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_2.wav
-%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_9.wav
-%%DATADIR%%/sound/effects/bot_sounds/death_sound_123.wav
-%%DATADIR%%/sound/effects/bot_sounds/death_sound_247.wav
-%%DATADIR%%/sound/effects/bot_sounds/death_sound_302.wav
+%%DATADIR%%/sound/botchat
+%%DATADIR%%/sound/effects/Blast_Sound_0.ogg
+%%DATADIR%%/sound/effects/Bullet_Reflected_Sound_0.ogg
+%%DATADIR%%/sound/effects/CameraTakesPicture.ogg
+%%DATADIR%%/sound/effects/Cant_Use_That_Here_0.ogg
+%%DATADIR%%/sound/effects/Cant_Use_That_Here_1.ogg
+%%DATADIR%%/sound/effects/Collision_Sound_0.ogg
+%%DATADIR%%/sound/effects/Cry_Sound_0.ogg
+%%DATADIR%%/sound/effects/Enemy_Got_Hit_Sound_0.ogg
+%%DATADIR%%/sound/effects/Enemy_Hit_But_Not_Dead_Sound_0.ogg
+%%DATADIR%%/sound/effects/EnterElevator_Sound_0.ogg
+%%DATADIR%%/sound/effects/Fire_Bullet_Exterminator_Sound_0.ogg
+%%DATADIR%%/sound/effects/Fire_Bullet_Flash_Sound_0.ogg
+%%DATADIR%%/sound/effects/Fire_Bullet_Laser_Rifle_Sound_0.ogg
+%%DATADIR%%/sound/effects/Fire_Bullet_Military_Sound_0.ogg
+%%DATADIR%%/sound/effects/Fire_Bullet_Plasma_Pistol_Sound_0.ogg
+%%DATADIR%%/sound/effects/Fire_Bullet_Pulse_Sound_0.ogg
+%%DATADIR%%/sound/effects/Fire_Bullet_Single_Laser_Sound_0.ogg
+%%DATADIR%%/sound/effects/Fire_Bullet_Single_Pulse_Sound_0.ogg
+%%DATADIR%%/sound/effects/Fire_Bullet_Sword_Sound_0.ogg
+%%DATADIR%%/sound/effects/GotIntoBlast_Sound_0.ogg
+%%DATADIR%%/sound/effects/Got_Hit_Sound_0.ogg
+%%DATADIR%%/sound/effects/I_See_No_Chest_Sound_0.ogg
+%%DATADIR%%/sound/effects/Influencer_Scream_Sound_0.ogg
+%%DATADIR%%/sound/effects/Influencer_Scream_Sound_1.ogg
+%%DATADIR%%/sound/effects/Influencer_Scream_Sound_2.ogg
+%%DATADIR%%/sound/effects/Influencer_Scream_Sound_3.ogg
+%%DATADIR%%/sound/effects/Influencer_Scream_Sound_4.ogg
+%%DATADIR%%/sound/effects/LeaveElevator_Sound_0.ogg
+%%DATADIR%%/sound/effects/MSMachinesClose_0.ogg
+%%DATADIR%%/sound/effects/Menu_Item_Deselected_Sound_0.ogg
+%%DATADIR%%/sound/effects/Menu_Item_Selected_Sound_0.ogg
+%%DATADIR%%/sound/effects/Menu_Item_Selected_Sound_1.ogg
+%%DATADIR%%/sound/effects/Mission_Status_Change_Sound_0.ogg
+%%DATADIR%%/sound/effects/MoveElevator_Sound_0.ogg
+%%DATADIR%%/sound/effects/Move_Menu_Position_Sound_0.ogg
+%%DATADIR%%/sound/effects/No_Ammo_Sound_0.ogg
+%%DATADIR%%/sound/effects/Not_Enough_Mana_1.ogg
+%%DATADIR%%/sound/effects/Refresh_Sound_0.ogg
+%%DATADIR%%/sound/effects/Shield_Sound_1.ogg
+%%DATADIR%%/sound/effects/Shop_ItemBoughtSound_0.ogg
+%%DATADIR%%/sound/effects/Shop_ItemIdentifiedSound_0.ogg
+%%DATADIR%%/sound/effects/Shop_ItemRepairedSound_0.ogg
+%%DATADIR%%/sound/effects/Shop_ItemSoldSound_0.ogg
+%%DATADIR%%/sound/effects/Spell_DetectItems_Sound_0.ogg
+%%DATADIR%%/sound/effects/Spell_ForceToEnergy_Sound_0.ogg
+%%DATADIR%%/sound/effects/TakeoverSetCapsule_Sound_0.ogg
+%%DATADIR%%/sound/effects/Takeover_Game_Deadlock_Sound_0.ogg
+%%DATADIR%%/sound/effects/Takeover_Game_Lost_Sound_0.ogg
+%%DATADIR%%/sound/effects/Takeover_Game_Start_Sound_0.ogg
+%%DATADIR%%/sound/effects/Takeover_Game_Won_Sound_0.ogg
+%%DATADIR%%/sound/effects/Takeover_Sound_0.ogg
+%%DATADIR%%/sound/effects/ThouArtDefeated_Sound_0.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_0.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_1.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_10.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_11.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_12.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_13.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_14.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_15.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_16.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_17.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_18.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_2.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_3.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_4.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_5.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_6.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_7.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_8.ogg
+%%DATADIR%%/sound/effects/bot_sounds/First_Contact_Sound_9.ogg
+%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_0.ogg
+%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_1.ogg
+%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_10.ogg
+%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_11.ogg
+%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_12.ogg
+%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_13.ogg
+%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_14.ogg
+%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_15.ogg
+%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_16.ogg
+%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_17.ogg
+%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_18.ogg
+%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_2.ogg
+%%DATADIR%%/sound/effects/bot_sounds/Start_Attack_Sound_9.ogg
+%%DATADIR%%/sound/effects/bot_sounds/death_sound_123.ogg
+%%DATADIR%%/sound/effects/bot_sounds/death_sound_247.ogg
+%%DATADIR%%/sound/effects/bot_sounds/death_sound_302.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/1.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/10.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/11.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/12.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/13.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/14.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/15.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/16.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/17.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/18.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/19.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/2.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/20.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/21.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/22.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/23.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/24.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/25.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/26.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/27.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/28.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/29.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/3.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/30.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/31.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/32.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/33.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/34.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/35.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/36.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/37.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/38.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/39.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/4.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/40.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/41.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/42.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/43.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/5.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/6.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/7.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/8.ogg
+%%DATADIR%%/sound/effects/bot_sounds/voice_samples/9.ogg
 %%DATADIR%%/sound/effects/console_sounds/CONSOLE_Browsing_Information_0.ogg
 %%DATADIR%%/sound/effects/console_sounds/CONSOLE_Door_Successfully_Unlocked_0.ogg
 %%DATADIR%%/sound/effects/console_sounds/CONSOLE_Energy_Transferred_0.ogg
@@ -5523,35 +5362,35 @@ bin/freedroidRPG
 %%DATADIR%%/sound/effects/console_sounds/CONSOLE_Select_Door_To_Unlock_0.ogg
 %%DATADIR%%/sound/effects/console_sounds/CONSOLE_Select_Gun_To_Switch_0.ogg
 %%DATADIR%%/sound/effects/console_sounds/CONSOLE_Select_Gun_Type_0.ogg
-%%DATADIR%%/sound/effects/enter_chest_sound.wav
-%%DATADIR%%/sound/effects/is_already_indentif.wav
-%%DATADIR%%/sound/effects/item_must_be_in_inv_for_identi.wav
-%%DATADIR%%/sound/effects/item_sounds/Item_Armour_Put_Sound_0.wav
-%%DATADIR%%/sound/effects/item_sounds/Item_Drop_Sound_0.wav
-%%DATADIR%%/sound/effects/item_sounds/Item_Drop_Sound_1.wav
-%%DATADIR%%/sound/effects/item_sounds/Item_Drop_Sound_2.wav
-%%DATADIR%%/sound/effects/item_sounds/Item_Drop_Sound_3.wav
-%%DATADIR%%/sound/effects/item_sounds/Item_Drop_Sound_4.wav
-%%DATADIR%%/sound/effects/item_sounds/Item_Drop_Sound_5.wav
-%%DATADIR%%/sound/effects/item_sounds/Item_Range_Weapon_Put_Sound_0.wav
-%%DATADIR%%/sound/effects/item_sounds/Item_Taken_Sound_0.wav
-%%DATADIR%%/sound/effects/item_sounds/Item_Wheels_Put_Sound_0.wav
-%%DATADIR%%/sound/effects/item_sounds/drop_book_sound.wav
-%%DATADIR%%/sound/effects/item_sounds/drop_potion_sound.wav
-%%DATADIR%%/sound/effects/item_sounds/drop_sword_sound.wav
-%%DATADIR%%/sound/effects/new_healing_sound.wav
-%%DATADIR%%/sound/effects/new_teleporter_sound.wav
-%%DATADIR%%/sound/effects/open_chest_sound.wav
-%%DATADIR%%/sound/effects/phaser.wav
-%%DATADIR%%/sound/effects/swing_then_hit_1.wav
-%%DATADIR%%/sound/effects/swing_then_hit_2.wav
-%%DATADIR%%/sound/effects/swing_then_hit_3.wav
-%%DATADIR%%/sound/effects/swing_then_hit_4.wav
-%%DATADIR%%/sound/effects/swing_then_nohit_1.wav
-%%DATADIR%%/sound/effects/swing_then_nohit_2.wav
-%%DATADIR%%/sound/effects/swing_then_nohit_3.wav
-%%DATADIR%%/sound/effects/swing_then_nohit_4.wav
-%%DATADIR%%/sound/effects/tux_footstep.wav
+%%DATADIR%%/sound/effects/enter_chest_sound.ogg
+%%DATADIR%%/sound/effects/is_already_indentif.ogg
+%%DATADIR%%/sound/effects/item_must_be_in_inv_for_identi.ogg
+%%DATADIR%%/sound/effects/item_sounds/Item_Armour_Put_Sound_0.ogg
+%%DATADIR%%/sound/effects/item_sounds/Item_Drop_Sound_0.ogg
+%%DATADIR%%/sound/effects/item_sounds/Item_Drop_Sound_1.ogg
+%%DATADIR%%/sound/effects/item_sounds/Item_Drop_Sound_2.ogg
+%%DATADIR%%/sound/effects/item_sounds/Item_Drop_Sound_3.ogg
+%%DATADIR%%/sound/effects/item_sounds/Item_Drop_Sound_4.ogg
+%%DATADIR%%/sound/effects/item_sounds/Item_Drop_Sound_5.ogg
+%%DATADIR%%/sound/effects/item_sounds/Item_Range_Weapon_Put_Sound_0.ogg
+%%DATADIR%%/sound/effects/item_sounds/Item_Taken_Sound_0.ogg
+%%DATADIR%%/sound/effects/item_sounds/Item_Wheels_Put_Sound_0.ogg
+%%DATADIR%%/sound/effects/item_sounds/drop_book_sound.ogg
+%%DATADIR%%/sound/effects/item_sounds/drop_potion_sound.ogg
+%%DATADIR%%/sound/effects/item_sounds/drop_sword_sound.ogg
+%%DATADIR%%/sound/effects/new_healing_sound.ogg
+%%DATADIR%%/sound/effects/new_teleporter_sound.ogg
+%%DATADIR%%/sound/effects/open_chest_sound.ogg
+%%DATADIR%%/sound/effects/phaser.ogg
+%%DATADIR%%/sound/effects/swing_then_hit_1.ogg
+%%DATADIR%%/sound/effects/swing_then_hit_2.ogg
+%%DATADIR%%/sound/effects/swing_then_hit_3.ogg
+%%DATADIR%%/sound/effects/swing_then_hit_4.ogg
+%%DATADIR%%/sound/effects/swing_then_nohit_1.ogg
+%%DATADIR%%/sound/effects/swing_then_nohit_2.ogg
+%%DATADIR%%/sound/effects/swing_then_nohit_3.ogg
+%%DATADIR%%/sound/effects/swing_then_nohit_4.ogg
+%%DATADIR%%/sound/effects/tux_footstep.ogg
 %%DATADIR%%/sound/effects/tux_ingame_comments/CantRepairThat.ogg
 %%DATADIR%%/sound/effects/tux_ingame_comments/ICantCarryAnyMore_Sound_0.ogg
 %%DATADIR%%/sound/effects/tux_ingame_comments/ICantCarryAnyMore_Sound_1.ogg
@@ -5564,7 +5403,7 @@ bin/freedroidRPG
 %%DATADIR%%/sound/effects/tux_ingame_comments/Tux_Item_Too_Fragile_0.ogg
 %%DATADIR%%/sound/effects/tux_ingame_comments/Tux_This_Quick_Fix_0.ogg
 %%DATADIR%%/sound/effects/tux_ingame_comments/i_cannot_use_this_item_yet.ogg
-%%DATADIR%%/sound/effects/wrong.wav
+%%DATADIR%%/sound/effects/wrong.ogg
 %%DATADIR%%/sound/music/Bleostrada.ogg
 %%DATADIR%%/sound/music/ImperialArmy.ogg
 %%DATADIR%%/sound/music/TheBeginning.ogg
@@ -5573,16 +5412,32 @@ bin/freedroidRPG
 %%DATADIR%%/sound/music/temple.ogg
 %%DATADIR%%/sound/music/town.ogg
 %%DATADIR%%/sound/music/underground.ogg
+%%DATADIR%%/sound/speak.py
+@dirrm %%DATADIR%%/sound/speeches/Spencer
+@dirrm %%DATADIR%%/sound/speeches/OldTown614Guard
+@dirrm %%DATADIR%%/sound/speeches/Michelangelo
+@dirrm %%DATADIR%%/sound/speeches/Melfis
+@dirrm %%DATADIR%%/sound/speeches/Kevin
+@dirrm %%DATADIR%%/sound/speeches/Guards
+@dirrm %%DATADIR%%/sound/speeches/Francis
+@dirrm %%DATADIR%%/sound/speeches/DocMoore
+@dirrm %%DATADIR%%/sound/speeches/Dixon
+@dirrm %%DATADIR%%/sound/speeches/Darwin
+@dirrm %%DATADIR%%/sound/speeches/Chandra
+@dirrm %%DATADIR%%/sound/speeches
 @dirrm %%DATADIR%%/sound/music
 @dirrm %%DATADIR%%/sound/effects/tux_ingame_comments
 @dirrm %%DATADIR%%/sound/effects/item_sounds
 @dirrm %%DATADIR%%/sound/effects/console_sounds
+@dirrm %%DATADIR%%/sound/effects/bot_sounds/voice_samples
 @dirrm %%DATADIR%%/sound/effects/bot_sounds
 @dirrm %%DATADIR%%/sound/effects
 @dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%/map/titles/fr
 @dirrm %%DATADIR%%/map/titles/de
 @dirrm %%DATADIR%%/map/titles
 @dirrm %%DATADIR%%/map
+@dirrm %%DATADIR%%/graphics/wm_icon
 @dirrm %%DATADIR%%/graphics/tux_motion_parts/sword_motion/shield_items
 @dirrm %%DATADIR%%/graphics/tux_motion_parts/sword_motion
 @dirrm %%DATADIR%%/graphics/tux_motion_parts/gun_motion/shield_items
@@ -5590,9 +5445,19 @@ bin/freedroidRPG
 @dirrm %%DATADIR%%/graphics/tux_motion_parts
 @dirrm %%DATADIR%%/graphics/tux_flags
 @dirrm %%DATADIR%%/graphics/skill_icons
+@dirrm %%DATADIR%%/graphics/rotation_models/portraits
+@dirrm %%DATADIR%%/graphics/rotation_models/items/item_blender_sources
+@dirrm %%DATADIR%%/graphics/rotation_models/items
+@dirrm %%DATADIR%%/graphics/rotation_models
+@dirrm %%DATADIR%%/graphics/portraits
+@dirrm %%DATADIR%%/graphics/para90_theme
 @dirrm %%DATADIR%%/graphics/obstacles
 @dirrm %%DATADIR%%/graphics/mouse_buttons
+@dirrm %%DATADIR%%/graphics/map_inserts/BlenderSources
+@dirrm %%DATADIR%%/graphics/map_inserts
 @dirrm %%DATADIR%%/graphics/light_radius_chunks
+@dirrm %%DATADIR%%/graphics/lanzz_theme/single_map_tiles
+@dirrm %%DATADIR%%/graphics/lanzz_theme
 @dirrm %%DATADIR%%/graphics/items/wheel_drive
 @dirrm %%DATADIR%%/graphics/items/warrior_wristband
 @dirrm %%DATADIR%%/graphics/items/vmx_grenade
@@ -5617,10 +5482,14 @@ bin/freedroidRPG
 @dirrm %%DATADIR%%/graphics/items/monkey_wrench
 @dirrm %%DATADIR%%/graphics/items/map_maker
 @dirrm %%DATADIR%%/graphics/items/mace
+@dirrm %%DATADIR%%/graphics/items/light_sabre_yellow
+@dirrm %%DATADIR%%/graphics/items/light_sabre_red
+@dirrm %%DATADIR%%/graphics/items/light_sabre_green
 @dirrm %%DATADIR%%/graphics/items/laser_sword_yellow
 @dirrm %%DATADIR%%/graphics/items/laser_sword_red
 @dirrm %%DATADIR%%/graphics/items/laser_sword_green
 @dirrm %%DATADIR%%/graphics/items/laser_staff
+@dirrm %%DATADIR%%/graphics/items/laser_dagger
 @dirrm %%DATADIR%%/graphics/items/large_shield
 @dirrm %%DATADIR%%/graphics/items/helmet_yellow4
 @dirrm %%DATADIR%%/graphics/items/helmet_yellow3
@@ -5661,6 +5530,7 @@ bin/freedroidRPG
 @dirrm %%DATADIR%%/graphics/items
 @dirrm %%DATADIR%%/graphics/font
 @dirrm %%DATADIR%%/graphics/floor_tiles
+@dirrm %%DATADIR%%/graphics/floor
 @dirrm %%DATADIR%%/graphics/droids/red_guard
 @dirrm %%DATADIR%%/graphics/droids/professor
 @dirrm %%DATADIR%%/graphics/droids/kevin
@@ -5696,12 +5566,16 @@ bin/freedroidRPG
 @dirrm %%DATADIR%%/graphics/droids/247
 @dirrm %%DATADIR%%/graphics/droids/139
 @dirrm %%DATADIR%%/graphics/droids/123
+@dirrm %%DATADIR%%/graphics/droids/001
 @dirrm %%DATADIR%%/graphics/droids
+@dirrm %%DATADIR%%/graphics/default_theme
+@dirrm %%DATADIR%%/graphics/classic_theme
 @dirrm %%DATADIR%%/graphics/bullets
 @dirrm %%DATADIR%%/graphics/blender_sources
 @dirrm %%DATADIR%%/graphics/blasts
 @dirrm %%DATADIR%%/graphics/backgrounds
 @dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%/dialogs/fr
 @dirrm %%DATADIR%%/dialogs/de
 @dirrm %%DATADIR%%/dialogs
 @dirrm %%DATADIR%%
