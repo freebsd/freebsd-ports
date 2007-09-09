@@ -15149,6 +15149,7 @@ styx		ports/devel/styx
 su2		ports/sysutils/su2
 subcalc		ports/net-mgmt/subcalc
 subclipse	ports/devel/subclipse
+subcommander	ports/devel/subcommander
 subconv		ports/multimedia/subconv
 subtitleeditor	ports/multimedia/subtitleeditor
 subtitleripper	ports/multimedia/subtitleripper
