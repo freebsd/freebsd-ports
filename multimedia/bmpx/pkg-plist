@@ -1,14 +1,9 @@
 bin/beep-media-player-2
-bin/bmp-enqueue-files-2.0
-bin/bmp-enqueue-uris-2.0
 bin/bmp-play-files-2.0
-bin/bmp-play-lastfm-2.0
+bin/bmp-play-uris-2.0
 bin/bmp2
 include/bmp-2.0/bmp/bmp.hh
 include/bmp-2.0/bmp/dbus.hh
-lib/libbmp_id3v2_reader.so.0
-lib/libbmp_id3v2_reader.so
-lib/libbmp_id3v2_reader.la
 lib/bmpx/plugins/taglib/libtaglib_plugin_flac.la
 lib/bmpx/plugins/taglib/libtaglib_plugin_flac.so
 lib/bmpx/plugins/taglib/libtaglib_plugin_flac.so.0
@@ -53,7 +48,6 @@ libexec/beep-media-player-2-bin
 libexec/beep-media-player-2-sentinel
 share/applications/bmp-2.0-offline.desktop
 share/applications/bmp-2.0.desktop
-share/applications/bmp-enqueue-2.0.desktop
 share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/glade/dialog-add-podcast.glade
 %%DATADIR%%/glade/dialog-equalizer.glade
@@ -64,6 +58,7 @@ share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/glade/dialog-lastfm-tag.glade
 %%DATADIR%%/glade/dialog-play-uri.glade
 %%DATADIR%%/glade/dialog-progress.glade
+%%DATADIR%%/glade/dialog-remove-update-podcast.glade
 %%DATADIR%%/glade/dialog-simple-entry.glade
 %%DATADIR%%/glade/dialog-simple-progress.glade
 %%DATADIR%%/glade/dialog-track-details.glade
@@ -143,76 +138,13 @@ share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/icons/tray-icons/tray-icon-default.png
 %%DATADIR%%/icons/tray-icons/tray-icon-paused.png
 %%DATADIR%%/icons/tray-icons/tray-icon-playing.png
-%%DATADIR%%/images/audio-default-no-background.png
-%%DATADIR%%/images/audio-default.png
-%%DATADIR%%/images/cdda/audiocd-big.png
-%%DATADIR%%/images/cdda/audiocd-unplayable.png
-%%DATADIR%%/images/collections/collection.png
 %%DATADIR%%/images/cover-frame.png
-%%DATADIR%%/images/hal/dev-cdrom.png
-%%DATADIR%%/images/hal/dev-volume-1394.png
-%%DATADIR%%/images/hal/dev-volume-ide.png
-%%DATADIR%%/images/hal/dev-volume-usb.png
-%%DATADIR%%/images/hal/device-camera.png
-%%DATADIR%%/images/hal/device-cdrom.png
-%%DATADIR%%/images/hal/device-cf-card.png
-%%DATADIR%%/images/hal/device-floppy.png
-%%DATADIR%%/images/hal/device-harddrive-1394.png
-%%DATADIR%%/images/hal/device-harddrive-usb.png
-%%DATADIR%%/images/hal/device-harddrive.png
-%%DATADIR%%/images/hal/device-ipod.png
-%%DATADIR%%/images/hal/device-ms.png
-%%DATADIR%%/images/hal/device-removable-1394.png
-%%DATADIR%%/images/hal/device-removable-usb.png
-%%DATADIR%%/images/hal/device-removable.png
-%%DATADIR%%/images/hal/device-sdmmc-card.png
-%%DATADIR%%/images/hal/device-sm-card.png
-%%DATADIR%%/images/lastfm/audioscrobbler.png
-%%DATADIR%%/images/lastfm/header-logo-left.png
-%%DATADIR%%/images/lastfm/header-logo-right.png
-%%DATADIR%%/images/lastfm/header-logo-slice.png
-%%DATADIR%%/images/lastfm/lastfm-album.png
-%%DATADIR%%/images/lastfm/lastfm-artist.png
-%%DATADIR%%/images/lastfm/lastfm-friend.png
-%%DATADIR%%/images/lastfm/lastfm-mainuser.png
-%%DATADIR%%/images/lastfm/lastfm-neighbour.png
-%%DATADIR%%/images/lastfm/lastfm-recommended-radio.png
-%%DATADIR%%/images/lastfm/lastfm-station-small.png
-%%DATADIR%%/images/lastfm/lastfm-station.png
-%%DATADIR%%/images/lastfm/lastfm-tag.png
-%%DATADIR%%/images/lastfm/lastfm-track.png
-%%DATADIR%%/images/lastfm/lastfm-user.png
-%%DATADIR%%/images/logo-about.png
 %%DATADIR%%/images/logo-splash.png
-%%DATADIR%%/images/main/header-logo-left.png
-%%DATADIR%%/images/main/header-logo-right.png
-%%DATADIR%%/images/main/header-logo-slice.png
-%%DATADIR%%/images/main/warning.png
-%%DATADIR%%/images/main/yingyang.gif
-%%DATADIR%%/images/main/yingyang_paused.gif
-%%DATADIR%%/images/main/yingyang_seeking.png
-%%DATADIR%%/images/podcast/feed-default.png
-%%DATADIR%%/images/podcast/feed-expired.png
-%%DATADIR%%/images/preferences/lastfm.png
-%%DATADIR%%/images/preferences/library.png
-%%DATADIR%%/images/preferences/misc.png
-%%DATADIR%%/images/preferences/museek.png
-%%DATADIR%%/images/preferences/musicbrainz.png
-%%DATADIR%%/images/preferences/playback.png
-%%DATADIR%%/images/preferences/podcasts.png
-%%DATADIR%%/images/rating/stars_0.png
-%%DATADIR%%/images/rating/stars_1.png
-%%DATADIR%%/images/rating/stars_2.png
-%%DATADIR%%/images/rating/stars_3.png
-%%DATADIR%%/images/rating/stars_4.png
-%%DATADIR%%/images/rating/stars_5.png
-%%DATADIR%%/images/sources/audiocd.png
-%%DATADIR%%/images/sources/jamendo.png
-%%DATADIR%%/images/sources/lastfm.png
-%%DATADIR%%/images/sources/library.png
-%%DATADIR%%/images/sources/playlist.png
-%%DATADIR%%/images/sources/podcasts.png
-%%DATADIR%%/images/sources/radio.png
+%%DATADIR%%/images/logo-about.png
+%%DATADIR%%/images/audio-default.png
+%%DATADIR%%/images/throbber.gif
+%%DATADIR%%/images/svg/button-background.svg
+%%DATADIR%%/images/svg/button-outline.svg
 %%DATADIR%%/images/stock/approve-partial.png
 %%DATADIR%%/images/stock/approve.png
 %%DATADIR%%/images/stock/artist-blackstar.png
@@ -253,7 +185,6 @@ share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/images/stock/silk-feed_delete.png
 %%DATADIR%%/images/stock/silk-feed_disk.png
 %%DATADIR%%/images/stock/silk-folder.png
-%%DATADIR%%/images/stock/silk-html.png
 %%DATADIR%%/images/stock/silk-new.png
 %%DATADIR%%/images/stock/silk-picture.png
 %%DATADIR%%/images/stock/silk-plugin.png
@@ -263,17 +194,49 @@ share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/images/stock/tag.png
 %%DATADIR%%/images/stock/track.png
 %%DATADIR%%/images/stock/undo.png
+%%DATADIR%%/images/stock/web.png
 %%DATADIR%%/images/stock/xiph.png
-%%DATADIR%%/images/svg/button-background.svg
-%%DATADIR%%/images/svg/button-outline.svg
-%%DATADIR%%/images/throbber.gif
+%%DATADIR%%/images/sources/audiocd.png
+%%DATADIR%%/images/sources/jamendo.png
+%%DATADIR%%/images/sources/lastfm.png
+%%DATADIR%%/images/sources/library.png
+%%DATADIR%%/images/sources/playlist.png
+%%DATADIR%%/images/sources/podcasts.png
+%%DATADIR%%/images/sources/radio.png
+%%DATADIR%%/images/rating/stars_0.png
+%%DATADIR%%/images/rating/stars_1.png
+%%DATADIR%%/images/rating/stars_2.png
+%%DATADIR%%/images/rating/stars_3.png
+%%DATADIR%%/images/rating/stars_4.png
+%%DATADIR%%/images/rating/stars_5.png
+%%DATADIR%%/images/podcast/feed-default.png
+%%DATADIR%%/images/podcast/feed-expired.png
+%%DATADIR%%/images/podcast/updating.png
+%%DATADIR%%/images/main/paused.gif
+%%DATADIR%%/images/lastfm/audioscrobbler.png
+%%DATADIR%%/images/lastfm/header-logo-left.png
+%%DATADIR%%/images/lastfm/header-logo-right.png
+%%DATADIR%%/images/lastfm/header-logo-slice.png
+%%DATADIR%%/images/lastfm/lastfm-album.png
+%%DATADIR%%/images/lastfm/lastfm-artist.png
+%%DATADIR%%/images/lastfm/lastfm-friend.png
+%%DATADIR%%/images/lastfm/lastfm-mainuser.png
+%%DATADIR%%/images/lastfm/lastfm-neighbour.png
+%%DATADIR%%/images/lastfm/lastfm-recommended-radio.png
+%%DATADIR%%/images/lastfm/lastfm-station-small.png
+%%DATADIR%%/images/lastfm/lastfm-station.png
+%%DATADIR%%/images/lastfm/lastfm-tag.png
+%%DATADIR%%/images/lastfm/lastfm-track.png
+%%DATADIR%%/images/lastfm/lastfm-user.png
+%%DATADIR%%/images/cdda/audiocd-big.png
+%%DATADIR%%/images/cdda/audiocd-unplayable.png
 share/dbus-1/services/org.beepmediaplayer.sentinel.service
 share/dbus-1/services/org.mpris.bmp.service
 share/icons/hicolor/48x48/apps/bmpx.png
 %%NLS%%share/locale/af/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/da/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/de/LC_MESSAGES/bmpx.mo
-%%NLS%%share/locale/dk/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/el/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/et/LC_MESSAGES/bmpx.mo
@@ -302,13 +265,9 @@ share/icons/hicolor/48x48/apps/bmpx.png
 @dirrm %%DATADIR%%/images/stock
 @dirrm %%DATADIR%%/images/sources
 @dirrm %%DATADIR%%/images/rating
-@dirrm %%DATADIR%%/images/preferences
 @dirrm %%DATADIR%%/images/podcast
 @dirrm %%DATADIR%%/images/main
-@dirrm %%DATADIR%%/images/library
 @dirrm %%DATADIR%%/images/lastfm
-@dirrm %%DATADIR%%/images/hal
-@dirrm %%DATADIR%%/images/collections
 @dirrm %%DATADIR%%/images/cdda
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/icons/tray-icons
