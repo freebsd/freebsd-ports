@@ -7,6 +7,7 @@
 
 PORTNAME=	ng
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://tomato.sakura.ne.jp/~amura/archives/ng/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -40,7 +41,7 @@ LIBS+=		-L${LOCALBASE}/lib -lcanna
 .endif
 
 post-patch:
-	@(cd ${WRKSRC}; ${LN} -sf sys/bsd/Makefile . )
+	@(cd ${WRKSRC}; ${LN} -sf sys/sysv/Makefile . )
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ng ${PREFIX}/bin
