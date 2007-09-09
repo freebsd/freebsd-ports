@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ovs
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.oav.net/openvisp/stats/
 
@@ -43,10 +43,12 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin
+	@${MKDIR} ${PREFIX}/www/data/ovs
 	@${MKDIR} ${DATADIR}
 	@${CHOWN} -R ${OVS_USER}:${OVS_GROUP} ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/ovs.pl ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKSRC}/ovs.cgi ${PREFIX}/www/cgi-bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/ovs.css ${PREFIX}/www/data/ovs
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	for f in ${DOCS}; do \
