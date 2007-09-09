@@ -1,6 +1,6 @@
---- ./SConstruct.orig	Tue Aug 22 23:22:16 2006
-+++ ./SConstruct	Tue May  1 16:01:52 2007
-@@ -53,6 +53,11 @@
+--- ./SConstruct.orig	Wed Aug 29 19:33:24 2007
++++ ./SConstruct	Wed Sep  5 17:54:37 2007
+@@ -45,6 +45,11 @@
  options.Add('with_devil', 'Root directory of DevIL installation')
  options.Add('with_devil_include', 'Specify exact include dir for DevIL headers')
  options.Add('with_devil_libdir', 'Specify exact library dir for DevIL library')
@@ -10,16 +10,48 @@
 +options.Add('CPPPATH', 'Compiler include path', Split(''))
 +options.Add('LIBPATH', 'Linker library path', Split(''))
  
- 
  ##################################################
-@@ -103,6 +108,10 @@
-         pass
+ # Drivers                                        #
+@@ -124,6 +129,10 @@
  
  options.Update(env)
-+
+ 
 +env['CCFLAGS'] = Split(env['CCFLAGS'])
 +env['CPPPATH'] = Split(env['CPPPATH'])
 +env['LIBPATH'] = Split(env['LIBPATH'])
- 
++
  if env.has_key('use_distcc') and env['use_distcc']:
      env['CC'] = 'distcc %s' % env['CC']
+     env['CXX'] = 'distcc %s' % env['CXX']
+@@ -274,6 +283,15 @@
+         else:
+             print 'Configuring unknown system (assuming the system is POSIX-like) ...'
+ 
++        # pthreads
++        if str(Platform()) == 'posix':
++            if env['multithreaded']:
++                if conf.CheckCHeader('pthread.h') and conf.CheckLib('pthread', 'pthread_create', autoadd = 0):
++                    env.Append(CCFLAGS = ['-pthread'])
++                    env.Append(LINKFLAGS = ['-pthread'])
++                else:
++                    Exit(1)
++
+         if OptionValue('boost_signals_namespace', env):
+             signals_namespace = OptionValue('boost_signals_namespace', env)
+             env.Append(CPPDEFINES = [
+@@ -288,15 +306,6 @@
+             ]
+         if not conf.CheckBoost(boost_version_string, boost_libs, conf, not ms_linker):
+             Exit(1)
+-
+-        # pthreads
+-        if str(Platform()) == 'posix':
+-            if env['multithreaded']:
+-                if conf.CheckCHeader('pthread.h') and conf.CheckLib('pthread', 'pthread_create', autoadd = 0):
+-                    env.Append(CCFLAGS = ['-pthread'])
+-                    env.Append(LINKFLAGS = ['-pthread'])
+-                else:
+-                    Exit(1)
+ 
+         # GL and GLU
+         if str(Platform()) == 'win32':
