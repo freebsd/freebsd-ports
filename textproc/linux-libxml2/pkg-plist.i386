@@ -1,10 +1,14 @@
-usr/lib/libxml.so.1
-usr/lib/libxml.so.%%PORTVERSION%%
-usr/share/doc/libxml-%%PORTVERSION%%/AUTHORS
-usr/share/doc/libxml-%%PORTVERSION%%/COPYING
-usr/share/doc/libxml-%%PORTVERSION%%/COPYING.LIB
-usr/share/doc/libxml-%%PORTVERSION%%/ChangeLog
-usr/share/doc/libxml-%%PORTVERSION%%/NEWS
-usr/share/doc/libxml-%%PORTVERSION%%/README
-usr/share/doc/libxml-%%PORTVERSION%%/TODO
-@dirrm usr/share/doc/libxml-%%PORTVERSION%%
+usr/bin/xmlcatalog
+usr/bin/xmllint
+usr/lib/libxml2.so.2
+usr/lib/libxml2.so.%%PORTVERSION%%
+usr/share/doc/libxml2-%%PORTVERSION%%/AUTHORS
+usr/share/doc/libxml2-%%PORTVERSION%%/ChangeLog.gz
+usr/share/doc/libxml2-%%PORTVERSION%%/Copyright 
+usr/share/doc/libxml2-%%PORTVERSION%%/NEWS
+usr/share/doc/libxml2-%%PORTVERSION%%/README
+usr/share/doc/libxml2-%%PORTVERSION%%/TODO
+usr/share/man/man1/xmlcatalog.1.gz
+usr/share/man/man1/xmllint.1.gz
+usr/share/man/man3/libxml.3.gz
+@dirrm usr/share/doc/libxml2-%%PORTVERSION%%
