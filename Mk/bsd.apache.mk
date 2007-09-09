@@ -20,7 +20,7 @@
 # is defined, APACHE_PORT will be set to www/apache20
 #
 
-#.if !defined(_POSTMKINCLUDED) && !defined(Apache_Pre_Include)
+.if !defined(Apache_Pre_Include) || defined(PORT_IS_MODULE)
 
 Apache_Pre_Include=		bsd.apache.mk
 
@@ -124,7 +124,16 @@ CONFIGURE_ARGS+=	--disable-authn-file --disable-authn-default \
 			--disable-proxy-ajp --disable-proxy-balancer
 .endif
 
-.if defined(WITH_MODULES)
+.if defined(OPTIONS)
+.for module in ${AVAILABLE_MODULES}
+.if defined(WITH_${module:U})
+_APACHE_MODULES+=	${module}
+.endif
+.if defined(WITHOUT_${module:U})
+WITHOUT_MODULES+=	 ${module}
+.endif
+.endfor
+.elif defined(WITH_MODULES)
 _APACHE_MODULES+=	${WITH_MODULES}
 .else
 .for category in ${ALL_MODULES_CATEGORIES}
@@ -353,8 +362,8 @@ AP_EXTRAS+=	-L ${AP_LIB}
 
 .endif
 
-#.endif #!defined(_POSTMKINCLUDED) && !defined(Apache_Pre_Include)
-#.if defined(_POSTMKINCLUDED) && !defined(Apache_Post_Include)
+.endif #!defined(Apache_Pre_Include)
+.if defined(_POSTMKINCLUDED) && !defined(Apache_Post_Include)
 Apache_Post_Include=                    bsd.apache.mk
 
 .if defined(AP_PORT_IS_SERVER)
@@ -396,6 +405,22 @@ show-modules:
 	done
 .endif
 
+.if !target(make-options-list)
+make-options-list:
+	@${ECHO_CMD} OPTIONS= \\;
+	@for module in ${AVAILABLE_MODULES} ; do \
+	if ${ECHO_CMD} ${APACHE_MODULES} | ${GREP} -wq $${module} 2> /dev/null ; \
+	then \
+		${PRINTF} "\t `${ECHO_CMD} $${module} | ${TR} '[:lower:]' '[:upper:]'` \"mod_$${module}\" ON \\"; \
+		${ECHO_CMD}; \
+	else \
+		${PRINTF} "\t `${ECHO_CMD} $${module} | ${TR} '[:lower:]' '[:upper:]'` \"mod_$${module}\" OFF \\";\
+		${ECHO_CMD}; \
+	fi;\
+	done; \
+	${ECHO_CMD}; 
+.endif
+
 .elif defined(AP_PORT_IS_MODULE)
 
 .if defined(AP_FAST_BUILD)
@@ -425,4 +450,4 @@ do-install:
 .endif
 .endif
 .endif
-#.endif          # defined(_POSTMKINCLUDED) && !defined(Apache_Post_Include)
+.endif          # defined(_POSTMKINCLUDED) && !defined(Apache_Post_Include)
