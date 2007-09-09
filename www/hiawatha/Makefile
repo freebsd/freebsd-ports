@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	5.9
+PORTVERSION=	5.11
 CATEGORIES=	www
 MASTER_SITES=	http://hiawatha.leisink.org/files/
 
@@ -21,12 +21,13 @@ SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var webrootdir=${PREFIX}/www/hiawatha
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	SSL "Support for Secure Sockets Layer (SSL)?" On
 OPTIONS+=	CACHE "Internal file caching support?" On
 OPTIONS+=	COMMAND "Enable the Hiawatha CommandChannel?" Off
 
-CONFIG_FILES=	httpd.conf mimetype.conf throttle.conf cgi-wrapper.conf php-fcgi.conf
+CONFIG_FILES=	httpd.conf mimetype.conf cgi-wrapper.conf php-fcgi.conf
 
 .include <bsd.port.pre.mk>
 
