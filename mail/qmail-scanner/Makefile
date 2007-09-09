@@ -7,6 +7,7 @@
 
 PORTNAME=	qmail-scanner
 PORTVERSION=	2.01
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -58,12 +59,10 @@ CONFIGURE_ARGS+=--qmaildir "${QMAIL_PREFIX}" \
 		--mime-unpacker "reformime" \
 		--batch
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message pkg-install
 SUB_LIST=	SPOOLDIR="${SPOOLDIR}" \
 		QS_USER=${QS_USER} \
 		QS_ID=${QS_ID}
-
-PKGINSTALL?=	${WRKDIR}/pkg-install
 
 .include <bsd.port.pre.mk>
 
@@ -222,7 +221,7 @@ do-configure:
 	@${SED} -e 's,%%SPOOLDIR%%,${SPOOLDIR},g; s,%%QS_USER%%,${QS_USER},g; \
 		s,%%QS_ID%%,${QS_ID},g; s,%%PREFIX%%,${PREFIX},g' \
 		${FILESDIR}/pkg-install.in > ${WRKDIR}/pkg-install
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 .if !defined(NOPORTDOCS)
@@ -239,9 +238,10 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/qmail-scanner-queue.template ${PREFIX}/bin/qmail-scanner-queue.pl
 	@${ECHO_MSG} ""
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG} ""
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 post-deinstall:
 	@${ECHO_MSG} ""
