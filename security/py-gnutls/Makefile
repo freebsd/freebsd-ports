@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.3
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,8 +26,6 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 post-patch:
 	${REINPLACE_CMD} -e "s|include_dirs=\[\]|include_dirs=\['${LOCALBASE}/include'\]|" ${WRKSRC}/setup.py
 	${REINPLACE_CMD} -e "s|library_dirs=\[\]|library_dirs=\['${LOCALBASE}/lib'\]|" ${WRKSRC}/setup.py
-	${FIND} ${WRKSRC}/gnutls/library -type f | ${XARGS} ${REINPLACE_CMD} -e 's/libgnutls.so.13/libgnutls.so.15/g'
-	${FIND} ${WRKSRC}/gnutls/library -type f | ${XARGS} ${REINPLACE_CMD} -e 's/libgnutls-extra.so.13/libgnutls-extra.so.15/g'
 
 .if !defined(NOPORTEXAMPLES)
 post-install:
