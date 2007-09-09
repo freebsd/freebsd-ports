@@ -6,20 +6,16 @@
 #
 
 PORTNAME=	xar
-DISTVERSION=	1.4
-PORTREVISION=	1
+DISTVERSION=	1.5.1
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.opendarwin.org/projects/xar/ \
-		http://distfiles-msn.opendarwin.org/ \
-		http://distfiles-od.opendarwin.org/ \
-		http://distfiles.opendarwin.org/
+MASTER_SITES=	http://xar.googlecode.com/files/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	CPE1704TKS@bellsouth.net
 COMMENT=	OpenDarwin XML eXtensible ARchiver
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 USE_GNOME=	libxml2
 USE_GMAKE=	yes
