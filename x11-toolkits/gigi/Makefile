@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gigi
-PORTVERSION=	0.6.0.20070726
+PORTVERSION=	0.6.0.20070905
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
@@ -20,24 +20,34 @@ LIB_DEPENDS=	IL.1:${PORTSDIR}/graphics/devil \
 
 USE_BZIP2=	yes
 USE_SCONS=	yes
-SCONS_ARGS=	prefix=""
+SCONS_ARGS=	prefix="" pkgconfigdir=""
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/GG
 
+#OPTIONS=	OGRE "Enable Ogre (3D engine) support" off
+
 SHLIB_VER=	0
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
+.include <bsd.port.pre.mk>
+
+#.if defined(WITH_OGRE)
+#LIB_DEPENDS+=	OgreMain.13:${PORTSDIR}/graphics/ogre3d
+#PLIST_SUB+=	OGRE=""
+#.else
+#SCONS_ENV+=	build_ogre_driver=0 build_ogre_ois_plugin=0
+#PLIST_SUB+=	OGRE="@comment "
+#.endif
+
 post-build:
-.for f in GiGi GiGiSDL
-	@cd ${WRKSRC} && ${SED} -e \
-		's|%(prefix)s|${PREFIX}|; s|%(libdir)s|${PREFIX}/lib|; \
-		 s|%(incdir)s|${PREFIX}/include|; \
-		 s|%(version)s|${PORTVERSION}|; \
-		 s|%(boost_include)s||; s|%(gigi_libs)s||; \
-		 s|%(gigi_sdl_libs)s||; s|%(sdl_include)s||' \
-		 ${f}.pc.in > ${f}.pc
-.endfor
+	@${REINPLACE_CMD} -Ee 's,^(prefix|(lib|include)dir)=,&${PREFIX},' \
+		${WRKSRC}/*.pc
+
+do-build:
+	@cd ${BUILD_WRKSRC} && \
+	${SETENV} ${SCONS_BUILDENV} ktrace -di ${SCONS_BIN} ${SCONS_ENV} ${SCONS_ARGS} \
+	${SCONS_TARGET}
 
 do-install:
 	${MKDIR} ${PREFIX}/include/GG
@@ -58,4 +68,4 @@ maint-gen-distfile:
 	tar cjf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}
 	${RM} -rf ${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

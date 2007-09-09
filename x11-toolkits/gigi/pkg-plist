@@ -1,10 +1,10 @@
+include/GG/AlignmentFlags.h
 include/GG/Base.h
 include/GG/BrowseInfoWnd.h
 include/GG/Button.h
 include/GG/Clr.h
-include/GG/Config.h
-include/GG/Config.h.in
 include/GG/Control.h
+include/GG/Cursor.h
 include/GG/DrawUtil.h
 include/GG/DropDownList.h
 include/GG/DynamicGraphic.h
@@ -12,13 +12,14 @@ include/GG/Edit.h
 include/GG/Enum.h
 include/GG/EventPump.h
 include/GG/Exception.h
+include/GG/Flags.h
 include/GG/Font.h
 include/GG/GUI.h
 include/GG/Layout.h
 include/GG/ListBox.h
 include/GG/Menu.h
 include/GG/MultiEdit.h
-include/GG/OgreSDL/OgreSDLGUI.h
+include/GG/Ogre/OgreGUI.h
 include/GG/PluginInterface.h
 include/GG/PtRect.h
 include/GG/SDL/SDLGUI.h
@@ -50,15 +51,16 @@ include/GG/dialogs/ColorDlg.h
 include/GG/dialogs/FileDlg.h
 include/GG/dialogs/ThreeButtonDlg.h
 include/GG/gen_signals.py
+include/GG/glext.h
 include/GG/ltdl.h
 include/GG/ltdl_config.h
 lib/libGiGi.so
-lib/libGiGi.so.%%SHLIB_VER%%
+lib/libGiGi.so.0
 lib/libGiGiSDL.so
-lib/libGiGiSDL.so.%%SHLIB_VER%%
+lib/libGiGiSDL.so.0
 libdata/pkgconfig/GiGi.pc
 libdata/pkgconfig/GiGiSDL.pc
 @dirrm include/GG/dialogs
 @dirrm include/GG/SDL
-@dirrm include/GG/OgreSDL
+@dirrm include/GG/Ogre
 @dirrm include/GG
