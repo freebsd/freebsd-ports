@@ -28,14 +28,4 @@ USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/bin/gaim)
-BUILD_DEPENDS+=	gaim:${PORTSDIR}/net-im/gaim
-RUN_DEPENDS+=	gaim:${PORTSDIR}/net-im/gaim
-PLIST_SUB+=	GAIM=""
-.else
-PLIST_SUB+=	GAIM="@comment "
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
