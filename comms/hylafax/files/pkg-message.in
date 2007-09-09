@@ -5,7 +5,7 @@ Setting up: (for impatients)
 	Invoke %%PREFIX%%/sbin/faxsetup, and answer the questions.
 	Mostly, accepting the defaults should work well.
 
-	When you are asked to specify the name of tty device, use "cuaa1"
+	When you are asked to specify the name of tty device, use "cuad1"
 	instead of "ttyd1".  Otherwise it does not work well.
 
 	Consult %%PREFIX%%/etc/rc.d/hylafax.sh.sample for startups.
@@ -13,7 +13,7 @@ Setting up: (for impatients)
 	For accepting incoming FAX/data calls, modify /etc/ttys as below
 	and send SIGHUP to init process:
 
->cuaa1	"%%PREFIX%%/sbin/faxgetty"	dialup	on secure
+>cuad1	"%%PREFIX%%/sbin/faxgetty"	dialup	on secure
 
 Be sure to rerun %%PREFIX%%/sbin/faxsetup after updating your hylafax version
  

@@ -308,7 +308,7 @@ hylafax/etc/templates/en/notify-no_formatter.txt
 hylafax/etc/templates/en/notify-poll_failed.txt
 hylafax/etc/templates/en/notify-poll_no_document.txt
 hylafax/etc/templates/en/notify-poll_rejected.txt
-hylafax/etc/templates/en/notify-reject.txt
+hylafax/etc/templates/en/notify-rejected.txt
 hylafax/etc/templates/en/notify-removed.txt
 hylafax/etc/templates/en/notify-requeued.txt
 hylafax/etc/templates/en/notify-timedout.txt
@@ -328,7 +328,7 @@ hylafax/etc/templates/fr/notify-no_formatter.txt
 hylafax/etc/templates/fr/notify-poll_failed.txt
 hylafax/etc/templates/fr/notify-poll_no_document.txt
 hylafax/etc/templates/fr/notify-poll_rejected.txt
-hylafax/etc/templates/fr/notify-reject.txt
+hylafax/etc/templates/fr/notify-rejected.txt
 hylafax/etc/templates/fr/notify-removed.txt
 hylafax/etc/templates/fr/notify-requeued.txt
 hylafax/etc/templates/fr/notify-timedout.txt
@@ -348,7 +348,7 @@ hylafax/etc/templates/de/notify-no_formatter.txt
 hylafax/etc/templates/de/notify-poll_failed.txt
 hylafax/etc/templates/de/notify-poll_no_document.txt
 hylafax/etc/templates/de/notify-poll_rejected.txt
-hylafax/etc/templates/de/notify-reject.txt
+hylafax/etc/templates/de/notify-rejected.txt
 hylafax/etc/templates/de/notify-removed.txt
 hylafax/etc/templates/de/notify-requeued.txt
 hylafax/etc/templates/de/notify-timedout.txt
@@ -368,7 +368,7 @@ hylafax/etc/templates/ro/notify-no_formatter.txt
 hylafax/etc/templates/ro/notify-poll_failed.txt
 hylafax/etc/templates/ro/notify-poll_no_document.txt
 hylafax/etc/templates/ro/notify-poll_rejected.txt
-hylafax/etc/templates/ro/notify-reject.txt
+hylafax/etc/templates/ro/notify-rejected.txt
 hylafax/etc/templates/ro/notify-removed.txt
 hylafax/etc/templates/ro/notify-requeued.txt
 hylafax/etc/templates/ro/notify-timedout.txt
@@ -388,7 +388,7 @@ hylafax/etc/templates/pt_BR/notify-no_formatter.txt
 hylafax/etc/templates/pt_BR/notify-poll_failed.txt
 hylafax/etc/templates/pt_BR/notify-poll_no_document.txt
 hylafax/etc/templates/pt_BR/notify-poll_rejected.txt
-hylafax/etc/templates/pt_BR/notify-reject.txt
+hylafax/etc/templates/pt_BR/notify-rejected.txt
 hylafax/etc/templates/pt_BR/notify-removed.txt
 hylafax/etc/templates/pt_BR/notify-requeued.txt
 hylafax/etc/templates/pt_BR/notify-timedout.txt
@@ -408,7 +408,7 @@ hylafax/etc/templates/pt/notify-no_formatter.txt
 hylafax/etc/templates/pt/notify-poll_failed.txt
 hylafax/etc/templates/pt/notify-poll_no_document.txt
 hylafax/etc/templates/pt/notify-poll_rejected.txt
-hylafax/etc/templates/pt/notify-reject.txt
+hylafax/etc/templates/pt/notify-rejected.txt
 hylafax/etc/templates/pt/notify-removed.txt
 hylafax/etc/templates/pt/notify-requeued.txt
 hylafax/etc/templates/pt/notify-timedout.txt
@@ -428,7 +428,7 @@ hylafax/etc/templates/es/notify-no_formatter.txt
 hylafax/etc/templates/es/notify-poll_failed.txt
 hylafax/etc/templates/es/notify-poll_no_document.txt
 hylafax/etc/templates/es/notify-poll_rejected.txt
-hylafax/etc/templates/es/notify-reject.txt
+hylafax/etc/templates/es/notify-rejected.txt
 hylafax/etc/templates/es/notify-removed.txt
 hylafax/etc/templates/es/notify-requeued.txt
 hylafax/etc/templates/es/notify-timedout.txt
@@ -448,7 +448,7 @@ hylafax/etc/templates/it/notify-no_formatter.txt
 hylafax/etc/templates/it/notify-poll_failed.txt
 hylafax/etc/templates/it/notify-poll_no_document.txt
 hylafax/etc/templates/it/notify-poll_rejected.txt
-hylafax/etc/templates/it/notify-reject.txt
+hylafax/etc/templates/it/notify-rejected.txt
 hylafax/etc/templates/it/notify-removed.txt
 hylafax/etc/templates/it/notify-requeued.txt
 hylafax/etc/templates/it/notify-timedout.txt
@@ -468,7 +468,7 @@ hylafax/etc/templates/pl/notify-no_formatter.txt
 hylafax/etc/templates/pl/notify-poll_failed.txt
 hylafax/etc/templates/pl/notify-poll_no_document.txt
 hylafax/etc/templates/pl/notify-poll_rejected.txt
-hylafax/etc/templates/pl/notify-reject.txt
+hylafax/etc/templates/pl/notify-rejected.txt
 hylafax/etc/templates/pl/notify-removed.txt
 hylafax/etc/templates/pl/notify-requeued.txt
 hylafax/etc/templates/pl/notify-timedout.txt
@@ -527,5 +527,22 @@ hylafax/etc/templates/html-sample1/notify-timedout.txt
 @dirrm hylafax/sendq
 @dirrm hylafax/status
 @dirrm hylafax/tmp
+@dirrmtry hylafax/log
+@dirrmtry hylafax/info
+@dirrmtry hylafax/etc/templates/ro
+@dirrmtry hylafax/etc/templates/pt_BR
+@dirrmtry hylafax/etc/templates/pt
+@dirrmtry hylafax/etc/templates/pl
+@dirrmtry hylafax/etc/templates/it
+@dirrmtry hylafax/etc/templates/html-sample1
+@dirrmtry hylafax/etc/templates/fr
+@dirrmtry hylafax/etc/templates/es
+@dirrmtry hylafax/etc/templates/en
+@dirrmtry hylafax/etc/templates/de
+@dirrmtry hylafax/etc/templates
+@dirrmtry hylafax/etc
+@dirrmtry hylafax/doneq
+@dirrmtry hylafax/dev
+@dirrmtry hylafax/archive
 @unexec rmdir %D/hylafax 2>/dev/null || echo "If you are permanently removing this port, you should do a ''rm -rf /var/spool/hylafax'' to remove any binary, configuration and log files left." | fmt
 @unexec echo "-----------------"
