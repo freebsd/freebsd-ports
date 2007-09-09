@@ -1,0 +1,52 @@
+--- ../Makefile.orig	Fri May 25 01:00:34 2007
++++ ../Makefile	Sat Jul 21 13:39:48 2007
+@@ -22,6 +22,10 @@
+ # Build binary that uses SDL for sound when "1".
+ SDLSOUND?=1
+ 
++# Adds DATADIR/LIBDIR (see below) to the data and library search path.
++WITH_DATADIR?=no
++WITH_LIBDIR?=no
++
+ # Selects the component to build; ALL, GAME, or DEDICATED
+ BUILD?=ALL
+ 
+@@ -53,6 +57,20 @@
+ 
+ BASE_CFLAGS=$(CFLAGS) -Dstricmp=strcasecmp -D_stricmp=strcasecmp -I$(X11BASE)/include
+ 
++# DATADIR / LIBDIR support.
++
++PREFIX?=/usr/local
++
++ifeq ($(strip $(WITH_DATADIR)),yes)
++DATADIR?=$(PREFIX)/share/alienarena
++BASE_CFLAGS+=-DDATADIR='\"$(DATADIR)\"'
++endif
++
++ifeq ($(strip $(WITH_LIBDIR)),yes)
++LIBDIR?=$(PREFIX)/lib/alienarena
++BASE_CFLAGS+=-DLIBDIR='\"$(LIBDIR)\"'
++endif
++
+ RELEASE_CFLAGS=$(BASE_CFLAGS)
+ 
+ ifeq ($(strip $(OPTIMIZED_CFLAGS)),yes)
+@@ -128,13 +146,13 @@
+ 		$(BUILDDIR)/crx
+ endif
+ 
++ifeq ($(strip $(BUILD)),CLIENT)
++	TARGETS+=$(BUILDDIR)/crx
++endif
++
+ ifeq ($(strip $(BUILD)),DEDICATED)
+ 	SDLSOUND=0
+ 	TARGETS+=$(BUILDDIR)/crded
+-endif
+-
+-ifeq ($(strip $(BUILD)),GAME)
+-	TARGETS+=$(BUILDDIR)/crx
+ endif
+ 
+ ifeq ($(strip $(SDLSOUND)),1)
