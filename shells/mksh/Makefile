@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		mksh
-DISTVERSION=		R30
+DISTVERSION=		R31
 CATEGORIES=		shells
 MASTER_SITES=		http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
 			http://pub.allbsd.org/MirOS/dist/mir/mksh/
@@ -21,8 +21,6 @@ MAN1=			mksh.1
 PLIST_FILES=		bin/mksh share/examples/mksh/dot.mkshrc
 PLIST_DIRS=		share/examples/mksh
 
-OPTIONS=		STATIC_MKSH "Build static mksh" on
-
 PKGINSTALL=		pkg-install
 PKGDEINSTALL=		pkg-deinstall
 
@@ -34,11 +32,7 @@ do-extract:
 		${GZCAT} ${DISTDIR}/${DISTFILES} | ${CPIO} -id
 
 do-build:
-.if defined(WITH_STATIC_MKSH)
-	cd ${WRKSRC} && CFLAGS="${CFLAGS}" CC="${CC}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" SHELL=${SH} ${SH} ${WRKSRC}/Build.sh -r
-.else
-	cd ${WRKSRC} && CFLAGS="${CFLAGS}" CC="${CC}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" SHELL=${SH} ${SH} ${WRKSRC}/Build.sh -d -r
-.endif
+	cd ${WRKSRC} && CFLAGS="${CFLAGS}" CC="${CC}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" SHELL=${SH} ${SH} ${WRKSRC}/Build.sh -q -r
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mksh ${PREFIX}/bin
@@ -47,11 +41,11 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/mksh.1 ${MANPREFIX}/man/man1
 
 pre-install:
-	@${SETENV} PKG_PREFIX="${PREFIX}" \
+	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \
 		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${SETENV} PKG_PREFIX="${PREFIX}" \
+	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
