@@ -195,6 +195,7 @@
     SUBDIR += cssc
     SUBDIR += cstringbuffer
     SUBDIR += ctags
+    SUBDIR += cunit
     SUBDIR += cut
     SUBDIR += cutils
     SUBDIR += cvs+ipv6
