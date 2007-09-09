@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeorion
-PORTVERSION=	0.3.1.20070726
+PORTVERSION=	0.3.1.20070909
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	GiGi.0:${PORTSDIR}/x11-toolkits/gigi \
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_SCONS=	yes
-SCONS_ARGS=	release=yes with_builtin_sdlnet=0
+SCONS_ARGS=	-j 4 release=yes with_builtin_sdlnet=0
 SCONS_BUILDENV=	PYTHON_LIB=${PYTHON_VERSION}
 USE_SDL=	sdl net
 WRKSRC=		${WRKDIR}/${PORTNAME}/FreeOrion

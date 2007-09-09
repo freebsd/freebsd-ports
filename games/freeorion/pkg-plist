@@ -57,6 +57,28 @@ bin/freeoriond
 %%DATADIR%%/default/data/art/icons/rightarrowclicked.png
 %%DATADIR%%/default/data/art/icons/rightarrowmouseover.png
 %%DATADIR%%/default/data/art/icons/rightarrownormal.png
+%%DATADIR%%/default/data/art/icons/specials_huge/ancient_ruins.png
+%%DATADIR%%/default/data/art/icons/specials_huge/eccentric_orbit.png
+%%DATADIR%%/default/data/art/icons/specials_huge/high_axial_tilt.png
+%%DATADIR%%/default/data/art/icons/specials_huge/homeworld.png
+%%DATADIR%%/default/data/art/icons/specials_huge/minerals.png
+%%DATADIR%%/default/data/art/icons/specials_huge/slow_rotation.png
+%%DATADIR%%/default/data/art/icons/specials_huge/solid_core.png
+%%DATADIR%%/default/data/art/icons/specials_huge/starvation.png
+%%DATADIR%%/default/data/art/icons/specials_huge/techtonic_instability.png
+%%DATADIR%%/default/data/art/icons/specials_huge/tidal_lock.png
+%%DATADIR%%/default/data/art/icons/specials_huge/tunnels.png
+%%DATADIR%%/default/data/art/icons/specials_large/ancient_ruins.png
+%%DATADIR%%/default/data/art/icons/specials_large/eccentric_orbit.png
+%%DATADIR%%/default/data/art/icons/specials_large/high_axial_tilt.png
+%%DATADIR%%/default/data/art/icons/specials_large/homeworld.png
+%%DATADIR%%/default/data/art/icons/specials_large/minerals.png
+%%DATADIR%%/default/data/art/icons/specials_large/slow_rotation.png
+%%DATADIR%%/default/data/art/icons/specials_large/solid_core.png
+%%DATADIR%%/default/data/art/icons/specials_large/starvation.png
+%%DATADIR%%/default/data/art/icons/specials_large/techtonic_instability.png
+%%DATADIR%%/default/data/art/icons/specials_large/tidal_lock.png
+%%DATADIR%%/default/data/art/icons/specials_large/tunnels.png
 %%DATADIR%%/default/data/art/icons/specials_tiny/ancient_ruins.png
 %%DATADIR%%/default/data/art/icons/specials_tiny/eccentric_orbit.png
 %%DATADIR%%/default/data/art/icons/specials_tiny/high_axial_tilt.png
@@ -113,6 +135,7 @@ bin/freeoriond
 %%DATADIR%%/default/data/art/misc/mark2icon.png
 %%DATADIR%%/default/data/art/misc/mark3.png
 %%DATADIR%%/default/data/art/misc/mark4.png
+%%DATADIR%%/default/data/art/misc/meter_bar_shading.png
 %%DATADIR%%/default/data/art/misc/missing.png
 %%DATADIR%%/default/data/art/misc/planet_selection.png
 %%DATADIR%%/default/data/art/misc/planetpanelpictures.png
@@ -1142,6 +1165,8 @@ bin/freeoriond
 @dirrm %%DATADIR%%/default/data/art/misc
 @dirrm %%DATADIR%%/default/data/art/icons/tech
 @dirrm %%DATADIR%%/default/data/art/icons/specials_tiny
+@dirrm %%DATADIR%%/default/data/art/icons/specials_large
+@dirrm %%DATADIR%%/default/data/art/icons/specials_huge
 @dirrm %%DATADIR%%/default/data/art/icons
 @dirrm %%DATADIR%%/default/data/art/building_icons
 @dirrm %%DATADIR%%/default/data/art
