@@ -31,8 +31,6 @@ bin/xmoto
 %%NLS%%@dirrmtry share/locale/de_DE
 %%NLS%%@dirrmtry share/locale/fi_FI/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fi_FI
-%%NLS%%@dirrmtry share/locale/fr_FR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fr_FR
 %%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/it_IT
 %%NLS%%@dirrmtry share/locale/lv_LV/LC_MESSAGES
