@@ -17,7 +17,7 @@ COMMENT=	FreeBSD version of the Fill Threads Database program
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus \
+		dbus-1.3:${PORTSDIR}/devel/dbus \
 		notify.1:${PORTSDIR}/devel/libnotify \
 		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		sexy.2:${PORTSDIR}/x11-toolkits/libsexy
