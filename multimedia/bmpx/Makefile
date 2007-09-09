@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bmpx
-PORTVERSION=	0.40.1
-PORTREVISION=	1
+PORTVERSION=	0.40.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.beep-media-player.org/releases/0.40/
 
@@ -41,7 +40,8 @@ USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \
 			--with-dbus-services-dir="${PREFIX}/share/dbus-1/services" \
-			--with-libintl-prefix="${LOCALBASE}"
+			--with-libintl-prefix="${LOCALBASE}" \
+			--disable-doc
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
