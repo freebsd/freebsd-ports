@@ -6,6 +6,7 @@
 %%BLOGDIR%%/extensions/bbclone_tools/do_count.php
 %%BLOGDIR%%/extensions/bbclone_tools/getkey.php
 %%BLOGDIR%%/extensions/bbclone_tools/hr_conf.php
+%%BLOGDIR%%/extensions/bbclone_tools/index.html
 %%BLOGDIR%%/extensions/bbclone_tools/pixel.gif
 %%BLOGDIR%%/extensions/bbclone_tools/readme.txt
 %%BLOGDIR%%/extensions/calendar/calendar.css
@@ -370,13 +371,16 @@
 %%BLOGDIR%%/extensions/hooks/editor_wysi/utils/mclayer.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/utils/mctabs.js
 %%BLOGDIR%%/extensions/hooks/editor_wysi/utils/validate.js
+%%BLOGDIR%%/extensions/hooks/index.html
 %%BLOGDIR%%/extensions/hooks/post_editor_wysi.php
 %%BLOGDIR%%/extensions/hooks/pre_editor_wysi.php
 %%BLOGDIR%%/extensions/index.html
+%%BLOGDIR%%/extensions/moblog/mail/index.html
 %%BLOGDIR%%/extensions/moblog/config.inc-default.php
 %%BLOGDIR%%/extensions/moblog/fetchmail.php
 %%BLOGDIR%%/extensions/moblog/inspect.zip
 %%BLOGDIR%%/extensions/moblog/is_a.php
+%%BLOGDIR%%/extensions/moblog/index.html
 %%BLOGDIR%%/extensions/moblog/mail.class.php
 %%BLOGDIR%%/extensions/moblog/mime.php
 %%BLOGDIR%%/extensions/moblog/mimedecode.php
@@ -386,6 +390,7 @@
 %%BLOGDIR%%/extensions/moblog/pop3.php
 %%BLOGDIR%%/extensions/moblog/socket.php
 %%BLOGDIR%%/extensions/moblog/system.php
+%%BLOGDIR%%/extensions/snippets/index.html
 %%BLOGDIR%%/extensions/snippets/snippet_calendar.php
 %%BLOGDIR%%/extensions/snippets/snippet_hardened_bbclone.php
 %%BLOGDIR%%/extensions/snippets/snippet_lightbox_fallback.php
@@ -417,6 +422,7 @@
 %%BLOGDIR%%/pivot/default-data/db/standard-00000/index-standard-00000.php
 %%BLOGDIR%%/pivot/default-data/db/tagdata/index.html
 %%BLOGDIR%%/pivot/default-data/db/tagdata/pivot.tag
+%%BLOGDIR%%/pivot/default-data/db/tbkeys/index.html
 %%BLOGDIR%%/pivot/default-data/db/users/index.html
 %%BLOGDIR%%/pivot/default-data/pv_cfg_settings.php
 %%BLOGDIR%%/pivot/default-data/pv_cfg_weblogs.php
@@ -571,6 +577,29 @@
 %%BLOGDIR%%/pivot/langs/pvl_se.php
 %%BLOGDIR%%/pivot/langs/pvl_se_utf-8.php
 %%BLOGDIR%%/pivot/langs/pvl_spa.php
+%%BLOGDIR%%/pivot/langs/pvl_vn.php
+%%BLOGDIR%%/pivot/langs/pvl_bg.php
+%%BLOGDIR%%/pivot/langs/pvl_chs.php
+%%BLOGDIR%%/pivot/langs/pvl_cht.php
+%%BLOGDIR%%/pivot/langs/pvl_cs.php
+%%BLOGDIR%%/pivot/langs/pvl_cs_utf8.php
+%%BLOGDIR%%/pivot/langs/pvl_ee.php
+%%BLOGDIR%%/pivot/langs/pvl_fi.php
+%%BLOGDIR%%/pivot/langs/pvl_gl.php
+%%BLOGDIR%%/pivot/langs/pvl_gr.php
+%%BLOGDIR%%/pivot/langs/pvl_id.php
+%%BLOGDIR%%/pivot/langs/pvl_is.php
+%%BLOGDIR%%/pivot/langs/pvl_it.php
+%%BLOGDIR%%/pivot/langs/pvl_kor.php
+%%BLOGDIR%%/pivot/langs/pvl_lv.php
+%%BLOGDIR%%/pivot/langs/pvl_nn.php
+%%BLOGDIR%%/pivot/langs/pvl_nn_utf8.php
+%%BLOGDIR%%/pivot/langs/pvl_pl.php
+%%BLOGDIR%%/pivot/langs/pvl_ro_utf8.php
+%%BLOGDIR%%/pivot/langs/pvl_ru.php
+%%BLOGDIR%%/pivot/langs/pvl_ru_utf8.php
+%%BLOGDIR%%/pivot/langs/pvl_sk.php
+%%BLOGDIR%%/pivot/langs/pvl_tr.php
 %%BLOGDIR%%/pivot/license.txt
 %%BLOGDIR%%/pivot/metaweblog.php
 %%BLOGDIR%%/pivot/minilog.php
@@ -748,6 +777,7 @@
 @dirrm %%BLOGDIR%%/pivot/default-data/templates/images
 @dirrm %%BLOGDIR%%/pivot/default-data/templates
 @dirrm %%BLOGDIR%%/pivot/default-data/db/users
+@dirrm %%BLOGDIR%%/pivot/default-data/db/tbkeys
 @dirrm %%BLOGDIR%%/pivot/default-data/db/tagdata
 @dirrm %%BLOGDIR%%/pivot/default-data/db/standard-00000
 @dirrm %%BLOGDIR%%/pivot/default-data/db/search
