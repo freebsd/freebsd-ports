@@ -360,7 +360,7 @@
     SUBDIR += linux-megacli
     SUBDIR += linux-megamgr
     SUBDIR += linux-nero
-    SUBDIR += linux-procps
+    SUBDIR += linux-procfs
     SUBDIR += linuxfdisk
     SUBDIR += lire
     SUBDIR += livecd
