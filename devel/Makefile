@@ -2194,6 +2194,7 @@
     SUBDIR += stringencoders
     SUBDIR += styx
     SUBDIR += subclipse
+    SUBDIR += subcommander
     SUBDIR += subversion
     SUBDIR += subversion-perl
     SUBDIR += subversion-python
