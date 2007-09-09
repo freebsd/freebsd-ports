@@ -35,6 +35,9 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		ru-apache+mod_ssl-1.* ru-apache-1.* \
 		apache-2.0.* apache-*-2.0.*
 
+DEPRECATED=     No longer supported, please use www/apache22 instead
+EXPIRES=        2007-12-09
+
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 			LIBTOOL_VERSION=${LIBTOOL_VERSION} AUTOCONF=${AUTOCONF} \
 			LIBTOOL_M4=${LOCALBASE}/share/aclocal/libtool${LIBTOOL_VERSION}.m4 \
