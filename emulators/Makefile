@@ -131,6 +131,7 @@
     SUBDIR += stonx
     SUBDIR += svr4_base
     SUBDIR += tiemu2
+    SUBDIR += tiemu3
     SUBDIR += tilem
     SUBDIR += tkhfs
     SUBDIR += tme
