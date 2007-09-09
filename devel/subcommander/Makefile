@@ -15,14 +15,15 @@ MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	Qt based multiplatform subversion client, diff & merge tool
 
 LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon \
-		apr-1.2:${PORTSDIR}/devel/apr-svn
+		apr-1.2:${PORTSDIR}/devel/apr-svn \
+		boost_thread.4:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	subversion>=1.2.0:${PORTSDIR}/devel/subversion
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_QT_VERE=	3
+USE_QT_VER=	3
 CONFIGURE_ARGS+=	--with-boost=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-neon=${LOCALBASE}
 CONFIGURE_ENV=	QTDIR=${X11BASE} CPPFLAGS="-I${LOCALBASE}/include" \
