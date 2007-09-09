@@ -2023,6 +2023,7 @@
     SUBDIR += qt4-script
     SUBDIR += qt4-uic
     SUBDIR += qt4-uic3
+    SUBDIR += qprog
     SUBDIR += qsa
     SUBDIR += qscintilla2
     SUBDIR += qscintilla2-designerplugin
