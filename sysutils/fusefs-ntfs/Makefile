@@ -5,8 +5,7 @@
 #
 
 PORTNAME=	ntfs
-PORTVERSION=	1.710
-PORTREVISION=	1
+PORTVERSION=	1.826
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ntfs-3g.org/:ntfs \
 		${MASTER_SITE_LOCAL:S|$|alepulver/:ublio|}
@@ -16,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:ntfs
 
 MAINTAINER=	alepulver@FreeBSD.org
-COMMENT=	Mount NTFS partitions and disk images
+COMMENT=	Mount NTFS partitions (read/write) and disk images
 
 BUILD_DEPENDS=	fusefs-libs>=2.6.0:${PORTSDIR}/sysutils/fusefs-libs
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
