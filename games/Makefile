@@ -441,6 +441,7 @@
     SUBDIR += linux-quake4
     SUBDIR += linux-quake4-demo
     SUBDIR += linux-savage
+    SUBDIR += linux-savage-samuraiwars
     SUBDIR += linux-spheresofchaos-demo
     SUBDIR += linux-steam
     SUBDIR += linux-uplink-demo
