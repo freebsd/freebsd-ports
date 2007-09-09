@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hylafax
-PORTVERSION=	4.3.2
+PORTVERSION=	4.3.4
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
@@ -14,20 +14,18 @@ MAINTAINER=	W.J.Zwart@NescioLudens.nl
 COMMENT=	Fax software
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
-
-# no dependency on ghostscript because we don't know which
-# version the user prefers
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
-		jpeg:${PORTSDIR}/graphics/jpeg
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		jbig.1:${PORTSDIR}/graphics/jbigkit
 
-DIST_SUBDIR=	hylafax
+USE_GHOSTSCRIPT=yes
 
 CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-LIBTIFF="-L${LOCALBASE}/lib -ltiff -ljpeg" \
-		--with-ZLIB=no --with-LIBZ=-lz --with-ZLIBINC=none \
+		--with-ZLIB=no --with-LIBZ=-lz \
 		--with-TIFFINC="${LOCALBASE}/include" \
 		--with-GCOPTS=" " --with-GCXXOPTS=" " \
-		--with-REGEX=no --with-LIBREGEX='' --with-REGEXINC=none \
+		--with-REGEX=no --with-LIBREGEX='' --with-REGEXINC=/usr/include \
 		--with-DIR_HTML="${DOCSDIR}"
 
 SUB_FILES=	pkg-message hylafax.sh.sample
@@ -56,7 +54,7 @@ CONFIGURE_ARGS+=--nointeractive
 
 .if defined(WITH_GAWK)
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
-RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+RUN_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 CONFIGURE_ARGS+=--with-AWK="${LOCALBASE}/bin/gawk"
 .endif
 
@@ -97,6 +95,7 @@ pre-extract:
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's,/usr/local,${LOCALBASE},g' \
+		-e 's,-ljbig,-L${LOCALBASE}/lib &,' \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's,-O hfaxd.conf,-O hfaxd.conf-dist,' \
 		${WRKSRC}/hfaxd/Makefile.in
