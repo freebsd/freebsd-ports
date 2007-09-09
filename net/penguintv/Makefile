@@ -19,10 +19,6 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/p
 		${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer \
 		${PYXML} \
 		${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex
-.if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT} \
-		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
-.endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/PenguinTV-${PORTVERSION}
@@ -33,6 +29,7 @@ OPTIONS=	PYLUCENE "Use Lucene search engine" ON \
 USE_GNOME=	pygnomeextras pygnome2
 USE_PYTHON=	yes
 USE_GECKO=	firefox
+USE_DISPLAY=	yes
 
 CONFLICTS=	PenguinTV-devel-[0-9]*
 
