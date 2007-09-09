@@ -13537,6 +13537,7 @@ qonk		ports/games/qonk
 qorganizer	ports/deskutils/qorganizer
 qpage		ports/comms/qpage
 qpopper		ports/mail/qpopper
+qprog		ports/devel/qprog
 qpxtool		ports/sysutils/qpxtool
 qrash		ports/x11/qrash
 qrfcview	ports/deskutils/qrfcview
