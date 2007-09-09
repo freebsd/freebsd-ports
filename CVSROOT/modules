@@ -12091,6 +12091,7 @@ php5		ports/lang/php5
 php5-bcmath	ports/math/php5-bcmath
 php5-bz2	ports/archivers/php5-bz2
 php5-calendar	ports/misc/php5-calendar
+php5-chartdirector	ports/graphics/php5-chartdirector
 php5-creole	ports/databases/php5-creole
 php5-ctype	ports/textproc/php5-ctype
 php5-curl	ports/ftp/php5-curl
