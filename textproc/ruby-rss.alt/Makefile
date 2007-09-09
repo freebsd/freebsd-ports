@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rss
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.9
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.cozmixng.org/~kou/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
