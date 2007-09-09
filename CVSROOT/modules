@@ -1664,6 +1664,7 @@ cue2toc		ports/audio/cue2toc
 cuecat		ports/misc/cuecat
 cuetools	ports/audio/cuetools
 cultivation	ports/games/cultivation
+cunit		ports/devel/cunit
 cups		ports/print/cups
 cups-base	ports/print/cups-base
 cups-magicolor	ports/print/cups-magicolor
