@@ -1,13 +1,13 @@
---- docs/conf/extra/httpd-ssl.conf.in.orig	Sun Oct 30 19:40:45 2005
-+++ docs/conf/extra/httpd-ssl.conf.in	Sun Oct 30 19:41:50 2005
+--- docs/conf/extra/httpd-ssl.conf.in.orig	Wed Mar  7 08:33:58 2007
++++ docs/conf/extra/httpd-ssl.conf.in	Sun Sep  9 11:59:51 2007
 @@ -77,8 +77,8 @@
  DocumentRoot "@exp_htdocsdir@"
  ServerName www.example.com:443
  ServerAdmin you@example.com
--ErrorLog @exp_logfiledir@/error_log
--TransferLog @exp_logfiledir@/access_log
-+ErrorLog @exp_logfiledir@/httpd-error.log
-+TransferLog @exp_logfiledir@/httpd-access.log
+-ErrorLog "@exp_logfiledir@/error_log"
+-TransferLog "@exp_logfiledir@/access_log"
++ErrorLog "@exp_logfiledir@/httpd-error.log"
++TransferLog "@exp_logfiledir@/httpd-access.log"
  
  #   SSL Engine Switch:
  #   Enable/Disable SSL for this virtual host.
@@ -15,8 +15,8 @@
  #   Per-Server Logging:
  #   The home of a custom SSL log file. Use this when you want a
  #   compact non-error SSL logfile on a virtual host basis.
--CustomLog @exp_logfiledir@/ssl_request_log \
-+CustomLog @exp_logfiledir@/httpd-ssl_request.log \
+-CustomLog "@exp_logfiledir@/ssl_request_log" \
++CustomLog "@exp_logfiledir@/httpd-ssl_request.log" \
            "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
  
  </VirtualHost>                                  

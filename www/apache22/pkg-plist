@@ -305,6 +305,7 @@ www/apache22/error/include/bottom.html
 www/apache22/error/include/spacer.html
 www/apache22/error/include/top.html
 www/apache22/icons/README
+www/apache22/icons/README.html
 www/apache22/icons/a.gif
 www/apache22/icons/a.png
 www/apache22/icons/alert.black.gif
@@ -432,7 +433,6 @@ www/apache22/icons/screw2.gif
 www/apache22/icons/screw2.png
 www/apache22/icons/script.gif
 www/apache22/icons/script.png
-www/apache22/icons/small/README.txt
 www/apache22/icons/small/back.gif
 www/apache22/icons/small/back.png
 www/apache22/icons/small/binary.gif
