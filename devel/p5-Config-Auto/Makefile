@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathT
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PERL_CONFIGURE=	yes
+
 OPTIONS=	XMLSIMPLE "Support for XML config files" off
 
 .include <bsd.port.pre.mk>
@@ -27,8 +29,6 @@ OPTIONS=	XMLSIMPLE "Support for XML config files" off
 BUILD_DEPENDS+=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 RUN_DEPENDS+=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 .endif
-
-PERL_CONFIGURE=	yes
 
 MAN3=		Config::Auto.3
 
