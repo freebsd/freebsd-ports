@@ -13608,6 +13608,7 @@ qtiplot-doc	ports/math/qtiplot-doc
 qtm		ports/deskutils/qtm
 qtools		ports/mail/qtools
 qtorrent	ports/net-p2p/qtorrent
+qtpfsgui	ports/graphics/qtpfsgui
 qtpixmap	ports/x11-toolkits/qtpixmap
 qtpkg		ports/ports-mgmt/qtpkg
 qtstalker	ports/finance/qtstalker
