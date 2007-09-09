@@ -1,0 +1,49 @@
+include/CUnit/CUError.h
+include/CUnit/CUnit.h
+include/CUnit/MyMem.h
+include/CUnit/TestDB.h
+include/CUnit/TestRun.h
+include/CUnit/Util.h
+lib/libcunit.a
+lib/libcunit.la
+lib/libcunit.so
+lib/libcunit.so.1
+share/CUnit/CUnit-List.dtd
+share/CUnit/CUnit-List.xsl
+share/CUnit/CUnit-Run.dtd
+share/CUnit/CUnit-Run.xsl
+share/CUnit/Memory-Dump.dtd
+share/CUnit/Memory-Dump.xsl
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+%%PORTDOCS%%%%DOCSDIR%%/CUnit_doc.css
+%%PORTDOCS%%%%DOCSDIR%%/error_handling.html
+%%PORTDOCS%%%%DOCSDIR%%/fdl.html
+%%PORTDOCS%%%%DOCSDIR%%/headers/Automated.h
+%%PORTDOCS%%%%DOCSDIR%%/headers/Basic.h
+%%PORTDOCS%%%%DOCSDIR%%/headers/CUCurses.h
+%%PORTDOCS%%%%DOCSDIR%%/headers/CUError.h
+%%PORTDOCS%%%%DOCSDIR%%/headers/CUnit.h
+%%PORTDOCS%%%%DOCSDIR%%/headers/Console.h
+%%PORTDOCS%%%%DOCSDIR%%/headers/MyMem.h
+%%PORTDOCS%%%%DOCSDIR%%/headers/TestDB.h
+%%PORTDOCS%%%%DOCSDIR%%/headers/TestRun.h
+%%PORTDOCS%%%%DOCSDIR%%/headers/Util.h
+%%PORTDOCS%%%%DOCSDIR%%/headers/Win.h
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/managing_tests.html
+%%PORTDOCS%%%%DOCSDIR%%/running_tests.html
+%%PORTDOCS%%%%DOCSDIR%%/test_registry.html
+%%PORTDOCS%%%%DOCSDIR%%/writing_tests.html
+@dirrmtry share/examples/CUnit/Curses
+@dirrmtry share/examples/CUnit/Console
+@dirrmtry share/examples/CUnit/Basic
+@dirrmtry share/examples/CUnit/Automated
+@dirrmtry share/examples/CUnit
+@dirrmtry share/CUnit/Test
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/headers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry share/doc
+@dirrm share/CUnit
+@dirrm include/CUnit
