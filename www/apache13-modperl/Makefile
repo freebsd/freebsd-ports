@@ -7,7 +7,6 @@
 
 PORTNAME=	apache+mod_perl
 PORTVERSION=	${VERSION_APACHE}
-PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD:S/$/:apache/} \
 		${MASTER_SITE_PERL_CPAN:S/$/Apache\/:modperl/}
@@ -43,8 +42,8 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 
-VERSION_APACHE=		1.3.37
-VERSION_MODPERL=	1.29
+VERSION_APACHE=		1.3.39
+VERSION_MODPERL=	1.30
 
 WRKSRC_MODPERL=	${WRKDIR}/mod_perl-${VERSION_MODPERL}
 
@@ -132,6 +131,7 @@ MAN3=	Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		Apache::Registry.3 Apache::SizeLimit.3 \
 		Apache::Status.3 Apache::Symbol.3 Apache::Symdump.3 \
 		Apache::Table.3 Apache::URI.3 Apache::Util.3 \
+		Apache::fork.3 \
 		Apache::httpd_conf.3 Apache::src.3 Apache::testold.3 \
 		Bundle::Apache.3 \
 		Apache::Debug.3 mod_perl.3 Apache::SIG.3 Apache::Resource.3 \
