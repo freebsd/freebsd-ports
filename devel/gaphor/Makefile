@@ -16,15 +16,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UML modeling environment written in Python
 
-.if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
-.endif
-
 CONFLICTS=	zope-3*
 
 USE_GNOME=	pygnome2
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 USE_GETTEXT=	yes
+USE_DISPLAY=	yes
 
 .include <bsd.port.mk>
