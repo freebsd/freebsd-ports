@@ -1,5 +1,5 @@
---- ovs.cgi.old	Sun Aug 26 23:55:10 2007
-+++ ovs.cgi	Sun Aug 26 23:56:44 2007
+--- ovs.cgi.orig	Mon Sep  3 18:19:22 2007
++++ ovs.cgi	Fri Sep  7 20:28:39 2007
 @@ -25,9 +25,9 @@
  my $points_per_sample = 3;
  my $ypoints = 160;
@@ -13,3 +13,12 @@
  my $tmp_dir = '/tmp/ovs';	 # temporary directory where to store the images
  
  my @graphs = (
+@@ -310,7 +310,7 @@
+ <title>Mail statistics for $host</title>
+ <meta http-equiv="Refresh" content="300" />
+ <meta http-equiv="Pragma" content="no-cache" />
+-<link rel="stylesheet" href="ovs.css" type="text/css" />
++<link rel="stylesheet" href="/ovs/ovs.css" type="text/css" />
+ </head>
+ <body>
+ HEADER
