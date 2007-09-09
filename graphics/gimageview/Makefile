@@ -23,6 +23,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
+OPTIONS=	SPLASH "Show splash on startup" On
+
 .if defined(WITH_GTK2)
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--with-gtk2
@@ -32,6 +34,10 @@ USE_GNOME=	gdkpixbuf gnomehier
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_SPLASH)
+CONFIGURE_ARGS+=	--disable-splash
+.endif
 
 .if ${HAVE_GNOME:Mimlib}!=""
 USE_GNOME+=	imlib
