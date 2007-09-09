@@ -130,6 +130,8 @@ MAN1+=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 	FvwmPerl.1 fvwm-perllib.1 FvwmProxy.1 FvwmTabs.1 FvwmWindowMenu.1 \
 	FvwmGtkDebug.1
 
+MLINKS=	fvwm.1 fvwm2.1
+
 .if !defined(WITHOUT_ICONS)
 PLIST_SUB+=	ICONS=""
 post-extract:
