@@ -10,6 +10,22 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20070908:
+AUTHOR:	gabor@FreeBSD.org, linimon@FreeBSD.org
+
+  * The Perl-related code parts have been extracted from bsd.port.mk to
+    bsd.perl.mk.  This includes the user-settable knobs (e.g. USE_PERL5)
+    and infrastructure parts of the code, like default targets.  The new
+    code is designed to be conditionally included based on either
+    USE_PERL5_*, PERL_CONFIGURE, or PERL_MODBUILD being set.  However,
+    some of the default settings remain in bsd.port.mk while we make
+    sure that all ports comply with this.
+
+  * A convenient version handling has been implemented for Perl-related
+    knobs.  With this new feature one can require a minimal, a maximal or an
+    exact version, that the given port needs.  For the full description and
+    some examples, please see the documentation in bsd.perl.mk.
+
 20070804:
 AUTHOR: gabor@FreeBSD.org
 The following functional changes were made to bsd.*.mk and to
