@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	4.1.7076.4458
+PORTVERSION=	4.2.180.1134
 CATEGORIES=	astro deskutils geography
-MASTER_SITES=	http://dl.google.com/earth/GE${PORTVERSION:C/\..*//g}/
+MASTER_SITES=	http://dl.google.com/earth/client/current/
 DISTFILES=	${TARGET_DISTFILE}
 EXTRACT_ONLY=	# none
 
@@ -26,7 +26,7 @@ USE_LINUX=	yes
 USE_GNOME=	desktopfileutils
 
 REAL_DISTFILE=		GoogleEarthLinux.bin
-TARGET_DISTFILE=	GoogleEarthLinux-${PORTVERSION}.bin
+TARGET_DISTFILE=	GoogleEarthLinux.bin
 
 FETCH_CMD=	/usr/bin/fetch -ARm
 FETCH_BEFORE_ARGS=	-o ${TARGET_DISTFILE}
