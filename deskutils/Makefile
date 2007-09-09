@@ -110,6 +110,7 @@
     SUBDIR += kdepim3
     SUBDIR += kdissert
     SUBDIR += kickpim
+    SUBDIR += kio_locate
     SUBDIR += klipoquery
     SUBDIR += kluje
     SUBDIR += kmatrix3d
