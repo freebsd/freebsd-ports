@@ -25,14 +25,9 @@ CNEWS_PORT?=	news/cnews
 CNEWSWRK?=	${WRKDIRPREFIX}${.CURDIR}/../../${CNEWS_PORT}/work
 NEWSBIN?=	${PREFIX}/libexec/cnews
 USE_GMAKE=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-cnews=${CNEWSWRK}
 PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-USE_PERL5=	yes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
