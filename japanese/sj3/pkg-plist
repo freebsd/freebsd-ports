@@ -1,24 +1,21 @@
 bin/sj3
 bin/sj3dic
 bin/sj3mkdic
-bin/sj3serv
 bin/sj3stat
+etc/sj3/cvtkey.news
+etc/sj3/cvtkey.nwp511
+etc/sj3/cvtkey.nwp517
+etc/sj3/cvtkey.xterm
+etc/sj3/serverrc
+etc/sj3/sjrc
+etc/sj3/sjrk
 include/sj3lib.h
 lib/libsj3lib.a
-lib/sj3/Nihongo.ps.Z
-lib/sj3/cvtkey.news
-lib/sj3/cvtkey.nwp511
-lib/sj3/cvtkey.nwp517
-lib/sj3/cvtkey.xterm
+lib/libsj3lib.so
+lib/libsj3lib.so.1
 lib/sj3/dict/sj3main.dic
-lib/sj3/hinsi.ms
-lib/sj3/makedict.ms
-lib/sj3/serverrc
-lib/sj3/sj3lib.ms
-lib/sj3/sj3serv.ms
-lib/sj3/sjrc
-lib/sj3/sjrk
-etc/rc.d/sj3.sh
+sbin/sj3serv
 @dirrm lib/sj3/dict/user
 @dirrm lib/sj3/dict
 @dirrm lib/sj3
+@dirrm etc/sj3

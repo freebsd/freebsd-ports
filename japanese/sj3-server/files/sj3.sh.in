@@ -1,22 +1,28 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-    echo "$0: Cannot determine the PREFIX" >&2
-    exit 1
-fi
+# PROVIDE: sj3
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
 
-case "$1" in
-start)
-	sj3=${PREFIX}/bin/sj3serv
-	if [ -f $sj3 ]; then
-	     $sj3
-	fi
-	;;
-stop)
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	;;
-esac
+# Define these sj3_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/sj3
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+sj3_enable=${sj3_enable:-"NO"}		# Enable sj3
+#sj3_program="%%PREFIX%%/sbin/sj3serv"	# Location of sj3
 
-exit 0
+. %%RC_SUBR%%
+
+name="sj3"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/sj3serv"
+
+load_rc_config $name
+run_rc_command "$1"
