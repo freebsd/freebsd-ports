@@ -12029,6 +12029,7 @@ php4		ports/lang/php4
 php4-bcmath	ports/math/php4-bcmath
 php4-bz2	ports/archivers/php4-bz2
 php4-calendar	ports/misc/php4-calendar
+php4-chartdirector	ports/graphics/php4-chartdirector
 php4-crack	ports/security/php4-crack
 php4-ctype	ports/textproc/php4-ctype
 php4-curl	ports/ftp/php4-curl
