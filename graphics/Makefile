@@ -529,6 +529,7 @@
     SUBDIR += php4-exif
     SUBDIR += php4-ffmpeg
     SUBDIR += php4-gd
+    SUBDIR += php5-chartdirector
     SUBDIR += php5-exif
     SUBDIR += php5-ffmpeg
     SUBDIR += php5-gd
