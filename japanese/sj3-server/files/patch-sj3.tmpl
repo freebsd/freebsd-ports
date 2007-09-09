@@ -1,0 +1,21 @@
+--- ./sj3.tmpl.orig	Sat Jun  9 23:22:10 2007
++++ ./sj3.tmpl	Sat Jun  9 23:22:45 2007
+@@ -56,18 +56,6 @@
+ 
+ #define Sj3LibRev 1.21
+ 
+-/*
+- * Change for FreeBSD.
+- * Because When the LANG variable is EUC, setlocale function in library libc 
+- * return NULL, use it in library libxpg4 
+- * Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/10
+- */
+-#if defined(FreeBSDArchitecture)
+-
+-CODE_LIBS	= -lxpg4
+-
+-#endif
+-
+ #if SystemV4 || SystemV
+ USETLI          = -DTLI
+ #else
