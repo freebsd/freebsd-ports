@@ -10,6 +10,7 @@
 %%RUBY_SITELIBDIR%%/rss/dublincore/2.0.rb
 %%RUBY_SITELIBDIR%%/rss/dublincore/atom.rb
 %%RUBY_SITELIBDIR%%/rss/image.rb
+%%RUBY_SITELIBDIR%%/rss/itunes.rb
 %%RUBY_SITELIBDIR%%/rss/maker.rb
 %%RUBY_SITELIBDIR%%/rss/maker/0.9.rb
 %%RUBY_SITELIBDIR%%/rss/maker/1.0.rb
@@ -21,6 +22,7 @@
 %%RUBY_SITELIBDIR%%/rss/maker/entry.rb
 %%RUBY_SITELIBDIR%%/rss/maker/feed.rb
 %%RUBY_SITELIBDIR%%/rss/maker/image.rb
+%%RUBY_SITELIBDIR%%/rss/maker/itunes.rb
 %%RUBY_SITELIBDIR%%/rss/maker/syndication.rb
 %%RUBY_SITELIBDIR%%/rss/maker/taxonomy.rb
 %%RUBY_SITELIBDIR%%/rss/maker/trackback.rb
