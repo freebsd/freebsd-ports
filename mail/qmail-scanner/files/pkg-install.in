@@ -13,7 +13,7 @@ QS_ID=%%QS_ID%%
 
 SPOOLDIR=%%SPOOLDIR%%
 
-case "$1" in
+case "$2" in
 PRE-INSTALL)
   # User and group
   ${PW} groupshow -n ${QS_USER} >/dev/null 2>&1 \
@@ -38,10 +38,6 @@ POST-INSTALL)
   ${CHOWN} -R ${QS_USER}:${QS_USER} ${SPOOLDIR}
   ${CHOWN} ${QS_USER}:${QS_USER} ${PREFIX}/bin/qmail-scanner-queue.pl
   ${CHMOD} 4755 ${PREFIX}/bin/qmail-scanner-queue.pl
-
-  # Initialize
-  ${PREFIX}/bin/qmail-scanner-queue.pl -z
-  ${PREFIX}/bin/qmail-scanner-queue.pl -g
 
   # Mod and owner (final)
   ${CHOWN} -R ${QS_USER}:${QS_USER} ${SPOOLDIR}
