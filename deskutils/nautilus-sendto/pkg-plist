@@ -1,12 +1,8 @@
 bin/nautilus-sendto
-%%GAIM%%lib/gaim/nautilus.la
-%%GAIM%%lib/gaim/nautilus.so
 lib/nautilus-sendto/plugins/libnstbluetooth.la
 lib/nautilus-sendto/plugins/libnstbluetooth.so
 lib/nautilus-sendto/plugins/libnstevolution.la
 lib/nautilus-sendto/plugins/libnstevolution.so
-%%GAIM%%lib/nautilus-sendto/plugins/libnstgaim.la
-%%GAIM%%lib/nautilus-sendto/plugins/libnstgaim.so
 lib/nautilus-sendto/plugins/libnstsylpheed.la
 lib/nautilus-sendto/plugins/libnstsylpheed.so
 lib/nautilus/extensions-1.0/libnautilus-sendto.la
