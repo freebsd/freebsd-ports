@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	jxm
-PORTVERSION=	1.2
-PORTREVISION=	1
-CATEGORIES=	audio
+PORTVERSION=	1.4
+CATEGORIES=	audio java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	javaxm
-DISTNAME=	jxm-${PORTVERSION}
 EXTRACT_SUFX=	.jar
+EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMPCR (USB XM radio) control software
@@ -24,17 +23,13 @@ JAVA_VERSION=	1.4+
 JAVA_OS=	native
 
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 SUB_FILES=	jxm.sh
 PLIST_FILES=	%%JAVAJARDIR%%/jxm.jar bin/jxm
 
-do-extract:
-	${MKDIR} ${WRKDIR}
-
 do-install:
-	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} \
-		${JAVAJARDIR}/jxm.jar
-	${INSTALL_SCRIPT} ${WRKDIR}/jxm.sh \
-		${PREFIX}/bin/jxm
+	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${JAVAJARDIR}/jxm.jar
+	@${INSTALL_SCRIPT} ${WRKDIR}/jxm.sh ${PREFIX}/bin/jxm
 
 .include <bsd.port.mk>
