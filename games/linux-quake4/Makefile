@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quake4
-PORTVERSION=	1.3
+PORTVERSION=	1.4.2
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|quake4/linux/|} \
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 NO_CDROM=	Redistribution is limited, see license
-NO_PACKAGE=	Package will be 230MB, set FORCE_PACKAGE if you really want it
+NO_PACKAGE=	Package will be 280MB, set FORCE_PACKAGE if you really want it
 Q4DIR=		lib/${PORTNAME}
 PLIST_SUB+=	Q4DIR="${Q4DIR}" \
 		LINUXBASE="${LINUXBASE}"
