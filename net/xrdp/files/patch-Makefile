@@ -1,5 +1,5 @@
---- ./Makefile.orig	Fri Mar  3 22:02:01 2006
-+++ ./Makefile	Sun Apr 29 12:42:28 2007
+--- Makefile.orig	Sun Jan 21 00:44:44 2007
++++ Makefile	Mon Jul 16 21:52:23 2007
 @@ -3,7 +3,6 @@
  CFGDIR = /etc/xrdp
  PIDDIR = /var/run
@@ -16,14 +16,13 @@
  	make -C vnc install
  	make -C libxrdp install
  	make -C xrdp install
-@@ -46,9 +44,7 @@
+@@ -46,8 +44,7 @@
  	make -C sesman install
  	make -C xup install
  	make -C docs install
 -	if [ -d /etc/pam.d ]; then install instfiles/pam.d/sesman /etc/pam.d/sesman; fi
--	install instfiles/xrdpstart.sh $(DESTDIR)/xrdpstart.sh
 -	install instfiles/xrdp_control.sh $(DESTDIR)/xrdp_control.sh
-+	if [ -d $(PREFIX)/etc/pam.d ]; then $(BSD_INSTALL_DATA) instfiles/pam.d/sesman $(PREFIX)/etc/pam.d/xrdp_sesman; fi
++	if [ -d $(PREFIX)/etc/pam.d ]; then $(BSD_INSTALL_DATA) instfiles/pam.d/sesman $(PREFIX)/etc/pam.d; fi
  
  installdeb:
- 	mkdir -p $(DESTDIRDEB)/usr/xrdp
+ 	mkdir -p $(DESTDIRDEB)/usr/lib/xrdp

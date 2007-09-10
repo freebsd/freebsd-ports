@@ -1,0 +1,11 @@
+--- rdp/Makefile.orig	Mon Sep 10 00:34:55 2007
++++ rdp/Makefile	Mon Sep 10 00:41:20 2007
+@@ -33,7 +33,7 @@
+ 	$(CC) $(C_OS_FLAGS) ../common/ssl_calls.c
+ 
+ install:
+-	install librdp.so $(DESTDIR)/librdp.so
++	$(BSD_INSTALL_PROGRAM) librdp.so $(DESTDIR)/librdp.so
+ 
+ installdeb:
+ 	install librdp.so $(DESTDIRDEB)/usr/lib/xrdp/librdp.so

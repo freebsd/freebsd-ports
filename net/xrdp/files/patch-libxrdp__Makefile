@@ -1,0 +1,11 @@
+--- libxrdp/Makefile.orig	Mon Sep 10 00:34:55 2007
++++ libxrdp/Makefile	Mon Sep 10 00:40:48 2007
+@@ -34,7 +34,7 @@
+ 	rm -f $(LIBXRDPOBJ) libxrdp.a libxrdp.so
+ 
+ install:
+-	install libxrdp.so $(DESTDIR)/libxrdp.so
++	$(BSD_INSTALL_PROGRAM) libxrdp.so $(DESTDIR)/libxrdp.so
+ 
+ installdeb:
+ 	install libxrdp.so $(DESTDIRDEB)/usr/lib/xrdp/libxrdp.so

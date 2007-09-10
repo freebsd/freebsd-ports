@@ -1,0 +1,11 @@
+--- xup/Makefile.orig	Mon Sep 10 00:34:55 2007
++++ xup/Makefile	Mon Sep 10 00:43:56 2007
+@@ -29,7 +29,7 @@
+ 	$(CC) $(C_OS_FLAGS) ../common/os_calls.c
+ 
+ install:
+-	install libxup.so $(DESTDIR)/libxup.so
++	$(BSD_INSTALL_PROGRAM) libxup.so $(DESTDIR)/libxup.so
+ 
+ installdeb:
+ 	install libxup.so $(DESTDIRDEB)/usr/lib/xrdp/libxup.so
