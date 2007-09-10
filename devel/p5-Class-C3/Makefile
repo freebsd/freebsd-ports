@@ -17,6 +17,8 @@ COMMENT=	A pragma to use the C3 method resolution order algorithm
 
 OPTIONS=	XS "XS speed optimizations" off
 
+PERL_CONFIGURE=	5.8.0+
+
 .include <bsd.port.pre.mk>
 
 .ifdef(WITH_XS)
@@ -25,8 +27,6 @@ RUN_DEPENDS=	p5-Class-C3-XS>=0.07:${PORTSDIR}/devel/p5-Class-C3-XS
 RUN_DEPENDS=	p5-Algorithm-C3>=0.06:${PORTSDIR}/devel/p5-Algorithm-C3
 .endif
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
-PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Class::C3.3 \
 		Class::C3::next.3
