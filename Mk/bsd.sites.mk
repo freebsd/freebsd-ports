@@ -178,8 +178,6 @@ MASTER_SITE_DEBIAN_POOL+=	\
 MASTER_SITE_EASYSW+=	\
 	http://ftp.easysw.com/pub/%SUBDIR%/ \
 	ftp://ftp.easysw.com/pub/%SUBDIR%/ \
-	ftp://ftp2.easysw.com/pub/%SUBDIR%/ \
-	ftp://ftp3.easysw.com/pub/%SUBDIR%/ \
 	http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/%SUBDIR%/ \
 	ftp://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/%SUBDIR%/
@@ -441,7 +439,6 @@ MASTER_SITE_GCC+=	\
 	ftp://ftp.uvsq.fr/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.gwdg.de/pub/misc/gcc/%SUBDIR%/ \
 	ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/gcc.gnu.org/pub/gcc/%SUBDIR%/ \
-	ftp://ftp.eos.hokudai.ac.jp/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.iij.ad.jp/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/lang/gcc/%SUBDIR%/ \
 	ftp://ftp.nluug.nl/mirror/languages/gcc/%SUBDIR%/ \
@@ -460,7 +457,6 @@ MASTER_SITE_GENTOO+=	\
 	http://adelie.polymtl.ca/%SUBDIR%/ \
 	http://mirrors.tds.net/gentoo/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/www.ibiblio.org/gentoo/%SUBDIR%/ \
-	http://ftp.gentoo.skynet.be/pub/gentoo/%SUBDIR%/ \
 	http://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/%SUBDIR%/ \
 	http://ftp.easynet.nl/mirror/gentoo/%SUBDIR%/ \
 	http://ftp.snt.utwente.nl/pub/os/linux/gentoo/%SUBDIR%/ \
@@ -486,7 +482,6 @@ MASTER_SITE_GENTOO+=	\
 	ftp://ftp.ucsb.edu/pub/mirrors/linux/gentoo/%SUBDIR%/ \
 	ftp://gentoo.mirrors.pair.com/%SUBDIR%/ \
 	ftp://mirrors.tds.net/gentoo/%SUBDIR%/ \
-	ftp://ftp.gentoo.skynet.be/pub/gentoo/%SUBDIR%/ \
 	ftp://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/%SUBDIR%/ \
 	ftp://ftp.easynet.nl/mirror/gentoo/%SUBDIR%/ \
 	ftp://ftp.snt.utwente.nl/pub/os/linux/gentoo/%SUBDIR%/ \
@@ -733,12 +728,9 @@ MASTER_SITE_KDE+=	\
 MASTER_SITE_MOZDEV+= \
 	http://ftp.scarlet.be/pub/mozdev/%SUBDIR%/ \
 	http://ftp.rz.tu-bs.de/pub/mirror/downloads.mozdev.org/%SUBDIR%/ \
-	http://mozdev.dns4.com/%SUBDIR%/ \
 	http://ftp.ntua.gr/pub/www/mozdev/%SUBDIR%/ \
 	http://ftp.heanet.ie/pub/mozdev/%SUBDIR%/ \
 	http://mozdev.oregonstate.edu/%SUBDIR%/ \
-	http://mozdev.xmundo.net/%SUBDIR%/ \
-	http://mirror.meisterwerk.net/rmozdev/%SUBDIR%/ \
 	http://ftp.ntua.gr/pub/www/mozdev/%SUBDIR%/ \
 	http://www.devlib.org/mozdev/%SUBDIR%/ \
 	http://mozdev.archive.hk/%SUBDIR%/ \
@@ -845,9 +837,7 @@ MASTER_SITE_PACKETSTORM+= \
 	http://packetstorm.troop218.org/%SUBDIR%/ \
 	http://packetstorm.linuxsecurity.com/%SUBDIR%/ \
 	http://packetstorm.digital-network.net/%SUBDIR%/ \
-	http://packetstorm.icx.fr/%SUBDIR%/ \
-	http://packetstorm.security-guide.de/%SUBDIR%/ \
-	http://packetstormsecurity.org.pk/%SUBDIR%/
+	http://packetstorm.icx.fr/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_PERL_CPAN)
@@ -902,7 +892,6 @@ MASTER_SITE_PGSQL+= \
 	ftp://ftp2.it.postgresql.org/mirrors/postgres/%SUBDIR%/ \
 	ftp://ftp.kr.postgresql.org/postgresql/%SUBDIR%/ \
 	ftp://ftp.lv.postgresql.org/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp.eu.postgresql.org/pub/unix/db/postgresql/%SUBDIR%/ \
 	ftp://ftp2.nl.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 	ftp://ftp4.nl.postgresql.org/postgresql.zeelandnet.nl/%SUBDIR%/ \
 	ftp://ftp6.pl.postgresql.org/pub/postgresql/%SUBDIR%/ \
@@ -913,8 +902,6 @@ MASTER_SITE_PGSQL+= \
 	ftp://ftp3.ru.postgresql.org/pub/mirror/postgresql/pub/%SUBDIR%/ \
 	ftp://ftp5.es.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 	ftp://ftp.se.postgresql.org/pub/databases/relational/postgresql/%SUBDIR%/ \
-	ftp://ftp2.ch.postgresql.org/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp.tw.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp3.tw.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp.postgresql.org/pub/%SUBDIR%/
 .endif
@@ -931,7 +918,6 @@ MASTER_SITE_PHP+= \
 	http://gr.php.net/%SUBDIR%/ \
 	http://it.php.net/%SUBDIR%/ \
 	http://jp.php.net/%SUBDIR%/ \
-	http://nl.php.net/%SUBDIR%/ \
 	http://se.php.net/%SUBDIR%/ \
 	http://uk.php.net/%SUBDIR%/ \
 	http://us2.php.net/%SUBDIR%/ \
@@ -963,7 +949,6 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.palomine.net/%SUBDIR%/ \
 	http://qmail.mirrors.summersault.com/%SUBDIR%/ \
 	http://qmail.cdsinet.net/%SUBDIR%/ \
-	http://qmail.teleglobe.net/%SUBDIR%/ \
 	http://qmail.glasswings.com.au/%SUBDIR%/ \
 	http://qmail.planetmirror.com/%SUBDIR%/ \
 	http://qmail.hostlink.com.hk/%SUBDIR%/ \
@@ -983,10 +968,8 @@ MASTER_SITE_QMAIL+= \
 	http://www.math.ntnu.no/mirror/www.qmail.org/%SUBDIR%/ \
 	http://qmail.konnekt.org/%SUBDIR%/ \
 	http://qmail.netvisao.pt/%SUBDIR%/ \
-	http://qmail.ssc.nsu.ru/%SUBDIR%/ \
 	http://qmail.ipg.sk/%SUBDIR%/ \
 	http://qmail.imasd.elmundo.es/%SUBDIR%/ \
-	http://qmail.netrogenic.com/%SUBDIR%/ \
 	http://qmail.omnis.ch/%SUBDIR%/ \
 	http://qmail.asylog.net/%SUBDIR%/ \
 	http://qmail.softflare.com/%SUBDIR%/ \
@@ -1085,10 +1068,8 @@ MASTER_SITE_SAMBA+= \
 	http://us3.samba.org/samba/ftp/%SUBDIR%/ \
 	ftp://ca.samba.org/%SUBDIR%/ \
 	ftp://de.samba.org/samba.org/%SUBDIR%/ \
-	ftp://ftp.k2.net/mirrors/samba/%SUBDIR%/ \
 	ftp://ftp.oss.eznetsols.org/samba/%SUBDIR%/ \
 	ftp://ru.samba.org/pub/samba/%SUBDIR%/ \
-	http://sambafr.idealx.org/samba/ftp/%SUBDIR%/ \
 	ftp://ftp.easynet.be/samba/%SUBDIR%/ \
 	ftp://ftp.linuxforum.net/ftp.samba.org/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/samba/&,}
@@ -1161,14 +1142,11 @@ MASTER_SITE_SUSE+= 	\
 	ftp://chuck.ucs.indiana.edu/linux/suse/suse/%SUBDIR%/ \
 	ftp://distro.ibiblio.org/pub/linux/distributions/suse/suse/%SUBDIR%/ \
 	ftp://ftp.oregonstate.edu/pub/suse/suse/%SUBDIR%/ \
-	http://suse.osuosl.org/suse/%SUBDIR%/ \
 	ftp://ftp.sunsite.utk.edu/pub/linux/suse/suse/%SUBDIR%/ \
 	http://sunsite.utk.edu/ftp/pub/linux/suse/suse/%SUBDIR%/ \
 	http://mirror.tamu.edu/suse/%SUBDIR%/ \
 	ftp://ftp.empiricalnetworks.com/pub/suse/%SUBDIR%/ \
 	http://suse.cs.utah.edu/suse/%SUBDIR%/ \
-	ftp://ftp.mirrors.net.ar/pub/suse/%SUBDIR%/ \
-	http://www.mirrors.net.ar/pub/suse/%SUBDIR%/ \
 	ftp://ftp.belnet.be/linux/suse/suse/%SUBDIR%/ \
 	http://ftp.unicamp.br/pub/suse/%SUBDIR%/ \
 	ftp://mirrors.netbg.com/suse/%SUBDIR%/ \
@@ -1281,8 +1259,7 @@ MASTER_SITE_TUCOWS+= \
 .endfor
 MASTER_SITE_TUCOWS+= \
 	http://linuxberg.nexicom.net/files/%SUBDIR%/ \
-	http://linuxberg.xs4all.nl/files/%SUBDIR%/ \
-	http://linuxberg.ua.pt/files/%SUBDIR%/
+	http://linuxberg.xs4all.nl/files/%SUBDIR%/
 .endif
 
 # List:		http://www.vim.org/mirrors.php
@@ -1336,7 +1313,6 @@ MASTER_SITE_WINDOWMAKER+= \
 MASTER_SITE_XCONTRIB+=	\
 	ftp://ftp.net.ohio-state.edu/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/%SUBDIR%/ \
-	ftp://ftp.duke.edu/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/ftp.x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/XFree86/mirror/X.Org/contrib/%SUBDIR%/ \
@@ -1364,7 +1340,6 @@ MASTER_SITE_XEMACS+= \
 	ftp://ftp.it.xemacs.org/unix/packages/XEMACS/%SUBDIR%/ \
 	ftp://ftp.kr.xemacs.org/pub/tools/emacs/xemacs/%SUBDIR%/ \
 	ftp://ftp.no.xemacs.org/pub/xemacs/%SUBDIR%/ \
-	ftp://ftp.pl.xemacs.org/pub/unix/editors/xemacs/%SUBDIR%/ \
 	ftp://ftp.pt.xemacs.org/pub/xemacs/%SUBDIR%/ \
 	ftp://ftp.ru.xemacs.org/pub/emacs/xemacs/%SUBDIR%/ \
 	ftp://ftp.se.xemacs.org/pub/gnu/xemacs/%SUBDIR%/ \
