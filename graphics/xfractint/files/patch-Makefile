@@ -1,11 +1,11 @@
---- Makefile.orig	Sun Sep 12 10:32:16 1999
-+++ Makefile	Tue Oct 12 20:41:38 1999
+--- Makefile.orig	Mon Apr  8 20:18:24 2002
++++ Makefile	Mon Sep  3 19:48:16 2007
 @@ -2,11 +2,11 @@
  # SRCDIR should be a path to the directory that will hold fractint.hlp
  # You will have to copy fractint.hlp to SRCDIR and make it world readable.
  # SRCDIR should also hold the .par, .frm, etc. files
--SRCDIR =  /usr/src/xfractint
-+SRCDIR =  ${PREFIX}/share/fractint
+-SRCDIR = .
++SRCDIR = ${PREFIX}/share/fractint
  # BINDIR is where you put your X11 binaries
 -BINDIR = /usr/X11R6/bin
 +BINDIR = ${PREFIX}/bin
@@ -15,45 +15,113 @@
  
  NOBSTRING =
  HAVESTRI =
-@@ -51,7 +51,7 @@
- #For Solaris, use CFLAGS = -I. -I/usr/openwin/include $(DEFINES) -g
- 
+@@ -55,7 +55,7 @@
  #CFLAGS = -I. -D_CONST $(DEFINES)
--CFLAGS = -I. $(DEFINES) -g -DBIG_ANSI_C -DLINUX 
+ #CFLAGS = -I. $(DEFINES) -g -DBIG_ANSI_C -DLINUX -Os -Wall -mpentium -DNASM
+ #CFLAGS = -I. $(DEFINES) -g -DBIG_ANSI_C -DLINUX -Os -DNASM
+-CFLAGS = -I. $(DEFINES) -g -DBIG_ANSI_C -DLINUX -Os
 +CFLAGS += -I. $(DEFINES) -DBIG_ANSI_C -I${X11BASE}/include
  
  # Gcc is often the only compiler that works for this
  # For HPUX, use CC = cc -Aa -D_HPUX_SOURCE
-@@ -60,7 +60,7 @@
+@@ -64,7 +64,7 @@
  # For Sun Solaris 2.x w/SparcCompilerC (cc), use CC = cc.
  # For Sun Solaris 2.x w/GNU gcc, use CC = gcc
  #CC = gcc
--CC = cc
+-CC = gcc
 +CC ?= cc
  
  # For HPUX, use LIBS = -L/usr/lib/X11R4 -lX11 -lm -lcurses -ltermcap
  # For AIX or OSF/1, add -lbsd
-@@ -68,8 +68,8 @@
- # For Apollo, change -lX11 to -L/usr/X11/libX11
+@@ -73,14 +73,14 @@
  # For Solaris, add -L/usr/openwin/lib
- # For Linux, use  
--LIBS = -L/usr/X11R6/lib -lX11 -lm -lncurses -ltermcap
--#LIBS = -L/usr/X11R6/lib -lX11 -lm -lcurses -ltermcap
-+#LIBS = -L/usr/X11R6/lib -lX11 -lm -lncurses -ltermcap
-+LIBS = -L${X11BASE}/lib -lX11 -lm -lcurses -ltermcap
- #LIBS = -lX11 -lm -lcurses -ltermcap
+ # For Linux, use
+ #LIBS = -L/usr/X11R6/lib -lX11 -lm -lncurses
+-LIBS = -L/usr/X11R6/lib -lX11 -lm -lncurses
++LIBS = -L${X11BASE}/lib -lX11 -lm -lcurses
+ #LIBS = -lX11 -lm -lcurses
  
- # HPUX fixes thanks to David Allport, Bill Broadley, and R. Lloyd.
-@@ -166,6 +166,8 @@
+ # For using nasm, set:
+ #AS = nasm
+ # Note that because of the differences between the assembler syntaxes,
+ #  nasm is the only one that will work.
+-AS = foo
++AS = nasm
+ 
+ # Below is for Linux with output file type of elf, turn all warnings on
+ AFLAGS = -f elf -w+orphan-labels
+@@ -123,31 +123,7 @@
+ 
+ LFILES = fractint.l penrose.l tiling.l
+ 
+-MAPFILES = \
+-Carlson1.map Digiorg1.map Digiorg2.map Gallet01.map Gallet02.map Gallet03.map \
+-Gallet04.map Gallet05.map Gallet06.map Gallet07.map Gallet08.map Gallet09.map \
+-Gallet10.map Gallet11.map Gallet12.map Gallet13.map Gallet14.map Gallet15.map \
+-Gallet16.map Gallet17.map Gallet18.map Lindaa01.map Lindaa02.map Lindaa03.map \
+-Lindaa04.map Lindaa05.map Lindaa06.map Lindaa07.map Lindaa08.map Lindaa09.map \
+-Lindaa10.map Lindaa11.map Lindaa12.map Lindaa14.map Lindaa15.map Lindaa16.map \
+-Lindaa17.map Morgan1.map Morgan2.map Morgan3.map Morgen3.map Skydye01.map \
+-Skydye02.map Skydye03.map Skydye04.map Skydye05.map Skydye06.map Skydye07.map \
+-Skydye08.map Skydye09.map Skydye10.map Skydye11.map Skydye12.map Wizzl011.map \
+-Wizzl012.map Wizzl013.map Wizzl014.map Wizzl015.map Wizzl016.map Wizzl017.map \
+-Wizzl018.map Wizzl019.map Wizzl020.map altern.map blues.map bud2.map bud3.map \
+-bud4.map bud5.map bud6.map bud7.map chroma.map damien1.map damien2.map  \
+-damien3.map damien4.map damien5.map default.map droz10.map droz11.map  \
+-droz12.map droz13.map droz14.map droz15.map droz21.map droz22.map droz23.map \
+-droz28.map droz31.map droz33.map droz34.map droz35.map droz36.map droz38.map \
+-droz39.map droz40.map droz44.map droz46.map droz49.map droz52.map droz54.map \
+-droz56.map droz60.map droz62.map droz8.map drozdis1.map firestrm.map \
+-froth3.map froth316.map froth6.map froth616.map gamma1.map gamma2.map \
+-glasses1.map glasses2.map goodega.map green.map grey.map grid.map headache.map \
+-landscap.map lkmtch00.map lkmtch01.map lkmtch02.map lkmtch03.map lkmtch04.map \
+-lkmtch05.map lkmtch06.map lkmtch07.map lkmtch08.map lkmtch09.map lkmtch10.map \
+-lkmtch11.map lkmtch12.map lkmtch13.map lkmtch14.map lkmtch15.map lkmtch16.map \
+-lkmtch17.map lkmtch18.map lkmtch19.map lyapunov.map neon.map paintjet.map \
+-royal.map topo.map volcano.map
++MAPFILES = altern.map default.map
+ 
+ OLDRUN = $(PARFILES) $(FRMFILES) $(IFSFILES) $(LFILES) \
+ $(MAPFILES) demo.key
+@@ -160,9 +136,7 @@
+ 
+ FILES = $(SRCFILES) $(RUNFILES)
+ 
+-ifeq ($(AS),nasm)
+-
+-OBJS = \
++NASMOBJS = \
+ 3d.o ant.o bigflt.o  biginit.o bignum.o bignumc.o calcfrac.o \
+ calcmand.o calmanfp.o cmdfiles.o decoder.o diskvidu.o editpal.o encoder.o \
+ evolve.o f16.o fpu087.o fracsuba.o fracsubr.o fractalb.o fractalp.o fractals.o \
+@@ -173,8 +147,6 @@
+ realdos.o rotate.o slideshw.o soi.o soi1.o stereo.o targa.o testpt.o tgaview.o \
+ tplus.o tplus_a.o unix.o unixscr.o video.o zoom.o calmanfx.o
+ 
+-else
+-
+ OBJS = \
+ 3d.o ant.o bigflt.o  biginit.o bignum.o bignumc.o calcfrac.o \
+ calcmand.o calmanfp.o cmdfiles.o decoder.o diskvidu.o editpal.o encoder.o \
+@@ -186,8 +158,6 @@
+ realdos.o rotate.o slideshw.o soi.o soi1.o stereo.o targa.o testpt.o tgaview.o \
+ tplus.o tplus_a.o unix.o unixscr.o video.o zoom.o
+ 
+-endif
+-
+ HOBJS = hc.o unix.o
+ 
+ HELP = help.src help2.src help3.src help4.src help5.src
+@@ -196,6 +166,8 @@
  .SUFFIXES:
- .SUFFIXES: .o .c .s .h
+ .SUFFIXES: .o .c .s .h .asm
  
 +all:	xfractint
 +
  xfractint: fractint.hlp .WAIT $(OBJS)
  	$(CC) -o xfractint $(CFLAGS) $(OBJS) $(LIBS)
  #	strip xfractint
-@@ -180,13 +182,14 @@
+@@ -210,13 +182,14 @@
  	rm -f $(OBJS) $(HOBJS) fractint.doc fractint.hlp hc xfractint helpdefs.h
  
  install: xfractint fractint.hlp
@@ -75,3 +143,24 @@
  
  fractint.hlp: hc $(HELP)
  	./hc /c
+@@ -240,10 +213,8 @@
+ help.o: help.c
+ 	$(CC) $(CFLAGS) -DSRCDIR=\"$(SRCDIR)\" -c help.c
+ 
+-ifeq ($(AS),nasm)
+ calmanfx.o: calmanfx.asm
+ 	$(AS) $(AFLAGS) calmanfx.asm
+-endif
+ 
+ sharsrc:	$(SRCFILES)
+ 	shar -s shirriff@eng.sun.com $(SRCFILES) > xfsrc.shar
+@@ -325,9 +296,7 @@
+ 
+ calmanfp.o: calmanfp.c fractint.h port.h fractype.h
+ 
+-ifeq ($(AS),nasm)
+ calmanfx.o: calmanfx.asm xfract_a.inc
+-endif
+ 
+ cmdfiles.o: cmdfiles.c fractint.h port.h fractype.h prototyp.h mpmath.h \
+ 			helpcom.h

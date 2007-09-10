@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	xfractint
-PORTVERSION=	3.10
-PORTREVISION=	1
+PORTVERSION=	20.2.04
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.phoenix.net/pub/USERS/twegner/ \
-		http://spanky.triumf.ca/pub/fractals/programs/unix/
-DISTNAME=	xfrac310
+MASTER_SITES=	http://www.sdboyd56.com/xfractint/
+DISTNAME=	xfract${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Unix port of fractint
@@ -20,6 +18,7 @@ NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
 USE_XLIB=	yes
+
 MAN1=		xfractint.1
 
 .include <bsd.port.mk>

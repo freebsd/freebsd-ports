@@ -3,6 +3,6 @@ Xfractint - The Unix port of fractint.
 Fractint is an IBM PC program to generate fractals, and was written by
 the Stone Soup Group.
 
-The unix port was done by Ken Shirriff  (shirriff@Sprite.Berkeley.EDU)
+The unix port was done by Ken Shirriff and modified by Scott D. Boyd.
 
 WWW: http://spanky.triumf.ca/www/fractint/xfractint_port.html
