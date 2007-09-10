@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pefile
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	devel python
-MASTER_SITES=	http://dkbza.org/pefile/
+MASTER_SITES=	http://pefile.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine.brodin@laposte.net
