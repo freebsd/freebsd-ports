@@ -1,0 +1,11 @@
+--- policy/sigs/Makefile.in.orig	Wed Jul 18 16:32:45 2007
++++ policy/sigs/Makefile.in	Wed Jul 18 16:33:13 2007
+@@ -171,7 +171,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-sigsdir = ${prefix}/policy/sigs
++sigsdir = ${prefix}/bro/policy/sigs
+ dist_sigs_DATA = dpd.sig ex.web-rules.sig p0fsyn.osf \
+ 	snort-default.sig ssl-worm.sig worm.sig 
+ 

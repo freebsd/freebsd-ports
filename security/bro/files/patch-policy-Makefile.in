@@ -1,0 +1,64 @@
+--- policy/Makefile.in.orig	Wed Jul 18 16:30:32 2007
++++ policy/Makefile.in	Wed Jul 18 16:31:47 2007
+@@ -190,7 +190,7 @@
+ 
+ 
+ # doesn't end in a sig
+-bropolicydir = ${prefix}/policy
++bropolicydir = ${prefix}/bro/policy
+ dist_bropolicy_DATA = bro.init adu.bro alarm.bro analy.bro \
+ 	anon.bro arp.bro backdoor.bro blaster.bro brolite.bro \
+ 	brolite-backdoor.bro brolite-sigs.bro capture-events.bro \
+@@ -542,30 +542,30 @@
+ 
+ 
+ install-data-hook:
+-	$(INSTALL_DATA) bro.bif.bro $(DESTDIR)${prefix}/policy/
+-	$(INSTALL_DATA) common-rw.bif.bro $(DESTDIR)${prefix}/policy/
+-	$(INSTALL_DATA) const.bif.bro $(DESTDIR)${prefix}/policy/
+-	$(INSTALL_DATA) dns-rw.bif.bro $(DESTDIR)${prefix}/policy/
+-	$(INSTALL_DATA) event.bif.bro $(DESTDIR)${prefix}/policy/
+-	$(INSTALL_DATA) finger-rw.bif.bro $(DESTDIR)${prefix}/policy/
+-	$(INSTALL_DATA) ftp-rw.bif.bro $(DESTDIR)${prefix}/policy/
+-	$(INSTALL_DATA) http-rw.bif.bro $(DESTDIR)${prefix}/policy/
+-	$(INSTALL_DATA) ident-rw.bif.bro $(DESTDIR)${prefix}/policy/
+-	$(INSTALL_DATA) smtp-rw.bif.bro $(DESTDIR)${prefix}/policy/
+-	$(INSTALL_DATA) strings.bif.bro $(DESTDIR)${prefix}/policy/
++	$(INSTALL_DATA) bro.bif.bro $(DESTDIR)${prefix}/bro/policy/
++	$(INSTALL_DATA) common-rw.bif.bro $(DESTDIR)${prefix}/bro/policy/
++	$(INSTALL_DATA) const.bif.bro $(DESTDIR)${prefix}/bro/policy/
++	$(INSTALL_DATA) dns-rw.bif.bro $(DESTDIR)${prefix}/bro/policy/
++	$(INSTALL_DATA) event.bif.bro $(DESTDIR)${prefix}/bro/policy/
++	$(INSTALL_DATA) finger-rw.bif.bro $(DESTDIR)${prefix}/bro/policy/
++	$(INSTALL_DATA) ftp-rw.bif.bro $(DESTDIR)${prefix}/bro/policy/
++	$(INSTALL_DATA) http-rw.bif.bro $(DESTDIR)${prefix}/bro/policy/
++	$(INSTALL_DATA) ident-rw.bif.bro $(DESTDIR)${prefix}/bro/policy/
++	$(INSTALL_DATA) smtp-rw.bif.bro $(DESTDIR)${prefix}/bro/policy/
++	$(INSTALL_DATA) strings.bif.bro $(DESTDIR)${prefix}/bro/policy/
+ 
+ uninstall-local:
+-	rm -f $(DESTDIR)${prefix}/policy/bro.bif.bro
+-	rm -f $(DESTDIR)${prefix}/policy/common-rw.bif.bro
+-	rm -f $(DESTDIR)${prefix}/policy/const.bif.bro
+-	rm -f $(DESTDIR)${prefix}/policy/dns-rw.bif.bro
+-	rm -f $(DESTDIR)${prefix}/policy/event.bif.bro
+-	rm -f $(DESTDIR)${prefix}/policy/finger-rw.bif.bro
+-	rm -f $(DESTDIR)${prefix}/policy/ftp-rw.bif.bro
+-	rm -f $(DESTDIR)${prefix}/policy/http-rw.bif.bro
+-	rm -f $(DESTDIR)${prefix}/policy/ident-rw.bif.bro
+-	rm -f $(DESTDIR)${prefix}/policy/smtp-rw.bif.bro
+-	rm -f $(DESTDIR)${prefix}/policy/strings.bif.bro
++	rm -f $(DESTDIR)${prefix}/bro/policy/bro.bif.bro
++	rm -f $(DESTDIR)${prefix}/bro/policy/common-rw.bif.bro
++	rm -f $(DESTDIR)${prefix}/bro/policy/const.bif.bro
++	rm -f $(DESTDIR)${prefix}/bro/policy/dns-rw.bif.bro
++	rm -f $(DESTDIR)${prefix}/bro/policy/event.bif.bro
++	rm -f $(DESTDIR)${prefix}/bro/policy/finger-rw.bif.bro
++	rm -f $(DESTDIR)${prefix}/bro/policy/ftp-rw.bif.bro
++	rm -f $(DESTDIR)${prefix}/bro/policy/http-rw.bif.bro
++	rm -f $(DESTDIR)${prefix}/bro/policy/ident-rw.bif.bro
++	rm -f $(DESTDIR)${prefix}/bro/policy/smtp-rw.bif.bro
++	rm -f $(DESTDIR)${prefix}/bro/policy/strings.bif.bro
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

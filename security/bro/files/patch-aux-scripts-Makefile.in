@@ -1,0 +1,11 @@
+--- aux/scripts/Makefile.in.orig	Wed Jul 18 16:27:01 2007
++++ aux/scripts/Makefile.in	Wed Jul 18 16:27:41 2007
+@@ -173,7 +173,7 @@
+ target_vendor = @target_vendor@
+ 
+ # override where to stick the scripts
+-scriptdir = ${prefix}/scripts
++scriptdir = ${prefix}/bro/scripts
+ dist_script_SCRIPTS = bro-logchk.pl host-to-addrs mvlog host-grep 
+ EXTRA_DIST = hot-report mon-report ip-grep ca-create ca-issue
+ all: all-am

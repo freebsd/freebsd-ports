@@ -1,0 +1,11 @@
+--- scripts/s2b/bro-include/Makefile.in.orig	Wed Jul 18 17:35:02 2007
++++ scripts/s2b/bro-include/Makefile.in	Wed Jul 18 17:35:25 2007
+@@ -171,7 +171,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-includesigsdir = ${prefix}/policy
++includesigsdir = ${prefix}/bro/policy
+ dist_includesigs_DATA = sig-addendum.sig sig-functions.bro
+ all: all-am
+ 

@@ -1,27 +1,36 @@
---- Makefile.in.orig	Sun Aug 31 04:39:14 2003
-+++ Makefile.in	Tue Oct 14 12:08:51 2003
-@@ -52,13 +52,13 @@
- LIBS = $(LIBEDIT_LIBS) @LIBS@ -lm
+--- Makefile.in.orig	Thu Dec 14 11:59:51 2006
++++ Makefile.in	Wed Jul 18 23:57:10 2007
+@@ -206,7 +206,7 @@
+ # noticed.
+ #
+ DISTCHECK_CONFIGURE_FLAGS = --disable-gtk-doc
+-versiondir = $(prefix)/etc
++versiondir = $(prefix)/bro/etc
+ dist_version_DATA = VERSION
+ chown = @CHOWN@
  
- # Purify barfs when c++ is used for $(CPLUS).
--PURIFY_CPLUS = g++
-+PURIFY_CPLUS = @CC@
- PURE_FLAGS = -chain-length=20
+@@ -658,9 +658,9 @@
+ install-brolite:
+ 	$(MAKE) install
+ 	( cd scripts && $(MAKE) install-brolite )
+-	- @CHOWN@ -R `cat scripts/bro_user_id` ${prefix}/
++	- @CHOWN@ -R `cat scripts/bro_user_id` ${prefix}/bro
+ 	@echo "*********************************************************"
+-	@echo "Please run \"${prefix}/etc/bro.rc --start\" to start bro"
++	@echo "Please run \"${prefix}/bro/scripts/bro.rc --start\" to start bro"
+ 	@echo "*********************************************************"
  
- YACC = @YACC@
- YFLAGS = -d -t -v
- LEX = @LEX@
--INSTALL = @INSTALL@ -d
-+INSTALL = @INSTALL_PROGRAM@
- INSTALL_DATA = @INSTALL_DATA@
- @SET_MAKE@
- COMPRESS = @COMPRESS@
-@@ -121,7 +121,7 @@
+ docs:
+@@ -687,9 +687,9 @@
  
- all: $(PKG)
+ # make sure all the dirs are correctly created and owned 
+ install-data-local:
+-	$(INSTALL) -d $(prefix)/logs
+-	$(INSTALL) -d $(prefix)/archive
+-	$(INSTALL) -d $(prefix)/var
++	$(INSTALL) -d $(prefix)/bro/logs
++	$(INSTALL) -d $(prefix)/bro/archive
++	$(INSTALL) -d $(prefix)/bro/var
  
--$(PKG): $(LIBEDIT_LIB) $(OBJ)
-+$(PKG): $(OBJ)
- 	$(CPLUS) -o $(EXEC) $(OBJ) $(LDFLAGS) $(LIBS)
- opt:
- 	@$(MAKE) $(MFLAGS) CCOPT="`echo $(CCOPT) | sed -e 's/-O2//;s/$$/ -O3/'`"
+ release:
+ 	./autogen.sh

@@ -1,0 +1,115 @@
+--- scripts/bro_config.in.orig	Tue Dec  5 15:58:52 2006
++++ scripts/bro_config.in	Sat Jul 14 14:38:48 2007
+@@ -6,7 +6,7 @@
+ # on the "configure" command line
+ # some machines (i.e. OSX) don't put sbin in the path by default
+ PATH=$PATH:/usr/sbin:/sbin
+-BROHOME=@prefix@
++BROHOME=@prefix@/bro
+ # Usage
+ Usage="bro_config: [-p prefix] [-d]"
+ # Debug mode? 
+@@ -39,9 +39,9 @@
+ bro_config_got_root()
+ { 
+     # make a backup of local.site.bro if it exists
+-    if [ -f local.site.bro ]; then 
++    if [ -f ${BROHOME}/site/local.site.bro ]; then 
+         echo "Detected an old local.site.bro, saving it to local.site.bro.save"
+-        cp local.site.bro local.site.bro.save
++        cp ${BROHOME}/site/local.site.bro ${BROHOME}/site/local.site.bro.save
+     fi
+ 
+     if [ `id -ur` -ne 0 ]; then 
+@@ -62,7 +62,7 @@
+ ######################################################################
+ bro_config_create_local_site_bro()
+ {
+-cat - > local.site.bro << _EOF
++cat - > ${BROHOME}/sitelocal.site.bro.default << _EOF
+ # This file should describe your network configuration.
+ # If your local network is a class C, and its network
+ # address was 192.168.1.0 and a class B network 
+@@ -263,7 +263,7 @@
+ # BRO_HOSTNAME=`hostname`
+ 
+ # Directory containing Bro binaries
+-BRO_BIN_DIR="${BRO_BIN_DIR:-${BROHOME}/bin}"
++BRO_BIN_DIR="${BRO_BIN_DIR:-@prefix@/bin}"
+ 
+ # Directory containing Bro logs
+ BROLOGS="${BROLOGS:-${BROHOME}/logs}"
+@@ -287,7 +287,7 @@
+ # BRO_PREFIX="local"
+ 
+ # Location of the Bro executable
+-BRO="${BRO:-$BRO_BIN_DIR/bro}"
++BRO="${BRO_BIN_DIR}/bro"
+ 
+ # Base command line options.
+ BRO_ADD_OPTS=" -W"
+@@ -352,7 +352,7 @@
+ BRO_EMAIL_REMOTE="${BRO_EMAIL_REMOTE}"
+ 
+ # User id to install and run Bro under
+-BRO_USER_ID="${BRO_USER_ID:-brother}"
++BRO_USER_ID="${BRO_USER_ID:-root}"
+ 
+ # Site name for reports (i.e. LBNL, FOO.COM, BAZ.ORG)
+ BRO_SITE_NAME="${BRO_SITE_NAME}"
+@@ -454,29 +454,29 @@
+         echo " done."
+         kill -INT $pid 2>&1 > /dev/null
+         echo -n "Analyzing dump file....."
+-        ./localnetMAC.pl -a 16 -r /tmp/bro_config.tcpdump.file.$$  -b local.site.bro 2>&1 > /dev/null
++        ${BROHOME}/scripts/localnetMAC.pl -a 16 -r /tmp/bro_config.tcpdump.file.$$  -b ${BROHOME}/site/local.site.bro 2>&1 > /dev/null
+         rm /tmp/bro_config.tcpdump.file.$$
+         #Yes there is a spelling error in the output
+         echo " done."
+-        num=`grep "MAC adresses" local.site.bro | awk '{print $3}'`
++        num=`grep "MAC adresses" ${BROHOME}/site/local.site.bro | awk '{print $3}'`
+         if [ "$num" -gt 2 ] ; then 
+             echo "You don't appear to be running on a DMZ (found more then two (2) hardware "
+-            echo "address. Please edit local.site.bro to reflect your correct network parameters"
+-            cp local.site.bro.default local.site.bro
++            echo "address. Please edit ${BROHOME}/site/local.site.bro to reflect your correct network parameters"
++            cp ${BROHOME}/site/local.site.bro.default ${BROHOME}/site/local.site.bro
+         else
+             echo "Your network appears to contain the following networks:"
+-            for net in ` grep ",$" local.site.bro|sed 's/,//g'`; 
++            for net in ` grep ",$" ${BROHOME}/site/local.site.bro|sed 's/,//g'`; 
+             do 
+                echo $net; 
+             done
+-            echo "Edit local.site.bro by hand if this is not correct" 
++            echo "Edit ${BROHOME}/site/local.site.bro by hand if this is not correct" 
+         fi
+     else
+-        if [ -f local.site.bro ]; then
++        if [ -f ${BROHOME}/site/local.site.bro ]; then
+             echo "No previous local.site.bro found. Creating default"
+             bro_config_create_local_site_bro
+             #cp local.site.bro.default local.site.bro
+-            echo "Please edit local.site.bro so that it describes your network configuration"
++            echo "Please edit ${BROHOME}/site/local.site.bro so that it describes your network configuration"
+         fi
+     fi
+ }
+@@ -617,7 +617,7 @@
+     #  source a bro.cfg if it exists, so we know the past default values from the
+     #  last run
+ 
+-    dirs="$BROHOME/etc/bro.cfg $BROHOME/etc/bro.cfg.example `pwd`/bro.cfg"
++    dirs="@prefix@/etc/bro.cfg @prefix@/etc/bro.cfg.example `pwd`/bro.cfg"
+     cfgused=
+ 
+     for cfgfile in $dirs ; do 
+@@ -783,7 +783,7 @@
+ bro_config_site_name()
+ {
+     if [ -z $BRO_SITE_NAME ]; then
+-        BRO_SITE_NAME=`hostname|awk -F. '{print $2 $3}'`
++        BRO_SITE_NAME=`hostname|awk -F. '{print $2"."$3}'`
+         if [ -z $BRO_SITE_NAME ] ; then 
+             BRO_SITE_NAME="SOMESITE"
+         fi

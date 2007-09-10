@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Wed Jul 18 16:48:03 2007
++++ src/Makefile.in	Wed Jul 18 16:48:34 2007
+@@ -550,7 +550,7 @@
+ 		   $(DISTCLEANFILES)
+ 
+ 
+-#bropolicydir=${prefix}/policy
++#bropolicydir=${prefix}/bro/policy
+ #dist_bropolicy_DATA = $(BIF_BRO)
+ CCOPT = @V_CCOPT@ -W -Wall -Wno-unused
+ INCLS = @V_INCLS@
