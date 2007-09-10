@@ -1,0 +1,32 @@
+--- ./bin/isabelle-process.orig	Sun Sep  2 15:23:58 2007
++++ ./bin/isabelle-process	Sun Sep  2 16:05:51 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: isabelle-process,v 1.13 2005/07/19 15:21:45 wenzelm Exp $
+ # Author: Markus Wenzel, TU Muenchen
+@@ -16,12 +16,12 @@
+ PRG="$(basename "$0")"
+ 
+ ISABELLE_HOME="$(cd "$(dirname "$0")"; cd "$(pwd -P)"; cd ..; pwd)"
+-source "$ISABELLE_HOME/lib/scripts/getsettings" || exit 2
++. "$ISABELLE_HOME/lib/scripts/getsettings" || exit 2
+ 
+ 
+ ## diagnostics
+ 
+-function usage()
++usage()
+ {
+   echo
+   echo "Usage: $PRG [OPTIONS] [INPUT] [OUTPUT]"
+@@ -48,7 +48,7 @@
+   exit 1
+ }
+ 
+-function fail()
++fail()
+ {
+   echo "$1" >&2
+   exit 2

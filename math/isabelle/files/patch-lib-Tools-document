@@ -1,0 +1,44 @@
+--- ./lib/Tools/document.orig	Sun Sep  2 15:11:55 2007
++++ ./lib/Tools/document	Sun Sep  2 15:48:20 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: document,v 1.22 2005/08/16 11:42:15 wenzelm Exp $
+ # Author: Markus Wenzel, TU Muenchen
+@@ -8,7 +8,7 @@
+ 
+ PRG="$(basename "$0")"
+ 
+-function usage()
++usage()
+ {
+   echo
+   echo "Usage: $PRG [OPTIONS] [DIR]"
+@@ -25,7 +25,7 @@
+   exit 1
+ }
+ 
+-function fail()
++fail()
+ {
+   echo "$1" >&2
+   exit 2
+@@ -88,7 +88,7 @@
+ 
+ # tagged region markup
+ 
+-function prep_tags ()
++prep_tags ()
+ {
+   (
+     IFS=","
+@@ -115,7 +115,7 @@
+ 
+ # prepare document
+ 
+-function pre_latex ()
++pre_latex ()
+ {
+   local FMT="$1"
+   [ -n "$CLEAN" ] && rm -f *.aux *.out *.ind *.idx *.ilg *.bbl *.blg *.log

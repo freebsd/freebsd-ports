@@ -1,0 +1,8 @@
+--- ./bin/isabelle.orig	Sun Sep  2 15:23:58 2007
++++ ./bin/isabelle	Sun Sep  2 16:05:44 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: isabelle,v 1.46 2005/05/17 07:58:47 wenzelm Exp $
+ # Author: Markus Wenzel, TU Muenchen

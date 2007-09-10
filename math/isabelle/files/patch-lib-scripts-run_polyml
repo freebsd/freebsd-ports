@@ -1,0 +1,57 @@
+--- lib/scripts/run-polyml.orig	Tue Aug 16 21:42:17 2005
++++ lib/scripts/run-polyml	Sun Sep  2 17:17:10 2007
+@@ -1,22 +1,36 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: run-polyml,v 1.38 2005/08/16 11:42:17 wenzelm Exp $
+ # Author: Markus Wenzel, TU Muenchen
+ #
+ # Poly/ML startup script.
+ 
+-export -n INFILE OUTFILE COPYDB COMPRESS MLTEXT TERMINATE NOWRITE
++SAVE_INFILE="$INFILE"
++SAVE_OUTFILE="$OUTFILE"
++SAVE_COPYDB="$COPYDB"
++SAVE_COMPRESS="$COMPRESS"
++SAVE_MLTEXT="$MLTEXT"
++SAVE_TERMINATE="$TERMINATE"
++SAVE_NOWRITE="$NOWRITE"
++unset INFILE OUTFILE COPYDB COMPRESS MLTEXT TERMINATE NOWRITE
++INFILE="$SAVE_INFILE"
++OUTFILE="$SAVE_OUTFILE"
++COPYDB="$SAVE_COPYDB"
++COMPRESS="$SAVE_COMPRESS"
++MLTEXT="$SAVE_MLTEXT"
++TERMINATE="$SAVE_TERMINATE"
++NOWRITE="$SAVE_NOWRITE"
+ 
+ 
+ ## diagnostics
+ 
+-function fail_out()
++fail_out()
+ {
+   echo "Unable to create output heap file: \"$OUTFILE\"" >&2
+   exit 2
+ }
+ 
+-function check_file()
++check_file()
+ {
+   if [ ! -f "$1" ]; then
+     echo "Unable to locate $1" >&2
+@@ -35,11 +49,11 @@
+   *-cygwin)
+     ML_DBASE_SUFFIX=".pmd"
+     POLY="$ML_HOME/PolyML.exe"
+-    function fixpath () { cygpath -m "$@"; }
++    fixpath () { cygpath -m "$@"; }
+     ;;
+   *)
+     POLY="$ML_HOME/poly"
+-    function fixpath () { echo -n "$@"; }
++    fixpath () { echo -n "$@"; }
+     ;;
+ esac
+ 

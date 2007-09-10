@@ -1,0 +1,23 @@
+--- ./bin/isabelle-interface.orig	Sun Sep  2 15:23:58 2007
++++ ./bin/isabelle-interface	Sun Sep  2 16:05:48 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: isabelle-interface,v 1.8 2005/05/17 16:10:33 wenzelm Exp $
+ # Author: Markus Wenzel, TU Muenchen
+@@ -16,12 +16,12 @@
+ PRG="$(basename "$0")"
+ 
+ ISABELLE_HOME="$(cd "$(dirname "$0")"; cd "$(pwd -P)"; cd ..; pwd)"
+-source "$ISABELLE_HOME/lib/scripts/getsettings" || exit 2
++. "$ISABELLE_HOME/lib/scripts/getsettings" || exit 2
+ 
+ 
+ ## diagnostics
+ 
+-function fail()
++fail()
+ {
+   echo "$1" >&2
+   exit 2

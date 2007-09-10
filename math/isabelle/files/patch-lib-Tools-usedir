@@ -1,0 +1,57 @@
+--- lib/Tools/usedir.orig	Wed Aug 31 23:46:31 2005
++++ lib/Tools/usedir	Sun Sep  2 19:04:54 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: usedir,v 1.60 2005/08/31 13:46:31 wenzelm Exp $
+ # Author: Markus Wenzel, TU Muenchen
+@@ -10,7 +10,7 @@
+ 
+ PRG="$(basename "$0")"
+ 
+-function usage()
++usage()
+ {
+   echo
+   echo "Usage: $PRG [OPTIONS] LOGIC NAME"
+@@ -40,18 +40,18 @@
+   exit 1
+ }
+ 
+-function fail()
++fail()
+ {
+   echo "$1" >&2
+   exit 2
+ }
+ 
+-function check_bool()
++check_bool()
+ {
+   [ "$1" = true -o "$1" = false ] || fail "Bad boolean: \"$1\""
+ }
+ 
+-function check_number()
++check_number()
+ {
+   [ -n "$1" -a -z "$(echo "$1" | tr -d '[0-9]')" ] || fail "Bad number: \"$1\""
+ }
+@@ -77,7 +77,7 @@
+ PROOFS=0
+ VERBOSE=false
+ 
+-function getoptions()
++getoptions()
+ {
+   OPTIND=1
+   while getopts "C:D:P:V:bc:d:f:g:i:m:p:rs:v:" OPT
+@@ -198,7 +198,7 @@
+ fi
+ 
+ 
+-SECONDS=0
++SECONDS=$(( `date +'%j * 86400 + %H * 3600 + %M * 60 + %S'` ))
+ 
+ if [ -n "$BUILD" ]; then
+   ITEM="$SESSION"

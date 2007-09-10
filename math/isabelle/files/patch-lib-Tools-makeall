@@ -1,0 +1,28 @@
+--- lib/Tools/makeall.orig	Wed Apr 27 03:50:14 2005
++++ lib/Tools/makeall	Sun Sep  2 19:04:36 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: makeall,v 1.19 2005/04/26 17:50:14 wenzelm Exp $
+ # Author: Markus Wenzel, TU Muenchen
+@@ -13,8 +13,9 @@
+ ## diagnostics
+ 
+ PRG="$(basename "$0")"
++SECONDS=$(( `date +'%j * 86400 + %H * 3600 + %M * 60 + %S'` ))
+ 
+-function usage()
++usage()
+ {
+   echo
+   echo "Usage: $PRG [ARGS ...]"
+@@ -24,7 +25,7 @@
+   exit 1
+ }
+ 
+-function fail()
++fail()
+ {
+   echo "$1" >&2
+   exit 2

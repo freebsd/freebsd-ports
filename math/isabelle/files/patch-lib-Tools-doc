@@ -1,0 +1,26 @@
+--- ./lib/Tools/doc.orig	Sun Sep  2 15:11:55 2007
++++ ./lib/Tools/doc	Sun Sep  2 15:48:14 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: doc,v 1.13 2005/04/13 16:48:06 wenzelm Exp $
+ # Author: Markus Wenzel, TU Muenchen
+@@ -8,7 +8,7 @@
+ 
+ PRG="$(basename "$0")"
+ 
+-function usage()
++usage()
+ {
+   echo
+   echo "Usage: $PRG [DOC]"
+@@ -18,7 +18,7 @@
+   exit 1
+ }
+ 
+-function fail()
++fail()
+ {
+   echo "$1" >&2
+   exit 2

@@ -1,0 +1,8 @@
+--- ./lib/scripts/polyml-platform.orig	Sun Sep  2 15:13:40 2007
++++ ./lib/scripts/polyml-platform	Sun Sep  2 15:54:17 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: polyml-platform,v 1.1 2005/08/01 17:20:48 wenzelm Exp $
+ #

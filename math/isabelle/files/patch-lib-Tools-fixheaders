@@ -1,0 +1,17 @@
+--- ./lib/Tools/fixheaders.orig	Sun Sep  2 15:11:55 2007
++++ ./lib/Tools/fixheaders	Sun Sep  2 15:48:38 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: fixheaders,v 1.2 2005/07/06 08:34:07 wenzelm Exp $
+ # Author: Florian Haftmann, TUM
+@@ -10,7 +10,7 @@
+ 
+ PRG="$(basename "$0")"
+ 
+-function usage()
++usage()
+ {
+   echo
+   echo "Usage: $PRG [FILES|DIRS...]"

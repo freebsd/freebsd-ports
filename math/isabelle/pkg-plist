@@ -1959,7 +1959,6 @@ bin/isatool
 %%DATADIR%%/etc/isar-keywords.el
 %%DATADIR%%/etc/proofgeneral-settings.el
 %%DATADIR%%/etc/settings
-%%DATADIR%%/etc/settings.orig
 %%DATADIR%%/etc/user-settings.sample
 %%DATADIR%%/heaps/%%HEAPSUBDIR%%/CCL
 %%DATADIR%%/heaps/%%HEAPSUBDIR%%/CTT

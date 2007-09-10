@@ -1,0 +1,32 @@
+--- ./bin/isatool.orig	Sun Sep  2 15:23:58 2007
++++ ./bin/isatool	Sun Sep  2 16:05:57 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: isatool,v 1.22 2005/05/17 07:58:47 wenzelm Exp $
+ # Author: Markus Wenzel, TU Muenchen
+@@ -16,12 +16,12 @@
+ PRG="$(basename "$0")"
+ 
+ ISABELLE_HOME="$(cd "$(dirname "$0")"; cd "$(pwd -P)"; cd ..; pwd)"
+-source "$ISABELLE_HOME/lib/scripts/getsettings" || exit 2
++. "$ISABELLE_HOME/lib/scripts/getsettings" || exit 2
+ 
+ 
+ ## diagnostics
+ 
+-function usage()
++usage()
+ {
+   echo
+   echo "Usage: $PRG TOOL [ARGS ...]"
+@@ -49,7 +49,7 @@
+   exit 1
+ }
+ 
+-function fail()
++fail()
+ {
+   echo "$1" >&2
+   exit 2
