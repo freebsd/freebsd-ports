@@ -14,11 +14,12 @@ MASTER_SITES=	SF/translate
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Converts between many translation formats
 
-RUN_DEPENDS=	py*-levenshtein>=0:${PORTSDIR}/devel/py-levenshtein \
+BUILD_DEPENDS=	py*-levenshtein>=0:${PORTSDIR}/devel/py-levenshtein \
 		iso-codes>=1.3:${PORTSDIR}/misc/iso-codes \
 		bash:${PORTSDIR}/shells/bash \
 		py*-elementtree>=0:${PORTSDIR}/devel/py-elementtree \
 		msghack:${PORTSDIR}/devel/gettext-msghack
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 # Can use psyco (on i386)
 # po2html may require utidylib
 
