@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opensc
-DISTVERSION=	0.11.3
+DISTVERSION=	0.11.4
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
@@ -16,7 +16,7 @@ COMMENT=	Libraries and utilities to access smart cards
 
 OPTIONS=	OPENCT "Enable direct OpenCT backend support" on \
 		PCSC "Enable PC/SC backend support" off \
-		SIGNER "Install signer browser plugin" off
+		SIGNER "Enable signer browser plugin" off
 
 USE_AUTOTOOLS=	libltdl:15
 USE_OPENSSL=	yes
@@ -77,7 +77,7 @@ LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 CONFIGURE_ARGS+=--disable-pcsc-lite
 .endif
 
-.if defined(WITH_SIGNER) || exists(${LOCALBASE}/lib/libassuan.a)
+.if defined(WITH_SIGNER)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
 PINENTRY?=	${LOCALBASE}/bin/pinentry
 PINENTRY_PORT?=	security/pinentry
@@ -88,6 +88,7 @@ CONFIGURE_ARGS+=--with-libassuan-prefix=${LOCALBASE} \
 		--with-pin-entry=${PINENTRY}
 PLIST_SUB+=	SIGNER=""
 .else
+CONFIGURE_ARGS+=--disable-nsplugin
 PLIST_SUB+=	SIGNER="@comment "
 .endif
 
