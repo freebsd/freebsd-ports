@@ -6,15 +6,10 @@
 #
 
 PORTNAME=	Unreal
-PORTVERSION=	3.2.6
+PORTVERSION=	3.2.7
 CATEGORIES=	irc ipv6
-MASTER_SITES=	http://www.ilmarinen.us/unreal/ \
-		http://unrealircd.alert-net.com/ \
-		http://www1.dnwt.net/unreal/
-#		http://www.tiefighter.org/~unreal/downloads/ \  # file missing
-#		http://mirror.nimsay-networks.com/unrealircd/ \ # file missing
-#		http://unrealircd.za.net/ \                     # file missing
-#		ftp://unrealircd.za.net/pub/UnrealIRCd/ \    # connect refused
+MASTER_SITES=	http://unrealircd.pimpmylinux.org/ \
+		http://unrealircd.icedslash.com/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -22,7 +17,7 @@ COMMENT=	Unreal - the next generation ircd
 
 LIB_DEPENDS=	cares.1:${PORTSDIR}/dns/c-ares
 
-WRKSRC=		${WRKDIR}/${PORTNAME}3.2
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 MODULESDIR=	${PREFIX}/lib/${PORTNAME}
 CONFIGDIR=	${PREFIX}/etc/${PORTNAME}
