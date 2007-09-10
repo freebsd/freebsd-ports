@@ -503,7 +503,9 @@ rman-3.*		textproc/rman		Do not sell for profit
 RealPlayer-*.rpm	multimedia/linux-realplayer Redistribution not allowed
 ruby/ruby_cast_256.zip	security/ruby-cast_256	Crypto; export-controlled
 runrev/linux.tgz	devel/linux-runrev	Do not sell for profit
-savage/savage*		games/linux-savage	Savage is freeware, but i am
+savage/Samuraiwars*	games/linux-savage-samuraiwars	SamuraiWars is freeware, but i am
+							not sure of its license
+savage/SFE*		games/linux-savage	Savage is freeware, but i am
 						not sure of its license
 sdr-*			mbone/sdr		Crypto; export-controlled
 seatools_cli.tar	sysutils/seatools	Distfile should be loaded by hand
