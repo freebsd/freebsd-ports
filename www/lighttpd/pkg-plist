@@ -100,4 +100,5 @@ lib/lighttpd/mod_webdav.a
 lib/lighttpd/mod_webdav.la
 lib/lighttpd/mod_webdav.so
 sbin/lighttpd
+sbin/lighttpd-angel
 @dirrm lib/lighttpd
