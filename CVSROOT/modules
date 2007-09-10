@@ -8198,6 +8198,7 @@ nhc98		ports/lang/nhc98
 nibbles		ports/games/nibbles
 nicetext	ports/textproc/nicetext
 nickle		ports/lang/nickle
+nickleby	ports/x11-wm/nickleby
 nicotine	ports/net-p2p/nicotine
 nicotine-plus	ports/net-p2p/nicotine-plus
 nifmon		ports/net/nifmon
