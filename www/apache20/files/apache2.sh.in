@@ -13,6 +13,9 @@
 #                             Set it to "YES" to enable apache2
 # apache2_profiles (str):     Set to "" by default.
 #                              Define your profiles here.
+# apache2ssl_enable (bool):   Set to "NO" by default.
+#                             Set it to "YES" to start apache with SSL   
+#                             (if <IfDefined SSL> exists in httpd.conf)
 # apache2limits_enable (bool):Set to "NO" by default.
 #                             Set it to yes to run `limits $limits_args`
 #                             just before apache starts.
@@ -38,6 +41,7 @@ pidfile="${_pidprefix}.pid"
 required_files=%%PREFIX%%/etc/apache2/httpd.conf
 
 [ -z "$apache2_enable" ]       && apache2_enable="NO"
+[ -z "${apache2ssl_enable}" ]  && apache2ssl_enable="NO"
 [ -z "$apache2_profiles" ]     && apache2_profiles=""
 [ -z "$apache2_flags" ]        && apache2_flags=""
 [ -z "$apache2limits_enable" ] && apache2limits_enable="NO"
@@ -56,6 +60,7 @@ if [ -n "$2" ]; then
 		fi
 		required_files="${apache2_configfile}"
 		eval apache2_enable="\${apache2_${profile}_enable:-${apache2_enable}}"
+		eval apache2ssl_enable=\${apache2ssl_${profile}_enable:-NO}
 		eval apache2_flags="\${apache2_${profile}_flags:-${apache2_flags}}"
 		eval apache2_http_accept_enable="\${apache2_${profile}_http_accept_enable:-${apache2_http_accept_enable}}"
 		eval apache2limits_enable="\${apache2limits_${profile}_enable:-${apache2limits_enable}}"
@@ -79,6 +84,9 @@ else
 		exit 0
 	fi
 fi
+
+checkyesno apache2ssl_enable && \
+			apache2_flags="-DSSL $apache2_flags"
 
 apache2_requirepidfile()
 {
