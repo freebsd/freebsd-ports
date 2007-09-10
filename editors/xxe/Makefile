@@ -7,22 +7,20 @@
 
 PORTNAME=	xxe
 PORTVERSION=	${XXE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	editors java
 MASTER_SITES=	http://www.xmlmind.net/xmleditor/_download/
-PKGNAMESUFFIX=	-std
+PKGNAMESUFFIX=	-perso
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	fenner@FreeBSD.Org
 COMMENT=	A validating XML editor featuring a word processor-like view
 
-BROKEN=		Does not fetch
-
 USE_JAVA=	YES
 JAVA_VERSION=	1.5
 NO_BUILD=	YES
 
-RESTRICTED=	"Licensee may not distribute the Software"
+#RESTRICTED=	"Licensee may not distribute the Software"
 
 BINS=		convertdoc csscheck deploywebstart dtdtoxsd dtdvalid \
 		rngvalid schvalid xsdvalid xxe
