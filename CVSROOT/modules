@@ -1508,7 +1508,6 @@ concorde	ports/math/concorde
 condor		ports/sysutils/condor
 conduit		ports/deskutils/conduit
 cone		ports/mail/cone
-configgen	ports/devel/configgen
 confregdecode	ports/net-mgmt/confregdecode
 conglomerate	ports/editors/conglomerate
 conkeror	ports/www/conkeror
@@ -3939,8 +3938,6 @@ gnosamba	ports/net/gnosamba
 gnotepad+	ports/editors/gnotepad+
 gnotime		ports/deskutils/gnotime
 gnowavcut	ports/audio/gnowavcut
-gnu-autoconf	ports/devel/gnu-autoconf
-gnu-automake	ports/devel/gnu-automake
 gnu-finger	ports/net/gnu-finger
 gnu-radius	ports/net/gnu-radius
 gnu-regexp	ports/java/gnu-regexp
