@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_QuickForm_Livesearch
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -20,7 +20,7 @@ CATEGORY=	HTML/QuickForm
 FILES=		live.js livesearch_select.php
 EXAMPLES=	auto_server.php index.php live.js livesearch.class.php \
 		myfunction.php shadow.gif shadowAlpha.png style.css
-_EXAMPLESDIR=	example
+_EXAMPLESDIR=	docs/example
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
