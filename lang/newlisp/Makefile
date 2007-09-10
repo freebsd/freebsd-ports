@@ -19,7 +19,6 @@ COMMENT=	LISP like scripting language
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
-STRIP=		#empty
 
 MAN1=	newlisp.1 newlispdoc.1
 
@@ -118,7 +117,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/newlisp ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/util/newlispdoc ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/util/newlispdoc ${PREFIX}/bin/
 
 	${MKDIR} ${DATADIR}/util/
 	${INSTALL_DATA} ${WRKSRC}/util/syntax.cgi \
