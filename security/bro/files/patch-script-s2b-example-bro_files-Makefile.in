@@ -1,0 +1,14 @@
+--- scripts/s2b/example_bro_files/Makefile.in.orig	Wed Jul 18 17:39:54 2007
++++ scripts/s2b/example_bro_files/Makefile.in	Wed Jul 18 17:40:29 2007
+@@ -172,9 +172,9 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-actiondir = ${prefix}/policy
++actiondir = ${prefix}/bro/policy
+ dist_action_DATA = sig-action.bro
+-sigsdir = ${prefix}/site
++sigsdir = ${prefix}/bro/site
+ dist_sigs_DATA = signatures.sig
+ all: all-am
+ 

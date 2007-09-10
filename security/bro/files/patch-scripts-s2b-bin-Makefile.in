@@ -1,0 +1,11 @@
+--- scripts/s2b/bin/Makefile.in.orig	Wed Jul 18 17:33:29 2007
++++ scripts/s2b/bin/Makefile.in	Wed Jul 18 17:34:02 2007
+@@ -321,7 +321,7 @@
+ 
+ 
+ # OR we can install them on a make install 
+-#scriptsdir=$(prefix)/etc
++#scriptsdir=$(prefix)/bro/scripts
+ #dist_scripts_SCRIPTS = s2b.pl snort2bro
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

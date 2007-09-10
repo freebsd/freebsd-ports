@@ -1,0 +1,47 @@
+--- scripts/bro.rc.in.orig	Fri Jul 13 15:53:29 2007
++++ scripts/bro.rc.in	Fri Jul 13 15:59:26 2007
+@@ -25,7 +25,7 @@
+ # For tasks to complete before and after Bro starts please edit the following
+ # scripts to suit your needs.  For those of you familiar with dhclient this
+ # uses the same idea.
+-#  Before Bro starts $BROHOME/etc/bro.rc-hooks.sh
++#  Before Bro starts @prefix@/bin/bro.rc-hooks.sh
+ 
+ # See the bottom of this script for an explanation of how this all works.
+ # I'll try my best to be clear....
+@@ -35,14 +35,14 @@
+ RETVAL=0
+ 
+ # picked up from configure at install time
+-BROHOME="@prefix@"
++BROHOME="@prefix@/bro"
+ export BROHOME
+ 
+ # Set the environment.
+-source_config="${BROHOME}/etc/bro.cfg"
++source_config="@prefix@/etc/bro.cfg"
+ 
+ # Location of bro-hooks.sh script
+-bro_hooks="${BROHOME}/etc/bro.rc-hooks.sh"
++bro_hooks="@prefix@/bro/scripts/bro.rc-hooks.sh"
+ 
+ # Set the full path to this script as called
+ if [ `echo ${0} | grep -E "^/"` ]; then
+@@ -88,7 +88,7 @@
+ export BROLOGS
+ export BROPATH
+ export BROHOME
+-export PATH="${BROHOME}/bro/bin:${BROHOME}/bro/scripts:/usr/local/bin:/usr/local/sbin:${PATH}" 
++export PATH="@prefix@/bin:${BROHOME}/scripts:/usr/local/bin:/usr/local/sbin:${PATH}" 
+ 
+ # Make sure that the $BRO_RUNTIME_DIR exists and is writtable
+ if [ ! -d "${BRO_RUNTIME_DIR}" ]; then
+@@ -1033,7 +1033,7 @@
+ # running instance of Bro.
+ # bro.rc logs it's actions to syslog via the logger command.
+ # bro.rc offers users an interface into the starting and stopping of a Bro
+-# process via the file $BROHOME/etc/bro.rc-hooks.rc.  This allows for
++# process via the file @prefix@/bro/scripts/bro.rc-hooks.rc.  This allows for
+ # actions to be sent to any custom monitoring or alerting programs the
+ # user may wish to use.
+ 

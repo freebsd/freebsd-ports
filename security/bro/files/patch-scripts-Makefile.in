@@ -1,0 +1,92 @@
+--- scripts/Makefile.in.orig	Thu Dec 14 11:59:53 2006
++++ scripts/Makefile.in	Wed Jul 18 22:30:43 2007
+@@ -186,12 +186,12 @@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ bro_bin = ${prefix}/bin
+-bro_logs = ${prefix}/logs
++bro_logs = ${prefix}/bro/logs
+ bro_etc = ${prefix}/etc
+-bro_site = ${prefix}/site
+-bro_scripts = ${prefix}/scripts
+-bro_reports = ${prefix}/reports
+-bro_perlmods = ${prefix}/perl
++bro_site = ${prefix}/bro/site
++bro_scripts = ${prefix}/bro/scripts
++bro_reports = ${prefix}/bro/reports
++bro_perlmods = ${prefix}/bro/perl
+ 
+ # where to download signatures from.
+ SIGHOST = www.bro-ids.org
+@@ -222,9 +222,9 @@
+ bin_SCRIPT = bro.rc 
+ 
+ # more files! Ugggg, will the pain ever stop?
+-scoredir = $(prefix)/etc
++scoredir = $(prefix)/bro/etc
+ dist_score_DATA = alert_scores signature_scores
+-scriptsdir = $(prefix)/scripts
++scriptsdir = $(prefix)/bro/scripts
+ dist_scripts_SCRIPTS = bro_log_compress.sh \
+    frontend-mail-reports.sh frontend-site-report.sh push_logs.sh mail_notice.sh
+ 
+@@ -596,11 +596,11 @@
+ 	rm -f $(bro_etc)/bro.rc
+ 	rm -f $(bro_etc)/bro.cfg
+ 	rm -f $(bro_etc)/bro.cfg.example
+-	rm -f $(prefix)/etc/bro.rc-hooks.sh
++	rm -f $(prefix)/bro/scripts/bro.rc-hooks.sh
+ 	rm -f  $(prefix)/site/local.site.bro
+ 	rm -f  $(prefix)/site/${brohost}.bro
+ 	$(srcdir)/install_cron.sh uninstall
+-	-rm -f $(prefix)/etc/bro.rc-hooks.sh.new 
++	-rm -f $(prefix)/bro/scripts/bro.rc-hooks.sh.new 
+ 	-rm -f /usr/local/etc/rc.d/bro.sh
+ 
+ # install the stuff to do reports
+@@ -625,14 +625,14 @@
+ 	@if [ ! -s signatures.sig.new ] ; then \
+ 		echo "Error in download. Try again later." ; \
+ 	else \
+-		if [ ! -f $(prefix)/site/signatures.sig ] ; then  \
++		if [ ! -f $(prefix)/bro/site/signatures.sig ] ; then  \
+ 			echo "No previous version, installing new version." ; \
+-			cp signatures.sig.new $(prefix)/site/signatures.sig ; \
++			cp signatures.sig.new $(prefix)/bro/site/signatures.sig ; \
+ 		else \
+-			cp signatures.sig.new $(prefix)/site/signatures.sig.new ; \
++			cp signatures.sig.new $(prefix)/bro/site/signatures.sig.new ; \
+ 			echo "***********************************************************" ; \
+ 			echo "A new signature file (signatures.sig.new) has been placed in" ; \
+-			echo "$(prefix)/site. Please compare it to your current signatures.sig " ; \
++			echo "$(prefix)/bro/site. Please compare it to your current signatures.sig " ; \
+ 			echo "and copy it over if there are no significant differences." ; \
+ 			echo "***********************************************************" ; \
+ 		fi \
+@@ -669,20 +669,20 @@
+ 	else \
+ 		$(INSTALL_DATA) $(srcdir)/local.lite.bro $(bro_site)/${brohost}.bro.new ;   \
+ 	fi
+-	@if [ ! -f $(prefix)/etc/bro.rc-hooks.sh ] ; then              \
+-		$(INSTALL_DATA) $(srcdir)/bro.rc-hooks.sh $(prefix)/etc/bro.rc-hooks.sh ;   \
++	@if [ ! -f $(prefix)/bro/scripts/bro.rc-hooks.sh ] ; then              \
++		$(INSTALL_DATA) $(srcdir)/bro.rc-hooks.sh $(prefix)/bro/scripts/bro.rc-hooks.sh ;   \
+ 	else \
+-		$(INSTALL_DATA) $(srcdir)/bro.rc-hooks.sh $(prefix)/etc/bro.rc-hooks.sh.new ; \
++		$(INSTALL_DATA) $(srcdir)/bro.rc-hooks.sh $(prefix)/bro/scripts/bro.rc-hooks.sh.new ; \
+ 	fi
+ 
+ # Default files that can be installed/reinstalled, not site specific
+ install_default_files:
+ 	$(INSTALL) $(srcdir)/mail_reports.sh $(bro_scripts)/mail_reports.sh
+-	$(INSTALL) bro.rc $(prefix)/etc/bro.rc
+-	$(INSTALL) bro_config  $(prefix)/scripts/bro_config
++	$(INSTALL) bro.rc $(prefix)/bro/scripts/bro.rc
++	$(INSTALL) bro_config  $(prefix)/bro/scripts/bro_config
+ 	-$(INSTALL_DATA) bro.cfg  $(bro_etc)/bro.cfg
+ 	$(INSTALL_DATA) $(srcdir)/bro.cfg.example $(bro_etc)/bro.cfg.example
+-	- $(INSTALL) bro.rc /usr/local/etc/rc.d/bro.sh
++	- $(INSTALL) bro.rc @prefix@/bro/scripts/bro.sh
+ 	(cd s2b ; $(MAKE) install)
+ 
+ # install cron file

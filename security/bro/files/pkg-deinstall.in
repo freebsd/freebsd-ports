@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Since pkg-plist prepends PREFIX to SITE_PERL,
+# we can't remove these files in the normal way
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+        exit 0
+fi
+
+/bin/rm %%SITE_PERL%%/mach/IP4.pm
+/bin/rm %%SITE_PERL%%/mach/Bro/Config.pm
+/bin/rm %%SITE_PERL%%/mach/Bro/Log.pm
+/bin/rm %%SITE_PERL%%/mach/Bro/Report.pm
+/bin/rm %%SITE_PERL%%/mach/Bro/Signature.pm
+/bin/rm %%SITE_PERL%%/mach/Bro/Log/Alarm.pm
+/bin/rm %%SITE_PERL%%/mach/Bro/Log/Conn.pm
+/bin/rm %%SITE_PERL%%/mach/Bro/Report/Alarm.pm
+/bin/rm %%SITE_PERL%%/mach/Bro/Report/Conn.pm
+/bin/rmdir %%SITE_PERL%%/mach/Bro/Report
+/bin/rmdir %%SITE_PERL%%/mach/Bro/Log
+/bin/rmdir %%SITE_PERL%%/mach/Bro

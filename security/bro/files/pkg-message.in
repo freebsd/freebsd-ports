@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Call the bro_config script to configure bro and, when complete,
+# copy the newly created cfg file to %%PREFIX%%/etc.
+
+echo "****************************************"
+echo "* RUNNING THE BRO CONFIGURATION SCRIPT *"
+echo "****************************************"
+echo
+
+if [ -f %%BROHOME%%/scripts/bro_config ]; then
+	/bin/sh %%BROHOME%%/scripts/bro_config
+fi
+
+if [ -f %%WRKSRC%%/../../bro.cfg ]; then
+	cp bro.cfg %%PREFIX%%/etc/bro.cfg
+fi
+
+if [ -f %%WRKSRC%%/../../bro.cfg ]; then
+	rm %%WRKSRC%%/../../bro.cfg*
+fi
+
+if [ -f %%WRKSRC%%/../../bro_user_id ]; then
+	rm %%WRKSRC%%/../../bro_user*
+fi
