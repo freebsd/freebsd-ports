@@ -1,6 +1,10 @@
 bin/crafty
+lib/crafty/book.bin
+lib/crafty/book.lrn
 lib/crafty/books.bin
-%%PORTDOCS%%share/doc/crafty/crafty.doc.ascii
-%%PORTDOCS%%share/doc/crafty/crafty.doc.ps
-%%PORTDOCS%%@dirrm share/doc/crafty
+lib/crafty/position.bin
+lib/crafty/position.lrn
+share/doc/crafty/crafty.doc.ascii
+share/doc/crafty/crafty.doc.ps
+@dirrm share/doc/crafty
 @dirrm lib/crafty

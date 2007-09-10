@@ -6,66 +6,90 @@
 #
 
 PORTNAME=	crafty
-PORTVERSION=	19.1
+PORTVERSION=	20.14
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/book/:data \
+MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/pgn/:data \
 		ftp://ftp.cis.uab.edu/pub/hyatt/documentation/:doc \
-		ftp://ftp.cis.uab.edu/pub/hyatt/src/:src
+		ftp://ftp.cis.uab.edu/pub/hyatt/source/:src
 DISTFILES=	crafty-${PORTVERSION}.zip:src \
 		start.pgn:data
 DIST_SUBDIR=	crafty
 EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
 
-MAINTAINER=	seggers@semyam.dinoco.de
+MAINTAINER=	shoemaker@bluebottle.com
 COMMENT=	A chess programm for playing and analyzing games
 
 USE_ZIP=        yes
+USE_GMAKE=	yes
 
 .if !defined(NOPORTDOCS)
 DOCFILES=	crafty.doc.ascii crafty.doc.ps
 DISTFILES+=	${DOCFILES:S/$/:doc/}
 .endif
 
-ALL_TARGET=	crafty
+ALL_TARGET=	freebsd
 
-OPT=		-DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS
-.if ${MACHINE_ARCH} == "i386"
-MAKE_ENV+=	asm=X86-elf.o
-OPT+=		-DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
+.if !defined(WITH_BOOKDIR)
+WITH_BOOKDIR=	${PREFIX}/lib/crafty
+.endif
+.if !defined(WITH_LOGDIR)
+WITH_LOGDIR=	/tmp
+.endif
+.if !defined(WITH_RCDIR)
+WITH_RCDIR=	~/
+.endif
+.if !defined(WITH_TBDIR)
+WITH_TBDIR=	${PREFIX}/lib/crafty/TB
+.endif
+
+OPT=		-DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
+		-DLOGDIR=\\\"${WITH_LOGDIR}\\\" \
+	       	-DRCDIR=\\\"${WITH_RCDIR}\\\" \
+		-DTBDIR=\\\"${WITH_TBDIR}\\\"
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+OPT+=		-DINLINE32
 # XXX Someone with ASM knowledge would have to fix the Sparc.S
-.elif ${MACHINE_ARCH} == "sparc64" && defined(CRAFTY_SPARC_ASM)
-MAKE_ENV+=	asm=Sparc.o
-OPT+=		-DUSE_ASSEMBLY_A
+.elif ${ARCH} == "sparc64"
+OPT+=		-DINLINE32
+CFLAGS+=	'$(CFLAGS) -D_REENTRANT -O3 -Wall \
+		-fomit-frame-pointer -funroll-all-loops \
+		-finline-functions -ffast-math' \
 .else
 OPT+=		-DFAST
 .endif
-MAKE_ENV+=	opt="${OPT}" target=${OPSYS} CXFLAGS="${CXXFLAGS}"
 
-MAN6=		crafty.6
+MAKE_ENV+=	opt="${OPT}" target=${OPSYS} CXFLAGS="${CXXFLAGS}"
 
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/start.pgn ${WRKSRC}/start.pgn
-	${MV} ${WRKSRC}/Sparc.s ${WRKSRC}/Sparc.S
-.ifdef CRAFTY_SPARC_ASM
-	########################################################
-	#
-	# Sparc.S is known to segfault! Use at your own risk or
-	# turn off the CRAFTY_SPARC_ASM defined
-	#
-	########################################################
-.endif
 
 post-build:
-	(cd ${WRKSRC}; ./crafty <${FILESDIR}/books-building)
+	(cd ${WRKSRC}; ./crafty bookpath=. <${FILESDIR}/books-building)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/crafty ${PREFIX}/bin/crafty
+	${CHOWN} nobody:nogroup ${PREFIX}/bin/crafty
+	${CHMOD} 6555 ${PREFIX}/bin/crafty
 	${MKDIR} ${PREFIX}/lib/crafty
+	${CHOWN} nobody:nogroup ${PREFIX}/lib/crafty
 	${INSTALL_DATA} ${WRKSRC}/books.bin ${PREFIX}/lib/crafty/books.bin
-	${INSTALL_MAN} ${FILESDIR}/crafty.6 ${MANPREFIX}/man/man6/crafty.6
+	${INSTALL_DATA} ${WRKSRC}/book.lrn ${PREFIX}/lib/crafty/book.lrn
+	${INSTALL_DATA} ${WRKSRC}/position.bin ${PREFIX}/lib/crafty/position.bin
+	${INSTALL_DATA} ${WRKSRC}/position.lrn ${PREFIX}/lib/crafty/position.lrn
+	${TOUCH} ${PREFIX}/lib/crafty/book.bin
+	${CHOWN} nobody:nogroup ${PREFIX}/lib/crafty/book*
+	${CHOWN} nobody:nogroup ${PREFIX}/lib/crafty/position*
+	${CHMOD} 664 ${PREFIX}/lib/crafty/book*
+	${CHMOD} 664 ${PREFIX}/lib/crafty/position*
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

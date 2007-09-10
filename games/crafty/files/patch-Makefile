@@ -1,0 +1,17 @@
+--- Makefile.orig	Tue Jun 20 07:57:17 2006
++++ Makefile	Sun Sep  9 10:48:25 2007
+@@ -146,10 +146,10 @@
+ freebsd:
+ 	$(MAKE) target=FreeBSD \
+ 		CC=gcc CXX='$(CC)' \
+-		CFLAGS='$(CFLAGS) -fomit-frame-pointer -m486 -O3 -Wall' \
+-		CXFLAGS=$(CFLAGS) \
+-		LDFLAGS=$(LDFLAGS) \
+-		opt='$(opt) -DINLINE32' \
++		CFLAGS+='-fomit-frame-pointer -mtune=i486 -O3 -Wall' \
++		CXFLAGS+='$(CXXFLAGS)' \
++		LDFLAGS='$(LDFLAGS) -lstdc++' \
++		opt='$(opt)' \
+ 		crafty-make
+ 
+ freebsd-pgcc:
