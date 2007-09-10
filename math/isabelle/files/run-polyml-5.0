@@ -1,22 +1,20 @@
-#!/usr/bin/env bash
+#!/bin/sh
 #
 # $Id: run-polyml-5.0,v 1.2 2006/12/08 21:18:35 wenzelm Exp $
 # Author: Makarius
 #
 # Poly/ML startup script (for 5.0)
 
-export -n INFILE OUTFILE COPYDB COMPRESS MLTEXT TERMINATE NOWRITE
-
 
 ## diagnostics
 
-function fail_out()
+fail_out()
 {
   echo "Unable to create output heap file: \"$OUTFILE\"" >&2
   exit 2
 }
 
-function check_file()
+check_file()
 {
   if [ ! -f "$1" ]; then
     echo "Unable to locate $1" >&2
@@ -65,7 +63,6 @@ else
   rm -f "${OUTFILE}.o" || fail_out
 fi
 
-
 ## run it!
 
 MLTEXT="PolyML.Compiler.printInAlphabeticalOrder := false; $EXIT $COMMIT $MLTEXT"
@@ -76,6 +73,16 @@ if [ -z "$TERMINATE" ]; then
 else
   FEEDER_OPTS="-q"
 fi
+
+SAVE_INFILE="$INFILE"
+SAVE_OUTFILE="$OUTFILE"
+SAVE_MLTEXT="$MLTEXT"
+SAVE_NOWRITE="$NOWRITE"
+unset INFILE OUTFILE COPYDB COMPRESS MLTEXT TERMINATE NOWRITE
+INFILE="$SAVE_INFILE"
+OUTFILE="$SAVE_OUTFILE"
+MLTEXT="$SAVE_MLTEXT"
+NOWRITE="$SAVE_NOWRITE"
 
 "$ISABELLE_HOME/lib/scripts/feeder" -p -h "$MLTEXT" -t "$MLEXIT" $FEEDER_OPTS | \
   { read FPID; "$POLY" $ML_OPTIONS; RC="$?"; kill -HUP "$FPID"; exit "$RC"; }

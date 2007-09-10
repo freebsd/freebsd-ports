@@ -7,7 +7,7 @@
 
 PORTNAME=	isabelle
 PORTVERSION=	2005
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://isabelle.in.tum.de/dist/ \
 		http://www.cl.cam.ac.uk/Research/HVG/Isabelle/dist/ \
@@ -28,7 +28,7 @@ OPTIONS=	SMLNJ "Use SML/NJ (devel) instead of the faster Poly/ML" Off
 
 .if defined(WITH_SMLNJ)
 ML_SYSTEM=	smlnj-110
-ML_HOME=	${LOCALBASE}/smlnj/bin
+ML_HOME=	${LOCALBASE}/bin
 ML_OPTIONS=	@SMLdebug=/dev/null
 ML_PLATFORM=	x86-bsd
 .else
@@ -40,15 +40,14 @@ ML_PLATFORM=	""
 .endif
 
 USE_PERL5=	yes
-BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	proofgeneral:${PORTSDIR}/math/proofgeneral
 
 DOCFILES=	Contents *.pdf *.eps *.ps *.dvi
 
 .if defined(WITH_SMLNJ)
 PLIST_SUB=	HEAPSUBDIR=${ML_SYSTEM}_${ML_PLATFORM}
-BUILD_DEPENDS+=	sml:${PORTSDIR}/lang/sml-nj-devel
-RUN_DEPENDS+=	sml:${PORTSDIR}/lang/sml-nj-devel
+BUILD_DEPENDS+=	smlnj-devel>=110.65:${PORTSDIR}/lang/sml-nj-devel
+MAKE_ENV+=	SMLNJ_DEVEL=yes
 .else
 PLIST_SUB=	HEAPSUBDIR=${ML_SYSTEM}
 BUILD_DEPENDS+=	poly:${PORTSDIR}/lang/polyml
@@ -77,6 +76,8 @@ post-patch:
 		${WRKSRC}/etc/settings.presed > ${WRKSRC}/etc/settings
 	@${RM} ${WRKSRC}/etc/settings.presed
 	@${TOUCH} ${WRKSRC}/contrib/.keep
+	@${REINPLACE_CMD} -e 's|%%SMLNJ_VERSION%%|SMLNJ_DEVEL=yes|' \
+			${WRKSRC}/lib/scripts/run-smlnj
 
 post-install:
 	${WRKSRC}/bin/isatool ${INSTALL} -d ${PREFIX}/share/isabelle -p ${PREFIX}/bin

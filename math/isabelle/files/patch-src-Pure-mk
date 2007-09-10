@@ -1,0 +1,35 @@
+--- src/Pure/mk.orig	Sun Jun 12 07:19:36 2005
++++ src/Pure/mk	Sun Sep  2 19:22:39 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: mk,v 1.27 2005/06/11 21:19:36 wenzelm Exp $
+ # Author: Markus Wenzel, TU Muenchen
+@@ -10,7 +10,7 @@
+ 
+ ## diagnostics
+ 
+-function usage()
++usage()
+ {
+   echo
+   echo "Usage: $PRG [OPTIONS]"
+@@ -23,7 +23,7 @@
+   exit 1
+ }
+ 
+-function fail()
++fail()
+ {
+   echo "$1" >&2
+   exit 2
+@@ -81,7 +81,7 @@
+ 
+ # run isabelle
+ 
+-SECONDS=0
++SECONDS=$(( `date +'%j * 86400 + %H * 3600 + %M * 60 + %S'` ))
+ 
+ if [ -z "$RAW" ]; then
+   ITEM="Pure"

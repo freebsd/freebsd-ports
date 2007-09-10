@@ -19,10 +19,10 @@ install:
 	for f in ${SRCDIRS}; \
 		do for g in `find -d $$f -type d`; \
 		   do mkdir -p ${DESTDIR}/$$g; \
-		      files=`find $$g -depth 1 -type f \\! -perm +u+x`; \
+  files=`find -E $$g -depth 1 -type f -not -regex '.*\.(bak|orig)$$' -not -perm +u+x`; \
 			    if [ "$$files" != "" ]; then ${BSD_INSTALL_DATA} \
 			$$files ${DESTDIR}/$$g; fi; \
-		      scripts=`find $$g -depth 1 -type f -perm +u+x`; \
+  scripts=`find -E $$g -depth 1 -type f -not -regex '.*\.(bak|orig)$$' -perm +u+x`; \
 		     if [ "$$scripts" != "" ]; then ${BSD_INSTALL_SCRIPT} \
 			$$scripts ${DESTDIR}/$$g; fi; \
 		   done; \

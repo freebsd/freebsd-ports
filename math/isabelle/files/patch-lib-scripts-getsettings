@@ -1,0 +1,39 @@
+--- ./lib/scripts/getsettings.orig	Sun Sep  2 15:59:52 2007
++++ ./lib/scripts/getsettings	Sun Sep  2 16:03:07 2007
+@@ -2,7 +2,7 @@
+ # $Id: getsettings,v 1.24 2005/06/06 07:28:28 kleing Exp $
+ # Author: Markus Wenzel, TU Muenchen
+ #
+-# getsettings - bash source script to augment current env.
++# getsettings - sh source script to augment current env.
+ 
+ if [ -z "$ISABELLE_SETTINGS_PRESENT" ]
+ then
+@@ -24,10 +24,9 @@
+ 
+ #users tend to put strange things in here ...
+ unset ENV
+-unset BASH_ENV
+ 
+ #support easy settings
+-function choosefrom ()
++choosefrom ()
+ {
+   local RESULT=""
+   local FILE=""
+@@ -42,13 +41,13 @@
+ }
+ 
+ #get actual settings
+-source "$ISABELLE_HOME/etc/settings" || exit 2
++. "$ISABELLE_HOME/etc/settings" || exit 2
+ ISABELLE_SITE_SETTINGS_PRESENT=true
+ 
+ [ "$ISABELLE_HOME" -ef "$ISABELLE_HOME_USER" ] && \
+   { echo >&2 "### ISABELLE_HOME and ISABELLE_HOME_USER should not be the same directory!"; }
+ [ -z "$ISABELLE_IGNORE_USER_SETTINGS" -a -f "$ISABELLE_HOME_USER/etc/settings" ] && \
+-  { source "$ISABELLE_HOME_USER/etc/settings" || exit 2; }
++  { . "$ISABELLE_HOME_USER/etc/settings" || exit 2; }
+ 
+ #append ML system identifier to paths
+ if [ -z "$ML_PLATFORM" ]; then

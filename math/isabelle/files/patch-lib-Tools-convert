@@ -1,0 +1,17 @@
+--- ./lib/Tools/convert.orig	Sun Sep  2 15:11:55 2007
++++ ./lib/Tools/convert	Sun Sep  2 15:48:00 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: convert,v 1.5 2005/04/26 17:50:57 wenzelm Exp $
+ # Author: David von Oheimb, TU Muenchen
+@@ -10,7 +10,7 @@
+ 
+ PRG="$(basename "$0")"
+ 
+-function usage()
++usage()
+ {
+   echo
+   echo "Usage: $PRG [FILES|DIRS...]"

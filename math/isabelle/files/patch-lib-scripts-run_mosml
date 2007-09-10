@@ -1,0 +1,35 @@
+--- lib/scripts/run-mosml.orig	Mon Jun 21 18:25:58 2004
++++ lib/scripts/run-mosml	Sun Sep  2 17:14:13 2007
+@@ -1,16 +1,14 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: run-mosml,v 1.8 2004/06/21 08:25:58 kleing Exp $
+ # Author: Markus Wenzel, TU Muenchen
+ #
+ # Moscow ML 2.00 startup script
+ 
+-export -n INFILE OUTFILE COPYDB COMPRESS MLTEXT TERMINATE NOWRITE
+-
+ 
+ ## diagnostics
+ 
+-function fail_out()
++fail_out()
+ {
+   echo "Unable to create output heap file: \"$OUTFILE\"" >&2
+   exit 2
+@@ -37,6 +35,13 @@
+   [ -f "$OUTFILE" ] && { chmod +w "$OUTFILE" || fail_out; }
+ fi
+ 
++SAVE_OUTFILE="$OUTFILE"
++SAVE_MLTEXT="$MLTEXT"
++SAVE_NOWRITE="$NOWRITE"
++unset INFILE OUTFILE COPYDB COMPRESS MLTEXT TERMINATE NOWRITE
++OUTFILE="$SAVE_OUTFILE"
++MLTEXT="$SAVE_MLTEXT"
++NOWRITE="$SAVE_NOWRITE"
+ 
+ ## run it!
+ 

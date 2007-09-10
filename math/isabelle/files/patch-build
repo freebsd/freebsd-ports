@@ -1,0 +1,41 @@
+--- build.orig	Mon Sep 26 21:12:24 2005
++++ build	Sun Sep  2 19:02:32 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: build,v 1.35 2005/09/26 11:12:24 wenzelm Exp $
+ # Author: Markus Wenzel, TU Muenchen
+@@ -23,12 +23,12 @@
+ PRG="$(basename "$0")"
+ 
+ ISABELLE_HOME="$(cd "$(dirname "$0")"; pwd -P)"
+-source "$ISABELLE_HOME/lib/scripts/getsettings" || exit 2
++. "$ISABELLE_HOME/lib/scripts/getsettings" || exit 2
+ 
+ 
+ ## diagnostics
+ 
+-function usage()
++usage()
+ {
+   echo
+   echo "Usage: $PRG [OPTIONS] [LOGICS ...]"
+@@ -46,7 +46,7 @@
+   exit 1
+ }
+ 
+-function fail()
++fail()
+ {
+   echo "$1" >&2
+   exit 2
+@@ -169,7 +169,7 @@
+ 
+ # build it
+ 
+-SECONDS=0
++SECONDS=$(( `date +'%j * 86400 + %H * 3600 + %M * 60 + %S'` ))
+ echo "Started at $(date) ($ML_IDENTIFIER on $(hostname))"
+ 
+ for L in $MAKE_LOGICS

@@ -1,0 +1,68 @@
+--- lib/scripts/run-smlnj.orig	Mon Jun 21 18:25:58 2004
++++ lib/scripts/run-smlnj	Sun Sep  2 20:02:25 2007
+@@ -5,18 +5,16 @@
+ #
+ # SML/NJ startup script (for 110 or later).
+ 
+-export -n INFILE OUTFILE COPYDB COMPRESS MLTEXT TERMINATE NOWRITE
+-
+ 
+ ## diagnostics
+ 
+-function fail_out()
++fail_out()
+ {
+   echo "Unable to create output heap file: \"$OUTFILE\"" >&2
+   exit 2
+ }
+ 
+-function check_mlhome_file()
++check_mlhome_file()
+ {
+   if [ ! -f "$1" ]; then
+     echo "Unable to locate $1" >&2
+@@ -25,7 +23,7 @@
+   fi
+ }
+ 
+-function check_heap_file()
++check_heap_file()
+ {
+   if [ ! -f "$1" ]; then
+     echo "Expected to find ML heap file $1" >&2
+@@ -40,10 +38,8 @@
+ ## compiler binaries
+ 
+ SML="$ML_HOME/sml"
+-ARCH_N_OPSYS="$ML_HOME/.arch-n-opsys"
+ 
+ check_mlhome_file "$SML"
+-check_mlhome_file "$ARCH_N_OPSYS"
+ 
+ 
+ 
+@@ -76,6 +72,14 @@
+   FEEDER_OPTS="-q"
+ fi
+ 
++SAVE_OUTFILE="$OUTFILE"
++SAVE_MLTEXT="$MLTEXT"
++SAVE_NOWRITE="$NOWRITE"
++unset INFILE OUTFILE COPYDB COMPRESS MLTEXT TERMINATE NOWRITE
++OUTFILE="$SAVE_OUTFILE"
++MLTEXT="$SAVE_MLTEXT"
++NOWRITE="$SAVE_NOWRITE"
++
+ "$ISABELLE_HOME/lib/scripts/feeder" -p -h "$MLTEXT" -t "$MLEXIT" $FEEDER_OPTS | \
+   { read FPID; "$SML" $ML_OPTIONS "$DB"; RC="$?"; kill -HUP "$FPID"; exit "$RC"; }
+ RC="$?"
+@@ -84,8 +88,7 @@
+ ## fix heap file name and permissions
+ 
+ if [ -n "$OUTFILE" ]; then
+-  eval $("$ARCH_N_OPSYS")
+-  [ -z "$HEAP_SUFFIX" ] && HEAP_SUFFIX="$ARCH-$OPSYS"
++  [ -z "$HEAP_SUFFIX" ] && HEAP_SUFFIX="$ML_PLATFORM"
+   HEAP="$OUTFILE.$HEAP_SUFFIX"
+   check_heap_file "$HEAP" && mv "$HEAP" "$OUTFILE" && \
+     [ -n "$NOWRITE" ] && chmod -w "$OUTFILE"

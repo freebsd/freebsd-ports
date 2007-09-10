@@ -1,0 +1,65 @@
+--- ./lib/Tools/latex.orig	Sun Sep  2 15:11:55 2007
++++ ./lib/Tools/latex	Sun Sep  2 15:48:54 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: latex,v 1.27 2005/07/19 15:21:45 wenzelm Exp $
+ # Author: Markus Wenzel, TU Muenchen
+@@ -8,7 +8,7 @@
+ 
+ PRG="$(basename "$0")"
+ 
+-function usage()
++usage()
+ {
+   echo
+   echo "Usage: $PRG [OPTIONS] [FILE]"
+@@ -23,7 +23,7 @@
+   exit 1
+ }
+ 
+-function fail()
++fail()
+ {
+   echo "$1" >&2
+   exit 2
+@@ -67,7 +67,7 @@
+ FILEBASE=$(basename "$FILE" .tex)
+ [ "$DIR" = . ] || FILEBASE="$DIR/$FILEBASE"
+ 
+-function check_root () { [ -f "$FILEBASE.tex" ] || fail "Bad file '$FILE'"; }
++check_root () { [ -f "$FILEBASE.tex" ] || fail "Bad file '$FILE'"; }
+ 
+ 
+ # operations
+@@ -75,13 +75,13 @@
+ #set by configure
+ AUTO_PERL=perl
+ 
+-function run_latex () { $ISABELLE_LATEX "\\nonstopmode\\input{$FILEBASE.tex}"; }
+-function run_pdflatex () { $ISABELLE_PDFLATEX "\\nonstopmode\\input{$FILEBASE.tex}"; }
+-function run_bibtex () { $ISABELLE_BIBTEX </dev/null "$FILEBASE"; }
+-function run_makeindex () { $ISABELLE_MAKEINDEX </dev/null "$FILEBASE"; }
+-function run_dvips () { $ISABELLE_DVIPS -q -o "$FILEBASE.ps" "$FILEBASE.dvi"; }
+-function run_thumbpdf () { [ -n "$ISABELLE_THUMBPDF" ] && $ISABELLE_THUMBPDF "$FILEBASE"; }
+-function copy_styles ()
++run_latex () { $ISABELLE_LATEX "\\nonstopmode\\input{$FILEBASE.tex}"; }
++run_pdflatex () { $ISABELLE_PDFLATEX "\\nonstopmode\\input{$FILEBASE.tex}"; }
++run_bibtex () { $ISABELLE_BIBTEX </dev/null "$FILEBASE"; }
++run_makeindex () { $ISABELLE_MAKEINDEX </dev/null "$FILEBASE"; }
++run_dvips () { $ISABELLE_DVIPS -q -o "$FILEBASE.ps" "$FILEBASE.dvi"; }
++run_thumbpdf () { [ -n "$ISABELLE_THUMBPDF" ] && $ISABELLE_THUMBPDF "$FILEBASE"; }
++copy_styles ()
+ {
+   for STYLEFILE in "$ISABELLE_HOME/lib/texinputs"/*.sty
+   do
+@@ -90,7 +90,7 @@
+   done
+ }
+ 
+-function extract_syms ()
++extract_syms ()
+ {
+   "$AUTO_PERL" -n \
+     -e '(!m,%requires, || m,%requires latin1, || m,%requires amssymb, || m,%requires textcomp,) && m,\\newcommand\{\\isasym(\w+)\}, && print "$1\n";' \
