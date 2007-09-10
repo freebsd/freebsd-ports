@@ -1,6 +1,6 @@
---- SConstruct.orig	Wed Aug  8 15:24:15 2007
-+++ SConstruct	Wed Aug 29 23:18:00 2007
-@@ -50,6 +50,9 @@
+--- ./SConstruct.orig	Sun Sep  2 16:44:44 2007
++++ ./SConstruct	Sun Sep  9 03:42:09 2007
+@@ -49,6 +49,9 @@
  opts = DefineOptions("build_options.py", ARGUMENTS)
  env = Environment(ENV = {'PATH':os.environ['PATH']}) # for an unknown reason Environment(options=opts) doesnt work well
  opts.Update(env) # Needed as Environment(options=opts) doesnt seem to work
@@ -10,7 +10,7 @@
  Help(opts.GenerateHelpText(env))
  mingw = env.Copy()
  optionsChanged = True
-@@ -143,11 +146,17 @@
+@@ -142,6 +145,10 @@
        'LIBS': ['GL'], 
        'LIBPATH': ['/usr/lib', '/usr/X11R6/lib'],
        'CPPPATH': ['/usr/include']}
@@ -20,11 +20,13 @@
 +      'CPPPATH': ['/usr/local/include']}
    opengl['cygwin'] = {
        'LIBS': ['opengl3']}
+   opengl['darwin'] = {
+@@ -150,6 +157,8 @@
    platform = sys.platform
    if sys.platform[:5] == 'linux':
       platform = 'linux'
 +  if sys.platform[:7] == 'freebsd':
 +     platform = 'freebsd'
-   for key in opengl[platform].keys():
+   glconfig = opengl.get(platform, {})
+   for key in glconfig:
        if key != 'LIBS':
-          for i in opengl[platform][key]:

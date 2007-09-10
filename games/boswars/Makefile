@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	boswars
-PORTVERSION=	2.4
+PORTVERSION=	2.4.1
 CATEGORIES=	games
 MASTER_SITES=	http://boswars.org:8001/bos/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
