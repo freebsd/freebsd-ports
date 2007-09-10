@@ -7,7 +7,7 @@
 
 PORTNAME=	spiralsynthmodular
 PORTVERSION=	0.2.2a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	spiralmodular
@@ -16,11 +16,12 @@ DISTNAME=	spiralmodular-${PORTVERSION}
 MAINTAINER=	dyeske@gmail.com
 COMMENT=	An object orientated modular softsynth / sequencer / sampler
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
+		jackd:${PORTSDIR}/audio/jack
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	FLTK_CONFIG="${FLTK_CONFIG}" \
@@ -63,6 +64,18 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|True|true|; s|False|false|' \
 		${WRKSRC}/SpiralSound/Plugins/MatrixPlugin/MatrixPlugin.C
+
+	@${REINPLACE_CMD} -e \
+		's|JackPort::||' \
+		${WRKSRC}/SpiralSound/Plugins/JackPlugin/JackPlugin.h
+
+	@${REINPLACE_CMD} -e \
+		's|CVGUI::||' \
+		${WRKSRC}/SpiralSound/Plugins/ControllerPlugin/ControllerPluginGUI.h
+
+	@${REINPLACE_CMD} -e \
+		's|Sample::||' \
+		${WRKSRC}/SpiralSound/Sample.h
 
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's|-ldl||; \

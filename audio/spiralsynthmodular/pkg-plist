@@ -13,6 +13,7 @@ lib/SpiralPlugins/EnvelopePlugin.so
 lib/SpiralPlugins/FilterPlugin.so
 lib/SpiralPlugins/FlipflopPlugin.so
 lib/SpiralPlugins/FormantFilterPlugin.so
+lib/SpiralPlugins/JackPlugin.so
 lib/SpiralPlugins/KeyboardPlugin.so
 lib/SpiralPlugins/LADSPAPlugin.so
 lib/SpiralPlugins/LFOPlugin.so
