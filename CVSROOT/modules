@@ -1589,6 +1589,7 @@ crafty		ports/games/crafty
 crafty-open-large	ports/games/crafty-open-large
 crafty-open-medium	ports/games/crafty-open-medium
 crafty-tablebase-no-pawn	ports/games/crafty-tablebase-no-pawn
+crafty-tablebase-pawn	ports/games/crafty-tablebase-pawn
 cramfs		ports/sysutils/cramfs
 crank		ports/security/crank
 crashecho	ports/mail/crashecho
