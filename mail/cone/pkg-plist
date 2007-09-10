@@ -93,6 +93,7 @@ libexec/cone
 %%DATADIR%%/header-mime.html
 %%DATADIR%%/header-plain.html
 %%DATADIR%%/index.html
+%%DATADIR%%/icon.gif
 %%DATADIR%%/INSTALL.html
 %%DATADIR%%/leaf.html
 %%DATADIR%%/libmail-folder.html
