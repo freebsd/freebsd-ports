@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	crafty-open-large
-PORTVERSION=	19960910
+PORTVERSION=	20070909
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd/crafty
 DISTFILES=	large1.zip large2.zip large3.zip large4.zip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shoemaker@bluebottle.com
 COMMENT=	The large opening book for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
-DIST_SUBDIR=		crafty
-USE_ZIP=		yes
-NO_WRKSUBDIR=		yes
+DIST_SUBDIR=	crafty
+USE_ZIP=	yes
+NO_WRKSUBDIR=	yes
+CONFLICTS=	games/crafty-open-enormous-* games/crafty-open-medium-*
 
 post-extract:
 	@${ECHO_MSG} '================================================================'
@@ -30,10 +31,12 @@ post-extract:
 	${RM} ${WRKDIR}/Book1.pgn ${WRKDIR}/Book2.pgn ${WRKDIR}/Book3.pgn ${WRKDIR}/Book4.pgn
 
 do-build:
-	(cd ${WRKDIR}; crafty <${FILESDIR}/book-building)
+	(${CHOWN} nobody ${WRKDIR}; cd ${WRKDIR}; crafty <${FILESDIR}/book-building)
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/crafty
-	${INSTALL_DATA} ${WRKDIR}/book.bin ${PREFIX}/lib/crafty/large-book.bin
+	${INSTALL_DATA} ${WRKDIR}/book.bin ${PREFIX}/lib/crafty/book.bin
+	${CHOWN} nobody:nogroup ${PREFIX}/lib/crafty/book.bin
+	${CHMOD} 664 ${PREFIX}/lib/crafty/book.bin
 
 .include <bsd.port.mk>
