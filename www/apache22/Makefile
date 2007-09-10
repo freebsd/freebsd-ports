@@ -74,7 +74,7 @@ PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 
 MAKE_ENV+=	EXPR_COMPAT=yes
 
-WITH_MPM?=	prefork # or worker, perchild, event, itk
+WITH_MPM?=	prefork # or worker, event, itk
 
 WITH_HTTP_PORT?=	80
 
