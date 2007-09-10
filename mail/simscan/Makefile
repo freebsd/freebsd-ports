@@ -7,7 +7,7 @@
 
 PORTNAME=	simscan
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.inter7.com/simscan/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
@@ -115,7 +115,7 @@ if ! ${TEST} -f ${QMAIL_QUEUE}; then \
 fi
 
 post-patch:
-	@${REINPLACE_CMD} -E 's,($f/daily.cvd"),\1 || test -d "$f/daily.inc",' \
+	@${REINPLACE_CMD} -E 's,($f/daily.cvd"),\1 || test -d "$$f/daily.inc",' \
 		${WRKSRC}/configure
 
 pre-configure:
