@@ -1,0 +1,11 @@
+--- configure.orig	2007-09-10 18:51:01.000000000 +0200
++++ configure	2007-09-10 18:51:56.000000000 +0200
+@@ -23559,7 +23559,7 @@
+ if test "x${ASSUAN_MSG}" != "xyes" -o "x${OPENSSL_MSG}" != "xyes"; then
+ 	ENABLE_NSPLUGIN="no"
+ fi
+-if test "x${ENABLE_NSPLUGIN}" == "xyes"; then
++if test "x${ENABLE_NSPLUGIN}" = "xyes"; then
+ 
+ 
+ if true; then
