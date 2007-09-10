@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	1.1.11
+PORTVERSION=	1.1.12
 CATEGORIES=	mail python
 MASTER_SITES=	ftp://tmda.net/pub/tmda/releases/ \
 		http://tmda.sourceforge.net/releases/ \

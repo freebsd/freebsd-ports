@@ -373,6 +373,8 @@ bin/tmda-sendmail
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tmda(2d)fingerprint.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tmda(2d)postfix(2d)policy(2e)sh.html
+%%PORTDOCS%%%%DOCSDIR%%/html/SquirrelMail.html
+%%PORTDOCS%%%%DOCSDIR%%/html/TmdaI18n.html
 %%PORTDOCS%%%%DOCSDIR%%/pdf/ConfigurationVariables.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/TmdaFaq.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
