@@ -5,7 +5,7 @@
  cd $cur_dir
  
 -
--cares_version="1.3.2"
+-cares_version="1.4.0"
 -echo "$as_me:$LINENO: result: extracting c-ares resolver library" >&5
 -echo "${ECHO_T}extracting c-ares resolver library" >&6
 -cur_dir=`pwd`

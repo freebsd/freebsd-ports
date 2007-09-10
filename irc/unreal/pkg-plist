@@ -163,6 +163,7 @@ lib/Unreal/m_svsnoop.so
 lib/Unreal/m_svso.so
 lib/Unreal/m_svspart.so
 lib/Unreal/m_svssilence.so
+lib/Unreal/m_svsnolag.so
 lib/Unreal/m_svssno.so
 lib/Unreal/m_svswatch.so
 lib/Unreal/m_swhois.so
