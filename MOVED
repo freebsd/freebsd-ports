@@ -3213,3 +3213,6 @@ net-im/meanwhile-gaim|net-im/pidgin|2007-09-06|Incorporated into net-im/pidgin
 security/gaim-encryption|security/pidgin-encryption|2007-09-06|Project renamed
 security/gaim-otr|security/pidgin-otr|2007-09-06|Project renamed
 sysutils/linux-procfs|sysutils/linux-procps|2007-09-08|Bad typo
+devel/configgen||2007-09-10|No longer required with new autotools system
+devel/gnu-autoconf||2007-09-10|No longer required with new autotools system
+devel/gnu-automake||2007-09-10|No longer required with new autotools system

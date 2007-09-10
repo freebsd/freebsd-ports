@@ -177,7 +177,6 @@
     SUBDIR += colorer
     SUBDIR += commoncpp
     SUBDIR += compiz-bcop
-    SUBDIR += configgen
     SUBDIR += cons
     SUBDIR += cons-test
     SUBDIR += cook
@@ -403,8 +402,6 @@
     SUBDIR += gnome-vfs1
     SUBDIR += gnome-vfsmm
     SUBDIR += gnome2-hacker-tools
-    SUBDIR += gnu-autoconf
-    SUBDIR += gnu-automake
     SUBDIR += gnulibiberty
     SUBDIR += gnustep
     SUBDIR += gnustep-make
