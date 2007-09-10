@@ -7,6 +7,7 @@
 
 PORTNAME=	jesred
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.linofee.org/~jel/webtools/src/ \
 		http://www.acad.bg/ftp/pub/src/misc/
