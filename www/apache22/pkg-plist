@@ -123,7 +123,6 @@ include/apache22/ap_release.h
 %%EVENT%%include/apache22/pod.h
 %%EVENT%%include/apache22/fdqueue.h
 %%WORKER%%include/apache22/fdqueue.h
-%%THREADPOOL%%include/apache22/pod.h
 include/apache22/http_config.h
 include/apache22/http_connection.h
 include/apache22/http_core.h
