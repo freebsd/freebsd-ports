@@ -2,6 +2,9 @@ bin/deluge
 %%PYTHON_SITELIBDIR%%/deluge/__init__.py
 %%PYTHON_SITELIBDIR%%/deluge/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deluge/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/_dbus.py
+%%PYTHON_SITELIBDIR%%/deluge/_dbus.pyc
+%%PYTHON_SITELIBDIR%%/deluge/_dbus.pyo
 %%PYTHON_SITELIBDIR%%/deluge/browser.py
 %%PYTHON_SITELIBDIR%%/deluge/browser.pyc
 %%PYTHON_SITELIBDIR%%/deluge/browser.pyo
@@ -45,6 +48,9 @@ bin/deluge
 %%PYTHON_SITELIBDIR%%/deluge/update.py
 %%PYTHON_SITELIBDIR%%/deluge/update.pyc
 %%PYTHON_SITELIBDIR%%/deluge/update.pyo
+%%PYTHON_SITELIBDIR%%/deluge/wizard.py
+%%PYTHON_SITELIBDIR%%/deluge/wizard.pyc
+%%PYTHON_SITELIBDIR%%/deluge/wizard.pyo
 share/applications/deluge.desktop
 %%DATADIR%%/glade/aboutdialog.glade
 %%DATADIR%%/glade/delugegtk.glade
@@ -53,10 +59,10 @@ share/applications/deluge.desktop
 %%DATADIR%%/glade/file_tab_menu.glade
 %%DATADIR%%/glade/files_dialog.glade
 %%DATADIR%%/glade/merge_dialog.glade
-%%DATADIR%%/glade/plugin_dialog.glade
 %%DATADIR%%/glade/preferences_dialog.glade
 %%DATADIR%%/glade/torrent_menu.glade
 %%DATADIR%%/glade/tray_menu.glade
+%%DATADIR%%/glade/wizard.glade
 %%DATADIR%%/pixmaps/deluge-about.png
 %%DATADIR%%/pixmaps/deluge128.png
 %%DATADIR%%/pixmaps/deluge192.png
@@ -579,7 +585,10 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/ExtraStats/stats_preferences.glade
 %%DATADIR%%/plugins/Locations/__init__.py
 %%DATADIR%%/plugins/Locations/plugin.py
+%%DATADIR%%/plugins/MoveTorrent/__init__.py
+%%DATADIR%%/plugins/MoveTorrent/movetorrent.glade
 %%DATADIR%%/plugins/NetworkGraph/__init__.py
+%%DATADIR%%/plugins/NetworkGraph/graph_preferences.glade
 %%DATADIR%%/plugins/NetworkGraph/tab_graph.py
 %%DATADIR%%/plugins/NetworkHealth/__init__.py
 %%DATADIR%%/plugins/NetworkHealth/plugin.py
@@ -605,6 +614,8 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/TorrentSearch/__init__.py
 %%DATADIR%%/plugins/TorrentSearch/plugin.py
 %%DATADIR%%/plugins/TorrentSearch/searchdlg.glade
+%%DATADIR%%/plugins/WebSeed/__init__.py
+%%DATADIR%%/plugins/WebSeed/webseed.glade
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/locale/ar/LC_MESSAGES/deluge.mo
@@ -663,6 +674,7 @@ share/pixmaps/deluge.png
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/plugins/WebSeed
 @dirrm %%DATADIR%%/plugins/TorrentSearch
 @dirrm %%DATADIR%%/plugins/TorrentPieces
 @dirrm %%DATADIR%%/plugins/TorrentPeers
@@ -673,6 +685,7 @@ share/pixmaps/deluge.png
 @dirrm %%DATADIR%%/plugins/SimpleRSS
 @dirrm %%DATADIR%%/plugins/NetworkHealth
 @dirrm %%DATADIR%%/plugins/NetworkGraph
+@dirrm %%DATADIR%%/plugins/MoveTorrent
 @dirrm %%DATADIR%%/plugins/Locations
 @dirrm %%DATADIR%%/plugins/ExtraStats
 @dirrm %%DATADIR%%/plugins/EventLogging
