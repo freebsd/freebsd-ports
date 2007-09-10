@@ -1,0 +1,7 @@
+
+This package is set to allow per-user config files, and a shared
+books directory.  To accomplish this, crafty is setuid nobody, and
+the books and learning information is owned by the user 'nobody.'
+
+The location values are tunable, see message when make is issued.
+
