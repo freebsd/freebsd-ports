@@ -22,6 +22,8 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-compat.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-edebug.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-edebug.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-files.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-files.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-load.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-load.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-loaddefs.el
@@ -68,6 +70,23 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/sformat.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/working.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/working.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/cedet-contrib-load.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/cedet-contrib-load.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/cedet-contrib.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/cedet-contrib.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/contrib-loaddefs.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/semantic-tag-folding.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/semantic-tag-folding.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/semanticdb-javascript.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/semanticdb-javascript.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/wisent-csharp-wy.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/wisent-csharp-wy.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/wisent-csharp.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/wisent-csharp.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/wisent-javascript-jv-wy.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/wisent-javascript-jv-wy.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/wisent-javascript.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib/wisent-javascript.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/autoconf-compat.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/autoconf-compat.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/autoconf-edit.el
@@ -104,6 +123,8 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-proj-skel.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-proj.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-proj.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-simple.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-simple.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-source.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-source.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-speedbar.el
@@ -135,8 +156,8 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-opt.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-speedbar.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-speedbar.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-tests.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-test-methodinvoke.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-tests.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/linemark.el
@@ -180,6 +201,10 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/document-vars.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/document.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/document.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-adebug-eieio.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-adebug-eieio.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-adebug.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-adebug.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-analyze.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-analyze.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-ast.el
@@ -198,6 +223,8 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-decorate-mode.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-decorate.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-decorate.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-dep.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-dep.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-doc.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-doc.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-ede-grammar.el
@@ -224,11 +251,15 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-idle.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-imenu.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-imenu.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-lex-spp.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-lex-spp.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-lex.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-lex.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-load.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-load.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-loaddefs.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-mru-bookmark.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-mru-bookmark.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-regtest.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-regtest.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-sb.el
@@ -243,12 +274,16 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-tag.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-texi.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-texi.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-utest.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-utest.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-util-modes.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-util-modes.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-util.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-util.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-ebrowse.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-ebrowse.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-el.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-el.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-file.el
@@ -342,14 +377,15 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar/speedbar-load.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar/speedbar-load.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar/speedbar-loaddefs.el
-%%EMACS22_HAVE%%%%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar/speedbar.el
-%%EMACS22_HAVE%%%%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar/speedbar.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar/speedbar.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar/speedbar.elc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/bovine
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/icons
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/cogre
