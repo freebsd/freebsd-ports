@@ -1,6 +1,6 @@
---- soi.c.orig	Tue Sep  7 00:38:10 1999
-+++ soi.c	Sun Dec  7 02:59:00 2003
-@@ -13,13 +13,19 @@
+--- soi.c.orig	Mon Apr  8 19:33:28 2002
++++ soi.c	Mon Sep  3 16:01:06 2007
+@@ -13,7 +13,9 @@
   */
  #include <time.h>
  #include <string.h>
@@ -10,13 +10,12 @@
  #include "port.h"
  #include "prototyp.h"
  
- #define DBLS LDBL
+@@ -21,7 +23,7 @@
  #define FABS(x)  fabsl(x)
-+#ifdef __FreeBSD__
-+#define FREXP(x,y) frexp(x,y)
-+#else
+ /* the following needs to be changed back to frexpl once the portability
+    issue has been addressed JCO */
+-#ifndef XFRACT
++#ifndef __FreeBSD__
  #define FREXP(x,y) frexpl(x,y)
-+#endif
- 
- #define TRUE 1
- #define FALSE 0
+ #else
+ #define FREXP(x,y) frexp(x,y)
