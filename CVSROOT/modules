@@ -1588,6 +1588,7 @@ cracklib	ports/security/cracklib
 crafty		ports/games/crafty
 crafty-open-large	ports/games/crafty-open-large
 crafty-open-medium	ports/games/crafty-open-medium
+crafty-tablebase-no-pawn	ports/games/crafty-tablebase-no-pawn
 cramfs		ports/sysutils/cramfs
 crank		ports/security/crank
 crashecho	ports/mail/crashecho
