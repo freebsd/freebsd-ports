@@ -472,10 +472,6 @@ Note:  Please add new entries to the beginning of this file.
 	<range><gt>0</gt></range>
       </package>
       <package>
-        <name>evince</name>
-	<range><gt>0</gt></range>
-      </package>
-      <package>
         <name>pdftohtml</name>
 	<range><gt>0</gt></range>
       </package>
