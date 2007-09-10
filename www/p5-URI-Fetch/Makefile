@@ -25,6 +25,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 OPTIONS=	ZLIB "GZIP Support" on \
 		CACHE "Caching Support" off
 
+PERL_MODBUILD=	yes
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_ZLIB)
@@ -36,8 +38,6 @@ RUN_DEPENDS+=	p5-Compress-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Zlib
 BUILD_DEPENDS+=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache
 RUN_DEPENDS+=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache
 .endif
-
-PERL_MODBUILD=	yes
 
 MAN3=	URI::Fetch.3 \
 	URI::Fetch::Response.3

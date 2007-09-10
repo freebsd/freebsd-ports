@@ -13,6 +13,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for generating random data
 
+PERL_CONFIGURE=	yes
+
 .include <bsd.port.pre.mk>
 
 # define WITHOUT_DATE_CALC to disable support for rand_date()
@@ -27,8 +29,6 @@ EXTRA_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
 BUILD_DEPENDS+=	${EXTRA_DEPENDS}
 RUN_DEPENDS+=	${EXTRA_DEPENDS}
-
-PERL_CONFIGURE=	yes
 
 MAN3=		Data::Random.3 Data::Random::WordList.3
 
