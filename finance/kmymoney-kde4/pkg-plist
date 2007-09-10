@@ -33,7 +33,7 @@ include/kmymoney/viewinterface.h
 lib/libkmm_mymoney.a
 lib/libkmm_mymoney.la
 lib/libkmm_mymoney.so
-lib/libkmm_mymoney.so.1
+lib/libkmm_mymoney.so.2
 lib/libkmm_plugin.a
 lib/libkmm_plugin.la
 lib/libkmm_plugin.so
@@ -81,6 +81,7 @@ share/applications/kde/kmymoney2.desktop
 %%DATADIR%%/html/whats_new_fr.html
 %%DATADIR%%/html/whats_new_gl.html
 %%DATADIR%%/html/whats_new_it.html
+%%DATADIR%%/html/whats_new_ru.html
 %%DATADIR%%/icons/hicolor/16x16/actions/account-type_asset.png
 %%DATADIR%%/icons/hicolor/16x16/actions/account-type_expense.png
 %%DATADIR%%/icons/hicolor/16x16/actions/account-type_income.png
@@ -187,10 +188,12 @@ share/applications/kde/kmymoney2.desktop
 %%DATADIR%%/templates/de_DE/default_accounts.kmt
 %%DATADIR%%/templates/en_GB/default_accounts.kmt
 %%DATADIR%%/templates/en_US/default_accounts.kmt
+%%DATADIR%%/templates/es_ES/default_accounts.kmt
 %%DATADIR%%/templates/fr_FR/comptes_par_default.kmt
 %%DATADIR%%/templates/gl_ES/default_accounts.kmt
 %%DATADIR%%/templates/pt_BR/default_accounts.kmt
 %%DATADIR%%/templates/ru_SU/default_accounts.kmt
+%%DATADIR%%/templates/zh_CN/default_accounts.kmt
 %%DATADIR%%/tips
 %%DOCSDIR%%/account_edit.png
 %%DOCSDIR%%/account_options.png
@@ -334,26 +337,35 @@ share/icons/hicolor/64x64/mimetypes/kmy.png
 share/icons/locolor/16x16/apps/kmymoney2.png
 share/icons/locolor/32x32/apps/kmymoney2.png
 share/locale/ca/LC_MESSAGES/kmymoney2.mo
+share/locale/cs/LC_MESSAGES/kmymoney2.mo
 share/locale/da/LC_MESSAGES/kmymoney2.mo
 share/locale/de/LC_MESSAGES/kmymoney2.mo
 share/locale/en_GB/LC_MESSAGES/kmymoney2.mo
 share/locale/es/LC_MESSAGES/kmymoney2.mo
+share/locale/es_AR/LC_MESSAGES/kmymoney2.mo
 share/locale/fr/LC_MESSAGES/kmymoney2.mo
 share/locale/gl/LC_MESSAGES/kmymoney2.mo
 share/locale/it/LC_MESSAGES/kmymoney2.mo
 share/locale/lt/LC_MESSAGES/kmymoney2.mo
+share/locale/nl/LC_MESSAGES/kmymoney2.mo
+share/locale/pl/LC_MESSAGES/kmymoney2.mo
 share/locale/pt_BR/LC_MESSAGES/kmymoney2.mo
 share/locale/pt_PT/LC_MESSAGES/kmymoney2.mo
 share/locale/ru/LC_MESSAGES/kmymoney2.mo
+share/locale/sk/LC_MESSAGES/kmymoney2.mo
+share/locale/sv/LC_MESSAGES/kmymoney2.mo
+share/locale/zh_CN/LC_MESSAGES/kmymoney2.mo
 share/mimelnk/application/x-kmymoney2.desktop
 %%OFXPLUGIN%%share/services/kmm_ofximport.desktop
 share/servicetypes/kmymoneyimporterplugin.desktop
 share/servicetypes/kmymoneyplugin.desktop
 @dirrm include/kmymoney
+@dirrm %%DATADIR%%/templates/zh_CN
 @dirrm %%DATADIR%%/templates/ru_SU
 @dirrm %%DATADIR%%/templates/pt_BR
 @dirrm %%DATADIR%%/templates/gl_ES
 @dirrm %%DATADIR%%/templates/fr_FR
+@dirrm %%DATADIR%%/templates/es_ES
 @dirrm %%DATADIR%%/templates/en_US
 @dirrm %%DATADIR%%/templates/en_GB
 @dirrm %%DATADIR%%/templates/de_DE
