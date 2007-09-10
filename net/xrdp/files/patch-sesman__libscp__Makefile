@@ -1,0 +1,11 @@
+--- sesman/libscp/Makefile.orig	Mon Sep 10 00:34:55 2007
++++ sesman/libscp/Makefile	Mon Sep 10 00:43:17 2007
+@@ -30,7 +30,7 @@
+ 	rm -f $(LIBSCPOBJ) $(LIBSCPLNAME)
+ 
+ install:
+-	install $(LIBSCPLNAME) $(DESTDIR)/$(LIBSCPLNAME)
++	$(BSD_INSTALL_PROGRAM) $(LIBSCPLNAME) $(DESTDIR)/$(LIBSCPLNAME)
+ 
+ installdeb:
+ 	install $(LIBSCPLNAME) $(DESTDIRDEB)/usr/lib/xrdp/$(LIBSCPLNAME)

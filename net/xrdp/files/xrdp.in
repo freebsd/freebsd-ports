@@ -3,14 +3,14 @@
 # $FreeBSD$
 #
 # REQUIRE: DAEMON
-# PROVIDE: xrdp xrdp_sesman
+# PROVIDE: xrdp sesman
 #
 
 . %%RC_SUBR%%
 
 name="xrdp"
 rcvar=`set_rcvar`
-xrdp_daemons="xrdp xrdp_sesman"
+xrdp_daemons="xrdp sesman"
 
 # Read settings and set default values.
 load_rc_config "$name"
@@ -18,9 +18,9 @@ load_rc_config "$name"
 
 # Enable/disable dependent daemon.
 if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
-	: ${xrdp_sesman_enable="YES"}
+	: ${sesman_enable="YES"}
 else
-	: ${xrdp_sesman_enable="NO"}
+	: ${sesman_enable="NO"}
 fi
 
 # Commands.

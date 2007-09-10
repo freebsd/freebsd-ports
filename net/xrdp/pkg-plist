@@ -1,7 +1,9 @@
+bin/sesman
+bin/sessvc
+bin/sesrun
+bin/sestest
 bin/xrdp
-bin/xrdp_sesman
-bin/xrdp_sesrun
-etc/pam.d/xrdp_sesman
+etc/pam.d/sesman
 @unexec if cmp -s %D/etc/xrdp/rsakeys.ini %D/etc/xrdp/rsakeys.ini.sample; then rm -f %D/etc/xrdp/rsakeys.ini; fi
 etc/xrdp/rsakeys.ini.sample
 @exec [ -f %D/etc/xrdp/rsakeys.ini ] || cp %D/etc/xrdp/rsakeys.ini.sample %D/etc/xrdp/rsakeys.ini
@@ -16,6 +18,7 @@ lib/xrdp/ad256.bmp
 lib/xrdp/cursor0.cur
 lib/xrdp/cursor1.cur
 lib/xrdp/librdp.so
+lib/xrdp/libscp.so
 lib/xrdp/libvnc.so
 lib/xrdp/libxrdp.so
 lib/xrdp/libxup.so

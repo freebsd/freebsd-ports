@@ -1,0 +1,13 @@
+--- sesman/tools/Makefile.orig	Mon Sep 10 00:34:55 2007
++++ sesman/tools/Makefile	Mon Sep 10 00:42:29 2007
+@@ -48,8 +48,8 @@
+ 	rm -f *.o sestest sesrun
+ 
+ install:
+-	install sesrun $(DESTDIR)/sesrun
+-	install sestest $(DESTDIR)/sestest
++	$(BSD_INSTALL_PROGRAM) sesrun $(PREFIX)/bin/sesrun
++	$(BSD_INSTALL_PROGRAM) sestest $(PREFIX)/bin/sestest
+ 
+ installdeb:
+ 	install sesrun $(DESTDIRDEB)/usr/lib/xrdp/sesrun

@@ -1,27 +1,27 @@
---- ./sesman/Makefile.orig	Fri May 26 10:10:14 2006
-+++ ./sesman/Makefile	Sun Apr 29 12:42:48 2007
-@@ -13,7 +13,7 @@
- DOCDIR = /usr/doc/xrdp
+--- sesman/Makefile.orig	Sun May 27 20:18:14 2007
++++ sesman/Makefile	Mon Sep 10 00:58:31 2007
+@@ -17,7 +17,7 @@
+ 	  -DSESMAN_SESSVC_FILE=\"sessvc\"
  
- DEFINES = -DSESMAN_CFG_FILE=\"$(CFGDIR)/sesman.ini\" \
--          -DSESMAN_PID_FILE=\"$(PIDDIR)/sesman.pid\"
-+          -DSESMAN_PID_FILE=\"$(PIDDIR)/xrdp_sesman.pid\"
+ CFLAGS = -Wall -O2 -I../common -I/usr/include/nptl -I./libscp $(DEFINES)
+-LDFLAGS = -L/usr/gnu/lib -L/usr/lib/nptl -L./libscp -Wl,-rpath,. -lpthread -ldl -lscp
++LDFLAGS = -L./libscp -lpthread -lscp -Wl,-rpath=$(DESTDIR)
+ C_OS_FLAGS = $(CFLAGS) -c
+ CC = gcc
  
- CFLAGS = -Wall -O2 -I../common $(DEFINES)
- LDFLAGS = -L /usr/gnu/lib $(DEFINES)
-@@ -46,10 +46,11 @@
- 	rm -f $(SESMANOBJ) verify_user.o verify_user_pam.o verify_user_pam_userpass.o sesman sesrun.o sesrun
+@@ -54,10 +54,11 @@
+ 	make -C libscp clean
  
  install:
 -	install sesman $(DESTDIR)/sesman
--	install sesrun $(DESTDIR)/sesrun
 -	install startwm.sh $(DESTDIR)/startwm.sh
 -	install sesman.ini $(CFGDIR)/sesman.ini
-+	$(BSD_INSTALL_PROGRAM) sesman $(PREFIX)/bin/xrdp_sesman
-+	$(BSD_INSTALL_PROGRAM) sesrun $(PREFIX)/bin/xrdp_sesrun
+-	install sessvc $(DESTDIR)/sessvc
++	$(BSD_INSTALL_PROGRAM) sesman $(PREFIX)/bin/sesman
 +	$(BSD_INSTALL_SCRIPT) startwm.sh $(DESTDIR)/startwm.sh
 +	$(BSD_INSTALL_DATA) sesman.ini $(CFGDIR)/sesman.ini.sample
 +	@test -f $(CFGDIR)/sesman.ini || cp $(CFGDIR)/sesman.ini.sample $(CFGDIR)/sesman.ini
++	$(BSD_INSTALL_PROGRAM) sessvc $(PREFIX)/bin/sessvc
+ 	make -C tools install
+ 	make -C libscp install
  
- installdeb:
- 	install sesman $(DESTDIRDEB)/usr/xrdp/sesman

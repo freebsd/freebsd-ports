@@ -2,9 +2,6 @@
 
 XRDP has been installed.
 
-The binaries "sesman" and "sesrun" have been prefixed with "xrdp_" to avoid a
-possible name conflict, as their manual pages, log and pid files.
-
 There is an rc.d script, so the service can be enabled by adding this line
 in /etc/rc.conf:
 
