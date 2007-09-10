@@ -7,7 +7,7 @@
 
 PORTNAME=	kdevelop
 PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -23,9 +23,7 @@ BUILD_DEPENDS=	cervisia:${PORTSDIR}/devel/kdesdk3 \
 LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion
 RUN_DEPENDS=	extractrc:${PORTSDIR}/devel/kdesdk3 \
 		gdb66:${PORTSDIR}/devel/gdb6 \
-		gmake:${PORTSDIR}/devel/gmake \
-		${LOCALBASE}/gnu-autotools/bin/automake:${PORTSDIR}/devel/gnu-automake \
-		${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoconf
+		gmake:${PORTSDIR}/devel/gmake
 
 .if defined(WITH_OPTIONAL_DEPENDS)
 RUN_DEPENDS+=	ark:${PORTSDIR}/misc/kdeutils3 \
@@ -42,7 +40,7 @@ USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BDB=	yes
-USE_AUTOTOOLS=  libtool:15
+USE_AUTOTOOLS=  libtool:15 autotools:run
 _NO_KDE_FINAL=	yes
 CONFIGURE_ARGS+=--with-qtdoc-dir=${X11BASE}/share/doc/qt/html \
 		--with-db-includedir=${BDB_INCLUDE_DIR} \
@@ -52,8 +50,6 @@ CONFIGURE_ARGS+=--with-qtdoc-dir=${X11BASE}/share/doc/qt/html \
 		--with-svn-include=${LOCALBASE}/include/subversion-1 \
 		--with-svn-lib=${LOCALBASE}/lib \
 		--with-neon-config=${LOCALBASE}/bin/neon-config
-
-CONFIGURE_ENV+=	PATH=${LOCALBASE}/gnu-autotools/bin:${PATH}
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
