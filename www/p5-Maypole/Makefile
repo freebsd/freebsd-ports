@@ -38,6 +38,8 @@ BUILD_DEPENDS+=	${SITE_PERL}/Test/MockModule.pm:${PORTSDIR}/devel/p5-Test-MockMo
 
 OPTIONS=	MODPERL "mod_perl support" on
 
+PERL_CONFIGURE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MODPERL)
@@ -52,8 +54,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGMSG_SUB=	DOCSDIR=${DOCSDIR} \
 		DATADIR=${DATADIR} \
 		EXAMPLESDIR=${EXAMPLESDIR}
-
-PERL_CONFIGURE=	yes
 
 MAN3=		Apache::MVC.3 \
 		CGI::Maypole.3 \
