@@ -7,6 +7,7 @@
 
 PORTNAME=	sqstat
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://samm.kiev.ua/sqstat/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -14,7 +15,7 @@ MASTER_SITES=	http://samm.kiev.ua/sqstat/ \
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A script which allows to look through active squid users connections
 
-USE_PHP=	pcre
+USE_PHP=	pcre session
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
