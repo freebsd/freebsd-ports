@@ -14,6 +14,7 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Wiki like system by perl5
 
 USE_PERL5=		yes
+PERL_CONFIGURE=		yes
 
 # ============================================================================
 # =  You have to appoint GPG to use a function to upload an image.           =
@@ -57,7 +58,6 @@ JCODE=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm
 JCODE=	${SITE_PERL}/Jcode.pm
 .endif
 
-PERL_CONFIGURE=		yes
 PKGMESSAGE=		${WRKDIR}/pkg-message
 WIKIAUTO=		${SITE_PERL}/auto/${PORTNAME}
 WIKIPM=			${SITE_PERL}/${PORTNAME}
