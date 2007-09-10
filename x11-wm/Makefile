@@ -85,6 +85,7 @@
     SUBDIR += matchbox
     SUBDIR += metacity
     SUBDIR += mlvwm
+    SUBDIR += nickleby
     SUBDIR += novawm
     SUBDIR += obconf
     SUBDIR += obtuner
