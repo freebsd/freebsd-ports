@@ -7,20 +7,20 @@
 
 PORTNAME=	ecb
 PORTVERSION=	2.32
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	ecb
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Emacs Code Browser
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
+EMACS_PORT_NAME?=	emacs22
 
-.if ${EMACS_PORT_NAME} != "emacs21"
+.if ${EMACS_PORT_NAME} != "emacs22"
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 .endif
 
