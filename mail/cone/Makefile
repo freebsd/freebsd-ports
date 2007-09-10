@@ -7,6 +7,7 @@
 
 PORTNAME=	cone
 PORTVERSION=	0.71
+PORTREVISION=	1
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/ \
@@ -32,7 +33,7 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	-C --without-db --with-certdb --prefix=${PREFIX} --exec-prefix=${PREFIX}
+CONFIGURE_ARGS=	-C --without-db --with-certdb=${PREFIX}/share/cone/rootcerts --prefix=${PREFIX} --exec-prefix=${PREFIX}
 
 CONFIGURE_ENV=	REHASH="${PERL} ${SCRIPTDIR}/c_rehash" LDFLAGS=-L${LOCALBASE}/lib \
 		CPPFLAGS="${CPPFLAGS}"
