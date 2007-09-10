@@ -24,17 +24,17 @@ SRCS =	caxpy.f  ccopy.f  cdotc.f  cdotu.f  cgbmv.f  cgemm.f  cgemv.f	\
 	dsymm.f  dsymv.f  dsyr.f   dsyr2.f  dsyr2k.f dsyrk.f  dtbmv.f	\
 	dtbsv.f  dtpmv.f  dtpsv.f  dtrmm.f  dtrmv.f  dtrsm.f  dtrsv.f	\
 	dzasum.f dznrm2.f icamax.f idamax.f isamax.f izamax.f lsame.f	\
-	sasum.f  saxpy.f  scasum.f scnrm2.f scopy.f  sdot.f   sdsdot.f	\
-	sgbmv.f  sgemm.f  sgemv.f  sger.f   snrm2.f  srot.f   srotg.f	\
-	srotm.f  srotmg.f ssbmv.f  sscal.f  sspmv.f  sspr.f   sspr2.f	\
-	sswap.f  ssymm.f  ssymv.f  ssyr.f   ssyr2.f  ssyr2k.f ssyrk.f	\
-	stbmv.f  stbsv.f  stpmv.f  stpsv.f  strmm.f  strmv.f  strsm.f	\
-	strsv.f  xerbla.f zaxpy.f  zcopy.f  zdotc.f  zdotu.f  zdrot.f	\
-	zdscal.f zgbmv.f  zgemm.f  zgemv.f  zgerc.f  zgeru.f  zhbmv.f	\
-	zhemm.f  zhemv.f  zher.f   zher2.f  zher2k.f zherk.f  zhpmv.f	\
-	zhpr.f   zhpr2.f  zrotg.f  zscal.f  zswap.f  zsymm.f  zsyr2k.f	\
-	zsyrk.f  ztbmv.f  ztbsv.f  ztpmv.f  ztpsv.f  ztrmm.f  ztrmv.f	\
-	ztrsm.f  ztrsv.f
+	sasum.f  saxpy.f  scabs1.f scasum.f scnrm2.f scopy.f  sdot.f	\
+	sdsdot.f sgbmv.f  sgemm.f  sgemv.f  sger.f   snrm2.f  srot.f	\
+	srotg.f  srotm.f  srotmg.f ssbmv.f  sscal.f  sspmv.f  sspr.f	\
+	sspr2.f  sswap.f  ssymm.f  ssymv.f  ssyr.f   ssyr2.f  ssyr2k.f	\
+	ssyrk.f  stbmv.f  stbsv.f  stpmv.f  stpsv.f  strmm.f  strmv.f	\
+	strsm.f  strsv.f  xerbla.f zaxpy.f  zcopy.f  zdotc.f  zdotu.f	\
+	zdrot.f  zdscal.f zgbmv.f  zgemm.f  zgemv.f  zgerc.f  zgeru.f	\
+	zhbmv.f  zhemm.f  zhemv.f  zher.f   zher2.f  zher2k.f zherk.f	\
+	zhpmv.f  zhpr.f   zhpr2.f  zrotg.f  zscal.f  zswap.f  zsymm.f	\
+	zsyr2k.f zsyrk.f  ztbmv.f  ztbsv.f  ztpmv.f  ztpsv.f  ztrmm.f	\
+	ztrmv.f  ztrsm.f  ztrsv.f
 
 CLEANFILES+= *.c
 
