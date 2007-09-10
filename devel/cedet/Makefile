@@ -6,28 +6,27 @@
 #
 
 PORTNAME=	cedet
-PORTVERSION=	1.0.pre3
-PORTREVISION=	3
+PORTVERSION=	1.0.p4
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://dryice.name/computer/FreeBSD/distfiles/
+				http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	cedet
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	${PORTNAME}-1.0pre3
+DISTNAME=	${PORTNAME}-1.0pre4
 
 MAINTAINER?=	dryice@FreeBSD.org
 COMMENT=	Collection of Emacs Development Environment Tools
 
 PORTCLASS=	master
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
+EMACS_PORT_NAME?=	emacs22
 
 CEDET_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
 INFO=		bovine cogre ede eieio grammar-fw semantic \
 		semantic-appdev semantic-langdev semantic-user \
-		wisent
-#		wisent speedbar
+		wisent speedbar-cedet
+
 SEMANTIC_ELISP_SUBDIRS=	bovine wisent
 SEMANTIC_INFOS=	bovine.info grammar-fw.info semantic-appdev.info \
 		semantic-langdev.info semantic-user.info semantic.info \
@@ -36,12 +35,15 @@ SEMANTIC_INFOS=	bovine.info grammar-fw.info semantic-appdev.info \
 USE_GMAKE=	yes
 CONFLICTS=	eieio* semantic* speedbar*
 
-.if (${EMACS_PORT_NAME} == "emacs22")
-EXTRA_PATCHES+=	${FILESDIR}/semantic-idle.fix.emacs22.diff
-PLIST_SUB+=	EMACS22_HAVE="@comment "
-.else
-PLIST_SUB+=	EMACS22_HAVE=""
-.endif
+pre-build:
+#cleanup info
+	${RM} -f ${WRKSRC}/ede/ede.info
+	${RM} -f ${WRKSRC}/speedbar/speedbar.info
+.for i in ${SEMANTIC_INFOS}
+	${RM} -f ${WRKSRC}/semantic/doc/${i}
+.endfor
+	${RM} -f ${WRKSRC}/cogre/cogre.info
+	${RM} -f ${WRKSRC}/eieio/eieio.info
 
 do-install:
 	${MKDIR} ${CEDET_LISPDIR}
@@ -68,9 +70,7 @@ do-install:
 .for i in *.el *.elc
 	${INSTALL_DATA} ${WRKSRC}/ede/${i} ${CEDET_LISPDIR}/ede
 .endfor
-.for i in *.info*
-	${INSTALL_DATA} ${WRKSRC}/ede/${i} ${PREFIX}/info
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/ede/ede.info ${PREFIX}/info
 
 # eieio
 	${MKDIR} ${CEDET_LISPDIR}/eieio
@@ -92,28 +92,25 @@ do-install:
 .endfor
 .endfor
 
-.for i in *.info*
+.for i in ${SEMANTIC_INFOS}
 	${INSTALL_DATA} ${WRKSRC}/semantic/doc/${i} ${PREFIX}/info
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/semantic/semanticdb.sh ${PREFIX}/bin
 
-# speedbar
+# speedbar (Emacs-22 have own but version oldes than req in cedet)
 	${MKDIR} ${CEDET_LISPDIR}/speedbar
-
-# emacs22 have own
-.if (${EMACS_PORT_NAME} == "emacs22")
-	${RM} -f ${WRKSRC}/speedbar/speedbar.el
-	${RM} -f ${WRKSRC}/speedbar/speedbar.elc
-.endif
 
 .for i in *.el *.elc *.xpm
 	${INSTALL_DATA} ${WRKSRC}/speedbar/${i} ${CEDET_LISPDIR}/speedbar
 .endfor
 
-# emacs22 have own
-.if (${EMACS_PORT_NAME} != "emacs22")
-	${INSTALL_DATA} ${WRKSRC}/speedbar/speedbar.info ${PREFIX}/info
-.endif
+	${INSTALL_DATA} ${WRKSRC}/speedbar/speedbar-cedet.info ${PREFIX}/info
+
+#contrib
+	${MKDIR} ${CEDET_LISPDIR}/contrib
+.for i in *.el *.elc
+	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${CEDET_LISPDIR}/contrib
+.endfor
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
