@@ -410,6 +410,33 @@ lib/libmangosscript.so.0
 %%DATADIR%%/sql/updates/4331_spell_chain.sql
 %%DATADIR%%/sql/updates/4331_spell_proc_event.sql
 %%DATADIR%%/sql/updates/4341_game_event.sql
+%%DATADIR%%/sql/updates/4356_command.sql
+%%DATADIR%%/sql/updates/4369_battleground_template.sql
+%%DATADIR%%/sql/updates/4376_battleground_template.sql
+%%DATADIR%%/sql/updates/4392_battleground_template.sql
+%%DATADIR%%/sql/updates/4395_spell_chain.sql
+%%DATADIR%%/sql/updates/4397_command.sql
+%%DATADIR%%/sql/updates/4401_spell_chain.sql
+%%DATADIR%%/sql/updates/4403_reserved_name.sql
+%%DATADIR%%/sql/updates/4407_character.sql
+%%DATADIR%%/sql/updates/4407_character_kill.sql
+%%DATADIR%%/sql/updates/4407_command.sql
+%%DATADIR%%/sql/updates/4414_spell_chain.sql
+%%DATADIR%%/sql/updates/4414_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4417_quest_template.sql
+%%DATADIR%%/sql/updates/4420_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4422_command.sql
+%%DATADIR%%/sql/updates/4425_character.sql
+%%DATADIR%%/sql/updates/4425_command.sql
+%%DATADIR%%/sql/updates/4426_creature_template.sql
+%%DATADIR%%/sql/updates/4430_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4432_item_template.sql
+%%DATADIR%%/sql/updates/4432_spell_chain.sql
+%%DATADIR%%/sql/updates/4432_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4434_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4437_character_aura.sql
+%%DATADIR%%/sql/updates/4437_pet_aura.sql
+%%DATADIR%%/sql/updates/4439_spell_proc_event.sql
 %%DATADIR%%/sql/updates/README
 %%DBC%%%%DATADIR%%/dbc/AnimationData.dbc
 %%DBC%%%%DATADIR%%/dbc/AreaPOI.dbc
@@ -603,6 +630,11 @@ lib/libmangosscript.so.0
 %%SD2%%share/scriptdev2/sql/updates/r92.sql
 %%SD2%%share/scriptdev2/sql/updates/r97.sql
 %%SD2%%share/scriptdev2/sql/updates/r104.sql
+%%SD2%%share/scriptdev2/sql/updates/r108.sql
+%%SD2%%share/scriptdev2/sql/updates/r110.sql
+%%SD2%%share/scriptdev2/sql/updates/r121.sql
+%%SD2%%share/scriptdev2/sql/updates/r123.sql
+%%SD2%%share/scriptdev2/sql/updates/r124.sql
 @dirrm %%DATADIR%%/sql/updates
 @dirrm %%DATADIR%%/sql
 %%DBC%%@dirrm %%DATADIR%%/dbc
