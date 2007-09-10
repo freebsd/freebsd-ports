@@ -31,13 +31,13 @@ bin/boswars
 %%DATADIR%%/campaigns/elites/level10.sms
 %%DATADIR%%/campaigns/elites/level10.txt
 %%DATADIR%%/campaigns/tutorial/campaign.lua
-%%DATADIR%%/campaigns/tutorial/level01.wav
 %%DATADIR%%/campaigns/tutorial/level01-01.wav
 %%DATADIR%%/campaigns/tutorial/level01-03.wav
 %%DATADIR%%/campaigns/tutorial/level01-04.wav
 %%DATADIR%%/campaigns/tutorial/level01-05.wav
 %%DATADIR%%/campaigns/tutorial/level01.smp
 %%DATADIR%%/campaigns/tutorial/level01.sms
+%%DATADIR%%/campaigns/tutorial/level01.wav
 %%DATADIR%%/campaigns/tutorial/level02.smp
 %%DATADIR%%/campaigns/tutorial/level02.sms
 %%DATADIR%%/campaigns/tutorial/level03.smp
@@ -105,6 +105,7 @@ bin/boswars
 %%DATADIR%%/languages/bos-es.po
 %%DATADIR%%/languages/bos-fi.po
 %%DATADIR%%/languages/bos-fr.po
+%%DATADIR%%/languages/bos-pt.po
 %%DATADIR%%/languages/bos-tr.po
 %%DATADIR%%/languages/bos.pot
 %%DATADIR%%/languages/cs.po
@@ -117,6 +118,7 @@ bin/boswars
 %%DATADIR%%/languages/genpot.sh
 %%DATADIR%%/languages/makesame.py
 %%DATADIR%%/languages/pl.po
+%%DATADIR%%/languages/pt.po
 %%DATADIR%%/languages/tr.po
 %%DATADIR%%/languages/updatepo.sh
 %%DATADIR%%/maps/C1_M10_Fort_Savoy.smp
@@ -139,78 +141,78 @@ bin/boswars
 %%DATADIR%%/maps/C1_M8_Savoy_steps.sms
 %%DATADIR%%/maps/C1_M9_Savoy_lake.smp
 %%DATADIR%%/maps/C1_M9_Savoy_lake.sms
-%%DATADIR%%/maps/antarticum.smp
-%%DATADIR%%/maps/antarticum/setup.sms
-%%DATADIR%%/maps/antarticum/terrain.lua
-%%DATADIR%%/maps/antarticum/terrain.png
-%%DATADIR%%/maps/battlefield.smp
-%%DATADIR%%/maps/battlefield/setup.sms
-%%DATADIR%%/maps/battlefield/terrain.lua
-%%DATADIR%%/maps/battlefield/terrain.png
+%%DATADIR%%/maps/antarticum.map/presentation.smp
+%%DATADIR%%/maps/antarticum.map/setup.sms
+%%DATADIR%%/maps/antarticum.map/terrain.lua
+%%DATADIR%%/maps/antarticum.map/terrain.png
+%%DATADIR%%/maps/battlefield.map/presentation.smp
+%%DATADIR%%/maps/battlefield.map/setup.sms
+%%DATADIR%%/maps/battlefield.map/terrain.lua
+%%DATADIR%%/maps/battlefield.map/terrain.png
 %%DATADIR%%/maps/braza.smp
 %%DATADIR%%/maps/braza.sms
-%%DATADIR%%/maps/bridge.smp
-%%DATADIR%%/maps/bridge/access-fast.lua
-%%DATADIR%%/maps/bridge/access-water.lua
-%%DATADIR%%/maps/bridge/setup.sms
-%%DATADIR%%/maps/bridge/terrain.lua
-%%DATADIR%%/maps/bridge/terrain.png
-%%DATADIR%%/maps/canyon.smp
-%%DATADIR%%/maps/canyon/access-unpassable.lua
-%%DATADIR%%/maps/canyon/class-no-pass.png
-%%DATADIR%%/maps/canyon/setup.sms
-%%DATADIR%%/maps/canyon/terrain.lua
-%%DATADIR%%/maps/canyon/terrain.png
+%%DATADIR%%/maps/bridge.map/access-fast.lua
+%%DATADIR%%/maps/bridge.map/access-water.lua
+%%DATADIR%%/maps/bridge.map/presentation.smp
+%%DATADIR%%/maps/bridge.map/setup.sms
+%%DATADIR%%/maps/bridge.map/terrain.lua
+%%DATADIR%%/maps/bridge.map/terrain.png
+%%DATADIR%%/maps/canyon.map/access-unpassable.lua
+%%DATADIR%%/maps/canyon.map/class-no-pass.png
+%%DATADIR%%/maps/canyon.map/presentation.smp
+%%DATADIR%%/maps/canyon.map/setup.sms
+%%DATADIR%%/maps/canyon.map/terrain.lua
+%%DATADIR%%/maps/canyon.map/terrain.png
 %%DATADIR%%/maps/cross.smp
 %%DATADIR%%/maps/cross.sms
 %%DATADIR%%/maps/forest.smp
 %%DATADIR%%/maps/forest.sms
 %%DATADIR%%/maps/highlands.smp
 %%DATADIR%%/maps/highlands.sms
-%%DATADIR%%/maps/islandwar.smp
-%%DATADIR%%/maps/islandwar/access-fast.lua
-%%DATADIR%%/maps/islandwar/access-water.lua
-%%DATADIR%%/maps/islandwar/setup.sms
-%%DATADIR%%/maps/islandwar/terrain.lua
-%%DATADIR%%/maps/islandwar/terrain.png
+%%DATADIR%%/maps/islandwar.map/access-fast.lua
+%%DATADIR%%/maps/islandwar.map/access-water.lua
+%%DATADIR%%/maps/islandwar.map/presentation.smp
+%%DATADIR%%/maps/islandwar.map/setup.sms
+%%DATADIR%%/maps/islandwar.map/terrain.lua
+%%DATADIR%%/maps/islandwar.map/terrain.png
 %%DATADIR%%/maps/laby.smp
 %%DATADIR%%/maps/laby.sms
 %%DATADIR%%/maps/lake.smp
 %%DATADIR%%/maps/lake.sms
 %%DATADIR%%/maps/multiplayer.smp
 %%DATADIR%%/maps/multiplayer.sms
-%%DATADIR%%/maps/patches.smp
-%%DATADIR%%/maps/patches/128x.png
-%%DATADIR%%/maps/patches/256x.png
-%%DATADIR%%/maps/patches/32x.png
-%%DATADIR%%/maps/patches/512-hill-01x.png
-%%DATADIR%%/maps/patches/512-hill-02x.png
-%%DATADIR%%/maps/patches/512-hill-03x.png
-%%DATADIR%%/maps/patches/512-hill-04x.png
-%%DATADIR%%/maps/patches/512-lake-01x.png
-%%DATADIR%%/maps/patches/512x.png
-%%DATADIR%%/maps/patches/64x.png
-%%DATADIR%%/maps/patches/access-unpassable.lua
-%%DATADIR%%/maps/patches/setup.sms
-%%DATADIR%%/maps/patches/terrain.lua
-%%DATADIR%%/maps/patches/terrain.png
-%%DATADIR%%/maps/patches/unpassable.png
-%%DATADIR%%/maps/river.smp
-%%DATADIR%%/maps/river/setup.sms
-%%DATADIR%%/maps/river/terrain.lua
-%%DATADIR%%/maps/river/terrain.png
-%%DATADIR%%/maps/tutorial.smp
-%%DATADIR%%/maps/tutorial/access-unpassable.lua
-%%DATADIR%%/maps/tutorial/setup.sms
-%%DATADIR%%/maps/tutorial/terrain.lua
-%%DATADIR%%/maps/tutorial/terrain.png
-%%DATADIR%%/maps/tutorial/unpassable.png
-%%DATADIR%%/maps/wetlands01.smp
-%%DATADIR%%/maps/wetlands01/access-unpassable.lua
-%%DATADIR%%/maps/wetlands01/terrain.lua
-%%DATADIR%%/maps/wetlands01/wetlands01-nopass.png
-%%DATADIR%%/maps/wetlands01/wetlands01.png
-%%DATADIR%%/maps/wetlands01/wetlands01.sms
+%%DATADIR%%/maps/patches.map/128x.png
+%%DATADIR%%/maps/patches.map/256x.png
+%%DATADIR%%/maps/patches.map/32x.png
+%%DATADIR%%/maps/patches.map/512-hill-01x.png
+%%DATADIR%%/maps/patches.map/512-hill-02x.png
+%%DATADIR%%/maps/patches.map/512-hill-03x.png
+%%DATADIR%%/maps/patches.map/512-hill-04x.png
+%%DATADIR%%/maps/patches.map/512-lake-01x.png
+%%DATADIR%%/maps/patches.map/512x.png
+%%DATADIR%%/maps/patches.map/64x.png
+%%DATADIR%%/maps/patches.map/access-unpassable.lua
+%%DATADIR%%/maps/patches.map/presentation.smp
+%%DATADIR%%/maps/patches.map/setup.sms
+%%DATADIR%%/maps/patches.map/terrain.lua
+%%DATADIR%%/maps/patches.map/terrain.png
+%%DATADIR%%/maps/patches.map/unpassable.png
+%%DATADIR%%/maps/river.map/presentation.smp
+%%DATADIR%%/maps/river.map/setup.sms
+%%DATADIR%%/maps/river.map/terrain.lua
+%%DATADIR%%/maps/river.map/terrain.png
+%%DATADIR%%/maps/tutorial.map/access-unpassable.lua
+%%DATADIR%%/maps/tutorial.map/presentation.smp
+%%DATADIR%%/maps/tutorial.map/setup.sms
+%%DATADIR%%/maps/tutorial.map/terrain.lua
+%%DATADIR%%/maps/tutorial.map/terrain.png
+%%DATADIR%%/maps/tutorial.map/unpassable.png
+%%DATADIR%%/maps/wetlands01.map/access-unpassable.lua
+%%DATADIR%%/maps/wetlands01.map/presentation.smp
+%%DATADIR%%/maps/wetlands01.map/terrain.lua
+%%DATADIR%%/maps/wetlands01.map/wetlands01-nopass.png
+%%DATADIR%%/maps/wetlands01.map/wetlands01.png
+%%DATADIR%%/maps/wetlands01.map/wetlands01.sms
 %%DATADIR%%/scripts/ai.lua
 %%DATADIR%%/scripts/ais/passive.lua
 %%DATADIR%%/scripts/ais/rush.lua
@@ -248,12 +250,12 @@ bin/boswars
 %%DATADIR%%/sounds/ui/chatmessage.wav
 %%DATADIR%%/sounds/ui/click.wav.gz
 %%DATADIR%%/units/aircraftfactory/aircraftfactory.completed.wav
-%%DATADIR%%/units/aircraftfactory/aircraftfactory.underattack.wav
-%%DATADIR%%/units/aircraftfactory/unit-aircraftfactory.lua
 %%DATADIR%%/units/aircraftfactory/aircraftfactory.png
+%%DATADIR%%/units/aircraftfactory/aircraftfactory.underattack.wav
 %%DATADIR%%/units/aircraftfactory/aircraftfactory_c.png
 %%DATADIR%%/units/aircraftfactory/aircraftfactory_i.png
 %%DATADIR%%/units/aircraftfactory/aircraftfactory_s.png
+%%DATADIR%%/units/aircraftfactory/unit-aircraftfactory.lua
 %%DATADIR%%/units/antharus/antharus.png
 %%DATADIR%%/units/antharus/icon.png
 %%DATADIR%%/units/antharus/unit-antharus.lua
@@ -400,9 +402,9 @@ bin/boswars
 %%DATADIR%%/units/hospital/sfx_hosp.die.wav
 %%DATADIR%%/units/hospital/sfx_hosp.select.wav
 %%DATADIR%%/units/hospital/unit-hospital.lua
-%%DATADIR%%/units/hotspot/unit-hotspot.lua
 %%DATADIR%%/units/hotspot/hotspot.png
 %%DATADIR%%/units/hotspot/hotspot_i.png
+%%DATADIR%%/units/hotspot/unit-hotspot.lua
 %%DATADIR%%/units/jet/ico_jet.png
 %%DATADIR%%/units/jet/jet.ready.wav
 %%DATADIR%%/units/jet/jet.underattack.wav
@@ -411,14 +413,14 @@ bin/boswars
 %%DATADIR%%/units/jet/unit_jet.png
 %%DATADIR%%/units/jet/unit_jet_s.png
 %%DATADIR%%/units/magmapump/magmapump.completed.wav
+%%DATADIR%%/units/magmapump/magmapump.png
 %%DATADIR%%/units/magmapump/magmapump.select.wav
 %%DATADIR%%/units/magmapump/magmapump.underattack.wav
-%%DATADIR%%/units/magmapump/unit-magmapump.lua
-%%DATADIR%%/units/magmapump/magmapump.png
 %%DATADIR%%/units/magmapump/magmapump_c.png
 %%DATADIR%%/units/magmapump/magmapump_i.png
 %%DATADIR%%/units/magmapump/magmapump_s.png
 %%DATADIR%%/units/magmapump/sfx_pplnt.die.wav
+%%DATADIR%%/units/magmapump/unit-magmapump.lua
 %%DATADIR%%/units/medic/heal.png
 %%DATADIR%%/units/medic/ico_heal.png
 %%DATADIR%%/units/medic/ico_medic.png
@@ -468,22 +470,22 @@ bin/boswars
 %%DATADIR%%/units/nukeplant/sfx_pplnt.die.wav
 %%DATADIR%%/units/nukeplant/sfx_pplnt.select.wav
 %%DATADIR%%/units/nukeplant/unit-nukeplant.lua
+%%DATADIR%%/units/plants/pitcher.png
+%%DATADIR%%/units/plants/pitcher_icon.png
+%%DATADIR%%/units/plants/pitcher_shadow.png
+%%DATADIR%%/units/plants/rafflesia.png
+%%DATADIR%%/units/plants/rafflesia_icon.png
+%%DATADIR%%/units/plants/rafflesia_shadow.png
+%%DATADIR%%/units/plants/unit-plant.lua
 %%DATADIR%%/units/powerplant/power.plant.completed.wav
 %%DATADIR%%/units/powerplant/power.plant.underattack.wav
-%%DATADIR%%/units/powerplant/unit-powerplant.lua
-%%DATADIR%%/units/powerplant/sfx_pplnt.die.wav
-%%DATADIR%%/units/powerplant/sfx_pplnt.select.wav
 %%DATADIR%%/units/powerplant/powerplant.png
 %%DATADIR%%/units/powerplant/powerplant_c.png
 %%DATADIR%%/units/powerplant/powerplant_i.png
 %%DATADIR%%/units/powerplant/powerplant_s.png
-%%DATADIR%%/units/plants/pitcher_icon.png
-%%DATADIR%%/units/plants/rafflesia_icon.png
-%%DATADIR%%/units/plants/unit-plant.lua
-%%DATADIR%%/units/plants/pitcher.png
-%%DATADIR%%/units/plants/pitcher_shadow.png
-%%DATADIR%%/units/plants/rafflesia.png
-%%DATADIR%%/units/plants/rafflesia_shadow.png
+%%DATADIR%%/units/powerplant/sfx_pplnt.die.wav
+%%DATADIR%%/units/powerplant/sfx_pplnt.select.wav
+%%DATADIR%%/units/powerplant/unit-powerplant.lua
 %%DATADIR%%/units/radar/radar.completed.wav
 %%DATADIR%%/units/radar/radar.png
 %%DATADIR%%/units/radar/radar.underattack.wav
@@ -541,11 +543,11 @@ bin/boswars
 %%DATADIR%%/units/tree04/unit-tree04.lua
 %%DATADIR%%/units/vault/sfx_fort.die.wav
 %%DATADIR%%/units/vault/sfx_fort.select.wav
-%%DATADIR%%/units/vault/vault.completed.wav
-%%DATADIR%%/units/vault/vault.underattack.wav
 %%DATADIR%%/units/vault/vault-i.png
+%%DATADIR%%/units/vault/vault.completed.wav
 %%DATADIR%%/units/vault/vault.lua
 %%DATADIR%%/units/vault/vault.png
+%%DATADIR%%/units/vault/vault.underattack.wav
 %%DATADIR%%/units/vault/vault_c.png
 %%DATADIR%%/units/vault/vault_s.png
 %%DATADIR%%/units/vehiclefactory/sfx_vfac.die.wav
@@ -557,19 +559,21 @@ bin/boswars
 %%DATADIR%%/units/vehiclefactory/vehicle_factory_i.png
 %%DATADIR%%/units/vehiclefactory/vehicle_factory_s.png
 %%DATADIR%%/units/vehiclefactory/vehiclefactory.lua
-%%DATADIR%%/units/weakhotspot/unit-weakhotspot.lua
 %%DATADIR%%/units/weakhotspot/hotspot.png
 %%DATADIR%%/units/weakhotspot/hotspot_i.png
+%%DATADIR%%/units/weakhotspot/unit-weakhotspot.lua
 %%DATADIR%%/video/boswars_intro.ogg
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/README-SDL.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/development.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/gcclibs-copyright.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/gpl.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/guichan-copyright.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/index.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/install.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/lua5-copyright.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/media.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/scripts/ai.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/scripts/config.html
@@ -589,6 +593,8 @@ bin/boswars
 %%PORTDOCS%%%%DOCSDIR%%/doc/scripts/ui.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/scripts/unittype.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/stratagus-changelog.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/tolua-copyright.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/xiph-copyright.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/scripts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -605,8 +611,8 @@ bin/boswars
 @dirrm %%DATADIR%%/units/rocksfield
 @dirrm %%DATADIR%%/units/rocks
 @dirrm %%DATADIR%%/units/radar
-@dirrm %%DATADIR%%/units/plants
 @dirrm %%DATADIR%%/units/powerplant
+@dirrm %%DATADIR%%/units/plants
 @dirrm %%DATADIR%%/units/nukeplant
 @dirrm %%DATADIR%%/units/morels
 @dirrm %%DATADIR%%/units/missilesilo
@@ -641,15 +647,15 @@ bin/boswars
 @dirrm %%DATADIR%%/scripts/menus
 @dirrm %%DATADIR%%/scripts/ais
 @dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/maps/wetlands01
-@dirrm %%DATADIR%%/maps/tutorial
-@dirrm %%DATADIR%%/maps/river
-@dirrm %%DATADIR%%/maps/patches
-@dirrm %%DATADIR%%/maps/islandwar
-@dirrm %%DATADIR%%/maps/canyon
-@dirrm %%DATADIR%%/maps/bridge
-@dirrm %%DATADIR%%/maps/battlefield
-@dirrm %%DATADIR%%/maps/antarticum
+@dirrm %%DATADIR%%/maps/wetlands01.map
+@dirrm %%DATADIR%%/maps/tutorial.map
+@dirrm %%DATADIR%%/maps/river.map
+@dirrm %%DATADIR%%/maps/patches.map
+@dirrm %%DATADIR%%/maps/islandwar.map
+@dirrm %%DATADIR%%/maps/canyon.map
+@dirrm %%DATADIR%%/maps/bridge.map
+@dirrm %%DATADIR%%/maps/battlefield.map
+@dirrm %%DATADIR%%/maps/antarticum.map
 @dirrm %%DATADIR%%/maps
 @dirrm %%DATADIR%%/languages
 @dirrm %%DATADIR%%/graphics/ui
