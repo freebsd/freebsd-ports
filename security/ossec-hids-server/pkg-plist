@@ -21,10 +21,15 @@
 %%PORTNAME%%/etc/ossec.conf.sample
 %%PORTNAME%%/etc/shared/rootkit_files.txt
 %%PORTNAME%%/etc/shared/rootkit_trojans.txt
+%%PORTNAME%%/etc/shared/win_applications_rcl.txt
+%%PORTNAME%%/etc/shared/win_audit_rcl.txt
+%%PORTNAME%%/etc/shared/win_malware_rcl.txt
 %%PORTNAME%%/logs/ossec.log
 %%PORTNAME%%/rules/apache_rules.xml
 %%PORTNAME%%/rules/arpwatch_rules.xml
 %%PORTNAME%%/rules/attack_rules.xml
+%%PORTNAME%%/rules/cisco-ios_rules.xml
+%%PORTNAME%%/rules/courier_rules.xml
 %%PORTNAME%%/rules/firewall_rules.xml
 %%PORTNAME%%/rules/ftpd_rules.xml
 %%PORTNAME%%/rules/hordeimp_rules.xml
@@ -52,6 +57,7 @@
 %%PORTNAME%%/rules/squid_rules.xml
 %%PORTNAME%%/rules/sshd_rules.xml
 %%PORTNAME%%/rules/symantec-av_rules.xml
+%%PORTNAME%%/rules/symantec-ws_rules.xml
 %%PORTNAME%%/rules/syslog_rules.xml
 %%PORTNAME%%/rules/telnetd_rules.xml
 %%PORTNAME%%/rules/vpn_concentrator_rules.xml
