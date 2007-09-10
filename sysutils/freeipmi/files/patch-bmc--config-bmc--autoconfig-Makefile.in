@@ -1,0 +1,11 @@
+--- bmc-config/bmc-autoconfig/Makefile.in.orig	Wed Aug 15 07:17:08 2007
++++ bmc-config/bmc-autoconfig/Makefile.in	Sun Sep  9 22:26:32 2007
+@@ -194,7 +194,7 @@
+ sbin_SCRIPTS = $(EXTENSIONS)
+ CLEANFILES = 
+ BMC_CONFIG_TEMPLATE = bmc-config-template
+-BMC_CONFIG_TEMPLATE_DIR = $(localstatedir)/lib/$(PACKAGE)
++BMC_CONFIG_TEMPLATE_DIR = $(datadir)/examples/$(PACKAGE)
+ Bmc_Config_Templatedir = $(BMC_CONFIG_TEMPLATE_DIR)
+ Bmc_Config_Template_DATA = $(BMC_CONFIG_TEMPLATE)
+ EXTRA_DIST = bmc-autoconfig $(BMC_CONFIG_TEMPLATE)
