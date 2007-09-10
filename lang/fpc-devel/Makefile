@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tar.bz2
 MAINTAINER=	marco@freepascal.org
 COMMENT=	Delphi and Turbo Pascal compatible Pascal (commandline) compiler
 
+DEPRECATED=	now lags behind version in lang/fpc; use that instead
+EXPIRATION_DATE=	2007-11-09
+
 .include <bsd.port.pre.mk>
 
 USE_GMAKE=	yes
