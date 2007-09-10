@@ -8,11 +8,12 @@
 PORTNAME=	musicpd
 PORTVERSION=	0.13.0
 CATEGORIES=	audio ipv6
-MASTER_SITES=	http://musicpd.org/uploads/files/
+MASTER_SITES=	http://musicpd.org/uploads/files/ \
+		http://redundancy.redundancy.org/mirror/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	mpd-${PORTVERSION}
 
-MAINTAINER=	ports@mark.reidel.info
+MAINTAINER=	jo.lindqvist@gmail.com
 COMMENT=	A remote-controllable music-daemon
 
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
