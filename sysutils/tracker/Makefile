@@ -8,6 +8,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.gnome.org/~jamiemcc/tracker/
 
@@ -15,7 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Object database, tag/metadata database, search tool and indexer
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		poppler-glib.1:${PORTSDIR}/graphics/poppler-gtk \
+		poppler-glib.2:${PORTSDIR}/graphics/poppler-gtk \
 		exif.12:${PORTSDIR}/graphics/libexif \
 		wv-1.2.3:${PORTSDIR}/textproc/wv \
 		gmime-2.0.4:${PORTSDIR}/mail/gmime2
