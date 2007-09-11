@@ -1,0 +1,5 @@
+This is a user space caching library, currently used by FreeBSD and Mac OS X
+to improve performance of NTFS-3G (sysutils/fusefs-ntfs port), because these
+systems don't have a block device cache, giving a very slow read/write rate.
+
+WWW: http://mercurial.creo.hu/repos/libublio

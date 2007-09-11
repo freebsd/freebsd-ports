@@ -646,6 +646,7 @@
     SUBDIR += libtifiles
     SUBDIR += libtifiles2
     SUBDIR += libtool15
+    SUBDIR += libublio
     SUBDIR += libukcprog
     SUBDIR += libunicode
     SUBDIR += libuninum
