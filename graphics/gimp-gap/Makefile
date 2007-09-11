@@ -7,6 +7,7 @@
 
 PORTNAME=	gimp-gap
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
