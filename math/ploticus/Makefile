@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	ploticus
-PORTVERSION=	2.32
-PORTREVISION=	2
+PORTVERSION=	2.33
 CATEGORIES=	math
-MASTER_SITES=	http://ploticus.sourceforge.net/download/
+MASTER_SITES=	SF
 DISTNAME=	pl${PORTVERSION:S/.//}src
 
 MAINTAINER?=	linimon@FreeBSD.org
@@ -22,7 +21,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+BUILD_WRKSRC=	${WRKSRC}/src
 
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
@@ -44,18 +43,31 @@ PKGNAMESUFFIX=	-nox11
 USE_XPM=	yes
 .endif
 
+.if !defined(NO_INSTALL_MANPAGES)
+MAN1=		ploticus.1
+MAN3=		libploticus.3
+MANCOMPRESSED=	no
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
-		${WRKSRC}/Makefile ${WRKSRC}/Makefile_api
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
+		${BUILD_WRKSRC}/Makefile ${BUILD_WRKSRC}/Makefile_api
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pl ${PREFIX}/bin/ploticus
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/pl ${PREFIX}/bin/ploticus
 	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/../prefabs && ${FIND} . | \
+	cd ${WRKSRC}/prefabs && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
-.if !defined(NOPORTDOCS)
+
+.if !defined(NO_INSTALL_MANPAGES)
+	# pl.1 conflicts with lang/TenDRA
+	${INSTALL_MAN} ${WRKSRC}/man/man1/pl.1 ${MANPREFIX}/man/man1/ploticus.1
+	${INSTALL_MAN} ${WRKSRC}/man/man3/${MAN3} ${MANPREFIX}/man/man3
+.endif
+
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/../pltestsuite && ${FIND} . | \
+	cd ${WRKSRC}/pltestsuite && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
