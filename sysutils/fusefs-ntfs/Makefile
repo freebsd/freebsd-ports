@@ -6,13 +6,12 @@
 
 PORTNAME=	ntfs
 PORTVERSION=	1.826
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.ntfs-3g.org/:ntfs \
-		${MASTER_SITE_LOCAL:S|$|alepulver/:ublio|}
+MASTER_SITES=	http://www.ntfs-3g.org/
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	${PORTNAME}-3g-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:ntfs
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Mount NTFS partitions (read/write) and disk images
@@ -23,15 +22,15 @@ RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	LOCK "Lock the device when mounting (avoids access)" off \
 		UBLIO "Enable user space cache for improved speed" on
 
 MAN8=		ntfs-3g.8
-
-UBLIO_SRC=	libublio-20070103
+MLINKS=		ntfs-3g.8 mount_ntfs-3g.8
 
 .include <bsd.port.pre.mk>
 
@@ -44,15 +43,10 @@ CFLAGS+=	-DUSE_LOCK
 .endif
 
 .if defined(WITH_UBLIO)
-DISTFILES+=	${UBLIO_SRC}.tar.gz:ublio
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ublio
+LIB_DEPENDS+=	ublio.1:${PORTSDIR}/devel/libublio
 CFLAGS+=	-DUSE_UBLIO
 SUB_FILES+=	pkg-message
-
-post-extract:
-	@cd ${WRKDIR}/${UBLIO_SRC} && \
-		${CP} ublio.c ${WRKSRC}/libntfs-3g && \
-		${CP} *.h ${WRKSRC}/include/ntfs-3g
 
 post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}

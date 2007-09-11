@@ -15,7 +15,7 @@ To give an idea about tuning, here are the default values with some notes
 (they are only based on some simple benchmarks, and may be wrong):
 
 NTFS_USE_UBLIO	- 1. Disabling it drastically decreases performance.
-UBLIO_BLOCKSIZE	- 1048576 (1MB). Larger improves reading/writing speed of
+UBLIO_BLOCKSIZE	- 262144 (256KB). Larger improves reading/writing speed of
 		  large files, and smaller makes filesystem operations
 		  (creation, deletion, moving, find(1)) perform faster.
 		  Try 2/4MB and 512/256KB for the different approaches. Note
@@ -29,6 +29,10 @@ For example (improves performance over large files):
 
 # env UBLIO_BLOCKSIZE=2097152 ntfs-3g /dev/ad0s1 /mnt
 
+Alternatively these variables could be set in the shell startup file. For
+example if you are using it in /etc/fstab add it to /etc/profile. In that
+case, use "ntfs-3g" as the type.
+
 It is also possible to enforce block aligned I/O on regular files by setting
 the FORCE_ALIGNED_IO variable (it will be set to 512 bytes), but this is only
 useful for testing purposes and in practice has no use.
@@ -36,5 +40,9 @@ useful for testing purposes and in practice has no use.
 Note that higher values for UBLIO_BLOCKSIZE and UBLIO_ITEMS increase the
 memory usage by their product in bytes. By default it consumes 64MB. To
 decrease it to 16MB set UBLIO_BLOCKSIZE to 256KB for example.
+
+When doing many simultaneous file operations sometimes one of them fails. The
+greater UBLIO_BLOCKSIZE is, more chances this has to happen. Small values like
+4096 also work fine.
 
 ==============================================================================
