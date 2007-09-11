@@ -17,9 +17,7 @@ NO_PACKAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-CC=	gcc
-CXX=	g++
-
+USE_GCC=	3.4
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
