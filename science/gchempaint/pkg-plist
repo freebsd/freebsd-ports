@@ -140,7 +140,7 @@ share/mimelnk/application/x-gchempaint.desktop
 @dirrm share/gnome/help/gchempaint/C
 @dirrm share/gnome/help/gchempaint
 @dirrm share/gnome/omf/gchempaint
-@dirrm lib/goffice/0.4.2/plugins/gchempaint
+@dirrm lib/goffice/0.4.3/plugins/gchempaint
 @dirrm lib/gchempaint/plugins
 @dirrm lib/gchempaint
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
