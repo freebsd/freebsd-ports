@@ -175,7 +175,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="72cdf2ab-5b87-11dc-812d-0011098b2f36">
-    <topic> lsh -- multiple vulnerabilities</topic>
+    <topic>lsh -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>lsh</name>
@@ -200,6 +200,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-03-17</discovery>
       <entry>2007-09-05</entry>
+      <modified>2007-09-11</modified>
     </dates>
   </vuln>
 
@@ -575,6 +576,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-07-30</discovery>
       <entry>2007-07-31</entry>
+      <modified>2007-09-11</modified>
     </dates>
   </vuln>
 
