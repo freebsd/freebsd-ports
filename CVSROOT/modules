@@ -16845,6 +16845,7 @@ xfce4-taskmanager	ports/x11/xfce4-taskmanager
 xfce4-timer-out-plugin	ports/x11-clocks/xfce4-timer-out-plugin
 xfce4-timer-plugin	ports/x11-clocks/xfce4-timer-plugin
 xfce4-utils	ports/sysutils/xfce4-utils
+xfce4-verve-plugin	ports/x11/xfce4-verve-plugin
 xfce4-wavelan-plugin	ports/sysutils/xfce4-wavelan-plugin
 xfce4-weather-plugin	ports/misc/xfce4-weather-plugin
 xfce4-wm	ports/x11-wm/xfce4-wm
