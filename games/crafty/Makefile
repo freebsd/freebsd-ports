@@ -41,12 +41,15 @@ WITH_RCDIR=	~/
 .if !defined(WITH_TBDIR)
 WITH_TBDIR=	${PREFIX}/lib/crafty/TB
 .endif
-
+.if !defined(WITH_PERSDIR)
+WITH_PERSDIR=	${PREFIX}/lib/crafty/cpf
+.endif
 OPT=		-DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
 		-DLOGDIR=\\\"${WITH_LOGDIR}\\\" \
 	       	-DRCDIR=\\\"${WITH_RCDIR}\\\" \
-		-DTBDIR=\\\"${WITH_TBDIR}\\\"
-
+		-DTBDIR=\\\"${WITH_TBDIR}\\\" \
+		-DPERSDIR=\\\"${WITH_PERSDIR}\\\"
+ 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -71,17 +74,19 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/crafty ${PREFIX}/bin/crafty
-	${CHOWN} nobody:nogroup ${PREFIX}/bin/crafty
-	${CHMOD} 6555 ${PREFIX}/bin/crafty
-	${MKDIR} ${PREFIX}/lib/crafty
-	${CHOWN} nobody:nogroup ${PREFIX}/lib/crafty
+	${CHOWN} root:nogroup ${PREFIX}/bin/crafty
+	${CHMOD} 2555 ${PREFIX}/bin/crafty
+	${MKDIR} ${PREFIX}/lib/crafty/cpf
+	${CHOWN} -R root:nogroup ${PREFIX}/lib/crafty
+	${CHMOD} 775 ${PREFIX}/lib/crafty ${PREFIX}/lib/crafty/cpf
 	${INSTALL_DATA} ${WRKSRC}/books.bin ${PREFIX}/lib/crafty/books.bin
 	${INSTALL_DATA} ${WRKSRC}/book.lrn ${PREFIX}/lib/crafty/book.lrn
 	${INSTALL_DATA} ${WRKSRC}/position.bin ${PREFIX}/lib/crafty/position.bin
 	${INSTALL_DATA} ${WRKSRC}/position.lrn ${PREFIX}/lib/crafty/position.lrn
+	${INSTALL_DATA} ${WRKSRC}/crafty.hlp ${PREFIX}/lib/crafty/crafty.hlp
 	${TOUCH} ${PREFIX}/lib/crafty/book.bin
-	${CHOWN} nobody:nogroup ${PREFIX}/lib/crafty/book*
-	${CHOWN} nobody:nogroup ${PREFIX}/lib/crafty/position*
+	${CHOWN} root:nogroup ${PREFIX}/lib/crafty/book*
+	${CHOWN} root:nogroup ${PREFIX}/lib/crafty/position*
 	${CHMOD} 664 ${PREFIX}/lib/crafty/book*
 	${CHMOD} 664 ${PREFIX}/lib/crafty/position*
 .if !defined(NOPORTDOCS)
