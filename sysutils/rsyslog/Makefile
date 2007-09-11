@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	1.19.5
+PORTVERSION=	1.19.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.rsyslog.com/rsyslog/ CENKES
 
@@ -30,6 +30,7 @@ PORT_VERBS=	rfc3195d rklogd ${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<wait.h>|<sys/wait.h>|' ${WRKSRC}/srUtils.c
+	@${REINPLACE_CMD} -e 's|sigaction_t|sigaction|' ${WRKSRC}/rfc3195d.c
 	@${REINPLACE_CMD} -e '/^rfc3195d_LDADD =/s|$$| -llogging|;s|-ldl||'\
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
