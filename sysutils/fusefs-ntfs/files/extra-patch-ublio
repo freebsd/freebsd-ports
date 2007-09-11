@@ -1,15 +1,14 @@
---- ./libntfs-3g/Makefile.am.orig	Fri Apr  6 17:22:09 2007
-+++ ./libntfs-3g/Makefile.am	Mon Apr 30 13:34:44 2007
-@@ -54,7 +54,8 @@
- 	security.c	\
- 	unistr.c	\
- 	version.c	\
--	volume.c
-+	volume.c \
-+	ublio.c
- 
- AM_CPPFLAGS = $(linux_ntfsincludedir) $(all_includes)
- 
+--- libntfs-3g/Makefile.in.orig	Sat Aug 25 18:23:50 2007
++++ libntfs-3g/Makefile.in	Mon Sep 10 14:38:59 2007
+@@ -82,7 +82,7 @@
+ am__installdirs = "$(DESTDIR)$(libdir)"
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES)
+-libntfs_3g_la_LIBADD =
++libntfs_3g_la_LIBADD = -lublio
+ am_libntfs_3g_la_OBJECTS = libntfs_3g_la-attrib.lo \
+ 	libntfs_3g_la-attrlist.lo libntfs_3g_la-bitmap.lo \
+ 	libntfs_3g_la-bootsect.lo libntfs_3g_la-collate.lo \
 --- ./src/ntfs-3g.c.orig	Sun Apr 15 20:52:01 2007
 +++ ./src/ntfs-3g.c	Mon Apr 30 14:12:57 2007
 @@ -1603,7 +1603,11 @@
@@ -24,46 +23,3 @@
  	.destroy        = ntfs_fuse_destroy2,
  #ifdef HAVE_SETXATTR
  	.getxattr	= ntfs_fuse_getxattr,
---- libntfs-3g/Makefile.in.orig	Sun Apr 15 20:50:19 2007
-+++ libntfs-3g/Makefile.in	Mon Apr 30 14:49:21 2007
-@@ -97,7 +97,7 @@
- 	libntfs_3g_la-misc.lo libntfs_3g_la-mst.lo \
- 	libntfs_3g_la-runlist.lo libntfs_3g_la-security.lo \
- 	libntfs_3g_la-unistr.lo libntfs_3g_la-version.lo \
--	libntfs_3g_la-volume.lo
-+	libntfs_3g_la-volume.lo libntfs_3g_la-ublio.lo
- libntfs_3g_la_OBJECTS = $(am_libntfs_3g_la_OBJECTS)
- DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
- depcomp = $(SHELL) $(top_srcdir)/depcomp
-@@ -261,7 +261,8 @@
- 	security.c	\
- 	unistr.c	\
- 	version.c	\
--	volume.c
-+	volume.c	\
-+	ublio.c
- 
- AM_CPPFLAGS = $(linux_ntfsincludedir) $(all_includes)
- EXTRA_DIST = unix_io.c
-@@ -359,6 +360,7 @@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libntfs_3g_la-unistr.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libntfs_3g_la-version.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libntfs_3g_la-volume.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libntfs_3g_la-ublio.Plo@am__quote@
- 
- .c.o:
- @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
-@@ -546,8 +548,13 @@
- @am__fastdepCC_TRUE@	if $(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libntfs_3g_la_CFLAGS) $(CFLAGS) -MT libntfs_3g_la-volume.lo -MD -MP -MF "$(DEPDIR)/libntfs_3g_la-volume.Tpo" -c -o libntfs_3g_la-volume.lo `test -f 'volume.c' || echo '$(srcdir)/'`volume.c; \
- @am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libntfs_3g_la-volume.Tpo" "$(DEPDIR)/libntfs_3g_la-volume.Plo"; else rm -f "$(DEPDIR)/libntfs_3g_la-volume.Tpo"; exit 1; fi
- @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='volume.c' object='libntfs_3g_la-volume.lo' libtool=yes @AMDEPBACKSLASH@
-+libntfs_3g_la-ublio.lo: ublio.c
-+@am__fastdepCC_TRUE@	if $(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libntfs_3g_la_CFLAGS) $(CFLAGS) -MT libntfs_3g_la-ublio.lo -MD -MP -MF "$(DEPDIR)/libntfs_3g_la-ublio.Tpo" -c -o libntfs_3g_la-ublio.lo `test -f 'ublio.c' || echo '$(srcdir)/'`ublio.c; \
-+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libntfs_3g_la-ublio.Tpo" "$(DEPDIR)/libntfs_3g_la-ublio.Plo"; else rm -f "$(DEPDIR)/libntfs_3g_la-ublio.Tpo"; exit 1; fi
-+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='ublio.c' object='libntfs_3g_la-ublio.lo' libtool=yes @AMDEPBACKSLASH@
- @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
- @am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libntfs_3g_la_CFLAGS) $(CFLAGS) -c -o libntfs_3g_la-volume.lo `test -f 'volume.c' || echo '$(srcdir)/'`volume.c
-+@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libntfs_3g_la_CFLAGS) $(CFLAGS) -c -o libntfs_3g_la-ublio.lo `test -f 'ublio.c' || echo '$(srcdir)/'`ublio.c
- 
- mostlyclean-libtool:
- 	-rm -f *.lo

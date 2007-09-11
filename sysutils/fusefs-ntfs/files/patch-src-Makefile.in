@@ -1,14 +1,22 @@
---- src/Makefile.in.orig	Fri May  4 20:11:59 2007
-+++ src/Makefile.in	Fri May  4 20:12:14 2007
-@@ -523,9 +523,9 @@
+--- src/Makefile.in.orig	Sat Aug 25 18:23:50 2007
++++ src/Makefile.in	Mon Sep 10 15:23:40 2007
+@@ -528,7 +528,7 @@
  
  info-am:
  
 -install-data-am: install-data-local install-man
 +install-data-am: install-man
  
--install-exec-am: install-binPROGRAMS install-exec-local
-+install-exec-am: install-binPROGRAMS
+ install-exec-am: install-binPROGRAMS install-exec-local
  	@$(NORMAL_INSTALL)
- 	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
+@@ -590,8 +590,8 @@
+ @RUN_LDCONFIG_TRUE@	$(LDCONFIG)
  
+ install-exec-local:
+-	$(INSTALL) -d $(DESTDIR)/sbin
+-	$(LN_S) -f $(bindir)/ntfs-3g $(DESTDIR)/sbin/mount.ntfs-3g
++	$(INSTALL) -d $(DESTDIR)/usr/sbin
++	$(LN_S) -f $(bindir)/ntfs-3g $(DESTDIR)/usr/sbin/mount_ntfs-3g
+ 
+ install-data-local:
+ 	$(INSTALL) -d $(DESTDIR)$(man8dir)

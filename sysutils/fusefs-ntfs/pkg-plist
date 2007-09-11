@@ -33,3 +33,5 @@ lib/libntfs-3g.la
 lib/libntfs-3g.so
 lib/libntfs-3g.so.10
 @dirrm include/ntfs-3g
+@cwd /usr
+sbin/mount_ntfs-3g
