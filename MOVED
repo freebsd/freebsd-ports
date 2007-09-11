@@ -3216,3 +3216,4 @@ sysutils/linux-procfs|sysutils/linux-procps|2007-09-08|Bad typo
 devel/configgen||2007-09-10|No longer required with new autotools system
 devel/gnu-autoconf||2007-09-10|No longer required with new autotools system
 devel/gnu-automake||2007-09-10|No longer required with new autotools system
+devel/cedet-emacs22||2007-09-11|devel/cedet now defaults to emacs22
