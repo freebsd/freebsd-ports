@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	poppler
-PORTVERSION=	0.5.91
+PORTVERSION=	0.6
 PORTREVISION?=	0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
@@ -34,7 +34,7 @@ OPTIONS=	CAIRO "Enable cairo output backend" on
 .include <bsd.port.pre.mk>
 
 .if defined(SLAVEPORT)
-LIB_DEPENDS+=	poppler.1:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS+=	poppler.2:${PORTSDIR}/graphics/poppler
 .if ${SLAVEPORT}=="gtk"
 CONFIGURE_ARGS+=--enable-poppler-glib
 USE_GNOME+=	gtk20

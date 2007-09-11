@@ -4,6 +4,6 @@ include/poppler/qt3/poppler-qt.h
 lib/libpoppler-qt.a
 lib/libpoppler-qt.la
 lib/libpoppler-qt.so
-lib/libpoppler-qt.so.1
+lib/libpoppler-qt.so.2
 libdata/pkgconfig/poppler-qt.pc
 @dirrm include/poppler/qt3
