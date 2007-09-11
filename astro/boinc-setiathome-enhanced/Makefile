@@ -55,6 +55,8 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" \
 		BOINCDIR="${LOCALBASE}"
 
+BROKEN=		Does not compile.
+
 # these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
 BOINC_USER?=	boinc
 BOINC_GROUP?=	nobody
