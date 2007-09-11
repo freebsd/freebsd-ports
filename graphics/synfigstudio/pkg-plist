@@ -139,7 +139,6 @@ share/pixmaps/valuenode_icon.png
 share/pixmaps/vector_icon.png
 share/pixmaps/width_icon.png
 share/pixmaps/zoom_icon.png
-@dirrmtry share/pixmaps
 @dirrmtry share/mime-info
 @dirrmtry share/applications
 @dirrm include/synfigapp-0.0/synfigapp
