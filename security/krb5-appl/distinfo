@@ -1,3 +1,6 @@
 MD5 (krb5-1.6.2-signed.tar) = 45dedeb7180347a8b0d824f2874b2693
 SHA256 (krb5-1.6.2-signed.tar) = 6301b297fcf2f2218ccc5a315e1d8068c9d8ab0b22fd1f3726a0120bc3df6f1c
 SIZE (krb5-1.6.2-signed.tar) = 14643200
+MD5 (2007-006-patch.txt) = 077ce2f2d01c6e792a1c790a95373cfb
+SHA256 (2007-006-patch.txt) = fa32c9f8a82d44ef8fc2a0a6b8294e70ce29c1a75fc2c3d2c0fa7e0e5556e9fc
+SIZE (2007-006-patch.txt) = 1552
