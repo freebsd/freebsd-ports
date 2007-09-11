@@ -7,9 +7,9 @@
 #
 
 PORTNAME=		bash
-PATCHLEVEL=		17
+PATCHLEVEL=		25
 PORTVERSION=		3.2.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		2
+PORTREVISION?=		0
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/:faq
@@ -129,7 +129,7 @@ post-install:
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 cklatest:
-	@-ncftpls \
+	-ncftpls \
 	    ftp://ftp.cwru.edu/pub/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/\.[0-9a-z]*$//}-patches/ \
 		| ${TAIL}
 
