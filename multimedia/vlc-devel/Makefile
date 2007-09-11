@@ -9,11 +9,11 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.9.0.20070701
-PORTREVISION=	1
+DISTVERSION=	0.9.0.20070906
+PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://nightlies.videolan.org/build/source/
+MASTER_SITES=	http://nightlies.videolan.org/build/source/trunk-${DISTVERSION:S/0.9.0.//}-0029/
 #MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
 #		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${DISTVERSION}/ \
 #		ftp://ftp.crans.org/pub/videolan/vlc/${DISTVERSION}/ \
