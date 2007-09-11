@@ -4,6 +4,6 @@ lib/djview4/plugins/nsdejavu.so
 @exec mkdir -p %%LOCALBASE%%/lib/browser_plugins
 @exec ln -sf %D/lib/djview4/plugins/nsdejavu.so %%LOCALBASE%%/lib/browser_plugins/nsdejavu.so
 @unexec rm -f %%LOCALBASE%%/lib/browser_plugins/nsdejavu.so
-@unexec rmdir %%LOCALBASE%%/lib/browser_plugins > /dev/null 2>&1
+@unexec rmdir %%LOCALBASE%%/lib/browser_plugins > /dev/null 2>&1 || true
 @dirrm lib/djview4/plugins
 @dirrm lib/djview4

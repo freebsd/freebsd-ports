@@ -24,7 +24,7 @@ include/libdjvu/miniexp.h
 %%X11%%lib/djvulibre/plugins/nsdejavu.so
 lib/libdjvulibre.la
 lib/libdjvulibre.so
-lib/libdjvulibre.so.18
+lib/libdjvulibre.so.19
 libdata/pkgconfig/ddjvuapi.pc
 %%X11%%share/djvu/djview3/de/djview.qm
 %%X11%%share/djvu/djview3/de/qt.qm
