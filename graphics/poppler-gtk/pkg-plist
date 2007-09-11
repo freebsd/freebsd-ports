@@ -9,7 +9,7 @@ include/poppler/glib/poppler.h
 lib/libpoppler-glib.a
 lib/libpoppler-glib.la
 lib/libpoppler-glib.so
-lib/libpoppler-glib.so.1
+lib/libpoppler-glib.so.2
 libdata/pkgconfig/poppler-glib.pc
 %%DOCSDIR%%/poppler/ch01.html
 %%DOCSDIR%%/poppler/home.png
@@ -17,8 +17,10 @@ libdata/pkgconfig/poppler-glib.pc
 %%DOCSDIR%%/poppler/index.sgml
 %%DOCSDIR%%/poppler/left.png
 %%DOCSDIR%%/poppler/poppler-poppler-action.html
+%%DOCSDIR%%/poppler/poppler-poppler-attachment.html
 %%DOCSDIR%%/poppler/poppler-poppler-document.html
 %%DOCSDIR%%/poppler/poppler-poppler-enums.html
+%%DOCSDIR%%/poppler/poppler-poppler-form-field.html
 %%DOCSDIR%%/poppler/poppler-poppler-page.html
 %%DOCSDIR%%/poppler/poppler-poppler.html
 %%DOCSDIR%%/poppler/poppler.devhelp

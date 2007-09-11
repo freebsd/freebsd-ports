@@ -6,6 +6,6 @@ include/poppler/qt4/poppler-qt4.h
 lib/libpoppler-qt4.a
 lib/libpoppler-qt4.la
 lib/libpoppler-qt4.so
-lib/libpoppler-qt4.so.1
+lib/libpoppler-qt4.so.2
 libdata/pkgconfig/poppler-qt4.pc
 @dirrm include/poppler/qt4
