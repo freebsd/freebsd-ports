@@ -8,7 +8,7 @@
 
 PORTNAME=	evince
 PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 multi-format document viewer
 
-LIB_DEPENDS=	poppler-glib.1:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS=	poppler-glib.2:${PORTSDIR}/graphics/poppler-gtk
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes

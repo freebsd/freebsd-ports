@@ -8,6 +8,7 @@
 
 PORTNAME=	gimp-app
 DISTVERSION=	2.4.0-rc1
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -26,7 +27,7 @@ COMMENT=	A GNU Image Manipulation Program development version
 
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 		wmf.2:${PORTSDIR}/graphics/libwmf \
-		poppler-glib.1:${PORTSDIR}/graphics/poppler-gtk \
+		poppler-glib.2:${PORTSDIR}/graphics/poppler-gtk \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
