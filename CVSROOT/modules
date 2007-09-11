@@ -1228,7 +1228,6 @@ cdrtools-cjk	ports/sysutils/cdrtools-cjk
 cdrtools-devel	ports/sysutils/cdrtools-devel
 cduce		ports/lang/cduce
 cedet		ports/devel/cedet
-cedet-emacs22	ports/devel/cedet-emacs22
 ceferino	ports/games/ceferino
 cegui		ports/graphics/cegui
 celestia	ports/astro/celestia
