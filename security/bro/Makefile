@@ -1,6 +1,6 @@
 # Ports collection makefile for:  bro
-# Date created:			  Mon Jul 16, 2007
-# Whom:				  Paul Schmehl (pauls@utdallas.edu)
+# Date created:			  Sat Feb 28, 1998
+# Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
 # $FreeBSD$
 #
