@@ -56,7 +56,6 @@ include/fwb-2.1/fwbuilder/ThreadTools.h
 include/fwb-2.1/fwbuilder/Tools.h
 include/fwb-2.1/fwbuilder/UDPService.h
 include/fwb-2.1/fwbuilder/XMLTools.h
-include/fwb-2.1/fwbuilder/crypto.h
 include/fwb-2.1/fwbuilder/dns.h
 include/fwb-2.1/fwbuilder/libfwbuilder-config.h
 include/fwb-2.1/fwbuilder/libfwbuilder-version.h
@@ -126,6 +125,7 @@ share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.9.xslt
 share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.10.xslt
 share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.11.xslt
 share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.12.xslt
+share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.13.xslt
 share/libfwbuilder%%BUILD_VERSION%%/fwbuilder.dtd
 @dirrm share/libfwbuilder%%BUILD_VERSION%%/migration
 @dirrm share/libfwbuilder%%BUILD_VERSION%%
