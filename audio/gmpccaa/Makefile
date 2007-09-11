@@ -19,6 +19,8 @@ LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPEND=	gmpc:${PORTSDIR}/audio/gmpc
 
+BROKEN=		Does not compile with gmpc 0.15.0
+
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 
