@@ -34,6 +34,80 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="71d903fc-602d-11dc-898c-001921ab2fa4">
+    <topic>php -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php</name>
+	<range><gt>5.0.0</gt><lt>5.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP reports:</p>
+	<blockquote cite="http://www.php.net/releases/5_2_4.php">
+	  <p>This release focuses on improving the stability of the
+	    PHP 5.2.X branch with over 120 various bug fixes in
+	    addition to resolving several low priority security bugs.
+	    All users of PHP are encouraged to upgrade to this release.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-3378</cvename>
+      <cvename>CVE-2007-3806</cvename>
+    </references>
+    <dates>
+      <discovery>2007-08-30</discovery>
+      <entry>2007-09-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c115271d-602b-11dc-898c-001921ab2fa4">
+    <topic>apache -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><gt>2.2.0</gt><lt>2.2.6</lt></range>
+	<range><gt>2.0.0</gt><lt>2.0.61</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache HTTP server project reports:</p>
+	<blockquote cite="http://www.apache.org/dist/httpd/Announcement2.2.html">
+	  <p>The following potential security flaws are addressed:</p>
+	  <ul>
+	    <li>CVE-2007-3847: mod_proxy: Prevent reading past the end of a
+	      buffer when parsing date-related headers.</li>
+	    <li>CVE-2007-1863: mod_cache: Prevent a segmentation fault if
+	      attributes are listed in a Cache-Control header without any value.</li>
+	    <li>CVE-2007-3304: prefork, worker, event MPMs: Ensure that the
+	      parent process cannot be forced to kill processes outside its
+	      process group.</li>
+	    <li>CVE-2006-5752: mod_status: Fix a possible XSS attack against
+	      a site with a public server-status page and ExtendedStatus
+	      enabled, for browsers which perform charset "detection".
+	      Reported by Stefan Esser.</li>
+	    <li>CVE-2006-1862: mod_mem_cache: Copy headers into longer lived
+	      storage; header names and values could previously point to
+	      cleaned up storage.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-3847</cvename>
+      <cvename>CVE-2007-1863</cvename>
+      <cvename>CVE-2006-5752</cvename>
+      <cvename>CVE-2007-3304</cvename>
+    </references>
+    <dates>
+      <discovery>2007-09-07</discovery>
+      <entry>2007-09-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4b673ae7-5f9a-11dc-84dd-000102cc8983">
     <topic>lighttpd -- FastCGI header overrun in mod_fastcgi</topic>
     <affects>
