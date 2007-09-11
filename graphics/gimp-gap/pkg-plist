@@ -21,6 +21,7 @@ libexec/gimp/2.2/plug-ins/gap_vid_enc_avi
 libexec/gimp/2.2/plug-ins/gap_vid_enc_ffmpeg
 libexec/gimp/2.2/plug-ins/gap_vid_enc_singleframes
 share/gimp/scripts/gap-dup-continue.scm
+share/gimp/scripts/sel-to-anim-img.scm
 share/locale/az/LC_MESSAGES/gimp20-gap.mo
 share/locale/bg/LC_MESSAGES/gimp20-gap.mo
 share/locale/ca/LC_MESSAGES/gimp20-gap.mo
