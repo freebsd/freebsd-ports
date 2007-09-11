@@ -45,9 +45,9 @@ PORTDOCS=	CHANGELOG NEWS README
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_W3M)
-PLIST_SUB=	W3M=""
+PLIST_SUB+=	W3M=""
 .else
-PLIST_SUB=	W3M="@comment "
+PLIST_SUB+=	W3M="@comment "
 .endif
 
 post-patch:
