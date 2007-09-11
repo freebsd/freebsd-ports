@@ -1,6 +1,6 @@
-www/cgi-bin/mailgraph.cgi
-www/data/mailgraph/mailgraph.css
+%%CGIDIR%%/mailgraph.cgi
+%%WWWROOT%%/mailgraph/mailgraph.css
 sbin/mailgraph.pl
-@dirrmtry www/cgi-bin
-@dirrmtry www/data/mailgraph
-@dirrmtry www/data
+@dirrmtry %%CGIDIR%%
+@dirrmtry %%WWWROOT%%/mailgraph
+@dirrmtry %%WWWROOT%%
