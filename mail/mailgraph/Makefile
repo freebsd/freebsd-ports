@@ -19,12 +19,15 @@ RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool	\
 
 NO_BUILD=	yes
 
-DATADIR?=		/var/db/mailgraph
+CGIDIR?=	${PREFIX}/www/cgi-bin
+DATADIR?=	/var/db/mailgraph
+WWWROOT?=	${PREFIX}/www/data
 MAILGRAPH_USER?=	${WWWOWN}
 MAILGRAPH_GROUP?=	${WWWGRP}
 
 USE_RC_SUBR=	${PORTNAME}
 SUB_LIST+=	MAILGRAPH_USER=${MAILGRAPH_USER} MAILGRAPH_GROUP=${MAILGRAPH_GROUP}
+PLIST_SUB=	CGIDIR=${CGIDIR:S,${PREFIX}/,,} WWWROOT=${WWWROOT:S,${PREFIX}/,,}
 
 DOCS=		README CHANGES
 .if !defined(NOPORTDOCS)
@@ -36,6 +39,8 @@ pre-everything::
 	@${ECHO_MSG} "You may set following options:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "DATADIR=/var/db/mailgraph	Where do you put RRD databases?"
+	@${ECHO_MSG} "CGIDIR=${PREFIX}/www/cgi-bin	Where do you put cgi?"
+	@${ECHO_MSG} "WWWROOT=${PREFIX}/www/data	Where do you put httpd's document root?"
 	@${ECHO_MSG} "MAILGRAPH_USER=www		User to run mailgraph (Default: ${WWWOWN})"
 	@${ECHO_MSG} ""
 
@@ -43,13 +48,13 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR}," ${WRKSRC}/mailgraph.cgi
 
 do-install:
-	${MKDIR} ${PREFIX}/www/cgi-bin
-	${MKDIR} ${PREFIX}/www/data/mailgraph
+	${MKDIR} ${CGIDIR}
+	${MKDIR} ${WWWROOT}/mailgraph
 	${MKDIR} ${DATADIR}
 	@${CHOWN} -R ${MAILGRAPH_USER}:${MAILGRAPH_GROUP} ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.pl ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.cgi ${PREFIX}/www/cgi-bin
-	@${INSTALL_DATA} ${WRKSRC}/mailgraph.css ${PREFIX}/www/data/mailgraph
+	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.cgi ${CGIDIR}
+	@${INSTALL_DATA} ${WRKSRC}/mailgraph.css ${WWWROOT}/mailgraph
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	for f in ${DOCS}; do \
