@@ -1,0 +1,10 @@
+The Verve panel plugin is a comfortable command line plugin for the Xfce panel.
+It supports several nice features, such as:
+
+     * Command history
+     * Auto-completion (including command history)
+     * Open URLs and eMail addresses in your favourite applications
+     * Focus grabbing via D-BUS (so you can bind a shortcut to it)
+     * Custom input field width
+
+WWW: http://goodies.xfce.org/projects/panel-plugins/verve-plugin

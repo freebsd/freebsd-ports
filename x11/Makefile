@@ -355,6 +355,7 @@
     SUBDIR += xfce4-quicklauncher-plugin
     SUBDIR += xfce4-screenshooter-plugin
     SUBDIR += xfce4-taskmanager
+    SUBDIR += xfce4-verve-plugin
     SUBDIR += xfce4-wmdock-plugin
     SUBDIR += xfce4-xfapplet-plugin
     SUBDIR += xfd
