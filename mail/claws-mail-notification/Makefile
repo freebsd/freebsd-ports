@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	notification
-PORTVERSION=	0.12
+PORTVERSION=	0.12.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
