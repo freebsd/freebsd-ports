@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkpgcounter
-PORTVERSION=	2.18
+PORTVERSION=	3.00
 CATEGORIES=	print python
 MASTER_SITES=	http://www.pykota.com/software/pkpgcounter/download/tarballs/
 

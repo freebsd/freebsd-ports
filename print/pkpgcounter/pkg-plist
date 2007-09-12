@@ -14,9 +14,6 @@ bin/pkpgcounter
 %%PYTHON_SITELIBDIR%%/pkpgpdls/inkcoverage.py
 %%PYTHON_SITELIBDIR%%/pkpgpdls/inkcoverage.pyc
 %%PYTHON_SITELIBDIR%%/pkpgpdls/inkcoverage.pyo
-%%PYTHON_SITELIBDIR%%/pkpgpdls/oldpcl345.py
-%%PYTHON_SITELIBDIR%%/pkpgpdls/oldpcl345.pyc
-%%PYTHON_SITELIBDIR%%/pkpgpdls/oldpcl345.pyo
 %%PYTHON_SITELIBDIR%%/pkpgpdls/ooo.py
 %%PYTHON_SITELIBDIR%%/pkpgpdls/ooo.pyc
 %%PYTHON_SITELIBDIR%%/pkpgpdls/ooo.pyo
