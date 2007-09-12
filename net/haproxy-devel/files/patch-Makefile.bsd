@@ -1,0 +1,97 @@
+--- Makefile.bsd.orig	Mon Apr 16 00:33:37 2007
++++ Makefile.bsd	Fri May  4 04:05:12 2007
+@@ -1,4 +1,4 @@
+-# This makefile is dedicated to OpenBSD (and possibly other BSDs)
++# This makefile is dedicated to FreeBSD (and possibly other BSDs)
+ # You should use it this way :
+ #   make TARGET=os CPU=cpu
+ 
+@@ -6,31 +6,31 @@
+ 
+ # Select target OS. TARGET must match a system for which COPTS and LIBS are
+ # correctly defined below.
+-TARGET = openbsd
++TARGET = freebsd
+ 
+ # pass CPU=<cpu_name> to make to optimize for a particular CPU
+-CPU = generic
++#CPU = generic
+ #CPU = i586
+ #CPU = i686
+ #CPU = ultrasparc
+ 
+ # By default, we use libc's regex. WARNING! On Solaris 8/Sparc, group
+ # references seem broken using libc ! Use pcre instead.
+-REGEX=libc
++REGEX?=libc
+ #REGEX=pcre
+ #REGEX=static-pcre
+ 
+ # tools options
+-CC = gcc
+-LD = gcc
++CC? = gcc
++LD? = gcc
+ 
+ # This is the directory hosting include/pcre.h and lib/libpcre.* when REGEX=pcre
+-PCREDIR!= pcre-config --prefix 2>/dev/null || :
+-#PCREDIR=/usr/local
++#PCREDIR!= pcre-config --prefix 2>/dev/null || :
++PCREDIR=${LOCALBASE}
+ 
+-# This is for OpenBSD 3.0 and above
+-COPTS.openbsd = -DENABLE_POLL -DENABLE_KQUEUE
+-LIBS.openbsd =
++# This is for FreeBSD
++COPTS.freebsd = -DENABLE_POLL -DENABLE_KQUEUE
++LIBS.freebsd =
+ 
+ # CPU dependant optimizations
+ COPTS.generic = -O2
+@@ -52,7 +52,7 @@
+ 
+ # you can enable debug arguments with "DEBUG=-g" or disable them with "DEBUG="
+ #DEBUG = -g -DDEBUG_MEMORY -DDEBUG_FULL
+-DEBUG = -g
++#DEBUG = -g
+ 
+ # if small memory footprint is required, you can reduce the buffer size. There
+ # are 2 buffers per concurrent session, so 16 kB buffers will eat 32 MB memory
+@@ -60,7 +60,7 @@
+ # will avoid the additionnal paramters to overflow a page. 8030 bytes is
+ # exactly 5.5 TCP segments of 1460 bytes.
+ #SMALL_OPTS =
+-SMALL_OPTS = -DBUFSIZE=8030 -DMAXREWRITE=1030 -DSYSTEM_MAXCONN=1024
++#SMALL_OPTS = -DBUFSIZE=8030 -DMAXREWRITE=1030 -DSYSTEM_MAXCONN=1024
+ 
+ # redefine this if you want to add some special PATH to include/libs
+ ADDINC =
+@@ -69,7 +69,7 @@
+ # set some defines when needed.
+ # Known ones are -DENABLE_POLL
+ # - use -DTPROXY to compile with transparent proxy support.
+-DEFINE = -DTPROXY
++#DEFINE = -DTPROXY
+ 
+ # global options
+ TARGET_OPTS=$(COPTS.$(TARGET))
+@@ -79,7 +79,7 @@
+ COPTS=-Iinclude $(ADDINC) $(CPU_OPTS) $(TARGET_OPTS) $(REGEX_OPTS) $(SMALL_OPTS) $(DEFINE)
+ LIBS=$(LIBS.$(TARGET)) $(LIBS.$(REGEX)) $(ADDLIB)
+ 
+-CFLAGS = -Wall $(COPTS) $(DEBUG)
++CFLAGS += -Wall $(COPTS)
+ LDFLAGS = -g
+ 
+ OBJS = src/haproxy.o src/list.o src/chtbl.o src/hashpjw.o src/base64.o \
+@@ -93,7 +93,9 @@
+ all: haproxy
+ 
+ haproxy: $(OBJS)
+-	$(LD) $(LDFLAGS) -o $@ $> $(LIBS)
++#	$(LD) $(LDFLAGS) -o $@ $> $(LIBS)
++	 $(CC) $(CFLAGS) $(LDFLAGS) -o $@ $> $(LIBS)
++
+ 
+ .SUFFIXES: .c.o
+ 
