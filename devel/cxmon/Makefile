@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cxmon
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	devel
 MASTER_SITES=	http://cxmon.cebix.net/downloads/
 
