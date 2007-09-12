@@ -1203,7 +1203,6 @@ bin/w3af
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/core/controllers/basePlugin
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/core/controllers
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/core
-@dirrm %%PYTHON_SITELIBDIR%%/w3af
 @comment temporarily include copy of extlib/pygoogle ...
 %%PYTHON_SITELIBDIR%%/w3af/extlib//__init__.py
 %%PYTHON_SITELIBDIR%%/w3af/extlib//__init__.pyc
@@ -1229,3 +1228,4 @@ bin/w3af
 %%PYTHON_SITELIBDIR%%/w3af/extlib/pygoogle/setup.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/extlib/pygoogle
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/extlib
+@dirrm %%PYTHON_SITELIBDIR%%/w3af
