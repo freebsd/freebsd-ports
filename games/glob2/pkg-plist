@@ -1651,6 +1651,8 @@ share/applications/glob2.desktop
 %%DATADIR%%/data/icons/glob2-icon-64x64.png
 %%DATADIR%%/data/keyboard-gui.default.txt
 %%DATADIR%%/data/keyboard-mapedit.default.txt
+%%DATADIR%%/data/nicowar.default.txt
+%%DATADIR%%/data/nicowar.txt
 %%DATADIR%%/data/pal.txt
 %%DATADIR%%/data/ressources.txt
 %%DATADIR%%/data/texts.ar.txt
@@ -1714,7 +1716,6 @@ share/applications/glob2.desktop
 %%DATADIR%%/scripts/tutorial_part3.sgsl
 %%DATADIR%%/scripts/tutorial_part4.sgsl
 @dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/maps
 @dirrm %%DATADIR%%/data/zik
 @dirrm %%DATADIR%%/data/icons

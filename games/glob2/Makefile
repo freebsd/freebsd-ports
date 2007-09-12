@@ -7,6 +7,7 @@
 
 PORTNAME=		glob2
 PORTVERSION=		0.9.1
+PORTREVISION=		1
 CATEGORIES=		games
 MASTER_SITES=		http://dl.sv.nongnu.org/releases/glob2/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	thierry
@@ -33,9 +34,6 @@ CFLAGS+=		${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include
 .if ${ARCH} == "alpha"
 BROKEN=			Does not build on ${ARCH}
 .endif
-
-pre-install:
-	${CP} ${FILESDIR}/glob2.desktop ${WRKSRC}/data/
 
 post-install:
 	@${ECHO_MSG}
