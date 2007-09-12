@@ -44,6 +44,7 @@
     SUBDIR += angband
     SUBDIR += annelid
     SUBDIR += antipolix
+    SUBDIR += antrix
     SUBDIR += aop
     SUBDIR += apoolGL
     SUBDIR += aqbubble
