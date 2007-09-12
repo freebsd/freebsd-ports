@@ -7,9 +7,11 @@
 
 PORTNAME=	haproxy
 PORTVERSION=	1.3.12
-CATEGORIES=	net
-MASTER_SITES=	http://haproxy.1wt.eu/download/1.3/src/
-PKGNAMESUFFIX=	-devel
+#PORTREVISION=	0
+CATEGORIES=     net
+MASTER_SITES=   http://haproxy.1wt.eu/download/1.3/src/
+PKGNAMESUFFIX=  -devel
+DISTFILES=      ${DISTNAME}.tar.gz
 
 MAINTAINER=	hugo@barafranca.com
 COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
@@ -17,15 +19,20 @@ COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 CONFLICTS=	haproxy-1.2*
 USE_RC_SUBR=	haproxy
 
-MAKEFILE=	Makefile.bsd
+MAKEFILE=       Makefile.bsd
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/design-thoughts
+	@${MKDIR} ${DOCSDIR}/internals
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
-	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} design-thoughts ${DOCSDIR}/)
+#	@${INSTALL_DATA} ${WRKSRC}/doc/design-thoughts/* ${DOCSDIR}/design-thoughts/
+#	@${INSTALL_DATA} ${WRKSRC}/doc/internals/* ${DOCSDIR}/internals/
 	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} internals ${DOCSDIR}/)
+	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} design-thoughts ${DOCSDIR}/)
 	@${INSTALL_DATA} ${WRKSRC}/examples/haproxy.cfg \
 				${LOCALBASE}/etc/haproxy.conf-dist
 .endif
