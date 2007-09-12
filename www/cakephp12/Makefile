@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cakephp
-PORTVERSION=	1.1.16.5421
+PORTVERSION=	1.1.17.5612
 CATEGORIES=	www
-MASTER_SITES=	http://cakeforge.org/frs/download.php/485/
+MASTER_SITES=	http://cakeforge.org/frs/download.php/503/
 DISTNAME=	cake_${PORTVERSION}
 
 MAINTAINER=	glarkin@sourcehosting.net
