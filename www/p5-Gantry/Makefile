@@ -7,6 +7,7 @@
 
 PORTNAME=	Gantry
 PORTVERSION=	3.50
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Gantry
@@ -30,6 +31,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_MODBUILD=	5.8.0+
+
+WWWDIR=		${PREFIX}/www/${PORTNAME:L}
 
 MAN3=		Gantry.3 \
 		Gantry::Build.3 \
@@ -109,5 +112,14 @@ MAN3=		Gantry.3 \
 		Gantry::Utils::TablePerms.3 \
 		Gantry::Utils::Threeway.3 \
 		Template::Plugin::GantryAuthCookie.3
+
+pre-configure:
+	@${MKDIR} ${WWWDIR}
+
+post-build:
+	@${RMDIR} ${WWWDIR}
+
+pre-install:
+	@${MKDIR} ${WWWDIR}
 
 .include <bsd.port.mk>

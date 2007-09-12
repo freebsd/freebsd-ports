@@ -1,4 +1,67 @@
 @comment $FreeBSD$
+%%WWWDIR%%/control_wrapper.tt
+%%WWWDIR%%/data.tt
+%%WWWDIR%%/default.tt
+%%WWWDIR%%/delete.tt
+%%WWWDIR%%/editor_init.ttc
+%%WWWDIR%%/form.tt
+%%WWWDIR%%/form_ajax.tt
+%%WWWDIR%%/gantry_site.html
+%%WWWDIR%%/gantrybookcode.tar.gz
+%%WWWDIR%%/login.tt
+%%WWWDIR%%/main.tt
+%%WWWDIR%%/paging.ttc
+%%WWWDIR%%/pod.tt
+%%WWWDIR%%/pod_wrapper.tt
+%%WWWDIR%%/results.tt
+%%WWWDIR%%/sample_wrapper.tt
+%%WWWDIR%%/search.tt
+%%WWWDIR%%/session.tt
+%%WWWDIR%%/threeway.tt
+%%WWWDIR%%/wrapper.tt
+%%WWWDIR%%/wsdl.tt
+%%WWWDIR%%/css/default.css
+%%WWWDIR%%/css/gantry_datepicker.css
+%%WWWDIR%%/css/gantry_forms.css
+%%WWWDIR%%/css/gantry_layout.css
+%%WWWDIR%%/css/gantry_site.css
+%%WWWDIR%%/css/pod_style.css
+%%WWWDIR%%/images/blc-gray-block.gif
+%%WWWDIR%%/images/bookcover.gif
+%%WWWDIR%%/images/brc-gray-block.gif
+%%WWWDIR%%/images/form.png
+%%WWWDIR%%/images/gantry_gears.jpg
+%%WWWDIR%%/images/gantry_logo.png
+%%WWWDIR%%/images/mainlist.png
+%%WWWDIR%%/images/pdf.gif
+%%WWWDIR%%/images/tlc-gray-block.gif
+%%WWWDIR%%/images/trc-gray-block.gif
+%%WWWDIR%%/images/tenttut/appbody.png
+%%WWWDIR%%/images/tenttut/appconfig.png
+%%WWWDIR%%/images/tenttut/appstat.png
+%%WWWDIR%%/images/tenttut/backends.png
+%%WWWDIR%%/images/tenttut/controledit.png
+%%WWWDIR%%/images/tenttut/dataedit.png
+%%WWWDIR%%/images/tenttut/fieldedit.png
+%%WWWDIR%%/images/tenttut/fieldedit2.png
+%%WWWDIR%%/images/tenttut/formedit.png
+%%WWWDIR%%/images/tenttut/joiner.png
+%%WWWDIR%%/images/tenttut/main_listingout.png
+%%WWWDIR%%/images/tenttut/mainlistedit.png
+%%WWWDIR%%/images/tenttut/optionsedit.png
+%%WWWDIR%%/images/tenttut/quickedit.png
+%%WWWDIR%%/images/tenttut/stubmethedit.png
+%%WWWDIR%%/images/tenttut/tableedit.png
+%%WWWDIR%%/images/tenttut/tentopening.png
+%%WWWDIR%%/js/datePicker.js
+%%WWWDIR%%/js/gantry-yui-calendar.js
+%%WWWDIR%%/js/gantry.js
+%%WWWDIR%%/js/jquery.js
+%%WWWDIR%%/moxie/delete.tt
+%%WWWDIR%%/moxie/form.tt
+%%WWWDIR%%/moxie/gantry_wrapper.tt
+%%WWWDIR%%/moxie/results.tt
+%%WWWDIR%%/moxie/threeway.tt
 %%SITE_PERL%%/Gantry.pm
 %%SITE_PERL%%/Gantry/Build.pm
 %%SITE_PERL%%/Gantry/Conf.pm
@@ -100,6 +163,12 @@
 %%SITE_PERL%%/Gantry/Utils/Threeway.pm
 %%SITE_PERL%%/Gantry/Utils/Validate.pm
 %%SITE_PERL%%/Template/Plugin/GantryAuthCookie.pm
+@dirrmtry %%WWWDIR%%/moxie
+@dirrmtry %%WWWDIR%%/js
+@dirrmtry %%WWWDIR%%/images/tenttut
+@dirrmtry %%WWWDIR%%/images
+@dirrmtry %%WWWDIR%%/css
+@dirrmtry %%WWWDIR%%
 @dirrmtry %%SITE_PERL%%/Template/Plugin
 @dirrmtry %%SITE_PERL%%/Template
 @dirrmtry %%SITE_PERL%%/Gantry/Utils/Model
