@@ -1,0 +1,14 @@
+--- configure.orig	2007-04-26 03:25:25.000000000 +0300
++++ configure	2007-09-04 11:10:38.000000000 +0300
+@@ -22784,8 +22784,9 @@
+ 		fi
+ 
+ 		PYTHON_LDFLAGS=`$PYTHON -c "from distutils.sysconfig import *; \
+-			import os; \
+-			print apply(os.path.join, get_config_vars('LIBPL', 'LDLIBRARY'))"`
++				import os; import re; from string import join; \
++				print join(get_config_vars('LDFLAGS')) + ' ' + \
++				re.sub('\.a$', '.so', apply(os.path.join, get_config_vars('LIBPL', 'LDLIBRARY')))"`
+ 	fi
+ 	{ echo "$as_me:$LINENO: result: $PYTHON_LDFLAGS" >&5
+ echo "${ECHO_T}$PYTHON_LDFLAGS" >&6; }
