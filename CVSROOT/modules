@@ -15972,6 +15972,7 @@ uptimec		ports/sysutils/uptimec
 uptimed		ports/sysutils/uptimed
 upx		ports/archivers/upx
 uqm		ports/games/uqm
+urbanterror	ports/games/urbanterror
 urelay		ports/net/urelay
 uriparser	ports/net/uriparser
 urlendec	ports/net/urlendec
