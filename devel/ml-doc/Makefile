@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	timbob@bigpond.com
-COMMENT=	Produces documentation from SML signatures
+COMMENT=	Language and tools for documenting Standard ML libraries
 
 BUILD_DEPENDS=	smlnj-devel>=110.65:${PORTSDIR}/lang/sml-nj-devel \
 		nsgmls:${PORTSDIR}/textproc/jade
