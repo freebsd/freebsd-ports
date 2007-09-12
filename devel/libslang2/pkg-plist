@@ -17,6 +17,79 @@ lib/slang/v2/modules/slsmg-module.so
 lib/slang/v2/modules/socket-module.so
 lib/slang/v2/modules/termios-module.so
 lib/slang/v2/modules/varray-module.so
-@dirrm lib/slang/v2/modules
-@dirrm lib/slang/v2
-@dirrm lib/slang
+%%DATADIR%%/arrayfuns.sl
+%%DATADIR%%/autoload.sl
+%%DATADIR%%/cmaps/cool.map
+%%DATADIR%%/cmaps/copper.map
+%%DATADIR%%/cmaps/drywet.map
+%%DATADIR%%/cmaps/gebco.map
+%%DATADIR%%/cmaps/globe.map
+%%DATADIR%%/cmaps/gray.map
+%%DATADIR%%/cmaps/haxby.map
+%%DATADIR%%/cmaps/hot.map
+%%DATADIR%%/cmaps/jet.map
+%%DATADIR%%/cmaps/no_green.map
+%%DATADIR%%/cmaps/ocean.map
+%%DATADIR%%/cmaps/polar.map
+%%DATADIR%%/cmaps/rainbow.map
+%%DATADIR%%/cmaps/red2green.map
+%%DATADIR%%/cmaps/relief.map
+%%DATADIR%%/cmaps/sealand.map
+%%DATADIR%%/cmaps/seis.map
+%%DATADIR%%/cmaps/split.map
+%%DATADIR%%/cmaps/topo.map
+%%DATADIR%%/cmaps/wysiwyg.map
+%%DATADIR%%/cmdopt.sl
+%%DATADIR%%/fcntl.sl
+%%DATADIR%%/glob.sl
+%%DATADIR%%/help/arrayfuns.hlp
+%%DATADIR%%/help/cmdopt.hlp
+%%DATADIR%%/help/glob.hlp
+%%DATADIR%%/help/onigfuns.hlp
+%%DATADIR%%/help/pcrefuns.hlp
+%%DATADIR%%/help/pngfuns.hlp
+%%DATADIR%%/help/profile.hlp
+%%DATADIR%%/help/readascii.hlp
+%%DATADIR%%/help/require.hlp
+%%DATADIR%%/help/sockfuns.hlp
+%%DATADIR%%/help/structfuns.hlp
+%%DATADIR%%/iconv.sl
+%%DATADIR%%/onig.sl
+%%DATADIR%%/pcre.sl
+%%DATADIR%%/png.sl
+%%DATADIR%%/print.sl
+%%DATADIR%%/profile.sl
+%%DATADIR%%/readascii.sl
+%%DATADIR%%/require.sl
+%%DATADIR%%/rline/complete.sl
+%%DATADIR%%/rline/editfuns.sl
+%%DATADIR%%/rline/emacskeys.sl
+%%DATADIR%%/rline/history.sl
+%%DATADIR%%/rline/slrline.rc
+%%DATADIR%%/rline/vikeys.sl
+%%DATADIR%%/scripts/jpegsize
+%%DATADIR%%/scripts/lsrpm
+%%DATADIR%%/scripts/sldb
+%%DATADIR%%/scripts/slprof
+%%DATADIR%%/scripts/svnsh
+%%DATADIR%%/select.sl
+%%DATADIR%%/sldb.sl
+%%DATADIR%%/sldbcore.sl
+%%DATADIR%%/sldbsock.sl
+%%DATADIR%%/slshhelp.sl
+%%DATADIR%%/slshrl.sl
+%%DATADIR%%/slsmg.sl
+%%DATADIR%%/socket.sl
+%%DATADIR%%/stkcheck.sl
+%%DATADIR%%/structfuns.sl
+%%DATADIR%%/termios.sl
+%%DATADIR%%/varray.sl
+@dirrmtry lib/slang/v2/modules
+@dirrmtry lib/slang/v2
+@dirrmtry lib/slang
+@dirrm %%DATADIR%%/cmaps
+@dirrm %%DATADIR%%/help
+@dirrmtry %%DATADIR%%/local-packages
+@dirrm %%DATADIR%%/rline
+@dirrm %%DATADIR%%/scripts
+@dirrmtry %%DATADIR%%
