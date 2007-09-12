@@ -9,3 +9,12 @@
  pkgconfig_DATA = pkgconfig/libhid.pc
  dist_noinst_DATA = \
  	debian/changelog \
+@@ -293,7 +293,7 @@
+ 	README.licence
+ 
+ DEBIAN_VERSION = ${shell head -1 debian/changelog 2>/dev/null | sed -e '1s,.*(\([^)]*\)).*,\1,'}
+-DEBIAN_ARCH = $(shell test -x `which dpkg-architecture 2>/dev/null` && dpkg-architecture -qDEB_BUILD_ARCH 2>/dev/null || echo i386)
++DEBIAN_ARCH = i386
+ TARBALL = $(distdir).tar.gz
+ DEBDIR = .debian
+ STAMP = $(DEBDIR)/stamp
