@@ -257,6 +257,7 @@ share/nip2/start/_types.def
 @dirrm %%DOCSDIR%%
 share/mime/packages/nip2.xml
 share/applications/nip2.desktop
+@dirrmtry share/applications
 @exec update-mime-database %D/share/mime || :
 @exec update-desktop-database %D/share/applications || :
 @unexec update-mime-database %D/share/mime || :
