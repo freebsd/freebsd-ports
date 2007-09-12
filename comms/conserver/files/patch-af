@@ -1,6 +1,6 @@
---- etc/console/console.m.orig	Sat Nov 22 23:19:33 1997
-+++ etc/console/console.m	Wed Nov 17 18:29:04 1999
-@@ -566,17 +566,17 @@
+--- etc/console/console.m.orig	2000-08-02 11:39:42.000000000 -0700
++++ etc/console/console.m	2007-09-12 09:30:56.000000000 -0700
+@@ -582,17 +582,17 @@
  		return;
  
  #if USE_TERMIOS
@@ -21,7 +21,7 @@
  		fprintf(stderr, "%s: getarrt: %s\n", progname, strerror(errno));
  		exit(10);
  	}
-@@ -652,7 +652,7 @@
+@@ -668,7 +668,7 @@
  	if (!screwy)
  		return;
  #if USE_TERMIOS
@@ -30,7 +30,7 @@
  #else
  #if USE_TERMIO
  	(void)ioctl(0, TCSETA, (char *)&o_tio);
-@@ -677,7 +677,7 @@
+@@ -693,7 +693,7 @@
  	register int nr;
  
  	while (0 != iLen) {
@@ -39,3 +39,19 @@
  			c2cooked();
  			fprintf(stderr, "%s: lost connection\n", progname);
  			exit(3);
+@@ -980,6 +980,7 @@
+ static int SawUrg = 0;
+ #if DO_POWER
+ static char acPowCtl[128];
++static int Indir();
+ 
+ /* We take a moment to call the power controller and ask		(ksb)
+  * them about the console line we were chatting with.  We'll be right
+@@ -991,7 +992,6 @@
+ char *pcControl, *pcLine, *pcCurrent;
+ {
+ 	register char *pcAt;
+-	static int Indir();
+ 
+ 	if ((char *)0 != (pcAt = strchr(pcControl, '@'))) {
+ 		*pcAt++ = '\000';
