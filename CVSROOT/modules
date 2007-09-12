@@ -408,6 +408,7 @@ antivirus-milter	ports/mail/antivirus-milter
 antiword	ports/textproc/antiword
 antlr		ports/devel/antlr
 antlrworks	ports/devel/antlrworks
+antrix		ports/games/antrix
 anubis		ports/mail/anubis
 aoi		ports/graphics/aoi
 aolserver	ports/www/aolserver
