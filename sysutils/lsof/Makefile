@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.79B
+PORTVERSION=	4.79C
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
@@ -23,16 +23,16 @@ MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/NEW/ \
 		ftp://ftp.tau.ac.il/pub/unix/admin/
-FIXUP_RELEASE=yes
-.if defined(FIXUP_RELEASE)
-DISTNAME=	${PORTNAME}_4.79B.freebsd
-.else
-DISTNAME=	${PORTNAME}_${PORTVERSION}
-.endif
 
 MAINTAINER=	ler@lerctr.org
 COMMENT=	Lists information about open files (similar to fstat(1))
 
+FIXUP_RELEASE=yes
+.if defined(FIXUP_RELEASE)
+DISTNAME=	${PORTNAME}_4.79C.freebsd
+.else
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+.endif
 .if defined(FIXUP_RELEASE)
 WRKSRC=		${WRKDIR}/${DISTNAME}
 .else
