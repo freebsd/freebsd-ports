@@ -7,6 +7,7 @@
 
 PORTNAME=	libslang2
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v${PORTVERSION:R}/ \
 		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v${PORTVERSION:R}/ \
@@ -37,7 +38,6 @@ OPTIONS=	PCRE	"Include pcre support" on \
 		ONIG	"Include Oniguruma support" off
 
 PORTDOCS=	*
-PORTDATA=	*
 
 .include <bsd.port.pre.mk>
 
