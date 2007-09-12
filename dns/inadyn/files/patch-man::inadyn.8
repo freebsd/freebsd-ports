@@ -6,7 +6,7 @@ diff -Naur man/inadyn.8.orig man/inadyn.8
  The file name that contains inadyn command options exactly as specified in
  the command line syntax (adds to those already present in the cmd
 -line). The default configuration file name is '/etc/inadyn.conf'. It is
-+line). The default configuration file name is '/usr/local/etc/inadyn.conf'. It is
++line). The default configuration file name is '%%PREFIX%%/etc/inadyn.conf'. It is
  looked at automatically if
  .B inadyn
  is called without any command line options. The format is as expected
@@ -29,7 +29,7 @@ diff -Naur man/inadyn.8.orig man/inadyn.8
  Any of the SIG_HUP, SIG_INT, SIG_QUIT will cause inadyn to terminate gracefully.
  
 +.SH FILES
-+/usr/local/etc/inadyn.conf
++%%PREFIX%%/etc/inadyn.conf
 +
  .SH "SEE ALSO"
  .SS "Other manual pages"
