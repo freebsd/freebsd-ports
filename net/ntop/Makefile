@@ -100,7 +100,7 @@ post-extract:
 	@${RM} ${WRKSRC}/configureextra/FREEBSD
 
 pre-configure:
-	@cd ${WRKSRC} && ${SH} autogen.sh --noconfig
+	@cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} ${SH} autogen.sh --noconfig
 
 post-install:
 	@${MKDIR} ${DBDIR}/ntop
