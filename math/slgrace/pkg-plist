@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+lib/slang/v2/modules/grace-module.so.0.2.1
+lib/slang/v2/modules/grace-module.so
+share/slsh/local-packages/help/grace.hlp
+share/slsh/local-packages/grace.sl
+@dirrmtry share/slsh/local-packages/help
