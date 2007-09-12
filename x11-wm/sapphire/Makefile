@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sapphire
-PORTVERSION=	0.15.7
+PORTVERSION=	0.15.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
@@ -14,15 +14,16 @@ MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Small window manager
 
 USE_GMAKE=	yes
-REINPLACE_ARGS=	-i'' -E
+REINPLACE_ARGS=	-i '' -e
 USE_X_PREFIX=	yes
+MAKE_ENV=	CC="${CXX}"
 
 post-extract:
 
 post-patch:
 	${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/data.inst
-.for ii in data/menu/default data.inst sapphire.hh
-	${REINPLACE_CMD} "s|/usr/local|${PREFIX}|g" ${WRKSRC}/${ii}
+.for ii in data/menu/default windowmanager.cc
+	${REINPLACE_CMD} "s|/usr|${PREFIX}|g" ${WRKSRC}/${ii}
 .endfor
 	${CP} ${WRKSRC}/data.inst ${WRKSRC}/sapphire.inst
 
