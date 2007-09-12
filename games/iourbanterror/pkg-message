@@ -7,4 +7,9 @@ If you have sound problems with OpenAL recompile without it. Also the OPENAL
 option causes the program to omit restoring gamma and mouse sensivity after
 exitting.
 
+The configuration files are saved to ~/.ioquake3 instead of ~/.q3a because
+they have additional variables which would be removed if other engines
+overwrite them. But you can safely copy the original directory to the new one
+for the first time.
+
 ==============================================================================

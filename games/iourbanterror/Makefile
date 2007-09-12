@@ -7,7 +7,7 @@
 
 PORTNAME=	ioquake3
 DISTVERSION=	1.34-rc3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://ioquake3.org/files/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -16,7 +16,6 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Cleaned-up and enhaced version of Quake 3
 
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 
 OPTIONS=	CLIENT "Build client" on \
@@ -38,10 +37,6 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 VM_ARCHS=	amd64 i386 powerpc
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-code__unix__unix_shared.c
-.endif
 
 .if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
     defined(WITHOUT_SMP)
@@ -77,6 +72,7 @@ USE_SDL=	sdl
 MAKE_ENV+=	USE_SDL_VIDEO=1
 .   else
 USE_GL=		yes
+USE_XLIB=	yes
 .   endif
 # Vorbis
 .   if defined(WITH_VORBIS)
@@ -120,11 +116,10 @@ Q3BIN+=		ioquake3-smp
 PLIST_SUB+=	SMP="@comment "
 .endif
 
-.if ${OSVERSION} < 500000
 post-patch:
-	@${REINPLACE_CMD} -e 's|stdint\.h|inttypes.h|' \
-		${BUILD_WRKSRC}/code/qcommon/q_shared.h
-.endif
+# There are new variables in the config files, so keep them in another dir.
+	@${REINPLACE_CMD} -E 's|/\.q3a|/.${PORTNAME}|' \
+		${WRKSRC}/code/unix/unix_shared.c
 
 do-install:
 .for bin in ${Q3BIN}
@@ -135,6 +130,10 @@ do-install:
 	${MKDIR} ${LIBDIR}/${dir}
 	${INSTALL_PROGRAM} ${WRKSRC}/build/release/${dir}/*.so ${LIBDIR}/${dir}
 .endfor
+.endif
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 post-install:

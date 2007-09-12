@@ -7,6 +7,8 @@
 %%GAMELIBS%%%%LIBDIR%%/missionpack/cgame.so
 %%GAMELIBS%%%%LIBDIR%%/missionpack/qagame.so
 %%GAMELIBS%%%%LIBDIR%%/missionpack/ui.so
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%GAMELIBS%%@dirrm %%LIBDIR%%/missionpack
 %%GAMELIBS%%@dirrm %%LIBDIR%%/baseq3
 %%GAMELIBS%%@dirrm %%LIBDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
