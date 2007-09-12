@@ -7,8 +7,10 @@
 
 PORTNAME=	inadyn
 PORTVERSION=	1.96.2
+PORTREVISION=	1
 CATEGORIES=	dns
-MASTER_SITES=	http://inadyn.ina-tech.net/
+MASTER_SITES=	http://inadyn.ina-tech.net/ \
+		http://www.mirrorservice.org/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
 EXTRACT_SUFX=	.zip
 
@@ -32,6 +34,9 @@ NO_INSTALL_MANPAGES=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|$$\(CC\)|g' ${WRKSRC}/makefile
+	${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" \
+		${WRKSRC}/man/inadyn.8 ${WRKSRC}/readme.html \
+		${WRKSRC}/src/dyndns.h
 
 do-install:
 .if !defined(NOPORTDOCS)

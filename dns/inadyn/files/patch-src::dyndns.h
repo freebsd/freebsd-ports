@@ -6,7 +6,7 @@ diff -Naur src/dyndns.h.orig src/dyndns.h
  /*test values*/
  #define DYNDNS_DEFAULT_DEBUG_LEVEL	1
 -#define DYNDNS_DEFAULT_CONFIG_FILE	"/etc/inadyn.conf"
-+#define DYNDNS_DEFAULT_CONFIG_FILE	"/usr/local/etc/inadyn.conf"
++#define DYNDNS_DEFAULT_CONFIG_FILE	"%%PREFIX%%/etc/inadyn.conf"
  
  #define DYNDNS_MY_USERNAME		"test"
  #define DYNDNS_MY_PASSWD		"test"
