@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	outerspace
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	ospace
@@ -23,9 +22,13 @@ NO_BUILD=	yes
 SUB_FILES=	outerspace
 SUB_LIST=	PROGRAM_DIR="${PREFIX}/lib/${PORTNAME}"
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share/outerspace|${PREFIX}/lib/${PORTNAME}/res|' ${WRKSRC}/outerspace
+
 do-install:
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} oslauncher ${PREFIX}/lib/${PORTNAME})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} res ${PREFIX}/lib/${PORTNAME})
 	${INSTALL_DATA} ${WRKSRC}/outerspace ${PREFIX}/lib/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/outerspace ${PREFIX}/bin
 
