@@ -1,0 +1,15 @@
+%%PORTDOCS%%%%DOCSDIR%%/readme40.txt
+%%DATADIR%%/Urban Terror Website.url
+%%DATADIR%%/autoexec.cfg
+%%DATADIR%%/demos/test.dm_68
+%%DATADIR%%/description.txt
+%%DATADIR%%/mapcycle.txt
+%%DATADIR%%/q3config.cfg
+%%DATADIR%%/q3ut.ico
+%%DATADIR%%/screenshots/shot0000.jpg
+%%DATADIR%%/server.cfg
+%%DATADIR%%/zpak000.pk3
+@dirrm %%DATADIR%%/screenshots
+@dirrm %%DATADIR%%/demos
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

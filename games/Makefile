@@ -795,6 +795,7 @@
     SUBDIR += untahris
     SUBDIR += uox3
     SUBDIR += uqm
+    SUBDIR += urbanterror
     SUBDIR += utserver
     SUBDIR += vamos
     SUBDIR += vavoom
