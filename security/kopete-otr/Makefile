@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	otr
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	security net-im kde
 MASTER_SITES=	http://kopete-otr.follefuder.org/
 PKGNAMEPREFIX=	kopete-
@@ -34,3 +34,4 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>
+# DO NOT DELETE
