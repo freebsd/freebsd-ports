@@ -12314,6 +12314,7 @@ pixen		ports/graphics/pixen
 pixie		ports/graphics/pixie
 pixieplus	ports/graphics/pixieplus
 pixilate	ports/net-mgmt/pixilate
+pixman		ports/x11/pixman
 pixmap		ports/graphics/pixmap
 pkcrack		ports/security/pkcrack
 pkcs11-helper	ports/security/pkcs11-helper
@@ -16602,6 +16603,7 @@ xautomation	ports/x11/xautomation
 xawtv		ports/multimedia/xawtv
 xaylet		ports/audio/xaylet
 xbaby		ports/games/xbaby
+xbacklight	ports/x11/xbacklight
 xbae		ports/x11-toolkits/xbae
 xballoon	ports/x11/xballoon
 xbanner		ports/x11/xbanner
