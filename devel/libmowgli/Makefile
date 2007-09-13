@@ -1,0 +1,26 @@
+# New ports collection makefile for:	libmowgli
+# Date Created:				06 Sep 2007
+# Whom:					Oliver Lehmann <oliver@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libmowgli
+PORTVERSION=	0.4.0
+CATEGORIES=	devel
+MASTER_SITES=	http://distfiles.atheme.org/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	oliver@FreeBSD.org
+COMMENT=	A development framework for C
+
+MAKE_ENV+=	VERBOSE=1
+
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} 's|$$(LIBDIR)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile
+
+.include <bsd.port.mk>
