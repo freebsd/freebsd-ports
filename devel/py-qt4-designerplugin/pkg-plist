@@ -1,5 +1,4 @@
-@cwd %%LOCALBASE%%
-lib/plugins/designer/libpythonplugin.so
-@exec mkdir -p %D/lib/plugins/designer/python
-@dirrmtry lib/plugins/designer/python
-@dirrmtry lib/plugins/designer
+lib/qt4/plugins/designer/libpythonplugin.so
+@exec mkdir -p %D/lib/qt4/plugins/designer/python
+@dirrmtry lib/qt4/plugins/designer/python
+@dirrmtry lib/qt4/plugins/designer

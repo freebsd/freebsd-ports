@@ -5,7 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	doc
-PORTVERSION=	4.2
+PORTVERSION=	4.3
+PORTREVISION=	# zero
 CATEGORIES=	misc devel python
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt4/GPL/ \
 		http://freebsd.ricin.com/ports/distfiles/
@@ -16,16 +17,18 @@ MAINTAINER=	danny@ricin.com
 COMMENT=	Python bindings for the Qt4 toolkit, documentation
 
 NO_BUILD=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 
 DOCSDIR=	${PREFIX}/share/doc/py-qt4
 
-.include <bsd.port.pre.mk>
-
 do-install:
-	( cd ${WRKSRC} && \
-		${MKDIR} -m 0755 ${DOCSDIR} && \
-		${INSTALL_DATA} ChangeLog NEWS README THANKS ${DOCSDIR} && \
-		${CP} -R doc/ ${DOCSDIR} )
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC} &&\
+		${MKDIR} ${DOCSDIR} &&\
+		${INSTALL_DATA} ChangeLog NEWS README THANKS ${DOCSDIR} &&\
+		${CP} -R doc/ ${DOCSDIR}
+.else
+	@${ECHO} "NOPORTDOCS is set -- installing nothing."
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
