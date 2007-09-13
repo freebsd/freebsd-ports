@@ -1131,6 +1131,7 @@
     SUBDIR += p5-Devel-StackTrace
     SUBDIR += p5-Devel-StealthDebug
     SUBDIR += p5-Devel-Symdump
+    SUBDIR += p5-Devel-Timer
     SUBDIR += p5-Devel-Trace
     SUBDIR += p5-Devel-TraceCalls
     SUBDIR += p5-Devel-TraceUse
