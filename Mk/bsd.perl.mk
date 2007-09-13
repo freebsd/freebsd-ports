@@ -111,11 +111,6 @@ SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
 PERL=		${LOCALBASE}/bin/perl
 
-PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
-			PERL_VER=${PERL_VER} \
-			PERL_ARCH=${PERL_ARCH} \
-			SITE_PERL=${SITE_PERL_REL}
-
 .endif  # defined(_PERL_REFACTORING_COMPLETE)
 
 # Decide where to look for the version string
@@ -172,6 +167,21 @@ IGNORE=	improper use of USE_PERL5
 .endif
 .endif #${USE_PERL5_STRING:L} != "yes"
 
+.endif # !defined(_POSTMKINCLUDED) && !defined(Perl_Pre_Include)
+
+.if defined(_POSTMKINCLUDED) && !defined(Perl_Post_Include)
+
+Perl_Post_Include=		bsd.perl.mk
+
+.if defined(_PERL_REFACTORING_COMPLETE)
+
+PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
+			PERL_VER=${PERL_VER} \
+			PERL_ARCH=${PERL_ARCH} \
+			SITE_PERL=${SITE_PERL_REL}
+
+.endif  # defined(_PERL_REFACTORING_COMPLETE)
+
 .if defined(PERL_MODBUILD)
 PERL_CONFIGURE=		yes
 CONFIGURE_SCRIPT?=	Build.PL
@@ -215,11 +225,6 @@ CONFIGURE_SCRIPT?=	Makefile.PL
 MAN3PREFIX?=		${PREFIX}/lib/perl5/${PERL_VERSION}
 .undef HAS_CONFIGURE
 .endif # defined(PERL_CONFIGURE)
-.endif # !defined(_POSTMKINCLUDED) && !defined(Perl_Pre_Include)
-
-.if defined(_POSTMKINCLUDED) && !defined(Perl_Post_Include)
-
-Perl_Post_Include=		bsd.perl.mk
 
 .if defined(PERL_CONFIGURE)
 .if !target(do-configure)
