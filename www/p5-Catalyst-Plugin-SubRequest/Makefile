@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	Catalyst-Plugin-SubRequest
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
@@ -19,7 +18,7 @@ COMMENT=	Make subrequests to actions in Catalyst
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Catalyst::Plugin::SubRequest.3
 
