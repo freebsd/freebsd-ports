@@ -9577,6 +9577,7 @@ p5-Digest-SHA2	ports/security/p5-Digest-SHA2
 p5-Digest-SHA256	ports/security/p5-Digest-SHA256
 p5-Digest-SV1	ports/security/p5-Digest-SV1
 p5-Digest-Tiger	ports/security/p5-Digest-Tiger
+p5-Digest-TransformPath	ports/devel/p5-Digest-TransformPath
 p5-Digest-Whirlpool	ports/security/p5-Digest-Whirlpool
 p5-Dir-Project	ports/devel/p5-Dir-Project
 p5-Dir-Purge	ports/sysutils/p5-Dir-Purge
