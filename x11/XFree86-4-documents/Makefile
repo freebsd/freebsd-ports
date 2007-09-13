@@ -18,6 +18,9 @@ DISTFILES=	XFree86-${PORTVERSION}-src-1.tgz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 documentation
 
+DEPRECATED=	isn't maintained anymore
+EXPIRATION_DATE=	2007-12-25
+
 USE_IMAKE=		YES
 PROJECTROOT=		-DProjectRoot=${PREFIX}
 DIST_SUBDIR=		xc

@@ -19,6 +19,9 @@ COMMENT=	XFree86-4 man pages
 
 CONFLICTS=	xorg-manpages-[0-9]*
 
+DEPRECATED=	isn't maintained anymore
+EXPIRATION_DATE=	2007-12-25
+
 USE_IMAKE=		yes
 EXTRACT_TARGET=		xc/doc/man \
 			xc/extras/ogl-sample/main/doc/man

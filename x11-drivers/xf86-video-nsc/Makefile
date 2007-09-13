@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-video-nsc
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org

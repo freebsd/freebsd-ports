@@ -80,6 +80,20 @@ share/X11/doc/hardcopy/xtrans/Xtrans.PS.gz
 share/X11/doc/hardcopy/Xv/video
 share/X11/doc/hardcopy/Xv/xv-protocol-v2.PS
 share/X11/doc/MAINTAINERS
+@exec mkdir -p %D/share/X11/doc/core
+@exec mkdir -p %D/share/X11/doc/ddx
+@exec mkdir -p %D/share/X11/doc/fonts
+@exec mkdir -p %D/share/X11/doc/graphics
+@exec mkdir -p %D/share/X11/doc/input
+@exec mkdir -p %D/share/X11/doc/output
+@exec mkdir -p %D/share/X11/doc/platforms
+@exec mkdir -p %D/share/X11/doc/registry
+@exec mkdir -p %D/share/X11/doc/security
+@dirrm share/X11/doc/security
+@dirrm share/X11/doc/registry
+@dirrm share/X11/doc/platforms
+@dirrm share/X11/doc/output
+@dirrm share/X11/doc/input
 @dirrm share/X11/doc/hardcopy/BDF
 @dirrm share/X11/doc/hardcopy/CTEXT
 @dirrm share/X11/doc/hardcopy/FSProtocol
@@ -108,5 +122,9 @@ share/X11/doc/MAINTAINERS
 @dirrm share/X11/doc/hardcopy/xtrans
 @dirrm share/X11/doc/hardcopy/Xv
 @dirrm share/X11/doc/hardcopy
+@dirrm share/X11/doc/graphics
+@dirrm share/X11/doc/fonts
+@dirrm share/X11/doc/ddx
+@dirrm share/X11/doc/core
 @dirrm share/X11/doc
 @dirrmtry share/X11

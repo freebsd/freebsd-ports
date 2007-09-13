@@ -1940,6 +1940,12 @@ BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
 
+.if defined(USE_XORG) || defined(XORG_CAT)
+. if ${X_WINDOW_SYSTEM} == "xorg"
+.include "${PORTSDIR}/Mk/bsd.xorg.mk"
+. endif
+.endif
+
 .if defined(USE_MYSQL) || defined(WANT_MYSQL_VER) || \
 	defined(USE_PGSQL) || defined(WANT_PGSQL_VER) || \
 	defined(USE_BDB) || defined(USE_SQLITE) || defined(USE_FIREBIRD)

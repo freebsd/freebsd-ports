@@ -17,6 +17,9 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11/XFree86 core distribution (complete, using mini/meta-ports)
 
+DEPRECATED=	isn't maintained anymore
+EXPIRATION_DATE=	2007-12-25
+
 LIB_DEPENDS=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries
 RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/XFree86-4-clients \
 	${X11BASE}/share/doc/XFree86/ddx.txt:${PORTSDIR}/x11/XFree86-4-documents \

@@ -1,0 +1,63 @@
+diff -u Makefile.orig Makefile
+--- Makefile.orig	2006-07-15 17:58:26.000000000 +0200
++++ Makefile	2007-09-07 15:03:17.386179198 +0200
+@@ -34,10 +34,9 @@
+   LDCOMBINEFLAGS = -shared -lc
+   PICFLAG = $(call check_gcc,-fPIC,)
+   X_INCLUDES_ROOT = $(INSTALLED_X)
+-  SDKDIR = $(shell pkg-config xorg-server --variable=sdkdir)
+   ALLINCLUDES = -I. -I$(INSTALLED_X)/include/X11 \
+ 		-I$(INSTALLED_X)/include/X11/extensions \
+-		-I$(SDKDIR)
++		`pkg-config xorg-server --cflags`
+ else
+   INSTALLED_X = /usr/X11R6
+   INPUT_MODULE_DIR = $(DESTDIR)/$(INSTALLED_X)/$(LIBDIR)/modules/input
+diff -u synaptics.c.orig synaptics.c
+--- synaptics.c.orig	2006-07-15 17:54:29.000000000 +0200
++++ synaptics.c	2007-09-07 15:10:24.910542275 +0200
+@@ -321,7 +321,9 @@
+     local->private_flags           = 0;
+     local->flags                   = XI86_POINTER_CAPABLE | XI86_SEND_DRAG_EVENTS;
+     local->conf_idev               = dev;
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) == 0
+     local->motion_history_proc     = xf86GetMotionEvents;
++#endif
+     local->history_size            = 0;
+     local->always_core_feedback    = 0;
+ 
+@@ -613,8 +615,17 @@
+ 
+     InitPointerDeviceStruct((DevicePtr)dev, map,
+ 			    SYN_MAX_BUTTONS,
+-			    miPointerGetMotionEvents, SynapticsCtrl,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) == 0
++			    miPointerGetMotionEvents,
++#else
++			    GetMotionHistory,
++#endif
++			    SynapticsCtrl,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) == 0
+ 			    miPointerGetMotionBufferSize());
++#else
++			    GetMotionHistorySize(), 2);
++#endif
+ 
+     /* X valuator */
+     xf86InitValuatorAxisStruct(dev, 0, 0, -1, 1, 0, 1);
+diff -u synaptics.h.orig synaptics.h
+--- synaptics.h.orig	2006-07-15 17:54:29.000000000 +0200
++++ synaptics.h	2007-09-07 15:10:12.409829887 +0200
+@@ -226,5 +226,11 @@
+ 
+ #endif /* SYNAPTICS_PRIVATE */
+ 
++/* Previously found in xf86Xinput.h */
++#ifdef DBG
++#undef DBG
++#endif
++
++#define DBG(lvl, f) {if ((lvl) <= xf86GetVerbosity()) f;}
+ 
+ #endif /* _SYNAPTICS_H_ */
+

@@ -21,6 +21,9 @@ COMMENT=	XFree86-4 X server and related programs
 
 CONFLICTS=	xorg-server-[0-9]*
 
+DEPRECATED=	isn't maintained anymore
+EXPIRATION_DATE=	2007-12-25
+
 # Override default from XFree86-4-libraries/Makefile.inc
 PATCHDIR=		${MASTERDIR}/files
 

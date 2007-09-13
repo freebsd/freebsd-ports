@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-input-citron
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org

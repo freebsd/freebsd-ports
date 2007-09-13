@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070913:
+  AFFECTS: users of x11/xorg
+  AUTHOR: flz@FreeBSD.org
+
+  X.org ports were updated to 7.3.  Since we're now using the modular
+  build, the upgrade is pretty much painless.  If you're using the
+  x11/xorg meta-port, upgrade should be as easy as:
+
+  # portupgrade -R xorg
+
 20070905:
   AFFECTS: testers of net/openldap24-server
   AUTHOR: delphij@FreeBSD.org

@@ -21,6 +21,9 @@ BUILD_DEPENDS=	ucs2any:${PORTSDIR}/x11/XFree86-4-clients
 
 CONFLICTS=	encodings-*
 
+DEPRECATED=	isn't maintained anymore
+EXPIRATION_DATE=	2007-12-25
+
 USE_IMAKE=		YES
 PROJECTROOT=		-DProjectRoot=${PREFIX}
 DIST_SUBDIR=		xc

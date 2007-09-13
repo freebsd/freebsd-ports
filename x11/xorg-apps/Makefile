@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xorg-apps
-PORTVERSION=	7.2
+PORTVERSION=	7.3
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -44,6 +44,7 @@ RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		viewres:${PORTSDIR}/x11/viewres \
 		x11perf:${PORTSDIR}/x11/x11perf \
 		xauth:${PORTSDIR}/x11/xauth \
+		xbacklight:${PORTSDIR}/x11/xbacklight \
 		xbiff:${PORTSDIR}/x11/xbiff \
 		xcalc:${PORTSDIR}/x11/xcalc \
 		xclipboard:${PORTSDIR}/x11/xclipboard \

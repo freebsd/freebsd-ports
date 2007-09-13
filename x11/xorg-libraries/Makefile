@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xorg-libraries
-PORTVERSION=	7.2
-PORTREVISION=	2
+PORTVERSION=	7.3
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -19,8 +18,6 @@ COMMENT=	X.org libraries meta-port
 NO_BUILD=	yes
 
 PREFIX?=	${X11BASE}
-
-# Needs: libGL
 
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
 		${X11BASE}/libdata/pkgconfig/xfont.pc:${PORTSDIR}/x11-fonts/libXfont \
@@ -63,7 +60,8 @@ RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
 		${X11BASE}/libdata/pkgconfig/dmx.pc:${PORTSDIR}/x11/libdmx \
 		${X11BASE}/libdata/pkgconfig/xtrans.pc:${PORTSDIR}/x11/xtrans \
 		${X11BASE}/libdata/pkgconfig/libfs.pc:${PORTSDIR}/x11-fonts/libFS \
-		${X11BASE}/libdata/pkgconfig/oldx.pc:${PORTSDIR}/x11/liboldX
+		${X11BASE}/libdata/pkgconfig/oldx.pc:${PORTSDIR}/x11/liboldX \
+		${X11BASE}/libdata/pkgconfig/pixman-1.pc:${PORTSDIR}/x11/pixman
 
 .if !defined(XORG_UPGRADE) && !defined(PACKAGE_BUILDING) && exists(/usr/X11R6)
 pre-everything::

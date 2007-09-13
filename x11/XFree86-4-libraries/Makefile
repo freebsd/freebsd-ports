@@ -33,6 +33,9 @@ CONFLICTS=	Mesa-[0-9]* libX11-[0-9]* libGL-[0-9]* libGLU-[0-9]* \
 		xextensions-[0-9]* xf86ext-[0-9]* xlibs-[0-9]* \
 		xorg-libraries-[0-9]* xpm-[0-9]* xproto-[0-9]*
 
+DEPRECATED=	isn't maintained anymore
+EXPIRATION_DATE=	2007-12-25
+
 USE_X_PREFIX=		no
 PREFIX?=		${X11BASE}
 MTREE_FILE=		${PORTSDIR}/Templates/BSD.local.dist

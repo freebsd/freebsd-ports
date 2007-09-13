@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-video-vmware
-PORTVERSION=	10.14.1
+PORTVERSION=	10.15.0
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
