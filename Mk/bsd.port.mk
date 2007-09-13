@@ -1422,11 +1422,6 @@ SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
 PERL=		${LOCALBASE}/bin/perl
 
-PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
-				PERL_VER=${PERL_VER} \
-				PERL_ARCH=${PERL_ARCH} \
-				SITE_PERL=${SITE_PERL_REL}
-
 .endif  # !defined(_PERL_REFACTORING_COMPLETE)
 
 .if defined(USE_LOCAL_MK)
@@ -1935,6 +1930,13 @@ RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
 .if defined(USE_BISON)
 BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
 .endif
+
+.if !defined(_PERL_REFACTORING_COMPLETE)
+PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
+				PERL_VER=${PERL_VER} \
+				PERL_ARCH=${PERL_ARCH} \
+				SITE_PERL=${SITE_PERL_REL}
+.endif  # !defined(_PERL_REFACTORING_COMPLETE)
 
 .if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
