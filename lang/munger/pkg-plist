@@ -1,7 +1,8 @@
 bin/munger
-lib/libmunger.so.31
+lib/libmunger.so.32
 %%DKNS_BIN%%
 %%DATADIR%%/ipdatabase.munger
+%%DATADIR%%/compiler.munger
 %%DATADIR%%/httpd.munger
 %%DATADIR%%/ip2country.munger
 %%DATADIR%%/echo.munger
