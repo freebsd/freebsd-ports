@@ -134,6 +134,8 @@ lib/tcllib%%PORTVERSION%%/exif/exif.tcl
 lib/tcllib%%PORTVERSION%%/exif/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/exif
 lib/tcllib%%PORTVERSION%%/fileutil/fileutil.tcl
+lib/tcllib%%PORTVERSION%%/fileutil/multi.tcl
+lib/tcllib%%PORTVERSION%%/fileutil/multiop.tcl
 lib/tcllib%%PORTVERSION%%/fileutil/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/fileutil/traverse.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/fileutil
@@ -212,6 +214,9 @@ lib/tcllib%%PORTVERSION%%/log/msgs/en.msg
 @dirrm lib/tcllib%%PORTVERSION%%/log/msgs
 lib/tcllib%%PORTVERSION%%/log/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/log
+lib/tcllib%%PORTVERSION%%/mapproj/mapproj.tcl
+lib/tcllib%%PORTVERSION%%/mapproj/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/mapproj
 lib/tcllib%%PORTVERSION%%/math/bessel.tcl
 lib/tcllib%%PORTVERSION%%/math/bigfloat.tcl
 lib/tcllib%%PORTVERSION%%/math/bigfloat2.tcl
@@ -230,6 +235,7 @@ lib/tcllib%%PORTVERSION%%/math/linalg.tcl
 lib/tcllib%%PORTVERSION%%/math/liststat.tcl
 lib/tcllib%%PORTVERSION%%/math/math.tcl
 lib/tcllib%%PORTVERSION%%/math/misc.tcl
+lib/tcllib%%PORTVERSION%%/math/mvlinreg.tcl
 lib/tcllib%%PORTVERSION%%/math/optimize.tcl
 lib/tcllib%%PORTVERSION%%/math/pdf_stat.tcl
 lib/tcllib%%PORTVERSION%%/math/pkgIndex.tcl
@@ -268,6 +274,12 @@ lib/tcllib%%PORTVERSION%%/ncgi/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/nmea/nmea.tcl
 lib/tcllib%%PORTVERSION%%/nmea/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/nmea
+lib/tcllib%%PORTVERSION%%/nns/common.tcl
+lib/tcllib%%PORTVERSION%%/nns/nns.tcl
+lib/tcllib%%PORTVERSION%%/nns/nns_auto.tcl
+lib/tcllib%%PORTVERSION%%/nns/server.tcl
+lib/tcllib%%PORTVERSION%%/nns/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/nns
 lib/tcllib%%PORTVERSION%%/nntp/nntp.tcl
 lib/tcllib%%PORTVERSION%%/nntp/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/nntp
@@ -363,6 +375,7 @@ lib/tcllib%%PORTVERSION%%/sha1/sha1.tcl
 lib/tcllib%%PORTVERSION%%/sha1/sha1c.tcl
 lib/tcllib%%PORTVERSION%%/sha1/sha1v1.tcl
 lib/tcllib%%PORTVERSION%%/sha1/sha256.tcl
+lib/tcllib%%PORTVERSION%%/sha1/sha256c.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/sha1
 lib/tcllib%%PORTVERSION%%/smtpd/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/smtpd/smtpd.tcl
@@ -386,6 +399,8 @@ lib/tcllib%%PORTVERSION%%/stooop/switched.tcl
 lib/tcllib%%PORTVERSION%%/stooop/xifo.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/stooop
 lib/tcllib%%PORTVERSION%%/struct/graph.tcl
+lib/tcllib%%PORTVERSION%%/struct/graph_c.tcl
+lib/tcllib%%PORTVERSION%%/struct/graph_tcl.tcl
 lib/tcllib%%PORTVERSION%%/struct/graph1.tcl
 lib/tcllib%%PORTVERSION%%/struct/list.tcl
 lib/tcllib%%PORTVERSION%%/struct/matrix.tcl
@@ -396,6 +411,8 @@ lib/tcllib%%PORTVERSION%%/struct/prioqueue.tcl
 lib/tcllib%%PORTVERSION%%/struct/queue.tcl
 lib/tcllib%%PORTVERSION%%/struct/record.tcl
 lib/tcllib%%PORTVERSION%%/struct/sets.tcl
+lib/tcllib%%PORTVERSION%%/struct/sets_c.tcl
+lib/tcllib%%PORTVERSION%%/struct/sets_tcl.tcl
 lib/tcllib%%PORTVERSION%%/struct/skiplist.tcl
 lib/tcllib%%PORTVERSION%%/struct/stack.tcl
 lib/tcllib%%PORTVERSION%%/struct/struct.tcl
@@ -463,6 +480,9 @@ lib/tcllib%%PORTVERSION%%/treeql/treeql.tcl
 lib/tcllib%%PORTVERSION%%/treeql/treeql84.tcl
 lib/tcllib%%PORTVERSION%%/treeql/treeql85.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/treeql
+lib/tcllib%%PORTVERSION%%/uev/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/uev/uevent.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/uev
 lib/tcllib%%PORTVERSION%%/units/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/units/units.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/units
@@ -473,5 +493,9 @@ lib/tcllib%%PORTVERSION%%/uri/urn-scheme.tcl
 lib/tcllib%%PORTVERSION%%/uuid/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/uuid/uuid.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/uuid
+lib/tcllib%%PORTVERSION%%/wip/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/wip/wip.tcl
+lib/tcllib%%PORTVERSION%%/wip/wip2.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/wip
 lib/tcllib%%PORTVERSION%%/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%
