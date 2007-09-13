@@ -23,7 +23,7 @@ USE_PYTHON=	yes
 CONFIGURE_ARGS=	--with-iconv=${LOCALBASE} \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \
-		--with-python=${LOCALBASE}
+		--with-python=${PYTHON_CMD}
 
 DOCSDIR=	${PREFIX}/share/doc/py-libxml2
 EXAMPLESDIR=	${PREFIX}/share/examples/py-libxml2
