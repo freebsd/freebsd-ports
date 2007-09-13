@@ -17,103 +17,90 @@ MASTER_SITE_SUBDIR=lofi
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyKDE-${PORTVERSION}
 
-MAINTAINER=	danny@ricin.com
-COMMENT=	Python Bindings for KDE3
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	PyKDE-${PORTVERSION}-sip-4.7.patch
+PATCH_DIST_STRIP=-p1
 
-RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
-BUILD_DEPENDS=	${RUN_DEPENDS}
+MAINTAINER=	danny@ricin.com
+COMMENT=	Python bindings for KDE3
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip \
+		pyuic:${PORTSDIR}/x11-toolkits/py-qt
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_KDEBASE_VER=3
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 
 OPTIONS=	DEBUG "Enable debugging symbols" off \
-		DOCS "Install documentation" on \
-		EXAMPLES "Install examples" on \
-		TEMPLATES "Install application templates" on \
 		TRACING "Enable tracing in generated code" off
 
 DATADIR=	${PREFIX}/share/py-sip
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-CONCAT=		4
-ARGS=		-k ${LOCALBASE} -v ${DATADIR} -j ${CONCAT} -d ${PYTHONPREFIX_SITELIBDIR}
+ARGS=		-i -k ${LOCALBASE} -v ${DATADIR} -d ${PYTHON_SITELIBDIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile. ERROR: \
-		sipkdecorepart1.cpp:8662: invalid use of undefined type `struct _XDisplay' \
-		/usr/X11R6/include/qwindowdefs.h:141: forward declaration of `struct _XDisplay'
-.endif
-
 .if defined(WITH_DEBUG)
 ARGS+=		-u
-.endif
-.if defined(NOPORTDOCS) || defined(WITHOUT_DOCS)
-PLIST_SUB+=	DOCS="@comment "
-.else
-PLIST_SUB+=	DOCS=""
-.endif
-.if defined(WITHOUT_EXAMPLES)
-PLIST_SUB+=	EXAMPLES="@comment "
-.else
-PLIST_SUB+=	EXAMPLES=""
-.endif
-.if defined(WITHOUT_TEMPLATES)
-PLIST_SUB+=	TEMPLATES="@comment "
-.else
-PLIST_SUB+=	TEMPLATES=""
 .endif
 .if defined(WITH_TRACING)
 ARGS+=		-r
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/python|${SETENV} python|' \
+	${REINPLACE_CMD} -e 's|/usr/bin/python|${SETENV} python|'\
 		${WRKSRC}/postproc
 
 do-configure:
-	( cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${ARGS} )
+	cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${ARGS}
+
+post-configure:
+	for item in dcop kdecore kdefx kdeui kio kresources kabc kutils kfile\
+		kparts khtml kspell kdeprint kmdi ; do\
+		${REINPLACE_CMD} -e 's|mkspecs/freebsd-g++|share/qt/mkspecs/freebsd-g++|'\
+			-e 's|CC = cc|CC = ${CC}|'\
+			-e 's|CXX = c++|CXX = ${CXX}|'\
+			-e 's|LINK = c++|LINK = ${CXX}|'\
+			${WRKSRC}/$${item}/Makefile ; done
 
 post-build:
-	( cd ${WRKSRC} && ${MKDIR} tmp && \
-		${CP} pykdeconfig.py extensions/* tmp && \
-		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py tmp )
-.if !defined(WITHOUT_EXAMPLES)
-	( cd ${WRKSRC} && \
-		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py examples )
+	cd ${WRKSRC} && ${MKDIR} tmp &&\
+		${CP} pykdeconfig.py extensions/* tmp &&\
+		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py tmp
+.if !defined(NOPORTEXAMPLES)
+	cd ${WRKSRC} &&\
+		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py examples
 .endif
-	@${REINPLACE_CMD} -e 's|ln.*||g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|ln.*||g' ${WRKSRC}/Makefile
 
 post-install:
-	( ${INSTALL_SCRIPT} ${WRKSRC}/contrib/kdepyuic ${PREFIX}/bin && \
-		${INSTALL_DATA} ${WRKSRC}/tmp/*.pyc ${PYTHONPREFIX_SITELIBDIR} )
-.if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
-	( cd ${WRKSRC}/doc && \
-		${MKDIR} -m 0755 ${DOCSDIR}/classref ${DOCSDIR}/images && \
-		${INSTALL_DATA} kde.css *.html ${DOCSDIR} && \
-		${INSTALL_DATA} images/* ${DOCSDIR}/images && \
-		${INSTALL_DATA} classref/*.html ${DOCSDIR}/classref && \
-		cd classref && \
-		for i in `ls | ${GREP} -v allclasses | ${GREP} -v glossary | \
-			${GREP} -v index` ; do \
-			${MKDIR} -m 0755 ${DOCSDIR}/classref/$${i} && \
-			${INSTALL_DATA} $${i}/*.html \
-			${DOCSDIR}/classref/$${i} ; done )
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/kdepyuic ${PREFIX}/bin &&\
+		${INSTALL_DATA} ${WRKSRC}/tmp/*.pyc ${PYTHON_SITELIBDIR}
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC}/doc &&\
+		${MKDIR} ${DOCSDIR}/classref ${DOCSDIR}/images &&\
+		${INSTALL_DATA} kde.css *.html ${DOCSDIR} &&\
+		${INSTALL_DATA} images/* ${DOCSDIR}/images &&\
+		${INSTALL_DATA} classref/*.html ${DOCSDIR}/classref &&\
+		cd classref &&\
+		for i in `ls | ${GREP} -v allclasses | ${GREP} -v glossary |\
+			${GREP} -v index` ; do\
+			${MKDIR} ${DOCSDIR}/classref/$${i} &&\
+			${INSTALL_DATA} $${i}/*.html\
+			${DOCSDIR}/classref/$${i} ; done
 .endif
-.if !defined(WITHOUT_EXAMPLES)
-	( cd ${WRKSRC}/examples && \
-		${MKDIR} -m 0755 ${EXAMPLESDIR}/uimodules && \
-		${INSTALL_DATA} uimodules/* ${EXAMPLESDIR}/uimodules && \
-		${INSTALL_DATA} README *.dtd *.p* *.rc *.ui* ${EXAMPLESDIR} )
-.endif
-.if !defined(WITHOUT_TEMPLATES)
-	( cd ${WRKSRC}/templates && \
-		${MKDIR} -m 0755 ${EXAMPLESDIR}/templates/annotated \
-			${EXAMPLESDIR}/templates/basic && \
-		${INSTALL_DATA} annotated/* ${EXAMPLESDIR}/templates/annotated && \
-		${INSTALL_DATA} basic/* ${EXAMPLESDIR}/templates/basic )
+.if !defined(NOPORTEXAMPLES)
+	cd ${WRKSRC}/examples &&\
+		${MKDIR} ${EXAMPLESDIR}/uimodules &&\
+		${INSTALL_DATA} uimodules/* ${EXAMPLESDIR}/uimodules &&\
+		${INSTALL_DATA} README *.dtd *.p* *.rc *.ui* ${EXAMPLESDIR}
+	cd ${WRKSRC}/templates &&\
+		${MKDIR} ${EXAMPLESDIR}/templates/annotated\
+			${EXAMPLESDIR}/templates/basic &&\
+		${INSTALL_DATA} annotated/* ${EXAMPLESDIR}/templates/annotated &&\
+		${INSTALL_DATA} basic/* ${EXAMPLESDIR}/templates/basic
 .endif
 
 .include <bsd.port.post.mk>
