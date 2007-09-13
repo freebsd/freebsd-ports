@@ -15,6 +15,8 @@ COMMENT=	Tools to handle Short Message Service
 
 LIB_DEPENDS=	mm:${PORTSDIR}/devel/mm
 
+BROKEN=		Size/checksum mismatch
+
 WRKSRC=		${WRKDIR}/smstools
 USE_GMAKE=	yes
 USE_RC_SUBR=	smsd.sh
