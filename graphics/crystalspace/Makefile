@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	crystalspace
-PORTVERSION=	0.99
-PORTREVISION=	13
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crystal
-DISTNAME=	cs-pseudo-stable-2006-01-27
+DISTNAME=	${PORTNAME:S/$/-src/}-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -27,24 +26,22 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		alut.1:${PORTSDIR}/audio/freealut \
 		CEGUIBase.0:${PORTSDIR}/graphics/cegui
 
-BROKEN=		Incorrect pkg-plist
-
 CONFLICTS=	crystalspace-devel-[0-9]*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4+
 USE_GL=		yes
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS+=	-L/usr/lib -lc
+LIBS=		-lc
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS} ${CXX}" \
-		CPPFLAGS="${CPPFLAGS} "LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" LIBS="${LIBS}"
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}" LIBS="${LIBS}"
 CONFIGURE_ARGS+=	--enable-cpu-specific-optimizations=no \
+			--disable-ptmalloc \
 			--disable-make-emulation \
 			--prefix=${PREFIX}
 DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
-WRKSRC=		${WRKDIR}/CS
 
 JAM_CMD=	${LOCALBASE}/bin/jam
 JAM_ARGS=	-qa
@@ -66,10 +63,6 @@ OPTIONS=	DEBUG	"Build with debugging information"	off \
 		BFD	"Universal BFD library from the GNU binutils"	on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
@@ -177,7 +170,7 @@ post-configure:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 42,44d ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 26d ${WRKSRC}/Jamfile
-	@${REINPLACE_CMD} -e 79d ${WRKSRC}/Jamfile
+	@${REINPLACE_CMD} -e 85d ${WRKSRC}/Jamfile
 .endif
 
 do-build:
