@@ -598,6 +598,7 @@
     SUBDIR += libmcs
     SUBDIR += libmcve
     SUBDIR += libmimedir
+    SUBDIR += libmowgli
     SUBDIR += libmpcbdm
     SUBDIR += libmtrie
     SUBDIR += libnaji
