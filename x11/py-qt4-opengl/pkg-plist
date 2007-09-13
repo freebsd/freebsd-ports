@@ -5,7 +5,6 @@
 %%SIPFILES%%%%SIPDIR%%/QtOpenGL/qglframebufferobject.sip
 %%SIPFILES%%%%SIPDIR%%/QtOpenGL/qglpixelbuffer.sip
 %%SIPFILES%%@dirrm %%SIPDIR%%/QtOpenGL
-@cwd %%LOCALBASE%%
 %%API%%%%APIFILE%%
 %%API%%@dirrmtry share/qt4/qsci/api/python
 %%API%%@dirrmtry share/qt4/qsci/api

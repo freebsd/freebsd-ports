@@ -21,6 +21,7 @@
 %%SIPFILES%%%%SIPDIR%%/QtGui/qclipboard.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qcolor.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qcolordialog.sip
+%%SIPFILES%%%%SIPDIR%%/QtGui/qcolumnview.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qcombobox.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qcompleter.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qcursor.sip
@@ -38,6 +39,7 @@
 %%SIPFILES%%%%SIPDIR%%/QtGui/qerrormessage.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qevent.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qfiledialog.sip
+%%SIPFILES%%%%SIPDIR%%/QtGui/qfileiconprovider.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qfocusframe.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qfont.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qfontcombobox.sip
@@ -75,6 +77,8 @@
 %%SIPFILES%%%%SIPDIR%%/QtGui/qlistwidget.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qmainwindow.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qmatrix.sip
+%%SIPFILES%%%%SIPDIR%%/QtGui/qmdiarea.sip
+%%SIPFILES%%%%SIPDIR%%/QtGui/qmdisubwindow.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qmenu.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qmenubar.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qmessagebox.sip
@@ -144,6 +148,7 @@
 %%SIPFILES%%%%SIPDIR%%/QtGui/qtoolbox.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qtoolbutton.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qtooltip.sip
+%%SIPFILES%%%%SIPDIR%%/QtGui/qtransform.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qtreeview.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qtreewidget.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qtreewidgetitemiterator.sip
@@ -155,12 +160,12 @@
 %%SIPFILES%%%%SIPDIR%%/QtGui/qwidget.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qwidgetaction.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qwindowdefs.sip
+%%SIPFILES%%%%SIPDIR%%/QtGui/qwizard.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qworkspace.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qx11embed_x11.sip
 %%SIPFILES%%%%SIPDIR%%/QtGui/qx11info_x11.sip
-%%SIPFILES%%@dirrm %%SIPDIR%%/QtGui
-@cwd %%LOCALBASE%%
 %%API%%%%APIFILE%%
+%%SIPFILES%%@dirrm %%SIPDIR%%/QtGui
 %%API%%@dirrmtry share/qt4/qsci/api/python
 %%API%%@dirrmtry share/qt4/qsci/api
 %%API%%@dirrmtry share/qt4/qsci

@@ -14,7 +14,6 @@
 %%SIPFILES%%%%SIPDIR%%/QtSql/qsqlresult.sip
 %%SIPFILES%%%%SIPDIR%%/QtSql/qsqltablemodel.sip
 %%SIPFILES%%@dirrm %%SIPDIR%%/QtSql
-@cwd %%LOCALBASE%%
 %%API%%%%APIFILE%%
 %%API%%@dirrmtry share/qt4/qsci/api/python
 %%API%%@dirrmtry share/qt4/qsci/api

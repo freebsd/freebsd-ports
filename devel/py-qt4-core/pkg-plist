@@ -1,17 +1,11 @@
 bin/pyuic4
+%%PYTHON_SITELIBDIR%%/PyQt4/Qt.py
+%%PYTHON_SITELIBDIR%%/PyQt4/Qt.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/Qt.pyo
 %%PYTHON_SITELIBDIR%%/PyQt4/QtCore.so
 %%PYTHON_SITELIBDIR%%/PyQt4/__init__.py
 %%PYTHON_SITELIBDIR%%/PyQt4/__init__.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/__init__.pyo
-%%ELTREE%%%%PYTHON_SITELIBDIR%%/PyQt4/elementtree/ElementPath.py
-%%ELTREE%%%%PYTHON_SITELIBDIR%%/PyQt4/elementtree/ElementPath.pyc
-%%ELTREE%%%%PYTHON_SITELIBDIR%%/PyQt4/elementtree/ElementPath.pyo
-%%ELTREE%%%%PYTHON_SITELIBDIR%%/PyQt4/elementtree/ElementTree.py
-%%ELTREE%%%%PYTHON_SITELIBDIR%%/PyQt4/elementtree/ElementTree.pyc
-%%ELTREE%%%%PYTHON_SITELIBDIR%%/PyQt4/elementtree/ElementTree.pyo
-%%ELTREE%%%%PYTHON_SITELIBDIR%%/PyQt4/elementtree/__init__.py
-%%ELTREE%%%%PYTHON_SITELIBDIR%%/PyQt4/elementtree/__init__.pyc
-%%ELTREE%%%%PYTHON_SITELIBDIR%%/PyQt4/elementtree/__init__.pyo
 %%PYTHON_SITELIBDIR%%/PyQt4/pyqtconfig.py
 %%PYTHON_SITELIBDIR%%/PyQt4/pyqtconfig.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/pyqtconfig.pyo
@@ -78,9 +72,11 @@ bin/pyuic4
 %%SIPFILES%%%%SIPDIR%%/QtCore/qchar.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qcoreapplication.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qcoreevent.sip
+%%SIPFILES%%%%SIPDIR%%/QtCore/qcryptographichash.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qdatastream.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qdatetime.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qdir.sip
+%%SIPFILES%%%%SIPDIR%%/QtCore/qdiriterator.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qeventloop.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qfile.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qfileinfo.sip
@@ -98,6 +94,7 @@ bin/pyuic4
 %%SIPFILES%%%%SIPDIR%%/QtCore/qmimedata.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qmutex.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qnamespace.sip
+%%SIPFILES%%%%SIPDIR%%/QtCore/qnumeric.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qobject.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qobjectcleanuphandler.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qobjectdefs.sip
@@ -129,15 +126,13 @@ bin/pyuic4
 %%SIPFILES%%%%SIPDIR%%/QtCore/qvariant.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qvector.sip
 %%SIPFILES%%%%SIPDIR%%/QtCore/qwaitcondition.sip
-%%ELTREE%%@dirrm %%PYTHON_SITELIBDIR%%/PyQt4/elementtree
+%%API%%%%APIFILE%%
 @dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler
 @dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/Loader
 @dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins
 @dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic
 %%SIPFILES%%@dirrm %%SIPDIR%%/QtCore
 @dirrm %%PYTHON_SITELIBDIR%%/PyQt4
-@cwd %%LOCALBASE%%
-%%API%%%%APIFILE%%
 %%API%%@dirrmtry share/qt4/qsci/api/python
 %%API%%@dirrmtry share/qt4/qsci/api
 %%API%%@dirrmtry share/qt4/qsci
