@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xtide
-PORTVERSION=	2.9.3
-PORTREVISION=	1
+PORTVERSION=	2.9.4
 CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
