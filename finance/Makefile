@@ -47,6 +47,7 @@
     SUBDIR += p5-Business-OnlinePayment-VirtualNet
     SUBDIR += p5-Business-OnlinePayment-eSec
     SUBDIR += p5-Business-OnlinePayment-iAuthorizer
+    SUBDIR += p5-Business-PayPal-IPN
     SUBDIR += p5-Business-WorldPay-Junior
     SUBDIR += p5-Finance-Amortization
     SUBDIR += p5-Finance-Currency-Convert
