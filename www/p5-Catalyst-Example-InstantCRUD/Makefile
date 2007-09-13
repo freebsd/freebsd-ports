@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Catalyst-Example-InstantCRUD
-DISTVERSION=	v0.0.18
+PORTVERSION=	0.0.20
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/Z/ZB/ZBY
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
@@ -29,9 +28,10 @@ p5-Catalyst-Plugin-Authentication>=0.07:${PORTSDIR}/www/p5-Catalyst-Plugin-Authe
 	p5-Catalyst-Plugin-Static-Simple>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Static-Simple \
 	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 	p5-Catalyst-View-TT>=0.21:${PORTSDIR}/www/p5-Catalyst-View-TT \
-	p5-DBIx-Class>=0.07000:${PORTSDIR}/databases/p5-DBIx-Class \
+	p5-DBIx-Class>=0.08003:${PORTSDIR}/databases/p5-DBIx-Class \
 	p5-DBIx-Class-DigestColumns>=0:${PORTSDIR}/databases/p5-DBIx-Class-DigestColumns \
 	p5-DBIx-Class-Schema-Loader>=0.03:${PORTSDIR}/databases/p5-DBIx-Class-Schema-Loader \
+	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 	p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
 	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
@@ -42,7 +42,7 @@ p5-Catalyst-Plugin-Authentication>=0.07:${PORTSDIR}/www/p5-Catalyst-Plugin-Authe
 	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 	p5-version>=0:${PORTSDIR}/devel/p5-version
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	5.8.1+
 
 MAN1=	instantcrud.pl.1
 MAN3=	Catalyst::Example::Controller::InstantCRUD.3 \
