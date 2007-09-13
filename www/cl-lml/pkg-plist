@@ -9,9 +9,4 @@ lib/common-lisp/lml/utils.lisp
 lib/common-lisp/lml/tests.lisp
 lib/common-lisp/lml/lml.asd
 lib/common-lisp/system-registry/lml.asd
-@dirrm lib/common-lisp/lml/
-%%PORTDOCS%%%%DOCSDIR%%/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/make.lisp
-%%PORTDOCS%%%%DOCSDIR%%/readme.html
-%%PORTDOCS%%%%DOCSDIR%%/readme.lml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry lib/common-lisp/lml
