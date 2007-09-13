@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	g2ipmsg
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.9.3
+PORTREVISION=	0
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.ipmsg.org/archive/ \
 		${MASTER_SITE_LOCAL} \
