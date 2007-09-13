@@ -21,7 +21,7 @@ USE_GNOME=	gnomehack lthack gnometarget libxslt
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
-		--with-python=${LOCALBASE}
+		--with-python=${PYTHON_CMD}
 
 DOCSDIR=	${PREFIX}/share/doc/py-libxslt
 EXAMPLESDIR=	${PREFIX}/share/examples/py-libxslt
