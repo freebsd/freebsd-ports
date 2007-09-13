@@ -8,7 +8,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.10.14
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.10/ \
@@ -42,7 +42,11 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack atk pango ltverhack
 USE_GETTEXT=	yes
-USE_XLIB=	yes
+USE_XORG=	dmx fontenc fontutil ice libfs oldx sm x11 xau xaw xaw6 xaw7 xaw8 xbitmaps \
+		xcomposite xcursor xdamage xdmcp xevie xext xfixes xfont xfontcache xft xi \
+		xinerama xkbfile xkbui xmu xmuu xorg-server xp xpm xprintapputil xprintutil \
+		xrandr xrender xres xscrnsaver xt xtrans xtrap xtst xv xvmc xxf86dga xxf86misc \
+		xxf86vm
 CONFIGURE_ARGS=	--enable-static --with-xinput=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			  -I${LOCALBASE}/include" \
