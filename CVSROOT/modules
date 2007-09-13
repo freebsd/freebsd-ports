@@ -9861,6 +9861,7 @@ p5-HTML-FromANSI	ports/www/p5-HTML-FromANSI
 p5-HTML-FromText	ports/www/p5-HTML-FromText
 p5-HTML-LinkExtractor	ports/www/p5-HTML-LinkExtractor
 p5-HTML-Lint	ports/www/p5-HTML-Lint
+p5-HTML-Location	ports/www/p5-HTML-Location
 p5-HTML-Mason	ports/www/p5-HTML-Mason
 p5-HTML-Pager	ports/www/p5-HTML-Pager
 p5-HTML-Parser	ports/www/p5-HTML-Parser
