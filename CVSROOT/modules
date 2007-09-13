@@ -6595,6 +6595,7 @@ libmng		ports/graphics/libmng
 libmodplug	ports/audio/libmodplug
 libmorph	ports/graphics/libmorph
 libmovtar	ports/multimedia/libmovtar
+libmowgli	ports/devel/libmowgli
 libmpcbdm	ports/devel/libmpcbdm
 libmpcdec	ports/audio/libmpcdec
 libmpd		ports/audio/libmpd
