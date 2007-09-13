@@ -13213,6 +13213,7 @@ py-qt4-network	ports/net/py-qt4-network
 py-qt4-opengl	ports/x11/py-qt4-opengl
 py-qt4-qct	ports/devel/py-qt4-qct
 py-qt4-qscintilla2	ports/devel/py-qt4-qscintilla2
+py-qt4-script	ports/devel/py-qt4-script
 py-qt4-sql	ports/databases/py-qt4-sql
 py-qt4-svg	ports/graphics/py-qt4-svg
 py-qt4-test	ports/devel/py-qt4-test
