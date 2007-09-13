@@ -14,4 +14,9 @@ very often controls several thousands fighters at the same time.
 And when fighters from different teams meet, they eat each other,
 it is as simple as that.
 
+Note: If the game crashes this might resolve it:
+    Inside liquidwar, go to options->rules->advanced and change
+    Algorithm from "Assembly" to "Standard C"
+See also the "ASM" option in the port build options.
+
 WWW: http://www.ufoot.org/liquidwar/
