@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libmcs
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	devel
-MASTER_SITES=	http://sacredspiral.co.uk/~nenolod/mcs/
-DISTNAME=	mcs-${PORTVERSION}
+MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oliver@FreeBSD.org
