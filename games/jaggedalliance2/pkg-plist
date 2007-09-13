@@ -1,4 +1,5 @@
 bin/ja2
+share/pixmaps/jagged2.ico
 @dirrmtry %%DATADIR%%/Data/TILECACHE
 @dirrmtry %%DATADIR%%/Data
 @unexec rmdir %D/%%DATADIR%% 2>/dev/null || echo "Warning: data files in %D/%%DATADIR%% have been left intact."

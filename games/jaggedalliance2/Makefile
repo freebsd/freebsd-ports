@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ja2
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	games
 MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/ \
 		http://ja2.dragonriders.de/files/
@@ -37,7 +37,7 @@ OPTIONS=	DUTCH	"Compile for Dutch version"	Off \
 
 .include <bsd.port.pre.mk>
 
-.ifndef WITHOUT_ENGLISH
+.ifdef WITH_ENGLISH
 MAKE_ARGS+=	LNG=ENGLISH
 .elifdef WITH_DUTCH
 MAKE_ARGS+=	LNG=DUTCH
@@ -61,12 +61,8 @@ MAKE_ARGS+=	SGPDATADIR=${DATADIR}
 
 MAN6=	ja2.6
 
-do-install:
-	@${MKDIR} ${DATADIR}/Data/TILECACHE
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/${MAN6} ${MANPREFIX}/man/man6
-
 post-install:
+	@${MKDIR} ${DATADIR}/Data/TILECACHE
 	@${SED} -e 's|$${DATADIR}|${DATADIR}|' ${PKGMESSAGE}
 
 lowercase:
