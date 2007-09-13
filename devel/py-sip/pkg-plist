@@ -1,9 +1,9 @@
 bin/sip
-%%DOCS%%%%DOCSDIR%%/NEWS
-%%DOCS%%%%DOCSDIR%%/LICENSE
-%%DOCS%%%%DOCSDIR%%/default.css
-%%DOCS%%%%DOCSDIR%%/sipref.html
-%%DOCS%%%%DOCSDIR%%/sipref.txt
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/default.css
+%%PORTDOCS%%%%DOCSDIR%%/sipref.html
+%%PORTDOCS%%%%DOCSDIR%%/sipref.txt
 %%PYTHON_INCLUDEDIR%%/sip.h
 %%PYTHON_SITELIBDIR%%/sip.so
 %%PYTHON_SITELIBDIR%%/sipconfig.py
@@ -12,6 +12,6 @@ bin/sip
 %%PYTHON_SITELIBDIR%%/sipdistutils.py
 %%PYTHON_SITELIBDIR%%/sipdistutils.pyc
 %%PYTHON_SITELIBDIR%%/sipdistutils.pyo
-%%DOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/%%DATADIR%%
 @dirrm %%DATADIR%%
