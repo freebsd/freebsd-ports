@@ -5,37 +5,50 @@
 # $FreeBSD$
 
 PORTNAME=	qscintilla2
-PORTVERSION=	20070410
-PORTREVISION=	1
+PORTVERSION=	2.1
+PORTREVISION=	# zero
+PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/Snapshots/QScintilla2/ \
+MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/QScintilla2/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
-DISTNAME=	QScintilla-1.73-gpl-2-snapshot-${PORTVERSION}
+DISTNAME=	QScintilla-1.73-gpl-${PORTVERSION}
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python bindings for QScintilla2 (PyQt4), QSci module
 
-LIB_DEPENDS=	qscintilla2.1:${PORTSDIR}/devel/qscintilla2
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
+LIB_DEPENDS=	qscintilla2.2:${PORTSDIR}/devel/qscintilla2
+BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip \
+		${PYTHON_SITELIBDIR}/PyQt4/QtCore.so:${PORTSDIR}/devel/py-qt4-core \
+		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 HAS_CONFIGURE=	yes
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.5+
 
-OPTIONS=	DEBUG		"Enable debugging in generated code" off \
+OPTIONS=	API		"Install binding API for QScintilla2" on \
+		DEBUG		"Enable debugging in generated code" off \
 		SIPFILES	"Install the Qscintilla SIP files" on \
 		TRACING		"Enable tracing in generated code" off
 
 OPTIONSFILE=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
-ARGS=		-c -j 2 -p 4 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt4
+ARGS=		-p 4 -d ${PYTHON_SITELIBDIR}/PyQt4
 WRKSRC=		${WRKDIR}/${DISTNAME}/Python
+PYVER=		`python -c "import sys; print sys.version[:3]"`
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)
 ARGS+=		-u
+.endif
+.if defined(WITHOUT_API)
+ARGS+=		-a /dev/null
+PLIST_SUB+=	API="@comment "
+PLIST_SUB+=	APIFILE="@comment "
+.else
+PLIST_SUB+=	API=""
+PLIST_SUB+=	APIFILE="share/qt4/qsci/api/python/QScintilla2.api"
 .endif
 .if defined(WITHOUT_SIPFILES)
 ARGS+=		-v /dev/null
@@ -51,9 +64,19 @@ ARGS+=		-r
 .endif
 
 do-configure:
-	( cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${ARGS} )
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV}\
+		${PYTHON_CMD} configure.py ${ARGS}
+
+post-configure:
+	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile &&\
+		${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g'\
+			-e 's|%%PYVER%%|${PYVER}|g'\
+			-e 's|CC = cc|CC = ${CC}|'\
+			-e 's|CXX = c++|CXX = ${CXX}|'\
+			-e 's|LINK = c++|LINK = ${CXX}|'\
+			${WRKSRC}/Makefile
 
 do-build:
-	( cd ${WRKSRC} && ${MAKE} )
+	cd ${WRKSRC} && ${MAKE}
 
 .include <bsd.port.post.mk>
