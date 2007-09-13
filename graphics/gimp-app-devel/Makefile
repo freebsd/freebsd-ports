@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gimp-app
-DISTVERSION=	2.4.0-rc1
-PORTREVISION?=	1
+DISTVERSION=	2.4.0-rc2
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -33,7 +33,9 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		lcms.1:${PORTSDIR}/graphics/lcms
+		lcms.1:${PORTSDIR}/graphics/lcms \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

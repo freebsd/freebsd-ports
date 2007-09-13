@@ -1587,7 +1587,6 @@ share/gimp/scripts/waves-anim.scm
 share/gimp/scripts/weave.scm
 share/gimp/scripts/web-browser.scm
 share/gimp/scripts/xach-effect.scm
-
 share/gimp/themes/Default/gtkrc
 share/gimp/themes/Default/images/preferences/color-management-22.png
 share/gimp/themes/Default/images/preferences/color-management.png
@@ -1614,6 +1613,7 @@ share/gimp/themes/Default/images/preferences/folders-interp.png
 share/gimp/themes/Default/images/preferences/folders-modules-22.png
 share/gimp/themes/Default/images/preferences/folders-modules.png
 share/gimp/themes/Default/images/preferences/folders-palettes.png
+share/gimp/themes/Default/images/preferences/folders-palettes-22.png
 share/gimp/themes/Default/images/preferences/folders-patterns-22.png
 share/gimp/themes/Default/images/preferences/folders-patterns.png
 share/gimp/themes/Default/images/preferences/folders-plug-ins-22.png
@@ -1621,6 +1621,7 @@ share/gimp/themes/Default/images/preferences/folders-plug-ins.png
 share/gimp/themes/Default/images/preferences/folders-scripts-22.png
 share/gimp/themes/Default/images/preferences/folders-scripts.png
 share/gimp/themes/Default/images/preferences/folders-themes.png
+share/gimp/themes/Default/images/preferences/folders-themes-22.png
 share/gimp/themes/Default/images/preferences/folders-tool-plug-ins-22.png
 share/gimp/themes/Default/images/preferences/folders-tool-plug-ins.png
 share/gimp/themes/Default/images/preferences/folders-tools-22.png
