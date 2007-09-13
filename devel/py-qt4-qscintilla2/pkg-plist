@@ -35,7 +35,6 @@
 %%SIPFILES%%%%SIPDIR%%/Qsci/qsciscintillabase3.sip
 %%SIPFILES%%%%SIPDIR%%/Qsci/qsciscintillabase4.sip
 %%SIPFILES%%@dirrm %%SIPDIR%%/Qsci
-@cwd %%LOCALBASE%%
 share/qt4/qsci/api/python/QScintilla2.api
 @dirrmtry share/qt4/qsci/api/python
 @dirrmtry share/qt4/qsci/api
