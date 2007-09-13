@@ -2,6 +2,12 @@
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/DBIC/User.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/DBIC/Backend.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/DBIC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authentication/Store/DBIC/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authentication/Store/DBIC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authentication/Store
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authentication
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/DBIC/User
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/DBIC
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store
