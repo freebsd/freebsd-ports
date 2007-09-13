@@ -9,7 +9,7 @@ PORTNAME=	xf86-input-vmmouse
 PORTVERSION=	12.4.2
 CATEGORIES=	x11-drivers
 
-MAINTAINER=	sa2c@sa2c.net
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org vmmouse input driver
 
 XORG_CAT=	driver
