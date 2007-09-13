@@ -2,8 +2,8 @@ bin/mcs-getconfval
 bin/mcs-info
 bin/mcs-query-backends
 bin/mcs-setconfval
+bin/mcs-walk-config
 include/libmcs/mcs.h
-include/libmcs/mcs_config.h
 lib/libmcs.so
 lib/libmcs.so.1
 lib/libmcs.so.1.0.0
