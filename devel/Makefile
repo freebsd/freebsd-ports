@@ -1137,6 +1137,7 @@
     SUBDIR += p5-Devel-ebug
     SUBDIR += p5-Devel-ptkdb
     SUBDIR += p5-Dialog
+    SUBDIR += p5-Digest-TransformPath
     SUBDIR += p5-Dir-Project
     SUBDIR += p5-Directory-Scratch
     SUBDIR += p5-Env-PS1
