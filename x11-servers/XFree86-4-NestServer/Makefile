@@ -21,6 +21,9 @@ COMMENT=	XFree86-4 nested X server
 
 CONFLICTS=	xorg-nestserver-[0-9]*
 
+DEPRECATED=	isn't maintained anymore
+EXPIRATION_DATE=	2007-12-25
+
 EXTRA_PATCHES=	${.CURDIR}/../../x11-servers/XFree86-4-Server/files/patch-lib_font_bitmap_pcfread.c
 MAN1=			Xnest.1
 PLIST_FILES=		bin/Xnest

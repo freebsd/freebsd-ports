@@ -15,6 +15,10 @@ COMMENT=	X Print server from X.Org
 
 CONFLICTS=	XFree86-PrintServer-*
 
+DEPRECATED=	is obsolete
+EXPIRATION_DATE=	2007-12-25
+IGNORE=		${DEPRECATED}
+
 XORG_CAT=	xserver
 
 LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm

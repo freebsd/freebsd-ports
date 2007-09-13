@@ -1,7 +1,5 @@
 lib/xorg/modules/input/kbd_drv.la
 lib/xorg/modules/input/kbd_drv.so
-lib/xorg/modules/input/keyboard_drv.la
-lib/xorg/modules/input/keyboard_drv.so
 @dirrmtry lib/xorg/modules/input
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-input-mouse
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.2
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org

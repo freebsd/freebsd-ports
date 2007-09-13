@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xorg-fonts-75dpi
-PORTVERSION=	7.2
+PORTVERSION=	7.3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	# none
 DISTFILES=	# none

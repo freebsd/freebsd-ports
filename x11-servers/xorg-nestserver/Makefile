@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xorg-nestserver
-PORTVERSION=	1.2.0
+PORTVERSION=	1.4
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 
@@ -24,7 +24,7 @@ USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
 		resourceproto fontsproto xf86dgaproto videoproto \
 		compositeproto trapproto recordproto resourceproto \
 		xineramaproto evieproto xkbfile xfont fontenc xkbui \
-		xxf86misc xxf86vm xaw7 xmu xpm xext
+		xxf86misc xxf86vm xaw7 xmu xpm xext pixman
 
 CONFIGURE_ARGS=	--disable-dmx --disable-xvfb --disable-xorg --disable-xprint \
 		--localstatedir=/var

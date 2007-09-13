@@ -7,7 +7,7 @@
 
 PORTNAME=	FontServer
 PORTVERSION=	4.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-servers x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -19,7 +19,10 @@ DISTFILES=	XFree86-${PORTVERSION}-src-1.tgz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 font server
 
-CONFLICTS=	xorg-fontserver-*
+CONFLICTS=	xorg-fontserver-* xfs-*
+
+DEPRECATED=	isn't maintained anymore
+EXPIRATION_DATE=	2007-12-25
 
 MAN1=			xfs.1
 XBUILD_DIRS=		programs/xfs

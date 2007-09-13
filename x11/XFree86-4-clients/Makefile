@@ -29,6 +29,9 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 
 CONFLICTS=	xorg-clients-[0-9]*
 
+DEPRECATED=	isn't maintained anymore
+EXPIRATION_DATE=	2007-12-25
+
 SCRIPTS_ENV=		InstallXdmConfig=${InstallXdmConfig} \
 			InstallXinitConfig=${InstallXinitConfig} \
 			InstallAppDefFiles=${InstallAppDefFiles}

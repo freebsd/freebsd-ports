@@ -4,6 +4,3 @@ lib/libXRes.la
 lib/libXRes.so
 lib/libXRes.so.1
 libdata/pkgconfig/xres.pc
-@dirrmtry share/X11/app-defaults
-@dirrmtry share/X11
-@exec mkdir -p %D/share/X11/app-defaults 2>/dev/null

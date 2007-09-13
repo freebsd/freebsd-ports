@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-video-siliconmotion
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org

@@ -224,6 +224,7 @@
     SUBDIR += padkey
     SUBDIR += panoramixext
     SUBDIR += peeper
+    SUBDIR += pixman
     SUBDIR += portoseguro
     SUBDIR += powershell
     SUBDIR += printext
@@ -305,6 +306,7 @@
     SUBDIR += xauth
     SUBDIR += xautolock
     SUBDIR += xautomation
+    SUBDIR += xbacklight
     SUBDIR += xballoon
     SUBDIR += xbanner
     SUBDIR += xbelld

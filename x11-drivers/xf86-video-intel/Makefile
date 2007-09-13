@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-video-intel
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org

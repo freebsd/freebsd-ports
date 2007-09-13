@@ -7,7 +7,7 @@
 
 PORTNAME=	libXres
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -22,8 +22,5 @@ MAN3=		XRes.3 \
 		XResQueryClientResources.3 \
 		XResQueryExtension.3 \
 		XResQueryVersion.3
-
-post-install:
-	${MKDIR} ${PREFIX}/share/X11/app-defaults
 
 .include <bsd.port.mk>

@@ -21,6 +21,9 @@ COMMENT=	XFree86-4 print server
 
 CONFLICTS=	xorg-printserver-*
 
+DEPRECATED=	isn't maintained anymore
+EXPIRATION_DATE=	2007-12-25
+
 EXTRA_PATCHES=	${.CURDIR}/../../x11-servers/XFree86-4-Server/files/patch-lib_font_bitmap_pcfread.c
 PLIST_FILES=		bin/Xprt
 XBUILD_DIRS=		lib/font lib/lbxutil lib/Xdmcp lib/Xau programs/Xserver

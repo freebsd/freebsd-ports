@@ -24,6 +24,8 @@ RUN_DEPENDS=	${X11BASE}/share/X11/xkb/rules/base.xml:${PORTSDIR}/x11/xkeyboard-c
 
 CONFLICTS=	XFree86-Server-*
 
+IGNORE=		is outdated
+
 XORG_CAT=	xserver
 
 USE_XORG=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xorg-drivers
-PORTVERSION=	7.2
-PORTREVISION=	2
+PORTVERSION=	7.3
 CATEGORIES=	x11-drivers
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -29,8 +28,8 @@ VIDEO_ON=	ati \
 		i810 \
 		nv \
 		vesa vga via
-VIDEO_OFF=	apm ark				\
-		chips cirrus cyrix		\
+VIDEO_OFF=	apm ark \
+		chips cirrus cyrix \
 		dummy \
 		fbdev \
 		glint \
@@ -61,7 +60,17 @@ INPUT_OFF=	acecad \
 		palmax penmount \
 		spaceorb summa \
 		tek4957 \
-		void
+		vmmouse void
+
+QUIRKS=		keyboard:kbd jamstudio:js_x
+
+.if defined(XORG_COMPLETE)
+. for type in input video
+${type:U}_ON:=	${${type:U}_ON} ${${type:U}_OFF}
+${type:U}_OFF=	# nil
+. endfor
+.endif
+
 
 .for default in on off
 . for type in input video
@@ -81,8 +90,12 @@ IGNORE=		You can't choose both i810 and intel drivers as they are conflicting
 . for type in input video
 .  for i in ${${type:U}_${default:U}}
 DEFAULT=${default}
-.   if (${DEFAULT} == "on" && !defined(WITHOUT_${i:U})) || (${DEFAULT} == "off" &&  defined(WITH_${i:U}))
-RUN_DEPENDS+=	${${type:U}DIR}/${i:C/jamstudio/js_x/}_drv.so:${PORTSDIR}/x11-drivers/xf86-${type}-${i}
+.   if (${DEFAULT} == "on" && !defined(WITHOUT_${i:U})) || (${DEFAULT} == "off" && defined(WITH_${i:U}))
+.    if ${QUIRKS:M${i}\:*:C/.*://} != ""
+RUN_DEPENDS+=	${${type:U}DIR}/${QUIRKS:M${i}\:*:C/.*://}_drv.so:${PORTSDIR}/x11-drivers/xf86-${type}-${i}
+.    else
+RUN_DEPENDS+=	${${type:U}DIR}/${i}_drv.so:${PORTSDIR}/x11-drivers/xf86-${type}-${i}
+.    endif
 .   endif
 .  endfor
 . endfor

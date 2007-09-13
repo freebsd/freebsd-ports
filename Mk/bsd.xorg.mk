@@ -149,7 +149,7 @@ USE_GNOME+=	pkgconfig
 # Register all xorg .pc files here.
 # foo_LIB_PC_DEPENDS means it should go to BUILD_DEPENDS *and* RUN_DEPENDS.
 
-XORG_MODULES=	bigreqsproto compositeproto damageproto dmx dmxproto evieproto fixesproto fontcacheproto fontenc fontsproto fontutil glproto ice inputproto kbproto libfs oldx printproto randrproto recordproto renderproto resourceproto scrnsaverproto sm trapproto videoproto x11 xau xaw xaw6 xaw7 xaw8 xbitmaps xcmiscproto xcomposite xcursor xdamage xdmcp xevie xext xextproto xf86bigfontproto xf86dgaproto xf86driproto xf86miscproto xf86rushproto xf86vidmodeproto xfixes xfont xfontcache xft xi xinerama xineramaproto xkbfile xkbui xmu xmuu xorg-server xp xpm xprintapputil xprintutil xproto xproxymngproto xrandr xrender xres xscrnsaver xt xtrans xtrap xtst xv xvmc xxf86dga xxf86misc xxf86vm 
+XORG_MODULES=	bigreqsproto compositeproto damageproto dmx dmxproto evieproto fixesproto fontcacheproto fontenc fontsproto fontutil glproto ice inputproto kbproto libfs oldx pixman printproto randrproto recordproto renderproto resourceproto scrnsaverproto sm trapproto videoproto x11 xau xaw xaw6 xaw7 xaw8 xbitmaps xcmiscproto xcomposite xcursor xdamage xdmcp xevie xext xextproto xf86bigfontproto xf86dgaproto xf86driproto xf86miscproto xf86rushproto xf86vidmodeproto xfixes xfont xfontcache xft xi xinerama xineramaproto xkbfile xkbui xmu xmuu xorg-server xp xpm xprintapputil xprintutil xproto xproxymngproto xrandr xrender xres xscrnsaver xt xtrans xtrap xtst xv xvmc xxf86dga xxf86misc xxf86vm 
 
 bigreqsproto_BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/bigreqsproto.pc:${PORTSDIR}/x11/bigreqsproto
 compositeproto_BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/compositeproto.pc:${PORTSDIR}/x11/compositeproto
@@ -168,6 +168,7 @@ inputproto_BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/inputproto.pc:${PORTSDIR}
 kbproto_BUILD_DEPENDS=		${X11BASE}/libdata/pkgconfig/kbproto.pc:${PORTSDIR}/x11/kbproto
 libfs_LIB_PC_DEPENDS=		${X11BASE}/libdata/pkgconfig/libfs.pc:${PORTSDIR}/x11-fonts/libFS
 oldx_LIB_PC_DEPENDS=		${X11BASE}/libdata/pkgconfig/oldx.pc:${PORTSDIR}/x11/liboldX
+pixman_LIB_PC_DEPENDS=		${X11BASE}/libdata/pkgconfig/pixman-1.pc:${PORTSDIR}/x11/pixman
 printproto_BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/printproto.pc:${PORTSDIR}/x11/printproto
 randrproto_BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/randrproto.pc:${PORTSDIR}/x11/randrproto
 recordproto_BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/recordproto.pc:${PORTSDIR}/x11/recordproto

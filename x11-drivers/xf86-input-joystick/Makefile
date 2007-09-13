@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	xf86-input-joystick
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org joystick input driver
 
 XORG_CAT=	driver
+
+MAN4=		joystick.4x
 
 .include <bsd.port.mk>
