@@ -8,10 +8,6 @@ bin/ntptime
 bin/ntptrace
 bin/sntp
 bin/tickadj
-lib/libopts.a
-lib/libopts.la
-lib/libopts.so
-lib/libopts.so.27
 %%PORTDOCS%%%%DOCSDIR%%/accopt.html
 %%PORTDOCS%%%%DOCSDIR%%/assoc.html
 %%PORTDOCS%%%%DOCSDIR%%/audio.html
@@ -150,17 +146,20 @@ lib/libopts.so.27
 %%PORTDOCS%%%%DOCSDIR%%/pic/boom3a.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/bustardfly.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/c51.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pic/description.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/dogsnake.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/driver29.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/driver43_1.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/driver43_2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/fg6021.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/fg6039.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pic/freq1211.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/gadget.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/gps167.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/hornraba.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/igclock.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/neoclock4x.gif
+%%PORTDOCS%%%%DOCSDIR%%/pic/offset1211.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/oncore_evalbig.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/oncore_remoteant.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/oncore_utplusbig.gif
@@ -168,6 +167,7 @@ lib/libopts.so.27
 %%PORTDOCS%%%%DOCSDIR%%/pic/panda.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/pd_om006.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/pd_om011.gif
+%%PORTDOCS%%%%DOCSDIR%%/pic/pzf511.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/pogo.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/pogo1a.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/pogo3a.gif
@@ -180,6 +180,7 @@ lib/libopts.so.27
 %%PORTDOCS%%%%DOCSDIR%%/pic/radio2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/sheepb.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/stack1a.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pic/thunderbolt.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/tonea.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/wingdorothy.gif
 %%PORTDOCS%%%%DOCSDIR%%/pps.html
