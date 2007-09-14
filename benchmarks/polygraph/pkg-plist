@@ -1,4 +1,5 @@
 bin/aka
+bin/beepmon.pl
 bin/cdb
 bin/distr_test
 bin/dns_cfg
@@ -9,10 +10,11 @@ bin/pgl2acl
 bin/pgl2eng
 bin/pgl2ldif
 bin/pgl_test
+bin/pmix2-ips.pl
+bin/pmix3-ips.pl
 bin/polyclt
 bin/polymon
 bin/polyprobe
-bin/polypxy
 bin/polyrrd
 bin/polysrv
 bin/pop_test
@@ -20,19 +22,7 @@ bin/reporter
 bin/rng_test
 bin/tcp2xmld
 bin/udp2tcpd
-%%DATADIR%%/ReportGen/label_results
-%%DATADIR%%/ReportGen/make_report
-%%DATADIR%%/ReportGen/make_card
-%%DATADIR%%/ReportGen/plot_traces
-%%DATADIR%%/ReportGen/plot_table
-%%DATADIR%%/ReportGen/Globs.pm
-%%DATADIR%%/ReportGen/Line.pm
-%%DATADIR%%/ReportGen/ObjDbase.pm
-%%DATADIR%%/ReportGen/ObjManip.pm
-%%DATADIR%%/ReportGen/Opts.pm
-%%DATADIR%%/ReportGen/Plot.pm
-%%DATADIR%%/ReportGen/RepFormat.pm
-%%DATADIR%%/ReportGen/reportgen.cfg
+bin/webaxe4-ips.pl
 %%DATADIR%%/workloads/datacomm-1.pg
 %%DATADIR%%/workloads/downtime-2.pg
 %%DATADIR%%/workloads/include/benches.pg
@@ -57,7 +47,6 @@ bin/udp2tcpd
 %%DATADIR%%/workloads/webaxe-1.pg
 %%DATADIR%%/workloads/webaxe-3.pg
 %%DATADIR%%/workloads/webaxe-4.pg
-@dirrm %%DATADIR%%/ReportGen
 @dirrm %%DATADIR%%/workloads/include
 @dirrm %%DATADIR%%/workloads
 @dirrm %%DATADIR%%

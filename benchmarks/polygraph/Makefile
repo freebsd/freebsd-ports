@@ -6,22 +6,34 @@
 #
 
 PORTNAME=	polygraph
-PORTVERSION=	2.8.1
+PORTVERSION=	3.0.6
 CATEGORIES=	benchmarks www
-MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/
+MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/ \
+				http://people.bsdgroup.de/~as/freebsd/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	as@bsdgroup.org
 COMMENT=	A benchmarking tool for Web proxies
-
-RESTRICTED= 	Redistribution forbidden by license
-IS_INTERACTIVE=	yes
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -Wno-deprecated"
+CONFIGURE_ARGS+=--datadir=${DATADIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CONFLICTS=	ltrace-0*
 
-.include <bsd.port.mk>
+OPTIONS=	GNUPLOT "gnuplot if you want full report functionality" ON \
+		PERL	"install Perl for polygraph tools"		OFF
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_GNUPLOT)
+RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
+.endif
+
+.if !defined(WITHOUT_PERL)
+USE_PERL5_RUN=	yes
+.endif
+
+.include <bsd.port.post.mk>
