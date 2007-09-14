@@ -57,6 +57,10 @@ JAVA_VENDOR=	freebsd bsdjava
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
+.if (${OSVERSION} >= 700000)
+BROKEN=		Build broken with JDK internal error
+.endif
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 .if ${ARCH} == amd64
