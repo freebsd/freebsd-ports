@@ -1,4 +1,4 @@
-%%TIKIWIKI%%/INSTALL
+www/tikiwiki/INSTALL
 %%TIKIWIKI%%/README
 %%TIKIWIKI%%/_htaccess
 %%TIKIWIKI%%/about.php
@@ -31,6 +31,7 @@
 %%TIKIWIKI%%/db/profiles/mk_profile.sh
 %%TIKIWIKI%%/db/profiles/slash.prf
 %%TIKIWIKI%%/db/tiki-1.9-mysql.sql
+%%TIKIWIKI%%/db/tiki-1.9-mysqli.sql
 %%TIKIWIKI%%/db/tiki-1.9-oci8.sql
 %%TIKIWIKI%%/db/tiki-1.9-pgsql.sql
 %%TIKIWIKI%%/db/tiki-1.9-sqlite.sql
@@ -148,31 +149,58 @@
 %%TIKIWIKI%%/img/css.gif
 %%TIKIWIKI%%/img/css1.png
 %%TIKIWIKI%%/img/flagged.gif
+%%TIKIWIKI%%/img/flags/Afghanistan.gif
+%%TIKIWIKI%%/img/flags/Aland_Islands.gif
+%%TIKIWIKI%%/img/flags/Albania.gif
 %%TIKIWIKI%%/img/flags/Algeria.gif
 %%TIKIWIKI%%/img/flags/American_Samoa.gif
+%%TIKIWIKI%%/img/flags/Andorra.gif
 %%TIKIWIKI%%/img/flags/Angola.gif
+%%TIKIWIKI%%/img/flags/Anguilla.gif
 %%TIKIWIKI%%/img/flags/Antigua.gif
 %%TIKIWIKI%%/img/flags/Argentina.gif
 %%TIKIWIKI%%/img/flags/Armenia.gif
+%%TIKIWIKI%%/img/flags/Aruba.gif
 %%TIKIWIKI%%/img/flags/Australia.gif
 %%TIKIWIKI%%/img/flags/Austria.gif
+%%TIKIWIKI%%/img/flags/Azerbaijan.gif
 %%TIKIWIKI%%/img/flags/Bahamas.gif
 %%TIKIWIKI%%/img/flags/Bahrain.gif
 %%TIKIWIKI%%/img/flags/Bangladesh.gif
 %%TIKIWIKI%%/img/flags/Barbados.gif
 %%TIKIWIKI%%/img/flags/Belarus.gif
 %%TIKIWIKI%%/img/flags/Belgium.gif
+%%TIKIWIKI%%/img/flags/Belize.gif
+%%TIKIWIKI%%/img/flags/Benin.gif
 %%TIKIWIKI%%/img/flags/Bermuda.gif
+%%TIKIWIKI%%/img/flags/Bhutan.gif
 %%TIKIWIKI%%/img/flags/Bolivia.gif
+%%TIKIWIKI%%/img/flags/Bosnia_and_Herzegovina.gif
+%%TIKIWIKI%%/img/flags/Botswana.gif
+%%TIKIWIKI%%/img/flags/Bouvet_Island.gif
 %%TIKIWIKI%%/img/flags/Brazil.gif
+%%TIKIWIKI%%/img/flags/British_Indian_Ocean_Territory.gif
+%%TIKIWIKI%%/img/flags/British_Virgin_Islands.gif
 %%TIKIWIKI%%/img/flags/Brunei.gif
 %%TIKIWIKI%%/img/flags/Bulgaria.gif
+%%TIKIWIKI%%/img/flags/Burkina_Faso.gif
+%%TIKIWIKI%%/img/flags/Burundi.gif
+%%TIKIWIKI%%/img/flags/Cambodia.gif
+%%TIKIWIKI%%/img/flags/Cameroon.gif
 %%TIKIWIKI%%/img/flags/Canada.gif
+%%TIKIWIKI%%/img/flags/Cape_Verde.gif
 %%TIKIWIKI%%/img/flags/Catalan_Countries.gif
 %%TIKIWIKI%%/img/flags/Cayman_Islands.gif
+%%TIKIWIKI%%/img/flags/Central_African_Republic.gif
+%%TIKIWIKI%%/img/flags/Chad.gif
 %%TIKIWIKI%%/img/flags/Chile.gif
 %%TIKIWIKI%%/img/flags/China.gif
+%%TIKIWIKI%%/img/flags/Christmas_Island.gif
+%%TIKIWIKI%%/img/flags/Cocos_Islands.gif
 %%TIKIWIKI%%/img/flags/Colombia.gif
+%%TIKIWIKI%%/img/flags/Comoros.gif
+%%TIKIWIKI%%/img/flags/Congo.gif
+%%TIKIWIKI%%/img/flags/Congo_Democratic.gif
 %%TIKIWIKI%%/img/flags/Cook_Islands.gif
 %%TIKIWIKI%%/img/flags/Costa_Rica.gif
 %%TIKIWIKI%%/img/flags/Cote_d_Ivoire.gif
@@ -181,23 +209,45 @@
 %%TIKIWIKI%%/img/flags/Cyprus.gif
 %%TIKIWIKI%%/img/flags/Czech_Republic.gif
 %%TIKIWIKI%%/img/flags/Denmark.gif
+%%TIKIWIKI%%/img/flags/Djibouti.gif
+%%TIKIWIKI%%/img/flags/Dominica.gif
 %%TIKIWIKI%%/img/flags/Dominican_Republic.gif
 %%TIKIWIKI%%/img/flags/Ecuador.gif
 %%TIKIWIKI%%/img/flags/Egypt.gif
 %%TIKIWIKI%%/img/flags/El_Salvador.gif
+%%TIKIWIKI%%/img/flags/Equatorial_Guinea.gif
+%%TIKIWIKI%%/img/flags/Eritrea.gif
 %%TIKIWIKI%%/img/flags/Estonia.gif
+%%TIKIWIKI%%/img/flags/Ethiopia.gif
 %%TIKIWIKI%%/img/flags/Europe.gif
+%%TIKIWIKI%%/img/flags/Falkland_Islands.gif
+%%TIKIWIKI%%/img/flags/Faroe_Islands.gif
 %%TIKIWIKI%%/img/flags/Federated_States_of_Micronesia.gif
 %%TIKIWIKI%%/img/flags/Fiji.gif
 %%TIKIWIKI%%/img/flags/Finland.gif
 %%TIKIWIKI%%/img/flags/France.gif
+%%TIKIWIKI%%/img/flags/French_Guiana.gif
 %%TIKIWIKI%%/img/flags/French_Polynesia.gif
+%%TIKIWIKI%%/img/flags/French_Southern_Territories.gif
+%%TIKIWIKI%%/img/flags/Gabon.gif
+%%TIKIWIKI%%/img/flags/Gambia.gif
+%%TIKIWIKI%%/img/flags/Georgia.gif
 %%TIKIWIKI%%/img/flags/Germany.gif
+%%TIKIWIKI%%/img/flags/Ghana.gif
+%%TIKIWIKI%%/img/flags/Gibraltar.gif
 %%TIKIWIKI%%/img/flags/Greece.gif
+%%TIKIWIKI%%/img/flags/Greenland.gif
+%%TIKIWIKI%%/img/flags/Grenada.gif
+%%TIKIWIKI%%/img/flags/Guadeloupe.gif
 %%TIKIWIKI%%/img/flags/Guam.gif
 %%TIKIWIKI%%/img/flags/Guatemala.gif
+%%TIKIWIKI%%/img/flags/Guinea.gif
+%%TIKIWIKI%%/img/flags/Guinea_Bissau.gif
+%%TIKIWIKI%%/img/flags/Guyana.gif
 %%TIKIWIKI%%/img/flags/Haiti.gif
+%%TIKIWIKI%%/img/flags/Heard_Island_and_McDonald_Islands.gif
 %%TIKIWIKI%%/img/flags/Honduras.gif
+%%TIKIWIKI%%/img/flags/Hong_Kong.gif
 %%TIKIWIKI%%/img/flags/Hungary.gif
 %%TIKIWIKI%%/img/flags/Iceland.gif
 %%TIKIWIKI%%/img/flags/India.gif
@@ -215,77 +265,142 @@
 %%TIKIWIKI%%/img/flags/Kenya.gif
 %%TIKIWIKI%%/img/flags/Kiribati.gif
 %%TIKIWIKI%%/img/flags/Kuwait.gif
+%%TIKIWIKI%%/img/flags/Kyrgyzstan.gif
+%%TIKIWIKI%%/img/flags/Laos.gif
 %%TIKIWIKI%%/img/flags/Latvia.gif
 %%TIKIWIKI%%/img/flags/Lebanon.gif
+%%TIKIWIKI%%/img/flags/Lesotho.gif
+%%TIKIWIKI%%/img/flags/Liberia.gif
+%%TIKIWIKI%%/img/flags/Libya.gif
+%%TIKIWIKI%%/img/flags/Liechtenstein.gif
 %%TIKIWIKI%%/img/flags/Lithuania.gif
 %%TIKIWIKI%%/img/flags/Luxemburg.gif
+%%TIKIWIKI%%/img/flags/Macao.gif
+%%TIKIWIKI%%/img/flags/Macedonia.gif
+%%TIKIWIKI%%/img/flags/Madagascar.gif
 %%TIKIWIKI%%/img/flags/Malawi.gif
 %%TIKIWIKI%%/img/flags/Malaysia.gif
+%%TIKIWIKI%%/img/flags/Maldives.gif
+%%TIKIWIKI%%/img/flags/Mali.gif
 %%TIKIWIKI%%/img/flags/Malta.gif
 %%TIKIWIKI%%/img/flags/Marshall_Islands.gif
+%%TIKIWIKI%%/img/flags/Martinique.gif
+%%TIKIWIKI%%/img/flags/Mauritania.gif
 %%TIKIWIKI%%/img/flags/Mauritius.gif
+%%TIKIWIKI%%/img/flags/Mayotte.gif
 %%TIKIWIKI%%/img/flags/Mexico.gif
+%%TIKIWIKI%%/img/flags/Moldova.gif
+%%TIKIWIKI%%/img/flags/Monaco.gif
+%%TIKIWIKI%%/img/flags/Mongolia.gif
+%%TIKIWIKI%%/img/flags/Montenegro.gif
+%%TIKIWIKI%%/img/flags/Montserrat.gif
 %%TIKIWIKI%%/img/flags/Morocco.gif
 %%TIKIWIKI%%/img/flags/Mozambique.gif
+%%TIKIWIKI%%/img/flags/Myanmar.gif
+%%TIKIWIKI%%/img/flags/Namibia.gif
 %%TIKIWIKI%%/img/flags/Nauru.gif
 %%TIKIWIKI%%/img/flags/Nepal.gif
 %%TIKIWIKI%%/img/flags/Netherlands.gif
+%%TIKIWIKI%%/img/flags/Netherlands_Antilles.gif
 %%TIKIWIKI%%/img/flags/New_Caledonia.gif
 %%TIKIWIKI%%/img/flags/New_Zealand.gif
 %%TIKIWIKI%%/img/flags/Nicaragua.gif
+%%TIKIWIKI%%/img/flags/Niger.gif
 %%TIKIWIKI%%/img/flags/Nigeria.gif
 %%TIKIWIKI%%/img/flags/Niue.gif
 %%TIKIWIKI%%/img/flags/None.gif
+%%TIKIWIKI%%/img/flags/Norfolk_Island.gif
+%%TIKIWIKI%%/img/flags/North_Korea.gif
+%%TIKIWIKI%%/img/flags/Northern_Mariana_Islands.gif
 %%TIKIWIKI%%/img/flags/Norway.gif
+%%TIKIWIKI%%/img/flags/Oman.gif
 %%TIKIWIKI%%/img/flags/Other.gif
 %%TIKIWIKI%%/img/flags/Pakistan.gif
+%%TIKIWIKI%%/img/flags/Palau.gif
+%%TIKIWIKI%%/img/flags/Palestine.gif
 %%TIKIWIKI%%/img/flags/Panama.gif
 %%TIKIWIKI%%/img/flags/Papua_New_Guinea.gif
 %%TIKIWIKI%%/img/flags/Paraguay.gif
 %%TIKIWIKI%%/img/flags/Peru.gif
+%%TIKIWIKI%%/img/flags/Philippines.gif
 %%TIKIWIKI%%/img/flags/Phillippines.gif
+%%TIKIWIKI%%/img/flags/Pitcairn.gif
 %%TIKIWIKI%%/img/flags/Poland.gif
 %%TIKIWIKI%%/img/flags/Portugal.gif
 %%TIKIWIKI%%/img/flags/Puerto_Rico.gif
 %%TIKIWIKI%%/img/flags/Quatar.gif
+%%TIKIWIKI%%/img/flags/Reunion.gif
 %%TIKIWIKI%%/img/flags/Romania.gif
 %%TIKIWIKI%%/img/flags/Russia.gif
+%%TIKIWIKI%%/img/flags/Rwanda.gif
+%%TIKIWIKI%%/img/flags/Saint_Helena.gif
+%%TIKIWIKI%%/img/flags/Saint_Kitts_and_Nevis.gif
+%%TIKIWIKI%%/img/flags/Saint_Lucia.gif
+%%TIKIWIKI%%/img/flags/Saint_Pierre_and_Miquelon.gif
 %%TIKIWIKI%%/img/flags/Samoa.gif
+%%TIKIWIKI%%/img/flags/San_Marino.gif
+%%TIKIWIKI%%/img/flags/Sao_Tome_and_Principe.gif
 %%TIKIWIKI%%/img/flags/Saudi_Arabia.gif
+%%TIKIWIKI%%/img/flags/Senegal.gif
+%%TIKIWIKI%%/img/flags/Serbia.gif
+%%TIKIWIKI%%/img/flags/Seychelles.gif
+%%TIKIWIKI%%/img/flags/Sierra_Leone.gif
 %%TIKIWIKI%%/img/flags/Singapore.gif
 %%TIKIWIKI%%/img/flags/Slovakia.gif
 %%TIKIWIKI%%/img/flags/Slovenia.gif
 %%TIKIWIKI%%/img/flags/Solomon_Islands.gif
 %%TIKIWIKI%%/img/flags/Somalia.gif
 %%TIKIWIKI%%/img/flags/South_Africa.gif
+%%TIKIWIKI%%/img/flags/South_Georgia_and_South_Sandwich_Islands.gif
 %%TIKIWIKI%%/img/flags/South_Korea.gif
 %%TIKIWIKI%%/img/flags/Spain.gif
 %%TIKIWIKI%%/img/flags/Sri_Lanka.gif
 %%TIKIWIKI%%/img/flags/St_Vincent_Grenadines.gif
+%%TIKIWIKI%%/img/flags/Sudan.gif
 %%TIKIWIKI%%/img/flags/Surinam.gif
+%%TIKIWIKI%%/img/flags/Svalbard_and_Jan_Mayen.gif
+%%TIKIWIKI%%/img/flags/Swaziland.gif
 %%TIKIWIKI%%/img/flags/Sweden.gif
 %%TIKIWIKI%%/img/flags/Switzerland.gif
+%%TIKIWIKI%%/img/flags/Syria.gif
 %%TIKIWIKI%%/img/flags/Taiwan.gif
+%%TIKIWIKI%%/img/flags/Tajikistan.gif
 %%TIKIWIKI%%/img/flags/Tanzania.gif
 %%TIKIWIKI%%/img/flags/Thailand.gif
+%%TIKIWIKI%%/img/flags/Timor-Leste.gif
+%%TIKIWIKI%%/img/flags/Togo.gif
+%%TIKIWIKI%%/img/flags/Tokelau.gif
 %%TIKIWIKI%%/img/flags/Tonga.gif
 %%TIKIWIKI%%/img/flags/Trinidad_Tobago.gif
+%%TIKIWIKI%%/img/flags/Tunisia.gif
 %%TIKIWIKI%%/img/flags/Turkey.gif
+%%TIKIWIKI%%/img/flags/Turkmenistan.gif
+%%TIKIWIKI%%/img/flags/Turks_and_Caicos_Islands.gif
 %%TIKIWIKI%%/img/flags/Tuvalu.gif
+%%TIKIWIKI%%/img/flags/US_Virgin_Islands.gif
+%%TIKIWIKI%%/img/flags/Uganda.gif
 %%TIKIWIKI%%/img/flags/Ukraine.gif
 %%TIKIWIKI%%/img/flags/United_Arab_Emirates.gif
 %%TIKIWIKI%%/img/flags/United_Kingdom.gif
 %%TIKIWIKI%%/img/flags/United_States.gif
+%%TIKIWIKI%%/img/flags/United_States_Minor_Outlying_Islands.gif
 %%TIKIWIKI%%/img/flags/Uruguay.gif
+%%TIKIWIKI%%/img/flags/Uzbekistan.gif
 %%TIKIWIKI%%/img/flags/Vanuatu.gif
+%%TIKIWIKI%%/img/flags/Vatican.gif
 %%TIKIWIKI%%/img/flags/Venezuela.gif
+%%TIKIWIKI%%/img/flags/Viet_Nam.gif
 %%TIKIWIKI%%/img/flags/Wales.gif
+%%TIKIWIKI%%/img/flags/Wallis_and_Futuna.gif
+%%TIKIWIKI%%/img/flags/Western_Sahara.gif
 %%TIKIWIKI%%/img/flags/World.gif
+%%TIKIWIKI%%/img/flags/Yemen.gif
 %%TIKIWIKI%%/img/flags/Yugoslavia.gif
 %%TIKIWIKI%%/img/flags/Zambia.gif
 %%TIKIWIKI%%/img/flags/Zimbabwe.gif
 %%TIKIWIKI%%/img/flags/flagnames.php
 %%TIKIWIKI%%/img/flags/index.php
+%%TIKIWIKI%%/img/flags/readme.txt
 %%TIKIWIKI%%/img/googleg.gif
 %%TIKIWIKI%%/img/graph/graph.barstack.png
 %%TIKIWIKI%%/img/graph/graph.multibar.png
@@ -342,6 +457,7 @@
 %%TIKIWIKI%%/img/icons/admin_blogs_grey.png
 %%TIKIWIKI%%/img/icons/admin_calendar.png
 %%TIKIWIKI%%/img/icons/admin_calendar_grey.png
+%%TIKIWIKI%%/img/icons/admin_category.png
 %%TIKIWIKI%%/img/icons/admin_community.png
 %%TIKIWIKI%%/img/icons/admin_directory.png
 %%TIKIWIKI%%/img/icons/admin_directory_grey.png
@@ -373,6 +489,8 @@
 %%TIKIWIKI%%/img/icons/admin_search_grey.png
 %%TIKIWIKI%%/img/icons/admin_siteid.png
 %%TIKIWIKI%%/img/icons/admin_siteid_grey.png
+%%TIKIWIKI%%/img/icons/admin_textarea.png
+%%TIKIWIKI%%/img/icons/admin_theme.png
 %%TIKIWIKI%%/img/icons/admin_trackers.png
 %%TIKIWIKI%%/img/icons/admin_trackers_grey.png
 %%TIKIWIKI%%/img/icons/admin_userfiles.png
@@ -611,6 +729,7 @@
 %%TIKIWIKI%%/img/tiki/tikibutton3.png
 %%TIKIWIKI%%/img/tiki/tikibutton4.png
 %%TIKIWIKI%%/img/tiki/tikilogo.png
+%%TIKIWIKI%%/img/tiki/tw_logo.png
 %%TIKIWIKI%%/img/trackers/index.php
 %%TIKIWIKI%%/img/valid-xhtml10.png
 %%TIKIWIKI%%/img/webmail/attachment.gif
@@ -656,6 +775,8 @@
 %%TIKIWIKI%%/lang/en/language.php
 %%TIKIWIKI%%/lang/es/index.php
 %%TIKIWIKI%%/lang/es/language.php
+%%TIKIWIKI%%/lang/fa/index.php
+%%TIKIWIKI%%/lang/fa/language.php
 %%TIKIWIKI%%/lang/fi/index.php
 %%TIKIWIKI%%/lang/fi/language.php
 %%TIKIWIKI%%/lang/fr/index.php
@@ -1052,6 +1173,7 @@
 %%TIKIWIKI%%/lib/init/index.php
 %%TIKIWIKI%%/lib/init/initlib.php
 %%TIKIWIKI%%/lib/init/setup_inc.php
+%%TIKIWIKI%%/lib/init/tra.php
 %%TIKIWIKI%%/lib/integrator/index.php
 %%TIKIWIKI%%/lib/integrator/integrator.php
 %%TIKIWIKI%%/lib/irc/index.php
@@ -1806,6 +1928,7 @@
 %%TIKIWIKI%%/lib/smarty_tiki/modifier.tiki_short_datetime.php
 %%TIKIWIKI%%/lib/smarty_tiki/modifier.tiki_short_time.php
 %%TIKIWIKI%%/lib/smarty_tiki/modifier.times.php
+%%TIKIWIKI%%/lib/smarty_tiki/modifier.tr_if.php
 %%TIKIWIKI%%/lib/smarty_tiki/modifier.truncate.php
 %%TIKIWIKI%%/lib/smarty_tiki/modifier.user_date_format.php
 %%TIKIWIKI%%/lib/smarty_tiki/modifier.userlink.php
@@ -1814,9 +1937,6 @@
 %%TIKIWIKI%%/lib/smarty_tiki/outputfilter.ticket.php
 %%TIKIWIKI%%/lib/smarty_tiki/prefilter.ticket.php
 %%TIKIWIKI%%/lib/smarty_tiki/prefilter.tr.php
-%%TIKIWIKI%%/lib/snoopy/README
-%%TIKIWIKI%%/lib/snoopy/Snoopy.class.php
-%%TIKIWIKI%%/lib/snoopy/index.php
 %%TIKIWIKI%%/lib/stats/index.php
 %%TIKIWIKI%%/lib/stats/statslib.php
 %%TIKIWIKI%%/lib/structures/index.php
@@ -2135,7 +2255,6 @@
 %%TIKIWIKI%%/show_image.php
 %%TIKIWIKI%%/styles/BiDi/BiDi.css
 %%TIKIWIKI%%/styles/BiDi/index.php
-%%TIKIWIKI%%/styles/README.matrix-theme
 %%TIKIWIKI%%/styles/bluegreen.css
 %%TIKIWIKI%%/styles/boreal.css
 %%TIKIWIKI%%/styles/boreal/bg.jpg
@@ -2255,28 +2374,7 @@
 %%TIKIWIKI%%/styles/neat/logoIcon.gif
 %%TIKIWIKI%%/styles/neat/print_icon.gif
 %%TIKIWIKI%%/styles/neat/user.gif
-%%TIKIWIKI%%/styles/notheme.II.css
-%%TIKIWIKI%%/styles/notheme.III.css
-%%TIKIWIKI%%/styles/notheme.css
-%%TIKIWIKI%%/styles/notheme/default.css
-%%TIKIWIKI%%/styles/notheme/doxygen.css
 %%TIKIWIKI%%/styles/notheme/index.php
-%%TIKIWIKI%%/styles/notheme/notheme-II-article.css
-%%TIKIWIKI%%/styles/notheme/notheme-II-tc.css
-%%TIKIWIKI%%/styles/notheme/notheme-III-box.css
-%%TIKIWIKI%%/styles/notheme/notheme-article.css
-%%TIKIWIKI%%/styles/notheme/notheme-box.css
-%%TIKIWIKI%%/styles/notheme/notheme-calendar.css
-%%TIKIWIKI%%/styles/notheme/notheme-categories.css
-%%TIKIWIKI%%/styles/notheme/notheme-comments.css
-%%TIKIWIKI%%/styles/notheme/notheme-debug.css
-%%TIKIWIKI%%/styles/notheme/notheme-dir.css
-%%TIKIWIKI%%/styles/notheme/notheme-faq.css
-%%TIKIWIKI%%/styles/notheme/notheme-general.css
-%%TIKIWIKI%%/styles/notheme/notheme-other.css
-%%TIKIWIKI%%/styles/notheme/notheme-table.css
-%%TIKIWIKI%%/styles/notheme/notheme-tc.css
-%%TIKIWIKI%%/styles/notheme/notheme-wiki.css
 %%TIKIWIKI%%/styles/olive-blue.css
 %%TIKIWIKI%%/styles/olive-red.css
 %%TIKIWIKI%%/styles/olive.css
@@ -2332,9 +2430,6 @@
 %%TIKIWIKI%%/styles/transitions/1.8to1.9.css
 %%TIKIWIKI%%/styles/transitions/index.php
 %%TIKIWIKI%%/styles/trollparty.css
-%%TIKIWIKI%%/styles/vidiki.css
-%%TIKIWIKI%%/styles/vidiki/shadow.png
-%%TIKIWIKI%%/styles/vidiki/title_background.png
 %%TIKIWIKI%%/styles/whitebluegrey.css
 %%TIKIWIKI%%/temp/README
 %%TIKIWIKI%%/temp/_htaccess
@@ -2343,6 +2438,7 @@
 %%TIKIWIKI%%/temp/mail_attachs/README
 %%TIKIWIKI%%/temp/mail_attachs/index.php
 %%TIKIWIKI%%/templates/_htaccess
+%%TIKIWIKI%%/templates/antibot.tpl
 %%TIKIWIKI%%/templates/attachments.tpl
 %%TIKIWIKI%%/templates/babelfish.tpl
 %%TIKIWIKI%%/templates/bidi.tpl
@@ -2365,6 +2461,7 @@
 %%TIKIWIKI%%/templates/error.tpl
 %%TIKIWIKI%%/templates/error_simple.tpl
 %%TIKIWIKI%%/templates/error_ticket.tpl
+%%TIKIWIKI%%/templates/find.tpl
 %%TIKIWIKI%%/templates/footer.tpl
 %%TIKIWIKI%%/templates/header.tpl
 %%TIKIWIKI%%/templates/index.php
@@ -2409,6 +2506,8 @@
 %%TIKIWIKI%%/templates/mail/user_watch_file_gallery_changed_subject.tpl
 %%TIKIWIKI%%/templates/mail/user_watch_file_gallery_remove_file.tpl
 %%TIKIWIKI%%/templates/mail/user_watch_file_gallery_upload.tpl
+%%TIKIWIKI%%/templates/mail/user_watch_image_gallery_changed_subject.tpl
+%%TIKIWIKI%%/templates/mail/user_watch_image_gallery_upload.tpl
 %%TIKIWIKI%%/templates/mail/user_watch_map_changed.tpl
 %%TIKIWIKI%%/templates/mail/user_watch_wiki_new_attach.tpl
 %%TIKIWIKI%%/templates/mail/user_watch_wiki_new_attach_subject.tpl
@@ -2596,19 +2695,14 @@
 %%TIKIWIKI%%/templates/styles/neat/modules/mod-application_menu.tpl
 %%TIKIWIKI%%/templates/styles/neat/tiki-editpage.tpl
 %%TIKIWIKI%%/templates/styles/neat/tiki-show_page.tpl
-%%TIKIWIKI%%/templates/styles/neat/tiki-top_bar.tpl
 %%TIKIWIKI%%/templates/styles/neat/tiki-user_menu.tpl
 %%TIKIWIKI%%/templates/styles/neat/tiki.tpl
-%%TIKIWIKI%%/templates/styles/notheme/babelfish.tpl
-%%TIKIWIKI%%/templates/styles/notheme/error.tpl
 %%TIKIWIKI%%/templates/styles/notheme/index.php
-%%TIKIWIKI%%/templates/styles/notheme/tiki-bot_bar.tpl
-%%TIKIWIKI%%/templates/styles/notheme/tiki-my_tiki.tpl
-%%TIKIWIKI%%/templates/styles/notheme/tiki-top_bar.tpl
-%%TIKIWIKI%%/templates/styles/notheme/tiki.tpl
 %%TIKIWIKI%%/templates/styles/simple/categpath.tpl
 %%TIKIWIKI%%/templates/styles/simple/confirm.tpl
 %%TIKIWIKI%%/templates/styles/simple/error.tpl
+%%TIKIWIKI%%/templates/styles/simple/error_simple.tpl
+%%TIKIWIKI%%/templates/styles/simple/error_ticket.tpl
 %%TIKIWIKI%%/templates/styles/simple/index.php
 %%TIKIWIKI%%/templates/styles/simple/module.tpl
 %%TIKIWIKI%%/templates/styles/simple/modules/index.php
@@ -2658,16 +2752,13 @@
 %%TIKIWIKI%%/templates/styles/trollparty/tiki-bot_bar.tpl
 %%TIKIWIKI%%/templates/styles/trollparty/tiki-send_newsletters.tpl
 %%TIKIWIKI%%/templates/styles/trollparty/tiki-show_page.tpl
-%%TIKIWIKI%%/templates/styles/vidiki/error.tpl
-%%TIKIWIKI%%/templates/styles/vidiki/tiki-page_bar.tpl
-%%TIKIWIKI%%/templates/styles/vidiki/tiki-user_menu.tpl
-%%TIKIWIKI%%/templates/styles/vidiki/tiki.tpl
 %%TIKIWIKI%%/templates/tables/index.php
 %%TIKIWIKI%%/templates/tables/tiki_pages.tpl
 %%TIKIWIKI%%/templates/textareasize.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-anchors.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-blogs.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-calendar.tpl
+%%TIKIWIKI%%/templates/tiki-admin-include-category.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-cms.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-community.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-directory.tpl
@@ -2684,11 +2775,14 @@
 %%TIKIWIKI%%/templates/tiki-admin-include-login.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-maps.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-metatags.tpl
+%%TIKIWIKI%%/templates/tiki-admin-include-module.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-polls.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-rss.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-score.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-search.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-siteid.tpl
+%%TIKIWIKI%%/templates/tiki-admin-include-textarea.tpl
+%%TIKIWIKI%%/templates/tiki-admin-include-theme.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-trackers.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-userfiles.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-webmail.tpl
@@ -2896,7 +2990,6 @@
 %%TIKIWIKI%%/templates/tiki-pick_avatar.tpl
 %%TIKIWIKI%%/templates/tiki-plugin_poll.tpl
 %%TIKIWIKI%%/templates/tiki-plugin_sql.tpl
-%%TIKIWIKI%%/templates/tiki-plugin_trackerfilter.tpl
 %%TIKIWIKI%%/templates/tiki-plugin_trackerlist.tpl
 %%TIKIWIKI%%/templates/tiki-poll.tpl
 %%TIKIWIKI%%/templates/tiki-poll_form.tpl
@@ -2985,7 +3078,9 @@
 %%TIKIWIKI%%/templates/tiki-webmail_contacts.tpl
 %%TIKIWIKI%%/templates/tiki-wiki3d.tpl
 %%TIKIWIKI%%/templates/tiki.tpl
+%%TIKIWIKI%%/templates/tracker_item_field_value.tpl
 %%TIKIWIKI%%/templates/translated-lang.tpl
+%%TIKIWIKI%%/templates/wiki-discussion.tpl
 %%TIKIWIKI%%/templates/wiki-plugins/wikiplugin_trackerfilter.tpl
 %%TIKIWIKI%%/templates_c/.htaccess
 %%TIKIWIKI%%/templates_c/README
@@ -3009,6 +3104,7 @@
 %%TIKIWIKI%%/tiki-admin_html_pages.php
 %%TIKIWIKI%%/tiki-admin_include_blogs.php
 %%TIKIWIKI%%/tiki-admin_include_calendar.php
+%%TIKIWIKI%%/tiki-admin_include_category.php
 %%TIKIWIKI%%/tiki-admin_include_cms.php
 %%TIKIWIKI%%/tiki-admin_include_community.php
 %%TIKIWIKI%%/tiki-admin_include_directory.php
@@ -3024,11 +3120,14 @@
 %%TIKIWIKI%%/tiki-admin_include_login.php
 %%TIKIWIKI%%/tiki-admin_include_maps.php
 %%TIKIWIKI%%/tiki-admin_include_metatags.php
+%%TIKIWIKI%%/tiki-admin_include_module.php
 %%TIKIWIKI%%/tiki-admin_include_polls.php
 %%TIKIWIKI%%/tiki-admin_include_rss.php
 %%TIKIWIKI%%/tiki-admin_include_score.php
 %%TIKIWIKI%%/tiki-admin_include_search.php
 %%TIKIWIKI%%/tiki-admin_include_siteid.php
+%%TIKIWIKI%%/tiki-admin_include_textarea.php
+%%TIKIWIKI%%/tiki-admin_include_theme.php
 %%TIKIWIKI%%/tiki-admin_include_trackers.php
 %%TIKIWIKI%%/tiki-admin_include_userfiles.php
 %%TIKIWIKI%%/tiki-admin_include_webmail.php
@@ -3304,6 +3403,7 @@
 %%TIKIWIKI%%/tiki-setup_base.php
 %%TIKIWIKI%%/tiki-sheets.php
 %%TIKIWIKI%%/tiki-shoutbox.php
+%%TIKIWIKI%%/tiki-show_all_images.php
 %%TIKIWIKI%%/tiki-show_raw_links.php
 %%TIKIWIKI%%/tiki-show_user_avatar.php
 %%TIKIWIKI%%/tiki-slideshow.php
@@ -3374,7 +3474,6 @@
 @dirrm %%TIKIWIKI%%/templates_c
 @dirrm %%TIKIWIKI%%/templates/wiki-plugins
 @dirrm %%TIKIWIKI%%/templates/tables
-@dirrm %%TIKIWIKI%%/templates/styles/vidiki
 @dirrm %%TIKIWIKI%%/templates/styles/trollparty
 @dirrm %%TIKIWIKI%%/templates/styles/tikigod
 @dirrm %%TIKIWIKI%%/templates/styles/tiki/modules
@@ -3405,7 +3504,6 @@
 @dirrm %%TIKIWIKI%%/temp/mail_attachs
 @dirrm %%TIKIWIKI%%/temp/cache
 @dirrm %%TIKIWIKI%%/temp
-@dirrm %%TIKIWIKI%%/styles/vidiki
 @dirrm %%TIKIWIKI%%/styles/transitions
 @dirrm %%TIKIWIKI%%/styles/tranquil
 @dirrm %%TIKIWIKI%%/styles/tiki
@@ -3483,7 +3581,6 @@
 @dirrm %%TIKIWIKI%%/lib/surveys
 @dirrm %%TIKIWIKI%%/lib/structures
 @dirrm %%TIKIWIKI%%/lib/stats
-@dirrm %%TIKIWIKI%%/lib/snoopy
 @dirrm %%TIKIWIKI%%/lib/smarty_tiki
 @dirrm %%TIKIWIKI%%/lib/smarty/unit_test/templates
 @dirrm %%TIKIWIKI%%/lib/smarty/unit_test/configs
@@ -3661,6 +3758,7 @@
 @dirrm %%TIKIWIKI%%/lang/gl
 @dirrm %%TIKIWIKI%%/lang/fr
 @dirrm %%TIKIWIKI%%/lang/fi
+@dirrm %%TIKIWIKI%%/lang/fa
 @dirrm %%TIKIWIKI%%/lang/es
 @dirrm %%TIKIWIKI%%/lang/en-uk
 @dirrm %%TIKIWIKI%%/lang/en

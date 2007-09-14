@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tikiwiki
-PORTVERSION=	1.9.7
+PORTVERSION=	1.9.8
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Powerful PHP based Wiki/CMS/Groupware
@@ -22,11 +21,10 @@ TIKIWIKI?=	www/tikiwiki
 PLIST_SUB+=	TIKIWIKI=${TIKIWIKI}
 
 do-install:
-	-${MKDIR} ${PREFIX}/${TIKIWIKI}
+	${MKDIR} ${PREFIX}/${TIKIWIKI}
 	@${CHMOD} 755 ${PREFIX}/${TIKIWIKI}
 	@${CP} -R ${WRKSRC}/ ${PREFIX}/${TIKIWIKI}
 	# set the correct permissions
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TIKIWIKI}
-#	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
