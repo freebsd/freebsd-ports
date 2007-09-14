@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.2.3
-PORTREVISION?=	1
+PORTVERSION=	5.2.4
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
 DISTNAME=	php-${PORTVERSION}
 
-MAINTAINER?=	ale@FreeBSD.org
-COMMENT?=	PHP Scripting Language (Apache Module and CLI)
+MAINTAINER=	ale@FreeBSD.org
+COMMENT=	PHP Scripting Language
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:259
 USE_GETOPT_LONG=yes
 
-CONFIGURE_ARGS=	--enable-versioning \
+CONFIGURE_ARGS=	\
 		--with-layout=GNU \
 		--with-config-file-scan-dir=${PREFIX}/etc/php \
 		--disable-all \
