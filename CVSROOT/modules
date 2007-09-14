@@ -738,6 +738,7 @@ base		ports/security/base
 base64		ports/converters/base64
 bash		ports/shells/bash
 bash-completion	ports/shells/bash-completion
+bashburn	ports/sysutils/bashburn
 basiliskII	ports/emulators/basiliskII
 basket		ports/deskutils/basket
 bass		ports/games/bass
