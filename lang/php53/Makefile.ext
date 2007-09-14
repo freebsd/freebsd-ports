@@ -87,7 +87,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 .	if !defined(WITHOUT_X11)
-USE_XPM=	yes
+USE_XORG=	xpm
 .	endif
 
 CONFIGURE_ARGS+=--with-gd \
@@ -502,7 +502,13 @@ CONFIGURE_ARGS+=--with-zlib=/usr
 CONFIGURE_ARGS+=--without-cdb
 .	endif
 .	if defined(WITH_DB4)
-WITH_DB4_VER?=	44
+WITH_DB4_VER?=	46
+.		if ${WITH_DB4_VER} == 45
+LIB_DEPENDS+=	db-4.5.0:${PORTSDIR}/databases/db45
+.		else
+.		if ${WITH_DB4_VER} == 44
+LIB_DEPENDS+=	db-4.4.0:${PORTSDIR}/databases/db44
+.		else
 .		if ${WITH_DB4_VER} == 43
 LIB_DEPENDS+=	db-4.3.0:${PORTSDIR}/databases/db43
 .		else
@@ -515,7 +521,9 @@ LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
 .		if ${WITH_DB4_VER} == 4
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 .		else
-LIB_DEPENDS+=	db-4.4.0:${PORTSDIR}/databases/db44
+LIB_DEPENDS+=	db-4.6.0:${PORTSDIR}/databases/db46
+.		endif
+.		endif
 .		endif
 .		endif
 .		endif
