@@ -41,6 +41,7 @@
     SUBDIR += bacula-docs
     SUBDIR += bacula-server
     SUBDIR += bacula-server-devel
+    SUBDIR += bashburn
     SUBDIR += batmon
     SUBDIR += battfink
     SUBDIR += battmond

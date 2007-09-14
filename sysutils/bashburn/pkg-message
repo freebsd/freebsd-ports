@@ -1,0 +1,12 @@
+=====================================================================
+
+The FreeBSD cdrtools (To which BashBurn is a front-end) port supports
+SCSI drives only. If you have an ATA CD/DVD drive, use them through
+the cam system. See Chapter 12.5.9 of the handbook:
+
+http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/creating-cds.html#ATAPICAM
+
+ATA devices have to be accessed through their atapicam device, i.e.
+/dev/cd0 instead of /dev/acd0.
+
+=====================================================================
