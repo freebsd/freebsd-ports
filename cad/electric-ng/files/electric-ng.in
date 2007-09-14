@@ -8,11 +8,10 @@ set LIBFILES = "%%LIBFILES%%"
 set JARPATH = "%%JAVALIBDIR%%"
 setenv JAVA_VERSION "%%JAVA_VERSION%%"
 
-set CLASSPATH = ""
-foreach i (${LIBFILES})
-	set CLASSPATH =  ${CLASSPATH}":"${JARPATH}/$i.jar
-end
+if ( "${LIBFILES}" != "" ) then
+	set CLASSPATH = :`echo ${LIBFILES} | sed -E -e 's,[[:space:]]+,:,g'`
+else
+	set CLASSPATH = ""
+endif
 
-set CLASSPATH = `echo ${CLASSPATH} | /usr/bin/sed -e "s#^:##"`
-
-exec "${JAVA}" -cp "${CLASSPATH}" -jar %%JAVAJARDIR%%/%%JARFILE%%
+exec "${JAVA}" -cp %%JAVAJARDIR%%/%%JARFILE%%"${CLASSPATH}" com.sun.electric.Launcher
