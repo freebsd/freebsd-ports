@@ -13,6 +13,7 @@ bin/last.fm
 %%DATADIR%%/data/buttons/action_upload.png
 %%DATADIR%%/data/buttons/action_upload_down.png
 %%DATADIR%%/data/buttons/action_upload_hover.png
+%%DATADIR%%/data/buttons/addToMyPlaylist.png
 %%DATADIR%%/data/buttons/ban.png
 %%DATADIR%%/data/buttons/closebutton.png
 %%DATADIR%%/data/buttons/love.png
