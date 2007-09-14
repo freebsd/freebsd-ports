@@ -8,7 +8,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -26,13 +26,14 @@ LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
 		tag:${PORTSDIR}/audio/taglib \
 		theora:${PORTSDIR}/multimedia/libtheora \
 		vorbis:${PORTSDIR}/audio/libvorbis
+RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=  libtool:15
+USE_AUTOTOOLS=	libtool:15
 
 MAKE_ENV=	${CONFIGURE_ENV}
 
