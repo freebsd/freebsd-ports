@@ -5547,6 +5547,7 @@ javacc		ports/textproc/javacc
 javadc		ports/net-p2p/javadc
 javamail	ports/java/javamail
 javanns		ports/math/javanns
+javaservicewrapper	ports/sysutils/javaservicewrapper
 javaview	ports/math/javaview
 javavmwrapper	ports/java/javavmwrapper
 jave6		ports/graphics/jave6
