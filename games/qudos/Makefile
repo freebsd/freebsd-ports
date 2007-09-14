@@ -7,7 +7,7 @@
 
 PORTNAME=	qudos
 PORTVERSION=	0.40.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/QuDos/
 DISTNAME=	QuDos-${PORTVERSION}-src
@@ -19,7 +19,6 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Enhaced OpenGL only Quake II engine
 
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 
 OPTIONS=	3ZB2 "Build 3zb2 modification (bots)" on \
