@@ -287,7 +287,7 @@ pkg_info-xI() {
 		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`
 	
 		if [ -z "$info" ]; then
-			path=`cd /usr/ports && make search path=/$e | grep Path | cut -d/ -f4,5`
+			path=`cd /usr/ports && make search path=/$e | grep -w Path | cut -d/ -f4,5`
 			echo -e "\033[33m*** not installed ***\033[0m"
 			for i in $path; do
 				echo "$i: `cat /usr/ports/$i/Makefile | grep COMMENT | cut -d= -f2`"
@@ -348,10 +348,10 @@ pkg_info-xr() {
 		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
 	
 		if [ -z "$info" ]; then
-			path=`cd /usr/ports && make search path=/$e.* | grep Path | cut -d/ -f4,5`
+			path=`cd /usr/ports && make search path=/$e.* | grep -w Path | cut -d/ -f4,5`
 			for i in $path; do
 				echo -e "\033[33m*** not installed ***\033[0m"
-				echo "$i: `cat /usr/ports/$i/Makefile | grep COMMENT | cut -d= -f2`"
+				echo "$i: `cat /usr/ports/$i/Makefile | grep -w COMMENT | cut -d= -f2`"
 				echo ""
 				echo "Information in ports for `echo $i | cut -d/ -f2`:"
 				echo ""
@@ -397,10 +397,10 @@ pkg_info-xf() {
 		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
 	
 		if [ -z "$info" ]; then
-			path=`cd /usr/ports && make search path=/$e.* | grep Path | cut -d/ -f4,5`
+			path=`cd /usr/ports && make search path=/$e.* | grep -w Path | cut -d/ -f4,5`
 			for i in $path; do
 				echo -e "\033[33m*** not installed ***\033[0m"
-				echo "$i: `cat /usr/ports/$i/Makefile | grep COMMENT | cut -d= -f2`"
+				echo "$i: `cat /usr/ports/$i/Makefile | grep -w COMMENT | cut -d= -f2`"
 				echo ""
 				echo "Packing list:"
 				cat /usr/ports/$i/pkg-plist
@@ -459,10 +459,10 @@ pkg_info-x() {
 		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
 	
 		if [ -z "$info" ]; then
-			path=`cd /usr/ports && make search path=/$e.* | grep Path | cut -d/ -f4,5`
+			path=`cd /usr/ports && make search path=/$e.* | grep -w Path | cut -d/ -f4,5`
 			for i in $path; do
 				echo -e "\033[33m*** not installed ***\033[0m"
-				echo "$i: `cat /usr/ports/$i/Makefile | grep COMMENT | cut -d= -f2`"
+				echo "$i: `cat /usr/ports/$i/Makefile | grep -w COMMENT | cut -d= -f2`"
 				echo ""
 				echo "Description:"
 				echo "`cat /usr/ports/$i/pkg-descr`"
@@ -488,15 +488,15 @@ pkg_ver() {
 }
 
 pkg_path() {
-	path=`cd /usr/ports && make search path=/$pkg | grep Path | cut -d/ -f4,5`
+	path=`cd /usr/ports && make search path=/$pkg | grep -w Path | cut -d/ -f4,5`
 	for e in $path; do
-		echo "$e" ; cat /usr/ports/$e/Makefile | grep COMMENT | cut -d= -f2
+		echo "$e" ; cat /usr/ports/$e/Makefile | grep -w COMMENT | cut -d= -f2
 	done
 	exit 0
 }
 
 pkg_makefile() {
-	path=`cd /usr/ports && make search path=/$pkg$ | grep Path | cut -d/ -f4,5`
+	path=`cd /usr/ports && make search path=/$pkg$ | grep -w Path | cut -d/ -f4,5`
 	[ -z "$path" ] && missing
 
 	less /usr/ports/$path/Makefile 2>/dev/null
@@ -508,7 +508,7 @@ make_search() {
 		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
 	
 		if [ -z "$info" ]; then
-			path=`cd /usr/ports && make search path=/$e | grep Path | cut -d/ -f4,5`
+			path=`cd /usr/ports && make search path=/$e | grep -w Path | cut -d/ -f4,5`
 			for i in $path; do
 				echo -e "\033[33m*** not installed ***\033[0m"
 				cd /usr/ports && make search path=/$i$
