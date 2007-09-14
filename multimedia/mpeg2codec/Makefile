@@ -7,15 +7,17 @@
 
 PORTNAME=	mpeg2codec
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
-MASTER_SITES=	ftp://ftp.mpeg.org/pub/mpeg/mssg/
+MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/misc/ \
+		http://ftp.uni-koeln.de/graph/ \
+		http://gd.tuwien.ac.at/graphics/libs/alsolibs/
 DISTFILES=	mpeg2vidcodec_v12.tar.gz
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	An MPEG-2 Encoder and Decoder
 
-USE_XLIB=	yes
+USE_XORG=	xext
 WRKSRC=		${WRKDIR}/mpeg2
 DATADIR=	share/mpeg2
 CFLAGS+=-DVERIFY -DVERBOSE -DTRACE
