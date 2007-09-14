@@ -316,6 +316,7 @@
     SUBDIR += jailme
     SUBDIR += jailuser
     SUBDIR += jailutils
+    SUBDIR += javaservicewrapper
     SUBDIR += jdiskreport
     SUBDIR += jkill
     SUBDIR += jps
