@@ -8,7 +8,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=0
+PORTREVISION=	1
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -50,6 +50,8 @@ pre-configure:
 		${WRKSRC}/tools/qdbus/qdbus.pro \
 		${WRKSRC}/tools/qdbuscpp2xml/qdbuscpp2xml.pro \
 		${WRKSRC}/tools/qdbusxml2cpp/qdbusxml2cpp.pro
+	${REINPLACE_CMD} -e 's|"/moc"|"/moc-qt4"|' \
+		${WRKSRC}/tools/qdbuscpp2xml/qdbuscpp2xml.cpp
 	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/lib|g' \
 		-e 's|targ_headers.path.*|targ_headers.path=${PREFIX}/include/$$$$TARGET|g' \
 		${WRKSRC}/src/src.pro
