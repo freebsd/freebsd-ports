@@ -16,6 +16,17 @@ upgrades.
 
   # portupgrade -R xorg
 
+  Users of nvidia-driver will have to make sure Composite extension is
+  turned off and start Xorg with the following command:
+
+  $ startx -- -ignoreABI
+
+  The -ignoreABI option is a Xorg option. If you're using gdm, kdm or
+  xdm, you will have to modify your configuration file so that Xorg
+  starts with this option.
+
+  An updated nvidia-driver should be released soon.
+
 20070905:
   AFFECTS: testers of net/openldap24-server
   AUTHOR: delphij@FreeBSD.org
