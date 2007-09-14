@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	last.fm
-PORTVERSION=	1.3.1.0
+PORTVERSION=	1.3.2.11
 CATEGORIES=	audio net
-MASTER_SITES=	http://static.last.fm/client/Linux/
+MASTER_SITES=	http://cdn.last.fm/client/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	lofi@FreeBSD.org
@@ -36,7 +36,10 @@ USE_GCC=4.2+
 post-patch:
 	${REINPLACE_CMD} -e 's|bash|sh|g' -e 's|qmake|${QMAKE}|g' \
 			-E -e 's|(.*"CONFIG-=debug")|\1 ${QMAKEFLAGS}|g' \
+			-e 's|function header|header()|g' \
+			-e 's|function middle|middle()|g' \
 		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|linux\*|unix|g' ${WRKSRC}/src/src.pro
 
 post-build:
 	cd ${WRKSRC}/src/output/RtAudio && \
