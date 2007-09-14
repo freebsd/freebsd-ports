@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Image/Math/Constrain.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Math/Constrain/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Image/Math
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Image
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Math/Constrain
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Math
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
+@dirrmtry %%SITE_PERL%%/Image/Math
+@dirrmtry %%SITE_PERL%%/Image
