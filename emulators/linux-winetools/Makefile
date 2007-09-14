@@ -18,6 +18,9 @@ COMMENT=	A setup and configuration tool for WINE
 
 RUN_DEPENDS=	wine:${PORTSDIR}/emulators/wine
 
+DEPRECATED=	Very old, discontinued, and replaced by emulators/wine-doors
+EXPIRATION_DATE=2007-11-14
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_LINUX=	yes
