@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	customizegoogle
-PORTVERSION=	0.61
+PORTVERSION=	0.63
 DISTVERSIONSUFFIX=	-fx+sm+fl
 CATEGORIES=	www
 
