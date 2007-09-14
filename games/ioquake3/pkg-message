@@ -12,4 +12,6 @@ they have additional variables which would be removed if other engines
 overwrite them. But you can safely copy the original directory to the new one
 for the first time.
 
+If you enabled CELLSHADING, check files/extra-patch-cellshading for variables.
+
 ==============================================================================

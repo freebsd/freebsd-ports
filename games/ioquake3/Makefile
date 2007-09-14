@@ -19,8 +19,10 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 OPTIONS=	CLIENT "Build client" on \
+		CELLSHADING "Enable Cell Shading effect" off \
 		GAMELIBS "Build game libraries (when not mandatory)" off \
 		DEDICATED "Build dedicated server" on \
+		MP3 "Enable MP3 support" off \
 		OPENAL "Enable OpenAL (3D sound) support" off \
 		OPENAL_DLOPEN "Enable dynamic loading of OpenAL" off \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
@@ -29,7 +31,7 @@ OPTIONS=	CLIENT "Build client" on \
 		SMP "Build SMP (threaded) client" on \
 		VORBIS "Enable Ogg Vorbis codec support" off
 
-MAKE_ENV+=	DEFAULT_BASEDIR="${Q3DIR}" LIBDIR="${LIBDIR}" \
+MAKE_ENV=	DEFAULT_BASEDIR="${Q3DIR}" LIBDIR="${LIBDIR}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
@@ -51,6 +53,10 @@ HAVE_VM_COMPILED=	yes
 
 .if defined(HAVE_VM_COMPILED)
 MAKE_ENV+=	HAVE_VM_COMPILED=true
+.endif
+
+.if defined(WITH_CELLSHADING)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cellshading
 .endif
 
 .if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
@@ -102,6 +108,12 @@ MAKE_ENV+=	BUILD_GAME_SO=1
 PLIST_SUB+=	GAMELIBS=""
 .else
 PLIST_SUB+=	GAMELIBS="@comment "
+.endif
+
+.if defined(WITH_MP3)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mp3
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
+MAKE_ENV+=	USE_CODEC_MP3=1
 .endif
 
 .if !defined(WITHOUT_OPTIMIZED_CFLAGS)
