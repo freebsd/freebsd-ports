@@ -6,6 +6,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.1.8
+PORTREVISION=	1
 CATEGORIES=	japanese mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
 		${PATCH_SITES}
@@ -25,7 +26,7 @@ COMMENT=	SpamAssassin with Japanese tokenizer
 
 CONFLICTS=	p5-Mail-SpamAssassin-[0-9]*
 
-BUILD_DEPENDS=	p5-Net-DNS>=0.58:${PORTSDIR}/dns/p5-Net-DNS \
+BUILD_DEPENDS=	p5-Net-DNS>=0.60:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-IO-Zlib>=1.04:${PORTSDIR}/archivers/p5-IO-Zlib \
 		p5-HTML-Parser>=3.43:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-IO-Compress-Zlib>=2.04:${PORTSDIR}/archivers/p5-IO-Compress-Zlib \
@@ -35,33 +36,41 @@ BUILD_DEPENDS=	p5-Net-DNS>=0.58:${PORTSDIR}/dns/p5-Net-DNS \
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		p5-Archive-Tar>=1.23:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/mach/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
-		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect
+		${SITE_PERL}/mach/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect
 
 PERL_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 	       	CONTACT_ADDRESS="${CONTACT_ADDRESS}" \
-		BUILD_SPAMC=yes
+		LOCALSTATEDIR="/var/db/spamassassin"
 
 # You can override it if you like
 CONTACT_ADDRESS?=	The administrator of that system
 
 OPTIONS=	AS_ROOT "Run spamd as root (recommended)" on \
-		DOMAINKEYS "DomainKeys support" off \
-		DKIM "DomainKeys Identified Mail" off \
+		SPAMC "Build spamd/spamc (not for amavisd)" on \
+		DKIM "DKIM/DomainKeys Identified Mail" off \
 		SSL "Build with SSL support for spamd/spamc" on \
 		GNUPG "Install GnuPG (for sa-update)" on \
 		MYSQL "Add MySQL support" off \
 		PGSQL "Add PostreSQL support" off \
 		RAZOR "Add Vipul's Razor support" on \
 		SPF_QUERY "Add SPF query support" off \
-		RELAY_COUNTRY "Relay country support" off \
-		TOOLS "Install SpamAssassin tools" off
+		RELAY_COUNTRY "Relay country support" off
 
 .include <bsd.port.pre.mk>
 
+.if defined (WITH_SPAMC)
+CONFIGURE_ARGS+=	BUILD_SPAMC=yes
+.else
+CONFIGURE_ARGS+=	BUILD_SPAMC=no
+WITH_AS_ROOT=
+WITHOUT_SSL=1
+.endif
+
 .if defined(WITH_SPF_QUERY)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/SPF/Query.pm:${PORTSDIR}/mail/p5-Mail-SPF-Query
+RUN_DEPENDS+=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
+RUN_DEPENDS+=	${SITE_PERL}/Mail/SPF.pm:${PORTSDIR}/mail/p5-Mail-SPF
 .endif
 
 .if !defined(WITHOUT_SSL)
@@ -71,12 +80,14 @@ USE_OPENSSL=	yes
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 CONFIGURE_ARGS+=	ENABLE_SSL=yes
+PLIST_SUB+=	SSL=""
 .else
 CONFIGURE_ARGS+=	ENABLE_SSL=no
+PLIST_SUB+=	SSL="@comment "
 .endif
 
 .if !defined(WITHOUT_GNUPG)
-RUN_DEPENDS+=	gnupg>=1.4.1:${PORTSDIR}/security/gnupg
+RUN_DEPENDS+=	gnupg>=1.4.7:${PORTSDIR}/security/gnupg
 .endif
 
 .if defined(WITH_MYSQL)
@@ -88,28 +99,17 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 .endif
 
 .if defined(WITH_RAZOR)
-RUN_DEPENDS+=	razor-agents>=2.81:${PORTSDIR}/mail/razor-agents
+RUN_DEPENDS+=	razor-agents>=2.84:${PORTSDIR}/mail/razor-agents
 .endif
 
 .if defined(WITH_DKIM)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/DKIM.pm:${PORTSDIR}/mail/p5-Mail-DKIM
-.endif
-
-.if defined(WITH_DOMAINKEYS)
-RUN_DEPENDS+=	p5-Mail-DomainKeys>=0.80:${PORTSDIR}/mail/p5-Mail-DomainKeys
+RUN_DEPENDS+=	p5-Mail-DKIM>=.20:${PORTSDIR}/mail/p5-Mail-DKIM
+RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+RUN_DEPENDS+=	p5-Crypt-OpenSSL-RSA>=0.24:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
 .endif
 
 .if defined(WITH_RELAY_COUNTRY)
 RUN_DEPENDS+=	${SITE_PERL}/IP/Country/Fast.pm:${PORTSDIR}/net/p5-IP-Country
-.endif
-
-.if defined(WITH_TOOLS)
-RUN_DEPENDS+=	${SITE_PERL}/Parse/Syslog.pm:${PORTSDIR}/textproc/p5-Parse-Syslog \
-		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/Net/CIDR/Lite.pm:${PORTSDIR}/net/p5-Net-CIDR-Lite
-TOOLS=		""
-.else
-TOOLS=		"@comment "
 .endif
 
 MAN3=		Mail::SpamAssassin.3 \
@@ -172,16 +172,13 @@ MAN3=		Mail::SpamAssassin.3 \
 MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1 sa-update.1 \
 		spamassassin-run.1
 
-PLIST_SUB+=	TOOLS=${TOOLS}
-
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/spamassassin
-DOCS=		BUGS CREDITS Changes INSTALL LICENSE NOTICE PACKAGING README STATUS TRADEMARK UPGRADE USAGE procmailrc.example
+DOCS=		CREDITS Changes INSTALL LICENSE NOTICE PACKAGING README STATUS TRADEMARK UPGRADE USAGE procmailrc.example
 DOCSSQL=	README README.awl README.bayes awl_mysql.sql awl_pg.sql bayes_mysql.sql bayes_pg.sql userpref_mysql.sql userpref_pg.sql
-DOCSCONTRIB=	mbox-to-check run-corpora run-masses
 DOCSLDAP=	README README.testing sa_test.ldif
 DOCJA=		spamassassin-3.1.8-normalize-test8.txt
-PORTDOCS=	${DOCS} sql contrib ldap ${DOCJA}
+PORTDOCS=	${DOCS} sql ldap ${DOCJA}
 
 USE_RC_SUBR=	sa-spamd.sh
 
@@ -204,12 +201,10 @@ post-patch:
 		-e 's#B_CONFDIR)/v312.pre#B_CONFDIR)/v312.pre.sample#g' \
 		-e 's/require DBI/0/' \
 		${WRKSRC}/Makefile.PL
-# I cant' seem to get these to work, patches or suggestions welcome
+	@${REINPLACE_CMD} -e '/^CC =/d' ${WRKSRC}/spamc/Makefile.in
+
 .if defined(WITH_RAZOR)
 	${REINPLACE_CMD} -e '/Razor2/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v312.pre
-.endif
-.if defined(WITH_DOMAINKEYS)
-	${REINPLACE_CMD} -e '/DomainKeys/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
 .endif
 .if defined(WITH_RELAY_COUNTRY)
 	${REINPLACE_CMD} -e '/RelayCountry/s/^# ?loadplugin/loadplugin/' ${WRKSRC}/rules/init.pre
@@ -224,11 +219,26 @@ post-patch:
 	${REINPLACE_CMD} -e '/DCC/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
 .endif
 
+post-build:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} spamc/libspamc.so)
+.if !defined(WITHOUT_SSL)
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} spamc/libsslspamc.so)
+.endif
+
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libspamc.so ${PREFIX}/lib/libspamc.so.0
+	@${LN} -sf libspamc.so.0 ${PREFIX}/lib/libspamc.so
+.if !defined(WITHOUT_SSL)
+	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libsslspamc.so ${PREFIX}/lib/libsslspamc.so.0
+	@${LN} -sf libsslspamc.so.0 ${PREFIX}/lib/libsslspamc.so
+.endif
+	@${INSTALL_DATA} ${WRKSRC}/spamc/libspamc.h ${PREFIX}/include
 
 post-install:
+.if defined (WITH_SPAMC)
 	@${STRIP_CMD} ${PREFIX}/bin/spamc
+.endif
 	@[ -f ${PREFIX}/etc/mail/spamassassin/init.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/init.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/init.pre
@@ -238,32 +248,22 @@ post-install:
 	@[ -f ${PREFIX}/etc/mail/spamassassin/v312.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/v312.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/v312.pre
+	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
+
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/tokenizer.pre ${PREFIX}/etc/mail/spamassassin/tokenizer.pre.sample
 	@[ -f ${PREFIX}/etc/mail/spamassassin/tokenizer.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/tokenizer.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/tokenizer.pre
 
-.if defined(WITH_TOOLS)
-	@${MKDIR} ${DATADIR}/tools
-	@for f in ${WRKSRC}/tools/*; do \
-		${INSTALL} $${f} ${DATADIR}/tools; \
-	done
-.endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/sql ${DOCSDIR}/contrib ${DOCSDIR}/ldap
+	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/sql ${DOCSDIR}/ldap
 	@${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${INSTALL_DATA} ${DOCSSQL:S|^|${WRKSRC}/sql/|} ${DOCSDIR}/sql
-	@${INSTALL_DATA} ${DOCSCONTRIB:S|^|${WRKSRC}/contrib/|} ${DOCSDIR}/contrib
 	@${INSTALL_DATA} ${DOCSLDAP:S|^|${WRKSRC}/ldap/|} ${DOCSDIR}/ldap
-	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DOCJA} ${DOCSDIR}
 
 .endif
 	@${SED} -e 's#PREFIX#${PREFIX}#' ${PKGMESSAGE}
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	needs perl 5.6.1 or higher, install lang/perl5.8 and try again
-.endif
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
