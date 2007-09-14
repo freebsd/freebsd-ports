@@ -16350,6 +16350,7 @@ windowlab	ports/x11-wm/windowlab
 windowmaker	ports/x11-wm/windowmaker
 windstille	ports/games/windstille
 wine		ports/emulators/wine
+wine-doors	ports/emulators/wine-doors
 winefish	ports/editors/winefish
 wings		ports/graphics/wings
 wingz		ports/math/wingz
