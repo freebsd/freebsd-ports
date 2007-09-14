@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	source-highlight
-PORTVERSION=	1.9
+PORTVERSION=	2.7
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	src-highlite
@@ -14,12 +14,18 @@ MASTER_SITE_SUBDIR=	src-highlite
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	C/C++ and Java sources to HTML converter
 
+LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS= LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS="${NOPORTDOCS}"
 .endif
 
-MAN1=		source-highlight.1
+USE_GMAKE=	yes
+
+MAN1=	source-highlight.1
+INFO=	source-highlight
 
 .include <bsd.port.mk>
