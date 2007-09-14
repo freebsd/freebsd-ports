@@ -8,7 +8,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.10.14
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.10/ \
@@ -36,7 +36,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USE_GMAKE=	yes
-USE_XPM=	yes
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
