@@ -1,0 +1,21 @@
+
+===============================================================
+Rnews has been installed into:
+
+    %%WWWDIR%%
+
+You will probably want to add an alias to your httpd.conf file,
+somethinglike this:
+
+    Alias /rnews "%%WWWDIR%%"
+
+and restart httpd.
+
+To finish the installation, open:
+    http://<hostname>/rnews/install.php
+
+update:
+    The DB schema has changed in several ways! For more
+    information see: %%DOCSDIR%%/UPGRADE 
+===============================================================
+
