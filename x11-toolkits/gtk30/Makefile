@@ -44,7 +44,7 @@ USE_GNOME=	gnomehack atk pango ltverhack
 USE_GETTEXT=	yes
 USE_XORG=	dmx fontenc fontutil ice libfs oldx sm x11 xau xaw xaw6 xaw7 xaw8 xbitmaps \
 		xcomposite xcursor xdamage xdmcp xevie xext xfixes xfont xfontcache xft xi \
-		xinerama xkbfile xkbui xmu xmuu xorg-server xp xpm xprintapputil xprintutil \
+		xinerama xkbfile xkbui xmu xmuu xp xpm xprintapputil xprintutil \
 		xrandr xrender xres xscrnsaver xt xtrans xtrap xtst xv xvmc xxf86dga xxf86misc \
 		xxf86vm
 CONFIGURE_ARGS=	--enable-static --with-xinput=yes
