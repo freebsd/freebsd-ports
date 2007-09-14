@@ -10028,6 +10028,7 @@ p5-Image-IPTCInfo	ports/graphics/p5-Image-IPTCInfo
 p5-Image-Imlib2	ports/graphics/p5-Image-Imlib2
 p5-Image-Info	ports/graphics/p5-Image-Info
 p5-Image-Magick-Iterator	ports/graphics/p5-Image-Magick-Iterator
+p5-Image-Math-Constrain	ports/graphics/p5-Image-Math-Constrain
 p5-Image-MetaData-GQview	ports/graphics/p5-Image-MetaData-GQview
 p5-Image-MetaData-JPEG	ports/graphics/p5-Image-MetaData-JPEG
 p5-Image-PBMlib	ports/graphics/p5-Image-PBMlib
