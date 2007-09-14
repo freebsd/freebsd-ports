@@ -1,6 +1,6 @@
 --- Makefile.orig	Tue Nov 28 19:05:39 2006
-+++ Makefile	Tue Dec 26 00:19:11 2006
-@@ -26,11 +26,19 @@
++++ Makefile	Fri Sep 14 14:44:03 2007
+@@ -26,11 +26,20 @@
    endif
  endif
  
@@ -15,6 +15,7 @@
 +BUILD_GAME_SO?=0
 +BUILD_SERVER?=0
 +HAVE_VM_COMPILED?=false
++USE_CODEC_MP3?=0
 +USE_CODEC_VORBIS?=0
 +USE_LOCAL_HEADERS?=0
 +USE_OPENAL?=0
@@ -25,7 +26,7 @@
  
  #############################################################################
  #
-@@ -88,30 +96,10 @@
+@@ -88,30 +97,10 @@
  endif
  export USE_CCACHE
  
@@ -57,7 +58,41 @@
  CDIR=$(MOUNT_DIR)/client
  SDIR=$(MOUNT_DIR)/server
  RDIR=$(MOUNT_DIR)/renderer
-@@ -444,18 +432,12 @@
+@@ -185,6 +174,10 @@
+     BASE_CFLAGS += -DUSE_CODEC_VORBIS=1
+   endif
+ 
++  ifeq ($(USE_CODEC_MP3),1)
++    BASE_CFLAGS += -DUSE_CODEC_MP3=1
++  endif
++
+   ifeq ($(USE_SDL),1)
+     BASE_CFLAGS += -DUSE_SDL_VIDEO=1 -DUSE_SDL_SOUND=1 $(shell sdl-config --cflags)
+     GL_CFLAGS =
+@@ -243,6 +236,10 @@
+     endif
+   endif
+ 
++  ifeq ($(USE_CODEC_MP3),1)
++    CLIENT_LDFLAGS += -lmad
++  endif
++
+   ifeq ($(USE_CODEC_VORBIS),1)
+     CLIENT_LDFLAGS += -lvorbisfile -lvorbis -logg
+   endif
+@@ -342,6 +339,11 @@
+     endif
+   endif
+ 
++  ifeq ($(USE_CODEC_MP3),1)
++    BASE_CFLAGS += -DUSE_CODEC_MP3=1
++    CLIENT_LDFLAGS += -lmad
++  endif
++
+   ifeq ($(USE_CODEC_VORBIS),1)
+     BASE_CFLAGS += -DUSE_CODEC_VORBIS=1
+     CLIENT_LDFLAGS += -lvorbisfile -lvorbis -logg
+@@ -444,18 +446,12 @@
  
  ifeq ($(PLATFORM),freebsd)
  
@@ -79,7 +114,7 @@
  
    ifeq ($(USE_OPENAL),1)
      BASE_CFLAGS += -DUSE_OPENAL=1
-@@ -468,47 +450,61 @@
+@@ -468,47 +464,61 @@
      BASE_CFLAGS += -DUSE_CODEC_VORBIS=1
    endif
  
@@ -164,7 +199,7 @@
      endif
    endif
  
-@@ -516,7 +512,6 @@
+@@ -516,7 +526,6 @@
      CLIENT_LDFLAGS += -lvorbisfile -lvorbis -logg
    endif
  
@@ -172,7 +207,7 @@
  else # ifeq freebsd
  
  #############################################################################
-@@ -670,24 +665,25 @@
+@@ -670,24 +679,25 @@
  TARGETS =
  
  ifneq ($(BUILD_SERVER),0)
@@ -209,7 +244,7 @@
  endif
  
  ifneq ($(BUILD_GAME_QVM),0)
-@@ -749,11 +745,11 @@
+@@ -749,11 +759,11 @@
  	$(MAKE)  targets B=$(BD) CFLAGS="$(CFLAGS) $(DEBUG_CFLAGS) $(DEPEND_CFLAGS)"
  
  build_release: B=$(BR)
@@ -223,7 +258,15 @@
  
  targets: $(TARGETS)
  
-@@ -964,13 +960,10 @@
+@@ -836,6 +846,7 @@
+   $(B)/client/snd_codec.o \
+   $(B)/client/snd_codec_wav.o \
+   $(B)/client/snd_codec_ogg.o \
++  $(B)/client/snd_codec_mp3.o \
+   \
+   $(B)/client/qal.o \
+   $(B)/client/snd_openal.o \
+@@ -964,13 +975,10 @@
    ifeq ($(ARCH),i386)
      Q3OBJ += $(B)/client/vm_x86.o
    endif
@@ -239,7 +282,7 @@
      Q3OBJ += $(B)/client/$(VM_PPC).o
    endif
  endif
-@@ -1017,10 +1010,10 @@
+@@ -1017,10 +1025,10 @@
      $(B)/client/sdl_glimp_smp.o
  endif
  
@@ -252,7 +295,15 @@
  	$(CC)  -o $@ $(Q3OBJ) $(Q3POBJ_SMP) $(CLIENT_LDFLAGS) \
  		$(THREAD_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
  
-@@ -1317,18 +1310,15 @@
+@@ -1056,6 +1064,7 @@
+ $(B)/client/snd_codec.o : $(CDIR)/snd_codec.c; $(DO_CC)
+ $(B)/client/snd_codec_wav.o : $(CDIR)/snd_codec_wav.c; $(DO_CC)
+ $(B)/client/snd_codec_ogg.o : $(CDIR)/snd_codec_ogg.c; $(DO_CC)
++$(B)/client/snd_codec_mp3.o : $(CDIR)/snd_codec_mp3.c; $(DO_CC)
+ 
+ $(B)/client/qal.o : $(CDIR)/qal.c; $(DO_CC)
+ $(B)/client/snd_openal.o : $(CDIR)/snd_openal.c; $(DO_CC)
+@@ -1317,18 +1326,15 @@
    ifeq ($(ARCH),i386)
      Q3DOBJ += $(B)/ded/vm_x86.o
    endif
@@ -274,7 +325,7 @@
  	$(CC) -o $@ $(Q3DOBJ) $(LDFLAGS)
  
  $(B)/ded/sv_bot.o : $(SDIR)/sv_bot.c; $(DO_DED_CC)
-@@ -1445,7 +1435,7 @@
+@@ -1445,7 +1451,7 @@
  Q3CGOBJ = $(Q3CGOBJ_) $(B)/baseq3/cgame/cg_syscalls.o
  Q3CGVMOBJ = $(Q3CGOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
  
@@ -283,7 +334,7 @@
  	$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3CGOBJ)
  
  $(B)/baseq3/vm/cgame.qvm: $(Q3CGVMOBJ) $(CGDIR)/cg_syscalls.asm
-@@ -1486,7 +1476,7 @@
+@@ -1486,7 +1492,7 @@
  MPCGOBJ = $(MPCGOBJ_) $(B)/missionpack/cgame/cg_syscalls.o
  MPCGVMOBJ = $(MPCGOBJ_:%.o=%.asm) $(B)/missionpack/game/bg_lib.asm
  
@@ -292,7 +343,7 @@
  	$(CC) $(SHLIBLDFLAGS) -o $@ $(MPCGOBJ)
  
  $(B)/missionpack/vm/cgame.qvm: $(MPCGVMOBJ) $(CGDIR)/cg_syscalls.asm
-@@ -1536,7 +1526,7 @@
+@@ -1536,7 +1542,7 @@
  Q3GOBJ = $(Q3GOBJ_) $(B)/baseq3/game/g_syscalls.o
  Q3GVMOBJ = $(Q3GOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
  
@@ -301,7 +352,7 @@
  	$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3GOBJ)
  
  $(B)/baseq3/vm/qagame.qvm: $(Q3GVMOBJ) $(GDIR)/g_syscalls.asm
-@@ -1584,7 +1574,7 @@
+@@ -1584,7 +1590,7 @@
  MPGOBJ = $(MPGOBJ_) $(B)/missionpack/game/g_syscalls.o
  MPGVMOBJ = $(MPGOBJ_:%.o=%.asm) $(B)/missionpack/game/bg_lib.asm
  
@@ -310,7 +361,7 @@
  	$(CC) $(SHLIBLDFLAGS) -o $@ $(MPGOBJ)
  
  $(B)/missionpack/vm/qagame.qvm: $(MPGVMOBJ) $(GDIR)/g_syscalls.asm
-@@ -1644,7 +1634,7 @@
+@@ -1644,7 +1650,7 @@
  Q3UIOBJ = $(Q3UIOBJ_) $(B)/missionpack/ui/ui_syscalls.o
  Q3UIVMOBJ = $(Q3UIOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
  
@@ -319,7 +370,7 @@
  	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(Q3UIOBJ)
  
  $(B)/baseq3/vm/ui.qvm: $(Q3UIVMOBJ) $(UIDIR)/ui_syscalls.asm
-@@ -1669,7 +1659,7 @@
+@@ -1669,7 +1675,7 @@
  MPUIOBJ = $(MPUIOBJ_) $(B)/missionpack/ui/ui_syscalls.o
  MPUIVMOBJ = $(MPUIOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
  
