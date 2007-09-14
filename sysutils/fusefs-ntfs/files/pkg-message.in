@@ -25,7 +25,7 @@ UBLIO_GRACE	- 32. Makes the cache items have more chances to be reused.
 UBLIO_SYNC_IO	- 0. If enabled, highly decreases writing speed, but the data
 		  is immediatly written to the disk.
 
-For example (improves performance over large files):
+For example (improves performance over large files, but read below):
 
 # env UBLIO_BLOCKSIZE=2097152 ntfs-3g /dev/ad0s1 /mnt
 
@@ -38,11 +38,12 @@ the FORCE_ALIGNED_IO variable (it will be set to 512 bytes), but this is only
 useful for testing purposes and in practice has no use.
 
 Note that higher values for UBLIO_BLOCKSIZE and UBLIO_ITEMS increase the
-memory usage by their product in bytes. By default it consumes 64MB. To
-decrease it to 16MB set UBLIO_BLOCKSIZE to 256KB for example.
+memory usage by their product in bytes. For example, if you set it to 1MB it
+would consume 64MB. To decrease it to 16MB you could set UBLIO_BLOCKSIZE to
+256KB (currently this is the default).
 
 When doing many simultaneous file operations sometimes one of them fails. The
 greater UBLIO_BLOCKSIZE is, more chances this has to happen. Small values like
-4096 also work fine.
+4096 can be used and also perform fine.
 
 ==============================================================================
