@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	1.36
+PORTVERSION=	1.39
 CATEGORIES=	databases python
 MASTER_SITES=	ftp://ftp.tummy.com/pub/python-memcached/ \
 		ftp://ftp.tummy.com/pub/python-memcached/old-releases/
