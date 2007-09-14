@@ -797,6 +797,7 @@
     SUBDIR += uox3
     SUBDIR += uqm
     SUBDIR += urbanterror
+    SUBDIR += urbanterror-data
     SUBDIR += utserver
     SUBDIR += vamos
     SUBDIR += vavoom
