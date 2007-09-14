@@ -161,6 +161,7 @@
     SUBDIR += vxtools
     SUBDIR += wahcade
     SUBDIR += wine
+    SUBDIR += wine-doors
     SUBDIR += x48
     SUBDIR += xbraitenberg
     SUBDIR += xgngeo
