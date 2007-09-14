@@ -1228,4 +1228,5 @@ bin/w3af
 %%PYTHON_SITELIBDIR%%/w3af/extlib/pygoogle/setup.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/extlib/pygoogle
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/extlib
+@comment remove main package directory last (after pygoogle)
 @dirrm %%PYTHON_SITELIBDIR%%/w3af
