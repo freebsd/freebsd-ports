@@ -19,6 +19,12 @@ PSYBASE=	${PREFIX}/psybnc
 MAKE_ARGS=	PSYBASE=${PSYBASE}
 IS_INTERACTIVE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+BROKEN=	does not run on amd64
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#=help/#=${PSYBASE}/help/#' ${WRKSRC}/lang/*
 
@@ -38,4 +44,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/psybnc ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/psybnc.conf ${PREFIX}/etc/psybnc.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
