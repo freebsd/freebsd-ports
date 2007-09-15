@@ -1,6 +1,6 @@
-# New ports collection makefile for:    xmountains
-# Date created:         16 November 1996
-# Whom:                 proff
+# New ports collection makefile for:	xmountains
+# Date created:		16 November 1996
+# Whom:			proff@iq.org
 #
 # $FreeBSD$
 #
@@ -9,7 +9,8 @@ PORTNAME=	xmountains
 PORTVERSION=	2.7
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.epcc.ed.ac.uk/~spb/xmountains/
+MASTER_SITES=	http://www2.epcc.ed.ac.uk/~spb/xmountains/ \
+		GENTOO/distfiles
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
