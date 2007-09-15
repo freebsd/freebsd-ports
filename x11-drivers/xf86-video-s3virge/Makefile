@@ -7,6 +7,7 @@
 
 PORTNAME=	xf86-video-s3virge
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
