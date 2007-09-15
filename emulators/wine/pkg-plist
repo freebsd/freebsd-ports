@@ -7,7 +7,7 @@ bin/regsvr32
 bin/uninstaller
 bin/widl
 bin/wine
-bin/wine-kthread
+bin/wine-pthread
 bin/wineboot
 bin/winebrowser
 bin/winebuild
@@ -90,6 +90,7 @@ include/wine/windows/axcore.idl
 include/wine/windows/axextend.idl
 include/wine/windows/basetsd.h
 include/wine/windows/basetyps.h
+include/wine/windows/bcrypt.h
 include/wine/windows/cderr.h
 include/wine/windows/cfgmgr32.h
 include/wine/windows/cguid.h
@@ -182,6 +183,7 @@ include/wine/windows/dxgi.idl
 include/wine/windows/dxgitype.h
 include/wine/windows/dxgitype.idl
 include/wine/windows/dyngraph.idl
+include/wine/windows/errorrep.h
 include/wine/windows/errors.h
 include/wine/windows/evcode.h
 include/wine/windows/evntrace.h
@@ -209,6 +211,7 @@ include/wine/windows/hlink.idl
 include/wine/windows/htiframe.h
 include/wine/windows/htiframe.idl
 include/wine/windows/htmlhelp.h
+include/wine/windows/i_cryptasn1tls.h
 include/wine/windows/iads.h
 include/wine/windows/iads.idl
 include/wine/windows/icftypes.h
@@ -221,6 +224,7 @@ include/wine/windows/imm.h
 include/wine/windows/indexsrv.h
 include/wine/windows/indexsrv.idl
 include/wine/windows/initguid.h
+include/wine/windows/intshcut.h
 include/wine/windows/ipexport.h
 include/wine/windows/iphlpapi.h
 include/wine/windows/ipifcons.h
@@ -430,6 +434,7 @@ include/wine/windows/windows.h
 include/wine/windows/windowsx.h
 include/wine/windows/winerror.h
 include/wine/windows/wingdi.h
+include/wine/windows/winhttp.h
 include/wine/windows/wininet.h
 include/wine/windows/winineti.h
 include/wine/windows/winioctl.h
@@ -787,6 +792,7 @@ lib/wine/oledlg.dll.so
 lib/wine/olepro32.dll.so
 lib/wine/olesvr.dll16
 lib/wine/olesvr32.dll.so
+lib/wine/olethk32.dll.so
 lib/wine/oleview.exe.so
 lib/wine/opengl32.dll.so
 lib/wine/pdh.dll.so
