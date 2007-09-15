@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-justsrc \
 		--disable-gcc-pipe \
 		--disable-sqlite
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-isystem /usr/include -isystem ${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
@@ -29,8 +29,11 @@ OPTIONS=	FLAC "Enable flac support" On
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_FLAC) || exists(${LOCALBASE}/lib/libFLAC.a)
+.if !defined(WITHOUT_FLAC)
 LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+CONFIGURE_ARGS+=--enable-flac
+.else
+CONFIGURE_ARGS+=--disable-flac
 .endif
 
 post-patch:
