@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	cdrdao
-PORTVERSION=	1.2.1
-PORTREVISION?=	1
+PORTVERSION=	1.2.2
+PORTREVISION?=	0
 CATEGORIES=	sysutils audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	cdrdao
@@ -19,6 +19,7 @@ COMMENT?=	Record CD-R[W]s in disk-at-once mode
 BUILD_DEPENDS=	${LOCALBASE}/bin/antlr:${PORTSDIR}/devel/pccts \
 		${LOCALBASE}/bin/dlg:${PORTSDIR}/devel/pccts
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
@@ -27,7 +28,6 @@ MP3OGG_LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 			vorbis.4:${PORTSDIR}/audio/libvorbis
 
 .if ${PORTNAME} == "gcdmaster"
-USE_GCC=		3.4
 USE_GNOME=		gnomehier pkgconfig
 LIB_DEPENDS=		${MP3OGG_LIB_DEPENDS} \
 			gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26

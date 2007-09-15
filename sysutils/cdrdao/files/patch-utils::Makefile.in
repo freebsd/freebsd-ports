@@ -1,0 +1,17 @@
+--- utils/Makefile.in.orig	Sun Feb 15 04:04:35 2004
++++ utils/Makefile.in	Mon Feb 16 00:50:20 2004
+@@ -237,11 +237,11 @@
+ toc2cue_SOURCES = toc2cue.cc
+ cue2toc_SOURCES = main.c cue2toc.c cue2toc.h timecode.c timecode.h
+ toc2mp3_SOURCES = toc2mp3.cc
+-toc2cddb_LDADD = -L$(top_builddir)/trackdb -ltrackdb $(am__append_1) \
++toc2cddb_LDADD = $(top_builddir)/trackdb/libtrackdb.a $(am__append_1) \
+ 	$(am__append_4) @AO_LIBS@
+-toc2cue_LDADD = -L$(top_builddir)/trackdb -ltrackdb $(am__append_2) \
++toc2cue_LDADD = $(top_builddir)/trackdb/libtrackdb.a $(am__append_2) \
+ 	$(am__append_5) @AO_LIBS@
+-toc2mp3_LDADD = -L$(top_builddir)/trackdb -ltrackdb @LAME_LIBS@ \
++toc2mp3_LDADD = $(top_builddir)/trackdb/libtrackdb.a @LAME_LIBS@ \
+ 	$(am__append_3) $(am__append_6) @AO_LIBS@
+ toc2mp3_CXXFLAGS = @LAME_CFLAGS@
+ INCLUDES = -I$(top_builddir)/trackdb

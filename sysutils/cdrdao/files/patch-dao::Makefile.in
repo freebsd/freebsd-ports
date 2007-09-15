@@ -1,0 +1,13 @@
+--- dao/Makefile.in.orig	2006-09-20 10:51:30.000000000 +0000
++++ dao/Makefile.in	2007-08-31 22:31:51.000000000 +0000
+@@ -315,8 +315,8 @@
+ libdao_a_DEPENDENCIES = \
+ 	@scsilib_objs@
+ 
+-cdrdao_LDADD = -L. -ldao -L$(top_builddir)/paranoia -lcdda_paranoia \
+-	-L$(top_builddir)/trackdb -ltrackdb @thread_libs@ \
++cdrdao_LDADD = ./libdao.a $(top_builddir)/paranoia/libcdda_paranoia.a \
++	$(top_builddir)/trackdb/libtrackdb.a @thread_libs@ \
+ 	@scsilib_libs@ $(am__append_1) $(am__append_2) @AO_LIBS@
+ cdrdao_DEPENDENCIES = \
+ 	$(top_builddir)/paranoia/libcdda_paranoia.a	\
