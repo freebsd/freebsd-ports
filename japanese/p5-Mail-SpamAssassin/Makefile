@@ -202,6 +202,8 @@ post-patch:
 		-e 's/require DBI/0/' \
 		${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -e '/^CC =/d' ${WRKSRC}/spamc/Makefile.in
+	@${REINPLACE_CMD} -e 's/CCDLFLAGS/CCCDLFLAGS/g;s/ccdlflags/cccdlflags/g' \
+		${WRKSRC}/spamc/configure ${WRKSRC}/spamc/*.in
 
 .if defined(WITH_RAZOR)
 	${REINPLACE_CMD} -e '/Razor2/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v312.pre
