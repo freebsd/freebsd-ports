@@ -1,0 +1,16 @@
+etc/gproftpd/gproftpd.pem
+etc/gproftpd/gprotls.conf
+etc/pam.d/gproftpd
+sbin/gproftpd
+sbin/gprostats
+share/pixmaps/gproftpd.png
+share/pixmaps/gproftpd/gproftpd.png
+share/pixmaps/gproftpd/gproftpd16.png
+share/pixmaps/gproftpd/gproftpd32.png
+share/pixmaps/gproftpd/gproftpd36.xpm
+share/pixmaps/gproftpd/gproftpd48.png
+share/pixmaps/gproftpd/gproftpd64.png
+@dirrm share/pixmaps/gproftpd
+@exec mkdir -p %%WWWDIR%%
+@dirrmtry %%WWWDIR%%
+@dirrm etc/gproftpd
