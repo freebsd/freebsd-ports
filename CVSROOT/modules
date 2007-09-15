@@ -4060,6 +4060,7 @@ gplot		ports/graphics/gplot
 gpp		ports/textproc/gpp
 gpredict	ports/comms/gpredict
 gprename	ports/x11-fm/gprename
+gproftpd	ports/ftp/gproftpd
 gprolog		ports/lang/gprolog
 gps		ports/net-mgmt/gps
 gpsbabel	ports/astro/gpsbabel
