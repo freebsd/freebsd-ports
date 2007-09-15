@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	i2p
-PORTVERSION=	0.6.1.28
-PORTREVISION=	2
+PORTVERSION=	0.6.1.29
 CATEGORIES=	net-p2p java security
 MASTER_SITES=	http://dev.i2p.net/i2p/:i2p \
 		${MASTER_SITE_SOURCEFORGE:S/$/:jetty/}
