@@ -7,6 +7,7 @@
 
 PORTNAME=	xf86-video-vesa
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
