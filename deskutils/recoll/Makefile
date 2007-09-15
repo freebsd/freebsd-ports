@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	recoll
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.9.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
@@ -35,10 +34,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's/^CXXFLAGS =/CXXFLAGS ?=/' \
 		${WRKSRC}/mk/localdefs.in
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 700050
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
