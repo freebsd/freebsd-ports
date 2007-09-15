@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Authentication-Store-DBIC
-PORTVERSION=	0.08000
+PORTVERSION=	0.09000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,10 +16,11 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Authentication/authorization on a DBIx::Class/Class::DBI model
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		p5-Catalyst-Model-DBIC-Schema>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema \
 		p5-Catalyst-Plugin-Authentication>=0.06:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication \
 		p5-Set-Object>=1.14:${PORTSDIR}/devel/p5-Set-Object \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-Catalyst-Plugin-Authorization-Roles>=0.03:${PORTSDIR}/www/p5-Catalyst-Plugin-Authorization-Roles \
 		p5-Catalyst-Plugin-Session-State-Cookie>=0.02:${PORTSDIR}/www/p5-Catalyst-Plugin-Session-State-Cookie
 BUILD_DEPENDS=	${RUN_DEPENDS}
