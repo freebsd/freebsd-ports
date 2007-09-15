@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	0.9.44
+PORTVERSION=	0.9.45
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
@@ -27,8 +27,7 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --verbose
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		EXTRA_BINARIES="wine-kthread"
+		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/wine
 MAN1=		widl.1 wine.1 winebuild.1 winedbg.1 winedump.1 winegcc.1 \
 		winemaker.1 wineprefixcreate.1 wineserver.1 wmc.1 wrc.1
@@ -45,8 +44,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 503000
-IGNORE=		fails to work on versions of FreeBSD before 5.3 (due to problems with threading support)
+.if ${OSVERSION} < 602000
+IGNORE=		fails to properly work on versions of FreeBSD before 6.2 (due to problems with threading support)
 .endif
 
 post-patch:
