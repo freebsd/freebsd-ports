@@ -1,0 +1,15 @@
+--- xdao/Makefile.in.orig	2006-09-20 10:51:34.000000000 +0000
++++ xdao/Makefile.in	2007-08-31 22:33:12.000000000 +0000
+@@ -341,9 +341,9 @@
+ glade_DATA = \
+ 	glade/ProjectChooser.glade
+ 
+-gcdmaster_LDADD = @sound_if_obj@ -L$(top_builddir)/dao -ldao \
+-	-L$(top_builddir)/paranoia -lcdda_paranoia \
+-	-L$(top_builddir)/trackdb -ltrackdb @scsilib_libs@ \
++gcdmaster_LDADD = @sound_if_obj@ $(top_builddir)/dao/libdao.a \
++	$(top_builddir)/paranoia/libcdda_paranoia.a \
++	$(top_builddir)/trackdb/libtrackdb.a @scsilib_libs@ \
+ 	@LIBGUIMM2_LIBS@ @GTKMM2_LIBS@ $(am__append_1) $(am__append_3) \
+ 	@AO_LIBS@ $(am__empty)
+ AM_CXXFLAGS = @GTKMM2_CFLAGS@ @LIBGUIMM2_CFLAGS@ @AO_CFLAGS@ \
