@@ -2,12 +2,12 @@
 # Date created:		2007-02-26
 # Whom:			Martin Tournoij <carpetsmoker@xs4all.nl>
 #
+# $Carpetsmoker: ports/games/wrogue/Makefile,v 1.3 2007/09/09 13:32:49 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	wrogue
-PORTVERSION=	0.7.5
-PORTREVISION=	1
+DISTVERSION=	0.7.7b
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	todoom
@@ -23,11 +23,6 @@ ALL_TARGET=	release
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKDIR}
 
-SUB_FILES=	unix.mak
-SUB_LIST=	WRKSRC=${WRKSRC}
-
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|-march=i586||; \
 		s|gcc|${CC}|; \
@@ -35,6 +30,23 @@ post-patch:
 	${WRKSRC}/src/unix.mak
 
 	@${REINPLACE_CMD} -e "s|\./data/|${DATADIR}/|" \
-		${WRKSRC}/src/unix/be_unix.c
+		${WRKSRC}/src/platform/unix/pl_unix.c
 
-.include <bsd.port.post.mk>
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/wrogue ${PREFIX}/bin
+	${MKDIR} ${DATADIR} ${DATADIR}/engine ${DATADIR}/scenario
+.for dir in engine/config engine/desc engine/graphics engine/help \
+	engine/psybolts scenario/careers scenario/info scenario/npcs \
+	scenario/objects scenario/race scenario/terrain scenario/user scenario/world
+	${MKDIR} ${DATADIR}/${dir}
+	${INSTALL_DATA} ${WRKSRC}/data/${dir}/* ${DATADIR}/${dir}
+.endfor
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for doc in changes.txt license.txt sc_guide.txt
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>
