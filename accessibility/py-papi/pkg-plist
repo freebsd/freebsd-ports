@@ -1,6 +1,0 @@
-%%PYTHON_SITELIBDIR%%/papi.so
-%%PORTDOCS%%%%DOCSDIR%%/examples/atkaction.py
-%%PORTDOCS%%%%DOCSDIR%%/examples/atkapplication.py
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
