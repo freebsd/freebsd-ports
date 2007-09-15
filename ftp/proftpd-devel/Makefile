@@ -58,7 +58,7 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		LDAP_TLS "Use LDAP TLS (Requires LDAP, OPENSSL)" off\
 		MYSQL "Use MySQL" off \
 		PGSQL "Use Postgres" off \
-		OPENSSL "Include mod_tls" off \
+		OPENSSL "Include mod_tls" on \
 		QUOTA "Include mod_quota" off \
 		IFSESSION "Include mod_ifsession" on \
 		README "Include mod_readme" on \
@@ -68,7 +68,7 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		WRAP "Include mod_wrap2" on \
 		WRAP_FILE "Include mod_wrap2_file" off \
 		WRAP_SQL "Include mod_wrap2_sql" off \
-		RADIUS "Include mod_radius" off \
+		RADIUS "Include mod_radius" on \
 		QUOTATAB_RADIUS "include mod_quotatab_radius" off \
 		BAN "Include mod_ban (Requires CTRLS)" off \
 		NLS "Use nls (builds mod_lang)" off \
