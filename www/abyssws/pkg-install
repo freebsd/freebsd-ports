@@ -38,12 +38,22 @@ PRE-INSTALL)
 		mkdir -p ${WSHOME}
 		chown ${USER}:${GROUP} ${WSHOME}
 	fi
+
+	if [ -r ${WSHOME}/htdocs/index.html ] ; then
+	       mv ${WSHOME}/htdocs/index.html ${WSHOME}/htdocs/index.html.bak
+	fi
+
 	;;
 
 POST-INSTALL)
 	chown -R ${USER}:${GROUP} ${WSHOME}
 	chmod -R u+w,o-rx ${WSHOME}
 	chmod u+s ${WSHOME}/abyssws
+	
+	if [ -r ${WSHOME}/htdocs/index.html.bak ] ; then
+	       mv ${WSHOME}/htdocs/index.html.bak ${WSHOME}/htdocs/index.html
+	fi
+
 	;;
 
 

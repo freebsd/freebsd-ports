@@ -1,10 +1,12 @@
 lib/abyssws/Installation Instructions.html
 lib/abyssws/abyssws
+lib/abyssws/autostart-setup
 lib/abyssws/console/about.gif
 lib/abyssws/console/alias.gif
 lib/abyssws/console/antileech.gif
 lib/abyssws/console/aspnet.gif
 lib/abyssws/console/bandwidth.gif
+lib/abyssws/console/cert.gif
 lib/abyssws/console/console.css
 lib/abyssws/console/console.gif
 lib/abyssws/console/delete.gif
@@ -71,7 +73,7 @@ lib/abyssws/doc/intro.html
 lib/abyssws/doc/ipformat.html
 lib/abyssws/doc/isapi.html
 lib/abyssws/doc/knowledge.html
-lib/abyssws/doc/ln63.html
+lib/abyssws/doc/ln72.html
 lib/abyssws/doc/patternsformat.html
 lib/abyssws/doc/portsproblems.html
 lib/abyssws/doc/preface.html
@@ -86,18 +88,23 @@ lib/abyssws/doc/shutdown.html
 lib/abyssws/doc/ssi.html
 lib/abyssws/doc/ssiencoding.html
 lib/abyssws/doc/ssisyntax.html
+lib/abyssws/doc/ssl.html
 lib/abyssws/doc/start.html
+lib/abyssws/doc/startup.html
 lib/abyssws/doc/stylesheet.css
 lib/abyssws/doc/troubleshooting.html
 lib/abyssws/doc/useroption.html
 lib/abyssws/lang/ar.lng
 lib/abyssws/lang/fr.lng
 lib/abyssws/license.txt
-lib/abyssws/htdocs/index.html
 lib/abyssws/htdocs/pwrabyss.gif
+lib/abyssws/htdocs/index.html
 @dirrm lib/abyssws/console
 @dirrm lib/abyssws/doc
 @dirrmtry lib/abyssws/htdocs
+@exec mkdir -p %D/lib/abyssws/kcstore
+@dirrm lib/abyssws/kcstore
 @dirrm lib/abyssws/lang
+@exec mkdir -p %D/lib/abyssws/log
 @dirrmtry lib/abyssws/log
 @dirrmtry lib/abyssws
