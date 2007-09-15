@@ -8,14 +8,14 @@
 PORTNAME=	plasma
 PORTVERSION=	0.1
 CATEGORIES=	graphics kld
-MASTER_SITES=	http://users.uk.freebsd.org/~greid/
+MASTER_SITES=	SF/futurebsd
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plasma-effect screensaver kernel module
 
 .if !exists(/usr/src/sys/dev/syscons/syscons.h)
-IGNORE=		"Requires kernel source (/usr/src/sys) to build"
+IGNORE=		requires kernel source (/usr/src/sys) to build
 .endif
 PLIST_FILES=	lib/plasma_saver.ko
 
