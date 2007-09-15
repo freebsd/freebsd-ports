@@ -1,24 +1,35 @@
---- src/Makefile.orig	Tue Oct 17 12:17:20 2006
-+++ src/Makefile	Wed Nov 15 19:14:19 2006
-@@ -23,7 +23,7 @@
+--- src/Makefile.orig	2007-06-01 03:43:24.000000000 +0400
++++ src/Makefile	2007-09-15 16:03:27.000000000 +0400
+@@ -38,7 +38,7 @@
  PROG = gspiceui
  
  # wxWidgets configuration utility
 -WXCFG = wx-config
-+WXCFG = %%WX_CONFIG%%
++WXCFG = /usr/local/bin/wxgtk2u-2.8-config
  
- # Directories
- #ROOT := $(shell cd .. ; pwd)
-@@ -45,10 +45,10 @@
- endif
+ # Dependency file
+ DEPS = Makefile.deps
+@@ -51,20 +51,13 @@
+ BINDIR     = $(ROOT)/bin
+ INSTALLDIR = /usr/local/bin
+ 
+-# Compiler options
+-ifeq ($(GSPICEUI_DBG),0)
+-  # Options for release (Not using -Wall since it's GCC specific)
+-  CXXFLAGS = -O -pipe -c $(shell $(WXCFG) --cxxflags)
+-else
+-  # Options for development
+-  CXXFLAGS = -Wall -g -pipe -c $(shell $(WXCFG) --cxxflags)
+-endif
++CXXFLAGS += -c $(shell $(WXCFG) --cxxflags)
  
  # Includes
--INCLUDES =-I/usr/include -I/usr/X11R6/include -I.
-+INCLUDES =-I/usr/include -I${X11BASE}/include -I. $(shell %%WX_CONFIG%% --cxxflags)
+-INCLUDES = -I/usr/include -I/usr/X11R6/include -I.
++INCLUDES = -I/usr/include -I${X11BASE}/include -I. $(shell /usr/local/bin/wxgtk2u-2.8-config --cxxflags)
  
  # Libraries
--LIB := $(shell wx-config --libs) $(shell pkg-config --libs pangox)
-+LIB := $(shell %%WX_CONFIG%% --libs) $(shell pkg-config --libs pangox)
+-LIBS := $(shell wx-config --libs) $(shell pkg-config --libs pangox)
++LIBS := $(shell /usr/local/bin/wxgtk2u-2.8-config --libs) $(shell pkg-config --libs pangox)
  
  # Sources & headers
  SRCS = *.cpp

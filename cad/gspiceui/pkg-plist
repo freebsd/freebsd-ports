@@ -15,8 +15,10 @@ bin/gspiceui
 %%MODELS%%%%DATADIR%%/lib/pnp/tip42.mod
 %%MODELS%%%%DATADIR%%/lib/reg/lm317.mod
 %%MODELS%%%%DATADIR%%/sch/amp-tce-1.sch
+%%MODELS%%%%DATADIR%%/sch/anemtr-intfc.sch
 %%MODELS%%%%DATADIR%%/sch/astable-npn.sch
 %%MODELS%%%%DATADIR%%/sch/astable-pnp.sch
+%%MODELS%%%%DATADIR%%/sch/filter-bp-1.sch
 %%MODELS%%%%DATADIR%%/sch/filter-lp-1.sch
 %%MODELS%%%%DATADIR%%/sch/filter-lp-2.sch
 %%MODELS%%%%DATADIR%%/sch/gyrator.sch

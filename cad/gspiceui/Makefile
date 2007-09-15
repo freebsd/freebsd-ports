@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gspiceui
-PORTVERSION=	0.8.90
-PORTREVISION=	1
+PORTVERSION=	0.9.33
+PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	GUI frontend for gnucap/ng-spice circuit simulators
 
 RUN_DEPENDS=	gwave:${PORTSDIR}/cad/gwave
 
-USE_WX=		2.6
+USE_WX=		2.6+
 WX_UNICODE=	yes
 USE_GMAKE=	yes
 
