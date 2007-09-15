@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jan 16 11:18:32 2007
-+++ Makefile	Tue Jan 30 21:44:15 2007
+--- Makefile.orig	2007-09-06 11:51:24.000000000 +0300
++++ Makefile	2007-09-08 19:16:08.000000000 +0300
 @@ -18,8 +18,6 @@
  #           From Hewlett Packard Company.
  #
@@ -63,20 +63,21 @@
  LIBS_SunOS= -lcurses -lpthread -lnsl -lsocket -lstdc++ -lm -ldl -L /usr/local/ssl/lib/
  LIBS_Cygwin= -lcurses -lpthread -lstdc++ -L /usr/lib/WpdPack/Lib
  LIBS_Darwin= -lcurses
-@@ -146,15 +144,13 @@
+@@ -146,7 +144,7 @@
  
  # Include directories
- INCDIR_linux=-I. -I/opt/openssl/include
+ INCDIR_linux=-I. -I/usr/include/openssl
 -INCDIR_freebsd=-I. -I/opt/openssl/include
 +INCDIR_freebsd=-I. -I/usr/local/include
  INCDIR_hpux=-I. -I/usr/local/include -I/opt/openssl/include
  INCDIR_tru64=-I. -I/opt/openssl/include
  INCDIR_SunOS=-I. -I/usr/local/ssl/include/
- INCDIR_Cygwin=-I. -I/usr/include/openssl -I/usr/include -I/usr/lib/WpdPack/Include
+@@ -154,8 +152,6 @@
  INCDIR_Darwin=-I. -I/usr/local/ssl/include
  INCDIR=$(INCDIR_$(SYSTEM)) 
--
---include local.mk
  
+--include local.mk
+-
  # Building without TLS and authentication (no openssl pre-requisite)
  all:
+ 	make OSNAME=`uname|sed -e "s/CYGWIN.*/CYGWIN/"` MODELNAME=`uname -m|sed "s/Power Macintosh/ppc/"` $(OUTPUT)
