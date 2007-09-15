@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sim-im-devel
-PORTVERSION=	0.9.5.1809
-PORTREVISION=	1
+PORTVERSION=	0.9.5.2054
 CATEGORIES=	net-im
 MASTER_SITES=	http://sim-im.lehis.ru/dist/ \
 		http://www.sim-im.lehis.ru/dist/
@@ -43,10 +42,6 @@ post-patch:
 .if !defined(WITH_KDE)
 	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
 	${CONFIGURE_WRKSRC}/configure
-.endif
-
-.if ${OSVERSION} < 500000
-IGNORE=		build failed on FreeBSD 4.X 
 .endif
 
 .if !defined(WITHOUT_DEBUG)
