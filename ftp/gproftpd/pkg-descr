@@ -1,0 +1,7 @@
+GPROFTPD is an easy to use GTK+ administration tool for the proftpd standalone
+server. GProftpd and Proftpd gives admins access to virtual hosting, 8 layers
+of security including chrooted users and encrypted transfers on both the
+data and/or control channels. It is ideal for both standard ftp serving
+and webhotels.
+
+WWW: http://gadmintools.org

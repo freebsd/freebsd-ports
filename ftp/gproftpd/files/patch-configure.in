@@ -1,0 +1,29 @@
+--- configure.in.orig	2007-06-06 07:39:42.000000000 -0800
++++ configure.in	2007-09-15 13:12:47.000000000 -0800
+@@ -98,7 +98,7 @@
+ 
+ 
+ dnl Path to proftpd's configuration file.
+-default_proftpd_conf="/etc/proftpd.conf"
++default_proftpd_conf="${prefix}/etc/proftpd.conf"
+ test "x$PROFTPD_CONF" = x && PROFTPD_CONF=$default_proftpd_conf
+ AC_DEFINE_UNQUOTED(PROFTPD_CONF,"`eval echo "${PROFTPD_CONF}"`",[path to proftpd.conf])
+ AC_MSG_RESULT([Using configuration file: (${PROFTPD_CONF})])
+@@ -116,7 +116,7 @@
+ AC_MSG_RESULT([Using xferlog: (${XFER_LOG})])
+ 
+ dnl Path to the webserver root directory/gprostats html output file.
+-default_html_statistics="/var/www/html/ftp.htm"
++default_html_statistics="${prefix}/www/gproftpd/ftp.htm"
+ test "x$HTML_STATISTICS" = x && HTML_STATISTICS=$default_html_statistics
+ AC_DEFINE_UNQUOTED(HTML_STATISTICS,"`eval echo "${HTML_STATISTICS}"`",[path to generated html statistics])
+ AC_MSG_RESULT([Using html statistics output file: (${HTML_STATISTICS})])
+@@ -152,7 +152,7 @@
+ AC_MSG_RESULT([Using FTPWHO binary: (${FTPWHO_BINARY})])
+ 
+ dnl Path to the proc filesystem.
+-default_proc_path="/proc"
++default_proc_path="/compat/linux/proc"
+ test "x$PROC_PATH" = x && PROC_PATH=$default_proc_path
+ AC_DEFINE_UNQUOTED(PROC_PATH,"`eval echo "${PROC_PATH}"`",[Path to the proc filesystem])
+ AC_MSG_RESULT([Using Proc filesystem: (${PROC_PATH})])
