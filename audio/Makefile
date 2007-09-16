@@ -198,6 +198,7 @@
     SUBDIR += gmidimonitor
     SUBDIR += gmixer
     SUBDIR += gmpc
+    SUBDIR += gmpc-autoplaylist
     SUBDIR += gmpc-lastfm
     SUBDIR += gmpc-magnatune
     SUBDIR += gmpc-mdcover
