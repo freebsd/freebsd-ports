@@ -1,0 +1,5 @@
+share/gmpc/plugins/serverstats/mpd.png
+share/gmpc/plugins/serverstatsplugin.so
+@dirrmtry share/gmpc/plugins/serverstats
+@dirrmtry share/gmpc/plugins
+@dirrmtry share/gmpc
