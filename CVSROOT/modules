@@ -3778,6 +3778,7 @@ gmines		ports/games/gmines
 gmixer		ports/audio/gmixer
 gmp-ecm		ports/math/gmp-ecm
 gmpc		ports/audio/gmpc
+gmpc-autoplaylist	ports/audio/gmpc-autoplaylist
 gmpc-lastfm	ports/audio/gmpc-lastfm
 gmpc-magnatune	ports/audio/gmpc-magnatune
 gmpc-mdcover	ports/audio/gmpc-mdcover
