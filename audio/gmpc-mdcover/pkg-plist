@@ -1,0 +1,3 @@
+share/gmpc/plugins/mdcaplugin.so
+@dirrm share/gmpc/plugins
+@dirrm share/gmpc
