@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webware
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	webware
@@ -32,13 +32,15 @@ INSTALL_ENV=	PKG_PREFIX=${PREFIX} \
 		WEBWARE_MASTER_DIR=${WEBWARE_MASTER_DIR} \
 		WEBKIT_HOME_DIR=${WEBKIT_HOME_DIR}
 
+PLIST_SUB+=	WEBWARE_MASTER_DIR=${WEBWARE_MASTER_DIR:S,^${PREFIX}/,,}
+
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/sbin/apxs|${APXS}|' ${WRKSRC}/WebKit/Adapters/mod_webkit/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/sbin/apxs|${APXS}|' ${WRKSRC}/WebKit/Adapters/mod_webkit1/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/sbin/apxs|${APXS}|' ${WRKSRC}/WebKit/Adapters/mod_webkit2/Makefile
 	@${RM} ${WRKSRC}/WebKit/Adapters/mod_webkit2/Makefile.bak
-	@${RM} ${WRKSRC}/WebKit/Adapters/mod_webkit/Makefile.bak
+	@${RM} ${WRKSRC}/WebKit/Adapters/mod_webkit1/Makefile.bak
 
 pre-install:
 	@ ${ECHO} '---> Making webware default user and its group'
