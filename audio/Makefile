@@ -198,6 +198,7 @@
     SUBDIR += gmidimonitor
     SUBDIR += gmixer
     SUBDIR += gmpc
+    SUBDIR += gmpc-qosd
     SUBDIR += gmpc-serverstats
     SUBDIR += gmpccaa
     SUBDIR += gnapster
