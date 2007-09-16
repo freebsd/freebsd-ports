@@ -11,36 +11,36 @@ include/gmpc/metadata.h
 include/gmpc/plugin.h
 libdata/pkgconfig/gmpc.pc
 share/applications/gmpc.desktop
-share/gmpc/gmpc-add-url.png
-share/gmpc/gmpc-loading-cover.png
-share/gmpc/gmpc-no-cover.png
-share/gmpc/gmpc-tray-disconnected.png
-share/gmpc/gmpc-tray-pause.png
-share/gmpc/gmpc-tray-play.png
-share/gmpc/gmpc-tray.png
-share/gmpc/gmpc-volume.png
-share/gmpc/gmpc.glade
-share/gmpc/gmpc.png
-share/gmpc/hicolor/16x16/actions/media-playlist.png
-share/gmpc/hicolor/16x16/actions/media-tag.png
-share/gmpc/hicolor/16x16/actions/playlist-browser.png
-share/gmpc/hicolor/16x16/actions/playlist-search-browser.png
-share/gmpc/hicolor/16x16/actions/tag-browser.png
-share/gmpc/hicolor/22x22/actions/media-playlist.png
-share/gmpc/hicolor/32x32/actions/media-playlist.png
-share/gmpc/hicolor/32x32/actions/media-tag.png
-share/gmpc/hicolor/32x32/actions/playlist-browser.png
-share/gmpc/hicolor/32x32/actions/playlist-search-browser.png
-share/gmpc/hicolor/32x32/actions/tag-browser.png
-share/gmpc/hicolor/48x48/actions/media-playlist.png
-share/gmpc/hicolor/48x48/actions/media-tag.png
-share/gmpc/hicolor/48x48/actions/tag-browser.png
-share/gmpc/media-album.png
-share/gmpc/media-artist.png
-share/gmpc/media-audiofile.png
-share/gmpc/media-playback-start.png
-share/gmpc/media-stream.png
-share/gmpc/playlist3.glade
+%%DATADIR%%/gmpc-add-url.png
+%%DATADIR%%/gmpc-loading-cover.png
+%%DATADIR%%/gmpc-no-cover.png
+%%DATADIR%%/gmpc-tray-disconnected.png
+%%DATADIR%%/gmpc-tray-pause.png
+%%DATADIR%%/gmpc-tray-play.png
+%%DATADIR%%/gmpc-tray.png
+%%DATADIR%%/gmpc-volume.png
+%%DATADIR%%/gmpc.glade
+%%DATADIR%%/gmpc.png
+%%DATADIR%%/hicolor/16x16/actions/media-playlist.png
+%%DATADIR%%/hicolor/16x16/actions/media-tag.png
+%%DATADIR%%/hicolor/16x16/actions/playlist-browser.png
+%%DATADIR%%/hicolor/16x16/actions/playlist-search-browser.png
+%%DATADIR%%/hicolor/16x16/actions/tag-browser.png
+%%DATADIR%%/hicolor/22x22/actions/media-playlist.png
+%%DATADIR%%/hicolor/32x32/actions/media-playlist.png
+%%DATADIR%%/hicolor/32x32/actions/media-tag.png
+%%DATADIR%%/hicolor/32x32/actions/playlist-browser.png
+%%DATADIR%%/hicolor/32x32/actions/playlist-search-browser.png
+%%DATADIR%%/hicolor/32x32/actions/tag-browser.png
+%%DATADIR%%/hicolor/48x48/actions/media-playlist.png
+%%DATADIR%%/hicolor/48x48/actions/media-tag.png
+%%DATADIR%%/hicolor/48x48/actions/tag-browser.png
+%%DATADIR%%/media-album.png
+%%DATADIR%%/media-artist.png
+%%DATADIR%%/media-audiofile.png
+%%DATADIR%%/media-playback-start.png
+%%DATADIR%%/media-stream.png
+%%DATADIR%%/playlist3.glade
 share/locale/de/LC_MESSAGES/gmpc.mo
 share/locale/fr/LC_MESSAGES/gmpc.mo
 share/locale/gl/LC_MESSAGES/gmpc.mo
@@ -48,15 +48,15 @@ share/locale/nl/LC_MESSAGES/gmpc.mo
 share/locale/pl/LC_MESSAGES/gmpc.mo
 share/locale/ru/LC_MESSAGES/gmpc.mo
 share/pixmaps/gmpc.png
-@dirrm share/gmpc/hicolor/48x48/actions
-@dirrm share/gmpc/hicolor/48x48
-@dirrm share/gmpc/hicolor/32x32/actions
-@dirrm share/gmpc/hicolor/32x32
-@dirrm share/gmpc/hicolor/22x22/actions
-@dirrm share/gmpc/hicolor/22x22
-@dirrm share/gmpc/hicolor/16x16/actions
-@dirrm share/gmpc/hicolor/16x16
-@dirrm share/gmpc/hicolor
-@dirrm include/gmpc
-@dirrm share/gmpc
+@dirrmtry %%DATADIR%%/hicolor/48x48/actions
+@dirrmtry %%DATADIR%%/hicolor/48x48
+@dirrmtry %%DATADIR%%/hicolor/32x32/actions
+@dirrmtry %%DATADIR%%/hicolor/32x32
+@dirrmtry %%DATADIR%%/hicolor/22x22/actions
+@dirrmtry %%DATADIR%%/hicolor/22x22
+@dirrmtry %%DATADIR%%/hicolor/16x16/actions
+@dirrmtry %%DATADIR%%/hicolor/16x16
+@dirrmtry %%DATADIR%%/hicolor
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrm include/gmpc
