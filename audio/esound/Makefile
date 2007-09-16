@@ -42,5 +42,6 @@ post-install:
 	else \
 		${INSTALL_DATA} ${WRKSRC}/esd.conf ${PREFIX}/etc/esd.conf.default; \
 	fi
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
