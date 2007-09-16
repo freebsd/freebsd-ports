@@ -198,6 +198,7 @@
     SUBDIR += gmidimonitor
     SUBDIR += gmixer
     SUBDIR += gmpc
+    SUBDIR += gmpc-magnatune
     SUBDIR += gmpc-mdcover
     SUBDIR += gmpc-osd
     SUBDIR += gmpc-qosd

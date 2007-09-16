@@ -1,0 +1,6 @@
+share/gmpc/plugins/magnatune/magnatune.png
+share/gmpc/plugins/magnatune/xdg-open
+share/gmpc/plugins/magnatuneplugin.so
+@dirrmtry share/gmpc/plugins/magnatune
+@dirrmtry share/gmpc/plugins
+@dirrmtry share/gmpc
