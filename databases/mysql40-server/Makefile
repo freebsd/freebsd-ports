@@ -64,31 +64,20 @@ CONFIGURE_ARGS+=--with-named-thread-libs='-DHAVE_GLIBC2_STYLE_GETHOSTBYNAME_R
 CONFIGURE_ARGS+=-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
 CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE
 CFLAGS+=	-I${LOCALBASE}/include/pthread/linuxthreads
-.if ${OSVERSION} > 500000
 LIB_DEPENDS+=	lthread.[35]:${PORTSDIR}/devel/linuxthreads
 CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r -llstdc++ -llsupc++'
-.else
-LIB_DEPENDS+=	lthread.[24]:${PORTSDIR}/devel/linuxthreads
-CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r'
-.endif
 .else
 CONFIGURE_ARGS+=--with-named-thread-libs=${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 
-.if ${OSVERSION} < 500000
-CXX=		${CC}
+.if ${OSVERSION} >= 700000
+IGNORE=		obsolete and does not build with gcc4.2; use mysql 5 or later
 .endif
 .if defined(BUILD_OPTIMIZED)
-CFLAGS+=	-O3 -fno-omit-frame-pointer
-.if ${OSVERSION} > 500000 || (defined(USE_GCC) && (${USE_GCC} == 3.0 || ${USE_GCC} == 3.1 || ${USE_GCC} == 3.2 || ${USE_GCC} == 3.3))
-CFLAGS+=	-fno-gcse
+CFLAGS+=	-O3 -fno-omit-frame-pointer -fno-gcse
 .endif
-.endif
-CXXFLAGS+=	${CFLAGS} -felide-constructors -fno-rtti
-.if ${OSVERSION} >= 400002
-CXXFLAGS+=	-fno-exceptions
-.endif
+CXXFLAGS+=	${CFLAGS} -felide-constructors -fno-rtti -fno-exceptions
 
 # MySQL-Server part
 .if !defined(CLIENT_ONLY) && !defined(SCRIPTS_ONLY)
