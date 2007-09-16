@@ -7,7 +7,7 @@
 
 PORTNAME=	slime
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://common-lisp.net/project/slime/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,6 @@ COMMENT=	Superior Lisp Interaction Mode for Emacs
 
 USE_GMAKE=	yes
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 
 INFO=		slime
 PORTDOCS=	ChangeLog HACKING NEWS PROBLEMS README
