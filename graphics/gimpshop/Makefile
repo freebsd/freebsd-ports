@@ -7,7 +7,7 @@
 
 PORTNAME=	gimpshop
 PORTVERSION=	2.2.11
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.plasticbugs.com/blogimg/ \
 		http://freebsd.powered.net/distfiles/
@@ -40,7 +40,8 @@ PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl \
 		--with-html-dir=${DOCSDIR} \
 		--disable-gtk-doc \
-		--enable-static
+		--enable-static \
+		--disable-print
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
@@ -51,7 +52,6 @@ MAN5=	gimprc.5 gimprc-2.2.5
 
 OPTIONS=	DEBUG "debugging" off \
 		PYTHON "Python-Fu support" off \
-		PRINT "GIMP printing" on \
 		HTML_HELP_BROWSER "GIMP help browser" on \
 		MP "multiple processor support" off
 
@@ -72,14 +72,6 @@ PLIST_SUB+=		PYTHON:=""
 .else
 CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=		PYTHON:="@comment "
-.endif
-
-.if defined(WITHOUT_PRINT)
-CONFIGURE_ARGS+=	--disable-print
-PLIST_SUB+=		PRINT="@comment "
-.else
-LIB_DEPENDS+=		gimpprint.2:${PORTSDIR}/print/gimp-print
-PLIST_SUB+=		PRINT=""
 .endif
 
 .if defined(WITH_MP)
