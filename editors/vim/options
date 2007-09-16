@@ -1,0 +1,10 @@
+OPTIONS=	PERL "Enable Perl interpreter" off \
+		PYTHON "Enable Python interpreter" off \
+		RUBY "Enable Ruby interpreter" off \
+		CSCOPE "Enable cscope" off \
+		EXUBERANT_CTAGS "Use exctags instead of ctags" off \
+		ATHENA "Athena GUI" off \
+		GTK2 "GTK2 GUI" off \
+		GNOME "Gnome1 GUI" off \
+		MOTIF "Motif GUI" off \
+		XTERM_SAVE "" off
