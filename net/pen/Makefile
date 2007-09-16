@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pen
-PORTVERSION=	0.17.1
+PORTVERSION=	0.17.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://siag.nu/pub/pen/ \
 		http://siag.nu/pub/pen/
@@ -18,7 +18,7 @@ GNU_CONFIGURE=		yes
 USE_OPENSSL=		yes
 USE_RC_SUBR=		pen.sh
 CONFIGURE_ARGS=		--with-daemon --with-docdir=${DOCSDIR} \
-			--with-ssl=${OPENSSLBASE} --with-kqueue
+			--with-ssl=${OPENSSLBASE}
 
 PORTDOCS=		penstats HOWTO AUTHORS README ChangeLog COPYING
 PLIST_FILES=		bin/mergelogs bin/pen bin/penctl bin/penlog \
@@ -30,6 +30,8 @@ CONFIGURE_ARGS+=	--with-fd_setsize=${WITH_FDSETSIZE}
 
 .if defined(WITH_POLL)
 CONFIGURE_ARGS+=	--with-poll
+.else
+CONFIGURE_ARGS+=	--with-kqueue
 .endif
 
 .if defined(NOPORTDOCS)
