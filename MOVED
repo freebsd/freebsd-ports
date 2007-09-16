@@ -3218,3 +3218,6 @@ devel/gnu-autoconf||2007-09-10|No longer required with new autotools system
 devel/gnu-automake||2007-09-10|No longer required with new autotools system
 devel/cedet-emacs22||2007-09-11|devel/cedet now defaults to emacs22
 games/urbanterror|games/urbanterror-data|2007-09-14|Renamed for consistency
+graphics/gimp1|graphics/gimp|2007-09-16|Obsoleted by newer version
+print/gimp-print|print/gutenprint|2007-09-16|Project renamed
+graphics/gimp-pmosaic||2007-09-16|Depends on obsolete graphics/gimp1
