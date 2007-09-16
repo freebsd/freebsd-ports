@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bmpx
-PORTVERSION=	0.40.3
+PORTVERSION=	0.40.5.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.beep-media-player.org/releases/0.40/
 

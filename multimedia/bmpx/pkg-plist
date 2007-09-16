@@ -143,6 +143,8 @@ share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/images/logo-about.png
 %%DATADIR%%/images/audio-default.png
 %%DATADIR%%/images/throbber.gif
+%%DATADIR%%/images/throbber-small.gif
+%%DATADIR%%/images/throbber-square.gif
 %%DATADIR%%/images/svg/button-background.svg
 %%DATADIR%%/images/svg/button-outline.svg
 %%DATADIR%%/images/stock/approve-partial.png
@@ -214,9 +216,9 @@ share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/images/podcast/updating.png
 %%DATADIR%%/images/main/paused.gif
 %%DATADIR%%/images/lastfm/audioscrobbler.png
-%%DATADIR%%/images/lastfm/header-logo-left.png
-%%DATADIR%%/images/lastfm/header-logo-right.png
-%%DATADIR%%/images/lastfm/header-logo-slice.png
+@comment %%DATADIR%%/images/lastfm/header-logo-left.png
+@comment %%DATADIR%%/images/lastfm/header-logo-right.png
+@comment %%DATADIR%%/images/lastfm/header-logo-slice.png
 %%DATADIR%%/images/lastfm/lastfm-album.png
 %%DATADIR%%/images/lastfm/lastfm-artist.png
 %%DATADIR%%/images/lastfm/lastfm-friend.png
@@ -228,6 +230,7 @@ share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/images/lastfm/lastfm-tag.png
 %%DATADIR%%/images/lastfm/lastfm-track.png
 %%DATADIR%%/images/lastfm/lastfm-user.png
+%%DATADIR%%/images/lastfm/artist-unknown.png
 %%DATADIR%%/images/cdda/audiocd-big.png
 %%DATADIR%%/images/cdda/audiocd-unplayable.png
 share/dbus-1/services/org.beepmediaplayer.sentinel.service
