@@ -6,28 +6,21 @@
 #
 
 PORTNAME=	gmpccaa
-PORTVERSION=	0.1.0
-PORTREVISION=	2
+PORTVERSION=	0.15.0
 CATEGORIES=	audio
-MASTER_SITES=	http://download.qballcow.nl/programs/gmpc-0.13/Plugins/
+MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION}/plugins/
+DISTNAME=	gmpc-coveramazon-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Amazon cover art provider for gmpc
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
 		curl.4:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPEND=	gmpc:${PORTSDIR}/audio/gmpc
 
-BROKEN=		Does not compile with gmpc 0.15.0
-
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
+USE_GNOME=	gnomehack
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
