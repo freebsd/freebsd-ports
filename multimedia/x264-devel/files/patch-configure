@@ -1,25 +1,16 @@
---- configure.orig	Tue Oct 24 16:45:02 2006
-+++ configure	Wed Oct 25 08:21:32 2006
-@@ -113,8 +113,6 @@
-     HAVE_GETOPT_LONG=0
-     ;;
-   *)
--    echo "Unknown system $MACHINE, edit the configure"
--    exit 1
-     ;;
- esac
- 
-@@ -134,7 +132,7 @@
-       ASFLAGS="$ASFLAGS -f elf"
+--- configure.orig	2007-09-13 16:45:04.000000000 -0400
++++ configure	2007-09-14 10:39:22.000000000 -0400
+@@ -252,7 +252,7 @@
      fi
+     as_check || AS="nasm"
      ;;
 -  x86_64)
 +  x86_64 | amd64)
      ARCH="X86_64"
-     CFLAGS="$CFLAGS -DHAVE_MMXEXT -DHAVE_SSE2"
      AS="yasm"
-@@ -283,7 +281,7 @@
-     esac
+     ASFLAGS="-f elf -m amd64"
+@@ -361,7 +361,7 @@
+     LDFLAGS="$LDFLAGS $libpthread"
  fi
  
 -MP4_LDFLAGS="-lgpac_static"
@@ -27,7 +18,7 @@
  if [ $SYS = CYGWIN -o $SYS = MINGW ]; then
      MP4_LDFLAGS="$MP4_LDFLAGS -lwinmm"
  fi
-@@ -363,7 +361,8 @@
+@@ -443,7 +443,8 @@
  cp config.mak gtk/config.mak
  
  if [ "$shared" = "yes" ]; then
