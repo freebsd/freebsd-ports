@@ -1,5 +1,14 @@
---- src/Configure.orig	Thu May 31 12:16:27 2007
-+++ src/Configure	Thu May 31 12:20:30 2007
+--- src/Configure.orig	Sun Sep 16 21:36:49 2007
++++ src/Configure	Sun Sep 16 21:36:51 2007
+@@ -457,7 +457,7 @@
+     	PLATOSVERS=`echo $PLAT | sed 's/^.*freebsd//'`
+ 	OS="FreeBSD $PLATOSVERS"
+ 	case "$PLATOSVERS" in
+-	    [23456]*)
++	    [2-9]*)
+ 		DEF_WANTHSREGEX=no
+ 		CFLAGS="$CFLAGS -funsigned-char"
+ 		;;
 @@ -968,8 +968,8 @@
  
  for uppercase in "tr [a-z] [A-Z]" "tr [:lower:] [:upper:]" "sed y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/"
@@ -11,3 +20,12 @@
    esac
  done
  echo " + using \"$uppercase\" to uppercase"
+@@ -1080,7 +1080,7 @@
+ 	    ;;
+ 	*-freebsd[3-9]*)
+ 		LD_SHLIB="gcc"
+-	    CFLAGS_SHLIB="-fpic"
++	    CFLAGS_SHLIB="-fPIC"
+ 	    LDFLAGS_SHLIB="-shared"
+ 	    LDFLAGS_MOD_SHLIB=$LDFLAGS_SHLIB
+ 	    OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout` 
