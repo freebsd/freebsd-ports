@@ -195,8 +195,6 @@
     SUBDIR += gimp-help
     SUBDIR += gimp-manual-html
     SUBDIR += gimp-manual-pdf
-    SUBDIR += gimp-pmosaic
-    SUBDIR += gimp1
     SUBDIR += gimpshop
     SUBDIR += giram
     SUBDIR += gkrellkam
