@@ -1,0 +1,3 @@
+share/gmpc/plugins/lyricsplugin.so
+@dirrm share/gmpc/plugins
+@dirrm share/gmpc
