@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	crystalentitylayer
-PORTVERSION=	0.99
-PORTREVISION=	5
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cel
-DISTNAME=	cel-pseudo-stable-2006-01-27
+DISTNAME=	cel-src-${PORTVERSION}
 DIST_SUBDIR=	crystalspace
 
 MAINTAINER=	acm@FreeBSD.org
@@ -28,12 +27,12 @@ GNU_CONFIGURE=	yes
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 CONFIGURE_ARGS+=	--with-cs-prefix=${LOCALBASE}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS} ${CXX}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 DOCSDIR=	share/doc/cel-${PORTVERSION}
 DATADIR=	share/cel
 PLIST_SUB+=	DOCSDIR=${DOCSDIR} \
 		DATADIR=${DATADIR}
-WRKSRC=	${WRKDIR}/cel
 
 JAM_CMD=	${LOCALBASE}/bin/jam
 JAM_ARGS=	-qa
@@ -72,7 +71,7 @@ CONFIGURE_ARGS+=	--without-bfd
 
 post-configure:
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 61d ${WRKSRC}/Jamfile
+	@${REINPLACE_CMD} -e 63d ${WRKSRC}/Jamfile
 .endif
 
 do-build:
