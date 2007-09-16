@@ -3778,6 +3778,7 @@ gmines		ports/games/gmines
 gmixer		ports/audio/gmixer
 gmp-ecm		ports/math/gmp-ecm
 gmpc		ports/audio/gmpc
+gmpc-qosd	ports/audio/gmpc-qosd
 gmpc-serverstats	ports/audio/gmpc-serverstats
 gmpccaa		ports/audio/gmpccaa
 gmrun		ports/x11/gmrun
