@@ -203,6 +203,7 @@
     SUBDIR += gmpc-osd
     SUBDIR += gmpc-qosd
     SUBDIR += gmpc-serverstats
+    SUBDIR += gmpc-stopbutton
     SUBDIR += gmpccaa
     SUBDIR += gnapster
     SUBDIR += gnomad2
