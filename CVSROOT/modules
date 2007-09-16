@@ -3780,6 +3780,7 @@ gmp-ecm		ports/math/gmp-ecm
 gmpc		ports/audio/gmpc
 gmpc-autoplaylist	ports/audio/gmpc-autoplaylist
 gmpc-lastfm	ports/audio/gmpc-lastfm
+gmpc-lyrics	ports/audio/gmpc-lyrics
 gmpc-magnatune	ports/audio/gmpc-magnatune
 gmpc-mdcover	ports/audio/gmpc-mdcover
 gmpc-osd	ports/audio/gmpc-osd
