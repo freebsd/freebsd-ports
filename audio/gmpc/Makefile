@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gmpc
-PORTVERSION=	0.15.0
+PORTVERSION=	0.15.1
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/gmpc-0.15.0/ \
+MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION}/ \
 		http://download.gna.org/kanicule/freebsd/distfiles/
 
 MAINTAINER=	mathias@monnerville.com
@@ -20,7 +20,7 @@ LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	libglade2 gnomevfs2
+USE_GNOME=	libglade2 gnomevfs2 gnomehack
 USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -42,9 +42,5 @@ CONFIGURE_ARGS+=	--disable-mmkeys
 .if defined(WITHOUT_TRAY)
 CONFIGURE_ARGS+=	--disable-trayicon
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,g' \
-		${WRKSRC}/data/Makefile.in
 
 .include <bsd.port.post.mk>
