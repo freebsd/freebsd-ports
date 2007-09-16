@@ -3783,6 +3783,7 @@ gmpc-mdcover	ports/audio/gmpc-mdcover
 gmpc-osd	ports/audio/gmpc-osd
 gmpc-qosd	ports/audio/gmpc-qosd
 gmpc-serverstats	ports/audio/gmpc-serverstats
+gmpc-stopbutton	ports/audio/gmpc-stopbutton
 gmpccaa		ports/audio/gmpccaa
 gmrun		ports/x11/gmrun
 gmsh		ports/cad/gmsh
