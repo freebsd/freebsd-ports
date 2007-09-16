@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2007-07-12
-PORTREVISION=	3
+DISTVERSION=	2007-09-14
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -41,7 +40,7 @@ PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	yes
 
 ##
-DOC_FILES=	COPYING Changelog README
+DOC_FILES=	Changelog README
 # under subdir doc
 DOC_DOCFILES=	TODO faq.html ffmpeg-doc.html \
 		ffplay-doc.html ffserver-doc.html \
@@ -273,10 +272,6 @@ post-patch:
 		-e 's|^(texi2html=)no|\1yes|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
-	@${FIND} ${WRKSRC} -type f -print0 | \
-		${XARGS} -0 -n 5 -x ${REINPLACE_CMD} -E \
-		-e 's|malloc\.h|stdlib\.h|' \
-		-e 's|^.*please_use_av_log.*$$||'
 	@${REINPLACE_CMD} -e 's|-ldl||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .if defined(WITH_IMLIB2) && !defined(WITHOUT_IMLIB2)
@@ -306,6 +301,8 @@ post-patch:
 		-e 's|^([[:space:]]+builtin_vector).*$$|\1=no|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
+	@${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/common.mak
 
 post-configure:
 #.ifdef(WITH_DTS)
