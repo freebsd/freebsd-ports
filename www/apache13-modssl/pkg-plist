@@ -512,6 +512,7 @@ www/data-dist/index.html.zh-tw.big5
 www/cgi-bin-dist/printenv
 www/cgi-bin-dist/test-cgi
 www/icons/README
+www/icons/README.html
 www/icons/a.gif
 www/icons/alert.black.gif
 www/icons/alert.red.gif
@@ -575,7 +576,6 @@ www/icons/right.gif
 www/icons/screw1.gif
 www/icons/screw2.gif
 www/icons/script.gif
-www/icons/small/README.txt
 www/icons/small/back.gif
 www/icons/small/binary.gif
 www/icons/small/binhex.gif
