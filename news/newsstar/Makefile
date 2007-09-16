@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	newsstar
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.2
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,11 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)
 
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=--disable-ssl
 .else
 USE_OPENSSL=	yes
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if exists(/var/spool/s-news)
 CONFIGURE_ARGS+=--with-spool-dir=/var/spool/s-news \
@@ -35,7 +39,7 @@ CONFIGURE_ARGS+=--with-sn-spool-dir=/var/spool/news \
 CONFIGURE_ARGS+=--with-inn-path=${LOCALBASE}/news/bin
 .endif
 
-CONFIGURE_ARGS+=--prefix=${PREFIX} \
+CONFIGURE_ARGS+=--prefix=${PREFIX} --mandir=${PREFIX}/man \
 		--with-conf-dir=${PREFIX}/etc/newsstar \
 		--with-rc-dir=/var/spool/newsstar/lib \
 		--with-incoming-dir=/var/spool/newsstar/incoming
@@ -67,4 +71,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
