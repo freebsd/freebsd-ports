@@ -137,9 +137,9 @@ for i in $@; do
 	if [ ${origin} = unknown ]; then
 		if [ -f ${lib_pathname} ]; then
 			port=$(pkg_which "${lib_pathname}")
-			if [ -f /var/db/pkg/$port/+CONTENTS ]; then
+			if [ -f $PKG_DBDIR/$port/+CONTENTS ]; then
 				origin=$(grep "@comment ORIGIN:" \
-					/var/db/pkg/$port/+CONTENTS \
+					$PKG_DBDIR/$port/+CONTENTS \
 					| sed -e 's/@comment ORIGIN://')
 			else
 				result="${lib} ($i) not found, unknown origin"
