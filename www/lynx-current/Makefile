@@ -16,6 +16,8 @@ COMMENT=	A non-graphical, text-based World-Wide Web client
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
+CONFLICTS=	lynx-2.8.[0-6].*
+
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-7
 USE_BZIP2=	yes
 USE_ICONV=	yes
