@@ -14689,6 +14689,7 @@ signing-party	ports/security/signing-party
 sigrot		ports/mail/sigrot
 sigslot		ports/devel/sigslot
 silc-client	ports/net/silc-client
+silc-irssi-plugin	ports/net/silc-irssi-plugin
 silc-server	ports/net/silc-server
 silc-toolkit	ports/devel/silc-toolkit
 silktools	ports/security/silktools
