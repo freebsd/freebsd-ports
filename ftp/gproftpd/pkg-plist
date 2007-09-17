@@ -10,7 +10,9 @@ share/pixmaps/gproftpd/gproftpd32.png
 share/pixmaps/gproftpd/gproftpd36.xpm
 share/pixmaps/gproftpd/gproftpd48.png
 share/pixmaps/gproftpd/gproftpd64.png
+share/applications/net-gproftpd.desktop
 @dirrm share/pixmaps/gproftpd
 @exec mkdir -p %%WWWDIR%%
 @dirrmtry %%WWWDIR%%
+@dirrmtry share/applications
 @dirrm etc/gproftpd

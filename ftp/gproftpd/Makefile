@@ -7,6 +7,7 @@
 
 PORTNAME=	gproftpd
 PORTVERSION=	8.3.2
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://mange.dynalias.org/linux/gproftpd/
 
@@ -34,8 +35,11 @@ post-configure:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
+	@${INSTALL} -d ${PREFIX}/share/applications
+	@${INSTALL_DATA} ${WRKSRC}/desktop/net-gproftpd.desktop \
+		${PREFIX}/share/applications
 
 .include <bsd.port.mk>
