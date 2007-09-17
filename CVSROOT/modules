@@ -8337,6 +8337,7 @@ numlockx	ports/x11/numlockx
 nunnimcax	ports/textproc/nunnimcax
 nuppelvideo	ports/multimedia/nuppelvideo
 nurbs++		ports/graphics/nurbs++
+nusoap		ports/net/nusoap
 nut		ports/sysutils/nut
 nut-libupsclient	ports/sysutils/nut-libupsclient
 nut-snmp	ports/sysutils/nut-snmp
