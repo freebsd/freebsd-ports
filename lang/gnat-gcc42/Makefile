@@ -1,17 +1,18 @@
 # ex:ts=8
 #
-# Ports collection makefile for:   gnat-gcc
-# Date created:         9 Jul 2006
-# Whom:                 Karel Miklav <karel@lovetemple.net>
+# Ports collection makefile for: gnat-gcc
+# Date created:		9 Jul 2006
+# Whom:			Karel Miklav <karel@lovetemple.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=		gnat-gcc
-PORTVERSION=		4.2.0
+PORTVERSION=		4.2.2
 CATEGORIES=		lang
 MASTER_SITES=		GCC/snapshots/${versionstring} \
-			CENKES:boot http://lovetemple.net/data/:boot
+			CENKES:boot \
+			http://lovetemple.net/data/:boot
 DISTFILES=		gcc-core-${versionstring}${EXTRACT_SUFX} \
 			gcc-ada-${versionstring}${EXTRACT_SUFX} \
 			gcc-testsuite-${versionstring}${EXTRACT_SUFX} \
@@ -50,7 +51,11 @@ LATEST_LINK=		${PORTNAME}${gcc_suffix}
 
 .include <bsd.port.pre.mk>
 
-gcc_snapshot=		20070307
+.if ${OSVERSION} >= 700042
+BROKEN=			Broken with gcc 4.2
+.endif
+
+gcc_snapshot=		20070822
 versionstring=		${PORTVERSION:C/\.[0-9]*$//}-${gcc_snapshot}
 srcdir=			${WRKDIR}/gcc-${versionstring}
 gcc_suffix=		42
@@ -59,6 +64,7 @@ fsf_suffix=		-${PORTNAME}${gcc_suffix}
 targlib=		${PREFIX}/lib/gcc-${PORTVERSION}
 gcc_link=		${PREFIX}/bin/gcc${gcc_suffix}/gcc
 boot_stamp=		${ARCH}-freebsd-${OSREL:C/\.[0-9.]*//}
+check_target=		check # XXX
 
 PATCH_WRKSRC=		${srcdir}
 
