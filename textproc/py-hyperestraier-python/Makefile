@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	hyperestraier
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP \
 		http://www.liris.org/tech/program/hyperestraier-purepython/
@@ -19,6 +19,5 @@ COMMENT=	Pure Python HyperEstraier library
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGVERSION=	0.9.1
 
 .include <bsd.port.mk>
