@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	4.2.180.1134
+PORTVERSION=	4.2.198.2451
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/current/
 DISTFILES=	${TARGET_DISTFILE}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Explore, Search and Discover
 
 EXTRACT_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
@@ -26,7 +26,7 @@ USE_LINUX=	yes
 USE_GNOME=	desktopfileutils
 
 REAL_DISTFILE=		GoogleEarthLinux.bin
-TARGET_DISTFILE=	GoogleEarthLinux.bin
+TARGET_DISTFILE=	GoogleEarthLinux-${PORTVERSION}.bin
 
 FETCH_CMD=	/usr/bin/fetch -ARm
 FETCH_BEFORE_ARGS=	-o ${TARGET_DISTFILE}
