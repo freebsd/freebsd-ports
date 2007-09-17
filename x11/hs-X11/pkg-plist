@@ -1,0 +1,27 @@
+%%SUBDIR%%/Graphics/X11/Xlib/Atom.hi
+%%SUBDIR%%/Graphics/X11/Xlib/Color.hi
+%%SUBDIR%%/Graphics/X11/Xlib/Context.hi
+%%SUBDIR%%/Graphics/X11/Xlib/Display.hi
+%%SUBDIR%%/Graphics/X11/Xlib/Event.hi
+%%SUBDIR%%/Graphics/X11/Xlib/Font.hi
+%%SUBDIR%%/Graphics/X11/Xlib/Misc.hi
+%%SUBDIR%%/Graphics/X11/Xlib/Region.hi
+%%SUBDIR%%/Graphics/X11/Xlib/Screen.hi
+%%SUBDIR%%/Graphics/X11/Xlib/Types.hi
+%%SUBDIR%%/Graphics/X11/Xlib/Window.hi
+%%SUBDIR%%/Graphics/X11/Xlib/Image.hi
+%%SUBDIR%%/Graphics/X11/Types.hi
+%%SUBDIR%%/Graphics/X11/Xlib.hi
+%%SUBDIR%%/Graphics/X11.hi
+%%SUBDIR%%/libHSX11-%%PORTVERSION%%.a
+%%SUBDIR%%/HSX11-%%PORTVERSION%%.o
+%%SUBDIR%%/include/HsXlib.h
+%%SUBDIR%%/%%PORTNAME%%-register.sh
+@dirrm %%SUBDIR%%/Graphics/X11/Xlib
+@dirrm %%SUBDIR%%/Graphics/X11
+@dirrmtry %%SUBDIR%%/Graphics
+@dirrmtry %%SUBDIR%%/include
+@exec /bin/sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister X11
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
