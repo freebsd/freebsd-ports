@@ -10,6 +10,7 @@ UNITDIR=		lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${EXTRACTUNITDIR}
 OPT=-CX
 
+MAKE_ENV+=	PP=${LOCALBASE}/bin/ppc386
 
 .if !exists(${LOCALBASE}/bin/fpcmake)
 EXTRACTUNITDIR+=	fpc-bin
