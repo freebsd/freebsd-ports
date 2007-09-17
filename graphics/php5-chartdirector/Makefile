@@ -7,9 +7,9 @@
 
 PORTNAME=	chartdirector
 PORTVERSION=	4.1
-CATEGORIES=	graphics
+CATEGORIES?=	graphics
 MASTER_SITES=	http://download2.advsofteng.com/
-PKGNAMEPREFIX=	php${PHP_VER}-
+PKGNAMEPREFIX?=	php5-
 
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	ChartDirector Chart Component for PHP ${PHP_VER}
