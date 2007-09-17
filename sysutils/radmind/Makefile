@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	radmind
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	paul@aps.org
 COMMENT=	Utility for administering filesystem changes
