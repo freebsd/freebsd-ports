@@ -6,6 +6,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	6.6.1
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot \
@@ -45,32 +46,11 @@ IGNORE=		unsupported at the moment
 .endif
 
 USE_AUTOTOOLS=	autoconf:259:env
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4 \
-		readline.5:${PORTSDIR}/devel/readline
+LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--disable-x11 --disable-hgl --disable-opengl --disable-glut
-PLIST_SUB+=	X11="@comment "
-PKGNAMESUFFIX=	-nox11
-.else
-LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
-USE_GL=		yes
-PLIST_SUB+=	X11=""
-.endif
-
-.if defined(WITH_OPENAL)
-BROKEN=		Unsupported/does not build
-PLIST_SUB+=	OPENAL=""
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
-CONFIGURE_ARGS+=--enable-openal
-.else
-CONFIGURE_ARGS+=--without-openal
-PLIST_SUB+=	OPENAL="@comment "
-.endif
 
 PLIST_SUB+=	GHC_VERSION=${PORTVERSION}
 .if defined(WITHOUT_PROFILE)
@@ -94,11 +74,13 @@ CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 # to build some of the larger libraries.
 TMPDIR=		${WRKSRC}/tmp
 MAKE_ENV+=	TMPDIR=${TMPDIR}
+EXCLUDELIBS=	ALUT GLUT HGL OpenAL OpenGL X11
 
-.if defined(WITHOUT_PROFILE)
 post-extract:
+.if defined(WITHOUT_PROFILE)
 	@${ECHO} >>${WRKSRC}/mk/build.mk GhcLibWays=
 .endif
+	@cd ${WRKSRC}/libraries && ${RM} -rf ${EXCLUDELIBS}
 
 post-patch:
 	@${REINPLACE_CMD} s+%%LOCALBASE%%+${LOCALBASE}+ \
@@ -112,5 +94,9 @@ pre-configure:
 
 pre-build:
 	@${MKDIR} ${TMPDIR}
+
+post-install:
+	@${RMDIR} ${PREFIX}/lib/ghc-${PORTVERSION}/imports/cbits	# empty/unused
+	@${MKDIR} ${PREFIX}/lib/ghc-${PORTVERSION}/cabal		# cabalised hs-foo-ghc ports
 
 .include <bsd.port.post.mk>

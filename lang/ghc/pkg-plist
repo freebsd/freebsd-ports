@@ -11,15 +11,8 @@ bin/ghcprof
 bin/runghc
 bin/runhaskell
 lib/ghc-%%GHC_VERSION%%/HSCabal.o
-%%X11%%lib/ghc-%%GHC_VERSION%%/HSGLUT.o
-%%X11%%lib/ghc-%%GHC_VERSION%%/HSGLUT_cbits.o
-%%X11%%lib/ghc-%%GHC_VERSION%%/HSHGL.o
 lib/ghc-%%GHC_VERSION%%/HSHUnit.o
-%%X11%%lib/ghc-%%GHC_VERSION%%/HSOpenGL.o
-%%X11%%lib/ghc-%%GHC_VERSION%%/HSOpenGL_cbits.o
 lib/ghc-%%GHC_VERSION%%/HSQuickCheck.o
-%%X11%%lib/ghc-%%GHC_VERSION%%/HSX11.o
-%%X11%%lib/ghc-%%GHC_VERSION%%/HSX11_cbits.o
 lib/ghc-%%GHC_VERSION%%/HSbase.o
 lib/ghc-%%GHC_VERSION%%/HSbase_cbits.o
 lib/ghc-%%GHC_VERSION%%/HScgi.o
@@ -582,300 +575,6 @@ lib/ghc-%%GHC_VERSION%%/imports/GHC/Weak.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Weak.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/GHC/Word.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Word.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Core.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Core.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw/Brush.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw/Brush.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw/Font.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw/Font.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw/Monad.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw/Monad.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw/Pen.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw/Pen.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw/Picture.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw/Picture.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw/Region.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw/Region.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw/Text.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw/Text.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Internals/Draw.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Internals/Draw.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Internals/Event.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Internals/Event.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Internals/Events.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Internals/Events.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Internals/Flag.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Internals/Flag.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Internals/Types.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Internals/Types.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Internals/Utilities.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Internals/Utilities.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Key.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Key.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Run.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Run.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Units.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Units.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Utils.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Utils.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Window.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Window.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/X11/DC.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/X11/DC.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/X11/Display.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/X11/Display.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/X11/Timer.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/X11/Timer.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/X11/Types.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/X11/Types.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/X11/Window.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/X11/Window.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Antialiasing.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Antialiasing.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BasicTypes.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BasicTypes.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BeginEnd.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BeginEnd.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Bitmaps.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Bitmaps.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BlendingFactor.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BlendingFactor.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BufferMode.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BufferMode.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BufferObjects.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BufferObjects.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Capability.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Capability.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Clipping.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Clipping.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ColorSum.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ColorSum.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Colors.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Colors.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ControlPoint.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ControlPoint.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ComparisonFunction.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ComparisonFunction.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/CoordTrans.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/CoordTrans.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/DataType.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/DataType.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/DisplayLists.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/DisplayLists.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Domain.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Domain.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/EdgeFlag.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/EdgeFlag.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Evaluators.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Evaluators.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Exception.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Exception.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Extensions.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Extensions.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Face.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Face.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Feedback.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Feedback.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/FlushFinish.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/FlushFinish.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Fog.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Fog.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Framebuffer.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Framebuffer.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/GLboolean.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/GLboolean.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Hints.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Hints.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/IOState.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/IOState.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/LineSegments.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/LineSegments.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PeekPoke.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PeekPoke.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PerFragment.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PerFragment.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelData.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelData.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelFormat.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelFormat.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/ColorTable.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/ColorTable.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Convolution.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Convolution.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Histogram.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Histogram.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Minmax.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Minmax.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelMap.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelMap.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelStorage.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelStorage.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelTransfer.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelTransfer.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Rasterization.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Rasterization.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Reset.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Reset.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Sink.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Sink.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PointParameter.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PointParameter.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Points.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Points.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PolygonMode.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PolygonMode.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Polygons.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Polygons.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PrimitiveMode.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PrimitiveMode.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/QueryUtils.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/QueryUtils.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/RasterPos.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/RasterPos.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ReadCopyPixels.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ReadCopyPixels.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Rectangles.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Rectangles.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/RenderMode.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/RenderMode.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/SavingState.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/SavingState.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Selection.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Selection.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Shaders.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Shaders.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/StateVar.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/StateVar.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/StringQueries.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/StringQueries.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Application.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Application.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Environments.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Environments.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Objects.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Objects.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Parameters.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Parameters.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/PixelInternalFormat.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/PixelInternalFormat.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Queries.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Queries.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Specification.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Specification.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/TexParameter.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/TexParameter.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/TextureTarget.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/TextureTarget.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/TextureUnit.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/TextureUnit.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/VertexArrays.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/VertexArrays.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/VertexSpec.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/VertexSpec.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Errors.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Errors.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/ErrorsInternal.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/ErrorsInternal.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Initialization.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Initialization.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Matrix.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Matrix.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Mipmapping.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Mipmapping.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/NURBS.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/NURBS.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Quadrics.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Quadrics.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Tessellation.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Tessellation.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/SOE.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/SOE.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Begin.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Begin.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks/Global.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks/Global.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks/Registration.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks/Registration.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks/Window.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks/Window.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Colormap.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Colormap.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Constants.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Constants.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Debugging.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Debugging.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/DeviceControl.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/DeviceControl.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Extensions.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Extensions.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Fonts.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Fonts.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/GameMode.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/GameMode.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Initialization.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Initialization.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Menu.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Menu.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Objects.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Objects.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Overlay.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Overlay.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/QueryUtils.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/QueryUtils.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/State.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/State.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Types.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Types.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Window.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Window.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Types.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Types.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Atom.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Atom.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Color.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Color.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Context.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Context.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Display.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Display.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Event.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Event.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Font.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Font.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Image.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Image.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Misc.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Misc.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Region.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Region.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Screen.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Screen.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Types.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Types.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Window.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib/Window.p_hi
-%%X11%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11.hi
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/IO.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/IO.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Int.hi
@@ -1426,22 +1125,14 @@ lib/ghc-%%GHC_VERSION%%/include/Hooks.h
 lib/ghc-%%GHC_VERSION%%/include/HsBase.h
 lib/ghc-%%GHC_VERSION%%/include/HsBaseConfig.h
 lib/ghc-%%GHC_VERSION%%/include/HsFFI.h
-%%X11%%lib/ghc-%%GHC_VERSION%%/include/HsGLUT.h
-%%X11%%lib/ghc-%%GHC_VERSION%%/include/HsGLUTConfig.h
-%%X11%%lib/ghc-%%GHC_VERSION%%/include/HsGLUTExt.h
 lib/ghc-%%GHC_VERSION%%/include/HsNet.h
 lib/ghc-%%GHC_VERSION%%/include/HsNetworkConfig.h
-%%X11%%lib/ghc-%%GHC_VERSION%%/include/HsOpenGL.h
-%%X11%%lib/ghc-%%GHC_VERSION%%/include/HsOpenGLExt.h
-%%X11%%lib/ghc-%%GHC_VERSION%%/include/HsOpenGLTypes.h
 lib/ghc-%%GHC_VERSION%%/include/HsReadline.h
 lib/ghc-%%GHC_VERSION%%/include/HsReadlineConfig.h
 lib/ghc-%%GHC_VERSION%%/include/HsTime.h
 lib/ghc-%%GHC_VERSION%%/include/HsTimeConfig.h
 lib/ghc-%%GHC_VERSION%%/include/HsUnix.h
 lib/ghc-%%GHC_VERSION%%/include/HsUnixConfig.h
-%%X11%%lib/ghc-%%GHC_VERSION%%/include/HsX11Config.h
-%%X11%%lib/ghc-%%GHC_VERSION%%/include/HsXlib.h
 lib/ghc-%%GHC_VERSION%%/include/InfoTables.h
 lib/ghc-%%GHC_VERSION%%/include/Linker.h
 lib/ghc-%%GHC_VERSION%%/include/Liveness.h
@@ -1490,21 +1181,10 @@ lib/ghc-%%GHC_VERSION%%/include/runProcess.h
 lib/ghc-%%GHC_VERSION%%/include/timeUtils.h
 lib/ghc-%%GHC_VERSION%%/libHSCabal.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSCabal_p.a
-%%X11%%lib/ghc-%%GHC_VERSION%%/libHSGLUT.a
-%%X11%%lib/ghc-%%GHC_VERSION%%/libHSGLUT_cbits.a
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSGLUT_p.a
-%%X11%%lib/ghc-%%GHC_VERSION%%/libHSHGL.a
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSHGL_p.a
 lib/ghc-%%GHC_VERSION%%/libHSHUnit.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSHUnit_p.a
-%%X11%%lib/ghc-%%GHC_VERSION%%/libHSOpenGL.a
-%%X11%%lib/ghc-%%GHC_VERSION%%/libHSOpenGL_cbits.a
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSOpenGL_p.a
 lib/ghc-%%GHC_VERSION%%/libHSQuickCheck.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSQuickCheck_p.a
-%%X11%%lib/ghc-%%GHC_VERSION%%/libHSX11.a
-%%X11%%lib/ghc-%%GHC_VERSION%%/libHSX11_cbits.a
-%%X11%%%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSX11_p.a
 lib/ghc-%%GHC_VERSION%%/libHSbase.a
 lib/ghc-%%GHC_VERSION%%/libHSbase_cbits.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSbase_p.a
@@ -1556,7 +1236,6 @@ lib/ghc-%%GHC_VERSION%%/package.conf
 lib/ghc-%%GHC_VERSION%%/template-hsc.h
 lib/ghc-%%GHC_VERSION%%/unlit
 @dirrm lib/ghc-%%GHC_VERSION%%/include
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/cbits
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Transitional
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Strict
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Frameset
@@ -1589,22 +1268,6 @@ lib/ghc-%%GHC_VERSION%%/unlit
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Language
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11/Xlib
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/X11
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/X11
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Internals
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL/Draw
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/HGL
-%%X11%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/GHC
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Foreign/C
@@ -1648,4 +1311,8 @@ lib/ghc-%%GHC_VERSION%%/unlit
 @dirrm lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc
 @dirrm lib/ghc-%%GHC_VERSION%%/hslibs-imports
 @dirrm lib/ghc-%%GHC_VERSION%%/icons
+@exec mkdir -p %D/lib/ghc-%%GHC_VERSION%%/cabal
+@dirrm lib/ghc-%%GHC_VERSION%%/cabal
 @dirrm lib/ghc-%%GHC_VERSION%%
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf || /usr/bin/true
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old || /usr/bin/true
