@@ -4629,6 +4629,7 @@ hs-hmake		ports/devel/hs-hmake
 hs-hpl		ports/devel/hs-hpl
 hs-idoc		ports/devel/hs-idoc
 hs-tclhaskell-ghc	ports/devel/hs-tclhaskell-ghc
+hs-x11-ghc	ports/x11/hs-x11-ghc
 hsb-aspell	ports/textproc/hsb-aspell
 hsetroot	ports/graphics/hsetroot
 hsftp		ports/ftp/hsftp
