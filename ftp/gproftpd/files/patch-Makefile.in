@@ -1,0 +1,22 @@
+--- Makefile.in.orig	2007-05-18 09:49:49.000000000 -0800
++++ Makefile.in	2007-09-16 13:40:53.000000000 -0800
+@@ -637,19 +637,6 @@
+ 	if test -d $(DESTDIR)$(sysconfdir)/security/console.apps; then \
+ 	   cp etc/security/console.apps/gproftpd $(DESTDIR)$(sysconfdir)/security/console.apps/; \
+ 	fi;   
+-	if test -d $(DESTDIR)$(datadir)/applications; then \
+-	   cp desktop/net-gproftpd.desktop $(DESTDIR)$(datadir)/applications/; \
+-	fi;
+-	if test -d $(DESTDIR)$(datadir)/gnome/apps/Internet; then \
+-	   cp desktop/net-gproftpd.desktop $(DESTDIR)$(datadir)/gnome/apps/Internet/; \
+-	fi;
+-	if test ! -d $(DESTDIR)$(datadir)/doc/gproftpd; then \
+-	   $(mkinstalldirs) $(DESTDIR)$(datadir)/doc/gproftpd; \
+-	   cp AUTHORS $(DESTDIR)$(datadir)/doc/gproftpd/; \
+-	   cp README $(DESTDIR)$(datadir)/doc/gproftpd/; \
+-	   cp ChangeLog $(DESTDIR)$(datadir)/doc/gproftpd/; \
+-	   cp COPYING $(DESTDIR)$(datadir)/doc/gproftpd/; \
+-	fi;
+ 	if test ! -d $(DESTDIR)$(sysconfdir)/gproftpd; then \
+ 	   $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gproftpd; \
+ 	fi;
