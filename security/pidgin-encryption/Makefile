@@ -7,7 +7,7 @@
 
 PORTNAME=	pidgin
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pidgin-encrypt
@@ -18,7 +18,7 @@ MAINTAINER=	perlfu@gmail.com
 COMMENT=	Encryption Plugin for the Pidgin instant messenger client
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
-LIB_DEPENDS=	purple.1:${PORTSDIR}/net-im/libpurple \
+LIB_DEPENDS=	purple.2:${PORTSDIR}/net-im/libpurple \
 		nss3:${PORTSDIR}/security/nss
 
 USE_XLIB=	yes
