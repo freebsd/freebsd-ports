@@ -6,9 +6,9 @@
 #
 
 CATEGORIES=	graphics
+PKGNAMEPREFIX=	php4-
 
 MASTERDIR=	${.CURDIR}/../../graphics/php5-chartdirector
-MASTERDIR=	${.CURDIR}/../php5-chartdirector
 
 IGNORE_WITH_PHP=5
 DEFAULT_PHP_VER=4
