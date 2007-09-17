@@ -1,6 +1,6 @@
 bin/gcombust
-share/doc/gcombust/README
-share/doc/gcombust/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
 share/applications/gcombust.desktop
 share/locale/da/LC_MESSAGES/gcombust.mo
 share/locale/de/LC_MESSAGES/gcombust.mo
@@ -20,4 +20,4 @@ share/locale/sk/LC_MESSAGES/gcombust.mo
 share/locale/sv/LC_MESSAGES/gcombust.mo
 share/pixmaps/gcombust.xpm
 @dirrmtry share/applications
-@dirrm share/doc/gcombust
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
