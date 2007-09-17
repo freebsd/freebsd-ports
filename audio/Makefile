@@ -468,6 +468,7 @@
     SUBDIR += p5-Net-DAAP-DMAP
     SUBDIR += p5-Net-FreeDB
     SUBDIR += p5-Ogg-Vorbis-Header
+    SUBDIR += p5-Ogg-Vorbis-Header-PurePerl
     SUBDIR += p5-Shout
     SUBDIR += p5-Xmms
     SUBDIR += p5-libvorbis
