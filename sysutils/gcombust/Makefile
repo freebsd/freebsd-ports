@@ -7,7 +7,7 @@
 
 PORTNAME=	gcombust
 PORTVERSION=	0.1.55
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
 
@@ -35,8 +35,10 @@ post-configure:
 	cd ${WRKSRC}/po && ${MAKE} update-po
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/gcombust
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gcombust
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/share/doc/gcombust
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
