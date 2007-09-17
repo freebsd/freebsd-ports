@@ -13,6 +13,9 @@ bin/paster
 %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/templates/basic_package/+package+/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/templates/basic_package/+package+/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/templates/basic_package/+package+/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/util/logging_config.py
+%%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/util/logging_config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/util/logging_config.pyo
 %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/util/secret.py
 %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/util/secret.pyc
 %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/util/secret.pyo
