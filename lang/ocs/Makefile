@@ -36,7 +36,7 @@ HAS_CONFIGURE=	yes
 USE_XORG=	xt
 USE_LDCONFIG=	${OCS}/lib/freebsd${OSREL}-${ARCH}
 
-NOT_FOR_ARCHS=	amd64 ia64
+NOT_FOR_ARCHS=	amd64 ia64 sparc64
 
 CONFIGURE_ARGS=	--prefix="${WRKDIR}" \
 		--disable-absolute-pathes \
