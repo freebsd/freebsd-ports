@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -21,10 +21,10 @@ MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		ftp://ftp.pl.silcnet.org/pub/silc/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/network/silc/%SUBDIR%/
 MASTER_SITE_SUBDIR=	client/sources
-PKGNAMESUFFIX=	-client
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+PKGNAMESUFFIX=	${IRSSI_PLUGIN}-client
+DISTNAME=	${PORTNAME}-client-${PORTVERSION}
 
-MAINTAINER=	wxs@atarininja.org
+MAINTAINER?=	wxs@atarininja.org
 COMMENT=	Secure Internet Live Conferencing (SILC) network client
 
 USE_BZIP2=	yes
@@ -35,12 +35,22 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--with-perl=no \
 		--without-libtoolfix
-MAN1=	silc.1
 
 .ifndef(WITH_PTHREADS)
 CONFIGURE_ARGS+=	--without-pthreads
 .else
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
+.endif
+
+.ifdef(IRSSI_PLUGIN)
+CONFIGURE_ARGS+=	--with-silc-plugin=${PREFIX}/lib/irssi \
+			--without-silc-includes
+CFLAGS+=	-fPIC
+RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
+# We don't want to install the man page and configuration file for this case
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-apps__irssi__Makefile.in
+.else
+MAN1=		silc.1
 .endif
 
 pre-everything::
@@ -67,9 +77,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/^MODULESDIR="$$silc_prefix/MODULESDIR="$$silc_prefix\/share\/silc/' ${WRKSRC}/configure
 
 post-install:
+.ifndef(IRSSI_PLUGIN)
 	@if [ ! -f ${PREFIX}/etc/silc.conf ]; then \
 		${CP} -p ${PREFIX}/etc/silc.conf.sample ${PREFIX}/etc/silc.conf ; \
 	fi
+.endif
 
 .include <bsd.port.pre.mk>
 
