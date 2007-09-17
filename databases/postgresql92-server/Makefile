@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.2.4
-PORTREVISION?=	1
+PORTVERSION?=	8.2.5
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -101,17 +101,17 @@ OPTIONS+=	DEBUG "Builds with debugging symbols" off
 #OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
 
 # See http://gppl.moonbone.ru/ for more info
-#OPTIONS+=	HIER  "Builds with query hierarchy (server)" off
+OPTIONS+=	HIER  "Builds with query hierarchy (server)" off
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 
-# .  if (defined(SERVER_ONLY) && defined(WITH_HIER)) || make(makesum)
-# PATCH_SITES+=	http://gppl.moonbone.ru/:hier812055
-# PATCHFILES+=	hier-Pg8.1.2-0.5.5.diff.gz:hier812055
-# USE_BISON=	yes
-# .  endif
+.  if (defined(SERVER_ONLY) && defined(WITH_HIER)) || make(makesum)
+PATCH_SITES+=	http://gppl.moonbone.ru/:hier820055
+PATCHFILES+=	hier-v0.5.5-Pg8.2.0.diff.gz:hier820055
+USE_BISON=	yes
+.  endif
 
 # .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
 # USE_AUTOTOOLS=	autoconf:259
