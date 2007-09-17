@@ -1,0 +1,3 @@
+bin/downtime
+share/applications/downtime.desktop
+@dirrmtry share/applications
