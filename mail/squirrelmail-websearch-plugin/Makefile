@@ -11,7 +11,7 @@ MASTER_SITES=		http://www.squirrelmail.org/plugins/
 DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}
 DIST_SUBDIR=		squirrelmail
 
-MAINTAINER=		miwi@FreeBSD.org
+MAINTAINER=		tabthorpe@FreeBSD.org
 COMMENT=		Plugin for Websearch
 
 RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
