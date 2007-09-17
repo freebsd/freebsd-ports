@@ -54,6 +54,7 @@ bin/googleearth
 %%DATADIR%%/libcrypto.so.0.9.8
 %%DATADIR%%/libcurl.so.3
 %%DATADIR%%/libevll.so
+%%DATADIR%%/libevllpro.so
 %%DATADIR%%/libflightsim.so
 %%DATADIR%%/libframework.so
 %%DATADIR%%/libfreeimage.so.3
