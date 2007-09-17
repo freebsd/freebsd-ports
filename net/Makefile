@@ -377,6 +377,7 @@
     SUBDIR += ntp
     SUBDIR += ntp-devel
     SUBDIR += ntraceroute
+    SUBDIR += nusoap
     SUBDIR += nvnet
     SUBDIR += nxserver
     SUBDIR += nylon
