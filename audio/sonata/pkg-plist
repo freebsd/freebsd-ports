@@ -12,10 +12,13 @@ bin/sonata
 %%PYTHON_SITELIBDIR%%/sonata.pyo
 share/applications/sonata.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/locale/cz/LC_MESSAGES/sonata.mo
 share/locale/de/LC_MESSAGES/sonata.mo
 share/locale/es/LC_MESSAGES/sonata.mo
 share/locale/fi/LC_MESSAGES/sonata.mo
 share/locale/fr/LC_MESSAGES/sonata.mo
+share/locale/it/LC_MESSAGES/sonata.mo
+share/locale/nl/LC_MESSAGES/sonata.mo
 share/locale/pl/LC_MESSAGES/sonata.mo
 share/locale/ru/LC_MESSAGES/sonata.mo
 share/locale/sv/LC_MESSAGES/sonata.mo
@@ -35,4 +38,6 @@ share/pixmaps/sonata_play.png
 share/pixmaps/sonatacd.png
 share/pixmaps/sonatacd_large.png
 @dirrmtry share/applications
+@dirrmtry share/locale/cz/LC_MESSAGES
+@dirrmtry share/locale/cz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
