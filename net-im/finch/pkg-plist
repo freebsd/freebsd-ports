@@ -2,6 +2,7 @@ bin/finch
 include/finch/finch.h
 include/finch/gntaccount.h
 include/finch/gntblist.h
+include/finch/gntcertmgr.h
 include/finch/gntconn.h
 include/finch/gntconv.h
 include/finch/gntdebug.h
