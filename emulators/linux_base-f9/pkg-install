@@ -1066,7 +1066,6 @@ POST-INSTALL)
 	mkdir -p ${PKG_PREFIX}/lib/modules
 	mkdir -p ${PKG_PREFIX}/etc/xinetd.d
 	mkdir -p ${PKG_PREFIX}/etc/sysconfig
-	mkdir -p ${PKG_PREFIX}/etc/rpm
 	mkdir -p ${PKG_PREFIX}/etc/opt
 	mkdir -p ${PKG_PREFIX}/etc/ld.so.conf.d
 	mkdir -p ${PKG_PREFIX}/etc/blkid

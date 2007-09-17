@@ -8,7 +8,7 @@
 
 PORTNAME=		fc6
 PORTVERSION=		6
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
@@ -53,7 +53,6 @@ BIN_DISTFILES=	basesystem-8.0-5.1.1.noarch.rpm \
 		pcre-6.6-1.1.${LINUX_RPM_ARCH}.rpm \
 		popt-1.10.2-33.fc6.${LINUX_RPM_ARCH}.rpm \
 		readline-5.1-1.1.${LINUX_RPM_ARCH}.rpm \
-		rpm-4.4.2-33.fc6.${LINUX_RPM_ARCH}.rpm \
 		setserial-2.17-19.2.2.${LINUX_RPM_ARCH}.rpm \
 		setup-2.6.1.1-1.fc6.noarch.rpm \
 		slang-2.0.7-1.fc6.${LINUX_RPM_ARCH}.rpm \
@@ -90,7 +89,6 @@ SRC_DISTFILES+=	acl-2.2.39-1.1.src.rpm \
 		ncurses-5.5-24.20060715.src.rpm \
 		pcre-6.6-1.1.src.rpm \
 		readline-5.1-1.1.src.rpm \
-		rpm-4.4.2-33.fc6.src.rpm \
 		setserial-2.17-19.2.2.src.rpm \
 		setup-2.6.1.1-1.fc6.src.rpm \
 		slang-2.0.7-1.fc6.src.rpm \
@@ -134,14 +132,7 @@ REMOVE_DIRS=		boot dev home initrd root tmp var/log var/run var/tmp \
 REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \
 			etc/protocols
-ADD_FILES=		var/lib/rpm/packages.rpm \
-			var/lib/rpm/nameindex.rpm \
-			var/lib/rpm/fileindex.rpm \
-			var/lib/rpm/providesindex.rpm \
-			var/lib/rpm/requiredby.rpm \
-			var/lib/rpm/conflictsindex.rpm \
-			var/lib/rpm/groupindex.rpm \
-			var/lib/rpm/triggerindex.rpm
+ADD_FILES=		#empty
 
 .if (${MACHINE_ARCH} == "amd64")
 FALLBACK_ELF_MIB=	kern.elf32.fallback_brand
