@@ -22,6 +22,7 @@
 %%CPGDIR%%/bridge/punbb115.inc.php
 %%CPGDIR%%/bridge/punbb12.inc.php
 %%CPGDIR%%/bridge/smf10.inc.php
+%%CPGDIR%%/bridge/smf20.inc.php
 %%CPGDIR%%/bridge/udb_base.inc.php
 %%CPGDIR%%/bridge/vbulletin30.inc.php
 %%CPGDIR%%/bridge/xmb.inc.php
@@ -50,7 +51,7 @@
 %%CPGDIR%%/docs/pics/anchor.gif
 %%CPGDIR%%/docs/pics/barre_menu_fr.gif
 %%CPGDIR%%/docs/pics/bridge_01_start.gif
-%%CPGDIR%%/docs/pics/bridge_02_app.gif
+%%CPGDIR%%/docs/pics/bridge_02_app.png
 %%CPGDIR%%/docs/pics/bridge_03_path.gif
 %%CPGDIR%%/docs/pics/category_cp.gif
 %%CPGDIR%%/docs/pics/config_language.gif
@@ -205,6 +206,7 @@
 %%CPGDIR%%/images/flags/lu.gif
 %%CPGDIR%%/images/flags/lv.gif
 %%CPGDIR%%/images/flags/md.gif
+%%CPGDIR%%/images/flags/mk.gif
 %%CPGDIR%%/images/flags/mn.gif
 %%CPGDIR%%/images/flags/mx.gif
 %%CPGDIR%%/images/flags/my.gif
@@ -387,6 +389,7 @@
 %%CPGDIR%%/lang/basque.php
 %%CPGDIR%%/lang/brazilian_portuguese.php
 %%CPGDIR%%/lang/bulgarian.php
+%%CPGDIR%%/lang/catalan.php
 %%CPGDIR%%/lang/chinese_big5.php
 %%CPGDIR%%/lang/chinese_gb.php
 %%CPGDIR%%/lang/czech.php
@@ -409,10 +412,12 @@
 %%CPGDIR%%/lang/japanese.php
 %%CPGDIR%%/lang/korean.php
 %%CPGDIR%%/lang/lithuanian.php
+%%CPGDIR%%/lang/macedonian.php
 %%CPGDIR%%/lang/norwegian.php
 %%CPGDIR%%/lang/persian.php
 %%CPGDIR%%/lang/polish.php
 %%CPGDIR%%/lang/portuguese.php
+%%CPGDIR%%/lang/romanian.php
 %%CPGDIR%%/lang/russian.php
 %%CPGDIR%%/lang/slovak.php
 %%CPGDIR%%/lang/slovenian.php
@@ -434,9 +439,6 @@
 %%CPGDIR%%/pluginmgr.php
 %%CPGDIR%%/plugins/sample/codebase.php
 %%CPGDIR%%/plugins/sample/configuration.php
-%%CPGDIR%%/plugins/sef_urls/codebase.php
-%%CPGDIR%%/plugins/sef_urls/configuration.php
-%%CPGDIR%%/plugins/sef_urls/ht.txt
 %%CPGDIR%%/profile.php
 %%CPGDIR%%/ratepic.php
 %%CPGDIR%%/register.php
@@ -769,7 +771,6 @@
 @dirrm %%CPGDIR%%/themes/classic
 @dirrm %%CPGDIR%%/themes
 @dirrm %%CPGDIR%%/sql
-@dirrm %%CPGDIR%%/plugins/sef_urls
 @dirrm %%CPGDIR%%/plugins/sample
 @dirrm %%CPGDIR%%/plugins
 @dirrm %%CPGDIR%%/logs
@@ -786,5 +787,5 @@
 @dirrm %%CPGDIR%%/albums/userpics
 @dirrm %%CPGDIR%%/albums/edit
 @dirrm %%CPGDIR%%/albums
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%CPGDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
