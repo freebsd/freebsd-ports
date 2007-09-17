@@ -1439,11 +1439,6 @@ SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
 PERL=		${LOCALBASE}/bin/perl
 
-PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
-				PERL_VER=${PERL_VER} \
-				PERL_ARCH=${PERL_ARCH} \
-				SITE_PERL=${SITE_PERL_REL}
-
 .endif  # !defined(_PERL_REFACTORING_COMPLETE)
 
 .if defined(USE_LOCAL_MK)
@@ -1623,7 +1618,6 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .endif
 
 
-# These do some path checks if DESTDIR is set correctly.
 # You can force skipping these test by defining IGNORE_PATH_CHECKS
 .if !defined(IGNORE_PATH_CHECKS)
 .if (${PREFIX:C,(^.).*,\1,} != "/")
@@ -2049,6 +2043,13 @@ RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
 .if defined(USE_BISON)
 BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
 .endif
+
+.if !defined(_PERL_REFACTORING_COMPLETE)
+PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
+				PERL_VER=${PERL_VER} \
+				PERL_ARCH=${PERL_ARCH} \
+				SITE_PERL=${SITE_PERL_REL}
+.endif  # !defined(_PERL_REFACTORING_COMPLETE)
 
 .if defined(USE_LOCAL_MK)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.local.mk)
