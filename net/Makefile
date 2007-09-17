@@ -778,6 +778,7 @@
     SUBDIR += shelldap
     SUBDIR += shmux
     SUBDIR += silc-client
+    SUBDIR += silc-irssi-plugin
     SUBDIR += silc-server
     SUBDIR += silky
     SUBDIR += sip_scenario
