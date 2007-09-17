@@ -20,6 +20,7 @@ include/libpurple/dbus-maybe.h
 %%DBUS%%include/libpurple/dbus-server.h
 %%DBUS%%include/libpurple/dbus-types.h
 %%DBUS%%include/libpurple/dbus-useful.h
+include/libpurple/certificate.h
 include/libpurple/debug.h
 include/libpurple/desktopitem.h
 include/libpurple/dnsquery.h
@@ -129,13 +130,17 @@ lib/purple-2/statenotify.so
 %%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/Purple.pm
 %%DBUS%%lib/libpurple-client.la
 %%DBUS%%lib/libpurple-client.so
-%%DBUS%%lib/libpurple-client.so.1
+%%DBUS%%lib/libpurple-client.so.2
 lib/libpurple.la
 lib/libpurple.so
-lib/libpurple.so.1
+lib/libpurple.so.2
 libdata/pkgconfig/purple.pc
 share/aclocal/purple.m4
 share/gnome/applications/pidgin.desktop
+share/gnome/purple/ca-certs/Equifax_Secure_CA.pem
+share/gnome/purple/ca-certs/GTE_CyberTrust_Global_Root.pem
+share/gnome/purple/ca-certs/Verisign_Class3_Primary_CA.pem
+share/gnome/purple/ca-certs/Verisign_RSA_Secure_Server_CA.pem
 share/gnome/sounds/purple/alert.wav
 share/gnome/sounds/purple/login.wav
 share/gnome/sounds/purple/logout.wav
@@ -145,6 +150,7 @@ share/locale/af/LC_MESSAGES/pidgin.mo
 share/locale/am/LC_MESSAGES/pidgin.mo
 share/locale/ar/LC_MESSAGES/pidgin.mo
 share/locale/az/LC_MESSAGES/pidgin.mo
+share/locale/be@latin/LC_MESSAGES/pidgin.mo
 share/locale/bg/LC_MESSAGES/pidgin.mo
 share/locale/bn/LC_MESSAGES/pidgin.mo
 share/locale/bs/LC_MESSAGES/pidgin.mo
@@ -257,7 +263,11 @@ share/locale/zh_TW/LC_MESSAGES/pidgin.mo
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
 @dirrm share/gnome/sounds/purple
+@dirrm share/gnome/purple/ca-certs
+@dirrm share/gnome/purple
 %%PERL:%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Purple
 @dirrm lib/purple-2
 @dirrm include/libpurple

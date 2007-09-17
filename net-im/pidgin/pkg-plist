@@ -9,6 +9,7 @@ include/pidgin/gtkcellrendererexpander.h
 include/pidgin/gtkcellrendererprogress.h
 include/pidgin/gtkcellview.h
 include/pidgin/gtkcellviewmenuitem.h
+include/pidgin/gtkcertmgr.h
 include/pidgin/gtkconn.h
 include/pidgin/gtkconv.h
 include/pidgin/gtkconvwin.h
@@ -103,6 +104,7 @@ share/gnome/pixmaps/pidgin/arrow-left.xpm
 share/gnome/pixmaps/pidgin/arrow-right.xpm
 share/gnome/pixmaps/pidgin/arrow-up.xpm
 share/gnome/pixmaps/pidgin/buttons/edit.png
+share/gnome/pixmaps/pidgin/buttons/info.png
 share/gnome/pixmaps/pidgin/buttons/music.png
 share/gnome/pixmaps/pidgin/buttons/pause.png
 share/gnome/pixmaps/pidgin/dialogs/16/auth.png
@@ -232,7 +234,7 @@ share/gnome/pixmaps/pidgin/emotes/default/loser.png
 share/gnome/pixmaps/pidgin/emotes/default/love-over.png
 share/gnome/pixmaps/pidgin/emotes/default/love.png
 share/gnome/pixmaps/pidgin/emotes/default/lying.png
-share/gnome/pixmaps/pidgin/emotes/default/madtongue.png
+share/gnome/pixmaps/pidgin/emotes/default/mad-tongue.png
 share/gnome/pixmaps/pidgin/emotes/default/mail.png
 share/gnome/pixmaps/pidgin/emotes/default/male-fighter1.png
 share/gnome/pixmaps/pidgin/emotes/default/male-fighter2.png
@@ -339,6 +341,7 @@ share/gnome/pixmaps/pidgin/protocols/16/irc.png
 share/gnome/pixmaps/pidgin/protocols/16/jabber.png
 share/gnome/pixmaps/pidgin/protocols/16/meanwhile.png
 share/gnome/pixmaps/pidgin/protocols/16/msn.png
+share/gnome/pixmaps/pidgin/protocols/16/myspace.png
 share/gnome/pixmaps/pidgin/protocols/16/novell.png
 share/gnome/pixmaps/pidgin/protocols/16/qq.png
 share/gnome/pixmaps/pidgin/protocols/16/silc.png
@@ -354,6 +357,7 @@ share/gnome/pixmaps/pidgin/protocols/22/irc.png
 share/gnome/pixmaps/pidgin/protocols/22/jabber.png
 share/gnome/pixmaps/pidgin/protocols/22/meanwhile.png
 share/gnome/pixmaps/pidgin/protocols/22/msn.png
+share/gnome/pixmaps/pidgin/protocols/22/myspace.png
 share/gnome/pixmaps/pidgin/protocols/22/novell.png
 share/gnome/pixmaps/pidgin/protocols/22/qq.png
 share/gnome/pixmaps/pidgin/protocols/22/silc.png
@@ -368,6 +372,7 @@ share/gnome/pixmaps/pidgin/protocols/48/irc.png
 share/gnome/pixmaps/pidgin/protocols/48/jabber.png
 share/gnome/pixmaps/pidgin/protocols/48/meanwhile.png
 share/gnome/pixmaps/pidgin/protocols/48/msn.png
+share/gnome/pixmaps/pidgin/protocols/48/myspace.png
 share/gnome/pixmaps/pidgin/protocols/48/novell.png
 share/gnome/pixmaps/pidgin/protocols/48/qq.png
 share/gnome/pixmaps/pidgin/protocols/48/silc.png
@@ -382,6 +387,7 @@ share/gnome/pixmaps/pidgin/status/11/extended-away.png
 share/gnome/pixmaps/pidgin/status/11/invisible.png
 share/gnome/pixmaps/pidgin/status/11/offline.png
 share/gnome/pixmaps/pidgin/status/11/person.png
+share/gnome/pixmaps/pidgin/status/11/rtl/extended-away.png
 share/gnome/pixmaps/pidgin/status/16/available.png
 share/gnome/pixmaps/pidgin/status/16/away.png
 share/gnome/pixmaps/pidgin/status/16/busy.png
@@ -604,6 +610,7 @@ share/icons/hicolor/scalable/apps/pidgin.svg
 @dirrm share/gnome/pixmaps/pidgin/status/22
 @dirrm share/gnome/pixmaps/pidgin/status/16/rtl
 @dirrm share/gnome/pixmaps/pidgin/status/16
+@dirrm share/gnome/pixmaps/pidgin/status/11/rtl
 @dirrm share/gnome/pixmaps/pidgin/status/11
 @dirrm share/gnome/pixmaps/pidgin/status
 @dirrm share/gnome/pixmaps/pidgin/protocols/48
