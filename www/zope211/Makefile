@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope210
-PORTVERSION=	2.10.3
+PORTVERSION=	2.10.4
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-final
@@ -17,7 +17,7 @@ MAINTAINER=	yasi@yasi.to
 COMMENT=	An object-based web application platform
 
 USE_PYTHON=	2.4
-USE_RC_SUBR=	${PORTNAME}.sh zeo210.sh
+USE_RC_SUBR=	${PORTNAME} zeo210
 
 # Note: the notes that follow reflect the decisions of prior maintainers
 # of this port. IOW, don't blame me if you don't like the way it's done.
@@ -27,6 +27,7 @@ USE_RC_SUBR=	${PORTNAME}.sh zeo210.sh
 ZOPE_USER?=		www
 WEBBASEDIR?=		www
 SZOPEBASEDIR?=		${WEBBASEDIR}/Zope210
+USE_GETTEXT=	yes
 
 # Do not change anything below this line.
 
@@ -79,10 +80,12 @@ post-install:
 		${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
 
 	${MKDIR} ${ZOPEBASEDIR}/Products
-	${CP} ${FILESDIR}/Products_00readme-freebsd.txt \
+	${INSTALL_DATA} ${FILESDIR}/Products_00readme-freebsd.txt \
 		${ZOPEBASEDIR}/Products/00readme-freebsd.txt
 
-	${FIND} ${ZOPEBASEDIR} -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w+r
+.for d in lib bin doc skel Products
+	${FIND} ${ZOPEBASEDIR}/$d -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w+r
+.endfor
 
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
@@ -109,6 +112,6 @@ zeo:
 	@${CAT} ${WRKDIR}/zeo_message
 
 pre-package:
-	${CP} ${WRKDIR}/package-pkg-message ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKDIR}/package-pkg-message ${PKGMESSAGE}
 
 .include <bsd.port.mk>
