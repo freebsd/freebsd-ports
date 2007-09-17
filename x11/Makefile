@@ -127,6 +127,7 @@
     SUBDIR += gtkterm2
     SUBDIR += gtstarter
     SUBDIR += gxset
+    SUBDIR += hs-x11-ghc
     SUBDIR += iceauth
     SUBDIR += ico
     SUBDIR += idesk

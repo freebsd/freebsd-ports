@@ -1,0 +1,6 @@
+MD5 (ghc-6.6.1-src-extralibs.tar.bz2) = 43a26b81608b206c056adc3032f7da2a
+SHA256 (ghc-6.6.1-src-extralibs.tar.bz2) = d162a82fc388fdd48c327b09bb6d778f2313d12d5282f3b120ac08a5d4e78902
+SIZE (ghc-6.6.1-src-extralibs.tar.bz2) = 1928527
+MD5 (patch-cabal-6.6.1-Setup.hs) = 060eea0c5871bbe67a2b96e60a5b2e91
+SHA256 (patch-cabal-6.6.1-Setup.hs) = d88a54c1edda7a07d331a60d5c26335c1de1efce4a4433fff21f89ab3070e8ea
+SIZE (patch-cabal-6.6.1-Setup.hs) = 371
