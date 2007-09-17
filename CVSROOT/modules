@@ -10561,6 +10561,7 @@ p5-Object-MultiType	ports/devel/p5-Object-MultiType
 p5-Object-Realize-Later	ports/devel/p5-Object-Realize-Later
 p5-Object-Signature	ports/devel/p5-Object-Signature
 p5-Ogg-Vorbis-Header	ports/audio/p5-Ogg-Vorbis-Header
+p5-Ogg-Vorbis-Header-PurePerl	ports/audio/p5-Ogg-Vorbis-Header-PurePerl
 p5-OpenCA-CRL	ports/security/p5-OpenCA-CRL
 p5-OpenCA-CRR	ports/security/p5-OpenCA-CRR
 p5-OpenCA-PKCS7	ports/security/p5-OpenCA-PKCS7
