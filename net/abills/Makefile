@@ -28,14 +28,6 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
-OPTIONS=	GRAPHICS "Traffic graphs (experimental)" off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_GRAPHICS)
-RUN_DEPENDS+=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/net/rrdtool
-.endif
-
 post-patch:
 	@ ${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;
 	@ ${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -i '' -e 's,/usr/abills,${PREFIX}/abills,g' {} \;
@@ -48,4 +40,4 @@ do-install:
 post-install:
 	@ ${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
