@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	HTTP-Async
-PORTVERSION=	0.07
+PORTVERSION=	0.09
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/E/EV/EVDB
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Process multiple HTTP requests in parallel without blocking
 
-BUILD_DEPENDS=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Test-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple
