@@ -52,6 +52,7 @@ USE_ICONV=		yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_PERL5=		yes
 USE_RC_SUBR=		apache2.sh
+SUB_LIST+=		RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 USE_APACHE=		common20
 LIBTOOLFILES=		configure
 USE_LDCONFIG=		${PREFIX}/lib/apache2
