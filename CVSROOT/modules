@@ -3104,6 +3104,7 @@ fpc-fcl-fpcunit		ports/devel/fpc-fcl-fpcunit
 fpc-fcl-image		ports/devel/fpc-fcl-image
 fpc-fcl-net		ports/devel/fpc-fcl-net
 fpc-fcl-passrc		ports/devel/fpc-fcl-passrc
+fpc-fcl-registry		ports/devel/fpc-fcl-registry
 fpc-fftw	ports/math/fpc-fftw
 fpc-forms	ports/x11-toolkits/fpc-forms
 fpc-fpgtk	ports/graphics/fpc-fpgtk
