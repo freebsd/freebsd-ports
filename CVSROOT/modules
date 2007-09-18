@@ -3127,6 +3127,7 @@ fpc-ibase	ports/databases/fpc-ibase
 fpc-ide		ports/editors/fpc-ide
 fpc-imlib	ports/graphics/fpc-imlib
 fpc-libasync	ports/net/fpc-libasync
+fpc-libcurl	ports/ftp/fpc-libcurl
 fpc-libgd	ports/graphics/fpc-libgd
 fpc-libpng	ports/graphics/fpc-libpng
 fpc-mysql	ports/databases/fpc-mysql
