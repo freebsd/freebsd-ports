@@ -8,7 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -38,7 +38,7 @@ USE_LDCONFIG=	yes
 TMPDIR?=	/tmp
 .endif
 
-CONFIGURE_ARGS+=	-system-libpng -system-libjpeg -system-libmng	\
+CONFIGURE_ARGS+=-system-libpng -system-libjpeg -system-libmng	\
 		-qt-imgfmt-png -qt-imgfmt-jpeg -qt-imgfmt-mng	\
 		-system-zlib -sm -qt-gif -thread \
 		-fast -xinerama -no-g++-exceptions -stl -no-nis \
