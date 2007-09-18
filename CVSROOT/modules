@@ -3101,6 +3101,7 @@ fpc-fcl		ports/devel/fpc-fcl
 fpc-fcl-base		ports/devel/fpc-fcl-base
 fpc-fcl-db		ports/devel/fpc-fcl-db
 fpc-fcl-fpcunit		ports/devel/fpc-fcl-fpcunit
+fpc-fcl-image		ports/devel/fpc-fcl-image
 fpc-fftw	ports/math/fpc-fftw
 fpc-forms	ports/x11-toolkits/fpc-forms
 fpc-fpgtk	ports/graphics/fpc-fpgtk
