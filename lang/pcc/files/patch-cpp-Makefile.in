@@ -1,0 +1,5 @@
+--- cc/cpp/Makefile.in.orig	2007-01-02 11:49:40.000000000 -0800
++++ cc/cpp/Makefile.in	2007-09-17 19:30:58.000000000 -0700
+@@ -18 +18 @@ LEX = @LEX@
+-YACC = @YACC@
++#YACC = @YACC@
