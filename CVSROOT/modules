@@ -3103,6 +3103,7 @@ fpc-fcl-db		ports/devel/fpc-fcl-db
 fpc-fcl-fpcunit		ports/devel/fpc-fcl-fpcunit
 fpc-fcl-image		ports/devel/fpc-fcl-image
 fpc-fcl-net		ports/devel/fpc-fcl-net
+fpc-fcl-passrc		ports/devel/fpc-fcl-passrc
 fpc-fftw	ports/math/fpc-fftw
 fpc-forms	ports/x11-toolkits/fpc-forms
 fpc-fpgtk	ports/graphics/fpc-fpgtk
