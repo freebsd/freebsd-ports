@@ -1,0 +1,31 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-1.3/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-1.3/httpd.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-1.3/httpd.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-1.3/libphttpd.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.0/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.0/apr.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.0/apriconv.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.0/aprutil.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.0/httpd.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.0/apr.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.0/apriconv.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.0/aprutil.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.0/httpd.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.0/libphttpd.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.2/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.2/apr.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.2/apriconv.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.2/aprutil.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.2/httpd.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.2/apr.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.2/apriconv.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.2/aprutil.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.2/httpd.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.2/libphttpd.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.2
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-2.0
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd-1.3
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
