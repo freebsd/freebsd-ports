@@ -1,3 +1,6 @@
 MD5 (ssmtp_2.61.orig.tar.gz) = 957e6fff08625fe34f4fc33d0925bbc9
 SHA256 (ssmtp_2.61.orig.tar.gz) = 2151ad18cb73f9a254f796dde2b48be7318b45410b59fedbb258db5a41044fb5
 SIZE (ssmtp_2.61.orig.tar.gz) = 53341
+MD5 (ssmtp_2.61-11.1.diff.gz) = 96946aed2e9b5442f7f0643bcbd4e4f6
+SHA256 (ssmtp_2.61-11.1.diff.gz) = 85a56288874a874f433ee5e48891812bb18b23c9e33fd39c5168b1843010a8cd
+SIZE (ssmtp_2.61-11.1.diff.gz) = 33458

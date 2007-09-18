@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	ssmtp
-PORTVERSION=	2.61
+PORTVERSION=	2.61.11.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+DISTNAME=	${PORTNAME}_2.61.orig
+DISTFILES=	${DISTNAME}.tar.gz \
+		ssmtp_2.61-11.1.diff.gz
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Extremely simple MTA to get mail off the system to a mail hub
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-2.61
 
 USE_OPENSSL=	yes
 
