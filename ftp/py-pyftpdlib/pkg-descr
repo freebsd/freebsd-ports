@@ -3,4 +3,4 @@ write asynchronous FTP servers with Python. Based on asyncore / asynchat
 frameworks pyftpdlib is actually the most complete RFC959 FTP server
 implementation available for Python language.
 
-WWW:	http://billiejoex.altervista.org/pyftpdlib.html
+WWW:	http://code.google.com/p/pyftpdlib/
