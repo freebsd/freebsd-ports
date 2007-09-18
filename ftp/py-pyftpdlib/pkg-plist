@@ -1,15 +1,19 @@
-%%PYTHON_SITELIBDIR%%/pyftpdlib/FTPServer.py
-%%PYTHON_SITELIBDIR%%/pyftpdlib/FTPServer.pyc
-%%PYTHON_SITELIBDIR%%/pyftpdlib/FTPServer.pyo
 %%PYTHON_SITELIBDIR%%/pyftpdlib/__init__.py
 %%PYTHON_SITELIBDIR%%/pyftpdlib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pyftpdlib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyftpdlib/ftpserver.py
+%%PYTHON_SITELIBDIR%%/pyftpdlib/ftpserver.pyc
+%%PYTHON_SITELIBDIR%%/pyftpdlib/ftpserver.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/pyftpdlib
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix_ftpd.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic_ftpd.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/winNT_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/winnt_ftpd.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/pyftpdlib.css
-%%PORTDOCS%%%%DOCSDIR%%/pyftpdlib.html
+%%PORTDOCS%%%%DOCSDIR%%/adoptions.lnk.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/releasenotes.html
+%%PORTDOCS%%%%DOCSDIR%%/roadmap.lnk.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
