@@ -353,8 +353,6 @@ jbootstrap-*.tar.gz	java/jbootstrap		Redistribution of pre-compiled
 jce-aba-*		java/jce-aba		Crypto; export-controlled
 jdk*_ELF.*.tar.gz	java/jdk11		License does not allow distribution
 						with fee
-jdk-*-doc.tar.gz	java/jdk12-doc		This documentation is under
-						license and export control
 jdk-*-linux-i586.tar.gz	java/linux-sun-jdk12	Redistribution of repackaged
 						binaries not permitted
 jdk1_2_2-src.tar.gz	java/jdk12		Redistribution of pre-compiled

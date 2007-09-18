@@ -360,7 +360,6 @@
     SUBDIR += nfsshell
     SUBDIR += ng_car
     SUBDIR += ng_daphne
-    SUBDIR += ng_netflow
     SUBDIR += ngrep
     SUBDIR += ngrep-lib
     SUBDIR += nifmon

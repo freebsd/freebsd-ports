@@ -1,4 +1,0 @@
-@cwd /
-%%KMODDIR%%/ng_netflow.ko
-@cwd /usr/local
-sbin/flowctl

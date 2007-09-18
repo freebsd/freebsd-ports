@@ -5282,7 +5282,6 @@ ja-ne		ports/japanese/ne
 ja-nethack32	ports/japanese/nethack32
 ja-nethack34	ports/japanese/nethack34
 ja-netype	ports/japanese/netype
-ja-netypesv	ports/japanese/netypesv
 ja-newosaka	ports/japanese/newosaka
 ja-ng		ports/japanese/ng
 ja-ng-canna	ports/japanese/ng-canna
@@ -5554,7 +5553,6 @@ java-commapi-freebsd	ports/comms/java-commapi-freebsd
 java-cup	ports/java/java-cup
 java-gcj-compat	ports/java/java-gcj-compat
 java-getopt	ports/java/java-getopt
-java-sqlrelay	ports/databases/java-sqlrelay
 java-tutorial	ports/java/java-tutorial
 java-util-concurrent	ports/devel/java-util-concurrent
 java-xmms2	ports/audio/java-xmms2
@@ -5601,9 +5599,7 @@ jdictionary	ports/textproc/jdictionary
 jdictionary-int-eng	ports/textproc/jdictionary-int-eng
 jdiskreport	ports/sysutils/jdiskreport
 jdk11		ports/java/jdk11
-jdk11-doc	ports/java/jdk11-doc
 jdk12		ports/java/jdk12
-jdk12-doc	ports/java/jdk12-doc
 jdk13		ports/java/jdk13
 jdk13-doc	ports/java/jdk13-doc
 jdk14		ports/java/jdk14
@@ -8208,7 +8204,6 @@ nfsshell	ports/net/nfsshell
 ng_car		ports/net/ng_car
 ng_daphne	ports/net/ng_daphne
 ng_ipacct	ports/net-mgmt/ng_ipacct
-ng_netflow	ports/net/ng_netflow
 nget		ports/news/nget
 nginx		ports/www/nginx
 nginx-devel	ports/www/nginx-devel
@@ -17552,7 +17547,6 @@ ytnef		ports/converters/ytnef
 ytree		ports/misc/ytree
 yudit		ports/editors/yudit
 yui		ports/editors/yui
-yuzu		ports/mail/yuzu
 yydecode	ports/news/yydecode
 z80-asm		ports/devel/z80-asm
 z88		ports/cad/z88
