@@ -221,7 +221,6 @@
     SUBDIR += horde-meta
     SUBDIR += horde-passwd
     SUBDIR += horde-trean
-    SUBDIR += hotjava
     SUBDIR += htdump
     SUBDIR += html2hdml
     SUBDIR += html2wml
@@ -296,7 +295,6 @@
     SUBDIR += lynx-current
     SUBDIR += mambo
     SUBDIR += man2web
-    SUBDIR += mapedit
     SUBDIR += mathopd
     SUBDIR += mediawiki
     SUBDIR += mediawiki16

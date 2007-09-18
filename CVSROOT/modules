@@ -1199,7 +1199,6 @@ ccze		ports/sysutils/ccze
 cd-console	ports/audio/cd-console
 cd-discid	ports/audio/cd-discid
 cd2mp3		ports/audio/cd2mp3
-cd9660_unicode	ports/sysutils/cd9660_unicode
 cdargs		ports/sysutils/cdargs
 cdb		ports/databases/cdb
 cdbakeoven	ports/sysutils/cdbakeoven
@@ -4607,7 +4606,6 @@ horde-turba	ports/mail/horde-turba
 horde-vacation	ports/mail/horde-vacation
 hostsentry	ports/security/hostsentry
 hot-babe	ports/deskutils/hot-babe
-hotjava		ports/www/hotjava
 hotkeys		ports/misc/hotkeys
 hotwayd		ports/mail/hotwayd
 hourglass	ports/sysutils/hourglass
@@ -7291,7 +7289,6 @@ manu-gothica	ports/x11-fonts/manu-gothica
 manued.el	ports/textproc/manued.el
 mapagi		ports/print/mapagi
 mapchan		ports/sysutils/mapchan
-mapedit		ports/www/mapedit
 maplay		ports/audio/maplay
 mapserver	ports/graphics/mapserver
 mapyrus		ports/graphics/mapyrus
@@ -8398,7 +8395,6 @@ objc		ports/lang/objc
 objcunit	ports/devel/objcunit
 objectivelib	ports/devel/objectivelib
 obliterate	ports/sysutils/obliterate
-obtuner		ports/x11-wm/obtuner
 ocaml		ports/lang/ocaml
 ocaml-annexlib	ports/devel/ocaml-annexlib
 ocaml-calendar	ports/devel/ocaml-calendar
@@ -10501,7 +10497,6 @@ p5-Net-SMTP-Server	ports/mail/p5-Net-SMTP-Server
 p5-Net-SMTP-TLS	ports/mail/p5-Net-SMTP-TLS
 p5-Net-SMTP_auth	ports/mail/p5-Net-SMTP_auth
 p5-Net-SNMP	ports/net-mgmt/p5-Net-SNMP
-p5-Net-SNMP3	ports/net-mgmt/p5-Net-SNMP3
 p5-Net-SNPP	ports/net/p5-Net-SNPP
 p5-Net-SSH	ports/net/p5-Net-SSH
 p5-Net-SSH-Expect	ports/net/p5-Net-SSH-Expect
