@@ -11671,6 +11671,7 @@ pbnj		ports/security/pbnj
 pbzip2		ports/archivers/pbzip2
 pcal		ports/print/pcal
 pcb		ports/cad/pcb
+pcc		ports/lang/pcc
 pccts		ports/devel/pccts
 pcemu		ports/emulators/pcemu
 pcf2bdf		ports/x11-fonts/pcf2bdf
