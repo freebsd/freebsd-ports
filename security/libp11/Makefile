@@ -11,7 +11,7 @@ CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A small layer on top of PKCS#11 API
+COMMENT=	A small layer on top of PKCS\#11 API
 
 USE_AUTOTOOLS=	libltdl:15
 USE_OPENSSL=	yes

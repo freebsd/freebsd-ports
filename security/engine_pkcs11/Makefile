@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	An implementation of a PKCS#11 engine for OpenSSL
+COMMENT=	An implementation of a PKCS\#11 engine for OpenSSL
 
 LIB_DEPENDS=	p11.1:${PORTSDIR}/security/libp11
 
