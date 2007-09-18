@@ -3139,6 +3139,7 @@ fpc-openssl	ports/security/fpc-openssl
 fpc-oracle	ports/databases/fpc-oracle
 fpc-pasjpeg	ports/graphics/fpc-pasjpeg
 fpc-paszlib	ports/archivers/fpc-paszlib
+fpc-pcap	ports/net/fpc-pcap
 fpc-postgres	ports/databases/fpc-postgres
 fpc-pthreads	ports/devel/fpc-pthreads
 fpc-regexpr	ports/devel/fpc-regexpr
