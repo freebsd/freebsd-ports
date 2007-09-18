@@ -20,6 +20,7 @@
     SUBDIR += fget
     SUBDIR += filezilla
     SUBDIR += fmirror
+    SUBDIR += fpc-libcurl
     SUBDIR += frox
     SUBDIR += ftp-proxy
     SUBDIR += ftp-tls
