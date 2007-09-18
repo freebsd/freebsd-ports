@@ -16,9 +16,11 @@ DISTNAME=	kdeutils-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	APM monitor for KDE
+COMMENT=	Power management utility for KDE
 
 CONFLICTS=	kdeutils-3.1.* kdeutils-3.2.[0-3]
+
+OPTIONS=	ACPI "Contributed ACPI support patch" off
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
@@ -32,8 +34,15 @@ WRKSRC=		${WRKDIR}/kdeutils-${PORTVERSION}
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ACPI)
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-acpi-support
+ONLY_FOR_ARCHS+=amd64
+.endif
+
 pre-configure:
 	${ECHO_CMD} ${PORTNAME} > ${WRKSRC}/inst-apps
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
