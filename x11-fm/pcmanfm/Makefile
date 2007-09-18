@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PCMan File Manager
 
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=	2007-10-18
+
 USE_GNOME=	gtk20 intlhack gnomedesktop
 USE_GCC=	3.3+
 USE_AUTOTOOLS=	libtool:15
