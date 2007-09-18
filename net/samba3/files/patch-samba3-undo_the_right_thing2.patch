@@ -1,0 +1,14 @@
+Index: nsswitch/winbindd_cache.c
+===================================================================
+--- nsswitch/winbindd_cache.c	(Revision 15137)
++++ nsswitch/winbindd_cache.c	(Arbeitskopie)
+@@ -121,7 +121,8 @@
+ 		if ( !domain->primary )
+ 			our_domain = find_our_domain();
+ 
+-		if ( (our_domain->active_directory || IS_DC) && domain->active_directory ) {
++		if ( (our_domain->active_directory || IS_DC) && domain->active_directory &&
++			(lp_security()==SEC_ADS)) {
+ 			DEBUG(5,("get_cache: Setting ADS methods for domain %s\n", domain->name));
+ 			domain->backend = &ads_methods;
+ 		} else {

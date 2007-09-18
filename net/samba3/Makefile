@@ -6,15 +6,15 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.25a
-PORTREVISION?=		1
+PORTVERSION?=		3.0.26a
+PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
 
-MAINTAINER?=		timur@gnu.org
+MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
 CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.*
@@ -70,13 +70,13 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		SYSLOG		"With Syslog support" off \
 		QUOTAS		"With Disk quota support" off \
 		UTMP		"With UTMP accounting support" on \
-		MSDFS		"With MSDFS support" off \
+		MSDFS		"With MSDFS support" on \
 		PAM_SMBPASS	"With PAM authentication vs passdb backends" off \
 		CLUSTER		"With experimental cluster support" off \
 		DNSUPDATE	"With dynamic DNS update" off \
 		EXP_MODULES	"With experimental modules" off \
 		POPT		"With system-wide POPT library" on \
-		MAX_DEBUG	"With maximum debuging" off \
+		MAX_DEBUG	"With maximum debugging" off \
 		SMBTORTURE	"With smbtorture" off
 .endif
 
@@ -105,6 +105,9 @@ CONFIGURE_ARGS+=	--with-pam --with-readline --with-sendfile-support \
 			--without-libaddns --with-included-iniparser \
 			--enable-largefile
 
+# Let proccess generate meaningful backtrace on core dump
+LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
+
 .if !defined(WITHOUT_LDAP)
 SAMBA_WANT_LDAP=	yes
 .endif
@@ -120,12 +123,16 @@ SUB_LIST+=		CUPSD="@comment "
 
 .if defined(WITH_MAX_DEBUG)
 LIB_DEPENDS+=		dmalloc.1:${PORTSDIR}/devel/dmalloc
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
+CPPFLAGS+=		-g -I${LOCALBASE}/include
+LDFLAGS+=		-g -L${LOCALBASE}/lib
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--enable-debug --enable-developer --enable-krb5developer --enable-dmalloc --with-profiling-data
+CONFIGURE_ARGS+=	--enable-debug --enable-socket-wrapper \
+			--enable-developer --enable-krb5developer \
+			--enable-dmalloc --with-profiling-data
 .else
-CONFIGURE_ARGS+=	--disable-debug --disable-developer --disable-krb5developer --disable-dmalloc --without-profiling-data
+CONFIGURE_ARGS+=	--disable-debug --disable-socket-wrapper \
+			--disable-developer --disable-krb5developer \
+			--disable-dmalloc --without-profiling-data
 .endif
 
 .if defined(WITH_SYSLOG)
@@ -164,8 +171,8 @@ PLIST_SUB+=		WINBIND_NSS="@comment "
 .	endif
 .else
 CONFIGURE_ARGS+=	--without-winbind
-PLIST_SUB+=		WINBIND="@comment "
-SUB_LIST+=		WINBIND="@comment "
+PLIST_SUB+=		WINBIND="@comment " WINBIND_NSS="@comment "
+SUB_LIST+=		WINBIND="@comment " WINBIND_NSS="@comment "
 .endif
 
 .if defined(WITH_FAM_SUPPORT)
@@ -221,7 +228,7 @@ CONFIGURE_ARGS+=	--without-cluster-support
 
 .if defined(WITH_DNSUPDATE)
 .	if !defined(WITH_ADS)
-IGNORE=			dynamic DNS updates require ADS support
+IGNORE=			dynamic DNS updates require ADS support. Disable DNSUPDATE support
 .	endif
 LIB_DEPENDS+=		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
 CONFIGURE_ARGS+=	--with-dnsupdate
@@ -292,6 +299,10 @@ CONFIGURE_ARGS+=	--without-ldap
 PLIST_SUB+=		SMBTORTURE=""
 .else
 PLIST_SUB+=		SMBTORTURE="@comment "
+.endif
+
+.if defined(WITH_SMBTORTURE4_PATH) && exists(${WITH_SMBTORTURE4_PATH})
+CONFIGURE_ARGS+=	--with-smbtorture4-path=${WITH_SMBTORTURE4_PATH}
 .endif
 
 .if !defined(SAMBA_SUBPORT)
@@ -470,5 +481,8 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 # !SAMBA_SUBPORT
 .endif
+
+test:
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.post.mk>
