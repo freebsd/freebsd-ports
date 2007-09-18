@@ -14,6 +14,7 @@
     SUBDIR += cicquin
     SUBDIR += cjc
     SUBDIR += cli-msn
+    SUBDIR += climm
     SUBDIR += coccinella
     SUBDIR += convey
     SUBDIR += echat
@@ -79,7 +80,6 @@
     SUBDIR += mcabber
     SUBDIR += meanwhile
     SUBDIR += mercury
-    SUBDIR += micq
     SUBDIR += mu-conference
     SUBDIR += naim
     SUBDIR += newsbot

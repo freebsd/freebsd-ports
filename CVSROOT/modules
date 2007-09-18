@@ -1411,6 +1411,7 @@ cli-msn		ports/net-im/cli-msn
 clibpdf		ports/print/clibpdf
 click		ports/net/click
 clig		ports/devel/clig
+climm		ports/net-im/climm
 clint		ports/devel/clint
 clip		ports/databases/clip
 clips		ports/lang/clips
@@ -7452,7 +7453,6 @@ mi-aspell	ports/textproc/mi-aspell
 miau		ports/irc/miau
 mical		ports/deskutils/mical
 mico		ports/devel/mico
-micq		ports/net-im/micq
 micro_httpd	ports/www/micro_httpd
 micro_inetd	ports/net/micro_inetd
 micro_proxy	ports/net/micro_proxy
