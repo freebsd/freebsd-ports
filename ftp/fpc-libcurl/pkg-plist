@@ -1,0 +1,13 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl/libcurl.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl/libcurl.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl/libplibcurl.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/libcurl/teststream.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/libcurl/testcurl.pp
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/libcurl
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%
