@@ -1,5 +1,14 @@
---- Makefile.orig	Fri Aug 10 17:08:31 2007
-+++ Makefile	Fri Aug 10 17:18:00 2007
+--- Makefile.orig	Mon Sep 17 11:42:04 2007
++++ Makefile	Mon Sep 17 11:43:10 2007
+@@ -119,7 +119,7 @@
+   ASTMANDIR=$(mandir)
+ ifneq ($(findstring BSD,$(OSARCH)),)
+   ASTVARLIBDIR=$(prefix)/share/asterisk
+-  ASTVARRUNDIR=$(localstatedir)/run/asterisk
++  ASTVARRUNDIR=$(localstatedir)/run
+ else
+   ASTVARLIBDIR=$(localstatedir)/lib/asterisk
+ endif
 @@ -210,7 +210,7 @@
  
  ifeq ($(OSARCH),FreeBSD)
@@ -9,7 +18,7 @@
    ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
    AST_LIBS+=$(shell if test  $(BSDVERSION) -lt 502102 ; then echo "-lc_r"; else echo "-pthread"; fi)
  endif
-@@ -375,15 +375,15 @@
+@@ -379,15 +379,15 @@
  # Should static HTTP be installed during make samples or even with its own target ala
  # webvoicemail?  There are portions here that *could* be customized but might also be
  # improved a lot.  I'll put it here for now.
@@ -30,7 +39,7 @@
  	$(MAKE) -C sounds install
  
  update: 
-@@ -404,45 +404,45 @@
+@@ -408,45 +408,45 @@
  OLDHEADERS=$(filter-out $(NEWHEADERS),$(notdir $(wildcard $(DESTDIR)$(ASTHEADERDIR)/*.h)))
  
  bininstall: _all
@@ -106,7 +115,7 @@
  	fi
  
  $(SUBDIRS_INSTALL):
-@@ -469,7 +469,7 @@
+@@ -473,7 +473,7 @@
  		echo " WARNING WARNING WARNING" ;\
  	fi
  
@@ -115,7 +124,7 @@
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
  	fi
-@@ -499,31 +499,23 @@
+@@ -511,31 +511,23 @@
  upgrade: bininstall
  
  adsi:
@@ -155,7 +164,7 @@
  		( \
  		echo "[directories]" ; \
  		echo "astetcdir => $(ASTETCDIR)" ; \
-@@ -585,20 +577,23 @@
+@@ -597,20 +589,23 @@
  		echo "; Default: strict"; \
  		echo ";"; \
  		echo ";translation_algorithm = strict"; \
@@ -183,7 +192,7 @@
  	done
  	@echo " +--------- Asterisk Web Voicemail ----------+"  
  	@echo " +                                           +"
-@@ -625,10 +620,10 @@
+@@ -637,10 +632,10 @@
  
  __rpm: include/asterisk/version.h include/asterisk/buildopts.h spec
  	rm -rf /tmp/asterisk ; \
@@ -196,7 +205,7 @@
  	cp -f contrib/init.d/rc.redhat.asterisk /tmp/asterisk/etc/rc.d/init.d/asterisk ; \
  	rpmbuild --rcfile /usr/lib/rpm/rpmrc:redhat/rpmrc -bb asterisk.spec
  
-@@ -639,19 +634,19 @@
+@@ -651,19 +646,19 @@
  config:
  	@if [ "${OSARCH}" = "linux-gnu" ]; then \
  		if [ -f /etc/redhat-release -o -f /etc/fedora-release ]; then \
