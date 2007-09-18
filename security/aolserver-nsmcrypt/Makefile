@@ -17,6 +17,8 @@ DIST_SUBDIR=	aolserver
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	AOLserver interface to mcrypt library
 
+PORTSCOUT=	skipv:2.0
+
 WRKSRC=		${WRKDIR}
 
 AOLSERVERBASE?=	aolserver
