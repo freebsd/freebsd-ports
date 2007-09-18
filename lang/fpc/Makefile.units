@@ -1,6 +1,6 @@
 PLIST=	${.CURDIR}/pkg-plist
 PATCHDIR=	${.CURDIR}/files
-WRKSRC=	${WRKDIR}/${PORTNAME:S/$/build_/}${PORTVERSION:S/$/_exp/}
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 UNITPREFIX=    		unit-
 UNITEXTRACT_SUFX=	.tar.gz
@@ -13,9 +13,9 @@ OPT=-CX
 MAKE_ENV+=	PP=${LOCALBASE}/bin/ppc386
 
 .if !exists(${LOCALBASE}/bin/fpcmake)
-EXTRACTUNITDIR+=	fpc-bin
+EXTRACTUNITDIR+=	${PORTNAME}-${PORTVERSION:S/$/.bin/}
 DISTFILES+=	${DISTNAME:S/$/.bin/}${EXTRACT_SUFX}:bin
-MAKE_ENV+=	FPCMAKE=${WRKDIR}/${PORTNAME:S/$/-bin/}/bin/fpcmake
+MAKE_ENV+=	FPCMAKE=${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/bin/fpcmake
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gdbint"
@@ -95,12 +95,10 @@ LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 HAVE_EXAMPLES=	true
 .endif
 
-.if ${PKGNAMESUFFIX} == "-fcl"
+.if ${PKGNAMESUFFIX} == "-fcl-db"
 OPT+=	-Fuunits/${ARCH}-freebsd -Fu../units/${ARCH}-freebsd \
-	-Fuxml/units/${ARCH}-freebsd -Fu../xml/units/${ARCH}-freebsd \
-	-Fudb/units/${ARCH}-freebsd -Fu../db/units/${ARCH}-freebsd \
-	-Fu../../units/${ARCH}-freebsd -Fu../passrc/units/${ARCH}-freebsd
-HAVE_EXAMPLES=	true
+	-Fu../src -Fu../../units/${ARCH}-freebsd -Fu../../../units/${ARCH}-freebsd
+HAVE_EXAMPLES=  true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-fpgtk"
@@ -157,11 +155,36 @@ HAVE_EXAMPLES=	true
 HAVE_EXAMPLES=	true
 .endif
 
+.if ${PKGNAMESUFFIX} == "-httpd"
+.	if defined(WITH_APACHE12)
+USE_APACHE=	13
+.	endif
+.	if defined(WITH_APACHE20)
+USE_APACHE=	20
+.	endif
+.	if defined(WITH_APACHE22)
+USE_APACHE=	22
+.	endif
+.endif
+
 .if ${PKGNAMESUFFIX} == "-imlib"
 .	if defined(WITH_IMLIB)
 .include <${PORTSDIR}/Mk/bsd.gnome.mk>
 USE_GNOME=	imlib
 .	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-cairo"
+.	if defined(WITH_LIBCAIRO)
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-libcurl"
+.	if defined(WITH_LIBCURL)
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+.	endif
+HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-libgd"
@@ -191,6 +214,18 @@ USE_GL=		yes
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 .	endif
 HAVE_EXAMPLES=	true
+.endif
+
+.if ${PKGNAMESUFFIX} == "-openssl"
+.       if defined(WITH_OPENSSL)
+USE_OPENSSL=	yes
+.       endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-pcap"
+.	if defined(WITH_LIBPCAP)
+LIB_DEPENDS=    pcap:${PORTSDIR}/net/libpcap
+.	endif
 .endif
 
 .if ${PKGNAMESUFFIX} == "-svgalib"
@@ -260,10 +295,10 @@ security-check: fpc-check-install
 
 fpc-check-install:
 check-makevars::
-	@${ECHO_CMD} "*****************************************************************"
+	@${ECHO_CMD} "#################################################################"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} " The following freepascal unit will be installed in your system: "
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} " * ${UNITPREFIX}${PKGNAMESUFFIX:S/-//}"
 	@${ECHO_CMD} ""
-	@${ECHO_CMD} "*****************************************************************"
+	@${ECHO_CMD} "#################################################################"

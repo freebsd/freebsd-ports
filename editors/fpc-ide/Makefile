@@ -29,7 +29,7 @@ BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		${UNITSDIR}/postgres/Package.fpc:${PORTSDIR}/databases/fpc-postgres \
 		${UNITSDIR}/regexpr/Package.fpc:${PORTSDIR}/devel/fpc-regexpr \
 		${UNITSDIR}/sqlite/Package.fpc:${PORTSDIR}/databases/fpc-sqlite \
-		${UNITSDIR}/fcl/Package.fpc:${PORTSDIR}/devel/fpc-fcl \
+		${UNITSDIR}/fcl-base/Package.fpc:${PORTSDIR}/devel/fpc-fcl-base \
 		${UNITSDIR}/fv/Package.fpc:${PORTSDIR}/devel/fpc-fv
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}

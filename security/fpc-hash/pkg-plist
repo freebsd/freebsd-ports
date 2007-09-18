@@ -3,9 +3,15 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/crc.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/crc.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/md5.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/md5.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/ntlm.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/ntlm.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/libpcrc.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/libpmd5.a
-%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/hash/md5test.pp
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/libpntlm.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/libpuuid.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/uuid.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/uuid.ppu
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/hash/mdtest.pas
 @dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash
 @dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
 @dirrmtry lib/fpc/%%PORTVERSION%%/units

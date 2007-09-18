@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-tcl
 
@@ -14,7 +14,7 @@ COMMENT=	Free Pascal interface to the tcl/tk interpreter
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		fpcmake:${PORTSDIR}/lang/fpc-utils \
-		${UNITSDIR}/fcl/Package.fpc:${PORTSDIR}/devel/fpc-fcl \
+		${UNITSDIR}/fcl-base/Package.fpc:${PORTSDIR}/devel/fpc-fcl-base \
 		${UNITSDIR}/gdbint/Package.fpc:${PORTSDIR}/devel/fpc-gdbint \
 		${UNITSDIR}/graph/Package.fpc:${PORTSDIR}/graphics/fpc-graph \
 		${UNITSDIR}/ibase/Package.fpc:${PORTSDIR}/databases/fpc-ibase \
