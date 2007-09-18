@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libkdcraw
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kipi
@@ -16,6 +16,7 @@ COMMENT=	A C++ interface around a dcraw binary program
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
 USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes
