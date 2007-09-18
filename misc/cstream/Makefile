@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	cstream
-PORTVERSION=	2.7.3
+PORTVERSION=	2.7.4
 CATEGORIES=	misc
 MASTER_SITES=	http://www.cons.org/cracauer/download/ \
-		http://www2.cons.org/freebsd-distfiles/
+		http://www2.cons.org/freebsd-distfiles/ \
+		http://www3.cons.org/freebsd-distfiles/
 
 MAINTAINER=	cracauer@cons.org
 COMMENT=	Like dd(1) tool, precise bandwidth limiting/reporting, fifo, TCP, audio support
