@@ -127,6 +127,7 @@
     SUBDIR += forg
     SUBDIR += fpc-libasync
     SUBDIR += fpc-netdb
+    SUBDIR += fpc-pcap
     SUBDIR += fping
     SUBDIR += freebsd-uucp
     SUBDIR += freedbd
