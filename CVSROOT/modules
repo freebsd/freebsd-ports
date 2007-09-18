@@ -3111,6 +3111,7 @@ fpc-fcl-xml		ports/devel/fpc-fcl-xml
 fpc-fftw	ports/math/fpc-fftw
 fpc-forms	ports/x11-toolkits/fpc-forms
 fpc-fpgtk	ports/graphics/fpc-fpgtk
+fpc-fpmkunit	ports/devel/fpc-fpmkunit
 fpc-fv		ports/devel/fpc-fv
 fpc-gconf	ports/devel/fpc-gconf
 fpc-gdbint	ports/devel/fpc-gdbint
