@@ -6,6 +6,35 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070919:
+  AFFECTS: users of net/samba3
+  AUTHOR: timur@FreeBSD.org
+  
+  This is a cummulative update of net/samba3 from version 3.0.25a to
+  3.0.26a. Detailed list of all the changes can be found:
+  
+    http://www.samba.org/samba/history/samba-3.0.26a.html
+  
+  or in the WHATSNEW.txt file in the port's document directory.
+  
+  Short summary is:
+  o Memory leaks in Winbind's IDMap manager.
+  o CVE-2007-4138 - Incorrect primary group assignment for domain 
+    users using the rfc2307 or sfu winbind nss info plugin.
+  o File sharing with Widows 9x clients.
+  o Winbind running out of file descriptors due to stalled child
+    processes.
+  o MS-DFS inter-operability issues.
+  o Offline caching of files with Windows XP/Vista clients.
+  o Improper cleanup of expired or invalid byte range locks on files.
+  o Crashes is idmap_ldap and idmap_rid.
+  
+  Bug #4715(https://bugzilla.samba.org/show_bug.cgi?id=4715) is NOT
+  fixed yet, although it won't core dump smbd proccess any more. Still,
+  access to the shares other than UFS is not guarantied.
+  
+  * USE SUCH SHARES AT YOUR OWN RISK *
+  
 20070918:
   AFFECTS: users of www/apache22
   AUTHOR: clement@FreeBSD.org
