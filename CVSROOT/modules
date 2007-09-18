@@ -3098,7 +3098,6 @@ fpc-bfd		ports/devel/fpc-bfd
 fpc-cairo		ports/graphics/fpc-cairo
 fpc-devel	ports/lang/fpc-devel
 fpc-docs	ports/lang/fpc-docs
-fpc-fcl		ports/devel/fpc-fcl
 fpc-fcl-base		ports/devel/fpc-fcl-base
 fpc-fcl-db		ports/devel/fpc-fcl-db
 fpc-fcl-fpcunit		ports/devel/fpc-fcl-fpcunit
