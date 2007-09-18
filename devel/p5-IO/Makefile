@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO
-PORTVERSION=	1.20
+PORTVERSION=	1.2301
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IO
@@ -15,15 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Various IO modules for Perl
 
-PERL_CONFIGURE=	5.6.0-
-USE_PERL5_REASON=	this module is already included in perl 5.6.x and later
+PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INSTALLDIRS=site POLLUTE=1
 
 MAN3=		IO.3 IO::Dir.3 IO::File.3 IO::Handle.3 IO::Pipe.3 IO::Poll.3 \
 		IO::Seekable.3 IO::Select.3 IO::Socket.3 IO::Socket::INET.3 \
 		IO::Socket::UNIX.3
-
-DEPRECATED=	only works with old, unsupported Perl versions
-EXPIRATION_DATE=	2007-09-11
 
 .include <bsd.port.mk>
