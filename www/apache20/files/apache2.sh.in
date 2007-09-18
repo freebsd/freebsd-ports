@@ -98,6 +98,11 @@ apache2_requirepidfile()
 
 apache2_checkconfig()
 {
+	if test -f %%PREFIX%%/sbin/envvars
+	then
+		. %%PREFIX%%/sbin/envvars
+	fi
+
 	echo "Performing sanity check on apache2 configuration:"
 	eval ${command} ${apache2_flags} -t
 }
@@ -113,18 +118,12 @@ apache2_precmd()
 {
 	apache2_checkconfig
 
-	if test -f %%PREFIX%%/sbin/envvars
-	then
-		. %%PREFIX%%/sbin/envvars
-	fi
-
 	if checkyesno apache2limits_enable
 	then
 		eval `/usr/bin/limits ${apache2limits_args}` 2>/dev/null
 	else
 		return 0
         fi
-
 }
 
 extra_commands="reload graceful configtest"
