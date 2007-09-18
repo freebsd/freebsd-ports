@@ -4163,6 +4163,7 @@ gruler		ports/deskutils/gruler
 grun		ports/misc/grun
 grx		ports/graphics/grx
 grzip		ports/archivers/grzip
+gsambad		ports/net/gsambad
 gsasl		ports/security/gsasl
 gsbench		ports/benchmarks/gsbench
 gscan2pdf	ports/graphics/gscan2pdf
