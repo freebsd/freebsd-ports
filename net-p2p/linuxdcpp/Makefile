@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linuxdcpp
-PORTVERSION=	0.0.1.20070707	#0.0.1.YYYYMMDD
+PORTVERSION=	0.0.1.20070804	#0.0.1.YYYYMMDD
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~mezz/distfiles/
