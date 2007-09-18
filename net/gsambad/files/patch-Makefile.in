@@ -1,0 +1,35 @@
+--- Makefile.in.orig	2007-08-26 06:49:56.000000000 -0800
++++ Makefile.in	2007-09-17 10:07:26.000000000 -0800
+@@ -651,18 +651,6 @@
+ 	fi;
+ 	if test -d $(DESTDIR)$(sysconfdir)/security/console.apps; then \
+ 	   cp etc/security/console.apps/gsambad $(DESTDIR)$(sysconfdir)/security/console.apps/; \
+-	fi;   
+-	if test -d $(DESTDIR)$(datadir)/applications; then \
+-	   cp desktop/net-gsambad.desktop $(DESTDIR)$(datadir)/applications/; \
+-	fi;
+-	if test ! -d $(DESTDIR)$(datadir)/doc/gsambad; then \
+-	   $(mkinstalldirs) $(DESTDIR)$(datadir)/doc/gsambad; \
+-	fi;
+-	if test -d $(DESTDIR)$(datadir)/doc/gsambad; then \
+-	   cp AUTHORS $(DESTDIR)$(datadir)/doc/gsambad/; \
+-	   cp README $(DESTDIR)$(datadir)/doc/gsambad/; \
+-	   cp ChangeLog $(DESTDIR)$(datadir)/doc/gsambad/; \
+-	   cp COPYING $(DESTDIR)$(datadir)/doc/gsambad/; \
+ 	fi;
+ 	if test ! -d $(DESTDIR)$(sysconfdir)/gsambad; then \
+ 	   $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gsambad; \
+@@ -670,13 +658,6 @@
+ 	if test -d $(DESTDIR)$(bindir) && test ! -f $(DESTDIR)$(bindir)/gsambadpdf; then \
+ 	   cp scripts/gsambadpdf $(bindir)/; \
+ 	fi;
+-	@echo Installing example logon script to static /home/netlogon.
+-	if test ! -d /home/netlogon; then \
+-	   mkdir -p /home/netlogon; \
+-	fi;
+-	if test -d /home/netlogon && test ! -f /home/netlogon/example.bat; then \
+-	   cp scripts/example.bat /home/netlogon/; \
+-	fi;
+ 	@echo ""
+ 	@echo "Start GSAMBAD by typing gsambad in a terminal"
+ 	@echo "or start it from the menu."

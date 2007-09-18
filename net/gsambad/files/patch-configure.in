@@ -1,0 +1,41 @@
+--- configure.in.orig	2007-08-26 06:49:43.000000000 -0800
++++ configure.in	2007-09-16 18:26:20.000000000 -0800
+@@ -137,25 +137,25 @@
+ AC_MSG_RESULT([Using samba server user: (${SAMBA_USER})])
+ 
+ dnl Path to the smb.conf file.
+-default_smb_conf="/etc/samba/smb.conf"
++default_smb_conf="${prefix}/etc/smb.conf"
+ test "x$SAMBA_CONF" = x && SAMBA_CONF=$default_smb_conf
+ AC_DEFINE_UNQUOTED(SAMBA_CONF,"`eval echo "${SAMBA_CONF}"`",[Path to smbd.conf])
+ AC_MSG_RESULT([Using smb.conf file: (${SAMBA_CONF})])
+ 
+ dnl Path to the backup smb.conf file.
+-default_smb_conf_backup="/etc/samba/smb.conf.old.gsambad-${VERSION}"
++default_smb_conf_backup="${prefix}/etc/smb.conf.old.gsambad-${VERSION}"
+ test "x$SAMBA_CONF_BACKUP" = x && SAMBA_CONF_BACKUP=$default_smb_conf_backup
+ AC_DEFINE_UNQUOTED(SAMBA_CONF_BACKUP,"`eval echo "${SAMBA_CONF_BACKUP}"`",[Path to backup smb.conf])
+ AC_MSG_RESULT([Using backup smb.conf file: (${SAMBA_CONF_BACKUP})])
+ 
+ dnl Path to the smbpasswd file.
+-default_smb_passwd_conf="/etc/samba/smbpasswd"
++default_smb_passwd_conf="${prefix}/etc/samba/smbpasswd"
+ test "x$SAMBA_PASSWD" = x && SAMBA_PASSWD=$default_smb_passwd_conf
+ AC_DEFINE_UNQUOTED(SAMBA_PASSWD,"`eval echo "${SAMBA_PASSWD}"`",[Path to smbpasswd])
+ AC_MSG_RESULT([Using smbpasswd file: (${SAMBA_PASSWD})])
+ 
+ dnl Path to the smbusers file.
+-default_samba_usermap="/etc/samba/smbusers"
++default_samba_usermap="${prefix}/etc/samba/smbusers"
+ test "x$SAMBA_USERMAP" = x && SAMBA_USERMAP=$default_samba_usermap
+ AC_DEFINE_UNQUOTED(SAMBA_USERMAP,"`eval echo "${SAMBA_USERMAP}"`",[Path to smbusers])
+ AC_MSG_RESULT([Using smbusers file: (${SAMBA_USERMAP})])
+@@ -173,7 +173,7 @@
+ AC_MSG_RESULT([Using security log: (${SECURE_LOG})])
+ 
+ dnl Path the proc filesystem.
+-default_proc_path="/proc"
++default_proc_path="/compat/linux/proc"
+ test "x$PROC_PATH" = x && PROC_PATH=$default_proc_path
+ AC_DEFINE_UNQUOTED(PROC_PATH,"`eval echo "${PROC_PATH}"`",[path to the proc filesystem])
+ AC_MSG_RESULT([Using proc: (${PROC_PATH})])
