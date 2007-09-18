@@ -82,6 +82,8 @@ libexec/MailScanner/etrust-autoupdate.sample
 libexec/MailScanner/etrust-wrapper.sample
 libexec/MailScanner/f-prot-autoupdate.sample
 libexec/MailScanner/f-prot-wrapper.sample
+libexec/MailScanner/f-prot-6-wrapper.sample
+libexec/MailScanner/f-prot-6-autoupdate.sample
 libexec/MailScanner/f-secure-autoupdate.sample
 libexec/MailScanner/f-secure-wrapper.sample
 libexec/MailScanner/generic-autoupdate.sample
