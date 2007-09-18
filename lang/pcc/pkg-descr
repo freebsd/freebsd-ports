@@ -6,3 +6,5 @@ The intention is to write a C99 compiler while still keeping it small, simple,
 fast and understandable.  I think of it as if it shall be able to compile and
 run on PDP11 (even if it may not happen in reality).  But with this in mind it
 becomes important to think twice about what algorithms are used.
+
+WWW:	http://www.ludd.ltu.se/~ragge/pcc/
