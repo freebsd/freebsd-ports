@@ -1,6 +1,0 @@
-%%SITE_PERL%%/Net/SNMP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNMP/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNMP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
-@dirrmtry %%SITE_PERL%%/Net
