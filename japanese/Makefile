@@ -238,7 +238,6 @@
     SUBDIR += nethack32
     SUBDIR += nethack34
     SUBDIR += netype
-    SUBDIR += netypesv
     SUBDIR += newosaka
     SUBDIR += ng
     SUBDIR += ng-canna

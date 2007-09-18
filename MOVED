@@ -3234,3 +3234,9 @@ lang/gnomebasic||2007-09-18|Has expired: Five years abandoned project; functiona
 lang/gnat-gcc34||2007-09-18|Has expired: This port was made for initial bootstraping of later versions and is no longer needed
 devel/hs-green-card||2007-09-18|Has expired: "Does not build with latest GHC"
 devel/p5-Devel-DProf||2007-09-18|Has expired: only works for old, unsupported Perl versions
+java/jdk11-doc||2007-09-18|Has expired: Obsolete version of jdk
+databases/java-sqlrelay||2007-09-18|Has expired: Depends on obsolete version of jdk
+mail/yuzu||2007-09-18|Has expired: Depends on obsolete version of jdk
+net/ng_netflow||2007-09-18|Has expired: already in base in all supported versions of FreeBSD
+java/jdk12-doc||2007-09-18|Has expired: Obsolete version of jdk
+japanese/netypesv||2007-09-18|Has expired: Depends on obsolete version of jdk

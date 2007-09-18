@@ -96,9 +96,7 @@
     SUBDIR += jdbcpool
     SUBDIR += jde
     SUBDIR += jdk11
-    SUBDIR += jdk11-doc
     SUBDIR += jdk12
-    SUBDIR += jdk12-doc
     SUBDIR += jdk13
     SUBDIR += jdk13-doc
     SUBDIR += jdk14
