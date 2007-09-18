@@ -216,7 +216,7 @@ MODULES:=${MODULES}:mod_quotatab_sql
 DISTFILES+=	mod_clamav-0.5.tar.bz2:clam
 USE_CLAMAV=	yes
 MODULES:=${MODULES}:mod_clamav
-LIB_DEPENDS+=   clamav.2:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	clamav.2:${PORTSDIR}/security/clamav
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 .endif
