@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libzip
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.nih.at/libzip/
 
@@ -14,7 +14,7 @@ MAINTAINER=	zaa@zaa.pp.ru
 COMMENT=	A C library for reading, creating, and modifying zip archives
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig
 
 PLIST_FILES=	bin/zipcmp \
@@ -31,13 +31,16 @@ MAN1=		zipcmp.1 \
 
 MAN3=		libzip.3 \
 		zip_add.3 \
+		zip_add_dir.3 \
 		zip_close.3 \
 		zip_delete.3 \
+		zip_error_clear.3 \
 		zip_error_get.3 \
 		zip_error_get_sys_type.3 \
 		zip_error_to_str.3 \
 		zip_errors.3 \
 		zip_fclose.3 \
+		zip_file_error_clear.3 \
 		zip_file_error_get.3 \
 		zip_file_strerror.3 \
 		zip_fopen.3 \
@@ -61,6 +64,7 @@ MAN3=		libzip.3 \
 		zip_source_zip.3 \
 		zip_stat.3 \
 		zip_stat_index.3 \
+		zip_stat_init.3 \
 		zip_strerror.3 \
 		zip_unchange.3 \
 		zip_unchange_all.3 \

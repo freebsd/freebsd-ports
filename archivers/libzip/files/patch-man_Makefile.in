@@ -1,13 +1,13 @@
---- man/Makefile.in.orig	Tue Mar 21 17:21:15 2006
-+++ man/Makefile.in	Tue Mar 21 17:21:45 2006
-@@ -149,8 +149,8 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
+--- man/Makefile.in.orig	2007-08-02 13:44:34.000000000 +0400
++++ man/Makefile.in	2007-08-02 13:46:45.000000000 +0400
+@@ -154,8 +154,8 @@
  target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
 -man1_MANS = ${MAN1:.mdoc=.${MANFMT}}
 -man3_MANS = ${MAN3:.mdoc=.${MANFMT}}
 +man1_MANS = ${MAN1}
 +man3_MANS = ${MAN3}
  DISTCLEANFILES = ${HTML}
- EXTRA_DIST = ${MANDOC} ${MAN}
+ EXTRA_DIST = ${MANDOC} ${MAN} CMakeLists.txt
  MAN1 = zipcmp.mdoc zipmerge.mdoc
