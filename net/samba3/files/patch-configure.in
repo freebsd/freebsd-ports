@@ -1,5 +1,5 @@
---- configure.in.orig	Wed May 23 17:29:20 2007
-+++ configure.in	Mon Jun  4 03:22:42 2007
+--- configure.in.orig	Mon Aug 20 15:04:51 2007
++++ configure.in	Fri Aug 31 00:59:33 2007
 @@ -1041,6 +1041,21 @@
     AC_DEFINE(HAVE_SIG_ATOMIC_T_TYPE,1,[Whether we have the atomic_t variable type])
  fi
@@ -22,7 +22,15 @@
  AC_CACHE_CHECK([for struct timespec type],samba_cv_struct_timespec, [
      AC_TRY_COMPILE([
  #include <sys/types.h>
-@@ -4033,10 +4048,10 @@
+@@ -1244,6 +1259,7 @@
+ 
+ # Find a method of generating a stack trace
+ AC_CHECK_HEADERS(execinfo.h libexc.h libunwind.h)
++AC_SEARCH_LIBS(backtrace_symbols, [execinfo])
+ AC_CHECK_FUNCS(backtrace_symbols)
+ AC_CHECK_LIB(exc, trace_back_stack)
+ 
+@@ -4041,10 +4057,10 @@
  
    ################################################################
    # first test for Active Directory support being enabled
@@ -37,7 +45,7 @@
    ##################################################################
    # then test for uuid.h (necessary to generate unique DNS keynames
    # (uuid.h is required for this test)
-@@ -5107,7 +5122,7 @@
+@@ -5115,7 +5131,7 @@
  #################################################
  # check for ACL support
  
@@ -46,7 +54,7 @@
  AC_ARG_WITH(acl-support,
  [  --with-acl-support      Include ACL support (default=no)],
  [ case "$withval" in
-@@ -5115,43 +5130,37 @@
+@@ -5123,43 +5139,37 @@
  
  	case "$host_os" in
  	*sysv5*)
@@ -97,7 +105,7 @@
  	*linux*)
  		AC_CHECK_LIB(attr,getxattr,[ACL_LIBS="$ACL_LIBS -lattr"])
         		AC_CHECK_LIB(acl,acl_get_file,[ACL_LIBS="$ACL_LIBS -lacl"])
-@@ -5172,7 +5181,7 @@
+@@ -5180,7 +5190,7 @@
  			LIBS=$acl_LIBS
  		])
  		if test x"$samba_cv_HAVE_POSIX_ACLS" = x"yes"; then
@@ -106,7 +114,7 @@
  			AC_DEFINE(HAVE_POSIX_ACLS,1,[Whether POSIX ACLs are available])
  			AC_CACHE_CHECK([for acl_get_perm_np],samba_cv_HAVE_ACL_GET_PERM_NP,[
  				acl_LIBS=$LIBS
-@@ -5193,12 +5202,18 @@
+@@ -5201,12 +5211,18 @@
  				AC_DEFINE(HAVE_ACL_GET_PERM_NP,1,[Whether acl_get_perm_np() is available])
  			fi
  		fi
@@ -129,7 +137,7 @@
  			AC_TRY_LINK([
  				#include <sys/types.h>
  				#include <sys/acl.h>
-@@ -5211,20 +5226,20 @@
+@@ -5219,20 +5235,20 @@
  			[samba_cv_HAVE_POSIX_ACLS=yes],
  			[samba_cv_HAVE_POSIX_ACLS=no])
  			LIBS=$acl_LIBS
@@ -155,7 +163,7 @@
  				],
  				[samba_cv_HAVE_ACL_GET_PERM_NP=yes],
  				[samba_cv_HAVE_ACL_GET_PERM_NP=no])
-@@ -5233,17 +5248,22 @@
+@@ -5241,17 +5257,22 @@
  			if test x"$samba_cv_HAVE_ACL_GET_PERM_NP" = x"yes"; then
  				AC_DEFINE(HAVE_ACL_GET_PERM_NP,1,[Whether acl_get_perm_np() is available])
  			fi
@@ -180,3 +188,11 @@
  )
  
  if test x"$samba_cv_HAVE_POSIX_ACLS" = x"yes"; then
+@@ -6082,6 +6103,7 @@
+ SMB_MODULE(vfs_irixacl, \$(VFS_IRIXACL_OBJ), "bin/irixacl.$SHLIBEXT", VFS)
+ SMB_MODULE(vfs_hpuxacl, \$(VFS_HPUXACL_OBJ), "bin/hpuxacl.$SHLIBEXT", VFS)
+ SMB_MODULE(vfs_tru64acl, \$(VFS_TRU64ACL_OBJ), "bin/tru64acl.$SHLIBEXT", VFS)
++SMB_MODULE(vfs_zfsacl, \$(VFS_ZFSACL_OBJ), "bin/zfsacl.$SHLIBEXT", VFS)
+ SMB_MODULE(vfs_catia, \$(VFS_CATIA_OBJ), "bin/catia.$SHLIBEXT", VFS)
+ SMB_MODULE(vfs_cacheprime, \$(VFS_CACHEPRIME_OBJ), "bin/cacheprime.$SHLIBEXT", VFS)
+ SMB_MODULE(vfs_prealloc, \$(VFS_PREALLOC_OBJ), "bin/prealloc.$SHLIBEXT", VFS)

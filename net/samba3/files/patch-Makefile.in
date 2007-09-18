@@ -1,6 +1,26 @@
---- ./Makefile.in.orig	Mon Apr  9 19:31:00 2007
-+++ ./Makefile.in	Tue Apr 17 02:06:59 2007
-@@ -1558,8 +1558,7 @@
+--- Makefile.in.orig	Tue Jun 19 19:11:39 2007
++++ Makefile.in	Thu Aug 30 23:19:54 2007
+@@ -424,6 +424,7 @@
+ VFS_HPUXACL_OBJ = modules/vfs_hpuxacl.o
+ VFS_IRIXACL_OBJ = modules/vfs_irixacl.o
+ VFS_TRU64ACL_OBJ = modules/vfs_tru64acl.o
++VFS_ZFSACL_OBJ = modules/vfs_zfsacl.o
+ VFS_CATIA_OBJ = modules/vfs_catia.o
+ VFS_CACHEPRIME_OBJ = modules/vfs_cacheprime.o
+ VFS_PREALLOC_OBJ = modules/vfs_prealloc.o
+@@ -1477,6 +1478,11 @@
+ 	@$(SHLD) $(LDSHFLAGS) -o $@ $(VFS_TRU64ACL_OBJ) \
+ 		@SONAMEFLAG@`basename $@`
+ 
++bin/zfsacl.@SHLIBEXT@: $(VFS_ZFSACL_OBJ)
++	@echo "Building plugin $@"
++	@$(SHLD) $(LDSHFLAGS) -o $@ $(VFS_ZFSACL_OBJ) \
++		@SONAMEFLAG@`basename $@`
++
+ bin/catia.@SHLIBEXT@: proto_exists $(VFS_CATIA_OBJ)
+ 	@echo "Building plugin $@"
+ 	@$(SHLD) $(LDSHFLAGS) -o $@ $(VFS_CATIA_OBJ) \
+@@ -1566,8 +1572,7 @@
  	@echo Linking $@
  	@$(CC) $(FLAGS) -o $@ $(DYNEXP) script/tests/timelimit.o
  
