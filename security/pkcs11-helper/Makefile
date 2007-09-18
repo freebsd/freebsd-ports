@@ -11,7 +11,7 @@ CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A helper library for multiple PKCS#11 providers
+COMMENT=	A helper library for multiple PKCS\#11 providers
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
