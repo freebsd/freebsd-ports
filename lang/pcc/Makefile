@@ -22,6 +22,7 @@ ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	YES
 CONFIGURE_TARGET= --build=${ARCH}-portbld-freebsd${OSREL}
+USE_GMAKE=	I_dont_know_why_bmake_isnt_always_working_right
 
 PLIST_FILES=	bin/pcc libexec/ccom libexec/cpp
 
