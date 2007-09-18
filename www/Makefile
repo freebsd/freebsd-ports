@@ -176,6 +176,7 @@
     SUBDIR += fluxcms
     SUBDIR += fnord
     SUBDIR += formication
+    SUBDIR += fpc-httpd
     SUBDIR += free-sa
     SUBDIR += fswiki
     SUBDIR += g-cows
