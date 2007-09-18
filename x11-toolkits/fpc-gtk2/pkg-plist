@@ -7,6 +7,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gdk2.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gtk2.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libglade2.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gtkglext.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gdk2x.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gdkglext.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/glib2.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/atk.o
@@ -17,11 +18,13 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gtk2.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libglade2.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gtkglext.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gdkglext.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gdk2x.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpglib2.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpatk.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libppango.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgdk2pixbuf.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgdk2.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgdk2x.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgtk2.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libplibglade2.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgtkglext.a

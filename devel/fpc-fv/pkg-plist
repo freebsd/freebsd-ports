@@ -12,7 +12,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/inplong.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/memory.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/menus.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/msgbox.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/resource.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/statuses.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/stddlg.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/tabs.ppu
@@ -35,7 +34,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/inplong.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/memory.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/menus.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/msgbox.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/resource.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/statuses.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/stddlg.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/tabs.o
@@ -58,7 +56,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libpinplong.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libpmemory.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libpmenus.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libpmsgbox.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libpresource.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libpstatuses.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libpstddlg.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libptabs.a

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docs
-PORTVERSION=	2.0.4
+PORTVERSION=	2.2.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/docs-${PORTVERSION}/ \
 		ftp://planetmirror.com/pub/fpc/dist/docs-${PORTVERSION}/ \

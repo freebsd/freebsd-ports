@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	fpc
-PORTVERSION=	2.0.4
-PORTREVISION?=	1
+PORTVERSION=	2.2.0
+PORTREVISION?=	0
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
 		ftp://planetmirror.com/pub/fpc/dist/source-${PORTVERSION}/:source \
@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:sourc
 		${MASTER_SITE_LOCAL:S|$|acm/freepascal/:bin|}
 MASTER_SITE_SUBDIR=	freepascal
 DISTNAME=	${PORTNAME}-${PORTVERSION}
-DISTFILES=	${PORTNAME:S/$/build/}-${PORTVERSION}${EXTRACT_SUFX}:source
+DISTFILES=	${DISTNAME:S/$/.source/}${EXTRACT_SUFX}:source
 DIST_SUBDIR=	freepascal
 
 MAINTAINER?=	acm@FreeBSD.org
@@ -33,21 +33,18 @@ MAKE_ENV=	PREFIX=${PREFIX} \
 		FPCTARGET=${BUILDNAME} \
 		OPT="${OPT}" \
 		BSDHIER=1
+OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		BUILDNAME=${BUILDNAME}
 SUB_FILES=	pkg-message
-FPCSRCDIR=	${PORTNAME:S/$/build_/}${PORTVERSION:S/$/_exp/}/${PORTNAME:S/$/src/}
+FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
 .if !defined(PKGNAMESUFFIX)
 DISTFILES+=	${DISTNAME:S/$/.bin/}${EXTRACT_SUFX}:bin
-MAKE_ENV+=	PP=${WRKDIR}/${PORTNAME:S/$/-bin/}/lib/${PORTNAME}/${PORTVERSION}/ppc386 \
-		FPCMAKE=${WRKDIR}/${PORTNAME:S/$/-bin/}/bin/fpcmake
+MAKE_ENV+=	PP=${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/lib/${PORTNAME}/${PORTVERSION}/ppc386 \
+		FPCMAKE=${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/bin/fpcmake
 MAN1=	bin2obj.1 \
 	data2inc.1 \
 	delp.1 \
@@ -90,7 +87,7 @@ do-extract:
 		${WRKDIR}
 # unpack source distribution
 	@cd ${WRKDIR} && \
-		${GZIP_CMD} -dc ${_DISTDIR}/${PORTNAME:S/$/build/}-${PORTVERSION}${EXTRACT_SUFX} \
+		${GZIP_CMD} -dc ${_DISTDIR}/${DISTNAME:S/$/.source/}${EXTRACT_SUFX} \
 			| ${TAR} xf - ${FPCSRCDIR}/compiler ${FPCSRCDIR}/rtl
 
 do-build:
@@ -103,8 +100,8 @@ do-install:
       	# Installing fpc runtime
 	@cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${GMAKE} install ${MAKE_ENV}
 	# Installing manpages
-	${INSTALL_DATA} ${WRKDIR}/fpc-bin/man/man1/* ${MAN1PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKDIR}/fpc-bin/man/man5/* ${MAN1PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/man/man1/* ${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/man/man5/* ${MAN1PREFIX}/man/man5
 
 post-install:
 	if [ -e "${PREFIX}/bin/ppc386" ]; then ${RM} -f "${PREFIX}/bin/ppc386"; fi

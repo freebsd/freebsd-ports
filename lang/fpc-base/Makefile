@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	base
-PORTVERSION=	2.0.4
+PORTVERSION=	2.2.0
 CATEGORIES=	lang
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	fpc-
@@ -30,7 +30,8 @@ RUN_DEPENDS=	${UNITSDIR}/gdbint/Package.fpc:${PORTSDIR}/devel/fpc-gdbint \
 		${UNITSDIR}/pthreads/Package.fpc:${PORTSDIR}/devel/fpc-pthreads \
 		${UNITSDIR}/postgres/Package.fpc:${PORTSDIR}/databases/fpc-postgres \
 		${UNITSDIR}/regexpr/Package.fpc:${PORTSDIR}/devel/fpc-regexpr \
-		${UNITSDIR}/sqlite/Package.fpc:${PORTSDIR}/databases/fpc-sqlite
+		${UNITSDIR}/sqlite/Package.fpc:${PORTSDIR}/databases/fpc-sqlite \
+		${UNITSDIR}/httpd-1.3/Package.fpc:${PORTSDIR}/www/fpc-httpd
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 BUILDNAME=	${ARCH}-freebsd

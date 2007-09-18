@@ -13,11 +13,14 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal Compiler utils
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
-		mkxmlrpc:${PORTSDIR}/devel/fpc-fcl \
+		${UNITSDIR}/fcl-base/Package.fpc:${PORTSDIR}/devel/fpc-fcl-base \
+		${UNITSDIR}/fcl-passrc/Package.fpc:${PORTSDIR}/devel/fpc-fcl-passrc \
+		${UNITSDIR}/fcl-xml/Package.fpc:${PORTSDIR}/devel/fpc-fcl-xml \
 		${UNITSDIR}/gdbint/Package.fpc:${PORTSDIR}/devel/fpc-gdbint \
 		${UNITSDIR}/graph/Package.fpc:${PORTSDIR}/graphics/fpc-graph \
 		${UNITSDIR}/ibase/Package.fpc:${PORTSDIR}/databases/fpc-ibase \
 		${UNITSDIR}/libasync/Package.fpc:${PORTSDIR}/net/fpc-libasync \
+		${UNITSDIR}/libcurl/Package.fpc:${PORTSDIR}/ftp/fpc-libcurl \
 		${UNITSDIR}/hash/Package.fpc:${PORTSDIR}/security/fpc-hash \
 		${UNITSDIR}/mysql/Package.fpc:${PORTSDIR}/databases/fpc-mysql \
 		${UNITSDIR}/netdb/Package.fpc:${PORTSDIR}/net/fpc-netdb \

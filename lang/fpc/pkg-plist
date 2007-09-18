@@ -1,10 +1,9 @@
-@comment $FreeBSD: /tmp/pcvs/ports/lang/fpc/pkg-plist,v 1.7 2006-09-07 21:32:23 acm Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/lang/fpc/pkg-plist,v 1.8 2007-09-18 06:53:23 acm Exp $
 
 @unexec rm -f %D/etc/fpc.cfg > /dev/null 2>&1 || true
 bin/fpc
 bin/fpcmkcfg
 bin/fpcsubst
-bin/fppkg
 bin/ppudump
 bin/ppufiles
 bin/ppumove
@@ -12,6 +11,7 @@ bin/ppc386
 lib/fpc/%%PORTVERSION%%/msg/errorct.msg
 lib/fpc/%%PORTVERSION%%/msg/errord.msg
 lib/fpc/%%PORTVERSION%%/msg/errorda.msg
+lib/fpc/%%PORTVERSION%%/msg/errordu.msg
 lib/fpc/%%PORTVERSION%%/msg/errore.msg
 lib/fpc/%%PORTVERSION%%/msg/errores.msg
 lib/fpc/%%PORTVERSION%%/msg/errorf.msg
@@ -65,8 +65,10 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/dynlibs.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/dynlibs.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/errors.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/errors.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fpmkunit.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fpmkunit.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fgl.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fgl.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fmtbcd.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fmtbcd.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/freebsd.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/freebsd.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/getopts.o
@@ -97,7 +99,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpdl.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpdos.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpdynlibs.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libperrors.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpfpmkunit.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpfgl.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpfmtbcd.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpfreebsd.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpgetopts.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpheaptrc.a
@@ -105,6 +108,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpinitc.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpipc.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpkeyboard.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libplineinfo.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libplnfodwrf.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpmacpas.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpmath.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpmatrix.a
@@ -117,6 +121,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpprinter.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libprtlconsts.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpserial.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpsockets.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpstdconvs.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpstrings.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpstrutils.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpsyscall.a
@@ -136,6 +141,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpvariants.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpvarutils.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpvideo.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpx86.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/lnfodwrf.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/lnfodwrf.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/lineinfo.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/lineinfo.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/macpas.o
@@ -163,6 +170,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/serial.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/serial.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/sockets.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/sockets.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/stdconvs.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/stdconvs.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/strings.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/strings.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/strutils.o

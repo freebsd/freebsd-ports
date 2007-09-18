@@ -1,4 +1,6 @@
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/buildpasjpeg.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/buildpasjpeg.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jcapimin.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jcapistd.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jccoefct.ppu
@@ -97,6 +99,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jpeglib.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jquant1.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jquant2.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jutils.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpbuildpasjpeg.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjcapimin.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjcapistd.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjccoefct.a
