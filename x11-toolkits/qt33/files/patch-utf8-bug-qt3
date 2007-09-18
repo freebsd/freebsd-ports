@@ -8,8 +8,12 @@
      int need;
      bool headerDone;
  public:
-@@ -167,8 +168,9 @@
- 	result.setLength( len ); // worst case
+@@ -164,11 +165,12 @@
+     QString toUnicode(const char* chars, int len)
+     {
+ 	QString result;
+-	result.setLength( len ); // worst case
++	result.setLength( len + 1 ); // worst case
  	QChar *qch = (QChar *)result.unicode();
  	uchar ch;
 +        int error = -1;
