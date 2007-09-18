@@ -1,7 +1,6 @@
 bin/tkabber
 %%DATADIR%%/Tclx.tcl
 %%DATADIR%%/balloon.tcl
-%%DATADIR%%/browser.tcl
 %%DATADIR%%/chats.tcl
 %%DATADIR%%/ckabber.tcl
 %%DATADIR%%/configdir.tcl
@@ -35,6 +34,8 @@ bin/tkabber
 %%DATADIR%%/ifacetk/unix.xrdb
 %%DATADIR%%/iq.tcl
 %%DATADIR%%/itemedit.tcl
+%%DATADIR%%/jabberlib-tclxml/autoconnect.tcl
+%%DATADIR%%/jabberlib-tclxml/https.tcl
 %%DATADIR%%/jabberlib-tclxml/idna.tcl
 %%DATADIR%%/jabberlib-tclxml/jabberlib.tcl
 %%DATADIR%%/jabberlib-tclxml/jlibauth.tcl
@@ -46,6 +47,8 @@ bin/tkabber
 %%DATADIR%%/jabberlib-tclxml/namespaces.tcl
 %%DATADIR%%/jabberlib-tclxml/ntlm.tcl
 %%DATADIR%%/jabberlib-tclxml/pkgIndex.tcl
+%%DATADIR%%/jabberlib-tclxml/socks4.tcl
+%%DATADIR%%/jabberlib-tclxml/socks5.tcl
 %%DATADIR%%/jabberlib-tclxml/stanzaerror.tcl
 %%DATADIR%%/jabberlib-tclxml/streamerror.tcl
 %%DATADIR%%/jabberlib-tclxml/tclxml/pkgIndex.tcl
@@ -58,7 +61,6 @@ bin/tkabber
 %%DATADIR%%/jabberlib-tclxml/tclxml/xpath.tcl
 %%DATADIR%%/jabberlib-tclxml/transports.tcl
 %%DATADIR%%/jabberlib-tclxml/wrapper.tcl
-%%DATADIR%%/jidlink.tcl
 %%DATADIR%%/joingrdialog.tcl
 %%DATADIR%%/login.tcl
 %%DATADIR%%/mclistbox/mclistbox.tcl
@@ -81,6 +83,7 @@ bin/tkabber
 %%DATADIR%%/msgs/uk.rc
 %%DATADIR%%/muc.tcl
 %%DATADIR%%/negotiate.tcl
+%%DATADIR%%/pep.tcl
 %%DATADIR%%/pixmaps.tcl
 %%DATADIR%%/pixmaps/default-blue/docking/available-away.gif
 %%DATADIR%%/pixmaps/default-blue/docking/available-chat.gif
@@ -303,10 +306,10 @@ bin/tkabber
 %%DATADIR%%/plugins/chat/unisymbols.tcl
 %%DATADIR%%/plugins/chat/update_tab.tcl
 %%DATADIR%%/plugins/filetransfer/http.tcl
-%%DATADIR%%/plugins/filetransfer/jidlink.tcl
 %%DATADIR%%/plugins/filetransfer/si.tcl
 %%DATADIR%%/plugins/general/autoaway.tcl
 %%DATADIR%%/plugins/general/avatars.tcl
+%%DATADIR%%/plugins/general/caps.tcl
 %%DATADIR%%/plugins/general/clientinfo.tcl
 %%DATADIR%%/plugins/general/copy_jid.tcl
 %%DATADIR%%/plugins/general/headlines.tcl
@@ -329,8 +332,9 @@ bin/tkabber
 %%DATADIR%%/plugins/iq/ping.tcl
 %%DATADIR%%/plugins/iq/time.tcl
 %%DATADIR%%/plugins/iq/version.tcl
-%%DATADIR%%/plugins/jidlink/dtcp.tcl
-%%DATADIR%%/plugins/jidlink/ibb.tcl
+%%DATADIR%%/plugins/pep/user_activity.tcl
+%%DATADIR%%/plugins/pep/user_mood.tcl
+%%DATADIR%%/plugins/pep/user_tune.tcl
 %%DATADIR%%/plugins/richtext/chatlog.tcl
 %%DATADIR%%/plugins/richtext/emoticons.tcl
 %%DATADIR%%/plugins/richtext/highlight.tcl
@@ -460,7 +464,7 @@ bin/tkabber
 @dirrm %%DATADIR%%/plugins/chat
 @dirrm %%DATADIR%%/plugins/unix
 @dirrm %%DATADIR%%/plugins/filetransfer
-@dirrm %%DATADIR%%/plugins/jidlink
+@dirrm %%DATADIR%%/plugins/pep
 @dirrm %%DATADIR%%/plugins/search
 @dirrm %%DATADIR%%/plugins/iq
 @dirrm %%DATADIR%%/plugins/richtext
