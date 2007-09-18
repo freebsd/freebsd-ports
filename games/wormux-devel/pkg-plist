@@ -13,6 +13,7 @@ share/locale/fr/LC_MESSAGES/wormux.mo
 share/locale/gl/LC_MESSAGES/wormux.mo
 share/locale/hu/LC_MESSAGES/wormux.mo
 share/locale/it/LC_MESSAGES/wormux.mo
+share/locale/lv/LC_MESSAGES/wormux.mo
 share/locale/nb/LC_MESSAGES/wormux.mo
 share/locale/nl/LC_MESSAGES/wormux.mo
 share/locale/pl/LC_MESSAGES/wormux.mo
@@ -24,6 +25,7 @@ share/locale/sk/LC_MESSAGES/wormux.mo
 share/locale/sl/LC_MESSAGES/wormux.mo
 share/locale/sv/LC_MESSAGES/wormux.mo
 share/locale/tr/LC_MESSAGES/wormux.mo
+share/pixmaps/wormux_128x128.png
 %%DATADIR%%/authors.dtd
 %%DATADIR%%/authors.xml
 %%DATADIR%%/body/beastieteam/arm-left.png
@@ -34,6 +36,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/body/beastieteam/c2.png
 %%DATADIR%%/body/beastieteam/config.xml
 %%DATADIR%%/body/beastieteam/dead.png
+%%DATADIR%%/body/beastieteam/eyelid.png
 %%DATADIR%%/body/beastieteam/eyes.png
 %%DATADIR%%/body/beastieteam/foot.png
 %%DATADIR%%/body/beastieteam/head.png
@@ -56,6 +59,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/body/firefoxteam/dead.png
 %%DATADIR%%/body/firefoxteam/ear-left.png
 %%DATADIR%%/body/firefoxteam/ear-right.png
+%%DATADIR%%/body/firefoxteam/eyelid.png
 %%DATADIR%%/body/firefoxteam/eyes.png
 %%DATADIR%%/body/firefoxteam/flag.png
 %%DATADIR%%/body/firefoxteam/foot.png
@@ -76,6 +80,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/body/gnuteam/c2.png
 %%DATADIR%%/body/gnuteam/config.xml
 %%DATADIR%%/body/gnuteam/dead.png
+%%DATADIR%%/body/gnuteam/eyelid.png
 %%DATADIR%%/body/gnuteam/eyes.png
 %%DATADIR%%/body/gnuteam/foot.png
 %%DATADIR%%/body/gnuteam/head.png
@@ -96,6 +101,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/body/konqiteam/c2.png
 %%DATADIR%%/body/konqiteam/config.xml
 %%DATADIR%%/body/konqiteam/dead.png
+%%DATADIR%%/body/konqiteam/eyelid.png
 %%DATADIR%%/body/konqiteam/eyes.png
 %%DATADIR%%/body/konqiteam/foot-left.png
 %%DATADIR%%/body/konqiteam/foot-right.png
@@ -115,6 +121,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/body/nupikteam/c2.png
 %%DATADIR%%/body/nupikteam/config.xml
 %%DATADIR%%/body/nupikteam/dead.png
+%%DATADIR%%/body/nupikteam/eyelid.png
 %%DATADIR%%/body/nupikteam/eyes.png
 %%DATADIR%%/body/nupikteam/fixedarm.png
 %%DATADIR%%/body/nupikteam/foot.png
@@ -134,6 +141,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/body/oooteam/c2.png
 %%DATADIR%%/body/oooteam/config.xml
 %%DATADIR%%/body/oooteam/dead.png
+%%DATADIR%%/body/oooteam/eyelid.png
 %%DATADIR%%/body/oooteam/eyes.png
 %%DATADIR%%/body/oooteam/foot.png
 %%DATADIR%%/body/oooteam/helmet.png
@@ -153,6 +161,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/body/phpteam/dead.png
 %%DATADIR%%/body/phpteam/ear-left.png
 %%DATADIR%%/body/phpteam/ear-right.png
+%%DATADIR%%/body/phpteam/eyelid.png
 %%DATADIR%%/body/phpteam/eyes.png
 %%DATADIR%%/body/phpteam/foot-left.png
 %%DATADIR%%/body/phpteam/foot-right.png
@@ -173,6 +182,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/body/snortteam/c2.png
 %%DATADIR%%/body/snortteam/config.xml
 %%DATADIR%%/body/snortteam/dead.png
+%%DATADIR%%/body/snortteam/eyelid.png
 %%DATADIR%%/body/snortteam/eyes.png
 %%DATADIR%%/body/snortteam/head.png
 %%DATADIR%%/body/snortteam/helmet.png
@@ -191,6 +201,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/body/spipteam/c2.png
 %%DATADIR%%/body/spipteam/config.xml
 %%DATADIR%%/body/spipteam/dead.png
+%%DATADIR%%/body/spipteam/eyelid.png
 %%DATADIR%%/body/spipteam/eyes.png
 %%DATADIR%%/body/spipteam/foot.png
 %%DATADIR%%/body/spipteam/head.png
@@ -209,6 +220,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/body/thunderbirdteam/c2.png
 %%DATADIR%%/body/thunderbirdteam/config.xml
 %%DATADIR%%/body/thunderbirdteam/dead.png
+%%DATADIR%%/body/thunderbirdteam/eyelid.png
 %%DATADIR%%/body/thunderbirdteam/eyes.png
 %%DATADIR%%/body/thunderbirdteam/foot.png
 %%DATADIR%%/body/thunderbirdteam/hair.png
@@ -226,6 +238,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/body/tuxteam/c2.png
 %%DATADIR%%/body/tuxteam/config.xml
 %%DATADIR%%/body/tuxteam/dead.png
+%%DATADIR%%/body/tuxteam/eyelid.png
 %%DATADIR%%/body/tuxteam/eyes.png
 %%DATADIR%%/body/tuxteam/foot.png
 %%DATADIR%%/body/tuxteam/helmet.png
@@ -242,6 +255,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/body/wilberteam/c2.png
 %%DATADIR%%/body/wilberteam/config.xml
 %%DATADIR%%/body/wilberteam/dead.png
+%%DATADIR%%/body/wilberteam/eyelid.png
 %%DATADIR%%/body/wilberteam/eyes.png
 %%DATADIR%%/body/wilberteam/foot.png
 %%DATADIR%%/body/wilberteam/head.png
@@ -260,6 +274,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/body/workraveteam/c2.png
 %%DATADIR%%/body/workraveteam/config.xml
 %%DATADIR%%/body/workraveteam/dead.png
+%%DATADIR%%/body/workraveteam/eyelid.png
 %%DATADIR%%/body/workraveteam/eyes.png
 %%DATADIR%%/body/workraveteam/foot.png
 %%DATADIR%%/body/workraveteam/head.png
@@ -308,11 +323,6 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/map/aquarium/config.xml
 %%DATADIR%%/map/aquarium/preview.jpg
 %%DATADIR%%/map/aquarium/sky.jpg
-%%DATADIR%%/map/araignee/abeille.png
-%%DATADIR%%/map/araignee/araignee.png
-%%DATADIR%%/map/araignee/config.xml
-%%DATADIR%%/map/araignee/fond.jpg
-%%DATADIR%%/map/araignee/preview.jpg
 %%DATADIR%%/map/arbre/arbre.png
 %%DATADIR%%/map/arbre/config.xml
 %%DATADIR%%/map/arbre/fond.jpg
@@ -351,10 +361,10 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/map/christmas/preview.jpg
 %%DATADIR%%/map/christmas/sky.jpg
 %%DATADIR%%/map/cowland/config.xml
-%%DATADIR%%/map/cowland/cowland.png
-%%DATADIR%%/map/cowland/cowland_bg.jpg
+%%DATADIR%%/map/cowland/map.png
 %%DATADIR%%/map/cowland/nuage.png
 %%DATADIR%%/map/cowland/preview.jpg
+%%DATADIR%%/map/cowland/sky.jpg
 %%DATADIR%%/map/crystal/config.xml
 %%DATADIR%%/map/crystal/crystal.png
 %%DATADIR%%/map/crystal/preview.jpg
@@ -401,6 +411,11 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/map/hell/hell.png
 %%DATADIR%%/map/hell/hellsky.jpg
 %%DATADIR%%/map/hell/preview.jpg
+%%DATADIR%%/map/hive/BG.jpg
+%%DATADIR%%/map/hive/FG.png
+%%DATADIR%%/map/hive/config.xml
+%%DATADIR%%/map/hive/part_effect_strip.png
+%%DATADIR%%/map/hive/preview.jpg
 %%DATADIR%%/map/island/config.xml
 %%DATADIR%%/map/island/island.png
 %%DATADIR%%/map/island/preview.jpg
@@ -416,10 +431,18 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/map/monkeybubbleworld/monkeybubbleworld.png
 %%DATADIR%%/map/monkeybubbleworld/preview.jpg
 %%DATADIR%%/map/monkeybubbleworld/sky.jpg
+%%DATADIR%%/map/moon-4m/config.xml
+%%DATADIR%%/map/moon-4m/map.png
+%%DATADIR%%/map/moon-4m/preview.jpg
+%%DATADIR%%/map/moon-4m/sky.jpg
 %%DATADIR%%/map/paradis/config.xml
 %%DATADIR%%/map/paradis/decor_paradis.png
 %%DATADIR%%/map/paradis/decor_paradis_BG.jpg
 %%DATADIR%%/map/paradis/paradis_preview.jpg
+%%DATADIR%%/map/pillars/BG.jpg
+%%DATADIR%%/map/pillars/FG.png
+%%DATADIR%%/map/pillars/config.xml
+%%DATADIR%%/map/pillars/preview.jpg
 %%DATADIR%%/map/pirates/config.xml
 %%DATADIR%%/map/pirates/islands.jpg
 %%DATADIR%%/map/pirates/pirates.png
@@ -447,14 +470,23 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/map/space2/map.png
 %%DATADIR%%/map/space2/preview.jpg
 %%DATADIR%%/map/space2/sky.jpg
+%%DATADIR%%/map/tic-tac-toe/BG.jpg
+%%DATADIR%%/map/tic-tac-toe/FG.png
+%%DATADIR%%/map/tic-tac-toe/config.xml
+%%DATADIR%%/map/tic-tac-toe/part_effect_strip.png
+%%DATADIR%%/map/tic-tac-toe/preview.jpg
+%%DATADIR%%/map/towers/config.xml
+%%DATADIR%%/map/towers/map.png
+%%DATADIR%%/map/towers/preview.jpg
+%%DATADIR%%/map/towers/sky.jpg
 %%DATADIR%%/map/vulcano/background.png
 %%DATADIR%%/map/vulcano/config.xml
 %%DATADIR%%/map/vulcano/preview.jpg
 %%DATADIR%%/map/vulcano/sky2.jpg
-%%DATADIR%%/map/wildwestdv/backgr.jpg
 %%DATADIR%%/map/wildwestdv/config.xml
+%%DATADIR%%/map/wildwestdv/map.png
 %%DATADIR%%/map/wildwestdv/preview.jpg
-%%DATADIR%%/map/wildwestdv/wildwestdv.png
+%%DATADIR%%/map/wildwestdv/sky.jpg
 %%DATADIR%%/menu/annulus_background.png
 %%DATADIR%%/menu/annulus_foreground.png
 %%DATADIR%%/menu/audio_label.png
@@ -503,6 +535,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/menu/up.png
 %%DATADIR%%/menu/validate.png
 %%DATADIR%%/menu/video_label.png
+%%DATADIR%%/music/ingame/Mike_Errecart.-.Monkey-bubble.ogg
 %%DATADIR%%/music/ingame/Olivier_Militon.-.Apnee.ogg
 %%DATADIR%%/music/ingame/Olivier_Militon.-.Apnee2.ogg
 %%DATADIR%%/music/ingame/Olivier_Militon.-.Etrange_epouvantable.ogg
@@ -512,6 +545,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/music/ingame/fear.m3u
 %%DATADIR%%/music/ingame/funfair.m3u
 %%DATADIR%%/music/ingame/ingame.m3u
+%%DATADIR%%/music/ingame/monkey.m3u
 %%DATADIR%%/music/ingame/sea.m3u
 %%DATADIR%%/music/menu/Olivier_Militon.-.Le_Calumet.ogg
 %%DATADIR%%/music/menu/Olivier_Militon.-.Le_Calumet_F.ogg
@@ -549,8 +583,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/sound/default/profile.xml
 %%DATADIR%%/sound/default/sink.ogg
 %%DATADIR%%/sound/default/skip_turn.ogg
-%%DATADIR%%/sound/default/step_01.ogg
-%%DATADIR%%/sound/default/step_02.ogg
+%%DATADIR%%/sound/default/step.ogg
 %%DATADIR%%/sound/default/suicide_01.ogg
 %%DATADIR%%/sound/default/superjump_01.ogg
 %%DATADIR%%/sound/default/uuh_01.ogg
@@ -747,7 +780,6 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 %%DATADIR%%/weapon/teleportation/teleportation_ico.png
 %%DATADIR%%/weapons.dtd
 %%DATADIR%%/weapons.xml
-%%DATADIR%%/wormux.desktop
 %%DATADIR%%/wormux.svg
 %%DATADIR%%/wormux_128x128.png
 %%DATADIR%%/wormux_128x128.xpm
@@ -813,16 +845,21 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 @dirrm %%DATADIR%%/menu
 @dirrm %%DATADIR%%/map/wildwestdv
 @dirrm %%DATADIR%%/map/vulcano
+@dirrm %%DATADIR%%/map/towers
+@dirrm %%DATADIR%%/map/tic-tac-toe
 @dirrm %%DATADIR%%/map/space2
 @dirrm %%DATADIR%%/map/randomamoebas
 @dirrm %%DATADIR%%/map/random
 @dirrm %%DATADIR%%/map/qingqong
 @dirrm %%DATADIR%%/map/prehistorik
 @dirrm %%DATADIR%%/map/pirates
+@dirrm %%DATADIR%%/map/pillars
 @dirrm %%DATADIR%%/map/paradis
+@dirrm %%DATADIR%%/map/moon-4m
 @dirrm %%DATADIR%%/map/monkeybubbleworld
 @dirrm %%DATADIR%%/map/leafs
 @dirrm %%DATADIR%%/map/island
+@dirrm %%DATADIR%%/map/hive
 @dirrm %%DATADIR%%/map/hell
 @dirrm %%DATADIR%%/map/halloween
 @dirrm %%DATADIR%%/map/grenouilles
@@ -842,7 +879,6 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 @dirrm %%DATADIR%%/map/banquise
 @dirrm %%DATADIR%%/map/bankiz
 @dirrm %%DATADIR%%/map/arbre
-@dirrm %%DATADIR%%/map/araignee
 @dirrm %%DATADIR%%/map/aquarium
 @dirrm %%DATADIR%%/map
 @dirrm %%DATADIR%%/interface/cursors
