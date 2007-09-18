@@ -7,6 +7,7 @@
 
 PORTNAME=	kipi-plugins
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,8 +17,8 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	KDE Image Plugin Interface plugins
 
 LIB_DEPENDS=	kipi.1:${PORTSDIR}/graphics/libkipi \
-		kexiv2.2:${PORTSDIR}/graphics/libkexiv2 \
-		kdcraw.1:${PORTSDIR}/graphics/libkdcraw
+		kexiv2.3:${PORTSDIR}/graphics/libkexiv2 \
+		kdcraw.2:${PORTSDIR}/graphics/libkdcraw
 
 OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		BATCHPROCESSIMAGES "batch processing on images" on \
