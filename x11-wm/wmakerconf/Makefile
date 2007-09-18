@@ -8,11 +8,12 @@
 
 PORTNAME=	wmakerconf
 PORTVERSION=	2.12
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A configuration tool for Window Maker
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
@@ -34,13 +35,14 @@ MAN1=		mkpreview.1 wmakerconf.1
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.gmo" -delete
 
-pre-configure:
+post-patch:
 	@${REINPLACE_CMD} -e 's|lynx wget|lynx fetch|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/chmod 0/d' ${WRKSRC}/Makefile.in
-.for file in data/WMWmakerconf data/WMWmakerconf.gettext
-	@${REINPLACE_CMD} -e 's|/usr/local/share|${LOCALBASE}|g ; \
-		 s|/usr/share|${X11BASE}|g' ${WRKSRC}/${file}
-.endfor
+	@${REINPLACE_CMD} -E '/\/usr\/share/d; \
+			      s|/usr/local|${LOCALBASE}|g ; \
+		 	      s|/usr/X11R6|${X11BASE}|g; \
+			      s|(share/pixmaps.*),|\1|g' \
+		${WRKSRC}/data/WMWmakerconf*
 .for file in data/po/ja.po po/ja.po
 	@${REINPLACE_CMD} -e 's|JISX-0208-1983-0|euc-jp|g' ${WRKSRC}/${file}
 .endfor
