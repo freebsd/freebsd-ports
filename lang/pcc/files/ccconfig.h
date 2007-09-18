@@ -2,6 +2,7 @@
 /*	$Id: ccconfig.h,v 1.2 2004/12/02 21:32:25 ragge Exp $	*/
 
 /*
+ * Copyright (c) 2007 David O'Brien
  * Copyright (c) 2004 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
  *
@@ -33,14 +34,15 @@
  */
 
 /* common cpp predefines */
-#define CPPADD	{ "-D__FreeBSD__", "-D__ELF__", NULL, }
+#define CPPADD	{ "-D__FreeBSD__", "-D__ELF__", "-D__unix__=1", "-D__unix=1", "-D__STDC__=1", NULL, }
 #define DYNLINKER { "-dynamic-linker", "/libexec/ld-elf.so.1", NULL }
-#define CRT0FILE "/usr/lib/crt0.o"
+#define CRT0FILE "/usr/lib/crt1.o"
 #define STARTFILES { "/usr/lib/crti.o", "/usr/lib/crtbegin.o", NULL }
 #define	ENDFILES { "/usr/lib/crtend.o", "/usr/lib/crtn.o", NULL }
+#define STARTLABEL "_start"
 
 #if defined(mach_x86)
-#define	CPPMDADD { "-D__i386__", NULL, }
+#define	CPPMDADD { "-D__i386__", "-D__i386", NULL, }
 #else
 #error defines for arch missing
 #endif
