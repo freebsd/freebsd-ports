@@ -139,6 +139,7 @@
     SUBDIR += fnlib
     SUBDIR += fotofix
     SUBDIR += fortytwo
+    SUBDIR += fpc-cairo
     SUBDIR += fpc-fpgtk
     SUBDIR += fpc-ggi
     SUBDIR += fpc-graph
