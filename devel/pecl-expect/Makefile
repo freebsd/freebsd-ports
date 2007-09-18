@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	expect
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.2.3
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -24,6 +23,6 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e '20 s,expect,expect543,' ${WRKSRC}/config.m4
+	@${REINPLACE_CMD} -e '16 s,expect,expect543,' ${WRKSRC}/config.m4
 
 .include <bsd.port.mk>
