@@ -1,0 +1,11 @@
+bin/gsambadpdf
+etc/pam.d/gsambad
+sbin/gsambad
+share/pixmaps/gsambad.png
+share/pixmaps/gsambad/gsambad.png
+share/applications/net-gsambad.desktop
+%%DATADIR%%/example.bat
+@dirrm share/pixmaps/gsambad
+@dirrmtry %%DATADIR%%
+@dirrmtry share/applications
+@dirrm etc/gsambad

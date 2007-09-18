@@ -177,6 +177,7 @@
     SUBDIR += gq
     SUBDIR += grdesktop
     SUBDIR += grsync
+    SUBDIR += gsambad
     SUBDIR += gsk
     SUBDIR += gspoof
     SUBDIR += gstreamer-plugins-libmms

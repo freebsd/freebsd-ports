@@ -1,0 +1,7 @@
+GSAMBAD is an easy to use GTK+ frontend for the SAMBA file and print
+server. It features multiple local and remote user and group imports, on
+the fly share creation and user handling, including randomization of
+usernames and passwords. PDF printing to shared/private directories or
+email. It also features three levels of domain management strategies.
+
+WWW: http://gadmintools.org
