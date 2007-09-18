@@ -3095,6 +3095,7 @@ fox16		ports/x11-toolkits/fox16
 fpc		ports/lang/fpc
 fpc-base	ports/lang/fpc-base
 fpc-bfd		ports/devel/fpc-bfd
+fpc-cairo		ports/graphics/fpc-cairo
 fpc-devel	ports/lang/fpc-devel
 fpc-docs	ports/lang/fpc-docs
 fpc-fcl		ports/devel/fpc-fcl
