@@ -3135,6 +3135,7 @@ fpc-ncurses	ports/graphics/fpc-ncurses
 fpc-netdb	ports/net/fpc-netdb
 fpc-odbc	ports/databases/fpc-odbc
 fpc-opengl	ports/graphics/fpc-opengl
+fpc-openssl	ports/security/fpc-openssl
 fpc-oracle	ports/databases/fpc-oracle
 fpc-pasjpeg	ports/graphics/fpc-pasjpeg
 fpc-paszlib	ports/archivers/fpc-paszlib
