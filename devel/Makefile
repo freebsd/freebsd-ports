@@ -337,6 +337,7 @@
     SUBDIR += fpc-fcl-registry
     SUBDIR += fpc-fcl-web
     SUBDIR += fpc-fcl-xml
+    SUBDIR += fpc-fpmkunit
     SUBDIR += fpc-fv
     SUBDIR += fpc-gconf
     SUBDIR += fpc-gdbint
