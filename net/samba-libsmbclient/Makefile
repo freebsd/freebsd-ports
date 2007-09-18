@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=		1
+PORTREVISION=		0
 PORTEPOCH=		0
 PKGNAMESUFFIX=		-libsmbclient
 
@@ -23,6 +23,6 @@ USE_LDCONFIG=		yes
 
 OPTIONS=		ADS		"With Active Directory support" off \
 			ADDNS		"Build the libaddns shared library" off \
-			SHAREMODES	"Build the libsharemods shared library" off
+			SHAREMODES	"Build the libsharemodes shared library" off
 
 .include "${MASTERDIR}/Makefile"
