@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.4 2007-09-09 14:55:17 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.5 2007-09-18 20:03:15 clement Exp $
 #
 
 # PROVIDE: apache22
@@ -116,6 +116,11 @@ apache22_requirepidfile()
 
 apache22_checkconfig()
 {
+	if test -f %%PREFIX%%/sbin/envvars
+	then
+		. %%PREFIX%%/sbin/envvars
+	fi
+
 	echo "Performing sanity check on apache22 configuration:"
 	eval ${command} ${apache22_flags} -t
 }
@@ -137,11 +142,6 @@ apache22_gracefulstop() {
 apache22_precmd() 
 {
 	apache22_checkconfig
-
-	if test -f %%PREFIX%%/sbin/envvars
-	then
-		. %%PREFIX%%/sbin/envvars
-	fi
 
 	if checkyesno apache22limits_enable
 	then

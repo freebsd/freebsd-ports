@@ -51,6 +51,17 @@ USE_RC_SUBR=		apache22.sh htcacheclean.sh
 SUB_LIST+=		RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 LIBTOOLFILES=		configure
 
+.if !defined(WITHOUT_APACHE_OPTIONS)
+OPTIONS= \
+	APR_FROM_PORTS "Use devel/apr as APR (beware!)" Off \
+	THREADS "Enable threads support in APR" Off \
+	MYSQL "Enable MySQL support for apr-dbd" Off \
+	PGSQL "Enable PostgreSQL support for apr-dbd" Off \
+	SQLITE "Enable SQLite support for apr-dbd" Off \
+	IPV6 "Enable IPv6 support" On
+.include "${.CURDIR}/Makefile.options"
+.endif
+
 .if !defined(WITH_APR_FROM_PORTS)
 USE_LDCONFIG=	yes
 .endif
