@@ -5,16 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	micq
-PORTVERSION=	0.5.4.2
+PORTNAME=	climm
+PORTVERSION=	0.6
 CATEGORIES=	net-im
-MASTER_SITES=	http://micq.org/source/ \
-		http://micq.alpha345.com/source/ \
-		http://http.bg.micq.org/source/
+MASTER_SITES=	http://www.climm.org/source/ \
+		http://http.bg.climm.org/source/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@stack.nl
-COMMENT=	Text-based ICQ implementation
+COMMENT=	CLI-based Multi-Messenger
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
@@ -22,9 +21,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=		micq.1
-MAN5=		micqrc.5
-MAN7=		micq.7
+MAN1=		climm.1
+MAN5=		climmrc.5
+MAN7=		climmcmds.7
 
 .if defined(WITHOUT_LIBICONV)
 CONFIGURE_ARGS+=	--disable-iconv
@@ -58,9 +57,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/ doc//' ${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/micq.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/micqrc.5 ${MANPREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/doc/micq.7 ${MANPREFIX}/man/man7
+	${INSTALL_MAN} ${WRKSRC}/doc/climm.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/climmrc.5 ${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/climmcmds.7 ${MANPREFIX}/man/man7
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for ext in i18n logformat png txt xpm
