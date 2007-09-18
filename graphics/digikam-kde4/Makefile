@@ -7,6 +7,7 @@
 
 PORTNAME=	digikam
 DISTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +18,9 @@ COMMENT=	Photo album manager for KDE with gphoto2 backend
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		kipi.1:${PORTSDIR}/graphics/libkipi \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
-		kexiv2.2:${PORTSDIR}/graphics/libkexiv2 \
+		kexiv2.3:${PORTSDIR}/graphics/libkexiv2 \
 		lcms.1:${PORTSDIR}/graphics/lcms \
-		kdcraw.1:${PORTSDIR}/graphics/libkdcraw \
+		kdcraw.2:${PORTSDIR}/graphics/libkdcraw \
 		png.5:${PORTSDIR}/graphics/png \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		jasper.4:${PORTSDIR}/graphics/jasper
