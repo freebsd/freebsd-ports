@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smbldap-tools
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	net
 MASTER_SITES=	http://download.gna.org/smbldap-tools/packages/ \
 		http://download.gna.org/smbldap-tools/packages/old-release/
@@ -30,7 +30,7 @@ NO_BUILD=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure.pl
 	@${PERL} -pi -e 's#/etc/samba#${PREFIX}/etc#' ${WRKSRC}/configure.pl \
-							${WRKSRC}/smb.conf \
+							${WRKSRC}/doc/smb.conf \
 							${WRKSRC}/smbldap_tools.pm
 	@${PERL} -pi -e 's#/etc/smb/#${PREFIX}/etc/smb/#' ${WRKSRC}/configure.pl \
 							${WRKSRC}/smbldap.conf \
@@ -52,7 +52,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/migration_scripts/$i ${PREFIX}/sbin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/smbldap_tools.pm ${SITE_PERL}/
-	${INSTALL_DATA} ${WRKSRC}/smb.conf ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/smb.conf ${EXAMPLESDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/configure.pl ${EXAMPLESDIR}/
 
 .if !defined(NOPORTDOCS)
