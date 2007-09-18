@@ -4,6 +4,6 @@ include/libkexiv2/version.h
 lib/libkexiv2.a
 lib/libkexiv2.la
 lib/libkexiv2.so
-lib/libkexiv2.so.2
+lib/libkexiv2.so.3
 libdata/pkgconfig/libkexiv2.pc
 @dirrm include/libkexiv2
