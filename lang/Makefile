@@ -59,7 +59,6 @@
     SUBDIR += fasm
     SUBDIR += fbbi
     SUBDIR += ferite
-    SUBDIR += fesi
     SUBDIR += ficl-devel
     SUBDIR += fpc
     SUBDIR += fpc-base
@@ -97,12 +96,10 @@
     SUBDIR += gnat-doc-ps
     SUBDIR += gnat-doc-texi
     SUBDIR += gnat-doc-txt
-    SUBDIR += gnat-gcc34
     SUBDIR += gnat-gcc41
     SUBDIR += gnat-gcc42
     SUBDIR += gnat-gcc43
     SUBDIR += gnat-glade
-    SUBDIR += gnomebasic
     SUBDIR += gnustep-base
     SUBDIR += gnustep-guile
     SUBDIR += gnustep-objc

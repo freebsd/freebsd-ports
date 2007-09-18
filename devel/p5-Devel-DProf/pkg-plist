@@ -1,8 +1,0 @@
-bin/dprofpp
-%%SITE_PERL%%/%%PERL_ARCH%%/Devel/DProf.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/DProf/DProf.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/DProf/DProf.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/DProf/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/DProf
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
