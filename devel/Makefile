@@ -328,6 +328,15 @@
     SUBDIR += fortytwo-encore
     SUBDIR += fpc-bfd
     SUBDIR += fpc-fcl
+    SUBDIR += fpc-fcl-base
+    SUBDIR += fpc-fcl-db
+    SUBDIR += fpc-fcl-fpcunit
+    SUBDIR += fpc-fcl-image
+    SUBDIR += fpc-fcl-net
+    SUBDIR += fpc-fcl-passrc
+    SUBDIR += fpc-fcl-registry
+    SUBDIR += fpc-fcl-web
+    SUBDIR += fpc-fcl-xml
     SUBDIR += fpc-fv
     SUBDIR += fpc-gconf
     SUBDIR += fpc-gdbint
