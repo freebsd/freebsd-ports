@@ -3222,3 +3222,5 @@ graphics/gimp1|graphics/gimp|2007-09-16|Obsoleted by newer version
 print/gimp-print|print/gutenprint|2007-09-16|Project renamed
 graphics/gimp-pmosaic||2007-09-16|Depends on obsolete graphics/gimp1
 devel/fpc-fcl||2007-09-18|It was separated to another fpc-fcl-* ports
+security/vncrypt||2007-09-18|Has expired: not supported on any current version of FreeBSD
+net-mgmt/ocs-unix-agent||2007-09-18|Has expired: Use net-mgmt/ocsinventory-agent instead

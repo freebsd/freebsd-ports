@@ -753,7 +753,6 @@
     SUBDIR += vlock
     SUBDIR += vlog
     SUBDIR += vnccrack
-    SUBDIR += vncrypt
     SUBDIR += vpnc
     SUBDIR += vpnd
     SUBDIR += vscan

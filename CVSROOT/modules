@@ -8453,7 +8453,6 @@ ocp		ports/audio/ocp
 ocrad		ports/graphics/ocrad
 ocre		ports/graphics/ocre
 ocs		ports/lang/ocs
-ocs-unix-agent	ports/net-mgmt/ocs-unix-agent
 ocsigen		ports/www/ocsigen
 ocsinventory-agent	ports/net-mgmt/ocsinventory-agent
 octave		ports/math/octave
@@ -16204,7 +16203,6 @@ vnc		ports/net/vnc
 vnc2swf		ports/net/vnc2swf
 vnccrack	ports/security/vnccrack
 vncreflector	ports/net/vncreflector
-vncrypt		ports/security/vncrypt
 vobcopy		ports/sysutils/vobcopy
 vodcatcher	ports/multimedia/vodcatcher
 vodmr		ports/mail/vodmr
