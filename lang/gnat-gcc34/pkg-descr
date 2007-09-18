@@ -1,6 +1,0 @@
-The GNU Ada compiler system built from GCC 3.4.6.
-
-Please add ${PREFIX}/bin/gcc34 to your PATH variable
-before using this port.
-
-WWW: http://gcc.gnu.org/

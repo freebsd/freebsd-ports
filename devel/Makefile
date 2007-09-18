@@ -453,7 +453,6 @@
     SUBDIR += hs-cpphs
     SUBDIR += hs-drift
     SUBDIR += hs-fps
-    SUBDIR += hs-green-card
     SUBDIR += hs-haddock
     SUBDIR += hs-happy
     SUBDIR += hs-hat
@@ -1115,7 +1114,6 @@
     SUBDIR += p5-Devel-CoreStack
     SUBDIR += p5-Devel-Cover
     SUBDIR += p5-Devel-Cycle
-    SUBDIR += p5-Devel-DProf
     SUBDIR += p5-Devel-DProfPP
     SUBDIR += p5-Devel-Diagram
     SUBDIR += p5-Devel-EvalContext

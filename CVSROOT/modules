@@ -2817,7 +2817,6 @@ felt		ports/science/felt
 femlab		ports/math/femlab
 fep		ports/misc/fep
 ferite		ports/lang/ferite
-fesi		ports/lang/fesi
 festalon	ports/audio/festalon
 festdoc		ports/audio/festdoc
 festival	ports/audio/festival
@@ -3813,7 +3812,6 @@ gnat-doc-info	ports/lang/gnat-doc-info
 gnat-doc-ps	ports/lang/gnat-doc-ps
 gnat-doc-texi	ports/lang/gnat-doc-texi
 gnat-doc-txt	ports/lang/gnat-doc-txt
-gnat-gcc34	ports/lang/gnat-gcc34
 gnat-gcc41	ports/lang/gnat-gcc41
 gnat-gcc42	ports/lang/gnat-gcc42
 gnat-gcc43	ports/lang/gnat-gcc43
@@ -3938,7 +3936,6 @@ gnome2-power-tools	ports/x11/gnome2-power-tools
 gnome_subr	ports/sysutils/gnome_subr
 gnomeattacks	ports/games/gnomeattacks
 gnomebaker	ports/sysutils/gnomebaker
-gnomebasic	ports/lang/gnomebasic
 gnomebreakout	ports/games/gnomebreakout
 gnomecanvas	ports/graphics/gnomecanvas
 gnomechess	ports/games/gnomechess
@@ -4631,7 +4628,6 @@ hs-cpphs	ports/devel/hs-cpphs
 hs-drift	ports/devel/hs-drift
 hs-fps		ports/devel/hs-fps
 hs-frantk	ports/x11-toolkits/hs-frantk
-hs-green-card	ports/devel/hs-green-card
 hs-gtk2hs	ports/x11-toolkits/hs-gtk2hs
 hs-haddock	ports/devel/hs-haddock
 hs-happy	ports/devel/hs-happy
@@ -9532,7 +9528,6 @@ p5-Devel-Constants	ports/devel/p5-Devel-Constants
 p5-Devel-CoreStack	ports/devel/p5-Devel-CoreStack
 p5-Devel-Cover	ports/devel/p5-Devel-Cover
 p5-Devel-Cycle	ports/devel/p5-Devel-Cycle
-p5-Devel-DProf	ports/devel/p5-Devel-DProf
 p5-Devel-DProfPP	ports/devel/p5-Devel-DProfPP
 p5-Devel-Diagram	ports/devel/p5-Devel-Diagram
 p5-Devel-EvalContext	ports/devel/p5-Devel-EvalContext

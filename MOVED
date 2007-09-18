@@ -3229,3 +3229,8 @@ www/mapedit||2007-09-18|Has expired: Depends on obsolete version of jdk
 www/hotjava||2007-09-18|Has expired: Depends on obsolete version of jdk
 sysutils/cd9660_unicode||2007-09-18|Has expired: is obsolete. See mount_cd9660(8)
 net-mgmt/p5-Net-SNMP3||2007-09-18|Has expired: only runs with old, unsupported Perl versions
+lang/fesi||2007-09-18|Has expired: Depends on obsolete version of jdk
+lang/gnomebasic||2007-09-18|Has expired: Five years abandoned project; functionality folded into mono
+lang/gnat-gcc34||2007-09-18|Has expired: This port was made for initial bootstraping of later versions and is no longer needed
+devel/hs-green-card||2007-09-18|Has expired: "Does not build with latest GHC"
+devel/p5-Devel-DProf||2007-09-18|Has expired: only works for old, unsupported Perl versions
