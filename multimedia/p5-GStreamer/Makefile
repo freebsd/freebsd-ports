@@ -63,12 +63,9 @@ MAN3=	GStreamer.3 GStreamer::Bin.3 GStreamer::Buffer.3 GStreamer::Bus.3 \
 BROKEN=		Coredump during build on ${ARCH}
 .endif
 
-post-depends:
-.if exists(${PERL})
-PERL_THREADED!=	${PERL} -V | ${GREP} -- -Dusethreads=y || ${TRUE}
-.  if ${PERL_THREADED} == ""
+PERL_THREADED!=	${PERL} -mthreads -e '' >/dev/null 2>&1 && ${ECHO_CMD} 'yes' || true
+.if ${PERL_THREADED} == ""
 IGNORE=		must be built with a threaded Perl, reinstall Perl with WITH_THREADS=yes
-.  endif
 .endif
 
 .include <bsd.port.post.mk>
