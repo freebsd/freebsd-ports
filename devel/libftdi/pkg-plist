@@ -1,0 +1,13 @@
+bin/bitbang
+bin/bitbang2
+bin/bitbang_cbus
+bin/bitbang_ft2232
+bin/find_all
+bin/libftdi-config
+bin/simple
+include/ftdi.h
+lib/libftdi.a
+lib/libftdi.la
+lib/libftdi.so
+lib/libftdi.so.10
+libdata/pkgconfig/libftdi.pc
