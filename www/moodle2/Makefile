@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.8.2
 CATEGORIES=	www
 MASTER_SITES=	http://download.moodle.org/stable18/
 EXTRACT_SUFX=	.tgz
@@ -19,11 +18,11 @@ USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml
 WRKSRC=		${WRKDIR}/moodle
 
 OPTIONS=	MYSQL   "Add support for a MySQL database server" Off \
-			PGSQL   "Add support for a PostgreSQL database server" Off \
-			MSSQL   "Add support for a MS SQL Server" Off \
-			ZLIB    "Add zip/unzip functionality" On \
-			NETWORK "Add Moodle Network functionality" Off \
-			LDAP    "Add LDAP authentication functionality" Off
+		PGSQL   "Add support for a PostgreSQL database server" Off \
+		MSSQL   "Add support for a MS SQL Server" Off \
+		ZLIB    "Add zip/unzip functionality" On \
+		NETWORK "Add Moodle Network functionality" Off \
+		LDAP    "Add LDAP authentication functionality" Off
 
 .include <bsd.port.pre.mk>
 
