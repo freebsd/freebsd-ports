@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A pluggable RSS/Atom feed aggregator written in Perl
 
+USE_PERL5=	yes
+
 BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
 		${SITE_PERL}/DateTime/TimeZone.pm:${PORTSDIR}/devel/p5-DateTime-TimeZone \
