@@ -7,6 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	0.5.31
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -15,32 +16,45 @@ MASTER_SITE_SUBDIR=	osa
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
 
+OPTIONS=	DEBUG "Enable nginx debugging" off \
+		HTTP_MODULE "Enable HTTP module" on \
+		HTTP_ADDITION_MODULE "Enable http_addition module" off \
+		HTTP_DAV_MODULE "Enable http_webdav module" off \
+		HTTP_FLV_MODULE "Enable http_flv module" off \
+		HTTP_PERL_MODULE "Enable http_perl module" off \
+		HTTP_REALIP_MODULE "Enable http_realip module" off \
+		HTTP_REWRITE_MODULE "Enable http_rewrite module" on \
+		HTTP_SSL_MODULE "Enable http_ssl module" off \
+		HTTP_STATUS_MODULE "Enable http_stub_status module" on \
+		HTTP_SUB_MODULE "Enable http_sub module" off \
+		MAIL_MODULE "Enable IMAP4/POP3/SMTP proxy module" off \
+		MAIL_SSL_MODULE "Enable mail_ssl module" off \
+		WWW "Enable html sample files" on
+
+.include <bsd.port.pre.mk>
+
 NGINX_VARDIR?=	/var
 NGINX_LOGDIR?=	${NGINX_VARDIR}/log
 NGINX_RUNDIR?=	${NGINX_VARDIR}/run
 NGINX_TMPDIR?=	${NGINX_VARDIR}/tmp/nginx
 HTTP_PORT?=	80
 
-.if defined(WITH_PERL_MODULE)
-USE_PERL5=	yes
-.endif
-
 CONFLICTS?=	nginx-devel-0.*
 USE_RC_SUBR=	nginx.sh
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--prefix=${PREFIX}/etc/nginx \
+CONFIGURE_ARGS+=--prefix=${ETCDIR} \
 		--with-cc-opt="-I ${LOCALBASE}/include" \
 		--with-ld-opt="-L ${LOCALBASE}/lib" \
-		--conf-path=${PREFIX}/etc/nginx/nginx.conf \
+		--conf-path=${ETCDIR}/nginx.conf \
 		--sbin-path=${PREFIX}/sbin/nginx \
 		--pid-path=${NGINX_RUNDIR}/nginx.pid \
-		--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
-		--http-proxy-temp-path=${NGINX_TMPDIR}/proxy_temp \
-		--http-fastcgi-temp-path=${NGINX_TMPDIR}/fastcgi_temp \
-		--http-log-path=${NGINX_LOGDIR}/nginx-access.log \
 		--error-log-path=${NGINX_LOGDIR}/nginx-error.log \
-		--with-http_stub_status_module \
 		--user=${WWWOWN} --group=${WWWGRP}
+
+.if defined(WITHOUT_HTTP_MODULE) && defined(WITHOUT_MAIL_MODULE)
+IGNORE=		requires at least HTTP_MODULE or MAIL_MODULE to \
+		be defined.  Please 'make config' again
+.endif
 
 .if defined(WITH_DEBUG)
 CFLAGS+=	-g -DNGX_DEBUG_MALLOC
@@ -48,22 +62,44 @@ CONFIGURE_ARGS+=--with-debug
 STRIP=		#do not strip if nginx with debug information
 .endif
 
-.if defined(WITH_OPENSSL_MODULE)
+.if defined(WITH_HTTP_MODULE)
+CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
+		--http-proxy-temp-path=${NGINX_TMPDIR}/proxy_temp \
+		--http-fastcgi-temp-path=${NGINX_TMPDIR}/fastcgi_temp \
+		--http-log-path=${NGINX_LOGDIR}/nginx-access.log
+
+.if defined(WITH_HTTP_ADDITION_MODULE)
+CONFIGURE_ARGS+=--with-http_addition_module
+.endif
+
+.if defined(WITH_HTTP_DAV_MODULE)
+CONFIGURE_ARGS+=--with-http_dav_module
+.endif
+
+.if defined(WITH_HTTP_FLV_MODULE)
+CONFIGURE_ARGS+=--with-http_flv_module
+.endif
+
+.if defined(WITH_HTTP_PERL_MODULE)
+CONFIGURE_ARGS+=--with-http_perl_module
+USE_PERL5=	yes
+.endif
+
+.if defined(WITH_HTTP_REALIP_MODULE)
+CONFIGURE_ARGS+=--with-http_realip_module
+.endif
+
+.if defined(WITH_HTTP_SSL_MODULE)
 NGINX_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-http_ssl_module
 .endif
 
-.if defined(WITH_ADDITION_MODULE)
-CONFIGURE_ARGS+=--with-http_addition_module
+.if defined(WITH_HTTP_STATUS_MODULE)
+CONFIGURE_ARGS+=--with-http_stub_status_module
 .endif
 
-.if defined(WITH_MAIL_MODULE)
-NGINX_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-mail --with-mail_ssl_module
-.endif
-
-.if defined(NGINX_OPENSSL)
-USE_OPENSSL=	yes
+.if defined(WITH_HTTP_SUB_MODULE)
+CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
 .if defined(WITHOUT_HTTP_REWRITE_MODULE) || defined(WITHOUT_PCRE)
@@ -74,14 +110,27 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
-.if defined(WITH_PERL_MODULE)
-CONFIGURE_ARGS+=--with-http_perl_module
+.if defined(WITH_WWW)
+PLIST_SUB+=	WWWDATA=""
+.else
+PLIST_SUB+=	WWWDATA="@comment "
 .endif
 
-.if defined(WITHOUT_WWW)
-PLIST_SUB+=	WWWDATA="@comment "
 .else
-PLIST_SUB+=	WWWDATA=""
+CONFIGURE_ARGS+=--without-http
+PLIST_SUB+=	WWWDATA="@comment "
+.endif		# WITH_HTTP_MODULE
+
+.if defined(WITH_MAIL_MODULE)
+CONFIGURE_ARGS+=--with-mail
+.if defined(WITH_MAIL_SSL_MODULE)
+NGINX_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-mail_ssl_module
+.endif
+.endif		# WITH_MAIL_MODULE
+
+.if defined(NGINX_OPENSSL)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
 
 PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
@@ -95,18 +144,18 @@ do-build:
 	@cd ${WRKSRC} && ${MAKE}
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/nginx ${NGINX_TMPDIR}
+	${MKDIR} ${ETCDIR} ${NGINX_TMPDIR}
 	${CHOWN} ${WWWOWN}:${WWWGRP} ${NGINX_TMPDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${PREFIX}/sbin
 .for i in koi-win koi-utf win-utf fastcgi_params
-	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${PREFIX}/etc/nginx
+	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}
 .endfor
 .for i in mime.types nginx.conf
-	[ -f ${PREFIX}/etc/nginx/${i} ] || \
-		${INSTALL_DATA} ${WRKSRC}/conf/${i} ${PREFIX}/etc/nginx
-	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${PREFIX}/etc/nginx/${i}-dist
+	[ -f ${ETCDIR}/${i} ] || \
+		${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}/${i}-dist
 .endfor
-.if !defined(WITHOUT_WWW)
+.if defined(WITH_HTTP_MODULE) && defined(WITH_WWW)
 	${MKDIR} ${PREFIX}/www/nginx-dist
 .for i in index.html 50x.html
 	${INSTALL_DATA} ${WRKSRC}/html/${i} ${PREFIX}/www/nginx-dist
@@ -116,7 +165,7 @@ do-install:
 		${LN} -sf ${PREFIX}/www/nginx-dist ${PREFIX}/www/nginx
 .endif
 
-.if defined(WITH_PERL_MODULE)
+.if defined(WITH_HTTP_MODULE) && defined(WITH_HTTP_PERL_MODULE)
 	${MKDIR} ${SITE_PERL}/${PERL_ARCH}/auto/nginx
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.so \
 		${SITE_PERL}/${PERL_ARCH}/auto/nginx
@@ -127,11 +176,11 @@ do-install:
 .endif
 
 post-install:
-.if defined(WITH_PERL_MODULE)
+.if defined(WITH_HTTP_MODULE) && defined(WITH_HTTP_PERL_MODULE)
 	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx/nginx.so >> ${TMPPLIST}
 	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx/nginx.bs >> ${TMPPLIST}
 	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/nginx.pm >> ${TMPPLIST}
 	${ECHO_CMD} @dirrm ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx >> ${TMPPLIST}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
