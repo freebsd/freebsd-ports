@@ -19,7 +19,6 @@
 %%FONTSDIR%%/DejaVuSerifCondensed-BoldItalic.ttf
 %%FONTSDIR%%/DejaVuSerifCondensed-Italic.ttf
 %%FONTSDIR%%/DejaVuSerifCondensed.ttf
-%%FONTSDIR%%/fonts.dir
 @exec %%LOCALBASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
 @unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
 @dirrm %%FONTSDIR%%
