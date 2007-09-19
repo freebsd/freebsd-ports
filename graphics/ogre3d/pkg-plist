@@ -1,6 +1,28 @@
 bin/OgreMaterialUpgrade
 bin/OgreMeshUpgrade
 bin/OgreXMLConverter
+include/OGRE/GLX/OgreConfigDialogImp.h
+include/OGRE/GLX/OgreErrorDialogImp.h
+include/OGRE/GLX/OgreTimerImp.h
+include/OGRE/OgreAlignedAllocator.h
+include/OGRE/OgreConvexBody.h
+include/OGRE/OgreDDSCodec.h
+include/OGRE/OgreFreeImageCodec.h
+include/OGRE/OgreILUtil.h
+include/OGRE/OgreInstancedGeometry.h
+include/OGRE/OgreMaterialScriptCompiler.h
+include/OGRE/OgreNumerics.h
+include/OGRE/OgrePlugin.h
+include/OGRE/OgrePolygon.h
+include/OGRE/OgrePrefabFactory.h
+include/OGRE/OgreShadowCameraSetup.h
+include/OGRE/OgreShadowCameraSetupFocused.h
+include/OGRE/OgreShadowCameraSetupLiSPSM.h
+include/OGRE/OgreShadowCameraSetupPlaneOptimal.h
+include/OGRE/OgreShadowTextureManager.h
+include/OGRE/OgreUnifiedHighLevelGpuProgram.h
+include/OGRE/OgreUTFString.h
+include/OGRE/OgreWindowEventUtilities.h
 include/OGRE/Ogre.h
 include/OGRE/OgreAnimable.h
 include/OGRE/OgreAnimation.h
@@ -43,7 +65,6 @@ include/OGRE/OgreConfigFile.h
 include/OGRE/OgreConfigOptionMap.h
 include/OGRE/OgreController.h
 include/OGRE/OgreControllerManager.h
-include/OGRE/OgreCursor.h
 include/OGRE/OgreDataStream.h
 include/OGRE/OgreDefaultHardwareBufferManager.h
 include/OGRE/OgreDynLib.h
@@ -51,11 +72,6 @@ include/OGRE/OgreDynLibManager.h
 include/OGRE/OgreEdgeListBuilder.h
 include/OGRE/OgreEntity.h
 include/OGRE/OgreErrorDialog.h
-include/OGRE/OgreEventDispatcher.h
-include/OGRE/OgreEventListeners.h
-include/OGRE/OgreEventProcessor.h
-include/OGRE/OgreEventQueue.h
-include/OGRE/OgreEventTarget.h
 include/OGRE/OgreException.h
 include/OGRE/OgreExternalTextureSource.h
 include/OGRE/OgreExternalTextureSourceManager.h
@@ -80,12 +96,8 @@ include/OGRE/OgreILCodecs.h
 include/OGRE/OgreILImageCodec.h
 include/OGRE/OgreImage.h
 include/OGRE/OgreImageCodec.h
-include/OGRE/OgreInput.h
-include/OGRE/OgreInputEvent.h
 include/OGRE/OgreIteratorWrappers.h
-include/OGRE/OgreKeyEvent.h
 include/OGRE/OgreKeyFrame.h
-include/OGRE/OgreKeyTarget.h
 include/OGRE/OgreLight.h
 include/OGRE/OgreLog.h
 include/OGRE/OgreLogManager.h
@@ -103,9 +115,6 @@ include/OGRE/OgreMeshFileFormat.h
 include/OGRE/OgreMeshManager.h
 include/OGRE/OgreMeshSerializer.h
 include/OGRE/OgreMeshSerializerImpl.h
-include/OGRE/OgreMouseEvent.h
-include/OGRE/OgreMouseMotionTarget.h
-include/OGRE/OgreMouseTarget.h
 include/OGRE/OgreMovableObject.h
 include/OGRE/OgreMovablePlane.h
 include/OGRE/OgreNoMemoryMacros.h
@@ -134,9 +143,7 @@ include/OGRE/OgrePixelFormat.h
 include/OGRE/OgrePlane.h
 include/OGRE/OgrePlaneBoundedVolume.h
 include/OGRE/OgrePlatform.h
-include/OGRE/OgrePlatformManager.h
 include/OGRE/OgrePose.h
-include/OGRE/OgrePositionTarget.h
 include/OGRE/OgrePredefinedControllers.h
 include/OGRE/OgrePrerequisites.h
 include/OGRE/OgreProfiler.h
@@ -196,7 +203,6 @@ include/OGRE/OgreStringVector.h
 include/OGRE/OgreSubEntity.h
 include/OGRE/OgreSubMesh.h
 include/OGRE/OgreTagPoint.h
-include/OGRE/OgreTargetManager.h
 include/OGRE/OgreTechnique.h
 include/OGRE/OgreTextAreaOverlayElement.h
 include/OGRE/OgreTexture.h
@@ -228,20 +234,17 @@ lib/OGRE/RenderSystem_GL.so
 lib/libCEGUIOgreRenderer.a
 lib/libCEGUIOgreRenderer.la
 lib/libCEGUIOgreRenderer.so
-lib/libCEGUIOgreRenderer.so.0
+lib/libCEGUIOgreRenderer-1.4.4.so
 lib/libOgreMain.a
 lib/libOgreMain.la
 lib/libOgreMain.so
-lib/libOgreMain.so.13
-lib/libOgrePlatform.a
-lib/libOgrePlatform.la
-lib/libOgrePlatform.so
+lib/libOgreMain-1.4.4.so
 libdata/pkgconfig/CEGUI-OGRE.pc
 libdata/pkgconfig/OGRE.pc
-share/OGRE/ogre-config.glade
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm include/OGRE/GLX
 @dirrm include/OGRE
 @dirrm lib/OGRE
 @dirrm share/OGRE
