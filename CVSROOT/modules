@@ -3987,6 +3987,7 @@ gnupg1		ports/security/gnupg1
 gnuplot		ports/math/gnuplot
 gnuplot+	ports/math/gnuplot+
 gnupod		ports/audio/gnupod
+gnuradio	ports/comms/gnuradio
 gnurobots	ports/games/gnurobots
 gnuserv		ports/editors/gnuserv
 gnusget		ports/ftp/gnusget
