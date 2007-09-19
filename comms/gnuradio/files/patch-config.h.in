@@ -1,0 +1,12 @@
+--- config.h.in.orig	Mon May  7 11:00:18 2007
++++ config.h.in	Mon May  7 11:01:20 2007
+@@ -97,6 +97,9 @@
+ /* Define to 1 if you have the <linux/ppdev.h> header file. */
+ #undef HAVE_LINUX_PPDEV_H
+ 
++/* Define to 1 if you have the <dev/ppbus/ppi.h> header file. */
++#undef HAVE_DEV_PPBUS_PPI_H
++
+ /* Define to 1 if you have the `lstat' function. */
+ #undef HAVE_LSTAT
+ 

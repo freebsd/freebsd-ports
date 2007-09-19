@@ -32,6 +32,7 @@
     SUBDIR += gkermit
     SUBDIR += gmfsk
     SUBDIR += gnokii
+    SUBDIR += gnuradio
     SUBDIR += gpredict
     SUBDIR += gpsk31
     SUBDIR += grig

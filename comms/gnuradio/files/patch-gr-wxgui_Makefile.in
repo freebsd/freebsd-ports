@@ -1,0 +1,15 @@
+--- gr-wxgui/Makefile.in.orig	Wed Feb 28 12:42:12 2007
++++ gr-wxgui/Makefile.in	Thu Sep 13 09:59:20 2007
+@@ -408,10 +408,10 @@
+ # Fix for BSD make not defining $(RM).  We define it now in configure.ac
+ # using AM_PATH_PROG, but now here have to add a -f to be like GNU make
+ RM = $(RM_PROG) -f
+-EXTRA_DIST = gr-wxgui.conf
++EXTRA_DIST =
+ SUBDIRS = src
+ etcdir = $(sysconfdir)/gnuradio/conf.d
+-etc_DATA = gr-wxgui.conf
++etc_DATA =
+ all: all-recursive
+ 
+ .SUFFIXES:
