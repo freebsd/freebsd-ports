@@ -1,10 +1,14 @@
-include/CEGUI/CEGUI.h
+bin/tolua++cegui
 include/CEGUI/CEGUIBase.h
+include/CEGUI/CEGUIBoundSlot.h
 include/CEGUI/CEGUIColourRect.h
 include/CEGUI/CEGUIConfig.h
 include/CEGUI/CEGUIConfig_xmlHandler.h
+include/CEGUI/CEGUICoordConverter.h
 include/CEGUI/CEGUIDataContainer.h
+include/CEGUI/CEGUIDefaultLogger.h
 include/CEGUI/CEGUIDefaultResourceProvider.h
+include/CEGUI/CEGUIDynamicModule.h
 include/CEGUI/CEGUIEvent.h
 include/CEGUI/CEGUIEventArgs.h
 include/CEGUI/CEGUIEventSet.h
@@ -14,9 +18,16 @@ include/CEGUI/CEGUIFont.h
 include/CEGUI/CEGUIFontManager.h
 include/CEGUI/CEGUIFont_xmlHandler.h
 include/CEGUI/CEGUIForwardRefs.h
+include/CEGUI/CEGUIFreeFunctionSlot.h
+include/CEGUI/CEGUIFreeTypeFont.h
+include/CEGUI/CEGUIFunctorCopySlot.h
+include/CEGUI/CEGUIFunctorPointerSlot.h
+include/CEGUI/CEGUIFunctorReferenceBinder.h
+include/CEGUI/CEGUIFunctorReferenceSlot.h
 include/CEGUI/CEGUIGUILayout_xmlHandler.h
 include/CEGUI/CEGUIGlobalEventSet.h
 include/CEGUI/CEGUIImage.h
+include/CEGUI/CEGUIImageCodec.h
 include/CEGUI/CEGUIImageset.h
 include/CEGUI/CEGUIImagesetManager.h
 include/CEGUI/CEGUIImageset_xmlHandler.h
@@ -24,17 +35,17 @@ include/CEGUI/CEGUIInputEvent.h
 include/CEGUI/CEGUIIteratorBase.h
 include/CEGUI/CEGUILogger.h
 include/CEGUI/CEGUILua.h
+include/CEGUI/CEGUILuaFunctor.h
+include/CEGUI/CEGUIMemberFunctionSlot.h
 include/CEGUI/CEGUIMouseCursor.h
+include/CEGUI/CEGUIPixmapFont.h
 include/CEGUI/CEGUIProperty.h
 include/CEGUI/CEGUIPropertyHelper.h
 include/CEGUI/CEGUIPropertySet.h
 include/CEGUI/CEGUIRect.h
-include/CEGUI/CEGUIRefPtr.h
-include/CEGUI/CEGUIRenderableElement.h
-include/CEGUI/CEGUIRenderableFrame.h
-include/CEGUI/CEGUIRenderableImage.h
-include/CEGUI/CEGUIRenderer.h
+include/CEGUI/CEGUIRefCounted.h
 include/CEGUI/CEGUIRenderCache.h
+include/CEGUI/CEGUIRenderer.h
 include/CEGUI/CEGUIResourceProvider.h
 include/CEGUI/CEGUIScheme.h
 include/CEGUI/CEGUISchemeManager.h
@@ -42,26 +53,41 @@ include/CEGUI/CEGUIScheme_xmlHandler.h
 include/CEGUI/CEGUIScriptModule.h
 include/CEGUI/CEGUISingleton.h
 include/CEGUI/CEGUISize.h
+include/CEGUI/CEGUISlotFunctorBase.h
 include/CEGUI/CEGUIString.h
+include/CEGUI/CEGUISubscriberSlot.h
 include/CEGUI/CEGUISystem.h
 include/CEGUI/CEGUITextUtils.h
 include/CEGUI/CEGUITexture.h
 include/CEGUI/CEGUIUDim.h
 include/CEGUI/CEGUIVector.h
 include/CEGUI/CEGUIVersion.h
+include/CEGUI/CEGUIWidgetModule.h
 include/CEGUI/CEGUIWindow.h
 include/CEGUI/CEGUIWindowFactory.h
 include/CEGUI/CEGUIWindowFactoryManager.h
 include/CEGUI/CEGUIWindowManager.h
 include/CEGUI/CEGUIWindowProperties.h
+include/CEGUI/CEGUIWindowRenderer.h
+include/CEGUI/CEGUIWindowRendererManager.h
+include/CEGUI/CEGUIWindowRendererModule.h
 include/CEGUI/CEGUIXMLAttributes.h
 include/CEGUI/CEGUIXMLHandler.h
 include/CEGUI/CEGUIXMLParser.h
+include/CEGUI/CEGUIXMLSerializer.h
 include/CEGUI/CEGUIcolour.h
+include/CEGUI/CEGUI.h
+include/CEGUI/ImageCodecModules/TGAImageCodec/CEGUITGAImageCodec.h
+include/CEGUI/ImageCodecModules/TGAImageCodec/CEGUITGAImageCodecModule.h
+include/CEGUI/RendererModules/OpenGLGUIRenderer/openglrenderer.h
+include/CEGUI/RendererModules/OpenGLGUIRenderer/opengltexture.h
+include/CEGUI/XMLParserModules/TinyXMLParser/CEGUITinyXMLParser.h
+include/CEGUI/XMLParserModules/TinyXMLParser/CEGUITinyXMLParserModule.h
+include/CEGUI/elements/CEGUIBaseFactories.h
 include/CEGUI/elements/CEGUIButtonBase.h
-include/CEGUI/elements/CEGUIButtonBaseProperties.h
 include/CEGUI/elements/CEGUICheckbox.h
 include/CEGUI/elements/CEGUICheckboxProperties.h
+include/CEGUI/elements/CEGUIClippedContainer.h
 include/CEGUI/elements/CEGUIComboDropList.h
 include/CEGUI/elements/CEGUICombobox.h
 include/CEGUI/elements/CEGUIComboboxProperties.h
@@ -73,8 +99,11 @@ include/CEGUI/elements/CEGUIFrameWindow.h
 include/CEGUI/elements/CEGUIFrameWindowProperties.h
 include/CEGUI/elements/CEGUIGUISheet.h
 include/CEGUI/elements/CEGUIItemEntry.h
+include/CEGUI/elements/CEGUIItemEntryProperties.h
 include/CEGUI/elements/CEGUIItemListBase.h
 include/CEGUI/elements/CEGUIItemListBaseProperties.h
+include/CEGUI/elements/CEGUIItemListbox.h
+include/CEGUI/elements/CEGUIItemListboxProperties.h
 include/CEGUI/elements/CEGUIListHeader.h
 include/CEGUI/elements/CEGUIListHeaderProperties.h
 include/CEGUI/elements/CEGUIListHeaderSegment.h
@@ -86,7 +115,6 @@ include/CEGUI/elements/CEGUIListboxTextItem.h
 include/CEGUI/elements/CEGUIMenuBase.h
 include/CEGUI/elements/CEGUIMenuBaseProperties.h
 include/CEGUI/elements/CEGUIMenuItem.h
-include/CEGUI/elements/CEGUIMenuItemProperties.h
 include/CEGUI/elements/CEGUIMenubar.h
 include/CEGUI/elements/CEGUIMultiColumnList.h
 include/CEGUI/elements/CEGUIMultiColumnListProperties.h
@@ -97,7 +125,6 @@ include/CEGUI/elements/CEGUIPopupMenuProperties.h
 include/CEGUI/elements/CEGUIProgressBar.h
 include/CEGUI/elements/CEGUIProgressBarProperties.h
 include/CEGUI/elements/CEGUIPushButton.h
-include/CEGUI/elements/CEGUIPushButtonProperties.h
 include/CEGUI/elements/CEGUIRadioButton.h
 include/CEGUI/elements/CEGUIRadioButtonProperties.h
 include/CEGUI/elements/CEGUIScrollablePane.h
@@ -106,22 +133,15 @@ include/CEGUI/elements/CEGUIScrollbar.h
 include/CEGUI/elements/CEGUIScrollbarProperties.h
 include/CEGUI/elements/CEGUIScrolledContainer.h
 include/CEGUI/elements/CEGUIScrolledContainerProperties.h
+include/CEGUI/elements/CEGUIScrolledItemListBase.h
+include/CEGUI/elements/CEGUIScrolledItemListBaseProperties.h
 include/CEGUI/elements/CEGUISlider.h
 include/CEGUI/elements/CEGUISliderProperties.h
 include/CEGUI/elements/CEGUISpinner.h
 include/CEGUI/elements/CEGUISpinnerProperties.h
-include/CEGUI/elements/CEGUIStatic.h
-include/CEGUI/elements/CEGUIStaticImage.h
-include/CEGUI/elements/CEGUIStaticImageProperties.h
-include/CEGUI/elements/CEGUIStaticProperties.h
-include/CEGUI/elements/CEGUIStaticText.h
-include/CEGUI/elements/CEGUIStaticTextProperties.h
 include/CEGUI/elements/CEGUITabButton.h
 include/CEGUI/elements/CEGUITabControl.h
 include/CEGUI/elements/CEGUITabControlProperties.h
-include/CEGUI/elements/CEGUITabPane.h
-include/CEGUI/elements/CEGUITextItem.h
-include/CEGUI/elements/CEGUITextItemProperties.h
 include/CEGUI/elements/CEGUIThumb.h
 include/CEGUI/elements/CEGUIThumbProperties.h
 include/CEGUI/elements/CEGUITitlebar.h
@@ -137,7 +157,9 @@ include/CEGUI/falagard/CEGUIFalImagerySection.h
 include/CEGUI/falagard/CEGUIFalLayerSpecification.h
 include/CEGUI/falagard/CEGUIFalNamedArea.h
 include/CEGUI/falagard/CEGUIFalPropertyDefinition.h
+include/CEGUI/falagard/CEGUIFalPropertyDefinitionBase.h
 include/CEGUI/falagard/CEGUIFalPropertyInitialiser.h
+include/CEGUI/falagard/CEGUIFalPropertyLinkDefinition.h
 include/CEGUI/falagard/CEGUIFalSectionSpecification.h
 include/CEGUI/falagard/CEGUIFalStateImagery.h
 include/CEGUI/falagard/CEGUIFalTextComponent.h
@@ -145,37 +167,28 @@ include/CEGUI/falagard/CEGUIFalWidgetComponent.h
 include/CEGUI/falagard/CEGUIFalWidgetLookFeel.h
 include/CEGUI/falagard/CEGUIFalWidgetLookManager.h
 include/CEGUI/falagard/CEGUIFalXMLEnumHelper.h
-include/CEGUI/lauxlib.h
-include/CEGUI/lua.h
-include/CEGUI/lualib.h
-include/CEGUI/renderers/IrrlichtRenderer/IrrlichtRendererDef.h
-include/CEGUI/renderers/IrrlichtRenderer/IrrlichtResourceProvider.h
-include/CEGUI/renderers/IrrlichtRenderer/irrlichtrenderer.h
-include/CEGUI/renderers/IrrlichtRenderer/irrlichttexture.h
-include/CEGUI/renderers/OpenGLGUIRenderer/openglrenderer.h
-include/CEGUI/renderers/OpenGLGUIRenderer/opengltexture.h
 include/CEGUI/tolua++.h
 lib/libCEGUIBase.la
 lib/libCEGUIBase.so
-lib/libCEGUIBase.so.0
-lib/libCEGUIFalagardBase.la
-lib/libCEGUIFalagardBase.so
-lib/libCEGUIFalagardBase.so.0
-lib/libCEGUILuaScriptModule.la
-lib/libCEGUILuaScriptModule.so
-lib/libCEGUILuaScriptModule.so.0
+lib/libCEGUIBase.so.1
+lib/libCEGUIFalagardWRBase.la
+lib/libCEGUIFalagardWRBase.so
+lib/libCEGUIFalagardWRBase.so.1
 lib/libCEGUIOpenGLRenderer.la
 lib/libCEGUIOpenGLRenderer.so
 lib/libCEGUIOpenGLRenderer.so.0
-lib/libCEGUITaharezLook.la
-lib/libCEGUITaharezLook.so
-lib/libCEGUITaharezLook.so.0
-lib/libCEGUIWindowsLook.la
-lib/libCEGUIWindowsLook.so
-lib/libCEGUIWindowsLook.so.0
-lib/libCEGUIluatoluapp.la
-lib/libCEGUIluatoluapp.so
-lib/libCEGUIluatoluapp.so.0
+lib/libCEGUITGAImageCodec.la
+lib/libCEGUITGAImageCodec.so
+lib/libCEGUITGAImageCodec.so.0
+lib/libCEGUITinyXMLParser.la
+lib/libCEGUITinyXMLParser.so
+lib/libCEGUITinyXMLParser.so.0
+lib/libCEGUItoluapp.la
+lib/libCEGUItoluapp.so 
+lib/libCEGUItoluapp.so.1
+lib/libCEGUILuaScriptModule.la
+lib/libCEGUILuaScriptModule.so
+lib/libCEGUILuaScriptModule.so.1
 libdata/pkgconfig/CEGUI-OPENGL.pc
 libdata/pkgconfig/CEGUI.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -183,10 +196,13 @@ libdata/pkgconfig/CEGUI.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+@dirrm include/CEGUI/ImageCodecModules/TGAImageCodec
+@dirrm include/CEGUI/ImageCodecModules
+@dirrm include/CEGUI/RendererModules/OpenGLGUIRenderer
+@dirrm include/CEGUI/RendererModules
+@dirrm include/CEGUI/XMLParserModules/TinyXMLParser
+@dirrm include/CEGUI/XMLParserModules
 @dirrm include/CEGUI/elements
 @dirrm include/CEGUI/falagard
-@dirrm include/CEGUI/renderers/IrrlichtRenderer
-@dirrm include/CEGUI/renderers/OpenGLGUIRenderer
-@dirrm include/CEGUI/renderers
 @dirrm include/CEGUI
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

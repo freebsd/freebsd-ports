@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ember
-PORTVERSION=	0.4.3
-PORTREVISION=	2
+PORTVERSION=	0.5.0
+PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -18,8 +18,8 @@ DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ember is a WorldForge 3d client using the OGRE 3d library
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain-1.4.4.so:${PORTSDIR}/graphics/ogre3d
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
-		OgreMain.13:${PORTSDIR}/graphics/ogre3d \
 		eris-1.3:${PORTSDIR}/devel/eris \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
 		mercator-0.2.4:${PORTSDIR}/devel/mercator \
@@ -28,10 +28,12 @@ LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		wfut-0.1.0:${PORTSDIR}/devel/libwfut
 
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc --program-transform-name= --disable-cppunit --enable-debug
+CONFIGURE_ENV+=	LUA_LIBS="-L${PREFIX}/lib/lua50 -llua" \
+		LUA_CFLAGS="-I${PREFIX}/include/lua50"
 USE_SDL=	sdl
 GNU_CONFIGURE=	YES
-INSTALLS_SHLIB=	YES
-USE_GCC=	3.4
+USE_LDCONFIG=	YES
+USE_LUA=	5.0
 USE_XLIB=	YES
 USE_GNOME=	gnomehack
 USE_BZIP2=	YES
@@ -57,12 +59,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/src/components/ogre/SceneManagers/EmberPagingSceneManager/src/filetutils.cpp
 	@${REINPLACE_CMD} -e 's|	install-dist_docDATA |	|g'  ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '\
-		 /Plugin=Plugin_CgProgramManager.so/d; \
-		s|/usr/lib/OGRE|${X11BASE}/lib/OGRE|' \
-		${WRKSRC}/src/components/ogre/plugins.cfg
-	@${REINPLACE_CMD} -e 's|@LDFLAGS@|& -lopenal -lalut|' \
-		${WRKSRC}/src/components/ogre/Makefile.in
 
 post-install:
 	(cd ${WRKDIR}/${PORTNAME}-media-${PORTVERSION} && ${FIND} . -type f -print | \
