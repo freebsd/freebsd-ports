@@ -1,5 +1,5 @@
---- src/Configure.orig	Wed Jul 12 12:16:05 2006
-+++ src/Configure	Thu May 31 15:03:01 2007
+--- src/Configure.orig	2007-08-10 19:45:50.000000000 +0400
++++ src/Configure	2007-09-08 04:46:28.000000000 +0400
 @@ -26,7 +26,7 @@
  #	fp2rp:
  #	slo.sh:
@@ -13,7 +13,7 @@
      	PLATOSVERS=`echo $PLAT | sed 's/^.*freebsd//'`
  	OS="FreeBSD $PLATOSVERS"
  	case "$PLATOSVERS" in
--	    [2345]*)
+-	    [23456]*)
 +	    *)
  		DEF_WANTHSREGEX=no
  		CFLAGS="$CFLAGS -funsigned-char"
