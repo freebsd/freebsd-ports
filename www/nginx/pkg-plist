@@ -1,15 +1,15 @@
 @comment $FreeBSD$
-etc/nginx/fastcgi_params
-etc/nginx/koi-utf
-etc/nginx/koi-win
-etc/nginx/win-utf
-@unexec if cmp -s %D/etc/nginx/mime.types-dist %D/etc/nginx/mime.types; then rm -f %D/etc/nginx/mime.types; fi
-etc/nginx/mime.types-dist
-@exec if [ ! -f %D/etc/nginx/mime.types ] ; then cp -p %D/%F %B/mime.types; fi
-@unexec if cmp -s %D/etc/nginx/nginx.conf-dist %D/etc/nginx/nginx.conf; then rm -f %D/etc/nginx/nginx.conf; fi
-etc/nginx/nginx.conf-dist
-@exec if [ ! -f %D/etc/nginx/nginx.conf ] ; then cp -p %D/%F %B/nginx.conf; fi
-@dirrmtry etc/nginx
+%%ETCDIR%%/fastcgi_params
+%%ETCDIR%%/koi-utf
+%%ETCDIR%%/koi-win
+%%ETCDIR%%/win-utf
+@unexec if cmp -s %D/%%ETCDIR%%/mime.types-dist %D/%%ETCDIR%%/mime.types; then rm -f %D/%%ETCDIR%%/mime.types; fi
+%%ETCDIR%%/mime.types-dist
+@exec if [ ! -f %D/%%ETCDIR%%/mime.types ] ; then cp -p %D/%F %B/mime.types; fi
+@unexec if cmp -s %D/%%ETCDIR%%/nginx.conf-dist %D/%%ETCDIR%%/nginx.conf; then rm -f %D/%%ETCDIR%%/nginx.conf; fi
+%%ETCDIR%%/nginx.conf-dist
+@exec if [ ! -f %D/%%ETCDIR%%/nginx.conf ] ; then cp -p %D/%F %B/nginx.conf; fi
+@dirrmtry %%ETCDIR%%
 %%WWWDATA%%@exec mkdir -p -m 755 www/nginx-dist
 %%WWWDATA%%@exec if [ ! -d %D/www/nginx/ ] ; then ln -fs %D/www/nginx-dist %D/www/nginx; fi
 %%WWWDATA%%www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
