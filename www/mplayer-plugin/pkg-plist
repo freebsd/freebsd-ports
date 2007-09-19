@@ -14,6 +14,7 @@ lib/browser_plugins/mplayerplug-in-wmp.so
 lib/browser_plugins/mplayerplug-in-wmp.xpt
 lib/browser_plugins/mplayerplug-in.so
 lib/browser_plugins/mplayerplug-in.xpt
+share/locale/cs/LC_MESSAGES/mplayerplug-in.mo
 share/locale/da/LC_MESSAGES/mplayerplug-in.mo
 share/locale/de/LC_MESSAGES/mplayerplug-in.mo
 share/locale/en_US/LC_MESSAGES/mplayerplug-in.mo
@@ -28,6 +29,8 @@ share/locale/pl/LC_MESSAGES/mplayerplug-in.mo
 share/locale/pt_BR/LC_MESSAGES/mplayerplug-in.mo
 share/locale/ru/LC_MESSAGES/mplayerplug-in.mo
 share/locale/se/LC_MESSAGES/mplayerplug-in.mo
+share/locale/sk/LC_MESSAGES/mplayerplug-in.mo
+share/locale/tr/LC_MESSAGES/mplayerplug-in.mo
 share/locale/wa/LC_MESSAGES/mplayerplug-in.mo
 share/locale/zh_CN/LC_MESSAGES/mplayerplug-in.mo
 @dirrmtry lib/browser_plugins
