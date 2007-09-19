@@ -55,6 +55,7 @@
     SUBDIR += cbrpager
     SUBDIR += cbview
     SUBDIR += cegui
+    SUBDIR += cegui04
     SUBDIR += cenon
     SUBDIR += chbg
     SUBDIR += cimg
@@ -437,6 +438,7 @@
     SUBDIR += ocre
     SUBDIR += oglext
     SUBDIR += ogre3d
+    SUBDIR += ogre3d12
     SUBDIR += openclipart
     SUBDIR += opencv
     SUBDIR += opendis
