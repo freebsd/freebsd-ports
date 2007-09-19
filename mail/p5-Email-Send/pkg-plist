@@ -1,5 +1,4 @@
 %%SITE_PERL%%/Email/Send.pm
-%%SITE_PERL%%/Email/Send/IO.pm
 %%SITE_PERL%%/Email/Send/NNTP.pm
 %%SITE_PERL%%/Email/Send/Qmail.pm
 %%SITE_PERL%%/Email/Send/SMTP.pm
