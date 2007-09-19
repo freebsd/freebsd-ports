@@ -2259,6 +2259,7 @@
     SUBDIR += trio
     SUBDIR += truc
     SUBDIR += tvision
+    SUBDIR += u-boot
     SUBDIR += uclmmbase
     SUBDIR += ucpp
     SUBDIR += udis86

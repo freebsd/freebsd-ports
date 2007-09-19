@@ -1,0 +1,11 @@
+CFLAGS+=	-I../include -DUSE_HOSTCC
+
+all: mkimage
+
+mkimage: mkimage.o crc32.o
+	$(CC) $(CFLAGS) -o $(.TARGET) $(.ALLSRC)
+
+crc32.o: ../lib_generic/crc32.c ../include/zlib.h
+
+clean:
+	rm -f mkimage mkimage.o crc32.o
