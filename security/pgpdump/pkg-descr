@@ -1,4 +1,4 @@
 "pgpdump" is a PGP packet visualizer which displays the packet format
 of OpenPGP (RFC 2440 + bis) and PGP version 2 (RFC 1991).
 
-WWW: http://pgp.iijlab.net/pgpdump.html
+WWW: http://www.mew.org/~kazu/proj/pgpdump/
