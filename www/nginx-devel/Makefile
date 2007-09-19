@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.6.10
+PORTVERSION=	0.6.11
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -125,7 +125,7 @@ PLIST_SUB+=	WWWDATA="@comment "
 CONFIGURE_ARGS+=--with-mail
 .if defined(WITH_MAIL_SSL_MODULE)
 NGINX_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-mail_ssl_module --with-http_ssl_module
+CONFIGURE_ARGS+=--with-mail_ssl_module
 .endif
 .endif		# WITH_MAIL_MODULE
 
