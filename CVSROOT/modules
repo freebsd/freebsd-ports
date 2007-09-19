@@ -1232,6 +1232,7 @@ cduce		ports/lang/cduce
 cedet		ports/devel/cedet
 ceferino	ports/games/ceferino
 cegui		ports/graphics/cegui
+cegui		ports/graphics/cegui04
 celestia	ports/astro/celestia
 celestia-gnome	ports/astro/celestia-gnome
 celestia-gtk	ports/astro/celestia-gtk
@@ -8462,6 +8463,7 @@ oglext		ports/graphics/oglext
 ogmrip		ports/multimedia/ogmrip
 ogmtools	ports/multimedia/ogmtools
 ogre3d		ports/graphics/ogre3d
+ogre3d12	ports/graphics/ogre3d12
 ohphone		ports/net/ohphone
 ohugs		ports/lang/ohugs
 oidentd		ports/security/oidentd
