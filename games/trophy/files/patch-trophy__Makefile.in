@@ -1,0 +1,11 @@
+--- trophy/Makefile.in.orig	Wed Sep 19 14:30:23 2007
++++ trophy/Makefile.in	Wed Sep 19 14:31:48 2007
+@@ -56,7 +56,7 @@
+ 	$(CXX) $(EXTERN_LIBS) -o trophy $(OBJF)
+ 
+ %.o : %.cpp
+-	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) $(HEADERS) -O0 -g -Wall -DPKGDATADIR=\"$(datadir)/trophy\" $< -o $@
++	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) $(PTHREAD_CFLAGS) $(HEADERS) -O0 -g -Wall -DPKGDATADIR=\"$(datadir)/trophy\" $< -o $@
+ 
+ doc :
+ 	@echo "Building documentation"
