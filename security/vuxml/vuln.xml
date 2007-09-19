@@ -1388,7 +1388,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Debian reports:</p>
 	<blockquote cite="http://www.debian.org/security/2005/dsa-684">
-	  <p>Ulf H&auml;rnhammar from the Debian Security Audit Project
+	  <p>Ulf Härnhammar from the Debian Security Audit Project
 	    discovered a problem in typespeed, a touch-typist trainer
 	    disguised as game.  This could lead to a local attacker
 	    executing arbitrary code.</p>
