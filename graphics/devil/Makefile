@@ -7,7 +7,7 @@
 
 PORTNAME=	devil
 PORTVERSION=	1.6.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openil
@@ -38,5 +38,9 @@ USE_SDL=	yes
 .else
 CONFIGURE_ARGS+=--disable-sdl
 .endif
+
+post-patch:
+	${FIND} ${WRKSRC} \( -name '*.c' -o -name '*.cpp' -o -name '*.h' \) -print0 |\
+		${XARGS} -0 ${REINPLACE_CMD} 's|ILvoid|void|g'
 
 .include <bsd.port.post.mk>
