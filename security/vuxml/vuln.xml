@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="209f0d75-4b5c-11dc-a6cd-000fb5066b20">
+    <topic>flyspray -- authentication bypass</topic>
+    <affects>
+      <package>
+	<name>flyspray</name>
+	<range><lt>0.9.9.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Flyspray Project reports:</p>
+	<blockquote cite="http://www.flyspray.org/fsa:1">
+	  <p>Flyspray authentication system can be bypassed by sending a
+	    carefully crafted post request.</p>
+	  <p>To be vulnerable, PHP configuration directive output_buffering
+	    has to be disabled or set to a low value.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-1788</cvename>
+      <url>http://www.flyspray.org/fsa:1</url>
+    </references>
+    <dates>
+      <discovery>2007-03-13</discovery>
+      <entry>2007-09-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3ce8c7e2-66cf-11dc-b25f-02e0185f8d72">
     <topic>mozilla -- code execution via Quicktime media-link files</topic>
     <affects>
