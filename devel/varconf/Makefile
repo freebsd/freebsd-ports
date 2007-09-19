@@ -7,6 +7,7 @@
 
 PORTNAME=	varconf
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=worldforge
@@ -16,11 +17,10 @@ COMMENT=	A Configuration System for the STAGE Server
 
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
-USE_GCC=	3.4
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
