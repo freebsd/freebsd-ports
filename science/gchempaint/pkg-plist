@@ -26,6 +26,7 @@ share/applications/gchempaint.desktop
 share/gchempaint/pixmaps/gchempaint_logo.png
 share/gchempaint/templates/haworth.xml
 share/gchempaint/templates/templates.xml
+share/gchempaint/themes/ACS_Document_1996
 share/gchempaint/ui/H-pos.glade
 share/gchempaint/ui/arrow.png
 share/gchempaint/ui/arrowtool.glade
@@ -44,7 +45,6 @@ share/gchempaint/ui/stringdlg.glade
 share/gchempaint/ui/templates.glade
 share/gchempaint/ui/tools.glade
 share/gchempaint/ui/zoom.glade
-share/gchemutils-unstable/paint/themes/ACS_Document_1996
 share/gnome/help/gchempaint/C/legal.xml
 share/gnome/help/gchempaint/C/gchempaint.xml
 share/gnome/help/gchempaint/C/figures/Hposdlg.png
@@ -129,10 +129,8 @@ share/mime/chemical/x-cml.xml
 share/mimelnk/application/x-gchempaint.desktop
 @dirrmtry share/mimelnk/application
 @dirrmtry share/mimelnk
-@dirrm share/gchemutils-unstable/paint/themes
-@dirrm share/gchemutils-unstable/paint
-@dirrm share/gchemutils-unstable
 @dirrm share/gchempaint/ui
+@dirrm share/gchempaint/themes
 @dirrm share/gchempaint/templates
 @dirrm share/gchempaint/pixmaps
 @dirrm share/gchempaint
