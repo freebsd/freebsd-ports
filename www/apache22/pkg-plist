@@ -537,7 +537,7 @@ www/apache22/icons/world2.png
 %%APR_PORTS%%@dirrm include/apr-1
 %%APR_PORTS%%@dirrm build-1
 @dirrmtry libexec/apache22
-@dirrm include/apache22
+@dirrmtry include/apache22
 @dirrmtry www/apache22
 @dirrmtry etc/apache22/Includes
 @unexec rm -f %D/etc/apache22/httpd.conf.bak 2> /dev/null || true

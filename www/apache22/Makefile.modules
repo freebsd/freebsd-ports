@@ -146,7 +146,7 @@ AUTHZ_MODULES=		authz_host authz_groupfile authz_user authz_dbm \
 			authz_owner authz_default
 CACHE_MODULES=		cache disk_cache file_cache mem_cache
 DAV_MODULES=		dav dav_fs
-EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter charset_lite \
+EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter \
 			log_forensic optional_hook_export optional_hook_import \
 			optional_fn_import optional_fn_export 
 LDAP_MODULES=		ldap authnz_ldap

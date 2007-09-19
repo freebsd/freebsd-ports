@@ -23,7 +23,6 @@ OPTIONS+= \
 	 CASE_FILTER "Enable mod_case_filter" OFF \
 	 CASE_FILTER_IN "Enable mod_case_filter_in" OFF \
 	 EXT_FILTER "Enable mod_ext_filter" OFF \
-	 CHARSET_LITE "Enable mod_charset_lite" ON \
 	 LOG_FORENSIC "Enable mod_log_forensic" OFF \
 	 OPTIONAL_HOOK_EXPORT "Enable mod_optional_hook_export" OFF \
 	 OPTIONAL_HOOK_IMPORT "Enable mod_optional_hook_import" OFF \
