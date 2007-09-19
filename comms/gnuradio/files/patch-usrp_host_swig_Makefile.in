@@ -1,0 +1,10 @@
+--- usrp/host/swig/Makefile.in.orig	Wed Feb 28 12:42:15 2007
++++ usrp/host/swig/Makefile.in	Sat Apr 14 12:31:37 2007
+@@ -445,7 +445,6 @@
+ 	usrp_prims.py
+ 
+ ourpython_PYTHON = \
+-	__init__.py			\
+ 	usrp_fpga_regs.py		\
+ 	usrp_prims.py			
+ 

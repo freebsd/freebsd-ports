@@ -1,0 +1,32 @@
+--- gnuradio-core/Makefile.in.orig	Wed Feb 28 12:41:58 2007
++++ gnuradio-core/Makefile.in	Fri Sep 14 12:21:48 2007
+@@ -411,14 +411,13 @@
+ # using AM_PATH_PROG, but now here have to add a -f to be like GNU make
+ RM = $(RM_PROG) -f
+ EXTRA_DIST = \
+-	gnuradio-core.conf		\
+ 	gnuradio-core.pc.in
+ 
+-SUBDIRS = src doc
+-pkgconfigdir = $(libdir)/pkgconfig
++SUBDIRS = src
++pkgconfigdir = %%LIBDATA%%/pkgconfig
+ pkgconfig_DATA = gnuradio-core.pc
+ etcdir = $(sysconfdir)/gnuradio/conf.d
+-etc_DATA = gnuradio-core.conf
++etc_DATA =
+ all: all-recursive
+ 
+ .SUFFIXES:
+@@ -431,9 +430,9 @@
+ 	      exit 1;; \
+ 	  esac; \
+ 	done; \
+-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  gnuradio-core/Makefile'; \
++	echo ' cd $(top_srcdir) && /usr/bin/true --gnu  gnuradio-core/Makefile'; \
+ 	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu  gnuradio-core/Makefile
++	  /usr/bin/true --gnu  gnuradio-core/Makefile
+ .PRECIOUS: Makefile
+ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
+ 	@case '$?' in \

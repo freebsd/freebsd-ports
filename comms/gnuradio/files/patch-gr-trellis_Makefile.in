@@ -1,0 +1,11 @@
+--- gr-trellis/Makefile.in.orig	Thu Sep 13 16:46:53 2007
++++ gr-trellis/Makefile.in	Thu Sep 13 16:47:22 2007
+@@ -398,7 +398,7 @@
+ # Fix for BSD make not defining $(RM).  We define it now in configure.ac
+ # using AM_PATH_PROG, but now here have to add a -f to be like GNU make
+ RM = $(RM_PROG) -f
+-SUBDIRS = src doc
++SUBDIRS = src
+ all: all-recursive
+ 
+ .SUFFIXES:
