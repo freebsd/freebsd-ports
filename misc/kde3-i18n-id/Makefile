@@ -19,6 +19,10 @@ COMMENT=	Indonesian messages and documentation for KDE3
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
+BROKEN=		fails to fetch
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2007-11-18
+
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
