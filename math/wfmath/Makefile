@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wfmath
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	worldforge
@@ -16,8 +16,7 @@ COMMENT=	Worldforge math library
 
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
-INSTALLS_SHLIB=	yes
-USE_GCC=	3.4
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
