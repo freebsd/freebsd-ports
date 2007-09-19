@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libftdi
-PORTVERSION=	0.7
+PORTVERSION=	0.10
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/de/produkte/opensource/ftdi/TGZ/
 
@@ -23,20 +23,11 @@ USE_LDCONFIG=		yes
 USE_GNOME=		pkgconfig gnomehack
 
 PORTDOCS=		COPYING.LIB ChangeLog README
-PLIST_FILES=		bin/libftdi-config \
-				include/ftdi.h \
-				lib/libftdi.a \
-				lib/libftdi.la \
-				lib/libftdi.so \
-				lib/libftdi.so.7 \
-				libdata/pkgconfig/libftdi.pc
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for FILE in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
