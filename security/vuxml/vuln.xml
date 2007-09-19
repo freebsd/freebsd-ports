@@ -34,6 +34,63 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3ce8c7e2-66cf-11dc-b25f-02e0185f8d72">
+    <topic>mozilla -- code execution via Quicktime media-link files</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>2.0.0.7,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>2.0.0.7</lt></range>
+      </package>
+      <!-- Packages which probably will be upgraded -->
+      <package>
+	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+      <!-- Deprecated/old names -->
+      <package>
+	<name>firefox-ja</name>
+	<name>linux-mozilla-devel</name>
+	<name>linux-mozilla</name>
+	<name>mozilla</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Foundation reports a vulnerability within the
+	  mozilla browser.  This vulnerability also affects various
+	  other browsers like firefox and seamonkey.  The vulnerability
+	  is caused by QuickTime Media-Link files that contain a qtnext
+	  attribute.  This could allow an attacker to start the browser
+	  with arbitrary command-line options.  This could allow the
+	  attacker to install malware, steal local data and possibly
+	  execute and/or do other arbitrary things within the users
+	  context.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4965</cvename>
+      <url>http://www.mozilla.org/security/announce/2007/mfsa2007-28.html</url>
+    </references>
+    <dates>
+      <discovery>2007-09-18</discovery>
+      <entry>2007-09-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="71d903fc-602d-11dc-898c-001921ab2fa4">
     <topic>php -- multiple vulnerabilities</topic>
     <affects>
