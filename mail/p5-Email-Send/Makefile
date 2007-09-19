@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-Send
-PORTVERSION=	2.185
+PORTVERSION=	2.190
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -27,7 +27,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Email::Send.3 \
-	Email::Send::IO.3 \
 	Email::Send::NNTP.3 \
 	Email::Send::Qmail.3 \
 	Email::Send::SMTP.3 \
