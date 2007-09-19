@@ -16596,6 +16596,7 @@ x48		ports/emulators/x48
 x86info		ports/sysutils/x86info
 xabacus		ports/games/xabacus
 xacpim		ports/sysutils/xacpim
+xaira		ports/textproc/xaira
 xalan-c		ports/textproc/xalan-c
 xalan-j		ports/textproc/xalan-j
 xalarm		ports/x11-clocks/xalarm
