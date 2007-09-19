@@ -7,7 +7,7 @@
 
 PORTNAME=	cegui
 PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=crayzedsgui
@@ -18,12 +18,12 @@ COMMENT=	A library providing windowing and widgets for graphics APIs
 
 LIB_DEPENDS=	IL.1:${PORTSDIR}/graphics/devil
 
+LATEST_LINK=	cegui04
 WRKSRC=		${WRKDIR}/${PORTNAME}_mk2
 CONFIGURE_ARGS=	--without-xerces-c
 GNU_CONFIGURE=	YES
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 USE_BZIP2=	YES
-USE_GCC=	3.4
 USE_GL=		YES
 USE_XLIB=	YES
 USE_GNOME=	gnomehack
@@ -42,6 +42,8 @@ post-patch:
 		${WRKSRC}/src/CEGUIFactoryModule.cpp
 	@${REINPLACE_CMD} -e 's|(linux)|& \|\| defined(__FreeBSD__)|g' \
 		${WRKSRC}/Samples/common/src/CEGuiSample.cpp
+	@${REINPLACE_CMD} -e 's|ILvoid|void|g' \
+		${WRKSRC}/src/renderers/OpenGLGUIRenderer/opengltexture.cpp
 
 post-install:
 .if !defined(NOPORTDOCS)

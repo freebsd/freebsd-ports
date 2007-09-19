@@ -17,8 +17,9 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A scene-oriented, flexible 3D engine written in C++
 
 LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
-		CEGUIBase.0:${PORTSDIR}/graphics/cegui
+		CEGUIBase.0:${PORTSDIR}/graphics/cegui04
 
+LATEST_LINK=	ogre3d12
 WRKSRC=		${WRKDIR}/ogrenew
 CONFIGURE_ARGS=	--disable-cg --program-transform-name= --enable-static --with-platform=SDL \
 		--with-cppunit-prefix=/nonexistent
@@ -30,7 +31,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	YES
 USE_BZIP2=	YES
 USE_XLIB=	YES
-USE_GCC=	3.4
 USE_GNOME=	gnomehack
 USE_GMAKE=	YES
 USE_SDL=	sdl
