@@ -1,0 +1,34 @@
+--- kdecore/kurl.cpp
++++ kdecore/kurl.cpp
+@@ -30,6 +30,7 @@
+ #include <kglobal.h>
+ #include <kidna.h>
+ #include <kprotocolinfo.h>
++#include <kstringhandler.h>
+ #endif
+ 
+ #include <stdio.h>
+@@ -183,7 +184,7 @@ static QString lazy_encode( const QStrin
+         (character == '?') || // Start of query delimiter
+         ((character == '@') && encodeAt) || // Username delimiter
+         (character == '#') || // Start of reference delimiter
+-        ((character == 32) && (i+1 == old_length))) // A trailing space
++        ((character == 32) && (i+1 == old_length || segment[i+1] == ' '))) // A trailing space
+     {
+       new_segment[ new_length++ ] = '%';
+ 
+@@ -1540,7 +1541,13 @@ QString KURL::prettyURL( int _trailing )
+     u += "//";
+     if ( hasUser() )
+     {
+-      u += lazy_encode(m_strUser);
++      QString s = m_strUser;
++#ifndef KDE_QT_ONLY
++      // shorten the username, its unlikely to be valid without password anyway
++      if (!hasPass())
++          s = KStringHandler::csqueeze(s, 16);
++#endif
++      u += encode(s, 0, 0);
+       // Don't show password!
+       u += "@";
+     }
