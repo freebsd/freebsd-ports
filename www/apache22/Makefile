@@ -58,7 +58,8 @@ OPTIONS= \
 	MYSQL "Enable MySQL support for apr-dbd" Off \
 	PGSQL "Enable PostgreSQL support for apr-dbd" Off \
 	SQLITE "Enable SQLite support for apr-dbd" Off \
-	IPV6 "Enable IPv6 support" On
+	IPV6 "Enable IPv6 support" On \
+	PCRE_FROM_PORTS "Use devel/pcre instead of bundled one" Off
 .include "${.CURDIR}/Makefile.options"
 .endif
 
