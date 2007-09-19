@@ -2,7 +2,6 @@ bin/ember
 bin/ember.bin
 etc/ember/ember.conf
 etc/ember/ogre.cfg
-etc/ember/plugins.cfg
 etc/ember/resources.cfg
 etc/ember/terrain.cfg
 share/applications/ember.desktop
@@ -17,7 +16,6 @@ share/ember/carpenter/blueprints/house.blueprint.xml
 share/ember/carpenter/blueprints/sty.blueprint.xml
 share/ember/carpenter/modelblockspecs/general.modelblocks.xml
 share/ember/jesus/modelmappings/general.modelmapping.xml
-share/ember/media/shared/LICENSING.txt
 share/ember/media/shared/common/3d_objects/body_parts/eyes/textures/blue_eye_01/low/eye.png
 share/ember/media/shared/common/3d_objects/body_parts/hair/textures/plain/low/hair.png
 share/ember/media/shared/common/3d_objects/body_parts/humanoid_body/textures/male_pink/low/humanoid_body.png
@@ -88,10 +86,9 @@ share/ember/media/shared/common/3d_objects/environment/ground/models/palissade/p
 share/ember/media/shared/common/3d_objects/environment/ground/models/rounded_heap/rounded_heap.mesh
 share/ember/media/shared/common/3d_objects/environment/ground/textures/dirt/dirt.png
 share/ember/media/shared/common/3d_objects/environment/ground/textures/grass/green_grass_tile.png
-share/ember/media/shared/common/3d_objects/environment/ground/textures/leaf_covered/low/ground.png
 share/ember/media/shared/common/3d_objects/environment/ground/textures/leaf_covered/medium/ground.png
 share/ember/media/shared/common/3d_objects/environment/ground/textures/plowed_field/low/plowed_field_diffuse.png
-share/ember/media/shared/common/3d_objects/environment/ground/textures/rabbithill_grass/low/ground.png
+share/ember/media/shared/common/3d_objects/environment/ground/textures/sand/sand2.png
 share/ember/media/shared/common/3d_objects/environment/ground/textures/stone/weathered_granite.png
 share/ember/media/shared/common/3d_objects/environment/ground/textures/straw_and_mud/low/ground.png
 share/ember/media/shared/common/3d_objects/environment/sky/models/sphere/sphere.mesh
@@ -240,9 +237,8 @@ share/ember/media/shared/common/3d_objects/items/vehicle/cart/models/cart2.mesh
 share/ember/media/shared/common/3d_objects/items/vehicle/cart/models/cart3.mesh
 share/ember/media/shared/common/3d_objects/items/vehicle/cart/models/cart4.mesh
 share/ember/media/shared/common/3d_objects/plants/field/textures/bittergrass/field_1_.png
-share/ember/media/shared/common/3d_objects/plants/field/textures/bittergrass/low/field_1_.png
-share/ember/media/shared/common/3d_objects/plants/field/textures/teardrops/low/field.png
-share/ember/media/shared/common/3d_objects/plants/field/textures/thingrass/low/field.png
+share/ember/media/shared/common/3d_objects/plants/field/textures/teardrops/field.png
+share/ember/media/shared/common/3d_objects/plants/field/textures/thingrass/field.png
 share/ember/media/shared/common/3d_objects/plants/fir/textures/common_fir/low/bark_small.png
 share/ember/media/shared/common/3d_objects/plants/fir/textures/common_fir/low/fir_branch_normal_01_hh.png
 share/ember/media/shared/common/3d_objects/plants/fruitable/models/acorn/acorn.mesh
@@ -261,6 +257,7 @@ share/ember/media/shared/common/3d_objects/plants/tree/models/evergreen/evergree
 share/ember/media/shared/common/3d_objects/plants/tree/models/evergreen/evergreen_B04.mesh
 share/ember/media/shared/common/3d_objects/plants/tree/models/evergreen/evergreen_B1.mesh
 share/ember/media/shared/common/3d_objects/plants/tree/models/log/tree_log.mesh
+share/ember/media/shared/common/3d_objects/plants/tree/models/oak/mk1/trees.mesh
 share/ember/media/shared/common/3d_objects/plants/tree/models/oak/oakA.mesh
 share/ember/media/shared/common/3d_objects/plants/tree/models/oak/oakB.mesh
 share/ember/media/shared/common/3d_objects/plants/tree/models/oak/oakC.mesh
@@ -273,13 +270,23 @@ share/ember/media/shared/common/3d_objects/plants/tree/models/oak/oak_youngB.mes
 share/ember/media/shared/common/3d_objects/plants/tree/models/oak/oak_youngC.mesh
 share/ember/media/shared/common/3d_objects/plants/tree/models/palissade/palissade_timber.mesh
 share/ember/media/shared/common/3d_objects/plants/tree/models/sharpened_log/sharpened_log.mesh
+share/ember/media/shared/common/3d_objects/plants/tree/textures/birch/bark/birch_bark.tga
+share/ember/media/shared/common/3d_objects/plants/tree/textures/birch/bark/birch_bark_n.tga
+share/ember/media/shared/common/3d_objects/plants/tree/textures/birch/foliage/birch_billboard.png
 share/ember/media/shared/common/3d_objects/plants/tree/textures/evergreen/evergreen_fir.png
 share/ember/media/shared/common/3d_objects/plants/tree/textures/evergreen/evergreen_pine.png
 share/ember/media/shared/common/3d_objects/plants/tree/textures/evergreen/evergreen_snow.png
 share/ember/media/shared/common/3d_objects/plants/tree/textures/gnarly/high/tree.png
+share/ember/media/shared/common/3d_objects/plants/tree/textures/oak/bark/wf_treebark.tga
+share/ember/media/shared/common/3d_objects/plants/tree/textures/oak/bark/wf_treebark_n.tga
+share/ember/media/shared/common/3d_objects/plants/tree/textures/oak/foliage/branches.tga
+share/ember/media/shared/common/3d_objects/plants/tree/textures/oak/foliage/english_oak_fall.png
+share/ember/media/shared/common/3d_objects/plants/tree/textures/oak/foliage/english_oak_n.tga
+share/ember/media/shared/common/3d_objects/plants/tree/textures/oak/foliage/english_oak_summer.png
+share/ember/media/shared/common/3d_objects/plants/tree/textures/oak/foliage/oak_spring.png
 share/ember/media/shared/common/3d_objects/plants/tree/textures/oak/oak.png
 share/ember/media/shared/common/3d_objects/plants/tussock/models/small_plant/simplegrass.mesh
-share/ember/media/shared/common/3d_objects/plants/tussock/textures/heartblood/low/tussock.png
+share/ember/media/shared/common/3d_objects/plants/tussock/textures/heartblood/tussock.png
 share/ember/media/shared/common/3d_skeletons/alpha_goblin/Skeleton.skeleton
 share/ember/media/shared/common/3d_skeletons/alpha_goblin/goblin.mesh
 share/ember/media/shared/common/3d_skeletons/gen_humanoid/malebuilder/malebuilder.skeleton
@@ -306,7 +313,6 @@ share/ember/media/shared/gui/Font.xsd
 share/ember/media/shared/gui/GUILayout.xsd
 share/ember/media/shared/gui/GUIScheme.xsd
 share/ember/media/shared/gui/Imageset.xsd
-share/ember/media/shared/gui/cegui/EmberLook.png
 share/ember/media/shared/gui/cegui/datafiles/configs/cegui.config
 share/ember/media/shared/gui/cegui/datafiles/fonts/Font.xsd
 share/ember/media/shared/gui/cegui/datafiles/fonts/Vera.ttf
@@ -322,14 +328,12 @@ share/ember/media/shared/gui/cegui/datafiles/imagesets/Imageset.xsd
 share/ember/media/shared/gui/cegui/datafiles/imagesets/iconset_mason.imageset
 share/ember/media/shared/gui/cegui/datafiles/imagesets/iconset_standard.imageset
 share/ember/media/shared/gui/cegui/datafiles/layouts/Admin.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/CVS/TerrainEditor.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/Chat.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/ConsoleWidget.xml
 share/ember/media/shared/gui/cegui/datafiles/layouts/Debug.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Demo8.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/EntityEditWidget.xml
+share/ember/media/shared/gui/cegui/datafiles/layouts/EntityBrowser.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/EntityEditor.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/EntityPicker.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Environment.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/GUILayout.xsd
 share/ember/media/shared/gui/cegui/datafiles/layouts/Give.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/HelpWidget.xml
@@ -344,7 +348,6 @@ share/ember/media/shared/gui/cegui/datafiles/layouts/MakeEntityWidget.xml
 share/ember/media/shared/gui/cegui/datafiles/layouts/MeshPreview.widget
 share/ember/media/shared/gui/cegui/datafiles/layouts/ModelEdit.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/Mover.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Orientation.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/Performance.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/Quit.widget
 share/ember/media/shared/gui/cegui/datafiles/layouts/ScriptEdit.layout
@@ -352,29 +355,48 @@ share/ember/media/shared/gui/cegui/datafiles/layouts/ServerBrowser.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/ServerWidget.xml
 share/ember/media/shared/gui/cegui/datafiles/layouts/Tasks.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/TerrainEditor.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/Admin.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/Chat.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/Debug.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/EntityBrowser.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/EntityEditor.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/EntityPicker.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/Give.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/IndirectRenderingChecker.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/ListAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/ListAdapterNewElement.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/MapAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/MapAdapterNewElement.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/ModelEdit.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/Mover.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/NumberAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/OrientationAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/Performance.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/Position2DAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/PositionAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/ScriptEdit.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/ServerBrowser.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/SizeAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/StaticAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/StringAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/Tasks.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/TerrainEditor.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/adapters/atlas/ListAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/adapters/atlas/ListAdapterNewElement.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/adapters/atlas/MapAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/adapters/atlas/MapAdapterNewElement.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/adapters/atlas/NumberAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/adapters/atlas/OrientationAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/adapters/atlas/Position2DAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/adapters/atlas/PositionAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/adapters/atlas/SizeAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/adapters/atlas/StaticAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/adapters/atlas/StringAdapter.layout
 share/ember/media/shared/gui/cegui/datafiles/looknfeel/EmberLook.looknfeel
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/Admin.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/Bootstrap.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/Chat.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/Debug.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/EntityPicker.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/Environment.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/Give.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/IndirectRenderingChecker.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/ModelEdit.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/Mover.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/Performance.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/ScriptEdit.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/ServerBrowser.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/Tasks.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/TerrainEditor.lua
-share/ember/media/shared/gui/cegui/datafiles/lua_scripts/demo8.lua
 share/ember/media/shared/gui/cegui/datafiles/schemes/EmberLookSkin.scheme
 share/ember/media/shared/gui/cegui/datafiles/schemes/GUIScheme.xsd
-share/ember/media/shared/gui/icons/ember.png
-share/ember/media/shared/gui/icons/iconset_mason.png
-share/ember/media/shared/gui/icons/iconset_standard.png
 share/ember/media/shared/models/arrow.mesh
+share/ember/media/shared/models/bouldertest.mesh
 share/ember/media/shared/models/environment/field/patch_01/bittergrass/low.mesh
 share/ember/media/shared/models/environment/field/patch_01/bittergrass/normal.mesh
 share/ember/media/shared/models/environment/field/patch_01/heartblood/low.mesh
@@ -392,9 +414,28 @@ share/ember/media/shared/models/environment/field/small_plant/thingrass/normal.m
 share/ember/media/shared/models/fireball.mesh
 share/ember/media/shared/models/fish.mesh
 share/ember/media/shared/models/fish.skeleton
+share/ember/media/shared/models/mossy_bouldersA.mesh
+share/ember/media/shared/models/mossy_bouldersB.mesh
 share/ember/media/shared/models/placeholder.mesh
+share/ember/media/shared/models/test.mesh
 share/ember/media/shared/packs/EmberCore.zip
 share/ember/media/shared/packs/OgreCore.zip
+share/ember/media/shared/scripting/lua/Admin.lua
+share/ember/media/shared/scripting/lua/Bootstrap.lua
+share/ember/media/shared/scripting/lua/Chat.lua
+share/ember/media/shared/scripting/lua/Debug.lua
+share/ember/media/shared/scripting/lua/EntityBrowser.lua
+share/ember/media/shared/scripting/lua/EntityEditor.lua
+share/ember/media/shared/scripting/lua/EntityPicker.lua
+share/ember/media/shared/scripting/lua/Give.lua
+share/ember/media/shared/scripting/lua/IndirectRenderingChecker.lua
+share/ember/media/shared/scripting/lua/ModelEdit.lua
+share/ember/media/shared/scripting/lua/Mover.lua
+share/ember/media/shared/scripting/lua/Performance.lua
+share/ember/media/shared/scripting/lua/ScriptEdit.lua
+share/ember/media/shared/scripting/lua/ServerBrowser.lua
+share/ember/media/shared/scripting/lua/Tasks.lua
+share/ember/media/shared/scripting/lua/TerrainEditor.lua
 share/ember/media/shared/sounds/gyph.wav
 share/ember/media/shared/sounds/pig_grunt.wav
 share/ember/media/user/LICENSING.txt
@@ -428,8 +469,8 @@ share/ember/media/user/materials/scripts/smoke.material
 share/ember/media/user/materials/scripts/tools.material
 share/ember/media/user/materials/scripts/valuables.material
 share/ember/media/user/materials/scripts/vegetation.material
-share/ember/media/user/materials/splatting/.directory
 share/ember/media/user/materials/splatting/BaseTexture.material
+share/ember/media/user/materials/splatting/Detail3.jpg
 share/ember/media/user/materials/splatting/PagingLandScape.material
 share/ember/media/user/materials/splatting/Splat.cg
 share/ember/media/user/materials/splatting/Splatting.material
@@ -438,6 +479,7 @@ share/ember/media/user/materials/splatting/Splatting3.material
 share/ember/media/user/materials/splatting/Splatting4.material
 share/ember/media/user/materials/splatting/Splatting6.material
 share/ember/media/user/materials/splatting/alpha_splat.material
+share/ember/media/user/materials/splatting/landscape_detail.jpg
 share/ember/media/user/materials/splatting/shadersplat.material
 share/ember/media/user/materials/splatting/splat.asm
 share/ember/media/user/materials/splatting/splat.program
@@ -448,7 +490,10 @@ share/ember/media/user/materials/splatting/splat3lerp.asm
 share/ember/media/user/materials/splatting/splat4.asm
 share/ember/media/user/materials/splatting/splat4lerp.asm
 share/ember/media/user/materials/splatting/splatatlas.asm
-share/ember/media/user/materials/textures/.directory
+share/ember/media/user/materials/splatting/splatting_grass.jpg
+share/ember/media/user/materials/splatting/splatting_rock.jpg
+share/ember/media/user/materials/splatting/splatting_sand.jpg
+share/ember/media/user/materials/splatting/splatting_snow.jpg
 share/ember/media/user/materials/textures/dark.png
 share/ember/media/user/materials/textures/flare.png
 share/ember/media/user/materials/textures/lensflare5.jpg
@@ -458,50 +503,27 @@ share/ember/media/user/materials/textures/lod2.png
 share/ember/media/user/materials/textures/lod3.png
 share/ember/media/user/materials/textures/lod4.png
 share/ember/media/user/materials/textures/placeholder.png
-share/ember/media/user/materials/textures/rabbithill_grass_hh_light_ah.png
-share/ember/media/user/materials/textures/sand.png
 share/ember/media/user/materials/textures/smoke.png
 share/ember/media/user/materials/textures/smokecolors.png
 share/ember/media/user/materials/textures/snow.png
 share/ember/media/user/materials/textures/splatting_snow.jpg
+share/ember/media/user/materials/textures/terraindecal.png
 share/ember/media/user/materials/textures/water.png
 share/ember/media/user/modeldefinitions/buildingelements.modeldef.xml
 share/ember/media/user/modeldefinitions/buildings.modeldef
 share/ember/media/user/modeldefinitions/characters.modeldef.xml
-share/ember/media/user/modeldefinitions/common.areadef.xml
 share/ember/media/user/modeldefinitions/creatures.modeldef.xml
 share/ember/media/user/modeldefinitions/edibles.modeldef
 share/ember/media/user/modeldefinitions/environment.modeldef.xml
 share/ember/media/user/modeldefinitions/furniture.modeldef
 share/ember/media/user/modeldefinitions/items.modeldef.xml
 share/ember/media/user/modeldefinitions/male.modeldef
-share/ember/media/user/modeldefinitions/modeldefinition.xsd
 share/ember/media/user/modeldefinitions/modelmappings.modelmap.xml
 share/ember/media/user/modeldefinitions/outdoor_structures.modeldef
 share/ember/media/user/modeldefinitions/placeholder.modeldef.xml
 share/ember/media/user/modeldefinitions/tools.modeldef
 share/ember/media/user/modeldefinitions/trees.modeldef.xml
 share/ember/media/user/modeldefinitions/vehicles.modeldef
-share/ember/media/user/models/arrow.mesh
-share/ember/media/user/models/environment/field/patch_01/bittergrass/low.mesh
-share/ember/media/user/models/environment/field/patch_01/bittergrass/normal.mesh
-share/ember/media/user/models/environment/field/patch_01/heartblood/low.mesh
-share/ember/media/user/models/environment/field/patch_01/heartblood/normal.mesh
-share/ember/media/user/models/environment/field/patch_01/teardrops/low.mesh
-share/ember/media/user/models/environment/field/patch_01/teardrops/normal.mesh
-share/ember/media/user/models/environment/field/patch_01/thingrass/low.mesh
-share/ember/media/user/models/environment/field/patch_01/thingrass/normal.mesh
-share/ember/media/user/models/environment/field/small_plant/bittergrass/low.mesh
-share/ember/media/user/models/environment/field/small_plant/bittergrass/normal.mesh
-share/ember/media/user/models/environment/field/small_plant/heartblood/normal.mesh
-share/ember/media/user/models/environment/field/small_plant/teardrops/normal.mesh
-share/ember/media/user/models/environment/field/small_plant/thingrass/low.mesh
-share/ember/media/user/models/environment/field/small_plant/thingrass/normal.mesh
-share/ember/media/user/models/fireball.mesh
-share/ember/media/user/models/fish.mesh
-share/ember/media/user/models/fish.skeleton
-share/ember/media/user/models/placeholder.mesh
-share/ember/media/user/models/test.mesh
 share/ember/media/user/packs/Caelum.zip
 share/ember/media/user/particle/smoke.particle
 share/ember/media/user/particle/sun.particle
@@ -632,13 +654,11 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/media/shared/common/3d_objects/environment/ground/models
 @dirrm share/ember/media/shared/common/3d_objects/environment/ground/textures/dirt
 @dirrm share/ember/media/shared/common/3d_objects/environment/ground/textures/grass
-@dirrm share/ember/media/shared/common/3d_objects/environment/ground/textures/leaf_covered/low
 @dirrm share/ember/media/shared/common/3d_objects/environment/ground/textures/leaf_covered/medium
 @dirrm share/ember/media/shared/common/3d_objects/environment/ground/textures/leaf_covered
 @dirrm share/ember/media/shared/common/3d_objects/environment/ground/textures/plowed_field/low
 @dirrm share/ember/media/shared/common/3d_objects/environment/ground/textures/plowed_field
-@dirrm share/ember/media/shared/common/3d_objects/environment/ground/textures/rabbithill_grass/low
-@dirrm share/ember/media/shared/common/3d_objects/environment/ground/textures/rabbithill_grass
+@dirrm share/ember/media/shared/common/3d_objects/environment/ground/textures/sand
 @dirrm share/ember/media/shared/common/3d_objects/environment/ground/textures/stone
 @dirrm share/ember/media/shared/common/3d_objects/environment/ground/textures/straw_and_mud/low
 @dirrm share/ember/media/shared/common/3d_objects/environment/ground/textures/straw_and_mud
@@ -790,11 +810,8 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/media/shared/common/3d_objects/items/vehicle/cart
 @dirrm share/ember/media/shared/common/3d_objects/items/vehicle
 @dirrm share/ember/media/shared/common/3d_objects/items
-@dirrm share/ember/media/shared/common/3d_objects/plants/field/textures/bittergrass/low
 @dirrm share/ember/media/shared/common/3d_objects/plants/field/textures/bittergrass
-@dirrm share/ember/media/shared/common/3d_objects/plants/field/textures/teardrops/low
 @dirrm share/ember/media/shared/common/3d_objects/plants/field/textures/teardrops
-@dirrm share/ember/media/shared/common/3d_objects/plants/field/textures/thingrass/low
 @dirrm share/ember/media/shared/common/3d_objects/plants/field/textures/thingrass
 @dirrm share/ember/media/shared/common/3d_objects/plants/field/textures
 @dirrm share/ember/media/shared/common/3d_objects/plants/field
@@ -825,19 +842,24 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/media/shared/common/3d_objects/plants/tree/models/Straight_up_tree
 @dirrm share/ember/media/shared/common/3d_objects/plants/tree/models/evergreen
 @dirrm share/ember/media/shared/common/3d_objects/plants/tree/models/log
+@dirrm share/ember/media/shared/common/3d_objects/plants/tree/models/oak/mk1
 @dirrm share/ember/media/shared/common/3d_objects/plants/tree/models/oak
 @dirrm share/ember/media/shared/common/3d_objects/plants/tree/models/palissade
 @dirrm share/ember/media/shared/common/3d_objects/plants/tree/models/sharpened_log
 @dirrm share/ember/media/shared/common/3d_objects/plants/tree/models
+@dirrm share/ember/media/shared/common/3d_objects/plants/tree/textures/birch/bark
+@dirrm share/ember/media/shared/common/3d_objects/plants/tree/textures/birch/foliage
+@dirrm share/ember/media/shared/common/3d_objects/plants/tree/textures/birch
 @dirrm share/ember/media/shared/common/3d_objects/plants/tree/textures/evergreen
 @dirrm share/ember/media/shared/common/3d_objects/plants/tree/textures/gnarly/high
 @dirrm share/ember/media/shared/common/3d_objects/plants/tree/textures/gnarly
+@dirrm share/ember/media/shared/common/3d_objects/plants/tree/textures/oak/bark
+@dirrm share/ember/media/shared/common/3d_objects/plants/tree/textures/oak/foliage
 @dirrm share/ember/media/shared/common/3d_objects/plants/tree/textures/oak
 @dirrm share/ember/media/shared/common/3d_objects/plants/tree/textures
 @dirrm share/ember/media/shared/common/3d_objects/plants/tree
 @dirrm share/ember/media/shared/common/3d_objects/plants/tussock/models/small_plant
 @dirrm share/ember/media/shared/common/3d_objects/plants/tussock/models
-@dirrm share/ember/media/shared/common/3d_objects/plants/tussock/textures/heartblood/low
 @dirrm share/ember/media/shared/common/3d_objects/plants/tussock/textures/heartblood
 @dirrm share/ember/media/shared/common/3d_objects/plants/tussock/textures
 @dirrm share/ember/media/shared/common/3d_objects/plants/tussock
@@ -861,14 +883,15 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/media/shared/gui/cegui/datafiles/configs
 @dirrm share/ember/media/shared/gui/cegui/datafiles/fonts
 @dirrm share/ember/media/shared/gui/cegui/datafiles/imagesets
-@dirrm share/ember/media/shared/gui/cegui/datafiles/layouts/CVS
+@dirrm share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/adapters/atlas
+@dirrm share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/adapters
+@dirrm share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas
+@dirrm share/ember/media/shared/gui/cegui/datafiles/layouts/adapters
 @dirrm share/ember/media/shared/gui/cegui/datafiles/layouts
 @dirrm share/ember/media/shared/gui/cegui/datafiles/looknfeel
-@dirrm share/ember/media/shared/gui/cegui/datafiles/lua_scripts
 @dirrm share/ember/media/shared/gui/cegui/datafiles/schemes
 @dirrm share/ember/media/shared/gui/cegui/datafiles
 @dirrm share/ember/media/shared/gui/cegui
-@dirrm share/ember/media/shared/gui/icons
 @dirrm share/ember/media/shared/gui
 @dirrm share/ember/media/shared/models/environment/field/patch_01/bittergrass
 @dirrm share/ember/media/shared/models/environment/field/patch_01/heartblood
@@ -884,6 +907,8 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/media/shared/models/environment
 @dirrm share/ember/media/shared/models
 @dirrm share/ember/media/shared/packs
+@dirrm share/ember/media/shared/scripting/lua
+@dirrm share/ember/media/shared/scripting
 @dirrm share/ember/media/shared/sounds
 @dirrm share/ember/media/shared
 @dirrm share/ember/media/user/materials/base_scripts
@@ -893,19 +918,6 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/media/user/materials/textures
 @dirrm share/ember/media/user/materials
 @dirrm share/ember/media/user/modeldefinitions
-@dirrm share/ember/media/user/models/environment/field/patch_01/bittergrass
-@dirrm share/ember/media/user/models/environment/field/patch_01/heartblood
-@dirrm share/ember/media/user/models/environment/field/patch_01/teardrops
-@dirrm share/ember/media/user/models/environment/field/patch_01/thingrass
-@dirrm share/ember/media/user/models/environment/field/patch_01
-@dirrm share/ember/media/user/models/environment/field/small_plant/bittergrass
-@dirrm share/ember/media/user/models/environment/field/small_plant/heartblood
-@dirrm share/ember/media/user/models/environment/field/small_plant/teardrops
-@dirrm share/ember/media/user/models/environment/field/small_plant/thingrass
-@dirrm share/ember/media/user/models/environment/field/small_plant
-@dirrm share/ember/media/user/models/environment/field
-@dirrm share/ember/media/user/models/environment
-@dirrm share/ember/media/user/models
 @dirrm share/ember/media/user/packs
 @dirrm share/ember/media/user/particle
 @dirrm share/ember/media/user
