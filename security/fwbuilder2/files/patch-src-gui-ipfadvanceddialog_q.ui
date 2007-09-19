@@ -1,0 +1,70 @@
+--- src/gui/ipfadvanceddialog_q.ui.orig	2006-10-23 21:05:57.000000000 -0700
++++ src/gui/ipfadvanceddialog_q.ui	2007-09-19 14:20:52.000000000 -0700
+@@ -118,7 +118,7 @@
+                             </size>
+                         </property>
+                     </spacer>
+-                    <widget class="QCheckBox" row="4" column="1">
++                    <widget class="QCheckBox" row="6" column="1">
+                         <property name="name">
+                             <cstring>ipf_nat_raudio_proxy</cstring>
+                         </property>
+@@ -126,7 +126,7 @@
+                             <string>Use raudio proxy in NAT rules</string>
+                         </property>
+                     </widget>
+-                    <widget class="QCheckBox" row="5" column="1">
++                    <widget class="QCheckBox" row="7" column="1">
+                         <property name="name">
+                             <cstring>ipf_nat_h323_proxy</cstring>
+                         </property>
+@@ -134,7 +134,7 @@
+                             <string>Use h323 proxy in NAT rules</string>
+                         </property>
+                     </widget>
+-                    <widget class="QCheckBox" row="6" column="1">
++                    <widget class="QCheckBox" row="8" column="1">
+                         <property name="name">
+                             <cstring>ipf_nat_ipsec_proxy</cstring>
+                         </property>
+@@ -175,6 +175,22 @@
+                             <string>Use rcmd proxy in NAT rules</string>
+                         </property>
+                     </widget>
++                    <widget class="QCheckBox" row="4" column="1">
++                        <property name="name">
++                            <cstring>ipf_nat_krcmd_proxy</cstring>
++                        </property>
++                        <property name="text">
++                            <string>Use Kerberos rcmd proxy in NAT rules</string>
++                        </property>
++                    </widget>
++                    <widget class="QCheckBox" row="5" column="1">
++                        <property name="name">
++                            <cstring>ipf_nat_ekshell_proxy</cstring>
++                        </property>
++                        <property name="text">
++                            <string>Use Kerberos ekshell proxy in NAT rules</string>
++                        </property>
++                    </widget>
+                     <spacer row="9" column="1">
+                         <property name="name">
+                             <cstring>spacer36</cstring>
+@@ -192,7 +208,7 @@
+                             </size>
+                         </property>
+                     </spacer>
+-                    <widget class="QCheckBox" row="7" column="1">
++                    <widget class="QCheckBox" row="9" column="1">
+                         <property name="name">
+                             <cstring>ipf_nat_pptp_proxy</cstring>
+                         </property>
+@@ -200,7 +216,7 @@
+                             <string>Use PPTP proxy in NAT rules</string>
+                         </property>
+                     </widget>
+-                    <widget class="QCheckBox" row="8" column="1">
++                    <widget class="QCheckBox" row="10" column="1">
+                         <property name="name">
+                             <cstring>ipf_nat_irc_proxy</cstring>
+                         </property>
