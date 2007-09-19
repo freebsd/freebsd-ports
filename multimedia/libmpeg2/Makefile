@@ -7,7 +7,7 @@
 
 PORTNAME=	libmpeg2
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 DISTNAME=	mpeg2dec-${PORTVERSION}
@@ -25,11 +25,7 @@ CONFIGURE_ARGS=	--enable-shared \
 
 MAN1=	extract_mpeg2.1 mpeg2dec.1
 
-PORTDOCS=	libmpeg2.txt
-
-.ifdef(WITH_MGA)
-CONFIGURE_ARGS+=	--enable-mga
-.endif
+PORTDOCS=	libmpeg2.txt README
 
 .ifdef(WITH_SDL)
 USE_SDL=	yes
@@ -75,11 +71,12 @@ post-patch:
 		${WRKSRC}/libmpeg2/convert/Makefile.in
 post-install:
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/libmpeg2.txt ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/libmpeg2.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-	@${INSTALL_DATA} ${WRKSRC}/libvo/libvo.a ${PREFIX}/lib
-	@${INSTALL_DATA} ${WRKSRC}/include/video_out.h \
+	${INSTALL_DATA} ${WRKSRC}/libvo/libvo.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/include/video_out.h \
 		${PREFIX}/include/mpeg2dec
 
 .include <bsd.port.post.mk>
