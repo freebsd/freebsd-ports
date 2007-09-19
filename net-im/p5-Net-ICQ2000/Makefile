@@ -14,6 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A perl5 module for ICQv7 protocol realisation
 
+BROKEN=		unfetchable
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2007-11-18
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::ICQ2000.3
