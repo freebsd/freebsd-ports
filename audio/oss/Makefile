@@ -7,6 +7,7 @@
 
 PORTNAME=	oss
 DISTVERSION=	4.0-build1006
+PORTREVISION=	1
 CATEGORIES=	audio kld
 MASTER_SITES=	http://developer.opensound.com/sources/stable/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-cddl
