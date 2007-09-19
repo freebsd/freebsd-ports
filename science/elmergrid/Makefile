@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elmergrid
-PORTVERSION=	5.3.3
+PORTVERSION=	5.4.0
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/ \
 		ftp://ftp.funet.fi/pub/sci/physics/elmer/src/old/
