@@ -100,6 +100,7 @@
     SUBDIR += pymsn
     SUBDIR += p5-DJabberd
     SUBDIR += p5-Jabber-Connection
+    SUBDIR += p5-Jabber-Lite
     SUBDIR += p5-Jabber-SimpleSend
     SUBDIR += p5-Net-AIM
     SUBDIR += p5-Net-AOLIM

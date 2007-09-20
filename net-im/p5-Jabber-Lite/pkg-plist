@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jabber/Lite/.packlist
+%%SITE_PERL%%/Jabber/Lite.pm
+@dirrmtry %%SITE_PERL%%/Jabber
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jabber/Lite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jabber
