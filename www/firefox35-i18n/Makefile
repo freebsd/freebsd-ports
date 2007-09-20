@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	2.0.0.6
+PORTVERSION=	2.0.0.7
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA_EXTENDED/firefox/releases/${PORTVERSION}/linux-i686/xpi \
 		CENKES/myports/xpi/firefox-i18n-2.0.0.2:alt
