@@ -19,6 +19,8 @@ share/icons/hicolor/64x64/apps/smplayer.png
 %%DATADIR%%/translations/smplayer_nl.qm
 %%DATADIR%%/translations/smplayer_pl.qm
 %%DATADIR%%/translations/smplayer_pt_BR.qm
+%%DATADIR%%/translations/smplayer_pt_PT.qm
+%%DATADIR%%/translations/smplayer_ro_RO.qm
 %%DATADIR%%/translations/smplayer_ru_RU.qm
 %%DATADIR%%/translations/smplayer_sk.qm
 %%DATADIR%%/translations/smplayer_sr.qm
