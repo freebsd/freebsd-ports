@@ -64,7 +64,7 @@
 %%T%%/server/lib/catalina-optional.jar
 %%T%%/server/lib/catalina-storeconfig.jar
 %%T%%/server/lib/catalina.jar
-%%T%%/server/lib/commons-modeler-2.0.jar
+%%T%%/server/lib/commons-modeler-2.0.1.jar
 %%T%%/server/lib/servlets-cgi.renametojar
 %%T%%/server/lib/servlets-default.jar
 %%T%%/server/lib/servlets-invoker.jar
