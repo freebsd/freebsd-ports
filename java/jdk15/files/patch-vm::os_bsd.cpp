@@ -1,13 +1,32 @@
 $FreeBSD$
-
---- ../../hotspot/src/os/bsd/vm/os_bsd.cpp	Sun Jun  3 18:46:31 2007
-+++ ../../hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Sun Jun  3 18:47:28 2007
-@@ -499,7 +499,7 @@
- #define getenv(n) ::getenv(n)
  
- #ifndef DEFAULT_LD_LIBRARY_PATH
--#define DEFAULT_LD_LIBRARY_PATH "/usr/lib" /* See ld.so.1(1) */
-+#define DEFAULT_LD_LIBRARY_PATH "/usr/lib:%%LOCALBASE%%/lib" /* See ld.so.1(1) */
- #endif
- #define EXTENSIONS_DIR "/lib/ext"
- #define ENDORSED_DIR "/lib/endorsed"
+--- ../../hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Mon Sep 17 21:03:04 2007
++++ ../../hotspot/src/os/bsd/vm/os_bsd.cpp	Tue Sep 18 21:36:51 2007
+@@ -2271,13 +2271,7 @@
+     if (thread->is_Java_thread()) {
+       ThreadBlockInVM tbivm((JavaThread*) thread);
+ 
+-// BSDXXX: Only use pthread_yield here and below if the system thread
+-// scheduler gives time slices to lower priority threads when yielding.
+-#ifdef __FreeBSD__
+-      os_sleep(MinSleepInterval, interruptible);
+-#else
+       pthread_yield();
+-#endif
+ 
+ #if SOLARIS
+       // XXX - This code was not exercised during the Merlin RC1
+@@ -2297,13 +2291,7 @@
+       return 0;
+     }
+ 
+-// BSDXXX: Only use pthread_yield here and above if the system thread
+-// scheduler gives time slices to lower priority threads when yielding.
+-#ifdef __FreeBSD__
+-    os_sleep(MinSleepInterval, interruptible);
+-#else
+     pthread_yield();
+-#endif
+     return 0;
+   }
+  
