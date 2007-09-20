@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e595e170-6771-11dc-8be8-02e0185f8d72">
+    <topic>openoffice -- arbitrary command execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>openoffice</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>iDefense reports:</p>
+	<blockquote cite="http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=593">
+	  <p>Remote exploitation of multiple integer overflow
+	    vulnerabilities within OpenOffice, as included in various
+	    vendors' operating system distributions, allows attackers to
+	    execute arbitrary code.</p>
+	  <p>These vulnerabilities exist within the TIFF parsing code of
+	    the OpenOffice suite.  When parsing the TIFF directory entries
+	    for certain tags, the parser uses untrusted values from the
+	    file to calculate the amount of memory to allocate.  By
+	    providing specially crafted values, an integer overflow occurs
+	    in this calculation.  This results in the allocation of a
+	    buffer of insufficient size, which in turn leads to a heap
+	    overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-2834</cvename>
+      <url>http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=593</url>
+    </references>
+    <dates>
+      <discovery>2007-09-19</discovery>
+      <entry>2007-09-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f8d3689e-6770-11dc-8be8-02e0185f8d72">
     <topic>bugzilla -- "createmailregexp" security bypass vulnerability</topic>
     <affects>
