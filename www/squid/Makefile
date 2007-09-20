@@ -75,7 +75,7 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	squid
-PORTVERSION=	2.6.15
+PORTVERSION=	2.6.16
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -94,7 +94,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/Versions/v2/2.6/ \
 		http://www2.tw.squid-cache.org/Versions/v2/2.6/
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.6.STABLE15
+DISTNAME=	squid-2.6.STABLE16
 DIST_SUBDIR=	squid2.6
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -106,7 +106,7 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v2/2.6/changesets
-PATCHFILES=	11624.patch 11629.patch 11631.patch 11635.patch
+PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -117,6 +117,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	squid
+USE_GCC=	3.4
 
 SQUID_UID?=	squid
 SQUID_GID?=	squid
@@ -407,7 +408,6 @@ PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-	    -e 's|VERSION=.*2\.6\.STABLE15|&+PatchSets-20070903|' \
 	    ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%SQUID_UID%%|${SQUID_UID}|g' \
 	    -e 's|%%SQUID_GID%%|${SQUID_GID}|g' \
