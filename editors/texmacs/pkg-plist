@@ -26,6 +26,7 @@ libexec/TeXmacs/bin/tm_octave
 libexec/TeXmacs/bin/tm_python
 libexec/TeXmacs/bin/tm_r
 libexec/TeXmacs/bin/tm_reduce
+libexec/TeXmacs/bin/tm_sage
 libexec/TeXmacs/bin/tm_shell
 libexec/TeXmacs/bin/tm_xypic
 share/TeXmacs/LICENSE
@@ -433,6 +434,9 @@ share/TeXmacs/doc/devel/scheme/edit/edit-model.en.tm
 share/TeXmacs/doc/devel/scheme/edit/edit-modify.en.tm
 share/TeXmacs/doc/devel/scheme/edit/edit-path-navigate.en.tm
 share/TeXmacs/doc/devel/scheme/edit/scheme-edit.en.tm
+share/TeXmacs/doc/devel/scheme/graphics/graphics-api-1.en.tm
+share/TeXmacs/doc/devel/scheme/graphics/graphics-api-2.en.tm
+share/TeXmacs/doc/devel/scheme/graphics/scheme-graphics.en.tm
 share/TeXmacs/doc/devel/scheme/overview/overview-architecture.en.tm
 share/TeXmacs/doc/devel/scheme/overview/overview-content.en.tm
 share/TeXmacs/doc/devel/scheme/overview/overview-lazyness.en.tm
@@ -2038,6 +2042,7 @@ share/TeXmacs/plugins/reduce/install/tmprint.red
 share/TeXmacs/plugins/reduce/progs/init-reduce.scm
 share/TeXmacs/plugins/reduce/progs/reduce-input.scm
 share/TeXmacs/plugins/reduce/progs/reduce-menus.scm
+share/TeXmacs/plugins/sage/progs/init-sage.scm
 share/TeXmacs/plugins/scilab/progs/init-scilab.scm
 share/TeXmacs/plugins/shell/progs/init-shell.scm
 share/TeXmacs/plugins/xypic/progs/init-xypic.scm
@@ -2093,6 +2098,8 @@ share/TeXmacs/progs/doc/docgrep.scm
 share/TeXmacs/progs/doc/help-funcs.scm
 share/TeXmacs/progs/doc/help-menu.scm
 share/TeXmacs/progs/doc/tmdoc.scm
+share/TeXmacs/progs/doc/tmdoc-drd.scm
+share/TeXmacs/progs/doc/tmdoc-kbd.scm
 share/TeXmacs/progs/doc/tmweb.scm
 share/TeXmacs/progs/dynamic/dynamic-drd.scm
 share/TeXmacs/progs/dynamic/fold-edit.scm
@@ -2122,6 +2129,7 @@ share/TeXmacs/progs/generic/generic-kbd.scm
 share/TeXmacs/progs/generic/insert-menu.scm
 share/TeXmacs/progs/graphics/graphics-edit.scm
 share/TeXmacs/progs/graphics/graphics-env.scm
+share/TeXmacs/progs/graphics/graphics-env.scm.orig
 share/TeXmacs/progs/graphics/graphics-group.scm
 share/TeXmacs/progs/graphics/graphics-kbd.scm
 share/TeXmacs/progs/graphics/graphics-main.scm
@@ -2184,6 +2192,9 @@ share/TeXmacs/progs/remote/chat-menu.scm
 share/TeXmacs/progs/remote/client.scm
 share/TeXmacs/progs/remote/crypt.scm
 share/TeXmacs/progs/remote/remote-menu.scm
+share/TeXmacs/progs/remote/texmacs-client.scm
+share/TeXmacs/progs/remote/texmacs-server.scm
+share/TeXmacs/progs/remote/tmfs-client.scm
 share/TeXmacs/progs/remote/tmfs-menu.scm
 share/TeXmacs/progs/remote/tmfs-remote.scm
 share/TeXmacs/progs/source/source-edit.scm
@@ -2234,6 +2245,7 @@ share/TeXmacs/progs/utils/library/cursor.scm
 share/TeXmacs/progs/utils/library/length.scm
 share/TeXmacs/progs/utils/library/tree.scm
 share/TeXmacs/progs/utils/misc/markup-funcs.scm
+share/TeXmacs/progs/utils/misc/tm-keywords.scm
 share/TeXmacs/progs/utils/plugins/plugin-cmd.scm
 share/TeXmacs/progs/utils/plugins/plugin-convert.scm
 share/TeXmacs/styles/article.ts
@@ -2323,6 +2335,8 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/plugins/shell
 @dirrm share/TeXmacs/plugins/scilab/progs
 @dirrm share/TeXmacs/plugins/scilab
+@dirrm share/TeXmacs/plugins/sage/progs
+@dirrm share/TeXmacs/plugins/sage
 @dirrm share/TeXmacs/plugins/reduce/progs
 @dirrm share/TeXmacs/plugins/reduce/install
 @dirrm share/TeXmacs/plugins/reduce
@@ -2561,13 +2575,17 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/doc/devel/style
 @dirrm share/TeXmacs/doc/devel/source
 @dirrm share/TeXmacs/doc/devel/scheme/utils
+@dirrm share/TeXmacs/doc/devel/scheme/process
 @dirrm share/TeXmacs/doc/devel/scheme/overview
+@dirrm share/TeXmacs/doc/devel/scheme/graphics
 @dirrm share/TeXmacs/doc/devel/scheme/edit
 @dirrm share/TeXmacs/doc/devel/scheme
 @dirrm share/TeXmacs/doc/devel/plugin
 @dirrm share/TeXmacs/doc/devel/interface
 @dirrm share/TeXmacs/doc/devel/format/stylesheet
 @dirrm share/TeXmacs/doc/devel/format/regular
+@dirrm share/TeXmacs/doc/devel/format/primitives
+@dirrm share/TeXmacs/doc/devel/format/language
 @dirrm share/TeXmacs/doc/devel/format/environment
 @dirrm share/TeXmacs/doc/devel/format/basics
 @dirrm share/TeXmacs/doc/devel/format
