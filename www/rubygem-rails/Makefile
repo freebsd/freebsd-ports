@@ -48,7 +48,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/fcgi.so:${PORTSDIR}/www/ruby-fcgi
 .endif
 
 .if defined(WITH_MEMCACHE_CLIENT)
-RUN_DEPENDS+=	${LOCALBASE}/${SPEC_DIR}/memcache-client-1.2.0.gemspec:${PORTSDIR}/databases/rubygem-memcache-client
+RUN_DEPENDS+=	rubygem-memcache-client>=1.2.0:${PORTSDIR}/databases/rubygem-memcache-client
 .endif
 
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
