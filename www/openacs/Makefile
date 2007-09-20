@@ -12,10 +12,10 @@ MASTER_SITES?=	http://openacs.org/projects/openacs/download/download/
 EXTRACT_SUFX?=	.tgz?revision_id=1098887
 
 MAINTAINER?=	mm@FreeBSD.org
-COMMENT?=	A modular web application platform for high traffic communities
+COMMENT?=	A modular web application platform for communities
 
 AOLSERVERBASE?=	${LOCALBASE}/aolserver
-TCLLIB_VER?=	1.9
+TCLLIB_VER?=	1.10
 RUN_DEPENDS+=	${AOLSERVERBASE}/bin/nscache.so:${PORTSDIR}/www/aolserver-nscache \
 		${AOLSERVERBASE}/bin/nsopenssl.so:${PORTSDIR}/security/aolserver-nsopenssl \
 		${AOLSERVERBASE}/bin/nssha1.so:${PORTSDIR}/security/aolserver-nssha1 \
