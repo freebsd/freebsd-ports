@@ -15,4 +15,3 @@ rdr-anchor "miniupnpd"
 # Rules section
 # uPnPd rule anchor
 anchor "miniupnpd"
-
