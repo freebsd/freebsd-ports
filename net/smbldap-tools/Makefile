@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.gna.org/smbldap-tools/packages/ \
 		http://download.gna.org/smbldap-tools/packages/old-release/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Useful package for managing users and groups in a LDAP directory
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
