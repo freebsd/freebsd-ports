@@ -6,27 +6,37 @@
 #
 
 PORTNAME=	proguard
-PORTVERSION=	3.9
+PORTVERSION=	3.10.1
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Java obfuseeKata
+MAINTAINER=	ale@FreeBSD.org
+COMMENT=	A Java class file shrinker, optimizer, and obfuscator
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	yes
 NO_BUILD=	yes
 
-SUB_FILES=	proguard.sh proguard-gui.sh
+SUB_FILES=	proguard.sh proguard-gui.sh retrace.sh
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 do-install:
-	cd ${WRKSRC} && \
-	  ${FIND} lib docs examples -type d -exec ${MKDIR} ${DATADIR}/{} \;
-	cd ${WRKSRC} && \
-	  ${FIND} lib docs examples -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/proguard.sh ${PREFIX}/bin/proguard
 	${INSTALL_SCRIPT} ${WRKDIR}/proguard-gui.sh ${PREFIX}/bin/proguard-gui
+	${INSTALL_SCRIPT} ${WRKDIR}/retrace.sh ${PREFIX}/bin/retrace
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}/)
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/)
+.endif
 
 .include <bsd.port.mk>
