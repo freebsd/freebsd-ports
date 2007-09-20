@@ -4,7 +4,7 @@ Now you need to adjust PHP's include_path to contain
 	`%%DATADIR%%'
 
 For example, insert:
-        include_path = ".:%%DATADIR%%"
+        include_path = ".:%%DATADIR%%/library"
 
 into `%%LOCALBASE%%/etc/php.ini'.
 
