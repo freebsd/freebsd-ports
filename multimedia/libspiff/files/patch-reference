@@ -1,0 +1,56 @@
+Index: src/SpiffData.cpp
+===================================================================
+--- src/SpiffData.cpp	(revision 343)
++++ src/SpiffData.cpp	(revision 344)
+@@ -558,7 +558,7 @@
+ 
+ 
+ 
+-/*static*/ XML_Char * SpiffData::stealHelper(const XML_Char * property,
++/*static*/ XML_Char * SpiffData::stealHelper(const XML_Char * & property,
+ 		bool own) {
+ 	const XML_Char * const res = Toolbox::getSetNull<XML_Char>(property);
+ 	if (own) {
+
+Index: include/spiff/SpiffProps.h
+===================================================================
+--- include/spiff/SpiffProps.h	(revision 346)
++++ include/spiff/SpiffProps.h	(revision 347)
+@@ -347,7 +347,7 @@
+ 	 * @param own		Owner flag
+ 	 * @return			Stolen SpiffDateTime value, can be NULL
+ 	 */
+-	static SpiffDateTime * stealHelper(const SpiffDateTime * dateTime,
++	static SpiffDateTime * stealHelper(const SpiffDateTime * & dateTime,
+ 			bool own);
+ 
+ 	/**
+Index: src/SpiffProps.cpp
+===================================================================
+--- src/SpiffProps.cpp	(revision 346)
++++ src/SpiffProps.cpp	(revision 347)
+@@ -435,7 +435,7 @@
+ 
+ 
+ /*static*/ SpiffDateTime * SpiffProps::stealHelper(
+-		const SpiffDateTime * dateTime, bool own) {
++		const SpiffDateTime * & dateTime, bool own) {
+ 	const SpiffDateTime * const res
+ 			= Toolbox::getSetNull<SpiffDateTime>(dateTime);
+ 	if (own) {
+
+Index: include/spiff/SpiffData.h
+===================================================================
+--- include/spiff/SpiffData.h	(revision 344)
++++ include/spiff/SpiffData.h	(revision 345)
+@@ -446,7 +446,7 @@
+ 	 * @param own		Owner flag
+ 	 * @return			Stolen property value, can be NULL
+ 	 */
+-	static XML_Char * stealHelper(const XML_Char * property, bool own);
++	static XML_Char * stealHelper(const XML_Char * & property, bool own);
+ 
+ private:
+ 	/**
+
+
