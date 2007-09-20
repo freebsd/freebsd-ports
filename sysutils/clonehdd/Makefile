@@ -6,19 +6,22 @@
 #
 
 PORTNAME=	clonehdd
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	bart@tapolsky.net.ua
-COMMENT=	Simple script for clone HDD on FreeBSD
+COMMENT=	Tool for clone HDD on FreeBSD
 
 USE_PERL5_RUN=	YES
 PLIST_FILES=	sbin/clonehdd
 NO_BUILD=	YES
+MAN8=		clonehdd.8
+SUB_FILES=	pkg-message
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/clonehdd ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/clonehdd.8 ${MAN8PREFIX}/man/man8
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
