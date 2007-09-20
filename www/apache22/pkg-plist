@@ -275,12 +275,9 @@ share/apache22/build/rules.mk
 share/apache22/build/special.mk
 www/apache22/cgi-bin/printenv
 www/apache22/cgi-bin/test-cgi
-www/apache22/data/apache_pb.gif
-www/apache22/data/apache_pb.png
-www/apache22/data/apache_pb22.gif
-www/apache22/data/apache_pb22.png
-www/apache22/data/apache_pb22_ani.gif
-www/apache22/data/index.html
+@unexec if cmp -s %D/www/apache22/data/index.html %D/%%EXAMPLESDIR%%/index.html; then rm -f %D/www/apache22/data/index.html; fi
+%%EXAMPLESDIR%%/index.html
+@exec [ -f %D/www/apache22/data/index.html ] || cp %D/%%EXAMPLESDIR%%/www/apache22/data/index.html %D/www/apache22/data/index.html
 www/apache22/error/HTTP_BAD_GATEWAY.html.var
 www/apache22/error/HTTP_BAD_REQUEST.html.var
 www/apache22/error/HTTP_FORBIDDEN.html.var
@@ -528,7 +525,7 @@ www/apache22/icons/world2.png
 @dirrm www/apache22/icons
 @dirrm www/apache22/error/include
 @dirrm www/apache22/error
-@dirrm www/apache22/data
+@dirrmtry www/apache22/data
 @dirrm www/apache22/cgi-bin
 @dirrm %%EXAMPLESDIR%%/extra
 @dirrm %%EXAMPLESDIR%%

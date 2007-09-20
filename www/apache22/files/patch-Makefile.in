@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Apr 24 13:08:01 2007
-+++ Makefile.in	Wed Sep 19 21:28:08 2007
+--- Makefile.in.orig	2007-04-24 13:08:01.000000000 +0200
++++ Makefile.in	2007-09-20 08:47:23.000000000 +0200
 @@ -31,9 +31,11 @@
  install-conf:
  	@echo Installing configuration files
@@ -31,7 +31,7 @@
  	    	fi; \
  	    	fi; \
  	    done ; \
-@@ -117,48 +119,32 @@
+@@ -117,48 +119,28 @@
  	doxygen $(top_srcdir)/docs/doxygen.conf
  
  install-htdocs:
@@ -41,14 +41,15 @@
 -	    echo Installing HTML documents ; \
 +	    @echo Installing HTML documents ; \
  	    $(MKINSTALLDIRS) $(DESTDIR)$(htdocsdir) ; \
- 	    if test -d $(htdocs-srcdir) && test "x$(RSYNC)" != "x" && test -x $(RSYNC) ; then \
- 		$(RSYNC) --exclude .svn -rlpt --numeric-ids $(htdocs-srcdir)/ $(DESTDIR)$(htdocsdir)/; \
- 	    else \
- 		test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(DESTDIR)$(htdocsdir)) ; \
- 		cd $(DESTDIR)$(htdocsdir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
+-	    if test -d $(htdocs-srcdir) && test "x$(RSYNC)" != "x" && test -x $(RSYNC) ; then \
+-		$(RSYNC) --exclude .svn -rlpt --numeric-ids $(htdocs-srcdir)/ $(DESTDIR)$(htdocsdir)/; \
+-	    else \
+-		test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(DESTDIR)$(htdocsdir)) ; \
+-		cd $(DESTDIR)$(htdocsdir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	    fi; \
 -	fi
-+	    fi;
++		test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp index.html $(DESTDIR)$(EXAMPLESDIR)) && \
++		( [ ! -f $(DESTDIR)$(htdocsdir)/index.html ] && cp -p $(DESTDIR)$(EXAMPLESDIR)/index.html $(DESTDIR)$(htdocsdir)/index.html)
  
  install-error:
 -	-@if [ -d $(DESTDIR)$(errordir) ]; then \
@@ -88,7 +89,7 @@
  
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
-@@ -206,12 +192,14 @@
+@@ -206,12 +188,14 @@
  	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
  	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
  	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8
