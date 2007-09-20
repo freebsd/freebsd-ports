@@ -612,6 +612,7 @@ bin/freecol
 %%DATADIR%%/data/images/units/Unit9.png
 %%DATADIR%%/data/maps/america-large.fsg
 %%DATADIR%%/data/strings/FreeColMessages.properties
+%%DATADIR%%/data/strings/FreeColMessages_ar.properties
 %%DATADIR%%/data/strings/FreeColMessages_br.properties
 %%DATADIR%%/data/strings/FreeColMessages_de.properties
 %%DATADIR%%/data/strings/FreeColMessages_de_DE.properties
@@ -623,9 +624,12 @@ bin/freecol
 %%DATADIR%%/data/strings/FreeColMessages_fr.properties
 %%DATADIR%%/data/strings/FreeColMessages_hu.properties
 %%DATADIR%%/data/strings/FreeColMessages_it_IT.properties
+%%DATADIR%%/data/strings/FreeColMessages_nb_NO.properties
+%%DATADIR%%/data/strings/FreeColMessages_nds.properties
 %%DATADIR%%/data/strings/FreeColMessages_nl.properties
 %%DATADIR%%/data/strings/FreeColMessages_nl_BE.properties
 %%DATADIR%%/data/strings/FreeColMessages_pl_PL.properties
+%%DATADIR%%/data/strings/FreeColMessages_oc.properties
 %%DATADIR%%/data/strings/FreeColMessages_pms.properties
 %%DATADIR%%/data/strings/FreeColMessages_pt_BR.properties
 %%DATADIR%%/data/strings/FreeColMessages_pt_PT.properties
