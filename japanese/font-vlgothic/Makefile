@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vlgothic
-PORTVERSION=	20070901
+PORTVERSION=	20070915
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://vinelinux.org/~daisuke/vlgothic/
 DISTNAME=	VLGothic-${PORTVERSION}
