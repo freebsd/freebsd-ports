@@ -36,6 +36,7 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 SPEC=		${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 ARGS=		-b ${PREFIX}/bin -d ${PYTHON_SITELIBDIR}\
 		-o ${LOCALBASE}/lib -v ${DATADIR}
+MODULES=	qt qtcanvas qtnetwork qttable qtxml qtui qtsql qtext
 
 .include <bsd.port.pre.mk>
 
@@ -44,10 +45,13 @@ ARGS+=		-u
 .endif
 .if exists(${LOCALBASE}/include/qgl.h) && !defined(WITHOUT_OPENGL)
 PLIST_SUB+=	OPENGL=""
+MODULES+=	qtgl
 .else
 PLIST_SUB+=	OPENGL="@comment "
 pre-configure:
-	@${RM} -r ${WRKSRC}/sip/qtgl && ${ECHO} "OpenGL support is disabled"
+	@${RM} -r ${WRKSRC}/sip/qtgl && ${ECHO_CMD} && ${ECHO_CMD}\
+		"**  OpenGL is disabled (chosen here or your Qt3 has no OpenGL support) **"\
+		&& ${ECHO_CMD}
 .endif
 .if defined(WITH_TRACING)
 ARGS+=		-r
@@ -59,12 +63,13 @@ do-configure:
 		${PYTHON_CMD} configure.py ${ARGS}
 
 post-configure:
-	for item in qt qtcanvas qtnetwork qttable qtxml qtgl qtui qtsql qtext ; do\
-		${REINPLACE_CMD} -e 's|mkspecs/freebsd-g++|share/qt/mkspecs/freebsd-g++|'\
-			-e 's|CC = cc|CC = ${CC}|'\
-			-e 's|CXX = c++|CXX = ${CXX}|'\
-			-e 's|LINK = c++|LINK = ${CXX}|'\
-			${WRKSRC}/$${item}/Makefile ; done
+.for item in ${MODULES}
+	${REINPLACE_CMD} -e 's|mkspecs/freebsd-g++|share/qt/mkspecs/freebsd-g++|'\
+		-e 's|CC = cc|CC = ${CC}|'\
+		-e 's|CXX = c++|CXX = ${CXX}|'\
+		-e 's|LINK = c++|LINK = ${CXX}|'\
+		${WRKSRC}/${item}/Makefile
+.endfor
 
 post-build:
 .if !defined(NOPORTEXAMPLES)
