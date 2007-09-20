@@ -1,7 +1,35 @@
 bin/qfsm
 bin/qfsm.exec
-%%PORTDOCS%%%%EXAMPLESDIR%%/ascii_example.fsm
-%%PORTDOCS%%%%EXAMPLESDIR%%/bin_example.fsm
+%%PORTDOCS%%%%DOCSDIR%%/addstate.png
+%%PORTDOCS%%%%DOCSDIR%%/addtrans.png
+%%PORTDOCS%%%%DOCSDIR%%/copy.png
+%%PORTDOCS%%%%DOCSDIR%%/cut.png
+%%PORTDOCS%%%%DOCSDIR%%/integrity_check.png
+%%PORTDOCS%%%%DOCSDIR%%/machine_properties.png
+%%PORTDOCS%%%%DOCSDIR%%/new.png
+%%PORTDOCS%%%%DOCSDIR%%/open.png
+%%PORTDOCS%%%%DOCSDIR%%/pan.png
+%%PORTDOCS%%%%DOCSDIR%%/paste.png
+%%PORTDOCS%%%%DOCSDIR%%/print.png
+%%PORTDOCS%%%%DOCSDIR%%/qfsm.docbook
+%%PORTDOCS%%%%DOCSDIR%%/qfsm.html
+%%PORTDOCS%%%%DOCSDIR%%/qfsm.pdf
+%%PORTDOCS%%%%DOCSDIR%%/save.png
+%%PORTDOCS%%%%DOCSDIR%%/select.png
+%%PORTDOCS%%%%DOCSDIR%%/simulate.png
+%%PORTDOCS%%%%DOCSDIR%%/simulation.png
+%%PORTDOCS%%%%DOCSDIR%%/state_properties.png
+%%PORTDOCS%%%%DOCSDIR%%/straighten.png
+%%PORTDOCS%%%%DOCSDIR%%/toolbar.png
+%%PORTDOCS%%%%DOCSDIR%%/transition_properties.png
+%%PORTDOCS%%%%DOCSDIR%%/undo.png
+%%PORTDOCS%%%%DOCSDIR%%/working_area2.png
+%%PORTDOCS%%%%DOCSDIR%%/zoom.png
+%%PORTDOCS%%%%DOCSDIR%%/zoomin.png
+%%PORTDOCS%%%%DOCSDIR%%/zoomout.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii_example.fsm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii_example2.fsm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bin_example.fsm
 %%DATADIR%%/po/English.qm
 %%DATADIR%%/po/English.ts
 %%DATADIR%%/po/French.qm
@@ -10,4 +38,5 @@ bin/qfsm.exec
 %%DATADIR%%/po/German.ts
 @dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
