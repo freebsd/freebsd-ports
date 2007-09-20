@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dynamips
-DISTVERSION=	0.2.7-RC3
+DISTVERSION=	0.2.8-RC1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 PKGNAMESUFFIX=	-devel
@@ -15,6 +15,8 @@ MAINTAINER=	pol@opk.ru
 COMMENT=	Cisco 3600/7200 Simulator
 
 LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
+
+CONFLICTS=	dynamips-[0-9]*
 
 USE_GMAKE=	yes
 USE_GCC=	3.2+

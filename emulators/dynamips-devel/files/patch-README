@@ -1,6 +1,6 @@
---- README.orig	Fri Apr  6 20:53:59 2007
-+++ README	Fri Apr  6 20:57:02 2007
-@@ -50,7 +50,7 @@
+--- README.orig	Wed Sep 12 14:35:13 2007
++++ README	Thu Sep 13 19:47:58 2007
+@@ -52,11 +52,12 @@
    -R <rom_file>      : Load an alternate ROM (default: embedded)
    -k <clock_div>     : Set the clock divisor (default: 4)
  
@@ -8,4 +8,9 @@
 +  -T [ip_address:]<port> : Console is on TCP <port>
    -U <si_desc>       : Console in on serial interface <si_desc>
                         (default is on the terminal)
+ 
+   -A <port>          : AUX is on TCP <port>
++                       (AUX binding IP == Console binding IP)
+   -B <si_desc>       : AUX is on serial interface <si_desc>
+                        (default is no AUX port)
  
