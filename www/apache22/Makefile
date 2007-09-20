@@ -120,11 +120,6 @@ WITH_EXCEPTION_HOOK=	YES
 CONFIGURE_ARGS+=	--enable-exception-hook
 .endif
 
-.if defined(WITH_PCRE_FROM_PORTS)
-CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}
-LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
-.endif
-
 # for slave ports
 .if !defined(MASTERDIR)
 APACHEDIR=	${.CURDIR}
@@ -153,6 +148,11 @@ CONFIGURE_ENV+=		LTFLAGS="--tag=CXX"
 PLIST_SUB+=	APR_PORTS=""
 CONFLICTS+=	apr-1.*
 CONFIGURE_ENV+=	USE_BUNDLED_APR=YES
+.endif
+
+.if defined(WITH_PCRE_FROM_PORTS)
+CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}
+LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
 .if defined(WITH_THREADS)
