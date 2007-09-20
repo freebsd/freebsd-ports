@@ -117,7 +117,6 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	squid
-USE_GCC=	3.4
 
 SQUID_UID?=	squid
 SQUID_GID?=	squid
