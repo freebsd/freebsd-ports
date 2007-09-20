@@ -1,34 +1,10 @@
---- Makefile.orig	Thu Feb  8 15:23:36 2007
-+++ Makefile	Thu Feb  8 15:34:39 2007
-@@ -12,6 +12,9 @@
- # (WinPcap is used for Cygwin)
- HAS_PCAP?=1
- 
-+# Change this to 1 if your system has posix_memalign
-+HAS_POSIX_MEMALIGN?=0
-+
- # Current dynamips release
- VERSION_TRAIN=0.2.6
- VERSION_SUB=-RC5
-@@ -34,16 +37,17 @@
- 	-DJIT_ARCH=\"$(DYNAMIPS_ARCH)\" \
- 	-DARCH_INC_FILE=$(ARCH_INC_FILE) -DDYNAMIPS_VERSION=\"$(VERSION)\" \
- 	-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE \
--	-DHAS_RFC2553=$(HAS_RFC2553)
-+	-DHAS_RFC2553=$(HAS_RFC2553) -DHAS_POSIX_MEMALIGN=$(HAS_POSIX_MEMALIGN)
- 
--PCAP_LIB=/usr/local/lib/libpcap.a
--#PCAP_LIB=-lpcap
-+#PCAP_LIB=/usr/local/lib/libpcap.a
-+PCAP_LIB=-lpcap
- 
- ifeq ($(shell uname), FreeBSD)
-    PTHREAD_LIBS?=-pthread
--   CFLAGS+=-I/usr/local/include -I/usr/local/include/libelf $(PTHREAD_CFLAGS) \
-+   LOCALBASE?=/usr/local
-+   CFLAGS+=-I$(LOCALBASE)/include -I$(LOCALBASE)/include/libelf $(PTHREAD_CFLAGS) \
-          -D_FILE_OFFSET_BITS=64
--   LIBS=-L/usr/local/lib -L. -lelf $(PTHREAD_LIBS)
+--- Makefile.orig	Thu Sep 13 19:55:14 2007
++++ Makefile	Thu Sep 13 19:55:30 2007
+@@ -52,7 +52,7 @@
+    LOCALBASE?=/usr/local
+    CFLAGS+=-I$(LOCALBASE)/include -I$(LOCALBASE)/include/libelf \
+ 	$(PTHREAD_CFLAGS) -D_FILE_OFFSET_BITS=64
+-   LIBS=-L$(LOCALBASE)/lib -L. -ldl -lelf $(PTHREAD_LIBS) $(LDFLAGS)
 +   LIBS=-L$(LOCALBASE)/lib -L. -lelf $(PTHREAD_LIBS) $(LDFLAGS)
  else
  ifeq ($(shell uname), Linux)
