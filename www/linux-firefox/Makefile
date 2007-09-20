@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	2.0.0.6
+PORTVERSION=	2.0.0.7
 CATEGORIES=	www
 MASTER_SITE_SUBDIR?=	firefox/releases/${PORTVERSION}/linux-i686/en-US
 
