@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=		ziproxy
-PORTVERSION=		2.2.2
+PORTVERSION=		2.3.0
 CATEGORIES=		www
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF
 
 MAINTAINER=		pankov_p@mail.ru
 COMMENT=		A forwarding, non-caching, compressing proxy server
@@ -20,7 +19,6 @@ LIB_DEPENDS=		ungif.5:${PORTSDIR}/graphics/libungif \
 
 USE_BZIP2=		yes
 USE_GCC=		3.2+
-USE_GETOPT_LONG=	yes
 
 CFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
@@ -29,7 +27,7 @@ ERRORFILES=		400.html 404.html 408.html 500.html 503.html
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--enable-shared-confuse --with-cfgfile=${PREFIX}/etc/ziproxy.conf
+CONFIGURE_ARGS+=	--enable-shared-confuse --with-cfgfile="${PREFIX}/etc/ziproxy.conf"
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=		README
@@ -43,8 +41,7 @@ OPTIONS+=		JPEG2000 "Build with JPEG2000 support" on
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/etc/ziproxy.conf
-	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \
+	                  -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/etc/ziproxy.conf
 
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
