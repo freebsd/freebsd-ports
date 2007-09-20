@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="12488805-6773-11dc-8be8-02e0185f8d72">
+    <topic>coppermine -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>coppermine</name>
+	<range><lt>1.4.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The coppermine development team reports two vulnerabilities
+	  with the coppermine application.  These vulnerabilities are
+	  caused by improper checking of the log variable in "viewlog.php"
+	  and improper checking of the referer variable in "mode.php".
+	  This could allow local file inclusion, potentially disclosing
+	  valuable information and could lead to an attacker conducting
+	  a cross site scripting attack against the targeted site.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://coppermine-gallery.net/forum/index.php?topic=46847.0</url>
+    </references>
+    <dates>
+      <discovery>2007-09-14</discovery>
+      <entry>2007-09-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e595e170-6771-11dc-8be8-02e0185f8d72">
     <topic>openoffice -- arbitrary command execution vulnerability</topic>
     <affects>
