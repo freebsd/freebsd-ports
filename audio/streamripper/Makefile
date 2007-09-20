@@ -6,36 +6,54 @@
 #
 
 PORTNAME=	streamripper
-PORTVERSION=	1.61.27
-PORTREVISION=	1
+PORTVERSION=	1.62.1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	streamripper
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Splits SHOUTcast stream into tracks
 
-LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad
+LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
+		tre.6:${PORTSDIR}/textproc/libtre
 
+OPTIONS=	FAAD "Include FAAD mpeg4 codec support" on \
+		VORBIS "Include Ogg Vorbis codec support" on
+
+USE_GNOME=	gnometarget
 USE_ICONV=	yes
 
-OPTIONS=	VORBIS "Include Ogg Vorbis codec support" on
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--without-included-libmad \
+		--without-included-tre \
+		--with-included-argv
+CFLAGS+=	-DANSI_PROTOTYPES -DHAVE_LANGINFO_CODESET
+
+MAN1=		streamripper.1
+PLIST_FILES=	bin/cstreamripper bin/streamripper
 
 .include <bsd.port.pre.mk>
 
-.ifdef(WITH_VORBIS)
-LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+.if defined(WITHOUT_FAAD)
+CONFIGURE_ARGS+=	ac_cv_lib_faad_NeAACDecDecode2=no
+.else
+LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 .endif
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+.if defined(WITHOUT_VORBIS)
+CONFIGURE_ARGS+=	--without-ogg
+.else
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.endif
 
-PLIST_FILES=	bin/streamripper
-MAN1=		streamripper.1
+post-patch:
+	@${REINPLACE_CMD} -e '/if test/s|==|=|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
-pre-install:
-		@${CHMOD} +x ${WRKSRC}/install-sh
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/cstreamripper ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/streamripper ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/streamripper.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>
