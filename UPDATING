@@ -9,17 +9,17 @@ upgrades.
 20070919:
   AFFECTS: users of net/samba3
   AUTHOR: timur@FreeBSD.org
-  
+
   This is a cummulative update of net/samba3 from version 3.0.25a to
   3.0.26a. Detailed list of all the changes can be found:
-  
+
     http://www.samba.org/samba/history/samba-3.0.26a.html
-  
+
   or in the WHATSNEW.txt file in the port's document directory.
-  
+
   Short summary is:
   o Memory leaks in Winbind's IDMap manager.
-  o CVE-2007-4138 - Incorrect primary group assignment for domain 
+  o CVE-2007-4138 - Incorrect primary group assignment for domain
     users using the rfc2307 or sfu winbind nss info plugin.
   o File sharing with Widows 9x clients.
   o Winbind running out of file descriptors due to stalled child
@@ -28,13 +28,13 @@ upgrades.
   o Offline caching of files with Windows XP/Vista clients.
   o Improper cleanup of expired or invalid byte range locks on files.
   o Crashes is idmap_ldap and idmap_rid.
-  
+
   Bug #4715(https://bugzilla.samba.org/show_bug.cgi?id=4715) is NOT
   fixed yet, although it won't core dump smbd proccess any more. Still,
   access to the shares other than UFS is not guarantied.
-  
+
   * USE SUCH SHARES AT YOUR OWN RISK *
-  
+
 20070918:
   AFFECTS: users of www/apache22
   AUTHOR: clement@FreeBSD.org
@@ -48,9 +48,9 @@ upgrades.
           * WITHOUT_MODULES
           * WITH_STATIC_MODULES
   However, you can disable OPTIONS by defining WITHOUT_APACHE_OPTIONS.
- 
+
 20070913:
-  AFFECTS: users of x11/xorg
+  AFFECTS: users of x11/xorg, x11/nvidia-driver
   AUTHOR: flz@FreeBSD.org
 
   X.org ports were updated to 7.3.  Since we're now using the modular
@@ -93,24 +93,24 @@ upgrades.
   quarantine-attachments.txt has been renamed to quarantine-events.txt, it is
   used to quarantine more than just attachments, and the format of that file
   has been changed.
-  
+
   Quarantine directory is now separated into THREE subdirs: "spam", "viruses"
   and "policy". This is so sites can arrange different auto-delete jobs to
   control the size of these areas if they so wish.
-  
+
   Some features that were hard-wired into the main body of Q-S have been moved
   into quarantine-events.txt where they should have been all along. This makes
   it possible to change settings without reconfiguring the main body of qmail-
   scanner-queue.pl. You will need to rewrite any rules you had in place within
   the old quarantine-attachments.txt into the new format quarantine-events.txt
-  
+
   Changed setuid to 6755 - ie it's now setuid and setgid. Forcing all files to
   be group qscand will allow those who wish to do so to keep their AV daemons
   running as other accounts. They just need to ensure those daemons are members
   of the qscand group - and as such should be able to read the necessary files.
   e.g. clamd could run as "clamav", but as long as account "clamav" is a member
   of group "qscand", clamd is able to read the mail enough to scan it.
-  
+
 20070903:
   AFFECTS: users of net/whois, net/gwhois
   AUTHOR:  nivo+kw+ports.bfa274@is-root.com
@@ -232,7 +232,7 @@ upgrades.
 20070716:
   AFFECTS: users of editors/emacs
   AUTHOR: nobutaka@FreeBSD.org
-  
+
   editors/emacs port is upgraded to 22.1.
   Since this is a major upgrade, all installed elisp ports should be
   reinstalled.
