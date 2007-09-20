@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- Makefile.in.orig	Sun Sep 16 20:21:02 2007
++++ Makefile.in	Thu Sep 20 08:51:14 2007
+@@ -608,7 +608,7 @@
+ bsdcpio_CPPFLAGS = -I$(top_builddir)/libarchive -I$(top_srcdir)/libarchive
+ bsdcpio_LDFLAGS = $(bsdcpio_static)
+ @BUILD_BSDCPIO_FALSE@bsdcpio_dist_man_MANS = 
+-@BUILD_BSDCPIO_TRUE@bsdcpio_dist_man_MANS = cpio/bsdcpio.1
++@BUILD_BSDCPIO_TRUE@bsdcpio_dist_man_MANS = # cpio/bsdcpio.1
+ @BUILD_BSDCPIO_FALSE@bsdcpio_programs = 
+ @BUILD_BSDCPIO_TRUE@bsdcpio_programs = bsdcpio
+ all: $(BUILT_SOURCES) config.h
