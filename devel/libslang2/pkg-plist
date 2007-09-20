@@ -84,6 +84,7 @@ lib/slang/v2/modules/varray-module.so
 %%DATADIR%%/structfuns.sl
 %%DATADIR%%/termios.sl
 %%DATADIR%%/varray.sl
+@exec mkdir -p %D/%%DATADIR%%/local-packages
 @dirrmtry lib/slang/v2/modules
 @dirrmtry lib/slang/v2
 @dirrmtry lib/slang
