@@ -10,7 +10,7 @@ upgrades.
   AFFECTS: users of net/samba3
   AUTHOR: timur@FreeBSD.org
 
-  This is a cummulative update of net/samba3 from version 3.0.25a to
+  This is a cumulative update of net/samba3 from version 3.0.25a to
   3.0.26a. Detailed list of all the changes can be found:
 
     http://www.samba.org/samba/history/samba-3.0.26a.html
@@ -20,7 +20,7 @@ upgrades.
   Short summary is:
   o Memory leaks in Winbind's IDMap manager.
   o CVE-2007-4138 - Incorrect primary group assignment for domain
-    users using the rfc2307 or sfu winbind nss info plugin.
+    users using the RFC 2307 or sfu winbind nss info plugin.
   o File sharing with Widows 9x clients.
   o Winbind running out of file descriptors due to stalled child
     processes.
@@ -29,9 +29,9 @@ upgrades.
   o Improper cleanup of expired or invalid byte range locks on files.
   o Crashes is idmap_ldap and idmap_rid.
 
-  Bug #4715(https://bugzilla.samba.org/show_bug.cgi?id=4715) is NOT
-  fixed yet, although it won't core dump smbd proccess any more. Still,
-  access to the shares other than UFS is not guarantied.
+  Bug #4715 (https://bugzilla.samba.org/show_bug.cgi?id=4715) is NOT
+  fixed yet, although it won't core dump smbd process any more. Still,
+  access to the shares other than UFS is not guaranteed.
 
   * USE SUCH SHARES AT YOUR OWN RISK *
 
@@ -39,7 +39,7 @@ upgrades.
   AFFECTS: users of www/apache22
   AUTHOR: clement@FreeBSD.org
 
-  By popular request, OPTIONS support has been added. When actived
+  By popular request, OPTIONS support has been added. When enabled
   (default), these knobs are ignored:
           * WITH_<CATEGORY>_MODULES
           * WITHOUT_<CATEGORY>_MODULES
@@ -224,7 +224,7 @@ upgrades.
   AFFECTS: users of devel/llvm
   AUTHOR: brooks@FreeBSD.org
 
-  The llvm bytecode and .ll formats have changed as have numerious
+  The llvm bytecode and .ll formats have changed as have numerous
   internal APIs.  Existing users should consult the release notes.
 
     http://llvm.org/releases/2.0/docs/ReleaseNotes.html
