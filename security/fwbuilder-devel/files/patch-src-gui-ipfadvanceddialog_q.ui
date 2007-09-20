@@ -1,5 +1,5 @@
 --- src/gui/ipfadvanceddialog_q.ui.orig	2006-10-23 21:05:57.000000000 -0700
-+++ src/gui/ipfadvanceddialog_q.ui	2007-09-19 14:20:52.000000000 -0700
++++ src/gui/ipfadvanceddialog_q.ui	2007-09-20 14:53:03.000000000 -0700
 @@ -118,7 +118,7 @@
                              </size>
                          </property>
@@ -27,10 +27,11 @@
                          <property name="name">
                              <cstring>ipf_nat_ipsec_proxy</cstring>
                          </property>
-@@ -175,6 +175,22 @@
+@@ -175,7 +175,23 @@
                              <string>Use rcmd proxy in NAT rules</string>
                          </property>
                      </widget>
+-                    <spacer row="9" column="1">
 +                    <widget class="QCheckBox" row="4" column="1">
 +                        <property name="name">
 +                            <cstring>ipf_nat_krcmd_proxy</cstring>
@@ -47,9 +48,10 @@
 +                            <string>Use Kerberos ekshell proxy in NAT rules</string>
 +                        </property>
 +                    </widget>
-                     <spacer row="9" column="1">
++                    <spacer row="11" column="1">
                          <property name="name">
                              <cstring>spacer36</cstring>
+                         </property>
 @@ -192,7 +208,7 @@
                              </size>
                          </property>
