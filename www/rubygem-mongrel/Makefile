@@ -6,12 +6,11 @@
 
 PORTNAME=	mongrel
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE} \
-    		http://files.rubyforge.mmmultiworks.com/fauna/:PATCH
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${PATCHNAME}${EXTRACT_SUFX}:PATCH ${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${PATCHNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Fast HTTP 1.1 library and server for Ruby web applications
@@ -21,7 +20,8 @@ BUILD_DEPENDS=	gpgen:${PORTSDIR}/devel/rubygem-gem_plugin \
 		rubygem-fastthread>=0.6.2:${PORTSDIR}/devel/rubygem-fastthread
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PATCHNAME=	cgi_multipart_eof_fix-2.2
+PATCHNAME=	cgi_multipart_eof_fix-2.3
+PLIST_SUB=	CGIFIX="${PATCHNAME}"
 
 post-install:
 	@${RM} -rf "${PREFIX}/${GEM_LIB_DIR}/ext"
