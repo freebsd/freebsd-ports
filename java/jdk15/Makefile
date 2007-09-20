@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://download.java.net/tiger/
@@ -129,6 +129,7 @@ NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 
 MAKE_ENV+=	ALT_BOOTDIR="${BOOTSTRAPJDKDIR}" \
 		ALT_MOTIF_DIR="${X11BASE}" \
+		DEFAULT_LD_LIBRARY_PATH="/usr/lib:${LOCALBASE}/lib" \
 		SYS_CFLAGS="${CFLAGS}" \
 		LANG="C" \
 		JAVA_HOME="" \
@@ -161,7 +162,6 @@ HOTSPOTARCH=i586
 JDKIMAGEDIR=	${WRKSRC}/../build/bsd-${HOTSPOTARCH}/j2sdk-image
 JDKIMAGEDIR_G=	${WRKSRC}/../build/bsd-${HOTSPOTARCH}/j2sdk-debug-image
 
-LOCAL_FILES=	../../hotspot/src/os/bsd/vm/os_bsd.cpp
 PTHREAD_FILES=	../../hotspot/build/bsd/makefiles/vm.make \
 		../../j2se/make/com/sun/java/pack/Makefile \
 		../../j2se/make/common/Defs.gmk \
@@ -265,10 +265,6 @@ pre-patch:
 .endif
 
 post-patch:
-	@for file in ${LOCAL_FILES}; do \
-		${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
-			${WRKSRC}/$${file}; \
-	done
 	@for file in ${PTHREAD_FILES}; do \
 		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" \
 			${WRKSRC}/$${file}; \
