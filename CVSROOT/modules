@@ -10076,6 +10076,7 @@ p5-JSON-Any	ports/converters/p5-JSON-Any
 p5-JSON-DWIW	ports/converters/p5-JSON-DWIW
 p5-JSON-XS	ports/converters/p5-JSON-XS
 p5-Jabber-Connection	ports/net-im/p5-Jabber-Connection
+p5-Jabber-Lite	ports/net-im/p5-Jabber-Lite
 p5-Jabber-SimpleSend	ports/net-im/p5-Jabber-SimpleSend
 p5-Java		ports/devel/p5-Java
 p5-JavaScript	ports/lang/p5-JavaScript
