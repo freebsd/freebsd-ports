@@ -1232,7 +1232,7 @@ cduce		ports/lang/cduce
 cedet		ports/devel/cedet
 ceferino	ports/games/ceferino
 cegui		ports/graphics/cegui
-cegui		ports/graphics/cegui04
+cegui04		ports/graphics/cegui04
 celestia	ports/astro/celestia
 celestia-gnome	ports/astro/celestia-gnome
 celestia-gtk	ports/astro/celestia-gtk
