@@ -44,7 +44,7 @@ Tools/scripts/security-check.awk:
 
 20070730:
 AUTHOR: python@FreeBSD.org
-  
+
   * The default Python version has been changed from 2.4.x to 2.5.x.
 
   * A number of variables have been added to bsd.python.mk to support
@@ -111,8 +111,8 @@ The following changes were made to the ports infrastructure:
     and run dependencies, USE_TCL_RUN and USE_TK_BUILD variables were
     introduced. Existing ports in the tree were modified.
 
-  * Unused category tcl81 was removed, and new categories tcl and tk were
-    added.
+  * Unused category 'tcl81' was removed, and new categories 'tcl' and 'tk'
+    were added.
 
 20070324:
 AUTHOR: portmgr@FreeBSD.org
@@ -191,7 +191,7 @@ The following changes were made to the ports infrastructure:
 
   * New virtual category: gnustep
 
-  * Unused picobsd category was removed.
+  * Unused 'picobsd' category was removed.
 
 20070118:
 AUTHOR: maho@FreeBSD.org
@@ -425,7 +425,7 @@ The following changes affecting ports developers were introduced:
 
   * New virtual categories: hamradio and rubygems
 
-  * Virtual category offix was removed
+  * Virtual category 'offix' was removed
 
   * New USE_DOS2UNIX variable for converting DOS linefeeds to UNIX
 
@@ -674,7 +674,7 @@ AUTHOR: portmgr@FreeBSD.org
     used to skip configuring ports which have already been
     configured.
 
-  * Fix using of WANT_PGSQL_VER variable if postgresql is already
+  * Fix using of WANT_PGSQL_VER variable if PostgreSQL is already
     installed.
 
 20041231:
@@ -740,7 +740,7 @@ AUTHOR: portmgr@FreeBSD.org
 
   * Extend 'search' target and enable search by categories.
 
-  * Remove tk42 and tcl76 categories since they're obsolete.
+  * Remove 'tk42' and 'tcl76' categories since they're obsolete.
 
   * Introduce DISTVERSION variable, that can be set instead of
     PORTVERSION and is automatically converted in a conforming PORTVERSION.
@@ -905,12 +905,12 @@ AUTHOR:	portmgr@FreeBSD.org
 
     Examples:
 
-    Find ports that are both in the www category and maintained by
+    Find ports that are both in the 'www' category and maintained by
     Thierry Thomas:
 
       make search maint=thierry@ path=/www/
 
-    Find ports in the archivers category that are either not orphaned
+    Find ports in the 'archivers' category that are either not orphaned
     or don't have "zip" in their names (contrived):
 
       make search cat=archivers xmaint=ports@freebsd xname=zip
