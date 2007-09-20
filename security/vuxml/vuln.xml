@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f8d3689e-6770-11dc-8be8-02e0185f8d72">
+    <topic>bugzilla -- "createmailregexp" security bypass vulnerability</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Bugzilla development team reports:</p>
+	<blockquote cite="http://www.bugzilla.org/security/3.0.1/">
+	  <p>Bugzilla::WebService::User::offer_account_by_email does
+	    not check the "createemailregexp" parameter, and thus
+	    allows users to create accounts who would normally be
+	    denied account creation.  The "emailregexp" parameter is
+	    still checked.  If you do not have the SOAP::Lite Perl
+	    module installed on your Bugzilla system, your system is
+	    not vulnerable (because the Bugzilla WebService will not
+	    be enabled).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.bugzilla.org/security/3.0.1/</url>
+    </references>
+    <dates>
+      <discovery>2007-09-18</discovery>
+      <entry>2007-09-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="14ad2a28-66d2-11dc-b25f-02e0185f8d72">
     <topic>konquerer -- address bar spoofing</topic>
     <affects>
