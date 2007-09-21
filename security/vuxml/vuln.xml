@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2bc96f18-683f-11dc-82b6-02e0185f8d72">
+    <topic>samba -- nss_info plugin privilege escalation vulnerability</topic>
+    <affects>
+      <package>
+	<name>samba</name>
+	<range><lt>3.0.26a,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Samba development team reports:</p>
+	<blockquote cite="http://www.samba.org/samba/security/CVE-2007-4138.html">
+	  <p>The idmap_ad.so library provides an nss_info extension to
+	    Winbind for retrieving a user's home directory path, login
+	    shell and primary group id from an Active Directory domain
+	    controller.  This functionality is enabled by defining the
+	    "winbind nss info" smb.conf option to either "sfu" or
+	    "rfc2307".</p>
+	  <p>Both the Windows "Identity Management for Unix" and
+	    "Services for Unix" MMC plug-ins allow a user to be assigned
+	    a primary group for Unix clients that differs from the user's
+	    Windows primary group.  When the rfc2307 or sfu nss_info plugin
+	    has been enabled, in the absence of either the RFC2307 or SFU
+	    primary group attribute, Winbind will assign a primary group ID
+	    of 0 to the domain user queried using the getpwnam() C library
+	    call.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-4138</cvename>
+      <url>http://www.samba.org/samba/security/CVE-2007-4138.html</url>
+    </references>
+    <dates>
+      <discovery>2007-09-11</discovery>
+      <entry>2007-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="75231c63-f6a2-499d-8e27-787773bda284">
     <topic>bugzilla -- multiple vulnerabilities</topic>
     <affects>
@@ -1626,6 +1665,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2007-3507</cvename>
+      <url>http://sourceforge.net/forum/forum.php?forum_id=710314</url>
       <url>http://www.isecpartners.com/advisories/2007-002-flactools.txt</url>
     </references>
     <dates>
