@@ -1,6 +1,6 @@
---- Makefile.rule.orig	Tue Jul 24 04:19:51 2007
-+++ Makefile.rule	Thu Jul 26 11:53:23 2007
-@@ -157,11 +157,11 @@
+--- Makefile.rule.orig	2007-09-14 00:30:23.000000000 +0900
++++ Makefile.rule	2007-09-22 06:21:56.000000000 +0900
+@@ -155,11 +155,11 @@
  endif
  
  ifndef F_COMPILER
@@ -14,7 +14,7 @@
  CCOMMON_OPT += -Wall
  ifneq ($(OSNAME), CYGWIN_NT)
  CCOMMON_OPT += -fPIC 
-@@ -177,12 +177,12 @@
+@@ -175,12 +175,12 @@
  endif
  
  ifeq ($(C_COMPILER), INTEL)
@@ -29,7 +29,7 @@
  BU	     = _
  CCOMMON_OPT += -DF_INTERFACE_F2C -DNEED_F2CCONV
  FCOMMON_OPT += -Wall
-@@ -199,7 +199,7 @@
+@@ -197,7 +197,7 @@
  endif
  
  ifeq ($(F_COMPILER), G95)
@@ -38,7 +38,7 @@
  BU	     = _
  CCOMMON_OPT += -DF_INTERFACE_F2C
  FCOMMON_OPT += -Wall #  -fno-underscoring
-@@ -216,10 +216,12 @@
+@@ -215,11 +215,12 @@
  endif
  
  ifeq ($(F_COMPILER), GFORTRAN)
@@ -47,12 +47,13 @@
  BU	     = _
  CCOMMON_OPT += -DF_INTERFACE_GFORT
  FCOMMON_OPT += -Wall
+-EXTRALIB    += -lgfortran
 +GCCPATH = $(shell dirname `%%F77%% -print-libgcc-file-name`)
 +EXTRALIB    += -L$(GCCPATH)/../../../ -lgfortran
- # EXTRALIB    += -lgfortran
  ifneq ($(OSNAME), CYGWIN_NT)
  FCOMMON_OPT += -fPIC 
-@@ -238,7 +240,7 @@
+ endif
+@@ -237,7 +238,7 @@
  endif
  
  ifeq ($(F_COMPILER), INTEL)
@@ -61,7 +62,7 @@
  BU	     = _
  CCOMMON_OPT += -DF_INTERFACE_F2C
  FCOMMON_OPT += -fPIC
-@@ -290,11 +292,9 @@
+@@ -289,11 +290,9 @@
  endif
  endif
  
@@ -75,7 +76,7 @@
  endif
  
  ifeq ($(F_COMPILER), PATHSCALE)
-@@ -341,7 +341,7 @@
+@@ -347,7 +346,7 @@
  GETARCH_CC	 = gcc
  endif
  
@@ -84,7 +85,7 @@
  SUBARCH     := $(shell (cd $(TOPDIR); ./getarch 1 $(GETARCH_CC) $(GETARCH_FLAGS)))
  ARCHSUBDIR  := $(shell (cd $(TOPDIR); ./getarch 2 $(GETARCH_CC) $(GETARCH_FLAGS)))
  CONFIG      := $(shell (cd $(TOPDIR); ./getarch 3 $(GETARCH_CC) $(GETARCH_FLAGS)))
-@@ -424,11 +424,11 @@
+@@ -430,11 +429,11 @@
  FPFLAGS    = $(COMMON_OPT) $(FCOMMON_OPT) $(COMMON_PROF)
  
  ifndef SMP
