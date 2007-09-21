@@ -143,6 +143,7 @@
 %%SITE_PERL%%/Gantry/Utils/AuthCDBI.pm
 %%SITE_PERL%%/Gantry/Utils/CDBI.pm
 %%SITE_PERL%%/Gantry/Utils/CRUDHelp.pm
+%%SITE_PERL%%/Gantry/Utils/Crypt.pm
 %%SITE_PERL%%/Gantry/Utils/DB.pm
 %%SITE_PERL%%/Gantry/Utils/DBConnHelper.pm
 %%SITE_PERL%%/Gantry/Utils/DBConnHelper/MP13.pm
