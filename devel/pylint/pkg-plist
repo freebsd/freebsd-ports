@@ -293,6 +293,9 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_new_style_class.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_new_style_class.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_new_style_class.pyo
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_nonregr.py
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_nonregr.pyc
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_nonregr.pyo
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_object_as_class_attribute.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_object_as_class_attribute.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_object_as_class_attribute.pyo
@@ -818,6 +821,60 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/rpythoninput/immutable_global3.py
 %%PYTHON_SITELIBDIR%%/pylint/test/rpythoninput/immutable_global3.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/rpythoninput/immutable_global3.pyo
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_genexpr.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_immutable_global.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_immutable_global1.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_immutable_global2.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_immutable_global3.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_multiple_inheritance.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_multiple_inheritance2.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_multiple_types_assignment.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_buffer.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_callable.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_classmethod.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_compile.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_complex.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_delattr.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_dict.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_dir.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_enumerate.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_eval.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_execfile.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_file.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_filter.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_frozenset.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_getattr.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_globals.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_help.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_id.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_input.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_intern.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_issubclass.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_iter.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_locals.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_map.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_object.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_open.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_property.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_raw_input.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_reduce.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_reload.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_reversed.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_round.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_set.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_setattr.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_sorted.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_staticmethod.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_sum.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_super.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_unicode.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_nobuiltin_vars.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_non_homogeneous_list.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_noyield.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_repr_format_string.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_slice_negative_index.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_slice_non_constant_step.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages/func_unsupported_protocol.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/runtests.py
 %%PYTHON_SITELIBDIR%%/pylint/test/runtests.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/runtests.pyo
@@ -852,6 +909,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/utils.pyc
 %%PYTHON_SITELIBDIR%%/pylint/utils.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/pylint/test/rpythoninput
+@dirrm %%PYTHON_SITELIBDIR%%/pylint/test/rpythonmessages
 @dirrm %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/package/subpackage
 @dirrm %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/package
 @dirrm %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data
