@@ -158,6 +158,7 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_85.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_86.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_87.html
+%%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_88.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_9.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_abt.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_fot.html
@@ -322,6 +323,7 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/diffequations/ode1_nonlinear.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/diffequations/ode1_riccati.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/diffequations/odelin.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/diffequations/odeutils.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/diffequations/spherodialwave.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/diffequations/sqfr.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/diffequations/tests/Makefile
@@ -370,6 +372,7 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/format/format.announce
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/format/format.demo
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/format/format.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/format/format.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/format/format.ps
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/format/pois2.demo
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/format/pois2m.ps
@@ -439,6 +442,12 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/vaxlsp.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ggf.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graph2d.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/create_graph.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/draw_graph.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/graph_core.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/graph_polynomials.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/graphs.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/graphs_documentation.pdf
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/impdiff.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/implicit_plot.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/levin/levin.dem
@@ -453,6 +462,7 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/lurkmathml/mathmltest
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/lurkmathml/maximadiffs.txt
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/makeOrders.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/maxima-server.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/maximaMathML/CtMathML.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/maximaMathML/PrMathML.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/maximaMathML/load-mathml.lisp
@@ -472,21 +482,15 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/nset/changes_1.0_to_1.2.txt
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/README
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/array.data
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/array.mac
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/csv.mac
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/is_equal_array.lisp
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/my_flatten.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/numericalio.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/pipe.data
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/ragged.data
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/ragged.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/really-csv.data
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/really-space-separated.csv
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/rectangular.csv
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/rectangular.data
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/rectangular.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/rtest_numericalio.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/semicolon.data
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/separators.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/opsubst.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/pdiff/battex.sty
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/pdiff/history.txt
@@ -553,6 +557,7 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rand/twovar.usg
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rand/vandpol.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rand/vandpol.usg
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/rtest_lsquares.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rtest_opproperties.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rtestdefstruct.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/sarag/aliases.mac
@@ -621,6 +626,9 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/topoly.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/unit/unit-functions.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/unit/unit.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/vector3d/vector3d.dem
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/vector3d/vector3d.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/vector3d/vector3d.usg
 %%DATADIR%%/%%PORTVERSION%%/share/diff_form/cartan_new.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/diff_form/curvture2.mac
 %%DATADIR%%/%%PORTVERSION%%/share/diff_form/diff_form.mac
@@ -647,6 +655,9 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/diffequations/pivtr.mac
 %%DATADIR%%/%%PORTVERSION%%/share/diffequations/pmain.mac
 %%DATADIR%%/%%PORTVERSION%%/share/draw/draw.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/draw/picture.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/draw/wbd.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/draw/worldmap.mac
 %%DATADIR%%/%%PORTVERSION%%/share/dynamics/complex_dynamics.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/dynamics/dynamics.mac
 %%DATADIR%%/%%PORTVERSION%%/share/dynamics/plotdf.lisp
@@ -949,6 +960,7 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/physics/units.mac
 %%DATADIR%%/%%PORTVERSION%%/share/physics/units.usg
 %%DATADIR%%/%%PORTVERSION%%/share/share.usg
+%%DATADIR%%/%%PORTVERSION%%/share/share_testsuite.mac
 %%DATADIR%%/%%PORTVERSION%%/share/simplification/absimp.dem
 %%DATADIR%%/%%PORTVERSION%%/share/simplification/absimp.mac
 %%DATADIR%%/%%PORTVERSION%%/share/simplification/disol.dem
@@ -1378,6 +1390,7 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/ufact.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/utils.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/zero.lisp
+%%DATADIR%%/%%PORTVERSION%%/tests/README.how-to
 %%DATADIR%%/%%PORTVERSION%%/tests/mcond_display_elseif.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/mcond_display_elseif.out
 %%DATADIR%%/%%PORTVERSION%%/tests/rexamples.mac
@@ -1409,8 +1422,11 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_dot.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_equal.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_everysome.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_map.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_mset.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_round.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_scalarp.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_sign.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_taylor.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_trig.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_zeta.mac
@@ -1425,6 +1441,40 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/tests/rtestode_zp.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtestsum.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/testsuite.lisp
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_algebra.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_boolean_logic.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_calculus.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_combinatorics.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_complex_domain.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_definite_integrals.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_equations.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_indefinite_integrals.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_inequalities.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_limits.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_math_vs_cs_local.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_math_vs_cs_match.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_matrix_theory.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_number_theory.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_numbers.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_numerical_analysis.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_odes.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_operators.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_pdes.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_pdes_heat.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_products.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_programming.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_programming_dif.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_series.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_set_theory.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_special_functions.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_statistics.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_sums.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_tensor_analysis.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_transforms.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_trigonometry.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_vector_analysis.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_zero_equivalence.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/wester-gpl-permission-message.txt
 %%DATADIR%%/%%PORTVERSION%%/xmaxima/demos.html
 %%DATADIR%%/%%PORTVERSION%%/xmaxima/examples.html
 %%DATADIR%%/%%PORTVERSION%%/xmaxima/html/figures/plot2d.gif
@@ -1455,6 +1505,7 @@ info/maxima-index.lisp
 @dirrm %%DATADIR%%/%%PORTVERSION%%/xmaxima/html/figures
 @dirrm %%DATADIR%%/%%PORTVERSION%%/xmaxima/html
 @dirrm %%DATADIR%%/%%PORTVERSION%%/xmaxima
+@dirrm %%DATADIR%%/%%PORTVERSION%%/tests/wester_problems
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tests
 @dirrm %%DATADIR%%/%%PORTVERSION%%/src/numerical/slatec
 @dirrm %%DATADIR%%/%%PORTVERSION%%/src/numerical
@@ -1483,6 +1534,7 @@ info/maxima-index.lisp
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/draw
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/diffequations
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/diff_form
+@dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/vector3d
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/unit
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/stringproc
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/stats
@@ -1500,6 +1552,7 @@ info/maxima-index.lisp
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/maximaMathML
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/lurkmathml
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/levin
+@dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/test
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/man
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran

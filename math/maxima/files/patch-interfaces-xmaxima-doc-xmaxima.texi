@@ -1,0 +1,15 @@
+--- interfaces/xmaxima/doc/xmaxima.texi.orig	Sun Aug 26 05:58:42 2007
++++ interfaces/xmaxima/doc/xmaxima.texi	Sun Aug 26 06:06:12 2007
+@@ -25,6 +25,12 @@
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
++
++@format
++START-INFO-DIR-ENTRY
++* Xmaxima: (xmaxima).     Graphical interface for Maxima, with additional plotting functions.
++END-INFO-DIR-ENTRY
++@end format
+ @end ifinfo
+ 
+ @titlepage
