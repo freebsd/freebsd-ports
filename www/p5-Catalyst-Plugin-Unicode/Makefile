@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Unicode
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
@@ -20,5 +21,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Catalyst::Plugin::Unicode.3
+
+post-extract:
+	@${REINPLACE_CMD} -e '/build_requires/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
