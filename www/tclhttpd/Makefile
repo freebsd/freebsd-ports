@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	An http-server implemented in TCL
 
-RUN_DEPENDS=	${LOCALBASE}/lib/tcllib1.9/pkgIndex.tcl:${PORTSDIR}/devel/tcllib
+RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
 LIB_DEPENDS=	tcl${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER}
 
 USE_RC_SUBR=	tclhttpd.sh

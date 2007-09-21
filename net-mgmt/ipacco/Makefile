@@ -17,7 +17,7 @@ COMMENT=	Web based tool to analyze Cisco IP accounting data
 
 RUN_DEPENDS=	${LOCALBASE}/include/tclExtend.h:${PORTSDIR}/lang/tclX \
 		${LOCALBASE}/lib/mysqltcl-3.03/pkgIndex.tcl:${PORTSDIR}/databases/mysqltcl \
-		${LOCALBASE}/lib/tcllib1.9/pkgIndex.tcl:${PORTSDIR}/devel/tcllib
+		dtplite:${PORTSDIR}/devel/tcllib
 
 NO_BUILD=	yes
 USE_PHP=	mysql gd
