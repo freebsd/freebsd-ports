@@ -37,7 +37,6 @@
     SUBDIR += batik
     SUBDIR += bbrb
     SUBDIR += blender
-    SUBDIR += blender-devel
     SUBDIR += bmeps
     SUBDIR += bmp-rootvis
     SUBDIR += bmp2html
