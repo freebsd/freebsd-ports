@@ -20,7 +20,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/mucommander %%DATADIR%%/mucommander.jar %%DATADIR%%/license.txt
 PLIST_DIRS=	%%DATADIR%%
-SUB_FILES=	mucommander pkg-message
+SUB_FILES=	mucommander
 
 PORTDOCS=	readme.txt
 
