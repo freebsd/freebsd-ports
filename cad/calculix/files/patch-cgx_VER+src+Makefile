@@ -1,5 +1,5 @@
---- cgx_1.6/src/Makefile.orig	Sun Feb 19 22:13:12 2006
-+++ cgx_1.6/src/Makefile	Sun Feb 19 22:20:42 2006
+--- cgx_1.7/src/Makefile.orig	2007-08-25 07:37:49.000000000 +0900
++++ cgx_1.7/src/Makefile	2007-09-22 07:28:34.000000000 +0900
 @@ -1,13 +1,13 @@
 -CFLAGS = -O2 -Wall \
 +CFLAGS += -O2 -Wall \
@@ -20,10 +20,10 @@
    -lm 
  
  # -L/usr/X11/lib64 -lpthread -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
-@@ -115,42 +115,6 @@
-  write2nas.c \
-  write2tochnog.c \
+@@ -122,42 +122,6 @@
   writefbd.c \
+  contact.c \
+  makeTriFromElems.c \
 - ../../glut-3.5/src/layerutil.c \
 - ../../glut-3.5/src/glut_dials.c \
 - ../../glut-3.5/src/glut_ext.c \
@@ -63,7 +63,7 @@
   uselibSNL.cpp \
   ../../libSNL/src/*.cpp
  
-@@ -158,7 +122,7 @@
+@@ -165,7 +129,7 @@
  OLIB = $(SLIB:.c=.o)
  
  cgx: $(OLIB)
