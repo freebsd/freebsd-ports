@@ -3,14 +3,16 @@ to play flash movies with proprietary software. While there are
 some other free flash players, none support anything beyond SWF v4.
 Gnash is based on GameSWF, and supports many SWF v7 features.
 
-Features:
 - Runs standalone
   Gnash can run standalone to play flash movies.
 - Browser plugin
   Gnash can also run as a plugin from within most Mozilla derived
   browsers, such as Firefox. Gnash also has support for Konqueror.
-- SWF v7 compliant
+- SWF v7+ compliant
   Gnash can play many current flash movies.
+- Streaming Video
+  Gnash supports the viewing of streaming video from popular video
+  sharing sites like Lulu.tv or YouTube.com.
 - XML Message server
   Gnash also supports an XML based message system as documented in
   the Flash Format specification.
@@ -23,5 +25,9 @@ Features:
 - Better Security
   Gnash pays extra attention to all network connections, and allows
   the user to control access.
+- Extensible
+  Gnash supports extending ActionScript by creating your own. You
+  can write wrappers for any development library, and import them
+  into the player.
 
 WWW: http://www.gnu.org/software/gnash/
