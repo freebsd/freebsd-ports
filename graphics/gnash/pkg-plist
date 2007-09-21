@@ -1,26 +1,36 @@
 bin/gnash
 bin/gparser
 bin/gprocessor
-%%PLUGIN%%lib/browser_plugins/libgnashplugin.so
-lib/gnash/libgnashamf-0.7.2.so
+%%GTK%%bin/gtk-gnash
+%%CYGNAL%%bin/cygnal
+%%FFPLUGIN%%lib/browser_plugins/libgnashplugin.so
+lib/gnash/libgnashamf-0.8.1.so
+lib/gnash/libgnashamf.a
 lib/gnash/libgnashamf.la
 lib/gnash/libgnashamf.so
-lib/gnash/libgnashbackend-0.7.2.so
+lib/gnash/libgnashbackend-0.8.1.so
+lib/gnash/libgnashbackend.a
 lib/gnash/libgnashbackend.la
 lib/gnash/libgnashbackend.so
-lib/gnash/libgnashbase-0.7.2.so
+lib/gnash/libgnashbase-0.8.1.so
+lib/gnash/libgnashbase.a
 lib/gnash/libgnashbase.la
 lib/gnash/libgnashbase.so
-lib/gnash/libgnashgeo-0.7.2.so
+lib/gnash/libgnashgeo-0.8.1.so
+lib/gnash/libgnashgeo.a
 lib/gnash/libgnashgeo.la
 lib/gnash/libgnashgeo.so
-lib/gnash/libgnashgui-0.7.2.so
-lib/gnash/libgnashgui.la
-lib/gnash/libgnashgui.so
-lib/gnash/libgnashserver-0.7.2.so
+lib/gnash/libgnashserver-0.8.1.so
+lib/gnash/libgnashserver.a
 lib/gnash/libgnashserver.la
 lib/gnash/libgnashserver.so
+%%DATADIR%%/GnashG.png
 %%DATADIR%%/gnash_128_96.ico
+share/locale/cs/gnash.mo
+share/locale/de/gnash.mo
+share/locale/es/gnash.mo
+share/locale/fr/gnash.mo
+share/locale/it/gnash.mo
 @dirrm %%DATADIR%%
 @dirrm lib/gnash
-%%PLUGIN%%@dirrm lib/browser_plugins
+@dirrmtry lib/browser_plugins
