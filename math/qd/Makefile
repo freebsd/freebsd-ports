@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qd
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.6
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.berkeley.edu/~yozo/software/
 
