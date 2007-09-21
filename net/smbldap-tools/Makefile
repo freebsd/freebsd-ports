@@ -7,13 +7,14 @@
 
 PORTNAME=	smbldap-tools
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.gna.org/smbldap-tools/packages/ \
 		http://download.gna.org/smbldap-tools/packages/old-release/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mm@FreeBSD.org
-COMMENT=	Useful package for managing users and groups in a LDAP directory
+COMMENT=	Samba-LDAP management and support tools
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/Crypt/SmbHash.pm:${PORTSDIR}/security/p5-Crypt-SmbHash \

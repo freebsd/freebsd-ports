@@ -1,0 +1,11 @@
+--- smbldap-passwd.orig	2007-09-20 12:14:16.000000000 +0200
++++ smbldap-passwd	2007-09-20 12:15:59.000000000 +0200
+@@ -266,7 +266,7 @@
+ if ( $update_unix_passwd ) {
+     my $shadowLastChange=int(time()/86400);
+     my $modify;
+-    if ($< != 0) {
++    if (($< != 0) || (!defined $config{defaultMaxPasswordAge})) {
+ 	$modify = $ldap_master->modify ( "$dn",
+ 					    changes => [
+ 							replace => [userPassword => "$hash_password"],
