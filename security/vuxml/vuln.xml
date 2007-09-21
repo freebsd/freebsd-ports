@@ -34,6 +34,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="75231c63-f6a2-499d-8e27-787773bda284">
+    <topic>bugzilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<name>ja-bugzilla</name>
+	<range><lt>3.0.1</lt></range>
+      </package>
+      <package>
+	<name>bugzilla2</name>
+	<range><lt>2.22.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Bugzilla Security Advisory reports:</p>
+	<blockquote cite="http://www.bugzilla.org/security/2.20.4/">
+	  <p>This advisory covers three security issues that have recently been
+	    fixed in the Bugzilla code:</p>
+	  <ul>
+	    <li>A possible cross-site scripting (XSS) vulnerability when filing
+	      bugs using the guided form.</li>
+	    <li>When using email_in.pl, insufficiently escaped data may be
+	      passed to sendmail.</li>
+	    <li>Users using the WebService interface may access Bugzilla's
+	      time-tracking fields even if they normally cannot see them.</li>
+	  </ul>
+	  <p>We strongly advise that 2.20.x and 2.22.x users should upgrade to
+	    2.20.5 and 2.22.3 respectively. 3.0 users, and users of 2.18.x or
+	    below, should upgrade to 3.0.1.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>25425</bid>
+      <cvename>CVE-2007-4538</cvename>
+      <cvename>CVE-2007-4539</cvename>
+      <cvename>CVE-2007-4543</cvename>
+      <url>http://www.bugzilla.org/security/2.20.4/</url>
+    </references>
+    <dates>
+      <discovery>2007-08-23</discovery>
+      <entry>2007-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b6f6da57-680a-11dc-b350-001921ab2fa4">
     <topic>clamav -- multiple remote Denial of Service vulnerabilities</topic>
     <affects>
