@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="63347ee7-6841-11dc-82b6-02e0185f8d72">
+    <topic>wordpress -- remote sql injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<name>de-wordpress</name>
+	<name>zh-wordpress</name>
+	<range><lt>2.2.3,1</lt></range>
+      </package>
+      <package>
+	<name>wordpress-mu</name>
+        <range><lt>1.2.4,2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alexander Concha reports:</p>
+	<blockquote cite="http://www.buayacorp.com/files/wordpress/wordpress-sql-injection-advisory.html">
+	  <p>While testing WordPress, it has been discovered a SQL
+	    Injection vulnerability that allows an attacker to retrieve
+	    remotely any user credentials from a vulnerable site, this
+	    bug is caused because of early database escaping and the
+	    lack of validation in query string like parameters.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-4894</cvename>
+      <url>http://www.buayacorp.com/files/wordpress/wordpress-sql-injection-advisory.html</url>
+    </references>
+    <dates>
+      <discovery>2007-09-10</discovery>
+      <entry>2007-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2bc96f18-683f-11dc-82b6-02e0185f8d72">
     <topic>samba -- nss_info plugin privilege escalation vulnerability</topic>
     <affects>
