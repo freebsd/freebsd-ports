@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b6f6da57-680a-11dc-b350-001921ab2fa4">
+    <topic>clamav -- multiple remote Denial of Service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.91.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>BugTraq reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/25398">
+	  <p>ClamAV is prone to multiple denial-of-service vulnerabilities.</p>
+	  <p>A successful attack may allow an attacker to crash the
+	    application and deny service to users.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>25398</bid>
+      <cvename>CVE-2007-4510</cvename>
+    </references>
+    <dates>
+      <discovery>2007-08-21</discovery>
+      <entry>2007-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="12488805-6773-11dc-8be8-02e0185f8d72">
     <topic>coppermine -- multiple vulnerabilities</topic>
     <affects>
