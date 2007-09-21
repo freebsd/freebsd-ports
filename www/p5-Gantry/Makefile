@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	Gantry
-PORTVERSION=	3.50
-PORTREVISION=	1
+PORTVERSION=	3.51
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Gantry
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -98,7 +96,8 @@ MAN3=		Gantry.3 \
 		Gantry::Stash::View::Form.3 Gantry::Template::Default.3 \
 		Gantry::Template::Framing.3 Gantry::Template::TT.3 \
 		Gantry::Utils::AuthCDBI.3 Gantry::Utils::CDBI.3 \
-		Gantry::Utils::CRUDHelp.3 Gantry::Utils::DB.3 \
+		Gantry::Utils::CRUDHelp.3 Gantry::Utils::Crypt.3 \
+		Gantry::Utils::DB.3 \
 		Gantry::Utils::DBConnHelper.3 \
 		Gantry::Utils::DBConnHelper::MP13.3 \
 		Gantry::Utils::DBConnHelper::MP20.3 \
