@@ -1,0 +1,100 @@
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/ColorTable.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Convolution.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Histogram.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Minmax.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelMap.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelStorage.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelTransfer.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Rasterization.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Reset.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Sink.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Texturing/Application.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Texturing/Environments.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Texturing/Objects.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Texturing/Parameters.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Texturing/Queries.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Texturing/Specification.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Texturing/PixelInternalFormat.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Texturing/TexParameter.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Texturing/TextureTarget.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Texturing/TextureUnit.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Antialiasing.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/BasicTypes.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/BeginEnd.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Bitmaps.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/BufferObjects.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Clipping.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Colors.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/ColorSum.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/CoordTrans.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/DisplayLists.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Evaluators.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Feedback.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/FlushFinish.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Fog.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Framebuffer.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Hints.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/LineSegments.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PerFragment.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PixelRectangles.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Face.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Points.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Polygons.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/RasterPos.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/ReadCopyPixels.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Rectangles.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/SavingState.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Selection.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Shaders.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/StateVar.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/StringQueries.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Texturing.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/VertexArrays.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/VertexSpec.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/BlendingFactor.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/BufferMode.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Capability.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/ComparisonFunction.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/ControlPoint.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/DataType.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Domain.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/EdgeFlag.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Exception.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Extensions.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/GLboolean.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/IOState.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PeekPoke.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PixelData.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PixelFormat.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PointParameter.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PolygonMode.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PrimitiveMode.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/QueryUtils.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL/RenderMode.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GLU/Errors.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GLU/Initialization.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GLU/Matrix.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GLU/Mipmapping.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GLU/NURBS.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GLU/Quadrics.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GLU/Tessellation.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GLU/ErrorsInternal.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GL.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL/GLU.hi
+%%SUBDIR%%/Graphics/Rendering/OpenGL.hi
+%%SUBDIR%%/libHSOpenGL-2.2.1.a
+%%SUBDIR%%/HSOpenGL-2.2.1.o
+%%SUBDIR%%/include/HsOpenGL.h
+%%SUBDIR%%/%%PORTNAME%%-register.sh
+@dirrm %%SUBDIR%%/include
+@dirrm %%SUBDIR%%/Graphics/Rendering/OpenGL/GLU
+@dirrm %%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Texturing
+@dirrm %%SUBDIR%%/Graphics/Rendering/OpenGL/GL/PixelRectangles
+@dirrm %%SUBDIR%%/Graphics/Rendering/OpenGL/GL
+@dirrm %%SUBDIR%%/Graphics/Rendering/OpenGL
+@dirrmtry %%SUBDIR%%/Graphics/Rendering
+@dirrmtry %%SUBDIR%%/Graphics
+@exec /bin/sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister OpenGL
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
