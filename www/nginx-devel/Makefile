@@ -7,6 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	0.6.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -103,7 +104,7 @@ CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
 .if defined(WITHOUT_HTTP_REWRITE_MODULE) || defined(WITHOUT_PCRE)
-PKGNAMESUFFIX+=	-nopcre
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nopcre
 CONFIGURE_ARGS+=--without-http_rewrite_module \
 		--without-pcre
 .else
