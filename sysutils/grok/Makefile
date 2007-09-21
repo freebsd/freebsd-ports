@@ -1,12 +1,12 @@
 # Ports collection makefile for:  grok
 # Date created:			  07 March 2006
-# Whom:				  Wesley Shields <wxs@csh.rit.edu>
+# Whom:				  Wesley Shields <wxs@atarininja.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	grok
-PORTVERSION=	20070402
+PORTVERSION=	20070915
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.semicomplete.com/files/grok/ \
 		http://www.atarininja.org/~wxs/distfiles/
@@ -27,17 +27,29 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PERL=${PERL}
 
+PORTDOCS=	CHANGELIST
+PORTEXAMPLES=	line-to-byte-offset.conf
 MAN1=	grok.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/grok ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/grok.conf ${PREFIX}/etc/grok.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/grok.1 ${PREFIX}/man/man1
+	@${INSTALL_SCRIPT} ${WRKSRC}/grok ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/grok_patfind.pl ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/grok.conf ${PREFIX}/etc/grok.conf.sample
+	@${INSTALL_MAN} ${WRKSRC}/grok.1 ${MANPREFIX}/man/man1
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/grok.conf ]; then \
 		${CP} -p ${PREFIX}/etc/grok.conf.sample ${PREFIX}/etc/grok.conf ; \
 	fi
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${INSTALL} -d ${EXAMPLESDIR}/
+	@cd ${WRKSRC}/examples/ && \
+		${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
