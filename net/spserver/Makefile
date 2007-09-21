@@ -7,6 +7,7 @@
 
 PORTNAME=	spserver
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://spserver.googlecode.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A TCP server framework library written in C++ based on libevent
 
-LIB_DEPENDS=	event-1.3b.1:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.3d:${PORTSDIR}/devel/libevent
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_LDCONFIG=	yes

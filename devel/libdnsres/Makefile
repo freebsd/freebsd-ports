@@ -7,7 +7,7 @@
 
 PORTNAME=	libdnsres
 PORTVERSION=	0.1a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
 
