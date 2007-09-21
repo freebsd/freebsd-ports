@@ -23,5 +23,6 @@ load_rc_config $name
 command_interpreter=%%PERL%%
 command=%%PREFIX%%/bin/grok
 command_args="-f $grok_config -b -d"
+required_files=%%PREFIX%%/etc/grok.conf
 
 run_rc_command "$1"
