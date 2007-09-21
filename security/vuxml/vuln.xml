@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c9c14242-6843-11dc-82b6-02e0185f8d72">
+    <topic>mediawiki -- cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>mediawiki</name>
+	<range><lt>1.10.2</lt></range>
+      </package>
+      <package>
+	<name>mediawiki19</name>
+	<range><lt>1.9.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MediaWiki development team reports:</p>
+	<blockquote cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2007-September/000067.html">
+	  <p>A possible HTML/XSS injection vector in the API
+	    pretty-printing mode has been found and fixed.</p>
+	  <p>The vulnerability may be worked around in an unfixed version
+	    by simply disabling the API interface if it is not in use, by
+	    adding this to LocalSettings.php:</p>
+	  <p>$wgEnableAPI = false;</p>
+	  <p>(This is the default setting in 1.8.x.)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-4828</cvename>
+      <url>http://lists.wikimedia.org/pipermail/mediawiki-announce/2007-September/000067.html</url>
+    </references>
+    <dates>
+      <discovery>2007-09-10</discovery>
+      <entry>2007-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="63347ee7-6841-11dc-82b6-02e0185f8d72">
     <topic>wordpress -- remote sql injection vulnerability</topic>
     <affects>
