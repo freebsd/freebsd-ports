@@ -7,6 +7,7 @@
 
 PORTNAME=	xf86-input-vmmouse
 PORTVERSION=	12.4.2
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
