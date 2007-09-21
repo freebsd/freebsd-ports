@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	last.fm
-PORTVERSION=	1.3.2.11
+PORTVERSION=	1.3.2.13
 CATEGORIES=	audio net
 MASTER_SITES=	http://cdn.last.fm/client/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -29,7 +29,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700042 && ${ARCH} == "amd64"
+.if ${ARCH} == "amd64"
+BROKEN=		Does not compile
 USE_GCC=4.2+
 .endif
 
