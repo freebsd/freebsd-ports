@@ -7,13 +7,14 @@
 
 PORTNAME=	ftp-proxy
 PORTVERSION=	4.1p2
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.chrissicool.net/projects/ftp-proxy/distfiles/
 
 MAINTAINER=	chrissicool@chrissicool.net
 COMMENT=	A port of OpenBSD's ftp-proxy
 
-LIB_DEPENDS=	event-1.3b:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.3d:${PORTSDIR}/devel/libevent
 
 MAN8=		ftp-proxy.8
 MANCOMPRESSED=	yes

@@ -8,13 +8,14 @@
 
 PORTNAME=	eventxx
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.llucax.com.ar/~luca/eventxx/releases/
 
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	A C++ wrapper for libevent
 
-LIB_DEPENDS=	event-1.3b.1:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.3d:${PORTSDIR}/devel/libevent
 
 NO_BUILD=	yes
 
