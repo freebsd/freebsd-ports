@@ -22,6 +22,7 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Community enhanced/bug fixed version of OpenOffice.org
 
 BROKEN=		Size mismatch
+IGNORE=		Waiting for 2.3.
 
 DESCR=		${.CURDIR}/pkg-descr
 
