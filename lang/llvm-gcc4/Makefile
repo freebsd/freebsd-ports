@@ -21,6 +21,7 @@ USE_BISON=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
+ONLY_FOR_ARCHS=	i386 amd64
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/llc:${PORTSDIR}/devel/llvm
 
