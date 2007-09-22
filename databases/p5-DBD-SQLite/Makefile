@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	DBD-SQLite
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	databases perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	DBD
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Provides access to SQLite3 databases through the DBI
 
 # We use sqlite3's own library & headers since it is more recent
 # than the bundled version and has an incompatible DB file format.
 # In this way we can be sure DBD::SQLite can interoperate with
 # databases/sqlite3.
-BUILD_DEPENDS=	sqlite3>=3.3.3:${PORTSDIR}/databases/sqlite3 \
+BUILD_DEPENDS=	sqlite3>=3.4.1:${PORTSDIR}/databases/sqlite3 \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
