@@ -46,8 +46,8 @@ USE_RC_SUBR=	vmware-guestd.sh
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
-VMWARE_VER=	6.0.0
-BUILD_VER=	45731
+VMWARE_VER=	6.0.1
+BUILD_VER=	55017
 
 .include <bsd.port.pre.mk>
 
