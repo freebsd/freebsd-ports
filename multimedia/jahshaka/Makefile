@@ -7,7 +7,7 @@
 
 PORTNAME=	jahshaka
 PORTVERSION=	1.9a9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}fx
@@ -88,9 +88,10 @@ do-install:
 
 # plugins
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}/plugins
+	${MKDIR} ${PREFIX}/lib/${PORTNAME}/plugins ${DATADIR}/plugins
 	${FIND} -X ${WRKSRC}/plugins -name '*.so' | \
 	${XARGS} -J % ${INSTALL_PROGRAM} % ${PREFIX}/lib/${PORTNAME}/plugins
+	(cd ${WRKSRC}/plugins && ${COPYTREE_SHARE} \* ${DATADIR}/plugins "-name *\.fp")
 
 .ifndef (NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
