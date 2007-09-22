@@ -1035,6 +1035,7 @@
     SUBDIR += xom
     SUBDIR += xp
     SUBDIR += xpp3
+    SUBDIR += xqilla
     SUBDIR += xslide.el
     SUBDIR += xslint
     SUBDIR += xstream
