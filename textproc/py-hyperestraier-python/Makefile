@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	hyperestraier
-PORTVERSION=	0.9.3
+PORTVERSION=	0.10.2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP \
 		http://www.liris.org/tech/program/hyperestraier-purepython/
