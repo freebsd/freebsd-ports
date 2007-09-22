@@ -7,13 +7,13 @@
 
 PORTNAME=	mit-scheme
 PORTVERSION=	7.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang scheme
-MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/mit-scheme/7.7/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION} OLD/${PORTVERSION}
-DISTNAME=	scheme-${PORTVERSION}-src-ucode
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	mit-scheme/stable.pkg/${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src-ucode
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		scheme-${PORTVERSION}-ix86-freebsd.tar.gz
+		${PORTNAME}-${PORTVERSION}-ix86-freebsd.tar.gz
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	MIT Scheme: includes runtime, compiler, and edwin binaries
