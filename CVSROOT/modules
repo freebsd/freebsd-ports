@@ -17339,6 +17339,7 @@ xpvm		ports/net/xpvm
 xpx		ports/graphics/xpx
 xpyraminx	ports/games/xpyraminx
 xqf		ports/games/xqf
+xqilla		ports/textproc/xqilla
 xquarto		ports/games/xquarto
 xquote		ports/finance/xquote
 xracer		ports/games/xracer
