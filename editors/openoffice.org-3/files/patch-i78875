@@ -1,0 +1,31 @@
+Index: libtextcat/libtextcat-2.2.patch
+===================================================================
+RCS file: /cvs/external/libtextcat/libtextcat-2.2.patch,v
+retrieving revision 1.3
+diff -u -r1.3 libtextcat-2.2.patch
+--- libtextcat/libtextcat-2.2.patch	21 Jun 2007 16:05:43 -0000	1.3
++++ libtextcat/libtextcat-2.2.patch	25 Jun 2007 11:12:26 -0000
+@@ -18,6 +18,23 @@
+   # when you set need_version to no, make sure it does not cause -set_version
+   # flags to be left without arguments
+   archive_cmds=
++***************
++*** 6280,6286 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 6281,6287 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
+ *** misc/libtextcat-2.2/src/Makefile.in	Thu May 22 13:39:52 2003
+ --- misc/build/libtextcat-2.2/src/Makefile.in	Thu Jun 21 17:44:15 2007
+ ***************

@@ -2,11 +2,12 @@
 # Whom:         Maho Nakata <maho@FreeBSD.org>
 # $FreeBSD$
 
-.if !defined(WITH_GNUGCJ)
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home="${LOCALBASE}/share/java/apache-ant"
-.else
-CONFIGURE_ARGS+=	--with-jdk-home="${LOCALBASE}/lib/jvm/java-gcj41" --with-java=gij --with-ant-home="${WRKDIR}/apache-ant-${ANT_VERSION}"
-.endif
+
+#.if defined(WITH_VBA)
+#CONFIGURE_ARGS+=        --enable-vba --with-vba-package-format="builtin"
+#EXTRA_PATCHES+=	${FILESDIR}/cws-npower7.diff
+#.endif
 
 .if defined(WITH_KDE)
 CONFIGURE_ARGS+=	--enable-kde QTDIR="${QT_PREFIX}"
@@ -92,6 +93,11 @@ pre-fetch:
 	@${ECHO} "You can compile OOo without gnome VFS support with"
 	@${ECHO} "make -DWITHOUT_GNOMEVFS"
 .endif
+#.if !defined(WITH_VBA)
+#	@${ECHO}
+#	@${ECHO} "You can compile OOo with VBA support with"
+#	@${ECHO} "make -DWITH_VBA"
+#.endif
 .if !defined(WITH_SYSTEM_FREETYPE)
 	@${ECHO}
 	@${ECHO} "You can compile OOo with freetype2 from ports with"
@@ -119,11 +125,6 @@ pre-fetch:
 	@${ECHO} "te-IN ti-ER ta-IN th tn tr ts tg ur-IN uk ve vi xh"
 	@${ECHO} "zh-CN zh-TW zu"
 	@${ECHO} "Default: en-US"
-.endif
-.if !defined(WITH_GNUGCJ)
-	@${ECHO}
-	@${ECHO} "You can compile OOo with GNU GCJ instead of SUN's JDK with"
-	@${ECHO} "make -DWITH_GNUGCJ"
 .endif
 .if !defined(WITH_CUPS)
 	@${ECHO}
