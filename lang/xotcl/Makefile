@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xotcl
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES?=	lang tcl84
 MASTER_SITES=	http://media.wu-wien.ac.at/download/
 
@@ -69,6 +69,8 @@ CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 			--with-tcl=${TCL_LIBDIR} \
 			--with-tclinclude=${TCL_INCLUDEDIR}/generic/ \
 			--with-xotclsh
+
+CONFIGURE_ENV+=		TCL_INCLUDEDIR=${TCL_INCLUDEDIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|TCLSH_PROG=".*"|TCLSH_PROG="${TCLSH}"|g' \
