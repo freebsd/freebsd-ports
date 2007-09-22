@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	filters
-PORTVERSION=	2.40
+PORTVERSION=	2.41
 CATEGORIES=	games perl5
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/f/filters/ \
 		http://critical.ch/distfiles/ \
