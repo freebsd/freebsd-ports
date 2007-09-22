@@ -1,4 +1,5 @@
 @comment "PREFIX set to %D/mpich2."
+bin/check_callstack
 %%JAVA%%bin/clog2TOslog2
 bin/clog2_join
 bin/clog2_print
@@ -100,6 +101,7 @@ bin/parkill
 %%JAVA%%bin/slog2updater
 %%JAVA%%bin/traceTOslog2.in
 %%JAVA%%bin/traceprint.in
+etc/mpe_callstack_ldflags.conf
 etc/mpe_f77env.conf
 etc/mpe_f77env.conf.in
 %%X11%%etc/mpe_graphics.conf
@@ -107,6 +109,7 @@ etc/mpe_help.conf
 etc/mpe_help.conf.in
 etc/mpe_log.conf
 %%X11%%etc/mpe_mpianim.conf
+etc/mpe_log_postlib.conf
 etc/mpe_mpicheck.conf
 etc/mpe_mpilog.conf
 etc/mpe_mpitrace.conf
@@ -120,15 +123,19 @@ include/clog_const.h
 include/clog_inttypes.h
 include/clog_uuid.h
 include/mpe.h
+include/mpe_callstack.h
 include/mpe_graphics.h
 %%X11%%include/mpe_graphicsf.h
 include/mpe_log.h
+include/mpe_log_thread.h
 include/mpe_logf.h
 include/mpe_misc.h
 include/mpe_thread.h
-include/mpi_sizeofs.mod
 include/mpi.h
 include/mpi.mod
+include/mpi_base.mod
+include/mpi_constants.mod
+include/mpi_sizeofs.mod
 include/mpicxx.h
 include/mpif.h
 include/mpio.h
@@ -141,13 +148,11 @@ include/mpiof.h
 %%JAVA%%lib/clogprint.jar
 %%JAVA%%lib/jumpshot.jar
 %%JAVA%%lib/jumpshot_launcher.jar
-%%JAVA%%lib/trace_rlog/libTraceInput.la
-%%JAVA%%lib/trace_rlog/libTraceInput.so
 %%X11%%lib/libampe.a
 lib/libfmpich.a
 lib/libfmpich.so
-lib/libfmpich.so.0
-lib/libmpichf90.a
+lib/libfmpich.so.1
+lib/libfmpich.so.1.1
 lib/liblmpe.a
 lib/libmpe.a
 lib/libmpe_collchk.a
@@ -157,11 +162,17 @@ lib/libmpe_nompi_null.a
 lib/libmpe_null.a
 lib/libmpich.a
 lib/libmpich.so
-lib/libmpich.so.0
+lib/libmpich.so.1
+lib/libmpich.so.1.1
 lib/libmpichcxx.a
+lib/libmpichcxx.so
+lib/libmpichcxx.so.1
+lib/libmpichcxx.so.1.1
+lib/libmpichf90.a
 lib/libtmpe.a
 %%JAVA%%lib/logconvertor.jar
 lib/mpe_prof.o
+lib/mpich2-ch3.pc
 %%JAVA%%lib/slog2filter.jar
 %%JAVA%%lib/slog2navigator.jar
 %%JAVA%%lib/slog2printrecur.jar
@@ -169,11 +180,13 @@ lib/mpe_prof.o
 %%JAVA%%lib/slog2update205to206.jar
 %%JAVA%%lib/traceTOslog2.jar
 %%JAVA%%lib/traceprint.jar
-sbin/mpeuninstall
+%%JAVA%%lib/trace_rlog/libTraceInput.la
+%%JAVA%%lib/trace_rlog/libTraceInput.so
 sbin/mpecheckinstall
-sbin/mpetestlink
 sbin/mpetestexec
 sbin/mpetestexeclog
+sbin/mpetestlink
+sbin/mpeuninstall
 %%PORTDOCS%%%%DOCSDIR%%/index.htm
 %%PORTDOCS%%%%DOCSDIR%%/install.pdf
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/About24.png
@@ -229,10 +242,15 @@ sbin/mpetestexeclog
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/labels.pl
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/legend_checkbox_menu.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/legend_color_chooser.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/legend_count.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/legend_excl.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/legend_incl.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/legend_name.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/legend_popup.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/legend_popup_full.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/legend_s.png
-%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/legend_sort_menu.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/legend_sort_number_menu.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/legend_sort_string_menu.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/legend_topo.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/legend_v.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/main.png
@@ -268,15 +286,28 @@ sbin/mpetestexeclog
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/node32.html
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/node33.html
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/node34.html
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/node35.html
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/node36.html
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/node4.html
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/node5.html
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/node6.html
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/node7.html
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/node8.html
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/node9.html
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/openmpi_4_2_commthd.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/openmpi_4_2_procthd.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/openmpi_4_3_commthd.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/openmpi_4_3_procthd.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/openmpi_4_4_commthd.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/openmpi_4_4_procthd.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/openmpi_4_5_commthd.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/openmpi_4_5_procthd.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/openmpi_4_6_commthd.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/openmpi_4_6_procthd.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/preference_pview_state.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/prev.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/prev_g.png
+%%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/pthread_sendrecv_legend.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/timeline_infobox_duration.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/timeline_infobox_preview_state.png
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/timeline_infobox_real_primitive.png
@@ -309,12 +340,12 @@ sbin/mpetestexeclog
 %%PORTDOCS%%%%DOCSDIR%%/smpd_pmi.pdf
 %%PORTDOCS%%%%DOCSDIR%%/user.pdf
 %%PORTDOCS%%%%DOCSDIR%%/www1/MPI.html
+%%PORTDOCS%%%%DOCSDIR%%/www1/index.htm
 %%PORTDOCS%%%%DOCSDIR%%/www1/mpicc.html
 %%PORTDOCS%%%%DOCSDIR%%/www1/mpicxx.html
 %%PORTDOCS%%%%DOCSDIR%%/www1/mpiexec.html
 %%PORTDOCS%%%%DOCSDIR%%/www1/mpif77.html
 %%PORTDOCS%%%%DOCSDIR%%/www1/mpif90.html
-%%PORTDOCS%%%%DOCSDIR%%/www1/index.htm
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Abort.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Accumulate.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Add_error_class.html
@@ -348,7 +379,6 @@ sbin/mpetestexeclog
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Cartdim_get.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Close_port.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Comm_accept.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Exscan.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Comm_call_errhandler.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Comm_compare.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Comm_connect.html
@@ -363,8 +393,8 @@ sbin/mpetestexeclog
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Comm_get_attr.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Comm_get_errhandler.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Comm_get_name.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Comm_group.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Comm_get_parent.html
+%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Comm_group.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Comm_join.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Comm_rank.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Comm_remote_group.html
@@ -384,6 +414,7 @@ sbin/mpetestexeclog
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Errhandler_set.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Error_class.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Error_string.html
+%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Exscan.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_c2f.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_call_errhandler.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_close.html
@@ -437,7 +468,6 @@ sbin/mpetestexeclog
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_at_all.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_at_all_begin.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_at_all_end.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Gather.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_ordered.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_ordered_begin.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_ordered_end.html
@@ -445,6 +475,7 @@ sbin/mpetestexeclog
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Finalize.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Finalized.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Free_mem.html
+%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Gather.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Gatherv.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Get.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Get_address.html
@@ -600,6 +631,61 @@ sbin/mpetestexeclog
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Wtick.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Wtime.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Add_RGB_color.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_CaptureFile.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Close_graphics.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Comm_global_rank.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Decomp1d.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Describe_comm_event.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Describe_comm_state.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Describe_event.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Describe_info_event.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Describe_info_state.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Describe_state.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Draw_circle.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Draw_line.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Draw_logic.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Draw_point.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Draw_points.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Draw_string.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Errors_call_debugger.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Fill_circle.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Fill_rectangle.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Finish_log.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_GetHostName.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_GetTags.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Get_mouse_press.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_IO_Stdout_to_file.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Iget_mouse_press.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Init_log.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Initialized_logging.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Line_thickness.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Log_bare_event.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Log_comm_event.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Log_comm_receive.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Log_comm_send.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Log_event.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Log_get_event_number.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Log_get_solo_eventID.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Log_get_state_eventIDs.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Log_info_event.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Log_merged_logfilename.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Log_pack.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Log_receive.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Log_send.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Log_sync_clocks.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Make_color_array.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Num_colors.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Open_graphics.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_ReturnTags.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Seq_begin.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Seq_end.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Signals_call_debugger.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Start_log.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Stop_log.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_TagsEnd.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/MPE_Update.html
+%%PORTDOCS%%%%DOCSDIR%%/www4/libmpe.cit
 share/examples_collchk/Makefile
 share/examples_collchk/Makefile.in
 share/examples_collchk/composite.c
@@ -623,6 +709,8 @@ share/examples_logging/Makefile.in
 share/examples_logging/comm1_isr.c
 share/examples_logging/comm1_isr_loop.c
 share/examples_logging/comm2_connect_accept.c
+share/examples_logging/comm2_spawn_child.c
+share/examples_logging/comm2_spawn_parent.c
 share/examples_logging/cpi.c
 share/examples_logging/cpilog.c
 share/examples_logging/cpilog_pack.c
@@ -630,6 +718,11 @@ share/examples_logging/fcomm1_isr.f
 share/examples_logging/fpilog.f
 share/examples_logging/fpilog_pack.F
 share/examples_logging/iotest.c
+share/examples_logging/log_cost.c
+share/examples_logging/openmp_sendrecv.c
+share/examples_logging/pthread_allreduce.c
+share/examples_logging/pthread_sendrecv.c
+share/examples_logging/pthread_sendrecv_user.c
 share/examples_logging/srtest.c
 %%JAVA%%share/logfiles/barrier.rlog
 %%JAVA%%share/logfiles/fpilog.clog
@@ -638,6 +731,7 @@ share/examples_logging/srtest.c
 @dirrm share/examples_logging
 %%X11%%@dirrm share/examples_graphics
 @dirrm share/examples_collchk
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/www4
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www3
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www1
 %%JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/jumpshot-4/html
@@ -646,6 +740,7 @@ share/examples_logging/srtest.c
 %%PORTDOCS%%@dirrm share/doc
 @dirrm share
 @dirrm sbin
+@dirrm man/man4
 @dirrm man/man3
 @dirrm man/man1
 @dirrm man
