@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gkrellfire
-PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freenet.de/thomas-steinke/ \
 		${MASTER_SITE_LOCAL}
