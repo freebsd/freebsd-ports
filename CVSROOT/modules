@@ -5571,6 +5571,7 @@ javaview	ports/math/javaview
 javavmwrapper	ports/java/javavmwrapper
 jave6		ports/graphics/jave6
 javel		ports/java/javel
+javolution	ports/devel/javolution
 jaxen		ports/java/jaxen
 jaxup		ports/textproc/jaxup
 jbidwatcher	ports/misc/jbidwatcher
