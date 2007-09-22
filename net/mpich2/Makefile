@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpich2
-PORTVERSION=	1.0.5p4
-PORTREVISION=	2
+PORTVERSION=	1.0.6
 PORTEPOCH=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/	\
@@ -82,7 +81,7 @@ CONFIGURE_ARGS+=	--without-docdir --without-htmldir
 CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR} --with-htmldir=${DOCSDIR}
 .endif
 
-LIBSSO=		fmpich mpich
+LIBSSO=		fmpich mpich mpichcxx
 
 THREAD2FIX=	configure test/mpi/threads/comm/Makefile.in	\
 		test/mpi/threads/pt2pt/Makefile.in
@@ -133,13 +132,18 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${THREAD2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${LOCALBASE2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${X11BASE2FIX:S|^|${WRKSRC}/|}
+.for mp in ${MAN4}
+	${MV} ${WRKSRC}/src/mpe2/man/man4/${mp:S/4$/3/}	\
+		${WRKSRC}/src/mpe2/man/man4/${mp}
+.endfor
 
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/bin
 .for lib in ${LIBSSO}
-	${MV} ${PREFIX}/lib/lib${lib}.so ${PREFIX}/lib/lib${lib}.so.0
-	${LN} -s ${PREFIX}/lib/lib${lib}.so.0 ${PREFIX}/lib/lib${lib}.so
+	${MV} ${PREFIX}/lib/lib${lib}.so.1.1 ${PREFIX}/lib/lib${lib}.so.1
+	${LN} -sf ${PREFIX}/lib/lib${lib}.so.1 ${PREFIX}/lib/lib${lib}.so
+	${LN} -sf ${PREFIX}/lib/lib${lib}.so.1 ${PREFIX}/lib/lib${lib}.so.1.1
 .endfor
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/bin
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/bin
