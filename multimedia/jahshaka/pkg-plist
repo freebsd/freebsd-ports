@@ -133,14 +133,81 @@ lib/jahshaka/plugins/libvfxswirl.so
 %%DATADIR%%/media/models/f-16.obj
 %%DATADIR%%/media/models/face.3DS
 %%DATADIR%%/media/models/face.bmp
+%%DATADIR%%/plugins/rfxplugins/rfxcore/create_turbulence_texture_combiner_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxcore/create_turbulence_texture_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxcore/turbulence_combiner_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvblur/blur10_frag_arb_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvblur/blur10_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvblur/blur15_frag_arb_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvblur/blur15_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvblur/blur1_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvblur/blur2_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvblur/blur3_frag_arb_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvblur/blur3_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvblur/blur7_frag_arb_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvblur/blur7_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvblur/blur_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvcharcoal/charcoal_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvcolor/color_frag_arb_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvcolor/color_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvcompoundeye/fisheye_frag_arb_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvcompoundeye/fisheye_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvdiffusion/diffusion_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvdistortion/distortion_frag_arb_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvdistortion/distortion_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvedgedetect/edgedetect_frag_arb_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvedgedetect/edgedetect_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvfire/fire_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvfisheye/fisheye_frag_arb_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvfisheye/fisheye_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvflame/flame_blur_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvflame/flame_combiner_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvflame/flame_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvfog/fog_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvlighting/lighting_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvnorthernlights/northernlights_combiner_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvnorthernlights/northernlights_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvpan/pan_frag_arb_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvpan/pan_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvreflection/diffusion_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvsharpen/edgedetect_frag_arb_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvsharpen/edgedetect_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvsphere/sphere_frag_arb_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvsphere/sphere_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvswirl/swirl_frag_arb_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvswirl/swirl_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvturbulence/turbulence_combiner_frag_gpu.fp
+%%DATADIR%%/plugins/rfxplugins/rfxnvturbulence/turbulence_frag_gpu.fp
 %%DATADIR%%/scenes/animtest.jsf
 %%DATADIR%%/scenes/espn.jsf
 %%DATADIR%%/scenes/grovejet.jsf
 %%DATADIR%%/scenes/pluginz.jsf
+@dirrm %%DATADIR%%/scenes
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvturbulence
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvswirl
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvsphere
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvsharpen
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvreflection
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvpan
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvnorthernlights
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvlighting
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvfog
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvflame
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvfisheye
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvfire
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvedgedetect
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvdistortion
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvdiffusion
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvcompoundeye
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvcolor
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvcharcoal
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxnvblur
+@dirrm %%DATADIR%%/plugins/rfxplugins/rfxcore
+@dirrm %%DATADIR%%/plugins/rfxplugins
+@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/media/models
 @dirrm %%DATADIR%%/media/images
 @dirrm %%DATADIR%%/media
-@dirrm %%DATADIR%%/scenes
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/database
 @dirrm %%DATADIR%%/Pixmaps/player
