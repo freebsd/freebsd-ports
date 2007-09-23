@@ -8,11 +8,11 @@
 
 PORTNAME=	sfs
 PORTVERSION=	0.7.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security net
 MASTER_SITES=	http://www.fs.net/sfswww/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	malus.x@gmail.com
 COMMENT=	Self-Certifying File System: A secure global network file system
 
 PLIST_SUB=	SFS_VERSION=${PORTVERSION}
@@ -34,10 +34,6 @@ LIB_DEPENDS+=   gmp.7:${PORTSDIR}/math/libgmp4
 
 .if ${ARCH} != "i386"
 IGNORE=		nfsmounter component fails to execute correctly on ${ARCH} systems
-.endif
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
 .endif
 
 MAN1=	\
@@ -73,6 +69,46 @@ post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/sfssd.sh > ${WRKSRC}/sfssd.sh
 	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(C|h)" -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/template get/get/'
+
+	@${REINPLACE_CMD} -e 's/authsess::\(authsess\)/\1/' \
+		${WRKSRC}/agent/agent.h
+
+	@${REINPLACE_CMD} -e 's/\(u_int32_t val\)/\1 = 0/' \
+		${WRKSRC}/arpc/xdrmisc.C
+
+	@${REINPLACE_CMD} -e 's/\(errorbuf = \)""/\1const_cast<char *> ("")/' \
+		${WRKSRC}/async/parseopt.C
+
+	@${REINPLACE_CMD} -e 's/, \(&dummy_len\)/, (socklen_t *)\1/' \
+		${WRKSRC}/rex/connect.c
+
+	@${REINPLACE_CMD} -e 's/, \(&reslen\)/, (socklen_t *)\1/' \
+		${WRKSRC}/rex/listen.c
+
+	@${REINPLACE_CMD} -e 's/ptyclient::\(ptyclient\)/\1/' \
+		${WRKSRC}/rex/ptyd.C
+
+	@${REINPLACE_CMD} -e 's/\("ptyd"\)/const_cast<char *> (\1)/' \
+		${WRKSRC}/rex/rexd.C
+
+	@${REINPLACE_CMD} -e 's/, &sn/, (socklen_t *)\&sn/' \
+		${WRKSRC}/rex/uasync.c
+
+	@${REINPLACE_CMD} -e \
+		's/\(\\"" << cp->id << "\\"\)/const_cast<char *> (\1)/' \
+		${WRKSRC}/rpcc/gencfile.C
+
+	@${REINPLACE_CMD} -e 's/= fhextra =/=/' ${WRKSRC}/sfscd/ctlnode.C
+
+	@${REINPLACE_CMD} -e 's/\("-c"\)/const_cast<char *> (\1)/' \
+		${WRKSRC}/sfsmisc/agentmisc.C
+
+	@${REINPLACE_CMD} -e 's/\("localhost"\)/const_cast<char *> (\1)/' \
+		${WRKSRC}/sfsrwsd/client.C
+
+post-configure:
+	@${REINPLACE_CMD} -e 's/^LIBTOOL =/#LIBTOOL =/' \
+		${WRKSRC}/sfsrwcd/Makefile
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
