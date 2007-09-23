@@ -8,7 +8,7 @@
 -		CXFLAGS=$(CFLAGS) \
 -		LDFLAGS=$(LDFLAGS) \
 -		opt='$(opt) -DINLINE32' \
-+		CFLAGS+='-fomit-frame-pointer -mtune=i486 -O3 -Wall' \
++		CFLAGS+='-fomit-frame-pointer -Wall' \
 +		CXFLAGS+='$(CXXFLAGS)' \
 +		LDFLAGS='$(LDFLAGS) -lstdc++' \
 +		opt='$(opt)' \

@@ -7,6 +7,7 @@
 
 PORTNAME=	crafty
 PORTVERSION=	20.14
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/pgn/:data \
 		ftp://ftp.cis.uab.edu/pub/hyatt/documentation/:doc \
@@ -49,19 +50,11 @@ OPT=		-DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
 	       	-DRCDIR=\\\"${WITH_RCDIR}\\\" \
 		-DTBDIR=\\\"${WITH_TBDIR}\\\" \
 		-DPERSDIR=\\\"${WITH_PERSDIR}\\\"
- 
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
 OPT+=		-DINLINE32
-# XXX Someone with ASM knowledge would have to fix the Sparc.S
-.elif ${ARCH} == "sparc64"
-OPT+=		-DINLINE32
-CFLAGS+=	'$(CFLAGS) -D_REENTRANT -O3 -Wall \
-		-fomit-frame-pointer -funroll-all-loops \
-		-finline-functions -ffast-math' \
-.else
-OPT+=		-DFAST
 .endif
 
 MAKE_ENV+=	opt="${OPT}" target=${OPSYS} CXFLAGS="${CXXFLAGS}"
