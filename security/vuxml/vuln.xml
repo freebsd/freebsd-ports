@@ -474,6 +474,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>php5</name>
 	<range><lt>5.2.4</lt></range>
       </package>
+      <package>
+	<name>php4</name>
+	<range><gt>0</gt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -515,6 +519,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2007-2872</cvename>
       <cvename>CVE-2007-3378</cvename>
       <cvename>CVE-2007-3806</cvename>
       <cvename>CVE-2007-3996</cvename>
@@ -535,7 +540,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-08-30</discovery>
       <entry>2007-09-11</entry>
-      <modified>2007-09-13</modified>
+      <modified>2007-09-22</modified>
     </dates>
   </vuln>
 
