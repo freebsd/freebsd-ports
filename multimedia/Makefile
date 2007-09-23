@@ -162,6 +162,7 @@
     SUBDIR += ogmrip
     SUBDIR += ogmtools
     SUBDIR += okle
+    SUBDIR += openmovieeditor
     SUBDIR += openquicktime
     SUBDIR += oqtencoder
     SUBDIR += oqtplayer
