@@ -1,0 +1,6 @@
+bin/kevedit
+share/kevedit/kevedit.zml
+share/kevedit/kevedos.cfg
+share/kevedit/kevedos.iso
+share/kevedit/soundfx.zzm
+@dirrm share/kevedit
