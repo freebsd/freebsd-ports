@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	yasm
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.tortall.net/projects/yasm/releases/
 
@@ -31,10 +31,8 @@ CONFIGURE_ARGS+=--disable-nls
 USE_GETTEXT=	yes
 .endif
 
-.if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install-man
 MAN1=		yasm.1
 MAN7=		yasm_arch.7 yasm_dbgfmts.7 yasm_objfmts.7 yasm_parsers.7
-.endif
 
 .include <bsd.port.post.mk>
