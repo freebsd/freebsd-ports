@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutagen
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/ \
 		http://www.tortall.net/mirrors/piman-software/
