@@ -1200,6 +1200,7 @@
     SUBDIR += trac-restrictedarea
     SUBDIR += trac-robotstxt
     SUBDIR += trac-simpleticket
+    SUBDIR += trac-spam-filter
     SUBDIR += trac-tags
     SUBDIR += trac-ticketdelete
     SUBDIR += trac-tocmacro
