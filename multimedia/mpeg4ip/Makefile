@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpeg4ip
-PORTVERSION=	1.5.0.1
-PORTREVISION=	5
+PORTVERSION=	1.6
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +24,7 @@ LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
 		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2	\
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		x264.50:${PORTSDIR}/multimedia/x264
-RUN_DEPENDS=	mpeg4ip-libmp4v2>=1.5:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+RUN_DEPENDS=	mpeg4ip-libmp4v2>=1.6:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
 USE_GNOME=	gtk20
 USE_SDL=	sdl
