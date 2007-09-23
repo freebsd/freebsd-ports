@@ -1,7 +1,7 @@
-Nickleby is a window manager for those of us who live our lives inside
-xterms.  It has no menus and creates minimal window decoration.  Nickleby
-is intended for use with monitors large enough, with enough resolution, the
-user has no need for virtual desktops.
+Nickleby strives to be the most minimal window manager that is still
+comfortable to use.  It has no menus, toolbars, nor icons, and it adds
+no window decoration to client windows other than two title bars, one at
+the top of windows, and one at the bottom of windows.
 
 WWW: http://www.mammothcheese.ca/munger.html
 
