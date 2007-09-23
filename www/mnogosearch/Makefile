@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=	3.2.39
-PORTREVISION=	1
+PORTVERSION=	3.3.4
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/
 
@@ -17,7 +16,7 @@ COMMENT=	Full featured SQL-based hypertext search engine
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	lthack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -47,7 +46,10 @@ USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MNOGO_THREADS)
+.ifdef WITHOUT_MNOGO_THREADS
+CONFIGURE_ARGS+=	--disable-pthreads
+CFLAGS+=	-DCONSOLE
+.else
 CONFIGURE_ARGS+=	--enable-pthreads
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
@@ -87,7 +89,7 @@ CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 
 .if defined(WITHOUT_MNOGO_SQLITE) && !defined(WITH_MNOGO_MYSQL) && \
     !defined(WITH_MNOGO_MSQL) && !defined(WITH_MNOGO_PGSQL)
-BROKEN=	"You need to select at least one database driver"
+BROKEN=	needs at least one database driver
 .endif
 
 post-patch:
