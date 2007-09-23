@@ -21,6 +21,9 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+DEPRECATED=	This version is no longer supported by the developers
+EXPIRATION_DATE=	2007-10-31
+
 WWWDIR=		${PREFIX}/www/vtiger
 WRKSRC=		${WRKDIR}/vtiger_crm
 
