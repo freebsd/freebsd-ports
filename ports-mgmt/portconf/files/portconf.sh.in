@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/sh -f
 #
 # Copyright (c) 2006 Florent Thoumie <flz@FreeBSD.org>,
 #                    Alex Dupre <ale@FreeBSD.org>
@@ -34,8 +34,9 @@ if [ ! -r "${_conf}" ]; then
 fi
 _pwd=`pwd`
 sed '/^#/d;/^[[:space:]]*$/d' "${_conf}" | while read _line; do
-    _port=${_line%%:*}
-    if [ "${_pwd%%${_port}}" != "${_pwd}" ]; then
-	echo ${_line#*:} | sed -E 's/([A-Z0-9_]+)(=([^|]+))?/\1=\3/g;s/ *\| */|/g;s/ /%/g'
-    fi
+    for _port in ${_line%%:*}; do
+        if [ "${_pwd%%${_port}}" != "${_pwd}" ]; then
+            echo ${_line#*:} | sed -E 's/([A-Z0-9_]+)(=([^|]+))?/\1=\3/g;s/ *\| */|/g;s/ /%/g'
+        fi
+    done
 done
