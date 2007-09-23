@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- sendd/os-freebsd/sendd.orig
++++ sendd/os-freebsd/sendd
+@@ -37,8 +37,8 @@
+ 
+ name="sendd"
+ rcvar=`set_rcvar`
+-command="/usr/sbin/${name}"
+-required_files="/etc/${name}.conf"
++command="%%PREFIX%%/sbin/${name}"
++required_files="%%PREFIX%%/etc/${name}.conf"
+ 
+ load_rc_config $name
+ run_rc_command "$1"

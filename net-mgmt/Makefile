@@ -211,6 +211,7 @@
     SUBDIR += scli
     SUBDIR += scotty3
     SUBDIR += sdig
+    SUBDIR += send
     SUBDIR += sendip
     SUBDIR += sing
     SUBDIR += sipcalc
