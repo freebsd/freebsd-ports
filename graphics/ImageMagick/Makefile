@@ -7,7 +7,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.3.3-5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -266,7 +266,7 @@ PLIST_SUB+=		X11='@comment '
 .else
 CONFLICTS+=		display-[0-9]*
 CONFIGURE_ARGS+=	--with-x
-USE_XLIB=		yes
+USE_XORG=		xext xt
 PLIST_SUB+=		X11=''
 .if !defined(WITHOUT_IMAGEMAGICK_MPEG2)
 RUN_DEPENDS+=		mpeg2encode:${PORTSDIR}/multimedia/mpeg2codec
