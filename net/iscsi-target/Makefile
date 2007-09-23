@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	iscsi-target
-PORTVERSION=	20070615
+PORTVERSION=	20070908
 CATEGORIES=	net
-MASTER_SITES=	http://www.alistaircrooks.co.uk/src/ \
+MASTER_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/ \
                 http://www.magnesium.net/~mdf/distfiles/
 DISTNAME=	netbsd-iscsi-${PORTVERSION}
 
