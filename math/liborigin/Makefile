@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	liborigin
-PORTVERSION=	20070529
+PORTVERSION=	20070821
 CATEGORIES=	math
 MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-2007-08-21
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	Tools for importing OriginLab .OPJ files
+
+CONFLICTS=	LabPlot-[0-9]*
 
 PLIST_FILES=	bin/opj2dat \
 		include/OPJFile.h \
@@ -19,12 +22,17 @@ PLIST_FILES=	bin/opj2dat \
 		lib/liborigin.so.0
 
 USE_LDCONFIG=	yes
-WRKSRC=	${WRKDIR}/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|g++|${CXX}|; \
+		s|^\(CFLAGS.*=\)|\1${CXXFLAGS} |' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/opj2dat ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/OPJFile.h ${PREFIX}/include/
-	${INSTALL_PROGRAM} ${WRKSRC}/liborigin.so ${PREFIX}/lib/liborigin.so.0
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/liborigin.so.0.0.3 ${PREFIX}/lib/liborigin.so.0
 	${LN} -fs ${PREFIX}/lib/liborigin.so.0 ${PREFIX}/lib/liborigin.so
 
 .include <bsd.port.mk>
