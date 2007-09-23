@@ -1588,6 +1588,7 @@ crack		ports/security/crack
 crack-attack	ports/games/crack-attack
 cracklib	ports/security/cracklib
 crafty		ports/games/crafty
+crafty-open-enormous	ports/games/crafty-open-enormous
 crafty-open-large	ports/games/crafty-open-large
 crafty-open-medium	ports/games/crafty-open-medium
 crafty-tablebase-no-pawn	ports/games/crafty-tablebase-no-pawn
