@@ -1,0 +1,21 @@
+-------------------------------------------------------------------------------
+IMPORTANT! MAKE SURE TO READ THE FOLLOWING!
+
+To enable yate_enable="YES" in your /etc/rc.conf file.  It'll also start
+the yate sever automatically when the system is started.
+
+To manually start the yate server run (as root):
+
+# %%PREFIX%%/etc/rc.d/yate start
+
+To manually stop it:
+
+# %%PREFIX%%/etc/rc.d/yate stop
+
+Please note that it is still a "work in progress", so your bug reports
+are welcome and will help to improve quality of this software.
+
+NOTE: Please read %%PREFIX%%/shere/doc/yate/README.too on a version of
+Sangoma driver for FreeBSD OS that supports Asterisk/Zaptel interface
+(AFT-A101/A102/A104 cards Only)
+-------------------------------------------------------------------------------

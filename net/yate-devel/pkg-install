@@ -1,0 +1,35 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+if [ "$2" != "PRE-INSTALL" ]; then
+	exit 0
+fi
+
+YATE_USER=yate
+YATE_GROUP=${YATE_USER}
+YATE_UID=204
+YATE_GID=${YATE_UID}
+
+if ! pw groupshow "${YATE_GROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${YATE_GROUP} -g ${YATE_GID}; then
+		echo "Added group \"${YATE_GROUP}\"."
+	else
+		echo "Adding group \"${YATE_GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+if ! pw usershow "${YATE_USER}" 2>/dev/null 1>&2; then
+	if pw useradd ${YATE_USER} -u ${YATE_UID} -g ${YATE_GROUP} -h - \
+		-s "/sbin/nologin" -d "/nonexistent" \
+		-c "Yate Telephoney Server"; \
+	then
+		echo "Added user \"${YATE_USER}\"."
+	else
+		echo "Adding user \"${YATE_USER}\" failed..."
+		exit 1
+	fi
+fi
+
+exit 0

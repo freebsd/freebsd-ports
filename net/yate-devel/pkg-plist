@@ -1,0 +1,132 @@
+%%WITH_X11%%bin/yate-gtk2
+etc/yate/accfile.conf
+etc/yate/callgen.conf
+etc/yate/cdrbuild.conf
+etc/yate/cdrfile.conf
+etc/yate/dbpbx.conf
+etc/yate/dsoundchan.conf
+etc/yate/enumroute.conf
+etc/yate/extmodule.conf
+etc/yate/gtk2client.conf
+etc/yate/h323chan.conf
+etc/yate/moh.conf
+etc/yate/mysqldb.conf
+etc/yate/pbxassist.conf
+etc/yate/pgsqldb.conf
+etc/yate/providers.conf
+etc/yate/regexroute.conf
+etc/yate/regfile.conf
+etc/yate/register.conf
+etc/yate/rmanager.conf
+etc/yate/sipfeatures.conf
+etc/yate/wpchan.conf
+etc/yate/yate-gtk2.conf
+etc/yate/yate.conf
+etc/yate/yiaxchan.conf
+etc/yate/yjinglechan.conf
+etc/yate/yradius.conf
+etc/yate/yrtpchan.conf
+etc/yate/ysipchan.conf
+etc/yate/ystunchan.conf
+etc/yate/zapchan.conf
+include/yate/yatecbase.h
+include/yate/yateclass.h
+include/yate/yatemime.h
+include/yate/yatengine.h
+include/yate/yatephone.h
+include/yate/yateversn.h
+lib/libyate.so
+lib/libyate.so.1.2.0
+%%WITH_X11%%lib/menu/yate-gtk2.menu
+libdata/pkgconfig/yate.pc
+lib/yate/modules/help/0.yhlp
+lib/yate/modules/help/1.yhlp
+lib/yate/modules/help/2.yhlp
+lib/yate/modules/help/3.yhlp
+lib/yate/modules/help/4.yhlp
+lib/yate/modules/help/99.yhlp
+lib/yate/modules/skin/default/gtk2client.rc
+lib/yate/modules/skin/default/gtk2client.ui
+lib/yate/modules/skin/default/skin.png
+lib/yate/modules/skin/default/skin_g.png
+lib/yate/modules/skin/default/skin_h.png
+lib/yate/modules/skin/default/skin_n.png
+lib/yate/modules/skin/default/skin_p.png
+lib/yate/modules/skin/tabbed/book.png
+lib/yate/modules/skin/tabbed/close.png
+lib/yate/modules/skin/tabbed/configure.png
+lib/yate/modules/skin/tabbed/down.png
+lib/yate/modules/skin/tabbed/gtk2client.rc
+lib/yate/modules/skin/tabbed/gtk2client.ui
+lib/yate/modules/skin/tabbed/ok.png
+lib/yate/modules/skin/tabbed/phone.png
+lib/yate/modules/skin/tabbed/quest.png
+lib/yate/modules/skin/tabbed/up.png
+lib/yate/modules/skin/tabbed/user.png
+lib/yate/modules/accfile.yate
+lib/yate/modules/analyzer.yate
+lib/yate/modules/callfork.yate
+lib/yate/modules/callgen.yate
+lib/yate/modules/cdrbuild.yate
+lib/yate/modules/cdrfile.yate
+lib/yate/modules/conference.yate
+lib/yate/modules/dbpbx.yate
+lib/yate/modules/dumbchan.yate
+lib/yate/modules/enumroute.yate
+lib/yate/modules/extmodule.yate
+%%WITH_FAX%%lib/yate/modules/faxchan.yate
+lib/yate/modules/gsmcodec.yate
+%%WITH_H323%%lib/yate/modules/h323chan.yate
+lib/yate/modules/ilbccodec.yate
+lib/yate/modules/moh.yate
+lib/yate/modules/msgsniff.yate
+%%WITH_MYSQL%%lib/yate/modules/mysqldb.yate
+lib/yate/modules/park.yate
+lib/yate/modules/pbx.yate
+lib/yate/modules/pbxassist.yate
+%%WITH_PGSQL%%lib/yate/modules/pgsqldb.yate
+lib/yate/modules/queues.yate
+lib/yate/modules/randcall.yate
+lib/yate/modules/regexroute.yate
+lib/yate/modules/regfile.yate
+lib/yate/modules/register.yate
+lib/yate/modules/rmanager.yate
+lib/yate/modules/sipfeatures.yate
+lib/yate/modules/speexcodec.yate
+lib/yate/modules/tonedetect.yate
+lib/yate/modules/tonegen.yate
+lib/yate/modules/wavefile.yate
+lib/yate/modules/yiaxchan.yate
+lib/yate/modules/yjinglechan.yate
+lib/yate/modules/yradius.yate
+lib/yate/modules/yrtpchan.yate
+lib/yate/modules/ysipchan.yate
+lib/yate/modules/ystunchan.yate
+%%WITH_ZAPTEL%%lib/yate/modules/zapchan.yate
+lib/yate/scripts/Yate.pm
+lib/yate/scripts/leavemail.php
+lib/yate/scripts/libvoicemail.php
+lib/yate/scripts/libyate.php
+lib/yate/scripts/libyate.py
+lib/yate/scripts/libyatechan.php
+lib/yate/scripts/route.php
+lib/yate/scripts/voicemail.php
+sbin/yate
+sbin/yate-config
+%%WITH_X11%%share/applications/yate-gtk2.desktop
+share/doc/yate/COPYING
+share/doc/yate/ChangeLog
+share/doc/yate/README
+share/doc/yate/README.too
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
+@dirrm lib/yate/scripts
+@dirrm lib/yate/modules/skin/tabbed
+@dirrm lib/yate/modules/skin/default
+@dirrm lib/yate/modules/skin
+@dirrm lib/yate/modules/help
+@dirrm lib/yate/modules
+@dirrm lib/yate
+%%WITH_X11%%@dirrm lib/menu
+@dirrm include/yate
+@dirrm etc/yate

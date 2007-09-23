@@ -1,0 +1,11 @@
+--- modules/help/Makefile.in.orig	Wed Dec 13 09:44:44 2006
++++ modules/help/Makefile.in	Wed Dec 13 09:44:50 2006
+@@ -23,7 +23,7 @@
+ 	@lst="`cd @srcdir@; ls -1 -d *.yhlp`" ; \
+ 	mkdir -p "$(DESTDIR)$(helpdir)/" && \
+ 	for i in $$lst ; do \
+-	    install -D -m 0644 "@srcdir@/$$i" "$(DESTDIR)$(helpdir)/$$i" ; \
++	    install -m 0644 "@srcdir@/$$i" "$(DESTDIR)$(helpdir)/$$i" ; \
+ 	done;
+ 
+ uninstall:
