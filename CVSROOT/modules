@@ -8554,6 +8554,7 @@ openlldp	ports/net-mgmt/openlldp
 openmap		ports/astro/openmap
 openmcu		ports/net/openmcu
 openmortal	ports/games/openmortal
+openmovieeditor	ports/multimedia/openmovieeditor
 openmpi		ports/net/openmpi
 openmsx		ports/emulators/openmsx
 opennap		ports/net-p2p/opennap
