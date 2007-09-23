@@ -36,6 +36,7 @@
     SUBDIR += eclipse-langpack
     SUBDIR += eclipse-log4e
     SUBDIR += eclipse-lomboz
+    SUBDIR += eclipse-ocl
     SUBDIR += eclipse-pmd
     SUBDIR += eclipse-quantum
     SUBDIR += eclipse-sqlexplorer
