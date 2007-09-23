@@ -18,12 +18,8 @@ CONFIGURE_ARGS=	--enable-shared=yes
 USE_AUTOTOOLS=	autoconf:259 automake:19:env libtool:15
 USE_LDCONFIG=	yes
 
-BROKEN=		Does not compile
-
-post-patch: .SILENT
-.for f in config.guess config.sub depcomp install-sh missing
-	${LN} -sf ${LOCALBASE}/share/automake-1.9/${f} ${WRKSRC}/config/${f}
-.endfor
+pre-configure:
+	cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog && ${AUTORECONF} -i
 	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g; \
 		s|-O3[^I]*|${CXXFLAGS} -|; s|$$(prefix)/doc|$$(datadir)/doc|; \
@@ -37,8 +33,5 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's| install-pkgdocDATA$$||' \
 		${WRKSRC}/Makefile.in
 .endif
-
-post-configure:
-	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
