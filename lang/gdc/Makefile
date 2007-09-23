@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdc
-PORTVERSION=	0.23
-PORTREVISION=	1
+PORTVERSION=	0.24
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/dgcc/g:S/$/:gdc/g}
@@ -48,9 +47,9 @@ GDC_INC=	${PREFIX}/include/d/${GCC_VERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500039
-# GDC required g++ version on the system of 3.x 4.0.1 and later.
-IGNORE=		it is supported on FreeBSD 5.x and later
+.if ${OSVERSION} < 502126
+# GDC required g++ version on the system of 3.4.x 4.0.1 and later.
+IGNORE=		it is supported on FreeBSD 5.3-R and later
 .endif
 
 .ifndef TARGET_GCC
@@ -65,9 +64,9 @@ TARGET_GCC=	3.4
 
 .if ${TARGET_GCC} == 4.1
 GCC_VERSION=	4.1.3
-GCC_REVISION=	20070312
+GCC_REVISION=	20070910
 GCC_VERSIONSTRING=	4.1-${GCC_REVISION}
-GCC_MASTER_SITE_SUBDIR=	snapshots/gcc-${GCC_VERSIONSTRING}
+GCC_MASTER_SITE_SUBDIR=	snapshots/${GCC_VERSIONSTRING}
 .elif ${TARGET_GCC} == 4.0
 GCC_VERSION=	4.0.4
 GCC_VERSIONSTRING=	${GCC_VERSION}
