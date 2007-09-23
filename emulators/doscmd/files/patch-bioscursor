@@ -1,0 +1,114 @@
+--- /usr/ports/emulators/doscmd/work/doscmd-20040330/tty.c	Mon May  1 18:38:07 2006
++++ tty.c	Mon May  1 18:38:51 2006
+@@ -125,6 +125,7 @@
+ #define	row (CursRow0)
+ #define	col (CursCol0)
+ 
++
+ /* Local functions */
+ static void	_kbd_event(int, int, void *, regcontext_t *);
+ static void	Failure(void *);
+@@ -1427,7 +1428,9 @@
+ tty_move(int r, int c)
+ {
+ 	row = r;
++	BIOS_CursRow0 = r;
+ 	col = c;
++	BIOS_CursCol0 = c;
+ 	SetVREGCur();
+ }
+ 
+@@ -1459,6 +1462,7 @@
+ 				vmem[(height - 1) * width + i] = vattr | ' ';
+ 		}
+ 	}
++	BIOS_CursRow0 = row;	/* Sync back with row */
+ 	SetVREGCur();
+ }
+ 
+@@ -1489,21 +1493,27 @@
+ 	case 0x08:
+ 		if (row > (height - 1) || col > width)
+ 			break;
+-		if (col > 0)
++		if (col > 0) {
+ 			--col;
++			BIOS_CursCol0 = col;
++		}
+ 		vmem[row * width + col] &= 0xff00;
+ 		break;
+ 	case '\t':
+-		if (row > (height - 1))
++		if (row > (height - 1)) {
+ 			row = 0;
++			BIOS_CursRow0 = 0;
++		}
+ 		col = (col + 8) & ~0x07;
+ 		if (col > width) {
+ 			col = 0;
+ 			tty_index(1);
+ 		}
++		BIOS_CursCol0 = col;
+ 		break;
+ 	case '\r':
+ 		col = 0;
++		BIOS_CursCol0 = col;
+ 		break;
+ 	case '\n':
+ 		tty_index(1);
+@@ -1511,10 +1521,13 @@
+ 	default:
+ 		if (col >= width) {
+ 			col = 0;
++			BIOS_CursCol0 = 0;
+ 			tty_index(1);
+ 		}
+-		if (row > (height - 1))
++		if (row > (height - 1)) {
+ 			row = 0;
++			BIOS_CursRow0 = 0;
++		}
+ 		if (attr >= 0)
+ 			vmem[row * width + col] = attr & 0xff00;
+ 		else
+@@ -1554,7 +1567,9 @@
+ 	vmem[row * width + col++] |= c;
+     }
+     row = srow;
++    BIOS_CursRow0 = srow;
+     col = scol;
++    BIOS_CursCol0 = scol;
+     SetVREGCur();
+ }
+ 
+@@ -1582,7 +1597,9 @@
+ 	col++;
+     }
+     row = srow;
++    BIOS_CursRow0 = srow;
+     col = scol;
++    BIOS_CursCol0 = scol;
+     SetVREGCur();
+ 
+     return;
+--- /home/admin/doscmd-20040330/video.c	Mon May  1 17:41:16 2006
++++ video.c	Mon May  1 18:08:12 2006
+@@ -167,14 +167,18 @@
+ 	    cp &= 0xff;
+ 	    cp |= value << 8;
+ 	    row = cp / DpyCols;
++	    BIOS_CursRow0 = row;
+ 	    col = cp % DpyCols;
++	    BIOS_CursCol0 = col;
+ 	    break;
+ 	case CRTC_CurLocLo:	/* Update cursor position in BIOS */
+ 	    cp = row * DpyCols + col;
+ 	    cp &= 0xff00;
+ 	    cp |= value;
+ 	    row = cp / DpyCols;
++	    BIOS_CursRow0 = row;
+ 	    col = cp % DpyCols;
++	    BIOS_CursCol0 = col;
+ 	    break;
+ 	default:
+ 	    debug(D_VIDEO, "VGA: outb 0x%04x, 0x%02x at index 0x%02x\n",

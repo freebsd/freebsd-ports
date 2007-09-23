@@ -1,0 +1,36 @@
+--- /usr/ports/emulators/doscmd/work/doscmd-20040330/bios.c	Mon Mar 29 16:00:00 2004
++++ bios.c	Mon May  1 18:39:31 2006
+@@ -31,6 +31,7 @@
+  */
+ 
+ #include <sys/cdefs.h>
++#include <time.h>
+ __FBSDID("$FreeBSD: projects/doscmd/bios.c,v 1.9 2002/03/07 12:52:26 obrien Exp $");
+ 
+ #include "doscmd.h"
+@@ -110,6 +111,7 @@
+ static void
+ int15(regcontext_t *REGS)
+ {
++    const struct timespec rqtp={0,1};
+     R_FLAGS &= ~PSL_C;
+ 
+     switch (R_AH) {
+@@ -119,6 +121,17 @@
+ 	break;
+     case 0x04:			/* Set ABIOS table */
+ 	R_FLAGS |= PSL_C;	/* We don't support it */
++	break;
++    case 0x10:			/* DesqView */
++	switch (R_AL) {
++	    case 0x00:		/* Give up CPU time */
++		nanosleep(&rqtp, NULL);
++		break;
++	    case 0x22:		/* Get version */
++		R_BH = 0x0a;	/* Use v2.0 for timeslice support */
++		R_BL = 0x01;
++		break;
++	}
+ 	break;
+     case 0x4f:			/* Keyboard intercept */
+ 	debug(D_TRAPS | 0x15, "BIOS: Keyboard intercept\n");

@@ -1,0 +1,317 @@
+diff -u ./debug.c /home/admin/doscmd.working/doscmd-20040330/debug.c
+--- ./debug.c	Mon Mar 29 16:00:00 2004
++++ /home/admin/doscmd.working/doscmd-20040330/debug.c	Wed May  3 13:58:35 2006
+@@ -106,7 +106,7 @@
+ 
+     dead = 1;
+ 
+-    if (xmode) {
++    if (xmode && !quietmode) {
+ 	char buf[1024];
+ 	const char *m;
+ 
+diff -u ./dos.c /home/admin/doscmd.working/doscmd-20040330/dos.c
+--- ./dos.c	Mon Mar 29 16:00:00 2004
++++ /home/admin/doscmd.working/doscmd-20040330/dos.c	Wed May  3 13:58:35 2006
+@@ -625,9 +625,12 @@
+ {
+     int		n;
+     
+-    /* XXX this is pretty bogus, actually */
+-    if (!xmode) {
+-	R_AL = 0xff;		/* no X mode, always claim data available */
++    if (quietmode && !xmode) {
++	const struct timespec rqtp={0,1};
++
++	/* In case of camping */
++	nanosleep(&rqtp, NULL);
++	R_AL = 0;
+ 	return(0);
+     }
+     /* XXX tty_peek is broken */
+diff -u ./doscmd.c /home/admin/doscmd.working/doscmd-20040330/doscmd.c
+--- ./doscmd.c	Wed May  3 14:06:55 2006
++++ /home/admin/doscmd.working/doscmd-20040330/doscmd.c	Wed May  3 13:58:35 2006
+@@ -64,6 +64,7 @@
+ int		capture_fd = -1;
+ int		dead = 0;
+ int		xmode = 0;
++int		quietmode = 0;
+ int		booting = 0;
+ int		raw_kbd = 0;
+ int		timer_disable = 0;
+@@ -226,7 +227,7 @@
+     kbd_init();
+     kbd_bios_init();
+     video_init();
+-    if (xmode)
++    if (xmode || quietmode)
+ 	mouse_init();
+     video_bios_init();
+     disk_bios_init();
+@@ -511,7 +512,7 @@
+     FILE	*fp;
+     char 	*col;
+ 
+-    while ((c = getopt(argc, argv, "234AbCc:Dd:EFGHIi:kLMOo:Pp:RrS:TtU:vVxXYz")) != -1) {
++    while ((c = getopt(argc, argv, "234AbCc:Dd:EFGHIi:kLMOo:PpQ:RrS:TtU:vVxXYz")) != -1) {
+ 	switch (c) {
+ 	case '2':
+ 	    debug_flags |= D_TRAPS2;
+@@ -620,6 +621,9 @@
+ 		define_output_port_handler(p++, outb_port);
+ 	    }
+ 	    break;
++	case 'Q':
++	    quietmode = 1;
++	    break;
+ 	case 'R':
+ 	    debug_flags |= D_REDIR;
+ 	    break;
+@@ -826,7 +830,7 @@
+ done(regcontext_t *REGS, int val)
+ {
+     if (curpsp < 2) {
+-	if (xmode) {
++	if (xmode && !quietmode) {
+ 	    const char *m;
+ 
+ 	    tty_move(24, 0);
+@@ -861,7 +865,7 @@
+ 	coq = coq->next;
+ 	c->func(c->arg);
+     }
+-    if (!xmode)		/* XXX not for bootmode */
++    if (!(xmode || quietmode))		/* XXX not for bootmode */
+ 	puts("\n");
+     exit(status);
+ }
+diff -u ./doscmd.h /home/admin/doscmd.working/doscmd-20040330/doscmd.h
+--- ./doscmd.h	Wed May  3 14:06:55 2006
++++ /home/admin/doscmd.working/doscmd-20040330/doscmd.h	Wed May  3 13:58:35 2006
+@@ -175,6 +175,7 @@
+ extern int		capture_fd;
+ extern int		dead;
+ extern int		xmode;
++extern int		quietmode;
+ extern int		booting;
+ extern int		raw_kbd;
+ extern int		timer_disable;
+diff -u ./int10.c /home/admin/doscmd.working/doscmd-20040330/int10.c
+--- ./int10.c	Mon Mar 29 16:00:00 2004
++++ /home/admin/doscmd.working/doscmd-20040330/int10.c	Wed May  3 13:58:35 2006
+@@ -57,7 +57,7 @@
+ 
+ 	switch (R_AH) {
+ 	case 0x00:		/* Set display mode */
+-		if (!xmode)
++		if (!(xmode || quietmode))
+ 			goto unsupported;
+ 		init_mode(R_AL);
+ 		break;
+@@ -94,12 +94,12 @@
+ 		break;
+ 	}
+ 	case 0x02:		/* Position cursor */
+-		if (!xmode)
++		if (!(xmode || quietmode))
+ 			goto unsupported;
+ 		tty_move(R_DH, R_DL);
+ 		break;
+ 	case 0x03:		/* Read cursor position */
+-		if (!xmode)
++		if (!(xmode || quietmode))
+ 			goto unsupported;
+ 		tty_report(&i, &j);
+ 		R_DH = i;
+@@ -111,7 +111,7 @@
+ 		debug(D_VIDEO, "Select current display page %d\n", R_AL);
+ 		break;
+ 	case 0x06:		/* initialize window/scroll text upward */
+-		if (!xmode)
++		if (!(xmode || quietmode))
+ 			goto unsupported;
+ 		if (R_AL == 0)		/* clear screen */
+ 			R_AL = DpyRows + 1;
+@@ -120,7 +120,7 @@
+ 		    R_AL, R_BH << 8);
+ 		break;
+ 	case 0x07:		/* initialize window/scroll text downward */
+-		if (!xmode)
++		if (!(xmode || quietmode))
+ 			goto unsupported;
+ 		if (R_AL == 0)		/* clear screen */
+ 			R_AL = DpyRows + 1;
+@@ -129,24 +129,24 @@
+ 		    R_AL, R_BH << 8);
+ 		break;
+ 	case 0x08:		/* read character/attribute */
+-		if (!xmode)
++		if (!(xmode || quietmode))
+ 			goto unsupported;
+ 		i = tty_char(-1, -1);
+ 		R_AX = i;
+ 		break;
+ 	case 0x09:		/* write character/attribute */
+-		if (!xmode)
++		if (!(xmode || quietmode))
+ 			goto unsupported;
+ 		tty_rwrite(R_CX, R_AL, R_BL << 8);
+ 		break;
+ 	case 0x0a:		/* write character */
+-		if (!xmode)
++		if (!(xmode || quietmode))
+ 			goto unsupported;
+ 		debug(D_HALF, "Int 10:0a: Write char: %02x\n", R_AL);
+ 		tty_rwrite(R_CX, R_AL, -1);
+ 		break;
+ 	case 0x0b:		/* set border color */
+-		if (!xmode)
++		if (!(xmode || quietmode))
+ 			goto unsupported;
+ 		video_setborder(R_BL);
+ 		break;
+@@ -165,7 +165,7 @@
+ 		R_BH = 0;/*ActivePage *//* display page */
+ 		break;
+ 	case 0x10:
+-		if (!xmode)
++		if (!(xmode || quietmode))
+ 			goto unsupported;
+ 		switch (R_AL) {
+ 		case 0x00:		/* Set single palette register */
+@@ -350,7 +350,7 @@
+ 		}
+ 		break;
+ 	case 0x12:		/* Alternate function select */
+-		if (!xmode)
++		if (!(xmode || quietmode))
+ 			goto unsupported;
+ 		switch (R_BL) {
+ 		case 0x10:	/* Read EGA/VGA config */
+@@ -372,7 +372,7 @@
+ 		}
+ 		break;
+ 	case 0x13: /* write character string */
+-		if (!xmode)
++		if (!(xmode || quietmode))
+ 			goto unsupported;
+                 addr = (char *)MAKEPTR(R_ES, R_BP);
+ 		switch (R_AL & 0x03) {
+@@ -407,7 +407,7 @@
+ 		}
+ 		break;
+ 	case 0x1a:
+-		if (!xmode)
++		if (!(xmode || quietmode))
+ 			goto unsupported;
+ 		R_AL = 0x1a;		/* I am VGA */
+ 		R_BL = 8;		/* Color VGA */
+diff -u ./int16.c /home/admin/doscmd.working/doscmd-20040330/int16.c
+--- ./int16.c	Mon Mar 29 16:00:00 2004
++++ /home/admin/doscmd.working/doscmd-20040330/int16.c	Wed May  3 13:58:35 2006
+@@ -78,7 +78,7 @@
+ void
+ int16(regcontext_t *REGS)
+ {               
+-    if (!xmode && !raw_kbd) {
++    if (!(xmode || raw_kbd || quietmode)) {
+ 	if (vflag) dump_regs(REGS);
+ 	fatal ("int16 func 0x%x only supported in X mode\n", R_AH);
+     }
+diff -u ./tty.c /home/admin/doscmd.working/doscmd-20040330/tty.c
+--- ./tty.c	Wed May  3 14:06:55 2006
++++ /home/admin/doscmd.working/doscmd-20040330/tty.c	Wed May  3 13:58:35 2006
+@@ -34,6 +34,7 @@
+ __FBSDID("$FreeBSD: projects/doscmd/tty.c,v 1.25 2002/04/12 21:18:05 charnier Exp $");
+ 
+ #include <sys/ioctl.h>
++#include <sys/select.h>
+ #include <sys/time.h>
+ #include <sys/types.h>
+ #include <sys/mman.h>
+@@ -1471,7 +1472,8 @@
+ {
+     	if (attr == TTYF_REDIRECT) {
+ 		if (redirect1) {
+-		    write(1, &c, 1);
++		    if(!quietmode)
++			write(1, &c, 1);
+ 		    return;
+ 		}
+ 		attr = -1;
+@@ -1487,8 +1489,10 @@
+ #ifndef NO_X
+ 			XBell(dpy, 0);
+ #endif
+-		} else
++		} else {
++		    if(!quietmode)
+ 			write(1, "\007", 1);
++		}
+ 		break;
+ 	case 0x08:
+ 		if (row > (height - 1) || col > width)
+@@ -1658,20 +1662,14 @@
+ {
+     int r;
+ 
++    if(quietmode && !xmode)
++	return(0);
++
+     if ((r = nextchar) != 0) {
+ 	nextchar = 0;
+ 	return(r & 0xff);
+     }
+ 
+-    if ((flag & TTYF_REDIRECT) && redirect0) {
+-	char c;
+-    	if (read(STDIN_FILENO, &c, 1) != 1)
+-	    return(-1);
+-	if (c == '\n')
+-	    c = '\r';
+-	return(c);
+-    }
+-
+     if (KbdEmpty()) {
+ 	if (flag & TTYF_BLOCK) {
+ 	    while (KbdEmpty())
+@@ -1858,6 +1856,22 @@
+ int
+ KbdEmpty()
+ {
++	if(!xmode) {
++	    fd_set rd;
++	    struct timeval tv;
++
++	    FD_ZERO(&rd);
++	    FD_SET(STDIN_FILENO, &rd);
++	    tv.tv_sec=0;
++	    tv.tv_usec=0;
++	    if(select(STDIN_FILENO+1, &rd, NULL, NULL, &tv)==1) {
++		char ch=0;
++		read(STDIN_FILENO, &ch, 1);
++		if(ch == '\n')
++			ch = '\r';
++		KbdWrite(ch);
++	    }
++	}
+ 	return(K_NEXT == K_FREE);
+ }
+ 
+diff -u ./video.c /home/admin/doscmd.working/doscmd-20040330/video.c
+--- ./video.c	Wed May  3 14:06:55 2006
++++ /home/admin/doscmd.working/doscmd-20040330/video.c	Wed May  3 13:58:35 2006
+@@ -276,9 +276,9 @@
+ 	define_output_port_handler(GDC_DataPort, video_outb);
+     }
+ 	
+-    redirect0 = isatty(0) == 0 || !xmode ;
+-    redirect1 = isatty(1) == 0 || !xmode ;
+-    redirect2 = isatty(2) == 0 || !xmode ;
++    redirect0 = isatty(0) == 0 || !(xmode || quietmode);
++    redirect1 = isatty(1) == 0 || !(xmode || quietmode);
++    redirect2 = isatty(2) == 0 || !(xmode || quietmode);
+ 
+     return;
+ }

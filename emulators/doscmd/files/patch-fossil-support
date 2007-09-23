@@ -1,0 +1,409 @@
+diff -u /root/doscmd-20040330/bios.c ./bios.c
+--- /root/doscmd-20040330/bios.c	Fri May  5 19:34:31 2006
++++ ./bios.c	Fri May  5 19:39:27 2006
+@@ -297,7 +297,10 @@
+     ivec[0x12] = vec;
+     register_callback(vec, int12, "int 12");
+ 
+-    vec = insert_softint_trampoline();
++    if(fossil)
++	vec = insert_fossil_softint_trampoline();
++    else
++	vec = insert_softint_trampoline();
+     ivec[0x14] = vec;
+     register_callback(vec, int14, "int 14");
+ 
+diff -u /root/doscmd-20040330/callback.c ./callback.c
+--- /root/doscmd-20040330/callback.c	Fri May  5 19:34:31 2006
++++ ./callback.c	Fri May  5 19:39:27 2006
+@@ -76,6 +76,25 @@
+     2,
+     0,
+ };
++/*
++ * From the FOSSIL spec:
++ * The driver has a "signature" that can be used to determine whether it is
++ * present in memory. At offset 6 in the INT 14h service routine is a word,
++ * 1954h,  followed  by a  byte that  specifies the maximum function number
++ * supported by the driver. This is to make it possible to determine when a
++ * driver is present and what level of functionality it provides.
++ */
++u_char fossil_softint_trampoline[] = {
++    0xf4,	/* HLT */
++    0xfb,	/* STI */
++    0xca,	/* RETF 2 */
++    2,
++    0,
++    0,
++    0x54,
++    0x19,
++    0x1b,	/* Max. Supported FOSSIL AH */
++};
+ u_char hardint_trampoline[] = {
+     0xf4,	/* HLT */
+     0xcf,	/* IRET */
+@@ -102,6 +121,13 @@
+ {
+     return (insert_generic_trampoline(
+ 	sizeof(softint_trampoline), softint_trampoline));
++}
++
++u_long
++insert_fossil_softint_trampoline(void)
++{
++    return (insert_generic_trampoline(
++	sizeof(fossil_softint_trampoline), fossil_softint_trampoline));
+ }
+ 
+ u_long
+diff -u /root/doscmd-20040330/callback.h ./callback.h
+--- /root/doscmd-20040330/callback.h	Fri May  5 19:34:31 2006
++++ ./callback.h	Fri May  5 19:39:27 2006
+@@ -9,5 +9,6 @@
+ callback_t	find_callback(u_long);
+ u_long		insert_generic_trampoline(size_t, u_char *);
+ u_long		insert_softint_trampoline(void);
++u_long		insert_fossil_softint_trampoline(void);
+ u_long		insert_hardint_trampoline(void);
+ u_long		insert_null_trampoline(void);
+diff -u /root/doscmd-20040330/doscmd.c ./doscmd.c
+--- /root/doscmd-20040330/doscmd.c	Fri May  5 19:34:31 2006
++++ ./doscmd.c	Fri May  5 19:39:27 2006
+@@ -511,7 +511,7 @@
+     FILE	*fp;
+     char 	*col;
+ 
+-    while ((c = getopt(argc, argv, "234AbCc:Dd:EGHIi:kLMOo:Pp:RrS:TtU:vVxXYz")) != -1) {
++    while ((c = getopt(argc, argv, "234AbCc:Dd:EFGHIi:kLMOo:Pp:RrS:TtU:vVxXYz")) != -1) {
+ 	switch (c) {
+ 	case '2':
+ 	    debug_flags |= D_TRAPS2;
+@@ -551,6 +551,9 @@
+ 	    break;
+ 	case 'E':
+ 	    debug_flags |= D_EXEC;
++	    break;
++	case 'F':
++	    fossil = 1;
+ 	    break;
+ 	case 'G':
+ 	    debug_flags |= D_VIDEO;
+diff -u /root/doscmd-20040330/doscmd.h ./doscmd.h
+--- /root/doscmd-20040330/doscmd.h	Fri May  5 19:34:31 2006
++++ ./doscmd.h	Fri May  5 19:39:27 2006
+@@ -224,6 +224,9 @@
+ extern int	search_floppy(int i);
+ extern void	disk_bios_init(void);
+ 
++/* int14.c */
++extern int	fossil;
++
+ /* int16.c */
+ void	int16(regcontext_t *);
+ 
+diff -u /root/doscmd-20040330/int14.c ./int14.c
+--- /root/doscmd-20040330/int14.c	Fri May  5 19:34:31 2006
++++ ./int14.c	Fri May  5 20:23:09 2006
+@@ -46,6 +46,9 @@
+ #include "AsyncIO.h"
+ #include "com.h"
+ 
++/* exports */
++int fossil = 0;
++
+ #define N_BYTES	1024
+ 
+ struct com_data_struct {
+@@ -58,7 +61,9 @@
+ 	int		ids;            /* input data size */
+ 	int		ods;            /* output data size */
+ 	int		emptyint;
++	int		fossil_mode;	/* FOSSIL has been enabled */
+ 	struct termios	tty;
++	unsigned char	param;		/* Copy of init params */
+ 	unsigned char	div_latch[2];	/* mirror of 16550 R0':R1'
+ 					   read/write */
+ 	unsigned char	int_enable;	/* mirror of 16550 R1 read/write */
+@@ -257,7 +262,7 @@
+     struct com_data_struct *cdsp;
+     int i;
+ 
+-    debug(D_PORT, "int14: dl = 0x%02X, al = 0x%02X.\n", R_DL, R_AL);
++    debug(D_PORT, "int14: ah = 0x%02X, dl = 0x%02X, al = 0x%02X.\n", R_AH, R_DL, R_AL);
+     if (R_DL >= N_COMS_MAX) {
+ 	if (vflag)
+ 	    dump_regs(REGS);
+@@ -269,16 +274,31 @@
+     case 0x00:	/* Initialize Serial Port */
+ 	com_set_line(cdsp, R_DL + 1, R_AL);
+ 	R_AH = get_status(cdsp);
+-	R_AL = 0;
++	if (cdsp->fossil_mode) {
++	    R_AL = 0x08;
++	    R_AL |= 0x80;
++	}
++	else
++	    R_AL = 0;
+ 	break;
+ 
+     case 0x01:	/* Write Character */
+     	if (write_char(cdsp, R_AL)) {
+-		R_AH = get_status(cdsp);
++	    R_AH = get_status(cdsp);
++	    if (cdsp->fossil_mode) {
++		R_AL = 0x08;
++		R_AL |= 0x80;
++	    }
++	    else
+ 		R_AL = 0;
+ 	} else {
+-		debug(D_PORT, "int14: lost output character 0x%02x\n", R_AL);
+-		R_AH = LS_SW_TIME_OUT;
++	    debug(D_PORT, "int14: lost output character 0x%02x\n", R_AL);
++	    R_AH = LS_SW_TIME_OUT;
++	    if (cdsp->fossil_mode) {
++		R_AL = 0x08;
++		R_AL |= 0x80;
++	    }
++	    else
+ 		R_AL = 0;
+ 	}
+ 	break;
+@@ -296,28 +316,193 @@
+ 
+     case 0x03:	/* Status Request */
+ 	R_AH = get_status(cdsp);
+-	R_AL = 0;
++	if (cdsp->fossil_mode) {
++	    R_AL = 0x08;
++	    R_AL |= 0x80;
++	}
++	else
++	    R_AL = 0;
+ 	break;
+ 
+     case 0x04:	/* Extended Initialization */
+-	R_AX = (LS_SW_TIME_OUT) << 8;
++	if (fossil) {
++	    cdsp->fossil_mode = 1;
++	    R_AX = 0x1954;
++	    R_BL = 0x1b;	/* Max supported FOSSIL AH */
++	    R_BH = 5;
++	}
++	else
++	    R_AX = (LS_SW_TIME_OUT) << 8;
+ 	break;
+ 
+-    case 0x05:	/* Modem Control Register operations */
+-	switch (R_AH) {
+-	case 0x00:	/* Read Modem Control Register */
++    case 0x05:	/* Modem Control Register operations/FOSSIL deinit */
++	if (fossil && cdsp->fossil_mode)
++	    cdsp->fossil_mode = 0;
++	else {
++	    switch (R_AH) {
++	    case 0x00:	/* Read Modem Control Register */
+ 		R_AX = (LS_SW_TIME_OUT) << 8;
+ 		break;
+ 
+-	case 0x01:	/* Write Modem Control Register */
++	    case 0x01:	/* Write Modem Control Register */
+ 		R_AX = (LS_SW_TIME_OUT) << 8;
+ 		break;
+ 
+-	default:
++	    default:
+ 		unknown_int3(0x14, 0x05, R_AL, REGS);
+ 		break;
++	    }
+ 	}
+ 	break;
++
++    case 0x06:	/* FOSSIL raise/lower DTR */
++	if(cdsp->fossil_mode) {
++	    switch (R_AL) {
++	    case 0:
++		ioctl(cdsp->fd, TIOCCDTR);
++		break;
++	    case 1:
++		ioctl(cdsp->fd, TIOCSDTR);
++		break;
++	    }
++	    break;
++	}
++
++    case 0x08:	/* FOSSIL Flush output buffer */
++	if(cdsp->fossil_mode) {
++	    flush_out(cdsp);
++	    break;
++	}
++
++    case 0x09:	/* FOSSIL Purge output buffer */
++	if(cdsp->fossil_mode) {
++	    cdsp->ods = 0;
++	    break;
++	}
++
++    case 0x0a:	/* FOSSIL Purge input buffer */
++	if(cdsp->fossil_mode) {
++	    cdsp->ids = 0;
++	    break;
++	}
++
++    case 0x0b:	/* FOSSIL Transmit no wait */
++	if(cdsp->fossil_mode) {
++	    if (cdsp->ods < N_BYTES) {
++		if (write_char(cdsp, R_AL))
++		    R_AX = 1;
++	        else
++		    R_AX = 0;
++	    }
++	    else
++		R_AX = 0;
++	    break;
++	}
++
++    case 0x0c:	/* FOSSIL Non-destructive read-ahead */
++	if(cdsp->fossil_mode) {
++	    if(cdsp->ods) {
++		R_AH = 0;
++		R_AL = cdsp->inbuf[0];
++	    } else
++		R_AX = 0xffff;
++	    break;
++	}
++
++    case 0x0f:	/* FOSSIL Set flow control */
++	if(cdsp->fossil_mode) {
++	    if(R_AL & 0x01)	/* Enable output Xon/Xoff */
++		cdsp->tty.c_iflag |= IXON;
++	    else
++		cdsp->tty.c_iflag &= ~(IXON);
++
++	    if(R_AL & 0x02)	/* Enable CTR/RTS */
++		cdsp->tty.c_cflag |= CCTS_OFLOW|CRTS_IFLOW;
++	    else
++		cdsp->tty.c_iflag &= ~(CCTS_OFLOW|CRTS_IFLOW);
++
++	    if(R_AL & 0x08)	/* Enable input Xon/Xoff */
++		cdsp->tty.c_iflag |= IXOFF;
++	    else
++		cdsp->tty.c_iflag &= ~(IXOFF);
++
++	    tcsetattr(cdsp->fd, 0, &cdsp->tty);
++	    break;
++	}
++
++    case 0x18:	/* FOSSIL Read block */
++	if(cdsp->fossil_mode) {
++	    int rd = R_CX;
++
++ 	    input(cdsp, 0);
++	    if(rd > cdsp->ids)
++		rd=cdsp->ids;
++	    if(rd) {
++		memmove((char *)MAKEPTR(R_ES, R_DI), cdsp->inbuf, rd);
++		if(rd < cdsp->ids)
++		    memmove(cdsp->inbuf, cdsp->inbuf + rd, N_BYTES - rd);
++		cdsp->ids -= rd;
++		R_AX = rd;
++	    } else
++		R_AX = 0;
++	    break;
++	}
++
++    case 0x19:	/* FOSSIL Write block */
++	if(cdsp->fossil_mode) {
++	    int wr = R_CX;
++	    if(wr > N_BYTES - cdsp->ods)
++		wr=N_BYTES - cdsp->ods;
++	    if(wr) {
++		memcpy(cdsp->outbuf + cdsp->ods, (char *)MAKEPTR(R_ES, R_DI), wr);
++		cdsp->ods += wr;
++		output(cdsp);
++		R_AX = wr;
++	    } else
++		R_AX = 0;
++	    break;
++	}
++
++    case 0x1a:	/* FOSSIL Break begin/end */
++	if(cdsp->fossil_mode) {
++	    switch(R_AL) {
++	    case 0:
++		ioctl(cdsp->fd, TIOCCBRK);
++		break;
++	    case 1:
++		ioctl(cdsp->fd, TIOCSBRK);
++		break;
++	    }
++	    break;
++	}
++
++    case 0x1b:	/* FOSSIL Driver information */
++	if(cdsp->fossil_mode) {
++	    unsigned char *p;
++	    int  bufpos=0;
++	    int  info_size=19;
++	    const char *id_string="doscmd FOSSIL";
++	    p = (unsigned char *)MAKEPTR(R_ES, R_DI);
++	    p[bufpos++]=info_size&0xff;
++	    p[bufpos++]=(info_size>>8)&0xff;
++	    p[bufpos++]=5;
++	    p[bufpos++]=0;
++	    PUTVEC(*(u_short *)p, *(ushort *)(p + sizeof(u_short)), (u_long)id_string);
++	    bufpos+=sizeof(u_short)*2;
++	    p[bufpos++]=N_BYTES & 0xff;
++	    p[bufpos++]=(N_BYTES>>8) & 0xff;
++	    p[bufpos++]=(N_BYTES - cdsp->ids) & 0xff;
++	    p[bufpos++]=((N_BYTES - cdsp->ids) >> 8) & 0xff;
++	    p[bufpos++]=N_BYTES & 0xff;
++	    p[bufpos++]=(N_BYTES>>8) & 0xff;
++	    p[bufpos++]=(N_BYTES - cdsp->ods) & 0xff;
++	    p[bufpos++]=((N_BYTES - cdsp->ods) >> 8) & 0xff;
++	    p[bufpos++]=80;
++	    p[bufpos++]=25;
++	    p[bufpos++]=cdsp->param & BITRATE_9600;
++	    break;
++	}
++
+     default:
+ 	unknown_int2(0x14, R_AH, REGS);
+ 	break;
+@@ -353,6 +538,7 @@
+ 	      port, cdsp->path);
+ 	return;
+     }
++    cdsp->param = param;
+     
+     cdsp->ids = cdsp->ods = cdsp->emptyint = 0;
+     cdsp->int_enable = 0;
+@@ -402,12 +588,24 @@
+     }
+     switch (param & BITRATE_9600) {
+     case BITRATE_110:
+-	speed = B110;
+-	spd = 110;
++	if (fossil) {
++	    speed = B19200;
++	    spd = 19200;
++	}
++	else {
++	    speed = B110;
++	    spd = 110;
++	}
+ 	break;
+     case BITRATE_150:
+-	speed = B150;
+-	spd = 150;
++	if (fossil) {
++	    speed = B38400;
++	    spd = 38400;
++	}
++	else {
++	    speed = B150;
++	    spd = 150;
++	}
+ 	break;
+     case BITRATE_300:
+ 	speed = B300;
