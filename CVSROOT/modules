@@ -17537,6 +17537,7 @@ yaps		ports/comms/yaps
 yarv		ports/lang/yarv
 yasm		ports/devel/yasm
 yasql		ports/databases/yasql
+yate-devel	ports/net/yate-devel
 yatex		ports/print/yatex
 yatex-mule	ports/print/yatex-mule
 yatex-xemacs	ports/print/yatex-xemacs
