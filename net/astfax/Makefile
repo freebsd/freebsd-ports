@@ -7,6 +7,7 @@
 
 PORTNAME=	astfax
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.inter7.com/astfax/
 
@@ -24,7 +25,7 @@ MAKE_ENV+=	DEFS="${CFLAGS}"
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC =|CC \?=|' \
 			  -e 's|^DEFS =|DEFS \?=|' \
-			  -e 's|\/usr\/include\/eps|${LOCALBASE}\/include|' \
+			  -e 's|\/usr\/include\/eps|${LOCALBASE}\/include\/eps|' \
 			  -e 's|^LIBS=-leps|LIBS=-leps -L${LOCALBASE}\/lib|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|"\/tmp"|"\/var\/tmp"|' \
