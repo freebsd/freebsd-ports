@@ -1,5 +1,5 @@
-www/cgi-bin/ovs.cgi
-www/data/ovs/ovs.css
+%%CGIDIR%%/ovs.cgi
+%%WWWROOT%%/ovs/ovs.css
 sbin/ovs.pl
 @dirrmtry www/cgi-bin
 @dirrmtry www/data/ovs
