@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	paq
-PORTVERSION=	8.o2
+DISTVERSION=	8o4v2
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cs.fit.edu/~mmahoney/compression/
-DISTNAME=	paq8o2
+DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	bf2006a@yahoo.com
 COMMENT=	An archiver with an extremely high compression ratio
@@ -17,14 +17,14 @@ COMMENT=	An archiver with an extremely high compression ratio
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 SUB_FILES=	pkg-message
-CPPFILE=	paq8o
+CPPFILE=	${PORTNAME}${DISTVERSION:C/v.([^\.]*)$/\1/}
 PLIST_SUB=	CPPFILE=${CPPFILE}
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_ASM) && ${ARCH} == "i386" && !defined(PACKAGE_BUILDING)
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-CXXFLAGS+=	-DUNIX -O3
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+CXXFLAGS+=	-DUNIX
 ASM1?=	nasm -f elf -o
 ASM2?=
 .if !defined(WITH_SSE)
@@ -34,15 +34,15 @@ ASMFILE=	paq7asmsse
 .endif
 STRIP=
 .elif !defined(WITHOUT_ASM) && ${ARCH} == "amd64" && !defined(PACKAGE_BUILDING)
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
-CXXFLAGS+=	-DUNIX -O3
+BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
+CXXFLAGS+=	-DUNIX
 ASM1?=	yasm -f elf64 -o
 ASM2?=	-a x86 -m amd64
 ASMFILE=	paq7asm-x86_64
 STRIP=
 .else
 WITHOUT_ASM=	yes
-CXXFLAGS+=-DUNIX -DNOASM -O3
+CXXFLAGS+=-DUNIX -DNOASM
 .endif
 
 pre-everything::
