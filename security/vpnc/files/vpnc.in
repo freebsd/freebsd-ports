@@ -20,7 +20,7 @@
 : ${vpnc_conf_dir="%%PREFIX%%/etc"}
 : ${vpnc_record="$vpnc_pid_dir/vpnc.record"}
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name="vpnc"
 rcvar=`set_rcvar`
@@ -43,9 +43,12 @@ vpnc_start() {
 		current="$vpnc_conf_dir/$config"
 
 		# Start vpnc.
-		if ! $command $current $vpnc_flags; then
-			status=$?
-			echo "Running 'vpnc $current $vpnc_flags' failed."
+		$command --local-port 0 $current $vpnc_flags
+		status=$?
+		if [ $status != 0 ]; then
+			# VPNC does not print a newline after an error.
+			echo
+			echo "Running 'vpnc $current --local-port 0 $vpnc_flags' failed."
 			return $status
 		fi
 
