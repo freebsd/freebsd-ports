@@ -2370,6 +2370,7 @@ eclipse-jad	ports/java/eclipse-jad
 eclipse-langpack	ports/java/eclipse-langpack
 eclipse-log4e	ports/java/eclipse-log4e
 eclipse-lomboz	ports/java/eclipse-lomboz
+eclipse-ocl	ports/java/eclipse-ocl
 eclipse-pmd	ports/java/eclipse-pmd
 eclipse-quantum	ports/java/eclipse-quantum
 eclipse-sqlexplorer	ports/java/eclipse-sqlexplorer
