@@ -9,34 +9,6 @@
 %%DATADIR%%/basewiki/preprocessordirective.mdwn
 %%DATADIR%%/basewiki/sandbox.mdwn
 %%DATADIR%%/basewiki/shortcuts.mdwn
-%%DATADIR%%/basewiki/smileys.mdwn
-%%DATADIR%%/basewiki/smileys/alert.png
-%%DATADIR%%/basewiki/smileys/angry.png
-%%DATADIR%%/basewiki/smileys/attention.png
-%%DATADIR%%/basewiki/smileys/biggrin.png
-%%DATADIR%%/basewiki/smileys/checkmark.png
-%%DATADIR%%/basewiki/smileys/devil.png
-%%DATADIR%%/basewiki/smileys/frown.png
-%%DATADIR%%/basewiki/smileys/icon-error.png
-%%DATADIR%%/basewiki/smileys/icon-info.png
-%%DATADIR%%/basewiki/smileys/idea.png
-%%DATADIR%%/basewiki/smileys/neutral.png
-%%DATADIR%%/basewiki/smileys/ohwell.png
-%%DATADIR%%/basewiki/smileys/prio1.png
-%%DATADIR%%/basewiki/smileys/prio2.png
-%%DATADIR%%/basewiki/smileys/prio3.png
-%%DATADIR%%/basewiki/smileys/question.png
-%%DATADIR%%/basewiki/smileys/redface.png
-%%DATADIR%%/basewiki/smileys/sad.png
-%%DATADIR%%/basewiki/smileys/smile.png
-%%DATADIR%%/basewiki/smileys/smile2.png
-%%DATADIR%%/basewiki/smileys/smile3.png
-%%DATADIR%%/basewiki/smileys/smile4.png
-%%DATADIR%%/basewiki/smileys/star_off.png
-%%DATADIR%%/basewiki/smileys/star_on.png
-%%DATADIR%%/basewiki/smileys/thumbs-up.png
-%%DATADIR%%/basewiki/smileys/tired.png
-%%DATADIR%%/basewiki/smileys/tongue.png
 %%DATADIR%%/basewiki/style.css
 %%DATADIR%%/basewiki/subpage.mdwn
 %%DATADIR%%/basewiki/subpage/linkingrules.mdwn
@@ -46,6 +18,34 @@
 %%DATADIR%%/basewiki/wikiicons/diff.png
 %%DATADIR%%/basewiki/wikiicons/openidlogin-bg.gif
 %%DATADIR%%/basewiki/wikilink.mdwn
+%%DATADIR%%/smiley/smileys.mdwn
+%%DATADIR%%/smiley/smileys/alert.png
+%%DATADIR%%/smiley/smileys/angry.png
+%%DATADIR%%/smiley/smileys/attention.png
+%%DATADIR%%/smiley/smileys/biggrin.png
+%%DATADIR%%/smiley/smileys/checkmark.png
+%%DATADIR%%/smiley/smileys/devil.png
+%%DATADIR%%/smiley/smileys/frown.png
+%%DATADIR%%/smiley/smileys/icon-error.png
+%%DATADIR%%/smiley/smileys/icon-info.png
+%%DATADIR%%/smiley/smileys/idea.png
+%%DATADIR%%/smiley/smileys/neutral.png
+%%DATADIR%%/smiley/smileys/ohwell.png
+%%DATADIR%%/smiley/smileys/prio1.png
+%%DATADIR%%/smiley/smileys/prio2.png
+%%DATADIR%%/smiley/smileys/prio3.png
+%%DATADIR%%/smiley/smileys/question.png
+%%DATADIR%%/smiley/smileys/redface.png
+%%DATADIR%%/smiley/smileys/sad.png
+%%DATADIR%%/smiley/smileys/smile.png
+%%DATADIR%%/smiley/smileys/smile2.png
+%%DATADIR%%/smiley/smileys/smile3.png
+%%DATADIR%%/smiley/smileys/smile4.png
+%%DATADIR%%/smiley/smileys/star_off.png
+%%DATADIR%%/smiley/smileys/star_on.png
+%%DATADIR%%/smiley/smileys/thumbs-up.png
+%%DATADIR%%/smiley/smileys/tired.png
+%%DATADIR%%/smiley/smileys/tongue.png
 %%DATADIR%%/templates/aggregatepost.tmpl
 %%DATADIR%%/templates/archivepage.tmpl
 %%DATADIR%%/templates/atomitem.tmpl
@@ -153,11 +153,12 @@ share/locale/vi/LC_MESSAGES/ikiwiki.mo
 @dirrm lib/ikiwiki/plugins
 @dirrm lib/ikiwiki
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IkiWiki
-@dirrm %%DATADIR%%/basewiki/smileys
 @dirrm %%DATADIR%%/basewiki/subpage
 @dirrm %%DATADIR%%/basewiki/templates
 @dirrm %%DATADIR%%/basewiki/wikiicons
 @dirrm %%DATADIR%%/basewiki
+@dirrm %%DATADIR%%/smiley/smileys
+@dirrm %%DATADIR%%/smiley
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/IkiWiki/Plugin
