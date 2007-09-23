@@ -12,6 +12,39 @@
 # $FreeBSD$
 #
 
+.if !defined(Module_inc)
+Module_inc=		done
+
+AUTH_MODULES=		auth_basic auth_digest
+AUTHN_MODULES=		authn_file authn_dbd authn_dbm authn_anon authn_default \
+			authn_alias
+AUTHZ_MODULES=		authz_host authz_groupfile authz_user authz_dbm \
+			authz_owner authz_default
+CACHE_MODULES=		cache disk_cache file_cache mem_cache
+DAV_MODULES=		dav dav_fs
+EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter \
+			log_forensic optional_hook_export optional_hook_import \
+			optional_fn_import optional_fn_export 
+LDAP_MODULES=		ldap authnz_ldap
+MISC_MODULES+=		actions alias asis autoindex cern_meta \
+			cgi charset_lite dbd deflate dir dumpio env expires \
+			headers imagemap include info log_config logio mime \
+			mime_magic negotiation rewrite setenvif speling status \
+			unique_id userdir usertrack vhost_alias filter version
+PROXY_MODULES=		proxy proxy_connect proxy_ftp proxy_http proxy_ajp proxy_balancer
+SSL_MODULES=		ssl
+SUEXEC_MODULES=		suexec
+THREADS_MODULES=	cgid
+
+DEFAULT_MODULES_CATEGORIES= \
+			AUTH AUTHN AUTHZ DAV CACHE MISC
+
+ALL_MODULES_CATEGORIES=	AUTH AUTHN AUTHZ CACHE DAV EXPERIMENTAL LDAP \
+			MISC PROXY SSL SUEXEC THREADS
+
+.endif
+
+.if defined(_PREMKINCLUDED)
 # MPM section:
 # << TO BE WRITTEN >>
 .if defined (SLAVE_PORT_MPM)
@@ -130,6 +163,9 @@ CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 
 .if !defined(WITH_THREADS)
 WITHOUT_MODULES+=	mem_cache
+.if !defined(WITHOUT_APACHE_OPTIONS) && defined(WITH_MEM_CACHE)
+IGNORE+=	mod_mem_cache requires WITH_THREADS
+.endif
 .else
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
@@ -137,31 +173,8 @@ LDFLAGS+=	${PTHREAD_LIBS}
 
 .if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
 WITHOUT_MODULES+=	authn_dbd dbd
+.if !defined(WITHOUT_APACHE_OPTIONS) && (defined(WITH_DBD) || defined(WITH_AUTHN_DBD))
+IGNORE+=	You need to enable at least one DBD backend
 .endif
-
-AUTH_MODULES=		auth_basic auth_digest
-AUTHN_MODULES=		authn_file authn_dbd authn_dbm authn_anon authn_default \
-			authn_alias
-AUTHZ_MODULES=		authz_host authz_groupfile authz_user authz_dbm \
-			authz_owner authz_default
-CACHE_MODULES=		cache disk_cache file_cache mem_cache
-DAV_MODULES=		dav dav_fs
-EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter \
-			log_forensic optional_hook_export optional_hook_import \
-			optional_fn_import optional_fn_export 
-LDAP_MODULES=		ldap authnz_ldap
-MISC_MODULES+=		actions alias asis autoindex cern_meta \
-			cgi charset_lite dbd deflate dir dumpio env expires \
-			headers imagemap include info log_config logio mime \
-			mime_magic negotiation rewrite setenvif speling status \
-			unique_id userdir usertrack vhost_alias filter version
-PROXY_MODULES=		proxy proxy_connect proxy_ftp proxy_http proxy_ajp proxy_balancer
-SSL_MODULES=		ssl
-SUEXEC_MODULES=		suexec
-THREADS_MODULES=	cgid
-
-DEFAULT_MODULES_CATEGORIES= \
-			AUTH AUTHN AUTHZ DAV CACHE MISC
-
-ALL_MODULES_CATEGORIES=	AUTH AUTHN AUTHZ CACHE DAV EXPERIMENTAL LDAP \
-			MISC PROXY SSL SUEXEC THREADS
+.endif
+.endif
