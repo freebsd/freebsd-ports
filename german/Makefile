@@ -37,6 +37,7 @@
     SUBDIR += steak
     SUBDIR += swissgerman-ding
     SUBDIR += unix-connect
+    SUBDIR += vtiger
     SUBDIR += webalizer2
     SUBDIR += wordpress
 
