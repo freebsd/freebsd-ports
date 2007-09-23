@@ -5910,6 +5910,7 @@ keepassx	ports/security/keepassx
 keitairc	ports/irc/keitairc
 kenny		ports/misc/kenny
 kermit		ports/comms/kermit
+kevedit		ports/games/kevedit
 kexchange	ports/finance/kexchange
 keximdb		ports/databases/keximdb
 kexis		ports/audio/kexis
