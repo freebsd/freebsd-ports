@@ -1,5 +1,29 @@
---- dvd-slideshow.orig	Sun Oct  8 10:30:57 2006
-+++ dvd-slideshow	Sun Oct  8 10:30:58 2006
+--- dvd-slideshow.orig	2006-03-09 23:56:54.000000000 -0600
++++ dvd-slideshow	2007-09-02 17:02:53.000000000 -0500
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ #    dvd-slideshow
+ #    Copyright 2003 Scott Dylewski  <scott at dylewski.com>
+ #
+@@ -151,7 +151,7 @@
+         Got rid of calls to NetPBM functions, so it is no longer required...
+ 	Changed "wc -m" call to "wc --chars" for better compatibility.
+ 	Fixed syntax so spaces should be allowed in input files now.
+-	Changed "seq 2 1" to "seq 2 -1 1" for better compatibility
++	Changed "seq2 2 1" to "seq2 2 -1 1" for better compatibility
+ 	Added option to "autocrop" images (-c) that are close to the
+ 		output aspect ratio, but not quite.
+ 	Title syntax changed... (see documentation)
+@@ -562,7 +562,7 @@
+ border=0  # not implemented yet
+ subtitle_type="render"	# format of subtitles. other values make dvd-slideshow render them internally.
+ #subtitle_type="srt"	# format of subtitles. other values make dvd-slideshow render them internally.
+-font_dir="/usr/share/fonts/"
++font_dir="/usr/local/lib/X11/fonts/"
+ default_font1='n019004l.pfb' # helvetica bold URW fonts
+ default_font2='helb____.ttf' # helvetica bold truetype
+ 	  ## Subtitle:
 @@ -877,7 +877,7 @@
  		it=$(( $1 - $minutes * 60000 ))
  		seconds=$(( $it / 1000 )) ; [ $seconds -eq 0 ] && seconds="0" 
@@ -18,6 +42,32 @@
  		if [ "$characters" -eq 1 ] ; then ## no decimal was specified
  			duration_ms="0"
  		elif [ "$characters" -eq 2 ] ; then ## 1 decimal was specified
+@@ -1074,7 +1074,7 @@
+ 	# $1_$2.ppm
+ 	## wait for all files in a fade to exist...
+ 	dir_tmp=`dirname "$1"`
+-	for i_tmp in `seq 1 $2` ; do
++	for i_tmp in `seq2 1 $2` ; do
+ 		di_tmp=`addzeros $i_tmp`
+ 		newfile_tmp="$1"_$di_tmp.ppm
+ 		while [ ! -f "$newfile_tmp" ] 
+@@ -1099,14 +1099,14 @@
+ 			echo -n ''
+ 		elif [ $this_frame -gt $(( $total_frames - $stepsize )) ] ; then
+ 			## make ( $total_frames - $this_frame ) copies
+-			for it in `seq 1 $(( $total_frames - $this_frame ))`; do
++			for it in `seq2 1 $(( $total_frames - $this_frame ))`; do
+ 				dj2=`addzeros $(( $this_frame + $it ))`
+ 				cp "$tmpdir/fade_$dj.ppm" "$tmpdir/fade_$dj2.ppm"
+ 				waitforfile "$tmpdir/fade_$dj2.ppm"   # need on slow systems?
+ 			done
+ 		else
+ 			## loop over number of copies = stepsize-1
+-			for it in `seq 1 $(( $stepsize - 1 ))`; do
++			for it in `seq2 1 $(( $stepsize - 1 ))`; do
+ 				dj2=`addzeros $(( $this_frame + $it ))`
+ 				cp "$tmpdir/fade_$dj.ppm" "$tmpdir/fade_$dj2.ppm"
+ 				waitforfile "$tmpdir/fade_$dj2.ppm"   # need on slow systems?
 @@ -1121,7 +1121,7 @@
  	local l_duration_sec=`echo $1 | awk -F. '{ print $1 }'`
  	[ -z "$l_duration_sec" ] && l_duration_sec=0 
@@ -27,6 +77,78 @@
  	if [ -z "$l_duration_ms" ] ; then
  		l_duration_ms=0 
  	elif [ "$l_characters" -eq 1 ] ; then
+@@ -2418,7 +2418,7 @@
+ 		#######################################################################
+ 		## Roate?
+ 		## rotate image first, then apply other effects?
+-		for e in `seq 2 -1 1`; do
++		for e in `seq2 2 -1 1`; do
+ 			if [ "$e" -eq 1 ] ; then
+ 				this_effect="${effect1[$i]}"
+ 				this_effect_params="${effect1_params[$i]}"
+@@ -2800,7 +2800,7 @@
+ 
+        # open the fifo for writing as fd 3 (unlikely to be used!)
+        exec 3>"$tmpdir/$yuvfifo"
+-	/usr/sbin/lsof -a -u $USER -d 3 +c 0 -c dvd -c convert -c mpeg2 >> "$outdir/$logfile" 2>&1
++	/usr/local/sbin/lsof -a -u $USER -d 3 +c 0 -c dvd -c convert -c mpeg2 >> "$outdir/$logfile" 2>&1
+ fi
+ 
+ ## make both a slideshow_background file and a title_background file
+@@ -3141,7 +3141,7 @@
+ 		## do two frames each loop so it's faster?
+ 		echo -n  "[dvd-slideshow]"
+ 		lastbar=0
+-		for fr in `seq 1 $stepsize $frames`; do
++		for fr in `seq2 1 $stepsize $frames`; do
+ 			dj=`addzeros $fr`
+ 			progressbar $fr $frames
+ 			percent=$(( 100 * $fr / $frames ))
+@@ -3281,7 +3281,7 @@
+ 		echo -n "[dvd-slideshow]"
+ 		lastbar=0 # required for progressbar
+ 		## do two frames each loop so it's faster?
+-		for fr in `seq 1 $stepsize $frames`; do
++		for fr in `seq2 1 $stepsize $frames`; do
+ 			progressbar $fr $frames
+ 			dj=`addzeros $fr`
+ 			percent=$(( 100 * $fr / $frames ))
+@@ -3329,7 +3329,7 @@
+ 		convert "$lastslide" "$tmpdir/temp_slideshow_image.mpc"
+ 		echo -n "[dvd-slideshow]"
+ 		lastbar=0
+-		for fr in `seq 1 $stepsize $frames`; do
++		for fr in `seq2 1 $stepsize $frames`; do
+ 			dj=`addzeros $fr`
+ 			progressbar $fr $frames
+ 			percent=$(( 100 - 100 * $fr / $frames ))
+@@ -3645,7 +3645,7 @@
+                         smooth_offset=$( echo "scale=9;$frames-$smooth_slope/$smooth_time*($frames^2/2)" | bc -l ) #random constant in the decel equation
+                 fi
+ 
+-		for fr in `seq 1 $stepsize $frames`; do
++		for fr in `seq2 1 $stepsize $frames`; do
+ 			dj=`addzeros $fr`
+ 
+                         if [ $smooth_ken -eq 1 ] && [ $frames -ge 30 ]; then
+@@ -3932,7 +3932,7 @@
+ 		fi
+ 		echo -n "[dvd-slideshow]"
+ 		lastbar=0
+-		for fr in `seq 1 $stepsize $frames`; do
++		for fr in `seq2 1 $stepsize $frames`; do
+ 			dj=`addzeros $fr`
+ 			x0=`div1000 $(( 1000 * $xs0 + $(($xe0-$xs0)) * 1000 * $fr / $frames ))`
+ 			y0=`div1000 $(( 1000 * $ys0 + $(($ye0-$ys0)) * 1000 * $fr / $frames ))`
+@@ -4319,7 +4319,7 @@
+        # just close the fifo and wait for the encoder to finish
+        logecho "[dvd-slideshow] mpeg2enc process=$yuvpid"
+        logecho "[dvd-slideshow] output from ps=`ps $yuvpid`"
+-	/usr/sbin/lsof -a -u $USER -d 3 +c 0 -c dvd -c convert -c mpeg2 >> "$outdir/$logfile" 2>&1
++	/usr/local/sbin/lsof -a -u $USER -d 3 +c 0 -c dvd -c convert -c mpeg2 >> "$outdir/$logfile" 2>&1
+ 	# close pipe to mpeg2enc
+        exec 3>&-  
+ 	myecho '[dvd-slideshow] waiting for mpeg2enc to finish...'
 @@ -4422,7 +4422,7 @@
  	audio_1[0]='silence'  # no duration needed
  	myecho "[dvd-slideshow] No audio files passed.  Using $end_hms silence."
