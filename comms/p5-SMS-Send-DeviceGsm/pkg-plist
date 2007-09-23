@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/SMS/Send/DeviceGsm.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/DeviceGsm/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/DeviceGsm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS
+@dirrmtry %%SITE_PERL%%/SMS/Send
+@dirrmtry %%SITE_PERL%%/SMS
