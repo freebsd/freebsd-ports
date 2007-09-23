@@ -14584,6 +14584,7 @@ semi		ports/editors/semi
 semi-emacs20	ports/editors/semi-emacs20
 semi-emacs21	ports/editors/semi-emacs21
 semi-xemacs21-mule	ports/editors/semi-xemacs21-mule
+send		ports/net-mgmt/send
 sendemail	ports/net/sendemail
 sendfile	ports/net/sendfile
 sendip		ports/net-mgmt/sendip
