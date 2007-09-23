@@ -1,0 +1,57 @@
+bin/dynagen
+@unexec if cmp -s %D/etc/dynagen.ini.sample %D/etc/dynagen.ini; then rm -f %D/etc/dynagen.ini; fi
+etc/dynagen.ini.sample
+@exec if [ ! -f %D/etc/dynagen.ini ] ; then cp -p %D/%F %B/dynagen.ini; fi
+lib/%%PYTHON_VERSION%%/site-packages/configobj.py
+lib/%%PYTHON_VERSION%%/site-packages/console.py
+lib/%%PYTHON_VERSION%%/site-packages/dynamips_lib.py
+lib/%%PYTHON_VERSION%%/site-packages/validate.py
+lib/%%PYTHON_VERSION%%/site-packages/configobj.pyc
+lib/%%PYTHON_VERSION%%/site-packages/console.pyc
+lib/%%PYTHON_VERSION%%/site-packages/dynamips_lib.pyc
+lib/%%PYTHON_VERSION%%/site-packages/validate.pyc
+lib/%%PYTHON_VERSION%%/site-packages/configobj.pyo
+lib/%%PYTHON_VERSION%%/site-packages/console.pyo
+lib/%%PYTHON_VERSION%%/site-packages/dynamips_lib.pyo
+lib/%%PYTHON_VERSION%%/site-packages/validate.pyo
+%%EXAMPLESDIR%%/sample_labs/simple1/simple1.net
+%%EXAMPLESDIR%%/sample_labs/multiserver/multiserver.net
+%%EXAMPLESDIR%%/sample_labs/frame_relay/frame_relay1.net
+%%EXAMPLESDIR%%/sample_labs/simple2/simple2.net
+%%EXAMPLESDIR%%/sample_labs/ethernet_switch/ethsw1.net
+%%EXAMPLESDIR%%/sample_labs/all_config_options.txt
+@dirrm %%EXAMPLESDIR%%/sample_labs/simple1
+@dirrm %%EXAMPLESDIR%%/sample_labs/multiserver
+@dirrm %%EXAMPLESDIR%%/sample_labs/frame_relay
+@dirrm %%EXAMPLESDIR%%/sample_labs/simple2
+@dirrm %%EXAMPLESDIR%%/sample_labs/ethernet_switch
+@dirrm %%EXAMPLESDIR%%/sample_labs
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image001.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image002.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image003.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image004.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image005.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image006.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image007.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image008.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image009.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image010.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image011.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image012.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image013.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image014.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image015.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image016.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image017.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image018.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image019.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image020.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image021.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image022.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image023.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.htm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial_files
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/configspec
+@dirrm %%DATADIR%%

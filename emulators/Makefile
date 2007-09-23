@@ -26,6 +26,7 @@
     SUBDIR += doscmd
     SUBDIR += dtcyber
     SUBDIR += dynagen
+    SUBDIR += dynagen-devel
     SUBDIR += dynamips
     SUBDIR += dynamips-devel
     SUBDIR += e-uae
