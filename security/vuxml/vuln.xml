@@ -45,6 +45,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>mediawiki19</name>
 	<range><lt>1.9.4</lt></range>
       </package>
+      <package>
+	<name>mediawiki18</name>
+	<range><lt>1.8.5</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -67,6 +71,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-09-10</discovery>
       <entry>2007-09-21</entry>
+      <modified>2007-09-23</modified>
     </dates>
   </vuln>
 
