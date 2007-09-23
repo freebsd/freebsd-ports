@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Sun Sep 23 22:29:33 2007
++++ Makefile.in	Sun Sep 23 22:29:59 2007
+@@ -208,8 +208,8 @@
+ 	for i in $(MAN8) ; do \
+ 	    install -m 0644 @srcdir@/$$i "$(DESTDIR)$(mandir)/man8/" ; \
+ 	done
+-	@mkdir -p "$(DESTDIR)$(libdir)/pkgconfig/" && \
+-	install -m 0644 yate.pc "$(DESTDIR)$(libdir)/pkgconfig/"
++	@mkdir -p "$(DESTDIR)$(libdir)data/pkgconfig/" && \
++	install -m 0644 yate.pc "$(DESTDIR)$(libdir)data/pkgconfig/"
+ 	@mkdir -p "$(DESTDIR)$(incdir)/" && \
+ 	for i in $(INCS) ; do \
+ 	    install -m 0644 @srcdir@/$$i "$(DESTDIR)$(incdir)/" ; \

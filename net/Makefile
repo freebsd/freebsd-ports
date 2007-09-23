@@ -959,6 +959,7 @@
     SUBDIR += xtraceroute
     SUBDIR += xwhois
     SUBDIR += yaph
+    SUBDIR += yate-devel
     SUBDIR += yaz
     SUBDIR += yaz++
     SUBDIR += yazproxy

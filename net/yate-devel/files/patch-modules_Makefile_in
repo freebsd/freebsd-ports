@@ -1,0 +1,77 @@
+--- modules/Makefile.in.orig	Tue Jul 24 07:13:54 2007
++++ modules/Makefile.in	Sun Sep 23 22:16:11 2007
+@@ -11,7 +11,7 @@
+ CXX := @CXX@ -Wall
+ SED := sed
+ DEFS :=
+-INCLUDES := -I.. -I@top_srcdir@
++INCLUDES := -I. -I@top_srcdir@ -I%%LOCALBASE%%/include
+ CFLAGS := -O2 @MODULE_CFLAGS@ @INLINE_FLAGS@
+ CPPFLAGS := -O2 @MODULE_CPPFLAGS@ @INLINE_FLAGS@
+ LDFLAGS:= -L.. -lyate
+@@ -133,7 +133,7 @@
+ install: all do-install
+ 	@mkdir -p "$(DESTDIR)$(moddir)/" && \
+ 	for i in $(PROGS) ; do \
+-	    install -D "$$i" "$(DESTDIR)$(moddir)/$$i" ; \
++	    install "$$i" "$(DESTDIR)$(moddir)/$$i" ; \
+ 	done;
+ 
+ .PHONY: uninstall
+@@ -175,32 +175,32 @@
+ # Take special care of the modules that depend on optional libs
+ 
+ zapchan.yate: libypri.o
+-zapchan.yate: LOCALFLAGS = @ZAP_FLAGS@
++zapchan.yate: LOCALFLAGS = @ZAP_FLAGS@ -L%%LOCALBASE%%/lib
+ zapchan.yate: LOCALLIBS = libypri.o -lpri
+ 
+ wpchan.yate: libypri.o
+-wpchan.yate: LOCALFLAGS = @WANPIPE_HWEC_INC@
++wpchan.yate: LOCALFLAGS = @WANPIPE_HWEC_INC@ -L%%LOCALBASE%%/lib
+ wpchan.yate: LOCALLIBS = libypri.o -lpri
+ 
+ ysigchan.yate wpcard.yate zapcard.yate: ../libyatess7.so
+ ysigchan.yate wpcard.yate zapcard.yate: LOCALFLAGS = -I../contrib/yss7
+ ysigchan.yate wpcard.yate zapcard.yate: LOCALLIBS = -lyatess7
+ 
+-h323chan.yate: LOCALFLAGS = -DPHAS_TEMPLATES -D_REENTRANT -DP_HAS_SEMAPHORES @H323_INC@
++h323chan.yate: LOCALFLAGS = -DPHAS_TEMPLATES -D_REENTRANT -DP_HAS_SEMAPHORES @H323_INC@ -L%%LOCALBASE%%/lib -L%%LOCALBASE%%/lib
+ h323chan.yate: LOCALLIBS = @H323_LIB@
+ 
+-pgsqldb.yate: LOCALFLAGS = @PGSQL_INC@
++pgsqldb.yate: LOCALFLAGS = @PGSQL_INC@ -L%%LOCALBASE%%/lib
+ pgsqldb.yate: LOCALLIBS = -lpq
+ 
+-mysqldb.yate: LOCALFLAGS = @MYSQL_INC@
++mysqldb.yate: LOCALFLAGS = @MYSQL_INC@ -L%%LOCALBASE%%/lib
+ mysqldb.yate: LOCALLIBS = @MYSQL_LIB@
+ 
+-enumroute.yate: LOCALLIBS = -lresolv
++enumroute.yate: LOCALLIBS = -L%%LOCALBASE%%/lib
+ 
+ alsachan.yate: LOCALLIBS = -lasound
+ 
+ yiaxchan.yate: ../contrib/yiax/libyateiax.a
+-yiaxchan.yate: LOCALFLAGS = -I@top_srcdir@/contrib/yiax
++yiaxchan.yate: LOCALFLAGS = -I@top_srcdir@/contrib/yiax -L%%LOCALBASE%%/lib
+ yiaxchan.yate: LOCALLIBS = -L../contrib/yiax -lyateiax
+ 
+ yjinglechan.yate: ../contrib/yxml/libyatexml.a ../contrib/yjingle/libyatejingle.a
+@@ -219,13 +219,13 @@
+ ilbccodec.yate: LOCALLIBS = ../contrib/ilbc/libilbc.a
+ ilbccodec.yate: LOCALFLAGS = @ILBC_INC@
+ 
+-gsmcodec.yate: LOCALLIBS = -lgsm
++gsmcodec.yate: LOCALLIBS = -lgsm -L%%LOCALBASE%%/lib
+ gsmcodec.yate: LOCALFLAGS = @GSM_INC@
+ 
+-speexcodec.yate: LOCALLIBS = -lspeex
++speexcodec.yate: LOCALLIBS = -lspeex -L%%LOCALBASE%%/lib
+ speexcodec.yate: LOCALFLAGS = @SPEEX_INC@
+ 
+-faxchan.yate: LOCALLIBS = -lspandsp
++faxchan.yate: LOCALLIBS = -lspandsp -L%%LOCALBASE%%/lib
+ faxchan.yate: LOCALFLAGS = @SPANDSP_INC@
+ 
+ ysipchan.yate: ../contrib/ysip/libyatesip.a
