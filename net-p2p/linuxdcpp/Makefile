@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	linuxdcpp
-PORTVERSION=	0.0.1.20070804	#0.0.1.YYYYMMDD
+PORTVERSION=	1.0.0
 CATEGORIES=	net-p2p
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.freebsd.org/~mezz/distfiles/
-MASTER_SITE_SUBDIR=mezz
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A port of the win32 DC++ direct connect client to POSIX-like systems
 
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	libglade2
 USE_ICONV=	yes
