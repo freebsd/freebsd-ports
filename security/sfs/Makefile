@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=--with-sfsuser=sfs \
 		--disable-uvfs \
 		--with-gmp=${LOCALBASE}
 
-LIB_DEPENDS+=   gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 
 .include <bsd.port.pre.mk>
 
