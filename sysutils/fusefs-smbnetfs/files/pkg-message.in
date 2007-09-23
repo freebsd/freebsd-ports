@@ -11,7 +11,7 @@ you should make .smb directory in your homedir:
 Copy your smb.conf (usually in %%PREFIX%%/etc/) and
 %%PREFIX%%/share/doc/smbnetfs/smbnetfs.conf to this directory:
 
-	% cp %%PREFIX%%/smb.conf %%PREFIX%%/share/doc/smbnetfs/smbnetfs.conf ~/.smb/
+	% cp %%PREFIX%%/etc/smb.conf %%PREFIX%%/share/doc/smbnetfs/smbnetfs.conf ~/.smb/
 
 Make mountpoint for smb network and mount it:
 	
