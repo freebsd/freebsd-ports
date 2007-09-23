@@ -28,7 +28,7 @@ SUB_LIST=	DISTCCD_PIDFILE=${DISTCCD_PIDFILE}
 
 OPTIONS=	GNOME	"Build GUI monitor based on GNOME"	Off \
 		GTK	"Build GUI monitor based on GTK"	Off \
-		IPV6	"Enable IPV6 (not available on 4.X)"	Off \
+		IPV6	"Enable IPV6"				Off \
 		COMPILER_LINKS	"Create symlinks to distcc"	Off
 
 .include <bsd.port.pre.mk>
@@ -61,7 +61,7 @@ PLIST_SUB+=		WITH_GNOME=""
 PLIST_SUB+=		WITH_GNOME="@comment "
 .endif
 
-.if ( ${OSVERSION} >= 500000 ) && defined(WITH_IPV6)
+.if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-rfc2553
 .endif
 
