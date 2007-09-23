@@ -2,64 +2,61 @@
 # Date created:				2000-10-11
 # Whom:					trevor
 #
+# $Carpetsmoker: ports/audio/csound/Makefile,v 1.3 2007/07/22 00:52:59 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	csound
-PORTVERSION=	4.23
-PORTREVISION=	1
-CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_NETBSD}
+PORTVERSION=	5.06
+CATEGORIES=	audio lang
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.carpetsmoker.net/distfiles/:manual \
+		http://www.xs4all.nl/~tournoij/distfiles/:manual \
+		http://www.rwxrwxrwx.net/distfiles/:manual
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	Csound${PORTVERSION}
+DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}.0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	csound
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	Sound synthesizer
 
-LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
-		tk84:${PORTSDIR}/x11-toolkits/tk84
+LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads \
+		portaudio.2:${PORTSDIR}/audio/portaudio2
+BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 
-RESTRICTED=	no redistribution; no commercial use except to make music (see http://mitpress.mit.edu/e-books/csound/fpage/FAQml/faq/faq.html)
-NO_CDROM=	${RESTRICTED}
-NO_FTP=		${RESTRICTED}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/_src/.0/}
+USE_PYTHON=	2.4+
+USE_SCONS=	yes
+SCONS_ARGS+=	prefix=${PREFIX} CC=${CC} CXX=${CXX} \
+		buildRelease=1 install=1 buildCsound5GUI=1 \
+		buildWinsound=1 buildVirtual=1 buildCSEditor=1
+SUB_FILES=	custom.py \
+		pkg-message
+SUB_LIST+=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR}
+USE_LDCONFIG=	yes
 
-MAKE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
-		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
-NO_WRKSUBDIR=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PLIST=		${WRKDIR}/pkg-plist
-USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=		Does not compile on alpha
+.if !defined(NOPORTDOCS)
+DISTFILES+=	${DISTNAME}-manual.tar.gz:manual
 .endif
 
-pre-build:
-	@${FIND} ${WRKDIR} -type f -exec ${CHMOD} 644 \{\} \;
+post-patch: apply-slist
+	@/bin/sh ${SCRIPTDIR}/check-fltk-threads.sh
+	@${MV} ${WRKDIR}/custom.py ${WRKSRC}
+	@${REINPLACE_CMD} -e "s|'unsupported'|'linux'|; \
+		s|ENV = {'PATH' : os.environ\['PATH'\]}|ENV = os.environ|; \
+		s|'dl'|''|" \
+		${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} 's|linux/if.h|net/if.h|' ${WRKSRC}/OOps/remote.c
 
-post-build:
-	${RM} -f ${PLIST}
-	for i in `${FIND} ${WRKDIR} -type f -perm 755`; do \
-		${ECHO_CMD} bin/`${BASENAME} $${i}` >> ${PLIST}; \
-	done
-	${ECHO_CMD} share/csound/csound.xmg >> ${PLIST}
-	${ECHO_CMD} "@dirrm share/csound" >> ${PLIST}
-	${ECHO_CMD} "*** WARNING ***" > ${PKGMESSAGE}
-	${ECHO_CMD} "The sources for the csound package have not been" >> ${PKGMESSAGE}
-	${ECHO_CMD} "thoroughly reviewed by the FreeBSD maintainer." >> ${PKGMESSAGE}
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/csound-manual/tutorial_${PORTVERSION}.pdf ${DOCSDIR}
+	${CP} -r ${WRKDIR}/csound-manual/html ${DOCSDIR}
+.endif
+	${MV} ${PREFIX}/bin/mixer ${PREFIX}/bin/cs_mixer
+	@${CAT} ${WRKDIR}/pkg-message
 
-post-patch:
-	@${REINPLACE_CMD} -i "" -e "s:/usr/local/lib:${DATADIR}:g" ${WRKSRC}/getstring.c
-	@${FIND} ${WRKSRC} -type f -exec \
-		${REINPLACE_CMD} -i -e 's:<malloc.h>:<stdlib.h>:g' {} \;
-
-do-install:
-	${MKDIR} ${PREFIX}/share/csound
-	${INSTALL_DATA} ${WRKSRC}/csound.xmg ${DATADIR}/csound.xmg
-	${FIND} ${WRKDIR} -type f -perm 755 \
-		-exec ${INSTALL_PROGRAM} {} ${PREFIX}/bin \;
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

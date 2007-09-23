@@ -1,0 +1,4 @@
+=====================================================================
+%%PREFIX%%/bin/mixer has been renamed to %%PREFIX%%/bin/cs_mixer so it
+won't conflict with /usr/bin/mixer
+=====================================================================
