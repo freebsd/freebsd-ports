@@ -23,7 +23,7 @@
 .\" SUCH DAMAGE.
 .\"
 .\"
-.Dd August 16, 2007
+.Dd September 22, 2007
 .Dt BPKG 8
 .Os
 .Sh NAME
@@ -31,7 +31,7 @@
 .Nd a simple tool for managing FreeBSD packages/ports.
 .Sh SYNOPSIS
 .Nm
-.Op Fl bBdDeEfFgiIkLmMnoOprsSwz
+.Op Fl bBdDeEfFgiIkLmMnoOpqQrsSwz
 .Ar pkg-name ...
 .Nm
 .Op Fl aAcChltvZ
@@ -54,7 +54,7 @@ in .tbz format made from a port.
 The following command line arguments are supported:
 .Bl -tag -width F1
 .It Ar pkg-name ...
-with no additional arguments, upgrade/install the specified packages.
+with no additional arguments, upgrade/install the specified packages from -RELEASE repository.
 .It Fl a
 upgrade all installed packages (interactive mode). [no arguments]
 .It Fl A
@@ -80,7 +80,7 @@ compile and install the port itself.
 .It Fl f
 show the packing list instructions for the package/port.
 .It Fl F
-show the latest available binary package in the FreeBSD repository.
+show the latest available binary package in the FreeBSD repository. [-RELEASE]
 .It Fl g
 show files that do not match the recorded checksum in the specified installed
 package.
@@ -108,6 +108,10 @@ display config options for the specified package/port.
 remove config options for the specified package/port.
 .It Fl p
 search the ports tree and display short info about the port.
+.It Fl q
+upgrade/install the specified packages from -STABLE repository.
+.It Fl Q
+show the latest available binary package in the FreeBSD repository. [-STABLE]
 .It Fl r
 show the list of all package/port's dependencies.
 .It Fl s

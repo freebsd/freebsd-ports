@@ -114,6 +114,81 @@ main() {
 	done
 }
 
+pkg_latest() {
+	root
+	if [ -z "$pkg" ]; then
+		echo "bpkg: you didn't specify any package to install/upgrade"
+		exit 0
+	fi
+
+	echo "Available in ports:"
+	for e in $pkg; do
+		cd /usr/ports && make search path=/$e.* | awk '/Port/ /Path/ { print $0 "\n" }' 
+	done
+
+	for z in $pkg; do
+		pkg_install=`cd /usr/ports && make search path=/$z.* | grep Path | cut -d/ -f4,5`
+
+		for e in $pkg_install; do
+			e_stripped=`echo $e | cut -d/ -f2`
+			e_installed=`grep $e$ /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`
+
+			if [ -z "$e_installed" ]; then
+				echo -n "Do you want to install new $e? [y] "
+			else
+				echo -n "Do you want to upgrade installed $e_installed? [y] "
+			fi
+			read key
+			case $key in
+				n) ;;
+				*) 
+				arch=`uname -m`
+				setenv PACKAGESITE ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/Latest/
+
+				if [ ! -z "$e_installed" ]; then
+					echo -n "Creating backup package in /usr/tmp/$e_installed.tbz... "
+					cd /usr/tmp/ && pkg_create -b $e_installed
+					echo "Done."
+				fi
+
+				# Fetch and install binary package
+
+				echo ""
+				if [ ! -z "$e_installed" ]; then
+					if [ ! -z "`grep $e /root/ports.lst`" ]; then
+						echo "It seems you installed this package using ports."
+						echo "It is strongly recommended to upgrade it using also ports."
+						echo -n "Do you want to cancel this binary upgrade process? [y] "
+						read key
+						case $key in
+							n) 
+							sed -i '' s,$e,,g /root/ports.lst ;;
+							*)
+							unsetenv PACKAGESITE
+							exit 0;;
+						esac
+					fi
+
+					echo "Upgrading installed package:"
+					pkg_delete -f $e_installed 1>/dev/null 2>&1
+					if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
+						echo "*** cannot proceed without first removing the package ***"
+						exit 0
+					fi
+					pkg_add -r $e_stripped
+					unsetenv PACKAGESITE
+					exit 0
+				else
+					echo "Installing new package:"
+					pkg_add -r $e_stripped
+					unsetenv PACKAGESITE
+					exit 0
+				fi;;
+			esac
+		done
+	done
+}
+
 simulation() {
 	root
 	if [ -z "$pkg" ]; then
@@ -539,7 +614,20 @@ pkg_find() {
 	for e in $pkg; do
 		echo "ls $e*" >> /tmp/bpkg.tmp
 	done
+	echo "ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys/Latest/"
 	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys/Latest/ < /tmp/bpkg.tmp
+	rm /tmp/bpkg.tmp
+	exit 0
+}
+
+pkg_latestftp() {
+	arch=`uname -m`
+
+	for e in $pkg; do
+		echo "ls $e*" >> /tmp/bpkg.tmp
+	done
+	echo "ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/Latest/"
+	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/Latest/ < /tmp/bpkg.tmp
 	rm /tmp/bpkg.tmp
 	exit 0
 }
@@ -1026,7 +1114,7 @@ make_ldd_all() {
 help() {
 	echo "bpkg version `pkg_info -xI bpkg | cut -d- -f2 | cut -d' ' -f1`" 
 	echo ""
-	echo "Usage: bpkg [-bBdDeEfFgiIkLmMnoOprsSwz] pkg-name ..."
+	echo "Usage: bpkg [-bBdDeEfFgiIkLmMnoOpqQrsSwz] pkg-name ..."
 	echo "       bpkg [-aAcChltvZ]"
 	echo ""
 	echo "Please see the bpkg(8) man page for more information"
@@ -1037,7 +1125,7 @@ help() {
 # End of functions
 ################################################################################
 
-while getopts b:B:d:D:e:E:f:F:g:i:I:k:L:m:M:n:o:O:p:r:s:S:w:z:aAcChltvZ opts; do
+while getopts b:B:d:D:e:E:f:F:g:i:I:k:L:m:M:n:o:O:p:q:Q:r:s:S:w:z:aAcChltvZ opts; do
 	case $opts in
 		b) pkg=$OPTARG
 		   build_port;;
@@ -1077,6 +1165,10 @@ while getopts b:B:d:D:e:E:f:F:g:i:I:k:L:m:M:n:o:O:p:r:s:S:w:z:aAcChltvZ opts; do
 		   make_rmc;;
 		p) pkg=$OPTARG
 		   pkg_path;;
+		q) pkg=$OPTARG
+		   pkg_latest;;
+		Q) pkg=$OPTARG
+		   pkg_latestftp;;
 		r) pkg=$OPTARG
 		   pkg_info-xr;;
 		s) pkg=$OPTARG
