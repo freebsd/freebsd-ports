@@ -1,0 +1,15 @@
+DoCoMo's Open Source SEND project provides an implementation of
+RFC3971 Secure Neighbor Discovery (SEND). SEND cryptographically
+secures the IPv6 neighbor discovery protocol, countering the threats
+discussed in RFC3756 (IPv6 Neighbor Discovery (ND) Trust Models and
+Threats).
+
+DoCoMo's SEND is implemented completely in user space, so it is
+portable and lends itself to experimentation. It currently runs on
+Linux (tested on 2.6 kernels) and FreeBSD (tested on 5.4).
+
+Also included in the distribution are implementations of RFC3972
+Cryptographically Generated Addresses (CGAs) and RFC3779 X.509
+Extensions for IP Addresses and AS Identifiers.
+
+WWW: http://www.docomolabs-usa.com/lab_osrc_guide.html

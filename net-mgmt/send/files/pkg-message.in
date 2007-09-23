@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+To run sendd from startup, add sendd_enable="YES"
+in your /etc/rc.conf.
+Configiration options can be found in %%PREFIX%%/etc/sendd
+-------------------------------------------------------------------------------
+In order to proper working of Secure Neighbor Discovery Daemon
+enable following kernel options:
+NETGRAPH, NETGRAPH_BPF, NETGRAPH_ETHER, NETGRAPH_SOCKET
+-------------------------------------------------------------------------------

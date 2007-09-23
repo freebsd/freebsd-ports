@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- sendd/os-freebsd/Makefile.orig
++++ sendd/os-freebsd/Makefile
+@@ -1,12 +1,13 @@
+ 
+ OBJS += os/addr.o os/snd_freebsd.o os/netgraph.o os-linux/rand.o
++CPPFLAGS +=	-I%%LOCALBASE%%/include
+ 
+-OSLIBS= -lnetgraph -l$(DNET)
++OSLIBS= -lnetgraph -L%%LOCALBASE%%/lib -l$(DNET)
+ 
+ OSEXTRA= os/sendd
+-EXTRAINSTALL= /etc/rc.d/sendd
++EXTRAINSTALL= %%PREFIX%%/etc/rc.d/sendd
+ EXTRAUNINSTALL=$(EXTRAINSTALL)
+ 
+-/etc/rc.d/%: os/%
++%%PREFIX%%/etc/rc.d/%: os/%
+ 	install $< $@
+ 
