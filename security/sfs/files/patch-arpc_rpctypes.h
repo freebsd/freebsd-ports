@@ -1,5 +1,5 @@
---- arpc/rpctypes.h.orig	Mon Oct 11 16:43:34 2004
-+++ arpc/rpctypes.h	Mon Oct 11 16:39:35 2004
+--- arpc/rpctypes.h.orig	2002-05-28 06:29:15.000000000 -0400
++++ arpc/rpctypes.h	2007-09-15 17:13:31.000000000 -0400
 @@ -129,7 +129,7 @@
    if (&v != this)				\
      assign (v)
@@ -27,10 +27,10 @@
  };
  template<size_t n = RPC_INFINITY> struct rpc_bytes : rpc_vec<char, n> {
 -  void setstrmem (const str &s) { set (s.cstr (), s.len (), NOFREE); }
-+  void setstrmem (const str &s) { set (s.cstr (), s.len (), freemode::NOFREE); }
++  void setstrmem (const str &s) { this->set (s.cstr (), s.len (), freemode::NOFREE); }
    rpc_bytes &operator= (const str &s)
 -    { setsize (s.len ()); memcpy (base (), s.cstr (), size ()); return *this; }
-+    { setsize (s.len ()); memcpy (this->base (), s.cstr (), this->size ()); return *this; }
++    { this->setsize (s.len ()); memcpy (this->base (), s.cstr (), this->size ()); return *this; }
    template<size_t m> rpc_bytes &operator= (const rpc_vec<char, m> &v)
      { rpc_vec<char, n>::operator= (v); return *this; }
    template<size_t m> rpc_bytes &operator= (const array<char, m> &v)
