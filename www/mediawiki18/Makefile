@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.5
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	wikipedia
+MASTER_SITES=	http://download.wikimedia.org/mediawiki/1.8/
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The wiki engine used by Wikipedia
