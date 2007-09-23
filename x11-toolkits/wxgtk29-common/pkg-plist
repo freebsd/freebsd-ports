@@ -509,6 +509,7 @@ include/wx-2.8/wx/xrc/xh_menu.h
 include/wx-2.8/wx/xrc/xh_notbk.h
 include/wx-2.8/wx/xrc/xh_odcombo.h
 include/wx-2.8/wx/xrc/xh_panel.h
+include/wx-2.8/wx/xrc/xh_propdlg.h
 include/wx-2.8/wx/xrc/xh_radbt.h
 include/wx-2.8/wx/xrc/xh_radbx.h
 include/wx-2.8/wx/xrc/xh_scrol.h
