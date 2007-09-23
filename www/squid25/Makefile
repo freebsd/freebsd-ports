@@ -100,6 +100,9 @@ COMMENT=	HTTP Caching Proxy
 
 LATEST_LINK=	squid25
 
+DEPRECATED=	This version is no longer supported by the developers
+EXPIRATION_DATE=	2007-10-31
+
 CONFLICTS=	squid-2.[^5]*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
