@@ -11,8 +11,7 @@ PORTNAME=	apache
 PORTVERSION=	2.2.6
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%\//clement\/:aprmysql/}
+MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.bz2
 DIST_SUBDIR=	apache22
@@ -21,12 +20,6 @@ MAINTAINER?=	clement@FreeBSD.org
 COMMENT?=	Version 2.2 of Apache web server with ${WITH_MPM:L} MPM.
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
-
-# When using apr_mysql_db we _must_ rebuild makefiles
-.if defined(WITH_FULLBUILD) || defined(WITH_MYSQL)
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-SCRIPTS_ENV+=	FULLBUILD=on
-.endif
 
 LATEST_LINK=	apache22
 
@@ -64,10 +57,6 @@ OPTIONS= \
 .include "${.CURDIR}/Makefile.options"
 .endif
 
-.if !defined(WITH_APR_FROM_PORTS)
-USE_LDCONFIG=	yes
-.endif
-
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
 		--with-perl=${PERL5} \
@@ -88,21 +77,6 @@ MAKE_ENV+=	EXPR_COMPAT=yes
 WITH_MPM?=	prefork # or worker, event, itk
 
 WITH_HTTP_PORT?=	80
-
-.if defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--disable-ipv6
-.else
-CATEGORIES+=		ipv6
-.   if defined(WITH_IPV6_V6ONLY) || defined(WITHOUT_V4MAPPED)
-CONFIGURE_ARGS+=	--disable-v4-mapped
-.   else
-CONFIGURE_ARGS+=	--enable-v4-mapped
-.   endif
-.endif
-
-.if !defined(WITHOUT_SSL_MODULES)
-USE_OPENSSL=	yes
-.endif
 
 .if defined(WITH_STATIC_SUPPORT)
 CONFIGURE_ARGS+=	--enable-static-support
@@ -127,16 +101,18 @@ APACHEDIR=	${.CURDIR}
 APACHEDIR=	${MASTERDIR}
 .endif
 
-.if defined (WITH_LDAP) || defined (WITH_LDAP_MODULES)
-USE_OPENLDAP=		YES
-CONFIGURE_ARGS+=	--with-ldap \
-			--with-ldap-lib="${LOCALBASE}/lib" \
-			--with-ldap-include="${LOCALBASE}/include"
-.endif
 
 .include "${APACHEDIR}/Makefile.doc"
 .include "${APACHEDIR}/Makefile.modules"
 .include <bsd.port.pre.mk>
+.include "${APACHEDIR}/Makefile.modules"
+
+.if (defined(WITH_SSL)|| !defined(WITHOUT_SSL_MODULES))
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+
+.endif
 
 .if defined(WITH_APR_FROM_PORTS)
 PLIST_SUB+=	APR_PORTS="@comment "
@@ -145,14 +121,39 @@ CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-1-config \
 			--with-apr-util=${LOCALBASE}/bin/apu-1-config
 CONFIGURE_ENV+=		LTFLAGS="--tag=CXX"
 .else
+USE_LDCONFIG=	yes
 PLIST_SUB+=	APR_PORTS=""
 CONFLICTS+=	apr-1.*
 CONFIGURE_ENV+=	USE_BUNDLED_APR=YES
 .endif
 
+# When using apr_mysql_db we _must_ rebuild makefiles
+.if defined(WITH_FULLBUILD) || defined(WITH_MYSQL)
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
+SCRIPTS_ENV+=	FULLBUILD=on
+.endif
+
 .if defined(WITH_PCRE_FROM_PORTS)
 CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}
 LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
+.endif
+
+.if defined (WITH_LDAP) || defined (WITH_LDAP_MODULES)
+USE_OPENLDAP=		YES
+CONFIGURE_ARGS+=	--with-ldap \
+			--with-ldap-lib="${LOCALBASE}/lib" \
+			--with-ldap-include="${LOCALBASE}/include"
+.endif
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
+.else
+CATEGORIES+=		ipv6
+.   if defined(WITH_IPV6_V6ONLY) || defined(WITHOUT_V4MAPPED)
+CONFIGURE_ARGS+=	--disable-v4-mapped
+.   else
+CONFIGURE_ARGS+=	--enable-v4-mapped
+.   endif
 .endif
 
 .if defined(WITH_THREADS)
