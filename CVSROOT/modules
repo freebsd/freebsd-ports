@@ -10815,6 +10815,7 @@ p5-SGML-Parser-OpenSP	ports/textproc/p5-SGML-Parser-OpenSP
 p5-SGMLSpm	ports/textproc/p5-SGMLSpm
 p5-SHA		ports/security/p5-SHA
 p5-SMS-Send	ports/comms/p5-SMS-Send
+p5-SMS-Send-DeviceGsm	ports/comms/p5-SMS-Send-DeviceGsm
 p5-SMS-Send-TW-PChome	ports/comms/p5-SMS-Send-TW-PChome
 p5-SNMP		ports/net-mgmt/p5-SNMP
 p5-SNMP-Info	ports/net-mgmt/p5-SNMP-Info
