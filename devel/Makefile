@@ -612,6 +612,7 @@
     SUBDIR += libmtrie
     SUBDIR += libnaji
     SUBDIR += libnotify
+    SUBDIR += libnxt
     SUBDIR += liboil
     SUBDIR += libol
     SUBDIR += libole2

@@ -1,0 +1,7 @@
+
+-------------------------------------------------------------------------
+Using libnxt in your programs will require the following compile options:
+
+	-I%%PREFIX%%/include/libnxt
+	-L%%PREFIX%%/lib -lnxt
+-------------------------------------------------------------------------
