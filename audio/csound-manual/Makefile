@@ -22,6 +22,9 @@ COMMENT=	Manuals for Csound
 
 RUN_DEPENDS=	csound:${PORTSDIR}/audio/csound
 
+DEPRECATED=    The HTML documentation and tutorial are now installed by the audio/csound port, additional PDF docs can be downloaded from the csound website ("http://csound.sourceforge.net/#Documentation")
+EXPIRATION_DATE=2007-10-10
+
 NO_BUILD=	yes
 NO_MTREE=	yes
 PLIST=		${WRKDIR}/pkg-plist
