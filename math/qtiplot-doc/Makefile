@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtiplot-doc
-PORTVERSION=	0.8.9
+PORTVERSION=	0.9
 CATEGORIES=	math
 MASTER_SITES=	http://soft.proindependent.com/doc/
 DISTNAME=	manual-en
@@ -18,21 +18,8 @@ USE_BZIP2=	yes
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/qtiplot/manual
 
-PLIST=		${WRKDIR}/pkg-plist
-
-.include <bsd.port.pre.mk>
-
-pre-install:
-	@${ECHO_CMD} '@exec mkdir -p %D/share/qtiplot/manual' > ${PLIST}
-	@${FIND} ${WRKSRC} -type f | \
-		${SED} -e "s:^${WRKSRC}/:share/qtiplot/manual/:g" >> ${PLIST}
-	@${FIND} -d ${WRKSRC} -type d | \
-		${SED} -e "s:^${WRKSRC}:@dirrm share/qtiplot/manual:g" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry share/qtiplot" >> ${PLIST}
-
 do-install:
-	@${MKDIR} ${DATADIR}
-	${TAR} -C ${WRKSRC} --exclude CVS -cf - . | \
-		${TAR} -C ${DATADIR} --unlink -xf -
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
