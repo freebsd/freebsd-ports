@@ -2,8 +2,8 @@ $FreeBSD$
 
 These patches disables the ant version checks.
 
-diff -ruN /tmp/jboss-4.2.0.GA-src/tools/etc/buildmagic/build-common.xml ./tools/etc/buildmagic/build-common.xml
---- /tmp/jboss-4.2.0.GA-src/tools/etc/buildmagic/build-common.xml	Sat May 12 06:24:27 2007
+diff -ruN /tmp/jboss-4.2.1.GA-src/tools/etc/buildmagic/build-common.xml ./tools/etc/buildmagic/build-common.xml
+--- /tmp/jboss-4.2.1.GA-src/tools/etc/buildmagic/build-common.xml	Sat May 12 06:24:27 2007
 +++ ./tools/etc/buildmagic/build-common.xml	Tue Jun 19 13:56:11 2007
 @@ -9,10 +9,12 @@
     -->
@@ -18,7 +18,7 @@ diff -ruN /tmp/jboss-4.2.0.GA-src/tools/etc/buildmagic/build-common.xml ./tools/
    </condition>
  
    <fail unless="buildmagic.ant.compatible">
-diff -ruN /tmp/jboss-4.2.0.GA-src/tools/etc/buildmagic/buildmagic.ent ./tools/etc/buildmagic/buildmagic.ent
+diff -ruN /tmp/jboss-4.2.1.GA-src/tools/etc/buildmagic/buildmagic.ent ./tools/etc/buildmagic/buildmagic.ent
 --- /tmp/jboss-4.2.0.GA-src/tools/etc/buildmagic/buildmagic.ent	Sat May 12 06:24:27 2007
 +++ ./tools/etc/buildmagic/buildmagic.ent	Tue Jun 19 14:03:55 2007
 @@ -11,19 +11,8 @@
