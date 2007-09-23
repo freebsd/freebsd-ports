@@ -1,6 +1,36 @@
---- doscmd.1.orig	Sun Dec  4 11:02:22 2005
-+++ doscmd.1	Sun Dec  4 11:03:13 2005
-@@ -754,7 +754,7 @@
+--- doscmd.1.orig	Tue Mar 30 08:00:00 2004
++++ doscmd.1	Sun Sep 23 22:46:19 2007
+@@ -38,7 +38,7 @@
+ .Nd run a subset of real-mode DOS programs
+ .Sh SYNOPSIS
+ .Nm
+-.Fl 23AbDEfGHIMOPRrtVvXxYz
++.Fl 23AbDEFfGHIMOPQRrtVvXxYz
+ .Fl c Ar file
+ .Fl d Ar file
+ .Fl i Ar port Ns Xo
+@@ -139,6 +139,9 @@
+ .\"
+ .\"
+ .\"
++.It Fl F
++Enables support for FOSSIL IO using stdio.
++.\"
+ .It Fl G
+ Enable debugging of the video (graphics) routines.
+ .\"
+@@ -212,6 +215,10 @@
+ .Li outb ,
+ etc).
+ .\"
++.It Fl Q
++Suppresses all video IO. Helps optimize the input behavior especially
++when polling for input.
++.\"
+ .\"
+ .\"
+ .It Fl R
+@@ -754,7 +761,7 @@
  and then typing
  .Ic make install
  in the source directory (normally
