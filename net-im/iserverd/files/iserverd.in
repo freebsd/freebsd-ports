@@ -30,7 +30,7 @@ start_cmd=iserverd_start
 
 iserverd_start()
 {
-    su -l ${iserverd_user} -c "exec ${command} ${command_args}"
+    su ${iserverd_user} -c "exec ${command} ${command_args}"
     echo "Starting iserverd."
 }
 
