@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070923:
+  AFFECTS: users of emulators/linux_base-fc7
+  AUTHOR: bsam@FreeBSD.org
+
+  The new port is used just like emulators/linux_base-fc6. Please,
+  read carefully record 20070327 about emulators/linux_base-fc6.
+
 20070921:
   AFFECTS: users of sysutils/grok
   AUTHOR: Wesley Shields <wxs@atarininja.org>
