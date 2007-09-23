@@ -15743,6 +15743,7 @@ trac-remind	ports/www/trac-remind
 trac-restrictedarea	ports/www/trac-restrictedarea
 trac-robotstxt	ports/www/trac-robotstxt
 trac-simpleticket	ports/www/trac-simpleticket
+trac-spam-filter	ports/www/trac-spam-filter
 trac-tags	ports/www/trac-tags
 trac-ticketdelete	ports/www/trac-ticketdelete
 trac-tocmacro	ports/www/trac-tocmacro
