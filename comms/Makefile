@@ -82,6 +82,7 @@
     SUBDIR += p5-Device-SerialPort
     SUBDIR += p5-Fax-Hylafax-Client
     SUBDIR += p5-SMS-Send
+    SUBDIR += p5-SMS-Send-DeviceGsm
     SUBDIR += p5-SMS-Send-TW-PChome
     SUBDIR += plp
     SUBDIR += pr
