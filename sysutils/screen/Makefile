@@ -18,8 +18,19 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A multi-screen window manager
 
 GNU_CONFIGURE=	yes
+.if defined(NO_MAN)
+MAKE_ARGS+=	-DNO_MAN
+.else
 MAN1=		screen.1
+.endif
+.if defined(NO_INFO)
+MAKE_ARGS+=	-DNO_INFO
+.else
+.if !exists(/usr/bin/install-info)
+RUN_DEPENDS+=	install-info:${PORTSDIR}/print/texinfo
+.endif
 INFO=		screen
+.endif
 
 NO_PACKAGE=	Tends to loop using 100% CPU when used from package - perhaps it hard-codes information about the build host
 
