@@ -858,6 +858,7 @@
     SUBDIR += tcpxtract
     SUBDIR += tdetect
     SUBDIR += telserv
+    SUBDIR += tftpgrab
     SUBDIR += thcrut
     SUBDIR += throttled
     SUBDIR += tightvnc

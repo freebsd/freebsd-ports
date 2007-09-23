@@ -1,0 +1,4 @@
+A TFTP stream extractor.  It reads in a pcap file and attempts to
+reconstruct the files transfered via TFTP.
+
+WWW: http://pseudo-flaw.net/tftpgrab/
