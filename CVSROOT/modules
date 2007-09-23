@@ -15497,6 +15497,7 @@ textpattern	ports/www/textpattern
 textproc-flip	ports/textproc/flip
 textproc-muse	ports/textproc/muse
 tftp-hpa	ports/ftp/tftp-hpa
+tftpgrab	ports/net/tftpgrab
 tgif		ports/graphics/tgif
 tgif2tex	ports/print/tgif2tex
 thailocale	ports/misc/thailocale
