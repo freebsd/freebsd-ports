@@ -88,10 +88,6 @@ DEPENDS_ARGS+=	WITHOUT_X11=${WITHOUT_X11}
 message-jadetex:
 	@${CAT} ${FILESDIR}/JADETEX
 	@${FALSE}
-message-gs:
-	@${ECHO_MSG} "NOTICE: Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO_MSG} "        AFPL Postscript interpreter instead of GNU one."
-	@${ECHO_MSG} ""
 
 # generate MINIMALDOCPORTS for src/release/Makefile.inc.docports.
 # (XXX: incomplete yet)
@@ -101,9 +97,6 @@ minimaldocports:
 
 .if empty(WITH_JADETEX) && !make(deinstall)
 pre-everything:: message-jadetex
-.endif
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-pre-everything:: message-gs
 .endif
 
 do-install:	# empty
