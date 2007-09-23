@@ -36,7 +36,7 @@ post-patch:
 		s|-lpthread|${PTHREAD_LIBS}|g; \
 		s|DevIL_CFLAGS=.*|DevIL_CFLAGS="-DUSE_DEVIL_LIBRARY -I${LOCALBASE}/include"|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's| Samples$$||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/SUBDIRS/ s| Samples||g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|__linux__)|& \|\| defined(__FreeBSD__)|g' \
 		${WRKSRC}/include/CEGUIDynamicModule.h \
 		${WRKSRC}/src/CEGUIDynamicModule.cpp
