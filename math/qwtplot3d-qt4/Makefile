@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qwtplot3d
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 CATEGORIES=	math
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-qt4
@@ -19,6 +19,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui moc qmake opengl
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
+USE_DOS2UNIX=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
@@ -31,11 +32,7 @@ pre-build:
 		's|^CC .*|CC=${CC}|; \
 		 s|^CXX .*|CXX=${CXX}|; \
 		 s|^LINK .*|LINK=${CXX}|; \
-		 s|-pipe||; \
-		 s|^\(CFLAGS .*= \)|\1${CFLAGS}|; \
-		 s|^\(CXXFLAGS = \)|\1${CXXFLAGS}|; \
-		 /^INCPATH/s|-I\.|-Iinclude|;'  Makefile
-
+		 s|^\(INCPATH .*=\)|\1 -Iinclude|;'  Makefile
 do-install:
 	(cd ${WRKSRC}/include/ && ${COPYTREE_SHARE} \* ${PREFIX}/include/qwtplot3d-qt4)
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqwtplot3d-qt4.so.${PORTVERSION} ${PREFIX}/lib

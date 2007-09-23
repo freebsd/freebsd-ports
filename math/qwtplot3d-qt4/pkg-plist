@@ -28,5 +28,5 @@ include/qwtplot3d-qt4/qwt3d_types.h
 include/qwtplot3d-qt4/qwt3d_volumeplot.h
 lib/libqwtplot3d-qt4.so
 lib/libqwtplot3d-qt4.so.0
-lib/libqwtplot3d-qt4.so.0.2.6
+lib/libqwtplot3d-qt4.so.0.2.7
 @dirrm include/qwtplot3d-qt4
