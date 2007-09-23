@@ -28,7 +28,7 @@ include/qwt3d_types.h
 include/qwt3d_volumeplot.h
 lib/libqwtplot3d.so
 lib/libqwtplot3d.so.0
-lib/libqwtplot3d.so.0.2.6
+lib/libqwtplot3d.so.0.2.7
 %%PORTDOCS%%%%EXAMPLESDIR%%/autoswitch/autoswitch.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/autoswitch/autoswitch.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/autoswitch/autoswitch.pro
@@ -50,7 +50,6 @@ lib/libqwtplot3d.so.0.2.6
 %%PORTDOCS%%%%EXAMPLESDIR%%/enrichments/src/enrichments.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/enrichments/src/enrichments.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/enrichments/src/main.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/examples.dsw
 %%PORTDOCS%%%%EXAMPLESDIR%%/examples.pro
 %%PORTDOCS%%%%EXAMPLESDIR%%/examples.sln
 %%PORTDOCS%%%%EXAMPLESDIR%%/filecell.png
@@ -69,6 +68,7 @@ lib/libqwtplot3d.so.0.2.6
 %%PORTDOCS%%%%EXAMPLESDIR%%/gridl.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/gridr.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/hiddenline.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/icon.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/icon.ico
 %%PORTDOCS%%%%EXAMPLESDIR%%/icon.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/icon.rc

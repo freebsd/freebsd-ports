@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	qwtplot3d
-PORTVERSION=	0.2.6
-PORTREVISION=	3
+PORTVERSION=	0.2.7
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,14 +19,18 @@ COMMENT=	A 3D plotting widget for scientific data and mathematical expressions
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_QT_VER=	3
-USE_XLIB=	yes
 USE_GL=		yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV=	QTDIR=${QT_PREFIX}
 USE_LDCONFIG=	yes
+USE_DOS2UNIX=	yes
 
 pre-build:
-	@cd ${WRKSRC}; qmake -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ ${PORTNAME}.pro
+	cd ${WRKSRC}; qmake -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ ${PORTNAME}.pro
+	cd ${WRKSRC} && ${REINPLACE_CMD} -e \
+		's|^CC .*|CC=${CC}|; \
+		 s|^CXX .*|CXX=${CXX}|; \
+		 s|^LINK .*|LINK=${CXX}|' Makefile
 
 do-install:
 	${CP} ${WRKSRC}/include/* ${PREFIX}/include
