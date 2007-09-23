@@ -7,6 +7,7 @@
 
 PORTNAME=	cclient
 PORTVERSION=	2004g
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail devel ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
@@ -90,6 +91,9 @@ do-install:
 	${LN} -sf ${SHLIBNAME} ${PREFIX}/lib/lib${SHLIBBASE}.so
 	${INSTALL_DATA} ${WRKSRC}/c-client/c-client.a \
 		${PREFIX}/lib/lib${SHLIBBASE}.a
+	${INSTALL_DATA} ${WRKSRC}/c-client/CFLAGS ${PREFIX}/include/c-client
+	${INSTALL_DATA} ${WRKSRC}/c-client/LDFLAGS ${PREFIX}/include/c-client
+	${INSTALL_DATA} ${WRKSRC}/c-client/OSCFLAGS ${PREFIX}/include/c-client
 
 post-install:
 	${INSTALL_DATA} ${PORTREV_H} ${PREFIX}/include/c-client
