@@ -1,5 +1,6 @@
 bin/gpa
 share/applications/gpa.desktop
+share/locale/cs/LC_MESSAGES/gpa.mo
 share/locale/de/LC_MESSAGES/gpa.mo
 share/locale/es/LC_MESSAGES/gpa.mo
 share/locale/fr/LC_MESSAGES/gpa.mo
@@ -7,6 +8,7 @@ share/locale/ja/LC_MESSAGES/gpa.mo
 share/locale/nl/LC_MESSAGES/gpa.mo
 share/locale/pl/LC_MESSAGES/gpa.mo
 share/locale/pt_BR/LC_MESSAGES/gpa.mo
+share/locale/ru/LC_MESSAGES/gpa.mo
 share/locale/sv/LC_MESSAGES/gpa.mo
 share/locale/tr/LC_MESSAGES/gpa.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gpa.mo
