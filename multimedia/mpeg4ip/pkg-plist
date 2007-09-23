@@ -11,6 +11,7 @@ bin/mpeg4ip-config
 bin/mpeg4vol
 bin/mpeg_ps_extract
 bin/mpeg_ps_info
+bin/mpeg2t_dump
 bin/rgb2yuv
 bin/sdl_pcm_play
 bin/yuvdump
@@ -26,9 +27,6 @@ include/rtp_plugin.h
 include/sdp.h
 include/sdp_error.h
 include/text_plugin.h
-lib/libh264util.la
-lib/libh264util.so
-lib/libh264util.so.0
 lib/libhttp.la
 lib/libhttp.so
 lib/libhttp.so.0
@@ -54,6 +52,9 @@ lib/libmpeg4ip_celpbs.so.0
 lib/libmpeg4ip_faad.la
 lib/libmpeg4ip_faad.so
 lib/libmpeg4ip_faad.so.0
+lib/libmpeg4ip_ffmpeg.la
+lib/libmpeg4ip_ffmpeg.so
+lib/libmpeg4ip_ffmpeg.so.0
 lib/libmpeg4ip_fposrec.la
 lib/libmpeg4ip_fposrec.so
 lib/libmpeg4ip_fposrec.so.0
