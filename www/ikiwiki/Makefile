@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	2.6.1
+PORTVERSION=	2.8
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -38,16 +38,16 @@ USE_GETTEXT=	yes
 
 OPTIONS=	W3M "Install w3m CGI wrapper" off
 
-MAN1=		ikiwiki.1
+MAN1=		ikiwiki.1 ikiwiki-update-wikilist.1
 MAN8=		ikiwiki-mass-rebuild.8
 PORTDOCS=	CHANGELOG NEWS README
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_W3M)
-PLIST_SUB+=	W3M=""
+PLIST_SUB=	W3M=""
 .else
-PLIST_SUB+=	W3M="@comment "
+PLIST_SUB=	W3M="@comment "
 .endif
 
 post-patch:
