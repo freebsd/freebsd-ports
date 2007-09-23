@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	foldingathome
-PORTVERSION=	5.02
+PORTVERSION=	5.04
 CATEGORIES=	biology
 MASTER_SITES=	http://www.stanford.edu/group/pandegroup/release/
 PKGNAMEPREFIX=	linux-

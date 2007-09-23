@@ -1,5 +1,7 @@
 #!/bin/sh
+FAHDIR=~/.fah
 CURDIR=`pwd`
-cd DATADIR
-nice -n 20 ./BINNAME -freeBSD
+mkdir $FAHDIR
+cd $FAHDIR
+nice -n 20 /DATADIR/BINNAME -freeBSD
 cd $CURDIR
