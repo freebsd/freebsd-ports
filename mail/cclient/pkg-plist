@@ -28,6 +28,9 @@ include/c-client/tcp_unix.h
 include/c-client/unix.h
 include/c-client/utf8.h
 include/c-client/portrevision.h
+include/c-client/CFLAGS
+include/c-client/LDFLAGS
+include/c-client/OSCFLAGS
 lib/%%SHLIBNAME%%
 lib/libc-client4.a
 lib/libc-client4.so
