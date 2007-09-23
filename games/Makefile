@@ -654,6 +654,7 @@
     SUBDIR += quake3
     SUBDIR += quake3-data
     SUBDIR += quakeforge
+    SUBDIR += quantumminigolf
     SUBDIR += quaqut
     SUBDIR += qudos
     SUBDIR += quetoo
