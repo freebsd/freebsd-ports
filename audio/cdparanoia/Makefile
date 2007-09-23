@@ -17,7 +17,7 @@ MAINTAINER=	markus@FreeBSD.org
 COMMENT=	A CDDA extraction tool (also known as ripper)
 
 USE_GETOPT_LONG=yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
