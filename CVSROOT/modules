@@ -2270,6 +2270,7 @@ dxf2fig		ports/cad/dxf2fig
 dxpc		ports/x11/dxpc
 dylan		ports/lang/dylan
 dynagen		ports/emulators/dynagen
+dynagen-devel	ports/emulators/dynagen-devel
 dynamag		ports/x11/dynamag
 dynamechs	ports/graphics/dynamechs
 dynamips	ports/emulators/dynamips
