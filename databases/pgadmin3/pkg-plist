@@ -506,6 +506,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/release-7-3-15.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-16.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-17.html
+%%DATADIR%%/docs/en_US/pg/release-7-3-18.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-2.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-3.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-4.html
@@ -522,6 +523,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/release-7-4-13.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-14.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-15.html
+%%DATADIR%%/docs/en_US/pg/release-7-4-16.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-2.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-3.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-4.html
@@ -533,6 +535,8 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/release-7-4.html
 %%DATADIR%%/docs/en_US/pg/release-8-0-1.html
 %%DATADIR%%/docs/en_US/pg/release-8-0-10.html
+%%DATADIR%%/docs/en_US/pg/release-8-0-11.html
+%%DATADIR%%/docs/en_US/pg/release-8-0-12.html
 %%DATADIR%%/docs/en_US/pg/release-8-0-2.html
 %%DATADIR%%/docs/en_US/pg/release-8-0-3.html
 %%DATADIR%%/docs/en_US/pg/release-8-0-4.html
@@ -548,7 +552,11 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/release-8-1-4.html
 %%DATADIR%%/docs/en_US/pg/release-8-1-5.html
 %%DATADIR%%/docs/en_US/pg/release-8-1-6.html
+%%DATADIR%%/docs/en_US/pg/release-8-1-7.html
+%%DATADIR%%/docs/en_US/pg/release-8-1-8.html
 %%DATADIR%%/docs/en_US/pg/release-8-1.html
+%%DATADIR%%/docs/en_US/pg/release-8-2-1.html
+%%DATADIR%%/docs/en_US/pg/release-8-2-2.html
 %%DATADIR%%/docs/en_US/pg/release-8-2.html
 %%DATADIR%%/docs/en_US/pg/release.html
 %%DATADIR%%/docs/en_US/pg/resources.html
@@ -1127,6 +1135,10 @@ bin/pgagent
 %%DATADIR%%/i18n/pgadmin3.lng
 %%DATADIR%%/i18n/pl_PL/pgadmin3.mo
 %%DATADIR%%/i18n/pl_PL/wxstd.mo
+%%DATADIR%%/i18n/pt_PT/pgadmin3.mo
+%%DATADIR%%/i18n/pt_PT/wxstd.mo
+%%DATADIR%%/i18n/sr_YU/pgadmin3.mo
+%%DATADIR%%/i18n/sr_YU/wxstd.mo
 %%DATADIR%%/i18n/wxstd.mo
 %%DATADIR%%/i18n/zh_CN/pgadmin3.mo
 %%DATADIR%%/i18n/zh_CN/wxstd.mo
@@ -1197,6 +1209,8 @@ bin/pgagent
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/i18n/zh_TW
 @dirrm %%DATADIR%%/i18n/zh_CN
+@dirrm %%DATADIR%%/i18n/sr_YU
+@dirrm %%DATADIR%%/i18n/pt_PT
 @dirrm %%DATADIR%%/i18n/pl_PL
 @dirrm %%DATADIR%%/i18n/nl_NL
 @dirrm %%DATADIR%%/i18n/ja_JP
