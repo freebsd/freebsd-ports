@@ -1,0 +1,30 @@
+--- Makefile.orig	Mon Aug  6 22:54:58 2007
++++ Makefile	Thu Sep 13 20:51:10 2007
+@@ -7,9 +7,9 @@
+ SRCDIR	= .
+ 
+ CC	= cc
+-LDFLAGS	= -L/usr/lib -L/usr/local/lib -lm -lSDL -lSDL_ttf -lfftw3f
+-INCFLAGS	= -I/usr/include/SDL 
+-CFLAGS	= -O3 -fomit-frame-pointer -finline-functions -Wall -Wno-unused -malign-double -funroll-all-loops -DLINUX 
++LDFLAGS	= -L${LOCALBASE}/lib -lm `${SDL_CONFIG} --libs` -lSDL_ttf -lfftw3f
++INCFLAGS	= -I${LOCALBASE}/include -I${LOCALBASE}/include/SDL 
++CXXFLAGS	+= -Wall -Wno-unused -DLINUX 
+ LDSOFLAGS	= -Wl
+ 
+ OBJS	= quantumminigolf.o Renderer.o ClassicSimulator.o QuantumSimulator.o SoftwareTracker.o Tracker.o TrackSelector.o
+@@ -18,12 +18,12 @@
+ # pattern rule to compile object files from C files
+ # might not work with make programs other than GNU make
+ %.o : %.cpp Makefile
+-	$(CC) $(INCFLAGS) $(CFLAGS) -c $< -o $@ 
++	$(CXX) $(INCFLAGS) $(CXXFLAGS) -c $< -o $@ 
+ 
+ all: $(EXE)
+ 
+ $(EXE): $(OBJS) Makefile
+-	$(CC) -o $(EXE) $(OBJS) $(LDFLAGS) $(CFLAGS)
++	$(CXX) -o $(EXE) $(OBJS) $(LDFLAGS) $(CXXFLAGS)
+ 
+ .PHONY : clean
+ clean:
