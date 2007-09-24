@@ -17,6 +17,8 @@ COMMENT=	A C++ wrapper for libevent
 
 LIB_DEPENDS=	event-1.3d:${PORTSDIR}/devel/libevent
 
+BROKEN=		Unfetchable
+
 NO_BUILD=	yes
 
 PLIST_FILES=	include/eventxx
