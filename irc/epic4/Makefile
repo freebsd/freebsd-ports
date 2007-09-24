@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	epic4
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	2.8
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 		http://tehran.lain.pl/epic-mirror/EPIC4-PRODUCTION/ \
@@ -21,11 +20,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	josh@tcbug.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
-CONFLICTS=	epic5-[0-9]*
+CONFLICTS=	epic5-0.[0-2]*
 
 GNU_CONFIGURE=	yes
 MAN1=		epic.1
 USE_OPENSSL=	yes
+SUB_FILES=	pkg-message
 
 OPTIONS=	IPV6	"IPv6 support"		on \
 		TCL	"TCL support"		on \
@@ -96,6 +96,7 @@ post-install:
 .for i in BUG_FORM COPYRIGHT KNOWNBUGS README UPDATES VOTES
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
+	${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>
