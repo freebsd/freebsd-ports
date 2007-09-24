@@ -12223,6 +12223,7 @@ phpicalendar	ports/deskutils/phpicalendar
 phpip		ports/net-mgmt/phpip
 phpldapadmin	ports/net/phpldapadmin
 phpldapadmin098	ports/net/phpldapadmin098
+phplist		/ports/mail/phplist
 phplot		ports/graphics/phplot
 phpmailer	ports/mail/phpmailer
 phpminiadmin	ports/databases/phpminiadmin
