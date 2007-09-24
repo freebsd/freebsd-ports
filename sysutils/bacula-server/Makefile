@@ -7,6 +7,7 @@
 
 PORTNAME=	bacula
 DISTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -22,12 +23,16 @@ UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
 
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 
+.if !defined(WITH_BAT)
+.if !defined(WITH_CLIENT_ONLY)
 USE_RC_SUBR?=	bacula-dir bacula-sd
+.endif
 
 .if defined(WITH_CLIENT_ONLY)
 SUB_FILES+=	pkg-message.client
 .else
 SUB_FILES+=	pkg-message.server
+.endif
 .endif
 
 # The user/group IDs below are registered, see
@@ -37,7 +42,7 @@ BACULA_DIR?=/var/db/bacula
 #
 MANCOMPRESSED=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
+CONFIGURE_ARGS+=	--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
 		--with-working-dir=${BACULA_DIR} \
 		--with-scriptdir=${PREFIX}/share/${PORTNAME} \
@@ -90,7 +95,9 @@ WANT_GNOME=	yes
 USE_GNOME=	libgnome gnomelibs libgnomeui
 .endif
 
+.if !defined(WITH_BAT)
 PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -100,6 +107,10 @@ CONFIGURE_ARGS+=	--enable-nls
 .else
 CONFIGURE_ARGS+=	--disable-nls
 .endif
+
+# overridden if client install
+PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.server
+PKGINSTALL=	${PKGDIR}/pkg-install.server
 
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
@@ -160,16 +171,20 @@ RUN_DEPENDS+=		${LOCALBASE}/sbin/mtx:${PORTSDIR}/misc/mtx
 .endif
 .endif
 
+
 .if defined(WITH_OPENSSL)
 CONFIGURE_ARGS+=	--with-openssl
 .endif
 
+.if !defined(WITH_BAT)
 .if defined(WITH_CLIENT_ONLY)
 MAN8=bacula-fd.8 bconsole.8
 .else
 MAN8=bacula.8 bacula-dir.8 bacula-sd.8 bcopy.8 bextract.8 bls.8 bscan.8 btape.8 btraceback.8 dbcheck.8
 MAN1=bsmtp.1 bacula-bgnome-console.1 bacula-tray-monitor.1 bacula-bwxconsole.1
 .endif
+.endif
+
 MAKE_ARGS+=	-E MAN8 -E MAN1
 MAKE_ENV+=	MAN8="${MAN8}" MAN1="${MAN1}"
 
@@ -216,6 +231,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' ${WRKSRC}/Makefile.in
 .endif
 
+.if !target(pre-install)
 pre-install:
 	if [ ! -d "${BACULA_DIR}" ]; then \
 		${ECHO_CMD} "creating ${BACULA_DIR}" ; \
@@ -227,7 +243,10 @@ pre-install:
 # 	Extend /etc/services and install UID/GID
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+.endif
 
+
+.if !target(post-install)
 post-install:
 .if defined(WITH_CLIENT_ONLY)
 # 	Extend only /etc/services
@@ -287,5 +306,6 @@ post-install:
 	done
 
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>
