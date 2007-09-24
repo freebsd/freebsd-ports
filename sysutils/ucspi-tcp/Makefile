@@ -12,7 +12,7 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	http://cr.yp.to/ucspi-tcp/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tools for building TCP client-server applications
 
 OPTIONS=	MAN "Install man(1) pages" on \

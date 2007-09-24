@@ -8,11 +8,10 @@
 PORTNAME=	mozilla-fonts
 PORTVERSION=	1.0
 PORTREVISION=	2
-
 CATEGORIES=	x11-fonts www
 MASTER_SITES=	http://www.happygiraffe.net/dist/
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web fonts for Netscape/Mozilla
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	http://sitescooper.org/released/
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	News site downloader for Palm computing devices
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \

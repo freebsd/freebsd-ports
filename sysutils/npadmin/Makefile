@@ -12,7 +12,7 @@ CATEGORIES=	sysutils print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SNMP based command line network printer management tool
 
 MAN1=		npadmin.1

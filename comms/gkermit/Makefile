@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/
 DISTNAME=	gku100
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File transfer utility using the kermit protocol
 
 NO_WRKSUBDIR=	yes
