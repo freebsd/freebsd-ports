@@ -7,5 +7,5 @@ include/uriparser/UriIp4.h
 lib/liburiparser.a
 lib/liburiparser.la
 lib/liburiparser.so
-lib/liburiparser.so.0
+lib/liburiparser.so.1
 @dirrm include/uriparser
