@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crafty-open-enormous
-PORTVERSION=	1
+PORTVERSION=	20070924
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/pgn/ \
 		${MASTER_SITE_LOCAL}
@@ -23,6 +23,7 @@ DIST_SUBDIR=		crafty
 USE_ZIP=		yes
 NO_WRKSUBDIR=		yes
 NO_PACKAGE=		Package is way too big
+CONFLICTS=		crafty-open-large-* crafty-open-medium-*
 
 .include <bsd.port.pre.mk>
 
