@@ -7,7 +7,7 @@
 
 PORTNAME=		kqueue
 PORTVERSION=		1.4
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		devel python
 MASTER_SITES=		http://ox.eicat.ca/~dgilbert/files/
 PKGNAMEPREFIX=		py-
