@@ -38,7 +38,6 @@
  24.80,		120.97,		"lwhsu"				# HsinChu, Taiwan
  36.6,		120.19,		"dryice"			# Qingdao, Shandong, China
  30.2727,	120.1662,	"davidxu"			# HangZhou, ZheJiang, China
- 39.900,	116.413,	"delphij"			# Beijing, Beijing, China
  39.550,	116.214,	"nemoliu"			# Beijing, Beijing, China
  22.1957,	113.549		"vs"				# Macau, Macau SAR
  3.167,		101.700,	"ariff"				# Kuala Lumpur, Malaysia
@@ -222,6 +221,7 @@
  37.37781,	-121.951980,	"seanc"				# Santa Clara, CA, USA
  37.4,		-122.0,		"asami"				# Santa Clara, CA, USA
  37.68,		-122.03,	"bmah"				# Castro Valley, CA, USA
+ 37.22,		-122.03,	"delphij"			# Mountain View, CA, USA
  37.39,		-122.06,	"marcel"			# Mountain View, CA, USA
  37.40,         -122.07,        "murray"			# (CORE) Mountain View, CA, USA
  37.39		-122.11		"bakul"				# Los Altos, CA, USA
