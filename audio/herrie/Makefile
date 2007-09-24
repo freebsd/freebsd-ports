@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	audio
 MASTER_SITES=	http://herrie.info/distfiles/ \
 		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
@@ -74,9 +74,7 @@ LIB_DEPENDS+=	XCurses.2:${PORTSDIR}/devel/pdcurses
 CONFIGURE_ARGS+=xcurses
 .endif
 .if !defined(WITHOUT_XSPF)
-# We need 0.6.3, which has proper C bindings
-BUILD_DEPENDS+=	libspiff>=0.6.3:${PORTSDIR}/multimedia/libspiff
-RUN_DEPENDS+=	libspiff>=0.6.3:${PORTSDIR}/multimedia/libspiff
+LIB_DEPENDS+=	spiff.1:${PORTSDIR}/multimedia/libspiff
 .else
 CONFIGURE_ARGS+=no_xspf
 .endif
