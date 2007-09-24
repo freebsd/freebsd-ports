@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scheme48
-PORTVERSION=	1.5
+PORTVERSION=	1.7
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.s48.org/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
