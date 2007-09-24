@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amavisd-milter
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.1
 CATEGORIES=	security mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -48,19 +48,14 @@ MAN8=		amavisd-milter.8
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_SENDMAIL_BASE) && \
-    !defined(WITH_SENDMAIL_PORT) && \
-    !exists(${LOCALBASE}/lib/libmilter.a)
-WITH_SENDMAIL_BASE=yes
-.endif
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
-.if defined(WITH_SENDMAIL_BASE)
-.if !exists(/usr/lib/libmilter.a)
+.if defined(WITH_SENDMAIL_BASE) && !exists(/usr/lib/libmilter.a)
 BROKEN=		Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes
 .endif
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
-CONFIGURE_ARGS+=--with-sendmail=${LOCALBASE}
+
+.if defined(WITH_SENDMAIL_PORT)
+CONFIGURE_ARGS+=--with-sendmail=${MILTERBASE}
 .endif
 
 post-install:
