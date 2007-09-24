@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.41.2
-PORTREVISION=	1
+PORTVERSION=	3.41.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.httrack.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Easy-to-use offline browser utility and website copier
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}0
+WRKSRC=		${WRKDIR}/${PORTNAME}-3.41.22
 
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
