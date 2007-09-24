@@ -22,7 +22,7 @@ BUILD_WRKSRC=	${WRKSRC}/sys/modules/ltmdm
 NO_WRKSUBDIR=	yes
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
-RESTRICTED=	"Unknown license type for binary object file ltmdmobj.o"
+RESTRICTED=	Unknown license type for binary object file ltmdmobj.o
 
 LTMDM_DEV_MAJOR?=	228
 LTMDM_OBJ_VERSION?=	600
@@ -39,15 +39,6 @@ STRIP=		# do not strip kernel module
 PORTDOCS=	README.TXT README-en.TXT INSTALL.TXT INSTALL-en.TXT
 SYSDIR?=	${SRC_BASE}/sys
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-MAJOR=		${LTMDM_DEV_MAJOR}
-PLIST_SUB+=	FREEBSD5="@comment " FREEBSD4=""
-PLIST_SUB+=	MAJOR=${MAJOR}
-.else
-PLIST_SUB+=	FREEBSD5="" FREEBSD4="@comment "
-.endif
 PLIST_SUB+=	KMODDIR=${KMODDIR}
 
 pre-fetch:
@@ -73,19 +64,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
 .endif
-
-.if ${OSVERSION} < 500000
-	@${RM} -f ${DEVDIR}/cual0 ${DEVDIR}/cuail0 ${DEVDIR}/cuall0
-	@umask 7
-	@mknod ${DEVDIR}/cual0 c ${MAJOR} 128 uucp:dialer
-	@mknod ${DEVDIR}/cuail0 c ${MAJOR} 160 uucp:dialer
-	@mknod ${DEVDIR}/cuall0 c ${MAJOR} 192 uucp:dialer
-	@${RM} -f ${DEVDIR}/ttyl0 ${DEVDIR}/ttyil0 ${DEVDIR}/ttyll0
-	@umask 77
-	@mknod ${DEVDIR}/ttyl0 c ${MAJOR} 0 uucp:dialer
-	@mknod ${DEVDIR}/ttyil0 c ${MAJOR} 32 uucp:dialer
-	@mknod ${DEVDIR}/ttyll0 c ${MAJOR} 64 uucp:dialer
-.endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
