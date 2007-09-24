@@ -40,8 +40,6 @@
 #   Note that you probably do not need to worry about these options in most
 #   cases, they are included in case you want to experiment with them.
 #
-#    --enable-dlmalloc
-#     Compile and use the malloc package from Doug Lea
 #    --enable-xmalloc-statistics
 #     Show malloc statistics in status page
 #    --enable-cachemgr-hostname=some.hostname
@@ -64,19 +62,26 @@
 #     requests.
 
 PORTNAME=	squid
-PORTVERSION=	3.0.p6.${PATCHSET_DATE}
+PORTVERSION=	3.0.p7.${PATCHSET_DATE}
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
-		ftp://ftp.vistech.net/pub/squid/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
 		ftp://ftp.belnet.be/packages/squid/pub/%SUBDIR%/ \
 		ftp://ftp.nl.uu.net/pub/unix/www/squid/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/www/Squid/%SUBDIR%/ \
 		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,} \
+		http://www.squid-cache.org/Versions/v3/3.0/ \
+		http://www3.us.squid-cache.org/Versions/v3/3.0/ \
+		http://www1.at.squid-cache.org/Versions/v3/3.0/ \
+		http://www2.nl.squid-cache.org/Versions/v3/3.0/ \
+		http://www1.ru.squid-cache.org/Versions/v3/3.0/ \
+		http://www1.uk.squid-cache.org/Versions/v3/3.0/ \
+		http://www1.jp.squid-cache.org/Versions/v3/3.0/ \
+		http://www2.tw.squid-cache.org/Versions/v3/3.0/
 MASTER_SITE_SUBDIR=	squid-3/DEVEL
-DISTNAME=	squid-3.0.PRE6
+DISTNAME=	squid-3.0.PRE7
 DIST_SUBDIR=	squid3.0
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -92,11 +97,11 @@ PATCH_SITE_SUBDIR=	Versions/v3/3.0/changesets
 # Inspired by editors/vim:
 # (I know that portlint is not happy with this, but putting this code at any
 # other location makes it even unhappier.)
-PATCHSET_DATE=		20070623
-FIRST_PATCHSET=		10789
-LAST_PATCHSET=		10865
-IGNORE_PATCHSETS=	10792 10793 10794 10795 10796 10798 10799 10803 10807 \
-			10810 10814 10819 10835 10842 10847 10862 10864
+PATCHSET_DATE=		20070919
+FIRST_PATCHSET=		11069
+LAST_PATCHSET=		11107
+IGNORE_PATCHSETS=	11070 11071 11077 11080 11083 11087 11090 11095 \
+			11097 11103 11105 11106
 PATCHFILES!=	jot -w "%d.patch" - ${FIRST_PATCHSET} ${LAST_PATCHSET} 1
 .for ps in ${IGNORE_PATCHSETS}
 PATCHFILES:=	${PATCHFILES:N${ps}\.patch}
@@ -110,7 +115,7 @@ LATEST_LINK=	squid30
 
 CONFLICTS=	squid-2.[0-9].*
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:259 automake:19 libtool:15
+USE_AUTOTOOLS=	autoconf:261 automake:19 libtool:15
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	squid
@@ -128,7 +133,7 @@ SUB_LIST+=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_SASL_AUTH "Install SASL authentication helpers" off \
 		SQUID_DELAY_POOLS "Enable delay pools" off \
-		SQUID_SNMP "Enable SNMP support" off \
+		SQUID_SNMP "Enable SNMP support" on \
 		SQUID_CARP "Enable CARP support" on \
 		SQUID_SSL "Enable SSL support for reverse proxies" off \
 		SQUID_PINGER "Install the icmp helper" off \
@@ -181,9 +186,9 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_SHUTTING_DOWN ERR_SOCKET_FAILURE ERR_TOO_BIG ERR_UNSUP_REQ \
 		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT
 
-libexec=	cachemgr.cgi db_auth.pl digest_pw_auth diskd ip_user_check \
-		msnt_auth ncsa_auth ntlm_auth \
-		pam_auth smb_auth smb_auth.sh squid_session squid_unix_group \
+libexec=	cachemgr.cgi digest_pw_auth diskd ip_user_check \
+		msnt_auth ncsa_auth ntlm_auth pam_auth smb_auth \
+		smb_auth.sh squid_db_auth squid_session squid_unix_group \
 		wbinfo_group.pl
 .if !defined(SQUID_CONFIGURE_ARGS) || ${SQUID_CONFIGURE_ARGS:M*--disable-unlinkd*} == ""
 libexec+=	unlinkd
@@ -191,7 +196,8 @@ libexec+=	unlinkd
 
 sbin=		RunAccel RunCache squidclient squid
 
-CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
+CONFIGURE_ARGS=	--with-default-user=${SQUID_UID} \
+		--bindir=${PREFIX}/sbin  \
 		--sbindir=${PREFIX}/sbin  \
 		--datadir=${PREFIX}/etc/squid \
 		--libexecdir=${PREFIX}/libexec/squid \
@@ -209,7 +215,8 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 basic_auth=	DB NCSA PAM MSNT SMB
 digest_auth=	password
 external_acl=	ip_user session unix_group wbinfo_group
-MAN8+=		pam_auth.8 squid_session.8 squid_unix_group.8
+MAN8+=		ncsa_auth.8 pam_auth.8 squid_db_auth.8 squid_session.8 \
+		squid_unix_group.8
 .if defined(WITH_SQUID_LDAP_AUTH)
 USE_OPENLDAP=	yes
 CFLAGS+=	-I${LOCALBASE}/include
@@ -262,8 +269,8 @@ CONFIGURE_ARGS+=	--enable-storeio="${storage_schemes}"
 .if defined(WITH_SQUID_DELAY_POOLS)
 CONFIGURE_ARGS+=	--enable-delay-pools
 .endif
-.if defined(WITH_SQUID_SNMP)
-CONFIGURE_ARGS+=	--enable-snmp
+.if defined(WITHOUT_SQUID_SNMP)
+CONFIGURE_ARGS+=	--disable-snmp
 .endif
 .if defined(WITHOUT_SQUID_CARP)
 CONFIGURE_ARGS+=	--disable-carp
@@ -372,10 +379,13 @@ WITH_DEBUG?=		yes
 #
 # If you do not define SQUID_LANGUAGES yourself, all available language files
 # will be installed; the default language will be English.
+#
+# XXX: Support for Armenian error pages is disabled for now because two
+#      pages are lacking from the distribution.
 
-SQUID_LANGUAGES?=	Azerbaijani Bulgarian Catalan Czech Danish Dutch \
-			English Estonian Finnish French German Greek Hebrew \
-			Hungarian Italian Japanese Korean Lithuanian \
+SQUID_LANGUAGES?=	Azerbaijani Bulgarian Catalan Czech Danish \
+			Dutch English Estonian Finnish French German Greek \
+			Hebrew Hungarian Italian Japanese Korean Lithuanian \
 			Polish Portuguese Romanian Russian-1251 Russian-koi8-r \
 			Serbian Simplify_Chinese Slovak Spanish Swedish \
 			Traditional_Chinese Turkish
@@ -400,21 +410,12 @@ PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
 .endfor
 PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
 
-pre-patch:
-# special handling for PatchSet 10817 that relies on metadata information
-# supplied by a non applicable earlier patch; can be removed when the port
-# is updated to a post-pre6 tarball:
-	@${REINPLACE_CMD} -e 's|v 1.453 2007/05/09 22:14:24 wessels|v 1.454 2007/05/13 10:57:41 hno|' \
-	    -e 's|\(Revision:\) 1.453|\1 1.454|' \
-	    ${WRKSRC}/configure.in
-
 post-patch:
 # add this version's datestamp so that Squid identifies itself as patched-up:
-	@${REINPLACE_CMD} -e 's|3.0.PRE6|&+PatchSets-${PATCHSET_DATE}|' \
+	@${REINPLACE_CMD} -e 's|3.0.PRE7|&+PatchSets-${PATCHSET_DATE}|' \
 	    ${WRKSRC}/configure.in
-	@${REINPLACE_CMD} -e 's|%%SQUID_UID%%|${SQUID_UID}|g' \
-	    -e 's|%%SQUID_GID%%|${SQUID_GID}|g' \
-	    -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/cf.data.pre
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	    ${WRKSRC}/src/cf.data.pre
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    ${WRKSRC}/helpers/basic_auth/SMB/Makefile.in \
 	    ${WRKSRC}/helpers/basic_auth/SMB/smb_auth.sh
@@ -433,8 +434,10 @@ post-install:
 # unfortunately fails to do so (as it did in the old 2.5 days...):
 	${INSTALL_DATA} ${WRKSRC}/tools/cachemgr.conf \
 	    ${PREFIX}/etc/squid/cachemgr.conf.default
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/helpers/basic_auth/DB/passwd.sql ${EXAMPLESDIR}
+.endif
 .if defined(WITH_SQUID_PINGER)
 	${CHMOD} 4510 ${PREFIX}/libexec/squid/pinger; \
 	${CHGRP} ${SQUID_GID} ${PREFIX}/libexec/squid/pinger
