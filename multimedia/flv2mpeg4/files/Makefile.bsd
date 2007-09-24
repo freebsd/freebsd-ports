@@ -1,0 +1,13 @@
+PREFIX?=	/usr/local
+BINDIR?=	$(PREFIX)/bin
+
+SRCS=		avformat_writer.c dcprediction.c flv2mpeg4.c fetch.c flvdecoder.c\
+			m4vencode.c mp3header.c
+LDADD+=		-lpthread -lavformat -lavcodec -lavutil
+CFLAGS+=	-O2
+CFLAGS+=	-I/usr/local/include/ffmpeg
+LDADD+=		-L/usr/local/lib
+PROG=		flv2mpeg4
+NO_MAN=		yes
+
+.include <bsd.prog.mk>
