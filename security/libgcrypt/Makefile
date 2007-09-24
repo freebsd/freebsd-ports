@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	libgcrypt
 
 MAINTAINER=	arved@FreeBSD.org
-COMMENT=	"General purpose crypto library based on code used in GnuPG"
+COMMENT=	General purpose crypto library based on code used in GnuPG
 
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error
 
@@ -20,7 +20,7 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 INFO=	gcrypt
 
