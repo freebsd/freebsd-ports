@@ -68,6 +68,7 @@
     SUBDIR += fontcacheproto
     SUBDIR += fontconfig
     SUBDIR += fontconfig-reference
+    SUBDIR += fonts-indic
     SUBDIR += fonts-te
     SUBDIR += fontsproto
     SUBDIR += fonttosfnt
