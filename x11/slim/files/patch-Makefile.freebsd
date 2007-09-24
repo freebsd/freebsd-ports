@@ -10,8 +10,8 @@
 -LDFLAGS=-L/usr/X11R6/lib -L/usr/local/lib -lXft -lX11 -lfreetype -lXrender -lfontconfig -lpng -lz -lm -lcrypt -lXmu -lpng -ljpeg
 +CXX?=/usr/bin/g++
 +CC?=/usr/bin/gcc
-+CFLAGS+=-I$(LOCALBASE)/include `freetype-config --cflags` `libpng-config --cflags`
-+LDFLAGS=-L$(LOCALBASE)/lib `freetype-config --libs` `libpng-config --libs` -lXft -lX11 -lXrender -lfontconfig -lz -lm -lcrypt -lXmu -ljpeg
++CFLAGS+=-I${LOCALBASE}/include `freetype-config --cflags` `libpng-config --cflags`
++LDFLAGS=-L${LOCALBASE}/lib `freetype-config --libs` `libpng-config --libs` -lXft -lX11 -lXrender -lfontconfig -lz -lm -lcrypt -lXmu -ljpeg
  CUSTOM=-DNEEDS_BASENAME
  .ifdef(USE_PAM)
    LDFLAGS+= -lpam
@@ -20,7 +20,7 @@
 -PREFIX=/usr
 -CFGDIR=/etc
 -MANDIR=/usr/share/man
-+PREFIX?=$(LOCALBASE)
++PREFIX?=${LOCALBASE}
 +CFGDIR=$(PREFIX)/etc
 +MANDIR=$(MANPREFIX)/man
  DESTDIR=
