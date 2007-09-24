@@ -146,6 +146,7 @@ lib/libxine.so.1
 %%PLUGINSDIR%%/xineplug_vo_out_xv.so
 %%WITH_XVMC%%%%PLUGINSDIR%%/xineplug_vo_out_xvmc.so
 %%WITH_XVMC%%%%PLUGINSDIR%%/xineplug_vo_out_xxmc.so
+%%WITH_WAVPACK%%%%PLUGINSDIR%%/xineplug_wavpack.so
 libdata/pkgconfig/libxine.pc
 share/aclocal/xine.m4
 %%DOCSDIR%%/README
