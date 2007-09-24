@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.angio.net/security/
 DISTNAME=	icmpquery
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small utility for finding out time & netmask through ICMP
 
 PLIST_FILES=	bin/icmpquery

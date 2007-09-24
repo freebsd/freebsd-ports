@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	JavaScript
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for executing embedded JavaScript
 
 LIB_DEPENDS=	js.1:${PORTSDIR}/lang/spidermonkey

@@ -12,7 +12,7 @@ CATEGORIES=	editors elisp
 MASTER_SITES=	http://common-lisp.net/project/slime/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Superior Lisp Interaction Mode for Emacs
 
 USE_GMAKE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MP3 browsing and streaming under mod_perl and Apache
 
 BUILD_DEPENDS=	${SITE_PERL}/Audio/Wav.pm:${PORTSDIR}/audio/p5-Audio-Wav \

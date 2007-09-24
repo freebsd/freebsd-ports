@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vs
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to report on what goes on in /tmp
 
 PLIST_FILES=	bin/temp-watch

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=../by-authors/id/F/FO/FOOF
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-perl-${PORTVERSION}
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for Ogg Vorbis streams
 
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis

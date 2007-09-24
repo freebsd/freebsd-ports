@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Audio
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl modules for reading and writing Microsoft WAV files
 
 PERL_CONFIGURE=	yes

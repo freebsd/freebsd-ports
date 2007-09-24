@@ -10,7 +10,7 @@ PORTVERSION=	3.3.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.impul.se/ytalk/
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A new "talk" that can talk to multiple parties at once
 
 MAN1=		ytalk.1

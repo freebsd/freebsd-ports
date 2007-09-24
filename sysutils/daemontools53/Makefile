@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://cr.yp.to/daemontools/
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Service monitoring and logging utilities by djb
 
 RESTRICTED=	"Unsure of djb\'s license"
