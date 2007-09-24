@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	anthy
-PORTVERSION=	9100
+PORTVERSION=	9100c
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}/26131
+MASTER_SITE_SUBDIR=	${PORTNAME}/27205
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	anthy
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -47,20 +47,20 @@ GSKK_VERS=	gskk-20041208
 post-extract:
 .if defined(WITH_2CHDIC)
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/2ch.t ${WRKSRC}/mkworddic
-	${PRINTF} "/mkworddic\\\\/tankanji.t/a\\\\\\nread @top_srcdir@/mkworddic/2ch.t\\n" | \
+	${PRINTF} "/mkworddic\\\\/base.t/a\\\\\\nread @top_srcdir@/mkworddic/2ch.t\\n" | \
 	${REINPLACE_CMD} -f /dev/stdin ${WRKSRC}/mkworddic/dict.args.in
 .endif
 
 .if defined(WITH_ODIC)
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${ODIC_SRCS} ${WRKSRC}/mkworddic
-	${PRINTF} "/mkworddic\\\\/tankanji.t/a\\\\\\nread @top_srcdir@/mkworddic/${ODIC_SRCS}\\n" | \
+	${PRINTF} "/mkworddic\\\\/base.t/a\\\\\\nread @top_srcdir@/mkworddic/${ODIC_SRCS}\\n" | \
 	${REINPLACE_CMD} -f /dev/stdin ${WRKSRC}/mkworddic/dict.args.in
 .endif
 
 .if defined(WITH_GSKKDIC)
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${GSKK_SRCS} ${WRKSRC}/mkworddic
 	${GUNZIP_CMD} ${WRKSRC}/mkworddic/${GSKK_SRCS}
-	${PRINTF} "/mkworddic\\\\/tankanji.t/a\\\\\\nread @top_srcdir@/mkworddic/${GSKK_VERS}.t\\n" | \
+	${PRINTF} "/mkworddic\\\\/base.t/a\\\\\\nread @top_srcdir@/mkworddic/${GSKK_VERS}.t\\n" | \
 	${REINPLACE_CMD} -f /dev/stdin ${WRKSRC}/mkworddic/dict.args.in
 .endif
 
