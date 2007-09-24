@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libspiff
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -14,7 +14,7 @@ MAINTAINER=	ed@fxq.nl
 COMMENT=	An XSPF parsing library
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		uriparser.0:${PORTSDIR}/net/uriparser
+		uriparser.1:${PORTSDIR}/net/uriparser
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-expat=${LOCALBASE}
