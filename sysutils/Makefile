@@ -36,6 +36,7 @@
     SUBDIR += ataidle
     SUBDIR += atitvout
     SUBDIR += autopsy
+    SUBDIR += bacula-bat
     SUBDIR += bacula-client
     SUBDIR += bacula-client-devel
     SUBDIR += bacula-docs
