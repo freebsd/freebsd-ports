@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.8
-PORTREVISION=	2
+PORTVERSION=	0.99.9
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/ \
 		http://www.ru.quagga.net/download/ \
@@ -40,7 +39,8 @@ OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 		RTADV		"IPv6 Router Advertisements"	off \
 		SNMP		"SNMP support"			off \
 		TCPSOCKETS	"Use TCP/IP sockets for protocol daemons" off \
-		TCPMD5		"Use experimental MD5 patch for BGP" off
+		TCPMD5		"Use experimental MD5 patch for BGP" off \
+		DLMALLOC	"Use dlmalloc (much faster)" off
 
 .include <bsd.port.pre.mk>
 
@@ -113,11 +113,13 @@ LIB_DEPENDS+=netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
 .if defined(WITH_TCPMD5)
-.if ${OSVERSION} < 491000
-BROKEN=		This version of FreeBSD does not have TCP MD5 signature support
-.endif
 EXTRA_PATCHES+=${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_network.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_vty.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.h ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.c ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.h ${PATCHDIR}/extra-tcpmd5-patch-vtysh-extract.pl.in
 CFLAGS+=	-DQUAGGA_TCP_MD5SIG
+.endif
+
+.if defined(WITH_DLMALLOC)
+LIB_DEPENDS+=dlmalloc.2:${PORTSDIR}/devel/libdlmalloc
+LDFLAGS+=-ldlmalloc
 .endif
 
 .if ${OSVERSION} < 600000
@@ -159,6 +161,7 @@ pre-everything::
 	@${ECHO} "   WITH_SNMP             SNMP support"
 	@${ECHO} "   WITH_TCPSOCKETS       Use TCP/IP sockets for protocol daemons"
 	@${ECHO} "   WITH_TCPMD5           Use experimental MD5 patch for BGP"
+	@${ECHO} "   WITH_DLMALLOC	   Use dlmalloc (much faster)"
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
@@ -190,16 +193,6 @@ post-install:
 	@${ECHO} "  options FAST_IPSEC"
 	@${ECHO} "  device crypto"
 	@${ECHO} "  device cryptodev"
-	@${ECHO} ""
-.endif
-.if ${OSVERSION} < 500000
-	@${ECHO} "Warning: You are running 4.x version of FreeBSD. To properly start"
-	@${ECHO} "         quagga on your system please rename"
-	@${ECHO} "         ${PREFIX}/etc/rc.d/quagga.sh to something like"
-	@${ECHO} "         ${PREFIX}/etc/rc.d/010.quagga.sh or even You"
-	@${ECHO} "         should write your own startup script and use it with"
-	@${ECHO} "         router_enable=\"YES\""
-	@${ECHO} "         router=\"your_startup_script_here\" in your rc.conf"
 	@${ECHO} ""
 .endif
 
