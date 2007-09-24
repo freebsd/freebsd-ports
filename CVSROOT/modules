@@ -3062,6 +3062,7 @@ fontconfig-reference	ports/x11-fonts/fontconfig-reference
 fontedit	ports/sysutils/fontedit
 fonteditfs	ports/sysutils/fonteditfs
 fontforge	ports/print/fontforge
+fonts-indic	ports/x11-fonts/fonts-indic
 fonts-te	ports/x11-fonts/fonts-te
 fontsproto	ports/x11-fonts/fontsproto
 fonttosfnt	ports/x11-fonts/fonttosfnt
