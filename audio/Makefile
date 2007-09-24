@@ -587,6 +587,7 @@
     SUBDIR += sonata
     SUBDIR += sonice
     SUBDIR += sound-juicer
+    SUBDIR += soundconverter
     SUBDIR += soundgrab
     SUBDIR += soundtouch
     SUBDIR += soundtracker
