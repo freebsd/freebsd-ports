@@ -7,6 +7,7 @@
 
 PORTNAME=	crafty-open-medium
 PORTVERSION=	20070909
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd/crafty
@@ -21,7 +22,7 @@ RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 DIST_SUBDIR=	crafty
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
-CONFLICTS=	games/crafty-open-enormous-* games/crafty-open-large-*
+CONFLICTS=	crafty-open-enormous-* crafty-open-large-*
 
 .include <bsd.port.pre.mk>
 
