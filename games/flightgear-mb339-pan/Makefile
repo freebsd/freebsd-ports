@@ -16,6 +16,8 @@ COMMENT=	A simulation of the MB-339 PAN aerobatic jet
 
 RUN_DEPENDS=	${X11BASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
 
+BROKEN=		Size mismatch
+
 PREFIX?=	${X11BASE}	# USE_X_PREFIX would pull in USE_XLIB
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
