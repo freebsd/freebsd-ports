@@ -1,0 +1,47 @@
+bin/soundconverter
+lib/locale/cs/LC_MESSAGES/soundconverter.mo
+lib/locale/de/LC_MESSAGES/soundconverter.mo
+lib/locale/es/LC_MESSAGES/soundconverter.mo
+lib/locale/fr/LC_MESSAGES/soundconverter.mo
+lib/locale/hu/LC_MESSAGES/soundconverter.mo
+lib/locale/it/LC_MESSAGES/soundconverter.mo
+lib/locale/pl/LC_MESSAGES/soundconverter.mo
+lib/locale/pt_BR/LC_MESSAGES/soundconverter.mo
+lib/locale/ru/LC_MESSAGES/soundconverter.mo
+lib/locale/sv_SE/LC_MESSAGES/soundconverter.mo
+share/applications/soundconverter.desktop
+share/icons/hicolor/48x48/apps/soundconverter.png
+share/icons/hicolor/scalable/apps/soundconverter.svg
+%%DATADIR%%/soundconverter-logo.svg
+%%DATADIR%%/soundconverter.glade
+@dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
+@dirrm lib/locale/sv_SE/LC_MESSAGES
+@dirrm lib/locale/sv_SE
+@dirrm lib/locale/ru/LC_MESSAGES
+@dirrm lib/locale/ru
+@dirrm lib/locale/pt_BR/LC_MESSAGES
+@dirrm lib/locale/pt_BR
+@dirrm lib/locale/pl/LC_MESSAGES
+@dirrm lib/locale/pl
+@dirrm lib/locale/it/LC_MESSAGES
+@dirrm lib/locale/it
+@dirrm lib/locale/hu/LC_MESSAGES
+@dirrm lib/locale/hu
+@dirrm lib/locale/fr/LC_MESSAGES
+@dirrm lib/locale/fr
+@dirrm lib/locale/es/LC_MESSAGES
+@dirrm lib/locale/es
+@dirrm lib/locale/de/LC_MESSAGES
+@dirrm lib/locale/de
+@dirrm lib/locale/cs/LC_MESSAGES
+@dirrm lib/locale/cs
+@dirrm lib/locale
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

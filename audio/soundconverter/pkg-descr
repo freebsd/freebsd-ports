@@ -1,0 +1,7 @@
+SoundConverter is the sound conversion application for the GNOME
+environment. It reads anything the GStreamer library can read
+(Ogg Vorbis, AAC, MP3, FLAC, WAV, AVI, MPEG, MOV, M4A, AC3, DTS,
+ALAC, MPC, Shorten, APE, SID, etc...), and writes WAV, FLAC, MP3,
+and Ogg Vorbis files.
+
+WWW: http://soundconverter.berlios.de/
