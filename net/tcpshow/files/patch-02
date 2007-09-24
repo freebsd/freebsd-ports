@@ -1,5 +1,5 @@
---- tcpshow.c.orig	Sun Mar 23 23:32:50 2003
-+++ tcpshow.c	Sun Mar 23 23:32:50 2003
+--- tcpshow.c.orig	Tue Jun 12 17:51:10 2007
++++ tcpshow.c	Tue Jun 12 18:27:37 2007
 @@ -189,6 +189,7 @@
  /****==========------------------------------------------------==========****/
  #endif
@@ -50,7 +50,7 @@
     *prevTime = currTime;
  
     // Convert the delta time to daytime representation.
-@@ -790,25 +796,39 @@
+@@ -790,25 +796,38 @@
     static boolean beenHereAlready = FALSE;
     static char pktBuf[MAXPKT+1];
  
@@ -80,8 +80,7 @@
 +   //  + HEADER pattern triggers next showPkt();
 +
 +#define PTN_HEAD(buf)  (buf[2] == ':' && buf[5] == ':' && buf[8] == '.')
-+#define PTN_DATA(buf)  (buf[0] == '\t' && buf[1] == '\t' \
-+                                && buf[2] == '\t' && buf[3] == ' ')
++#define PTN_DATA(buf)  (buf[0] == '\t')
 +
 +   if (PTN_HEAD(pktBuf)) {
 +     if (beenHereAlready == FALSE) {
@@ -103,7 +102,7 @@
  
  }
  
-@@ -1125,7 +1145,9 @@
+@@ -1125,7 +1144,9 @@
  static char *icmpType (uint1 type) {
  
     char *descr;
@@ -113,7 +112,7 @@
  
     switch (type) {
      case ECHO_REPLY:  descr = "echo-reply";              break;
-@@ -1143,7 +1165,7 @@
+@@ -1143,7 +1164,7 @@
      case INFO_REPLY:  descr = "information-reply";       break;
      case MASK_REQ:    descr = "address-mask-request";    break;
      case MASK_REPLY:  descr = "address-mask-reply";      break;
@@ -122,7 +121,7 @@
     }
  
     return descr;
-@@ -1241,6 +1263,15 @@
+@@ -1241,6 +1262,15 @@
  
  }
  
@@ -138,7 +137,7 @@
  
  /****==========------------------------------------------------==========****/
  /*                                                                          */
-@@ -1248,7 +1279,7 @@
+@@ -1248,7 +1278,7 @@
  /*                                                                          */
  /****==========------------------------------------------------==========****/
  
@@ -147,7 +146,7 @@
  
     /* Command line options.                                                 */
     while (--argc > 0 && **++argv == '-')
-@@ -1281,15 +1312,23 @@
+@@ -1281,15 +1311,23 @@
        }
        else error("Unknown command line flag");
  
@@ -173,7 +172,7 @@
  
  }
  
-@@ -1336,7 +1375,7 @@
+@@ -1336,7 +1374,7 @@
  	 name = number;
        }
     /* The crappy manpage doesn't say the port must be in net byte order.    */
@@ -182,7 +181,26 @@
        name = service->s_name;
     elif (!wantNumber)
        name = unknown;
-@@ -1580,13 +1619,14 @@
+@@ -1371,6 +1409,9 @@
+    }
+    *cleanBuf = '\0';
+ 
++   if ((*cleanPkt == '0') && (*(cleanPkt+1) == 'x'))
++      return cleanPkt+7;
++
+    return cleanPkt;
+ 
+ }
+@@ -1572,7 +1613,7 @@
+    char eFromName[MAX_HOSTNAMELEN+1];  // Sender Ethernet name
+    char eTo[ETHER_ADDRLEN+1];          /* Destination Ethernet address      */
+    char eToName[MAX_HOSTNAMELEN+1];    // Target Ethernet name
+-   char eType[20];                     /* Ethernet type (decoded to ASCII)  */
++   char eType[40];                     /* Ethernet type (decoded to ASCII)  */
+    static double prevTime;             // Timestamp of previous packet
+    char time[16];                      /* Packet timestamp                  */
+ 
+@@ -1580,25 +1621,50 @@
     if (ppFlag) {
        (void)sscanf(p, "%s", time);
        etherType = ETHER_PROTO_IP;      /* tcpdump doesn't supply link type  */
@@ -198,7 +216,36 @@
        return getPkt();
     }
  
-@@ -1598,7 +1638,7 @@
+    (void)sscanf(p, "%s %s %s %s", time, eFrom, eTo, eType);
+-   (void)etherProto(eType, &etherType);
++
++   /* decode output from tcpdump-3.8.x and later */
++   /* format: TIME MACSRC > MACDST, ethertype TYPE (0xCODE), ... */
++   if (*eTo == '>') {
++     char *s;
++     (void)sscanf(p, "%s %s > %s", time, eFrom, eTo);
++     if ((s = strstr(p, "ethertype ")) != NULL) {
++       strlcpy(eType, s+10, sizeof(eType));
++       if ((s = strchr(eType, ' ')) != NULL) {
++         *s = '\0';
++	 *(s+8)='\0';
++	 (void)etherProto(s+4, &etherType);
++       }
++       else {
++	 etherType = 0;
++       }
++     }
++     else {
++        strlcpy(eType, unknown, sizeof(eType));
++        etherType = 0;
++     }
++   }
++   /* decode output from tcpdump-3.7.4 and earlier */
++   else
++     (void)etherProto(eType, &etherType);
+ 
+    (void)strcpy(eFrom, etherAddr(eFrom, 0));
+    (void)strcpy(eFromName, etherName(eFrom, TRUE));
     (void)strcpy(eTo, etherAddr(eTo, 0));
     (void)strcpy(eToName, etherName(eTo, TRUE));
  
@@ -207,7 +254,7 @@
        if (terseFlag) {
           printf("TIME:\t%s%s\n", time, deltaTime(&prevTime, time));
           printf(
-@@ -1614,6 +1654,7 @@
+@@ -1614,6 +1680,7 @@
           if (!noEtherNames) printf(" (%s)", etherName(eTo, FALSE));
           printf("\n\tEncapsulated Protocol:\t\t%s\n", etherProto(eType, 0));
        }
@@ -215,7 +262,7 @@
  
     return getPkt();
  
-@@ -1778,7 +1819,7 @@
+@@ -1778,7 +1845,7 @@
  static void showPkt (reg char *p) {
  
     char *warnMsg = "<*** No decode support for encapsulated protocol ***>";
@@ -224,7 +271,7 @@
  
     prSep();
     printf("Packet %d\n", ++nPktsShown);
-@@ -1807,6 +1848,31 @@
+@@ -1807,6 +1874,31 @@
  	 p = showIcmp(p);
  	 p = showData(p);
  	 break;
@@ -256,7 +303,7 @@
         default:
  	 printf("\t%s\n", warnMsg);
  	 nextPkt();                    /* Doesn't return                    */
-@@ -1826,7 +1892,7 @@
+@@ -1826,7 +1918,7 @@
     }
     /* Note that if getPkt() returns here, then the line read isn't the      */
     /* start of a new packet, i.e. there's spurious data.                    */
@@ -265,7 +312,7 @@
        if (sFlag) printf("\t<*** Spurious data at end: \"%s\" ***>\n", p);
        nextPkt();
     }
-@@ -1996,10 +2062,10 @@
+@@ -1996,10 +2088,10 @@
  
     if (terseFlag) {
        printf(
@@ -279,7 +326,7 @@
        printf(
           "\thlen=%d (data=%u) UAPRSF=%s%s%s%s%s%s",
           hLen, dataLen,
-@@ -2016,9 +2082,9 @@
+@@ -2016,9 +2108,9 @@
        if (!noPortNames) printf(" (%s)", portName(sPort, "tcp", FALSE));
        printf("\n\tDestination Port:\t\t%d", dPort);
        if (!noPortNames) printf(" (%s)", portName(dPort, "tcp", FALSE));

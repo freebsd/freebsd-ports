@@ -8,10 +8,12 @@
 
 PORTNAME=	tcpshow
 PORTVERSION=	1.74
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	obrien
 #		http://www.cs.berkeley.edu/~daw/mike/
+#		http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/tcpshow/
 DISTFILES=	tcpshow.c tcpshow.1
 
 MAINTAINER=	obrien@FreeBSD.org
