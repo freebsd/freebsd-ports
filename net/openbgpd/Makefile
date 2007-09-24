@@ -43,6 +43,10 @@ SUBDIRS=	bgpd \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+IGNORE=		requires strtonum in libc
+.endif
+
 .if ${OSVERSION} < 500037
 IGNORE=		requires macros present in <sys/tree.h>
 .endif
