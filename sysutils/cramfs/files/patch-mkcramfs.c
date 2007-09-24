@@ -4,7 +4,7 @@
  #include <linux/cramfs_fs.h>
  #include <zlib.h>
  
-+#define	MAP_ANONYMOUS	0x20
++#define	MAP_ANONYMOUS	MAP_ANON
 +typedef	long long	loff_t;
 +
  /* Exit codes used by mkfs-type programs */
