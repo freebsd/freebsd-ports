@@ -1,0 +1,11 @@
+--- autoconf/configure.in.orig	Sat Sep 15 12:11:40 2007
++++ autoconf/configure.in	Sat Sep 15 12:11:40 2007
+@@ -2225,7 +2225,7 @@
+   cd src/qt-console
+   chmod 755 install_conf_file build-depkgs-qt-console
+   echo "Creating bat Makefile"	
+-  qmake
++  ${QMAKE}
+   cd ${BUILD_DIR}
+ fi
+ 
