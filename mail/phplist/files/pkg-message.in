@@ -1,0 +1,35 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+1.  phplist needs a MySQL database in order to operate.  
+You can create this database by using something like  the following commands:
+
+% mysqladmin -pu root create phplist
+% mysql -pu root
+mysql> grant all privileges on phplist.* to phplist@localhost identified by
+'your_secure_password';
+
+2.  In order to get Apache or your preferred web server to recognise
+    phplist's location on your disk, you'll need to put the following line
+    (or the equivalent) into the web server configuration:
+
+Alias /phplist %%WWWDIR%%/phplist
+<Directory %%WWWDIR%%/phplist>
+        Order allow,deny
+        Allow from all
+</Directory>
+
+3.  The phplist configuration file, edit:
+
+%%WWWDIR%%/phplist/lists/config/config.php
+
+    phplist will not operate correctly unless you spend some time setting
+    correct options in this file.
+
+4.  You should now be able to log into your phplist installation by pointing
+    your browser at: http://www.example.com/lists/admin/.  phplist includes
+    a web based configuration system which will guide you through all the
+    steps required for creating a useful phplist installation.
+
+5.  Please see the documentation directory (%%DOCSDIR%%)
+    for full documentation on how to get the best out of phplist.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

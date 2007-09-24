@@ -426,6 +426,7 @@
     SUBDIR += pgpsendmail
     SUBDIR += php4-imap
     SUBDIR += php5-imap
+    SUBDIR += phplist
     SUBDIR += phpmailer
     SUBDIR += pine-pgp-filters
     SUBDIR += pine4
