@@ -16916,6 +16916,7 @@ xfishtank	ports/x11/xfishtank
 xflame		ports/games/xflame
 xfm		ports/x11-fm/xfm
 xfmail		ports/mail/xfmail
+xfmedia-remote-plugin	ports/multimedia/xfmedia-remote-plugin
 xfontsel	ports/x11-fonts/xfontsel
 xforms		ports/x11-toolkits/xforms
 xforms-i18n	ports/x11-toolkits/xforms-i18n
