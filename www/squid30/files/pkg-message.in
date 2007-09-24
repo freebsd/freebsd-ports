@@ -20,7 +20,7 @@
 
      To enable Squid, set squid_enable=yes in either
      /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/squid
-     Please see %%PREFIX%%/etc/rc.d/squid(.sh) for further details.
+     Please see %%PREFIX%%/etc/rc.d/squid for further details.
 
      Note:
      If you just updated your Squid installation from an earlier version,
