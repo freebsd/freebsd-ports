@@ -31,6 +31,6 @@ include/spiff/spiff_c.h
 lib/libspiff.a
 lib/libspiff.la
 lib/libspiff.so
-lib/libspiff.so.0
+lib/libspiff.so.1
 @dirrm include/spiff/ProjectOpus
 @dirrm include/spiff
