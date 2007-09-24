@@ -7,6 +7,7 @@
 
 PORTNAME=	dynagen
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dyna-gen
@@ -15,7 +16,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	pol@opk.ru
 COMMENT=	Text-based front end for Dynamips development version
 
-RUN_DEPENDS=	dynamips-devel:${PORTSDIR}/emulators/dynamips-devel
+RUN_DEPENDS=	dynamips:${PORTSDIR}/emulators/dynamips-devel
+# Note that it *should* be dynamips-devel but that port installs it as dynamips
 
 CONFLICTS=	dynagen-[0-9]* dynamips-[0-9]*
 
