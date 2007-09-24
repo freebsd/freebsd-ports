@@ -2999,6 +2999,7 @@ fluxcms		ports/www/fluxcms
 fluxconf	ports/x11-wm/fluxconf
 fluxspace	ports/x11-wm/fluxspace
 fluxter		ports/x11-wm/fluxter
+flv2mpeg4	ports/multimedia/flv2mpeg4
 flvw		ports/x11-toolkits/flvw
 flwm		ports/x11-wm/flwm
 fly		ports/graphics/fly
