@@ -1,0 +1,7 @@
+libexec/xfce4/panel-plugins/xfmedia-remote-plugin
+share/locale/fi/LC_MESSAGES/xfmedia-remote-plugin.mo
+share/xfce4/panel-plugins/xfmedia-remote.desktop
+@dirrm share/xfce4/panel-plugins
+@dirrm share/xfce4
+@dirrm libexec/xfce4/panel-plugins
+@dirrm libexec/xfce4
