@@ -53,4 +53,3 @@ do-install:
 .endif
 
 .include <bsd.port.post.mk>
-# DO NOT DELETE
