@@ -30,6 +30,10 @@ MAKEFILE=	Makefile.freebsd
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+			${WRKSRC}/${PORTNAME}.conf
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
@@ -41,7 +45,7 @@ do-install:
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/slim.conf ]; then \
-		${CP} -p ${PREFIX}/etc/slim.conf.sample ${PREFIX}/etc/slim.conf ; \
+		${INSTALL_DATA} -p ${WRKSRC}/slim.conf ${PREFIX}/etc/slim.conf ; \
 	fi
 	@${ECHO_MSG} ""
 	@${CAT} ${PKGMESSAGE}
