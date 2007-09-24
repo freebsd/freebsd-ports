@@ -34,16 +34,7 @@ CFLAGS+=	-fPIC
 
 MAN1=		xcircuit.1
 
-OPTIONS=	GHOSTSCRIPT_AFPL "Use AFPL Postscript interpreter" off
-
 .include <bsd.port.pre.mk>
-
-pre-configure:
-.if defined(WITH_GHOSTSCRIPT_AFPL)
-	@${ECHO_MSG} "===>  Using AFPL Postscript interpreter"
-.else
-	@${ECHO_MSG} "===>  Using GNU Postscript interpreter"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s| == | = |g ; \

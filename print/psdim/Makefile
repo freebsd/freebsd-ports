@@ -14,10 +14,6 @@ MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/psdim/download/
 MAINTAINER=	e-masson@kisoft-services.com
 COMMENT=	Utility that calculates the optimal placement of the pages for n-up printing
 
-#
-# define WITH_GHOSTSCRIPT_AFPL=yes for AFPL Postscript interpreter
-# instead of GNU one
-#
 USE_GHOSTSCRIPT=yes
 
 HAS_CONFIGURE=	yes

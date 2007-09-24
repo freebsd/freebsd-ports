@@ -37,14 +37,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-everything::
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO_MSG} ""
-.endif
-
 post-install:
 	@${TOUCH} ${PREFIX}/etc/gnome/fonts/gnome-print-x11.fontmap
 

@@ -23,14 +23,6 @@ STRIP=
 # ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
 USE_GHOSTSCRIPT_RUN=	yes
 
-pre-everything::
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO} ""
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wb ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

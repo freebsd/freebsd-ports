@@ -34,14 +34,6 @@ INSTALLDIRS=	gs DPS/demos/dpsexec DPS/demos/xepsf
 
 .include <bsd.port.pre.mk>
 
-pre-fetch:
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO} ""
-.endif
-
 pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|manm|mann|g'

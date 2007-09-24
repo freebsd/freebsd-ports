@@ -68,10 +68,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "      Define WITH_FULL_DOCS to build ps, pdf and html docs"
 	@${ECHO_MSG} "      This requires teTeX and ghostscript !"
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
-.endif
 	@${ECHO_MSG} ""
 .endif
 

@@ -23,14 +23,6 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/font2svg %%DATADIR%%/encodings %%DATADIR%%/font2svg.ps
 PLIST_DIRS=	%%DATADIR%%
 
-pre-everything::
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO_MSG} ""
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|^#!/bin/bash|#!/usr/bin/env bash| ; \
 		 s|^font2svg_home=.*$$|font2svg_home=${DATADIR}|" \

@@ -62,7 +62,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print
 # normazile WRKSRC so things like cups-pstoraster may work
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-CONFLICTS=	ghostscript-afpl* ghostscript-gpl*
+CONFLICTS=	ghostscript-gpl*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \

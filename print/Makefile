@@ -86,8 +86,6 @@
     SUBDIR += ft2demos
     SUBDIR += gfontview
     SUBDIR += ggv
-    SUBDIR += ghostscript-afpl
-    SUBDIR += ghostscript-afpl-nox11
     SUBDIR += ghostscript-gnu
     SUBDIR += ghostscript-gnu-commfont
     SUBDIR += ghostscript-gnu-nox11

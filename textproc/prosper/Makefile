@@ -40,14 +40,6 @@ DOCS=		AUTHORS ChangeLog FAQ INSTALL NEWS README TODO \
 		doc/rotation.ps doc/rotation.tex
 EXAMPLES_DIR=	doc/doc-examples
 
-pre-fetch:
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO} ""
-.endif
-
 post-extract:
 	@${CP} -r ${WRKDIR}/contrib-prosper-1.0.0/* ${WRKSRC}/contrib/
 

@@ -33,14 +33,6 @@ PLIST_FILES=	bin/epstool
 PORTDOCS=	epstool.htm gsview.css
 .endif
 
-pre-everything::
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO_MSG} ""
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/epstool ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/epstool.1 ${MANPREFIX}/man/man1

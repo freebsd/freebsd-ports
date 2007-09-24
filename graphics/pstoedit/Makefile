@@ -78,14 +78,6 @@ LIB_DEPENDS+=	plotter.4:${PORTSDIR}/graphics/plotutils
 PLIST_SUB+=	PLOTUTILS=""
 .endif
 
-pre-everything::
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO_MSG} ""
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXXFLAGS="-g"|CXXFLAGS="$$CXXFLAGS"|g ; \
 		 s|GCC_OK=no|GCC_OK=yes|g ; \

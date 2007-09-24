@@ -1,5 +1,0 @@
-# $FreeBSD$
-
-GS_VERSION=	8.54
-GS_REVISION=	5
-GS_EPOCH=	1

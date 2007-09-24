@@ -51,14 +51,6 @@ DOCSDIR=	${PREFIX}/share/doc/ocaml-images
 PORTDOCS=	Announce Announce-2.2 CHANGES INSTALL LICENSE doc
 .endif
 
-pre-everything::
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO_MSG} ""
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation..."

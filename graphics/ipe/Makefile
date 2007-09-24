@@ -35,14 +35,6 @@ MAN1=		figtoipe.1 ipe.1 ipe5toxml.1 ipetoipe.1 ipetopng.1
 QTDIR?=		${QT_PREFIX}
 QMAKE?=		${LOCALBASE}/bin/qmake
 
-pre-fetch:
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO} ""
-.endif
-
 .if !defined(WITH_TEXMF_PREFIX)
 	@${ECHO} ""
 	@${ECHO} "      Define WITH_TEXMF_PREFIX=somewhere"

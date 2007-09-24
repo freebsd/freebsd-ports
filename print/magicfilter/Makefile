@@ -30,14 +30,4 @@ CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}
 MAN5=		magicfilter.5
 MAN8=		magicfilter.8
 
-.include <bsd.port.pre.mk>
-
-pre-everything::
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO} ""
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

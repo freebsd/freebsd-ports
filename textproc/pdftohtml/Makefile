@@ -23,14 +23,6 @@ PLIST_FILES=	bin/pdftohtml
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-pre-fetch:
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO} ""
-.endif
-
 pre-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -e "s|-O[0-9]||" -e "s|-g||"
