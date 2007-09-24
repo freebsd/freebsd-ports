@@ -219,6 +219,18 @@ bin/FreeMat
 %%DATADIR%%/help/html/expei_eqn1.png
 %%DATADIR%%/help/html/expplot1.png
 %%DATADIR%%/help/html/expplot2.png
+%%DATADIR%%/help/html/external_cenum.html
+%%DATADIR%%/help/html/external_ctypecast.html
+%%DATADIR%%/help/html/external_ctypedefine.html
+%%DATADIR%%/help/html/external_ctypefreeze.html
+%%DATADIR%%/help/html/external_ctypenew.html
+%%DATADIR%%/help/html/external_ctypeprint.html
+%%DATADIR%%/help/html/external_ctyperead.html
+%%DATADIR%%/help/html/external_ctypesize.html
+%%DATADIR%%/help/html/external_ctypethaw.html
+%%DATADIR%%/help/html/external_ctypewrite.html
+%%DATADIR%%/help/html/external_import.html
+%%DATADIR%%/help/html/external_loadlib.html
 %%DATADIR%%/help/html/fft1.png
 %%DATADIR%%/help/html/fft2.png
 %%DATADIR%%/help/html/fft_eqn1.png
@@ -250,6 +262,7 @@ bin/FreeMat
 %%DATADIR%%/help/html/freemat_computer.html
 %%DATADIR%%/help/html/freemat_diary.html
 %%DATADIR%%/help/html/freemat_docli.html
+%%DATADIR%%/help/html/freemat_edit.html
 %%DATADIR%%/help/html/freemat_editor.html
 %%DATADIR%%/help/html/freemat_errorcount.html
 %%DATADIR%%/help/html/freemat_etime.html
@@ -260,9 +273,7 @@ bin/FreeMat
 %%DATADIR%%/help/html/freemat_filesep.html
 %%DATADIR%%/help/html/freemat_help.html
 %%DATADIR%%/help/html/freemat_helpwin.html
-%%DATADIR%%/help/html/freemat_import.html
 %%DATADIR%%/help/html/freemat_jitcontrol.html
-%%DATADIR%%/help/html/freemat_loadlib.html
 %%DATADIR%%/help/html/freemat_mfilename.html
 %%DATADIR%%/help/html/freemat_path.html
 %%DATADIR%%/help/html/freemat_pathsep.html
@@ -335,6 +346,7 @@ bin/FreeMat
 %%DATADIR%%/help/html/handle_htext.html
 %%DATADIR%%/help/html/handle_image.html
 %%DATADIR%%/help/html/handle_imageproperties.html
+%%DATADIR%%/help/html/handle_imagesc.html
 %%DATADIR%%/help/html/handle_is2dview.html
 %%DATADIR%%/help/html/handle_ishold.html
 %%DATADIR%%/help/html/handle_legend.html
@@ -417,6 +429,7 @@ bin/FreeMat
 %%DATADIR%%/help/html/io_dlmread.html
 %%DATADIR%%/help/html/io_fclose.html
 %%DATADIR%%/help/html/io_feof.html
+%%DATADIR%%/help/html/io_fflush.html
 %%DATADIR%%/help/html/io_fgetline.html
 %%DATADIR%%/help/html/io_fopen.html
 %%DATADIR%%/help/html/io_format.html
@@ -636,6 +649,7 @@ bin/FreeMat
 %%DATADIR%%/help/html/sec_debug.html
 %%DATADIR%%/help/html/sec_elementary.html
 %%DATADIR%%/help/html/sec_eqn1.png
+%%DATADIR%%/help/html/sec_external.html
 %%DATADIR%%/help/html/sec_flow.html
 %%DATADIR%%/help/html/sec_freemat.html
 %%DATADIR%%/help/html/sec_function.html
@@ -836,6 +850,7 @@ bin/FreeMat
 %%DATADIR%%/help/text/ceil.mdc
 %%DATADIR%%/help/text/cell.mdc
 %%DATADIR%%/help/text/cellstr.mdc
+%%DATADIR%%/help/text/cenum.mdc
 %%DATADIR%%/help/text/char.mdc
 %%DATADIR%%/help/text/circshift.mdc
 %%DATADIR%%/help/text/cla.mdc
@@ -880,6 +895,15 @@ bin/FreeMat
 %%DATADIR%%/help/text/csvread.mdc
 %%DATADIR%%/help/text/csvwrite.mdc
 %%DATADIR%%/help/text/ctranspose.mdc
+%%DATADIR%%/help/text/ctypecast.mdc
+%%DATADIR%%/help/text/ctypedefine.mdc
+%%DATADIR%%/help/text/ctypefreeze.mdc
+%%DATADIR%%/help/text/ctypenew.mdc
+%%DATADIR%%/help/text/ctypeprint.mdc
+%%DATADIR%%/help/text/ctyperead.mdc
+%%DATADIR%%/help/text/ctypesize.mdc
+%%DATADIR%%/help/text/ctypethaw.mdc
+%%DATADIR%%/help/text/ctypewrite.mdc
 %%DATADIR%%/help/text/cumprod.mdc
 %%DATADIR%%/help/text/cumsum.mdc
 %%DATADIR%%/help/text/dawson.mdc
@@ -911,6 +935,7 @@ bin/FreeMat
 %%DATADIR%%/help/text/double.mdc
 %%DATADIR%%/help/text/drawnow.mdc
 %%DATADIR%%/help/text/e.mdc
+%%DATADIR%%/help/text/edit.mdc
 %%DATADIR%%/help/text/editor.mdc
 %%DATADIR%%/help/text/ei.mdc
 %%DATADIR%%/help/text/eig.mdc
@@ -938,6 +963,7 @@ bin/FreeMat
 %%DATADIR%%/help/text/feof.mdc
 %%DATADIR%%/help/text/feps.mdc
 %%DATADIR%%/help/text/feval.mdc
+%%DATADIR%%/help/text/fflush.mdc
 %%DATADIR%%/help/text/fft.mdc
 %%DATADIR%%/help/text/fftn.mdc
 %%DATADIR%%/help/text/fftshift.mdc
@@ -1006,6 +1032,7 @@ bin/FreeMat
 %%DATADIR%%/help/text/imag.mdc
 %%DATADIR%%/help/text/image.mdc
 %%DATADIR%%/help/text/imageproperties.mdc
+%%DATADIR%%/help/text/imagesc.mdc
 %%DATADIR%%/help/text/import.mdc
 %%DATADIR%%/help/text/imread.mdc
 %%DATADIR%%/help/text/indexing.mdc
@@ -1367,6 +1394,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/graph/grid.m
 %%DATADIR%%/toolbox/graph/hold.m
 %%DATADIR%%/toolbox/graph/image.m
+%%DATADIR%%/toolbox/graph/imagesc.m
 %%DATADIR%%/toolbox/graph/legend.m
 %%DATADIR%%/toolbox/graph/line.m
 %%DATADIR%%/toolbox/graph/loglog.m
@@ -1595,6 +1623,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/bbtest_ceil.m
 %%DATADIR%%/toolbox/test/bbtest_cell.m
 %%DATADIR%%/toolbox/test/bbtest_cellstr.m
+%%DATADIR%%/toolbox/test/bbtest_cenum.m
 %%DATADIR%%/toolbox/test/bbtest_char.m
 %%DATADIR%%/toolbox/test/bbtest_circshift.m
 %%DATADIR%%/toolbox/test/bbtest_cla.m
@@ -1639,6 +1668,15 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/bbtest_csvread.m
 %%DATADIR%%/toolbox/test/bbtest_csvwrite.m
 %%DATADIR%%/toolbox/test/bbtest_ctranspose.m
+%%DATADIR%%/toolbox/test/bbtest_ctypecast.m
+%%DATADIR%%/toolbox/test/bbtest_ctypedefine.m
+%%DATADIR%%/toolbox/test/bbtest_ctypefreeze.m
+%%DATADIR%%/toolbox/test/bbtest_ctypenew.m
+%%DATADIR%%/toolbox/test/bbtest_ctypeprint.m
+%%DATADIR%%/toolbox/test/bbtest_ctyperead.m
+%%DATADIR%%/toolbox/test/bbtest_ctypesize.m
+%%DATADIR%%/toolbox/test/bbtest_ctypethaw.m
+%%DATADIR%%/toolbox/test/bbtest_ctypewrite.m
 %%DATADIR%%/toolbox/test/bbtest_cumprod.m
 %%DATADIR%%/toolbox/test/bbtest_cumsum.m
 %%DATADIR%%/toolbox/test/bbtest_dawson.m
@@ -1670,6 +1708,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/bbtest_double.m
 %%DATADIR%%/toolbox/test/bbtest_drawnow.m
 %%DATADIR%%/toolbox/test/bbtest_e.m
+%%DATADIR%%/toolbox/test/bbtest_edit.m
 %%DATADIR%%/toolbox/test/bbtest_editor.m
 %%DATADIR%%/toolbox/test/bbtest_ei.m
 %%DATADIR%%/toolbox/test/bbtest_eig.m
@@ -1697,6 +1736,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/bbtest_feof.m
 %%DATADIR%%/toolbox/test/bbtest_feps.m
 %%DATADIR%%/toolbox/test/bbtest_feval.m
+%%DATADIR%%/toolbox/test/bbtest_fflush.m
 %%DATADIR%%/toolbox/test/bbtest_fft.m
 %%DATADIR%%/toolbox/test/bbtest_fftn.m
 %%DATADIR%%/toolbox/test/bbtest_fftshift.m
@@ -1765,6 +1805,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/bbtest_imag.m
 %%DATADIR%%/toolbox/test/bbtest_image.m
 %%DATADIR%%/toolbox/test/bbtest_imageproperties.m
+%%DATADIR%%/toolbox/test/bbtest_imagesc.m
 %%DATADIR%%/toolbox/test/bbtest_import.m
 %%DATADIR%%/toolbox/test/bbtest_imread.m
 %%DATADIR%%/toolbox/test/bbtest_indexing.m
@@ -2484,6 +2525,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/wbtest_isvector_4.m
 %%DATADIR%%/toolbox/test/wbtest_isvector_5.m
 %%DATADIR%%/toolbox/test/wbtest_isvector_6.m
+%%DATADIR%%/toolbox/test/wbtest_linspace_1.m
 %%DATADIR%%/toolbox/test/wbtest_lower_1.m
 %%DATADIR%%/toolbox/test/wbtest_lower_2.m
 %%DATADIR%%/toolbox/test/wbtest_lower_3.m
@@ -2592,6 +2634,10 @@ bin/FreeMat
 %%DATADIR%%/toolbox/trig/tand.m
 %%DATADIR%%/toolbox/trig/tanh.m
 %%DATADIR%%/toolbox/util/addpath.m
+%%DATADIR%%/toolbox/util/ctypecast.m
+%%DATADIR%%/toolbox/util/ctypenew.m
+%%DATADIR%%/toolbox/util/ctyperead.m
+%%DATADIR%%/toolbox/util/ctypewrite.m
 %%DATADIR%%/toolbox/util/exit.m
 %%DATADIR%%/toolbox/util/filesep.m
 %%DATADIR%%/toolbox/util/fullfile.m
