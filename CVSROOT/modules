@@ -14939,6 +14939,7 @@ sopwith		ports/games/sopwith
 soqt		ports/x11-toolkits/soqt
 sortmail	ports/mail/sortmail
 sound-juicer	ports/audio/sound-juicer
+soundconverter	ports/audio/soundconverter
 soundgrab	ports/audio/soundgrab
 soundmodem	ports/comms/soundmodem
 soundtouch	ports/audio/soundtouch
