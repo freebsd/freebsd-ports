@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -64,6 +64,7 @@ OPTIONS=	ARTS "Enable aRts support" off \
 		AALIB "Enable aalib support" off \
 		IMAGEMAGICK "Enable ImageMagick support" off \
 		GTK2 "Enable gdkpixbuf support" off \
+		WAVPACK "Enable WavPack support" on \
 
 MAN1=	xine-config.1
 MAN5=	xine.5
@@ -166,6 +167,15 @@ PLIST_SUB+=	WITH_GTK2=""
 .else
 PLIST_SUB+=	WITH_GTK2="@comment "
 CONFIGURE_ARGS+=	--disable-gdkpixbuf
+.endif
+
+.if defined(WITH_WAVPACK)
+LIB_DEPENDS+=	wavpack.1:${PORTSDIR}/audio/wavpack
+PLIST_SUB+=	WITH_WAVPACK=""
+CONFIGURE_ARGS+=	--with-wavpack
+.else
+PLIST_SUB+=	WITH_WAVPACK="@comment "
+CONFIGURE_ARGS+=	--without-wavpack
 .endif
 
 .if ${CONFIGURE_ARGS:M*--without-imagemagick*} == "" || ${CONFIGURE_ARGS:M*-disable-gdkpixbuf*} == ""
