@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	hexedit
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.12
 CATEGORIES=	editors
-MASTER_SITES=	http://merd.net/pixel/ \
+MASTER_SITES=	http://people.mandriva.com/~prigaux/ \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	obrien/:local
 DISTFILES=	${DISTNAME}.src.tgz:DEFAULT,local
@@ -20,6 +20,8 @@ COMMENT=	View and edit files in hexadecimal or ASCII
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-${PORTVERSION}//}
 GNU_CONFIGURE=	yes
 MAN1=		hexedit.1
+
+PLIST_FILES=	bin/hexedit
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/hexedit ${PREFIX}/bin
