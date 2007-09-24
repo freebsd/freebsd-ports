@@ -14,6 +14,9 @@
 %%PORTNAME%%/etc/internal_options.conf
 %%PORTNAME%%/etc/shared/rootkit_trojans.txt
 %%PORTNAME%%/etc/shared/rootkit_files.txt
+%%PORTNAME%%/etc/shared/win_malware_rcl.txt
+%%PORTNAME%%/etc/shared/win_audit_rcl.txt
+%%PORTNAME%%/etc/shared/win_applications_rcl.txt
 @unexec if cmp -s %D/%%PORTNAME%%/etc/ossec.conf %D/%%PORTNAME%%/etc/ossec.conf.sample; then rm -f %D/%%PORTNAME%%/etc/ossec.conf; fi
 %%PORTNAME%%/etc/ossec.conf.sample
 %%PORTNAME%%/logs/ossec.log
