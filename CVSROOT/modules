@@ -711,6 +711,7 @@ b2evolution	ports/www/b2evolution
 babel		ports/biology/babel
 babytrans	ports/deskutils/babytrans
 backfract	ports/graphics/backfract
+bacula-bat	ports/sysutils/bacula-bat
 bacula-client	ports/sysutils/bacula-client
 bacula-client-devel	ports/sysutils/bacula-client-devel
 bacula-docs	ports/sysutils/bacula-docs
