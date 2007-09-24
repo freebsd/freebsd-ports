@@ -30,11 +30,10 @@ MAKE_ARGS+=	INSTALLFLAGS="${COPY}" \
 		INSTMANFLAGS="${_MANOWNGRP} -m ${MANMODE}"
 
 pre-everything::
-.if !defined(WITH_GHOSTSCRIPT_AFPL) && !defined(WITH_GHOSTSCRIPT_GNU)
+.if !defined(WITH_GHOSTSCRIPT_GNU)
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GPL one"
-	@${ECHO_MSG} "      Or define WITH_GHOSTSCRIPT_GNU=yes to use GNU one"
+	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_GNU=yes to use"
+	@${ECHO_MSG} "      GNU Postscript interpreter instead of GPL one"
 	@${ECHO_MSG} ""
 .endif
 

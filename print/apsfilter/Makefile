@@ -33,10 +33,6 @@ NO_X=		yes
 MAKE_ENV+=	NO_X=true
 .endif
 
-#
-# define WITH_GHOSTSCRIPT_AFPL=yes for AFPL Postscript interpreter
-# instead of GNU one
-#
 USE_GHOSTSCRIPT_RUN=	yes
 
 #
@@ -129,14 +125,6 @@ USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/apsfilter
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" GHOSTSCRIPT_PORT="${GHOSTSCRIPT_PORT}"
 CONFIGURE_ARGS=	--prefix=${PREFIX}
-
-pre-everything::
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO} ""
-.endif
 
 .if !defined(BATCH)
 pre-configure:

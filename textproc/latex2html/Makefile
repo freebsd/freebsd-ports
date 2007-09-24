@@ -41,14 +41,6 @@ PORTDOCS=	FAQ INSTALL LICENSE README
 
 .include <bsd.port.pre.mk>
 
-pre-everything::
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO_MSG} ""
-.endif
-
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/latex2html.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)

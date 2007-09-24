@@ -26,14 +26,6 @@ MAN1=		tth.1
 PLIST_FILES=	bin/latex2gif bin/ps2gif bin/ps2png bin/tth bin/Xfonts.fix
 PORTDOCS=	license.txt tth_manual.html
 
-pre-everything::
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO_MSG} ""
-.endif
-
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} tth.c -o tth -ll
 

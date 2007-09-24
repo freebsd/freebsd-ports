@@ -29,9 +29,7 @@ DEPENDS_ARGS+=	-DA4
 USE_GHOSTSCRIPT=	yes
 WITH_GHOSTSCRIPT_GNU=	yes
 
-CONFLICTS=	ghostscript-afpl-[0-9]* \
-		ghostscript-afpl-nox11-[0-9]* \
-		ghostscript-gpl-[0-9]* \
+CONFLICTS=	ghostscript-gpl-[0-9]* \
 		ghostscript-gpl-nox11-[0-9]*
 
 CMAPDIR?=	${LOCALBASE}/share/fonts/adobe-cmaps

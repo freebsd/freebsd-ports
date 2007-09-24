@@ -14,10 +14,6 @@ MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/lpr-wrapper/download/
 MAINTAINER=	e-masson@kisoft-services.com
 COMMENT=	A user level printer frontend
 
-#
-# define WITH_GHOSTSCRIPT_AFPL=yes for AFPL Postscript interpreter
-# instead of GNU one
-#
 USE_GHOSTSCRIPT_RUN=	yes
 
 HAS_CONFIGURE=	yes

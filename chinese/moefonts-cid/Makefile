@@ -26,14 +26,6 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 
-pre-fetch:
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO} ""
-.endif
-
 do-install:
 	@${INSTALL_DATA} ${DISTDIR}/MOEKai-Regular \
 		${DISTDIR}/MOESung-Regular \
