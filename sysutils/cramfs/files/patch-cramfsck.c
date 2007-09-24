@@ -17,3 +17,23 @@
  
  /* Exit codes used by fsck-type programs */
  #define FSCK_OK          0	/* No errors */
+@@ -603,8 +603,17 @@
+ 	}
+ 
+ 	if (opt_extract) {
+-		if (mknod(path, i->mode, devtype) < 0) {
+-			die(FSCK_ERROR, 1, "mknod failed: %s", path);
++		switch(type) {
++		default:
++			if (mknod(path, i->mode, devtype) < 0) {
++				die(FSCK_ERROR, 1, "mknod failed: %s", path);
++			}
++			break;
++		case 'p':
++			if (mkfifo(path, i->mode) < 0) {
++				die(FSCK_ERROR, 1, "mkfifo failed: %s", path);
++			}
++			break;
+ 		}
+ 		change_file_status(path, i);
+ 	}
