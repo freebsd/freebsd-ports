@@ -6,38 +6,41 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	7.0r69
-PORTREVISION=	0
+PORTVERSION=	7.0r70
 CATEGORIES=	www multimedia linux
-MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/
+MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/installers/archive/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	install_flash_player_7_linux
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
+DISTNAME=	fp7_archive
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jamie@bishopston.net
 COMMENT=	Adobe Flash Player NPAPI Plugin
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
+USE_ZIP=	yes
 
 RESTRICTED=	Redistribution not allowed
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/install_flash_player_7_linux
-LATEST_LINK=	flash7
-PORTDOCS=	Readme.txt
+WRKSRC=		${WRKDIR}/fp7_archive/r70/install_flash_player_7_linux
 
 USE_NPAPI=	linux-*
 NPAPI_FILES=	libflashplayer.so flashplayer.xpt
 
 CONFLICTS=	linux-flashplugin-9*
 
-post-install:
-.ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-.endif
+OPTIONS=	NSPLUG "Install nspluginwrapper (for native browser use)" on
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/linux-mplayer-plugin/Makefile.npapi"
+
+.if defined (WITH_NSPLUG)
+RUN_DEPENDS+=	nspluginwrapper:$(PORTSDIR)/www/nspluginwrapper
+.endif
+
+post-patch:
+	(cd $(WRKDIR)/fp7_archive/r70 && ${TAR} -xzf install_flash_player_7_linux_r70.tar.gz)
+
 .include <bsd.port.post.mk>
