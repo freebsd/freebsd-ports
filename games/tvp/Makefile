@@ -8,28 +8,27 @@
 PORTNAME=	tvp
 PORTVERSION=	0.9.7.1
 PORTREVISION=	2
-CATEGORIES=	games tk82
+CATEGORIES=	games tk84
 MASTER_SITES=	http://www3.sympatico.ca/john.vanderhoek/tim/src/president/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the cardgame President (or Ass) against 3 AIs
 
-# Comment-out this (and CFLAGS) to compile only the CLI and ansi interfaces
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
+USE_TK=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-carddir=${PREFIX}/share/games/tvp \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/tcl8.2 \
-			  -I${LOCALBASE}/include/tk8.2" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/tcl8.4 \
+			  -I${LOCALBASE}/include/tk8.4" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
-		      -ltcl82 -ltk82 -lX11 -lm"
-#CFLAGS+=		-lX11 -lm -ltcl82 -ltk82 \
-#			-L${LOCALBASE}/lib -L${X11BASE}/lib
+		-ltcl84 -ltk84 -lX11 -lm"
+#CFLAGS+=	-lX11 -lm -ltcl84 -ltk84 \
+#		-L${LOCALBASE}/lib -L${X11BASE}/lib
 USE_PERL5_BUILD=yes
 
-MAN6=	tvp.6
-MLINKS=	tvp.6 xprez.6 - aprez.6 - prez.6
+MAN6=		tvp.6
+MLINKS=		tvp.6 xprez.6 - aprez.6 - prez.6
 
 DOCFILES=	aprez.txt libass.txt president.txt prez.txt xprez.txt
 
@@ -46,5 +45,11 @@ post-install:
 	a='${PREFIX}/share/doc/tvp/' ${PERL} -pi -e 's/TOKEN/$$ENV{a}/' \
 		${PREFIX}/man/man6/tvp.6
 	${STRIP_CMD} ${PREFIX}/bin/aprez ${PREFIX}/bin/prez ${PREFIX}/bin/xpwish
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "Use one of the following commands:"
+	@${ECHO_CMD} "prez - CLI version"
+	@${ECHO_CMD} "aprez - Curses version"
+	@${ECHO_CMD} "xprex - X11 version"
+	@${ECHO_CMD} ""
 
 .include <bsd.port.post.mk>
