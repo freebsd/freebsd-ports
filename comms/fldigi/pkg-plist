@@ -1,5 +1,7 @@
 bin/fldigi
-%%DATADIR%%/macros.mdf
+%%DATADIR%%/fldigi.xpm
+%%DATADIR%%/fldigi-psk.png
+%%DATADIR%%/fldigi-rtty.png
 %%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

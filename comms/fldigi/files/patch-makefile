@@ -1,24 +1,19 @@
---- makefile.orig	Sun Jan 28 15:30:30 2007
-+++ makefile	Thu Feb 22 16:20:58 2007
-@@ -3,17 +3,15 @@
- #
+--- makefile.orig	Thu Apr 26 05:32:12 2007
++++ makefile	Sun Sep 23 19:02:27 2007
+@@ -23,14 +23,14 @@
+ endif
  
- PROJECT = fldigi
+ #PROJECT = fldigi
 -CC = "/usr/bin/g++"
-+#CC = "/usr/bin/g++"
++CC = ${CXX}
  
- OBJ_DIR = Objects
- OUTPUT_DIR = ./
+ OBJ_DIR = ./Objects
+ OUTPUT_DIR = ./Install
  TARGET = fldigi
--C_INCLUDE_DIRS = -I"src" -I"src/include" 
-+C_INCLUDE_DIRS = -I"src" -I"src/include" `fltk-config --cxxflags`
- C_PREPROC = 
--CFLAGS = -pipe `fltk-config --cxxflags` -Wno-deprecated -ffast-math -Wall -g0 -O2 -fno-rtti -fexceptions 
--LIB_DIRS = -L"/usr/local/lib" 
--LIBS = -lhamlib -lfltk_images -ljpeg -lpng -lz 
--LDFLAGS = -pipe -s `fltk-config --ldflags --use-images`
-+LIBS = -lhamlib -lfltk_images -ljpeg -lpng -lz
-+LDFLAGS = `fltk-config --ldflags --use-images` 
+ LIB_DIRS = -L"/usr/local/lib" 
+ C_INCLUDE_DIRS = -I"src" -I"src/include"
+-CCFLAGS = `fltk-config --cxxflags` -Wno-deprecated -ffast-math -Wall -O2 -fno-rtti -fexceptions 
++CCFLAGS = `fltk-config --cxxflags`  
  
- SRC_OBJS = \
-   $(OBJ_DIR)/fft.o	\
+ HAMLIBS = -lhamlib
+ IMGLIBS = -lfltk_jpeg -lfltk_png -lfltk_z

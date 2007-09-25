@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	fldigi
-PORTVERSION=	1.24
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	.src
+PORTVERSION=	1.342
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.w1hkj.com/LinuxApps/ \
+MASTER_SITES=	http://www.w1hkj.com/fldigi.1.34.distro/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
@@ -27,15 +25,20 @@ MAKEFILE=	makefile
 MAKE_ENV+=	CXX="${CXX}"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fldigi ${PREFIX}/bin/fldigi
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/macros.mdf ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/Install/fldigi ${PREFIX}/bin/fldigi
+	${MKDIR} ${DATADIR}
+.for f in ${WRKSRC}/Install/fldigi-psk.png \
+	${WRKSRC}/Install/fldigi-rtty.png \
+	${WRKSRC}/Install/fldigi.xpm 
+	${INSTALL_DATA} ${WRKSRC}$f ${DATADIR} 
+.endfor
+	@${ECHO} ""
 .if	!defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${ECHO} ""
 	@${ECHO} "fldigi docs installed in ${DOCSDIR}"
-	@${ECHO} ""
 .endif
+	@${ECHO} "fldigi icons installed in ${DATADIR}"
+	@${ECHO} ""
 
 .include <bsd.port.mk>
