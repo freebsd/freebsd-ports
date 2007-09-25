@@ -6,35 +6,35 @@
 #
 
 PORTNAME=	kana-no-quiz
-DISTVERSION=	1.7
-PORTREVISION=	1
+DISTVERSION=	1.9
+#PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	Kana_no_quiz-${DISTVERSION}
+DISTNAME=	${PORTNAME:S,k,K,}-${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A little tool to memorize Japanese KANA (Hiragana/Katakana)
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
+		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
 NO_BUILD=	yes
+
+OPTIONS=	PYGAME	"With KANA pronounciation sounds" off
 
 RM_FILES=	CHANGES.txt FAL.txt  GPL.txt
 RM_OPTS=	-f
 
-USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 
-PYDISTUTILS_PKGNAME=	Kana_no_quiz
+PYDISTUTILS_PKGNAME=	Kana-no-quiz
 
 WRKSRC=		"${WRKDIR}/Kana no quiz-${DISTVERSION}"
 
 post-extract:
-	for f in ${RM_FILES}; do \
-	    ${RM} ${RM_OPTS} ${WRKSRC}/$${f}; \
-	done
+	@cd ${WRKSRC} && ${RM} ${RM_OPTS} ${RM_FILES}
 
 .include <bsd.port.mk>
