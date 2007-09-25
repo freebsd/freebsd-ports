@@ -27,6 +27,10 @@ OPTIONS=	APACHE13 "Build with mod_neko for Apache 1.3.x" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+IGNORE= 	it is supported on FreeBSD 6.x and later
+.endif
+
 # Neko needs boehm-gc with POSIX thread support.
 BC_DIR!=	cd ${PORTSDIR}/devel/boehm-gc && ${MAKE} -V WRKSRC
 BC_MAKEARGS=	BATCH=yes WITH_THREADING=true
