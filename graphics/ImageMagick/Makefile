@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.3.3-5
-PORTREVISION=	2
+DISTVERSION=	6.3.5-10
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -23,7 +22,7 @@ MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/}
 MASTER_SITE_SUBDIR=	imagemagick
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Image processing tools
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
@@ -31,12 +30,15 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15 libltdl:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --without-dps
 USE_LDCONFIG=	yes
+ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
+USE_DOS2UNIX=	YES
+DOS2UNIX_REGEX=	.*\.(html|t)$
+
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
 		animate.1 conjure.1 compare.1 composite.1 convert.1 display.1 \
@@ -48,8 +50,9 @@ LDFLAGS=	-L${LOCALBASE}/lib
 PLIST_SUB+=	PORTVERSION=${PORTVERSION:R}
 
 OPTIONS=	X11				"X11 support" on \
+		IMAGEMAGICK_TESTS	"Run bundled self-tests after build" on \
 		IMAGEMAGICK_PERL		"Perl support" on \
-		IMAGEMAGICK_MODULES		"Modules support" off \
+		IMAGEMAGICK_MODULES		"Modules support (broken)" off \
 		IMAGEMAGICK_BZLIB		"Bzlib support" on \
 		IMAGEMAGICK_16BIT_PIXEL		"16bit pixel support" on \
 		IMAGEMAGICK_LCMS		"LCMS support" on \
@@ -120,7 +123,7 @@ PLIST_SUB+=		MODULES='@comment '
 .endif
 
 .if !defined(WITHOUT_IMAGEMAGICK_JPEG)
-LIB_DEPENDS+=		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=		jpeg:${PORTSDIR}/graphics/jpeg
 PLIST_SUB+=		JPEG=""
 .else
 CONFIGURE_ARGS+=	--without-jpeg
@@ -128,7 +131,7 @@ PLIST_SUB+=		JPEG="@comment "
 .endif
 
 .if !defined(WITHOUT_IMAGEMAGICK_PNG)
-LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=		png:${PORTSDIR}/graphics/png
 PLIST_SUB+=		PNG=""
 .else
 CONFIGURE_ARGS+=	--without-png
@@ -136,7 +139,7 @@ PLIST_SUB+=		PNG="@comment "
 .endif
 
 .if !defined(WITHOUT_IMAGEMAGICK_TIFF)
-LIB_DEPENDS+=		tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=		tiff:${PORTSDIR}/graphics/tiff
 PLIST_SUB+=		TIFF=""
 .else
 CONFIGURE_ARGS+=	--without-tiff
@@ -157,16 +160,17 @@ CONFIGURE_ARGS+=	--without-bzlib
 
 # FPX (FlashPIX) images
 .if !defined(WITHOUT_IMAGEMAGICK_FPX)
-LIB_DEPENDS+=		fpx.1:${PORTSDIR}/graphics/libfpx
+LIB_DEPENDS+=		fpx:${PORTSDIR}/graphics/libfpx
 CONFIGURE_ARGS+=	--with-fpx
 PLIST_SUB+=		FPX=""
 .else
+CONFIGURE_ARGS+=	--without-fpx
 PLIST_SUB+=		FPX="@comment "
 .endif
 
 # JBIG images (lossless compression for bi-level images)
 .if !defined(WITHOUT_IMAGEMAGICK_JBIG)
-LIB_DEPENDS+=		jbig.1:${PORTSDIR}/graphics/jbigkit
+LIB_DEPENDS+=		jbig:${PORTSDIR}/graphics/jbigkit
 PLIST_SUB+=		JBIG=""
 .else
 CONFIGURE_ARGS+=	--without-jbig
@@ -175,7 +179,7 @@ PLIST_SUB+=		JBIG="@comment "
 
 # JPEG2000 images (wavelet-based lossy compression)
 .if !defined(WITHOUT_IMAGEMAGICK_JPEG2000)
-LIB_DEPENDS+=		jasper.4:${PORTSDIR}/graphics/jasper
+LIB_DEPENDS+=		jasper:${PORTSDIR}/graphics/jasper
 PLIST_SUB+=		JPEG2000=""
 .else
 CONFIGURE_ARGS+=	--without-jp2
@@ -193,14 +197,14 @@ CONFIGURE_ARGS+=	--without-dot --without-gvc
 
 # LCMS (Little CMS) color management
 .if !defined(WITHOUT_IMAGEMAGICK_LCMS)
-LIB_DEPENDS+=		lcms.1:${PORTSDIR}/graphics/lcms
+LIB_DEPENDS+=		lcms:${PORTSDIR}/graphics/lcms
 .else
 CONFIGURE_ARGS+=	--without-lcms
 .endif
 
 # Freetype (TrueType Font) support
 .if !defined(WITHOUT_IMAGEMAGICK_TTF)
-LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=		freetype:${PORTSDIR}/print/freetype2
 USE_GHOSTSCRIPT=	yes
 CONFIGURE_ARGS+=	--with-freetype
 .else
@@ -209,7 +213,7 @@ CONFIGURE_ARGS+=	--without-freetype
 
 # Fontconfig support
 .if !defined(WITHOUT_IMAGEMAGICK_FONTCONFIG)
-LIB_DEPENDS+=		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS+=		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 CONFIGURE_ARGS+=	--with-fontconfig
 CONFIGURE_ENV+=		FONTCONFIG_CFLAGS="-I${X11BASE}/include" \
 			FONTCONFIG_LIBS="-L${X11BASE}/lib"
@@ -220,15 +224,11 @@ CONFIGURE_ARGS+=	--without-fontconfig
 
 # WMF (Windows Meta File) images
 .if defined(WITH_IMAGEMAGICK_WMF)
-.if !defined(WITH_IMAGEMAGICK_MODULES)
-IGNORE=			WMF support requires WITH_IMAGEMAGICK_MODULES
-.else
 .if defined(WITHOUT_X11)
 IGNORE=			WMF support requires X11 libraries, please unset WITHOUT_X11
 .else
-LIB_DEPENDS+=		wmf.2:${PORTSDIR}/graphics/libwmf
+LIB_DEPENDS+=		wmf:${PORTSDIR}/graphics/libwmf
 CONFIGURE_ARGS+=	--with-wmf=yes
-.endif
 .endif
 .else
 CONFIGURE_ARGS+=	--without-wmf
@@ -246,7 +246,7 @@ CONFIGURE_ARGS+=	--without-xml
 .if defined(WITHOUT_X11)
 IGNORE=			SVG support requires X11 libraries, please unset WITHOUT_X11
 .endif
-LIB_DEPENDS+=		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
+LIB_DEPENDS+=		rsvg-2:${PORTSDIR}/graphics/librsvg2
 CONFIGURE_ARGS+=	--with-rsvg
 CONFIGURE_ENV+=		RSVG_CFLAGS="-I${X11BASE}/include/librsvg-2" \
 			RSVG_LIBS="-L${X11BASE}/lib"
@@ -321,6 +321,13 @@ post-install:
 .else
 	@${TOUCH} ${PREFIX}/lib/ImageMagick/modules-Q16/coders/.keep
 	@${TOUCH} ${PREFIX}/lib/ImageMagick/modules-Q16/filters/.keep
+.endif
+
+test check:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
+
+.if !defined(WITHOUT_IMAGEMAGICK_TESTS)
+post-build:	test
 .endif
 
 .include <bsd.port.post.mk>

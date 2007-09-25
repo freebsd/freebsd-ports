@@ -47,6 +47,7 @@ include/magick/decorate.h
 include/magick/delegate.h
 include/magick/deprecate.h
 include/magick/display.h
+include/magick/distort.h
 include/magick/draw.h
 include/magick/effect.h
 include/magick/enhance.h
@@ -65,6 +66,7 @@ include/magick/magic.h
 include/magick/magick.h
 include/magick/magick-config.h
 include/magick/magick-type.h
+include/magick/matrix.h
 include/magick/memory_.h
 include/magick/methods.h
 include/magick/mime.h
@@ -81,6 +83,7 @@ include/magick/quantum.h
 include/magick/quantize.h
 include/magick/random_.h
 include/magick/registry.h
+include/magick/resample.h
 include/magick/resize.h
 include/magick/resource_.h
 include/magick/segment.h
@@ -102,6 +105,7 @@ include/magick/widget.h
 include/magick/xml-tree.h
 include/magick/xwindow.h
 include/wand/MagickWand.h
+include/wand/deprecate.h
 include/wand/drawing-wand.h
 include/wand/animate.h
 include/wand/compare.h
@@ -125,6 +129,7 @@ lib/ImageMagick/config/colors.xml
 lib/ImageMagick/config/configure.xml
 lib/ImageMagick/config/delegates.xml
 lib/ImageMagick/config/english.xml
+lib/ImageMagick/config/francais.xml
 lib/ImageMagick/config/locale.xml
 lib/ImageMagick/config/type.xml
 lib/ImageMagick/config/type-ghostscript.xml
@@ -167,6 +172,9 @@ lib/ImageMagick/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/dib.a
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/dib.la
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/dib.so
+%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/dng.a
+%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/dng.la
+%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/dng.so
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/dot.a
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/dot.la
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/dot.so
@@ -209,6 +217,9 @@ lib/ImageMagick/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/info.a
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/info.la
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/info.so
+%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/ipl.a
+%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/ipl.la
+%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/ipl.so
 %%JBIG%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/jbig.a
 %%JBIG%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/jbig.la
 %%JBIG%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/jbig.so
@@ -299,6 +310,9 @@ lib/ImageMagick/modules-%%QBIT%%/coders/.keep
 %%PNG%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/png.a
 %%PNG%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/png.la
 %%PNG%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/png.so
+%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/exr.a
+%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/exr.la
+%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/exr.so
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/pnm.a
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/pnm.la
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/pnm.so
@@ -356,6 +370,9 @@ lib/ImageMagick/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/tga.a
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/tga.la
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/tga.so
+%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/thumbnail.a
+%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/thumbnail.la
+%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/thumbnail.so
 %%TIFF%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/tiff.a
 %%TIFF%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/tiff.la
 %%TIFF%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/tiff.so
@@ -458,6 +475,10 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/arc.png
 %%PORTDOCS%%%%DOCSDIR%%/images/background.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/black.png
+%%PORTDOCS%%%%DOCSDIR%%/images/bluebells_clipped.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/bluebells_darker.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/bluebells_lin.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/bluebells_log.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/button.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/configure.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/definitive-guide.png
@@ -474,7 +495,9 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/montage.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/navy.png
+%%PORTDOCS%%%%DOCSDIR%%/images/networkredux.png
 %%PORTDOCS%%%%DOCSDIR%%/images/piechart.png
+%%PORTDOCS%%%%DOCSDIR%%/images/radial-gradient.png
 %%PORTDOCS%%%%DOCSDIR%%/images/reconstruct.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/red-ball.png
 %%PORTDOCS%%%%DOCSDIR%%/images/red-circle.png
@@ -487,6 +510,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/smile.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/sponsor.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/sprite.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/t-shirt.png
 %%PORTDOCS%%%%DOCSDIR%%/images/travelsur.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/tricks.png
 %%PORTDOCS%%%%DOCSDIR%%/images/wand.ico
@@ -540,12 +564,14 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/annotate.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/blob.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/cache.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/cache-view.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/color.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/colorspace.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/compare.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/composite.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/constitute.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/decorate.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/deprecate.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/display.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/draw.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/drawing-wand.html
@@ -556,10 +582,10 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/image.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/layer.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/list.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/magick-deprecate.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/magick-wand.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/magick.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/magick-image.html
-%%PORTDOCS%%%%DOCSDIR%%/www/api/magick-property.php
 %%PORTDOCS%%%%DOCSDIR%%/www/api/magick-property.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/memory.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/module.html
@@ -569,6 +595,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/pixel-iterator.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/pixel-wand.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/profile.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/property.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/quantize.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/registry.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/resize.html
@@ -590,12 +617,12 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/conjure.html
 %%PORTDOCS%%%%DOCSDIR%%/www/contact.html
 %%PORTDOCS%%%%DOCSDIR%%/www/convert.html
-%%PORTDOCS%%%%DOCSDIR%%/www/cvs.html
 %%PORTDOCS%%%%DOCSDIR%%/www/display.html
 %%PORTDOCS%%%%DOCSDIR%%/www/download.html
 %%PORTDOCS%%%%DOCSDIR%%/www/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/www/formats.html
 %%PORTDOCS%%%%DOCSDIR%%/www/fx.html
+%%PORTDOCS%%%%DOCSDIR%%/www/high-dynamic-range.html
 %%PORTDOCS%%%%DOCSDIR%%/www/history.html
 %%PORTDOCS%%%%DOCSDIR%%/www/identify.html
 %%PORTDOCS%%%%DOCSDIR%%/www/import.html
@@ -609,8 +636,10 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/magick.css
 %%PORTDOCS%%%%DOCSDIR%%/www/mailing-list.html
 %%PORTDOCS%%%%DOCSDIR%%/www/miff.html
+%%PORTDOCS%%%%DOCSDIR%%/www/mirrors.html
 %%PORTDOCS%%%%DOCSDIR%%/www/mogrify.html
 %%PORTDOCS%%%%DOCSDIR%%/www/montage.html
+%%PORTDOCS%%%%DOCSDIR%%/www/motion-picture.html
 %%PORTDOCS%%%%DOCSDIR%%/www/perl-magick.html
 %%PORTDOCS%%%%DOCSDIR%%/www/quantize.html
 %%PORTDOCS%%%%DOCSDIR%%/www/resources.html
@@ -619,6 +648,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/sponsors.html
 %%PORTDOCS%%%%DOCSDIR%%/www/stream.html
 %%PORTDOCS%%%%DOCSDIR%%/www/subversion.html
+%%PORTDOCS%%%%DOCSDIR%%/www/t-shirt.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www/Magick++
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www

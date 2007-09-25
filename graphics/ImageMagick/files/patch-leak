@@ -1,0 +1,12 @@
+This should be fixed in 6.3.6-0
+
+http://www.imagemagick.org/discourse-server/viewtopic.php?f=4&t=9767
+
+--- magick/string.c	2007-09-09 21:20:56.000000000 -0400
++++ magick/string.c	2007-09-25 14:51:17.000000000 -0400
+@@ -219,5 +219,4 @@
+       return(*destination);
+     }
+-  *destination=(char *) NULL;
+   length=strlen(source);
+   if (~length < MaxTextExtent)
