@@ -21,8 +21,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 
 NO_BUILD=	yes
 
-OPTIONS=	PYGAME	"With KANA pronounciation sounds" off
-
 RM_FILES=	CHANGES.txt FAL.txt  GPL.txt
 RM_OPTS=	-f
 
