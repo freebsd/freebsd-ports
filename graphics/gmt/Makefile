@@ -9,12 +9,9 @@ PORTNAME=	gmt
 PORTVERSION=	3.4.1
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://gmt.soest.hawaii.edu/pub/gmt/ \
-		ftp://falcon.grdl.noaa.gov/pub/gmt/ \
+MASTER_SITES=	ftp://falcon.grdl.noaa.gov/pub/gmt/ \
 		ftp://ftp.iag.usp.br/pub/gmt/ \
-		ftp://ftp.geologi.uio.no/pub/gmt/ \
-		ftp://life.csu.edu.au/pub/gmt/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/gmt/
+		ftp://ftp.geologi.uio.no/pub/gmt/
 DISTNAME=	GMT${PORTVERSION}
 DISTFILES=	${EXTRACT_ONLY} ${EXTRACT_SUB}
 DIST_SUBDIR=	gmt
