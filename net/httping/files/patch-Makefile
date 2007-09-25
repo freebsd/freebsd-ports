@@ -1,0 +1,13 @@
+--- Makefile.ori	Thu Jul 26 10:00:31 2007
++++ Makefile	Tue Sep 25 18:36:53 2007
+@@ -14,9 +14,8 @@
+ 
+ include version
+ 
+-DEBUG=-g # -D_DEBUG
+ LDFLAGS+=-lssl -lcrypto $(DEBUG)
+-CFLAGS+=-O2 -Wall -DVERSION=\"$(VERSION)\" $(DEBUG)
++CFLAGS+=-DVERSION=\"$(VERSION)\"
+ 
+ OBJS=mem.o http.o io.o str.o error.o utils.o main.o tcp.o mssl.o res.o
+ 
