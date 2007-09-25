@@ -257,7 +257,7 @@ RUN_DEPENDS+=	urlview:${PORTSDIR}/textproc/urlview
 .if defined(WITH_MUTT_NCURSES_PORT)
 WITH_MUTT_NCURSES=	yes
 .endif
-.if defined(WITH_MUTT_SLANG)
+.if defined(WITH_MUTT_SLANG) || defined(WITH_SLANG)
 MUTT_USES_SLANG=	yes
 MUTT_USES_SLANG1=	yes
 .endif
