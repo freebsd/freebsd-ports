@@ -232,5 +232,7 @@ find-bad-patches:
 	cd ${DISTDIR} ; egrep -l \
 		'(src/if_ole|src/gui_(w32|w48|mac)|src/os_(riscos|cyg|os2|vms|amiga|win32|mswin))'\
 		vim/${PORTVERSION:C/\.[0-9a-z]*$//}*
+vim-makesum:
+	${MAKE} WITH_LANG=yes makesum
 
 .include <bsd.port.post.mk>
