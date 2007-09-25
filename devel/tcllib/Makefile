@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	tcllib
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A collection of utility modules for Tcl
 
-USE_TCL_BUILD=	85+
+USE_TCL_BUILD=	84+
 USE_TCL_RUN=	${USE_TCL_BUILD}
 
 USE_BZIP2=	yes
