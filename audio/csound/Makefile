@@ -41,8 +41,9 @@ USE_LDCONFIG=	yes
 DISTFILES+=	${DISTNAME}-manual.tar.gz:manual
 .endif
 
+FLTKBASE?=	${LOCALBASE}
 post-patch: apply-slist
-	@/bin/sh ${SCRIPTDIR}/check-fltk-threads.sh
+	@${SETENV} FLTKBASE=${FLTKBASE} ${SH} ${SCRIPTDIR}/check-fltk-threads.sh
 	@${MV} ${WRKDIR}/custom.py ${WRKSRC}
 	@${REINPLACE_CMD} -e "s|'unsupported'|'linux'|; \
 		s|ENV = {'PATH' : os.environ\['PATH'\]}|ENV = os.environ|; \
