@@ -26,10 +26,16 @@ USE_GETOPT_LONG=	yes
 
 PLIST_FILES=	bin/nzbget etc/nzbget.cfg.example
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nzbget.cfg.example ${PREFIX}/etc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
