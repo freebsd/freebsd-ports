@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.0.2-alpha
-PORTREVISION=	1
+DISTVERSION=	0.2.0.7-alpha
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/ \
 		http://mirror.onionland.org/dist/
