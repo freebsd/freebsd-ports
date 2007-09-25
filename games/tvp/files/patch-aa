@@ -5,7 +5,7 @@
  WINDLL=true
  TCLTK=""
 -for tkver in 42 4.2 41 4.1 80 8.0
-+for tkver in 82
++for tkver in 84
  do
 -	echo $ac_n "checking for Tk_Main in -ltk${tkver}""... $ac_c" 1>&6
 -echo "configure:1313: checking for Tk_Main in -ltk${tkver}" >&5
@@ -32,7 +32,7 @@
    
  		WINDLL=false
 -		for tclver in 76 7.6 75 7.5 80 8.0
-+		for tclver in 82
++		for tclver in 84
  		do
  			echo $ac_n "checking for Tcl_Main in -ltcl${tclver}""... $ac_c" 1>&6
  echo "configure:1352: checking for Tcl_Main in -ltcl${tclver}" >&5
