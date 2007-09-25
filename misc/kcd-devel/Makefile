@@ -15,6 +15,8 @@ DISTNAME=	kcd-${PORTVERSION}
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Change directory in full-screen visual mode
 
+IGNORE=		Attempts to allocate all of memory during configure
+
 USE_GETTEXT=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
