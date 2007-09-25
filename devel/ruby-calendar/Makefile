@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	calendar
-PORTVERSION=	1.11r
+PORTVERSION=	1.11.2r
+PORTEPOCH=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.funaba.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	Ruby modules to handle various calendars
 
 USE_RUBY=	yes
