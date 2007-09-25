@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	xscrabble
-PORTVERSION=	2.10
-PORTREVISION=	1
+PORTVERSION=	2.12
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/educational_games/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz ${PORTNAME}_en.tgz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}_en${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X version of the popular board game
 
+USE_BZIP2=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes
@@ -30,7 +30,7 @@ post-patch:
 		>> ${WRKSRC}/src/config.h
 	@${ECHO_CMD} '#define RULES_FILE "${XSCRABBLEDIR}/scrabble_rules"' \
 		>> ${WRKSRC}/src/config.h
-	@${SED} -e 's|/usr/games/lib/scrabble/en|${XSCRABBLEDIR}|g' \
+	@${SED} -e 's|/usr/share/games/scrabble/en|${XSCRABBLEDIR}|g' \
 		${WRKSRC}/../xscrabble_en/app-defaults/XScrabble_en \
 		> ${WRKSRC}/XScrabble
 	@${REINPLACE_CMD} -e 's|= -O|=$$(CDEBUGFLAGS)|g' ${WRKSRC}/Imakefile
