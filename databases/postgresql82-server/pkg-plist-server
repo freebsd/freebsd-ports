@@ -253,6 +253,7 @@ share/postgresql/timezone/America/Indiana/Indianapolis
 share/postgresql/timezone/America/Indiana/Knox
 share/postgresql/timezone/America/Indiana/Marengo
 share/postgresql/timezone/America/Indiana/Petersburg
+share/postgresql/timezone/America/Indiana/Tell_City
 share/postgresql/timezone/America/Indiana/Vevay
 share/postgresql/timezone/America/Indiana/Vincennes
 share/postgresql/timezone/America/Indiana/Winamac
