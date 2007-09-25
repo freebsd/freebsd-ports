@@ -1,0 +1,120 @@
+diff -ruN ruby-gsl.orig/files/patch-ext-extconf.rb
+ruby-gsl/files/patch-ext-extconf.rb
+--- ruby-gsl.orig/files/patch-ext-extconf.rb	Wed Dec
+31 19:00:00 1969
++++ ruby-gsl/files/patch-ext-extconf.rb	Mon Sep 24
+19:31:44 2007
+@@ -0,0 +1,113 @@
++--- ext/extconf.rb.orig	Sat Aug 11 00:46:52 2007
+++++ ext/extconf.rb	Mon Sep 24 19:29:49 2007
++@@ -1,5 +1,35 @@
++ require 'mkmf'
++ 
+++
+++module GSL
+++	class Version
+++		def initialize(str)
+++			@str = str
+++			@ary = str.split(".").collect { |elm| elm.to_i }
+++		end
+++		def to_s; @str; end
+++		def inspect; @str; end
+++		def >=(ver)
+++			ary2 = ver.split(".").collect { |elm| elm.to_i }
+++			if @ary[0] > ary2[0]; return true; end			
+++			if @ary[0] < ary2[0]; return false; end
+++			if @ary[1] > ary2[1]; return true; end
+++			if @ary[1] < ary2[1]; return false; end
+++			if @ary.size < ary2.size; return false; end
+++			if @ary.size == 3 and ary2.size == 3
+++				if @ary[2] < ary2[2]; return false; end
+++			end		
+++			return true
+++		end
+++		def <(ver)
+++			ary2 = ver.split(".").collect { |elm| elm.to_i }
+++			if @ary[0] >= ary2[0]; return false; end
+++			if @ary[0] >= ary2[0]; return false; end
+++			return true
+++		end
+++	end
+++end
+++
++ if /mingw/ =~ RUBY_PLATFORM
++   GSL_CONFIG = "sh gsl-config"
++ else
++@@ -36,9 +66,10 @@
++   
++   print("checking gsl version... ")
++   IO.popen("#{GSL_CONFIG} --version") do |f|
++-    ver = f.gets.chomp
+++    ver = GSL::Version.new(f.gets.chomp)
++     puts(ver)
++     configfile.printf("#ifndef GSL_VERSION\n#define GSL_VERSION \"#{ver}\"\n#endif\n")
+++
++     if ver >= "0.9.4"
++       configfile.printf("#ifndef GSL_0_9_4_LATER\n#define GSL_0_9_4_LATER\n#endif\n")
++     else
++@@ -77,7 +108,10 @@
++     if ver >= "1.8.90"
++       configfile.printf("#ifndef GSL_1_9_LATER\n#define GSL_1_9_LATER\n#endif\n")
++     end
++-    
+++
+++    if ver >= "1.9.90"
+++      configfile.printf("#ifndef GSL_1_10_LATER\n#define GSL_1_10_LATER\n#endif\n")
+++    end    
++     if ver < "1.4"
++       configfile.printf("#ifndef GSL_CONST_OLD\n#define GSL_CONST_OLD\n#endif\n")
++     end
++@@ -93,7 +127,7 @@
++   RB_GSL_CONFIG = File.open("../include/rb_gsl_config.h", "w")
++   RB_GSL_CONFIG.printf("#ifndef ___RB_GSL_CONFIG_H___\n")
++   RB_GSL_CONFIG.printf("#define ___RB_GSL_CONFIG_H___\n\n")
++-  
+++
++   check_version(RB_GSL_CONFIG)
++ 
++   gsl_config()
++@@ -135,26 +169,21 @@
++     RB_GSL_CONFIG.printf("#ifndef HAVE_EIGEN_FRANCIS\n#define HAVE_EIGEN_FRANCIS\n#endif\n")
++   end
++ 
++-  if have_library("gsl", "gsl_eigen_gen_alloc")
++-    RB_GSL_CONFIG.printf("#ifndef HAVE_EIGEN_GEN\n#define HAVE_EIGEN_GEN\n#endif\n")
++-  end
++-
++-  if have_library("gsl", "gsl_stats_correlation")
++-    RB_GSL_CONFIG.printf("#ifndef HAVE_GSL_STATS_CORRELATION\n#define HAVE_GSL_STATS_CORRELATION\n#endif\n")
++-  end
++-  
++   begin
++     print("checking rb-gsl version...")
++     IO.popen("cat ../VERSION") do |f|
++-      ver = f.gets.chomp
+++      ver = GSL::Version.new(f.gets.chomp)
++       puts(ver)
++       RB_GSL_CONFIG.printf("#ifndef RUBY_GSL_VERSION\n#define RUBY_GSL_VERSION \"#{ver}\"\n#endif\n")
++     end
++   end
+++
+++  RUBY_VERSION2 = GSL::Version.new(RUBY_VERSION)
++   
++-  puts("checking ruby version... #{RUBY_VERSION}")
++-  if RUBY_VERSION >= "1.8"
+++  puts("checking ruby version... #{RUBY_VERSION2}")
+++  if RUBY_VERSION2 >= "1.8"
++     RB_GSL_CONFIG.printf("#ifndef RUBY_1_8_LATER\n#define RUBY_1_8_LATER\n#endif\n")
+++
++     if find_executable("graph")
++       RB_GSL_CONFIG.printf("#ifndef HAVE_GNU_GRAPH\n#define HAVE_GNU_GRAPH\n#endif\n")
++     end
++@@ -172,7 +201,7 @@
++     end
++     puts("no") if flag == 0
++   end
++-  if RUBY_VERSION >= "1.9"
+++  if RUBY_VERSION2 >= "1.9"
++     RB_GSL_CONFIG.printf("#ifndef RUBY_1_9_LATER\n#define RUBY_1_9_LATER\n#endif\n")
++   end
++ 
