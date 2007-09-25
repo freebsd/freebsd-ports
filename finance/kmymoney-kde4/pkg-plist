@@ -360,6 +360,8 @@ share/mimelnk/application/x-kmymoney2.desktop
 share/servicetypes/kmymoneyimporterplugin.desktop
 share/servicetypes/kmymoneyplugin.desktop
 @dirrm include/kmymoney
+@dirrm share/locale/es_AR/LC_MESSAGES
+@dirrm share/locale/es_AR
 @dirrm %%DATADIR%%/templates/zh_CN
 @dirrm %%DATADIR%%/templates/ru_SU
 @dirrm %%DATADIR%%/templates/pt_BR
