@@ -916,6 +916,7 @@ blast		ports/x11/blast
 blat		ports/biology/blat
 bld		ports/net/bld
 blender		ports/graphics/blender
+blender-doc	ports/graphics/blender-doc
 bless		ports/editors/bless
 blimitd		ports/sysutils/blimitd
 blinkensisters	ports/games/blinkensisters
