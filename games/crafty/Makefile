@@ -7,7 +7,7 @@
 
 PORTNAME=	crafty
 PORTVERSION=	20.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/pgn/:data \
 		ftp://ftp.cis.uab.edu/pub/hyatt/documentation/:doc \
@@ -77,7 +77,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/position.bin ${PREFIX}/lib/crafty/position.bin
 	${INSTALL_DATA} ${WRKSRC}/position.lrn ${PREFIX}/lib/crafty/position.lrn
 	${INSTALL_DATA} ${WRKSRC}/crafty.hlp ${PREFIX}/lib/crafty/crafty.hlp
-	${TOUCH} ${PREFIX}/lib/crafty/book.bin
 	${CHOWN} root:nogroup ${PREFIX}/lib/crafty/book*
 	${CHOWN} root:nogroup ${PREFIX}/lib/crafty/position*
 	${CHMOD} 664 ${PREFIX}/lib/crafty/book*
