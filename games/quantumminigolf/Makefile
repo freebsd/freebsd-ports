@@ -28,7 +28,10 @@ OPTIONS=	OCFLAGS	"Use optimized compiler flags" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_OCFLAGS)
-CXXFLAGS+=	-O3 -fomit-frame-pointer -finline-functions -malign-double -funroll-all-loops
+CXXFLAGS+=	-O3 -fomit-frame-pointer -finline-functions -funroll-all-loops
+.	if ${ARCH} == "i386"
+CXXFLAGS+=	-malign-double
+.	endif
 .endif
 
 post-patch:
