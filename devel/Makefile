@@ -1621,6 +1621,7 @@
     SUBDIR += p5-Thread-Apartment
     SUBDIR += p5-Thread-Pool-Simple
     SUBDIR += p5-Thread-Queue-Duplex
+    SUBDIR += p5-Thrift
     SUBDIR += p5-Tie-Array-Pack
     SUBDIR += p5-Tie-Array-Sorted
     SUBDIR += p5-Tie-CPHash
