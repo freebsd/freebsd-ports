@@ -14280,6 +14280,7 @@ ruby-term-ansicolor	ports/devel/ruby-term-ansicolor
 ruby-termios	ports/comms/ruby-termios
 ruby-textbuf	ports/devel/ruby-textbuf
 ruby-tgif	ports/graphics/ruby-tgif
+ruby-thrift	ports/devel/ruby-thrift
 ruby-tk		ports/x11-toolkits/ruby-tk
 ruby-tmail	ports/mail/ruby-tmail
 ruby-tmpl	ports/www/ruby-tmpl
