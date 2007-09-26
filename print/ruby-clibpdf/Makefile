@@ -17,6 +17,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby binding for ClibPDF
 
+DEPRECATED=	required port print/clibpdf deprecated
+EXPIRATION_DATE=	2007-10-01
+
 LIB_DEPENDS=	cpdf.0:${PORTSDIR}/print/clibpdf
 
 USE_RUBY=	yes
