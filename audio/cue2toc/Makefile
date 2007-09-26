@@ -18,6 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/Audio/Wav.pm:${PORTSDIR}/audio/p5-Audio-Wav
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/cue2toc.pl
+USE_PERL5=	yes
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|use warnings;||' ${WRKDIR}/cue2toc
