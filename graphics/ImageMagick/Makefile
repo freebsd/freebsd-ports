@@ -308,11 +308,6 @@ post-patch:
 # deprecated gvCleanup
 	@${REINPLACE_CMD} -e "s|gvCleanup|gvFreeContext|g" \
 		${WRKSRC}/coders/dot.c
-# Respect Make flags
-	@${REINPLACE_CMD} -E -e "s|^CPPFLAGS =|CPPFLAGS ?=|g" \
-		-e "s|^CXXFLAGS =|CXXFLAGS ?=|g" -e "s|^CFLAGS =|CFLAGS ?=|g" \
-		-e "s|^CC =|CC ?=|g" -e "s|^CPP =|CPP ?=|g" -e "s|^CXX =|CXX ?=|g" \
-		-e "s|^LDFLAGS =|LDFLAGS ?=|g" ${WRKSRC}/Makefile.in
 
 post-install:
 .if defined(WITHOUT_IMAGEMAGICK_16BIT_PIXEL)
