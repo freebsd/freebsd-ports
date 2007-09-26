@@ -15,6 +15,8 @@ share/LisaEm/floppy_eject.wav
 share/LisaEm/floppy_insert_sound.wav
 share/LisaEm/floppy_motor1.wav
 share/LisaEm/floppy_motor2.wav
+share/LisaEm/lisa128x85.xpm
+share/LisaEm/lisa2icon.xpm.old
 share/LisaEm/lisa2icon.ico
 share/LisaEm/lisa2icon.xpm
 share/LisaEm/lisa_power_switch01.wav
