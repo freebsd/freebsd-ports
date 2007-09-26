@@ -15527,6 +15527,7 @@ thevalley	ports/games/thevalley
 thinglaunch	ports/x11/thinglaunch
 thinice		ports/x11-themes/thinice
 thoteditor	ports/editors/thoteditor
+thrift		ports/devel/thrift
 throttle	ports/sysutils/throttle
 throttled	ports/net/throttled
 thrulay		ports/benchmarks/thrulay
