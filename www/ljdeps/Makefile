@@ -39,6 +39,7 @@ RUN_DEPENDS=	${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
 
 EXTRACT_ONLY=	# Empty
 NO_BUILD=	yes
+USE_PERL5=	yes
 
 do-install:	# Empty
 
