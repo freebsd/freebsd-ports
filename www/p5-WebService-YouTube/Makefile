@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl interfece to YouTube
+COMMENT=	Perl interface to YouTube
 
 RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
