@@ -1,5 +1,5 @@
 The Machine Emulator provides a general-purpose framework
-for computer emulation.  Right now it can emulate Sun 2/120 and
-3/150.
+for computer emulation.  Right now it can emulate Sun 2/120,
+3/150 and SPARCstation 2 (4/75).
 
-WWW:	http://theory.lcs.mit.edu/~fredette/tme/
+WWW:	http://people.csail.mit.edu/fredette/tme/

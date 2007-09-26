@@ -4,7 +4,7 @@
    FILE *modules_index;
  
    /* pass over the search path environment variables: */
--  for (pass = 0; ++pass < 2; ) {
+-  for (pass = 0; ++pass <= 2; ) {
 +  for (pass = 0; ++pass <= 3; ) {
  
      /* get the next search path environment variable value: */

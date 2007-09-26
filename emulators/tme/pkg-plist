@@ -13,22 +13,31 @@ include/tme/generic/tape.h
 include/tme/generic/mouse.h
 include/tme/generic/float.h
 include/tme/generic/keyboard.h
+@dirrm include/tme/generic
 include/tme/ic/m68k.h
 include/tme/ic/am9513.h
 include/tme/ic/z8530.h
 include/tme/ic/mm58167.h
 include/tme/ic/isil7170.h
 include/tme/ic/i825x6.h
+include/tme/ic/sparc.h
+include/tme/ic/mk48txx.h
+include/tme/ic/nec765.h
+include/tme/ic/bt458.h
 include/tme/ic/ieee754.h
 include/tme/ic/ieee754-auto.h
 include/tme/ic/ieee754-ops-auto.h
+@dirrm include/tme/ic
 include/tme/machine/sun.h
+@dirrm include/tme/machine
 include/tme/scsi/scsi-disk.h
 include/tme/scsi/scsi-tape.h
+include/tme/scsi/scsi-cdrom.h
 include/tme/scsi/scsi-msg.h
 include/tme/scsi/scsi-cdb.h
 include/tme/scsi/scsi-device.h
-include/tme/atomics.h
+@dirrm include/tme/scsi
+include/tme/memory.h
 include/tme/common.h
 include/tme/connection.h
 include/tme/element.h
@@ -39,12 +48,16 @@ include/tme/tme.h
 include/tme/misc.h
 include/tme/hash.h
 include/tme/tmesh.h
+include/tme/memory-auto.h
+@dirrm include/tme
 include/ltdl.h
 lib/tme/tme-plugins.txt
 lib/tme/tme_generic.la
 lib/tme/tme_generic.a
 lib/tme/tme_ic_m68k.la
 lib/tme/tme_ic_m68k.a
+lib/tme/tme_ic_sparc.la
+lib/tme/tme_ic_sparc.a
 lib/tme/tme_ic_am9513.la
 lib/tme/tme_ic_am9513.a
 lib/tme/tme_ic_mm58167.la
@@ -57,12 +70,26 @@ lib/tme/tme_ic_isil7170.la
 lib/tme/tme_ic_isil7170.a
 lib/tme/tme_ic_ncr5380.la
 lib/tme/tme_ic_ncr5380.a
+lib/tme/tme_ic_am7930.la
+lib/tme/tme_ic_am7930.a
+lib/tme/tme_ic_am7990.la
+lib/tme/tme_ic_am7990.a
+lib/tme/tme_ic_ncr53c9x.la
+lib/tme/tme_ic_ncr53c9x.a
+lib/tme/tme_ic_mk48txx.la
+lib/tme/tme_ic_mk48txx.a
+lib/tme/tme_ic_lsi64854.la
+lib/tme/tme_ic_lsi64854.a
+lib/tme/tme_ic_nec765.la
+lib/tme/tme_ic_nec765.a
 lib/tme/libtme-machine-sun.la
 lib/tme/libtme-machine-sun.a
 lib/tme/tme_machine_sun2.la
 lib/tme/tme_machine_sun2.a
 lib/tme/tme_machine_sun3.la
 lib/tme/tme_machine_sun3.a
+lib/tme/tme_machine_sun4.la
+lib/tme/tme_machine_sun4.a
 lib/tme/tme_host_posix.la
 lib/tme/tme_host_posix.a
 lib/tme/tme_host_bsd.la
@@ -71,11 +98,14 @@ lib/tme/tme_host_gtk.la
 lib/tme/tme_host_gtk.a
 lib/tme/tme_bus_multibus.la
 lib/tme/tme_bus_multibus.a
+lib/tme/tme_bus_sbus.la
+lib/tme/tme_bus_sbus.a
 lib/tme/tme_serial_kb.la
 lib/tme/tme_serial_kb.a
 lib/tme/tme_scsi.la
 lib/tme/tme_scsi.a
 lib/tme/tmeconfig.h
+@dirrm lib/tme
 lib/libltdl.la
 lib/libltdl.a
 lib/libtme.la
@@ -86,15 +116,10 @@ lib/libtme-ieee754.la
 lib/libtme-ieee754.a
 lib/libtmesh.la
 lib/libtmesh.a
-%%EXAMPLESDIR%%/sun-keyboards.txt
-%%EXAMPLESDIR%%/my-sun-macros.txt
-%%EXAMPLESDIR%%/SUN2-MULTIBUS
-%%EXAMPLESDIR%%/SUN3-CARRERA
-%%EXAMPLESDIR%%/sun3-carrera-eeprom.txt
-@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry lib/tme
-@dirrmtry include/tme/scsi
-@dirrmtry include/tme/machine
-@dirrmtry include/tme/ic
-@dirrmtry include/tme/generic
-@dirrmtry include/tme
+share/examples/tme/sun-keyboards.txt
+share/examples/tme/my-sun-macros.txt
+share/examples/tme/SUN2-MULTIBUS
+share/examples/tme/SUN3-CARRERA
+share/examples/tme/sun3-carrera-eeprom.txt
+share/examples/tme/SUN4-75
+@dirrm share/examples/tme
