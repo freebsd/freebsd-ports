@@ -40,6 +40,8 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XM
 CONFLICTS=	bugzilla-2.*
 PATCHVERSION=	20050218
 
+USE_PERL5=	yes
+
 .if defined(WITH_CONTRIB)
 PLIST_SUB+=	CONTRIB=""
 .else
