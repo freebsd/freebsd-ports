@@ -551,6 +551,7 @@
     SUBDIR += libchipcard
     SUBDIR += libchipcard-kde
     SUBDIR += libcii
+    SUBDIR += libconfig
     SUBDIR += libconfuse
     SUBDIR += libcoro
     SUBDIR += libcoyotl

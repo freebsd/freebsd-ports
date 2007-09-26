@@ -1,0 +1,10 @@
+include/libconfig.h
+include/libconfig.h++
+lib/libconfig.a
+lib/libconfig.la
+lib/libconfig.so.4
+lib/libconfig++.a
+lib/libconfig++.la
+lib/libconfig++.so.4
+libdata/pkgconfig/libconfig.pc
+libdata/pkgconfig/libconfig++.pc
