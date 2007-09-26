@@ -76,8 +76,10 @@ IS_INTERACTIVE=	yes
 .endif
 
 .if defined(WITH_CLIENT_ONLY)
-OPTIONS+=	WXCONSOLE "Build with wxGTK based GUI console: deprecated" off
+OPTIONS=	WXCONSOLE "Build with wxGTK based GUI console: deprecated" off
 OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console: deprecated" off
+.elif defined(WITH_BAT)
+OPTIONS=	
 .else
 OPTIONS=	SQLITE3 "Use SqLite-3 database instead of SqLite-2" off
 OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
