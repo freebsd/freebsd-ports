@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070926:
+  AFFECTS: users of devel/p5-gearmand
+  AUTHOR: clsung@FreeBSD.org
+
+  The port p5-gearmand has been splited up, so Gearman servers can 
+  be embedded into other processes. The Gearman::Server class is 
+  located at devel/p5-Gearman-Server, if you have devel/p5-gearmand
+  installed, perform an upgrade devel/p5-Gearman-Server with a 
+  command like:
+
+    # portupgrade -o devel/p5-Gearman-Server devel/p5-gearmand
+
 20070923:
   AFFECTS: users of emulators/linux_base-fc7
   AUTHOR: bsam@FreeBSD.org
