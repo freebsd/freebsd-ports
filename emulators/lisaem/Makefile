@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	lisaem
-DISTVERSION=	1.0.0
+DISTVERSION=	1.2.0
 CATEGORIES=	emulators
-MASTER_SITES=	http://lisaem.sunder.net/20070707/
+MASTER_SITES=	http://lisa.sunder.net/20070923/
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Apple Lisa 2 Emulator
