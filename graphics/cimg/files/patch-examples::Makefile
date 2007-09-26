@@ -1,9 +1,9 @@
---- examples/Makefile.orig	Fri Aug 24 16:52:42 2007
-+++ examples/Makefile	Fri Aug 24 22:14:27 2007
+--- examples/Makefile.orig	Wed Sep 26 11:32:03 2007
++++ examples/Makefile	Wed Sep 26 22:04:27 2007
 @@ -41,10 +41,10 @@
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = 1.23
+ CIMG_VERSION = 1.24
 -CC           = g++
 -X11PATH      = /usr/X11R6
 -CFLAGS       = -Wall -W -ansi -pedantic -ffast-math
@@ -15,13 +15,7 @@
  
  #--------------------------------------------------
  # Set compilation flags allowing to customize CImg
-@@ -81,11 +81,14 @@
- CIMG_LAPACK_FLAGS = -Dcimg_use_lapack -lblas -lg2c -llapack
- 
- # Flags to enable the use of the Board library
--CIMG_BOARD_FLAGS = -Dcimg_use_board -I../board-0.8/include -L../board-0.8/lib -lboard
-+CIMG_BOARD_FLAGS = -Dcimg_use_board -lboard
- 
+@@ -86,6 +86,9 @@
  # Flags to compile on Solaris
  CIMG_SOLARIS_FLAGS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
  

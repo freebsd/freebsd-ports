@@ -13,6 +13,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/FAQ_item.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/curve_editor.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/download_item.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/item_chat.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/item_codesample.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/item_getting.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/item_intro.jpg
@@ -152,6 +153,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__storage.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__structure.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__visual2005.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/index.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/modules.html
