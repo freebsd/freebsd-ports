@@ -184,7 +184,7 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 
 .endif  # defined(_PERL_REFACTORING_COMPLETE)
 
-.if !defined(PERL) || !defined(PERL5) || !defined(PERL_PORT) || !defined(PERL_VERSION)
+.if !defined(PERL) || !defined(PERL5) || !defined(PERL_PORT) || !defined(SITE_PERL)
 IGNORE=		missing define for WANT_PERL, USE_PERL5, or similar before bsd.port.pre.mk inclusion
 .endif
 
