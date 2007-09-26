@@ -11043,6 +11043,13 @@ var/mail
 @dirrm usr/games
 @dirrm usr/etc
 @dirrm usr/bin
+@dirrm usr/X11R6/share
+@dirrm usr/X11R6/man
+@dirrm usr/X11R6/lib/tls
+@dirrm usr/X11R6/lib
+@dirrm usr/X11R6/include
+@dirrm usr/X11R6/bin
+@dirrm usr/X11R6
 @dirrm usr
 @dirrm sys
 @dirrm srv

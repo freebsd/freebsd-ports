@@ -1055,6 +1055,11 @@ POST-INSTALL)
 	mkdir -p ${PKG_PREFIX}/usr/lib/X11
 	mkdir -p ${PKG_PREFIX}/usr/games
 	mkdir -p ${PKG_PREFIX}/usr/etc
+	mkdir -p ${PKG_PREFIX}/usr/X11R6/share
+	mkdir -p ${PKG_PREFIX}/usr/X11R6/man
+	mkdir -p ${PKG_PREFIX}/usr/X11R6/lib/tls
+	mkdir -p ${PKG_PREFIX}/usr/X11R6/include
+	mkdir -p ${PKG_PREFIX}/usr/X11R6/bin
 	mkdir -p ${PKG_PREFIX}/sys
 	mkdir -p ${PKG_PREFIX}/srv
 	mkdir -p ${PKG_PREFIX}/selinux
