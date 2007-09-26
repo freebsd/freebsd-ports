@@ -7,6 +7,7 @@
 
 PORTNAME=		fc7
 PORTVERSION=		7
+PORTREVISION=		1
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../releases/${PORTVERSION}/Everything/${LINUX_RPM_ARCH}/os/Fedora
@@ -128,6 +129,8 @@ REMOVE_DIRS=		boot dev home initrd root tmp var/log var/run var/tmp \
 REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \
 			etc/protocols
+ADD_DIRS=		usr/X11R6/share usr/X11R6/man usr/X11R6/lib/tls \
+			usr/X11R6/include usr/X11R6/bin
 ADD_FILES=		#empty
 
 .if (${MACHINE_ARCH} == "amd64")
@@ -147,6 +150,9 @@ do-build:
 	done
 	@for F in ${REMOVE_FILES}; do \
 		${RM} -f ${WRKSRC}/$$F; \
+	done
+	@for F in ${ADD_DIRS}; do \
+		${MKDIR} -p ${WRKSRC}/$$F; \
 	done
 	@for F in ${ADD_FILES}; do \
 		${TOUCH} ${WRKSRC}/$$F; \
