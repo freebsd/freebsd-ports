@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	epic5
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.3.5
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-BETA/ \
 		http://tehran.lain.pl/epic-mirror/EPIC5-BETA/ \
@@ -18,11 +17,12 @@ MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-BETA/ \
 MAINTAINER=	josh@tcbug.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
-CONFLICTS=	epic4-[0-9]*
+SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
 MAN1=		epic5.1
 USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--without-ruby
 
 OPTIONS=	IPV6	"IPv6 support"		on \
 		TCL	"TCL support"		on \
@@ -66,6 +66,7 @@ post-install:
 .for i in BUG_FORM COPYRIGHT KNOWNBUGS README UPDATES VOTES
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>
