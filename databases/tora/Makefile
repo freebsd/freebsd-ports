@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for Oracle
 
 BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntsh.a:${PORTSDIR}/databases/oracle8-client
