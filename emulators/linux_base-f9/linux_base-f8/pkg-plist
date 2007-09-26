@@ -4958,6 +4958,11 @@ var/mail
 @exec /bin/mkdir -p %D/usr/lib/X11
 @exec /bin/mkdir -p %D/usr/games
 @exec /bin/mkdir -p %D/usr/etc
+@exec /bin/mkdir -p %D/usr/X11R6/share
+@exec /bin/mkdir -p %D/usr/X11R6/man
+@exec /bin/mkdir -p %D/usr/X11R6/lib/tls
+@exec /bin/mkdir -p %D/usr/X11R6/include
+@exec /bin/mkdir -p %D/usr/X11R6/bin
 @exec /bin/mkdir -p %D/sys
 @exec /bin/mkdir -p %D/srv
 @exec /bin/mkdir -p %D/selinux
@@ -5497,7 +5502,7 @@ var/mail
 @dirrm sys
 @dirrm srv
 @dirrm selinux
-@dirrm proc
+@dirrmtry proc
 @dirrm opt
 @dirrm mnt
 @dirrm media
@@ -6305,6 +6310,13 @@ var/mail
 @dirrm usr/include/db4.2.52
 @dirrm usr/include
 @dirrm usr/bin
+@dirrm usr/X11R6/share
+@dirrm usr/X11R6/man
+@dirrm usr/X11R6/lib/tls
+@dirrm usr/X11R6/lib
+@dirrm usr/X11R6/include
+@dirrm usr/X11R6/bin
+@dirrm usr/X11R6
 @dirrm usr
 @dirrm sbin
 @dirrm lib/terminfo/x
