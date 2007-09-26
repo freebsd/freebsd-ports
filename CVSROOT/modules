@@ -11204,6 +11204,7 @@ p5-Text-vFile-asData	ports/devel/p5-Text-vFile-asData
 p5-Thread-Apartment	ports/devel/p5-Thread-Apartment
 p5-Thread-Pool-Simple	ports/devel/p5-Thread-Pool-Simple
 p5-Thread-Queue-Duplex	ports/devel/p5-Thread-Queue-Duplex
+p5-Thrift	ports/devel/p5-Thrift
 p5-Tie-Array-Pack	ports/devel/p5-Tie-Array-Pack
 p5-Tie-Array-Sorted	ports/devel/p5-Tie-Array-Sorted
 p5-Tie-CPHash	ports/devel/p5-Tie-CPHash
