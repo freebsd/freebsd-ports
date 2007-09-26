@@ -7686,6 +7686,7 @@ mod_mya		ports/www/mod_mya
 mod_mylo	ports/www/mod_mylo
 mod_mysqluserdir	ports/www/mod_mysqluserdir
 mod_ntlm	ports/www/mod_ntlm
+mod_ntlm2	ports/www/mod_ntlm2
 mod_perl	ports/www/mod_perl
 mod_perl2	ports/www/mod_perl2
 mod_proctitle	ports/www/mod_proctitle
