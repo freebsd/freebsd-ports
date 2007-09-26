@@ -1,0 +1,11 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Thrift/.packlist
+%%SITE_PERL%%/Thrift.pm
+%%SITE_PERL%%/Thrift/BinaryProtocol.pm
+%%SITE_PERL%%/Thrift/BufferedTransport.pm
+%%SITE_PERL%%/Thrift/FramedTransport.pm
+%%SITE_PERL%%/Thrift/MemoryBuffer.pm
+%%SITE_PERL%%/Thrift/Protocol.pm
+%%SITE_PERL%%/Thrift/Socket.pm
+%%SITE_PERL%%/Thrift/Transport.pm
+@dirrm %%SITE_PERL%%/Thrift
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thrift
