@@ -2117,6 +2117,7 @@
     SUBDIR += ruby-sysvipc
     SUBDIR += ruby-term-ansicolor
     SUBDIR += ruby-textbuf
+    SUBDIR += ruby-thrift
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-wirble
     SUBDIR += ruby-zoom

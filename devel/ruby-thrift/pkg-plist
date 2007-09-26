@@ -1,0 +1,10 @@
+%%RUBY_SITELIBDIR%%/thrift/thrift.rb
+%%RUBY_SITELIBDIR%%/thrift/protocol/tbinaryprotocol.rb
+%%RUBY_SITELIBDIR%%/thrift/protocol/tprotocol.rb
+%%RUBY_SITELIBDIR%%/thrift/server/tserver.rb
+%%RUBY_SITELIBDIR%%/thrift/transport/tsocket.rb
+%%RUBY_SITELIBDIR%%/thrift/transport/ttransport.rb
+@dirrm %%RUBY_SITELIBDIR%%/thrift/transport
+@dirrm %%RUBY_SITELIBDIR%%/thrift/server
+@dirrm %%RUBY_SITELIBDIR%%/thrift/protocol
+@dirrm %%RUBY_SITELIBDIR%%/thrift
