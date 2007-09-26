@@ -2243,6 +2243,7 @@
     SUBDIR += tdl
     SUBDIR += templ
     SUBDIR += terminality
+    SUBDIR += thrift
     SUBDIR += tide
     SUBDIR += tigcc
     SUBDIR += tinylaf

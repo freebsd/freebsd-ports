@@ -1,0 +1,61 @@
+bin/thrift
+include/thrift/TLogging.h
+include/thrift/TProcessor.h
+include/thrift/TReflectionLocal.h
+include/thrift/Thrift.h
+include/thrift/config.h
+include/thrift/reflection_limited_types.h
+include/thrift/concurrency/Exception.h
+include/thrift/concurrency/Monitor.h
+include/thrift/concurrency/Mutex.h
+include/thrift/concurrency/PosixThreadFactory.h
+include/thrift/concurrency/Thread.h
+include/thrift/concurrency/ThreadManager.h
+include/thrift/concurrency/TimerManager.h
+include/thrift/concurrency/Util.h
+include/thrift/processor/PeekProcessor.h
+include/thrift/processor/StatsProcessor.h
+include/thrift/protocol/TBinaryProtocol.h
+include/thrift/protocol/TDebugProtocol.h
+include/thrift/protocol/TDenseProtocol.h
+include/thrift/protocol/TOneWayProtocol.h
+include/thrift/protocol/TProtocol.h
+include/thrift/protocol/TProtocolException.h
+include/thrift/server/TNonblockingServer.h
+include/thrift/server/TServer.h
+include/thrift/server/TSimpleServer.h
+include/thrift/server/TThreadPoolServer.h
+include/thrift/server/TThreadedServer.h
+include/thrift/transport/TFileTransport.h
+include/thrift/transport/THttpClient.h
+include/thrift/transport/TServerSocket.h
+include/thrift/transport/TServerTransport.h
+include/thrift/transport/TSocket.h
+include/thrift/transport/TSocketPool.h
+include/thrift/transport/TTransport.h
+include/thrift/transport/TTransportException.h
+include/thrift/transport/TTransportUtils.h
+include/thrift/transport/TZlibTransport.h
+lib/libthrift.a
+lib/libthrift.la
+lib/libthrift.so
+lib/libthrift.so.0
+lib/libthriftnb.a
+lib/libthriftnb.la
+lib/libthriftnb.so
+lib/libthriftnb.so.0
+lib/libthriftz.a
+lib/libthriftz.la
+lib/libthriftz.so
+lib/libthriftz.so.0
+share/thrift/if/reflection_limited.thrift
+%%PORTDOCS%%%%DOCSDIR%%/thrift.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/thrift/if
+@dirrm share/thrift
+@dirrm include/thrift/transport
+@dirrm include/thrift/server
+@dirrm include/thrift/protocol
+@dirrm include/thrift/processor
+@dirrm include/thrift/concurrency
+@dirrm include/thrift

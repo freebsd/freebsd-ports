@@ -1,0 +1,12 @@
+Thrift is a lightweight, language-independent software stack with an
+associated code generation mechanism for RPC.  Thrift provides clean
+abstractions for data transport, data serialization, and application
+level processing.  The code generation system takes a simple definition
+language as its input and generates code across programming languages
+that uses the abstracted stack to build interoperable RPC clients and
+servers.
+
+Thrift is specifically designed to support non-atomic version changes
+across client and server code.
+
+WWW: http://developers.facebook.com/thrift/
