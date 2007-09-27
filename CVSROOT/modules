@@ -2754,7 +2754,6 @@ f-prot		ports/security/f-prot
 f-prot-sig	ports/security/f-prot-sig
 f-protd		ports/security/f-protd
 f-spot		ports/graphics/f-spot
-f2py		ports/lang/f2py
 f4l		ports/editors/f4l
 f77		ports/lang/f77
 f77flow		ports/devel/f77flow
@@ -7286,7 +7285,6 @@ mandvd		ports/multimedia/mandvd
 manedit		ports/editors/manedit
 manencode	ports/multimedia/manencode
 mangband	ports/games/mangband
-mango		ports/misc/mango
 mangos		ports/games/mangos
 manipulate_data	ports/security/manipulate_data
 manslide	ports/multimedia/manslide

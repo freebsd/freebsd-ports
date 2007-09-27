@@ -3244,3 +3244,5 @@ net-im/micq|net-im/climm|2007-09-18|Project renamed
 graphics/blender-devel|graphics/blender|2007-09-21|Not needed since binary version is gone
 print/ghostscript-afpl|print/ghostscript-gpl|2007-09-24|Replaced by print/ghostscript-gpl
 print/ghostscript-afpl-nox11|print/ghostscript-gpl-nox11|2007-09-24|Replaced by print/ghostscript-gpl-nox11
+misc/mango||2007-09-27|Has expired: Depends on broken package qextmdi
+lang/f2py||2007-09-27|Has expired: Replaced by py-numpy
