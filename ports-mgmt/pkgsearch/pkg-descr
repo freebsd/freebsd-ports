@@ -1,0 +1,6 @@
+pkgsearch find packages in ports, pkgsrc and others,
+in any place from your computer, and find also packages installed
+in your system ! pkgsearch use c++, boost and PostGreSQL for search
+packages more fast, and is compiled with cmake. enjoy ;)
+
+WWW: http://sharesource.org/project/pkgsearch
