@@ -1,0 +1,35 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: memcachedb
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# memcachedb_enable (bool):	Set to NO by default.
+#				Set it to YES to enable memcachedb.
+#
+. %%RC_SUBR%%
+
+name="memcachedb"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${memcachedb_bind="127.0.0.1"}
+: ${memcachedb_dbfile="/var/db/memcachedb/default.db"}
+: ${memcachedb_dbpath="/var/db/memcachedb"}
+: ${memcachedb_enable="NO"}
+: ${memcachedb_pidfile="/var/run/memcachedb.pid"}
+: ${memcachedb_port="11211"}
+: ${memcachedb_user="nobody"}
+
+command=%%PREFIX%%/sbin/${name}
+command_args="-p ${memcachedb_port} -l ${memcachedb_bind} -d -u ${memcachedb_user} -f ${memcachedb_dbfile} -H ${memcachedb_dbpath} -P ${memcachedb_pidfile}"
+
+unset memcachedb_user
+
+run_rc_command "$1"
+
