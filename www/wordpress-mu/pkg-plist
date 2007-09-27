@@ -127,12 +127,6 @@
 %%WWWDIR%%/wp-config-sample.php
 %%WWWDIR%%/wp-content/blogs.php
 %%WWWDIR%%/wp-content/index.php
-%%WWWDIR%%/wp-content/mu-plugins/bullet_arrow_down.gif
-%%WWWDIR%%/wp-content/mu-plugins/dashboardswitcher.php
-%%WWWDIR%%/wp-content/mu-plugins/delete-blog.php
-%%WWWDIR%%/wp-content/mu-plugins/global-categories.php
-%%WWWDIR%%/wp-content/mu-plugins/misc.php
-%%WWWDIR%%/wp-content/mu-plugins/pluggable.php
 %%WWWDIR%%/wp-content/themes/classic/comments-popup.php
 %%WWWDIR%%/wp-content/themes/classic/comments.php
 %%WWWDIR%%/wp-content/themes/classic/footer.php
@@ -230,6 +224,7 @@
 %%WWWDIR%%/wp-includes/general-template.php
 %%WWWDIR%%/wp-includes/gettext.php
 %%WWWDIR%%/wp-includes/images/rss.png
+%%WWWDIR%%/wp-includes/images/bullet_arrow_down.gif
 %%WWWDIR%%/wp-includes/images/smilies/icon_arrow.gif
 %%WWWDIR%%/wp-includes/images/smilies/icon_biggrin.gif
 %%WWWDIR%%/wp-includes/images/smilies/icon_confused.gif
@@ -529,7 +524,7 @@
 @dirrm %%WWWDIR%%/wp-content/themes/classic
 @dirrm %%WWWDIR%%/wp-content/themes
 @dirrm %%WWWDIR%%/wp-content/plugins
-@dirrm %%WWWDIR%%/wp-content/mu-plugins
+@dirrmtry %%WWWDIR%%/wp-content/mu-plugins
 @dirrm %%WWWDIR%%/wp-content
 @dirrm %%WWWDIR%%/wp-admin/import
 @dirrm %%WWWDIR%%/wp-admin/images
