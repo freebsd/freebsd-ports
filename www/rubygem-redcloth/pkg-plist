@@ -1,8 +1,16 @@
+bin/redcloth
 %%GEM_CACHE%%
 %%GEM_LIB_DIR%%/bin/redcloth
+%%GEM_LIB_DIR%%/doc/CHANGELOG
+%%GEM_LIB_DIR%%/doc/COPYING
+%%GEM_LIB_DIR%%/doc/README
+%%GEM_LIB_DIR%%/doc/REFERENCE
+%%GEM_LIB_DIR%%/doc/make.rb
 %%GEM_LIB_DIR%%/lib/redcloth.rb
 %%GEM_LIB_DIR%%/run-tests.rb
+%%GEM_LIB_DIR%%/setup.rb
 %%GEM_LIB_DIR%%/tests/code.yml
+%%GEM_LIB_DIR%%/tests/hard_breaks.yml
 %%GEM_LIB_DIR%%/tests/images.yml
 %%GEM_LIB_DIR%%/tests/instiki.yml
 %%GEM_LIB_DIR%%/tests/links.yml
@@ -14,6 +22,7 @@
 %%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/tests
 @dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/doc
 @dirrm %%GEM_LIB_DIR%%/bin
 @dirrm %%GEM_LIB_DIR%%
 @dirrm %%GEM_DOC_DIR%%
