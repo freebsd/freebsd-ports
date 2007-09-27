@@ -13,6 +13,9 @@ beforeinstall:
 	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
 		${.CURDIR}/../../../include/GL/glut.h \
 		${PREFIX}/include/GL
+	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
+		${.CURDIR}/../../../include/GL/glutf90.h \
+		${PREFIX}/include/GL
 
 SRCS = \
 	glut_8x13.c \
