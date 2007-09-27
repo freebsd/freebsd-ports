@@ -6,33 +6,19 @@
 #
 
 PORTNAME=	Structures_DataGrid
-PORTVERSION=	0.6.3
+PORTVERSION=	0.8.3
 CATEGORIES=	devel www pear
 
 MAINTAINER=	nick@foobar.org
-COMMENT=	Simple HTML data structure package
+COMMENT=	A full-featured tabular structured data management package
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${PEARDIR}/HTML/Table.php:${PORTSDIR}/devel/pear-HTML_Table \
-		${PEARDIR}/Pager/Pager.php:${PORTSDIR}/devel/pear-Pager \
-		${PEARDIR}/Spreadsheet/Excel/Writer.php:${PORTSDIR}/textproc/pear-Spreadsheet_Excel_Writer \
-		${PEARDIR}/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util \
-		${PEARDIR}/XML/RSS.php:${PORTSDIR}/devel/pear-XML_RSS \
-		${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer \
-		${PEARDIR}/Console/Table.php:${PORTSDIR}/devel/pear-Console_Table
+RUN_DEPENDS=	${PEARDIR}/Console/Table.php:${PORTSDIR}/devel/pear-Console_Table
 
 CATEGORY=	Structures
-FILES=		DataGrid.php DataGrid/Core.php DataGrid/Column.php \
-		DataGrid/Record.php DataGrid/Renderer.php \
-		DataGrid/DataSource.php DataGrid/Renderer/Console.php \
-		DataGrid/Renderer/CSV.php DataGrid/Renderer/HTMLTable.php \
-		DataGrid/Renderer/Smarty.php DataGrid/Renderer/XML.php \
-		DataGrid/Renderer/XLS.php DataGrid/Renderer/XUL.php \
-		DataGrid/DataSource/Array.php DataGrid/DataSource/CSV.php \
-		DataGrid/DataSource/DataObject.php \
-		DataGrid/DataSource/DB.php DataGrid/DataSource/RSS.php \
-		DataGrid/DataSource/XML.php DataGrid/Record/DB.php \
-		DataGrid/Record/DataObject.php
+
+FILES=		DataGrid/Column.php DataGrid/DataSource.php \
+		DataGrid/Renderer.php DataGrid.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
