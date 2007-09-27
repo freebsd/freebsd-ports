@@ -23,6 +23,9 @@ USE_IMAKE=	yes
 REINPLACE_ARGS=	-i'' -E
 WRKSRC=		${WRKDIR}/X.V11R3/clients/uwm
 
+DEPRECATED=	Version branch long since retired
+EXPIRATION_DATE=	2007-10-27
+
 post-patch:
 	${REINPLACE_CMD} 's:/usr/lib/X11:${PREFIX}/lib/X11:g' ${WRKSRC}/uwm.man
 
