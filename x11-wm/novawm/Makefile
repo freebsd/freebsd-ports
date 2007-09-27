@@ -30,6 +30,9 @@ PLIST_FILES=	bin/novawm
 PORTDOCS=	AUTHORS ChangeLog INSTALL README TODO
 .endif
 
+DEPRECATED=	 	Project is dead
+EXPIRATION_DATE=	2007-10-28
+
 post-extract:
 	@${CHMOD} -R +w ${WRKSRC}/src/xpm/.xvpics
 	@${CHMOD} -R +w ${WRKSRC}/.xvpics
