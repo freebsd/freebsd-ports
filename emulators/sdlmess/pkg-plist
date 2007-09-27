@@ -61,11 +61,14 @@ libexec/sdlmess/testkeys
 %%DATADIR%%/artwork/ledon.png
 %%DATADIR%%/artwork/mk1.zip
 %%DATADIR%%/artwork/mk2.zip
+%%DATADIR%%/artwork/mm4.zip
+%%DATADIR%%/artwork/mm5.zip
 %%DATADIR%%/artwork/mpf1.zip
 %%DATADIR%%/artwork/nes.zip
 %%DATADIR%%/artwork/pc1401.zip
 %%DATADIR%%/artwork/pc1402.zip
 %%DATADIR%%/artwork/pc1403.zip
+%%DATADIR%%/artwork/rebel5.zip
 %%DATADIR%%/artwork/ssystem3.zip
 %%DATADIR%%/artwork/thomson.lay
 %%DATADIR%%/hash/a2600.hsi
@@ -74,6 +77,7 @@ libexec/sdlmess/testkeys
 %%DATADIR%%/hash/a800.hsi
 %%DATADIR%%/hash/a800xl.hsi
 %%DATADIR%%/hash/advision.hsi
+%%DATADIR%%/hash/aim65.hsi
 %%DATADIR%%/hash/apexc.hsi
 %%DATADIR%%/hash/apple1.hsi
 %%DATADIR%%/hash/apple2.hsi
@@ -126,6 +130,7 @@ libexec/sdlmess/testkeys
 %%DATADIR%%/hash/pce.hsi
 %%DATADIR%%/hash/pdp1.hsi
 %%DATADIR%%/hash/pet.hsi
+%%DATADIR%%/hash/pokemini.hsi
 %%DATADIR%%/hash/psx.hsi
 %%DATADIR%%/hash/sms.hsi
 %%DATADIR%%/hash/snes.hsi
