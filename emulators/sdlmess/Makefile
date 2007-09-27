@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdlmess
-PORTVERSION=	0.118
+PORTVERSION=	0.119
 CATEGORIES=	emulators
 MASTER_SITES=	http://rbelmont.mameworld.info/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}

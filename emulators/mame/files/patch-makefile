@@ -1,5 +1,5 @@
---- makefile.orig	Thu Aug 30 23:22:34 2007
-+++ makefile	Fri Aug 31 11:13:31 2007
+--- makefile.orig	Fri Sep 14 17:11:34 2007
++++ makefile	Mon Sep 17 19:59:44 2007
 @@ -69,11 +69,13 @@
  # uncomment next line to include the debugger
  # DEBUG = 1
@@ -65,9 +65,9 @@
  ifndef DEBUG
  ifndef PTR64
 -CFLAGS += -Werror $(ARCH) -fno-strict-aliasing
-+#CFLAGS += -Werror $(ARCH) -fno-strict-aliasing
++#CFLAGS += -Werror -fno-strict-aliasing
+ endif   # PTR64
  endif	# !DEBUG
- endif	# !PTR64
  endif	# neq OPTIMIZE
 @@ -366,6 +370,7 @@
  	-I$(SRC)/lib/util \
