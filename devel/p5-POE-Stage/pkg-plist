@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Stage/.packlist
+%%SITE_PERL%%/POE/Callback.pm
 %%SITE_PERL%%/POE/Request.pm
 %%SITE_PERL%%/POE/Request/Emit.pm
 %%SITE_PERL%%/POE/Request/Recall.pm
