@@ -4968,6 +4968,10 @@ ${deptype:L}-depends:
 .if !defined(NO_DEPENDS)
 	@for i in `${ECHO_CMD} "${${deptype}_DEPENDS}"`; do \
 		prog=`${ECHO_CMD} $$i | ${SED} -e 's/:.*//'`; \
+		if [ -z "$$prog" ]; then \
+			${ECHO_MSG} "Error: there is an empty port dependency in ${deptype}_DEPENDS."; \
+			break; \
+		fi; \
 		dir=`${ECHO_CMD} $$i | ${SED} -e 's/[^:]*://'`; \
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
 			target=`${ECHO_CMD} $$dir | ${SED} -e 's/.*://'`; \
