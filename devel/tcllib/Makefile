@@ -8,13 +8,14 @@
 PORTNAME=		tcllib
 PORTVERSION=		1.10
 CATEGORIES=		devel tcl83 tcl84
+PORTREVISION=		1
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcllib
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A collection of utility modules for Tcl
 
-USE_TCL_BUILD=	84+
+USE_TCL_BUILD=	82+
 USE_TCL_RUN=	${USE_TCL_BUILD}
 
 USE_BZIP2=	yes
@@ -22,8 +23,9 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	all
 MAKE_ENV+=	LANG=C
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
+.if defined(NO_INSTALL_MANPAGES)
+INSTALL_TARGET=	install-libraries install-applications
+.else
 MANN=	aes.n ansi_cattr.n ansi_cctrl.n ansi_cmacros.n ansi_code.n	\
 	ansi_ctrlu.n ansi_send.n asn.n autoproxy.n base32.n	\
 	base32core.n base32hex.n base64.n bee.n bibtex.n bigfloat.n	\
@@ -65,6 +67,7 @@ MANN=	aes.n ansi_cattr.n ansi_cctrl.n ansi_cmacros.n ansi_code.n	\
 	yencode.n
 
 MANCOMPRESSED=	no
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -76,9 +79,12 @@ post-patch:
 	# available in addition to the pretty progress report:
 	#
 	${REINPLACE_CMD} -e 's,test run,test run -l testlog,' \
+		-e 's,$$(libdir)/@PACKAGE@@VERSION@,$$(libdir)/@PACKAGE@,' \
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's,exec tclsh,exec ${TCLSH},'	\
-		${WRKSRC}/apps/dtplite
+		${WRKSRC}/apps/dtplite ${WRKSRC}/apps/page	\
+		${WRKSRC}/apps/tcldocstrip ${WRKSRC}/apps/nns	\
+		${WRKSRC}/apps/nnsd
 
 RUNTEST=	${SETENV} LANG=C DISPLAY= ${MAKE} -C ${WRKSRC} test
 MYID	!=	${ID} -u
