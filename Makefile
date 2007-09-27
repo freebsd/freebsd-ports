@@ -163,9 +163,6 @@ update:
 	@echo ">>> Updating ${.CURDIR} from cvs repository" ${CVSROOT}
 	@echo "--------------------------------------------------------------"
 	cd ${.CURDIR}; ${CVS} -R -q update -A -P -d -I!
-.elif defined(SUP_UPDATE) && !defined(PORTSSUPFILE)
-	@${ECHO_MSG} "Error: Please define PORTSSUPFILE before doing make update."
-	@exit 1
 .else
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Running ${PORTSNAP}"
