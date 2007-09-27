@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${RUBY_SITELIBDIR}/facter.rb:${PORTSDIR}/sysutils/facter
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFLICTS=	puppet-devel-[0-9]*
+
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RC_SUBR=	puppetmasterd puppetd
@@ -28,6 +29,8 @@ DOCS=	CHANGELOG TODO README LICENSE COPYING
 
 post-patch:
 	${RM} ${WRKSRC}/bin/*.orig || true
+	${REINPLACE_CMD} -e "s|/etc/puppet|${PREFIX}/etc/puppet|" \
+		${WRKSRC}/lib/puppet/configuration.rb
 
 do-install:
 	cd ${WRKSRC} && \
