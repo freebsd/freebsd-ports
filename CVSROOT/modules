@@ -690,6 +690,7 @@ avra		ports/devel/avra
 avrdude		ports/devel/avrdude
 awale		ports/games/awale
 awele		ports/games/awele
+awesome		ports/x11-wm/awesome
 awka		ports/lang/awka
 awstats		ports/www/awstats
 awstats-devel	ports/www/awstats-devel
