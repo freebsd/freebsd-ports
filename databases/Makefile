@@ -121,6 +121,7 @@
     SUBDIR += mantis
     SUBDIR += mdbtools
     SUBDIR += memcached
+    SUBDIR += memcachedb
     SUBDIR += metakit
     SUBDIR += mird
     SUBDIR += mrtg-mysql-load

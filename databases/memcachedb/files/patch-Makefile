@@ -1,0 +1,23 @@
+--- Makefile.orig	2007-09-22 03:51:05.000000000 +0800
++++ Makefile	2007-09-22 03:56:02.000000000 +0800
+@@ -1,15 +1,15 @@
+ # $Id: Makefile 11833 2005-11-28 00:22:02Z midom $
+ # $Id: Makefile 11833 2007-09-06 10:56:02Z steve $
+ 
+-LIBS=-ldb -levent
+-DBLIBPATH=/usr/local/BerkeleyDB.4.5/lib
+-DBINCPATH=/usr/local/BerkeleyDB.4.5/include
++LIBS=-l%%BDB_LIB_NAME%% -levent
++DBLIBPATH=%%BDB_LIB_DIR%%
++DBINCPATH=%%BDB_INCLUDE_DIR%%
+ 
+ LDFLAGS= -L/usr/local/lib/ -L${DBLIBPATH}
+-CFLAGS = -O2 -I/usr/local/include -I${DBINCPATH} 
++CFLAGS+= -I/usr/local/include -I${DBINCPATH} 
+ 
+ all: 
+-	cc -o memcachedb memcachedb.c ${LDFLAGS} ${CFLAGS} ${LIBS}
++	${CC} -o memcachedb memcachedb.c ${LDFLAGS} ${CFLAGS} ${LIBS}
+ 
+ clean:
+ 	rm -f -- *.o memcachedb

@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+@stopdaemon memcachedb
+sbin/memcachedb
+@unexec rmdir /var/db/memcachedb 2>/dev/null || true
