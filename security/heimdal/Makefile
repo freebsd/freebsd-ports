@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	heimdal
-PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
+MASTER_SITES=	http://ftp.pdc.kth.se/pub/heimdal/src/ \
+		ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 		ftp://ftp.sunet.se/pub/unix/admin/mirror-pdc/pub/heimdal/src/ \
 		ftp://ftp.ayamura.org/pub/heimdal/
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	heimdal-0.7.2-setuid-patch.txt
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A popular BSD-licensed implementation of Kerberos 5
@@ -33,7 +29,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS+=	--enable-shared --without-krb4
 
-INFO=		heimdal
+INFO=		heimdal hx509
 PLIST=		${WRKDIR}/PLIST
 
 .include <bsd.port.pre.mk>
@@ -45,7 +41,7 @@ CFLAGS+=	-fPIC
 .if defined(WITH_LDAP)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
-EXTRA_PATCHES+=		${FILESDIR}/extrapatch-lib_hdb_hdb-ldap.c
+#EXTRA_PATCHES+=		${FILESDIR}/extrapatch-lib_hdb_hdb-ldap.c
 .  if defined(LDAP_SOCKET_PATH)
 _SOCK=		${LDAP_SOCKET_PATH:C|/|%2f|g}
 .  else
