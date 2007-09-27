@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	wordpress-mu
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5a
 PORTEPOCH=	2
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.twaren.net/local-distfiles/wpmu/ \
-		ftp://ftp.stu.edu.tw/pub/wpmu/
-DISTNAME=	wordpressmu-${PORTVERSION}
+MASTER_SITES=	http://mu.wordpress.org/
+DISTNAME=	latest
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Multi-user version of the famous WordPress blogging application
