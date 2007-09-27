@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sfslite
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.okws.org/dist/
 
@@ -16,8 +15,6 @@ COMMENT=	Standard version of the sfslite library
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS+=--with-sfsuser=sfs \
-		--with-sfsgroup=sfs
 #
 # rpcc does not work with byacc, so just require BISON
 #
@@ -49,6 +46,7 @@ RPCC_BIN?=	lib/${PORTNAME}-${SHORTVERSION}/${BUILD_MODE}
 .else
 BUILD_MODE?=	shopt
 RPCC_BIN?=	bin
+CONFIGURE_ARGS += --enable-system-bin
 .endif # define(BUILD_MODE)
 
 USE_LDCONFIG=	yes
