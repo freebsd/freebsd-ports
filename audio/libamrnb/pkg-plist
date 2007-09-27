@@ -1,12 +1,12 @@
 bin/amrnb-decoder
-bin/amrnb-encoder
-bin/amrnb-decoder-if2
-bin/amrnb-encoder-if2
 bin/amrnb-decoder-etsi
+bin/amrnb-decoder-if2
+bin/amrnb-encoder
 bin/amrnb-encoder-etsi
-bin/amrnb-encoder-vad2
-bin/amrnb-encoder-if2-vad2
 bin/amrnb-encoder-etsi-vad2
+bin/amrnb-encoder-if2
+bin/amrnb-encoder-if2-vad2
+bin/amrnb-encoder-vad2
 include/amrnb/interf_dec.h
 include/amrnb/interf_enc.h
 include/amrnb/interf_rom.h
@@ -15,8 +15,8 @@ include/amrnb/rom_enc.h
 include/amrnb/sp_dec.h
 include/amrnb/sp_enc.h
 include/amrnb/typedef.h
-lib/libamrnb.so.2
-lib/libamrnb.so
-lib/libamrnb.la
 lib/libamrnb.a
+lib/libamrnb.la
+lib/libamrnb.so
+lib/libamrnb.so.3
 @dirrm include/amrnb
