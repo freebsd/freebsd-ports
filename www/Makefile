@@ -1226,6 +1226,7 @@
     SUBDIR += vee
     SUBDIR += visitors
     SUBDIR += vtiger
+    SUBDIR += vtiger-customerportal
     SUBDIR += vtiger4
     SUBDIR += w3
     SUBDIR += w3-4
