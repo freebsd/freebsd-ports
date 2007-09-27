@@ -1,9 +1,0 @@
---- AdvancedSearchForm.ui.orig	Tue Sep 27 21:13:16 2005
-+++ AdvancedSearchForm.ui	Tue Sep 27 21:13:27 2005
-@@ -422,6 +422,5 @@
- <layoutdefaults spacing="6" margin="11"/>
- <includehints>
-     <includehint>qextmdichildview.h</includehint>
--    <includehint>busywidget.h</includehint>
- </includehints>
- </UI>
