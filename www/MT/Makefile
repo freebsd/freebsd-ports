@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	3.34
-PORTREVISION=	1
+PORTVERSION=	4.01
 CATEGORIES=	www
 DISTNAME=	MT-${PORTVERSION}-en
 
@@ -22,7 +21,9 @@ RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 RUN_DEPENDS+=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
 	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
-	${SITE_PERL}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA
+	${SITE_PERL}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA \
+	${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
+	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
 .endif
 
 DATADIR=	www/data
@@ -35,12 +36,10 @@ USE_MYSQL=		yes
 DB_DIR?=		${PREFIX}/pgsql/data/blog
 # Or somewhere defined in $PGDATA
 USE_PGSQL=		yes
-.elif defined(WITH_SQLITE)
+.else
 DB_DIR?=	${PREFIX}/${CGIDIR}/db
 RUN_DEPENDS+=\
 	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
-.else
-DB_DIR?=	${PREFIX}/${CGIDIR}/db
 WITH_DEFAULTDB=	yes
 .endif
 
@@ -70,7 +69,7 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 pre-everything::
 	@${ECHO_CMD} "ATTENTION:"
 	@${ECHO_CMD} "If you are upgrading from an older version of MT"
-	@${ECHO_CMD} "please read http://www.sixapart.com/movabletype/docs/${PORTVERSION}/"
+	@${ECHO_CMD} "please read http://www.movabletype.org/documentation/upgrade/"
 	@${ECHO_CMD} "BEFORE installing this port"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Available switches:"
@@ -85,15 +84,11 @@ pre-everything::
 .endif
 .if !defined(WITH_MYSQL)
 	@${ECHO_CMD} "WITH_MYSQL"
-	@${ECHO_CMD} "		- Use MySQL instead of Berkeley DB as database backend"
+	@${ECHO_CMD} "		- Use MySQL as database backend"
 .endif
 .if !defined(WITH_MYSQL)
 	@${ECHO_CMD} "WITH_POSTGRES"
-	@${ECHO_CMD} "		- Use PostgreSQL instead of Berkeley DB as database backend"
-.endif
-.if !defined(WITH_SQLITE)
-	@${ECHO_CMD} "WITH_SQLITE"
-	@${ECHO_CMD} "		- Use SQLite instead of Berkeley DB as database backend"
+	@${ECHO_CMD} "		- Use PostgreSQL as database backend"
 .endif
 
 do-install:
@@ -115,6 +110,6 @@ do-install:
 
 post-install:
 	@${ECHO_CMD} ""
-	@${ECHO_MSG} "Please read the documentation http://www.sixapart.com/movabletype/docs/3.3/"
+	@${ECHO_MSG} "Please read the documentation http://www.movabletype.org/documentation/"
 
 .include <bsd.port.post.mk>
