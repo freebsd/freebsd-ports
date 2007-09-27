@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portless
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.7
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# none

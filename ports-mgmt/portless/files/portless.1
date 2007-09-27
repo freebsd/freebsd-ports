@@ -1,4 +1,4 @@
-.\" Copyright (c) 2006 Martin Kammerhofer
+.\" Copyright (c) 2006, 2007 Martin Kammerhofer <mkamm@gmx.net>
 .\" All rights reserved.
 .\"
 .\" Redistribution and use in source and binary forms, with or without
@@ -22,11 +22,11 @@
 .\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 .\" SUCH DAMAGE.
 .\"
-.\" @(#)portless.1,v 1.10 2006/08/30 09:36:44 martin Exp
+.\" @(#)portless.1,v 1.14 2007/09/21 09:23:00 martin Exp
 .\"
 .\" Note: The date here should be updated whenever a non-trivial
 .\" change is made to the manual page.
-.Dd August 30, 2006
+.Dd September 21, 2007
 .Dt PORTLESS 1
 .Os
 .Sh NAME
@@ -35,10 +35,12 @@
 .Sh SYNOPSIS
 .Nm
 .Op Fl dfIiMmp
+.Op Fl gG Ar 'pattern'
 .Op Fl P Ar pager
 .Ar portglob...
 .Nm
-.Op Fl W | w
+.Op Fl IWw
+.Op Fl gG Ar 'pattern'
 .Ar portglob...
 .Sh DESCRIPTION
 .Nm
@@ -55,6 +57,17 @@ file of the port. This is the default.
 Take the
 .Ar portglob
 argument literal (not as a shell glob).
+.It Fl gG Ar 'pattern'
+Filter the list of selected files with
+.Xr grep 1
+\&. Option
+.Fl G
+differs from
+.Fl g
+only by using
+.Pa fgrep
+rather than
+.Pa grep .
 .It Fl I
 Ignore case when matching
 .Ar portglob
@@ -65,7 +78,9 @@ contains at least one unquoted globbing meta-character (
 .Sq Li \&? ,
 or
 .Sq Li [
-).
+). Used together with
+.Fl g
+it also greps case insensitively.
 .It Fl i
 Display the
 .Pa distinfo
@@ -131,10 +146,12 @@ command:
 .Dl "portless lang/\e*doc"
 .Dl "portless 'www/*python*'"
 .Sh SEE ALSO
+The
 .Xr ports_glob 1
-from the
+command (part of the
 .Pa ports-mgmt/portupgrade
-port
+port),
+.Xr grep 1 .
 .Sh AUTHOR
 The
 .Nm
