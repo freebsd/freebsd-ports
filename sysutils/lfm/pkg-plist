@@ -6,6 +6,12 @@ bin/pyview
 %%PYTHON_SITELIBDIR%%/lfm/actions.py
 %%PYTHON_SITELIBDIR%%/lfm/actions.pyc
 %%PYTHON_SITELIBDIR%%/lfm/actions.pyo
+%%PYTHON_SITELIBDIR%%/lfm/compress.py
+%%PYTHON_SITELIBDIR%%/lfm/compress.pyc
+%%PYTHON_SITELIBDIR%%/lfm/compress.pyo
+%%PYTHON_SITELIBDIR%%/lfm/config.py
+%%PYTHON_SITELIBDIR%%/lfm/config.pyc
+%%PYTHON_SITELIBDIR%%/lfm/config.pyo
 %%PYTHON_SITELIBDIR%%/lfm/files.py
 %%PYTHON_SITELIBDIR%%/lfm/files.pyc
 %%PYTHON_SITELIBDIR%%/lfm/files.pyo
@@ -15,9 +21,6 @@ bin/pyview
 %%PYTHON_SITELIBDIR%%/lfm/messages.py
 %%PYTHON_SITELIBDIR%%/lfm/messages.pyc
 %%PYTHON_SITELIBDIR%%/lfm/messages.pyo
-%%PYTHON_SITELIBDIR%%/lfm/preferences.py
-%%PYTHON_SITELIBDIR%%/lfm/preferences.pyc
-%%PYTHON_SITELIBDIR%%/lfm/preferences.pyo
 %%PYTHON_SITELIBDIR%%/lfm/pyview.py
 %%PYTHON_SITELIBDIR%%/lfm/pyview.pyc
 %%PYTHON_SITELIBDIR%%/lfm/pyview.pyo
@@ -27,6 +30,7 @@ bin/pyview
 %%PYTHON_SITELIBDIR%%/lfm/vfs.py
 %%PYTHON_SITELIBDIR%%/lfm/vfs.pyc
 %%PYTHON_SITELIBDIR%%/lfm/vfs.pyo
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README

@@ -7,24 +7,29 @@
 #
 
 PORTNAME=	lfm
-PORTVERSION=	0.91
+PORTVERSION=	2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.terra.es/personal7/inigoserna/lfm/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pesho.petrov@gmail.com
 COMMENT=	Last File Manager, a simple 'commander'-type file manager
 
 USE_PYTHON=	2.0+
 USE_PYDISTUTILS=	yes
+MAN1=		lfm.1 pyview.1
 
 post-patch:
+	@${REINPLACE_CMD} -e '/MAN_FILES/d' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e '/DOC_FILES/d' ${WRKSRC}/setup.py
 
 post-install:
+.for f in lfm pyview
+	@${INSTALL_MAN} ${WRKSRC}/${f}.1 ${MAN1PREFIX}/man/man1/
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ChangeLog NEWS README README.pyview TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in COPYING ChangeLog NEWS README README.pyview TODO
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
