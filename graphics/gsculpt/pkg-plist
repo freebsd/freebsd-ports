@@ -1,377 +1,10 @@
 bin/gsculpt
-%%PYTHON_SITELIBDIR%%/gSculpt/Cache/GSCache.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Cache/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/CommandHistory/CommandHistory.py
-%%PYTHON_SITELIBDIR%%/gSculpt/CommandHistory/CommandTracker.py
-%%PYTHON_SITELIBDIR%%/gSculpt/CommandHistory/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Config/GSConfig.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Config/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Editor/EditorSettings.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Editor/SnapSettings.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Editor/SnapSettingsPopup.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Editor/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Event/QueuedEvent.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Event/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/FileIO/IOXml.py
-%%PYTHON_SITELIBDIR%%/gSculpt/FileIO/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/GSGraph/GSGraph.py
-%%PYTHON_SITELIBDIR%%/gSculpt/GSGraph/GSGraphCommandTracker.py
-%%PYTHON_SITELIBDIR%%/gSculpt/GSGraph/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/GraphView/GraphView.py
-%%PYTHON_SITELIBDIR%%/gSculpt/GraphView/GraphViewHelper.so
-%%PYTHON_SITELIBDIR%%/gSculpt/GraphView/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Graphics/BackfaceCullField.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Graphics/GLUploadImage.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Graphics/Graphics.so
-%%PYTHON_SITELIBDIR%%/gSculpt/Graphics/Region3dField.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Graphics/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/I18n/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/I18n/i18n.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ImportExportFilter/ObjExport.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ImportExportFilter/ObjImport.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ImportExportFilter/ToolImportedModel.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ImportExportFilter/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/CachedObjectSource.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/ColumnEditors.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/DB.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/DBCommandTracker.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/DBEdit.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/DBEditorTool.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/Enum.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/KMeta.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/ObjectSource.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/ObjectSourceProxy.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/RTType.so
-%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/Variable.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/LogGrid/LogGrid.so
-%%PYTHON_SITELIBDIR%%/gSculpt/LogGrid/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/CreateMenu.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/GeneralActions.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/MainApp.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/NewNodeMenu.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/Shortcuts/Shortcut.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/Shortcuts/ShortcutEditor.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/Shortcuts/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/ColumnManipulators.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/Handle.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/Handle3d.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/HandleScreen.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/Manipulator.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/ManipulatorSnapping.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/ManipulatorSwitch.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/Point3Manipulator.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/RealManipulator.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/RotationHandle.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/RotationManipulator.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/ScaleHandle3d.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/ScaleManipulator3d.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/ScreenSpaceHandle.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/ScrollManipulator.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/TranslationHandle3d.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/TranslationManipulator3d.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MarkTools/CircularMarkRegionManipulator.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MarkTools/MarkRegionManipulator.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MarkTools/RectangularMarkRegionManipulator.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MarkTools/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Math/Math.so
-%%PYTHON_SITELIBDIR%%/gSculpt/Math/MathField.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Math/MathVariable.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Math/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/GSSceneNodeMeshViewSettings.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/Mesh.so
-%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshLiveSubdWireframeModeColumnEditor.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshLiveSubdWireframeModeVar.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshLiveSubdWireframeModeVarEditor.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshManipulatorHelper.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshPickHelper.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshPreserveNormalSharpnessColumnEditor.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshPreserveNormalSharpnessVar.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshPreserveNormalSharpnessVarEditor.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkCircular.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkPick.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkPickEdgeBoundaries.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkPickEdgeLoops.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkPickEdgeRings.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkPickEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkPickFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkPickVertices.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkRectangular.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkRegion.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshPickEdgeLoopPath.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshPickEdgeRingPath.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Body/ToolMeshFlip.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Body/ToolMeshKnife.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Body/ToolMeshMirror.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Body/ToolMeshSubdivide.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Body/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshBevelEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshBridge.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshCollapseEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshConnectEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshDissolveEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshExpandEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshExtrudeEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshFillEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshFlattenEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshGrowEdgeSelection.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshMarkEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshMoveEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshMoveEdgesNormal.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshNConnectEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshNSplitEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshRewireEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshRiftEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshRotateEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshScaleEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshSelectEdgeBoundary.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshSelectEdgeLoop.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshSelectEdgeRing.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshShrinkEdgeSelection.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshSlideEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshSpinEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshSplitEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshWeldEdges.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshBevelFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshCollapseFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshDeleteFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshDissolveFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshDuplicateFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshExpandFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshExtrudeFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshFlattenFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshFreeExtrudeFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshGrowFaceSelection.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshInsetFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshMarkFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshMoveFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshMoveFacesNormal.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshRotateFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshScaleFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshShrinkFaceSelection.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshTunnel.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshWeldFaces.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/MeshCutTarget.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/MeshInsetFacesStyle.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/MeshWeldStyle.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshBandsaw.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshCut.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshDrawFace.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshDrawQuads.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshEditMove.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshEditRotate.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshEditScale.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshNBandsaw.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshNCut.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshSurfaceTweakComponents.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshTweakComponents.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshBevelVertices.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshConnectVertices.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshDissolveVertices.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshExpandVertices.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshFlattenVertices.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshGrowVertexSelection.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshMarkVertices.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshMoveVertices.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshMoveVerticesNormal.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshRotateVertices.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshScaleVertices.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshShrinkVertexSelection.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshTargetWeldVertices.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshTemplateTweakVertices.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshWeldVertices.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditBodyToolGroup.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditBodyToolset.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditComponent.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditEdgeToolGroup.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditEdgeToolset.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditFaceToolGroup.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditFaceToolset.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditToolkit.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditVertexToolGroup.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditVertexToolset.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshToolbox.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshToolsetWithPicking.py
-%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Model/MarkPredicateColumnEditor.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Model/MarkPredicateVar.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Model/MarkPredicateVarEditor.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Model/Model.so
-%%PYTHON_SITELIBDIR%%/gSculpt/Model/ModelDraw.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Model/Pick.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Model/Pick3d.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Model/TargetList.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Model/TargetListColumnEditor.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Model/TargetListVarEditor.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Model/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ModelTools/ModelVirtualMirrorToolGroup.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ModelTools/ToolVirtualMirror.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ModelTools/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Painter/Painter.so
-%%PYTHON_SITELIBDIR%%/gSculpt/Painter/RequestPainter.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Painter/RequestViewportPainter.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Painter/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/PolyBlend/PolyBlend.so
-%%PYTHON_SITELIBDIR%%/gSculpt/PolyBlend/PolyBlendComponent.py
-%%PYTHON_SITELIBDIR%%/gSculpt/PolyBlend/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/MeshPrimitiveToolGroup.py
-%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/MeshPrimitiveToolset.py
-%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/PrimitiveToolbox.py
-%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/PrimitiveToolkit.py
-%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/ToolBoxPrimitive.py
-%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/ToolConePrimitive.py
-%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/ToolCylinderPrimitive.py
-%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/ToolPlanePrimitive.py
-%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/ToolSpherePrimitive.py
-%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/ToolTorusPrimitive.py
-%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/ToolTubePrimitive.py
-%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSFunction.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSFunctionCommandTracker.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSFunctionGraph.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSFunctionGraphCommandTracker.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSPlan.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSPlanCommandTracker.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSProcedure.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSProcedureCommandTracker.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSScene.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSSceneCommandTracker.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSSceneNode.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSSceneNodeCommandTracker.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSSceneNodeViewSettings.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/Product.so
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/GSFunctionAdjustableInvoker.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/GSFunctionTool.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/GSProcedureAdjustableInvoker.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/GSProcedureTool.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/GSSceneNodeTool.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/GSSceneNodeToolbox.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/ProcToolGroup.py
-%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Project/GSProject.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Project/GSProjectCommandTracker.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Project/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/SceneEdit/NodeEditor.py
-%%PYTHON_SITELIBDIR%%/gSculpt/SceneEdit/NodePlanAdapter.py
-%%PYTHON_SITELIBDIR%%/gSculpt/SceneEdit/NodePlanViewList.py
-%%PYTHON_SITELIBDIR%%/gSculpt/SceneEdit/SceneEditorTools.py
-%%PYTHON_SITELIBDIR%%/gSculpt/SceneEdit/SelectNodeTool.py
-%%PYTHON_SITELIBDIR%%/gSculpt/SceneEdit/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/SceneNodes/SceneModelNode.py
-%%PYTHON_SITELIBDIR%%/gSculpt/SceneNodes/SceneProcedureNode.py
-%%PYTHON_SITELIBDIR%%/gSculpt/SceneNodes/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Texture/Texture.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Texture/TextureChooser.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Texture/TextureRef.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Texture/TextureRefColumnEditor.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Texture/TextureRefVar.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Texture/TextureTable.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Texture/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Tool/Tool.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Tool/ToolGroup.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Tool/ToolPanel.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Tool/Toolbox.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Tool/Toolkit.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Tool/Toolset.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Tool/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Transformation/Transformation.so
-%%PYTHON_SITELIBDIR%%/gSculpt/Transformation/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolRotatedTransformation.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformation.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationBase.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationBend.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationDent.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationLinearTwist.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationMove.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationRadialTwist.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationRotate.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationScale.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationShear.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationShrink.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationTaper.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/TransformationToolActions.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/TransformationToolGroup.py
-%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/Accelerator.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/AcceleratorGroup.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/AcceleratorManager.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/ButtonPopupMenu.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/ComboBox.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/ConfirmDialog.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/ConfirmOverwriteFileDialog.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/FormLayout.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/GSContextMenu.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/GSImage.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/GtkAccelEntry.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/LayoutFactory.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/MessageDialog.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/NameDialog.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/OptionList.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/PopupWindow.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/RadioGroup.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/ToggleButton.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/ToggleGroup.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/UIAction.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/UIController.py
-%%PYTHON_SITELIBDIR%%/gSculpt/UI/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Util/CoEventHandler.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Util/LinkedList.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Util/PriorityList.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Util/SignalSlot.py
-%%PYTHON_SITELIBDIR%%/gSculpt/Util/Util.so
-%%PYTHON_SITELIBDIR%%/gSculpt/Util/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/VarEdit/VarEdit.py
-%%PYTHON_SITELIBDIR%%/gSculpt/VarEdit/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/View/BackgroundImage.py
-%%PYTHON_SITELIBDIR%%/gSculpt/View/BackgroundImageCommandTracker.py
-%%PYTHON_SITELIBDIR%%/gSculpt/View/BackgroundImageTool.py
-%%PYTHON_SITELIBDIR%%/gSculpt/View/DrawingPlane.py
-%%PYTHON_SITELIBDIR%%/gSculpt/View/DrawingTemplate.py
-%%PYTHON_SITELIBDIR%%/gSculpt/View/FocusTool.py
-%%PYTHON_SITELIBDIR%%/gSculpt/View/ModelLayer.py
-%%PYTHON_SITELIBDIR%%/gSculpt/View/ModelLayerBackgroundPainter.py
-%%PYTHON_SITELIBDIR%%/gSculpt/View/ModelLayerCommandTracker.py
-%%PYTHON_SITELIBDIR%%/gSculpt/View/ModelLayerEditor.py
-%%PYTHON_SITELIBDIR%%/gSculpt/View/View.so
-%%PYTHON_SITELIBDIR%%/gSculpt/View/ViewDrawingSettings.py
-%%PYTHON_SITELIBDIR%%/gSculpt/View/ViewDrawingSettingsEditor.py
-%%PYTHON_SITELIBDIR%%/gSculpt/View/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/DrawingArea.py
-%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/GLResourceGuard.py
-%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/ModellerView.py
-%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/PointerStatus.py
-%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/ViewLayout.py
-%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/ViewLayoutNotebook.py
-%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/ViewLayoutQuad.py
-%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/ViewLayoutSingle.py
-%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/Viewport.py
-%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/Viewport3d.py
-%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/bugworkarounds/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/bugworkarounds/bugworkarounds.so
-%%PYTHON_SITELIBDIR%%/gSculpt/extlibs/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/extlibs/greenlet/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/extlibs/greenlet/greenlet.so
-%%PYTHON_SITELIBDIR%%/gSculpt/extlibs/pyconsole/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/extlibs/pyconsole/pyconsole.py
-%%PYTHON_SITELIBDIR%%/gSculpt/gSculptConfig/__init__.py
-%%PYTHON_SITELIBDIR%%/gSculpt/gSculptConfig/gSculptConfig.py
-%%PYTHON_SITELIBDIR%%/gSculpt/gSculptConfig/gSculptUserConfig.py
-%%PYTHON_SITELIBDIR%%/gSculpt/gsculpt.py
+lib/gSculpt/libBrush.so
 lib/gSculpt/libCompGeometry.so
 lib/gSculpt/libFileIO.so
 lib/gSculpt/libGraphViewHelper.so
 lib/gSculpt/libGraphics.so
+lib/gSculpt/libGroup.so
 lib/gSculpt/libLogGrid.so
 lib/gSculpt/libMath.so
 lib/gSculpt/libMesh.so
@@ -385,97 +18,556 @@ lib/gSculpt/libTransformation.so
 lib/gSculpt/libUVMap.so
 lib/gSculpt/libUtil.so
 lib/gSculpt/libView.so
-share/gSculpt/gsimages/background_images.png
-share/gSculpt/gsimages/draw_backg_transparent.png
-share/gSculpt/gsimages/draw_backgroundimages.png
-share/gSculpt/gsimages/draw_markedfaces.png
-share/gSculpt/gsimages/draw_smooth.png
-share/gSculpt/gsimages/draw_solid.png
-share/gSculpt/gsimages/draw_textured.png
-share/gSculpt/gsimages/draw_vertices.png
-share/gSculpt/gsimages/draw_wireframe.png
-share/gSculpt/gsimages/drawing_plane.png
-share/gSculpt/gsimages/drawing_template.png
-share/gSculpt/gsimages/focus_tool.png
-share/gSculpt/gsimages/gSculpt_Glass_Master_by_Gary_Rose.png
-share/gSculpt/gsimages/gSculpt_splash_screen_by_Gary_Rose.png
-share/gSculpt/gsimages/gSculpt_splash_screen_mouse_over_by_Gary_Rose.png
-share/gSculpt/gsimages/graphview_1to1.png
-share/gSculpt/gsimages/graphview_origin.png
-share/gSculpt/gsimages/graphview_zoom.png
-share/gSculpt/gsimages/graphview_zoomextentsall.png
-share/gSculpt/gsimages/graphview_zoomextentsselected.png
-share/gSculpt/gsimages/grid_toggle.png
-share/gSculpt/gsimages/grida.png
-share/gSculpt/gsimages/gridx.png
-share/gSculpt/gsimages/gridy.png
-share/gSculpt/gsimages/gridz.png
-share/gSculpt/gsimages/layers.png
-share/gSculpt/gsimages/mesh_primitives.png
-share/gSculpt/gsimages/meshedit_body.png
-share/gSculpt/gsimages/meshedit_edges.png
-share/gSculpt/gsimages/meshedit_faces.png
-share/gSculpt/gsimages/meshedit_mesh.png
-share/gSculpt/gsimages/meshedit_vertices.png
-share/gSculpt/gsimages/node_view_settings.png
-share/gSculpt/gsimages/red_x.png
-share/gSculpt/gsimages/rendering_small.png
-share/gSculpt/gsimages/snap_settings.png
-share/gSculpt/gsimages/vp_notebook.png
-share/gSculpt/gsimages/vp_notebook_newvp.png
-share/gSculpt/gsimages/vp_quad.png
-share/gSculpt/gsimages/vp_single.png
-@dirrm share/gSculpt/gsimages
-@dirrm share/gSculpt
+%%PYTHON_SITELIBDIR%%/gsculpt.py
+%%PYTHON_SITELIBDIR%%/Britefury/Brush/Brush.so
+%%PYTHON_SITELIBDIR%%/Britefury/Brush/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Cache/GSCache.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Cache/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Cell/Cell.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Cell/CellEvaluator.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Cell/CellEvaluatorFunction.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Cell/CellEvaluatorPythonExpression.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Cell/CellEvaluatorWithExternalDependencies.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Cell/CellInterface.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Cell/LiteralCell.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Cell/ProxyCell.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Cell/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/AxisCellEditRadioGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/BasicWidgetSingleCellEdit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/BasicWidgetSingleCellEditWithFn.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/BasicWidgetSingleCellView.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/BoolCellEditCheck.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/BoolCellEditCheckWithFn.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/CellEdit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/CellEditFunctionButton.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/CellEditLabelWithFn.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/ChoiceCellEditComboBox.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/ChoiceCellEditRadioGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/ChoiceCellEditToggleGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/Colour3fCellEditColourButton.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/FloatCellEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/FloatCellEditSlider.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/IntCellEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/IntCellEditSlider.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/NumericCellEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/NumericCellEditSlider.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/Point2CellEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/Point3CellEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/QuaternionCellEditDirectionPopup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/QuaternionCellEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/StringCellEditAccelEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/StringCellEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/StringCellViewLabel.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/Vector2CellEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/Vector3CellEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/VectorCellEditHelpers.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/WidgetCellEdit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/WidgetSingleCellEdit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CellEdit/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CommandHistory/CommandHistory.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CommandHistory/CommandTracker.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/CommandHistory/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Config/GSConfig.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Config/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Editor/EditorSettings.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Editor/SnapSettings.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Editor/SnapSettingsPopup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Editor/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Event/QueuedEvent.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Event/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/FileIO/IOXml.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/FileIO/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/GraphView/GraphViewHelper.so
+%%PYTHON_SITELIBDIR%%/Britefury/GraphView/SheetGraphView.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/GraphView/SheetGraphViewDisplayTable.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/GraphView/SheetGraphViewDisplayTableCommandTracker.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/GraphView/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Graphics/BackfaceCullCell.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Graphics/GLUploadImage.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Graphics/Graphics.so
+%%PYTHON_SITELIBDIR%%/Britefury/Graphics/Region3dCell.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Graphics/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Group/Group.so
+%%PYTHON_SITELIBDIR%%/Britefury/Group/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/GroupTools/CreateGroupTool.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/GroupTools/GroupToolGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/GroupTools/GroupToolbox.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/GroupTools/GroupToolkit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/GroupTools/GroupToolset.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/GroupTools/ToolGroupMergeContents.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/GroupTools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/I18n/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/I18n/i18n.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter/ObjExport.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter/ObjImport.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter/ToolImportedModel.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter/VrmlExport.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Kernel/Enum.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Kernel/KMeta.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Kernel/Mutability.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Kernel/RTType.so
+%%PYTHON_SITELIBDIR%%/Britefury/Kernel/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/LogGrid/LogGrid.so
+%%PYTHON_SITELIBDIR%%/Britefury/LogGrid/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MainApp/CreateMenu.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MainApp/GeneralActions.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MainApp/MainApp.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MainApp/NewNodeMenu.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MainApp/Plugins/PluginInfo.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MainApp/Plugins/PluginManager.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MainApp/Plugins/PluginPath.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MainApp/Plugins/PluginTable.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MainApp/Plugins/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MainApp/Shortcuts/Shortcut.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MainApp/Shortcuts/ShortcutEditor.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MainApp/Shortcuts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MainApp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/FieldManipulators.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/Handle.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/Handle3d.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/HandleScreen.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/Manipulator.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/ManipulatorSnapping.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/ManipulatorSwitch.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/Point3Manipulator.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/RealManipulator.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/RotationHandle.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/RotationManipulator.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/ScaleHandle3d.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/ScaleManipulator3d.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/ScreenSpaceHandle.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/ScrollManipulator.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/TranslationHandle3d.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/TranslationManipulator3d.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Manipulator/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MarkTools/CircularMarkRegionManipulator.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MarkTools/MarkRegionManipulator.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MarkTools/RectangularMarkRegionManipulator.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MarkTools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Math/Math.so
+%%PYTHON_SITELIBDIR%%/Britefury/Math/MathCellTypes.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Math/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Mesh/GSSceneNodeMeshViewSettings.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Mesh/Mesh.so
+%%PYTHON_SITELIBDIR%%/Britefury/Mesh/MeshLiveSubdWireframeModeCell.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Mesh/MeshLiveSubdWireframeModeCellEdit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Mesh/MeshLiveSubdWireframeModeFieldEdit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Mesh/MeshManipulatorHelper.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Mesh/MeshPickHelper.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Mesh/MeshPreserveNormalSharpnessCell.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Mesh/MeshPreserveNormalSharpnessCellEdit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Mesh/MeshPreserveNormalSharpnessFieldEdit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Mesh/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/Mark/ToolMeshMarkCircular.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/Mark/ToolMeshMarkPick.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/Mark/ToolMeshMarkPickEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/Mark/ToolMeshMarkPickFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/Mark/ToolMeshMarkPickVertices.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/Mark/ToolMeshMarkRectangular.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/Mark/ToolMeshMarkRegion.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/Mark/ToolMeshPickEdgeLoopPath.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/Mark/ToolMeshPickEdgeRingPath.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/Mark/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Body/MeshAttachTool.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Body/ToolMeshFlip.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Body/ToolMeshKnife.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Body/ToolMeshMirror.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Body/ToolMeshSubdivide.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Body/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshBevelEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshBridge.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshCollapseEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshConnectEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshDissolveEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshExpandEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshExtrudeEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshFillEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshFlattenEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshGrowEdgeSelection.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshMarkEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshMoveEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshMoveEdgesNormal.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshNConnectEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshNSplitEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshRewireEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshRiftEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshRotateEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshScaleEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshSelectEdgeBoundary.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshSelectEdgeLoop.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshSelectEdgeRing.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshShrinkEdgeSelection.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshSlideEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshSpinEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshSplitEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/ToolMeshWeldEdges.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/MeshDetachFacesOperation.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshBevelFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshCollapseFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshDeleteFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshDissolveFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshDuplicateFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshExpandFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshExtrudeFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshFlattenFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshFreeExtrudeFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshGrowFaceSelection.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshInsetFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshMarkFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshMoveFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshMoveFacesNormal.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshRotateFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshScaleFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshShrinkFaceSelection.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshTunnel.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/ToolMeshWeldFaces.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/MeshCutTarget.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/MeshInsetFacesStyle.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/MeshWeldStyle.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/ToolMeshBandsaw.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/ToolMeshCrease.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/ToolMeshCut.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/ToolMeshDrawFace.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/ToolMeshDrawQuads.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/ToolMeshEditMove.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/ToolMeshEditRotate.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/ToolMeshEditScale.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/ToolMeshNBandsaw.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/ToolMeshNCut.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/ToolMeshNormalSharpness.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/ToolMeshProportionalTweak.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/ToolMeshSurfaceTweakComponents.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/ToolMeshTweakComponents.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshBevelVertices.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshConnectVertices.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshDissolveVertices.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshExpandVertices.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshFlattenVertices.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshGrowVertexSelection.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshMarkVertices.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshMoveVertices.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshMoveVerticesNormal.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshRotateVertices.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshScaleVertices.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshShrinkVertexSelection.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshTargetWeldVertices.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshTemplateTweakVertices.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/ToolMeshWeldVertices.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEditBodyToolGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEditBodyToolset.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEditComponent.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEditEdgeToolGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEditEdgeToolset.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEditFaceToolGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEditFaceToolset.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEditToolkit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEditVertexToolGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEditVertexToolset.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshToolbox.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshToolsetWithPicking.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/MeshTools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Model/MarkPredicateCell.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Model/MarkPredicateCellEditor.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Model/MarkPredicateFieldEditor.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Model/Model.so
+%%PYTHON_SITELIBDIR%%/Britefury/Model/ModelDraw.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Model/Pick.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Model/Pick3d.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Model/TargetList.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Model/TargetListCellEdit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Model/TargetListFieldEdit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Model/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ModelTools/ModelVirtualMirrorToolGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ModelTools/ToolVirtualMirror.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ModelTools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Painter/Painter.so
+%%PYTHON_SITELIBDIR%%/Britefury/Painter/RequestPainter.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Painter/RequestViewportPainter.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Painter/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PolyBlend/PolyBlend.so
+%%PYTHON_SITELIBDIR%%/Britefury/PolyBlend/PolyBlendComponent.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PolyBlend/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PrimitiveTools/MeshPrimitiveToolGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PrimitiveTools/MeshPrimitiveToolset.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PrimitiveTools/PrimitiveToolbox.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PrimitiveTools/PrimitiveToolkit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PrimitiveTools/ToolBoxPrimitive.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PrimitiveTools/ToolConePrimitive.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PrimitiveTools/ToolCylinderPrimitive.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PrimitiveTools/ToolPlanePrimitive.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PrimitiveTools/ToolSpherePrimitive.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PrimitiveTools/ToolTorusPrimitive.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PrimitiveTools/ToolTubePrimitive.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PrimitiveTools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralCore/GSFunction.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralCore/GSPlan.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralCore/GSPlanCommandTracker.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralCore/GSProcedure.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralCore/GSProcedureCommandTracker.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralCore/GSScene.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralCore/GSSceneCommandTracker.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralCore/GSSceneNode.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralCore/GSSceneNodeCommandTracker.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralCore/GSSceneNodeViewSettings.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralCore/Product.so
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralCore/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralTool/GSFunctionAdjustableInvoker.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralTool/GSFunctionTool.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralTool/GSProcedureAdjustableInvoker.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralTool/GSProcedureTool.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralTool/GSSceneNodeTool.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralTool/GSSceneNodeToolbox.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralTool/ProcToolGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ProceduralTool/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Project/GSProject.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Project/GSProjectCommandTracker.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Project/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SceneEdit/NodeEditor.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SceneEdit/NodePlanAdapter.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SceneEdit/NodePlanViewList.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SceneEdit/SceneEditorTools.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SceneEdit/SelectNodeTool.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SceneEdit/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SceneNodes/SceneGroupNode.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SceneNodes/SceneModelNode.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SceneNodes/SceneProcedureNode.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SceneNodes/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Sheet/Sheet.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Sheet/SheetCommandTracker.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Sheet/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/AxisFieldEditRadioGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/BoolFieldEditCheck.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/BoolFieldEditCheckWithFn.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/Colour3fFieldEditColourButton.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/FieldEditors.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/FieldLabelWithFn.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/FloatFieldEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/FloatFieldEditSlider.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/IntFieldEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/IntFieldEditSlider.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/Point2FieldEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/Point3FieldEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/QuaternionFieldEditDirectionPopup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/QuaternionFieldEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/SheetEdit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/SheetEditorButton.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/SheetEditorTool.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/StringFieldEditAccelEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/StringFieldEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/StringFieldViewLabel.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/Vector2FieldEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/Vector3FieldEditEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetEdit/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetGraph/SheetGraph.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetGraph/SheetGraphCommandTracker.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/SheetGraph/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Texture/Texture.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Texture/TextureChooser.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Texture/TextureRef.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Texture/TextureRefCell.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Texture/TextureRefFieldEditor.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Texture/TextureTable.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Texture/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Tool/Tool.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Tool/ToolGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Tool/ToolPanel.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Tool/Toolbox.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Tool/Toolkit.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Tool/Toolset.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Tool/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Transformation/Transformation.so
+%%PYTHON_SITELIBDIR%%/Britefury/Transformation/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/ToolRotatedTransformation.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/ToolTransformation.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/ToolTransformationBase.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/ToolTransformationBend.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/ToolTransformationDent.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/ToolTransformationLinearTwist.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/ToolTransformationMove.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/ToolTransformationRadialTwist.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/ToolTransformationRotate.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/ToolTransformationScale.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/ToolTransformationShear.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/ToolTransformationShrink.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/ToolTransformationTaper.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/TransformationToolActions.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/TransformationToolGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/TransformationTools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/Accelerator.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/AcceleratorGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/AcceleratorManager.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/ButtonPopupMenu.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/ComboBox.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/ConfirmDialog.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/ConfirmOverwriteFileDialog.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/FormLayout.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/GSContextMenu.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/GSImage.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/GtkAccelEntry.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/LayoutFactory.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/MessageDialog.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/NameDialog.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/OptionList.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/PopupWindow.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/RadioGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/TestWindow.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/ToggleButton.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/ToggleGroup.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/UIAction.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/UIController.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Util/CoEventHandler.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Util/LinkedList.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Util/PriorityList.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Util/SignalSlot.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Util/Util.so
+%%PYTHON_SITELIBDIR%%/Britefury/Util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/BackgroundImage.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/BackgroundImageCommandTracker.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/BackgroundImageTool.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/DrawingPlane.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/DrawingTemplate.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/FocusTool.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/ModelLayer.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/ModelLayerBackgroundPainter.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/ModelLayerCommandTracker.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/ModelLayerEditor.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/View.so
+%%PYTHON_SITELIBDIR%%/Britefury/View/ViewDrawingSettings.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/ViewDrawingSettingsEditor.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/WorkArea/DrawingArea.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/WorkArea/GLResourceGuard.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/WorkArea/ModellerView.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/WorkArea/PointerStatus.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/WorkArea/ViewLayout.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/WorkArea/ViewLayoutNotebook.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/WorkArea/ViewLayoutQuad.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/WorkArea/ViewLayoutSingle.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/WorkArea/Viewport.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/WorkArea/Viewport3d.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/WorkArea/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/bugworkarounds/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/bugworkarounds/bugworkarounds.so
+%%PYTHON_SITELIBDIR%%/Britefury/extlibs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/extlibs/greenlet/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/extlibs/greenlet/greenlet.so
+%%PYTHON_SITELIBDIR%%/Britefury/extlibs/pyconsole/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/extlibs/pyconsole/pyconsole.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/gSculptConfig/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/gSculptConfig/gSculptConfig.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/gSculptConfig/gSculptUserConfig.pyc
+%%DATADIR%%/gsimages/gSculpt_splash_screen_mouse_over_by_Gary_Rose.png
+%%DATADIR%%/gsimages/gridx.png
+%%DATADIR%%/gsimages/graphview_zoomextentsselected.png
+%%DATADIR%%/gsimages/graphview_zoom.png
+%%DATADIR%%/gsimages/rendering_small.png
+%%DATADIR%%/gsimages/vp_notebook_newvp.png
+%%DATADIR%%/gsimages/draw_vertices.png
+%%DATADIR%%/gsimages/snap_settings.png
+%%DATADIR%%/gsimages/vp_notebook.png
+%%DATADIR%%/gsimages/drawing_template.png
+%%DATADIR%%/gsimages/graphview_1to1.png
+%%DATADIR%%/gsimages/draw_textured.png
+%%DATADIR%%/gsimages/background_images.png
+%%DATADIR%%/gsimages/gSculpt_Glass_Master_by_Gary_Rose.png
+%%DATADIR%%/gsimages/drawing_plane.png
+%%DATADIR%%/gsimages/meshedit_faces.png
+%%DATADIR%%/gsimages/meshedit_body.png
+%%DATADIR%%/gsimages/draw_markedfaces.png
+%%DATADIR%%/gsimages/falloff_cubicscurve.png
+%%DATADIR%%/gsimages/draw_smooth.png
+%%DATADIR%%/gsimages/vp_quad.png
+%%DATADIR%%/gsimages/vp_single.png
+%%DATADIR%%/gsimages/falloff_linear.png
+%%DATADIR%%/gsimages/falloff_gaussian.png
+%%DATADIR%%/gsimages/meshedit_vertices.png
+%%DATADIR%%/gsimages/focus_tool.png
+%%DATADIR%%/gsimages/meshedit_mesh.png
+%%DATADIR%%/gsimages/falloff_spherical.png
+%%DATADIR%%/gsimages/function_button.png
+%%DATADIR%%/gsimages/grida.png
+%%DATADIR%%/gsimages/meshedit_edges.png
+%%DATADIR%%/gsimages/graphview_origin.png
+%%DATADIR%%/gsimages/grid_toggle.png
+%%DATADIR%%/gsimages/falloff_flat.png
+%%DATADIR%%/gsimages/gridz.png
+%%DATADIR%%/gsimages/node_view_settings.png
+%%DATADIR%%/gsimages/mesh_primitives.png
+%%DATADIR%%/gsimages/draw_wireframe.png
+%%DATADIR%%/gsimages/graphview_zoomextentsall.png
+%%DATADIR%%/gsimages/draw_backgroundimages.png
+%%DATADIR%%/gsimages/draw_solid.png
+%%DATADIR%%/gsimages/group.png
+%%DATADIR%%/gsimages/gridy.png
+%%DATADIR%%/gsimages/draw_backg_transparent.png
+%%DATADIR%%/gsimages/gSculpt_splash_screen_by_Gary_Rose.png
+%%DATADIR%%/gsimages/red_x.png
+%%DATADIR%%/gsimages/layers.png
 @dirrm lib/gSculpt
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Cache
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/CommandHistory
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Config
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Editor
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Event
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/FileIO
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/GSGraph
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/GraphView
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Graphics
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/I18n
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/ImportExportFilter
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Kernel
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/LogGrid
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MainApp/Shortcuts
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MainApp
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Manipulator
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MarkTools
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Math
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Mesh
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Body
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Model
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/ModelTools
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Painter
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/PolyBlend
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Project
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/SceneEdit
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/SceneNodes
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Texture
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Tool
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Transformation
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/UI
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Util
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/VarEdit
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/View
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/WorkArea
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/bugworkarounds
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/extlibs/greenlet
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/extlibs/pyconsole
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/extlibs
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/gSculptConfig
-@dirrm %%PYTHON_SITELIBDIR%%/gSculpt
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/gSculptConfig
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/extlibs/pyconsole
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/extlibs/greenlet
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/extlibs
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/bugworkarounds
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/WorkArea
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/View
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Util
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/UI
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/TransformationTools
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Transformation
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Tool
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Texture
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/SheetGraph
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/SheetEdit
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Sheet
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/SceneNodes
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/SceneEdit
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Project
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/ProceduralTool
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/ProceduralCore
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/PrimitiveTools
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/PolyBlend
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Painter
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/ModelTools
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Model
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Vertex
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Face
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Edge
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit/Body
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/MeshTools/MeshEdit
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/MeshTools/Mark
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/MeshTools
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Mesh
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Math
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/MarkTools
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Manipulator
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/MainApp/Shortcuts
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/MainApp/Plugins
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/MainApp
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/LogGrid
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Kernel
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/I18n
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/GroupTools
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Group
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Graphics
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/GraphView
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/FileIO
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Event
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Editor
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Config
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/CommandHistory
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/CellEdit
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Cell
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Cache
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Brush
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury
+@dirrm %%DATADIR%%/gsimages
+@dirrm %%DATADIR%%
