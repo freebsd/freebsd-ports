@@ -7384,6 +7384,7 @@ megapov		ports/graphics/megapov
 megarc		ports/sysutils/megarc
 meld		ports/textproc/meld
 memcached	ports/databases/memcached
+memcachedb	ports/databases/memcachedb
 memcheck	ports/devel/memcheck
 memdump		ports/sysutils/memdump
 memfetch	ports/sysutils/memfetch
