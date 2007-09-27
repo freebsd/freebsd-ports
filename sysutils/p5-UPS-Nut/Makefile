@@ -19,6 +19,9 @@ PERL_CONFIGURE=	yes
 
 MAN3=		UPS::Nut.3
 
+DEPRECATED=		Version branch long since retired
+EXPIRATION_DATE=	2007-10-27
+
 pre-configure:
 	${PERL} -pi -e 'm.INSTALLDIRS.&&s,.,,sg' ${WRKSRC}/Makefile.PL
 
