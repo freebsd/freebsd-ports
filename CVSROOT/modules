@@ -16253,6 +16253,7 @@ vtcl		ports/devel/vtcl
 vte		ports/x11-toolkits/vte
 vte-reference	ports/x11-toolkits/vte-reference
 vtiger		ports/www/vtiger
+vtiger-customerportal	ports/www/vtiger-customerportal
 vtiger4		ports/www/vtiger4
 vtk		ports/math/vtk
 vtk-data	ports/math/vtk-data
