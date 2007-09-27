@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metacafe_dl
-PORTVERSION=	2007.03.27
+PORTVERSION=	2007.09.13
 CATEGORIES=	www
 MASTER_SITES=	http://www.arrakis.es/~rggi3/metacafe-dl/
 DISTNAME=	metacafe-dl-${PORTVERSION}
@@ -32,6 +32,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' ${WRKSRC}/metacafe-dl
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/metacafe-dl ${PREFIX}/bin/metacafe-dl
+	@${INSTALL_SCRIPT} ${WRKSRC}/metacafe-dl ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
