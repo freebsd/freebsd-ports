@@ -5,15 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	urwid
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.8.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://excess.org/urwid/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Curses-based user interface library for Python
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.4
 USE_PYDISTUTILS=	yes
 
 post-patch:
