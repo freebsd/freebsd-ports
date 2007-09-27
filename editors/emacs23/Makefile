@@ -7,6 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
+PORTREVISION=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -84,5 +85,8 @@ pre-everything::
 	@${ECHO_MSG} "====> To disable X11 Input Method support, define WITHOUT_XIM"
 	@${ECHO_MSG} "====>"
 .endif
+
+post-patch:
+	@${RM} -f ${WRKSRC}/info/*
 
 .include <bsd.port.post.mk>
