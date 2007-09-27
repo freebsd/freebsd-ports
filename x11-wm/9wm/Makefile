@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.isc.org/sources/X/window-managers/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An 8 1/2-like Window Manager for X
 
+DEPRECATED=		Project is dead, last release from 2002
+EXPIRATION_DATE=	2007-10-28
+
 USE_IMAKE=	yes
 MAN1=		9wm.1
 PLIST_FILES=	bin/9wm
