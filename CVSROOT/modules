@@ -12415,6 +12415,7 @@ plman		ports/math/plman
 pload		ports/net/pload
 plod		ports/sysutils/plod
 plone		ports/www/plone
+plone3		ports/www/plone3
 plonx		ports/games/plonx
 plopfolio	ports/deskutils/plopfolio
 plor		ports/news/plor
