@@ -1,0 +1,11 @@
+--- examples/init-script.in.orig	Thu Aug  2 13:18:10 2007
++++ examples/init-script.in	Thu Sep 27 07:26:17 2007
+@@ -243,7 +243,7 @@
+ 	`[ "$MX_RECIPIENT_CHECK" = "yes" ] && echo "-t"` \
+ 	`[ "$KEEP_FAILED_DIRECTORIES" = "yes" ] && echo "-k"` \
+ 	`[ "$MD_EXTRA" != "" ] && echo $MD_EXTRA` \
+-	`[ "$MD_SKIP_BAD_RCPTS" = "yes" ] && echo "-N" \
++	`[ "$MD_SKIP_BAD_RCPTS" = "yes" ] && echo "-N"` \
+ 	`[ "$ALLOW_NEW_CONNECTIONS_TO_QUEUE" = "yes" ] && echo "-q"` \
+ 	-p $SOCKET
+     RETVAL=$?
