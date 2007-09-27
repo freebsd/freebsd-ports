@@ -12374,6 +12374,7 @@ pkg_rmleaves	ports/ports-mgmt/pkg_rmleaves
 pkg_trackinst	ports/ports-mgmt/pkg_trackinst
 pkg_tree	ports/ports-mgmt/pkg_tree
 pkgfe		ports/ports-mgmt/pkgfe
+pkgsearch	ports/ports-mgmt/pkgsearch
 pkpgcounter	ports/print/pkpgcounter
 pks		ports/security/pks
 pktstat		ports/net-mgmt/pktstat
