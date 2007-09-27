@@ -20,8 +20,6 @@ EXTRACT_ONLY=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}
 MAINTAINER=	llwang@infor.org
 COMMENT=	The New Numeric Extension to Python
 
-CONFLICTS=	f2py-*
-
 OPTIONS=	ATLAS "Use optimized blas library" Off
 
 USE_FORTRAN=	yes
