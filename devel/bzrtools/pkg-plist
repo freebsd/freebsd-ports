@@ -4,9 +4,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/baz_import.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/baz_import.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/baz_import.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/branch_mark.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/branch_mark.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/branch_mark.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/branches.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/branches.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/branches.pyo
@@ -97,6 +94,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_baz_import.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_baz_import.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_baz_import.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_switch.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_switch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_switch.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/upstream_import.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/upstream_import.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/upstream_import.pyo
