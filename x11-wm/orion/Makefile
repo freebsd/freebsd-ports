@@ -20,6 +20,9 @@ RUN_DEPENDS=	${LOCALBASE}/lib/scsh/0.6/module-system:${PORTSDIR}/devel/sunterlib
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
+DEPRECATED=		Version branch long since retired
+EXPIRATION_DATE=	2007-10-28
+
 do-install:
 	(cd ${WRKSRC}; ./install.scm --prefix=${PREFIX})
 

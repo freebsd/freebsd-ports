@@ -21,6 +21,9 @@ PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
 DOCS=		AUTHORS COPYING ChangeLog
 
+DEPRECATED=	project no longer exists
+EXPIRATION_DATE=	2007-10-27
+
 pre-install:
 	${ECHO_CMD} bin/yawm > ${PLIST}
 .if !defined(NOPORTDOCS)
