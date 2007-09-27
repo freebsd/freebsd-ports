@@ -16,6 +16,9 @@ DISTNAME=	Xclasses-public-${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ layout library for X
 
+DEPRECATED=		Version branch long since retired
+EXPIRATION_DATE=	2007-10-28
+
 USE_LDCONFIG=	yes
 NOT_FOR_ARCHS=	alpha amd64 ia64 sparc64
 PLIST=		${WRKDIR}/pkg-plist
