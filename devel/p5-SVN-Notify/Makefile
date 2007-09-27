@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SVN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.ort
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Subversion activity notification
 
 RUN_DEPENDS=	${SITE_PERL}/Net/SMTP_auth.pm:${PORTSDIR}/mail/p5-Net-SMTP_auth \
