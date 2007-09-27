@@ -20,6 +20,9 @@ NO_BUILD=	yes
 USE_XLIB=	yes
 USE_LDCONFIG=	${PREFIX}/lib/scsh/0.6/scx-0.2/lib/${MACHINE_ARCH}-portbld-freebsd${OSREL}/
 
+DEPRECATED=		Version branch long since retired
+EXPIRATION_DATE=	2007-10-28
+
 PLIST_SUB=	TARGET=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
