@@ -7,6 +7,7 @@
 
 PORTNAME=	libconfig
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hyperrealm.com/libconfig/
 
