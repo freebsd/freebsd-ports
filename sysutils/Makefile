@@ -530,6 +530,7 @@
     SUBDIR += pstack
     SUBDIR += pstree
     SUBDIR += puppet
+    SUBDIR += puppet-devel
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
     SUBDIR += pwg
