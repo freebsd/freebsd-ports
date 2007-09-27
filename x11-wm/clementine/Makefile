@@ -25,6 +25,9 @@ USE_X_PREFIX=	yes
 DOCS=		COPYING HISTORY LICENSE
 REINPLACE_ARGS=	-i'' -E
 
+DEPRECATED=		Project is dead, last release from 2002
+EXPIRATION_DATE=	2007-10-28
+
 post-patch:
 	${REINPLACE_CMD} 's:^CFLAGS:IGNORE:g ; s:^DEFINES:IGNORE:g ;\
 		s:/usr/X11R6:${X11BASE}:g' \
