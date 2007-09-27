@@ -21,6 +21,9 @@ USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 MAKEFILE=	makefile
 
+DEPRECATED=		Project is dead, last release from 1998
+EXPIRATION_DATE=	2007-10-28
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libxg.a ${PREFIX}/lib
 	@${MKDIR} ${PREFIX}/include/xg
