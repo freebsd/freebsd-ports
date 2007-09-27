@@ -17,6 +17,7 @@ COMMENT=	A configuration management framework written in Ruby
 BUILD_DEPENDS=	${RUBY_SITELIBDIR}/facter.rb:${PORTSDIR}/sysutils/facter
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CONFLICTS=	puppet-devel-[0-9]*
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RC_SUBR=	puppetmasterd puppetd
