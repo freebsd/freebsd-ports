@@ -981,6 +981,7 @@
     SUBDIR += pivot-weblog
     SUBDIR += planet
     SUBDIR += plone
+    SUBDIR += plone3
     SUBDIR += plugger
     SUBDIR += plugger-plugins-hubbe
     SUBDIR += pmwiki

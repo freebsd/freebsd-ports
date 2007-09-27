@@ -5,21 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	plone
-PORTVERSION=	2.5.3
+PORTNAME=	plone3
+PORTVERSION=	3.0.1
 CATEGORIES=	www zope
 MASTER_SITES=	http://plone.googlecode.com/files/:src
-DISTFILES=	Plone-${PORTVERSION}-final.tar.gz:src
-DIST_SUBDIR=	zope
+DISTFILES=	Plone-${PORTVERSION}.tar.gz:src
+#DIST_SUBDIR=	zope
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nakaji@jp.FreeBSD.org
 COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 
-WRKSRC=	${WRKDIR}/Plone-${PORTVERSION}-final
+WRKSRC=	${WRKDIR}/Plone-${PORTVERSION}
 USE_ZOPE=	yes
-ZOPE_VERSION=	2.9
+ZOPE_VERSION=	2.10
 USE_PYTHON=	2.4
 CONFLICTS=	zope-archetypes-[0-9]* \
 		zope-btreefolder2-[0-9]* \
@@ -36,19 +36,23 @@ CONFLICTS=	zope-archetypes-[0-9]* \
 		zope-portaltransforms-[0-9]* \
 		zope-validation-[0-9]*
 
-PLIST_SUB=	ZOPEPRODUCTDIR=${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}
+PLIST_SUB=	ZOPEPRODUCTDIR=${SZOPEBASEDIR}/${ZOPEPRODUCTDIR} \
+		ZOPELIBPYTHONDIR=${SZOPEBASEDIR}/lib/python
 
-_MODULES=	ATContentTypes ATReferenceBrowserWidget Archetypes \
-		CMFActionIcons CMFCalendar CMFCore CMFDefault \
-		CMFDynamicViewFTI CMFFormController CMFPlacefulWorkflow \
-		CMFPlone CMFQuickInstallerTool CMFSetup CMFTopic CMFUid \
-		CacheFu DCWorkflow ExtendedPathIndex ExternalEditor \
-		GenericSetup GroupUserFolder Marshall MimetypesRegistry \
-		PasswordResetTool PlacelessTranslationService \
-		PloneErrorReporting PloneLanguageTool PlonePAS \
+_MODULES=	ATContentTypes ATReferenceBrowserWidget AdvancedQuery \
+		Archetypes CMFActionIcons CMFCalendar CMFCore CMFDefault \
+		CMFDiffTool CMFDynamicViewFTI CMFEditions CMFFormController \
+		CMFPlacefulWorkflow CMFPlone CMFQuickInstallerTool \
+		CMFTestCase CMFTopic CMFUid DCWorkflow ExtendedPathIndex \
+		ExternalEditor GenericSetup GroupUserFolder Marshall \
+		MimetypesRegistry NuPlone PasswordResetTool \
+		PlacelessTranslationService PloneLanguageTool PlonePAS \
 		PloneTestCase PloneTranslations PluggableAuthService \
 		PluginRegistry PortalTransforms ResourceRegistries \
-		SecureMailHost kupu statusmessages validation
+		SecureMailHost ZopeVersionControl \
+		kupu statusmessages validation
+
+_PY_MODULES=	archetypes five kss plone wicked
 
 pre-everything::
 .if !defined(BATCH)
@@ -61,14 +65,23 @@ pre-everything::
 
 do-build:
 .for m in ${_MODULES}
-	-${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/$m
+	-${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/Products/$m
+.endfor
+.for m in ${_PY_MODULES}
+	-${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/lib/python/$m
 .endfor
 
 do-install:
-	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}
+	@${MKDIR} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}
 .for m in ${_MODULES}
-	@${CP} -R ${WRKSRC}/$m ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}
-	@${FIND} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/$m -type f -print0 \
+	@${CP} -R ${WRKSRC}/Products/$m ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}
+	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/$m -type f -print0 \
+		| ${XARGS} -0 -- ${CHMOD} a-w
+.endfor
+	@${MKDIR} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python
+.for m in ${_PY_MODULES}
+	@${CP} -R ${WRKSRC}/lib/python/$m ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python
+	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python/$m -type f -print0 \
 		| ${XARGS} -0 -- ${CHMOD} a-w
 .endfor
 
