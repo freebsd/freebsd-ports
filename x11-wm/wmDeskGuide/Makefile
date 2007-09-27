@@ -20,6 +20,9 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gdkpixbuf
 USE_GMAKE=	yes
 
+DEPRECATED=		Version branch long since retired
+EXPIRATION_DATE=	2007-10-28
+
 PORTDOCS=	README
 PLIST_FILES=	bin/wmDeskGuide
 
