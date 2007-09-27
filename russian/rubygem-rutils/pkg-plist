@@ -26,8 +26,10 @@ bin/rutilize
 %%GEM_LIB_DIR%%/lib/transliteration/simple.rb
 %%GEM_LIB_DIR%%/lib/transliteration/transliteration.rb
 %%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/Rakefile.rb
 %%GEM_LIB_DIR%%/TODO
 %%GEM_LIB_DIR%%/CHANGELOG
+%%GEM_LIB_DIR%%/init.rb
 %%GEM_DOC_DIR%%/rdoc/created.rid
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
 %%GEM_DOC_DIR%%/rdoc/files/lib/transliteration/bidi_rb.src/M000001.html
