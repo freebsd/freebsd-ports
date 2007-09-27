@@ -15,6 +15,7 @@ COMMENT=	Very conservative branch of the Quake source code
 
 USE_GL=		yes
 USE_GMAKE=	yes
+USE_XORG=	xxf86dga
 MAKE_ENV=	QBASEDIR="${Q1DIR}"
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
