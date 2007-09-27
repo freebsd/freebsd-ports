@@ -17,6 +17,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Macintosh like window manager for X11
 
+DEPRECATED=		Project is dead
+EXPIRATION_DATE=	2007-10-28
+
 USE_IMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_XPM=	yes
