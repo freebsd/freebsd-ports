@@ -1,9 +1,9 @@
 #! @BASH@ --
-# (X)Emacs: -*- mode: Shell-Script; coding: iso8859-1; -*-
-# @(#)portless.sh,v 1.12 2006/08/30 09:21:22 martin Exp
+# (X)Emacs: -*- mode: Shell-Script; coding: latin-1; -*-
+# @(#)portless.sh,v 1.17 2007/09/21 09:23:01 martin Exp
 # Show "pkg-descr" file of matching port(s).
 #
-# Copyright (c) 2006 Martin Kammerhofer <mkamm@gmx.net>
+# Copyright (c) 2006, 2007 Martin Kammerhofer <mkamm@gmx.net>
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -29,12 +29,13 @@
 Script=`basename $0` # name of this script
 
 # set defaults
-for opt in d f I i M m P p W w; do
+for opt in d f g G I i M m P p W w; do
     eval opt_$opt=""
 done
 PORTSDIR=${PORTSDIR:-/usr/ports}
 PAGER=${PAGER:-less -e}
 PKGDESCR="pkg-descr"
+GREP_PATTERN=""
 filelist=""
 rc=0
 
@@ -45,7 +46,7 @@ usage()
 	echo >&2 "$Script: $1"
 	shift
     done
-    echo >&2 "usage: $Script [-dfIiMmp | -Ww] [-P pager] 'portglob'..."
+    echo >&2 "usage: $Script [-dfIiMmp | -Ww] [-gG pattern] [-P pager] 'portglob'..."
     exit 64	# EX_USAGE
 }
 
@@ -60,15 +61,17 @@ addopt()
 }
 
 # process options
-while getopts "D:dfIiMmpP:Wwx" option
+while getopts "D:dfG:g:IiMmpP:Wwx" option
   do
   case "$option" in
       (D) PORTSDIR="$OPTARG";;		# undocumented
       (d) addopt d "$PKGDESCR";;
       (f) opt_f="f";;
+      (G) GREP_PATTERN="$OPTARG"; opt_g="G"; opt_G="-F";;
+      (g) GREP_PATTERN="$OPTARG"; opt_g="g"; opt_G="";;
       (I) shopt -s nocaseglob ||
       usage "option -I needs bash!"
-      opt_I="I";;
+      opt_I="-i";;
       (i) addopt i "distinfo";;
       (M) addopt M "Makefile";;
       (m) addopt m "pkg-message";;
@@ -114,6 +117,10 @@ page() {
 	    set -- "$@" "$PORTSDIR"$dirglob$portglob/"$f"
 	fi
     done
+    if [ -n "$opt_g" ]; then
+	set -- $(grep -l $opt_G $opt_I -- "$GREP_PATTERN" "$@")
+	[ $# = 0 ] && return			# grep found no match
+    fi
     if [ -n "$opt_W" -o -n "$opt_w" ]; then
 	lstrip=""
 	[ -n "$opt_W" ] && lstrip=-e\ 's;^.*/\([^/]*/[^/]*\)$;\1;'
@@ -128,6 +135,7 @@ page() {
 
 # main
 for p in "$@"; do
+    p=${p%/}					# strip a trailing slash
     expr "$p" : ".*[$IFS]" >/dev/null &&
 	usage "portglob '$p' contains whitespace!"
     case "$p" in
