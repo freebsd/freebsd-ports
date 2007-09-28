@@ -1,5 +1,3 @@
-lib/rsyslog/ommysql.la
-lib/rsyslog/ommysql.so
 sbin/rfc3195d
 sbin/rklogd
 sbin/rsyslogd
@@ -46,5 +44,4 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/status.html
 %%PORTDOCS%%%%DOCSDIR%%/syslog-protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/version_naming.html
-@dirrm lib/rsyslog
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
