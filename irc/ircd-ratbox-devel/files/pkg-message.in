@@ -8,7 +8,7 @@ documentation. This file is required to start the server.
 Once you have added ircd_ratbox_enable="YES" to /etc/rc.conf, the
 server can be started by running:
 
-	%%PREFIX%%/etc/rc.d/ircd-ratbox.sh start
+	%%PREFIX%%/etc/rc.d/ircd-ratbox start
 
 Be sure to check out 'ratbox-services' if you need a services package.
 ------------------------------------------------------------------------
