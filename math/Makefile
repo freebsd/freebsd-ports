@@ -342,6 +342,7 @@
     SUBDIR += scalapack
     SUBDIR += scigraphica
     SUBDIR += scilab
+    SUBDIR += scilab-toolbox-sivp
     SUBDIR += scilab-toolbox-swt
     SUBDIR += sdpa
     SUBDIR += sdpara
