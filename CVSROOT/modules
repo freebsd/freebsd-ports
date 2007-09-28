@@ -14088,6 +14088,7 @@ ruby-calendar	ports/devel/ruby-calendar
 ruby-cast_256	ports/security/ruby-cast_256
 ruby-cdb	ports/databases/ruby-cdb
 ruby-clibpdf	ports/print/ruby-clibpdf
+ruby-cruisecontrolrb	ports/www/ruby-cruisecontrolrb
 ruby-crypt	ports/security/ruby-crypt
 ruby-csv	ports/textproc/ruby-csv
 ruby-cvs	ports/devel/ruby-cvs
