@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tetgen
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	math
 MASTER_SITES=	http://www.wias-berlin.de/people/si/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -21,11 +21,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 MAKEFILE=	makefile
 ALL_TARGET=	tetgen tetlib
 
-.if defined(MAINTAINER_MODE)
-test:	build
-	(cd ${INSTALL_WRKSRC} && ./tetgen -p example.poly )
-.endif
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/tetgen ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/tetgen.h ${PREFIX}/include
@@ -34,5 +29,8 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example.poly ${EXAMPLESDIR}
 .endif
+
+regression-test:
+	(cd ${INSTALL_WRKSRC} && ./tetgen -p example.poly )
 
 .include <bsd.port.mk>
