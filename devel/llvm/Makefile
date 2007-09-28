@@ -29,6 +29,10 @@ MAN1=		bugpoint.1 llc.1 lli.1 llvm-ar.1 \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		does not build on sparc64
+.endif
+
 .if ${PERL_LEVEL} < 500800
 BROKEN=		does not compile with perl ${PERL_VERSION}
 .endif
