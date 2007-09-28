@@ -5,14 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	ratbox-services
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.2
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/${PORTNAME}/		\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/${PORTNAME}/	\
 		http://services.ircd-ratbox.org/download/			\
-		ftp://ftp.parodius.com/pub/ircd-ratbox/${PORTNAME}/		\
-		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+		ftp://ftp.parodius.com/pub/ircd-ratbox/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
+
+PATCH_SITES=	http://www.elasticmind.net/freebsd/ports/distfiles/	\
+		http://jsreedinc.com/freebsd/ports/patches/		\
+		http://www.atarininja.org/~wxs/distfiles/
+PATCHFILES=	patch-autoconf_configure.in.gz patch-configure.gz patch-include_setup.h.in.gz
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A highly configurable services package for use with ircd-ratbox
@@ -22,19 +26,18 @@ USE_RC_SUBR=	ratbox-services.sh
 LOGDIR?=	/var/log
 RUNDIR?=	/var/run
 DBDIR?=		/var/db/${PORTNAME}
+PERL?=		${LOCALBASE}/bin/perl
 SUB_FILES=	pkg-message pkg-install
-PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR}
-SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR}
+PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR} PERL=${PERL}
+SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR} PERL=${PERL}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/	\
+CONFIGURE_ARGS+=--prefix=${PREFIX}		\
+		--sysconfdir=${PREFIX}/etc/	\
 		--with-logdir=${LOGDIR}		\
 		--with-rundir=${RUNDIR}		\
-		--with-helpdir=${DATADIR}/help	\
-		--with-sqlite=${LOCALBASE}	\
+		--with-helpdir=${DATADIR}/help  \
 		--without-sqlitebuild
-
-USE_SQLITE=	2
 
 PORTDOCS=	operguide.txt
 
@@ -48,7 +51,10 @@ OPTIONS=	NICKSERV	"Enable nickname registration service"		on \
 		JUPESERV	"Enable jupe service"				on \
 		OPERBOT		"Enable operbot service"			on \
 		GLOBALMSG	"Enable global messaging service"		on \
-		BANSERV		"Enable ban service"				on
+		BANSERV		"Enable ban service"				on \
+		WATCHSERV	"Enable command watching service"		on \
+		SQLITE		"Enable sqlite3 support (default)"		on \
+		PGSQL		"Enable pgsql backend support"			off
 
 #----------------------------------------------------------------------
 
@@ -90,6 +96,31 @@ CONFIGURE_ARGS+=	--disable-global
 CONFIGURE_ARGS+=	--disable-banserv
 .endif
 
+.if defined(WITHOUT_WATCHSERV)
+CONFIGURE_ARGS+=        --disable-watchserv
+.endif
+
+.if !defined(WITH_SQLITE) && !defined(WITH_PGSQL)
+IGNORE=			requires either an sqlite or pgsql backend
+.endif
+
+.if defined(WITH_SQLITE)
+USE_SQLITE=		3
+CONFIGURE_ARGS+=        --enable-sqlite3=${LOCALBASE}
+.endif
+
+# This ratbox-services version has known problems when integrating
+# with MySQL and should be avoided until it is fixed in version 1.1.3
+#.if defined(WITH_MYSQL)
+#USE_MYSQL
+#CONFIGURE_ARGS+=        --enable-mysql=${LOCALBASE}
+#.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL
+CONFIGURE_ARGS+=        --enable-pgsql=${LOCALBASE}
+.endif
+
 #-- User Configuration -------------------------------------------------
 
 .if defined(NICKLEN)
@@ -100,6 +131,10 @@ CONFIGURE_ARGS+=	--with-nicklen=${NICKLEN}
 CONFIGURE_ARGS+=	--with-topiclen=${TOPICLEN}
 .endif
 
+.if defined(USERREGLEN)
+CONFIGURE_ARGS+=        --with-userreglen=${USERREGLEN}
+.endif
+
 #-----------------------------------------------------------------------
 
 pre-configure:
@@ -107,6 +142,8 @@ pre-configure:
 	@${ECHO_MSG} "This port has additional options:"
 	@${ECHO_MSG} "    NICKLEN     [default 9, max 50]    - Max nick length on server"
 	@${ECHO_MSG} "    TOPICLEN    [default 160, max 390] - Max topic length"
+	@${ECHO_MSG} "    USERREGLEN  [default 10]           - Max registered username"
+	@${ECHO_MSG} "                                         length on services"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "THESE SHOULD BE CONSISTENT WITH YOUR IRCD-RATBOX SERVER/NETWORK!"
 	@${ECHO_MSG} ""
@@ -117,6 +154,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s#-O[02]##g" ${WRKSRC}/configure
 
 	@${REINPLACE_CMD} -e "s#%%DBDIR%%#${DBDIR}#g" ${WRKSRC}/include/config.h
+	@${REINPLACE_CMD} -e "s#%%PREFIX%%#${PREFIX}#g"		\
+			${WRKSRC}/tools/generate-schema.pl	\
+			${WRKSRC}/tools/dbupgrade.pl
 
 pre-su-install:
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -128,9 +168,18 @@ post-install:
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ratbox-services ${PREFIX}/sbin/
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/ircd-shortcut.pl ${PREFIX}/bin/ircd-shortcut
 	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${PREFIX}/etc/ratbox-services.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/doc/schema.txt ${DATADIR}/schema.sql
+	${MKDIR} ${DATADIR}
+		(cd ${WRKSRC}/tools/ &&	\
+		${COPYTREE_SHARE} \* ${DATADIR} "! -name dbupgrade.pl.bak	\
+						! -name dbupgrade.pl.orig	\
+						! -name generate-schema.pl.bak	\
+						! -name generate-schema.pl.orig")
+	${INSTALL_DATA} ${WRKSRC}/INSTALL.mysql ${DOCSDIR}/INSTALL.mysql
+	${INSTALL_DATA} ${WRKSRC}/INSTALL.pgsql ${DOCSDIR}/INSTALL.pgsql
+	${INSTALL_DATA} ${WRKSRC}/INSTALL.sqlite ${DOCSDIR}/INSTALL.sqlite
+	${INSTALL_DATA} ${WRKSRC}/UPGRADING ${DOCSDIR}/UPGRADING
+	${INSTALL_DATA} ${WRKSRC}/DBMOVE ${DOCSDIR}/DBMOVE
 
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}

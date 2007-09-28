@@ -2,11 +2,51 @@
 ratbox-services has been successfully installed.
 
 You should now copy %%PREFIX%%/etc/ratbox-services.conf.sample to
-%%PREFIX%%/etc/ratbox-services.conf, and edit it as per the ratbox-services
-documentation. This file is required to start the server.
+%%PREFIX%%/etc/ratbox-services.conf, and edit it as per the
+ratbox-services documentation. This file is required to start services.
+
+You may also need to perform the following steps, if you have not
+already done so:
+
+Initialize Database:
+--------------------
+This must be done before the services server can start, even if you are
+converting from hybserv. Instructions for this are contained in:
+
+	%%DOCSDIR%%/INSTALL.<database_backend>
+
+The following directory has been created for the database to be stored
+in. For consistency, please use this location when generating your
+database instead of the directory specified in the help documentation:
+
+	%%DBDIR%%
+
+IRCD Server Config:
+-------------------
+On the ircd ratbox-services will connect to, add a connect{} block.
+This should have services's server name (name in serverinfo{} in
+ratbox-services.conf) and no autoconnect. 'send_password' and
+'accept_password' should be equal and 'flags=encrypted' should
+not be used.
+
+If you use the ratbox-services compatibility code in ircd-ratbox,
+all servers need service { name = "<ratbox-services's server name>"; };
 
 Once you have added ratbox_services_enable="YES" to /etc/rc.conf, the
 server can be started by running:
 
-	%%PREFIX%%/etc/rc.d/ratbox-services.sh start
+        %%PREFIX%%/etc/rc.d/ratbox-services start
+
+Important UPGRADE Note:
+-----------------------
+Upgrading from the 1.0.x series to this current release will likely
+break everything. If upgrading between release versions you should
+read the UPDATING information:
+
+	%%DOCSDIR%%/UPDATING
+
+Common database update tools and scripts referenced in ratbox-services
+documentation can be found in:
+	%%DOCSDIR%%/
+
 ------------------------------------------------------------------------

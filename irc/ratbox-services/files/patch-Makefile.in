@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed May 18 00:33:18 2005
-+++ Makefile.in	Sat Jan 28 22:58:12 2006
+--- ./Makefile.in.orig	Mon Apr 10 19:53:23 2006
++++ ./Makefile.in	Wed Sep  5 04:08:35 2007
 @@ -6,7 +6,7 @@
  LIBS=@LIBS@
  LDFLAGS=@LDFLAGS@
@@ -9,7 +9,7 @@
  
  prefix=@prefix@
  exec_prefix=@prefix@
-@@ -36,17 +36,6 @@
+@@ -37,20 +37,6 @@
  	done
  
  install: build
@@ -17,13 +17,16 @@
 -	$(INSTALL) -m 750 -d $(DESTDIR)$(bindir)
 -	$(INSTALL) -m 750 -d $(DESTDIR)$(sbindir)
 -	$(INSTALL) -m 750 -d $(DESTDIR)$(sysconfdir)
+-	$(INSTALL) -m 750 -d $(DESTDIR)$(includedir)
 -	$(INSTALL) -m 750 -d $(DESTDIR)$(logdir)
 -	$(INSTALL) -m 750 -d $(DESTDIR)$(rundir)
 -	$(INSTALL) -m 750 -d $(DESTDIR)$(helpdir)
+-	$(INSTALL) -m 750 -d $(DESTDIR)$(includedir)
 -	$(INSTALL) -m 750 tools/ircd-shortcut.pl $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 750 tools/dbupgrade.pl $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 640 tools/definetolength.pl $(DESTDIR)$(bindir)
 -	$(INSTALL) -m 750 src/$(BIN) $(DESTDIR)$(sbindir)
 -	$(INSTALL) -m 640 doc/example.conf $(DESTDIR)$(sysconfdir)
--	$(INSTALL) -m 640 doc/schema.txt $(DESTDIR)$(sysconfdir)
- 	@for i in $(SUBDIRS); do \
- 		echo "install -> $$i"; \
- 		cd $$i; \
+ 	$(INSTALL) -m 640 include/setup.h $(DESTDIR)$(includedir)
+ 	$(INSTALL) -m 640 include/rserv.h $(DESTDIR)$(includedir)
+ 	$(INSTALL) -m 640 include/channel.h $(DESTDIR)$(includedir)

@@ -1,7 +1,7 @@
---- help/Makefile.in.orig	Wed Jun 15 15:21:39 2005
-+++ help/Makefile.in	Sat Jan 28 23:15:11 2006
+--- ./help/Makefile.in.orig	Fri Aug 24 12:32:24 2007
++++ ./help/Makefile.in	Fri Aug 24 12:15:25 2007
 @@ -10,10 +10,10 @@
- SUBDIRS=alis main operbot chanserv userserv jupeserv operserv nickserv global banserv
+ SUBDIRS=alis main operbot chanserv userserv jupeserv operserv nickserv global banserv watchserv
  
  install: 
 -	$(INSTALL) -m 750 -d $(DESTDIR)$(helpdir)
