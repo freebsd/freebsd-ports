@@ -7,7 +7,7 @@
 
 PORTNAME=	type1inst
 PORTVERSION=	0.6.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fonts perl5
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=X11/xutils
@@ -27,6 +27,9 @@ PORTDOCS=	README
 PLIST_FILES=	bin/t1embed bin/type1inst
 
 MAN1=	type1inst.1
+
+pre-install:
+	${REINPLACE_CMD} 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/type1inst
 
 do-install:
 	@cd ${WRKSRC} && ${INSTALL_SCRIPT} type1inst t1embed ${PREFIX}/bin
