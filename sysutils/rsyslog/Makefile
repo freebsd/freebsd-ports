@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	1.19.6
+PORTVERSION=	1.19.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.rsyslog.com/rsyslog/ CENKES
 
@@ -15,12 +15,11 @@ COMMENT=	Enhanced syslog daemon
 
 LIB_DEPENDS=	logging.0:${PORTSDIR}/devel/liblogging
 
-USE_MYSQL=	yes
 USE_RC_SUBR=	${PORTNAME}d
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-mysql --disable-klogd --disable-static
+CONFIGURE_ARGS=	--disable-klogd --disable-static
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 SUB_FILES=	pkg-message
 
@@ -30,12 +29,12 @@ PORT_VERBS=	rfc3195d rklogd ${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<wait.h>|<sys/wait.h>|' ${WRKSRC}/srUtils.c
-	@${REINPLACE_CMD} -e 's|sigaction_t|sigaction|' ${WRKSRC}/rfc3195d.c
 	@${REINPLACE_CMD} -e '/^rfc3195d_LDADD =/s|$$| -llogging|;s|-ldl||'\
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/lib/rsyslog/|${PREFIX}/lib/rsyslog/|'\
 		${WRKSRC}/Makefile.in ${WRKSRC}/syslogd.c
+	@${REINPLACE_CMD} -e 's|TTY_NAME_MAX|9|' ${WRKSRC}/syslogd.c
 	@${GREP} -rl '/etc/rsyslog.conf' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} -e\
 		's|/etc/rsyslog.conf|${PREFIX}/etc/rsyslog.conf|'
 	@${ECHO_CMD} '#include <sys/socket.h>' >> ${WRKSRC}/net.h
