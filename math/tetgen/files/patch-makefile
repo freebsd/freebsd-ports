@@ -1,26 +1,29 @@
---- makefile.orig	Fri Jan 13 15:30:08 2006
-+++ makefile	Wed Mar  8 16:20:59 2006
-@@ -6,12 +6,12 @@
+--- makefile.orig	Mon Apr 16 16:45:21 2007
++++ makefile	Wed Jul 18 22:04:08 2007
+@@ -11,7 +11,7 @@
+ # CXX should be set to the name of your favorite C++ compiler.
+ # ===========================================================
  
- # CC should be set to the name of your favorite C++ compiler.
+-CXX = g++
++#CXX = g++
+ #CXX = icpc
+ #CXX = CC
  
--CC = g++
-+CC = $(CXX)
+@@ -19,7 +19,7 @@
+ # -O2, -O3 ... to find the best optimization level.
+ # ===================================================================
  
- # OPT is the level of optimiztion, default is -O. One should try -O2, -O3
- #   ... to find the best optimization level.
+-CXXFLAGS = -g
++#CXXFLAGS = -g
  
--OPT = -g
-+OPT = ${CXXFLAGS}
- 
- # CFLAGS is a list of switches to compile TetGen.
- #
-@@ -23,7 +23,7 @@
+ # PREDCXXFLAGS is for compiling J. Shewchuk's predicates. It should
+ # always be equal to -O0 (no optimization). Otherwise, TetGen may not
+@@ -38,7 +38,7 @@
  #   down the speed of TetGen.  They can be skipped by define the -DNDEBUG
  #   switch.
  
--CFLAGS = -Wall -DSELF_CHECK
-+CFLAGS = -DNDEBUG
+-SWITCHES = -Wall -DSELF_CHECK
++SWITCHES = -DNDEBUG
  
- #CFLAGS = -funroll-all-loops -fomit-frame-pointer\
- #         -Wall -Wabi -Wctor-dtor-privacy \
+ # SWITCHES = -Wall -Wabi -Wctor-dtor-privacy \
+ #            -Woverloaded-virtual -Wno-pmf-conversions -Wsign-promo \
