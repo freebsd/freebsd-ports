@@ -61,7 +61,7 @@ OPTIONS=	X11				"X11 support" on \
 		IMAGEMAGICK_JPEG		"JPG format support" on \
 		IMAGEMAGICK_PNG			"PNG format support" on \
 		IMAGEMAGICK_TIFF		"TIFF format support" on \
-		IMAGEMAGICK_FPX			"FPX format support" on \
+		IMAGEMAGICK_FPX			"FPX format support" off \
 		IMAGEMAGICK_JBIG		"JBIG format support" on \
 		IMAGEMAGICK_JPEG2000		"JPEG2000 format support" on \
 		IMAGEMAGICK_DOT		"GraphViz dot graphs support" off \
@@ -322,6 +322,16 @@ test check:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .if !defined(WITHOUT_IMAGEMAGICK_TESTS)
+.	for m in TTF
+.		if defined(WITHOUT_IMAGEMAGICK_$m)
+IGNORE+=	Absence of $m breaks self-tests. Enable $m or disable automatic tests.
+.		endif
+.	endfor
+.	for m in FPX
+.		if defined(WITH_IMAGEMAGICK_$m)
+IGNORE+=	Presence of $m breaks self-tests. Disable $m or disable automatic tests.
+.		endif
+.	endfor
 post-build:	test
 .endif
 
