@@ -14354,6 +14354,7 @@ rubygem-openid	ports/net/rubygem-openid
 rubygem-parsetree	ports/devel/rubygem-parsetree
 rubygem-pdfwriter	ports/print/rubygem-pdfwriter
 rubygem-postgres	ports/databases/rubygem-postgres
+rubygem-ptreloaded	ports/devel/rubygem-ptreloaded
 rubygem-railroad	ports/graphics/rubygem-railroad
 rubygem-rails	ports/www/rubygem-rails
 rubygem-rails-app-installer	ports/www/rubygem-rails-app-installer
