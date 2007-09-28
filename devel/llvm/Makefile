@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	llvm
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 
@@ -14,7 +14,6 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
 GNU_CONFIGURE=	yes
-USE_BISON=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_GCC=	3.3+
@@ -37,10 +36,11 @@ BROKEN=		does not compile with perl ${PERL_VERSION}
 post-patch:
 	${REINPLACE_CMD} -e 's,\(PROJ_docsdir.*:=\).*$$,\1${DOCSDIR},g' \
 		${WRKSRC}/Makefile.config.in
+	${REINPLACE_CMD} -e 's,\(PROJ_mandir.*:=\).*$$,\1${MANPREFIX}/man,g' \
+		${WRKSRC}/Makefile.config.in
 
 post-install:
-	${RM} -f ${PREFIX}/bin/.dir \
-	    ${PREFIX}/etc/.dir \
+	@${RM} ${PREFIX}/bin/.dir \
 	    ${PREFIX}/etc/llvm/.dir \
 	    ${PREFIX}/lib/.dir
 
