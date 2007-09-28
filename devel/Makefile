@@ -2135,6 +2135,7 @@
     SUBDIR += rubygem-json
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-parsetree
+    SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rapt
     SUBDIR += rubygem-rgl
