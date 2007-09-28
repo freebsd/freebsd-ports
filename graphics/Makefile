@@ -125,6 +125,7 @@
     SUBDIR += exiv2
     SUBDIR += exrtools
     SUBDIR += f-spot
+    SUBDIR += f90gl
     SUBDIR += fbm
     SUBDIR += feh
     SUBDIR += ffff
