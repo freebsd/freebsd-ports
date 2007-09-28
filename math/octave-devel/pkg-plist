@@ -617,6 +617,14 @@ libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/info-emacs-info
 libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/info-emacs-octave-help
 libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/octave-%%OCTAVE_VERSION%%
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/PKG_ADD
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/bsxfun.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/convhulln.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/tsearch.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/typecast.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__delaunayn__.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__dsearchn__.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__lin_interpn__.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__voronoi__.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__contourc__.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__glpk__.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__gnuplot_raw__.oct
@@ -652,7 +660,6 @@ libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/getpwent.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/getrusage.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/givens.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/hess.oct
-libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/interpn.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/inv.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/kron.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/lpsolve.oct
@@ -930,6 +937,7 @@ share/octave/%%OCTAVE_VERSION%%/m/deprecated/poisson_cdf.m
 share/octave/%%OCTAVE_VERSION%%/m/deprecated/poisson_inv.m
 share/octave/%%OCTAVE_VERSION%%/m/deprecated/poisson_pdf.m
 share/octave/%%OCTAVE_VERSION%%/m/deprecated/poisson_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/deprecated/polyinteg.m
 share/octave/%%OCTAVE_VERSION%%/m/deprecated/setstr.m
 share/octave/%%OCTAVE_VERSION%%/m/deprecated/struct_contains.m
 share/octave/%%OCTAVE_VERSION%%/m/deprecated/struct_elements.m
@@ -986,6 +994,14 @@ share/octave/%%OCTAVE_VERSION%%/m/finance/pvl.m
 share/octave/%%OCTAVE_VERSION%%/m/finance/rate.m
 share/octave/%%OCTAVE_VERSION%%/m/finance/vol.m
 share/octave/%%OCTAVE_VERSION%%/m/general/__isequal__.m
+share/octave/%%OCTAVE_VERSION%%/m/general/__splinen__.m
+share/octave/%%OCTAVE_VERSION%%/m/general/accumarray.m
+share/octave/%%OCTAVE_VERSION%%/m/general/celldisp.m
+share/octave/%%OCTAVE_VERSION%%/m/general/del2.m
+share/octave/%%OCTAVE_VERSION%%/m/general/interp3.m
+share/octave/%%OCTAVE_VERSION%%/m/general/interpn.m
+share/octave/%%OCTAVE_VERSION%%/m/general/rat.m
+share/octave/%%OCTAVE_VERSION%%/m/general/structfun.m
 share/octave/%%OCTAVE_VERSION%%/m/general/arrayfun.m
 share/octave/%%OCTAVE_VERSION%%/m/general/bicubic.m
 share/octave/%%OCTAVE_VERSION%%/m/general/bitcmp.m
@@ -1048,8 +1064,40 @@ share/octave/%%OCTAVE_VERSION%%/m/general/sub2ind.m
 share/octave/%%OCTAVE_VERSION%%/m/general/trapz.m
 share/octave/%%OCTAVE_VERSION%%/m/general/tril.m
 share/octave/%%OCTAVE_VERSION%%/m/general/triu.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/convhull.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/delaunay.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/delaunay3.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/delaunayn.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/dsearch.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/dsearchn.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/griddata.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/griddata3.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/griddatan.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/inpolygon.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/trimesh.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/triplot.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/tsearchn.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/voronoi.m
+share/octave/%%OCTAVE_VERSION%%/m/geometry/voronoin.m
+share/octave/%%OCTAVE_VERSION%%/m/image/PKG_ADD
 share/octave/%%OCTAVE_VERSION%%/m/image/__img__.m
 share/octave/%%OCTAVE_VERSION%%/m/image/__img_via_file__.m
+share/octave/%%OCTAVE_VERSION%%/m/image/autumn.m
+share/octave/%%OCTAVE_VERSION%%/m/image/bone.m  
+share/octave/%%OCTAVE_VERSION%%/m/image/brighten.m
+share/octave/%%OCTAVE_VERSION%%/m/image/cool.m  
+share/octave/%%OCTAVE_VERSION%%/m/image/copper.m
+share/octave/%%OCTAVE_VERSION%%/m/image/flag.m
+share/octave/%%OCTAVE_VERSION%%/m/image/hot.m
+share/octave/%%OCTAVE_VERSION%%/m/image/hsv.m
+share/octave/%%OCTAVE_VERSION%%/m/image/jet.m
+share/octave/%%OCTAVE_VERSION%%/m/image/pink.m
+share/octave/%%OCTAVE_VERSION%%/m/image/prism.m
+share/octave/%%OCTAVE_VERSION%%/m/image/rainbow.m
+share/octave/%%OCTAVE_VERSION%%/m/image/spring.m
+share/octave/%%OCTAVE_VERSION%%/m/image/summer.m
+share/octave/%%OCTAVE_VERSION%%/m/image/white.m 
+share/octave/%%OCTAVE_VERSION%%/m/image/winter.m
 share/octave/%%OCTAVE_VERSION%%/m/image/colormap.m
 share/octave/%%OCTAVE_VERSION%%/m/image/gray.m
 share/octave/%%OCTAVE_VERSION%%/m/image/gray2ind.m
@@ -1138,8 +1186,11 @@ share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/unix.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/unpack.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/untar.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/unzip.m
+share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/gzip.m
+share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/run.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/ver.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/version.m
+share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/swapbytes.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/warning_ids.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/xor.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/zip.m
@@ -1153,9 +1204,13 @@ share/octave/%%OCTAVE_VERSION%%/m/path/savepath.m
 share/octave/%%OCTAVE_VERSION%%/m/pkg/PKG_ADD
 share/octave/%%OCTAVE_VERSION%%/m/pkg/pkg.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/PKG_ADD
+share/octave/%%OCTAVE_VERSION%%/m/plot/__patch__.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/ancestor.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/meshc.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/patch.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/peaks.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__axis_label__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__bar__.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/__default_colormap__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__default_plot_options__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__errcomm__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__errplot__.m
@@ -1238,7 +1293,7 @@ share/octave/%%OCTAVE_VERSION%%/m/polynomial/polyder.m
 share/octave/%%OCTAVE_VERSION%%/m/polynomial/polyderiv.m
 share/octave/%%OCTAVE_VERSION%%/m/polynomial/polyfit.m
 share/octave/%%OCTAVE_VERSION%%/m/polynomial/polygcd.m
-share/octave/%%OCTAVE_VERSION%%/m/polynomial/polyinteg.m
+share/octave/%%OCTAVE_VERSION%%/m/polynomial/polyint.m
 share/octave/%%OCTAVE_VERSION%%/m/polynomial/polyout.m
 share/octave/%%OCTAVE_VERSION%%/m/polynomial/polyreduce.m
 share/octave/%%OCTAVE_VERSION%%/m/polynomial/polyval.m
@@ -1369,6 +1424,7 @@ share/octave/%%OCTAVE_VERSION%%/m/statistics/base/mahalanobis.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/base/mean.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/base/meansq.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/base/median.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/mode.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/base/moment.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/base/ols.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/base/ppplot.m
@@ -1578,6 +1634,7 @@ share/octave/site/m/startup/octaverc
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/linear-algebra
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/io
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/image
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/geometry
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/general
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/finance
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/elfun
@@ -1598,7 +1655,6 @@ share/octave/site/m/startup/octaverc
 @dirrm share/octave
 %%PORTDOCS%%%%DOCSDIR%%/Octave-FAQ.ps
 %%PORTDOCS%%%%DOCSDIR%%/liboctave.ps
-%%PORTDOCS%%%%DOCSDIR%%/octave.ps
 %%PORTDOCS%%%%DOCSDIR%%/refcard-a4.ps
 %%PORTDOCS%%%%DOCSDIR%%/refcard-legal.ps
 %%PORTDOCS%%%%DOCSDIR%%/refcard-letter.ps
