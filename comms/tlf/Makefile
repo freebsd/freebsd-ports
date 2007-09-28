@@ -7,7 +7,7 @@
 
 PORTNAME=	tlf
 PORTVERSION=	0.9.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.wwns.com/tlf/ \
 		http://sharon.esrac.ele.tue.nl/pub/linux/ham/tlf/
