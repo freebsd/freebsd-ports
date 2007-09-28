@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wbar
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.3
 #PORTREVISION=	0
 CATEGORIES=	x11
 MASTER_SITES=	http://www.tecapli.com.ar/rodolfo/ \
