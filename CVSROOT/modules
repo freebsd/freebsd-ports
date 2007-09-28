@@ -14492,6 +14492,7 @@ schism		ports/audio/schism
 scid		ports/games/scid
 scigraphica	ports/math/scigraphica
 scilab		ports/math/scilab
+scilab-toolbox-sivp	ports/math/scilab-toolbox-sivp
 scilab-toolbox-swt	ports/math/scilab-toolbox-swt
 scim		ports/textproc/scim
 scim-input-pad	ports/textproc/scim-input-pad
