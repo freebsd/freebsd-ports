@@ -18,7 +18,7 @@ PATCH_SITES=	http://www.elasticmind.net/freebsd/ports/distfiles/	\
 		http://www.atarininja.org/~wxs/distfiles/
 PATCHFILES=	patch-autoconf_configure.in.gz patch-configure.gz patch-include_setup.h.in.gz
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	moggie@elasticmind.net
 COMMENT=	A highly configurable services package for use with ircd-ratbox
 
 USE_RC_SUBR=	ratbox-services.sh
