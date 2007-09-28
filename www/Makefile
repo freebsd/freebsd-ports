@@ -1081,6 +1081,7 @@
     SUBDIR += ruby-amazon
     SUBDIR += ruby-asp
     SUBDIR += ruby-borges
+    SUBDIR += ruby-cruisecontrolrb
     SUBDIR += ruby-div
     SUBDIR += ruby-fcgi
     SUBDIR += ruby-fcgiwrap

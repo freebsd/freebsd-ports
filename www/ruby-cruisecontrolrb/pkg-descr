@@ -1,0 +1,8 @@
+CruiseControl.rb is a continuous integration tool. Its basic purpose in life 
+is to alert members of a software project when one of them checks something 
+into source control that breaks the build.
+
+CC.rb is easy to install, pleasant to use and simple to hack. 
+It's written in Ruby.
+
+WWW: http://cruisecontrolrb.thoughtworks.com
