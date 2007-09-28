@@ -13,12 +13,13 @@ MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/		\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/		\
 		http://www.ircd-ratbox.org/download/			\
 		ftp://ftp.parodius.com/pub/ircd-ratbox/
+PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	An advanced, stable IRC daemon, used on many EFnet servers
 
-CONFLICTS=	ircd-ratbox-devel-[0-9]*
+CONFLICTS=	ircd-ratbox-[0-9]*
 
 MAN8=		ircd.8
 USE_RC_SUBR=	ircd-ratbox.sh
