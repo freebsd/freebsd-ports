@@ -1,0 +1,20 @@
+
+$FreeBSD$
+
+--- bin/fonevek.orig
++++ bin/fonevek
+@@ -19,12 +19,12 @@
+ cd $WRKDIR || exit 1
+ 
+ # mez¿k kigy¿jtése: cowboy[ph:kovboj] -> cowboy	[ph:kovboj]
+-function field () {
++field () {
+   awk '/^[^	]*[[]/{print $1 >>"mezok.txt";}{print$0}' |
+   sed 's/^\([^ 	]*\)[[].*]/\1/'
+ }
+ 
+-function field_kot () {
++field_kot () {
+   awk '/^[^	]*[[]/{
+ 	print $1 >>"mezok.txt"
+ 	i = index($1, "[")
