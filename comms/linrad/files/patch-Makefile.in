@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed May  9 15:23:18 2007
-+++ Makefile.in	Fri Jun 29 17:53:19 2007
+--- Makefile.in.orig	Tue Sep  4 18:14:34 2007
++++ Makefile.in	Thu Sep 27 21:10:12 2007
 @@ -4,7 +4,7 @@
  # Name the output files *.ol instead of *.o 
  # so we definitely know it is for Linux. 
@@ -21,8 +21,8 @@
  CFW	= -g -O -DOSNUM=2 -W -Wimplicit -Wreturn-type -Wformat \
  -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
  -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
-@@ -624,7 +621,7 @@
- meter_graph.ol fonts.ol screensub.ol lxsys.ol 
+@@ -634,7 +631,7 @@
+ meter_graph.ol fonts.ol screensub.ol tx_graph.ol txssb.ol lxsys.ol 
  
  
 -	gcc @MEM@ -olinrad -lvgagl -lvga -lpthread -lm \
@@ -30,7 +30,7 @@
  -Wl,-Map,linrad.lmap,-warn-common \
  	lmain.ol lvar.ol ui.ol lsetad.ol fft1.ol buf.ol \
  mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
-@@ -671,7 +668,7 @@
+@@ -681,7 +678,7 @@
  
  
  

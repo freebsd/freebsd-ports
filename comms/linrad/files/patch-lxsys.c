@@ -1,5 +1,5 @@
---- lxsys.c.orig	Tue Apr 10 14:08:58 2007
-+++ lxsys.c	Sat Apr 21 23:31:47 2007
+--- lxsys.c.orig	Tue Sep  4 18:14:34 2007
++++ lxsys.c	Thu Sep 27 21:08:42 2007
 @@ -1,12 +1,14 @@
 -
 -#include <sys/io.h>
@@ -27,9 +27,9 @@
  
 +extern int saved_euid;
  
- 
- void lirerr(int errcod)
-@@ -152,15 +155,13 @@
+ void lir_mutex_init(void)
+ {
+@@ -173,15 +176,13 @@
  
  int lir_parport_permission(void)
  {
@@ -49,7 +49,7 @@
    }
  if(i != 0)
    {
-@@ -305,11 +306,9 @@
+@@ -330,11 +331,9 @@
  int i;
  if(ui.parport < 0x400-4)
    {
@@ -64,7 +64,7 @@
    }
  if(i!=0)lirerr(764921);
  i=1000;
-@@ -322,11 +321,9 @@
+@@ -347,11 +346,9 @@
  int i;
  if(ui.parport < 0x400-4)
    {

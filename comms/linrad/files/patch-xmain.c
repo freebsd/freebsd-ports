@@ -1,5 +1,5 @@
---- xmain.c.orig	Wed Feb 14 04:37:46 2007
-+++ xmain.c	Thu Feb 22 20:00:30 2007
+--- xmain.c.orig	Tue Sep  4 18:14:34 2007
++++ xmain.c	Thu Sep 27 21:09:15 2007
 @@ -39,6 +39,7 @@
  float total;
  }PIXINFO;
