@@ -1,0 +1,146 @@
+--- fping.c.orig	Mon Jan 21 02:06:30 2002
++++ fping.c	Tue Jul 12 18:11:30 2005
+@@ -42,7 +42,6 @@
+  * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+  * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  */
+-#define IPV6 1						/* This should be a compiler option, or even better be done from the Makefile... ;) */
+ 
+ #ifndef _NO_PROTO
+ #if !__STDC__ && !defined( __cplusplus ) && !defined( FUNCPROTO ) \
+@@ -67,7 +66,7 @@
+ 
+ /*** autoconf includes ***/
+ 
+-
++#include <sys/types.h>
+ #include <stdio.h>
+ #include <errno.h>
+ #include <time.h>
+@@ -88,7 +87,6 @@
+ #include <string.h>
+ #include <stddef.h>
+ 
+-#include <sys/types.h>
+ #include <sys/time.h>
+ #include <sys/socket.h>
+ 
+@@ -112,6 +110,10 @@
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++
+ /* RS6000 has sys/select.h */
+ #ifdef HAVE_SYS_SELECT_H
+ #include <sys/select.h>
+@@ -246,13 +248,13 @@
+      struct timeval       last_send_time;     /* time of last packet sent */
+      int                  num_sent;           /* number of ping packets sent */
+      int                  num_recv;           /* number of pings received */
+-     int                  max_reply;          /* longest response time */
+-     int                  min_reply;          /* shortest response time */
++     long                 max_reply;          /* longest response time */
++     long                 min_reply;          /* shortest response time */
+      int                  total_time;         /* sum of response times */
+      int                  num_sent_i;         /* number of ping packets sent */
+      int                  num_recv_i;         /* number of pings received */
+-     int                  max_reply_i;        /* longest response time */
+-     int                  min_reply_i;        /* shortest response time */
++     long                 max_reply_i;        /* longest response time */
++     long                 min_reply_i;        /* shortest response time */
+      int                  total_time_i;       /* sum of response times */
+      int                  *resp_times;        /* individual response times */
+ #if defined( DEBUG ) || defined( _DEBUG )
+@@ -482,7 +484,7 @@
+ 
+ 	}/* IF */
+ 
+-	prog = argv[0];
++	prog = (prog = strrchr(argv[0], '/')) ? prog + 1 : argv[0];
+ 	ident = getpid() & 0xFFFF;
+ 
+ 	verbose_flag = 1;
+@@ -502,8 +504,8 @@
+ 			break;
+ 		
+ 		case 'r':
+-			if( !( retry = ( u_int )atoi( optarg ) ) )
+-				usage();
++			retry = ( u_int )atoi( optarg );
++
+ 
+ 			break;
+ 		
+@@ -823,6 +825,7 @@
+ 
+ 		while( fgets( line, 132, ping_file ) )
+ 		{
++			line[132-1] = '\0';
+ 			if( sscanf( line, "%s", host ) != 1 )
+ 				continue;
+ 			
+@@ -1503,7 +1506,6 @@
+ 	memset( buffer, 0, ping_pkt_size * sizeof( char ) );
+ 	icp = ( FPING_ICMPHDR* )buffer;
+ 
+-	gettimeofday( &h->last_send_time, &tz );
+ #ifndef IPV6
+ 	icp->icmp_type = ICMP_ECHO;
+ 	icp->icmp_code = 0;
+@@ -1512,6 +1514,8 @@
+ 	icp->icmp_id = ident;
+ 
+ 	pdp = ( PING_DATA* )( buffer + SIZE_ICMP_HDR );
++	/* set the time at the very last possible point */
++	gettimeofday(&h->last_send_time,&tz);
+ 	pdp->ping_ts = h->last_send_time;
+ 	pdp->ping_count = h->num_sent;
+ 
+@@ -1523,6 +1527,8 @@
+ 	icp->icmp6_id = ident;
+ 
+ 	pdp = ( PING_DATA* )( buffer + SIZE_ICMP_HDR );
++	/* set the time at the very last possible point */
++	gettimeofday(&h->last_send_time,&tz);
+ 	pdp->ping_ts = h->last_send_time;
+ 	pdp->ping_count = h->num_sent;
+ 
+@@ -1611,6 +1617,9 @@
+ 
+ 	result = recvfrom_wto( s, buffer, sizeof(buffer), &response_addr, select_time );
+ 
++	/* get time of receipt as close to the real time as possible */
++	gettimeofday(&current_time,&tz);
++
+ 	if( result < 0 )
+ 		return 0;	/* timeout */
+   
+@@ -1625,7 +1634,7 @@
+ 
+ 	ip = ( struct ip* )buffer;
+ #ifndef IPV6
+-#if defined( __alpha__ ) && __STDC__ && !defined( __GLIBC__ )
++#if defined( __alpha__ ) && defined(__osf1__) && __STDC__ && !defined( __GLIBC__ )
+ 	/* The alpha headers are decidedly broken.
+ 	 * Using an ANSI compiler, it provides ip_vhl instead of ip_hl and
+ 	 * ip_v.  So, to get ip_hl, we mask off the bottom four bits.
+@@ -1633,7 +1642,7 @@
+ 	hlen = ( ip->ip_vhl & 0x0F ) << 2;
+ #else
+ 	hlen = ip->ip_hl << 2;
+-#endif /* defined(__alpha__) && __STDC__ */
++#endif /* defined(__alpha__) && defined(__osf1__) && __STDC__ */
+ 	if( result < hlen + ICMP_MINLEN )
+ #else
+ 	if( result < sizeof(FPING_ICMPHDR) )
+@@ -1690,7 +1699,6 @@
+ 	h = table[n];
+ 
+ 	/* received ping is cool, so process it */
+-	gettimeofday( &current_time, &tz );
+ 	h->waiting = 0;
+ 	h->timeout = timeout;
+ 	h->num_recv++;
