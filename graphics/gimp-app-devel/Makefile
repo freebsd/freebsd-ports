@@ -8,7 +8,7 @@
 
 PORTNAME=	gimp-app
 DISTVERSION=	2.4.0-rc3
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -33,9 +33,7 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		lcms.1:${PORTSDIR}/graphics/lcms \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
+		lcms.1:${PORTSDIR}/graphics/lcms
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -62,6 +60,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 .if !defined(GIMP_SLAVE)
 OPTIONS?=	DEBUG "debugging" off \
+		DBUS "D-BUS support" on \
+		GNOMEVFS "Use GNOME VFS for the URI plug-in" on \
 		HELPBROWSER "internal help browser" on \
 		MP "multiple processor support" off \
 		RSVG "SVG format support" on
@@ -121,6 +121,18 @@ PLIST_SUB+=		HELPBROWSER=""
 .else
 CONFIGURE_ARGS+=	--without-gtkhtml2
 PLIST_SUB+=		HELPBROWSER="@comment "
+.endif
+
+.if defined(WITH_DBUS)
+LIB_DEPENDS+=		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+CONFIGURE_ARGS+=	--with-dbus
+.else
+CONFIGURE_ARGS+=	--without-dbus
+.endif
+
+.if defined(WITH_GNOMEVFS) || ${HAVE_GNOME:Mgnomevfs2}!=""
+LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
+USE_GNOME+=	gnomevfs2
 .endif
 
 .endif
