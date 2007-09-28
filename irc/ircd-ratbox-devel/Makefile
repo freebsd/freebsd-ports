@@ -17,7 +17,7 @@ PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	moggie@elasticmind.net
-COMMENT=	An advanced, stable IRC daemon, used on many EFnet servers
+COMMENT=	An advanced, stable IRC daemon, used on many EFnet servers ('testing' release)
 
 CONFLICTS=	ircd-ratbox-[0-9]*
 
