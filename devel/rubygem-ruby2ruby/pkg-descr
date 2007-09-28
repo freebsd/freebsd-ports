@@ -1,0 +1,7 @@
+ruby2ruby provides a means of generating pure ruby code
+easily from ParseTree's Sexps.
+This makes making dynamic language processors
+much easier in ruby than ever before.
+
+WWW: http://rubyforge.org/projects/seattlerb/
+WWW: http://seattlerb.rubyforge.org/ruby2ruby/
