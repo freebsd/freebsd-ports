@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/		\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/		\
 		http://www.ircd-ratbox.org/download/			\
 		ftp://ftp.parodius.com/pub/ircd-ratbox/
-PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	moggie@elasticmind.net
