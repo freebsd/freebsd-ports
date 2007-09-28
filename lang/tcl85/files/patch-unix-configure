@@ -1,6 +1,6 @@
---- configure.orig	Wed Jan 17 13:10:49 2007
-+++ configure	Wed Jan 17 13:00:27 2007
-@@ -6467,7 +6467,7 @@
+--- configure.orig	2007-09-24 17:46:44.000000000 +0200
++++ configure	2007-09-27 20:24:15.000000000 +0200
+@@ -6615,7 +6615,7 @@
      LDFLAGS_ARCH=""
      TCL_EXPORT_FILE_SUFFIX=""
      UNSHARED_LIB_SUFFIX=""
@@ -9,24 +9,16 @@
      ECHO_VERSION='`echo ${VERSION}`'
      TCL_LIB_VERSIONS_OK=ok
      CFLAGS_DEBUG=-g
-@@ -7275,25 +7275,26 @@
- 	FreeBSD-*)
- 	    # FreeBSD 3.* and greater have ELF.
- 	    SHLIB_CFLAGS="-fPIC"
--	    SHLIB_LD="ld -Bshareable -x"
-+	    SHLIB_LD="${CC} -shared"
-+	    TCL_SHLIB_LD_EXTRAS="-soname \$@"
- 	    SHLIB_LD_LIBS='${LIBS}'
+@@ -7490,20 +7490,20 @@
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
  	    DL_LIBS=""
 -	    LDFLAGS="$LDFLAGS -export-dynamic"
 +	    LDFLAGS=""
  	    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
- 	    LD_SEARCH_FLAGS='-rpath ${LIB_RUNTIME_DIR}'
+ 	    LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
  	    if test "${TCL_THREADS}" = "1" ; then
--		# The -pthread needs to go in the CFLAGS, not LIBS
-+		# The -pthread needs to go in the LDFLAGS, not LIBS
+ 		# The -pthread needs to go in the CFLAGS, not LIBS
  		LIBS=`echo $LIBS | sed s/-pthread//`
 -		CFLAGS="$CFLAGS -pthread"
 -	    	LDFLAGS="$LDFLAGS -pthread"

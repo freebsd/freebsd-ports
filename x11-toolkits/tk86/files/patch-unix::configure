@@ -1,5 +1,5 @@
---- configure.orig	Thu Apr 26 23:02:27 2007
-+++ configure	Mon Apr 30 10:30:24 2007
+--- configure.orig	2007-09-24 18:09:13.000000000 +0200
++++ configure	2007-09-27 20:50:38.000000000 +0200
 @@ -3535,6 +3535,7 @@
  # Threads support - this auto-enables if Tcl was compiled threaded
  #------------------------------------------------------------------------
@@ -8,24 +8,16 @@
  
      # Check whether --enable-threads or --disable-threads was given.
  if test "${enable_threads+set}" = set; then
-@@ -5697,25 +5698,26 @@
- 	FreeBSD-*)
- 	    # FreeBSD 3.* and greater have ELF.
- 	    SHLIB_CFLAGS="-fPIC"
--	    SHLIB_LD="ld -Bshareable -x"
-+	    TCL_SHLIB_LD_EXTRAS="-soname \$@"
-+	    SHLIB_LD="${CC} -shared"
- 	    SHLIB_LD_LIBS='${LIBS}'
+@@ -5694,20 +5695,20 @@
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
  	    DL_LIBS=""
 -	    LDFLAGS="$LDFLAGS -export-dynamic"
 +	    LDFLAGS=""
  	    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
- 	    LD_SEARCH_FLAGS='-rpath ${LIB_RUNTIME_DIR}'
+ 	    LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
  	    if test "${TCL_THREADS}" = "1" ; then
--		# The -pthread needs to go in the CFLAGS, not LIBS
-+		# The -pthread needs to go in the LDFLAGS, not LIBS
+ 		# The -pthread needs to go in the CFLAGS, not LIBS
  		LIBS=`echo $LIBS | sed s/-pthread//`
 -		CFLAGS="$CFLAGS -pthread"
 -	    	LDFLAGS="$LDFLAGS -pthread"
