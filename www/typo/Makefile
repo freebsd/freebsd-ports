@@ -16,7 +16,7 @@ MAINTAINER=	jw@innerewut.de
 COMMENT=	An absolutely minimal weblogging engine powered by rails
 
 RUN_DEPENDS=	rails:${PORTSDIR}/www/rubygem-rails \
-		${LOCALBASE}/lib/ruby/gems/1.8/specifications/RedCloth-3.0.3.gemspec:${PORTSDIR}/www/rubygem-redcloth
+		redcloth:${PORTSDIR}/www/rubygem-redcloth
 
 NO_BUILD=	yes
 
