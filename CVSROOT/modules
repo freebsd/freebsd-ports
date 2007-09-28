@@ -3163,6 +3163,7 @@ fpc-zvt		ports/x11-toolkits/fpc-zvt
 fpdf		ports/print/fpdf
 fpdns		ports/dns/fpdns
 fping		ports/net/fping
+fping+ipv6	ports/net/fping+ipv6
 fpkg		ports/sysutils/fpkg
 fpm		ports/security/fpm
 fpp		ports/devel/fpp
