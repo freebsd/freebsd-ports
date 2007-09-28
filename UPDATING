@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070928:
+  AFFECTS: users of irc/ratbox-services
+  AUTHOR: Lewis <moggie@elasticmind.net>
+
+  Significant changes have been made between the 1.0.x series and
+  the current release version of ratbox-services.
+
+  It is highly recommended that services be stopped, and the proper
+  upgrade procedure be followed as described in
+  '/usr/local/share/doc/ratbox-services/', before restarting
+  ratbox-services with the new release version.
+
+  Please remember to backup the database before attempting an
+  upgrade, an incorrectly upgraded database may be rendered unusable.
+
 20070926:
   AFFECTS: users of devel/p5-gearmand
   AUTHOR: clsung@FreeBSD.org
