@@ -10,7 +10,6 @@ include/tk%%TK_VER%%/generic/tkDecls.h
 include/tk%%TK_VER%%/generic/tkEntry.h
 include/tk%%TK_VER%%/generic/tkFileFilter.h
 include/tk%%TK_VER%%/generic/tkFont.h
-include/tk%%TK_VER%%/generic/tkInitScript.h
 include/tk%%TK_VER%%/generic/tkInt.h
 include/tk%%TK_VER%%/generic/tkIntDecls.h
 include/tk%%TK_VER%%/generic/tkIntPlatDecls.h
@@ -108,9 +107,6 @@ lib/tk%%TK_VER%%/demos/tclIndex
 lib/tk%%TK_VER%%/demos/tcolor
 lib/tk%%TK_VER%%/demos/text.tcl
 lib/tk%%TK_VER%%/demos/timer
-lib/tk%%TK_VER%%/demos/ttk_demo.tcl
-lib/tk%%TK_VER%%/demos/ttk_iconlib.tcl
-lib/tk%%TK_VER%%/demos/ttk_repeater.tcl
 lib/tk%%TK_VER%%/demos/twind.tcl
 lib/tk%%TK_VER%%/demos/unicodeout.tcl
 lib/tk%%TK_VER%%/demos/vscale.tcl
@@ -174,11 +170,8 @@ lib/tk%%TK_VER%%/ttk/classicTheme.tcl
 lib/tk%%TK_VER%%/ttk/combobox.tcl
 lib/tk%%TK_VER%%/ttk/cursors.tcl
 lib/tk%%TK_VER%%/ttk/defaults.tcl
-lib/tk%%TK_VER%%/ttk/dialog.tcl
 lib/tk%%TK_VER%%/ttk/entry.tcl
 lib/tk%%TK_VER%%/ttk/fonts.tcl
-lib/tk%%TK_VER%%/ttk/icons.tcl
-lib/tk%%TK_VER%%/ttk/keynav.tcl
 lib/tk%%TK_VER%%/ttk/menubutton.tcl
 lib/tk%%TK_VER%%/ttk/notebook.tcl
 lib/tk%%TK_VER%%/ttk/panedwindow.tcl

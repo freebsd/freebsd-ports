@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	tcl
-PORTVERSION=	8.5.a.6
-PORTREVISION=	2
+PORTVERSION=	8.5.b.1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
 PKGNAMESUFFIX?=		${THREADS_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.a./a/}-src
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.b./b/}-src
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Tool Command Language (development version)
 
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.a./a/}/unix
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}/unix
 ALL_TARGET=	all
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -54,8 +53,8 @@ BROKEN=	does not compile on ia64
 . endif
 . if exists(${TCLSH})
 TCL_PATCHLEVEL!=	${ECHO_CMD} "puts \$$tcl_patchLevel" | ${TCLSH}
-.  if ${TCL_PATCHLEVEL} != ${PORTVERSION:S/.a./a/}
-IGNORE=	version mismatch - installing ${PORTVERSION:S/.a./a/} over installed ${TCL_PATCHLEVEL}
+.  if ${TCL_PATCHLEVEL} != ${PORTVERSION:S/.b./b/}
+IGNORE=	version mismatch - installing ${PORTVERSION:S/.b./b/} over installed ${TCL_PATCHLEVEL}
 .  endif
 .endif
 
