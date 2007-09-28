@@ -13,7 +13,7 @@ MASTER_SITES=	http://media.wu-wien.ac.at/download/
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Object-oriented scripting language based on Tcl
 
-USE_TCL=		84
+USE_TCL=		84+
 USE_TCL_THREADS=	yes
 
 INSTALL_TARGET=	install
