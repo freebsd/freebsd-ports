@@ -29,7 +29,7 @@ MAN1=		bugpoint.1 llc.1 lli.1 llvm-ar.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
+.if ${ARCH} == "sparc64" && ${OSVERSION} >= 700042
 BROKEN=		does not build on sparc64
 .endif
 
