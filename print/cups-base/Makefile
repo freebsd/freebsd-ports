@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.2.12
+PORTVERSION=	1.3.0
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
@@ -36,10 +36,12 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--disable-pam				\
 			--disable-slp				\
+			--disable-gssapi			\
 			--with-cups-user=${CUPSOWN}		\
 			--with-cups-group=${CUPSGRP}		\
 			--with-system-groups=${CUPSSYSGRP}	\
 			--with-docdir=${DOCSDIR}		\
+			--with-icondir=${PREFIX}/share/icons	\
 			--with-domainsocket=${CUPS_SOCKET}
 
 OPTIONS=	GNUTLS		"Build with GNUTLS library" on \
@@ -127,12 +129,15 @@ MAN8=	accept.${MAN8EXT} \
 	cups-driverd.${MAN8EXT} \
 	cups-lpd.${MAN8EXT} \
 	cups-polld.${MAN8EXT} \
+	cupsctl.${MAN8EXT} \
 	cupsd.${MAN8EXT} \
 	cupsenable.${MAN8EXT} \
+	cupsfilter.${MAN8EXT} \
 	lpadmin.${MAN8EXT} \
 	lpinfo.${MAN8EXT} \
 	lpmove.${MAN8EXT} \
 	lpc.${MAN8EXT}
+
 MLINKS=	accept.${MAN8EXT} reject.${MAN8EXT} \
 	cupsenable.${MAN8EXT} cupsdisable.${MAN8EXT}
 
@@ -147,7 +152,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|CXX="$$CC"||g ; s|-lpthreads.*;|${PTHREAD_LIBS};|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
-pre-install:
+pre-su-install:
 	@${INSTALL} -d ${DESKTOPDIR}/
 	if ! pw groupshow ${CUPSGRP}; then pw groupadd ${CUPSGRP} -g 193; fi
 	if ! pw usershow ${CUPSOWN}; then pw useradd ${CUPSOWN} -g ${CUPSGRP} -u 193 \
@@ -162,7 +167,8 @@ pre-install:
 
 post-install:
 	${INSTALL} -d ${CUPS_ETCDIR}/
-.for f in cupsd.conf mime.convs mime.types
+	${CP} -p ${WRKSRC}/conf/snmp.conf ${WRKSRC}/conf/snmp.conf.N
+.for f in cupsd.conf mime.convs mime.types snmp.conf
 	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${CUPS_ETCDIR}/${f}.N
 	cd ${CUPS_ETCDIR}/; if test ! -f ${f}; then ${CP} -p ${f}.N ${f}; fi
 .endfor
