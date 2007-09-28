@@ -100,24 +100,21 @@ touch $lf				\
 && chown ircservices:ircservices $lf	\
 && chmod 640 $lf
 
-mkdir -p %%DBDIR%%
 
-db="%%DBDIR%%/ratbox-services.db"
-
-if [ ! -f $db ]; then
-	echo "Initialising services database..."
-	%%LOCALBASE%%/bin/sqlite $db < %%DATADIR%%/schema.sql
-fi
+mkdir -p %%DBDIR%%				\
+&& chown ircservices:ircservices %%DBDIR%%	\
+&& chmod 750 %%DBDIR%%
 
 # Secure permissions if we think this is a fresh install
 
 if [ ! -f ${PKG_PREFIX}/ratbox-services.conf ]; then
-	chown -R ircservices:ircservices %%DBDIR%%
 	chown ircservices:ircservices ${PKG_PREFIX}/etc/ratbox-services.conf.sample
-	chmod 750 %%DBDIR%%
-	chmod 640 $db
 	chmod 640 ${PKG_PREFIX}/etc/ratbox-services.conf.sample
 fi
+
+cd %%DATADIR%%	\
+&& %%PERL%% ./generate-schema.pl
+
 
 #-----------------------------------------------------------------------
 fi
