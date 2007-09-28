@@ -14369,6 +14369,7 @@ rubygem-rtags	ports/devel/rubygem-rtags
 rubygem-ruby-debug	ports/devel/rubygem-ruby-debug
 rubygem-ruby-debug-base	ports/devel/rubygem-ruby-debug-base
 rubygem-ruby-prof	ports/devel/rubygem-ruby-prof
+rubygem-ruby2ruby	ports/devel/rubygem-ruby2ruby
 rubygem-rubyforge	ports/devel/rubygem-rubyforge
 rubygem-rubyfulsoup	ports/www/rubygem-rubyfulsoup
 rubygem-scrapi	ports/www/rubygem-scrapi
