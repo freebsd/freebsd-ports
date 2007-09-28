@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	ispell
-PORTVERSION=	1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	hungarian textproc
 #MASTER_SITES=	http://www.szofi.hu/gnu/magyarispell/
-MASTER_SITES=	http://magyarispell.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	magyarispell
 DISTNAME=	magyarispell-${PORTVERSION:S/.R.1/-RC1/}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
