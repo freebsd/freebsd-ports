@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/		\
 PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	moggie@elasticmind.net
 COMMENT=	An advanced, stable IRC daemon, used on many EFnet servers
 
 CONFLICTS=	ircd-ratbox-[0-9]*
