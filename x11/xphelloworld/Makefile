@@ -7,6 +7,7 @@
 
 PORTNAME=	xphelloworld
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -22,5 +23,15 @@ PLIST_FILES=	bin/xphelloworld \
 MAN1=		xphelloworld.1 \
 		xpsimplehelloworld.1 \
 		xpxthelloworld.1
+
+post-build:
+	${REINPLACE_CMD} \
+		-e "s/__appmansuffix__/1/g" \
+		-e "s/__miscmansuffix__/7/g" \
+		-e "s/__libmansuffix__/3Xp/g" \
+		${WRKSRC}/xphelloworld/xphelloworld.man \
+		${WRKSRC}/xpsimplehelloworld/xpsimplehelloworld.man \
+		${WRKSRC}/xpxmhelloworld/xpxmhelloworld.man \
+		${WRKSRC}/xpxthelloworld/xpxthelloworld.man
 
 .include <bsd.port.mk>
