@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	2.9.12
+PORTVERSION=	2.9.14
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/\
@@ -19,11 +19,13 @@ COMMENT=	Developer's version of math/octave
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		${LOCALBASE}/lib/libglpk.a:${PORTSDIR}/math/glpk \
-		gsed:${PORTSDIR}/textproc/gsed
+		gsed:${PORTSDIR}/textproc/gsed \
+		dvips:${PORTSDIR}/print/dvipsk-tetex
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		hdf5:${PORTSDIR}/science/hdf5 \
-		umfpack.1:${PORTSDIR}/math/suitesparse
+		umfpack.1:${PORTSDIR}/math/suitesparse \
+		qhull:${PORTSDIR}/math/qhull
 
 LATEST_LINK=    octave-devel
 
@@ -95,7 +97,7 @@ post-install:
 	${LN} -fs ${PREFIX}/bin/${PORTNAME}-${PORTVERSION} ${PREFIX}/bin/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in faq/Octave-FAQ.ps interpreter/octave.ps liboctave/liboctave.ps \
+.for file in faq/Octave-FAQ.ps liboctave/liboctave.ps \
 	refcard/refcard-a4.ps refcard/refcard-legal.ps refcard/refcard-letter.ps
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
