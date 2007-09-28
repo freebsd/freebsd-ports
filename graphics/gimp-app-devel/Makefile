@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gimp-app
-DISTVERSION=	2.4.0-rc2
+DISTVERSION=	2.4.0-rc3
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
