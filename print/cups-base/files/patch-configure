@@ -1,0 +1,19 @@
+--- configure.orig	Mon Aug 13 22:35:13 2007
++++ configure	Thu Aug 16 20:43:41 2007
+@@ -6152,6 +6152,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <sys/param.h>
+ #include <sys/ucred.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -16048,7 +16049,7 @@
+ 
+ 
+ 	if test x$ac_cv_header_pthread_h = xyes; then
+-				for flag in -lpthreads -lpthread -pthread; do
++				for flag in -pthread; do
+         		{ echo "$as_me:$LINENO: checking for pthread_create using $flag" >&5
+ echo $ECHO_N "checking for pthread_create using $flag... $ECHO_C" >&6; }
+ 			SAVELIBS="$LIBS"
