@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	filezilla
-DISTVERSION=	3.0.0-beta11
+DISTVERSION=	3.0.1
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 DISTNAME=	FileZilla_${DISTVERSION}_src
 
 MAINTAINER=	alepulver@FreeBSD.org
-COMMENT=	Fast FTP and SFTP client with a lot of features
+COMMENT=	Fast and reliable cross-platform FTP, FTPS and SFTP client
 
 LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls \
 		idn.16:${PORTSDIR}/dns/libidn
@@ -27,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|dummy wxrc|&-gtk2-${WX_VERSION}|' \
+	@${REINPLACE_CMD} -Ee 's|(dummy) wxrc|\1 ${WXRC_CMD:T}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
