@@ -16,7 +16,6 @@
 %%HORDIR%%/admin/setup/index.php
 %%HORDIR%%/admin/setup/scripts.php
 %%HORDIR%%/admin/sqlshell.php
-%%HORDIR%%/admin/templates.php
 %%HORDIR%%/admin/user.php
 %%HORDIR%%/config/.htaccess
 %%HORDIR%%/config/conf.php.dist
@@ -84,7 +83,6 @@
 %%HORDIR%%/lib/Horde/Auth/imap.php
 %%HORDIR%%/lib/Horde/Auth/imsp.php
 %%HORDIR%%/lib/Horde/Auth/ipbasic.php
-%%HORDIR%%/lib/Horde/Auth/ipmap.php
 %%HORDIR%%/lib/Horde/Auth/kolab.php
 %%HORDIR%%/lib/Horde/Auth/krb5.php
 %%HORDIR%%/lib/Horde/Auth/ldap.php
@@ -408,7 +406,6 @@
 %%HORDIR%%/lib/VFS/sql.php
 %%HORDIR%%/lib/VFS/sql_file.php
 %%HORDIR%%/lib/VFS.php
-%%HORDIR%%/lib/XML/SVG.php
 %%HORDIR%%/lib/XML/WBXML/ContentHandler.php
 %%HORDIR%%/lib/XML/WBXML/DTD/SyncML.php
 %%HORDIR%%/lib/XML/WBXML/DTD/SyncMLDevInf.php
