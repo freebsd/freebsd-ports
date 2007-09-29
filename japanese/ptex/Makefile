@@ -6,7 +6,7 @@
 
 PORTNAME=	ptex
 PORTVERSION=	3.1.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/:1 \
@@ -106,7 +106,9 @@ post-extract:
 	${MKDIR} ${WRKDIR}/texmf-tmp
 	cd ${WRKDIR} && \
 		${MV} ${INSTDIRS} texmf-tmp && \
-		${RM} -f texmf-tmp/ptex/platex/base/.cvsignore
+		${RM} -f texmf-tmp/ptex/platex/base/.cvsignore && \
+		${FIND} texmf-tmp -type d | ${XARGS} ${CHMOD} 755 && \
+		${FIND} texmf-tmp -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 
 pre-configure:
 	${SETENV} ${MAKE_ENV} ${MKTEXLSR} ${WRKDIR}/texmf-tmp
