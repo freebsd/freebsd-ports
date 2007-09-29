@@ -2715,6 +2715,7 @@ exim-postgresql	ports/mail/exim-postgresql
 exim-sa-exim	ports/mail/exim-sa-exim
 exim-sqlite	ports/mail/exim-sqlite
 exipick		ports/mail/exipick
+exist		ports/databases/exist
 exiv2		ports/graphics/exiv2
 exmars		ports/games/exmars
 exmh2		ports/mail/exmh2
