@@ -7,6 +7,7 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crystal
@@ -24,7 +25,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut \
-		CEGUIBase.0:${PORTSDIR}/graphics/cegui
+		CEGUIBase.1:${PORTSDIR}/graphics/cegui
 
 CONFLICTS=	crystalspace-devel-[0-9]*
 
@@ -63,6 +64,10 @@ OPTIONS=	DEBUG	"Build with debugging information"	off \
 		BFD	"Universal BFD library from the GNU binutils"	on
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		Some dependencies do not compile with gcc4
+.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
