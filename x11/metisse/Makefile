@@ -19,6 +19,8 @@ CONFLICTS=	fvwm-1.* fvwm-2.5.*
 LIB_DEPENDS=	Nucleo.0:${PORTSDIR}/x11-toolkits/nucleo
 RUN_DEPENDS=	${X11BASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
 
+BROKEN=		Does not compile
+
 USE_BZIP2=	yes
 PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes
