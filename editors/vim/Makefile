@@ -67,6 +67,7 @@ MANLANG=	"" ru.KOI8-R ru.UTF-8 pl.ISO8859-2 pl.UTF-8 pl fr.ISO8859-1 \
 		fr.UTF-8 fr it.ISO8859-1 it.UTF-8 it
 
 WANT_GNOME=	yes
+WANT_PERL=	yes
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
