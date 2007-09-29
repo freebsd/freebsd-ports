@@ -4924,6 +4924,7 @@ ion		ports/x11-wm/ion
 ion-2		ports/x11-wm/ion-2
 ion-3		ports/x11-wm/ion-3
 ioquake3	ports/games/ioquake3
+iourbanterror	ports/games/iourbanterror
 iozone		ports/benchmarks/iozone
 iozone21	ports/benchmarks/iozone21
 ip4r		ports/databases/ip4r
