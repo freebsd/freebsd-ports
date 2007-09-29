@@ -1,11 +1,12 @@
-This project, icculus.org/quake3 (sometimes referred to ioquake3, or ioq3 for
-short) aims to build upon id Software's Quake 3 source code release. The
-source code was released on August 20, 2005 under the GPL. Since then, we have
-been cleaning up, fixing bugs, and adding features. Our permanent goal is to
-create the open source Quake 3 distribution upon which people base their games
-and projects. We also seek to have the perfect version of the engine for
-playing Quake 3: Arena, Team Arena, and all popular mods. This distribution of
-the engine has been ported to many new platforms and has had a slew of new
-features added, along with massive bug extermination.
+Urban Terror is a realism based total conversion mod for Quake III Arena which
+no longer requires this game to be played. It only uses its engine, which is
+open sourced through the GPL and may be distributed freely. Urban Terror plays
+in about the same setting as Counter Strike, but is less focused on realism
+and plays much faster, which among other things, is caused by the ability to
+strafe jump, which combined with wall jumping can lead to very quick movement
+and nice jumps. Urban Terror has 7 game modes, 25 maps and 15 weapons.
 
-WWW: http://ioquake3.org/
+This port installs the modified ioquake3 engine for Urban Terror called
+ioUrbanTerror, and depends on the data, resulting in a playable game.
+
+WWW: http://ftp.snt.utwente.nl/pub/games/urbanterror/iourbanterror/source/

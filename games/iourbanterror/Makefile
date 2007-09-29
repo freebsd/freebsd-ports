@@ -5,21 +5,25 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ioquake3
-DISTVERSION=	1.34-rc3
-PORTREVISION=	3
+PORTNAME=	iourbanterror
+DISTVERSION=	2007_04_02
 CATEGORIES=	games
-MASTER_SITES=	http://ioquake3.org/files/
-DISTNAME=	${PORTNAME}_${DISTVERSION}
+MASTER_SITES=	http://ftp.snt.utwente.nl/pub/games/urbanterror/iourbanterror/source/complete/
+DISTNAME=	ioUrbanTerrorSource_${DISTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
-COMMENT=	Cleaned-up and enhaced version of Quake 3
+COMMENT=	Quake 3 engine modified for Urban Terror (based on ioquake3)
 
-USE_BZIP2=	yes
+RUN_DEPENDS=	${Q3DIR}/q3ut4:${PORTSDIR}/games/urbanterror-data
+
+USE_ZIP=	yes
 USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME:C/_.*//}
 
 OPTIONS=	CLIENT "Build client" on \
 		CELLSHADING "Enable Cell Shading effect" off \
+		CURL "Enable curl support" on \
+		CURL_DLOPEN "Enable dynamic loading of curl" on \
 		GAMELIBS "Build game libraries (when not mandatory)" off \
 		DEDICATED "Build dedicated server" on \
 		MP3 "Enable MP3 support" off \
@@ -39,6 +43,8 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 VM_ARCHS=	amd64 i386 powerpc
 
 .include <bsd.port.pre.mk>
+
+Q3DIR!=		cd ${PORTSDIR}/games/quake3-data && ${MAKE} -V Q3DIR
 
 .if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
     defined(WITHOUT_SMP)
@@ -60,6 +66,14 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cellshading
 .endif
 
 .if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
+# curl
+.   if defined(WITH_CURL)
+LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+MAKE_ENV+=	USE_CURL=1
+.       if defined(WITH_CURL_DLOPEN)
+MAKE_ENV+=	USE_CURL_DLOPEN=1
+.       endif
+.   endif
 # OpenAL
 .   if defined(WITH_OPENAL)
 LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
@@ -90,7 +104,7 @@ MAKE_ENV+=	USE_CODEC_VORBIS=1
 .if !defined(WITHOUT_CLIENT)
 MAKE_ENV+=	BUILD_CLIENT=1
 PLIST_SUB+=	CLIENT=""
-Q3BIN+=		ioquake3
+Q3BIN+=		ioUrbanTerror
 .else
 PLIST_SUB+=	CLIENT="@comment "
 .endif
@@ -98,7 +112,7 @@ PLIST_SUB+=	CLIENT="@comment "
 .if !defined(WITHOUT_DEDICATED)
 MAKE_ENV+=	BUILD_SERVER=1
 PLIST_SUB+=	DEDICATED=""
-Q3BIN+=		ioq3ded
+Q3BIN+=		ioUrTded
 .else
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
@@ -123,15 +137,19 @@ MAKE_ENV+=	USE_OPTIMIZED_CFLAGS=1
 .if !defined(WITHOUT_SMP)
 MAKE_ENV+=	BUILD_CLIENT_SMP=1
 PLIST_SUB+=	SMP=""
-Q3BIN+=		ioquake3-smp
+Q3BIN+=		ioUrbanTerror-smp
 .else
 PLIST_SUB+=	SMP="@comment "
 .endif
 
 post-patch:
 # There are new variables in the config files, so keep them in another dir.
-	@${REINPLACE_CMD} -E 's|/\.q3a|/.${PORTNAME}|' \
+	@${REINPLACE_CMD} -E 's|/\.q3a|/.ioUrbanTerror|' \
 		${WRKSRC}/code/unix/unix_shared.c
+# BattlEye development has stopped, and UT website recommends to disable it,
+# also it's binary only, so it won't work anyways.
+	@${REINPLACE_CMD} -Ee 's|("sv_battleye",) "1"|\1 "0"|' \
+		${WRKSRC}/code/server/sv_init.c
 
 do-install:
 .for bin in ${Q3BIN}
@@ -145,7 +163,8 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/ioUrbanTerror_README.txt \
+		${WRKSRC}/README ${DOCSDIR}
 .endif
 
 post-install:
@@ -153,5 +172,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include "${.CURDIR}/../quake3-data/Makefile.include"
 .include <bsd.port.post.mk>
