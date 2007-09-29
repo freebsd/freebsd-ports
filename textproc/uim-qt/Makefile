@@ -12,6 +12,10 @@ COMMENT=	QT modules of uim input method
 LIB_DEPENDS=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt33 \
 		uim.4:${PORTSDIR}/textproc/uim
 
+BROKEN=		fails to deinstall cleanly
+DEPRECATED=		"${BROKEN}"
+EXPIRATION_DATE=	2007-11-29
+
 USE_AUTOTOOLS=	libtool:15
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
