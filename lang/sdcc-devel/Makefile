@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.6.2.2006.12.13
+PORTVERSION=	2.7.3.2007.09.28
 CATEGORIES=	lang
 MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
-		http://kalimero.be/mirror/
-DISTNAME=	${PORTNAME}-src-20061213-4514
+		http://tijl.ulyssis.be/mirror/
+DISTNAME=	${PORTNAME}-src-20070928-4920
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	Small Device C Compiler
@@ -34,18 +34,24 @@ OPTIONS=	MCS51   "Intel mcs51 port" on \
 		UCSIM   "The ucSim simulator" on \
 		PACKIHX "A tool to pack (compress) Intel hex files" on
 
+CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		--datarootdir=${DATADIR} \
+		--docdir=${DOCSDIR} \
+		include_dir_suffix=include \
+		lib_dir_suffix=lib
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_MCS51) && !defined(WITHOUT_UCSIM) && ${OSVERSION} < 500019
-LIB_DEPENDS=	readline.5:${PORTSDIR}/devel/readline
-CONFIGURE_ARGS=	CPPFLAGS="-I/usr/local/include" LDFLAGS="-L/usr/local/lib"
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
 .if defined(WITHOUT_MCS51) && defined(WITHOUT_DS390)
 CONFIGURE_ARGS+=	--disable-51
 PLIST_SUB+=		MCS51DS390="@comment "
 .else
-USE_AUTOTOOLS+=		autoconf:259
+USE_AUTOTOOLS+=		autoconf:261
 PLIST_SUB+=		MCS51DS390=""
 .endif
 
@@ -126,5 +132,13 @@ PLIST_SUB+=		PACKIHX="@comment "
 .else
 PLIST_SUB+=		PACKIHX=""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's,ARCH,PICARCH,g' \
+		${WRKSRC}/device/lib/pic/Makefile.common.in \
+		${WRKSRC}/device/lib/pic/Makefile.rules \
+		${WRKSRC}/device/lib/pic16/Makefile.common.in \
+		${WRKSRC}/device/lib/pic16/Makefile.rules \
+		${WRKSRC}/device/lib/pic16/libio/Makefile.in
 
 .include <bsd.port.post.mk>
