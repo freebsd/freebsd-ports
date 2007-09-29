@@ -1,0 +1,14 @@
+--- Makefile	2007-09-29 10:36:38.000000000 +0900
++++ Makefile	2007-09-29 10:38:25.000000000 +0900
+@@ -7,7 +7,11 @@
+ include make.inc
+ 
+ 
++.if defined(ENABLE_TESTING) && ${ENABLE_TESTING} == "YES"
+ all: lapack_install lib lapack_testing blas_testing
++.else
++all: lapack_install lib
++.endif
+ 
+ lib: lapacklib tmglib
+ #lib: blaslib lapacklib tmglib
