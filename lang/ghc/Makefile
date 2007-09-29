@@ -24,7 +24,13 @@ BOOT_DIST4=	ghc-${PORTVERSION}-i386-unknown-freebsd4-boot${EXTRACT_SUFX}:boot
 BOOT_DIST5=	ghc-${PORTVERSION}-i386-unknown-freebsd5-boot${EXTRACT_SUFX}:boot
 BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd6-boot${EXTRACT_SUFX}:boot
 
+USE_AUTOTOOLS=	autoconf:259:env
 USE_BZIP2=	yes
+LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
+
+USE_PERL5=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 OPTIONS=	PROFILE "Compile for profiling as well" on
 
@@ -44,13 +50,6 @@ IGNORE=		unsupported at the moment
 .if ${OSVERSION} >= 700000
 IGNORE=		unsupported at the moment
 .endif
-
-USE_AUTOTOOLS=	autoconf:259:env
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
-
-USE_PERL5=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 
 PLIST_SUB+=	GHC_VERSION=${PORTVERSION}
 .if defined(WITHOUT_PROFILE)
