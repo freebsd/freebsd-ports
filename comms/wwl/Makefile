@@ -7,16 +7,18 @@
 
 PORTNAME=	wwl
 PORTVERSION=	1.2
-CATEGORIES=	comms astro
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/ham/}
+PORTREVISION=	1
+CATEGORIES=	comms hamradio astro geography
+MASTER_SITES=	http://www.db.net/downloads/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	db
+DISTNAME=	${PORTNAME}+db-${PORTVERSION}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Calculates distance (qrb) used in Amateur Radio
 
 PORTDOCS=	README INSTALL
 PLIST_FILES=	bin/wwl
-
-WRKSRC=		${WRKDIR}/wwl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wwl ${PREFIX}/bin
