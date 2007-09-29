@@ -104,4 +104,5 @@ share/games/tvp/spades-7.gif
 share/games/tvp/spades-8.gif
 share/games/tvp/spades-9.gif
 @dirrm share/games/tvp
+@dirrmtry share/games
 @dirrm share/doc/tvp
