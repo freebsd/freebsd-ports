@@ -7,6 +7,7 @@
 
 PORTNAME=	swt
 DISTVERSION=	0.1.0rc4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scwt
@@ -21,17 +22,25 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-SCI=		${LOCALBASE}/lib/scilab
-TOOLBOXDIR?=	lib/scilab/contrib/swt
+SCILABDIR?=	lib/scilab
+CONTRIBDIR?=	${SCILABDIR}/contrib
+TOOLBOXDIR?=	${CONTRIBDIR}/${PORTNAME}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}/${TOOLBOXDIR}
-CONFIGURE_ENV+=	SCI="${SCI}"
-USE_LDCONFIG=	${PREFIX}/${TOOLBOXDIR}
+CONFIGURE_ENV+=	SCI="${LOCALBASE}/${SCILABDIR}"
 
 PLIST_SUB=	TOOLBOXDIR=${TOOLBOXDIR}
+
+OPTIONS=        SIVP "Enable Image and Video support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SIVP)
+RUN_DEPENDS+=	${LOCALBASE}/${CONTRIBDIR}/sivp/loader.sce:${PORTSDIR}/math/scilab-toolbox-sivp
+.endif
 
 post-install:
 	 @${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
