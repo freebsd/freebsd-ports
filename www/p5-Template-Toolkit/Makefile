@@ -49,10 +49,6 @@ BUILD_DEPENDS+=${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-
 BUILD_DEPENDS+=${SITE_PERL}/Pod/POM.pm:${PORTSDIR}/textproc/p5-Pod-POM
 .endif
 
-.if defined(BATCH)
-CONFIGURE_ENV=	|
-.endif
-
 .include "Makefile.man"
 
 post-patch:
