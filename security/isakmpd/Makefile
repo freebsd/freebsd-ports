@@ -26,7 +26,6 @@ BUILD_DEPENDS+=	keynote:${PORTSDIR}/security/keynote
 .endif
 
 USE_RC_SUBR=	isakmpd.sh
-USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/isakmpd
 MAKE_ENV+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man LC_ALL=C
 
@@ -35,8 +34,13 @@ MAN8=		certpatch.8 isakmpd.8
 MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 700019
 BROKEN=		is not buildable with OpenSSL 0.9.8b
+.else
+OPENSSLINC?=	/usr/include
+OPENSSLLIB?=	/usr/lib
+MAKE_ENV+=	OPENSSLINC="${OPENSSLINC}" OPENSSLLIB="${OPENSSLLIB}"
 .endif
 
 post-patch:
