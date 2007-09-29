@@ -6,33 +6,33 @@
 #
 
 PORTNAME=	OpenSSH-askpass
-PORTVERSION=	1.2.2.2001.02.24
-PORTREVISION=	1
+PORTVERSION=	1.2.4.1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kris
+MASTER_SITES=	http://www.jmknoble.net/software/x11-ssh-askpass/
+DISTNAME=	x11-ssh-askpass-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Graphical password applet for entering SSH passphrase
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/X11/xc/programs/ssh-askpass
 USE_IMAKE=	yes
+USE_XORG=	x11
 
-MAN1=		ssh-askpass.1
-MANCOMPRESSED=	yes
+MAN1=		x11-ssh-askpass.1
+MLINKS=		x11-ssh-askpass.1 ssh-askpass.1
 
 DOCSDIR=	${PREFIX}/share/doc/ssh-askpass
-PLIST_FILES=	bin/ssh-askpass lib/X11/app-defaults/SshAskpass
-PORTDOCS=	README
+PLIST_FILES=	bin/x11-ssh-askpass \
+		bin/ssh-askpass \
+		lib/X11/app-defaults/SshAskpass
+PORTDOCS=	README TODO ChangeLog
 
-makesrctarball: fetch
-	@cd ${DISTDIR}; \
-	${ECHO_MSG} ">> Creating source tarball in ${DISTDIR}"; \
-	${ECHO_MSG} ">> \"${DISTNAME}.tar.gz\"."; \
-	${TAR} cfz ${DISTNAME}.tar.gz ${DISTNAME}
+pre-configure:
+	cd ${WRKSRC} && ./configure --libexecdir=${PREFIX}/bin
 
+.if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
