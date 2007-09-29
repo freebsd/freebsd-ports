@@ -32,8 +32,8 @@ LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas -latlas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
