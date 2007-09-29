@@ -10,3 +10,4 @@ share/services/locate.protocol
 share/services/locater.protocol
 share/services/rlocate.protocol
 share/services/searchproviders/locate.desktop
+@dirrm share/doc/HTML/en/kio-locate
