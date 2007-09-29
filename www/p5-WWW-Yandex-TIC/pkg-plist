@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Yandex/TIC/.packlist
+%%SITE_PERL%%/WWW/Yandex/TIC.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Yandex/TIC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Yandex
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Yandex
+@dirrmtry %%SITE_PERL%%/WWW
