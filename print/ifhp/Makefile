@@ -53,10 +53,6 @@ PLIST_SUB+=		NLS="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 .if defined(WITHOUT_FOOMATIC)
 CONFIGURE_ARGS+=	--disable-foomatic
 .else
@@ -82,6 +78,9 @@ pre-everything::
 		${ECHO_MSG} 'man pages and defaults to $${PREFIX}/man, which is incorrect for FreeBSD.'; \
 	fi
 	@${ECHO_MSG} "Configuring with '${CONFIGURE_ARGS}'"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
