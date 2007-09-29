@@ -1,0 +1,14 @@
+--- Makedefs.in.orig	Fri Sep 28 21:13:27 2007
++++ Makedefs.in	Fri Sep 28 21:13:48 2007
+@@ -108,8 +108,8 @@
+ #               for extra debug info)
+ #
+ 
+-ALL_CFLAGS	=	$(SSLFLAGS) @LARGEFILE@ @PTHREAD_FLAGS@ \
+-			$(OPTIONS) $(CFLAGS)
++ALL_CFLAGS	=	$(CFLAGS) $(SSLFLAGS) @LARGEFILE@ @PTHREAD_FLAGS@ \
++			$(OPTIONS)
+ ARCHFLAGS	=	@ARCHFLAGS@
+ ARFLAGS		=	@ARFLAGS@
+ BACKLIBS	=	@BACKLIBS@
+
