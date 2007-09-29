@@ -10034,6 +10034,7 @@ p5-IRC-Bot-Hangman	ports/irc/p5-IRC-Bot-Hangman
 p5-Ima-DBI	ports/databases/p5-Ima-DBI
 p5-Image-Caa	ports/graphics/p5-Image-Caa
 p5-Image-Compare	ports/graphics/p5-Image-Compare
+p5-Image-Delivery	ports/www/p5-Image-Delivery
 p5-Image-ExifTool	ports/graphics/p5-Image-ExifTool
 p5-Image-Grab	ports/graphics/p5-Image-Grab
 p5-Image-IPTCInfo	ports/graphics/p5-Image-IPTCInfo
