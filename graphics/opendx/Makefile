@@ -36,7 +36,7 @@ PLIST_SUB=	ARCH=${OPSYS:L}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if defined(WITH_HDF) && !defined(WITHOUT_NETCDF)
-BROKEN=	HDF and NETCDF are conflicting
+IGNORE=	HDF and NETCDF are conflicting
 .endif
 
 .if defined(WITH_HDF)
@@ -66,6 +66,10 @@ PLIST_SUB+=	JAVA="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile
+.endif
 
 .if ${OSVERSION} >= 502126
 PLIST_SUB+=	UNAMEP=${ARCH} ARCHDIR=""
