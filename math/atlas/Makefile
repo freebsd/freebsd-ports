@@ -27,6 +27,8 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/ATLAS
 USE_LDCONFIG=	yes
 
+BROKEN=		Creating ATLAS'ed LAPACK part is broken
+
 .include <bsd.port.pre.mk>
 
 USE_FORTRAN=	yes
