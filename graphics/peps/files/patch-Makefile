@@ -1,0 +1,11 @@
+--- Makefile.orig	Sat Sep 29 09:36:03 2007
++++ Makefile	Sat Sep 29 09:36:51 2007
+@@ -85,7 +85,7 @@
+ 	install -p -m 755 peps${BINEXT} ${BINDIR}
+ 	install -p -m 444 peps.1 ${MAN1DIR}
+ 	install -p -m 644 peps.mime ${ETC}
+-	mkdir -m 644 -p ${DOCS}
++	mkdir -m 755 -p ${DOCS}
+ 	install -p -m 444 peps.pdf ${DOCS}
+ 	touch -r peps.c ${DOCS}
+ 
