@@ -15,13 +15,12 @@ MAINTAINER?=	mm@FreeBSD.org
 COMMENT?=	A modular web application platform for communities
 
 AOLSERVERBASE?=	${LOCALBASE}/aolserver
-TCLLIB_VER?=	1.10
 RUN_DEPENDS+=	${AOLSERVERBASE}/bin/nscache.so:${PORTSDIR}/www/aolserver-nscache \
 		${AOLSERVERBASE}/bin/nsopenssl.so:${PORTSDIR}/security/aolserver-nsopenssl \
 		${AOLSERVERBASE}/bin/nssha1.so:${PORTSDIR}/security/aolserver-nssha1 \
 		${AOLSERVERBASE}/bin/nspostgres.so:${PORTSDIR}/databases/aolserver-nspostgres \
 		${AOLSERVERBASE}/modules/tcl/xotcl.tcl:${PORTSDIR}/www/aolserver-xotcl \
-		${LOCALBASE}/lib/tcllib${TCLLIB_VER}/pkgIndex.tcl:${PORTSDIR}/devel/tcllib \
+		dtplite:${PORTSDIR}/devel/tcllib \
 		${LOCALBASE}/lib/tdomConfig.sh:${PORTSDIR}/www/tdom
 
 USE_RC_SUBR?=	${PORTNAME}
