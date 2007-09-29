@@ -7,7 +7,7 @@
 
 PORTNAME=	ming
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	LGPL'ed Flash 4/5 movie output library with many languages support
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
-CONFLICTS=	ja-ming-*
+CONFLICTS=	ja-ming-[0-9]*
 
 USE_GNOME=	gnometarget
 USE_BISON=	yes
@@ -34,7 +34,7 @@ CFLAGS+=	${CPPFLAGS}
 
 UTILS=		dbl2png listaction listaction_d listfdb listjpeg listmp3 \
 		listswf listswf_d makefdb makeswf raw2adpcm swftoperl \
-		swftophp swftopython
+		swftophp swftopython gif2dbl gif2mask png2dbl png2swf
 DOCS=		CREDITS ChangeLog HISTORY NEWS README TODO
 DOCS_UTIL=	README TIPS TODO swftoperl.html
 
@@ -49,9 +49,13 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/util/${file} ${PREFIX}/bin
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/util/ming-config ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/util/cws2fws ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/include/ming
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/ming
 	${INSTALL_DATA} ${WRKSRC}/src/*.h ${PREFIX}/include/ming
+	@${MKDIR} ${PREFIX}/include/ming/util
+	${INSTALL_DATA} ${WRKSRC}/util/*.h ${PREFIX}/include/ming/util
+	${INSTALL_DATA} ${WRKSRC}/util/png2dbl.c ${PREFIX}/include/ming/util
 	@${MKDIR} ${PREFIX}/include/ming/blocks
 	${INSTALL_DATA} ${WRKSRC}/src/blocks/*.h ${PREFIX}/include/ming/blocks
 	${INSTALL_DATA} ${WRKSRC}/libming.a ${PREFIX}/lib

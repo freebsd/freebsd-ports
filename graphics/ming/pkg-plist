@@ -1,4 +1,7 @@
+bin/cws2fws
 bin/dbl2png
+bin/gif2dbl
+bin/gif2mask
 bin/listaction
 bin/listaction_d
 bin/listfdb
@@ -9,6 +12,8 @@ bin/listswf_d
 bin/makefdb
 bin/makeswf
 bin/ming-config
+bin/png2dbl
+bin/png2swf
 bin/raw2adpcm
 bin/swftoperl
 bin/swftophp
@@ -68,6 +73,18 @@ include/ming/position.h
 include/ming/shape_cubic.h
 include/ming/shape_util.h
 include/ming/text_util.h
+include/ming/util/action.h
+include/ming/util/decompile.h
+include/ming/util/libswf.h
+include/ming/util/makeswf.h
+include/ming/util/output.h
+include/ming/util/outputdecl.h
+include/ming/util/parser.h
+include/ming/util/parserdecl.h
+include/ming/util/read.h
+include/ming/util/swfoutput.h
+include/ming/util/swftypes.h
+include/ming/util/png2dbl.c
 lib/libming.a
 lib/libming.so
 lib/libming.so.4
@@ -84,4 +101,5 @@ lib/libming.so.4
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/util
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/ming/blocks
+@dirrm include/ming/util
 @dirrm include/ming
