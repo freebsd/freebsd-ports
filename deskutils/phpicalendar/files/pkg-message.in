@@ -1,4 +1,3 @@
 PHPiCalendar post-install instructions
 --------------------------------------
-Go to %%WWWDIR%%/www/phpicalendar and copy
-config.inc.php-default to config.inc.php.
+Go to %%WWWDIR%% and copy config.inc.php-default to config.inc.php.
