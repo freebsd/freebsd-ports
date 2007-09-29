@@ -16,8 +16,8 @@ COMMENT=	Qt based multiplatform subversion client, diff & merge tool
 
 LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon \
 		apr-1.2:${PORTSDIR}/devel/apr-svn \
-		boost_thread.4:${PORTSDIR}/devel/boost
-RUN_DEPENDS=	subversion>=1.2.0:${PORTSDIR}/devel/subversion
+		boost_thread.4:${PORTSDIR}/devel/boost \
+		svn_client-1.0:${PORTSDIR}/devel/subversion
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
