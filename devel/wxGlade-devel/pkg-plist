@@ -3,6 +3,7 @@ bin/wxglade
 %%PYTHON_SITELIBDIR%%/wxglade/about.py
 %%PYTHON_SITELIBDIR%%/wxglade/application.py
 %%PYTHON_SITELIBDIR%%/wxglade/clipboard.py
+%%PYTHON_SITELIBDIR%%/wxglade/code_property.py
 %%PYTHON_SITELIBDIR%%/wxglade/codegen/cpp_codegen.py
 %%PYTHON_SITELIBDIR%%/wxglade/codegen/lisp_codegen.py
 %%PYTHON_SITELIBDIR%%/wxglade/codegen/pl_codegen.py
@@ -93,8 +94,12 @@ bin/wxglade
 %%PYTHON_SITELIBDIR%%/wxglade/layout_option_property.py
 %%PYTHON_SITELIBDIR%%/wxglade/main.py
 %%PYTHON_SITELIBDIR%%/wxglade/misc.py
+%%PYTHON_SITELIBDIR%%/wxglade/msgdialog.py
+%%PYTHON_SITELIBDIR%%/wxglade/res/messagedialog.wxg
 %%PYTHON_SITELIBDIR%%/wxglade/res/preferences.wxg
+%%PYTHON_SITELIBDIR%%/wxglade/res/templates_ui.wxg
 %%PYTHON_SITELIBDIR%%/wxglade/template.py
+%%PYTHON_SITELIBDIR%%/wxglade/templates_ui.py
 %%PYTHON_SITELIBDIR%%/wxglade/tree.py
 %%PYTHON_SITELIBDIR%%/wxglade/widget_properties.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/ChoicesCodeHandler.py
