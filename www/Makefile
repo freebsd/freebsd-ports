@@ -918,6 +918,7 @@
     SUBDIR += p5-WWW-VenusEnvy
     SUBDIR += p5-WWW-WebArchive
     SUBDIR += p5-WWW-Wikipedia
+    SUBDIR += p5-WWW-Yandex-TIC
     SUBDIR += p5-WebService-Basecamp
     SUBDIR += p5-WebService-Bloglines
     SUBDIR += p5-WebService-CIA
