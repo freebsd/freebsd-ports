@@ -1,50 +1,13 @@
 bin/filezilla
 bin/fzsftp
+share/applications/filezilla.desktop
 %%DATADIR%%/docs/fzdefaults.xml.example
-%%DATADIR%%/locales/ar/filezilla.mo
-%%DATADIR%%/locales/bg/filezilla.mo
-%%DATADIR%%/locales/ca_ES/filezilla.mo
-%%DATADIR%%/locales/cs/filezilla.mo
-%%DATADIR%%/locales/da_DK/filezilla.mo
-%%DATADIR%%/locales/de/filezilla.mo
-%%DATADIR%%/locales/es/filezilla.mo
-%%DATADIR%%/locales/et_EE/filezilla.mo
-%%DATADIR%%/locales/eu/filezilla.mo
-%%DATADIR%%/locales/fi/filezilla.mo
-%%DATADIR%%/locales/fr_CA/filezilla.mo
-%%DATADIR%%/locales/fr_FR/filezilla.mo
-%%DATADIR%%/locales/gl/filezilla.mo
-%%DATADIR%%/locales/he_IL/filezilla.mo
-%%DATADIR%%/locales/hu/filezilla.mo
-%%DATADIR%%/locales/id_ID/filezilla.mo
-%%DATADIR%%/locales/it_IT/filezilla.mo
-%%DATADIR%%/locales/ja_JP/filezilla.mo
-%%DATADIR%%/locales/ka/filezilla.mo
-%%DATADIR%%/locales/km/filezilla.mo
-%%DATADIR%%/locales/ko_KR/filezilla.mo
-%%DATADIR%%/locales/ku/filezilla.mo
-%%DATADIR%%/locales/lt/filezilla.mo
-%%DATADIR%%/locales/lv/filezilla.mo
-%%DATADIR%%/locales/mk/filezilla.mo
-%%DATADIR%%/locales/nb_NO/filezilla.mo
-%%DATADIR%%/locales/ne/filezilla.mo
-%%DATADIR%%/locales/nl/filezilla.mo
-%%DATADIR%%/locales/pl_PL/filezilla.mo
-%%DATADIR%%/locales/pt_BR/filezilla.mo
-%%DATADIR%%/locales/pt_PT/filezilla.mo
-%%DATADIR%%/locales/ro_RO/filezilla.mo
-%%DATADIR%%/locales/ru/filezilla.mo
-%%DATADIR%%/locales/sk/filezilla.mo
-%%DATADIR%%/locales/sl/filezilla.mo
-%%DATADIR%%/locales/sv_SE/filezilla.mo
-%%DATADIR%%/locales/tr/filezilla.mo
-%%DATADIR%%/locales/zh_CN/filezilla.mo
-%%DATADIR%%/locales/zh_TW/filezilla.mo
 %%DATADIR%%/resources/16x16/cancel.png
 %%DATADIR%%/resources/16x16/disconnect.png
 %%DATADIR%%/resources/16x16/download.png
 %%DATADIR%%/resources/16x16/downloadadd.png
 %%DATADIR%%/resources/16x16/file.png
+%%DATADIR%%/resources/16x16/filezilla.png
 %%DATADIR%%/resources/16x16/filter.png
 %%DATADIR%%/resources/16x16/folder.png
 %%DATADIR%%/resources/16x16/folderclosed.png
@@ -61,6 +24,96 @@ bin/fzsftp
 %%DATADIR%%/resources/16x16/upload.png
 %%DATADIR%%/resources/16x16/uploadadd.png
 %%DATADIR%%/resources/32x32/file.png
+%%DATADIR%%/resources/32x32/filezilla.png
+%%DATADIR%%/resources/48x48/filezilla.png
+%%DATADIR%%/resources/blukis/16x16/ascii.png
+%%DATADIR%%/resources/blukis/16x16/auto.png
+%%DATADIR%%/resources/blukis/16x16/binary.png
+%%DATADIR%%/resources/blukis/16x16/bookmarks.png
+%%DATADIR%%/resources/blukis/16x16/cancel.png
+%%DATADIR%%/resources/blukis/16x16/compare.png
+%%DATADIR%%/resources/blukis/16x16/disconnect.png
+%%DATADIR%%/resources/blukis/16x16/download.png
+%%DATADIR%%/resources/blukis/16x16/downloadadd.png
+%%DATADIR%%/resources/blukis/16x16/file.png
+%%DATADIR%%/resources/blukis/16x16/filter.png
+%%DATADIR%%/resources/blukis/16x16/folder.png
+%%DATADIR%%/resources/blukis/16x16/folderback.png
+%%DATADIR%%/resources/blukis/16x16/folderclosed.png
+%%DATADIR%%/resources/blukis/16x16/folderup.png
+%%DATADIR%%/resources/blukis/16x16/help.png
+%%DATADIR%%/resources/blukis/16x16/localtreeview.png
+%%DATADIR%%/resources/blukis/16x16/logview.png
+%%DATADIR%%/resources/blukis/16x16/processqueue.png
+%%DATADIR%%/resources/blukis/16x16/queueview.png
+%%DATADIR%%/resources/blukis/16x16/reconnect.png
+%%DATADIR%%/resources/blukis/16x16/refresh.png
+%%DATADIR%%/resources/blukis/16x16/remotetreeview.png
+%%DATADIR%%/resources/blukis/16x16/server.png
+%%DATADIR%%/resources/blukis/16x16/showhidden.png
+%%DATADIR%%/resources/blukis/16x16/sitemanager.png
+%%DATADIR%%/resources/blukis/16x16/speedlimits.png
+%%DATADIR%%/resources/blukis/16x16/synchronize.png
+%%DATADIR%%/resources/blukis/16x16/upload.png
+%%DATADIR%%/resources/blukis/16x16/uploadadd.png
+%%DATADIR%%/resources/blukis/32x32/ascii.png
+%%DATADIR%%/resources/blukis/32x32/auto.png
+%%DATADIR%%/resources/blukis/32x32/binary.png
+%%DATADIR%%/resources/blukis/32x32/bookmarks.png
+%%DATADIR%%/resources/blukis/32x32/cancel.png
+%%DATADIR%%/resources/blukis/32x32/compare.png
+%%DATADIR%%/resources/blukis/32x32/disconnect.png
+%%DATADIR%%/resources/blukis/32x32/download.png
+%%DATADIR%%/resources/blukis/32x32/downloadadd.png
+%%DATADIR%%/resources/blukis/32x32/file.png
+%%DATADIR%%/resources/blukis/32x32/filter.png
+%%DATADIR%%/resources/blukis/32x32/folder.png
+%%DATADIR%%/resources/blukis/32x32/folderback.png
+%%DATADIR%%/resources/blukis/32x32/folderclosed.png
+%%DATADIR%%/resources/blukis/32x32/folderup.png
+%%DATADIR%%/resources/blukis/32x32/help.png
+%%DATADIR%%/resources/blukis/32x32/localtreeview.png
+%%DATADIR%%/resources/blukis/32x32/logview.png
+%%DATADIR%%/resources/blukis/32x32/processqueue.png
+%%DATADIR%%/resources/blukis/32x32/queueview.png
+%%DATADIR%%/resources/blukis/32x32/reconnect.png
+%%DATADIR%%/resources/blukis/32x32/refresh.png
+%%DATADIR%%/resources/blukis/32x32/remotetreeview.png
+%%DATADIR%%/resources/blukis/32x32/showhidden.png
+%%DATADIR%%/resources/blukis/32x32/sitemanager.png
+%%DATADIR%%/resources/blukis/32x32/speedlimits.png
+%%DATADIR%%/resources/blukis/32x32/synchronize.png
+%%DATADIR%%/resources/blukis/32x32/upload.png
+%%DATADIR%%/resources/blukis/32x32/uploadadd.png
+%%DATADIR%%/resources/blukis/48x48/ascii.png
+%%DATADIR%%/resources/blukis/48x48/auto.png
+%%DATADIR%%/resources/blukis/48x48/binary.png
+%%DATADIR%%/resources/blukis/48x48/bookmarks.png
+%%DATADIR%%/resources/blukis/48x48/cancel.png
+%%DATADIR%%/resources/blukis/48x48/compare.png
+%%DATADIR%%/resources/blukis/48x48/disconnect.png
+%%DATADIR%%/resources/blukis/48x48/download.png
+%%DATADIR%%/resources/blukis/48x48/downloadadd.png
+%%DATADIR%%/resources/blukis/48x48/file.png
+%%DATADIR%%/resources/blukis/48x48/filter.png
+%%DATADIR%%/resources/blukis/48x48/folder.png
+%%DATADIR%%/resources/blukis/48x48/folderback.png
+%%DATADIR%%/resources/blukis/48x48/folderclosed.png
+%%DATADIR%%/resources/blukis/48x48/folderup.png
+%%DATADIR%%/resources/blukis/48x48/help.png
+%%DATADIR%%/resources/blukis/48x48/localtreeview.png
+%%DATADIR%%/resources/blukis/48x48/logview.png
+%%DATADIR%%/resources/blukis/48x48/processqueue.png
+%%DATADIR%%/resources/blukis/48x48/queueview.png
+%%DATADIR%%/resources/blukis/48x48/reconnect.png
+%%DATADIR%%/resources/blukis/48x48/refresh.png
+%%DATADIR%%/resources/blukis/48x48/remotetreeview.png
+%%DATADIR%%/resources/blukis/48x48/showhidden.png
+%%DATADIR%%/resources/blukis/48x48/sitemanager.png
+%%DATADIR%%/resources/blukis/48x48/speedlimits.png
+%%DATADIR%%/resources/blukis/48x48/synchronize.png
+%%DATADIR%%/resources/blukis/48x48/upload.png
+%%DATADIR%%/resources/blukis/48x48/uploadadd.png
 %%DATADIR%%/resources/cyril/16x16/ascii.png
 %%DATADIR%%/resources/cyril/16x16/auto.png
 %%DATADIR%%/resources/cyril/16x16/binary.png
@@ -94,8 +147,7 @@ bin/fzsftp
 %%DATADIR%%/resources/down.png
 %%DATADIR%%/resources/dropdown.png
 %%DATADIR%%/resources/empty.png
-%%DATADIR%%/resources/filezilla.png
-%%DATADIR%%/resources/filezilla.xpm
+%%DATADIR%%/resources/finished.wav
 %%DATADIR%%/resources/leds.png
 %%DATADIR%%/resources/menus.xrc
 %%DATADIR%%/resources/netconfwizard.xrc
@@ -103,50 +155,70 @@ bin/fzsftp
 %%DATADIR%%/resources/themes.xml
 %%DATADIR%%/resources/toolbar.xrc
 %%DATADIR%%/resources/up.png
+share/locale/ar/filezilla.mo
+share/locale/bg/filezilla.mo
+share/locale/ca_ES/filezilla.mo
+share/locale/cs/filezilla.mo
+share/locale/da_DK/filezilla.mo
+share/locale/de/filezilla.mo
+share/locale/es/filezilla.mo
+share/locale/et_EE/filezilla.mo
+share/locale/eu/filezilla.mo
+share/locale/fi/filezilla.mo
+share/locale/fr_CA/filezilla.mo
+share/locale/fr_FR/filezilla.mo
+share/locale/gl/filezilla.mo
+share/locale/he_IL/filezilla.mo
+share/locale/hu/filezilla.mo
+share/locale/id_ID/filezilla.mo
+share/locale/it_IT/filezilla.mo
+share/locale/ja_JP/filezilla.mo
+share/locale/ka/filezilla.mo
+share/locale/km/filezilla.mo
+share/locale/ko_KR/filezilla.mo
+share/locale/ku/filezilla.mo
+share/locale/lt/filezilla.mo
+share/locale/lv/filezilla.mo
+share/locale/mk/filezilla.mo
+share/locale/nb_NO/filezilla.mo
+share/locale/ne/filezilla.mo
+share/locale/nl/filezilla.mo
+share/locale/pl_PL/filezilla.mo
+share/locale/pt_BR/filezilla.mo
+share/locale/pt_PT/filezilla.mo
+share/locale/ro_RO/filezilla.mo
+share/locale/ru/filezilla.mo
+share/locale/sk/filezilla.mo
+share/locale/sl/filezilla.mo
+share/locale/sv_SE/filezilla.mo
+share/locale/tr/filezilla.mo
+share/locale/zh_CN/filezilla.mo
+share/locale/zh_TW/filezilla.mo
+share/pixmaps/filezilla.png
+@dirrmtry share/locale/sv_SE
+@dirrmtry share/locale/ro_RO
+@dirrmtry share/locale/pl_PL
+@dirrmtry share/locale/nb_NO
+@dirrmtry share/locale/ko_KR
+@dirrmtry share/locale/km
+@dirrmtry share/locale/ja_JP
+@dirrmtry share/locale/it_IT
+@dirrmtry share/locale/id_ID
+@dirrmtry share/locale/he_IL
+@dirrmtry share/locale/fr_CA
+@dirrmtry share/locale/et_EE
+@dirrmtry share/locale/da_DK
+@dirrmtry share/locale/ca_ES
 @dirrm %%DATADIR%%/resources/cyril/16x16
 @dirrm %%DATADIR%%/resources/cyril
+@dirrm %%DATADIR%%/resources/blukis/48x48
+@dirrm %%DATADIR%%/resources/blukis/32x32
+@dirrm %%DATADIR%%/resources/blukis/16x16
+@dirrm %%DATADIR%%/resources/blukis
+@dirrm %%DATADIR%%/resources/48x48
 @dirrm %%DATADIR%%/resources/32x32
 @dirrm %%DATADIR%%/resources/16x16
 @dirrm %%DATADIR%%/resources
-@dirrm %%DATADIR%%/locales/zh_TW
-@dirrm %%DATADIR%%/locales/zh_CN
-@dirrm %%DATADIR%%/locales/tr
-@dirrm %%DATADIR%%/locales/sv_SE
-@dirrm %%DATADIR%%/locales/sl
-@dirrm %%DATADIR%%/locales/sk
-@dirrm %%DATADIR%%/locales/ru
-@dirrm %%DATADIR%%/locales/ro_RO
-@dirrm %%DATADIR%%/locales/pt_PT
-@dirrm %%DATADIR%%/locales/pt_BR
-@dirrm %%DATADIR%%/locales/pl_PL
-@dirrm %%DATADIR%%/locales/nl
-@dirrm %%DATADIR%%/locales/ne
-@dirrm %%DATADIR%%/locales/nb_NO
-@dirrm %%DATADIR%%/locales/mk
-@dirrm %%DATADIR%%/locales/lv
-@dirrm %%DATADIR%%/locales/lt
-@dirrm %%DATADIR%%/locales/ku
-@dirrm %%DATADIR%%/locales/ko_KR
-@dirrm %%DATADIR%%/locales/km
-@dirrm %%DATADIR%%/locales/ka
-@dirrm %%DATADIR%%/locales/ja_JP
-@dirrm %%DATADIR%%/locales/it_IT
-@dirrm %%DATADIR%%/locales/id_ID
-@dirrm %%DATADIR%%/locales/hu
-@dirrm %%DATADIR%%/locales/he_IL
-@dirrm %%DATADIR%%/locales/gl
-@dirrm %%DATADIR%%/locales/fr_FR
-@dirrm %%DATADIR%%/locales/fr_CA
-@dirrm %%DATADIR%%/locales/fi
-@dirrm %%DATADIR%%/locales/eu
-@dirrm %%DATADIR%%/locales/et_EE
-@dirrm %%DATADIR%%/locales/es
-@dirrm %%DATADIR%%/locales/de
-@dirrm %%DATADIR%%/locales/da_DK
-@dirrm %%DATADIR%%/locales/cs
-@dirrm %%DATADIR%%/locales/ca_ES
-@dirrm %%DATADIR%%/locales/bg
-@dirrm %%DATADIR%%/locales/ar
-@dirrm %%DATADIR%%/locales
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
