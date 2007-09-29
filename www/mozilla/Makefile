@@ -31,6 +31,7 @@ WANT_GNOME=	yes
 HAS_CONFIGURE=	yes
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin
 ALL_TARGET=	default
+WANT_PERL=	yes
 
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
@@ -69,8 +70,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch2-nsSVGLibartGlyphMetricsFT.cpp
 
 LATEST_LINK=	${MOZILLA}
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
-IGNORE=	core dumps on ${ARCH} during post-build
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
 .endif
 
 .if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
