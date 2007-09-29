@@ -36,9 +36,8 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE= FreeBSD prior to 500000 does not support uuid(3) required\
-	for building
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .include <bsd.port.post.mk>
