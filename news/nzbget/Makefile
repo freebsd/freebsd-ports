@@ -8,8 +8,7 @@
 PORTNAME=	nzbget
 PORTVERSION=	0.2.3
 CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	nzbget
+MASTER_SITES=	SF
 
 MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	A binary newsreader supporting NZB files
@@ -22,20 +21,17 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}" \
 		LOCALBASE="${LOCALBASE}"
 USE_GMAKE=	yes
-USE_GETOPT_LONG=	yes
 
 PLIST_FILES=	bin/nzbget etc/nzbget.cfg.example
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
+post-extract:
+	@${LN} -sf ${WRKSRC}/uulib/uudeview.h ${WRKSRC}/uudeview.h
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '187s/int/intptr_t/' ${WRKSRC}/ArticleDownloader.cpp
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nzbget.cfg.example ${PREFIX}/etc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
