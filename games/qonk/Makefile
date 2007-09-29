@@ -6,44 +6,25 @@
 #
 
 PORTNAME=	qonk
-DISTVERSION=	0.0.2beta1
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	games
-MASTER_SITES=	http://anthony.liekens.net/pub/files/
+MASTER_SITES=	SF
 
 MAINTAINER=	alepulver@FreeBSD.org
-COMMENT=	Small build and conquer strategy game
+COMMENT=	Small space build and conquer strategy game
 
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_SDL=	gfx sdl ttf
+USE_SDL=	sdl gfx ttf image
 
-OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
-
-.include <bsd.port.pre.mk>
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-# Fix Makefile.
-	@${REINPLACE_CMD} -e 's|g++|${CXX}| ; \
-		s|sdl-config|${SDL_CONFIG}| ; \
-		s|\(-O3\)|${CFLAGS} \1|' \
-		${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|-lSDL |`${SDL_CONFIG} --libs` |' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|settings.h|../&|; s|canvas.h|../&|' \
+		${WRKSRC}/src/ui/menusystem.cpp
 
-# Fix paths to ${DATADIR}.
-	@${REINPLACE_CMD} -e 's|\(font\.ttf\)|${DATADIR}/\1|' \
-		${WRKSRC}/main.cpp ${WRKSRC}/messages.cpp
-
-# Enable/disable compilation optimizations.
-.if defined(WITHOUT_OPTIMIZED_CFLAGS)
-	@${REINPLACE_CMD} -e 's|-O3||' \
-		${WRKSRC}/${MAKEFILE}
-.endif
-
-do-install:
-# Program.
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-# Data.
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/font.ttf ${DATADIR}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
