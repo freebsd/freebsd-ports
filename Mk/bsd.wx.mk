@@ -34,9 +34,9 @@
 #				  The available components are:
 #				  wx			- The wxWidgets library.
 #				  contrib		- The wxWidgets contributed libraries.
-#				  python		- The wxWidgets API for Python (for 2.4-2.6).
-#				  mozilla		- WxMozilla (for 2.4).
-#				  svg			- WxSVG (for 2.6).
+#				  python		- The wxWidgets API for Python.
+#				  mozilla		- WxMozilla (only for 2.4).
+#				  svg			- WxSVG (only for 2.6).
 #				  The available dependency types are:
 #				  build			- Requires component for building.
 #				  lib			- Requires component for building and running.
@@ -177,6 +177,9 @@ _WX_LIB_wx_2.8=			wx_base${_WX_UC}-2.8
 
 _WX_PORT_contrib_2.8=	x11-toolkits/wxgtk28${_WX_UCL}-contrib
 _WX_LIB_contrib_2.8=	wx_gtk2${_WX_UC}_fl-2.8
+
+_WX_PORT_python_2.8=	x11-toolkits/py-wxPython28${_WX_UCL}
+_WX_FILE_python_2.8=	${PYTHON_SITELIBDIR}/wx-2.8-gtk2${_WX_PYSUFX}/wx/__init__.py
 
 # Set _WX_SHVER_comp_ver to 0 and _WX_FILE_comp_ver for libs appropiately.
 # Set _WX_DEPTYPE_comp_ver for "python" to "run", and others to "lib".

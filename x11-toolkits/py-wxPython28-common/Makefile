@@ -5,12 +5,11 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 
 WITH_COMMON_ONLY=	yes
 
-MASTERDIR=	${.CURDIR}/../py-wxPython26
-PYDISTUTILS_NOEGGINFO=	yes
+MASTERDIR=	${.CURDIR}/../py-wxPython28
 
 PLIST=	${.CURDIR}/pkg-plist
 

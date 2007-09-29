@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	wxPython
-PORTVERSION=	2.6.3.3
-PORTREVISION?=	1
+PORTVERSION=	2.8.4.0
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxpython
@@ -29,23 +29,14 @@ PYDISTUTILS_BUILDARGS=	\
 			WX_CONFIG="${WX_CONFIG}" \
 			WXPORT="${WXPORT}"
 PYDISTUTILS_CONFIGUREARGS=	${PYDISTUTILS_BUILDARGS}
-USE_WX=		2.6
+PYDISTUTILS_NOEGGINFO=	yes
+USE_WX=		2.8
 WX_COMPS=	contrib
 WX_PREMK=	yes
 DEMO_DIR=	${PYTHONPREFIX_SITELIBDIR}/wxPython/demo
 WXPORT=		gtk2
 
-.if defined(WITH_COMMON_ONLY)
-PYDISTUTILS_NOEGGINFO=	yes
-.else
-.if defined(WITH_WXPYTHON_UNICODE)
-WX_PYTHON_DIR=	wx-${USE_WX}-${WXPORT}-unicode
-.else
-WX_PYTHON_DIR=	wx-${USE_WX}-${WXPORT}-ansi
-.endif
-PYDISTUTILS_EGGINFO=	${WX_PYTHON_DIR}/wxPython-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info \
-			wxaddons-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
-.endif
+CONFIGURE_ARGS +=	--enable-aui
 
 post-extract:
 # only keep the scripts we need
@@ -99,13 +90,12 @@ PYDISTUTILS_BUILDARGS+=	\
 			INSTALL_MULTIVERSION=1
 .else
 ## These are shared
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxversion.py:${PORTSDIR}/x11-toolkits/py-wxPython26-common
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxversion.py:${PORTSDIR}/x11-toolkits/py-wxPython28-common
 
 PYDISTUTILS_BUILDARGS+=	\
 			NO_HEADERS=1 \
 			NO_SCRIPTS=1 \
 			INSTALL_MULTIVERSION=0
-INSTALLS_SHLIB=	yes
 
 . if defined(WITH_WXPYTHON_UNICODE)
 WX_UNICODE=	yes
@@ -114,11 +104,16 @@ PKGNAMESUFFIX=	-unicode
 
 PYDISTUTILS_BUILDARGS+=	\
 			UNICODE=1
+WX_PYTHON_DIR=	wx-${WX_VERSION}-${WXPORT}-unicode
+. else
+PYDISTUTILS_BUILDARGS+=	\
+			UNICODE=0
+WX_PYTHON_DIR=wx-${WX_VERSION}-${WXPORT}-ansi
 . endif # defined(WITH_WXPYTHON_UNICODE)
 
 # plist substitutions and library dirs
 PLIST_SUB+=	WX_PYTHON_DIR=${WX_PYTHON_DIR}
-LDCONFIG_DIRS+=	%%PREFIX%%/%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/
+USE_LDCONFIG=	%%PREFIX%%/%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/
 
 .endif # !defined(WITH_COMMON_ONLY)
 
@@ -137,9 +132,19 @@ do-install:
 .endfor
 .for dir in bitmaps bmp_source data
 	@${MKDIR} ${DEMO_DIR}/${dir}
-. for glob in *
+# Be careful of locale subdirectories here
+. for glob in *.*
 	@${INSTALL_DATA} ${WRKSRC}/demo/${dir}/${glob} ${DEMO_DIR}/${dir}
 . endfor
+.endfor
+# Install this one explicitly as it's the only one without an extension that's not a directory
+	@${INSTALL_DATA} ${WRKSRC}/demo/data/showTips ${DEMO_DIR}/data
+# Install the locale directory structure
+	@${MKDIR} ${DEMO_DIR}/data/locale
+.for dir in af de es fr it
+	@${MKDIR} ${DEMO_DIR}/data/locale/${dir}
+	@${MKDIR} ${DEMO_DIR}/data/locale/${dir}/LC_MESSAGES
+	@${INSTALL_DATA} ${WRKSRC}/demo/data/locale/${dir}/LC_MESSAGES/wxpydemo.mo ${DEMO_DIR}/data/locale/${dir}/LC_MESSAGES
 .endfor
 # header files
 	@${MKDIR} ${PREFIX}/include/wx-${WX_VERSION}/wx/wxPython/i_files
