@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Curses-based user interface library for Python
 
-USE_PYTHON=	2.4
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 post-patch:
