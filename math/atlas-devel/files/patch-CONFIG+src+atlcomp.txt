@@ -1,15 +1,11 @@
---- CONFIG/src/atlcomp.txt.orig	Tue Jun 26 03:10:07 2007
-+++ CONFIG/src/atlcomp.txt	Sat Jul 21 05:50:18 2007
-@@ -40,74 +40,74 @@
+--- CONFIG/src/atlcomp.txt.orig	2007-08-11 00:57:42.000000000 +0900
++++ CONFIG/src/atlcomp.txt	2007-09-29 22:06:52.000000000 +0900
+@@ -40,46 +40,46 @@
  #
  # Core2Solo and Core2Duo
  MACH=Core2Solo,Core2Duo OS=ALL LVL=1000 COMPS=smc,dmc,skc,dkc,icc
 -   'gcc' '-fomit-frame-pointer -mfpmath=sse -msse3 -O2'
 +   '%%CC%%' '-fomit-frame-pointer -mfpmath=sse -msse3 -O2'
- # PPRO,PII,PIII,P4,P4E,K7,HAMMER
- MACH=PPRO,PII,PIII,P4,P4E,K7,HAMMER OS=ALL LVL=2000 COMPS=smc,dmc,skc,dkc
--   'gcc32' '-fomit-frame-pointer -mfpmath=387 -O2 -falign-loops=4'
-+   '%%CC%%' '-fomit-frame-pointer -mfpmath=387 -O2 -falign-loops=4'
  # PPRO,PII,PIII,P4,P4E,K7,HAMMER
  MACH=PPRO,PII,PIII,P4,P4E,K7,HAMMER OS=ALL LVL=1000 COMPS=smc,dmc,skc,dkc,icc
 -   'gcc' '-fomit-frame-pointer -mfpmath=387 -O2 -falign-loops=4'
@@ -63,39 +59,45 @@
 -   'gcc' '-O2 -mips64 -march=5kf -mtune=5kf -fno-schedule-insns -fschedule-insns2 -fno-peephole -fno-peephole2'
 +   '%%CC%%' '-O2 -mips64 -march=5kf -mtune=5kf -fno-schedule-insns -fschedule-insns2 -fno-peephole -fno-peephole2'
  #
- # OS X / PowerPC970
+ # OS X / PowerPC970; the
+ # The flags -fno-schedule-insns -fno-rerun-loop-opt are a workaround for
+@@ -87,19 +87,19 @@
+ # performance by removing them (for all PowerPC platforms)
  #
  MACH=PPCG5 OS=OSX LVL=1001 COMPS=icc,smc,dmc,skc,dkc,xcc
 -   'gcc' '-mpowerpc64 -maltivec -mabi=altivec -mcpu=970 -mtune=970 -faltivec -O3'
 +   '%%CC%%' '-mpowerpc64 -maltivec -mabi=altivec -mcpu=970 -mtune=970 -faltivec -O3'
  MACH=PPCG5 OS=OSX LVL=1010 COMPS=icc,smc,dmc,skc,dkc,xcc
--   'gcc' '-mpowerpc64 -maltivec -mabi=altivec -mcpu=970 -mtune=970 -faltivec -force_cpusubtype_ALL -O3'
-+   '%%CC%%' '-mpowerpc64 -maltivec -mabi=altivec -mcpu=970 -mtune=970 -faltivec -force_cpusubtype_ALL -O3'
+-   'gcc' '-mpowerpc64 -maltivec -mabi=altivec -mcpu=970 -mtune=970 -faltivec -force_cpusubtype_ALL -O3 -fno-schedule-insns -fno-rerun-loop-opt'
++   '%%CC%%' '-mpowerpc64 -maltivec -mabi=altivec -mcpu=970 -mtune=970 -faltivec -force_cpusubtype_ALL -O3 -fno-schedule-insns -fno-rerun-loop-opt'
  MACH=PPCG5 OS=ALL LVL=1000 COMPS=icc,smc,dmc,skc,dkc,xcc
 -   'gcc' '-mpowerpc64 -maltivec -mabi=altivec -mcpu=970 -mtune=970 -O3'
 +   '%%CC%%' '-mpowerpc64 -maltivec -mabi=altivec -mcpu=970 -mtune=970 -O3'
  MACH=POWER5 OS=ALL LVL=1010 COMPS=icc,smc,dmc,skc,dkc,xcc
--   'gcc' '-mcpu=power5 -mtune=power5 -O3'
-+   '%%CC%%' '-mcpu=power5 -mtune=power5 -O3'
+-   'gcc' '-mcpu=power5 -mtune=power5 -O3 -fno-schedule-insns -fno-rerun-loop-opt'
++   '%%CC%%' '-mcpu=power5 -mtune=power5 -O3 -fno-schedule-insns -fno-rerun-loop-opt'
  MACH=POWER5 OS=ALL LVL=1010 COMPS=f77
 -   'xlf' '-qtune=pwr5 -qarch=pwr5 -O3 -qmaxmem=-1 -qfloat=hsflt'
 +   '%%FC%%' '-qtune=pwr5 -qarch=pwr5 -O3 -qmaxmem=-1 -qfloat=hsflt'
- MACH=POWER4 OS=ALL LVL=1010 COMPS=icc,smc,dmc,skc,dkc,xcc
--   'gcc' '-mcpu=power4 -mtune=power4 -O3'
-+   '%%CC%%' '-mcpu=power4 -mtune=power4 -O3'
+ MACH=POWER4 OS=ALL LVL=1010 COMPS=icc,dmc,smc,dkc,skc,xcc
+-   'gcc' '-mcpu=power4 -mtune=power4 -O3 -fno-schedule-insns -fno-rerun-loop-opt'
++   '%%CC%%' '-mcpu=power4 -mtune=power4 -O3 -fno-schedule-insns -fno-rerun-loop-opt'
  MACH=POWER4 OS=ALL LVL=1010 COMPS=f77
--   'xlf' '-qtune=pwr5 -qarch=pwr5 -O3 -qmaxmem=-1 -qfloat=hsflt'
-+   '%%FC%%' '-qtune=pwr5 -qarch=pwr5 -O3 -qmaxmem=-1 -qfloat=hsflt'
+-   'xlf' '-qtune=pwr4 -qarch=pwr4 -O3 -qmaxmem=-1 -qfloat=hsflt'
++   '%%FC%%' '-qtune=pwr4 -qarch=pwr4 -O3 -qmaxmem=-1 -qfloat=hsflt'
  #
+ # Windows defaults ; need to make SSE/SSE2 arch dep.
+ #
+@@ -117,10 +117,10 @@
  # Generic defaults
  #
- MACH=ALL OS=ALL LVL=0 COMPS=icc,smc,dmc,skc,dkc,xcc
+ MACH=ALL OS=ALL LVL=5 COMPS=icc,smc,dmc,skc,dkc,xcc
 -   'gcc' '-O -fomit-frame-pointer'
 +   '%%CC%%' '-O -fomit-frame-pointer'
- MACH=ALL OS=ALL LVL=2 COMPS=f77
+ MACH=ALL OS=ALL LVL=5 COMPS=f77
 -   'gfortran' '-O'
 +   '%%FC%%' '-O'
- MACH=ALL OS=ALL LVL=1 COMPS=f77
+ MACH=ALL OS=ALL LVL=4 COMPS=f77
 -   'g77' '-O'
 +   '%%FC%%' '-O'
  MACH=ALL OS=ALL LVL=0 COMPS=f77

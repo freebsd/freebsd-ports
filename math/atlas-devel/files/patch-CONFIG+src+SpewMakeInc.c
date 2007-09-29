@@ -1,6 +1,6 @@
---- CONFIG/src/SpewMakeInc.c.orig	Sat Jan  6 13:57:34 2007
-+++ CONFIG/src/SpewMakeInc.c	Sat Jan  6 13:58:21 2007
-@@ -582,13 +582,13 @@
+--- CONFIG/src/SpewMakeInc.c.orig	2007-08-11 00:57:42.000000000 +0900
++++ CONFIG/src/SpewMakeInc.c	2007-09-29 22:03:26.000000000 +0900
+@@ -665,13 +665,13 @@
     fprintf(fpout, "#  ------------------------------------\n");
     fprintf(fpout, "#  Reference and system libraries\n");
     fprintf(fpout, "#  ------------------------------------\n");
@@ -13,8 +13,8 @@
     if (flapack) fprintf(fpout, "%s", flapack);
     fprintf(fpout, "\n");
     if (THREADS)
--      fprintf(fpout, "   LIBS = -lpthread -lm\n\n");
-+      fprintf(fpout, "   LIBS = %%PTHREAD_LIBS%% -lm\n\n");
+-      fprintf(fpout, "   LIBS = -lpthread");
++      fprintf(fpout, "   LIBS = %%PTHREAD_LIBS%%");
     else
-       fprintf(fpout, "   LIBS = -lm\n\n");
- 
+       fprintf(fpout, "   LIBS =");
+    if (!OSIsWin(OS))
