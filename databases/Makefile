@@ -46,6 +46,7 @@
     SUBDIR += erlang-mysql
     SUBDIR += erserver
     SUBDIR += evolution-data-server
+    SUBDIR += exist
     SUBDIR += fastdb
     SUBDIR += firebird-client
     SUBDIR += firebird-server
