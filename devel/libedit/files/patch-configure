@@ -1,0 +1,32 @@
+--- configure.orig	2006-11-24 18:13:57.000000000 +0100
++++ configure	2007-09-25 20:39:26.000000000 +0200
+@@ -4601,7 +4601,7 @@
+   LIB_S="libedit.so.$LIB_MAJOR"
+   LIB_S_LINK="libedit.so"
+   LIB_S_LINKS="$LIB_S $LIB_S_LINK"
+-  S_LDFLAGS="-shared"
++  S_LDFLAGS="-shared -Wl,-soname=${LIB_S_LINK}.${LIB_MAJOR}"
+ elif test "x$ABI" = "xaout" ; then
+   LIB_S="libedit.so.$LIB_MAJOR.$LIB_MINOR"
+   LIB_S_LINKS=
+@@ -4623,17 +4623,9 @@
+ 
+ if test "x$enable_readline" = "xyes" ; then
+   CCSRCS="$CCSRCS readline.c"
+-  IHDRS="$IHDRS readline/readline.h"
+-  IHDR_LINKS="readline.h readline/history.h"
+-  HDR_DIRS="$HDR_DIRS include/readline"
+-  LIB_A_LINKS="$LIB_A_LINKS libedit.a libreadline.a"
+-  if test "x$ABI" = "xelf" ; then
+-    LIB_S_LINKS="$LIB_S_LINKS $LIB_S_LINK libreadline.so"
+-  elif test "x$ABI" = "xaout" ; then
+-    LIB_S_LINKS="$LIB_S_LINKS $LIB_S libreadline.so.$LIB_MAJOR.$LIB_MINOR"
+-  elif test "x$ABI" = "xmacho" ; then
+-    LIB_S_LINKS="$LIB_S_LINKS $LIB_S_LINK libreadline.dylib"
+-  fi
++  IHDRS="$IHDRS editline/readline.h"
++  IHDR_LINKS="readline.h editline/history.h"
++  HDR_DIRS="$HDR_DIRS include/editline"
+ fi
+ 
+ case "${host}" in

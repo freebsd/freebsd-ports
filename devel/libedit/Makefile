@@ -7,6 +7,7 @@
 
 PORTNAME=	libedit
 PORTVERSION=	2.6.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.astron.com/pub/libedit/ \
 		http://www.canonware.com/download/libedit/
@@ -16,7 +17,6 @@ COMMENT=	Command line editing library
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-readline
 
 MAN3=		editline.3
 MAN5=		editrc.5
@@ -38,6 +38,9 @@ MLINKS=		editline.3 el_init.3 \
 		editline.3 history_end.3 \
 		editline.3 history.3
 MANCOMPRESSED=	no
+
+post-extract:
+	${MV} ${WRKSRC}/readline ${WRKSRC}/editline
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS -O|CFLAGS|g ; \
