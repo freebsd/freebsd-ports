@@ -19,7 +19,7 @@ COMMENT=	Ocean Acoustics and Seismic Exploration Synthesis
 WRKSRC=		${WRKDIR}/Oases_export
 
 USE_XLIB=	yes
-MAKE_ENV+=	OASES_ROOT="${WRKSRC}"
+MAKE_ENV+=	OASES_ROOT="${WRKSRC}" HOSTTYPE=FreeBSD OSTYPE=FreeBSD
 
 USE_FORTRAN=	yes
 
