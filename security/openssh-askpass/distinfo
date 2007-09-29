@@ -1,3 +1,3 @@
-MD5 (OpenSSH-askpass-1.2.2.2001.02.24.tar.gz) = 49f1d707b4cac25adc78915400d7586c
-SHA256 (OpenSSH-askpass-1.2.2.2001.02.24.tar.gz) = c1b2ad2eba808f14463b9650de735429a453fa5f0519ffdf196181302e52d687
-SIZE (OpenSSH-askpass-1.2.2.2001.02.24.tar.gz) = 25594
+MD5 (x11-ssh-askpass-1.2.4.1.tar.gz) = 8f2e41f3f7eaa8543a2440454637f3c3
+SHA256 (x11-ssh-askpass-1.2.4.1.tar.gz) = 620de3c32ae72185a2c9aeaec03af24242b9621964e38eb625afb6cdb30b8c88
+SIZE (x11-ssh-askpass-1.2.4.1.tar.gz) = 29229
