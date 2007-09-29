@@ -13390,6 +13390,9 @@ py-wxPython24	ports/x11-toolkits/py-wxPython24
 py-wxPython26	ports/x11-toolkits/py-wxPython26
 py-wxPython26-common	ports/x11-toolkits/py-wxPython26-common
 py-wxPython26-unicode	ports/x11-toolkits/py-wxPython26-unicode
+py-wxPython28	ports/x11-toolkits/py-wxPython28
+py-wxPython28-common	ports/x11-toolkits/py-wxPython28-common
+py-wxPython28-unicode	ports/x11-toolkits/py-wxPython28-unicode
 py-xdg		ports/devel/py-xdg
 py-xlib		ports/x11-toolkits/py-xlib
 py-xlwriter	ports/textproc/py-xlwriter

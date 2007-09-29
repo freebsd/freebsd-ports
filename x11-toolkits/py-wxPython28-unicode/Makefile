@@ -7,6 +7,6 @@
 
 WITH_WXPYTHON_UNICODE=	yes
 
-MASTERDIR=	${.CURDIR}/../py-wxPython26
+MASTERDIR=	${.CURDIR}/../py-wxPython28
 
 .include "${MASTERDIR}/Makefile"

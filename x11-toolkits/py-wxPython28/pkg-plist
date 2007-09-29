@@ -5,7 +5,9 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/__version__.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/__version__.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/_animate.so
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/_aui.so
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/_calendar.so
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/_combo.so
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/_controls.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/_controls.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/_controls.pyo
@@ -27,6 +29,7 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/_misc.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/_misc.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/_misc_.so
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/_richtext.so
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/_stc.so
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/_webkit.so
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/_windows.py
@@ -38,6 +41,9 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/animate.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/animate.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/animate.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/aui.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/aui.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/aui.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/build/__init__.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/build/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/build/__init__.pyo
@@ -50,6 +56,9 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/calendar.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/calendar.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/calendar.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/combo.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/combo.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/combo.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/gizmos.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/gizmos.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/gizmos.pyo
@@ -104,6 +113,18 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/anchors.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/anchors.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/anchors.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/art/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/art/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/art/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/art/flagart.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/art/flagart.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/art/flagart.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/art/img2pyartprov.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/art/img2pyartprov.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/art/img2pyartprov.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/buttonpanel.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/buttonpanel.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/buttonpanel.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/buttons.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/buttons.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/buttons.pyo
@@ -137,12 +158,24 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/colourselect.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/colourselect.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/colourselect.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/combotreebox.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/combotreebox.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/combotreebox.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/customtreectrl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/customtreectrl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/customtreectrl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/delayedresult.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/delayedresult.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/delayedresult.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/dialogs.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/dialogs.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/dialogs.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/docview.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/docview.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/docview.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/dragscroller.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/dragscroller.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/dragscroller.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/editor/README.txt
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/editor/__init__.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/editor/__init__.pyc
@@ -159,6 +192,9 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/evtmgr.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/evtmgr.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/evtmgr.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/expando.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/expando.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/expando.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/fancytext.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/fancytext.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/fancytext.pyo
@@ -168,18 +204,36 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/flashwin.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/flashwin.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/flashwin.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/flatnotebook.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/flatnotebook.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/flatnotebook.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatbar.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatbar.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatbar.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/FloatCanvas.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/FloatCanvas.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/FloatCanvas.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/GUIMode.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/GUIMode.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/GUIMode.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/NavCanvas.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/NavCanvas.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/NavCanvas.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Resources.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Resources.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Resources.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities/BBox.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities/BBox.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities/BBox.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities/BBoxTest.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities/BBoxTest.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities/BBoxTest.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities/GUI.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities/GUI.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities/GUI.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/__init__.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/__init__.pyo
@@ -213,9 +267,15 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/infoframe.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/infoframe.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/infoframe.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/inspection.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/inspection.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/inspection.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/intctrl.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/intctrl.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/intctrl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/langlistctrl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/langlistctrl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/langlistctrl.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/layoutf.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/layoutf.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/layoutf.pyo
@@ -252,12 +312,18 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/imagelist.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/imagelist.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/imagelist.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/inspection.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/inspection.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/inspection.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/listctrl.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/listctrl.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/listctrl.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/rubberband.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/rubberband.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/rubberband.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/treemixin.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/treemixin.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/treemixin.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/multisash.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/multisash.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/multisash.pyo
@@ -360,6 +426,9 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/vtk.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/vtk.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/vtk.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/wordwrap.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/wordwrap.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/wordwrap.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/wxPlotCanvas.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/wxPlotCanvas.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/wxPlotCanvas.pyo
@@ -439,6 +508,9 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/version.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/version.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/version.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/richtext.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/richtext.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/richtext.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/stc.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/stc.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/stc.pyo
@@ -516,6 +588,7 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/xrc.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/xrc.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/xrc.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython-2.8.4.0-py2.5.egg-info
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/__init__.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/__init__.pyo
@@ -801,12 +874,16 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/xrc.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/xrc.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/xrc.pyo
+%%PYTHON_SITELIBDIR%%/wxaddons-2.8.4.0-py2.5.egg-info
 %%PYTHON_SITELIBDIR%%/wxaddons/__init__.py
 %%PYTHON_SITELIBDIR%%/wxaddons/__init__.pyc
 %%PYTHON_SITELIBDIR%%/wxaddons/__init__.pyo
 %%PYTHON_SITELIBDIR%%/wxaddons/setup.py
 %%PYTHON_SITELIBDIR%%/wxaddons/setup.pyc
 %%PYTHON_SITELIBDIR%%/wxaddons/setup.pyo
+%%PYTHON_SITELIBDIR%%/wxaddons/sized_controls.py
+%%PYTHON_SITELIBDIR%%/wxaddons/sized_controls.pyc
+%%PYTHON_SITELIBDIR%%/wxaddons/sized_controls.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/wxaddons
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/tools
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/lib/mixins
@@ -820,9 +897,11 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/ogl
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/masked
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/editor
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/colourchooser
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/art
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib
