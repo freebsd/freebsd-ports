@@ -1,21 +1,22 @@
---- sysdep/freebsd/Makefile.sysdep.orig	Sat Jun 26 05:40:57 2004
-+++ sysdep/freebsd/Makefile.sysdep	Sun Dec 12 02:47:19 2004
-@@ -40,11 +40,11 @@
+--- sysdep/freebsd/Makefile.sysdep.orig	Sat Jun 26 00:40:57 2004
++++ sysdep/freebsd/Makefile.sysdep	Sat Sep 29 16:36:41 2007
+@@ -40,12 +40,11 @@
  LIBSYSDEPDIR=	${.CURDIR}/sysdep/common/libsysdep
  .endif
  
 -LDADD+=		-lgmp ${LIBSYSDEPDIR}/libsysdep.a -lipsec -L/usr/local/lib
-+LDADD+=		${LIBSYSDEPDIR}/libsysdep.a -lipsec -L/usr/local/lib
++LDADD+=		${LIBSYSDEPDIR}/libsysdep.a -lipsec -L${OPENSSLLIB}
  DPADD+=		${LIBGMP} ${LIBSYSDEPDIR}/libsysdep.a
  
 -CFLAGS+=	-DHAVE_GETIFADDRS \
 -		-I${.CURDIR}/sysdep/common -I/usr/include \
+-		-I/usr/local/include -I/usr/local/include/openssl
 +CFLAGS+=	-DHAVE_GETIFADDRS -DHAVE_PCAP \
-+		-I${.CURDIR}/sysdep/common -I/usr/include -I/usr/include/openssl \
- 		-I/usr/local/include -I/usr/local/include/openssl
++		-I${.CURDIR}/sysdep/common -I${OPENSSLINC} -I${OPENSSLINC}/openssl
  
  IPSEC_SRCS=	pf_key_v2.c
-@@ -58,9 +58,6 @@
+ IPSEC_CFLAGS=	-DUSE_PF_KEY_V2
+@@ -58,9 +57,6 @@
  GENERATED+=	sysdep-target
  sysdep-target:
  		cd ${.CURDIR}/sysdep/common/libsysdep; ${MAKE} ${.MAKEFLAGS}
