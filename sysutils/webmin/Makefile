@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.370
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
@@ -50,13 +51,17 @@ post-patch:
 		spam/config-freebsd squid/config-freebsd \
 		stunnel/config usermin/config webalizer/config-freebsd \
 		wuftpd/config-freebsd xinetd/config-freebsd
-	@${REINPLACE_CMD} -e "s=%%PREFIX%%=${PREFIX}=" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/${file}
 .endfor
-	@${REINPLACE_CMD} -e "s=%%PREFIX%%=${PREFIX}=" ${WRKSRC}/setup.sh
+	@${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/setup.sh
 	@${FIND} ${WRKSRC} -name "*.cgi" -print \
 		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@"
+	@${FIND} ${WRKSRC} -name "*.cgi" -print \
+		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/bin/perl@#!${PERL}@"
 	@${FIND} ${WRKSRC} -name "*.pl" -print \
 		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@"
+	@${FIND} ${WRKSRC} -name "*.pl" -print \
+		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/bin/perl@#!${PERL}@"
 	@${FIND} ${WRKSRC} -name "*.orig" -print | ${XARGS} ${RM}
 	@${FIND} ${WRKSRC} -name "*.bak" -print | ${XARGS} ${RM}
 
