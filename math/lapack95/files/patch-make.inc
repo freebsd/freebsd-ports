@@ -1,5 +1,5 @@
---- make.inc.orig	Thu Nov 30 22:18:37 2000
-+++ make.inc	Thu Sep  6 11:57:35 2007
+--- make.inc	2000-11-30 22:18:37.000000000 +0900
++++ make.inc	2007-09-29 14:02:41.000000000 +0900
 @@ -3,8 +3,8 @@
  #     UNI-C, Denmark; Univ. of Tennessee, USA; NAG Ltd., UK
  #     August 5, 2000
@@ -29,14 +29,15 @@
  
 -LAPACK95 = ../lapack95.a
 -LAPACK77 = $(LAPACK_PATH)/lapack.a
+-TMG77    = $(LAPACK_PATH)/tmglib.a
+-BLAS     = $(LAPACK_PATH)/blas.a
 +LAPACK95 = -llapack95
 +LAPACK77 = %%LAPACK%%
- TMG77    = $(LAPACK_PATH)/tmglib.a
--BLAS     = $(LAPACK_PATH)/blas.a
++TMG77    = -ltmglib
 +BLAS     = %%BLAS%%
  
 -LIBS     = $(LAPACK95) $(TMG77) $(LAPACK77) $(BLAS)
-+LIBS     = $(LAPACK_PATH) $(LAPACK95) $(LAPACK77) $(BLAS)
++LIBS     = $(LAPACK_PATH) $(LAPACK95) $(LAPACK77) $(TMG77) $(BLAS)
  SUF      = f90
  
  XX = 'rm' -f $@; \
