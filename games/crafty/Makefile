@@ -55,6 +55,8 @@ OPT=		-DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
 
 .if ${ARCH} == "i386"
 OPT+=		-DINLINE32
+.else
+BROKEN=		does not install on 64-bit architectures
 .endif
 
 MAKE_ENV+=	opt="${OPT}" target=${OPSYS} CXFLAGS="${CXXFLAGS}"
