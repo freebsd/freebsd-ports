@@ -24,6 +24,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 USE_ICONV=	yes
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 
 .if !defined(WITHOUT_X11)
@@ -61,8 +62,6 @@ PLIST_SUB+=	X11=""
 .if ${OSVERSION} < 500000
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-uim_editline.c
 .endif
-
-USE_PERL5_BUILD=yes
 
 .for _x in x xft gtk2 qt gnome2 anthy canna m17nlib prime scim dict
 .if ${CONFIGURE_ARGS:M--with-${_x}} == ""
