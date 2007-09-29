@@ -52,6 +52,10 @@ OPTIONS=	XFT	"Enable Xft support" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 ##
 ## Additional Options
 ##
