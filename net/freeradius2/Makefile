@@ -20,6 +20,7 @@ MAINTAINER?=	david@wood2.org.uk
 COMMENT?=	A free RADIUS server implementation
 
 USE_BZIP2=	yes
+WANT_PERL=	yes
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 

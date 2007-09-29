@@ -20,6 +20,7 @@ USE_BZIP2=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-module
+WANT_PERL=	yes
 
 MAN1=		irssi.1
 

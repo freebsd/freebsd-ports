@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--disable-libtool --prefix=${PREFIX} \
 		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP}
 INSTALLS_SHLIB=	yes
+WANT_PERL=	yes
 
 OPTIONS=	GNUTAR "use GNU tar" on
 

@@ -54,6 +54,7 @@ MLINKS+=	vim.1 gvim.1	vim.1 gview.1	vimdiff.1 gvimdiff.1 \
 .endif
 
 WANT_GNOME=	yes
+WANT_PERL=	yes
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
