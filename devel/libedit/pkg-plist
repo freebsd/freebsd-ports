@@ -1,4 +1,7 @@
+include/editline/history.h
+include/editline/readline.h
 include/histedit.h
 lib/libedit.a
 lib/libedit.so.6
 lib/libedit.so
+@dirrm include/editline
