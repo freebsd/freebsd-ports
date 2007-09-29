@@ -797,6 +797,7 @@
     SUBDIR += p5-Handel
     SUBDIR += p5-IMDB-Film
     SUBDIR += p5-IMDB-Movie
+    SUBDIR += p5-Image-Delivery
     SUBDIR += p5-Jemplate
     SUBDIR += p5-Jifty
     SUBDIR += p5-Kwiki

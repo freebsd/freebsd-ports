@@ -1,0 +1,13 @@
+Image::Delivery - Efficient transformation and delivery of web images
+
+Many web applications generate or otherwise deliver graphics as part
+of their interface. Getting the delivery of these images right is
+tricky, and developers usually need to make trade-offs in order
+to get a usable mechanism.
+
+Image::Delivery is an extremely sophisticated module for delivering
+these generated images. It is designed to be powerful, flexible,
+extensible, scalable, secure, stable and correct, and use a minimum
+of resources.
+
+WWW: http://search.cpan.org/dist/Image-Delivery/
