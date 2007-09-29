@@ -16,6 +16,12 @@ MASTER_SITE_SUBDIR=	kuriyama
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Generates groff and HTML from linuxdoc and docbook SGML documents
 
+USE_PERL5_RUN=	yes
+
+MAN1=		instant.1 sgmlfmt.1
+MAN5=		transpec.5
+MANCOMPRESSED=	yes
+
 # There are two ports that satisfy the nsgmls requirement.
 # Jade is preferred.
 
@@ -32,12 +38,6 @@ RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
 .endif
 RUN_DEPENDS+=	${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
 		${PREFIX}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
-
-USE_PERL5_RUN=	yes
-
-MAN1=		instant.1 sgmlfmt.1
-MAN5=		transpec.5
-MANCOMPRESSED=	yes
 
 .if defined(WITH_OPENJADE)
 post-patch:

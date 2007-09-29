@@ -24,6 +24,11 @@ COMMENT=	A generic proof assistant
 
 OPTIONS=	SMLNJ "Use SML/NJ (devel) instead of the faster Poly/ML" Off
 
+USE_PERL5=	yes
+RUN_DEPENDS+=	proofgeneral:${PORTSDIR}/math/proofgeneral
+
+DOCFILES=	Contents *.pdf *.eps *.ps *.dvi
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SMLNJ)
@@ -38,11 +43,6 @@ ML_OPTIONS=	-H 500
 ML_DBASE=	""
 ML_PLATFORM=	""
 .endif
-
-USE_PERL5=	yes
-RUN_DEPENDS+=	proofgeneral:${PORTSDIR}/math/proofgeneral
-
-DOCFILES=	Contents *.pdf *.eps *.ps *.dvi
 
 .if defined(WITH_SMLNJ)
 PLIST_SUB=	HEAPSUBDIR=${ML_SYSTEM}_${ML_PLATFORM}
