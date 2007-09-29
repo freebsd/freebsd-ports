@@ -19,7 +19,9 @@ RUN_DEPENDS=	getdp:${PORTSDIR}/science/getdp
 LIB_DEPENDS=	gsl.10:${PORTSDIR}/math/gsl \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-USE_ZIP=	yes
+.if defined(BATCH)
+IGNORE=		fails to build on the cluster
+.endif
 
 .if !defined(WITHOUT_TRIANGLE)
 NO_CDROM=		Triangle must not be sold for profit
