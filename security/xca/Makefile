@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mark@foster.cc
 COMMENT=	Graphical certification authority
 
+BROKEN=		Does not compile
+
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_QT_VER=	4
@@ -24,10 +26,6 @@ MAN1=		xca.1
 MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700019
-BROKEN=		Does not compile on FreeBSD >= 7.0
-.endif
 
 post-patch:
 	@echo "CPPFLAGS=-I. -I.. -I${WRKSRC}/ui -I/usr/X11R6/include -I${QT_PREFIX}/include/Qt" > ${WRKSRC}/Local.mak
