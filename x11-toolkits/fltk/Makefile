@@ -50,12 +50,14 @@ MAN3=		fltk.3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000 && defined(WITH_THREADS)
-IGNORE=	does not work on FreeBSD 4.x, because threading is not activated
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
 .endif
 
 pre-everything::
-.if !defined(WITH_THREADS) && ${OSVERSION} > 500000
+.if !defined(WITH_THREADS)
 	@${ECHO_MSG} "===>  You can enable threads support by defining WITH_THREADS"
 	@${ECHO_MSG} "===>"
 .endif
