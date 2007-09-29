@@ -24,18 +24,21 @@ NO_BUILD=	yes
 NO_PACKAGE=	Package will be 560MB; set FORCE_PACKAGE if you really want it
 WRKSRC=		${WRKDIR}/q3ut4
 
-DATADIR=	${Q3DIR}/q3ut4
+DATADIR=	${Q3DIR}
+
+.include <bsd.port.pre.mk>
+
+Q3DIR!=		cd ${PORTSDIR}/games/quake3-data && ${MAKE} -V Q3DIR
 
 post-extract:
 	@cd ${WRKSRC} && ${MV} readme40.txt ..
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${CP} -r ${WRKSRC}/* ${DATADIR}
+	${MKDIR} ${DATADIR}/q3ut4
+	${CP} -r ${WRKSRC}/* ${DATADIR}/q3ut4
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/readme40.txt ${DOCSDIR}
 .endif
 
-.include "${.CURDIR}/../quake3-data/Makefile.include"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
