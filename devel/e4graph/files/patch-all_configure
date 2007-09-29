@@ -1,0 +1,11 @@
+--- configure.orig	Fri Mar  5 20:56:14 2004
++++ configure	Fri Sep 28 17:25:04 2007
+@@ -4477,7 +4477,7 @@
+     TCL_LIB=${TCL_LIB_SPEC}
+     TCL_INC=${TCL_INCLUDE_SPEC}
+     TCL_STB=${TCL_STUB_LIB_SPEC}
+-    TCL_PKG=${TCL_PACKAGE_PATH}/tcl${TCL_VERSION}
++    TCL_PKG=${TCL_PREFIX}/lib/tcl${TCL_VERSION}
+     echo "$ac_t""${TCL_INCLUDE_SPEC}" 1>&6
+ else
+     TCL_LIB="# No Tcl library found"
