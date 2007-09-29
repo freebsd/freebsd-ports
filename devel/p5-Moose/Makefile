@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
 PKGNAMEPREFIX=	p5-
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	\
 	p5-Sub-Name>=0.02:${PORTSDIR}/devel/p5-Sub-Name \
 	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter
 
-PERL_MODBUILD=	5.8.0+
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	Moose.3 \
 	Moose::Cookbook.3 \
@@ -33,6 +33,7 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Recipe5.3 \
 	Moose::Cookbook::Recipe6.3 \
 	Moose::Cookbook::Recipe7.3 \
+	Moose::Cookbook::Snack::Types.3 \
 	Moose::Cookbook::WTF.3 \
 	Moose::Meta::Attribute.3 \
 	Moose::Meta::Class.3 \
@@ -46,7 +47,10 @@ MAN3=	Moose.3 \
 	Moose::Meta::Role::Method.3 \
 	Moose::Meta::Role::Method::Required.3 \
 	Moose::Meta::TypeCoercion.3 \
+	Moose::Meta::TypeCoercion::Union.3 \
 	Moose::Meta::TypeConstraint.3 \
+	Moose::Meta::TypeConstraint::Parameterized.3 \
+	Moose::Meta::TypeConstraint::Registry.3 \
 	Moose::Meta::TypeConstraint::Union.3 \
 	Moose::Object.3 \
 	Moose::Role.3 \
@@ -56,6 +60,6 @@ MAN3=	Moose.3 \
 	Test::Moose.3
 
 post-extract:
-	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Build.PL
+	@${PERL} -i -ne 'print unless m,build_requires,' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
