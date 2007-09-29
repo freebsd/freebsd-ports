@@ -65,6 +65,7 @@ CLEAN_FILES=	scripts/apache2-httpd.include.conf scripts/suse* \
 		scripts/redhat* scripts/DBUpdate*
 
 USE_APACHE=	YES
+USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
 
