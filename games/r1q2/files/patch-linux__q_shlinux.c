@@ -1,6 +1,6 @@
---- linux/q_shlinux.c.orig	Wed Jan 10 19:46:44 2007
-+++ linux/q_shlinux.c	Wed Jan 10 19:47:36 2007
-@@ -12,25 +12,23 @@
+--- linux/q_shlinux.c.orig	Fri Sep 28 21:38:18 2007
++++ linux/q_shlinux.c	Fri Sep 28 21:39:42 2007
+@@ -16,6 +16,10 @@
  
  #include "../qcommon/qcommon.h"
  
@@ -11,27 +11,7 @@
  //===============================================================================
  
  byte *membase;
- int maxhunksize;
- int curhunksize;
- 
--#ifdef __FreeBSD__
--#define MMAP_ANON MAP_ANON
--#else
--#define MMAP_ANON MAP_ANONYMOUS
--#endif
--
- void *Hunk_Begin (int maxsize)
- {
- 	// reserve a huge chunk of memory, but don't commit any yet
- 	maxhunksize = maxsize + sizeof(int);
- 	curhunksize = 0;
- 	membase = mmap(0, maxhunksize, PROT_READ|PROT_WRITE, 
--		MAP_PRIVATE|MMAP_ANON, -1, 0);
-+		MAP_PRIVATE|MAP_ANON, -1, 0);
- 	if (membase == NULL || membase == (byte *)-1)
- 		Sys_Error("unable to virtual allocate %d bytes", maxsize);
- 
-@@ -54,14 +52,29 @@
+@@ -58,14 +62,29 @@
  
  int Hunk_End (void)
  {
@@ -63,7 +43,7 @@
  	
  	return curhunksize;
  }
-@@ -107,7 +120,9 @@
+@@ -111,7 +130,9 @@
  
  void Sys_DebugBreak (void)
  {
