@@ -3246,3 +3246,21 @@ print/ghostscript-afpl|print/ghostscript-gpl|2007-09-24|Replaced by print/ghosts
 print/ghostscript-afpl-nox11|print/ghostscript-gpl-nox11|2007-09-24|Replaced by print/ghostscript-gpl-nox11
 misc/mango||2007-09-27|Has expired: Depends on broken package qextmdi
 lang/f2py||2007-09-27|Has expired: Replaced by py-numpy
+games/halflifeserver||2007-09-29|Has expired: unfetchable
+games/hlserver-admin||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-cs||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-dod||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-esf||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-existence||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-fa||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-flf||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-glbwar||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-heroes||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-ns||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-opfor||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-psychostats||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-si||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-ts||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-vs||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-wasteland||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+games/hlserver-wizwars||2007-09-29|Has expired: dependency of removed port games/halflifeserver
