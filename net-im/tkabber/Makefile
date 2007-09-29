@@ -14,11 +14,8 @@ MASTER_SITES=	http://www.jabber.ru/files/tkabber/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk based jabber client
 
-TCLLIBVER!=	${MAKE} -C ${.CURDIR}/../../devel/tcllib -V PORTVERSION 2>/dev/null \
-		|| (cd ${.CURDIR}/../../devel/tcllib; ${MAKE} -V PORTVERSION)
-
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		${LOCALBASE}/lib/tcllib${TCLLIBVER}/pkgIndex.tcl:${PORTSDIR}/devel/tcllib \
+		dtplite:${PORTSDIR}/devel/tcllib \
 		${LOCALBASE}/lib/tls/pkgIndex.tcl:${PORTSDIR}/devel/tcltls \
 		${LOCALBASE}/lib/bwidget/pkgIndex.tcl:${PORTSDIR}/x11-toolkits/bwidget
 
