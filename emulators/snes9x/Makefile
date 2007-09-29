@@ -44,6 +44,10 @@ OPTIONS=	DEBUG	"Enable debug information"	off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	controls.txt control-inputs.txt  changes.txt hardware.txt \
 		porting.html problems.txt snapshots.txt snes9x.conf.default \
