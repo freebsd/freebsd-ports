@@ -30,6 +30,19 @@ BUILD_DEPENDS+=	${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+HAS_CONFIGURE=	yes
+USE_PERL5=	yes
+CONFIGURE_ARGS+=--prefix=${PREFIX}/sympa \
+		--with-confdir=${PREFIX}/etc \
+		--with-initdir=${PREFIX}/etc/rc.d \
+		--with-etcdir=${PREFIX}/sympa/bin/etc \
+		--with-iconsdir=${PREFIX}/www/icons \
+		${CONFIGURE_TARGET}
+CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
+MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
+
+MAN8=		alias_manager.8 archived.8 bounced.8 sympa.8
+
 CONFLICTS=	sympa-5*
 
 DB_TYPE=
@@ -60,19 +73,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-
 .endif
 .endif
 .endif
-
-HAS_CONFIGURE=	yes
-USE_PERL5=	yes
-CONFIGURE_ARGS+=--prefix=${PREFIX}/sympa \
-		--with-confdir=${PREFIX}/etc \
-		--with-initdir=${PREFIX}/etc/rc.d \
-		--with-etcdir=${PREFIX}/sympa/bin/etc \
-		--with-iconsdir=${PREFIX}/www/icons \
-		${CONFIGURE_TARGET}
-CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
-MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
-
-MAN8=		alias_manager.8 archived.8 bounced.8 sympa.8
 
 pre-fetch:
 	@${ECHO} ""
