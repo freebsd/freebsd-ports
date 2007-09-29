@@ -124,7 +124,7 @@ PLIST_SUB+=		HELPBROWSER="@comment "
 .endif
 
 .if defined(WITH_DBUS)
-LIB_DEPENDS+=		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+LIB_DEPENDS+=		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=	--with-dbus
 .else
 CONFIGURE_ARGS+=	--without-dbus
