@@ -1,5 +1,5 @@
---- system.mk.orig	Fri Jun  8 18:57:05 2007
-+++ system.mk	Mon Jun 11 10:06:38 2007
+--- system.mk.orig	2007-09-30 11:41:40.000000000 +0200
++++ system.mk	2007-09-30 11:46:18.000000000 +0200
 @@ -7,7 +7,7 @@
  ## Installation paths
  ##
@@ -78,7 +78,7 @@
  # If you're on an archaic system (such as relatively recent *BSD releases)
  # without even dummy multibyte/widechar and localisation support, you may 
 @@ -112,18 +112,18 @@
- #DEFINES += -DCF_NO_LOCALE
+ #DEFINES += -DCF_NO_LOCALE -DCF_NO_GETTEXT
  
  # On some other systems you may something like this:
 -#EXTRA_LIBS += -lintl
@@ -104,15 +104,15 @@
  	-Wtrigraphs -Wformat -Wchar-subscripts \
  	-Wparentheses -pedantic -Wuninitialized
  
--CFLAGS=-g -Os $(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
--LDFLAGS=-g -Os $(EXTRA_LIBS) $(LIBS)
+-CFLAGS=-Os $(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
+-LDFLAGS=-Os $(EXTRA_LIBS) $(LIBS)
 +CFLAGS+=$(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
 +LDFLAGS+=$(EXTRA_LIBS) $(LIBS)
  EXPORT_DYNAMIC=-Xlinker --export-dynamic
  
  # The following options are mainly for development use and can be used
 @@ -146,7 +146,7 @@
- #POSIX_SOURCE=-D_POSIX_SOURCE
+ #POSIX_SOURCE=-D_POSIX_C_SOURCE=200112L
  
  # Most systems
 -#XOPEN_SOURCE=-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED
