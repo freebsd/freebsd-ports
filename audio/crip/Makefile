@@ -27,6 +27,7 @@ PORTDOCS=	Changelog README criprc_example
 .endif
 
 NO_BUILD=	yes
+USE_PERL5=	yes
 
 pre-fetch:
 .if !defined (WITH_SOX)
