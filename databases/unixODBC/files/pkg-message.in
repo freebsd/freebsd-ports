@@ -1,0 +1,9 @@
+==============================================================================
+
+If installing for MySQL, then copy the example configuration file to your home
+directory as ".odbc.ini", and modify to define specific MySQL database(s). The
+file is located at "%%EXAMPLESDIR%%/MySQL/iodbc.ini".
+
+This is required to use MySQL databases from OpenOffice.org, for example.
+
+==============================================================================

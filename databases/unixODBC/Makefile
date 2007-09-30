@@ -7,14 +7,14 @@
 
 PORTNAME=	unixODBC
 PORTVERSION=	2.2.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ODBC library suite for Unix
 
-CONFLICTS=	libiodbc-*
+CONFLICTS=	libiodbc-[0-9]*
 
 USE_GNOME=	gnomehack gnometarget
 USE_ICONV=	yes
@@ -22,6 +22,8 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-static --enable-shared \
 		--with-libiconv-prefix=${LOCALBASE}
 USE_LDCONFIG=	yes
+
+SUB_FILES=	pkg-message
 
 .if defined(WITH_GUI)
 USE_QT_VER=	3
@@ -31,21 +33,22 @@ CONFIGURE_ENV=	MOC="${MOC}" \
 		QTLIB="${QT_PREFIX}/lib" \
 		USER_INCLUDES="${QTCPPFLAGS}" \
 		USER_LDFLAGS="${QTCFGLIBS}"
-CONFIGURE_ARGS+=	--enable-gui
+CONFIGURE_ARGS+=--enable-gui
 PLIST_SUB=	GUI:=""
 .else
-CONFIGURE_ARGS+=	--disable-gui
+CONFIGURE_ARGS+=--disable-gui
 PLIST_SUB=	GUI:="@comment "
 .endif
 
 .if !defined(WITHOUT_THREADS) || defined(WITH_GUI)
-CONFIGURE_ARGS+=	--enable-threads=yes
+CONFIGURE_ARGS+=--enable-threads=yes
 .else
-CONFIGURE_ARGS+=	--enable-threads=no
+CONFIGURE_ARGS+=--enable-threads=no
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,@MSQL_TRUE@lib_LTLIBRARIES,#@MSQL_TRUE@lib_LTLIBRARIES,' ${WRKSRC}/Drivers/MiniSQL/Makefile.in
+	@${REINPLACE_CMD} -e 's,@MSQL_TRUE@lib_LTLIBRARIES,#&,' \
+		${WRKSRC}/Drivers/MiniSQL/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -63,5 +66,9 @@ post-install:
 		${CP} -p ${PREFIX}/etc/${conffile}.sample ${PREFIX}/etc/${conffile} ; \
 	fi
 .endfor
+	@${MKDIR} ${EXAMPLESDIR}/MySQL
+	cd ${WRKSRC}/Drivers/MySQL && ${INSTALL_DATA} iodbc.ini odbc.ini \
+		${EXAMPLESDIR}/MySQL
+	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>
