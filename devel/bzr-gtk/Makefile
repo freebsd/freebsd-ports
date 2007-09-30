@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bzr-gtk
-PORTVERSION=	0.90.0
+PORTVERSION=	0.91.0
 CATEGORIES=	devel
-MASTER_SITES=	http://samba.org/~jelmer/bzr/
+MASTER_SITES=	http://phanatic.hu/bzr-gtk/
 
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	GTK interface to Bazaar-NG VCS
