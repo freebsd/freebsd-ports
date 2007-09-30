@@ -639,8 +639,6 @@ autocd		ports/audio/autocd
 autoconf-archive	ports/devel/autoconf-archive
 autoconf-wrapper	ports/devel/autoconf-wrapper
 autoconf213	ports/devel/autoconf213
-autoconf253	ports/devel/autoconf253
-autoconf259	ports/devel/autoconf259
 autoconf261	ports/devel/autoconf261
 autocutsel	ports/deskutils/autocutsel
 autodia		ports/devel/autodia

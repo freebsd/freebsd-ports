@@ -3264,3 +3264,5 @@ games/hlserver-ts||2007-09-29|Has expired: dependency of removed port games/half
 games/hlserver-vs||2007-09-29|Has expired: dependency of removed port games/halflifeserver
 games/hlserver-wasteland||2007-09-29|Has expired: dependency of removed port games/halflifeserver
 games/hlserver-wizwars||2007-09-29|Has expired: dependency of removed port games/halflifeserver
+devel/autoconf253|devel/autoconf261|2007-09-29|Autotools cleanup
+devel/autoconf259|devel/autoconf261|2007-09-29|Autotools cleanup
