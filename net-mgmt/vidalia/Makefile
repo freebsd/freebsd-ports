@@ -43,6 +43,12 @@ OPTIONS=	TOR_DEVEL	"Depend on tor-devel"	On \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+.if ${ARCH} == "amd64"
+BROKEN=	Does not compile on amd64 5, probably gcc-related
+.endif
+.endif
+
 .if defined(WITH_TOR_DEVEL)
 .if defined(WITH_TOR)
 IGNORE=		cannot depend on tor and tor-devel at the same time
