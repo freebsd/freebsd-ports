@@ -25,6 +25,7 @@ RESTRICTED=	Free for personal use only
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
+USE_PERL5=	yes
 
 MAN1=		f-prot.1
 
