@@ -115,6 +115,8 @@ lib/libtemplate.a
 lib/libtemplate.la
 lib/libtemplate.so
 lib/libtemplate.so.1
+%%EXAMPLESDIR%%/MySQL/iodbc.ini
+%%EXAMPLESDIR%%/MySQL/odbc.ini
 %%PORTDOCS%%%%DOCSDIR%%/AdministratorManual/index.html
 %%PORTDOCS%%%%DOCSDIR%%/AdministratorManual/odbcinst.html
 %%PORTDOCS%%%%DOCSDIR%%/AdministratorManual/php3.html
@@ -171,5 +173,7 @@ lib/libtemplate.so.1
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ProgrammerManual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/AdministratorManual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%/MySQL
+@dirrm %%EXAMPLESDIR%%
 @exec mkdir -p %D/etc/ODBCDataSources 2>/dev/null || true
 @dirrmtry etc/ODBCDataSources
