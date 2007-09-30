@@ -25,7 +25,6 @@ BUILD_DEPENDS=	${BASH_CMD}:${PORTSDIR}/shells/bash \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .if defined(WITH_PASSIVETEX) || exists(${PASSIVETEX})
-IGNORE=		with PassiveTex support needs more testing
 BUILD_DEPENDS+=	${PASSIVETEX}:${PORTSDIR}/print/passivetex
 PLIST_SUB=	PASSIVETEX=""
 .else
@@ -39,7 +38,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 BASH_CMD=	${LOCALBASE}/bin/bash
 GETOPT_CMD=	${LOCALBASE}/bin/getopt
-PASSIVETEX=	${LOCALBASE}/share/texmf/tex/passivetex
+PASSIVETEX?=	mktexlsr
 XSL_DIR=	${LOCALBASE}/share/xsl/docbook
 
 MAN1=		xmlif.1 xmlto.1
