@@ -1,0 +1,16 @@
+--- configure.orig	2005-01-15 11:17:17.000000000 -0800
++++ configure	2007-09-22 18:17:38.000000000 -0700
+@@ -6368,4 +6368,4 @@
+   else
+-  if test -f /usr/include/tcl${TCL_VERSION}/tk.h ; then
+-    TK_INCLUDE=-I/usr/include/tcl${TCL_VERSION}
++  if test -f ${TK_CONFIG_PREFIX}/../../include/tk${TCL_VERSION}/tk.h ; then
++    TK_INCLUDE=-I${TK_CONFIG_PREFIX}/../../include/tk${TCL_VERSION}
+   fi	
+@@ -6375,4 +6375,4 @@
+   else
+-  if test -f /usr/include/tcl${TCL_VERSION}/tcl.h ; then
+-    TCL_INCLUDE=-I/usr/include/tcl${TCL_VERSION}
++  if test -f ${TK_CONFIG_PREFIX}/../../include/tcl${TCL_VERSION}/tcl.h ; then
++    TCL_INCLUDE=-I${TK_CONFIG_PREFIX}/../../include/tcl${TCL_VERSION}
+   fi
