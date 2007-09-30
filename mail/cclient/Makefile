@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	2004g
-PORTREVISION=	1
+PORTVERSION=	2006j
 PORTEPOCH=	1
 CATEGORIES=	mail devel ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
@@ -17,6 +16,8 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	. old
 DISTNAME=	imap-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
+DISTVERSIONSUFFIX=	2
+DISTFILES=	${DISTNAME}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Mark Crispin's C-client mail access routines
@@ -44,7 +45,7 @@ MAKE_ARGS+=	SSLTYPE=unix.nopwd
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 SHLIBBASE=	c-client4
-SHLIBMAJ=	8
+SHLIBMAJ=	9
 SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}
 MAKE_ENV=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
@@ -67,10 +68,11 @@ post-patch:
 post-configure:
 	@${ECHO_MSG} ">> The c-client shared library will be named ${SHLIBNAME}"
 
-HEADERS=	c-client.h dummy.h env.h env_unix.h fdstring.h flstring.h \
-		fs.h ftl.h imap4r1.h linkage.c linkage.h mail.h mbx.h mh.h \
-		misc.h mx.h netmsg.h newsrc.h nl.h nntp.h osdep.h pseudo.h \
-		rfc822.h smtp.h sslio.h tcp.h tcp_unix.h unix.h utf8.h
+HEADERS=	c-client.h dummy.h env.h env_unix.h fdstring.h flockcyg.h \
+		flocksim.h flstring.h fs.h ftl.h imap4r1.h linkage.h mail.h \
+		misc.h netmsg.h newsrc.h nl.h nntp.h osdep.h pseudo.h \
+		rfc822.h smtp.h sslio.h tcp.h tcp_unix.h unix.h utf8.h \
+		utf8aux.h
 PORTREV_H=	${WRKDIR}/portrevision.h
 
 post-build:

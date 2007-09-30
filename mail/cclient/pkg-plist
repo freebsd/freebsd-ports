@@ -3,17 +3,15 @@ include/c-client/dummy.h
 include/c-client/env.h
 include/c-client/env_unix.h
 include/c-client/fdstring.h
+include/c-client/flockcyg.h
+include/c-client/flocksim.h
 include/c-client/flstring.h
 include/c-client/fs.h
 include/c-client/ftl.h
 include/c-client/imap4r1.h
-include/c-client/linkage.c
 include/c-client/linkage.h
 include/c-client/mail.h
-include/c-client/mbx.h
-include/c-client/mh.h
 include/c-client/misc.h
-include/c-client/mx.h
 include/c-client/netmsg.h
 include/c-client/newsrc.h
 include/c-client/nl.h
@@ -27,6 +25,7 @@ include/c-client/tcp.h
 include/c-client/tcp_unix.h
 include/c-client/unix.h
 include/c-client/utf8.h
+include/c-client/utf8aux.h
 include/c-client/portrevision.h
 include/c-client/CFLAGS
 include/c-client/LDFLAGS
