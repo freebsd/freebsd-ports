@@ -23,6 +23,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_PERL5=	yes
 
 CONFLICTS=	xmlrpc-epi-0.*
 

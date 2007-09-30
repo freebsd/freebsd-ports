@@ -32,6 +32,7 @@ RUN_DEPENDS+=	${PM_BASE}/${PERL_ARCH}/MeCab.pm:${PORTSDIR}/japanese/p5-MeCab
 .endif
 
 NO_BUILD=	yes
+USE_PERL5=	yes
 
 do-install:
 	@${DO_NADA}

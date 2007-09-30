@@ -22,6 +22,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv \
 		${PERL_ARCHLIB}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-Parser
 # to utilize encoding maps included in p5-XML-Parser
 
+USE_PERL5=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

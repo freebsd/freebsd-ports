@@ -17,6 +17,7 @@ COMMENT=	Generate HTML report summaries from snort incident alerts
 RUN_DEPENDS=	${SITE_PERL}/Time/JulianDay.pm:${PORTSDIR}/devel/p5-Time-modules
 
 NO_BUILD=	yes
+USE_PERL5=	yes
 
 do-install:
 	${SED} s,%LOCALBASE%,${LOCALBASE}, < ${WRKSRC}/snortsnarf.pl > ${WRKSRC}/snortsnarf

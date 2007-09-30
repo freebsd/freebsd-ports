@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-D
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 
+USE_PERL5=	yes
+
 MAKE_ARGS+=	SLASH_PREFIX=${PREFIX}/slash
 
 DOCS=		README INSTALL

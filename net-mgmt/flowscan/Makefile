@@ -28,6 +28,7 @@ RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 CFLOWD_FLOWSCAN_PATCH=	yes
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/var/db/flows
+USE_PERL5=		yes
 WRKSRC=			${WRKDIR}/FlowScan-${PORTVERSION}
 
 pre-install:

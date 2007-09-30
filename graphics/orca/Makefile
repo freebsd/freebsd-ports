@@ -28,6 +28,7 @@ BUILD_DEPENDS=	\
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-html-dir=${PREFIX}/www/data/orca
+USE_PERL5=	yes
 
 MAN1=		orca.1
 

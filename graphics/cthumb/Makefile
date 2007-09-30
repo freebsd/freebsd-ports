@@ -21,6 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/pnmscale:${PORTSDIR}/graphics/netpbm \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-themedir=${DATADIR}
+USE_PERL5=	yes
 
 MAN1=		cthumb.1
 
