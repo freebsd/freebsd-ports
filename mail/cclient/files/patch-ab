@@ -1,151 +1,254 @@
---- src/osdep/unix/Makefile.orig	Sat Apr 30 22:51:13 2005
-+++ src/osdep/unix/Makefile	Sun Jul  1 22:29:26 2007
-@@ -22,8 +22,8 @@
- 
- EXTRAAUTHENTICATORS=
- EXTRADRIVERS=mbox
--PASSWDTYPE=std
--SSLTYPE=nopwd
-+PASSWDTYPE=pam
-+SSLTYPE=unix.nopwd
- IP=4
- 
- 
-@@ -41,13 +41,13 @@
- 
- # Extended flags needed for SSL.  You may need to modify.
- 
--SSLDIR=/usr/local/ssl
--SSLCERTS=$(SSLDIR)/certs
-+#SSLDIR=/usr/local/ssl
-+SSLCERTS=$(PREFIX)/certs
- SSLKEYS=$(SSLCERTS)
- SSLINCLUDE=$(SSLDIR)/include
- SSLLIB=$(SSLDIR)/lib
- 
--SSLCRYPTO=-lcrypto
-+SSLCRYPTO=-lcrypto -lcrypt
- 
- # Older versions of MIT Kerberos also have a libcrypto.  If so, you may need
- # to use this instead
-@@ -74,7 +74,7 @@
- # AFSLDFLAGS may also need -L/usr/ucblib -lucb
- DCECFLAGS= -DDCE_MINIMAL -DPASSWD_OVERRIDE=\"/opt/pop3/passwd/passwd\"
- DCELDFLAGS= -ldce
--PAMLDFLAGS= -lpam -ldl
-+PAMLDFLAGS= # -lpam -lcrypt
- 
- 
- # Build parameters normally set by the individual port
-@@ -111,7 +111,7 @@
- # Commands possibly overriden by the individual port
- 
- ARRC=ar rc
--CC=cc
-+#CC=cc
- LN=ln -s
- RANLIB=ranlib
- 
-@@ -129,7 +129,7 @@
-  dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
-  rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
-  unix.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
--CFLAGS=-g
-+CFLAGS+=$(BASECFLAGS) $(EXTRACFLAGS)
- 
- CAT=cat
- MAKE=make
-@@ -146,6 +146,10 @@
-  PASSWDTYPE=$(PASSWDTYPE) SSLTYPE=$(SSLTYPE) IP=$(IP)
- 
- 
-+# Need this for the shared library rule to work correctly
-+.SUFFIXES: .o .so
-+SOFILES=${BINARIES:.o=.so}
-+
- # Here if no make argument established
- 
- missing: osdep.h
-@@ -226,13 +230,14 @@
- 	 BASECFLAGS="-g -Dconst="
- 
- bsf:	# FreeBSD
--	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
-+	$(BUILD) `$(CAT) SPECIALS` OS=$@ CHECKPW=pam \
- 	 SIGTYPE=psx CRXTYPE=nfs \
- 	 SPOOLDIR=/var \
- 	 ACTIVEFILE=/usr/local/news/lib/active \
- 	 RSHPATH=/usr/bin/rsh \
--	 BASECFLAGS="-g -O -pipe" \
--	 BASELDFLAGS="-lcrypt"
-+	 LOCKPGM=$(PREFIX)/libexec/mlock \
-+	 BASECFLAGS="-DNFSKLUDGE" \
-+	 BASELDFLAGS="-lpam"
- 
- bsi:	# BSD/i386
- 	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
-@@ -801,23 +806,31 @@
- 
- # Build it!
- 
--build:	clean once $(ARCHIVE)
-+build:	clean once $(ARCHIVE) $(SHLIBNAME)
- 
--all:	$(ARCHIVE)
-+all:	$(ARCHIVE) $(SHLIBNAME)
- 
- $(ARCHIVE): $(BINARIES)
- 	sh -c '$(RM) $(ARCHIVE) || true'
- 	@$(CAT) ARCHIVE
- 	@$(SH) ARCHIVE
- 
-+$(SHLIBNAME): $(SOFILES)
-+	ld -shared -x -soname $(SHLIBNAME) -o $(SHLIBNAME) $(SOFILES) `cat LDFLAGS`
-+	ln -s $(SHLIBNAME) lib$(SHLIBBASE).so
-+
-+.c.so: osdep.h
-+	$(CC) -fPIC -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
-+
- .c.o:
--	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` $*.c
-+	$(CC) -c $(CFLAGS) $*.c
- 
- 
- # Cleanup
- 
- clean:
- 	sh -c '$(RM) auths.c crexcl.c nfstest.c linkage.[ch] siglocal.c osdep*.[ch] *.o ARCHIVE *FLAGS *TYPE $(ARCHIVE) || true'
-+	sh -c '$(RM) *.so $(SHLIBNAME)'
- 
- 
- # Dependencies
-@@ -850,7 +863,7 @@
- 
- # OS-dependent
- 
--osdep.o:mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
-+OSDEPS= mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
- 	osdep.h env_unix.h tcp_unix.h \
- 	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c ip_unix.c\
- 	auths.c crexcl.c flockcyg.c flocklnx.c flocksim.c nfstest.c fsync.c \
-@@ -864,12 +877,19 @@
- 	write.c sslstdio.c \
- 	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
- 	OSCFLAGS
-+
-+osdep.o: $(OSDEPS)
-+	$(CC) $(CFLAGS) `$(CAT) OSCFLAGS` -c osdep.c
-+	@echo ========================================================================
- 	@echo Building OS-dependent module
- 	@echo If you get No such file error messages for files x509.h, ssl.h,
- 	@echo pem.h, buffer.h, bio.h, and crypto.h, that means that OpenSSL
- 	@echo is not installed on your system.  Either install OpenSSL first
- 	@echo or build with command: make `$(CAT) OSTYPE` SSLTYPE=none
--	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` `$(CAT) OSCFLAGS` -c osdep.c
-+	@echo ========================================================================
-+
-+osdep.so: $(OSDEPS)
-+	$(CC) -fPIC -DPIC -c $(CFLAGS) `cat OSCFLAGS` osdep.c -o $@
- 
- osdep.c: osdepbas.c osdepckp.c osdeplog.c osdepssl.c
- 	$(CAT) osdepbas.c osdepckp.c osdeplog.c osdepssl.c > osdep.c
+*** src/osdep/unix/Makefile.orig	Sun Jun 17 17:37:44 2007
+--- src/osdep/unix/Makefile	Mon Jul 23 16:30:12 2007
+***************
+*** 28,36 ****
+  
+  EXTRAAUTHENTICATORS=
+  EXTRADRIVERS=mbox
+! PASSWDTYPE=std
+! SSLTYPE=nopwd
+! IP=4
+  
+  
+  # The optimization level here for GCC ports is set here for a reason.  It's
+--- 28,36 ----
+  
+  EXTRAAUTHENTICATORS=
+  EXTRADRIVERS=mbox
+! PASSWDTYPE=pam
+! SSLTYPE=unix.nopwd
+! IP=6
+  
+  
+  # The optimization level here for GCC ports is set here for a reason.  It's
+***************
+*** 54,66 ****
+  
+  # Extended flags needed for SSL.  You may need to modify.
+  
+! SSLDIR=/usr/local/ssl
+! SSLCERTS=$(SSLDIR)/certs
+  SSLKEYS=$(SSLCERTS)
+  SSLINCLUDE=$(SSLDIR)/include
+  SSLLIB=$(SSLDIR)/lib
+  
+! SSLCRYPTO=-lcrypto
+  
+  # Older versions of MIT Kerberos also have a libcrypto.  If so, you may need
+  # to use this instead
+--- 54,66 ----
+  
+  # Extended flags needed for SSL.  You may need to modify.
+  
+! #SSLDIR=/usr/local/ssl
+! SSLCERTS=$(PREFIX)/certs
+  SSLKEYS=$(SSLCERTS)
+  SSLINCLUDE=$(SSLDIR)/include
+  SSLLIB=$(SSLDIR)/lib
+  
+! SSLCRYPTO=-lcrypto -lcrypt
+  
+  # Older versions of MIT Kerberos also have a libcrypto.  If so, you may need
+  # to use this instead
+***************
+*** 87,93 ****
+  # AFSLDFLAGS may also need -L/usr/ucblib -lucb
+  DCECFLAGS= -DDCE_MINIMAL -DPASSWD_OVERRIDE=\"/opt/pop3/passwd/passwd\"
+  DCELDFLAGS= -ldce
+! PAMLDFLAGS= -lpam -ldl
+  
+  
+  # Build parameters normally set by the individual port
+--- 87,93 ----
+  # AFSLDFLAGS may also need -L/usr/ucblib -lucb
+  DCECFLAGS= -DDCE_MINIMAL -DPASSWD_OVERRIDE=\"/opt/pop3/passwd/passwd\"
+  DCELDFLAGS= -ldce
+! PAMLDFLAGS= # -lpam -lcrypt
+  
+  
+  # Build parameters normally set by the individual port
+***************
+*** 125,131 ****
+  # Commands possibly overriden by the individual port
+  
+  ARRC=ar rc
+! CC=cc
+  LN=ln -s
+  RANLIB=ranlib
+  
+--- 125,131 ----
+  # Commands possibly overriden by the individual port
+  
+  ARRC=ar rc
+! #CC=cc
+  LN=ln -s
+  RANLIB=ranlib
+  
+***************
+*** 149,155 ****
+   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+   unix.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o mix.o
+! CFLAGS=-g
+  
+  CAT=cat
+  MAKE=make
+--- 149,155 ----
+   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+   unix.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o mix.o
+! CFLAGS+=$(BASECFLAGS) $(EXTRACFLAGS)
+  
+  CAT=cat
+  MAKE=make
+***************
+*** 166,171 ****
+--- 166,175 ----
+   PASSWDTYPE=$(PASSWDTYPE) SSLTYPE=$(SSLTYPE) IP=$(IP)
+  
+  
++ # Need this for the shared library rule to work correctly
++ .SUFFIXES: .o .so
++ SOFILES=${BINARIES:.o=.so}
++ 
+  # Here if no make argument established
+  
+  missing: osdep.h
+***************
+*** 246,258 ****
+  	 BASECFLAGS="-g -Dconst="
+  
+  bsf:	# FreeBSD
+! 	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
+  	 SIGTYPE=psx CRXTYPE=nfs \
+  	 SPOOLDIR=/var \
+  	 ACTIVEFILE=/usr/local/news/lib/active \
+  	 RSHPATH=/usr/bin/rsh \
+  	 BASECFLAGS="$(GCCCFLAGS)" \
+! 	 BASELDFLAGS="-lcrypt"
+  
+  bsi:	# BSD/i386
+  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
+--- 250,263 ----
+  	 BASECFLAGS="-g -Dconst="
+  
+  bsf:	# FreeBSD
+! 	$(BUILD) `$(CAT) SPECIALS` OS=$@ CHECKPW=pam \
+  	 SIGTYPE=psx CRXTYPE=nfs \
+  	 SPOOLDIR=/var \
+  	 ACTIVEFILE=/usr/local/news/lib/active \
+  	 RSHPATH=/usr/bin/rsh \
++ 	 LOCKPGM=$(PREFIX)/libexec/mlock \
+  	 BASECFLAGS="$(GCCCFLAGS)" \
+! 	 BASELDFLAGS="-lpam"
+  
+  bsi:	# BSD/i386
+  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
+***************
+*** 840,862 ****
+  
+  # Build it!
+  
+! build:	clean once $(ARCHIVE)
+  
+! all:	$(ARCHIVE)
+  
+  $(ARCHIVE): $(BINARIES)
+  	sh -c '$(RM) $(ARCHIVE) || true'
+  	@$(CAT) ARCHIVE
+  	@$(SH) ARCHIVE
+  
+  .c.o:
+! 	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` $*.c
+  
+  
+  # Cleanup
+  
+  clean:
+  	sh -c '$(RM) auths.c crexcl.c ip_unix.c linkage.[ch] siglocal.c osdep*.[ch] *.o ARCHIVE *FLAGS *TYPE $(ARCHIVE) || true'
+  
+  
+  # Dependencies
+--- 845,875 ----
+  
+  # Build it!
+  
+! build:	clean once $(ARCHIVE) $(SHLIBNAME)
+  
+! all:	$(ARCHIVE) $(SHLIBNAME)
+  
+  $(ARCHIVE): $(BINARIES)
+  	sh -c '$(RM) $(ARCHIVE) || true'
+  	@$(CAT) ARCHIVE
+  	@$(SH) ARCHIVE
+  
++ $(SHLIBNAME): $(SOFILES)
++ 	ld -shared -x -soname $(SHLIBNAME) -o $(SHLIBNAME) $(SOFILES) `cat LDFLAGS`
++ 	ln -s $(SHLIBNAME) lib$(SHLIBBASE).so
++ 
++ .c.so: osdep.h
++ 	$(CC) -fPIC -DPIC -c `cat CFLAGS` ${@:.so=.c} -o $@
++ 
+  .c.o:
+! 	$(CC) -c `cat CFLAGS` $*.c
+  
+  
+  # Cleanup
+  
+  clean:
+  	sh -c '$(RM) auths.c crexcl.c ip_unix.c linkage.[ch] siglocal.c osdep*.[ch] *.o ARCHIVE *FLAGS *TYPE $(ARCHIVE) || true'
++ 	sh -c '$(RM) *.so $(SHLIBNAME)'
+  
+  
+  # Dependencies
+***************
+*** 891,897 ****
+  
+  # OS-dependent
+  
+! osdep.o:mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
+  	osdep.h env_unix.h tcp_unix.h \
+  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c ip_unix.c\
+  	auths.c crexcl.c flockcyg.c flocklnx.c flocksim.c fsync.c \
+--- 904,910 ----
+  
+  # OS-dependent
+  
+! OSDEPS= mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
+  	osdep.h env_unix.h tcp_unix.h \
+  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c ip_unix.c\
+  	auths.c crexcl.c flockcyg.c flocklnx.c flocksim.c fsync.c \
+***************
+*** 905,916 ****
+  	write.c sslstdio.c \
+  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
+  	OSCFLAGS
+  	@echo Building OS-dependent module
+  	@echo If you get No such file error messages for files x509.h, ssl.h,
+  	@echo pem.h, buffer.h, bio.h, and crypto.h, that means that OpenSSL
+  	@echo is not installed on your system.  Either install OpenSSL first
+  	@echo or build with command: make `$(CAT) OSTYPE` SSLTYPE=none
+! 	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` `$(CAT) OSCFLAGS` -c osdep.c
+  
+  osdep.c: osdepbas.c osdepckp.c osdeplog.c osdepssl.c
+  	$(CAT) osdepbas.c osdepckp.c osdeplog.c osdepssl.c > osdep.c
+--- 918,936 ----
+  	write.c sslstdio.c \
+  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
+  	OSCFLAGS
++ 
++ osdep.o: $(OSDEPS)
++ 	$(CC) `$(CAT) CFLAGS` `$(CAT) OSCFLAGS` -c osdep.c
++ 	@echo ========================================================================
+  	@echo Building OS-dependent module
+  	@echo If you get No such file error messages for files x509.h, ssl.h,
+  	@echo pem.h, buffer.h, bio.h, and crypto.h, that means that OpenSSL
+  	@echo is not installed on your system.  Either install OpenSSL first
+  	@echo or build with command: make `$(CAT) OSTYPE` SSLTYPE=none
+! 	@echo ========================================================================
+! 
+! osdep.so: $(OSDEPS)
+! 	$(CC) -fPIC -DPIC -c `$(CAT) CFLAGS` `$(CAT) OSCFLAGS` osdep.c -o $@
+  
+  osdep.c: osdepbas.c osdepckp.c osdeplog.c osdepssl.c
+  	$(CAT) osdepbas.c osdepckp.c osdeplog.c osdepssl.c > osdep.c
