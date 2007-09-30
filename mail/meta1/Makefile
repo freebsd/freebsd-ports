@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	meta1
-PORTVERSION=	1.0.PreAlpha18.0
+PORTVERSION=	1.0.PreAlpha19.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.MeTA1.org/download/.prealpha/unify/
+MASTER_SITES=	http://www.MeTA1.org/download/.prealpha/sunsasl/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
@@ -40,7 +40,6 @@ PORTDOCS=	README.dvi README.html README.pdf README.ps README.txt \
 		img1.png img2.png img3.png img4.png img5.png img6.png \
 		nx_grp_g.png overview1.eps overview1.gif overview1.pdf \
 		prev_g.png up_g.png pmilter.api.tex
-PLIST_SUB+=	SPOOL=${DESTDIR}/var/spool
 PLIST_SUB+=	NOLOGIN=${NOLOGIN_CMD}
 EXTRA_SBIN=	libcheck/noroot libconf/tree libmta/statit \
 		libmta/t-hostname checks/t-getgroup
