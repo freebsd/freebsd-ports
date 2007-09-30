@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
+USE_PERL5=	yes
 
 CONFIGURE_ARGS+=	--with-perllib=${SITE_PERL} \
 			--with-oids=${LOCALBASE}/share/${PORTNAME:L}

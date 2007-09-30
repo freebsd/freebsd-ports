@@ -18,6 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/RawIP.pm:${PORTSDIR}/net/p5-Net-RawIP
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
+USE_PERL5=	yes
 
 MAN1=		ctrace.1
 PLIST_FILES=	sbin/ctrace

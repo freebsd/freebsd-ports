@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to log incoming calls using ISDN and output to mysql/php
 
 USE_MYSQL=	yes
+USE_PERL5=	yes
 USE_PHP=	yes
 WANT_PHP_WEB=	yes
 

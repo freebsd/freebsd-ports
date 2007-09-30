@@ -20,6 +20,7 @@ RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
 		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote
 
 NO_BUILD=	yes
+USE_PERL5=	yes
 USE_X_PREFIX=	yes
 
 PLIST_FILES=	bin/${PORTNAME}

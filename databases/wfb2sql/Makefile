@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	YES
+USE_PERL5=	YES
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/wfb2sql ${PREFIX}/bin/wfb2sql

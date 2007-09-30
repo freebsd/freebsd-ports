@@ -23,6 +23,7 @@ COMMENT=	IFHP - A highly configurable print filter for LPRng
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GHOSTSCRIPT=	yes
+WANT_PERL=	yes
 
 MAN8=		ifhp.8 textps.8
 
