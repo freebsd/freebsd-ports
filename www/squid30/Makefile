@@ -61,6 +61,7 @@
 #     together with other code that adds custom HTTP headers to the
 #     requests.
 
+PORTREVISION=	1
 PORTNAME=	squid
 PORTVERSION=	3.0.p7.${PATCHSET_DATE}
 CATEGORIES=	www

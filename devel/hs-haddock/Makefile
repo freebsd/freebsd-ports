@@ -6,7 +6,7 @@
 
 PORTNAME=	haddock
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/haddock/
 PKGNAMEPREFIX=	hs-
@@ -30,7 +30,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textpr
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:259:env
+USE_AUTOTOOLS=	autoconf:261:env
 
 PLIST_SUB+=	HADDOCK_VERSION=${PORTVERSION}
 PORTDOCS=	*

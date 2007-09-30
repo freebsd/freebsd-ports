@@ -6,7 +6,7 @@
 
 PORTNAME=	alex
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/alex/dist/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -21,7 +21,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook
 .endif
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:259:env
+USE_AUTOTOOLS=	autoconf:261:env
 CONFIGURE_ARGS=	--ghc --prefix=${PREFIX}
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"

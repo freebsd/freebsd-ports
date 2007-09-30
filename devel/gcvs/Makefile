@@ -7,7 +7,7 @@
 
 PORTNAME=	gcvs
 PORTVERSION=	1.0
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	devel tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -31,7 +31,7 @@ MAN1=		cvs.1
 MAN5=		cvs.5
 MAN8=		cvsbug.8
 INFO=		cvs cvsclient
-USE_AUTOTOOLS=	automake:15:env autoconf:259:env
+USE_AUTOTOOLS=	automake:15:env autoconf:261:env
 
 .include <bsd.port.pre.mk>
 

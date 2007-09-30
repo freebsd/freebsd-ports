@@ -7,6 +7,7 @@
 
 PORTNAME=	moon-buggy
 PORTVERSION=	1.0.51
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://seehuhn.de/media/programs/
 .if defined (WITH_ESOUND)
@@ -23,7 +24,7 @@ COMMENT=	Drive a buggy across the moons surface
 LIB_DEPENDS=	esd:${PORTSDIR}/audio/esound:install
 .endif
 
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--sharedstatedir=/var/games\
 		--with-setgid=games

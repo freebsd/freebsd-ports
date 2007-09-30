@@ -7,7 +7,7 @@
 
 PORTNAME=	instant-tinderbox
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ports-mgmt
 DISTFILES=
 
@@ -58,7 +58,7 @@ USE_PYTHON=	yes
 USE_RUBY=	yes
 USE_LINUX=	yes
 
-.for v in 2.13 2.53 2.59 2.61
+.for v in 2.13 2.61
 RUN_DEPENDS+=	autoconf-${v}:${PORTSDIR}/devel/autoconf${v:C/\.//}
 .endfor
 .for v in 1.4 1.5 1.6 1.7 1.8 1.9 1.10

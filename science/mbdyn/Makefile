@@ -7,7 +7,7 @@
 
 PORTNAME=	mbdyn
 PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://mbdyn.aero.polimi.it/~masarati/Download/mbdyn/
 
@@ -17,7 +17,7 @@ COMMENT=	A MultiBody Dynamics analysis system
 LIB_DEPENDS=	umfpack:${PORTSDIR}/math/suitesparse
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--program-prefix='' --with-umfpack=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/suitesparse ${PTHREAD_CFLAGS}

@@ -7,7 +7,7 @@
 
 PORTNAME=	le-unit
 PORTVERSION=	12.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -27,7 +27,7 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_XLIB=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15:env
+USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15:env
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/leif

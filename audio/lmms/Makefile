@@ -7,7 +7,7 @@
 
 PORTNAME=	lmms
 PORTVERSION=	20061204
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jylefort
@@ -28,7 +28,7 @@ USE_QT_VER=	3
 USE_SDL=	sdl sound
 USE_GMAKE=	yes
 
-USE_AUTOTOOLS=	autoconf:259 autoheader:259 automake:19 aclocal:19 libtool:15
+USE_AUTOTOOLS=	autoconf:261 autoheader:261 automake:19 aclocal:19 libtool:15
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	-a
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}

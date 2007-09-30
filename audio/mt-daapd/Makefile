@@ -7,6 +7,7 @@
 
 PORTNAME=	mt-daapd
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +26,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-id3tag=${PREFIX} --with-gdbm-includes=${LOCALBASE}/include
 
-USE_AUTOTOOLS=	autoheader:259 autoconf:259:env
+USE_AUTOTOOLS=	autoheader:261 autoconf:261:env
 
 DAAPD_USER?=	daapd
 DAAPD_GROUP?=	daapd

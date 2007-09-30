@@ -7,7 +7,7 @@
 
 PORTNAME=	sipxvxml
 PORTVERSION=	3.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
@@ -27,7 +27,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:259:env automake:19:env
+USE_AUTOTOOLS=	autoconf:261:env automake:19:env
 GNU_CONFIGURE=	yes
 LOCALSTATEDIR=	/var
 CONFIGURE_ENV+=	wwwdir=${PREFIX}/www/sipX \

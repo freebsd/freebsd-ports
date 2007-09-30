@@ -7,6 +7,7 @@
 
 PORTNAME=	websh
 PORTVERSION=	3.6.0b4
+PORTREVISION=	1
 CATEGORIES=	www tcl84
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=tcl/${PORTNAME}/source
@@ -21,7 +22,7 @@ OPTIONS+=	WSSTATIC "Link the objects into the module statically" off
 TCL_DVER=	${TCL_VER:S/.//}
 
 USE_TCL=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/unix
 CONFIGURE_ARGS+=--with-tclinclude=${TCL_INCLUDEDIR} \
 		--with-tcl=${TCL_LIBDIR}

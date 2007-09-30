@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk-gui
 PORTVERSION=	0.0.1r20070801
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://asterisk-bsd.googlecode.com/files/
 DISTNAME=	${PORTNAME}-snap-2007-08-01
@@ -16,7 +17,7 @@ COMMENT=	An asterisk ajax web manager
 
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 
-USE_AUTOTOOLS=	autoconf:259 automake:19
+USE_AUTOTOOLS=	autoconf:261 automake:19
 USE_GMAKE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message

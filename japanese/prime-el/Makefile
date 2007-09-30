@@ -7,7 +7,7 @@
 
 PORTNAME=	prime
 PORTVERSION=	1.5.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://prime.sourceforge.jp/src/
 PKGNAMESUFFIX=	-el
@@ -21,7 +21,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/emacs/site-lisp/init-mell.el:${PORTSDIR}/japane
 		prime:${PORTSDIR}/japanese/prime
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:19 autoconf:259
+USE_AUTOTOOLS=	automake:19 autoconf:261
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL})

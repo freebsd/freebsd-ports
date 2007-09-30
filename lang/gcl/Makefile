@@ -7,7 +7,7 @@
 
 PORTNAME=	gcl
 PORTVERSION=	2.6.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gcl
@@ -21,7 +21,6 @@ LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 ONLY_FOR_ARCHS=	i386
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:259
 USE_GMAKE=	yes
 USE_XLIB=	yes
 CONFIGURE_ARGS=--prefix=${PREFIX} \
@@ -46,7 +45,6 @@ INFO=	gcl-si gcl-tk
 PLIST_SUB=	GCL_VER=${PORTVERSION}
 
 pre-configure:
-	${RM} -f ${WRKSRC}/configure
 	${SED} -i '' \
 		-e 's|@@CFLAGS@@|${CFLAGS} -I${LOCALBASE}/include|' \
 		-e 's|@@LOCALLIBS@@|-L${LOCALBASE}/lib -lgmp -lm -lreadline|' \

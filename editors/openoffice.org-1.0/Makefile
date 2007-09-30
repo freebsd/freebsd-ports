@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice.org
 PORTVERSION=	1.0.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://openoffice.lunarshells.com/sources/:moz,ru,src,help \
 		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.0.3/:moz,ru,src,help \
@@ -106,7 +106,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		Xvfb:${X_VFBSERVER_PORT} \
 		${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz:${X_FONTS_MISC_PORT}
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=  autoconf:253
+USE_AUTOTOOLS=  autoconf:261
 WRKSRC=		${WRKDIR}/oo_${PORTVERSION}_src
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh

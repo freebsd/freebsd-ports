@@ -7,7 +7,7 @@
 
 PORTNAME=		samba
 PORTVERSION?=		3.0.26a
-PORTREVISION?=		0
+PORTREVISION?=		1
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -21,7 +21,7 @@ CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.*
 
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=		autoconf:259 autoheader:259
+USE_AUTOTOOLS=		autoconf:261 autoheader:261
 AUTOHEADER_ARGS=	-I${WRKSRC} -I${WRKSRC}/lib/replace
 AUTOCONF_ARGS=		-I${WRKSRC} -I${WRKSRC}/lib/replace
 

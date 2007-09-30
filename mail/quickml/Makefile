@@ -7,7 +7,7 @@
 
 PORTNAME=	quickml
 PORTVERSION=	0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://0xcc.net/quickml/
 
@@ -22,7 +22,7 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 QUICKML_USER=	quickml
 QUICKML_GROUP=	quickml
 
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes
 USE_RUBY=	yes
 

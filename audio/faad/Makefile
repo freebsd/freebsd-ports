@@ -7,6 +7,7 @@
 
 PORTNAME=	faad2
 PORTVERSION=	2.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_CDROM=	Restrictive copyright (do not sell for profit)
 
 USE_DOS2UNIX=	yes
-USE_AUTOTOOLS=	automake:15 autoheader:259 libtool:15
+USE_AUTOTOOLS=	automake:15 autoheader:261 libtool:15
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GETOPT_LONG=yes

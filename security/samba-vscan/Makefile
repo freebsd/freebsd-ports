@@ -7,6 +7,7 @@
 
 PORTNAME=	samba-vscan
 PORTVERSION=	0.3.6c
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openantivirus.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-beta4
@@ -30,7 +31,7 @@ OPTIONS=	VSCAN_ANTIVIR "for use with AntiVir" off \
 
 PORTDOCS=	AUTHORS COPYING ChangeLog FAQ INSTALL NEWS README
 
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 VSCAN_SAMBA_PORT?=	samba3
 SAMBA_WRKSRC!=	cd ${.CURDIR}/../../net/${VSCAN_SAMBA_PORT}; ${MAKE} -V WRKSRC
 HAS_CONFIGURE=	yes

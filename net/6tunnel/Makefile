@@ -7,6 +7,7 @@
 
 PORTNAME=	6tunnel
 DISTVERSION=	0.11rc2
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://toxygen.net/6tunnel/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -18,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}rc2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 ALL_TARGET=	default
 
 MAN1=		6tunnel.1

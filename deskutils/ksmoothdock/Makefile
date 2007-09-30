@@ -7,7 +7,7 @@
 
 PORTNAME=	ksmoothdock
 PORTVERSION=	4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}_automake-1.9
@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:259:env automake:19:env libtool:15:env
+USE_AUTOTOOLS=	autoconf:261:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
 
 pre-configure:

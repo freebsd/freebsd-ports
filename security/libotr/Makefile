@@ -8,6 +8,7 @@
 
 PORTNAME=	libotr
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.cypherpunks.ca/otr/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
@@ -19,7 +20,7 @@ COMMENT=	The portable OTR Messaging Library and toolkit
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-USE_AUTOTOOLS=	autoconf:259 libtool:15
+USE_AUTOTOOLS=	autoconf:261 libtool:15
 USE_LDCONFIG=	yes
 
 MAN1=		otr_toolkit.1

@@ -7,6 +7,7 @@
 
 PORTNAME=	hamlib
 PORTVERSION=	1.2.6.1
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +22,7 @@ USE_GNOME=	pkgconfig gnomehack
 USE_GETOPT_LONG=	yes
 USE_PERL5=	yes
 USE_PYTHON=	yes
-USE_AUTOTOOLS=	autoconf:259 libtool:15
+USE_AUTOTOOLS=	autoconf:261 libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-perl-binding --with-python=${PYTHON_CMD}

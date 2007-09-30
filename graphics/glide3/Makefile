@@ -7,7 +7,7 @@
 
 PORTNAME=	glide3
 PORTVERSION=	20020113
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://people.freebsd.org/~anholt/dri/files/
 DISTNAME=	Glide3-FreeBSD-${PORTVERSION}
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:253 libtool:15
+USE_AUTOTOOLS=	automake:14 autoconf:261 libtool:15
 AUTOMAKE_ARGS=	-a
 
 MAKEFILE=	makefile.autoconf

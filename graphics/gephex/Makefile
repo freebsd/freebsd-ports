@@ -7,7 +7,7 @@
 
 PORTNAME=	gephex
 PORTVERSION=	0.4.3b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gephex.org/download/src/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
-USE_AUTOTOOLS=	autoconf:259 autoheader:259 libtool:15 aclocal:19 automake:19
+USE_AUTOTOOLS=	autoconf:261 autoheader:261 libtool:15 aclocal:19 automake:19
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-V4L --without-ASOUNDLIB --without-LINUX_JOYSTICK \
 		--without-FFMPEG --without-AVIFILE --without-MPEG3 \

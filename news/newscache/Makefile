@@ -7,7 +7,7 @@
 
 PORTNAME=	newscache
 PORTVERSION=	1.2.r.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news
 MASTER_SITES=	http://src.linuxhacker.at/NewsCache/
 DISTNAME=	NewsCache-${PORTVERSION:S/.r./rc/}
@@ -17,7 +17,7 @@ COMMENT=	NewsCache is a free cache server for USENET News
 
 LIB_DEPENDS=	socket[+][+].1:${PORTSDIR}/net/libsocket++
 
-USE_AUTOTOOLS=	automake:19 autoheader:259 autoconf:259
+USE_AUTOTOOLS=	automake:19 autoheader:261 autoconf:261
 USE_GETOPT_LONG=yes
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

@@ -7,7 +7,7 @@
 
 PORTNAME=	iiimf-le-xcin
 PORTVERSION=	0.1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese textproc
 MASTER_SITES=	http://people.redhat.com/llch/iiimf-xcin/${PORTVERSION}/
 EXTRACT_SUFX=	-11.src.rpm
@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/iiimf-xcin
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GNOME=	libxml2
-USE_AUTOTOOLS=	automake:19 autoheader:259 autoconf:259 libtool:15
+USE_AUTOTOOLS=	automake:19 autoheader:261 autoconf:261 libtool:15
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

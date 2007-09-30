@@ -148,7 +148,7 @@ SUB_LIST+=	PHP_EXT_DIR=${PHP_EXT_DIR}
 .if defined(USE_PHPIZE) || defined(USE_PHPEXT)
 BUILD_DEPENDS+=	phpize:${PHP_PORT}
 GNU_CONFIGURE=	YES
-USE_AUTOTOOLS+=	autoconf:259:env
+USE_AUTOTOOLS+=	autoconf:261:env
 CONFIGURE_ARGS+=--with-php-config=${LOCALBASE}/bin/php-config
 
 configure-message: phpize-message do-phpize

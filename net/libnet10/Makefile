@@ -7,7 +7,7 @@
 
 PORTNAME=	libnet
 PORTVERSION=	1.0.2a
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
@@ -16,7 +16,7 @@ PKGNAMESUFFIX=	10
 MAINTAINER=	shipley@dis.org
 COMMENT=	A C library for creating IP packets
 
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 WRKSRC=		${WRKDIR}/Libnet-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 MAN3=		libnet${PKGNAMESUFFIX}.3

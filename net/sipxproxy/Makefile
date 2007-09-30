@@ -7,7 +7,7 @@
 
 PORTNAME=	sipxproxy
 PORTVERSION=	3.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
@@ -29,7 +29,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_RUBY=	yes
-USE_AUTOTOOLS=	autoconf:259:env automake:19:env
+USE_AUTOTOOLS=	autoconf:261:env automake:19:env
 GNU_CONFIGURE=	yes
 LOCALSTATEDIR=	/var
 CONFIGURE_ENV+=	wwwdir=${PREFIX}/www/sipX \

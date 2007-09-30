@@ -7,6 +7,7 @@
 
 PORTNAME=	libapreq2
 PORTVERSION=	2.08
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=libapreq
@@ -16,7 +17,7 @@ COMMENT=	Generic Apache2 Request Library
 
 USE_APACHE=	2.0+
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf:259 libtool:15
+USE_AUTOTOOLS=	autoconf:261 libtool:15
 CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} --with-expat=${LOCALBASE}
 
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"

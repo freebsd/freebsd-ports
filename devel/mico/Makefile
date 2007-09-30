@@ -7,7 +7,7 @@
 
 PORTNAME=	mico
 PORTVERSION=	2.3.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mico.org/
 
@@ -22,7 +22,7 @@ WRKSRC=			${WRKDIR}/${PORTNAME}
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		autoconf:259
+USE_AUTOTOOLS=		autoconf:261
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=		EGREP=`which egrep`
 

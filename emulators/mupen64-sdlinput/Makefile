@@ -7,7 +7,7 @@
 
 PORTNAME=	mupen64
 PORTVERSION=	0.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	emulators
 MASTER_SITES=	http://mupen64.emulation64.com/files/0.4/
 PKGNAMESUFFIX=	-sdlinput
@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_GCC=	3.4
-USE_AUTOTOOLS=	autoheader:259
+USE_AUTOTOOLS=	autoheader:261
 ONLY_FOR_ARCHS=	i386
 
 PLUGIN_NAME=	blight_input

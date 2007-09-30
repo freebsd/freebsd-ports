@@ -7,7 +7,7 @@
 
 PORTNAME=	prime
 DISTVERSION=	1.0.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://prime.sourceforge.jp/src/
 
@@ -26,7 +26,7 @@ RUBY_WITH_PTHREAD=	yes
 USE_GNOME=		pkgconfig
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-rubydir=${RUBY_SITELIBDIR}
-USE_AUTOTOOLS=	automake:19 autoconf:259
+USE_AUTOTOOLS=	automake:19 autoconf:261
 
 PLIST_SUB=		X11BASE=${X11BASE}
 

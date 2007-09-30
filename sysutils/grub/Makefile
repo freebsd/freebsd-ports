@@ -7,13 +7,14 @@
 
 PORTNAME=	grub
 PORTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/grub/
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	GRand Unified Bootloader
 
-USE_AUTOTOOLS=	automake:19 autoconf:259
+USE_AUTOTOOLS=	automake:19 autoconf:261
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-freebsd-freebsd${OSREL}

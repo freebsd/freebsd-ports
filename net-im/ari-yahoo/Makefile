@@ -7,7 +7,7 @@
 
 PORTNAME=	ari-yahoo
 PORTVERSION=	1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	A console Yahoo! messenger client
 
 PLIST_FILES=	bin/ari-yahoo
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:253
+USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 pre-configure:

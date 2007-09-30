@@ -6,6 +6,7 @@
 
 PORTNAME=	log4cxx
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	logging/${PORTNAME}
@@ -28,7 +29,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/boost/regex.hpp:${PORTSDIR}/devel/boost
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 .endif
 
-USE_AUTOTOOLS=	automake:15 autoconf:253 libtool:15
+USE_AUTOTOOLS=	automake:15 autoconf:261 libtool:15
 AUTOMAKE_ARGS=	--add-missing
 LIBTOOL_VARS=	--force --automake
 

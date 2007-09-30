@@ -7,6 +7,7 @@
 
 PORTNAME?=	firebird
 PORTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
@@ -22,7 +23,7 @@ USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:259 aclocal:19 libtool:15
+USE_AUTOTOOLS=	autoconf:261 aclocal:19 libtool:15
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 USE_GCC=	3.4
 

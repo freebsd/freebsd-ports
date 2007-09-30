@@ -8,7 +8,7 @@
 
 PORTNAME=	elfio
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	libtoolize:${PORTSDIR}/devel/libtool15
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:259 libtool:15
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:261 libtool:15
 AUTOMAKE_ARGS=	-c -a
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 

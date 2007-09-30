@@ -7,6 +7,7 @@
 
 PORTNAME=	zisofs-tools
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.kernel.org/pub/linux/utils/fs/zisofs/
 
@@ -15,7 +16,7 @@ COMMENT=	User utilities for zisofs
 
 PORTDOCS=	README CHANGES INSTALL
 
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes

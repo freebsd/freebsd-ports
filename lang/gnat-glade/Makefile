@@ -7,6 +7,7 @@
 
 PORTNAME=	gnat-glade
 PORTVERSION=	2005
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTNAME=	glade-gpl-${PORTVERSION}-src
@@ -17,7 +18,7 @@ COMMENT=	GNU Ada distributed systems annex
 
 BUILD_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
-USE_AUTOTOOLS=	automake:14 autoconf:259
+USE_AUTOTOOLS=	automake:14 autoconf:261
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --program-transform-name=''
 

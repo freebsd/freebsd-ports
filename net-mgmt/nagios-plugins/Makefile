@@ -7,7 +7,7 @@
 
 PORTNAME=	nagios-plugins
 PORTVERSION=	1.4.9
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_PERL5=	yes
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:259
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:261
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I m4 -I gl/m4
 
 OPTIONS=	QSTAT "Game server query support (check_game)" OFF \

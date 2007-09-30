@@ -7,7 +7,7 @@
 
 PORTNAME=	polymer
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://static.int.pl/~mig21/dev/releases/polymer/ \
 		${MASTER_SITE_LOCAL}
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoheader:259
+USE_AUTOTOOLS=	autoheader:261
 USE_QT_VER=	3
 INSTALLS_SHLIB=	yes
 

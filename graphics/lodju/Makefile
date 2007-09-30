@@ -7,7 +7,7 @@
 
 PORTNAME=	lodju
 PORTVERSION=	1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES+=	graphics
 MASTER_SITES=	http://liw.iki.fi/liw/lodju/tarballs/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	glade-gnome:${PORTSDIR}/x11-toolkits/rep-gtk
 MAN1=		lodju-create.1 lodju-gallery.1 lodju.1
 MANCOMPRESSED=	yes
 
-USE_AUTOTOOLS=	autoconf:253:env
+USE_AUTOTOOLS=	autoconf:261:env
 HAS_CONFIGURE=  yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk12 gdkpixbuf

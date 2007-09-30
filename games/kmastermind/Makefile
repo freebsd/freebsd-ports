@@ -6,7 +6,7 @@
 
 PORTNAME=	kmastermind
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTNAME=	20292-${PORTNAME}-${PORTVERSION}
@@ -16,7 +16,7 @@ COMMENT=	Mastermind game designed for K Desktop Environment
 
 BUILD_DEPENDS=		${NONEXISTENT}:${PORTSDIR}/x11/kdelibs3:extract
 
-USE_AUTOTOOLS=		automake:19:env autoconf:259:env libtool:15
+USE_AUTOTOOLS=		automake:19:env autoconf:261:env libtool:15
 USE_PERL5_BUILD=	yes
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes

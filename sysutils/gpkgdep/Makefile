@@ -6,7 +6,7 @@
 
 PORTNAME=	gpkgdep
 PORTVERSION=	0.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gpkgdep
@@ -16,7 +16,7 @@ COMMENT=	Shows package dependencies in tree views
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	automake:15 autoconf:253
+USE_AUTOTOOLS=	automake:15 autoconf:261
 AUTOMAKE_ARGS=	--add-missing
 USE_GMAKE=	yes
 PLIST_FILES=	bin/gpkgdep

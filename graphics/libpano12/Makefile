@@ -10,7 +10,7 @@
 
 PORTNAME=	libpano12
 PORTVERSION=	2.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics java
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	panotools
@@ -27,7 +27,7 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 
 USE_GNOME=	gtk20 glib20 pango atk
 
-USE_AUTOTOOLS=	autoconf:259:env autoheader:259:env aclocal:19:env \
+USE_AUTOTOOLS=	autoconf:261:env autoheader:261:env aclocal:19:env \
 		automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -50,9 +50,10 @@ CONFIGURE_ARGS+=	--without-java
 .endif
 
 pre-configure:
-	cd ${WRKSRC} && \
-	${SETENV} ${AUTOTOOLS_ENV} \
-	ACLOCAL="${ACLOCAL} -I ${LOCALBASE}/share/aclocal" \
-	./bootstrap
+	cd ${WRKSRC} && ./bootstrap
+#\
+#	${SETENV} ${AUTOTOOLS_ENV} \
+#	ACLOCAL="${ACLOCAL} -I ${LOCALBASE}/share/aclocal" \
+#	./bootstrap
 
 .include <bsd.port.mk>

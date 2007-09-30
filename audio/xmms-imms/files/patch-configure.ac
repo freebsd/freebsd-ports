@@ -1,38 +1,24 @@
---- configure.ac.orig	Wed Aug 18 01:56:28 2004
-+++ configure.ac	Tue Aug 31 16:19:40 2004
-@@ -31,8 +31,8 @@
- AC_ARG_ENABLE(debug,
-             AC_HELP_STRING([--enable-debug],
+--- configure.ac.orig	2004-08-17 22:56:28.000000000 -0700
++++ configure.ac	2007-09-22 21:50:52.000000000 -0700
+@@ -33,4 +33,4 @@
                             [Extra debug output]),
 -            [enable_debug='yes' XCPPFLAGS="-ggdb -O0 -DDEBUG"],
 -            [enable_debug='no' XCPPFLAGS="-O3"])
 +            [enable_debug='yes' XCPPFLAGS="-g -DDEBUG"],
 +            [enable_debug='no' XCPPFLAGS=""])
  
- AC_PROG_CXX
- AC_PROG_CC
-@@ -119,6 +119,7 @@
- 
-     saved_libs="$LIBS"
+@@ -121,2 +121,3 @@
      LIBS="$LIBS-ltag"
 +    saved_cppflags="$CPPFLAGS"
      CPPFLAGS=`taglib-config --cflags`
- 
-     AC_TRY_LINK([#include <tag.h>
-@@ -127,6 +128,7 @@
-         [XCPPFLAGS="$XCPPFLAGS `taglib-config --cflags`" 
+@@ -128,3 +129,4 @@
                                              AC_MSG_RESULT(yes)],
-         [LIBS=$saved_libs AC_MSG_RESULT(no)])
+-        [LIBS=$saved_libs AC_MSG_RESULT(no)])
++        [LIBS="$saved_libs"; AC_MSG_RESULT(no)])
 +    CPPFLAGS="$saved_cppflags"
  fi
- 
- if test "$with_taglib" = "yes"; then
-@@ -165,7 +167,7 @@
- 
- 
+@@ -167,3 +169,3 @@
  if test "$with_screensaver" != "no"; then
 -    LDFLAGS="-shared -L/usr/X11R6/lib"
 +    LDFLAGS="-L/usr/X11R6/lib"
      AC_CHECK_LIB(Xext, XextFindDisplay,, [with_screensaver=no])
-     AC_CHECK_LIB(Xss, XScreenSaverQueryInfo,, [with_screensaver=no])
-     AC_CHECK_HEADERS(X11/extensions/scrnsaver.h,,

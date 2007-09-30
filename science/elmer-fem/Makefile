@@ -7,6 +7,7 @@
 
 PORTNAME=	fem
 PORTVERSION=	5.3.2
+PORTREVISION=	1
 CATEGORIES=	science tk84
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer-
@@ -27,7 +28,7 @@ USE_FORTRAN=	yes
 FCFLAGS+=	-O3 -ffast-math
 .endif
 
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=

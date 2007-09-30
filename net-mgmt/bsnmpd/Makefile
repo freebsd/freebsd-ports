@@ -7,6 +7,7 @@
 
 PORTNAME=	bsnmpd
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://people.freebsd.org/~harti/bsnmp/
 DISTNAME=	bsnmp-${PORTVERSION}
@@ -20,7 +21,7 @@ LIB_DEPENDS=	begemot.1:${PORTSDIR}/devel/libbegemot \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libbegemot=${LOCALBASE}
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 
 INSTALLS_SHLIB=		yes
 

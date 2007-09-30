@@ -10,13 +10,13 @@
 +ACLOCAL = aclocal-1.9
 +AUTOMAKE = automake-1.9 --add-missing --copy
 +LIBTOOLIZE = libtoolize --force --copy
-+AUTOHEADER = autoheader-2.59
-+AUTOCONF = autoconf-2.59
++AUTOHEADER = autoheader-2.61
++AUTOCONF = autoconf-2.61
  #CONFIG_CMD = $(ACLOCAL) -I $${acfilesdir} && \
 @@ -12,3 +12,3 @@
  
 -AUTORECONF = autoreconf
-+AUTORECONF = autoreconf-2.59
++AUTORECONF = autoreconf-2.61
  BOOTSTRAP = $(AUTORECONF) --install --force
 @@ -16,12 +16,14 @@
  

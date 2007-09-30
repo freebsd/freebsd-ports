@@ -7,7 +7,7 @@
 
 PORTNAME=	gprolog
 PORTVERSION=	1.2.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_DEBIAN} ftp://ftp.inria.fr/INRIA/Projects/contraintes/gprolog/:doc
 MASTER_SITE_SUBDIR=	pool/main/g/${PORTNAME}
@@ -27,7 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}.orig/src/src
 
 USE_GCC=	2.95
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:253
+USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-c-flags="${CFLAGS}" \
 		--with-doc-dir=none \

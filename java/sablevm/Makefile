@@ -7,7 +7,7 @@
 
 PORTNAME=	sablevm
 PORTVERSION=	1.1.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=sablevm
@@ -23,7 +23,7 @@ LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
 		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
 		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 
-USE_AUTOTOOLS=	autoconf:259 libltdl:15 libtool:15
+USE_AUTOTOOLS=	autoconf:261 libltdl:15 libtool:15
 #GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

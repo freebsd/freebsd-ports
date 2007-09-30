@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-launch-box
 PORTVERSION=	20060112
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jylefort
@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui evolutiondataserver gnomemenus gnomedesktop
 
-USE_AUTOTOOLS=	autoconf:259 autoheader:259 automake:19 aclocal:19 libtool:15
+USE_AUTOTOOLS=	autoconf:261 autoheader:261 automake:19 aclocal:19 libtool:15
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	-a
 LIBTOOLFILES=

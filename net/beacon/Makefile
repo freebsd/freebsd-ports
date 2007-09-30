@@ -7,6 +7,7 @@
 
 PORTNAME=	beacon
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	net perl5 mbone ipv6
 MASTER_SITES=	http://dast.nlanr.net/Projects/Beacon/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 WWW_DIR?=	${PREFIX}/www/
 PLIST_SUB+=	VERSION=${PORTVERSION}
 USE_PERL5=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .ifdef(WITHOUT_IPV6)

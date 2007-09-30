@@ -7,6 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +24,7 @@ RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
 
 DBDIR?=		/var/db
 
-USE_AUTOTOOLS=	libtool:15 automake:19 autoconf:259
+USE_AUTOTOOLS=	libtool:15 automake:19 autoconf:261
 USE_GNOME=	libxml2
 USE_GMAKE=	yes
 USE_OPENSSL=	yes

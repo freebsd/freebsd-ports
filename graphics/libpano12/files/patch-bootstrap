@@ -1,8 +1,11 @@
---- bootstrap.orig	Tue Jan 16 18:58:24 2007
-+++ bootstrap	Tue Jan 16 18:58:39 2007
-@@ -96,27 +96,3 @@
- $AUTOMAKE --add-missing --copy || exit $?
- 
+--- bootstrap.orig	2005-01-07 01:26:26.000000000 -0800
++++ bootstrap	2007-09-22 19:46:15.000000000 -0700
+@@ -44,3 +44,3 @@
+ 	case $autoconf_version in
+-	    2.5*)
++	    2.[56]*)
+ 		have_autoconf=true
+@@ -98,25 +98 @@
  $AUTOCONF || exit $?
 -
 -cd $ORIGDIR || exit $?

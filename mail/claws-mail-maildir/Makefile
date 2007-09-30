@@ -7,7 +7,7 @@
 
 PORTNAME=	maildir
 PORTVERSION=	0.24.4
-PORTREVISION?=	9
+PORTREVISION?=	10
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -20,7 +20,7 @@ RUN_DEPENDS=	claws-mail>=3.0.1:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 USE_BDB=	yes
 
 CONFIGURE_ENV=	CFLAGS="-I${BDB_INCLUDE_DIR}" \

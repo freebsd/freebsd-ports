@@ -8,7 +8,7 @@
 
 PORTNAME=	gretl
 PORTVERSION=	1.6.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -25,7 +25,7 @@ WANT_GNOME=	yes
 USE_GNOME=	gnometarget gtk20 libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15 autoconf:259
+USE_AUTOTOOLS=	libtool:15 autoconf:261
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DGNUPLOT_PNG" \
 		LDFLAGS="-L${LOCALBASE}/lib ${GCCLIBDIR}"
 CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake

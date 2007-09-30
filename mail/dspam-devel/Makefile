@@ -13,7 +13,7 @@
 
 PORTNAME=	dspam-devel
 PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	# set later
@@ -97,7 +97,7 @@ OPTIONS+=	LIGHTTPD "RUN_DEPEND on LightHTTPD, not Apache" off
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool:15
 .ifdef(SNAP_DATE)
-USE_AUTOTOOLS+=	autoconf:259:env automake:19
+USE_AUTOTOOLS+=	autoconf:261:env automake:19
 .endif
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

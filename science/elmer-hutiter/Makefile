@@ -7,6 +7,7 @@
 
 PORTNAME=	hutiter
 PORTVERSION=	5.3.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer-
@@ -38,7 +39,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|' -e 's|%%FC%%|${FC}|' ${WRKSRC}/configure.in
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ENV+=	FC=${FC} F77=${FC}
 ALL_TARGET=
 

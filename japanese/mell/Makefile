@@ -7,6 +7,7 @@
 
 PORTNAME=	mell
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://taiyaki.org/elisp/mell/src/
 
@@ -14,7 +15,7 @@ MAINTAINER=	otsuji@users.sourceforge.jp
 COMMENT=	Emacs Lisp for taiyaki-elisp, especially for the prime
 
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=	automake:19 autoconf:259
+USE_AUTOTOOLS=	automake:19 autoconf:261
 AUTOMAKE_ARGS=		-af
 
 pre-configure:

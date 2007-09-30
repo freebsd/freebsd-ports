@@ -7,7 +7,7 @@
 
 PORTNAME=	hugin
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +28,7 @@ RUN_DEPENDS=	PTOptimizer:${PORTSDIR}/graphics/libpano12 \
 
 USE_BZIP2=	yes
 
-USE_AUTOTOOLS=	autoconf:259:env autoheader:259:env aclocal:19:env \
+USE_AUTOTOOLS=	autoconf:261:env autoheader:261:env aclocal:19:env \
 		automake:19:env libtool:15:env
 
 IS_INTERACTIVE=	yes

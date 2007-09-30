@@ -7,7 +7,7 @@
 
 PORTNAME=	planeshift
 PORTVERSION=	0.3.017
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://alex.foxybanana.com/freebsd/
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:15:env autoconf:259:env
+USE_AUTOTOOLS=	automake:15:env autoconf:261:env
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_LIBS}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib

@@ -7,6 +7,7 @@
 
 PORTNAME=	yui
 PORTVERSION=	3.2.03
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.askd.ru/~shelton/fileZ/
 
@@ -14,7 +15,7 @@ MAINTAINER=	achilov-rn@askd.ru
 COMMENT=	Rich-featured multi-windows console text editor
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 
 MAN1=		y.1
 

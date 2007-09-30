@@ -7,7 +7,7 @@
 
 PORTNAME=	sipxmedialib
 PORTVERSION=	3.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	sipXport:${PORTSDIR}/net/sipxportlib \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:259:env automake:19:env
+USE_AUTOTOOLS=	autoconf:261:env automake:19:env
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 LOCALSTATEDIR=	/var

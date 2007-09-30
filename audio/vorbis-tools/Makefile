@@ -7,7 +7,7 @@
 
 PORTNAME=	vorbis-tools
 PORTVERSION=	1.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
@@ -25,7 +25,7 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		speex.1:${PORTSDIR}/audio/speex \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
-USE_AUTOTOOLS=	aclocal:19 autoconf:259 automake:19 libtool:15
+USE_AUTOTOOLS=	aclocal:19 autoconf:261 automake:19 libtool:15
 USE_GETTEXT=	yes
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

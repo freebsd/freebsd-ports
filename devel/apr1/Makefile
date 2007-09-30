@@ -16,7 +16,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -28,7 +28,7 @@ COMMENT=	The Apache Group's Portability Library
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_ICONV=		yes
-USE_AUTOTOOLS=	automake:19 autoconf:259 libtool:15:env
+USE_AUTOTOOLS=	automake:19 autoconf:261 libtool:15:env
 USE_PERL5=		yes
 USE_GMAKE=		yes
 USE_PYTHON_BUILD=	yes

@@ -6,7 +6,7 @@
 
 PORTNAME=	happy
 PORTVERSION=	1.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/happy/dist/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -27,7 +27,7 @@ PLIST_SUB=	HAPPY_VERSION=${PORTVERSION}
 PORTDOCS=	*
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:259:env
+USE_AUTOTOOLS=	autoconf:261:env
 CONFIGURE_ARGS=	--ghc --prefix=${PREFIX}
 
 post-patch:

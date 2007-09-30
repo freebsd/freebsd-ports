@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_webapp
 PORTVERSION=	4.1.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://jakarta.apache.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	builds/jakarta-tomcat-4.0/release/v${TOMCAT_RELEASE}/src
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${NONEXISTANT}:${PORTSDIR}/devel/apr:configure
 
 USE_APACHE=	yes
 USE_PYTHON_BUILD=yes
-USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15:env
+USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

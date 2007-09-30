@@ -7,7 +7,7 @@
 
 PORTNAME=	XaraLX
 PORTVERSION?=	0.7r1692
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.xara.com/opensource/ \
 		${MASTER_SITE_LOCAL}
@@ -27,7 +27,7 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS+=	dlmalloc.2:${PORTSDIR}/devel/libdlmalloc \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_AUTOTOOLS=	autoconf:259:env aclocal:19:env automake:19:env libtool:15:env
+USE_AUTOTOOLS=	autoconf:261:env aclocal:19:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--program-suffix=${PKGNAMESUFFIX}

@@ -7,7 +7,7 @@
 
 PORTNAME=	faad2
 PORTVERSION=	2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	faac
@@ -24,7 +24,7 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_AUTOTOOLS=	automake:15 autoheader:253 autoconf:253 libtool:15
+USE_AUTOTOOLS=	automake:15 autoheader:261 autoconf:261 libtool:15
 AUTOMAKE_ARGS=		--add-missing
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
