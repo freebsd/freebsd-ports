@@ -20,6 +20,10 @@ COMMENT=	Rand MH mail handling system + Japanese patches
 BUILD_DEPENDS=	jless:${PORTSDIR}/japanese/less
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
 
+BROKEN=		fails to install
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2007-11-30
+
 VERSION=	6.8.4
 JP_VERSION=	3.05
 
