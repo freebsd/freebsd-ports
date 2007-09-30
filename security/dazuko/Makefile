@@ -20,7 +20,7 @@ OPTIONS=	EXAMPLEC	"Install C example programs"	on
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700000
-BROKEN=		Currently does not support -CURRENT
+BROKEN=		Currently does not support FreeBSD > 7.0
 .endif
 
 .if defined(WITH_EXAMPLEC)
