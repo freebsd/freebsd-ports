@@ -22,6 +22,7 @@ RESTRICTED=	Restrictive 60 day evaluation license
 
 WRKSRC=		${WRKDIR}/f-prot
 NO_BUILD=	yes
+USE_PERL5=	yes
 USE_RC_SUBR=	fprotd.sh fprotd_scanmail.sh
 
 MAN8=		f-prot-milter.8 f-prot-qmail.8 f-protd.8 scan-mail.pl.8
