@@ -7,7 +7,7 @@
 
 PORTNAME=	amanda
 PORTVERSION=	2.5.1p3
-PORTREVISION?=	2
+PORTREVISION?=	3
 PKGNAMESUFFIX?=	-server
 PORTEPOCH=	1
 CATEGORIES=	misc
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
 SLAVEDIRS=	misc/amanda-client
 
 NO_LATEST_LINK=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 USE_GMAKE=	yes
 PATCH_STRIP=
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
