@@ -32,6 +32,11 @@ FEATURES=	GD_JPEG GD_FREETYPE GD_PNG GD_GIF GD_GIFANIM GD_OPENPOLYGON
 USE_LDCONFIG=	yes
 WANT_PERL=	yes
 
+OPTIONS=	X11 "X11 support" off \
+		XPM "XPM color bitmap loading support (requires X11)" off \
+		FONTCONFIG "fontconfig library support (requires X11)" off \
+		ICONV "iconv support" off
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)
@@ -69,11 +74,7 @@ FONTBASE=	${X11BASE}/lib/X11/fonts
 
 pre-extract::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "gd has the following tunables:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITH_XPM=yes			Turns on Xpm support"
-	@${ECHO_MSG} "	WITH_FONTCONFIG=yes		Turns on Fontconfig support"
-	@${ECHO_MSG} "	WITH_ICONV=yes			Turns on iconv support"
+	@${ECHO_MSG} "GD_FONTS can be set to specify an alternative list of .bdf files"
 	@${ECHO_MSG} ""
 
 post-configure:
