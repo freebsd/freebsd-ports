@@ -7,7 +7,7 @@
 
 PORTNAME=	sysconftool
 PORTVERSION=	0.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 
-USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:259
+USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:261
 
 MAN1=	sysconftool.1 sysconftoolcheck.1
 MAN7=	sysconftool.7

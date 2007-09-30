@@ -7,6 +7,7 @@
 
 PORTNAME=	skyutils
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	laszlof
@@ -16,7 +17,7 @@ COMMENT=	A library required by smssend (same author)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOTOOLS=	autoconf:259 libtool:15
+USE_AUTOTOOLS=	autoconf:261 libtool:15
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

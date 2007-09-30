@@ -7,7 +7,7 @@
 
 PORTNAME=	vdesk
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://offog.org/files/
 
@@ -23,7 +23,7 @@ PLIST_FILES+=	share/doc/vdesk/${ii}
 .endfor
 .endif
 USE_X_PREFIX=		yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 
 post-extract:
 # Avoid having to read this lengthy file.

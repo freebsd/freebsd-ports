@@ -7,7 +7,7 @@
 
 PORTNAME=		kmatrix3d
 PORTVERSION=		0.1
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		deskutils
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,7 @@ WRKSRC=			${WRKDIR}/${PORTNAME}
 USE_GL=			yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15 automake:19:env autoheader:259:env
+USE_AUTOTOOLS=		libtool:15 automake:19:env autoheader:261:env
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
 

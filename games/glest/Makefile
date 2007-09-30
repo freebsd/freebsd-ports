@@ -7,6 +7,7 @@
 
 PORTNAME=	glest
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +25,7 @@ BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 RUN_DEPENDS=	${DATADIR}/configuration.xml:${PORTSDIR}/games/glest-data
 
 USE_XLIB=	yes
-USE_AUTOTOOLS=	automake:15:env autoconf:259:env
+USE_AUTOTOOLS=	automake:15:env autoconf:261:env
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GCC=	3.2+

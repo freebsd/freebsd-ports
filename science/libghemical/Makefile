@@ -6,7 +6,7 @@
 
 PORTNAME=	libghemical
 PORTVERSION=	2.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/ \
 		http://bioinformatics.org/ghemical/download/
@@ -46,7 +46,7 @@ LAPACK=		-llapack
 
 CONFIGURE_ARGS+=	--enable-mopac7 --enable-mpqc --enable-openbabel --with-blas="-L${LOCALBASE}/lib ${BLAS}" -with-lapack="-L${LOCALBASE}/lib ${LAPACK}"
 
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 PLIST_SUB=	LIBGHEMICAL_VERSION="${PORTVERSION}"
 
 .include <bsd.port.post.mk>

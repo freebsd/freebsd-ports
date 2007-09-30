@@ -7,7 +7,7 @@
 
 PORTNAME=	nagios-snmp-plugins
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.hometree.net/pub/${PORTNAME}/
 
@@ -17,7 +17,7 @@ COMMENT=	Additional SNMP plugins for Nagios
 LIB_DEPENDS=    netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=	automake:14 autoheader:253 autoconf:253
+USE_AUTOTOOLS=	automake:14 autoheader:261 autoconf:261
 USE_GETOPT_LONG=	yes
 USE_GMAKE=		yes
 USE_PERL5=		yes

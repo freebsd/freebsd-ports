@@ -7,7 +7,7 @@
 
 PORTNAME=	allegro
 DISTVERSION=	4.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	alleg
@@ -16,7 +16,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A cross-platform library for games and multimedia programming
 
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XLIB=	yes

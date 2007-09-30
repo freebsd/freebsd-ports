@@ -7,7 +7,7 @@
 
 PORTNAME=	wmupmon
 PORTVERSION=	0.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://j-z-s.com/projects/downloads/
 
@@ -17,7 +17,7 @@ COMMENT=	An uptime showing dockapp with a similar look to wmcpuload
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_AUTOTOOLS=	automake:15 autoheader:259
+USE_AUTOTOOLS=	automake:15 autoheader:261
 CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		wmupmon.1

@@ -7,7 +7,7 @@
 
 PORTNAME=	prc-tools
 PORTVERSION=	2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/prc-tools/:S/$/:prc/} \
 		${MASTER_SITE_SOURCEWARE}
@@ -27,7 +27,7 @@ COMMENT=	Collection of tools supporting C and C++ programming for Palm OS
 # but right now it does not.
 ONLY_FOR_ARCHS=	i386
 
-USE_AUTOTOOLS=	autoconf:253:env
+USE_AUTOTOOLS=	autoconf:261:env
 USE_BZIP2=	YES
 USE_BISON=	YES
 USE_GMAKE=	YES

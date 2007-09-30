@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.1.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}:powerlogo
@@ -37,6 +37,7 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 
 DEPRECATED=     No longer supported, please use www/apache22 instead
 EXPIRES=        2007-12-09
+BROKEN=		Fails with autoconf-2.61
 
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 			LIBTOOL_VERSION=${LIBTOOL_VERSION} AUTOCONF=${AUTOCONF} \
@@ -46,7 +47,7 @@ SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 USE_APACHE=		common21
 USE_BZIP2=		yes
 USE_ICONV=		yes
-USE_AUTOTOOLS=	autoconf:259 libtool:15
+USE_AUTOTOOLS=	autoconf:261 libtool:15
 USE_PERL5=		yes
 USE_RC_SUBR=		yes
 LIBTOOLFILES=		configure

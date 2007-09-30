@@ -7,7 +7,7 @@
 
 PORTNAME=	privoxy
 PORTVERSION=	3.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ijbswa
@@ -19,7 +19,7 @@ COMMENT=	Privoxy is a web proxy with advanced filtering capabilities
 WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:253
+USE_AUTOTOOLS=	autoconf:261
 
 USE_RC_SUBR=	privoxy
 SUB_FILES=	pkg-message

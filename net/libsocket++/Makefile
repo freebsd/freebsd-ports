@@ -8,7 +8,7 @@
 
 PORTNAME=	libsocket++
 PORTVERSION=	1.12.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://src.linuxhacker.at/socket++/
 DISTNAME=	socket++-${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	A C++ wrapper library to the sockets
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	automake:19 autoconf:259 libtool:15
+USE_AUTOTOOLS=	automake:19 autoconf:261 libtool:15
 SCRIPTS_ENV+=	ACLOCAL_FLAGS="-I ${LOCALBASE}/share/aclocal/"
 
 INFO=	socket++

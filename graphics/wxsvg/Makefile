@@ -7,6 +7,7 @@
 
 PORTNAME=	wxsvg
 DISTVERSION=	1.0b7_2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ COMMENT=	C++ library to create, manipulate, and render SVG files
 
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15 automake:15 autoconf:259
+USE_AUTOTOOLS=	libtool:15 automake:15 autoconf:261
 USE_GNOME=	libartlgpl2
 USE_GMAKE=	yes
 USE_WX=		2.6

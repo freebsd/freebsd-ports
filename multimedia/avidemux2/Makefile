@@ -7,7 +7,7 @@
 
 PORTNAME=	avidemux2
 PORTVERSION=	2.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/ \
 		${MASTER_SITE_BERLIOS}
@@ -24,7 +24,7 @@ LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame \
 		js:${PORTSDIR}/lang/spidermonkey \
 		xml2:${PORTSDIR}/textproc/libxml2
 
-USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15 aclocal:19:env
+USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15 aclocal:19:env
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20

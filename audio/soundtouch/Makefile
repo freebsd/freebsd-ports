@@ -7,7 +7,7 @@
 
 PORTNAME=	soundtouch
 DISTVERSION=	1.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.surina.net/soundtouch/
 
@@ -15,7 +15,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An open-source audio processing library
 
 CONFIGURE_ARGS=	--enable-shared=yes
-USE_AUTOTOOLS=	autoconf:259 automake:19:env libtool:15
+USE_AUTOTOOLS=	autoconf:261 automake:19:env libtool:15
 USE_LDCONFIG=	yes
 
 pre-configure:

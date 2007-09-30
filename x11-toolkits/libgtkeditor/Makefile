@@ -7,7 +7,7 @@
 
 PORTNAME=	libgtkeditor
 PORTVERSION=	0.1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/lib//}
@@ -18,7 +18,7 @@ COMMENT=	A source code editor widget for GTK+
 
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode
 
-USE_AUTOTOOLS=	automake:15:env autoconf:253:env libtool:15
+USE_AUTOTOOLS=	automake:15:env autoconf:261:env libtool:15
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes

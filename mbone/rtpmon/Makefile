@@ -7,7 +7,7 @@
 
 PORTNAME=	rtpmon
 PORTVERSION=	1.0a7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mbone tk83
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
@@ -17,7 +17,7 @@ COMMENT=	A program to montior loss in multicast sessions
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
-USE_AUTOTOOLS=	autoconf:253:env
+USE_AUTOTOOLS=	autoconf:261:env
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_GCC=	3.2

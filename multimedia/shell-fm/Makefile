@@ -7,7 +7,7 @@
 
 PORTNAME=	shell-fm
 PORTVERSION=	20061229
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ntarmos.dyndns.org/Software/FreeBSD/
 
@@ -17,7 +17,7 @@ COMMENT=	A command-line client for Last.FM
 LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao \
 		mad:${PORTSDIR}/audio/libmad
 
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoheader:259 autoconf:259
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoheader:261 autoconf:261
 AUTOMAKE_ARGS=	--add-missing --copy
 ACLOCAL_ARGS=	-I m4
 LDFLAGS+=	-L${LOCALBASE}/lib

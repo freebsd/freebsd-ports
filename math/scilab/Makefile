@@ -7,7 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	4.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math cad parallel
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
@@ -23,7 +23,7 @@ RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 WANT_GNOME=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 
 CONFIGURE_ARGS=	--with-tk \
 		--with-tk-library=${LOCALBASE}/lib \

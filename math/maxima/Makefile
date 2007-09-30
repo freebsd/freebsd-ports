@@ -7,6 +7,7 @@
 
 PORTNAME=	maxima
 PORTVERSION=	5.13.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -22,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19 autoconf:259
+USE_AUTOTOOLS=	automake:19 autoconf:261
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-posix-shell=${LOCALBASE}/bin/bash \
 			--with-wish=${LOCALBASE}/bin/wish8.4 \

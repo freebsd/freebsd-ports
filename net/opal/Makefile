@@ -7,6 +7,7 @@
 
 PORTNAME=	opal
 PORTVERSION=	2.2.8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/sources/ \
 		${MASTER_SITE_LOCAL}
@@ -23,7 +24,7 @@ LIB_DEPENDS=	pt_r:${PORTSDIR}/devel/pwlib
 # In opal's Makefile the default make's target is optshared
 ALL_TARGET=	optshared
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

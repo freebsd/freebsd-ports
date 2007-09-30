@@ -6,8 +6,7 @@
 
 PORTNAME=	musepack
 PORTVERSION=	1.2
-PORTREVISION=	1
-PORTREIVIOSN=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://files.musepack.net/linux/plugins/
 PKGNAMEPREFIX=	bmp-
@@ -26,7 +25,7 @@ USE_GMAKE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
-USE_AUTOTOOLS=	autoconf:259 libtool:15
+USE_AUTOTOOLS=	autoconf:261 libtool:15
 PLUGDIR=	lib/bmp/Input
 PLUGFILE=	libbmp-mpc.so
 PLIST_FILES=	${PLUGDIR}/${PLUGFILE}

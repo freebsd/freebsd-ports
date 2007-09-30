@@ -7,6 +7,7 @@
 
 PORTNAME=	gps
 PORTVERSION=	1.004
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	http://mimo.gn.apc.org/gps/
 PKGNAMEPREFIX=	postfix-
@@ -23,7 +24,7 @@ SCRIPT_FILES=	gps-maintain.pl gps-db-update.pl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_AUTOTOOLS=	automake:19 autoconf:259
+USE_AUTOTOOLS=	automake:19 autoconf:261
 USE_GCC=	3.4
 CONFIGURE_ARGS=	--bindir=${PREFIX}/libexec --includedir=${PREFIX}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"	\

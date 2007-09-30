@@ -7,6 +7,7 @@
 
 PORTNAME=	sipxportlib
 PORTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
@@ -20,7 +21,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:259:env automake:19:env
+USE_AUTOTOOLS=	autoconf:261:env automake:19:env
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5_RUN=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	xsystem35
 PORTVERSION=	1.7.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	http://8ne.sakura.ne.jp:20008/chika/unitbase/xsys35/down/
 
@@ -17,7 +17,7 @@ COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_AUTOTOOLS=	autoconf:259 libtool:15
+USE_AUTOTOOLS=	autoconf:261 libtool:15
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12

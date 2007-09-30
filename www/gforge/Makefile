@@ -7,7 +7,7 @@
 
 PORTNAME=	gforge
 PORTVERSION=	4.5.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 MASTER_SITES=	http://gforge.org/frs/download.php/236/
 
@@ -20,7 +20,7 @@ USE_BZIP2=		YES
 USE_PERL5=		YES
 HAS_CONFIGURE=		YES
 USE_APACHE=		YES
-USE_AUTOTOOLS=	autoconf:253
+USE_AUTOTOOLS=	autoconf:261
 NO_BUILD=		YES
 USE_PHP=		pgsql session pcre
 WANT_PHP_CLI=		YES

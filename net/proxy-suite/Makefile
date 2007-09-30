@@ -7,6 +7,7 @@
 
 PORTNAME=	proxy-suite
 PORTVERSION=	1.9.2.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/ \
 		ftp://ftp.gwdg.de/pub/linux/suse/ftp.suse.com/projects/proxy-suite/src/ \
@@ -15,7 +16,7 @@ MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/ \
 MAINTAINER=	thomas@cuivre.fr.eu.org
 COMMENT=	The SuSE Proxy-Suite, a set of programs to enhance firewall security
 
-USE_AUTOTOOLS=	autoconf:253
+USE_AUTOTOOLS=	autoconf:261
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 

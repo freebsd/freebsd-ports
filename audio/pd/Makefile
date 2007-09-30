@@ -8,7 +8,7 @@
 PORTNAME=	pd
 DISTVERSION=	0.40-2
 DISTVERSIONSUFFIX=	.src
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
 
@@ -25,7 +25,7 @@ MAN1=		pd.1 pdreceive.1 pdsend.1
 PATCH_WRKSRC=	${WRKSRC}/..
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 USE_TCL=	yes
 USE_TK=		yes
 USE_TCL_BUILD=	yes

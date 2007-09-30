@@ -7,7 +7,7 @@
 
 PORTNAME=	oops
 PORTVERSION=	${OOPSVERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://oops-cache.org/ \
 		ftp://kucha.ru/pub/misc/oops/
@@ -21,7 +21,7 @@ BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 OOPSVERSION=	1.5.24
 
 USE_SUBMAKE=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ARGS?=--sbindir=${PREFIX}/sbin \
 		--sysconfdir=${PREFIX}/etc/oops \
 		--localstatedir=${OOPSVAR} \

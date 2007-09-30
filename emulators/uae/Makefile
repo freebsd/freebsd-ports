@@ -7,7 +7,7 @@
 
 PORTNAME=	uae
 PORTVERSION=	0.8.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/ \
 		http://www.electronghost.co.uk/~bernds/
@@ -19,7 +19,7 @@ CONFLICTS=	e-uae-[0-9]*
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ARGS=	--enable-sound --enable-vidmode --enable-dga
 USE_XLIB=	yes
 USE_GNOME=	gtk20

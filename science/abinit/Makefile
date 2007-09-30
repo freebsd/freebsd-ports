@@ -7,6 +7,7 @@
 
 PORTNAME=	abinit
 PORTVERSION=	5.2.4
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/abinit|} \
 		ftp://ftp.abinit.org/pub/abinitio/ABINIT_v${PORTVERSION}/
@@ -18,7 +19,7 @@ USE_FORTRAN=	yes
 CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	GNU_HOST=${GNU_HOST}
 
@@ -37,6 +38,9 @@ LIB_DEPENDS+=   lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
+
+pre-configure:
+	@(cd ${WRKSRC} && config/scripts/makemake)
 
 test:
 	cd ${WRKSRC}/tests ; ${GMAKE} tests

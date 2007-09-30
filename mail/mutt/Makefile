@@ -8,6 +8,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.4.2.3
+PORTREVISION=	1
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -80,7 +81,7 @@ DIST_SUBDIR=	mutt
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:19 autoconf:259
+USE_AUTOTOOLS=	automake:19 autoconf:261
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"

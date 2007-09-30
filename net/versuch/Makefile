@@ -7,6 +7,7 @@
 
 PORTNAME=	versuch
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		http://warlock.elcat.kg/
@@ -23,7 +24,7 @@ LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib \
 WRKSRC=		${WRKDIR}/versuch
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

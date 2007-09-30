@@ -7,7 +7,7 @@
 
 PORTNAME=	fam
 PORTVERSION=	2.6.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://oss.sgi.com/projects/fam/download/
 DIST_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	A file alteration monitor
 
 CFLAGS+=	-Wno-deprecated
 
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:259 libtool:15
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:261 libtool:15
 AUTOMAKE_ARGS=	-c -a
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget

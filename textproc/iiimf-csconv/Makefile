@@ -7,7 +7,7 @@
 
 PORTNAME=	csconv
 PORTVERSION=	12.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15:env
+USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15:env
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/lib/CSConv

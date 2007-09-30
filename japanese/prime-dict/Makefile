@@ -7,6 +7,7 @@
 
 PORTNAME=	prime
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://prime.sourceforge.jp/src/
 PKGNAMESUFFIX=	-dict
@@ -19,7 +20,7 @@ USE_RUBY=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rubydir=${RUBY_SITELIBDIR}
-USE_AUTOTOOLS=	automake:19 autoconf:259
+USE_AUTOTOOLS=	automake:19 autoconf:261
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL})

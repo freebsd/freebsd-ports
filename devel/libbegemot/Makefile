@@ -7,6 +7,7 @@
 
 PORTNAME=	libbegemot
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~harti/libbegemot/
 DISTNAME=	libbegemot-${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	A function library for begemot tools
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:259:env libltdl:15 libtool:15:env
+USE_AUTOTOOLS=	automake:19:env autoconf:261:env libltdl:15 libtool:15:env
 INSTALLS_SHLIB=	yes
 
 

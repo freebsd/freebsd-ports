@@ -7,6 +7,7 @@
 
 PORTNAME=	yabause
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -19,7 +20,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	yes
 USE_GCC=	3.4+
-USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:259
+USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:261
 USE_XLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql-query-browser
 PORTVERSION=	1.1.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQLAdministrationSuite
@@ -24,7 +24,7 @@ RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:259:env
+USE_AUTOTOOLS=	automake:19:env autoconf:261:env
 CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 USE_ICONV=	yes

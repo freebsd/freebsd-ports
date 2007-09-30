@@ -7,6 +7,7 @@
 
 PORTNAME=		pdbsql
 PORTVERSION=		0.2
+PORTREVISION=		1
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	pdbsql
@@ -22,7 +23,7 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 # Add a build dependency for Samba port
-USE_AUTOTOOLS=		autoconf:259 autoheader:259
+USE_AUTOTOOLS=		autoconf:261 autoheader:261
 
 SAMBA_PORT=		net/samba3
 SAMBA_VERSION=		3.0.23

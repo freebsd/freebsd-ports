@@ -7,7 +7,7 @@
 
 PORTNAME=	valgrind
 PORTVERSION=	352
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rabson.org/
 PKGNAMESUFFIX=	-snapshot
@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS+=	autoconf:259 aclocal:19 automake:19
+USE_AUTOTOOLS+=	autoconf:261 aclocal:19 automake:19
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

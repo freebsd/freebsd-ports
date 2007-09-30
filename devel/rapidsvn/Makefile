@@ -7,7 +7,7 @@
 
 PORTNAME=	rapidsvn
 PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rapidsvn.org/download/release/${PORTVERSION}/
@@ -26,7 +26,7 @@ WX_CONF_ARGS=	absolute
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	autoconf:259 libtool:15 automake:19
+USE_AUTOTOOLS=	autoconf:261 libtool:15 automake:19
 CONFIGURE_ARGS=	--with-apr-config=apr-1-config \
 	--with-apu-config=apu-1-config \
 	--with-neon-config=neon-config \

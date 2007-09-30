@@ -7,7 +7,7 @@
 
 PORTNAME=	driglide
 PORTVERSION=	0.9.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	anholt/driglide/
@@ -18,7 +18,7 @@ COMMENT=	Libraries to support 3dfx Voodoo3/4/5/Banshee with the DRI
 USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:253 libtool:15
+USE_AUTOTOOLS=	automake:14 autoconf:261 libtool:15
 AUTOMAKE_ARGS=	-a
 USE_GMAKE=	yes
 MAKE_ARGS=	PREPROCESSOR=/usr/bin/cpp

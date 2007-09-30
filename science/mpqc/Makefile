@@ -7,7 +7,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mpqc
@@ -19,7 +19,6 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -48,7 +47,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 
 USE_FORTRAN=	yes
 
@@ -68,7 +67,8 @@ CONFIGURE_ARGS+=--with-cc=${CC} \
 		--with-coptflags="${CFLAGS}" \
 		--with-cxxoptflags="${CXXFLAGS}" \
 		--with-f77optflags="${FFLAGS}" \
-		--enable-shared
+		--enable-shared \
+		--with-sc-datadir=${PREFIX}/share/mpqc/${PORTVERSION}
 .if defined(WITH_ICC)
 CONFIGURE_ARGS+=--with-libs="-lsvml"
 .endif

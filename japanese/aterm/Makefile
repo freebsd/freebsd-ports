@@ -7,7 +7,7 @@
 
 PORTNAME=	aterm
 PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	japanese x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,7 @@ COMMENT=	A color vt102 terminal emulator with transparency support
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
-USE_AUTOTOOLS=	autoconf:253:env
+USE_AUTOTOOLS=	autoconf:261:env
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes

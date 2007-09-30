@@ -7,7 +7,7 @@
 
 PORTNAME=		kooldock
 PORTVERSION=		0.4.6
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		deskutils
 MASTER_SITES=		http://www.kde-apps.org/CONTENT/content-files/ \
 			http://www.kde-look.org/CONTENT/content-files/ \
@@ -25,7 +25,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15 automake:19:env autoconf:259:env
+USE_AUTOTOOLS=		libtool:15 automake:19:env autoconf:261:env
 INSTALLS_ICONS=		yes
 USE_GETTEXT=		yes
 USE_KDELIBS_VER=	3

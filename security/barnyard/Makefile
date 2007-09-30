@@ -7,6 +7,7 @@
 
 PORTNAME=	barnyard
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	barnyard
@@ -19,7 +20,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
 OPTIONS=	MYSQL "Enable MySQL support" off \
 		POSTGRESQL "Enable PostgreSQL support" off
 
-USE_AUTOTOOLS=	autoheader:259 aclocal:19
+USE_AUTOTOOLS=	autoheader:261 aclocal:19
 USE_RC_SUBR=	barnyard.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"

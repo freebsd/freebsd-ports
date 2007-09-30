@@ -7,7 +7,7 @@
 
 PORTNAME=	FreeWnn
 PORTVERSION=	1.1.1.a021
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	japanese
 MASTER_SITES=	ftp://ftp.freewnn.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_SOURCEFORGE_JP}
@@ -21,7 +21,7 @@ COMMENT?=	A Japanese/Chinese/Korean input method (Japanese client libraries)
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:253 libtool:15
+USE_AUTOTOOLS=	autoconf:261 libtool:15
 USE_LDCONFIG=	yes
 MAKE_ARGS=	CDEBUGFLAGS="${CFLAGS}"
 ALL_TARGET=	includes all

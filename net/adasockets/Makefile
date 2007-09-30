@@ -7,7 +7,7 @@
 
 PORTNAME=		adasockets
 PORTVERSION=		1.8.4.7
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		net
 MASTER_SITES=		http://www.rfc1149.net/download/adasockets/
 
@@ -17,7 +17,7 @@ COMMENT=		Sockets library for Ada
 BUILD_DEPENDS=		gnatmake:${PORTSDIR}/lang/gnat \
 			texi2dvi:${PORTSDIR}/print/teTeX
 
-USE_AUTOTOOLS=		autoconf:259
+USE_AUTOTOOLS=		autoconf:261
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-examples
 .if defined(NOPORTDOCS)

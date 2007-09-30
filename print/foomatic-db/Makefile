@@ -7,6 +7,7 @@
 
 PORTNAME=	db
 PORTVERSION=	20070124
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,$,acm/foomatic/,} \
 		http://freebsd.unixfreunde.de/sources/
@@ -22,7 +23,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_AUTOTOOLS=	automake:15:env autoconf:259
+USE_AUTOTOOLS=	automake:15:env autoconf:261
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

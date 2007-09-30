@@ -7,7 +7,7 @@
 
 PORTNAME=	viewkit
 PORTVERSION=	0.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.hungry.com/pub/hungry/viewkit/ \
 		${MASTER_SITE_LOCAL}
@@ -17,7 +17,7 @@ DISTNAME=	libvk-Apr19-2243
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ViewKit workalike from Hungry Programmers
 
-USE_AUTOTOOLS=	autoconf:253:env
+USE_AUTOTOOLS=	autoconf:261:env
 MOTIFPACKAGE?=	open-motif
 USE_X_PREFIX=	yes
 USE_MOTIF=	yes

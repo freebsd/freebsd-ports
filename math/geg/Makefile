@@ -7,7 +7,7 @@
 
 PORTNAME=	geg
 PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.infolaunch.com/~daveb/
@@ -18,7 +18,7 @@ COMMENT=	Visualise multiple 2D-functions of one variable
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	automake:15 autoconf:253
+USE_AUTOTOOLS=	automake:15 autoconf:261
 AUTOMAKE_ARGS=	-a -i
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

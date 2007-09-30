@@ -7,7 +7,7 @@
 
 PORTNAME=	le-newpy
 PORTVERSION=	12.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15:env
+USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15:env
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/leif

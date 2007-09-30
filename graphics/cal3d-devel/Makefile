@@ -7,6 +7,7 @@
 
 PORTNAME=	cal3d
 PORTVERSION=	20060720
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	acm/${PORTNAME}
@@ -22,7 +23,7 @@ USE_BZIP2=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 USE_GCC=	3.4+
-USE_AUTOTOOLS=	automake:19 autoheader:259 libtool:15
+USE_AUTOTOOLS=	automake:19 autoheader:261 libtool:15
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

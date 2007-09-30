@@ -7,7 +7,7 @@
 
 PORTNAME=	med
 PORTVERSION=	2.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	french science
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 
@@ -31,7 +31,7 @@ CONFIGURE_ENV+=	HDF5HOME=${LOCALBASE} CPPFLAGS="${PTHREAD_CFLAGS}"	\
 		--with-f90=${FC}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:259 libtool:15
+USE_AUTOTOOLS=	autoconf:261 libtool:15
 USE_LDCONFIG=	yes
 
 DOC2FIX=	. gif html jpg png tests

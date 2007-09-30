@@ -5,6 +5,7 @@
 
 PORTNAME=	ooo-build
 PORTVERSION=	${OOOBUILD_VERSION}
+PORTREVISION=	1
 MASTER_SITES+=	http://www.go-ooo.org/packages/OOF680/ \
 		http://www.go-ooo.org/packages/SRC680/ \
 		http://www.openclipart.org/downloads/0.18/:openclipart \
@@ -42,7 +43,7 @@ OOO_LIBWPG=		libwpg-0.1.0~cvs20070608.tar.gz
 OOO_PATCHDIR=src680
 
 MD5_FILE=      ${.CURDIR}/distinfo
-USE_AUTOTOOLS=  autoconf:259
+USE_AUTOTOOLS=  autoconf:261
 
 CONFIGURE_ARGS+=	--enable-cairo
 CONFIGURE_ARGS+=	--with-system-xrender-headers

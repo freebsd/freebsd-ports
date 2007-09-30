@@ -7,6 +7,7 @@
 
 PORTNAME=	sccmilter
 PORTVERSION=	0.95.7
+PORTREVISION=	1
 CATEGORIES=	mail sysutils
 MASTER_SITES=	ftp://ftp.granch.ru/pub/kavmilter/
 
@@ -20,7 +21,7 @@ IGNORE=		requires Sendmail 8.12; upgrade the base system
 USE_BZIP2=		yes
 USE_GETOPT_LONG=	yes
 USE_RC_SUBR=		yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--localstatedir=/var

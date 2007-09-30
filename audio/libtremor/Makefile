@@ -7,6 +7,7 @@
 
 PORTNAME=	libtremor
 PORTVERSION=	1.0.2.${SNAP_DATE}
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://members.chello.nl/~g.mast/distfiles/
 DISTNAME=	tremor_snapshot_${SNAP_DATE}
@@ -17,7 +18,7 @@ COMMENT=	Integer-only fully Ogg Vorbis compliant decoder library
 
 SNAP_DATE=	02132004
 WRKSRC=		${WRKDIR}/Tremor
-USE_AUTOTOOLS=	automake:15 autoconf:253 libtool:15
+USE_AUTOTOOLS=	automake:15 autoconf:261 libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

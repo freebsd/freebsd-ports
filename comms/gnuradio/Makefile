@@ -7,6 +7,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnuradio
@@ -32,7 +33,7 @@ USE_PYTHON=	2.4+
 USE_WX=		2.6
 WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_PERL5=	yes
-USE_AUTOTOOLS=	autoconf:259 libtool:15
+USE_AUTOTOOLS=	autoconf:261 libtool:15
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

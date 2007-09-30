@@ -38,7 +38,6 @@ USE_ICONV=	yes
 USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xi xinerama xrandr \
 		xrender
 USE_GNOME=	gnomehack pkgconfig gtk20 glib20 atk libartlgpl2 pango libxml2
-#USE_AUTOTOOLS=	autoconf:259 libtool:15
 GNU_CONFIGURE=	yes
 USE_GCC=	3.3+
 WANT_GNOME=	yes

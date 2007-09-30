@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	8.0.14
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -112,7 +112,7 @@ USE_BISON=	yes
 .  endif
 
 .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
-USE_AUTOTOOLS=	autoconf:253
+USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ARGS+=--with-icu
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu

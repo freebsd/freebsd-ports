@@ -7,6 +7,7 @@
 
 PORTNAME?=	tidy
 DISTVERSION=	070813-cvs
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 #MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
@@ -28,7 +29,7 @@ USE_GMAKE=	yes
 PLIST_SUB=	SHLIB="@comment " NSHLIB=""
 CONFLICTS=	tidy-20000804* tidy-lib-[0-9]*
 .else
-USE_AUTOTOOLS=	automake:15 autoconf:253 libtool:15
+USE_AUTOTOOLS=	automake:15 autoconf:261 libtool:15
 AUTOMAKE_ARGS+=	-a -c --foreign
 CONFIGURE_TARGET=	 --target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes

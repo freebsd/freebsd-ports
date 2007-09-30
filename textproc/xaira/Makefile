@@ -7,6 +7,7 @@
 
 PORTNAME=	xaira
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -15,10 +16,9 @@ COMMENT=	XML Aware Indexing and Retrieval Architecture
 
 LIB_DEPENDS=	xerces-c:${PORTSDIR}/textproc/xerces-c2 \
 		icuio:${PORTSDIR}/devel/icu
-BUILD_DEPENDS=	${LIBTOOL}:${PORTSDIR}/devel/libtool15
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal:19 autoconf:259 libtool:15
+USE_AUTOTOOLS=	aclocal:19 autoconf:261 libtool:15
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

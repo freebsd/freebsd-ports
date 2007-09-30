@@ -7,7 +7,7 @@
 
 PORTNAME=	fish
 PORTVERSION=	1.22.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	http://www.fishshell.org/files/1.22.3/ \
 		http://roo.no-ip.org/fish/files/1.22.3/ \
@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.fishshell.org/files/1.22.3/ \
 MAINTAINER=	kaiw27@gmail.com
 COMMENT=	A user friendly command line shell
 
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

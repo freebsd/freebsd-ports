@@ -16,7 +16,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio curses based logging program
 
-USE_AUTOTOOLS=	autoconf:259 libtool:15 aclocal:19 automake:19
+USE_AUTOTOOLS=	autoconf:261 libtool:15 aclocal:19 automake:19
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"

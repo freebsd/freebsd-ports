@@ -7,7 +7,7 @@
 
 PORTNAME=	xfsprogs
 PORTVERSION=	2.8.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://oss.sgi.com/projects/xfs/cmd_tars/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	A set of utilities and library to manipulate an xfs filesystem
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	autoconf:259 libtool:15:env
+USE_AUTOTOOLS=	autoconf:261 libtool:15:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=		INSTALL="${INSTALL} ${_BINOWNGRP}" \
 			CFLAGS="${CFLAGS}" \

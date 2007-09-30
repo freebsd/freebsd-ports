@@ -7,6 +7,7 @@
 
 PORTNAME=	gnustep-base
 PORTVERSION=	1.13.1
+PORTREVISION=	1
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -18,7 +19,7 @@ LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-procfs
 CONFIGURE_TARGET=
