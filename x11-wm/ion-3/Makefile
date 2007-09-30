@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ion-3rc
-PORTVERSION=	20070902
+PORTVERSION=	20070927
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/dl/:ion3 \
 		${MASTER_SITE_LOCAL:S/$/:ion3/} \
