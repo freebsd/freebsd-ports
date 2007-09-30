@@ -22,6 +22,7 @@ RUN_DEPENDS=	${SITE_PERL}/CGI/Session.pm:${PORTSDIR}/www/p5-CGI-Session
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_PERL5=	yes
 
 TWIKI?=		${WWWOWN}/twiki
 TWIKIDIR?=	${PREFIX}/${TWIKI}
