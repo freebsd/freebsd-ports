@@ -6,7 +6,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	6.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot \
@@ -24,7 +24,7 @@ BOOT_DIST4=	ghc-${PORTVERSION}-i386-unknown-freebsd4-boot${EXTRACT_SUFX}:boot
 BOOT_DIST5=	ghc-${PORTVERSION}-i386-unknown-freebsd5-boot${EXTRACT_SUFX}:boot
 BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd6-boot${EXTRACT_SUFX}:boot
 
-USE_AUTOTOOLS=	autoconf:259:env
+USE_AUTOTOOLS=	autoconf:261:env
 USE_BZIP2=	yes
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 
