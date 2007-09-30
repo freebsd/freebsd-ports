@@ -24,6 +24,10 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84	\
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not configure on FreeBSD 7.0
+.endif
+
 # Elmer avoids the new C++ headers because they cause problems
 # on older systems (Irix)
 CXXFLAGS+=	-Wno-deprecated
