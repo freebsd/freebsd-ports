@@ -291,6 +291,7 @@ sbin/reject
 %%DATADIR%%/templates/error.tmpl
 %%DATADIR%%/templates/es/add-class.tmpl
 %%DATADIR%%/templates/es/add-printer.tmpl
+%%DATADIR%%/templates/es/add-rss-subscription.tmpl
 %%DATADIR%%/templates/es/admin.tmpl
 %%DATADIR%%/templates/es/choose-device.tmpl
 %%DATADIR%%/templates/es/choose-make.tmpl
@@ -318,6 +319,7 @@ sbin/reject
 %%DATADIR%%/templates/es/job-restart.tmpl
 %%DATADIR%%/templates/es/jobs-header.tmpl
 %%DATADIR%%/templates/es/jobs.tmpl
+%%DATADIR%%/templates/es/list-available-printers.tmpl
 %%DATADIR%%/templates/es/maintenance.tmpl
 %%DATADIR%%/templates/es/modify-class.tmpl
 %%DATADIR%%/templates/es/modify-printer.tmpl
@@ -349,6 +351,8 @@ sbin/reject
 %%DATADIR%%/templates/es/search.tmpl
 %%DATADIR%%/templates/es/set-printer-options-header.tmpl
 %%DATADIR%%/templates/es/set-printer-options-trailer.tmpl
+%%DATADIR%%/templates/es/subscription-added.tmpl
+%%DATADIR%%/templates/es/subscription-canceled.tmpl
 %%DATADIR%%/templates/es/test-page.tmpl
 %%DATADIR%%/templates/es/trailer.tmpl
 %%DATADIR%%/templates/es/users.tmpl
@@ -952,9 +956,11 @@ sbin/reject
 %%DOCSDIR%%/es/images/button-accept-jobs.gif
 %%DOCSDIR%%/es/images/button-add-class.gif
 %%DOCSDIR%%/es/images/button-add-printer.gif
+%%DOCSDIR%%/es/images/button-add-rss-subscription.gif
 %%DOCSDIR%%/es/images/button-add-this-printer.gif
 %%DOCSDIR%%/es/images/button-cancel-all-jobs.gif
 %%DOCSDIR%%/es/images/button-cancel-job.gif
+%%DOCSDIR%%/es/images/button-cancel-subscription.gif
 %%DOCSDIR%%/es/images/button-change-settings.gif
 %%DOCSDIR%%/es/images/button-clean-print-heads.gif
 %%DOCSDIR%%/es/images/button-clear.gif
@@ -963,6 +969,7 @@ sbin/reject
 %%DOCSDIR%%/es/images/button-delete-printer.gif
 %%DOCSDIR%%/es/images/button-edit-configuration-file.gif
 %%DOCSDIR%%/es/images/button-export-samba.gif
+%%DOCSDIR%%/es/images/button-find-new-printers.gif
 %%DOCSDIR%%/es/images/button-help.gif
 %%DOCSDIR%%/es/images/button-hold-job.gif
 %%DOCSDIR%%/es/images/button-manage-classes.gif
@@ -1295,6 +1302,8 @@ sbin/reject
 %%DOCSDIR%%/images/printer-idle.gif
 %%DOCSDIR%%/images/printer-processing.gif
 %%DOCSDIR%%/images/printer-stopped.gif
+%%DOCSDIR%%/images/raster.png
+%%DOCSDIR%%/images/raster.svg
 %%DOCSDIR%%/images/smiley.jpg
 %%DOCSDIR%%/images/tab-left.gif
 %%DOCSDIR%%/images/tab-right.gif
@@ -1589,7 +1598,6 @@ share/locale/no/cups_no.po
 share/locale/pl/cups_pl.po
 share/locale/pt/cups_pt.po
 share/locale/pt_BR/cups_pt_BR.po
-share/locale/pt_PT/cups_pt_PT.po
 share/locale/ru/cups_ru.po
 share/locale/sv/cups_sv.po
 share/locale/zh/cups_zh.po
@@ -1612,7 +1620,6 @@ share/locale/zh_TW/cups_zh_TW.po
 @exec mkdir -p %D/%%DOCSDIR%%/no/images
 @exec mkdir -p %D/%%DOCSDIR%%/pt/images
 @exec mkdir -p %D/%%DOCSDIR%%/pt_BR/images
-@exec mkdir -p %D/%%DOCSDIR%%/pt_PT/images
 @exec mkdir -p %D/%%DOCSDIR%%/ru/images
 @exec mkdir -p %D/%%DOCSDIR%%/zh/images
 @dirrm %%DOCSDIR%%/zh_TW/images
@@ -1623,8 +1630,6 @@ share/locale/zh_TW/cups_zh_TW.po
 @dirrm %%DOCSDIR%%/sv
 @dirrm %%DOCSDIR%%/ru/images
 @dirrm %%DOCSDIR%%/ru
-@dirrm %%DOCSDIR%%/pt_PT/images
-@dirrm %%DOCSDIR%%/pt_PT
 @dirrm %%DOCSDIR%%/pt_BR/images
 @dirrm %%DOCSDIR%%/pt_BR
 @dirrm %%DOCSDIR%%/pt/images
@@ -1665,14 +1670,12 @@ share/locale/zh_TW/cups_zh_TW.po
 @exec mkdir -p %D/%%DATADIR%%/templates/no
 @exec mkdir -p %D/%%DATADIR%%/templates/pt
 @exec mkdir -p %D/%%DATADIR%%/templates/pt_BR
-@exec mkdir -p %D/%%DATADIR%%/templates/pt_PT
 @exec mkdir -p %D/%%DATADIR%%/templates/ru
 @exec mkdir -p %D/%%DATADIR%%/templates/zh
 @dirrm %%DATADIR%%/templates/zh_TW
 @dirrm %%DATADIR%%/templates/zh
 @dirrm %%DATADIR%%/templates/ru
 @dirrm %%DATADIR%%/templates/sv
-@dirrm %%DATADIR%%/templates/pt_PT
 @dirrm %%DATADIR%%/templates/pt_BR
 @dirrm %%DATADIR%%/templates/pt
 @dirrm %%DATADIR%%/templates/pl

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
@@ -159,11 +158,11 @@ pre-su-install:
 	if ! pw usershow ${CUPSOWN}; then pw useradd ${CUPSOWN} -g ${CUPSGRP} -u 193 \
 		-h - -d ${NONEXISTENT} -s /usr/sbin/nologin -c "CUPS Owner"; fi
 .if defined(CUPS_OVERWRITE_BASE)
-	if test -e /usr/bin/lp; then chmod -h 0 /usr/bin/lp; fi
-	if test -e /usr/bin/lpq; then chmod -h 0 /usr/bin/lpq; fi
-	if test -e /usr/bin/lpr; then chmod -h 0 /usr/bin/lpr; fi
-	if test -e /usr/bin/lprm; then chmod -h 0 /usr/bin/lprm; fi
-	if test -e /usr/sbin/lpc; then chmod -h 0 /usr/sbin/lpc; fi
+	if test -e /usr/bin/lp; then ${CHMOD} -h 0 /usr/bin/lp; fi
+	if test -e /usr/bin/lpq; then ${CHMOD} -h 0 /usr/bin/lpq; fi
+	if test -e /usr/bin/lpr; then ${CHMOD} -h 0 /usr/bin/lpr; fi
+	if test -e /usr/bin/lprm; then ${CHMOD} -h 0 /usr/bin/lprm; fi
+	if test -e /usr/sbin/lpc; then ${CHMOD} -h 0 /usr/sbin/lpc; fi
 .endif
 
 post-install:
