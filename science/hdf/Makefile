@@ -51,6 +51,10 @@ USE_LDCONFIG=	yes
 BROKEN=		Does not compile on !i386, !amd64 and !alpha
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 		${WRKSRC}/hdf/src/Makefile.in ${WRKSRC}/mfhdf/libsrc/Makefile.in
