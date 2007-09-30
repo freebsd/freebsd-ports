@@ -1,73 +1,85 @@
---- src/imapd/Makefile.orig	Tue Jun 29 21:26:28 2004
-+++ src/imapd/Makefile	Fri Sep  3 21:23:29 2004
-@@ -18,11 +18,11 @@
- # CPYRIGHT, included with this Distribution.
- 
- 
--ALERT=/etc/imapd.alert
-+ALERT=$(PREFIX)/etc/imapd.alert
- USERALERT=.imapalert
--SHUTDOWN=/etc/nologin
--ANO=/etc/anonymous.newsgroups
--NNTP=/etc/imapd.nntp
-+SHUTDOWN=$(PREFIX)/etc/nologin
-+ANO=$(PREFIX)/etc/anonymous.newsgroups
-+NNTP=$(PREFIX)//etc/imapd.nntp
- SHELL= /bin/sh
- 
- 
-@@ -30,7 +30,9 @@
- # causes the "Manage Mail" menu item to open the given URL, e.g. to point to
- # an alternative IMAP client (e.g. Pine) or perhaps to a homebrew mail
- # account management page.
--#NSBD= -DNETSCAPE_BRAIN_DAMAGE=\"http://www.washington.edu/pine\"
-+.if defined(WITH_NETSCAPE_BRAIN_DAMAGE)
-+NSBD= -DNETSCAPE_BRAIN_DAMAGE=\"http://www.washington.edu/pine\"
-+.endif
- 
- 
- 
-@@ -39,28 +41,30 @@
- # broken program does a STATUS on the selected mailbox.  This shouldn't be
- # necessary, and it's been reported that Entourage works without having to
- # un-comment this.
--#ENBD= -DENTOURAGE_BRAIN_DAMAGE
-+.if defined(WITH_ENTOURAGE_BRAIN_DAMAGE)
-+ENBD= -DENTOURAGE_BRAIN_DAMAGE
-+.endif
- 
- 
- # Get local definitions from c-client directory
- 
- C = ../c-client
--CCLIENTLIB = $C/c-client.a
--CC = `cat $C/CCTYPE`
--CFLAGS = -I$C `cat $C/CFLAGS` $(NSBD) $(ENBD) -DANOFILE=\"$(ANO)\" \
--	-DALERTFILE=\"$(ALERT)\" -DNNTPFILE=\"$(NNTP)\" \
--	-DUSERALERTFILE=\"$(USERALERT)\" -DSHUTDOWNFILE=\"$(SHUTDOWN)\"
--LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
-+#CCLIENTLIB = $C/c-client.a
-+CFLAGS+=	-DNFSKLUDGE -I$(LOCALBASE)/include/c-client \
-+		-DANOFILE=\"$(ANO)\" -DALERTFILE=\"$(ALERT)\" \
-+		-DNNTPFILE=\"$(NNTP)\" -DUSERALERTFILE=\"$(USERALERT)\" \
-+		-DSHUTDOWNFILE=\"$(SHUTDOWN)\"
-+LDFLAGS+=	$(EXTRALDFLAGS) -L$(LOCALBASE)/lib -lc-client4
-+.if defined(WITH_DRAC)
-+CFLAGS+=	-DETC_DIR=\"$(PREFIX)/etc\" -DDRAC_AUTH
-+LDFLAGS+=	-ldrac
-+.endif
-+CFLAGS+= $(NSBD) $(ENBD)
- 
- all:	imapd
- 
--imapd: $(CCLIENTLIB) imapd.o
-+imapd:	imapd.o
- 	$(CC) $(CFLAGS) -o imapd imapd.o $(LDFLAGS)
--
--imapd.o: $C/mail.h $C/misc.h $C/osdep.h
--
--$(CCLIENTLIB):
--	cd $C;make
- 
- clean:
- 	rm -f *.o imapd || true
+*** src/imapd/Makefile.orig	Thu Aug 31 02:10:44 2006
+--- src/imapd/Makefile	Mon Jul 23 18:02:12 2007
+***************
+*** 25,35 ****
+  # Last Edited:	30 August 2006
+  
+  
+! ALERT=/etc/imapd.alert
+  USERALERT=.imapalert
+! SHUTDOWN=/etc/nologin
+! ANO=/etc/anonymous.newsgroups
+! NNTP=/etc/imapd.nntp
+  SHELL= /bin/sh
+  
+  
+--- 25,35 ----
+  # Last Edited:	30 August 2006
+  
+  
+! ALERT=$(PREFIX)/etc/imapd.alert
+  USERALERT=.imapalert
+! SHUTDOWN=$(PREFIX)/etc/nologin
+! ANO=$(PREFIX)/etc/anonymous.newsgroups
+! NNTP=$(PREFIX)//etc/imapd.nntp
+  SHELL= /bin/sh
+  
+  
+***************
+*** 37,64 ****
+  # causes the "Manage Mail" menu item to open the given URL, e.g. to point to
+  # an alternative IMAP client (e.g. Pine) or perhaps to a homebrew mail
+  # account management page.
+! #NSBD= -DNETSCAPE_BRAIN_DAMAGE=\"http://www.washington.edu/pine\"
+  
+  
+  # Get local definitions from c-client directory
+  
+! C = ../c-client
+! CCLIENTLIB = $C/c-client.a
+! CC = `cat $C/CCTYPE`
+! CFLAGS = -I$C `cat $C/CFLAGS` $(NSBD) $(ENBD) -DANOFILE=\"$(ANO)\" \
+  	-DALERTFILE=\"$(ALERT)\" -DNNTPFILE=\"$(NNTP)\" \
+  	-DUSERALERTFILE=\"$(USERALERT)\" -DSHUTDOWNFILE=\"$(SHUTDOWN)\"
+! LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
+  
+  all:	imapd
+  
+! imapd: $(CCLIENTLIB) imapd.o
+  	$(CC) $(CFLAGS) -o imapd imapd.o $(LDFLAGS)
+- 
+- imapd.o: $C/mail.h $C/misc.h $C/osdep.h
+- 
+- $(CCLIENTLIB):
+- 	cd $C;make
+  
+  clean:
+  	rm -f *.o imapd || true
+--- 37,63 ----
+  # causes the "Manage Mail" menu item to open the given URL, e.g. to point to
+  # an alternative IMAP client (e.g. Pine) or perhaps to a homebrew mail
+  # account management page.
+! .if defined(WITH_NETSCAPE_BRAIN_DAMAGE)
+! NSBD= -DNETSCAPE_BRAIN_DAMAGE=\"http://www.washington.edu/pine\"
+! .endif
+  
+  
+  # Get local definitions from c-client directory
+  
+! CFLAGS = -DNFSKLUDGE -I$(LOCALBASE)/include/c-client $(NSBD) \
+! 	-DANOFILE=\"$(ANO)\" \
+  	-DALERTFILE=\"$(ALERT)\" -DNNTPFILE=\"$(NNTP)\" \
+  	-DUSERALERTFILE=\"$(USERALERT)\" -DSHUTDOWNFILE=\"$(SHUTDOWN)\"
+! LDFLAGS+=	$(EXTRALDFLAGS) -L$(LOCALBASE)/lib -lc-client4
+! .if defined(WITH_DRAC)
+! CFLAGS+=	-DETC_DIR=\"$(PREFIX)/etc\" -DDRAC_AUTH
+! LDFLAGS+=	-ldrac
+! .endif
+  
+  all:	imapd
+  
+! imapd: imapd.o
+  	$(CC) $(CFLAGS) -o imapd imapd.o $(LDFLAGS)
+  
+  clean:
+  	rm -f *.o imapd || true
