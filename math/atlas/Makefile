@@ -10,7 +10,7 @@
 
 PORTNAME=	atlas
 PORTVERSION=	3.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -26,8 +26,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/ATLAS
 USE_LDCONFIG=	yes
-
-BROKEN=		Creating ATLAS'ed LAPACK part is broken
 
 .include <bsd.port.pre.mk>
 
@@ -136,6 +134,7 @@ do-configure:
 
 ATLAS_LIBS1=libalapack libatlas libcblas libf77blas libtstatlas
 ATLAS_LIBS2=libptcblas libptf77blas
+LAPACKWRKSRC=`cd ${WRKDIR}/lapack; ${MAKE} -V WRKSRC`
 
 do-build:
 # make lapack
@@ -143,7 +142,6 @@ do-build:
 	@${ECHO_MSG} "===>  Extracting lapack sub project"
 	@${MKDIR} ${WRKDIR}/lapack
 	@${CP} -r ${PORTSDIR}/math/lapack/files ${WRKDIR}/lapack
-	@${CP} -r ${PORTSDIR}/math/lapack/scripts ${WRKDIR}/lapack
 	@${CP} ${PORTSDIR}/math/lapack/Makefile ${WRKDIR}/lapack
 	@${CP} ${PORTSDIR}/math/lapack/distinfo ${WRKDIR}/lapack
 	@${CP} ${PORTSDIR}/math/lapack/pkg-descr ${WRKDIR}/lapack
@@ -161,7 +159,7 @@ post-build:
 .if defined(WITH_STATICLIB)
 # make atlas enhanced lapack (static ver)
 	(cd ${WRKSRC}; ${MKDIR} tmp1 ; \
-		${CP} ${WRKDIR}/lapack/work/LAPACK/SRC/liblapack.a tmp1 ;\
+		${CP} ${LAPACKWRKSRC}/liblapack.a tmp1 ;\
 		cd tmp1 ;\
 		ar x liblapack.a ;\
 		ar x ../lib/NON_THREADED/liblapack.a ;\
@@ -169,7 +167,7 @@ post-build:
 		ranlib ../lib/NON_THREADED/libalapack.a )
 #  make atlas enhanced lapack (static and thread safe ver)
 	(cd ${WRKSRC}; ${MKDIR} tmp2 ; \
-		${CP} ${WRKDIR}/lapack/work/LAPACK/SRC/liblapack.a tmp2 ;\
+		${CP} ${LAPACKWRKSRC}/liblapack.a tmp2 ;\
 		cd tmp2 ;\
 		ar x liblapack.a ;\
 		ar x ../lib/THREADED/liblapack.a ;\
@@ -178,23 +176,17 @@ post-build:
 .endif
 # make atlas enhanced lapack (shared ver)
 	( cd ${WRKSRC}; ${MKDIR} tmp3 ;\
-	${TAR} --exclude "*.f" --exclude "*.po" --exclude "*.o"	-cf - -C ${WRKDIR}/lapack/work/LAPACK/SRC . | ${TAR} xf - -C tmp3 ;\
-		for object in `${FIND} tmp3 -name "*.So"` ; do \
-			n=`${ECHO_CMD} $${object}|${SED} -e 's#.So##'` ; \
-			${MV} $$n.So $$n.o ; \
-		done ; \
+		${CP} ${LAPACKWRKSRC}_shared/liblapack.a tmp3 ;\
 		cd tmp3 ;\
+		ar x liblapack.a ;\
 		ar x ../lib/NON_THREADED_PIC/liblapack.a ;\
 		ar r ../lib/NON_THREADED_PIC/libalapack.a *.o ;\
 		ranlib ../lib/NON_THREADED_PIC/libalapack.a )
 # make atlas enhanced lapack (shared and thread safe ver)
 	( cd ${WRKSRC}; ${MKDIR} tmp4 ;\
-	${TAR} --exclude "*.f" --exclude "*.po" --exclude "*.o"	-cf - -C ${WRKDIR}/lapack/work/LAPACK/SRC . | ${TAR} xf - -C tmp4 ;\
-		for object in `${FIND} tmp4 -name "*.So"` ; do \
-			n=`${ECHO_CMD} $${object}|${SED} -e 's#.So##'` ; \
-			${MV} $$n.So $$n.o ; \
-		done ; \
+		${CP} ${LAPACKWRKSRC}_shared/liblapack.a tmp4 ;\
 		cd tmp4 ;\
+		ar x liblapack.a ;\
 		ar x ../lib/THREADED_PIC/liblapack.a ;\
 		ar r ../lib/THREADED_PIC/libalapack.a *.o ;\
 		ranlib ../lib/THREADED_PIC/libalapack.a )
