@@ -1,131 +1,173 @@
---- src/ipopd/ipop3d.c.orig	Tue Jun 22 00:58:07 2004
-+++ src/ipopd/ipop3d.c	Fri Sep  3 20:57:24 2004
-@@ -28,6 +28,11 @@
- #include <time.h>
- #include "c-client.h"
- 
-+#ifdef DRAC_AUTH
-+#include <netinet/in.h>
-+#include <arpa/inet.h>
-+#include <stdlib.h>
-+#endif /* DRAC_AUTH */
- 
- #define CRLF PSOUT ("\015\012")	/* primary output terpri */
- 
-@@ -57,6 +62,12 @@
- 
- /* Global storage */
- 
-+#ifdef DRAC_AUTH
-+#define DRACTIMEOUT 10*60     /* check every 10 minutes */
-+time_t lastdrac = 0;          /* time of last drac check */
-+extern char *getenv ();
-+#endif /* DRAC_AUTH */
-+
- char *version = "2004.89";	/* server version */
- short state = AUTHORIZATION;	/* server state */
- short critical = NIL;		/* non-zero if in critical code */
-@@ -89,7 +100,53 @@
- int mbxopen (char *mailbox);
- long blat (char *text,long lines,unsigned long size);
- void rset ();
--
-+#ifdef DRAC_AUTH
-+void drac_auth();
-+#endif /* DRAC_AUTH */
-+
-+#ifdef DRAC_AUTH
-+/* DRAC Authorization
-+ */
-+void drac_auth ()
-+{
-+  if (time (0) > lastdrac + DRACTIMEOUT)
-+  {
-+	  FILE *dracconf;
-+	  char host[100];
-+	  char *drachost;
-+	  char *err;
-+	  char *p;
-+
-+	  if ( (dracconf = fopen(ETC_DIR "/dracd.host", "r")) == NULL)
-+	  {
-+		syslog (LOG_INFO, "dracd: error opening %s/dracd.host config file",ETC_DIR);
-+		exit(1);
-+	  }
-+
-+	  fgets(host, 100, dracconf);
-+	  p = strchr(host, '\n');
-+	  if(p != NULL)
-+		*p = '\0';
-+	  fclose(dracconf);
-+
-+	  if( drachost = (host) )
-+	  {
-+		  struct sockaddr_in sin;
-+		  int sinlen = sizeof (struct sockaddr_in);
-+		  char *client = getpeername (0,(struct sockaddr *) &sin,(void *) &sinlen) ?
-+			"UNKNOWN" : inet_ntoa (sin.sin_addr);
-+
-+		  lastdrac = time(0);
-+
-+		  if (dracauth(drachost, inet_addr(client), &err) != 0)
-+			  syslog (LOG_INFO, err);
-+		  else
-+			  syslog (LOG_INFO, "dracd: authorized ip %s", client);
-+	  }
-+  }
-+}
-+#endif /* DRAC_AUTH */
-+
- /* Main program */
- 
- int main (int argc,char *argv[])
-@@ -102,7 +159,7 @@
-     (((s = strrchr (argv[0],'/')) || (s = strrchr (argv[0],'\\'))) ?
-      s+1 : argv[0]) : "ipop3d";
- 				/* set service name before linkage */
--  mail_parameters (NIL,SET_SERVICENAME,(void *) "pop");
-+  mail_parameters (NIL,SET_SERVICENAME,(void *) "pop3");
- #include "linkage.c"
- 				/* initialize server */
-   server_init (pgmname,"pop3","pop3s",clkint,kodint,hupint,trmint);
-@@ -205,9 +262,13 @@
- 	      syslog (LOG_INFO,"AUTHENTICATE %s failure host=%.80s",s,
- 		      tcp_clienthost ());
- 	    }
--	    else if ((state = mbxopen ("INBOX")) == TRANSACTION)
-+	    else if ((state = mbxopen ("INBOX")) == TRANSACTION) {
-+		#ifdef DRAC_AUTH
-+		drac_auth();
-+		#endif /* DRAC_AUTH */
- 	      syslog (LOG_INFO,"Auth user=%.80s host=%.80s nmsgs=%ld/%ld",
- 		      user,tcp_clienthost (),nmsgs,stream->nmsgs);
-+		}
- 	    else syslog (LOG_INFO,"Auth user=%.80s host=%.80s no mailbox",
- 			 user,tcp_clienthost ());
- 	  }
-@@ -235,9 +296,13 @@
- 	      PSOUT ("-ERR Missing APOP argument\015\012");
- 	    else if (!(user = apop_login (challenge,s,t,argc,argv)))
- 	      PSOUT ("-ERR Bad APOP\015\012");
--	    else if ((state = mbxopen ("INBOX")) == TRANSACTION)
-+	    else if ((state = mbxopen ("INBOX")) == TRANSACTION) {
-+		#ifdef DRAC_AUTH
-+		drac_auth();
-+		#endif /* DRAC_AUTH */
- 	      syslog (LOG_INFO,"APOP user=%.80s host=%.80s nmsgs=%ld/%ld",
- 		      user,tcp_clienthost (),nmsgs,stream->nmsgs);
-+		}
- 	    else syslog (LOG_INFO,"APOP user=%.80s host=%.80s no mailbox",
- 			 user,tcp_clienthost ());
- 	  }
-@@ -575,6 +640,9 @@
- 				/* attempt the login */
-     if (server_login (user,pass,t,argc,argv)) {
-       int ret = mbxopen ("INBOX");
-+	#ifdef DRAC_AUTH
-+	drac_auth();
-+	#endif /* DRAC_AUTH */
-       if (ret == TRANSACTION)	/* mailbox opened OK? */
- 	syslog (LOG_INFO,"%sLogin user=%.80s host=%.80s nmsgs=%ld/%ld",
- 		t ? "Admin " : "",user,tcp_clienthost (),nmsgs,stream->nmsgs);
+*** src/ipopd/ipop3d.c.orig	Tue May 22 01:23:47 2007
+--- src/ipopd/ipop3d.c	Mon Jul 23 17:46:53 2007
+***************
+*** 36,41 ****
+--- 36,46 ----
+  #include <time.h>
+  #include "c-client.h"
+  
++ #ifdef DRAC_AUTH
++ #include <netinet/in.h>
++ #include <arpa/inet.h>
++ #include <stdlib.h>
++ #endif /* DRAC_AUTH */
+  
+  #define CRLF PSOUT ("\015\012")	/* primary output terpri */
+  
+***************
+*** 65,70 ****
+--- 70,81 ----
+  
+  /* Global storage */
+  
++ #ifdef DRAC_AUTH
++ #define DRACTIMEOUT 10*60     /* check every 10 minutes */
++ time_t lastdrac = 0;          /* time of last drac check */
++ extern char *getenv ();
++ #endif /* DRAC_AUTH */
++ 
+  char *version = "98";		/* edit number of this server */
+  short state = AUTHORIZATION;	/* server state */
+  short critical = NIL;		/* non-zero if in critical code */
+***************
+*** 98,104 ****
+  int mbxopen (char *mailbox);
+  long blat (char *text,long lines,unsigned long size,STRING *st);
+  void rset ();
+! 
+  /* Main program */
+  
+  int main (int argc,char *argv[])
+--- 109,161 ----
+  int mbxopen (char *mailbox);
+  long blat (char *text,long lines,unsigned long size,STRING *st);
+  void rset ();
+! #ifdef DRAC_AUTH
+! void drac_auth();
+! #endif /* DRAC_AUTH */
+! 
+! #ifdef DRAC_AUTH
+! /* DRAC Authorization
+!  */
+! void drac_auth ()
+! {
+!   if (time (0) > lastdrac + DRACTIMEOUT)
+!   {
+! 	  FILE *dracconf;
+! 	  char host[100];
+! 	  char *drachost;
+! 	  char *err;
+! 	  char *p;
+! 
+! 	  if ( (dracconf = fopen(ETC_DIR "/dracd.host", "r")) == NULL)
+! 	  {
+! 		syslog (LOG_INFO, "dracd: error opening %s/dracd.host config file",ETC_DIR);
+! 		exit(1);
+! 	  }
+! 
+! 	  fgets(host, 100, dracconf);
+! 	  p = strchr(host, '\n');
+! 	  if(p != NULL)
+! 		*p = '\0';
+! 	  fclose(dracconf);
+! 
+! 	  if( drachost = (host) )
+! 	  {
+! 		  struct sockaddr_in sin;
+! 		  int sinlen = sizeof (struct sockaddr_in);
+! 		  char *client = getpeername (0,(struct sockaddr *) &sin,(void *) &sinlen) ?
+! 			"UNKNOWN" : inet_ntoa (sin.sin_addr);
+! 
+! 		  lastdrac = time(0);
+! 
+! 		  if (dracauth(drachost, inet_addr(client), &err) != 0)
+! 			  syslog (LOG_INFO, err);
+! 		  else
+! 			  syslog (LOG_INFO, "dracd: authorized ip %s", client);
+! 	  }
+!   }
+! }
+! #endif /* DRAC_AUTH */
+! 
+  /* Main program */
+  
+  int main (int argc,char *argv[])
+***************
+*** 111,117 ****
+      (((s = strrchr (argv[0],'/')) || (s = strrchr (argv[0],'\\'))) ?
+       s+1 : argv[0]) : "ipop3d";
+  				/* set service name before linkage */
+!   mail_parameters (NIL,SET_SERVICENAME,(void *) "pop");
+  #include "linkage.c"
+  				/* initialize server */
+    server_init (pgmname,"pop3","pop3s",clkint,kodint,hupint,trmint);
+--- 168,174 ----
+      (((s = strrchr (argv[0],'/')) || (s = strrchr (argv[0],'\\'))) ?
+       s+1 : argv[0]) : "ipop3d";
+  				/* set service name before linkage */
+!   mail_parameters (NIL,SET_SERVICENAME,(void *) "pop3");
+  #include "linkage.c"
+  				/* initialize server */
+    server_init (pgmname,"pop3","pop3s",clkint,kodint,hupint,trmint);
+***************
+*** 215,223 ****
+  	      syslog (LOG_INFO,"AUTHENTICATE %s failure host=%.80s",s,
+  		      tcp_clienthost ());
+  	    }
+! 	    else if ((state = mbxopen ("INBOX")) == TRANSACTION)
+  	      syslog (LOG_INFO,"Auth user=%.80s host=%.80s nmsgs=%ld/%ld",
+  		      user,tcp_clienthost (),nmsgs,stream->nmsgs);
+  	    else syslog (LOG_INFO,"Auth user=%.80s host=%.80s no mailbox",
+  			 user,tcp_clienthost ());
+  	  }
+--- 272,284 ----
+  	      syslog (LOG_INFO,"AUTHENTICATE %s failure host=%.80s",s,
+  		      tcp_clienthost ());
+  	    }
+! 	    else if ((state = mbxopen ("INBOX")) == TRANSACTION) {
+! 		#ifdef DRAC_AUTH
+! 		drac_auth();
+! 		#endif /* DRAC_AUTH */
+  	      syslog (LOG_INFO,"Auth user=%.80s host=%.80s nmsgs=%ld/%ld",
+  		      user,tcp_clienthost (),nmsgs,stream->nmsgs);
++ 		}
+  	    else syslog (LOG_INFO,"Auth user=%.80s host=%.80s no mailbox",
+  			 user,tcp_clienthost ());
+  	  }
+***************
+*** 247,255 ****
+  	      PSOUT ("-ERR Missing APOP argument\015\012");
+  	    else if (!(user = apop_login (challenge,s,t,argc,argv)))
+  	      PSOUT ("-ERR Bad APOP\015\012");
+! 	    else if ((state = mbxopen ("INBOX")) == TRANSACTION)
+  	      syslog (LOG_INFO,"APOP user=%.80s host=%.80s nmsgs=%ld/%ld",
+  		      user,tcp_clienthost (),nmsgs,stream->nmsgs);
+  	    else syslog (LOG_INFO,"APOP user=%.80s host=%.80s no mailbox",
+  			 user,tcp_clienthost ());
+  	  }
+--- 308,320 ----
+  	      PSOUT ("-ERR Missing APOP argument\015\012");
+  	    else if (!(user = apop_login (challenge,s,t,argc,argv)))
+  	      PSOUT ("-ERR Bad APOP\015\012");
+! 	    else if ((state = mbxopen ("INBOX")) == TRANSACTION) {
+! 		#ifdef DRAC_AUTH
+! 		drac_auth();
+! 		#endif /* DRAC_AUTH */
+  	      syslog (LOG_INFO,"APOP user=%.80s host=%.80s nmsgs=%ld/%ld",
+  		      user,tcp_clienthost (),nmsgs,stream->nmsgs);
++ 		}
+  	    else syslog (LOG_INFO,"APOP user=%.80s host=%.80s no mailbox",
+  			 user,tcp_clienthost ());
+  	  }
+***************
+*** 609,614 ****
+--- 674,682 ----
+  				/* attempt the login */
+      if (server_login (user,pass,t,argc,argv)) {
+        int ret = mbxopen ("INBOX");
++ 	#ifdef DRAC_AUTH
++ 	drac_auth();
++ 	#endif /* DRAC_AUTH */
+        if (ret == TRANSACTION)	/* mailbox opened OK? */
+  	syslog (LOG_INFO,"%sLogin user=%.80s host=%.80s nmsgs=%ld/%ld",
+  		t ? "Admin " : "",user,tcp_clienthost (),nmsgs,stream->nmsgs);

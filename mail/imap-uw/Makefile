@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	imap
-PORTVERSION=	2004g
+PORTVERSION=	2006j
+DISTVERSIONSUFFIX=	2
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
@@ -18,6 +19,7 @@ MASTER_SITE_SUBDIR=	. old
 PKGNAMESUFFIX=	-uw
 DISTNAME=	imap-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
+DISTFILES=	${DISTNAME}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
@@ -28,12 +30,11 @@ COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 OPTIONS=	SSL "Compile with SSL support" on \
 		SSL_AND_PLAINTEXT "Allow plain text passwords and SSL" off \
 		DRAC "Dynamically open MTA for relaying" off \
-		NETSCAPE_BRAIN_DAMAGE "See Makefile for documentation" off \
-		ENTOURAGE_BRAIN_DAMAGE "See Makefile for documentation" off
+		NETSCAPE_BRAIN_DAMAGE "See Makefile for documentation" off
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=	c-client4.9:${PORTSDIR}/mail/cclient
 .if defined(WITH_DRAC)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
@@ -60,11 +61,17 @@ MAKE_ARGS+=	SSLTYPE=unix.nopwd
 .if defined(WITH_NETSCAPE_BRAIN_DAMAGE)
 MAKE_ARGS+=	WITH_NETSCAPE_BRAIN_DAMAGE=yes
 .endif
-# Define this to get possibly better interoperability with Microsoft Entourage.
-.if defined(WITH_ENTOURAGE_BRAIN_DAMAGE)
-MAKE_ARGS+=	WITH_ENTOURAGE_BRAIN_DAMAGE=yes
-.endif
 # See src/imapd/Makefile for more information about these three options.
+
+post-patch:
+	${REINPLACE_CMD} -e 's/include "linkage.c"/include "linkage.h"/' \
+		${WRKSRC}/src/dmail/dmail.c \
+		${WRKSRC}/src/imapd/imapd.c \
+		${WRKSRC}/src/ipopd/ipop2d.c \
+		${WRKSRC}/src/ipopd/ipop3d.c \
+		${WRKSRC}/src/mailutil/mailutil.c \
+		${WRKSRC}/src/mtest/mtest.c \
+		${WRKSRC}/src/tmail/tmail.c
 
 pre-build:
 	@${SH} ${PKGREQ}.rev ${LOCALBASE}/include/c-client/portrevision.h ${PORTVERSION}
