@@ -31,6 +31,8 @@ MAKE_ENV=	QTDIR="${QT_PREFIX}"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 DATADIR=	${PREFIX}/share/desktopbsd
 
+BROKEN=		fails to compile in various ways
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 601101 || ( ${OSVERSION} >= 700000 && ${OSVERSION} < 700015 )
