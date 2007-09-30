@@ -17,6 +17,10 @@ COMMENT=	On-access virus scanning with Samba
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/${VSCAN_SAMBA_PORT}:configure
 
+BROKEN=		fails to install
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2007-11-30
+
 OPTIONS=	VSCAN_ANTIVIR "for use with AntiVir" off \
 		VSCAN_CLAMAV "for use with Clam AntiVirus Daemon" off \
 		VSCAN_FPROTD "for use with F-Prot Daemon" off \
