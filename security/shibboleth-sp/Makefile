@@ -38,4 +38,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/run|/run/shibboleth|' ${WRKSRC}/configs/Makefile.in
 	@${REINPLACE_CMD} -e 's|/doc/|/share/doc/|' ${WRKSRC}/doc/Makefile.in
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile; author is investigating
+.endif
+
 .include <bsd.port.post.mk>
