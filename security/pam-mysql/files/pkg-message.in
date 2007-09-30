@@ -1,8 +1,11 @@
 *****************************************************************************
 
-Copy/symlink %%PREFIX%%/lib/pam_mysql.so to /usr/lib/pam_mysql.so
-to be able to use it. Read files in %%DOCSDIR%%
-for info on how to set up.
+Read files in %%DOCSDIR%% for info on how to set up.
+
+The PAM subsystem only looks for modules in /usr/lib: to use any pam module
+from the ports, either specify the full pathname in your pam.d config file
+(eg: %%PREFIX%%/lib/pam_mysql.so instead of pam_mysql.so) or copy/symlink
+%%PREFIX%%/lib/pam_mysql.so to /usr/lib/pam_mysql.so to be able to use it.
 
 Example:
 ln -sf %%PREFIX%%/lib/pam_mysql.so /usr/lib/pam_mysql.so

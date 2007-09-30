@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	pam_mysql
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7.r1
 CATEGORIES=	security databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
+DISTNAME=	${PORTNAME}-0.7RC1${DISTVERSIONSUFFIX}
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A pam module for authenticating with MySQL
 
 USE_MYSQL=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	aclocal:14 autoconf:261
+ACLOCAL_ARGS=	-I ${PREFIX}/share/aclocal
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --with-pam-mods-dir=${PREFIX}/lib --with-pam=/usr
 
 SUB_FILES=	pkg-message
