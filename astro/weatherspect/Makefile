@@ -20,6 +20,7 @@ ${SITE_PERL}/Term/Animation.pm:${PORTSDIR}/devel/p5-Term-Animation \
 ${SITE_PERL}/Weather/Underground.pm:${PORTSDIR}/astro/p5-Weather-Underground
 
 NO_BUILD=	yes
+USE_PERL5=	yes
 PLIST_FILES=	bin/weatherspect
 
 do-install:
