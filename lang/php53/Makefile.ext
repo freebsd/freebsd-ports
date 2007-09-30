@@ -126,7 +126,7 @@ USE_ICONV=	yes
 .endif
 
 .if ${PHP_MODNAME} == "imap"
-LIB_DEPENDS+=	c-client4.8:${PORTSDIR}/mail/cclient
+LIB_DEPENDS+=	c-client4.9:${PORTSDIR}/mail/cclient
 
 CONFIGURE_ARGS+=--with-imap=${LOCALBASE}
 .if !defined(WITHOUT_SSL)

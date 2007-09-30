@@ -7,6 +7,7 @@
 
 PORTNAME=		CClient
 PORTVERSION=		1.12
+PORTREVISION=		1
 CATEGORIES=		mail perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail/HDIAS
@@ -14,9 +15,9 @@ PKGNAMEPREFIX=		p5-
 DISTNAME=		Mail-Cclient-${PORTVERSION}
 
 MAINTAINER=		mat@FreeBSD.org
-COMMENT=	Perl interface to the c-client mailbox API
+COMMENT=		Perl interface to the c-client mailbox API
 
-LIB_DEPENDS=		c-client4.8:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=		c-client4.9:${PORTSDIR}/mail/cclient
 
 PERL_CONFIGURE=		yes
 CONFIGURE_ARGS=		--cclient_dir=${LOCALBASE} \

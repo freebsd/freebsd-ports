@@ -7,7 +7,7 @@
 
 PORTNAME=	tkrat
 PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail tk84
 MASTER_SITES=	http://tkrat.org/downloads/stable/ \
 		ftp://ftp.tkrat.org/pub/tkrat/
@@ -17,7 +17,7 @@ COMMENT=	A mail user agent for X with a Tcl/Tk user interface
 
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
 		tk84:${PORTSDIR}/x11-toolkits/tk84 \
-		c-client4.8:${PORTSDIR}/mail/cclient
+		c-client4.9:${PORTSDIR}/mail/cclient
 
 USE_XLIB=	yes
 
