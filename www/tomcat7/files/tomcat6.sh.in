@@ -112,6 +112,9 @@ if [ -f $pidfile ]; then
     procname=`ps -o ucomm= $rc_pid`
   fi
 fi
+if [ -z "$procname" ]; then
+  procname=nonexistent
+fi
 
 required_files="${tomcat%%TOMCAT_VERSION%%_catalina_home}/conf/server.xml"
 
@@ -128,7 +131,7 @@ pid_touch ()
 }
 
 tomcat%%TOMCAT_VERSION%%_stop() {
-	rc_pid=$(check_pidfile $pidfile *$procname*)
+	rc_pid=$(check_pidfile $pidfile $procname)
 
 	if [ -z "$rc_pid" ]; then
 		[ -n "$rc_fast" ] && return 0
