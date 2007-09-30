@@ -36,10 +36,6 @@ MAN1=		sdcv.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	Doesn't build on FreeBSD 4.x
-.endif
-
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 BROKEN=		Doesn't build on 64-bit platforms
 .endif
