@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	ristretto
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An image-viewer with xfce-integration
+
+LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
