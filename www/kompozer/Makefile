@@ -18,6 +18,7 @@ COMMENT=	A complete Web Authoring System similar to Dreamweaver or Frontpage
 
 USE_BZIP2=	yes
 WANT_GNOME=	yes
+WANT_PERL=	yes
 USE_GMAKE=	yes
 NVU=		${PORTNAME}-${DISTVERSION}
 MAKEFILE=	client.mk
@@ -33,8 +34,10 @@ CFLAGS+=	-I${X11BASE}/include
 BROKEN=		does not build
 .endif
 
-.if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
+.if ${ARCH}=="sparc64"
+.if ${OSVERSION} < 601101 || ${OSVERSION} >= 700042
 IGNORE=		does not build
+.endif
 .endif
 
 post-patch:
