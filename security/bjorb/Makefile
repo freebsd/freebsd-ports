@@ -40,6 +40,12 @@ EXAMPLES=	doc/sample/bjorb.conf.doc
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
+
 post-install:
 	@${INSTALL_SCRIPT} ${DOCSRC}/doc/sample/bjorb.sh ${PREFIX}/etc/rc.d/bjorb.sh.sample
 .if !defined(NOPORTDOCS)
