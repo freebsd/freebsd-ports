@@ -32,6 +32,10 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		Does not compile; needs -fPIC
+.endif
+
 .if exists(${LIBNET_CONFIG})
 LIBNET_CFLAGS!=	${LIBNET_CONFIG} --cflags
 LIBNET_LIBS!=	${LIBNET_CONFIG} --libs
