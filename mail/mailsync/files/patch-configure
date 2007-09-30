@@ -1,5 +1,5 @@
---- configure.orig	Wed Jun 30 10:04:12 2004
-+++ configure	Tue Aug  9 16:25:24 2005
+--- configure.orig	Wed Jun 30 18:04:12 2004
++++ configure	Sun Sep 30 15:39:42 2007
 @@ -5012,7 +5012,7 @@
  
  
@@ -59,15 +59,17 @@
     fi
  
  
-@@ -5477,7 +5475,7 @@
+@@ -5477,8 +5475,8 @@
  
           echo "$as_me:$LINENO: checking for c-client.h" >&5
  echo $ECHO_N "checking for c-client.h... $ECHO_C" >&6
 -  for p in `eval "echo {${CCLIENTLOCATIONS}}{,/c-client,/lib/c-client,/include/c-client,/include,/include/imap}"` ; do
+-   if test -r "${p}/c-client.h" -a -r "${p}/linkage.h" -a -r "${p}/linkage.c" ; then
 +  p=${CCLIENTLOCATIONS}/include/c-client
-    if test -r "${p}/c-client.h" -a -r "${p}/linkage.h" -a -r "${p}/linkage.c" ; then
++   if test -r "${p}/c-client.h" -a -r "${p}/linkage.h" ; then
      CCLIENT_INCLUDES="-I${p}"
      CCLIENT_LINKAGE_H="${p}/linkage.h"
+     CCLIENT_LINKAGE_C="${p}/linkage.c"
 @@ -5486,7 +5484,6 @@
  echo "${ECHO_T}found in ${p}" >&6
      break

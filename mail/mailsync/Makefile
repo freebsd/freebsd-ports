@@ -7,6 +7,7 @@
 
 PORTNAME=	mailsync
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mailsync is a way of keeping a collection of mailboxes synchronized
 
-LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=	c-client4.9:${PORTSDIR}/mail/cclient
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes

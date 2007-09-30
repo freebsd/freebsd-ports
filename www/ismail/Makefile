@@ -7,6 +7,7 @@
 
 PORTNAME=	ismail
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	www mail
 MASTER_SITES=	http://mail.electro-com.ru/~az/ISMail/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -31,7 +32,7 @@ USE_PHP=	yes
 PORTDOC_FILES=	docs.html
 PORT_EXAMPLES=	mysql4.schema pgsql.schema
 
-LIB_DEPENDS+=	c-client4.8:${PORTSDIR}/mail/cclient
+LIB_DEPENDS+=	c-client4.9:${PORTSDIR}/mail/cclient
 
 SED_SCRIPT=	-e 's,%%INSTALL_SCRIPT%%,${INSTALL_SCRIPT},g' \
 		-e 's,%%MKDIR%%,${MKDIR},g' \
