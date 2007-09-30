@@ -25,7 +25,7 @@ MAN1=		rtfx.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == sparc64
+.if ${ARCH} == amd64 || ${ARCH} == sparc64
 BROKEN=		Does not compile on sparc64
 .endif
 
