@@ -40,8 +40,4 @@ post-install:
 BROKEN=		Segfault during build on !i386
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		requires stdint.h
-.endif
-
 .include <bsd.port.post.mk>
