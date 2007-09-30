@@ -37,7 +37,7 @@ OPTIONS=	OPENSSL "OpenSSL support" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64 && ${OSREL} == 7.0
+.if ${OSREL} == 7.0
 BROKEN=		doens't work; authors works on the problem
 .endif
 
