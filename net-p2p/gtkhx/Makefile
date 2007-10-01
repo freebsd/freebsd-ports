@@ -24,4 +24,10 @@ CONFIGURE_ARGS+=	--with-libiconv-prefix=${PREFIX}
 
 MAN1=		gtkhx.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>
