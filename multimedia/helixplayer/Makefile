@@ -49,6 +49,10 @@ OPTIONS=	PLUGIN	"Build with Gecko browser plug-in" off
 BROKEN=		coredumps during compilation on ${ARCH}
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if defined(WITH_PLUGIN)
 USE_GECKO=	firefox mozilla firefox15 seamonkey
 PLIST_SUB+=	PLUGIN=""
