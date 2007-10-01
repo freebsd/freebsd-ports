@@ -23,10 +23,7 @@ MAN1=		checkpayment.1 firepay.1 multiwrap.1 processmail.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
 USE_GCC=	3.4
-.endif
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 pre-configure:
