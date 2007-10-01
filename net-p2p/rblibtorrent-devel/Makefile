@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libtorrent
-PORTVERSION=	0.12
-PORTREVISION=	1
+DISTVERSION=	0.13svn.r1615
 CATEGORIES=	net-p2p
-MASTER_SITES=	SF
+MASTER_SITES=	SF/qbittorrent
 PKGNAMEPREFIX=	rb
 PKGNAMESUFFIX=	-devel
 
@@ -27,5 +26,9 @@ CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 CONFLICTS=	libtorrent-[0-9]* \
 		libtorrent-devel-[0-9]* \
 		rblibtorrent-[0-9]*
+
+post-install:
+	@cd ${PREFIX}/lib && ${MV} libtorrent-0.13.so libtorrent.so.1 && \
+		${LN} -sf libtorrent.so.1 libtorrent.so
 
 .include <bsd.port.mk>
