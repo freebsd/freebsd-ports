@@ -137,6 +137,7 @@
     SUBDIR += libtommath
     SUBDIR += linalg
     SUBDIR += linpack
+    SUBDIR += linux-SHA-1_collision_search_graz
     SUBDIR += linux-relview
     SUBDIR += lp_solve
     SUBDIR += ltl

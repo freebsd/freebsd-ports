@@ -1,0 +1,4 @@
+@cwd %%BOINC_HOME%%/projects
+%%SHA1_SITE%%/app_info.xml
+%%SHA1_SITE%%/%%SHA1_BINARY%%
+@dirrmtry %%SHA1_SITE%%
