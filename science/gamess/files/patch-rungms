@@ -1,5 +1,5 @@
---- rungms.orig	Thu Jun  7 07:03:07 2007
-+++ rungms	Thu Aug  2 11:17:25 2007
+--- rungms.orig	Wed Jun  6 17:03:07 2007
++++ rungms	Wed Sep 26 14:31:55 2007
 @@ -1,4 +1,4 @@
 -#!/bin/csh
 +#!/bin/csh -f
@@ -21,7 +21,7 @@
  #
  set JOB=$1      # name of the input file xxx.inp, give only the xxx part
  set VERNO=$2    # revision number of the executable created by 'lked' step
-@@ -66,35 +73,45 @@
+@@ -66,35 +72,45 @@
  #
  #  ---- the top third of the script is input and other file assignments ----
  #
@@ -38,8 +38,9 @@
 +#df -k $SCR
  
  #        this added as experiment, February 2007
- limit stacksize 8192
- 
+-limit stacksize 8192
++#limit stacksize 8192
++
 +set JOBORG=$JOB
 +set JOB=$JOB:r      # strip off possible .inp
 +
@@ -49,7 +50,7 @@
 +   echo "Input file $JOBORG does not exist.  Please fix and resubmit."
 +   exit 4
 +endif
-+
+ 
  #  Grab a copy of the input file.
  #  In the case of EXAMnn jobs, this file might be in the "tests" subdirectory.
 -if ($JOB:r.inp == $JOB) set JOB=$JOB:r      # strip off possible .inp
@@ -89,7 +90,7 @@
  
  #  file assignments.
  #
-@@ -117,16 +134,16 @@
+@@ -117,16 +133,16 @@
  #  d. see NEO plug-in code's documentation regarding the NUCBAS file.
  #         Note that you must edit a+b, but will probably skip c+d.
  #
@@ -111,7 +112,7 @@
  setenv  AOINTS $SCR/$JOB.F08
  setenv  MOINTS $SCR/$JOB.F09
  setenv DICTNRY $SCR/$JOB.F10
-@@ -156,8 +173,8 @@
+@@ -156,8 +172,8 @@
  setenv  SOINTY $SCR/$JOB.F32
  setenv  SOINTZ $SCR/$JOB.F33
  setenv  SORESC $SCR/$JOB.F34

@@ -116,6 +116,7 @@ do-build:
 do-install:
 	${MKDIR} ${PREFIX}/bin/gms
 	${MKDIR} ${PREFIX}/share/gamess
+	${MKDIR} ${PREFIX}/share/gamess/mcpdata
 	${MKDIR} ${PREFIX}/share/doc/gamess
 	${MKDIR} ${PREFIX}/share/examples/gamess
 	${INSTALL_SCRIPT}  ${WRKDIR}/gamess/rungms		${PREFIX}/bin/gamess
@@ -125,5 +126,7 @@ do-install:
 	${INSTALL_DATA}    ${WRKDIR}/gamess/*.DOC                ${PREFIX}/share/doc/gamess/
 	${INSTALL_DATA}    ${WRKDIR}/gamess/tests/*.inp          ${PREFIX}/share/examples/gamess/
 	${INSTALL_DATA}    ${WRKDIR}/gamess/ericfmt.dat          ${PREFIX}/share/gamess/
+	${INSTALL_DATA}    ${WRKDIR}/gamess/mcpdata/*            ${PREFIX}/share/gamess/mcpdata/
+	${INSTALL_DATA}    ${WRKDIR}/gamess/ddi/readme.ddi       ${PREFIX}/share/doc/gamess/
 
 .include <bsd.port.post.mk>
