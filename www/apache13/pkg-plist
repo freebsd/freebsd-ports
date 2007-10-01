@@ -105,9 +105,7 @@ sbin/logresolve
 sbin/rotatelogs
 %%SUB_SUEXEC%%sbin/suexec
 @exec mkdir -p -m 755 %D/www/data-dist
-@unexec chmod u+w %D/www/data-dist
-www/data-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
-@exec [ -d %D/www/data/ ] || ln -fs %B %D/www/data
+@exec [ -d %D/www/data/ ] || mkdir -p -m 755 %D/www/data/
 www/data-dist/apache_pb.gif
 www/data-dist/index.html.ca
 www/data-dist/index.html.cz
@@ -139,7 +137,6 @@ www/data-dist/index.html.ru.ucs4
 www/data-dist/index.html.ru.utf8
 www/data-dist/index.html.se
 www/data-dist/index.html.zh-tw.big5
-@exec chmod a-w %D/www/data-dist
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/bind.html.en
 %%DOCSDIR%%/bind.html.fr
@@ -432,12 +429,9 @@ www/data-dist/index.html.zh-tw.big5
 %%DOCSDIR%%/windows.html.html
 %%DOCSDIR%%/windows.html.ja.jis
 @exec mkdir -p -m 755 %D/www/cgi-bin-dist
-@unexec chmod u+w %D/www/cgi-bin-dist
-www/cgi-bin-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
-@exec [ -d %D/www/cgi-bin/ ] || ln -fs %B %D/www/cgi-bin
+@exec [ -d %D/www/cgi-bin/ ] || mkdir -p -m 755 %D/www/cgi-bin/
 www/cgi-bin-dist/printenv
 www/cgi-bin-dist/test-cgi
-@exec chmod a-w %D/www/cgi-bin-dist
 www/icons/README
 www/icons/README.html
 www/icons/a.gif
@@ -657,8 +651,6 @@ www/icons/world1.png
 www/icons/world2.gif
 www/icons/world2.png
 @exec mkdir -p %D/www/proxy
-@unexec if [ -L %D/www/cgi-bin ]; then rm -f %D/www/cgi-bin; fi
-@unexec if [ -L %D/www/data ]; then rm -f %D/www/data; fi
 @unexec rm -f %D/etc/apache/httpd.conf.bak 2> /dev/null || true
 @dirrmtry etc/apache
 @dirrm include/apache/xml
@@ -671,7 +663,9 @@ www/icons/world2.png
 @dirrm %%DOCSDIR%%/programs
 @dirrm %%DOCSDIR%%/vhosts
 @dirrm %%DOCSDIR%%
+@dirrmtry www/data/
 @dirrm www/data-dist
+@dirrmtry www/cgi-bin/
 @dirrm www/cgi-bin-dist
 @dirrm www/icons/small
 @dirrmtry www/icons
