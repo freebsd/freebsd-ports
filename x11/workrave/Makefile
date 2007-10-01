@@ -6,41 +6,47 @@
 #
 
 PORTNAME=	workrave
-PORTVERSION=	1.8.3
-PORTREVISION=	1
+PORTVERSION=	1.8.5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A Gnome RSI prevention tool
 
-.if !defined(WITHOUT_GNOME)
-LIB_DEPENDS=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26
-.else
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
-.endif
-.if !defined(WITHOUT_NETWORK)
-LIB_DEPENDS+=	gnet-2.0.0:${PORTSDIR}/net/gnet2
-.endif
+OPTIONS=	GNOME "Build with Gnome support" on \
+		NETWORK "Build with network support" on
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 intltool
-.if !defined(WITHOUT_GNOME)
-USE_GNOME+=	gnomepanel
-.endif
 USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-gconf
-.if defined(WITHOUT_GNOME)
-CONFIGURE_ARGS+=--disable-gnome
-PLIST_SUB=	GNOME="@comment "
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GNOME)
+LIB_DEPENDS+=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26
+USE_GNOME+=	gnomepanel
+PLIST_SUB+=	GNOME=""
 .else
-PLIST_SUB=	GNOME=""
+LIB_DEPENDS+=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+CONFIGURE_ARGS+=--disable-gnome
+PLIST_SUB+=	GNOME="@comment "
 .endif
-.if defined(WITHOUT_NETWORK)
+
+.if defined(WITH_NETWORK)
+LIB_DEPENDS+=	gnet-2.0.0:${PORTSDIR}/net/gnet2
+.else
 CONFIGURE_ARGS+=--disable-distribution
 .endif
 
-.include <bsd.port.mk>
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.include <bsd.port.post.mk>
