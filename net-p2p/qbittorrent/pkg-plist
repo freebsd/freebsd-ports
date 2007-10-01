@@ -1,7 +1,6 @@
 bin/qbittorrent
 share/applications/qBittorrent.desktop
 share/icons/hicolor/128x128/apps/qbittorrent.png
-share/icons/hicolor/16x16/apps/qbittorrent.png
 share/icons/hicolor/192x192/apps/qbittorrent.png
 share/icons/hicolor/22x22/apps/qbittorrent.png
 share/icons/hicolor/24x24/apps/qbittorrent.png
@@ -29,8 +28,6 @@ share/icons/hicolor/96x96/apps/qbittorrent.png
 @dirrmtry share/icons/hicolor/22x22
 @dirrmtry share/icons/hicolor/192x192/apps
 @dirrmtry share/icons/hicolor/192x192
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor/128x128/apps
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
