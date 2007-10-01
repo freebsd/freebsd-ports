@@ -42,4 +42,10 @@ do-install:
 		${DOCSDIR}/README.`${BASENAME} ${TOOL}`
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>
