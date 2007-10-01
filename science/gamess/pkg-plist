@@ -7,7 +7,15 @@ share/doc/gamess/IRON.DOC
 share/doc/gamess/PROG.DOC
 share/doc/gamess/REFS.DOC
 share/doc/gamess/TESTS.DOC
+share/doc/gamess/readme.ddi
 share/gamess/ericfmt.dat
+share/gamess/mcpdata/IMCP-NR1
+share/gamess/mcpdata/IMCP-NR2
+share/gamess/mcpdata/IMCP-SR1
+share/gamess/mcpdata/IMCP-SR2
+share/gamess/mcpdata/MCP-DZP
+share/gamess/mcpdata/MCP-QZP
+share/gamess/mcpdata/MCP-TZP
 share/examples/gamess/exam01.inp
 share/examples/gamess/exam02.inp
 share/examples/gamess/exam03.inp
@@ -52,6 +60,6 @@ share/examples/gamess/exam41.inp
 share/examples/gamess/exam42.inp
 @dirrm bin/gms
 @dirrm share/doc/gamess
+@dirrm share/gamess/mcpdata
 @dirrm share/gamess
 @dirrm share/examples/gamess
-
