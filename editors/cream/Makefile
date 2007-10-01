@@ -16,9 +16,11 @@ COMMENT=	Gvim extension with many features
 RUN_DEPENDS=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim
 
 NO_BUILD=	yes
-# needs updating for each major vim update.
-VIMRUNTIME=	${PREFIX}/share/vim/vim71
 PLIST_SUB=	VIMRUNTIME="${VIMRUNTIME:S/${PREFIX}\///}"
+
+.include <bsd.port.pre.mk>
+
+VIMRUNTIME!=	cd ${PORTSDIR}/editors/vim && ${MAKE} -V DATADIR
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cream ${PREFIX}/bin
@@ -40,4 +42,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
