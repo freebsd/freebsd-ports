@@ -34,5 +34,10 @@ CONFIGURE_ARGS=	--with-libcurl-libraries=${LOCALBASE}/lib \
 		--with-pcre_libraries=${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		Does not install
+.endif
+
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 .include <bsd.port.post.mk>
