@@ -50,6 +50,7 @@ MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 .if ${ARCH} != "i386"
 WITHOUT_H323=	1
 WITHOUT_ZAPTEL=	1
+BROKEN=		current does not build
 .endif
 
 .if defined(WITHOUT_H323)
