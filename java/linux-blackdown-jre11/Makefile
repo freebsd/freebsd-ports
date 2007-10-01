@@ -36,6 +36,9 @@ NO_BUILD=	YES
 APP_HOME?=	${PREFIX}/linux-blackdown-jre${PORTVERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 
+DEPRECATED=	Obsolete version; Support for Java 1.1 is to be removed from the ports tree
+EXPIRATION_DATE=2007-11-01
+
 post-patch:
 	${FIND} ${WRKSRC} \( -name '*.orig' -o -name '.*.orig' \) -delete
 	${CP} ${FILESDIR}/arch ${WRKSRC}/bin/
