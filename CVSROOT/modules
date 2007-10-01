@@ -6885,6 +6885,7 @@ linpsk		ports/comms/linpsk
 linrad		ports/comms/linrad
 linrename	ports/sysutils/linrename
 linsmith	ports/science/linsmith
+linux-SHA-1_collision_search_graz	ports/math/linux-SHA-1_collision_search_graz
 linux-ac3d	ports/graphics/linux-ac3d
 linux-acu	ports/sysutils/linux-acu
 linux-adobesvg	ports/graphics/linux-adobesvg
