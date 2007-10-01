@@ -57,6 +57,7 @@
 %%HORDIR%%/locale/sl_SI/LC_MESSAGES/ingo.mo
 %%HORDIR%%/locale/sv_SE/LC_MESSAGES/ingo.mo
 %%HORDIR%%/locale/tr_TR/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/zh_CN/LC_MESSAGES/ingo.mo
 %%HORDIR%%/locale/zh_TW/LC_MESSAGES/ingo.mo
 %%HORDIR%%/po/README
 %%HORDIR%%/po/ca_ES.po
@@ -83,6 +84,7 @@
 %%HORDIR%%/po/sl_SI.po
 %%HORDIR%%/po/sv_SE.po
 %%HORDIR%%/po/tr_TR.po
+%%HORDIR%%/po/zh_CN.po
 %%HORDIR%%/po/zh_TW.po
 %%HORDIR%%/rule.php
 %%HORDIR%%/script.php
@@ -176,6 +178,8 @@
 @dirrm %%HORDIR%%/locale/sv_SE
 @dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/tr_TR
+@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_CN
 @dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/zh_TW
 @dirrm %%HORDIR%%/locale
