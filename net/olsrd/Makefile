@@ -39,8 +39,8 @@ MAKE_ARGS+=	INSTALL_PREFIX=${PREFIX}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502000
-IGNORE=		needs ieee80211.h headers
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
