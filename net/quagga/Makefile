@@ -7,6 +7,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.99.9
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/ \
 		http://www.ru.quagga.net/download/ \
@@ -40,7 +41,7 @@ OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 		SNMP		"SNMP support"			off \
 		TCPSOCKETS	"Use TCP/IP sockets for protocol daemons" off \
 		TCPMD5		"Use experimental MD5 patch for BGP" off \
-		DLMALLOC	"Use dlmalloc (much faster)" off
+		DLMALLOC	"Use dlmalloc (makes bgpd much faster)" off
 
 .include <bsd.port.pre.mk>
 
@@ -120,6 +121,9 @@ CFLAGS+=	-DQUAGGA_TCP_MD5SIG
 .if defined(WITH_DLMALLOC)
 LIB_DEPENDS+=dlmalloc.2:${PORTSDIR}/devel/libdlmalloc
 LDFLAGS+=-ldlmalloc
+SUB_LIST=	RCLDCONFIG=ldconfig
+.else
+SUB_LIST=	RCLDCONFIG=
 .endif
 
 .if ${OSVERSION} < 600000
@@ -161,7 +165,7 @@ pre-everything::
 	@${ECHO} "   WITH_SNMP             SNMP support"
 	@${ECHO} "   WITH_TCPSOCKETS       Use TCP/IP sockets for protocol daemons"
 	@${ECHO} "   WITH_TCPMD5           Use experimental MD5 patch for BGP"
-	@${ECHO} "   WITH_DLMALLOC	   Use dlmalloc (much faster)"
+	@${ECHO} "   WITH_DLMALLOC         Use dlmalloc (makes bgpd much faster)"
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

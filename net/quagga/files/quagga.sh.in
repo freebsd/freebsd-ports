@@ -2,7 +2,7 @@
 #
 
 # PROVIDE: quagga
-# REQUIRE: NETWORKING
+# REQUIRE: NETWORKING %%RCLDCONFIG%%
 
 #
 # Add the following line to /etc/rc.conf to enable quagga:
