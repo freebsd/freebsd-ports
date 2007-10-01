@@ -39,7 +39,6 @@
     SUBDIR += catdvi
     SUBDIR += cdlabelgen
     SUBDIR += cjk-lyx
-    SUBDIR += clibpdf
     SUBDIR += cm-super
     SUBDIR += cmpsfont
     SUBDIR += cpp2latex
@@ -272,7 +271,6 @@
     SUBDIR += rlpr
     SUBDIR += rprint
     SUBDIR += rtf2latex
-    SUBDIR += ruby-clibpdf
     SUBDIR += ruby-gnomeprint
     SUBDIR += ruby-panda
     SUBDIR += ruby-pdflib

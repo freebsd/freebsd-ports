@@ -97,17 +97,9 @@ citrix_ica-*		german/citrix_ica	License prohibits redistribution
 citrix_ica-*		japanese/citrix_ica	License prohibits redistribution
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
 cfs-*			security/cfs		Crypto; export-controlled
-clibpdf*.tar.gz		print/clibpdf		Needs a license to bundle with
-						other products
 code2000-*/CODE2000.ZIP	x11-fonts/code2000	Only unmodified original
 						package can be distributed
 collections*.zip	java/collections	See the license
-clibpdf*		print/clibpdf		License required for bundling
-						with other products.  Only
-						free for non-profit personal
-						use, and use by educational,
-						non-profit, and government
-						organizations
 contool-*		sysutils/contool	Do not incorporate the source
 						code into a product which is
 						subsequently sold
