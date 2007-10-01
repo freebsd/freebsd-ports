@@ -203,4 +203,3 @@ include/client.h
 @dirrmtry %%DOCSDIR%%
 @unexec f="/var/log/ratbox-services.log"; if [ ! -s "$f" ]; then rm -f "$f"; fi
 @unexec f="/var/run/ratbox-services.pid"; if [ ! -s "$f" ]; then rm -f "$f"; fi
-

@@ -6,17 +6,19 @@
 
 PORTNAME=	ratbox-services
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/${PORTNAME}/		\
-		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/${PORTNAME}/	\
-		http://services.ircd-ratbox.org/download/			\
+MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/${PORTNAME}/	\
+		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/${PORTNAME}/ \
+		http://services.ircd-ratbox.org/download/		\
 		ftp://ftp.parodius.com/pub/ircd-ratbox/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=	http://www.elasticmind.net/freebsd/ports/distfiles/	\
 		http://jsreedinc.com/freebsd/ports/patches/		\
 		http://www.atarininja.org/~wxs/distfiles/
-PATCHFILES=	patch-autoconf_configure.in.gz patch-configure.gz patch-include_setup.h.in.gz
+PATCHFILES=	patch-autoconf_configure.in.gz patch-configure.gz	\
+		patch-include_setup.h.in.gz
 
 MAINTAINER=	moggie@elasticmind.net
 COMMENT=	A highly configurable services package for use with ircd-ratbox
@@ -36,7 +38,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}		\
 		--sysconfdir=${PREFIX}/etc/	\
 		--with-logdir=${LOGDIR}		\
 		--with-rundir=${RUNDIR}		\
-		--with-helpdir=${DATADIR}/help  \
+		--with-helpdir=${DATADIR}/help	\
 		--without-sqlitebuild
 
 PORTDOCS=	operguide.txt
@@ -97,7 +99,7 @@ CONFIGURE_ARGS+=	--disable-banserv
 .endif
 
 .if defined(WITHOUT_WATCHSERV)
-CONFIGURE_ARGS+=        --disable-watchserv
+CONFIGURE_ARGS+=	--disable-watchserv
 .endif
 
 .if !defined(WITH_SQLITE) && !defined(WITH_PGSQL)
@@ -106,19 +108,19 @@ IGNORE=			requires either an sqlite or pgsql backend
 
 .if defined(WITH_SQLITE)
 USE_SQLITE=		3
-CONFIGURE_ARGS+=        --enable-sqlite3=${LOCALBASE}
+CONFIGURE_ARGS+=	--enable-sqlite3=${LOCALBASE}
 .endif
 
 # This ratbox-services version has known problems when integrating
 # with MySQL and should be avoided until it is fixed in version 1.1.3
 #.if defined(WITH_MYSQL)
-#USE_MYSQL
-#CONFIGURE_ARGS+=        --enable-mysql=${LOCALBASE}
+#USE_MYSQL=		yes
+#CONFIGURE_ARGS+=	--enable-mysql=${LOCALBASE}
 #.endif
 
 .if defined(WITH_PGSQL)
-USE_PGSQL
-CONFIGURE_ARGS+=        --enable-pgsql=${LOCALBASE}
+USE_PGSQL=		yes
+CONFIGURE_ARGS+=	--enable-pgsql=${LOCALBASE}
 .endif
 
 #-- User Configuration -------------------------------------------------
@@ -132,7 +134,7 @@ CONFIGURE_ARGS+=	--with-topiclen=${TOPICLEN}
 .endif
 
 .if defined(USERREGLEN)
-CONFIGURE_ARGS+=        --with-userreglen=${USERREGLEN}
+CONFIGURE_ARGS+=	--with-userreglen=${USERREGLEN}
 .endif
 
 #-----------------------------------------------------------------------
@@ -160,7 +162,7 @@ post-patch:
 
 pre-su-install:
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	${MKDIR}  ${DATADIR}/help
+	${MKDIR} ${DATADIR}/help
 
 post-install:
 .if !defined(NOPORTDOCS)
