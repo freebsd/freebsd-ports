@@ -29,8 +29,10 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		does not find pthread libraries on 4.x
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
 .endif
 
 .include <bsd.port.post.mk>
