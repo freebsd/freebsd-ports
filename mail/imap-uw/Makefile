@@ -8,7 +8,7 @@
 PORTNAME=	imap
 PORTVERSION=	2006j
 DISTVERSIONSUFFIX=	2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
@@ -62,16 +62,6 @@ MAKE_ARGS+=	SSLTYPE=unix.nopwd
 MAKE_ARGS+=	WITH_NETSCAPE_BRAIN_DAMAGE=yes
 .endif
 # See src/imapd/Makefile for more information about these three options.
-
-post-patch:
-	${REINPLACE_CMD} -e 's/include "linkage.c"/include "linkage.h"/' \
-		${WRKSRC}/src/dmail/dmail.c \
-		${WRKSRC}/src/imapd/imapd.c \
-		${WRKSRC}/src/ipopd/ipop2d.c \
-		${WRKSRC}/src/ipopd/ipop3d.c \
-		${WRKSRC}/src/mailutil/mailutil.c \
-		${WRKSRC}/src/mtest/mtest.c \
-		${WRKSRC}/src/tmail/tmail.c
 
 pre-build:
 	@${SH} ${PKGREQ}.rev ${LOCALBASE}/include/c-client/portrevision.h ${PORTVERSION}
