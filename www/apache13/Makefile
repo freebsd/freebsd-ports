@@ -7,6 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	1.3.39
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	apache_${PORTVERSION}
@@ -26,7 +27,7 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.*
 USE_PERL5=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	apache
 
 .if defined(APACHE_DATADIR)
 DATADIR=${APACHE_DATADIR}
@@ -44,7 +45,6 @@ CGIBIN_ROOT=${APACHE_CGIBIN_ROOT}
 CGIBIN_ROOT=${DATADIR}/cgi-bin
 .endif
 DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin
-RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 .if defined(WITHOUT_APACHE_EXPAT) && ${WITHOUT_APACHE_EXPAT} == yes
 EXPAT_CONF+=	--disable-rule=EXPAT
@@ -144,16 +144,11 @@ MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
 		${SUEXEC_MAN}
 
-post-extract:
-	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/apache.sh > ${WRKSRC}/apache.sh
-
 pre-install:
 	-@${CHMOD} u+w ${DOCUMENT_ROOT}-dist ${CGIBIN_ROOT}-dist
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh
 	@${TOUCH} ${DOCUMENT_ROOT}-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 	@${TOUCH} ${CGIBIN_ROOT}-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 	@${CHMOD} a-w ${DOCUMENT_ROOT}-dist ${CGIBIN_ROOT}-dist
