@@ -32,4 +32,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/example.scr ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>
