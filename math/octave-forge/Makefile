@@ -35,8 +35,10 @@ USE_FORTRAN=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 501000
-BROKEN=		texinfo problem
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
 .endif
 
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
