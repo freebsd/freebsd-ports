@@ -23,7 +23,11 @@ USE_GMAKE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+BROKEN=		Does not compile on alpha
+.endif
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
 .endif
 
 do-install:
