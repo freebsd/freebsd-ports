@@ -15,6 +15,8 @@ DISTNAME=	gw6c-5_0-RELEASE-src
 MAINTAINER=	mike@fth-devel.net
 COMMENT=	Gateway6 Tunnel Setup Protocol Client - Free IPv6 tunnel
 
+BROKEN=		fails to fetch
+
 USE_RC_SUBR=	gateway6.sh
 WRKSRC=		${WRKDIR}/tspc-advanced
 
@@ -26,12 +28,7 @@ SUB_FILES=	gateway6.sh pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400000
-IGNORE=		this program might not be working on FreeBSD version below 4.0
-.endif
-.if ${OSVERSION} > 500000
 EXTRA_PATCHES=	${FILESDIR}/patch5-template.freebsd.sh
-.endif
 
 MAKE_ARGS=	target=freebsd installdir=${PREFIX}
 GW6C_DATA=	CLIENT-LICENSE.TXT GUI-LICENSE.TXT INSTALL README
