@@ -9,6 +9,7 @@ include/c-client/flstring.h
 include/c-client/fs.h
 include/c-client/ftl.h
 include/c-client/imap4r1.h
+include/c-client/linkage.c
 include/c-client/linkage.h
 include/c-client/mail.h
 include/c-client/misc.h
