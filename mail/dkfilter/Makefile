@@ -22,6 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/RSA.pm:${PORTSDIR}/securi
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
+USE_PERL5=	yes
 USE_RC_SUBR=	dkfilter_in dkfilter_out
 
 DKFILTER_USERNAME?=	dkfilter

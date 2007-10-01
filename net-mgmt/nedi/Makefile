@@ -22,6 +22,7 @@ RUN_DEPENDS=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
+USE_PERL5=	yes
 
 # The options part is copied from databases/phpmyadmin
 # and looks this way, because we have to USE_PHP
