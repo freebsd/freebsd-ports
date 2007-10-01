@@ -30,9 +30,8 @@ MAN1=	rascal.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502000
-BUILD_DEPENDS=	${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
-RUN_DEPENDS=	${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
