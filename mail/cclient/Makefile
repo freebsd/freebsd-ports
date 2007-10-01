@@ -7,6 +7,7 @@
 
 PORTNAME=	cclient
 PORTVERSION=	2006j
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail devel ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
@@ -69,8 +70,8 @@ post-configure:
 	@${ECHO_MSG} ">> The c-client shared library will be named ${SHLIBNAME}"
 
 HEADERS=	c-client.h dummy.h env.h env_unix.h fdstring.h flockcyg.h \
-		flocksim.h flstring.h fs.h ftl.h imap4r1.h linkage.h mail.h \
-		misc.h netmsg.h newsrc.h nl.h nntp.h osdep.h pseudo.h \
+		flocksim.h flstring.h fs.h ftl.h imap4r1.h linkage.c linkage.h \
+		mail.h misc.h netmsg.h newsrc.h nl.h nntp.h osdep.h pseudo.h \
 		rfc822.h smtp.h sslio.h tcp.h tcp_unix.h unix.h utf8.h \
 		utf8aux.h
 PORTREV_H=	${WRKDIR}/portrevision.h
