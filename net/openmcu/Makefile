@@ -39,6 +39,8 @@ EXAMPLESDIR=	${PREFIX}/share/examples/openh323
 
 .if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
 BROKEN=	does not link due to missing symbol in default thread library
+.elif ${ARCH} == "amd64" && ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
 .endif
 
 pre-install:
