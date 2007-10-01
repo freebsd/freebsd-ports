@@ -1,10 +1,10 @@
---- configure.orig	Wed Jan 21 11:43:15 2004
-+++ configure	Wed Jan 21 11:43:47 2004
-@@ -6150,17 +6150,6 @@
+--- ./configure.orig	Thu Oct 19 00:38:43 2006
++++ ./configure	Sat Sep 29 19:05:01 2007
+@@ -6778,17 +6778,6 @@
  
  
  
--echo $ac_n "ordering crap from http://www.amazon.com/exec/obidos/wishlist/296ST2NHEBO0Z $ac_c" 1>&6
+-echo $ac_n "ordering crap from http://www.amazon.com/gp/registry/296ST2NHEBO0Z" 1>&6
 -sleep 1
 -echo $ac_n ".$ac_c" 1>&6
 -sleep 1
