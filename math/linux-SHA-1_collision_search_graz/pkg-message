@@ -1,0 +1,22 @@
+*****************************************************************************
+ATTACHING PROJECT
+
+Just run boinc_gui, choose Attach, and follow instructions.
+Project URL is http://boinc.iaik.tugraz.at/sha1_coll_search/
+
+MANUAL INSTALLATION
+ *) If this is your first time in any BOINC project, create a new account at
+    http://boinc.iaik.tugraz.at/sha1_coll_search/create_account_form.php
+
+ *) Or get your account key at 
+    http://boinc.iaik.tugraz.at/sha1_coll_search/get_passwd.php
+
+ *) Attach to the project:
+    cd /var/db/boinc
+    boinc_cmd --project_attach \
+    http://boinc.iaik.tugraz.at/sha1_coll_search/ <account key>
+
+ *) DO NOT FORGET to join the "FreeBSD" team after you create your account
+    and show your support for both the SHA-1 project and the FreeBSD
+    Operating System!
+*****************************************************************************

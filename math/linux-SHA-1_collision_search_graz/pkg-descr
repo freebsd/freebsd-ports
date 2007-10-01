@@ -1,0 +1,10 @@
+SHA-1 Collision Search Graz is a distributed computing project -- people 
+from through out the world download and run software to band together to 
+make one of the largest supercomputers in the world. Every computer makes 
+the project closer to our goals.
+
+The project is trying to see if like MD4 in 1996, MD5/RIPEMD in 2004,
+and the the direct predecessor SHA-0 in 2004 also, there is a weakness
+in the hash.
+
+WWW: http://boinc.iaik.tugraz.at/sha1_coll_search/

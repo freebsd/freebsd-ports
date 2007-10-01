@@ -1,0 +1,17 @@
+<app_info>
+<app>
+<name>sha1_collisionsearch_graz</name>
+</app>
+<file_info>
+<name>%%SHA1_BINARY%%</name>
+<executable/>
+</file_info>
+<app_version>
+<app_name>sha1_collisionsearch_graz</app_name>
+<version_num>%%PORTVERSION%%</version_num>
+<file_ref>
+<file_name>%%SHA1_BINARY%%</file_name>
+<main_program/>
+</file_ref>
+</app_version>
+</app_info>
