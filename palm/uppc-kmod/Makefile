@@ -24,6 +24,10 @@ IGNORE=		Requires kernel source (/usr/src/sys) to build
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 # Don't strip module on amd64 systems
 .if ${ARCH} == "amd64"
 STRIP=
