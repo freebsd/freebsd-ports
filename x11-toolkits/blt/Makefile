@@ -20,7 +20,7 @@ PATCH_SITE_SUBDIR=	${PORTNAME}
 PATCHFILES=	blt2.4z-patch-2
 PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	kjc@iijlab.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tk extension (with shared libs)
 
 USE_LDCONFIG=	yes
