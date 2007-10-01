@@ -58,4 +58,10 @@ post-install:
 	@${INSTALL_DATA}   ${WRKSRC}/programs/IRRd/irrd.8              ${PREFIX}/man/man8
 	@${INSTALL_SCRIPT} ${WRKDIR}/irrd.sh                           ${PREFIX}/etc/rc.d
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>
