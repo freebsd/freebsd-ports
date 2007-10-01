@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qjackctl
-PORTVERSION=	0.2.23
+DISTVERSION=	0.3.1a
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qjackctl
@@ -19,9 +19,10 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_QT_VER=	3
-CONFIGURE_ARGS+=	QTDIR="${QT_PREFIX}" CXXFLAGS="${CFLAGS} -pthread"
-MAKE_ENV=	QTDIR="${QT_PREFIX}" MAKE="${GMAKE}" \
-		QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake moc uic rcc gui xml
+CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
+CONFIGURE_ARGS+=ac_cv_path_ac_moc=${LOCALBASE}/bin/moc-qt4 ac_cv_path_ac_uic=${LOCALBASE}/bin/uic-qt4 \
+		ac_cv_path_ac_qmake=${LOCALBASE}/bin/qmake-qt4
 
 .include <bsd.port.mk>

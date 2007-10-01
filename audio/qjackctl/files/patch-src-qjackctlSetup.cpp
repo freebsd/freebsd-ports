@@ -1,11 +1,11 @@
---- src/qjackctlSetup.cpp.orig	Thu Dec  7 00:05:30 2006
-+++ src/qjackctlSetup.cpp	Thu Dec  7 00:06:00 2006
-@@ -285,7 +285,7 @@
-     preset.iWordLength  = m_settings.readNumEntry("/WordLength", 16);
-     preset.iWait        = m_settings.readNumEntry("/Wait", 21333);
-     preset.iChan        = m_settings.readNumEntry("/Chan", 0);
--    preset.sDriver      = m_settings.readEntry("/Driver", "alsa");
-+    preset.sDriver      = m_settings.readEntry("/Driver", "oss");
-     preset.sInterface   = m_settings.readEntry("/Interface", QString::null);
-     preset.iAudio       = m_settings.readNumEntry("/Audio", 0);
-     preset.iDither      = m_settings.readNumEntry("/Dither", 0);
+--- src/qjackctlSetup.cpp.orig	2007-07-18 12:05:32.000000000 +0200
++++ src/qjackctlSetup.cpp	2007-09-26 22:24:19.000000000 +0200
+@@ -290,7 +290,7 @@
+ 	preset.iWordLength  = m_settings.value("/WordLength", 16).toInt();
+ 	preset.iWait        = m_settings.value("/Wait", 21333).toInt();
+ 	preset.iChan        = m_settings.value("/Chan", 0).toInt();
+-	preset.sDriver      = m_settings.value("/Driver", "alsa").toString();
++	preset.sDriver      = m_settings.value("/Driver", "oss").toString();
+ 	preset.sInterface   = m_settings.value("/Interface").toString();
+ 	preset.iAudio       = m_settings.value("/Audio", 0).toInt();
+ 	preset.iDither      = m_settings.value("/Dither", 0).toInt();
