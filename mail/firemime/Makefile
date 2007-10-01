@@ -27,9 +27,7 @@ MAN3=		firemime_decode_body.3 firemime_get_full_header.3 firemime_get_header.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
 USE_GCC=	3.4
-.endif
 
 pre-configure:
 	@-${RM} -r ${WRKSRC}/firemake/*.orig
