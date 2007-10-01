@@ -26,6 +26,8 @@ PLIST_FILES=	bin/wmwlmon
 
 .if ${OSVERSION} < 600100
 BROKEN=	Needs WLAN infrastructure from 6.0-RELEASE or newer
+.elif ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
 .endif
 
 post-patch:
