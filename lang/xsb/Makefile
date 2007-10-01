@@ -28,6 +28,10 @@ PLIST_SUB+=	MACHINE_ARCH=${MACHINE_ARCH} \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if ${ARCH} != "i386" && ${ARCH} != "sparc64"
 BROKEN=		"Does not compile on !i386 and !sparc64"
 .endif
