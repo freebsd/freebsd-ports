@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="15ec9123-7061-11dc-b372-001921ab2fa4">
+    <topic>id3lib -- insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>id3lib</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian Bug report log reports:</p>
+	<blockquote cite="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=438540">
+	  <p>When tagging file $foo, a temporary copy of the file is
+	    created, and for some reason, libid3 doesn't use mkstemp
+	    but just creates $foo.XXXXXX literally, without any checking.</p> 
+	  <p>This would silently truncate and overwrite an existing $foo.XXXXXX.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>25372</bid>
+      <cvename>CVE-2007-4460</cvename>
+    </references>
+    <dates>
+      <discovery>2007-08-20</discovery>
+      <entry>2007-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c9c14242-6843-11dc-82b6-02e0185f8d72">
     <topic>mediawiki -- cross site scripting vulnerability</topic>
     <affects>
