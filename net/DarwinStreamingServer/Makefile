@@ -20,6 +20,7 @@ COMMENT=	Darwin Streaming Server, a MP3, MPEG4 and QuickTime streaming server
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
 
+USE_PERL5=	yes
 USE_RC_SUBR=	streamingadminserver.sh darwin_streaming_server.sh
 SUB_LIST+=	PERL=${PERL}
 
@@ -134,4 +135,10 @@ do-install:
 	@(cd ${WRKSRC}/${OPSYS}; ${SETENV} ${MAKE_ENV} ./Install)
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>
