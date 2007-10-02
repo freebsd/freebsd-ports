@@ -20,6 +20,9 @@ COMMENT=	Japanized TK (Tcl Tool Kit)
 
 LIB_DEPENDS=	tcl76jp.1:${PORTSDIR}/japanese/tcl76
 
+DEPRECATED=		does not build with gcc4.2; use japanese/tk80 instead
+EXPIRATION_DATE=	2006-11-01
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 USE_AUTOTOOLS=	autoconf:213
 USE_XLIB=	yes
