@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sip
-PORTVERSION=	4.7
+PORTVERSION=	4.7.1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/sip4/ \
@@ -38,11 +38,12 @@ do-configure:
 	cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${ARGS}
 
 post-configure:
-	for item in sipgen siplib; do\
-		${REINPLACE_CMD} -e 's|CC = gcc|CC = ${CC}|'\
+.for item in sipgen siplib
+	${REINPLACE_CMD} -e 's|CC = gcc|CC = ${CC}|'\
 		-e 's|CXX = g++|CXX = ${CXX}|'\
 		-e 's|LINK = g++|LINK = ${CXX}|'\
-		${WRKSRC}/$${item}/Makefile; done
+		${WRKSRC}/${item}/Makefile
+.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)
