@@ -24,7 +24,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_PERL5=	yes
 PLIST_SUB+=	DIRECTFB_VERSION=${PORTVERSION}
 
@@ -46,8 +46,12 @@ MAN5=		directfbrc.5
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
-BROKEN=		Does not compile on alpha 5.x
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
+.if ${ARCH} == "alpha"
+BROKEN=		Does not compile on alpha
 .endif
 
 post-patch:
