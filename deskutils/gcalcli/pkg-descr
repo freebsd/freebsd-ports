@@ -1,0 +1,6 @@
+gcalcli is a Python application that allows you to access you Google Calendar
+from a command line. It's easy to get your agenda, search for events, and
+quickly add new events. Additionally gcalcli can be used as a reminder service
+to execute any application you want.
+
+WWW: http://code.google.com/p/gcalcli/
