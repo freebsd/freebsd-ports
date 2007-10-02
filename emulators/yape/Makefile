@@ -25,8 +25,10 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 503001
-IGNORE=	build only in 5.3 or uppper (Need fmax(3) and fmin(3) function)
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
 .endif
 
 post-extract:
