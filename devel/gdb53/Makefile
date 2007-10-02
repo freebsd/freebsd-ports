@@ -25,17 +25,11 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=53
 
-NOT_FOR_ARCHS=	ia64
+ONLY_FOR_ARCHS=	i386 alpha sparc64
+
+USE_GCC=	3.4
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.if ${ARCH} == "amd64"
-BROKEN=		Configure fails on amd64
-.endif
 
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect sim tcl texinfo
