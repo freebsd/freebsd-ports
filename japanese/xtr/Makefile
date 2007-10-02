@@ -21,9 +21,13 @@ MANCOMPRESSED=	no
 HAS_CONFIGURE=	yes
 GNU_CONFIGURE=	yes
 
-NO_CDROM=	"Need to obtain permission for commercial redistribution."
+NO_CDROM=	Need to obtain permission for commercial redistribution.
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
 
 post-extract:
 	@${ECHO_MSG} "===>  Converting Kanji code for ${DISTNAME}"
