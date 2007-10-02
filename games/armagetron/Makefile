@@ -30,6 +30,10 @@ OPTIONS=	MUSIC	"Compile in support for background music" on
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if !defined(WITHOUT_MUSIC)
 USE_SDL+=	mixer
 CONFIGURE_ARGS+=--enable-music
