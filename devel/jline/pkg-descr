@@ -1,0 +1,18 @@
+JLine is a Java library for handling console input. It is similar in
+functionality to BSD editline and GNU readline. People familiar with
+the readline/editline capabilities for modern shells (such as bash and
+tcsh) will find most of the command editing features of JLine to be
+familiar.
+
+JLine is distributed under the BSD license, meaning that you are
+completely free to redistribute, modify, or sell it with almost no
+restrictions.
+
+API documentation can be found in the apidocs directory.
+
+You can use the jline.ConsoleRunner application to set up the system
+input stream and continue on the launch another program. For example,
+to use JLine as the input handler for the popular BeanShell console
+application, you can run: java jline.ConsoleRunner bsh.Interpreter
+
+WWW: http://jline.sourceforge.net/

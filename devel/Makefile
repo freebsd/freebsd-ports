@@ -495,6 +495,7 @@
     SUBDIR += jclassinfo
     SUBDIR += jcmdline
     SUBDIR += jep
+    SUBDIR += jline
     SUBDIR += jrtplib
     SUBDIR += jsap
     SUBDIR += jsmin
