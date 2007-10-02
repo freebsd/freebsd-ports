@@ -1,5 +1,5 @@
---- configure.py.orig	Mon Jul 30 18:11:39 2007
-+++ configure.py	Fri Aug 10 22:22:34 2007
+--- configure.py.orig	2007-07-30 18:11:39.000000000 +0200
++++ configure.py	2007-09-29 18:26:58.000000000 +0200
 @@ -29,6 +29,10 @@
  
  import sipconfig
@@ -179,19 +179,25 @@
  
          if "QtDesigner" in pyqt_modules:
              enabled = True
-@@ -719,6 +773,12 @@
+@@ -719,11 +773,17 @@
                        glob.glob("%s/lib/libpython%d.%d*" % (ducfg["prefix"], py_major, py_minor))):
                      lib_dir_flag = quote("-L%s/lib" % ducfg["prefix"])
                      link = "%s -lpython%d.%d" % (lib_dir_flag, py_major, py_minor)
 +                elif freebsd:
-+                    # We do have shared libpython, but also static. Alas
-+                    # static is built *first*, and to distutils it looks as 
-+                    # if we have static py only
 +                    lib_dir_flag = quote("-L%s/lib" % ducfg["prefix"])
 +                    link = "%s -lpython%d.%d" % (lib_dir_flag, py_major, py_minor)
                  else:
                      sipconfig.inform("Qt Designer plugin disabled because Python library is static")
                      enabled = False
+ 
+-                pysh_lib = ducfg["LDLIBRARY"]
++                if freebsd:
++                    pysh_lib = "libpython%d.%d" % (py_major, py_minor)
++                else:
++                    pysh_lib = ducfg["LDLIBRARY"]
+ 
+             if enabled:
+                 sipconfig.inform("Creating Qt Designer plugin Makefile...")
 @@ -791,19 +851,44 @@
      sipconfig.inform("The %s %s library is in %s." % (lib_type, qt_lib, qt_libdir))
      sipconfig.inform("The Qt binaries are in %s." % qt_bindir)

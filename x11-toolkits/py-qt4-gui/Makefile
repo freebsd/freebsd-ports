@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gui
-PORTVERSION=	4.3
+PORTVERSION=	4.3.1
 PORTREVISION=	# zero
 CATEGORIES=	x11-toolkits devel python
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt4/GPL/ \
