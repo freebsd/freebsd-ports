@@ -29,11 +29,12 @@ NOT_FOR_ARCHS=	ia64
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
 .endif
+
 .if ${ARCH} == "amd64"
-BROKEN=		"Configure fails on amd64"
+BROKEN=		Configure fails on amd64
 .endif
 
 pre-configure:
