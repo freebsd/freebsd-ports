@@ -7,6 +7,7 @@
 %%DATADIR%%/demos/Zend/Gdata/Blogger.php
 %%DATADIR%%/demos/Zend/Gdata/Calendar.php
 %%DATADIR%%/demos/Zend/Gdata/Gapps.php
+%%DATADIR%%/demos/Zend/Gdata/Gbase.php
 %%DATADIR%%/demos/Zend/Gdata/Spreadsheet-ClientLogin.php
 %%DATADIR%%/demos/Zend/Mail/SimpleMailer.php
 %%DATADIR%%/demos/Zend/Mail/maildir/maildir.tar
@@ -116,6 +117,8 @@
 %%DATADIR%%/library/Zend/Controller/Router/Route/Regex.php
 %%DATADIR%%/library/Zend/Controller/Router/Route/Static.php
 %%DATADIR%%/library/Zend/Controller/TODO.txt
+%%DATADIR%%/library/Zend/Currency.php
+%%DATADIR%%/library/Zend/Currency/Exception.php
 %%DATADIR%%/library/Zend/Date.php
 %%DATADIR%%/library/Zend/Date/Cities.php
 %%DATADIR%%/library/Zend/Date/DateObject.php
@@ -130,6 +133,7 @@
 %%DATADIR%%/library/Zend/Db/Adapter/Oracle.php
 %%DATADIR%%/library/Zend/Db/Adapter/Oracle/Exception.php
 %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Abstract.php
+%%DATADIR%%/library/Zend/Db/Adapter/Pdo/Ibm.php
 %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Mssql.php
 %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Mysql.php
 %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Oci.php
@@ -152,6 +156,7 @@
 %%DATADIR%%/library/Zend/Db/Statement/Oracle.php
 %%DATADIR%%/library/Zend/Db/Statement/Oracle/Exception.php
 %%DATADIR%%/library/Zend/Db/Statement/Pdo.php
+%%DATADIR%%/library/Zend/Db/Statement/Pdo/Ibm.php
 %%DATADIR%%/library/Zend/Db/Table.php
 %%DATADIR%%/library/Zend/Db/Table/Abstract.php
 %%DATADIR%%/library/Zend/Db/Table/Exception.php
@@ -198,6 +203,7 @@
 %%DATADIR%%/library/Zend/Gdata/App/AuthException.php
 %%DATADIR%%/library/Zend/Gdata/App/BadMethodCallException.php
 %%DATADIR%%/library/Zend/Gdata/App/Base.php
+%%DATADIR%%/library/Zend/Gdata/App/CaptchaRequiredException.php
 %%DATADIR%%/library/Zend/Gdata/App/Entry.php
 %%DATADIR%%/library/Zend/Gdata/App/Exception.php
 %%DATADIR%%/library/Zend/Gdata/App/Extension.php
@@ -291,6 +297,17 @@
 %%DATADIR%%/library/Zend/Gdata/Gapps/UserEntry.php
 %%DATADIR%%/library/Zend/Gdata/Gapps/UserFeed.php
 %%DATADIR%%/library/Zend/Gdata/Gapps/UserQuery.php
+%%DATADIR%%/library/Zend/Gdata/Gbase.php
+%%DATADIR%%/library/Zend/Gdata/Gbase/Entry.php
+%%DATADIR%%/library/Zend/Gdata/Gbase/Extension/BaseAttribute.php
+%%DATADIR%%/library/Zend/Gdata/Gbase/Feed.php
+%%DATADIR%%/library/Zend/Gdata/Gbase/ItemEntry.php
+%%DATADIR%%/library/Zend/Gdata/Gbase/ItemFeed.php
+%%DATADIR%%/library/Zend/Gdata/Gbase/ItemQuery.php
+%%DATADIR%%/library/Zend/Gdata/Gbase/Query.php
+%%DATADIR%%/library/Zend/Gdata/Gbase/SnippetEntry.php
+%%DATADIR%%/library/Zend/Gdata/Gbase/SnippetFeed.php
+%%DATADIR%%/library/Zend/Gdata/Gbase/SnippetQuery.php
 %%DATADIR%%/library/Zend/Gdata/Kind/EventEntry.php
 %%DATADIR%%/library/Zend/Gdata/Query.php
 %%DATADIR%%/library/Zend/Gdata/Spreadsheets.php
@@ -374,6 +391,9 @@
 %%DATADIR%%/library/Zend/Locale/Data/bn.xml
 %%DATADIR%%/library/Zend/Locale/Data/bn_BD.xml
 %%DATADIR%%/library/Zend/Locale/Data/bn_IN.xml
+%%DATADIR%%/library/Zend/Locale/Data/bo.xml
+%%DATADIR%%/library/Zend/Locale/Data/bo_CN.xml
+%%DATADIR%%/library/Zend/Locale/Data/bo_IN.xml
 %%DATADIR%%/library/Zend/Locale/Data/bs.xml
 %%DATADIR%%/library/Zend/Locale/Data/bs_BA.xml
 %%DATADIR%%/library/Zend/Locale/Data/byn.xml
@@ -382,6 +402,12 @@
 %%DATADIR%%/library/Zend/Locale/Data/ca_ES.xml
 %%DATADIR%%/library/Zend/Locale/Data/cch.xml
 %%DATADIR%%/library/Zend/Locale/Data/cch_NG.xml
+%%DATADIR%%/library/Zend/Locale/Data/cop.xml
+%%DATADIR%%/library/Zend/Locale/Data/cop_Arab.xml
+%%DATADIR%%/library/Zend/Locale/Data/cop_Arab_EG.xml
+%%DATADIR%%/library/Zend/Locale/Data/cop_Arab_US.xml
+%%DATADIR%%/library/Zend/Locale/Data/cop_EG.xml
+%%DATADIR%%/library/Zend/Locale/Data/cop_US.xml
 %%DATADIR%%/library/Zend/Locale/Data/cs.xml
 %%DATADIR%%/library/Zend/Locale/Data/cs_CZ.xml
 %%DATADIR%%/library/Zend/Locale/Data/cy.xml
@@ -405,6 +431,7 @@
 %%DATADIR%%/library/Zend/Locale/Data/el.xml
 %%DATADIR%%/library/Zend/Locale/Data/el_CY.xml
 %%DATADIR%%/library/Zend/Locale/Data/el_GR.xml
+%%DATADIR%%/library/Zend/Locale/Data/el_POLYTON.xml
 %%DATADIR%%/library/Zend/Locale/Data/el_POLYTONI.xml
 %%DATADIR%%/library/Zend/Locale/Data/en.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_AS.xml
@@ -465,6 +492,7 @@
 %%DATADIR%%/library/Zend/Locale/Data/fa_IR.xml
 %%DATADIR%%/library/Zend/Locale/Data/fi.xml
 %%DATADIR%%/library/Zend/Locale/Data/fi_FI.xml
+%%DATADIR%%/library/Zend/Locale/Data/fil.xml
 %%DATADIR%%/library/Zend/Locale/Data/fo.xml
 %%DATADIR%%/library/Zend/Locale/Data/fo_FO.xml
 %%DATADIR%%/library/Zend/Locale/Data/fr.xml
@@ -517,6 +545,8 @@
 %%DATADIR%%/library/Zend/Locale/Data/id_ID.xml
 %%DATADIR%%/library/Zend/Locale/Data/ig.xml
 %%DATADIR%%/library/Zend/Locale/Data/ig_NG.xml
+%%DATADIR%%/library/Zend/Locale/Data/ii.xml
+%%DATADIR%%/library/Zend/Locale/Data/ii_CN.xml
 %%DATADIR%%/library/Zend/Locale/Data/is.xml
 %%DATADIR%%/library/Zend/Locale/Data/is_IS.xml
 %%DATADIR%%/library/Zend/Locale/Data/it.xml
@@ -547,6 +577,9 @@
 %%DATADIR%%/library/Zend/Locale/Data/ko_KR.xml
 %%DATADIR%%/library/Zend/Locale/Data/kok.xml
 %%DATADIR%%/library/Zend/Locale/Data/kok_IN.xml
+%%DATADIR%%/library/Zend/Locale/Data/kpe.xml
+%%DATADIR%%/library/Zend/Locale/Data/kpe_GN.xml
+%%DATADIR%%/library/Zend/Locale/Data/kpe_LR.xml
 %%DATADIR%%/library/Zend/Locale/Data/ku.xml
 %%DATADIR%%/library/Zend/Locale/Data/ku_Arab.xml
 %%DATADIR%%/library/Zend/Locale/Data/ku_IQ.xml
@@ -584,6 +617,8 @@
 %%DATADIR%%/library/Zend/Locale/Data/ms_MY.xml
 %%DATADIR%%/library/Zend/Locale/Data/mt.xml
 %%DATADIR%%/library/Zend/Locale/Data/mt_MT.xml
+%%DATADIR%%/library/Zend/Locale/Data/my.xml
+%%DATADIR%%/library/Zend/Locale/Data/my_MM.xml
 %%DATADIR%%/library/Zend/Locale/Data/nb.xml
 %%DATADIR%%/library/Zend/Locale/Data/nb_NO.xml
 %%DATADIR%%/library/Zend/Locale/Data/ne.xml
@@ -629,6 +664,7 @@
 %%DATADIR%%/library/Zend/Locale/Data/sa.xml
 %%DATADIR%%/library/Zend/Locale/Data/sa_IN.xml
 %%DATADIR%%/library/Zend/Locale/Data/se.xml
+%%DATADIR%%/library/Zend/Locale/Data/se_FI.xml
 %%DATADIR%%/library/Zend/Locale/Data/se_NO.xml
 %%DATADIR%%/library/Zend/Locale/Data/sh.xml
 %%DATADIR%%/library/Zend/Locale/Data/sh_BA.xml
@@ -667,6 +703,7 @@
 %%DATADIR%%/library/Zend/Locale/Data/sr_YU.xml
 %%DATADIR%%/library/Zend/Locale/Data/ss.xml
 %%DATADIR%%/library/Zend/Locale/Data/ss_ZA.xml
+%%DATADIR%%/library/Zend/Locale/Data/ssy.xml
 %%DATADIR%%/library/Zend/Locale/Data/st.xml
 %%DATADIR%%/library/Zend/Locale/Data/st_ZA.xml
 %%DATADIR%%/library/Zend/Locale/Data/supplementalData.xml
@@ -693,14 +730,19 @@
 %%DATADIR%%/library/Zend/Locale/Data/tig_ER.xml
 %%DATADIR%%/library/Zend/Locale/Data/tn.xml
 %%DATADIR%%/library/Zend/Locale/Data/tn_ZA.xml
+%%DATADIR%%/library/Zend/Locale/Data/to.xml
+%%DATADIR%%/library/Zend/Locale/Data/to_TO.xml
 %%DATADIR%%/library/Zend/Locale/Data/tr.xml
 %%DATADIR%%/library/Zend/Locale/Data/tr_TR.xml
 %%DATADIR%%/library/Zend/Locale/Data/ts.xml
 %%DATADIR%%/library/Zend/Locale/Data/ts_ZA.xml
 %%DATADIR%%/library/Zend/Locale/Data/tt.xml
 %%DATADIR%%/library/Zend/Locale/Data/tt_RU.xml
+%%DATADIR%%/library/Zend/Locale/Data/ug.xml
 %%DATADIR%%/library/Zend/Locale/Data/uk.xml
 %%DATADIR%%/library/Zend/Locale/Data/uk_UA.xml
+%%DATADIR%%/library/Zend/Locale/Data/und.xml
+%%DATADIR%%/library/Zend/Locale/Data/und_ZZ.xml
 %%DATADIR%%/library/Zend/Locale/Data/ur.xml
 %%DATADIR%%/library/Zend/Locale/Data/ur_IN.xml
 %%DATADIR%%/library/Zend/Locale/Data/ur_PK.xml
@@ -719,6 +761,12 @@
 %%DATADIR%%/library/Zend/Locale/Data/vi_VN.xml
 %%DATADIR%%/library/Zend/Locale/Data/wal.xml
 %%DATADIR%%/library/Zend/Locale/Data/wal_ET.xml
+%%DATADIR%%/library/Zend/Locale/Data/wo.xml
+%%DATADIR%%/library/Zend/Locale/Data/wo_Arab.xml
+%%DATADIR%%/library/Zend/Locale/Data/wo_Arab_SN.xml
+%%DATADIR%%/library/Zend/Locale/Data/wo_Latn.xml
+%%DATADIR%%/library/Zend/Locale/Data/wo_Latn_SN.xml
+%%DATADIR%%/library/Zend/Locale/Data/wo_SN.xml
 %%DATADIR%%/library/Zend/Locale/Data/xh.xml
 %%DATADIR%%/library/Zend/Locale/Data/xh_ZA.xml
 %%DATADIR%%/library/Zend/Locale/Data/yo.xml
@@ -1170,6 +1218,7 @@
 %%DATADIR%%/tests/Zend/Auth/Adapter/AllTests.php
 %%DATADIR%%/tests/Zend/Auth/Adapter/DbTable/AllTests.php
 %%DATADIR%%/tests/Zend/Auth/Adapter/DbTable/BasicSqliteTest.php
+%%DATADIR%%/tests/Zend/Auth/Adapter/DbTable/BasicSqliteTest/SkipTests.php
 %%DATADIR%%/tests/Zend/Auth/Adapter/Digest/_files/.htdigest.1
 %%DATADIR%%/tests/Zend/Auth/Adapter/DigestTest.php
 %%DATADIR%%/tests/Zend/Auth/Adapter/Http/AllTests.php
@@ -1195,6 +1244,7 @@
 %%DATADIR%%/tests/Zend/Cache/MemcachedBackendTest.php
 %%DATADIR%%/tests/Zend/Cache/OutputFrontendTest.php
 %%DATADIR%%/tests/Zend/Cache/PageFrontendTest.php
+%%DATADIR%%/tests/Zend/Cache/SkipTests.php
 %%DATADIR%%/tests/Zend/Cache/SqliteBackendTest.php
 %%DATADIR%%/tests/Zend/Cache/ZendPlatformBackendTest.php
 %%DATADIR%%/tests/Zend/Config/AllTests.php
@@ -1238,6 +1288,7 @@
 %%DATADIR%%/tests/Zend/Controller/_files/HelperBrokerController.php
 %%DATADIR%%/tests/Zend/Controller/_files/HelperFlashMessengerController.php
 %%DATADIR%%/tests/Zend/Controller/_files/Helpers/TestHelper.php
+%%DATADIR%%/tests/Zend/Controller/_files/Helpers/Url.php
 %%DATADIR%%/tests/Zend/Controller/_files/IndexController.php
 %%DATADIR%%/tests/Zend/Controller/_files/ObController.php
 %%DATADIR%%/tests/Zend/Controller/_files/ViewController.php
@@ -1245,12 +1296,14 @@
 %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/controllers/Admin/IndexController.php
 %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/controllers/IndexController.php
 %%DATADIR%%/tests/Zend/Controller/_files/routes.ini
+%%DATADIR%%/tests/Zend/CurrencyTest.php
 %%DATADIR%%/tests/Zend/Date/AllTests.php
 %%DATADIR%%/tests/Zend/Date/DateObjectTest.php
 %%DATADIR%%/tests/Zend/DateTest.php
 %%DATADIR%%/tests/Zend/Db/Adapter/Db2Test.php
 %%DATADIR%%/tests/Zend/Db/Adapter/MysqliTest.php
 %%DATADIR%%/tests/Zend/Db/Adapter/OracleTest.php
+%%DATADIR%%/tests/Zend/Db/Adapter/Pdo/IbmTest.php
 %%DATADIR%%/tests/Zend/Db/Adapter/Pdo/MssqlTest.php
 %%DATADIR%%/tests/Zend/Db/Adapter/Pdo/MysqlTest.php
 %%DATADIR%%/tests/Zend/Db/Adapter/Pdo/OciTest.php
@@ -1261,21 +1314,25 @@
 %%DATADIR%%/tests/Zend/Db/Adapter/Static.php
 %%DATADIR%%/tests/Zend/Db/Adapter/StaticTest.php
 %%DATADIR%%/tests/Zend/Db/Adapter/TestCommon.php
+%%DATADIR%%/tests/Zend/Db/Adapter/_files/TestNamespace/Static.php
 %%DATADIR%%/tests/Zend/Db/AllTests.php
 %%DATADIR%%/tests/Zend/Db/Profiler/Db2Test.php
 %%DATADIR%%/tests/Zend/Db/Profiler/MysqliTest.php
 %%DATADIR%%/tests/Zend/Db/Profiler/OracleTest.php
+%%DATADIR%%/tests/Zend/Db/Profiler/Pdo/IbmTest.php
 %%DATADIR%%/tests/Zend/Db/Profiler/Pdo/MssqlTest.php
 %%DATADIR%%/tests/Zend/Db/Profiler/Pdo/MysqlTest.php
 %%DATADIR%%/tests/Zend/Db/Profiler/Pdo/OciTest.php
 %%DATADIR%%/tests/Zend/Db/Profiler/Pdo/PgsqlTest.php
 %%DATADIR%%/tests/Zend/Db/Profiler/Pdo/SqliteTest.php
+%%DATADIR%%/tests/Zend/Db/Profiler/ProfilerCustom.php
 %%DATADIR%%/tests/Zend/Db/Profiler/StaticTest.php
 %%DATADIR%%/tests/Zend/Db/Profiler/TestCommon.php
 %%DATADIR%%/tests/Zend/Db/Select/Db2Test.php
 %%DATADIR%%/tests/Zend/Db/Select/MysqliTest.php
 %%DATADIR%%/tests/Zend/Db/Select/OdbcTest.php
 %%DATADIR%%/tests/Zend/Db/Select/OracleTest.php
+%%DATADIR%%/tests/Zend/Db/Select/Pdo/IbmTest.php
 %%DATADIR%%/tests/Zend/Db/Select/Pdo/MssqlTest.php
 %%DATADIR%%/tests/Zend/Db/Select/Pdo/MysqlTest.php
 %%DATADIR%%/tests/Zend/Db/Select/Pdo/OciTest.php
@@ -1288,6 +1345,7 @@
 %%DATADIR%%/tests/Zend/Db/Statement/MysqliTest.php
 %%DATADIR%%/tests/Zend/Db/Statement/OdbcTest.php
 %%DATADIR%%/tests/Zend/Db/Statement/OracleTest.php
+%%DATADIR%%/tests/Zend/Db/Statement/Pdo/IbmTest.php
 %%DATADIR%%/tests/Zend/Db/Statement/Pdo/MssqlTest.php
 %%DATADIR%%/tests/Zend/Db/Statement/Pdo/MysqlTest.php
 %%DATADIR%%/tests/Zend/Db/Statement/Pdo/OciTest.php
@@ -1301,6 +1359,7 @@
 %%DATADIR%%/tests/Zend/Db/Table/MysqliTest.php
 %%DATADIR%%/tests/Zend/Db/Table/OdbcTest.php
 %%DATADIR%%/tests/Zend/Db/Table/OracleTest.php
+%%DATADIR%%/tests/Zend/Db/Table/Pdo/IbmTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Pdo/MssqlTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Pdo/MysqlTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Pdo/OciTest.php
@@ -1310,6 +1369,7 @@
 %%DATADIR%%/tests/Zend/Db/Table/Relationships/MysqliTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Relationships/OdbcTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Relationships/OracleTest.php
+%%DATADIR%%/tests/Zend/Db/Table/Relationships/Pdo/IbmTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Relationships/Pdo/MssqlTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Relationships/Pdo/MysqlTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Relationships/Pdo/OciTest.php
@@ -1321,6 +1381,7 @@
 %%DATADIR%%/tests/Zend/Db/Table/Row/MysqliTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Row/OdbcTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Row/OracleTest.php
+%%DATADIR%%/tests/Zend/Db/Table/Row/Pdo/IbmTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Row/Pdo/MssqlTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Row/Pdo/MysqlTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Row/Pdo/OciTest.php
@@ -1334,6 +1395,7 @@
 %%DATADIR%%/tests/Zend/Db/Table/Rowset/MysqliTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Rowset/OdbcTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Rowset/OracleTest.php
+%%DATADIR%%/tests/Zend/Db/Table/Rowset/Pdo/IbmTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Rowset/Pdo/MssqlTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Rowset/Pdo/MysqlTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Rowset/Pdo/OciTest.php
@@ -1360,6 +1422,7 @@
 %%DATADIR%%/tests/Zend/Db/TestUtil/Mysqli.php
 %%DATADIR%%/tests/Zend/Db/TestUtil/Oracle.php
 %%DATADIR%%/tests/Zend/Db/TestUtil/Pdo/Common.php
+%%DATADIR%%/tests/Zend/Db/TestUtil/Pdo/Ibm.php
 %%DATADIR%%/tests/Zend/Db/TestUtil/Pdo/Mssql.php
 %%DATADIR%%/tests/Zend/Db/TestUtil/Pdo/Mysql.php
 %%DATADIR%%/tests/Zend/Db/TestUtil/Pdo/Oci.php
@@ -1419,6 +1482,7 @@
 %%DATADIR%%/tests/Zend/FilterTest.php
 %%DATADIR%%/tests/Zend/Gdata/AllTests.php
 %%DATADIR%%/tests/Zend/Gdata/App/AuthorTest.php
+%%DATADIR%%/tests/Zend/Gdata/App/CaptchaRequiredExceptionTest.php
 %%DATADIR%%/tests/Zend/Gdata/App/CategoryTest.php
 %%DATADIR%%/tests/Zend/Gdata/App/ContentTest.php
 %%DATADIR%%/tests/Zend/Gdata/App/ControlTest.php
@@ -1507,6 +1571,16 @@
 %%DATADIR%%/tests/Zend/Gdata/Gapps/_files/UserFeedDataSample1.xml
 %%DATADIR%%/tests/Zend/Gdata/GappsOnlineTest.php
 %%DATADIR%%/tests/Zend/Gdata/GappsTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gbase/BaseAttributeTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gbase/ItemEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gbase/ItemFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gbase/ItemQueryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gbase/QueryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gbase/SnippetFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gbase/SnippetQueryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Gbase/_files/TestDataGbaseItemFeedSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/Gbase/_files/TestDataGbaseSnippetFeedSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/GbaseOnlineTest.php
 %%DATADIR%%/tests/Zend/Gdata/GdataOnlineTest.php
 %%DATADIR%%/tests/Zend/Gdata/GdataTest.php
 %%DATADIR%%/tests/Zend/Gdata/OpenSearchItemsPerPageTest.php
@@ -1595,6 +1669,7 @@
 %%DATADIR%%/tests/Zend/Http/_files/response_crlf
 %%DATADIR%%/tests/Zend/Http/_files/response_deflate
 %%DATADIR%%/tests/Zend/Http/_files/response_gzip
+%%DATADIR%%/tests/Zend/Http/_files/response_leadingws
 %%DATADIR%%/tests/Zend/Http/_files/response_lfonly
 %%DATADIR%%/tests/Zend/Http/_files/response_multiline_header
 %%DATADIR%%/tests/Zend/Http/_files/response_unknown
@@ -1998,6 +2073,8 @@
 @dirrm %%DATADIR%%/tests/Zend/Gdata/_files
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Spreadsheets/_files
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Spreadsheets
+@dirrm %%DATADIR%%/tests/Zend/Gdata/Gbase/_files
+@dirrm %%DATADIR%%/tests/Zend/Gdata/Gbase
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Gapps/_files
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Gapps
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Calendar/_files
@@ -2027,6 +2104,8 @@
 @dirrm %%DATADIR%%/tests/Zend/Db/Select
 @dirrm %%DATADIR%%/tests/Zend/Db/Profiler/Pdo
 @dirrm %%DATADIR%%/tests/Zend/Db/Profiler
+@dirrm %%DATADIR%%/tests/Zend/Db/Adapter/_files/TestNamespace
+@dirrm %%DATADIR%%/tests/Zend/Db/Adapter/_files
 @dirrm %%DATADIR%%/tests/Zend/Db/Adapter/Pdo
 @dirrm %%DATADIR%%/tests/Zend/Db/Adapter
 @dirrm %%DATADIR%%/tests/Zend/Db
@@ -2068,6 +2147,7 @@
 @dirrm %%DATADIR%%/tests/Zend/Auth/Adapter/Http
 @dirrm %%DATADIR%%/tests/Zend/Auth/Adapter/Digest/_files
 @dirrm %%DATADIR%%/tests/Zend/Auth/Adapter/Digest
+@dirrm %%DATADIR%%/tests/Zend/Auth/Adapter/DbTable/BasicSqliteTest
 @dirrm %%DATADIR%%/tests/Zend/Auth/Adapter/DbTable
 @dirrm %%DATADIR%%/tests/Zend/Auth/Adapter
 @dirrm %%DATADIR%%/tests/Zend/Auth
@@ -2175,6 +2255,8 @@
 @dirrm %%DATADIR%%/library/Zend/Gdata/Spreadsheets/Extension
 @dirrm %%DATADIR%%/library/Zend/Gdata/Spreadsheets
 @dirrm %%DATADIR%%/library/Zend/Gdata/Kind
+@dirrm %%DATADIR%%/library/Zend/Gdata/Gbase/Extension
+@dirrm %%DATADIR%%/library/Zend/Gdata/Gbase
 @dirrm %%DATADIR%%/library/Zend/Gdata/Gapps/Extension
 @dirrm %%DATADIR%%/library/Zend/Gdata/Gapps
 @dirrm %%DATADIR%%/library/Zend/Gdata/Extension
@@ -2191,6 +2273,7 @@
 @dirrm %%DATADIR%%/library/Zend/Db/Table/Rowset
 @dirrm %%DATADIR%%/library/Zend/Db/Table/Row
 @dirrm %%DATADIR%%/library/Zend/Db/Table
+@dirrm %%DATADIR%%/library/Zend/Db/Statement/Pdo
 @dirrm %%DATADIR%%/library/Zend/Db/Statement/Oracle
 @dirrm %%DATADIR%%/library/Zend/Db/Statement/Mysqli
 @dirrm %%DATADIR%%/library/Zend/Db/Statement/Db2
@@ -2204,6 +2287,7 @@
 @dirrm %%DATADIR%%/library/Zend/Db/Adapter
 @dirrm %%DATADIR%%/library/Zend/Db
 @dirrm %%DATADIR%%/library/Zend/Date
+@dirrm %%DATADIR%%/library/Zend/Currency
 @dirrm %%DATADIR%%/library/Zend/Controller/Router/Route
 @dirrm %%DATADIR%%/library/Zend/Controller/Router
 @dirrm %%DATADIR%%/library/Zend/Controller/Response
