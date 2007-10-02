@@ -31,4 +31,12 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 run-autotools-automake:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} ${AUTOMAKE_ARGS})
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
+
+.include <bsd.port.post.mk>
