@@ -38,12 +38,16 @@ MANPAGES=	gdb.1:gdb run.1:sim/common
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Configure fails on amd64 and ia64"
+BROKEN=		Configure fails on amd64 and ia64
 .endif
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Fails to link"
+BROKEN=		Fails to link
 .endif
 
 do-install:
