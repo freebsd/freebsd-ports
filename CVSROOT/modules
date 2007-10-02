@@ -16393,6 +16393,7 @@ wildmagic	ports/graphics/wildmagic
 wiliki		ports/www/wiliki
 wily		ports/editors/wily
 win32-codecs	ports/multimedia/win32-codecs
+win4bsd		ports/emulators/win4bsd
 windowlab	ports/x11-wm/windowlab
 windowmaker	ports/x11-wm/windowmaker
 windstille	ports/games/windstille
