@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kronolith
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.6
 CATEGORIES=	deskutils www
 
 MAINTAINER=	beech@FreeBSD.org
