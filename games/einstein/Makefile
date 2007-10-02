@@ -7,7 +7,7 @@
 
 PORTNAME=	einstein
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://games.flowix.com/files/einstein/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -18,15 +18,7 @@ COMMENT=	Remake of old DOS game Sherlock, which was inspired by Albert Einstein'
 USE_SDL=	sdl ttf mixer
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
