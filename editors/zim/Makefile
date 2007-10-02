@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zim
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	editors perl5
 MASTER_SITES=	http://pardus-larus.student.utwente.nl/~pardus/downloads/Zim/
 DISTNAME=	Zim-${PORTVERSION}
@@ -37,6 +37,7 @@ MAN3=		Gtk2::Ex::DesktopEntryMenu.3 \
 		Zim::Selection.3 \
 		Zim::GUI::Calendar.3 \
 		Zim::GUI::Component.3 \
+		Zim::GUI::EquationEditor.3 \
 		Zim::GUI::ExportDialog.3 \
 		Zim::GUI::FindReplaceDialog.3 \
 		Zim::GUI::PreferencesDialog.3 \
