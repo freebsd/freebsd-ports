@@ -9,13 +9,11 @@ PORTREVISION=	0
 CATEGORIES=	misc devel
 PKGNAMESUFFIX=	-libuuid
 
-MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	UUID library from e2fsprogs package
 
-CONFIGURE_ARGS=	--enable-elf-shlibs --disable-fsck \
-		--disable-e2initrd-helper
-
 CONFLICTS=	ossp-uuid-[0-9]*
+
+CONFIGURE_ARGS=	--enable-elf-shlibs
 
 WITHOUT_NLS=	yes
 MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
