@@ -2232,6 +2232,7 @@
     SUBDIR += ta-lib
     SUBDIR += tailor
     SUBDIR += tavrasm
+    SUBDIR += tbb
     SUBDIR += tcl-memchan
     SUBDIR += tcl-neo
     SUBDIR += tcl-trf
