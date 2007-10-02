@@ -5642,6 +5642,7 @@ jit		ports/net-im/jit
 jive		ports/misc/jive
 jkill		ports/sysutils/jkill
 jlex		ports/java/jlex
+jline		ports/devel/jline
 jlint		ports/java/jlint
 jlj		ports/deskutils/jlj
 jmf		ports/java/jmf
