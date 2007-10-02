@@ -18,7 +18,6 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Free FPS game featuring two opposing teams, humans and aliens
 
 USE_ZIP=	yes
-USE_GCC=	3.2+
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/${DISTNAME}-src
@@ -41,10 +40,6 @@ MAKE_ENV+=	DEFAULT_BASEDIR="${DATADIR}" \
 VM_ARCHS=	amd64 i386 powerpc
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__unix__unix_shared.c
-.endif
 
 .if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
     defined(WITHOUT_SMP)
@@ -80,6 +75,7 @@ USE_SDL=	sdl
 MAKE_ENV+=	USE_SDL_VIDEO=1
 .   else
 USE_GL=		yes
+USE_XLIB=	yes
 .   endif
 # Vorbis
 .   if defined(WITH_VORBIS)
@@ -137,10 +133,6 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|botlib\.log|/dev/null|' \
 		${BUILD_WRKSRC}/src/botlib/be_interface.c
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|stdint\.h|inttypes.h|' \
-		${BUILD_WRKSRC}/src/qcommon/q_shared.h
-.endif
 
 do-install:
 .for bin in ${TRBIN}
