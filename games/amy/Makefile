@@ -26,8 +26,12 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if ${ARCH} == "amd64"
-BROKEN=		"Segfault during build on amd64"
+BROKEN=		Segfault during build on amd64
 .endif
 
 post-extract:
