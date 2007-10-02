@@ -31,6 +31,10 @@ post-patch:
 
 .if ${OSVERSION} < 600000
 BROKEN=		does not compile on 4.X or 5.X
+.elif ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
 .endif
 
 .include <bsd.port.post.mk>
