@@ -20,7 +20,7 @@ USE_GNOME=	gtk20
 
 BROKEN=		just makes a humming noise
 DEPRECATED=		"${BROKEN}""
-EXPIRATION_DATE=	2006-11-01
+EXPIRATION_DATE=	2007-11-01
 
 PLIST_FILES=	bin/nogger
 .ifndef(NOPORTDOCS)
