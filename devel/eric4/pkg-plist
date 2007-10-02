@@ -539,8 +539,6 @@ share/qt4/qsci/api/python/eric4.api
 %%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/AsyncFile.pyc
 %%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/AsyncIO.py
 %%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/AsyncIO.pyc
-%%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/Config.py
-%%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/Config.pyc
 %%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/Cyclops/Cyclops.py
 %%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/Cyclops/Cyclops.pyc
 %%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/Cyclops/HTMLCyclops.py
@@ -561,6 +559,8 @@ share/qt4/qsci/api/python/eric4.api
 %%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/DebugClientCapabilities.pyc
 %%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/DebugClientThreads.py
 %%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/DebugClientThreads.pyc
+%%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/DebugConfig.py
+%%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/DebugConfig.pyc
 %%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/DebugProtocol.py
 %%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/DebugProtocol.pyc
 %%PYTHON_SITELIBDIR%%/eric4/DebugClients/Python/DebugThread.py
