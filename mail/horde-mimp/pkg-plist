@@ -43,8 +43,10 @@
 %%HORDIR%%/locale/it_IT/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/lt_LT/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/nl_NL/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/pl_PL/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/pt_PT/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/ro_RO/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/zh_CN/LC_MESSAGES/mimp.mo
 %%HORDIR%%/login.php
 %%HORDIR%%/mailbox.php
 %%HORDIR%%/message.php
@@ -59,8 +61,10 @@
 %%HORDIR%%/po/lt_LT.po
 %%HORDIR%%/po/mimp.pot
 %%HORDIR%%/po/nl_NL.po
+%%HORDIR%%/po/pl_PL.po
 %%HORDIR%%/po/pt_PT.po
 %%HORDIR%%/po/ro_RO.po
+%%HORDIR%%/po/zh_CN.po
 %%HORDIR%%/redirect.php
 %%HORDIR%%/templates/common-header.inc
 %%HORDIR%%/templates/compose/compose.inc
@@ -99,10 +103,14 @@
 @dirrm %%HORDIR%%/locale/lt_LT
 @dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/nl_NL
+@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pl_PL
 @dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/pt_PT
 @dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/ro_RO
+@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_CN
 @dirrm %%HORDIR%%/locale
 @dirrm %%HORDIR%%/po
 @dirrm %%HORDIR%%/templates/compose
