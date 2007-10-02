@@ -11,10 +11,6 @@ sbin/ossdetect
 sbin/ossctl
 sbin/soundon
 sbin/soundoff
-@comment lib/libOSSlib.so
-include/sys/soundcard.h
-@dirrmtry include/sys
-@comment include/midiparser.h
 lib/oss/modules/osscore.ko
 lib/oss/modules/ali5455.ko
 lib/oss/modules/allegro.ko
