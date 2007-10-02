@@ -7,6 +7,7 @@
 
 PORTNAME=	adblock_plus
 PORTVERSION=	0.7.5.3
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-fx+tb+sm+fl
 CATEGORIES=	www
 
@@ -16,7 +17,7 @@ COMMENT=	A content filtering extension
 XPI_NUM=	1865
 XPI_ID=		{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}
 XPI_FILES=	chrome/adblockplus.jar chrome.manifest components/nsAdblockPlus.js \
-		components/nsAdblockPlus.xpt defaults/preferences/adblockplus.js \
+		defaults/preferences/adblockplus.js \
 		install.js install.rdf
 XPI_DIRS=	chrome components defaults/preferences defaults
 
