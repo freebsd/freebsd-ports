@@ -35,6 +35,10 @@ OPTIONS=	BPP8 "With BPP8" Off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 post-patch:
 .ifdef(WITH_BPP32) || defined(PACKAGE_BUILDING) || defined(BATCH)
 	${REINPLACE_CMD} -e 's/%%BPP%%/BPP32/' ${WRKSRC}/Makefile
