@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.184
+# Local version: 1.187
 # $FreeBSD$
 
 # Copyright (c) 2005-2007 Douglas Barton, All rights reserved
@@ -731,6 +731,7 @@ req_by_error () {
 
 find_and_delete_distfiles () {
 	# old_distpattern is used for subsequent invocations of the function
+	# distfiles_checked is used globally
 	local distpattern file DELORNOT
 
 	distpattern=${1%[_-]*}
@@ -744,8 +745,13 @@ find_and_delete_distfiles () {
 			;;
 		esac
 
+		case "$distfiles_checked" in
+		*${file}*) continue ;;
+		esac
+
 		case "$distfiles" in
 		*${file}*)
+			distfiles_checked="$file $distfiles_checked"
 			if [ -n "$VERBOSE" -a -z "$do_delete" ]; then
 				echo "===>>> Keeping current distfile: $file"
 			fi
@@ -774,11 +780,12 @@ find_and_delete_distfiles () {
 
 delete_stale_distfiles () {
 	# distfiles is used globally
+	# distfiles_checked is used globally
 	# inherit distdir from the environment, but only modify our copy
 	local distdir dist_subdir file DELORNOT distfile
 
 	dist_subdir=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -V DIST_SUBDIR`
-	test -n "$dist_subdir" && distdir="${distdir}/${dist_subdir}"
+	test -n "$dist_subdir" && distdir="${distdir}/${dist_subdir}/"
 
 	# Also used in find_and_delete_distfiles() to make sure
 	# we do not delete the current set of distfiles
@@ -796,9 +803,19 @@ delete_stale_distfiles () {
 
 	# If these two match, it means that the distfiles in the +CONTENTS
 	# file are the current set, so do not delete them.
-	if [ ! "$cont_distfiles" = "${distfiles% }" ]; then
-		for file in $cont_distfiles; do
+	if [ ! "$dist_list_files" = "${distfiles% }" ]; then
+		for file in $dist_list_files; do
 			[ -f $file ] || continue
+
+			case "$distfiles" in
+			*${file}*)
+				distfiles_checked="$file $distfiles_checked"
+				if [ -n "$VERBOSE" ]; then
+				echo "===>>> Keeping current distfile: $file"
+				fi
+				continue # Do not delete current version
+				;;
+			esac
 
 			if [ -n "$ALWAYS_SCRUB_DISTFILES" ]; then
 				echo "===>>> Deleting stale distfile: $file"
@@ -905,6 +922,8 @@ if [ -z "$pdb" ]; then
 fi
 if [ -z "$distdir" ]; then
 	distdir=`make BEFOREPORTMK=yes -f/usr/share/mk/bsd.port.mk -V DISTDIR`
+	# In case it is a symlink
+	distdir="${distdir}/"
 	export distdir
 fi
 
@@ -918,6 +937,8 @@ esac
 read_distinfos () {
 	local origin distinfo disc1 file disc2
 
+	echo "===>>> Gathering distinfo list for installed ports"
+
 	for pkg in ${pdb}/*; do
 		[ -d $pkg ] || continue
 		origin=`origin_from_pdb $pkg`
@@ -930,9 +951,9 @@ read_distinfos () {
 		cd $pd/$origin 2>/dev/null || continue
 		distinfo=`make $PM_MAKE_ARGS -V MD5_FILE`
 		if [ -s "$distinfo" ]; then
-			while read disc1 file disc2; do
+			grep '^MD5' $distinfo | while read disc1 file disc2; do
 				echo $file >> $DI_FILES
-			done < $distinfo
+			done
 		fi
 	done
 }
@@ -942,12 +963,11 @@ if [ -n "$CLEAN_DISTFILES" ]; then
 	# usually called in a subshell.
 	DI_FILES=`mktemp -t DI-FILES-$PARENT_PID`
 	export DI_FILES
-	echo "===>>> Gathering distinfo list for installed ports"
 	read_distinfos
 
 	echo "===>>> Checking for stale distfiles"
 	for df in `find $distdir -type f`; do
-		f=${df#$distdir/}
+		f=${df#$distdir}
 		if ! grep -q \(${f}\) $DI_FILES; then
 			if [ -n "$ALL" ]; then
 				echo "===>>> Deleting $f"
@@ -1064,14 +1084,20 @@ fi
 find_contents_distfiles () {
 	[ -n "$DONT_SCRUB_DISTFILES" ] && return 0
 
-	# cont_distfiles is used globally
-	local file
+	# dist_list_files is used globally
+	local dist_list file
 
-	for file in `grep DISTFILE $pdb/$1/+CONTENTS | cut -f2 -d:`; do
-		cont_distfiles="${cont_distfiles} ${file#*/}"
+	cd $pd/$1
+	dist_list=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -V OPTIONSFILE`
+	dist_list="${dist_list%options}distfiles"
+	[ -s "$dist_list" ] || return 0
+
+	# The grep is needed to allow for comments, etc.
+	for file in `grep ^DISTFILE $dist_list | cut -f2 -d:`; do
+		dist_list_files="${dist_list_files} ${file#*/}"
 	done
 
-	cont_distfiles=${cont_distfiles# }
+	dist_list_files=${dist_list_files# }
 }
 
 if [ -n "$EXPUNGE" ]; then
@@ -1089,7 +1115,7 @@ if [ -n "$EXPUNGE" ]; then
 			backup_package $EXPUNGE
 		fi
 
-		find_contents_distfiles $EXPUNGE
+		find_contents_distfiles $origin
 
 		echo "===>>> Running pkg_delete -f $EXPUNGE"
 		pkg_delete -f $EXPUNGE
@@ -1138,7 +1164,7 @@ if [ -n "$CLEAN_STALE" ]; then
 				backup_package $iport
 			fi
 
-			find_contents_distfiles $iport
+			find_contents_distfiles $origin
 
 			echo "===>>> Running pkg_delete -f $iport"
 			pkg_delete -f ${iport}
@@ -1238,11 +1264,12 @@ else
 fi
 
 if [ -n "$UPDATE_ALL" ]; then
-	# Set the file name here so it's visible to the parent
-	DI_FILES=`mktemp -t DI-FILES-$PARENT_PID`
-	export DI_FILES
-	echo "===>>> Gathering distinfo list for installed ports in background"
-	(read_distinfos)&
+	if [ -z "$DONT_SCRUB_DISTFILES" ]; then
+		# Set the file name here so it's visible to the parent
+		DI_FILES=`mktemp -t DI-FILES-$PARENT_PID`
+		export DI_FILES
+		(read_distinfos)&
+	fi
 
 	echo "===>>> Starting check of installed ports for available updates"
 	ports_by_category
@@ -1447,11 +1474,11 @@ for state in FORBIDDEN BROKEN IGNORE; do
 	fi
 done
 
-if [ "$$" -eq "$PARENT_PID" -a -z "$SHOW_WORK" ]; then
+if [ "$$" -eq "$PARENT_PID" -a -z "$SHOW_WORK" \
+    -a -z "$DONT_SCRUB_DISTFILES" ]; then
 	# Set the file name here so it's visible to the parent
 	DI_FILES=`mktemp -t DI-FILES-$PARENT_PID`
 	export DI_FILES
-	echo "===>>> Gathering distinfo list for installed ports in background"
 	(read_distinfos)&
 fi
 
@@ -1675,7 +1702,7 @@ fi
 
 # Ignore if no old port exists
 if [ -n "$upg_port" ]; then
-	find_contents_distfiles $upg_port
+	find_contents_distfiles $portdir
 
 	UPGRADE_PORT=$upg_port
 	UPGRADE_PORT_VER=`echo $UPGRADE_PORT | sed 's#.*-\(.*\)#\1#'`
@@ -1733,22 +1760,23 @@ done
 test -d "${PORTS_PREFIX}/lib/compat/pkg" &&
     ldconfig -m ${PORTS_PREFIX}/lib/compat/pkg
 
-# Implement storage of distfile information in the +CONTENTS file in the
+# Implement storage of distfile information in the
 # same way that it will (hopefully, soon?) be implemented in bsd.port.mk
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=106483
-if ! grep -q DISTFILE $pdb/$new_port/+CONTENTS; then
-	ds=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -V DIST_SUBDIR`
-	test -n "$ds" && ds="${ds}/"
-
-	allfiles=`make $PM_MAKE_ARGS -V ALLFILES`
-	distinfo=`make $PM_MAKE_ARGS -V MD5_FILE`
-	for file in $allfiles; do
-		size=`grep "^SIZE (${ds}${file})" $distinfo | cut -f4 -d' '`
-		sha256=`grep "^SHA256 (${ds}${file})" $distinfo | cut -f4 -d' '`
-		md5=`grep "^MD5 (${ds}${file})" $distinfo | cut -f4 -d' '`
-		echo "@comment DISTFILE:${ds}${file}:SIZE=${size}:SHA256=${sha256}:MD5=${md5}" >> $pdb/$new_port/+CONTENTS
-	done
-fi
+dist_list=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -V OPTIONSFILE`
+dist_list="${dist_list%options}distfiles"
+mkdir -p ${dist_list%/distfiles}
+ds=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -V DIST_SUBDIR`
+test -n "$ds" && ds="${ds}/"
+allfiles=`make $PM_MAKE_ARGS -V ALLFILES`
+distinfo=`make $PM_MAKE_ARGS -V MD5_FILE`
+echo '# Added by portmaster' > $dist_list
+for file in $allfiles; do
+	size=`grep "^SIZE (${ds}${file})" $distinfo | cut -f4 -d' '`
+	sha256=`grep "^SHA256 (${ds}${file})" $distinfo | cut -f4 -d' '`
+	md5=`grep "^MD5 (${ds}${file})" $distinfo | cut -f4 -d' '`
+	echo "DISTFILE:${ds}${file}:SIZE=${size}:SHA256=${sha256}:MD5=${md5}" >> $dist_list
+done
 
 if [ -n "$MAKE_PACKAGE" ]; then
 	echo "===>>> Creating a package for new version $new_port"
@@ -1804,6 +1832,16 @@ test -e "$pdb/$new_port/+DISPLAY" &&
 
 if [ -n "$URB_YES" -o -n "$UPDATE_REQ_BYS" -o -n "$FORCE" ]; then
 	touch $pdb/$new_port/PM_UPGRADE_DONE_FLAG
+fi
+
+# Make sure any new distfiles get added to the list
+cd $pd/$portdir 2>/dev/null ||
+    fail "Cannot cd to $pd/$portdir for distfile update"
+distinfo=`make $PM_MAKE_ARGS -V MD5_FILE`
+if [ -s "$distinfo" ]; then
+	grep '^MD5' $distinfo | while read disc1 file disc2; do
+		echo $file >> $DI_FILES
+	done
 fi
 
 if [ -z "$DONT_SCRUB_DISTFILES" ]; then
