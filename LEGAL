@@ -620,6 +620,7 @@ webglimpse-*.src.tar.gz	www/webglimpse		Depends on glimpse
 wgetpro*		ftp/wgetpro		U.S. Patent 6,041,345
 win32/*			multimedia/win32-codecs	Licensing status of the
 						codecs is unknown
+Win4BSD-*		emulators/win4bsd	Redistribution is not allowed
 xchada01.lzh		games/xchadance		Contains commercial character
 						data
 xds-[0-9]*		lang/xds		Redistribution is forbidden
