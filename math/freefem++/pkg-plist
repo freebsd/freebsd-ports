@@ -121,8 +121,10 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Morley.o
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Morley.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/NSP2BRP0.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/NewSolver.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Operator.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/QuadratureFormular.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/REAME_SuperLU
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/RNM.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/RNM_op.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/RNM_opc.hpp
@@ -130,6 +132,9 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/RefCounter.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Serialize.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/String.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/SuperLU_3.0-include-ff.tar.gz
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/SuperLu.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/SuperLu.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/addNewType.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/addNewType.o
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/addNewType.so
@@ -266,6 +271,8 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/sphere.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/string.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/tablefunction.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/thermic-fast.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/uniformmesh.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/xyf
 %%PORTDOCS%%%%EXAMPLESDIR%%/wafer-heating-laser-axi.edp
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tutorial
