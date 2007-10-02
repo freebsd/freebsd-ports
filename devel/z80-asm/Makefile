@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/
 DISTNAME=	z80-asm
 
-MAINTAINER=	sbahra@gwu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Z80 assembly code assembler and disassembler
 
 MAN1=		z80-asm.1 z80-dis.1
@@ -21,10 +21,4 @@ MANCOMPRESSED=	no
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
