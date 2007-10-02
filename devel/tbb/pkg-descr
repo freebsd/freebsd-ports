@@ -1,0 +1,12 @@
+Intel Threading Building Blocks (TBB) offers a rich and complete
+approach to expressing parallelism in a C++ program. It is a library
+that helps you take advantage of multi-core processor performance
+without having to be a threading expert. Threading Building Blocks
+is not just a threads-replacement library. It represents a higher-level,
+task-based parallelism that abstracts platform details and threading
+mechanism for performance and scalability.
+
+WWW: http://tbb.sourceforge.net/
+
+- Arun Sharma
+arun@FreeBSD.org
