@@ -7,11 +7,11 @@
 
 PORTNAME=	quirc
 PORTVERSION=	0.9.84
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc tk84
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:local/}
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An irc client for the X Window System that uses TCL/TK
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
@@ -45,12 +45,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
