@@ -71,6 +71,7 @@
     SUBDIR += dtach
     SUBDIR += dvorak7min
     SUBDIR += dvorakng
+    SUBDIR += e2fsprogs-libblkid
     SUBDIR += e2fsprogs-libuuid
     SUBDIR += earthview
     SUBDIR += elscreen
