@@ -11998,6 +11998,7 @@ pflogsumm	ports/mail/pflogsumm
 pflogx		ports/sysutils/pflogx
 pfqueue		ports/mail/pfqueue
 pfstat		ports/sysutils/pfstat
+pfstools	ports/graphics/pfstools
 pft		ports/security/pft
 pftabled	ports/net-mgmt/pftabled
 pftop		ports/sysutils/pftop
