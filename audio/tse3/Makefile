@@ -26,6 +26,10 @@ MAN3=		tse3.3
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsmidi:${PORTSDIR}/multimedia/kdemultimedia3
 .else
