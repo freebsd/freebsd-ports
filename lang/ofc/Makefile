@@ -18,12 +18,18 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 OPTIONS=	GDBM "Add gdbm support" off \
 		GMP "Add gmp support" off
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
 
 .if defined (WITH_GDBM)
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
@@ -33,4 +39,4 @@ LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 LIB_DEPENDS+=	gmp.4:${PORTSDIR}/math/libgmp4
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
