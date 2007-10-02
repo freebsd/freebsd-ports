@@ -7,7 +7,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.40.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,30 +15,21 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER?=	matthias.andree@gmx.de
 COMMENT?=	Utilities and library to manipulate ext2/ext3 filesystems
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-.endif
-
 PATCH_STRIP=	-p1
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS?=	--disable-fsck --disable-e2initrd-helper \
-			'--with-ldopts=-L${LOCALBASE}/lib' \
-			--with-cc='${CC}' --with-linker='${LD}' \
-			--with-ccopts='${CFLAGS}' \
-			--with-root-prefix='${PREFIX}'
+CONFIGURE_ARGS+=--disable-fsck --disable-e2initrd-helper \
+		--with-cc='${CC}' --with-linker='${LD}' \
+		--with-ccopts='${CFLAGS}' \
+		--with-root-prefix='${PREFIX}'
 # for unknown reasons, the assembly bitops cause SIGSEGV.
 # _EXT2_USE_C_VERSIONS_ uses C bitops, these appear to work fine.
-CONFIGURE_ENV+=	CPPFLAGS='${CPPFLAGS} -I${WRKSRC}/lib -I${LOCALBASE}/include -D_EXT2_USE_C_VERSIONS_'
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=	NLS="@comment "
-.else
-MAKE_ARGS+=	STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a ../lib/libblkid.a  \
-		../lib/libuuid.a ${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
-PLIST_SUB=	NLS=""
-.endif
-USE_LDCONFIG=	yes
-PKGDEINSTALL=	${PKGINSTALL}
+CONFIGURE_ENV+=	CPPFLAGS='${CPPFLAGS} -I${WRKSRC}/lib \
+		-I${LOCALBASE}/include -D_EXT2_USE_C_VERSIONS_'
+
+MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
+
+OPTIONS=	NLS "Enable national language support" on
 
 .if !defined(MASTERDIR)
 MAN1=	chattr.1 lsattr.1
@@ -48,15 +39,6 @@ MAN8=	badblocks.8 debugfs.8 dumpe2fs.8 e2fsck.8 e2image.8 e2label.8 \
 	fsck.ext2.8 fsck.ext3.8 mkfs.ext2.8 mkfs.ext3.8 \
 	findfs.8 blkid.8 logsave.8 fsck_ext2fs.8
 
-pre-build:
-	@${ECHO_CMD} "-------------------------------------------------------------"
-.if defined(WITHOUT_NLS)
-	@${ECHO_CMD} "National language support disabled, -DWITHOUT_NLS in effect. "
-.else
-	@${ECHO_CMD} "Use -DWITHOUT_NLS to build without national language support."
-.endif
-	@${ECHO_CMD} "-------------------------------------------------------------"
-
 post-extract:
 	${CHMOD} u+w ${WRKSRC}/po/*.po ${WRKSRC}/po/*.pot \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
@@ -64,43 +46,59 @@ post-extract:
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+MAKE_ARGS+=	STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a \
+		../lib/libblkid.a  ../lib/libuuid.a \
+		${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
+PLIST_SUB=	NLS=""
+.endif
+
 post-patch:
-	${REINPLACE_CMD} -E -e 's:\$$\(libdir\)/pkgconfig:${PREFIX}/libdata/pkgconfig:' \
+	${REINPLACE_CMD} -E -e \
+		's:\$$\(libdir\)/pkgconfig:${PREFIX}/libdata/pkgconfig:' \
 		${WRKSRC}/lib/*/Makefile.in
-	@: # disable uuidgen
-	${REINPLACE_CMD} \
-		-e 's/^\(UPROGS.*\) uuidgen\(.*\)/\1\2/' \
-		-e 's/^\(UMANPAGES.*\) uuidgen.1\(.*\)/\1\2/' \
+	@: # disable uuidgen and filefrag
+	${REINPLACE_CMD} -E -e \
+		's/^(UPROGS.*) uuidgen(.*)/\1\2/; \
+		 s/^(UMANPAGES.*) uuidgen.1(.*)/\1\2/; \
+		 s/^(USPROGS.*) filefrag(.*)/\1\2/; \
+		 s/filefrag\.8 //' \
 		${WRKSRC}/misc/Makefile.in
+	@: # don't build/install libext2fs.info
+	${REINPLACE_CMD} -e 's/ install-doc-libs$$//' ${WRKSRC}/Makefile.in
 
 .if ${MASTERDIR} == ${.CURDIR}
 post-build:
 .if !defined(WITHOUT_NLS)
 	cd ${WRKSRC}/po && ${MAKE} update-gmo
 .endif
-	${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} -s -static ${LIBS} -o ${WRKSRC}/fsck_ext2fs ${FILESDIR}/fsck_ext2fs.c
+	${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} -s -static ${LIBS} \
+		-o ${WRKSRC}/fsck_ext2fs ${FILESDIR}/fsck_ext2fs.c
 	cd ${WRKSRC}/tests && ${MAKE} check
 # While the ${MAKE} check can take a minute on an end user's system, the
 # correctness of tools such as e2fsck is critical to the health of the
 # file systems.  The upstream is not using any *BSD as his development
 # system, and therefore let's exercise due diligence in running the self-
 # test on each and every system and not just package building hosts.
-# There have been subtle failures induced by Linux-isms in the past,
-# and every release I've packaged introduced some minor regressions.
-# -- Matthias Andree, package maintainer, 2006-06-12
+# There have been subtle failures induced by Linux-isms in the past.
+# -- Matthias Andree, package maintainer, 2007-09-18
 
 post-install:
-	${RM} ${PREFIX}/sbin/filefrag
-	${RM} ${PREFIX}/man/man8/filefrag.8
-	${RM} ${PREFIX}/info/libext2fs.info.gz
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${PREFIX}/sbin/
+	@: # install into /sbin since we might need e2fsck early on
+	${LN} ${PREFIX}/sbin/fsck_ext2fs /sbin/ 2>/dev/null || \
+		${INSTALL_PROGRAM} ${PREFIX}/sbin/fsck_ext2fs /sbin/
+	${LN} ${PREFIX}/sbin/e2fsck /sbin/ 2>/dev/null || \
+		${INSTALL_PROGRAM} ${PREFIX}/sbin/e2fsck /sbin/
 	${INSTALL_MAN} ${FILESDIR}/fsck_ext2fs.8 ${PREFIX}/man/man8/
 	[ -f ${PREFIX}/etc/mke2fs.conf ] || \
-		${CP} -p ${PREFIX}/etc/mke2fs.conf.dist ${PREFIX}/etc/mke2fs.conf
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+		${CP} -p ${PREFIX}/etc/mke2fs.conf.dist \
+			${PREFIX}/etc/mke2fs.conf
+	@${ECHO_MSG} ; ${CAT} ${PKGMESSAGE} ; ${ECHO_MSG}
 .endif
 
 .include <bsd.port.post.mk>

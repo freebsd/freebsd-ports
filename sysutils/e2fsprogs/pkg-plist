@@ -15,6 +15,9 @@ sbin/findfs
 sbin/fsck.ext2
 sbin/fsck.ext3
 sbin/fsck_ext2fs
+@exec ln -f %D/sbin/e2fsck /sbin 2>/dev/null || cp -p %D/sbin/e2fsck /sbin
+@exec ln -f %D/sbin/fsck_ext2fs /sbin 2>/dev/null || cp -p %D/sbin/fsck_ext2fs /sbin
+@unexec rm -f /sbin/fsck_ext2fs /sbin/e2fsck
 sbin/logsave
 sbin/mke2fs
 sbin/mkfs.ext2
