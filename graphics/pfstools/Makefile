@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=--disable-octave
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e "s,#!/bin/bash,#!${PREFIX}/bin/bash," \
+	${REINPLACE_CMD} -e "s,#!/bin/bash,#!${LOCALBASE}/bin/bash," \
 		${WRKSRC}/src/fileformat/pfsin \
 		${WRKSRC}/src/fileformat/pfsout \
 		${WRKSRC}/src/fileformat/pfsinmulti \
