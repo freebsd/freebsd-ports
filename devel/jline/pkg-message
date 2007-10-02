@@ -1,0 +1,5 @@
+---------------------------------------
+To use JLine add the file
+%%JAVAJARDIR%%/jline.jar
+to your classpath!
+---------------------------------------
