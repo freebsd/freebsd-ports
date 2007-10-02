@@ -7,7 +7,7 @@
 
 PORTNAME=	maildir
 PORTVERSION=	0.24.4
-PORTREVISION?=	10
+PORTREVISION?=	11
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
