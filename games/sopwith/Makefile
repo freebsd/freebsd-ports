@@ -7,7 +7,7 @@
 
 PORTNAME=	sopwith
 PORTVERSION=	1.7.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sdl-sopwith
@@ -23,10 +23,4 @@ GNU_CONFIGURE=	yes
 
 MAN6=		sopwith.6
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
