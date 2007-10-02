@@ -37,6 +37,10 @@
 %%DATADIR%%/jpgraph_scatter.php
 %%DATADIR%%/jpgraph_stock.php
 %%DATADIR%%/jpgraph_utils.inc.php
+%%DATADIR%%/lang/de.inc.php
+%%DATADIR%%/lang/en.inc.php
+%%DATADIR%%/lang/prog.inc.php
+@dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/accbarex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/alphabarex1.php
