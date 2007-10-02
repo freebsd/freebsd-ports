@@ -17,6 +17,7 @@ COMMENT=	Perl script for controlling Lego NXT brick
 RUN_DEPENDS=	${SITE_PERL}/mach/Device/USB.pm:${PORTSDIR}/devel/p5-usb
 
 NO_BUILD=	yes
+USE_PERL5=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/linxt ${PREFIX}/bin
