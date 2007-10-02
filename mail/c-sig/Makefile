@@ -7,7 +7,7 @@
 
 PORTNAME=	c-sig
 PORTVERSION=	3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.threeweb.ad.jp/~kshibata/c-sig/programs/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -18,15 +18,15 @@ COMMENT=	Signature insertion tool for Emacs
 
 USE_EMACS=	yes
 
-EMACS_NO_BUILD_DEPENDS=	yes
-
 NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
-LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+
+do-build:
+	cd ${WRKSRC}; ${EMACS_CMD} -batch -q -f batch-byte-compile c-sig.el
 
 do-install:
 	${MKDIR} ${LISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/c-sig.el ${LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/c-sig.el* ${LISPDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for file in c-sig-eng.faq c-sig-eng.man c-sig-jp.faq c-sig-jp.man
