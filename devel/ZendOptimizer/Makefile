@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZendOptimizer
-DISTVERSION=	3.2.8
+DISTVERSION=	3.3.0a
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.zend.com/optimizer/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-freebsd${VER}-${ARCH}
