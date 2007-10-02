@@ -18,7 +18,9 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_GNOME=	gtk20
 
-IGNORE=		just makes a humming noise
+BROKEN=		just makes a humming noise
+DEPRECATED=		"${BROKEN}""
+EXPIRATION_DATE=	2006-11-01
 
 PLIST_FILES=	bin/nogger
 .ifndef(NOPORTDOCS)
