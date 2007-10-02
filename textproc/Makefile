@@ -307,6 +307,7 @@
     SUBDIR += minised
     SUBDIR += mk-aspell
     SUBDIR += mkcatalog
+    SUBDIR += ml-aspell
     SUBDIR += mn-aspell
     SUBDIR += modlogan
     SUBDIR += mr-aspell

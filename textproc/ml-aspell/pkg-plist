@@ -1,0 +1,5 @@
+lib/aspell-%%VER%%/u-mlym.cmap
+lib/aspell-%%VER%%/u-mlym.cset
+lib/aspell-%%VER%%/ml.dat
+share/aspell/ml.multi
+share/aspell/ml.rws
