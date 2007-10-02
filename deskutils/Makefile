@@ -58,6 +58,7 @@
     SUBDIR += gaddr
     SUBDIR += ganttproject
     SUBDIR += gcal
+    SUBDIR += gcalcli
     SUBDIR += gdeskcal
     SUBDIR += gdeskcal-skins
     SUBDIR += gdesklets
