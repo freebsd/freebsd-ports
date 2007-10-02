@@ -1,28 +1,28 @@
---- include/cc++/address.h	Sun Oct  1 07:07:12 2006
-+++ include/cc++/address.h	Wed Oct  4 21:25:44 2006
-@@ -237,10 +237,10 @@
+--- ./include/cc++/address.h.orig	Tue Jan 23 14:15:02 2007
++++ ./include/cc++/address.h	Tue Sep 11 11:58:17 2007
+@@ -236,10 +236,10 @@
+ 	bool isMember(const struct in_addr &inaddr) const;
+ 
+ 	inline bool operator==(const struct sockaddr *a) const
+-		{return isMember(a);};
++		{return isMember(a);}
+ 
+ 	inline bool operator==(const struct in_addr &a) const
+-		{return isMember(a);};
++		{return isMember(a);}
  };
- 
- inline bool operator==(struct sockaddr *sa, IPV4Cidr &cidr)
--	{return cidr.isMember(sa);};
-+	{return cidr.isMember(sa);}
- 
- inline bool operator==(struct in_addr &a, IPV4Cidr &cidr)
--	{return cidr.isMember(a);};
-+	{return cidr.isMember(a);}
  
  #ifdef	CCXX_IPV6
- /**
-@@ -325,10 +325,10 @@
+@@ -324,10 +324,10 @@
+ 	bool isMember(const struct in6_addr &inaddr) const;
+ 
+ 	inline bool operator==(const struct sockaddr *sa) const
+-		{return isMember(sa);};
++		{return isMember(sa);}
+ 
+ 	inline bool operator==(const struct in6_addr &a) const
+-		{return isMember(a);};
++		{return isMember(a);}
  };
  
- inline bool operator==(struct sockaddr *sa, IPV6Cidr &cidr)
--	{return cidr.isMember(sa);};
-+	{return cidr.isMember(sa);}
- 
- inline bool operator==(struct in6_addr &a, IPV6Cidr &cidr)
--	{return cidr.isMember(a);};
-+	{return cidr.isMember(a);}
- 
  #endif
- 
