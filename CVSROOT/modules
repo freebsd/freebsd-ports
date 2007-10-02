@@ -2321,6 +2321,7 @@ e17-theme-night_bling	ports/x11-themes/e17-theme-night_bling
 e17-theme-simply_white	ports/x11-themes/e17-theme-simply_white
 e17-utils	ports/x11-wm/e17-utils
 e2fsprogs	ports/sysutils/e2fsprogs
+e2fsprogs-libblkid	ports/misc/e2fsprogs-libblkid
 e2fsprogs-libuuid	ports/misc/e2fsprogs-libuuid
 e3		ports/editors/e3
 e4graph		ports/devel/e4graph
