@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ccrtp
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Implementation of the real-time transport protocol
