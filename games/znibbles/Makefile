@@ -22,4 +22,10 @@ CONFIGURE_ARGS=	--without-motif \
 
 MAN6=	nibbles.6 znibbles.6 gznibbles.6 znibblesX.6
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>
