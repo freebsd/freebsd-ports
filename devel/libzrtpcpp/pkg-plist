@@ -1,6 +1,8 @@
 include/libzrtpcpp/Base32.h
+include/libzrtpcpp/ZrtpCrc32.h
 include/libzrtpcpp/ZrtpPacketBase.h
 include/libzrtpcpp/ZrtpPacketDHPart.h
+include/libzrtpcpp/ZrtpPacketErrorAck.h
 include/libzrtpcpp/ZrtpPacketHello.h
 include/libzrtpcpp/ZIDFile.h
 include/libzrtpcpp/ZrtpPacketClearAck.h
