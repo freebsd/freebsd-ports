@@ -33,6 +33,10 @@ MAKE_ENV=	QTDIR="${QTDIR}" MAKE="${GMAKE}" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 PLIST_FILES=	bin/cdcat \
 		share/cdcat/Authors \
 		share/cdcat/COPYING \
