@@ -46,6 +46,10 @@ OPTIONS=	JACK "JACK support" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 CPPFLAGS+=	${PTHREAD_CFLAGS}
