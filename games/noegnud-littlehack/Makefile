@@ -35,6 +35,10 @@ INSTALL_TARGET=	install_lh001
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 pre-everything::
 .if ${HAVE_SDL}
 	@${ECHO_MSG} "This port depends on SDL with OpenGL support."
@@ -49,13 +53,6 @@ post-extract:
 post-patch:
 	(cd ${WRKSRC} && ${MAKE} ${NOEGNUDVERSION}-littlehack-0.0.1)
 	@(${PATCH} ${PATCH_ARGS} < ${FILESDIR}/noegnud-littlehack.patch)
-.if ${OSVERSION} < 502103
-	@${REINPLACE_CMD} -e 's/regex\.h/gnuregex\.h/'   \
-		${WRKSRC}/littlehack-0.0.1/src/sounds.c    \
-		${PATCH_WRKSRC}/noegnud/noegnud_textcolour.c  \
-		${PATCH_WRKSRC}/noegnud/noegnud_textcolour.h  \
-		${PATCH_WRKSRC}/noegnud/noegnud_textcolouring.c
-.endif
 
 do-configure:
 	(cd ${WRKSRC} && ${MAKE} ${NOEGNUDVERSION}-littlehack-0.0.1/Makefile)
