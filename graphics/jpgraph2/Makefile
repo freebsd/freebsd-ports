@@ -7,7 +7,7 @@
 
 PORTNAME=	jpgraph
 PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://web.comhem.se/jpgraph/jpgdownloads/
 
@@ -26,10 +26,11 @@ PORTDOCS=	*
 LATEST_LINK=	jpgraph2
 
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}/lang
 	${CP} ${WRKSRC}/src/*.php ${DATADIR}
 	${CP} ${WRKSRC}/src/*.inc ${DATADIR}
 	${CP} ${WRKSRC}/src/*.dat ${DATADIR}
+	${CP} ${WRKSRC}/src/lang/*.php ${DATADIR}/lang
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
