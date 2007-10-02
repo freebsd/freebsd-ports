@@ -39,6 +39,10 @@ MAKE_ENV=	DATADIR="${DATADIR}"
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if !defined(WITH_GLX) && !defined(WITH_X11)
 IGNORE=		needs at least one client (GLX or X11)
 .endif
