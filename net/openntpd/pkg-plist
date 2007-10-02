@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-etc/rc.d/openntpd.sh
 sbin/ntpd
 @unexec if cmp -s %D/etc/ntpd.conf %D/%%EXAMPLESDIR%%/ntpd.conf; then rm -f %D/etc/ntpd.conf; fi
 %%EXAMPLESDIR%%/ntpd.conf
