@@ -38,4 +38,12 @@ post-configure:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/plugin_bmp/.libs/libbmp-flac.so ${PREFIX}/lib/bmp/Input
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
+
+.include <bsd.port.post.mk>
