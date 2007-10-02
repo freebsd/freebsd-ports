@@ -19,10 +19,10 @@ MAINTAINER=	mranner@inode.at
 COMMENT=	IRC client for QT and KDE
 
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=
 PLIST_SUB=		VER=${PORTVERSION}
 
@@ -34,6 +34,12 @@ OPTIONS=	ARTS "Compile with arts support" on \
 			GSM "Compile with gsm support" off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
 
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=		artsc.0:${PORTSDIR}/audio/arts
