@@ -27,8 +27,8 @@ PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
 .endif
 
 do-configure:
