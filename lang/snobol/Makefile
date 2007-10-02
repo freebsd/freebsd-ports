@@ -12,7 +12,10 @@ MASTER_SITES=	ftp://ftp.snobol4.com/
 
 MAINTAINER=	wes@FreeBSD.org
 COMMENT=	0.99.4 release of ``The Macro Implementation of SNOBOL4 in C''
+
 DEPRECATED=     Replaced by snobol4 port
+EXPIRATION_DATE=	2007-11-01
+
 CONFLICTS=      snobol4
 
 MAN1= snobol4.1
