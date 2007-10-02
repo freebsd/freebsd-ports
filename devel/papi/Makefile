@@ -37,6 +37,12 @@ ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	HWPMC kernel module is only available for I386 and \
   AMD64 machines
 
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
+
 .if defined(WITHOUT_CTESTS)
 PLIST_SUB+=	CTESTS="@comment "
 .else
