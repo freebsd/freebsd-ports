@@ -36,7 +36,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-clanJavaScript --disable-docs
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -46,15 +46,11 @@ PLIST_SUB=	VER=${PORTVERSION:C/(^[0-9]\.[0-9]).*/\1/}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" && ${ARCH} != "amd64"
-BROKEN=		"Does not compile on !i386 and !amd64"
+BROKEN=		Does not compile on !i386 and !amd64
 .endif
 
-.if ${OSVERSION} < 500032
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CPPFLAGS+=	-I${LOCALBASE}/include/stlport
-LDFLAGS+=	-lstlport_gcc
-CFLAGS+=	-O0
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .if defined(WITHOUT_SDL)
