@@ -30,6 +30,10 @@ MAN3=		ScriptCommand.3cc ScriptImage.3cc ScriptInterp.3cc \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
 .endif
