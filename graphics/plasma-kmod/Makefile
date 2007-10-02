@@ -25,4 +25,12 @@ do-install:
 post-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64"
+BROKEN=		Does not configure
+.endif
+.endif
+
+.include <bsd.port.post.mk>
