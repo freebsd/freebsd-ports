@@ -69,6 +69,12 @@ PLIST_SUB+=	PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 BROKEN=	does not configure due to the lack of CDraw libraries for ${ARCH}
 .endif
 
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -E \
 		-e 's/^Name=Xara Xtreme$$/Name=Xara Xtreme ${PORTVERSION}/' \
