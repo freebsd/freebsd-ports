@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdata
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.8
 CATEGORIES=	devel python
 MASTER_SITES=	http://gdata-python-client.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,8 @@ DISTNAME=	gdata.py-${PORTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	GData Python Client Library
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
