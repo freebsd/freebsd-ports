@@ -69,15 +69,15 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>mediawiki</name>
-	<range><lt>1.10.2</lt></range>
+	<range><gt>1.10.0</gt><lt>1.10.2</lt></range>
       </package>
       <package>
 	<name>mediawiki19</name>
-	<range><lt>1.9.4</lt></range>
+	<range><gt>1.9.0</gt><lt>1.9.4</lt></range>
       </package>
       <package>
 	<name>mediawiki18</name>
-	<range><lt>1.8.5</lt></range>
+	<range><gt>1.8.0</gt><lt>1.8.5</lt></range>
       </package>
     </affects>
     <description>
@@ -101,7 +101,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-09-10</discovery>
       <entry>2007-09-21</entry>
-      <modified>2007-09-23</modified>
+      <modified>2007-10-02</modified>
     </dates>
   </vuln>
 
@@ -324,7 +324,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>bugzilla</name>
-	<range><gt>0</gt></range>
+	<range><lt>3.0.2</lt></range>
       </package>
     </affects>
     <description>
@@ -348,6 +348,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-09-18</discovery>
       <entry>2007-09-20</entry>
+      <modified>2007-10-02</modified>
     </dates>
   </vuln>
 
