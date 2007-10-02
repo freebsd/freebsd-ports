@@ -1,0 +1,15 @@
+Win4BSD is a PC emulator that runs Windows as a guest at nearly native
+speed under FreeBSD.  It is based on QEMU, a partially open, partially
+closed source emulator package.  However, Win4BSD offers many advantages,
+including much greater speed, ease of use, more seamless integration with
+the host OS, and "grabless" mouse transition between the host and Windows
+guest.
+
+Win4BSD is the latest port of a product that has previously been known as
+Win4lin and SCO Merge.
+
+This port downloads, extracts and installs the contents of the Win4BSD
+package.  It will work with or without a Win4BSD license.  If you do not
+have a license, Win4BSD will function for a 3 week trial period.
+
+WWW: http://www.win4bsd.com/
