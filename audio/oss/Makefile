@@ -7,7 +7,7 @@
 
 PORTNAME=	oss
 DISTVERSION=	4.0-build1006
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio kld
 MASTER_SITES=	http://developer.opensound.com/sources/stable/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-cddl
@@ -61,18 +61,15 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/bin/* ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr//sbin/savemixer ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/sbin/savemixer ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/sbin/ossdevlinks ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/sbin/ossdetect ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/sbin/ossctl ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/prototype/usr/sbin/soundon ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/prototype/usr/sbin/soundoff ${PREFIX}/sbin
-	#${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/lib/oss/lib/libOSSlib.so ${PREFIX}/lib
 	@# oss.conf does not contain any user-configurable data; it's ok to overwrite it.
 	${INSTALL_DATA} ${WRKSRC}/prototype/etc/oss.conf ${PREFIX}/etc/oss.conf
 	${MKDIR} ${PREFIX}/include/sys
-	${INSTALL_DATA} ${WRKSRC}/prototype/usr/lib/oss/include/sys/soundcard.h ${PREFIX}/include/sys
-	#${INSTALL_DATA} ${WRKSRC}/prototype/usr/lib/oss/include/midiparser.h ${PREFIX}/include
 	${MKDIR} ${PREFIX}/lib/oss
 	${MKDIR} ${PREFIX}/lib/oss/logs
 	${MKDIR} ${PREFIX}/lib/oss/etc
