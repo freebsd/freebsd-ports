@@ -38,6 +38,11 @@ MAKE_ARGS=	sqldir=${DATADIR} templdir=${DATADIR} docdir=${DOCSDIR} \
 DEFAULT_PGSQL_VER?=74
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 # Setting/finding PostgreSQL version we want.
 .if exists(${LOCALBASE}/bin/postmaster)
 PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | \
