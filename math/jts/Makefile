@@ -10,7 +10,7 @@ PORTVERSION=	1.8.0
 CATEGORIES=	math databases
 MASTER_SITES=	http://www.vividsolutions.com/Jts/bin/
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JTS Topology Suite
 
 RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom		\
