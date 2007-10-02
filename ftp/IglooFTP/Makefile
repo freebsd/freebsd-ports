@@ -26,8 +26,8 @@ MAKE_ARGS=	CC=${CC} C_FLAGS="${CFLAGS}" DESTDIR=${PREFIX}
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} < 500000)
-BROKEN=		Requires more recent libc
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
 .endif
 
 post-extract:
