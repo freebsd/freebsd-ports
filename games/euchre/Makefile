@@ -19,4 +19,10 @@ PLIST_FILES=	bin/euchre
 USE_AUTOTOOLS=	automake:14 autoconf:213
 USE_GNOME=	gtk12
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>
