@@ -13,6 +13,7 @@ bin/zim
 %%SITE_PERL%%/Zim/GUI.pm
 %%SITE_PERL%%/Zim/GUI/Calendar.pm
 %%SITE_PERL%%/Zim/GUI/Component.pm
+%%SITE_PERL%%/Zim/GUI/EquationEditor.pm
 %%SITE_PERL%%/Zim/GUI/ExportDialog.pm
 %%SITE_PERL%%/Zim/GUI/FindReplaceDialog.pm
 %%SITE_PERL%%/Zim/GUI/PageView.pm
@@ -62,6 +63,8 @@ share/pixmaps/zim/stock_calendar-view-month.png
 %%DATADIR%%/doc/zim/usage/keybindings.txt
 %%DATADIR%%/doc/zim/usage/linking.txt
 %%DATADIR%%/doc/zim/usage/plugins.txt
+%%DATADIR%%/doc/zim/usage/plugins/equation_01.png
+%%DATADIR%%/doc/zim/usage/plugins/EquationEditor.txt
 %%DATADIR%%/doc/zim/usage/preferences.txt
 %%DATADIR%%/doc/zim/usage/properties.txt
 %%DATADIR%%/doc/zim/usage/repositories.txt
@@ -71,6 +74,8 @@ share/pixmaps/zim/stock_calendar-view-month.png
 %%DATADIR%%/doc/zim/usage/syntax.txt
 %%DATADIR%%/doc/zim/usage/templates.txt
 %%DATADIR%%/doc/zim/install/windows.txt
+%%DATADIR%%/plugins/EquationEditor.pl
+%%DATADIR%%/plugins/InsertScreenshot.pl
 %%DATADIR%%/plugins/PrintToBrowser.pl
 %%DATADIR%%/plugins/Spell.pl
 %%DATADIR%%/plugins/Subversion.pl
@@ -81,6 +86,8 @@ share/pixmaps/zim/stock_calendar-view-month.png
 %%DATADIR%%/templates/html/Presentation.html
 %%DATADIR%%/templates/html/Print.html
 %%DATADIR%%/templates/html/SlideShow_(S5).html
+%%DATADIR%%/templates/latex/_Equation.tex
+%%DATADIR%%/templates/latex/Default.tex
 %%DATADIR%%/templates/txt2tags/Default.t2t
 %%DATADIR%%/templates/wiki/_New.txt
 %%DATADIR%%/urls.list
@@ -93,6 +100,7 @@ share/pixmaps/zim/stock_calendar-view-month.png
 @dirrm %%SITE_PERL%%/Zim/Formats
 @dirrm %%SITE_PERL%%/Zim
 @dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/doc/zim/usage/plugins
 @dirrm %%DATADIR%%/doc/zim/usage
 @dirrm %%DATADIR%%/doc/zim/install
 @dirrm %%DATADIR%%/doc/zim
@@ -100,6 +108,7 @@ share/pixmaps/zim/stock_calendar-view-month.png
 @dirrm %%DATADIR%%/templates/wiki
 @dirrm %%DATADIR%%/templates/txt2tags
 @dirrm %%DATADIR%%/templates/html
+@dirrm %%DATADIR%%/templates/latex
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
