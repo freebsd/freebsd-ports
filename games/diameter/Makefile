@@ -36,8 +36,10 @@ DATADIR=	${PREFIX}/share/gamediameter
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not build on FreeBSD 4.x
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
 .endif
 
 post-patch:
