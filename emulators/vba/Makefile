@@ -35,11 +35,11 @@ DOC_FILES=	COPYING AUTHORS NEWS README ChangeLog INSTALL
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Runaway cc1plus process"
+BROKEN=		Runaway cc1plus process
 .endif
 
-.if ( ${OSVERSION} < 500035 )
-CFLAGS+=	-O0
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .ifdef(WITH_GTK2)
@@ -66,9 +66,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can install the GTK2 based X version by defining WITH_GTK2."
 .endif
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Due to a bug in gcc2 optimizations other than -O0 will be ignored on"
-	@${ECHO_MSG} "FreeBSD releases that didn't ship with gcc3 (prior 500035)."
 	@${ECHO_MSG} ""
 
 do-install:
