@@ -38,6 +38,10 @@ OPTIONS=	GLUT "Use glut" on
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if defined(WITH_GLUT)
 CONFIGURE_ARGS+=	--with-glut=yes
 LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
