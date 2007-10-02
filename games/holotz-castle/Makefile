@@ -24,8 +24,8 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		doesn't work on FreeBSD 4.x
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .include <bsd.port.post.mk>
