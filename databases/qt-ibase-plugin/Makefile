@@ -36,4 +36,12 @@ MAKE_ENV+=	DB="${DB}" DRIVER="${DRIVER}" PLUGIN="${PLUGIN}" \
 USE_X_PREFIX=	yes
 PLIST_SUB=	DB=${DB}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
+
+.include <bsd.port.post.mk>
