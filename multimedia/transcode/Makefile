@@ -29,9 +29,8 @@ USE_LDCONFIG=	yes
 WANT_SDL=	yes
 USE_GNOME=	gnometarget
 USE_AUTOTOOLS=	libtool:15
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
-CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-isystem /usr/include -isystem ${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		SDL_CONFIG="${SDL_CONFIG}"
 CONFIGURE_ARGS+=	--with-libavcodec-includes=${LOCALBASE}/include/ffmpeg \
 			--with-libavcodec-libs=${LOCALBASE}/lib \
