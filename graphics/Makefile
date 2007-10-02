@@ -522,6 +522,7 @@
     SUBDIR += pecl-qrencode
     SUBDIR += pecomato
     SUBDIR += peps
+    SUBDIR += pfstools
     SUBDIR += pgperl
     SUBDIR += pgplot
     SUBDIR += pho
