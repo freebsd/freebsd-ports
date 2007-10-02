@@ -3445,6 +3445,7 @@ gbottler	ports/games/gbottler
 gbsplay		ports/audio/gbsplay
 gbuffy		ports/mail/gbuffy
 gcal		ports/deskutils/gcal
+gcalcli		ports/deskutils/gcalcli
 gcalctool	ports/math/gcalctool
 gcb		ports/x11/gcb
 gcc-ooo		ports/lang/gcc-ooo
