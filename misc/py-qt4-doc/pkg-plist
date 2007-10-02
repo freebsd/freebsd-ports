@@ -78,6 +78,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/images/macintosh-lcdnumber.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/macintosh-lineedit.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/macintosh-listview.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/macintosh-menu.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/macintosh-progressbar.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/macintosh-pushbutton.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/macintosh-radiobutton.png
@@ -113,6 +114,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/images/plastique-lcdnumber.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/plastique-lineedit.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/plastique-listview.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/plastique-menu.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/plastique-menubar.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/plastique-printdialog-properties.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/plastique-printdialog.png
@@ -250,6 +252,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qtextfragment-split.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qtextframe-style.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qtexttableformat-cell.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/qtransform-simpletransformation.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/qtransform-combinedtransformation2.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/qtransform-combinedtransformation.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qtwizard-aero1.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qtwizard-aero2.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qtwizard-classic1.png
@@ -283,7 +288,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/images/udppackets.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/whatsthis.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/windows-checkbox.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/windows-horizontalscrollbar.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/windows-lcdnumber.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/windows-lineedit.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/windows-radiobutton.png
@@ -293,9 +297,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/images/windowsxp-dial.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/windowsxp-fontcombobox.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/windowsxp-groupbox.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/windowsxp-horizontalscrollbar.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/windowsxp-label.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/windowsxp-lcdnumber.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/windowsxp-listview.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/windowsxp-menu.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/windowsxp-progressbar.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/windowsxp-pushbutton.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/windowsxp-spinbox.png

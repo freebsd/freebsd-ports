@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	svg
-PORTVERSION=	4.3
+PORTVERSION=	4.3.1
 PORTREVISION=	# zero
 CATEGORIES=	graphics devel python
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt4/GPL/ \

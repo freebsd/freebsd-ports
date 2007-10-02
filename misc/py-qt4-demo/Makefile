@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	demo
-PORTVERSION=	4.3
+PORTVERSION=	4.3.1
 PORTREVISION=	# zero
 CATEGORIES=	misc devel python
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt4/GPL/ \
