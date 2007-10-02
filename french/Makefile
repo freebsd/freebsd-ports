@@ -25,6 +25,7 @@
     SUBDIR += php_doc
     SUBDIR += plgrenouille
     SUBDIR += pluxml
+    SUBDIR += pluxml-theme-bridge
     SUBDIR += staroffice52
     SUBDIR += verbiste
     SUBDIR += xtel
