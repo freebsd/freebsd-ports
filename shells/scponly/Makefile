@@ -71,7 +71,7 @@
 
 PORTNAME=	scponly
 PORTVERSION=	4.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
 MASTER_SITES=	http://www.sublimation.org/scponly/ \
 		${MASTER_SITE_SOURCEFORGE}
