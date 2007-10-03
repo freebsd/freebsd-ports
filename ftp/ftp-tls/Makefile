@@ -23,12 +23,6 @@ MAN1=		ftp-tls.1
 CONFIGURE_ARGS=		--with-openssl-dir=${OPENSSLBASE}
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400000
-BROKEN=		Not supported on systems prior to FreeBSD 4.0 (missing getaddrinfo())
-.endif
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftp ${PREFIX}/bin/ftp-tls
 	@${INSTALL_MAN} ${WRKSRC}/ftp.1.TLS ${PREFIX}/man/man1/ftp-tls.1
@@ -39,4 +33,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

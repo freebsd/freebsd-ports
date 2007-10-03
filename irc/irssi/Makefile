@@ -63,12 +63,8 @@ CONFIGURE_ARGS+=	--with-socks
 .endif
 
 .if defined(WITH_IPV6)
-.if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=	--enable-ipv6
 CATEGORIES+=	ipv6
-.else
-BROKEN=	This version of FreeBSD does not support IPv6. Please use WITH_IPV6=no
-.endif
 .endif
 
 .if defined(WITH_BOT)

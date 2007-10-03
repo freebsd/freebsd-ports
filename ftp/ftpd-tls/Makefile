@@ -27,10 +27,6 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400000
-BROKEN=		"Not supported on systems prior to FreeBSD 4.0 (missing getaddrinfo())"
-.endif
-
 post-patch:
 .for i in README.TLS ftpd.8.TLS pathnames.h tlsutil.c
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}

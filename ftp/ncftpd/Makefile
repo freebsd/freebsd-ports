@@ -28,10 +28,8 @@ RESTRICTED=	30 day evaluation license
 
 .if ${OSVERSION} >= 600000
 BINVER=		6.0
-.elif ${OSVERSION} >= 500000
+.else
 BINVER=		5.4
-.elif ${OSVERSION} >= 491000
-BINVER=		4.11
 .else
 BROKEN=		FreeBSD version too old
 .endif
