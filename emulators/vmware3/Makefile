@@ -54,10 +54,6 @@ MODULES=	vmmon vmnet
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 480102
-IGNORE=		systems prior to FreeBSD 480102 currently out of support
-.endif
-
 .if !defined(HAVE_LINPROCFS) && !exists(/modules/linprocfs.ko) && !exists(/boot/kernel/linprocfs.ko) && !exists(${PREFIX}/modules/linprocfs.ko) && !exists(/compat/linux/proc/version)
 IGNORE=		linprocfs is required, please build the module and/or add it to your kernel
 .endif
@@ -79,19 +75,7 @@ SCRIPTS_ENV+=	LINUXBASE="${LINUXBASE}" \
 MAKE_ARGS=	KMODDIR="${VMDIR}/modules"
 PLIST_SUB=	LINUXBASE="${LINUXBASE}" VMNET1_MINOR="${VMNET1_MINOR}"
 
-.if ${OSVERSION} < 500000
-PLIST_SUB+=	FREEBSD5="@comment "
-.else
-PLIST_SUB+=	FREEBSD5=""
-.endif
-
-pre-fetch:
-.if ${OSVERSION} < 500000 && ${OSVERSION} < 490100
-	@${ECHO}
-	@${ECHO} "You need an uncommitted kernel patch to run this port:"
-	@${ECHO} "You can get it at: http://people.freebsd.org/~fjoe/shm-freebsd4-20031105.diff"
-	@${ECHO}
-.elif ${OSVERSION} < 500113 && ${OSVERSION} > 500000
+.if ${OSVERSION} < 500113
 	@${ECHO}
 	@${ECHO} "You need an uncommitted kernel patch to run this port:"
 	@${ECHO} "You can get it at: http://people.freebsd.org/~mbr/patches/"
@@ -131,9 +115,6 @@ post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	${CP} ${FILESDIR}/Makefile.vmmon ${WRKSRC}/vmmon-only/Makefile
 	${CP} ${FILESDIR}/Makefile.vmnet ${WRKSRC}/vmnet-only/Makefile
-.if ${OSVERSION} < 500000
-	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/freebsd4.patch
-.endif
 .if ${OSVERSION} > 600000
 	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/fbsd6-1.patch
 	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/fbsd6-2.patch
