@@ -73,7 +73,7 @@ LIB_DEPEND+=	dmalloc:${PORTSDIR}/devel/dmalloc
 CONFIGURE_ARGS+=--with-dmalloc=${LOCALBASE}
 .endif
 
-.if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--enable-ipv6
 # --with-transport="UDPIPv6 TCPIPv6" --with-modules=mibII/ipv6"
 PLIST_SUB+=	WITH_IPV6=""

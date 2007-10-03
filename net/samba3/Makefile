@@ -255,15 +255,6 @@ CONFIGURE_ARGS+=	--with-included-popt
 ###
 ### Common part for port and it's subports
 ###
-# For 4.8 - 4.11 combination of Kerberos and OpenLDAP is broken
-# due the conflict between system and OpenSSL port libcrypto libraries
-.if ${OSVERSION} > 470103 && ${OSVERSION} < 500000
-.	if defined(WITH_ADS)
-IGNORE=			broken dependency between OpenSSL, OpenLDAP and Heimdal for FreeBSD 4.x. Disable ADS support
-.	endif
-.	undef		WITH_ADS
-WITHOUT_ADS=		on
-.endif
 
 .if defined(WITH_ADS)
 SAMBA_WANT_LDAP=	yes

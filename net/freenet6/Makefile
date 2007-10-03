@@ -24,16 +24,7 @@ MAN5=		tspc.conf.5
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	freenet6.sh pkg-message
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400000
-IGNORE=		This program might not be working on FreeBSD version below 4.0
-.endif
-.if ${OSVERSION} > 500000
 EXTRA_PATCHES=	${FILESDIR}/patch5-template::freebsd.sh
-.endif
-
 MAKE_ARGS=	target=freebsd installdir=${PREFIX}
 
 do-install:
@@ -62,4 +53,4 @@ post-patch:
 		-e "s|template=linux|template=tspc-freebsd|g" \
 		${WRKSRC}/man/man5/tspc.conf.5
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

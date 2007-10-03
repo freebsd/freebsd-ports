@@ -29,8 +29,7 @@ WRKSRC=		${WRKDIR}/pylibpcap-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 460001 || \
-	( ${OSVERSION} >= 500000 && ${OSVERSION} < 500038 )
+.if ( ${OSVERSION} < 500038 )
 IGNORE=		"needs libpcap 0.7 or higher"
 .endif
 
