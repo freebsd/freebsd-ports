@@ -50,15 +50,16 @@ lib/webmin/virtual-server/edit_ffile.cgi
 lib/webmin/virtual-server/edit_limits.cgi
 lib/webmin/virtual-server/edit_newbw.cgi
 lib/webmin/virtual-server/edit_newdynip.cgi
+lib/webmin/virtual-server/edit_newfeatures.cgi
 lib/webmin/virtual-server/edit_newfields.cgi
 lib/webmin/virtual-server/edit_newlocal.cgi
-lib/webmin/virtual-server/edit_newplugin.cgi
 lib/webmin/virtual-server/edit_newquotacheck.cgi
 lib/webmin/virtual-server/edit_newsharedips.cgi
 lib/webmin/virtual-server/edit_newtmpl.cgi
 lib/webmin/virtual-server/edit_newupdate.cgi
 lib/webmin/virtual-server/edit_newupgrade.cgi
 lib/webmin/virtual-server/edit_newuser.cgi
+lib/webmin/virtual-server/edit_newvalidate.cgi
 lib/webmin/virtual-server/edit_pass.cgi
 lib/webmin/virtual-server/edit_plugconfig.cgi
 lib/webmin/virtual-server/edit_rfile.cgi
@@ -191,6 +192,7 @@ lib/webmin/virtual-server/images/newbw.gif
 lib/webmin/virtual-server/images/newdns.gif
 lib/webmin/virtual-server/images/newdom.gif
 lib/webmin/virtual-server/images/newdynip.gif
+lib/webmin/virtual-server/images/newfeatures.gif
 lib/webmin/virtual-server/images/newfields.gif
 lib/webmin/virtual-server/images/newframe.gif
 lib/webmin/virtual-server/images/newftp.gif
@@ -199,7 +201,6 @@ lib/webmin/virtual-server/images/newlinks.gif
 lib/webmin/virtual-server/images/newlocal.gif
 lib/webmin/virtual-server/images/newmxs.gif
 lib/webmin/virtual-server/images/newnotify.gif
-lib/webmin/virtual-server/images/newplugin.gif
 lib/webmin/virtual-server/images/newquotacheck.gif
 lib/webmin/virtual-server/images/newquotas.gif
 lib/webmin/virtual-server/images/newrange.gif
@@ -207,6 +208,7 @@ lib/webmin/virtual-server/images/newreseller.gif
 lib/webmin/virtual-server/images/newresels.gif
 lib/webmin/virtual-server/images/newscripts.gif
 lib/webmin/virtual-server/images/newsharedips.gif
+lib/webmin/virtual-server/images/newspamvirus.gif
 lib/webmin/virtual-server/images/newsubdom.gif
 lib/webmin/virtual-server/images/newtmpl.gif
 lib/webmin/virtual-server/images/newupdate.gif
@@ -241,7 +243,9 @@ lib/webmin/virtual-server/lang/fi
 lib/webmin/virtual-server/lang/fr
 lib/webmin/virtual-server/lang/tr
 lib/webmin/virtual-server/lang/zh_CN
+lib/webmin/virtual-server/lang/zh_CN.UTF-8
 lib/webmin/virtual-server/lang/zh_TW.Big5
+lib/webmin/virtual-server/lang/zh_TW.UTF-8
 lib/webmin/virtual-server/list-features.pl
 lib/webmin/virtual-server/list_aliases.cgi
 lib/webmin/virtual-server/list_databases.cgi
@@ -254,6 +258,7 @@ lib/webmin/virtual-server/migrate.cgi
 lib/webmin/virtual-server/migrate_form.cgi
 lib/webmin/virtual-server/migration-cpanel.pl
 lib/webmin/virtual-server/migration-ensim.pl
+lib/webmin/virtual-server/migration-plesk.pl
 lib/webmin/virtual-server/modify-domain.pl
 lib/webmin/virtual-server/module.info
 lib/webmin/virtual-server/newkey.cgi
@@ -271,6 +276,7 @@ lib/webmin/virtual-server/restore_form.cgi
 lib/webmin/virtual-server/save_afile.cgi
 lib/webmin/virtual-server/save_alias.cgi
 lib/webmin/virtual-server/save_database.cgi
+lib/webmin/virtual-server/save_dbpass.cgi
 lib/webmin/virtual-server/save_domain.cgi
 lib/webmin/virtual-server/save_exclude.cgi
 lib/webmin/virtual-server/save_expframe.cgi
@@ -279,9 +285,9 @@ lib/webmin/virtual-server/save_frame.cgi
 lib/webmin/virtual-server/save_limits.cgi
 lib/webmin/virtual-server/save_newbw.cgi
 lib/webmin/virtual-server/save_newdynip.cgi
+lib/webmin/virtual-server/save_newfeatures.cgi
 lib/webmin/virtual-server/save_newfields.cgi
 lib/webmin/virtual-server/save_newlocal.cgi
-lib/webmin/virtual-server/save_newplugin.cgi
 lib/webmin/virtual-server/save_newsharedips.cgi
 lib/webmin/virtual-server/save_newupdate.cgi
 lib/webmin/virtual-server/save_newuser.cgi
@@ -304,6 +310,7 @@ lib/webmin/virtual-server/update-template
 lib/webmin/virtual-server/upgrade.cgi
 lib/webmin/virtual-server/user-template
 lib/webmin/virtual-server/useradmin_update.pl
+lib/webmin/virtual-server/validate.cgi
 lib/webmin/virtual-server/view_domain.cgi
 lib/webmin/virtual-server/view_log.cgi
 lib/webmin/virtual-server/virtual-server-lib-funcs.pl
