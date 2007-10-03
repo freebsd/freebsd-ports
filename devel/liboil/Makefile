@@ -31,16 +31,15 @@ CC:=	gcc34
 CXX:=	g++34
 .endif
 
-.if defined(WITH_3DNOW_GCC40)
+.if defined(WITH_3DNOW_GCC40) && ${OSVERSION} < 700042
 USE_GCC=	4.0+
 .if ${OSVERSION} < 600000 && ${OSVERSION} > 500000
-# yeah yeah, I know other stuff will be added that shouldn't...
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 .endif
 
 pre-everything::
-.if ${MACHINE_CPU:M3dnow}!=""
+.if ${MACHINE_CPU:M3dnow}!="" && ${OSVERSION} < 700042
 .if !defined(WITH_3DNOW_GCC40)
 	@${ECHO_MSG} "You can enable 3dnow extensions by defining"
 	@${ECHO_MSG} "WITH_3DNOW_GCC40=yes"
