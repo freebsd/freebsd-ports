@@ -30,8 +30,11 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-cookies --enable-ipv6 --enable-threaded-dns \
+CONFIGURE_ARGS=	--enable-cookies --enable-threaded-dns \
 		--libdir=${PREFIX}/libexec
+.if !defined(WITHOUT_DILLO_IPV6) && !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
 
 .if defined(WITH_DILLO_SSL)
 CONFIGURE_ARGS+=	--enable-ssl
@@ -68,6 +71,11 @@ pre-configure:
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "   Set WITH_DILLO_DLGUI=yes in your make environment or on the"
 	@${ECHO_CMD} "   commandline to enable a FLTK2 based gui for download operations."
+.endif
+.if !defined(WITHOUT_DILLO_IPV6) && !defined(WITHOUT_IPV6)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "   Set WITHOUT_DILLO_IPV6=yes (or WITHOUT_IPV6=yes) in your make"
+	@${ECHO_CMD} "   environment or on the commandline to disable IPv6 support."
 .endif
 	@${ECHO_CMD} ""
 
