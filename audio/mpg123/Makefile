@@ -76,24 +76,12 @@ pre-fetch:
 	@${ECHO_MSG}
 .endif
 .if ${ARCH} == "i386"
-.if ${OSVERSION} >= 430000
 .if ${MACHINE_CPU:M3dnow}
 OPT_ARCH=	3dnow
 .elif ${MACHINE_CPU:Mi586}
 OPT_ARCH=	i586
 .elif ${MACHINE_CPU:Mi486}
 OPT_ARCH=	i486
-.endif
-.else
-.if !defined(OPT_ARCH) || ((${OPT_ARCH} != "i486") && (${OPT_ARCH} != "i586") \
-    && (${OPT_ARCH} != "3dnow"))
-	@${ECHO_MSG} "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-	@${ECHO_MSG} "Note: you can set OPT_ARCH to optimize for your hardware."
-	@${ECHO_MSG} "(e.g. make OPT_ARCH=i486)."
-	@${ECHO_MSG} "Valid values are: i486, i586, 3dnow"
-	@${ECHO_MSG} "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-OPT_ARCH?=	i586
-.endif
 .endif
 .endif
 
