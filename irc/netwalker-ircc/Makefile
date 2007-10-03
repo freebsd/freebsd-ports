@@ -20,12 +20,6 @@ MAN1=		netwalker.1
 LDFLAGS=	-lncurses ${PTHREAD_LIBS}
 CFLAGS?=	-O2 -Wall
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-.endif
-
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
 	${WRKSRC}/config.h > ${WRKSRC}/config.h.freebsd
@@ -43,4 +37,4 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	${CP} ${WRKSRC}/help/* ${PREFIX}/share/netwalker-ircc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

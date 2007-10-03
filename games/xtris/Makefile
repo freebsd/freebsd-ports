@@ -24,10 +24,6 @@ WRKSRC=		${WRKDIR}/xtris
 USE_X_PREFIX=	yes
 MAN6=		xtris.6 xtserv.6 xtbot.6
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400014
 MAKE_ENV=	IPV6_CFLAGS="-DINET6"
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
