@@ -130,7 +130,7 @@ BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/jbootstrap
 .endif
 .endif
 
-.if ${OSVERSION} < 460101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500038 )
+.if ${OSVERSION} < 500038
 EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 TAR=			gtar	# Necessary for proper extraction of sources
 .endif
@@ -166,7 +166,7 @@ IGNORE += and restart the build.\n\n
 .endif#}
 
 # HotSpot and/or native threads require a recent version of FreeBSD
-.if ( defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT) ) && ( ${OSVERSION} < 470101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500043 ) )
+.if ( defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT) ) && ( ${OSVERSION} < 500043 )
 ECHO_MSG=/usr/bin/printf
 IGNORE= :\n\
 You must have a version of FreeBSD later than 4.7-STABLE February 2003\n\

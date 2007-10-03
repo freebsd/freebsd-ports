@@ -25,10 +25,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/msdosfs.ko
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 410001 && ${OSVERSION} < 500000
-LAST_UPDATED=	20001027
-PATCHDIR=	${MASTERDIR}/patches.4
-.elif ${OSVERSION} >= 500016 && ${OSVERSION} < 501109
+.if ${OSVERSION} >= 500016 && ${OSVERSION} < 501109
 # runs only after 9th Feb 2001 world
 LAST_UPDATED=	20010209
 PATCHDIR=	${MASTERDIR}/patches.5

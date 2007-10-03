@@ -30,16 +30,7 @@ EXTRACT_BEFORE_ARGS=	-qo
 
 MOZILLA=	mozilla
 PLIST_SUB=	MOZILLA=${MOZILLA}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 450002
 LOCALENAME=	ja_JP.eucJP
-.elif ${OSVERSION} >= 400020
-LOCALENAME=	ja_JP.EUC
-.else
-LOCALENAME=	ja_JP.EUC
-.endif
 
 do-build:
 	${SED} -e "s^%%PREFIX%%^${PREFIX}^g" \
@@ -70,4 +61,4 @@ do-install:
 	${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
