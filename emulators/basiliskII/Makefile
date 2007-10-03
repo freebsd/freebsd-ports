@@ -28,14 +28,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAN1=		BasiliskII.1
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 400012
-CFLAGS+=	-fpermissive
-.endif
+CFLAGS=		-fpermissive
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

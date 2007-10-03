@@ -53,11 +53,7 @@ BUILD_VER=	19175
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-MOUNT_DEV?=	/dev/acd0c
-.else
 MOUNT_DEV?=	/dev/acd0
-.endif
 MOUNT_PT?=	/mnt
 MOUNT=		/sbin/mount
 UMOUNT=		/sbin/umount
@@ -94,10 +90,7 @@ PLIST_SUB+=	VMWARE_VMMEMCTL:="@comment "
 .endif
 
 .if defined(WITH_VMWARE_VMXNET)
-.if (${OSVERSION} >= 480000) && (${OSVERSION} < 500000) && (${BITS} == 32)
-PLIST_SUB+=	VMWARE_VMXNET:=""
-VMWARE_VMXNET_PATH=	4.9/vmxnet.ko
-.elif (${OSVERSION} >= 500000) && (${OSVERSION} < 600000)
+.if (${OSVERSION} < 600000)
 PLIST_SUB+=	VMWARE_VMXNET:=""
 .if ${BITS} == 32
 VMWARE_VMXNET_PATH=	5.3-i386/vmxnet.ko

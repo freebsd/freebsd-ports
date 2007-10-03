@@ -34,10 +34,6 @@ SRC_BASE?=	/usr/src
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400013
-IGNORE=		needs a system more recent than 400013
-.endif
-
 .if ${OSVERSION} < 500104
 PLIST_SUB+=	MAKEDEV=""
 .else

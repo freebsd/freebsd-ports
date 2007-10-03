@@ -15,7 +15,7 @@ DISTNAME=		PyKQueue-${PORTVERSION}
 EXTRACT_SUFX=		.tbz
 
 MAINTAINER=		ports2@dclg.ca
-COMMENT=	Python interface to kqueue(2) and kevent(2) system calls
+COMMENT=		Python interface to kqueue(2) and kevent(2) system calls
 
 USE_BZIP2=		yes
 USE_PYTHON=		yes
@@ -25,9 +25,6 @@ MAKE_ENV=		MAINCC=${CC}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400018
-IGNORE="requires new kqueue API"
-.endif
 .if ${OSVERSION} >= 500000 && ${OSVERSION} < 500010
 IGNORE="requires new kqueue API"
 .endif
