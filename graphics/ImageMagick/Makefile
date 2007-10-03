@@ -319,7 +319,7 @@ post-install:
 .endif
 
 test check:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} limits -m 20m ${MAKE} check
 
 .if !defined(WITHOUT_IMAGEMAGICK_TESTS)
 .	for m in TTF
