@@ -1,4 +1,4 @@
-# New ports collection makefile for:	swt32
+# New ports collection makefile for:	swt
 # Date created:				2006-11-16
 # Whom:					Robert C. Noland III <rnoland@2hip.net>
 #
@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	swt
-PORTVERSION=	3.2.2
-PORTREVISION=	1
+DISTVERSION=	3.3
+#PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200702121330
-DISTNAME=	swt-${PORTVERSION}-${DIST_EXT}
+MASTER_SITE_SUBDIR=	R-${DISTVERSION}-200706251500
+DISTNAME=	swt-${DISTVERSION}-${DIST_EXT}
 
 MAINTAINER=	rnoland@2hip.net
 COMMENT=	Standard Widget Toolkit for Java
@@ -20,7 +20,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 CONFLICTS=	swt-3.1*
 
-SWT_VERSION=	3236
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-${ARCH}-os.c
+
+SWT_VERSION=	3346
 OUTPUT_JAR=	swt.jar
 
 USE_ZIP=	yes
@@ -41,7 +43,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${OUTPUT_JAR} \
 		lib/libswt-glx-gtk-%%BUILD%%.so \
 		lib/libswt-pi-gtk-%%BUILD%%.so
 
-WRKSRC=		${WRKDIR}/swt-M20070212-1330-${DIST_EXT}
+NO_WRKSUBDIR=	yes
 
 OPTIONS=	CAIRO "Cairo Support" on \
 		GNOMEVFS "Gnome VFS Support" on \
@@ -66,11 +68,7 @@ USE_GECKO=	mozilla firefox seamonkey
 
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
-PLIST_FILES+=	lib/libswt-${GECKO}-gtk-%%BUILD%%.so \
-		lib/libswt-${GECKO}14-profile-gtk-%%BUILD%%.so \
-		lib/libswt-${GECKO}17-profile-gtk-%%BUILD%%.so \
-		lib/libswt-${GECKO}18-profile-gtk-%%BUILD%%.so
-
+PLIST_FILES+=	lib/libswt-mozilla-gtk-%%BUILD%%.so
 MAKE_MOZILLA=	make_mozilla
 .endif
 
@@ -87,13 +85,10 @@ DIST_EXT=	gtk-linux-x86
 post-extract:
 	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo "*.zip")
 	@${RM} -f ${WRKSRC}/*.o ${WRKSRC}/*.so ${WRKSRC}/*.jar
-	@${CP} ${WRKSRC}/make_linux.mak ${WRKSRC}/make_freebsd.mak
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|mozilla-|${GECKO}-|' \
 		${WRKSRC}/build.sh
-	@${REINPLACE_CMD} -e 's|swt-mozilla|swt-${GECKO}|' \
-		${WRKSRC}/make_freebsd.mak
 
 do-install:
 	${MKDIR} ${JAVAJARDIR}
