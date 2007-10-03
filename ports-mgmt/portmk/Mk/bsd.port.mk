@@ -2,7 +2,6 @@
 # ex:ts=4
 #
 # $FreeBSD$
-#	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -579,6 +578,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- A command to install binary executables.  (By
 #				  default, also strips them, unless ${STRIP} is
 #				  overridden to be the empty string).
+# INSTALL_KLD	- As INSTALL_KLD, but without the STRIP.
 # INSTALL_SCRIPT
 #				- A command to install executable scripts.
 # INSTALL_DATA	- A command to install sharable data.
@@ -707,7 +707,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  tree as recorded in the Makefiles of the ports
 #				  collection, not as recorded in the currently
 #				  installed ports.
-# actual-package-depends-list
+# actual-package-depends
 #				- Like package-depends-list but with the difference
 #				  that the dependencies of the currently installed
 #				  ports are used instead of the dependencies as
@@ -1861,9 +1861,9 @@ RC_SUBR_SUFFIX?=	.sh
 .endif
 
 .if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
-.if ( ${OSVERSION} < 504105 ) || \
+.if !defined(INSTALL_AS_USER) && ( ( ${OSVERSION} < 504105 ) || \
 		( ${OSVERSION} >= 700000 && ${OSVERSION} < 700012 ) || \
-		( ${OSVERSION} >= 600000 && ${OSVERSION} < 600104 )
+		( ${OSVERSION} >= 600000 && ${OSVERSION} < 600104 ) )
 RUN_DEPENDS+=	${LOCALBASE}/${LDCONFIG_DIR}:${PORTSDIR}/misc/ldconfig_compat
 NO_LDCONFIG_MTREE=	yes
 .endif
@@ -2055,6 +2055,16 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .else
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
+.endif
+
+.if defined(USE_XORG) || defined(XORG_CAT)
+. if ${X_WINDOW_SYSTEM} == "xorg"
+.  if exists(${DEVELPORTSDIR}/Mk/bsd.xorg.mk)
+.   include "${DEVELPORTSDIR}/Mk/bsd.xorg.mk"
+.  else
+.   include "${PORTSDIR}/Mk/bsd.xorg.mk"
+.  endif
+. endif
 .endif
 
 .if defined(USE_MYSQL) || defined(WANT_MYSQL_VER) || \
@@ -2421,6 +2431,8 @@ _MANOWNGRP=
 # A few aliases for *-install targets
 INSTALL_PROGRAM= \
 	${INSTALL} ${COPY} ${STRIP} ${_BINOWNGRP} -m ${BINMODE}
+INSTALL_KLD= \
+	${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE}
 INSTALL_SCRIPT= \
 	${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE}
 INSTALL_DATA= \
@@ -2507,7 +2519,7 @@ PKGINSTALLVER!= ${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
 DISABLE_CONFLICTS=	YES
 .endif
 .if !defined(PKG_ARGS)
-PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && ${MAKE} actual-package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u`" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS}
+PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && ${MAKE} actual-package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u -t : -k 2`" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS}
 .if !defined(NO_MTREE)
 PKG_ARGS+=		-m ${MTREE_FILE}
 .endif
@@ -3535,15 +3547,15 @@ do-fetch:
 	${_MASTER_SITES_ENV} ; \
 	for _file in ${DISTFILES}; do \
 		file=$${_file%%:*}; \
-		if [ $$_file = $$file ];	then	\
+		if [ $$_file = $$file ]; then	\
 			select='';	\
 		else	\
 			select=`${ECHO_CMD} $${_file##*:} | ${SED} -e 's/,/ /g'` ;	\
 		fi;	\
 		force_fetch=false; \
-		filebasename=`${BASENAME} $$file`; \
+		filebasename=$${file##*/}; \
 		for afile in ${FORCE_FETCH}; do \
-			afile=`${BASENAME} $$afile`; \
+			afile=$${afile##*/}; \
 			if [ "x$$afile" = "x$$filebasename" ]; then \
 				force_fetch=true; \
 			fi; \
@@ -3606,15 +3618,15 @@ do-fetch:
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
 		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		force_fetch=false; \
-		filebasename=`${BASENAME} $$file`; \
+		filebasename=$${file##*/}; \
 		for afile in ${FORCE_FETCH}; do \
-			afile=`${BASENAME} $$afile`; \
+			afile=$${afile##*/}; \
 			if [ "x$$afile" = "x$$filebasename" ]; then \
 				force_fetch=true; \
 			fi; \
 		done; \
 		if [ ! -f $$file -a ! -f $$filebasename -o "$$force_fetch" = "true" ]; then \
-			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
+			if [ -L $$file -o -L $${file##*/} ]; then \
 				${ECHO_MSG} "=> ${_DISTDIR}/$$file is a broken symlink."; \
 				${ECHO_MSG} "=> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
 				${ECHO_MSG} "=> Please correct this problem and try again."; \
@@ -4039,7 +4051,7 @@ install-ldconfig-file:
 	@${ECHO_MSG} "===>   Running ldconfig (errors are ignored)"
 	-${LDCONFIG} -m ${USE_LDCONFIG}
 .endif
-.if ${USE_LDCONFIG} != "${PREFIX}/lib"
+.if ${USE_LDCONFIG} != "${PREFIX}/lib" && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Installing ldconfig configuration file"
 .if defined(NO_LDCONFIG_MTREE)
 	@${MKDIR} ${PREFIX}/${LDCONFIG_DIR}
@@ -4061,6 +4073,7 @@ install-ldconfig-file:
 	@${ECHO_MSG} "===>   Running ldconfig (errors are ignored)"
 	-${LDCONFIG} -32 -m ${USE_LDCONFIG32}
 .endif
+.if !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Installing 32-bit ldconfig configuration file"
 .if defined(NO_LDCONFIG_MTREE)
 	@${MKDIR} ${PREFIX}/${LDCONFIG_32DIR}
@@ -4071,6 +4084,7 @@ install-ldconfig-file:
 	@${ECHO_CMD} ${LDCONFIG32_DIR}/${UNIQUENAME} >> ${TMPPLIST}
 .if defined(NO_LDCONFIG_MTREE)
 	@${ECHO_CMD} "@unexec rmdir ${LDCONFIG32_DIR} >/dev/null 2>&1" >> ${TMPPLIST}
+.endif
 .endif
 .endif
 # This can be removed once all ports have been converted to USE_LDCONFIG.
@@ -4578,7 +4592,7 @@ fetch-list:
 	 for _file in ${DISTFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
 		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
-		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
+		if [ ! -f $$file -a ! -f $${file##*/} ]; then \
 			if [ ! -z "$$select" ] ; then \
 				__MASTER_SITES_TMP= ; \
 				for group in $$select; do \
@@ -4615,7 +4629,7 @@ fetch-list:
 	 for _file in ${PATCHFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
 		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
-		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
+		if [ ! -f $$file -a ! -f $${file##*/} ]; then \
 			if [ ! -z "$$select" ] ; then \
 				__PATCH_SITES_TMP= ; \
 				for group in $$select; do \
@@ -5171,7 +5185,7 @@ CLEAN-DEPENDS-FULL= \
 			for child in $$children; do			\
 				case $$state in				\
 				0)					\
-					if [ -d $$child ]; then		\
+					if [ -d $$child ]; then 	\
 						${ECHO_CMD} $$d;	\
 					fi;				\
 					state=1;;			\
@@ -5210,7 +5224,7 @@ CLEAN-DEPENDS-LIMITED= \
 			for child in $$children; do			\
 				case $$state in				\
 				0)					\
-					if [ ! -d $$child ]; then	\
+					if [ ! -d $$child ]; then 	\
 						break;		\
 					fi;				\
 					state=1;			\
@@ -5413,6 +5427,10 @@ ACTUAL-PACKAGE-DEPENDS?= \
 			dir=$${tmp\#\#*/}/$${dir\#\#*/}; \
 			set -- $$origins; \
 			while [ $$\# -gt 1 ]; do \
+				if [ ! -d "${PORTSDIR}/$$2" ]; then \
+					shift; \
+					continue; \
+				fi; \
 				if [ "$$dir" = "$$2" ]; then \
 					${ECHO_CMD} $$1:$$dir; \
 					if [ -e ${PKG_DBDIR}/$$1/+CONTENTS -a -z "${EXPLICIT_PACKAGE_DEPENDS}" ]; then \
@@ -5950,13 +5968,15 @@ config:
 	@exit 1
 .endif
 .if ${UID} != 0 && !defined(INSTALL_AS_USER)
-	@${ECHO_MSG} "===>  Switching to root credentials to create `${DIRNAME} ${_OPTIONSFILE}`"
-	@(${SU_CMD} "${SH} -c \"${MKDIR} `${DIRNAME} ${_OPTIONSFILE}` 2> /dev/null\"") || \
-		(${ECHO_MSG} "===> Cannot create `${DIRNAME} ${_OPTIONSFILE}`, check permissions"; exit 1)
-	@${ECHO_MSG} "===>  Returning to user credentials"
+	@optionsdir=${_OPTIONSFILE}; optionsdir=$${optionsdir%/*}; \
+	${ECHO_MSG} "===>  Switching to root credentials to create $${optionsdir}"; \
+	(${SU_CMD} "${SH} -c \"${MKDIR} $${optionsdir} 2> /dev/null\"") || \
+		(${ECHO_MSG} "===> Cannot create $${optionsdir}, check permissions"; exit 1); \
+	${ECHO_MSG} "===>  Returning to user credentials"
 .else
-	@(${MKDIR} `${DIRNAME} ${_OPTIONSFILE}` 2> /dev/null) || \
-		(${ECHO_MSG} "===> Cannot create `${DIRNAME} ${_OPTIONSFILE}`, check permissions"; exit 1)
+	@(optionsdir=${_OPTIONSFILE}; optionsdir=$${optionsdir%/*}; \
+	${MKDIR} $${optionsdir} 2> /dev/null) || \
+		(${ECHO_MSG} "===> Cannot create $${optionsdir}, check permissions"; exit 1)
 .endif
 	-@if [ -e ${_OPTIONSFILE} ]; then \
 		. ${_OPTIONSFILE}; \
@@ -6092,14 +6112,15 @@ showconfig:
 rmconfig:
 .if defined(OPTIONS) && exists(${_OPTIONSFILE})
 	-@${ECHO_MSG} "===> Removing user-configured options for ${PKGNAME}"; \
+	optionsdir=${_OPTIONSFILE}; optionsdir=$${optionsdir%/*}; \
 	if [ `${ID} -u` != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
-		${ECHO_MSG} "===> Switching to root credentials to remove ${_OPTIONSFILE} and `${DIRNAME} ${_OPTIONSFILE}`"; \
+		${ECHO_MSG} "===> Switching to root credentials to remove ${_OPTIONSFILE} and $${optionsdir}"; \
 		${SU_CMD} "${RM} -f ${_OPTIONSFILE} ; \
-			${RMDIR} `${DIRNAME} ${_OPTIONSFILE}`"; \
+			${RMDIR} $${optionsdir}"; \
 		${ECHO_MSG} "===> Returning to user credentials"; \
 	else \
 		${RM} -f ${_OPTIONSFILE}; \
-		${RMDIR} `${DIRNAME} ${_OPTIONSFILE}`; \
+		${RMDIR} $${optionsdir}; \
 	fi
 .else
 	@${ECHO_MSG} "===> No user-specified options configured for ${PKGNAME}"
