@@ -7,6 +7,7 @@
 
 PORTNAME=	hptools
 PORTVERSION=	3.0.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hpcalc.org/hp48/pc/programming/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -18,6 +19,8 @@ WRKSRC=		${WRKDIR}/Hptools/${CONFIGURE_TARGET}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../support/configure
+PATCH_ARGS=	-E ${PATCH_STRIP}
+
 
 NO_CDROM=	'Commercial use is Prohibited'
 
@@ -26,6 +29,11 @@ pre-patch:
 		${WRKDIR}/Hptools/common/envfile.c	\
 		${WRKDIR}/Hptools/rplcomp/defer.c	\
 		${WRKDIR}/Hptools/rplcomp/masd.c
+	cd ${WRKDIR}/Hptools && \
+		${PATCH} ${PATCH_ARGS} < ${FILESDIR}/p-common_getopt.c
+	cd ${WRKDIR}/Hptools && \
+		${PATCH} ${PATCH_ARGS} < ${FILESDIR}/p-sload_symb.c
+
 pre-configure:
 	@(${MKDIR} ${WRKSRC})
 
