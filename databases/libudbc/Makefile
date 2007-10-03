@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.openlinksw.co.uk/open41/ \
 DISTNAME=	f6kuzzzz
 EXTRACT_SUFX=	.taz
 
+LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+
 MAINTAINER=	eugen@grosbein.pp.ru
 COMMENT=	Openlink UDBC SDK
 
@@ -51,14 +53,4 @@ post-install:
 	@${SED} "s'PREFIX'${PREFIX}'" <pkg-message
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
-.endif
-
-.if ${OSVERSION} < 400000
-IGNORE=		"Systems prior to 4.x are not supported"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
