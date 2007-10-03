@@ -166,6 +166,7 @@ pre-everything::
 	@${RM} -f ${WRKDIR}/.patch_done.*
 	@${RM} -f ${WRKDIR}/.configure_done.*
 	@${RM} -f ${WRKDIR}/.build_done.*
+	@${MKDIR} ${WRKDIR}
 	@${TOUCH} ${EXTRACT_COOKIE}
 	@${TOUCH} ${PATCH_COOKIE}
 	@${TOUCH} ${CONFIGURE_COOKIE}
