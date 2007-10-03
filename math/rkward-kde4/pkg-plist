@@ -34,6 +34,7 @@ share/apps/rkward/analysis/TESTS/mood_test.php
 share/apps/rkward/analysis/TESTS/mood_test.rkh
 share/apps/rkward/analysis/TESTS/mood_test.xml
 share/apps/rkward/analysis/ansari_bradley/ansari_bradley_exact_test.php
+share/apps/rkward/analysis/ansari_bradley/ansari_bradley_exact_test.rkh
 share/apps/rkward/analysis/ansari_bradley/ansari_bradley_exact_test.xml
 share/apps/rkward/analysis/ansari_bradley/ansari_bradley_test.php
 share/apps/rkward/analysis/ansari_bradley/ansari_bradley_test.rkh
@@ -41,6 +42,12 @@ share/apps/rkward/analysis/ansari_bradley/ansari_bradley_test.xml
 share/apps/rkward/analysis/corr_matrix.php
 share/apps/rkward/analysis/corr_matrix.rkh
 share/apps/rkward/analysis/corr_matrix.xml
+share/apps/rkward/analysis/crosstab.php
+share/apps/rkward/analysis/crosstab.rkh
+share/apps/rkward/analysis/crosstab.xml
+share/apps/rkward/analysis/crosstab_multi.php
+share/apps/rkward/analysis/crosstab_multi.rkh
+share/apps/rkward/analysis/crosstab_multi.xml
 share/apps/rkward/analysis/moments/agostino_test.php
 share/apps/rkward/analysis/moments/agostino_test.rkh
 share/apps/rkward/analysis/moments/agostino_test.xml
@@ -68,9 +75,18 @@ share/apps/rkward/analysis/outliers/grubbs_test.xml
 share/apps/rkward/analysis/outliers/outlier.php
 share/apps/rkward/analysis/outliers/outlier.rkh
 share/apps/rkward/analysis/outliers/outlier.xml
+share/apps/rkward/analysis/regression/linear_regression.php
+share/apps/rkward/analysis/regression/linear_regression.rkh
+share/apps/rkward/analysis/regression/linear_regression.xml
 share/apps/rkward/analysis/t_test_two_vars.php
 share/apps/rkward/analysis/t_test_two_vars.rkh
 share/apps/rkward/analysis/t_test_two_vars.xml
+share/apps/rkward/analysis/time_series/Box_test.php
+share/apps/rkward/analysis/time_series/Box_test.rkh
+share/apps/rkward/analysis/time_series/Box_test.xml
+share/apps/rkward/analysis/time_series/kpss_test.php
+share/apps/rkward/analysis/time_series/kpss_test.rkh
+share/apps/rkward/analysis/time_series/kpss_test.xml
 share/apps/rkward/analysis/variances/F_test.php
 share/apps/rkward/analysis/variances/F_test.rkh
 share/apps/rkward/analysis/variances/F_test.xml
@@ -116,6 +132,8 @@ share/apps/rkward/distributions/clt/plot_chi_squared_clt.php
 share/apps/rkward/distributions/clt/plot_chi_squared_clt.rkh
 share/apps/rkward/distributions/clt/plot_chi_squared_clt.xml
 share/apps/rkward/distributions/clt/plot_clt_common.php
+share/apps/rkward/distributions/clt/plot_clt_help_snippets.xml
+share/apps/rkward/distributions/clt/plot_clt_snippets.xml
 share/apps/rkward/distributions/clt/plot_exponential_clt.php
 share/apps/rkward/distributions/clt/plot_exponential_clt.rkh
 share/apps/rkward/distributions/clt/plot_exponential_clt.xml
@@ -158,6 +176,7 @@ share/apps/rkward/distributions/clt/plot_weibull_clt.xml
 share/apps/rkward/distributions/clt/plot_wilcoxon_clt.php
 share/apps/rkward/distributions/clt/plot_wilcoxon_clt.rkh
 share/apps/rkward/distributions/clt/plot_wilcoxon_clt.xml
+share/apps/rkward/distributions/dist_snippets.xml
 share/apps/rkward/distributions/exponential_probabilities.php
 share/apps/rkward/distributions/exponential_probabilities.xml
 share/apps/rkward/distributions/exponential_quantiles.php
@@ -210,6 +229,8 @@ share/apps/rkward/distributions/plot_cauchy_distribution.xml
 share/apps/rkward/distributions/plot_chi_squared_distribution.php
 share/apps/rkward/distributions/plot_chi_squared_distribution.rkh
 share/apps/rkward/distributions/plot_chi_squared_distribution.xml
+share/apps/rkward/distributions/plot_dist_common.php
+share/apps/rkward/distributions/plot_dist_common_snippets.xml
 share/apps/rkward/distributions/plot_exponential_distribution.php
 share/apps/rkward/distributions/plot_exponential_distribution.rkh
 share/apps/rkward/distributions/plot_exponential_distribution.xml
@@ -291,6 +312,7 @@ share/apps/rkward/distributions/wilcoxon_probabilities.php
 share/apps/rkward/distributions/wilcoxon_probabilities.xml
 share/apps/rkward/distributions/wilcoxon_quantiles.php
 share/apps/rkward/distributions/wilcoxon_quantiles.xml
+share/apps/rkward/embedded.pluginmap
 share/apps/rkward/icons/function.png
 share/apps/rkward/icons/list.png
 share/apps/rkward/icons/rkward_logo.png
@@ -308,12 +330,16 @@ share/apps/rkward/pages/rkward_output.rkh
 share/apps/rkward/pages/rkward_shortcuts.rkh
 share/apps/rkward/pages/rkward_trouble_shooting.rkh
 share/apps/rkward/pages/rkward_welcome.rkh
+share/apps/rkward/pages/rkward_workspace_browser.rkh
 share/apps/rkward/phpfiles/common.php
 share/apps/rkward/phpfiles/php.ini
 share/apps/rkward/plots.pluginmap
 share/apps/rkward/plots/barplot.php
 share/apps/rkward/plots/barplot.rkh
 share/apps/rkward/plots/barplot.xml
+share/apps/rkward/plots/barplot_embed.php
+share/apps/rkward/plots/barplot_embed.rkh
+share/apps/rkward/plots/barplot_embed.xml
 share/apps/rkward/plots/box_plot.php
 share/apps/rkward/plots/box_plot.xml
 share/apps/rkward/plots/color_chooser.php
@@ -325,6 +351,9 @@ share/apps/rkward/plots/cor_graph.xml
 share/apps/rkward/plots/density_plot.php
 share/apps/rkward/plots/density_plot.rkh
 share/apps/rkward/plots/density_plot.xml
+share/apps/rkward/plots/dotchart.php
+share/apps/rkward/plots/dotchart.rkh
+share/apps/rkward/plots/dotchart.xml
 share/apps/rkward/plots/ecdf_plot.php
 share/apps/rkward/plots/ecdf_plot.rkh
 share/apps/rkward/plots/ecdf_plot.xml
@@ -337,6 +366,9 @@ share/apps/rkward/plots/histogram_options.xml
 share/apps/rkward/plots/pareto.php
 share/apps/rkward/plots/pareto.rkh
 share/apps/rkward/plots/pareto.xml
+share/apps/rkward/plots/piechart.php
+share/apps/rkward/plots/piechart.rkh
+share/apps/rkward/plots/piechart.xml
 share/apps/rkward/plots/plot.php
 share/apps/rkward/plots/plot.rkh
 share/apps/rkward/plots/plot.xml
@@ -363,6 +395,7 @@ share/apps/rkward/rkconsolepart.rc
 share/apps/rkward/rkeditordataframepart.rc
 share/apps/rkward/rkhelpwindow.rc
 share/apps/rkward/rkoutputwindow.rc
+share/apps/rkward/rktoplevelwindowgui.rc
 share/apps/rkward/rkwardui.rc
 share/apps/rkward/simple_anova/code.php
 share/apps/rkward/simple_anova/description.xml
@@ -398,6 +431,7 @@ share/icons/locolor/32x32/apps/rkward.png
 %%NLS%%share/locale/it/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/rkward.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/apps/rkward/x11device
 @dirrm share/apps/rkward/uni1.2
@@ -412,6 +446,8 @@ share/icons/locolor/32x32/apps/rkward.png
 @dirrm share/apps/rkward/distributions
 @dirrm share/apps/rkward/analysis/wilcoxon
 @dirrm share/apps/rkward/analysis/variances
+@dirrm share/apps/rkward/analysis/time_series
+@dirrm share/apps/rkward/analysis/regression
 @dirrm share/apps/rkward/analysis/outliers
 @dirrm share/apps/rkward/analysis/moments
 @dirrm share/apps/rkward/analysis/ansari_bradley
