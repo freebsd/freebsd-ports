@@ -22,6 +22,7 @@ USE_RUBY=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} --program-suffix=20 \
 		--enable-shared --with-openssl-include=${OPENSSLINC}
+CONFIGURE_ARGS+=--enable-ipv6
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LIBS="${PTHREAD_LIBS}"
 
 OPTIONS=	DEBUG "Enable debugging information" off \
@@ -35,13 +36,6 @@ BROKEN=		does not build
 
 .if ${OSVERSION} < 600000
 BROKEN=		Does not build on 5.x
-.endif
-
-.if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+=--enable-ipv6
-.if ${OSVERSION} < 500000
-CONFIGURE_ARGS+=--enable-wide-getaddrinfo
-.endif
 .endif
 
 .if defined(NOPORTDOCS)

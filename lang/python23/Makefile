@@ -93,7 +93,7 @@ PLIST_SUB+=	32BIT_ONLY=""
 CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 .endif
 
-.if !defined(WITHOUT_IPV6) && ${OSVERSION} >= 400014
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+= --enable-ipv6
 .else
 CONFIGURE_ARGS+= --disable-ipv6
@@ -103,10 +103,8 @@ CONFIGURE_ARGS+= --disable-ipv6
 PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd6
 .elif ${OSVERSION} >= 600000
 PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd7
-.elif ${OSVERSION} >= 500000
-PLATFORMS=plat-freebsd4 plat-freebsd6 plat-freebsd7
 .else
-PLATFORMS=plat-freebsd5 plat-freebsd6 plat-freebsd7
+PLATFORMS=plat-freebsd4 plat-freebsd6 plat-freebsd7
 .endif
 
 post-extract:

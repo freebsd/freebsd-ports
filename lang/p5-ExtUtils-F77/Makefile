@@ -19,15 +19,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		ExtUtils::F77.3
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 400005
-F2CLIB=	-lg2c
-.else
-F2CLIB=	-lf2c
-.endif
+F2CLIB=		-lg2c
 
 post-patch:
 	@cd ${WRKSRC}; ${PERL5} -i.orig -pe \
 		's/(.*Freebsd.*lib )(-lf2c)(.*)/$$1 ${F2CLIB} $$3/' F77.pm
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

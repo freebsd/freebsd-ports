@@ -97,9 +97,6 @@ CONFIGURE_ARGS+=	-Dusethreads=y
 PKGNAMESUFFIX=		-threaded
 # it seems perl malloc has problems with threaded perl on FreeBSD
 .undef WITH_PERL_MALLOC
-.if ${OSVERSION} < 492000
-CONFIGURE_ARGS+=	-Ud_gethostbyaddr_r
-.endif
 .else
 CONFIGURE_ARGS+=	-Dusethreads=n
 .endif

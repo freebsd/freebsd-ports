@@ -106,13 +106,7 @@ PLIST_SUB+=	NO_NIS="@comment "
 PLIST_SUB+=	NO_NIS=""
 .endif
 
-.if ${OSVERSION} < 400000
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-CFLAGS+=	-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
-.endif
-
-.if !defined(WITHOUT_IPV6) && ${OSVERSION} >= 400014
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+= --enable-ipv6
 .else
 CONFIGURE_ARGS+= --disable-ipv6
@@ -126,10 +120,8 @@ CONFIGURE_ARGS+= --with-fpectl
 PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd6
 .elif ${OSVERSION} >= 600000
 PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd7
-.elif ${OSVERSION} >= 500000
-PLATFORMS=plat-freebsd4 plat-freebsd6 plat-freebsd7
 .else
-PLATFORMS=plat-freebsd5 plat-freebsd6 plat-freebsd7
+PLATFORMS=plat-freebsd4 plat-freebsd6 plat-freebsd7
 .endif
 
 pre-patch:
