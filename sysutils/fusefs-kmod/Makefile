@@ -61,6 +61,9 @@ IGNORE=		requires FreeBSD 6 or above. Please consider porting it to 5.x or even 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires the Kernel source to be installed. Set SRC_BASE if it is not in /usr/src
 .endif
+.if !exists(${SRC_BASE}/sbin/mount)
+IGNORE=		requires the userland sources to be installed. Set SRC_BASE if it is not in /usr/src
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/deplate.rb/deplate/g' \
