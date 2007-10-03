@@ -91,11 +91,11 @@ PLIST_SUB+=	ESDPLUGIN:="@comment "
 WITHOUT_SIMD=	yes
 .endif
 
-.if !defined(WITHOUT_SIMD) && ${OSVERSION} >= 400021
+.if !defined(WITHOUT_SIMD)
 CONFIGURE_ARGS+=	--enable-simd
 .endif
 
-.if defined(WITHOUT_SIMD) || ${OSVERSION} < 400021
+.if defined(WITHOUT_SIMD)
 post-extract:
 	(cd ${WRKSRC}/Input/mpg123 && ${MV} decode_i586.s decode_i586.S && \
 	  cd ${WRKSRC}/Visualization/blur_scope && ${MV} blur_8.s blur_8.S);
@@ -106,7 +106,7 @@ post-extract:
 .endif
 
 pre-extract:
-.if !defined(WITHOUT_MIKMOD) || !defined(WITHOUT_VORBIS) || ( !defined(WITHOUT_SIMD) && ${OSVERSION} >= 400021 ) || ${HAVE_GNOME:Mesound}!=""
+.if !defined(WITHOUT_MIKMOD) || !defined(WITHOUT_VORBIS) || ( !defined(WITHOUT_SIMD) ) || ${HAVE_GNOME:Mesound}!=""
 	@${ECHO_MSG}
 .if !defined(WITHOUT_MIKMOD)
 	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_MIKMOD."
@@ -114,7 +114,7 @@ pre-extract:
 .if !defined(WITHOUT_VORBIS)
 	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS."
 .endif
-.if !defined(WITHOUT_SIMD) && ${OSVERSION} >= 400021
+.if !defined(WITHOUT_SIMD)
 	@${ECHO_MSG} "You can disable x86 SIMD (3DNow!/MMX) optimized decoding routines by defining WITHOUT_SIMD."
 .endif
 .if ${HAVE_GNOME:Mesound}!=""

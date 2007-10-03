@@ -55,18 +55,5 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/ldconfig_compat.sh ${PREFIX}/etc/rc.d/000.ldconfig_compat.sh
 	@${ECHO_CMD} "etc/rc.d/000.ldconfig_compat.sh" >> ${TMPPLIST}
 .endif
-# Special case, recent RELENG_4 versions have no /etc/rc.d/ldconfig script, but directories
-# are present in BSD.{x11,local}.dist.
-.if !( ${OSVERSION} >= 492101 && ${OSVERSION} < 500000 )
-.for prefix in ${LOCAL_PREFIXES}
-	@${ECHO_CMD} "@cwd ${prefix}" >> ${TMPPLIST}
-.for dir in ${LOCAL_DIRS}
-	echo creating  ${prefix}/${dir}
-	@${MKDIR} -p ${prefix}/${dir}
-	@${ECHO_CMD} "@exec mkdir -p %D/${dir}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/${dir} 2>/dev/null || true" >> ${TMPPLIST}
-.endfor
-.endfor
-.endif
 
 .include <bsd.port.post.mk>

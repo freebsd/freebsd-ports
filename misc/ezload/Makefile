@@ -18,10 +18,4 @@ MANCOMPRESSED=	yes
 
 MAKE_ENV=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/man" MKDIR="${MKDIR}" INSTALL_DATA="${INSTALL_DATA}" FORCE="${FORCE}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 460000
-IGNORE=		'This port only works on FreeBSD 4.6.0+'
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

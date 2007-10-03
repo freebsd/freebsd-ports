@@ -31,15 +31,10 @@ USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/compat
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 500000
+
 COMPAT3X_OSVERSION=	5.0
 COMPAT3X_OSRELDATE=	20020925
 PLIST_SUB=		CURRENT_ONLY:=""
-.else
-COMPAT3X_OSVERSION=	4.4
-COMPAT3X_OSRELDATE=	20020925
-PLIST_SUB=		CURRENT_ONLY:="@comment "
-.endif
 
 FREEBSD4_LIBS=	libc_r.so.4 libperl.so.3
 
@@ -51,11 +46,7 @@ COMPAT3X_PORTVERSION=	${COMPAT3X_OSVERSION}
 
 post-extract:
 .for lib in ${FREEBSD4_LIBS}
-.if ${OSVERSION} >= 500000
 	${MV} ${WRKSRC}/${lib} ${WRKSRC}/${lib}.compat3x
-.else
-	${RM} -f ${WRKSRC}/${lib}
-.endif
 .endfor
 
 do-build:
