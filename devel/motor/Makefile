@@ -30,12 +30,6 @@ PLIST_SUB=	NLS="@comment "
 
 MAN1=		motor.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|zxvf|&o|' ${WRKSRC}/share/Makefile.in
 
@@ -45,4 +39,4 @@ post-install:
 	@(cd ${WRKSRC} ; ${INSTALL_DATA} FAQ README ${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

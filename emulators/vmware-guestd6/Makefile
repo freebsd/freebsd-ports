@@ -55,11 +55,7 @@ BUILD_VER=	55017
 LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
 .endif
 
-.if ${OSVERSION} < 500000
-MOUNT_DEV?=	/dev/acd0c
-.else
 MOUNT_DEV?=	/dev/acd0
-.endif
 MOUNT_PT?=	/mnt
 MOUNT=		/sbin/mount
 UMOUNT=		/sbin/umount
@@ -69,7 +65,7 @@ BITS?=		32
 .else # ${ARCH} == amd64
 BITS?=		64
 .endif
-.if ((${OSVERSION} >= 500000) && (${OSVERSION} < 530000)) && (${ARCH} == i386)
+.if (${OSVERSION} < 530000) && (${ARCH} == i386)
 OSSFX?=		-50
 .elif ${OSVERSION} < 600000
 OSSFX?=
@@ -106,16 +102,7 @@ PLIST_SUB+=	VMWARE_VMMEMCTL="@comment "
 .endif
 
 .if defined(WITH_VMWARE_VMXNET)
-.if (${OSVERSION} >= 300000) && (${OSVERSION} < 400000) && (${BITS} == 32)
-PLIST_SUB+=	VMWARE_VMXNET=""
-VMWARE_VMXNET_PATH=	3.2/vmxnet.ko
-.elif (${OSVERSION} >= 400000) && (${OSVERSION} < 480000) && (${BITS} == 32)
-PLIST_SUB+=	VMWARE_VMXNET=""
-VMWARE_VMXNET_PATH=	4.0/vmxnet.ko
-.elif (${OSVERSION} >= 480000) && (${OSVERSION} < 500000) && (${BITS} == 32)
-PLIST_SUB+=	VMWARE_VMXNET=""
-VMWARE_VMXNET_PATH=	4.9/vmxnet.ko
-.elif (${OSVERSION} >= 500000) && (${OSVERSION} < 600000)
+.if (${OSVERSION} >= 500000) && (${OSVERSION} < 600000)
 PLIST_SUB+=	VMWARE_VMXNET=""
 .if ${BITS} == 32
 .if ${OSVERSION} < 530000

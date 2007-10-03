@@ -34,12 +34,6 @@ PLIST_DIRS=	share/biew
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400010
-LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
-HOST_CFLAGS+=	-D__FreeBSD_version=${OSVERSION} -I${LOCALBASE}/include
-HOST_LD+=	-L${LOCALBASE}/lib
-.endif
-
 OST_CFLAGS=	${CFLAGS} -DPREFIX="\'\"${PREFIX}\"\'"
 MAKEFILE=	makefile
 

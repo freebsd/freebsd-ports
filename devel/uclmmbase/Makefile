@@ -17,6 +17,7 @@ COMMENT=	Common subroutines for UCL mbone applications
 WRKSRC=		${WRKDIR}/common
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
+CONFIGURE_ARGS=	--enable-ipv6
 
 post-configure:
 	@for f in ${FILESDIR}/*.bsd ; do \
@@ -34,10 +35,4 @@ post-build test:
 do-install:
 	cd ${WRKSRC}/src && ${MAKE_ENV} ${MAKE} install
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

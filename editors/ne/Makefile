@@ -23,12 +23,6 @@ ALL_TARGET=	ne
 MAKE_ARGS=	CFLAGS="${CFLAGS} -DNOWCHAR" CC="${CC}" \
 		GLOBALDIR="${DATADIR}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses:${PORTSDIR}/devel/ncurses
-.endif
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 MAN1=	ne.1
@@ -48,4 +42,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC:S/src//}doc/ne.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

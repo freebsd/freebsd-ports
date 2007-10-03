@@ -27,11 +27,7 @@ MAN1=	mp.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CURSES)
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-.endif
-.else
+.if !defined(WITH_CURSES)
 CONFIGURE_ARGS+=	--without-curses
 .endif
 
