@@ -46,11 +46,8 @@ MAN1=		fwbuilder.1 \
 		fwb_ipfw.1 \
 		fwb_pf.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not build on 4.X (requires gcc 3.4 which itself does not build under 4.X"
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
 .endif
 
-.include <bsd.port.post.mk>
-
+.include <bsd.port.mk>
