@@ -25,6 +25,7 @@
    SUBDIR += pkg_trackinst
    SUBDIR += pkg_tree
    SUBDIR += pkgfe
+   SUBDIR += pkgsearch
    SUBDIR += port-authoring-tools
    SUBDIR += port-maintenance-tools
    SUBDIR += portaudit
