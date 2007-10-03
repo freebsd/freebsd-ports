@@ -92,7 +92,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extrapatch-eval.c
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-gc
 .endif
 
-.if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 

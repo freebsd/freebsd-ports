@@ -150,7 +150,7 @@ CONFIGURE_ARGS+=--enable-debug
 CONFIGURE_ARGS+=--enable-zend-multibyte
 .endif
 
-.if ${OSVERSION} < 400014 || defined(WITHOUT_IPV6)
+.if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 

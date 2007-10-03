@@ -103,7 +103,7 @@ PLIST_SUB+=	NO_NIS="@comment "
 PLIST_SUB+=	NO_NIS=""
 .endif
 
-.if !defined(WITHOUT_IPV6) && ${OSVERSION} >= 400014
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
@@ -117,10 +117,8 @@ CONFIGURE_ARGS+=	--with-fpectl
 PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd6
 .elif ${OSVERSION} >= 600000
 PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd7
-.elif ${OSVERSION} >= 500000
-PLATFORMS=plat-freebsd4 plat-freebsd6 plat-freebsd7
 .else
-PLATFORMS=plat-freebsd5 plat-freebsd6 plat-freebsd7
+PLATFORMS=plat-freebsd4 plat-freebsd6 plat-freebsd7
 .endif
 
 post-extract:

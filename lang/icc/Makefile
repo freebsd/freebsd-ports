@@ -181,8 +181,7 @@ post-patch:
 		>${WRKSRC}/opt/${COMPILERDIR}/include/stdbool.h
 .endif
 
-.if ( ${OSVERSION} >= 470101 && ${OSVERSION} < 500000 ) || \
-	( ${OSVERSION} >= 500042 )
+.if ( ${OSVERSION} >= 500042 )
 OBJCOPY_OPS=	--redefine-sym stdin=__stdinp \
 		--redefine-sym stdout=__stdoutp \
 		--redefine-sym stderr=__stderrp
@@ -200,8 +199,7 @@ do-build:
 .if ( ${OSVERSION} < 502101 )
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c
 .endif
-.if ( ${OSVERSION} < 470101 ) || \
-	( ${OSVERSION} >= 500000 && ${OSVERSION} < 500042 )
+.if ( ${OSVERSION} < 500042 )
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdin.o ${FILESDIR}/stdin.c
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdout.o ${FILESDIR}/stdout.c
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stderr.o ${FILESDIR}/stderr.c
