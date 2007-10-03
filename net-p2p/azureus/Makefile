@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	azureus
-PORTVERSION=	3.0.1.6
+PORTVERSION=	3.0.3.0
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
 DISTNAME=	Azureus_${PORTVERSION}_source
@@ -33,7 +33,8 @@ NO_WRKSUBDIR=	yes
 
 JARFILE=	${PORTNAME}.jar
 
-OPTIONS=	SWTDEVEL "Use SWT Development port" on
+OPTIONS=	SWTDEVEL "Use SWT Development port" on \
+		EXTRAHACK "Apply extra performance hack" off
 
 # build classpath from BUILD_DEPENDS
 MAKE_ENV=	LANG=C
@@ -52,7 +53,13 @@ SUB_LIST=	LIBDIR="${LOCALBASE}/lib" JARFILE="${JARFILE}" \
 SWT=		swt-devel
 .else
 SWT=		swt
-BROKEN=		swt-devel is currently required
+.endif
+
+# Ok, I'm not quite sure why this works, or if it is in any way a proper fix.
+# Use at your own risk, I've just had it around and decided to share.
+.if defined(WITH_EXTRAHACK)
+EXTRA_PATCHES+=	\
+	${PATCHDIR}/extra-patch-com__aelitis__azureus__core__networkmanager__impl__TransportHelperFilterStream.java
 .endif
 
 CLASSPATH=.
