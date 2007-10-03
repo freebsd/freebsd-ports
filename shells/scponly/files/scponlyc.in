@@ -1,0 +1,56 @@
+#!/bin/sh
+
+ETCSHELLS="${ETCSHELLS:-/etc/shells}"
+ETCPASSWD="${ETCPASSWD:-/etc/passwd}"
+
+# script to create devfs filesystems at boot time for scponlyc
+# chroot'ed users. We will read ${ETCSHELLS} to determine
+# where scponlyc is installed. Then we'll iterate through
+# each user in ${ETCPASSWD} to find users whose shell is set to
+# scponlyc. For each such user found, we will create a
+# minimal devfs under ~/dev.
+
+make_devfs() {
+	# $1 is the user name whose home directory needs a minimal
+	# devfs created. If ~/dev exists, it will be deleted.
+
+	eval DEV="~$1/dev"
+	while /sbin/umount "${DEV}" 2>/dev/null; do :; done
+	rm -rf "${DEV}"
+	mkdir -p "${DEV}"
+	if /sbin/mount_devfs devfs "${DEV}"; then
+		/sbin/devfs -m "${DEV}" rule -s 1 applyset && \
+		/sbin/devfs -m "${DEV}" rule -s 2 applyset || \
+		/sbin/umount "${DEV}" 2>/dev/null
+	fi
+}
+
+
+scponlyc_startup() {
+	# $1 is the path to the /etc/passwd file
+
+	grep "^[^#]*:.*:.*:.*:.*:.*:${SCPONLYC}$" < "$1" |
+		/usr/bin/awk -F: {'print $1'} |
+		while read USER; do
+			make_devfs "${USER}"
+		done
+}
+
+SCPONLYC=`/usr/bin/grep "/scponlyc$" ${ETCSHELLS} 2>/dev/null | /usr/bin/tail -1`
+
+if [ "x${SCPONLYC}" = "x" ]; then
+	echo scponlyc is not defined in ${ETCSHELLS} >&2
+	exit 1
+fi
+
+case "$1" in
+start)
+	scponlyc_startup "${ETCPASSWD}"
+	echo -n ' scponlyc'
+	;;
+*)
+	echo "Usage: `basename $0` start" >&2
+	;;
+esac
+
+exit 0

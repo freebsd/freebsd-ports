@@ -88,15 +88,15 @@ GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
 
 OPTIONS=	SCPONLY_WILDCARDS "wildcards processing" on \
-	SCPONLY_GFTP "gftp compatibility" on \
-	SCPONLY_CHROOT "chroot functionality" off \
-	SCPONLY_RSYNC "rsync compatibility" off \
-	SCPONLY_SCP "vanilla scp compatibility" off \
-	SCPONLY_SFTP_LOGGING "sftp logging compatibility" off \
-	SCPONLY_SVN "subversion compatibility" off \
-	SCPONLY_SVNSERVE "subversion compatibility svn+ssh://" off \
-	SCPONLY_UNISON "unison compatibility" off \
-	SCPONLY_WINSCP "WinSCP compatibility" off
+		SCPONLY_GFTP "gftp compatibility" on \
+		SCPONLY_CHROOT "chroot functionality" off \
+		SCPONLY_RSYNC "rsync compatibility" off \
+		SCPONLY_SCP "vanilla scp compatibility" off \
+		SCPONLY_SFTP_LOGGING "sftp logging compatibility" off \
+		SCPONLY_SVN "subversion compatibility" off \
+		SCPONLY_SVNSERVE "subversion compatibility svn+ssh://" off \
+		SCPONLY_UNISON "unison compatibility" off \
+		SCPONLY_WINSCP "WinSCP compatibility" off
 
 .include <bsd.port.pre.mk>
 
@@ -115,6 +115,7 @@ CONFIGURE_ARGS+=--disable-gftp-compat
 .if defined(WITH_SCPONLY_CHROOT)
 PLIST_SUB+=	SCPONLY_CHROOT=""
 CONFIGURE_ARGS+=--enable-chrooted-binary
+USE_RC_SUBR=	scponlyc
 .else
 PLIST_SUB+=	SCPONLY_CHROOT="@comment "
 .endif
