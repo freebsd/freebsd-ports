@@ -29,7 +29,7 @@ MAKE_ENV+=	WITH_PTHREAD=yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 
-.if ${OSVERSION} >= 460100 && ${OSVERSION} < 500038
+.if ${OSVERSION} < 500038
 . if (defined(IPFW2) && !defined(WITH_IPFW2)) || defined(WITH_IPFW2)
 MAKE_ENV+=	IPFW2=yes
 . endif

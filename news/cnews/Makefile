@@ -71,7 +71,7 @@ PGPVERIFY?=	pgpverify-1.12
 
 .include <bsd.port.pre.mk>
 
-.if make(makesum) || defined(FETCH_ALL) || ${OSVERSION} < 470000 
+.if make(makesum) || defined(FETCH_ALL)
 PATCHFILES+=	c-news-patch-gawk3
 .endif
 

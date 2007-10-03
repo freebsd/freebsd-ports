@@ -21,10 +21,6 @@ ONLY_FOR_ARCHS=	alpha amd64 i386 sparc64
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 410000
-BROKEN=		Not supported on versions earlier than 4.1-RELEASE
-.endif
-
 .if ${ARCH} == "alpha"
 TARGET=		FBSD_ALPHA
 .elif ${ARCH} == "amd64"

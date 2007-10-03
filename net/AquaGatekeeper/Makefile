@@ -50,9 +50,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400000
-BROKEN=		Supported only on 4.x systems and later
-.elif ${OSVERSION} >= 500000 && ${ARCH} == "i386"
+.if ${ARCH} == "i386"
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 .elif ${OSVERSION} >= 600000 && ${ARCH} == "amd64"
 LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x

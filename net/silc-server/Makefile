@@ -34,7 +34,8 @@ CONFIGURE_ARGS=	--with-silcd-config-file=${PREFIX}/etc/${PORTNAME}/silcd.conf \
 		--with-etcdir=${PREFIX}/etc/${PORTNAME} \
 		--with-helpdir=share/${PORTNAME}/help \
 		--with-logsdir=/var/log/${PORTNAME} \
-		--with-silcd-pid-file=/var/run/silcd.pid
+		--with-silcd-pid-file=/var/run/silcd.pid \
+		--enable-ipv6
 
 PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
 PKGDEINSTALL=	${PKGINSTALL}
@@ -43,6 +44,16 @@ INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 
 MAN5=	silcd.conf.5
 MAN8=	silcd.8
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+WITHOUT_OPTIMIZED_ASM=	yes
+.endif
+
+.ifdef(WITHOUT_OPTIMIZED_ASM)
+CONFIGURE_ARGS+=	--disable-asm
+.endif
 
 .ifndef(WITH_PTHREADS)
 CONFIGURE_ARGS+=	--without-pthreads
@@ -80,19 +91,5 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/silcd.sh startup file."; \
 		${INSTALL_SCRIPT} ${WRKSRC}/silcd.sh ${PREFIX}/etc/rc.d/silcd.sh; \
 	fi
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-WITHOUT_OPTIMIZED_ASM=	yes
-.endif
-
-.if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
-
-.ifdef(WITHOUT_OPTIMIZED_ASM)
-CONFIGURE_ARGS+=	--disable-asm
-.endif
 
 .include <bsd.port.post.mk>
