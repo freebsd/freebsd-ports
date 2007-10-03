@@ -14,6 +14,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	A dependency generator for makefiles
 
 XORG_CAT=	util
+USE_GNOME=	pkgconfig
 USE_XORG=	xproto
 
 PLIST_FILES=	bin/makedepend
