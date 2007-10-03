@@ -257,12 +257,6 @@ CONFIGURE_ARGS+=--with-ipv6
 CONFIGURE_ARGS+=--without-ipv6
 .endif
 
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-maildir__maildirfilter.c \
-		${FILESDIR}/extrapatch-webmail__folder.c \
-		${FILESDIR}/extrapatch-webmail__newmsg.c
-.endif
-
 pre-everything::
 	@${ECHO_MSG} "===> --------------------------------------------------------"
 	@${ECHO_MSG} "===>	Run 'make config' to (re)configure ${PKGNAME}"
