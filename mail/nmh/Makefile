@@ -94,7 +94,7 @@ CONFIGURE_ARGS+=	--with-smtpservers="${NMH_SMTPSERVERS}"
 CONFIGURE_ARGS+=	${NMH_EXTRA_CONFIGURE_ARGS}
 .endif
 
-CFLAGS+=	-D${NMH_LOCKING}
+CFLAGS+=	-D${NMH_LOCKING} -O
 
 MAN1=	ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 flists.1 \
 	folder.1 folders.1 forw.1 inc.1 install-mh.1 mark.1 \
