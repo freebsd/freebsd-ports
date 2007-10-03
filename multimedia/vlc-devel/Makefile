@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.9.0.20070906
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://nightlies.videolan.org/build/source/trunk-${DISTVERSION:S/0.9.0.//}-0029/
@@ -24,6 +24,7 @@ DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.9.0.//}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
