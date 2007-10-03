@@ -23,7 +23,7 @@ echo "#ifndef BuildAoutLibraries"		>> $F
 echo "#define BuildAoutLibraries $BuildAoutLibraries" >> $F
 echo "#endif"					>> $F
 isyes $DebuggableLibraries
-if [ $ret = YES -a $OSVERSION -ge 400000 ]; then
+if [ $ret = YES ]; then
     echo "#ifndef DebuggableLibraries"		>> $F
     echo "#define DebuggableLibraries $ret"	>> $F
     echo "#endif"				>> $F
