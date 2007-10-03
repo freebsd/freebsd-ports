@@ -1,54 +1,93 @@
---- configure.orig	Sat Dec 30 06:27:58 2006
-+++ configure	Mon Jan  1 22:27:57 2007
-@@ -20585,8 +20585,12 @@
+--- configure.orig	2007-09-29 16:43:43.000000000 +0200
++++ configure	2007-10-03 13:14:36.000000000 +0200
+@@ -942,7 +942,11 @@
+ HAVE_SGML_FALSE
+ subdirs
+ LIBOBJS
+-LTLIBOBJS'
++LTLIBOBJS
++HAVE_BASE_TRUE
++HAVE_BASE_FALSE
++HAVE_USERDB_TRUE
++HAVE_USERDB_FALSE'
+ ac_subst_files=''
+       ac_precious_vars='build_alias
+ host_alias
+@@ -959,7 +963,7 @@
+ CXXCPP
+ F77
+ FFLAGS'
+-ac_subdirs_all='libltdl bdbobj gdbmobj md5 sha1 libhmac numlib makedat userdb rfc822 random128 liblock liblog'
++ac_subdirs_all='libltdl bdbobj gdbmobj md5 sha1 libhmac numlib   rfc822 random128 liblock liblog'
+ 
+ # Initialize some variables set by options.
+ ac_init_help=
+@@ -2508,7 +2512,7 @@
+ fi
+ 
+ fi
+-INSTALL_STRIP_PROGRAM="\$(install_sh) -c -s"
++INSTALL_STRIP_PROGRAM="${INSTALL_PROGRAM} -s"
+ 
+ # We need awk for the "check" target.  The system "awk" is bad on
+ # some platforms.
+@@ -21215,8 +21219,12 @@
  
  if test "$doauthuserdb" = "no"
  then
 +	HAVE_USERDB_TRUE='#'
-+	HAVE_USERDB_FALSE=''
++	HAVE_USERDB_FALSE=
  	AUTHUSERDB=""
  else
-+	HAVE_USERDB_TRUE=''
++	HAVE_USERDB_TRUE=
 +	HAVE_USERDB_FALSE='#'
  	AUTHUSERDB="authuserdb"
  	LIBAUTHUSERDB="libauthuserdb.la"
  
-@@ -22351,7 +22355,21 @@
+@@ -22894,6 +22902,20 @@
  fi
  
  
 +if test "${with_base+set}" = set; then
-+  withval="$with_base"
-+  dobase="$withval"
++	withval="$with_base"
++	dobase="$withval"
 +else
-+  dobase="yes"
++	dobase="yes"
 +fi;
- 
++
 +if test "$dobase" = "no"; then
-+  HAVE_BASE_TRUE='#'
-+  HAVE_BASE_FALSE=''
++	HAVE_BASE_TRUE='#'
++	HAVE_BASE_FALSE=
 +else
-+  HAVE_BASE_TRUE=''
-+  HAVE_BASE_FALSE='#'
++	HAVE_BASE_TRUE=
++	HAVE_BASE_FALSE='#'
 +fi
-+  
+ 
+  if test "$HAVE_LDAP" = 1; then
+   HAVE_LDAP_TRUE=
+@@ -23604,7 +23626,7 @@
  
  
- if test "$HAVE_LDAP" = 1; then
-@@ -23711,9 +23729,9 @@
+ 	_SAVE_LIBS=$LIBS
+-	LIBS="$VPOPMAILLIBS $CRYPTLIBS $LIBS"
++	LIBS="$VPOPMAILLIBS -lcrypt -lcrypt -lcrypt $CRYPTLIBS $LIBS"
+ 	{ echo "$as_me:$LINENO: checking for open_smtp_relay" >&5
+ echo $ECHO_N "checking for open_smtp_relay... $ECHO_C" >&6; }
+ if test "${ac_cv_func_open_smtp_relay+set}" = set; then
+@@ -24180,9 +24202,9 @@
  if test "$doauthmysql" = ""
  then
  	LIBS="$MYSQL_LIBS $LIBS"
--	echo "$as_me:$LINENO: checking for mysql_connect" >&5
--echo $ECHO_N "checking for mysql_connect... $ECHO_C" >&6
+-	{ echo "$as_me:$LINENO: checking for mysql_connect" >&5
+-echo $ECHO_N "checking for mysql_connect... $ECHO_C" >&6; }
 -if test "${ac_cv_func_mysql_connect+set}" = set; then
-+	echo "$as_me:$LINENO: checking for mysql_real_connect" >&5
-+echo $ECHO_N "checking for mysql_real_connect... $ECHO_C" >&6
++	{ echo "$as_me:$LINENO: checking for mysql_real_connect" >&5
++echo $ECHO_N "checking for mysql_real_connect... $ECHO_C" >&6; }
 +if test "${ac_cv_func_mysql_real_connect+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    cat >conftest.$ac_ext <<_ACEOF
-@@ -23722,12 +23740,12 @@
+@@ -24191,12 +24213,12 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -64,81 +103,77 @@
      Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
      <limits.h> exists even on freestanding compilers.  */
  
-@@ -23737,7 +23755,7 @@
+@@ -24206,7 +24228,7 @@
  # include <assert.h>
  #endif
  
 -#undef mysql_connect
 +#undef mysql_real_connect
  
- /* Override any gcc2 internal prototype to avoid an error.  */
+ /* Override any GCC internal prototype to avoid an error.
+    Use char because int might match the return type of a GCC
+@@ -24214,18 +24236,18 @@
  #ifdef __cplusplus
-@@ -23746,14 +23764,14 @@
+ extern "C"
  #endif
- /* We use char because int might match the return type of a gcc2
-    builtin and then its argument prototype would still apply.  */
 -char mysql_connect ();
 +char mysql_real_connect ();
  /* The GNU C library defines this for functions which it implements
      to always fail with ENOSYS.  Some functions are actually named
      something starting with __ and the normal name is an alias.  */
--#if defined (__stub_mysql_connect) || defined (__stub___mysql_connect)
-+#if defined (__stub_mysql_real_connect) || defined (__stub___mysql_real_connect)
+-#if defined __stub_mysql_connect || defined __stub___mysql_connect
++#if defined __stub_mysql_real_connect || defined __stub___mysql_real_connect
  choke me
- #else
--char (*f) () = mysql_connect;
-+char (*f) () = mysql_real_connect;
  #endif
- #ifdef __cplusplus
- }
-@@ -23762,7 +23780,7 @@
+ 
  int
  main ()
  {
--return f != mysql_connect;
-+return f != mysql_real_connect;
+-return mysql_connect ();
++return mysql_real_connect ();
    ;
    return 0;
  }
-@@ -23789,19 +23807,19 @@
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
+@@ -24248,20 +24270,20 @@
+ 	 test ! -s conftest.err
+        } && test -s conftest$ac_exeext &&
+        $as_test_x conftest$ac_exeext; then
 -  ac_cv_func_mysql_connect=yes
 +  ac_cv_func_mysql_real_connect=yes
  else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
  
--ac_cv_func_mysql_connect=no
-+ac_cv_func_mysql_real_connect=no
+-	ac_cv_func_mysql_connect=no
++	ac_cv_func_mysql_real_connect=no
  fi
- rm -f conftest.err conftest.$ac_objext \
+ 
+ rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
        conftest$ac_exeext conftest.$ac_ext
  fi
--echo "$as_me:$LINENO: result: $ac_cv_func_mysql_connect" >&5
--echo "${ECHO_T}$ac_cv_func_mysql_connect" >&6
+-{ echo "$as_me:$LINENO: result: $ac_cv_func_mysql_connect" >&5
+-echo "${ECHO_T}$ac_cv_func_mysql_connect" >&6; }
 -if test $ac_cv_func_mysql_connect = yes; then
-+echo "$as_me:$LINENO: result: $ac_cv_func_mysql_real_connect" >&5
-+echo "${ECHO_T}$ac_cv_func_mysql_real_connect" >&6
++{ echo "$as_me:$LINENO: result: $ac_cv_func_mysql_real_connect" >&5
++echo "${ECHO_T}$ac_cv_func_mysql_real_connect" >&6; }
 +if test $ac_cv_func_mysql_real_connect = yes; then
    doauthmysql="yes"
  
  fi
-@@ -23911,9 +23929,9 @@
+@@ -24362,9 +24384,9 @@
  else
  	saveLIBS="$LIBS"
  	LIBS="$MYSQL_LIBS $LIBS"
--	echo "$as_me:$LINENO: checking for mysql_connect" >&5
--echo $ECHO_N "checking for mysql_connect... $ECHO_C" >&6
+-	{ echo "$as_me:$LINENO: checking for mysql_connect" >&5
+-echo $ECHO_N "checking for mysql_connect... $ECHO_C" >&6; }
 -if test "${ac_cv_func_mysql_connect+set}" = set; then
-+	echo "$as_me:$LINENO: checking for mysql_real_connect" >&5
-+echo $ECHO_N "checking for mysql_real_connect... $ECHO_C" >&6
++	{ echo "$as_me:$LINENO: checking for mysql_real_connect" >&5
++echo $ECHO_N "checking for mysql_real_connect... $ECHO_C" >&6; }
 +if test "${ac_cv_func_mysql_real_connect+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    cat >conftest.$ac_ext <<_ACEOF
-@@ -23922,12 +23940,12 @@
+@@ -24373,12 +24395,12 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -154,75 +189,93 @@
      Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
      <limits.h> exists even on freestanding compilers.  */
  
-@@ -23937,7 +23955,7 @@
+@@ -24388,7 +24410,7 @@
  # include <assert.h>
  #endif
  
 -#undef mysql_connect
 +#undef mysql_real_connect
  
- /* Override any gcc2 internal prototype to avoid an error.  */
+ /* Override any GCC internal prototype to avoid an error.
+    Use char because int might match the return type of a GCC
+@@ -24396,18 +24418,18 @@
  #ifdef __cplusplus
-@@ -23946,14 +23964,14 @@
+ extern "C"
  #endif
- /* We use char because int might match the return type of a gcc2
-    builtin and then its argument prototype would still apply.  */
 -char mysql_connect ();
 +char mysql_real_connect ();
  /* The GNU C library defines this for functions which it implements
      to always fail with ENOSYS.  Some functions are actually named
      something starting with __ and the normal name is an alias.  */
--#if defined (__stub_mysql_connect) || defined (__stub___mysql_connect)
-+#if defined (__stub_mysql_real_connect) || defined (__stub___mysql_real_connect)
+-#if defined __stub_mysql_connect || defined __stub___mysql_connect
++#if defined __stub_mysql_real_connect || defined __stub___mysql_real_connect
  choke me
- #else
--char (*f) () = mysql_connect;
-+char (*f) () = mysql_real_connect;
  #endif
- #ifdef __cplusplus
- }
-@@ -23962,7 +23980,7 @@
+ 
  int
  main ()
  {
--return f != mysql_connect;
-+return f != mysql_real_connect;
+-return mysql_connect ();
++return mysql_real_connect ();
    ;
    return 0;
  }
-@@ -23989,19 +24007,19 @@
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
+@@ -24430,20 +24452,20 @@
+ 	 test ! -s conftest.err
+        } && test -s conftest$ac_exeext &&
+        $as_test_x conftest$ac_exeext; then
 -  ac_cv_func_mysql_connect=yes
 +  ac_cv_func_mysql_real_connect=yes
  else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
  
--ac_cv_func_mysql_connect=no
-+ac_cv_func_mysql_real_connect=no
+-	ac_cv_func_mysql_connect=no
++	ac_cv_func_mysql_real_connect=no
  fi
- rm -f conftest.err conftest.$ac_objext \
+ 
+ rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
        conftest$ac_exeext conftest.$ac_ext
  fi
--echo "$as_me:$LINENO: result: $ac_cv_func_mysql_connect" >&5
--echo "${ECHO_T}$ac_cv_func_mysql_connect" >&6
+-{ echo "$as_me:$LINENO: result: $ac_cv_func_mysql_connect" >&5
+-echo "${ECHO_T}$ac_cv_func_mysql_connect" >&6; }
 -if test $ac_cv_func_mysql_connect = yes; then
-+echo "$as_me:$LINENO: result: $ac_cv_func_mysql_real_connect" >&5
-+echo "${ECHO_T}$ac_cv_func_mysql_real_connect" >&6
++{ echo "$as_me:$LINENO: result: $ac_cv_func_mysql_real_connect" >&5
++echo "${ECHO_T}$ac_cv_func_mysql_real_connect" >&6; }
 +if test $ac_cv_func_mysql_real_connect = yes; then
    LIBAUTHMYSQL="libauthmysql.la"
  		HAVE_AUTHMYSQL=1
  else
-@@ -26433,6 +26451,10 @@
- s,@subdirs@,$subdirs,;t t
- s,@LIBOBJS@,$LIBOBJS,;t t
- s,@LTLIBOBJS@,$LTLIBOBJS,;t t
-+s,@HAVE_BASE_TRUE@,$HAVE_BASE_TRUE,;t t
-+s,@HAVE_BASE_FALSE@,$HAVE_BASE_FALSE,;t t
-+s,@HAVE_USERDB_TRUE@,$HAVE_USERDB_TRUE,;t t
-+s,@HAVE_USERDB_FALSE@,$HAVE_USERDB_FALSE,;t t
- CEOF
+@@ -25973,7 +25995,7 @@
+   HAVE_SGML_FALSE=
+ fi
  
+-subdirs="$subdirs libltdl bdbobj gdbmobj md5 sha1 libhmac numlib makedat userdb rfc822 random128 liblock liblog"
++subdirs="$subdirs libltdl bdbobj gdbmobj md5 sha1 libhmac numlib   rfc822 random128 liblock liblog"
+ 
+ 
+ ac_config_files="$ac_config_files Makefile authdaemond authdaemonrc authsystem.passwd README.authdebug.html dbobj.h authmigrate courier-authlib.spec courier-authlib.lpspec courier-authlib.sysvinit userdb-test-cram-md5.pl"
+@@ -26881,7 +26903,7 @@
+ LIBAUTHSHADOW!$LIBAUTHSHADOW$ac_delim
+ LIBAUTHPWD!$LIBAUTHPWD$ac_delim
+ vpopmail_home!$vpopmail_home$ac_delim
+-VPOPMAILLIBS!$VPOPMAILLIBS$ac_delim
++VPOPMAILLIBS!$VPOPMAILLIBS -lcrypt -lcrypt -lcrypt$ac_delim
+ LIBAUTHVCHKPW!$LIBAUTHVCHKPW$ac_delim
+ authpgsqlrc!$authpgsqlrc$ac_delim
+ PG_CONFIG!$PG_CONFIG$ac_delim
+@@ -26915,9 +26937,12 @@
+ subdirs!$subdirs$ac_delim
+ LIBOBJS!$LIBOBJS$ac_delim
+ LTLIBOBJS!$LTLIBOBJS$ac_delim
++HAVE_BASE_TRUE!$HAVE_BASE_TRUE$ac_delim
++HAVE_BASE_FALSE!$HAVE_BASE_FALSE$ac_delim
++HAVE_AUTHDB_TRUE!$HAVE_AUTHDB_TRUE$ac_delim
++HAVE_AUTHDB_FALSE!$HAVE_AUTHDB_FALSE$ac_delim
  _ACEOF
+-
+-  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 77; then
++  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 81; then
+     break
+   elif $ac_last_try; then
+     { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5
