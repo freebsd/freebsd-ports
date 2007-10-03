@@ -16,7 +16,10 @@
 # $FreeBSD$
 #
 
-XORG_Include_MAINTAINER=		x11@FreeBSD.org
+.if !defined(_POSTMKINCLUDED) && !defined(Xorg_Pre_Include)
+
+Xorg_Include_MAINTAINER=	x11@FreeBSD.org
+Xorg_Pre_Include=		bsd.xorg.mk
 
 # Some notes:
 #
@@ -141,10 +144,11 @@ CONFIGURE_ARGS+=	--with-xkb-path=${X11BASE}/share/X11/xkb
 
 .endif
 
-# Might not be useful, need to check this later.
-.if defined(USE_XORG)
-USE_GNOME+=	pkgconfig
 .endif
+
+.if defined(_POSTMKINCLUDED) && !defined(Xorg_Post_Include)
+
+Xorg_Post_Include=		bsd.xorg.mk
 
 # Register all xorg .pc files here.
 # foo_LIB_PC_DEPENDS means it should go to BUILD_DEPENDS *and* RUN_DEPENDS.
@@ -258,4 +262,6 @@ check-latest:
 				${ECHO_CMD} "${PORTNAME} $$ver is newer than current version."; \
 			fi; \
 		done
+.endif
+
 .endif
