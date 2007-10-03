@@ -8,7 +8,8 @@
 PORTNAME=	pcmanx
 PORTVERSION=	0.3.6
 CATEGORIES=	chinese net gnome
-MASTER_SITES=	http://pcmanx.csie.net/release/
+MASTER_SITES=	http://pcmanx.csie.net/release/ \
+		LOCAL/chinsan
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
 
 MAINTAINER=	chinsan@FreeBSD.org
