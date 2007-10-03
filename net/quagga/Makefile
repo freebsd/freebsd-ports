@@ -7,7 +7,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.99.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/ \
 		http://www.ru.quagga.net/download/ \
@@ -45,7 +45,7 @@ OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/share/examples/quagga
+CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/share/examples/quagga --enable-pidfile-mask=0644
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \

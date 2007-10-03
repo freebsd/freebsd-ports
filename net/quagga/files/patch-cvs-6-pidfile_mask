@@ -1,0 +1,107 @@
+--- configure.ac	7 Sep 2007 16:54:01 -0000	1.139
++++ configure.ac	2 Oct 2007 13:01:49 -0000
+@@ -233,6 +233,8 @@
+ [  --enable-configfile-mask=ARG  set mask for config files])
+ AC_ARG_ENABLE(logfile_mask,
+ [  --enable-logfile-mask=ARG     set mask for log files])
++AC_ARG_ENABLE(pidfile_mask,
++[  --enable-pidfile-mask=ARG     set mask for PID files])
+ 
+ AC_ARG_ENABLE(rtadv,
+ [  --disable-rtadv               disable IPV6 router advertisement feature])
+@@ -344,6 +346,9 @@
+ enable_logfile_mask=${enable_logfile_mask:-0600}
+ AC_DEFINE_UNQUOTED(LOGFILE_MASK, ${enable_logfile_mask}, Mask for log files)
+ 
++enable_pidfile_mask=${enable_pidfile_mask:-0600}
++AC_DEFINE_UNQUOTED(PIDFILE_MASK, ${enable_pidfile_mask}, Mask for PID files)
++
+ MULTIPATH_NUM=1
+ 
+ case "${enable_multipath}" in
+@@ -1461,6 +1466,7 @@
+ group for vty sockets	: ${enable_vty_group}
+ config file mask        : ${enable_configfile_mask}
+ log file mask           : ${enable_logfile_mask}
++PID file mask           : ${enable_pidfile_mask}
+ 
+ The above user and group must have read/write access to the state file
+ directory and to the config files in the config file directory."
+--- lib/pid_output.c	17 Dec 2004 20:50:00 -0000	1.9
++++ lib/pid_output.c	2 Oct 2007 13:01:49 -0000
+@@ -36,7 +36,7 @@
+ 
+   pid = getpid();
+ 
+-  oldumask = umask(0777 & ~LOGFILE_MASK);
++  oldumask = umask(0777 & ~PIDFILE_MASK);
+   fp = fopen (path, "w");
+   if (fp != NULL) 
+     {
+@@ -67,8 +67,8 @@
+ 
+   pid = getpid ();
+ 
+-  oldumask = umask(0777 & ~LOGFILE_MASK);
+-  fd = open (path, O_RDWR | O_CREAT, LOGFILE_MASK);
++  oldumask = umask(0777 & ~PIDFILE_MASK);
++  fd = open (path, O_RDWR | O_CREAT, PIDFILE_MASK);
+   if (fd < 0)
+     {
+       zlog_err("Can't create pid lock file %s (%s), exiting",
+--- config.h.in	Fri Sep  7 20:56:20 2007
++++ config.h.in	Wed Oct  3 11:02:58 2007
+@@ -602,6 +602,9 @@
+ /* zebra PID */
+ #undef PATH_ZEBRA_PID
+ 
++/* Mask for PID files */
++#undef PIDFILE_MASK
++
+ /* Quagga Group */
+ #undef QUAGGA_GROUP
+ 
+--- configure	Fri Sep  7 20:54:55 2007
++++ configure	Wed Oct  3 11:02:51 2007
+@@ -1557,6 +1557,7 @@
+   --enable-vty-group=ARG  set vty sockets to have specified group as owner
+   --enable-configfile-mask=ARG  set mask for config files
+   --enable-logfile-mask=ARG     set mask for log files
++  --enable-pidfile-mask=ARG     set mask for PID files
+   --disable-rtadv               disable IPV6 router advertisement feature
+   --enable-irdp                 enable IRDP server support in zebra
+   --enable-isis-topology        enable IS-IS topology generator
+@@ -19976,6 +19891,11 @@
+   enableval=$enable_logfile_mask;
+ fi
+ 
++# Check whether --enable-pidfile_mask was given.
++if test "${enable_pidfile_mask+set}" = set; then
++  enableval=$enable_pidfile_mask;
++fi
++
+ 
+ # Check whether --enable-rtadv was given.
+ if test "${enable_rtadv+set}" = set; then
+@@ -20177,6 +20097,13 @@
+ _ACEOF
+ 
+ 
++enable_pidfile_mask=${enable_pidfile_mask:-0600}
++
++cat >>confdefs.h <<_ACEOF
++#define PIDFILE_MASK ${enable_pidfile_mask}
++_ACEOF
++
++
+ MULTIPATH_NUM=1
+ 
+ case "${enable_multipath}" in
+@@ -35773,6 +35700,7 @@
+ group for vty sockets	: ${enable_vty_group}
+ config file mask        : ${enable_configfile_mask}
+ log file mask           : ${enable_logfile_mask}
++PID file mask           : ${enable_pidfile_mask}
+ 
+ The above user and group must have read/write access to the state file
+ directory and to the config files in the config file directory."
