@@ -11,23 +11,14 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.listmanager.org/v${PORTVERSION}/ \
 		http://www.listmanager.org/
 DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
-.endif
-
-.if ${OSVERSION} >= 440000
 EXTRACT_SUFX=	.freebsd44
-.else
-EXTRACT_SUFX=	.freebsd35
-.endif
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} INSTALL help.tar.gz listmanager.8 ack
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gshapiro@FreeBSD.org
 COMMENT=	Fully-featured mailing list manager
+
+LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
@@ -44,10 +35,10 @@ pre-patch:
 	(cd ${WRKSRC} && ${TAR} xfz help.tar.gz)
 
 post-patch:
-	@ for file in listmanager.cf pkg-message setup; do \
+	@ for f in listmanager.cf pkg-message setup; do \
 		${SED}	-e "s|@@VARPREFIX@@|${LISTMANAGER_HOME}|g" \
 			-e "s|@@INSPREFIX@@|${PREFIX}|g" \
-			 < ${FILESDIR}/$$file.in > ${WRKSRC}/$$file; \
+			 < ${FILESDIR}/$$f.in > ${WRKSRC}/$$f; \
 	done
 
 do-install:
@@ -65,4 +56,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

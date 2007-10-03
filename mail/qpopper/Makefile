@@ -60,10 +60,6 @@ OPTIONS=	APOP_ONLY	"build with APOP authentication only" off \
 
 .include <bsd.port.pre.mk>
 
-.if  ${OSVERSION} < 400014
-WITHOUT_IPV6=	yes
-.endif
-
 .if !defined(WITHOUT_IPV6)
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
 PATCHFILES=	qpopper4.0.9-ipv6-20060626.diff.gz

@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=	--without-ssl
 
 ## IPv6 support
 #
-.if defined(WITHOUT_IPV6) || ${OSVERSION} <= 400014
+.if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 

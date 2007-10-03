@@ -551,10 +551,6 @@ PLIST_SUB+=	DAEMON="@comment "
 .error EXIMON_ONLY is not user settable
 .endif
 
-.if ${OSVERSION} < 400014
-WITHOUT_IPV6=	yes
-.endif
-
 .if !defined(WITHOUT_IPV6)
 SEDLIST+=	-e 's,^\# (HAVE_IPV6=),\1,'
 .endif

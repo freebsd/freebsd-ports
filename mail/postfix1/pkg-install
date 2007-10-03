@@ -141,29 +141,15 @@ replace() {
 }
 
 if [ x"$2" = xPOST-INSTALL -a -z "${PACKAGE_BUILDING}" ]; then
-    if [ -x /sbin/sysctl ]; then
-        OSVERSION=`/sbin/sysctl -n kern.osreldate`
-    else
-        OSVERSION=`/usr/sbin/sysctl -n kern.osreldate`
-    fi
-    if [ ${OSVERSION} -ge 400014 ]; then
-        if yesno "Would you like to activate Postfix in /etc/mail/mailer.conf" n; then
-            mv -f /etc/mail/mailer.conf /etc/mail/mailer.conf.old
-            echo "#"						>  /etc/mail/mailer.conf
-            echo -n "# Execute the Postfix sendmail program"	>> /etc/mail/mailer.conf
-            echo ", named ${PKG_PREFIX}/sbin/sendmail"		>> /etc/mail/mailer.conf
-            echo "#"						>> /etc/mail/mailer.conf
-            echo "sendmail	${PKG_PREFIX}/sbin/sendmail"	>> /etc/mail/mailer.conf
-            echo "send-mail	${PKG_PREFIX}/sbin/sendmail"	>> /etc/mail/mailer.conf
-            echo "mailq		${PKG_PREFIX}/sbin/sendmail"	>> /etc/mail/mailer.conf
-            echo "newaliases	${PKG_PREFIX}/sbin/sendmail"	>> /etc/mail/mailer.conf
-        fi
-    else
-        if yesno "Would you like to replace {sendmail,mailq,newaliases} with Postfix versions" n; then
-            replace /usr/sbin/sendmail	${PKG_PREFIX}/sbin/sendmail
-            replace /usr/bin/mailq	${PKG_PREFIX}/sbin/sendmail
-            replace /usr/bin/newaliases	${PKG_PREFIX}/sbin/sendmail
-            echo "Done."
-        fi
+    if yesno "Would you like to activate Postfix in /etc/mail/mailer.conf" n; then
+	mv -f /etc/mail/mailer.conf /etc/mail/mailer.conf.old
+	echo "#"						>  /etc/mail/mailer.conf
+	echo -n "# Execute the Postfix sendmail program"	>> /etc/mail/mailer.conf
+	echo ", named ${PKG_PREFIX}/sbin/sendmail"		>> /etc/mail/mailer.conf
+	echo "#"						>> /etc/mail/mailer.conf
+	echo "sendmail	${PKG_PREFIX}/sbin/sendmail"	>> /etc/mail/mailer.conf
+	echo "send-mail	${PKG_PREFIX}/sbin/sendmail"	>> /etc/mail/mailer.conf
+	echo "mailq		${PKG_PREFIX}/sbin/sendmail"	>> /etc/mail/mailer.conf
+	echo "newaliases	${PKG_PREFIX}/sbin/sendmail"	>> /etc/mail/mailer.conf
     fi
 fi
