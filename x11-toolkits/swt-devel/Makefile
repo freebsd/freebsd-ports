@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	swt-devel
-DISTVERSION=	3.3
-PORTREVISION=	1
+DISTVERSION=	3.4M2
+#PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	R-${DISTVERSION}-200706251500
+MASTER_SITE_SUBDIR=	S-3.4M2-200709210919
 DISTNAME=	swt-${DISTVERSION}-${DIST_EXT}
 
 MAINTAINER=	rnoland@2hip.net
@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-${ARCH}-os.c
 
-SWT_VERSION=	3346
+SWT_VERSION=	3410
 OUTPUT_JAR=	swt-devel.jar
 
 USE_ZIP=	yes
@@ -67,7 +67,7 @@ USE_GECKO=	mozilla firefox seamonkey
 
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
-PLIST_FILES+=	lib/libswt-${GECKO}-gtk-%%BUILD%%.so
+PLIST_FILES+=	lib/libswt-mozilla-gtk-%%BUILD%%.so
 MAKE_MOZILLA=	make_mozilla
 .endif
 
@@ -88,8 +88,6 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|mozilla-|${GECKO}-|' \
 		${WRKSRC}/build.sh
-	@${REINPLACE_CMD} -e 's|swt-mozilla|swt-${GECKO}|' \
-		${WRKSRC}/make_freebsd.mak
 
 do-install:
 	${MKDIR} ${JAVAJARDIR}
