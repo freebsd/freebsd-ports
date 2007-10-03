@@ -76,7 +76,7 @@ pre-everything::
 WITHOUT_OPTIMIZED_ASM=	yes
 .endif
 
-.if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
