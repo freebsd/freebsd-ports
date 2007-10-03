@@ -5,6 +5,7 @@ bin/h264_parse
 bin/lboxcrop
 bin/mp4creator
 bin/mp4encode
+bin/mp4live
 bin/mp4player
 bin/mpeg2video_parse
 bin/mpeg4ip-config
