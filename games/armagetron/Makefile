@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	armagetronad
 DISTNAME=	armagetronad-${PORTVERSION}
 
-MAINTAINER=	mux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiplayer networked Tron clone in 3D
 
 USE_GL=		yes
