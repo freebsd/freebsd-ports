@@ -53,12 +53,10 @@ PORTDOCS=	Changelog.de Changelog.en Changelog.fr \
 		TODO freebsd.doc
 MAN1=		lxdvdrip.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
 PLIST_FILES=	bin/vamps_${PORTNAME} \
 		bin/play_cell_${PORTNAME}
-.endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -91,10 +89,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc-pak/lxdvdrip.conf.EN ${PREFIX}/etc/lxdvdrip.conf
 .endif
 # binaries
-.if ${OSVERSION} > 500000
 	${INSTALL_PROGRAM} ${WRKSRC}/vamps/vamps_${PORTNAME} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/vamps/play_cell_${PORTNAME} ${PREFIX}/bin
-.endif
 	${INSTALL_PROGRAM} ${WRKSRC}/dvdbackup/dvdbackup_${PORTNAME} ${PREFIX}/bin
 # examples
 	@${MKDIR} ${EXAMPLESDIR}

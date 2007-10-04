@@ -32,11 +32,7 @@ MAN1=		pvr250-setchannel.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-MODULESDIR=	/modules
-.else
 MODULESDIR=	/boot/kernel
-.endif
 PLIST_SUB=	MODULESDIR=${MODULESDIR}
 
 .if ${OSVERSION} >= 700031
@@ -53,21 +49,12 @@ IGNORE=		You need the kernel sources installed to build this module.
 .endif
 
 patch-iicbb:
-.if ${OSVERSION} < 500000
-	@if [ -z "`${GREP} cxm_iic /usr/src/sys/dev/iicbus/iicbb.c`" ]; then \
-	    ${PATCH} -d/sys <${WRKDIR}/dev/cxm/Patch.iicbb-fbsd4; \
-	    ${ECHO_CMD} "Patched /usr/src/sys/dev/iicbus/iicbb.c"; \
-	else \
-	    ${ECHO_CMD} "/usr/src/sys/dev/iicbus/iicbb.c was already patched"; \
-	fi
-.else
 	@if [ -z "`${GREP} cxm_iic /usr/src/sys/dev/iicbus/iicbb.c`" ]; then \
 	    ${PATCH} -d/sys <${WRKDIR}/dev/cxm/Patch.iicbb-fbsd5; \
 	    ${ECHO_CMD} "Patched /usr/src/sys/dev/iicbus/iicbb.c"; \
 	else \
 	    ${ECHO_CMD} "/usr/src/sys/dev/iicbus/iicbb.c was already patched"; \
 	fi
-.endif
 
 do-extract:
 	${MKDIR} ${WRKDIR}
@@ -76,15 +63,8 @@ do-extract:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${PVRTOOLS}.tar.gz ${EXTRACT_AFTER_ARGS};
 
 post-patch:
-.if ${OSVERSION} < 500000
-	${REINPLACE_CMD} -e 's/cxm0/bktr0/' \
-		${WRKDIR}/${PVRTOOLS}/setchannel.c
-	${REINPLACE_CMD} -e 's/tuner0/bktr0/' \
-		${WRKDIR}/${PVRTOOLS}/setchannel.c
-.else
 	${REINPLACE_CMD} -e 's/tuner0/cxm0/' \
 		${WRKDIR}/${PVRTOOLS}/setchannel.c
-.endif
 
 do-configure:
 	cd ${WRKDIR}/dev/cxm; \
@@ -101,10 +81,6 @@ do-install:
 	${INSTALL_MAN} ${WRKDIR}/${PVRTOOLS}/cxm.4 ${PREFIX}/man/man4/cxm.4
 	${INSTALL_MAN} ${WRKDIR}/${PVRTOOLS}/pvr250-setchannel.1 ${PREFIX}/man/man1/pvr250-setchannel.1
 	${INSTALL_PROGRAM} ${WRKDIR}/${PVRTOOLS}/setchannel ${PREFIX}/bin/pvr250-setchannel
-.if ${OSVERSION} < 500000
-	cd /dev; \
-	./MAKEDEV bktr0
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

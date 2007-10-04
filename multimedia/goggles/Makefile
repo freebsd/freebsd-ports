@@ -35,11 +35,7 @@ pre-everything::
 .ifdef(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
-.if ${OSVERSION} < 500000
-DEFAULT_DVD_DEVICE=/dev/acd0c
-.else
 DEFAULT_DVD_DEVICE=/dev/acd0
-.endif
 .endif
 
 PLIST_FILES=	\

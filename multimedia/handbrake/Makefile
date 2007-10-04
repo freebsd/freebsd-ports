@@ -40,22 +40,13 @@ PLIST_FILES=	bin/handbrake
 
 JAM?=		${LOCALBASE}/bin/jam
 SYSCTL_CMD?=	/sbin/sysctl
+WITH_DVD_DEVICE?=	acd0
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude beos \
 			--exclude contrib \
 			--exclude gtk2 \
 			--exclude macosx \
 			--exclude wx
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GETOPT_LONG=	yes
-MAKE_ENV=		EXTRA_LIBS="-lcipher -lgnugetopt"
-WITH_DVD_DEVICE?=	acd0c
-.else
-WITH_DVD_DEVICE?=	acd0
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
@@ -74,4 +65,4 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

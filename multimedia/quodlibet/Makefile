@@ -110,10 +110,6 @@ BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
 		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
 .endif
 
-.if ${OSVERSION} < 500000
-IGNORE=	is unsupported on FreeBSD 4.x
-.endif
-
 do-configure:
 	@${PYTHON_CMD} ${WRKSRC}/check.py
 

@@ -17,6 +17,7 @@ COMMENT=	Viewer for Nextview Electronic TV Programme Guide (needs bktr driver)
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
+NOT_FOR_ARCHS=	sparc64
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_X_PREFIX=	yes
@@ -25,13 +26,8 @@ MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} WRKSRC=${WRKSRC}
 MAN1=		nxtvepg.1
 MYPORTDOCS=	README TODO CHANGES manual.html
 
-.include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-ONLY_FOR_ARCHS=	i386
-.else
-NOT_FOR_ARCHS=	sparc64
-.endif
+.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 502100
 post-patch:

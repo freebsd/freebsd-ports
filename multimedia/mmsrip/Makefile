@@ -21,11 +21,4 @@ MAN1=		mmsrip.1
 
 PLIST_FILES=	bin/mmsrip
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-post-patch:
-	${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's/stdint.h/inttypes.h/g'
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

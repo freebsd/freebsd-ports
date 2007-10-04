@@ -23,12 +23,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-CFLAGS+=	-O2
-.endif
-
 post-patch:
 	${TOUCH} -f ${WRKSRC}/bootstrapped
 # Speed up configure by not using 2 unneeded configure scripts.
@@ -53,4 +47,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/include
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
