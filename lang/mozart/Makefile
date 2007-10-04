@@ -48,8 +48,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/oz \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 pre-extract:
