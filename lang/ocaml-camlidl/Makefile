@@ -63,4 +63,4 @@ test:
 		${WRKSRC}/tests/Makefile
 	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE} all
 
-.include <bsd.port.port.mk>
+.include <bsd.port.post.mk>
