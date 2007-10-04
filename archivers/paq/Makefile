@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	paq
-DISTVERSION=	8o4v2
+DISTVERSION=	8o6
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cs.fit.edu/~mmahoney/compression/
 DISTNAME=	${PORTNAME}${DISTVERSION}
@@ -27,7 +27,7 @@ BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 CXXFLAGS+=	-DUNIX
 ASM1?=	nasm -f elf -o
 ASM2?=
-.if !defined(WITH_SSE)
+.if !defined(WITH_SSE2)
 ASMFILE=	paq7asm
 .else
 ASMFILE=	paq7asmsse
@@ -54,8 +54,14 @@ pre-everything::
 	@${ECHO_MSG} "now and use \"make WITHOUT_ASM=yes\"."
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If you wish to use the version of the assembly code that is"
-	@${ECHO_MSG} "optimized for x86 (not amd64) processors with SSE instruction"
-	@${ECHO_MSG} "support, hit Ctrl-C now and use \"make WITH_SSE=yes\"."
+	@${ECHO_MSG} "optimized for x86 or amd64 processors with SSE2 instruction"
+	@${ECHO_MSG} "support that are running in 32-bit mode, hit Ctrl-C now and use"
+	@${ECHO_MSG} "\"make WITH_SSE2=yes\"."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "This software is computationally demanding, and users are"
+	@${ECHO_MSG} "advised to employ compiler optimizations when building it."
+	@${ECHO_MSG} "In particular, authors of this software have used such flags"
+	@${ECHO_MSG} "as \"-O2\" to advantage."
 	@${ECHO_MSG}
 
 do-build:
