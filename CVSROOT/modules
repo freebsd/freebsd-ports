@@ -14904,7 +14904,6 @@ sniffit		ports/net/sniffit
 snmp++		ports/net-mgmt/snmp++
 snmptt		ports/net-mgmt/snmptt
 snns		ports/math/snns
-snobol		ports/lang/snobol
 snobol4		ports/lang/snobol4
 snooper		ports/comms/snooper
 snoopy		ports/security/snoopy
