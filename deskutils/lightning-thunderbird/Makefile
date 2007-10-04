@@ -25,6 +25,7 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 WANT_GNOME=	yes
+WANT_PERL=	yes
 SUNBIRD=	${PORTNAME}
 SUNBIRD_ICON_SRC=	${PREFIX}/lib/sunbird/icons/default.xpm
 SUNBIRD_ICON=		${PORTNAME}.xpm
@@ -41,7 +42,11 @@ MOZ_MK_OPTIONS=	MOZ_CO_PROJECT=calendar
 .include "${PORTSDIR}/www/mozilla/Makefile.common"
 
 .if ${ARCH}=="sparc64"
-IGNORE=	 does not build
+BROKEN=		does not build
+.endif
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
 .endif
 
 post-patch:
