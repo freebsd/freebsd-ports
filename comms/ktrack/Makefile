@@ -29,12 +29,6 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=	3.3+
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
@@ -46,4 +40,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/en/index.docbook ${PREFIX}/share/doc/HTML/en/ktrack/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

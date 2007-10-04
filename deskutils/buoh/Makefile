@@ -35,12 +35,6 @@ CFLAGS+=		-g
 STRIP=
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build on 4.X
-.endif
-
 pre-everything::
 .if !defined(WITH_DEBUG)
 	@${ECHO_MSG} "You may specify the following on the command line:"
@@ -60,4 +54,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

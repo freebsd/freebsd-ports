@@ -26,13 +26,6 @@ MAKE_ARGS+=	QTDIR=${QT_PREFIX} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		DESTDIR="" TARGET="qsstv" DOCSDIR="${DOCSDIR}"
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${OSVERSION} < 500000
-	@${FIND} ${WRKSRC} -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} -e 's|)round(|)rint(|g ; s|) round(|)rint(|g ; s|(round)|(rint)|'
-.endif
-
 do-configure:
 	cd ${WRKSRC}; \
 	${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/qmake -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ ${PORTNAME}.pro; \
@@ -45,4 +38,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

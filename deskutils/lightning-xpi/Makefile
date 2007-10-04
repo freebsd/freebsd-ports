@@ -33,7 +33,7 @@ _IGNORE_MSG=	precompiled binaries, contact ahze@FreeBSD.org for build informatio
 ARCH_PORTVERSION?=	0.5
 
 .if ${ARCH}=="i386"
-. if ${OSVERSION} < 600000 && ${OSVERSION} > 500000
+. if ${OSVERSION} < 600000
 OS_VER=	5
 . elif ${OSVERSION} > 600000 && ${OSVERSION} < 700000
 OS_VER=	6
@@ -51,7 +51,7 @@ OS_VER=	7
 IGNORE=	${_IGNORE_MSG}
 . endif
 .elif ${ARCH}=="amd64"
-. if ${OSVERSION} < 600000 && ${OSVERSION} > 500000
+. if ${OSVERSION} < 600000
 OS_VER=	5
 . elif ${OSVERSION} > 600000 && ${OSVERSION} < 700000
 OS_VER=	6

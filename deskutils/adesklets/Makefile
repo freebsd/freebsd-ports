@@ -34,14 +34,6 @@ INFO=		adesklets \
 SUB_FILES=	pkg-message
 INSTALLS_EGGINFO=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-.endif
-
 .if !defined(WITHOUT_PERL)
 USE_PERL5=	yes
 PLIST_SUB+=	PERL=""
@@ -67,4 +59,4 @@ post-extract:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

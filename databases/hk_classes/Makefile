@@ -54,10 +54,6 @@ MAN1=		hk_report.1man hk_actionquery.1man hk_exportxml.1man \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		there is no wchar support
-.endif
-
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-dir=${LOCALBASE} \

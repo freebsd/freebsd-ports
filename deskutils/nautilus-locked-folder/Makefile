@@ -32,10 +32,5 @@ post-patch:
 		${WRKSRC}/src/lockedfolder-extension.c
 	@${REINPLACE_CMD} -e 's|gladedir)"\\" \\|gladedir)"\\"|g ; \
 		s|.*-Werror||g' ${WRKSRC}/src/Makefile.in
-.include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN="Does not build"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

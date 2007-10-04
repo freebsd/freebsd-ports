@@ -77,10 +77,6 @@ CONFIGURE_ARGS+=--with-openssl
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		Coredump during build on alpha 4.x
-.endif
-
 .if !defined(SLAVE_ONLY)
 # gnugetopt will always be used if already installed
 .  if ( ${OSVERSION} < 500041 ) && !exists(${LOCALBASE}/include/getopt.h)

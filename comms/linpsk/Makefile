@@ -32,12 +32,6 @@ CONFIGURE_ARGS=	--with-qtdir=${X11BASE} --prefix=${PREFIX}
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not build on FreeBSD 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
@@ -59,4 +53,4 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/LinPSKConfig.xml ${EXAMPLESDIR}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

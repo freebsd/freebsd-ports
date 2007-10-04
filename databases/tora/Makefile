@@ -52,11 +52,6 @@ PREFIX2FIX=	help/preferences.html totool.cpp
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-# Just defining time_t as long in topiechart.h could be sufficient?
-BROKEN=		does not compile with gcc 2.95
-.endif
-
 .if ${OSVERSION} >= 700000
 BROKEN=		does not link with oracle8-client
 .endif
