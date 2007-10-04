@@ -17,7 +17,7 @@ DIST_SUBDIR=	mod_webapp
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module mounts Tomcat web applications
 
-BUILD_DEPENDS=	${NONEXISTANT}:${PORTSDIR}/devel/apr:configure
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/apr:configure
 
 USE_APACHE=	yes
 USE_PYTHON_BUILD=yes
