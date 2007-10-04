@@ -7,11 +7,13 @@
 
 PORTNAME=	xproto
 PORTVERSION=	7.0.10
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 protocol headers
 
 XORG_CAT=	proto
+USE_GNOME=	pkgconfig
 
 .include <bsd.port.mk>
