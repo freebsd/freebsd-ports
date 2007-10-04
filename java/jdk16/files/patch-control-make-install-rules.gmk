@@ -1,0 +1,15 @@
+$FreeBSD$
+
+--- ../../control/make/install-rules.gmk	21 Jul 2006 17:21:00 -0000	1.1.1.2
++++ ../../control/make/install-rules.gmk	6 Sep 2007 17:53:58 -0000	1.2
+@@ -32,6 +32,10 @@
+ 			ALT_NEW_IMAGE_DIR=$(ALT_NEW_IMAGE_DIR) \
+ 			ALT_BUNDLE_DATE=$(BUNDLE_DATE)
+ 
++ifeq ($(BUILD_DEPLOY), true)
++INSTALL_BUILD_ARGUMENTS += INSTALL_DEPLOY=true
++endif
++
+ ifeq ($(DEBUG_NAME), debug)
+ INSTALL_BUILD_ARGUMENTS += VARIANT=DBG
+ endif
