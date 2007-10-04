@@ -76,16 +76,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/coregrind/vg_unistd.h \
 		${PREFIX}/include/valgrind
 
-# Check if kernel is built with USER_LDT option (FreeBSD 4 only)
-.if ${OSVERSION} < 500000
-	@${PREFIX}/bin/valgrind --tool=memcheck true 2> ${WRKDIR}/ldt.test
-	@${GREP} i386_set_ldt ${WRKDIR}/ldt.test >/dev/null &&\
-	${ECHO_CMD} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! && \
-	${ECHO_CMD} Please rebuild your kernel with ``options USER_LDT''! && \
-	${ECHO_CMD} Otherwise, valgrind will not be able to perform pointer analysis! && \
-	${ECHO_CMD} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! || true
-.endif
-
 .ifndef (PACKAGE_BUILDING)
 	@yes | ${PREFIX}/bin/valgrind --tool=memcheck --gen-suppressions=yes true 2>&1 \
 		| ${SED} -e 's,.*{$$,{,'  \

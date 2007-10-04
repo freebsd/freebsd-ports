@@ -102,7 +102,7 @@ PLIST_SUB+=	VMWARE_VMMEMCTL="@comment "
 .endif
 
 .if defined(WITH_VMWARE_VMXNET)
-.if (${OSVERSION} >= 500000) && (${OSVERSION} < 600000)
+.if (${OSVERSION} < 600000)
 PLIST_SUB+=	VMWARE_VMXNET=""
 .if ${BITS} == 32
 .if ${OSVERSION} < 530000
