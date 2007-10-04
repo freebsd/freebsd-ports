@@ -8,7 +8,7 @@
 
 PORTNAME=	glide
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://www2.cons.org/freebsd-distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -23,16 +23,17 @@ ONLY_FOR_ARCHS=	i386
 
 USE_LINUX_PREFIX=yes
 USE_LINUX=	yes
-NO_MTREE=	yes
-NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Glide2.4
 
-do-install:
+do-build:
 	@zcat ${WRKSRC}/dist.tar.gz | \
-		(cd ${PREFIX}/usr; tar fx - lib include bin/test00)
-	${MV} ${PREFIX}/usr/bin/test00 ${PREFIX}/usr/bin/test-glide
+		(cd ${WRKSRC}; tar fx - lib include bin/test00)
 
-post-install:
+do-install:
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${PREFIX}/usr)
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} include ${PREFIX}/usr)
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} bin/test00 \
+		${PREFIX}/usr/bin/test-glide)
 	-/compat/linux/sbin/ldconfig
 
 .include <bsd.port.mk>
