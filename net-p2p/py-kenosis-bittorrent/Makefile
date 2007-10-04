@@ -21,6 +21,8 @@ COMMENT?=	A Kenosis enabled, distributed BitTorrent
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/kenosis/__init__.py:${PORTSDIR}/net-p2p/py-kenosis
 
+BROKEN=		fails to install
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	0.95
