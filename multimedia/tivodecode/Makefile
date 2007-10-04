@@ -15,12 +15,6 @@ COMMENT=	Converts .TiVo files to normal MPEG files
 
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-tivo-parse.c
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's/CFLAGS=/CFLAGS+=/' ${WRKSRC}/Makefile
 
@@ -32,4 +26,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -38,6 +38,7 @@ CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 		CFLAGS="-I${WRKSRC}/common"
 MAKE_ENV=	verbose=yes
 USE_LDCONFIG=	yes
+ONLY_FOR_ARCHS=	alpha amd64 i386
 
 FILES_LIBJPEG=	console/Subdir.mk debug/Subdir.mk x11/Subdir.mk
 
@@ -49,12 +50,6 @@ MAN5=		xawtvrc.5
 MAN8=		v4l-conf.8
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-ONLY_FOR_ARCHS=	i386
-.else
-ONLY_FOR_ARCHS=	alpha amd64 i386
-.endif
 
 .if defined(WITHOUT_AA)
 CONFIGURE_ARGS+=--disable-aa
@@ -68,11 +63,7 @@ PLIST_SUB+=	AA=""
 .if defined(WITH_ZVBI)
 LIB_DEPENDS+=	zvbi.10:${PORTSDIR}/devel/libzvbi
 CONFIGURE_ARGS+=--enable-zvbi
-.if ${OSVERSION} > 500000
 PLIST_SUB+=	ZVBI="" ZVBI5=""
-.else
-PLIST_SUB+=	ZVBI="" ZVBI5="@comment "
-.endif
 .else
 CONFIGURE_ARGS+=--enable-zvbi=no
 PLIST_SUB+=	ZVBI="@comment " ZVBI5="@comment "
@@ -117,10 +108,5 @@ post-patch:
 .for i in ${FILES_LIBJPEG}
 	@${REINPLACE_CMD} -e "s|-ljpeg|-L${LOCALBASE}/lib -ljpeg|g" ${WRKSRC}/$i
 .endfor
-
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e "s|FOUND_ZVBI|NOT_WORKING_&|g" \
-		${WRKSRC}/vbistuff/Subdir.mk ${WRKSRC}/x11/Subdir.mk
-.endif
 
 .include <bsd.port.post.mk>

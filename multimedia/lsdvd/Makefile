@@ -23,14 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 MAN1=		lsdvd.1
 PLIST_FILES=	bin/lsdvd
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-WITH_DVD_DEVICE?=/dev/acd0c
-BROKEN=		does not configure
-.else
 WITH_DVD_DEVICE?=/dev/acd0
-.endif
 
 pre-everything::
 	@${ECHO_MSG} "===> The default DVD device is ${WITH_DVD_DEVICE}"
@@ -42,4 +35,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${WITH_DVD_DEVICE}|' \
 		${WRKSRC}/lsdvd.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

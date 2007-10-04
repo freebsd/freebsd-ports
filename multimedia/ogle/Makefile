@@ -32,6 +32,8 @@ CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE} \
 		--with-liba52=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 
+DEFAULT_DVD_DEVICE?=	/dev/acd0c
+
 MAN1=	ogle.1
 MAN5=	oglerc.5
 
@@ -93,11 +95,5 @@ pre-everything::
 	@${ECHO_MSG} '===> only with 486 processors and above.'
 .endif
 
-# default DVD devices
-.if ${OSVERSION} >= 500000
-DEFAULT_DVD_DEVICE?=	/dev/acd0
-.else
-DEFAULT_DVD_DEVICE?=	/dev/acd0c
-.endif
 
 .include <bsd.port.post.mk>

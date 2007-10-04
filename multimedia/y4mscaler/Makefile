@@ -36,10 +36,6 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|CXXFLAGS =|CXXFLAGS = ${CXXFLAGS} |' \
 		${WRKSRC}/Makefile
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|#define HAVE_STDINT_H 1|#undef HAVE_STDINT_H 1|' \
-		${WRKSRC}/y4m-config.h
-.endif
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/y4mscaler ${PREFIX}/bin/y4mscaler

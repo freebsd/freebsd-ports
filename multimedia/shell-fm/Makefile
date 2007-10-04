@@ -41,10 +41,4 @@ PLIST_FILES=	bin/shell-fm \
 		share/examples/shell-fm/shell-fm.rc-example
 PLIST_DIRS=	share/examples/shell-fm
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -28,15 +28,13 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 PORTDOCS=	README README.links
 
+# Compiling with MMX extensions fails on FreeBSD 5.x
+WITHOUT_MMX=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
 IGNORE=		Supported for i386 architecture only
-.endif
-
-# Compiling with MMX extensions fails on FreeBSD 5.x
-.if ${OSVERSION} >= 500000
-WITHOUT_MMX=	yes
 .endif
 
 .if defined(WITHOUT_MMX)

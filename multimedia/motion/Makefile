@@ -53,13 +53,7 @@ CFLAGS+=	-DWITHOUT_V4L
 
 .if defined(WITH_LINUXTHREADS) || ${OSVERSION} < 504000
 CONFIGURE_ARGS=	--with-linuxthreads
-
-.if ${OSVERSION} > 500000
 LIB_DEPENDS+=	lthread.[35]:${PORTSDIR}/devel/linuxthreads
-.else
-LIB_DEPENDS+=	lthread.[24]:${PORTSDIR}/devel/linuxthreads
-.endif
-
 .endif
 
 post-install:

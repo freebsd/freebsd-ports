@@ -40,10 +40,6 @@ MAN1=	kino.1 kino2raw.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=	does not compile on FreeBSD 4.x
-.endif
-
 .if defined(WITH_FFMPEG_KINO)
 MAN1+=	ffmpeg-kino.1
 .endif

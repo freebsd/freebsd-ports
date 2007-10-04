@@ -64,10 +64,6 @@ PLIST_SUB+=	QT="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		xvid plugin fails to build
-.endif
-
 .if ${OSVERSION} >= 600000
 WITH_OPTIMIZED_CFLAGS=	yes
 .endif
@@ -299,14 +295,6 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^subdirs[[:space:]]*=.*libmad.*$$||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-# int_fast16/32_t are not in 4.x
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|int_fast16_t|int16_t|g; \
-		s|int_fast32_t|int32_t|g' \
-		${WRKSRC}/ffmpeg/libavcodec/jfdctfst.c \
-		${WRKSRC}/ffmpeg/libavcodec/jfdctint.c \
-		${WRKSRC}/ffmpeg/libavcodec/ffv1.c
-.endif
 
 post-configure:
 	@${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
