@@ -15,7 +15,7 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Build a whole bunch of often-required ports for a tinderbox environment
 
 .if !defined(TINDERD_SLEEPTIME)
-IGNORE=		should only be build from within a Tinderbox environment
+IGNORE=		should only be built from within a Tinderbox environment
 .endif
 
 ###############################################################################
