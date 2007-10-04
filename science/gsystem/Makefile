@@ -26,12 +26,6 @@ INSTALLS_SHLIB=	yes
 QTDIR=		${QT_PREFIX}
 QMAKESPEC=	freebsd-g++
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"does not compile with gcc 2.95"
-.endif
-
 do-configure:
 	cd ${WRKSRC}; \
 	export QTDIR=${QTDIR}; \
@@ -53,4 +47,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE};
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

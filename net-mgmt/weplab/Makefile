@@ -18,14 +18,8 @@ GNU_CONFIGURE=	yes
 MAN1=		weplab.1
 PLIST_FILES=	bin/weplab
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Doesn't build on 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS|LDFLAGS) *=,\1 ?=,g' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

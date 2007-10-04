@@ -44,10 +44,6 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} IJSVER=2.7.4
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
 .if !defined(WITHOUT_GUI) || exists(${LOCALBASE}/bin/pylupdate)
 RUN_DEPENDS+=	pylupdate:${PORTSDIR}/x11-toolkits/py-qt
 CONFIGURE_ARGS+=	--enable-gui-build

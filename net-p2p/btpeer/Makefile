@@ -38,20 +38,13 @@ post-patch:
 		-e 's|^LIBS.+$$|LIBS=-L${OPENSSLLIB} ${PTHREAD_LIBS} -L${LOCALBASE}/lib \\|' \
 		${BUILD_WRKSRC}/${MAKEFILE}
 
+.for f in ${PROGRAM_FILES}
+PLIST_FILES+=	bin/${PORTNAME}-${f}
+.endfor
+
 do-install:
-.for file in ${PROGRAM_FILES}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin/${PORTNAME}-${file}
+.for f in ${PROGRAM_FILES}
+	@${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin/${PORTNAME}-${f}
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE= FreeBSD prior to 500000 does not support uuid(3) required\
-	for building
-.endif
-
-.for file in ${PROGRAM_FILES}
-PLIST_FILES+=	bin/${PORTNAME}-${file}
-.endfor
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

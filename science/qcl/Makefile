@@ -16,14 +16,8 @@ COMMENT=	A quantum computer simulator
 
 USE_GETOPT_LONG=yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile
-.endif
-
 do-configure:
 	echo 'PREFIX=${PREFIX}' >>${WRKSRC}/Makefile
 	cd ${WRKSRC} && make dep
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

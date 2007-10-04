@@ -20,12 +20,6 @@ GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_GNOME=	libxml2
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	doesn't compile on FreeBSD 4.x
-.endif
-
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
@@ -34,4 +28,4 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	 NLS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -120,8 +120,4 @@ CFLAGS+=	-Wno-non-template-friend -ftemplate-depth-30
 #BROKEN=		C++ compiler seg-faults, try using a different one and report to ${MAINTAINER}
 .endif
 
-.if ${OSVERSION} < 500000
-#BROKEN=		Does not compile on 4.x
-.endif
-
 .include <bsd.port.post.mk>

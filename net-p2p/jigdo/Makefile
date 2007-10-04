@@ -32,11 +32,6 @@ OPTIONS=	GUI "Build the gtk2 gui" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-NOT_FOR_ARCHS+=	alpha
-BROKEN=		Does not compile
-.endif
-
 .if defined(WITH_GUI)
 CONFIGURE_ARGS+=	--with-gui
 LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \

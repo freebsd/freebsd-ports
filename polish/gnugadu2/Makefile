@@ -166,9 +166,6 @@ PLIST_SUB+=	KDE:="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/gg2.desktop
 	@${REINPLACE_CMD} -e 's| -ldl|| ; s|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/lib/Makefile.in
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/src/plugins/gadu_gadu/libgadu/lib/libgadu-config.h.in
-.endif
 
 post-install:
 .if (${HAVE_GNOME:Mgnomehier}!="")

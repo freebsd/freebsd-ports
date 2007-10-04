@@ -29,11 +29,6 @@ OPTIONS=	PYXML "Add dependency on PyXML (needed for crawler only)" on
 
 .include <bsd.port.pre.mk>
 
-# Enable workaround for bad libc in FreeBSD 4.x
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/FBSD4-patch-BitTorrent_defaultargs.py
-.endif
-
 .if !defined(WITHOUT_PYXML)
 RUN_DEPENDS+=	${PYXML}
 .endif

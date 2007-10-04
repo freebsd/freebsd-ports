@@ -28,10 +28,4 @@ USE_AUTOTOOLS=	automake:19:env autoconf:261
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

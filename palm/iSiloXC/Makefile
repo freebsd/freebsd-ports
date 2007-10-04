@@ -14,15 +14,12 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}BSD
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Converts documents from text/html files or URLs to iSilo format
 
+LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 ONLY_FOR_ARCHS=	i386
-
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 500000
-    LIB_DEPENDS+=       c.4:${PORTSDIR}/misc/compat4x
-.endif
 
 MAN1=		iSiloXC.1
 MAN5=		ixl.5
@@ -39,4 +36,4 @@ do-install:
 	@${MKDIR} ${MAN5PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/ixl.5 ${MAN5PREFIX}/man/man5
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

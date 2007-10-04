@@ -20,13 +20,7 @@ USE_OPENSSL=	yes
 
 PLIST_FILES=	bin/createtorrent
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile on 4.x
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

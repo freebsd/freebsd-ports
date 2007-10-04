@@ -14,6 +14,8 @@ DISTNAME=	x11iraf-v${PORTVERSION}-bin.freebsd
 MAINTAINER=	dsyphers@u.washington.edu
 COMMENT=	Provides graphical tools to work with IRAF
 
+LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+
 NO_BUILD=	yes
 USE_XLIB=	yes
 
@@ -29,12 +31,6 @@ MAN1=		obmsh.1		\
 		ximtool.1	\
 		xtapemon.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
-.endif
-
 do-install:
 	@${ECHO_MSG} "===>  Installing binaries"
 	@${INSTALL_PROGRAM} ${BINS:S|^|${WRKDIR}/bin.freebsd/|} ${PREFIX}/bin/
@@ -45,4 +41,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKDIR}/include/* ${PREFIX}/include/
 	@${INSTALL_DATA} ${WRKDIR}/lib.freebsd/libcdl.a ${PREFIX}/lib/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	system/fido
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fido-Internet Gateway and Tosser
 
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-perl
+
 .if !defined(WITHOUT_IFCICO)
 RUN_DEPENDS=	${LOCALBASE}/libexec/ifmail/ifcico:${PORTSDIR}/news/ifmail
 .endif
@@ -29,12 +31,6 @@ DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
 		gatebau/msgid.tex gatebau/msgid.txt
 
 MAKE_ENV+=	CC=${CC}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-perl
-.endif
 
 pre-configure:
 	${TOUCH} ${WRKSRC}/doc/fidogate.info
@@ -62,4 +58,4 @@ post-install:
 	@${TAR} -C ${WRKSRC}/examples -cf - . | ${TAR} -C ${EXAMPLESDIR} -xf -
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

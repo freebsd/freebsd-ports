@@ -57,9 +57,7 @@ USE_GL=		yes
 . if ${OSVERSION} < 601000
 .  if ${ARCH} == i386
 DISTVER=	4.11
-.   if ${OSVERSION} >= 500000
 LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
-.   endif
 .  else
 BROKEN=		no binary available for your platform x version at the moment
 .  endif

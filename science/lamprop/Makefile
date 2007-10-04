@@ -25,17 +25,9 @@ MAKE_ENV=	NOPORTDOCS=yes
 PORTDOCS=	LICENSE README NEWS
 .endif
 
-.include <bsd.port.pre.mk>
-
 REP=	's|-pipe||; s|-fmerge-constants||; s|--fast-math||'
-.if ${OSVERSION} < 500000
-REP2+=	's|-fno-unit-at-a-time||;'
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e ${REP} ${WRKSRC}/Makefile
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e ${REP2} ${WRKSRC}/Makefile
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

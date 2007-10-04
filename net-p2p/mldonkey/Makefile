@@ -110,11 +110,6 @@ ALL_TARGET+=	\
 
 .include <bsd.port.pre.mk>
 
-# Fix build on 4.x
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-.endif
-
 # FreeBSD has reentrant dns code
 .if ( ((${OSVERSION} >= 504102) && (${OSVERSION} < 600000)) || (${OSVERSION} >= 600029) )
 PTHREAD_CFLAGS+=	-D_REENTRANT
