@@ -448,6 +448,8 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/sid
 @dirrmtry share/locale/sa/LC_MESSAGES
 @dirrmtry share/locale/sa
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrmtry share/locale/ps/LC_MESSAGES
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/om/LC_MESSAGES
