@@ -39,10 +39,6 @@ MAN1=		gngeo.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__emu.h
-.endif
-
 .if !defined(WITHOUT_I386ASM) || !defined(WITHOUT_RAZE) || \
     !defined(WITHOUT_STAR)
 BUILD_DEPENDS+=		nasm:${PORTSDIR}/devel/nasm

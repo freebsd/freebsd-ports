@@ -59,10 +59,6 @@ MANDIR=	${PREFIX}/man/man
 DOCDIR=	${DOCSDIR}${PKGNAMESUFFIX}
 
 pre-build:
-.if ${OSVERSION} < 500000
-# Compatibility with FreeBSD 4.x
-	(cd ${WRKSRC} && ./config.sh _conv_gcc29x) || exit
-.endif
 	(cd ${WRKSRC} && ./config.sh FreeBSD) || exit
 
 do-build:

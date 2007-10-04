@@ -54,10 +54,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/cpu.c-patch
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

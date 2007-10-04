@@ -36,13 +36,7 @@ NO_LATEST_LINK=	yes
 VMWARE_VER=	4.5.2
 BUILD_VER=	8848
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-MOUNT_DEV?=	/dev/acd0c
-.else
 MOUNT_DEV?=	/dev/acd0
-.endif
 MOUNT_PT?=	/mnt
 MOUNT=		/sbin/mount
 UMOUNT=		/sbin/umount
@@ -91,4 +85,4 @@ do-install:
 	${BRANDELF} -t Linux ${WRKSRC}/bin/vmware-toolbox
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/vmware-toolbox ${PREFIX}/bin/linux-vmware-toolbox
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

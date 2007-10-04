@@ -24,18 +24,9 @@ PLIST_SUB=	PRESERVEDIR="${PRESERVEDIR}"
 MAN1=	ex.1 vi.1
 MLINKS=	ex.1 edit.1  vi.1 vedit.1  vi.1 view.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=	${FILESDIR}/stable-Makefile.patch
-.endif
-
 post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|-DMB||g' ${WRKSRC}/Makefile
-.endif
 .for f in Makefile ex.1 expreserve.c exrecover.c vi.1
 	@${REINPLACE_CMD} -e 's|/var/preserve|${PRESERVEDIR}|' ${WRKSRC}/${f}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -67,8 +67,4 @@ CFLAGS+=	-DX86 -mcpu=athlon
 
 MAKE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-.if ${OSVERSION} < 500000
-LDFLAGS+=	-L/usr/lib -lcipher
-.endif
-
 .include <bsd.port.post.mk>

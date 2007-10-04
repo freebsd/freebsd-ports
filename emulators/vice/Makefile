@@ -88,11 +88,6 @@ CONFIGURE_ARGS+=	--with-esd
 CONFIGURE_ARGS+=	--without-esd
 .endif
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-# ../src/resid/libresid.a(wave.o)(.rodata+0x0): relocation truncated to fit: GPREL32 *UND*
-BROKEN=		"GPREL relocation truncated"
-.endif
-
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/vice.info*
 

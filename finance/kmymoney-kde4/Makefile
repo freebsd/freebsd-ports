@@ -50,13 +50,7 @@ MANCOMPRESSED=	yes
 DATADIR=		${PREFIX}/share/apps/${PORTNAME}
 DOCSDIR=		${PREFIX}/share/doc/HTML/en/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not build on 4.x
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -E -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

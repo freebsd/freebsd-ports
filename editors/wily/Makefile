@@ -33,12 +33,6 @@ PORTDOCS=	index.html intro.html download.html credits.html FAQ.html \
 TUTEDOCS=	hello.c start typescript
 TUTESHS=	findword script send_to_gary
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} < 500000)
-BROKEN=		Requires more recent libc
-.endif
-
 post-patch:
 	cd  ${WRKSRC}/tools/win; ${REINPLACE_CMD} -e 's," in " __FUNCTION__ "()",,' \
 		win.c wgoto.c wreplace.c; \
@@ -68,4 +62,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
