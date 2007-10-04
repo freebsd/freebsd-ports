@@ -171,11 +171,7 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.if ${OSVERSION} < 450000
-FMT=	/usr/bin/fmt
-.else
 FMT=	/usr/bin/fmt -w 67
-.endif
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.sasl

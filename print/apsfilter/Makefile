@@ -139,17 +139,6 @@ post-clean:
 .endif
 
 post-install:
-.if defined(OSVERSION) && ${OSVERSION} < 400012
-	@${ECHO} "********************************************************"
-	@${ECHO} "* Please Note:                                         *"
-	@${ECHO} "********************************************************"
-	@${ECHO} "You have FreeBSD version <= 4.0. If you want to print   "
-	@${ECHO} "troff files then you have to install the grog utility   "
-	@${ECHO} "from groff sources:                                     "
-	@${ECHO} "    cp /usr/src/contrib/groff/grog/grog.sh /usr/bin/grog"
-	@${ECHO} "    chmod 555 /usr/bin/grog                             "
-	@${ECHO} "--------------------------------------------------------"
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

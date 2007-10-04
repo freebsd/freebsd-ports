@@ -19,12 +19,6 @@ NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 CXXFLAGS+=	-I${X11BASE}/include -L${X11BASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|ulong|unsigned long|g;;s|malloc.h|stdlib.h|g" ${WRKSRC}/src/face/video_x.cpp
 	@${REINPLACE_CMD} -e "s|g++|${CXX} ${CXXFLAGS}|g" ${WRKSRC}/src/bin/makefile.exe
@@ -36,4 +30,4 @@ do-build:
 do-install:
 	@cd ${WRKSRC}/bin && ${MAKE} install
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

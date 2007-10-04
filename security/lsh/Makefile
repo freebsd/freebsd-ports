@@ -45,12 +45,6 @@ MAN5=		secsh.5 SPKI.5 SHA.5 DSA.5
 MAN8=		sftp-server.8 lshd.8
 INFO=		lsh nettle
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400014
-CONFIGURE_ARGS+=	--without-ipv6
-.endif
-
 post-install:
 .for BIN in lsh lsh-keygen lsh-writekey sexp-conv srp-gen lsh-decode-key
 	${STRIP_CMD} ${PREFIX}/bin/${BIN}
@@ -63,4 +57,4 @@ test:
 	(cd ${WRKSRC}/src/testsuite && ${SETENV} ${MAKE_ENV} \
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

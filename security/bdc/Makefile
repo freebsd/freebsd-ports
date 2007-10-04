@@ -19,10 +19,8 @@ COMMENT=	BitDefender Console Antivirus for FreeBSD
 .if ${OSVERSION} >= 600000
 LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .endif
-.if ${OSVERSION} < 490000 || ${OSVERSION} >= 500000 && ${OSVERSION} < 502001
+.if ${OSVERSION} >= 500000 && ${OSVERSION} < 502001
 IGNORE=		requires FreeBSD-STABLE \(4.9 or later\), or FreeBSD-CURRENT \(5.2.1 or later\)
-.elif ${OSVERSION} < 500000
-BDREL=		4
 .else
 BDREL=		5
 .endif

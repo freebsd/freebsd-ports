@@ -22,11 +22,7 @@ USE_PERL5=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 490000
-IGNORE=		"Not supported on releases prior to 4.9"
-.endif
+.include <bsd.port.mk>
 
 do-extract:
 	[ -d ${WRKDIR} ] || ${MKDIR} ${WRKDIR}
@@ -52,4 +48,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
