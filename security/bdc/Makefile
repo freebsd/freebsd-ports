@@ -15,16 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.2-fbsd${BDREL}
 MAINTAINER=	apircalabu@bitdefender.com
 COMMENT=	BitDefender Console Antivirus for FreeBSD
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.endif
-.if ${OSVERSION} >= 500000 && ${OSVERSION} < 502001
-IGNORE=		requires FreeBSD-STABLE \(4.9 or later\), or FreeBSD-CURRENT \(5.2.1 or later\)
-.else
-BDREL=		5
-.endif
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
@@ -32,6 +22,17 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	License prohibits redistribution
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
+.endif
+.if ${OSVERSION} < 502001
+IGNORE=		requires FreeBSD 5.2.1 or later
+.else
+BDREL=		5
+.endif
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=	/usr/bin/printf

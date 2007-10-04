@@ -24,12 +24,6 @@ NOT_FOR_ARCHS=	sparc64
 
 PLIST_FILES=	bin/doscan
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${PATCHDIR}/freebsd4.diff
-.endif
-
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -38,4 +32,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

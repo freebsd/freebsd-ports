@@ -19,14 +19,6 @@ COMMENT=	A Port Knocking implementation, both daemon and client
 BUILD_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
-
-# doormand does not work with the FreeBSD 4.x version of libpcap.
-# Require the ports version.
-.if ${OSVERSION} < 500000
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
-.endif
-
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PATCH_STRIP=	-p1
 
@@ -45,12 +37,6 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
 		${WRKSRC}/doormand.c
 
-post-configure:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's,-lpcap,${LOCALBASE}/lib/libpcap.a,' \
-		${WRKSRC}/Makefile
-.endif
-
 post-install:
 	${RM} -f ${PREFIX}/etc/doormand/ipf_add
 	${INSTALL_SCRIPT} ${FILESDIR}/ipf_add.atend ${PREFIX}/etc/doormand/ipf_add.atend
@@ -68,4 +54,4 @@ post-install:
 	done
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

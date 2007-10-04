@@ -26,12 +26,6 @@ PLIST_FILES=	bin/ncrypt bin/nrm
 post-configure:
 	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS) =,\1 \?=,g' \
 		${WRKSRC}/Makefile
-.if (${OSVERSION} < 500000)
-	@${REINPLACE_CMD} -e 's,stdint.h,inttypes.h,g' \
-		${WRKSRC}/standard.h
-	@${REINPLACE_CMD} -e 's,O_SYNC,O_FSYNC,g' \
-		${WRKSRC}/wipe_file.c
-.endif
 .if (${OSVERSION} < 501000)
 	@${REINPLACE_CMD} -e 's,ifndef WIN32,if (!defined(__FreeBSD__)),g' \
 		${WRKSRC}/ncrypt.c

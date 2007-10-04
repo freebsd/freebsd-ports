@@ -82,14 +82,7 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers
 .endif
 
 .if !defined(WITHOUT_LIBEDIT)
-.if ${OSVERSION} > 500000
 CONFIGURE_ARGS+=	--with-libedit
-.else
-.if !defined(WITH_OVERWRITE_BASE)
-LIB_DEPENDS+=		edit.6:${PORTSDIR}/devel/libedit
-CONFIGURE_ARGS+=	--with-libedit=${LOCALBASE}
-.endif
-.endif
 .endif
 
 .if !defined(WITH_SUID_SSH)

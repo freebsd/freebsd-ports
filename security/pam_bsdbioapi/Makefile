@@ -51,8 +51,4 @@ post-install:
 	${INSTALL} ${WRKSRC}/etc/birdb.conf ${PREFIX}/etc/birdb.conf.sample
 	@${CAT} ${PKGMESSAGE}
 
-.if ${OSVERSION} < 500000
-IGNORE=		needs at least FreeBSD 5.0-RELEASE
-.endif
-
 .include <bsd.port.post.mk>

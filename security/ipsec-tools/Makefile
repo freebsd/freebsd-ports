@@ -155,11 +155,7 @@ pre-configure:
 	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
 	@${ECHO_MSG} "===> ATTENTION: You need a kernel patch to enable NAT-Traversal functionality!"
 	@${ECHO_MSG} "===> You can download the patch here:"
-. if ${OSVERSION} < 500000
-	@${ECHO_MSG} "===>     http://ipsec-tools.sf.net/freebsd_nat-t.diff"
-. else
 	@${ECHO_MSG} "===>     http://ipsec-tools.sf.net/freebsd6-natt.diff"
-. endif
 	@${ECHO_MSG} "===> You might possibly have to do some steps manually if it fails to apply."
 	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
 	@sleep 3

@@ -105,7 +105,6 @@ cert:
 	@${ECHO} ""
 	@(cd ${WRKSRC}/tools/; make install-data-local)
 
-.if ${OSVERSION} > 500000
 .if !defined(WITH_STUNNEL_SSL_ENGINE)
 EXTRA_PATCHES=	${FILESDIR}/ssl-noengine.patch
 pre-patch:
@@ -123,7 +122,6 @@ pre-patch:
 	@${ECHO} "There are known reliability issues with stunnel and the OpenSSL ENGINE"
 	@${ECHO} "code.  You have enabled it at your own risk."
 	@${ECHO} "*************************************************************************"
-.endif
 .endif
 
 .include <bsd.port.post.mk>

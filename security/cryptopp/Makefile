@@ -13,7 +13,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			http://www.mirrors.wiretapped.net/security/cryptography/libraries/cryptolib/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		cryptopp${PORTVERSION:S/.//g}
-EXTRACT_SUFX=		.zip
 
 MAINTAINER=		delphij@FreeBSD.org
 COMMENT=		A free C++ class library of Cryptographic Primitives
@@ -24,14 +23,9 @@ EXTRACT_BEFORE_ARGS=	-aq
 USE_GMAKE=		yes
 MAKEFILE=		GNUmakefile
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		Internal compiler error on alpha 4.x
-.endif
-
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/cryptest
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cryptest ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/libcryptopp.a ${PREFIX}/lib
@@ -47,4 +41,4 @@ do-install:
 	${CP} ${WRKSRC}/License.txt ${PREFIX}/share/doc/cryptopp/License
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
