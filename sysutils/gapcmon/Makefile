@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gapcmon
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	0.8.6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,11 +16,16 @@ COMMENT=	Montior apcupsd with GTK+2 GUI
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
-USE_GNOME=	gnomehack gnometarget gnomevfs2
+USE_GNOME=	gconf2
 GNU_CONFIGURE=	yes
 
-PORTDOCS=	AUTHORS ChangeLog INSTALL
+PORTDOCS=	AUTHORS ChangeLog INSTALL README
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 601103
+IGNORE=		needs gethostbyname_r(3)
+.endif
 
 post-extract:
 	@${REINPLACE_CMD} "s|/usr/share/pixmaps/|${PREFIX}/share/pixmaps/|" \
@@ -36,4 +40,5 @@ post-install:
 .endif
 	@${CAT} pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
+
