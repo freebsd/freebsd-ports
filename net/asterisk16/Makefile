@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.4.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -144,7 +144,7 @@ CONFIGURE_ARGS+= --without-iksemel
 .else
 PLIST_SUB+=	WITH_JABBER=""
 CONFIGURE_ARGS+= --with-iksemel
-LIB_DEPENDS+=	iksemel.3:${PORTSDIR}/textproc/iksemel
+LIB_DEPENDS+=	iksemel.4:${PORTSDIR}/textproc/iksemel
 .endif
 
 .if defined(WITHOUT_SQLITE)

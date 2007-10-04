@@ -1,20 +1,20 @@
---- doc/Makefile.in.orig	Fri Aug  6 20:39:05 2004
-+++ doc/Makefile.in	Fri Apr 28 15:25:23 2006
-@@ -93,7 +93,7 @@
- CONFIG_HEADER = ../include/config.h
- CONFIG_CLEAN_FILES = 
- TEXI2DVI = texi2dvi
--INFO_DEPS = iksemel
-+INFO_DEPS = iksemel.info
+--- doc/Makefile.in.orig	2007-08-02 12:49:13.000000000 +0200
++++ doc/Makefile.in	2007-10-01 21:14:31.000000000 +0200
+@@ -46,7 +46,7 @@
+ CONFIG_CLEAN_FILES =
+ SOURCES =
+ DIST_SOURCES =
+-INFO_DEPS = $(srcdir)/iksemel
++INFO_DEPS = $(srcdir)/iksemel.info
+ am__TEXINFO_TEX_DIR = $(srcdir)
  DVIS = iksemel.dvi
- TEXINFOS = iksemel.texi
- DIST_COMMON =  Makefile.am Makefile.in texinfo.tex
-@@ -123,7 +123,7 @@
- .texi.info:
- 	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
- 	cd $(srcdir) \
--	  && $(MAKEINFO) `echo $< | sed 's,.*/,,'`
-+	  && $(MAKEINFO) `echo $< | sed 's,.*/,,'` -o $@
+ PDFS = iksemel.pdf
+@@ -207,7 +207,7 @@
+ distclean-libtool:
+ 	-rm -f libtool
  
- .texi.dvi:
- 	TEXINPUTS=.:$$TEXINPUTS \
+-$(srcdir)/iksemel: iksemel.texi 
++$(srcdir)/iksemel.info: iksemel.texi 
+ 	restore=: && backupdir="$(am__leading_dot)am$$$$" && \
+ 	am__cwd=`pwd` && cd $(srcdir) && \
+ 	rm -rf $$backupdir && mkdir $$backupdir && \

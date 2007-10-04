@@ -1,11 +1,11 @@
---- Makefile.in.orig   Mon Apr 24 22:21:34 2006
-+++ Makefile.in        Mon Apr 24 22:21:37 2006
-@@ -92,7 +92,7 @@  
-
+--- Makefile.in.orig	2007-08-02 12:49:14.000000000 +0200
++++ Makefile.in	2007-10-01 18:22:45.000000000 +0200
+@@ -187,7 +187,7 @@
+ target_alias = @target_alias@
+ SUBDIRS = include src tools test doc
  EXTRA_DIST = HACKING iksemel.pc.in
-
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = ${prefix}/libdata/pkgconfig
  pkgconfig_DATA = iksemel.pc
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ all: all-recursive
+ 
