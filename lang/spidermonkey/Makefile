@@ -70,12 +70,6 @@ test:
 		    --shellpath ${WRKSRC}/${OPSYS}`${UNAME} -r`_DBG.OBJ/js \
 		    --engine smdebug --confail --trace --list ecma* js1_*
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
-
 do-configure:
 	${CP} ${WRKSRC}/config/Linux_All.mk \
 		${WRKSRC}/config/${OPSYS}`${UNAME} -r`.mk && \
@@ -89,4 +83,4 @@ do-install:
 	${CP} ${WRKSRC}/${OPSYS}`${UNAME} -r`_DBG.OBJ/jsautocfg.h ${WRKSRC}
 	@${INSTALL_DATA} ${JSH:S,^,${WRKSRC}/,} ${PREFIX}/include/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

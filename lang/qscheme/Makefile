@@ -15,7 +15,8 @@ MAINTAINER=	erik@smluc.org
 COMMENT=	A small and fast Scheme interpreter
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall\
-		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
+		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre \
+		${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
 LIB_DEPENDS=	getline:${PORTSDIR}/devel/libgetline
 
 GNU_CONFIGURE=	yes
@@ -25,7 +26,9 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 CONFIGURE_ARGS=	--with-pcre-dir=${LOCALBASE}/lib \
 		--with-pcre-inc=${LOCALBASE}/include \
 		--with-avcall-dir=${LOCALBASE}/lib \
-		--with-avcall-inc=${LOCALBASE}/include
+		--with-avcall-inc=${LOCALBASE}/include \
+		--with-gmp-dir=${LOCALBASE}/lib \
+		--with-gmp-inc=${LOCALBASE}/include
 
 post-patch:
 	${REINPLACE_CMD} \
@@ -39,12 +42,6 @@ post-patch:
 
 .if ${ARCH} == "ia64" || ${ARCH} == "amd64"
 BROKEN=		"Does not build on amd64 or ia64"
-.endif
-
-.if ${OSVERSION} >= 500000
-BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
-CONFIGURE_ARGS+=	--with-gmp-dir=${LOCALBASE}/lib \
-		--with-gmp-inc=${LOCALBASE}/include
 .endif
 
 .include <bsd.port.post.mk>

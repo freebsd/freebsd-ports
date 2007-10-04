@@ -31,10 +31,6 @@ BINDINGS_DEACTIVATE=	Font Image ObjcBridge OpenGL SGML SQLite SQLite3
 BROKEN=		Does not compile on ia64 or sparc64
 .endif
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4+
-.endif
-
 pre-patch:
 	${FIND} ${WRKSRC} -name '.DS_Store*' -delete
 
@@ -63,9 +59,6 @@ pre-patch:
 
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
-.if ${OSVERSION} < 500000
-	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's/<stdint.h>/<inttypes.h>/' vm/base/_new/Array/Array.h vm/base/_new/Data.h vm/base/Common.h vm/base/NEW_stdint.h
-.endif
 
 do-install:
 .for fname in vm/io2c vm/io binaries/ioDesktop binaries/ioServer

@@ -19,6 +19,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-x86-FreeBSD
 MAINTAINER=	cracauer@cons.org
 COMMENT=	The CMU implementation of Common Lisp
 
+LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+
 # To make available on other archs, has to be cross-compiled (there is a
 # script for this, but a configuration file has to be written).
 IA32_BINARY_PORT=	yes
@@ -28,13 +30,6 @@ NO_BUILD=	yes
 MAN1=		lisp.1 cmucl.1
 
 PLIST_SUB=	VER=${PORTVERSION}
-
-.include <bsd.port.pre.mk>
-
-# portlint wants this earlier but this doesn't work because weneed OSVERSION
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/lisp ${PREFIX}/bin
@@ -47,4 +42,4 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/doc/cmucl/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

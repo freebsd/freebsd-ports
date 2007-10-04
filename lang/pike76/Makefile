@@ -24,7 +24,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		nettle.2:${PORTSDIR}/security/nettle \
-		mird.1:${PORTSDIR}/databases/mird
+		mird.1:${PORTSDIR}/databases/mird \
+		gmp.7:${PORTSDIR}/math/libgmp4
 
 OPTIONS=	TTF "Add FreeType 1 support" on \
 		FREETYPE "Add FreeType 2 support" on \
@@ -87,11 +88,6 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .if ${ARCH} == "amd64" && ${OSVERSION} >= 700019 
 BROKEN=	Does not compile
-.endif
-
-# FreeBSD 5.0 Needs to have libgmp port to support gmp.
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 .endif
 
 # Allow building Embedded Perl

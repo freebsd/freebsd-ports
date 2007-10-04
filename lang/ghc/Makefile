@@ -36,19 +36,13 @@ OPTIONS=	PROFILE "Compile for profiling as well" on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-#DISTFILES+=	${BOOT_DIST4}
+.if ${OSVERSION} >= 700000
 IGNORE=		unsupported at the moment
-.else
-.if ${OSVERSION} >= 600000
+.elif ${OSVERSION} >= 600000
 DISTFILES+=	${BOOT_DIST}
 .else
 IGNORE=		unsupported at the moment
 #DISTFILES+=	${BOOT_DIST5}
-.endif
-.endif
-.if ${OSVERSION} >= 700000
-IGNORE=		unsupported at the moment
 .endif
 
 PLIST_SUB+=	GHC_VERSION=${PORTVERSION}
