@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="91ed69f9-72c7-11dc-981a-001921ab2fa4">
+    <topic>firebird -- multiple remote buffer overflow vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firebird-server</name>
+	<range><lt>2.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RISE Security reports:</p>
+	<blockquote cite="http://risesecurity.org/advisory/RISE-2007003/">
+	  <p>There exists multiple vulnerabilities within functions
+	    of Firebird Relational Database, which when properly
+	    exploited can lead to remote compromise of the vulnerable
+	    system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>25925</bid>
+    </references>
+    <dates>
+      <discovery>2007-10-03</discovery>
+      <entry>2007-10-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="15ec9123-7061-11dc-b372-001921ab2fa4">
     <topic>id3lib -- insecure temporary file creation</topic>
     <affects>
