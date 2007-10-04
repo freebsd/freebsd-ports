@@ -34,10 +34,6 @@ FLEETS_FILE=	gh_fleets_020906.zip
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		needs isspace() function in libc (FreeBSD >= 5.X)
-.endif
-
 .if defined(WITH_FLEETS)
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 DISTFILES+=	${FLEETS_FILE}

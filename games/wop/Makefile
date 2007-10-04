@@ -28,12 +28,6 @@ MAKE_ENV=	"CXX=${CXX}"
 
 DATAVERSION=	2005-12-21
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-global.hpp
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|__va_copy|va_copy|g' ${WRKSRC}/src/string.cpp
 	@${REINPLACE_CMD} -e 's|; make|; ${GMAKE}|g' ${WRKSRC}/Makefile ${WRKSRC}/src/Makefile
@@ -57,9 +51,9 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for file in AUTHORS COPYING ChangeLog README README-COMMAND-LINE-OPTIONS.txt
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in AUTHORS COPYING ChangeLog README README-COMMAND-LINE-OPTIONS.txt
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -33,13 +33,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-pre-configure::
-	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
-	${WRKSRC}/src/gui/Filter.cpp ${WRKSRC}/src/gui/Gradient.hpp \
-	${WRKSRC}/src/gui/Color.hpp
-.endif
-
 .if ${OSVERSION} < 504000
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-src-gui-Gradient.cpp

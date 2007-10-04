@@ -57,10 +57,6 @@ PLIST_SUB+=	MUSICADDON="@comment "
 LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
 post-extract:
 	${MKDIR} ${WRKSRC}/sc2/content/packages
 	${CP} ${DISTDIR}/${PORTNAME}-${DATAVERSION}-content.uqm ${WRKSRC}/sc2/content/packages/

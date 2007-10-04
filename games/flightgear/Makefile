@@ -39,12 +39,6 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 MAN1=		est-epsilon.1 fgfs.1 fgjs.1 gl-info.1 js_demo.1 pstest.1
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not build on FreeBSD 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D_REENTRANT|${PTHREAD_CFLAGS}|' \
 		${WRKSRC}/configure
@@ -53,4 +47,4 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/js_server/js_server ${PREFIX}/bin
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

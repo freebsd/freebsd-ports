@@ -21,12 +21,6 @@ REINPLACE_ARGS=	-i ''
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"use atoll() interface"
-.endif
-
 post-patch:
 # Fix make command
 	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${WRKSRC}/${MAKEFILE}
@@ -57,4 +51,4 @@ do-install:
 	${CP} -R ${WRKSRC}/${d} ${DATADIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

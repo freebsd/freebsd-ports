@@ -42,12 +42,6 @@ DESKTOP_ENTRIES="FlightGear Scenery Designer" \
 		"Application;Graphics;" \
 		false
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not build on FreeBSD 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lgif|-lungif|' ${WRKSRC}/configure
 
@@ -55,4 +49,4 @@ post-install:
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/src/curves.xpm ${PREFIX}/share/pixmaps/fgsd.xpm
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

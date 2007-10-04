@@ -24,14 +24,9 @@ CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
 
 PLIST_FILES=	bin/bitefusion
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-linux-gnu|-portbld-freebsd|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lSDL||' ${WRKSRC}/Makefile.in
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|stdint.h|sys/inttypes.h|' ${WRKSRC}/image.c
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

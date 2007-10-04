@@ -20,12 +20,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 STRIP=		# strip(1) does not support a.out binaries
 PLIST_FILES=	bin/timeseal
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
 PKGMESSAGE=	pkg-message.aout
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${_DISTDIR}/${_DISTFILES} ${PREFIX}/bin/timeseal
@@ -35,4 +30,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

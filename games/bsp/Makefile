@@ -30,10 +30,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
