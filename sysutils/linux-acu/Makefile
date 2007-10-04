@@ -37,16 +37,6 @@ RESTRICTED=	"Redistribution not allowed"
 
 LINPROCFS!=	/sbin/mount | ${GREP} linprocfs | ${AWK} '{print $1}'
 
-pre-fetch:
-.if ${OSVERSION} < 460000
-	@${ECHO}
-	@${ECHO} "OS-VERSION ${OSVERSION} too low"
-	@${ECHO}
-	@${ECHO} "acu needs some important sys/dev/an changes"
-	@${ECHO} "Please upgrade to 4.6-STABLE or greater"
-	@${FALSE}
-.endif
-
 post-extract:
 .if ${LINPROCFS}
 	@${ECHO}

@@ -313,7 +313,7 @@ IGNORE=		pf available only in FreeBSD 5.3 and newer
 # Please see PR misc/44148 and the CVS log of src/include/Makefile for further
 # information.
 .if defined(WITH_SQUID_IPFILTER)
-.if (${OSVERSION} >= 470000 && ${OSVERSION} < 500000) || (${OSVERSION} > 500032 && ${OSVERSION} < 501101)
+.if (${OSVERSION} > 500032 && ${OSVERSION} < 501101)
 IGNORE=		IPFilter headers are not part of the base system
 .else
 CONFIGURE_ARGS+=	--enable-ipf-transparent

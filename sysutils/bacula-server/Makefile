@@ -192,7 +192,7 @@ MAKE_ENV+=	MAN8="${MAN8}" MAN1="${MAN1}"
 
 pre-everything::
 .if !defined(WITH_CLIENT_ONLY)
-.if ${OSVERSION} < 490101 || (${OSVERSION} >= 500000 && ${OSVERSION} < 502101)
+.if ${OSVERSION} < 502101
 	@${ECHO_MSG} "=======> ATTENTION <======="
 	@${ECHO_MSG} "===> Note that there is a pthreads problem, which leads to the loss of 500kB"
 	@${ECHO_MSG} "===> of data at the end of an tape. This is corrected in newer versions of FreeBSD"

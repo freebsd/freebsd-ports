@@ -30,9 +30,7 @@ INSTALL_TARGET=	install-all
 
 HDDOCDIR=	${PREFIX}/share/doc/healthd
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400014 || defined(WITHOUT_IPV6)
+.if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
@@ -57,4 +55,5 @@ pre-everything::
 .ifndef (WITHOUT_IPV6)
 	@${ECHO_MSG} "WITHOUT_IPV6=yes          builds without IPv6 support"
 .endif
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>

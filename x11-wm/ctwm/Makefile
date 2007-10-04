@@ -24,8 +24,7 @@ MAN1=		ctwm.1
 .include <bsd.port.pre.mk>
 
 # Very old versions need GNU m4
-.if ( ${OSVERSION} < 450005 || \
-	( ${OSVERSION} >= 500000 && ${OSVERSION} < 500034 ) )
+.if ( ${OSVERSION} < 500034 )
 EXTRA_PATCHES+=	${FILESDIR}/gm4-patch
 BUILD_DEPENDS+=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS+=	gm4:${PORTSDIR}/devel/m4

@@ -48,11 +48,7 @@ CONFIGURE_ARGS+=	--with-screen=ncursesw
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 
-.if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
+CONFIGURE_ARGS+=--enable-ipv6
 MAKE_FLAGS=	helpdir=${L_HELP} docdir=${L_DOC} -f
 MAKEFILE=	makefile
 INSTALL_TARGET=	install-full

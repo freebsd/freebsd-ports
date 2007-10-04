@@ -115,12 +115,7 @@ IGNORE=	is part of XFree86 and you have ${X_WINDOW_SYSTEM} set for X11\
 	of FAQ for more information
 .endif
 
-# BuildXF86DRI is false for FreeBSD < 4.1
-.if ${OSVERSION} < 410000
-PLIST_SUB+=	OSMESA:="@comment "
-.else
 PLIST_SUB+=	OSMESA:=""
-.endif
 
 # sparc64 doesn't have a working libc_r yet, and -current doesn't need
 # libXThrStub.
