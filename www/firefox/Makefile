@@ -52,10 +52,6 @@ OPTIONS=	NEWTAB "Open external links in a new tab" on \
 
 GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
-.if ${OSVERSION} < 500000
-BROKEN=	does not build
-.endif
-
 .if ${ARCH} == "sparc64" && ${OSVERSION} < 601101
 IGNORE=	does not run, update to 6.2-RELEASE or newer
 .endif

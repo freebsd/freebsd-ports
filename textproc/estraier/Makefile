@@ -41,12 +41,10 @@ LIB_DEPENDS+=	chasen.0:${PORTSDIR}/japanese/chasen-base
 CONFIGURE_ARGS+=	--enable-chasen
 .endif
 
-.if ${OSVERSION} > 500000
 .if ${ARCH} == i386 && defined(WITH_MECAB)
 LIB_DEPENDS+=	mecab.1:${PORTSDIR}/japanese/mecab
 
 CONFIGURE_ARGS+=	--enable-mecab
-.endif
 .endif
 
 .if !defined(WITHOUT_KAKASI)

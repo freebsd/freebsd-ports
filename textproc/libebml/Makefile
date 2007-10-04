@@ -37,10 +37,4 @@ do-configure:
 			s,^(INSTALL_OPTS_LIB|INSTALL_OPTS)[[:space:]]*=.*$$,\1=${INSTALL_DATA},' \
 		${WRKSRC}/make/linux/Makefile
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-CFLAGS+= -DNO_WSTRING
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

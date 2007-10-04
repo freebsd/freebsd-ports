@@ -62,11 +62,6 @@ IGNORE=		core dumps on ${ARCH} during post-build
 IGNORE=		core dumps on ${ARCH}, need kern.osreldate>=601101
 .endif
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-security_manager_Makefile.in
-.endif
-
 .if defined(WITHOUT_MAILNEWS)
 MOZ_OPTIONS+=	--disable-ldap --disable-mailnews
 .else

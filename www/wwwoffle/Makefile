@@ -39,12 +39,6 @@ MAN1=		wwwoffle.1
 MAN5=		wwwoffle.conf.5
 MAN8=		wwwoffled.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
 .if ${WWWOFFLE_SPOOL} != "/var/spool/wwwoffle"
 # If using a non-standard spool, change all the documentation (and anything
 # else) to reflect that.
@@ -60,4 +54,4 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config.pl ${WWWOFFLE_SPOOL}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

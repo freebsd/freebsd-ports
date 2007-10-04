@@ -34,12 +34,6 @@ MANCOMPRESSED=	yes
 PORTDOCS=	*
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/etc/highlight|${DATADIR}|g' ${WRKSRC}/datadir.cpp
@@ -77,4 +71,4 @@ post-install:
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

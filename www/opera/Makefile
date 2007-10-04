@@ -61,10 +61,8 @@ QT_PRESENT=	off
 OPERA_TYPE=	1
 .elif ${OSVERSION} >= 600000
 OPERA_TYPE=	4
-.elif ${OSVERSION} >= 500000
-OPERA_TYPE=	3
 .else
-OPERA_TYPE=	1
+OPERA_TYPE=	3
 .endif
 
 .if ${OSVERSION} > 700000
@@ -86,7 +84,7 @@ OPERA_LIB=	static
 OPERA_TYPE=	1
 .endif
 
-.if ${OPERA_TYPE} == 1 && ${OSVERSION} >= 500000
+.if ${OPERA_TYPE} == 1
 LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
 .if ${OSVERSION} >= 600000
 LIB_DEPENDS+=	z.2:${PORTSDIR}/misc/compat5x

@@ -43,12 +43,6 @@ USE_GMAKE=	yes
 
 SUB_FILES=	pkg-message pkg-install pkg-deinstall crontab.in
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -type f -perm 755 \
 			    -or -name campsite_create_instance \
@@ -69,4 +63,4 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

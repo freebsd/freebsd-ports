@@ -32,10 +32,6 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-.endif
-
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif

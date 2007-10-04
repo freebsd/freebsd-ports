@@ -20,10 +20,6 @@ USE_RC_SUBR=	polipo.sh
 
 .include <bsd.port.pre.mk>
 
-# in some 4.x makeinfo does not work. So we do not try to build and install.
-.if ${OSVERSION} < 500000
-NO_PTEXINFO=	yes
-.endif
 .if defined(NO_PTEXINFO)
 ALL_TARGET=	polipo
 NOPORTDOCS=	yes
