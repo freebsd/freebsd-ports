@@ -76,12 +76,6 @@ OPTIONS=	MYSQL "Enable MySQL support" Off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-PLIST_SUB+=	FBSD4=""
-.else
-PLIST_SUB+=	FBSD4="@comment "
-.endif
-
 .if !defined (GRASS_INST_DIR)
 GRASS_INST_DIR=	${PORTNAME}
 .endif

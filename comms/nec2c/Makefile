@@ -23,12 +23,6 @@ COMMENT=	Used to calculate antenna patterns useful to ham radio
 #
 LIB_DEPENDS=	ccm:${PORTSDIR}/math/ccmath
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4+
-.endif
-
 post-patch:
 	${CP} ${FILESDIR}/carg.c  ${WRKSRC}
 
@@ -46,4 +40,4 @@ do-install:
 	@${ECHO} ""
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -49,8 +49,7 @@ OPTIONS=	IMAP4	"Enable experimental IMAP4 backend" off
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libedataserver_e-msgport.c
 .endif
 
-.if ${OSVERSION} >= 500000 && !defined(NO_KERBEROS) && \
-	exists(/usr/lib/libkrb5.so)
+.if !defined(NO_KERBEROS) && exists(/usr/lib/libkrb5.so)
 CONFIGURE_ARGS+=	--with-krb5=/usr
 .else
 LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal

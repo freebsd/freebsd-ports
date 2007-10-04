@@ -53,10 +53,6 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		requires wchar_t
-.endif
-
 .if ${OSVERSION} < 504000
 CHECK_PORT=	${LOCALBASE}/bin/nc -vz localhost $$\1 2>\&1 | ${GREP} open
 BUILD_DEPENDS+=	${NETCAT}:${PORTSDIR}/net/netcat

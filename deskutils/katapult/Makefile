@@ -24,10 +24,4 @@ INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	doesn't buiold
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

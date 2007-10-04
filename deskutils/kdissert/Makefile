@@ -29,10 +29,6 @@ MAKE_ENV=	QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}"
 CXXFLAGS+=	-fpermissive
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%LINKFLAGS%%|${PTHREAD_LIBS}|g ; \
