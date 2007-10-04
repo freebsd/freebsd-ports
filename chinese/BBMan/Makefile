@@ -20,14 +20,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
 USE_WX=		2.4
+USE_GCC=	3.3
 
 PLIST_FILES=	bin/BBMan
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-USE_GCC=	3.3
-.endif
 
 .if ${ARCH} == ia64
 BROKEN=		Hard-codes reference to libc_r

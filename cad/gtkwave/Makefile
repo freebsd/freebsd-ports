@@ -26,12 +26,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib/gtkwave
 
-.include <bsd.port.pre.mk>
-
-.if ( ${OSVERSION} < 500000 )
-USE_GCC=	3.4
-.endif
-
 DOCS=		doc/*.html doc/*.png doc/*.ps
 EXAMPLES=	examples/*.gz examples/*.vcd
 
@@ -47,4 +41,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

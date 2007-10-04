@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=--with-extra-libs=${LOCALBASE}/lib \
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} > 500000 ) && (${OSVERSION} < 502102 )
+.if (${OSVERSION} < 502102 )
 IGNORE= Jack not available
 .endif
 

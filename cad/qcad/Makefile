@@ -36,12 +36,6 @@ MAKE_ENV=	QTDIR="${QTDIR}" MAKE="${GMAKE}" \
 CFLAGS+=	-O0
 .endif
 
-post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|streambuf<|streambuf\.h<|g' \
-		${WRKSRC}/qcadguiqt/src/ui/qg_commandwidget.ui
-.endif
-
 do-build:
 	cd ${WRKSRC}/scripts && ${SETENV} ${MAKE_ENV} bash ./build_qcad.sh notrans
 

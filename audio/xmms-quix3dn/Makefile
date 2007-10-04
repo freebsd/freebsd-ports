@@ -16,6 +16,7 @@ DISTNAME=	quix3dn-${PORTVERSION}-freebsd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D-sound effect plugin for XMMS
 
+LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
@@ -24,13 +25,7 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	lib/xmms/Effect/libquix3dn.so
 ONLY_FOR_ARCHS=	i386
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
-.endif
-
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libquix3dn.so ${PREFIX}/lib/xmms/Effect/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
