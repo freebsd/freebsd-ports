@@ -3268,3 +3268,4 @@ devel/autoconf253|devel/autoconf261|2007-09-29|Autotools cleanup
 devel/autoconf259|devel/autoconf261|2007-09-29|Autotools cleanup
 print/clibpdf||2007-10-01|Has expired: distfile and homepage disappeared
 print/ruby-clibpdf||2007-10-01|Has expired: required port print/clibpdf deprecated
+lang/snobol|lang/snobol4|2007-10-04|Use newer version
