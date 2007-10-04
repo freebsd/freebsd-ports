@@ -7,6 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
@@ -15,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application and network monitoring solution
 
 LIB_DEPENDS=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp \
-		iksemel.3:${PORTSDIR}/textproc/iksemel \
+		iksemel.4:${PORTSDIR}/textproc/iksemel \
 		curl.4:${PORTSDIR}/ftp/curl
 
 OPTIONS=	MYSQL "Use MySQL backend" on \
