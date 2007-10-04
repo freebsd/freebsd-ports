@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 MAN1=		RtConfig.1 peval.1 rpslcheck.1 IRR-Errors.1
 MAN3=		librpsl.3
 
-.include <bsd.port.pre.mk>
+ALL_TARGET=	depend all
 
 post-extract:
 	@${RM} ${WRKSRC}/man/man1/CIDRAdvisor.1 ${WRKSRC}/man/man1/prpath.1
@@ -39,10 +39,4 @@ post-patch:
 	${WRKSRC}/src/irr/birdwhoisc.cc
 	@${RM} ${WRKSRC}/man/man1/*.orig
 
-ALL_TARGET=	depend all
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

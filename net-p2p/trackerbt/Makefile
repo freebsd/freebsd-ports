@@ -49,11 +49,4 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/config.xml ${EXAMPLESDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE= FreeBSD prior to 500000 does not support uuid(3) required\
-	for building
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

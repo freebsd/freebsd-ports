@@ -24,10 +24,4 @@ PLIST_FILES=	bin/sendxmpp \
 		%%SITE_PERL%%/mach/auto/sendxmpp/.packlist
 PLIST_DIRS=	%%SITE_PERL%%/mach/auto/sendxmpp
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Dependencies does not build on FreeBSD < 5.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

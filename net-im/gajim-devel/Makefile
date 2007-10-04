@@ -63,10 +63,6 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		doesn\'t install
-.endif
-
 .if ${PYTHON_REL} >= 250
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 .else

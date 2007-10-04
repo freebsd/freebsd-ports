@@ -20,17 +20,13 @@ RUN_DEPENDS=	par2:${PORTSDIR}/archivers/par2cmdline \
 		shorten:${PORTSDIR}/audio/shorten \
 		${PYTHON_SITELIBDIR}/yenc.py:${PORTSDIR}/news/py-yenc \
 		${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore \
-		${PYTHON_SITELIBDIR}/twisted/web:${PORTSDIR}/www/py-twistedWeb
+		${PYTHON_SITELIBDIR}/twisted/web:${PORTSDIR}/www/py-twistedWeb \
+		mac:${PORTSDIR}/audio/mac
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 .include <bsd.port.pre.mk>
-
-# monkey audio (mac) needs FreeBSD 5
-.if ${OSVERSION} >= 500000
-RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
-.endif
 
 # more fully-featured rar needs at least 5.3
 .if ${ARCH} == "i386" && ${OSVERSION} >= 503000

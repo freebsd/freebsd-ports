@@ -28,10 +28,6 @@ OPTIONS=	PORTAUDIT "Require Portaudit" on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		doesn't compile properly on 4.x systems
-.endif
-
 .if !defined(WITHOUT_PORTAUDIT)
 RUN_DEPENDS+=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
 .endif

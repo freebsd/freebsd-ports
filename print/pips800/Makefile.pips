@@ -126,12 +126,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/autoconf-2.61:${PORTSDIR}/devel/autoconf261
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 USE_ICONV=	yes
 .endif
-.if ${OSVERSION} < 500000
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		lthread.2:${PORTSDIR}/devel/linuxthreads
-CPPFLAGS+=	-I${LOCALBASE}/include/pthread/linuxthreads
-LDFLAGS+=	-lgnugetopt -llthread
-.else
 LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 CPPFLAGS+=	${PTHREAD_CFLAGS}

@@ -98,8 +98,4 @@ post-install:
 BROKEN=		Does not compile on amd64
 .endif
 
-.if (${OSVERSION} < 500000)
-IGNORE=		does not compile on systems < 5.x (needs wstring support)
-.endif
-
 .include <bsd.port.post.mk>

@@ -45,10 +45,6 @@ PORTDOCS=	\
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
 # with xine preview support
 .ifdef(WITH_XINE)
 LIB_DEPENDS+=		xine:${PORTSDIR}/multimedia/libxine

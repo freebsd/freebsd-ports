@@ -37,12 +37,6 @@ PLIST_SUB+=	WITH_PYTHON=""
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-CONFIGURE_ARGS+="ac_cv_sizeof_sa_family_t=1"
-.endif
-
 pre-extract:
 	@${ECHO_MSG} ""
 .if defined(WITH_PERL)
@@ -82,4 +76,4 @@ post-install:
 
 	FLOWD_USER=${FLOWD_USER} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

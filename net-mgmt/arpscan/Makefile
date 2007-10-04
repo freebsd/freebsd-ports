@@ -22,10 +22,4 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 
 PLIST_FILES=	bin/arpscan
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 500000
-IGNORE=		unknown BIOCSETIF error
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
