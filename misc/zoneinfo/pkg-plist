@@ -112,8 +112,10 @@ share/zoneinfo/America/Indiana/Indianapolis
 share/zoneinfo/America/Indiana/Knox
 share/zoneinfo/America/Indiana/Marengo
 share/zoneinfo/America/Indiana/Petersburg
+share/zoneinfo/America/Indiana/Tell_City
 share/zoneinfo/America/Indiana/Vevay
 share/zoneinfo/America/Indiana/Vincennes
+share/zoneinfo/America/Indiana/Winamac
 share/zoneinfo/America/Inuvik
 share/zoneinfo/America/Iqaluit
 share/zoneinfo/America/Jamaica
@@ -156,6 +158,7 @@ share/zoneinfo/America/Rainy_River
 share/zoneinfo/America/Rankin_Inlet
 share/zoneinfo/America/Recife
 share/zoneinfo/America/Regina
+share/zoneinfo/America/Resolute
 share/zoneinfo/America/Rio_Branco
 share/zoneinfo/America/Santiago
 share/zoneinfo/America/Santo_Domingo
