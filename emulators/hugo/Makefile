@@ -58,8 +58,8 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500041
-LIB_DEPENDS+=		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .if ${ARCH} != "i386"
