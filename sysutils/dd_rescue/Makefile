@@ -17,12 +17,6 @@ USE_GETOPT_LONG=yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -lgnugetopt"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dd_rescue ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -30,4 +24,4 @@ do-install:
 	${INSTALL_DATA}	${WRKSRC}/README.dd_rescue ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

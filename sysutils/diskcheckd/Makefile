@@ -25,17 +25,10 @@ CFLAGS+=	-D_PATH_CONF='\"${PREFIX}/etc/diskcheckd.conf\"'
 MAKEFILE=	/usr/share/mk/bsd.prog.mk
 MAKE_ARGS=	PROG=diskcheckd MAN8=${MAN8}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		is not tested on anything less than 5.0, use at discretion
-.endif
-
 do-extract:
 	@${MKDIR} ${WRKSRC}
-
-.for file in diskcheckd.c diskcheckd.8
-	@(cd ${WRKSRC} ; ${CP} ${FILESDIR}/${file} .)
+.for f in diskcheckd.c diskcheckd.8
+	@(cd ${WRKSRC} ; ${CP} ${FILESDIR}/${f} .)
 .endfor
 
 do-patch:
@@ -46,4 +39,4 @@ do-install:
 	${INSTALL_DATA}	${FILESDIR}/diskcheckd.conf ${PREFIX}/etc/diskcheckd.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/diskcheckd.8 ${PREFIX}/man/man8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

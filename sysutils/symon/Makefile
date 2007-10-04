@@ -50,14 +50,9 @@ SUBDIR+=	client
 
 MAKE_ARGS+=	SUBDIR="${SUBDIR}" RRDDIR="${LOCALBASE}"
 
-.include <bsd.port.pre.mk>
-
-# Symux doesn't need additional LIBS. Symon doesn't need libkvm on FreeBSD 4.x
+# Symux doesn't need additional LIBS.
 post-patch:
 	@${REINPLACE_CMD} 's/^LIBS+=/LIBS=/' ${WRKSRC}/symux/Makefile
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} 's/-lkvm//' ${WRKSRC}/platform/FreeBSD/Makefile.inc
-.endif
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
@@ -65,4 +60,4 @@ pre-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

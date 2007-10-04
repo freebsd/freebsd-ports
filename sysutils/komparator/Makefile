@@ -22,12 +22,6 @@ USE_GETTEXT=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/komparator
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not build on 4.x
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's,-O2,,g ; \
 		s,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/${CONFIGURE_SCRIPT}
@@ -37,4 +31,4 @@ post-configure:
 	${REINPLACE_CMD} -e 's|doc po src|po src|g' ${WRKSRC}/Makefile
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

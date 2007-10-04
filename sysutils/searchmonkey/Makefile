@@ -24,10 +24,4 @@ PLIST_FILES=	bin/${PORTNAME} share/pixmaps/${PORTNAME}-32x32.png
 CFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

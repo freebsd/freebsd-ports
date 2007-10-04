@@ -19,8 +19,4 @@ PLIST_FILES=	bin/xacpim
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/xacpim ${PREFIX}/bin/xacpim
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 500000
-IGNORE=		does not work on 4.x (does not support ACPI)
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

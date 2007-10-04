@@ -26,12 +26,6 @@ SUB_FILES=	pkg-message pkg-deinstall
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALLL=	${WRKDIR}/pkg-deinstall
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	FreeBSD lower then 5.x doesn't support snapshot
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/amd.map.snap ${WRKSRC}/snapshot \
@@ -47,4 +41,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

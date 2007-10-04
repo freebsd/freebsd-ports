@@ -104,10 +104,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		not supported on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

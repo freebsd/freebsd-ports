@@ -19,10 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Filesys::Statvfs.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	requires statvfs() which is not available before FreeBSD-5*
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -31,8 +31,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 	${WRKSRC}/Makefile.in
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 500000
-IGNORE=	requires GEOM which is only present on FreeBSD 5.x and above
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

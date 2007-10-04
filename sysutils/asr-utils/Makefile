@@ -18,6 +18,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Adaptec ASR RAID Management Software
 
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+
 ONLY_FOR_ARCHS=	i386
 
 NO_WRKSUBDIR=	yes
@@ -33,12 +35,6 @@ MAN8=		raidutil.8
 PLIST_SUB+=	LIBXM=""
 .else
 PLIST_SUB+=	LIBXM="@comment "
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
 .ifndef (WITHOUT_X11)
@@ -75,4 +71,4 @@ do-install:
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/raidutil.8 ${PREFIX}/man/man8/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

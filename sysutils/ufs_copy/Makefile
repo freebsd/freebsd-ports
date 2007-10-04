@@ -17,16 +17,10 @@ COMMENT=	Fast copy utility for UFS filesystem
 WRKSRC=		${WRKDIR}/ufs
 MAKE_ARGS=	BINDIR=${PREFIX}/sbin
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		FreeBSD 4.x does not have libufs
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA}	${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

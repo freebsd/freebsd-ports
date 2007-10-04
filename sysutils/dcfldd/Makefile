@@ -18,11 +18,4 @@ USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 MAN1=		dcfldd.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-dcfldd.h ${PATCHDIR}/extra-patch-human.c \
-		${PATCHDIR}/extra-patch-xstrtol.h
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

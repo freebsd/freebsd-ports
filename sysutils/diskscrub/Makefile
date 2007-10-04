@@ -31,10 +31,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scrub ${PREFIX}/bin/scrub
 	${INSTALL_MAN} ${WRKSRC}/scrub.1 ${MAN1PREFIX}/man/man1/scrub.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-freebsd4
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
