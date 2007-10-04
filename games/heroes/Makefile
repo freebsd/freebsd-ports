@@ -9,8 +9,7 @@ PORTNAME=	heroes
 PORTVERSION=	0.21
 PORTREVISION=	8
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${DATADISTNAME}${EXTRACT_SUFX} \
 		${SOUNDISTNAME}${EXTRACT_SUFX} \
@@ -18,7 +17,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 #PATCH_SITES=	ftp://heroes.sourceforge.net/pub/heroes/patches/
 #PATCHFILES=	heroes-0.7-errata.patch
 
-MAINTAINER=	jre@vineyard.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game of yore similar to the "Tron" and "Nibbles"
 
 DATAVERSION=	1.5
@@ -80,10 +79,4 @@ post-install:
 	${MKDIR} ${DATADIR}/mod
 	${INSTALL_DATA} ${MUSICSRC}/*.xm ${MUSICSRC}/sound.conf ${DATADIR}/mod
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
