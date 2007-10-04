@@ -759,6 +759,7 @@
     SUBDIR += vuxml
     SUBDIR += vxquery
     SUBDIR += w3af
+    SUBDIR += wapiti
     SUBDIR += webfwlog
     SUBDIR += wipe
     SUBDIR += wpa_supplicant
