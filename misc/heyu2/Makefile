@@ -28,24 +28,15 @@ MAN5=		x10config.5 \
 		x10sched.5 \
 		x10scripts.5
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -E 's|/usr/local|${PREFIX}|g; \
 			     s,(CC) =,\1 ?=,g; \
 			     s,(CFLAGS) =,\1 +=,g' \
 		${WRKSRC}/Configure
-.if ${OSVERSION} >= 500000
 	@${REINPLACE_CMD} -e 's|<.*termio[s]*.h|<sys/ttycom.h|g' \
 		${WRKSRC}/cm17a.c \
 		${WRKSRC}/xsync.c \
 		${WRKSRC}/xwrite.c
-.else
-	@${REINPLACE_CMD} -e 's|<.*termio[s]*.h|<sys/termios.h|g' \
-		${WRKSRC}/cm17a.c \
-		${WRKSRC}/xsync.c \
-		${WRKSRC}/xwrite.c
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/heyu ${PREFIX}/bin
@@ -57,4 +48,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/x10config.sample ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/x10.sched.sample ${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

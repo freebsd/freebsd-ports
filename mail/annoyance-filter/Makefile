@@ -21,13 +21,7 @@ GNU_CONFIGURE=		yes
 MAN1=		annoyance-filter.1
 DOCS=		COPYING INSTALL README *.pdf
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-CFLAGS+=	-I. ${CPPFLAGS}
-.else
-CFLAGS+=	${CPPFLAGS}
-.endif
+CFLAGS=		${CPPFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
@@ -38,4 +32,4 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

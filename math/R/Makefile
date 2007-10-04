@@ -154,11 +154,6 @@ INFO=		R-FAQ R-admin R-data R-exts R-intro R-lang
 CONFIGURE_ENV+=	R_PAPERSIZE=letter
 .endif
 
-.if ${OSVERSION} < 500000
-CONFIGURE_ARGS+=	--disable-mbcs
-BROKEN=		does not compile
-.endif
-
 .if ${OSVERSION} < 600000
 CONFIGURE_ENV+=	MAKEINFO=${LOCALBASE}/bin/makeinfo
 BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo

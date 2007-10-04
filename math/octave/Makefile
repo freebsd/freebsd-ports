@@ -48,10 +48,6 @@ SUB_LIST=	OCTAVE_VERSION="${OCTAVE_VERSION}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
-
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=		yes
 .endif

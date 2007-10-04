@@ -91,7 +91,7 @@ PLIST_SUB+=	DBUS=""
 PLIST_SUB+=	DBUS="@comment "
 .endif
 
-.if ${OSVERSION} >= 500000 && !defined(NO_KERBEROS) && \
+.if !defined(NO_KERBEROS) && \
 	exists(/usr/lib/libkrb5.so)
 CONFIGURE_ARGS+=	--with-krb5=/usr
 .else

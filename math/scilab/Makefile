@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--without-pvm
 USE_GNOME=	pkgconfig gtk20 libgtkhtml vte
 CONFIGURE_ARGS+=	--with-gtk2
 PLIST_SUB+=	GTK2="" NOGTK2="@comment "
-.if ${OSVERSION} < 500000 || exists(${LOCALBASE}/lib/libreadline.so.5)
+.if exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 .else

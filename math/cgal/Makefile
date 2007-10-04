@@ -32,12 +32,6 @@ PORTDOCS=	*
 
 INVOKE=		cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not build on FreeBSD 4.x
-.endif
-
 post-patch:
 	@for d in ${WRKSRC}/include/CGAL ${WRKSRC}/examples ${WRKDIR}/doc_html/cgal_manual; do \
 		${FIND} $$d -name '*.orig' -delete; \
@@ -76,4 +70,4 @@ cgal-install:
 	${FIND} * -type d -exec ${MKDIR} "${DST}/{}" \; && \
 	${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DST}/{}" \;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

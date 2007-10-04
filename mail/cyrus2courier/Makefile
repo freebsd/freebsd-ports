@@ -22,13 +22,6 @@ ALL_TARGET=	build
 
 PLIST_FILES=	bin/cyrus2courier
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-CFLAGS+=	-I${LOCALBASE}/include
-MAKE_ARGS=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} '/^CFLAGS*/d; /^LDFLAGS*/d; /^CC*/d' \
 		${WRKSRC}/src/Makefile.FreeBSD
@@ -36,4 +29,4 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

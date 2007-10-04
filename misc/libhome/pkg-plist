@@ -17,7 +17,7 @@ lib/libhome-preload.a
 lib/libhome-preload.la
 lib/libhome-preload.so
 lib/libhome-preload.so.1
-%%NSS%%lib/nss_home_proxy.a
-%%NSS%%lib/nss_home_proxy.la
-%%NSS%%lib/nss_home_proxy.so
-%%NSS%%lib/nss_home_proxy.so.1
+lib/nss_home_proxy.a
+lib/nss_home_proxy.la
+lib/nss_home_proxy.so
+lib/nss_home_proxy.so.1

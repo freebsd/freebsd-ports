@@ -37,12 +37,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib F77="${F77}"
 USE_FORTRAN=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -53,4 +47,4 @@ post-install:
 	    -s ':^bugs-examples/*::' )
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
