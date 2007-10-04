@@ -19,11 +19,4 @@ INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 MAKEFILE=	${WRKSRC}/GNUmakefile
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-post-patch:
-	@${REINPLACE_CMD} -e 's/uint_fast16_t/uint32_t/' ${WRKSRC}/yuv2rgb.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

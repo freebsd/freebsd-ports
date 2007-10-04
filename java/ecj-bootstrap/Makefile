@@ -29,8 +29,8 @@ ANT_VERSION=    1.6.5
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000 || ${OSVERSION} > 700000
-IGNORE=	dumps core on FreeBSD 4.x and 7.x
+.if ${OSVERSION} > 700000
+IGNORE=	dumps core on 7.x
 .endif
 
 GCJ=	gcj41

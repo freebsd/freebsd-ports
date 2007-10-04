@@ -26,12 +26,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		AUTOMAKE="${TRUE}" AUTOCONF="${TRUE}" DOXYGEN="${TRUE}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build
-.endif
-
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--disable-docs
 
@@ -42,4 +36,4 @@ post-configure:
 	@${TOUCH} -f ${WRKSRC}/docs/reference/html/index.html
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

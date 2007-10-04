@@ -37,27 +37,10 @@ MAN1=		exrblur.1 exrchr.1 exricamtm.1 exrnlm.1 exrnormalize.1 \
 		exrpptm.1 exrstats.1 exrtools.1 exrtopng.1 jpegtoexr.1 \
 		pngtoexr.1 ppmtoexr.1
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|<values\.h>|<float.h>|' \
 		${WRKSRC}/src/exrnormalize.c \
 		${WRKSRC}/src/exrpptm.c \
 		${WRKSRC}/src/exrstats.c
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|stdint\.h|inttypes.h|' \
-		${WRKSRC}/src/exrblur.c \
-		${WRKSRC}/src/exrchr.c \
-		${WRKSRC}/src/exrnlm.c \
-		${WRKSRC}/src/exrnormalize.c \
-		${WRKSRC}/src/exrpptm.c \
-		${WRKSRC}/src/ppmtoexr.c \
-		${WRKSRC}/src/exricamtm.c \
-		${WRKSRC}/src/jpeginput.h \
-		${WRKSRC}/src/pngoutput.h \
-		${WRKSRC}/src/pnginput.h
-	@${REINPLACE_CMD} -e 's|inttypes\.h|sys/types.h|' \
-		${WRKSRC}/src/ppmtoexr.c
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

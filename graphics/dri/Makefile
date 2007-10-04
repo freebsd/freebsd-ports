@@ -60,11 +60,4 @@ do-install:
 IGNORE=	requires libGL from X.Org
 .endif
 
-.if ${OSVERSION} < 500000
-pre-patch:
-	@${REINPLACE_CMD} -e 's|stdint.h|sys/types.h|g' \
-		${WRKSRC}/src/mesa/drivers/dri/mga/mga_xmesa.c \
-		${WRKSRC}/src/mesa/drivers/dri/mga/mgacontext.h
-.endif
-
 .include <bsd.port.post.mk>

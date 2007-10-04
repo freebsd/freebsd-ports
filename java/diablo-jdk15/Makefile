@@ -50,7 +50,7 @@ LIB_DEPENDS=	z.3:${PORTSDIR}/misc/compat6x
 JDK_OSREL=	freebsd6
 .elif ${OSVERSION} >= 600000
 JDK_OSREL=	freebsd6
-.elif ${OSVERSION} >= 500000 && ${ARCH} == "i386"
+.elif ${ARCH} == "i386"
 JDK_OSREL=	freebsd5
 .else
 IGNORE=		Only available for FreeBSD 5.x/i386 and FreeBSD 6.x/amd64 and later

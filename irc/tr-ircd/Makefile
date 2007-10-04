@@ -72,10 +72,6 @@ SUB_LIST+=	MKDIR="${MKDIR}" PW="${PW}" CHMOD="${CHMOD}" CHOWN="${CHOWN}"
 CFLAGS+=	-fPIC
 .endif
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4 # Needs va_copy
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s,-O2,${CFLAGS}," ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s, ircpasswd,tr-ircpasswd," \

@@ -52,11 +52,6 @@ DEVEL_PORTVERSION=	10.31
 # -O causes an ICE in converter/other/exif.c with gcc 3.3.3 on sparc64.
 CFLAGS+=	-O0
 .endif
-.if ${ARCH} == "alpha"
-.if ${OSVERSION} < 500000
-CFLAGS+=	-O0
-.endif
-.endif
 
 .if defined(WITH_NETPBM_DEVEL)
 EXTRA_PATCHES+=	${FILESDIR}/editor-pnmquant-devel.patch

@@ -35,10 +35,6 @@ QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=does not compile
-.endif
-
 .if ${ARCH} == "ia64"
 BROKEN=	broken on ia64
 .endif

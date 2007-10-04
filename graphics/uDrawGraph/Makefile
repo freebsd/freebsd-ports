@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${PKGNUM}-${OPSYS:L}-${ARCH}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A graph drawing/visualization system
 
+LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 
@@ -79,10 +81,4 @@ do-install:
 	@${LN} ${LINK_OPTS} ${DOCSDIR} ${DATADIR}/docs
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
