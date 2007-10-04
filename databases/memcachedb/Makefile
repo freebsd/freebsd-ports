@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcachedb
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	databases
 MASTER_SITES=	http://memcachedb.googlecode.com/files/
 
@@ -16,8 +16,10 @@ COMMENT=	Distributed storage system designed for persistent
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent
 
 USE_BDB=	42+
-USE_RC_SUBR=	${PORTNAME}
 USE_DOS2UNIX=	YES
+USE_RC_SUBR=	${PORTNAME}
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	${REINPLACE_CMD} \
@@ -31,4 +33,4 @@ do-install:
 	${MKDIR} /var/db/memcachedb || ${TRUE}
 	${CHOWN} nobody:nobody /var/db/memcachedb
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
