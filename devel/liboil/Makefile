@@ -24,7 +24,7 @@ CFLAGS:=	${CFLAGS:N-O*} -O2
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000 && && !defined(WITH_3DNOW_GCC40)
+.if ${OSVERSION} < 600000 && !defined(WITH_3DNOW_GCC40)
 BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
 RUN_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
 CC:=	gcc34
