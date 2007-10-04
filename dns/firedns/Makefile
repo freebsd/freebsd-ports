@@ -21,12 +21,6 @@ USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=	3.2+
-.endif
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		fdnscname.1 fdnsip.1 fdnsip6.1 fdnsip6list.1 fdnsiplist.1 fdnsmx.1 \
@@ -50,4 +44,4 @@ MAN3=		firedns_aton4.3 firedns_aton6.3 firedns_dnsbl_lookup.3 \
 pre-configure:
 	@-${RM} ${WRKSRC}/firemake/*.orig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

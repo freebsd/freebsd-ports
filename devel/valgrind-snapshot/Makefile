@@ -33,29 +33,17 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700000
-PLIST_SUB+=	RELENG_4="@comment "
 PLIST_SUB+=	RELENG_5="@comment "
 PLIST_SUB+=	RELENG_6="@comment "
 PLIST_SUB+=	RELENG_7=""
-.else
-.if ${OSVERSION} >= 600000
-PLIST_SUB+=	RELENG_4="@comment "
+.elif ${OSVERSION} >= 600000
 PLIST_SUB+=	RELENG_5="@comment "
 PLIST_SUB+=	RELENG_6=""
 PLIST_SUB+=	RELENG_7="@comment "
 .else
-.if ${OSVERSION} >= 500000
-PLIST_SUB+=	RELENG_4="@comment "
 PLIST_SUB+=	RELENG_5=""
 PLIST_SUB+=	RELENG_6="@comment "
 PLIST_SUB+=	RELENG_7="@comment "
-.else
-PLIST_SUB+=	RELENG_4=""
-PLIST_SUB+=	RELENG_5="@comment "
-PLIST_SUB+=	RELENG_6="@comment "
-PLIST_SUB+=	RELENG_7="@comment "
-.endif
-.endif
 .endif
 
 PROCFS!=	/sbin/mount | ${GREP} '^procfs' | ${AWK} '{print $1}'

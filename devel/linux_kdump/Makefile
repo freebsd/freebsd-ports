@@ -24,10 +24,6 @@ PLIST_FILES=	bin/linux_kdump
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-USE_GCC=        3.4+
-.endif
-
 .ifndef(SRCDIR)
 SRCDIR=		/usr/src
 pre-everything::

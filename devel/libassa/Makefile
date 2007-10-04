@@ -29,13 +29,7 @@ MAN1=		assa-genesis.1
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s: doc : :g' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.pre.mk>
-
-.if ( ${OSVERSION} < 500000 )
-BROKEN=	compilation fails and passing -fhuge-objects does not help
-.endif
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/debian/assa-genesis.1 ${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

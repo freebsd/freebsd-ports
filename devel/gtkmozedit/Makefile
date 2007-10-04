@@ -25,10 +25,6 @@ USE_GECKO=	mozilla
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
-.if ${OSVERSION} < 500000
-BROKEN="Does not build"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|firefox-nspr|firefox-xpcom|; \
 		s|mozilla-nspr|mozilla-xpcom|' \

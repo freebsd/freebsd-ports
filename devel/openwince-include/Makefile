@@ -20,16 +20,10 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-PLIST_FILES=	include/stdint.h
-.endif
-
 post-install:
 	@${FIND} -d ${PREFIX}/include/openwince/ -type f | \
 		${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} -d ${PREFIX}/include/openwince/ -type d | \
 		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

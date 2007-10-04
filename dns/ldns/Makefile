@@ -27,13 +27,9 @@ ALL_TARGET=	all
 INSTALL_TARGET=	install-lib install-h
 
 .if defined(WITH_DOCS)
-.if ${OSVERSION} < 500000
-BROKEN=	Doxygen fails to create manpages on 4.x
-.endif
-
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 ALL_TARGET+=	doc
-INSTALL_TARGET+=	install-doc
+INSTALL_TARGET+=install-doc
 
 NOMANCOMPRESS=	true
 MANCOMPRESSED=	no

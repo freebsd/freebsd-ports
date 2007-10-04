@@ -21,12 +21,6 @@ ALL_TARGET=	lib
 USE_GMAKE=	yes
 USE_GCC=	2.95
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		"Does not compile on alpha 4.x"
-.endif
-
 post-patch:
 	@( cd ${WRKSRC}; ${MV} c++ c++.orig; \
 	${SED} -e 's|^ *gcc|${CXX} ${CXXFLAGS}|' c++.orig > c++; ${CHMOD} +x c++ )
@@ -51,4 +45,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/cppadvio
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

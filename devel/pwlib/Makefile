@@ -145,10 +145,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|P_PTHREADS_XPG6|0|' \
 		${WRKSRC}/src/ptlib/unix/tlibthrd.cxx
 .endif
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
-		${WRKSRC}/src/ptlib/common/tinyjpeg.cxx \
-		${WRKSRC}/src/ptlib/common/jidctflt.cxx
-.endif
 
 .include <bsd.port.post.mk>

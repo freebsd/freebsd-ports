@@ -48,10 +48,6 @@ SHLIB_VER=	43
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-include-allegro-inline-fmaths.in
-.endif
-
 .if defined(WITH_AL)
 LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
 CONFIGURE_ARGS+=--enable-sgialdigi

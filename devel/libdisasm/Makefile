@@ -22,13 +22,8 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e 's, make, gmake,' ${WRKSRC}/Makefile
-.if ${OSVERSION} < 500000
-	${REINPLACE_CMD} -e 's, -Wno-strict-aliasing,,' ${WRKSRC}/libdisasm/Makefile
-.endif
 
 .if !defined(NOPORTDOCS)
 DOCSDIR=	${DATADIR}/doc
@@ -57,4 +52,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${i} ${PREFIX}/man/man7
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
