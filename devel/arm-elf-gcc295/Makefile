@@ -41,6 +41,10 @@ MAN1=		${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}gcc.1 cccp.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if !defined(DEFAULT_CPU)
 pre-extract:
 	@${ECHO}
@@ -49,11 +53,9 @@ pre-extract:
 	@${ECHO}
 .endif
 
-.if ${OSVERSION} >= 500113
 post-patch:
 	@(cd ${PATCH_WRKSRC} && ${PATCH} < ${PATCHDIR}/libiberty-strerror.c && \
 	${PATCH} < ${PATCHDIR}/libiberty-strsignal.c)
-.endif
 
 post-configure:
 	${REINPLACE_CMD} -Ee 's,^(TARGET_CONFIGDIRS\s*=),\1#,' \
