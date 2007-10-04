@@ -22,8 +22,6 @@ USE_PERL5=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-.include <bsd.port.mk>
-
 do-extract:
 	[ -d ${WRKDIR} ] || ${MKDIR} ${WRKDIR}
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}/${DISTNAME}
