@@ -25,12 +25,6 @@ MAN1=		${PORTNAME}.1
 
 PLIST_FILES=	bin/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not work on FreeBSD 4.x
-.endif
-
 post-patch:
 	${REINPLACE_CMD} 's|<alloca.h>|<stdlib.h>|' \
 		${WRKSRC}/machmgr.c
@@ -39,4 +33,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

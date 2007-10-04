@@ -62,12 +62,6 @@ MAN3=	ph_add.3 \
 		ph_whoami.3 \
 		ph_www_resolve.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	doesn't compile on FreeBSD < 5.x
-.endif
-
 do-install:
 	@(cd ${BUILD_WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-recurse)
 
@@ -78,4 +72,4 @@ do-install:
 post-clean:
 	@${RM} -f ${PREFIX}/etc/ph_server
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

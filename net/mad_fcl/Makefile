@@ -29,10 +29,6 @@ PLIST_FILES=	bin/flute
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"does not compile"
-.endif
-
 .if ${OSVERSION} < 502120
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-alclib_defines.h
 .endif

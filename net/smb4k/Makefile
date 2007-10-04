@@ -31,12 +31,6 @@ CONFIGURE_ARGS += 	--with-qt-dir=${QT_PREFIX} \
 DOCSDIR=		${PREFIX}/share/doc/HTML/en/${PORTNAME}
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not build on 4.x (missing sys/statvfs.h)
-.endif
-
 post-install:
 .for i in smb2awk smb2nsmbrc
 	${INSTALL_SCRIPT} ${FILESDIR}/${i} ${PREFIX}/bin
@@ -46,4 +40,4 @@ post-install:
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

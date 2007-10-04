@@ -20,11 +20,4 @@ MAN1=		tcpxtract.1
 
 PLIST_FILES=	bin/tcpxtract etc/tcpxtract.conf
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tcpxtract.c ${PATCHDIR}/extra-patch-sessionlist.c
-.endif
-
-.include <bsd.port.post.mk>
-
+.include <bsd.port.mk>

@@ -96,12 +96,6 @@ CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
 		--without-rlm_sql_sybase \
 		--without-rlm_sql_unixodbc
 
-.if ${OSVERSION} < 500000 && ${OPENSSLBASE} == "/usr"
-PLIST_SUB+=	4SSL="@comment "
-.else
-PLIST_SUB+=	4SSL=""
-.endif
-
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=	--with-pic
 .endif
@@ -197,7 +191,7 @@ USE_PERL5=	yes
 .endif
 
 # rlm_perl does not build on 4.x
-.if ${OSVERSION} < 500000 || defined(WITH_NOPERL)
+.if defined(WITH_NOPERL)
 CONFIGURE_ARGS+=--without-rlm_perl
 PLIST_SUB+=	RLMPERL="@comment "
 .else
@@ -226,9 +220,6 @@ post-patch:
 		${REINPLACE_CMD} -e "s:\$$(R)\$$(raddbdir):${EXAMPLESDIR}/raddb:g" {} \;
 # Clean up after the last operation (so as not to get unwanted files when installing doc/)
 	@${FIND} -E ${WRKSRC} -regex '.*/Makefile(\.in)?\.(orig|bak)$$' -delete
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's/-DNO_OPENSSL//' ${WRKSRC}/configure.in
-.endif
 
 pre-configure:
 # Force the rebuild of some configures from configure.in, as we're patching

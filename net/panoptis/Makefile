@@ -22,16 +22,10 @@ CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}' LDFLAGS='${LDFLAGS}'
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PLIST_FILES=	bin/panoptis bin/mail.py bin/pview.py bin/speed.py
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/panoptis/panoptis ${PREFIX}/bin/panoptis
 	${INSTALL_SCRIPT} ${WRKSRC}/panoptis/mail.py ${PREFIX}/bin/mail.py
 	${INSTALL_SCRIPT} ${WRKSRC}/panoptis/pview.py ${PREFIX}/bin/pview.py
 	${INSTALL_SCRIPT} ${WRKSRC}/panoptis/speed.py ${PREFIX}/bin/speed.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

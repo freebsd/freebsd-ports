@@ -35,9 +35,6 @@ OPTIONS=	OPTIMIZATION	"Enable optimization"	off
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386 && ${OSVERSION} < 500000
-BROKEN=		does not compile on i386-4
-.endif
 .if ${ARCH} == amd64 || ${ARCH} == ia64 
 BROKEN=		does not compile on ${ARCH}
 .endif
