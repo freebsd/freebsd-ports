@@ -1,14 +1,18 @@
 %%SITE_PERL%%/mysqltoolkit.pm
-bin/mysql-find
-bin/mysql-duplicate-key-checker
-bin/mysql-table-sync
-bin/mysql-deadlock-logger
-bin/mysql-slave-restart
-bin/mysql-profile-compact
 bin/mysql-archiver
-bin/mysql-query-profiler
-bin/mysql-table-checksum
 bin/mysql-checksum-filter
+bin/mysql-deadlock-logger
+bin/mysql-duplicate-key-checker
+bin/mysql-find
+bin/mysql-heartbeat
+bin/mysql-parallel-dump
+bin/mysql-profile-compact
+bin/mysql-query-profiler
 bin/mysql-show-grants
+bin/mysql-slave-delay
+bin/mysql-slave-restart
+bin/mysql-table-checksum
+bin/mysql-table-sync
+bin/mysql-visual-explain
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mysqltoolkit/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mysqltoolkit
