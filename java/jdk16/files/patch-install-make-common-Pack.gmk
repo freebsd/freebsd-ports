@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../install/make/common/Pack.gmk	27 Jun 2007 18:48:09 -0000	1.2
++++ ../../install/make/common/Pack.gmk	6 Sep 2007 17:53:58 -0000	1.4
+@@ -45,7 +45,7 @@
+ # These are loaded from the ClassPath
+ CP_JRE_PACKED_JARS	= lib/ext/localedata.jar
+ 
+-ifeq ($(ARCH_DATA_MODEL),32)
++ifeq ($(INSTALL_DEPLOY), true)
+    CP_JRE_PACKED_JARS += lib/plugin.jar
+    CP_JRE_PACKED_JARS += lib/javaws.jar
+    CP_JRE_PACKED_JARS += lib/deploy.jar
