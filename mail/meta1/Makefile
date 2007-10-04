@@ -44,6 +44,8 @@ PLIST_SUB+=	NOLOGIN=${NOLOGIN_CMD}
 EXTRA_SBIN=	libcheck/noroot libconf/tree libmta/statit \
 		libmta/t-hostname checks/t-getgroup
 
+NOLOGIN_CMD?=	/usr/sbin/nologin
+
 # Options to define Features:
 # META1_WITHOUT_TLS=yes
 # META1_WITHOUT_SASL=yes
@@ -179,12 +181,6 @@ UID!=	${ID} -u
 .endif
 .if ${UID} != 0
 post-build:	test
-.endif
-
-.if ${OSVERSION} < 500000
-NOLOGIN_CMD?=	/sbin/nologin
-.else
-NOLOGIN_CMD?=	/usr/sbin/nologin
 .endif
 
 .include <bsd.port.post.mk>

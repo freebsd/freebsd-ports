@@ -43,7 +43,7 @@ GCONF_SCHEMAS=	apps_exchange_addressbook-${VERSION}.schemas
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000 && !defined(NO_KERBEROS) && \
+.if !defined(NO_KERBEROS) && \
 	exists(/usr/lib/libkrb5.so)
 CONFIGURE_ARGS+=	--with-krb5=/usr
 .else

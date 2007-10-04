@@ -20,10 +20,4 @@ PLIST_FILES=	bin/${PORTNAME}
 
 MAN1=		${PORTNAME}.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -25,12 +25,6 @@ LDFLAGS+=	-lncurses
 MAN1=		gnu-watch.1
 PLIST_FILES=	bin/${UNIQUENAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-watch.c
-.endif
-
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.c \
 		-o ${WRKSRC}/${UNIQUENAME}
@@ -39,4 +33,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${UNIQUENAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/watch.1 ${MANPREFIX}/man/man1/${UNIQUENAME}.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

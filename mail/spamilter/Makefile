@@ -64,11 +64,9 @@ pre-configure:
 		${WRKSRC}/docs/docs.html ${WRKSRC}/docs/docs.txt
 
 xpost-configure:
-.if ${OSVERSION} > 500000
 	${REINPLACE_CMD} \
 		-e "s| install-ipfwmtad | |" \
 		${WRKSRC}/Makefile
-.endif
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/spamilter.sh \

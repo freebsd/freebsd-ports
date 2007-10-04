@@ -44,12 +44,6 @@ CONFIGURE_ARGS+=--program-prefix='' --disable-cdf \
 
 MAN1=		LabPlot.1 labplot.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not compile on 4.x
-.endif
-
 #This needs some more work before enabling this feature
 #.if defined(WITH_VTK)
 #LIB_DEPENDS+=	vtkRendering.1:${PORTSDIR}/math/vtk
@@ -64,4 +58,4 @@ IGNORE=		does not compile on 4.x
 #CONFIGURE_ARGS+=	--enable-vtk
 #.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

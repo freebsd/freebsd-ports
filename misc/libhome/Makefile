@@ -81,12 +81,6 @@ CONFIGURE_ARGS+=	--without-pgsql
 MAN5=		home.conf.5
 MAN8=		home_proxy.8
 
-.if ${OSVERSION} < 500000
-PLIST_SUB=	NSS="@comment "
-.else
-PLIST_SUB=	NSS=""
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig ${WRKSRC}/configure
 .if defined(WITH_BDB)

@@ -25,10 +25,6 @@ OPTIONS=	RE2C	"Enable re2c to regenerate PHP parsers"	on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not build on FreeBSD 4.x
-.endif
-
 .if defined(WITH_RE2C)
 BUILD_DEPENDS+=	re2c:${PORTSDIR}/devel/re2c
 .endif

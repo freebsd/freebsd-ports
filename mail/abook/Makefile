@@ -35,7 +35,7 @@ PORTDOCS=	ANNOUNCE AUTHORS BUGS ChangeLog FAQ INSTALL NEWS README \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000 || exists(${LOCALBASE}/lib/libreadline.so.5)
+.if exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 

@@ -114,24 +114,10 @@ pre-configure:
 
 	@${ECHO_CMD} ""
 
-.if ${OSVERSION} >= 500000
 .if defined(KRB5_HOME)
 	@${ECHO_CMD} "Using Kerberos V support in ${KRB5_HOME}."
 .else
 	@${ECHO_CMD} "Use KRB5_HOME=<directory> to enable Kerberos V support in <directory> (usually /usr)."
-.endif
-
-.else
-# FreeBSD 4
-.if defined(MAKE_KERBEROS4)
-.if exists(/usr/lib/libkrb.a)
-	@${ECHO_CMD} "Enabling Kerberos IV support in /usr."
-.else
-	@${ECHO_CMD} "Kerberos IV is not installed on your system."
-.endif
-.else
-	@${ECHO_CMD} "Use -DMAKE_KERBEROS4 to enable Kerberos IV support."
-.endif
 .endif
 
 .if defined(WITH_GSSAPI)
