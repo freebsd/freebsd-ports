@@ -32,4 +32,12 @@ MAKE_ARGS=	CXXFLAGS="${CXXFLAGS}" \
 
 PLIST_FILES=	bin/lfhex
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "i386"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
+
+.include <bsd.port.post.mk>
