@@ -27,9 +27,9 @@ PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|Config::parseConfig|parseConfig|' \
+		${WRKSRC}/config.h
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake -project
