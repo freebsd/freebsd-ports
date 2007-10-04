@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysqltoolkit
-PORTVERSION=	646
+PORTVERSION=	946
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -24,12 +24,16 @@ MAN1=	mysql-archiver.1 \
 	mysql-deadlock-logger.1 \
 	mysql-duplicate-key-checker.1 \
 	mysql-find.1 \
+	mysql-heartbeat.1 \
+	mysql-parallel-dump.1 \
 	mysql-profile-compact.1 \
 	mysql-query-profiler.1 \
 	mysql-show-grants.1 \
+	mysql-slave-delay.1 \
 	mysql-slave-restart.1 \
 	mysql-table-checksum.1 \
-	mysql-table-sync.1
+	mysql-table-sync.1 \
+	mysql-visual-explain.1
 MAN3=	mysqltoolkit.3
 
 .include <bsd.port.mk>
