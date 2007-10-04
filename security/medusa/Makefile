@@ -30,12 +30,6 @@ MAN1=		medusa.1
 BROKEN=		Does not build on ia64
 .endif
 
-.if ${OSVERSION} < 500000
-LIB_DEPENDS+=	pth.20:${PORTSDIR}/devel/pth
-CFLAGS+=	-L${LOCALBASE}/lib/pth
-USE_GCC=	3.2+
-.endif
-
 .if defined(WITH_SVN)
 LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
 CFLAGS+=	-I${LOCALBASE}/include/subversion-1 -I${LOCALBASE}/include/apr-1

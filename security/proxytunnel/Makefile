@@ -27,14 +27,9 @@ PORTDOCS=	CHANGES CREDITS README
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CFLAGS+=	-DUSE_SSL -DHAVE_SETPROCTITLE -DSPT_TYPE=1 -DREV=${SVNREV}
+CFLAGS+=	-DHAVE_GETOPT_LONG
 
 SVNREV=		161
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-CFLAGS+=	-DHAVE_GETOPT_LONG
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/${MAKEFILE}
@@ -49,4 +44,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

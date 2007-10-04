@@ -17,12 +17,6 @@ MANCOMPRESSED=	yes
 MAN8=		pam_mkhomedir.8
 SUB_FILES=      pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	Only for 5.0 and above
-.endif
-
 .if defined(WITH_PROFILE)
 PLIST_SUB+=	PROFILE=""
 MAKE_ARGS+=	PROFILE=yes
@@ -54,4 +48,4 @@ pre-everything::
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

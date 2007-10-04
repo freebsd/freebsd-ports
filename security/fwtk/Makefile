@@ -40,10 +40,8 @@ LIBEXEC_BINS=	authsrv ftp-gw http-gw netacl plug-gw rlogin-gw smap smapd \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
 .if defined(WITH_SKEY)
 IGNORE=		does not build on 5.x and above with WITH_SKEY set because it requires S/Key libraries and headers
-.endif
 .endif
 
 .if !defined(WITHOUT_X11)

@@ -48,10 +48,6 @@ SED_SCRIPT=	-e 's|<db.h>|<${BDB_INCLUDE_DIR}/db.h>|' \
 		-e 's|%%ETCPREFIX%%|${ETCPREFIX}|' \
 		-e 's|%%PAMABLDB%%|${PAMABLDB}|'
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
 post-patch:
 .for file in Makefile pam_abl.h conf/pam_abl.conf conf/system-auth doc/index.html doc/pam_abl.html tools/Makefile
 	@${REINPLACE_CMD} ${SED_SCRIPT} ${WRKSRC}/${file}

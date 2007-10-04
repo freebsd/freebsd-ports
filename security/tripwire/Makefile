@@ -50,13 +50,6 @@ TRIPWIRE_CLOBBER?=	NO
 #	previously installed config files.
 CONFIGURE_ARGS=	--prefix=${PREFIX} --program-transform-name='' --sysconfdir=${TWCFG}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-.endif
-
 PLIST_SUB+=	TWCFG=${TWCFG} TWDB=${TWDB}
 
 pre-configure:
@@ -98,4 +91,4 @@ create-database:
 
 post-install:	install-config-files create-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

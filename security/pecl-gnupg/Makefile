@@ -26,14 +26,8 @@ CONFIGURE_ARGS=	--with-gnupg=${LOCALBASE}/include/gpgme
 CFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000 && ${PHP_VER} == 5
-USE_GCC=	3.2+
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|\$$GNUPG_DIR/lib|${LOCALBASE}/lib|" -e "s|-ldl||g" \
 		${WRKSRC}/config.m4
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

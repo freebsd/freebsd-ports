@@ -34,12 +34,6 @@ CONFIGURE_ENV=	LIBNET_CONFIG="${LIBNET_CONFIG}"
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
-.endif
-
 #NOT_FOR_ARCHS=	ia64 sparc64
 MAN8=		yersinia.8
 PLIST_FILES=	sbin/yersinia
@@ -52,4 +46,4 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/src/yersinia ${PREFIX}/sbin/
 		${INSTALL_MAN} ${WRKSRC}/yersinia.8 ${PREFIX}/man/man8/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

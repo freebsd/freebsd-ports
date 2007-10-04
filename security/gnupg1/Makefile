@@ -102,10 +102,6 @@ post-install:
 PKGMESSAGE=	/nonexistent
 .endif
 
-.if ${OSVERSION} < 500000
-CONFIGURE_ARGS+=	--without-readline
-.endif
-
 check:
 	(cd ${WRKSRC}; ${MAKE} check)
 

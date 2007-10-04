@@ -24,12 +24,10 @@ SUB_FILES=	${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
 .if ${ARCH} == amd64
 LIB32_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 .else
 LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
-.endif
 .endif
 
 do-install:

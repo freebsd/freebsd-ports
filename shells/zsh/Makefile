@@ -118,7 +118,7 @@ CONFIGURE_ARGS+=	--enable-dynamic
 PLIST_SUB+=		NO_STATIC=""
 .endif
 
-.if ${OSVERSION} >= 500000 && defined(WITH_ZSH_MULTIBYTE)
+.if defined(WITH_ZSH_MULTIBYTE)
 CONFIGURE_ARGS+=	--enable-multibyte
 .endif
 

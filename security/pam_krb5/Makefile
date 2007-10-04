@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=		cy@FreeBSD.org
-COMMENT=	A Pluggable Authentication Module for Kerberos 5
+COMMENT=		A Pluggable Authentication Module for Kerberos 5
 
 MAN5=			pam_krb5.5 pam_krb5afs.5
 MAN8=			pam_krb5.8 pam_krb5afs.8
@@ -22,6 +22,8 @@ MAN8=			pam_krb5.8 pam_krb5afs.8
 USE_PERL5=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
+
+IGNORE=			FreeBSD 5.x already ships with its own version of pam_krb5
 
 .if defined(PACKAGE_BUILDING)
 KRB5_IMPL=		mit
@@ -41,11 +43,6 @@ KRB5_DIR?=		${KRB5_HOME}
 IGNORE=			You must define KRB5_IMPL to be \"mit\" or \"heimdal\"
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-IGNORE=			FreeBSD 5.x already ships with its own version of pam_krb5
-.endif
 MANDIR=			${MANPREFIX}/man
 PREFIX=			/usr
 MANPREFIX=		/usr/share
@@ -60,4 +57,4 @@ CONFIGURE_ARGS=		--with-krb5="${KRB5_DIR}"	\
 post-install:
 	cd ${WRKSRC} && ${GMAKE} install-man
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

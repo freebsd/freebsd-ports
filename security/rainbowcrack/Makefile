@@ -15,10 +15,6 @@ COMMENT=	Hash cracker that precomputes plaintext - ciphertext pairs in advance
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not build on 4.x
-.endif
-
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 BROKEN=		does not compile on ia64 or sparc64
 .endif

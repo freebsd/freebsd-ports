@@ -20,14 +20,6 @@ USE_OPENSSL=	yes
 PLIST_FILES=	bin/tlswrap
 PORTDOCS=	README
 
-.include <bsd.port.pre.mk>
-
-post-configure:
-.if ( ${OSVERSION} < 500000 )
-	@${REINPLACE_CMD} -E 's,#define socklen_t size_t,,g' \
-		${WRKSRC}/conf.h
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS|LDFLAGS).*=,\1?=,g' \
 		${WRKSRC}/Makefile.in
@@ -38,4 +30,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

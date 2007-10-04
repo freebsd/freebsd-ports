@@ -22,14 +22,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
 CONFIGURE_ARGS+=	--with-pam
-PLIST_SUB+=	WITH_PAM=""
-.else
-PLIST_SUB+=	WITH_PAM="@comment "
-.endif
 
 CONFLICTS?=	calife-2.*
 
@@ -37,9 +30,7 @@ MAN1=		calife.1
 MAN5=		calife.auth.5
 
 post-install:
-.if ${OSVERSION} >= 500000
 	@${INSTALL_DATA} ${WRKSRC}/pam/freebsd5 ${PREFIX}/etc/pam.d/calife.sample
 	@${CAT} ${PKGMESSAGE}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
