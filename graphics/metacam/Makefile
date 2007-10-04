@@ -30,14 +30,6 @@ MAN1=		metacam.1
 
 ALL_TARGET=	${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-post-patch:
-	@${REINPLACE_CMD} -e 's|<\(getopt\.h\)>|"\1"|' ${WRKSRC}/${PORTNAME}.cc
-	${CP} ${FILESDIR}/getopt.h ${WRKSRC}
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 ${MANPREFIX}/man/man1
@@ -49,4 +41,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

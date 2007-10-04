@@ -32,7 +32,7 @@ PLIST_FILES=	bin/ale
 BROKEN=		Does not build on alpha
 .endif
 
-.if ${OSVERSION} >= 500000 && ${OSVERSION} < 600000
+.if ${OSVERSION} < 600000
 BROKEN=		Does not build on 5.x due to internal gcc error
 .endif
 

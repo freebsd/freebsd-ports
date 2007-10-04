@@ -61,8 +61,4 @@ CFLAGS+=	-DJMPDEBUG -g
 CFLAGS+=	-O3
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build on FreeBSD < 5.x
-.endif
-
 .include <bsd.port.post.mk>

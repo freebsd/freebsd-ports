@@ -24,12 +24,6 @@ GNU_CONFIGURE=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-*
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|libpng|libpng12|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local/share/geomorph|${DATADIR}|' ${WRKSRC}/install-step* ${WRKSRC}/install-user ${WRKSRC}/src/app/app.c
@@ -37,4 +31,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/DEFAULT_DIR/ s|geomorph|.geomorph|' ${WRKSRC}/src/app/globals.h ${WRKSRC}/src/hf/globals.h
 	@${RM} ${WRKSRC}/install-step*.bak ${WRKSRC}/install-user*.bak
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

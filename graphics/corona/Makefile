@@ -23,12 +23,6 @@ USE_GNOME=	gnometarget lthack
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 500000
-USE_GCC=	3.4+
-.endif
-
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="${LIBS} -L${LOCALBASE}/lib"
 
@@ -37,4 +31,4 @@ post-patch:
 		's|-Wall||' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

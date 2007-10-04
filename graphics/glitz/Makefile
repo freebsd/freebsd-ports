@@ -23,12 +23,4 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
-		${WRKSRC}/src/glitzint.h
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

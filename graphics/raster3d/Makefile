@@ -35,12 +35,6 @@ PLIST_SUB+=	IMAGEMAGICK="@comment "
 MANL=		avs2ps.l label3d.l r3d_objects.l rastep.l render.l rods.l  \
 		balls.l normal3d.l r3dtops.l raster3d.l ribbon.l stereo3d.l
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-avs2ps.c ${FILESDIR}/extrapatch-in.h
-.endif
-
 pre-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} freebsd
 
@@ -65,4 +59,4 @@ post-install:
 	cd ${WRKSRC}/examples/msms && ${INSTALL_DATA} * ${EXAMPLESDIR}/msms
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

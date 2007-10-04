@@ -80,10 +80,6 @@ PLIST_SUB+=	TCL="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	does not build on 4.X
-.endif
-
 .if defined(WITHOUT_PERL)
 CONFIGURE_ARGS+=--disable-perl
 PLIST_SUB+=	PERL="@comment "

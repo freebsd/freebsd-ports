@@ -28,15 +28,9 @@ SYSCONFDIR=	${PREFIX}/etc/ptlink-services
 CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR} --localstatedir=/var \
 		--with-pidfile=/var/run/ircsvs.pid
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Doesn't build on 4.x
-.endif
-
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CHOWN} -R ircd:ircd ${SYSCONFDIR}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

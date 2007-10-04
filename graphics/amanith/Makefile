@@ -40,10 +40,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		does not build on FreeBSD 4.x
-.endif
-
 .if ${OSVERSION} >= 700042
 BROKEN=		Broken with gcc 4.2
 .endif

@@ -147,12 +147,6 @@ MAN3=	SoAction.3iv SoCallbackAction.3iv SoGLRenderAction.3iv \
 	SoXtExaminerViewer.3iv SoXtFlyViewer.3iv SoXtFullViewer.3iv \
 	SoXtPlaneViewer.3iv SoXtViewer.3iv SoXtWalkViewer.3iv
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ;\
 			      s|%%CXX%%|${CXX}|g ; \
@@ -160,4 +154,4 @@ post-patch:
 post-install:
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -29,12 +29,6 @@ MAN1=		sharpconstruct.1
 
 ONLY_FOR_ARCHS=	i386
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x (lack of *round* functions)
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/include/Align.hh
 	@${REINPLACE_CMD} -e 's|"/sharpconstruct|"|' ${WRKSRC}/src/MainWindow.cc
@@ -44,4 +38,4 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e '/^DEFS / s|$$| -DDATADIR=\\"${DATADIR}\\"|'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

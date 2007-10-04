@@ -32,12 +32,4 @@ PLIST_FILES=	include/svg.h \
 		lib/libsvg.so.1 \
 		libdata/pkgconfig/libsvg.pc
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
-		${WRKSRC}/src/svg_ascii.h
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

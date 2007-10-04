@@ -33,14 +33,6 @@ PORTDOCS=	README TODO INSTALL
 
 PLIST_FILES=	bin/exiftran bin/ida lib/X11/app-defaults/Ida
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|PRId32|"d"|g' -e 's|PRIx32|"x"|g' \
-		${WRKSRC}/tiff.c ${WRKSRC}/xwd.c
-.endif
-
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/exiftran ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -50,4 +42,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
