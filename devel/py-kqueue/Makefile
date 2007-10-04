@@ -25,7 +25,7 @@ MAKE_ENV=		MAINCC=${CC}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000 && ${OSVERSION} < 500010
+.if ${OSVERSION} < 500010
 IGNORE="requires new kqueue API"
 .endif
 

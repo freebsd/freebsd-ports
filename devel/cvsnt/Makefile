@@ -33,10 +33,4 @@ MAN1=		cvs.1
 MAN5=		cvs.5
 MLINKS=		cvs.1 cvsnt.1 cvs.5 cvsnt.5
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		requires wscanf, vswprintf
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

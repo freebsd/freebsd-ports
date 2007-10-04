@@ -36,9 +36,6 @@ LIB=	ar
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Code::Blocks is currently not supported for FreeBSD versions prior to FreeBSD 5
-.endif
 .if ${ARCH} == ia64 && ${OSVERSION} >= 600000 && ${OSVERSION} < 700000
 BROKEN=		Code::Blocks is currently not supported on IA64 FreeBSD 6
 .endif

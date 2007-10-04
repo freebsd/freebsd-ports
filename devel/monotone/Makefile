@@ -13,6 +13,8 @@ MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
 MAINTAINER=	lapo@lapo.it
 COMMENT=	A distributed version control system with digital signatures
 
+LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost
+
 SUB_FILES=	pkg-message
 USE_GCC=	3.4+
 USE_PERL5_BUILD=yes
@@ -29,14 +31,6 @@ PLIST_FILES=	bin/mtn share/zsh/site-functions/_mtn \
 		"@dirrmtry share/zsh"
 INFO=		monotone
 PORTDOCS=	NEWS UPGRADE monotone.html
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-LIB_DEPENDS+=	boost_regex.4:${PORTSDIR}/devel/boost-gcc3
-.else
-LIB_DEPENDS+=	boost_regex.4:${PORTSDIR}/devel/boost
-.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
@@ -63,4 +57,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

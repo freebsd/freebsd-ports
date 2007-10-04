@@ -48,10 +48,6 @@ PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-include-allegro-inline-fmaths.in
-.endif
-
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=--enable-artsdigi

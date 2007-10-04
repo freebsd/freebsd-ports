@@ -13,21 +13,16 @@ MASTER_SITES=	http://dist.okws.org/dist/
 MAINTAINER=	ports@okws.org
 COMMENT=	Standard version of the sfslite library
 
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+
+CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 #
 # rpcc does not work with byacc, so just require BISON
 #
 USE_BISON=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
-CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-gmp=/usr
-.endif
 
 #
 # Map X.Y.Z.Q => X.Y
@@ -68,4 +63,4 @@ PKG_INSTALL?=	pkg-install
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKG_INSTALL} ${PKGNAME} PRE-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

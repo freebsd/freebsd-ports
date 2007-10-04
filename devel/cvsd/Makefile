@@ -15,6 +15,8 @@ MASTER_SITES=	http://ch.tudelft.nl/~arthur/cvsd/
 MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	CVS pserver daemon
 
+EXTRA_PATCHES=	${FILESDIR}/extra-cvsd-buildroot.in
+
 USE_PERL5=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
@@ -32,16 +34,10 @@ PLIST_FILES=	etc/cvsd/cvsd.conf.sample sbin/cvsd sbin/cvsd-buginfo \
 PLIST_DIRS=	etc/cvsd
 USE_RC_SUBR=	cvsd
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-EXTRA_PATCHES+=	${FILESDIR}/extra-cvsd-buildroot.in
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cvsd ${PREFIX}/sbin/cvsd
-.for FILE in cvsd-buginfo cvsd-buildroot cvsd-passwd
-	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/sbin
+.for f in cvsd-buginfo cvsd-buildroot cvsd-passwd
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/sbin
 .endfor
 	@${MKDIR} ${PREFIX}/etc/cvsd
 	${INSTALL_DATA} ${WRKSRC}/cvsd.conf-dist ${PREFIX}/etc/cvsd/cvsd.conf.sample
@@ -57,4 +53,4 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

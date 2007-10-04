@@ -29,7 +29,7 @@ INFO=		omake-doc
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000 && exists(${LOCALBASE}/lib/libreadline.so.5)
+.if exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -49,15 +49,6 @@ post-patch:
 		-e "s,cp -f -m 555,\$$(BSD_INSTALL_PROGRAM)," \
 		${WRKSRC}/OMakefile ${WRKSRC}/src/main/OMakefile \
 		${WRKSRC}/doc/OMakefile
-
-#
-# Readline code is deeply broken on 4
-#
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -E -e \
-		"s,^(READLINE_ENABLED[[:space:]]*=[[:space:]]*).*,\1false," \
-		${WRKSRC}/mk/make_config ${WRKSRC}/mk/defaults
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)

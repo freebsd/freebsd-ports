@@ -25,12 +25,4 @@ CONFIGURE_ENV=	PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
 		PTHREADLIB="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-PLIST_SUB+=	NOT4X="@comment "
-.else
-PLIST_SUB+=	NOT4X=""
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

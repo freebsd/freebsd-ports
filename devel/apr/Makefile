@@ -42,10 +42,6 @@ APR_UTIL_CONF_ARGS=	--with-apr=../apr-${PORTVERSION} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000 && defined(APR_SVN_WITHOUT_THREADS_4)
-APR_UTIL_WITHOUT_THREADS=	yes
-.endif
-
 .if defined(APR_UTIL_WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--disable-threads
 APR_UTIL_CONF_ARGS+=	--disable-threads

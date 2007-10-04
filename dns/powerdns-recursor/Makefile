@@ -46,7 +46,7 @@ PLIST_SUB+=	STATIC="@comment "
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-setuid
 .endif
 
-.if exists(/usr/include/ucontext.h) && ${OSVERSION} >= 500000
+.if exists(/usr/include/ucontext.h)
 UCONTEXT!=	${AWK} '/setcontext/ { print "YES" }' \
 		/usr/include/ucontext.h
 .if ${UCONTEXT} == ""

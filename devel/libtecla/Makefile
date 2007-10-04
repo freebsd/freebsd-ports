@@ -24,11 +24,6 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		PORTNAME="${PORTNAME}"
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} < 500000
-PLIST_SUB+=	THREADS="@comment "
-.else
-PLIST_SUB+=	THREADS=""
-.endif
 
 post-extract:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/genmanlist.sh

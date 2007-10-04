@@ -44,12 +44,6 @@ INSTALLS_SHLIB=	yes
 PORTDOCS=	*
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	does not compile on FreeBSD 4.x (missing swprintf in libc)
-.endif
-
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL})
 	@${REINPLACE_CMD} -e '/^_LT_AC_SHELL_INIT/d' ${WRKSRC}/aclocal.m4
@@ -65,4 +59,4 @@ post-install:
 	done
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
