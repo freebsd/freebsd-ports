@@ -22,14 +22,12 @@ USE_GMAKE=	yes
 MAN1=		hfs.1
 PLIST_FILES=	bin/hfs
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|Volume::Enumerate|Enumerate|' \
+		${WRKSRC}/volume.h
+
 pre-install:
 	@${MKDIR} ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
