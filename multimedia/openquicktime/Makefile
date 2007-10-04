@@ -33,9 +33,7 @@ OPTIONS=	DEBUG "Turn on debugging" off
 CONFIGURE_ARGS+=	--enable-debug=no
 .endif
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
+BROKEN=		Does not install
 
 .if ${ARCH} != "i386"
 BROKEN=		Does not build on !i386
