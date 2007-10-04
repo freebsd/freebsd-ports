@@ -19,12 +19,6 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${SH}|' \
 		${WRKSRC}/configure
@@ -41,4 +35,4 @@ do-install:
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

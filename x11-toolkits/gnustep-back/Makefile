@@ -85,10 +85,6 @@ ADDITIONAL_LDFLAGS+=	-L${TARGLIB}
 MAKE_FLAGS+=		messages=yes
 PLIST_SUB+=		BACKVERSION=${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 
-.if ${OSVERSION} < 500000
-ADDITIONAL_LDFLAGS+=	-L/usr/lib -lcipher
-.endif
-
 .if defined(WITH_GNUSTEP_XDPS)
 .if ${X_WINDOW_SYSTEM:L} == "xfree86-4"
 BUILD_DEPENDS+=		pswrap:${PORTSDIR}/devel/imake-4

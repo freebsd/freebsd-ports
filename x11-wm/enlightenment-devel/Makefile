@@ -26,10 +26,4 @@ USE_LDCONFIG=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	does not build on 4.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

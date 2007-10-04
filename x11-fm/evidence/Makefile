@@ -105,12 +105,6 @@ CONFIGURE_ARGS+=--enable-thumbnailer-xine
 PLIST_SUB+=	XINE:=""
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	"Broken dependencies."
-.endif
-
 pre-everything::
 	@${ECHO_MSG} "*****************************************************************************"
 .if !defined(WITH_DEBUG) || !defined(WITH_ECORE_MAINLOOP) || !defined(WITHOUT_EXTRACTOR) || !defined(WITHOUT_ID3) || !defined(WITHOUT_VORBIS) || !defined(WITHOUT_XINE)
@@ -145,4 +139,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@ecore_cflags@|$$(ECORE_CFLAGS)|g ; \
 		s|@ecore_libs@|$$(ECORE_LIBS)|g' ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

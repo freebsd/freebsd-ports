@@ -29,13 +29,7 @@ MAKE_ARGS=	CONFIGURE_ENV=${CONFIGURE_ENV:Q} \
 		CONFIGURE_SCRIPT=${CONFIGURE_SCRIPT:Q} \
 		CONFIGURE_ARGS=${CONFIGURE_ARGS:Q}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
 post-extract:
 	(cd ${WRKSRC};  ${TAR} zxvpf libgfx-1.0.1.tar.gz)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

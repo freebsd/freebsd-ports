@@ -24,10 +24,4 @@ MAKE_ENV+=	${CONFIGURE_ENV}
 MAN1=		wmbday.1
 MANCOMPRESSED=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
