@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	mysql-proxy
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-Proxy
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Monitor, analyze or transform the communication of MySQL
 
 LIB_DEPENDS=	event-1.3d:${PORTSDIR}/devel/libevent \
 		glib:${PORTSDIR}/devel/glib20
 
-CONFIGURE_ARGS+=	--datadir="${DATADIR}" --with-lua --with-mysql
+CONFIGURE_ARGS+=	--with-lua --with-mysql
 CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include -I${LUA_INCDIR}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}" \
 		PKG_CONFIG_PATH="${LUA_PREFIX}/share/doc/${LUA_SUBDIR}/etc"

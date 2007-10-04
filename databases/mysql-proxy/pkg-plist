@@ -1,10 +1,24 @@
 @comment $FreeBSD$
-%%DATADIR%%/tutorial-basic.lua
-%%DATADIR%%/tutorial-constants.lua
-%%DATADIR%%/tutorial-inject.lua
-%%DATADIR%%/tutorial-packets.lua
-%%DATADIR%%/tutorial-query-time.lua
-%%DATADIR%%/tutorial-rewrite.lua
-%%DATADIR%%/tutorial-warnings.lua
+%%DATADIR%%/active-queries.lua
+%%DATADIR%%/analyze-query.lua
+%%DATADIR%%/auditing.lua
+%%DATADIR%%/histogram.lua
+%%DATADIR%%/proxy/auto-config.lua
+%%DATADIR%%/proxy/balance.lua
+%%DATADIR%%/proxy/commands.lua
+%%DATADIR%%/proxy/parser.lua
+%%DATADIR%%/proxy/tokenizer.lua
+%%DATADIR%%/rw-splitting.lua
+%%DATADIR%%/xtab.lua
+%%EXAMPLESDIR%%/tutorial-basic.lua
+%%EXAMPLESDIR%%/tutorial-constants.lua
+%%EXAMPLESDIR%%/tutorial-inject.lua
+%%EXAMPLESDIR%%/tutorial-packets.lua
+%%EXAMPLESDIR%%/tutorial-query-time.lua
+%%EXAMPLESDIR%%/tutorial-rewrite.lua
+%%EXAMPLESDIR%%/tutorial-states.lua
+%%EXAMPLESDIR%%/tutorial-warnings.lua
 sbin/mysql-proxy
+@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry %%DATADIR%%/proxy
 @dirrmtry %%DATADIR%%
