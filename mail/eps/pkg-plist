@@ -3,6 +3,7 @@ include/eps/base64.h
 include/eps/boundary.h
 include/eps/buffer.h
 include/eps/content.h
+include/eps/date.h
 include/eps/email.h
 include/eps/eps.h
 include/eps/fold.h
@@ -14,6 +15,7 @@ include/eps/line.h
 include/eps/mime.h
 include/eps/misc.h
 include/eps/qp.h
+include/eps/result.h
 include/eps/rfc2822.h
 include/eps/unfold.h
 lib/libeps.a
