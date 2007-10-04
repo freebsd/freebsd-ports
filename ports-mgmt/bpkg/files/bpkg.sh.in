@@ -91,7 +91,7 @@ main() {
 						read key
 						case $key in
 							n) 
-							sed -i '' s,$e,,g /root/ports.lst ;;
+							sed -i '' s,$e,,g /root/ports.lst 1>/dev/null 2>&1;;
 							*) exit 0;;
 						esac
 					fi
@@ -162,7 +162,7 @@ pkg_latest() {
 						read key
 						case $key in
 							n) 
-							sed -i '' s,$e,,g /root/ports.lst ;;
+							sed -i '' s,$e,,g /root/ports.lst 1>/dev/null 2>&1;;
 							*)
 							unsetenv PACKAGESITE
 							exit 0;;
@@ -644,7 +644,7 @@ pkg_delete-xr() {
 	echo -e "\033[33m*** installed ***\033[0m"
 	pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
 	for e in $pkg; do 
-		sed -i '' s,.*$e,,g /root/ports.lst 
+		sed -i '' s,.*$e,,g /root/ports.lst 1>/dev/null 2>&1
 	done
 	echo ""
 	echo -n "Do you want to use recursive removal? [n] "
