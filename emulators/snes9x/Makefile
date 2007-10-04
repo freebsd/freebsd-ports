@@ -7,6 +7,7 @@
 
 PORTNAME=	snes9x
 PORTVERSION=	1.51
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://files.ipherswipsite.com/snes9x/ \
 		http://www.geocities.co.jp/SiliconValley-PaloAlto/2560/release/ \
@@ -19,7 +20,6 @@ COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-extensions
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -43,10 +43,6 @@ OPTIONS=	DEBUG	"Enable debug information"	off \
 		NETPLAY	"Enable network support"	on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	controls.txt control-inputs.txt  changes.txt hardware.txt \
