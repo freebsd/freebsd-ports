@@ -20,9 +20,7 @@ ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
 IGNORE=	cannot be installed since the driver has not been updated for 5.x kernels. Still uses machine/ipl.h
-.endif
 
 WRKSRC=		${WRKDIR}/ixj_freebsd
 MAKEFILE=	Makefile.BSD
