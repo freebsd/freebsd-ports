@@ -12,10 +12,13 @@ CATEGORIES=	net-im java
 MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=wildfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	quetzal@zone3000.net
+MAINTAINER=	qpadla@gmail.com
 COMMENT=	Openfire (formerly Wildfire) is an enterprise instant messaging server
 
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
+
+DEPRECATED=	Use net-im/openfire instead of this port
+EXPIRATION_DATE= 2007-12-12
 
 USE_ANT=	yes
 USE_JAVA=	yes
