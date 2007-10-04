@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	ceferino
-PORTVERSION=	0.97.5
-PORTREVISION=	2
+PORTVERSION=	0.97.8
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/ceferino/descargas/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Game similar to Super Pang
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_SDL=	sdl mixer image
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
