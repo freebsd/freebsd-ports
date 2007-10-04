@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eps
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/eps/
 
@@ -31,6 +30,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTDOCS} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
 .include <bsd.port.mk>
