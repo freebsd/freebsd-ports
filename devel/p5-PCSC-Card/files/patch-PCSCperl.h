@@ -10,7 +10,7 @@
 +#include <pcsclite.h>
 +#include <stdio.h>
 +typedef void *DLL_HANDLE;
-+#define LOAD_LIB()	dlopen("libpcsclite.so.0", RTLD_LAZY)
++#define LOAD_LIB()	dlopen("libpcsclite.so", RTLD_LAZY)
 +#define CLOSE_LIB(x)	dlclose(x)
 +#define GET_FCT		dlsym
 +#endif
