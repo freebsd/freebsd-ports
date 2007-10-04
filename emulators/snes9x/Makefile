@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snes9x
-PORTVERSION=	1.5
-PORTREVISION=	2
+PORTVERSION=	1.51
 CATEGORIES=	emulators
 MASTER_SITES=	http://files.ipherswipsite.com/snes9x/ \
 		http://www.geocities.co.jp/SiliconValley-PaloAlto/2560/release/ \
@@ -40,7 +39,8 @@ OPTIONS=	DEBUG	"Enable debug information"	off \
 		SCREENSHOT	"Enable screenshot support"	on \
 		X86_ASM	"Use i386 optimization (only for i386)"	on \
 		MMX	"Enable MMX (only for i386)"	off \
-		JMA	"Enable JMA archive decompression support"	on
+		JMA	"Enable JMA archive decompression support"	on \
+		NETPLAY	"Enable network support"	on
 
 .include <bsd.port.pre.mk>
 
@@ -50,7 +50,7 @@ BROKEN=		Does not compile with GCC 4.2
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	controls.txt control-inputs.txt  changes.txt hardware.txt \
-		porting.html problems.txt snapshots.txt snes9x.conf.default \
+		porting.html faqs.txt snapshots.txt snes9x.conf.default \
 		README
 .endif
 
@@ -96,6 +96,12 @@ CONFIGURE_ARGS+=	--with-jma-decomp
 CONFIGURE_ARGS+=	--without-jma-decomp
 .endif
 
+.if !defined(WITHOUT_NETPLAY)
+CONFIGURE_ARGS+=	--with-netplay
+.else
+CONFIGURE_ARGS+=	--without-netplay
+.endif
+
 .if exists(/usr/lib/libusbhid.a)
 CONFIGURE_ARGS+=	--with-joystick
 .else
@@ -108,7 +114,7 @@ post-patch:
 do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for FILE in control* changes.txt hardware.txt porting.html problems.txt \
+.for FILE in control* changes.txt hardware.txt porting.html faqs.txt \
 		snapshots.txt snes9x.conf.default
 	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
 .endfor

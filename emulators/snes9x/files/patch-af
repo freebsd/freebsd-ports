@@ -1,20 +1,24 @@
---- unix/unix.cpp	Fri Jun 30 08:34:57 2006
-+++ unix/unix.cpp	Wed Dec 27 00:07:21 2006
-@@ -178,8 +178,12 @@
+--- unix/unix.cpp	2007-04-28 19:51:08.000000000 -0500
++++ unix/unix.cpp	2007-10-03 16:53:16.000000000 -0500
+@@ -173,7 +173,7 @@
+ #include <fcntl.h>
+ #include <sys/time.h>
+ /* FIXME: Linux alpha (aristocat) has a broken timercmp. Make testcase */
+-#if defined(__linux)
++#if defined(__linux) || defined(__FreeBSD__)
+ # ifndef timercmp
+ #  define timercmp(tvp, uvp, cmp)\
+         ((tvp)->tv_sec cmp (uvp)->tv_sec ||\
+@@ -197,7 +197,7 @@
  pthread_mutex_t mutex;
  #endif
  
 -#if !defined(NOSOUND) && defined(__linux)
-+#ifndef __sun
 +#if !defined(NOSOUND) && (defined(__linux) || defined(__FreeBSD__))
  #include <sys/soundcard.h>
-+#else
-+#include <machine/soundcard.h>
-+#endif
  #include <sys/mman.h>
  #endif
- 
-@@ -191,6 +195,11 @@
+@@ -210,6 +210,11 @@
  #endif
  #endif
  
@@ -26,16 +30,35 @@
  //Breaks sol9 and probably others.
  //#if defined(__sun) && defined(__GNUC__)
  //typedef void (*SIG_PF)();
-@@ -222,13 +231,78 @@
+@@ -233,11 +238,12 @@
+ 
+ #ifdef NETPLAY_SUPPORT
+ #include "netplay.h"
+-
+ #ifdef _DEBUG
+ #define NP_DEBUG 2
+ #endif
++#endif
+ 
++#if defined(NETPLAY_SUPPORT) || defined(JOYSTICK_SUPPORT)
+ /* accessors into controls.cpp static variables */
+ uint16 MovieGetJoypad(int i);
+ void MovieSetJoypad(int i, uint16 buttons);
+@@ -245,22 +251,86 @@
+ /* Joypads status information */
+ uint32 old_joypads[8];
+ uint32 joypads[8];
+-
  #endif
  
  #ifdef JOYSTICK_SUPPORT
 +#define        JOYSTICK_MAX_DEVICES    4
-+int JoystickShift = 0
++int JoystickShift = 0;
++uint8 js_mod [8] = {0, 0, 0, 0, 0, 0, 0, 0};
  #if defined(__linux)
 +#define        JOYSTICK_MAX_BUTTONS    4
  #include <linux/joystick.h>
- uint8 js_mod [8] = {0, 0, 0, 0, 0, 0, 0, 0};
+-uint8 js_mod [8] = {0, 0, 0, 0, 0, 0, 0, 0};
  int js_fd [8] = {-1, -1, -1, -1, -1, -1, -1, -1};
  char *js_device [8] = {"/dev/js0", "/dev/js1", "/dev/js2", "/dev/js3", "/dev/js4", "/dev/js5", "/dev/js6", "/dev/js7" };
  #endif
@@ -105,7 +128,13 @@
  void InitJoysticks ();
  void ReadJoysticks ();
  #endif
-@@ -249,7 +323,7 @@
+ 
+-#if !defined(NOSOUND) && defined (__linux)
++#if !defined(NOSOUND) && (defined (__linux) || defined(__FreeBSD__))
+ #define CONFIGURABLE_SOUND_DEVICE
+     char *sound_device = "/dev/dsp";
+ #endif
+@@ -285,7 +355,7 @@
  const char *inc_format="%03d";
  
  //FIXME: I see no reason not to configureenable this for all Unixen
@@ -114,7 +143,7 @@
  static void sigbrkhandler(int)
  {
      CPU.Flags |= DEBUG_MODE_FLAG;
-@@ -287,22 +361,54 @@
+@@ -326,22 +396,54 @@
  
  void S9xParseArg (char **argv, int &i, int argc)
  {
@@ -122,17 +151,7 @@
      if (strcmp (argv [i], "-j") == 0 ||
  	     strcasecmp (argv [i], "-nojoy") == 0) {
 -#ifdef JOYSTICK_SUPPORT
--	Settings.JoystickEnabled = FALSE;
--#endif
--    } else if (strncasecmp (argv [i], "-joydev", 7) == 0 && argv[i][7]>='1' && argv[i][7]<='8' && argv[i][8]=='\0')
--    {
--        int j = argv[i][7]-'1';
--	if (i + 1 < argc) {
--#ifdef JOYSTICK_SUPPORT
--	    js_device[j] = argv[++i];
--#else
--            S9xMessage(S9X_WARNING, S9X_USAGE, "Joystick support is not available!");
-+ 	Settings.JoystickEnabled = FALSE;
+ 	Settings.JoystickEnabled = FALSE;
 +    } 
 +
 +#ifdef __FreeBSD__
@@ -176,13 +195,22 @@
 +
 +    else 
  #endif
+-    } else if (strncasecmp (argv [i], "-joydev", 7) == 0 && argv[i][7]>='1' && argv[i][7]<='8' && argv[i][8]=='\0')
+-    {
+-        int j = argv[i][7]-'1';
+-	if (i + 1 < argc) {
+-#ifdef JOYSTICK_SUPPORT
+-	    js_device[j] = argv[++i];
+-#else
+-            S9xMessage(S9X_WARNING, S9X_USAGE, "Joystick support is not available!");
+-#endif
 -        } else S9xUsage ();
--    } else if (strcasecmp (argv [i], "-b") == 0 ||
-+      if (strcasecmp (argv [i], "-b") == 0 ||
- 	     strcasecmp (argv [i], "-bs") == 0 ||
- 	     strcasecmp (argv [i], "-buffersize") == 0)
-     {
-@@ -413,7 +519,7 @@
+-    } else if (strcasecmp (argv [i], "-sounddev") == 0) {
++   if (strcasecmp (argv [i], "-sounddev") == 0) {
+     if (i + 1 < argc) {
+ #if defined(CONFIGURABLE_SOUND_DEVICE)
+         sound_device = argv[++i];
+@@ -552,7 +654,7 @@
  #if !defined(__MSDOS) && defined(DEBUGGER)
  #if defined(__unix) && !defined(__NeXT__)
      struct sigaction sa;
@@ -191,7 +219,7 @@
      sa.sa_handler = sigbrkhandler;
  #else
      sa.sa_handler = (SIG_PF) sigbrkhandler;
-@@ -613,6 +719,7 @@
+@@ -770,6 +872,7 @@
  }
  
  #ifdef JOYSTICK_SUPPORT
@@ -199,7 +227,7 @@
  void InitJoysticks ()
  {
  #ifdef JSIOCGVERSION
-@@ -697,6 +804,189 @@
+@@ -854,6 +957,189 @@
      }
  #endif
  }
@@ -389,7 +417,7 @@
  #endif // defined (JOYSTICK_SUPPORT)
  
  START_EXTERN_C
-@@ -1522,7 +1812,7 @@
+@@ -1716,7 +2002,7 @@
  }
  #endif
  
@@ -398,7 +426,7 @@
  static int Rates[8] =
  {
      0, 8000, 11025, 16000, 22050, 32000, 44100, 48000
-@@ -1644,7 +1934,7 @@
+@@ -1847,7 +2133,7 @@
  #endif
  
  
@@ -407,7 +435,7 @@
  void S9xUnixProcessSound (void)
  {
  }
-@@ -1687,7 +1977,7 @@
+@@ -1890,7 +2176,7 @@
  }
  #endif
  
@@ -416,10 +444,10 @@
  void S9xGenerateSound ()
  {
      /* Linux and Sun versions */
-@@ -1779,7 +2069,7 @@
-     /* If threads in use, this is to loop indefinitely */
+@@ -1985,7 +2271,7 @@
      /* If not, this will be called by timer */
-     
+     if (Settings.Mute)
+         return NULL;
 -#ifdef __linux
 +#if defined(__linux) || defined(__FreeBSD__)
      audio_buf_info info;
