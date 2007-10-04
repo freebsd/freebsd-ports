@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_UserAgent_Detect
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	net www pear
 
 MAINTAINER=	bg1tpt@gmail.com
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
-FILES=		UserAgent/Detect.php
+FILES=		Detect/APC.php UserAgent/Detect.php
 TESTS=		example.php
 
 post-extract:
