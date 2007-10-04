@@ -19,6 +19,8 @@ COMMENT=	Perl interface to the MPI message passing system
 BUILD_DEPENDS=	${LOCALBASE}/mpich/bin/mpicc:${PORTSDIR}/net/mpich
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		fails to link
+
 PERL_CONFIGURE=	yes
 CC=		${PREFIX}/mpich/bin/mpicc
 CONFIGURE_ARGS=	LD="${PREFIX}/mpich/bin/mpicc" INC="-I${PREFIX}/mpich/include"
