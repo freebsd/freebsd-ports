@@ -29,10 +29,6 @@ CONFIGURE_ARGS=	--with-statgrab=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-EXTRA_LIBS=	-lkvm
-.endif
-
 .if ${PHP_VER} < 5
 post-patch:
 	@${PATCH} -d ${WRKSRC} -p0 < ${FILESDIR}/php_statgrab.h.patch

@@ -39,13 +39,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 DRWEB_PREFIX=	${PREFIX}/${PORTNAME}
 DRWEB_VARPREFIX=/var/drweb
 
-pre-install:
-.if ${OSVERSION} < 500000
-PLIST_SUB=	RU="@comment "
-.else
-PLIST_SUB=	RU=""
-.endif
-
 do-install:
 	@${INSTALL} -dv -m 0750 ${DRWEB_PREFIX}
 	@${INSTALL} -dv -m 0750 ${PREFIX}/etc/drweb

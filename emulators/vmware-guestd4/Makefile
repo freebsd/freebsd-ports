@@ -41,13 +41,7 @@ NO_LATEST_LINK=	yes
 VMWARE_VER=	4.5.2
 BUILD_VER=	8848
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-MOUNT_DEV?=	/dev/acd0c
-.else
 MOUNT_DEV?=	/dev/acd0
-.endif
 MOUNT_PT?=	/mnt
 MOUNT=		/sbin/mount
 UMOUNT=		/sbin/umount
@@ -146,4 +140,4 @@ do-install:
 	${LN} -sfh /usr/bin/true ${PREFIX}/share/vmware-tools/suspend-vm-default
 	${LN} -sfh ${PREFIX}/share/vmware-tools /etc/vmware-tools
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
