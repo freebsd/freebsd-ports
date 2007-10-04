@@ -923,6 +923,7 @@
     SUBDIR += slides
     SUBDIR += smartdoc
     SUBDIR += smartdoc-devel
+    SUBDIR += sml-fxp
     SUBDIR += soothsayer
     SUBDIR += source-highlight
     SUBDIR += sowing

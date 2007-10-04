@@ -1,0 +1,8 @@
+Group
+  signature Encoding
+  structure Encoding
+is
+  encoding.sml
+
+  ../Util/SymDict/symdict.cm
+
