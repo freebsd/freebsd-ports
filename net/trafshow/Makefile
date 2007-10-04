@@ -21,12 +21,6 @@ ALL_TARGET=	trafshow
 
 MAN1=		trafshow.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-PKGMESSAGE=	${PKGDIR}/pkg-message.nodevfs
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
@@ -39,8 +33,5 @@ do-install:
 	if [ ! -e ${PREFIX}/etc/trafshow ]; then \
 		${CP} -p ${PREFIX}/etc/trafshow.dist ${PREFIX}/etc/trafshow; \
 	fi
-.if ${OSVERSION} < 500000
-	@${CAT} ${PKGMESSAGE}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

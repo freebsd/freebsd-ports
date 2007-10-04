@@ -23,17 +23,10 @@ PLIST_FILES=	bin/xboxproxy
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
-CONFIGURE_ARGS+=	--with-pcap=${LOCALBASE}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|libnet-config|${LIBNET_CONFIG}|g; \
 		 s|-lnet|`${LIBNET_CONFIG} --libs`|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

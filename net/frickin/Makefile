@@ -35,9 +35,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		FreeBSD 4.xx does not have pf support
-.elif ${OSVERSION} < 600000
+.if ${OSVERSION} < 600000
 IGNORE=		Does not compile with old version of pf
 .endif
 

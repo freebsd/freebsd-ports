@@ -62,10 +62,6 @@ PLIST_SUB+=	BOINC_GUI=""
 PLIST_SUB+=	BOINC_GUI="@comment "
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile. Consider upgrading your FreeBSD to at least 5.X
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|gui_rpc_auth.cfg|${BOINC_HOME}/gui_rpc_auth.cfg|g' \
 		${WRKSRC}/client/file_names.h ${WRKSRC}/lib/boinc_cmd.C \

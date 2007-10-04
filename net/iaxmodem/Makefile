@@ -50,10 +50,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

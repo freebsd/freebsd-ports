@@ -30,10 +30,4 @@ CONFIGURE_ENV+=	\
 MAKE_ARGS+=	QTDIR=${QT_PREFIX} \
       QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

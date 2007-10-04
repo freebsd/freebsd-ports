@@ -24,17 +24,13 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${OSVERSION} >= 500000
 	@${REINPLACE_CMD} -e "s|netinet/if_fddi.h|net/fddi.h|g" \
 	${WRKSRC}/protocols/fddi/libnd_fddi.h
-.endif
 	@${REINPLACE_CMD} -e 's|DOC_MODULE = libnetdude|DOC_MODULE =|' \
 	${WRKSRC}/docs/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|docs||' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

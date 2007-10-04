@@ -132,7 +132,7 @@ CONFIGURE_ENV+=MAKEINFO=${LOCALBASE}/bin/makeinfo
 .endif
 
 USE_RC_SUBR=	watchquagga.sh
-.if ${OSVERSION} < 500000 || ${OSVERSION} >= 600101
+.if ${OSVERSION} >= 600101
 USE_RC_SUBR+=	quagga.sh
 .else
 USE_RCORDER=	quagga.sh

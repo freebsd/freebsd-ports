@@ -26,10 +26,4 @@ PLIST_FILES=	sbin/unfsd
 CONFIGURE_ARGS+=	--enable-cluster
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-CFLAGS+=	-DHAVE_SYS_MOUNT_H=1
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

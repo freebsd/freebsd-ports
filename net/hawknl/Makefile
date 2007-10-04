@@ -35,10 +35,6 @@ OPTIONS=	OPTIMIZATION	"Enable optimization"	off
 CFLAGS+=	-fPIC -DPIC
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=	Doesn't build on < 5.x
-.endif
-
 .if defined(WITH_OPTIMIZATION)
 CFLAGS+=	-funroll-all-loops -ffast-math -fomit-frame-pointer -D_GNU_SOURCE -D_REENTRANT
 .endif

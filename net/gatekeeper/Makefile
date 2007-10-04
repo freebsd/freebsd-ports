@@ -41,9 +41,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/openh323
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not build
-.elif ${ARCH} == sparc64 && ${OSVERSION} <= 700003
+.if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
 BROKEN=	does not link due to missing symbol in default thread library
 .endif
 
@@ -51,12 +49,10 @@ BROKEN=	does not link due to missing symbol in default thread library
 CONFIGURE_ARGS+=	--with-large-fdset=${WITH_FDSET}
 .endif
 
-.if ${OSVERSION} >= 500000
-. if defined(WITH_RADIUS)
+.if defined(WITH_RADIUS)
 CONFIGURE_ARGS+=	--enable-radius
-. else
+.else
 CONFIGURE_ARGS+=	--disable-radius
-. endif
 .endif
 
 .if defined(WITH_MYSQL)
@@ -79,11 +75,9 @@ pre-everything::
 	@${ECHO_MSG} "Additional build options are:"
 	@${ECHO_MSG} ""
 .endif
-.if ${OSVERSION} >= 500000
-. ifndef(WITH_RADIUS)
+.ifndef(WITH_RADIUS)
 	@${ECHO_MSG} "WITH_RADIUS=yes - enable Radius support"
 	@${ECHO_MSG} ""
-. endif
 .endif
 .ifndef(WITH_MYSQL)
 	@${ECHO_MSG} "WITH_MYSQL=yes - enable the MySQL backend"
