@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.1.15
-PORTREVISION=	2
+PORTVERSION=	2.1.17
 CATEGORIES=	net-im
 MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
 DIST_SUBDIR=	jabber
@@ -58,7 +57,7 @@ SUB_FILES+=	pkg-install pkg-deinstall
 
 PORTDOCS=	*
 
-DOCFILES=	AUTHORS BUGS COPYING ChangeLog INSTALL NEWS PROTOCOL README \
+DOCFILES=	AUTHORS COPYING ChangeLog INSTALL NEWS PROTOCOL README \
 		TODO UPGRADE
 
 .include <bsd.port.pre.mk>
