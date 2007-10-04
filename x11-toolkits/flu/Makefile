@@ -19,7 +19,7 @@ LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk
 
 USE_X_PREFIX=	yes
 USE_GL=		yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --I=${X11BASE}/include --L=${X11BASE}/lib
 USE_GMAKE=	yes
@@ -40,4 +40,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>
