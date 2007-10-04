@@ -28,6 +28,8 @@ STRIP=
 
 GCONF_SCHEMAS=	gfax.schemas
 
+BROKEN=		fails to install
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
 		${WRKSRC}/gfax.in \
