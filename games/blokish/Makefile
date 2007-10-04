@@ -32,13 +32,7 @@ WRKSRC=		${WRKDIR}/blokish
 
 PLIST_FILES=	bin/blokish
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-ai.h
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|' ${WRKSRC}/makefile.in ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

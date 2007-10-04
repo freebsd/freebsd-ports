@@ -65,8 +65,4 @@ pre-build:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
 .include <bsd.port.post.mk>

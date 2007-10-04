@@ -23,12 +23,6 @@ MAKE_ENV=	QTDIR="${QT_PREFIX}"
 QMAKE=		qmake
 QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|PlaySquare::||' ${WRKSRC}/playsquare.h
 	${REINPLACE_CMD} -e 's|Puzzle::||' ${WRKSRC}/puzzle.h
@@ -47,4 +41,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

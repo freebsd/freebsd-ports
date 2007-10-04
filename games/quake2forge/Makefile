@@ -107,9 +107,6 @@ post-patch:
 		's|\($$(libdir)/\)@PACKAGE@|\1${PORTNAME}|'
 	@${REINPLACE_CMD} -e 's|\($$libdir/\)$$PACKAGE|\1${PORTNAME}|' \
 			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}.in
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's/%zu/%u/g' ${WRKSRC}/src/main.c
-.endif
 .for f in ${Q2F_BADMODS}
 	@${REINPLACE_CMD} -i "" -e 's/${f}//' ${WRKSRC}/src/Makefile.in
 .endfor

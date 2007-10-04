@@ -35,13 +35,6 @@ SCONS_ARGS=	${MAKE_ENV} BUILD=release PTHREAD_LIBS="${PTHREAD_LIBS}"
 SUB_FILES=	${PORTNAME}
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libs__bytestreamutils.h \
-		${FILESDIR}/extra-patch-libs__math__vector.h
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/-ldl//' ${WRKSRC}/SConscript
 	@${GREP} -Rl 'defined[[:blank:]]*([[:blank:]]*__linux__[[:blank:]]*) || defined[[:blank:]]*([[:blank:]]*__APPLE__[[:blank:]]*)' ${WRKSRC} | \
@@ -57,4 +50,4 @@ do-install:
 	${CP} -R ${WRKSRC}/install/* ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -39,10 +39,6 @@ SAUDATDIR=	packages data
 IGNORE=		needs at least one executable (CLIENT or DEDICATED)
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
 .if !defined(WITHOUT_CLIENT)
 USE_GL=		yes
 USE_SDL=	image mixer sdl

@@ -30,14 +30,8 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 MAN5=	bzw.5
 MAN6=	bzadmin.6 bzflag.6 bzfquery.6 bzfs.6
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|@LINUX_TRUE@||g ; \
 		 s|@LINUX_FALSE@|#|g' ${WRKSRC}/src/platform/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

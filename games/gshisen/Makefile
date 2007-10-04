@@ -25,13 +25,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's|)/Makefiles|)/Library/Makefiles|' \
 		${WRKSRC}/GNUmakefile
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-# Fatal error 'longjmp()ing between thread contexts is undefined by POSIX 1003.1'
-#  at line ? in file src/lib/libc_r/uthread/uthread_jmp.c (errno = ?)
-# Abort trap (core dumped)
-BROKEN=		longjmp()ing between thread contexts in src/lib/libc_r/uthread/uthread_jmp.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

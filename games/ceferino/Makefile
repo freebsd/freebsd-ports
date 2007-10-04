@@ -38,10 +38,6 @@ PLIST_SUB+=	NLS=""
 FLAG_NLS=	true
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile
-.endif
-
 post-extract:
 	@${REINPLACE_CMD} -e 's/-lSDL /`sdl-config --libs`/g' ${WRKSRC}/configure
 
@@ -55,9 +51,9 @@ do-install:
 		${FIND} ${CEFEDIRS} -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
 		${FIND} -E ${CEFEDIRS} -type f -iregex ".*\.(png|jpg|xm|map|wav)" -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
 .if defined(FLAG_NLS)
-.for FILE in es ca fr
-	${MKDIR} ${PREFIX}/share/locale/${FILE}/LC_MESSAGES && \
-		${INSTALL_DATA} ${WRKSRC}/po/${FILE}.gmo ${PREFIX}/share/locale/${FILE}/LC_MESSAGES/${PORTNAME}.mo
+.for f in es ca fr
+	${MKDIR} ${PREFIX}/share/locale/${f}/LC_MESSAGES && \
+		${INSTALL_DATA} ${WRKSRC}/po/${f}.gmo ${PREFIX}/share/locale/${f}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
 .endif
 

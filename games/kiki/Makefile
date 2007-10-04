@@ -30,12 +30,6 @@ MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 WRKSRC=		${WRKDIR}/kiki
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-kodilib-src-types-kvector.h
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^CXXFLAGS/ s|.*|CXXFLAGS+=$$(KODI_INCLUDES) -I${X11BASE}/include `${SDL_CONFIG} --cflags`|' ${WRKSRC}/kodilib/linux/Makefile
 	@${REINPLACE_CMD} -e '/^X11_INCLUDES/ s|/.*/|${X11BASE}/include|' ${WRKSRC}/linux/Makefile
@@ -58,4 +52,4 @@ do-install:
 		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/${d}/{} \;
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

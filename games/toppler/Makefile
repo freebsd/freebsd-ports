@@ -26,16 +26,10 @@ CONFIGURE_ARGS=	--program-transform-name= --localstatedir=/var/games
 
 MAN6=		toppler.6
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	can not be compiled because it requires mbrtowc() in libc
-.endif
-
 post-install:
 	@${CHOWN} root:games ${PREFIX}/bin/toppler
 	@${CHMOD} g+s ${PREFIX}/bin/toppler
 	@${SETENV} "PKG_PREFIX=${PREFIX}" \
 		${SH} pkg-install ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
