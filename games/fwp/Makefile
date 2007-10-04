@@ -34,6 +34,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if ${ARCH} == "amd64" && ${OSVERSION} >= 700000
 BROKEN=		Doesn't build
 .endif
