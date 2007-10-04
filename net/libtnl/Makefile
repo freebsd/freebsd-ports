@@ -16,7 +16,7 @@ MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	A robust, secure, easy to use cross-platform C++ networking API
 
 WRKSRC=		${WRKDIR}/tnl/tnl
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 
 post-extract:
@@ -25,4 +25,10 @@ post-extract:
 pre-install:
 	${MKDIR} ${PREFIX}/include/tnl
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>
