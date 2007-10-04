@@ -14,12 +14,6 @@ MASTER_SITE_SUBDIR=	mr
 MAINTAINER=	mr@freebsd.org
 COMMENT=	GEOM stop daemon
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=         Needs GEOM(4)
-.endif
-
 MAN8=		gstopd.8
 PLIST_FILES=	sbin/gstopd
 
@@ -27,4 +21,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gstopd ${LOCALBASE}/sbin
 	${INSTALL_MAN} ${WRKSRC}/gstopd.8 ${LOCALBASE}/man/man8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

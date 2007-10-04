@@ -40,12 +40,6 @@ MAN8=		apphbd.8 heartbeat.8 ldirectord.8 meatclient.8 \
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-lib-clplumbing-resource.h
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|logrotate\.d||" \
 		${WRKSRC}/heartbeat/Makefile.in \
@@ -55,11 +49,6 @@ post-patch:
 		's|libnet-config|${LIBNET_CONFIG}|; \
 		 s|-lnet|`${LIBNET_CONFIG} --libs`|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|<sys/\(resource.h\)>|"\1"|' \
-		${WRKSRC}/lib/clplumbing/coredumps.c
-.endif
 
 .if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|^\(docdir.*doc/\).*|\1${PORTNAME}|' \
@@ -97,4 +86,4 @@ pre-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

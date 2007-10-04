@@ -26,16 +26,10 @@ INSTALLS_SHLIB=	yes
 
 SUB_FILES+=	pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-#BROKEN=	does not build
-.endif
-
 pre-configure:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's|-ldl||g'
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

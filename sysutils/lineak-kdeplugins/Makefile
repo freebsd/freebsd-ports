@@ -28,14 +28,8 @@ CONFIGURE_ARGS+=	--program-prefix=''
 MAN1=		lineak_kdeplugins.1
 #MANCOMPRESSED=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		needs KDE to be compiled with gcc 3.4
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

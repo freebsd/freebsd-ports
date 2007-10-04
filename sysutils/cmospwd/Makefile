@@ -22,13 +22,7 @@ PORTDOCS=	cmospwd.txt
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|<stdint\.h>|<unistd.h>|' \
-		${WRKSRC}/src/cmospwd.c
-.endif
 .if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e "s/`${ECHO_CMD} -e '\r'`*$$//" \
 		${WRKSRC}/cmospwd.txt
@@ -45,4 +39,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

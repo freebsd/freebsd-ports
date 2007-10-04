@@ -23,8 +23,6 @@ CFLAGS+=	${CPPFLAGS} -DVERSION=\"${PORTVERSION}\"
 MAN8=		tmpwatch.8
 PLIST_FILES=	sbin/tmpwatch
 
-.include <bsd.port.pre.mk>
-
 do-extract:
 	${MKDIR} ${WRKDIR}
 	cd ${WRKDIR} && \
@@ -35,10 +33,6 @@ do-extract:
 
 post-patch:
 	${REINPLACE_CMD} -E "s/^#include.+mntent.h.+//g" ${WRKSRC}/tmpwatch.c
-.if ${OSVERSION} < 500000
-	${REINPLACE_CMD} -E "s/intmax_t/long long/;s/strtoimax/strtoll/" \
-		${WRKSRC}/tmpwatch.c
-.endif
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} -o tmpwatch tmpwatch.c
@@ -47,4 +41,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tmpwatch ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/tmpwatch.8 ${MAN8PREFIX}/man/man8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

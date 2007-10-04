@@ -36,16 +36,8 @@ PLIST_FILES=	lib/lineakd/plugins/defaultplugin.a \
 		lib/lineakd/plugins/mediadetectplugin.so \
 		etc/media-detect.conf
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Configure fails to find lineakd
-# lineakd is compiled with 3.4 on FreeBSD 4.x, so plugins must be too
-# USE_GCC=	3.4
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

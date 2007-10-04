@@ -27,13 +27,7 @@ GNU_CONFIGURE=	yes
 MAN8=		graphicboot.8 sendgbmsg.8
 MANCOMPRESSED=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		requires rcorder which is only on FreeBSD 5 or greater
-.endif
-
 post-install:
 	@${CAT} pkg-message
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

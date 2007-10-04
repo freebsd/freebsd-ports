@@ -30,13 +30,6 @@ PORTDOCS=	README TODO AUTHORS
 MAN1=		lineakd.1
 #MANCOMPRESSED=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-# ANSI C++ forbids data member `macro_info' with same name as enclosing class
-USE_GCC=	3.4
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread||' \
 		${WRKSRC}/lineak/Makefile.in ${WRKSRC}/lineakd/Makefile.in
@@ -54,4 +47,4 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/lineakd.conf.example ${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

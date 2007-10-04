@@ -32,16 +32,9 @@ MAN_COMPRESSED=	yes
 PLIST_FILES=	lib/lineakd/plugins/xosdplugin.la \
 		lib/lineakd/plugins/xosdplugin.so
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Configure fails to find lineakd
-#USE_GCC=	3.4
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

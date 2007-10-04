@@ -40,12 +40,6 @@ WRKSRC=			${WRKDIR}/cromwell
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Not supported below 5.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,perl,${PERL},g' \
 			  -e 's,^CC.=,CC ?=,' \
@@ -62,4 +56,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
