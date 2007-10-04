@@ -38,12 +38,6 @@ RUN_DEPENDS+=	${X11BASE}/Adobe/Acrobat7.0/ENU/Browser/intellinux/nppdf.so:${PORT
 WITH_PLUGINS=	1
 .endif
 
-.if		defined(WITH_PLUGINS)
-.if		${OSVERSION} < 500000
-USE_MOTIF=	yes
-.endif
-.endif
-
 ONLY_FOR_ARCHS=	i386
 MAKE_ENV=	EXAMPLESDIR=${EXAMPLESDIR} INSTALL_DATA="${INSTALL_DATA}" INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
@@ -51,7 +45,7 @@ CONFLICTS=	flashpluginwrapper-*
 USE_XLIB=	yes
 PLIST_SUB=	LINUXBASE=${LINUXBASE}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-.if		!defined(WITH_PLUGINS) || ${OSVERSION} < 500000
+.if		!defined(WITH_PLUGINS)
 PLIST=		${WRKDIR}/pkg-plist
 .endif
 
@@ -61,10 +55,8 @@ LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD6
 LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD6
 .elif		${OSVERSION} >= 503001
 LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD5-stable
-.elif		${OSVERSION} >= 500000
-LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD5-current
 .else
-LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD4.x
+LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD5-current
 .endif
 
 .if		${OSVERSION} < 501105
@@ -78,7 +70,7 @@ CFLAGS+=	-DDEBUG=1
 .endif
 
 .if		!defined(PACKAGE_BUILDING)
-.if		${OSVERSION} < 490102 || ${OSVERSION} >= 500000 && ${OSVERSION} < 501107
+.if		${OSVERSION} < 501107
 pre-everything::
 	@if ! strings ${RTLD} | ${GREP} libmap.conf > /dev/null 2>&1; then \
 		${ECHO_MSG} 'Please enable libmap.conf(5) feature for rtld(1).'; \

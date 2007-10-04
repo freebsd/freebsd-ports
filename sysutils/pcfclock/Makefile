@@ -28,10 +28,6 @@ PLIST_FILES=	sbin/pcfdate
 IGNORE=		not supported for architecture ${ARCH}
 .endif
 
-.if ${OSVERSION} < 400000
-IGNORE=		not supported for versions prior to FreeBSD 4.0
-.endif
-
 post-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 

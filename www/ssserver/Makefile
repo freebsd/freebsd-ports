@@ -13,16 +13,12 @@ MASTER_SITES=	http://www.kryltech.com/download/FreeBSD.x86.3/
 MAINTAINER=	support@kryltech.com
 COMMENT=	Adds the search capability to a Web site
 
+LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
+
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 
 INSTALL_RWDATA=	${INSTALL} ${COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m 666
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400000
-LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
-.endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin/ssserverdata
@@ -89,4 +85,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
