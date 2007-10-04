@@ -35,10 +35,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	does not build on 4.x
-.endif
-
 .if !defined(WITH_SEE_DEBUG)
 CFLAGS+=	-DNDEBUG
 .endif

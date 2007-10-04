@@ -26,10 +26,6 @@ DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-USE_GMAKE=	yes
-.endif
-
 post-extract:
 	@${REINPLACE_CMD} -e "s,^\(OCAMLLIB=\).*,\1${PREFIX}/lib/ocaml,g" \
 		-e "s,^\(BINDIR=\).*,\1${PREFIX}/bin,g" \
@@ -67,4 +63,4 @@ test:
 		${WRKSRC}/tests/Makefile
 	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE} all
 
-.include <bsd.port.post.mk>
+.include <bsd.port.port.mk>

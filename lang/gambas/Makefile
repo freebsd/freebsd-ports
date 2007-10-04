@@ -82,10 +82,6 @@ PLIST_SUB+=		XML="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=			Does not compile with gcc-2.95
-.endif
-
 .if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
 BROKEN=			Segfault during build on ${ARCH}
 .endif

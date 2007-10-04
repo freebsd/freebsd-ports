@@ -19,7 +19,8 @@ COMMENT=	A dynamic programming language with a syntax similar to C++
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
-		mird.1:${PORTSDIR}/databases/mird
+		mird.1:${PORTSDIR}/databases/mird \
+		gmp.7:${PORTSDIR}/math/libgmp4
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
@@ -62,11 +63,6 @@ CONFIGURE_ARGS+=	--with-long-double-precision
 .endif
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-# FreeBSD 5.0 Needs to have libgmp port to support gmp.
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=   gmp.7:${PORTSDIR}/math/libgmp4
-.endif
 
 .if exists(${LOCALBASE}/lib/libttf.so.4)
 WITH_TTF=	yes
