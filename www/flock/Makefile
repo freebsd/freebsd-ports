@@ -31,6 +31,7 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4+
+WANT_PERL=	yes
 
 CPPFLAGS=	-I${WRKDIR}/local/include
 LDFLAGS=	-L${WRKDIR}/local/lib
@@ -51,6 +52,10 @@ MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
 OPTIONS=	SMB "Enable smb:// URI support using gnomevfs" off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
 
 .if ${ARCH} == "amd64"
 BROKEN=		Does not build on amd64
