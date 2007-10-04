@@ -23,13 +23,7 @@ SUB_FILES=	junkbuster.sh pkg-message
 USE_RC_SUBR=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ( ${OSVERSION} >= 500000 )
 GNUREGEXP=	's:gnu_regex.h:gnu/regex.h:'
-.else
-GNUREGEXP=	's:gnu_regex.h:gnuregex.h:'
-.endif
 
 post-patch:
 .for f in junkbstr.ini saclfile.ini sblock.ini scookie.ini sforward.ini strust.ini win32.h
@@ -56,4 +50,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

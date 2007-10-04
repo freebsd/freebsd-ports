@@ -33,9 +33,4 @@ USE_GECKO_OPTIONS=	java debug logging optimized_cflags
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/Makefile.common"
-
-.if ${OSVERSION} < 500000
-BROKEN=	does not build
-.endif
-
 .include <bsd.port.post.mk>

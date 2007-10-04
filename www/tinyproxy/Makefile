@@ -24,15 +24,10 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 
 MAN8=		tinyproxy.8
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc/tinyproxy/tinyproxy.conf|${PREFIX}/etc/tinyproxy.conf|' \
 	  ${WRKSRC}/doc/tinyproxy.8
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|stdint.h|stdlib.h|' ${WRKSRC}/src/scanner.c
-.endif
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/tinyproxy.conf ]; then \
@@ -40,4 +35,4 @@ post-install:
 		${PREFIX}/etc/tinyproxy.conf ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

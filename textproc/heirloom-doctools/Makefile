@@ -58,9 +58,7 @@ DOCS=		CHANGES FONTS NEWS PDFS README \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		Does not compile on FreeBSD 4.x
-.elif ${OSVERSION} < 600000
+.if ${OSVERSION} < 600000
 BROKEN=		fails to install on FreeBSD 5.x
 .endif
 

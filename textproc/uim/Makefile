@@ -59,10 +59,6 @@ PLIST_SUB+=	X11=""
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-uim_editline.c
-.endif
-
 .for _x in x xft gtk2 qt gnome2 anthy canna m17nlib prime scim dict
 .if ${CONFIGURE_ARGS:M--with-${_x}} == ""
 CONFIGURE_ARGS+=--without-${_x}

@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=--with-http-magic-mime=${MAGICBASE}
 CONFIGURE_ARGS+=--without-http-magic-mime
 .endif
 
-.if defined(WITH_ZLIB_COMPRESSION) && ${OSVERSION} > 500000
+.if defined(WITH_ZLIB_COMPRESSION)
 CONFIGURE_ARGS+=--with-http-zlib-compression=/usr
 .else
 CONFIGURE_ARGS+=--without-http-zlib-compression

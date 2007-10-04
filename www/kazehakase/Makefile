@@ -39,10 +39,6 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
-.if ${OSVERSION} < 500000
-IGNORE=Does not build
-.endif
-
 # !!! gtk-webcore higly experimental right now and not very stable !!!
 # See https://mail.gna.org/public/kazehakase-devel/2004-10/msg00001.html
 # on how to use gtk-webcore with kazehakase. and yes you still have to

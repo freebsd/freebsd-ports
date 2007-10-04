@@ -19,12 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ENV=	CXX=${CXX}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4+
-.endif
-
 post-patch:
 	${REINPLACE_CMD} 's,g++,${CXX},;s,$$GCCFLAGS,${CXXFLAGS},; \
 		s,strip,${STRIP_CMD},' ${WRKSRC}/build.sh
@@ -36,4 +30,4 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/DFileServer.x86 ${PREFIX}/bin/dfileserver
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

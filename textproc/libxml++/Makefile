@@ -21,15 +21,4 @@ USE_GNOME=	gnomehack gnometarget libxml2 pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-post-patch:
-	@${FIND} ${WRKSRC}/libxml++ -name *.h \
-		| ${XARGS} ${REINPLACE_CMD} \
-			-e 's|<istream>|<iostream>|' \
-			-e 's|<ostream>|<iostream>|'
-
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
