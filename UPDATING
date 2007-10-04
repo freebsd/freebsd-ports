@@ -13,9 +13,9 @@ upgrades.
   The ports tree has been migrated to the latest version of autoconf,
   2.61.  Versions 2.53 and 2.59 were declared obsolete and removed.
 
-  m4 was also updated to 1.10, but this proved to be incompatible and
-  was rolled back to 1.9.  If you are experiencing 'Makefile: not found'
-  errors, make sure you are not using 1.10.
+  m4 was also updated to 1.4.10, but this proved to be incompatible and
+  was rolled back to 1.4.9.  If you are experiencing 'Makefile: not found'
+  errors, make sure you are not using 1.4.10.
 
 20070928:
   AFFECTS: users of irc/ratbox-services
