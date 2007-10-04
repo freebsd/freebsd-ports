@@ -24,12 +24,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--disable-ewarning
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		Does not compile on alpha 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
 
@@ -42,4 +36,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/guide.pdf ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -23,10 +23,6 @@ USE_RC_SUBR=	pftpx
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		only for 5.0 and above
-.endif
-
 .if ${OSVERSION} < 502116
 MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=34
 .if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")

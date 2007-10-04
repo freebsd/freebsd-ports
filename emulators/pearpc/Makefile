@@ -97,10 +97,6 @@ pre-configure:
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/src/Makefile
-.if ${OSVERSION} < 500000
-	@${CP} ${FILESDIR}/wcrtomb.c ${FILESDIR}/mbrtowc.c \
-		${WRKSRC}/
-.endif
 
 post-install:
 	@${MKDIR} ${DATADIR}
