@@ -22,15 +22,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 490000
-IGNORE=		"Not supported on releases prior to 4.9"
-.endif
-
 do-install:
 	@${MKDIR} ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/*.pl ${PREFIX}/sbin
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
