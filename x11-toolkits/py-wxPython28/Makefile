@@ -69,13 +69,6 @@ post-build:
 
 .include <bsd.port.pre.mk>
 
-# are we ready for unicode?
-.if defined(WITH_WXPYTHON_UNICODE)
-. if ${OSVERSION} < 500000
-IGNORE=	systems prior to FreeBSD 5.0 do not support Unicode
-. endif
-.endif
-
 # wx version
 .if exists(${WX_CONFIG})
 WX_VERSION!=	${WX_CONFIG} --release

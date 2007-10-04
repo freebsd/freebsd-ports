@@ -43,12 +43,10 @@ do-install:
 	${MV} ${DATADIR}/${PORTNAME}/examples ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_UNICODE) && (${OSVERSION} > 500000)
+.if defined(WITH_UNICODE)
 WX_PYTHON_DIR=	wx-2.6-gtk2-unicode
 .else
 WX_PYTHON_DIR=	wx-2.6-gtk2-ansi
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

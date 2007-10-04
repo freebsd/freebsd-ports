@@ -77,12 +77,4 @@ post-install:
 		${PREFIX}/share/aclocal
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-PLIST_SUB+=	FREEBSD5=""
-.else
-PLIST_SUB+=	FREEBSD5="@comment "
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

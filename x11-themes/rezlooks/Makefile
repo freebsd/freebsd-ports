@@ -22,14 +22,8 @@ USE_GNOME=	gtk20
 
 OPTIONS+=	ANIMATION "Animation support" On
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not build on 4.x
-.endif
-
 .if !defined(WITHOUT_ANIMATION)
 CONFIGURE_ARGS+=	--enable-animation
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -26,20 +26,14 @@ MAN1=		worker.1
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--disable-libxpkmaster
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
-
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
 
 post-patch:
-.for file in aa.pattern_rename.sh cd2flac.sh cd2mp3.sh cd2ogg.sh cd2wav.sh xeditor
+.for f in aa.pattern_rename.sh cd2flac.sh cd2mp3.sh cd2ogg.sh cd2wav.sh xeditor
 	${REINPLACE_CMD} -e 's|/bin/bash|/usr/local/bin/bash|g' \
-		${WRKSRC}/scripts/${file}
+		${WRKSRC}/scripts/${f}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

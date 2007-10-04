@@ -29,10 +29,4 @@ USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=  ${PATCHDIR}/extra-patch-old_gcc_bugs
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

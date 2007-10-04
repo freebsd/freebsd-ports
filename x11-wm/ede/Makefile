@@ -25,13 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"does not build on 4.x (sound system)"
-.endif
-
 pre-configure:
 	@cd ${WRKSRC}; ${ACLOCAL}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
