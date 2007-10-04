@@ -46,7 +46,7 @@ DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-6.x-x64
 DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-5.x-x64
 .endif
 .else
-.if ${OSVERSION} >= 50000 && ${OSVERSION} < 600000
+.if ${OSVERSION} < 600000
 DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-5.x-i686
 .else
 DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-6.x-i686

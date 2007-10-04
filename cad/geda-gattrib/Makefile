@@ -29,15 +29,9 @@ CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile on 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "s,^(DATADIR[[:space:]]*=[[:space:]]*)gEDA,\1geda," \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
