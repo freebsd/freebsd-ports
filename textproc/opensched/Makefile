@@ -23,8 +23,14 @@ PLIST_FILES=	bin/opensched
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "i386"
+BROKEN=		Does not install
+.endif
+.endif
+
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile"
+BROKEN=		Does not compile
 .endif
 
 .include <bsd.port.post.mk>
