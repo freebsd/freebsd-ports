@@ -465,20 +465,11 @@ share/WindowMaker/Themes/Night.themed/SeaNight.jpeg
 share/WindowMaker/Themes/Night.themed/style
 share/WindowMaker/Themes/STEP2000.themed/BlueImage2.jpeg
 share/WindowMaker/Themes/STEP2000.themed/style
-share/doc/wmicons/CREDITS
-share/doc/wmicons/README.IconFest
-share/doc/wmicons/README.NeXT.XEmacs
-share/doc/wmicons/README.dwiconpack1
-share/doc/wmicons/README.dwiconpack2
-share/doc/wmicons/README.japanese-step-icons.txt
-share/doc/wmicons/README.vf_png
-share/doc/wmicons/README.vf_tif
-@dirrm share/doc/wmicons
 @dirrm share/WindowMaker/Themes/STEP2000.themed
 @dirrm share/WindowMaker/Themes/Night.themed
 @dirrm share/WindowMaker/Themes/LeetWM.themed
 @dirrm share/WindowMaker/Themes/Checker.themed
-@dirrm share/WindowMaker/Themes
-@dirrm share/WindowMaker/Pixmaps
-@dirrm share/WindowMaker/Icons
+@dirrmtry share/WindowMaker/Themes
+@dirrmtry share/WindowMaker/Pixmaps
+@dirrmtry share/WindowMaker/Icons
 @dirrmtry share/WindowMaker
