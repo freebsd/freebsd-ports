@@ -23,10 +23,15 @@ USE_AUTOTOOLS=	autoconf:261:env libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-tdsver=${TDS_VER}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 MAN1=		datacopy.1 freebcp.1 tsql.1 bsqldb.1 defncopy.1
+
+.if defined(WITH_OPENSSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
+.endif
 
 .if defined(WITH_IODBC)
 LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
