@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a058d6fa-7325-11dc-ae10-0016179b2dd5">
+    <topic>tcl/tk -- buffer overflow in ReadImage function</topic>
+    <affects>
+      <package>
+	<name>tcl</name>
+	<name>tcl-threads</name>
+	<range><lt>8.4.16,1</lt></range>
+      </package>
+      <package>
+	<name>tk</name>
+	<name>tk-threads</name>
+	<range><lt>8.4.16,2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Buffer overflow in the ReadImage function in generic/tkImgGIF.c
+	  in Tcl/Tk, allows remote attackers to execute arbitrary code via
+	  multi-frame interlaced GIF files in which later frames are smaller
+	  than the first.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/26942</url>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=541207</url>
+      <cvename>CVE-2007-5137</cvename>
+    </references>
+    <dates>
+      <discovery>2007-09-27</discovery>
+      <entry>2007-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="91ed69f9-72c7-11dc-981a-001921ab2fa4">
     <topic>firebird -- multiple remote buffer overflow vulnerabilities</topic>
     <affects>
