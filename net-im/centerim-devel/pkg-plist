@@ -1,5 +1,5 @@
 bin/centerim
-bin/cicqconv
+bin/cimconv
 %%DATADIR%%/email.wav
 %%DATADIR%%/msg.wav
 %%DATADIR%%/offline.wav
