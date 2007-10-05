@@ -34,4 +34,3 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>
-# DO NOT DELETE
