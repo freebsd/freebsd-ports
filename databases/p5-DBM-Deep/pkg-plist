@@ -1,6 +1,11 @@
 %%SITE_PERL%%/DBM/Deep.pm
+%%SITE_PERL%%/DBM/Deep.pod
 %%SITE_PERL%%/DBM/Deep/Array.pm
+%%SITE_PERL%%/DBM/Deep/Cookbook.pod
+%%SITE_PERL%%/DBM/Deep/Engine.pm
+%%SITE_PERL%%/DBM/Deep/File.pm
 %%SITE_PERL%%/DBM/Deep/Hash.pm
+%%SITE_PERL%%/DBM/Deep/Internals.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM/Deep/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM/Deep
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM
