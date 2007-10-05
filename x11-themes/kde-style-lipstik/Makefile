@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lipstik
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.2.3
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-style-
@@ -16,7 +15,6 @@ DISTNAME=	18223-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	decept0@gmail.com
 COMMENT=	Modified Plastik KDE style
 
-USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV+=	LDFLAGS="${PTHREAD_LIBS}"
