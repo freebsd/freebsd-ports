@@ -1,0 +1,1358 @@
+bin/linux-nerogame
+lib/linux-nerogame/libopenal.so
+libexec/linux-nerogame
+%%DATADIR%%/common/TestMap.jpg
+%%DATADIR%%/common/client/actionMap.cs.dso
+%%DATADIR%%/common/client/audio.cs.dso
+%%DATADIR%%/common/client/canvas.cs.dso
+%%DATADIR%%/common/client/cursor.cs.dso
+%%DATADIR%%/common/client/help.cs.dso
+%%DATADIR%%/common/client/message.cs.dso
+%%DATADIR%%/common/client/messageBox.cs.dso
+%%DATADIR%%/common/client/metrics.cs.dso
+%%DATADIR%%/common/client/mission.cs.dso
+%%DATADIR%%/common/client/missionDownload.cs.dso
+%%DATADIR%%/common/client/prefs.cs
+%%DATADIR%%/common/client/recordings.cs.dso
+%%DATADIR%%/common/client/screenshot.cs.dso
+%%DATADIR%%/common/client/scriptDoc.cs.dso
+%%DATADIR%%/common/help/10. Terrain Texture Painter.hfl
+%%DATADIR%%/common/help/2. License.hfl
+%%DATADIR%%/common/help/3. Gui Editor.hfl
+%%DATADIR%%/common/help/4. Mission Editor Overview.hfl
+%%DATADIR%%/common/help/5. World Editor.hfl
+%%DATADIR%%/common/help/6. Mission Area Editor.hfl
+%%DATADIR%%/common/help/7. Terrain Editor.hfl
+%%DATADIR%%/common/help/8. Terrain Terraform Editor.hfl
+%%DATADIR%%/common/help/9. Terrain Texture Editor.hfl
+%%DATADIR%%/common/lighting/corona.png
+%%DATADIR%%/common/lighting/lightFalloffMono.png
+%%DATADIR%%/common/lighting/whiteAlpha255.png
+%%DATADIR%%/common/lighting/whiteNoAlpha.png
+%%DATADIR%%/common/main.cs.dso
+%%DATADIR%%/common/prefs.cs
+%%DATADIR%%/common/server/audio.cs.dso
+%%DATADIR%%/common/server/banlist.cs
+%%DATADIR%%/common/server/clientConnection.cs.dso
+%%DATADIR%%/common/server/commands.cs.dso
+%%DATADIR%%/common/server/game.cs.dso
+%%DATADIR%%/common/server/kickban.cs.dso
+%%DATADIR%%/common/server/message.cs.dso
+%%DATADIR%%/common/server/missionDownload.cs.dso
+%%DATADIR%%/common/server/missionInfo.cs.dso
+%%DATADIR%%/common/server/missionLoad.cs.dso
+%%DATADIR%%/common/server/prefs.cs
+%%DATADIR%%/common/server/server.cs.dso
+%%DATADIR%%/common/ui/CUR_3darrow.png
+%%DATADIR%%/common/ui/CUR_InGamearrow.png
+%%DATADIR%%/common/ui/CUR_MainMenuarrow.png
+%%DATADIR%%/common/ui/CUR_leftright.png
+%%DATADIR%%/common/ui/CUR_move.png
+%%DATADIR%%/common/ui/CUR_nesw.png
+%%DATADIR%%/common/ui/CUR_nwse.png
+%%DATADIR%%/common/ui/CUR_textedit.png
+%%DATADIR%%/common/ui/CUR_updown.png
+%%DATADIR%%/common/ui/ColorPickerDlg.gui.dso
+%%DATADIR%%/common/ui/ConsoleDlg.gui.dso
+%%DATADIR%%/common/ui/FrameOverlayGui.gui.dso
+%%DATADIR%%/common/ui/GuiEditorGui.gui.dso
+%%DATADIR%%/common/ui/HelpDlg.gui.dso
+%%DATADIR%%/common/ui/LoadFileDlg.gui.dso
+%%DATADIR%%/common/ui/MessageBoxOKCancelDlg.gui.dso
+%%DATADIR%%/common/ui/MessageBoxOkDlg.gui.dso
+%%DATADIR%%/common/ui/MessageBoxYesNoDlg.gui.dso
+%%DATADIR%%/common/ui/MessagePopupDlg.gui.dso
+%%DATADIR%%/common/ui/NetGraphGui.gui.dso
+%%DATADIR%%/common/ui/RecordingsDlg.gui.dso
+%%DATADIR%%/common/ui/SaveFileDlg.gui.dso
+%%DATADIR%%/common/ui/audio.png
+%%DATADIR%%/common/ui/cache/Arial 14 (ansi).uft
+%%DATADIR%%/common/ui/cache/Arial 16 (ansi).uft
+%%DATADIR%%/common/ui/cache/Arial 24 (ansi).uft
+%%DATADIR%%/common/ui/cache/Arial Black 18 (ansi).uft
+%%DATADIR%%/common/ui/cache/Arial Bold 14 (ansi).uft
+%%DATADIR%%/common/ui/cache/Arial Bold 20 (ansi).uft
+%%DATADIR%%/common/ui/cache/Arial Bold 24 (ansi).uft
+%%DATADIR%%/common/ui/cache/ZeroHour 14 (ansi).uft
+%%DATADIR%%/common/ui/camera.png
+%%DATADIR%%/common/ui/darkBorder.png
+%%DATADIR%%/common/ui/darkScroll.png
+%%DATADIR%%/common/ui/darkTab.png
+%%DATADIR%%/common/ui/darkTabPage.png
+%%DATADIR%%/common/ui/darkWindow.png
+%%DATADIR%%/common/ui/default.png
+%%DATADIR%%/common/ui/defaultProfiles.cs.dso
+%%DATADIR%%/common/ui/folder.png
+%%DATADIR%%/common/ui/folder_closed.png
+%%DATADIR%%/common/ui/fxfoliage.png
+%%DATADIR%%/common/ui/fxlight.png
+%%DATADIR%%/common/ui/fxshapereplicator.png
+%%DATADIR%%/common/ui/fxsunlight.png
+%%DATADIR%%/common/ui/hidden.png
+%%DATADIR%%/common/ui/icon.png
+%%DATADIR%%/common/ui/inspector_delete_d.png
+%%DATADIR%%/common/ui/inspector_delete_h.png
+%%DATADIR%%/common/ui/inspector_delete_i.png
+%%DATADIR%%/common/ui/inspector_delete_n.png
+%%DATADIR%%/common/ui/interior.png
+%%DATADIR%%/common/ui/lightning.png
+%%DATADIR%%/common/ui/mission_area.png
+%%DATADIR%%/common/ui/osxCheck.png
+%%DATADIR%%/common/ui/osxMenu.png
+%%DATADIR%%/common/ui/osxRadio.png
+%%DATADIR%%/common/ui/osxScroll.png
+%%DATADIR%%/common/ui/osxWindow.png
+%%DATADIR%%/common/ui/particle.png
+%%DATADIR%%/common/ui/path.png
+%%DATADIR%%/common/ui/pathmarker.png
+%%DATADIR%%/common/ui/physical_area.png
+%%DATADIR%%/common/ui/precipitation.png
+%%DATADIR%%/common/ui/ring_white.png
+%%DATADIR%%/common/ui/sel_01.png
+%%DATADIR%%/common/ui/sel_02.png
+%%DATADIR%%/common/ui/sel_03.png
+%%DATADIR%%/common/ui/server_tabs.png
+%%DATADIR%%/common/ui/shape.png
+%%DATADIR%%/common/ui/shll_bar_act.png
+%%DATADIR%%/common/ui/shll_bar_rol.png
+%%DATADIR%%/common/ui/shll_icon_dedicated.png
+%%DATADIR%%/common/ui/shll_icon_dedicated_hi.png
+%%DATADIR%%/common/ui/shll_icon_default.png
+%%DATADIR%%/common/ui/shll_icon_favorite.png
+%%DATADIR%%/common/ui/shll_icon_favorite_hi.png
+%%DATADIR%%/common/ui/shll_icon_notqueried.png
+%%DATADIR%%/common/ui/shll_icon_notqueried_hi.png
+%%DATADIR%%/common/ui/shll_icon_passworded.png
+%%DATADIR%%/common/ui/shll_icon_passworded_hi.png
+%%DATADIR%%/common/ui/shll_icon_penguin.png
+%%DATADIR%%/common/ui/shll_icon_querying.png
+%%DATADIR%%/common/ui/shll_icon_querying_hi.png
+%%DATADIR%%/common/ui/shll_icon_timedout.png
+%%DATADIR%%/common/ui/shll_icon_tourney.png
+%%DATADIR%%/common/ui/shll_icon_tourney_hi.png
+%%DATADIR%%/common/ui/shll_sortarrow.png
+%%DATADIR%%/common/ui/shll_treeView.png
+%%DATADIR%%/common/ui/simgroup.png
+%%DATADIR%%/common/ui/simgroup_closed.png
+%%DATADIR%%/common/ui/simgroup_selected.png
+%%DATADIR%%/common/ui/simgroup_selected_closed.png
+%%DATADIR%%/common/ui/sky.png
+%%DATADIR%%/common/ui/static_shape.png
+%%DATADIR%%/common/ui/sun.png
+%%DATADIR%%/common/ui/terrain.png
+%%DATADIR%%/common/ui/torqueCheck.png
+%%DATADIR%%/common/ui/torqueMenu.png
+%%DATADIR%%/common/ui/torquePane.png
+%%DATADIR%%/common/ui/torqueRadio.png
+%%DATADIR%%/common/ui/trigger.png
+%%DATADIR%%/common/ui/water.png
+%%DATADIR%%/lib/libopenal.so
+%%DATADIR%%/main.cs
+%%DATADIR%%/nero/client/config.cs
+%%DATADIR%%/nero/client/config.cs.dso
+%%DATADIR%%/nero/client/defaults.cs.dso
+%%DATADIR%%/nero/client/init.cs.dso
+%%DATADIR%%/nero/client/prefs.cs
+%%DATADIR%%/nero/client/prefs.cs.dso
+%%DATADIR%%/nero/client/scripts/audioProfiles.cs.dso
+%%DATADIR%%/nero/client/scripts/centerPrint.cs.dso
+%%DATADIR%%/nero/client/scripts/client.cs.dso
+%%DATADIR%%/nero/client/scripts/chatHud.cs.dso
+%%DATADIR%%/nero/client/scripts/default.bind.cs.dso
+%%DATADIR%%/nero/client/scripts/game.cs.dso
+%%DATADIR%%/nero/client/scripts/groupManager.cs.dso
+%%DATADIR%%/nero/client/scripts/inputHandler.cs.dso
+%%DATADIR%%/nero/client/scripts/loadingGui.cs.dso
+%%DATADIR%%/nero/client/scripts/messageHud.cs.dso
+%%DATADIR%%/nero/client/scripts/missionDownload.cs.dso
+%%DATADIR%%/nero/client/scripts/music.cs.dso
+%%DATADIR%%/nero/client/scripts/optionsDlg.cs.dso
+%%DATADIR%%/nero/client/scripts/playGui.cs.dso
+%%DATADIR%%/nero/client/scripts/playerList.cs.dso
+%%DATADIR%%/nero/client/scripts/radialMenu.cs.dso
+%%DATADIR%%/nero/client/scripts/selection.cs.dso
+%%DATADIR%%/nero/client/scripts/serverConnection.cs.dso
+%%DATADIR%%/nero/client/scripts/stats.cs.dso
+%%DATADIR%%/nero/client/scripts/tutorial.cs.dso
+%%DATADIR%%/nero/client/ui/ControlPointGui.gui.dso
+%%DATADIR%%/nero/client/ui/ChatHud.gui.dso
+%%DATADIR%%/nero/client/ui/GarageGames.png
+%%DATADIR%%/nero/client/ui/MainMenuCheck.png
+%%DATADIR%%/nero/client/ui/MainMenuRadio.png
+%%DATADIR%%/nero/client/ui/MainMenuScroll.png
+%%DATADIR%%/nero/client/ui/MainMenuWindow.png
+%%DATADIR%%/nero/client/ui/NEROCheck.png
+%%DATADIR%%/nero/client/ui/NERORadio.png
+%%DATADIR%%/nero/client/ui/NEROScroll.png
+%%DATADIR%%/nero/client/ui/PlatoonDlg.gui.dso
+%%DATADIR%%/nero/client/ui/PlayGui.gui.dso
+%%DATADIR%%/nero/client/ui/SquadCreateDlg.gui.dso
+%%DATADIR%%/nero/client/ui/StartupGui.gui.dso
+%%DATADIR%%/nero/client/ui/TeamConfigureDlg.gui.dso
+%%DATADIR%%/nero/client/ui/TrainingExitMenu.gui.dso
+%%DATADIR%%/nero/client/ui/aboutDlg.gui.dso
+%%DATADIR%%/nero/client/ui/background.jpg
+%%DATADIR%%/nero/client/ui/blueTeam.png
+%%DATADIR%%/nero/client/ui/btm_border.png
+%%DATADIR%%/nero/client/ui/btm_corner.png
+%%DATADIR%%/nero/client/ui/button_h.png
+%%DATADIR%%/nero/client/ui/button_n.png
+%%DATADIR%%/nero/client/ui/crossHair.png
+%%DATADIR%%/nero/client/ui/customProfiles.cs.dso
+%%DATADIR%%/nero/client/ui/chatHudBorderArray.png
+%%DATADIR%%/nero/client/ui/defaultGameProfiles.cs.dso
+%%DATADIR%%/nero/client/ui/demoCheck.png
+%%DATADIR%%/nero/client/ui/demoMenu.png
+%%DATADIR%%/nero/client/ui/demoRadio.png
+%%DATADIR%%/nero/client/ui/demoScroll.png
+%%DATADIR%%/nero/client/ui/demoWindow.png
+%%DATADIR%%/nero/client/ui/disclaimer.dtx
+%%DATADIR%%/nero/client/ui/dmc_splashscreen.jpg
+%%DATADIR%%/nero/client/ui/endGameGui.gui.dso
+%%DATADIR%%/nero/client/ui/gglogo150.png
+%%DATADIR%%/nero/client/ui/ggweb.png
+%%DATADIR%%/nero/client/ui/gliese_581_c.png
+%%DATADIR%%/nero/client/ui/healthBar.png
+%%DATADIR%%/nero/client/ui/hudfill.png
+%%DATADIR%%/nero/client/ui/joinServerDlg.gui.dso
+%%DATADIR%%/nero/client/ui/lagIcon.png
+%%DATADIR%%/nero/client/ui/loadingGui.gui.dso
+%%DATADIR%%/nero/client/ui/mainMenuGui.gui.dso
+%%DATADIR%%/nero/client/ui/mainmenu/background.jpg
+%%DATADIR%%/nero/client/ui/mainmenu/blank.png
+%%DATADIR%%/nero/client/ui/mainmenu/context_main.png
+%%DATADIR%%/nero/client/ui/mainmenu/context_online.png
+%%DATADIR%%/nero/client/ui/mainmenu/context_teams.png
+%%DATADIR%%/nero/client/ui/mainmenu/context_training.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_about_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_about_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_about_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_about_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_back_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_back_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_back_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_back_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_help_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_help_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_help_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_help_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_multiplayer_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_multiplayer_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_multiplayer_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_multiplayer_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_options_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_options_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_options_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_options_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_quit_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_quit_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_quit_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_quit_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_single_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_single_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_single_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_single_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_story_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_story_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_story_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_story_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_teams_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_teams_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_teams_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/main_teams_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/multi_host_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/multi_host_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/multi_host_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/multi_host_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/multi_join_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/multi_join_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/multi_join_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/multi_join_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_atutorial_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_atutorial_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_atutorial_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_atutorial_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_sandbox_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_sandbox_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_sandbox_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_sandbox_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_stutorial_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_stutorial_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_stutorial_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_stutorial_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_training_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_training_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_training_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/single_training_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/teams_platoon_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/teams_platoon_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/teams_platoon_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/teams_platoon_n.png
+%%DATADIR%%/nero/client/ui/mainmenu/teams_team_d.png
+%%DATADIR%%/nero/client/ui/mainmenu/teams_team_h.png
+%%DATADIR%%/nero/client/ui/mainmenu/teams_team_i.png
+%%DATADIR%%/nero/client/ui/mainmenu/teams_team_n.png
+%%DATADIR%%/nero/client/ui/nero/ZEROHOUR.TTF
+%%DATADIR%%/nero/client/ui/nero/apply_button_d.png
+%%DATADIR%%/nero/client/ui/nero/apply_button_h.png
+%%DATADIR%%/nero/client/ui/nero/apply_button_i.png
+%%DATADIR%%/nero/client/ui/nero/apply_button_n.png
+%%DATADIR%%/nero/client/ui/nero/back_button_d.png
+%%DATADIR%%/nero/client/ui/nero/back_button_h.png
+%%DATADIR%%/nero/client/ui/nero/back_button_i.png
+%%DATADIR%%/nero/client/ui/nero/back_button_n.png
+%%DATADIR%%/nero/client/ui/nero/begin_button_d.png
+%%DATADIR%%/nero/client/ui/nero/begin_button_h.png
+%%DATADIR%%/nero/client/ui/nero/begin_button_i.png
+%%DATADIR%%/nero/client/ui/nero/begin_button_n.png
+%%DATADIR%%/nero/client/ui/nero/begin_d.png
+%%DATADIR%%/nero/client/ui/nero/begin_h.png
+%%DATADIR%%/nero/client/ui/nero/begin_i.png
+%%DATADIR%%/nero/client/ui/nero/begin_n.png
+%%DATADIR%%/nero/client/ui/nero/btn_collision_d.png
+%%DATADIR%%/nero/client/ui/nero/btn_collision_h.png
+%%DATADIR%%/nero/client/ui/nero/btn_collision_i.png
+%%DATADIR%%/nero/client/ui/nero/btn_collision_n.png
+%%DATADIR%%/nero/client/ui/nero/btn_evolution_d.png
+%%DATADIR%%/nero/client/ui/nero/btn_evolution_h.png
+%%DATADIR%%/nero/client/ui/nero/btn_evolution_i.png
+%%DATADIR%%/nero/client/ui/nero/btn_evolution_n.png
+%%DATADIR%%/nero/client/ui/nero/btn_hud_d.png
+%%DATADIR%%/nero/client/ui/nero/btn_hud_h.png
+%%DATADIR%%/nero/client/ui/nero/btn_hud_i.png
+%%DATADIR%%/nero/client/ui/nero/btn_hud_n.png
+%%DATADIR%%/nero/client/ui/nero/btn_save20_d.png
+%%DATADIR%%/nero/client/ui/nero/btn_save20_h.png
+%%DATADIR%%/nero/client/ui/nero/btn_save20_i.png
+%%DATADIR%%/nero/client/ui/nero/btn_save20_n.png
+%%DATADIR%%/nero/client/ui/nero/btn_saveall_d.png
+%%DATADIR%%/nero/client/ui/nero/btn_saveall_h.png
+%%DATADIR%%/nero/client/ui/nero/btn_saveall_i.png
+%%DATADIR%%/nero/client/ui/nero/btn_saveall_n.png
+%%DATADIR%%/nero/client/ui/nero/btn_spawncircle_d.png
+%%DATADIR%%/nero/client/ui/nero/btn_spawncircle_h.png
+%%DATADIR%%/nero/client/ui/nero/btn_spawncircle_i.png
+%%DATADIR%%/nero/client/ui/nero/btn_spawncircle_n.png
+%%DATADIR%%/nero/client/ui/nero/btn_spawncrowd_d.png
+%%DATADIR%%/nero/client/ui/nero/btn_spawncrowd_h.png
+%%DATADIR%%/nero/client/ui/nero/btn_spawncrowd_i.png
+%%DATADIR%%/nero/client/ui/nero/btn_spawncrowd_n.png
+%%DATADIR%%/nero/client/ui/nero/btn_spawnline_d.png
+%%DATADIR%%/nero/client/ui/nero/btn_spawnline_h.png
+%%DATADIR%%/nero/client/ui/nero/btn_spawnline_i.png
+%%DATADIR%%/nero/client/ui/nero/btn_spawnline_n.png
+%%DATADIR%%/nero/client/ui/nero/cancel_d.png
+%%DATADIR%%/nero/client/ui/nero/cancel_h.png
+%%DATADIR%%/nero/client/ui/nero/cancel_i.png
+%%DATADIR%%/nero/client/ui/nero/cancel_n.png
+%%DATADIR%%/nero/client/ui/nero/close_icon_d.png
+%%DATADIR%%/nero/client/ui/nero/close_icon_h.png
+%%DATADIR%%/nero/client/ui/nero/close_icon_i.png
+%%DATADIR%%/nero/client/ui/nero/close_icon_n.png
+%%DATADIR%%/nero/client/ui/nero/code.png
+%%DATADIR%%/nero/client/ui/nero/collision_text.png
+%%DATADIR%%/nero/client/ui/nero/disband_d.png
+%%DATADIR%%/nero/client/ui/nero/disband_h.png
+%%DATADIR%%/nero/client/ui/nero/disband_i.png
+%%DATADIR%%/nero/client/ui/nero/disband_n.png
+%%DATADIR%%/nero/client/ui/nero/down_d.png
+%%DATADIR%%/nero/client/ui/nero/down_h.png
+%%DATADIR%%/nero/client/ui/nero/down_i.png
+%%DATADIR%%/nero/client/ui/nero/down_n.png
+%%DATADIR%%/nero/client/ui/nero/enemies_tab_d.png
+%%DATADIR%%/nero/client/ui/nero/enemies_tab_h.png
+%%DATADIR%%/nero/client/ui/nero/enemies_tab_i.png
+%%DATADIR%%/nero/client/ui/nero/enemies_tab_n.png
+%%DATADIR%%/nero/client/ui/nero/evolution_text.png
+%%DATADIR%%/nero/client/ui/nero/generic_window.png
+%%DATADIR%%/nero/client/ui/nero/graphs_close_d.png
+%%DATADIR%%/nero/client/ui/nero/graphs_close_h.png
+%%DATADIR%%/nero/client/ui/nero/graphs_close_i.png
+%%DATADIR%%/nero/client/ui/nero/graphs_close_n.png
+%%DATADIR%%/nero/client/ui/nero/graphs_graphs_d.png
+%%DATADIR%%/nero/client/ui/nero/graphs_graphs_h.png
+%%DATADIR%%/nero/client/ui/nero/graphs_graphs_i.png
+%%DATADIR%%/nero/client/ui/nero/graphs_graphs_n.png
+%%DATADIR%%/nero/client/ui/nero/graphs_left_d.png
+%%DATADIR%%/nero/client/ui/nero/graphs_left_h.png
+%%DATADIR%%/nero/client/ui/nero/graphs_left_i.png
+%%DATADIR%%/nero/client/ui/nero/graphs_left_n.png
+%%DATADIR%%/nero/client/ui/nero/graphs_right_d.png
+%%DATADIR%%/nero/client/ui/nero/graphs_right_h.png
+%%DATADIR%%/nero/client/ui/nero/graphs_right_i.png
+%%DATADIR%%/nero/client/ui/nero/graphs_right_n.png
+%%DATADIR%%/nero/client/ui/nero/green_close_icon_d.png
+%%DATADIR%%/nero/client/ui/nero/green_close_icon_h.png
+%%DATADIR%%/nero/client/ui/nero/green_close_icon_i.png
+%%DATADIR%%/nero/client/ui/nero/green_close_icon_n.png
+%%DATADIR%%/nero/client/ui/nero/guiMax_d.png
+%%DATADIR%%/nero/client/ui/nero/guiMax_h.png
+%%DATADIR%%/nero/client/ui/nero/guiMax_i.png
+%%DATADIR%%/nero/client/ui/nero/guiMax_n.png
+%%DATADIR%%/nero/client/ui/nero/guiMin_d.png
+%%DATADIR%%/nero/client/ui/nero/guiMin_h.png
+%%DATADIR%%/nero/client/ui/nero/guiMin_i.png
+%%DATADIR%%/nero/client/ui/nero/guiMin_n.png
+%%DATADIR%%/nero/client/ui/nero/guiSeperator.png
+%%DATADIR%%/nero/client/ui/nero/guiSlider.png
+%%DATADIR%%/nero/client/ui/nero/gui_reticle.png
+%%DATADIR%%/nero/client/ui/nero/help_d.png
+%%DATADIR%%/nero/client/ui/nero/help_h.png
+%%DATADIR%%/nero/client/ui/nero/help_i.png
+%%DATADIR%%/nero/client/ui/nero/help_n.png
+%%DATADIR%%/nero/client/ui/nero/hud_text.png
+%%DATADIR%%/nero/client/ui/nero/icon_approachenemy.png
+%%DATADIR%%/nero/client/ui/nero/icon_approachflag.png
+%%DATADIR%%/nero/client/ui/nero/icon_disperse.png
+%%DATADIR%%/nero/client/ui/nero/icon_distance.png
+%%DATADIR%%/nero/client/ui/nero/icon_enemyrange.png
+%%DATADIR%%/nero/client/ui/nero/icon_friendrange.png
+%%DATADIR%%/nero/client/ui/nero/icon_gethit.png
+%%DATADIR%%/nero/client/ui/nero/icon_hitfriends.png
+%%DATADIR%%/nero/client/ui/nero/icon_lifetime.png
+%%DATADIR%%/nero/client/ui/nero/icon_move.png
+%%DATADIR%%/nero/client/ui/nero/icon_target.png
+%%DATADIR%%/nero/client/ui/nero/icon_time.png
+%%DATADIR%%/nero/client/ui/nero/icon_triggerhappy.png
+%%DATADIR%%/nero/client/ui/nero/in_d.png
+%%DATADIR%%/nero/client/ui/nero/in_h.png
+%%DATADIR%%/nero/client/ui/nero/in_i.png
+%%DATADIR%%/nero/client/ui/nero/in_n.png
+%%DATADIR%%/nero/client/ui/nero/indicator_off_d.png
+%%DATADIR%%/nero/client/ui/nero/indicator_off_h.png
+%%DATADIR%%/nero/client/ui/nero/indicator_off_i.png
+%%DATADIR%%/nero/client/ui/nero/indicator_off_j.png
+%%DATADIR%%/nero/client/ui/nero/indicator_off_n.png
+%%DATADIR%%/nero/client/ui/nero/indicator_on_d.png
+%%DATADIR%%/nero/client/ui/nero/indicator_on_h.png
+%%DATADIR%%/nero/client/ui/nero/indicator_on_i.png
+%%DATADIR%%/nero/client/ui/nero/indicator_on_j.png
+%%DATADIR%%/nero/client/ui/nero/indicator_on_n.png
+%%DATADIR%%/nero/client/ui/nero/invisible_d.png
+%%DATADIR%%/nero/client/ui/nero/invisible_h.png
+%%DATADIR%%/nero/client/ui/nero/invisible_i.png
+%%DATADIR%%/nero/client/ui/nero/invisible_n.png
+%%DATADIR%%/nero/client/ui/nero/items_tab_d.png
+%%DATADIR%%/nero/client/ui/nero/items_tab_h.png
+%%DATADIR%%/nero/client/ui/nero/items_tab_i.png
+%%DATADIR%%/nero/client/ui/nero/items_tab_n.png
+%%DATADIR%%/nero/client/ui/nero/joinbattle_button_d.png
+%%DATADIR%%/nero/client/ui/nero/joinbattle_button_h.png
+%%DATADIR%%/nero/client/ui/nero/joinbattle_button_i.png
+%%DATADIR%%/nero/client/ui/nero/joinbattle_button_n.png
+%%DATADIR%%/nero/client/ui/nero/left_d.png
+%%DATADIR%%/nero/client/ui/nero/left_h.png
+%%DATADIR%%/nero/client/ui/nero/left_i.png
+%%DATADIR%%/nero/client/ui/nero/left_n.png
+%%DATADIR%%/nero/client/ui/nero/leftconsolebox.png
+%%DATADIR%%/nero/client/ui/nero/load_button_d.png
+%%DATADIR%%/nero/client/ui/nero/load_button_h.png
+%%DATADIR%%/nero/client/ui/nero/load_button_i.png
+%%DATADIR%%/nero/client/ui/nero/load_button_n.png
+%%DATADIR%%/nero/client/ui/nero/maximize_d.png
+%%DATADIR%%/nero/client/ui/nero/maximize_h.png
+%%DATADIR%%/nero/client/ui/nero/maximize_i.png
+%%DATADIR%%/nero/client/ui/nero/maximize_n.png
+%%DATADIR%%/nero/client/ui/nero/miniIcon_controlpoint.png
+%%DATADIR%%/nero/client/ui/nero/miniIcon_nero.png
+%%DATADIR%%/nero/client/ui/nero/minimize_d.png
+%%DATADIR%%/nero/client/ui/nero/minimize_h.png
+%%DATADIR%%/nero/client/ui/nero/minimize_i.png
+%%DATADIR%%/nero/client/ui/nero/minimize_n.png
+%%DATADIR%%/nero/client/ui/nero/nero_background.jpg
+%%DATADIR%%/nero/client/ui/nero/nero_background.png
+%%DATADIR%%/nero/client/ui/nero/nero_window.png
+%%DATADIR%%/nero/client/ui/nero/nero_window_blue.png
+%%DATADIR%%/nero/client/ui/nero/nero_window_game.png
+%%DATADIR%%/nero/client/ui/nero/nero_window_l.png
+%%DATADIR%%/nero/client/ui/nero/nero_window_red.png
+%%DATADIR%%/nero/client/ui/nero/nero_window_stats.png
+%%DATADIR%%/nero/client/ui/nero/nero_window_wide.png
+%%DATADIR%%/nero/client/ui/nero/out_d.png
+%%DATADIR%%/nero/client/ui/nero/out_h.png
+%%DATADIR%%/nero/client/ui/nero/out_i.png
+%%DATADIR%%/nero/client/ui/nero/out_n.png
+%%DATADIR%%/nero/client/ui/nero/pulldown.png
+%%DATADIR%%/nero/client/ui/nero/quit_d.png
+%%DATADIR%%/nero/client/ui/nero/quit_h.png
+%%DATADIR%%/nero/client/ui/nero/quit_i.png
+%%DATADIR%%/nero/client/ui/nero/quit_n.png
+%%DATADIR%%/nero/client/ui/nero/rematch_d.png
+%%DATADIR%%/nero/client/ui/nero/rematch_h.png
+%%DATADIR%%/nero/client/ui/nero/rematch_i.png
+%%DATADIR%%/nero/client/ui/nero/rematch_n.png
+%%DATADIR%%/nero/client/ui/nero/reset_d.PNG
+%%DATADIR%%/nero/client/ui/nero/reset_h.PNG
+%%DATADIR%%/nero/client/ui/nero/reset_i.PNG
+%%DATADIR%%/nero/client/ui/nero/reset_n.PNG
+%%DATADIR%%/nero/client/ui/nero/right_d.png
+%%DATADIR%%/nero/client/ui/nero/right_h.png
+%%DATADIR%%/nero/client/ui/nero/right_i.png
+%%DATADIR%%/nero/client/ui/nero/right_n.png
+%%DATADIR%%/nero/client/ui/nero/save_button_d.png
+%%DATADIR%%/nero/client/ui/nero/save_button_h.png
+%%DATADIR%%/nero/client/ui/nero/save_button_i.png
+%%DATADIR%%/nero/client/ui/nero/save_button_n.png
+%%DATADIR%%/nero/client/ui/nero/save_text.png
+%%DATADIR%%/nero/client/ui/nero/save_title.png
+%%DATADIR%%/nero/client/ui/nero/savearmy_d.png
+%%DATADIR%%/nero/client/ui/nero/savearmy_h.png
+%%DATADIR%%/nero/client/ui/nero/savearmy_i.png
+%%DATADIR%%/nero/client/ui/nero/savearmy_n.png
+%%DATADIR%%/nero/client/ui/nero/savemap_d.png
+%%DATADIR%%/nero/client/ui/nero/savemap_h.png
+%%DATADIR%%/nero/client/ui/nero/savemap_i.png
+%%DATADIR%%/nero/client/ui/nero/savemap_n.png
+%%DATADIR%%/nero/client/ui/nero/scoreboard_left.png
+%%DATADIR%%/nero/client/ui/nero/scoreboard_right.png
+%%DATADIR%%/nero/client/ui/nero/slider_apply_d.png
+%%DATADIR%%/nero/client/ui/nero/slider_apply_h.png
+%%DATADIR%%/nero/client/ui/nero/slider_apply_i.png
+%%DATADIR%%/nero/client/ui/nero/slider_apply_n.png
+%%DATADIR%%/nero/client/ui/nero/slider_box.png
+%%DATADIR%%/nero/client/ui/nero/slider_load_d.png
+%%DATADIR%%/nero/client/ui/nero/slider_load_h.png
+%%DATADIR%%/nero/client/ui/nero/slider_load_i.png
+%%DATADIR%%/nero/client/ui/nero/slider_load_n.png
+%%DATADIR%%/nero/client/ui/nero/slider_reset_d.png
+%%DATADIR%%/nero/client/ui/nero/slider_reset_h.png
+%%DATADIR%%/nero/client/ui/nero/slider_reset_i.png
+%%DATADIR%%/nero/client/ui/nero/slider_reset_n.png
+%%DATADIR%%/nero/client/ui/nero/slider_save_d.png
+%%DATADIR%%/nero/client/ui/nero/slider_save_h.png
+%%DATADIR%%/nero/client/ui/nero/slider_save_i.png
+%%DATADIR%%/nero/client/ui/nero/slider_save_n.png
+%%DATADIR%%/nero/client/ui/nero/sliders_background.png
+%%DATADIR%%/nero/client/ui/nero/spawn_title.png
+%%DATADIR%%/nero/client/ui/nero/spawntype_text.png
+%%DATADIR%%/nero/client/ui/nero/toggle_text.png
+%%DATADIR%%/nero/client/ui/nero/up_d.png
+%%DATADIR%%/nero/client/ui/nero/up_h.png
+%%DATADIR%%/nero/client/ui/nero/up_i.png
+%%DATADIR%%/nero/client/ui/nero/up_n.png
+%%DATADIR%%/nero/client/ui/neroWindow.png
+%%DATADIR%%/nero/client/ui/optionsDlg.gui.dso
+%%DATADIR%%/nero/client/ui/playerList.gui.dso
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_base_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_base_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_base_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_base_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_converge_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_converge_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_converge_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_converge_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_dconverge_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_dconverge_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_dconverge_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_dconverge_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_dmilestone_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_dmilestone_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_dmilestone_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_dmilestone_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_milestone_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_milestone_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_milestone_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_milestone_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_smite_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_smite_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_smite_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_cmd_smite_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_base_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_base_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_base_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_base_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_better_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_better_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_better_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_better_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_brutal_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_brutal_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_brutal_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_brutal_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_delete_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_delete_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_delete_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_delete_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_inhabit_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_inhabit_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_inhabit_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_inhabit_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_move_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_move_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_move_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_move_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_normal_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_normal_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_normal_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_normal_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_pre_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_pre_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_pre_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_pre_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_rotate_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_rotate_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_rotate_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_rotate_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_rover_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_rover_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_rover_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_rover_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_static_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_static_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_static_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_enemy_static_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_flag_add_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_flag_add_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_flag_add_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_flag_add_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_flag_delete_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_flag_delete_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_flag_delete_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_flag_delete_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_flag_move_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_flag_move_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_flag_move_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_flag_move_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_add_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_add_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_add_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_add_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_base_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_base_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_base_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_base_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_del_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_del_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_del_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_del_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_move_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_move_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_move_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_move_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_rotate_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_rotate_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_rotate_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_rotate_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_scale_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_scale_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_scale_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_obj_scale_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_pop_base_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_pop_base_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_pop_base_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_pop_base_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_root_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_root_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_root_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_root_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_spawn_base_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_spawn_base_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_spawn_base_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_spawn_base_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_spawn_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_spawn_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_spawn_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_spawn_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_team_base_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_team_base_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_team_base_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_team_base_n.png
+%%DATADIR%%/nero/client/ui/radial/rm_team_d.png
+%%DATADIR%%/nero/client/ui/radial/rm_team_h.png
+%%DATADIR%%/nero/client/ui/radial/rm_team_i.png
+%%DATADIR%%/nero/client/ui/radial/rm_team_n.png
+%%DATADIR%%/nero/client/ui/redTeam.png
+%%DATADIR%%/nero/client/ui/remapDlg.gui.dso
+%%DATADIR%%/nero/client/ui/seperator.png
+%%DATADIR%%/nero/client/ui/smallgglogo.png
+%%DATADIR%%/nero/client/ui/speedometer.png
+%%DATADIR%%/nero/client/ui/tge.png
+%%DATADIR%%/nero/client/ui/tge_logo.png
+%%DATADIR%%/nero/client/ui/tgelarge.png
+%%DATADIR%%/nero/client/ui/top_border.png
+%%DATADIR%%/nero/client/ui/top_corner.png
+%%DATADIR%%/nero/data/init.cs.dso
+%%DATADIR%%/nero/data/interiors/Filler_tile1_01.jpg
+%%DATADIR%%/nero/data/interiors/Filler_tile1_02.jpg
+%%DATADIR%%/nero/data/interiors/Filler_tile1_03.jpg
+%%DATADIR%%/nero/data/interiors/Filler_tile1_04.jpg
+%%DATADIR%%/nero/data/interiors/Filler_tile1_05.jpg
+%%DATADIR%%/nero/data/interiors/Floor_set_stone.jpg
+%%DATADIR%%/nero/data/interiors/Floor_slate01.jpg
+%%DATADIR%%/nero/data/interiors/Floor_tile01.jpg
+%%DATADIR%%/nero/data/interiors/FlrFiller3_01.jpg
+%%DATADIR%%/nero/data/interiors/FlrFiller3_02.jpg
+%%DATADIR%%/nero/data/interiors/FlrFiller3_03.jpg
+%%DATADIR%%/nero/data/interiors/FlrPathFiller3.jpg
+%%DATADIR%%/nero/data/interiors/Mtl.jpg
+%%DATADIR%%/nero/data/interiors/MtlPilrBottom.jpg
+%%DATADIR%%/nero/data/interiors/MtlPilrFront.jpg
+%%DATADIR%%/nero/data/interiors/MtlPilrTop.jpg
+%%DATADIR%%/nero/data/interiors/WalMtlbase1_01.jpg
+%%DATADIR%%/nero/data/interiors/WalNoGroove.jpg
+%%DATADIR%%/nero/data/interiors/Wall_block01.jpg
+%%DATADIR%%/nero/data/interiors/Wall_filler1_01.jpg
+%%DATADIR%%/nero/data/interiors/Wall_filler2_01.jpg
+%%DATADIR%%/nero/data/interiors/Wall_girder_01.jpg
+%%DATADIR%%/nero/data/interiors/Wall_girder_02.jpg
+%%DATADIR%%/nero/data/interiors/Wall_girder_03.jpg
+%%DATADIR%%/nero/data/interiors/Wall_girder_04.jpg
+%%DATADIR%%/nero/data/interiors/Wall_panel01.jpg
+%%DATADIR%%/nero/data/interiors/concrete.jpg
+%%DATADIR%%/nero/data/interiors/cornerBuildings/OUT_GRAVEL.jpg
+%%DATADIR%%/nero/data/interiors/cornerBuildings/SILO2_WET4D.jpg
+%%DATADIR%%/nero/data/interiors/cornerBuildings/TNNL_FLR4C.jpg
+%%DATADIR%%/nero/data/interiors/cornerBuildings/TNNL_FLR5B.jpg
+%%DATADIR%%/nero/data/interiors/cornerBuildings/TNNL_W3.jpg
+%%DATADIR%%/nero/data/interiors/cornerBuildings/WET_WALL01.jpg
+%%DATADIR%%/nero/data/interiors/cornerBuildings/c3a1_w5a.jpg
+%%DATADIR%%/nero/data/interiors/cornerBuildings/hl_test.dif
+%%DATADIR%%/nero/data/interiors/cornerBuildings/street_test.dif
+%%DATADIR%%/nero/data/interiors/cornerBuildings/street_test_nostreet.dif
+%%DATADIR%%/nero/data/interiors/cornerBuildings/wet_wall04.jpg
+%%DATADIR%%/nero/data/interiors/docks/ggbridgem.dif
+%%DATADIR%%/nero/data/interiors/docks/ggbridgem.map
+%%DATADIR%%/nero/data/interiors/docks/ggbridges.dif
+%%DATADIR%%/nero/data/interiors/docks/ggbridges.map
+%%DATADIR%%/nero/data/interiors/docks/ggdock.dif
+%%DATADIR%%/nero/data/interiors/docks/ggdock.map
+%%DATADIR%%/nero/data/interiors/docks/ggpiling.dif
+%%DATADIR%%/nero/data/interiors/docks/ggpiling.map
+%%DATADIR%%/nero/data/interiors/f.jpg
+%%DATADIR%%/nero/data/interiors/hovels/cottage.dif
+%%DATADIR%%/nero/data/interiors/hovels/cottage_0.map
+%%DATADIR%%/nero/data/interiors/hovels/cottage_1.map
+%%DATADIR%%/nero/data/interiors/hovels/cottage_2.map
+%%DATADIR%%/nero/data/interiors/hovels/cottage_3.map
+%%DATADIR%%/nero/data/interiors/hovels/cottage_4.map
+%%DATADIR%%/nero/data/interiors/hovels/cottage_detail.jpg
+%%DATADIR%%/nero/data/interiors/hovels/small_cottage.dif
+%%DATADIR%%/nero/data/interiors/hovels/small_cottage_0.map
+%%DATADIR%%/nero/data/interiors/hovels/small_cottage_1.map
+%%DATADIR%%/nero/data/interiors/hovels/small_cottage_2.map
+%%DATADIR%%/nero/data/interiors/hovels/small_cottage_3.map
+%%DATADIR%%/nero/data/interiors/oak1.jpg
+%%DATADIR%%/nero/data/interiors/oak2.jpg
+%%DATADIR%%/nero/data/interiors/oak2_end.jpg
+%%DATADIR%%/nero/data/interiors/rubbleroom/-1BABTECH_FLR10.jpg
+%%DATADIR%%/nero/data/interiors/rubbleroom/BABTECH6.jpg
+%%DATADIR%%/nero/data/interiors/rubbleroom/C1A1C_W2B.jpg
+%%DATADIR%%/nero/data/interiors/rubbleroom/CRATE24.jpg
+%%DATADIR%%/nero/data/interiors/rubbleroom/rubbleroom.dif
+%%DATADIR%%/nero/data/interiors/rubbleroom/rubbleroom2.dif
+%%DATADIR%%/nero/data/interiors/rubbleroom/rubbleroom3.dif
+%%DATADIR%%/nero/data/interiors/rubbleroom/rubbleroom4fixed.dif
+%%DATADIR%%/nero/data/interiors/stonewall.jpg
+%%DATADIR%%/nero/data/interiors/thatch.jpg
+%%DATADIR%%/nero/data/interiors/towers/landtower.dif
+%%DATADIR%%/nero/data/interiors/towers/landtower_0.map
+%%DATADIR%%/nero/data/interiors/towers/landtower_1.map
+%%DATADIR%%/nero/data/interiors/towers/watertower.dif
+%%DATADIR%%/nero/data/interiors/towers/watertower_0.map
+%%DATADIR%%/nero/data/interiors/towers/watertower_1.map
+%%DATADIR%%/nero/data/missions/andrian arena.misx
+%%DATADIR%%/nero/data/missions/andrian arena.ter
+%%DATADIR%%/nero/data/missions/grove.misx
+%%DATADIR%%/nero/data/missions/grove.ter
+%%DATADIR%%/nero/data/missions/mountain pass.misx
+%%DATADIR%%/nero/data/missions/mountain pass.ter
+%%DATADIR%%/nero/data/missions/plains.mis
+%%DATADIR%%/nero/data/missions/plains.ter
+%%DATADIR%%/nero/data/missions/sunkencity.mis
+%%DATADIR%%/nero/data/missions/sunkencity.ter
+%%DATADIR%%/nero/data/missions/vfourroom.mis
+%%DATADIR%%/nero/data/missions/vfourroom.ter
+%%DATADIR%%/nero/data/missions/vnavarena.mis
+%%DATADIR%%/nero/data/missions/vnavarena.ter
+%%DATADIR%%/nero/data/missions/vsandbox.misx
+%%DATADIR%%/nero/data/missions/vsandbox.misx.dso
+%%DATADIR%%/nero/data/missions/vsandbox.ter
+%%DATADIR%%/nero/data/missions/vsandbox_11417b5e.ml
+%%DATADIR%%/nero/data/missions/vtworoomarena.mis
+%%DATADIR%%/nero/data/missions/vtworoomarena.ter
+%%DATADIR%%/nero/data/missions/vverticalmaze.mis
+%%DATADIR%%/nero/data/missions/vverticalmaze.ter
+%%DATADIR%%/nero/data/neat/21in5out.gnm
+%%DATADIR%%/nero/data/neat/neat-params.dat
+%%DATADIR%%/nero/data/neat/nero_genome13.gnm
+%%DATADIR%%/nero/data/neat/nero_testgenome1_gnm.gnm
+%%DATADIR%%/nero/data/neat/output_genome13.gnm
+%%DATADIR%%/nero/data/neat/pole2_markov.ne
+%%DATADIR%%/nero/data/neat/pole2_markov_ne.gnm
+%%DATADIR%%/nero/data/neat/pole2_markov_ne_orig.gnm
+%%DATADIR%%/nero/data/neat/pole2startgenes
+%%DATADIR%%/nero/data/neat/singleinput_gnm.gnm
+%%DATADIR%%/nero/data/newMission.mis
+%%DATADIR%%/nero/data/newMission.ter
+%%DATADIR%%/nero/data/saves/blueteam
+%%DATADIR%%/nero/data/saves/brains/Avoiders.rtf
+%%DATADIR%%/nero/data/saves/brains/Death From Afar.rtf
+%%DATADIR%%/nero/data/saves/brains/Dispersers.rtf
+%%DATADIR%%/nero/data/saves/brains/Flaggers2.rtf
+%%DATADIR%%/nero/data/saves/brains/TERRITORY_red_army.rtf
+%%DATADIR%%/nero/data/saves/brains/TERRITORY_special_forces.rtf
+%%DATADIR%%/nero/data/saves/brains/TERRITORY_very_special_forces.rtf
+%%DATADIR%%/nero/data/saves/brains/battered_brains.rtf
+%%DATADIR%%/nero/data/saves/brains/bobby-flag-shooters.rtf
+%%DATADIR%%/nero/data/saves/brains/death_from_afar.rtf
+%%DATADIR%%/nero/data/saves/brains/dispersion_demo.rtf
+%%DATADIR%%/nero/data/saves/brains/enemy_runner_towarders.rtf
+%%DATADIR%%/nero/data/saves/brains/flag_shooters.rtf
+%%DATADIR%%/nero/data/saves/brains/flagger_killers.rtf
+%%DATADIR%%/nero/data/saves/brains/flaggers.rtf
+%%DATADIR%%/nero/data/saves/brains/grove_grocers.rtf
+%%DATADIR%%/nero/data/saves/brains/grovers1.rtf
+%%DATADIR%%/nero/data/saves/brains/gruntz.rtf
+%%DATADIR%%/nero/data/saves/brains/highly_trained_avoiders.rtf
+%%DATADIR%%/nero/data/saves/brains/kenalls.rtf
+%%DATADIR%%/nero/data/saves/brains/kenwalls2.rtf
+%%DATADIR%%/nero/data/saves/brains/kenwalls3nf.rtf
+%%DATADIR%%/nero/data/saves/brains/kenwalls4nf.rtf
+%%DATADIR%%/nero/data/saves/brains/medium_agressors.rtf
+%%DATADIR%%/nero/data/saves/brains/mike_flag_shooters.rtf
+%%DATADIR%%/nero/data/saves/brains/mop_up_crew.rtf
+%%DATADIR%%/nero/data/saves/brains/mostly_flaggers_also_shooters.rtf
+%%DATADIR%%/nero/data/saves/brains/shadow_grove_slackers.rtf
+%%DATADIR%%/nero/data/saves/brains/shadow_grovers.rtf
+%%DATADIR%%/nero/data/saves/brains/simple_agressors.rtf
+%%DATADIR%%/nero/data/saves/brains/simple_avoiders.rtf
+%%DATADIR%%/nero/data/saves/brains/tango_suicides.rtf
+%%DATADIR%%/nero/data/saves/redteam
+%%DATADIR%%/nero/data/shapes/archway/archwaymap.jpg
+%%DATADIR%%/nero/data/shapes/archway/dtsarchway.dts
+%%DATADIR%%/nero/data/shapes/barricades/barricade_broken_01.dts
+%%DATADIR%%/nero/data/shapes/barricades/tex_barricade_broken_01.png
+%%DATADIR%%/nero/data/shapes/bench/benchmap.jpg
+%%DATADIR%%/nero/data/shapes/bench/dtsbench.dts
+%%DATADIR%%/nero/data/shapes/bot100.dts
+%%DATADIR%%/nero/data/shapes/bush/dtsbush.dts
+%%DATADIR%%/nero/data/shapes/bush/plantalpha2.png
+%%DATADIR%%/nero/data/shapes/campfires/ash.jpg
+%%DATADIR%%/nero/data/shapes/campfires/campfire.dts
+%%DATADIR%%/nero/data/shapes/campfires/campfire.ms3d
+%%DATADIR%%/nero/data/shapes/campfires/stone.jpg
+%%DATADIR%%/nero/data/shapes/clothesline/clotheslinesmap.png
+%%DATADIR%%/nero/data/shapes/clothesline/dtsclothesline.dts
+%%DATADIR%%/nero/data/shapes/controlpoint/blue/controlpoint.dts
+%%DATADIR%%/nero/data/shapes/controlpoint/blue/controlpoint.jpg
+%%DATADIR%%/nero/data/shapes/controlpoint/controlpointBLUE.jpg
+%%DATADIR%%/nero/data/shapes/controlpoint/controlpointRED.jpg
+%%DATADIR%%/nero/data/shapes/controlpoint/neutral/controlpoint.dts
+%%DATADIR%%/nero/data/shapes/controlpoint/neutral/controlpoint.jpg
+%%DATADIR%%/nero/data/shapes/controlpoint/red/controlpoint.dts
+%%DATADIR%%/nero/data/shapes/controlpoint/red/controlpoint.jpg
+%%DATADIR%%/nero/data/shapes/crossbow/ammo.dts
+%%DATADIR%%/nero/data/shapes/crossbow/ammo.jpg
+%%DATADIR%%/nero/data/shapes/crossbow/ammo.ms3d
+%%DATADIR%%/nero/data/shapes/crossbow/bolt.max
+%%DATADIR%%/nero/data/shapes/crossbow/clip.jpg
+%%DATADIR%%/nero/data/shapes/crossbow/clip.max
+%%DATADIR%%/nero/data/shapes/crossbow/crossbow.jpg
+%%DATADIR%%/nero/data/shapes/crossbow/crossbow.max
+%%DATADIR%%/nero/data/shapes/crossbow/debris.dts
+%%DATADIR%%/nero/data/shapes/crossbow/debris.ms3d
+%%DATADIR%%/nero/data/shapes/crossbow/journeyman.jpg
+%%DATADIR%%/nero/data/shapes/crossbow/projectile.dts
+%%DATADIR%%/nero/data/shapes/crossbow/projectile.max
+%%DATADIR%%/nero/data/shapes/crossbow/projectile.ms3d
+%%DATADIR%%/nero/data/shapes/crossbow/splash.png
+%%DATADIR%%/nero/data/shapes/crossbow/weapon.cfg
+%%DATADIR%%/nero/data/shapes/crossbow/weapon.dts
+%%DATADIR%%/nero/data/shapes/dirtyoffice/dtsdirtyoffice.dts
+%%DATADIR%%/nero/data/shapes/dirtyoffice/officemap1.jpg
+%%DATADIR%%/nero/data/shapes/flags/blue/flag.dts
+%%DATADIR%%/nero/data/shapes/flags/blue/flag_tex.png
+%%DATADIR%%/nero/data/shapes/flags/default/flag.dts
+%%DATADIR%%/nero/data/shapes/flags/default/flag_tex.png
+%%DATADIR%%/nero/data/shapes/flags/red/flag.dts
+%%DATADIR%%/nero/data/shapes/flags/red/flag_tex.png
+%%DATADIR%%/nero/data/shapes/fountain_02/fountain_01.dts
+%%DATADIR%%/nero/data/shapes/fountain_02/tex_fountain_01.png
+%%DATADIR%%/nero/data/shapes/grass/dtsgrass.dts
+%%DATADIR%%/nero/data/shapes/grass/fgrass1_v2_256.png
+%%DATADIR%%/nero/data/shapes/hotel/bghotelmap.jpg
+%%DATADIR%%/nero/data/shapes/hotel/dtshotel.dts
+%%DATADIR%%/nero/data/shapes/house1/dtshouse1.dts
+%%DATADIR%%/nero/data/shapes/house1/housemap1.jpg
+%%DATADIR%%/nero/data/shapes/house2/dtshouse2.dts
+%%DATADIR%%/nero/data/shapes/house2/housemap2.jpg
+%%DATADIR%%/nero/data/shapes/house3/dtshouse3.dts
+%%DATADIR%%/nero/data/shapes/house3/housemap3.jpg
+%%DATADIR%%/nero/data/shapes/househit/dtshousehit.dts
+%%DATADIR%%/nero/data/shapes/househit/househit1.jpg
+%%DATADIR%%/nero/data/shapes/items/healthKit.dts
+%%DATADIR%%/nero/data/shapes/items/healthKit.jpg
+%%DATADIR%%/nero/data/shapes/items/healthKit.ms3d
+%%DATADIR%%/nero/data/shapes/items/healthPatch.dts
+%%DATADIR%%/nero/data/shapes/items/healthPatch.ms3d
+%%DATADIR%%/nero/data/shapes/lamppost/lamppost_01.dts
+%%DATADIR%%/nero/data/shapes/lamppost/tex_lampost_01.png
+%%DATADIR%%/nero/data/shapes/lanterns/lantern.dts
+%%DATADIR%%/nero/data/shapes/lanterns/lantern.ms3d
+%%DATADIR%%/nero/data/shapes/lanterns/stone.jpg
+%%DATADIR%%/nero/data/shapes/markers/octahedron.dts
+%%DATADIR%%/nero/data/shapes/officeb/bulofficemap.jpg
+%%DATADIR%%/nero/data/shapes/officeb/dtsofficeb.dts
+%%DATADIR%%/nero/data/shapes/officebuilding/dtsoffice.dts
+%%DATADIR%%/nero/data/shapes/officebuilding/ofront.jpg
+%%DATADIR%%/nero/data/shapes/ornateoffice/dtsornateoffice.dts
+%%DATADIR%%/nero/data/shapes/ornateoffice/officemap2.jpg
+%%DATADIR%%/nero/data/shapes/particles/bubble.png
+%%DATADIR%%/nero/data/shapes/particles/fire.png
+%%DATADIR%%/nero/data/shapes/particles/smoke.png
+%%DATADIR%%/nero/data/shapes/particles/spark.png
+%%DATADIR%%/nero/data/shapes/pilepipe/dtspilepipe.dts
+%%DATADIR%%/nero/data/shapes/pilepipe/pipe.jpg
+%%DATADIR%%/nero/data/shapes/pilepylon/dtspilepylon.dts
+%%DATADIR%%/nero/data/shapes/pilepylon/pipe.jpg
+%%DATADIR%%/nero/data/shapes/pipe/dtspipe.dts
+%%DATADIR%%/nero/data/shapes/pipe/pipe.jpg
+%%DATADIR%%/nero/data/shapes/player/clip.jpg
+%%DATADIR%%/nero/data/shapes/player/crossbow.jpg
+%%DATADIR%%/nero/data/shapes/player/debris_player.dts
+%%DATADIR%%/nero/data/shapes/player/dtsScene.cfg
+%%DATADIR%%/nero/data/shapes/player/footprint.png
+%%DATADIR%%/nero/data/shapes/player/player.cfg
+%%DATADIR%%/nero/data/shapes/player/player.dts
+%%DATADIR%%/nero/data/shapes/player/player.max
+%%DATADIR%%/nero/data/shapes/player/player.png
+%%DATADIR%%/nero/data/shapes/player/player_back.dsq
+%%DATADIR%%/nero/data/shapes/player/player_celsalute.dsq
+%%DATADIR%%/nero/data/shapes/player/player_celwave.dsq
+%%DATADIR%%/nero/data/shapes/player/player_dieback.dsq
+%%DATADIR%%/nero/data/shapes/player/player_diechest.dsq
+%%DATADIR%%/nero/data/shapes/player/player_dieforward.dsq
+%%DATADIR%%/nero/data/shapes/player/player_diehead.dsq
+%%DATADIR%%/nero/data/shapes/player/player_dieknees.dsq
+%%DATADIR%%/nero/data/shapes/player/player_dieleglf.dsq
+%%DATADIR%%/nero/data/shapes/player/player_dielegrt.dsq
+%%DATADIR%%/nero/data/shapes/player/player_diesidelf.dsq
+%%DATADIR%%/nero/data/shapes/player/player_diesidert.dsq
+%%DATADIR%%/nero/data/shapes/player/player_dieslump.dsq
+%%DATADIR%%/nero/data/shapes/player/player_diespin.dsq
+%%DATADIR%%/nero/data/shapes/player/player_fall.dsq
+%%DATADIR%%/nero/data/shapes/player/player_forward.dsq
+%%DATADIR%%/nero/data/shapes/player/player_head.dsq
+%%DATADIR%%/nero/data/shapes/player/player_headside.dsq
+%%DATADIR%%/nero/data/shapes/player/player_jump.dsq
+%%DATADIR%%/nero/data/shapes/player/player_land.dsq
+%%DATADIR%%/nero/data/shapes/player/player_lookde.dsq
+%%DATADIR%%/nero/data/shapes/player/player_lookms.dsq
+%%DATADIR%%/nero/data/shapes/player/player_looknw.dsq
+%%DATADIR%%/nero/data/shapes/player/player_looksn.dsq
+%%DATADIR%%/nero/data/shapes/player/player_newland.dsq
+%%DATADIR%%/nero/data/shapes/player/player_recoilde.dsq
+%%DATADIR%%/nero/data/shapes/player/player_root.dsq
+%%DATADIR%%/nero/data/shapes/player/player_scoutroot.dsq
+%%DATADIR%%/nero/data/shapes/player/player_side.dsq
+%%DATADIR%%/nero/data/shapes/player/player_sitting.dsq
+%%DATADIR%%/nero/data/shapes/player/player_standjump.dsq
+%%DATADIR%%/nero/data/shapes/player/player_tauntbest.dsq
+%%DATADIR%%/nero/data/shapes/player/player_tauntimp.dsq
+%%DATADIR%%/nero/data/shapes/player/splash.png
+%%DATADIR%%/nero/data/shapes/pylon/dtspylon.dts
+%%DATADIR%%/nero/data/shapes/pylon/pipe.jpg
+%%DATADIR%%/nero/data/shapes/rocket_launcher/fire.png
+%%DATADIR%%/nero/data/shapes/rocket_launcher/rocket.dts
+%%DATADIR%%/nero/data/shapes/rocket_launcher/rocket.jpg
+%%DATADIR%%/nero/data/shapes/rocket_launcher/rocket_explosion.ogg
+%%DATADIR%%/nero/data/shapes/rocket_launcher/rocket_launcher.dts
+%%DATADIR%%/nero/data/shapes/rocket_launcher/rocket_launcher.jpg
+%%DATADIR%%/nero/data/shapes/rocket_launcher/smoke.png
+%%DATADIR%%/nero/data/shapes/rocket_launcher/spark.png
+%%DATADIR%%/nero/data/shapes/scouter/dtsscouter.dts
+%%DATADIR%%/nero/data/shapes/scouter/scoutermap.jpg
+%%DATADIR%%/nero/data/shapes/sidewalk/dtssidewalk.dts
+%%DATADIR%%/nero/data/shapes/sidewalk/stonefloor.jpg
+%%DATADIR%%/nero/data/shapes/store/bulstore.jpg
+%%DATADIR%%/nero/data/shapes/store/dtsstoreb.dts
+%%DATADIR%%/nero/data/shapes/streetlamp/dtsstreetlamp.dts
+%%DATADIR%%/nero/data/shapes/trafficCone/tex_scott_cone.png
+%%DATADIR%%/nero/data/shapes/trafficCone/trafficcone_01.dts
+%%DATADIR%%/nero/data/shapes/trees/Treethree06.max
+%%DATADIR%%/nero/data/shapes/trees/Treetwo12.max
+%%DATADIR%%/nero/data/shapes/trees/bark.jpg
+%%DATADIR%%/nero/data/shapes/trees/foliage.png
+%%DATADIR%%/nero/data/shapes/trees/foliage2.png
+%%DATADIR%%/nero/data/shapes/trees/knot.jpg
+%%DATADIR%%/nero/data/shapes/trees/tree2.dts
+%%DATADIR%%/nero/data/shapes/trees/tree3.dts
+%%DATADIR%%/nero/data/shapes/wall100.dts
+%%DATADIR%%/nero/data/shapes/warehouse1/dtswarehouse1.dts
+%%DATADIR%%/nero/data/shapes/warehouse1/warehouse1.jpg
+%%DATADIR%%/nero/data/shapes/warehouse2/dtswarehouse2.dts
+%%DATADIR%%/nero/data/shapes/warehouse2/warehouse1.jpg
+%%DATADIR%%/nero/data/shapes/woodflat/dtswoodflat.dts
+%%DATADIR%%/nero/data/shapes/woodflat/woodflatmap.jpg
+%%DATADIR%%/nero/data/shells/shared-data/README.txt
+%%DATADIR%%/nero/data/shells/shared-data/base.lmale.png
+%%DATADIR%%/nero/data/shells/shared-data/debris_player.dts
+%%DATADIR%%/nero/data/shells/shared-data/footprint.png
+%%DATADIR%%/nero/data/shells/shared-data/splash.png
+%%DATADIR%%/nero/data/shells/turrets/better_turret/better_turret REFERENCE IMAGE .jpg
+%%DATADIR%%/nero/data/shells/turrets/better_turret/better_turret.cs.dso
+%%DATADIR%%/nero/data/shells/turrets/better_turret/better_turret.dts
+%%DATADIR%%/nero/data/shells/turrets/better_turret/better_turret.jpg
+%%DATADIR%%/nero/data/shells/turrets/better_turret/better_turret_death.dsq
+%%DATADIR%%/nero/data/shells/turrets/better_turret/better_turret_idle.dsq
+%%DATADIR%%/nero/data/shells/turrets/better_turret/better_turret_shoot.dsq
+%%DATADIR%%/nero/data/shells/turrets/brutal_turret/brutal_turret.cs.dso
+%%DATADIR%%/nero/data/shells/turrets/brutal_turret/brutal_turret.dts
+%%DATADIR%%/nero/data/shells/turrets/brutal_turret/brutal_turret.jpg
+%%DATADIR%%/nero/data/shells/turrets/brutal_turret/brutal_turret_idle.dsq
+%%DATADIR%%/nero/data/shells/turrets/brutal_turret/brutal_turret_shoot.dsq
+%%DATADIR%%/nero/data/shells/turrets/normal_turret/normal_turret.cs.dso
+%%DATADIR%%/nero/data/shells/turrets/normal_turret/normal_turret.dts
+%%DATADIR%%/nero/data/shells/turrets/normal_turret/normal_turret.jpg
+%%DATADIR%%/nero/data/shells/units/Arach/arach.cfg
+%%DATADIR%%/nero/data/shells/units/Arach/arach.cs.dso
+%%DATADIR%%/nero/data/shells/units/Arach/arach.dts
+%%DATADIR%%/nero/data/shells/units/Arach/arach.max
+%%DATADIR%%/nero/data/shells/units/Arach/arach.png
+%%DATADIR%%/nero/data/shells/units/Arach/arach_back.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_celsalute.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_celwave.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_crouch.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_dieback.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_diechest.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_dieforward.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_diehead.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_dieknees.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_dieleglf.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_dielegrt.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_diesidelf.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_diesidert.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_dieslump.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_diespin.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_fall.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_forward.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_head.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_headside.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_jump.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_land.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_lookde.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_lookms.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_looknw.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_looksn.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_newland.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_recoilde.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_root.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_scoutroot.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_side.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_sitting.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_standjump.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_tauntbest.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/arach_tauntimp.dsq
+%%DATADIR%%/nero/data/shells/units/Arach/backup tex arach.png
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer.dts
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer.max
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer.png
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_back.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_celsalute.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_celwave.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_crouch.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_dieback.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_diechest.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_dieforward.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_diehead.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_dieknees.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_dieleglf.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_dielegrt.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_diesidelf.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_diesidert.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_dieslump.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_diespin.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_fall.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_forward.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_head.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_headside.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_jump.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_land.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_lookde.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_lookms.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_looknw.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_looksn.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_newland.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_recoilde.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_root.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_scoutroot.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_side.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_sitting.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_standjump.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_tauntbest.dsq
+%%DATADIR%%/nero/data/shells/units/Enforcer/enforcer_tauntimp.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/backup tex journeyman.png
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_back.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_celsalute.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_celwave.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_crouch.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_dieback.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_diechest.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_dieforward.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_diehead.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_dieknees.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_dieleglf.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_dielegrt.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_diesidelf.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_diesidert.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_dieslump.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_diespin.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_fall.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_forward.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_head.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_headside.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_jump.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_land.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_lookde.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_lookms.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_looknw.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_looksn.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_newland.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_recoilde.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_root.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_scoutroot.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_side.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_sitting.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_standjump.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_tauntbest.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/jm_tauntimp.dsq
+%%DATADIR%%/nero/data/shells/units/Journeyman/journeyman.cfg
+%%DATADIR%%/nero/data/shells/units/Journeyman/journeyman.cs.dso
+%%DATADIR%%/nero/data/shells/units/Journeyman/journeyman.dts
+%%DATADIR%%/nero/data/shells/units/Journeyman/journeyman.max
+%%DATADIR%%/nero/data/shells/units/Journeyman/journeyman.png
+%%DATADIR%%/nero/data/skies/cloud1.png
+%%DATADIR%%/nero/data/skies/day_0001.jpg
+%%DATADIR%%/nero/data/skies/day_0002.jpg
+%%DATADIR%%/nero/data/skies/day_0003.jpg
+%%DATADIR%%/nero/data/skies/day_0004.jpg
+%%DATADIR%%/nero/data/skies/day_0005.jpg
+%%DATADIR%%/nero/data/skies/day_0006.jpg
+%%DATADIR%%/nero/data/skies/day_0007.jpg
+%%DATADIR%%/nero/data/skies/sky_day.dml
+%%DATADIR%%/nero/data/sound/Ammo_pickup.ogg
+%%DATADIR%%/nero/data/sound/Crossbow_explosion.ogg
+%%DATADIR%%/nero/data/sound/Crossbow_firing.ogg
+%%DATADIR%%/nero/data/sound/Crossbow_firing_empty.ogg
+%%DATADIR%%/nero/data/sound/Crossbow_reload.ogg
+%%DATADIR%%/nero/data/sound/Footstep_hard.wav
+%%DATADIR%%/nero/data/sound/Footstep_soft.wav
+%%DATADIR%%/nero/data/sound/Footstep_water.wav
+%%DATADIR%%/nero/data/sound/Music/battle_loop.ogg
+%%DATADIR%%/nero/data/sound/Music/end_screen.ogg
+%%DATADIR%%/nero/data/sound/Music/main_menu.ogg
+%%DATADIR%%/nero/data/sound/Music/training_1.ogg
+%%DATADIR%%/nero/data/sound/Music/training_2.ogg
+%%DATADIR%%/nero/data/sound/Weapon_pickup.ogg
+%%DATADIR%%/nero/data/sound/Weapon_switch.ogg
+%%DATADIR%%/nero/data/sound/data_transmit.ogg
+%%DATADIR%%/nero/data/sound/footfall.ogg
+%%DATADIR%%/nero/data/sound/freefloat_window_open.ogg
+%%DATADIR%%/nero/data/sound/icon_click.ogg
+%%DATADIR%%/nero/data/sound/orc_death.ogg
+%%DATADIR%%/nero/data/sound/orc_pain.ogg
+%%DATADIR%%/nero/data/sound/panel_open.ogg
+%%DATADIR%%/nero/data/sound/pulse_rifle.ogg
+%%DATADIR%%/nero/data/sound/rifle_fire.ogg
+%%DATADIR%%/nero/data/sound/saveloadapply_click.ogg
+%%DATADIR%%/nero/data/sound/score_change.ogg
+%%DATADIR%%/nero/data/sound/select.ogg
+%%DATADIR%%/nero/data/sound/slider_move_loop.ogg
+%%DATADIR%%/nero/data/sound/testing.ogg
+%%DATADIR%%/nero/data/terrains/default.png
+%%DATADIR%%/nero/data/terrains/details/detail1.png
+%%DATADIR%%/nero/data/terrains/grass.png
+%%DATADIR%%/nero/data/terrains/grass2.png
+%%DATADIR%%/nero/data/terrains/grassland/gl_dirt1.png
+%%DATADIR%%/nero/data/terrains/grassland/gl_grass2.png
+%%DATADIR%%/nero/data/terrains/grassland/gl_rock2.png
+%%DATADIR%%/nero/data/terrains/grassland/grass.jpg
+%%DATADIR%%/nero/data/terrains/grassland/patchy.jpg
+%%DATADIR%%/nero/data/terrains/grassland/propertyMap.cs.dso
+%%DATADIR%%/nero/data/terrains/grassland/sand.jpg
+%%DATADIR%%/nero/data/terrains/sandy/alienclay1.png
+%%DATADIR%%/nero/data/terrains/sandy/alienclay2.png
+%%DATADIR%%/nero/data/terrains/sandy/alienclay3.png
+%%DATADIR%%/nero/data/terrains/sandy/alienclay4.png
+%%DATADIR%%/nero/data/terrains/sandy/aliensand.png
+%%DATADIR%%/nero/data/terrains/sandy/aliensand1.png
+%%DATADIR%%/nero/data/water/specmask.png
+%%DATADIR%%/nero/data/water/water.png
+%%DATADIR%%/nero/data/water/wateredge.jpg
+%%DATADIR%%/nero/data/weapons/ballistic-rifle/ballistic_rifle_01.dts
+%%DATADIR%%/nero/data/weapons/ballistic-rifle/ballistic_rifle_01.png
+%%DATADIR%%/nero/data/weapons/ballistic-rifle/sources/ballistic_rifle_01.cfg
+%%DATADIR%%/nero/data/weapons/ballistic-rifle/sources/ballistic_rifle_01.max
+%%DATADIR%%/nero/data/weapons/nullweapon/nullweapon.dts
+%%DATADIR%%/nero/help/0. Introduction.hfl
+%%DATADIR%%/nero/help/0.1 Story.hfl
+%%DATADIR%%/nero/help/1. Main Menu.hfl
+%%DATADIR%%/nero/help/2. Training Mode.hfl
+%%DATADIR%%/nero/help/2.1 Training Mode Con't.hfl
+%%DATADIR%%/nero/help/2.2 Game Controls.hfl
+%%DATADIR%%/nero/help/2.3 Training Commands.hfl
+%%DATADIR%%/nero/help/3. Battle Mode.hfl
+%%DATADIR%%/nero/help/4. Territory Mode.hfl
+%%DATADIR%%/nero/help/5. Create Team Mode.hfl
+%%DATADIR%%/nero/help/5.1. Create Platoon Mode.hfl
+%%DATADIR%%/nero/help/6. Demo Teams and Arenas.hfl
+%%DATADIR%%/nero/help/7. Support.hfl
+%%DATADIR%%/nero/help/8. AI Technology in NERO - rtNEAT.hfl
+%%DATADIR%%/nero/main.cs.dso
+%%DATADIR%%/nero/server/banlist.cs
+%%DATADIR%%/nero/server/defaults.cs.dso
+%%DATADIR%%/nero/server/init.cs.dso
+%%DATADIR%%/nero/server/prefs.cs
+%%DATADIR%%/nero/server/prefs.cs.dso
+%%DATADIR%%/nero/server/scripts/audioProfiles.cs.dso
+%%DATADIR%%/nero/server/scripts/camera.cs.dso
+%%DATADIR%%/nero/server/scripts/centerPrint.cs.dso
+%%DATADIR%%/nero/server/scripts/commands.cs.dso
+%%DATADIR%%/nero/server/scripts/chimneyfire.cs.dso
+%%DATADIR%%/nero/server/scripts/game.cs.dso
+%%DATADIR%%/nero/server/scripts/health.cs.dso
+%%DATADIR%%/nero/server/scripts/inventory.cs.dso
+%%DATADIR%%/nero/server/scripts/item.cs.dso
+%%DATADIR%%/nero/server/scripts/markers.cs.dso
+%%DATADIR%%/nero/server/scripts/neroBattle.cs.dso
+%%DATADIR%%/nero/server/scripts/neroControlPoint.cs.dso
+%%DATADIR%%/nero/server/scripts/neroFlag.cs.dso
+%%DATADIR%%/nero/server/scripts/neroGameManager.cs.dso
+%%DATADIR%%/nero/server/scripts/neroTraining.cs.dso
+%%DATADIR%%/nero/server/scripts/radiusDamage.cs.dso
+%%DATADIR%%/nero/server/scripts/s-include-armor-methods.cs.dso
+%%DATADIR%%/nero/server/scripts/s-include-debris.cs.dso
+%%DATADIR%%/nero/server/scripts/s-include-dust.cs.dso
+%%DATADIR%%/nero/server/scripts/s-include-footprints.cs.dso
+%%DATADIR%%/nero/server/scripts/s-include-nero-methods.cs.dso
+%%DATADIR%%/nero/server/scripts/s-include-sounds.cs.dso
+%%DATADIR%%/nero/server/scripts/s-include-splashes.cs.dso
+%%DATADIR%%/nero/server/scripts/s-turret.cs.dso
+%%DATADIR%%/nero/server/scripts/s-units-arach.cs.dso
+%%DATADIR%%/nero/server/scripts/s-units-journeyman.cs.dso
+%%DATADIR%%/nero/server/scripts/shapeBase.cs.dso
+%%DATADIR%%/nero/server/scripts/staticShape.cs.dso
+%%DATADIR%%/nero/server/scripts/stats.cs.dso
+%%DATADIR%%/nero/server/scripts/teleportmist.cs.dso
+%%DATADIR%%/nero/server/scripts/triggers.cs.dso
+%%DATADIR%%/nero/server/scripts/w-ballisticrifle.cs.dso
+%%DATADIR%%/nero/server/scripts/w-turretgun.cs.dso
+%%DATADIR%%/nero/server/scripts/weapon.cs.dso
+@dirrm lib/linux-nerogame
+@dirrm %%DATADIR%%/common/client
+@dirrm %%DATADIR%%/common/help
+@dirrm %%DATADIR%%/common/lighting
+@dirrm %%DATADIR%%/common/server
+@dirrm %%DATADIR%%/common/ui/cache
+@dirrm %%DATADIR%%/common/ui
+@dirrm %%DATADIR%%/common
+@dirrm %%DATADIR%%/nero/client/scripts/client
+@dirrm %%DATADIR%%/nero/client/scripts
+@dirrm %%DATADIR%%/nero/client/ui/nero
+@dirrm %%DATADIR%%/nero/client/ui/radial
+@dirrm %%DATADIR%%/nero/client/ui/mainmenu
+@dirrm %%DATADIR%%/nero/client/ui
+@dirrm %%DATADIR%%/nero/client
+@dirrm %%DATADIR%%/nero/data/saves/brains
+@dirrm %%DATADIR%%/nero/data/saves
+@dirrm %%DATADIR%%/nero/data/water
+@dirrm %%DATADIR%%/nero/data/neat
+@dirrm %%DATADIR%%/nero/data/shapes/bench
+@dirrm %%DATADIR%%/nero/data/shapes/grass
+@dirrm %%DATADIR%%/nero/data/shapes/woodflat
+@dirrm %%DATADIR%%/nero/data/shapes/items
+@dirrm %%DATADIR%%/nero/data/shapes/trees
+@dirrm %%DATADIR%%/nero/data/shapes/lanterns
+@dirrm %%DATADIR%%/nero/data/shapes/househit
+@dirrm %%DATADIR%%/nero/data/shapes/player
+@dirrm %%DATADIR%%/nero/data/shapes/teapot
+@dirrm %%DATADIR%%/nero/data/shapes/officeb
+@dirrm %%DATADIR%%/nero/data/shapes/archway
+@dirrm %%DATADIR%%/nero/data/shapes/bush
+@dirrm %%DATADIR%%/nero/data/shapes/pipe
+@dirrm %%DATADIR%%/nero/data/shapes/dumpster
+@dirrm %%DATADIR%%/nero/data/shapes/sidewalk
+@dirrm %%DATADIR%%/nero/data/shapes/ornateoffice
+@dirrm %%DATADIR%%/nero/data/shapes/house1
+@dirrm %%DATADIR%%/nero/data/shapes/house2
+@dirrm %%DATADIR%%/nero/data/shapes/house3
+@dirrm %%DATADIR%%/nero/data/shapes/pilepipe
+@dirrm %%DATADIR%%/nero/data/shapes/fruitcrate
+@dirrm %%DATADIR%%/nero/data/shapes/rocket_launcher
+@dirrm %%DATADIR%%/nero/data/shapes/officebuilding
+@dirrm %%DATADIR%%/nero/data/shapes/campfires
+@dirrm %%DATADIR%%/nero/data/shapes/pilepylon
+@dirrm %%DATADIR%%/nero/data/shapes/hotel
+@dirrm %%DATADIR%%/nero/data/shapes/player1
+@dirrm %%DATADIR%%/nero/data/shapes/player2
+@dirrm %%DATADIR%%/nero/data/shapes/buildings/warehouse1
+@dirrm %%DATADIR%%/nero/data/shapes/buildings/house1
+@dirrm %%DATADIR%%/nero/data/shapes/buildings/ornateoffice
+@dirrm %%DATADIR%%/nero/data/shapes/buildings/warehouse2
+@dirrm %%DATADIR%%/nero/data/shapes/buildings/house2
+@dirrm %%DATADIR%%/nero/data/shapes/buildings/house3
+@dirrm %%DATADIR%%/nero/data/shapes/buildings/dirtyoffice
+@dirrm %%DATADIR%%/nero/data/shapes/buildings/househit
+@dirrm %%DATADIR%%/nero/data/shapes/buildings/officebuilding
+@dirrm %%DATADIR%%/nero/data/shapes/buildings
+@dirrm %%DATADIR%%/nero/data/shapes/streetlamp
+@dirrm %%DATADIR%%/nero/data/shapes/trafficCone
+@dirrm %%DATADIR%%/nero/data/shapes/warehouse1
+@dirrm %%DATADIR%%/nero/data/shapes/fountain_02
+@dirrm %%DATADIR%%/nero/data/shapes/scouter
+@dirrm %%DATADIR%%/nero/data/shapes/warehouse2
+@dirrm %%DATADIR%%/nero/data/shapes/particles
+@dirrm %%DATADIR%%/nero/data/shapes/controlpoint/blue
+@dirrm %%DATADIR%%/nero/data/shapes/controlpoint/neutral
+@dirrm %%DATADIR%%/nero/data/shapes/controlpoint/red
+@dirrm %%DATADIR%%/nero/data/shapes/controlpoint
+@dirrm %%DATADIR%%/nero/data/shapes/flags/default
+@dirrm %%DATADIR%%/nero/data/shapes/flags/blue
+@dirrm %%DATADIR%%/nero/data/shapes/flags/red
+@dirrm %%DATADIR%%/nero/data/shapes/flags
+@dirrm %%DATADIR%%/nero/data/shapes/store
+@dirrm %%DATADIR%%/nero/data/shapes/lamppost
+@dirrm %%DATADIR%%/nero/data/shapes/barricades
+@dirrm %%DATADIR%%/nero/data/shapes/crossbow
+@dirrm %%DATADIR%%/nero/data/shapes/pylon
+@dirrm %%DATADIR%%/nero/data/shapes/markers
+@dirrm %%DATADIR%%/nero/data/shapes/dirtyoffice
+@dirrm %%DATADIR%%/nero/data/shapes/clothesline
+@dirrm %%DATADIR%%/nero/data/shapes
+@dirrm %%DATADIR%%/nero/data/missions
+@dirrm %%DATADIR%%/nero/data/terrains/details
+@dirrm %%DATADIR%%/nero/data/terrains/grassland
+@dirrm %%DATADIR%%/nero/data/terrains/sandy
+@dirrm %%DATADIR%%/nero/data/terrains
+@dirrm %%DATADIR%%/nero/data/sound/Music
+@dirrm %%DATADIR%%/nero/data/sound
+@dirrm %%DATADIR%%/nero/data/shells/units/Enforcer
+@dirrm %%DATADIR%%/nero/data/shells/units/Journeyman
+@dirrm %%DATADIR%%/nero/data/shells/units/Arach
+@dirrm %%DATADIR%%/nero/data/shells/units
+@dirrm %%DATADIR%%/nero/data/shells/turrets/better_turret
+@dirrm %%DATADIR%%/nero/data/shells/turrets/normal_turret
+@dirrm %%DATADIR%%/nero/data/shells/turrets/brutal_turret
+@dirrm %%DATADIR%%/nero/data/shells/turrets
+@dirrm %%DATADIR%%/nero/data/shells/shared-data
+@dirrm %%DATADIR%%/nero/data/shells
+@dirrm %%DATADIR%%/nero/data/advice
+@dirrm %%DATADIR%%/nero/data/weapons/nullweapon
+@dirrm %%DATADIR%%/nero/data/weapons/ballistic-rifle/sources
+@dirrm %%DATADIR%%/nero/data/weapons/ballistic-rifle
+@dirrm %%DATADIR%%/nero/data/weapons
+@dirrm %%DATADIR%%/nero/data/interiors/towers
+@dirrm %%DATADIR%%/nero/data/interiors/hovels
+@dirrm %%DATADIR%%/nero/data/interiors/docks
+@dirrm %%DATADIR%%/nero/data/interiors/rubbleroom
+@dirrm %%DATADIR%%/nero/data/interiors/cornerBuildings
+@dirrm %%DATADIR%%/nero/data/interiors/Demo Bunker test
+@dirrm %%DATADIR%%/nero/data/interiors
+@dirrm %%DATADIR%%/nero/data/skies
+@dirrm %%DATADIR%%/nero/data
+@dirrm %%DATADIR%%/nero/help
+@dirrm %%DATADIR%%/nero/server/scripts
+@dirrm %%DATADIR%%/nero/server
+@dirrm %%DATADIR%%/nero
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%

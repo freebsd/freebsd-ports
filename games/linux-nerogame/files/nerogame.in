@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd %%PREFIX%%/%%DATADIR%% || exit 1
+exec %%PREFIX%%/libexec/linux-nerogame "$@"
