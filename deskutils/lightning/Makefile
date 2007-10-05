@@ -45,10 +45,6 @@ MOZ_MK_OPTIONS=	MOZ_CO_PROJECT=calendar
 BROKEN=		does not build
 .endif
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 post-patch:
 	@${SED} -e 's|@SUNBIRD_ICON@|${SUNBIRD_ICON}|' \
 		${FILESDIR}/sunbird.desktop.in >${WRKDIR}/sunbird.desktop
