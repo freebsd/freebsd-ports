@@ -1,0 +1,71 @@
+Add copies of the respective English language documents to the errors/Armenian
+directory. This allows the port to install the complete set of Armenian
+language documents. This patch has been submitted as Squid bug #2094 and will
+hopefully be added to mainline Squid in the next release.
+--- errors/Armenian/ERR_ESI	Thu Jan  1 01:00:00 1970
++++ errors/Armenian/ERR_ESI	Wed Oct  3 17:07:05 2007
+@@ -0,0 +1,28 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
++<HTML><HEAD>
++<TITLE>ERROR: The requested URL could not be retrieved</TITLE>
++<STYLE type="text/css"><!--BODY{background-color:#ffffff;font-family:verdana,sans-serif}PRE{font-family:sans-serif}--></STYLE>
++</HEAD><BODY>
++<H2>The requested URL could not be retrieved</H2>
++<HR noshade size="1px">
++<P>
++While trying to retrieve the URL:
++<A HREF="%U">%U</A>
++<P>
++The following error was encountered:
++<BLOCKQUOTE>
++ESI Processing failed.
++</BLOCKQUOTE>
++
++<P>
++The ESI processor returned:
++<BLOCKQUOTE>
++%Z
++</BLOCKQUOTE>
++
++<P>
++This means that:
++<PRE>
++ The surrogate was not able to process the ESI template. Please report this error to the webmaster. 
++</PRE>
++<P>Your webmaster is <A HREF="mailto:%w">%w</A>. 
+--- errors/Armenian/ERR_ICAP_FAILURE	Thu Jan  1 01:00:00 1970
++++ errors/Armenian/ERR_ICAP_FAILURE	Wed Oct  3 17:07:05 2007
+@@ -0,0 +1,33 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
++<HTML><HEAD>
++<TITLE>ERROR: The requested URL could not be retrieved</TITLE>
++<STYLE type="text/css"><!--BODY{background-color:#ffffff; font-family:verdana,sans-serif}--></STYLE>
++</HEAD><BODY>
++<H1>ERROR</H1>
++<H2>The requested URL could not be retrieved</H2>
++<HR noshade size="1px">
++<P>
++While trying to retrieve the URL:
++<A HREF="%U">%U</A>
++<P>
++The following error was encountered:
++<UL>
++<LI>
++<STRONG>
++ICAP protocol error.
++</STRONG>
++</UL>
++
++<P>
++The system returned:
++<PRE><I>    %E</I></PRE>
++
++<P>
++This means that:
++Some aspect of the ICAP communication failed. Possible problems:
++<UL>
++<LI>ICAP server is not reachable.
++<LI>Illegal response from ICAP server.
++</UL>
++</P>
++
