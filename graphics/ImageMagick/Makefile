@@ -55,10 +55,12 @@ OPTIONS=	X11				"X11 support" on \
 		IMAGEMAGICK_MODULES		"Modules support (broken)" off \
 		IMAGEMAGICK_BZLIB		"Bzlib support" on \
 		IMAGEMAGICK_16BIT_PIXEL		"16bit pixel support" on \
+		IMAGEMAGICK_DJVU	"DJVU format support (needs threads)" off \
 		IMAGEMAGICK_LCMS		"LCMS support" on \
 		IMAGEMAGICK_TTF			"Freetype support" on \
 		IMAGEMAGICK_FONTCONFIG		"Fontconfig support" on \
 		IMAGEMAGICK_JPEG		"JPG format support" on \
+		IMAGEMAGICK_OPENEXR		"OpenEXR support (needs threads)" off \
 		IMAGEMAGICK_PNG			"PNG format support" on \
 		IMAGEMAGICK_TIFF		"TIFF format support" on \
 		IMAGEMAGICK_FPX			"FPX format support" off \
@@ -98,6 +100,13 @@ WITH_IMAGEMAGICK_THREADS=yes
 .else
 CONFIGURE_ARGS+=	--without-threads
 .undef WITH_IMAGEMAGICK_THREADS
+.if defined(WITH_IMAGEMAGICK_OPENEXR) && !defined(WITHOUT_IMAGEMAGICK_PERL)
+.	warning OpenEXR's libIlmThread may prevent PerlMagick from working
+.endif
+.if defined(WITH_IMAGEMAGICK_DJVU)
+.	warning DjVu requires threads and will not be supported
+.	undef WITH_IMAGEMAGICK_DJVU
+.endif
 .endif
 
 # Faster, but poor quality
@@ -120,6 +129,26 @@ PLIST_SUB+=		MODULES=''
 .else
 CONFIGURE_ARGS+=	--without-modules
 PLIST_SUB+=		MODULES='@comment '
+.endif
+
+.if !defined(WITHOUT_IMAGEMAGICK_OPENEXR)
+LIB_DEPENDS+=		IlmImf:${PORTSDIR}/graphics/OpenEXR
+PLIST_SUB+=		OPENEXR=""
+.else
+CONFIGURE_ARGS+=	--without-openexr
+PLIST_SUB+=		OPENEXR="@comment "
+.endif
+
+.if !defined(WITHOUT_IMAGEMAGICK_DJVU)
+.	if defined(WITHOUT_X11)
+LIB_DEPENDS+=		djvulibre:${PORTSDIR}/graphics/djvulibre-nox11
+.	else
+LIB_DEPENDS+=		djvulibre:${PORTSDIR}/graphics/djvulibre
+.	endif
+PLIST_SUB+=		DJVU=""
+.else
+CONFIGURE_ARGS+=	--without-djvu
+PLIST_SUB+=		DJVU="@comment "
 .endif
 
 .if !defined(WITHOUT_IMAGEMAGICK_JPEG)
