@@ -1,7 +1,5 @@
 #!/bin/sh
 
-PREFIX=%%PREFIX%%
-
 PW="/usr/sbin/pw"
 CHOWN="/usr/sbin/chown"
 CHMOD="/bin/chmod"
@@ -36,8 +34,12 @@ POST-INSTALL)
 
   # Mod and owner
   ${CHOWN} -R ${QS_USER}:${QS_USER} ${SPOOLDIR}
-  ${CHOWN} ${QS_USER}:${QS_USER} ${PREFIX}/bin/qmail-scanner-queue.pl
-  ${CHMOD} 4755 ${PREFIX}/bin/qmail-scanner-queue.pl
+  ${CHOWN} ${QS_USER}:${QS_USER} ${PKG_PREFIX}/bin/qmail-scanner-queue.pl
+  ${CHMOD} 4755 ${PKG_PREFIX}/bin/qmail-scanner-queue.pl
+
+  # Initialize
+  ${PKG_PREFIX}/bin/qmail-scanner-queue.pl -z
+  ${PKG_PREFIX}/bin/qmail-scanner-queue.pl -g
 
   # Mod and owner (final)
   ${CHOWN} -R ${QS_USER}:${QS_USER} ${SPOOLDIR}

@@ -7,7 +7,7 @@
 
 PORTNAME=	qmail-scanner
 PORTVERSION=	2.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -15,24 +15,38 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lippe@freebsdbrasil.com.br
 COMMENT=	Content/Anti-virus Scanner for qmail
 
-MANUAL_PACKAGE_BUILD=	Requires qmail built with non-standard setting
-
+RUN_DEPENDS+=	reformime:${PORTSDIR}/mail/maildrop \
+		unzip:${PORTSDIR}/archivers/unzip \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 BUILD_DEPENDS+=	reformime:${PORTSDIR}/mail/maildrop \
+		unzip:${PORTSDIR}/archivers/unzip \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
-QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
+CONFLICTS=	qmail-scanner-1.*
 
 USE_PERL5=	yes
-NO_BUILD=	yes
-
 USE_QMAIL=	yes
 
-CONFLICTS=	qmail-scanner-1.*
+SPOOLDIR?=	/var/spool/qscand
+PLIST_SUB=	SPOOLDIR=${SPOOLDIR}
+
+QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=	\
+		--qmaildir "${QMAIL_PREFIX}" \
+		--spooldir "${SPOOLDIR}" \
+		--bindir "${PREFIX}/bin" \
+		--qmail-queue-binary "${QMAIL_QUEUE}" \
+		--mime-unpacker "reformime" \
+		--no-QQ-check \
+		--batch
 
 QS_USER?=	qscand
 QS_ADMIN?=	postmaster
-QS_ID?=		85
+QS_ID?=		98
 
 DOCS=		logging_first_80_chars.eml patch_for_nod32_single_user.eml \
 		reformime-test.eml spamc-nasty.eml spamc-nice.eml vpopmail-issues.eml
@@ -42,30 +56,19 @@ CONTRIB=	mrtg-qmail-scanner.cfg check_AV_daemons logrotate.qmail-scanner \
 		test-sophie.pl test-trophie.pl test_installation.sh test_password.zip \
 		qmail-scanner-queue.c
 
-SPOOLDIR?=	/var/spool/qscand
-PLIST_SUB=	SPOOLDIR=${SPOOLDIR}
-
 OPTIONS=	TNEF "Mark Simpson's Patch (Recommended)" on \
 		FIX_MIME "Fix broken MIME messages" off \
 		REDUNDANT "Scan attachments and body mails" on \
-		NORMALIZE "Decode encoded headers per MIME Base64" off \
-		UNZIP "Force UNZIP all zip files" off
+		NORMALIZE "Decode encoded headers per MIME Base64" off
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--qmaildir "${QMAIL_PREFIX}" \
-		--spooldir "${SPOOLDIR}" \
-		--bindir "${PREFIX}/bin" \
-		--qmail-queue-binary "${QMAIL_QUEUE}" \
-		--mime-unpacker "reformime" \
-		--batch
-
-SUB_FILES=	pkg-message pkg-install
-SUB_LIST=	SPOOLDIR="${SPOOLDIR}" \
-		QS_USER=${QS_USER} \
-		QS_ID=${QS_ID}
+SUB_FILES=	pkg-install pkg-message
+SUB_LIST+=	QS_USER=${QS_USER} \
+		QS_ID=${QS_ID} \
+		SPOOLDIR=${SPOOLDIR}
 
 .include <bsd.port.pre.mk>
 
+# Options
 .if defined(WITH_TNEF)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 .endif
@@ -80,10 +83,6 @@ CONFIGURE_ARGS+=	--redundant no
 
 .if !defined(WITH_NORMALIZE)
 CONFIGURE_ARGS+=	--normalize no
-.endif
-
-.if defined(WITH_UNZIP)
-CONFIGURE_ARGS+=	--unzip yes
 .endif
 
 .if !defined(QS_USER)
@@ -216,12 +215,12 @@ pre-configure:
 	@${ECHO_MSG} "			NOTE: Numbers over 100 cause Q-S to not cleanup working files"
 	@${ECHO_MSG} "			(Default: yes, Options: yes|no|number)"
 	@${ECHO_MSG} ""
-
-do-configure:
 	@${SED} -e 's,%%SPOOLDIR%%,${SPOOLDIR},g; s,%%QS_USER%%,${QS_USER},g; \
-		s,%%QS_ID%%,${QS_ID},g; s,%%PREFIX%%,${PREFIX},g' \
-		${FILESDIR}/pkg-install.in > ${WRKDIR}/pkg-install
+		s,%%QS_ID%%,${QS_ID},g' ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+do-build:
+	@${REINPLACE_CMD} -E 's,^#!.*perl(.*)$$,#!${PERL}\1,' ${WRKSRC}/qmail-scanner-queue.pl
 
 do-install:
 .if !defined(NOPORTDOCS)
@@ -234,17 +233,13 @@ do-install:
 . endfor
 .endif
 	@${MKDIR} ${SPOOLDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/qmail-scanner-queue.pl ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/quarantine-events.txt ${SPOOLDIR}/quarantine-events.txt.sample
-	@${INSTALL_SCRIPT} ${WRKSRC}/qmail-scanner-queue.template ${PREFIX}/bin/qmail-scanner-queue.pl
-	@${ECHO_MSG} ""
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ""
-
-post-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 post-deinstall:
-	@${ECHO_MSG} ""
+	@${ECHO_MSG}
 	@${ECHO_MSG} "If you're not updating this port, you can delete directory '${SPOOLDIR}'."
 	@${ECHO_MSG} ""
 
