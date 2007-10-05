@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stalonetray
-PORTVERSION=	0.6.5
+PORTVERSION=	0.7.3
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -21,6 +21,22 @@ CONFIGURE_ARGS=	--disable-native-kde \
 		--disable-debug
 
 MAN1=		stalonetray.1
+PORTDOCS=	AUTHORS ChangeLog NEWS README TODO stalonetray.html
+PORTEXAMPLES=	stalonetrayrc.sample
 PLIST_FILES=	bin/stalonetray
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+.for file in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
