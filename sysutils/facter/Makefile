@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	facter
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	http://www.reductivelabs.com/downloads/facter/
 EXTRACT_SUFX=	.tgz
