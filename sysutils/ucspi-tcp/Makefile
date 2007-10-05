@@ -26,6 +26,8 @@ ALL_TARGET=	prog install instcheck
 
 SCRIPTS_ENV=	BINOWN="${BINOWN}" BINGRP="${BINGRP}" BINMODE="${BINMODE}" \
 		MANMODE="${MANMODE}" CFLAGS="${CFLAGS}"
+# Restrict optimization to -O - -O2 causes problems at least on amd64
+CFLAGS+=	-O
 
 .include <bsd.port.pre.mk>
 
