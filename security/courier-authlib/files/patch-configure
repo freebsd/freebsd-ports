@@ -13,24 +13,6 @@
  ac_subst_files=''
        ac_precious_vars='build_alias
  host_alias
-@@ -959,7 +963,7 @@
- CXXCPP
- F77
- FFLAGS'
--ac_subdirs_all='libltdl bdbobj gdbmobj md5 sha1 libhmac numlib makedat userdb rfc822 random128 liblock liblog'
-+ac_subdirs_all='libltdl bdbobj gdbmobj md5 sha1 libhmac numlib   rfc822 random128 liblock liblog'
- 
- # Initialize some variables set by options.
- ac_init_help=
-@@ -2508,7 +2512,7 @@
- fi
- 
- fi
--INSTALL_STRIP_PROGRAM="\$(install_sh) -c -s"
-+INSTALL_STRIP_PROGRAM="${INSTALL_PROGRAM} -s"
- 
- # We need awk for the "check" target.  The system "awk" is bad on
- # some platforms.
 @@ -21215,8 +21219,12 @@
  
  if test "$doauthuserdb" = "no"
@@ -65,15 +47,6 @@
  
   if test "$HAVE_LDAP" = 1; then
    HAVE_LDAP_TRUE=
-@@ -23604,7 +23626,7 @@
- 
- 
- 	_SAVE_LIBS=$LIBS
--	LIBS="$VPOPMAILLIBS $CRYPTLIBS $LIBS"
-+	LIBS="$VPOPMAILLIBS -lcrypt -lcrypt -lcrypt $CRYPTLIBS $LIBS"
- 	{ echo "$as_me:$LINENO: checking for open_smtp_relay" >&5
- echo $ECHO_N "checking for open_smtp_relay... $ECHO_C" >&6; }
- if test "${ac_cv_func_open_smtp_relay+set}" = set; then
 @@ -24180,9 +24202,9 @@
  if test "$doauthmysql" = ""
  then
@@ -246,32 +219,14 @@
    LIBAUTHMYSQL="libauthmysql.la"
  		HAVE_AUTHMYSQL=1
  else
-@@ -25973,7 +25995,7 @@
-   HAVE_SGML_FALSE=
- fi
- 
--subdirs="$subdirs libltdl bdbobj gdbmobj md5 sha1 libhmac numlib makedat userdb rfc822 random128 liblock liblog"
-+subdirs="$subdirs libltdl bdbobj gdbmobj md5 sha1 libhmac numlib   rfc822 random128 liblock liblog"
- 
- 
- ac_config_files="$ac_config_files Makefile authdaemond authdaemonrc authsystem.passwd README.authdebug.html dbobj.h authmigrate courier-authlib.spec courier-authlib.lpspec courier-authlib.sysvinit userdb-test-cram-md5.pl"
-@@ -26881,7 +26903,7 @@
- LIBAUTHSHADOW!$LIBAUTHSHADOW$ac_delim
- LIBAUTHPWD!$LIBAUTHPWD$ac_delim
- vpopmail_home!$vpopmail_home$ac_delim
--VPOPMAILLIBS!$VPOPMAILLIBS$ac_delim
-+VPOPMAILLIBS!$VPOPMAILLIBS -lcrypt -lcrypt -lcrypt$ac_delim
- LIBAUTHVCHKPW!$LIBAUTHVCHKPW$ac_delim
- authpgsqlrc!$authpgsqlrc$ac_delim
- PG_CONFIG!$PG_CONFIG$ac_delim
 @@ -26915,9 +26937,12 @@
  subdirs!$subdirs$ac_delim
  LIBOBJS!$LIBOBJS$ac_delim
  LTLIBOBJS!$LTLIBOBJS$ac_delim
 +HAVE_BASE_TRUE!$HAVE_BASE_TRUE$ac_delim
 +HAVE_BASE_FALSE!$HAVE_BASE_FALSE$ac_delim
-+HAVE_AUTHDB_TRUE!$HAVE_AUTHDB_TRUE$ac_delim
-+HAVE_AUTHDB_FALSE!$HAVE_AUTHDB_FALSE$ac_delim
++HAVE_USERDB_TRUE!$HAVE_USERDB_TRUE$ac_delim
++HAVE_USERDB_FALSE!$HAVE_USERDB_FALSE$ac_delim
  _ACEOF
 -
 -  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 77; then
