@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmpp4r
-PORTVERSION=	0.3
+PORTVERSION=	0.3.1
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://download.gna.org/xmpp4r/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

@@ -124,6 +124,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/lib/xmpp4r/iq_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/lib/xmpp4r_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/lib/callbacks_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/REXML/Text.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/REXML/Attribute.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/REXML/IOSource.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/REXML/XPathParser.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/REXML/Element.html
