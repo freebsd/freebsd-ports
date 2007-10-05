@@ -1,0 +1,12 @@
+Development using the properties file is performed by Java by the setting
+file of J2EE application, internationalization correspondence with desktop
+application, etc. being sufficient. However, you have to change the multi-byte
+character in a file into Unicode with the native2ascii tool of attachment in
+J2SDK on the character platform un-depending.
+This editor can directly edit property files written in Unicode reference
+characters, and saves the time and effort of converting into Unicode through
+native2ascii. In addition to the usual functions of an editor, the plugin is
+integrated with Eclipse and JBuilder. Files can be opened in the IDE and saved
+in Unicode. It can use by intuitive and simple operation.
+
+WWW:	http://propedit.sourceforge.jp/index_en.html
