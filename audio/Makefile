@@ -403,6 +403,7 @@
     SUBDIR += mp3splt
     SUBDIR += mp3stat
     SUBDIR += mp3towav-bundle
+    SUBDIR += mp3unicode
     SUBDIR += mp3wrap
     SUBDIR += mpc
     SUBDIR += mpdcon
