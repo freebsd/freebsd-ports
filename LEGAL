@@ -427,6 +427,8 @@ NetComponents-*		java/netcomponents	No redistribution except as part
 netshow_linux.gz	multimedia/netshow	Commercial software
 nerolinux-*		sysutils/linux-nero	Must be downloaded from WWW and
 						a Serial Number must be bought
+nero2_linux_*		games/linux-nerogame	Nero is freeware, but i am not 
+						sure of its license
 nntpcache-*		news/nntpcache		Commercial or government use
 						requires license
 nsc2ke.*		math/nsc2ke		No resale, contact author for
