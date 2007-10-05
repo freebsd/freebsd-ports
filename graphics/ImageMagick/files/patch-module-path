@@ -1,0 +1,31 @@
+Modify module-searching to only check the compiled-in location,
+if the environment variables don't provide an override. The stock
+code checks the compiled-in location if a particular module can't
+be found at the environment-specified directory, which may lead
+to wrong binaries being loaded, etc.
+
+	-mi
+
+--- magick/module.c	Sat Sep  8 16:44:05 2007
++++ magick/module.c	Thu Oct  4 23:30:26 2007
+@@ -589,4 +589,6 @@
+         "Searching for coder module file \"%s\" ...",filename);
+       module_path=GetEnvironmentValue("MAGICK_CODER_MODULE_PATH");
++      if (module_path == NULL)
++        module_path = MagickCoderModulesPath;
+       break;
+     }
+@@ -596,4 +598,6 @@
+         "Searching for filter module file \"%s\" ...",filename);
+       module_path=GetEnvironmentValue("MAGICK_CODER_FILTER_PATH");
++      if (module_path == NULL)
++        module_path = MagickFilterModulesPath;
+       break;
+     }
+@@ -624,5 +628,5 @@
+       module_path=DestroyString(module_path);
+     }
+-#if defined(UseInstalledMagick)
++#if defined(UseInstalledMagick) && 0
+ #if defined(MagickCoderModulesPath)
+   {

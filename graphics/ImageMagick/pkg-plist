@@ -310,9 +310,12 @@ lib/ImageMagick/modules-%%QBIT%%/coders/.keep
 %%PNG%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/png.a
 %%PNG%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/png.la
 %%PNG%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/png.so
-%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/exr.a
-%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/exr.la
-%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/exr.so
+%%OPENEXR%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/exr.a
+%%OPENEXR%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/exr.la
+%%OPENEXR%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/exr.so
+%%DJVU%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/djvu.a
+%%DJVU%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/djvu.la
+%%DJVU%%%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/djvu.so
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/pnm.a
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/pnm.la
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/pnm.so
