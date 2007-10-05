@@ -66,7 +66,13 @@ bin/pyawale
 %%DATADIR%%/data/awale_south_7.png
 %%DATADIR%%/data/awale_south_8.png
 %%DATADIR%%/data/awale_south_9.png
-%%DATADIR%%/doc/awale.rest
+%%DATADIR%%/doc/awale_algos.rest
+%%DATADIR%%/doc/awale_module.rest
+%%DATADIR%%/doc/pyawale.html
+%%DATADIR%%/doc/pyawale.rest
+%%DATADIR%%/doc/pyawale_end.jpg
+%%DATADIR%%/doc/pyawale_gui.jpg
+%%DATADIR%%/doc/pyawale_intro.jpg
 %%DATADIR%%/src/awale.py
 %%DATADIR%%/src/awale.pyc
 %%DATADIR%%/src/awale.pyo
