@@ -14331,6 +14331,7 @@ rubygem-gem_plugin	ports/devel/rubygem-gem_plugin
 rubygem-god	ports/sysutils/rubygem-god
 rubygem-gruff	ports/graphics/rubygem-gruff
 rubygem-haml	ports/www/rubygem-haml
+rubygem-highline	ports/devel/rubygem-highline
 rubygem-hoe		ports/devel/rubygem-hoe
 rubygem-hpricot	ports/www/rubygem-hpricot
 rubygem-htmltools	ports/textproc/rubygem-htmltools
