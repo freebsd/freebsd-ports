@@ -1371,7 +1371,6 @@ clamsmtp	ports/security/clamsmtp
 clamtk		ports/security/clamtk
 clanbomber	ports/games/clanbomber
 clanlib		ports/devel/clanlib
-clanlib-devel	ports/devel/clanlib-devel
 claraocr	ports/graphics/claraocr
 clarence	ports/math/clarence
 classpath	ports/java/classpath
