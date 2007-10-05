@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: darkstat
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable `darkstat':
+#
+# darkstat_enable="YES"
+# darkstat_interface="fxp0" # change to suit your configuration
+#
+# Optional configuration flags:
+#
+# darkstat_dir="/var/run/darkstat"
+# darkstat_pidname="darkstat.pid"
+# darkstat_dropuser="nobody"
+# darkstat_flags=""
+#   - examples: [ --no-promisc ] [ --no-dns ] [ -p port ]
+#     [ -b bindaddr ] [ -f filter ] [ -l network/netmask ]
+#     [ --daylog filename ] [ --import filename ] [ --export filename ]
+#
+#   - DON'T pass -i, --chroot, --pidfile, or --user here
+#
+# Please refer to the darkstat(1) manual page for full documentation.
+
+. %%RC_SUBR%%
+
+name=darkstat
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/$name
+start_precmd=darkstat_prestart
+
+load_rc_config $name
+: ${darkstat_enable="NO"}
+: ${darkstat_dir="/var/run/darkstat"}
+: ${darkstat_pidname="darkstat.pid"}
+: ${darkstat_dropuser="nobody"}
+: ${darkstat_flags=""}
+pidfile="${darkstat_dir}/${darkstat_pidname}"
+
+darkstat_prestart()
+{
+	if [ "x${darkstat_interface}" = "x" ]; then
+		err 1 "You must define \$darkstat_interface."
+	fi
+	mkdir -p ${darkstat_dir}
+	chown ${darkstat_dropuser} ${darkstat_dir}
+	chmod u+wx ${darkstat_dir}
+}
+
+darkstat_flags="-i ${darkstat_interface} --chroot ${darkstat_dir} \
+--pidfile ${darkstat_pidname} --user ${darkstat_dropuser} \
+${darkstat_flags}"
+
+run_rc_command "$1"
