@@ -1,5 +1,5 @@
---- builds/posix/make.rules.orig	Wed Dec 28 09:58:28 2005
-+++ builds/posix/make.rules	Thu Sep 14 17:29:08 2006
+--- builds/posix/make.rules.orig	2007-09-04 15:51:17.000000000 +0800
++++ builds/posix/make.rules	2007-10-05 06:56:37.104972944 +0800
 @@ -33,7 +33,7 @@
  
  
@@ -9,12 +9,3 @@
  
  ifeq ($(IsProdTypeBuild),Y)
    CFLAGS:= $(CFLAGS) $(PROD_FLAGS) -DPROD_BUILD
-@@ -75,7 +75,7 @@
- STATICEXE_LINK = @CXX@
- 
- LINK_LIBS = @LIBS@ @EDITLINE_A@
--ICU_LIBS = -licuuc -licudata -licui18n
-+ICU_LIBS = @ICU_LIBS@ @ICU_LDFLAGS@
- STATICLINK_LIBS = @LIBS@ @EDITLINE_A@
- SO_LINK_LIBS = @LIBS@
- 

@@ -6,13 +6,12 @@
 #
 
 PORTNAME?=	firebird
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES?=	databases
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=firebird
 PKGNAMESUFFIX?=	-server
-DISTNAME=	Firebird-2.0.2.12964-0
+DISTNAME=	Firebird-2.0.3.12981-1
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT?=	Firebird-2 relational database (server)
