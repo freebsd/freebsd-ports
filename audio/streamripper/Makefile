@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	streamripper
-PORTVERSION=	1.62.1
+PORTVERSION=	1.62.3
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -28,10 +28,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--without-included-libmad \
 		--without-included-tre \
 		--with-included-argv
-CFLAGS+=	-DANSI_PROTOTYPES -DHAVE_LANGINFO_CODESET
+CFLAGS+=	-DANSI_PROTOTYPES
 
 MAN1=		streamripper.1
-PLIST_FILES=	bin/cstreamripper bin/streamripper
+PLIST_FILES=	bin/streamripper
 
 .include <bsd.port.pre.mk>
 
@@ -52,7 +52,6 @@ post-patch:
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cstreamripper ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/streamripper ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/streamripper.1 ${MANPREFIX}/man/man1
 
