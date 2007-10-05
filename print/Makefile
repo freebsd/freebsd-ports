@@ -170,6 +170,7 @@
     SUBDIR += mapagi
     SUBDIR += mftrace
     SUBDIR += mgv
+    SUBDIR += min12xxw
     SUBDIR += mp-a4
     SUBDIR += mp-letter
     SUBDIR += mpage
