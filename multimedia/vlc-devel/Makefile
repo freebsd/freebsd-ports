@@ -9,11 +9,11 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.9.0.20070906
-PORTREVISION=	1
+DISTVERSION=	0.9.0.20071005
+PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://nightlies.videolan.org/build/source/trunk-${DISTVERSION:S/0.9.0.//}-0029/
+MASTER_SITES=	http://nightlies.videolan.org/build/source/trunk-${DISTVERSION:S/0.9.0.//}-0024/
 #MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
 #		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${DISTVERSION}/ \
 #		ftp://ftp.crans.org/pub/videolan/vlc/${DISTVERSION}/ \
@@ -26,6 +26,7 @@ COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
+		tar.0:${PORTSDIR}/devel/libtar \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 
@@ -40,8 +41,8 @@ OPTIONS+=	DEBUG "Enable debuging support" Off
 OPTIONS+=	DTS "DTS decoder support, many DVDs use this" On
 OPTIONS+=	ESOUND "Esound Support" Off
 OPTIONS+=	FAAC "Faac audio encoder (mp4/aac) support" Off
-OPTIONS+=	FAAD "Faad audio decoder (mp4/aac) support" Off
-OPTIONS+=	FLAC "Flac audio codec support" Off
+OPTIONS+=	FAAD "Faad audio decoder (mp4/aac) support" On
+OPTIONS+=	FLAC "Flac audio codec support" On
 OPTIONS+=	HTTPD "Streaming media control via http" On
 OPTIONS+=	LAME "Lame mp3 audio encoder support" On
 OPTIONS+=	LIVEMEDIA "Support for rstp/rtp/sdp protocols" On
@@ -59,8 +60,8 @@ OPTIONS+=	SVGALIB "SVGALIB video output" Off
 OPTIONS+=	SHOUT "Shout2 support" Off
 OPTIONS+=	SKINS "Enable GTK+ skinsned interface" Off
 OPTIONS+=	SPEEX "Speex voice codec support" On
-OPTIONS+=	THEORA "OGG/Vorbis video codec support" Off
-OPTIONS+=	TWOLAME "Twolame mpeg2 audio encoder support" Off
+OPTIONS+=	THEORA "OGG/Vorbis video codec support" On
+OPTIONS+=	TWOLAME "Twolame mpeg2 audio encoder support" On
 OPTIONS+=	VORBIS "Vorbis support" On
 OPTIONS+=	WIN32_CODECS "win32 multimedia DLL's" Off
 OPTIONS+=	WXGTK "WxGTK/WxWidgets Interface" Off
@@ -175,7 +176,6 @@ CONFIGURE_ARGS+=--disable-qt4
 .endif
 
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
-LIB_DEPENDS+=	tar.0:${PORTSDIR}/devel/libtar
 CONFIGURE_ARGS+=--enable-skins2
 WITH_WXGTK=yes
 .else
