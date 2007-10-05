@@ -5,7 +5,7 @@
  
  
 -PKG_TCL=${TCL_PACKAGE_PATH}/sasl-${VERSION}
-+PKG_TCL=${TCL_PACKAGE_PATH}/tclsasl
++PKG_TCL=${TCL_PREFIX}/lib/tclsasl
  
  
  # Check whether --with-cyrus-sasl or --without-cyrus-sasl was given.
