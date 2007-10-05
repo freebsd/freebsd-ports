@@ -7,6 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.7.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
@@ -117,7 +118,7 @@ CONFIGURE_ARGS+=	--with-postgresql=no
 .endif
 
 .if defined(WITH_PRELUDE)
-LIB_DEPENDS+=		prelude.12:${PORTSDIR}/security/libprelude
+LIB_DEPENDS+=		prelude.13:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--enable-prelude
 PLIST_SUB+=		PRELUDE=""
 .else
