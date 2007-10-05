@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	wyvern
-PORTVERSION=	2.2.7
-PORTREVISION=	1
+PORTVERSION=	2.2.10
+PORTREVISION=	0
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.MysticWALL.COM/download/
 
@@ -36,10 +36,6 @@ OPTIONS=	OPENSSL "OpenSSL support" off \
 		STRICT_PARSING "Parse request/response headers strictly" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSREL} == 7.0
-BROKEN=		doens't work; authors works on the problem
-.endif
 
 .if defined(WITH_OPENSSL)
 CONFIGURE_ARGS+=	--with-openssl=yes
