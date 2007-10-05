@@ -1,6 +1,6 @@
---- builds/posix/make.defaults.orig	Wed Dec 28 09:58:28 2005
-+++ builds/posix/make.defaults	Wed Aug 16 16:26:16 2006
-@@ -102,7 +102,7 @@
+--- builds/posix/make.defaults.orig	2007-09-04 15:51:17.000000000 +0800
++++ builds/posix/make.defaults	2007-10-05 07:05:13.947441166 +0800
+@@ -107,7 +107,7 @@
  CHMOD=			chmod
  CHMOD_6=		chmod 666
  CHMOD_7=		chmod 777
@@ -9,7 +9,7 @@
  MV=			mv -f
  TOUCH=			touch
  CP=			cp
-@@ -180,9 +180,6 @@
+@@ -185,9 +185,6 @@
  
  LIBFBSTATIC_A = $(LIB)/libfbstatic.a
  LIBEDITLINE_A = $(LIB)/libeditline.a
@@ -19,3 +19,12 @@
  
  # Shared library name for usage inside of the UDF
  IbUtilLibraryName = $(LIB_PREFIX)ib_util.$(SHRLIB_EXT)
+@@ -203,7 +200,7 @@
+ STATICEXE_LINK:= @CXX@
+ 
+ LINK_LIBS = @LIBS@ @EDITLINE_A@
+-ICU_LIBS = -licuuc -licudata -licui18n
++ICU_LIBS = @ICU_LIBS@ @ICU_LDFLAGS@
+ STATICLINK_LIBS = @LIBS@ @EDITLINE_A@
+ SO_LINK_LIBS = @LIBS@
+ 
