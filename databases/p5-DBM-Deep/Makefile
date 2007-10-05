@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBM-Deep
-PORTVERSION=	0.983
+PORTVERSION=	1.0004
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBM
@@ -15,7 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A pure perl persistent multi-level hash/array DBM
 
-MAN3=		DBM::Deep.3
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/FileHandle/Fmode.pm:${PORTSDIR}/devel/p5-FileHandle-Fmode
+BUILD_DEPENDS=	${RUN_DEPENDS}
+
+MAN3=		DBM::Deep.3 DBM::Deep::Cookbook.3 DBM::Deep::Internals.3
 
 PERL_CONFIGURE=	yes
 
