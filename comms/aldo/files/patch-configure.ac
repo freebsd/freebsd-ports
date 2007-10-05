@@ -1,0 +1,13 @@
+--- configure.ac.orig	2007-05-16 05:52:24.000000000 -0400
++++ configure.ac	2007-07-02 19:13:39.000000000 -0400
+@@ -7,6 +7,10 @@
+ AM_CONFIG_HEADER(config.h)
+ AM_INIT_AUTOMAKE([dist-bzip2])
+ 
++CPPFLAGS="-I${includedir}"
++LDFLAGS="-L${libdir}"
++LIBS="-L${libdir} ${LIBS}"
++
+ # Checks for programs.
+ AC_PROG_CXX
+ AC_PROG_INSTALL
