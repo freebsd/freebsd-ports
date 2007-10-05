@@ -1222,6 +1222,7 @@
     SUBDIR += p5-File-Util
     SUBDIR += p5-File-chdir
     SUBDIR += p5-File-pushd
+    SUBDIR += p5-FileHandle-Fmode
     SUBDIR += p5-FileHandle-Unget
     SUBDIR += p5-Filesys-Virtual
     SUBDIR += p5-Filesys-Virtual-Plain
