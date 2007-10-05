@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 bin/libprelude-config
 bin/prelude-adduser
+bin/prelude-admin
 @unexec if cmp -s %D/etc/prelude/default/client.conf %D/etc/prelude/default/client.conf-dist; then rm -f %D/etc/prelude/default/client.conf; fi
 etc/prelude/default/client.conf-dist
 @exec if [ ! -f %D/etc/prelude/default/client.conf ] ; then cp -p %D/%F %B/client.conf; fi
@@ -60,7 +61,7 @@ include/libprelude/prelude.h
 include/libprelude/variable.h
 lib/libprelude.la
 lib/libprelude.so
-lib/libprelude.so.12
+lib/libprelude.so.13
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Prelude.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.bs
