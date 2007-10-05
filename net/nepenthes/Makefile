@@ -7,7 +7,7 @@
 
 PORTNAME=	nepenthes
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nepenthes
@@ -21,7 +21,7 @@ LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		adns.1:${PORTSDIR}/dns/adns
 
 .if defined(WITH_PRELUDE)
-LIB_DEPENDS+=		prelude.12:${PORTSDIR}/security/libprelude
+LIB_DEPENDS+=		prelude.13:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--enable-prelude
 EXTRA_PATCHES=		${FILESDIR}/prelude_modules_log-prelude_Makefile.in.patch
 .endif
