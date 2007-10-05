@@ -12,7 +12,9 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	http://cr.yp.to/ucspi-tcp/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command-line tools for building TCP client-server applications
 
 OPTIONS=	MAN "Install man(1) pages" on \
@@ -31,7 +33,7 @@ CFLAGS+=	-O
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_MAN)
+.if defined(WITH_MAN)
 MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:1
 DISTFILES+=	${DISTNAME}-man.tar.gz:1
 MAN1=		addcr.1 argv0.1 date@.1 delcr.1 finger@.1 fixcrio.1 \
@@ -42,7 +44,6 @@ MAN1=		addcr.1 argv0.1 date@.1 delcr.1 finger@.1 fixcrio.1 \
 .if defined(WITH_RSS_DIFF)
 PATCH_SITES+=	http://www.qmail.org/
 PATCHFILES+=	ucspi-rss.diff
-PATCH_DIST_STRIP=	-p1
 .endif
 
 .if defined(WITH_SSL)
@@ -50,17 +51,18 @@ PATCH_DIST_STRIP=	-p1
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 PATCH_SITES+=	http://www.nrg4u.com/qmail/
 PATCHFILES+=	ucspi-tcp-ssl-20050405.patch.gz
-PATCH_DIST_STRIP=	-p1
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|#INCS=-I/usr/local/include|INCS=-I${OPENSSLBASE}/include|g; \
-			s|-lcrypto|-L${OPENSSLBASE}/lib |g' ${WRKSRC}/Makefile
 .endif
 
 .if defined(WITH_RBL2SMTPD)
-PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/garga\/ucspi-tcp\/:rbl2smtpd/}
-PATCHFILES+=		ucspi-tcp_rbl2smtpd.diff:rbl2smtpd
-PATCH_DIST_STRIP=	-p1
+PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/garga\/ucspi-tcp\/:rbl2smtpd/}
+PATCHFILES+=	ucspi-tcp_rbl2smtpd.diff:rbl2smtpd
+.endif
+
+post-patch:
+.if defined(WITH_SSL)
+	@${REINPLACE_CMD} -e 's|#INCS=-I/usr/local/include|INCS=-I${OPENSSLBASE}/include|g; \
+			      s|-lcrypto|-L${OPENSSLBASE}/lib |g' \
+		${WRKSRC}/Makefile
 .endif
 
 post-configure:
@@ -75,7 +77,7 @@ do-install:
 .for file_name in date@ finger@ http@ mconnect who@ tcpcat
 	@${INSTALL_SCRIPT} ${WRKSRC}/${file_name} ${PREFIX}/bin
 .endfor
-.if !defined(WITHOUT_MAN)
+.if defined(WITH_MAN)
 	@cd ${WRKSRC}-man; ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1/
 .endif
 
