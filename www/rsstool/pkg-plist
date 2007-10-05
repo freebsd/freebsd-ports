@@ -12,7 +12,11 @@ bin/rsstool
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/config.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/sql.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/crontab
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/procmailrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/template
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/htdocs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mail
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
