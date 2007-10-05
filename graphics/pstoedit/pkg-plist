@@ -6,6 +6,7 @@ include/pstoedit/drvfuncs.h
 include/pstoedit/genericints.h
 include/pstoedit/miscutil.h
 include/pstoedit/ordlist.h
+include/pstoedit/papersizes.h
 include/pstoedit/poptions.h
 include/pstoedit/psimage.h
 include/pstoedit/pstoedit.h
