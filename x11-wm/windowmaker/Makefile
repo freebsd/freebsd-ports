@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-incs-from="-I${LOCALBASE}/include" \
 		--with-gnustepdir="${PREFIX}/GNUstep" \
 		--disable-debug
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MANLANG=	"" sk
 MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
@@ -48,7 +48,8 @@ MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
 OPTIONS=	XINERAMA "Enable xinerama support" off \
 		XKB_STATUS "XKB keyboard language status support" off \
 		WM_SINGLE_CLICK "Add single-click option to WPrefs menu" on \
-		WM_LINGUAS "Enable support for additional locales" off
+		WM_LINGUAS "Enable support for additional locales" off \
+		DOCKHOTKEYS "Enable support for hotkeys on docks" off
 
 .include <bsd.port.pre.mk>
 
@@ -74,6 +75,10 @@ CONFIGURE_ENV+=	LINGUAS="${LINGUAS}"
 PLIST_SUB=	WM_LINGUAS=""
 .else
 PLIST_SUB=	WM_LINGUAS="@comment "
+.endif
+
+.if defined(WITH_DOCKHOTKEYS)
+EXTRA_PATCHES+=	${FILESDIR}/extra_dockhotkeys.patch
 .endif
 
 post-patch:

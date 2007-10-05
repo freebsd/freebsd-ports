@@ -1,0 +1,446 @@
+--- src/dock.c.vns	2005-05-18 11:49:00 +0400
++++ src/dock.c	2005-05-18 12:01:06 +0400
+@@ -96,6 +96,7 @@
+ #ifdef XDND /* XXX was OFFIX */
+ static WMPropList *dDropCommand=NULL;
+ #endif
++static WMPropList *dKeyboardShortcut=NULL;
+ static WMPropList *dAutoLaunch, *dLock;
+ static WMPropList *dName, *dForced, *dBuggyApplication, *dYes, *dNo;
+ static WMPropList *dHost, *dDock, *dClip;
+@@ -151,6 +152,7 @@
+ #ifdef XDND
+     dDropCommand = WMRetainPropList(WMCreatePLString("DropCommand"));
+ #endif
++    dKeyboardShortcut = WMRetainPropList(WMCreatePLString("Shortcut"));
+     dLock = WMRetainPropList(WMCreatePLString("Lock"));
+     dAutoLaunch = WMRetainPropList(WMCreatePLString("AutoLaunch"));
+     dName = WMRetainPropList(WMCreatePLString("Name"));
+@@ -1398,6 +1400,12 @@
+             WMReleasePropList(command);
+         }
+ 
++	if (btn->keyboard_shortcut) {
++	    command = WMCreatePLString(btn->keyboard_shortcut);
++	    WMPutInPLDictionary(node, dKeyboardShortcut, command);
++	    WMReleasePropList(command);
++	}
++
+         if (btn->client_machine && btn->remote_start) {
+             host = WMCreatePLString(btn->client_machine);
+             WMPutInPLDictionary(node, dHost, host);
+@@ -1613,6 +1621,12 @@
+         aicon->dnd_command = wstrdup(WMGetFromPLString(cmd));
+ #endif
+ 
++    cmd = WMGetFromPLDictionary(info, dKeyboardShortcut);
++    if (cmd) {
++	if(addDockShortcut(WMGetFromPLString(cmd), aicon))
++	    aicon->keyboard_shortcut = wstrdup(WMGetFromPLString(cmd));
++    }
++
+     cmd = WMGetFromPLDictionary(info, dPasteCommand);
+     if (cmd)
+         aicon->paste_command = wstrdup(WMGetFromPLString(cmd));
+@@ -1918,6 +1932,8 @@
+     if (type == WM_DOCK)
+         dock->icon_count = 0;
+ 
++    dock->screen_ptr->flags.dock_changed_shortcuts = 0;
++    
+     for (i=0; i<count; i++) {
+         if (dock->icon_count >= dock->max_icons) {
+             wwarning(_("there are too many icons stored in dock. Ignoring what doesn't fit"));
+@@ -1950,6 +1966,11 @@
+         } else if (dock->icon_count==0 && type==WM_DOCK)
+             dock->icon_count++;
+     }
++    if(dock->screen_ptr->flags.dock_changed_shortcuts)
++    {
++        rebindKeygrabs(dock->screen_ptr);
++        dock->screen_ptr->flags.dock_changed_shortcuts = 0;
++    }
+ 
+     /* if the first icon is not defined, use the default */
+     if (dock->icon_array[0]==NULL) {
+@@ -4479,3 +4500,125 @@
+     return status;
+ }
+ 
++Bool
++addDockShortcut(char *shortcutDefinition, WAppIcon *icon)
++{
++	int modifier = 0;
++	KeyCode keycode;
++	KeySym ksym;
++	char *k;
++	char buf[128], *b;
++	
++	strcpy(buf, shortcutDefinition);
++	b = (char*)buf;
++
++	/* get modifiers */
++	while((k = strchr(b, '+'))!=NULL) {
++		int mod;
++
++		*k = 0;
++		mod = wXModifierFromKey(b);
++		if(mod < 0) {
++			wwarning(_("invalid key modifier \"%s\""), b);
++			return False;
++		}
++		modifier |= mod;
++
++		b = k+1;
++	}
++
++	/* get key */
++	ksym = XStringToKeysym(b);
++
++	if (ksym==NoSymbol) {
++		wwarning(_("invalid kbd shortcut specification \"%s\""), shortcutDefinition);
++		return False;
++	}
++
++	keycode = XKeysymToKeycode(dpy, ksym);
++	if (keycode==0) {
++		wwarning(_("invalid key in shortcut \"%s\""), shortcutDefinition);
++		return False;
++	}
++	icon->modifier = modifier;
++	icon->keycode = keycode;
++	if(icon->dock && icon->dock->screen_ptr)
++		icon->dock->screen_ptr->flags.dock_changed_shortcuts = 1;
++	return True;
++}
++
++static Bool
++wDockPerformShortcut(WDock *dock, XEvent *event)
++{
++	int i;
++	int modifiers;
++	int done = 0;
++
++	if(!dock) return done;
++	modifiers = event->xkey.state & ValidModMask;
++	for(i=(dock->type==WM_DOCK ? 0 : 1); i<dock->max_icons; i++) {
++		WAppIcon *btn = dock->icon_array[i];
++
++		if(!btn || btn->attracted)
++			continue;
++	
++		if(btn->keycode==event->xkey.keycode && (btn->modifier==modifiers)) {
++			launchDockedApplication(btn, False);
++			done = True;
++			break;
++		}
++
++	}
++	return done;
++}
++
++Bool
++wDockAndClipPerformShortcut(WScreen *scr, XEvent *event)
++{
++	int done = 0;
++	int i;
++	if(!(done = wDockPerformShortcut(scr->dock, event))) {
++		for(i=0; i < scr->workspace_count; i++)	{
++			if(done = wDockPerformShortcut(scr->workspaces[i]->clip, event)) break;
++		}
++	}
++	return done;
++}
++
++static void
++wDockBindShortcuts(Window window, WDock* dock)
++{
++	int i;
++	if(!dock) return;
++	for(i=(dock->type==WM_DOCK ? 0 : 1); i<dock->max_icons; i++) {
++		WAppIcon *btn = dock->icon_array[i];
++
++		if(!btn || btn->attracted)
++			continue;
++	
++		if(btn->keyboard_shortcut)
++		{
++			if(btn->keyboard_shortcut && btn->modifier!=AnyModifier) {
++				XGrabKey(dpy, btn->keycode, btn->modifier|LockMask,
++					window, True, GrabModeAsync, GrabModeAsync);
++#ifdef NUMLOCK_HACK
++				wHackedGrabKey(btn->keycode, btn->modifier,
++					window, True, GrabModeAsync, GrabModeAsync);	    
++#endif
++			}
++			XGrabKey(dpy, btn->keycode, btn->modifier, window, True, 
++				GrabModeAsync, GrabModeAsync);
++		}
++	}
++}
++
++void
++wDockAndClipBindShortcuts(Window window, WScreen *scr)
++{
++	int i;
++	wDockBindShortcuts(window, scr->dock);
++	for(i=0; i < scr->workspace_count; i++ ) {
++		wDockBindShortcuts(window, scr->workspaces[i]->clip);
++	}
++}
++
+--- src/appicon.c.vns	2005-05-18 11:49:00 +0400
++++ src/appicon.c	2005-05-18 11:49:00 +0400
+@@ -197,6 +197,8 @@
+     if (aicon->dnd_command)
+         wfree(aicon->dnd_command);
+ #endif
++    if (aicon->keyboard_shortcut)
++    	wfree(aicon->keyboard_shortcut);
+     if (aicon->wm_instance)
+         wfree(aicon->wm_instance);
+     if (aicon->wm_class)
+--- src/appicon.h.vns	2004-10-14 21:31:49 +0400
++++ src/appicon.h	2005-05-18 11:50:01 +0400
+@@ -52,6 +52,10 @@
+ 
+     char *paste_command;	       /* command to run when something is pasted */
+ 
++    char *keyboard_shortcut;           /* keyboard shortcut to launch app */
++    int modifier;
++    KeyCode keycode;
++    
+     char *wm_class;
+     char *wm_instance;
+     pid_t pid;			       /* for apps launched from the dock */
+--- src/dockedapp.c.vns	2004-10-14 21:31:49 +0400
++++ src/dockedapp.c	2005-05-18 11:56:22 +0400
+@@ -25,6 +25,7 @@
+ 
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
++#include <X11/keysym.h>
+ #include <stdlib.h>
+ #include <string.h>
+ 
+@@ -66,6 +67,10 @@
+     WMTextField *pasteCommandField;
+     WMLabel *pasteCommandLabel;
+ 
++    WMFrame *keyboardShortcutFrame;
++    WMTextField *keyboardShortcutField;
++    WMButton *keyboardShortcutCaptureBtn;
++
+     WMFrame *iconFrame;
+     WMTextField *iconField;
+     WMButton *browseBtn;
+@@ -81,6 +86,7 @@
+     /* kluge */
+     unsigned int destroyed:1;
+     unsigned int choosingIcon:1;
++    unsigned int capturing:1;
+ } AppSettingsPanel;
+ 
+ 
+@@ -117,6 +123,43 @@
+     icon->paste_command = command;
+ }
+ 
++static char*
++trimstr(char *str)
++{       
++	char *p = str;
++	int i;
++	
++	while (isspace(*p)) p++;
++	p = wstrdup(p);
++	i = strlen(p);
++	while (isspace(p[i]) && i>0) {
++		p[i]=0;
++		i--;
++	}
++
++	return p;
++}
++
++static void
++updateKeyboardShortcut(WAppIcon *icon, char *shortcut)
++{
++	char *str = NULL;
++	if(icon->keyboard_shortcut)
++		wfree(icon->keyboard_shortcut);
++	if(shortcut) {
++		str = trimstr(shortcut);
++		if(!strlen(str)) {
++			wfree(str);
++			str = NULL;
++		}
++	}
++	icon->keyboard_shortcut = str;
++	icon->modifier = 0;
++	icon->keycode = 0;
++	if(str) addDockShortcut(str, icon);
++    	rebindKeygrabs(icon->dock->screen_ptr);
++}
++
+ 
+ 
+ #ifdef XDND
+@@ -267,6 +310,8 @@
+         text = WMGetTextFieldText(panel->pasteCommandField);
+         updatePasteCommand(panel->editedIcon, text);
+ 
++	text = WMGetTextFieldText(panel->keyboardShortcutField);
++	updateKeyboardShortcut(panel->editedIcon, text);
+ 
+         panel->editedIcon->auto_launch =
+             WMGetButtonSelected(panel->autoLaunchBtn);
+@@ -279,9 +324,83 @@
+         DestroyDockAppSettingsPanel(panel);
+ }
+ 
++static char*
++captureShortcut(Display *dpy, AppSettingsPanel *panel)
++{
++	XEvent ev;
++	KeySym ksym, lksym, uksym;
++	char buffer[64];
++	char *key = NULL;
++
++	while (panel->capturing) {
++		XAllowEvents(dpy, AsyncKeyboard, CurrentTime);
++		WMNextEvent(dpy, &ev);
++		if (ev.type==KeyPress && ev.xkey.keycode!=0) {
++			ksym = XKeycodeToKeysym(dpy, ev.xkey.keycode, 0);
++			if (!IsModifierKey(ksym)) {
++				XConvertCase(ksym, &lksym, &uksym);
++				key=XKeysymToString(uksym);
++				panel->capturing = 0;
++				break;
++			}
++		}
++		WMHandleEvent(&ev);
++	}
++	if (!key)
++		return NULL;
++
++	buffer[0] = 0;
++	if (ev.xkey.state & ControlMask) {
++		strcat(buffer, "Control+");
++	}   
++        if (ev.xkey.state & ShiftMask) {
++		strcat(buffer, "Shift+");
++	}   
++	if (ev.xkey.state & Mod1Mask) {
++		strcat(buffer, "Mod1+");
++	}   
++	if (ev.xkey.state & Mod2Mask) {
++		strcat(buffer, "Mod2+");
++	}   
++	if (ev.xkey.state & Mod3Mask) {
++		strcat(buffer, "Mod3+");
++	}
++	if (ev.xkey.state & Mod4Mask) {
++		strcat(buffer, "Mod4+");
++	}
++	if (ev.xkey.state & Mod5Mask) {
++		strcat(buffer, "Mod5+");
++	}
++	strcat(buffer, key);
++
++	return wstrdup(buffer);
++}
++
++static void
++captureClick(WMWidget *w, void *data)
++{
++	AppSettingsPanel *panel = (AppSettingsPanel*)data;
++	char *shortcut;
++
++	if(!panel->capturing) {
++		panel->capturing = 1;
++		WMSetButtonText(w, _("Cancel"));
++	        XGrabKeyboard(dpy, WMWidgetXID(panel->win), True, GrabModeAsync,
++				GrabModeAsync, CurrentTime);
++		shortcut = captureShortcut(dpy, panel);
++		if (shortcut) {
++			WMSetTextFieldText(panel->keyboardShortcutField, shortcut);
++			wfree(shortcut);
++		}
++	}
++	panel->capturing = 0;
++	WMSetButtonText(w, _("Capture"));
++	XUngrabKeyboard(dpy, CurrentTime);
++}
++
+ 
+ #define PWIDTH	295
+-#define PHEIGHT	430
++#define PHEIGHT	490
+ 
+ 
+ void
+@@ -396,6 +515,21 @@
+ #endif
+     WMMapSubwidgets(panel->dndCommandFrame);
+ 
++    panel->keyboardShortcutFrame = WMCreateFrame(vbox);
++    WMSetFrameTitle(panel->keyboardShortcutFrame, _("Keyboard shortcut"));
++    WMAddBoxSubview(vbox, WMWidgetView(panel->keyboardShortcutFrame), False, True,
++		    50, 50, 10);
++    panel->keyboardShortcutField = WMCreateTextField(panel->keyboardShortcutFrame);
++    WMResizeWidget(panel->keyboardShortcutField, 176, 20);
++    WMMoveWidget(panel->keyboardShortcutField, 10, 20);
++    WMSetTextFieldText(panel->keyboardShortcutField, aicon->keyboard_shortcut);
++    panel->keyboardShortcutCaptureBtn = WMCreateCommandButton(panel->keyboardShortcutFrame);
++    WMSetButtonText(panel->keyboardShortcutCaptureBtn, _("Capture"));
++    WMResizeWidget(panel->keyboardShortcutCaptureBtn, 70, 24);
++    WMMoveWidget(panel->keyboardShortcutCaptureBtn, 195, 18);
++    WMSetButtonAction(panel->keyboardShortcutCaptureBtn, captureClick, panel);
++    WMMapSubwidgets(panel->keyboardShortcutFrame);
++    
+     panel->iconFrame = WMCreateFrame(vbox);
+     WMSetFrameTitle(panel->iconFrame, _("Icon Image"));
+     WMAddBoxSubview(vbox, WMWidgetView(panel->iconFrame), False, True,
+--- src/event.c.vns	2004-10-24 23:19:50 +0400
++++ src/event.c	2005-05-18 11:57:21 +0400
+@@ -1364,7 +1364,7 @@
+         }
+ #endif
+ #else
+-        if (!wRootMenuPerformShortcut(event)) {
++	if (!wRootMenuPerformShortcut(event) && !wDockAndClipPerformShortcut(scr, event)) {
+ #endif
+             static int dontLoop = 0;
+ 
+--- src/rootmenu.c.vns	2005-05-18 11:49:00 +0400
++++ src/rootmenu.c	2005-05-18 11:49:00 +0400
+@@ -466,7 +466,7 @@
+ }
+ 
+ 
+-static void
++void
+ rebindKeygrabs(WScreen *scr)
+ {
+     WWindow *wwin;
+--- src/screen.h.vns	2004-10-23 03:58:59 +0400
++++ src/screen.h	2005-05-18 11:58:11 +0400
+@@ -307,6 +307,7 @@
+         unsigned int regenerate_icon_textures:1;
+         unsigned int dnd_data_convertion_status:1;
+         unsigned int root_menu_changed_shortcuts:1;
++	unsigned int dock_changed_shortcuts:1;
+         unsigned int added_workspace_menu:1;
+         unsigned int added_windows_menu:1;
+         unsigned int startup2:1;       /* startup phase 2 */
+--- src/window.c.vns	2005-05-18 11:49:00 +0400
++++ src/window.c	2005-05-18 11:49:00 +0400
+@@ -2820,6 +2820,7 @@
+ 
+ #ifndef LITE
+     wRootMenuBindShortcuts(wwin->frame->core->window);
++    wDockAndClipBindShortcuts(wwin->frame->core->window, wwin->screen_ptr);
+ #endif
+ }
+ 
