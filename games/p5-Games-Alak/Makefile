@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	Games-Alak
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	games perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AV/AVIF
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple game-tree implementation of a gomoku-like game
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Games::Alak.3
+
+post-patch:
+	${REINPLACE_CMD} -e "s,^build_.*,,g" ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
