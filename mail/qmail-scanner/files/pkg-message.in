@@ -2,25 +2,36 @@
 Congratulations! Qmail-Scanner is now installed!
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
- - Please, configure correctly your anti-virus and anti-spam;
- - You HAVE to reinstall this port each time you add or remo-
-ve an Anti-Virus or Anti-Spam;
- - Now configure the environment variable to use qmail-scanner:
+ATTENTION!!!
 
- You just need to add for your tcpserver file (generally called
+For qmail-scanner work correctly, be sure to have QMAILQUEUE patch applied on
+your qmail.
+
+Please, configure correctly your anti-virus and anti-spam. You
+HAVE to reinstall this port each time you add or remove an 
+Anti-Virus or Anti-Spam;
+
+Now configure the environment variable to use qmail-scanner:
+
+You just need to add for your tcpserver file (generally called
 as: tcp.smtp):
- QMAILQUEUE="%%PREFIX%%/bin/qmail-scanner-queue.pl"
 
- Or create an new file in /service/smtpd/env, with the following
+QMAILQUEUE="%%PREFIX%%/bin/qmail-scanner-queue.pl"
+
+Or create an new file in /service/smtpd/env, with the following
 content and called as "QMAILQUEUE":
- %%PREFIX%%/bin/qmail-scanner-queue.pl
+
+%%PREFIX%%/bin/qmail-scanner-queue.pl
 
 NOTE: always you change anything in your environment dir, you just
 need to restart your smtpd, for it use: "svc -k /service/smtpd".
 
 You can test your installation by running 'make test' in port dir.
 
-Please, run the following commands:
+Remember to rename quarantine-events.txt.sample in /var/spool/qscand 
+and then run "qmail-scanner-queue.pl -g" to generate DB version. 
 
-%%PREFIX%%/bin/qmail-scanner-queue.pl -z
+Please log into an unpriviledged account and run 
+
 %%PREFIX%%/bin/qmail-scanner-queue.pl -g
+
