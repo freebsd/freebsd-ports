@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	pstoedit
-PORTVERSION=	3.44
-PORTREVISION=	2
+PORTVERSION=	3.45
 CATEGORIES=	graphics print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PostScript to other vector graphic formats
@@ -35,15 +33,6 @@ CPPFLAGS=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include \
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CFLAGS+=	-DHAVESTL -DHAVETYPENAME -DUSE_NEWSTRSTREAM -DHAVEAUTOPTR 
-CPPFLAGS+=	-I${LOCALBASE}/include/stlport ${PTHREAD_CFLAGS}
-LDFLAGS+=	-lstlport_gcc ${PTHREAD_LIBS}
-
-.endif
 
 .if defined(WITHOUT_IMAGEMAGICK)
 CONFIGURE_ARGS+=	--without-magick
@@ -80,10 +69,10 @@ PLIST_SUB+=	PLOTUTILS=""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXXFLAGS="-g"|CXXFLAGS="$$CXXFLAGS"|g ; \
-		 s|GCC_OK=no|GCC_OK=yes|g ; \
 		 s|GraphicsMagick|Magick|g ; \
 		 s|=$$OLDCPPFLAGS|=$$CPPFLAGS|g ; \
 		 s|-pedantic||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/src/Makefile.in
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pstoedit.1 ${MANPREFIX}/man/man1
