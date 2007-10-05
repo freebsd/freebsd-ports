@@ -38,6 +38,7 @@
     SUBDIR += eclipse-lomboz
     SUBDIR += eclipse-ocl
     SUBDIR += eclipse-pmd
+    SUBDIR += eclipse-propedit
     SUBDIR += eclipse-quantum
     SUBDIR += eclipse-sqlexplorer
     SUBDIR += eclipse-sysdeo-tomcat
