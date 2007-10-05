@@ -1,6 +1,14 @@
 @comment $FreeBSD$
 bin/facter
-%%RUBY_SITELIBDIR%%/facter.rb
+%%RUBY_SITELIBDIR%%/facter/util/plist/parser.rb
+%%RUBY_SITELIBDIR%%/facter/util/plist/generator.rb
+%%RUBY_SITELIBDIR%%/facter/util/plist.rb
 %%RUBY_SITELIBDIR%%/facter/processor.rb
 %%RUBY_SITELIBDIR%%/facter/memory.rb
-@dirrmtry %%RUBY_SITELIBDIR%%/facter
+%%RUBY_SITELIBDIR%%/facter/manufacturer.rb
+%%RUBY_SITELIBDIR%%/facter/macosx.rb
+%%RUBY_SITELIBDIR%%/facter/ipmess.rb
+%%RUBY_SITELIBDIR%%/facter.rb
+@dirrm %%RUBY_SITELIBDIR%%/facter/util/plist
+@dirrm %%RUBY_SITELIBDIR%%/facter/util
+@dirrm %%RUBY_SITELIBDIR%%/facter
