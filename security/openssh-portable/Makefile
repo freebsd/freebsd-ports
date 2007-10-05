@@ -92,10 +92,9 @@ CONFIGURE_ARGS+=	--disable-suid-ssh
 .if !defined(WITHOUT_KERBEROS)
 .if defined(KRB5_HOME) && exists(${KRB5_HOME}) || defined(WITH_GSSAPI)
 .if defined(WITH_KERB_GSSAPI)
-BROKEN=			Waiting new upstream patch
 PATCH_DIST_STRIP=	-p0
 PATCH_SITES+=		http://www.sxw.org.uk/computing/patches/
-PATCHFILES+=		openssh-4.6p1-gsskex-20070312.patch
+PATCHFILES+=		openssh-4.7p1-gsskex-20070927.patch
 .endif
 PORTABLE_SUFFIX=	# empty
 GSSAPI_SUFFIX=		-gssapi
@@ -140,7 +139,7 @@ BROKEN=			HPN and LPK patches are incompatible
 .if defined(WITH_HPN)
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
-PATCHFILES+=		openssh-4.7p1-hpn12v18.diff.gz
+PATCHFILES+=		openssh-4.7p1-hpn12v19.diff.gz
 .endif
 
 # See http://dev.inversepath.com/trac/openssh-lpk
