@@ -8,7 +8,7 @@ By using the lightweight Internet Cache Protocol, Squid caches can be
 arranged in a hierarchy or mesh for additional bandwidth savings.
 
 This version of Squid is a pre-release snapshot of the upcoming Squid 3.
-It is primarily meant for testing new features and not meant to be put
+It is primarily meant for pre-release testing and should not yet be put
 into production use.
 
 WWW: http://www.squid-cache.org/

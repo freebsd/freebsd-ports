@@ -61,9 +61,8 @@
 #     together with other code that adds custom HTTP headers to the
 #     requests.
 
-PORTREVISION=	1
 PORTNAME=	squid
-PORTVERSION=	3.0.p7.${PATCHSET_DATE}
+PORTVERSION=	3.0.r1.${PATCHSET_DATE}
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -82,7 +81,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/Versions/v3/3.0/ \
 		http://www2.tw.squid-cache.org/Versions/v3/3.0/
 MASTER_SITE_SUBDIR=	squid-3/DEVEL
-DISTNAME=	squid-3.0.PRE7
+DISTNAME=	squid-3.0.RC1
 DIST_SUBDIR=	squid3.0
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -98,11 +97,10 @@ PATCH_SITE_SUBDIR=	Versions/v3/3.0/changesets
 # Inspired by editors/vim:
 # (I know that portlint is not happy with this, but putting this code at any
 # other location makes it even unhappier.)
-PATCHSET_DATE=		20070919
-FIRST_PATCHSET=		11069
-LAST_PATCHSET=		11107
-IGNORE_PATCHSETS=	11070 11071 11077 11080 11083 11087 11090 11095 \
-			11097 11103 11105 11106
+PATCHSET_DATE=		20071001
+FIRST_PATCHSET=		11149
+LAST_PATCHSET=		11149
+IGNORE_PATCHSETS=
 PATCHFILES!=	jot -w "%d.patch" - ${FIRST_PATCHSET} ${LAST_PATCHSET} 1
 .for ps in ${IGNORE_PATCHSETS}
 PATCHFILES:=	${PATCHFILES:N${ps}\.patch}
@@ -116,7 +114,8 @@ LATEST_LINK=	squid30
 
 CONFLICTS=	squid-2.[0-9].*
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:261 automake:19 libtool:15
+# disable autotools bootstrapping for now, RC1 does not currently require it:
+#USE_AUTOTOOLS=	autoconf:261 automake:19 libtool:15
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	squid
@@ -352,7 +351,10 @@ CONFIGURE_ARGS+=	--enable-icap-client
 .endif
 .if defined(WITH_SQUID_ESI)
 CONFIGURE_ARGS+=	--enable-esi
-LIB_DEPENDS+=		xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2 \
+		xml2:${PORTSDIR}/textproc/libxml2
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 .if defined(WITHOUT_SQUID_KQUEUE)
 # Squid-3's kqueue support is still marked as experimental, so it is not yet
@@ -380,11 +382,7 @@ WITH_DEBUG?=		yes
 #
 # If you do not define SQUID_LANGUAGES yourself, all available language files
 # will be installed; the default language will be English.
-#
-# XXX: Support for Armenian error pages is disabled for now because two
-#      pages are lacking from the distribution.
-
-SQUID_LANGUAGES?=	Azerbaijani Bulgarian Catalan Czech Danish \
+SQUID_LANGUAGES?=	Armenian Azerbaijani Bulgarian Catalan Czech Danish \
 			Dutch English Estonian Finnish French German Greek \
 			Hebrew Hungarian Italian Japanese Korean Lithuanian \
 			Polish Portuguese Romanian Russian-1251 Russian-koi8-r \
@@ -413,8 +411,8 @@ PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
 
 post-patch:
 # add this version's datestamp so that Squid identifies itself as patched-up:
-	@${REINPLACE_CMD} -e 's|3.0.PRE7|&+PatchSets-${PATCHSET_DATE}|' \
-	    ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's|3.0.RC1|&+PatchSets-${PATCHSET_DATE}|' \
+	    ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	    ${WRKSRC}/src/cf.data.pre
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
