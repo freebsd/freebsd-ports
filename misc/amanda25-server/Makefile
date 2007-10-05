@@ -143,18 +143,12 @@ CONFIGURE_ARGS+=	--with-tape-device=${AMANDA_TAPE}
 
 #
 # Before 4.0, pre-CAM scsiio.h existed
-.if ${OSVERSION} < 400000
-PLIST_SUB+=	SCSICHG=''
-.elif ${OSVERSION} >= 480000
 .if ${ARCH} == "amd64"
 PLIST_SUB+=	SCSICHG='@comment '
 .elif ${OSVERSION} >= 502000
 PLIST_SUB+=	SCSICHG='@comment '
 .else
 PLIST_SUB+=	SCSICHG=''
-.endif
-.else
-PLIST_SUB+=	SCSICHG='@comment '
 .endif
 
 # amanda-client part
