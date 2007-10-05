@@ -19,4 +19,3 @@ USE_CDRTOOLS=		yes
 HAS_CONFIGURE=		yes
 
 .include <bsd.port.mk>
-# DO NOT DELETE

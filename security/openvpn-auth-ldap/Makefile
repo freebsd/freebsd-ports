@@ -32,4 +32,3 @@ post-install:
 .endif
 
 .include <bsd.port.mk>
-# DO NOT DELETE
