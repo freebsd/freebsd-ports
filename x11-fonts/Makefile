@@ -86,11 +86,11 @@
     SUBDIR += lfpfonts-fix
     SUBDIR += lfpfonts-var
     SUBDIR += libFS
-    SUBDIR += liberation-fonts-ttf
-    SUBDIR += libfontenc
     SUBDIR += libXfont
     SUBDIR += libXfontcache
     SUBDIR += libXft
+    SUBDIR += liberation-fonts-ttf
+    SUBDIR += libfontenc
     SUBDIR += linux-fontconfig
     SUBDIR += manu-gothica
     SUBDIR += mathfonts
@@ -126,9 +126,9 @@
     SUBDIR += wqy
     SUBDIR += xf86bigfontproto
     SUBDIR += xfed
+    SUBDIR += xfontsel
     SUBDIR += xfs
     SUBDIR += xfsinfo
-    SUBDIR += xfontsel
     SUBDIR += xlsfonts
     SUBDIR += xmbdfed
     SUBDIR += xorg-fonts

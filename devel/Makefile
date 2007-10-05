@@ -695,6 +695,10 @@
     SUBDIR += loki
     SUBDIR += looks
     SUBDIR += lrmi
+    SUBDIR += lua-filename
+    SUBDIR += lua-gettext
+    SUBDIR += lua-posix
+    SUBDIR += lua-pty
     SUBDIR += lua50-app
     SUBDIR += lua50-compat51
     SUBDIR += lua50-dfui
@@ -702,10 +706,6 @@
     SUBDIR += lua50-gettext
     SUBDIR += lua50-posix
     SUBDIR += lua50-pty
-    SUBDIR += lua-filename
-    SUBDIR += lua-gettext
-    SUBDIR += lua-posix
-    SUBDIR += lua-pty
     SUBDIR += luabind
     SUBDIR += lwp
     SUBDIR += m17n-db
@@ -1434,8 +1434,8 @@
     SUBDIR += p5-Parse-Yapp
     SUBDIR += p5-ParseLex
     SUBDIR += p5-PatchReader
-    SUBDIR += p5-PathTools
     SUBDIR += p5-Path-Class
+    SUBDIR += p5-PathTools
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
     SUBDIR += p5-Perl6-Builtins
@@ -1981,8 +1981,8 @@
     SUBDIR += py-sqlcc
     SUBDIR += py-statgrab
     SUBDIR += py-tables
-    SUBDIR += py-testgears
     SUBDIR += py-tconfpy
+    SUBDIR += py-testgears
     SUBDIR += py-testoob
     SUBDIR += py-trace2html
     SUBDIR += py-turbocheetah
@@ -2009,8 +2009,8 @@
     SUBDIR += pychecker
     SUBDIR += pycount
     SUBDIR += pylint
-    SUBDIR += pyobfuscate
     SUBDIR += pymacs
+    SUBDIR += pyobfuscate
     SUBDIR += pypersrc
     SUBDIR += pyrex
     SUBDIR += pythk
@@ -2020,6 +2020,11 @@
     SUBDIR += qextmdi
     SUBDIR += qmake
     SUBDIR += qmake4
+    SUBDIR += qprog
+    SUBDIR += qsa
+    SUBDIR += qscintilla2
+    SUBDIR += qscintilla2-designerplugin
+    SUBDIR += qssl
     SUBDIR += qt4
     SUBDIR += qt4-assistant
     SUBDIR += qt4-corelib
@@ -2037,11 +2042,6 @@
     SUBDIR += qt4-script
     SUBDIR += qt4-uic
     SUBDIR += qt4-uic3
-    SUBDIR += qprog
-    SUBDIR += qsa
-    SUBDIR += qscintilla2
-    SUBDIR += qscintilla2-designerplugin
-    SUBDIR += qssl
     SUBDIR += quilt
     SUBDIR += radrails
     SUBDIR += ragel
@@ -2161,8 +2161,8 @@
     SUBDIR += scandoc
     SUBDIR += scons
     SUBDIR += scsh-install-lib
-    SUBDIR += sdl_sge
     SUBDIR += sdl12
+    SUBDIR += sdl_sge
     SUBDIR += sdlmm
     SUBDIR += sdts++
     SUBDIR += sedsed

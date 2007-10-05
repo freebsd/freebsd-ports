@@ -83,8 +83,8 @@
     SUBDIR += xmoontool
     SUBDIR += xphoon
     SUBDIR += xplanet
-    SUBDIR += xtide
     SUBDIR += xrmap
+    SUBDIR += xtide
     SUBDIR += xworld
 
 .include <bsd.port.subdir.mk>

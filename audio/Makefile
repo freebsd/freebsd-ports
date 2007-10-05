@@ -581,8 +581,8 @@
     SUBDIR += slimserver-slimscrobbler
     SUBDIR += slimserver-superdatetime
     SUBDIR += snack
-    SUBDIR += snett
     SUBDIR += snd
+    SUBDIR += snett
     SUBDIR += snowstar
     SUBDIR += solfege
     SUBDIR += sonata

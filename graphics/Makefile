@@ -139,8 +139,8 @@
     SUBDIR += flphoto
     SUBDIR += fly
     SUBDIR += fnlib
-    SUBDIR += fotofix
     SUBDIR += fortytwo
+    SUBDIR += fotofix
     SUBDIR += fpc-cairo
     SUBDIR += fpc-fpgtk
     SUBDIR += fpc-ggi
@@ -460,8 +460,6 @@
     SUBDIR += p5-Chart-Graph
     SUBDIR += p5-Chart-PNGgraph
     SUBDIR += p5-Color-Rgb
-    SUBDIR += p5-GD-Thumbnail
-    SUBDIR += p5-Geo-Proj4
     SUBDIR += p5-GD
     SUBDIR += p5-GD-Arrow
     SUBDIR += p5-GD-Barcode
@@ -469,6 +467,8 @@
     SUBDIR += p5-GD-Graph3d
     SUBDIR += p5-GD-SVG
     SUBDIR += p5-GD-TextUtil
+    SUBDIR += p5-GD-Thumbnail
+    SUBDIR += p5-Geo-Proj4
     SUBDIR += p5-Graph-Easy
     SUBDIR += p5-Graph-ReadWrite
     SUBDIR += p5-Graph-SocialMap

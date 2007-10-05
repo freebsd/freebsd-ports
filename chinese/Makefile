@@ -34,7 +34,6 @@
     SUBDIR += dfsongsd
     SUBDIR += dictd-database
     SUBDIR += docproj
-    SUBDIR += gbk2uni
     SUBDIR += emacs20
     SUBDIR += enscript
     SUBDIR += eterm
@@ -44,6 +43,7 @@
     SUBDIR += fortunetw
     SUBDIR += gb2jis
     SUBDIR += gb2ps
+    SUBDIR += gbk2uni
     SUBDIR += gbscript
     SUBDIR += gcin
     SUBDIR += gugod-clean
