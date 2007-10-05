@@ -23,7 +23,6 @@ share/locale/sk/LC_MESSAGES/galculator.mo
 share/pixmaps/galculator/galculator.svg
 share/pixmaps/galculator/galculator_48x48.png
 @dirrm share/pixmaps/galculator
-@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
