@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flpsed
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.3.9
 CATEGORIES=	print
 MASTER_SITES=	http://www.ecademix.com/JohannesHofmann/
 
