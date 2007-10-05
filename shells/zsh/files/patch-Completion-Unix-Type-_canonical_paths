@@ -1,0 +1,20 @@
+--- Completion/Unix/Type/_canonical_paths.orig	2006-05-28 13:36:06.000000000 -0500
++++ Completion/Unix/Type/_canonical_paths	2007-08-20 21:23:04.000000000 -0500
+@@ -38,7 +38,7 @@
+   files=($@)
+ else
+   for __index in $@; do
+-    files+=$(readlink -qf $__index)
++    files+=$(/usr/bin/stat -qr $__index | cut -d' ' -f16)
+   done
+ fi
+ 
+@@ -48,7 +48,7 @@
+   expref=${~origpref}
+   [[ $origpref == (|*/). ]] && rltrim=.
+   curpref=${${expref%$rltrim}:-./}
+-  canpref=$(readlink -qf $curpref)
++  canpref=$(/usr/bin/stat -qr $curpref | cut -d' ' -f16)
+   if [[ $? -eq 0 ]]; then
+     [[ $curpref == */ && $canpref == *[^/] ]] && canpref+=/
+     canpref+=$rltrim

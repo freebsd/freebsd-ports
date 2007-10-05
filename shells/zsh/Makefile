@@ -22,7 +22,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	4.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	SF \
 		http://zsh.open-mirror.com/ \

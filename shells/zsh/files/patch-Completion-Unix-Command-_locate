@@ -1,0 +1,40 @@
+--- Completion/Unix/Command/_locate.orig	2006-09-27 09:50:25.000000000 -0500
++++ Completion/Unix/Command/_locate	2007-08-20 22:08:08.000000000 -0500
+@@ -11,7 +11,7 @@
+   ;;
+ 
+   (locate)
+-  input="$(_call_program locate $words[0] -V)"
++  input="$(_call_program locate $words[0] -V 2>&1)"
+   case $input in
+     (*mlocate*)
+     ltype=mlocate
+@@ -25,6 +25,10 @@
+     ltype=gnu
+     ;;
+ 
++    (*illegal option*)
++    ltype=bsd
++    ;;
++
+     # guess
+     (*)
+     ltype=$best_guess
+@@ -108,4 +112,17 @@
+     --help'[Show help]' \
+     '*:pattern: '
+   ;;
++
++  (bsd)
++  _arguments -s : \
++    -0'[Output separated by NUL characters]' \
++    -S'[Show database statistics]' \
++    -c'[Output the number of matching entries]' \
++    -d'[Use alternative database]:database:_files' \
++    -i'[Ignore case distinctions in patterns]' \
++    -l'[Limit search results]:file limit: ' \
++    -m'[Use mmap instead of stdio library]' \
++    -s'[Use stdio instead of mmap]' \
++    '*:pattern: '
++  ;;
+ esac
