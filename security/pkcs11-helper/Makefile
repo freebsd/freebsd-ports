@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkcs11-helper
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
@@ -22,7 +22,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
-CONFIGURE_ARGS=	--disable-crypto-engine-gnutls
+CONFIGURE_ARGS=	--disable-crypto-engine-gnutls \
+		--disable-crypto-engine-nss
 
 MAN8=		pkcs11-helper-1.8
 
