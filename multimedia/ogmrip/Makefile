@@ -6,39 +6,37 @@
 #
 
 PORTNAME=	ogmrip
-DISTVERSION=	0.10.3
-PORTREVISION=	2
+PORTVERSION=	0.11.0
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application and libraries for encoding DVDs into DivX/OGM files
 
-BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
+BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
+		mencoder:${PORTSDIR}/multimedia/mencoder \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
-		lame:${PORTSDIR}/audio/lame \
+		${LOCALBASE}/sbin/eject:${PORTSDIR}/sysutils/eject \
 		gsed:${PORTSDIR}/textproc/gsed
-RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
-		oggenc:${PORTSDIR}/audio/vorbis-tools \
-		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
-		lame:${PORTSDIR}/audio/lame
-LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread \
+LIB_DEPENDS=	enca.5:${PORTSDIR}/converters/enca \
+		dvdread.5:${PORTSDIR}/multimedia/libdvdread \
 		x264:${PORTSDIR}/multimedia/x264
+RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
+		oggenc:${PORTSDIR}/audio/vorbis-tools \
+		mencoder:${PORTSDIR}/multimedia/mencoder \
+		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
+		${LOCALBASE}/sbin/eject:${PORTSDIR}/sysutils/eject
 
-USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	glib20 libxml2 gnomehack
-GNU_CONFIGURE=	yes
-USE_XLIB=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GSED=	yes
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--sharedstatedir=${PREFIX}/libdata
-GMAKE_ENV+=	GMSGFMT=${localbase}/bin/msgfmt
+MAN1=		dvdcpy.1
 
 OPTIONS=	GUI		"Build the GTK+ GUI"				on  \
 		HAL		"Enable Hardware Abstract Layer (HAL) support"	off \
@@ -131,6 +129,12 @@ LAVF_SUPPORT!=		${LOCALBASE}/bin/mencoder -of help 2> /dev/null | \
 				${GREP} -q '^ *lavf *- .*$$' && \
 	  			${ECHO_CMD} "" || ${ECHO_CMD} "@comment "
 PLIST_SUB+=		LAVF_SUPPORT="${LAVF_SUPPORT}"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-I/usr/local/include||g ; \
+		 s|-L/usr/local/lib||g ; \
+		 s|-L/usr/pkg/lib||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^SUBDIRS|#SUBDIRS|g' ${WRKSRC}/docs/Makefile.in
 
 pre-configure:
 	@if ${LOCALBASE}/mencoder -ovc help 2> /dev/null | ${GREP} -q "^ *xvid *- .*" ; then \
