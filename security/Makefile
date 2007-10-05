@@ -77,11 +77,11 @@
     SUBDIR += clamtk
     SUBDIR += clusterssh
     SUBDIR += cmd5checkpw
+    SUBDIR += cops
     SUBDIR += courier-authlib
     SUBDIR += courier-authlib-base
     SUBDIR += courierpassd
     SUBDIR += courierpasswd
-    SUBDIR += cops
     SUBDIR += courieruserinfo
     SUBDIR += cp2fwb
     SUBDIR += crack
@@ -621,10 +621,10 @@
     SUBDIR += py-pow
     SUBDIR += py-pycrypto
     SUBDIR += py-rijndael
-    SUBDIR += py-twofish
     SUBDIR += py-tlslite
     SUBDIR += py-trustedpickle
     SUBDIR += py-twistedConch
+    SUBDIR += py-twofish
     SUBDIR += py-xmlsec
     SUBDIR += qca-tls
     SUBDIR += qident

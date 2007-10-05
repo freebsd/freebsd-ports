@@ -403,12 +403,12 @@
     SUBDIR += qbrew
     SUBDIR += qlas
     SUBDIR += qmc
+    SUBDIR += qt4-doc
+    SUBDIR += qt4-qtconfig
+    SUBDIR += qt4-qtdemo
     SUBDIR += quick-lounge-applet
     SUBDIR += quotes
     SUBDIR += quranref
-    SUBDIR += qt4-qtdemo
-    SUBDIR += qt4-doc
-    SUBDIR += qt4-qtconfig
     SUBDIR += ree
     SUBDIR += renamedlgplugins
     SUBDIR += rfc

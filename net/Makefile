@@ -28,14 +28,14 @@
     SUBDIR += asfrecorder
     SUBDIR += aslookup
     SUBDIR += asterisk
-    SUBDIR += asterisk12
     SUBDIR += asterisk-addons
-    SUBDIR += asterisk12-addons
-    SUBDIR += asterisk12-app-ldap
     SUBDIR += asterisk-app-ldap
     SUBDIR += asterisk-app-notify
     SUBDIR += asterisk-bristuff
     SUBDIR += asterisk-oh323
+    SUBDIR += asterisk12
+    SUBDIR += asterisk12-addons
+    SUBDIR += asterisk12-app-ldap
     SUBDIR += astfax
     SUBDIR += atmsupport
     SUBDIR += avahi
@@ -412,7 +412,6 @@
     SUBDIR += ortp
     SUBDIR += osrtspproxy
     SUBDIR += ossp-sa
-    SUBDIR += p54u
     SUBDIR += p5-AddressBook
     SUBDIR += p5-Apache2-SOAP
     SUBDIR += p5-BBS-UserInfo
@@ -581,6 +580,7 @@
     SUBDIR += p5-X500-DN
     SUBDIR += p5-XPC
     SUBDIR += p5-perl-ldap
+    SUBDIR += p54u
     SUBDIR += panoptis
     SUBDIR += paris-traceroute
     SUBDIR += passlogd

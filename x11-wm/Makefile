@@ -30,11 +30,11 @@
     SUBDIR += ccsm
     SUBDIR += clementine
     SUBDIR += compiz
-    SUBDIR += compizconfig-backend-gconf
-    SUBDIR += compizconfig-python
     SUBDIR += compiz-fusion-plugins-extra
     SUBDIR += compiz-fusion-plugins-main
     SUBDIR += compiz-fusion-plugins-unsupported
+    SUBDIR += compizconfig-backend-gconf
+    SUBDIR += compizconfig-python
     SUBDIR += ctwm
     SUBDIR += devilspie
     SUBDIR += dwm

@@ -257,10 +257,10 @@
     SUBDIR += p5-DBIx-Perlish
     SUBDIR += p5-DBIx-Recordset
     SUBDIR += p5-DBIx-SQLEngine
+    SUBDIR += p5-DBIx-SQLite-Simple
     SUBDIR += p5-DBIx-SearchBuilder
     SUBDIR += p5-DBIx-Sequence
     SUBDIR += p5-DBIx-Simple
-    SUBDIR += p5-DBIx-SQLite-Simple
     SUBDIR += p5-DBIx-Table
     SUBDIR += p5-DBIx-TableHash
     SUBDIR += p5-DBIx-Tree
@@ -317,6 +317,7 @@
     SUBDIR += p5-qdbm
     SUBDIR += p5-sqlrelay
     SUBDIR += pear-DB
+    SUBDIR += pear-DBA
     SUBDIR += pear-DBA_Relational
     SUBDIR += pear-DB_DataObject
     SUBDIR += pear-DB_DataObject_FormBuilder
@@ -325,7 +326,6 @@
     SUBDIR += pear-DB_Sqlite_Tools
     SUBDIR += pear-DB_Table
     SUBDIR += pear-DB_ldap
-    SUBDIR += pear-DBA
     SUBDIR += pear-MDB
     SUBDIR += pear-MDB2
     SUBDIR += pear-MDB2_Driver_ibase
@@ -424,10 +424,6 @@
     SUBDIR += py-PyGreSQL
     SUBDIR += py-PySQLite10
     SUBDIR += py-PySQLite11
-    SUBDIR += py-pysqlite20
-    SUBDIR += py-pysqlite21
-    SUBDIR += py-pysqlite22
-    SUBDIR += py-pysqlite23
     SUBDIR += py-SQLDict
     SUBDIR += py-axiom
     SUBDIR += py-bsddb
@@ -443,6 +439,10 @@
     SUBDIR += py-psycopg
     SUBDIR += py-psycopg2
     SUBDIR += py-pyPgSQL
+    SUBDIR += py-pysqlite20
+    SUBDIR += py-pysqlite21
+    SUBDIR += py-pysqlite22
+    SUBDIR += py-pysqlite23
     SUBDIR += py-qt4-sql
     SUBDIR += py-rrdpipe
     SUBDIR += py-rrdtool_lgpl

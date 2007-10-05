@@ -13,10 +13,10 @@
     SUBDIR += biococoa
     SUBDIR += biojava
     SUBDIR += blast
-    SUBDIR += boinc-simap
-    SUBDIR += clustalw
     SUBDIR += blat
+    SUBDIR += boinc-simap
     SUBDIR += chemeq
+    SUBDIR += clustalw
     SUBDIR += crimap
     SUBDIR += distribfold
     SUBDIR += dna-qc

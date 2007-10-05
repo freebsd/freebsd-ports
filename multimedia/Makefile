@@ -69,8 +69,8 @@
     SUBDIR += gstreamer-plugins-fluendo-mpegdemux
     SUBDIR += gstreamer-plugins-gnonlin
     SUBDIR += gstreamer-plugins-good
-    SUBDIR += gstreamer-plugins-mpeg2enc
     SUBDIR += gstreamer-plugins-mpeg2dec
+    SUBDIR += gstreamer-plugins-mpeg2enc
     SUBDIR += gstreamer-plugins-theora
     SUBDIR += gstreamer-plugins-ugly
     SUBDIR += gstreamer-plugins-x264
@@ -167,11 +167,11 @@
     SUBDIR += openquicktime
     SUBDIR += oqtencoder
     SUBDIR += oqtplayer
-    SUBDIR += p5-MP4-Info
     SUBDIR += p5-FFmpeg-Command
     SUBDIR += p5-FLV-Info
     SUBDIR += p5-File-Format-RIFF
     SUBDIR += p5-GStreamer
+    SUBDIR += p5-MP4-Info
     SUBDIR += p5-RIFF-Info
     SUBDIR += p5-Subtitles
     SUBDIR += p5-Video-Info
@@ -186,8 +186,8 @@
     SUBDIR += py-gstreamer
     SUBDIR += py-pybmp
     SUBDIR += qdvdauthor
-    SUBDIR += quodlibet
     SUBDIR += quark
+    SUBDIR += quodlibet
     SUBDIR += recmpeg
     SUBDIR += recordmydesktop
     SUBDIR += replex
