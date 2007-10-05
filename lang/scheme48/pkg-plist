@@ -3,6 +3,17 @@ bin/scheme-srfi-7
 bin/scheme48
 include/scheme48.h
 include/scheme48write-barrier.h
+include/scheme48write-barrier-twospace.h
+include/scheme48write-barrier-bibop.h
+lib/scheme48/big/check.scm
+lib/scheme48/big/test-suite.scm
+lib/scheme48/misc/sicp-check.scm
+lib/scheme48/misc/test-packages.scm
+lib/scheme48/posix/regexp-check.scm
+lib/scheme48/posix/test-packages.scm
+lib/scheme48/cml/cml-check.scm
+lib/scheme48/cml/test-packages.scm
+lib/scheme48/srfi/test-packages.scm
 lib/scheme48/big/array.scm
 lib/scheme48/big/big-util.scm
 lib/scheme48/big/callback.scm
@@ -98,7 +109,6 @@ lib/scheme48/link/reify.scm
 lib/scheme48/link/transport.scm
 lib/scheme48/link/unicode-data-packages.scm
 lib/scheme48/link/unicode-data.scm
-lib/scheme48/link/write-byte.scm
 lib/scheme48/link/write-image.scm
 lib/scheme48/misc/annotate.scm
 lib/scheme48/misc/doodl.scm
@@ -187,8 +197,6 @@ lib/scheme48/srfi/srfi-7.scm
 lib/scheme48/srfi/srfi-71.scm
 lib/scheme48/srfi/srfi-74.scm
 lib/scheme48/srfi/srfi-78.scm
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 @dirrm lib/scheme48/srfi
 @dirrm lib/scheme48/sort
 @dirrm lib/scheme48/rts
