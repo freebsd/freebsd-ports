@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	seaside
-PORTVERSION=	070105
-PORTREVISION=	1
+DISTVERSION=	070930-sq38
 CATEGORIES=	japanese lang
 MASTER_SITES=	ftp://swikis.ddo.jp/SeasideJ/
-DISTNAME=	Seaside-JPatched${PORTVERSION}
-# DISTFILES=	Seaside-JPatched${PORTVERSION}.zip
-EXTRACT_ONLY=	Seaside-JPatched${PORTVERSION}.zip
+DISTNAME=	Seaside-JPatched${DISTVERSION}
+EXTRACT_ONLY=	Seaside-JPatched${DISTVERSION}.zip
 
 MAINTAINER=	mutoh@openedu.org
 COMMENT=	Seaside: squeak based WWW application framework with Japanized patch
@@ -24,8 +22,8 @@ USE_ZIP=	yes
 
 DIST_SUBDIR=	squeak
 
-FILES_TO_GZIP=	Seaside-JPatched070105.image \
-		Seaside-JPatched070105.changes
+FILES_TO_GZIP=	Seaside-JPatched20${DISTVERSION}.image \
+		Seaside-JPatched20${DISTVERSION}.changes
 
 PLIST_SUB=	DATADIR=share/squeak
 post-extract:
