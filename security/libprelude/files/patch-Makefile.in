@@ -1,20 +1,20 @@
---- Makefile.in.orig	Fri Mar 30 16:17:46 2007
-+++ Makefile.in	Mon Apr  2 10:39:02 2007
-@@ -462,8 +462,8 @@
+--- Makefile.in.orig	Tue Sep  4 16:31:01 2007
++++ Makefile.in	Wed Sep  5 11:29:03 2007
+@@ -514,8 +514,8 @@
  target_vendor = @target_vendor@
  DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --without-system-ltdl
  ACLOCAL_AMFLAGS = -I m4 -I libmissing/m4
--@HAVE_SYSTEM_LIBLTDL_FALSE@SUBDIRS = libltdl libmissing m4 src prelude-adduser bindings docs
--@HAVE_SYSTEM_LIBLTDL_TRUE@SUBDIRS = libmissing m4 src prelude-adduser bindings docs
-+@HAVE_SYSTEM_LIBLTDL_FALSE@SUBDIRS = libltdl libmissing m4 src prelude-adduser bindings
-+@HAVE_SYSTEM_LIBLTDL_TRUE@SUBDIRS = libmissing m4 src prelude-adduser bindings
+-@HAVE_SYSTEM_LIBLTDL_FALSE@SUBDIRS = libltdl libmissing m4 src prelude-admin bindings docs
+-@HAVE_SYSTEM_LIBLTDL_TRUE@SUBDIRS = libmissing m4 src prelude-admin bindings docs
++@HAVE_SYSTEM_LIBLTDL_FALSE@SUBDIRS = libltdl libmissing m4 src prelude-admin bindings docs
++@HAVE_SYSTEM_LIBLTDL_TRUE@SUBDIRS = libmissing m4 src prelude-admin bindings docs
+ DIST_SUBDIRS = $(SUBDIRS)
  EXTRA_DIST = HACKING.README LICENSE.README client.conf global.conf idmef-client.conf tls.conf
  bin_SCRIPTS = $(top_builddir)/libprelude-config
- distuninstallcheck_listfiles = find . -type f -print | grep -v 'perl' | grep -v '3pm'
-@@ -985,61 +985,10 @@
+@@ -1038,61 +1038,11 @@
  	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_config_dir);
  	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_config_dir)/default;
- 	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_config_dir)/profile;
+ 	$(INSTALL) -d -m 711 $(DESTDIR)$(prelude_config_dir)/profile;
 -	@if test -f $(DESTDIR)$(prelude_config_dir)/default/client.conf; then							\
 -		echo;														\
 -		echo "********************************************************************************";          		\
@@ -70,6 +70,7 @@
 -        else															\
 -                $(INSTALL) -m 644 $(top_srcdir)/tls.conf $(DESTDIR)$(prelude_config_dir)/default;				\
 -	fi
++
 +	$(INSTALL) -m 644 $(top_srcdir)/client.conf $(DESTDIR)$(prelude_config_dir)/default/client.conf-dist;
 +	$(INSTALL) -m 644 $(top_srcdir)/global.conf $(DESTDIR)$(prelude_config_dir)/default/global.conf-dist;
 +	$(INSTALL) -m 644 $(top_srcdir)/idmef-client.conf $(DESTDIR)$(prelude_config_dir)/default/idmef-client.conf-dist;

@@ -4,8 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	libprelude
-PORTVERSION=	0.9.14
-PORTREVISION=	1
+PORTVERSION=	0.9.15.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -23,6 +22,8 @@ GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--localstatedir=/var
+
+MAN1=		prelude-admin.1
 
 .include <bsd.port.pre.mk>
 
@@ -51,6 +52,7 @@ CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/manpages/*.1 ${MAN1PREFIX}/man/man1/
 
 	@if [ ! -f ${PREFIX}/etc/prelude/default/client.conf ]; then \
 	   ${CP} -p ${PREFIX}/etc/prelude/default/client.conf-dist \
