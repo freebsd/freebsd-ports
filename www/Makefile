@@ -1288,6 +1288,7 @@
     SUBDIR += xpi-adblock
     SUBDIR += xpi-adblock_plus
     SUBDIR += xpi-autobrowse
+    SUBDIR += xpi-bookmarkdd
     SUBDIR += xpi-clearfields
     SUBDIR += xpi-colorfultabs
     SUBDIR += xpi-cssviewer
