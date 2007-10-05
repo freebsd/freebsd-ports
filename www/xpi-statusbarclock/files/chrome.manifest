@@ -1,7 +1,0 @@
-
-overlay	chrome://browser/content/browser.xul	chrome://timestatus/content/browserOverlay.xul
-content	timestatus	jar:chrome/timestatus.jar!/content/timestatus/
-
-skin	timestatus	classic/1.0	jar:chrome/timestatus.jar!/skin/classic/timestatus/
-
-locale	timestatus	en-US	jar:chrome/timestatus.jar!/locale/en-US/timestatus/
