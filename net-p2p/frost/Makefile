@@ -6,29 +6,23 @@
 #
 
 PORTNAME=	frost
-PORTVERSION=	1.2.0.20051020
-PORTREVISION=	2
+PORTVERSION=	1.2.0.20070719
 PORTEPOCH=	2
 CATEGORIES=	net-p2p java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	jtcfrost
-DISTNAME=	${PORTNAME}-20-Oct-2005-java${JAVA_VERSION:S/.//}
+DISTNAME=	${PORTNAME}-19-Jul-2007
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	File-sharing tool for FreeNet with Usenet like forum support
+MAINTAINER=	peter.thoenen@yahoo.com
+COMMENT=	Frost is a Freenet client that provides messenger and file services
 
 USE_JAVA=	yes
+JAVA_VERSION=	1.5+
 JAVA_RUN=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR}
-
-.ifdef(WITH_JDK15)
-JAVA_VERSION=	1.5
-.else
-JAVA_VERSION=	1.4
-.endif
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
@@ -36,21 +30,22 @@ JAVAVM=		${LOCALBASE}/bin/java
 JAR_DIR=	${JAVAJARDIR:S,^${PREFIX}/,,}/${PORTNAME}
 JAR_FILE=	frost.jar
 JAR_FILES=	frost.jar lib/fecImpl.jar \
-		lib/BCastle.jar \
+		lib/BCastle.jar lib/datechooser.jar \
 		lib/fec-native.jar \
-		lib/genChkImpl.jar lib/xercesImpl.jar \
-		lib/mailapi.jar lib/smtp.jar \
-		lib/skinlf.jar lib/skinlfFix.jar \
-		lib/xml-apis.jar
+		lib/genChkImpl.jar lib/gnu-regexp-1.1.4.jar \
+		lib/xercesImpl.jar \
+		lib/joda-time.jar lib/mckoidb.jar \
+		lib/perst15.jar lib/skinlf.jar \
+		lib/skinlfFix.jar lib/xml-apis.jar
 
 DOC_FILES=	doc/Frost.tex doc/authors.txt doc/gpl.txt \
 		doc/SkinLFLicense.txt \
-		doc/hypersonic_lic.txt doc/HISTORY.txt \
-		help/faq.txt help/history.txt
+		doc/hypersonic_lic.txt doc/HISTORY.txt
 PORTDOCS=	${DOC_FILES:C,^.*/,,}
 
 DATA_FILES=	config/boards.xml.default \
 		jtc.ico \
+		store/applayerdb.conf \
 		themes/themepack.zip
 
 PLIST_FILES=	bin/${PORTNAME}
@@ -73,9 +68,6 @@ DESKTOP_ENTRIES=	"Frost" "A Freenet Client" \
 			false
 
 pre-everything::
-.ifndef(WITH_JDK15)
-	@${ECHO_MSG} '===> Define WITH_JDK15 to use jdk 1.5 instead of jdk 1.4'
-.endif
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|; \
