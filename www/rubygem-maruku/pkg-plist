@@ -132,6 +132,7 @@ bin/marutex
 %%GEM_LIB_DIR%%/tests/unittest/links.md
 %%GEM_LIB_DIR%%/tests/unittest/links2.md
 %%GEM_LIB_DIR%%/tests/unittest/list1.md
+%%GEM_LIB_DIR%%/tests/unittest/list12.md
 %%GEM_LIB_DIR%%/tests/unittest/list2.md
 %%GEM_LIB_DIR%%/tests/unittest/list3.md
 %%GEM_LIB_DIR%%/tests/unittest/list4.md
@@ -140,6 +141,7 @@ bin/marutex
 %%GEM_LIB_DIR%%/tests/unittest/lists11.md
 %%GEM_LIB_DIR%%/tests/unittest/lists6.md
 %%GEM_LIB_DIR%%/tests/unittest/lists7.md
+%%GEM_LIB_DIR%%/tests/unittest/lists7b.md
 %%GEM_LIB_DIR%%/tests/unittest/lists8.md
 %%GEM_LIB_DIR%%/tests/unittest/lists9.md
 %%GEM_LIB_DIR%%/tests/unittest/lists_after_paragraph.md
