@@ -1,0 +1,13 @@
+--- SConstruct.orig	2007-10-05 10:46:32.000000000 -0500
++++ SConstruct	2007-10-05 11:09:38.000000000 -0500
+@@ -337,7 +337,9 @@
+     if os.environ.has_key('PKG_CONFIG_PATH'):
+         env['ENV']['PKG_CONFIG_PATH'] = os.environ['PKG_CONFIG_PATH']
+     
+-    env['CPPPATH'] += ['.', 'src/']
++
++    env['CPPPATH'] = Split(env['CPPPATH'])
++    env['LIBPATH'] = Split(env['LIBPATH'])
+ 
+     config_h_defines = []      
+ 

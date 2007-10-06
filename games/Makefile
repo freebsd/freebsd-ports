@@ -559,6 +559,7 @@
     SUBDIR += phpua-ut
     SUBDIR += phpua-ut2003
     SUBDIR += pinball
+    SUBDIR += pingus
     SUBDIR += pioneers
     SUBDIR += pipenightdreams
     SUBDIR += pipepanic
