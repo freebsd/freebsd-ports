@@ -1,0 +1,16 @@
+gozerbot is a modular Python IRC and Jabber bot
+
+Features:
+    * user management by userhost .. bot will not respond if it doesn't know you
+    * fleet .. use more than one bot in a program (list of bots)
+    * use the bot through dcc chat .. partyline
+    * fetch rss feeds.
+    * keep todo and shop lists
+    * karma
+    * quote
+    * remember items
+    * relaying between bots
+    * program your own plugins
+    * other stuff
+
+WWW: http://www.gozerbot.org/

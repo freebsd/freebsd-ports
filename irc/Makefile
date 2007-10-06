@@ -91,6 +91,7 @@
     SUBDIR += pure-emacs20
     SUBDIR += pure-emacs21
     SUBDIR += pure-xemacs21-mule
+    SUBDIR += py-gozerbot
     SUBDIR += py-irclib
     SUBDIR += py-supybot
     SUBDIR += py-supybot-plugins
