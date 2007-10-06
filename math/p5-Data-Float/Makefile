@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Float
-PORTVERSION=	0.005
+PORTVERSION=	0.007
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Details of the floating point data type
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=	Data::Float.3
 
