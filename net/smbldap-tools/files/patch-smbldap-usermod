@@ -1,0 +1,11 @@
+--- smbldap-usermod.orig	2007-10-06 09:50:45.000000000 +0200
++++ smbldap-usermod	2007-10-06 09:51:09.000000000 +0200
+@@ -466,7 +466,7 @@
+ 
+ if (defined($tmp = $Options{'e'})) {
+     if ($samba == 1) {
+-	my $kickoffTime=`date --date='$tmp' +%s`;
++	my $kickoffTime=`date -j -f "%F %T" '$tmp' +%s`;
+ 	chomp($kickoffTime);
+ 	push(@mods, 'sambakickoffTime' => $kickoffTime);
+     } else {
