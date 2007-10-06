@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chntpw
-PORTVERSION=	070409
+PORTVERSION=	070923
 CATEGORIES=	security sysutils
 MASTER_SITES=	http://home.eunet.no/pnordahl/ntpasswd/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
