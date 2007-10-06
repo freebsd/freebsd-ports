@@ -1,0 +1,9 @@
+%%SITE_PERL%%/SMS/Send/TW/ShareSMS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW/ShareSMS/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW/ShareSMS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS
+@dirrmtry %%SITE_PERL%%/SMS/Send/TW
+@dirrmtry %%SITE_PERL%%/SMS/Send
+@dirrmtry %%SITE_PERL%%/SMS
