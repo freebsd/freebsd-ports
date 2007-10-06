@@ -6,7 +6,6 @@
 #
 # PROVIDE: gateway6
 # REQUIRE: FILESYSTEMS netif
-# BEFORE: ip6addrctl
 # KEYWORD: shutdown
 #
 
