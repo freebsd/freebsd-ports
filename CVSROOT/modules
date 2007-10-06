@@ -4832,6 +4832,7 @@ ikiwiki		ports/www/ikiwiki
 iksemel		ports/textproc/iksemel
 ilbc		ports/net/ilbc
 ilias		ports/www/ilias
+ilmbase		ports/graphics/ilmbase
 ilohamail	ports/mail/ilohamail
 ilohamail-devel	ports/mail/ilohamail-devel
 im		ports/mail/im
