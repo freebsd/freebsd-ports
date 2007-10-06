@@ -23,10 +23,6 @@ SITE_SUB+=	-e '/-D_FFR_DIFFHEADERS/s|^dnl ||'
 SITE_SUB+=	-e '/-D_FFR_DNS_UPGRADE/s|^dnl ||'
 .endif
 
-.if defined(WITH_KEY_REUSE) && !defined(WITHOUT_KEY_REUSE)
-SITE_SUB+=	-e '/-D_FFR_KEY_REUSE/s|^dnl ||'
-.endif
-
 .if defined(WITH_QUERY_CACHE) && !defined(WITHOUT_QUERY_CACHE)
 SITE_SUB+=	-e '/-D_FFR_QUERY_CACHE/s|^dnl ||'
 .endif
@@ -41,10 +37,6 @@ SITE_SUB+=	-e '/-D_FFR_SELECT_CANONICALIZATION/s|^dnl ||'
 
 .if defined(WITH_SELECT_SIGN_HEADERS) && !defined(WITHOUT_SELECT_SIGN_HEADERS)
 SITE_SUB+=	-e '/-D_FFR_SELECT_SIGN_HEADERS/s|^dnl ||'
-.endif
-
-.if defined(WITH_SET_REPLY) && !defined(WITHOUT_SET_REPLY)
-SITE_SUB+=	-e '/-D_FFR_SET_REPLY/s|^dnl ||'
 .endif
 
 .if defined(WITH_STATS) && !defined(WITHOUT_STATS)
