@@ -504,6 +504,7 @@
     SUBDIR += jtag
     SUBDIR += jude-community
     SUBDIR += judy
+    SUBDIR += k8048
     SUBDIR += kaptain
     SUBDIR += kcachegrind
     SUBDIR += kdbg
