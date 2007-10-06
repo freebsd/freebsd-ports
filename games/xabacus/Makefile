@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xabacus
-PORTVERSION=	7.3
-PORTREVISION=	1
+PORTVERSION=	7.3.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.tux.org/~bagleyd/abacus/ \
 		http://ftp.tux.org/pub/tux/bagleyd/xabacus/ \
