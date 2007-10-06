@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session-Store-DBI
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Catalyst
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Store your sessions in a database
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Plugin-Session>=0.05:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
 		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	5.8.2+
+PERL_CONFIGURE=	5.8.2+
 
 MAN3=	Catalyst::Plugin::Session::Store::DBI.3
 
