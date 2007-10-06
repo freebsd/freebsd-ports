@@ -1,0 +1,11 @@
+--- k8048/Makefile.orig	Sat Oct  6 20:36:54 2007
++++ k8048/Makefile	Sat Oct  6 20:36:58 2007
+@@ -33,7 +33,7 @@
+ 
+ all: ${TARGET}
+ #	cd microchip && make
+-	cd velleman && make
++#	cd velleman && make
+ #	cd asm && make
+ 
+ $(TARGET):	$(OBJECT)
