@@ -1617,6 +1617,7 @@ crossfire-client	ports/games/crossfire-client
 crossfire-server	ports/games/crossfire-server
 crossip		ports/dns/crossip
 crosspad	ports/misc/crosspad
+crossvc		ports/devel/crossvc
 crow		ports/devel/crow
 crp		ports/www/crp
 crw		ports/graphics/crw
