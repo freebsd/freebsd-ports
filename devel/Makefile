@@ -185,6 +185,7 @@
     SUBDIR += cross-binutils
     SUBDIR += cross-gcc
     SUBDIR += cross-gdb
+    SUBDIR += crossvc
     SUBDIR += crow
     SUBDIR += cscope
     SUBDIR += cscout
