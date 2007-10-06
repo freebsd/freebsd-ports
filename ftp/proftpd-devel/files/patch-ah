@@ -1,5 +1,5 @@
---- modules/mod_auth_unix.c.orig	Thu May 13 23:40:18 2004
-+++ modules/mod_auth_unix.c	Thu May 13 23:40:27 2004
+--- modules/mod_auth_unix.c.orig	2006-06-29 09:16:23.000000000 -0800
++++ modules/mod_auth_unix.c	2007-10-05 16:23:46.000000000 -0800
 @@ -57,6 +57,7 @@
  #endif /* HAVE_HPSECURITY_H or HPUX10 or HPUX11 */
  
