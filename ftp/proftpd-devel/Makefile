@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	proftpd
-DISTVERSION=	1.3.1rc3
-PORTREVISION=	6
+DISTVERSION=	1.3.1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -163,7 +162,6 @@ USE_OPENLDAP=	yes
 MODULES:=${MODULES}:mod_ldap
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-contrib-mod_ldap.c
 .endif
 
 .if defined(WITH_MYSQL)

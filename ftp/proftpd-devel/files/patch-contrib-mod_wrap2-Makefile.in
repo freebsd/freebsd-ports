@@ -1,5 +1,5 @@
---- contrib/mod_wrap2/Makefile.in.orig	Wed Sep  6 15:11:47 2006
-+++ contrib/mod_wrap2/Makefile.in	Thu Dec 28 11:41:24 2006
+--- contrib/mod_wrap2/Makefile.in.orig	2007-01-08 19:16:11.000000000 -0900
++++ contrib/mod_wrap2/Makefile.in	2007-10-05 14:02:38.000000000 -0800
 @@ -13,7 +13,7 @@
  MODULE_NAME=mod_wrap2
  
