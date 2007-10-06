@@ -33,9 +33,9 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM} == "xorg"
-RUN_DEPENDS+=	${X11BASE}/lib/xorg/modules/input/synaptics_drv.so:${PORTSDIR}/x11-servers/synaptics
+RUN_DEPENDS+=	${X11BASE}/lib/xorg/modules/input/synaptics_drv.so:${PORTSDIR}/x11-drivers/synaptics
 .else
-RUN_DEPENDS+=	${X11BASE}/lib/modules/input/synaptics_drv.o:${PORTSDIR}/x11-servers/synaptics
+RUN_DEPENDS+=	${X11BASE}/lib/modules/input/synaptics_drv.o:${PORTSDIR}/x11-drivers/synaptics
 .endif
 
 
