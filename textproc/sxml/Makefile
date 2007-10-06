@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sxml
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.MysticWALL.COM/download/
 
