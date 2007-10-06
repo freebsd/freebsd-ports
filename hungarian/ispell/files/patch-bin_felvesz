@@ -1,0 +1,11 @@
+
+$FreeBSD$
+
+--- bin/felvesz.orig
++++ bin/felvesz
+@@ -8,4 +8,4 @@
+ Megjegyzés: a magyarispell*/ könyvtárból indítva működik.
+ Kilépés: Ctrl-c"
+ echo "Az új szó?"
+-function latin() { echo "$1" | iconv -f utf-8 -t latin2; }; function search() { grep -l "^$1$" `grep ^szotar szotar.konf | awk '{print $0"/*"}'`; }; function put() { echo "Kérem a következő mintát a $1 szóhoz, vagy f (felvétel), u (felvétel új tővel):"; LOC=""; while read j; do test "$j" = "f" -o "$j" = "u" && break || LOC=$(search `latin $j`); echo $LOC; done; echo ""; if test "$j" = "f"; then w=`latin $1`; for l in $LOC; do echo "$w" >>$l; done; else echo "új tő?"; read k; echo "új tő: $k"; w=`latin $k`; for l in $LOC; do echo "$w" >>$l; done; fi; echo -e "Felvéve ide:\n$LOC"; };  while read i; do case $i in "ö") echo "`latin $prev`" >>$(dirname $(echo $ploc | head -1 | awk '{print $1}'))/fonev_osszetett.1; echo "összetettként felvéve: $prev";; esac; ploc=$(search `latin $i`); echo $ploc; test -z "$ploc" && put $i; echo "Az új szó?"; prev=$i; done
++latin() { echo "$1" | iconv -f utf-8 -t latin2; }; search() { grep -l "^$1$" `grep ^szotar szotar.konf | awk '{print $0"/*"}'`; }; put() { echo "Kérem a következő mintát a $1 szóhoz, vagy f (felvétel), u (felvétel új tővel):"; LOC=""; while read j; do test "$j" = "f" -o "$j" = "u" && break || LOC=$(search `latin $j`); echo $LOC; done; echo ""; if test "$j" = "f"; then w=`latin $1`; for l in $LOC; do echo "$w" >>$l; done; else echo "új tő?"; read k; echo "új tő: $k"; w=`latin $k`; for l in $LOC; do echo "$w" >>$l; done; fi; echo -e "Felvéve ide:\n$LOC"; };  while read i; do case $i in "ö") echo "`latin $prev`" >>$(dirname $(echo $ploc | head -1 | awk '{print $1}'))/fonev_osszetett.1; echo "összetettként felvéve: $prev";; esac; ploc=$(search `latin $i`); echo $ploc; test -z "$ploc" && put $i; echo "Az új szó?"; prev=$i; done

@@ -18,3 +18,12 @@ $FreeBSD$
    awk '/^[^	]*[[]/{
  	print $1 >>"mezok.txt"
  	i = index($1, "[")
+@@ -186,7 +186,7 @@
+ 
+ # kiejtés javítása
+ cat mezok.txt | sed 's/sszsz/ssz/;s/szsz/ssz/;s/sss/ss/;s/[[,]/	/;s/]//' >mezok2.txt
+-cat mezok2.txt | iconv -f latin2 -t utf8 | sed -f $BINDIR/l1_u8.sed >mezok_utf.txt
++cat mezok2.txt | iconv -f latin2 -t utf-8 | sed -f $BINDIR/l1_u8.sed >mezok_utf.txt
+ echo_n .
+ 
+ echo " Rendben."
