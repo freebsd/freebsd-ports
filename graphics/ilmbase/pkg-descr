@@ -1,0 +1,13 @@
+ILM Base libraries have following four libraries.
+
+*Half is a class that encapsulates ILM's 16-bit floating-point format.
+
+*IlmThread is a thread abstraction library for use with OpenEXR
+ and other software packages.
+
+*Imath implements 2D and 3D vectors, 3x3 and 4x4 matrices, quaternions
+ and other useful 2D and 3D math functions.
+
+*Iex is an exception-handling library.
+
+WWW:	http://www.openexr.com/

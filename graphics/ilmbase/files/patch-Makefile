@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2007-08-04 02:28:25.000000000 +0900
++++ Makefile.in	2007-10-07 03:17:50.000000000 +0900
+@@ -205,7 +205,7 @@
+         README README.CVS README.OSX README.win32 bootstrap \
+ 	config.windows/IlmBaseConfig.h
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = IlmBase.pc
+ all: all-recursive
+ 
