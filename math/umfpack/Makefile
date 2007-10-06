@@ -24,6 +24,9 @@ CONFLICTS=	suitesparse-2*
 WRKSRC=		${WRKDIR}/${DISTNAME}/UMFPACK
 ALL_TARGET=	lib
 
+DEPRECATED=	Outdated subset of math/suitesparse
+EXPIRATION_DATE=2007-11-30
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
