@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xd3d
-PORTVERSION=	8.2.3
-PORTREVISION=	3
+PORTVERSION=	8.3.1
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.cmap.polytechnique.fr/~jouve/xd3d/
 
@@ -55,13 +54,6 @@ XD3D_LANG=	ENGLISH
 DOCS=		BUGS CHANGELOG FAQ FORMATS INSTALL README Manuals/formats.txt	\
 		Manuals/xd3d_doc.pdf Manuals/xgraphic_doc.pdf
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-FFLAGS+=	-malign-double
-CFLAGS+=	-malign-double
-.endif
-
 do-fetch:
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 	${FETCH_CMD} ${FETCH_BEFORE_ARGS}			\
@@ -95,4 +87,4 @@ post-install:
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
