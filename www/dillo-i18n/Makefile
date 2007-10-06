@@ -11,11 +11,8 @@
 # WITHOUT_DILLO_ANTIALIAS:	disable support for antialiased display
 # WITH_DILLO_DLGUI:		enable experimental FLTK2 based gui for file
 # 				downloads
+# WITHOUT_DILLO_IPV6:		disable IPv6 support
 #
-# TODO:
-# SSL support is currently partly broken in this version of the i18n Dillo:
-# On FreeBSD 4 with OpenSSL 0.9.7d, the configure script uses checks that are
-# too strict. On FreeBSD 5 and 6 it seems to work OK.
 
 PORTNAME=	dillo
 PORTVERSION=	${DILLOVERSION}.${I18NVERSION}
@@ -44,7 +41,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-cookies --enable-ipv6 --enable-threaded-dns \
+CONFIGURE_ARGS=	--enable-cookies --enable-threaded-dns \
 		--libdir=${PREFIX}/libexec
 
 CONFLICTS=	dillo-[0-9].[0-9].[0-9]*
@@ -59,8 +56,6 @@ CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 .if defined(WITH_DILLO_SSL)
-# Note: the configure script will deactivate SSL support on 4.x systems.
-# This might get fixed someday so I activate this option unconditionally.
 CONFIGURE_ARGS+=	--enable-ssl
 USE_OPENSSL=	yes
 .else
@@ -95,6 +90,10 @@ LDFLAGS+=	-L${X11BASE}/lib
 CONFIGURE_ARGS+=	--disable-dlgui
 .endif
 
+.if !defined(WITHOUT_DILLO_IPV6) && !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
 		 s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
@@ -127,7 +126,11 @@ pre-configure:
 	@${ECHO_CMD} "   Set WITH_DILLO_DLGUI=yes in your make environment or on the"
 	@${ECHO_CMD} "   commandline to enable a FLTK2 based gui for download operations."
 .endif
-
+.if !defined(WITHOUT_DILLO_IPV6) && !defined(WITHOUT_IPV6)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "   Set WITHOUT_DILLO_IPV6=yes (or WITHOUT_IPV6=yes) in your make"
+	@${ECHO_CMD} "   environment or on the commandline to disable IPv6 support."
+.endif
 	@${ECHO_CMD} ""
 
 .include <bsd.port.mk>
