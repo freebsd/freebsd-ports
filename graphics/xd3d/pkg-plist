@@ -47,6 +47,7 @@ bin/xgraphic
 %%PORTDOCS%%%%EXAMPLESDIR%%/mesh3.avoir2D
 %%PORTDOCS%%%%EXAMPLESDIR%%/mesh3.msh
 %%PORTDOCS%%%%EXAMPLESDIR%%/mesh3.nopo
+%%PORTDOCS%%%%EXAMPLESDIR%%/piece.msh
 %%PORTDOCS%%%%EXAMPLESDIR%%/quadsd.avoir2D
 %%PORTDOCS%%%%EXAMPLESDIR%%/quadsd.depl
 %%PORTDOCS%%%%EXAMPLESDIR%%/quadsd.eldata
@@ -56,6 +57,7 @@ bin/xgraphic
 %%PORTDOCS%%%%EXAMPLESDIR%%/ref9nodes.avoir2D
 %%PORTDOCS%%%%EXAMPLESDIR%%/sphere.avoir3D
 %%PORTDOCS%%%%EXAMPLESDIR%%/sphere.depl
+%%PORTDOCS%%%%EXAMPLESDIR%%/sphere.msh
 %%PORTDOCS%%%%EXAMPLESDIR%%/spiral.xyz
 %%PORTDOCS%%%%EXAMPLESDIR%%/tetra_gmsh.msh
 %%PORTDOCS%%%%EXAMPLESDIR%%/tower.avoir3D
