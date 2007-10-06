@@ -13070,6 +13070,7 @@ py-gnutls	ports/security/py-gnutls
 py-gobject	ports/devel/py-gobject
 py-goocanvas	ports/graphics/py-goocanvas
 py-google	ports/net/py-google
+py-gozerbot	ports/irc/py-gozerbot
 py-graphviz	ports/graphics/py-graphviz
 py-grouch	ports/devel/py-grouch
 py-gsl		ports/math/py-gsl
