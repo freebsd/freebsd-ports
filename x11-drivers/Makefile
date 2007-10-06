@@ -3,6 +3,7 @@
 
     COMMENT = X11 drivers
 
+    SUBDIR += synaptics
     SUBDIR += xf86-input-acecad
     SUBDIR += xf86-input-calcomp
     SUBDIR += xf86-input-citron

@@ -11,7 +11,6 @@
     SUBDIR += Xfstt
     SUBDIR += driglide
     SUBDIR += mga_hal
-    SUBDIR += synaptics
     SUBDIR += x2vnc
     SUBDIR += x2x
     SUBDIR += xorg-dmx
