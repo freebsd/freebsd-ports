@@ -13,7 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -50,8 +50,8 @@ PLIST_DIRS=	etc/mail
 PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh \
 		draft-hoffman-dac-vbr-01.txt draft-ietf-dkim-overview-05.txt \
-		draft-ietf-dkim-ssp-00.txt draft-ietf-dkim-ssp-requirements-04.txt \
-		draft-kucherawy-sender-auth-header-06.txt rfc4686.txt rfc4871.txt
+		draft-ietf-dkim-ssp-01.txt draft-ietf-dkim-ssp-requirements-05.txt \
+		draft-kucherawy-sender-auth-header-07.txt rfc4686.txt rfc4871.txt
 .if !defined(NOPORTDOCS)
 LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/overview.html \
@@ -65,11 +65,15 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_eom.html \
 		${DOCSDIR_REL}/libdkim/dkim_free.html \
 		${DOCSDIR_REL}/libdkim/dkim_get_user_context.html \
+		${DOCSDIR_REL}/libdkim/dkim_geterror.html \
+		${DOCSDIR_REL}/libdkim/dkim_getmode.html \
 		${DOCSDIR_REL}/libdkim/dkim_getpresult.html \
 		${DOCSDIR_REL}/libdkim/dkim_getpresultstr.html \
+		${DOCSDIR_REL}/libdkim/dkim_getresultstr.html \
 		${DOCSDIR_REL}/libdkim/dkim_getsighdr.html \
 		${DOCSDIR_REL}/libdkim/dkim_getsiglist.html \
 		${DOCSDIR_REL}/libdkim/dkim_getsignature.html \
+		${DOCSDIR_REL}/libdkim/dkim_handling_t.html \
 		${DOCSDIR_REL}/libdkim/dkim_header.html \
 		${DOCSDIR_REL}/libdkim/dkim_init.html \
 		${DOCSDIR_REL}/libdkim/dkim_lib.html \
