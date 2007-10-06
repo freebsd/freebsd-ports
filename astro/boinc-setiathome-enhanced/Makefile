@@ -6,7 +6,7 @@
 
 PORTNAME=	boinc-setiathome-enhanced
 PORTVERSION=	5.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://home.tiscali.nl/rladan/distfiles/
 
@@ -41,7 +41,7 @@ CFLAGS+=	-mfpmath=sse
 .else
 CFLAGS+=	-mfpmath=387
 .endif
-# From http://www,lb.shuttle.de/apastron/boincDown.shtml :
+# From http://www.lb.shuttle.de/apastron/boincDown.shtml :
 # what about other 64 bit archs (especially S/390, see gcc.info.gz) ?
 .ifdef ${MACHINE_CPU:Mamd64}
 CFLAGS+=	-m64
@@ -54,8 +54,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" \
 		BOINCDIR="${LOCALBASE}"
-
-BROKEN=		Does not compile.
 
 # these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
 BOINC_USER?=	boinc
@@ -88,4 +86,10 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=	Does not compile
+.endif
+
+.include <bsd.port.post.mk>
