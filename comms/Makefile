@@ -84,6 +84,7 @@
     SUBDIR += p5-SMS-Send
     SUBDIR += p5-SMS-Send-DeviceGsm
     SUBDIR += p5-SMS-Send-TW-PChome
+    SUBDIR += p5-SMS-Send-TW-ShareSMS
     SUBDIR += plp
     SUBDIR += pr
     SUBDIR += predict
