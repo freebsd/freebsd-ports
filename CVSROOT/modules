@@ -15315,7 +15315,7 @@ sympa		ports/mail/sympa
 sympa-elixus	ports/mail/sympa-elixus
 sympa5		ports/mail/sympa5
 synaesthesia	ports/graphics/synaesthesia
-synaptics	ports/x11-servers/synaptics
+synaptics	ports/x11-drivers/synaptics
 synce-dccm	ports/palm/synce-dccm
 synce-gnomevfs	ports/palm/synce-gnomevfs
 synce-kde	ports/palm/synce-kde
