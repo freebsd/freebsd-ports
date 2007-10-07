@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -100,11 +100,11 @@
+@@ -108,8 +108,8 @@
  	test -d $(MANDIR)/man1 || install -d -o root -g bin -m 755 $(MANDIR)/man1
  	for file in $(OBJECTS); do \
  		if [ -f $$file.1 ]; then \
@@ -13,8 +13,4 @@ $FreeBSD$
 +			$(BSD_INSTALL_MAN) $$file.1 $(MANDIR)/man1 ; \
  		fi \
  	done;
--	test -f $(PREFIX)/bin/nfclean.pl || $(INSTALL) -o root -g bin -m 755 nfclean.pl $(PREFIX)/bin
-+	test -f $(PREFIX)/bin/nfclean.pl || $(BSD_INSTALL_SCRIPT) nfclean.pl $(PREFIX)/bin
  
- uninstall:
- 	for file in $(OBJECTS); do \

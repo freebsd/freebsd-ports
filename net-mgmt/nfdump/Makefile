@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nfdump
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +14,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Command-line tools to collect and process NetFlow data
 
+BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}  --enable-nfprofile --with-rrdpath=${LOCALBASE}
 
 #flow-tools support
 OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \
@@ -29,8 +32,8 @@ OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \
 CONFIGURE_ARGS=		--enable-compat14
 .endif
 
-PLIST_FILES=	bin/nfcapd bin/nfdump bin/nfprofile bin/nfreplay bin/nfclean.pl
-MAN1=		nfcapd.1 nfdump.1 nfprofile.1 nfreplay.1
+PLIST_FILES=	bin/nfcapd bin/nfdump bin/nfprofile bin/nfreplay bin/nfexpire
+MAN1=		nfcapd.1 nfdump.1 nfprofile.1 nfreplay.1 nfexpire.1
 PORTDOCS=	AUTHORS ChangeLog INSTALL README
 
 #flow-tools support
