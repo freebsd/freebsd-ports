@@ -434,9 +434,6 @@
     SUBDIR += nrg2iso
     SUBDIR += ntfsprogs
     SUBDIR += nut
-    SUBDIR += nut-libupsclient
-    SUBDIR += nut-snmp
-    SUBDIR += nut-usb
     SUBDIR += nvclock
     SUBDIR += nvtv
     SUBDIR += oak
