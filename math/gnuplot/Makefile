@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnuplot
-PORTVERSION=	4.2.0
-PORTREVISION=	3
+PORTVERSION=	4.2.2
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,8 +26,10 @@ CONFIGURE_ARGS+=--with-kpsexpand \
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base
 
 OPTIONS=	GD		"Enable GD support"		on \
+		GRIDBOX 	"Use the gridbox optimization for hidden3d" off \
 		PDF		"Enable PDF support"		on \
 		PLOT		"Enable plot support"		on \
+		THINSPLINES	"Enable thin plate splines for grids in dgrid3d" off \
 		WX		"Enable WX support"		off
 
 MAN1=		gnuplot.1 lasergnu.1
@@ -51,6 +52,10 @@ LIB_DEPENDS+=		gd.4:${PORTSDIR}/graphics/gd
 CONFIGURE_ARGS+=	--with-gd=${LOCALBASE}
 .endif
 
+.if !defined(WITHOUT_GRIDBOX)
+CONFIGURE_ARGS+=	--disable-h3d-quadtree --enable-h3d-gridbox
+.endif
+
 .if defined(WITHOUT_PDF)
 CONFIGURE_ARGS+=	--without-pdf
 .else
@@ -63,6 +68,12 @@ CONFIGURE_ARGS+=	--without-plot
 .else
 LIB_DEPENDS+=		plot.4:${PORTSDIR}/graphics/plotutils
 CONFIGURE_ARGS+=	--with-plot=${LOCALBASE}
+.endif
+
+.if defined(WITHOUT_THINSPLINES)
+CONFIGURE_ARGS+=	--disable-thin-splines
+.else
+CONFIGURE_ARGS+=	--enable-thin-splines
 .endif
 
 .if defined(WITHOUT_WX)
