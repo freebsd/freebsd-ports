@@ -10,6 +10,7 @@
 
 PORTNAME=	hcfmdm
 PORTVERSION=	0.99.1
+PORTREVISION=	1
 CATEGORIES=	comms kld
 MASTER_SITES=	http://lug.cbx.ru/files/modem/ \
 		http://www.int21.de/conexant/ \
@@ -33,8 +34,6 @@ RESTRICTED=	Redistribution of versions marked lnxtbeta requires explicit written
 RESTRICTED_FILES=	hcfpcimodem-0.99lnxtbeta03042700.tar.gz
 NO_CDROM=	No redistribution allowed
 NO_PACKAGE=	${NO_CDROM}
-
-STRIP=		# do not strip kernel module
 
 LNXTDOCS=	README FAQ BUGS
 PORTDOCS=	${LNXTDOCS} 100498D_RM_HxF_Released.pdf
@@ -65,7 +64,7 @@ pre-fetch:
 
 do-install:
 	@${MKDIR} ${KMODDIR}
-	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/hcfmdm.ko ${KMODDIR}/
+	@${INSTALL_KLD} ${BUILD_WRKSRC}/hcfmdm.ko ${KMODDIR}/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${LNXTDOCS}

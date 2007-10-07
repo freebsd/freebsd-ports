@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	emulators kld
 MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMESUFFIX?=	-guestd
@@ -200,11 +200,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/sbin${BITS}/vmware-checkvm ${PREFIX}/sbin
 .if defined(WITH_VMWARE_VMMEMCTL)
 	${MKDIR} ${VMWARE_KMODDIR}
-	${INSTALL_PROGRAM} ${WRKDIR}/vmmemctl-only/vmmemctl.ko ${VMWARE_KMODDIR}
+	${INSTALL_KLD} ${WRKDIR}/vmmemctl-only/vmmemctl.ko ${VMWARE_KMODDIR}
 .endif
 .if defined(WITH_VMWARE_VMXNET)
 	${MKDIR} ${VMWARE_KMODDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/modules/binary/FreeBSD${VMWARE_VMXNET_PATH} ${VMWARE_KMODDIR}
+	${INSTALL_KLD} ${WRKSRC}/lib/modules/binary/FreeBSD${VMWARE_VMXNET_PATH} ${VMWARE_KMODDIR}
 .endif
 	-${WRKSRC}/lib/sbin${BITS}/vmware-guestd --cmd toolinstall.end
 	${MKDIR} ${PREFIX}/share/vmware-tools

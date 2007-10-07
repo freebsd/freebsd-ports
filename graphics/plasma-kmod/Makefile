@@ -7,6 +7,7 @@
 
 PORTNAME=	plasma
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	graphics kld
 MASTER_SITES=	SF/futurebsd
 PKGNAMESUFFIX=	-kmod
@@ -20,7 +21,7 @@ IGNORE=		requires kernel source (/usr/src/sys) to build
 PLIST_FILES=	lib/plasma_saver.ko
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/plasma_saver.ko ${PREFIX}/lib
+	${INSTALL_KLD} ${WRKSRC}/plasma_saver.ko ${PREFIX}/lib
 
 post-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}

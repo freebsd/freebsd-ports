@@ -7,6 +7,7 @@
 
 PORTNAME=	ixj
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	comms kld
 MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 DISTNAME=	ixj_freebsd-${PORTVERSION}
@@ -39,7 +40,7 @@ pre-build:
 
 do-install:
 	@${MKDIR} ${PREFIX}/modules
-	@${INSTALL_DATA} ${WRKSRC}/ixj.ko ${PREFIX}/modules
+	@${INSTALL_KLD} ${WRKSRC}/ixj.ko ${PREFIX}/modules
 	@${MKDIR} ${PREFIX}/include/sys
 	@${INSTALL_DATA} ${WRKSRC}/ixjuser.h ${PREFIX}/include/sys
 	@${INSTALL_DATA} ${WRKSRC}/telephony.h ${PREFIX}/include/sys

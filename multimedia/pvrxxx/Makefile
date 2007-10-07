@@ -7,6 +7,7 @@
 
 PORTNAME=	pvrxxx
 PORTVERSION=	20060822
+PORTREVISION=	1
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTFILES=	${CXMSHAR} ${PVRTOOLS}.tar.gz hcwPVRP2.sys HcwMakoA.ROM pvrxxx_gpl.tgz
@@ -81,8 +82,8 @@ do-build:
 	cd ${WRKDIR}/${PVRTOOLS}; ${MAKE}
 
 do-install:
-	${INSTALL_DATA} ${WRKDIR}/modules/cxm/cxm/cxm.ko ${MODULESDIR}
-	${INSTALL_DATA} ${WRKDIR}/modules/cxm/cxm_iic/cxm_iic.ko ${MODULESDIR}
+	${INSTALL_KLD} ${WRKDIR}/modules/cxm/cxm/cxm.ko ${MODULESDIR}
+	${INSTALL_KLD} ${WRKDIR}/modules/cxm/cxm_iic/cxm_iic.ko ${MODULESDIR}
 	${INSTALL_MAN} ${WRKDIR}/${PVRTOOLS}/cxm.4 ${PREFIX}/man/man4/cxm.4
 	${INSTALL_MAN} ${WRKDIR}/${PVRTOOLS}/pvr250-setchannel.1 ${PREFIX}/man/man1/pvr250-setchannel.1
 	${INSTALL_PROGRAM} ${WRKDIR}/${PVRTOOLS}/setchannel ${PREFIX}/bin/pvr250-setchannel

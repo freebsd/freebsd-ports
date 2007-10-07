@@ -7,6 +7,7 @@
 
 PORTNAME=	ipmi-kmod
 PORTVERSION=	20060926
+PORTREVISION=	1
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://dpw.threerings.net/projects/ipmi-kmod/
 
@@ -28,11 +29,6 @@ KMODDIR=	/boot/modules
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-# Don't strip module on amd64 systems
-.if ${ARCH} == "amd64"
-STRIP=
-.endif
-
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source to be installed
 .endif
@@ -51,7 +47,7 @@ CFLAGS+=	-I@/contrib/dev/acpica
 do-install:
 	@${MKDIR} ${PREFIX}/include/sys
 	${INSTALL_DATA} ${WRKSRC}/sys/ipmi.h ${PREFIX}/include/sys
-	${INSTALL_PROGRAM} ${WRKSRC}/ipmi.ko ${KMODDIR}
+	${INSTALL_KLD} ${WRKSRC}/ipmi.ko ${KMODDIR}
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

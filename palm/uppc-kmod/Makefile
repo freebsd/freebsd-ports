@@ -7,7 +7,7 @@
 
 PORTNAME=	uppc
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	palm kld
 MASTER_SITES=	http://people.tecnik93.com/~sam/ports/
 PKGNAMESUFFIX=	-kmod
@@ -28,11 +28,6 @@ IGNORE=		Requires kernel source (/usr/src/sys) to build
 BROKEN=		Does not compile with GCC 4.2
 .endif
 
-# Don't strip module on amd64 systems
-.if ${ARCH} == "amd64"
-STRIP=
-.endif
-
 post-build:
 	@${REINPLACE_CMD} -e 's|%%INITIAL_INSTALLDIR%%|${PREFIX}/lib|g' ${BUILD_WRKSRC}/uppcsetup
 	@${REINPLACE_CMD} -e 's|%%INITIAL_MODDIR%%|${KMODDIR}|g' ${WRKSRC}/uppcsetup
@@ -41,7 +36,7 @@ post-build:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/uppc.ko ${PREFIX}/lib
+	${INSTALL_KLD} ${WRKSRC}/uppc.ko ${PREFIX}/lib
 	${INSTALL_SCRIPT} ${WRKSRC}/uppcsetup ${PREFIX}/sbin
 	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN4} ${MANPREFIX}/man/man4
 

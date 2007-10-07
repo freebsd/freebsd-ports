@@ -9,6 +9,7 @@
 
 PORTNAME=	msdosfs
 PORTVERSION=	${LAST_UPDATED}
+PORTREVISION=	1
 CATEGORIES=	korean kld
 MASTER_SITES=	http://www.kr.freebsd.org/~cjh/freebsd/msdosfs-ko/ \
 		ftp://ftp.kr.freebsd.org/pub/users/cjh/FreeBSD/ \
@@ -61,7 +62,7 @@ post-build:
 do-install:
 	${MKDIR} ${PREFIX}/lib/ko-msdosfs
 	${INSTALL_PROGRAM} ${WRKDIR}/mount_msdos/mount_komsdos ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/msdos_ko.ko ${PREFIX}/lib/ko-msdosfs
+	${INSTALL_KLD} ${WRKSRC}/msdos_ko.ko ${PREFIX}/lib/ko-msdosfs
 	${INSTALL_SCRIPT} ${WRKDIR}/ko-msdosfs.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.post.mk>
