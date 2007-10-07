@@ -7,6 +7,7 @@
 
 PORTNAME=	exact-image
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/ CENKES
 
@@ -21,7 +22,7 @@ LIB_DEPENDS=	agg.2:${PORTSDIR}/graphics/agg \
 		png.5:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		jasper.4:${PORTSDIR}/graphics/jasper \
-		Iex.4:${PORTSDIR}/graphics/OpenEXR \
+		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
 CFLAGS+=	-fPIC

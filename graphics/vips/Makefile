@@ -7,6 +7,7 @@
 
 PORTNAME=	vips
 PORTVERSION=	7.12.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-${PORTVERSION:R}/
 
@@ -23,7 +24,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff \
-		Iex:${PORTSDIR}/graphics/OpenEXR \
+		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		png:${PORTSDIR}/graphics/png \
 		lcms:${PORTSDIR}/graphics/lcms
 

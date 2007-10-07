@@ -7,6 +7,7 @@
 
 PORTNAME=	pfstools
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ MAINTAINER=	darius@dons.net.au
 COMMENT=	Tools for manipulating HDR images and video frames
 
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS+=	Half:${PORTSDIR}/graphics/OpenEXR \
+LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		Magick++:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=	yes
