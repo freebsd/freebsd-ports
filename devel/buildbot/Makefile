@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	buildbot
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	jkoshy@FreeBSD.org
 COMMENT=	Automated system from compile/test cycle to validate code changes
