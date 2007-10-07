@@ -25,6 +25,10 @@ USE_AUTOTOOLS=	libtool:15
 test check:	build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
+.if defined(PACKAGE_BUILDING)
+pre-install:	test
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_THREAD)

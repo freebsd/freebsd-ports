@@ -26,6 +26,13 @@ GNU_CONFIGURE=	YES
 
 CONFIGURE_ARGS+=--enable-imfexamples
 
-WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME}
+
+test check:	build
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
+
+.if defined(PACKAGE_BUILDING)
+pre-install:	test
+.endif
 
 .include <bsd.port.mk>
