@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
@@ -43,7 +43,7 @@ MAN5=		libarchive-formats.5 \
 .if defined(WITH_BSDCPIO)
 CONFIGURE_ARGS+=	--enable-bsdcpio=yes
 PLIST_FILES+=		bin/bsdcpio
-#MAN1+=			bsdcpio.1
+MAN1+=			bsdcpio.1
 .endif
 
 .include <bsd.port.post.mk>
