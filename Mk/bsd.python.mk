@@ -204,8 +204,8 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #
 # USE_ZOPE			- Use Zope - an object-based web application platform, this
 #					  also sets up:
-# ZOPEBASEDIR		- relative base directory of zope server
-# SZOPEBASEDIR		- absolute base directory of zope that is
+# SZOPEBASEDIR		- relative base directory of zope server
+# ZOPEBASEDIR		- absolute base directory of zope that is
 #					  ${LOCALBASE}/${SZOPEBASEDIR} by default,
 # ZOPEPRODUCTDIR	- directory, where products for zope can be found
 #
@@ -431,7 +431,11 @@ RUN_DEPENDS+=		${PYEASYINSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 
 PYDISTUTILS_BUILD_TARGET?=		bdist_egg
 PYDISTUTILS_INSTALL_TARGET?=	easy_install
-PYDISTUTILS_INSTALLARGS?=		-O 1 -N -S ${PYTHON_SITELIBDIR} ${WRKSRC}/dist/${PYEASYINSTALL_EGG}
+PYDISTUTILS_INSTALLARGS?=		-O 1 -N -S ${PYTHON_SITELIBDIR} \
+								-d ${PYEASYINSTALL_SITELIBDIR} \
+								-s ${PYEASYINSTALL_BINDIR} \
+								${WRKSRC}/dist/${PYEASYINSTALL_EGG}
+MAKE_ENV+=						PYTHONPATH=${PYEASYINSTALL_SITELIBDIR}
 
 .if defined(PYEASYINSTALL_ARCHDEP)
 _OSRELEASE!=					${UNAME} -r
@@ -439,12 +443,22 @@ PYEASYINSTALL_OSARCH?=			-${OPSYS:L}-${_OSRELEASE}-${ARCH}
 .endif
 PYEASYINSTALL_EGG?=				${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg
 PYEASYINSTALL_CMD?=				${LOCALBASE}/bin/easy_install-${PYTHON_VER}
+PYEASYINSTALL_BINDIR?=			${PREFIX}/bin
+PYEASYINSTALL_SITELIBDIR?=		${PYTHONPREFIX_SITELIBDIR}
 PYEASYINSTALL_INSTALLARGS?=		-q -N -S ${PYTHON_SITELIBDIR} \
+								-d ${PYEASYINSTALL_SITELIBDIR} \
+								-s ${PYEASYINSTALL_BINDIR} \
 								${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION}
 PYEASYINSTALL_UNINSTALLARGS?=	-q -m -S ${PYTHON_SITELIBDIR} \
+								-d ${PYEASYINSTALL_SITELIBDIR} \
+								-s ${PYEASYINSTALL_BINDIR} \
 								${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION}
 
 PLIST_SUB+=		PYEASYINSTALL_EGG=${PYEASYINSTALL_EGG}
+
+pre-install: pre-install-easyinstall
+pre-install-easyinstall:
+	@${MKDIR} ${PYEASYINSTALL_SITELIBDIR}
 
 add-plist-post: add-plist-easyinstall
 add-plist-easyinstall:
@@ -453,7 +467,8 @@ add-plist-easyinstall:
 	@${ECHO_CMD} "@unexec ${PYEASYINSTALL_CMD} ${PYEASYINSTALL_UNINSTALLARGS}" \
 		> ${TMPPLIST}
 	@${CAT} ${TMPPLIST}.pei_tmp >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${PYEASYINSTALL_CMD} ${PYEASYINSTALL_INSTALLARGS}" \
+	@${ECHO_CMD} "@exec ${SETENV} PYTHONPATH=${PYEASYINSTALL_SITELIBDIR} \
+		${PYEASYINSTALL_CMD} ${PYEASYINSTALL_INSTALLARGS}" \
 		>> ${TMPPLIST}
 .endif		# defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} == "easy_install"
 
@@ -465,7 +480,7 @@ PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
 PYDISTUTILS_PKGNAME?=	${PORTNAME}
 PYDISTUTILS_PKGVERSION?=${PORTVERSION}
 PYDISTUTILS_EGGINFO?=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}.egg-info
-PYDISTUTILS_EGGINFODIR?=${PYTHON_SITELIBDIR}
+PYDISTUTILS_EGGINFODIR?=${PYTHONPREFIX_SITELIBDIR}
 
 .if !defined(PYDISTUTILS_NOEGGINFO) && \
 	(defined(INSTALLS_EGGINFO) ||	\
@@ -488,7 +503,7 @@ ZOPE_PORTSDIR=			${PORTSDIR}/www/zope3
 ZOPESKELDIR=			${ZOPEBASEDIR}/zopeskel
 .elif ${ZOPE_VERSION} == "2.10"
 SZOPEBASEDIR?=			www/Zope210
-ZOPE_PORTDIR=			${PORTSDIR}/www/zope210
+ZOPE_PORTSDIR=			${PORTSDIR}/www/zope210
 ZOPESKELDIR=			${ZOPEBASEDIR}/skel
 .elif ${ZOPE_VERSION} == "2.9"
 SZOPEBASEDIR?=			www/Zope29
@@ -688,6 +703,19 @@ do-build:
 do-install:
 	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} ${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS})
 .endif
+
+.if defined(PYEASYINSTALL_ARCHDEP)
+.if !target(easyinstall-setopt)
+easyinstall-setopt:
+	@(cd ${BUILD_WRKSRC}; \
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c build -o build-platlib -s lib.${PYEASYINSTALL_OSARCH:S/^-//}; \
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c build -o build-temp -s temp.${PYEASYINSTALL_OSARCH:S/^-//}-${PYTHON_VER}; \
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c bdist_egg -o plat-name -s ${PYEASYINSTALL_OSARCH:S/^-//}; \
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c bdist -o plat-name -s ${PYEASYINSTALL_OSARCH:S/^-//})
+.endif		# !target(eayinstall-setopt)
+
+pre-build: easyinstall-setopt
+.endif		# defined(PYEASYINSTALL_ARCHDEP)
 .endif		# defined(USE_PYDISTUTILS)
 
 .endif		# defined(_POSTMKINCLUDED) && !defined(Python_Post_Include)
