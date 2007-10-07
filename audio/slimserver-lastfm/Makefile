@@ -18,6 +18,7 @@ COMMENT=	SlimServer plugin for playing last.fm radio
 RUN_DEPENDS=	${LOCALBASE}/bin/softsqueeze:${PORTSDIR}/audio/slimserver \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
+USE_PERL5=	yes
 USE_ZIP=	yes
 WRKSRC=		LastFM
 NO_BUILD=	yes

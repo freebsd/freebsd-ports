@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-ipv6
+WANT_PERL=	yes
 
 OPTIONS=	DBUS "Enable DBUS support" on \
 		GTKSPELL "Enable spell check support using gtkspell" on \

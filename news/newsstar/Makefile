@@ -16,6 +16,17 @@ COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
+USE_PERL5=	yes
+HAS_CONFIGURE=	yes
+
+CONFIGURE_ARGS+=--prefix=${PREFIX} --mandir=${PREFIX}/man \
+		--with-conf-dir=${PREFIX}/etc/newsstar \
+		--with-rc-dir=/var/spool/newsstar/lib \
+		--with-incoming-dir=/var/spool/newsstar/incoming
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=--disable-ssl
 .else
@@ -38,17 +49,6 @@ CONFIGURE_ARGS+=--with-sn-spool-dir=/var/spool/news \
 .if exists(${LOCALBASE}/news/bin/innconfval)
 CONFIGURE_ARGS+=--with-inn-path=${LOCALBASE}/news/bin
 .endif
-
-CONFIGURE_ARGS+=--prefix=${PREFIX} --mandir=${PREFIX}/man \
-		--with-conf-dir=${PREFIX}/etc/newsstar \
-		--with-rc-dir=/var/spool/newsstar/lib \
-		--with-incoming-dir=/var/spool/newsstar/incoming
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-
-USE_PERL5=	yes
-HAS_CONFIGURE=	yes
 
 MAN1=		newsstar.1
 DOCS=		AUTHORS INSTALL NEWS README TODO docs/QuickStart docs/manual.txt \

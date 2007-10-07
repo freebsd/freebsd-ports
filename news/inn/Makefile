@@ -22,6 +22,7 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
+WANT_PERL=	yes
 
 CONFLICTS?=	inn-stable-[0-9]* inn-current-[0-9]*
 

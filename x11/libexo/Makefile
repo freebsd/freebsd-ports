@@ -28,6 +28,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
+USE_PERL5=	yes
 USE_XFCE=	configenv libutil mcsmanager
 USE_XLIB=	yes
 

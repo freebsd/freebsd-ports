@@ -27,6 +27,7 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-ssl
+WANT_PERL=	yes
 
 USE_RC_SUBR=	svnserve
 
@@ -94,7 +95,6 @@ PLIST_SUB+=		WITHOUT_BDB=""
 .if defined(WITH_PERL)
 USE_PERL5=		5.8.0+
 SWIG_BINDINGS+=		yes
-USE_PERL5=		yes
 PLIST_SUB+=		WITH_PERL=""
 MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=			SVN::Base.3 \

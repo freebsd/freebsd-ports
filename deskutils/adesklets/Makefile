@@ -23,6 +23,7 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_XLIB=	yes
+WANT_PERL=	yes
 
 MAN1=		adesklets.1 \
 		adesklets_checkin.1 \

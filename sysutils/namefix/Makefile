@@ -22,6 +22,7 @@ RUN_DEPENDS=	p5-MP3-Tag>=0:${PORTSDIR}/audio/p5-MP3-Tag \
 WRKSRC=		${WRKDIR}/usr/local/namefix.pl
 NO_BUILD=	yes
 USE_BZIP2=	yes
+USE_PERL5=	yes
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '*~' -delete

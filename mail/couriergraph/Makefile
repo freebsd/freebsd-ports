@@ -18,6 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool	\
 		${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
 
 NO_BUILD=	yes
+USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DATADIR?=	/var/db/couriergraph

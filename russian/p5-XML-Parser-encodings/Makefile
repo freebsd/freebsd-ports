@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${NONEXISTENT}:${PORTSDIR}/converters/iconv-extra:extract
 
 NO_WRKSUBDIR=	YES
+USE_PERL5=	YES
 RUSSIANENC=	windows-1251 koi8-r cp1251 cp866 mac-cyrillic
 
 post-extract:

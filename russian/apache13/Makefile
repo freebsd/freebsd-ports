@@ -19,6 +19,8 @@ PATCHFILES=	patches_${APACHE_VERSION}rusPL${RA_VERSION}.tar.gz
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	The extremely popular Apache http server.  Very fast, very clean
 
+USE_PERL5=	yes
+
 # New ports feature: conflicts
 CONFLICTS=	apache+ipv6-* \
                 apache+mod_ssl-* \
@@ -98,7 +100,6 @@ SUEXEC_MAN=
 # Configutre parameters
 #
 
-USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=\
 		 --prefix=${PREFIX} \

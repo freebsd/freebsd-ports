@@ -20,6 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample
 
+USE_PERL5=	yes
 USE_RC_SUBR+=	policyd-weight
 
 MAN8+=	policyd-weight.8

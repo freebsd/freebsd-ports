@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 USE_GMAKE=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=	gdmap.1

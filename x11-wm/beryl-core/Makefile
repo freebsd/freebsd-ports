@@ -28,6 +28,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 gconf2
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+USE_PERL5=	yes
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--disable-berylmesa

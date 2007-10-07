@@ -21,6 +21,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+WANT_PERL=	yes
 
 CONFIGURE_ARGS=	--disable-tcl
 

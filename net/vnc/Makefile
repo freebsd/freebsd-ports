@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--with-installed-zlib
 USE_GCC=	3.4
 USE_XLIB=	yes
 USE_XPM=	yes
+WANT_PERL=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 PLIST=		${WRKDIR}/pkg-plist

@@ -25,6 +25,7 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 WANT_GNOME=	yes
+WANT_PERL=	yes
 LIGHTNING_DIR=	lib/thunderbird/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}
 MOZILLA=	thunderbird
 MOZILLA_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/icons/default.xpm
