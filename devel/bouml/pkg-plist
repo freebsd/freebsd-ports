@@ -737,6 +737,8 @@ bin/projectSynchro
 %%DATADIR%%/java_catalog
 %%DATADIR%%/java_generator
 %%DATADIR%%/java_reverse
+%%DATADIR%%/php_generator
+%%DATADIR%%/php_reverse
 %%DATADIR%%/plug_out_upgrade
 %%DATADIR%%/projectControl
 %%DATADIR%%/projectSynchro
