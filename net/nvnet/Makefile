@@ -7,6 +7,7 @@
 
 PORTNAME=	nvnet
 PORTVERSION=	1.0.0301
+PORTREVISION=	1
 CATEGORIES=	net kld
 MASTER_SITES=	http://www.onthenet.com.au/~q/nvnet/
 DISTFILES=	${PORTNAME}-src-${DISTVERSION}${EXTRACT_SUFX}
@@ -36,7 +37,7 @@ IGNORE=		Kernel source files required
 .endif
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/module/if_nv.ko ${KMODDIR}
+	${INSTALL_KLD} ${WRKSRC}/module/if_nv.ko ${KMODDIR}
 	${INSTALL_MAN} ${WRKSRC}/man/nvnet.4 ${PREFIX}/man/man4
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

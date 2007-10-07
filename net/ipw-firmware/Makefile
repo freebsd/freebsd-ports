@@ -8,7 +8,7 @@
 PORTNAME?=	ipw-firmware
 RELNAME?=	ipw2100
 PORTVERSION?=	1.3
-PORTREVISION?=	9
+PORTREVISION?=	10
 CATEGORIES=	net sysutils kld
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flz/ipw
@@ -156,7 +156,7 @@ do-install:
 	${MKDIR} ${FWDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${FWDIR}/LICENSE.${DRIVERNAME}
 .for i in ${FIRMWARES}
-	${INSTALL_DATA} ${WRKSRC}/${i:C/:.*//} ${FWDIR}/${i:C/.*://}
+	${INSTALL_KLD} ${WRKSRC}/${i:C/:.*//} ${FWDIR}/${i:C/.*://}
 .endfor
 
 post-install:

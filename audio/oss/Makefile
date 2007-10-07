@@ -7,7 +7,7 @@
 
 PORTNAME=	oss
 DISTVERSION=	4.0-build1006
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio kld
 MASTER_SITES=	http://developer.opensound.com/sources/stable/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-cddl
@@ -77,7 +77,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/prototype/usr/lib/oss/version.dat ${PREFIX}/lib/oss
 	${INSTALL_DATA} ${WRKSRC}/prototype/usr/lib/oss/sysfiles.list ${PREFIX}/lib/oss
 	${MKDIR} ${PREFIX}/lib/oss/modules
-	${INSTALL_DATA} ${WRKSRC}/prototype/usr/lib/oss/modules/* ${PREFIX}/lib/oss/modules
+	${INSTALL_KLD} ${WRKSRC}/prototype/usr/lib/oss/modules/* ${PREFIX}/lib/oss/modules
 	${INSTALL_MAN} ${WRKSRC}/prototype/usr/man/man8/* ${PREFIX}/man/man8/
 	${INSTALL_MAN} ${WRKSRC}/prototype/usr/man/man1/* ${PREFIX}/man/man1/
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

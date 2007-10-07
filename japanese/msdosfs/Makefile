@@ -7,6 +7,7 @@
 
 PORTNAME=	msdosfs
 PORTVERSION=	${LAST_UPDATED}
+PORTREVISION=	1
 CATEGORIES=	japanese kld
 MASTER_SITES=	http://www.linkclub.or.jp/~clover/ \
 		${MASTER_SITE_LOCAL}
@@ -58,7 +59,7 @@ post-build:
 do-install:
 	${MKDIR} ${PREFIX}/lib/ja-msdosfs
 	${INSTALL_PROGRAM} ${WRKDIR}/mount_msdos/mount_jamsdos ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/msdos_ja.ko ${PREFIX}/lib/ja-msdosfs
+	${INSTALL_KLD} ${WRKSRC}/msdos_ja.ko ${PREFIX}/lib/ja-msdosfs
 	${INSTALL_SCRIPT} ${WRKDIR}/ja-msdosfs.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.post.mk>

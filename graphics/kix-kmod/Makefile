@@ -7,6 +7,7 @@
 
 PORTNAME=       kix
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=     graphics kld
 MASTER_SITES=   http://www.witchspace.com/files/
 PKGNAMESUFFIX=	-kmod
@@ -22,7 +23,7 @@ MAKE_ENV+=	WERROR=
 PLIST_FILES=	lib/kix_saver.ko
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/kix_saver.ko ${PREFIX}/lib
+	${INSTALL_KLD} ${WRKSRC}/kix_saver.ko ${PREFIX}/lib
 
 post-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}

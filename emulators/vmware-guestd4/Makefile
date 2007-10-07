@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators kld
 MASTER_SITES=	# bundled with VMware itself
 PKGNAMESUFFIX?=	-guestd
@@ -130,7 +130,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sbin/vmware-checkvm ${PREFIX}/sbin
 .if defined(WITH_VMWARE_VMMEMCTL)
 	${MKDIR} ${VMWARE_KMODDIR}
-	${INSTALL_PROGRAM} ${WRKDIR}/vmmemctl-only/vmmemctl.ko ${VMWARE_KMODDIR}
+	${INSTALL_KLD} ${WRKDIR}/vmmemctl-only/vmmemctl.ko ${VMWARE_KMODDIR}
 .endif
 	-${LOCALBASE}/sbin/vmware-guestd --cmd toolinstall.end
 .endif

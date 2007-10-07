@@ -7,6 +7,7 @@
 
 PORTNAME=	snespp
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://www.cse.unsw.edu.au/~tbourke/software/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -30,6 +31,6 @@ IGNORE=		versions of FreeBSD before 6.0 are not supported
 
 do-install:
 	@${INSTALL_MAN} ${WRKSRC}/snespp.4 ${PREFIX}/man/man4
-	@${INSTALL_PROGRAM} ${WRKSRC}/snespp.ko ${KMODDIR}
+	@${INSTALL_KLD} ${WRKSRC}/snespp.ko ${KMODDIR}
 
 .include <bsd.port.post.mk>

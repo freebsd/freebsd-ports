@@ -221,11 +221,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/sbin${BITS}${OSSFX}/vmware-checkvm ${PREFIX}/sbin
 .if defined(WITH_VMWARE_VMMEMCTL)
 	${MKDIR} ${VMWARE_KMODDIR}
-	${INSTALL_PROGRAM} ${WRKDIR}/vmmemctl-only/vmmemctl.ko ${VMWARE_KMODDIR}
+	${INSTALL_KLD} ${WRKDIR}/vmmemctl-only/vmmemctl.ko ${VMWARE_KMODDIR}
 .endif
 .if defined(WITH_VMWARE_VMXNET)
 	${MKDIR} ${VMWARE_KMODDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/modules/binary/FreeBSD${VMWARE_VMXNET_PATH} ${VMWARE_KMODDIR}
+	${INSTALL_KLD} ${WRKSRC}/lib/modules/binary/FreeBSD${VMWARE_VMXNET_PATH} ${VMWARE_KMODDIR}
 .endif
 	-${WRKSRC}/lib/sbin${BITS}${OSSFX}/vmware-guestd --cmd toolinstall.end 2>&1
 	${MKDIR} ${PREFIX}/share/vmware-tools

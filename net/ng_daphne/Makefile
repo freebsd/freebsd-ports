@@ -7,6 +7,7 @@
 
 PORTNAME=	ng_daphne
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net kld
 MASTER_SITES=	http://newton.ee.auth.gr/ng_daphne/
 
@@ -26,7 +27,7 @@ PLIST_FILES=	lib/ng_daphne.ko
 PORTDOCS=	README
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ng_daphne.ko ${PREFIX}/lib
+	${INSTALL_KLD} ${WRKSRC}/ng_daphne.ko ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
