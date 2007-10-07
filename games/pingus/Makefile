@@ -7,6 +7,7 @@
 
 PORTNAME=	pingus
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://pingus.seul.org/files/
 
@@ -23,7 +24,10 @@ USE_SCONS=	yes
 USE_SDL=	sdl image mixer
 
 PLIST=          ${WRKDIR}/pkg-plist
-SUB_FILES=	pkg-message
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|add_path("data")|add_path("${DATADIR}")|g' \
+		${WRKSRC}/src/pingus_main.cpp
 
 pre-install:
 	@${RM} -f ${PLIST}
@@ -39,8 +43,5 @@ do-install:
 		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

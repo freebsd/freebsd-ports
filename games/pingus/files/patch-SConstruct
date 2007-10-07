@@ -1,5 +1,14 @@
---- SConstruct.orig	2007-10-05 10:46:32.000000000 -0500
-+++ SConstruct	2007-10-05 11:09:38.000000000 -0500
+--- SConstruct.orig	2007-09-22 10:46:31.000000000 -0500
++++ SConstruct	2007-10-07 01:15:19.000000000 -0500
+@@ -326,7 +326,7 @@
+    not (os.path.exists('config.py') and os.path.exists('config.h')) and \
+    not GetOption('clean'):
+     opts = DefineOptions(None, ARGUMENTS)
+-    env = Environment(options = opts)
++    env = Environment(ENV = os.environ, options = opts)
+     Help(opts.GenerateHelpText(env))
+ 
+     opts.Update(env)
 @@ -337,7 +337,9 @@
      if os.environ.has_key('PKG_CONFIG_PATH'):
          env['ENV']['PKG_CONFIG_PATH'] = os.environ['PKG_CONFIG_PATH']
@@ -11,3 +20,11 @@
  
      config_h_defines = []      
  
+@@ -406,7 +408,6 @@
+ 
+     config_h = open('config.h', 'w')
+     config_h.write('#define VERSION "0.7.1"\n')
+-    config_h.write('#define ENABLE_BINRELOC 1\n')
+     config_h.write('#define ICONV_CONST\n') # FIXME: make a check for this
+     for (v,k) in config_h_defines:
+         config_h.write('#define %s %s\n' % (v, k))
