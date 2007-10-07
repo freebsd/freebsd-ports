@@ -19,8 +19,8 @@ COMMENT=	Sun Java Development Kit 1.6 for Linux
 EXTRACT_DEPENDS=${LINUX_BASE_PORT}
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
-NO_CDROM=	"License does not allow distribution with fee"
-RESTRICTED=	"Redistribution of repackaged binaries not permitted"
+NO_CDROM=	License does not allow distribution with fee
+RESTRICTED=	Redistribution of repackaged binaries not permitted
 LATEST_LINK=	linux-sun-jdk16
 
 WRKSRC=		${WRKDIR}/jdk${DL_JDK_VERSION}
