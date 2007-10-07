@@ -9,7 +9,7 @@ PORTNAME=	accessx
 PORTVERSION=	0.951
 PORTREVISION=	3
 CATEGORIES=	x11 accessibility
-MASTER_SITES=	http://www.disability.uiuc.edu/accessx/software/
+MASTER_SITES=	http://cmos-eng.rehab.uiuc.edu/accessx/software/
 DISTNAME=	accessx${PORTVERSION:S/.//g}
 
 MAINTAINER=	stephen@math.missouri.edu
