@@ -1,5 +1,5 @@
---- SLmake.inc.orig	Thu Jan 19 06:36:03 2006
-+++ SLmake.inc	Wed Mar  7 14:03:20 2007
+--- SLmake.inc.example	Thu Jan 19 06:36:03 2006
++++ SLmake.inc.example	Wed Mar  7 14:03:20 2007
 @@ -19,26 +19,26 @@
  #  The complete path to the top level of ScaLAPACK directory, usually
  #  $(HOME)/SCALAPACK

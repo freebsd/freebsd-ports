@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	scalapack
-PORTVERSION=	1.7.5
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.netlib.org/scalapack/ \
-		${MASTER_SITE_LOCAL:S/$/:install_ps/}
-MASTER_SITE_SUBDIR+= maho/scalapack/:install_ps
+MASTER_SITES=	ftp://ftp.netlib.org/scalapack/
 DISTFILES=	scalapack-${PORTVERSION}.tgz manpages.tgz
 .if !defined(NOPORTDOCS)
-DISTFILES+=	scalapack_install.ps:install_ps scalapackqref.ps  \
+DISTFILES+=	scalapack_install.ps scalapackqref.ps  \
 		lawn100.ps pblasqref.ps manual.ps design.ps \
 		pumma_refmanual.ps trans.ps
 .endif
@@ -24,7 +21,7 @@ EXTRACT_ONLY=	scalapack-${PORTVERSION}.tgz manpages.tgz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The ScaLAPACK Scalable LAPACK library
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/f2c:${PORTSDIR}/lang/f2c
+BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
 LIB_DEPENDS=	blacs.1:${PORTSDIR}/math/blacs
 
 CONFLICTS=	elmer-mathlibs-1*
@@ -50,10 +47,12 @@ WITH_ATLAS=		yes
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas -latlas
+LAPACK=		-lalapack -lcblas
 .else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
+LAPACK=		-llapack
 .endif
 
 .if exists(${LOCALBASE}/mpi/openmpi/bin/mpirun)
@@ -65,7 +64,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 EXTRA_PATCHES+=	${FILESDIR}/SLmake.inc-openmpi.diff
 .else
-LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
+#LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
+BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
 EXTRA_PATCHES+=	${FILESDIR}/SLmake.inc-mpich.diff
 .endif
 
@@ -93,10 +94,20 @@ CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops 
 .endif
 .endif
 
+NOOPT=	-O0
+.if defined(WITH_OPENMPI)
+MPIF77=	${LOCALBASE}/mpi/openmpi/bin/mpif77
+MPICC=	${LOCALBASE}/mpi/openmpi/bin/mpicc
+.else
+MPIF77=	${LOCALBASE}/mpich2/bin/mpif77
+MPICC=	${LOCALBASE}/mpich2/bin/mpicc
+.endif
+
 post-patch:
+	${CP} ${WRKSRC}/SLmake.inc.example ${WRKSRC}/SLmake.inc
 	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
-	@${REINPLACE_CMD} -e 's,@BLAS@,${BLAS},g; s,@WRKSRC@,${WRKSRC},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS},g ; s,@NOOPT@,,g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,^ARCH *.= ar,ARCMD = ar,' ${WRKSRC}/SLmake.inc
-	@${REINPLACE_CMD} -e 's,@BLAS@,${BLAS},g; s,@WRKSRC@,${WRKSRC_SHARED},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS_SHARED},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS_SHARED},g ; s,@NOOPT@,${FPIC},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,^ARCH *.= ar,ARCMD = ar,' ${WRKSRC_SHARED}/SLmake.inc
+	@${REINPLACE_CMD} -e 's,@BLAS@,${BLAS},g; s,@LAPACK@,${LAPACK},g;s,@LAPACK@,${LAPACK},g;s,@LAPACK@,${LAPACK},g;s,@LAPACK@,${LAPACK},g; s,@WRKSRC@,${WRKSRC},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@MPIF77@,${MPIF77},g ; s,@MPICC@,${MPICC},g ; s,@FFLAGS@,${FFLAGS},g ; s,@NOOPT@,${NOOPT},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,^ARCH *.= ar,ARCMD = ar,' ${WRKSRC}/SLmake.inc
+	@${REINPLACE_CMD} -e 's,@BLAS@,${BLAS},g; s,@LAPACK@,${LAPACK},g; s,@WRKSRC@,${WRKSRC_SHARED},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS_SHARED},g ; s,@F77@,${F77},g ; s,@MPIF77@,${MPIF77},g ; s,@MPICC@,${MPICC},g ; s,@FFLAGS@,${FFLAGS_SHARED},g ; s,@NOOPT@,${NOOPT} ${FPIC},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,^ARCH *.= ar,ARCMD = ar,' ${WRKSRC_SHARED}/SLmake.inc
 .for mkf in ${ARCH2FIX}
 	@${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC}/${mkf}/Makefile
 	@${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC_SHARED}/${mkf}/Makefile
