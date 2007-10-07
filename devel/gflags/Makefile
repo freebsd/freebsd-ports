@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gflags
-PORTVERSION=	0.2
+PORTVERSION=	0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://google-gflags.googlecode.com/files/
 
@@ -17,7 +17,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README gflags.html
+PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README gflags.html designstyle.css
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^docdir.*|docdir = ${DOCSDIR}|' ${WRKSRC}/Makefile.in
