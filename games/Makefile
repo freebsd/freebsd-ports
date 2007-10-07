@@ -9,6 +9,7 @@
     SUBDIR += 44bsd-hunt
     SUBDIR += 4stattack
     SUBDIR += 54321
+    SUBDIR += 8kingdoms
     SUBDIR += BillardGL
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic

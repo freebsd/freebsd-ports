@@ -1,0 +1,11 @@
+Theme of the game 8 Kingdoms is inspirated by the world of fantasy. Players 
+play on a fully 3D hex map. They construct buildings, recruit units including 
+infantry, mounted units, mages, catapults and finally they attack enemy or 
+help allies. Units gain experiences during the battle, each unit can get some 
+abilities upgraded to be stronger.
+
+Data are stored in XML and freely accessible from language versions to units 
+attributes, moreover map editor with random map generator is included for 
+comfortable map editing.
+
+WWW:	http://kralovstvi.sourceforge.net/
