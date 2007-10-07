@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L}
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A high dynamic-range (HDR) image file format
 
+LIB_DEPENDS=	Half.6:${PORTSDIR}/graphics/ilmbase
+
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
