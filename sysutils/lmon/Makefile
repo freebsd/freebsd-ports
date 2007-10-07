@@ -19,6 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFile
 		${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
 
 NO_BUILD=	yes
+USE_PERL5=	yes
 
 do-install:
 	${INSTALL} -d -m 0755 ${PREFIX}/${PORTNAME}

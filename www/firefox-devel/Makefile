@@ -35,6 +35,7 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4+
+WANT_PERL=	yes
 
 FIREFOX_ICON=		${MOZILLA}.xpm
 FIREFOX_ICON_SRC=	${PREFIX}/lib/firefox-devel/chrome/icons/default/default.xpm

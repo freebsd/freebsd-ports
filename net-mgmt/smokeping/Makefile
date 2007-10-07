@@ -22,6 +22,9 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
 		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
 
+NO_BUILD=	yes
+USE_PERL5=	yes
+
 OPTIONS=	FPING "Support for fping probes" on
 OPTIONS+=	ECHOPING "Support for EchoPing probes" off
 OPTIONS+=	CURL "Support for Curl probes" off
@@ -68,9 +71,6 @@ RUN_DEPENDS+=	${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet
 .ifdef(WITH_DNS)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 .endif
-
-NO_BUILD=	yes
-USE_PERL5=	yes
 
 USE_RC_SUBR=	smokeping
 

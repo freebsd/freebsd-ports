@@ -18,6 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 PLIST_FILES=	bin/scavenge
 
 NO_BUILD=	yes
+USE_PERL5=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scavenge ${PREFIX}/bin

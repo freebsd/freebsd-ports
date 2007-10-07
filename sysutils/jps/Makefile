@@ -18,6 +18,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN1=		jps.1
 MANCOMPRESSED=	yes
+USE_PERL5=	yes
 PLIST_FILES=	bin/jps
 
 .include <bsd.port.mk>

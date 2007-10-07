@@ -18,6 +18,7 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
 WANT_GNOME=	yes
+WANT_PERL=	yes
 ALL_TARGET=	default
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes

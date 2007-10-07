@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--disable-tcl
 GCONF_SCHEMAS=	apps_xchat.schemas notification.schemas urlscraper.schemas
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
+WANT_PERL=	yes
 
 MAN1=		xchat-gnome.1
 

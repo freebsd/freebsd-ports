@@ -19,6 +19,7 @@ RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
 
 NO_BUILD=	yes
 PLIST_FILES=	sbin/spampd
+USE_PERL5=	yes
 USE_RC_SUBR=	spampd
 
 do-install:

@@ -32,6 +32,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4+
 USE_GL=		yes
+WANT_PERL=	yes
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

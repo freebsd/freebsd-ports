@@ -18,6 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/Term/Animation.pm:${PORTSDIR}/devel/p5-Term-Animation
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
+USE_PERL5=	yes
 PLIST_FILES=	bin/asciiquarium
 
 do-install:

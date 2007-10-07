@@ -31,6 +31,30 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LATEST_LINK=	sympa5
 USE_APACHE=	1.3+
+HAS_CONFIGURE=	yes
+USE_PERL5=	5.8.6+
+CONFIGURE_ARGS+=--prefix=${PREFIX} \
+		--with-confdir=${PREFIX}/etc/sympa \
+		--with-initdir=${PREFIX}/etc/rc.d \
+		--with-etcdir=${PREFIX}/etc/sympa \
+		--with-cgidir=${PREFIX}/sympa/cgi-bin \
+		--with-iconsdir=${PREFIX}/sympa/icons \
+		--with-sbindir=${PREFIX}/sbin \
+		--with-libdir=${PREFIX}/lib/sympa \
+		--with-libexecdir=${PREFIX}/libexec/sympa \
+		--with-datadir=${DATADIR} \
+		--with-expldir=${PREFIX}/sympa/expl \
+		--with-lockdir=/var/spool/lock \
+		--with-piddir=/var/run \
+		--with-localedir=${PREFIX}/share/locale \
+		--with-docdir=${DOCSDIR} \
+		--with-sampledir=${EXAMPLESDIR} \
+		--with-spooldir=${PREFIX}/sympa/spool
+CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
+MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
+
+MAN8=		alias_manager.8 archived.8 bounced.8 sympa.8
+
 CONFLICTS=	sympa-4* sympa-5.[0-2]*
 
 DB_TYPE?=mysql
@@ -65,30 +89,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-
 .endif
 .endif
 .endif
-
-HAS_CONFIGURE=	yes
-USE_PERL5=	5.8.6+
-CONFIGURE_ARGS+=--prefix=${PREFIX} \
-		--with-confdir=${PREFIX}/etc/sympa \
-		--with-initdir=${PREFIX}/etc/rc.d \
-		--with-etcdir=${PREFIX}/etc/sympa \
-		--with-cgidir=${PREFIX}/sympa/cgi-bin \
-		--with-iconsdir=${PREFIX}/sympa/icons \
-		--with-sbindir=${PREFIX}/sbin \
-		--with-libdir=${PREFIX}/lib/sympa \
-		--with-libexecdir=${PREFIX}/libexec/sympa \
-		--with-datadir=${DATADIR} \
-		--with-expldir=${PREFIX}/sympa/expl \
-		--with-lockdir=/var/spool/lock \
-		--with-piddir=/var/run \
-		--with-localedir=${PREFIX}/share/locale \
-		--with-docdir=${DOCSDIR} \
-		--with-sampledir=${EXAMPLESDIR} \
-		--with-spooldir=${PREFIX}/sympa/spool
-CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
-MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
-
-MAN8=		alias_manager.8 archived.8 bounced.8 sympa.8
 
 pre-fetch:
 	@${ECHO} ""

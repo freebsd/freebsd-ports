@@ -17,6 +17,7 @@ COMMENT=	Some scripts for expressing how you feel on irc and the web
 NO_BUILD=	YES
 
 USE_BZIP2=	YES
+USE_PERL5=	YES
 
 SCRIPT=		${PORTNAME}.pl
 

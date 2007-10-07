@@ -18,6 +18,7 @@ COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota\
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 
+USE_PERL5=	yes
 USE_PHP=	pcre xml gettext session mcrypt ldap mhash iconv
 WANT_PHP_WEB=	yes
 NO_BUILD=	YES

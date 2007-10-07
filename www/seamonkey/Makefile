@@ -19,6 +19,7 @@ COMMENT=	The open source, standards compliant web browser
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
+WANT_PERL=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
 MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
