@@ -8,6 +8,7 @@
 
 PORTNAME=	rlwrap
 PORTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://utopia.knoware.nl/~hlub/uck/rlwrap/
 
@@ -15,22 +16,10 @@ MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Readline wrapper
 
 USE_GETOPT_LONG=	yes
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV+=	ptyttylib_cv_ptys=BSD LDFLAGS=-lutil
+CONFIGURE_ENV+=		ptyttylib_cv_ptys=BSD LDFLAGS=-lutil
 
 MAN1=	rlwrap.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500018
-# This port requires readline 4.2 or newer, which is only available
-# in the base system in FreeBSD 5.x.
-BUILD_DEPENDS+=		${PREFIX}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
-RUN_DEPENDS+=		${BUILD_DEPENDS}
-# Make sure the dynamic linker does not pick up
-# the older libreadline library from the base system.
-LDFLAGS+=		-rpath ${PREFIX}/lib
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
