@@ -4,10 +4,12 @@
 @unexec %D/etc/rc.d/nut_upslog forcestop 2>/dev/null || true
 @unexec %D/etc/rc.d/nut_upsmon forcestop 2>/dev/null || true
 @unexec %D/etc/rc.d/nut forcestop 2>/dev/null || true
+%%NUT_LIB%%bin/libupsclient-config
 bin/upsc
 bin/upscmd
 bin/upslog
 bin/upsrw
+bin/upssched-cmd
 etc/nut/cmdvartab
 etc/nut/driver.list
 etc/nut/ups.conf.sample
@@ -15,32 +17,34 @@ etc/nut/upsd.conf.sample
 etc/nut/upsd.users.sample
 etc/nut/upsmon.conf.sample
 etc/nut/upssched.conf.sample
+%%NUT_LIB%%include/parseconf.h
+%%NUT_LIB%%include/upsclient.h
+%%NUT_LIB%%lib/libupsclient.a
 libexec/nut/al175
 libexec/nut/apcsmart
 libexec/nut/bcmxcp
+%%NUT_USB%%libexec/nut/bcmxcp_usb
 libexec/nut/belkin
 libexec/nut/belkinunv
 libexec/nut/bestfcom
 libexec/nut/bestuferrups
 libexec/nut/bestups
-libexec/nut/blazer
 libexec/nut/cpsups
 libexec/nut/cyberpower
-libexec/nut/esupssmart
+libexec/nut/dummy-ups
 libexec/nut/etapro
 libexec/nut/everups
-libexec/nut/fentonups
 libexec/nut/gamatronic
 libexec/nut/genericups
-libexec/nut/ippon
 libexec/nut/isbmex
 libexec/nut/liebert
 libexec/nut/masterguard
 libexec/nut/megatec
+%%NUT_USB%%libexec/nut/megatec_usb
 libexec/nut/metasys
 libexec/nut/mge-shut
 libexec/nut/mge-utalk
-libexec/nut/mustek
+libexec/nut/newmge-shut
 libexec/nut/nitram
 libexec/nut/oneac
 libexec/nut/optiups
@@ -48,73 +52,35 @@ libexec/nut/powercom
 libexec/nut/powerpanel
 libexec/nut/rhino
 libexec/nut/safenet
-libexec/nut/sms
+%%NUT_SNMP%%libexec/nut/snmp-ups
+libexec/nut/skel
 libexec/nut/solis
 libexec/nut/tripplite
+%%NUT_USB%%libexec/nut/tripplite_usb
 libexec/nut/tripplitesu
 libexec/nut/upscode2
 libexec/nut/upsdrvctl
+%%NUT_USB%%libexec/nut/usbhid-ups
 libexec/nut/victronups
+%%NUT_LIB%%libdata/pkgconfig/libupsclient.pc
 sbin/upsd
 sbin/upsmon
 sbin/upssched
-%%CGIFILES%%upsimage.cgi
-%%CGIFILES%%upsset.cgi
-%%CGIFILES%%upsstats.cgi
-%%CGIETC%%hosts.conf.sample
-%%CGIETC%%upsset.conf.sample
-%%CGIETC%%upsstats.html.sample
-%%CGIETC%%upsstats-single.html.sample
-%%WWWFILES%%bottom.html
-%%WWWFILES%%header.html
-%%WWWFILES%%index.html
-%%WWWFILES%%nut-banner.png
-%%PORTDOCS%%@exec mkdir %D/%%DOCSDIR%%
-%%PORTDOCS%%@exec mkdir %D/%%DOCSDIR%%/cables
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
-%%PORTDOCS%%%%DOCSDIR%%/acpi.txt
-%%PORTDOCS%%%%DOCSDIR%%/al175-vars.txt
-%%PORTDOCS%%%%DOCSDIR%%/big-servers.txt
-%%PORTDOCS%%%%DOCSDIR%%/cables/apc-rs500-serial.txt
-%%PORTDOCS%%%%DOCSDIR%%/cables/apc.txt
-%%PORTDOCS%%%%DOCSDIR%%/cables/ge-imv-victron.txt
-%%PORTDOCS%%%%DOCSDIR%%/cables/imv.txt
-%%PORTDOCS%%%%DOCSDIR%%/cables/mgeups.txt
-%%PORTDOCS%%%%DOCSDIR%%/cables/powerware.txt
-%%PORTDOCS%%%%DOCSDIR%%/cables/repotec.txt
-%%PORTDOCS%%%%DOCSDIR%%/cables/sms.txt
-%%PORTDOCS%%%%DOCSDIR%%/chroot.txt
-%%PORTDOCS%%%%DOCSDIR%%/commands.txt
-%%PORTDOCS%%%%DOCSDIR%%/config-files.txt
-%%PORTDOCS%%%%DOCSDIR%%/configure.txt
-%%PORTDOCS%%%%DOCSDIR%%/contact-closure.txt
-%%PORTDOCS%%%%DOCSDIR%%/data-room.txt
-%%PORTDOCS%%%%DOCSDIR%%/design.txt
-%%PORTDOCS%%%%DOCSDIR%%/developers.txt
-%%PORTDOCS%%%%DOCSDIR%%/ideas.txt
-%%PORTDOCS%%%%DOCSDIR%%/hid-subdrivers.txt
-%%PORTDOCS%%%%DOCSDIR%%/megatec.txt
-%%PORTDOCS%%%%DOCSDIR%%/new-drivers.txt
-%%PORTDOCS%%%%DOCSDIR%%/new-names.txt
-%%PORTDOCS%%%%DOCSDIR%%/osd-notify.txt
-%%PORTDOCS%%%%DOCSDIR%%/pager.txt
-%%PORTDOCS%%%%DOCSDIR%%/powersaving.txt
-%%PORTDOCS%%%%DOCSDIR%%/protocol.txt
-%%PORTDOCS%%%%DOCSDIR%%/shutdown.txt
-%%PORTDOCS%%%%DOCSDIR%%/snmp.txt
-%%PORTDOCS%%%%DOCSDIR%%/sock-protocol.txt
-%%PORTDOCS%%%%DOCSDIR%%/ssl.txt
-%%PORTDOCS%%%%DOCSDIR%%/upssched.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cables
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%NUT_CGI%%%%CGIDIR%%/nut/upsimage.cgi
+%%NUT_CGI%%%%CGIDIR%%/nut/upsset.cgi
+%%NUT_CGI%%%%CGIDIR%%/nut/upsstats.cgi
+%%NUT_CGI%%%%CGIETCDIR%%/hosts.conf.sample
+%%NUT_CGI%%%%CGIETCDIR%%/upsset.conf.sample
+%%NUT_CGI%%%%CGIETCDIR%%/upsstats.html.sample
+%%NUT_CGI%%%%CGIETCDIR%%/upsstats-single.html.sample
+%%NUT_CGI%%%%WWWDIR%%/nut/bottom.html
+%%NUT_CGI%%%%WWWDIR%%/nut/header.html
+%%NUT_CGI%%%%WWWDIR%%/nut/index.html
+%%NUT_CGI%%%%WWWDIR%%/nut/nut-banner.png
 @dirrmtry etc/nut
 @dirrmtry libexec/nut
 @dirrmtry %%STATEDIR%%
-%%CGIDIRRM%%
-%%WWWDIRRM%%
+%%NUT_CGI%%@dirrm %%CGIDIR%%/nut
+%%NUT_CGI%%@dirrmtry %%CGIDIR%%
+%%NUT_CGI%%@dirrm %%WWWDIR%%/nut
+%%NUT_CGI%%@dirrmtry %%WWWDIR%%

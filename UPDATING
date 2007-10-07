@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20071007:
+  AFFECTS: users of sysutils/nut sysutils/nut-*
+  AUTHOR: Martin Matuska <mm@FreeBSD.org>
+
+  The slave ports sysutils/nut-libupsclient, sysutils/nut-snmp and 
+  sysutils/nut-usb have been removed with the upgrade of sysutils/nut to 2.2.0
+  They are now fully integrated into sysutils/nut and their functionality
+  can be enabled/disabled in OPTIONS of sysutils/nut.
+
+  Please uninstall all sysutils/nut-* slave ports before upgrading sysutils/nut
+  to version 2.2.0 or higher.
+
 20070930:
   AFFECTS: everyone
   AUTHOR: Mark Linimon <linimon@FreeBSD.org>
