@@ -22,6 +22,7 @@
     SUBDIR += ale
     SUBDIR += allegrogl
     SUBDIR += amanith
+    SUBDIR += ampasCTL
     SUBDIR += animorph
     SUBDIR += aoi
     SUBDIR += aolserver-nsgd
