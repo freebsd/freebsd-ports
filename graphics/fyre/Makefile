@@ -7,7 +7,7 @@
 
 PORTNAME=	fyre
 PORTVERSION=	1.0.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://samy.kerneled.org/ports/ \
 		http://www.felinemenace.org/~nemo/
@@ -16,7 +16,7 @@ MAINTAINER=	sbahra@gwu.edu
 COMMENT=	Chaos map rendering system with GTK+-2 interface
 
 BUILD_DEPENDS=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
-LIB_DEPENDS=	Half:${PORTSDIR}/graphics/OpenEXR \
+LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		gnet-2.0:${PORTSDIR}/net/gnet2
 
 USE_BZIP2=	yes

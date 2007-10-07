@@ -7,6 +7,7 @@
 
 PORTNAME=	qtpfsgui
 DISTVERSION=	1.8.10
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -15,7 +16,7 @@ COMMENT=	A graphical user interface that provides a workflow for HDR imaging
 
 LIB_DEPENDS=	exiv2.0:${PORTSDIR}/graphics/exiv2 \
 		fftw3f.4:${PORTSDIR}/math/fftw3-float \
-		IlmImf.4:${PORTSDIR}/graphics/OpenEXR \
+		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS=	qmake-qt4:${PORTSDIR}/devel/qmake4 \

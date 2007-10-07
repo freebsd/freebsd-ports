@@ -6,6 +6,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.44.1
+PORTREVISION=	1
 CATEGORIES=	graphics games
 MASTER_SITES=	CENKES
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		SDL.11:${PORTSDIR}/devel/sdl12 \
-		Half.4:${PORTSDIR}/graphics/OpenEXR \
+		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
