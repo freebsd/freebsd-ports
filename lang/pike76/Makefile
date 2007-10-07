@@ -81,18 +81,18 @@ USE_GETTEXT=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 
+# Allow building Embedded Perl
+CONFIGURE_ARGS+=	--with-perl
+USE_PERL5=	YES
+
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-.if ${ARCH} == "amd64" && ${OSVERSION} >= 700019 
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 700019
 BROKEN=	Does not compile
 .endif
-
-# Allow building Embedded Perl
-CONFIGURE_ARGS+=	--with-perl
-USE_PERL5=	YES
 
 .if defined(WITHOUT_RELOCATABLE_DUMPED_MODULES)
 CONFIGURE_ARGS+=	--without-relocatable-dumped-modules
