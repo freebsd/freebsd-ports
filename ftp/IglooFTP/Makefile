@@ -26,12 +26,12 @@ MAKE_ARGS=	CC=${CC} C_FLAGS="${CFLAGS}" DESTDIR=${PREFIX}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 post-extract:
 	@${RM} ${WRKSRC}/../share/docs/LICENSE~
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|(char) user_rc.default_session.firewall_login_type|user_rc.default_session.firewall_login_type|' \
+		${WRKSRC}/custom_io.h
 
 post-install:
 .if !defined(NOPORTDOCS)
