@@ -42,6 +42,7 @@ libexec/rancid/rancid-run
 libexec/rancid/rivlogin
 libexec/rancid/rivrancid
 libexec/rancid/rrancid
+libexec/rancid/srancid
 libexec/rancid/tntlogin
 libexec/rancid/tntrancid
 libexec/rancid/xrancid
