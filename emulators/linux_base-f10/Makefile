@@ -1,13 +1,12 @@
-# New ports collection makefile for:	linux_base-fc7
+# New ports collection makefile for:	linux_base-f7
 # Date created:				16 Sep 2007
 # Whom:					Boris Samorodov <bsam@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=		fc7
+PORTNAME=		f7
 PORTVERSION=		7
-PORTREVISION=		1
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../releases/${PORTVERSION}/Everything/${LINUX_RPM_ARCH}/os/Fedora

@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20071008:
+  AFFECTS: users of emulators/linux_base-fc7
+  AUTHOR: bsam@FreeBSD.org
+
+  Since Fedora is not more Core the port emulators/linux_base-fc7 is renamed
+  emulators/linux_base-f7. Now it's Fedora 7.
+
 20071007:
   AFFECTS: users of sysutils/nut sysutils/nut-*
   AUTHOR: Martin Matuska <mm@FreeBSD.org>
