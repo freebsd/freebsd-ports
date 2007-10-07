@@ -1,11 +1,12 @@
 bin/Mercury_Messenger
 %%INSTDIR%%/Mercury_Messenger
-%%VID%%%%INSTDIR%%/lib/VidConf-libs.jar
 %%INSTDIR%%/lib/dMSN.jar
-%%INSTDIR%%/lib/xpp3.jar
 %%INSTDIR%%/resources/AppData/CustomEmoticons/MSN7.zip
 %%INSTDIR%%/resources/AppData/Games/.keep_me
+%%INSTDIR%%/resources/AppData/Images/CaletzLogo.zip
 %%INSTDIR%%/resources/AppData/Images/Default.zip
+%%INSTDIR%%/resources/AppData/Images/TpvgamesLogo1.zip
+%%INSTDIR%%/resources/AppData/Images/TpvgamesLogo2.zip
 %%INSTDIR%%/resources/AppData/Plugins/.keep_me
 %%INSTDIR%%/resources/AppData/Skins/.keep_me
 %%INSTDIR%%/resources/AppData/Sounds/MSN Email.wav
@@ -13,6 +14,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Sounds/MSN Online.wav
 %%INSTDIR%%/resources/AppData/SplashWindow/Default.zip
 %%INSTDIR%%/resources/AppData/SplashWindow/Mercury.zip
+%%INSTDIR%%/resources/AppData/SplashWindow/Old Default.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/Danny.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/Dave.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/MMercury.zip
@@ -38,6 +40,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Views/Default_Participants.zip
 %%INSTDIR%%/resources/AppData/Views/RobsDroneV3.zip
 %%INSTDIR%%/resources/AppData/Views/RobsEventBox.zip
+%%INSTDIR%%/resources/AppData/Views/RobsSteam.zip
 %%INSTDIR%%/resources/AppData/Winks/BouncyBall.zip
 %%INSTDIR%%/resources/AppData/Winks/Crying.zip
 %%INSTDIR%%/resources/AppData/Winks/Dancer.zip
@@ -69,6 +72,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/settings/Window_View.xml
 %%INSTDIR%%/resources/xsl/EventLog.xsl
 %%INSTDIR%%/resources/xsl/MessageLog.xsl
+%%VID%%%%INSTDIR%%/lib/VidConf-libs.jar
 @dirrm %%INSTDIR%%/resources/xsl
 @dirrm %%INSTDIR%%/resources/settings
 @dirrm %%INSTDIR%%/resources/menu
