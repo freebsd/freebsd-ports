@@ -12,18 +12,20 @@ $FreeBSD$
  }
  
  use strict;
-@@ -53,8 +53,8 @@
+@@ -55,9 +55,9 @@
+ my $init = {};
  
  # location of openssl
- $init->{'opensslbin'} = "/usr/bin/openssl";
+-$init->{'opensslbin'} = "/usr/bin/openssl";
 -$init->{'zipbin'} = "/usr/bin/zip";
 -$init->{'tarbin'} = "/bin/tar";
++$init->{'opensslbin'} = "%%OPENSSLBASE%%/bin/openssl";
 +$init->{'zipbin'} = "%%PREFIX%%/bin/zip";
 +$init->{'tarbin'} = "/usr/bin/tar";
  
  if(not -x $init->{'opensslbin'}) {
     printf(gettext("Can't execute %s.\n"), $init->{'opensslbin'});
-@@ -73,7 +73,7 @@
+@@ -76,7 +76,7 @@
  }
  
  # directory with the templates

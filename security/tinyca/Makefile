@@ -7,7 +7,7 @@
 
 PORTNAME=	tinyca
 PORTVERSION=	0.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://tinyca.sm-zone.net/ \
 		http://tinyca.sm-zone.net/old/
@@ -39,7 +39,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/GUI/${file} ${SITE_PERL}/${PORTNAME}/GUI
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/templates/openssl.cnf ${PREFIX}/etc/tinyca.cnf.sample
-	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" -e "s:%%SITE_PERL%%:${SITE_PERL}:g" \
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
+		-e "s:%%SITE_PERL%%:${SITE_PERL}:g" \
+		-e "s:%%OPENSSLBASE%%:${OPENSSLBASE}:g" \
 		${WRKSRC}/tinyca2 >${WRKSRC}/tinyca.new
 	@${INSTALL_SCRIPT} ${WRKSRC}/tinyca.new ${PREFIX}/bin/tinyca
 
