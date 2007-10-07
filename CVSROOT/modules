@@ -376,6 +376,7 @@ amb-plugins	ports/audio/amb-plugins
 amiwm		ports/x11-wm/amiwm
 amoebax		ports/games/amoebax
 amp		ports/audio/amp
+ampasCTL	ports/graphics/ampasCTL
 amphetadesk	ports/www/amphetadesk
 amphetamine	ports/games/amphetamine
 ample		ports/audio/ample
