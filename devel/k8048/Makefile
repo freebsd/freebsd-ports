@@ -7,7 +7,7 @@
 
 PORTNAME=	k8048
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://dev.kewl.org/k8048/
 DISTNAME=	$(PORTNAME)
@@ -28,8 +28,10 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/${PORTNAME} \
 			   ${PREFIX}/bin/${PORTNAME}
+
+post-install:
 .for i in ${BIN_SYMLINKS}
-	${LN} -s ${PREFIX}/bin/${PORTNAME} ${PREFIX}/${i}
+	cd ${PREFIX} && ${LN} -s ${PORTNAME} ${i}
 .endfor
 
 .include <bsd.port.mk>
