@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070614:
+  AFFECTS: users of www/mediawiki
+  AUTHOR: miwi@FreeBSD.org
+
+  www/mediawiki version is 1.11 now. 1.10 version was preserved on
+  www/mediawiki110 port.
+
 20071008:
   AFFECTS: users of graphics/OpenEXR and graphics/ilmbase
   AUTHOR: nork@FreeBSD.org
