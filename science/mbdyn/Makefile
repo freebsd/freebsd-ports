@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mbdyn
-PORTVERSION=	1.2.6
-PORTREVISION=	2
+PORTVERSION=	1.2.7
 CATEGORIES=	science
-MASTER_SITES=	http://mbdyn.aero.polimi.it/~masarati/Download/mbdyn/
+MASTER_SITES=	http://www.aero.polimi.it/~masarati/Download/mbdyn/
 
 MAINTAINER=	kay_lehmann@web.de
 COMMENT=	A MultiBody Dynamics analysis system
@@ -22,16 +21,14 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--program-prefix='' --with-umfpack=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/suitesparse ${PTHREAD_CFLAGS}
 LDFLAGS+=	-lm -L${LOCALBASE}/lib ${PTHREAD_LIBS}
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 FORTRANLIBS=	-lgfortranbegin -lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+MAKE_ARGS+=	AUTOMAKE="${TRUE}"
 
 MAN1=		mbdyn.1
 
@@ -94,6 +91,10 @@ CONFIGURE_ARGS+=	--with-tcl=no
 .endif
 
 .if ${ARCH} == "sparc64"
+BROKEN=		Does not compile
+.endif
+
+.if ${OSVERSION} < 500000
 BROKEN=		Does not compile
 .endif
 
