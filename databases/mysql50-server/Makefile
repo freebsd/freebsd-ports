@@ -7,7 +7,7 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	5.0.45
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-5.0
@@ -89,6 +89,9 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 CFLAGS+=	-O3 -fno-omit-frame-pointer
 CFLAGS+=	-fno-gcse
 .endif
+.if defined(WITHOUT_THR_ALARM)
+CFLAGS+=	-DDONT_USE_THR_ALARM
+.endif
 CXXFLAGS+=	${CFLAGS} -felide-constructors -fno-rtti
 CXXFLAGS+=	-fno-exceptions
 
@@ -130,6 +133,9 @@ pre-fetch:
 	@${ECHO} "				(use it if you need speed)."
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
 	@${ECHO} "				(use it if you need even more speed)."
+	@${ECHO} "	WITHOUT_THR_ALARM=yes	Disable signals (this reduces kernel lock"
+	@${ECHO} "				contention on SMP, but has the side effect
+	@${ECHO} "				that you can't kill clients that are sleeping)."
 	@${ECHO} "	WITHOUT_INNODB=yes	Disable support for InnoDB table handler."
 	@${ECHO} "	WITH_ARCHIVE=yes	Enable support for Archive Storage Engine."
 	@${ECHO} "	WITH_CSV=yes		Enable support for CSV Storage Engine."
