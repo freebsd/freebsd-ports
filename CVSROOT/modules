@@ -1475,6 +1475,7 @@ cog		ports/sysutils/cog
 cogito		ports/devel/cogito
 coldsync	ports/palm/coldsync
 cole		ports/textproc/cole
+collectd	ports/net-mgmt/collectd
 collections	ports/java/collections
 color-mate	ports/editors/color-mate
 color-theme.el	ports/misc/color-theme.el
