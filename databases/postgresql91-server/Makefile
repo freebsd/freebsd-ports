@@ -38,6 +38,8 @@ GNU_CONFIGURE=	YES
 .undef GNU_CONFIGURE
 .endif
 
+IGNORE=		"Please ignore, work in progress"
+
 CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include \
 		--with-docdir=${DOCSDIR}
