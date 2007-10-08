@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gobby
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/ \
 		http://www.atarininja.org/~wxs/distfiles/
@@ -23,7 +23,8 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig gtksourceview
 
-PLIST_FILES=	bin/gobby share/pixmaps/gobby.png \
+PLIST_FILES=	bin/gobby \
+		share/pixmaps/gobby.png \
 		share/pixmaps/gobby/userlist.png \
 		share/pixmaps/gobby/doclist.png \
 		share/pixmaps/gobby/chat.png
