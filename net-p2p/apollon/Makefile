@@ -9,10 +9,9 @@ PORTNAME=	apollon
 PORTVERSION=	1.0.1
 PORTREVISION=	3
 CATEGORIES=	net-p2p
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	apollon
+MASTER_SITES=	SF
 
-MAINTAINER=	freebsd-ports@varju.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE client for giFT daemon
 
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift
