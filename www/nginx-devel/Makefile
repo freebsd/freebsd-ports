@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.6.11
-PORTREVISION=	1
+PORTVERSION=	0.6.13
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -29,6 +28,9 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_STATUS_MODULE "Enable http_stub_status module" on \
 		HTTP_SUB_MODULE "Enable http_sub module" off \
 		MAIL_MODULE "Enable IMAP4/POP3/SMTP proxy module" off \
+		MAIL_IMAP_MODULE "Enable IMAP4 proxy module" off \
+		MAIL_POP3_MODULE "Enable POP3 proxy module" off \
+		MAIL_SMTP_MODULE "Enable SMTP proxy module" off \
 		MAIL_SSL_MODULE "Enable mail_ssl module" off \
 		WWW "Enable html sample files" on
 
@@ -124,6 +126,15 @@ PLIST_SUB+=	WWWDATA="@comment "
 
 .if defined(WITH_MAIL_MODULE)
 CONFIGURE_ARGS+=--with-mail
+.if defined(WITHOUT_MAIL_IMAP_MODULE)
+CONFIGURE_ARGS+=--without-mail_proxy_imap_module
+.endif
+.if defined(WITHOUT_MAIL_POP3_MODULE)
+CONFIGURE_ARGS+=--without-mail_proxy_pop3_module
+.endif
+.if defined(WITHOUT_MAIL_SMTP_MODULE)
+CONFIGURE_ARGS+=--without-mail_proxy_smtp_module
+.endif
 .if defined(WITH_MAIL_SSL_MODULE)
 NGINX_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-mail_ssl_module
