@@ -276,6 +276,7 @@
     SUBDIR += libnids
     SUBDIR += libnss-mysql
     SUBDIR += libopennet
+    SUBDIR += liboping
     SUBDIR += libosip
     SUBDIR += libosip2
     SUBDIR += libpcap

@@ -1,0 +1,6 @@
+bin/oping
+include/oping.h
+lib/liboping.la
+lib/liboping.a
+lib/liboping.so
+lib/liboping.so.0
