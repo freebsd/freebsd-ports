@@ -6664,6 +6664,7 @@ libopennet	ports/net/libopennet
 libopenraw	ports/graphics/libopenraw
 libopensync	ports/devel/libopensync
 libopensync022	ports/devel/libopensync022
+liboping	ports/net/liboping
 liborigin	ports/math/liborigin
 libosip		ports/net/libosip
 libosip2	ports/net/libosip2
