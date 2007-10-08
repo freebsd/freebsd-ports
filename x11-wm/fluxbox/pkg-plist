@@ -3,6 +3,7 @@ bin/fbsetbg
 bin/fbsetroot
 bin/fluxbox
 bin/fluxbox-generate_menu
+bin/fluxbox-remote
 bin/fluxbox-update_configs
 bin/startfluxbox
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -118,15 +119,27 @@ bin/startfluxbox
 %%NLS:%%%%DATADIR%%/nls/cs_CZ.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/da_DK.ISO-8859-1/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/da_DK.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/de_AT.ISO-8859-15/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/de_AT.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/de_CH.ISO-8859-15/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/de_CH.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/de_DE.ISO-8859-15/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/de_DE.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/el_GR.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/en_GB.ISO-8859-1/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/en_GB.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/en_US.ISO-8859-1/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/en_US.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/es_AR.ISO-8859-15/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/es_AR.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/es_ES.ISO-8859-15/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/es_ES.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/et_EE.ISO-8859-15/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/et_EE.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/fi_FI.ISO-8859-1/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/fi_FI.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/fr_CH.ISO-8859-15/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/fr_CH.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/fr_FR.ISO-8859-15/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/fr_FR.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/it_IT.ISO-8859-1/fluxbox.cat
@@ -150,6 +163,8 @@ bin/startfluxbox
 %%NLS:%%%%DATADIR%%/nls/pt_PT.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/ru_RU.KOI8-R/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/ru_RU.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/sk_SK.ISO-8859-2/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/sk_SK.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/sl_SI.ISO-8859-2/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/sl_SI.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/sv_SE.ISO-8859-1/fluxbox.cat
@@ -159,7 +174,10 @@ bin/startfluxbox
 %%NLS:%%%%DATADIR%%/nls/uk_UA.KOI8-U/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/uk_UA.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/vi_VN.UTF-8/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/zh_CN.ISO-8859-1/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/zh_CN.BIG5/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/zh_CN.GB18030/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/zh_CN.GB2312/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/zh_CN.GBK/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/zh_CN.UTF-8/fluxbox.cat
 %%DATADIR%%/styles/Artwiz
 %%DATADIR%%/styles/BlueFlux/pixmaps/button_close_active.xpm
@@ -185,9 +203,6 @@ bin/startfluxbox
 %%DATADIR%%/styles/BlueFlux/pixmaps/toolbar_label.xpm
 %%DATADIR%%/styles/BlueFlux/theme.cfg
 %%DATADIR%%/styles/BlueNight
-%%DATADIR%%/styles/Carbondioxide
-%%DATADIR%%/styles/Clean
-%%DATADIR%%/styles/Cthulhain
 %%DATADIR%%/styles/Emerge/pixmaps/bullet.xpm
 %%DATADIR%%/styles/Emerge/pixmaps/close-pressed.xpm
 %%DATADIR%%/styles/Emerge/pixmaps/close-unfocus.xpm
@@ -212,23 +227,108 @@ bin/startfluxbox
 %%DATADIR%%/styles/Makro
 %%DATADIR%%/styles/MerleyKay
 %%DATADIR%%/styles/Meta
-%%DATADIR%%/styles/Minimal
 %%DATADIR%%/styles/Nyz
 %%DATADIR%%/styles/Operation
 %%DATADIR%%/styles/Outcomes
-%%DATADIR%%/styles/Rampage
 %%DATADIR%%/styles/Results
 %%DATADIR%%/styles/Shade
-%%DATADIR%%/styles/Spiff
 %%DATADIR%%/styles/Twice
+%%DATADIR%%/styles/arch/pixmaps/bullet.xpm
+%%DATADIR%%/styles/arch/pixmaps/closefcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/closepr.xpm
+%%DATADIR%%/styles/arch/pixmaps/closeufcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/frame.xpm
+%%DATADIR%%/styles/arch/pixmaps/gripfcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/maxfcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/maxpr.xpm
+%%DATADIR%%/styles/arch/pixmaps/maxufcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/menuiconfcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/menuiconpr.xpm
+%%DATADIR%%/styles/arch/pixmaps/menuiconufcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/minfcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/minpr.xpm
+%%DATADIR%%/styles/arch/pixmaps/minufcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/selected.xpm
+%%DATADIR%%/styles/arch/pixmaps/shadefcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/shadepr.xpm
+%%DATADIR%%/styles/arch/pixmaps/shadeufcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/stickfcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/stickpr.xpm
+%%DATADIR%%/styles/arch/pixmaps/stickufcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/stuckfcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/stuckufcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/tbarfcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/tbarufcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/unselected.xpm
+%%DATADIR%%/styles/arch/pixmaps/unshadefcs.xpm
+%%DATADIR%%/styles/arch/pixmaps/unshadepr.xpm
+%%DATADIR%%/styles/arch/pixmaps/unshadeufcs.xpm
+%%DATADIR%%/styles/arch/theme.cfg
+%%DATADIR%%/styles/bloe/pixmaps/bullet.xpm
+%%DATADIR%%/styles/bloe/pixmaps/closefcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/closepr.xpm
+%%DATADIR%%/styles/bloe/pixmaps/closeufcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/frame.xpm
+%%DATADIR%%/styles/bloe/pixmaps/maxfcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/maxpr.xpm
+%%DATADIR%%/styles/bloe/pixmaps/maxufcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/menuiconfcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/menuiconpr.xpm
+%%DATADIR%%/styles/bloe/pixmaps/menuiconufcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/minfcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/minpr.xpm
+%%DATADIR%%/styles/bloe/pixmaps/minufcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/selected.xpm
+%%DATADIR%%/styles/bloe/pixmaps/shadefcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/shadepr.xpm
+%%DATADIR%%/styles/bloe/pixmaps/shadeufcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/stickfcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/stickpr.xpm
+%%DATADIR%%/styles/bloe/pixmaps/stickufcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/stuckfcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/stuckufcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/tbarfcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/tbarufcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/unselected.xpm
+%%DATADIR%%/styles/bloe/pixmaps/unshadefcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/unshadepr.xpm
+%%DATADIR%%/styles/bloe/pixmaps/unshadeufcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/windowlabelfcs.xpm
+%%DATADIR%%/styles/bloe/pixmaps/windowlabelufcs.xpm
+%%DATADIR%%/styles/bloe/theme.cfg
+%%DATADIR%%/styles/bora_black/theme.cfg
+%%DATADIR%%/styles/bora_blue/theme.cfg
+%%DATADIR%%/styles/bora_green/theme.cfg
+%%DATADIR%%/styles/carp/theme.cfg
+%%DATADIR%%/styles/green_tea/theme.cfg
+%%DATADIR%%/styles/ostrich/theme.cfg
 %%DATADIR%%/styles/qnx-photon
+%%DATADIR%%/styles/zimek_bisque/theme.cfg
+%%DATADIR%%/styles/zimek_darkblue/theme.cfg
+%%DATADIR%%/styles/zimek_green/theme.cfg
+@dirrm %%DATADIR%%/styles/zimek_green
+@dirrm %%DATADIR%%/styles/zimek_darkblue
+@dirrm %%DATADIR%%/styles/zimek_bisque
+@dirrm %%DATADIR%%/styles/ostrich
+@dirrm %%DATADIR%%/styles/green_tea
+@dirrm %%DATADIR%%/styles/carp
+@dirrm %%DATADIR%%/styles/bora_green
+@dirrm %%DATADIR%%/styles/bora_blue
+@dirrm %%DATADIR%%/styles/bora_black
+@dirrm %%DATADIR%%/styles/bloe/pixmaps
+@dirrm %%DATADIR%%/styles/bloe
+@dirrm %%DATADIR%%/styles/arch/pixmaps
+@dirrm %%DATADIR%%/styles/arch
 @dirrm %%DATADIR%%/styles/Emerge/pixmaps
 @dirrm %%DATADIR%%/styles/Emerge
 @dirrm %%DATADIR%%/styles/BlueFlux/pixmaps
 @dirrm %%DATADIR%%/styles/BlueFlux
 @dirrm %%DATADIR%%/styles
 %%NLS:%%@dirrm %%DATADIR%%/nls/zh_CN.UTF-8
-%%NLS:%%@dirrm %%DATADIR%%/nls/zh_CN.ISO-8859-1
+%%NLS:%%@dirrm %%DATADIR%%/nls/zh_CN.GBK
+%%NLS:%%@dirrm %%DATADIR%%/nls/zh_CN.GB2312
+%%NLS:%%@dirrm %%DATADIR%%/nls/zh_CN.GB18030
+%%NLS:%%@dirrm %%DATADIR%%/nls/zh_CN.BIG5
 %%NLS:%%@dirrm %%DATADIR%%/nls/vi_VN.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/uk_UA.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/uk_UA.KOI8-U
@@ -238,6 +338,8 @@ bin/startfluxbox
 %%NLS:%%@dirrm %%DATADIR%%/nls/sv_SE.ISO-8859-1
 %%NLS:%%@dirrm %%DATADIR%%/nls/sl_SI.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/sl_SI.ISO-8859-2
+%%NLS:%%@dirrm %%DATADIR%%/nls/sk_SK.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/sk_SK.ISO-8859-2
 %%NLS:%%@dirrm %%DATADIR%%/nls/ru_RU.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/ru_RU.KOI8-R
 %%NLS:%%@dirrm %%DATADIR%%/nls/pt_PT.UTF-8
@@ -261,15 +363,27 @@ bin/startfluxbox
 %%NLS:%%@dirrm %%DATADIR%%/nls/it_IT.ISO-8859-1
 %%NLS:%%@dirrm %%DATADIR%%/nls/fr_FR.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/fr_FR.ISO-8859-15
+%%NLS:%%@dirrm %%DATADIR%%/nls/fr_CH.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/fr_CH.ISO-8859-15
+%%NLS:%%@dirrm %%DATADIR%%/nls/fi_FI.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/fi_FI.ISO-8859-1
 %%NLS:%%@dirrm %%DATADIR%%/nls/et_EE.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/et_EE.ISO-8859-15
 %%NLS:%%@dirrm %%DATADIR%%/nls/es_ES.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/es_ES.ISO-8859-15
 %%NLS:%%@dirrm %%DATADIR%%/nls/es_AR.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/es_AR.ISO-8859-15
+%%NLS:%%@dirrm %%DATADIR%%/nls/en_US.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/en_US.ISO-8859-1
+%%NLS:%%@dirrm %%DATADIR%%/nls/en_GB.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/en_GB.ISO-8859-1
 %%NLS:%%@dirrm %%DATADIR%%/nls/el_GR.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/de_DE.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/de_DE.ISO-8859-15
+%%NLS:%%@dirrm %%DATADIR%%/nls/de_CH.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/de_CH.ISO-8859-15
+%%NLS:%%@dirrm %%DATADIR%%/nls/de_AT.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/de_AT.ISO-8859-15
 %%NLS:%%@dirrm %%DATADIR%%/nls/da_DK.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/da_DK.ISO-8859-1
 %%NLS:%%@dirrm %%DATADIR%%/nls/cs_CZ.UTF-8
