@@ -2,4 +2,3 @@ bin/asunder
 share/applications/asunder.desktop
 share/pixmaps/asunder.png
 @dirrmtry share/applications
-
