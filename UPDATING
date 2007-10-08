@@ -7,6 +7,24 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20071008:
+  AFFECTS: users of graphics/OpenEXR and graphics/ilmbase
+  AUTHOR: nork@FreeBSD.org
+
+  The new OpenEXR (1.6 and later) separated two libraries. The first is IlmImf
+  library a.k.a. ILM's "EXR" file format operation library for storing 16-bit
+  FP images. The others are Half, IlmThread, Imath and Iex a.k.a. ILM's basic
+  utility libraries.
+
+  To portupgrade OpenEXR and related ports, please do following operations,
+  manually:
+
+  # pkg_delete -f OpenEXR
+  # pkg_delete -f ilmbase	(if you already installed before CONFLICT)
+  # cd /usr/ports/graphics/OpenEXR
+  # make install
+  # pkgdb -F
+
+20071008:
   AFFECTS: users of emulators/linux_base-fc7
   AUTHOR: bsam@FreeBSD.org
 
