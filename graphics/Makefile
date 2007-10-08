@@ -447,6 +447,7 @@
     SUBDIR += opencv
     SUBDIR += opendis
     SUBDIR += opendx
+    SUBDIR += openexr_ctl
     SUBDIR += opengl-man
     SUBDIR += openjpeg
     SUBDIR += openproducer
