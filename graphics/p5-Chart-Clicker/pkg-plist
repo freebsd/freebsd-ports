@@ -32,7 +32,9 @@
 %%SITE_PERL%%/Chart/Clicker/Renderer/Base.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Line.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Measurement.pm
+%%SITE_PERL%%/Chart/Clicker/Renderer/Pie.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Point.pm
+%%SITE_PERL%%/Chart/Clicker/Renderer/StackedBar.pm
 %%SITE_PERL%%/Chart/Clicker/Simple.pm
 %%SITE_PERL%%/Chart/Clicker/Shape.pm
 %%SITE_PERL%%/Chart/Clicker/Shape/Arc.pm
