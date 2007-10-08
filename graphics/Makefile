@@ -228,6 +228,7 @@
     SUBDIR += gozer
     SUBDIR += gpaint
     SUBDIR += gphoto2
+    SUBDIR += gpicview
     SUBDIR += gplot
     SUBDIR += gpsmanshp
     SUBDIR += gqview

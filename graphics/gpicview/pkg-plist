@@ -1,0 +1,11 @@
+bin/gpicview
+share/applications/gpicview.desktop
+%%DATADIR%%/pixmaps/clockwise.png
+%%DATADIR%%/pixmaps/counterclockwise.png
+%%DATADIR%%/pixmaps/fullscreen.png
+share/pixmaps/gpicview.png
+@dirrm %%DATADIR%%/pixmaps
+@dirrmtry share/applications
+@dirrm %%DATADIR%%
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
