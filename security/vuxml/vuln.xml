@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a5f667db-7596-11dc-8b7a-0019b944b34e">
+    <topic>xfs -- multiple vulnerabilites</topic>
+    <affects>
+      <package>
+	<name>xfs</name>
+	<range><lt>1.0.5,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthieu Herrb reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/xorg/2007-October/028899.html">
+	  <h1>Problem Description:</h1>
+          <p>Several vulnerabilities have been identified in xfs, the X font
+            server.  The QueryXBitmaps and QueryXExtents protocol requests
+            suffer from lack of validation of their 'length' parameters.</p>
+	  <h1>Impact:</h1>
+          <p>On most modern systems, the font server is accessible only for
+            local clients and runs with reduced privileges, but on some
+            systems it may still be accessible from remote clients and
+            possibly running with root privileges, creating an opportunity
+            for remote privilege escalation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-4568</cvename>
+      <url>http://lists.freedesktop.org/archives/xorg/2007-October/028899.html</url>
+    </references>
+    <dates>
+      <discovery>2007-10-02</discovery>
+      <entry>2007-10-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a058d6fa-7325-11dc-ae10-0016179b2dd5">
     <topic>tcl/tk -- buffer overflow in ReadImage function</topic>
     <affects>
