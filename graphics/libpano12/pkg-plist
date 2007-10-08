@@ -1,9 +1,5 @@
 bin/PTOptimizer
-bin/PTblender
-bin/PTmender
-bin/PTtiff2psd
-bin/PTuncrop
-bin/panoinfo
+bin/pano12info
 include/pano12/PTcommon.h
 include/pano12/filter.h
 include/pano12/panorama.h

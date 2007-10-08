@@ -1,11 +1,17 @@
---- bootstrap.orig	2005-01-07 01:26:26.000000000 -0800
-+++ bootstrap	2007-09-22 19:46:15.000000000 -0700
-@@ -44,3 +44,3 @@
- 	case $autoconf_version in
--	    2.5*)
-+	    2.[56]*)
- 		have_autoconf=true
-@@ -98,25 +98 @@
+--- bootstrap.orig	2006-09-07 21:19:28.000000000 +0300
++++ bootstrap	2007-10-05 19:29:22.000000000 +0300
+@@ -60,7 +60,7 @@
+ 	automake_version=`$AUTOMAKE --version | sed 's/^[^0-9]*\([0-9.][0-9.]*\).*/\1/'`
+ #	echo automake version: $automake_version
+ 	case $automake_version in
+-	    1.7*|1.8*|1.9*)
++	    1.7*|1.8*|1.9*|1.[1-9][0-9]*)
+ 		have_automake=true
+ 		;;
+ 	esac
+@@ -96,27 +96,3 @@
+ $AUTOMAKE --add-missing --copy || exit $?
+ 
  $AUTOCONF || exit $?
 -
 -cd $ORIGDIR || exit $?
