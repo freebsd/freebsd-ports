@@ -8,20 +8,20 @@
 
 PORTNAME=	grabc
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
-MASTER_SITES=	http://muquit.com/muquit/software/grabc/
+MASTER_SITES=	http://muquit.com/muquit/software/grabc/ \
+		http://www.carpetsmoker.net/distfiles/ \
+		http://www.xs4all.nl/~tournoij/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	Grab a color from screen
-
-BROKEN=		Checksum mismatch
 
 PLIST_FILES=	bin/grabc
 USE_XLIB=	yes
-CFLAGS+=	-I${X11BASE}/include
-LIBS+=		-L${X11BASE}/lib -lX11
+CFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lX11
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c ${LIBS}
