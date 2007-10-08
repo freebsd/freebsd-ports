@@ -4,12 +4,13 @@ bin/vncpasswd
 bin/vncserver
 bin/vncviewer
 %%DATADIR%%/classes/AuthPanel.class
-%%DATADIR%%/classes/AuthUnixLoginPanel.class
 %%DATADIR%%/classes/ButtonPanel.class
 %%DATADIR%%/classes/CapabilityInfo.class
 %%DATADIR%%/classes/CapsContainer.class
 %%DATADIR%%/classes/ClipboardFrame.class
 %%DATADIR%%/classes/DesCipher.class
+%%DATADIR%%/classes/InStream.class
+%%DATADIR%%/classes/MemInStream.class
 %%DATADIR%%/classes/OptionsFrame.class
 %%DATADIR%%/classes/RecordingFrame.class
 %%DATADIR%%/classes/ReloginPanel.class
@@ -17,8 +18,10 @@ bin/vncviewer
 %%DATADIR%%/classes/SessionRecorder.class
 %%DATADIR%%/classes/SocketFactory.class
 %%DATADIR%%/classes/VncCanvas.class
+%%DATADIR%%/classes/VncCanvas2.class
 %%DATADIR%%/classes/VncViewer.class
 %%DATADIR%%/classes/VncViewer.jar
+%%DATADIR%%/classes/ZlibInStream.class
 %%DATADIR%%/classes/index.vnc
 @dirrm %%DATADIR%%/classes
 @dirrm %%DATADIR%%
