@@ -7,6 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://musicpd.org/uploads/files/ \
 		http://redundancy.redundancy.org/mirror/
@@ -32,11 +33,11 @@ OPTIONS=	FLAC "Support for FLAC Audio" on \
 		ICONV "Support for international characters" on \
 	        ID3TAG "Support for id3v1 tag encoding" off \
 		IPV6 "Support for IPV6" on \
-		AO "Support for libao" off
+		AO "Support for libao" off \
+		PULSE "Support for PulseAudio" off
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--disable-pulse \
-		--disable-shout
+CONFIGURE_ARGS=	--disable-shout
 
 .include <bsd.port.pre.mk>
 
@@ -95,6 +96,12 @@ CONFIGURE_ARGS+=--disable-ipv6
 .ifdef(WITH_AO)
 CONFIGURE_ARGS+=--enable-ao
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+.endif
+
+.ifdef(WITHOUT_PULSE)
+CONFIGURE_ARGS+=--disable-pulse
+.else
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 .endif
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
