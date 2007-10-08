@@ -9,8 +9,7 @@
 # tools.
 
 PORTNAME=	libpano12
-PORTVERSION=	2.8.4
-PORTREVISION=	2
+PORTVERSION=	2.8.6
 CATEGORIES=	graphics java
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	panotools
@@ -51,9 +50,5 @@ CONFIGURE_ARGS+=	--without-java
 
 pre-configure:
 	cd ${WRKSRC} && ./bootstrap
-#\
-#	${SETENV} ${AUTOTOOLS_ENV} \
-#	ACLOCAL="${ACLOCAL} -I ${LOCALBASE}/share/aclocal" \
-#	./bootstrap
 
 .include <bsd.port.mk>
