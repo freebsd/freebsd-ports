@@ -167,6 +167,7 @@ post-patch:
 		${WRKSRC}/platforms/unix/npsqueak/npsqueakregister.in \
 		${WRKSRC}/platforms/unix/npsqueak/npsqueakrun.in \
 		${WRKSRC}/platforms/unix/npsqueak/Makefile
+	@${REINPLACE_CMD} -e "s,echo aout,echo elf," ${WRKSRC}/platforms/unix/config/configure
 .if defined(WITH_XIM)
 	@cd ${WRKSRC} && \
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${XIM_PATCH} ${EXTRACT_AFTER_ARGS}
