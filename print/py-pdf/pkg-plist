@@ -1,0 +1,16 @@
+%%PYTHON_SITELIBDIR%%/pyPdf/__init__.py
+%%PYTHON_SITELIBDIR%%/pyPdf/filters.py
+%%PYTHON_SITELIBDIR%%/pyPdf/generic.py
+%%PYTHON_SITELIBDIR%%/pyPdf/pdf.py
+%%PYTHON_SITELIBDIR%%/pyPdf/utils.py
+%%PYTHON_SITELIBDIR%%/pyPdf/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyPdf/filters.pyc
+%%PYTHON_SITELIBDIR%%/pyPdf/generic.pyc
+%%PYTHON_SITELIBDIR%%/pyPdf/pdf.pyc
+%%PYTHON_SITELIBDIR%%/pyPdf/utils.pyc
+%%PYTHON_SITELIBDIR%%/pyPdf/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyPdf/filters.pyo
+%%PYTHON_SITELIBDIR%%/pyPdf/generic.pyo
+%%PYTHON_SITELIBDIR%%/pyPdf/pdf.pyo
+%%PYTHON_SITELIBDIR%%/pyPdf/utils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pyPdf
