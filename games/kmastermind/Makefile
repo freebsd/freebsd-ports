@@ -27,6 +27,6 @@ pre-configure:
 		`cd ${PORTSDIR}/x11/kdelibs3 && ${MAKE} -V WRKSRC`/admin \
 		${WRKSRC}/admin
 	${TOUCH} ${WRKSRC}/NEWS
-	cd ${WRKSRC}; ${MAKE} -f admin/Makefile.common cvs
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} -f admin/Makefile.common cvs
 
 .include <bsd.port.mk>
