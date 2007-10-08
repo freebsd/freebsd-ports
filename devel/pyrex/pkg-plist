@@ -1,4 +1,7 @@
 bin/pyrexc
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Builtin.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Builtin.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Builtin.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/CmdLine.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/CmdLine.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/CmdLine.pyo
@@ -63,6 +66,15 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Distutils/build_ext.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Distutils/build_ext.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Distutils/build_ext.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Distutils/extension.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Distutils/extension.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Distutils/extension.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/DistutilsOld/__init__.py
+%%PYTHON_SITELIBDIR%%/Pyrex/DistutilsOld/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/DistutilsOld/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/DistutilsOld/build_ext.py
+%%PYTHON_SITELIBDIR%%/Pyrex/DistutilsOld/build_ext.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/DistutilsOld/build_ext.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.pyo
@@ -129,17 +141,23 @@ bin/pyrexc
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Unix
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Plex
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Mac
+@dirrm %%PYTHON_SITELIBDIR%%/Pyrex/DistutilsOld
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Distutils
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Compiler
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex
 %%PORTDOCS%%%%DOCSDIR%%/About.html
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html
-%%PORTDOCS%%%%DOCSDIR%%/extension_types.html
+%%PORTDOCS%%%%DOCSDIR%%/LanguageOverview.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual/Limitations.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual/basics.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual/extension_types.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual/external.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual/overview_hacked.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual/sharing.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual/source_files.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual/special_methods.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/primes.c
-%%PORTDOCS%%%%DOCSDIR%%/sharing.html
-%%PORTDOCS%%%%DOCSDIR%%/special_methods.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile.nodistutils
 %%PORTDOCS%%%%EXAMPLESDIR%%/Setup.py
@@ -168,4 +186,5 @@ bin/pyrexc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/embed
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/callback
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
