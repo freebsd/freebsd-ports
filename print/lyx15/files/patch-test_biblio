@@ -1,0 +1,88 @@
+--- src/frontends/controllers/tests//Makefile.am	Wed Apr 25 20:04:04 2007
++++ src/frontends/controllers/tests//Makefile.am	Wed Sep 12 21:12:51 2007
+@@ -1,14 +1,12 @@
+ include $(top_srcdir)/config/common.am
+ 
+-EXTRA_DIST = pch.h test_biblio
++EXTRA_DIST = pch.h
+ 
+ BUILT_SOURCES = $(PCH_FILE)
+ 
+ TESTS = \
+-	test_biblio
+ 
+ check_PROGRAMS = \
+-	biblio
+ 
+ AM_CPPFLAGS += $(BOOST_INCLUDES)
+ 
+--- src/frontends/controllers/tests//Makefile.in	Sat Aug  4 14:50:11 2007
++++ src/frontends/controllers/tests//Makefile.in	Wed Sep 12 21:14:00 2007
+@@ -33,7 +33,7 @@
+ target_triplet = @target@
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+ 	$(top_srcdir)/config/common.am
+-check_PROGRAMS = biblio$(EXEEXT)
++check_PROGRAMS = 
+ subdir = src/frontends/controllers/tests
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/config/libtool.m4 \
+@@ -58,12 +58,6 @@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/src/config.h
+ CONFIG_CLEAN_FILES =
+-am_biblio_OBJECTS = biblio.$(OBJEXT) boost.$(OBJEXT)
+-biblio_OBJECTS = $(am_biblio_OBJECTS)
+-@USE_INCLUDED_BOOST_TRUE@am__DEPENDENCIES_1 = $(top_builddir)/boost/libs/regex/src/libboost_regex.la
+-biblio_DEPENDENCIES = $(am__DEPENDENCIES_1)
+-DEFAULT_INCLUDES = -I. -I$(top_builddir)/src@am__isrc@
+-depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+ am__depfiles_maybe = depfiles
+ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+@@ -74,8 +68,8 @@
+ CXXLINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+-SOURCES = $(biblio_SOURCES)
+-DIST_SOURCES = $(biblio_SOURCES)
++SOURCES = 
++DIST_SOURCES = 
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+@@ -287,15 +281,9 @@
+ @USE_INCLUDED_BOOST_TRUE@BOOST_SIGNALS = $(top_builddir)/boost/libs/signals/src/libboost_signals.la
+ @USE_INCLUDED_BOOST_FALSE@BOOST_IOSTREAMS = -lboost_iostreams
+ @USE_INCLUDED_BOOST_TRUE@BOOST_IOSTREAMS = $(top_builddir)/boost/libs/iostreams/src/libboost_iostreams.la
+-EXTRA_DIST = pch.h test_biblio
++EXTRA_DIST = pch.h 
+ BUILT_SOURCES = $(PCH_FILE)
+ TESTS = \
+-	test_biblio
+-
+-biblio_LDADD = $(BOOST_REGEX)
+-biblio_SOURCES = \
+-	biblio.cpp \
+-	boost.cpp
+ 
+ all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+@@ -338,9 +326,6 @@
+ 	  echo " rm -f $$p $$f"; \
+ 	  rm -f $$p $$f ; \
+ 	done
+-biblio$(EXEEXT): $(biblio_OBJECTS) $(biblio_DEPENDENCIES) 
+-	@rm -f biblio$(EXEEXT)
+-	$(CXXLINK) $(biblio_OBJECTS) $(biblio_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
+@@ -348,7 +333,6 @@
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/biblio.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/boost.Po@am__quote@
+ 
+ .cpp.o:
