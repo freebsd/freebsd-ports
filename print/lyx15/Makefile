@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.4.4
+PORTVERSION=	1.5.1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.planetmirror.com/pub/lyx/stable/ \
@@ -17,29 +17,40 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.chg.ru/pub/X11/lyx/stable/ \
 		http://lyx.mirror.fr/stable/
 
-MAINTAINER=	mi@aldan.algebra.com
-COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
+MAINTAINER=	trash.esiac@gmail.com
+COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG) (stable)
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
+		${X11BASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost
 
-OPTIONS=	QT	"Use Qt (instead of XForms)"	${QT_PRESENT}	\
-		ASPELL	"Utilize ASPELL library"	on	\
+LATEST_LINK=	lyx15
+CFLAGS+=	${PTHREAD_CFLAGS}
+CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
+
+OPTIONS=	ASPELL	"Utilize ASPELL library"	on	\
 		AIKSAUR	"Build Aiksaurus support (English thesaurus)"	on	\
-		ISPELL	"Depend on ISPELL as well"	off
+		NLS     "Native language support"	On	\
+		INCGT	"Use the included Gettext library"	off
+
 ALL_TARGET=	all check
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget lthack
 USE_PERL5=	yes
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	gui corelib moc uic
+
+CONFLICTS=	lyx-1.4.*
+
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - --exclude ${PORTNAME}-${PORTVERSION}/intl/*.[ch] --exclude ${PORTNAME}-${PORTVERSION}/boost
 CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
+		--with-extra-inc="${LOCALBASE}/include/Qt* ${LOCALBASE}/include" \
 		--without-included-boost \
-		--with-extra-inc="${LOCALBASE}/include"
+		--with-frontend=qt4
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 MAN1=		lyx.1 tex2lyx.1 lyxclient.1
@@ -51,9 +62,7 @@ post-patch:
 	    ${WRKSRC}/src/pch.h ${WRKSRC}/src/support/pch.h \
 	    ${WRKSRC}/src/support/debugstream.h
 	${REINPLACE_CMD} -e 's,boost/regex\.hpp,boost/cregex.hpp,' \
-	    ${WRKSRC}/src/support/filetools.C
-	${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,'	\
-	    ${WRKSRC}/src/support/tests/test_*
+	    ${WRKSRC}/src/support/filetools.cpp
 
 pre-configure:
 	# If the installed Boost is 1.34 or later, we must compile
@@ -75,25 +84,13 @@ PLIST_SUB+=	PSRES=
 PLIST_SUB+=	PSRES='@comment '
 .endif
 
-.if defined(WITH_AIKSAUR)
+.if !defined(WITHOUT_AIKSAUR)
 LIB_DEPENDS+=	Aiksaurus:${PORTSDIR}/textproc/aiksaurus
 .else
 CONFIGURE_ARGS+=--without-aiksaurus
 .endif
 
-.if defined(WITH_QT)
-LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
-CONFIGURE_ARGS+=	--with-frontend=qt
-CFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
-.else
-LIB_DEPENDS+=	forms:${PORTSDIR}/x11-toolkits/xforms
-CONFIGURE_ARGS+=--with-frontend=xforms
-USE_XPM=	yes
-.endif
-
-.if defined(WITH_ASPELL)
+.if !defined(WITHOUT_ASPELL)
 LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--with-pspell \
 			--with-pspell-lib="${LOCALBASE}/lib" \
@@ -102,22 +99,16 @@ CONFIGURE_ARGS+=	--with-pspell \
 CONFIGURE_ARGS+=--without-aspell --without-pspell
 .endif
 
-.if defined(WITH_ISPELL)
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
+.if !defined(WITHOUT_NLS)
+.if defined(WITH_INCGT)
+CONFIGURE_ARGS+=	--with-included-gettext
 .else
-CONFIGURE_ARGS+=--without-ispell
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
 .endif
-
-.if exists(${X11BASE}/lib/libqt-mt.prl)
-QT_PRESENT=	on
 .else
-QT_PRESENT=	off
-.endif
-
-.if ${OSVERSION} < 500035
-CFLAGS+=	-Wno-non-template-friend -ftemplate-depth-30
-.elif ${OSVERSION} >= 700007 && ${ARCH} == i386 && ${CXX} == c++
-#BROKEN=		C++ compiler seg-faults, try using a different one and report to ${MAINTAINER}
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include <bsd.port.post.mk>

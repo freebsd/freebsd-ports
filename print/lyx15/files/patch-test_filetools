@@ -1,0 +1,111 @@
+--- src/support/tests/Makefile.am	Wed Sep 12 14:50:37 2007
++++ src/support/tests/Makefile.am	Wed Sep 12 14:50:52 2007
+@@ -1,17 +1,15 @@
+ include $(top_srcdir)/config/common.am
+ 
+-EXTRA_DIST = pch.h test_convert test_filetools test_lstrings regfiles
++EXTRA_DIST = pch.h test_convert test_lstrings regfiles
+ 
+ BUILT_SOURCES = $(PCH_FILE)
+ 
+ TESTS = \
+ 	test_convert \
+-	test_filetools \
+ 	test_lstrings
+ 
+ check_PROGRAMS = \
+ 	convert \
+-	filetools \
+ 	lstrings
+ 
+ AM_CPPFLAGS += $(BOOST_INCLUDES) -I$(srcdir)/../..
+@@ -21,11 +19,6 @@
+ convert_LDFLAGS = $(QT4_CORE_LDFLAGS)
+ convert_SOURCES = \
+ 	convert.cpp \
+-	boost.cpp
+-
+-filetools_LDADD = ../../debug.o ../libsupport.la $(BOOST_REGEX) $(BOOST_FILESYSTEM)
+-filetools_SOURCES = \
+-	filetools.cpp \
+ 	boost.cpp
+ 
+ lstrings_LDADD = ../../debug.o ../lstrings.o ../convert.o ../docstring.o ../unicode.o ../qstring_helpers.o $(QT4_CORE_LIB)
+--- src/support/tests/Makefile.in	Wed Sep 12 14:50:44 2007
++++ src/support/tests/Makefile.in	Wed Sep 12 14:50:58 2007
+@@ -33,7 +33,7 @@
+ target_triplet = @target@
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+ 	$(top_srcdir)/config/common.am ChangeLog
+-check_PROGRAMS = convert$(EXEEXT) filetools$(EXEEXT) lstrings$(EXEEXT)
++check_PROGRAMS = convert$(EXEEXT) lstrings$(EXEEXT)
+ subdir = src/support/tests
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/config/libtool.m4 \
+@@ -68,11 +68,6 @@
+ convert_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) \
+ 	$(convert_LDFLAGS) $(LDFLAGS) -o $@
+-am_filetools_OBJECTS = filetools.$(OBJEXT) boost.$(OBJEXT)
+-filetools_OBJECTS = $(am_filetools_OBJECTS)
+-@USE_INCLUDED_BOOST_TRUE@am__DEPENDENCIES_3 = $(top_builddir)/boost/libs/filesystem/src/libboost_filesystem.la
+-filetools_DEPENDENCIES = ../../debug.o ../libsupport.la \
+-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_3)
+ am_lstrings_OBJECTS = lstrings.$(OBJEXT) boost.$(OBJEXT)
+ lstrings_OBJECTS = $(am_lstrings_OBJECTS)
+ lstrings_DEPENDENCIES = ../../debug.o ../lstrings.o ../convert.o \
+@@ -93,9 +88,8 @@
+ CXXLINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+-SOURCES = $(convert_SOURCES) $(filetools_SOURCES) $(lstrings_SOURCES)
+-DIST_SOURCES = $(convert_SOURCES) $(filetools_SOURCES) \
+-	$(lstrings_SOURCES)
++SOURCES = $(convert_SOURCES) $(lstrings_SOURCES)
++DIST_SOURCES = $(convert_SOURCES) $(lstrings_SOURCES)
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+@@ -307,11 +301,10 @@
+ @USE_INCLUDED_BOOST_TRUE@BOOST_SIGNALS = $(top_builddir)/boost/libs/signals/src/libboost_signals.la
+ @USE_INCLUDED_BOOST_FALSE@BOOST_IOSTREAMS = -lboost_iostreams
+ @USE_INCLUDED_BOOST_TRUE@BOOST_IOSTREAMS = $(top_builddir)/boost/libs/iostreams/src/libboost_iostreams.la
+-EXTRA_DIST = pch.h test_convert test_filetools test_lstrings regfiles
++EXTRA_DIST = pch.h test_convert test_lstrings regfiles
+ BUILT_SOURCES = $(PCH_FILE)
+ TESTS = \
+ 	test_convert \
+-	test_filetools \
+ 	test_lstrings
+ 
+ convert_LDADD = ../../debug.o ../convert.o ../docstring.o ../lstrings.o ../unicode.o ../qstring_helpers.o $(BOOST_REGEX) $(QT4_CORE_LIB)
+@@ -320,11 +313,6 @@
+ 	convert.cpp \
+ 	boost.cpp
+ 
+-filetools_LDADD = ../../debug.o ../libsupport.la $(BOOST_REGEX) $(BOOST_FILESYSTEM)
+-filetools_SOURCES = \
+-	filetools.cpp \
+-	boost.cpp
+-
+ lstrings_LDADD = ../../debug.o ../lstrings.o ../convert.o ../docstring.o ../unicode.o ../qstring_helpers.o $(QT4_CORE_LIB)
+ lstrings_LDFLAGS = $(QT4_CORE_LDFLAGS)
+ lstrings_SOURCES = \
+@@ -375,9 +363,6 @@
+ convert$(EXEEXT): $(convert_OBJECTS) $(convert_DEPENDENCIES) 
+ 	@rm -f convert$(EXEEXT)
+ 	$(convert_LINK) $(convert_OBJECTS) $(convert_LDADD) $(LIBS)
+-filetools$(EXEEXT): $(filetools_OBJECTS) $(filetools_DEPENDENCIES) 
+-	@rm -f filetools$(EXEEXT)
+-	$(CXXLINK) $(filetools_OBJECTS) $(filetools_LDADD) $(LIBS)
+ lstrings$(EXEEXT): $(lstrings_OBJECTS) $(lstrings_DEPENDENCIES) 
+ 	@rm -f lstrings$(EXEEXT)
+ 	$(lstrings_LINK) $(lstrings_OBJECTS) $(lstrings_LDADD) $(LIBS)
+@@ -390,7 +375,6 @@
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/boost.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/convert.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filetools.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lstrings.Po@am__quote@
+ 
+ .cpp.o:
