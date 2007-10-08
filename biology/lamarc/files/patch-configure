@@ -1,0 +1,11 @@
+--- configure.orig	Wed May  2 05:59:05 2007
++++ configure	Thu Aug 30 18:26:42 2007
+@@ -1494,7 +1494,7 @@
+         OSTYPE=MACOSX
+         GUI_PKG=mac
+         ;;
+-    linux*)
++    freebsd*|linux*)
+         OSTYPE=LINUX
+         GUI_PKG=gtk2
+         ;;

@@ -6,22 +6,29 @@
 #
 
 PORTNAME=	lamarc
-PORTVERSION=	2001.08.06
-PORTREVISION=	1
+PORTVERSION=	2.1
+PORTEPOCH=	1
 CATEGORIES=	biology
-MASTER_SITES=	# empty
-DISTFILES=	# none
-EXTRACT_ONLY=	# empty
+MASTER_SITES=	http://evolution.gs.washington.edu/lamarc/download/
+EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A package of programs for computing population parameters
 
-RUN_DEPENDS=	fluctuate:${PORTSDIR}/biology/fluctuate \
-		migrate:${PORTSDIR}/biology/migrate \
-		recombine:${PORTSDIR}/biology/recombine
+USE_GNOME=	gnometarget
+GNU_CONFIGURE=	yes
 
-NO_BUILD=	yes
+.if defined(WITH_WXGTK2)
+USE_WX=		2.8
+CONFIGURE_ARGS+=	--with-wx-config=${WX_CONFIG}
+PLIST_SUB+=	WXGTK2=""
+.else
+CONFIGURE_ARGS+=	--disable-converter
+PLIST_SUB+=	WXGTK2="@comment "
+.endif
 
-do-install:	# empty
+.if defined(NOPORTDOCS)
+INSTALL_TARGET=	install-exec-am
+.endif
 
 .include <bsd.port.mk>
