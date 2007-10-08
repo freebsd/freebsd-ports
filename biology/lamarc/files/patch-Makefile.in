@@ -1,0 +1,65 @@
+--- Makefile.in.orig	Mon May  7 06:58:52 2007
++++ Makefile.in	Fri Aug 31 01:11:04 2007
+@@ -51,7 +51,7 @@
+ @OSX_APP_FALSE@am__append_8 = -ggdb
+ @NODATA_TRUE@am__append_9 = -DSTATIONARIES -DNOPROGRESSBAR
+ @DEBUG_TRUE@am__append_10 = $(debugflags)
+-@DEBUG_FALSE@am__append_11 = -O3 -funroll-loops -DNDEBUG
++@DEBUG_FALSE@am__append_11 = -DNDEBUG
+ @DMALLOC_TRUE@am__append_12 = -ldmallocxx
+ @DMALLOC_TRUE@am__append_13 = -DDMALLOC_FUNC_CHECK
+ @EFENCE_TRUE@am__append_14 = -lefence 
+@@ -1155,7 +1155,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ CXX = @CXX@
+ CXXDEPMODE = @CXXDEPMODE@
+-CXXFLAGS = 
++CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+ DEBUG_FALSE = @DEBUG_FALSE@
+ DEBUG_TRUE = @DEBUG_TRUE@
+@@ -1994,7 +1994,7 @@
+ EXTRA_batch_lam_conv_SOURCES = $(tinyxml_suite)
+ lam_conv_app_SOURCES = 
+ lamarc_app_SOURCES = 
+-htmldir = $(prefix)/html/lamarc
++htmldir = $(prefix)/share/doc/lamarc
+ html_DATA = \
+ 			doc/html/bayes.html \
+ 			doc/html/bayes_howto.html \
+@@ -2037,7 +2037,7 @@
+ 			doc/html/viral_data.html \
+ 			doc/html/xmlinput.html
+ 
+-htmlimgdir = $(prefix)/html/lamarc/images
++htmlimgdir = $(prefix)/share/doc/lamarc/images
+ htmlimg_DATA = \
+ 			doc/html/images/browser-gtk.gif \
+ 			doc/html/images/correlated1.gif \
+@@ -2054,7 +2054,7 @@
+ 			doc/html/images/uncorrelated.gif \
+ 			doc/html/images/variably_correlated.gif
+ 
+-htmlbconvdir = $(prefix)/html/lamarc/batch_converter
++htmlbconvdir = $(prefix)/share/doc/lamarc/batch_converter
+ htmlbconv_DATA = \
+ 			doc/html/batch_converter/README.txt \
+ 			doc/html/batch_converter/chrom1_lamarc.xml \
+@@ -2068,7 +2068,7 @@
+ 			doc/html/batch_converter/exported-lamarc-input.xml \
+ 			doc/html/batch_converter/sample-conv-cmd.xml
+ 
+-htmlbconvimgdir = $(prefix)/html/lamarc/batch_converter/images
++htmlbconvimgdir = $(prefix)/share/doc/lamarc/batch_converter/images
+ htmlbconvimg_DATA = \
+ 			doc/html/batch_converter/images/lam_conv_chrom1_export_file_selection.png \
+ 			doc/html/batch_converter/images/lam_conv_chrom1_export_warn_1.png \
+@@ -2082,7 +2082,7 @@
+ 			doc/html/batch_converter/images/lam_conv_chrom3_region_table.png \
+ 			doc/html/batch_converter/images/lam_conv_chrom3_segment_snp.png
+ 
+-htmltraitdir = $(prefix)/html/lamarc/trait_mapping
++htmltraitdir = $(prefix)/share/doc/lamarc/trait_mapping
+ htmltrait_DATA = \
+ 			doc/html/trait_mapping/README.txt \
+ 			doc/html/trait_mapping/lamarc-trait-input.xml \
