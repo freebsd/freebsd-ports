@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	ilmbase
-PORTVERSION=    1.0.0
-PORTREVISION=	1
-CATEGORIES=     graphics devel
-MASTER_SITES=   ${MASTER_SITE_SAVANNAH}
+PORTVERSION=	1.0.0
+PORTREVISION=	2
+CATEGORIES=	graphics devel
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	openexr
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	ILM Base libraries a.k.a. Half, IlmThread, Imath and Iex
+
+CONFLICT=	OpenEXR-1.[0-4].*
 
 OPTIONS=	THREAD	"Enable multithreaded file I/O support"	off
 
