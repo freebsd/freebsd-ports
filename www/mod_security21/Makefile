@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mod_security2
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.3
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/
 DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An intrusion detection and prevention engine
 
 USE_APACHE=	2.0+
@@ -22,7 +22,7 @@ WRKSRCTOP=	${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKSRCTOP}/apache2
 SRC_FILE=	*.c
 PORTDOCS=	*
-DOCS=		CHANGES LICENSE README.TXT modsecurity.conf-minimal doc rules
+DOCS=		CHANGES LICENSE README.TXT modsecurity.conf-minimal
 DOCSDIR=	${PREFIX}/share/doc/${MODULENAME}
 SUB_FILES+=	mod_security2.conf
 SUB_LIST+=	APACHEETCDIR="${APACHEETCDIR}"
@@ -77,7 +77,8 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRCTOP} && ${TAR} cf - ${DOCS}) | (cd ${DOCSDIR} && ${TAR} xpof -)
+	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRCTOP}/,} ${DOCSDIR}/
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "doc rules" ${DOCSDIR}/)
 .endif
 .if !defined(SKIP_RULES)
 	@${INSTALL_DATA} ${WRKDIR}/mod_security2.conf ${PREFIX}/${APACHEETCDIR}/Includes/
