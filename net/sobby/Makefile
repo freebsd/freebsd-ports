@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sobby
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	net
-MASTER_SITES=	http://releases.0x539.de/sobby/
+MASTER_SITES=	http://releases.0x539.de/sobby/ \
+		http://www.atarininja.org/~wxs/distfiles/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	A standalone obby server
 
 LIB_DEPENDS=	net6:${PORTSDIR}/net/net6 \
