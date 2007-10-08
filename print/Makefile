@@ -265,6 +265,7 @@
     SUBDIR += psutils-letter
     SUBDIR += pup
     SUBDIR += py-fonttools
+    SUBDIR += py-pdf
     SUBDIR += py-pyscript
     SUBDIR += py-reportlab
     SUBDIR += py-reportlab2
