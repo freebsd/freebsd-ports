@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	2.4.5
-PORTREVISION=	1
+PORTVERSION=	2.4.6
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multitrack audio processing software
 
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-pyecasound \
@@ -64,7 +64,8 @@ CONFIGURE_ARGS+=	--disable-libsamplerate --disable-sndfile
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| $$EXTRAGCCFLAGS||g ; \
+	@${REINPLACE_CMD} -e '/test/s|==|=|g ; \
+		 s| $$EXTRAGCCFLAGS||g ; \
 		 s| -pthread||g ; \
 		 s| -D_THREAD_SAFE||g ; \
 		 s| -D_P1003_1B_VISIBLE||' ${WRKSRC}/configure
