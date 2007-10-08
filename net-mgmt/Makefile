@@ -43,6 +43,7 @@
     SUBDIR += cisco_conf
     SUBDIR += ciscoconf
     SUBDIR += clog
+    SUBDIR += collectd
     SUBDIR += confregdecode
     SUBDIR += cricket
     SUBDIR += darkstat
