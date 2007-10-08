@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Cache-Memcached-Managed
-PORTVERSION=	0.17
+PORTVERSION=	0.19
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,5 +23,8 @@ PERL_CONFIGURE=	yes
 MAN3=	Cache::Memcached::Managed.3 \
 	Cache::Memcached::Managed::Inactive.3 \
 	Cache::Memcached::Managed::Multi.3
+
+post-extract:
+	@${PERL} -i.bak -ne 'print unless m,^BEGIN, .. m,^},' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
