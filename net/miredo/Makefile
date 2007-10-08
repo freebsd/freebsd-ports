@@ -8,9 +8,9 @@
 PORTNAME=		miredo
 PORTVERSION=	 	1.0.6
 CATEGORIES=		net ipv6
-MASTER_SITES=		http://www.remlab.net/files/miredo/
+MASTER_SITES=		http://www.remlab.net/files/miredo/archive/
 
-MAINTAINER=		miwi@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Opensource Teredo (IPv6 tunneling) implementation
 
 USE_BZIP2=		yes
