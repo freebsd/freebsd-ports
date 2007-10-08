@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	arping
-PORTVERSION=	2.05
-PORTREVISION=	2
+PORTVERSION=	2.06
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/
 
