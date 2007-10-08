@@ -22,6 +22,13 @@ USE_PYDISTUTILS=	yes
 PORTDOCS=	index.html perlig.css perlig.jpg perlig_docs.css \
 		perlig_offline.css right.gif up.gif
 
+.include <bsd.port.pre.mk>
+
+pre-patch:
+.if ${PYTHON_REL} >= 250
+EXTRA_PATCHES=	${FILESDIR}/py25-src-lib-svnmailer-notifier-_base.py
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "1s|^.*|#!${PYTHON_CMD}|" ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e "1s|^.*|#!${PYTHON_CMD}|" ${WRKSRC}/src/svn-mailer
@@ -32,4 +39,4 @@ post-install:
 	cd ${WRKSRC}/docs; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
