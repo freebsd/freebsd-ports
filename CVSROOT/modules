@@ -8538,6 +8538,7 @@ opendchub	ports/net-p2p/opendchub
 opendd		ports/dns/opendd
 opendis		ports/graphics/opendis
 opendx		ports/graphics/opendx
+openexr_ctl	ports/graphics/openexr_ctl
 openfire	ports/net-im/openfire
 openfoam	ports/science/openfoam
 openftd		ports/news/openftd
