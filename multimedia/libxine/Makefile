@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +28,7 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		cdio.7:${PORTSDIR}/sysutils/libcdio \
 		modplug.0:${PORTSDIR}/audio/libmodplug \
 		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
-		theora.2:${PORTSDIR}/multimedia/libtheora \
+		theora.0:${PORTSDIR}/multimedia/libtheora \
 		mad.2:${PORTSDIR}/audio/libmad \
 		dca.0:${PORTSDIR}/multimedia/libdca
 

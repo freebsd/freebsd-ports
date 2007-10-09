@@ -7,6 +7,7 @@
 
 PORTNAME=	lives
 DISTVERSION=	0.9.8.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/%7Esalsaman/lives/current/ CENKES
 DISTNAME=	LiVES-${DISTVERSION}
@@ -19,7 +20,7 @@ LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		jack.0:${PORTSDIR}/audio/jack \
 		visual-0.4.0:${PORTSDIR}/graphics/libvisual04 \
-		theora.2:${PORTSDIR}/multimedia/libtheora \
+		theora.0:${PORTSDIR}/multimedia/libtheora \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		dv.4:${PORTSDIR}/multimedia/libdv \
 		matroska.0:${PORTSDIR}/multimedia/libmatroska \

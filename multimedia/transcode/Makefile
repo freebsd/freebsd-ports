@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fromani.exit1.org/
 
@@ -71,7 +72,7 @@ CONFIGURE_ARGS+=	--enable-vorbis=no
 .endif
 
 .if defined(WITH_THEORA) || exists(${LOCALBASE}/lib/libtheora.so)
-LIB_DEPENDS+=	theora.2:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=	--with-theora-prefix=${LOCALBASE} --enable-theora
 .else
 CONFIGURE_ARGS+=	--enable-theora=no

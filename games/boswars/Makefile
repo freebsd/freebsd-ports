@@ -7,6 +7,7 @@
 
 PORTNAME=	boswars
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://boswars.org:8001/bos/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -15,7 +16,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A real-time strategy game
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		theora.2:${PORTSDIR}/multimedia/libtheora \
+		theora.0:${PORTSDIR}/multimedia/libtheora \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_LUA=	5.0
