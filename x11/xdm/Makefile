@@ -7,6 +7,7 @@
 
 PORTNAME=	xdm
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -21,6 +22,11 @@ MAN1=		xdm.1
 
 CFFILES=	GiveConsole TakeConsole Xaccess Xreset Xresources \
 		Xservers Xsession Xsetup_0 Xstartup Xwilling xdm-config
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|XDMCONFIGDIR/|${PREFIX}/lib/X11/xdm/|" \
+		-e "s|XDMSCRIPTDIR/|${PREFIX}/lib/X11/xdm/|" \
+			${WRKSRC}/config/xdm-config.cpp
 
 post-install:
 .for f in ${CFFILES}
