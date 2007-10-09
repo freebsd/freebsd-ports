@@ -7940,6 +7940,7 @@ mupen64-sdlaudio	ports/emulators/mupen64-sdlaudio
 mupen64-sdlinput	ports/emulators/mupen64-sdlinput
 mupen64-softgfx	ports/emulators/mupen64-softgfx
 mupen64-sound	ports/emulators/mupen64-sound
+mupen64-tr64	ports/emulators/mupen64-tr64
 murrine-configurator	ports/x11-themes/murrine-configurator
 muse		ports/sysutils/muse
 museekplus	ports/net-p2p/museekplus
