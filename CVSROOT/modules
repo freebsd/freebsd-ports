@@ -16324,6 +16324,7 @@ wanderer	ports/games/wanderer
 wanderlust	ports/mail/wanderlust
 wanderlust-emacs21	ports/mail/wanderlust-emacs21
 wanderlust-xemacs21-mule	ports/mail/wanderlust-xemacs21-mule
+waon		ports/audio/waon
 wapiti		ports/security/wapiti
 wapsh		ports/shells/wapsh
 wargus		ports/games/wargus
