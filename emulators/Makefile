@@ -101,6 +101,7 @@
     SUBDIR += mupen64-sdlinput
     SUBDIR += mupen64-softgfx
     SUBDIR += mupen64-sound
+    SUBDIR += mupen64-tr64
     SUBDIR += nonpareil
     SUBDIR += o2em
     SUBDIR += ods2reader
