@@ -258,6 +258,7 @@
     SUBDIR += kdedict
     SUBDIR += kdewebdev
     SUBDIR += knowledgekit
+    SUBDIR += kompozer
     SUBDIR += larbin
     SUBDIR += libapreq2
     SUBDIR += libghttp
