@@ -1,0 +1,5 @@
+libtrace is a library for trace processing. It supports multiple input methods,
+including device capture, raw and gz-compressed trace, and sockets; and mulitple
+input formats, including pcap and DAG.
+
+WWW: http://research.wand.net.nz/software/libtrace.php
