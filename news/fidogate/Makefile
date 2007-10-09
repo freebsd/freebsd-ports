@@ -32,6 +32,8 @@ DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
 
 MAKE_ENV+=	CC=${CC}
 
+.include <bsd.port.pre.mk>
+
 pre-configure:
 	${TOUCH} ${WRKSRC}/doc/fidogate.info
 	${RM} -f ${WRKSRC}/doc/fidogate.info-?
@@ -58,4 +60,4 @@ post-install:
 	@${TAR} -C ${WRKSRC}/examples -cf - . | ${TAR} -C ${EXAMPLESDIR} -xf -
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
