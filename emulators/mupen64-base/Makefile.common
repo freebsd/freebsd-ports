@@ -1,6 +1,6 @@
 DISTNAME=		${PORTNAME}_src-${MUPEN64VERSION}
 PATCHDIR=		${.CURDIR}/files
-WRKSRC=			${WRKDIR}/${DISTNAME}
+WRKSRC?=		${WRKDIR}/${DISTNAME}
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${DISTNAME}/Makefile ${DISTNAME}/config.h \
 				${DISTNAME}/main ${DISTNAME}/plugins
@@ -24,7 +24,7 @@ EXTRACT_AFTER_ARGS+=	${DISTNAME}/README.vcr ${DISTNAME}/doc ${DISTNAME}/lang ${D
 				${DISTNAME}/memory ${DISTNAME}/mupen64.ini ${DISTNAME}/r4300 \
 					${DISTNAME}/whatsnew.txt
 .else
-EXTRA_PATCHES=		${.CURDIR}/../mupen64-base/files/patch-Makefile
+EXTRA_PATCHES?=		${.CURDIR}/../mupen64-base/files/patch-Makefile
 PLIST=			${WRKDIR}/pkg-plist
 .endif
 
@@ -68,6 +68,29 @@ ALL_TARGET=             plugins/mupen64_hle_rsp_azimer.so
 EXTRACT_AFTER_ARGS+=	${DISTNAME}/Makefile ${DISTNAME}/rsp_hle
 .endif
 
+.if ${PKGNAMESUFFIX} == "-glide"
+ALL_TARGET=		plugins/Glide64.so
+
+MD5_FILE=		${.CURDIR}/distinfo
+DISTNAME=		${PKGNAMESUFFIX:S/-//:S/$/64/}-${PORTVERSION:S/$/.SP8/}
+
+EXTRACT_AFTER_ARGS+=	${DISTNAME}
+EXTRA_PATCHES=	#
+.endif
+
+.if ${PKGNAMESUFFIX} == "-tr64"
+ALL_TARGET=		plugins/tr64gl.so
+
+MD5_FILE=		${.CURDIR}/distinfo
+DISTNAME=		${PKGNAMESUFFIX:S/-//}_ogl_gtk2-${PORTVERSION}
+
+EXTRACT_AFTER_ARGS+=	${PKGNAMESUFFIX:S/-//}_ogl-${PORTVERSION}
+EXTRA_PATCHES=		#
+
+WRKSRC=			${WRKDIR}/${PKGNAMESUFFIX:S/-//}_ogl-${PORTVERSION}
+.endif
+
+
 post-configure:
 	@${REINPLACE_CMD} -i "" -e 's|^#undef WITH_HOME|#define WITH_HOME \"${PREFIX}/\"|g' ${WRKSRC}/config.h
 
@@ -76,7 +99,9 @@ post-configure:
 .endif
 
 .if defined(HAVE_VCR)
-	@${REINPLACE_CMD} -i "" -e 's|^#undef VCR_SUPPORT|#define VCR_SUPPORT 1|g' ${WRKSRC}/config.h
+.	if ${PKGNAMESUFFIX} != "-glide"
+		@${REINPLACE_CMD} -i "" -e 's|^#undef VCR_SUPPORT|#define VCR_SUPPORT 1|g' ${WRKSRC}/config.h
+.	endif
 .endif
 
 .for f in ${FIXFILES}
@@ -86,6 +111,10 @@ post-configure:
 .if ${PKGNAMESUFFIX} != "-base"
 pre-install:
 	@${RM} -f ${PLIST}
+.	if ${PKGNAMESUFFIX} == "-glide"
+		@${ECHO_CMD} "%%DATADIR%%/plugins/${PLUGIN_NAME}.ini" >> ${PLIST}
+.	endif
+
 	@${ECHO_CMD} "%%DATADIR%%/plugins/${PLUGIN_NAME}.so" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/plugins" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
@@ -109,5 +138,9 @@ do-install:
 .	endif
 .else
 	@${MKDIR} ${DATADIR}/plugins
+.	if ${PKGNAMESUFFIX} == "-glide"
+		${INSTALL_DATA} ${WRKSRC}/${PLUGIN_NAME}.ini ${DATADIR}/plugins/
+.	endif
+
 	${INSTALL_PROGRAM} ${WRKSRC}/plugins/${PLUGIN_NAME}.so ${DATADIR}/plugins/
 .endif
