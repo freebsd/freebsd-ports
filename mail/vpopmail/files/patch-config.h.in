@@ -1,15 +1,12 @@
---- config.h.in.orig	Mon Feb  2 06:24:19 2004
-+++ config.h.in	Mon Feb  2 09:33:51 2004
-@@ -238,6 +238,12 @@
- #undef QMAILDIR
+--- ../../vendor/vpopmail/config.h.in	2007-10-07 19:56:55.000000000 +0300
++++ config.h.in	2007-10-07 22:24:54.000000000 +0300
+@@ -277,6 +277,9 @@
+ #undef SPAMC_PROG
  
  /* "" */
-+#undef SPAMC
-+
-+/* "" */
 +#undef SPAM_THRESHOLD
 +
 +/* "" */
- #undef QMAILINJECT
+ #undef SQWEBMAIL_PASS
  
- /* "" */
+ /* Define to 1 if you have the ANSI C header files. */

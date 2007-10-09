@@ -1,7 +1,6 @@
-Index: Makefile.in
-===================================================================
---- Makefile.in	(revision 548)
-+++ Makefile.in	(revision 550)
+diff -urN -x .svn ../../freebsd-port/vpopmail/Makefile.in ./Makefile.in
+--- ../../freebsd-port/vpopmail/Makefile.in	Fri Jan 26 17:13:24 2007
++++ ./Makefile.in	Mon Jan  8 13:17:46 2007
 @@ -863,7 +863,7 @@
  @SET_MAKE@
  
@@ -11,10 +10,11 @@ Index: Makefile.in
  	  if test ! -d $(DESTDIR)@vpopmaildir@/$$d; then \
  	    $(INSTALL) -d -g @vpopgroup@ -m 0755 -o @vpopuser@ \
  	      $(DESTDIR)@vpopmaildir@/$$d ; \
-@@ -920,14 +920,6 @@
+@@ -919,14 +919,6 @@
+ 	    $(INSTALL) -o root -m 0444 $$include \
  		$(DESTDIR)@vpopmaildir@/include/ ; \
  	done
- 
+-
 -	$(INSTALL) -d $(DESTDIR)@vpopmaildir@/doc/man_html
 -	$(INSTALL) -d $(DESTDIR)@vpopmaildir@/doc/doc_html
 -	$(INSTALL) -o @vpopuser@ -m 0444 -g @vpopgroup@ \
@@ -22,7 +22,6 @@ Index: Makefile.in
 -
 -	$(INSTALL) -o @vpopuser@ -m 0444 -g @vpopgroup@ \
 -	  doc/doc_html/*.* $(DESTDIR)@vpopmaildir@/doc/doc_html/
--
+ 
  fix-priv:
  	if test -r $(MYSQLCONF); then \
- 	  chown @vpopuser@  $(MYSQLCONF) ; \

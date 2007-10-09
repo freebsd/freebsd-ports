@@ -1,71 +1,15 @@
---- configure.old	Sun Nov 20 15:09:16 2005
-+++ configure	Sun Nov 20 15:11:01 2005
-@@ -838,6 +838,8 @@
-   --enable-qmail-newu=PATH   Full path to qmail-newu program.
-   --enable-qmail-inject=PATH Full path to qmail-inject program.
-   --enable-qmail-newmrh=PATH Full path to qmail-newmrh program.
-+  --enable-spamassassin=PATH Enable SpamAssassin. Full path to spamc program. default /usr/local/bin/spamc"
-+  --enable-spam-threshold=# or n Automatically delete messages that score more than # spam hits"
-   --enable-vpopuser=USER     User name allocated to vpopmail vpopmail.
-   --enable-vpopgroup=GROUP   Group name allocated to vpopmail vchkpw.
-   --enable-roaming-users     Enable POP-before-SMTP functionality.
-@@ -4693,7 +4695,7 @@
- 
- #----------------------------------------------------------------------
- 
--if test `$idcommand` != "0"
-+if false && test `$idcommand` != "0"
- then
-   { echo "$as_me:$LINENO: WARNING: === vpopmail must be configured as root. ===" >&5
- echo "$as_me: WARNING: === vpopmail must be configured as root. ===" >&2;}
-@@ -4823,6 +4825,46 @@
-     ;;
- esac
- 
-+# Check whether --enable-spamassassin or --disable-spamassassin was given.
-+if test "${enable_spamassassin+set}" = set; then
-+  enableval="$enable_spamassassin"
-+  spamc="$enableval"
-+
-+  case $spamc in
-+  1*|y*|Y*)
-+      spamc="/usr/local/bin/spamc"
-+      ;;
-+  esac
-+
-+  if test ! -f "$spamc"
-+  then
-+      { echo "configure: error: Unable to find your spamc file, specify --enable-spamassassin=/full/path/to/spamc" 1>&2; exit 1; }
-+  fi
-+
-+  cat >> confdefs.h <<EOF
-+#define SPAMC "$spamc"
-+EOF
-+
-+# Check whether --enable-spam-threshold or --disable-spam-threshold was given.
-+if test "${enable_spam_threshold+set}" = set; then
-+  enableval="$enable_spam_threshold"
-+  ENABLE_SPAM_THRESHOLD=$enableval
-+else
-+  ENABLE_SPAM_THRESHOLD=0
-+fi
-+
-+case $ENABLE_SPAM_THRESHOLD in
-+0*|n*|N*)
-+      ;;
-+*)
-+          cat >> confdefs.h <<EOF
-+#define SPAM_THRESHOLD $ENABLE_SPAM_THRESHOLD
-+EOF
-+
-+          ;;
-+esac
-+fi
-+
- #----------------------------------------------------------------------
- 
- echo "$as_me:$LINENO: checking whether we can locate the qmail directory" >&5
-@@ -5201,27 +5243,6 @@
+diff -urN -x .svn ../../../branches/vendor/vpopmail/configure ./configure
+--- ../../../branches/vendor/vpopmail/configure	2007-10-07 19:56:56.000000000 +0300
++++ ./configure	2007-10-07 21:55:00.298247000 +0300
+@@ -877,6 +877,7 @@
+   --enable-onchange-script   Enable onchange script. See README.onchange for more info.
+   --enable-spamassassin      Enable spamassassin. See  README.spamassassin for more info.
+   --enable-spamc-prog=PATH   Full path to spamc program /usr/{local/}bin/spamc.
++  --enable-spam-threshold=# or n Automatically delete messages that score more than # spam hits
+   --enable-maildrop          Enable maildrop. See  README.maildrop for more info.
+   --enable-maildrop-prog=PATH    Full path to maildrop program /usr/{local/}bin/maildrop.
+   --enable-domains-dir=TEXT  Directory in ~vpopmail to store domains (default=domains).
+@@ -5844,27 +5845,6 @@
  
  #----------------------------------------------------------------------
  
@@ -93,7 +37,7 @@
  echo "$as_me:$LINENO: checking whether roaming-users has been enabled" >&5
  echo $ECHO_N "checking whether roaming-users has been enabled... $ECHO_C" >&6
  # Check whether --enable-roaming-users or --disable-roaming-users was given.
-@@ -5309,29 +5330,9 @@
+@@ -5952,29 +5932,9 @@
  if test "${enable_tcpserver_file+set}" = set; then
    enableval="$enable_tcpserver_file"
    tcpserver_file="$enableval"
@@ -124,7 +68,32 @@
      echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6
  
-@@ -5979,7 +5980,7 @@
+@@ -6483,6 +6443,24 @@
+ #define SPAMC_PROG "$spamc_prog"
+ _ACEOF
+ 
++# Check whether --enable-spam-threshold or --disable-spam-threshold was given.
++if test "${enable_spam_threshold+set}" = set; then
++  enableval="$enable_spam_threshold"
++  ENABLE_SPAM_THRESHOLD=$enableval
++else
++  ENABLE_SPAM_THRESHOLD=0
++fi
++
++case $ENABLE_SPAM_THRESHOLD in
++0*|n*|N*)
++      ;;
++*)
++          cat >> confdefs.h <<EOF
++#define SPAM_THRESHOLD $ENABLE_SPAM_THRESHOLD
++EOF
++
++          ;;
++esac
+ 
+       ;;
+ esac
+@@ -6803,7 +6781,7 @@
  #define USE_LDAP $USE_LDAP
  _ACEOF
  
@@ -133,9 +102,9 @@
  
      auth_inc="-I/usr/local/include"
  
-@@ -8296,8 +8297,8 @@
-   fi
- fi
+@@ -9389,8 +9367,8 @@
+     ;;
+ esac
  
 -echo "${CC} -O2" > cdb/conf-cc
 -echo "${CC} -s" > cdb/conf-ld
