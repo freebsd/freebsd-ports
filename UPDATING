@@ -6,6 +6,43 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20071009:
+  AFFECTS: users of mail/vpopmail
+  AUTHOR: roam@FreeBSD.org
+
+  The vpopmail port has been upgraded to version 5.4.20.  There are several
+  important changes that may affect your vpopmail installation and may need
+  you to handle manually:
+
+  - THE MYSQL CONNECTION INFORMATION IS NO LONGER DEFINED AT COMPILE-TIME!
+    The WITH_MYSQL_{USER,PASSWD,SERVER,DB} variables should NOT be defined
+    when you build the port; place that information in the vpopmail.mysql
+    file after vpopmail has been installed!
+  - the default domain is also no longer defined at compile time - you need
+    to place it in the defaultdomain file after the installation.
+  - the defaultdomain and vpopmail.mysql files are no longer blindly removed
+    on deinstallation, they are only removed if they have not been modified
+  - in vpopmail 5.4.18, the database schema was changed - some fields were
+    extended from 64 to 96 characters.  If you do not apply those changes
+    to your database, as explained in the vpopmail/doc/UPGRADE file, your
+    vpopmail installation may silently fail or lose the trailing portions
+    of domain names and usernames.
+  - in vpopmail 5.4.19, the upstream authors integrated large parts of
+    Alex Dupre's SpamAssassin support, without the SPAM_THRESHOLD part.
+    If you use vpopmail along with the SpamAssassin FreeBSD port support,
+    take extra care to ensure that your installation still processes
+    e-mail messages in the same way.
+  - vpopmail 5.4.19 added support for maildrop as a mail delivery agent.
+    This is available in the FreeBSD port if WITH_MAILDROP is defined.
+    There is also a new user-limit flag for maildrop delivery.
+  - vpopmail 5.4.19 added support for MySQL connections via Unix sockets
+    instead of TCP sockets to the server.  To do that, change the second
+    value (the port number) in vpopmail.mysql to the full pathname of
+    the MySQL socket (e.g. /tmp/mysql.sock).
+  - vpopmail 5.4.20 extended the LDAP support; please see README.ldap for
+    more information, and specify the LDAP connection information in
+    the vpopmail/etc/vpopmail.ldap file after the installation.
+
 20070614:
   AFFECTS: users of www/mediawiki
   AUTHOR: miwi@FreeBSD.org
