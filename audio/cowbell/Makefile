@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://more-cowbell.org/releases/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An elegant music organizer
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
