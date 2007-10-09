@@ -33,8 +33,7 @@ RUN_DEPENDS+=	${X11BASE}/libdata/xorg/apps:${PORTSDIR}/x11/xorg-apps \
 		${X11BASE}/libdata/xorg/libraries:${PORTSDIR}/x11/xorg-libraries \
 		${X11BASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts \
 		${X11BASE}/libdata/xorg/drivers:${PORTSDIR}/x11-drivers/xorg-drivers \
-		${X11BASE}/libdata/xorg/protos:${PORTSDIR}/x11/xorg-protos \
-		${X11BASE}/bin/Xorg:${PORTSDIR}/x11-servers/xorg-server
+		${X11BASE}/libdata/xorg/protos:${PORTSDIR}/x11/xorg-protos
 
 .if defined(XORG_COMPLETE)
 RUN_DEPENDS+=	Xnest:${PORTSDIR}/x11-servers/xorg-nestserver \
@@ -57,6 +56,10 @@ pre-everything::
 .if !defined(DEPENDS_TARGET:Mpackage) || empty(DEPENDS_TARGET:Mpackage)
 DEPENDS_TARGET="package"
 .endif
+.endif
+
+.if ${ARCH} != "alpha" && ${ARCH} != "ia64"
+RUN_DEPENDS+=	${X11BASE}/bin/Xorg:${PORTSDIR}/x11-servers/xorg-server
 .endif
 
 .if ${X_WINDOW_SYSTEM:L} != xorg
