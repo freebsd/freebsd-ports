@@ -377,6 +377,7 @@
     SUBDIR += libmorph
     SUBDIR += libopenraw
     SUBDIR += libpano12
+    SUBDIR += libpano13
     SUBDIR += libpcd
     SUBDIR += libqglviewer
     SUBDIR += libqrencode
