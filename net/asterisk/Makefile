@@ -159,9 +159,9 @@ LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2
 .if defined(WITH_CODEC_PATCH)
 PATCHFILES=	asterisk-1.4.11-codec-negotiation-20070831.diff.gz
 PATCH_SITES=	http://b2bua.org/chrome/site/
-EXTRA_PATCHES=	${PATCHDIR}/codecnego-patch-Makefile
+EXTRA_PATCHES+=	${PATCHDIR}/codecnego-patch-Makefile
 .else
-EXTRA_PATCHES=	${PATCHDIR}/nocodecnego-patch-Makefile
+EXTRA_PATCHES+=	${PATCHDIR}/nocodecnego-patch-Makefile
 .endif
 
 
