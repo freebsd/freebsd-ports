@@ -12,7 +12,7 @@ CATEGORIES=	devel audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dumb
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IT, XM, S3M and MOD player library
 
 USE_GMAKE=	yes

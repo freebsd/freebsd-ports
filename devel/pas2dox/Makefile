@@ -11,7 +11,7 @@ CATEGORIES=	devel converters
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Preprocessor to use doxygen with Pascal sources
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
