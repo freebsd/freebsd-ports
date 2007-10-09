@@ -1,25 +1,11 @@
 --- layout.c.orig	2007-09-26 13:18:33.000000000 +0300
 +++ layout.c	2007-09-26 13:20:48.000000000 +0300
-@@ -114,6 +114,22 @@
+@@ -114,6 +114,8 @@
      Client *c;
      XEvent ev;
      XWindowChanges wc;
-+	 Window dummy, root;
-+	 int wex, wey, ex, ey, i;
-+	 unsigned int dmask;
-+
-+	 if(sel) {
-+		 ScreenInfo *si = get_screen_info(disp, awesomeconf->screen, &awesomeconf->statusbar);
-+		 root = RootWindow(disp, awesomeconf->screen);
-+		 XQueryPointer(disp, sel->win, &dummy, &dummy, &i, &i, &wex, &wey, &dmask);
-+		 XTranslateCoordinates(disp, sel->win, root, wex, wey, &ex, &ey, &dummy);
-+		 /* I'm so sorry for this... Shame on me... */
-+		 if(ex > si[awesomeconf->screen].x_org && ex < si[awesomeconf->screen].width && ey > si[awesomeconf->screen].y_org && ey < si[awesomeconf->screen].height) {
-+			 XSelectInput(disp, root, SubstructureRedirectMask & EnterWindowMask);
++	 if(sel)
 +			 XWarpPointer(disp, None, sel->win, 0, 0, 0, 0, sel->w / 2, sel->h / 2);
-+			 XSelectInput(disp, root, SubstructureRedirectMask);
-+		 }
-+	 }
  
      drawstatusbar(disp, awesomeconf->screen, drawcontext, awesomeconf);
      if(!sel)
