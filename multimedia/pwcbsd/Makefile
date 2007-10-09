@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pwcbsd
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	multimedia sysutils kld
 MASTER_SITES=	http://raaf.atspace.org/ \
 		${MASTER_SITE_LOCAL}
