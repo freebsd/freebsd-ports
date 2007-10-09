@@ -22,7 +22,9 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/OpenXPKI/Client.pm:${PORTSDIR}/security/p5-openxpki-client
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		has broken distribution. To be fixed. Use p5-openxpki-client-html-mason instead
+DEPRECATED=	No longer supported. Use p5-openxpki-client-html-mason instead
+EXPIRES=	2008-01-05
+BROKEN=		distribution is broken and no longer supported.
 
 MAN3=	OpenXPKI::Client::CLI.3
 USE_GMAKE=	yes
