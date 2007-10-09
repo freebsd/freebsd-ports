@@ -2249,6 +2249,7 @@ dv2jpg		ports/multimedia/dv2jpg
 dvbcut		ports/multimedia/dvbcut
 dvd+rw-tools	ports/sysutils/dvd+rw-tools
 dvd-slideshow	ports/multimedia/dvd-slideshow
+dvda-author	ports/audio/dvda-author
 dvdauthor	ports/multimedia/dvdauthor
 dvdauthorwizard	ports/multimedia/dvdauthorwizard
 dvdbackup	ports/sysutils/dvdbackup
