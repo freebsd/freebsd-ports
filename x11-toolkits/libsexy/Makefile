@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	libsexy
-PORTVERSION=	0.1.10
-PORTREVISION=	1
+PORTVERSION=	0.1.11
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	http://releases.chipx86.com/libsexy/libsexy/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension widgets for GTK+
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
@@ -21,7 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack lthack gtk20 libxml2
 USE_LDCONFIG=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
