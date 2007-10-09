@@ -6,35 +6,34 @@
 #
 
 PORTNAME=	qbrew
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.usermode.org/code/
 
 MAINTAINER=	david@usermode.org
 COMMENT=	A homebrewer's recipe calculator
 
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_QT_VER=	3
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake moc uic rcc xml gui
 PORTDOCS=	*
-QT_NONSTANDARD=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--x-includes=${X11BASE}/include	\
-			--x-libraries=${X11BASE}/lib \
-			--with-qt-dir=${X11BASE}
-CONFIGURE_ENV=		MOC=${X11BASE}/bin/moc \
-			UIC=${X11BASE}/bin/uic
+HAS_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
+CONFIGURE_ENV+=	HAVEDEFS="HAVE_ROUND" \
+		BINDIR="${PREFIX}/bin" \
+		DATADIR="${DATADIR}" \
+		DOCDIR="${DOCSDIR}"
 
-post-patch:
+pre-configure:
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -E 's,^(SUBDIRS = .*) docs,\1,' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/INSTALLS/s|doc||' \
+		${WRKSRC}/qbrew.pro
 .endif
+
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${QMAKE} -unix CONFIG+="configure" qbrew.pro
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/qbrew
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
