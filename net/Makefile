@@ -286,6 +286,7 @@
     SUBDIR += libsocketcpp
     SUBDIR += libtcp4u
     SUBDIR += libtnl
+    SUBDIR += libtrace
     SUBDIR += libunp
     SUBDIR += libunpipc
     SUBDIR += libvncserver
