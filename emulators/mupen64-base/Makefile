@@ -6,65 +6,42 @@
 #
 
 PORTNAME=	mupen64
-PORTVERSION=	0.4
-PORTREVISION=	3
-CATEGORIES+=	emulators
-MASTER_SITES=	http://mupen64.emulation64.com/files/${PORTVERSION}/
-PKGNAMESUFFIX=	-base
+PORTVERSION?=	0.5
+PORTREVISION?=	0
+CATEGORIES=	emulators
+MASTER_SITES=	http://mupen64.emulation64.com/files/${PORTVERSION}/ \
+		${MASTER_SITE_GENTOO:S|$|distfiles/|}
+PKGNAMESUFFIX?=	-base
 DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 
-MAINTAINER?=	tlp@LiquidX.org
-COMMENT=	Mupen64 is a Nintendo 64 emulator
+MAINTAINER?=	acm@FreeBSD.org
+COMMENT?=	Mupen64 is a Nintendo 64 emulator
 
+USE_GNOME?=	#
+USE_GL?=	#
+USE_GDL?=	#
 USE_BZIP2=	yes
-HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_SDL=	sdl
-USE_GNOME=	gtk12
-WRKSRC=		${WRKDIR}/emu64
-USE_GCC=	3.4
 ONLY_FOR_ARCHS=	i386
 
-DOCFILES=	readme.pdf readme.ps
-FIXME1=		main/vcr.c memory/dma.c r4300/r4300.c r4300/recomp.c \
-		r4300/x86/assemble.c
-FIXME2=		r4300/interupt.c main/gui_gtk/main_gtk.c
+MAKE_ENV+=	CXX="${CXX}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-pre-configure:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${FILESDIR}/mupen64.in \
-		> ${WRKDIR}/mupen64
-.for i in ${FIXME1}
-	${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/${i}
-.endfor
-.for i in ${FIXME2}
-	${REINPLACE_CMD} -e 's|SDL/SDL.h|SDL.h|' ${WRKSRC}/${i}
-.endfor
-	${REINPLACE_CMD} \
-		-e 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/configure
-	${REINPLACE_CMD} \
-		-e 's|gtk-config|${GTK_CONFIG}|' \
-		-e 's|-L/usr/X11R6/lib -lSDL -lGL -lpthread|`${SDL_CONFIG} --libs`|' \
-		-e 's|-ldl|${LDFLAGS}|' \
-		${WRKSRC}/Makefile
+MUPEN64VERSION=	0.5
+FIXFILES?=	r4300/r4300.c memory/dma.c r4300/recomp.c r4300/x86/assemble.c
 
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/whatsnew.txt ${DOCSDIR}/whatsnew.txt
-.for i in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}/
-.endfor
-.endif
-	${INSTALL_PROGRAM} ${WRKSRC}/mupen64 ${PREFIX}/libexec/mupen64
-	${INSTALL_SCRIPT} ${WRKDIR}/mupen64 ${PREFIX}/bin/mupen64
-	@${CAT} ${PKGMESSAGE}
+OPTIONS?=	GTK2	"Use gtk20 instead of gtk12" off \
+		VCR	"Support for video recording" off
 
 .include <bsd.port.pre.mk>
 
-CFLAGS+=	`${SDL_CONFIG} --cflags`
-CFLAGS+=	-O3 -fomit-frame-pointer -funroll-loops -ffast-math -Wall -pipe
-CFLAGS+=	-DX86 -mcpu=athlon
+.if defined(WITH_GTK2)
+HAVE_GTK2=	true
+.endif
 
-MAKE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+.if defined(WITH_VCR)
+HAVE_VCR=	true
+.endif
+
+.include "${MASTERDIR}/Makefile.common"
 
 .include <bsd.port.post.mk>
