@@ -3,10 +3,11 @@
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#      $Id: Makefile 66 2007-10-09 17:50:49Z buhnux $
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2007-09-14
+DISTVERSION=	2007-10-04
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -32,7 +33,8 @@ CONFIGURE_ARGS+=--cc="${CC}" --prefix="${PREFIX}" \
 		--extra-ldflags="-L${LOCALBASE}/lib ${FFMPEG_LDFLAGS}" \
 		--extra-libs="${PTHREAD_LIBS}" \
 		--enable-gpl \
-		--enable-pthreads
+		--enable-pthreads \
+		--mandir=${PREFIX}/man
 CONFIGURE_ENV+=	LANG=C
 MAKE_ENV+=	INSTALL="${INSTALL}"
 SHLIB_VER=	1
@@ -145,7 +147,7 @@ PLIST_SUB+=	SWSCAL="@comment "
 ## theora
 .if !defined(WITHOUT_THEORA)
 WITH_OGG=	yes
-LIB_DEPENDS+=		theora.2:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=		theora.0:${PORTSDIR}/multimedia/libtheora
 
 CONFIGURE_ARGS+=	--enable-libtheora
 .endif
@@ -158,7 +160,7 @@ CONFIGURE_ARGS+=	--enable-libvorbis
 FFMPEG_CFLAGS+=		-I${LOCALBASE}/include/vorbis
 .endif
 # x264
-.ifdef(WITH_X264) || exists(${LOCALBASE}/lib/libx264.so)
+.ifndef(WITHOUT_X264) || exists(${LOCALBASE}/lib/libx264.so)
 LIB_DEPENDS+=		x264.50:${PORTSDIR}/multimedia/x264
 
 CONFIGURE_ARGS+=	--enable-libx264
@@ -238,8 +240,8 @@ pre-everything::
 	@${ECHO_MSG} 'Define WITHOUT_VORBIS to enable libvorbisenc VORBIS codec'
 	@${ECHO_MSG}
 .endif
-.ifndef(WITH_X264)
-	@${ECHO_MSG} 'Define WITH_X264 to enable X264 codec'
+.ifndef(WITHOUT_X264)
+	@${ECHO_MSG} 'Define WITHOUT_X264 to disable X264 codec'
 	@${ECHO_MSG}
 .endif
 .ifndef(WITH_XVID)

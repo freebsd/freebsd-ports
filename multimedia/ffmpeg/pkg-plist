@@ -3,7 +3,6 @@ bin/ffserver
 @unexec if cmp -s %D/etc/ffserver.conf %D/etc/ffserver.conf-dist; then rm -f %D/etc/ffserver.conf; fi
 etc/ffserver.conf-dist
 include/ffmpeg/adler32.h
-include/ffmpeg/allcodecs.h
 include/ffmpeg/avcodec.h
 include/ffmpeg/avformat.h
 include/ffmpeg/avio.h
@@ -35,7 +34,7 @@ lib/libavcodec.so.51.44.0
 lib/libavformat.a
 lib/libavformat.so
 lib/libavformat.so.%%SHLIB_VER%%
-lib/libavformat.so.51.13.3
+lib/libavformat.so.51.14.0
 lib/libavutil.a
 lib/libavutil.so
 lib/libavutil.so.%%SHLIB_VER%%
