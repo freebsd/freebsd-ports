@@ -10,7 +10,7 @@ PORTVERSION=	4.99.34
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xs4all.nl/~rfsber/Robo/DistSource/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code reference program similar to cxref that produces HTML
 
 GNU_CONFIGURE=	yes
