@@ -6785,6 +6785,7 @@ libtommath	ports/math/libtommath
 libtool15	ports/devel/libtool15
 libtorrent	ports/net-p2p/libtorrent
 libtorrent-devel	ports/net-p2p/libtorrent-devel
+libtrace	ports/net/libtrace
 libtranslate	ports/textproc/libtranslate
 libtre		ports/textproc/libtre
 libtremor	ports/audio/libtremor
