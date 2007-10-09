@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jasperreports
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	databases print java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -63,7 +63,7 @@ RUN_DEPENDS+=	${JAVALIBDIR}/hsqldb.jar:${PORTSDIR}/databases/hsqldb
 
 pre-everything::
 	@${ECHO_MSG} '*********************************************************'
-	@${ECHO_MSG} '* You need at least a JDBC driver.                      *'
+	@${ECHO_MSG} '* You need at least one JDBC driver.                    *'
 .if !defined(WITHOUT_MYSQL)
 	@${ECHO_MSG} '* Define WITHOUT_MYSQL to remove MySQL support.         *'
 .endif
