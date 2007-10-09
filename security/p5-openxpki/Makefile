@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openxpki
-PORTVERSION=	0.9.914
+PORTVERSION=	0.9.1084
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Perl based trustcenter software for PKI: core for server
 
 BUILD_DEPENDS=	\
-	p5-Workflow>=0.26:${PORTSDIR}/devel/p5-Workflow \
+	p5-Workflow>=0.31:${PORTSDIR}/devel/p5-Workflow \
 	${SITE_PERL}/CGI/Session.pm:${PORTSDIR}/www/p5-CGI-Session \
 	${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 	${SITE_PERL}/Locale/Recode.pm:${PORTSDIR}/devel/p5-Locale-libintl \
@@ -125,6 +125,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Debug.3 \
 	OpenXPKI::Exception.3 \
 	OpenXPKI::FileUtils.3 \
+	OpenXPKI::LdapUtils.3 \
 	OpenXPKI::Serialization::JSON.3 \
 	OpenXPKI::Serialization::Simple.3 \
 	OpenXPKI::Server.3 \
@@ -233,6 +234,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Condition::ValidCSRSerialPresent.3 \
 	OpenXPKI::Server::Workflow::Condition::WorkflowChildrenFailure.3 \
 	OpenXPKI::Server::Workflow::Condition::WorkflowChildrenSuccessfullyFinished.3 \
+	OpenXPKI::Server::Workflow::Condition::WorkflowCreator.3 \
 	OpenXPKI::Server::Workflow::Observer::Debug.3 \
 	OpenXPKI::Server::Workflow::Observer::Log.3 \
 	OpenXPKI::Server::Workflow::Persister::DBI.3 \
@@ -263,6 +265,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Tests.3 \
 	OpenXPKI::Transport::Simple.3 \
 	OpenXPKI::VERSION.3 \
+	OpenXPKI::Workflow::Factory.3 \
 	OpenXPKI::XML::Cache.3 \
 	OpenXPKI::XML::Config.3 \
 	OpenXPKI::i18n.3
