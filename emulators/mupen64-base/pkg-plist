@@ -1,25 +1,17 @@
 bin/mupen64
-libexec/mupen64
-share/mupen64/doc/compile.sh
-share/mupen64/doc/readme.dvi
-share/mupen64/doc/readme.pdf
-share/mupen64/doc/readme.latex
-share/mupen64/doc/readme.ps
-share/mupen64/lang/french.lng
-share/mupen64/lang/pt_BR.lng
-share/mupen64/lang/german.lng
-share/mupen64/lang/spanish.lng
-share/mupen64/lang/dutch.lng
-share/mupen64/lang/italian.lng
-share/mupen64/lang/english.lng
-share/mupen64/lang/catalan.lng
-share/mupen64/mupen64.ini
-share/mupen64/plugins/empty
-@dirrm share/mupen64/plugins
-@dirrm share/mupen64/lang
-@dirrm share/mupen64/doc
-@dirrm share/mupen64
+bin/mupen64_nogui
+%%DATADIR%%/mupen64.ini
+%%DATADIR%%/lang/catalan.lng
+%%DATADIR%%/lang/dutch.lng
+%%DATADIR%%/lang/english.lng
+%%DATADIR%%/lang/french.lng
+%%DATADIR%%/lang/german.lng
+%%DATADIR%%/lang/italian.lng
+%%DATADIR%%/lang/pt_BR.lng
+%%DATADIR%%/lang/spanish.lng
+%%PORTDOCS%%%%DOCSDIR%%/README.vcr
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.pdf
-%%PORTDOCS%%%%DOCSDIR%%/readme.ps
+@dirrm %%DATADIR%%/lang
+@dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

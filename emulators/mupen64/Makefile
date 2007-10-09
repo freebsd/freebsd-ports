@@ -6,40 +6,43 @@
 #
 
 PORTNAME=	mupen64
-PORTVERSION=	0.4
-PORTREVISION=	2
-CATEGORIES+=	emulators
+PORTVERSION=	0.5
+CATEGORIES=	emulators
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER?=	tlp@LiquidX.org
-COMMENT=	Mupen64 is a Nintendo 64 emulator with plugins
+MAINTAINER?=	acm@FreeBSD.org
+COMMENT=	Mupen64 is a Nintendo 64 emulator with plugins (meta port)
 
-RUN_DEPENDS+=	${LOCALBASE}/bin/mupen64:${PORTSDIR}/${PKGCATEGORY}/mupen64-base
-RUN_DEPENDS+=	${PLUGINDIR}/dummyaudio.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-dummyaudio
-RUN_DEPENDS+=	${PLUGINDIR}/mupen64_audio.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-sound
-RUN_DEPENDS+=	${PLUGINDIR}/jttl_audio.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-sdlaudio
-RUN_DEPENDS+=	${PLUGINDIR}/mupen64_input.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-input
-RUN_DEPENDS+=	${PLUGINDIR}/blight_input.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-sdlinput
-RUN_DEPENDS+=	${PLUGINDIR}/mupen64_hle_rsp_azimer.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-rsp
-RUN_DEPENDS+=	${PLUGINDIR}/Glide64.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-glide
-RUN_DEPENDS+=	${PLUGINDIR}/glN64-0.4.1.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-gln64
+# Mupen64 Emulator gui and no-gui
+RUN_DEPENDS+=	${LOCALBASE}/bin/mupen64:${PORTSDIR}/emulators/mupen64-base
+
+# Audio plugins
+RUN_DEPENDS+=	${PLUGINDIR}/dummyaudio.so:${PORTSDIR}/emulators/mupen64-dummyaudio
+RUN_DEPENDS+=	${PLUGINDIR}/mupen64_audio.so:${PORTSDIR}/emulators/mupen64-sound
+RUN_DEPENDS+=	${PLUGINDIR}/jttl_audio.so:${PORTSDIR}/emulators/mupen64-sdlaudio
+
+# Input plugins
+RUN_DEPENDS+=	${PLUGINDIR}/mupen64_input.so:${PORTSDIR}/emulators/mupen64-input
+RUN_DEPENDS+=	${PLUGINDIR}/blight_input.so:${PORTSDIR}/emulators/mupen64-sdlinput
+RUN_DEPENDS+=	${PLUGINDIR}/mupen64_hle_rsp_azimer.so:${PORTSDIR}/emulators/mupen64-rsp
+
+# Graphic plugins
+RUN_DEPENDS+=	${PLUGINDIR}/ricedaedalus.so:${PORTSDIR}/emulators/mupen64-rice
+RUN_DEPENDS+=	${PLUGINDIR}/mupen64_soft_gfx.so:${PORTSDIR}/emulators/mupen64-softgfx
+RUN_DEPENDS+=	${PLUGINDIR}/Glide64.so:${PORTSDIR}/emulators/mupen64-glide
+RUN_DEPENDS+=	${PLUGINDIR}/glN64.so:${PORTSDIR}/emulators/mupen64-gln64
 
 NO_MTREE=	yes
 NO_BUILD=	yes
-
-do-install:	# empty
+SUB_FILES=	pkg-message
 
 PLUGINDIR=	${LOCALBASE}/share/mupen64/plugins
+
+do-install:	# empty
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${MACHINE_ARCH} == "i386"
-RUN_DEPENDS+=	${PLUGINDIR}/ricedaedalus.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-rice
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
