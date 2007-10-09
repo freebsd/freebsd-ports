@@ -49,12 +49,11 @@ USE_PERL5=	yes
 USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
 
+.include <bsd.port.pre.mk>
+
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_VENDOR=	freebsd bsdjava
-
-.include <bsd.port.pre.mk>
-
 .if (${OSVERSION} >= 700000)
 JAVA_VERSION=	1.5
 .else
