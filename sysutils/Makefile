@@ -689,6 +689,7 @@
     SUBDIR += watchfolder
     SUBDIR += webjob
     SUBDIR += webmin
+    SUBDIR += weedit
     SUBDIR += whatpix
     SUBDIR += whowatch
     SUBDIR += wmapm
