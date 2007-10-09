@@ -6,26 +6,27 @@
 #    $MCom: ports/www/nvu/Makefile,v 1.5 2006/07/18 15:07:36 ahze Exp $
 #
 
-PORTNAME=	nvu
-DISTVERSION=	1.0
-PORTREVISION=	5
+PORTNAME=	kompozer
+DISTVERSION=	0.7.10
 CATEGORIES=	www
-MASTER_SITES=	http://cvs.nvu.com/download/
-DISTNAME=	${PORTNAME}-${DISTVERSION}-sources
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-${DISTVERSION}dfsg-src
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A complete Web Authoring System similar to Dreamweaver or Frontpage
+COMMENT=	Complete Web Authoring Suite
 
-USE_BZIP2=	yes
 WANT_GNOME=	yes
 WANT_PERL=	yes
 USE_GMAKE=	yes
-NVU=		${PORTNAME}-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/mozilla
 MAKEFILE=	client.mk
 ALL_TARGET=	build_all
-MOZ_EXTENSIONS=	wallet,xml-rpc,xmlextras,pref,universalchardet,editor/cascades,spellcheck
+MOZ_EXTENSIONS=	wallet,xml-rpc,xmlextras,pref,universalchardet,spellcheck
 PORT_MOZCONFIG=	${WRKSRC}/composer/config/mozconfig.linux
-CFLAGS+=	-I${X11BASE}/include
+
+DESKTOP_ENTRIES="Kompozer" "${COMMENT}" \
+		"${PREFIX}/lib/kompozer/icons/mozicon50.xpm" "${PORTNAME}" \
+		"Application;Network;" true
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/Makefile.common"
