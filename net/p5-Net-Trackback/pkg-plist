@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Net/Trackback.pm
+%%SITE_PERL%%/Net/Trackback/Client.pm
+%%SITE_PERL%%/Net/Trackback/Data.pm
+%%SITE_PERL%%/Net/Trackback/Message.pm
+%%SITE_PERL%%/Net/Trackback/Ping.pm
+%%SITE_PERL%%/Net/Trackback/Server.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Trackback/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Trackback
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrm %%SITE_PERL%%/Net/Trackback
+@dirrmtry %%SITE_PERL%%/Net
