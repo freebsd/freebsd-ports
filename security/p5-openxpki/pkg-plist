@@ -88,6 +88,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Debug.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Exception.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/FileUtils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/LdapUtils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Serialization/JSON.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Serialization/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server.pm
@@ -196,6 +197,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/ValidCSRSerialPresent.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/WorkflowChildrenFailure.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/WorkflowChildrenSuccessfullyFinished.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/WorkflowCreator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Observer/AddExecuteHistory.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Observer/Debug.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Observer/Log.pm
@@ -227,6 +229,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Tests.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Transport/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/VERSION.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Workflow/Factory.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/XML/Cache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/XML/Config.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/i18n.pm
@@ -235,6 +238,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/OpenXPKI.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Workflow
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Transport
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Template/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Template
