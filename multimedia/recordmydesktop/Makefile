@@ -7,6 +7,7 @@
 
 PORTNAME=	recordmydesktop
 DISTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	recordmydesktop
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	recordmydesktop
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Record desktop sessions to an Ogg-Theora-Vorbis file
 
-LIB_DEPENDS=	theora.2:${PORTSDIR}/multimedia/libtheora \
+LIB_DEPENDS=	theora.0:${PORTSDIR}/multimedia/libtheora \
 		jack.0:${PORTSDIR}/audio/jack
 
 USE_XLIB=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	hxplay
 PORTVERSION=	1.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	https://helixcommunity.org/frs/download.php/1950/	\
 		${MASTER_SITE_LOCAL}
