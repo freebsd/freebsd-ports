@@ -63,16 +63,14 @@ PLIST_SUB+=	PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||} \
 		PIXMAPSDIR=${PIXMAPSDIR:S|^${PREFIX}/||}
 
+# building with gcc 4.2 results in libKernel.a becoming 800+ MB
+# and hitting the 400 MB file limit on pointyhat
+NO_PACKAGE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" && ${ARCH} != "amd64" && ${ARCH} != "powerpc"
 BROKEN=	does not configure due to the lack of CDraw libraries for ${ARCH}
-.endif
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
 .endif
 
 post-patch:
