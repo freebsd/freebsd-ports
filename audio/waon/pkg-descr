@@ -1,0 +1,8 @@
+WaoN is a Wave-to-Notes transcriber (converts audio file into midi file)
+and some utility tools such as gWaoN, graphical visualization of the
+spectra, and phase vocoder for time-stretching and pitch-shifting.
+
+WWW: http://waon.sourceforge.net/
+
+- Kengo Ichiki
+kichiki@users.sourceforge.net

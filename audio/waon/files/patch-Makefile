@@ -1,0 +1,97 @@
+*** Makefile.orig	Wed Dec 31 17:00:00 1969
+--- Makefile	Mon Oct  8 18:54:48 2007
+***************
+*** 0 ****
+--- 1,92 ----
++ 
++ LD	= $(CC)
++ RM	= rm -f
++ 
++ all:	waon pv gwaon
++ 
++ CFLAGS += \
++ 	-Wall -O3 \
++ 	`pkg-config --cflags fftw3` \
++ 	`pkg-config --cflags sndfile` \
++ 	`pkg-config --cflags ao` \
++ 	`pkg-config --cflags samplerate` \
++ 	`pkg-config --cflags gtk+-2.0`
++ 
++ ## waon
++ waon_LDFLAGS = \
++ 	-L/usr/local/lib \
++ 	`pkg-config --libs fftw3` \
++ 	`pkg-config --libs sndfile` \
++ 	-lm
++ 
++ waon_OBJS = \
++ 	main.o \
++ 	midi.o \
++ 	analyse.o \
++ 	fft.o \
++ 	hc.o \
++ 	snd.o
++ 
++ waon: $(waon_OBJS)
++ 	$(CC) $(CFLAGS) -o waon $(waon_OBJS) $(waon_LDFLAGS)
++ 
++ ## pv
++ pv_LIBS    =\
++ 	`pkg-config --libs ao` \
++ 	`pkg-config --libs sndfile` \
++ 	`pkg-config --libs fftw3` \
++ 	`pkg-config --libs samplerate` \
++ 	-lm
++ 
++ pv_LDFLAGS      = 
++ 
++ pv_OBJ = \
++ 	pv.o \
++ 	pv-complex.o \
++ 	pv-conventional.o \
++ 	pv-ellis.o \
++ 	pv-freq.o \
++ 	pv-loose-lock.o \
++ 	hc.o \
++ 	fft.o \
++ 	snd.o \
++ 	ao-wrapper.o
++ 
++ 
++ pv:	$(pv_OBJ)
++ 	$(LD) $(pv_LDFLAGS) -o pv $(pv_OBJ) $(pv_LIBS)
++ 
++ ## gwaon
++ gwaon_LIBS    = \
++ 	`pkg-config --libs gtk+-2.0` \
++ 	`pkg-config --libs ao` \
++ 	`pkg-config --libs sndfile` \
++ 	`pkg-config --libs fftw3` \
++ 	`pkg-config --libs samplerate` \
++ 	-lm
++ 
++ gwaon_LDFLAGS      = 
++ 
++ gwaon_OBJ = \
++ 	gwaon.o \
++ 	gwaon-menu.o \
++ 	gwaon-about.o \
++ 	gwaon-wav.o \
++ 	gwaon-play.o \
++ 	pv-complex.o \
++ 	pv-conventional.o \
++ 	ao-wrapper.o \
++ 	gtk-color.o \
++ 	snd.o \
++ 	hc.o \
++ 	fft.o \
++ 	midi.o
++ 
++ gwaon:	$(gwaon_OBJ)
++ 	$(LD) $(gwaon_LDFLAGS) -o gwaon $(gwaon_OBJ) $(gwaon_LIBS)
++ 
++ clean:
++ 	$(RM) *.o *~ *.core \
++ 	waon \
++ 	pv \
++ 	gwaon

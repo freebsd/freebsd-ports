@@ -647,6 +647,7 @@
     SUBDIR += vorbis-tools
     SUBDIR += vorbisgain
     SUBDIR += vsound
+    SUBDIR += waon
     SUBDIR += wav2cdr
     SUBDIR += wavbreaker
     SUBDIR += waveplay
