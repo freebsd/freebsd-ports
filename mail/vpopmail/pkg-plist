@@ -39,27 +39,41 @@ vpopmail/bin/vuserinfo
 %%PORTDOCS%%vpopmail/doc/man_html/vpopbull.html
 %%PORTDOCS%%vpopmail/doc/man_html/vsetuserquota.html
 %%PORTDOCS%%vpopmail/doc/README
+%%PORTDOCS%%vpopmail/doc/README.activedirectory
 %%PORTDOCS%%vpopmail/doc/README.filelocking
 %%PORTDOCS%%vpopmail/doc/README.ipaliasdomains
 %%PORTDOCS%%vpopmail/doc/README.ldap
+%%PORTDOCS%%vpopmail/doc/README.maildrop
 %%PORTDOCS%%vpopmail/doc/README.mysql
+%%PORTDOCS%%vpopmail/doc/README.onchange
 %%PORTDOCS%%vpopmail/doc/README.oracle
 %%PORTDOCS%%vpopmail/doc/README.pgsql
+%%PORTDOCS%%vpopmail/doc/README.qmail-default
 %%PORTDOCS%%vpopmail/doc/README.quotas
 %%PORTDOCS%%vpopmail/doc/README.roamingusers
+%%PORTDOCS%%vpopmail/doc/README.spamassassin
 %%PORTDOCS%%vpopmail/doc/README.sybase
+%%PORTDOCS%%vpopmail/doc/README.vdelivermail
 %%PORTDOCS%%vpopmail/doc/README.vlimits
 %%PORTDOCS%%vpopmail/doc/README.vpopmaild
 %%PORTDOCS%%vpopmail/doc/README.vqmaillocal
-@unexec if [ -f %D/vpopmail/etc/defaultdomain ]; then rm -f %D/vpopmail/etc/defaultdomain; fi
+%%PORTDOCS%%vpopmail/doc/UPGRADE
 vpopmail/etc/inc_deps
 vpopmail/etc/lib_deps
+@exec if [ ! -f %D/vpopmail/etc/defaultdomain ]; then touch %D/vpopmail/etc/defaultdomain; fi
+@unexec if [ -f %D/vpopmail/etc/defaultdomain ] && [ ! -s %D/vpopmail/etc/defaultdomain ]; then rm -f %D/vpopmail/etc/defaultdomain; fi
 @unexec if cmp -s %D/vpopmail/etc/tcp.smtp %D/vpopmail/etc/tcp.smtp-dist; then rm -f %D/vpopmail/etc/tcp.smtp; fi
 vpopmail/etc/tcp.smtp-dist
 @exec if [ ! -f %D/vpopmail/etc/tcp.smtp ] ; then cp -p %D/%F %B/tcp.smtp; fi
 @unexec if cmp -s %D/vpopmail/etc/vlimits.default %D/vpopmail/etc/vlimits.default-dist; then rm -f %D/vpopmail/etc/vlimits.default; fi
 vpopmail/etc/vlimits.default-dist
-@unexec if [ -f %D/vpopmail/etc/vpopmail.mysql ]; then rm -f %D/vpopmail/etc/vpopmail.mysql; fi
+@exec if [ ! -f %D/vpopmail/etc/vlimits.default ] ; then cp -p %D/%F %B/vlimits.default; fi
+%%LDAP%%@unexec if cmp -s %D/vpopmail/etc/vpopmail.ldap %D/vpopmail/etc/vpopmail.ldap-dist; then rm -f %D/vpopmail/etc/vpopmail.ldap; fi
+%%LDAP%%vpopmail/etc/vpopmail.ldap-dist
+%%LDAP%%@exec if [ ! -f %D/vpopmail/etc/vpopmail.ldap ] ; then cp -p %D/%F %B/vpopmail.ldap; fi
+@unexec if cmp -s %D/vpopmail/etc/vpopmail.mysql %D/vpopmail/etc/vpopmail.mysql-dist; then rm -f %D/vpopmail/etc/vpopmail.mysql; fi
+vpopmail/etc/vpopmail.mysql-dist
+@exec if [ ! -f %D/vpopmail/etc/vpopmail.mysql ] ; then cp -p %D/%F %B/vpopmail.mysql; fi
 vpopmail/include/config.h
 vpopmail/include/vauth.h
 vpopmail/include/vlimits.h
@@ -67,10 +81,16 @@ vpopmail/include/vpopmail.h
 vpopmail/include/vpopmail_config.h
 vpopmail/lib/libvpopmail.a
 %%LDAP%%vpopmail/ldap/README.ldap
+%%LDAP%%vpopmail/ldap/nsswitch.conf
+%%LDAP%%vpopmail/ldap/pam_ldap.conf
+%%LDAP%%vpopmail/ldap/pam_ldap.secret
 %%LDAP%%vpopmail/ldap/qmailUser.schema
 %%LDAP%%vpopmail/ldap/slapd.conf
 %%LDAP%%vpopmail/ldap/vpopmail.ldif
 %%LDAP%%@dirrm vpopmail/ldap
+%%MAILDROP%%vpopmail/maildrop/maildroprc.v1
+%%MAILDROP%%vpopmail/maildrop/maildroprc.v2
+%%MAILDROP%%@dirrm vpopmail/maildrop
 @dirrm vpopmail/lib
 @dirrm vpopmail/include
 @dirrmtry vpopmail/etc

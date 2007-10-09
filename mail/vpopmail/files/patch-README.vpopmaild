@@ -1,27 +1,16 @@
-diff -urN -x .svn ../../../tags/vpopmail-5.4.14-stock/README.vpopmaild ./README.vpopmaild
---- ../../../tags/vpopmail-5.4.14-stock/README.vpopmaild	Mon Oct  2 13:49:02 2006
-+++ ./README.vpopmaild	Mon Oct  2 16:36:38 2006
-@@ -36,8 +36,8 @@
+diff -urN -x .svn ../../vendor/vpopmail/README.vpopmaild ./README.vpopmaild
+--- ../../vendor/vpopmail/README.vpopmaild	2007-10-07 23:44:14.000000000 +0300
++++ ./README.vpopmaild	2007-10-08 12:10:43.000000000 +0300
+@@ -243,7 +243,7 @@
  
  Rights required: Must be a valid email address.
  
--Action: Verify the username and password of the persion desiring to
--        login, and set thier access rights.
-+Action: Verify the username and password of the person desiring to
-+        login, and set their access rights.
+-Action:	Verify the username and password of the persion desiring to
++Action:	Verify the username and password of the person desiring to
+ 	login, and set their access rights.
  
- 	If the compact option is given, bitmap values are returned
-         as a single numeric value instead of a line for each bit
-@@ -62,7 +62,7 @@
- Rights required: SA_ADMIN, or QA_ADMIN
- 
- Action:  Delete a mailbox and user from the specified domain.  ONLY SA_ADMIN
--can delete users to domains other than the home domain of the login user.
-+can delete users from domains other than the home domain of the login user.
- 
- 
- --------------------------------------------------------------------
-@@ -170,11 +170,11 @@
+ 	For the "login" command, a successful login will return a
+@@ -386,7 +386,7 @@
  
  
  The following values are returned as the character '1' or '0'. '1'
@@ -30,30 +19,7 @@ diff -urN -x .svn ../../../tags/vpopmail-5.4.14-stock/README.vpopmaild ./README.
  means the user can not change passwords.
  
  no_password_change, no_pop, no_webmail, no_imap, bounce_mail, no_relay,
--no_dialup, user_flag_0, user_flag_1, user_flag_2, user_flag_3, no_smpt
-+no_dialup, user_flag_0, user_flag_1, user_flag_2, user_flag_3, no_smtp
- 
- 
- The following items confer extra privileges to the user. A '1' says that
-@@ -231,7 +231,7 @@
- Rights required: SA_ADMIN
- 
- Action: return internal information about a domain.  The information
--returned includes: domain directory, userid, groupid, number of users,
-+returned includes: domain directory, userid, groupid, number of users.
- If you ask for an alias domain, you will receive information for the
- parent domain.  Part of that information will include a list of all
- alias names of the parent domain.
-@@ -313,7 +313,7 @@
- Maildir dir
- lastauth file
- 
--The possible type values are: file, dir, chardev, plkdev, fifo, 
-+The possible type values are: file, dir, chardev, blkdev, fifo, 
- link, sock, unknown.
- 
- 
-@@ -381,7 +381,7 @@
+@@ -630,7 +630,7 @@
  Rights required: SA_ADMIN
  
  Action:  List all domains on the system, and their parent domain.
@@ -62,47 +28,13 @@ diff -urN -x .svn ../../../tags/vpopmail-5.4.14-stock/README.vpopmaild ./README.
  When both are given, the data is broken up into pages with lines_per_page
  lines on each.  The page returned is specified by page.
  
-@@ -434,7 +434,7 @@
+@@ -1087,7 +1087,7 @@
+ The actual error messages are stored in the file vpopmaild.msg for easy translation.
+ Once there are other language files, I'll create a directory to store the various
+ language files, and use a symlink to select a language.  Error messages are set
+-at comile time.
++at compile time.
  
- Rights required: Anyone
- 
--Action: Return the domain assoicated with this IP Address, if any.
-+Action: Return the domain associated with this IP Address, if any.
- 
- 
- --------------------------------------------------------------------
-@@ -476,7 +476,7 @@
- Rights required: Any.  SA_ADMIN can read all domains, all other users
-                  can only read their own domain.
- 
--Action:  Return Limits informaiton for a domain.  If no special limits 
-+Action:  Return Limits information for a domain.  If no special limits 
-          are set, it returns the default limit settings for all domains.
-          Find out where these files are kept, and add it here.
- 
-@@ -550,7 +550,7 @@
- 
- Rights required: SA_ADMIN
- 
--Action:  Delete the limits file for a domin.  This will make the
-+Action:  Delete the limits file for a domain.  This will make the
-          domain revert to the global limits set somewhere. (Find
-          out where, and add it here.)
- 
-@@ -674,14 +674,14 @@
- #define V_USER1       0x100
- #define V_USER2       0x200
- #define V_USER3       0x400
--After adding the NO_DIALUP flag we relalized there may be other
-+After adding the NO_DIALUP flag we realized there may be other
- flags people will want that are not directly used by any email code.
- 
- #define NO_SMTP       0x800
- If set, do not allow smtp connections.
- 
- #define QA_ADMIN     0x1000
--If set, the user is granted admin privilages in qmailadmin
-+If set, the user is granted admin privileges in qmailadmin
- 
- #define V_OVERRIDE   0x2000
- If set, the user is not subject to domain limits. Part of the
+-0.X represents a message passed up from fpopmaild primitives, and does not otherwise
++0.X represents a message passed up from vpopmaild primitives, and does not otherwise
+ follow the standard error reporting structure.  (yet?)

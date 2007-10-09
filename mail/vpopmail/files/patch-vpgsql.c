@@ -1,15 +1,7 @@
 diff -urN -x .svn ../../vendor/vpopmail/vpgsql.c ./vpgsql.c
---- ../../vendor/vpopmail/vpgsql.c	Wed Oct  4 13:19:16 2006
-+++ ./vpgsql.c	Sun Oct  8 17:20:54 2006
-@@ -16,6 +16,7 @@
-  * along with this program; if not, write to the Free Software
-  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
-  */
-+#include <ctype.h>
- #include <pwd.h>
- #include <unistd.h>
- #include <stdio.h>
-@@ -389,13 +390,15 @@
+--- ../../vendor/vpopmail/vpgsql.c	Fri Jan 26 15:59:16 2007
++++ ./vpgsql.c	Fri Jan 26 17:01:33 2007
+@@ -390,13 +390,15 @@
  #endif
  
  #ifdef ENABLE_SQL_LOGGING
@@ -27,7 +19,7 @@ diff -urN -x .svn ../../vendor/vpopmail/vpgsql.c ./vpgsql.c
      return(0);
  }
  
-@@ -442,13 +445,15 @@
+@@ -443,13 +445,15 @@
  #endif
  
  #ifdef ENABLE_SQL_LOGGING

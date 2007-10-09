@@ -1,37 +1,17 @@
-diff -urN -x .svn ../../vendor/vpopmail/Makefile.in ./Makefile.in
---- ../../vendor/vpopmail/Makefile.in	Tue Oct  3 17:40:12 2006
-+++ ./Makefile.in	Wed Oct  4 15:48:16 2006
-@@ -97,7 +97,7 @@
- 
+--- ../../vendor/vpopmail/Makefile.in	2007-10-07 23:44:14.000000000 +0300
++++ Makefile.in	2007-10-08 16:26:04.000000000 +0300
+@@ -299,12 +299,11 @@
+ noinst_HEADERS = md5.h vpopmail.h file_lock.h vauth.h vlimits.h maildirquota.h vcdb.h vldap.h vmysql.h voracle.h vpgsql.h vsybase.h vlog.h global.h hmac_md5.h seek.h
  COMMONSOURCES = vpopmail.c md5.c bigdir.c vauth.c file_lock.c vpalias.c seek.c vlimits.c maildirquota.c
- 
--CONFIG_CLEAN_FILES = vauth.c
-+CONFIG_CLEAN_FILES = vauth.c cdb/conf-cc cdb/conf-ld cdb/compile cdb/load
- 
- MYSQLCONF = $(DESTDIR)@vpopmaildir@/etc/vpopmail.mysql
- VLIMITS = $(DESTDIR)@vpopmaildir@/etc/vlimits.default
-@@ -106,7 +106,6 @@
- 
+ CONFIG_CLEAN_FILES = vauth.c cdb/conf-cc cdb/conf-ld cdb/compile cdb/load
+-MYSQLCONF = $(DESTDIR)@vpopmaildir@/etc/vpopmail.mysql
+-VLIMITS = $(DESTDIR)@vpopmaildir@/etc/vlimits.default
++MYSQLCONF = $(DESTDIR)@vpopmaildir@/etc/vpopmail.mysql-dist
++VLIMITS = $(DESTDIR)@vpopmaildir@/etc/vlimits.default-dist
+ noinst_LIBRARIES = libvpopmail.a
  libvpopmail_a_SOURCES = $(COMMONSOURCES) 
  libvpopmail_a_LIBADD = cdb/*.o
 -libvpopmail_a_CFLAGS = -fPIC
- 
  vpopmailbindir = @vpopmaildir@/bin
- vpopmailbin_PROGRAMS = vchkpw vdelivermail clearopensmtp vadddomain \
-@@ -880,6 +879,8 @@
- 	echo "-L@vpopmaildir@/lib -lvpopmail @auth_libs@ @LIBS@" > \
- 	 $(DESTDIR)@vpopmaildir@/etc/lib_deps
- 
-+	$(INSTALL) -o @vpopuser@ -m 0644 -g @vpopgroup@ \
-+	  vlimits.default $(VLIMITS)-dist; \
- 	if test ! -r $(VLIMITS); then \
- 	  $(INSTALL) -o @vpopuser@ -m 0644 -g @vpopgroup@ \
- 	    vlimits.default $(VLIMITS); \
-@@ -897,7 +898,6 @@
- 	    echo "# settings for each line:" >> $(MYSQLCONF); \
- 	    echo "# host|port|user|password|database" >> $(MYSQLCONF); \
- 	    echo "#" >> $(MYSQLCONF); \
--	    echo "localhost|0|root|secret|vpopmail" >> $(MYSQLCONF); \
- 	    echo "#" >> $(MYSQLCONF); \
- 	    echo "# Note:" >> $(MYSQLCONF); \
- 	    echo "#   The value of host may be either a hostname or an IP address." >> $(MYSQLCONF); \
+ vuserinfo_SOURCES = vuserinfo.c maildirquota.c
+ vuserinfo_LDADD = libvpopmail.a @auth_libs@

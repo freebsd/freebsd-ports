@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.4.17
-PORTREVISION=	1
+PORTVERSION=	5.4.20
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,10 +28,12 @@ USE_PERL5=	YES
 VCFGDIR?=	${WRKDIR}/vcfg
 VCFGFILES?=	inc_deps lib_deps tcp.smtp
 
-CONFIGURE_ENV+=	VCFGDIR="${VCFGDIR}"
+CONFIGURE_ENV+=	VCFGDIR="${VCFGDIR}" \
+		AUTOCONF=true ACLOCAL=true AUTOMAKE=true AUTOHEADER=true
 CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_PREFIX} \
 		--enable-tcprules-prog=${LOCALBASE}/bin/tcprules \
-		--enable-tcpserver-file=${PREFIX}/vpopmail/etc/tcp.smtp
+		--enable-tcpserver-file=${PREFIX}/vpopmail/etc/tcp.smtp \
+		--enable-non-root-build
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 #
@@ -62,7 +63,11 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 # WITH_SPAMASSASSIN	- enable SpamAssassin checks before Maildir delivery
 # WITH_SUID_VCHKPW	- set the setuid bit on the vchkpw program
 # WITH_SMTP_AUTH_PATCH	- apply an SMTP authentcation fix
+# WITH_ONCHANGE_SCRIPT	- enable the use of the $PREFIX/vpopmail/etc/onchange
+#                         script, see README.onchange for more information.
 # WITHOUT_FPIC		- do not add -fPIC to the C compiler flags
+# WITH_MAILDROP		- enable maildrop as an MDA (see README.maildrop)
+# MAILDROP_PORT		- the port that provides the bin/maildrop program
 #
 # Set these to the values you'd prefer
 #
@@ -82,20 +87,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 # PREFIX	- installation area for vpopmail (see comment below)
 # VCHKPW_GID	- the group ID of the new vchkpw group (89)
 # VPOPMAIL_UID	- the user ID of the new vpopmail user (89)
-#
-# MySQL database configuration options
-#
-# WITH_MYSQL_SERVER - the hostname of the MySQL server (localhost)
-# WITH_MYSQL_USER - the username for connecting to the MySQL server (root)
-# WITH_MYSQL_PASSWD - the password for connecting to the MySQL server (secret)
-# WITH_MYSQL_DB - the name of the MySQL database to use (vpopmail)
-# The server, user and password variables may be defined separately
-# for read and update access, allowing you to set up a less-priviledged
-# MySQL connection account with read-only access, and another one which
-# is used for administrative purposes:
-# WITH_MYSQL_READ_SERVER, WITH_MYSQL_READ_USER, WITH_MYSQL_READ_PASSWD
-# WITH_MYSQL_UPDATE_SERVER, WITH_MYSQL_UPDATE_USER, WITH_MYSQL_UPDATE_PASSWD
-# Those variables, if defined, override WITH_MYSQL_{SERVER,USER,PASSWD}
 #
 # PostgreSQL database configuration options
 #
@@ -131,6 +122,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 RELAYCLEAR?=	30
 SPAM_THRESHOLD?=15
 LOGLEVEL?=	y
+MAILDROP_PORT?=	mail/maildrop
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
@@ -139,6 +131,9 @@ WANT_OPENLDAP_SASL=	yes
 .endif
 CONFIGURE_ARGS+=	--enable-auth-module=ldap
 LDAP_FILES=		${WRKSRC}/README.ldap \
+			${WRKSRC}/ldap/nsswitch.conf \
+			${WRKSRC}/ldap/pam_ldap.conf \
+			${WRKSRC}/ldap/pam_ldap.secret \
 			${WRKSRC}/ldap/qmailUser.schema \
 			${WRKSRC}/ldap/slapd.conf \
 			${WRKSRC}/ldap/vpopmail.ldif
@@ -162,16 +157,25 @@ WITH_SQL_LOG=		yes
 CONFIGURE_ARGS+=	--enable-mysql-limits
 .endif
 
-WITH_MYSQL_SERVER?=		localhost
-WITH_MYSQL_READ_SERVER?=	${WITH_MYSQL_SERVER}
-WITH_MYSQL_UPDATE_SERVER?=	${WITH_MYSQL_SERVER}
-WITH_MYSQL_USER?=		vpopmail
-WITH_MYSQL_READ_USER?=		${WITH_MYSQL_USER}
-WITH_MYSQL_UPDATE_USER?=	${WITH_MYSQL_USER}
-WITH_MYSQL_PASSWD?=		secret
-WITH_MYSQL_READ_PASSWD?=	${WITH_MYSQL_PASSWD}
-WITH_MYSQL_UPDATE_PASSWD?=	${WITH_MYSQL_PASSWD}
-WITH_MYSQL_DB?=			vpopmail
+.if defined(WITH_MYSQL_USER) || defined(WITH_MYSQL_READ_USER) || defined(WITH_MYSQL_UPDATE_USER)
+BROKEN_MYSQL_PARAMS=	true
+.endif
+.if defined(WITH_MYSQL_SERVER) || defined(WITH_MYSQL_READ_SERVER) || defined(WITH_MYSQL_UPDATE_SERVER)
+BROKEN_MYSQL_PARAMS=	true
+.endif
+.if defined(WITH_MYSQL_PASSWD) || defined(WITH_MYSQL_READ_PASSWD) || defined(WITH_MYSQL_UPDATE_PASSWD)
+BROKEN_MYSQL_PARAMS=	true
+.endif
+.if defined(WITH_MYSQL_DB)
+BROKEN_MYSQL_PARAMS=	true
+.endif
+.if defined(BROKEN_MYSQL_PARAMS)
+BROKEN=	The MySQL connection parameters are no longer setup at compile time - please edit the ${PREFIX}/vpopmail/etc/vpopmail.mysql file instead
+.endif
+.endif
+
+.if defined(DEFAULT_DOMAIN)
+BROKEN=	The default vpopmail domain is no longer setup at compile time - please edit the ${PREFIX}/vpopmail/etc/defaultdomain file instead
 .endif
 
 .if defined(WITH_POSTGRESQL)
@@ -196,6 +200,22 @@ EXTRA_PATCHES+=	${FILESDIR}/sql-remove-deleted.patch
 
 .if defined(WITH_SMTP_AUTH_PATCH)
 EXTRA_PATCHES+=	${FILESDIR}/vchkpw-smtp-auth.patch
+.endif
+
+.if defined(WITH_ONCHANGE_SCRIPT)
+CONFIGURE_ARGS+=	--enable-onchange-script
+.endif
+
+.if defined(WITH_MAILDROP)
+CONFIGURE_ARGS+=	--enable-maildrop=y \
+			--enable-maildrop-prog=${LOCALBASE}/bin/maildrop
+RUN_DEPENDS+=	maildrop:${PORTSDIR}/${MAILDROP_PORT}
+MAILDROP_FILES=		${WRKSRC}/maildrop/maildroprc.v1 \
+			${WRKSRC}/maildrop/maildroprc.v2
+PLIST_SUB+=	MAILDROP=""
+.else
+CONFIGURE_ARGS+=	--enable-maildrop=n
+PLIST_SUB+=	MAILDROP="@comment "
 .endif
 
 .if defined(NOPORTDOCS)
@@ -294,15 +314,20 @@ CONFIGURE_ARGS+=	--disable-make-seekable
 
 .if defined(WITH_SPAMASSASSIN)
 BUILD_DEPENDS+=		spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
-CONFIGURE_ARGS+=	--enable-spamassassin=${LOCALBASE}/bin/spamc \
+CONFIGURE_ARGS+=	--enable-spamassassin \
+			--enable-spamc-prog=${LOCALBASE}/bin/spamc \
 			--enable-spam-threshold=${SPAM_THRESHOLD}
 .endif
 
-DOCS=		README README.filelocking \
-		README.ipaliasdomains README.ldap README.mysql \
-		README.oracle README.pgsql README.quotas \
-		README.roamingusers README.sybase README.vlimits \
-		README.vpopmaild README.vpopmaild README.vqmaillocal
+DOCS=		README README.activedirectory README.filelocking \
+		README.ipaliasdomains README.ldap README.maildrop \
+		README.mysql \
+		README.onchange README.oracle README.pgsql \
+		README.qmail-default README.quotas \
+		README.roamingusers README.spamassassin README.sybase \
+		README.vdelivermail README.vlimits \
+		README.vpopmaild README.vpopmaild README.vqmaillocal \
+		UPGRADE
 
 #
 # This port doesn't honour PREFIX, it honours vpopmail's home directory.
@@ -364,14 +389,27 @@ post-install:
 	else \
 		${TOUCH} ${PREFIX}/vpopmail/etc/tcp.smtp-dist; \
 	fi;
-.if defined(DEFAULT_DOMAIN)
-	${ECHO_CMD} ${DEFAULT_DOMAIN} > ${PREFIX}/vpopmail/etc/defaultdomain
-.endif
+	if [ ! -f ${PREFIX}/vpopmail/etc/tcp.smtp ]; then \
+		${INSTALL_DATA} ${PREFIX}/vpopmail/etc/tcp.smtp-dist ${PREFIX}/vpopmail/etc/tcp.smtp; \
+	fi
+	if [ ! -f ${PREFIX}/vpopmail/etc/vlimits.default ]; then \
+		${INSTALL_DATA} ${PREFIX}/vpopmail/etc/vlimits.default-dist ${PREFIX}/vpopmail/etc/vlimits.default; \
+	fi
 .if defined(WITH_MYSQL)
-	${ECHO_CMD} "${WITH_MYSQL_READ_SERVER}|0|${WITH_MYSQL_READ_USER}|${WITH_MYSQL_READ_PASSWD}|${WITH_MYSQL_DB}" \
-		>> ${PREFIX}/vpopmail/etc/vpopmail.mysql
-	${ECHO_CMD} "${WITH_MYSQL_UPDATE_SERVER}|0|${WITH_MYSQL_UPDATE_USER}|${WITH_MYSQL_UPDATE_PASSWD}|${WITH_MYSQL_DB}" \
-		>> ${PREFIX}/vpopmail/etc/vpopmail.mysql
+	if [ ! -f ${PREFIX}/vpopmail/etc/vpopmail.mysql ]; then \
+		${CP} ${PREFIX}/vpopmail/etc/vpopmail.mysql-dist ${PREFIX}/vpopmail/etc/vpopmail.mysql; \
+	fi
+.endif
+	${TOUCH} ${PREFIX}/vpopmail/etc/defaultdomain
+.if defined(WITH_LDAP)
+	@${ECHO_CMD} "# LDAP CONNECTION SETTINGS FOR VPOPMAIL" > ${PREFIX}/vpopmail/etc/vpopmail.ldap-dist
+	@${ECHO_CMD} "# Line format:" >> ${PREFIX}/vpopmail/etc/vpopmail.ldap-dist
+	@${ECHO_CMD} "# host|port|user|password|basedn" >> ${PREFIX}/vpopmail/etc/vpopmail.ldap-dist
+	@${ECHO_CMD} "localhost|389|cn=vpopmailuser, o=vpopmail|vpoppasswd|o=vpopmail" >> ${PREFIX}/vpopmail/etc/vpopmail.ldap-dist
+	if [ ! -f ${PREFIX}/vpopmail/etc/vpopmail.ldap ]; then \
+		${CP} ${PREFIX}/vpopmail/etc/vpopmail.ldap-dist ${PREFIX}/vpopmail/etc/vpopmail.ldap; \
+	fi
+	@${ECHO_CMD} "You need to specify the LDAP connection settings in the ${PREFIX}/vpopmail/etc/vpopmail.ldap file"
 .endif
 	${CHOWN} -R vpopmail:vchkpw ${PREFIX}/vpopmail/bin/ ${PREFIX}/vpopmail/etc/
 .if defined(WITH_SPAMASSASSIN)
@@ -383,6 +421,10 @@ post-install:
 .if defined(WITH_LDAP)
 	${MKDIR} ${PREFIX}/vpopmail/ldap
 	${INSTALL_DATA} ${LDAP_FILES} ${PREFIX}/vpopmail/ldap
+.endif
+.if defined(WITH_MAILDROP)
+	${MKDIR} ${PREFIX}/vpopmail/maildrop
+	${INSTALL_DATA} ${MAILDROP_FILES} ${PREFIX}/vpopmail/maildrop
 .endif
 .if defined(WITH_SUID_VCHKPW)
 	${CHMOD} ug+s ${PREFIX}/vpopmail/bin/vchkpw
