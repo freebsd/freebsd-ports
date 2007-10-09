@@ -1,0 +1,4 @@
+weedit is a file duplicate scanner with database support. It uses CRC32, MD5,
+and file size to scan for duplicates.
+
+WWW: http://adm1n.cjb.net/cw/
