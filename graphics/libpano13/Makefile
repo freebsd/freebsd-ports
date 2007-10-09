@@ -1,0 +1,46 @@
+# New ports collection makefile for:	libpano13
+# Date created:				8 October 2007
+# Whom:					Vasil Dimov <vd@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libpano13
+PORTVERSION=	2.9.12
+CATEGORIES=	graphics java
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	panotools
+
+MAINTAINER=	vd@FreeBSD.org
+COMMENT=	Cross-platform library behind Panorama Tools and other photo stitchers
+
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		png:${PORTSDIR}/graphics/png \
+		tiff:${PORTSDIR}/graphics/tiff
+
+USE_GNOME=	gtk20 glib20 pango atk
+
+USE_AUTOTOOLS=	autoconf:261:env autoheader:261:env aclocal:110:env \
+		automake:110:env libtool:15:env
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/gtk-2.0 \
+			-I${LOCALBASE}/include/glib-2.0 \
+			-I${LOCALBASE}/include/pango-1.0 \
+			-I${LOCALBASE}/include/atk-1.0"
+
+USE_LDCONFIG=	yes
+
+.if !defined(WITHOUT_JAVA)
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
+JAVA_OS=	native
+CONFIGURE_ARGS+=	--with-java=${JAVA_HOME}
+.else
+CONFIGURE_ARGS+=	--without-java
+.endif
+
+pre-configure:
+	cd ${WRKSRC} && ./bootstrap
+
+.include <bsd.port.mk>

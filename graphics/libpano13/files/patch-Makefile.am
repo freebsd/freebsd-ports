@@ -1,0 +1,29 @@
+--- Makefile.am.orig	2006-12-21 12:14:09.000000000 +0200
++++ Makefile.am	2007-10-09 18:12:31.000000000 +0300
+@@ -81,13 +81,23 @@
+ 
+ endif
+ 
+-AM_CPPFLAGS = $(JAVA_FLAGS) $(JPEG_FLAGS) $(PNG_FLAGS) $(TIFF_FLAGS) $(ZLIB_FLAGS) $(WIN_DEFS) $(LIN_DEFS) $(DAR_DEFS) $(ENDIAN_FLAG)
++if HAVE_FREEBSD
++FBSD_SRC =  sys_ansi.c ppm.c
++FBSD_DEFS = -D__Ansi__=1
++FBSD_LDFS = -version-info 0:0:0
++
++install-exec-hook:
++	@true
++
++endif
++
++AM_CPPFLAGS = $(JAVA_FLAGS) $(JPEG_FLAGS) $(PNG_FLAGS) $(TIFF_FLAGS) $(ZLIB_FLAGS) $(WIN_DEFS) $(LIN_DEFS) $(DAR_DEFS) $(ENDIAN_FLAG) $(FBSD_DEFS)
+ 
+ lib_LTLIBRARIES = libpano13.la
+ 
+-libpano13_la_SOURCES = $(STD_SRC) $(JAVA_SRC) $(X11_SRC) $(WIN_SRC) $(MAC_SRC) $(LIN_SRC) $(DAR_SRC)
++libpano13_la_SOURCES = $(STD_SRC) $(JAVA_SRC) $(X11_SRC) $(WIN_SRC) $(MAC_SRC) $(LIN_SRC) $(DAR_SRC) $(FBSD_SRC)
+ libpano13_la_LIBADD = $(LIB_JPEG) $(LIB_PNG) $(LIB_TIFF) $(LIB_ZLIB) @PANO_WIN32_RESOURCE@
+-libpano13_la_LDFLAGS = $(LIN_LDFS) $(WIN_LDFS) $(DAR_LDFS)
++libpano13_la_LDFLAGS = $(LIN_LDFS) $(WIN_LDFS) $(DAR_LDFS) $(FBSD_LDFS)
+ libpano13_la_DEPENDENCIES = @PANO_WIN32_RESOURCE@
+ 
+ pkginclude_HEADERS = $(STD_HDR) $(TOOL_HDR)

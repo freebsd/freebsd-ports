@@ -1,0 +1,15 @@
+This is the pano13 library, part of the Panorama Tools by Helmut
+Dersch of the University of Applied Sciences Furtwangen.
+
+Also included with the library are:
+
+- PTOptimizer, a command-line tool for optimizing control points.
+- panoinfo, a command-line tool for querying the library version.
+
+The panorama tools are mainly used to build panoramic images from a set of
+overlapping images. The usability extends beyond "just" building panoramas by
+far though. You can, for instance, use them to render an average of multiple
+images to broaden the dynamic range of the images or average out noise. You
+can also build object movies with them, morph between images and much more.
+
+WWW: http://panotools.sourceforge.net/

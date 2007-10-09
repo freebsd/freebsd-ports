@@ -1,0 +1,25 @@
+bin/PTblender
+bin/PTcrop
+bin/PTinfo
+bin/PTmasker
+bin/PTmender
+bin/PToptimizer
+bin/PTroller
+bin/PTtiff2psd
+bin/PTtiffdump
+bin/PTuncrop
+bin/panoinfo
+include/pano13/PTcommon.h
+include/pano13/file.h
+include/pano13/filter.h
+include/pano13/panorama.h
+include/pano13/panotypes.h
+include/pano13/pt_stdint.h
+include/pano13/pteditor.h
+include/pano13/ptutils.h
+include/pano13/queryfeature.h
+include/pano13/version.h
+lib/libpano13.la
+lib/libpano13.so
+lib/libpano13.so.0
+@dirrm include/pano13

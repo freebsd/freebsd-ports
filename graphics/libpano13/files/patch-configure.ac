@@ -1,0 +1,22 @@
+--- configure.ac.orig	Fri Jun 16 13:30:54 2006
++++ configure.ac	Wed Jan 17 10:40:32 2007
+@@ -45,6 +45,11 @@
+ 		;;
+ 	esac
+ 	;;
++  *freebsd*)
++    PANO_WIN32_RESOURCE=
++    HSYS=freebsd
++    HCPU="${target_cpu}"
++    ;;
+   *darwin*)
+     PANO_WIN32_RESOURCE=
+     HSYS=darwin
+@@ -73,6 +78,7 @@
+ 
+ AM_CONDITIONAL(HAVE_DARWIN, test "${HSYS}" = "darwin")
+ AM_CONDITIONAL(HAVE_LINUX, test "${HSYS}" = "linux")
++AM_CONDITIONAL(HAVE_FREEBSD, test "${HSYS}" = "freebsd")
+ AM_CONDITIONAL(HAVE_MAC, test "${HSYS}" = "classic")
+ AM_CONDITIONAL(HAVE_MINGW, test "${HSYS}" = "mingw32")
+ AM_CONDITIONAL(HAVE_CYGWIN, test "${HSYS}" = "cygwin")
