@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	0.11.1
-PORTREVISION=	2
+PORTVERSION=	0.11.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/ \
 		http://ports.internal.vlink.ru/distfiles/
@@ -15,8 +14,10 @@ MASTER_SITES=	http://www.gajim.org/downloads/ \
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -25,7 +26,8 @@ USE_GNOME=	pygtk2
 USE_PYTHON=	2.4+
 USE_XLIB=	yes
 
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I ${X11BASE}/include" PYTHON=${PYTHON_CMD}
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I ${X11BASE}/include" \
+		LDFLAGS="-L ${PREFIX}/lib" PYTHON=${PYTHON_CMD}
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -37,7 +39,7 @@ PLIST_SUB+=	NLS="@comment "
 
 MAN1=		gajim.1 gajim-remote.1
 
-EMOTICONS=	animated static
+EMOTICONS=	animated static static-big
 ICONSETS=	crystal dcraven gnome goojim gossip gota jabberbulb nuvola \
 		simplebulb stellar sun transports
 
@@ -53,23 +55,11 @@ pre-build:
 post-install:
 		${MKDIR} ${DATADIR}/data/emoticons
 		(cd ${WRKSRC}/data/emoticons && \
-		${CP} -R ${EMOTICONS} ${DATADIR}/data/emoticons)
-
-		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/data/emoticons
-		${FIND} ${DATADIR}/data/emoticons -type d -print0 | \
-			${XARGS} -0 ${CHMOD} 755
-		${FIND} ${DATADIR}/data/emoticons -type f -print0 | \
-			${XARGS} -0 ${CHMOD} ${SHAREMODE}
+		${COPYTREE_SHARE} "${EMOTICONS}" ${DATADIR}/data/emoticons)
 
 		${MKDIR} ${DATADIR}/data/iconsets
 		(cd ${WRKSRC}/data/iconsets && \
-		${CP} -R ${ICONSETS} ${DATADIR}/data/iconsets)
-
-		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/data/iconsets
-		${FIND} ${DATADIR}/data/iconsets -type d -print0 | \
-			${XARGS} -0 ${CHMOD} 755
-		${FIND} ${DATADIR}/data/iconsets -type f -print0 | \
-			${XARGS} -0 ${CHMOD} ${SHAREMODE}
+		${COPYTREE_SHARE} "${ICONSETS}" ${DATADIR}/data/iconsets)
 
 .include <bsd.port.pre.mk>
 
