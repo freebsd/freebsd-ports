@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	meta1
-PORTVERSION=	1.0.PreAlpha19.0
+PORTVERSION=	1.0.PreAlpha20.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.MeTA1.org/download/.prealpha/sunsasl/
+MASTER_SITES=	http://www.MeTA1.org/download/.prealpha/run/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
@@ -44,8 +44,6 @@ PLIST_SUB+=	NOLOGIN=${NOLOGIN_CMD}
 EXTRA_SBIN=	libcheck/noroot libconf/tree libmta/statit \
 		libmta/t-hostname checks/t-getgroup
 
-NOLOGIN_CMD?=	/usr/sbin/nologin
-
 # Options to define Features:
 # META1_WITHOUT_TLS=yes
 # META1_WITHOUT_SASL=yes
@@ -57,6 +55,7 @@ NOLOGIN_CMD?=	/usr/sbin/nologin
 
 # default config:
 META1CONFDIR?=	${PREFIX}/etc/meta1
+NOLOGIN_CMD?=	/usr/sbin/nologin
 
 .if defined(META1_WITH_BERKELEYDB_VER)
 META1_WITH_BERKELEYDB=	yes
