@@ -1,15 +1,15 @@
---- Makefile.in.orig	Tue Jun 20 22:06:56 2006
-+++ Makefile.in	Wed Aug 23 15:28:52 2006
-@@ -231,7 +231,7 @@
- target_os = @target_os@
- target_vendor = @target_vendor@
- AUTOMAKE_OPTIONS = foreign 1.6 dist-zip dist-bzip2
--SUBDIRS = lib include doc examples tests m4
-+SUBDIRS = lib include m4
- 
- # we include the whole debian/ dir in EXTRA_DIST because there's a problem
- # with autotools and HFS+ MacOSX file systems that caused debian/Makefile.am
-@@ -243,7 +243,7 @@
+--- Makefile.in.orig	2007-09-18 02:54:23.000000000 -0400
++++ Makefile.in	2007-10-09 13:37:57.000000000 -0400
+@@ -73,7 +73,7 @@
+   distclean-recursive maintainer-clean-recursive
+ ETAGS = etags
+ CTAGS = ctags
+-DIST_SUBDIRS = lib include doc tests m4 examples
++DIST_SUBDIRS = lib include m4
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ distdir = $(PACKAGE)-$(VERSION)
+ top_distdir = $(distdir)
+@@ -240,7 +240,7 @@
  	libtheora.spec libtheora.spec.in \
  	theora-uninstalled.pc.in
  

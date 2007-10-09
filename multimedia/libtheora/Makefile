@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libtheora
-DISTVERSION=	1.0alpha7
-PORTREVISION=	1
+DISTVERSION=	1.0alpha8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/ \
 		http://distfiles.master.finkmirrors.net/
@@ -19,20 +18,16 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
+USE_GNOME=	ltverhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include " \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="${PTHEAD_LIBS}"
 CONFIGURE_ARGS+=--disable-sdltest \
-		--enable-shared
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-CONFIGURE_ARGS+=--disable-asm
-.endif
+		--enable-shared \
+		--disable-examples
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
