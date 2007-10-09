@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libslang2
-PORTVERSION=	2.1.1
-PORTREVISION=	2
+PORTVERSION=	2.1.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v${PORTVERSION:R}/ \
 		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v${PORTVERSION:R}/ \
@@ -74,6 +73,8 @@ PLIST_SUB+=	ONIG="@comment "
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -E 's,doc/slsh,doc/slang/v\@slang_major_version\@,' \
+		${WRKSRC}/slsh/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's, install-docs,,g' ${WRKSRC}/src/Makefile.in
 .endif
