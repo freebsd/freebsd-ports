@@ -108,6 +108,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g' \
 		${WRKSRC}/libsylph/procmime.c
 
+	# to prevent breaking cc of ldif.c because of a base64.h in PREFIX/include
+	@${REINPLACE_CMD} -e 's|^\(DEFS.*\.\.\)$$|\1 -I../libsylph|' \
+		${WRKSRC}/src/Makefile.in
+
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac libsylph src po manual faq$$|SUBDIRS = ac libsylph src po|g' \
 		${WRKSRC}/Makefile.in
