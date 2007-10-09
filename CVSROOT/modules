@@ -6677,6 +6677,7 @@ libowfat	ports/devel/libowfat
 libp11		ports/security/libp11
 libpanelappletmm	ports/x11-toolkits/libpanelappletmm
 libpano12	ports/graphics/libpano12
+libpano13	ports/graphics/libpano13
 libpaper	ports/print/libpaper
 libparanoia	ports/security/libparanoia
 libparsifal	ports/textproc/libparsifal
