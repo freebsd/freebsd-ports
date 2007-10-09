@@ -1,19 +1,14 @@
---- src/SDL_ttf.c.orig	Tue Oct 14 20:44:17 2003
-+++ src/SDL_ttf.c	Wed Oct  4 08:38:49 2006
-@@ -39,10 +39,10 @@
- #define FREEA(p) free(p)
- #endif
- 
--#include <freetype/freetype.h>
-+#include <ft2build.h>
-+#include FT_FREETYPE_H
+--- blight_input/SDL_ttf.c	2007-10-08 01:36:42.000000000 -0500
++++ blight_input/SDL_ttf.c	2007-10-08 01:39:03.000000000 -0500
+@@ -48,7 +48,6 @@
  #include <freetype/ftoutln.h>
  #include <freetype/ttnameid.h>
+ */
 -#include <freetype/internal/ftobjs.h>
  
- /** hack **/
- #ifndef ft_open_stream
-@@ -272,7 +272,7 @@
+ #ifndef FT_OPEN_STREAM
+ #define FT_OPEN_STREAM ft_open_stream
+@@ -275,7 +274,7 @@
  	}
  	memset(stream, 0, sizeof(*stream));
  
