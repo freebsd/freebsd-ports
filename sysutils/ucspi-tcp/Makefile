@@ -9,8 +9,9 @@ PORTNAME=	ucspi-tcp
 PORTVERSION=	0.88
 PORTREVISION=	2
 CATEGORIES=	sysutils net
-MASTER_SITES=	http://cr.yp.to/ucspi-tcp/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://cr.yp.to/ucspi-tcp/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	garga/ucspi-tcp
 
 PATCH_DIST_STRIP=	-p1
 
@@ -26,37 +27,67 @@ RESTRICTED=	Unsure of djb's license
 
 ALL_TARGET=	prog install instcheck
 
-SCRIPTS_ENV=	BINOWN="${BINOWN}" BINGRP="${BINGRP}" BINMODE="${BINMODE}" \
-		MANMODE="${MANMODE}" CFLAGS="${CFLAGS}"
-# Restrict optimization to -O - -O2 causes problems at least on amd64
-CFLAGS+=	-O
+SCRIPTS_ENV=	BINOWN="${BINOWN}" \
+		BINGRP="${BINGRP}" \
+		BINMODE="${BINMODE}" \
+		MANMODE="${MANMODE}" \
+		CFLAGS="${CFLAGS}"
+
+PROGRAMS=	addcr \
+		argv0 \
+		delcr \
+		fixcrio \
+		mconnect-io \
+		rblsmtpd \
+		recordio \
+		tcpclient \
+		tcprules \
+		tcprulescheck \
+		tcpserver
+
+SCRIPTS=	date@ \
+		finger@ \
+		http@ \
+		mconnect \
+		who@ \
+		tcpcat
 
 .include <bsd.port.pre.mk>
 
+# Restrict optimization to -O - -O2 causes problems at least on amd64
+.if ${ARCH} == "amd64"
+CFLAGS+=	-O
+.endif
+
 .if defined(WITH_MAN)
-MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:1
-DISTFILES+=	${DISTNAME}-man.tar.gz:1
+MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:man \
+		${MASTER_SITE_LOCAL:S/$/:man/}
+MASTER_SITE_SUBDIR+=	garga/ucspi-tcp/:man
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME}-man.tar.gz:man
 MAN1=		addcr.1 argv0.1 date@.1 delcr.1 finger@.1 fixcrio.1 \
 		http@.1 mconnect.1 rblsmtpd.1 recordio.1 tcpcat.1 \
 		tcpclient.1 tcprules.1 tcprulescheck.1 tcpserver.1 who@.1
 .endif
 
 .if defined(WITH_RSS_DIFF)
-PATCH_SITES+=	http://www.qmail.org/
-PATCHFILES+=	ucspi-rss.diff
+PATCH_SITES+=	http://www.qmail.org/:rss
+PATCHFILES+=	ucspi-rss.diff:rss
 .endif
 
 .if defined(WITH_SSL)
 # we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
-PATCH_SITES+=	http://www.nrg4u.com/qmail/
-PATCHFILES+=	ucspi-tcp-ssl-20050405.patch.gz
+PATCH_SITES+=	http://www.nrg4u.com/qmail/:ssl
+PATCHFILES+=	ucspi-tcp-ssl-20050405.patch.gz:ssl
 .endif
 
 .if defined(WITH_RBL2SMTPD)
-PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/garga\/ucspi-tcp\/:rbl2smtpd/}
 PATCHFILES+=	ucspi-tcp_rbl2smtpd.diff:rbl2smtpd
 .endif
+
+PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:rss,ssl,rbl2smtpd/}
+PATCH_SITE_SUBDIR+=	garga/ucspi-tcp/:rss,ssl,rbl2smtpd
 
 post-patch:
 .if defined(WITH_SSL)
@@ -71,14 +102,16 @@ post-configure:
 	@${ECHO_CMD} ${CC} -s > ${WRKSRC}/conf-ld
 
 do-install:
-.for file_name in addcr argv0 delcr fixcrio mconnect-io rblsmtpd recordio tcpclient tcprules tcprulescheck tcpserver
+.for file_name in ${PROGRAMS}
 	@${INSTALL_PROGRAM} ${WRKSRC}/${file_name} ${PREFIX}/bin
 .endfor
-.for file_name in date@ finger@ http@ mconnect who@ tcpcat
+.for file_name in ${SCRIPTS}
 	@${INSTALL_SCRIPT} ${WRKSRC}/${file_name} ${PREFIX}/bin
 .endfor
 .if defined(WITH_MAN)
-	@cd ${WRKSRC}-man; ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1/
+. for file_name in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}-man/${file_name} ${MAN1PREFIX}/man/man1/
+. endfor
 .endif
 
 .include <bsd.port.post.mk>
