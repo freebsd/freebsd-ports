@@ -64,6 +64,7 @@
 %%DATADIR%%/htdocs/lib/send_service_msg.mhtml
 %%DATADIR%%/htdocs/lib/url.mhtml
 %%DATADIR%%/htdocs/service/api/ca_cert_info.html
+%%DATADIR%%/htdocs/service/api/cert_enroll_ie.html
 %%DATADIR%%/htdocs/service/api/cert_full_info.html
 %%DATADIR%%/htdocs/service/api/cert_info.html
 %%DATADIR%%/htdocs/service/api/cert_list.html
@@ -85,6 +86,7 @@
 %%DATADIR%%/htdocs/service/create_crr/highlight_error.mhtml
 %%DATADIR%%/htdocs/service/create_crr/index.html
 %%DATADIR%%/htdocs/service/create_crr/search.mhtml
+%%DATADIR%%/htdocs/service/create_crr/success.mhtml
 %%DATADIR%%/htdocs/service/create_csr/create_workflow.mhtml
 %%DATADIR%%/htdocs/service/create_csr/get_ie_pkcs10.mhtml
 %%DATADIR%%/htdocs/service/create_csr/get_info.mhtml
@@ -115,6 +117,7 @@
 %%DATADIR%%/htdocs/service/info/language.html
 %%DATADIR%%/htdocs/service/info/ra_op_menu.html
 %%DATADIR%%/htdocs/service/info/workflow.html
+%%DATADIR%%/htdocs/service/loginagain.html
 %%DATADIR%%/htdocs/service/logout.html
 %%DATADIR%%/htdocs/service/open_form.mhtml
 %%DATADIR%%/htdocs/service/send_form.mhtml
@@ -152,6 +155,7 @@
 %%DATADIR%%/htdocs/service/workflow/bulk_approval.html
 %%DATADIR%%/htdocs/service/workflow/create_instance.html
 %%DATADIR%%/htdocs/service/workflow/get_workflow_instance_info.html
+%%DATADIR%%/htdocs/service/workflow/link_to_cert_by_csr_id.mhtml
 %%DATADIR%%/htdocs/service/workflow/list_instances.html
 %%DATADIR%%/htdocs/service/workflow/list_types.html
 %%DATADIR%%/htdocs/service/workflow/search_instances.html

@@ -4,7 +4,6 @@ software for PKI: server and client parts along with deployment tools.
 p5-openxpki: core for server part
 p5-openxpki-client: base class for actual clients
 p5-openxpki-i18n: internationalization of the user interface
-p5-openxpki-client-cli: command line interface to local OpenXPKI daemon
 p5-openxpki-client-html-mason: web interface to local OpenXPKI daemon
 p5-openxpki-client-scep: set of SCEP tools
 p5-openxpki-deployment: set or deployment tools
@@ -13,10 +12,10 @@ Dependencies of OpenXPKI ports ("A --> B" means that port B depends on port A):
 
  p5-openxpki-client  <--  p5-openxpki (server)  -->  p5-openxpki-i18n
            \
-            \     |  p5-openxpki-client-cli, p5-openxpki-client-html-mason,
+            \     |  p5-openxpki-client-html-mason,
              \--> |  p5-openxpki-client-scep, p5-openxpki-deployment.
 Notes: 
 I18n is needed for the English interface too. For effective use of deployment,
-it is recommended to install at least one of the clients: ...-cli or ...-mason.
+it is recommended to install p5-openxpki-client-html-mason.
 
 WWW: http://www.openxpki.org/download/freebsd.html
