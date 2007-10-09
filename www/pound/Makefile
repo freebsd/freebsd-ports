@@ -7,6 +7,7 @@
 
 PORTNAME=	pound
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	www net
 MASTER_SITES=	http://www.apsis.ch/pound/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -22,15 +23,17 @@ USE_RC_SUBR=	${PORTNAME}.sh
 
 SUB_LIST=	NAME=${PORTNAME}
 
-CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+POUND_CFLAGS=	${CFLAGS}
+POUND_LDFLAGS=	${LDFLAGS}
 MAKE_ARGS+=	F_CONF=${PREFIX}/etc/pound.cfg
 
 MAN8=	pound.8 poundctl.8
 
 OPTIONS=	DAEMON		"Running as a daemon" on \
+		LIBTHR		"Link against libthr for threading" on \
 		LOG		"With Syslog support" on \
-		MSDAV		"With the Microsoft WebDAV extensions support" off
+		MSDAV		"With the Microsoft WebDAV extensions support" off \
+		PCRE		"Build with libpcre support" off
 
 .include <bsd.port.pre.mk>
 
@@ -45,6 +48,22 @@ CONFIGURE_ARGS+=	--disable-log
 .if defined(WITH_MSDAV)
 CONFIGURE_ARGS+=	--enable-msdav
 .endif
+
+.if defined(WITH_PCRE)
+LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
+POUND_CFLAGS+=		"-I${LOCALBASE}/include"
+POUND_LDFLAGS+=		"-L${LOCALBASE}/lib"
+.endif
+
+.if !defined(WITHOUT_LIBTHR)
+PTHREAD_LIBS=		-lthr
+.endif
+
+CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		CFLAGS="${POUND_CFLAGS}" \
+		CPPFLAGS="${POUND_CFLAGS}" \
+		LDFLAGS="${POUND_LDFLAGS}"
 
 post-install:
 .if !defined(NOPORTDOCS)
