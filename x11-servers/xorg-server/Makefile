@@ -41,16 +41,21 @@ CONFIGURE_ARGS=	--with-mesa-source=${WRKDIR}/Mesa-7.0.1 \
 
 .if !defined(WITHOUT_HAL)
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+CONFIGURE_ARGS+=	--enable-config-hal
 .else
 CONFIGURE_ARGS+=	--disable-config-hal
 .endif
 
 .if !defined(WITHOUT_AIGLX)
 CONFIGURE_ARGS+=	--enable-aiglx=yes
+.else
+CONFIGURE_ARGS+=	--disable-aiglx=yes
 .endif
 		
 .if !defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO
 CONFIGURE_ARGS+=--enable-install-setuid
+.else
+CONFIGURE_ARGS+=--disable-install-setuid
 .endif
 
 MAN1=		Xorg.1 \
@@ -64,7 +69,8 @@ MAN4=		exa.4 \
 MAN5=		xorg.conf.5 \
 		SecurityPolicy.5
 
-NOT_FOR_ARCHS=	ia64
+NOT_FOR_ARCHS=	ia64 alpha
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == alpha
@@ -108,15 +114,5 @@ pre-everything::
 	@${ECHO_MSG} "which will still run the server as root), you can cancel the build and set"
 	@${ECHO_MSG} "NO_SUID_XSERVER=YES in /etc/make.conf."
 .endif
-
-#post-patch:
-#	${ECHO_CMD} "XXX - Remove post-patch target!"
-#	${REINPLACE_CMD} -e 's|pixman|pixman-1|' ${WRKSRC}/configure
-#	${REINPLACE_CMD} -e 's|pixman/pixman.h|pixman.h|' \
-#		${WRKSRC}/fb/fb.h \
-#		${WRKSRC}/include/miscstruct.h \
-#		${WRKSRC}/mi/miregion.c \
-#		${WRKSRC}/render/picture.h
-#	${CP} ${FILESDIR}/GL-glx-glxbyteorder.h ${WRKSRC}/GL/glx/glxbyteorder.h
 
 .include <bsd.port.post.mk>
