@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aide
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.13.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.cs.tut.fi/~rammer/
@@ -18,12 +17,15 @@ COMMENT=	A replacement and extension for Tripwire
 
 LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
 
+.include <bsd.port.pre.mk>
+
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mhash \
 		--with-zlib \
+		--mandir=${MANPREFIX}/man \
 		--with-config_file=${PREFIX}/etc/aide.conf
 
 CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include" \
@@ -61,4 +63,4 @@ post-install:
 	@${ECHO} Do not forget to remove and write-protect the floppy.
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
