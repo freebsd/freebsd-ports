@@ -16,6 +16,10 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-sources
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A complete Web Authoring System similar to Dreamweaver or Frontpage
 
+DEPRECATED=	NVU 1.0, released June 2005, is the last offical release of NVU. \
+		Kompozer has picked up where NVU has left off. Please consider using \
+		${PORTSDIR}/www/kompozer instead
+
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 WANT_PERL=	yes
