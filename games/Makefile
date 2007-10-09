@@ -524,6 +524,7 @@
     SUBDIR += oolite
     SUBDIR += oonsoo
     SUBDIR += openarena
+    SUBDIR += openastromenace
     SUBDIR += openglad
     SUBDIR += openmortal
     SUBDIR += openttd
