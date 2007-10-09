@@ -1,0 +1,29 @@
+--- man/Makefile.am.orig	Tue Oct  9 19:01:32 2007
++++ man/Makefile.am	Tue Oct  9 19:02:32 2007
+@@ -29,7 +29,7 @@
+ 
+ driverman_MANFILES = @DRIVER_NAME@.man
+ 
+-driverman_DATA = $(driverman_MANFILES:man=@DRIVER_MAN_SUFFIX@)
++driverman_DATA = $(driverman_MANFILES:man=@DRIVER_MAN_SUFFIX@x)
+ 
+ EXTRA_DIST = @DRIVER_NAME@.man
+ 
+@@ -48,14 +48,14 @@
+ 	-e 's|__xconfigfile__|xorg.conf|g' \
+ 	-e 's|__projectroot__|$(prefix)|g' \
+ 	-e 's|__appmansuffix__|$(APP_MAN_SUFFIX)|g' \
+-	-e 's|__drivermansuffix__|$(DRIVER_MAN_SUFFIX)|g' \
++	-e 's|__drivermansuffix__|$(DRIVER_MAN_SUFFIX)x|g' \
+ 	-e 's|__adminmansuffix__|$(ADMIN_MAN_SUFFIX)|g' \
+ 	-e 's|__miscmansuffix__|$(MISC_MAN_SUFFIX)|g' \
+ 	-e 's|__filemansuffix__|$(FILE_MAN_SUFFIX)|g'
+ 
+-SUFFIXES = .$(DRIVER_MAN_SUFFIX) .man
++SUFFIXES = .$(DRIVER_MAN_SUFFIX)x .man
+ 
+-.man.$(DRIVER_MAN_SUFFIX):
++.man.$(DRIVER_MAN_SUFFIX)x:
+ 	sed $(MAN_SUBSTS) < $< > $@
+ 
+ @DRIVER_NAME@.man:
