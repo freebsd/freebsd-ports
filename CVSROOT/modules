@@ -16872,6 +16872,7 @@ xf86-video-neomagic	ports/x11-drivers/xf86-video-neomagic
 xf86-video-newport	ports/x11-drivers/xf86-video-newport
 xf86-video-nsc	ports/x11-drivers/xf86-video-nsc
 xf86-video-nv	ports/x11-drivers/xf86-video-nv
+xf86-video-openchrome	ports/x11-drivers/xf86-video-openchrome
 xf86-video-rendition	ports/x11-drivers/xf86-video-rendition
 xf86-video-s3	ports/x11-drivers/xf86-video-s3
 xf86-video-s3virge	ports/x11-drivers/xf86-video-s3virge
