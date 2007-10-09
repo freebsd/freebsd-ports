@@ -7,12 +7,13 @@
 
 PORTNAME=	mupen64
 PORTVERSION?=	0.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
-MASTER_SITES=	http://mupen64.emulation64.com/files/${PORTVERSION}/ \
+MASTER_SITES=	http://mupen64.emulation64.com/files/${MUPEN64VERSION}/ \
 		${MASTER_SITE_GENTOO:S|$|distfiles/|}
 PKGNAMESUFFIX?=	-base
-DISTNAME=	${PORTNAME}_src-${PORTVERSION}
+DISTNAME?=	${PORTNAME}_src-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Mupen64 is a Nintendo 64 emulator
