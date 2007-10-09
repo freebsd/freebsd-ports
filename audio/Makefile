@@ -115,6 +115,7 @@
     SUBDIR += drumpiler
     SUBDIR += dssi
     SUBDIR += dtmfdial
+    SUBDIR += dvda-author
     SUBDIR += easytag
     SUBDIR += easytag-devel
     SUBDIR += eawpats
