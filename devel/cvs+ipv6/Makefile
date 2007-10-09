@@ -18,7 +18,7 @@ PATCHFILES=	${DISTNAME}-v6-20040610.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
-COMMENT=		IPv6 enabled cvs.  You can use IPv6 connection when using pserver
+COMMENT=	IPv6 enabled cvs.  You can use IPv6 connection when using pserver
 
 CONFLICTS=	cvsnt-[12]*
 
