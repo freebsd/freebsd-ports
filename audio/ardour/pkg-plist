@@ -102,6 +102,7 @@ share/ardour2/icons/ardour_icon_22px.png
 share/ardour2/icons/ardour_icon_48px.png
 share/ardour2/icons/ardour_icon_32px.png
 share/ardour2/icons/ardour_icon_16px.png
+share/ardour2/icons/saelogo.png
 @dirrm share/ardour2/icons
 share/ardour2/templates/16 Tracks.template
 share/ardour2/templates/2 Track.template
@@ -110,23 +111,23 @@ share/ardour2/templates/4 Tracks.template
 share/ardour2/templates/8 Tracks.template
 @dirrm share/ardour2/templates
 @dirrm share/ardour2
-share/locale/it_IT/LC_MESSAGES/libardour.mo
-share/locale/sv_SE/LC_MESSAGES/libardour.mo
-share/locale/el_GR/LC_MESSAGES/libardour.mo
-share/locale/ru_RU/LC_MESSAGES/libardour.mo
 share/locale/el_GR/LC_MESSAGES/libgtkmm2ext.mo
+share/locale/el_GR/LC_MESSAGES/libardour2.mo
+share/locale/el_GR/LC_MESSAGES/gtk2_ardour.mo
 share/locale/ru_RU/LC_MESSAGES/libgtkmm2ext.mo
+share/locale/ru_RU/LC_MESSAGES/libardour2.mo
+share/locale/ru_RU/LC_MESSAGES/gtk2_ardour.mo
 share/locale/pt_BR/LC_MESSAGES/libgtkmm2ext.mo
+share/locale/pt_BR/LC_MESSAGES/gtk2_ardour.mo
+share/locale/pt_PT/LC_MESSAGES/gtk2_ardour.mo
 share/locale/es_ES/LC_MESSAGES/libgtkmm2ext.mo
-share/locale/it_IT/LC_MESSAGES/gtk_ardour.mo
-share/locale/sv_SE/LC_MESSAGES/gtk_ardour.mo
-share/locale/el_GR/LC_MESSAGES/gtk_ardour.mo
-share/locale/fr_FR/LC_MESSAGES/gtk_ardour.mo
-share/locale/ru_RU/LC_MESSAGES/gtk_ardour.mo
-share/locale/pt_BR/LC_MESSAGES/gtk_ardour.mo
-share/locale/es_ES/LC_MESSAGES/gtk_ardour.mo
-share/locale/de_DE/LC_MESSAGES/gtk_ardour.mo
-share/locale/pt_PT/LC_MESSAGES/gtk_ardour.mo
+share/locale/es_ES/LC_MESSAGES/gtk2_ardour.mo
+share/locale/fr_FR/LC_MESSAGES/gtk2_ardour.mo
+share/locale/it_IT/LC_MESSAGES/libardour2.mo
+share/locale/it_IT/LC_MESSAGES/gtk2_ardour.mo
+share/locale/sv_SE/LC_MESSAGES/libardour2.mo
+share/locale/sv_SE/LC_MESSAGES/gtk2_ardour.mo
+share/locale/de_DE/LC_MESSAGES/gtk2_ardour.mo
 @dirrmtry share/locale/it_IT/LC_MESSAGES
 @dirrmtry share/locale/it_IT
 @dirrmtry share/locale/sv_SE/LC_MESSAGES
@@ -137,3 +138,9 @@ share/locale/pt_PT/LC_MESSAGES/gtk_ardour.mo
 @dirrmtry share/locale/ru_RU
 @dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
+@dirrmtry share/locale/pt_PT/LC_MESSAGES
+@dirrmtry share/locale/pt_PT
+@dirrmtry share/locale/es_ES/LC_MESSAGES
+@dirrmtry share/locale/es_ES
+@dirrmtry share/locale/fr_FR/LC_MESSAGES
+@dirrmtry share/locale/fr_FR
