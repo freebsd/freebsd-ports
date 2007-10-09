@@ -6105,6 +6105,7 @@ kojoney		ports/net/kojoney
 komparator	ports/sysutils/komparator
 kompmgr		ports/x11-wm/kompmgr
 kompose		ports/deskutils/kompose
+kompozer	ports/www/kompozer
 konq-plugins	ports/misc/konq-plugins
 konversation	ports/irc/konversation
 konverse	ports/net-im/konverse
