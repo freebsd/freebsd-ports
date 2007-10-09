@@ -1,0 +1,298 @@
+Option parsing in the Git shell scripts uses the construct 'while
+case "$#" in 0) break ;; esac; do ... done'.  This is neat, because
+it needs no external commands invocation.  But for the FreeBSD's
+original Bourne shell (that is not fully IEEE 1003.2-compliant) the
+'case' construct that has not matched patterns does not modify the
+exit value.  As per IEEE 1003.2, it should return zero: see
+http://opengroup.org/onlinepubs/000095399, Shell and Utilities
+Volume (XCU), Case Conditional Construct.
+
+The fix is to add the case branch '*) : ;;'.  It also needs no
+external commands invocation and it does its work, because ':'
+always returns zero.
+
+FreeBSD has the PR 116559,
+  http://www.freebsd.org/cgi/query-pr.cgi?pr=116559
+that fixes the shell issue.  If it will be committed, this patch
+will not be needed anymore for systems that will have the fixed
+/bin/sh.
+
+Signed-off-by: Eygene Ryabinkin <rea-git@codelabs.ru>
+---
+ contrib/examples/git-gc.sh         |    2 +-
+ contrib/examples/git-tag.sh        |    2 +-
+ contrib/examples/git-verify-tag.sh |    2 +-
+ git-am.sh                          |    2 +-
+ git-clean.sh                       |    2 +-
+ git-commit.sh                      |    2 +-
+ git-fetch.sh                       |    2 +-
+ git-filter-branch.sh               |    2 +-
+ git-instaweb.sh                    |    2 +-
+ git-ls-remote.sh                   |    2 +-
+ git-merge.sh                       |    2 +-
+ git-mergetool.sh                   |    2 +-
+ git-pull.sh                        |    2 +-
+ git-quiltimport.sh                 |    2 +-
+ git-rebase--interactive.sh         |    2 +-
+ git-rebase.sh                      |    4 ++--
+ git-repack.sh                      |    2 +-
+ git-reset.sh                       |    2 +-
+ git-submodule.sh                   |    2 +-
+ 19 files changed, 20 insertions(+), 20 deletions(-)
+
+diff --git contrib/examples/git-gc.sh b/contrib/examples/git-gc.sh
+index 2ae235b..60cb348 100755
+--- contrib/examples/git-gc.sh
++++ contrib/examples/git-gc.sh
+@@ -9,7 +9,7 @@ SUBDIRECTORY_OK=Yes
+ . git-sh-setup
+ 
+ no_prune=:
+-while case $# in 0) break ;; esac
++while case $# in 0) break ;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	--prune)
+diff --git contrib/examples/git-tag.sh b/contrib/examples/git-tag.sh
+index 5ee3f50..26aab69 100755
+--- contrib/examples/git-tag.sh
++++ contrib/examples/git-tag.sh
+@@ -14,7 +14,7 @@ username=
+ list=
+ verify=
+ LINES=0
+-while case "$#" in 0) break ;; esac
++while case "$#" in 0) break ;; *) : ;; esac
+ do
+     case "$1" in
+     -a)
+diff --git contrib/examples/git-verify-tag.sh b/contrib/examples/git-verify-tag.sh
+index 37b0023..9a0f011 100755
+--- contrib/examples/git-verify-tag.sh
++++ contrib/examples/git-verify-tag.sh
+@@ -5,7 +5,7 @@ SUBDIRECTORY_OK='Yes'
+ . git-sh-setup
+ 
+ verbose=
+-while case $# in 0) break;; esac
++while case $# in 0) break;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	-v|--v|--ve|--ver|--verb|--verbo|--verbos|--verbose)
+diff --git git-am.sh b/git-am.sh
+index 6809aa0..0bd8d34 100755
+--- git-am.sh
++++ git-am.sh
+@@ -109,7 +109,7 @@ dotest=.dotest sign= utf8=t keep= skip= interactive= resolved= binary=
+ resolvemsg= resume=
+ git_apply_opt=
+ 
+-while case "$#" in 0) break;; esac
++while case "$#" in 0) break;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	-d=*|--d=*|--do=*|--dot=*|--dote=*|--dotes=*|--dotest=*)
+diff --git git-clean.sh b/git-clean.sh
+index a5cfd9f..1fac731 100755
+--- git-clean.sh
++++ git-clean.sh
+@@ -26,7 +26,7 @@ rmrf="rm -rf --"
+ rm_refuse="echo Not removing"
+ echo1="echo"
+ 
+-while case "$#" in 0) break ;; esac
++while case "$#" in 0) break ;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	-d)
+diff --git git-commit.sh b/git-commit.sh
+index bb113e8..5f298c1 100755
+--- git-commit.sh
++++ git-commit.sh
+@@ -89,7 +89,7 @@ force_author=
+ only_include_assumed=
+ untracked_files=
+ templatefile="`git config commit.template`"
+-while case "$#" in 0) break;; esac
++while case "$#" in 0) break;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	-F|--F|-f|--f|--fi|--fil|--file)
+diff --git git-fetch.sh b/git-fetch.sh
+index c3a2001..dac2d72 100755
+--- git-fetch.sh
++++ git-fetch.sh
+@@ -27,7 +27,7 @@ shallow_depth=
+ no_progress=
+ test -t 1 || no_progress=--no-progress
+ quiet=
+-while case "$#" in 0) break ;; esac
++while case "$#" in 0) break ;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	-a|--a|--ap|--app|--appe|--appen|--append)
+diff --git git-filter-branch.sh b/git-filter-branch.sh
+index a4b6577..02b567b 100755
+--- git-filter-branch.sh
++++ git-filter-branch.sh
+@@ -105,7 +105,7 @@ filter_tag_name=
+ filter_subdir=
+ orig_namespace=refs/original/
+ force=
+-while case "$#" in 0) usage;; esac
++while case "$#" in 0) usage;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	--)
+diff --git git-instaweb.sh b/git-instaweb.sh
+index b79c6b6..c85f8c0 100755
+--- git-instaweb.sh
++++ git-instaweb.sh
+@@ -61,7 +61,7 @@ stop_httpd () {
+ 	test -f "$fqgitdir/pid" && kill `cat "$fqgitdir/pid"`
+ }
+ 
+-while case "$#" in 0) break ;; esac
++while case "$#" in 0) break ;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	--stop|stop)
+diff --git git-ls-remote.sh b/git-ls-remote.sh
+index b7e5d04..4ef4341 100755
+--- git-ls-remote.sh
++++ git-ls-remote.sh
+@@ -13,7 +13,7 @@ die () {
+ }
+ 
+ exec=
+-while case "$#" in 0) break;; esac
++while case "$#" in 0) break;; *) : ;; esac
+ do
+   case "$1" in
+   -h|--h|--he|--hea|--head|--heads)
+diff --git git-merge.sh b/git-merge.sh
+index 3a01db0..94a50aa 100755
+--- git-merge.sh
++++ git-merge.sh
+@@ -122,7 +122,7 @@ merge_name () {
+ case "$#" in 0) usage ;; esac
+ 
+ have_message=
+-while case "$#" in 0) break ;; esac
++while case "$#" in 0) break ;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	-n|--n|--no|--no-|--no-s|--no-su|--no-sum|--no-summ|\
+diff --git git-mergetool.sh b/git-mergetool.sh
+index 47a8055..0e286dd 100755
+--- git-mergetool.sh
++++ git-mergetool.sh
+@@ -268,7 +268,7 @@ merge_file () {
+     cleanup_temp_files
+ }
+ 
+-while case $# in 0) break ;; esac
++while case $# in 0) break ;; *) : ;; esac
+ do
+     case "$1" in
+ 	-t|--tool*)
+diff --git git-pull.sh b/git-pull.sh
+index 5e96d1f..722ed4e 100755
+--- git-pull.sh
++++ git-pull.sh
+@@ -16,7 +16,7 @@ test -z "$(git ls-files -u)" ||
+ 	die "You are in the middle of a conflicted merge."
+ 
+ strategy_args= no_summary= no_commit= squash=
+-while case "$#,$1" in 0) break ;; *,-*) ;; *) break ;; esac
++while case "$#,$1" in 0) break ;; *,-*) : ;; *) break ;; esac
+ do
+ 	case "$1" in
+ 	-n|--n|--no|--no-|--no-s|--no-su|--no-sum|--no-summ|\
+diff --git git-quiltimport.sh b/git-quiltimport.sh
+index 9de54d1..4039617 100755
+--- git-quiltimport.sh
++++ git-quiltimport.sh
+@@ -5,7 +5,7 @@ SUBDIRECTORY_ON=Yes
+ 
+ dry_run=""
+ quilt_author=""
+-while case "$#" in 0) break;; esac
++while case "$#" in 0) break;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	--au=*|--aut=*|--auth=*|--autho=*|--author=*)
+diff --git git-rebase--interactive.sh b/git-rebase--interactive.sh
+index abc2b1c..54e4299 100755
+--- git-rebase--interactive.sh
++++ git-rebase--interactive.sh
+@@ -317,7 +317,7 @@ do_rest () {
+ 	done
+ }
+ 
+-while case $# in 0) break ;; esac
++while case $# in 0) break ;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	--continue)
+diff --git git-rebase.sh b/git-rebase.sh
+index 3bd66b0..29cfab2 100755
+--- git-rebase.sh
++++ git-rebase.sh
+@@ -122,7 +122,7 @@ finish_rb_merge () {
+ 
+ is_interactive () {
+ 	test -f "$dotest"/interactive ||
+-	while case $#,"$1" in 0,|*,-i|*,--interactive) break ;; esac
++	while case $#,"$1" in 0,|*,-i|*,--interactive) break ;; *) : ;; esac
+ 	do
+ 		shift
+ 	done && test -n "$1"
+@@ -130,7 +130,7 @@ is_interactive () {
+ 
+ is_interactive "$@" && exec git-rebase--interactive "$@"
+ 
+-while case "$#" in 0) break ;; esac
++while case "$#" in 0) break ;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	--continue)
+diff --git git-repack.sh b/git-repack.sh
+index 156c5e8..aac771e 100755
+--- git-repack.sh
++++ git-repack.sh
+@@ -9,7 +9,7 @@ SUBDIRECTORY_OK='Yes'
+ 
+ no_update_info= all_into_one= remove_redundant=
+ local= quiet= no_reuse= extra=
+-while case "$#" in 0) break ;; esac
++while case "$#" in 0) break ;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	-n)	no_update_info=t ;;
+diff --git git-reset.sh b/git-reset.sh
+index 1dc606f..eb92610 100755
+--- git-reset.sh
++++ git-reset.sh
+@@ -11,7 +11,7 @@ require_work_tree
+ update= reset_type=--mixed
+ unset rev
+ 
+-while case $# in 0) break ;; esac
++while case $# in 0) break ;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	--mixed | --soft | --hard)
+diff --git git-submodule.sh b/git-submodule.sh
+index 3320998..78a25ad 100755
+--- git-submodule.sh
++++ git-submodule.sh
+@@ -251,7 +251,7 @@ modules_list()
+ 	done
+ }
+ 
+-while case "$#" in 0) break ;; esac
++while case "$#" in 0) break ;; *) : ;; esac
+ do
+ 	case "$1" in
+ 	add)
