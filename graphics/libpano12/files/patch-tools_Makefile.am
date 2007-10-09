@@ -1,6 +1,6 @@
 --- tools/Makefile.am.orig	2007-07-02 00:16:15.000000000 +0300
-+++ tools/Makefile.am	2007-10-08 11:31:50.000000000 +0300
-@@ -20,7 +20,15 @@
++++ tools/Makefile.am	2007-10-09 19:10:41.000000000 +0300
+@@ -20,15 +20,23 @@
  DAR_DEFS = 
  endif
  
@@ -16,10 +16,13 @@
 +AM_CPPFLAGS = $(JAVA_FLAGS) $(LIN_DEFS) $(DAR_DEFS) $(TIFF_FLAGS) $(JPEG_FLAGS) $(FBSD_DEFS)
  AM_LDFLAGS  = -L${top_builddir}
  
- bin_PROGRAMS = pano12info PTOptimizer 
-@@ -28,7 +36,7 @@
- PTOptimizer_SOURCES = PTOptimizer.c
- PTOptimizer_LDADD   = -lpano12
+-bin_PROGRAMS = pano12info PTOptimizer 
++bin_PROGRAMS = pano12info PTOptimizer12
+ 
+-PTOptimizer_SOURCES = PTOptimizer.c
+-PTOptimizer_LDADD   = -lpano12
++PTOptimizer12_SOURCES = PTOptimizer.c
++PTOptimizer12_LDADD   = -lpano12
  
 -pano12info_SOURCES    = $(WIN_SRC) $(LIN_SRC) $(DAR_SRC)
 +pano12info_SOURCES    = $(WIN_SRC) $(LIN_SRC) $(DAR_SRC) $(FBSD_SRC)
