@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-video-mga
-PORTVERSION=	1.4.7
+PORTVERSION=	1.9.100
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
