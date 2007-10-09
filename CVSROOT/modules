@@ -8525,6 +8525,7 @@ openacs-dotlrn	ports/www/openacs-dotlrn
 openal		ports/audio/openal
 openam		ports/net/openam
 openarena	ports/games/openarena
+openastromenace	ports/games/openastromenace
 openbabel	ports/science/openbabel
 openbgpd	ports/net/openbgpd
 openbox		ports/x11-wm/openbox
