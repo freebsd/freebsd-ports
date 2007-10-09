@@ -160,10 +160,12 @@ CONFIGURE_ARGS+=	--enable-libvorbis
 FFMPEG_CFLAGS+=		-I${LOCALBASE}/include/vorbis
 .endif
 # x264
-.ifndef(WITHOUT_X264) || exists(${LOCALBASE}/lib/libx264.so)
+.ifndef(WITHOUT_X264)
 LIB_DEPENDS+=		x264.50:${PORTSDIR}/multimedia/x264
 
 CONFIGURE_ARGS+=	--enable-libx264
+.else
+CONFIGURE_ARGS+=	--disable-libx264
 .endif
 ## builtin vector, requires mmx
 .if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
