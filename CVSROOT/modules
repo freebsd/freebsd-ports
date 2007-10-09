@@ -16385,6 +16385,7 @@ webstone	ports/www/webstone
 webstone-ssl	ports/www/webstone-ssl
 websvn		ports/devel/websvn
 weechat		ports/irc/weechat
+weedit		ports/sysutils/weedit
 weewm		ports/x11-wm/weewm
 weex		ports/ftp/weex
 weka		ports/textproc/weka
