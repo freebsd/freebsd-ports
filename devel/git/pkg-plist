@@ -4,8 +4,6 @@ bin/git-add--interactive
 bin/git-am
 bin/git-annotate
 bin/git-apply
-bin/git-applymbox
-bin/git-applypatch
 bin/git-archimport
 bin/git-archive
 bin/git-bisect
@@ -38,8 +36,9 @@ bin/git-diff-index
 bin/git-diff-tree
 bin/git-fast-import
 bin/git-fetch
-bin/git-fetch-pack
 bin/git-fetch--tool
+bin/git-fetch-pack
+bin/git-filter-branch
 bin/git-fmt-merge-msg
 bin/git-for-each-ref
 bin/git-format-patch
@@ -82,6 +81,7 @@ bin/git-mktag
 bin/git-mktree
 bin/git-mv
 bin/git-name-rev
+bin/git-p4
 bin/git-p4import
 bin/git-pack-objects
 bin/git-pack-redundant
@@ -96,6 +96,7 @@ bin/git-push
 bin/git-quiltimport
 bin/git-read-tree
 bin/git-rebase
+bin/git-rebase--interactive
 bin/git-receive-pack
 bin/git-reflog
 bin/git-relink
@@ -123,8 +124,10 @@ bin/git-ssh-fetch
 bin/git-ssh-pull
 bin/git-ssh-push
 bin/git-ssh-upload
+bin/git-stash
 bin/git-status
 bin/git-stripspace
+bin/git-submodule
 bin/git-svn
 bin/git-svnimport
 bin/git-symbolic-ref
@@ -163,18 +166,28 @@ share/git-core/templates/info/exclude
 %%GUI%%share/git-gui/lib/tclIndex
 %%GUI%%share/git-gui/lib/blame.tcl
 %%GUI%%share/git-gui/lib/branch.tcl
+%%GUI%%share/git-gui/lib/branch_checkout.tcl
+%%GUI%%share/git-gui/lib/branch_create.tcl
+%%GUI%%share/git-gui/lib/branch_delete.tcl
+%%GUI%%share/git-gui/lib/branch_rename.tcl
 %%GUI%%share/git-gui/lib/browser.tcl
+%%GUI%%share/git-gui/lib/checkout_op.tcl
+%%GUI%%share/git-gui/lib/choose_font.tcl
+%%GUI%%share/git-gui/lib/choose_rev.tcl
 %%GUI%%share/git-gui/lib/class.tcl
 %%GUI%%share/git-gui/lib/commit.tcl
 %%GUI%%share/git-gui/lib/console.tcl
 %%GUI%%share/git-gui/lib/database.tcl
 %%GUI%%share/git-gui/lib/diff.tcl
+%%GUI%%share/git-gui/lib/encoding.tcl
 %%GUI%%share/git-gui/lib/error.tcl
 %%GUI%%share/git-gui/lib/index.tcl
 %%GUI%%share/git-gui/lib/merge.tcl
 %%GUI%%share/git-gui/lib/option.tcl
 %%GUI%%share/git-gui/lib/remote.tcl
+%%GUI%%share/git-gui/lib/remote_branch_delete.tcl
 %%GUI%%share/git-gui/lib/shortcut.tcl
+%%GUI%%share/git-gui/lib/status_bar.tcl
 %%GUI%%share/git-gui/lib/transport.tcl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
 @dirrm lib/xemacs/site-lisp/git

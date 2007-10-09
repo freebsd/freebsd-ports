@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.5.2.1
+PORTVERSION=	1.5.3.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -28,8 +28,6 @@ MAN1=		git-add.1 \
 		git-am.1 \
 		git-annotate.1 \
 		git-apply.1 \
-		git-applymbox.1 \
-		git-applypatch.1 \
 		git-archimport.1 \
 		git-archive.1 \
 		git-bisect.1 \
@@ -97,7 +95,6 @@ MAN1=		git-add.1 \
 		git-mktree.1 \
 		git-mv.1 \
 		git-name-rev.1 \
-		git-p4import.1 \
 		git-pack-objects.1 \
 		git-pack-redundant.1 \
 		git-pack-refs.1 \
@@ -156,7 +153,7 @@ MAN1=		git-add.1 \
 		git-whatchanged.1 \
 		git-write-tree.1 \
 		gitk.1
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${PREFIX}/share
 MAN3=		Git.3
 MAN5=		gitattributes.5 gitignore.5
 MAN7=		git.7
@@ -169,13 +166,19 @@ USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	CURLDIR=${LOCALBASE} \
 		NEEDS_LIBICONV=yes \
-		WITH_P4IMPORT=yes \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PYTHON_PATH=${LOCALBASE}/bin/python \
-		PERL_PATH=${PERL}
+		PERL_PATH=${PERL} \
+		LIBMD_SHA1=yes
 MAKE_ARGS+=	prefix="${PREFIX}"
+USE_OPENSSL=	yes
 
-.ifndef WITHOUT_GUI
+OPTIONS=	GUI "Enable building of GUI tools" on \
+		SVN "Enable required dependencies for SVN tools" off
+
+.include <bsd.port.pre.mk>
+
+.ifdef WITH_GUI
 PLIST_SUB+=	GUI=""
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 MAKE_ENV+=	TCL_PATH=tclsh8.4 TCLTK_PATH=wish8.4
@@ -183,6 +186,19 @@ MAKE_ENV+=	TCL_PATH=tclsh8.4 TCLTK_PATH=wish8.4
 PLIST_SUB+=	GUI="@comment "
 MAKE_ENV+=	NO_TCLTK=yes
 .endif
+
+.ifdef WITH_SVN
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
+		svn:${PORTSDIR}/devel/subversion
+.endif
+
+pre-patch:
+	${REINPLACE_CMD} -e 's|OPENSSLDIR|OPENSSLBASE|g' ${WRKSRC}/Makefile
+
+post-build:
+	${SED} -e'1s|#!/usr/bin/python|#!${PYTHON_CMD}|' \
+		${WRKSRC}/contrib/p4import/git-p4import.py > \
+		${WRKSRC}/contrib/p4import/git-p4import
 
 post-install:
 .for i in ${MAN1}
@@ -207,4 +223,9 @@ post-install:
 	${LN} -sf ${PREFIX}/share/emacs/site-lisp/git/vc-git.el \
 		${PREFIX}/lib/xemacs/site-lisp/git/vc-git.el
 
-.include <bsd.port.mk>
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/p4import/git-p4import \
+		${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/fast-import/git-p4 \
+		${PREFIX}/bin/
+
+.include <bsd.port.post.mk>

@@ -1,5 +1,5 @@
---- Makefile	Sun May 20 10:40:55 2007
-+++ Makefile	Sat May 26 20:43:02 2007
+--- Makefile.orig	2007-09-19 22:02:17.000000000 +0400
++++ Makefile	2007-09-21 22:13:25.000000000 +0400
 @@ -135,8 +135,8 @@
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
@@ -11,20 +11,24 @@
  ALL_CFLAGS = $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
  STRIP ?= strip
-@@ -172,13 +172,13 @@
+@@ -173,15 +173,15 @@
  
  export prefix bindir gitexecdir sharedir template_dir sysconfdir
  
 -CC = gcc
 -AR = ar
+-RM = rm -f
 -TAR = tar
+-FIND = find
 -INSTALL = install
 -RPMBUILD = rpmbuild
 -TCL_PATH = tclsh
 -TCLTK_PATH = wish
 +CC ?= gcc
 +AR ?= ar
++RM ?= rm -f
 +TAR ?= tar
++FIND ?= find
 +INSTALL ?= install
 +RPMBUILD ?= rpmbuild
 +TCL_PATH ?= tclsh
