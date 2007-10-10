@@ -3361,7 +3361,6 @@ fwanalog	ports/security/fwanalog
 fwbuilder	ports/security/fwbuilder
 fwipe		ports/security/fwipe
 fwlogwatch	ports/security/fwlogwatch
-fwp		ports/games/fwp
 fwtk		ports/security/fwtk
 fxscintilla	ports/x11-toolkits/fxscintilla
 fxscintilla-fox10	ports/x11-toolkits/fxscintilla-fox10

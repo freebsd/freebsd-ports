@@ -249,7 +249,6 @@
     SUBDIR += ftjava
     SUBDIR += fuhquake
     SUBDIR += funnyboat
-    SUBDIR += fwp
     SUBDIR += fxsudoku
     SUBDIR += galaxis
     SUBDIR += galaxyhack
