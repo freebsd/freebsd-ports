@@ -1,9 +1,0 @@
-==========================================================================
-
-Attention!
-
-If the game doesn't start complaining that it cannot find shared library,
-please look into ~/.fwp/ogre_plugins_linux.cfg and change PluginFolder
-to where OGRE libs are installed (usually /usr/X11R6/lib/OGRE).
-
-==========================================================================
