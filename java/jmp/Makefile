@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.khelekore.org/jmp/
 
-MAINTAINER=	ronald@cs.vu.nl
+MAINTAINER=	ronald@echteman.nl
 COMMENT=	Java Memory Profiler
 
 OPTIONS=	X11 "Enable X11 support" on
@@ -25,7 +25,7 @@ USE_BISON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.4+
 JAVA_OS=	native
 JAVA_BUILD=	jdk
 NEED_JAVAC=	yes
