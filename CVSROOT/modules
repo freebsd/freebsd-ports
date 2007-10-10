@@ -14013,6 +14013,7 @@ rsstool		ports/www/rsstool
 rst.el		ports/textproc/rst.el
 rstart		ports/x11/rstart
 rsync		ports/net/rsync
+rsyncbackup	ports/sysutils/rsyncbackup
 rsyncmanager	ports/sysutils/rsyncmanager
 rsynth		ports/audio/rsynth
 rsyslog		ports/sysutils/rsyslog
