@@ -1,0 +1,6 @@
+rsyncbackup is a perlscript that reads configuration files for sources
+and destinations, and feeds the rsync tool with the appropriate parameters. 
+
+rsyncbackup is GPL licenced
+
+WWW: http://code.google.com/p/rsync-backup/
