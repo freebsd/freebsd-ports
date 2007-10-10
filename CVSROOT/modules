@@ -3194,6 +3194,7 @@ fr-mozilla-flp	ports/french/mozilla-flp
 fr-plgrenouille	ports/french/plgrenouille
 fr-pluxml	ports/french/pluxml
 fr-pluxml-theme-bridge	ports/french/pluxml-theme-bridge
+fr-pluxml-theme-snowxml	ports/french/pluxml-theme-snowxml
 fr-staroffice52	ports/french/staroffice52
 fr-xtel		ports/french/xtel
 fracplanet	ports/graphics/fracplanet
