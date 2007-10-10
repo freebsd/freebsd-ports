@@ -1,0 +1,24 @@
+
+
+NOTE:
+==========
+
+rsyncbackup is now installed on your system. 
+
+- rsyncbackup installed into %%PREFIX%%/bin/rsyncbackup
+
+- Configuration files:
+  These files are installed into %%PREFIX%%/etc/rsyncbackup,
+  and are usually copyied to rsyncbackup-users ~/backup/*.conf
+
+  NOTE: %%PREFIX%%/etc/rsyncbackup is deleted upon deletion
+
+- HTML documentation:
+  The HTML documentation has been installed into 
+  %%DOCSDIR%%
+
+
+Official page: 	http://code.google.com/p/rsync-backup/
+Online docs:	http://rsyncbackup.erlang.no/doc/
+
+

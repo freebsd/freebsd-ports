@@ -1,0 +1,34 @@
+bin/rsyncbackup
+%%ETCDIR%%/backupset.conf.example
+%%ETCDIR%%/config.conf.example
+%%ETCDIR%%/destinations.conf.example
+%%ETCDIR%%/sources.conf.example
+%%PORTDOCS%%%%DOCSDIR%%/ar01s01.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s02.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s03.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s04.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s05.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s06.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s07.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s08.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s09.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s10.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s11.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s12.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s13.html
+%%PORTDOCS%%%%DOCSDIR%%/ar01s14.html
+%%PORTDOCS%%%%DOCSDIR%%/html.css
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/icons/caution.png
+%%PORTDOCS%%%%DOCSDIR%%/icons/example.png
+%%PORTDOCS%%%%DOCSDIR%%/icons/home.png
+%%PORTDOCS%%%%DOCSDIR%%/icons/important.png
+%%PORTDOCS%%%%DOCSDIR%%/icons/next.png
+%%PORTDOCS%%%%DOCSDIR%%/icons/note.png
+%%PORTDOCS%%%%DOCSDIR%%/icons/prev.png
+%%PORTDOCS%%%%DOCSDIR%%/icons/tip.png
+%%PORTDOCS%%%%DOCSDIR%%/icons/up.png
+%%PORTDOCS%%%%DOCSDIR%%/icons/warning.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/icons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%ETCDIR%%

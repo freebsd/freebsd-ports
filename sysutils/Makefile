@@ -560,6 +560,7 @@
     SUBDIR += roottail
     SUBDIR += rotate
     SUBDIR += rsnapshot
+    SUBDIR += rsyncbackup
     SUBDIR += rsyncmanager
     SUBDIR += rsyslog
     SUBDIR += rtty
