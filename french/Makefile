@@ -26,6 +26,7 @@
     SUBDIR += plgrenouille
     SUBDIR += pluxml
     SUBDIR += pluxml-theme-bridge
+    SUBDIR += pluxml-theme-snowxml
     SUBDIR += staroffice52
     SUBDIR += verbiste
     SUBDIR += xtel
