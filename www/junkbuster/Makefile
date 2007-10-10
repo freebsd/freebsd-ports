@@ -42,7 +42,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/scookie.ini ${JDIR}/cookiefile.sample
 	@${INSTALL_DATA} ${WRKSRC}/sforward.ini ${JDIR}/forwardfile.sample
 	@${INSTALL_DATA} ${WRKSRC}/strust.ini ${JDIR}/trustfile.sample
-	@$(INSTALL_MAN) ${WRKSRC}/junkbuster.1 $(PREFIX)/man/man1/
+	@${INSTALL_MAN} ${WRKSRC}/junkbuster.1 ${PREFIX}/man/man1/
 
 	@${INSTALL_SCRIPT} ${WRKDIR}/junkbuster.sh \
 	    ${PREFIX}/etc/rc.d/junkbuster.sh

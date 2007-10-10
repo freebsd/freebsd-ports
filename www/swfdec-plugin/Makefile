@@ -18,7 +18,7 @@ LIB_DEPENDS=	swfdec-0.5.2:${PORTSDIR}/graphics/swfdec
 
 USE_GETOPT_LONG=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--with-plugin-dir="$(PREFIX)/lib/browser_plugins"
+CONFIGURE_ARGS=	--with-plugin-dir="${PREFIX}/lib/browser_plugins"
 
 USE_LDCONFIG=	yes
 
