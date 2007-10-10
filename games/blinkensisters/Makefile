@@ -6,47 +6,52 @@
 #
 
 PORTNAME=	blinkensisters
-PORTVERSION=	0.3
-PORTREVISION=	2
+PORTVERSION=	0.5
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	LostPixels_${PORTVERSION}_src
+MASTER_SITES=	SF
+DISTNAME=	LostPixels-${PORTVERSION}-source
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Parallax-style 2D scrolling platform game
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_SDL=	sdl mixer image ttf
+BUILD_DEPENDS=	${CMAKE}:${PORTSDIR}/devel/cmake
 
-WRKSRC=		${WRKDIR}/LostPixels_${PORTVERSION}
+CMAKE?=		${LOCALBASE}/bin/cmake
 
-MAKE_ARGS=	CC="${CXX}"
+USE_SDL=	sdl image ttf
+WRKSRC=		${WRKDIR}//blinkensisters/lostpixels/game/software
 
-PORTDOCS=	AUTHORS HOWTOPLAY INSTALL README SCRIPTING
+CMAKE_DEFS=	-DCMAKE_C_COMPILER:STRING="${CC}" \
+		-DCMAKE_C_FLAGS:STRING="${CFLAGS} -I${LOCALBASE}/include" \
+		-DCMAKE_CXX_COMPILER:STRING="${CXX}" \
+		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS} -I${LOCALBASE}/include" \
+		-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX}
+
+OPTIONS=	SOUND	"Build with souns support" on \
+		NETWORK	"Build with network support" on
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" && ${OSVERSION} >= 700000
-BROKEN=		Doesn't build
+post-patch:
+.if defined(WITHOUT_SOUND)
+	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*SDL_mixer/ d' \
+		${WRKSRC}/CMakeLists.txt
 .endif
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/LostPixels ${PREFIX}/bin/${PORTNAME}
-
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/TTF/*.ttf ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/SND/*.ogg ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/GFX/*.bmp ${WRKSRC}/GFX/*.jpg ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/LEVELS/*.dat ${WRKSRC}/LEVELS/*.conf \
-		${WRKSRC}/LEVELS/*.bsl ${DATADIR}
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+.if defined(WITHOUT_NETWORK)
+	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*SDL_net/ d' \
+		${WRKSRC}/CMakeLists.txt
 .endif
+
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/^INSTALL.*doc/ d' ${WRKSRC}/CMakeLists.txt
+.endif
+
+	@${REINPLACE_CMD} -e 's|share/blinkensisters|${DATADIR:S,${PREFIX}/,,}|; \
+		s|share/doc/blinkensisters|${DOCSDIR:S,${PREFIX}/,,}|' \
+		${WRKSRC}/CMakeLists.txt
+
+do-configure:
+	cd ${WRKSRC} && ${CMAKE} . ${CMAKE_DEFS}
 
 .include <bsd.port.post.mk>
