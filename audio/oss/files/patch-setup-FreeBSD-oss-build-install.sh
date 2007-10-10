@@ -1,5 +1,5 @@
---- setup/FreeBSD/oss/build/install.sh.orig	Thu Jan 11 23:48:14 2007
-+++ setup/FreeBSD/oss/build/install.sh	Fri Jun 22 15:15:32 2007
+--- setup/FreeBSD/oss/build/install.sh.orig	2007-07-18 19:21:12.000000000 -0400
++++ setup/FreeBSD/oss/build/install.sh	2007-10-09 19:51:09.000000000 -0400
 @@ -1,11 +1,6 @@
  #!/bin/sh
  
@@ -13,11 +13,10 @@
  
  rm -f osscore_mainline.o
  ln -s osscore.lib osscore_mainline.o
-@@ -58,13 +53,5 @@
- 	make clean > /dev/null 2>&1
+@@ -59,17 +54,4 @@
  	rm -f Makefile
  done
--
+ 
 -if ! test -f $OSSLIBDIR/etc/installed_drivers
 -then
 -   echo "-----------------------------"
@@ -25,5 +24,10 @@
 -   echo "-----------------------------"
 -   echo ""
 -fi
- 
+-
+-if test ! -f $OSSLIBDIR/etc/userdefs
+-then
+-  echo "autosave_mixer yes" > $OSSLIBDIR/etc/userdefs
+-fi
+-
  exit 0
