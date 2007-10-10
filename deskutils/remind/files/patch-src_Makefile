@@ -1,18 +1,16 @@
---- ./src/Makefile.in.orig	Fri Sep 30 07:29:32 2005
-+++ ./src/Makefile.in	Sun Jun  4 14:22:15 2006
-@@ -50,11 +50,14 @@
+--- src/Makefile.in.orig	2007-10-09 19:45:41.000000000 +0300
++++ src/Makefile.in	2007-10-09 19:46:25.000000000 +0300
+@@ -51,9 +51,12 @@
  
- install: all
+ install-nostripped: all
  	-mkdir -p $(DESTDIR)$(bindir) || true
 -	for prog in $(PROGS) $(SCRIPTS) ; do \
 +	for prog in $(PROGS) ; do \
  		$(INSTALL_PROGRAM) $$prog $(DESTDIR)$(bindir) || exit 1; \
  	done
- 	-strip $(DESTDIR)$(bindir)/remind || true
- 	-strip $(DESTDIR)$(bindir)/rem2ps || true
 +	for script in $(SCRIPTS) ; do \
 +		$(INSTALL_SCRIPT) $$script $(DESTDIR)$(bindir) || exit 1; \
 +	done
+ 	rm -f $(DESTDIR)$(bindir)/rem > /dev/null 2>&1 || true
+ 	ln -s remind $(DESTDIR)$(bindir)/rem
  	-mkdir -p $(DESTDIR)$(mandir)/man1 || true
- 	for man in $(MANS) ; do  \
- 		$(INSTALL_DATA) $$man $(DESTDIR)$(mandir)/man1 || exit 1; \
