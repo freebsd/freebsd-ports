@@ -1,19 +1,16 @@
 bin/x11vnc
+%%DATADIR%%/classes/ssl/README
+%%DATADIR%%/classes/ssl/SignedUltraViewerSSL.jar
+%%DATADIR%%/classes/ssl/SignedVncViewer.jar
+%%DATADIR%%/classes/ssl/UltraViewerSSL.jar
 %%DATADIR%%/classes/ssl/VncViewer.jar
 %%DATADIR%%/classes/ssl/index.vnc
-%%DATADIR%%/classes/ssl/SignedVncViewer.jar
 %%DATADIR%%/classes/ssl/proxy.vnc
-%%DATADIR%%/classes/ssl/ssl_vncviewer
-%%DATADIR%%/classes/ssl/README
+%%DATADIR%%/classes/ssl/ss_vncviewer
+%%DATADIR%%/classes/ssl/ultra.vnc
+%%DATADIR%%/classes/ssl/ultrasigned.vnc
 %%DATADIR%%/classes/VncViewer.jar
 %%DATADIR%%/classes/index.vnc
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.LibVNCServer
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 @dirrm %%DATADIR%%/classes/ssl
 @dirrm %%DATADIR%%/classes
 @dirrm %%DATADIR%%
