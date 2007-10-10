@@ -11,5 +11,8 @@
 %%SITE_PERL%%/XML/Atom/Server.pm
 %%SITE_PERL%%/XML/Atom/Thing.pm
 %%SITE_PERL%%/XML/Atom/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Atom
 @dirrmtry %%SITE_PERL%%/XML
