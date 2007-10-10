@@ -10838,6 +10838,7 @@ p5-SMS-Send	ports/comms/p5-SMS-Send
 p5-SMS-Send-DeviceGsm	ports/comms/p5-SMS-Send-DeviceGsm
 p5-SMS-Send-TW-PChome	ports/comms/p5-SMS-Send-TW-PChome
 p5-SMS-Send-TW-ShareSMS	ports/comms/p5-SMS-Send-TW-ShareSMS
+p5-SMS-Send-TW-emome	ports/comms/p5-SMS-Send-TW-emome
 p5-SNMP		ports/net-mgmt/p5-SNMP
 p5-SNMP-Info	ports/net-mgmt/p5-SNMP-Info
 p5-SNMP-MIB-Compiler	ports/net-mgmt/p5-SNMP-MIB-Compiler
