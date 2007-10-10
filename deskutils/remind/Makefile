@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	remind
-PORTVERSION=	3.0.24
-DISTVERSION=	03.00.24
+PORTVERSION=	3.1.2
+DISTVERSION=	03.01.02
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.roaringpenguin.com/files/download/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -18,7 +18,10 @@ COMMENT=	Sophisticated calendar and alarm program
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
-MAN1=		kall.1 rem.1 rem2ps.1 remind.1 tkremind.1 cm2rem.1
+MAN1=		rem.1 rem2ps.1 remind.1 tkremind.1 cm2rem.1
+
+PLIST_FILES=	bin/cm2rem.tcl bin/rem bin/rem2ps bin/remind \
+		bin/tkremind
 
 post-patch:
 # This seems more than a little ugly.
