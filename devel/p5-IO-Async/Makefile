@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	IO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
@@ -19,6 +18,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		IO::Async.3 IO::Async::Buffer.3 IO::Async::ChildManager.3 \
 		IO::Async::DetachedCode.3 IO::Async::Notifier.3 \
+		IO::Async::MergePoint.3 IO::Async::TimeQueue.3 \
 		IO::Async::Set.3 IO::Async::Set::GMainLoop.3 \
 		IO::Async::Set::IO_Poll.3 IO::Async::Set::Select.3 \
 		IO::Async::SignalProxy.3

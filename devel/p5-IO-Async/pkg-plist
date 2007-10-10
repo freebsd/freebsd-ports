@@ -6,12 +6,14 @@
 %%SITE_PERL%%/IO/Async/DetachedCode.pm
 %%SITE_PERL%%/IO/Async/DetachedCode/FlatMarshaller.pm
 %%SITE_PERL%%/IO/Async/DetachedCode/StorableMarshaller.pm
+%%SITE_PERL%%/IO/Async/MergePoint.pm
 %%SITE_PERL%%/IO/Async/Notifier.pm
 %%SITE_PERL%%/IO/Async/Set.pm
 %%SITE_PERL%%/IO/Async/Set/GMainLoop.pm
 %%SITE_PERL%%/IO/Async/Set/IO_Poll.pm
 %%SITE_PERL%%/IO/Async/Set/Select.pm
 %%SITE_PERL%%/IO/Async/SignalProxy.pm
+%%SITE_PERL%%/IO/Async/TimeQueue.pm
 @dirrmtry %%SITE_PERL%%/IO/Async/Set
 @dirrmtry %%SITE_PERL%%/IO/Async/DetachedCode
 @dirrmtry %%SITE_PERL%%/IO/Async
