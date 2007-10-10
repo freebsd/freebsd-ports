@@ -43,7 +43,7 @@ upgrades.
     more information, and specify the LDAP connection information in
     the vpopmail/etc/vpopmail.ldap file after the installation.
 
-20070614:
+20071008:
   AFFECTS: users of www/mediawiki
   AUTHOR: miwi@FreeBSD.org
 
