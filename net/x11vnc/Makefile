@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	x11vnc
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.9.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=libvncserver
@@ -25,18 +24,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		x11vnc.1
-DOCS=		AUTHORS COPYING ChangeLog NEWS README README.LibVNCServer TODO
+PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README README.LibVNCServer TODO
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
 
-.ifndef (NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
