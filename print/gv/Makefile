@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gv
-PORTVERSION=	3.6.2
-PORTREVISION=	1
+PORTVERSION=	3.6.3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,13 +29,13 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/X11
 MAN1=		gv.1
 INFO=		gv
 PLIST_FILES=	bin/gv \
-		lib/X11/app-defaults/GV \
 		lib/X11/gv/gv_class.ad \
 		lib/X11/gv/gv_copyright.dat \
 		lib/X11/gv/gv_spartan.dat \
 		lib/X11/gv/gv_system.ad \
 		lib/X11/gv/gv_user.ad \
-		lib/X11/gv/gv_user_res.dat
+		lib/X11/gv/gv_user_res.dat \
+		lib/X11/gv/GV
 PLIST_DIRS=	lib/X11/gv
 
 post-install:
