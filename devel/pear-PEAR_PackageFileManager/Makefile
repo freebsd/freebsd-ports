@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PEAR_PackageFileManager
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
