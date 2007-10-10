@@ -63,6 +63,7 @@
     SUBDIR += awele
     SUBDIR += balazar
     SUBDIR += balazarbrothers
+    SUBDIR += banihstypos
     SUBDIR += barrage
     SUBDIR += bass
     SUBDIR += bastet
