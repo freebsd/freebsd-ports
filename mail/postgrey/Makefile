@@ -14,10 +14,10 @@ MASTER_SITES=	http://postgrey.schweikert.ch/pub/ LOCAL/beech
 MAINTAINER=	haroldp@internal.org
 COMMENT=	Greylisting policy server for Postfix
 
-RUN_DEPENDS=	${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
+RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex \
-		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
+		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB \
+		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 
 USE_PERL5_RUN=	yes
 USE_RC_SUBR=	postgrey
