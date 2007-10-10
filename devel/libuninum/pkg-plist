@@ -4,7 +4,7 @@ bin/numconv
 include/uninum/uninum.h
 include/uninum/nsdefs.h
 include/uninum/unicode.h
-lib/libuninum.so.6
+lib/libuninum.so.7
 lib/libuninum.so
 lib/libuninum.a
 @dirrmtry include/uninum
