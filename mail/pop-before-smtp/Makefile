@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	pop-before-smtp
-PORTVERSION=	1.41
-PORTREVISION=	1
+PORTVERSION=	1.42
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	popbsmtp
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	A log parser to identify valid POP/IMAP logins for later smtp
 
 RUN_DEPENDS=	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
