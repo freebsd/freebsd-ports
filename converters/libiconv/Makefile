@@ -26,10 +26,15 @@ USE_LDCONFIG=	yes
 MAN1=		iconv.1
 MAN3=		iconv.3 iconv_open.3 iconv_close.3
 
+OPTIONS=	EXTRA_ENCODINGS	"Include extra character sets"	on \
+		EXTRA_PATCHES	"Apply patches to fix CP932, add EUCJP-MS" off
+
 .ifdef USE_ICONV
 .error USE_ICONV is defined as an environment variable, or in the arguments \
 	to "make".  Please unset it and restart the build.
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_EXTRA_ENCODINGS)
 CONFIGURE_ARGS+=	--enable-extra-encodings
@@ -38,19 +43,12 @@ CONFIGURE_ARGS+=	--enable-extra-encodings
 .if defined(WITH_EXTRA_PATCHES)
 PATCH_SITES+=	http://www2d.biglobe.ne.jp/~msyk/software/libiconv/
 PATCH_SITES+=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=     nork
+PATCH_SITE_SUBDIR=	nork
 PATCHFILES+=	${DISTNAME}-cp932.patch.gz
 PATCH_DIST_STRIP+=	-p1
 .endif
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "libiconv has the following tunable option(s):"
-	@${ECHO_MSG} "	WITHOUT_EXTRA_ENCODINGS=yes	Disable extra character sets"
-	@${ECHO_MSG} "	WITH_EXTRA_PATCHES=yes		Apply extra patches (fixes cp932, adds EUCJP-MS)"
-	@${ECHO_MSG} ""
-
 post-patch:
 	@${REINPLACE_CMD} -e 's:ei_ksc5601:ei_euc_kr:g' ${WRKSRC}/lib/aliases.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
