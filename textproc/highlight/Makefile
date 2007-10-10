@@ -7,6 +7,7 @@
 
 PORTNAME=	highlight
 PORTVERSION=	2.4.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
@@ -33,6 +34,8 @@ MANCOMPRESSED=	yes
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -71,4 +74,4 @@ post-install:
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
