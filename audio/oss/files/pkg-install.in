@@ -5,4 +5,7 @@ POST-INSTALL)
 	if ! test -f ${PKG_PREFIX}/lib/oss/etc/installed_drivers; then
 		${PKG_PREFIX}/sbin/ossdetect -v
 	fi
+	if ! test -f ${PKG_PREFIX}/lib/oss/etc/userdefs; then
+		echo "autosave_mixer yes" > ${PKG_PREFIX}/lib/oss/etc/userdefs
+	fi
 esac
