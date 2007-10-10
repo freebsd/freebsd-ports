@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	7.3
+PORTVERSION=	7.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
@@ -42,7 +42,8 @@ MAN3=		pcre.3 pcre_compile.3 pcre_compile2.3 pcre_config.3 \
 		pcre_study.3 pcre_version.3 pcreapi.3 \
 		pcrebuild.3 pcrecallout.3 pcrecompat.3 \
 		pcrecpp.3 pcrematching.3 pcrepattern.3 \
-		pcreperform.3 pcreposix.3 pcresample.3 pcrestack.3
+		pcreperform.3 pcreposix.3 pcresample.3 pcrestack.3 \
+		pcresyntax.3
 
 post-patch:
 .if defined(NOPORTDOCS)
