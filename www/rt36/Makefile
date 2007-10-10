@@ -190,9 +190,9 @@ post-install:
 .if !defined(INITIAL_INSTALL)
 .if defined(UPGRADES)
 .for version in ${UPGRADES}
-	-@${PERL} $(RT_PATH)/sbin/rt-setup-database --action schema --datadir ${WRKSRC}/etc/upgrade/${version} --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
-	-@${PERL} $(RT_PATH)/sbin/rt-setup-database --action acl --datadir ${WRKSRC}/etc/upgrade/${version} --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
-	-@${PERL} $(RT_PATH)/sbin/rt-setup-database --action insert --datadir ${WRKSRC}/etc/upgrade/${version} --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
+	-@${PERL} ${RT_PATH}/sbin/rt-setup-database --action schema --datadir ${WRKSRC}/etc/upgrade/${version} --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
+	-@${PERL} ${RT_PATH}/sbin/rt-setup-database --action acl --datadir ${WRKSRC}/etc/upgrade/${version} --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
+	-@${PERL} ${RT_PATH}/sbin/rt-setup-database --action insert --datadir ${WRKSRC}/etc/upgrade/${version} --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
 .endfor
 	@${ECHO} ""
 	@${ECHO} "Upgrade of RT3 complete."
@@ -217,8 +217,8 @@ post-install:
 	@${ECHO} ""
 .endif
 .else
-	-@${PERL} $(RT_PATH)/sbin/rt-setup-database --force --action drop --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
-	-@${PERL} $(RT_PATH)/sbin/rt-setup-database --force --action init --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
+	-@${PERL} ${RT_PATH}/sbin/rt-setup-database --force --action drop --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
+	-@${PERL} ${RT_PATH}/sbin/rt-setup-database --force --action init --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
 	@${SED} s!%%RT_PATH%%!${RT_PATH}!g ${PKGMESSAGE}
 .endif
 

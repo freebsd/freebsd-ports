@@ -22,7 +22,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR} ${DOCSDIR}/html
 	@${TAR} -cf - -C ${WRKSRC}/doc . | ${TAR} -xf - -C ${DOCSDIR}
-	@${TAR} -cf - -C ${WRKDIR}/albatross-html-$(PORTVERSION) . | ${TAR} -xf - -C ${DOCSDIR}/html
+	@${TAR} -cf - -C ${WRKDIR}/albatross-html-${PORTVERSION} . | ${TAR} -xf - -C ${DOCSDIR}/html
 	@${TAR} -cf - -C ${WRKSRC}/samples . | ${TAR} -xf - -C ${EXAMPLESDIR}
 .endif
 

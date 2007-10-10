@@ -37,10 +37,10 @@ OPTIONS=	NSPLUG "Install nspluginwrapper (for native browser use)" on
 .include "${PORTSDIR}/www/linux-mplayer-plugin/Makefile.npapi"
 
 .if defined (WITH_NSPLUG)
-RUN_DEPENDS+=	nspluginwrapper:$(PORTSDIR)/www/nspluginwrapper
+RUN_DEPENDS+=	nspluginwrapper:${PORTSDIR}/www/nspluginwrapper
 .endif
 
 post-patch:
-	(cd $(WRKDIR)/fp7_archive/r70 && ${TAR} -xzf install_flash_player_7_linux_r70.tar.gz)
+	(cd ${WRKDIR}/fp7_archive/r70 && ${TAR} -xzf install_flash_player_7_linux_r70.tar.gz)
 
 .include <bsd.port.post.mk>
