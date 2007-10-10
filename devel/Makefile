@@ -1794,6 +1794,7 @@
     SUBDIR += pedisassem
     SUBDIR += perforce
     SUBDIR += performance
+    SUBDIR += perlconsole
     SUBDIR += perltidy
     SUBDIR += pharmacy
     SUBDIR += php-dbg
