@@ -12,7 +12,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.dina.kvl.dk/~sestoft/mosml/
 DISTNAME=	mos201src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Moscow ML, a lightweight implementation of Standard ML
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
@@ -31,10 +31,6 @@ MAKE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" DOCSDIR="${DOCSDIR}" \
 PKGMESSAGE=	${WRKDIR}/pkgmessage
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 post-patch:
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
