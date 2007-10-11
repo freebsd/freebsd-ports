@@ -27,6 +27,10 @@ INSTALL_TARGET=	site-install
 
 DOCS_EN=	ChangeLog README TODO
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/MCRYPT..(void..)/void, /' \
+		${WRKSRC}/ruby-mcrypt.c
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
@@ -37,10 +41,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
