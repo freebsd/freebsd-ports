@@ -118,7 +118,7 @@ CONFIGURE_ARGS+=	--disable-xvid
 .endif
 
 .if defined(WITH_THEORA)
-LIB_DEPENDS+=	theora.2:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 .else
 CONFIGURE_ARGS+=	--disable-theora
 .endif
