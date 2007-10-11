@@ -11,7 +11,7 @@ CATEGORIES=	www lang
 MASTER_SITES=	http://thewml.org/distrib/ \
 		ftp://thewml.org/distrib/
 
-MAINTAINER=	delta@lackas.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
