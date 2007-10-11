@@ -372,7 +372,6 @@
     SUBDIR += tiarra
     SUBDIR += timidity++-slang
     SUBDIR += timidity++-tcltk
-    SUBDIR += tk42
     SUBDIR += tk80
     SUBDIR += tkhonyaku
     SUBDIR += tkstep80
