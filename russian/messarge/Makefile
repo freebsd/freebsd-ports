@@ -11,7 +11,7 @@ CATEGORIES=	russian mail www
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/mail/ \
 		http://www.links.ru/soft/messarge/
 
-MAINTAINER=	.@babolo.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to mantain UNIX mailboxes
 
 MAN1=		messarge.1 mesraw.1 mesdbc.1 mesarc.1 mestun.1
