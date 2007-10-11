@@ -9,6 +9,6 @@ be approximated through one or several similarly looking characters.
 libiconv is for you if your application needs to support multiple character
 encodings, but that support lacks from your system.
 
-See in either README or website for the list of support encodings.
+See either README or website for the list of supported encodings.
 
 WWW: http://www.gnu.org/software/libiconv/
