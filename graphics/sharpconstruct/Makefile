@@ -9,7 +9,7 @@ PORTNAME=	sharpconstruct
 PORTVERSION=	0.11
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sharp3d
 
 MAINTAINER=	amdmi3@amdmi3.ru
@@ -23,11 +23,8 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
 
 MAN1=		sharpconstruct.1
-
-ONLY_FOR_ARCHS=	i386
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/include/Align.hh
@@ -38,10 +35,4 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e '/^DEFS / s|$$| -DDATADIR=\\"${DATADIR}\\"|'
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
