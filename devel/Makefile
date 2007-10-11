@@ -159,7 +159,6 @@
     SUBDIR += cl-uffi
     SUBDIR += cl-uffi-sbcl
     SUBDIR += clanlib
-    SUBDIR += clanlib-devel
     SUBDIR += clig
     SUBDIR += clint
     SUBDIR += clisp-hyperspec
