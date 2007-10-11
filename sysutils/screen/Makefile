@@ -17,19 +17,25 @@ MASTER_SITE_SUBDIR=	screen
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A multi-screen window manager
 
+OPTIONS=	CJK "Treat CJK ambiguous characters as full width" OFF \
+		INFO "Build and install info documentation" ON \
+		MAN "Build and install man pages" ON \
+		NETHACK "Enable nethack-style messages" ON \
+		XTERM_256 "Enable support for 256 colour xterm" OFF
+
 GNU_CONFIGURE=	yes
-.if defined(NO_MAN)
-MAKE_ARGS+=	-DNO_MAN
-.else
+.if defined(WITH_MAN)
 MAN1=		screen.1
-.endif
-.if defined(NO_INFO)
-MAKE_ARGS+=	-DNO_INFO
 .else
+MAKE_ARGS+=	-DNO_MAN
+.endif
+.if defined(WITH_INFO)
 .if !exists(/usr/bin/install-info)
 RUN_DEPENDS+=	install-info:${PORTSDIR}/print/texinfo
 .endif
 INFO=		screen
+.else
+MAKE_ARGS+=	-DNO_INFO
 .endif
 
 NO_PACKAGE=	Tends to loop using 100% CPU when used from package - perhaps it hard-codes information about the build host
@@ -48,7 +54,7 @@ CFLAGS+=	-O0
 CFLAGS+=	-DCOLORS256
 .endif
 
-.if defined(WITHOUT_NETHACK)
+.if !defined(WITH_NETHACK)
 CFLAGS+=	-DNONETHACK
 .endif
 
