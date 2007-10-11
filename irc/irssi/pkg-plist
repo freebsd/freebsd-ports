@@ -70,7 +70,6 @@ include/irssi/src/fe-common/core/module.h
 include/irssi/src/fe-common/core/printtext.h
 include/irssi/src/fe-common/core/themes.h
 include/irssi/src/fe-common/core/translation.h
-include/irssi/src/fe-common/core/utf8.h
 include/irssi/src/fe-common/core/window-activity.h
 include/irssi/src/fe-common/core/window-items.h
 include/irssi/src/fe-common/core/windows-layout.h
@@ -150,6 +149,7 @@ include/irssi/src/lib-popt/poptint.h
 %%DOCSDIR%%/signals.txt
 %%DOCSDIR%%/special_vars.txt
 %%DOCSDIR%%/startup-HOWTO.html
+%%DATADIR%%/help/accept
 %%DATADIR%%/help/action
 %%DATADIR%%/help/admin
 %%DATADIR%%/help/alias
@@ -258,8 +258,8 @@ include/irssi/src/lib-popt/poptint.h
 %%DATADIR%%/help/unsilence
 %%DATADIR%%/help/upgrade
 %%DATADIR%%/help/uping
-%%DATADIR%%/help/ver
 %%DATADIR%%/help/userhost
+%%DATADIR%%/help/ver
 %%DATADIR%%/help/version
 %%DATADIR%%/help/voice
 %%DATADIR%%/help/wait
@@ -294,13 +294,13 @@ include/irssi/src/lib-popt/poptint.h
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Irssi
-@dirrm lib/irssi/modules
-@dirrm lib/irssi
-@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
+@dirrm lib/irssi/modules
+@dirrm lib/irssi
 @dirrm include/irssi/src/lib-popt
 @dirrm include/irssi/src/lib-config
 @dirrm include/irssi/src/irc/notifylist

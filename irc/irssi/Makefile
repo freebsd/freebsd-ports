@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	0.8.11
-PORTREVISION?=	1
+PORTVERSION=	0.8.12
 CATEGORIES?=	irc
 MASTER_SITES=	http://mirror.irssi.org/
 
@@ -19,7 +18,7 @@ CONFLICTS=	irssi-devel-[0-9]*
 USE_BZIP2=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-module
+USE_GMAKE=	yes
 WANT_PERL=	yes
 
 MAN1=		irssi.1
@@ -42,7 +41,7 @@ USE_OPENSSL=	yes
 
 # Process options.
 
-.if defined(WITH_PERL)
+.if !defined(WITHOUT_PERL)
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=	WITH_PERL=""
@@ -62,7 +61,7 @@ PLIST_SUB+=	WITH_PROXY="@comment "
 CONFIGURE_ARGS+=	--with-socks
 .endif
 
-.if defined(WITH_IPV6)
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 CATEGORIES+=	ipv6
 .endif
