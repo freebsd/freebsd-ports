@@ -127,6 +127,7 @@ EXTRACT_ONLY+=	${SCSL_SRCFILE} ${SCSL_BINFILE}
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	YES
+USE_XORG+=	x11 xext xi xmu xp xt xtst
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 MAKE_ENV=	ALT_BOOTDIR="${JDK14DIR}" \
