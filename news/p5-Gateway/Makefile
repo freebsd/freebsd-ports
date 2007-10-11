@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	News
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	croyle@gelemna.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robomoderation and mail to news gatewaying toolkit
 
 BUILD_DEPENDS=	${SITE_PERL}/News/Article.pm:${PORTSDIR}/news/p5-News-Article

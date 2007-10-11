@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Set
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	croyle@gelemna.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manages sets of integers
 
 PERL_CONFIGURE=	yes

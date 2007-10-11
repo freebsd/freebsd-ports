@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	applications
 DISTNAME=	bugsx108
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	croyle@gelemna.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Breed bugs using genetic algorithims
 
 USE_IMAKE=	yes
