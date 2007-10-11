@@ -485,7 +485,7 @@ libexec/mosml/mosmldep
 @dirrm %%EXAMPLESDIR%%/weak
 @dirrm %%EXAMPLESDIR%%/webserver
 @dirrm %%EXAMPLESDIR%%
-@dirrm share/doc/moscow_ml
+@dirrm %%DOCSDIR%%
 @dirrm include/mosml
 @dirrm libexec/mosml
 @dirrm lib/mosml

@@ -1,5 +1,14 @@
 --- dynlibs/msocket/msocket.c.orig	Fri Jan 21 15:37:13 2000
 +++ dynlibs/msocket/msocket.c	Sun Jun  9 12:40:19 2002
+@@ -68,7 +68,7 @@
+ #ifdef macintosh
+ #define Sock_val(x) (Field(x,0))
+ #else
+-#define Sock_val(x) ((int) Field(x,0))
++#define Sock_val(x) (Field(x,0))
+ #endif
+
+ /* Decomposition of addr values: */
 @@ -469,6 +469,7 @@
  EXTERNML value msocket_bind(value socket, value address) {
    int ret, size;
