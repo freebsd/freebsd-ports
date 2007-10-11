@@ -1,0 +1,10 @@
+Perf Tools is a collection of a high-performance multi-threaded malloc()
+implementation, plus some pretty nifty performance analysis tools.
+Perf Tools is the fastest memory allocation library available,
+it also often allows applications to have smaller memory
+footprint.
+
+Multithreaded support is not yet ported to FreeBSD but many programs can
+benefit from performance improvement of memory allocation.
+
+WWW: http://code.google.com/p/google-perftools
