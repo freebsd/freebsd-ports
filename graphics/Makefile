@@ -196,6 +196,7 @@
     SUBDIR += gimp-gap
     SUBDIR += gimp-greycstoration
     SUBDIR += gimp-help
+    SUBDIR += gimp-lqr-plugin
     SUBDIR += gimp-manual-html
     SUBDIR += gimp-manual-pdf
     SUBDIR += gimpshop

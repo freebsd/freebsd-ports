@@ -1,0 +1,14 @@
+%%PLUGIN_DIR%%/gimp-lqr-plugin
+%%DATADIR%%/help/en/gimp-help.xml
+%%DATADIR%%/help/en/index.html
+%%DATADIR%%/help/images/dialog1.png
+%%DATADIR%%/help/images/dialog2.png
+%%DATADIR%%/help/images/wilber.png
+%%NLS%%share/locale/fr/LC_MESSAGES/gimp22-lqr-plugin.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gimp22-lqr-plugin.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gimp22-lqr-plugin.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gimp22-lqr-plugin.mo
+@dirrm %%DATADIR%%/help/images
+@dirrm %%DATADIR%%/help/en
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%
