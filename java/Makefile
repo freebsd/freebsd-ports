@@ -11,7 +11,6 @@
     SUBDIR += cacao
     SUBDIR += castor
     SUBDIR += classpath
-    SUBDIR += collections
     SUBDIR += cos
     SUBDIR += cryptix-jce
     SUBDIR += dbvis
