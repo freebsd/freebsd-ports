@@ -3275,3 +3275,5 @@ games/fwp||2007-10-10|Has expired: Does not build
 graphics/ogre3d12||2007-10-11|Has expired: Not needed any longer
 graphics/cegui04||2007-10-11|Has expired: Not needed any longer
 japanese/tk42||2007-10-11|Has expired: does not build with gcc4.2; use japanese/tk80 instead
+devel/qextmdi||2007-10-11|Has expired: is unfetchable, website disappeared
+net/rboot||2007-10-11|Has expired: The project is no longer under development, and has no homepage

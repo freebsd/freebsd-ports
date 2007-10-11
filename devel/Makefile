@@ -2021,7 +2021,6 @@
     SUBDIR += pythontidy
     SUBDIR += qca
     SUBDIR += qdevelop
-    SUBDIR += qextmdi
     SUBDIR += qmake
     SUBDIR += qmake4
     SUBDIR += qprog

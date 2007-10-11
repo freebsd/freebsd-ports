@@ -721,7 +721,6 @@
     SUBDIR += radreport
     SUBDIR += radvd
     SUBDIR += raggle
-    SUBDIR += rboot
     SUBDIR += rdesktop
     SUBDIR += rdist6
     SUBDIR += recvnet
