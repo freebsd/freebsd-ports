@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	chinese
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -14,7 +14,6 @@ COMMENT=	A zh-tw cursor movement friendly, wrapping clean irssi
 MASTERDIR=	${.CURDIR}/../../irc/irssi
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-irssi.conf \
-		${.CURDIR}/files/patch-utf8_break \
-		${.CURDIR}/files/patch-eaw
+		${.CURDIR}/files/patch-utf8_break
 
 .include "${MASTERDIR}/Makefile"
