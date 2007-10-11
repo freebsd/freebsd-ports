@@ -28,8 +28,7 @@ share/locale/tr/LC_MESSAGES/wormux.mo
 share/pixmaps/wormux_128x128.png
 %%DATADIR%%/authors.dtd
 %%DATADIR%%/authors.xml
-%%DATADIR%%/body/beastieteam/arm-left.png
-%%DATADIR%%/body/beastieteam/arm-right.png
+%%DATADIR%%/body/beastieteam/arm.png
 %%DATADIR%%/body/beastieteam/black.png
 %%DATADIR%%/body/beastieteam/body.png
 %%DATADIR%%/body/beastieteam/c1.png
@@ -286,6 +285,7 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/workraveteam/jetpack.png
 %%DATADIR%%/body/workraveteam/pupil.png
 %%DATADIR%%/body/workraveteam/yoyo.png
+%%DATADIR%%/cursors.xml
 %%DATADIR%%/font/DejaVuSans.ttf
 %%DATADIR%%/game_mode/classic.xml
 %%DATADIR%%/game_mode/classic_objects.xml
@@ -738,6 +738,7 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/weapon/shotgun/shotgun_ico.png
 %%DATADIR%%/weapon/skip_turn/skipturn.png
 %%DATADIR%%/weapon/skip_turn/skipturn_ico.png
+%%DATADIR%%/weapon/snipe_rifle/gun_fire.png
 %%DATADIR%%/weapon/snipe_rifle/snipe_rifle.png
 %%DATADIR%%/weapon/snipe_rifle/snipe_rifle_ico.png
 %%DATADIR%%/weapon/snipe_rifle/snipe_rifle_laser.png
