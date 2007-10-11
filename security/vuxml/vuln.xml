@@ -34,6 +34,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="172acf78-780c-11dc-b3f4-0016179b2dd5">
+    <topic>png -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>png</name>
+	<range><lt>1.2.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/27093/">
+	  <p>Some vulnerabilities have been reported in libpng, which can be
+	    exploited by malicious people to cause a DoS (Denial of Service).</p>
+	  <p>Certain errors within libpng, including a logical NOT instead of a
+	    bitwise NOT in pngtrtran.c, an error in the 16bit cheap transparency
+	    extension, and an incorrect use of sizeof() may be exploited to crash an
+	    application using the library.</p>
+	  <p>Various out-of-bounds read errors exist within the functions
+	    png_handle_pCAL(), png_handle_sCAL(), png_push_read_tEXt(),
+	    png_handle_iTXt(), and png_handle_ztXt(), which may be exploited by
+	    exploited to crash an application using the library.</p>
+	</blockquote>
+	<blockquote cite="http://secunia.com/advisories/27130/">
+	  <p>The vulnerability is caused due to an off-by-one error within
+	     the ICC profile chunk handling, which potentially can be
+	     exploited to crash an application using the library.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/27093/</url>
+      <url>http://secunia.com/advisories/27130/</url>
+      <cvename>CVE-2007-5267</cvename>
+      <cvename>CVE-2007-5266</cvename>
+      <cvename>CVE-2007-5268</cvename>
+      <cvename>CVE-2007-5269</cvename>
+    </references>
+    <dates>
+      <discovery>2007-10-08</discovery>
+      <entry>2007-10-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f5b29ec0-71f9-11dc-8c6a-00304881ac9a">
     <topic>ImageMagick -- multiple vulnerabilities</topic>
     <affects>
