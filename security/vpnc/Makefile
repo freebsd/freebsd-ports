@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/
 
-MAINTAINER=	delta@lackas.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for Cisco 3000 VPN Concentrator
 
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
