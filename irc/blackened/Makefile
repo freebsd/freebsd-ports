@@ -10,7 +10,7 @@ PORTVERSION=	1.8.1
 CATEGORIES=	irc
 MASTER_SITES=	http://freebsd.aeternal.net/ports/
 
-MAINTAINER=	corwin@aeternal.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Blackened IRC Client
 
 GNU_CONFIGURE=	yes

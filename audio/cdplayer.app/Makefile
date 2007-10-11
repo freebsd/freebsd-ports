@@ -12,7 +12,7 @@ CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://freebsd.aeternal.net/ports/
 DISTNAME=	CDPlayer.app-${PORTVERSION}
 
-MAINTAINER=	corwin@aeternal.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CD player with CDDB support resembling OpenStep's OmniCD
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
