@@ -8,14 +8,14 @@
 PORTNAME=	asterisk-addons
 PORTVERSION=	1.2.3
 PORTREVISION=   1
-PKGNAMESUFFIX=	12
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
+PKGNAMESUFFIX=	12
 
-MAINTAINER=	fgast@only640k.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional modules for the Asterisk Open Source PBX
 
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
