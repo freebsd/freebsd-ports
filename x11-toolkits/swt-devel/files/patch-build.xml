@@ -1,6 +1,6 @@
---- build.xml.orig	Mon Dec  5 15:14:46 2005
-+++ build.xml	Fri Nov 17 23:48:20 2006
-@@ -1,55 +1,56 @@
+--- build.xml.orig	2005-12-05 15:14:46.000000000 -0500
++++ build.xml	2007-10-11 13:38:48.000000000 -0400
+@@ -1,55 +1,57 @@
  <?xml version="1.0" encoding="UTF-8"?>
 +<project name="org.eclipse.swt.gtk.freebsd.x86_64" default="build.jar" basedir=".">
  
@@ -12,7 +12,7 @@
 +                <property name="javac.verbose" value="false"/>
 +                <property name="javac.debug" value="off"/>
 +		<property name="input.srcdir" value="${basedir}/org"/>
-+		<property name="output.jar" value="${basedir}/swt32.jar"/>
++		<property name="output.jar" value="${basedir}/swt-devel.jar"/>
 +		<property name="output.classes" value="${basedir}/classes"/>
 +	</target>
 +
@@ -38,6 +38,7 @@
 +			</fileset>
 +			<fileset dir="${basedir}">
 +				<include name="**/version.txt"/>
++				<include name="**/*.properties"/>
 +			</fileset>
 +		</jar>
 +	</target>
