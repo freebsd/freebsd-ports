@@ -16,7 +16,7 @@ PORTVERSION=	0.7.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailavenger.org/dist/
 
-MAINTAINER=	dm+bugs+avenger@mailavenger.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An anti-spam SMTP server
 
 LIB_DEPENDS=	db-4.3:${PORTSDIR}/databases/db43
