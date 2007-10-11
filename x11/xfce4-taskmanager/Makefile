@@ -13,14 +13,13 @@ MASTER_SITES=	http://xfce4-taskmanager.nebulon.de/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A task manager for XFCE
 
 CONFIGURE_ENV=	PKG_CONFIG_PATH=${X11BASE}/libdata/pkgconfig:${LOCALBASE}/libdata/pkgconfig
 
 GNU_CONFIGURE=	yes
 USE_BZIP=	yes
-USE_GCC=	3.4+
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
