@@ -3092,6 +3092,7 @@ fortune-mod-bofh	ports/misc/fortune-mod-bofh
 fortune-mod-culmea-culmilor	ports/misc/fortune-mod-culmea-culmilor
 fortune-mod-ferengi_rules_of_acquisition	ports/misc/fortune-mod-ferengi_rules_of_acquisition
 fortune-mod-futurama	ports/misc/fortune-mod-futurama
+fortune-mod-the-godfather	ports/misc/fortune-mod-the-godfather
 fortuneit	ports/misc/fortuneit
 fortunelock	ports/sysutils/fortunelock
 fortytwo	ports/graphics/fortytwo
