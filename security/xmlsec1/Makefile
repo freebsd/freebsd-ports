@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.xmlsoft.org/xmlsec/releases/ \
 		ftp://ftp.rpmfind.net/pub/XML/xmlsec/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	XML Security Library
 
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
@@ -24,7 +24,6 @@ OPTIONS=	GNUTLS	"Enable GNUTLS support"	off	\
 		NSS	"Enable Mozilla's NSS support"	off
 
 USE_OPENSSL=	yes
-OPENSSL_CFLAGS+=-DXMLSEC_OPENSSL_097=1 -DXMLSEC_CRYPTO_OPENSSL=1
 USE_GNOME=	gnomehack lthack libxslt gnometarget
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -56,16 +55,14 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700019
-BROKEN=		Does not compile on FreeBSD >= 7.0
-.endif
-
 .if defined(WITH_GNUTLS)
 CONFIGURE_ARGS+=	--with-gnutls="${LOCALBASE}"
 LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
 .endif
+
+CONFIGURE_ARGS+=	--with-openssl="${OPENSSLBASE}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|src apps man docs|src apps man \$${DOCS}|g' \
@@ -75,13 +72,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl"|"|' \
 	    -e 's,with_nspr/include,with_nspr/include/nspr ${PTHREAD_CFLAGS},' \
 	    -e 's,with_nss/include,with_nss/include/nss/nss,' \
+	    -e 's,with_nss/lib,with_nss/lib/nss,g' \
 	    -e 's,\(CPPFLAGS="\$$NSS_CFLAGS\),\1 $$NSPR_CFLAGS,' \
+	    -e '/XMLSEC_CRYPTO_LIST=.*openssl/s,$$,\; CPPFLAGS="$$CPPFLAGS $$OPENSSL_CFLAGS",' \
 	    -e 's,\(-lplc4\)",\1 ${PTHREAD_LIBS}",' \
+	    -e '/ test /s, == , = ,' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 .if defined(WITH_NSS)
 	# Makeing the xmlsec1 executable multi-threaded to let load -lnss,
 	# when needed.
-	@${REINPLACE_CMD} -e 's,^\(xmlsec1_LDADD = \)\\$$,\1 ${PTHREAD_LIBS}\\,' \
+	@${REINPLACE_CMD} -e 's,^\(xmlsec1_LDADD = \)\\$$,\1 -L${LOCALBASE}/lib ${PTHREAD_LIBS}\\,' \
 		${WRKSRC}/apps/Makefile.in
 
 CONFIGURE_ARGS+=	--with-nss="${LOCALBASE}" --with-nspr="${LOCALBASE}"
