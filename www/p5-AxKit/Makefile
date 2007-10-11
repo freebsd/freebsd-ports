@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.axkit.org/download/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	adam@migus.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Delivery Toolkit for Apache/Perl
 
 BUILD_DEPENDS=	\
