@@ -13548,7 +13548,6 @@ qemacs		ports/editors/qemacs
 qemu		ports/emulators/qemu
 qemu-devel	ports/emulators/qemu-devel
 qemu-launcher	ports/emulators/qemu-launcher
-qextmdi		ports/devel/qextmdi
 qfaxreader	ports/comms/qfaxreader
 qfsm		ports/cad/qfsm
 qgfe		ports/math/qgfe
@@ -13811,7 +13810,6 @@ rblibtorrent	ports/net-p2p/rblibtorrent
 rblibtorrent-devel	ports/net-p2p/rblibtorrent-devel
 rbllookup	ports/dns/rbllookup
 rbllookup-ng	ports/dns/rbllookup-ng
-rboot		ports/net/rboot
 rbot		ports/irc/rbot
 rbscrobbler	ports/audio/rbscrobbler
 rc		ports/shells/rc
