@@ -3274,3 +3274,4 @@ emulators/linux_base-fc7|emulators/linux_base-f7|2007-10-07|Fedora is no more Co
 games/fwp||2007-10-10|Has expired: Does not build
 graphics/ogre3d12||2007-10-11|Has expired: Not needed any longer
 graphics/cegui04||2007-10-11|Has expired: Not needed any longer
+japanese/tk42||2007-10-11|Has expired: does not build with gcc4.2; use japanese/tk80 instead
