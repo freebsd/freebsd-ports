@@ -3660,6 +3660,7 @@ gimp-gap	ports/graphics/gimp-gap
 gimp-greycstoration	ports/graphics/gimp-greycstoration
 gimp-gutenprint	ports/print/gimp-gutenprint
 gimp-help	ports/graphics/gimp-help
+gimp-lqr-plugin	ports/graphics/gimp-lqr-plugin
 gimp-manual-html	ports/graphics/gimp-manual-html
 gimp-manual-pdf		ports/graphics/gimp-manual-pdf
 gimpshop	ports/graphics/gimpshop
