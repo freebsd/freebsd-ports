@@ -1,9 +1,9 @@
---- zone.tab.orig	Tue Mar 28 13:09:09 2006
-+++ zone.tab	Tue Mar 28 13:09:18 2006
-@@ -65,7 +65,7 @@
- AU	-1228+13050	Australia/Darwin	Northern Territory
- AU	-3157+11551	Australia/Perth	Western Australia
- AW	+1230-06858	America/Aruba
+--- zone.tab.orig	Tue Aug 21 00:45:10 2007
++++ zone.tab	Fri Oct 12 07:10:31 2007
+@@ -66,7 +66,7 @@
+ AU	-3157+11551	Australia/Perth	Western Australia - most locations
+ AU	-3143+12852	Australia/Eucla	Western Australia - Eucla area
+ AW	+1230-06958	America/Aruba
 -AX	+6006+01957	Europe/Mariehamn
 +#AX	+6006+01957	Europe/Mariehamn
  AZ	+4023+04951	Asia/Baku

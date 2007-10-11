@@ -6,6 +6,7 @@
 
 PORTNAME=	zoneinfo
 DISTVERSION=	2007h
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://elsie.nci.nih.gov/pub/
 DISTNAME=	tzdata${DISTVERSION}
@@ -57,5 +58,11 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+
+test-patches:
+.for M in ${MISSING}
+	make clean
+	EXTRA_PATCHES=${FILESDIR}/patchremove-${M} make patch
+.endfor
 
 .include <bsd.port.post.mk>
