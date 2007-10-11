@@ -8,11 +8,11 @@
 PORTNAME=	pib
 PORTVERSION=	1.2
 PORTREVISION=	2
-CATEGORIES=	ports-mgmt tk84
+CATEGORIES=	ports-mgmt tk
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	msmith
 
-MAINTAINER=	.@babolo.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI Ports Collection management tool
 
 USE_TK=		yes

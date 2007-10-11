@@ -11,8 +11,8 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/sysutl/ \
 		http://www.links.ru/soft/
 
-MAINTAINER=	.@babolo.ru
-COMMENT=	Daemon for garbdge collection in directories with temporary files
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Daemon for garbage collection in directories with temporary files
 
 MAN1=		deleted.1
 MANCOMPRESSED=	yes
