@@ -9,9 +9,12 @@ PORTNAME=	xmmsctrl
 PORTVERSION=	1.8
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://user.it.uu.se/~adavid/utils/
+MASTER_SITES=	http://user.it.uu.se/~adavid/utils/ \
+		http://distro.ibiblio.org/pub/linux/distributions/pdaxrom/src/ \
+		http://ftp.nluug.nl/os/Linux/distr/pdaxrom/src/ \
+		http://www.sourcefiles.org/Multimedia/MP3/Tools/Miscellaneous/
 
-MAINTAINER=	jhale@bluebottle.com
+MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A small utility to control XMMS from the command line
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
