@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	slgrace
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	math devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v${SLANG_VER}/modules/grace/ \
 		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v${SLANG_VER}/modules/grace/ \
@@ -23,5 +22,17 @@ RUN_DEPENDS=	grace:${PORTSDIR}/math/grace
 SLANG_VER=	2.1
 
 GNU_CONFIGURE=	yes
+PORTDOCS=	*
+PLIST_SUB=	VERSION=${PORTVERSION}
+
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's, install_docfiles,,' \
+			  -e '/MKINSDIR.*DEST_DOC_FILES_INSTALL_DIR/d' \
+		${WRKSRC}/src/Makefile.in
+.else
+	@${REINPLACE_CMD} -E 's,^(DOC_FILES_INSTALL_DIR) *= *.*$$,\1 = ${DOCSDIR},' \
+		${WRKSRC}/src/Makefile.in
+.endif
 
 .include <bsd.port.mk>
