@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Compile
-PORTVERSION=	0.52
+PORTVERSION=	0.55
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,9 +22,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
-MAN3=	XML::Compile.3 XML::Compile::SOAP::Operation.3 \
-	XML::Compile::SOAP.3 XML::Compile::SOAP::SOAP11.3 \
-	XML::Compile::SOAP::SOAP12.3 \
+MAN3=	XML::Compile.3 \
 	XML::Compile::Dumper.3 XML::Compile::Schema.3 \
 	XML::Compile::Iterator.3 XML::Compile::Util.3 \
 	XML::Compile::Schema::BuiltInFacets.3 \
@@ -35,7 +33,6 @@ MAN3=	XML::Compile.3 XML::Compile::SOAP::Operation.3 \
 	XML::Compile::Schema::Template.3 \
 	XML::Compile::Schema::Translate.3 \
 	XML::Compile::Schema::XmlReader.3 \
-	XML::Compile::Schema::XmlWriter.3 \
-	XML::Compile::WSDL.3
+	XML::Compile::Schema::XmlWriter.3
 
 .include <bsd.port.mk>
