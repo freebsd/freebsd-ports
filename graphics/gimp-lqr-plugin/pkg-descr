@@ -1,0 +1,5 @@
+Content-aware rescaling. Keeps the features of the image while
+rescaling along a single direction. Tested on Gimp 2.2. It installs
+under the Layer menu now.
+
+WWW: http://web.tiscali.it/carlobaldassi/
