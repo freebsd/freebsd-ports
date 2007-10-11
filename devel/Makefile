@@ -416,6 +416,7 @@
     SUBDIR += goffice
     SUBDIR += goffice1
     SUBDIR += gonzui
+    SUBDIR += google-perftools
     SUBDIR += google-sparsehash
     SUBDIR += gorm
     SUBDIR += gperf
