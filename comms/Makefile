@@ -44,7 +44,6 @@
     SUBDIR += hcidump
     SUBDIR += hf
     SUBDIR += hylafax
-    SUBDIR += ixj
     SUBDIR += java-commapi
     SUBDIR += java-commapi-freebsd
     SUBDIR += jerm

@@ -1476,7 +1476,6 @@ cogito		ports/devel/cogito
 coldsync	ports/palm/coldsync
 cole		ports/textproc/cole
 collectd	ports/net-mgmt/collectd
-collections	ports/java/collections
 color-mate	ports/editors/color-mate
 color-theme.el	ports/misc/color-theme.el
 colordiff	ports/textproc/colordiff
@@ -5050,7 +5049,6 @@ iwebcal		ports/www/iwebcal
 iwi-firmware	ports/net/iwi-firmware
 iwi-firmware-kmod	ports/net/iwi-firmware-kmod
 iwidgets	ports/x11-toolkits/iwidgets
-ixj		ports/comms/ixj
 ixlib		ports/devel/ixlib
 j2sdkee13	ports/java/j2sdkee13
 ja-ASCIIdates98-fpw	ports/japanese/ASCIIdates98-fpw
@@ -17291,7 +17289,6 @@ xparam		ports/devel/xparam
 xpat2		ports/games/xpat2
 xpath2rss	ports/www/xpath2rss
 xpbiff		ports/mail/xpbiff
-xpcd		ports/graphics/xpcd
 xpdf		ports/graphics/xpdf
 xpenguins	ports/games/xpenguins
 xphelloworld	ports/x11/xphelloworld
@@ -17665,7 +17662,6 @@ zh-cxterm	ports/chinese/cxterm
 zh-dfsongsd	ports/chinese/dfsongsd
 zh-dictd-database	ports/chinese/dictd-database
 zh-docproj	ports/chinese/docproj
-zh-emacs20	ports/chinese/emacs20
 zh-enscript	ports/chinese/enscript
 zh-eterm	ports/chinese/eterm
 zh-fcitx	ports/chinese/fcitx

@@ -34,7 +34,6 @@
     SUBDIR += dfsongsd
     SUBDIR += dictd-database
     SUBDIR += docproj
-    SUBDIR += emacs20
     SUBDIR += enscript
     SUBDIR += eterm
     SUBDIR += fcitx

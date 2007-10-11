@@ -782,7 +782,6 @@
     SUBDIR += xnview
     SUBDIR += xoris
     SUBDIR += xpaint
-    SUBDIR += xpcd
     SUBDIR += xpdf
     SUBDIR += xpx
     SUBDIR += xrml

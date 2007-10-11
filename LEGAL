@@ -99,7 +99,6 @@ citrix_ica-*		net/citrix_ica		License prohibits redistribution
 cfs-*			security/cfs		Crypto; export-controlled
 code2000-*/CODE2000.ZIP	x11-fonts/code2000	Only unmodified original
 						package can be distributed
-collections*.zip	java/collections	See the license
 contool-*		sysutils/contool	Do not incorporate the source
 						code into a product which is
 						subsequently sold

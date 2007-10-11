@@ -3277,3 +3277,7 @@ graphics/cegui04||2007-10-11|Has expired: Not needed any longer
 japanese/tk42||2007-10-11|Has expired: does not build with gcc4.2; use japanese/tk80 instead
 devel/qextmdi||2007-10-11|Has expired: is unfetchable, website disappeared
 net/rboot||2007-10-11|Has expired: The project is no longer under development, and has no homepage
+graphics/xpcd||2007-10-11|Has expired: is an abandoned project and might be vulnerable
+comms/ixj||2007-10-11|Has expired: does not work on any supported FreeBSD version
+chinese/emacs20||2007-10-11|Has expired: "editors/emacs is recommended instead for new installations"
+java/collections||2007-10-11|Has expired: only needed for jdk1.1, which is obsolete
