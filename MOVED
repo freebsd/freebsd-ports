@@ -3272,3 +3272,5 @@ lang/snobol|lang/snobol4|2007-10-04|Use newer version
 x11-servers/synaptics|x11-drivers/synaptics|2007-10-06|Change to new category
 emulators/linux_base-fc7|emulators/linux_base-f7|2007-10-07|Fedora is no more Core
 games/fwp||2007-10-10|Has expired: Does not build
+graphics/ogre3d12||2007-10-11|Has expired: Not needed any longer
+graphics/cegui04||2007-10-11|Has expired: Not needed any longer
