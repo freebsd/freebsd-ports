@@ -16,13 +16,14 @@ share/free-sa/fr.iso88591
 share/free-sa/it.iso88591
 share/free-sa/ru.koi8r
 share/free-sa/sk.iso88592
-share/doc/free-sa-1.3.4/COPYING
-share/doc/free-sa-1.3.4/INSTALL
-share/doc/free-sa-1.3.4/README
-share/doc/free-sa-1.3.4/README.DEV
-share/doc/free-sa-1.3.4/ChangeLog     
-share/doc/free-sa-1.3.4/FAQ
-share/doc/free-sa-1.3.4/THANKS
+share/free-sa/es.iso88591
+share/doc/free-sa-1.4.0/COPYING
+share/doc/free-sa-1.4.0/INSTALL
+share/doc/free-sa-1.4.0/README
+share/doc/free-sa-1.4.0/README.DEV
+share/doc/free-sa-1.4.0/ChangeLog     
+share/doc/free-sa-1.4.0/FAQ
+share/doc/free-sa-1.4.0/THANKS
 www/data/free-sa/sa.js
 www/data/free-sa/c.png
 www/data/free-sa/d.png
@@ -71,7 +72,7 @@ www/data/free-sa/themes/blues/rsa.css
 www/data/free-sa/themes/sa.js
 @dirrm etc/free-sa
 @dirrm share/free-sa
-@dirrm share/doc/free-sa-1.3.4
+@dirrm share/doc/free-sa-1.4.0
 @dirrm www/data/free-sa/themes/rbsec
 @dirrm www/data/free-sa/themes/sarg
 @dirrm www/data/free-sa/themes/silver
