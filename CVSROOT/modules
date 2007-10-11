@@ -4054,6 +4054,7 @@ gonzui		ports/devel/gonzui
 goocanvas	ports/graphics/goocanvas
 google-ctemplate	ports/textproc/google-ctemplate
 google-earth	ports/astro/google-earth
+google-perftools	ports/devel/google-perftools
 google-sitemapgen	ports/www/google-sitemapgen
 google-sparsehash	ports/devel/google-sparsehash
 googlog		ports/sysutils/googlog
