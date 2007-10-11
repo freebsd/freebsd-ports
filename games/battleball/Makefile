@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://freebsd.aeternal.net/ports/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	corwin@aeternal.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D single/multiplayer military soccer game for X Window System
 
 USE_X_PREFIX=	yes
