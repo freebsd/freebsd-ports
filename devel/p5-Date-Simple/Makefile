@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/Y/YV/YVES/
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		kemm@in-line.ru
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A simple date object
 
 PERL_CONFIGURE=		yes
