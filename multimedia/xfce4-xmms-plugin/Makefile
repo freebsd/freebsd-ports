@@ -12,7 +12,7 @@ CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	XFce 4 xmms control plugin for xfce4-panel
 
 GNU_CONFIGURE=	yes
