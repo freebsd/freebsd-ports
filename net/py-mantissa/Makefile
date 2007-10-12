@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mantissa
-PORTVERSION=	0.4.1
+PORTVERSION=	0.6.1
 CATEGORIES=	net www python
 MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Mantissa-${PORTVERSION}
 EXTRACT_SUFX=	.tar.gz?format=raw
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mantissa is an application server using the DivMod components
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/nevow/__init__.py:${PORTSDIR}/www/py-nevow \
