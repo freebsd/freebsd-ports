@@ -1,16 +1,14 @@
-etc/oss.conf
-bin/ossxmix
-bin/osstest
-bin/ossrecord
-bin/ossplay
-bin/ossmix
 bin/ossinfo
-sbin/savemixer
-sbin/ossdevlinks
-sbin/ossdetect
-sbin/ossctl
-sbin/soundon
-sbin/soundoff
+bin/ossmix
+bin/ossplay
+bin/ossrecord
+bin/osstest
+bin/ossxmix
+etc/oss.conf
+lib/oss/etc/devices.list
+@unexec rm -f %D/lib/oss/etc/installed_drivers 2>/dev/null || true
+@dirrmtry lib/oss/etc
+@dirrmtry lib/oss/logs
 lib/oss/modules/osscore.ko
 lib/oss/modules/ali5455.ko
 lib/oss/modules/allegro.ko
@@ -46,11 +44,12 @@ lib/oss/modules/vmix.ko
 lib/oss/modules/vortex.ko
 lib/oss/modules/ymf7xx.ko
 @dirrm lib/oss/modules
-lib/oss/etc/devices.list
-@unexec rm -f %D/lib/oss/etc/installed_drivers
-@unexec rm -f %D/lib/oss/etc/legacy_devices
-@dirrm lib/oss/logs
-@dirrm lib/oss/etc
 lib/oss/version.dat
 lib/oss/sysfiles.list
-@dirrm lib/oss
+@dirrmtry lib/oss
+sbin/ossctl
+sbin/ossdetect
+sbin/ossdevlinks
+sbin/savemixer
+sbin/soundoff
+sbin/soundon
