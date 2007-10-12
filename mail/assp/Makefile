@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	assp
-PORTVERSION=	1.2.6
+PORTVERSION=	1.3.3.1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,20 +22,28 @@ USE_PERL5_RUN=	yes
 USE_DOS2UNIX=	addservice.pl \
 		assp.pl \
 		changelog.txt \
-		helpreport.txt \
+		files/URIBLCCTLDS.txt \
+		files/blackdomains.txt \
+		files/bombre.txt \
+		files/invalidptr.txt \
+		files/ipnp.txt \
+		files/ipwl.txt \
+		files/nodelay.txt \
+		files/rbl-service.txt \
+		files/redre.txt \
+		files/whitedomains.txt \
 		move2num.pl \
-		nodelay.txt \
-		notspamreport.txt \
 		rebuildspamdb.pl \
-		redre.txt \
-		redremovereport.txt \
-		redreport.txt \
 		repair.pl \
-		spamreport.txt \
+		reports/helpreport.txt \
+		reports/notspamreport.txt \
+		reports/redremovereport.txt \
+		reports/redreport.txt \
+		reports/spamreport.txt \
+		reports/whiteremovereport.txt \
+		reports/whitereport.txt \
 		stat.pl \
-		stats.sh \
-		whiteremovereport.txt \
-		whitereport.txt
+		stats.sh
 
 MAN8=		assp.8 assplog.8
 
@@ -62,7 +70,7 @@ OPTIONS=	EMVALID	"RFC822 recipient address validator" on \
 		DNSBL	"DNS block list checking" on \
 		MYSQL	"Use MySQL db to store white/red/delaylists" off
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME:U}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME:U}_${PORTVERSION}-Install/${PORTNAME:U}
 
 .include <bsd.port.pre.mk>
 
@@ -117,10 +125,10 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/assp
 	${INSTALL_SCRIPT} ${WRKSRC}/*.pl ${PREFIX}/lib/assp
 	${INSTALL_SCRIPT} ${WRKSRC}/stats.sh ${PREFIX}/lib/assp
-	${INSTALL_DATA} ${WRKSRC}/nodelay.txt ${PREFIX}/lib/assp
-	${INSTALL_DATA} ${WRKSRC}/redre.txt ${PREFIX}/lib/assp
+	${MKDIR} ${PREFIX}/lib/assp/files
+	${INSTALL_DATA} ${WRKSRC}/files/* ${PREFIX}/lib/assp/files
 	${MKDIR} ${PREFIX}/lib/assp/reports
-	${INSTALL_DATA} ${WRKSRC}/*report.txt ${PREFIX}/lib/assp/reports
+	${INSTALL_DATA} ${WRKSRC}/reports/* ${PREFIX}/lib/assp/reports
 	${MKDIR} ${PREFIX}/lib/assp/images
 	${INSTALL_DATA} ${WRKSRC}/images/* ${PREFIX}/lib/assp/images
 
@@ -135,7 +143,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.htm ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.htm ${DOCSDIR}
 .endif
 
 post-install:
