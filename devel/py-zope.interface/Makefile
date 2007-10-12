@@ -18,8 +18,6 @@ COMMENT=	Zope.interface package from Zope 3
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-MANUAL_PACKAGE_BUILD=Doesn't build in tinderbox environment
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	zope.interface
