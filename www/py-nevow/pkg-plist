@@ -3,7 +3,6 @@ bin/nevow-xmlgettext
 %%PYTHON_SITELIBDIR%%/nevow/zomnesrv.pyo
 %%PYTHON_SITELIBDIR%%/nevow/zomnesrv.pyc
 %%PYTHON_SITELIBDIR%%/nevow/zomnesrv.py
-%%PYTHON_SITELIBDIR%%/nevow/xml.js
 %%PYTHON_SITELIBDIR%%/nevow/wsgi.pyo
 %%PYTHON_SITELIBDIR%%/nevow/wsgi.pyc
 %%PYTHON_SITELIBDIR%%/nevow/wsgi.py
@@ -20,9 +19,15 @@ bin/nevow-xmlgettext
 %%PYTHON_SITELIBDIR%%/nevow/testutil.pyc
 %%PYTHON_SITELIBDIR%%/nevow/testutil.py
 %%PYTHON_SITELIBDIR%%/nevow/test/testsupport.js
+%%PYTHON_SITELIBDIR%%/nevow/test/test_utils.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_utils.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_utils.py
 %%PYTHON_SITELIBDIR%%/nevow/test/test_url.pyo
 %%PYTHON_SITELIBDIR%%/nevow/test/test_url.pyc
 %%PYTHON_SITELIBDIR%%/nevow/test/test_url.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_testutil.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_testutil.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_testutil.py
 %%PYTHON_SITELIBDIR%%/nevow/test/test_tags.pyo
 %%PYTHON_SITELIBDIR%%/nevow/test/test_tags.pyc
 %%PYTHON_SITELIBDIR%%/nevow/test/test_tags.py
@@ -41,7 +46,12 @@ bin/nevow-xmlgettext
 %%PYTHON_SITELIBDIR%%/nevow/test/test_passobj.pyo
 %%PYTHON_SITELIBDIR%%/nevow/test/test_passobj.pyc
 %%PYTHON_SITELIBDIR%%/nevow/test/test_passobj.py
-%%PYTHON_SITELIBDIR%%/nevow/test/test_object.js
+%%PYTHON_SITELIBDIR%%/nevow/test/test_package/Foo/__init__.js
+%%PYTHON_SITELIBDIR%%/nevow/test/test_package/Foo/Baz/Quux.js
+%%PYTHON_SITELIBDIR%%/nevow/test/test_package/Foo/Bar.js
+%%PYTHON_SITELIBDIR%%/nevow/test/test_nit.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_nit.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_nit.py
 %%PYTHON_SITELIBDIR%%/nevow/test/test_loaders.pyo
 %%PYTHON_SITELIBDIR%%/nevow/test/test_loaders.pyc
 %%PYTHON_SITELIBDIR%%/nevow/test/test_loaders.py
@@ -75,13 +85,18 @@ bin/nevow-xmlgettext
 %%PYTHON_SITELIBDIR%%/nevow/test/test_errorhandler.pyo
 %%PYTHON_SITELIBDIR%%/nevow/test/test_errorhandler.pyc
 %%PYTHON_SITELIBDIR%%/nevow/test/test_errorhandler.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_element.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_element.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_element.py
 %%PYTHON_SITELIBDIR%%/nevow/test/test_disktemplate.pyo
 %%PYTHON_SITELIBDIR%%/nevow/test/test_disktemplate.pyc
 %%PYTHON_SITELIBDIR%%/nevow/test/test_disktemplate.py
-%%PYTHON_SITELIBDIR%%/nevow/test/test_deferred.js
 %%PYTHON_SITELIBDIR%%/nevow/test/test_context.pyo
 %%PYTHON_SITELIBDIR%%/nevow/test/test_context.pyc
 %%PYTHON_SITELIBDIR%%/nevow/test/test_context.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_consolejstest.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_consolejstest.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_consolejstest.py
 %%PYTHON_SITELIBDIR%%/nevow/test/test_athena.pyo
 %%PYTHON_SITELIBDIR%%/nevow/test/test_athena.pyc
 %%PYTHON_SITELIBDIR%%/nevow/test/test_athena.py
@@ -94,22 +109,18 @@ bin/nevow-xmlgettext
 %%PYTHON_SITELIBDIR%%/nevow/test/livetest_runtime.pyo
 %%PYTHON_SITELIBDIR%%/nevow/test/livetest_runtime.pyc
 %%PYTHON_SITELIBDIR%%/nevow/test/livetest_runtime.py
-%%PYTHON_SITELIBDIR%%/nevow/test/livetest_runtime.js
 %%PYTHON_SITELIBDIR%%/nevow/test/livetest_athena.pyo
 %%PYTHON_SITELIBDIR%%/nevow/test/livetest_athena.pyc
 %%PYTHON_SITELIBDIR%%/nevow/test/livetest_athena.py
-%%PYTHON_SITELIBDIR%%/nevow/test/livetest.js
 %%PYTHON_SITELIBDIR%%/nevow/test/__init__.pyo
 %%PYTHON_SITELIBDIR%%/nevow/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/nevow/test/__init__.py
 %%PYTHON_SITELIBDIR%%/nevow/tags.pyo
 %%PYTHON_SITELIBDIR%%/nevow/tags.pyc
 %%PYTHON_SITELIBDIR%%/nevow/tags.py
-%%PYTHON_SITELIBDIR%%/nevow/taglibrary/taglibrary.js
 %%PYTHON_SITELIBDIR%%/nevow/taglibrary/tabbedPane.pyo
 %%PYTHON_SITELIBDIR%%/nevow/taglibrary/tabbedPane.pyc
 %%PYTHON_SITELIBDIR%%/nevow/taglibrary/tabbedPane.py
-%%PYTHON_SITELIBDIR%%/nevow/taglibrary/tabbedPane.js
 %%PYTHON_SITELIBDIR%%/nevow/taglibrary/tabbedPane.css
 %%PYTHON_SITELIBDIR%%/nevow/taglibrary/progressbar.pyo
 %%PYTHON_SITELIBDIR%%/nevow/taglibrary/progressbar.pyc
@@ -134,23 +145,27 @@ bin/nevow-xmlgettext
 %%PYTHON_SITELIBDIR%%/nevow/scripts/xmlgettext.pyo
 %%PYTHON_SITELIBDIR%%/nevow/scripts/xmlgettext.pyc
 %%PYTHON_SITELIBDIR%%/nevow/scripts/xmlgettext.py
-%%PYTHON_SITELIBDIR%%/nevow/scripts/livetrial.pyo
-%%PYTHON_SITELIBDIR%%/nevow/scripts/livetrial.pyc
-%%PYTHON_SITELIBDIR%%/nevow/scripts/livetrial.py
+%%PYTHON_SITELIBDIR%%/nevow/scripts/nit.pyo
+%%PYTHON_SITELIBDIR%%/nevow/scripts/nit.pyc
+%%PYTHON_SITELIBDIR%%/nevow/scripts/nit.py
 %%PYTHON_SITELIBDIR%%/nevow/scripts/__init__.pyo
 %%PYTHON_SITELIBDIR%%/nevow/scripts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/nevow/scripts/__init__.py
-%%PYTHON_SITELIBDIR%%/nevow/runtime.js
 %%PYTHON_SITELIBDIR%%/nevow/rend.pyo
 %%PYTHON_SITELIBDIR%%/nevow/rend.pyc
 %%PYTHON_SITELIBDIR%%/nevow/rend.py
 %%PYTHON_SITELIBDIR%%/nevow/query.pyo
 %%PYTHON_SITELIBDIR%%/nevow/query.pyc
 %%PYTHON_SITELIBDIR%%/nevow/query.py
+%%PYTHON_SITELIBDIR%%/nevow/plugins/nevow_package.pyo
+%%PYTHON_SITELIBDIR%%/nevow/plugins/nevow_package.pyc
+%%PYTHON_SITELIBDIR%%/nevow/plugins/nevow_package.py
 %%PYTHON_SITELIBDIR%%/nevow/plugins/__init__.pyo
 %%PYTHON_SITELIBDIR%%/nevow/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/nevow/plugins/__init__.py
-%%PYTHON_SITELIBDIR%%/nevow/nevow.js
+%%PYTHON_SITELIBDIR%%/nevow/page.pyo
+%%PYTHON_SITELIBDIR%%/nevow/page.pyc
+%%PYTHON_SITELIBDIR%%/nevow/page.py
 %%PYTHON_SITELIBDIR%%/nevow/loaders.pyo
 %%PYTHON_SITELIBDIR%%/nevow/loaders.pyc
 %%PYTHON_SITELIBDIR%%/nevow/loaders.py
@@ -160,7 +175,6 @@ bin/nevow-xmlgettext
 %%PYTHON_SITELIBDIR%%/nevow/livetrial/runner.pyo
 %%PYTHON_SITELIBDIR%%/nevow/livetrial/runner.pyc
 %%PYTHON_SITELIBDIR%%/nevow/livetrial/runner.py
-%%PYTHON_SITELIBDIR%%/nevow/livetrial/livetest.js
 %%PYTHON_SITELIBDIR%%/nevow/livetrial/livetest.css
 %%PYTHON_SITELIBDIR%%/nevow/livetrial/__init__.pyo
 %%PYTHON_SITELIBDIR%%/nevow/livetrial/__init__.pyc
@@ -168,16 +182,31 @@ bin/nevow-xmlgettext
 %%PYTHON_SITELIBDIR%%/nevow/livetest.pyo
 %%PYTHON_SITELIBDIR%%/nevow/livetest.pyc
 %%PYTHON_SITELIBDIR%%/nevow/livetest.py
-%%PYTHON_SITELIBDIR%%/nevow/livetest.js
 %%PYTHON_SITELIBDIR%%/nevow/livetest.css
-%%PYTHON_SITELIBDIR%%/nevow/livetest-postscripts.js
 %%PYTHON_SITELIBDIR%%/nevow/livepage.pyo
 %%PYTHON_SITELIBDIR%%/nevow/livepage.pyc
 %%PYTHON_SITELIBDIR%%/nevow/livepage.py
-%%PYTHON_SITELIBDIR%%/nevow/liveglue.js
+%%PYTHON_SITELIBDIR%%/nevow/jsutil.pyo
+%%PYTHON_SITELIBDIR%%/nevow/jsutil.pyc
+%%PYTHON_SITELIBDIR%%/nevow/jsutil.py
 %%PYTHON_SITELIBDIR%%/nevow/json.pyo
 %%PYTHON_SITELIBDIR%%/nevow/json.pyc
 %%PYTHON_SITELIBDIR%%/nevow/json.py
+%%PYTHON_SITELIBDIR%%/nevow/js/Nevow/__init__.js
+%%PYTHON_SITELIBDIR%%/nevow/js/Nevow/TagLibrary/__init__.js
+%%PYTHON_SITELIBDIR%%/nevow/js/Nevow/TagLibrary/TabbedPane.js
+%%PYTHON_SITELIBDIR%%/nevow/js/Nevow/Athena/__init__.js
+%%PYTHON_SITELIBDIR%%/nevow/js/Nevow/Athena/Tests/__init__.js
+%%PYTHON_SITELIBDIR%%/nevow/js/Nevow/Athena/Tests/Resources.js
+%%PYTHON_SITELIBDIR%%/nevow/js/Nevow/Athena/Test.js
+%%PYTHON_SITELIBDIR%%/nevow/js/Divmod/__init__.js
+%%PYTHON_SITELIBDIR%%/nevow/js/Divmod/XML.js
+%%PYTHON_SITELIBDIR%%/nevow/js/Divmod/UnitTest.js
+%%PYTHON_SITELIBDIR%%/nevow/js/Divmod/Runtime/__init__.js
+%%PYTHON_SITELIBDIR%%/nevow/js/Divmod/Runtime/Tests.js
+%%PYTHON_SITELIBDIR%%/nevow/js/Divmod/Inspect.js
+%%PYTHON_SITELIBDIR%%/nevow/js/Divmod/Defer.js
+%%PYTHON_SITELIBDIR%%/nevow/js/Divmod/Base.js
 %%PYTHON_SITELIBDIR%%/nevow/itaglibrary.pyo
 %%PYTHON_SITELIBDIR%%/nevow/itaglibrary.pyc
 %%PYTHON_SITELIBDIR%%/nevow/itaglibrary.py
@@ -214,14 +243,15 @@ bin/nevow-xmlgettext
 %%PYTHON_SITELIBDIR%%/nevow/events.pyo
 %%PYTHON_SITELIBDIR%%/nevow/events.pyc
 %%PYTHON_SITELIBDIR%%/nevow/events.py
+%%PYTHON_SITELIBDIR%%/nevow/errors.pyo
+%%PYTHON_SITELIBDIR%%/nevow/errors.pyc
+%%PYTHON_SITELIBDIR%%/nevow/errors.py
 %%PYTHON_SITELIBDIR%%/nevow/entities.pyo
 %%PYTHON_SITELIBDIR%%/nevow/entities.pyc
 %%PYTHON_SITELIBDIR%%/nevow/entities.py
-%%PYTHON_SITELIBDIR%%/nevow/divmod.js
 %%PYTHON_SITELIBDIR%%/nevow/dirlist.pyo
 %%PYTHON_SITELIBDIR%%/nevow/dirlist.pyc
 %%PYTHON_SITELIBDIR%%/nevow/dirlist.py
-%%PYTHON_SITELIBDIR%%/nevow/defer.js
 %%PYTHON_SITELIBDIR%%/nevow/context.pyo
 %%PYTHON_SITELIBDIR%%/nevow/context.pyc
 %%PYTHON_SITELIBDIR%%/nevow/context.py
@@ -234,21 +264,22 @@ bin/nevow-xmlgettext
 %%PYTHON_SITELIBDIR%%/nevow/blocks.pyo
 %%PYTHON_SITELIBDIR%%/nevow/blocks.pyc
 %%PYTHON_SITELIBDIR%%/nevow/blocks.py
+%%PYTHON_SITELIBDIR%%/nevow/athena_private/connection-status-down.png
 %%PYTHON_SITELIBDIR%%/nevow/athena.pyo
 %%PYTHON_SITELIBDIR%%/nevow/athena.pyc
 %%PYTHON_SITELIBDIR%%/nevow/athena.py
-%%PYTHON_SITELIBDIR%%/nevow/athena.js
 %%PYTHON_SITELIBDIR%%/nevow/appserver.pyo
 %%PYTHON_SITELIBDIR%%/nevow/appserver.pyc
 %%PYTHON_SITELIBDIR%%/nevow/appserver.py
 %%PYTHON_SITELIBDIR%%/nevow/accessors.pyo
 %%PYTHON_SITELIBDIR%%/nevow/accessors.pyc
 %%PYTHON_SITELIBDIR%%/nevow/accessors.py
+%%PYTHON_SITELIBDIR%%/nevow/_version.pyo
+%%PYTHON_SITELIBDIR%%/nevow/_version.pyc
+%%PYTHON_SITELIBDIR%%/nevow/_version.py
 %%PYTHON_SITELIBDIR%%/nevow/__init__.pyo
 %%PYTHON_SITELIBDIR%%/nevow/__init__.pyc
 %%PYTHON_SITELIBDIR%%/nevow/__init__.py
-%%PYTHON_SITELIBDIR%%/nevow/MochiKitLogConsole.js
-%%PYTHON_SITELIBDIR%%/nevow/MochiKit.js
 %%PYTHON_SITELIBDIR%%/nevow/Canvas.swf
 %%PYTHON_SITELIBDIR%%/formless/webform.pyo
 %%PYTHON_SITELIBDIR%%/formless/webform.pyc
@@ -591,11 +622,21 @@ bin/nevow-xmlgettext
 %%PORTDOCS%%%%DOCSDIR%%/hier.pyc
 %%PORTDOCS%%%%DOCSDIR%%/README
 @dirrmtry %%PYTHON_SITELIBDIR%%/nevow/athena_private
+@dirrm %%PYTHON_SITELIBDIR%%/nevow/test/test_package/Foo/Baz
+@dirrm %%PYTHON_SITELIBDIR%%/nevow/test/test_package/Foo
+@dirrm %%PYTHON_SITELIBDIR%%/nevow/test/test_package
 @dirrm %%PYTHON_SITELIBDIR%%/nevow/test
 @dirrm %%PYTHON_SITELIBDIR%%/nevow/taglibrary
 @dirrm %%PYTHON_SITELIBDIR%%/nevow/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/nevow/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/nevow/livetrial
+@dirrm %%PYTHON_SITELIBDIR%%/nevow/js/Nevow/TagLibrary
+@dirrm %%PYTHON_SITELIBDIR%%/nevow/js/Nevow/Athena/Tests
+@dirrm %%PYTHON_SITELIBDIR%%/nevow/js/Nevow/Athena
+@dirrm %%PYTHON_SITELIBDIR%%/nevow/js/Nevow
+@dirrm %%PYTHON_SITELIBDIR%%/nevow/js/Divmod/Runtime
+@dirrm %%PYTHON_SITELIBDIR%%/nevow/js/Divmod
+@dirrm %%PYTHON_SITELIBDIR%%/nevow/js
 @dirrm %%PYTHON_SITELIBDIR%%/nevow/flat
 @dirrm %%PYTHON_SITELIBDIR%%/nevow
 @dirrm %%PYTHON_SITELIBDIR%%/formless/test
