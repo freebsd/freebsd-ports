@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.t-g-p.org/
 DISTNAME=	${PORTNAME}10
 
-MAINTAINER=	oliver.bantke@t-g-p.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resolution tool for Centrino based laptops
 
 ONLY_FOR_ARCHS=	i386
