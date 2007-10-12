@@ -315,6 +315,7 @@
     SUBDIR += msort
     SUBDIR += mt-aspell
     SUBDIR += muse
+    SUBDIR += mxml
     SUBDIR += nb-aspell
     SUBDIR += nds-aspell
     SUBDIR += nicetext
