@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	Test-Reporter
-PORTVERSION=	1.34
+PORTVERSION=	1.38
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Sends test results to cpan-testers@perl.org
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
-		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-PathTools>0:${PORTSDIR}/devel/p5-PathTools \
+		p5-File-Temp>0:${PORTSDIR}/devel/p5-File-Temp \
+		p5-Net>0:${PORTSDIR}/net/p5-Net
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
