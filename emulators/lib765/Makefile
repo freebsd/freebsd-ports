@@ -10,12 +10,12 @@ PORTVERSION=	0.3.4
 CATEGORIES=	emulators devel
 MASTER_SITES=	http://www.seasip.demon.co.uk/Unix/LibDsk/
 
-MAINTAINER=	kemm@in-line.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulation of uPD765a Floppy Disc Controller
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)
 post-install:

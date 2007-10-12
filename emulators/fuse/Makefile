@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fuse-emulator
 
-MAINTAINER=	kemm@in-line.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Unix (Sinclair ZX-)Spectrum Emulator
 
 LIB_DEPENDS=	spectrum.5:${PORTSDIR}/emulators/libspectrum \
