@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.spip.net/spip-dev/DISTRIB/ \
 		http://trac.rezo.net/files/spip/
 DISTNAME=	SPIP-v${PORTVERSION:U:C|\.|-|g}
 
-MAINTAINER=	jfb@minet.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A publishing system for the Internet (CMS)
 
 USE_ZIP=	yes
