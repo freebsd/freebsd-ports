@@ -6,29 +6,25 @@
 #
 
 PORTNAME=	baudline
-PORTVERSION=	1.02
+PORTVERSION=	1.06
 CATEGORIES=	audio linux
 # We have permission from author Erik Olsen <erik@sigblips.net> for the
 # package cluster to automatically fetch baudline
 MASTER_SITES=	http://www.baudline.com/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_i686
+DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_linux_i686
 
 MAINTAINER=	dyeske@gmail.com
-COMMENT=	A real-time signal analysis tool and an offline time-frequency browser
+COMMENT=	Real-time signal analysis and time-frequency browser
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext xt ice
 USE_LINUX=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 
-# Linux binary should not be stripped by INSTALL_PROGRAM
-# because as a side effect it brands the binary as FreeBSD.
-STRIP=
-
-RESTRICTED=	"author requests no distribution except from their site"
+RESTRICTED=	author requests no distribution except from their site
 
 PORTDOCS=	README mailcap.txt mime.types.txt
 PLIST_FILES=	bin/baudline
@@ -43,32 +39,12 @@ IGNORE=		may not be automatically fetched due to licensing\
 		restart this build
 .endif
 
-LINPROCFS!=	/sbin/mount | ${GREP} linprocfs | ${AWK} '{print $1}'
-
-pre-install:
-.if !empty(LINPROCFS)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Check if linprocfs is running: YES"
-.else
-	@${ECHO_CMD} "-----------------------------------------------------------"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Baudline needs a running linprocfs, which is not"
-	@${ECHO_CMD} "activated on your system. Please read the linprocfs\(5\)"
-	@${ECHO_CMD} "manpage and add the following line to /etc/fstab:"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "linproc /compat/linux/proc linprocfs rw 0 0"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "-----------------------------------------------------------"
-	@${FALSE}
-.endif
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/baudline ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
+	@[ -f /compat/linux/proc/stat ] || ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
