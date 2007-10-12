@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	vertex
-PORTVERSION=	0.1
+PORTVERSION=	0.2.0
 CATEGORIES=	net-p2p python
-MASTER_SITES=	http://divmod.org/static/projects/vertex/
+MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Vertex-${PORTVERSION}
+EXTRACT_SUFX=	.tar.gz?format=raw
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vertex is an implementation of the Q2Q protocol
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:${PORTSDIR}/devel/py-epsilon \
