@@ -7969,6 +7969,7 @@ muttzilla	ports/mail/muttzilla
 mvdsv		ports/games/mvdsv
 mx4j		ports/java/mx4j
 mxico		ports/x11/mxico
+mxml		ports/textproc/mxml
 mxp		ports/graphics/mxp
 mybudget	ports/finance/mybudget
 mydns		ports/dns/mydns
