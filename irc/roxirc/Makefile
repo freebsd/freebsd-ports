@@ -8,11 +8,15 @@
 PORTNAME=	roxirc
 PORTVERSION=	2.0
 PORTREVISION=	1
-CATEGORIES=	irc tk84
+CATEGORIES=	irc tk
 MASTER_SITES=	http://roxirc.lighter.net/download/
 
-MAINTAINER=	rox@fearme.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tcl/tk irc client
+
+BROKEN=		unfetchable
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2007-11-18
 
 USE_TK=		yes
 NO_BUILD=	yes
