@@ -26,8 +26,8 @@ DISTNAME=	pcemu1.01alpha
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	An 8086 PC emulator, by David Hedley
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 USE_XLIB=	yes
 MAKE_ENV=	FILESDIR=${FILESDIR}
