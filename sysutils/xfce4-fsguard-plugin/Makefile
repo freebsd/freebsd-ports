@@ -12,7 +12,7 @@ CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	jfb@minet.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XFce4 panel plugin to check a mountpoint for free disk space
 
 GNU_CONFIGURE=	yes
