@@ -10,7 +10,7 @@ PORTVERSION=	0.4.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.raggle.org/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	A console RSS aggregator written in Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/ncurses.rb:${PORTSDIR}/devel/ruby-ncurses
@@ -23,7 +23,7 @@ NO_BUILD=	yes
 MAN1=		raggle.1
 DOCS=		AUTHORS BUGS COPYING ChangeLog README TODO \
 		doc/default_config.rb doc/pauls_feeds.opml.gz \
-		doc/theme_documentation.txt 
+		doc/theme_documentation.txt
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/raggle ${PREFIX}/bin
