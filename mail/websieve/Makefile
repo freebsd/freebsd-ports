@@ -17,6 +17,10 @@ COMMENT=	Web based Cyrus IMAP user admin client
 
 DISTVERSION=	063a
 
+USE_PERL5_RUN=	yes
+
+NO_BUILD=	yes
+
 # Oh for the ability to do radio buttons.  In this case, just use the
 # highest select version number.  If no Cyrus IMAPd versions are
 # selected, use some generic IMAP modules
@@ -45,10 +49,6 @@ FUNCLIB_PL=	funclib.pl
 .endif
 
 SUB_FILES=	pkg-message
-
-USE_PERL5_RUN=	yes
-
-NO_BUILD=	yes
 
 post-configure:
 	@${REINPLACE_CMD} -e "s,require[ 	]*'\./\([^']*\)',require '${PREFIX}/etc/websieve/\1'," \
