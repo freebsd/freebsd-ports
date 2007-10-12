@@ -25,7 +25,7 @@ USE_XLIB=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
+BROKEN=		Does not work with the new wlan stack on 7.0
 .endif
 
 .include <bsd.port.post.mk>
