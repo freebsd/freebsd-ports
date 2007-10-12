@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cfitsio
-PORTVERSION=	3.030
+PORTVERSION=	3.060
 CATEGORIES=	astro
-MASTER_SITES=	ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/
+MASTER_SITES=	ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/ \
+		ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/oldvers/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
