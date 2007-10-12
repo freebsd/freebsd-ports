@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	hourglass
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.cs.utah.edu/~regehr/hourglass/
+DISTNAME=	${PORTNAME}-${PORTVERSION}b
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	A real-time application useful to learn how CPU scheduling works
 
 RUN_DEPENDS=	jgraph:${PORTSDIR}/graphics/jgraph
 
-ONLY_FOR_ARCHS= i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
