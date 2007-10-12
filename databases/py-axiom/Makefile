@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	axiom
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.20
 CATEGORIES=	databases python
 MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
