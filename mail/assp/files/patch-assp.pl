@@ -1,29 +1,37 @@
---- assp.pl.orig	Wed Dec 13 11:53:29 2006
-+++ assp.pl	Wed Dec 13 11:58:31 2006
-@@ -86,7 +86,7 @@
-   'The address:port of your message handling system\'s smtp server. If only the port is entered, or the keyword <b>__INBOUND__</b>:<i>port</i> is used, then the connection will be established to the same IP where the connection was received. This is usefull when you have several IPs with different domains/profiles in your MTA.<br /> Examples: "127.0.0.1:125","127.0.0.1:125|127.0.0.5:125", "10.0.1.3", "10.0.1.3:1025", "__INBOUND__:125", "125", etc.'],
- [AsAService,'As a Service',0,checkbox,0,'(.*)',undef,
-   'In Windows 2000 / NT you can run it as a service; requires <a href="http://www.roth.net/perl/Daemon/" rel="external">win32::daemon</a>. Requires start from the service control panel.'],
--[AsADaemon,'As a Daemon',0,checkbox,0,'(.*)',undef,
-+[AsADaemon,'As a Daemon',0,checkbox,1,'(.*)',undef,
-  'In Linux/BSD/Unix/OSX fork and close file handles, kinda like "perl assp.pl &amp;" but better. Requires restart.'],
- [myName,'My Name',40,textinput,'ASSP.nospam','(\S+)',undef,
-   'What the program calls itself in the email "received by" header. Usually ASSP.nospam.'],
-@@ -692,7 +692,7 @@
-   'SMTP error message to reject attachments.'],
- [UseAvClamd,'Use Av Clamd',0,checkbox,1,'(.*)',undef,
-   'If activated, the message is checked by Av Clamd, this requires an installed <a href="http://search.cpan.org/~cfaber/File-Scan-ClamAV-1.06/lib/File/Scan/ClamAV.pm" rel="external">File::Scan::ClamAV</a> Perl module. '],
--[AvClamdPort,'Port or file socket for local Av Clamd',20,textinput,'3310','(\S+)',undef,
-+[AvClamdPort,'Port or file socket for local Av Clamd',20,textinput,'/var/run/clamav/clamd','(\S+)',undef,
-   'A port or socket to connect to. If the socket has been setup as a TCP/IP socket (see the TCPSocket option in the clamav.conf file), then specifying in a number will cause File::Scan::ClamAV to use a TCP socket. For example 3310 or /tmp/clamd '],
- [AvClamdBufSize,'Size of buffer for Av Clamd',7,textinput,'512','(\d+)',undef,
-   'Buffer size for stream check, must be more than max length of virus signature'],
-@@ -862,7 +862,7 @@
-   '<span class="negative"> 0 = no report, 1 = to user, 2 = to TO address, 3 = both</span>'],
+--- assp.pl.orig	Fri Aug  3 14:10:49 2007
++++ assp.pl	Fri Aug  3 14:12:21 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/local/bin/perl
+ 
+ use File::Copy;
+ use Encode;
+@@ -803,8 +803,8 @@
+ [ScanWL,'Scan Whitelisted Senders',0,checkbox,'1','(.*)',undef,''],
+ [ScanNP,'Scan No Processing Senders',0,checkbox,'','(.*)',undef,''],
+ [ScanLocal,'Scan Local Senders',0,checkbox,'','(.*)',undef,''],
+-[AvClamdPort,'Port or file socket for ClamAV',20,textinput,'/tmp/clamd','(\S+)',undef,
+-  'A socket specified in the clamav.conf file - LocalSocket. For example /tmp/clamd. If the socket has been setup as a TCP/IP socket (see the TCPSocket option in the clamav.conf file), then specify the TCP socket. For example 3310 '],
++[AvClamdPort,'Port or file socket for ClamAV',20,textinput,'/var/run/clamav/clamd','(\S+)',undef,
++  'A socket specified in the clamav.conf file - LocalSocket. For example /var/run/clamav/clamd. If the socket has been setup as a TCP/IP socket (see the TCPSocket option in the clamav.conf file), then specify the TCP socket. For example 3310 '],
+ [AvError,'Reply Message to Refuse Infected E<!--get rid of google autofill-->mail',80,textinput,'554 5.7.1 Mail appears infected with \'$infection\'.','(5\d\d .*)',undef,
+   'Reply message to refuse infected mail. The string $infection is replaced with the name of the detected virus.<br />
+   For example: 554 5.7.1 Mail appears infected with \'$infection\' -- disinfect and resend.'],
+@@ -959,7 +959,7 @@
+   '<span class="negative"> 0 = no report, 1 = to SENDER, 2 = to TO address (below), 3 = BOTH</span>'],
  [EmailRedlistTo,'To Address for Redlist-Reports',40,textinput,'','(.+)',undef,
    'Email sent from ASSP acknowledging your submissions will be sent to this address. For example: admin@domain.com'],
 -[EmailFrom,'From Address for Reports',40,textinput,'<spammaster@yourdomain.com>','(.+)',undef,
 +[EmailFrom,'From Address for Reports',40,textinput,'<postmaster@yourdomain.com>','(.+)',undef,
-   'Email sent from ASSP acknowledging your submissions will be sent from this address.<br />
- For example: &lt;&gt; or mailadmin@mydomain.com.'],
- [NoHaiku,'Don\'t reply to messages to the Email Interface',0,checkbox,0,'(.*)',undef,
+   'Email sent from ASSP acknowledging your submissions will be sent from this address.'],
+ [NoHaiku,'Legacy: Don\'t reply to messages to the Email Interface',0,checkbox,0,'([01]?)',undef,
+   'Check this option to suppress email reports for spam and not-spam reports, whitelist and redlist additions/deletions via the email interface.<br /><hr />
+@@ -1168,7 +1168,7 @@
+ [0,0,0,'heading','Server Setup'],
+ [AsAService,'Run ASSP as a Windows Service**',0,checkbox,0,'([01]?)',undef,
+   'In Windows NT/2000/XP/2003 ASSP can be installed as a service. This setting tells ASSP that this has been done -- it does not install the Windows service for you. Installing ASSP as a service requires several steps which are detailed in the <a href="http://www.asspsmtp.org/wiki/Quick_Start_for_Win32">Quick Start for Win32</a> wiki page.','Basic'],
+-[AsADaemon,'Run ASSP as a Daemon**',0,checkbox,0,'([01]?)',undef,
++[AsADaemon,'Run ASSP as a Daemon**',0,checkbox,1,'([01]?)',undef,
+  'In Linux/BSD/Unix/OSX fork and close file handles. Similar to the command "perl assp.pl &amp;", but better.','Basic'],
+ [runAsUser,'Run as UID**',20,textinput,'','(\S*)',undef,
+   'The *nix user name to assume after startup (*nix only).<p><small><i>Examples:</i> assp, nobody</small>','Basic'],
