@@ -24,18 +24,13 @@ CONFIGURE_ARGS+=	--enable-tcl=no
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/entity/clib
 
 MAN1=		entity.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib/entity/clib ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/share/entity
 	cd ${WRKSRC}/apps && ${PAX} -r -w `${LS} | \
 		${GREP} -v Makefile` ${PREFIX}/share/entity
