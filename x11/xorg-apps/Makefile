@@ -84,7 +84,6 @@ RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		xmag:${PORTSDIR}/x11/xmag \
 		xman:${PORTSDIR}/x11/xman \
 		xmessage:${PORTSDIR}/x11/xmessage \
-		xmh:${PORTSDIR}/x11/xmh \
 		xmodmap:${PORTSDIR}/x11/xmodmap \
 		xmore:${PORTSDIR}/x11/xmore \
 		xphelloworld:${PORTSDIR}/x11/xphelloworld \
