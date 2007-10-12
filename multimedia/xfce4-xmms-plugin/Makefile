@@ -11,10 +11,11 @@ PORTREVISION=	2
 CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
+
 PATCH_SITES=	http://people.freebsd.org/~oliver/xfce/
 PATCHFILES=	gcc295-xfce4-xmms-plugin.patch
 
-MAINTAINER=	jfb@minet.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XFce 4 xmms control plugin for xfce4-panel
 
 GNU_CONFIGURE=	yes
