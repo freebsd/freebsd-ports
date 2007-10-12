@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	nevow
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.18
 CATEGORIES=	www python devel
 MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Nevow-${PORTVERSION}
 EXTRACT_SUFX=	.tar.gz?format=raw
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web application templating system, based on the the Twisted Woven
 
 USE_PYTHON=	yes
