@@ -12,8 +12,11 @@ MASTER_SITES=	http://dd.cron.ru/dbg/dnld/
 PKGNAMEPREFIX=	php-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	josh@tcbug.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debugger for PHP4
+
+DEPRECATED=	does not work with php5 and does not compile on gcc4.2
+EXPIRATION_DATE=	2007-11-13
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PHP=	yes
