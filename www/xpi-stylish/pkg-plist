@@ -84,6 +84,7 @@
 %%XPI_XPIDIR%%/chrome/locale/fr/update.dtd
 %%XPI_XPIDIR%%/chrome/locale/he-IL/common.dtd
 %%XPI_XPIDIR%%/chrome/locale/he-IL/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/he-IL/contents.rdf~
 %%XPI_XPIDIR%%/chrome/locale/he-IL/edit.dtd
 %%XPI_XPIDIR%%/chrome/locale/he-IL/manage.dtd
 %%XPI_XPIDIR%%/chrome/locale/he-IL/overlay.dtd
@@ -136,9 +137,15 @@
 %%XPI_XPIDIR%%/chrome/locale/pl-PL/specifySites.dtd
 %%XPI_XPIDIR%%/chrome/locale/pl-PL/stylish.properties
 %%XPI_XPIDIR%%/chrome/locale/pl-PL/update.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/common.dtd
 %%XPI_XPIDIR%%/chrome/locale/pt-BR/contents.rdf
-%%XPI_XPIDIR%%/chrome/locale/pt-BR/stylish.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/edit.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/manage.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/repair.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/specifySites.dtd
 %%XPI_XPIDIR%%/chrome/locale/pt-BR/stylish.properties
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/update.dtd
 %%XPI_XPIDIR%%/chrome/locale/ru/common.dtd
 %%XPI_XPIDIR%%/chrome/locale/ru/contents.rdf
 %%XPI_XPIDIR%%/chrome/locale/ru/edit.dtd
@@ -191,6 +198,7 @@
 %%XPI_XPIDIR%%/chrome/skin/contents.rdf
 %%XPI_XPIDIR%%/chrome/skin/delete.png
 %%XPI_XPIDIR%%/chrome/skin/edit.css
+%%XPI_XPIDIR%%/chrome/skin/edit.css~
 %%XPI_XPIDIR%%/chrome/skin/edit.png
 %%XPI_XPIDIR%%/chrome/skin/help.png
 %%XPI_XPIDIR%%/chrome/skin/manage.css
@@ -209,6 +217,7 @@
 %%XPI_XPIDIR%%/defaults/preferences/stylish.js
 %%XPI_XPIDIR%%/install.js
 %%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/{46551EC9-40F0-4e47-8E18-8E5CF550CFB8}
 @dirrm %%XPI_XPIDIR%%/chrome/content
 @dirrm %%XPI_XPIDIR%%/chrome/icons/default
 @dirrm %%XPI_XPIDIR%%/chrome/icons
