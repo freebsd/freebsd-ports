@@ -1,0 +1,10 @@
+[Desktop Entry]
+Comment=Eclipse IDE
+Name=Eclipse
+Exec=%%PREFIX%%/bin/eclipse
+Encoding=UTF-8
+Terminal=false
+Type=Application
+Icon=%%ECLIPSE_HOME%%/icon.xpm
+Categories=Application;Development;
+

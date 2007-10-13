@@ -1,27 +1,30 @@
---- features/org.eclipse.jdt/build.xml.orig	Fri May 13 11:34:52 2005
-+++ features/org.eclipse.jdt/build.xml	Sat May 14 18:42:27 2005
-@@ -164,6 +164,24 @@
- 			<fileset dir="${basedir}/rootfiles" includes="**"			/>
+--- features/org.eclipse.jdt/build.xml.orig	Mon Jun 25 15:39:41 2007
++++ features/org.eclipse.jdt/build.xml	Fri Aug 17 15:41:11 2007
+@@ -257,6 +257,18 @@
+ 			</fileset>
  		</copy>
  	</target>
-+	<target name="rootFilesfreebsd_gtk_amd64">
-+		<mkdir dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}"/>
-+		<copy todir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" failonerror="true" overwrite="true">
-+			<fileset dir="${basedir}/rootfiles" includes="**"			/>
-+		</copy>
-+	</target>
 +	<target name="rootFilesfreebsd_gtk_x86">
-+		<mkdir dir="${feature.base}/freebsd.gtk.x86/${collectingFolder}"/>
-+		<copy todir="${feature.base}/freebsd.gtk.x86/${collectingFolder}" failonerror="true" overwrite="true">
-+			<fileset dir="${basedir}/rootfiles" includes="**"			/>
-+		</copy>
-+	</target>
-+	<target name="rootFilesfreebsd_motif_x86">
-+		<mkdir dir="${feature.base}/freebsd.motif.x86/${collectingFolder}"/>
-+		<copy todir="${feature.base}/freebsd.motif.x86/${collectingFolder}" failonerror="true" overwrite="true">
-+			<fileset dir="${basedir}/rootfiles" includes="**"			/>
-+		</copy>
-+	</target>
- 	<target name="rootFilessolaris_motif_sparc">
- 		<mkdir dir="${feature.base}/solaris.motif.sparc/${collectingFolder}"/>
- 		<copy todir="${feature.base}/solaris.motif.sparc/${collectingFolder}" failonerror="true" overwrite="true">
++                <mkdir dir="${feature.base}/freebsd.gtk.x86/${collectingFolder}"/>
++                <copy todir="${feature.base}/freebsd.gtk.x86/${collectingFolder}" failonerror="true" overwrite="true">
++                        <fileset dir="${basedir}/rootfiles" includes="**"                       />
++                </copy>
++        </target>
++	<target name="rootFilesfreebsd_gtk_amd64">
++                <mkdir dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}"/>
++                <copy todir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" failonerror="true" overwrite="true">
++                        <fileset dir="${basedir}/rootfiles" includes="**"                       />
++                </copy>
++        </target>
+ 	<target name="rootFilessolaris_gtk_sparc">
+ 		<mkdir dir="${feature.base}/solaris.gtk.sparc/${collectingFolder}/"/>
+ 		<copy todir="${feature.base}/solaris.gtk.sparc/${collectingFolder}/" failonerror="true" overwrite="true">
+@@ -333,6 +345,8 @@
+ 		<antcall target="rootFileslinux_gtk_s390"/>
+ 		<antcall target="rootFileslinux_gtk_s390x"/>
+ 		<antcall target="rootFileslinux_motif_x86"/>
++		<antcall target="rootFilesfreebsd_gtk_x86"/>
++		<antcall target="rootFilesfreebsd_gtk_amd64"/>
+ 		<antcall target="rootFilessolaris_gtk_sparc"/>
+ 		<antcall target="rootFilessolaris_gtk_x86"/>
+ 		<antcall target="rootFilessolaris_motif_sparc"/>

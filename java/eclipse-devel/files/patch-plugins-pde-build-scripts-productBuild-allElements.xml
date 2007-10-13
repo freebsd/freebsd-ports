@@ -1,0 +1,19 @@
+--- plugins/org.eclipse.pde.build/scripts/productBuild/allElements.xml.orig	2007-06-26 04:57:20.000000000 +0900
++++ plugins/org.eclipse.pde.build/scripts/productBuild/allElements.xml	2007-09-06 11:16:27.000000000 +0900
+@@ -37,6 +37,16 @@
+ 		</ant>
+  	</target>
+ 	
++ 	<target name="assemble.org.eclipse.pde.build.container.feature.freebsd.gtk.x86">
++ 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}">			
++ 			<property name="archiveName" value="${archiveNamePrefix}-freebsd.gtk.x86.zip"/>
++		</ant>
++ 	</target>
++ 	<target name="assemble.org.eclipse.pde.build.container.feature.freebsd.gtk.amd64">
++ 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}">			
++ 			<property name="archiveName" value="${archiveNamePrefix}-freebsd.gtk.amd64.zip"/>
++		</ant>
++ 	</target>
+  	<target name="assemble.org.eclipse.pde.build.container.feature.linux.gtk.x86">
+  		<ant antfile="${assembleScriptName}" dir="${buildDirectory}">			
+  			<property name="archiveName" value="${archiveNamePrefix}-linux.gtk.x86.zip"/>

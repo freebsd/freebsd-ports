@@ -1,0 +1,11 @@
+--- plugins/org.eclipse.platform/build.xml.orig	2007-08-26 22:39:40.000000000 +0900
++++ plugins/org.eclipse.platform/build.xml	2007-08-27 00:31:06.000000000 +0900
+@@ -275,6 +275,8 @@
+ 			<pathelement path="${build.result.folder}/../org.eclipse.update.core_3.2.100.v20070615/bin/"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.update.core/@dot"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.update.core_3.2.100.v20070615/@dot"/>
++			<pathelement path="../org.eclipse.update.core.freebsd/@dot"/>
++			<pathelement path="${build.result.folder}/../org.eclipse.update.core.freebsd_3.2.0.v20070615/@dot"/>
+ 			<pathelement path="../org.eclipse.update.core.linux/@dot"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.update.core.linux_3.2.0.v20070615/@dot"/>
+ 			<pathelement path="../org.eclipse.update.core.win32/@dot"/>
