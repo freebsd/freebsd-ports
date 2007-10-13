@@ -437,6 +437,40 @@ lib/libmangosscript.so.0
 %%DATADIR%%/sql/updates/4437_character_aura.sql
 %%DATADIR%%/sql/updates/4437_pet_aura.sql
 %%DATADIR%%/sql/updates/4439_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4446_creature_template.sql
+%%DATADIR%%/sql/updates/4464_instance.sql
+%%DATADIR%%/sql/updates/4464_instance_template.sql
+%%DATADIR%%/sql/updates/4470_command.sql
+%%DATADIR%%/sql/updates/4480_spell_affect.sql
+%%DATADIR%%/sql/updates/4481_spell_affect.sql
+%%DATADIR%%/sql/updates/4482_playercreateinfo.sql
+%%DATADIR%%/sql/updates/4482_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4488_db_version.sql
+%%DATADIR%%/sql/updates/4491_spell_affect.sql
+%%DATADIR%%/sql/updates/4496_spell_script_target.sql
+%%DATADIR%%/sql/updates/4498_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4499_spell_script_target.sql
+%%DATADIR%%/sql/updates/4501.sql
+%%DATADIR%%/sql/updates/4503_spell_chain.sql
+%%DATADIR%%/sql/updates/4503_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4504_spell_affect.sql
+%%DATADIR%%/sql/updates/4504_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4506_spell_learn_spell.sql
+%%DATADIR%%/sql/updates/4507_quest_template.sql
+%%DATADIR%%/sql/updates/4510_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4513_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4517_spell_affect.sql
+%%DATADIR%%/sql/updates/4524_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4537_player_levelstats.sql
+%%DATADIR%%/sql/updates/4540_battleground_template.sql
+%%DATADIR%%/sql/updates/4544_creature_addon.sql
+%%DATADIR%%/sql/updates/4544_creature_template_addon.sql
+%%DATADIR%%/sql/updates/4547_spell_affect.sql
+%%DATADIR%%/sql/updates/4547_spell_proc_event.sql
+%%DATADIR%%/sql/updates/4551_item_template.sql
+%%DATADIR%%/sql/updates/4556_realmlist.sql
+%%DATADIR%%/sql/updates/4561_command.sql
+%%DATADIR%%/sql/updates/4571_button_scripts.sql
 %%DATADIR%%/sql/updates/README
 %%DBC%%%%DATADIR%%/dbc/AnimationData.dbc
 %%DBC%%%%DATADIR%%/dbc/AreaPOI.dbc
@@ -635,6 +669,12 @@ lib/libmangosscript.so.0
 %%SD2%%share/scriptdev2/sql/updates/r121.sql
 %%SD2%%share/scriptdev2/sql/updates/r123.sql
 %%SD2%%share/scriptdev2/sql/updates/r124.sql
+%%SD2%%share/scriptdev2/sql/updates/r125.sql
+%%SD2%%share/scriptdev2/sql/updates/r128.sql
+%%SD2%%share/scriptdev2/sql/updates/r131.sql
+%%SD2%%share/scriptdev2/sql/updates/r134.sql
+%%SD2%%share/scriptdev2/sql/updates/r136.sql
+%%SD2%%share/scriptdev2/sql/updates/r139.sql
 @dirrm %%DATADIR%%/sql/updates
 @dirrm %%DATADIR%%/sql
 %%DBC%%@dirrm %%DATADIR%%/dbc
