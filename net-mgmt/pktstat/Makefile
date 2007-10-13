@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pktstat
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.adaptive-enterprises.com.au/~d/software/pktstat/ CENKES
 
