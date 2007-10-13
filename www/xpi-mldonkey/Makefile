@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	www net-p2p
 MASTER_SITES=	http://www.informatik.uni-oldenburg.de/~dyna/${PORTNAME}/xpi/ CENKES
 
