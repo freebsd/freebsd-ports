@@ -41,7 +41,7 @@ INFO=		gnupg
 OPTIONS=	LDAP "LDAP keyserver interface" off \
 		SCDAEMON "Enable Smartcard daemon (with libusb)" off \
 		CURL "Use the real curl library (worked around if no)" on \
-		GPGSM "Enable GPGSM" on
+		GPGSM "Enable GPGSM (require LDAP)" on
 #OPTIONS+=	NLS "National Language Support" off
 
 .include <bsd.port.pre.mk>
@@ -52,6 +52,7 @@ PLIST_SUB+=	GPGSM="@comment "
 .else
 RUN_DEPENDS=	dirmngr:${PORTSDIR}/security/dirmngr
 WITH_LDAP=	YES
+.undef WITHOUT_LDAP
 PLIST_SUB+=	GPGSM=""
 .endif
 
