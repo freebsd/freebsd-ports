@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldapscripts
-PORTVERSION=	1.7
+PORTVERSION=	1.7.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://contribs.martymac.com/ldapscripts/
@@ -46,6 +46,7 @@ post-patch:
 	${REINPLACE_CMD} -E -e "s|^_RUNTIMEFILE=.*|_RUNTIMEFILE=\"${ETCDIR}/runtime\"|g" ${WRKSRC}/bin/*
 	${REINPLACE_CMD} -E -e "s|^_CONFIGFILE=.*|_CONFIGFILE=\"${ETCDIR}/ldapscripts.conf\"|g" ${WRKSRC}/etc/runtime
 
+	${REINPLACE_CMD} -E -e "s|^BINDPWDFILE=.*|BINDPWDFILE=\"${ETCDIR}/ldapscripts.passwd\"|g" ${WRKSRC}/etc/ldapscripts.conf
 	${REINPLACE_CMD} -E -e "s|^LDAPSEARCHBIN=.*|LDAPSEARCHBIN=\"${PREFIX}/bin/ldapsearch\"|g" ${WRKSRC}/etc/ldapscripts.conf
 	${REINPLACE_CMD} -E -e "s|^LDAPADDBIN=.*|LDAPADDBIN=\"${PREFIX}/bin/ldapadd\"|g" ${WRKSRC}/etc/ldapscripts.conf
 	${REINPLACE_CMD} -E -e "s|^LDAPDELETEBIN=.*|LDAPDELETEBIN=\"${PREFIX}/bin/ldapdelete\"|g" ${WRKSRC}/etc/ldapscripts.conf
@@ -77,8 +78,14 @@ do-install:
 
 	${MKDIR} ${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/ldapscripts.conf ${ETCDIR}/ldapscripts.conf.sample
+	${CHMOD} 0440 ${ETCDIR}/ldapscripts.conf.sample
 	if [ ! -f ${ETCDIR}/ldapscripts.conf ]; then \
 		${CP} -p ${ETCDIR}/ldapscripts.conf.sample ${ETCDIR}/ldapscripts.conf; \
+	fi
+	${INSTALL_DATA} ${WRKSRC}/etc/ldapscripts.passwd ${ETCDIR}/ldapscripts.passwd.sample
+	${CHMOD} 0440 ${ETCDIR}/ldapscripts.passwd.sample
+	if [ ! -f ${ETCDIR}/ldapscripts.passwd ]; then \
+		${CP} -p ${ETCDIR}/ldapscripts.passwd.sample ${ETCDIR}/ldapscripts.passwd; \
 	fi
 	${INSTALL_DATA} ${WRKSRC}/etc/runtime ${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/ldapaddgroup.template.sample ${ETCDIR}
@@ -96,5 +103,8 @@ do-install:
 
 	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/man5/* ${MAN5PREFIX}/man/man5
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
