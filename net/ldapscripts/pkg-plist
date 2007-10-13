@@ -1,6 +1,9 @@
 @unexec if cmp -s %D/%%ETCDIR%%/ldapscripts.conf.sample %D/%%ETCDIR%%/ldapscripts.conf; then rm -f %D/%%ETCDIR%%/ldapscripts.conf; fi
 %%ETCDIR%%/ldapscripts.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/ldapscripts.conf ] ; then cp -p %D/%F %B/ldapscripts.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/ldapscripts.passwd.sample %D/%%ETCDIR%%/ldapscripts.passwd; then rm -f %D/%%ETCDIR%%/ldapscripts.passwd; fi
+%%ETCDIR%%/ldapscripts.passwd.sample
+@exec if [ ! -f %D/%%ETCDIR%%/ldapscripts.passwd ] ; then cp -p %D/%F %B/ldapscripts.passwd; fi
 %%ETCDIR%%/runtime
 %%ETCDIR%%/ldapaddgroup.template.sample
 %%ETCDIR%%/ldapadduser.template.sample
