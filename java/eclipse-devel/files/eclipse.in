@@ -6,13 +6,13 @@
 #
 # $FreeBSD$
 #
-
-DEFAULT_JAVA_HOME=%%JAVA_HOME%%
+JAVA_HOME=/usr/local/jdk1.6.0
+DEFAULT_JAVA_HOME=%%PREFIX%%
 ECLIPSE_HOME=%%ECLIPSE_HOME%%
 DEFAULT_JAVA_CMD=java
-MOZILLA_FIVE_HOME=%%X11BASE%%/lib/%%BROWSER%%
-LD_LIBRARY_PATH=$MOZILLA_FIVE_HOME:$LD_LIBRARY_PATH
-
+MOZILLA_FIVE_HOME=%%LOCALBASE%%/lib/%%BROWSER%%
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$MOZILLA_FIVE_HOME
+export MOZILLA_FIVE_HOME LD_LIBRARY_PATH
 
 #-----------------------------------------------------------------------------
 # Determine configuration settings
@@ -46,4 +46,4 @@ if [ ! -x "${ECLIPSE_HOME}/eclipse" ]; then
 	exit 1
 fi
 
-PATH=${JAVA_HOME}/bin:$PATH exec "${ECLIPSE_HOME}/eclipse" $@
+JAVA_VERSION="%%JAVA_VERSION%%" JAVA_OS="%%JAVA_OS%%" PATH=${JAVA_HOME}/bin:${PATH} exec "${ECLIPSE_HOME}/eclipse" $@

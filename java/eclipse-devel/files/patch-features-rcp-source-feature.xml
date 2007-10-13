@@ -1,0 +1,11 @@
+--- features/org.eclipse.rcp.source/feature.xml.orig	2007-06-26 04:39:41.000000000 +0900
++++ features/org.eclipse.rcp.source/feature.xml		2007-08-23 23:13:36.000000000 +0900
+@@ -14,6 +14,8 @@
+ 	</url>
+ 	<plugin    fragment="false"  download-size="0" install-size="0" id="org.eclipse.rcp.source" version="3.3.0.v20070607-8y8eE8NEbsN3X_fjWS8HPNG"/>
+ 	<plugin ws="motif"  os="hpux" fragment="true" arch="ia64_32" download-size="0" install-size="0" id="org.eclipse.rcp.source.hpux.motif.ia64_32" version="3.3.0.v20070607-8y8eE8NEbsN3X_fjWS8HPNG"/>
++	<plugin ws="gtk"  os="freebsd" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.rcp.source.freebsd.gtk.x86" version="3.3.0.v20070607-8y8eE8NEbsN3X_fjWS8HPNG"/>
++	<plugin ws="gtk"  os="freebsd" fragment="true" arch="amd64" download-size="0" install-size="0" id="org.eclipse.rcp.source.freebsd.gtk.amd64" version="3.3.0.v20070607-8y8eE8NEbsN3X_fjWS8HPNG"/>
+ 	<plugin ws="gtk"  os="linux" fragment="true" arch="ia64" download-size="0" install-size="0" id="org.eclipse.rcp.source.linux.gtk.ia64" version="3.3.0.v20070607-8y8eE8NEbsN3X_fjWS8HPNG"/>
+ 	<plugin ws="gtk"  os="linux" fragment="true" arch="s390x" download-size="0" install-size="0" id="org.eclipse.rcp.source.linux.gtk.s390x" version="3.3.0.v20070607-8y8eE8NEbsN3X_fjWS8HPNG"/>
+ 	<plugin ws="photon"  os="qnx" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.rcp.source.qnx.photon.x86" version="3.3.0.v20070607-8y8eE8NEbsN3X_fjWS8HPNG"/>

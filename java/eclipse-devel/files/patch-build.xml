@@ -1,29 +1,84 @@
---- build.xml.orig	Fri May 13 11:38:39 2005
-+++ build.xml	Sat May 14 23:42:22 2005
-@@ -53,7 +53,7 @@
- 		<exec dir="${swtlibs}/" executable="sh" failonerror="true">
- 			<arg line="build.sh"/>
- 		</exec>
--		<property name="swtdir" value="${buildDirectory}/plugins/org.eclipse.swt.${installWs}.{installOs}.{installArch}"/>
-+		<property name="swtdir" value="${buildDirectory}/plugins/org.eclipse.swt.${installWs}.${installOs}.${installArch}"/>
- 		<mkdir dir="${swtdir}"/>
- 		<move todir="${swtdir}/">
- 			<fileset dir="${swtlibs}">
-@@ -63,12 +63,12 @@
- 		<!--unzip launcher -->
- 		<property name="launcherlibs" value="${buildDirectory}/launchertmp"/>
- 		<mkdir dir="${launcherlibs}"/>
--		<unzip dest="${launcherlibs}">
--			<fileset dir="${buildDirectory}/plugins/org.eclipse.platform.source/src/">
--				<include name ="org.eclipse.platform_*/launchersrc.zip"/>
-+		<copy todir="${launcherlibs}">
-+			<fileset dir="${buildDirectory}/features/org.eclipse.platform.launchers">
-+				<include name ="**"/>
- 			</fileset>
--		</unzip>
--		<exec dir="${launcherlibs}/library/${installWs}/" executable="sh" os="Linux" failonerror="true">
+--- build.xml.orig	2007-06-26 04:57:50.000000000 +0900
++++ build.xml	2007-09-01 17:22:26.000000000 +0900
+@@ -16,6 +16,15 @@
+ 		<ant antfile="fetch_org.eclipse.equinox.executable.xml" />
+ 		<ant antfile="fetch_org.eclipse.sdk.xml" />
+ 
++		<!--copy freebsd gtk x86 about_files to in temp location where it will be copied into root of eclipse at assembly time-->
++		<property name="freebsd.gtk.x86.rootfiles" value="${buildDirectory}/features/org.eclipse.platform/about_files/freebsd.gtk.x86" />
++		<mkdir dir="${freebsd.gtk.x86.rootfiles}" />
++		<copy tofile="${freebsd.gtk.x86.rootfiles}/about.html" file="${buildDirectory}/plugins/org.eclipse.swt.gtk.freebsd.x86/about.html" />
++
++		<!--copy freebsd gtk amd64 about_files to in temp location where it will be copied into root of eclipse at assembly time-->
++		<property name="freebsd.gtk.amd64.rootfiles" value="${buildDirectory}/features/org.eclipse.platform/about_files/freebsd.gtk.amd64" />
++		<mkdir dir="${freebsd.gtk.amd64.rootfiles}" />
++		<copy tofile="${freebsd.gtk.amd64.rootfiles}/about.html" file="${buildDirectory}/plugins/org.eclipse.swt.gtk.freebsd.amd64/about.html" />	
+ 		<!--copy linux motif about_files to in temp location where it will be copied into root of eclipse at assembly time-->
+ 		<property name="linux.motif.rootfiles" value="${buildDirectory}/features/org.eclipse.platform/about_files/linux.motif.x86" />
+ 		<mkdir dir="${linux.motif.rootfiles}" />
+@@ -45,7 +54,11 @@
+ 			<fileset dir="${buildDirectory}/plugins/org.eclipse.swt.gtk.linux.x86_64" includes="
+ 				about_files/mpl-v11.txt" />
+ 		</copy>
+-
++		
++		<copy todir="${freebsd.gtk.amd64.rootfiles}">
++			<fileset dir="${buildDirectory}/plugins/org.eclipse.swt.gtk.freebsd.amd64" includes="
++				about_files/mpl-v11.txt" />
 +		</copy>
-+		<exec dir="${launcherlibs}/library/${installWs}/" executable="sh" os="FreeBSD" failonerror="true">
- 			<arg line="build.sh"/>
+ 	</target>
+ 
+ 	<!--     Fill in values for original timestamp in all about.mappings files  -->
+@@ -104,16 +117,15 @@
  		</exec>
- 		<move file="${launcherlibs}/library/${installWs}/eclipse" todir="${launcherlibs}/"/>
+ 		<move file="${launcherlibs}/library/${installWs}/eclipse" todir="${launcherlibs}/" />
+ 
+-		<!-- build liblocalfile -->
+-		<exec dir="plugins/org.eclipse.core.filesystem/natives/unix/linux" executable="make" failonerror="true" />
+-		<move file="plugins/org.eclipse.core.filesystem/natives/unix/linux/liblocalfile_1_0_0.so" todir="plugins/org.eclipse.core.filesystem.linux.${installArch}/os/linux/${installArch}">
++		<!-- build liblocalfile FreeBSD -->
++		<exec dir="plugins/org.eclipse.core.filesystem/natives/unix/freebsd" executable="make" failonerror="true" />
++		<move file="plugins/org.eclipse.core.filesystem/natives/unix/freebsd/liblocalfile_1_0_0.so" todir="plugins/org.eclipse.core.filesystem.freebsd.${installArch}/os/freebsd/${installArch}">
+ 		</move>
+-		<!-- build libupdate -->
+-		<ant dir="plugins/org.eclipse.update.core.linux/src" antfile="build.xml" />
+-
+-	</target>
++		<!-- build libupdate FreeBSD -->
++		<ant dir="plugins/org.eclipse.update.core.freebsd/src" antfile="build.xml" />
+ 
+ 
++	</target>
+ 
+ 	<!--create an installable eclipse runtime-->
+ 	<target name="install" depends="init">
+@@ -302,8 +314,8 @@
+ 		</fail>
+ 
+ 		<property name="compilerArg" value="-enableJavadoc -encoding ISO-8859-1" />
+-		<property name="javacSource" value="1.6" />
+-		<property name="javacTarget" value="1.6" />
++		<property name="javacSource" value="1.6" />
++		<property name="javacTarget" value="1.6" />
+ 		<property name="javacDebugInfo" value="true" />
+ 		<property name="javacFailOnError" value="true" />
+ 
+@@ -327,12 +339,17 @@
+ 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="hpux-motif-ia64_32" />
+ 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="solaris-gtk-x86" />
+ 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="hpux-motif-PA_RISC" />
++				<equals arg1="${install0s}-${installWs}-${installArch}" arg2="freebsd-gtk-x86" />
++                                <equals arg1="${install0s}-${installWs}-${installArch}" arg2="freebsd-gtk-amd64" />
+ 			</or>
+ 		</condition>
+ 
+ 		<!--used to add doc plug-ins to result after initial assembly-->
+ 		<condition property="archive.format" value="tar">
+-			<equals arg1="${installOs}" arg2="linux" />
++			<or>
++				<equals arg1="${installOs}" arg2="linux" />
++				<equals arg1="${installOs}" arg2="freebsd" />
++			</or>
+ 		</condition>
+ 		<property name="archive.format" value="zip" />
+ 	</target>
