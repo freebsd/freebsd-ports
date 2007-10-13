@@ -198,9 +198,7 @@ MASTER_SITE_ECLIPSE+= \
 	http://www.eclipse.ps.pl/downloads/drops/%SUBDIR%/ \
 	http://eclipse.planetmirror.com/downloads/drops/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/eclipse/downloads/drops/&,} \
-	ftp://sunsite.cnlab-switch.ch/mirror/eclipse/eclipse/downloads/drops/%SUBDIR%/ \
-	ftp://eclipse.cis.sinica.edu.tw/eclipse.org/%SUBDIR%/ \
-	http://eclipse.cis.sinica.edu.tw/downloads/drops/%SUBDIR%/
+	ftp://sunsite.cnlab-switch.ch/mirror/eclipse/eclipse/downloads/drops/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_EXIM)
