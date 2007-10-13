@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	trac
-PORTVERSION=	0.10.3
-PORTREVISION=	2
+PORTVERSION=	0.10.4
 CATEGORIES=	japanese www devel python
 MASTER_SITES=	http://dist.bsdlab.org/ \
 		http://www.i-act.co.jp/project/products/downloads/
-DISTFILES=	${PORTNAME}-${PORTVERSION}-ja-1.zip
+DISTNAME=	${PORTNAME}-${PORTVERSION}-ja-1
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An enhanced wiki and issue tracking system for software projects
@@ -24,13 +23,12 @@ OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
 		PGSQL	   "Use PostgreSQL instead of SQLite3" Off \
 		SUBVERSION "Support for subversion RCS" On
 CONFLICTS=	trac-0.*
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-ja-1
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	trac
-PYDISTUTILS_PKGVERSION=	0.10.3.1
+PYDISTUTILS_PKGVERSION=	0.10.4
 
 MAN1=		trac-admin.1 tracd.1
 
@@ -42,6 +40,7 @@ x-generate-plist:
 		;s,@dirrm share/man(/.*)?$$,,g \
 		;s,${PYTHON_SITELIBDIR:S,^${PYTHONBASE}/,,},%%PYTHON_SITELIBDIR%%,g \
 		;s,share/trac,%%DATADIR%%,g \
+		;s,share/examples/trac,%%EXAMPLESDIR%%,g \
 		;s,@dirrm (%%PYTHON_SITELIBDIR%%|${PYTHON_LIBDIR:S,${PYTHONBASE}/,,})$$,,g \
 		' | ${TR} -s '\n') > temp-pkg-plist
 
@@ -49,6 +48,8 @@ post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
 
 post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${EXAMPLESDIR}
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
@@ -66,7 +67,7 @@ RUN_DEPENDS+=	${PREFIX}/bin/rst2html:${PORTSDIR}/textproc/py-docutils
 .if defined(WITH_PGSQL)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
 .else
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
 .endif
 
 .if !defined(WITHOUT_SUBVERSION)
