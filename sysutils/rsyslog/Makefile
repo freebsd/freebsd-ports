@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	1.19.8
+PORTVERSION=	1.19.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.rsyslog.com/rsyslog/ CENKES
 
@@ -48,7 +48,7 @@ post-configure:
 post-install:
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/doc/*html ${DOCSDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
 
