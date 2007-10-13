@@ -4,6 +4,7 @@
 
     COMMENT = X11 themes
 
+    SUBDIR += audacious-skins
     SUBDIR += baghira
     SUBDIR += beastie
     SUBDIR += bluecurve-themes
