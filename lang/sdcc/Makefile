@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.6.0
-PORTREVISION=	2
+PORTVERSION=	2.7.0
+DISTVERSIONPREFIX=	src-
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sdcc
+MASTER_SITES=	SF
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	Small Device C Compiler
@@ -18,6 +17,7 @@ COMMENT=	Small Device C Compiler
 WRKSRC=		${WRKDIR}/sdcc
 
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 OPTIONS=	MCS51   "Intel 8051 port" on \
@@ -32,7 +32,19 @@ OPTIONS=	MCS51   "Intel 8051 port" on \
 		UCSIM   "The ucSim simulator" on \
 		PACKIHX "A tool to pack (compress) Intel hex files" on
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
+		--docdir=${DOCSDIR} \
+		include_dir_suffix=include \
+		lib_dir_suffix=lib
+
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_MCS51) && !defined(WITHOUT_UCSIM) && ${OSVERSION} < 500019
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.endif
 
 .if defined(WITHOUT_MCS51) && defined(WITHOUT_DS390)
 CONFIGURE_ARGS+=	--disable-51
@@ -119,5 +131,13 @@ PLIST_SUB+=		PACKIHX="@comment "
 .else
 PLIST_SUB+=		PACKIHX=""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's,ARCH,PICARCH,g' \
+		${WRKSRC}/device/lib/pic/Makefile.common.in \
+		${WRKSRC}/device/lib/pic/Makefile.rules \
+		${WRKSRC}/device/lib/pic16/Makefile.common.in \
+		${WRKSRC}/device/lib/pic16/Makefile.rules \
+		${WRKSRC}/device/lib/pic16/libio/Makefile.in
 
 .include <bsd.port.post.mk>

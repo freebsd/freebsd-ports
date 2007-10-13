@@ -1,6 +1,6 @@
---- device/lib/Makefile.in.orig	Sat Jun 17 16:43:52 2006
-+++ device/lib/Makefile.in	Wed Jun 28 19:08:03 2006
-@@ -337,23 +337,6 @@
+--- device/lib/Makefile.in.orig	2007-09-28 16:29:43.000000000 +0200
++++ device/lib/Makefile.in	2007-09-28 16:30:14.000000000 +0200
+@@ -345,23 +345,6 @@
  # ---------------------------------------------------
  install: all installdirs
  	$(CP_U) -r $(BUILDDIR)/* $(sdcc_libdir)
@@ -14,17 +14,17 @@
 -	    \( -name '*.rel' -o -name '*.dump*' -o -name '*.sym' -o -name '*.o' -o -name '*.lib' -o \
 -	    -name '*.lst' -o -name '*.asm' -o -name '.svn' -o -name 'build' -o -name 'bin' -o \
 -	    -name 'Makefile*' \) \
--	    -exec rm -r {} \; ; \
+-	    -exec rm -rf {}+ \; ; \
 -	done
 -	find $(sdcc_libdir)/src/mcs51 -depth \
 -	  \( -name '*.rel' -o -name '*.dump*' -o -name '*.sym' -o -name '*.o' -o -name '*.lib' -o \
 -	  -name '*.lst' -o -name '.svn' -o -name 'build' -o -name 'bin' -o \
 -	  -name 'Makefile*' \) \
--	  -exec rm -r {} \;
+-	  -exec rm -rf {}+ \;
  
  # Deleting all the installed files
  # --------------------------------
-@@ -374,14 +357,6 @@
+@@ -382,14 +365,6 @@
  # ---------------------------------
  installdirs:
  	[ -d $(sdcc_libdir) ] || mkdir -p $(sdcc_libdir)
