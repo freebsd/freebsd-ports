@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.3.12
-#PORTREVISION=	0
-CATEGORIES=     net
-MASTER_SITES=   http://haproxy.1wt.eu/download/1.3/src/
-PKGNAMESUFFIX=  -devel
-DISTFILES=      ${DISTNAME}.tar.gz
+PORTVERSION=	1.3.12.2
+CATEGORIES=	net
+MASTER_SITES=	http://haproxy.1wt.eu/download/1.3/src/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	hugo@barafranca.com
 COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
@@ -19,7 +17,7 @@ COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 CONFLICTS=	haproxy-1.2*
 USE_RC_SUBR=	haproxy
 
-MAKEFILE=       Makefile.bsd
+MAKEFILE=	Makefile.bsd
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin
@@ -34,15 +32,15 @@ do-install:
 	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} internals ${DOCSDIR}/)
 	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} design-thoughts ${DOCSDIR}/)
 	@${INSTALL_DATA} ${WRKSRC}/examples/haproxy.cfg \
-				${LOCALBASE}/etc/haproxy.conf-dist
+				${PREFIX}/etc/haproxy.conf-dist
 .endif
 
 post-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "haproxy ${PORTVERSION} is now installed."
-	@${ECHO_MSG} "To configure it, rename ${LOCALBASE}/etc/haproxy.conf-dist"
+	@${ECHO_MSG} "${PORTNAME} is now installed."
+	@${ECHO_MSG} "To configure it, rename ${PREFIX}/etc/haproxy.conf-dist"
 	@${ECHO_MSG} "and add haproxy_enable=\"YES\" to /etc/rc.conf"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} ""
