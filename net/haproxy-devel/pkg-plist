@@ -1,5 +1,6 @@
 sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/architecture.txt
+%%PORTDOCS%%%%DOCSDIR%%/configuration.txt
 %%PORTDOCS%%%%DOCSDIR%%/gpl.txt
 %%PORTDOCS%%%%DOCSDIR%%/lgpl.txt
 %%PORTDOCS%%%%DOCSDIR%%/haproxy-en.txt
@@ -28,4 +29,3 @@ etc/haproxy.conf-dist
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/design-thoughts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/internals
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-
