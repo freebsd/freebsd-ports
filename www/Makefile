@@ -1306,6 +1306,7 @@
     SUBDIR += xpi-fission
     SUBDIR += xpi-flashblock
     SUBDIR += xpi-flashgot
+    SUBDIR += xpi-flatbmark
     SUBDIR += xpi-forecastfox
     SUBDIR += xpi-formfox
     SUBDIR += xpi-foxmarks
