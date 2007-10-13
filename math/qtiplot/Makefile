@@ -70,6 +70,9 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|loadInitFile("qtiplotrc")|loadInitFile("${DATADIR}/qtiplotrc")|' \
 		${WRKSRC}/${PORTNAME}/src/PythonScripting.cpp
+	${REINPLACE_CMD} -e \
+		'/^sys.path.append/s|"\."|"${DATADIR}"|' \
+		${WRKSRC}/${PORTNAME}/qtiplotrc.py
 .else
 	@${REINPLACE_CMD} \
 		-e "s/^SCRIPTING_LANGS += Python//" \
@@ -109,9 +112,11 @@ do-install:
 				${DATADIR}/fitPlugins/libfitRational1.so
 	${INSTALL_DATA} ${WRKSRC}/qtiplot_logo.png ${DATADIR}/qtiplot.png
 .if defined(WITH_PYTHON)
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/qtiplotrc.py ${DATADIR}/qtiplotrc.py
-	@cd ${WRKSRC}/qtiplot && ${PYTHON_CMD} -c "import py_compile; py_compile.compile('qtiplotrc.py')"
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/qtiplotrc.pyc ${DATADIR}/qtiplotrc.pyc
+.for s in qtiplotrc.py qtiUtil.py
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${s} ${DATADIR}/${s}
+	@cd ${WRKSRC}/qtiplot && ${PYTHON_CMD} -c "import py_compile; py_compile.compile('${s}')"
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${s}c ${DATADIR}/${s}c
+.endfor
 .endif
 .if !defined(WITHOUT_NLS)
 	(cd ${WRKSRC}/qtiplot/translations/ && ${COPYTREE_SHARE} '*.qm' ${DATADIR}/translations)
