@@ -17,6 +17,8 @@ DISTFILES=	${BOOTSTRAP} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler and base libs of Polytechnique Montreal Modula-3 distribution
 
+BROKEN=		does not build
+
 DIST_SUBDIR=	pm3
 WRKSRC=		${WRKDIR}/pm3-base-${PORTVERSION}
 INSTALL_TARGET=	all
