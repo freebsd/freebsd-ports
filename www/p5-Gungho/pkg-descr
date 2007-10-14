@@ -1,0 +1,13 @@
+Gungho is Yet Another Web Crawler Framework, aimed to be extensible 
+and fast.
+
+Gungho tries to build from clean structures, based upon principles
+from the likes of Catalyst and Plagger, so that you can easily
+extend it to your liking.
+
+Features such as robot rules handling (robots.txt) and request
+throttling can be removed/added on the fly, just by specifying
+the components that you want to load. You can easily create
+additional functionality by writing your own component.
+
+WWW:	http://search.cpan.org/dist/Gungho/
