@@ -16,6 +16,8 @@ DISTNAME=	js-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NJS (NGS) is a standalone JavaScript/ECMAScript interpreter
 
+BROKEN=		does not build
+
 CONFLICTS=	js-1.5.*
 
 USE_LDCONFIG=	yes
