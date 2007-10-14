@@ -1,5 +1,5 @@
---- configure.in.orig	Wed Apr 11 21:38:05 2007
-+++ configure.in	Sun May 27 12:27:04 2007
+--- configure.in.orig	Sat Sep 29 10:14:36 2007
++++ configure.in	Sun Oct 14 12:32:53 2007
 @@ -12,8 +12,6 @@
  RELEASE=1
  AC_SUBST(RELEASE)
@@ -33,7 +33,7 @@
    fi
    AC_CHECK_LIB(pq,PQsetdbLogin,,,-lcrypt)
    if test "$ac_cv_lib_pq_PQsetdbLogin" = "yes"; then
-@@ -207,30 +206,42 @@
+@@ -207,37 +206,42 @@
    AC_MSG_WARN([Skipping PostgreSQL plugin (check_pgsql)])
    AC_MSG_WARN([install lib crypt and PostgreSQL libs to compile this plugin (see REQUIREMENTS).])
  fi
@@ -50,18 +50,24 @@
  _SAVEDLIBS="$LIBS"
 -AC_CHECK_LIB(radiusclient,rc_read_config)
 -if test "$ac_cv_lib_radiusclient_rc_read_config" = "yes"; then
-+AC_CHECK_LIB(radiusclient-ng,rc_read_config,,,-L${LOCALBASE}/lib)
-+if test "$ac_cv_lib_radiusclient_ng_rc_read_config" = "yes"; then
-   EXTRAS="$EXTRAS check_radius"
+-  EXTRAS="$EXTRAS check_radius"
 -	RADIUSLIBS="-lradiusclient"
-+  RADIUSLIBS="-L${LOCALBASE}/lib -lradiusclient-ng"\
-+  RADIUSINCLUDE="-I${LOCALBASE}/include"
-   AC_SUBST(RADIUSLIBS)
-+  AC_SUBST(RADIUSINCLUDE)
- else
-   AC_MSG_WARN([Skipping radius plugin])
-   AC_MSG_WARN([install radius libs to compile this plugin (see REQUIREMENTS).])
- fi
+-  AC_SUBST(RADIUSLIBS)
+-else
+-  AC_CHECK_LIB(radiusclient-ng,rc_read_config)
++  AC_CHECK_LIB(radiusclient-ng,rc_read_config,,,-L${LOCALBASE}/lib)
+   if test "$ac_cv_lib_radiusclient_ng_rc_read_config" = "yes"; then
+     EXTRAS="$EXTRAS check_radius"
+-  	  RADIUSLIBS="-lradiusclient-ng"
++    RADIUSLIBS="-L${LOCALBASE}/lib -lradiusclient-ng"\
++    RADIUSINCLUDE="-I${LOCALBASE}/include"
+     AC_SUBST(RADIUSLIBS)
++    AC_SUBST(RADIUSINCLUDE)
+   else
+     AC_MSG_WARN([Skipping radius plugin])
+     AC_MSG_WARN([install radius libs to compile this plugin (see REQUIREMENTS).])
+   fi
+-fi
  LIBS="$_SAVEDLIBS"
 +fi
  
@@ -83,15 +89,15 @@
    AC_CHECK_FUNCS(ldap_set_option)
    EXTRAS="$EXTRAS check_ldap"
  	AC_CHECK_FUNCS(ldap_init ldap_set_option ldap_get_option ldap_start_tls_s)
-@@ -239,6 +250,7 @@
+@@ -246,6 +250,7 @@
    AC_MSG_WARN([install LDAP libs to compile this plugin (see REQUIREMENTS).])
  fi
  LIBS="$_SAVEDLIBS"
 +fi
  
- dnl Check for mysql libraries
- np_mysqlclient
-@@ -492,22 +504,10 @@
+ dnl Check for headers used by check_ide_smart
+ AC_CHECK_HEADER(linux/hdreg.h, FOUNDINCLUDE=yes, FOUNDINCLUDE=no)
+@@ -522,22 +527,10 @@
  	ac_cv_ps_cols=8
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -117,7 +123,7 @@
  then
  	ac_cv_ps_varlist="[procstat,&procuid,&procpid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
  	ac_cv_ps_command="$PATH_TO_PS -axwo 'stat uid pid ppid vsz rss pcpu comm args'"
-@@ -515,9 +515,8 @@
+@@ -545,9 +538,8 @@
  	ac_cv_ps_cols=9
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -129,7 +135,7 @@
  elif ps -axwo 'stat uid pid ppid vsz rss pcpu ucomm command' 2>/dev/null | \
  	egrep -i ["^ *STAT +UID +PID +PPID +VSZ +RSS +%CPU +UCOMM +COMMAND"] > /dev/null
  then
-@@ -527,209 +526,6 @@
+@@ -557,209 +549,6 @@
  	ac_cv_ps_cols=9
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -339,7 +345,7 @@
  else
  	AC_MSG_WARN([unable to find usable ps syntax - check_procs and check_nagios will not be compiled])
  fi
-@@ -1099,6 +895,8 @@
+@@ -1137,6 +926,8 @@
  AC_DEFINE_UNQUOTED(WHO_COMMAND,"$ac_cv_path_to_who",
  	[path and arguments for invoking 'who'])
  
@@ -348,7 +354,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  AC_ARG_WITH(snmpget_command,
              ACX_HELP_STRING([--with-snmpget-command=PATH],
-@@ -1129,7 +927,10 @@
+@@ -1167,7 +958,10 @@
  else
  	AC_MSG_WARN([Tried $PERL - install Net::SNMP perl module if you want to use the perl snmp plugins])
  fi
@@ -359,7 +365,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  AC_ARG_WITH(qstat_command,
-@@ -1154,7 +955,10 @@
+@@ -1192,7 +986,10 @@
  	AC_DEFINE_UNQUOTED(PATH_TO_QSTAT,"$ac_cv_path_to_qstat",
  		[path to qstat/quakestat])
  fi
@@ -370,7 +376,7 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  AC_ARG_WITH(fping_command,
              ACX_HELP_STRING([--with-fping-command=PATH],
-@@ -1166,6 +970,7 @@
+@@ -1204,6 +1001,7 @@
  else
  	AC_MSG_WARN([Get fping from http://www.fping.com in order to make check_fping plugin])
  fi
@@ -378,7 +384,7 @@
  
  AC_PATH_PROG(PATH_TO_SSH,ssh)
  AC_ARG_WITH(ssh_command,
-@@ -1233,32 +1038,12 @@
+@@ -1271,32 +1069,12 @@
  dnl end if for PATH_TO_SWAP
  fi
  
