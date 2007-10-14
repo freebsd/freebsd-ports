@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	uim-el
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://uim.freedesktop.org/releases/
+MASTER_SITES=	http://uim.googlecode.com/files/ \
+		http://uim.freedesktop.org/releases/uim/stable/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	uim-${PORTVERSION}
 
@@ -31,7 +31,8 @@ BUILD_WRKSRC=	${WRKSRC}/emacs
 INSTALL_WRKSRC=	${WRKSRC}/emacs
 
 CONFIGURE_ARGS?=--enable-emacs --with-lispdir=${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
-CONFIGURE_ENV=	EMACS=${EMACS_CMD}
+CONFIGURE_ENV=	EMACS="${EMACS_CMD}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LIBS="${LIBS} -L${LOCALBASE}/lib"
 
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim-el
 PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
