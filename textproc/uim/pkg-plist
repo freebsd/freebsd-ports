@@ -5,6 +5,15 @@ bin/uim-fep-tick
 bin/uim-module-manager
 bin/uim-sh
 %%X11%%bin/uim-xim
+include/gcroots.h
+include/sigscheme/config-old.h
+include/sigscheme/config.h
+include/sigscheme/encoding-dummy.h
+include/sigscheme/global.h
+include/sigscheme/scmint.h
+include/sigscheme/sigscheme.h
+include/sigscheme/storage-common.h
+include/sigscheme/storage-compact.h
 include/uim/plugin.h
 include/uim/uim-compat-scm.h
 include/uim/uim-custom.h
@@ -13,6 +22,10 @@ include/uim/uim-im-switcher.h
 include/uim/uim-scm.h
 include/uim/uim-util.h
 include/uim/uim.h
+lib/libgcroots.a
+lib/libgcroots.la
+lib/libgcroots.so
+lib/libgcroots.so.0
 lib/libuim-custom.a
 lib/libuim-custom.la
 lib/libuim-custom.so
@@ -20,13 +33,15 @@ lib/libuim-custom.so.2
 lib/libuim.a
 lib/libuim.la
 lib/libuim.so
-lib/libuim.so.4
+lib/libuim.so.5
 lib/uim/plugin/libuim-custom-enabler.a
 lib/uim/plugin/libuim-custom-enabler.la
 lib/uim/plugin/libuim-custom-enabler.so
 lib/uim/plugin/libuim-skk.a
 lib/uim/plugin/libuim-skk.la
 lib/uim/plugin/libuim-skk.so
+libdata/pkgconfig/gcroots.pc
+libdata/pkgconfig/sigscheme.pc
 libdata/pkgconfig/uim.pc
 %%X11%%libexec/uim-candwin-gtk
 libexec/uim-helper-server
@@ -37,7 +52,24 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%PORTDOCS%%%%DOCSDIR_JA%%/README.fep
 %%PORTDOCS%%%%DOCSDIR%%/KEY
 %%PORTDOCS%%%%DOCSDIR%%/README.fep
+%%PORTDOCS%%%%DOCSDIR%%/README.key
 %%PORTDOCS%%%%DOCSDIR%%/README.xim
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/design.html
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/design.txt
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/gc-protection.html
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/gc-protection.txt
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/global-obj.html
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/global-obj.txt
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/index.html
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/index.txt
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/release.html
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/release.txt
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/spec.html
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/spec.txt
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/style.html
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/style.txt
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/test-c.html
+%%PORTDOCS%%%%DOCSDIR_SIGSCHEME%%/test-c.txt
 %%DATADIR%%/action.scm
 %%DATADIR%%/anthy-custom.scm
 %%DATADIR%%/anthy-key-custom.scm
@@ -193,11 +225,13 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/util.scm
 %%DATADIR%%/viqr.scm
 %%DATADIR%%/zaurus.scm
+@dirrm include/sigscheme
 @dirrm include/uim
 @dirrm lib/uim/plugin
 @dirrm lib/uim
 @dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
+%%PORTDOCS%%@dirrm %%DOCSDIR_SIGSCHEME%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/helperdata
 @dirrm %%DATADIR%%/pixmaps

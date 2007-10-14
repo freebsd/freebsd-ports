@@ -10,12 +10,12 @@ PKGNAMESUFFIX=	-gnome
 COMMENT=	GNOME applets of uim input method
 
 USE_GNOME=	gtk20 gnomepanel
-LIB_DEPENDS=	uim.4:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim.5:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	uim-pref-gtk:${PORTSDIR}/textproc/uim-gtk
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
-CONFIGURE_ARGS=	--with-gtk2 --with-gnome2 --enable-applet
+CONFIGURE_ARGS=	--with-gtk2 --enable-gnome-applet
 
 UIM_SLAVE=	yes
 

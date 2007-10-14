@@ -1,0 +1,11 @@
+--- qt/chardict/po/Makefile.in.in.orig	2007-09-25 23:38:28.000000000 +0900
++++ qt/chardict/po/Makefile.in.in	2007-09-25 23:39:06.000000000 +0900
+@@ -33,7 +33,7 @@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+ libdir = @libdir@
+-DATADIRNAME = @DATADIRNAME@
++DATADIRNAME = share
+ itlocaledir = $(prefix)/$(DATADIRNAME)/locale
+ subdir = po
+ install_sh = @install_sh@

@@ -1,0 +1,11 @@
+--- sigscheme/doc/Makefile.in.orig	2007-09-25 01:31:53.000000000 +0900
++++ sigscheme/doc/Makefile.in	2007-09-25 01:33:45.000000000 +0900
+@@ -151,7 +151,7 @@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = @docdir@
++docdir = $(prefix)/share/doc/uim/sigscheme
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
