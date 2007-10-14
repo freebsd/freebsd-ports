@@ -1,0 +1,237 @@
+--- navi2ch-multibbs.el.orig	Sun Sep 12 12:55:25 2004
++++ navi2ch-multibbs.el	Sat Jun 10 08:38:54 2006
+@@ -242,14 +242,8 @@
+ (defun navi2ch-multibbs-send-message-retry-confirm (board)
+   (let ((func (or (navi2ch-fboundp
+ 		   navi2ch-multibbs-send-message-retry-confirm-function)
+-		  #'yes-or-no-p))
+-	spid)
+-    (unwind-protect
+-	(let ((result (funcall func "Retry? ")))
+-	  (when result
+-	    (setq spid (navi2ch-board-load-spid board)))
+-	  result)
+-      (navi2ch-board-save-spid board spid))))
++		  #'yes-or-no-p)))
++    (funcall func "Retry? ")))
+ 
+ (defun navi2ch-multibbs-send-message
+   (from mail message subject board article)
+@@ -279,10 +273,11 @@
+ 					    navi2ch-net-http-proxy-password))
+ 	 (tries 2)			; 送信試行の最大回数
+ 	 (message-str "send message...")
+-	 (result 'retry))
++	 (result 'retry)
++	 (additional-params nil))
+     (dotimes (i tries)
+-      (let ((proc (funcall send from mail message subject bbs key time
+-			   board article)))
++      (let ((proc (apply send from mail message subject bbs key time
++			 board article additional-params)))
+ 	(message message-str)
+ 	(setq result (funcall success-p proc))
+ 	(cond ((eq result 'retry)
+@@ -291,6 +286,23 @@
+ 		   (insert (decode-coding-string
+ 			    (navi2ch-net-get-content proc)
+ 			    navi2ch-coding-system))
++		   (goto-char (point-min))
++		   (setq additional-params nil)
++		   (let ((case-fold-search t))
++		     (while (re-search-forward "<input\\>[^>]+>" nil t)
++		       (let ((str (match-string 0)) name value
++			     (re
++			      "\\<%s=\\(\"\\([^\"]*\\)\"\\|[^\"> \r\n\t]*\\)"))
++			 (and (string-match (format re "name") str)
++			      (setq name (or (match-string 2 str)
++					     (match-string 1 str)))
++			      (string-match (format re "value") str)
++			      (setq value (or (match-string 2 str)
++					      (match-string 1 str)))
++			      (setq name (navi2ch-replace-html-tag name)
++				    value (navi2ch-replace-html-tag value))
++			      (push (cons name value)
++				    additional-params)))))
+ 		   (navi2ch-replace-html-tag-with-buffer)
+ 		   (goto-char (point-min))
+ 		   (while (re-search-forward "[ \t]*\n\\([ \t]*\n\\)*" nil t)
+@@ -410,10 +422,9 @@
+ 	list))))
+ 
+ (defun navi2ch-2ch-send-message
+-  (from mail message subject bbs key time board article)
++  (from mail message subject bbs key time board article &rest additional-params)
+   (let ((url         (navi2ch-board-get-bbscgi-url board))
+ 	(referer     (navi2ch-board-get-uri board))
+-	(spid        (navi2ch-board-load-spid board))
+ 	(param-alist (list
+ 		      (cons "submit" "書き込む")
+ 		      (cons "FROM"   (or from ""))
+@@ -424,21 +435,20 @@
+ 		      (if subject
+ 			  (cons "subject" subject)
+ 			(cons "key"    key)))))
+-    (setq spid
+-	  (when (and (consp spid)
+-		     (navi2ch-compare-times (cdr spid) (current-time)))
+-	    (car spid)))
++    (dolist (x additional-params)
++      (unless (assoc (car x) param-alist)
++	(push x param-alist)))
+     (let ((proc
+ 	   (navi2ch-net-send-request
+ 	    url "POST"
+ 	    (list (cons "Content-Type" "application/x-www-form-urlencoded")
+-		  (cons "Cookie" (concat "NAME=" from "; MAIL=" mail
+-					 (if spid (concat "; SPID=" spid
+-							  "; PON=" spid))))
++		  (cons "Cookie"
++			(navi2ch-net-cookie-string 
++			 (navi2ch-net-match-cookies url)))
+ 		  (cons "Referer" referer))
+ 	    (navi2ch-net-get-param-string param-alist))))
+-      (setq spid (navi2ch-net-send-message-get-spid proc))
+-      (if spid (navi2ch-board-save-spid board spid))
++      (navi2ch-net-update-cookies url proc)
++      (navi2ch-net-save-cookies)
+       proc)))
+ 
+ (defun navi2ch-2ch-article-to-url
+--- navi2ch-net.el.orig	Fri Aug  6 23:02:01 2004
++++ navi2ch-net.el	Sun Jun  4 23:07:43 2006
+@@ -780,6 +780,134 @@
+ 		((string-match "^PON=\\([^;]+\\);" str)
+ 		 (return (cons (match-string 1 str) date))))))))
+ 
++;; Cookie はこんな感じの alist に入れておく。
++;; ((domain1 (/path1 ("name1" "value1" ...)
++;;		     ("name2" "value2" ...) ...)
++;;	     (/path2 ...) ...)
++;;  (domain2 ...) ...)
++
++(defvar navi2ch-net-cookies nil)
++
++(defun navi2ch-net-store-cookie (cookie domain path)
++  (let ((domain (if (stringp domain) (intern (downcase domain)) domain))
++	(path (if (stringp path) (intern path) path)))
++    (let ((path-alist (assq domain navi2ch-net-cookies)))
++      (unless path-alist
++	(setq path-alist (list domain))
++	(push path-alist navi2ch-net-cookies))
++      (let ((cookie-list (assq path (cdr path-alist))))
++	(if cookie-list
++	    (let ((elt (assoc (car cookie) (cdr cookie-list))))
++	      (if elt
++		  (setcdr elt (cdr cookie))
++		(setcdr cookie-list (cons cookie (cdr cookie-list)))))
++	  (setq cookie-list (list path cookie))
++	  (setcdr path-alist (cons cookie-list (cdr path-alist))))))))
++
++(defun navi2ch-net-match-cookies (url)
++  (let* ((alist (navi2ch-net-split-url url))
++	 (host (cdr (assq 'host alist)))
++	 (file (cdr (assq 'file alist)))
++	 (domain-list (list (intern (downcase host))))
++	 path-list)
++    (when (string-match "\\..*\\..*\\'" host)
++      (push (intern (downcase (match-string 0 host))) domain-list))
++    (while (string-match "\\`\\(.*\\)/[^/]*" file)
++      (let ((f (match-string 1 file)))
++	(push (intern (if (string= f "") "/" f)) path-list)
++	(setq file f)))
++    (labels ((mapcan (function list) (apply #'nconc (mapcar function list))))
++      (mapcan (lambda (domain)
++		(mapcan (lambda (path)
++			  (navi2ch-net-expire-cookies
++			   (cdr (assq path
++				      (cdr (assq domain
++						 navi2ch-net-cookies))))))
++				    path-list))
++	      domain-list))))
++
++(defvar navi2ch-net-cookie-file "cookie.info")
++
++(defun navi2ch-net-cookie-file ()
++  (expand-file-name navi2ch-net-cookie-file navi2ch-directory))
++
++(defun navi2ch-net-save-cookies ()
++  (let ((now (current-time)))
++    (labels ((strip (f l) (let ((tmp (delq nil (mapcar f (cdr l)))))
++			    (and tmp (cons (car l) tmp)))))
++      (navi2ch-save-info
++       (navi2ch-net-cookie-file)
++       (delq nil
++	     (mapcar (lambda (path-alist)
++		       (strip (lambda (cookie-list)
++				(strip (lambda (cookie)
++					 (and (cddr cookie)
++					      (navi2ch-compare-times
++					       (cddr cookie) now)
++					      cookie))
++				       cookie-list))
++			      path-alist))
++		     navi2ch-net-cookies))))))
++
++(defun navi2ch-net-load-cookies ()
++  (setq navi2ch-net-cookies
++	(navi2ch-load-info (navi2ch-net-cookie-file))))
++
++(add-hook 'navi2ch-save-status-hook 'navi2ch-net-save-cookies)
++(add-hook 'navi2ch-load-status-hook 'navi2ch-net-load-cookies)
++
++(defun navi2ch-net-update-cookies (url proc)
++  (let* ((case-fold-search t)
++	 (alist (navi2ch-net-split-url url))
++	 (host (cdr (assq 'host alist)))
++	 (file (cdr (assq 'file alist))))
++    (dolist (pair (navi2ch-net-get-header proc) navi2ch-net-cookies)
++      (when (string= (car pair) "Set-Cookie")
++	(let* ((str (cdr pair))
++	       (date (when (string-match "expires=\\([^;]+\\)" str)
++		       (navi2ch-http-date-decode (match-string 1 str))))
++	       (domain (if (string-match "domain=\\([^;]+\\)" str)
++			   (match-string 1 str)
++			 host))
++	       (path (if (string-match "path=\\([^;]+\\)" str)
++			 (match-string 1 str)
++		       (if (and (string-match "\\(.*\\)/" file)
++				(> (length (match-string 1 file)) 0))
++			   (match-string 1 file)
++			 "/"))))
++	  (when (string-match "^\\([^=]+\\)=\\([^;]*\\)" str)
++	    (let ((name (match-string 1 str))
++		  (value (match-string 2 str)))
++	      (setq value
++		    (decode-coding-string
++		     (navi2ch-replace-string "%[0-9A-Za-z][0-9A-Za-z]"
++					     (lambda (s)
++					       (string (string-to-number
++							(substring s 1) 16)))
++					     value t t t)
++		     navi2ch-coding-system))
++	      (navi2ch-net-store-cookie (cons name
++					      (cons value date))
++					domain path))))))))
++
++(defun navi2ch-net-expire-cookies (cookie-list)
++  "COOKIE-LIST から期限切れのクッキーを除いたリストを返す。"
++  (let ((now (current-time)))
++    (delq nil
++	  (mapcar (lambda (cookie)
++		    (when (or (null (cddr cookie))
++			      (navi2ch-compare-times (cddr cookie) now))
++		      cookie))
++		  cookie-list))))
++
++(defun navi2ch-net-cookie-string (cookies)
++  "HTTP の Cookie ヘッダとして渡す文字列を返す。"
++  (mapconcat (lambda (elt)
++	       (concat (navi2ch-net-url-hexify-string (car elt))
++		       "="
++		       (navi2ch-net-url-hexify-string (cadr elt))))
++	     cookies "; "))
++
+ (defun navi2ch-net-download-logo (board)
+   (let ((coding-system-for-read 'binary)
+ 	(coding-system-for-write 'binary)
