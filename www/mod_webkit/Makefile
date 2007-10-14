@@ -6,26 +6,31 @@
 #
 
 PORTNAME=	mod_webkit
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4
 CATEGORIES=	www
-MASTER_SITES=	# none
-DISTFILES=	# none
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	webware
+DISTNAME=	Webware-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A apache module for WebWare WebKit AppServer
 
-PATCH_DEPENDS=	${NONEXISTENT}:${WEBWARE_PORT}:extract
+USE_APACHE=	1.3+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
-BROKEN=		does not build
+.include <bsd.port.pre.mk>
 
-USE_APACHE=	1.3
+.if ${APACHE_VERSION} >= 20
+PKGNAMESUFFIX=	-ap2
+APACHE_VER=	2
+.else
+APACHE_VER=	1
+.endif
 
-WEBWARE_PORT=	${PORTSDIR}/www/py-webware
-WRKSRC=		${WRKDIR}/../../../www/py-webware/work/Webware-${PORTVERSION}/WebKit/Adapters/${PORTNAME}
-
-PLIST_FILES=	libexec/apache/mod_webkit.so
+WRKSRC=		${WRKDIR}/Webware-${PORTVERSION}/WebKit/Adapters/${PORTNAME}${APACHE_VER}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/sbin/apxs|${APXS}|' ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
