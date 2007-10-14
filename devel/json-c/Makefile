@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	json-c
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://oss.metaparadigm.com/json-c/
 
@@ -16,7 +16,6 @@ COMMENT=	A JSON (Javascript Object Notation) implementation in C
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget
-#USE_AUTOTOOLS=	automake:14
+USE_GNOME=	gnometarget pkgconfig gnomehack
 
 .include <bsd.port.mk>
