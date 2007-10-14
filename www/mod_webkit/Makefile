@@ -16,6 +16,8 @@ COMMENT=	A apache module for WebWare WebKit AppServer
 
 PATCH_DEPENDS=	${NONEXISTENT}:${WEBWARE_PORT}:extract
 
+BROKEN=		does not build
+
 USE_APACHE=	1.3
 
 WEBWARE_PORT=	${PORTSDIR}/www/py-webware
