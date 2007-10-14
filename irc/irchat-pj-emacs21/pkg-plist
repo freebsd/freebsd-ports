@@ -1,0 +1,26 @@
+%%LISPDIR%%/irchat-commands.el
+%%LISPDIR%%/irchat-commands.elc
+%%LISPDIR%%/irchat-filter.el
+%%LISPDIR%%/irchat-filter.elc
+%%LISPDIR%%/irchat-handle.el
+%%LISPDIR%%/irchat-handle.elc
+%%LISPDIR%%/irchat-pj-modeline.el
+%%LISPDIR%%/irchat-pj-modeline.elc
+%%LISPDIR%%/irchat-pj-sound.el
+%%LISPDIR%%/irchat-pj-sound.elc
+%%LISPDIR%%/irchat-vars.el
+%%LISPDIR%%/irchat-vars.elc
+%%LISPDIR%%/irchat.el
+%%LISPDIR%%/irchat.elc
+@dirrm %%LISPDIR%%
+%%ETCDIR%%/README.25
+%%ETCDIR%%/CHANGELOG
+%%ETCDIR%%/FAQ-about-jp24.txt
+%%ETCDIR%%/FAQ-irchat-PJ.txt
+%%ETCDIR%%/INSTALL.irchat-pj
+%%ETCDIR%%/README.browse-url-plus
+%%ETCDIR%%/README.irchat-pj
+%%ETCDIR%%/browse-url-plus-init.el
+%%ETCDIR%%/dot.irchat_vars.el
+@dirrm %%ETCDIR%%
+%%XEMACS_ONLY%%lib/xemacs/site-packages/pkginfo/MANIFEST.irchat-pj

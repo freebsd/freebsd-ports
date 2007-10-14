@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../irchat-pj-emacs20
+MASTERDIR=	${.CURDIR}/../irchat-pj-emacs21
 
 USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
