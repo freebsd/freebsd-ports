@@ -72,7 +72,6 @@
     SUBDIR += moettf
     SUBDIR += mplayer-fonts
     SUBDIR += msttf
-    SUBDIR += mule-freewnn
     SUBDIR += muni
     SUBDIR += mutt
     SUBDIR += ntuttf
@@ -134,7 +133,6 @@
     SUBDIR += wangttf
     SUBDIR += wenju
     SUBDIR += wordpress
-    SUBDIR += xemacs
     SUBDIR += xemacs21
     SUBDIR += xmms
     SUBDIR += xpdf

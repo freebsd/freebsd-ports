@@ -35,7 +35,6 @@
     SUBDIR += mmencode
     SUBDIR += mpack
     SUBDIR += mule-ucs
-    SUBDIR += mule-ucs-emacs20
     SUBDIR += nomyso
     SUBDIR += p5-Boulder
     SUBDIR += p5-Convert-ASCII-Armour

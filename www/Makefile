@@ -1235,7 +1235,6 @@
     SUBDIR += vtiger
     SUBDIR += vtiger-customerportal
     SUBDIR += vtiger4
-    SUBDIR += w3
     SUBDIR += w3-4
     SUBDIR += w3m
     SUBDIR += w3m-img

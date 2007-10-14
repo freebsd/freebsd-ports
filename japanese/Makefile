@@ -35,8 +35,6 @@
     SUBDIR += dbskkd-cdb
     SUBDIR += ddskk
     SUBDIR += devil-fpw
-    SUBDIR += diclookup-emacs20
-    SUBDIR += diclookup-mule
     SUBDIR += drpl
     SUBDIR += dvi2dvi
     SUBDIR += dvi2tty
@@ -213,17 +211,6 @@
     SUBDIR += mplusfonts
     SUBDIR += msdosfs
     SUBDIR += mtools
-    SUBDIR += mule-canna
-    SUBDIR += mule-canna+freewnn+sj3
-    SUBDIR += mule-canna+sj3
-    SUBDIR += mule-canna+sj3+wnn6
-    SUBDIR += mule-canna+sj3+wnn7
-    SUBDIR += mule-canna+wnn6
-    SUBDIR += mule-canna+wnn7
-    SUBDIR += mule-freewnn
-    SUBDIR += mule-sj3
-    SUBDIR += mule-wnn6
-    SUBDIR += mule-wnn7
     SUBDIR += multiskkserv
     SUBDIR += mutt
     SUBDIR += mutt-devel
@@ -231,7 +218,6 @@
     SUBDIR += mypaedia-fpw-package
     SUBDIR += namazu
     SUBDIR += namazu2
-    SUBDIR += navi2ch-emacs20
     SUBDIR += navi2ch-emacs21
     SUBDIR += navi2ch-xemacs21-mule
     SUBDIR += ne
@@ -389,7 +375,6 @@
     SUBDIR += vftool
     SUBDIR += vje30
     SUBDIR += vlgothic
-    SUBDIR += w3
     SUBDIR += w3m
     SUBDIR += w3m-img
     SUBDIR += waeijiro-fpw

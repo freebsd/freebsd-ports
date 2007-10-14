@@ -45,7 +45,6 @@
     SUBDIR += ircd-rusnet
     SUBDIR += ircg
     SUBDIR += irchat-jp
-    SUBDIR += irchat-pj-emacs20
     SUBDIR += irchat-pj-emacs21
     SUBDIR += irchat-pj-xemacs21-mule
     SUBDIR += ircproxy
@@ -88,7 +87,6 @@
     SUBDIR += psybnc
     SUBDIR += ptlink-ircd
     SUBDIR += ptlink-services
-    SUBDIR += pure-emacs20
     SUBDIR += pure-emacs21
     SUBDIR += pure-xemacs21-mule
     SUBDIR += py-gozerbot

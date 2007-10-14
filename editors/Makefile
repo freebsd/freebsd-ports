@@ -10,7 +10,6 @@
     SUBDIR += aee
     SUBDIR += aewan
     SUBDIR += apel
-    SUBDIR += apel-emacs20
     SUBDIR += apel-emacs21
     SUBDIR += asedit
     SUBDIR += axe
@@ -19,7 +18,6 @@
     SUBDIR += biew
     SUBDIR += bitedit
     SUBDIR += bitmap
-    SUBDIR += bitmap-emacs20
     SUBDIR += bitmap-emacs21
     SUBDIR += bless
     SUBDIR += boiling-egg
@@ -44,14 +42,11 @@
     SUBDIR += emacs
     SUBDIR += emacs-devel
     SUBDIR += emacs.app
-    SUBDIR += emacs19
-    SUBDIR += emacs20
     SUBDIR += emacs21
     SUBDIR += etoile-typewriter
     SUBDIR += f4l
     SUBDIR += fb
     SUBDIR += flim
-    SUBDIR += flim-emacs20
     SUBDIR += flim-emacs21
     SUBDIR += flim-xemacs21-mule
     SUBDIR += fpc-ide
@@ -104,8 +99,6 @@
     SUBDIR += mousepad
     SUBDIR += mp
     SUBDIR += muggy
-    SUBDIR += mule
-    SUBDIR += mule-common
     SUBDIR += nano
     SUBDIR += ne
     SUBDIR += nedit
@@ -133,7 +126,6 @@
     SUBDIR += scite
     SUBDIR += scribes
     SUBDIR += semi
-    SUBDIR += semi-emacs20
     SUBDIR += semi-emacs21
     SUBDIR += semi-xemacs21-mule
     SUBDIR += setedit
@@ -141,7 +133,6 @@
     SUBDIR += softmaker-office
     SUBDIR += spe
     SUBDIR += speedbar
-    SUBDIR += speedbar-emacs20
     SUBDIR += ssam
     SUBDIR += ssed
     SUBDIR += staroffice5
