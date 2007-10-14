@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/ChangeSet.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/Client.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/Entry.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/Install/doctypes
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/Install/Files.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/Install/gconf.typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/Install/gconfperl-autogen.h
