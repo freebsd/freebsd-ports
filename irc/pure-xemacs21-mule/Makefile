@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../pure-emacs20
+MASTERDIR=	${.CURDIR}/../pure-emacs21
 
 USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
