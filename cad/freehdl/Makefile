@@ -59,10 +59,4 @@ plist: build
 		| ${PLIST_REPL} >> ${PLIST}
 	@${RM} -rf ${PLIST_TMP}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
