@@ -1,0 +1,530 @@
+! Chinese localization resources for XEmacs
+! Author: Clem Chuang (b5506056@csie.ntu.edu.tw)
+! modify from /usr/local/lib/xemacs-20.4/etc/app-defaults/ja/Emacs
+!
+! Updated by Jing-Tang Keith Jang (keith@FreeBSD.org)
+!
+
+! This file is consisted of two parts. The first one is a Big5-localized
+! menu, and the second one sets XIM servers, fonts, and other X-related
+! resources, thus it can be put in ${X11}/lib/X11/app-defaults.
+! Search for XRESOURCES to go directly to part 2.
+
+!
+! Part 1: Big5-localized menus
+!
+
+! Pulldown menu internationalization.  The first line of the file
+! "Emacs*XlwMenu.resourceLabels: True" has to be there to make sure
+! all the labelString will be read and displayed by X.
+Emacs*XlwMenu.resourceLabels: True
+
+!!! Default Menubar Top Level
+
+Emacs*XlwMenu.file.labelString: 檔案
+Emacs*XlwMenu.edit.labelString:	編輯
+Emacs*XlwMenu.mule.labelString:	多國語言
+Emacs*XlwMenu.apps.labelString:	應用程式
+Emacs*XlwMenu.options.labelString:	選項
+Emacs*XlwMenu.tools.labelString:	工具
+Emacs*XlwMenu.help.labelString:	說明
+
+!! File menu
+
+Emacs*XlwMenu.open___.labelString:	開檔...
+Emacs*XlwMenu.openInOtherWindow___.labelString:	開啟在新 Window 中...
+Emacs*XlwMenu.openInNewFrame___.labelString:	開啟在新 Frame 中...
+Emacs*XlwMenu.insertFile___.labelString:	插入檔案...
+Emacs*XlwMenu.viewFile___.labelString:	觀看檔案...
+Emacs*XlwMenu.save.labelString:	存檔:
+Emacs*XlwMenu.saveAs___.labelString:	存成新檔
+Emacs*XlwMenu.saveSomeBuffers.labelString:	選擇性儲存
+Emacs*XlwMenu.printBuffer.labelString:	列印:
+Emacs*XlwMenu.prettyPrintBuffer.labelString:	高品質列印:
+Emacs*XlwMenu.newFrame.labelString:	開新 Frame
+Emacs*XlwMenu.frameOnOtherDisplay___.labelString:	在別的 Display 上開新 Frame
+Emacs*XlwMenu.deleteFrame.labelString:	消除 Frame
+Emacs*XlwMenu.splitWindow.labelString:	分割 Window
+Emacs*XlwMenu.unSplitKeepThis.labelString:	放大這個 Window
+Emacs*XlwMenu.unSplitKeepOthers.labelString:	縮小這個 Window
+Emacs*XlwMenu.revertBuffer.labelString:	復原回原檔案:
+Emacs*XlwMenu.deleteBuffer.labelString:	清除 buffer:
+Emacs*XlwMenu.exitXEmacs.labelString:	離開 XEmacs 
+
+!! Edit menu
+
+Emacs*XlwMenu.undo.labelString:	復原
+Emacs*XlwMenu.cut.labelString: 剪下
+Emacs*XlwMenu.copy.labelString:	複製
+Emacs*XlwMenu.paste.labelString:	貼上
+Emacs*XlwMenu.clear.labelString:	消去
+Emacs*XlwMenu.search___.labelString:	搜索...
+Emacs*XlwMenu.searchBackward___.labelString:	向後搜索...
+Emacs*XlwMenu.replace___.labelString:	置換...
+Emacs*XlwMenu.searchRegexp___.labelString:	搜索(Regexp)...
+Emacs*XlwMenu.searchBackwardRegexp___.labelString:	向後搜索(Regexp)...
+Emacs*XlwMenu.replaceRegexp___.labelString:	置換(Regexp)...
+Emacs*XlwMenu.bookmarks.labelString:	書簽
+Emacs*XlwMenu.gotoLine___.labelString:	跳到某一行...
+Emacs*XlwMenu.whatLine.labelString:	目前行號
+Emacs*XlwMenu.startMacroRecording.labelString:	開始錄 Macro
+Emacs*XlwMenu.endMacroRecording.labelString:	結束錄 Macro
+Emacs*XlwMenu.showMessageLog.labelString:	顯示訊息紀錄
+Emacs*XlwMenu.executeLastMacro.labelString:	執行最近的
+Emacs*XlwMenu.jumpToBookmark.labelString:	跳到書簽
+Emacs*XlwMenu.setBookmark.labelString:	設定書簽
+Emacs*XlwMenu.insertContents.labelString:	插入內容
+Emacs*XlwMenu.insertLocation.labelString:	插入位置
+Emacs*XlwMenu.renameBookmark.labelString:	重新命名
+Emacs*XlwMenu.deleteBookmark.labelString:	刪除
+Emacs*XlwMenu.editBookmarkList.labelString:	編輯書簽列表
+Emacs*XlwMenu.saveBookmarks.labelString:	儲存書簽
+Emacs*XlwMenu.saveBookmarksAs___.labelString:	將書簽存成...
+Emacs*XlwMenu.loadABookmarkFile.labelString:	讀入書簽檔
+
+!! Apps menu
+
+Emacs*XlwMenu.readMailVM___.labelString:	讀信 (使用 VM)...
+Emacs*XlwMenu.readMailMH___.labelString:	讀信 (使用 MH)...
+Emacs*XlwMenu.sendMail___.labelString:	寄信...
+Emacs*XlwMenu.browseTheWeb.labelString:	流覽 WWW
+Emacs*XlwMenu.spellCheckBuffer.labelString:	拼字檢查程式
+Emacs*XlwMenu.toggleVIEmulation.labelString:	模擬 vi
+Emacs*XlwMenu.calendar.labelString:	月曆
+Emacs*XlwMenu.games.labelString:	遊戲
+Emacs*XlwMenu.3MonthCalendar.labelString:	最近三個月
+Emacs*XlwMenu.diary.labelString:	日記
+Emacs*XlwMenu.holidays.labelString:	節日
+Emacs*XlwMenu.phasesOfTheMoon.labelString:	月亮
+Emacs*XlwMenu.sunriseSunset.labelString:	日出/日落
+Emacs*XlwMenu.quoteFromZippy.labelString:	Zippy 格言集
+Emacs*XlwMenu.psychoanalyst.labelString:	精神醫生
+Emacs*XlwMenu.mineGame.labelString:	踩地雷
+Emacs*XlwMenu.tetris.labelString:	俄羅思方塊
+Emacs*XlwMenu.psychoanalyzeZippy.labelString:	精神分析 Zippy!
+Emacs*XlwMenu.randomFlames.labelString:	活得不耐煩
+Emacs*XlwMenu.dunnetAdventure.labelString:	Dunnet (冒險)
+Emacs*XlwMenu.towersOfHanoi.labelString:	河內之塔
+Emacs*XlwMenu.gameOfLife.labelString:	生命遊戲
+Emacs*XlwMenu.multiplicationPuzzle.labelString:	乘法遊戲
+
+!! Options menu
+
+Emacs*XlwMenu.readOnly.labelString:	唯讀
+Emacs*XlwMenu.editingOptions.labelString:	編輯選項
+Emacs*XlwMenu.generalOptions.labelString:	一般選項
+Emacs*XlwMenu.printingOptions.labelString:	列印選項
+Emacs*XlwMenu.otherWindowLocation.labelString:	"其它 Window" 的位置
+Emacs*XlwMenu.syntaxHighlighting.labelString:	依語法 Highlighting
+Emacs*XlwMenu.parenHighlighting.labelString:	對括號 Hightlighting
+Emacs*XlwMenu.frameAppearance.labelString:	Frame 外觀
+Emacs*XlwMenu.menubarAppearance.labelString:	選單外觀
+Emacs*XlwMenu.toolbarAppearance.labelString:	工具列外觀
+Emacs*XlwMenu.mouse.labelString: 滑鼠
+Emacs*XlwMenu.openURLsWith.labelString:	內定瀏覽器
+Emacs*XlwMenu.browseFaces___.labelString:	瀏覽 Faces...
+Emacs*XlwMenu.font.labelString:	字形
+Emacs*XlwMenu.size.labelString:	大小
+Emacs*XlwMenu.weight.labelString:	字體
+Emacs*XlwMenu.languageEnvironment.labelString:	語言環境
+Emacs*XlwMenu.saveOptions.labelString:	儲存選項
+
+!! Options -> Editing
+
+Emacs*XlwMenu.overstrike.labelString:	覆蓋
+Emacs*XlwMenu.caseSensitiveSearch.labelString:	在搜索時區分大小寫
+Emacs*XlwMenu.caseMatchingReplace.labelString:	在置換時區分大小寫
+Emacs*XlwMenu.autoDeleteSelection.labelString:	自動刪除 Selection
+Emacs*XlwMenu.mousePasteAtTextCursor.labelString:	滑鼠貼在在文字游標處
+
+!! Options -> General
+
+Emacs*XlwMenu.debugOnError.labelString:	在錯誤時 Debug
+Emacs*XlwMenu.debugOnQuit.labelString:	在結束時 Debug
+
+!! Options -> Printing Options
+
+Emacs*XlwMenu.commandLineSwitchesForLprLp___.labelString:	lp/lpr 的命令列參術
+Emacs*XlwMenu.prettyPrintWithColor.labelString:	在高品質列印下印彩色
+Emacs*XlwMenu.prettyPrintPaperSize.labelString:	高品質列印的紙張大小
+
+!! Options -> Other Window
+
+Emacs*XlwMenu.alwaysInSameFrame.labelString:	總是在同一個 Frame
+Emacs*XlwMenu.otherFrame2FramesMax.labelString:	其它 Frame (最大 2 個)
+Emacs*XlwMenu.otherFrame3FramesMax.labelString:	其他 Frame (最大 3 個)
+Emacs*XlwMenu.otherFrame4FramesMax.labelString:	其他 Frame (最大 4 個)
+Emacs*XlwMenu.otherFrame5FramesMax.labelString:	其他 Frame (最大 5 個)
+Emacs*XlwMenu.alwaysCreateNewFrame.labelString:	總是開新的 Frame
+Emacs*XlwMenu.tempBuffersAlwaysInSameFrame.labelString:	暫時性的 Buffer 待在同個 Frame
+Emacs*XlwMenu.tempBuffersLikeOtherBuffers.labelString:	暫時性 Buffer 不特別處理
+
+!! Options -> Syntax Highlighting
+
+Emacs*XlwMenu.inThisBuffer.labelString:	在本 Buffer
+Emacs*XlwMenu.automatic.labelString:	自動
+Emacs*XlwMenu.fonts.labelString:	字形
+Emacs*XlwMenu.colors.labelString:	顏色
+Emacs*XlwMenu.least.labelString:	最少
+Emacs*XlwMenu.more.labelString:	多
+Emacs*XlwMenu.evenMore.labelString:	更多
+Emacs*XlwMenu.most.labelString:	最大
+Emacs*XlwMenu.lazy.labelString:	延遲
+Emacs*XlwMenu.caching.labelString:	快取
+
+!! Options -> Paren Highlighting
+
+Emacs*XlwMenu.none.labelString:	無
+Emacs*XlwMenu.blinkingParen.labelString:	閃動括號
+Emacs*XlwMenu.steadyParen.labelString:	括號變色
+Emacs*XlwMenu.expression.labelString:	表示式
+
+!! Options -> Frame Appearance
+
+Emacs*XlwMenu.scrollbars.labelString:	捲軸
+Emacs*XlwMenu.3DModeline.labelString:	3D 狀態列
+Emacs*XlwMenu.truncateLines.labelString: 捲動橫軸顯示長行
+Emacs*XlwMenu.barCursor.labelString:	棒狀游標
+Emacs*XlwMenu.blinkingCursor.labelString:	閃動游標
+Emacs*XlwMenu.frameLocalFontMenu.labelString: 字形選單不影響其他 Frame
+
+!! Options -> Menubar Appearance
+
+Emacs*XlwMenu.buffersMenuLength___.labelString:	Buffers 選單長度...
+Emacs*XlwMenu.multiOperationBuffersSubMenus.labelString:	多功能 Buffers 子選單
+Emacs*XlwMenu.buffersMenuSorting.labelString:	Buffers 選單排序
+Emacs*XlwMenu.submenusForBufferGroups.labelString:	Buffer 群組子選單
+Emacs*XlwMenu.ignoreScaledFonts.labelString:	忽略縮放過的字形
+
+!! Options -> Menubar Appearance -> Buffers Menu Sorting
+
+Emacs*XlwMenu.mostRecentlyUsed.labelString:	使用日期
+Emacs*XlwMenu.alphabetically.labelString:	字母順序
+Emacs*XlwMenu.byMajorModeThenAlphabetically.labelString:	先依 Major Mode，再按字母順序
+
+!! Options -> Toolbar Appearance
+
+Emacs*XlwMenu.visible.labelString:	顯示
+Emacs*XlwMenu.captioned.labelString:	提供標題
+Emacs*XlwMenu.defaultLocation.labelString:	預設位置
+Emacs*XlwMenu.top.labelString:	上
+Emacs*XlwMenu.bottom.labelString:	下
+Emacs*XlwMenu.left.labelString:	左
+Emacs*XlwMenu.right.labelString:	右
+
+!! Options -> Language Environment
+
+Emacs*XlwMenu.arabic.labelString:	阿拉伯文
+Emacs*XlwMenu.chinese.labelString:	中文
+Emacs*XlwMenu.european.labelString:	西歐語系
+Emacs*XlwMenu.greek.labelString:	希臘文
+Emacs*XlwMenu.hebrew.labelString:	西伯來文
+Emacs*XlwMenu.japanese.labelString:	日文
+Emacs*XlwMenu.korean.labelString:	韓文
+Emacs*XlwMenu.thai.labelString:	泰文
+Emacs*XlwMenu.vietnamese.labelString:	越南文
+
+Emacs*XlwMenu.describeLanguageSupport.labelString: 描述語言的支援
+Emacs*XlwMenu.setLanguageEnvironment.labelString: 設定語言環境
+Emacs*XlwMenu.toggleInputMethod.labelString: 切換輸入法
+Emacs*XlwMenu.selectInputMethod.labelString: 選擇輸入法
+Emacs*XlwMenu.describeInputMethod.labelString: 描述輸入法
+Emacs*XlwMenu.describeCurrentCodingSystems.labelString: 描述目前編碼系統
+Emacs*XlwMenu.setCodingSystemOfBufferFile.labelString: 設定 Buffer 檔案的編碼系統
+Emacs*XlwMenu.setCodingSystemOfTerminal.labelString: 設定 Terminal 的編碼系統
+Emacs*XlwMenu.setCodingSystemOfKeyboard.labelString: 設定鍵盤輸入的編碼系統
+Emacs*XlwMenu.setCodingSystemOfProcess.labelString: 設定 Process 的編碼系統
+Emacs*XlwMenu.showCharacterTable.labelString: 顯示字元表
+!Emacs*XlwMenu.showDiagnosisOfMULE.labelString: 顯示 MULE 診斷
+Emacs*XlwMenu.showManyLanguages.labelString: 展示多國語言
+
+!! Buffers menu
+
+Emacs*XlwMenu.listAllBuffers.labelString:	全部 Buffers 清單
+
+!! below are Buffers submenus
+
+Emacs*XlwMenu.switchToBuffer.labelString:	切換到 Buffer
+Emacs*XlwMenu.switchToBufferOtherFrame.labelString:	在別的 Frame 切換 Buffer
+Emacs*XlwMenu.saveBuffer.labelString:	儲存 Buffer
+
+!! Tools menu
+
+Emacs*XlwMenu.compile___.labelString:	編譯
+Emacs*XlwMenu.shellCommand___.labelString:	Shell 指令
+Emacs*XlwMenu.shellCommandOnRegion___.labelString:	在 Region 上處理 Shell 指令
+Emacs*XlwMenu.debugGDB___.labelString:	除錯 (使用 gdb)...
+Emacs*XlwMenu.debugDBX___.labelString:	除錯 (使用 dbx)...
+Emacs*XlwMenu.vC.labelString:	版本管理 (VC)
+Emacs*XlwMenu.compare.labelString:	比較
+Emacs*XlwMenu.merge.labelString:	合併
+Emacs*XlwMenu.applyPatch.labelString:	執行 Patch
+
+!! Tools -> VC
+
+Emacs*XlwMenu.registerFile.labelString:	登錄檔案:
+Emacs*XlwMenu.checkInFile.labelString:	check in 檔案:
+Emacs*XlwMenu.checkOutFile.labelString:	check out 檔案:
+Emacs*XlwMenu.showStatusOf.labelString:	狀態表示
+Emacs*XlwMenu.revertToLastRevision.labelString:	復原到上次 Revision
+Emacs*XlwMenu.cancelLastCheckin.labelString:	取消上次的 Checkin
+Emacs*XlwMenu.renameFile.labelString: 重新命名:
+Emacs*XlwMenu.diffAgainstLastVersion.labelString: 與上次版本 Diff
+Emacs*XlwMenu.diffBetweenRevisions___.labelString: 對 Revisions 做 Diff...
+Emacs*XlwMenu.visitOtherVersion___.labelString: 查看其他版本...
+Emacs*XlwMenu.showEditHistory.labelString:	顯示編輯歷史
+Emacs*XlwMenu.createSnapshot.labelString:	製作 Snapshot
+Emacs*XlwMenu.retrieveSnapshot.labelString:	取回 Snapshot
+Emacs*XlwMenu.cVSUpdateDirectory.labelString:	CVS 更新目錄
+
+!! Tools -> Compare
+
+Emacs*XlwMenu.twoFiles___.labelString:	2 檔案...
+Emacs*XlwMenu.twoBuffers___.labelString:	2 Buffers...
+Emacs*XlwMenu.threeFiles___.labelString:	3 檔案...
+Emacs*XlwMenu.threeBuffers___.labelString:	3 Buffers...
+Emacs*XlwMenu.twoDirectories___.labelString:	2 目錄...
+Emacs*XlwMenu.threeDirectories___.labelString:	3 目錄...
+Emacs*XlwMenu.fileWithRevision___.labelString:	檔案及 Revision...
+Emacs*XlwMenu.directoryRevisions___.labelString:	目錄 Revisions...
+Emacs*XlwMenu.windowsWordByWord___.labelString:	一字一字比較 Windows...
+Emacs*XlwMenu.windowsLineByLine___.labelString:	一行一行比較 Windows...
+Emacs*XlwMenu.regionsWordByWord___.labelString:	一字一字比較 Region...
+Emacs*XlwMenu.regionsLineByLine___.labelString:	一行一行比較 Region...
+
+!! Tools -> Merge
+
+Emacs*XlwMenu.files___.labelString:	多檔...
+Emacs*XlwMenu.filesWithAncestor___.labelString:	檔案及其 Ancestor...
+Emacs*XlwMenu.buffers___.labelString:	多 Buffers...
+Emacs*XlwMenu.buffersWithAncestor___.labelString:	Buffers 及其 Ancestor...
+Emacs*XlwMenu.directories___.labelString:	目錄間...
+Emacs*XlwMenu.directoriesWithAncestor___.labelString:	目錄及其 Ancestor...
+Emacs*XlwMenu.revisionsWithAncestor___.labelString:	Revisions 及其 Ancestor...
+Emacs*XlwMenu.directoryRevisionsWithAncestor___.labelString:	目錄 Revisions 及其 Ancestor...
+
+!! Tools -> Apply Patch
+
+Emacs*XlwMenu.toAFile___.labelString:	到一個檔案上...
+Emacs*XlwMenu.toABuffer___.labelString:	到一個 buffer...
+
+!! Tools -> Ediff Miscellanea
+
+Emacs*XlwMenu.ediffMiscellanea.labelString:	Ediff 雜項
+Emacs*XlwMenu.listEdiffSessions___.labelString:	Ediff Sessions 一覽...
+Emacs*XlwMenu.ediffManual___.labelString:	Ediff 手冊...
+Emacs*XlwMenu.useSeparateFrameForEdiffControlBuffer___.labelString:  給控制 Ediff 的 buffer 一個獨立的 frame
+Emacs*XlwMenu.useAToolbarWithEdiffControlBuffer.labelString: 給控制 Ediff 的 buffer 一個特製工具列
+
+!! Tools -> Tags
+
+Emacs*XlwMenu.findTag___.labelString: 尋找 Tag...
+Emacs*XlwMenu.findOtherWindow___.labelString:	尋找 Tag 並輸出到別的 Window...
+Emacs*XlwMenu.nextTag___.labelString:	下個 Tag...
+Emacs*XlwMenu.nextOtherWindow___.labelString:	下個 Tag 並輸出到其它 Window...
+Emacs*XlwMenu.nextFile.labelString:	下個檔案
+Emacs*XlwMenu.tagsSearch___.labelString:	搜索 Tags...
+Emacs*XlwMenu.tagsReplace___.labelString:	置換 Tags...
+Emacs*XlwMenu.continueSearchReplace.labelString:	繼續前次搜索/置換
+Emacs*XlwMenu.apropos___.labelString:	接近字(Apropos)...
+Emacs*XlwMenu.setTagsTableFile___.labelString:	設定 Tags 表格檔...
+
+!! Help menu
+
+Emacs*XlwMenu.aboutXEmacs___.labelString:	關於 XEmacs ...
+Emacs*XlwMenu.basics.labelString:	基礎
+Emacs*XlwMenu.xEmacsWWWPage.labelString:	XEmacs WWW 網頁
+Emacs*XlwMenu.xEmacsFAQ.labelString:	XEmacs FAQ (常見問題集)
+Emacs*XlwMenu.fAQLocal.labelString:	FAQ (從檔案)
+Emacs*XlwMenu.fAQViaWWW.labelString:	FAQ (從WWW)
+Emacs*XlwMenu.homePage.labelString:	XEmacs 首頁
+
+Emacs*XlwMenu.tutorial.labelString:	一步步入門
+Emacs*XlwMenu.news.labelString:	XEmacs 最近消息
+
+Emacs*XlwMenu.sample.labelString:	範例檔:
+Emacs*XlwMenu.infoDetailedDocs.labelString:	Info (詳細文件)
+Emacs*XlwMenu.lookupInInfo.labelString:	查詢 Info
+Emacs*XlwMenu.packages.labelString:	瀏覽程式套件(Packages)
+Emacs*XlwMenu.splash.labelString:	歡迎畫面
+Emacs*XlwMenu.aproposDocumentation___.labelString:	由接近字(Apropos) 查文件...
+Emacs*XlwMenu.recentKeys.labelString:	最近的按鍵/訊息
+Emacs*XlwMenu.recentMessages.labelString:	最近的訊息
+Emacs*XlwMenu.submitBugReport.labelString:	回報程式的 Bug
+
+Emacs*XlwMenu.commandKeys.labelString:	指令及快速鍵...
+Emacs*XlwMenu.mode.labelString:	有關目前模式
+Emacs*XlwMenu.aproposDocs___.labelString:	文件中尋找接近字(Apropos)...
+Emacs*XlwMenu.key___.labelString:	描述某快速鍵...
+Emacs*XlwMenu.bindings.labelString:	目前所有快速鍵定義...
+
+Emacs*XlwMenu.describeKeyMouse___.labelString:	描述快速鍵/滑鼠定義...
+Emacs*XlwMenu.commandsKeys.labelString:	指令與快速鍵
+Emacs*XlwMenu.keyBinding___.labelString:	快速鍵定義...
+Emacs*XlwMenu.mouseBindings.labelString:	滑鼠定義一覽
+Emacs*XlwMenu.describeFunction___.labelString:	函式說明...
+Emacs*XlwMenu.describeVariable___.labelString:	變數說明...
+Emacs*XlwMenu.locateCommand___.labelString:	指令的快速鍵為...
+Emacs*XlwMenu.manuals.labelString:	使用手冊
+Emacs*XlwMenu.unixManual___.labelString:	Unix 使用手冊...
+Emacs*XlwMenu.misc.labelString:	雜項
+Emacs*XlwMenu.customize.labelString:	自定
+
+!! Help -> Lookup in Info
+
+Emacs*XlwMenu.keyMouseBinding___.labelString:	快速鍵/滑鼠定義...
+Emacs*XlwMenu.command___.labelString:	指令...
+Emacs*XlwMenu.topic___.labelString:	開啟 info 檔...
+
+!! Help -> Misc
+
+Emacs*XlwMenu.describeNoWarranty.labelString: 聲明本程式不負責任
+Emacs*XlwMenu.describeXEmacsLicense.labelString: XEmacs 的授權
+Emacs*XlwMenu.gettingTheLatestVersion.labelString: 取得最新版本
+
+!!! WorkShop
+
+!! WorkShop menu
+
+Emacs*XlwMenu.breakpoints.labelString:	中斷點
+Emacs*XlwMenu.program.labelString:	程式
+Emacs*XlwMenu.fix.labelString:	修正
+
+!! WorkShop -> Breakpoints
+
+Emacs*XlwMenu.stopAt.labelString:	停止在
+Emacs*XlwMenu.stopInSelected.labelString:	停止在選擇區
+Emacs*XlwMenu.deleteBreakpointAt.labelString:	刪除此處中斷點
+
+!! WorkShop -> Program
+
+Emacs*XlwMenu.start.labelString:	開始
+Emacs*XlwMenu.interrupt.labelString:	中斷
+
+!!! Modes:
+
+!!! Lisp-interaction mode and Lisp mode
+
+Emacs*XlwMenu.lispInteraction.labelString: 交談式 Lisp
+Emacs*XlwMenu.evaluateLastSExpression.labelString: Evalute 上個 S-expression
+Emacs*XlwMenu.evaluateEntireBuffer.labelString: Evaluate 整個 Buffer
+Emacs*XlwMenu.commentOutRegion.labelString: 將整個 Region 注解掉
+Emacs*XlwMenu.indentRegion.labelString: 縮排此 Region
+Emacs*XlwMenu.indentLine.labelString: 縮排此行
+
+!! C mode
+
+Emacs*XlwMenu.upConditional.labelString: 往上一個條件式
+Emacs*XlwMenu.backwardConditional.labelString: 往後一個條件式
+Emacs*XlwMenu.forwardConditional.labelString: 往前一個條件式
+Emacs*XlwMenu.backwardStatement.labelString: 往後一個指令
+Emacs*XlwMenu.forwardStatement.labelString: 往前一個指令
+
+!! Default edit popup menu
+
+Emacs*XlwMenu.xEmacsCommands.labelString:	XEmacs 指令
+Emacs*XlwMenu.selectBlock.labelString:	選擇區塊
+Emacs*XlwMenu.unsplitWindow.labelString:	放大 Window
+
+!! Default modeline popup menu
+
+Emacs*XlwMenu.deleteWindowAbove.labelString: 砍掉上面的 Window
+Emacs*XlwMenu.deleteOtherWindows.labelString: 砍掉另一個 Window
+Emacs*XlwMenu.splitWindowAbove.labelString: 分割上面的 Window
+Emacs*XlwMenu.splitWindowHorizontally.labelString: 水平分割 Window
+Emacs*XlwMenu.balanceWindows.labelString: 平衡 Windows 排列
+
+!! (Shell mode) History menu
+
+Emacs*XlwMenu.expandHistoryBeforePoint.labelString: 在指標前展開 History
+Emacs*XlwMenu.listInputHistory.labelString: 列出輸入的 History
+
+
+!
+! Part 2: XRESOURCES
+!
+
+Emacs.geometry:	80x30+10+10
+
+!
+! The Lucid Scrollbar supports two added resources, SliderStyle is either
+! "plain" (default) or "dimple".  Dimple puts a small dimple in the middle
+! of the slider that depresses when the slider is clicked on.  ArrowPosition is
+! either "opposite" (default) or "same".  Opposite puts the arrows at opposite
+! of the scrollbar, same puts both arrows at the same end, like the Amiga.
+!
+Emacs*XlwScrollBar.SliderStyle:		dimple
+Emacs*XlwScrollBar.ArrowPosition:	opposite
+
+! Fonts.
+! ======
+
+!! FontSet for the window frame and menus when you use USE_XFONTSET
+!Emacs.FontSet-0: -*-medium-r-normal--16-*,chinese-big5-unix:-arphic-*-medium-r-*-16-*-big5-0
+
+! CDE doesn't require this but OpenWindows does.
+! Lucid also need this to set menubar fonts.
+Emacs*fontList:	-*-medium-r-normal--16-*-iso8859-1;\
+		-arphic-ming-medium-r-normal--16-*-big5-0:
+
+! The default font for the text area of XEmacs is chosen at run-time
+! by lisp code which tries a number of different possibilities in order
+! of preference.  If you wish to override it, use this:
+! 
+Emacs.default.attributeFont:	-*-medium-r-normal--16-*
+
+! If you choose a font which does not have an italic version, you can specify
+! some other font to use for it here:
+! 
+Emacs.italic.attributeFont:	-*-medium-i-normal--16-*
+
+! Font of the modeline, menubar and pop-up menus.
+! Note that the menubar resources do not use the `face' syntax, since they
+! are X toolkit widgets and thus outside the domain of XEmacs proper.
+! 
+!Emacs*menubar*Font: 		-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*
+!Emacs*popup*Font:		-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*
+
+! Font in the Motif dialog boxes.
+! (Motif uses `fontList' while most other things use `font' - if you don't
+! know why you probably don't want to.)
+! 
+!Emacs*XmDialogShell*FontList:	-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*
+!Emacs*XmTextField*FontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
+!Emacs*XmText*FontList:		-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
+!Emacs*XmList*FontList:		-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
+
+! Font in the Athena dialog boxes.
+! I think 14-point looks nicer than 12-point.
+! Some people use 12-point anyway because you get more text, but
+! there's no purpose at all in doing this for dialog boxes.
+
+!Emacs*Dialog*Font:		-*-helvetica-bold-r-*-*-*-140-*-*-*-*-iso8859-*
+
+! XIM input method style 
+! ======================= 
+
+Emacs.inputMethod:	xcin
+Emacs.preeditType:	Root
+
+! ximStyles is a (whitespace or comma-separated) list of XIMStyles in
+! order of user's preference.  
+! Choose a subset of the following styles or reorder to taste
+Emacs*ximStyles: XIMPreeditPosition|XIMStatusArea\
+            XIMPreeditPosition|XIMStatusNothing\
+            XIMPreeditPosition|XIMStatusNone\
+            XIMPreeditNothing|XIMStatusArea\
+            XIMPreeditNothing|XIMStatusNothing\
+            XIMPreeditNothing|XIMStatusNone\
+            XIMPreeditNone|XIMStatusArea\
+            XIMPreeditNone|XIMStatusNothing\
+            XIMPreeditNone|XIMStatusNone
+
+! XIM Preedit and Status foreground and background
+!Emacs*EmacsFrame.ximForeground: black
+!Emacs*EmacsFrame.ximBackground: white
+
+! XIM fontset (defaults to system fontset default)
+! Emacs*EmacsFrame.FontSet: -dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*
+
+*cursorColor: IndianRed
