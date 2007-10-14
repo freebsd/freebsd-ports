@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
@@ -35,7 +35,9 @@ MAN3=		archive_entry.3 \
 		archive_write_disk.3 \
 		libarchive.3 \
 		libarchive_internals.3
-MAN5=		libarchive-formats.5 \
+MAN5=		cpio.5 \
+		libarchive-formats.5 \
+		mtree.5 \
 		tar.5
 
 .include <bsd.port.pre.mk>
