@@ -35,7 +35,7 @@ PLIST_FILES=	bin/gv \
 		lib/X11/gv/gv_system.ad \
 		lib/X11/gv/gv_user.ad \
 		lib/X11/gv/gv_user_res.dat \
-		lib/X11/gv/GV
+		lib/X11/app-defaults/GV
 PLIST_DIRS=	lib/X11/gv
 
 post-install:
