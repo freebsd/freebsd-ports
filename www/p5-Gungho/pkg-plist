@@ -1,0 +1,55 @@
+bin/gungho
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gungho/.packlist
+%%SITE_PERL%%/Gungho.pm
+%%SITE_PERL%%/Gungho/Base.pm
+%%SITE_PERL%%/Gungho/Component.pm
+%%SITE_PERL%%/Gungho/Component/Authentication.pm
+%%SITE_PERL%%/Gungho/Component/Authentication/Basic.pm
+%%SITE_PERL%%/Gungho/Component/Cache.pm
+%%SITE_PERL%%/Gungho/Component/RobotRules.pm
+%%SITE_PERL%%/Gungho/Component/RobotRules/Rule.pm
+%%SITE_PERL%%/Gungho/Component/RobotRules/Storage.pm
+%%SITE_PERL%%/Gungho/Component/RobotRules/Storage/Cache.pm
+%%SITE_PERL%%/Gungho/Component/RobotRules/Storage/DB_File.pm
+%%SITE_PERL%%/Gungho/Component/Throttle.pm
+%%SITE_PERL%%/Gungho/Component/Throttle/Domain.pm
+%%SITE_PERL%%/Gungho/Component/Throttle/Simple.pm
+%%SITE_PERL%%/Gungho/Component/Throttle/Throttler.pm
+%%SITE_PERL%%/Gungho/Engine.pm
+%%SITE_PERL%%/Gungho/Engine/Danga/Socket.pm
+%%SITE_PERL%%/Gungho/Engine/IO/Async.pm
+%%SITE_PERL%%/Gungho/Engine/POE.pm
+%%SITE_PERL%%/Gungho/Exception.pm
+%%SITE_PERL%%/Gungho/Handler.pm
+%%SITE_PERL%%/Gungho/Handler/FileWriter/Simple.pm
+%%SITE_PERL%%/Gungho/Handler/Null.pm
+%%SITE_PERL%%/Gungho/Inline.pm
+%%SITE_PERL%%/Gungho/Log.pm
+%%SITE_PERL%%/Gungho/Log/Dispatch.pm
+%%SITE_PERL%%/Gungho/Log/Simple.pm
+%%SITE_PERL%%/Gungho/Plugin.pm
+%%SITE_PERL%%/Gungho/Plugin/RequestLog.pm
+%%SITE_PERL%%/Gungho/Plugin/RequestTimer.pm
+%%SITE_PERL%%/Gungho/Provider.pm
+%%SITE_PERL%%/Gungho/Provider/File/Simple.pm
+%%SITE_PERL%%/Gungho/Provider/Simple.pm
+%%SITE_PERL%%/Gungho/Provider/YAML.pm
+%%SITE_PERL%%/Gungho/Request.pm
+%%SITE_PERL%%/Gungho/Request/http.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gungho
+@dirrmtry %%SITE_PERL%%/Gungho/Request
+@dirrmtry %%SITE_PERL%%/Gungho/Provider/File
+@dirrmtry %%SITE_PERL%%/Gungho/Provider
+@dirrmtry %%SITE_PERL%%/Gungho/Plugin
+@dirrmtry %%SITE_PERL%%/Gungho/Log
+@dirrmtry %%SITE_PERL%%/Gungho/Handler/FileWriter
+@dirrmtry %%SITE_PERL%%/Gungho/Handler
+@dirrmtry %%SITE_PERL%%/Gungho/Engine/IO
+@dirrmtry %%SITE_PERL%%/Gungho/Engine/Danga
+@dirrmtry %%SITE_PERL%%/Gungho/Engine
+@dirrmtry %%SITE_PERL%%/Gungho/Component/Throttle
+@dirrmtry %%SITE_PERL%%/Gungho/Component/RobotRules/Storage
+@dirrmtry %%SITE_PERL%%/Gungho/Component/RobotRules
+@dirrmtry %%SITE_PERL%%/Gungho/Component/Authentication
+@dirrmtry %%SITE_PERL%%/Gungho/Component
+@dirrmtry %%SITE_PERL%%/Gungho
