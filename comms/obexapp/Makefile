@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	obexapp
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.8
 CATEGORIES=	comms net
 MASTER_SITES=	http://www.geocities.com/m_evmenkin/
 
@@ -29,15 +29,4 @@ MAKE_ENV+=	NO_MAN=yes
 
 MAKE_ENV+=	NO_WERROR=yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502101
-IGNORE=		needs 5.x from 20 Jan 2004 or later (sdpd)
-.endif
-
-.if ${OSVERSION} < 502121
-# libbluetooth is only installed on i386 before this version
-ONLY_FOR_ARCHS=	i386
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
