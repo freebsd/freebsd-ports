@@ -1,5 +1,0 @@
-bin/mule-19.34
-@exec ln -sf %D/%F %B/mule
-@unexec rm %B/mule
-share/mule/19.34/etc/DOC-19.34.1
-share/mule/19.34/site-lisp/site-start.el

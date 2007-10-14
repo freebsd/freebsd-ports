@@ -3281,3 +3281,35 @@ graphics/xpcd||2007-10-11|Has expired: is an abandoned project and might be vuln
 comms/ixj||2007-10-11|Has expired: does not work on any supported FreeBSD version
 chinese/emacs20||2007-10-11|Has expired: "editors/emacs is recommended instead for new installations"
 java/collections||2007-10-11|Has expired: only needed for jdk1.1, which is obsolete
+chinese/mule-freewnn||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+chinese/xemacs||2007-10-14|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+converters/mule-ucs-emacs20||2007-10-14|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+devel/eieio-emacs20||2007-10-14|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+editors/apel-emacs20||2007-10-14|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+editors/bitmap-emacs20||2007-10-14|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+editors/emacs19||2007-10-14|Has expired: emacs19 is obsolete; please use a more recent version
+editors/emacs20||2007-10-14|Has expired: "editors/emacs is recommended instead for new installations"
+editors/flim-emacs20||2007-10-14|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+editors/mule-common||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+editors/mule||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+editors/semi-emacs20||2007-10-14|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+editors/speedbar-emacs20||2007-10-14|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+irc/irchat-pj-emacs20||2007-10-14|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+irc/pure-emacs20||2007-10-14|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+japanese/diclookup-emacs20||2007-10-14|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+japanese/diclookup-mule||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/mule-canna+freewnn+sj3||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/mule-canna+sj3+wnn6||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/mule-canna+sj3+wnn7||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/mule-canna+sj3||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/mule-canna+wnn6||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/mule-canna+wnn7||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/mule-canna||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/mule-freewnn||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/mule-sj3||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/mule-wnn6||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/mule-wnn7||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+japanese/navi2ch-emacs20||2007-10-14|Has expired: emacs20 and related ports are obsolete; please use a more recent version
+japanese/w3||2007-10-14|Has expired: distfile is 10 years old and depends on emacs19 which is obsolete
+korean/mule-freewnn||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
+www/w3||2007-10-14|Has expired: distfile is 10 years old and depends on emacs19 which is obsolete

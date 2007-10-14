@@ -448,7 +448,6 @@ apc		ports/math/apc
 apcpwr		ports/sysutils/apcpwr
 apcupsd		ports/sysutils/apcupsd
 apel		ports/editors/apel
-apel-emacs20	ports/editors/apel-emacs20
 apel-emacs21	ports/editors/apel-emacs21
 apercu		ports/www/apercu
 apg		ports/security/apg
@@ -887,7 +886,6 @@ bitefusion	ports/games/bitefusion
 bitflu		ports/net-p2p/bitflu
 bitlbee		ports/irc/bitlbee
 bitmap		ports/x11/bitmap
-bitmap-emacs20	ports/editors/bitmap-emacs20
 bitmap-emacs21	ports/editors/bitmap-emacs21
 bitmap-fonts	ports/x11-fonts/bitmap-fonts
 bitstream-vera	ports/x11-fonts/bitstream-vera
@@ -2422,7 +2420,6 @@ egypt		ports/devel/egypt
 ehnt		ports/net-mgmt/ehnt
 eiciel		ports/sysutils/eiciel
 eieio		ports/devel/eieio
-eieio-emacs20	ports/devel/eieio-emacs20
 eif		ports/games/eif
 eiffel		ports/lang/eiffel
 eiffelstudio	ports/devel/eiffelstudio
@@ -2482,8 +2479,6 @@ emacs-w3m-xemacs21-mule	ports/www/emacs-w3m-xemacs21-mule
 emacs-wget	ports/ftp/emacs-wget
 emacs-wiki	ports/textproc/emacs-wiki
 emacs.app	ports/editors/emacs.app
-emacs19		ports/editors/emacs19
-emacs20		ports/editors/emacs20
 emacs21		ports/editors/emacs21
 embassy		ports/biology/embassy
 ember		ports/games/ember
@@ -2968,7 +2963,6 @@ flightgear-aircrafts	ports/games/flightgear-aircrafts
 flightgear-atlas	ports/games/flightgear-atlas
 flightgear-mb339-pan	ports/games/flightgear-mb339-pan
 flim		ports/editors/flim
-flim-emacs20	ports/editors/flim-emacs20
 flim-emacs21	ports/editors/flim-emacs21
 flim-xemacs21-mule	ports/editors/flim-xemacs21-mule
 flip		ports/graphics/flip
@@ -4975,7 +4969,6 @@ ircd-ru		ports/irc/ircd-ru
 ircd-rusnet	ports/irc/ircd-rusnet
 ircg		ports/irc/ircg
 irchat-jp	ports/irc/irchat-jp
-irchat-pj-emacs20	ports/irc/irchat-pj-emacs20
 irchat-pj-emacs21	ports/irc/irchat-pj-emacs21
 irchat-pj-xemacs21-mule	ports/irc/irchat-pj-xemacs21-mule
 ircproxy	ports/irc/ircproxy
@@ -5086,8 +5079,6 @@ ja-ctags	ports/japanese/ctags
 ja-dbskkd-cdb	ports/japanese/dbskkd-cdb
 ja-ddskk	ports/japanese/ddskk
 ja-devil-fpw	ports/japanese/devil-fpw
-ja-diclookup-emacs20	ports/japanese/diclookup-emacs20
-ja-diclookup-mule	ports/japanese/diclookup-mule
 ja-drpl		ports/japanese/drpl
 ja-dvi2dvi	ports/japanese/dvi2dvi
 ja-dvi2tty	ports/japanese/dvi2tty
@@ -5262,17 +5253,6 @@ ja-mozilla-jlp	ports/japanese/mozilla-jlp
 ja-mplusfonts	ports/japanese/mplusfonts
 ja-msdosfs	ports/japanese/msdosfs
 ja-mtools	ports/japanese/mtools
-ja-mule-canna	ports/japanese/mule-canna
-ja-mule-canna+freewnn+sj3	ports/japanese/mule-canna+freewnn+sj3
-ja-mule-canna+sj3	ports/japanese/mule-canna+sj3
-ja-mule-canna+sj3+wnn6	ports/japanese/mule-canna+sj3+wnn6
-ja-mule-canna+sj3+wnn7	ports/japanese/mule-canna+sj3+wnn7
-ja-mule-canna+wnn6	ports/japanese/mule-canna+wnn6
-ja-mule-canna+wnn7	ports/japanese/mule-canna+wnn7
-ja-mule-freewnn	ports/japanese/mule-freewnn
-ja-mule-sj3	ports/japanese/mule-sj3
-ja-mule-wnn6	ports/japanese/mule-wnn6
-ja-mule-wnn7	ports/japanese/mule-wnn7
 ja-multiskkserv	ports/japanese/multiskkserv
 ja-mutt		ports/japanese/mutt
 ja-mutt-devel	ports/japanese/mutt-devel
@@ -5280,7 +5260,6 @@ ja-mypaedia-fpw	ports/japanese/mypaedia-fpw
 ja-mypaedia-fpw-package	ports/japanese/mypaedia-fpw-package
 ja-namazu	ports/japanese/namazu
 ja-namazu2	ports/japanese/namazu2
-ja-navi2ch-emacs20	ports/japanese/navi2ch-emacs20
 ja-navi2ch-emacs21	ports/japanese/navi2ch-emacs21
 ja-navi2ch-xemacs21-mule	ports/japanese/navi2ch-xemacs21-mule
 ja-ne		ports/japanese/ne
@@ -5437,7 +5416,6 @@ ja-vflib	ports/japanese/vflib
 ja-vftool	ports/japanese/vftool
 ja-vje30	ports/japanese/vje30
 ja-vlgothic	ports/japanese/vlgothic
-ja-w3		ports/japanese/w3
 ja-w3m		ports/japanese/w3m
 ja-w3m-img	ports/japanese/w3m-img
 ja-waeijiro-fpw	ports/japanese/waeijiro-fpw
@@ -6033,7 +6011,6 @@ ko-man-doc	ports/korean/man-doc
 ko-mizifont	ports/korean/mizifont
 ko-mod_url	ports/korean/mod_url
 ko-msdosfs	ports/korean/msdosfs
-ko-mule-freewnn	ports/korean/mule-freewnn
 ko-munhwafonts-cid	ports/korean/munhwafonts-cid
 ko-nabi		ports/korean/nabi
 ko-nh2ps	ports/korean/nh2ps
@@ -7910,10 +7887,7 @@ mugshot		ports/net/mugshot
 muh		ports/irc/muh
 muine		ports/audio/muine
 mulberry	ports/mail/mulberry
-mule		ports/editors/mule
-mule-common	ports/editors/mule-common
 mule-ucs	ports/converters/mule-ucs
-mule-ucs-emacs20	ports/converters/mule-ucs-emacs20
 multi-aterm	ports/x11/multi-aterm
 multi-backgrounds-daemon	ports/deskutils/multi-backgrounds-daemon
 multi-gnome-terminal	ports/x11/multi-gnome-terminal
@@ -12902,7 +12876,6 @@ punbb		ports/www/punbb
 pup		ports/print/pup
 puppet		ports/sysutils/puppet
 puppet-devel	ports/sysutils/puppet-devel
-pure-emacs20	ports/irc/pure-emacs20
 pure-emacs21	ports/irc/pure-emacs21
 pure-ftpd	ports/ftp/pure-ftpd
 pure-sfv	ports/security/pure-sfv
@@ -14624,7 +14597,6 @@ selectwm	ports/x11-wm/selectwm
 selenium	ports/www/selenium
 semantic	ports/devel/semantic
 semi		ports/editors/semi
-semi-emacs20	ports/editors/semi-emacs20
 semi-emacs21	ports/editors/semi-emacs21
 semi-xemacs21-mule	ports/editors/semi-xemacs21-mule
 send		ports/net-mgmt/send
@@ -15019,7 +14991,6 @@ speak		ports/games/speak
 speak_freely	ports/mbone/speak_freely
 specimen	ports/audio/specimen
 speedbar	ports/editors/speedbar
-speedbar-emacs20	ports/editors/speedbar-emacs20
 speedcrunch	ports/math/speedcrunch
 speex		ports/audio/speex
 spegla		ports/ftp/spegla
@@ -16304,7 +16275,6 @@ vxquery		ports/security/vxquery
 vxtools		ports/emulators/vxtools
 vym		ports/deskutils/vym
 vyqchat		ports/net/vyqchat
-w3		ports/www/w3
 w3-4		ports/www/w3-4
 w3af		ports/security/w3af
 w3m		ports/www/w3m
@@ -17707,7 +17677,6 @@ zh-moefonts-cid	ports/chinese/moefonts-cid
 zh-moettf	ports/chinese/moettf
 zh-mplayer-fonts	ports/chinese/mplayer-fonts
 zh-msttf	ports/chinese/msttf
-zh-mule-freewnn	ports/chinese/mule-freewnn
 zh-muni		ports/chinese/muni
 zh-mutt		ports/chinese/mutt
 zh-ntuttf	ports/chinese/ntuttf
@@ -17766,7 +17735,6 @@ zh-vflib	ports/chinese/vflib
 zh-wangttf	ports/chinese/wangttf
 zh-wenju	ports/chinese/wenju
 zh-wordpress	ports/chinese/wordpress
-zh-xemacs	ports/chinese/xemacs
 zh-xemacs21	ports/chinese/xemacs21
 zh-xmms		ports/chinese/xmms
 zh-xpdf		ports/chinese/xpdf

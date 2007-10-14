@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.68 2007-08-04 11:37:23 gabor Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.69 2007-10-14 10:09:47 vd Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -63,42 +63,8 @@ EMACS_PORT_NAME?=	emacs22
 
 EMACS_MASTERDIR_PKGFILES?=	NO
 
-# Emacs-19.x
-.if (${EMACS_PORT_NAME} == "emacs19")
-EMACS_NAME=		emacs
-EMACS_VER=		19.34
-EMACS_MAJOR_VER=	19
-EMACS_LIBDIR?=		share/${EMACS_NAME}
-EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
-EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs19
-EMACS_COMMON_PORT=	NO
-EMACS_HAS_MULE=		NO
-EMACS_NO_SUBDIRSEL=	YES
-.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
-COMMENTFILE?=		${PKGDIR}/pkg-comment.emacs19
-DESCR?=                 ${PKGDIR}/pkg-descr.emacs19
-PLIST?=                 ${PKGDIR}/pkg-plist.emacs19
-.endif
-
-# Emacs-20.x
-.elif (${EMACS_PORT_NAME} == "emacs20")
-EMACS_NAME=		emacs
-EMACS_VER=		20.7
-EMACS_MAJOR_VER=	20
-EMACS_LIBDIR?=		share/${EMACS_NAME}
-EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
-EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs20
-EMACS_COMMON_PORT=	NO
-EMACS_HAS_MULE=		YES
-EMACS_NO_SUBDIRSEL=	NO
-.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
-COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
-DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
-PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
-.endif
-
 # Emacs-21.x
-.elif (${EMACS_PORT_NAME} == "emacs21")
+.if (${EMACS_PORT_NAME} == "emacs21")
 EMACS_NAME=		emacs
 EMACS_VER=		21.3
 EMACS_MAJOR_VER=	21
@@ -146,23 +112,6 @@ EMACS_NO_SUBDIRSEL=	NO
 COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
 DESCR?=			${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
 PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
-.endif
-
-# Mule-19.x
-.elif (${EMACS_PORT_NAME} == "mule")
-EMACS_NAME=		mule
-EMACS_VER=		19.34
-EMACS_MAJOR_VER=	19
-EMACS_LIBDIR?=		share/${EMACS_NAME}
-EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
-EMACS_PORTSDIR=		${PORTSDIR}/editors/mule
-EMACS_COMMON_PORT=	YES
-EMACS_HAS_MULE=		YES
-EMACS_NO_SUBDIRSEL=	YES
-.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
-COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
-DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
-PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
 
 # XEmacs-21.x
@@ -242,9 +191,9 @@ PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 check-makevars::
 	@${ECHO} "Makefile error: Bad value of EMACS_PORT_NAME: ${EMACS_PORT_NAME}."
 	@${ECHO} "Valid values are:"
-	@${ECHO} "	Emacs  family: emacs19 mule emacs20 emacs21 emacs22"
-	@${ECHO} "	XEmacs family: xemacs xemacs20 xemacs21 xemacs21-mule"
-	@${ECHO} "	               xemacs-devel xemacs-devel-mule xemacs-mule-xft"
+	@${ECHO} "	Emacs  family: emacs21 emacs22 emacs-devel"
+	@${ECHO} "	XEmacs family: xemacs21 xemacs21-mule xemacs-devel"
+	@${ECHO} "	               xemacs-devel-mule xemacs-mule-xft"
 	@${FALSE}
 .endif
 
