@@ -14,6 +14,8 @@ DISTNAME=	wrapper_${PORTVERSION}_src
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Application to solve problems common to many Java applications
 
+BROKEN=		does not build
+
 USE_JAVA=	1.3+
 
 DATADIR=	${PREFIX}/lib/${PORTNAME}
