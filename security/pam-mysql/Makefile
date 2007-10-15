@@ -17,14 +17,14 @@ COMMENT=	A pam module for authenticating with MySQL
 
 USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal:14 autoconf:261
+USE_AUTOTOOLS=	aclocal:14 autoconf:261 libtool:15
 ACLOCAL_ARGS=	-I ${PREFIX}/share/aclocal
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --with-pam-mods-dir=${PREFIX}/lib --with-pam=/usr
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-PLIST_FILES=	lib/pam_mysql.la lib/pam_mysql.so
+PLIST_FILES=	lib/pam_mysql.la lib/pam_mysql.so lib/pam_mysql.a
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
