@@ -14,6 +14,7 @@ bin/openttd
 %%DATADIR%%/lang/brazilian_portuguese.lng
 %%DATADIR%%/lang/bulgarian.lng
 %%DATADIR%%/lang/catalan.lng
+%%DATADIR%%/lang/croatian.lng
 %%DATADIR%%/lang/czech.lng
 %%DATADIR%%/lang/danish.lng
 %%DATADIR%%/lang/dutch.lng
