@@ -1,4 +1,6 @@
+bin/senna
 bin/senna-cfg
+bin/sennachk
 include/senna/senna.h
 lib/libsenna.a
 lib/libsenna.la
