@@ -16,6 +16,7 @@ COMMENT=	A development framework for C
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_GMAKE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
