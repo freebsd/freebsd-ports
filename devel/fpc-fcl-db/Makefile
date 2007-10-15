@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-db
 
@@ -13,6 +13,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal Component Library
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
+		${UNITSDIR}/fcl-base/Package.fpc:${PORTSDIR}/devel/fpc-fcl-base \
 		${UNITSDIR}/ibase/Package.fpc:${PORTSDIR}/databases/fpc-ibase \
 		${UNITSDIR}/mysql/Package.fpc:${PORTSDIR}/databases/fpc-mysql \
 		${UNITSDIR}/odbc/Package.fpc:${PORTSDIR}/databases/fpc-odbc \
