@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-image
 
@@ -14,7 +14,8 @@ COMMENT=	Free Pascal Component Library
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		${UNITSDIR}/fcl-base/Package.fpc:${PORTSDIR}/devel/fpc-fcl-base \
-		${UNITSDIR}/hash/Package.fpc:${PORTSDIR}/security/fpc-hash\
+		${UNITSDIR}/hash/Package.fpc:${PORTSDIR}/security/fpc-hash \
+		${UNITSDIR}/netdb/Package.fpc:${PORTSDIR}/net/fpc-netdb \
 		${UNITSDIR}/pasjpeg/Package.fpc:${PORTSDIR}/graphics/fpc-pasjpeg \
 		${UNITSDIR}/paszlib/Package.fpc:${PORTSDIR}/archivers/fpc-paszlib \
 		${UNITSDIR}/libpng/Package.fpc:${PORTSDIR}/graphics/fpc-libpng

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-fpcunit
 
@@ -13,6 +13,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal Component Library
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
+		${UNITSDIR}/fcl-base/Package.fpc:${PORTSDIR}/devel/fpc-fcl-base \
 		${UNITSDIR}/fcl-xml/Package.fpc:${PORTSDIR}/devel/fpc-fcl-xml
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
