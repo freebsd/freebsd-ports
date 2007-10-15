@@ -98,6 +98,11 @@ bricolage/upgrade/1.10.2/add_asset_counts.pl
 bricolage/upgrade/1.10.2/add_ja.pl
 bricolage/upgrade/1.10.2/deleted_moved_js.pl
 bricolage/upgrade/1.10.2/fix_reverted_docs.pl
+bricolage/upgrade/1.10.3/alter_category_name_length.pl
+bricolage/upgrade/1.10.3/fix_asset_fk_constraints.pl
+bricolage/upgrade/1.10.3/fix_asset_sort_opts.pl
+bricolage/upgrade/1.10.3/fix_contri_assoc.pl
+bricolage/upgrade/1.10.3/fix_story_elementtype_spelling.pl
 bricolage/comp/admin/alerts/dhandler
 bricolage/comp/admin/alerts/recip
 bricolage/comp/admin/control/publish/category.html
@@ -2905,9 +2910,9 @@ bricolage/data/burn/comp/oc_1/story.mc
 %%SITE_PERL%%/Bric/Util/UserPref.pm
 %%SITE_PERL%%/mach/auto/Bric/.packlist
 %%SITE_PERL%%/mach/auto/bric_bin/.packlist
-share/bricolage/Pg.sql
+%%DATADIR%%/Pg.sql
 
-@dirrm share/bricolage
+@dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/Bric/Util/Trans
 @dirrm %%SITE_PERL%%/Bric/Util/Priv/Parts
 @dirrm %%SITE_PERL%%/Bric/Util/Priv
@@ -2956,6 +2961,7 @@ share/bricolage/Pg.sql
 @dirrm %%SITE_PERL%%/Bric
 @dirrm %%SITE_PERL%%/mach/auto/Bric
 @dirrm %%SITE_PERL%%/mach/auto/bric_bin
+@dirrm bricolage/upgrade/1.10.3
 @dirrm bricolage/upgrade/1.10.2
 @dirrm bricolage/upgrade/1.10.1
 @dirrm bricolage/upgrade/1.10.0
