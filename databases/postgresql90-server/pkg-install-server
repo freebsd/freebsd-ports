@@ -8,6 +8,8 @@ DB_DIR=${PKG_PREFIX}/${PGUSER}
 
 backupwarning() { echo "
 
+  == BETA QUALITY, DON'T FOR PRODUCTION USE ==
+
   =========== BACKUP YOUR DATA! =============
   As always, backup your data before
   upgrading. If the upgrade leads to a higher

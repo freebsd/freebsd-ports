@@ -13,7 +13,7 @@ PORTREVISION=	0
 
 COMMENT=	PostgreSQL database (client)
 
-MASTERDIR=	${.CURDIR}/../postgresql82-server
+MASTERDIR=	${.CURDIR}/../postgresql83-server
 
 BUILD_DIRS=	config src/include src/interfaces \
 		src/bin/pg_dump src/bin/psql src/bin/scripts src/bin/pg_config \
