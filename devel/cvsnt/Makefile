@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsnt
-PORTVERSION=	2.5.03.2382
+PORTVERSION=	2.5.03.2704
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cvsnt.org/archive/
 
@@ -15,9 +15,11 @@ COMMENT=	CVS clone
 
 CONFLICTS=	cvs-1*
 
+SUB_FILES=	patch-rcs-common.cpp
+
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	cvslockd.sh
-CONFIGURE_ARGS=	--enable-fork\
+CONFIGURE_ARGS=	--enable-fork --enable-rcs \
 		--disable-odbc --disable-postgres\
 		--disable-mysql --disable-sqlite
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -32,5 +34,9 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2\
 MAN1=		cvs.1
 MAN5=		cvs.5
 MLINKS=		cvs.1 cvsnt.1 cvs.5 cvsnt.5
+
+post-configure:
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \
+		${WRKSRC}/rcs/common.cpp
 
 .include <bsd.port.mk>

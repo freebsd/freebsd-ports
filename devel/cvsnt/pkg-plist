@@ -1,6 +1,9 @@
+bin/co
 bin/cvs
 bin/cvslockd
 bin/cvsnt
+bin/rcsdiff
+bin/rlog
 etc/cvsnt/PServer.example
 etc/cvsnt/Plugins.example
 etc/cvsnt/ca.pem
@@ -32,19 +35,20 @@ lib/cvsnt/triggers/info.la
 lib/cvsnt/triggers/info.so
 lib/cvsnt/xdiff/extdiff.la
 lib/cvsnt/xdiff/extdiff.so
-lib/libcvsapi-2.5.03.2382.so
+lib/libcvsapi-2.5.03.2704.so
 lib/libcvsapi.la
 lib/libcvsapi.so
-lib/libcvstools-2.5.03.2382.so
+lib/libcvstools-2.5.03.2704.so
 lib/libcvstools.la
 lib/libcvstools.so
-lib/libmdnsclient-2.5.03.2382.so
+lib/libmdnsclient-2.5.03.2704.so
 lib/libmdnsclient.la
 lib/libmdnsclient.so
 @dirrm lib/cvsnt/xdiff
 @dirrm lib/cvsnt/triggers
 @dirrm lib/cvsnt/protocols
 @dirrm lib/cvsnt/mdns
+@exec mkdir -p %D/lib/cvsnt/database
 @dirrm lib/cvsnt/database
 @dirrm lib/cvsnt
 @dirrm etc/cvsnt
