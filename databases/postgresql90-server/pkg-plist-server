@@ -10,15 +10,18 @@ lib/libpgport.a
 lib/postgresql/ascii_and_mic.so
 lib/postgresql/cyrillic_and_mic.so
 lib/postgresql/euc_cn_and_mic.so
+lib/postgresql/euc_jis_2004_and_shift_jis_2004.so
 lib/postgresql/euc_jp_and_sjis.so
 lib/postgresql/euc_kr_and_mic.so
 lib/postgresql/euc_tw_and_big5.so
 lib/postgresql/latin2_and_win1250.so
 lib/postgresql/latin_and_mic.so
+lib/postgresql/plpgsql.so
 lib/postgresql/utf8_and_ascii.so
 lib/postgresql/utf8_and_big5.so
 lib/postgresql/utf8_and_cyrillic.so
 lib/postgresql/utf8_and_euc_cn.so
+lib/postgresql/utf8_and_euc_jis_2004.so
 lib/postgresql/utf8_and_euc_jp.so
 lib/postgresql/utf8_and_euc_kr.so
 lib/postgresql/utf8_and_euc_tw.so
@@ -27,10 +30,10 @@ lib/postgresql/utf8_and_gbk.so
 lib/postgresql/utf8_and_iso8859.so
 lib/postgresql/utf8_and_iso8859_1.so
 lib/postgresql/utf8_and_johab.so
+lib/postgresql/utf8_and_shift_jis_2004.so
 lib/postgresql/utf8_and_sjis.so
 lib/postgresql/utf8_and_uhc.so
 lib/postgresql/utf8_and_win.so
-lib/postgresql/plpgsql.so
 %%DOCSDIR%%/README-server
 @dirrmtry %%DOCSDIR%%
 share/postgresql/conversion_create.sql
@@ -724,6 +727,12 @@ share/postgresql/timezonesets/Pacific.txt
 @dirrm share/postgresql/timezone/US
 @dirrm share/postgresql/timezone
 @dirrm share/postgresql/timezonesets
+share/postgresql/tsearch_data/hunspell_sample.affix
+share/postgresql/tsearch_data/ispell_sample.affix
+share/postgresql/tsearch_data/ispell_sample.dict
+share/postgresql/tsearch_data/synonym_sample.syn
+share/postgresql/tsearch_data/thesaurus_sample.ths
+@dirrm share/postgresql/tsearch_data
 @unexec if cmp -s ~pgsql/.profile %D/share/postgresql/dot.profile.dist; then rm -f ~pgsql/.profile; fi
 @unexec if cmp -s ~pgsql/.cshrc %D/share/postgresql/dot.cshrc.dist; then rm -f ~pgsql/.cshrc; fi
 @unexec [ -f ~pgsql/dot.profile.dist ] && rm ~pgsql/dot.profile.dist

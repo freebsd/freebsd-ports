@@ -31,6 +31,7 @@ include/postgresql/server/access/nbtree.h
 include/postgresql/server/access/printtup.h
 include/postgresql/server/access/reloptions.h
 include/postgresql/server/access/relscan.h
+include/postgresql/server/access/rewriteheap.h
 include/postgresql/server/access/rmgr.h
 include/postgresql/server/access/sdir.h
 include/postgresql/server/access/skey.h
@@ -74,6 +75,7 @@ include/postgresql/server/catalog/pg_conversion.h
 include/postgresql/server/catalog/pg_database.h
 include/postgresql/server/catalog/pg_depend.h
 include/postgresql/server/catalog/pg_description.h
+include/postgresql/server/catalog/pg_enum.h
 include/postgresql/server/catalog/pg_index.h
 include/postgresql/server/catalog/pg_inherits.h
 include/postgresql/server/catalog/pg_language.h
@@ -82,6 +84,7 @@ include/postgresql/server/catalog/pg_listener.h
 include/postgresql/server/catalog/pg_namespace.h
 include/postgresql/server/catalog/pg_opclass.h
 include/postgresql/server/catalog/pg_operator.h
+include/postgresql/server/catalog/pg_opfamily.h
 include/postgresql/server/catalog/pg_pltemplate.h
 include/postgresql/server/catalog/pg_proc.h
 include/postgresql/server/catalog/pg_rewrite.h
@@ -90,6 +93,11 @@ include/postgresql/server/catalog/pg_shdescription.h
 include/postgresql/server/catalog/pg_statistic.h
 include/postgresql/server/catalog/pg_tablespace.h
 include/postgresql/server/catalog/pg_trigger.h
+include/postgresql/server/catalog/pg_ts_config.h
+include/postgresql/server/catalog/pg_ts_config_map.h
+include/postgresql/server/catalog/pg_ts_dict.h
+include/postgresql/server/catalog/pg_ts_parser.h
+include/postgresql/server/catalog/pg_ts_template.h
 include/postgresql/server/catalog/pg_type.h
 include/postgresql/server/catalog/toasting.h
 include/postgresql/server/commands/alter.h
@@ -100,6 +108,7 @@ include/postgresql/server/commands/conversioncmds.h
 include/postgresql/server/commands/copy.h
 include/postgresql/server/commands/dbcommands.h
 include/postgresql/server/commands/defrem.h
+include/postgresql/server/commands/discard.h
 include/postgresql/server/commands/explain.h
 include/postgresql/server/commands/lockcmds.h
 include/postgresql/server/commands/portalcmds.h
@@ -225,6 +234,7 @@ include/postgresql/server/parser/parse_oper.h
 include/postgresql/server/parser/parse_relation.h
 include/postgresql/server/parser/parse_target.h
 include/postgresql/server/parser/parse_type.h
+include/postgresql/server/parser/parse_utilcmd.h
 include/postgresql/server/parser/parser.h
 include/postgresql/server/parser/parsetree.h
 include/postgresql/server/parser/scansup.h
@@ -316,12 +326,18 @@ include/postgresql/server/tcop/pquery.h
 include/postgresql/server/tcop/tcopdebug.h
 include/postgresql/server/tcop/tcopprot.h
 include/postgresql/server/tcop/utility.h
+include/postgresql/server/tsearch/ts_cache.h
+include/postgresql/server/tsearch/ts_locale.h
+include/postgresql/server/tsearch/ts_public.h
+include/postgresql/server/tsearch/ts_type.h
+include/postgresql/server/tsearch/ts_utils.h
 include/postgresql/server/utils/acl.h
 include/postgresql/server/utils/array.h
 include/postgresql/server/utils/ascii.h
 include/postgresql/server/utils/builtins.h
 include/postgresql/server/utils/cash.h
 include/postgresql/server/utils/catcache.h
+include/postgresql/server/utils/combocid.h
 include/postgresql/server/utils/date.h
 include/postgresql/server/utils/datetime.h
 include/postgresql/server/utils/datum.h
@@ -351,6 +367,7 @@ include/postgresql/server/utils/pg_crc.h
 include/postgresql/server/utils/pg_locale.h
 include/postgresql/server/utils/pg_lzcompress.h
 include/postgresql/server/utils/pg_rusage.h
+include/postgresql/server/utils/plancache.h
 include/postgresql/server/utils/portal.h
 include/postgresql/server/utils/ps_status.h
 include/postgresql/server/utils/rel.h
@@ -364,8 +381,11 @@ include/postgresql/server/utils/tuplesort.h
 include/postgresql/server/utils/tuplestore.h
 include/postgresql/server/utils/typcache.h
 include/postgresql/server/utils/tzparser.h
+include/postgresql/server/utils/uuid.h
 include/postgresql/server/utils/varbit.h
+include/postgresql/server/utils/xml.h
 @dirrm include/postgresql/server/utils
+@dirrm include/postgresql/server/tsearch
 @dirrm include/postgresql/server/tcop
 @dirrm include/postgresql/server/storage
 @dirrm include/postgresql/server/rewrite
@@ -422,16 +442,16 @@ include/sql3types.h
 include/sqlca.h
 lib/libecpg.a
 lib/libecpg.so
-lib/libecpg.so.5
+lib/libecpg.so.6
 lib/libecpg_compat.a
 lib/libecpg_compat.so
-lib/libecpg_compat.so.2
+lib/libecpg_compat.so.3
+lib/libpgtypes.so.3
 lib/libpq.a
 lib/libpq.so
 lib/libpq.so.5
 lib/libpgtypes.a
 lib/libpgtypes.so
-lib/libpgtypes.so.2
 lib/postgresql/pgxs/config/install-sh
 lib/postgresql/pgxs/config/mkinstalldirs
 lib/postgresql/pgxs/src/makefiles/pgxs.mk

@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.2.5
-PORTREVISION?=	1
+PORTVERSION?=	8.3beta1
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -16,17 +16,17 @@ DISTFILES?=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	girgen@FreeBSD.org
-COMMENT?=	The most advanced open-source database available anywhere
+COMMENT?=	BETA VERSION of the PostgreSQL server, only for testing
 
 CONFLICTS?=	${PORTNAME}-client-7.* \
 		${PORTNAME}${PKGNAMESUFFIX}-7.* \
-		${PORTNAME}-client-8.[0-13-9]* \
-		${PORTNAME}${PKGNAMESUFFIX}-8.[0-13-9]*
+		${PORTNAME}-client-8.[0-24-9]* \
+		${PORTNAME}${PKGNAMESUFFIX}-8.[0-24-9]*
 
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
-UNIQUENAME?=	${PORTNAME}82
+UNIQUENAME?=	${PORTNAME}83
 LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
@@ -37,8 +37,6 @@ GNU_CONFIGURE=	YES
 .undef USE_GMAKE
 .undef GNU_CONFIGURE
 .endif
-
-IGNORE=		"Please ignore, work in progress"
 
 CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include \
@@ -99,17 +97,17 @@ OPTIONS+=	DEBUG "Builds with debugging symbols" off
 #OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
 
 # See http://gppl.moonbone.ru/ for more info
-OPTIONS+=	HIER  "Builds with query hierarchy (server)" off
+#OPTIONS+=	HIER  "Builds with query hierarchy (server)" off
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 
-.  if (defined(SERVER_ONLY) && defined(WITH_HIER)) || make(makesum)
-PATCH_SITES+=	http://gppl.moonbone.ru/:hier820055
-PATCHFILES+=	hier-v0.5.5-Pg8.2.0.diff.gz:hier820055
-USE_BISON=	yes
-.  endif
+# .  if (defined(SERVER_ONLY) && defined(WITH_HIER)) || make(makesum)
+# PATCH_SITES+=	http://gppl.moonbone.ru/:hier820055
+# PATCHFILES+=	hier-v0.5.5-Pg8.2.0.diff.gz:hier820055
+# USE_BISON=	yes
+# .  endif
 
 # .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
 # USE_AUTOTOOLS=	autoconf:261
@@ -212,9 +210,14 @@ MAN1=		clusterdb.1 createdb.1 createlang.1 createuser.1   \
 MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		alter_domain.7 alter_function.7 alter_group.7		      \
 		alter_index.7 alter_language.7 alter_operator_class.7	      \
+		alter_operator_family.7 				      \
 		alter_role.7						      \
 		alter_schema.7 alter_sequence.7 alter_table.7		      \
-		alter_trigger.7 alter_user.7 analyze.7 begin.7		      \
+		alter_text_search_configuration.7			      \
+		alter_text_search_dictionary.7				      \
+		alter_text_search_parser.7				      \
+		alter_text_search_template.7				      \
+		alter_trigger.7 alter_user.7 alter_view.7 analyze.7 begin.7   \
 		checkpoint.7 close.7 cluster.7 comment.7 commit.7	      \
 		commit_prepared.7					      \
 		copy.7 create_aggregate.7 create_cast.7			      \
@@ -222,17 +225,25 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		create_database.7 create_domain.7 create_function.7	      \
 		create_group.7 create_index.7 create_language.7		      \
 		create_operator.7 create_operator_class.7		      \
-		create_role.7						      \
+		create_operator_family.7 create_role.7			      \
 		create_rule.7 create_schema.7 create_sequence.7		      \
-		create_table.7 create_table_as.7 create_trigger.7	      \
+		create_table.7 create_table_as.7			      \
+		create_text_search_configuration.7			      \
+		create_text_search_dictionary.7				      \
+		create_text_search_parser.7				      \
+		create_text_search_template.7 create_trigger.7		      \
 		create_type.7 create_user.7 create_view.7 deallocate.7	      \
-		declare.7 delete.7					      \
+		declare.7 delete.7 discard.7				      \
 		drop_aggregate.7 drop_cast.7 drop_conversion.7		      \
 		drop_database.7 drop_domain.7 drop_function.7		      \
 		drop_group.7 drop_index.7 drop_language.7		      \
-		drop_operator.7 drop_operator_class.7 drop_owned.7	      \
-		drop_role.7 drop_rule.7					      \
-		drop_schema.7 drop_sequence.7 drop_table.7 drop_trigger.7     \
+		drop_operator.7 drop_operator_class.7 drop_operator_family.7  \
+		drop_owned.7 drop_role.7 drop_rule.7			      \
+		drop_schema.7 drop_sequence.7 drop_table.7		      \
+		drop_text_search_configuration.7			      \
+		drop_text_search_dictionary.7				      \
+		drop_text_search_parser.7				      \
+		drop_text_search_template.7 drop_trigger.7		      \
 		drop_type.7 drop_user.7 drop_view.7 end.7 execute.7	      \
 		explain.7 fetch.7 grant.7 insert.7 listen.7 load.7	      \
 		lock.7 move.7 notify.7 prepare.7 prepare_transaction.7	      \
