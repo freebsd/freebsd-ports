@@ -1607,6 +1607,7 @@ cricket		ports/net-mgmt/cricket
 crimap		ports/biology/crimap
 crimson		ports/textproc/crimson
 crip		ports/audio/crip
+cripple		ports/audio/cripple
 criticalmass	ports/games/criticalmass
 crm114		ports/mail/crm114
 cromwell	ports/sysutils/cromwell
