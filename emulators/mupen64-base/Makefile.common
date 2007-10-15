@@ -106,6 +106,7 @@ post-configure:
 
 .for f in ${FIXFILES}
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/${f}
+	@${REINPLACE_CMD} -e 's|(GLvoid)|(void)|' ${WRKSRC}/${f}
 .endfor
 
 .if ${PKGNAMESUFFIX} != "-base"

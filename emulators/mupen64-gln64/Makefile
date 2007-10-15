@@ -7,7 +7,7 @@
 
 PORTNAME=	mupen64
 PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 PKGNAMESUFFIX=	-gln64
 
 COMMENT=	The glN64 graphics plugin for Mupen64
@@ -15,7 +15,7 @@ COMMENT=	The glN64 graphics plugin for Mupen64
 USE_GL=		yes
 USE_SDL=	sdl
 
-FIXFILES=	glN64/DepthBuffer.cpp
+FIXFILES=	glN64/DepthBuffer.cpp glN64/glATI.h
 
 PLUGIN_NAME=	glN64
 
