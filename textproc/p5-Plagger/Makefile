@@ -7,7 +7,7 @@
 
 PORTNAME=	Plagger
 PORTVERSION=	0.7.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -102,10 +102,10 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 		FILHTMLSCRB "Filter::HTMLScrubber Support" on \
 		PLANETINI "Subscription::PlanetINI Support" off \
 		SUMMARYENG "Summary-English Support" off \
+		SUMJPN "Summary::Japanes" off \
 		SUMTEXTORG "Summary-TextOriginal Support" off \
 # The below are not supported yet due to lack of depending ports
 #		PRSJPNDATE "Parse Japanese datetime format" off \
-#		SUMJPN "Summary::Japanes" off \
 
 .include <bsd.port.pre.mk>
 
@@ -365,6 +365,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Config/INI/Simple.pm:${PORTSDIR}/devel/p5-Config-IN
 BUILD_DEPENDS+=	${SITE_PERL}/Lingua/EN/Summarize.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Summarize
 .endif
 
+.if defined(WITH_SUMJPN)
+BUILD_DEPENDS+=	${SITE_PERL}/Lingua/JA/Summarize/Extract.pm:${PORTSDIR}/japanese/p5-Lingua-JA-Summarize-Extract
+.endif
+
 .if defined(WITH_SUMTEXTORG)
 BUILD_DEPENDS+=	${SITE_PERL}/Text/Original.pm:${PORTSDIR}/textproc/p5-Text-Original
 .endif
@@ -551,6 +555,7 @@ MAN3=		Plagger.3 \
 
 post-patch:
 	${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL
+	${RM} ${WRKSRC}/lib/Plagger/Plugin/Publish/Feed.pm.orig
 
 post-install:
 .if !defined(NOPORTDOCS)
