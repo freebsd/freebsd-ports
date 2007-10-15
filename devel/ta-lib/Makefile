@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
-MAINTAINER=	bdheeman@hotmail.com
+MAINTAINER=	bdheeman@gmail.com
 COMMENT=	A UNIX, POSIX Library for Technical Analysis
 
 WRKSRC= 	${WRKDIR}/ta-lib
