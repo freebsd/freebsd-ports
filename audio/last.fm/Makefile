@@ -19,8 +19,8 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-install pkg-deinstall
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui imageformats_run moc_build network qmake_build rcc sql \
-		uic_build xml
+QT_COMPONENTS=	gui imageformats_run moc_build network qmake_build rcc_build \
+		sql uic_build xml
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ENV+=	X11BASE=${X11BASE}
