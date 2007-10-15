@@ -7087,6 +7087,7 @@ lmon		ports/sysutils/lmon
 lmpc		ports/games/lmpc
 lmtp2nntp	ports/mail/lmtp2nntp
 lmtpd		ports/mail/lmtpd
+lndir		ports/devel/lndir
 localedata	ports/misc/localedata
 localize	ports/textproc/localize
 locator		ports/comms/locator
