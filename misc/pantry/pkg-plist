@@ -130,8 +130,11 @@ bin/pantry
 %%PORTDOCS%%%%DOCSDIR%%/pantry-user-guide.html
 %%PORTDOCS%%%%DOCSDIR%%/pantry-user-guide.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/foods.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pantry.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/foods.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/panconvert.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pantryrc.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/recipes.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zsh-functions
 %%PORTDATA%%%%DATADIR%%/master
 @dirrm %%PYTHON_SITELIBDIR%%/pantry/cli
 @dirrm %%PYTHON_SITELIBDIR%%/pantry/lib/xmlproc
