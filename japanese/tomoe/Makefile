@@ -30,14 +30,25 @@ BUILD_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2 \
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 
 # We cannot use ${ARCH} nor ${UNAME} which are defined in bsd.port.mk, here.
-UNAME=		/usr/bin/uname
+UNAME?=		/usr/bin/uname
 ARCH!=		${UNAME} -p
+.if !defined(OSVERSION)
+AWK?=		/usr/bin/awk
+SYSCTL?=	/sbin/sysctl
+.if exists(/usr/include/sys/param.h)
+OSVERSION!=	${AWK} '/^\#define __FreeBSD_version/ {print $$3}' < /usr/include/sys/param.h
+.elif exists(/usr/src/sys/sys/param.h)
+OSVERSION!=	${AWK} '/^\#define __FreeBSD_version/ {print $$3}' < /usr/src/sys/sys/param.h
+.else
+OSVERSION!=	${SYSCTL} -n kern.osreldate
+.endif
+.endif
 
 OPTIONS=DICT_RUBY	"Enable Ruby based dictionary module"		off \
 	EST		"Enable Hyper Estraier dictionary module"	off \
 	MYSQL		"Enable MySQL dictionary module"		off \
 	PYTHON		"Enable Python module"				on
-.if ${ARCH} == "sparc64"
+.if ${ARCH} == "sparc64" || ${OSVERSION} >= 700042
 OPTIONS+=UNIHAN		"Enable Unihan database dictionary module"	off
 .else
 OPTIONS+=UNIHAN		"Enable Unihan database dictionary module"	on
@@ -78,6 +89,9 @@ PLIST_SUB+=	PYTHON=""
 .endif
 
 .if defined(WITH_UNIHAN)
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with Unihan with gcc 4.2
+.endif
 .if ${ARCH} == "sparc64"
 BROKEN=	Not buildable with Unihan on sparc64
 .endif
