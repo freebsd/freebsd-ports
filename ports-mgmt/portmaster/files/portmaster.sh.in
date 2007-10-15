@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.187
+# Local version: 1.190
 # $FreeBSD$
 
 # Copyright (c) 2005-2007 Douglas Barton, All rights reserved
@@ -870,6 +870,7 @@ delete_all_distfiles () {
 
 init_pkgrep () {
 	pkgrep=`make $PM_MAKE_ARGS -f/usr/share/mk/bsd.port.mk -VPKGREPOSITORY`
+	[ -n "$pkgrep" ] || fail 'The value of PKGREPOSITORY cannot be empty'
 	export pkgrep
 	mkdir -p $pkgrep
 }
@@ -914,14 +915,17 @@ fi
 # Set default values here so that they can be overriden above
 if [ -z "$pd" ]; then
 	pd=`make BEFOREPORTMK=yes -f/usr/share/mk/bsd.port.mk -V PORTSDIR`
+	[ -n "$pd" ] || fail 'The value of PORTSDIR cannot be empty'
 	export pd
 fi
 if [ -z "$pdb" ]; then
 	pdb=`make -f/usr/share/mk/bsd.port.mk -V PKG_DBDIR`
+	[ -n "$pdb" ] || fail 'The value of PKG_DBDIR cannot be empty'
 	export pdb
 fi
 if [ -z "$distdir" ]; then
 	distdir=`make BEFOREPORTMK=yes -f/usr/share/mk/bsd.port.mk -V DISTDIR`
+	[ -n "$distdir" ] || fail 'The value of DISTDIR cannot be empty'
 	# In case it is a symlink
 	distdir="${distdir}/"
 	export distdir
@@ -1082,22 +1086,30 @@ if [ -n "$LIST" -o -n "$LIST_PLUS" ]; then
 fi
 
 find_contents_distfiles () {
-	[ -n "$DONT_SCRUB_DISTFILES" ] && return 0
+	# dist_list and dist_list_files are used globally
 
-	# dist_list_files is used globally
-	local dist_list file
-
+	# We need to define this for use in the deletion/update process.
+	# Do it relative to OPTIONSFILE so we can be sure that they end
+	# up in the same place without having to derive it ourselves.
 	cd $pd/$1
 	dist_list=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -V OPTIONSFILE`
 	dist_list="${dist_list%options}distfiles"
+
+	[ -n "$DONT_SCRUB_DISTFILES" ] && return 0
 	[ -s "$dist_list" ] || return 0
 
 	# The grep is needed to allow for comments, etc.
+	local file
 	for file in `grep ^DISTFILE $dist_list | cut -f2 -d:`; do
 		dist_list_files="${dist_list_files} ${file#*/}"
 	done
 
 	dist_list_files=${dist_list_files# }
+}
+
+delete_dist_list () {
+	test -e "$dist_list" && unlink $dist_list
+	rmdir ${dist_list%/distfiles} 2>/dev/null
 }
 
 if [ -n "$EXPUNGE" ]; then
@@ -1119,6 +1131,7 @@ if [ -n "$EXPUNGE" ]; then
 
 		echo "===>>> Running pkg_delete -f $EXPUNGE"
 		pkg_delete -f $EXPUNGE
+		delete_dist_list
 		if [ -z "$DONT_SCRUB_DISTFILES" ]; then
 			delete_all_distfiles $origin
 		fi
@@ -1168,6 +1181,7 @@ if [ -n "$CLEAN_STALE" ]; then
 
 			echo "===>>> Running pkg_delete -f $iport"
 			pkg_delete -f ${iport}
+			delete_dist_list
 			if [ -z "$DONT_SCRUB_DISTFILES" ]; then
 				delete_all_distfiles $origin
 			fi
@@ -1205,6 +1219,7 @@ if [ "$$" -eq "$PARENT_PID" ]; then
 	export CURRENT_DEPS_O CURRENT_DEPS_I IGNOREME_YES DISPLAY_LIST IPC_SAVE
 
 	PORTS_PREFIX=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -f/usr/share/mk/bsd.port.mk -VPREFIX`
+	[ -n "$PORTS_PREFIX" ] || fail 'The value of PREFIX cannot be empty'
 	export PORTS_PREFIX
 
 	if [ -n "$INTERACTIVE_UPDATE" ]; then
@@ -1727,11 +1742,13 @@ if [ -n "$upg_port" ]; then
 	fi
 
 	pkg_delete -f $upg_port || fail 'pkg_delete failed'
+	delete_dist_list
 
 	if [ -n "$REPLACE_ORIGIN" ]; then
 		installed_newport=`iport_from_origin ${newportdir}`
 		if [ -n "$installed_newport" ]; then
 			pkg_delete -f $installed_newport
+			delete_dist_list
 		fi
 	fi
 fi
@@ -1760,23 +1777,25 @@ done
 test -d "${PORTS_PREFIX}/lib/compat/pkg" &&
     ldconfig -m ${PORTS_PREFIX}/lib/compat/pkg
 
-# Implement storage of distfile information in the
-# same way that it will (hopefully, soon?) be implemented in bsd.port.mk
-# See http://www.freebsd.org/cgi/query-pr.cgi?pr=106483
-dist_list=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -V OPTIONSFILE`
-dist_list="${dist_list%options}distfiles"
-mkdir -p ${dist_list%/distfiles}
-ds=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -V DIST_SUBDIR`
-test -n "$ds" && ds="${ds}/"
 allfiles=`make $PM_MAKE_ARGS -V ALLFILES`
-distinfo=`make $PM_MAKE_ARGS -V MD5_FILE`
-echo '# Added by portmaster' > $dist_list
-for file in $allfiles; do
-	size=`grep "^SIZE (${ds}${file})" $distinfo | cut -f4 -d' '`
-	sha256=`grep "^SHA256 (${ds}${file})" $distinfo | cut -f4 -d' '`
-	md5=`grep "^MD5 (${ds}${file})" $distinfo | cut -f4 -d' '`
-	echo "DISTFILE:${ds}${file}:SIZE=${size}:SHA256=${sha256}:MD5=${md5}" >> $dist_list
-done
+if [ ! "$allfiles" = ' ' ]; then
+	# Implement storage of distfile information in the way that
+	# it will (hopefully, soon?) be implemented in bsd.port.mk
+	# See http://www.freebsd.org/cgi/query-pr.cgi?pr=106483
+	dist_list=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -V OPTIONSFILE`
+	dist_list="${dist_list%options}distfiles"
+	mkdir -p ${dist_list%/distfiles}
+	ds=`make BEFOREPORTMK=yes $PM_MAKE_ARGS -V DIST_SUBDIR`
+	test -n "$ds" && ds="${ds}/"
+	distinfo=`make $PM_MAKE_ARGS -V MD5_FILE`
+	echo '# Added by portmaster' > $dist_list
+	for file in $allfiles; do
+		size=`grep "^SIZE (${ds}${file})" $distinfo | cut -f4 -d' '`
+		sha256=`grep "^SHA256 (${ds}${file})" $distinfo | cut -f4 -d' '`
+		md5=`grep "^MD5 (${ds}${file})" $distinfo | cut -f4 -d' '`
+		echo "DISTFILE:${ds}${file}:SIZE=${size}:SHA256=${sha256}:MD5=${md5}" >> $dist_list
+	done
+fi
 
 if [ -n "$MAKE_PACKAGE" ]; then
 	echo "===>>> Creating a package for new version $new_port"
@@ -1834,17 +1853,17 @@ if [ -n "$URB_YES" -o -n "$UPDATE_REQ_BYS" -o -n "$FORCE" ]; then
 	touch $pdb/$new_port/PM_UPGRADE_DONE_FLAG
 fi
 
-# Make sure any new distfiles get added to the list
-cd $pd/$portdir 2>/dev/null ||
-    fail "Cannot cd to $pd/$portdir for distfile update"
-distinfo=`make $PM_MAKE_ARGS -V MD5_FILE`
-if [ -s "$distinfo" ]; then
-	grep '^MD5' $distinfo | while read disc1 file disc2; do
-		echo $file >> $DI_FILES
-	done
-fi
-
 if [ -z "$DONT_SCRUB_DISTFILES" ]; then
+	# Make sure any new distfiles get added to the list
+	cd $pd/$portdir 2>/dev/null ||
+	    fail "Cannot cd to $pd/$portdir for distfile update"
+	distinfo=`make $PM_MAKE_ARGS -V MD5_FILE`
+	if [ -s "$distinfo" ]; then
+		grep '^MD5' $distinfo | while read disc1 file disc2; do
+			echo $file >> $DI_FILES
+		done
+	fi
+
 	if [ -z "$oldportdir" ]; then
 		delete_stale_distfiles
 	else
