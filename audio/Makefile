@@ -96,6 +96,7 @@
     SUBDIR += cplay
     SUBDIR += cpp-xmms2
     SUBDIR += crip
+    SUBDIR += cripple
     SUBDIR += csound
     SUBDIR += csound-manual
     SUBDIR += cue2toc
