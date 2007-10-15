@@ -7,11 +7,13 @@
 #
 
 PORTNAME=	pcc
-DATESPEC=	070920
+DATESPEC=	071001
 PORTVERSION=	0.9.8.${DATESPEC}
 PORTREVISION?=	0
 CATEGORIES=	lang
-MASTER_SITES=	ftp://226.net120.skekraft.net/pcc/
+MASTER_SITES=	ftp://pcc.ludd.ltu.se/pub/pcc/ \
+		http://pcc.ludd.ltu.se/ftp/pub/pcc/ \
+		ftp://226.net120.skekraft.net/pcc/
 DISTNAME=	pcc-${DATESPEC}
 EXTRACT_SUFX=	.tgz
 
@@ -26,7 +28,8 @@ CONFIGURE_ENV+=	YACC=${YACC}
 CONFIGURE_TARGET= --build=${ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 
-PLIST_FILES=	bin/pcc libexec/ccom libexec/cpp
+PLIST_FILES=	bin/pcc libexec/ccom libexec/cpp \
+		man/man1/pcc.1 man/man1/cpp.1 man/man1/ccom.1
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/os/freebsd
