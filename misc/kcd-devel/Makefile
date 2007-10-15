@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kcd-devel
-PORTVERSION=	7.13.0
+PORTVERSION=	7.13.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kcd
@@ -15,12 +15,11 @@ DISTNAME=	kcd-${PORTVERSION}
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Change directory in full-screen visual mode
 
-IGNORE=		Attempts to allocate all of memory during configure
-
 USE_GETTEXT=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+			--sysconfdir=${PREFIX}/etc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
