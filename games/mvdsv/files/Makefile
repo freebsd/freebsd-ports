@@ -11,8 +11,8 @@
 # Created on Wednesday, May 21 2003 by Alexey Dokuchaev <danfe@regency.nsu.ru>
 #
 
-DO_CFLAGS =	${CFLAGS} -funsigned-char -I${LOCALBASE}/include -Dstricmp=strcasecmp \
-		-DSERVERONLY -DUSE_PR2 -D${BYTE_ORDER}Q__
+DO_CFLAGS =	${CFLAGS} -funsigned-char -I${LOCALBASE}/include \
+		-Dstricmp=strcasecmp -DSERVERONLY -DUSE_PR2 -D${BYTE_ORDER}Q__
 
 .if !defined(WITHOUT_KQUEUE)
 DO_CFLAGS+=	-DKQUEUE
@@ -43,13 +43,14 @@ SV_OBJS = \
 \
 		sv_ccmds.o \
 		sv_demo.o \
+		sv_demo_misc.o \
+		sv_demo_qtv.o \
 		sv_ents.o \
 		sv_init.o \
 		sv_login.o \
 		sv_main.o \
 		sv_master.o \
 		sv_mod_frags.o \
-		sv_model.o \
 		sv_move.o \
 		sv_nchan.o \
 		sv_phys.o \
@@ -60,11 +61,12 @@ SV_OBJS = \
 		bothtools.o \
 		cmd.o \
 		common.o \
+		cmodel.o \
 		crc.o \
 		cvar.o \
 		fs.o \
 		mathlib.o \
-		mdfour.o \
+		md4.o \
 		net_chan.o \
 		net.o \
 		pmove.o \
@@ -79,8 +81,8 @@ SV_OBJS = \
 
 .if ${ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 SV_AS_OBJS = \
-		math.o \
-		worlda.o
+		bothtoolsa.o \
+		math.o
 .endif
 
 SV_LIBS = -lm
@@ -101,6 +103,11 @@ QWDTOOLS_OBJS = \
 		qwdtools/sync.o \
 		qwdtools/tools.o
 
+.if ${ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
+QWDTOOLS_AS_OBJS = \
+		bothtoolsa.o
+.endif
+
 ########################################################################
 
 .c.o:
@@ -114,8 +121,9 @@ all:	mvdsv qwdtools
 mvdsv:	${SV_OBJS} ${SV_AS_OBJS} .PHONY
 		${CC} ${CFLAGS} -o ../mvdsv ${SV_OBJS} ${SV_AS_OBJS} ${SV_LIBS}
 
-qwdtools:	${QWDTOOLS_OBJS} .PHONY
-		${CC} ${CFLAGS} -o ../qwdtools ${QWDTOOLS_OBJS} ${SV_LIBS}
+qwdtools:	${QWDTOOLS_OBJS} ${QWDTOOLS_AS_OBJS} .PHONY
+		${CC} ${CFLAGS} -o ../qwdtools ${QWDTOOLS_OBJS} \
+			${QWDTOOLS_AS_OBJS}
 
 clean:
 		-rm -f *.o *.core
