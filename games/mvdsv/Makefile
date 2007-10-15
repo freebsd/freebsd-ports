@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mvdsv
-PORTVERSION=	0.20
+PORTVERSION=	0.27
 PORTEPOCH=	2
 CATEGORIES?=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -43,6 +43,10 @@ pre-everything::
 .if ${ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 	@${ECHO_MSG} "Define WITHOUT_X86_ASM to disable x86 assembly code"
 .endif
+
+post-extract:
+# Fix bogus directories permissions
+	@${FIND} ${WRKDIR} -type d -exec ${CHMOD} +X '{}' \;
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../${PORTNAME} ${PREFIX}/bin
