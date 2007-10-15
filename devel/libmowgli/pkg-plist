@@ -1,5 +1,7 @@
 include/libmowgli/mowgli.h
 include/libmowgli/mowgli_alloc.h
+include/libmowgli/mowgli_allocation_policy.h
+include/libmowgli/mowgli_allocator.h
 include/libmowgli/mowgli_argstack.h
 include/libmowgli/mowgli_assert.h
 include/libmowgli/mowgli_bitvector.h

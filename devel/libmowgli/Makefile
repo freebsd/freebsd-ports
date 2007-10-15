@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmowgli
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	devel
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -14,13 +14,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A development framework for C
 
-MAKE_ENV+=	VERBOSE=1
-
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 post-patch:
-	@${REINPLACE_CMD} 's|$$(LIBDIR)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
+	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
