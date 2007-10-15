@@ -17,18 +17,20 @@ COMMENT=	Fast, secure, simple VPN software with NAT-traversal
 
 PATCH_DEPENDS=	upx:${PORTSDIR}/archivers/upx
 
-NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 
 USE_RC_SUBR=	hamachi.sh
 PLIST_FILES=	bin/hamachi bin/hamachi-init sbin/hamachi-tuncfg
 PORTDOCS=	README CHANGES
+MAKE_ENV=	HAMACHI_DST=${PREFIX}/bin TUNCFG_DST=${PREFIX}/sbin
 
 post-patch:
 	${RM} -f ${WRKSRC}/tuncfg/tuncfg
+	${LOCALBASE}/bin/upx -d ${WRKSRC}/hamachi
+
+do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/tuncfg/tuncfg ${WRKSRC}/tuncfg/tuncfg.c
-	upx -d ${WRKSRC}/hamachi
 
 post-install:
 .if !defined(NOPORTDOCS)
