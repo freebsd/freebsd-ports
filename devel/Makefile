@@ -687,6 +687,7 @@
     SUBDIR += linxt
     SUBDIR += lion
     SUBDIR += llvm
+    SUBDIR += lndir
     SUBDIR += log4c
     SUBDIR += log4cplus
     SUBDIR += log4cpp
