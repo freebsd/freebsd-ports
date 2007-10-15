@@ -7,7 +7,8 @@ include/libmcs/mcs.h
 lib/libmcs.so
 lib/libmcs.so.1
 lib/libmcs.so.1.0.0
-lib/mcs/libkeyfile.so
+lib/mcs/keyfile.so
+lib/mcs/gconf.so
 libdata/pkgconfig/libmcs.pc
 @dirrm include/libmcs
 @dirrm lib/mcs
