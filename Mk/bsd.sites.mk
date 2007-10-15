@@ -515,6 +515,10 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.no.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.dit.upm.es/linux/gnome/%SUBDIR%/ \
 	http://rpmfind.net/linux/gnome.org/%SUBDIR%/ \
+	http://saimei.acc.umu.se/pub/GNOME/%SUBDIR%/ \
+	http://laotzu.acc.umu.se/pub/GNOME/%SUBDIR%/ \
+	http://farbror.acc.umu.se/pub/GNOME/%SUBDIR%/ \
+	http://chuangtzu.acc.umu.se/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
 	http://ftp.unina.it/pub/linux/GNOME/%SUBDIR%/ \
