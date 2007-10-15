@@ -168,6 +168,7 @@
     SUBDIR += njs
     SUBDIR += nml
     SUBDIR += nqc
+    SUBDIR += nwcc
     SUBDIR += objc
     SUBDIR += ocaml
     SUBDIR += ocaml-camlidl
