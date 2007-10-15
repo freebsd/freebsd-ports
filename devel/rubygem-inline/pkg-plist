@@ -82,7 +82,6 @@ bin/inline_package
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Inline
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/File.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Dir.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Array.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
 @dirrm %%GEM_DOC_DIR%%
