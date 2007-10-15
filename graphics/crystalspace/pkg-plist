@@ -1,5 +1,7 @@
 bin/3ds2lev
 bin/3ds2lev-1.0
+bin/ceguitest
+bin/ceguitest-1.0
 bin/cs-config
 bin/cs-config-1.0
 bin/csbench
@@ -31,6 +33,8 @@ bin/partconv-1.0
 bin/python.cex
 bin/startme
 bin/startme-1.0
+bin/viewmesh
+bin/viewmesh-1.0
 bin/vsh
 bin/vsh-1.0
 bin/walktest
@@ -596,6 +600,7 @@ lib/crystalspace/bindoc.so
 lib/crystalspace/bruteblock.so
 lib/crystalspace/bugplug.so
 lib/crystalspace/csbmpimg.so
+lib/crystalspace/cscegui.so
 lib/crystalspace/csconin.so
 lib/crystalspace/csconout.so
 lib/crystalspace/cscursor.so
