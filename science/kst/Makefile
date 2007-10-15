@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kst
-PORTVERSION=	1.3.1
-PORTREVISION=	3
+PORTVERSION=	1.4.0
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE} \
 		http://omega.astro.utoronto.ca/${PORTNAME}/
@@ -32,10 +31,6 @@ MAN1=		kst.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libreadline.so.5)
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
-.endif
-
 .if defined(WITH_NETCDF)
 LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
 PLIST_SUB+=	NETCDF=""
@@ -45,6 +40,8 @@ PLIST_SUB+=	NETCDF="@comment "
 .endif
 
 .if defined(WITH_CDF)
+CONFIGURE_ARGS+=LDFLAGS="-lm"
+MAKE_ARGS+=	AUTOMAKE="${TRUE}"
 LIB_DEPENDS+=	cdf.0:${PORTSDIR}/science/cdf
 PLIST_SUB+=	CDF=""
 .else
