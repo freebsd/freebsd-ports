@@ -16,6 +16,8 @@ COMMENT=	Performance and information monitoring tool
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
+USE_PERL5_BUILD=	yes
+
 # Synonym for WITHOUT_SYMUX
 .if defined(WITHOUT_RRD)
 WITHOUT_SYMUX=	yes
