@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="51b51d4a-7c0f-11dc-9e47-0011d861d5e2">
+    <topic>phpmyadmin -- cross-site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><lt>2.11.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SecurityFocus reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2006-5">
+	  <p>phpMyAdmin is prone to a cross-site scripting vulnerability
+	    because it fails to properly sanitize user-supplied input.</p>
+	  <p>An attacker may leverage this issue to execute arbitrary script
+	    code in the browser of an unsuspecting user in the context of the
+	    affected site. This may help the attacker steal potentially
+	    sensitive information and launch other attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-5386</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2007-5</url>
+      <url>http://www.digitrustgroup.com/advisories/TDG-advisory071009a</url>
+      <url>http://secunia.com/advisories/27173</url>
+      <bid>26020</bid>
+    </references>
+    <dates>
+      <discovery>2007-10-12</discovery>
+      <entry>2006-10-16</entry>
+    </dates>
+  </vuln>
   <vuln vid="7453c85d-7830-11dc-b4c8-0016179b2dd5">
     <topic>nagios-plugins -- Long Location Header Buffer Overflow Vulnerability</topic>
     <affects>
