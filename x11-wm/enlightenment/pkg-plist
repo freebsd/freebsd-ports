@@ -11,18 +11,23 @@ bin/starte16
 %%DATADIR%%/E-docs/prev2.png
 %%DATADIR%%/E-docs/title.png
 %%DATADIR%%/config/actionclasses.cfg
-%%DATADIR%%/config/backup-borders.cfg
-%%DATADIR%%/config/backup-colormodifiers.cfg
-%%DATADIR%%/config/backup-cursors.cfg
-%%DATADIR%%/config/backup-imageclasses.cfg
-%%DATADIR%%/config/backup-textclasses.cfg
-%%DATADIR%%/config/backup-tooltips.cfg
 %%DATADIR%%/config/bindings.cfg
 %%DATADIR%%/config/definitions
 %%DATADIR%%/config/e16keyedit.db
-%%DATADIR%%/config/fonts.cfg-xft_example
+%%DATADIR%%/config/fonts.cfg.xft
+%%DATADIR%%/config/fonts.cfg.pango
 %%DATADIR%%/config/matches.cfg
 %%DATADIR%%/config/menus.cfg
+%%DATADIR%%/config/menus/desktop.menu
+%%DATADIR%%/config/menus/enlightenment.menu
+%%DATADIR%%/config/menus/maintenance.menu
+%%DATADIR%%/config/menus/settings.menu
+%%DATADIR%%/config/menus/winops.menu
+%%DATADIR%%/config/menus/winops_groups.menu
+%%DATADIR%%/config/menus/winops_layer.menu
+%%DATADIR%%/config/menus/winops_misc.menu
+%%DATADIR%%/config/menus/winops_opacity.menu
+%%DATADIR%%/config/menus/winops_size.menu
 %%DATADIR%%/config/pix/about.png
 %%DATADIR%%/config/pix/apple.png
 %%DATADIR%%/config/pix/areas.png
@@ -75,16 +80,13 @@ bin/starte16
 %%DATADIR%%/config/pix/wait8.png
 %%DATADIR%%/config/pix/wait9.png
 %%DATADIR%%/config/pix/world.png
-%%DATADIR%%/misc/E-GNOME
-%%DATADIR%%/misc/E-KDE
-%%DATADIR%%/misc/E16
-%%DATADIR%%/misc/Xclients.e-gnome
-%%DATADIR%%/misc/Xclients.e-kde
-%%DATADIR%%/misc/Xclients.e16
-%%DATADIR%%/misc/e-gnome.desktop
-%%DATADIR%%/misc/e-kde.desktop
 %%DATADIR%%/misc/e16.desktop
-%%DATADIR%%/misc/starte16
+%%DATADIR%%/misc/e16.png
+%%DATADIR%%/misc/e16-gnome.desktop
+%%DATADIR%%/misc/e16-kde.desktop
+%%DATADIR%%/misc/Xclients.e16.sh
+%%DATADIR%%/misc/Xclients.e16-gnome.sh
+%%DATADIR%%/misc/Xclients.e16-kde.sh
 %%DATADIR%%/scripts/e_cache_clean
 %%DATADIR%%/scripts/e_cache_query
 %%DATADIR%%/scripts/e_gen_menu
@@ -378,6 +380,7 @@ bin/starte16
 %%DATADIR%%/themes/winter/ttfonts/VeraBd.ttf
 share/xsessions/e16.desktop
 @dirrm %%DATADIR%%/E-docs
+@dirrm %%DATADIR%%/config/menus
 @dirrm %%DATADIR%%/config/pix
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%/misc
