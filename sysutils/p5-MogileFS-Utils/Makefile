@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MogileFS-Utils
-PORTVERSION=	2.11
+PORTVERSION=	2.12
 CATEGORIES=	sysutils net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADFITZ
@@ -21,5 +21,6 @@ RUN_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
 PERL_CONFIGURE=	yes
 
 MAN1=		mogadm.1 mogtool.1
+MAN3=		MogileFS::Utils.3
 
 .include <bsd.port.mk>
