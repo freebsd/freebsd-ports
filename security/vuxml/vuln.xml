@@ -38,7 +38,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>phpmyadmin -- cross-site scripting vulnerability</topic>
     <affects>
       <package>
-	<name>phpmyadmin</name>
+	<name>phpMyAdmin</name>
 	<range><lt>2.11.1.1</lt></range>
       </package>
     </affects>
@@ -65,6 +65,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-10-12</discovery>
       <entry>2006-10-16</entry>
+      <modified>2007-10-16</modified>
     </dates>
   </vuln>
   <vuln vid="7453c85d-7830-11dc-b4c8-0016179b2dd5">
@@ -8652,7 +8653,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>phpmyadmin -- cross site scripting vulnerability</topic>
     <affects>
       <package>
-	<name>phpmyadmin</name>
+	<name>phpMyAdmin</name>
 	<range><lt>2.8.2</lt></range>
 	</package>
     </affects>
@@ -8672,6 +8673,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-06-30</discovery>
       <entry>2006-07-03</entry>
+      <modified>2007-10-16</modified>
     </dates>
   </vuln>
 
