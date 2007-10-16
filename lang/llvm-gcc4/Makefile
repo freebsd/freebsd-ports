@@ -12,7 +12,7 @@ MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	llvm-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}.0-${PORTVERSION}.source
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	emil@cs.rmit.edu.au
 COMMENT=	gcc4 frontend for LLVM
 
 GNU_CONFIGURE=	yes
