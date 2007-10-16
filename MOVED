@@ -3315,3 +3315,4 @@ korean/mule-freewnn||2007-10-14|Has expired: emacs19 and related ports are obsol
 www/w3||2007-10-14|Has expired: distfile is 10 years old and depends on emacs19 which is obsolete
 security/p5-Digest-SHA2||2007-10-16|Has expired: Has numerious known bugs, deprecated in favor of Digest::SHA
 devel/p5-Devel-Peek||2007-10-16|Has expired: depends on antique versions of perl
+net/skype-devel||2007-10-16|No longer needed: Please update to net/skype

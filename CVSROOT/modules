@@ -14794,7 +14794,6 @@ skstream	ports/net/skstream
 sky2000		ports/astro/sky2000
 skyeye		ports/emulators/skyeye
 skype		ports/net/skype
-skype-devel	ports/net/skype-devel
 skytemplate	ports/www/skytemplate
 skytools	ports/databases/skytools
 skyutils	ports/misc/skyutils
