@@ -3314,3 +3314,4 @@ japanese/w3||2007-10-14|Has expired: distfile is 10 years old and depends on ema
 korean/mule-freewnn||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
 www/w3||2007-10-14|Has expired: distfile is 10 years old and depends on emacs19 which is obsolete
 security/p5-Digest-SHA2||2007-10-16|Has expired: Has numerious known bugs, deprecated in favor of Digest::SHA
+devel/p5-Devel-Peek||2007-10-16|Has expired: depends on antique versions of perl
