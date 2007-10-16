@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	remind
-PORTVERSION=	3.1.2
-DISTVERSION=	03.01.02
+PORTVERSION=	3.1.3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.roaringpenguin.com/files/download/ \
 		http://freebsd.unixfreunde.de/sources/
+DISTNAME=	${PORTNAME}-03.01.03
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	Sophisticated calendar and alarm program
 
 GNU_CONFIGURE=	yes
