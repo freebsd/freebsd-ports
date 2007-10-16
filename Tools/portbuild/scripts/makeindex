@@ -50,6 +50,14 @@ case "x$1" in
     branch=7
     INDEXFILE=INDEX-7
     ;;
+  x7-exp)
+    branch=7-exp
+    INDEXFILE=INDEX-7
+    ;;
+  x8)
+    branch=8
+    INDEXFILE=INDEX-8
+    ;;
   *)
     usage
     ;;
