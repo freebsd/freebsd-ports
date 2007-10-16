@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.38 2006-12-05 13:49:45 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.39 2007-10-16 04:34:49 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -406,32 +406,34 @@ case "$monthly_statistics_enable" in
       enable_token
       report_system
       echo "Posting monthly OS statistics to $checkin_server"
-      case "$monthly_statistics_report_devices" in
-          [Yy][Ee][Ss])
-              send_devices
-              echo "Posting monthly device statistics to $checkin_server"
-              line=$( sysctl -n hw.model )
-              VEN=$( echo $line | cut -d ' ' -f 1 )
-              DEV=$( uri_escape $( echo $line | cut -d ' ' -f 2- ) )
-              count=$( sysctl -n hw.ncpu )
-              report_cpu
-              echo "Posting monthly CPU statistics to $checkin_server"
-             ;;
-          *) 
-             echo "Posting monthly device/CPU statistics disabled"
-             echo "    set monthly_statistics_report_devices=\"YES\" in $periodic_conf"
-             ;;
-      esac
-      case "$monthly_statistics_report_ports" in
-          [Yy][Ee][Ss])
-              send_ports
-              echo "Posting monthly ports statistics to $checkin_server"
-             ;;
-          *) 
-             echo "Posting monthly ports statistics disabled"
-             echo "    set monthly_statistics_report_ports=\"YES\" in $periodic_conf"
-             ;;
-      esac
+      if [ X"$1" != X-nodelay ]; then
+          case "$monthly_statistics_report_devices" in
+              [Yy][Ee][Ss])
+                  send_devices
+                  echo "Posting monthly device statistics to $checkin_server"
+                  line=$( sysctl -n hw.model )
+                  VEN=$( echo $line | cut -d ' ' -f 1 )
+                  DEV=$( uri_escape $( echo $line | cut -d ' ' -f 2- ) )
+                  count=$( sysctl -n hw.ncpu )
+                  report_cpu
+                  echo "Posting monthly CPU statistics to $checkin_server"
+                 ;;
+              *) 
+                 echo "Posting monthly device/CPU statistics disabled"
+                 echo "    set monthly_statistics_report_devices=\"YES\" in $periodic_conf"
+                 ;;
+          esac
+          case "$monthly_statistics_report_ports" in
+              [Yy][Ee][Ss])
+                  send_ports
+                  echo "Posting monthly ports statistics to $checkin_server"
+                 ;;
+              *) 
+                 echo "Posting monthly ports statistics disabled"
+                 echo "    set monthly_statistics_report_ports=\"YES\" in $periodic_conf"
+                 ;;
+          esac
+      fi
       disable_token
       ;;
     *) 
