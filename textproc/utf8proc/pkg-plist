@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+include/utf8proc.h
+lib/libutf8proc.a
+lib/libutf8proc.so
+lib/libutf8proc.so.1
