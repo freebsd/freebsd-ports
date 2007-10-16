@@ -386,6 +386,8 @@ post-extract:
 		${FILESDIR}/rcng.sh > ${WRKSRC}/rcng.sh
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/apache.sh \
 		> ${WRKSRC}/apache.sh
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
+		${WRKSRC}/src/Configure
 .if defined(WITH_APACHE_MODSNMP) || defined(APACHE_WITH_MODSNMP)
 	(cd ${WRKSRC}; ${TAR} xfz  ${DISTDIR}/${MODSNMP_FILE})
 .endif
