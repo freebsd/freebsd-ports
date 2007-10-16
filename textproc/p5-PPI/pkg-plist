@@ -1,3 +1,4 @@
+
 %%SITE_PERL%%/PPI.pm
 %%SITE_PERL%%/PPI/Cache.pm
 %%SITE_PERL%%/PPI/Document.pm
@@ -6,6 +7,8 @@
 %%SITE_PERL%%/PPI/Document/Normalized.pm
 %%SITE_PERL%%/PPI/Dumper.pm
 %%SITE_PERL%%/PPI/Element.pm
+%%SITE_PERL%%/PPI/Exception.pm
+%%SITE_PERL%%/PPI/Exception/ParserTimeout.pm
 %%SITE_PERL%%/PPI/Find.pm
 %%SITE_PERL%%/PPI/Lexer.pm
 %%SITE_PERL%%/PPI/Node.pm
@@ -45,6 +48,12 @@
 %%SITE_PERL%%/PPI/Token/Label.pm
 %%SITE_PERL%%/PPI/Token/Magic.pm
 %%SITE_PERL%%/PPI/Token/Number.pm
+%%SITE_PERL%%/PPI/Token/Number/Binary.pm
+%%SITE_PERL%%/PPI/Token/Number/Exp.pm
+%%SITE_PERL%%/PPI/Token/Number/Float.pm
+%%SITE_PERL%%/PPI/Token/Number/Hex.pm
+%%SITE_PERL%%/PPI/Token/Number/Octal.pm
+%%SITE_PERL%%/PPI/Token/Number/Version.pm
 %%SITE_PERL%%/PPI/Token/Operator.pm
 %%SITE_PERL%%/PPI/Token/Pod.pm
 %%SITE_PERL%%/PPI/Token/Prototype.pm
@@ -80,9 +89,11 @@
 @dirrm %%SITE_PERL%%/PPI/Token/QuoteLike
 @dirrm %%SITE_PERL%%/PPI/Token/Regexp
 @dirrm %%SITE_PERL%%/PPI/Token/Quote
+@dirrm %%SITE_PERL%%/PPI/Token/Number
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI
 @dirrmtry %%SITE_PERL%%/PPI/Statement
 @dirrmtry %%SITE_PERL%%/PPI/Structure
+@dirrmtry %%SITE_PERL%%/PPI/Exception
 @dirrmtry %%SITE_PERL%%/PPI/Document
 @dirrmtry %%SITE_PERL%%/PPI/Normal
 @dirrmtry %%SITE_PERL%%/PPI/Token
