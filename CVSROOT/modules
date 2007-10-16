@@ -9588,7 +9588,6 @@ p5-Digest-Perl-MD5	ports/security/p5-Digest-Perl-MD5
 p5-Digest-SHA	ports/security/p5-Digest-SHA
 p5-Digest-SHA-PurePerl	ports/security/p5-Digest-SHA-PurePerl
 p5-Digest-SHA1	ports/security/p5-Digest-SHA1
-p5-Digest-SHA2	ports/security/p5-Digest-SHA2
 p5-Digest-SHA256	ports/security/p5-Digest-SHA256
 p5-Digest-SV1	ports/security/p5-Digest-SV1
 p5-Digest-Tiger	ports/security/p5-Digest-Tiger
