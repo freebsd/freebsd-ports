@@ -1,2 +1,0 @@
-#! /bin/sh
-[ -x %%PREFIX%%/bin/yaunc -a -f %%PREFIX%%/etc/yaunc.conf ] && %%PREFIX%%/bin/yaunc & && echo -n ' yaunc'
