@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gcc4
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	llvm-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}.source
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}.0-${PORTVERSION}.source
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	gcc4 frontend for LLVM
@@ -48,8 +47,10 @@ INFO=		llvm-gcc/cpp \
 		llvm-gcc/gccint
 MAN1=		llvm-cpp.1 llvm-g++.1 llvm-gcc.1 llvm-gcov.1
 
-post-patch:
+post-extract:
 	@${MKDIR} ${WRKSRC}
+
+post-patch:
 	@${REINPLACE_CMD} -e 's,LLVMBASEPATH/Release/bin/llc,LLVMBASEPATH/bin/llc,'\
 	   	 ${WRKSRC}/../gcc/configure\
 		 ${WRKSRC}/../libcpp/configure
