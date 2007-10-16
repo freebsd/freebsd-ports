@@ -42,7 +42,7 @@ write_table_begin () {
   echo "<th bgcolor='$THCOLOR'>packages</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>errors</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>skipped</th>" >> ${TMPFILE}
-  echo "<th bgcolor='$THCOLOR'>missing</th>" >> ${TMPFILE}
+  echo "<th bgcolor='$THCOLOR'>not yet built</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>running?</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>completed?</th>" >> ${TMPFILE}
   echo "</tr>" >> ${TMPFILE}
@@ -120,11 +120,11 @@ write_row () {
       n_duds=`cat $directory/duds | wc -l`
     fi
 
-    # column: missing count
+    # column: not yet built count
     if [ $n_index -ne 0 ]; then
-      n_missing=`expr $n_index - $n_logs - $n_errors - $n_duds`
+      n_not_yet_built=`expr $n_index - $n_logs - $n_errors - $n_duds`
     else  # index currently being rebuilt
-      n_missing=0
+      n_not_yet_built=0
     fi
 
     # column: running flag
@@ -184,7 +184,7 @@ write_row () {
 
     echo "<td align='right' bgcolor='$cellcolor'>$n_duds</td>" >> ${TMPFILE}
 
-    echo "<td align='right' bgcolor='$cellcolor'>$n_missing</td>" >> ${TMPFILE}
+    echo "<td align='right' bgcolor='$cellcolor'>$n_not_yet_built</td>" >> ${TMPFILE}
 
     echo "<td align='center' bgcolor='$cellcolor'>$running_flag</td>" >> ${TMPFILE}
     echo "<td align='center' bgcolor='$cellcolor'>$completed_flag</td>" >> ${TMPFILE}
@@ -207,7 +207,7 @@ write_footer () {
   echo "<li><b>packages</b> is number of packages successfully built.  Note: if a run was restarted, you may see duplicates here.</li>" >> ${TMPFILE}
   echo "<li><b>errors</b> is number of packages that failed.  Note: if a run was restarted, you may see duplicates here.</li>" >> ${TMPFILE}
   echo "<li><b>skipped</b> is number of packages that were skipped due to NO_PACKAGE, IGNORE, BROKEN, FORBIDDEN, and so forth (\"duds\" file).</li>" >> ${TMPFILE}
-  echo "<li><b>missing</b> is the INDEX column minus the build logs plus the errors plus the skipped.  These are packages that have not been built for one reason or another.  Note: interrupted and/or restarted builds can make this number inaccurate because of the duplicates, above.</li>" >> ${TMPFILE}
+  echo "<li><b>not yet built</b> is the INDEX column minus the build logs plus the errors plus the skipped.  These are packages that have not been built for one reason or another.  Note: interrupted and/or restarted builds can make this number inaccurate because of the duplicates, above.</li>" >> ${TMPFILE}
   echo "<li><b>running</b> is whether there are still processes running.</li>" >> ${TMPFILE}
   echo "<li><b>completed</b> is whether that build terminated normally or not, as seen from the logfile.</li>" >> ${TMPFILE}
   echo "</ul>" >> ${TMPFILE}
