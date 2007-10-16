@@ -986,6 +986,7 @@
     SUBDIR += unroff
     SUBDIR += unrtf
     SUBDIR += urlview
+    SUBDIR += utf8proc
     SUBDIR += uz-aspell
     SUBDIR += vbindiff
     SUBDIR += wa-aspell
