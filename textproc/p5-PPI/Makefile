@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PPI
-PORTVERSION=	1.118
+PORTVERSION=	1.200
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -16,7 +16,7 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Analyze and manipulate Perl code without using perl itself
 
 BUILD_DEPENDS=	\
-		p5-Clone>=0.17:${PORTSDIR}/devel/p5-Clone \
+		p5-Clone>=0.22:${PORTSDIR}/devel/p5-Clone \
 		p5-Scalar-List-Utils>=0.17:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-List-MoreUtils>=0.13:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Params-Util>=0.10:${PORTSDIR}/devel/p5-Params-Util \
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	\
 		p5-Test-ClassAPI>=1.02:${PORTSDIR}/devel/p5-Test-ClassAPI \
 		p5-Test-SubCalls>=0.01:${PORTSDIR}/devel/p5-Test-SubCalls \
 		p5-PathTools>=0.84:${PORTSDIR}/devel/p5-PathTools \
-		p5-File-Remove>=0.22:${PORTSDIR}/devel/p5-File-Remove
+		p5-File-Remove>=0.34:${PORTSDIR}/devel/p5-File-Remove
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -79,6 +79,12 @@ MAN3=	PPI.3 \
 	PPI::Token::Label.3 \
 	PPI::Token::Magic.3 \
 	PPI::Token::Number.3 \
+	PPI::Token::Number::Binary.3 \
+	PPI::Token::Number::Exp.3 \
+	PPI::Token::Number::Float.3 \
+	PPI::Token::Number::Hex.3 \
+	PPI::Token::Number::Octal.3 \
+	PPI::Token::Number::Version.3 \
 	PPI::Token::Operator.3 \
 	PPI::Token::Pod.3 \
 	PPI::Token::Prototype.3 \
