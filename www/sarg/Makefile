@@ -7,7 +7,7 @@
 
 PORTNAME=	sarg
 PORTVERSION=	2.2.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -24,7 +24,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC=gcc CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-bindir="${PREFIX}/bin" \
 		--enable-sysconfdir="${PREFIX}/etc/${PORTNAME}" \
-		--enable-htmldir="${PREFIX}/www/${PORTNAME}"
+		--enable-htmldir="${PREFIX}/www/${PORTNAME}" \
+		--enable-mandir="${MAN1PREFIX}/man/man1"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		sarg.1
