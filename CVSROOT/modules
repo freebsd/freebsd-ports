@@ -16057,6 +16057,7 @@ ustl		ports/devel/ustl
 utcount		ports/sysutils/utcount
 utf8conv	ports/converters/utf8conv
 utf8locale	ports/misc/utf8locale
+utf8proc	ports/textproc/utf8proc
 utftools	ports/misc/utftools
 utftpd		ports/net/utftpd
 uticom		ports/comms/uticom
