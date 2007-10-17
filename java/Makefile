@@ -39,6 +39,7 @@
     SUBDIR += eclipse-pmd
     SUBDIR += eclipse-propedit
     SUBDIR += eclipse-quantum
+    SUBDIR += eclipse-shelled
     SUBDIR += eclipse-sqlexplorer
     SUBDIR += eclipse-sysdeo-tomcat
     SUBDIR += eclipse-uml
