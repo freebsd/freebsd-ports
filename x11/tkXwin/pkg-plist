@@ -1,7 +1,6 @@
 lib/libtkXwin.la
 lib/libtkXwin.so
 lib/libtkXwin.so.1
-@cd %%LOCALBASE%%
 lib/tkXwin/pkgIndex.tcl
 lib/tkXwin/test.tcl
 @dirrm lib/tkXwin
