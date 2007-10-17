@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	wtf
-PORTVERSION=	20071004
+PORTVERSION=	20071015
 CATEGORIES=	games
-MASTER_SITES=	http://www.mu.org/~mux/wtf/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mux
+MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/
 
 MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	Translates common Internet acronyms
