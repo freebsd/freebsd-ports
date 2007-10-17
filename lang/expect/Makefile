@@ -13,6 +13,8 @@ MASTER_SITES=	http://expect.nist.gov/src/
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A sophisticated scripter based on tcl/tk
 
+CONFLICTS=	expect-5.44*
+
 PORTSCOUT=	skipv:5.44.0,5.44.1	# These were recalled by NIST
 
 .if !defined(WITHOUT_X11)
