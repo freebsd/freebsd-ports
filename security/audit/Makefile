@@ -10,8 +10,7 @@ PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www1.corest.com/download/audit/ \
-		http://www2.corest.com/download/audit/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
+		ftp://ftp.stack.nl/pub/users/johans/audit/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}beta-src
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,7 +21,7 @@ OPTIONS=	MYSQL "With MySQL support" off \
 
 MAKE_ARGS=	CFLAGS+="-fPIC -DPIC"
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}beta
+WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/alat

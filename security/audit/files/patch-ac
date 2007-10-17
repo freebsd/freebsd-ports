@@ -1,6 +1,6 @@
---- src/auditd/auditd.c.orig	Sun Nov 24 05:22:21 2002
-+++ src/auditd/auditd.c	Sun Nov 24 05:25:39 2002
-@@ -54,6 +54,10 @@
+--- src/auditd/auditd.c.orig	2001-11-01 23:22:31.000000000 +0100
++++ src/auditd/auditd.c	2007-10-17 09:41:34.000000000 +0200
+@@ -55,6 +55,10 @@
  #include <sysexits.h>
  #include <unistd.h>
  #include <openssl/evp.h>
@@ -9,5 +9,5 @@
 +#include <limits.h>
 +#endif
  
- #include "version.h"
  #include "sysdep.h"
+ #include "packet.h"
