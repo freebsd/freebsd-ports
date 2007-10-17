@@ -7,7 +7,7 @@
 
 PORTNAME=	lopster
 PORTVERSION=	1.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://lopster.sourceforge.net/download/
@@ -24,10 +24,6 @@ CONFIGURE_ARGS=	--with-pthread=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 .if exists(${LOCALBASE}/lib/libogg.so.4)
 WITH_OGG=	yes
