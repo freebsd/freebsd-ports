@@ -7,6 +7,7 @@ lib/alat/libattr_peo.so.1
 lib/alat/libattr_regex.so.1
 lib/alat/libattr_tcp.so.1
 lib/alat/libauth_raw.so.1
+lib/alat/libauth_srp.so.1
 lib/alat/libia_syslog.so.1
 lib/alat/libres_local.so.1
 sbin/auditd
