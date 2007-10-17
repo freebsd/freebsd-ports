@@ -38,10 +38,6 @@ DOC_FILES=	COPYING AUTHORS NEWS README ChangeLog INSTALL
 BROKEN=		Runaway cc1plus process
 .endif
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 .ifdef(WITH_GTK2)
 PLIST_SUB=	INSTALL_GTK2=""
 USE_GCC=	3.4+
