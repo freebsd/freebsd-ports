@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://www.securiweb.net/pub/oss/dircproxy/1.0/ \
 		ftp://ftp.netsplit.com/pub/dircproxy/stable/
 
-MAINTAINER=	lesterm@mazpe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A detachable irc proxy server with many features
 
 GNU_CONFIGURE=	yes
