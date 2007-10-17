@@ -22,7 +22,7 @@ OPTIONS=	PGSQL "With pgsql" Off \
 		LIGHTTPD "Use LightHTTPD for web interface" Off
 
 NO_BUILD=	yes
-WANT_PERL5=	yes
+WANT_PERL=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
