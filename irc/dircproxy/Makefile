@@ -21,10 +21,4 @@ MAN1=		dircproxy.1 dircproxy-crypt.1
 post-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
