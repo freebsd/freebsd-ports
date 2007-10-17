@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	8.2.5
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -106,7 +106,7 @@ OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 .  if (defined(SERVER_ONLY) && defined(WITH_HIER)) || make(makesum)
 PATCH_SITES+=	http://gppl.moonbone.ru/:hier820055
 PATCHFILES+=	hier-v0.5.5-Pg8.2.0.diff.gz:hier820055
-USE_BISON=	yes
+USE_BISON=	build
 .  endif
 
 # .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)

@@ -7,7 +7,7 @@
 
 PORTNAME=	openh323
 PORTVERSION=	1.18.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://www.voxgratia.org/releases/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src-
@@ -20,7 +20,7 @@ LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes

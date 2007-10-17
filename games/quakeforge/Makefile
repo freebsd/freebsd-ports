@@ -7,7 +7,7 @@
 
 PORTNAME=	quakeforge
 PORTVERSION=	0.5.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
 MASTER_SITE_SUBDIR=	quake/:sf
@@ -22,7 +22,7 @@ NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON=	generated Quake C compiler (qfcc) does not work
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

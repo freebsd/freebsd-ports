@@ -7,6 +7,7 @@
 
 PORTNAME=	flasm
 PORTVERSION=	1.52
+PORTREVISION=	1
 CATEGORIES=	graphics
 #MASTER_SITES=	http://www.nowrap.de/download/
 MASTER_SITES=	http://dist.bsdlab.org/
@@ -18,7 +19,7 @@ COMMENT=	Command line assembler/disassembler of flash actionscript bytecode
 PLIST_FILES=	bin/flasm
 USE_ZIP=	YES
 USE_GMAKE=	YES
-USE_BISON=	YES
+USE_BISON=	build
 NO_WRKSUBDIR=	YES
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 

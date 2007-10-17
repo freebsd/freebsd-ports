@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	7.4.18
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -97,7 +97,7 @@ OPTIONS+=	HIER  "Builds with query hierarchy (server)" off
 .  if (defined(SERVER_ONLY) && defined(WITH_HIER)) || make(makesum)
 PATCH_SITES+=	http://gppl.moonbone.ru/:hier74053
 PATCHFILES+=	hier-Pg7.4-0.5.3.tar.gz:hier74053
-USE_BISON=	yes
+USE_BISON=	build
 .  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_PAM)

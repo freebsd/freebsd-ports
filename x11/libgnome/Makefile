@@ -8,7 +8,7 @@
 
 PORTNAME=	libgnome
 PORTVERSION=	2.18.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -29,7 +29,7 @@ USE_XPM=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack esound \
 		gnomevfs2 libxslt ltverhack referencehack
-USE_BISON=	yes
+USE_BISON=	build
 USE_XLIB=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15

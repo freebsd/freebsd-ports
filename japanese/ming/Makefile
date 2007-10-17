@@ -7,7 +7,7 @@
 
 PORTNAME=	ming
 PORTVERSION=	0.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese graphics
 MASTER_SITES=	http://dist.bsdlab.org/
 #MASTER_SITES=	http://blue.ribbon.to/~harpy/ming/jaming/
@@ -24,7 +24,7 @@ CONFLICTS=	ming-*
 WRKSRC=		${WRKDIR}/jaming-${PORTVERSION}/src
 MAKE_ARGS=	NOPROFILE=true
 INSTALLS_SHLIB=	yes
-USE_BISON=	yes
+USE_BISON=	build
 
 UTILS=		gif2dbl \
 		gif2mask \

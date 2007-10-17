@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice.org
 PORTVERSION=	1.1.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.1/ \
 		http://openoffice.lunarshells.com/sources/1.1/ \
@@ -31,7 +31,7 @@ USE_GNOME+=	orbit
 
 USE_XLIB=	yes
 USE_PERL5=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_GNOME+=	gtk20
 WITHOUT_CPU_CFLAGS=	true

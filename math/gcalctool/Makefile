@@ -8,7 +8,7 @@
 
 PORTNAME=	gcalctool
 PORTVERSION=	5.9.14
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -19,7 +19,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME 2 calculator tool based on the old calctool for OpenWindows
 
 USE_BZIP2=	yes
-USE_BISON=	yes
+USE_BISON=	build
 INSTALLS_OMF=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes

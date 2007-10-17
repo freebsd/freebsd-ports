@@ -8,6 +8,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.14
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 		${MASTER_SITE_LOCAL}
@@ -20,7 +21,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 CFLAGS:=	${CFLAGS} -O2
 USE_XLIB=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes

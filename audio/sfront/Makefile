@@ -7,6 +7,7 @@
 
 PORTNAME=	sfront
 PORTVERSION=	0.91
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
@@ -18,7 +19,7 @@ PORTDOCS=	book sfman
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
-USE_BISON=	yes
+USE_BISON=	build
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
 

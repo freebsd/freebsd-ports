@@ -8,7 +8,7 @@
 
 PORTNAME=	libgnomeprintui
 PORTVERSION=	2.18.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -29,7 +29,7 @@ USE_GNOME=	gnomeprefix gnomehack libgnomeprint libgnomecanvas \
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=  libtool:15
-USE_BISON=	yes
+USE_BISON=	build
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

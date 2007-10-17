@@ -7,7 +7,7 @@
 
 PORTNAME=	hugs98
 PORTVERSION=	200609
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/2006-09/
 DISTNAME=	${PORTNAME}-plus-${HUGS_DATE}
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 #OPTIONS=	HUGS_OPENGL "OpenGL/GLUT support" off
 HUGS_DATE=	Sep2006
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 #CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-ffi

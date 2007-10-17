@@ -7,6 +7,7 @@
 
 PORTNAME=	pike76
 PORTVERSION=	7.6.112
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
 		http://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
@@ -78,7 +79,7 @@ CONFIGURE_ARGS+=	--without-debug \
 MAKE_ARGS=	"CONFIGUREARGS=${CONFIGURE_ARGS}"
 
 USE_GETTEXT=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 
 # Allow building Embedded Perl

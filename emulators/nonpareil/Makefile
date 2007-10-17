@@ -7,16 +7,16 @@
 
 PORTNAME=	nonpareil
 PORTVERSION=	0.78
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://nonpareil.brouhaha.com/download/
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Simulator for many HP calculators
 
-BUILD_DEPENDS=	pnmtopng:${PORTSDIR}/graphics/netpbm \
-		bison2:${PORTSDIR}/devel/bison2
+BUILD_DEPENDS=	pnmtopng:${PORTSDIR}/graphics/netpbm
 
+USE_BISON=	build
 USE_SCONS=	yes
 USE_GNOME=	gtk20 libxml2
 USE_SDL=	mixer

@@ -7,7 +7,7 @@
 
 PORTNAME=	netmond
 PORTVERSION=	2.2b6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		ftp://ftp.risp.ru/pub/RinetSoftware/
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--without-ifgraph
 .endif
 
 GNU_CONFIGURE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 
 BINOWN=		root
 BINGRP=		netmon

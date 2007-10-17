@@ -7,7 +7,7 @@
 
 PORTNAME=	carthage
 PORTVERSION=	1.0 # No version information on WWW
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.tei-c.org/Software/carthage/ \
 		http://www.tei-c.org.uk/Software/carthage/
@@ -16,8 +16,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A parser and clean-up tool for SGML DTDs
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
-
+USE_BISON=	build
 USE_ZIP=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	carthago

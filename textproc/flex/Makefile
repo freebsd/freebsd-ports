@@ -7,16 +7,17 @@
 
 PORTNAME=	flex
 PORTVERSION=	2.5.33
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Fast lexical analyzer generator
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison2 \
-		help2man:${PORTSDIR}/misc/help2man \
+BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
 		gm4:${PORTSDIR}/devel/m4
 
+USE_BISON=	build
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls

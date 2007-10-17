@@ -9,6 +9,7 @@
 
 PORTNAME=		gnat-gcc
 PORTVERSION=		4.2.2
+PORTREVISION=		1
 CATEGORIES=		lang
 MASTER_SITES=		GCC/snapshots/${versionstring} \
 			CENKES:boot \
@@ -27,7 +28,7 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_ICONV=		yes
 USE_PERL5_BUILD=	yes # Needed for man pages.
-USE_BISON=		yes
+USE_BISON=		build
 
 CONFLICTS=		gcc-4.2.*
 WRKSRC=			${WRKDIR}/build

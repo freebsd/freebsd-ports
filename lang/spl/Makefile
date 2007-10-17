@@ -7,14 +7,14 @@
 
 PORTNAME=	spl
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	The Shakespeare programming language
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 
 ALL_EXAMPLES=	Makefile fibonacci.spl fibonacci2.spl guess.spl hello.spl \

@@ -8,6 +8,7 @@
 
 PORTNAME=	ragel
 PORTVERSION=	5.23
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.queensu.ca/home/thurston/ragel/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -17,7 +18,7 @@ COMMENT=	Compile regular languages into executable C/C++ code
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

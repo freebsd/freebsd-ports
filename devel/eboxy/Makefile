@@ -8,7 +8,7 @@
 
 PORTNAME=	eboxy
 PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create simple GUI interfaces for entertainment PC
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_BZIP2=	yes
 USE_SDL=	sdl gui mixer
 USE_GNOME=	gnometarget libxml2 lthack

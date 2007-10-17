@@ -7,6 +7,7 @@
 
 PORTNAME=	tigcc
 PORTVERSION=	0.96.b8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=		${MASTER_SITE_GCC:S/$/:gcc/} \
 			${MASTER_SITE_GNU:S/$/:gas/} \
@@ -22,7 +23,7 @@ COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 NO_WRKSUBDIR=	yes
 
 do-extract:

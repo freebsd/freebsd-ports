@@ -7,6 +7,7 @@
 
 PORTNAME=	harbour
 PORTVERSION=	0.44.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.jsd0.com/public/harbour/dgh/
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 # Not 64-bit clean
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 NO_INSTALL_MANPAGES=yes
 NOPRECIOUSMAKEVARS=yes

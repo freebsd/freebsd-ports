@@ -7,6 +7,7 @@
 
 PORTNAME=	aide
 PORTVERSION=	0.13.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.cs.tut.fi/~rammer/
@@ -20,7 +21,7 @@ LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
 .include <bsd.port.pre.mk>
 
 USE_GMAKE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mhash \

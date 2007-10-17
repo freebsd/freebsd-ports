@@ -7,6 +7,7 @@
 
 PORTNAME=	gcc-3
 PORTVERSION=	3.4.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITES+=	http://people.freebsd.org/~joerg/:local
@@ -32,7 +33,7 @@ USE_AUTOTOOLS=	autoheader:213
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	avr-gcc-4*

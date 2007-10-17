@@ -7,7 +7,7 @@
 
 PORTNAME=		kaid
 PORTVERSION=		7.0.0.4b
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		games net
 MASTER_SITES=		http://www.teamxlink.co.uk/binary/
 MASTER_SITE_SUBDIR=
@@ -19,7 +19,7 @@ COMMENT=		XLink Kai tunneling server
 
 NO_WRKSUBDIR=		yes
 USE_GMAKE=		yes
-USE_BISON=		yes
+USE_BISON=		build
 USE_ZIP=		yes
 CC=			gcc
 CPP=			g++

@@ -7,6 +7,7 @@
 
 PORTNAME=	irrtoolset
 PORTVERSION=	4.8.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		ftp://ftp.ripe.net/tools/
@@ -18,7 +19,7 @@ COMMENT=	A suite of routing policy tools to interact with the IRR
 
 PLIST_FILES=	bin/rpslcheck bin/peval bin/RtConfig
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_GCC=	3.4
 GNU_CONFIGURE=	Yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	libzvt
 PORTVERSION=	2.0.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
@@ -19,7 +19,7 @@ COMMENT=	Library components for Zed's Virtual Terminal
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix gnomehack gtk20 libartlgpl2

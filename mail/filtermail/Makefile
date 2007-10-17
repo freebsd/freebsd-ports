@@ -10,7 +10,7 @@
 
 PORTNAME=	filtermail
 PORTVERSION=	0.7.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://home.in.tum.de/baueran/%SUBDIR%/
@@ -30,7 +30,7 @@ EXTRACT_AFTER_ARGS=	| ${SED} 's/[mM][aA][iI][lL][fF][iI][lL][tT][eE][rR]/filterm
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GETOPT_LONG=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

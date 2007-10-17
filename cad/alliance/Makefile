@@ -6,7 +6,7 @@
 
 PORTNAME=	alliance
 PORTVERSION=	5.0.20060509
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www-asim.lip6.fr/pub/alliance/distribution/5.0/ \
 		${MASTER_SITE_LOCAL}
@@ -21,7 +21,7 @@ NOT_FOR_ARCHS_REASON=	${PKGNAME} does not build on ${ARCH}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-5.0
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_XLIB=	yes

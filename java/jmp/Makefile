@@ -7,7 +7,7 @@
 
 PORTNAME=	jmp
 PORTVERSION=	0.51
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.khelekore.org/jmp/
 
@@ -21,7 +21,7 @@ OPTIONS+=	OPTIMIZED_CFLAGS "Compile with -O3" off
 CONFIGURE_ARGS=	--with-includes="${JAVA_HOME}/include ${LOCALBASE}/include" \
 		--with-libintl-prefix="${LOCALBASE}"
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_JAVA=	yes

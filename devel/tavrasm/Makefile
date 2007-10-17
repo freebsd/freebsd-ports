@@ -7,6 +7,7 @@
 
 PORTNAME=	tavrasm
 PORTVERSION=	1.22
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tavrasm.org/:0
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX}:0
@@ -15,8 +16,8 @@ MAINTAINER=	wes@FreeBSD.org
 COMMENT=	Tom's AVR Assembler
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
+USE_BISON=	build
 WRKSRC=		${WRKDIR}/tavrasm.122
 BUILD_WRKSRC=	${WRKSRC}/src
 

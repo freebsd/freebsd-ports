@@ -362,7 +362,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- If set, this port uses the GNU version of the ghostscript
 #				  software instead of the GPL version, which is used otherwise.
 ##
-# USE_BISON		- If set, this port uses bison for building.
+# USE_BISON		- Implies that the port uses bison in one way or another:
+#				  'yes' (backwards compatibility) - use bison for building
+#				  new features: 'build', 'run', 'both', implying build,
+#				  runtime, and both build/run dependencies
 ##
 # USE_IMAKE		- If set, this port uses imake.  Implies USE_X_PREFIX.
 # XMKMF			- Set to path of `xmkmf' if not in $PATH
@@ -1926,7 +1929,26 @@ RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
 .endif
 
 .if defined(USE_BISON)
-BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
+_BISON_DEPENDS=	bison:${PORTSDIR}/devel/bison
+
+# XXX: backwards compatibility
+. if ${USE_BISON:L} == "yes"
+USE_BISON=	build
+pre-everything::
+	@${ECHO_MSG} "WARNING: USE_BISON=yes deprecated, use build/run/both"
+. endif
+
+. if ${USE_BISON:L} == "build"
+BUILD_DEPENDS+= ${_BISON_DEPENDS}
+. elif ${USE_BISON:L} == "run"
+RUN_DEPENDS+=	${_BISON_DEPENDS}
+. elif ${USE_BISON:L} == "both"
+BUILD_DEPENDS+= ${_BISON_DEPENDS}
+RUN_DEPENDS+=	${_BISON_DEPENDS}
+. else
+IGNORE=	uses unknown USE_BISON construct
+. endif
+
 .endif
 
 .if !defined(_PERL_REFACTORING_COMPLETE)

@@ -7,6 +7,7 @@
 
 PORTNAME=	olsrd
 PORTVERSION=	0.4.10
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.olsr.org/releases/0.4/
 
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 BUILD_DEPENDS+=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 .endif
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 
 USE_RC_SUBR=	olsrd.sh

@@ -7,7 +7,7 @@
 
 PORTNAME=	elinks
 PORTVERSION=	0.11.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://elinks.or.cz/download/ \
 		http://keyserver.kjsl.com/~jharris/distfiles/
@@ -18,7 +18,7 @@ COMMENT=	Elinks - links text WWW browser with enhancements
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_OPENSSL=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib

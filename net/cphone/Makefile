@@ -7,7 +7,7 @@
 
 PORTNAME=	cphone
 DISTVERSION=	0.3.2.cvs.20060407
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/distfiles/
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 PLIST_FILES=	bin/cphone
 USE_BZIP2=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_QT_VER=	3
 USE_GMAKE=	yes
 ALL_TARGET=	optshared

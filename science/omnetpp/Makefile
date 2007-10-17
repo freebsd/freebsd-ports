@@ -7,7 +7,7 @@
 
 PORTNAME=	omnetpp
 PORTVERSION=	2.3p1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://www.omnetpp.org/download/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bkoenig@cs.tu-berlin.de
 COMMENT=	A discrete event simulation environment
 
-USE_BISON=	yes
+USE_BISON=	build
 
 TCL_VERSION?=	tcl8.4
 TK_VERSION?=	tk8.4

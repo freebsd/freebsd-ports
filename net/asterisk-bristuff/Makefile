@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.2.13
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -34,7 +34,7 @@ ONLY_FOR_ARCHS=	i386 sparc64 amd64
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/editline
 USE_GMAKE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_RC_SUBR=	asterisk.sh
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \

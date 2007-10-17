@@ -7,6 +7,7 @@
 
 PORTNAME=	boxes
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://boxes.thomasjensen.com/download/ \
 		${MASTER_SITE_SUNSITE}
@@ -18,7 +19,7 @@ COMMENT=	Draws ASCII-art configurable boxes around text or code
 
 MAN1=		boxes.1
 USE_GMAKE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 ALL_TARGET=	boxes
 MAKE_ARGS=	CC="${CC}" GLOBALCONF=${GLOBALCONF} CFLAGS="${CFLAGS} -ansi -I. -Iregexp"
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	libpathan
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://software.decisionsoft.com/software/pathan-2.0.0/
 DISTNAME=	${PORTNAME}-${PORTVERSION}beta-src
@@ -17,7 +18,7 @@ COMMENT=	Validating XML parser from the Apache XML Project
 LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/textproc/xerces-c2:extract
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

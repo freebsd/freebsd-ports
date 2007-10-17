@@ -8,6 +8,7 @@
 
 PORTNAME=	libIDL
 PORTVERSION=	0.8.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
@@ -18,7 +19,7 @@ COMMENT=	A library for creating trees of CORBA IDL files
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_GNOME=	gnomehack glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

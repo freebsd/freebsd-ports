@@ -7,6 +7,7 @@
 
 PORTNAME=	srg
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://mirror.crc.net.nz/pub/srg/
@@ -16,7 +17,7 @@ MAINTAINER=	ds@tic-tac.ru
 COMMENT=	A Squid Report Generator
 
 USE_GMAKE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
 NO_INSTALL_MANPAGES=	yes

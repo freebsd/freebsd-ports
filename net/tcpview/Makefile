@@ -7,7 +7,7 @@
 
 PORTNAME=	tcpview
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pub/noc-tools/tcpview/
 EXTRACT_SUFX=	.tar.Z
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Motif-based TCP/IP protocol analyzer
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_MOTIF=	yes
 
 MAN1=		tcpview.1

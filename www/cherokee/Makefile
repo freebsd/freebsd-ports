@@ -7,7 +7,7 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	0.5.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/${PORTVERSION:R}/${PORTVERSION}/ \
 		CENKES LOCAL/beech
@@ -22,7 +22,7 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	cherokee.sh
 USE_GCC=	3.4+
-USE_BISON=	yes
+USE_BISON=	build
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

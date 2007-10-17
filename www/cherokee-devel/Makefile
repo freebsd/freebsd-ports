@@ -7,6 +7,7 @@
 
 PORTNAME=	cherokee
 DISTVERSION=	0.6.0b863
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/0.6/${PORTVERSION:R}/ \
 		CENKES LOCAL/beech
@@ -22,7 +23,7 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	cherokee.sh
 USE_GCC=	3.4+
-USE_BISON=	yes
+USE_BISON=	build
 USE_MYSQL=	yes
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes

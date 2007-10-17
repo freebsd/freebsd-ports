@@ -7,7 +7,7 @@
 
 PORTNAME=	ptoc
 PORTVERSION=	3.56
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.garret.ru/~knizhnik/
 
@@ -17,7 +17,7 @@ COMMENT=	ANSI/Turbo Pascal to C/C++ converter
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XLIB=	yes
-USE_BISON=	yes
+USE_BISON=	build
 
 EXAMPLES=	arr.pas bgidemo.pas ccall.pas coord.txt dos.h dos.pas \
 		func.pas hello.pas impact.pas lister.pas makefile.bsd \

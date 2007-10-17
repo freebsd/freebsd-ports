@@ -7,7 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.14.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -22,7 +22,7 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		gd.4:${PORTSDIR}/graphics/gd
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl:15 libtool:15
 GNU_CONFIGURE=	yes

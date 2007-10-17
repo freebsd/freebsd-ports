@@ -7,6 +7,7 @@
 
 PORTNAME=	windstille
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS CENKES
 
@@ -26,7 +27,7 @@ USE_BZIP2=	yes
 USE_SCONS=	yes
 USE_GL=		yes
 USE_SDL=	sdl image
-USE_BISON=	yes
+USE_BISON=	build
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/lib

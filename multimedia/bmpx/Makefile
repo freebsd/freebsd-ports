@@ -7,6 +7,7 @@
 
 PORTNAME=	bmpx
 PORTVERSION=	0.40.7
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.beep-media-player.org/releases/0.40/
 
@@ -29,7 +30,7 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 CONFLICTS=	bmpx-devel-[0-9]*
 
 USE_AUTOTOOLS=	automake:19 autoconf:261
-USE_BISON=	yes
+USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2 desktopfileutils

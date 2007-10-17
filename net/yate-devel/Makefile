@@ -7,6 +7,7 @@
 
 PORTNAME=	yate
 DISTVERSION=	1.2.0.p4
+PORTREVISION=	1
 CATEGORIES=	net comms
 MASTER_SITES=	http://cto.homelinux.net/pub/FreeBSD/ports/distfiles/ \
 		http://yate.null.ro/tarballs/yate1/
@@ -21,7 +22,7 @@ LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 

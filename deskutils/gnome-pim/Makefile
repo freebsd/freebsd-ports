@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-pim
 PORTVERSION=	1.4.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.jroger.in-berlin.de/gnome-pim/
 DIST_SUBDIR=	gnome
@@ -16,7 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome pim package
 
 USE_X_PREFIX=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs libcapplet
 USE_GETTEXT=	yes

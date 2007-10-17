@@ -7,6 +7,7 @@
 
 PORTNAME=	freepops
 PORTVERSION=	0.0.99
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freepops
@@ -16,9 +17,10 @@ COMMENT=	Extensible webmail to pop3 interface
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		curl:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 MAN1=		freepopsd.1
+
+USE_BISON=	build
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh

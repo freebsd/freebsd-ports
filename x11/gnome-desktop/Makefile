@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-desktop
 PORTVERSION=	2.18.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-desktop/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -27,7 +27,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui gnomedocutils \
 GNOME_DESKTOP_VERSION=2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_XLIB=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes

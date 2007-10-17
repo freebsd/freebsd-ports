@@ -8,7 +8,7 @@
 
 PORTNAME=	graphthing
 PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://graph.seul.org/
 
@@ -17,7 +17,7 @@ COMMENT=	A tool that allows you to create, manipulate and study graphs
 
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget gtk20
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_WX=		2.6
 WX_CONF_ARGS=	absolute

@@ -7,6 +7,7 @@
 
 PORTNAME=	sfslite
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.okws.org/dist/
 
@@ -22,7 +23,7 @@ USE_GMAKE=	yes
 #
 # rpcc does not work with byacc, so just require BISON
 #
-USE_BISON=	yes
+USE_BISON=	build
 
 #
 # Map X.Y.Z.Q => X.Y

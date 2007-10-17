@@ -7,7 +7,7 @@
 
 PORTNAME=	fractorama
 PORTVERSION=	1.6.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://fractorama.com/ \
 		http://critical.ch/distfiles/${PORTNAME}/${PORTVERSION}/ \
@@ -20,7 +20,7 @@ COMMENT=	Fractal generation program
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_QT_VER=	3
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
