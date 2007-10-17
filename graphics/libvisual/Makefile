@@ -12,8 +12,7 @@ PORTNAME=	libvisual
 PORTVERSION=	0.2.0
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction library that sits between apps and visual plugin
@@ -21,20 +20,14 @@ COMMENT=	Abstraction library that sits between apps and visual plugin
 USE_XLIBS=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CONFIGURE_ENV= CFLAGS="${CFLAGS} -mmmx -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042 && ${ARCH} == i386
-BROKEN=		Does not compile with GCC 4.2 on i386
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wno-unused-variable||g' \
 		-e 's|-O3|${CFLAGS}|g' \
 		${WRKSRC}/libvisual/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
