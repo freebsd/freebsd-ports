@@ -16301,6 +16301,7 @@ wakeonlan	ports/net/wakeonlan
 walker		ports/dns/walker
 wamcc		ports/lang/wamcc
 wampager	ports/x11-wm/wampager
+wand-libconfig	ports/devel/wand-libconfig
 wanderer	ports/games/wanderer
 wanderlust	ports/mail/wanderlust
 wanderlust-emacs21	ports/mail/wanderlust-emacs21
