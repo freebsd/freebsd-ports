@@ -1,5 +1,5 @@
---- src/manager.c.orig	Tue Nov  7 13:01:17 2006
-+++ src/manager.c	Sun Dec 31 15:33:44 2006
+--- src/manager.c.orig	2006-11-07 13:01:17.000000000 -0500
++++ src/manager.c	2007-10-17 00:14:10.000000000 -0400
 @@ -23,9 +23,12 @@
  #include <sys/types.h>
  #include <sys/stat.h>
@@ -221,7 +221,7 @@
 +		for (utmp = &buf[bytes / sizeof(buf[0]) - 1]; !local && utmp >= buf; --utmp) {
 +			if (!utmp->ut_name[0] || strncmp (utmp->ut_name, user, n) != 0)
 +				continue;
-+			local = utmp->ut_line[0] == ':' && utmp->ut_line[1] >= '0' && utmp->ut_line[1] <= '9' || !strncmp (utmp->ut_line, "ttyv", 4) ? LOCAL_USER_FOUND : 0;
++			local = utmp->ut_host[0] == ':' && utmp->ut_host[1] >= '0' && utmp->ut_host[1] <= '9' || !strncmp (utmp->ut_line, "ttyv", 4) ? LOCAL_USER_FOUND : 0;
 +		}
 +	}
 +
