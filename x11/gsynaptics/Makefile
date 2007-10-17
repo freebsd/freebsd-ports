@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 USE_GNOME=	lthack intlhack intltool pkgconfig gtk20 libgnome libglade2 libgnomeui
 USE_ICONV=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
@@ -37,6 +38,5 @@ RUN_DEPENDS+=	${X11BASE}/lib/xorg/modules/input/synaptics_drv.so:${PORTSDIR}/x11
 .else
 RUN_DEPENDS+=	${X11BASE}/lib/modules/input/synaptics_drv.o:${PORTSDIR}/x11-drivers/synaptics
 .endif
-
 
 .include <bsd.port.post.mk>
