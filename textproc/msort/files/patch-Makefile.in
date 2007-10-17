@@ -1,11 +1,11 @@
---- Makefile.in.orig	Mon Mar  5 16:08:46 2007
-+++ Makefile.in	Wed Jul 25 09:26:41 2007
-@@ -120,7 +120,7 @@
- INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
- LDFLAGS = @LDFLAGS@
- LIBOBJS = @LIBOBJS@
--LIBS = @LIBS@ -lgmp
-+LIBS = @LIBS@ -lgmp -lintl
- LTLIBOBJS = @LTLIBOBJS@
- MAKEINFO = @MAKEINFO@
- NOCOMPARISONCNT_FALSE = @NOCOMPARISONCNT_FALSE@
+--- Makefile.in.orig	2007-09-03 14:48:29.000000000 +0800
++++ Makefile.in	2007-10-15 10:11:35.000000000 +0800
+@@ -37,7 +37,7 @@
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ bin_PROGRAMS = msort$(EXEEXT)
+-@UNINUMOK_TRUE@am__append_1 = -lgmp -luninum
++@UNINUMOK_TRUE@am__append_1 = -lgmp -luninum -lintl
+ @UTF8PROCOK_TRUE@am__append_2 = -lutf8proc
+ @UTF8PROCOK_TRUE@am__append_3 = -DUSEUTF8PROC
+ @UTF8PROCOK_FALSE@am__append_4 = -licutu

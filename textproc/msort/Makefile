@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	msort
-PORTVERSION=	8.38
-PORTREVISION=	2
+PORTVERSION=	8.42
 CATEGORIES=	textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
@@ -16,10 +15,11 @@ COMMENT=	Sorting files in sophisticated ways
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	tre:${PORTSDIR}/textproc/libtre \
-    		uninum:${PORTSDIR}/devel/libuninum
+    		uninum:${PORTSDIR}/devel/libuninum \
+		utf8proc:${PORTSDIR}/textproc/utf8proc
 RUN_DEPENDS=	iwidgets>=0:${PORTSDIR}/x11-toolkits/iwidgets
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include"
 GNU_CONFIGURE=	yes
 USE_TK_RUN=	yes
