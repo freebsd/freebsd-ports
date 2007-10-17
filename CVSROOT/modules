@@ -12704,6 +12704,7 @@ postgresql81-client	ports/databases/postgresql81-client
 postgresql81-server	ports/databases/postgresql81-server
 postgresql82-client	ports/databases/postgresql82-client
 postgresql82-server	ports/databases/postgresql82-server
+postgresql83-client	ports/databases/postgresql83-client
 postgresql_autodoc	ports/databases/postgresql_autodoc
 postgrey	ports/mail/postgrey
 postilion	ports/mail/postilion
