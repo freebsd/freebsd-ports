@@ -8358,6 +8358,7 @@ nvidia-xconfig	ports/x11/nvidia-xconfig
 nvnet		ports/net/nvnet
 nvtv		ports/sysutils/nvtv
 nvu		ports/www/nvu
+nwcc		ports/lang/nwcc
 nwndata		ports/games/nwndata
 nwreckdum	ports/archivers/nwreckdum
 nx		ports/devel/nx
