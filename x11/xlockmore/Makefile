@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.24
+PORTVERSION=	5.25
 CATEGORIES?=	x11
-MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
-		http://www.tux.org/~bagleyd/latest/
+MASTER_SITES=	ftp://ibiblio.org/pub/Linux/X11/screensavers/
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Like XLock session locker/screen saver, but just more
