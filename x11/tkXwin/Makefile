@@ -16,20 +16,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Tcl/Tk library to detect idle periods of an X session
 
-LIB_DEPENDS=	tcl${SHORT_TK_VER}:${PORTSDIR}/lang/tcl${SHORT_TK_VER} \
-		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
-
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_LDCONFIG=	yes
+USE_TK=		84+
 
-CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
-		--with-tclinclude=${LOCALBASE}/include/tcl${TK_VER} \
-		--with-tk=${LOCALBASE}/lib/tk${TK_VER} \
-		--with-tkinclude=${LOCALBASE}/include/tk${TK_VER}
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
+		--with-tclinclude=${TCL_INCLUDEDIR} \
+		--with-tk=${TK_LIBDIR} \
+		--with-tkinclude=${TK_INCLUDEDIR}
 CONFIGURE_ENV=	INSTALL="${INSTALL_DATA}"
-
-TK_VER=		8.4
-SHORT_TK_VER=	${TK_VER:S/.//}
 
 .include <bsd.port.mk>
