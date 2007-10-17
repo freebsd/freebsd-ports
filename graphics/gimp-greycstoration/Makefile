@@ -24,6 +24,7 @@ RUN_DEPENDS=	gimp>0:${PORTSDIR}/graphics/gimp \
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
+USE_PERL5=	yes
 
 # Redifine this if you need
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
