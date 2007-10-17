@@ -877,7 +877,6 @@ bird		ports/net/bird
 birda		ports/comms/birda
 birthday	ports/misc/birthday
 bison		ports/devel/bison
-bison2		ports/devel/bison2
 bisongen	ports/devel/bisongen
 bitchx		ports/irc/bitchx
 bitcollider	ports/deskutils/bitcollider
