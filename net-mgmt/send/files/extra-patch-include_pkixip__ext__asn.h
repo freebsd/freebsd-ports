@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/net-mgmt/send/files/Attic/extra-patch-include_pkixip__ext__asn.h,v 1.1 2007-10-17 11:06:46 miwi Exp $
 
 --- include/pkixip_ext_asn.h.orig
 +++ include/pkixip_ext_asn.h
