@@ -2288,6 +2288,7 @@
     SUBDIR += viewvc
     SUBDIR += vstr
     SUBDIR += vtcl
+    SUBDIR += wand-libconfig
     SUBDIR += websvn
     SUBDIR += wininfo
     SUBDIR += winpdb
