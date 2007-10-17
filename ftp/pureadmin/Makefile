@@ -7,26 +7,35 @@
 #
 
 PORTNAME=	pureadmin
-PORTVERSION=	0.3
-PORTREVISION=	2
+PORTVERSION=	0.4
 CATEGORIES=	ftp
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	purify
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Management utility for the PureFTPd
 
-USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix libglade2
+USE_GNOME=	pkgconfig gnomehack gnometarget libglade2
 USE_FAM=	yes
-INSTALLS_ICONS=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+INSTALLS_ICONS=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-std=gnu99||g' ${WRKSRC}/src/Makefile.in
+PORTDOCS=	index.txt introduction.txt main_window.txt \
+		preferences.txt user_manager.txt
+
+pre-configure:
+	@${REINPLACE_CMD} -e '/install-data-local:/s|install-docs||' ${WRKSRC}/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC}/docs/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>
