@@ -27,6 +27,7 @@ post-patch:
 		${WRKSRC}/mplex/mplex.cpp ${WRKSRC}/streamdvd.c
 	@${REINPLACE_CMD} -e 's|<stdint\.h>|<unistd.h>|' \
 		${WRKSRC}/mplex/mjpeg_types.h
+	@${REINPLACE_CMD} -e '48s|ZAlphaStream::||' ${WRKSRC}/mplex/zalphastrm.hpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/streamdvd ${PREFIX}/bin
@@ -35,10 +36,4 @@ do-install:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
