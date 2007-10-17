@@ -7,7 +7,7 @@
 
 PORTNAME?=	firebird
 PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
@@ -19,7 +19,7 @@ COMMENT?=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

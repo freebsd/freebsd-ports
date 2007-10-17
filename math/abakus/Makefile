@@ -6,7 +6,7 @@
 
 PORTNAME=	abakus
 PORTVERSION=	0.91
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math kde
 MASTER_SITES=	http://grammarian.homelinux.net/abakus/ \
 		http://www.athame.co.uk/mirror/
@@ -15,11 +15,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	andy@athame.co.uk
 COMMENT=	Michael Pyne's Abakus Calculator
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
-		bison:${PORTSDIR}/devel/bison2
+BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
 
-PREFIX=${LOCALBASE}
+USE_BISON=	build
+PREFIX=		${LOCALBASE}
 USE_KDELIBS_VER=3
 _NO_KDE_CONFTARGET_HACK=	yes
 QT_NONSTANDARD=	yes

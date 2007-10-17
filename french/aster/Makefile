@@ -9,6 +9,7 @@ PORTNAME=		aster
 DISTVERSIONPREFIX=	full-src-
 DISTVERSION=		9.1.0-1
 DISTVERSIONSUFFIX=	.noarch
+PORTREVISION=		1
 CATEGORIES=		french cad python
 MASTER_SITES=		http://www.code-aster.org/FICHIERS/
 
@@ -48,7 +49,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_PYTHON=	yes
 HAS_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ""

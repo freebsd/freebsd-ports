@@ -7,7 +7,7 @@
 
 PORTNAME=	noegnud
 PORTVERSION=	0.8.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.darkarts.co.za/projects/noegnud/downloads/${PORTVERSION}/:noegnud	\
 		${MASTER_SITE_SOURCEFORGE:S/$/:slashem/}
@@ -23,7 +23,7 @@ COMMENT=	The noeGNUd UI for the SLASH'EM variant of Nethack
 RUN_DEPENDS=	${LOCALBASE}/share/${NOEGNUDVERSION}/data/gui:${PORTSDIR}/games/noegnud-data
 
 NOEGNUDVERSION=	${PORTNAME}-0.8.0
-USE_BISON=	yes
+USE_BISON=	build
 USE_GL=		yes
 WANT_SDL=	yes
 USE_SDL=	sdl image mixer

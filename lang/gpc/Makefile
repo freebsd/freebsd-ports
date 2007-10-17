@@ -7,6 +7,7 @@
 
 PORTNAME=	gpc
 PORTVERSION=	20060325
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.gnu-pascal.de/alpha/:gpc \
 		${MASTER_SITE_GCC}
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed \
 		help2man:${PORTSDIR}/misc/help2man
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

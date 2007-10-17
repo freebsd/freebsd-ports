@@ -7,6 +7,7 @@
 
 PORTNAME=	gcc4
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	llvm-
@@ -16,7 +17,7 @@ MAINTAINER=	emil@cs.rmit.edu.au
 COMMENT=	gcc4 frontend for LLVM
 
 GNU_CONFIGURE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes

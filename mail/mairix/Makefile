@@ -7,6 +7,7 @@
 
 PORTNAME=	mairix
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mairix
@@ -16,7 +17,7 @@ COMMENT=	Indexing and searching in Maildir, MH or mbox folders
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 MAN1=	mairix.1

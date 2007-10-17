@@ -7,7 +7,7 @@
 
 PORTNAME=	mifluz
 PORTVERSION=	0.23.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} --without-unac
 USE_LDCONFIG=	yes
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GCC=	2.95
 
 MAN1=	htdb_dump.1 htdb_stat.1 htdb_load.1 mifluzdump.1 mifluzload.1 \

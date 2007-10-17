@@ -8,6 +8,7 @@
 
 PORTNAME=	dictd
 PORTVERSION=	1.10.9
+PORTREVISION=	1
 CATEGORIES+=	net textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=		dict
@@ -19,7 +20,7 @@ MAN1=		dictzip.1
 MAN8=		dictd.8
 
 USE_RC_SUBR=	${PORTNAME}.sh
-USE_BISON=	yes
+USE_BISON=	build
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \

@@ -7,7 +7,7 @@
 
 PORTNAME=	xjtext
 PORTVERSION=	1.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese
 MASTER_SITES=	http://plaza.harmonix.ne.jp/~onizuka/
 DISTNAME=	XJTEXT-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	XJTEXT-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text viewer for Japanese vertical writings
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GNOME=	imlib
 
 SUB_FILES=	pkg-message

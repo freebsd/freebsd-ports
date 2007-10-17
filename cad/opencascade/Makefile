@@ -7,7 +7,7 @@
 
 PORTNAME=		opencascade
 PORTVERSION=		6.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		cad science
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry
@@ -26,7 +26,7 @@ LIB_DEPENDS=	itcl.${ITCL_VER}:${PORTSDIR}/lang/itcl		\
 		dps.0:${PORTSDIR}/x11/dgs
 
 USE_BZIP2=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_XLIB=	yes
 USE_TK=		yes
 USE_TCL_BUILD=	84

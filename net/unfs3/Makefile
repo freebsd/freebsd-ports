@@ -7,7 +7,7 @@
 
 PORTNAME=	unfs3
 PORTVERSION=	0.9.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A user-space implementation of the NFSv3 server specification
 
 USE_AUTOTOOLS=	autoconf:261
-USE_BISON=		YES
+USE_BISON=	build
 
 MAN7=		tags.7
 MAN8=		unfsd.8

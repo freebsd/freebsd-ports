@@ -8,6 +8,7 @@
 
 PORTNAME=	dict
 PORTVERSION=	1.10.9
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dict
@@ -16,7 +17,7 @@ DISTNAME=	${PORTNAME}d-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Dictionary Server Protocol (RFC2229) client
 
-USE_BISON=	yes
+USE_BISON=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
 		--with-etcdir=${PREFIX}/etc

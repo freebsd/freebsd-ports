@@ -7,14 +7,14 @@
 
 PORTNAME=	latte
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.latte.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple language for marking up text in a very expressive way
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:213 libtool:15

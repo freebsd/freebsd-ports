@@ -8,7 +8,7 @@
 
 PORTNAME=	bk_edit
 PORTVERSION=	0.6.23
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.allesdurcheinander.de/nettools/bk_edit/
 
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bookmark Editor
 
 USE_GNOME=	gtk12 libxml2
-USE_BISON=	yes
+USE_BISON=	build
 USE_GETOPT_LONG=	yes
 HAS_CONFIGURE=	yes
 MAKE_ENV=	LD="${CC}" LDFLAGS="${LDFLAGS}"

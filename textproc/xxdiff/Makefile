@@ -7,7 +7,7 @@
 
 PORTNAME=	xxdiff
 PORTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
 QMAKE=		${LOCALBASE}/bin/qmake
 SPEC=		${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 USE_BZIP2=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_QT_VER=	3
 MAKE_ENV+=	QTDIR=${QT_PREFIX}

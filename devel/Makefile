@@ -96,7 +96,6 @@
     SUBDIR += bicyclerepair
     SUBDIR += bin86
     SUBDIR += bison
-    SUBDIR += bison2
     SUBDIR += bisongen
     SUBDIR += bnf
     SUBDIR += bnfc

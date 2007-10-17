@@ -7,7 +7,7 @@
 
 PORTNAME=	postgresql
 PKGNAMESUFFIX=	-contrib
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -30,7 +30,7 @@ PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]
 PGSQL_VER=	${DEFAULT_PGSQL_VER}
 .endif
 
-USE_BISON=	yes
+USE_BISON=	build
 
 BUILD_DIRS=	src/port contrib
 INSTALL_DIRS=	contrib

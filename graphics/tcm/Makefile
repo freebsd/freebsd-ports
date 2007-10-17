@@ -7,7 +7,7 @@
 
 PORTNAME=	tcm
 PORTVERSION=	2.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.utwente.nl/pub/tcm/ \
 		ftp://ftp.cs.vu.nl/pub/tcm/
@@ -22,7 +22,7 @@ COMMENT=	The Toolkit for Conceptual Modeling, create diagrams/tables/trees
 
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 

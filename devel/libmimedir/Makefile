@@ -6,6 +6,7 @@
 
 PORTNAME=	libmimedir
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libmimedir
@@ -16,7 +17,7 @@ COMMENT=	Library for parsing RFC2425 MIME Directory Profile information
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_BISON=	yes
+USE_BISON=	build
 USE_LDCONFIG=	yes
 
 INSTALLS_SHLIB=	yes

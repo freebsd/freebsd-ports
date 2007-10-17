@@ -7,7 +7,7 @@
 
 PORTNAME=	mozart
 PORTVERSION=	1.3.1.20040616
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang tk84 parallel
 MASTER_SITES=	http://www.mozart-oz.org/download/mozart-ftp/store/1.3.1-2004-06-16/
 DISTFILES=	${DISTNAME}-src.tar.gz
@@ -29,7 +29,7 @@ MOZART_DOCS=	mozart-${PORTVERSION}-doc.tar.gz
 SCRIPTS_ENV=	LN=${LN} PERL=${PERL}
 ALL_TARGET=
 MAKE_ARGS=	PREFIX=${PREFIX}/lib/oz
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_XLIB=	yes

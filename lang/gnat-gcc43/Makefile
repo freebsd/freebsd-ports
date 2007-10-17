@@ -9,7 +9,7 @@
 
 PORTNAME=		gnat-gcc
 PORTVERSION=		4.3.0
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_GCC} \
 			http://lovetemple.net/data/:boot
@@ -31,7 +31,7 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_ICONV=		yes
 USE_PERL5_BUILD=	yes # Needed for man pages.
-USE_BISON=		yes
+USE_BISON=		build
 
 CONFLICTS=		gcc-4.3.*
 WRKSRC=			${WRKDIR}/build

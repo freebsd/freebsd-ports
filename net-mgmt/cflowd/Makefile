@@ -7,7 +7,7 @@
 
 PORTNAME=	cflowd
 PORTVERSION=	2.1.b1
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.caida.org/tools/measurement/cflowd/download/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	Arts.0:${PORTSDIR}/net-mgmt/arts++
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-shared --with-artspp=${LOCALBASE}

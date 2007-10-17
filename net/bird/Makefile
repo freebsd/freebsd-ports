@@ -7,13 +7,14 @@
 
 PORTNAME=	bird
 PORTVERSION=	1.0.11
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Dynamic IP routing daemon
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ipv6

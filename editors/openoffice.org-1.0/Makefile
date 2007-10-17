@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice.org
 PORTVERSION=	1.0.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://openoffice.lunarshells.com/sources/:moz,ru,src,help \
 		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.0.3/:moz,ru,src,help \
@@ -35,7 +35,7 @@ DISTFILES+=	${MOZILLA_PROJECT}:moz ${MOZILLA_SOURCE}:mozsrc
 USE_GNOME=	orbit
 USE_XLIB=	yes
 USE_PERL5=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_JAVA=	yes
 JAVA_VENDOR=	bsdjava

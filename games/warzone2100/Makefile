@@ -7,7 +7,7 @@
 
 PORTNAME=	warzone2100
 PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
 
@@ -17,8 +17,7 @@ PATCHFILES=	${DISTNAME}_hotfix1.patch
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
 
-BUILD_DEPENDS=	bison<1,1:${PORTSDIR}/devel/bison2 \
-		zip:${PORTSDIR}/archivers/zip \
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mad.2:${PORTSDIR}/audio/libmad \
@@ -28,6 +27,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
+USE_BISON=	build
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GL=		yes

@@ -7,6 +7,7 @@
 
 PORTNAME?=	firebird
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES?=	databases
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=firebird
@@ -18,7 +19,7 @@ COMMENT?=	Firebird-2 relational database (server)
 
 LATEST_LINK=	${PORTNAME}2${PKGNAMESUFFIX}
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

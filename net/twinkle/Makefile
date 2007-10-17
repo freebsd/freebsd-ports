@@ -7,7 +7,7 @@
 
 PORTNAME=	twinkle
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.xs4all.nl/~mfnboer/twinkle/download/
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=	ccgnu2-1.5.0:${PORTSDIR}/devel/commoncpp \
 
 USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_AUTOTOOLS=	libtool:15

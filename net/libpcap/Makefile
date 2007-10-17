@@ -7,6 +7,7 @@
 
 PORTNAME=	libpcap
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/ \
 		http://www.icrew.org/mirror/tcp_dump/tcpdump_3_9/
@@ -20,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN3=		pcap.3
 
 GNU_CONFIGURE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_LDCONFIG=	yes
 
 .if defined(LIBPCAP_OVERWRITE_BASE)

@@ -7,7 +7,7 @@
 
 PORTNAME=	rbison
 PORTVERSION=	0.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,8 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates a Ruby parser class from a Bison-like specification file
 
-RUN_DEPENDS=	bison:${PORTSDIR}/devel/bison
-
+USE_BISON=	run
 USE_RUBY=	yes
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/rbison

@@ -7,7 +7,7 @@
 
 PORTNAME=	instant-tinderbox
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	ports-mgmt
 DISTFILES=
 
@@ -48,7 +48,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 
 USE_GHOSTSCRIPT=yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_FREETYPE=	yes
 USE_GL=		yes
 USE_XPM=	yes

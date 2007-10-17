@@ -8,7 +8,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	1.2.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono/ \
 		${MASTER_SITE_LOCAL}
@@ -19,7 +19,7 @@ COMMENT=	An open source implementation of .NET Development Framework
 
 CONFLICTS=	mono-devel-[0-9]* mono-svn-[0-9]*
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GNOME=	gnomehack glib20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

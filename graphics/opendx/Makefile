@@ -8,7 +8,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics math
 MASTER_SITES=	http://opendx.npaci.edu/source/
 DISTNAME=	dx-${PORTVERSION}
@@ -20,7 +20,7 @@ LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick	\
 		tiff.4:${PORTSDIR}/graphics/tiff		\
 		cdf.0:${PORTSDIR}/science/cdf
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GL=		yes
 USE_MOTIF=	yes
 USE_XLIB=	yes

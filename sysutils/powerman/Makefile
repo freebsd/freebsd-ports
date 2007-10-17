@@ -6,6 +6,7 @@
 
 PORTNAME=	powerman
 PORTVERSION=	1.0.20
+PORTREVISION=	1
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	ftp://ftp.llnl.gov/pub/linux/powerman/
 EXTRACT_SUFX=	.tgz
@@ -13,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PowerMan is a tool for doing remote power control
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 USE_RC_SUBR=	yes

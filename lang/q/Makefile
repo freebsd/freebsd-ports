@@ -7,7 +7,7 @@
 
 PORTNAME=	q
 PORTVERSION=	6.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	q-lang
@@ -24,7 +24,7 @@ LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick \
 		gmp.7:${PORTSDIR}/math/libgmp4 \
 		curl:${PORTSDIR}/ftp/curl
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GNOME=	gnometarget libxml2 libxslt
 CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes

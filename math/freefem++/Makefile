@@ -7,6 +7,7 @@
 
 PORTNAME=	freefem++
 PORTVERSION=	2.20
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -30,7 +31,7 @@ RESTRICTED=	No resale or commercial use
 USE_FORTRAN=		yes
 FORTRANLIBDIR=		`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``
 FORTRANLIBDIR2=		`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``/../../../
-USE_BISON=		yes
+USE_BISON=		build
 USE_GL=			yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes

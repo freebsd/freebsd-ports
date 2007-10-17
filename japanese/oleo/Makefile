@@ -7,7 +7,7 @@
 
 PORTNAME=	oleo
 PORTVERSION=	1.99.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese math
 MASTER_SITES=	http://www.hh.iij4u.or.jp/~hayasida/oleo/ \
 		${MASTER_SITE_GNU}
@@ -19,8 +19,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Spreadsheet Program + Japanese patches
 
 # xmkmf is for configure script, not for USE_IMAKE.
-BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT} \
-		bison:${PORTSDIR}/devel/bison
+BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
+
+USE_BISON=	build
 
 .if defined(WITH_MOTIF)
 BUILD_DEPENDS+=	${LOCALBASE}/include/Xbae/Matrix.h:${PORTSDIR}/x11-toolkits/xbae

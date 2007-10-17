@@ -8,7 +8,7 @@
 
 PORTNAME=	kimwitu++
 PORTVERSION=	2.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www2.informatik.hu-berlin.de/~piefel/kimwitu++/ \
 		http://www.netsw.org/softeng/compilerconstruct/kimwitu/
@@ -16,7 +16,7 @@ MASTER_SITES=	http://www2.informatik.hu-berlin.de/~piefel/kimwitu++/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for processing trees (i.e. terms)
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

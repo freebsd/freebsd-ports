@@ -7,7 +7,7 @@
 
 PORTNAME=	pwlib
 PORTVERSION=	1.10.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.voxgratia.org/releases/
@@ -21,7 +21,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261
 USE_GNOME=	gnometarget

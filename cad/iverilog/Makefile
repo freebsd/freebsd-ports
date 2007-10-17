@@ -8,6 +8,7 @@
 
 PORTNAME=	iverilog
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v${PORTVERSION:C,\.[0-9]$,,}/ \
 		ftp://ftp.geda.seul.org/pub/geda/dist/
@@ -17,7 +18,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Verilog simulation and synthesis tool
 
 GNU_CONFIGURE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 

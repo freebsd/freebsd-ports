@@ -7,6 +7,7 @@
 
 PORTNAME=	argus-clients
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
@@ -18,7 +19,7 @@ COMMENT=	Client programs for the argus IP network transaction auditing tool
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 
-USE_BISON=	true
+USE_BISON=	build
 GNU_CONFIGURE=	true
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 .if defined(WITH_SASL)

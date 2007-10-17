@@ -7,6 +7,7 @@
 
 PORTNAME=	bro
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://bro-ids.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
@@ -14,13 +15,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	System for detecting Network Intruders in real-time
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
-
 OPTIONS=	GPG "Support encrypted email" Off \
 		DOCS "Install documentation (not recommended)" Off
 
 WRKSRC=		${WRKDIR}/bro-${PORTVERSION}.1
 
+USE_BISON=	build
 USE_LDCONFIG=	${PREFIX}/share
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	CC="${CC}"

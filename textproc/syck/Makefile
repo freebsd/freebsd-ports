@@ -7,6 +7,7 @@
 
 PORTNAME=	syck
 PORTVERSION=	0.55
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Syck is an extension for reading and writing YAML swiftly
 
 GNU_CONFIGURE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 CFLAGS+=	-fPIC
 
 .include <bsd.port.mk>

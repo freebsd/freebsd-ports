@@ -8,7 +8,7 @@
 
 PORTNAME=	eukleides
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.eukleides.org/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -19,7 +19,7 @@ COMMENT=	A Euclidean geometry drawing language
 RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit \
 		epstopdf:${PORTSDIR}/print/teTeX-base
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -c"
 ALL_TARGET=	eukleides info

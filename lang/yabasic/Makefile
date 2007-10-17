@@ -7,7 +7,7 @@
 
 PORTNAME=	yabasic
 PORTVERSION=	2.763
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.yabasic.de/download/
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another Basic for Unix and Windows
 
 USE_XLIB=	yes
-USE_BISON=	yes
+USE_BISON=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

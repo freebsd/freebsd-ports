@@ -7,6 +7,7 @@
 
 PORTNAME=	cvc3
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.nyu.edu/acsys/cvc3/download/${PORTVERSION}/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
@@ -23,7 +24,7 @@ CONFIGURE_ARGS=	--enable-dynamic \
 		--with-extra-libs=${LOCALBASE}/lib
 CXXFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes

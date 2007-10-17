@@ -7,7 +7,7 @@
 
 PORTNAME=	clip
 DISTVERSION=	1.1.16-1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
 		ftp://www.cis.by/pub/clip/pub/clip/	\
@@ -95,7 +95,7 @@ OPT_CLIPLIBS+=clip-interbase
 PLIST_SUB+=	IBASE="@comment "
 .endif
 
-USE_BISON=		yes
+USE_BISON=		build
 USE_GMAKE=		yes
 USE_ICONV=		yes
 REINPLACE_ARGS=		-i ""

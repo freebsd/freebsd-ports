@@ -7,7 +7,7 @@
 
 PORTNAME=	flobopuyo
 PORTVERSION=	0.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.ios-software.com/flobopuyo/ \
 		http://www.amdmi3.ru/distfiles/
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Clone of the famous PuyoPuyo
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image
 

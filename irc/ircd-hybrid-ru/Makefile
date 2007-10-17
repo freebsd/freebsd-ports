@@ -7,6 +7,7 @@
 
 PORTNAME=	ircd
 PORTVERSION=	7.2.1
+PORTREVISION=	1
 CATEGORIES=	irc russian
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
@@ -21,7 +22,7 @@ CONFLICTS=	ircd-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
 USE_OPENSSL=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd-hybrid-ru

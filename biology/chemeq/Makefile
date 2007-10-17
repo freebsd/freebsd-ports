@@ -7,6 +7,7 @@
 
 PORTNAME=	chemeq
 PORTVERSION=	1.50
+PORTREVISION=	1
 CATEGORIES=	biology textproc
 MASTER_SITES=	http://download.gna.org/chemeq/chemeq-1.5/ \
 		http://freebsd.nsu.ru/distfiles/
@@ -18,7 +19,7 @@ COMMENT=	Outputs LaTeX code for chemical reaction
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.5
 
-USE_BISON=	yes
+USE_BISON=	build
 
 MAN1=		chemeq.1
 

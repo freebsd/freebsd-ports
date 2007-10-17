@@ -9,7 +9,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/:src \
 		http://distfiles.master.finkmirrors.net/:rpm
@@ -34,7 +34,7 @@ INFO=		lilypond lilypond-internals \
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	YES
 USE_PYTHON=	YES
 MAKEFILE=	GNUmakefile

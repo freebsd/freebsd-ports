@@ -8,7 +8,7 @@
 
 PORTNAME=	htmltolatex
 PORTVERSION=	1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc
 MASTER_SITES=	http://people.FreeBSD.org/~foxfair/distfiles/
 DISTNAME=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	HTML to LaTeX to PDF Converter
 
 LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	CXX="${CXX}" \

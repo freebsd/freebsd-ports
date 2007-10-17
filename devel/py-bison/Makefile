@@ -8,6 +8,7 @@
 
 PORTNAME=	bison
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.freenet.org.nz/python/pybison/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python-based parsing at the speed of C
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex
-RUN_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
+USE_BISON=	run
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	0.1

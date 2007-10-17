@@ -7,7 +7,7 @@
 
 PORTNAME=	mdbtools
 PORTVERSION=	0.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ COMMENT=	Utilities and libraries to export data from MS Access databases (.mdb)
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
 USE_AUTOTOOLS=	libtool:15
-USE_BISON=	yes
+USE_BISON=	build
 USE_GNOME=	glib20
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
