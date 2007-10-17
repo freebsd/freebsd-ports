@@ -23,6 +23,8 @@ PLIST_FILES=	lib/irssi/modules/libfe_xmpp.so \
 		lib/irssi/modules/libxmpp_core.so
 PORTDOCS=	README
 
+BROKEN=		Does not work with irc/irssi-0.8.12
+
 do-install:
 .for data in core fe-common
 	${MKDIR} ${PREFIX}/lib/irssi/modules
