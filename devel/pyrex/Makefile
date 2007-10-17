@@ -8,7 +8,8 @@
 PORTNAME=	pyrex
 PORTVERSION=	0.9.6
 CATEGORIES=	devel lang python
-MASTER_SITES=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/
+MASTER_SITES=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. oldtar
 PKGNAMEPREFIX=	${PYTHONPKGNAMEPREFIX}
 DISTNAME=	Pyrex-${PORTVERSION}
 
