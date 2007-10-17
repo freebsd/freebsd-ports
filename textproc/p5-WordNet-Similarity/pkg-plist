@@ -12,9 +12,9 @@ bin/semCorFreq.pl
 %%SITE_PERL%%/stem.pm
 %%SITE_PERL%%/vectorFile.pm
 %%SITE_PERL%%/WordNet/lesk-relation.dat
-%%SITE_PERL%%/WordNet/treedepths-2.1.dat
+%%SITE_PERL%%/WordNet/treedepths.dat
 %%SITE_PERL%%/WordNet/ic-semcor.dat
-%%SITE_PERL%%/WordNet/synsetdepths-2.1.dat
+%%SITE_PERL%%/WordNet/synsetdepths.dat
 %%SITE_PERL%%/WordNet/wordvectors.dat
 %%SITE_PERL%%/WordNet/vector-pairs-relation.dat
 %%SITE_PERL%%/WordNet/vector-relation.dat
@@ -34,6 +34,7 @@ bin/semCorFreq.pl
 %%SITE_PERL%%/WordNet/Similarity/GlossFinder.pm
 %%SITE_PERL%%/WordNet/Similarity/ICFinder.pm
 %%SITE_PERL%%/WordNet/Similarity/PathFinder.pm
+%%SITE_PERL%%/WordNet/Tools.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/Similarity/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/Similarity
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet

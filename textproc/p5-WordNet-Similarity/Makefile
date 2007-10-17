@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	WordNet-Similarity
-PORTVERSION=	1.04
-PORTREVISION=	1
+PORTVERSION=	2.01
 CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	WordNet
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Modules/CLI to determine semantic relatedness using the WordNet
 
-BUILD_DEPENDS=	${SITE_PERL}/WordNet/QueryData.pm:${PORTSDIR}/textproc/p5-WordNet-QueryData \
-		${SITE_PERL}/Text/OverlapFinder.pm:${PORTSDIR}/textproc/p5-Text-Similarity
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Does not build
+RUN_DEPENDS=	${SITE_PERL}/WordNet/QueryData.pm:${PORTSDIR}/textproc/p5-WordNet-QueryData \
+		${SITE_PERL}/Text/OverlapFinder.pm:${PORTSDIR}/textproc/p5-Text-Similarity \
+		p5-Digest-SHA1>=2.10:${PORTSDIR}/security/p5-Digest-SHA1
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 WNHOME?=	${LOCALBASE}/share/WordNet
 
@@ -49,6 +46,7 @@ MAN3=		WordNet::Similarity.3 WordNet::Similarity::jcn.3 \
 		WordNet::Similarity::GlossFinder.3 \
 		WordNet::Similarity::ICFinder.3 \
 		WordNet::Similarity::PathFinder.3 \
+		WordNet::Tools.3 \
 		vectorFile.3 stem.3 get_wn_info.3
 
 post-patch:
