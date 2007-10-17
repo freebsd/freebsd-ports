@@ -2379,6 +2379,7 @@ eclipse-ocl	ports/java/eclipse-ocl
 eclipse-pmd	ports/java/eclipse-pmd
 eclipse-propedit	ports/java/eclipse-propedit
 eclipse-quantum	ports/java/eclipse-quantum
+eclipse-shelled	ports/java/eclipse-shelled
 eclipse-sqlexplorer	ports/java/eclipse-sqlexplorer
 eclipse-sysdeo-tomcat	ports/java/eclipse-sysdeo-tomcat
 eclipse-uml	ports/java/eclipse-uml
