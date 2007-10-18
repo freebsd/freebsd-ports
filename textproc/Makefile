@@ -255,6 +255,7 @@
     SUBDIR += libcroco
     SUBDIR += libebml
     SUBDIR += libextractor
+    SUBDIR += libkmfl
     SUBDIR += liblingoteach
     SUBDIR += liblrdf
     SUBDIR += libmrss

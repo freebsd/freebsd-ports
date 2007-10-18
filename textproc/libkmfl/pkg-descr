@@ -1,0 +1,10 @@
+This library provides an engine to interpret compiled
+(textproc/kmflcomp) KMFL keyboard tables written in Keyman keyboard
+language for use with SCIM KMFL IMEngine
+(textproc/scim-kmfl-imengine).
+
+KMFL aims to bring Tavultesoft Keyman functionality to *nix operating
+systems. KMFL is being jointly developed by SIL International
+(http://www.sil.org) and Tavultesoft (http://www.tavultesoft.com).
+
+WWW: http://kmfl.sourceforge.net/
