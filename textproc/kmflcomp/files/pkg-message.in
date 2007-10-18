@@ -1,0 +1,19 @@
+
+------------------------------------------------------------------------
+  Please note that kmflcomp only compiles keyboard sources written in
+  Keyman keyboard language (.kmn) into .kmfl binaries. KMFL is source
+  compatible with keyboards developed for Keyman. Binary keyboards
+  compiled for Keyman will not run under KMFL. KMFL is also Unicode
+  based, and does not support legacy code pages and encodings.
+
+  The Keyman keyboard language is documented in
+
+    %%PREFIX%%/share/doc/kmfl/kmflcomp/KMFL-Compiler.sxw
+
+  Tavultesoft documentation is available on
+
+    http://tavultesoft.com/keymandev/documentation/help/main/guide.php
+
+  You need textproc/scim-kmfl-imengine and textproc/scim-kmfl-* ports
+  in order to use actual keyboards through SCIM.
+------------------------------------------------------------------------
