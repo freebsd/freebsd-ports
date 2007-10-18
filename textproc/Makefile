@@ -242,6 +242,7 @@
     SUBDIR += jrefentry
     SUBDIR += kbedic
     SUBDIR += kdiff3
+    SUBDIR += kmflcomp
     SUBDIR += ku-aspell
     SUBDIR += l2a
     SUBDIR += la-aspell
