@@ -6571,6 +6571,7 @@ libkdcraw	ports/graphics/libkdcraw
 libkexif	ports/graphics/libkexif
 libkexiv2	ports/graphics/libkexiv2
 libkipi		ports/graphics/libkipi
+libkmfl		ports/textproc/libkmfl
 libksba		ports/security/libksba
 libleaftag	ports/devel/libleaftag
 liblinear	ports/science/liblinear
