@@ -11,6 +11,15 @@
 	trgir.grf
 	trgtr.grf
 
+    If you are using a non-latin language, you may see lots of `?'s on
+    the screen.  Please open your configuration file and add a desired
+    fonts (file name with full path).  Bold fonts might look better:
+
+	[misc]
+	small_font =
+	medium_font =
+	large_font =
+
     Enjoy!!
 
 ==========================================================================
