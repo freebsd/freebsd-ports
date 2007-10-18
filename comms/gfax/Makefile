@@ -8,7 +8,7 @@
 
 PORTNAME=	gfax
 PORTVERSION=	0.7.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms print gnome
 MASTER_SITES=	http://gfax.cowlug.org/
 
@@ -27,8 +27,6 @@ USE_GNOME=	gnomeprefix gnomehier libgnomeprint gnomesharp20
 STRIP=
 
 GCONF_SCHEMAS=	gfax.schemas
-
-BROKEN=		fails to install
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
