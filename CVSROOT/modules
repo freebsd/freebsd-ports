@@ -5953,6 +5953,7 @@ kmatrix3d	ports/deskutils/kmatrix3d
 kmenc15		ports/multimedia/kmenc15
 kmerlin		ports/net-im/kmerlin
 kmess		ports/net-im/kmess
+kmflcomp	ports/textproc/kmflcomp
 kmilo		ports/sysutils/kmilo
 kmldonkey	ports/net-p2p/kmldonkey
 kmobiletools	ports/comms/kmobiletools
