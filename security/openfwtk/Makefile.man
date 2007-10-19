@@ -1,0 +1,58 @@
+# $FreeBSD$
+
+MAN3=	\
+	cfg_append.3 \
+	cfg_free.3 \
+	cfg_get.3 \
+	cfg_read.3 \
+	cfg_setpfile.3 \
+	conn_server.3 \
+	daemonize.3 \
+	do_daemon.3 \
+	enargv.3 \
+	getpassword.3 \
+	hostmatch.3 \
+	hup_exit.3 \
+	isalldigits.3 \
+	lock_fd.3 \
+	locktest_fd.3 \
+	lockun_fd.3 \
+	mapgid.3 \
+	maphostname.3 \
+	mapuid.3 \
+	nacasematch.3 \
+	namatch.3 \
+	peername.3 \
+	randomnumber.3 \
+	set_oob_notification.3 \
+	str_to_port.3 \
+	waitwaitwait.3 \
+	xmalloc.3 \
+	xrealloc.3 \
+	xstrdup.3  
+
+MAN5=	netperm-table.5
+
+MAN8=	\
+	auth_telnetd.8 \
+	authdump.8 \
+	authmgr.8 \
+	authsrv.8 \
+	cmd-gw.8 \
+	cvs-gw.8 \
+	dnsctl.8 \
+	ftp-gw.8 \
+	hqdaemon.8 \
+	ident-spoofer.8 \
+	lp-gw.8 \
+	netacl.8 \
+	nntp-gw.8 \
+	plug-gw.8 \
+	pop3-gw.8 \
+	rexec-gw.8 \
+	rsh-gw.8 \
+	smtpd.8 \
+	smtpfwdd.8 \
+	squid-gw.8 \
+	ssmtp.8
+

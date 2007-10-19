@@ -1,0 +1,24 @@
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+* NOTE:
+
+* In order to use OpenFWTK proxies you need to have 
+procfs(5) filesystem mounted. 
+
+* You are advised to add following to /etc/crontab:
+
+59      *       *       *       *       root    %%LOCALBASE%%/bin/frequentcheck
+58      23      *       *       *       root    %%LOCALBASE%%/bin/daily_report
+
+* In order to get this reports, run:
+echo "admin@email.addr" > %%LOCALBASE%%/etc/openfwtk/admin
+
+* fw_check installed in %%LOCALBASE%%/share/fw_watch.
+
+* In order to user openfwtk, you need to create 
+%%LOCALBASE%%/etc/netperm-table, there is no predefined
+example for now! 
+
+* netperm-table(5) is a good place to start read about
+various configuration options
+
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
