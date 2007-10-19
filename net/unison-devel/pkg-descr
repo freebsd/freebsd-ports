@@ -1,0 +1,15 @@
+Unison is a file-synchronization tool for Unix and Windows. It allows two
+replicas of a collection of files and directories to be stored on different
+hosts (or different disks on the same host), modified separately, and then
+brought up to date by propagating the changes in each replica to the other.
+
+Unison shares a number of features with tools such as configuration
+management packages (CVS, PRCS, etc.) distributed filesystems (Coda, etc.)
+uni-directional mirroring utilities (rsync, etc.) and other synchronizers
+(Intellisync, Reconcile, etc).
+
+WWW: http://www.cis.upenn.edu/~bcpierce/unison/
+
+- Dan Pelleg
+
+daniel+unison@pelleg.org
