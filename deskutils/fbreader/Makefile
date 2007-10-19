@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	fbreader
-PORTVERSION=	0.8.6.0.2
 DISTVERSIONPREFIX=	sources-
-DISTVERSION=	0.8.6d
+DISTVERSION=	0.8.7
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/ CENKES
 EXTRACT_SUFX=	.tgz
