@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pftpd
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/unix/pftpd/ \
 		ftp://ftp.ifm.liu.se/pub/unix/pftpd/
