@@ -9,7 +9,9 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/how2help.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/ipv6.html
+%%PORTDOCS%%%%DOCSDIR%%/man_rsyslogd.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/modules.html
 %%PORTDOCS%%%%DOCSDIR%%/property_replacer.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_actionexeconlyifpreviousissuspended.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_actionresumeinterval.html
@@ -31,6 +33,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_fileowner.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_includeconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_mainmsgqueuesize.html
+%%PORTDOCS%%%%DOCSDIR%%/rsconf1_moddir.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_modload.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_repeatedmsgreduction.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_resetconfigvariables.html
