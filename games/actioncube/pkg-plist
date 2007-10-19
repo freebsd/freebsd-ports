@@ -1,7 +1,7 @@
-%%CLIENT%%bin/actioncube_client
-%%DEDICATED%%bin/actioncube_server
-%%CLIENT%%libexec/actioncube_client
-%%DEDICATED%%libexec/actioncube_server
+%%CLIENT%%bin/assaultcube_client
+%%DEDICATED%%bin/assaultcube_server
+%%CLIENT%%libexec/assaultcube_client
+%%DEDICATED%%libexec/assaultcube_server
 %%DATADIR%%/bot/bot_names.txt
 %%DATADIR%%/bot/bot_skill.cfg
 %%DATADIR%%/bot/bot_teams.txt
@@ -10,13 +10,17 @@
 %%DATADIR%%/bot/waypoints/ac_desert.wpt
 %%DATADIR%%/bot/waypoints/ac_desert2.wpt
 %%DATADIR%%/bot/waypoints/ac_mines.wpt
+%%DATADIR%%/bot/waypoints/ac_snow.wpt
 %%DATADIR%%/config/autoexec.cfg
 %%DATADIR%%/config/default_map_settings.cfg
 %%DATADIR%%/config/defaults.cfg
+%%DATADIR%%/config/docs.cfg
+%%DATADIR%%/config/font.cfg
 %%DATADIR%%/config/keymap.cfg
 %%DATADIR%%/config/maprot.cfg
 %%DATADIR%%/config/menus.cfg
 %%DATADIR%%/config/prefabs.cfg
+%%DATADIR%%/config/securemaps.cfg
 %%DATADIR%%/config/sounds.cfg
 %%DATADIR%%/packages/audio/songs/ac.ogg
 %%DATADIR%%/packages/audio/songs/readme.txt
@@ -77,7 +81,10 @@
 %%DATADIR%%/packages/maps/ac_desert2.cgz
 %%DATADIR%%/packages/maps/ac_mines.cfg
 %%DATADIR%%/packages/maps/ac_mines.cgz
+%%DATADIR%%/packages/maps/ac_snow.cfg
+%%DATADIR%%/packages/maps/ac_snow.cgz
 %%DATADIR%%/packages/misc/base.png
+%%DATADIR%%/packages/misc/chars.png
 %%DATADIR%%/packages/misc/crosshairs/cube.png
 %%DATADIR%%/packages/misc/crosshairs/default.png
 %%DATADIR%%/packages/misc/crosshairs/dot.png
@@ -89,15 +96,17 @@
 %%DATADIR%%/packages/misc/crosshairs/star.png
 %%DATADIR%%/packages/misc/crosshairs/wide.png
 %%DATADIR%%/packages/misc/crosshairs/x-dot.png
+%%DATADIR%%/packages/misc/ctficons.png
 %%DATADIR%%/packages/misc/explosion.jpg
-%%DATADIR%%/packages/misc/flag_icons.png
-%%DATADIR%%/packages/misc/full_logo.png
 %%DATADIR%%/packages/misc/hole.png
 %%DATADIR%%/packages/misc/items.png
-%%DATADIR%%/packages/misc/newchars.png
+%%DATADIR%%/packages/misc/radaricons.png
+%%DATADIR%%/packages/misc/radaroverlays.png
 %%DATADIR%%/packages/misc/readme.txt
 %%DATADIR%%/packages/misc/scope.png
 %%DATADIR%%/packages/misc/smoke.png
+%%DATADIR%%/packages/misc/startscreen.png
+%%DATADIR%%/packages/misc/teamicons.png
 %%DATADIR%%/packages/misc/teammate.png
 %%DATADIR%%/packages/misc/teams.png
 %%DATADIR%%/packages/models/mapmodels/aard/skin.jpg
@@ -228,18 +237,23 @@
 %%DATADIR%%/packages/models/misc/debris/skin.jpg
 %%DATADIR%%/packages/models/misc/debris/tris.md2
 %%DATADIR%%/packages/models/misc/gib01/md2.cfg
+%%DATADIR%%/packages/models/misc/gib01/shadows.dat
 %%DATADIR%%/packages/models/misc/gib01/skin.jpg
 %%DATADIR%%/packages/models/misc/gib01/tris.md2
 %%DATADIR%%/packages/models/misc/gib02/md2.cfg
+%%DATADIR%%/packages/models/misc/gib02/shadows.dat
 %%DATADIR%%/packages/models/misc/gib02/skin.jpg
 %%DATADIR%%/packages/models/misc/gib02/tris.md2
 %%DATADIR%%/packages/models/misc/gib03/md2.cfg
+%%DATADIR%%/packages/models/misc/gib03/shadows.dat
 %%DATADIR%%/packages/models/misc/gib03/skin.jpg
 %%DATADIR%%/packages/models/misc/gib03/tris.md2
 %%DATADIR%%/packages/models/misc/license.txt
 %%DATADIR%%/packages/models/misc/md2.cfg
+%%DATADIR%%/packages/models/pickups/akimbo/shadows.dat
 %%DATADIR%%/packages/models/pickups/akimbo/skin.jpg
 %%DATADIR%%/packages/models/pickups/akimbo/tris.md2
+%%DATADIR%%/packages/models/pickups/ammobox/shadows.dat
 %%DATADIR%%/packages/models/pickups/ammobox/skin.jpg
 %%DATADIR%%/packages/models/pickups/ammobox/tris.md2
 %%DATADIR%%/packages/models/pickups/flags/CLA/md3.cfg
@@ -254,32 +268,34 @@
 %%DATADIR%%/packages/models/pickups/flags/small_RVSF/md2.cfg
 %%DATADIR%%/packages/models/pickups/flags/small_RVSF/skin.jpg
 %%DATADIR%%/packages/models/pickups/flags/small_RVSF/tris.md2
+%%DATADIR%%/packages/models/pickups/health/shadows.dat
 %%DATADIR%%/packages/models/pickups/health/skin.jpg
 %%DATADIR%%/packages/models/pickups/health/tris.md2
+%%DATADIR%%/packages/models/pickups/kevlar/shadows.dat
 %%DATADIR%%/packages/models/pickups/kevlar/skin.jpg
 %%DATADIR%%/packages/models/pickups/kevlar/tris.md2
 %%DATADIR%%/packages/models/pickups/license.txt
+%%DATADIR%%/packages/models/pickups/nades/shadows.dat
 %%DATADIR%%/packages/models/pickups/nades/skin.jpg
 %%DATADIR%%/packages/models/pickups/nades/tris.md2
+%%DATADIR%%/packages/models/pickups/pistolclips/shadows.dat
 %%DATADIR%%/packages/models/pickups/pistolclips/skin.jpg
 %%DATADIR%%/packages/models/pickups/pistolclips/tris.md2
-%%DATADIR%%/packages/models/playermodels/counterterrorist/01/skin.jpg
-%%DATADIR%%/packages/models/playermodels/counterterrorist/02/skin.jpg
-%%DATADIR%%/packages/models/playermodels/counterterrorist/03/skin.jpg
-%%DATADIR%%/packages/models/playermodels/counterterrorist/04/skin.jpg
-%%DATADIR%%/packages/models/playermodels/counterterrorist/05/skin.jpg
-%%DATADIR%%/packages/models/playermodels/counterterrorist/06/skin.jpg
-%%DATADIR%%/packages/models/playermodels/counterterrorist/md2.cfg
-%%DATADIR%%/packages/models/playermodels/counterterrorist/skin.jpg
-%%DATADIR%%/packages/models/playermodels/counterterrorist/tris.md2
+%%DATADIR%%/packages/models/playermodels/CLA/01.jpg
+%%DATADIR%%/packages/models/playermodels/CLA/02.jpg
+%%DATADIR%%/packages/models/playermodels/CLA/03.jpg
+%%DATADIR%%/packages/models/playermodels/CLA/04.jpg
+%%DATADIR%%/packages/models/playermodels/RVSF/01.jpg
+%%DATADIR%%/packages/models/playermodels/RVSF/02.jpg
+%%DATADIR%%/packages/models/playermodels/RVSF/03.jpg
+%%DATADIR%%/packages/models/playermodels/RVSF/04.jpg
+%%DATADIR%%/packages/models/playermodels/RVSF/05.jpg
+%%DATADIR%%/packages/models/playermodels/RVSF/06.jpg
+%%DATADIR%%/packages/models/playermodels/md2.cfg
 %%DATADIR%%/packages/models/playermodels/readme.txt
-%%DATADIR%%/packages/models/playermodels/terrorist/01/skin.jpg
-%%DATADIR%%/packages/models/playermodels/terrorist/02/skin.jpg
-%%DATADIR%%/packages/models/playermodels/terrorist/03/skin.jpg
-%%DATADIR%%/packages/models/playermodels/terrorist/04/skin.jpg
-%%DATADIR%%/packages/models/playermodels/terrorist/md2.cfg
-%%DATADIR%%/packages/models/playermodels/terrorist/skin.jpg
-%%DATADIR%%/packages/models/playermodels/terrorist/tris.md2
+%%DATADIR%%/packages/models/playermodels/shadows.dat
+%%DATADIR%%/packages/models/playermodels/skin.jpg
+%%DATADIR%%/packages/models/playermodels/tris.md2
 %%DATADIR%%/packages/models/weapons/assault/md3.cfg
 %%DATADIR%%/packages/models/weapons/assault/menu/skin.jpg
 %%DATADIR%%/packages/models/weapons/assault/menu/tris.md2
@@ -287,16 +303,19 @@
 %%DATADIR%%/packages/models/weapons/assault/skin_weapon.jpg
 %%DATADIR%%/packages/models/weapons/assault/tris_high.md3
 %%DATADIR%%/packages/models/weapons/assault/world/md2.cfg
+%%DATADIR%%/packages/models/weapons/assault/world/shadows.dat
 %%DATADIR%%/packages/models/weapons/assault/world/skin.jpg
 %%DATADIR%%/packages/models/weapons/assault/world/tris.md2
 %%DATADIR%%/packages/models/weapons/grenade/md3.cfg
 %%DATADIR%%/packages/models/weapons/grenade/skin_hands.jpg
 %%DATADIR%%/packages/models/weapons/grenade/skin_weapon.jpg
 %%DATADIR%%/packages/models/weapons/grenade/static/md2.cfg
+%%DATADIR%%/packages/models/weapons/grenade/static/shadows.dat
 %%DATADIR%%/packages/models/weapons/grenade/static/skin.jpg
 %%DATADIR%%/packages/models/weapons/grenade/static/tris.md2
 %%DATADIR%%/packages/models/weapons/grenade/tris_high.md3
 %%DATADIR%%/packages/models/weapons/grenade/world/md2.cfg
+%%DATADIR%%/packages/models/weapons/grenade/world/shadows.dat
 %%DATADIR%%/packages/models/weapons/grenade/world/skin.jpg
 %%DATADIR%%/packages/models/weapons/grenade/world/tris.md2
 %%DATADIR%%/packages/models/weapons/knife/md3.cfg
@@ -304,6 +323,7 @@
 %%DATADIR%%/packages/models/weapons/knife/skin_weapon.jpg
 %%DATADIR%%/packages/models/weapons/knife/tris_high.md3
 %%DATADIR%%/packages/models/weapons/knife/world/md2.cfg
+%%DATADIR%%/packages/models/weapons/knife/world/shadows.dat
 %%DATADIR%%/packages/models/weapons/knife/world/skin.jpg
 %%DATADIR%%/packages/models/weapons/knife/world/tris.md2
 %%DATADIR%%/packages/models/weapons/license.txt
@@ -312,6 +332,7 @@
 %%DATADIR%%/packages/models/weapons/pistol/skin_weapon.jpg
 %%DATADIR%%/packages/models/weapons/pistol/tris_high.md3
 %%DATADIR%%/packages/models/weapons/pistol/world/md2.cfg
+%%DATADIR%%/packages/models/weapons/pistol/world/shadows.dat
 %%DATADIR%%/packages/models/weapons/pistol/world/skin.jpg
 %%DATADIR%%/packages/models/weapons/pistol/world/tris.md2
 %%DATADIR%%/packages/models/weapons/shotgun/md3.cfg
@@ -321,6 +342,7 @@
 %%DATADIR%%/packages/models/weapons/shotgun/skin_weapon.jpg
 %%DATADIR%%/packages/models/weapons/shotgun/tris_high.md3
 %%DATADIR%%/packages/models/weapons/shotgun/world/md2.cfg
+%%DATADIR%%/packages/models/weapons/shotgun/world/shadows.dat
 %%DATADIR%%/packages/models/weapons/shotgun/world/skin.jpg
 %%DATADIR%%/packages/models/weapons/shotgun/world/tris.md2
 %%DATADIR%%/packages/models/weapons/sniper/md3.cfg
@@ -330,6 +352,7 @@
 %%DATADIR%%/packages/models/weapons/sniper/skin_weapon.jpg
 %%DATADIR%%/packages/models/weapons/sniper/tris_high.md3
 %%DATADIR%%/packages/models/weapons/sniper/world/md2.cfg
+%%DATADIR%%/packages/models/weapons/sniper/world/shadows.dat
 %%DATADIR%%/packages/models/weapons/sniper/world/skin.jpg
 %%DATADIR%%/packages/models/weapons/sniper/world/tris.md2
 %%DATADIR%%/packages/models/weapons/subgun/md3.cfg
@@ -339,6 +362,7 @@
 %%DATADIR%%/packages/models/weapons/subgun/skin_weapon.jpg
 %%DATADIR%%/packages/models/weapons/subgun/tris_high.md3
 %%DATADIR%%/packages/models/weapons/subgun/world/md2.cfg
+%%DATADIR%%/packages/models/weapons/subgun/world/shadows.dat
 %%DATADIR%%/packages/models/weapons/subgun/world/skin.jpg
 %%DATADIR%%/packages/models/weapons/subgun/world/tris.md2
 %%DATADIR%%/packages/textures/DigitalFlux/dirt_pebbles_01.jpg
@@ -414,6 +438,7 @@
 %%DATADIR%%/packages/textures/jcdpc/readme.txt
 %%DATADIR%%/packages/textures/jcdpc/stone.jpg
 %%DATADIR%%/packages/textures/kurt/klite1.jpg
+%%DATADIR%%/packages/textures/kurt/klite2.jpg
 %%DATADIR%%/packages/textures/kurt/readme.txt
 %%DATADIR%%/packages/textures/makke/01-CMU.jpg
 %%DATADIR%%/packages/textures/makke/11-Brick.jpg
@@ -652,16 +677,16 @@
 %%DATADIR%%/packages/textures/zastrow/wood_crate_10.jpg
 %%DATADIR%%/packages/textures/zastrow/wood_crate_12.jpg
 %%PORTDOCS%%%%DOCSDIR%%/README.html
-%%PORTDOCS%%%%DOCSDIR%%/config.html
-%%PORTDOCS%%%%DOCSDIR%%/docs.css
-%%PORTDOCS%%%%DOCSDIR%%/editref.html
-%%PORTDOCS%%%%DOCSDIR%%/game.html
-%%PORTDOCS%%%%DOCSDIR%%/gamecommands.html
-%%PORTDOCS%%%%DOCSDIR%%/getstarted.html
-%%PORTDOCS%%%%DOCSDIR%%/history.html
-%%PORTDOCS%%%%DOCSDIR%%/known_issues.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.xml
+%%PORTDOCS%%%%DOCSDIR%%/cube_bot-readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/cubeengine.xml
+%%PORTDOCS%%%%DOCSDIR%%/cuberef.txt
+%%PORTDOCS%%%%DOCSDIR%%/cubescript.xml
+%%PORTDOCS%%%%DOCSDIR%%/game.xml
+%%PORTDOCS%%%%DOCSDIR%%/getstarted.xml
+%%PORTDOCS%%%%DOCSDIR%%/history.xml
+%%PORTDOCS%%%%DOCSDIR%%/knownissues.xml
 %%PORTDOCS%%%%DOCSDIR%%/mappers_readme.txt
-%%PORTDOCS%%%%DOCSDIR%%/misc.html
 %%PORTDOCS%%%%DOCSDIR%%/package_copyrights.txt
 %%PORTDOCS%%%%DOCSDIR%%/pics/ctf-hud.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pics/flag_cla.jpg
@@ -679,7 +704,19 @@
 %%PORTDOCS%%%%DOCSDIR%%/pics/weapon_shotgun.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pics/weapon_sniper.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pics/weapon_subgun.jpg
-%%PORTDOCS%%%%DOCSDIR%%/server.html
+%%PORTDOCS%%%%DOCSDIR%%/reference.xml
+%%PORTDOCS%%%%DOCSDIR%%/schemas/cuberef.xsd
+%%PORTDOCS%%%%DOCSDIR%%/server.xml
+%%PORTDOCS%%%%DOCSDIR%%/startup.xml
+%%PORTDOCS%%%%DOCSDIR%%/styles/ac.css
+%%PORTDOCS%%%%DOCSDIR%%/styles/cubedoc.css
+%%PORTDOCS%%%%DOCSDIR%%/styles/cuberef.css
+%%PORTDOCS%%%%DOCSDIR%%/transformations/cubedoc2xhtml.xslt
+%%PORTDOCS%%%%DOCSDIR%%/transformations/cuberef2cubescript.xslt
+%%PORTDOCS%%%%DOCSDIR%%/transformations/cuberef2xhtml.xslt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/transformations
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/styles
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pics
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/packages/textures/zastrow
@@ -732,18 +769,8 @@
 @dirrm %%DATADIR%%/packages/models/weapons/assault/menu
 @dirrm %%DATADIR%%/packages/models/weapons/assault
 @dirrm %%DATADIR%%/packages/models/weapons
-@dirrm %%DATADIR%%/packages/models/playermodels/terrorist/04
-@dirrm %%DATADIR%%/packages/models/playermodels/terrorist/03
-@dirrm %%DATADIR%%/packages/models/playermodels/terrorist/02
-@dirrm %%DATADIR%%/packages/models/playermodels/terrorist/01
-@dirrm %%DATADIR%%/packages/models/playermodels/terrorist
-@dirrm %%DATADIR%%/packages/models/playermodels/counterterrorist/06
-@dirrm %%DATADIR%%/packages/models/playermodels/counterterrorist/05
-@dirrm %%DATADIR%%/packages/models/playermodels/counterterrorist/04
-@dirrm %%DATADIR%%/packages/models/playermodels/counterterrorist/03
-@dirrm %%DATADIR%%/packages/models/playermodels/counterterrorist/02
-@dirrm %%DATADIR%%/packages/models/playermodels/counterterrorist/01
-@dirrm %%DATADIR%%/packages/models/playermodels/counterterrorist
+@dirrm %%DATADIR%%/packages/models/playermodels/RVSF
+@dirrm %%DATADIR%%/packages/models/playermodels/CLA
 @dirrm %%DATADIR%%/packages/models/playermodels
 @dirrm %%DATADIR%%/packages/models/pickups/pistolclips
 @dirrm %%DATADIR%%/packages/models/pickups/nades
@@ -841,4 +868,3 @@
 @dirrm %%DATADIR%%/bot/waypoints
 @dirrm %%DATADIR%%/bot
 @dirrm %%DATADIR%%
-@dirrm libexec/actioncube

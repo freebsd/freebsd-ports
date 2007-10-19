@@ -5,7 +5,7 @@
 # ~/.XXX, and create symlinks to the data files, but the configuration files
 # are copied, and write permission for the user is added to them.
 
-APPNAME="actioncube"
+APPNAME="assaultcube"
 
 if [ -d ~/.$APPNAME ]
 then
@@ -21,4 +21,4 @@ else
 fi
 
 cd ~/.$APPNAME || exit 1
-exec %%PREFIX%%/libexec/${APPNAME}_client "$@"
+exec %%PREFIX%%/libexec/${APPNAME}_server "$@"
