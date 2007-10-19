@@ -204,7 +204,7 @@ _WX_DEPTYPE_${comp}_${ver}=	lib
 # Check if the user/port wants Unicode.
 #
 
-.if ${OSVERSION} >= 500000 && (!defined(WITHOUT_UNICODE) && \
+.if (!defined(WITHOUT_UNICODE) && \
     (defined(WITH_UNICODE) || defined(WANT_UNICODE)))
 _WX_UC_AVAILABLE=			yes
 .else
@@ -441,9 +441,7 @@ WX_UNICODE=				yes
 # Requested by the port (mandatory).
 
 .if defined(WX_UNICODE)
-.	if ${OSVERSION} < 500000
-IGNORE?=				requires FreeBSD versions >= 5.X (because of Unicode)
-.	elif empty(_WX_VER_UC)
+.	if empty(_WX_VER_UC)
 IGNORE?=				selected a wxWidgets version which does not support Unicode: ${_WX_VER_MERGED}
 .	endif
 .endif
