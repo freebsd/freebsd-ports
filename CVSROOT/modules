@@ -8533,6 +8533,7 @@ openfire	ports/net-im/openfire
 openfoam	ports/science/openfoam
 openftd		ports/news/openftd
 openfts		ports/textproc/openfts
+openfwtk	ports/security/openfwtk
 opengl-man	ports/graphics/opengl-man
 openglad	ports/games/openglad
 openh323	ports/net/openh323
