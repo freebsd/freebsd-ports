@@ -24,6 +24,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GL=		yes
+USE_XLIB=	yes
 USE_SCONS=	yes
 SCONS_ARGS=	warnings=0
 NO_WRKSUBDIR=	yes

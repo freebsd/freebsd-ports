@@ -81,6 +81,7 @@ USE_SDL=	sdl
 MAKE_ENV+=	USE_SDL_VIDEO=1
 .   else
 USE_GL=		yes
+USE_XLIB=	yes
 .   endif
 .endif
 
