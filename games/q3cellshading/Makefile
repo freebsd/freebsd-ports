@@ -57,6 +57,7 @@ MAKE_ENV+=	DLL_ONLY=true
 
 .if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
 USE_GL=		yes
+USE_XLIB=	yes
 .endif
 
 .if !defined(WITHOUT_CLIENT)
