@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xfsprogs
-PORTVERSION=	2.8.21
-PORTREVISION=	2
+PORTVERSION=	2.9.4
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://oss.sgi.com/projects/xfs/cmd_tars/
+MASTER_SITES=	ftp://oss.sgi.com/projects/xfs/cmd_tars/ \
+		ftp://oss.sgi.com/projects/xfs/previous/cmd_tars/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	-1.tar.gz
 
@@ -30,8 +30,8 @@ ALL_TARGET=
 MAN5=	xfs.5
 MAN8=	fsck.xfs.8 mkfs.xfs.8 xfs_admin.8 xfs_bmap.8 xfs_check.8 \
 	xfs_copy.8 xfs_db.8 xfs_freeze.8 xfs_growfs.8 xfs_info.8 \
-	xfs_io.8 xfs_logprint.8 xfs_mkfile.8 xfs_ncheck.8 xfs_quota.8 \
-	xfs_repair.8 xfs_rtcp.8
+	xfs_io.8 xfs_logprint.8 xfs_mdrestore.8 xfs_metadump.8 xfs_mkfile.8 xfs_ncheck.8 \
+	xfs_quota.8 xfs_repair.8 xfs_rtcp.8
 
 .include <bsd.port.pre.mk>
 
