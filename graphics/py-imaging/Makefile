@@ -20,7 +20,7 @@ COMMENT=	The Python Imaging Library
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-LATEST_LINK=	py-${PORTNAME}
+UNIQUENAME=	py-${PORTNAME}
 
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
@@ -30,8 +30,8 @@ PYDISTUTILS_EGGINFODIR=	${PYTHON_SITELIBDIR}/PIL
 
 PORTDOCS=	*
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONS=	TKINTER "Build with tkinter for X support" on
 
