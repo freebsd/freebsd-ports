@@ -2,6 +2,7 @@ bin/darcs
 etc/bash_completion.d/darcs
 %%SERVER%%%%CGIDIR%%/darcs.cgi
 %%SERVER%%etc/darcs/cgi.conf.sample
+%%SERVER%%etc/darcs/styles.css
 %%SERVER%%share/darcs/xslt/annotate.xslt
 %%SERVER%%share/darcs/xslt/browse.xslt
 %%SERVER%%share/darcs/xslt/common.xslt
@@ -69,6 +70,7 @@ etc/bash_completion.d/darcs
 %%PORTDOCS%%%%DOCSDIR%%/manual/WARNINGS
 @dirrm etc/bash_completion.d
 %%SERVER%%@dirrmtry etc/darcs
+%%SERVER%%@dirrmtry www/cgi-bin
 %%SERVER%%@dirrm share/darcs/xslt
 %%SERVER%%@dirrm share/darcs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
