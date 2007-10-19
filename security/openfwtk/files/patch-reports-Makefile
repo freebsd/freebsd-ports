@@ -1,0 +1,13 @@
+--- reports/Makefile.orig	2007-09-25 00:20:36.000000000 +0400
++++ reports/Makefile	2007-10-12 04:54:53.000000000 +0400
+@@ -16,10 +16,3 @@
+ logtail: $(LTLOBJS)
+ 	$(OFWTKLINK) $(LTLOBJS)
+ 
+-INSTALLADD =												\
+-	if ! grep -q frequentcheck /etc/crontab; then 							\
+-	    echo "59      *       *       *       *       root    $(DEST)/frequentcheck">>/etc/crontab ;\
+-	fi; 												\
+-	if ! grep -q daily_report /etc/crontab; then 							\
+-	    echo "58      23      *       *       *       root    $(DEST)/daily_report">>/etc/crontab ;	\
+-	fi

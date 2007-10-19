@@ -1,0 +1,6 @@
+OpenFWTK is an application proxy toolkit which inherits the ideology 
+of TIS fwtk and maintains API backwards compatibility. The design goal 
+is to make it simple yet powerful; no performance hacks allowed in the 
+code and library dependencies are reduced to minimum.
+
+WWW: http://sourceforge.net/projects/openfwtk

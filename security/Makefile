@@ -303,6 +303,7 @@
     SUBDIR += openbsm
     SUBDIR += opencdk
     SUBDIR += openct
+    SUBDIR += openfwtk
     SUBDIR += opensaml
     SUBDIR += opensc
     SUBDIR += openscep

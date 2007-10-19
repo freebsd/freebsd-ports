@@ -1,0 +1,8 @@
+--- squid-gw/squid-gw.restart.orig	2007-10-12 18:09:43.000000000 +0400
++++ squid-gw/squid-gw.restart	2007-10-12 18:10:12.000000000 +0400
+@@ -9,4 +9,4 @@
+     exit 1
+ fi
+ 
+-kill -HUP `cat $OFWTKPATH/var/pid/squid-gw.pid`
++kill -HUP `cat /var/run/openfwtk/squid-gw.pid`
