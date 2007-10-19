@@ -227,7 +227,6 @@ acroread-zhcn	ports/chinese/acroread-zh_CN
 acroread-zhtw	ports/chinese/acroread-zh_TW
 acroread7	ports/print/acroread7
 acroreadwrapper	ports/print/acroreadwrapper
-actioncube	ports/games/actioncube
 activitymail	ports/devel/activitymail
 actx		ports/games/actx
 acx100		ports/net/acx100
@@ -570,6 +569,7 @@ asprint		ports/print/asprint
 asr-manpages	ports/misc/asr-manpages
 asr-utils	ports/sysutils/asr-utils
 asr10		ports/converters/asr10
+assaultcube	ports/games/assaultcube
 assp		ports/mail/assp
 asterisk	ports/net/asterisk
 asterisk-addons	ports/net/asterisk-addons

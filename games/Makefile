@@ -19,7 +19,6 @@
     SUBDIR += abuse
     SUBDIR += abuse_sdl
     SUBDIR += acm
-    SUBDIR += actioncube
     SUBDIR += actx
     SUBDIR += adgali
     SUBDIR += adom
@@ -52,6 +51,7 @@
     SUBDIR += armagetron
     SUBDIR += asc
     SUBDIR += asciiquarium
+    SUBDIR += assaultcube
     SUBDIR += atitd
     SUBDIR += atlantikdesigner
     SUBDIR += atomix
