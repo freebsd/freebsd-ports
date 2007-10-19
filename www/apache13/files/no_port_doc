@@ -1,0 +1,22 @@
+--- Makefile.tmpl.orig	2007-10-15 23:37:45.000000000 -0400
++++ Makefile.tmpl    	2007-10-15 23:37:59.000000000 -0400
+@@ -229,7 +229,6 @@
+ 	$(MKDIR) $(root)$(sysconfdir)
+ 	$(MKDIR) $(root)$(htdocsdir)/
+ 	$(MKDIR) $(root)$(htdocsdir)-dist
+-	$(MKDIR) $(root)$(manualdir)
+ 	$(MKDIR) $(root)$(iconsdir)
+ 	$(MKDIR) $(root)$(cgidir)/
+ 	$(MKDIR) $(root)$(cgidir)-dist
+@@ -423,11 +422,6 @@
+ 		(cd $(root)$(htdocsdir)-dist/ && $(TAR) -xf -); \
+ 		find $(root)$(htdocsdir)-dist/ -type d -exec chmod a+rx {} \; ; \
+ 		find $(root)$(htdocsdir)-dist/ -type f -print | xargs chmod a+r ;
+-		echo "Copying tree $(TOP)/htdocs/manual -> $(root)/$(manualdir)/"; \
+-		(cd $(TOP)/htdocs/manual/ && $(TAR) $(TAROPT) - *) |\
+-		(cd $(root)$(manualdir)/ && $(TAR) -xf -); \
+-		find $(root)$(manualdir)/ -type d -exec chmod a+rx {} \; ; \
+-		find $(root)$(manualdir)/ -type f -print | xargs chmod a+r ;
+ 		for script in printenv test-cgi; do \
+ 			cat $(TOP)/cgi-bin/$${script} |\
+ 			sed -e 's;^#!/.*perl;#!$(PERL);' \

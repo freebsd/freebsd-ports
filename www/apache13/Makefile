@@ -90,6 +90,12 @@ SUEXEC_MAN=
 
 .endif  # !SUEXEC
 
+.if !defined(NOPORTDOC)
+PLIST_SUB+=	NODOCS=""
+.else
+PLIST_SUB+=	NODOCS="@comment "
+.endif
+
 HAS_CONFIGURE=	yes
 # += for child ports
 CONFIGURE_ARGS+=	\
@@ -143,6 +149,11 @@ CONFIGURE_ENV+=	\
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
 		${SUEXEC_MAN}
+
+post-patch:
+.if defined(NOPORTDOC)
+	@(cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/no_port_doc)
+.endif
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
