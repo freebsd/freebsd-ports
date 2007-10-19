@@ -12,21 +12,18 @@
 # WITH_OPTIMIZED_CFLAGS - build with optimizations and exclude debug symbols
 
 PORTNAME=	museekplus
-PORTVERSION=	0.1.12
-PORTREVISION=	2
+PORTVERSION=	0.1.13
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	museek-plus
 DISTNAME=	museek+-${PORTVERSION}
 
-MAINTAINER=	stefan@FreeBSD.org
+MAINTAINER=	silver@ultrasoft.ee
 COMMENT=	SoulSeek client with separate terminal and Qt based interface
 
 LIB_DEPENDS=	xml\\+\\+:${PORTSDIR}/textproc/libxml++26 \
 		vorbis:${PORTSDIR}/audio/libvorbis
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
-
-BROKEN=		Does not build
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
@@ -36,8 +33,8 @@ USE_FAM=	yes
 SCONS_ARGS=	QTDIR=${QT_PREFIX} QT_LIB=qt-mt PREFIX=${PREFIX} VORBIS=yes
 DATADIR=	share/museek
 
-MAN1=		muscan.1 muscand.1 museekd.1 musetup.1 musetup-gtk.1 mulog.1 \
-		museekcontrol.1 mucous.1
+MAN1=		mucous.1 mulog.1 murmur.1 muscan.1 muscand.1 museekcontrol.1 \
+		museekd.1 musetup-gtk.1 musetup.1
 
 .if defined(WITHOUT_MUSEEQ)
 SCONS_ARGS+=	MUSEEQ=no
@@ -83,11 +80,14 @@ post-patch:
 		-e "s,%%PYTHONPREFIX_SITELIBDIR%%,${PYTHONPREFIX_SITELIBDIR},g"\
 		${WRKSRC}/Mucipher/python/SConscript \
 		${WRKSRC}/mucous/pymucous/SConscript \
-		${WRKSRC}/pymuseekd/museek/SConscript
+		${WRKSRC}/murmur/pymurmur/SConscript \
+		${WRKSRC}/museekd/SConscript \
+		${WRKSRC}/python-bindings/museek/SConscript
 
 post-install:
 	@${REINPLACE_CMD} -i "" -e "s,/usr/bin/python,${PYTHON_CMD},g" \
-		${PREFIX}/bin/mucous
+		${PREFIX}/bin/mucous \
+		${PREFIX}/bin/musetup-gtk
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
