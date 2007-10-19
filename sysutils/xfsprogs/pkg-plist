@@ -8,7 +8,9 @@ bin/xfs_info
 bin/xfs_io
 bin/xfs_bmap
 bin/xfs_logprint
+bin/xfs_mdrestore
 bin/xfs_mkfile
+bin/xfs_metadump
 bin/xfs_quota
 bin/xfs_rtcp
 sbin/fsck.xfs
