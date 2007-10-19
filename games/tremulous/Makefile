@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|$|${PORTNAME}/|} \
 		ftp://ftp.wireplay.co.uk/pub/quake3arena/mods/tremulous/ \
 		http://www.planetgloom.com/trem/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	sbahra@kerneled.org
 COMMENT=	Free FPS game featuring two opposing teams, humans and aliens
 
 USE_ZIP=	yes
