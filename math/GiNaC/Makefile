@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	GiNaC
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.8
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
@@ -27,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
 USE_LDCONFIG=	yes
 
-MAN1=	ginac-config.1 ginsh.1 viewgar.1
+MAN1=	ginsh.1 viewgar.1
 INFO=	ginac
 
 CPPFLAGS=	-I${LOCALBASE}/include

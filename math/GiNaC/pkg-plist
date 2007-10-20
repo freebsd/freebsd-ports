@@ -1,4 +1,3 @@
-bin/ginac-config
 bin/ginsh
 bin/viewgar
 include/ginac/add.h
@@ -48,7 +47,6 @@ lib/libginac.a
 lib/libginac.la
 lib/libginac.so
 lib/libginac-1.3.so
-lib/libginac-1.3.so.3
+lib/libginac-1.3.so.8
 libdata/pkgconfig/ginac.pc
-share/aclocal/ginac.m4
 @dirrm include/ginac
