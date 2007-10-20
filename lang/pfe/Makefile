@@ -30,6 +30,8 @@ MAN1=		pfe.1 pfe-config.1
 
 .if ${OSVERSION} >= 700042
 BROKEN=		Does not compile with GCC 4.2
+.elif ${ARCH} == amd64
+BROKEN=		Does not build on amd64
 .endif
 
 .include <bsd.port.post.mk>
