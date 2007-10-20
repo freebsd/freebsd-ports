@@ -122,7 +122,9 @@ include/wine/windows/d3drm.h
 include/wine/windows/d3drmdef.h
 include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
+include/wine/windows/d3dx8.h
 include/wine/windows/d3dx8core.h
+include/wine/windows/d3dx8math.h
 include/wine/windows/dbghelp.h
 include/wine/windows/dbinit.idl
 include/wine/windows/dbprop.idl
@@ -756,6 +758,7 @@ lib/wine/msimg32.dll.so
 lib/wine/msisys.ocx.so
 lib/wine/msnet32.dll.so
 lib/wine/msrle32.dll.so
+lib/wine/msvcirt.dll.so
 lib/wine/msvcrt.dll.so
 lib/wine/msvcrt20.dll.so
 lib/wine/msvcrt40.dll.so
@@ -802,6 +805,7 @@ lib/wine/progman.exe.so
 lib/wine/psapi.dll.so
 lib/wine/pstorec.dll.so
 lib/wine/qcap.dll.so
+lib/wine/qmgr.dll.so
 lib/wine/quartz.dll.so
 lib/wine/query.dll.so
 lib/wine/rasapi16.dll16
@@ -960,6 +964,8 @@ lib/wine/xcopy.exe.so
 %%DATADIR%%/wine/fonts/sserifer.fon
 %%DATADIR%%/wine/fonts/sserifet.fon
 %%DATADIR%%/wine/fonts/svgasys.fon
+%%DATADIR%%/wine/fonts/tahoma.ttf
+%%DATADIR%%/wine/fonts/tahomabd.ttf
 %%DATADIR%%/wine/fonts/vgas1255.fon
 %%DATADIR%%/wine/fonts/vgas1256.fon
 %%DATADIR%%/wine/fonts/vgas1257.fon
