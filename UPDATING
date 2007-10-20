@@ -1391,20 +1391,20 @@ upgrades.
   The default install location has changed from
   ${PREFIX}/www/data/hastymail to ${PREFIX}/www/hastymail.
 
-20061109
+20061109:
   AFFECTS: users of milter-bogom, dk-milter, dkim-milter
   AUTHOR: ache@FreeBSD.org
 
   All 3 milters change their default user to "mailnull".
 
-20061108
+20061108:
   AFFECTS: Users of databases/postgresql*-server
   AUTHOR: Palle Girgensohn <girgen@FreeBSD.org>
 
   With the latest patch release of the PostgreSQL ports, the rc script
   is renamed `postgresql'.
 
-20061106
+20061106:
   AFFECTS: Users of net/freeradius
   AUTHOR: David Wood <david@wood2.org.uk>
 
@@ -1444,21 +1444,21 @@ upgrades.
   New maintainer alerted to this issue by private mail from Thomas Vogt
   <thomas@bsdunix.ch>.
 
-20061106
+20061106:
   AFFECTS: users of syutils/munin-*
   AUTHOR: miwi@FreeBSD.org
 
   - The default install location has changed from
     ${PREFIX}/www/data/munin to ${PREFIX}/www/munin.
 
-20061106
+20061106:
   AFFECTS: users of chinese/tatter-tools
   AUTHOR: chinsan.tw@gmail.com
 
   - The default install location has changed from
     ${PREFIX}/www/data/tatter to ${PREFIX}/www/tatter.
 
-20061102
+20061102:
   AFFECTS: users of mail/fetchmail
   AUTHOR: barner@FreeBSD.org
 
@@ -3857,7 +3857,7 @@ portupgrade -a
 
   pfspamd_enable="YES"
 
-20050413
+20050413:
   AFFECTS: users of www/quixote
   AUTHOR: dryice@liu.com.cn
 
@@ -4527,7 +4527,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   /var/db/clamav. You should update the DatabaseDirectory keyword in
   /usr/local/etc/clamd.conf and /usr/local/etc/freshclam.conf.
 
-20041221
+20041221:
   AFFECTS: users of security/gpgme03
   AUTHOR: clement@FreeBSD.org
 
@@ -4872,7 +4872,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   The courier-imap port must now be enabled / disabled in rc.conf.
   See the script for details.
 
-20041015
+20041015:
   AFFECTS: users of www/apache2 with devel/apr
   AUTHOR: clement@FreeBSD.org
 
