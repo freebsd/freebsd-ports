@@ -1,22 +1,31 @@
 bin/rkhunter
-@unexec if cmp -s %D/etc/rkhunter.conf %D/etc/rkhunter.conf.sample; then rm -f %D/etc/rkhunter.conf; fi
-etc/rkhunter.conf.sample
 etc/periodic/security/415.rkhunter
-lib/rkhunter/db/backdoorports.dat
-lib/rkhunter/db/defaulthashes.dat
-lib/rkhunter/db/md5blacklist.dat
-lib/rkhunter/db/mirrors.dat
-lib/rkhunter/db/os.dat
-lib/rkhunter/db/programs_bad.dat
-lib/rkhunter/db/programs_good.dat
+etc/rkhunter.conf
+var/lib/rkhunter/db/backdoorports.dat
+var/lib/rkhunter/db/defaulthashes.dat
+var/lib/rkhunter/db/md5blacklist.dat
+var/lib/rkhunter/db/mirrors.dat
+var/lib/rkhunter/db/os.dat
+var/lib/rkhunter/db/programs_bad.dat
+var/lib/rkhunter/db/suspscan.dat
+var/lib/rkhunter/db/programs_good.dat
+var/lib/rkhunter/db/i18n/cn
+var/lib/rkhunter/db/i18n/en
+var/lib/rkhunter/tmp/group
+var/lib/rkhunter/tmp/passwd
 lib/rkhunter/scripts/check_modules.pl
 lib/rkhunter/scripts/check_port.pl
 lib/rkhunter/scripts/check_update.sh
 lib/rkhunter/scripts/filehashmd5.pl
 lib/rkhunter/scripts/filehashsha1.pl
 lib/rkhunter/scripts/showfiles.pl
+lib/rkhunter/scripts/readlink.sh
+lib/rkhunter/scripts/stat.pl
 @dirrm lib/rkhunter/scripts
-@dirrm lib/rkhunter/db
 @dirrm lib/rkhunter
+@dirrm var/lib/rkhunter/db/i18n
+@dirrm var/lib/rkhunter/db
+@dirrm var/lib/rkhunter/tmp
+@dirrm var/lib/rkhunter
 @dirrmtry etc/periodic/security
 @dirrmtry etc/periodic
