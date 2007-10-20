@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	rkhunter
-PORTVERSION=	1.2.9
+PORTVERSION=	1.3.0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Rootkit detection tool
@@ -40,8 +39,9 @@ RUN_DEPENDS+=	nmap:${PORTSDIR}/security/nmap
 .endif
 
 do-install:
-	cd ${WRKSRC} && ./installer.sh --installdir ${PREFIX}
-	${INSTALL_MAN} ${WRKSRC}/files/development/rkhunter.8 ${MAN8PREFIX}/man/man8
+	cd ${WRKSRC} && ./installer.sh --layout custom ${PREFIX} --install
+	${INSTALL_MAN} ${WRKSRC}/files/rkhunter.8 \
+		${MAN8PREFIX}/man/man8
 	@${MKDIR} ${PREFIX}/etc/periodic/security
 	${INSTALL_SCRIPT} ${WRKDIR}/415.rkhunter ${PREFIX}/etc/periodic/security
 .if !defined(NOPORTDOCS)
