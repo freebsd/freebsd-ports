@@ -586,7 +586,37 @@
  fi
  
  
-@@ -10612,146 +10526,200 @@
+@@ -10333,10 +10247,7 @@
+   scsilib_objs="ScsiIf-lib.o"
+ 
+   case "$host" in
+-    *-freebsd2*)
+-			       scsilib_libs="$scsilib_libs"
+-			       ;;
+-    *-freebsd[34567]*)
++    *-freebsd*)
+ 			       scsilib_libs="$scsilib_libs -lcam"
+ 			       ;;
+   esac
+@@ -10355,7 +10266,7 @@
+ 	       scsilib_objs="ScsiIf-linux.o sg_err.o"
+ 	       ;;
+ 
+-    *-freebsd[34567]*)
++    *-freebsd*)
+ 	       scsilib_libs="-lcam"
+ 	       scsilib_objs="ScsiIf-freebsd-cam.o"
+ 	       ;;
+@@ -10601,7 +10512,7 @@
+ esac
+ 
+ case "$host" in
+-  *-linux* | *-freebsd[4567]* | *-solaris*)
++  *-linux* | *-freebsd* | *-solaris*)
+ 	     sound_if_obj=SoundIF-ao.o
+ 	     ;;
+ 
+@@ -10612,146 +10523,200 @@
  
  if test "$with_ogg_support" = yes; then
  
@@ -897,7 +927,7 @@
  	if test "$with_mp3_support" = no; then
  		echo "$as_me:$LINENO: checking for mad_stream_init in -lmad" >&5
  echo $ECHO_N "checking for mad_stream_init in -lmad... $ECHO_C" >&6
-@@ -10971,82 +10939,109 @@
+@@ -10971,82 +10936,109 @@
  	fi
  fi
  
@@ -1064,7 +1094,7 @@
  fi
  
  if test "$with_ogg_support" = yes; then
-@@ -11922,7 +11917,6 @@
+@@ -11922,7 +11914,6 @@
  s,@LAME_CFLAGS@,$LAME_CFLAGS,;t t
  s,@LAME_LIBS@,$LAME_LIBS,;t t
  s,@PKG_CONFIG@,$PKG_CONFIG,;t t
