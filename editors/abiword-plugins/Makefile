@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--disable-all
 MAKEFILE=	GNUmakefile
 
 WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abiword-plugins
-MD5_FILE=	${.CURDIR}/../abiword/distinfo
+MD5_FILE=	${.CURDIR}/usr/ports/editors/abiword/distinfo
 
 ABIVERSION=	2.4
 PLIST_SUB+=	ABIVERSION=${ABIVERSION}
@@ -40,6 +40,12 @@ PLIST_SUB+=	ABIVERSION=${ABIVERSION}
 EXTERNALS=	MSVC* abipbx abiword-docs expat fribidi libiconv libpng pbx \
 		popt wv zlib
 EXTRACT_AFTER_ARGS=| ${TAR} -xpf - ${EXTERNALS:C,^,--exclude ${DISTNAME}/,}
+
+.if !defined(WITHOUT_OPTIONS)
+.include "${.CURDIR}/options"
+.endif
+
+.include <bsd.port.pre.mk>
 
 # NOTE: Please, keep those knobs in the ABC's order.
 
@@ -270,8 +276,6 @@ PLIST_SUB+=		XSLFO:=""
 PLIST_SUB+=		XSLFO:="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
 #.if ${HAVE_GNOME:Mnautilus2}!="" && ${HAVE_GNOME:Mlibgnomeprintui}!=""
 #USE_GNOME+=		nautilus2 libgnomeprintui
 #CONFIGURE_ARGS+=	--enable-gnome
@@ -284,6 +288,7 @@ PLIST_SUB+=		SVG:=""
 PLIST_SUB+=		SVG:="@comment "
 .endif
 
+.if defined(WITHOUT_OPTIONS)
 pre-everything::
 	@${ECHO_MSG} "You may specify the following on the command line:"
 	@${ECHO_MSG} ""
@@ -385,6 +390,7 @@ pre-everything::
 .if !defined(WITHOUT_XSLFO)
 	@${ECHO_MSG} "WITHOUT_XSLFO=yes	Import/export XSL-FO."
 .endif
+.endif # WITH_OPTIONS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|[$$]abi_plugin_source/../wv|${LOCALBASE}/include/wv|g ; \
