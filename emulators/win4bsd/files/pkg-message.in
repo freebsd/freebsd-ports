@@ -8,4 +8,9 @@ For licensing information, please visit:
 
 To get started installing Windows, see the documentation at the web.
 
+For completing the installation, ensure "mergeprod" is not running,
+and run the following command for the initial setup:
+
+$ %%PREFIX%%/lib/win4bsd/bin/postinstall.sh
+
 =======================================================================
