@@ -1,4 +1,3 @@
-@unexec killall mergeprod
 lib/win4bsd/bin/ask_license.sh
 lib/win4bsd/bin/build_kqemu.sh
 lib/win4bsd/bin/check_license
@@ -58,7 +57,6 @@ lib/win4bsd/bin/winpro-desktop.sh
 lib/win4bsd/docs/Changelog.html
 lib/win4bsd/docs/Changelog.txt
 lib/win4bsd/docs/Help-Center-en.html
-lib/win4bsd/docs/Help-Center.html
 lib/win4bsd/docs/Release-Notes.html
 lib/win4bsd/docs/Release-Notes.txt
 lib/win4bsd/docs/Users-Guide.html
@@ -271,10 +269,6 @@ share/pixmaps/mergepro-16x16.xpm
 share/pixmaps/mergepro-32x32.xpm
 share/pixmaps/mergepro-64x64.png
 share/pixmaps/mergepro-64x64.xpm
-win4bsd/images/BLANK.IMG
-win4bsd/images/INSTALL.IMG
-win4bsd/images/MERGEPRO.IMG
-win4bsd/run/mergeprod.pid
 @dirrm lib/win4bsd/win32
 @dirrm lib/win4bsd/lib/sys
 @dirrm lib/win4bsd/lib/codepages
@@ -284,8 +278,9 @@ win4bsd/run/mergeprod.pid
 @dirrm lib/win4bsd/etc/keymaps
 @dirrm lib/win4bsd/etc/jail
 @dirrm lib/win4bsd/etc
-@dirrm lib/win4bsd/docs
+@dirrmtry lib/win4bsd/docs
 @dirrm lib/win4bsd/bin
-@dirrm lib/win4bsd
-@cwd /
-boot/kernel/kqemu.ko
+@dirrmtry lib/win4bsd
+@dirrmtry share/applications/kde
+@dirrmtry share/applications
+@unexec echo "If you are permanently removing this port check the following files/dirs that could be left over (if the setup was executed): \"/boot/kernel/kqemu.ko\", \"%D/win4bsd\", \"%D/lib/win4bsd/docs\", \"/etc/default/mergepro\"." | fmt

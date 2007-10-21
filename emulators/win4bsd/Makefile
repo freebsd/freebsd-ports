@@ -25,8 +25,9 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 RESTRICTED=	Redistribution is not allowed
 
-PKGINSTALL=	${WRKSRC}/+POST-INSTALL
 PKGDEINSTALL=	${WRKSRC}/+POST-DEINSTALL
+
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -47,7 +48,6 @@ do-install:
 	${CP} -R ${WRKSRC}/usr/share/* ${PREFIX}/share
 
 post-install:
-	@${SH} ${PKGINSTALL}
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.post.mk>
