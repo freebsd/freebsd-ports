@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+JAVA_VERSION="1.5+" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/clojure.jar" clojure.lang.Compiler %%DATADIR%%/boot.clj

@@ -27,6 +27,7 @@
     SUBDIR += cint
     SUBDIR += clips
     SUBDIR += clisp
+    SUBDIR += clojure
     SUBDIR += cmucl
     SUBDIR += cmucl-extra
     SUBDIR += cocor
