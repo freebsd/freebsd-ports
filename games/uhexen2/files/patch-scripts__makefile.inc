@@ -1,16 +1,15 @@
---- ./scripts/makefile.inc.orig	Fri Oct  6 13:43:36 2006
-+++ ./scripts/makefile.inc	Tue Jan  9 16:56:32 2007
-@@ -15,7 +15,8 @@
+--- scripts/makefile.inc.orig	Thu Jul 12 14:41:20 2007
++++ scripts/makefile.inc	Mon Oct  8 16:11:27 2007
+@@ -17,7 +17,7 @@
  
  # Common paths:
  # X directory
--X11_PATH ?=/usr/X11R6
-+X11BASE ?= /usr/X11R6
-+X11_PATH ?= $(X11BASE)
+-X11BASE ?=/usr/X11R6
++X11BASE ?=/usr/local
  
  # MinGW32 directory:
  MINGWDIR ?=/mingw
-@@ -61,22 +62,7 @@
+@@ -73,22 +73,7 @@
  endif
  
  # Compiler selection:
@@ -30,26 +29,7 @@
 -ifeq ($(CC_OVERRIDE),)
 -CC := $(CC_DEFAULT)
 -endif
-+CC ?= gcc
++CC ?= cc
  
  NASM ?= $(NASM_BIN)
  WINDRES ?= windres
-@@ -104,9 +90,6 @@
- 
- # default CPU flags
- CPUFLAGS:=
--ifeq ($(MACH_TYPE),x86)
--CPUFLAGS:=-march=i586
--endif
- 
- # NASM flags:
- # These are required for IA32 assembly for hexen2/hexenworld clients
-@@ -121,7 +104,7 @@
- # be added to the make command
- DFLAGS := -g -Wall
- ifdef DEBUG
--CFLAGS := $(DFLAGS)
-+CFLAGS := $(CFLAGS) $(DFLAGS)
- endif
- 
- # the "sdl-config" command

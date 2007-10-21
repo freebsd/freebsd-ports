@@ -12,9 +12,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/COMPILE
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/Features
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/NOTES.porting
-%%PORTDOCS%%%%DOCSDIR%%/NonIntel.log
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.3dfx
 %%PORTDOCS%%%%DOCSDIR%%/README.AoT
@@ -29,6 +26,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.3.0
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.4.0
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.4.1
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.4.2
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DATADIR%%/data1/default.cfg
 %%DATADIR%%/data1/hexen.rc
@@ -41,6 +39,7 @@
 %%HW%%%%DATADIR%%/hw/default.cfg
 %%HW%%%%DATADIR%%/hw/hwprogs.dat
 %%HW%%%%DATADIR%%/hw/pak4.pak
+%%HW%%%%DATADIR%%/hw/pak4_readme.txt
 %%HW%%%%DATADIR%%/hw/strings.txt
 %%FULL%%%%DATADIR%%/portals/default.cfg
 %%FULL%%%%DATADIR%%/portals/hexen.rc

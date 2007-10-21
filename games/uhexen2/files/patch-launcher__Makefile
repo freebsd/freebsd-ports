@@ -1,6 +1,6 @@
---- ./launcher/Makefile.orig	Fri Oct  6 13:43:36 2006
-+++ ./launcher/Makefile	Tue Jan  9 16:56:32 2007
-@@ -11,27 +11,11 @@
+--- launcher/Makefile.orig	Mon Aug 13 10:01:46 2007
++++ launcher/Makefile	Sun Oct 21 14:38:45 2007
+@@ -19,19 +19,7 @@
  
  HOST_OS:=$(shell uname)
  
@@ -17,15 +17,28 @@
 -ifeq ($(CC_OVERRIDE),)
 -CC := $(CC_DEFAULT)
 -endif
-+CC ?= gcc
++CC_DEFAULT:=cc
  
  LINKER:= $(CC)
  
+@@ -39,11 +27,7 @@
+ XDELTA_FLAGS:=
+ XDELTA_LINK:= -L$(XDELTA_DIR)/.libs -lxdelta -L$(XDELTA_DIR)/libedsio/.libs -ledsio
+ 
 -ifdef DEMO
--TMPNAME:= h2demo
+-H2LAUNCH:= h2demo
 -else
- TMPNAME:= h2launcher
+ H2LAUNCH:= h2launcher
 -endif
  
  ifdef GTK1
- H2LAUNCH:= $(TMPNAME).gtk1
+ GTK_CFLAGS:= $(shell gtk-config --cflags)
+@@ -124,7 +108,7 @@
+ ALL_OBJECTS  := $(LAUNCHER_OBJS) $(GUI_OBJS) $(XPATCH_OBJS) \
+ 	$(LIBXDELTA_OBJS) $(LIBEDSIO_OBJS) $(LAUNCHER_MAIN)
+ 
+-$(H2LAUNCH): $(LAUNCHER_OBJS) $(LAUNCHER_MAIN) $(GUI_OBJS) $(XPATCH_OBJS)
++$(H2LAUNCH): $(ALL_OBJECTS)
+ 	@rm -f $(H2LAUNCH)
+ 	$(LINKER) -o $(H2LAUNCH) $(ALL_OBJECTS) $(LDFLAGS)
+ 
