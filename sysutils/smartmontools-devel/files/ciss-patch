@@ -57,84 +57,21 @@
 +
  // Interface to ATA devices behind 3ware escalade RAID controller cards.  See os_linux.c
  
-@@ -871,16 +902,17 @@
- // specific) SCSI device name in FreeBSD can be sd, sr, scd, st, nst,
- // osst, nosst and sg.
--static const char * fbsd_dev_prefix = "/dev/";
--static const char * fbsd_dev_ata_disk_prefix = "ad";
--static const char * fbsd_dev_scsi_disk_plus = "da";
--static const char * fbsd_dev_scsi_tape1 = "sa";
--static const char * fbsd_dev_scsi_tape2 = "nsa";
--static const char * fbsd_dev_scsi_tape3 = "esa";
--static const char * fbsd_dev_twe_ctrl = "twe";
--static const char * fbsd_dev_twa_ctrl = "twa";
-+static const char fbsd_dev_prefix[] = "/dev/";
-+static const char fbsd_dev_ata_disk_prefix[] = "ad";
-+static const char fbsd_dev_scsi_disk_plus[] = "da";
-+static const char fbsd_dev_scsi_tape1[] = "sa";
-+static const char fbsd_dev_scsi_tape2[] = "nsa";
-+static const char fbsd_dev_scsi_tape3[] = "esa";
-+static const char fbsd_dev_twe_ctrl[] = "twe";
-+static const char fbsd_dev_twa_ctrl[] = "twa";
-+static const char fbsd_dev_ciss_ctrl[] = "ciss";
+@@ -871,6 +902,7 @@
+ static const char * fbsd_dev_scsi_tape3 = "esa";
+ static const char * fbsd_dev_twe_ctrl = "twe";
+ static const char * fbsd_dev_twa_ctrl = "twa";
++static const char * fbsd_dev_ciss_ctrl = "ciss";
  
  static int parse_ata_chan_dev(const char * dev_name, struct freebsd_dev_channel *chan) {
    int len;
--  int dev_prefix_len = strlen(fbsd_dev_prefix);
-+  int dev_prefix_len = sizeof fbsd_dev_prefix - 1;
-   
-   // if dev_name null, or string length zero
-@@ -898,5 +930,5 @@
-   // form /dev/ad* or ad*
-   if (!strncmp(fbsd_dev_ata_disk_prefix, dev_name,
--               strlen(fbsd_dev_ata_disk_prefix))) {
-+               sizeof fbsd_dev_ata_disk_prefix - 1)) {
- #ifndef IOCATAREQUEST
-     if (chan != NULL) {
-@@ -911,24 +943,24 @@
-   // form /dev/da* or da*
-   if (!strncmp(fbsd_dev_scsi_disk_plus, dev_name,
--               strlen(fbsd_dev_scsi_disk_plus)))
-+               sizeof fbsd_dev_scsi_disk_plus - 1))
-     goto handlescsi;
- 
-   // form /dev/sa* or sa*
-   if (!strncmp(fbsd_dev_scsi_tape1, dev_name,
--              strlen(fbsd_dev_scsi_tape1)))
-+              sizeof fbsd_dev_scsi_tape1 - 1))
-     goto handlescsi;
- 
-   // form /dev/nsa* or nsa*
-   if (!strncmp(fbsd_dev_scsi_tape2, dev_name,
--              strlen(fbsd_dev_scsi_tape2)))
-+              sizeof fbsd_dev_scsi_tape2 - 1))
-     goto handlescsi;
- 
-   // form /dev/esa* or esa*
-   if (!strncmp(fbsd_dev_scsi_tape3, dev_name,
--              strlen(fbsd_dev_scsi_tape3)))
-+              sizeof fbsd_dev_scsi_tape3 - 1))
-     goto handlescsi;
-   
-   if (!strncmp(fbsd_dev_twa_ctrl,dev_name,
--	       strlen(fbsd_dev_twa_ctrl))) {
-+	       sizeof fbsd_dev_twa_ctrl - 1)) {
-     if (chan != NULL) {
-       if (get_tw_channel_unit(dev_name,&(chan->channel),&(chan->device))<0) {
-@@ -943,5 +975,5 @@
- 
-   if (!strncmp(fbsd_dev_twe_ctrl,dev_name,
--	       strlen(fbsd_dev_twe_ctrl))) {
-+	       sizeof fbsd_dev_twe_ctrl - 1)) {
-     if (chan != NULL) {
-       if (get_tw_channel_unit(dev_name,&(chan->channel),&(chan->device))<0) {
 @@ -953,4 +985,13 @@
      }
      return CONTROLLER_3WARE_678K_CHAR;
 +  }
 +  // form /dev/esa* or esa*
 +  if (!strncmp(fbsd_dev_ciss_ctrl, dev_name,
-+	       sizeof fbsd_dev_ciss_ctrl - 1)) {
++	       strlen(fbsd_dev_ciss_ctrl))) {
 +  // This is of dubious value, as the desired disk's (unit's) number
 +  // still must be specified explicitly with the `-d' option
 +	warnx("Use the `-d' option to access drives behind %s. "
