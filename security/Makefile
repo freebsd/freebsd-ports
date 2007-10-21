@@ -198,6 +198,7 @@
     SUBDIR += ifd-devkit
     SUBDIR += ifd-gempc410
     SUBDIR += ifd-slb_rf60
+    SUBDIR += ike
     SUBDIR += ike-scan
     SUBDIR += integrit
     SUBDIR += ipfcount
