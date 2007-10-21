@@ -28,7 +28,7 @@ load_rc_config $name
 : ${apcupsd_lockfile="/var/spool/lock/apcupsd.lock"}
 
 pidfile="/var/run/apcupsd.pid"
-required_files="%%PREFIX%%/etc/apcupsd/apcupsd.conf"
+required_files="%%ETCDIR%%/apcupsd.conf"
 command="%%PREFIX%%/sbin/apcupsd"
 
 run_rc_command "$1"

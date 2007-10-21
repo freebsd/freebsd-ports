@@ -1,14 +1,14 @@
 **********************************************************************
 Read the manual
 
-  ${PREFIX}/share/doc/apcupsd/manual.pdf
+  %%DOCSDIR%%/manual.pdf
 
 to do site specific configuration assigenments! Especially have a
 detailed look into the chapter describing the shutdown procedure.
 
-Sample files are installed in ${PREFIX}/etc/apcupsd. These files
+Sample files are installed in %%ETCDIR%%. These files
 must be copied and/or configured for a proper working apcupsd.
-You need to modify ${PREFIX}/etc/apcupsd/apcupsd.conf as follows:
+You need to modify %%ETCDIR%%/apcupsd.conf as follows:
 
   For serial cable: DEVICE /dev/cuadX (or /dev/cuaaX for [45.]x) 
   For USB cable: DEVICE (yes, leave it blank after DEVICE)

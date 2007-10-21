@@ -3,23 +3,23 @@ sbin/apcaccess
 sbin/apctest
 sbin/smtp
 %%POWERFL%%sbin/powerflute
-@unexec if cmp -s %D/etc/apcupsd/apcupsd.conf.sample %D/etc/apcupsd/apcupsd.conf; then rm -f %D/etc/apcupsd/apcupsd.conf; fi
-etc/apcupsd/apcupsd.conf.sample
-etc/apcupsd/apccontrol
-etc/apcupsd/changeme
-etc/apcupsd/commfailure
-etc/apcupsd/commok
-etc/apcupsd/onbattery
-etc/apcupsd/offbattery
-%%CGI%%@unexec if cmp -s %D/etc/apcupsd/apcupsd.css.sample %D/etc/apcupsd/apcupsd.css; then rm -f %D/etc/apcupsd/apcupsd.css; fi
-%%CGI%%etc/apcupsd/apcupsd.css.sample
-%%CGI%%@unexec if cmp -s %D/etc/apcupsd/hosts.conf.sample %D/etc/apcupsd/hosts.conf; then rm -f %D/etc/apcupsd/hosts.conf; fi
-%%CGI%%etc/apcupsd/hosts.conf.sample
-%%CGI%%@unexec if cmp -s %D/etc/apcupsd/multimon.conf.sample %D/etc/apcupsd/multimon.conf; then rm -f %D/etc/apcupsd/multimon.conf; fi
-%%CGI%%etc/apcupsd/multimon.conf.sample
-%%CGI%%etc/apcupsd/cgi/multimon.cgi
-%%CGI%%etc/apcupsd/cgi/upsfstats.cgi
-%%CGI%%etc/apcupsd/cgi/upsimage.cgi
-%%CGI%%etc/apcupsd/cgi/upsstats.cgi
-%%CGI%%@dirrm etc/apcupsd/cgi
-@dirrmtry etc/apcupsd
+@unexec if cmp -s %D/%%ETCDIR%%/apcupsd.conf.sample %D/%%ETCDIR%%/apcupsd.conf; then rm -f %D/%%ETCDIR%%/apcupsd.conf; fi
+%%ETCDIR%%/apcupsd.conf.sample
+%%ETCDIR%%/apccontrol
+%%ETCDIR%%/changeme
+%%ETCDIR%%/commfailure
+%%ETCDIR%%/commok
+%%ETCDIR%%/onbattery
+%%ETCDIR%%/offbattery
+%%CGI%%@unexec if cmp -s %D/%%ETCDIR%%/apcupsd.css.sample %D/%%ETCDIR%%/apcupsd.css; then rm -f %D/%%ETCDIR%%/apcupsd.css; fi
+%%CGI%%%%ETCDIR%%/apcupsd.css.sample
+%%CGI%%@unexec if cmp -s %D/%%ETCDIR%%/hosts.conf.sample %D/%%ETCDIR%%/hosts.conf; then rm -f %D/%%ETCDIR%%/hosts.conf; fi
+%%CGI%%%%ETCDIR%%/hosts.conf.sample
+%%CGI%%@unexec if cmp -s %D/%%ETCDIR%%/multimon.conf.sample %D/%%ETCDIR%%/multimon.conf; then rm -f %D/%%ETCDIR%%/multimon.conf; fi
+%%CGI%%%%ETCDIR%%/multimon.conf.sample
+%%CGI%%%%ETCDIR%%/cgi/multimon.cgi
+%%CGI%%%%ETCDIR%%/cgi/upsfstats.cgi
+%%CGI%%%%ETCDIR%%/cgi/upsimage.cgi
+%%CGI%%%%ETCDIR%%/cgi/upsstats.cgi
+%%CGI%%@dirrm %%ETCDIR%%/cgi
+@dirrmtry %%ETCDIR%%
