@@ -1,5 +1,5 @@
 .\" Roff format skeleton provided by Taketo Kabe <kabe@sra-tohoku.co.jp>
-.TH stone 1 "version 2.3c"
+.TH stone 1 "version 2.3d"
 .
 .SH NAME
 stone \- Simple Repeater
@@ -202,6 +202,10 @@ Turn off TLSv1 protocol.
 Turn off SSLv3 protocol.
 .IP no_ssl2
 Turn off SSLv2 protocol.
+.IP sni
+Server Name Indication (SNI).
+.IP servername=\fIstr\fP
+The name of the server indicated by SNI.
 .IP bugs
 Switch on all SSL implementation bug workarounds.
 .IP serverpref
@@ -209,17 +213,34 @@ Use server's cipher preferences (only SSLv2).
 .IP sid_ctx=\fIstr\fP
 Set session ID context.
 .IP passfile=\fIfile\fP
-The filename of the file containing password of the key
+The filename of the file containing password of the key.
+.IP passfilepat=\fIfile\fP
+The pattern of the filename.
 .IP key=\fIfile\fP
 The filename of the secret key of the certificate.
+.IP keypat=\fIfile\fP
+The pattern of the filename.
 .IP cert=\fIfile\fP
 The filename of the certificate.
+.IP certpat=\fIfile\fP
+The pattern of the filename.
+.IP certkey=\fIfile\fP
+The filename of the certificate with the secret key.
+.IP certkeypat=\fIfile\fP
+The pattern of the filename.
 .IP CAfile=\fIfile\fP
 The filename of the certificate of the CA.
 .IP CApath=\fIdir\fP
 The directory of the certificate files.
 .IP pfx=\fIfile\fP
 The filename of the PKCS#12 bag.
+.IP pfxpat=\fIfile\fP
+The pattern of the filename.
+.IP store=\fIprop\fP
+[Windows] Use the secret key in the Cert Store.
+designate by "SUBJ:<substr>" or "THUMB:<hex>".
+.IP storeCA
+[Windows] Use CA certificates in the Cert Store.
 .IP cipher=\fIlist\fP
 The list of ciphers.
 .IP lb\fIn\fP=\fIm\fP
@@ -484,7 +505,7 @@ The official homepage of \fBstone\fP is:
 All rights about this program \fBstone\fP are reserved by the
 original author, Hiroaki Sengoku.  The program is free software;
 you can redistribute it and/or modify it under the terms of the
-\fIGNU IGeneral Public License (GPL)\fP.  Furthermore you can link it
+\fIGNU General Public License (GPL)\fP.  Furthermore you can link it
 with openssl.
 .
 .SH NO WARRANTY

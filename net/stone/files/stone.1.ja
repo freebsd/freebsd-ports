@@ -1,5 +1,5 @@
 .\" Roff format skeleton provided by Taketo Kabe <kabe@sra-tohoku.co.jp>
-.TH stone 1 "version 2.3c"
+.TH stone 1 "version 2.3d"
 .
 .SH 名称
 stone \- Simple Repeater
@@ -193,6 +193,10 @@ SSL 証明書チェーンの長さの最大値を指定します。
 プロトコルの選択枝から SSLv3 を外します。
 .IP no_ssl2
 プロトコルの選択枝から SSLv2 を外します。
+.IP sni
+サーバ名通知 (Server Name Indication) を行ないます。
+.IP servername=\fIstr\fP
+SNI で通知するサーバ名を指定します。
 .IP bugs
 SSL の実装にバグがある接続相手との接続を可能にします。
 .IP serverpref
@@ -201,16 +205,33 @@ SSL サーバの指定した暗号を用います (SSLv2 のみ)。
 SSL セッション ID コンテキストを設定します。
 .IP passfile=\fIfile\fP
 秘密鍵のパスフレーズを格納したファイルを指定します。
+.IP passfilepat=\fIfile\fP
+ファイル名のパターンを指定します。
 .IP key=\fIfile\fP
 証明書の秘密鍵ファイルを指定します。
+.IP keypat=\fIfile\fP
+ファイル名のパターンを指定します。
 .IP cert=\fIfile\fP
 証明書ファイルを指定します。
+.IP certpat=\fIfile\fP
+ファイル名のパターンを指定します。
+.IP certkey=\fIfile\fP
+秘密鍵付証明書ファイルを指定します。
+.IP certkeypat=\fIfile\fP
+ファイル名のパターンを指定します。
 .IP CAfile=\fIfile\fP
 認証局の証明書ファイルを指定します。
 .IP CApath=\fIdir\fP
 認証局の証明書があるディレクトリを指定します。
 .IP pfx=\fIfile\fP
 PKCS#12 ファイルを指定します。
+.IP pfxpat=\fIfile\fP
+ファイル名のパターンを指定します。
+.IP store=\fIprop\fP
+[Windows] 証明書ストア内の秘密鍵付証明書を指定。
+"SUBJ:<substr>" あるいは "THUMB:<hex>"
+.IP storeCA
+[Windows] 証明書ストア内の認証局証明書を使用します。
 .IP cipher=\fIlist\fP
 暗号化アルゴリズムのリストを指定します。
 .IP lb\fIn\fP=\fIm\fP
