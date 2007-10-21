@@ -16812,6 +16812,7 @@ xextensions	ports/x11/xextensions
 xextproto	ports/x11/xextproto
 xeyes		ports/x11/xeyes
 xeyesplus	ports/games/xeyesplus
+xf-spf		ports/mail/xf-spf
 xf86-input-acecad	ports/x11-drivers/xf86-input-acecad
 xf86-input-calcomp	ports/x11-drivers/xf86-input-calcomp
 xf86-input-citron	ports/x11-drivers/xf86-input-citron
