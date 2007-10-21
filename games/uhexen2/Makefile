@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uhexen2
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	hexen2source-${PORTVERSION}
@@ -46,7 +45,7 @@ PLIST_SUB+=	DEMO="" \
 UH2_DATA=	default.cfg hexen.rc pak0.pak progs.dat
 UH2_DATADIR=	${WRKDIR}/hexen2demo-${PORTVERSION}
 .else
-DISTFILES+=	gamedata-all-1.16a${EXTRACT_SUFX}
+DISTFILES+=	gamedata-all-1.19${EXTRACT_SUFX}
 PLIST_SUB+=	DEMO="@comment " \
 		FULL=""
 SUB_FILES+=	pkg-message
@@ -105,7 +104,6 @@ PLIST_SUB+=	X86_ASM="@comment "
 .endif
 
 post-extract:
-	@${RM} -r ${WRKSRC}/docs/activision
 	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
 
 post-patch:
