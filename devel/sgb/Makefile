@@ -7,7 +7,6 @@
 
 PORTNAME=	sgb
 PORTVERSION=	20070328
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.stanford.edu/pub/sgb/ \
 		${MASTER_SITE_GENTOO}
