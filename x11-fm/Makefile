@@ -24,7 +24,6 @@
     SUBDIR += mtoolsfm
     SUBDIR += mucommander
     SUBDIR += nautilus
-    SUBDIR += pcmanfm
     SUBDIR += py-nautilus
     SUBDIR += rox-filer
     SUBDIR += rox-mime-editor
