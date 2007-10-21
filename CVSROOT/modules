@@ -4832,6 +4832,7 @@ iiimf-x		ports/textproc/iiimf-x
 iiimf-x-lib	ports/textproc/iiimf-x-lib
 iip		ports/irc/iip
 ija		ports/news/ija
+ike		ports/security/ike
 ike-scan	ports/security/ike-scan
 ikiwiki		ports/www/ikiwiki
 iksemel		ports/textproc/iksemel
