@@ -5,12 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	actioncube
-PORTVERSION=	0.92
-PORTREVISION=	1
+PORTNAME=	assaultcube
+PORTVERSION=	0.93
 CATEGORIES=	games
 MASTER_SITES=	SF/actiongame
-DISTNAME=	ActionCube_v${PORTVERSION}
+DISTNAME=	AssaultCube_v${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Total conversion of the FPS game called Cube
@@ -19,7 +18,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	libenet
-WRKSRC=		${WRKDIR}/ActionCube
+WRKSRC=		${WRKDIR}/${DISTNAME:C/_v.*//}
 CONFIGURE_WRKSRC=	${WRKSRC}/source/enet
 BUILD_WRKSRC=	${WRKSRC}/source/src
 
@@ -56,14 +55,14 @@ PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
 .if defined(WITHOUT_OPTIMIZED_CFLAGS)
-MAKE_ENV+=	CXXOPTFLAGS=""
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(CXXOPTFLAGS)||' ${WRKSRC}/source/src/Makefile
 .endif
 
 do-install:
 .for f in ${ACUBE_BIN}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}_${f} ${PREFIX}/bin
 .endfor
-	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
 .for f in ${ACUBE_BIN}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ac_${f} \
 		${PREFIX}/libexec/${PORTNAME}_${f}
