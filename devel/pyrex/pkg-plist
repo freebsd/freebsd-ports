@@ -78,6 +78,9 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Mac/setup.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Mac/setup.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Mac/setup.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacSystem.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacSystem.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacSystem.pyo
