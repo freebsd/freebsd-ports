@@ -3318,3 +3318,4 @@ devel/p5-Devel-Peek||2007-10-16|Has expired: depends on antique versions of perl
 net/skype-devel||2007-10-16|No longer needed: Please update to net/skype
 devel/bison2|devel/bison|2007-10-17|Bison 1.x to 2.x conversion
 games/actioncube|games/assaultcube|2007-10-19|Project name changed
+x11-fm/pcmanfm||2007-10-21|Has expired: Unmaintained upstream
