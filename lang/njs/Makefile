@@ -16,8 +16,6 @@ DISTNAME=	js-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NJS (NGS) is a standalone JavaScript/ECMAScript interpreter
 
-BROKEN=		does not build
-
 CONFLICTS=	js-1.5.*
 
 USE_LDCONFIG=	yes
@@ -31,7 +29,7 @@ post-extract:
 	@${RM} ${WRKSRC}/docs/js.info*
 # Fix for GCC 4.2
 	@${REINPLACE_CMD} -E \
-		's,(\(unsigned char \*\) )(ptr \+=),\2 sizeof\1*,' \
+		's,\((unsigned char) \*\) (ptr \+=),\2 sizeof(\1) *,' \
 			${WRKSRC}/src/iostream.c
 
 .include <bsd.port.mk>
