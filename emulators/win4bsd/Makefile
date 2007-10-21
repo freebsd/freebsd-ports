@@ -17,7 +17,8 @@ COMMENT=	Win4BSD Virtual Machine for Windows under BSD
 
 CONFLICTS=	Win4BSD-[0-9]*
 
-IA32_BINARY_PORT=	yes
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	installs an i386 binary which requires dependecies
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 NO_BUILD=	yes
