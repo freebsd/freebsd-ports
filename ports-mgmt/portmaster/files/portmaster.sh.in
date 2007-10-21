@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.190
+# Local version: 1.191
 # $FreeBSD$
 
 # Copyright (c) 2005-2007 Douglas Barton, All rights reserved
@@ -513,7 +513,7 @@ find_moved_port () {
 	# To avoid having each word of the reason treated separately
 	IFS='
 '
-	for l in `grep "^$sf" /usr/ports/MOVED`; do
+	for l in `grep "^$sf" $pd/MOVED`; do
 		case "$l" in
 		${sf}\|\|*)	fail "The $sf port has been deleted: ${l##*|}"
 				;;
@@ -571,6 +571,7 @@ dependency_check () {
 
 	if [ -z "$dep_port_list" ]; then
 		echo "===>>> No dependencies for $portdir"
+		[ -n "$SHOW_WORK" ] && safe_exit
 		return 0
 	else
 		if [ -n "$CONFIG_ONLY" ]; then
