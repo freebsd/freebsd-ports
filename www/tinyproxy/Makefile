@@ -24,6 +24,14 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 
 MAN8=		tinyproxy.8
 
+OPTIONS=	REVERSE "Enable reverse proxy support" Off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_REVERSE)
+CONFIGURE_ARGS+=	--enable-reverse
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc/tinyproxy/tinyproxy.conf|${PREFIX}/etc/tinyproxy.conf|' \
@@ -35,4 +43,4 @@ post-install:
 		${PREFIX}/etc/tinyproxy.conf ; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
