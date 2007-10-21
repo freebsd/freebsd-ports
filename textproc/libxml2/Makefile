@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 #
-# WITH_THREADS enable pthread support (WILL BREAK OTHER PORTS!)
+# WITH_THREADS_BREAK enable pthread support (WILL BREAK OTHER PORTS!)
 # WITHOUT_SCHEMA disable XML schema support
 # WITH_MEM_DEBUG enable memory debugging (DEVELOPERS ONLY!)
 # WITH_XMLLINT_HIST enable history for xmllint
@@ -41,7 +41,7 @@ MAN1=		xml2-config.1 xmllint.1 xmlcatalog.1
 MAN3=		libxml.3
 .endif
 
-.if defined(WITH_THREADS)
+.if defined(WITH_THREADS_BREAK)
 CONFIGURE_ARGS+=	--with-threads
 .else
 CONFIGURE_ARGS+=	--without-threads
