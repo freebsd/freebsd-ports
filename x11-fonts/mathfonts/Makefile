@@ -8,7 +8,7 @@
 PORTNAME=	mathfonts
 PORTVERSION=	4.1	# Don't upgrade this port if not supported by MathML-enabled Mozilla
 # 			# Please check http://www.mozilla.org/projects/mathml/fonts/
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://support.wolfram.com/mathematica/systems/windows/general/files/
 DISTNAME=	MathFonts_TrueType_${PORTVERSION:S/.//}
@@ -18,7 +18,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Mathematica fonts for MathML-enabled Mozilla
 
-BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
+BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 RUN_DEPENDS=	${FONTSBASE}/texcm-ttf/cmr10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 
 RESTRICTED=	no distribution of the fonts allowed
@@ -37,13 +38,17 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 FONTNAME=	${PORTNAME}
 FONTSBASE=	${X11BASE}/lib/X11/fonts
 FONTSDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-TTMKFDIR_CMD=	${X11BASE}/bin/ttmkfdir
+
+MKFONTSCL_CMD=	${X11BASE}/bin/mkfontscale
+MKFONTDIR_CMD=	${X11BASE}/bin/mkfontdir
 
 do-build:
-	${TTMKFDIR_CMD} -c -f ${FONTNAME} -d ${WRKSRC} | ${CAT} -n |	\
-		${SED} -e 's|^     1|100000|' | ${SORT} -r |		\
-		${CUT} -c 8- > ${WRKSRC}/fonts.scale
-	${CP} ${WRKSRC}/fonts.scale ${WRKSRC}/fonts.dir
+	cd ${WRKSRC} &&	${MKFONTSCL_CMD}
+	cd ${WRKSRC} &&	${MKFONTDIR_CMD}
+.for f in fonts.dir fonts.scale
+	${REINPLACE_CMD} -e 's|-misc-math|-mathfonts-Math|;	\
+		s|-misc-????-|-altsys-ahMn-|' ${WRKSRC}/${f}
+.endfor
 
 do-install:
 	${MKDIR} ${FONTSDIR}
