@@ -7,7 +7,7 @@
 
 PORTNAME=	texcm-ttf
 PORTVERSION=	20010117
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.mozilla.org/projects/mathml/fonts/bakoma/
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX} license.txt
@@ -17,9 +17,10 @@ EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	TeX's Computer Modern Fonts
 
-BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
+BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
-NO_CDROM=	"cannot be sold or distributed with any commercial product"
+NO_CDROM=	cannot be sold or distributed with any commercial product
 
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
@@ -28,18 +29,22 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTSDIR="${FONTSDIR}"
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
+REINPLACE_ARGS=	-i ""
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 FONTNAME=	${PORTNAME}
 FONTSDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-TTMKFDIR_CMD=	${X11BASE}/bin/ttmkfdir
+
+MKFONTSCL_CMD=	${X11BASE}/bin/mkfontscale
+MKFONTDIR_CMD=	${X11BASE}/bin/mkfontdir
 
 do-build:
-	${TTMKFDIR_CMD} -c -f ${FONTNAME} -d ${WRKSRC} | ${CAT} -n |	\
-		${SED} -e 's|^     1|100000|' | ${SORT} -r |		\
-		${CUT} -c 8- > ${WRKSRC}/fonts.scale
-	${CP} ${WRKSRC}/fonts.scale ${WRKSRC}/fonts.dir
+	cd ${WRKSRC} &&	${MKFONTSCL_CMD}
+	cd ${WRKSRC} &&	${MKFONTDIR_CMD}
+.for f in fonts.dir fonts.scale
+	${REINPLACE_CMD} -e 's|-misc-|-texcm-|' ${WRKSRC}/${f}
+.endfor
 
 do-install:
 	${MKDIR} ${FONTSDIR}
