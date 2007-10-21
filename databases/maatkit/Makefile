@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysqltoolkit
-PORTVERSION=	946
+PORTVERSION=	1012
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ COMMENT=	Collection of essential command-line utilities for MySQL
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 
 PERL_CONFIGURE=	yes
 
