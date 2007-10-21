@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	pkg_cutleaves
-PORTVERSION=	20061113
+PORTVERSION=	20071021
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://www.gegenunendlich.de/projects/${PORTNAME}/
+MASTER_SITES=	# none
+DISTFILES=	# none
 
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Interactive script for deinstalling 'leaf' packages
@@ -16,29 +17,26 @@ COMMENT=	Interactive script for deinstalling 'leaf' packages
 NO_BUILD=	yes
 USE_PERL5=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}
 
 MAN1=		pkg_cutleaves.1
 
 PLIST_FILES=	sbin/pkg_cutleaves
 
+do-extract:
+	${MKDIR} ${WRKSRC}
+	${CP} ${FILESDIR}/pkg_cutleaves ${FILESDIR}/pkg_cutleaves.1 ${WRKSRC}
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 	  's,/usr/local/etc/pkg_leaves.exclude,${PREFIX}/etc/pkg_leaves.exclude,' \
 	  ${WRKSRC}/pkg_cutleaves.1
-	@${REINPLACE_CMD} -e \
-	  's,/usr/local/etc/pkg_leaves.exclude,${PREFIX}/etc/pkg_leaves.exclude,' \
-	  ${WRKSRC}/pkg_cutleaves
-	@${REINPLACE_CMD} -e \
-	  's,/usr/sbin/pkg_delete,${PKG_DELETE},' \
-	  ${WRKSRC}/pkg_cutleaves
-	@${REINPLACE_CMD} -e \
-	  's,/usr/local/sbin/pkgdb,${LOCALBASE}/sbin/pkgdb,' \
-	  ${WRKSRC}/pkg_cutleaves
-	@${REINPLACE_CMD} -e \
-	  's,/var/db/pkg,${PKG_DBDIR},' \
-	  ${WRKSRC}/pkg_cutleaves
-	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},' \
+	@${REINPLACE_CMD} \
+	  -e 's,/usr/local/etc/pkg_leaves.exclude,${PREFIX}/etc/pkg_leaves.exclude,' \
+	  -e 's,/usr/sbin/pkg_delete,${PKG_DELETE},' \
+	  -e 's,/usr/local/sbin/pkgdb,${LOCALBASE}/sbin/pkgdb,' \
+	  -e 's,/var/db/pkg,${PKG_DBDIR},' \
+	  -e 's,/usr/bin/perl,${PERL},' \
 	  ${WRKSRC}/pkg_cutleaves
 
 do-install:
