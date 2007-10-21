@@ -30,6 +30,6 @@ post-patch:
 		${WRKSRC}/autogen.sh
 
 pre-configure:
-	@${SH} ${WRKSRC}/autogen.sh
+	@cd ${WRKSRC} && ${SH} autogen.sh
 
 .include <bsd.port.mk>
