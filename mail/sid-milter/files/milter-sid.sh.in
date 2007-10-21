@@ -6,7 +6,6 @@
 # PROVIDE: miltersid
 # REQUIRE: DAEMON
 # BEFORE: mail localpkg
-# KEYWORD: shutdown
 
 # Define these miltersid_* variables in one of these files:
 #	/etc/rc.conf
@@ -30,9 +29,9 @@ load_rc_config $name
 pidfile=${miltersid_pid}
 command="%%PREFIX%%/libexec/sid-filter"
 command_args="-l -p ${miltersid_socket} -P ${miltersid_pid}"
-stop_postcmd="sid_postcmd"
+start_precmd="sid_precmd"
 
-sid_postcmd ()
+sid_precmd ()
 {
     if [ -S ${miltersid_socket##local:} ] ; then
         rm -f ${miltersid_socket##local:}
