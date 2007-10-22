@@ -4569,7 +4569,9 @@ hinventory-client	ports/www/hinventory-client
 hinversi	ports/games/hinversi
 histring	ports/misc/histring
 hk_classes	ports/databases/hk_classes
+hlextract	ports/archivers/hlextract
 hlfl		ports/security/hlfl
+hllib		ports/games/hllib
 hlmaster	ports/net/hlmaster
 hlstats		ports/games/hlstats
 hlstatsx	ports/games/hlstatsx
