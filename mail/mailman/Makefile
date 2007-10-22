@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.list.org/
@@ -95,6 +95,7 @@ defined(WITH_COURIER)
 BROKEN=	choose only one MTA integration
 .endif
 MAIL_GID?=	mailman
+EXTRA_PATCHES+=	${FILESDIR}/postfix-verp.diff
 .endif
 
 .if defined(WITH_COURIER)

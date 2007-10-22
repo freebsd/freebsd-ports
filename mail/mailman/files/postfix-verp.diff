@@ -1,0 +1,51 @@
+--- Mailman/Handlers/SMTPDirect.py.orig	2005-12-31 02:50:08.000000000 +0800
++++ Mailman/Handlers/SMTPDirect.py	2007-10-03 08:12:39.402049123 +0800
+@@ -64,11 +64,11 @@
+         self.__conn.connect(mm_cfg.SMTPHOST, mm_cfg.SMTPPORT)
+         self.__numsessions = mm_cfg.SMTP_MAX_SESSIONS_PER_CONNECTION
+ 
+-    def sendmail(self, envsender, recips, msgtext):
++    def sendmail(self, envsender, recips, msgtext, mailopts=[]):
+         if self.__conn is None:
+             self.__connect()
+         try:
+-            results = self.__conn.sendmail(envsender, recips, msgtext)
++            results = self.__conn.sendmail(envsender, recips, msgtext, mailopts)
+         except smtplib.SMTPException:
+             # For safety, close this connection.  The next send attempt will
+             # automatically re-open it.  Pass the exception on up.
+@@ -114,7 +114,7 @@
+     # recipients they'll swallow in a single transaction.
+     deliveryfunc = None
+     if (not msgdata.has_key('personalize') or msgdata['personalize']) and (
+-           msgdata.get('verp') or mlist.personalize):
++           (msgdata.get('verp') and mm_cfg.VERP_STYLE == 'Manual') or mlist.personalize):
+         chunks = [[recip] for recip in recips]
+         msgdata['personalize'] = 1
+         deliveryfunc = verpdeliver
+@@ -357,8 +357,14 @@
+     # Errors-To while new ones will at worst ignore the header.
+     del msg['sender']
+     del msg['errors-to']
+-    msg['Sender'] = envsender
+-    msg['Errors-To'] = envsender
++    mailopts=[]
++    if msgdata.get('verp') and mm_cfg.VERP_STYLE == 'Postfix':
++        mailopts.append('XVERP=' + mm_cfg.POSTFIX_XVERP_OPTS)
++    else:
++        # these get left out of VERPed messages so they don't accidently
++        # override the VERP header.
++        msg['Sender'] = envsender
++        msg['Errors-To'] = envsender
+     # Get the plain, flattened text of the message, sans unixfrom
+     msgtext = msg.as_string()
+     refused = {}
+@@ -366,7 +372,7 @@
+     msgid = msg['message-id']
+     try:
+         # Send the message
+-        refused = conn.sendmail(envsender, recips, msgtext)
++        refused = conn.sendmail(envsender, recips, msgtext, mailopts)
+     except smtplib.SMTPRecipientsRefused, e:
+         syslog('smtp-failure', 'All recipients refused: %s, msgid: %s',
+                e, msgid)
