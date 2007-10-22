@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	net-p2p kde
-MASTER_SITES=	http://ktorrent.pwsp.net/downloads/${PORTVERSION}/ \
+MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION}/ \
 		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 CONFLICTS=	ktorrent-devel-[0-9]*
 
