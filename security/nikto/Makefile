@@ -9,6 +9,7 @@
 
 PORTNAME=	nikto
 PORTVERSION=	1.36
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.cirt.net/${PORTNAME}/ \
 		http://www.mirrors.wiretapped.net/security/vulnerability-assessment/${PORTNAME}/ \
@@ -45,8 +46,8 @@ post-patch:
 		-e "s|# (PLUGINDIR=)/usr/local/nikto/plugins|\1${DATADIR}|g" \
 		${WRKSRC}/config.txt
 	@${REINPLACE_CMD} "s/config.txt/nikto.conf/g" ${WRKSRC}/plugins/* ${WRKSRC}/docs/*
-	@${REINPLACE_CMD} -e 's:\$NIKTO{plugindir}/../docs/CHANGES.txt:\$NIKTO{plugindir}/../docs/nikto/CHANGES.txt:' \
-		-e 's:\$NIKTO{plugindir}/../CHANGES.txt:\$NIKTO{plugindir}/../docs/nikto/CHANGES.txt:' \
+	@${REINPLACE_CMD} -e 's:\$NIKTO{plugindir}/../docs/CHANGES.txt:\$NIKTO{plugindir}/../doc/nikto/CHANGES.txt:' \
+		-e 's:\$NIKTO{plugindir}/../CHANGES.txt:\$NIKTO{plugindir}/../doc/nikto/CHANGES.txt:' \
 		${WRKSRC}/plugins/nikto_core.plugin
 	@${MV} ${WRKSRC}/docs/${PORTNAME}-${PORTVERSION}.man ${WRKSRC}/docs/${PORTNAME}.1
 
