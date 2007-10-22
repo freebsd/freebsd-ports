@@ -1,0 +1,13 @@
+--- node/node.d/hddtemp_smartctl.in.orig	2006-10-17 14:27:35.000000000 +0200
++++ node/node.d/hddtemp_smartctl.in	2007-10-04 09:29:43.931425624 +0200
+@@ -109,6 +109,10 @@
+     @drives = grep /hd[a-z]/, readdir IDE;
+     closedir(IDE);
+   }
++} elsif ($^O eq 'freebsd') {
++  opendir(DEV, '/dev');
++  @drives = grep /^ad[0-9]+$/, readdir DEV;
++  closedir(DEV);
+ } elsif ($^O eq 'solaris') {
+   @drives = map { s@.*/@@ ; $_ } glob '/dev/rdsk/c*t*d*s2';
+ }

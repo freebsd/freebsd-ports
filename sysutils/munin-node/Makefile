@@ -7,6 +7,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	munin
@@ -28,7 +29,6 @@ RUN_DEPENDS+=	${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
 .endif
 
 USE_GMAKE=	yes
-PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 ALL_TARGET=	DATADIR=${DATADIR} PERL=${PERL} build build-man
@@ -43,7 +43,7 @@ SUB_LIST=	RC_SUBR=${RC_SUBR}
 USE_RC_SUBR=	YES
 
 pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/munin-node.sh ${PREFIX}/etc/rc.d/munin-node.sh
@@ -51,7 +51,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/munin-node-revive.sh ${PREFIX}/bin/munin-node-revive
 .endif
 	${INSTALL_DATA} ${WRKSRC}/build/node/munin-node.conf ${PREFIX}/etc/munin/munin-node.conf.sample
-	${INSTALL_DATA} files/plugins.conf ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf.sample
+	${INSTALL_DATA} ${FILESDIR}/plugins.conf ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf.sample
 	@if [ ! -f ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf ]; then \
 		${INSTALL_DATA} ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf.sample ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf; \
 	fi
@@ -60,7 +60,7 @@ post-install:
 	@${INSTALL_MAN} -C ${WRKSRC}/build/doc/munin-node-configure.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} -C ${WRKSRC}/build/doc/munin-node.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} -C ${WRKSRC}/build/doc/munin-run.8 ${PREFIX}/man/man8
-	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO} ${DISTNAME} | ${SED} -e 's/munin_//' > ${PREFIX}/etc/munin/VERSION.node
 
 .include <bsd.port.post.mk>
