@@ -42,7 +42,12 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>2.0.0.8,1</lt></range>
       </package>
       <package>
+	<name>linux-firefox</name>
+	<range><lt>2.0.0.8</lt></range>
+      </package>
+      <package>
 	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
 	<range><lt>1.1.5</lt></range>
       </package>
     </affects>
@@ -64,6 +69,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-10-19</discovery>
       <entry>2007-10-22</entry>
+      <modified>2007-10-23</modified>
     </dates>
   </vuln>
 
