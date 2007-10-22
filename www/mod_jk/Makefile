@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_jk
-PORTVERSION=	1.2.23
+PORTVERSION=	1.2.25
 PORTREVISION=	0
 PORTEPOCH?=	1
 CATEGORIES=	www
@@ -45,6 +45,6 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/workers.properties.sample ${PREFIX}/${APACHEETCDIR}
 
 post-install:
-	${CAT} ${PKGMESSAGE} | ${SED} "s|/usr/local|${PREFIX}|g; s|etc/apache|etc/apache${APACHE2}|g"
+	${CAT} ${PKGMESSAGE} | ${SED} "s|%%APACHEETCDIR%%|${PREFIX}/${APACHEETCDIR}|g;"
 
 .include <bsd.port.post.mk>
