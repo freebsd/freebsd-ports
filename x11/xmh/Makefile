@@ -7,7 +7,7 @@
 
 PORTNAME=	xmh
 PORTVERSION=	1.0.1
-CATEGORIES=	mail x11
+CATEGORIES=	x11 mail
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Send and read mail with an X interface to MH
