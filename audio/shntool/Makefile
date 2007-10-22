@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shntool
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etree.org/shnutils/shntool/dist/src/ CENKES
 
