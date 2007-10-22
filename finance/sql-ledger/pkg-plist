@@ -121,12 +121,17 @@ sql-ledger/doc/UPGRADE-2.8.0-2.8.2
 sql-ledger/doc/UPGRADE-2.8.2-2.8.4
 sql-ledger/doc/UPGRADE-2.8.4-2.8.6
 sql-ledger/doc/UPGRADE-2.8.6-2.8.7
+sql-ledger/doc/UPGRADE-2.8.7-2.8.8
 sql-ledger/doc/faq.html
 sql-ledger/favicon.ico
 sql-ledger/gl.pl
 sql-ledger/hr.pl
 sql-ledger/ic.pl
 sql-ledger/im.pl
+sql-ledger/images/down.png
+sql-ledger/images/sql-ledger.gif
+sql-ledger/images/sql-ledger.png
+sql-ledger/images/up.png
 sql-ledger/index.html
 sql-ledger/ir.pl
 sql-ledger/is.pl
@@ -1857,8 +1862,6 @@ sql-ledger/rc.pl
 sql-ledger/rp.pl
 sql-ledger/setup.pl
 sql-ledger/sql-ledger.conf.default
-sql-ledger/sql-ledger.gif
-sql-ledger/sql-ledger.png
 sql-ledger/sql/Australia_General_0000-chart.sql
 sql-ledger/sql/Australia_General_00000-chart.sql
 sql-ledger/sql/Austria-chart.sql
@@ -1963,6 +1966,7 @@ sql-ledger/sql/Pg-upgrade-2.8.3-2.8.4.sql
 sql-ledger/sql/Pg-upgrade-2.8.4-2.8.5.sql
 sql-ledger/sql/Pg-upgrade-2.8.5-2.8.6.sql
 sql-ledger/sql/Pg-upgrade-2.8.6-2.8.7.sql
+sql-ledger/sql/Pg-upgrade-2.8.7-2.8.8.sql
 sql-ledger/sql/Poland-chart.sql
 sql-ledger/sql/Simplified-Chinese_Default-UTF8-chart.sql
 sql-ledger/sql/Simplified-Chinese_Default-chart.sql
@@ -2906,6 +2910,7 @@ sql-ledger/vr.pl
 @dirrm sql-ledger/locale/be_nl
 @dirrm sql-ledger/locale/be_fr
 @dirrm sql-ledger/locale
+@dirrm sql-ledger/images
 @dirrm sql-ledger/doc
 @dirrm sql-ledger/css
 @dirrm sql-ledger/bin/mozilla
