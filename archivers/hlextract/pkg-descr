@@ -1,0 +1,6 @@
+HLExtract is a command line utility written in C that can load all HLLib
+supported packages and extract multiple items from them while maintaining
+their directory structure.  Currently, BSP, GCF, NCF, PAK, WAD, XZP, and
+uncompressed ZIP package formats are supported.
+
+WWW: http://nemesis.thewavelength.net/index.php?p=35

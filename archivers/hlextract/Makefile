@@ -1,0 +1,37 @@
+# New ports collection makefile for:	HLExtract
+# Date created:				22 Oct 2007
+# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	hlextract
+PORTVERSION=	2.0.8
+CATEGORIES=	archivers games
+MASTER_SITES=	http://nemesis.thewavelength.net/files/files/ \
+		http://freebsd.nsu.ru/distfiles/
+DISTNAME=	hllib${PORTVERSION:S/.//g}
+
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	Utility to extract data from various Half-Life file formats
+
+LIB_DEPENDS=	hl.2:${PORTSDIR}/games/hllib
+
+USE_ZIP=	yes
+USE_DOS2UNIX=	Main.c
+WRKSRC=		${WRKDIR}/HLExtract
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-extract:
+	@${REINPLACE_CMD} -e 's,linux/limits,sys/param, ; \
+		s,HLExtract\.exe,hlextract,' ${WRKSRC}/Main.c
+
+do-build:
+	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
+		${WRKSRC}/Main.c -o ${WRKSRC}/${PORTNAME} -lhl
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+
+.include <bsd.port.mk>
