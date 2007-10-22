@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e24797af-803d-11dc-b787-003048705d5a">
+    <topic>firefox -- OnUnload Javascript browser entrapment vulnerability</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>2.0.0.8,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>1.1.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RedHat reports:</p>
+	<blockquote cite="https://rhn.redhat.com/errata/RHSA-2007-0979.html">
+	  <p>Several flaws were found in the way in which Firefox
+	    displayed malformed web content. A web page containing
+	    specially-crafted content could potentially trick a user
+	    into surrendering sensitive information.  (CVE-2007-1095,
+	    CVE-2007-3844, CVE-2007-3511, CVE-2007-5334)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-1095</cvename>
+    </references>
+    <dates>
+      <discovery>2007-10-19</discovery>
+      <entry>2007-10-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="498a8731-7cfc-11dc-96e6-0012f06707f0">
     <topic>phpmyadmin -- cross-site scripting vulnerability</topic>
     <affects>
