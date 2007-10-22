@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bignum
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/T/TE/TELS/math
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Transparent BigNumber/BigRational support for Perl
 
-RUN_DEPENDS=	p5-Math-BigInt>=1.83:${PORTSDIR}/math/p5-Math-BigInt \
+RUN_DEPENDS=	p5-Math-BigInt>=1.87:${PORTSDIR}/math/p5-Math-BigInt \
 		p5-Math-BigRat>=0.19:${PORTSDIR}/math/p5-Math-BigRat
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
