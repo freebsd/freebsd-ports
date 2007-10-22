@@ -33,6 +33,7 @@
     SUBDIR += gzrecover
     SUBDIR += ha
     SUBDIR += hffzip
+    SUBDIR += hlextract
     SUBDIR += hpack.non-usa.only
     SUBDIR += jzip.org
     SUBDIR += jzlib
