@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	1.9RC10
-PORTEPOCH=	7
+DISTVERSION=	1.9F
+PORTEPOCH=	8
 CATEGORIES=	net-im java
 MASTER_SITES=	${MASTER_SITE_LOCAL}		\
 		http://files.mercury.im/1.9/
