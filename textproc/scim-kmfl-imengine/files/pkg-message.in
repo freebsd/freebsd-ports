@@ -1,0 +1,12 @@
+
+------------------------------------------------------------------------
+  SCIM-Setup IMEngine list should now have KMFL section.
+
+  The documentation for KMN language and use of KMFL SCIM interface
+  is installed through textproc/kmflcomp port. Please refer to
+
+    %%PREFIX%%/share/doc/kmfl/kmflcomp/KMFL-Compiler.sxw
+
+  You need textproc/scim-kmfl-* ports in order to use actual keyboards
+  through SCIM.
+------------------------------------------------------------------------

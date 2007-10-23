@@ -1,0 +1,17 @@
+KMFL aims to bring Tavultesoft Keyman functionality to *nix operating
+systems. KMFL is being jointly developed by SIL International
+(http://www.sil.org) and Tavultesoft (http://www.tavultesoft.com).
+
+SCIM KMFL IMEngine allows you to use KMN keyboards (compiled with
+textproc/kmflcomp) through standard SCIM interface.
+
+The powerful KMN keyboard language supports contextual deadkeys,
+pre- and post-processing of keystrokes, rules grouping, 'storing'
+of character classes for use in similar rules, custom and Unicode
+character constants, SIL Ethnologue language codes, etc.
+
+Official Tavultesoft repository contains keyboards that cover more
+than 220 languages. Significant number of them are open source.
+Ported keyboards are textproc/scim-kmfl-*.
+
+WWW: http://kmfl.sourceforge.net/
