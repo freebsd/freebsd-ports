@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_CSS
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -32,7 +32,7 @@ DOCS=		TDG/img/admons/caution.png \
 		TDG/ch06s06.html TDG/ch07.html TDG/ch07s02.html \
 		TDG/ch07s03.html TDG/ch08.html \
 		TDG/ch08s02.html TDG/ch08s03.html TDG/ch08s04.html \
-		TDG/ch08s05.html TDG/ch08s05.html TDG/ch09.html \
+		TDG/ch08s05.html TDG/ch08s06.html TDG/ch09.html \
 		TDG/ch09s02.html TDG/ch09s03.html TDG/ch09s04.html \
 		TDG/ch09s05.html TDG/ch10.html TDG/ch10s02.html \
 		TDG/index.html TDG/pr01.html TDG/pr01s02.html \
