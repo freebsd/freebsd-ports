@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://download.java.net/tiger/
@@ -54,10 +53,10 @@ POLICYFILE=	jce_policy-${JDK_VERSION:S/./_/g}.zip
 TZUPDATEFILE=	tzupdater-${TZUPDATE_VERSION:S/./_/g}-${TZUPDATE_TZVERSION}.zip
 
 JDK_VERSION=	1.5.0
-JDK_UPDATE_VERSION=	12
-JDK_PATCHSET_VERSION=	6
-JDK_BUILD_NUMBER=	04
-JDK_BUILD_DATE=		02_may_2007
+JDK_UPDATE_VERSION=	13
+JDK_PATCHSET_VERSION=	7
+JDK_BUILD_NUMBER=	05
+JDK_BUILD_DATE=		25_sep_2007
 LATEST_LINK=	jdk15
 
 TZUPDATE_VERSION=	1.2.2
@@ -184,7 +183,7 @@ ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n
 .if !exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE})#{
-IGNORE += Please open http://download.java.net/tiger/archive/tiger_u12/\n\
+IGNORE += Please open http://download.java.net/tiger/\n\
 in a web browser.  Download the\n
 .if !exists(${DISTDIR}/${JRL_SRCFILE})#{
 IGNORE += Update ${JDK_UPDATE_VERSION} Source, ${JRL_SRCFILE}
