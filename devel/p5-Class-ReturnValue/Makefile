@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-ReturnValue
-PORTVERSION=	0.53
+PORTVERSION=	0.55
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -15,10 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A return-value object that can be treated as a boolean,array or object
 
-BUILD_DEPENDS=	${SITE_PERL}/Devel/StackTrace.pm:${PORTSDIR}/devel/p5-Devel-StackTrace \
-		${SITE_PERL}/Test/Inline.pm:${PORTSDIR}/devel/p5-Test-Inline
+BUILD_DEPENDS=	${SITE_PERL}/Devel/StackTrace.pm:${PORTSDIR}/devel/p5-Devel-StackTrace
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_PERL5=	5.8.0+
+USE_PERL5_REASON=	fails tests with 5.6.X
 PERL_CONFIGURE=	yes
 
 MAN3=		Class::ReturnValue.3
