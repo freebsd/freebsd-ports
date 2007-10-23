@@ -7,17 +7,19 @@
 #
 
 PORTNAME=	mirmon
-PORTVERSION=	1.37
+PORTVERSION=	1.38
 CATEGORIES=	misc
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/ \
 		http://www.cs.uu.nl/people/henkp/mirmon/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	Monitor the status of mirrors
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
+
+SUB_FILES=	pkg-message
+SUB_LIST=	PREFIX=${PREFIX}
 
 PLIST_FILES=	bin/mirmon
 
@@ -43,5 +45,8 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${CP} ${WRKSRC}/mirmon.html ${DOCSDIR}
 .endif
+
+post-install:
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
