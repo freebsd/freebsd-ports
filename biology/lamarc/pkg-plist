@@ -51,6 +51,7 @@ bin/lamarc
 %%PORTDOCS%%%%DOCSDIR%%/images/partitions2-gtk.png
 %%PORTDOCS%%%%DOCSDIR%%/images/populations-gtk.png
 %%PORTDOCS%%%%DOCSDIR%%/images/startup-gtk.png
+%%PORTDOCS%%%%DOCSDIR%%/images/tracer_trend.png
 %%PORTDOCS%%%%DOCSDIR%%/images/uncorrelated.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/variably_correlated.gif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
