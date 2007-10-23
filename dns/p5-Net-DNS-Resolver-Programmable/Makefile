@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Net-DNS-Resolver-Programmable
-PORTVERSION=	0.002.2
+PORTVERSION=	0.003
 CATEGORIES=	dns net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	gmc@sonologic.nl
 COMMENT=	Programmable DNS resolver for off-line testing
@@ -26,12 +27,13 @@ MAN3=		Net::DNS::Resolver::Programmable.3
 
 .include <bsd.port.pre.mk>
 
+PORTDOCS=	CHANGES README TODO
 DOCSDIR=	${PREFIX}/share/doc/p5-Net-DNS-Resolver-Programmable
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in CHANGES README TODO
+.for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
