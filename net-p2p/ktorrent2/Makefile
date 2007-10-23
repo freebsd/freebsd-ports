@@ -9,7 +9,7 @@ PORTNAME=	ktorrent
 PORTVERSION=	2.2.2
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION}/ \
-		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
+		http://www.brueffer.de/distfiles/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
