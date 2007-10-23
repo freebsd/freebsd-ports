@@ -926,34 +926,6 @@ USE_LDCONFIG=	yes
 EXTRACONFIGURE+=	zlib
 .endif
 
-.if defined(OPENSSL_OVERWRITE_BASE)
-.if exists(/lib/libcrypto.so) || exists(/lib/libcrypto.so.3)
-pre-everything::
-	@${ECHO_CMD} "#"
-	@${ECHO_CMD} "# this ports does not support the dynamic root"
-	@${ECHO_CMD} "# please undefine OPENSSL_OVERWRITE_BASE"
-	@${ECHO_CMD} "# and use WITH_OPENSSL_PORT=yes instead."
-	@${ECHO_CMD} "#"
-	@${FALSE}
-
-.endif
-.if exists(${DESTDIR}/usr/lib/libcrypto.so.3) && ${OPENSSL_SHLIBVER} != 3
-pre-everything::
-	@${ECHO_CMD} "#"
-	@${ECHO_CMD} "# this ports conflicts with your base system"
-	@${ECHO_CMD} "# please undefine OPENSSL_OVERWRITE_BASE"
-	@${ECHO_CMD} "# and use WITH_OPENSSL_PORT=yes instead."
-	@${ECHO_CMD} "#"
-	@${FALSE}
-
-.endif
-BASE_SUFFIX=	-overwrite-base
-PREFIX=		/usr
-OPENSSLDIR=	/etc/ssl
-MANPREFIX=	${PREFIX}/openssl
-PLIST_SUB+=	MANDIR=""
-PLIST_SUB+=	NOBASE="@comment "
-.else
 .if ${OPENSSL_SHLIBVER_BASE} > ${OPENSSL_SHLIBVER}
 pre-everything::
 	@${ECHO_CMD} "#"
@@ -966,9 +938,6 @@ pre-everything::
 .endif
 OPENSSLDIR=	${PREFIX}/openssl
 MANPREFIX=	${PREFIX}
-PLIST_SUB+=	MANDIR="@comment "
-PLIST_SUB+=	NOBASE=""
-.endif
 
 .if defined(BATCH) || defined(OPENSSL_WITH_386)
 .if ${ARCH} == "i386"
