@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	o2sms
-PORTVERSION=	3.25
+PORTVERSION=	3.26
 CATEGORIES=	comms perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW/MACKERS
@@ -15,6 +15,7 @@ MAINTAINER=	ports@mcdermottroe.com
 COMMENT=	Send SMS messages via the websites of Irish mobile operators
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
+		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		${SITE_PERL}/Lingua/EN/Squeeze.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Squeeze \
 		${SITE_PERL}/TestGen4Web/Runner.pm:${PORTSDIR}/www/p5-TestGen4Web-Runner
 RUN_DEPENDS=	${BUILD_DEPENDS}
