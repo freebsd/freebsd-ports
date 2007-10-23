@@ -2,9 +2,11 @@ bin/create-native-map
 bin/gasnview
 bin/gnunit
 bin/gnunit2
+bin/ilcontrast
 bin/monodoc
 lib/create-native-map/MapAttribute.cs
 lib/create-native-map/create-native-map.exe
+lib/ilcontrast/ilcontrast.exe
 lib/mono/1.0/gasnview.exe
 lib/mono/1.0/gnunit.exe
 lib/mono/2.0/gnunit2.exe
@@ -12,8 +14,11 @@ lib/monodoc/GeckoHtmlRender.dll
 lib/monodoc/GtkHtmlHtmlRender.dll
 lib/monodoc/browser.exe
 libdata/pkgconfig/create-native-map.pc
+share/applications/ilcontrast.desktop
 share/applications/monodoc.desktop
+share/pixmaps/ilcontrast.png
 share/pixmaps/monodoc.png
 @dirrmtry share/applications
+@dirrmtry lib/ilcontrast
 @dirrmtry lib/monodoc
 @dirrm lib/create-native-map
