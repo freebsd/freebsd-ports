@@ -36,7 +36,6 @@ DL_JDK_VERSION=	${JDK_VERSION}_${JDK_REVISION}
 INSTALL_JDK_VERSION=	${DL_JDK_VERSION:S/_/./g}
 ONLY_FOR_ARCHS=	i386 amd64
 DOWNLOAD_URL?=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=j2sdk-${JDK_VERSION}_${JDK_REVISION}-oth-JPR&SiteId=JSC&TransactionId=noreg
-PORTTITLE=	Java 2 Development Kit ${DL_JDK_VERSION} for Linux
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_VERSION}
 PACKED_JARS=	lib/tools.jar jre/lib/rt.jar jre/lib/jsse.jar jre/lib/charsets.jar jre/lib/ext/localedata.jar jre/lib/plugin.jar jre/javaws/javaws.jar
 UNPACK_CMD=	${APP_HOME}/lib/unpack
