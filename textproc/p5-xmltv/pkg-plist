@@ -4,7 +4,6 @@ bin/tv_extractinfo_en
 bin/tv_find_grabbers
 bin/tv_grab_ar
 bin/tv_grab_be
-bin/tv_grab_br
 bin/tv_grab_br_net
 bin/tv_grab_ch_search
 bin/tv_grab_combiner
@@ -18,7 +17,6 @@ bin/tv_grab_fr
 bin/tv_grab_hr
 bin/tv_grab_huro
 bin/tv_grab_il
-bin/tv_grab_is
 bin/tv_grab_it
 bin/tv_grab_jp
 bin/tv_grab_na_dd
@@ -77,13 +75,6 @@ bin/tv_validate_grabber
 %%SITE_PERL%%/XMLTV/ValidateGrabber.pm
 %%SITE_PERL%%/XMLTV/Version.pm
 %%SITE_PERL%%/mach/auto/XMLTV/.packlist
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/QuickStart
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README.tv_check
-%%DOCSDIR%%/README.win32
-%%DOCSDIR%%/tv_check_doc.html
-%%DOCSDIR%%/tv_check_doc.jpg
 %%DATADIR%%/tv_grab_be/channel_ids_fr
 %%DATADIR%%/tv_grab_be/channel_ids_nl
 %%DATADIR%%/tv_grab_ch_search/channel_ids
@@ -103,7 +94,6 @@ bin/tv_validate_grabber
 @dirrm %%DATADIR%%/tv_grab_ch_search
 @dirrm %%DATADIR%%/tv_grab_be
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/mach/auto/XMLTV
 @dirrm %%SITE_PERL%%/XMLTV/ProgressBar
 @dirrm %%SITE_PERL%%/XMLTV/Configure
