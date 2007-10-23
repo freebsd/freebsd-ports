@@ -6,78 +6,26 @@
 #
 
 PORTNAME=	mg
-PORTVERSION=	20050820
+PORTVERSION=	20070918
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	lawrance
+MASTER_SITES=	http://www.xs4all.nl/~hanb/software/mg/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	denisehg@hotpop.com
 COMMENT=	A small, fast Emacs-like editor
 
-MANSECTS=	1
-MAN1=		mg.1
-MANCOMPRESSED=	maybe
+MAN1=	mg.1
+MANCOMPRESSED=	no
 
-# MAN page COMPression SUFFIX
-.if !defined(NOMANCOMPRESS)
-MANCOMPSUFFIX=	.gz
-.else
-MANCOMPSUFFIX=
-.endif
+HAS_CONFIGURE=	yes
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/mg ${PREFIX}/bin/mg
-.for __s in ${MANSECTS}
-.for __m in ${MAN${__s}:S/$/${MANCOMPSUFFIX}/}
-	@${INSTALL_MAN} ${WRKSRC}/${__m} ${PREFIX}/man/man${__s}/${__m}
-.endfor
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN}  ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/mg
-	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/tutorial \
-		${PREFIX}/share/doc/mg
+	${MKDIR} ${DOCSDIR}
+.for FILE in README tutorial
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-#
-# Ports build/install stuff stops here.  Tarball creation stuff begins here.
-#
-CVS_CMD?=	cvs -z3
-CVS_DATE=	Sat Aug 20 21:22:23 UTC 2005
-CVS_SITES?=	anoncvs@anoncvs3.usa.openbsd.org:/cvs \
-		anoncvs@anoncvs1.ca.openbsd.org:/cvs
-CVS_MODULE=	src/usr.bin/mg
-CVS_STRTONUM=	src/lib/libc/stdlib/strtonum.c
-
-#
-# CVS checkout stuff mostly stolen from security/openssh-askpass port by
-# kris@freebsd.org
-#
-tarball:
-	@${MKDIR} ${DISTDIR}/${PKGNAME} && \
-	cd ${DISTDIR}/${PKGNAME}; \
-	for CVS_SITE in ${CVS_SITES}; do \
-		${ECHO_MSG} ">> Attempting to check out from $${CVS_SITE}."; \
-		if ${CVS_CMD} -d $${CVS_SITE} co -D "${CVS_DATE}" \
-		    ${CVS_MODULE} ${CVS_STRTONUM}; then \
-			cd ${DISTDIR}; \
-			${ECHO_MSG} ">> Creating dist tarball in ${DISTDIR}"; \
-			${ECHO_MSG} ">> \"${PKGNAME}.tar.gz\"."; \
-			${MV} ${PKGNAME}/${CVS_MODULE} \
-				${PKGNAME}/${CVS_MODULE:H}/${PKGNAME}; \
-			${MV} ${PKGNAME}/${CVS_STRTONUM} \
-				${PKGNAME}/${CVS_MODULE:H}/${PKGNAME}; \
-			${TAR} -cz \
-				-X ${FILESDIR}/tarignore \
-				-f ${PKGNAME}.tar.gz \
-				-C ${PKGNAME}/${CVS_MODULE:H} \
-				${PKGNAME}; \
-			exit; \
-		fi \
-	done; \
-	${RMDIR} ${DISTDIR}/${PKGNAME}; \
-	${ECHO_MSG} ">> CVS checkout failed."; \
-	exit 1;
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
