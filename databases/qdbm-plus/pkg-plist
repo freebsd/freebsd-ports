@@ -71,12 +71,14 @@ lib/libxqdbm.so.3.0.0
 %%DATADIR%%/plus/xapidoc/functions_0x77.html
 %%DATADIR%%/plus/xapidoc/functions_0x7e.html
 %%DATADIR%%/plus/xapidoc/functions_func.html
+%%DATADIR%%/plus/xapidoc/functions_rela.html
 %%DATADIR%%/plus/xapidoc/functions_vars.html
 %%DATADIR%%/plus/xapidoc/hierarchy.html
 %%DATADIR%%/plus/xapidoc/index.html
 %%DATADIR%%/plus/xapidoc/main.html
 %%DATADIR%%/plus/xapidoc/namespacemembers.html
 %%DATADIR%%/plus/xapidoc/namespacemembers_func.html
+%%DATADIR%%/plus/xapidoc/namespacemembers_vars.html
 %%DATADIR%%/plus/xapidoc/namespaceqdbm.html
 %%DATADIR%%/plus/xapidoc/namespaces.html
 %%DATADIR%%/plus/xapidoc/tab_b.gif
@@ -88,4 +90,3 @@ lib/libxqdbm.so.3.0.0
 %%DATADIR%%/plus/xspex.html
 @dirrm %%DATADIR%%/plus/xapidoc
 @dirrm %%DATADIR%%/plus
-@dirrm %%DATADIR%%
