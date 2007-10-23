@@ -3,12 +3,11 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.42 2007/03/13 00:44:36 killfill Exp $
+#   $Id: Makefile,v 1.49 2007/09/20 15:16:43 killfill Exp $
 #
 
 PORTNAME=	tomboy
-PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -32,7 +31,8 @@ INSTALLS_OMF=	yes
 
 CONFIGURE_ARGS+=--enable-evolution=yes \
 		--enable-dbus=yes \
-		--enable-dbus-service-dir-check=no
+		--enable-dbus-service-dir-check=no \
+		--with-dbus-service-dir=${PREFIX}/share/dbus-1/services
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		DBUS_SERVICE_DIR="${PREFIX}/share/dbus-1/services"
@@ -47,10 +47,6 @@ post-patch:
 	s|PANELAPPLET_SERVER_DIR="$$libdir|PANELAPPLET_SERVER_DIR="$$prefix/libdata|g; \
 	s|PANELAPPLET_SERVER_DIR="$$PANELAPPLET_LIBDIR|PANELAPPLET_SERVER_DIR="$$prefix/libdata|g' \
 		${WRKSRC}/configure
-
-post-install:
-	${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE} ${WRKSRC}/Tomboy/Plugins/FixedWidth.dll ${PREFIX}/lib/tomboy/Plugins
-	${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE} ${WRKSRC}/Tomboy/Plugins/NoteOfTheDay.dll ${PREFIX}/lib/tomboy/Plugins
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.post.mk>
