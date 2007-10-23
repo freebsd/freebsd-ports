@@ -510,12 +510,12 @@ bin/supybot-wizard
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/config.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/config.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/config.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/feedparser.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/feedparser.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/feedparser.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/plugin.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/plugin.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/plugin.pyo
-%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/rssparser.py
-%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/rssparser.pyc
-%%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/rssparser.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/test.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/test.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/RSS/test.pyo
@@ -783,14 +783,14 @@ bin/supybot-wizard
 %%PYTHON_SITELIBDIR%%/supybot/world.py
 %%PYTHON_SITELIBDIR%%/supybot/world.pyc
 %%PYTHON_SITELIBDIR%%/supybot/world.pyo
-%%DOCSDIR%%/ACKS
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/GETTING_STARTED
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/README
-%%DOCSDIR%%/RELNOTES
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/ACKS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/GETTING_STARTED
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELNOTES
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/utils
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Web
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Utilities
