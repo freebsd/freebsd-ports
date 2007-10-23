@@ -9,11 +9,10 @@
 #        databases/unixODBC.
 
 PORTNAME=	libiodbc
-PORTVERSION=	3.52.5
+PORTVERSION=	3.52.6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.iodbc.org/downloads/iODBC/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	iodbc
+		SF/iodbc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ODBC 3.x driver manager, for universal data source access
@@ -22,7 +21,7 @@ CONFLICTS=	unixODBC-[0-9]*
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-iodbc-inidir=${INIDIR}
 USE_LDCONFIG=	yes
@@ -34,7 +33,7 @@ LDFLAGS=	${PTHREAD_LIBS}
 INIDIR=		${PREFIX}/etc/${PORTNAME}
 
 .if defined(WITH_GUI)
-USE_GNOME+=	gtk12
+USE_GNOME+=	gtk20
 MAN1+=		iodbcadm-gtk.1
 PLIST_SUB+=	GUI=""
 .else
