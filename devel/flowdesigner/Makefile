@@ -7,22 +7,26 @@
 #
 
 PORTNAME=	flowdesigner
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	FlowDesigner-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free (GPL) "data flow oriented" development environment
 
-LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
+LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
+		fftw.2:${PORTSDIR}/math/fftw
 
-USE_GCC=	3.4
 USE_GNOME=	gnomehack gnometarget libgnomeui libxml2
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
+LIBTOOLFILES=	${CONFIGURE_SCRIPT} FuzzyEngine/configure \
+		HMM/configure NNet/configure \
+		VQ/configure audio_blocks/configure \
+		effects/configure lapackflow/configure \
+		octave/configure qtflow/configure \
+		vflow/configure
 CONFIGURE_ARGS=	--with-fftw-includes=${LOCALBASE}/include \
 		--with-fftw-libraries=${LOCALBASE}/lib
 USE_LDCONFIG=	yes
@@ -33,17 +37,12 @@ USE_LDCONFIG=	yes
 BROKEN=		"Does not compile on sparc64"
 .endif
 
-.if ${OSVERSION} < 500035
-CFLAGS+=	-O0
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|tools examples|tools|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|src pixmaps|src|g' ${WRKSRC}/vflow/Makefile.in
-	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} -e 's|echo aout|echo elf|'
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.n ${EXAMPLESDIR}

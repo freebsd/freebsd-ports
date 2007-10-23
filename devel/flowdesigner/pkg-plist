@@ -1,5 +1,6 @@
 bin/batchflow
 bin/codeflow
+bin/cygwinTest
 bin/docflow
 bin/flowdesigner
 bin/flowdesigner-config
@@ -33,9 +34,11 @@ include/flowdesigner/GUINodeParameters.h
 include/flowdesigner/GUINodeTooltip.h
 include/flowdesigner/GUINote.h
 include/flowdesigner/GUITerminal.h
+include/flowdesigner/GUITreeView.h
 include/flowdesigner/GtkPlotProbe.h
 include/flowdesigner/IntfNode.h
 include/flowdesigner/Iterator.h
+include/flowdesigner/JitterMatrix.h
 include/flowdesigner/KeyPad.h
 include/flowdesigner/Matrix.h
 include/flowdesigner/Network.h
@@ -61,6 +64,7 @@ include/flowdesigner/UINode.h
 include/flowdesigner/UINodeParameters.h
 include/flowdesigner/UINodeRepository.h
 include/flowdesigner/UINote.h
+include/flowdesigner/UIProbeLink.h
 include/flowdesigner/UITerminal.h
 include/flowdesigner/URLHandler.h
 include/flowdesigner/UserException.h
@@ -109,6 +113,8 @@ lib/flowdesigner/toolbox/FuzzyEngine/TriangularFunction.h
 lib/flowdesigner/toolbox/FuzzyEngine/fuzzy.def
 lib/flowdesigner/toolbox/FuzzyEngine/fuzzy.tlb
 lib/flowdesigner/toolbox/FuzzyEngine/libfuzzy-0.9.so
+lib/flowdesigner/toolbox/FuzzyEngine/libfuzzy.a
+lib/flowdesigner/toolbox/FuzzyEngine/libfuzzy.la
 lib/flowdesigner/toolbox/FuzzyEngine/libfuzzy.so
 lib/flowdesigner/toolbox/HMM/DiagGMM.h
 lib/flowdesigner/toolbox/HMM/GMMScore.h
@@ -124,6 +130,8 @@ lib/flowdesigner/toolbox/HMM/hmm.def
 lib/flowdesigner/toolbox/HMM/hmm.h
 lib/flowdesigner/toolbox/HMM/hmm.tlb
 lib/flowdesigner/toolbox/HMM/libhmm-0.9.so
+lib/flowdesigner/toolbox/HMM/libhmm.a
+lib/flowdesigner/toolbox/HMM/libhmm.la
 lib/flowdesigner/toolbox/HMM/libhmm.so
 lib/flowdesigner/toolbox/HMM/mean.h
 lib/flowdesigner/toolbox/HMM/mean_set.h
@@ -141,6 +149,8 @@ lib/flowdesigner/toolbox/NNet/exportnet2.m
 lib/flowdesigner/toolbox/NNet/exportnet3.m
 lib/flowdesigner/toolbox/NNet/functions.h
 lib/flowdesigner/toolbox/NNet/libnnet-0.9.so
+lib/flowdesigner/toolbox/NNet/libnnet.a
+lib/flowdesigner/toolbox/NNet/libnnet.la
 lib/flowdesigner/toolbox/NNet/libnnet.so
 lib/flowdesigner/toolbox/VQ/Cell.h
 lib/flowdesigner/toolbox/VQ/CodebookMap.h
@@ -148,6 +158,8 @@ lib/flowdesigner/toolbox/VQ/FeatureMap.h
 lib/flowdesigner/toolbox/VQ/RBF.h
 lib/flowdesigner/toolbox/VQ/kmeans.h
 lib/flowdesigner/toolbox/VQ/libvq-0.9.so
+lib/flowdesigner/toolbox/VQ/libvq.a
+lib/flowdesigner/toolbox/VQ/libvq.la
 lib/flowdesigner/toolbox/VQ/libvq.so
 lib/flowdesigner/toolbox/VQ/msvq.h
 lib/flowdesigner/toolbox/VQ/vq.def
@@ -164,6 +176,8 @@ lib/flowdesigner/toolbox/audio_blocks/audio_blocks.def
 lib/flowdesigner/toolbox/audio_blocks/audio_blocks.tlb
 lib/flowdesigner/toolbox/audio_blocks/dB.n
 lib/flowdesigner/toolbox/audio_blocks/libablocks-0.9.so
+lib/flowdesigner/toolbox/audio_blocks/libablocks.a
+lib/flowdesigner/toolbox/audio_blocks/libablocks.la
 lib/flowdesigner/toolbox/audio_blocks/libablocks.so
 lib/flowdesigner/toolbox/audio_blocks/lsp.h
 lib/flowdesigner/toolbox/audio_blocks/undB.n
@@ -185,27 +199,34 @@ lib/flowdesigner/toolbox/data-flow/data-flow.def
 lib/flowdesigner/toolbox/effects/effects.def
 lib/flowdesigner/toolbox/effects/effects.tlb
 lib/flowdesigner/toolbox/effects/libeffects-0.9.so
+lib/flowdesigner/toolbox/effects/libeffects.a
+lib/flowdesigner/toolbox/effects/libeffects.la
 lib/flowdesigner/toolbox/effects/libeffects.so
 lib/flowdesigner/toolbox/vflow/SpectrumProbe.n
 lib/flowdesigner/toolbox/vflow/baseProbe.tlb
 lib/flowdesigner/toolbox/vflow/libbaseProbe-0.9.so
+lib/flowdesigner/toolbox/vflow/libbaseProbe.a
+lib/flowdesigner/toolbox/vflow/libbaseProbe.la
 lib/flowdesigner/toolbox/vflow/libbaseProbe.so
 lib/flowdesigner/toolbox/vflow/vflow.def
 lib/libflow-0.9.so
+lib/libflow.a
+lib/libflow.la
 lib/libflow.so
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo_feedback.n
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo_if.n
-%%PORTDOCS%%%%EXAMPLESDIR%%/dtmf.n
-%%PORTDOCS%%%%EXAMPLESDIR%%/find_beat.n
-%%PORTDOCS%%%%EXAMPLESDIR%%/helium.n
-%%PORTDOCS%%%%EXAMPLESDIR%%/hello.n
-%%PORTDOCS%%%%EXAMPLESDIR%%/jm.wav
-%%PORTDOCS%%%%EXAMPLESDIR%%/mixedthread.n
-%%PORTDOCS%%%%EXAMPLESDIR%%/play_mp3.n
-%%PORTDOCS%%%%EXAMPLESDIR%%/reverb.n
-%%PORTDOCS%%%%EXAMPLESDIR%%/tone.n
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+libdata/pkgconfig/FlowDesigner.pc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_feedback.n
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_if.n
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dtmf.n
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/find_beat.n
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/helium.n
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello.n
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jm.wav
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mixedthread.n
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/play_mp3.n
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reverb.n
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tone.n
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm lib/flowdesigner/toolbox/vflow
 @dirrm lib/flowdesigner/toolbox/effects
 @dirrm lib/flowdesigner/toolbox/data-flow
