@@ -1,6 +1,12 @@
 bin/f-spot
 bin/f-spot-import
+bin/f-spot-sqlite-upgrade
 lib/f-spot/FlickrNet.dll
+lib/f-spot/Mono.Google.dll
+lib/f-spot/Mono.Addins.dll
+lib/f-spot/Mono.Addins.dll.config
+lib/f-spot/Mono.Addins.Setup.dll
+lib/f-spot/Mono.Addins.Gui.dll
 lib/f-spot/NDesk.DBus.GLib.dll
 lib/f-spot/NDesk.DBus.GLib.dll.config
 lib/f-spot/NDesk.DBus.dll
@@ -15,8 +21,8 @@ lib/f-spot/Tao.OpenGl.dll
 lib/f-spot/Tao.OpenGl.dll.config
 lib/f-spot/f-spot.exe
 lib/f-spot/f-spot.exe.config
+lib/f-spot/f-spot.global.addins
 lib/f-spot/gnome-keyring-sharp.dll
-lib/f-spot/google-sharp.dll
 lib/f-spot/libfspot.a
 lib/f-spot/libfspot.la
 lib/f-spot/libfspot.so
@@ -31,26 +37,95 @@ lib/f-spot/libfspotjpegtran.so
 lib/f-spot/libfspotjpegtran.so.0
 lib/f-spot/libgphoto2-sharp.dll
 lib/f-spot/libgphoto2-sharp.dll.config
+lib/f-spot/extensions/DefaultExporters.addin.xml
 libdata/pkgconfig/f-spot.pc
 libexec/gnome-screensaver/f-spot-screensaver
 share/gnome-screensaver/themes/f-spot-screensaver.desktop
 share/gnome/applications/f-spot-view.desktop
 share/gnome/applications/f-spot.desktop
 share/gnome/help/f-spot/C/f-spot.xml
+share/gnome/help/f-spot/C/figures/f-spot-adjust-colors.png
+share/gnome/help/f-spot/C/figures/f-spot-autocolor.png
+share/gnome/help/f-spot/C/figures/f-spot-crop.png
+share/gnome/help/f-spot/C/figures/f-spot-desaturate.png
 share/gnome/help/f-spot/C/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/C/figures/f-spot-red-eye.png
+share/gnome/help/f-spot/C/figures/f-spot-sepia.png
 share/gnome/help/f-spot/C/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/C/figures/f-spot-soft-focus.png
+share/gnome/help/f-spot/C/figures/f-spot-straighten.png
 share/gnome/help/f-spot/da/f-spot.xml
+share/gnome/help/f-spot/da/figures/f-spot-adjust-colors.png
+share/gnome/help/f-spot/da/figures/f-spot-autocolor.png
+share/gnome/help/f-spot/da/figures/f-spot-crop.png
+share/gnome/help/f-spot/da/figures/f-spot-desaturate.png
 share/gnome/help/f-spot/da/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/da/figures/f-spot-red-eye.png
+share/gnome/help/f-spot/da/figures/f-spot-sepia.png
 share/gnome/help/f-spot/da/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/da/figures/f-spot-soft-focus.png
+share/gnome/help/f-spot/da/figures/f-spot-straighten.png
+share/gnome/help/f-spot/es/f-spot.xml
+share/gnome/help/f-spot/es/figures/f-spot-adjust-colors.png
+share/gnome/help/f-spot/es/figures/f-spot-autocolor.png
+share/gnome/help/f-spot/es/figures/f-spot-crop.png
+share/gnome/help/f-spot/es/figures/f-spot-desaturate.png
+share/gnome/help/f-spot/es/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/es/figures/f-spot-red-eye.png
+share/gnome/help/f-spot/es/figures/f-spot-sepia.png
+share/gnome/help/f-spot/es/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/es/figures/f-spot-soft-focus.png
+share/gnome/help/f-spot/es/figures/f-spot-straighten.png
 share/gnome/help/f-spot/fr/f-spot.xml
+share/gnome/help/f-spot/fr/figures/f-spot-adjust-colors.png
+share/gnome/help/f-spot/fr/figures/f-spot-autocolor.png
+share/gnome/help/f-spot/fr/figures/f-spot-crop.png
+share/gnome/help/f-spot/fr/figures/f-spot-desaturate.png
 share/gnome/help/f-spot/fr/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/fr/figures/f-spot-red-eye.png
+share/gnome/help/f-spot/fr/figures/f-spot-sepia.png
 share/gnome/help/f-spot/fr/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/fr/figures/f-spot-soft-focus.png
+share/gnome/help/f-spot/fr/figures/f-spot-straighten.png
+share/gnome/help/f-spot/it/f-spot.xml
+share/gnome/help/f-spot/it/figures/f-spot-adjust-colors.png
+share/gnome/help/f-spot/it/figures/f-spot-autocolor.png
+share/gnome/help/f-spot/it/figures/f-spot-crop.png
+share/gnome/help/f-spot/it/figures/f-spot-desaturate.png
+share/gnome/help/f-spot/it/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/it/figures/f-spot-red-eye.png
+share/gnome/help/f-spot/it/figures/f-spot-sepia.png
+share/gnome/help/f-spot/it/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/it/figures/f-spot-soft-focus.png
+share/gnome/help/f-spot/it/figures/f-spot-straighten.png
+share/gnome/help/f-spot/pt_BR/f-spot.xml
+share/gnome/help/f-spot/pt_BR/figures/f-spot-adjust-colors.png
+share/gnome/help/f-spot/pt_BR/figures/f-spot-autocolor.png
+share/gnome/help/f-spot/pt_BR/figures/f-spot-crop.png
+share/gnome/help/f-spot/pt_BR/figures/f-spot-desaturate.png
+share/gnome/help/f-spot/pt_BR/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/pt_BR/figures/f-spot-red-eye.png
+share/gnome/help/f-spot/pt_BR/figures/f-spot-sepia.png
+share/gnome/help/f-spot/pt_BR/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/pt_BR/figures/f-spot-soft-focus.png
+share/gnome/help/f-spot/pt_BR/figures/f-spot-straighten.png
 share/gnome/help/f-spot/sv/f-spot.xml
+share/gnome/help/f-spot/sv/figures/f-spot-adjust-colors.png
+share/gnome/help/f-spot/sv/figures/f-spot-autocolor.png
+share/gnome/help/f-spot/sv/figures/f-spot-crop.png
+share/gnome/help/f-spot/sv/figures/f-spot-desaturate.png
 share/gnome/help/f-spot/sv/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/sv/figures/f-spot-red-eye.png
+share/gnome/help/f-spot/sv/figures/f-spot-sepia.png
 share/gnome/help/f-spot/sv/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/sv/figures/f-spot-soft-focus.png
+share/gnome/help/f-spot/sv/figures/f-spot-straighten.png
 share/gnome/omf/f-spot/f-spot-C.omf
 share/gnome/omf/f-spot/f-spot-da.omf
+share/gnome/omf/f-spot/f-spot-es.omf
 share/gnome/omf/f-spot/f-spot-fr.omf
+share/gnome/omf/f-spot/f-spot-it.omf
+share/gnome/omf/f-spot/f-spot-pt_BR.omf
 share/gnome/omf/f-spot/f-spot-sv.omf
 share/icons/hicolor/16x16/apps/f-spot.png
 share/icons/hicolor/16x16/apps/f-spot.svg
@@ -61,7 +136,6 @@ share/icons/hicolor/32x32/apps/f-spot.png
 share/icons/hicolor/32x32/apps/f-spot.svg
 share/icons/hicolor/48x48/apps/f-spot.png
 share/icons/hicolor/48x48/apps/f-spot.svg
-share/icons/hicolor/scalable/apps/f-spot.svg
 share/locale/ar/LC_MESSAGES/f-spot.mo
 share/locale/bg/LC_MESSAGES/f-spot.mo
 share/locale/ca/LC_MESSAGES/f-spot.mo
@@ -84,11 +158,13 @@ share/locale/hu/LC_MESSAGES/f-spot.mo
 share/locale/it/LC_MESSAGES/f-spot.mo
 share/locale/ja/LC_MESSAGES/f-spot.mo
 share/locale/lt/LC_MESSAGES/f-spot.mo
+share/locale/lv/LC_MESSAGES/f-spot.mo
 share/locale/mk/LC_MESSAGES/f-spot.mo
 share/locale/nb/LC_MESSAGES/f-spot.mo
 share/locale/nl/LC_MESSAGES/f-spot.mo
 share/locale/pa/LC_MESSAGES/f-spot.mo
 share/locale/pl/LC_MESSAGES/f-spot.mo
+share/locale/pt/LC_MESSAGES/f-spot.mo
 share/locale/pt_BR/LC_MESSAGES/f-spot.mo
 share/locale/ru/LC_MESSAGES/f-spot.mo
 share/locale/rw/LC_MESSAGES/f-spot.mo
@@ -106,8 +182,14 @@ share/locale/zh_TW/LC_MESSAGES/f-spot.mo
 @dirrm share/gnome/omf/f-spot
 @dirrm share/gnome/help/f-spot/sv/figures
 @dirrm share/gnome/help/f-spot/sv
+@dirrm share/gnome/help/f-spot/pt_BR/figures
+@dirrm share/gnome/help/f-spot/pt_BR
+@dirrm share/gnome/help/f-spot/it/figures
+@dirrm share/gnome/help/f-spot/it
 @dirrm share/gnome/help/f-spot/fr/figures
 @dirrm share/gnome/help/f-spot/fr
+@dirrm share/gnome/help/f-spot/es/figures
+@dirrm share/gnome/help/f-spot/es
 @dirrm share/gnome/help/f-spot/da/figures
 @dirrm share/gnome/help/f-spot/da
 @dirrm share/gnome/help/f-spot/C/figures
@@ -116,4 +198,5 @@ share/locale/zh_TW/LC_MESSAGES/f-spot.mo
 @dirrmtry share/gnome-screensaver/themes
 @dirrmtry share/gnome-screensaver
 @dirrmtry libexec/gnome-screensaver
+@dirrm lib/f-spot/extensions
 @dirrm lib/f-spot
