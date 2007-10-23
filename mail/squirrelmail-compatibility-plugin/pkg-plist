@@ -43,6 +43,7 @@
 %%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.8.diff
 %%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.9.diff
 %%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.10.diff
+%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.11.diff
 %%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.5.0.diff
 %%SQUIRRELDIR%%/plugins/compatibility/patches.old/compatibility_patch-1.2.11.diff
 %%SQUIRRELDIR%%/plugins/compatibility/patches.old/compatibility_patch-1.4.4.diff
@@ -72,5 +73,5 @@
 @dirrm %%SQUIRRELDIR%%/plugins/compatibility/patches
 @dirrm %%SQUIRRELDIR%%/plugins/compatibility/patches.old
 @dirrm %%SQUIRRELDIR%%/plugins/compatibility
-@exec patch -sN -p0 -d %D/%%SQUIRRELDIR%%/plugins/compatibility < %D/%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.5.diff
+@exec patch -sN -p0 -d %D/%%SQUIRRELDIR%%/plugins/compatibility < %D/%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.11.diff
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
