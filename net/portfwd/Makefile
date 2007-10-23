@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portfwd
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,11 +21,11 @@ MAN5=	portfwd.cfg.5
 MAN8=	portfwd.8
 
 post-patch:
-	@${ECHO_CMD} -n > ${WRKSRC}/config/missing
 	@${REINPLACE_CMD} -e "s|-Wall -ggdb -O3|${CFLAGS}|g" \
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e "s|-Wall -g -O3|${CFLAGS}|g" \
 		${WRKSRC}/tools/Makefile.in
+	@${TOUCH} ${WRKSRC}/* ${WRKSRC}/*/*
 
 .if defined(NOPORTDOCS)
 post-configure:
