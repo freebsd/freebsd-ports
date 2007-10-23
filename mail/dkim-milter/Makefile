@@ -13,7 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -51,7 +51,7 @@ PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh \
 		draft-hoffman-dac-vbr-01.txt draft-ietf-dkim-overview-05.txt \
 		draft-ietf-dkim-ssp-01.txt draft-ietf-dkim-ssp-requirements-05.txt \
-		draft-kucherawy-sender-auth-header-07.txt rfc4686.txt rfc4871.txt
+		draft-kucherawy-sender-auth-header-08.txt rfc4686.txt rfc4871.txt
 .if !defined(NOPORTDOCS)
 LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/overview.html \
