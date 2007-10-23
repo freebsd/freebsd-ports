@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lamarc
-PORTVERSION=	2.1
+PORTVERSION=	2.1.2b
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://evolution.gs.washington.edu/lamarc/download/

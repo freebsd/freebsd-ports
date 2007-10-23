@@ -1,11 +1,11 @@
---- configure.orig	Wed May  2 05:59:05 2007
-+++ configure	Thu Aug 30 18:26:42 2007
-@@ -1494,7 +1494,7 @@
-         OSTYPE=MACOSX
-         GUI_PKG=mac
+--- configure.orig	Thu Oct  4 01:33:34 2007
++++ configure	Sat Oct 13 00:47:54 2007
+@@ -2029,7 +2029,7 @@
+             LAMARC_CODE_OSTYPE=LAMARC_COMPILE_MACOSX
+         fi
          ;;
 -    linux*)
 +    freebsd*|linux*)
-         OSTYPE=LINUX
-         GUI_PKG=gtk2
-         ;;
+         if test "X${lamCONV}" = "Xyes" ; then
+             if test "X${lamGUI}" = "Xyes" ; then
+                 if test "X${GUI_TOOLKIT}" = "X" ; then
