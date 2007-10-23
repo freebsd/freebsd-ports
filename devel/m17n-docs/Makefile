@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	m17n-docs
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4.0a
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib-download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The m17n library documentation
 
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 
 MAN1=		m17n-config.1 m17n-db.1
-MAN3=		_usr_local_work_m17n-lib_.3m17n \
-		_usr_local_work_m17n-lib_src_.3m17n \
-		m17nCharacter.3m17n \
+MAN3=		m17nCharacter.3m17n \
 		m17nCharset.3m17n \
 		m17nChartable.3m17n \
 		m17nConv.3m17n \
@@ -114,18 +113,25 @@ MAN3=		_usr_local_work_m17n-lib_.3m17n \
 		mface_copy.3m17n \
 		mface_equal.3m17n \
 		mface_from_font.3m17n \
+		mface_get_hook.3m17n \
 		mface_get_prop.3m17n \
 		mface_merge.3m17n \
+		mface_put_hook.3m17n \
 		mface_put_prop.3m17n \
 		mface_update.3m17n \
 		mfont.3m17n \
 		mfont_check.3m17n \
+		mfont_close.3m17n \
 		mfont_copy.3m17n \
+		mfont_encapsulate.3m17n \
 		mfont_find.3m17n \
 		mfont_from_name.3m17n \
 		mfont_get_prop.3m17n \
 		mfont_list.3m17n \
+		mfont_list_family_names.3m17n \
+		mfont_match_p.3m17n \
 		mfont_name.3m17n \
+		mfont_open.3m17n \
 		mfont_parse_name.3m17n \
 		mfont_put_prop.3m17n \
 		mfont_resize_ratio.3m17n \
@@ -140,21 +146,23 @@ MAN3=		_usr_local_work_m17n-lib_.3m17n \
 		mfontset_name.3m17n \
 		mframe.3m17n \
 		mframe_get_prop.3m17n \
-		minput_assign_command_keys.3m17n \
 		minput_close_im.3m17n \
+		minput_config_command.3m17n \
+		minput_config_file.3m17n \
+		minput_config_variable.3m17n \
 		minput_create_ic.3m17n \
 		minput_destroy_ic.3m17n \
 		minput_event_to_key.3m17n \
 		minput_filter.3m17n \
-		minput_get_commands.3m17n \
+		minput_get_command.3m17n \
 		minput_get_description.3m17n \
 		minput_get_title_icon.3m17n \
-		minput_get_variables.3m17n \
+		minput_get_variable.3m17n \
 		minput_lookup.3m17n \
 		minput_open_im.3m17n \
 		minput_reset_ic.3m17n \
+		minput_save_config.3m17n \
 		minput_set_spot.3m17n \
-		minput_set_variable.3m17n \
 		minput_toggle.3m17n \
 		mlocale_get_prop.3m17n \
 		mlocale_set.3m17n \
@@ -165,21 +173,25 @@ MAN3=		_usr_local_work_m17n-lib_.3m17n \
 		mplist_find_by_key.3m17n \
 		mplist_find_by_value.3m17n \
 		mplist_get.3m17n \
+		mplist_get_func.3m17n \
 		mplist_key.3m17n \
 		mplist_length.3m17n \
 		mplist_next.3m17n \
 		mplist_pop.3m17n \
 		mplist_push.3m17n \
 		mplist_put.3m17n \
+		mplist_put_func.3m17n \
 		mplist_set.3m17n \
 		mplist_value.3m17n \
 		msymbol.3m17n \
 		msymbol_as_managing_key.3m17n \
 		msymbol_exist.3m17n \
 		msymbol_get.3m17n \
+		msymbol_get_func.3m17n \
 		msymbol_is_managing_key.3m17n \
 		msymbol_name.3m17n \
 		msymbol_put.3m17n \
+		msymbol_put_func.3m17n \
 		mtext.3m17n \
 		mtext_attach_property.3m17n \
 		mtext_case_compare.3m17n \
@@ -245,13 +257,14 @@ MAN3=		_usr_local_work_m17n-lib_.3m17n \
 		mtext_uppercase.3m17n
 MAN5=		mdbCharsetList.5 mdbCodingList.5 mdbDir.5 \
 		mdbFLT.5 mdbFontEncoding.5 mdbFontSize.5 mdbFontset.5 \
-		mdbGeneral.5 mdbIM.5
+		mdbGeneral.5 mdbIM.5 mdbTutorialIM.5
 
 DOCSDIR=	${PREFIX}/share/doc/m17n
 PORTDOCS=	*
 
 post-patch:
-		${REINPLACE_CMD} -e 's,/m17n/docs,/doc/m17n,' \
-			${WRKSRC}/configure ${WRKSRC}/Makefile.in
+.for file in configure Makefile.in 
+	@${REINPLACE_CMD} -e 's|/m17n/docs|/doc/m17n|g' ${WRKSRC}/${file}
+.endfor
 
 .include <bsd.port.mk>
