@@ -6,7 +6,7 @@
 
 PORTNAME=	mongrel_cluster
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	mongrel
@@ -18,6 +18,8 @@ BUILD_DEPENDS=	rubygem-mongrel>=1.0.1:${PORTSDIR}/www/rubygem-mongrel
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RC_SUBR=	mongrel_cluster
+USE_RUBY=	yes
+REINPLACE_ARGS=	-i ""
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
@@ -35,6 +37,11 @@ x-generate-plist:
 
 post-install:
 	${RMDIR} ${PREFIX}/${GEM_DOC_DIR}
+	@${REINPLACE_CMD} -e 's|/usr/bin/env ruby|${RUBY}|' ${PREFIX}/bin/mongrel_cluster_ctl
+	@${REINPLACE_CMD} -e 's|mongrel_rails|${PREFIX}/bin/mongrel_rails|g' \
+		${PREFIX}/${GEM_LIB_DIR}/bin/mongrel_cluster_ctl
+	@${REINPLACE_CMD} -e 's|\"mongrel_rails\"|\"${PREFIX}/bin/mongrel_rails\"|g' \
+		${PREFIX}/${GEM_LIB_DIR}/lib/${PORTNAME}/init.rb
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
