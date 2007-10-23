@@ -14507,6 +14507,7 @@ scilab-toolbox-sivp	ports/math/scilab-toolbox-sivp
 scilab-toolbox-swt	ports/math/scilab-toolbox-swt
 scim		ports/textproc/scim
 scim-input-pad	ports/textproc/scim-input-pad
+scim-kmfl-imengine	ports/textproc/scim-kmfl-imengine
 scim-m17n	ports/textproc/scim-m17n
 scim-openvanilla	ports/textproc/scim-openvanilla
 scim-table-imengine	ports/textproc/scim-table-imengine
