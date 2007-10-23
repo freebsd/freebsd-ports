@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		resin
-PORTVERSION=		3.1.2
+PORTVERSION=		3.1.3
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
@@ -19,6 +19,7 @@ HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
 USE_OPENSSL=		yes
 USE_AUTOTOOLS=		libtool:15
+USE_LDCONFIG=		yes
 
 # Customizable settings
 RUNASUSER?=		www
