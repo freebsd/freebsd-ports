@@ -1020,6 +1020,13 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/plugins/calendar/setup.php
 %%SQUIRRELDIR%%/plugins/delete_move_next/index.php
 %%SQUIRRELDIR%%/plugins/delete_move_next/setup.php
+%%SQUIRRELDIR%%/plugins/demo/index.php
+%%SQUIRRELDIR%%/plugins/demo/getpot
+%%SQUIRRELDIR%%/plugins/demo/demo.pot
+%%SQUIRRELDIR%%/plugins/demo/setup.php
+%%SQUIRRELDIR%%/plugins/demo/COPYING
+%%SQUIRRELDIR%%/plugins/demo/demo.php
+%%SQUIRRELDIR%%/plugins/demo/functions.php
 %%SQUIRRELDIR%%/plugins/filters/bulkquery/Makefile
 %%SQUIRRELDIR%%/plugins/filters/bulkquery/bq.in
 %%SQUIRRELDIR%%/plugins/filters/bulkquery/bq.out
@@ -1093,6 +1100,13 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/plugins/squirrelspell/sqspell_functions.php
 %%SQUIRRELDIR%%/plugins/squirrelspell/sqspell_interface.php
 %%SQUIRRELDIR%%/plugins/squirrelspell/sqspell_options.php
+%%SQUIRRELDIR%%/plugins/test/COPYING
+%%SQUIRRELDIR%%/plugins/test/test.php
+%%SQUIRRELDIR%%/plugins/test/setup.php
+%%SQUIRRELDIR%%/plugins/test/decodeheader.php
+%%SQUIRRELDIR%%/plugins/test/ngettext.php
+%%SQUIRRELDIR%%/plugins/test/index.php
+%%SQUIRRELDIR%%/plugins/test/functions.php
 %%SQUIRRELDIR%%/plugins/translate/index.php
 %%SQUIRRELDIR%%/plugins/translate/options.php
 %%SQUIRRELDIR%%/plugins/translate/setup.php
@@ -1215,6 +1229,7 @@ etc/periodic/daily/111.clean-squirrelmail
 @dirrm %%SQUIRRELDIR%%/src
 @dirrm %%SQUIRRELDIR%%/po
 @dirrm %%SQUIRRELDIR%%/plugins/translate
+@dirrm %%SQUIRRELDIR%%/plugins/test
 @dirrm %%SQUIRRELDIR%%/plugins/squirrelspell/modules
 @dirrm %%SQUIRRELDIR%%/plugins/squirrelspell/js
 @dirrm %%SQUIRRELDIR%%/plugins/squirrelspell
@@ -1229,6 +1244,7 @@ etc/periodic/daily/111.clean-squirrelmail
 @dirrm %%SQUIRRELDIR%%/plugins/fortune
 @dirrm %%SQUIRRELDIR%%/plugins/filters/bulkquery
 @dirrm %%SQUIRRELDIR%%/plugins/filters
+@dirrm %%SQUIRRELDIR%%/plugins/demo
 @dirrm %%SQUIRRELDIR%%/plugins/delete_move_next
 @dirrm %%SQUIRRELDIR%%/plugins/calendar
 @dirrm %%SQUIRRELDIR%%/plugins/bug_report
