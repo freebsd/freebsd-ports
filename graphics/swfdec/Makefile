@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	swfdec
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec/0.5/
 
