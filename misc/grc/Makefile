@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	grc
-PORTVERSION=	1.0.6
+PORTVERSION=	1.1
 CATEGORIES=	misc
-MASTER_SITES=	http://melkor.dnp.fmph.uniba.sk/~garabik/grc/
+MASTER_SITES=	http://kassiopeia.juls.savba.sk/~garabik/software/grc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -28,11 +28,11 @@ post-patch:
 .endfor
 
 do-install:
-.for file in grc grcat
-	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
+.for f in grc grcat
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
-.for file in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${MAN1PREFIX}/man/man1
+.for i in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${i} ${MAN1PREFIX}/man/man1
 .endfor
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/conf.* ${DATADIR}
