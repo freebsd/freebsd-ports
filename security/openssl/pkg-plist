@@ -91,22 +91,17 @@ lib/libssl.a
 libdata/pkgconfig/openssl.pc
 %%OPENSSL_BETA%%libdata/pkgconfig/libssl.pc
 %%OPENSSL_BETA%%@dirrm lib/engines
-%%NOBASE%%openssl/misc/CA.pl
-%%NOBASE%%openssl/misc/CA.sh
-%%NOBASE%%openssl/misc/c_hash
-%%NOBASE%%openssl/misc/c_info
-%%NOBASE%%openssl/misc/c_issuer
-%%NOBASE%%openssl/misc/c_name
-%%NOBASE%%openssl/openssl.cnf.sample
+openssl/misc/CA.pl
+openssl/misc/CA.sh
+openssl/misc/c_hash
+openssl/misc/c_info
+openssl/misc/c_issuer
+openssl/misc/c_name
+openssl/openssl.cnf.sample
 %%PORTDOCS%%%%DOCSDIR%%/openssl.txt
 @dirrm include/openssl
-%%NOBASE%%@dirrm openssl/certs
-%%MANDIR%%@dirrm openssl/man/man1
-%%MANDIR%%@dirrm openssl/man/man3
-%%MANDIR%%@dirrm openssl/man/man5
-%%MANDIR%%@dirrm openssl/man/man7
-%%MANDIR%%@dirrm openssl/man
-%%NOBASE%%@dirrm openssl/misc
-%%NOBASE%%@dirrm openssl/private
-%%NOBASE%%@dirrm openssl
+@dirrm openssl/certs
+@dirrm openssl/misc
+@dirrm openssl/private
+@dirrm openssl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
