@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	faad2
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.6
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,7 +16,6 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-NO_CDROM=	Restrictive copyright (do not sell for profit)
 
 USE_DOS2UNIX=	yes
 USE_AUTOTOOLS=	automake:15 autoheader:261 libtool:15
