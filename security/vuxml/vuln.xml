@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3a81017a-8154-11dc-9283-0016179b2dd5">
+    <topic>ldapscripts -- Command Line User Credentials Disclosure</topic>
+    <affects>
+      <package>
+	<name>ldapscripts</name>
+	<range><lt>1.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ganael Laplanche reports:</p>
+	<blockquote cite="http://sourceforge.net/project/shownotes.php?group_id=156483&amp;release_id=546600">
+	  <p>Up to now, each ldap* command was called with the -w parameter,
+	    which allows to specify the bind password on the command line.
+	    Unfortunately, this could make the password appear to anybody
+	    performing a `ps` during the call. This is now avoided by using
+	    the -y parameter and a password file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://sourceforge.net/project/shownotes.php?group_id=156483&amp;release_id=546600</url>
+      <url>http://secunia.com/advisories/27111</url>
+      <cvename>CVE-2007-5373</cvename>
+    </references>
+    <dates>
+      <discovery>2007-10-09</discovery>
+      <entry>2007-10-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e24797af-803d-11dc-b787-003048705d5a">
     <topic>firefox -- OnUnload Javascript browser entrapment vulnerability</topic>
     <affects>
