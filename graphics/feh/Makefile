@@ -7,7 +7,7 @@
 
 PORTNAME=	feh
 PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image viewer that utilizes Imlib2
 
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
@@ -36,7 +35,7 @@ post-patch:
 	@${PERL} -pi.bak -e \
 		's|-man install-docsDATA|-man|g' ${WRKSRC}/Makefile.in
 	@${PERL} -pi.bak -e \
-		's|^#!/bin|#!${LOCALBASE}/bin|g' ${WRKSRC}/cam/gen_cam_menu.sh
+		's|^#!/bin/bash|#!/bin/sh|g' ${WRKSRC}/cam/gen_cam_menu.sh
 	@${PERL} -pi.bak -e \
 		's|^LDFLAGS.*$$|LDFLAGS = \@LDFLAGS\@|g ; \
 		 s|-I/usr/X11R6/include||g ; \
