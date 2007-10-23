@@ -901,6 +901,7 @@
     SUBDIR += sc-aspell
     SUBDIR += scim
     SUBDIR += scim-input-pad
+    SUBDIR += scim-kmfl-imengine
     SUBDIR += scim-m17n
     SUBDIR += scim-openvanilla
     SUBDIR += scim-table-imengine
