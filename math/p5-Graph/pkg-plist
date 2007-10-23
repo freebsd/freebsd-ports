@@ -19,8 +19,16 @@
 %%SITE_PERL%%/Graph/Traversal/DFS.pm
 %%SITE_PERL%%/Graph/Undirected.pm
 %%SITE_PERL%%/Graph/UnionFind.pm
-@dirrm %%SITE_PERL%%/Graph/AdjacencyMap
-@dirrm %%SITE_PERL%%/Graph/TransitiveClosure
-@dirrm %%SITE_PERL%%/Graph/Traversal
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph
+%%SITE_PERL%%/Heap071/Elem.pm
+%%SITE_PERL%%/Heap071/Fibonacci.pm
+%%SITE_PERL%%/auto/Heap071/Elem/autosplit.ix
+%%SITE_PERL%%/auto/Heap071/Fibonacci/autosplit.ix
+@dirrmtry %%SITE_PERL%%/auto/Heap071/Fibonacci
+@dirrmtry %%SITE_PERL%%/auto/Heap071/Elem
+@dirrmtry %%SITE_PERL%%/auto/Heap071
+@dirrmtry %%SITE_PERL%%/Heap071
+@dirrmtry %%SITE_PERL%%/Graph/Traversal
+@dirrmtry %%SITE_PERL%%/Graph/TransitiveClosure
+@dirrmtry %%SITE_PERL%%/Graph/AdjacencyMap
 @dirrmtry %%SITE_PERL%%/Graph
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph

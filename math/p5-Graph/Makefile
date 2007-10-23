@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graph
-PORTVERSION=	0.81
+PORTVERSION=	0.84
 PORTEPOCH=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -35,6 +35,8 @@ MAN3=		Graph.3 \
 		Graph::Traversal::BFS.3 \
 		Graph::Traversal::DFS.3 \
 		Graph::Undirected.3 \
-		Graph::UnionFind.3
+		Graph::UnionFind.3 \
+		Heap071::Elem.3 \
+		Heap071::Fibonacci.3
 
 .include <bsd.port.mk>
