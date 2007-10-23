@@ -4,6 +4,7 @@ include/swfdec-%%VERSION%%/libswfdec-gtk/swfdec_gtk_loader.h
 include/swfdec-%%VERSION%%/libswfdec-gtk/swfdec_gtk_player.h
 include/swfdec-%%VERSION%%/libswfdec-gtk/swfdec_gtk_widget.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec.h
+include/swfdec-%%VERSION%%/libswfdec/swfdec_as_array.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_as_context.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_as_debugger.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_as_frame.h
@@ -19,15 +20,16 @@ include/swfdec-%%VERSION%%/libswfdec/swfdec_keys.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_loader.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_player.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_script.h
+include/swfdec-%%VERSION%%/libswfdec/swfdec_system.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_url.h
 lib/libswfdec-%%VERSION%%.a
 lib/libswfdec-%%VERSION%%.la
 lib/libswfdec-%%VERSION%%.so
-lib/libswfdec-%%VERSION%%.so.2
+lib/libswfdec-%%VERSION%%.so.3
 lib/libswfdec-gtk-%%VERSION%%.a
 lib/libswfdec-gtk-%%VERSION%%.la
 lib/libswfdec-gtk-%%VERSION%%.so
-lib/libswfdec-gtk-%%VERSION%%.so.2
+lib/libswfdec-gtk-%%VERSION%%.so.3
 libdata/pkgconfig/swfdec-%%VERSION%%.pc
 libdata/pkgconfig/swfdec-gtk-%%VERSION%%.pc
 share/gtk-doc/html/swfdec/SwfdecAsContext.html
@@ -35,6 +37,7 @@ share/gtk-doc/html/swfdec/SwfdecAsDebugger.html
 share/gtk-doc/html/swfdec/SwfdecAudio.html
 share/gtk-doc/html/swfdec/SwfdecGtkLoader.html
 share/gtk-doc/html/swfdec/SwfdecGtkPlayer.html
+share/gtk-doc/html/swfdec/SwfdecSystem.html
 share/gtk-doc/html/swfdec/SwfdecGtkWidget.html
 share/gtk-doc/html/swfdec/SwfdecLoader.html
 share/gtk-doc/html/swfdec/SwfdecPlayer.html
@@ -55,6 +58,7 @@ share/gtk-doc/html/swfdec/swfdec-SwfdecAsFunction.html
 share/gtk-doc/html/swfdec/swfdec-SwfdecAsObject.html
 share/gtk-doc/html/swfdec/swfdec-SwfdecAsValue.html
 share/gtk-doc/html/swfdec/swfdec-SwfdecBuffer.html
+share/gtk-doc/html/swfdec/swfdec-SwfdecRectangle.html
 share/gtk-doc/html/swfdec/swfdec-SwfdecURL.html
 share/gtk-doc/html/swfdec/swfdec.devhelp
 share/gtk-doc/html/swfdec/swfdec.devhelp2
