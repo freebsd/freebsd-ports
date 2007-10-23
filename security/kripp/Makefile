@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kripp
-PORTVERSION=	0.5
+PORTVERSION=	0.6.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
 		http://konst.org.ua/download/
