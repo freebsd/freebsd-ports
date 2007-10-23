@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	20070311
-PORTREVISION=	1
+PORTVERSION=	20071023
 CATEGORIES=	net-p2p kde
-MASTER_SITES=	http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
+MASTER_SITES=	http://www.brueffer.de/distfiles/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 CONFLICTS=	ktorrent-[0.9]*
 
@@ -27,10 +26,5 @@ USE_GMAKE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|zeroconf||' ${WRKSRC}/src/plugins/Makefile.in
-	@${FIND} ${WRKSRC} -name Makefile.in | \
-		${XARGS} ${REINPLACE_CMD} \
-		-e '/^INCLUDES =/{:loop' -e '/\\$$/{N;bloop' \
-		-e '};/$$(all_includes)/{s///;s/$$/ $$(all_includes)/' \
-		-e '}' -e '}'
 
 .include <bsd.port.mk>
