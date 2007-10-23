@@ -34,33 +34,25 @@ bin/tkabber
 %%DATADIR%%/ifacetk/unix.xrdb
 %%DATADIR%%/iq.tcl
 %%DATADIR%%/itemedit.tcl
-%%DATADIR%%/jabberlib-tclxml/autoconnect.tcl
-%%DATADIR%%/jabberlib-tclxml/https.tcl
-%%DATADIR%%/jabberlib-tclxml/idna.tcl
-%%DATADIR%%/jabberlib-tclxml/jabberlib.tcl
-%%DATADIR%%/jabberlib-tclxml/jlibauth.tcl
-%%DATADIR%%/jabberlib-tclxml/jlibcomponent.tcl
-%%DATADIR%%/jabberlib-tclxml/jlibcompress.tcl
-%%DATADIR%%/jabberlib-tclxml/jlibdns.tcl
-%%DATADIR%%/jabberlib-tclxml/jlibsasl.tcl
-%%DATADIR%%/jabberlib-tclxml/jlibtls.tcl
-%%DATADIR%%/jabberlib-tclxml/namespaces.tcl
-%%DATADIR%%/jabberlib-tclxml/ntlm.tcl
-%%DATADIR%%/jabberlib-tclxml/pkgIndex.tcl
-%%DATADIR%%/jabberlib-tclxml/socks4.tcl
-%%DATADIR%%/jabberlib-tclxml/socks5.tcl
-%%DATADIR%%/jabberlib-tclxml/stanzaerror.tcl
-%%DATADIR%%/jabberlib-tclxml/streamerror.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/pkgIndex.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/sgml-8.1.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/sgmlparser.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/tclparser-8.1.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/xml-8.1.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/xml__tcl.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/xmldep.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/xpath.tcl
-%%DATADIR%%/jabberlib-tclxml/transports.tcl
-%%DATADIR%%/jabberlib-tclxml/wrapper.tcl
+%%DATADIR%%/jabberlib/autoconnect.tcl
+%%DATADIR%%/jabberlib/https.tcl
+%%DATADIR%%/jabberlib/idna.tcl
+%%DATADIR%%/jabberlib/jabberlib.tcl
+%%DATADIR%%/jabberlib/jlibauth.tcl
+%%DATADIR%%/jabberlib/jlibcomponent.tcl
+%%DATADIR%%/jabberlib/jlibcompress.tcl
+%%DATADIR%%/jabberlib/jlibdns.tcl
+%%DATADIR%%/jabberlib/jlibsasl.tcl
+%%DATADIR%%/jabberlib/jlibtls.tcl
+%%DATADIR%%/jabberlib/namespaces.tcl
+%%DATADIR%%/jabberlib/ntlm.tcl
+%%DATADIR%%/jabberlib/pkgIndex.tcl
+%%DATADIR%%/jabberlib/socks4.tcl
+%%DATADIR%%/jabberlib/socks5.tcl
+%%DATADIR%%/jabberlib/stanzaerror.tcl
+%%DATADIR%%/jabberlib/streamerror.tcl
+%%DATADIR%%/jabberlib/transports.tcl
+%%DATADIR%%/jabberlib/wrapper.tcl
 %%DATADIR%%/joingrdialog.tcl
 %%DATADIR%%/login.tcl
 %%DATADIR%%/mclistbox/mclistbox.tcl
@@ -370,6 +362,7 @@ bin/tkabber
 %%DATADIR%%/plugins/windows/taskbar.tcl
 %%DATADIR%%/presence.tcl
 %%DATADIR%%/privacy.tcl
+%%DATADIR%%/private.tcl
 %%DATADIR%%/pubsub.tcl
 %%DATADIR%%/register.tcl
 %%DATADIR%%/richtext.tcl
@@ -391,6 +384,12 @@ bin/tkabber
 %%DATADIR%%/sounds/psi/presence_available.wav
 %%DATADIR%%/sounds/psi/presence_unavailable.wav
 %%DATADIR%%/splash.tcl
+%%DATADIR%%/tclxml/pkgIndex.tcl
+%%DATADIR%%/tclxml/sgml-8.1.tcl
+%%DATADIR%%/tclxml/sgmlparser.tcl
+%%DATADIR%%/tclxml/tclparser-8.1.tcl
+%%DATADIR%%/tclxml/xml-8.1.tcl
+%%DATADIR%%/tclxml/xml__tcl.tcl
 %%DATADIR%%/tkabber.tcl
 %%DATADIR%%/trans.tcl
 %%DATADIR%%/trans/de.msg
@@ -436,8 +435,7 @@ bin/tkabber
 @dirrm %%DATADIR%%/emoticons/default
 @dirrm %%DATADIR%%/emoticons
 @dirrm %%DATADIR%%/ifacetk
-@dirrm %%DATADIR%%/jabberlib-tclxml/tclxml
-@dirrm %%DATADIR%%/jabberlib-tclxml
+@dirrm %%DATADIR%%/jabberlib
 @dirrm %%DATADIR%%/mclistbox
 @dirrm %%DATADIR%%/msgs
 @dirrm %%DATADIR%%/pixmaps/feather22/roster
@@ -476,6 +474,7 @@ bin/tkabber
 @dirrm %%DATADIR%%/sounds/default
 @dirrm %%DATADIR%%/sounds/psi
 @dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/tclxml
 @dirrm %%DATADIR%%/trans
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%/configs
