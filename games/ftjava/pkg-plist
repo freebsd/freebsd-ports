@@ -1,6 +1,6 @@
 bin/ftjava
+%%DATADIR%%/FTJava.jar
 %%DATADIR%%/Images/FTJava.ico
-%%DATADIR%%/Images/Flags/Thumbs.db
 %%DATADIR%%/Images/Flags/esuIcon.gif
 %%DATADIR%%/Images/Flags/fseIcon.gif
 %%DATADIR%%/Images/Flags/ifIcon.gif
@@ -20,7 +20,6 @@ bin/ftjava
 %%DATADIR%%/Images/Logo_Valiant3.gif
 %%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/BB.gif
 %%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/CL.gif
-%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/AFH.gif
 %%DATADIR%%/Images/ShipIcons/Generic/AFL.gif
 %%DATADIR%%/Images/ShipIcons/Generic/AFM.gif
@@ -53,7 +52,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/Alpha/F5.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Alpha/F6.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Alpha/SM.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Alpha/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/Asteroid1.gif
 %%DATADIR%%/Images/ShipIcons/Generic/BB.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Beacon.gif
@@ -74,7 +72,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/Bravo/F5.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Bravo/F6.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Bravo/SM.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Bravo/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/CA.gif
 %%DATADIR%%/Images/ShipIcons/Generic/CE.gif
 %%DATADIR%%/Images/ShipIcons/Generic/CFH.gif
@@ -89,7 +86,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/Charlie/F5.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Charlie/F6.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Charlie/SM.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Charlie/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/DD.gif
 %%DATADIR%%/Images/ShipIcons/Generic/DH.gif
 %%DATADIR%%/Images/ShipIcons/Generic/DK.gif
@@ -103,7 +99,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/Delta/F5.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Delta/F6.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Delta/SM.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Delta/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/Echo/BB.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Echo/CA.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Echo/CE.gif
@@ -119,7 +114,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/Echo/FF.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Echo/Outpost.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Echo/SM.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Echo/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/F1.gif
 %%DATADIR%%/Images/ShipIcons/Generic/F2.gif
 %%DATADIR%%/Images/ShipIcons/Generic/F3.gif
@@ -133,7 +127,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/Foxtrot/DD.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Foxtrot/SDN.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Foxtrot/SM.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Foxtrot/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/GenericBogey.gif
 %%DATADIR%%/Images/ShipIcons/Generic/GenericShipIcon.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Golf/BH.gif
@@ -150,7 +143,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/Golf/MH3.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Golf/SD3.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Golf/SS.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Golf/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/Hotel/BB.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Hotel/CE.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Hotel/CH.gif
@@ -160,7 +152,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/Hotel/FH.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Hotel/SC.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Hotel/SDN.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Hotel/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/India/BB.gif
 %%DATADIR%%/Images/ShipIcons/Generic/India/BC.gif
 %%DATADIR%%/Images/ShipIcons/Generic/India/CE.gif
@@ -171,12 +162,10 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/India/FH.gif
 %%DATADIR%%/Images/ShipIcons/Generic/India/SC.gif
 %%DATADIR%%/Images/ShipIcons/Generic/India/SDN.gif
-%%DATADIR%%/Images/ShipIcons/Generic/India/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/Juliet/BB.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Juliet/BDN.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Juliet/CA.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Juliet/Sombar.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Juliet/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/Juliet/Tondar.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Kilo/BB.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Kilo/BC.gif
@@ -190,13 +179,11 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/Kilo/F4.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Kilo/F5.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Kilo/F6.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Kilo/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/LL.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Lima/DarkSoul.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Lima/Firebrand.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Lima/Razor.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Lima/Scythe.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Lima/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/Mike/Barenn.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Mike/Corvette.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Mike/Freelancer.gif
@@ -205,15 +192,14 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/Mike/Peregrine.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Mike/Raider.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Mike/Smuggler.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Mike/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/Mike/Wanderer.gif
+%%DATADIR%%/Images/ShipIcons/Generic/Missile.gif
 %%DATADIR%%/Images/ShipIcons/Generic/November/Aeon.gif
 %%DATADIR%%/Images/ShipIcons/Generic/November/ObsCraft.gif
 %%DATADIR%%/Images/ShipIcons/Generic/November/PatrolShip.gif
 %%DATADIR%%/Images/ShipIcons/Generic/November/Pursuer.gif
 %%DATADIR%%/Images/ShipIcons/Generic/November/Taska.gif
 %%DATADIR%%/Images/ShipIcons/Generic/November/TemporalWeaponShip.gif
-%%DATADIR%%/Images/ShipIcons/Generic/November/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/November/Warship1.gif
 %%DATADIR%%/Images/ShipIcons/Generic/November/Warship2.gif
 %%DATADIR%%/Images/ShipIcons/Generic/November/Wells.gif
@@ -244,7 +230,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/Oscar/SC.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Oscar/SCX.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Oscar/SDN.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Oscar/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/PB.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Papa/BB.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Papa/BC.gif
@@ -263,7 +248,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/Papa/SC.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Papa/SDN.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Papa/SM.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Papa/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/Planet2.gif
 %%DATADIR%%/Images/ShipIcons/Generic/QSH.gif
 %%DATADIR%%/Images/ShipIcons/Generic/QSL.gif
@@ -298,7 +282,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/Quebec/SAT.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Quebec/SDN.gif
 %%DATADIR%%/Images/ShipIcons/Generic/Quebec/STN.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Quebec/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/RaKehn.gif
 %%DATADIR%%/Images/ShipIcons/Generic/SM.gif
 %%DATADIR%%/Images/ShipIcons/Generic/STN.gif
@@ -307,7 +290,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Generic/TTH.gif
 %%DATADIR%%/Images/ShipIcons/Generic/TTM.gif
 %%DATADIR%%/Images/ShipIcons/Generic/TTS.gif
-%%DATADIR%%/Images/ShipIcons/Generic/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Generic/Type13Freighter.gif
 %%DATADIR%%/Images/ShipIcons/Imperium/Terran/AF.gif
 %%DATADIR%%/Images/ShipIcons/Imperium/Terran/AO.gif
@@ -327,7 +309,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Imperium/Terran/MT.gif
 %%DATADIR%%/Images/ShipIcons/Imperium/Terran/SC.gif
 %%DATADIR%%/Images/ShipIcons/Imperium/Terran/SM.gif
-%%DATADIR%%/Images/ShipIcons/Imperium/Terran/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Imperium/Vilani/AF.gif
 %%DATADIR%%/Images/ShipIcons/Imperium/Vilani/AT.gif
 %%DATADIR%%/Images/ShipIcons/Imperium/Vilani/BB.gif
@@ -348,7 +329,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Imperium/Vilani/SC.gif
 %%DATADIR%%/Images/ShipIcons/Imperium/Vilani/SDN.gif
 %%DATADIR%%/Images/ShipIcons/Imperium/Vilani/SM.gif
-%%DATADIR%%/Images/ShipIcons/Imperium/Vilani/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Altaran/BB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Altaran/BC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Altaran/CA.gif
@@ -363,7 +343,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Altaran/FF.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Altaran/SDN.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Altaran/SM.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Altaran/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Dvi Marauders/BB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Dvi Marauders/BC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Dvi Marauders/BDN.gif
@@ -372,7 +351,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Dvi Marauders/DD.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Dvi Marauders/SDN.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Dvi Marauders/SM.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Dvi Marauders/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Eurasian Solar Union/BB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Eurasian Solar Union/BC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Eurasian Solar Union/BDN.gif
@@ -396,7 +374,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Eurasian Solar Union/SC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Eurasian Solar Union/SDN.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Eurasian Solar Union/SM.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Eurasian Solar Union/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Eurasian Solar Union/Voroshilev.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Federal Stats Europa/BB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Federal Stats Europa/BC.gif
@@ -422,11 +399,9 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Federal Stats Europa/SC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Federal Stats Europa/SDN.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Federal Stats Europa/SM.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Federal Stats Europa/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Hylar League/BC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Hylar League/CA.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Hylar League/SM.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Hylar League/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Imperial Japanese Navy/BB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Imperial Japanese Navy/BC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Imperial Japanese Navy/BDN.gif
@@ -447,7 +422,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Imperial Japanese Navy/FH.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Imperial Japanese Navy/SC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Imperial Japanese Navy/SDN.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Imperial Japanese Navy/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Islamic Federation/BB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Islamic Federation/CE.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Islamic Federation/CH.gif
@@ -456,7 +430,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Islamic Federation/DD.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Islamic Federation/SB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Islamic Federation/SM.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Islamic Federation/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Islamic Federation/Yusuf ibn Ayyub.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Kali Khanate/AO.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Kali Khanate/BB.gif
@@ -471,7 +444,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Kali Khanate/F5.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Kali Khanate/F6.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Kali Khanate/SM.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Kali Khanate/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Kravak/AG.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Kravak/AO.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Kravak/BB.gif
@@ -502,7 +474,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Kravak/LuTon.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Kravak/SC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Kravak/SDN.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Kravak/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Kravak/ToKi.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Mauridian/CA.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Mauridian/CVL.gif
@@ -515,7 +486,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Mauridian/F6.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Mauridian/FF.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Mauridian/SM.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Mauridian/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Neu Swabian League/BB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Neu Swabian League/BC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Neu Swabian League/BDN.gif
@@ -536,7 +506,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Neu Swabian League/SC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Neu Swabian League/SDN.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Neu Swabian League/SM.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Neu Swabian League/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Neu Swabian League/Tirpitz.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Neu Swabian League/WaldburgM.gif
 %%DATADIR%%/Images/ShipIcons/Standard/New Anglian Confederation/BB.gif
@@ -562,7 +531,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/New Anglian Confederation/SDN.gif
 %%DATADIR%%/Images/ShipIcons/Standard/New Anglian Confederation/SM.gif
 %%DATADIR%%/Images/ShipIcons/Standard/New Anglian Confederation/ST.gif
-%%DATADIR%%/Images/ShipIcons/Standard/New Anglian Confederation/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/New Anglian Confederation/Tuffley.gif
 %%DATADIR%%/Images/ShipIcons/Standard/New Israeli/BB-A.gif
 %%DATADIR%%/Images/ShipIcons/Standard/New Israeli/BB-B.gif
@@ -587,7 +555,15 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/New Israeli/FH.gif
 %%DATADIR%%/Images/ShipIcons/Standard/New Israeli/SC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/New Israeli/SDN.gif
-%%DATADIR%%/Images/ShipIcons/Standard/New Israeli/Thumbs.db
+%%DATADIR%%/Images/ShipIcons/Standard/OUDF/BB.gif
+%%DATADIR%%/Images/ShipIcons/Standard/OUDF/BC.gif
+%%DATADIR%%/Images/ShipIcons/Standard/OUDF/CE.gif
+%%DATADIR%%/Images/ShipIcons/Standard/OUDF/CH.gif
+%%DATADIR%%/Images/ShipIcons/Standard/OUDF/CL.gif
+%%DATADIR%%/Images/ShipIcons/Standard/OUDF/CVH.gif
+%%DATADIR%%/Images/ShipIcons/Standard/OUDF/CVL.gif
+%%DATADIR%%/Images/ShipIcons/Standard/OUDF/DD.gif
+%%DATADIR%%/Images/ShipIcons/Standard/OUDF/FF.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Pan African Union/Ambatondrazaka.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Pan African Union/BB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Pan African Union/BC.gif
@@ -602,7 +578,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Pan African Union/SC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Pan African Union/SDN.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Pan African Union/SM.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Pan African Union/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Phalon/BB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Phalon/BC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Phalon/BDN.gif
@@ -624,7 +599,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Phalon/FFH.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Phalon/SC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Phalon/SDN.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Phalon/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Phalon/Vlath.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Rahni/BB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Rahni/BC.gif
@@ -634,7 +608,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Rahni/DN.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Rahni/FF.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Rahni/SDN.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Rahni/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Sylvian Nomad/BB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Sylvian Nomad/CA.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Sylvian Nomad/CL.gif
@@ -647,7 +620,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Sylvian Nomad/F6.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Sylvian Nomad/SDI.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Sylvian Nomad/SM.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Sylvian Nomad/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/TJorian Confederation/BB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/TJorian Confederation/BC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/TJorian Confederation/CA.gif
@@ -661,9 +633,7 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/TJorian Confederation/F5.gif
 %%DATADIR%%/Images/ShipIcons/Standard/TJorian Confederation/F6.gif
 %%DATADIR%%/Images/ShipIcons/Standard/TJorian Confederation/SM.gif
-%%DATADIR%%/Images/ShipIcons/Standard/TJorian Confederation/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Takaran/CA.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Takaran/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Terran Republic Navy/BB.GIF
 %%DATADIR%%/Images/ShipIcons/Standard/Terran Republic Navy/BC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Terran Republic Navy/CA.gif
@@ -675,7 +645,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Terran Republic Navy/F5.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Terran Republic Navy/F6.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Terran Republic Navy/FF.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Terran Republic Navy/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/UNSC/AMT.gif
 %%DATADIR%%/Images/ShipIcons/Standard/UNSC/AO.gif
 %%DATADIR%%/Images/ShipIcons/Standard/UNSC/AX.gif
@@ -704,7 +673,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/UNSC/SDN.gif
 %%DATADIR%%/Images/ShipIcons/Standard/UNSC/SM.gif
 %%DATADIR%%/Images/ShipIcons/Standard/UNSC/Sol.gif
-%%DATADIR%%/Images/ShipIcons/Standard/UNSC/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/Vargan Empire/BB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Vargan Empire/BC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Vargan Empire/CA.gif
@@ -719,7 +687,6 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/Vargan Empire/FF.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Vargan Empire/SDN.gif
 %%DATADIR%%/Images/ShipIcons/Standard/Vargan Empire/SM.gif
-%%DATADIR%%/Images/ShipIcons/Standard/Vargan Empire/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/Standard/idf/BB.gif
 %%DATADIR%%/Images/ShipIcons/Standard/idf/BC.gif
 %%DATADIR%%/Images/ShipIcons/Standard/idf/CA.gif
@@ -729,13 +696,9 @@ bin/ftjava
 %%DATADIR%%/Images/ShipIcons/Standard/idf/FF.gif
 %%DATADIR%%/Images/ShipIcons/Standard/idf/SDN.gif
 %%DATADIR%%/Images/ShipIcons/Standard/idf/ST.gif
-%%DATADIR%%/Images/ShipIcons/Standard/idf/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/StarTrek/Federation/CA.gif
-%%DATADIR%%/Images/ShipIcons/StarTrek/Federation/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/StarTrek/Klingon/BC.gif
-%%DATADIR%%/Images/ShipIcons/StarTrek/Klingon/Thumbs.db
 %%DATADIR%%/Images/ShipIcons/StarTrek/Klingon/VorCha.gif
-%%DATADIR%%/Images/Thumbs.db
 %%DATADIR%%/Images/alarmoff.gif
 %%DATADIR%%/Images/alarmon.gif
 %%DATADIR%%/Images/arrival1.png
@@ -1033,16 +996,20 @@ bin/ftjava
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_BB_Kirishima.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_BB_Yamato.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_BC_Keshii.xml
+%%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_BC_Tendo.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_BDN_Musashi.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_BDN_Nippon.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_BDN_NipponW.xml
+%%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_CA_Celica.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_CA_Samurai.xml
+%%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_CE_RoninB.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_CL_Arashi.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_CL_Sendai.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_CL_Tamiya.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_CM_Miyu.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_CP_Ronin.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_CT_Bakemono.xml
+%%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_CVE_Shinano.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_CVH_Akagi.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_CVL_Hiryu.xml
 %%DATADIR%%/Ships/FullThrust/ImperialJapanese/ImperialJapanese_DDW_Soyokaze.xml
@@ -1138,6 +1105,15 @@ bin/ftjava
 %%DATADIR%%/Ships/FullThrust/NewIsraeli/NewIsraeli_DH_Tzayad.xml
 %%DATADIR%%/Ships/FullThrust/NewIsraeli/NewIsraeli_FH_Ra'am.xml
 %%DATADIR%%/Ships/FullThrust/NewIsraeli/NewIsraeli_SDN_BenGurion.xml
+%%DATADIR%%/Ships/FullThrust/OUDF/OU_BB.xml
+%%DATADIR%%/Ships/FullThrust/OUDF/OU_BC.xml
+%%DATADIR%%/Ships/FullThrust/OUDF/OU_CE.xml
+%%DATADIR%%/Ships/FullThrust/OUDF/OU_CH.xml
+%%DATADIR%%/Ships/FullThrust/OUDF/OU_CL.xml
+%%DATADIR%%/Ships/FullThrust/OUDF/OU_CVH.xml
+%%DATADIR%%/Ships/FullThrust/OUDF/OU_CVL.xml
+%%DATADIR%%/Ships/FullThrust/OUDF/OU_DD.xml
+%%DATADIR%%/Ships/FullThrust/OUDF/OU_FH.xml
 %%DATADIR%%/Ships/FullThrust/PanAfricanUnion/GZGUniverse_PanAfrican.xml
 %%DATADIR%%/Ships/FullThrust/PanAfricanUnion/PanAfrican_BB_Entebee.xml
 %%DATADIR%%/Ships/FullThrust/PanAfricanUnion/PanAfrican_BB_Entebee_B.xml
@@ -1207,340 +1183,6 @@ bin/ftjava
 %%DATADIR%%/Ships/StarTrek/Federation/StarTrek_Federation.xml
 %%DATADIR%%/Ships/StarTrek/Federation/Terrorist_AS_Asteroid.xml
 %%DATADIR%%/activation.jar
-%%DATADIR%%/ftjava/gui/AboutFTJava.class
-%%DATADIR%%/ftjava/gui/AboutListener.class
-%%DATADIR%%/ftjava/gui/AreaDefenseTargetList.class
-%%DATADIR%%/ftjava/gui/Client$1.class
-%%DATADIR%%/ftjava/gui/Client$10.class
-%%DATADIR%%/ftjava/gui/Client$11.class
-%%DATADIR%%/ftjava/gui/Client$2.class
-%%DATADIR%%/ftjava/gui/Client$3.class
-%%DATADIR%%/ftjava/gui/Client$4.class
-%%DATADIR%%/ftjava/gui/Client$5.class
-%%DATADIR%%/ftjava/gui/Client$6.class
-%%DATADIR%%/ftjava/gui/Client$7.class
-%%DATADIR%%/ftjava/gui/Client$8.class
-%%DATADIR%%/ftjava/gui/Client$9.class
-%%DATADIR%%/ftjava/gui/Client$ClientUIOption.class
-%%DATADIR%%/ftjava/gui/Client$CombatOrdersAction.class
-%%DATADIR%%/ftjava/gui/Client$LoadOrdersAction.class
-%%DATADIR%%/ftjava/gui/Client$MovementOrdersAction.class
-%%DATADIR%%/ftjava/gui/Client$SaveAsImageAction.class
-%%DATADIR%%/ftjava/gui/Client$StarMapOption.class
-%%DATADIR%%/ftjava/gui/Client$SummaryCombatOrdersAction.class
-%%DATADIR%%/ftjava/gui/Client$WriteCombatOrdersAction.class
-%%DATADIR%%/ftjava/gui/Client$WriteMovementOrdersAction.class
-%%DATADIR%%/ftjava/gui/Client$closeListener.class
-%%DATADIR%%/ftjava/gui/Client.class
-%%DATADIR%%/ftjava/gui/ClientProgram.class
-%%DATADIR%%/ftjava/gui/ColorButtonListener.class
-%%DATADIR%%/ftjava/gui/CustomTabbedPaneUI.class
-%%DATADIR%%/ftjava/gui/DCPButton.class
-%%DATADIR%%/ftjava/gui/DamageControlDialog$1.class
-%%DATADIR%%/ftjava/gui/DamageControlDialog$2.class
-%%DATADIR%%/ftjava/gui/DamageControlDialog$3.class
-%%DATADIR%%/ftjava/gui/DamageControlDialog.class
-%%DATADIR%%/ftjava/gui/Diagnostics.class
-%%DATADIR%%/ftjava/gui/FTJava$1.class
-%%DATADIR%%/ftjava/gui/FTJava$2.class
-%%DATADIR%%/ftjava/gui/FTJava$EditScenario.class
-%%DATADIR%%/ftjava/gui/FTJava$EditShip.class
-%%DATADIR%%/ftjava/gui/FTJava$ExitListener.class
-%%DATADIR%%/ftjava/gui/FTJava$FetchEmail.class
-%%DATADIR%%/ftjava/gui/FTJava$GameAction.class
-%%DATADIR%%/ftjava/gui/FTJava$LoadGame.class
-%%DATADIR%%/ftjava/gui/FTJava$PreferencesListener.class
-%%DATADIR%%/ftjava/gui/FTJava$RefreshGameMenu.class
-%%DATADIR%%/ftjava/gui/FTJava$RefreshOrdersMenu.class
-%%DATADIR%%/ftjava/gui/FTJava$SendEmail.class
-%%DATADIR%%/ftjava/gui/FTJava.class
-%%DATADIR%%/ftjava/gui/FTJavaTreeCellRenderer.class
-%%DATADIR%%/ftjava/gui/FighterStatusDisplay$1.class
-%%DATADIR%%/ftjava/gui/FighterStatusDisplay$MoveFighterAction.class
-%%DATADIR%%/ftjava/gui/FighterStatusDisplay$ResetFighterAction.class
-%%DATADIR%%/ftjava/gui/FighterStatusDisplay$UpdateOrdersAction.class
-%%DATADIR%%/ftjava/gui/FighterStatusDisplay.class
-%%DATADIR%%/ftjava/gui/GUIAdapter.class
-%%DATADIR%%/ftjava/gui/GameFocusListener.class
-%%DATADIR%%/ftjava/gui/HTMLWindow.class
-%%DATADIR%%/ftjava/gui/LaunchDialog$1.class
-%%DATADIR%%/ftjava/gui/LaunchDialog$AbortAction.class
-%%DATADIR%%/ftjava/gui/LaunchDialog$LaunchAction.class
-%%DATADIR%%/ftjava/gui/LaunchDialog.class
-%%DATADIR%%/ftjava/gui/MainProgram.class
-%%DATADIR%%/ftjava/gui/MapPanel$1.class
-%%DATADIR%%/ftjava/gui/MapPanel$2.class
-%%DATADIR%%/ftjava/gui/MapPanel$3.class
-%%DATADIR%%/ftjava/gui/MapPanel$CenterMapWindow.class
-%%DATADIR%%/ftjava/gui/MapPanel$ClearDisplay.class
-%%DATADIR%%/ftjava/gui/MapPanel$MarkMapWindow.class
-%%DATADIR%%/ftjava/gui/MapPanel$RaiseClientWindow.class
-%%DATADIR%%/ftjava/gui/MapPanel$Scale.class
-%%DATADIR%%/ftjava/gui/MapPanel.class
-%%DATADIR%%/ftjava/gui/MessageComposer$1.class
-%%DATADIR%%/ftjava/gui/MessageComposer$2.class
-%%DATADIR%%/ftjava/gui/MessageComposer$3.class
-%%DATADIR%%/ftjava/gui/MessageComposer.class
-%%DATADIR%%/ftjava/gui/MessageReader$1.class
-%%DATADIR%%/ftjava/gui/MessageReader.class
-%%DATADIR%%/ftjava/gui/PlayerObjectives.class
-%%DATADIR%%/ftjava/gui/PlotEnvelope.class
-%%DATADIR%%/ftjava/gui/PointDefenseTargetList.class
-%%DATADIR%%/ftjava/gui/Preferences$1.class
-%%DATADIR%%/ftjava/gui/Preferences$2.class
-%%DATADIR%%/ftjava/gui/Preferences.class
-%%DATADIR%%/ftjava/gui/PreferencesPanel.class
-%%DATADIR%%/ftjava/gui/PreferencesToolTips.class
-%%DATADIR%%/ftjava/gui/RangeSort.class
-%%DATADIR%%/ftjava/gui/RenderStarmap.class
-%%DATADIR%%/ftjava/gui/ScenarioBriefing.class
-%%DATADIR%%/ftjava/gui/ScenarioEditor$addPlayerAction.class
-%%DATADIR%%/ftjava/gui/ScenarioEditor$addShipAction.class
-%%DATADIR%%/ftjava/gui/ScenarioEditor$addTeamAction.class
-%%DATADIR%%/ftjava/gui/ScenarioEditor$clickListener.class
-%%DATADIR%%/ftjava/gui/ScenarioEditor$closeListener.class
-%%DATADIR%%/ftjava/gui/ScenarioEditor$editAction.class
-%%DATADIR%%/ftjava/gui/ScenarioEditor$removeAction.class
-%%DATADIR%%/ftjava/gui/ScenarioEditor$saveAction.class
-%%DATADIR%%/ftjava/gui/ScenarioEditor.class
-%%DATADIR%%/ftjava/gui/ScenarioGameEditor$1.class
-%%DATADIR%%/ftjava/gui/ScenarioGameEditor$2.class
-%%DATADIR%%/ftjava/gui/ScenarioGameEditor$3.class
-%%DATADIR%%/ftjava/gui/ScenarioGameEditor.class
-%%DATADIR%%/ftjava/gui/ScenarioPlayerEditor$1.class
-%%DATADIR%%/ftjava/gui/ScenarioPlayerEditor$2.class
-%%DATADIR%%/ftjava/gui/ScenarioPlayerEditor$3.class
-%%DATADIR%%/ftjava/gui/ScenarioPlayerEditor.class
-%%DATADIR%%/ftjava/gui/ScenarioShipEditor$1.class
-%%DATADIR%%/ftjava/gui/ScenarioShipEditor$2.class
-%%DATADIR%%/ftjava/gui/ScenarioShipEditor$3.class
-%%DATADIR%%/ftjava/gui/ScenarioShipEditor$4.class
-%%DATADIR%%/ftjava/gui/ScenarioShipEditor.class
-%%DATADIR%%/ftjava/gui/ShipDesignEditor$1.class
-%%DATADIR%%/ftjava/gui/ShipDesignEditor$10.class
-%%DATADIR%%/ftjava/gui/ShipDesignEditor$11.class
-%%DATADIR%%/ftjava/gui/ShipDesignEditor$12.class
-%%DATADIR%%/ftjava/gui/ShipDesignEditor$2.class
-%%DATADIR%%/ftjava/gui/ShipDesignEditor$3.class
-%%DATADIR%%/ftjava/gui/ShipDesignEditor$4.class
-%%DATADIR%%/ftjava/gui/ShipDesignEditor$5.class
-%%DATADIR%%/ftjava/gui/ShipDesignEditor$6.class
-%%DATADIR%%/ftjava/gui/ShipDesignEditor$7.class
-%%DATADIR%%/ftjava/gui/ShipDesignEditor$8.class
-%%DATADIR%%/ftjava/gui/ShipDesignEditor$9.class
-%%DATADIR%%/ftjava/gui/ShipDesignEditor.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$ClearAll.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$ClearArcRange.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$PlotDocListener.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$PlotListener.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$SetArcAntiMatter.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$SetArcBeam.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$SetArcGraser.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$SetArcKGun.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$SetArcPDefense.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$SetArcPTorp.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$SetArcPlasma.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$SetArcPulser.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$SetArcRange.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$SetArcSPack.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$SetArcSalvo.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$SetArcScattergun.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$SetArcSensor.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$ToggleGhostPlot.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$ToggleGhostTrail.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$ToggleLockOns.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter$TogglePlotEnvelope.class
-%%DATADIR%%/ftjava/gui/ShipGUIAdapter.class
-%%DATADIR%%/ftjava/gui/ShipStatusDisplay$1.class
-%%DATADIR%%/ftjava/gui/ShipStatusDisplay$2.class
-%%DATADIR%%/ftjava/gui/ShipStatusDisplay$3.class
-%%DATADIR%%/ftjava/gui/ShipStatusDisplay$4.class
-%%DATADIR%%/ftjava/gui/ShipStatusDisplay$5.class
-%%DATADIR%%/ftjava/gui/ShipStatusDisplay$6.class
-%%DATADIR%%/ftjava/gui/ShipStatusDisplay$SSDTitlePanel.class
-%%DATADIR%%/ftjava/gui/ShipStatusDisplay.class
-%%DATADIR%%/ftjava/gui/SlaveButton$1.class
-%%DATADIR%%/ftjava/gui/SlaveButton.class
-%%DATADIR%%/ftjava/gui/SpaceObjectGUIAdapter$ClearAll.class
-%%DATADIR%%/ftjava/gui/SpaceObjectGUIAdapter$ToggleEnvelope.class
-%%DATADIR%%/ftjava/gui/SpaceObjectGUIAdapter$ToggleLockOns.class
-%%DATADIR%%/ftjava/gui/SpaceObjectGUIAdapter$ToggleRangeBand.class
-%%DATADIR%%/ftjava/gui/SpaceObjectGUIAdapter$ToggleSensors.class
-%%DATADIR%%/ftjava/gui/SpaceObjectGUIAdapter.class
-%%DATADIR%%/ftjava/gui/StarMap$1.class
-%%DATADIR%%/ftjava/gui/StarMap.class
-%%DATADIR%%/ftjava/gui/StatusDisplay.class
-%%DATADIR%%/ftjava/gui/SystemPallette$1.class
-%%DATADIR%%/ftjava/gui/SystemPallette$SystemPalletteListener.class
-%%DATADIR%%/ftjava/gui/SystemPallette.class
-%%DATADIR%%/ftjava/gui/TargetAdapter.class
-%%DATADIR%%/ftjava/gui/TargetDialog$1.class
-%%DATADIR%%/ftjava/gui/TargetDialog$2.class
-%%DATADIR%%/ftjava/gui/TargetDialog$3.class
-%%DATADIR%%/ftjava/gui/TargetDialog$4.class
-%%DATADIR%%/ftjava/gui/TargetDialog.class
-%%DATADIR%%/ftjava/gui/TargetList.class
-%%DATADIR%%/ftjava/gui/TargetingSummaryDialog$1.class
-%%DATADIR%%/ftjava/gui/TargetingSummaryDialog$2.class
-%%DATADIR%%/ftjava/gui/TargetingSummaryDialog.class
-%%DATADIR%%/ftjava/gui/TextSSD.class
-%%DATADIR%%/ftjava/gui/TextSensorReport.class
-%%DATADIR%%/ftjava/gui/TextShipLog.class
-%%DATADIR%%/ftjava/gui/TextSpaceObjectLog.class
-%%DATADIR%%/ftjava/gui/TurnReport$1.class
-%%DATADIR%%/ftjava/gui/TurnReport.class
-%%DATADIR%%/ftjava/gui/ssd/AntiMatterTorpedoLauncherWidget.class
-%%DATADIR%%/ftjava/gui/ssd/AreaDefenseFireControlWidget.class
-%%DATADIR%%/ftjava/gui/ssd/ArmorWidget$ArmorShellWidget.class
-%%DATADIR%%/ftjava/gui/ssd/ArmorWidget.class
-%%DATADIR%%/ftjava/gui/ssd/BeamBatteryWidget.class
-%%DATADIR%%/ftjava/gui/ssd/CargoHoldWidget.class
-%%DATADIR%%/ftjava/gui/ssd/CoreCommandBridgeWidget.class
-%%DATADIR%%/ftjava/gui/ssd/CoreLifeSupportWidget.class
-%%DATADIR%%/ftjava/gui/ssd/CorePowerCoreWidget.class
-%%DATADIR%%/ftjava/gui/ssd/FTLDriveWidget.class
-%%DATADIR%%/ftjava/gui/ssd/FighterBayWidget.class
-%%DATADIR%%/ftjava/gui/ssd/FireControlWidget.class
-%%DATADIR%%/ftjava/gui/ssd/GraserWidget.class
-%%DATADIR%%/ftjava/gui/ssd/HullWidget.class
-%%DATADIR%%/ftjava/gui/ssd/KineticGunWidget.class
-%%DATADIR%%/ftjava/gui/ssd/KraVakFireControlWidget.class
-%%DATADIR%%/ftjava/gui/ssd/MainDriveWidget.class
-%%DATADIR%%/ftjava/gui/ssd/MultipleKineticPenetratorPackWidget.class
-%%DATADIR%%/ftjava/gui/ssd/NeedleBeamWidget.class
-%%DATADIR%%/ftjava/gui/ssd/NovaCannonWidget.class
-%%DATADIR%%/ftjava/gui/ssd/PlasmaBoltLauncherWidget.class
-%%DATADIR%%/ftjava/gui/ssd/PointDefenseWidget.class
-%%DATADIR%%/ftjava/gui/ssd/PulseTorpedoWidget.class
-%%DATADIR%%/ftjava/gui/ssd/PulserWidget.class
-%%DATADIR%%/ftjava/gui/ssd/SSDDrawingTools.class
-%%DATADIR%%/ftjava/gui/ssd/SSDWidget$1.class
-%%DATADIR%%/ftjava/gui/ssd/SSDWidget.class
-%%DATADIR%%/ftjava/gui/ssd/SalvoMissileLauncherWidget.class
-%%DATADIR%%/ftjava/gui/ssd/SalvoMissileMagazineWidget.class
-%%DATADIR%%/ftjava/gui/ssd/SalvoMissileRackWidget.class
-%%DATADIR%%/ftjava/gui/ssd/ScattergunWidget.class
-%%DATADIR%%/ftjava/gui/ssd/ScreenWidget.class
-%%DATADIR%%/ftjava/gui/ssd/SubmunitionPackWidget.class
-%%DATADIR%%/ftjava/gui/ssd/SystemWidget.class
-%%DATADIR%%/ftjava/gui/ssd/VapourShroudWidget.class
-%%DATADIR%%/ftjava/gui/ssd/WaveGunWidget.class
-%%DATADIR%%/ftjava/gui/ssd/WidgetFactory.class
-%%DATADIR%%/ftjava/gui/ssd/variant/HeavyBeamBatteryWidget.class
-%%DATADIR%%/ftjava/gui/ssd/variant/LongRangePulseTorpedoWidget.class
-%%DATADIR%%/ftjava/gui/ssd/variant/ShortRangePulseTorpedoWidget.class
-%%DATADIR%%/ftjava/gui/ssd/variant/StealthGeneratorWidget.class
-%%DATADIR%%/ftjava/gui/util/FileChooser.class
-%%DATADIR%%/ftjava/gui/util/Hexagon$HexagonPathIterator.class
-%%DATADIR%%/ftjava/gui/util/Hexagon.class
-%%DATADIR%%/ftjava/gui/util/ImageUtilities.class
-%%DATADIR%%/ftjava/gui/util/IntegerInputDialog$1.class
-%%DATADIR%%/ftjava/gui/util/IntegerInputDialog$2.class
-%%DATADIR%%/ftjava/gui/util/IntegerInputDialog.class
-%%DATADIR%%/ftjava/gui/util/IntegerTextField$IntegerDocument.class
-%%DATADIR%%/ftjava/gui/util/IntegerTextField.class
-%%DATADIR%%/ftjava/gui/util/PointInputDialog$1.class
-%%DATADIR%%/ftjava/gui/util/PointInputDialog$2.class
-%%DATADIR%%/ftjava/gui/util/PointInputDialog.class
-%%DATADIR%%/ftjava/html/Statement.html
-%%DATADIR%%/ftjava/mailman/FetchClientEmail.class
-%%DATADIR%%/ftjava/mailman/MailPasswordDialog$HideDialog.class
-%%DATADIR%%/ftjava/mailman/MailPasswordDialog.class
-%%DATADIR%%/ftjava/mailman/MailToServer.class
-%%DATADIR%%/ftjava/std/AntiMatterTorpedo.class
-%%DATADIR%%/ftjava/std/AntiMatterTorpedoLauncher.class
-%%DATADIR%%/ftjava/std/AreaDefenseFireControl.class
-%%DATADIR%%/ftjava/std/Armor$ArmorShell.class
-%%DATADIR%%/ftjava/std/Armor.class
-%%DATADIR%%/ftjava/std/BeamBattery.class
-%%DATADIR%%/ftjava/std/CargoHold.class
-%%DATADIR%%/ftjava/std/CoreCommandBridge.class
-%%DATADIR%%/ftjava/std/CoreLifeSupport.class
-%%DATADIR%%/ftjava/std/CorePowerCore.class
-%%DATADIR%%/ftjava/std/Defense.class
-%%DATADIR%%/ftjava/std/Electronics.class
-%%DATADIR%%/ftjava/std/FTLDrive.class
-%%DATADIR%%/ftjava/std/FighterBay.class
-%%DATADIR%%/ftjava/std/FighterGroup$1.class
-%%DATADIR%%/ftjava/std/FighterGroup$10.class
-%%DATADIR%%/ftjava/std/FighterGroup$2.class
-%%DATADIR%%/ftjava/std/FighterGroup$3.class
-%%DATADIR%%/ftjava/std/FighterGroup$4.class
-%%DATADIR%%/ftjava/std/FighterGroup$5.class
-%%DATADIR%%/ftjava/std/FighterGroup$6.class
-%%DATADIR%%/ftjava/std/FighterGroup$7.class
-%%DATADIR%%/ftjava/std/FighterGroup$8.class
-%%DATADIR%%/ftjava/std/FighterGroup$9.class
-%%DATADIR%%/ftjava/std/FighterGroup.class
-%%DATADIR%%/ftjava/std/FighterGroupType.class
-%%DATADIR%%/ftjava/std/FighterOrders.class
-%%DATADIR%%/ftjava/std/FireControl.class
-%%DATADIR%%/ftjava/std/GameEngine.class
-%%DATADIR%%/ftjava/std/GameMaster.class
-%%DATADIR%%/ftjava/std/Graser.class
-%%DATADIR%%/ftjava/std/HangerBay.class
-%%DATADIR%%/ftjava/std/HeavenlyBody.class
-%%DATADIR%%/ftjava/std/Holds.class
-%%DATADIR%%/ftjava/std/Hull.class
-%%DATADIR%%/ftjava/std/KineticGun.class
-%%DATADIR%%/ftjava/std/LogRecord.class
-%%DATADIR%%/ftjava/std/MainDrive.class
-%%DATADIR%%/ftjava/std/Message.class
-%%DATADIR%%/ftjava/std/Mine.class
-%%DATADIR%%/ftjava/std/Missile.class
-%%DATADIR%%/ftjava/std/MissileSalvo.class
-%%DATADIR%%/ftjava/std/MultipleKineticPenetratorPack.class
-%%DATADIR%%/ftjava/std/NeedleBeam.class
-%%DATADIR%%/ftjava/std/NovaCannon.class
-%%DATADIR%%/ftjava/std/NovaCannonBolt.class
-%%DATADIR%%/ftjava/std/PlasmaBolt.class
-%%DATADIR%%/ftjava/std/PlasmaBoltLauncher.class
-%%DATADIR%%/ftjava/std/Player.class
-%%DATADIR%%/ftjava/std/PointDefense.class
-%%DATADIR%%/ftjava/std/PostOffice.class
-%%DATADIR%%/ftjava/std/PulseTorpedo.class
-%%DATADIR%%/ftjava/std/Pulser.class
-%%DATADIR%%/ftjava/std/SalvoMissileLauncher.class
-%%DATADIR%%/ftjava/std/SalvoMissileMagazine.class
-%%DATADIR%%/ftjava/std/SalvoMissileRack.class
-%%DATADIR%%/ftjava/std/Scattergun.class
-%%DATADIR%%/ftjava/std/Screen.class
-%%DATADIR%%/ftjava/std/Ship.class
-%%DATADIR%%/ftjava/std/ShipSystem.class
-%%DATADIR%%/ftjava/std/ShipUtilities.class
-%%DATADIR%%/ftjava/std/SpaceObject.class
-%%DATADIR%%/ftjava/std/StealthGenerator.class
-%%DATADIR%%/ftjava/std/SubmunitionPack.class
-%%DATADIR%%/ftjava/std/VapourShroud.class
-%%DATADIR%%/ftjava/std/WaveGun.class
-%%DATADIR%%/ftjava/std/WaveGunBolt.class
-%%DATADIR%%/ftjava/std/Weapon.class
-%%DATADIR%%/ftjava/std/importer/ImportGameEngine.class
-%%DATADIR%%/ftjava/std/importer/ImportMessages.class
-%%DATADIR%%/ftjava/std/importer/ImportOrders.class
-%%DATADIR%%/ftjava/std/importer/ImportShip.class
-%%DATADIR%%/ftjava/std/importer/ImportSpaceObject.class
-%%DATADIR%%/ftjava/std/importer/ImportVictoryCondition.class
-%%DATADIR%%/ftjava/std/variant/HeavyBeamBattery.class
-%%DATADIR%%/ftjava/std/variant/LongRangePulseTorpedo.class
-%%DATADIR%%/ftjava/std/variant/ShortRangePulseTorpedo.class
-%%DATADIR%%/ftjava/std/victoryconditions/AndCondition.class
-%%DATADIR%%/ftjava/std/victoryconditions/DefaultVictoryCondition.class
-%%DATADIR%%/ftjava/std/victoryconditions/Destroyed.class
-%%DATADIR%%/ftjava/std/victoryconditions/FalseCondition.class
-%%DATADIR%%/ftjava/std/victoryconditions/OrCondition.class
-%%DATADIR%%/ftjava/std/victoryconditions/ShipFilter.class
-%%DATADIR%%/ftjava/std/victoryconditions/VictoryCondition.class
-%%DATADIR%%/ftjava/util/Dice.class
-%%DATADIR%%/ftjava/util/FogOfWar.class
-%%DATADIR%%/ftjava/util/GameOptions.class
-%%DATADIR%%/ftjava/util/MathUtil.class
-%%DATADIR%%/ftjava/util/MovementSteps.class
-%%DATADIR%%/ftjava/util/ParserUtilities.class
-%%DATADIR%%/ftjava/util/PlayerContainer.class
-%%DATADIR%%/ftjava/util/PointContainer.class
-%%DATADIR%%/ftjava/util/StringUtils.class
-%%DATADIR%%/ftjava/util/XMLUtilities.class
 %%DATADIR%%/imap.jar
 %%DATADIR%%/log4j-1.2.7.jar
 %%DATADIR%%/mail.jar
@@ -1551,18 +1193,6 @@ bin/ftjava
 %%DATADIR%%/xerces.jar
 %%DATADIR%%/xercesImpl.jar
 %%DATADIR%%/xmlParserAPIs.jar
-@dirrm %%DATADIR%%/ftjava/util
-@dirrm %%DATADIR%%/ftjava/std/victoryconditions
-@dirrm %%DATADIR%%/ftjava/std/variant
-@dirrm %%DATADIR%%/ftjava/std/importer
-@dirrm %%DATADIR%%/ftjava/std
-@dirrm %%DATADIR%%/ftjava/mailman
-@dirrm %%DATADIR%%/ftjava/html
-@dirrm %%DATADIR%%/ftjava/gui/util
-@dirrm %%DATADIR%%/ftjava/gui/ssd/variant
-@dirrm %%DATADIR%%/ftjava/gui/ssd
-@dirrm %%DATADIR%%/ftjava/gui
-@dirrm %%DATADIR%%/ftjava
 @dirrm %%DATADIR%%/Ships/StarTrek/Federation
 @dirrm %%DATADIR%%/Ships/StarTrek
 @dirrm %%DATADIR%%/Ships/StarFleetWars/Terran
@@ -1572,6 +1202,7 @@ bin/ftjava
 @dirrm %%DATADIR%%/Ships/FullThrust/Sylvian
 @dirrm %%DATADIR%%/Ships/FullThrust/Rahni
 @dirrm %%DATADIR%%/Ships/FullThrust/PanAfricanUnion
+@dirrm %%DATADIR%%/Ships/FullThrust/OUDF
 @dirrm %%DATADIR%%/Ships/FullThrust/NewIsraeli
 @dirrm %%DATADIR%%/Ships/FullThrust/NewAnglian
 @dirrm %%DATADIR%%/Ships/FullThrust/Merchant
@@ -1617,6 +1248,7 @@ bin/ftjava
 @dirrm %%DATADIR%%/Images/ShipIcons/Standard/Rahni
 @dirrm %%DATADIR%%/Images/ShipIcons/Standard/Phalon
 @dirrm %%DATADIR%%/Images/ShipIcons/Standard/Pan African Union
+@dirrm %%DATADIR%%/Images/ShipIcons/Standard/OUDF
 @dirrm %%DATADIR%%/Images/ShipIcons/Standard/New Israeli
 @dirrm %%DATADIR%%/Images/ShipIcons/Standard/New Anglian Confederation
 @dirrm %%DATADIR%%/Images/ShipIcons/Standard/Neu Swabian League
@@ -1661,6 +1293,13 @@ bin/ftjava
 @dirrm %%DATADIR%%/Images/FullThrust/Eurasian
 @dirrm %%DATADIR%%/Images/FullThrust
 @dirrm %%DATADIR%%/Images/Flags
+@dirrm %%DATADIR%%/Images/Bodies/planet7
+@dirrm %%DATADIR%%/Images/Bodies/planet6
+@dirrm %%DATADIR%%/Images/Bodies/planet5
+@dirrm %%DATADIR%%/Images/Bodies/planet4
+@dirrm %%DATADIR%%/Images/Bodies/planet3
+@dirrm %%DATADIR%%/Images/Bodies/planet2
+@dirrm %%DATADIR%%/Images/Bodies/planet1
+@dirrm %%DATADIR%%/Images/Bodies
 @dirrm %%DATADIR%%/Images
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

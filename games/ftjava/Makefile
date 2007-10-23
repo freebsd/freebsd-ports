@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ftjava
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	games java
 MASTER_SITES=	http://www.warpfish.com/davisje/:file1 \
 		http://home.nycap.rr.com/davisje/ftjava/:doc1
@@ -27,7 +26,7 @@ NO_WRKSUBDIR=	yes
 IGNOREFILES=	FTJava_Documentation.html faq.html FTJava_Linux.html
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-DATAFILES=	Images IncomingGames OutgoingGames Ships ftjava \
+DATAFILES=	Images IncomingGames OutgoingGames Ships FTJava.jar \
 		activation.jar imap.jar log4j-1.2.7.jar mail.jar \
 		mailapi.jar png.jar pop3.jar smtp.jar xerces.jar \
 		xercesImpl.jar xmlParserAPIs.jar
@@ -44,14 +43,14 @@ DESKTOP_ENTRIES=	"FTJava" "A PBEM client for Full Thrust" \
 			false
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC} && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} ";"
-	@cd ${WRKSRC} && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} ";"
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME:L}
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} ";"
+	cd ${WRKSRC} && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} ";"
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME:L}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
