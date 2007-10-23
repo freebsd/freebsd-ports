@@ -1,0 +1,26 @@
+---------------------------------------------------------------------------
+
+  The program is intended to be run by cron every hour.
+
+    42 * * * * perl %%PREFIX%%/bin/mirmon -q -get update
+
+  It quietly probes a subset of the sites in a given list,
+  writes the results in the 'state' file and generates a web page
+  with the results. The subset contains the sites that are new, bad
+  and/or not probed for a specified time.
+
+  When no 'get' option is specified, the program just generates a 
+  new web page from the last known state.
+
+  The program checks the mirrors by running a (user specified)
+  program on a pipe. A (user specified) number of probes is
+  run in parallel using nonblocking IO. When something can be
+  read from the pipe, it switches the pipe to blocking IO and
+  reads one line from the pipe. Then it flushes and closes the
+  pipe. No attempt is made to kill the probe.
+
+  The probe should return something that looks like "1043625600\n",
+  that is, a timestamp followed by a newline. The exit status of
+  the probe is ignored.
+
+---------------------------------------------------------------------------
