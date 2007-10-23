@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SMS-Send-TW-PChome
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	comms perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SMS
@@ -16,7 +16,8 @@ MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	SMS::Send driver for sms.pchome.com.tw
 
 RUN_DEPENDS=	${SITE_PERL}/SMS/Send.pm:${PORTSDIR}/comms/p5-SMS-Send \
-		${SITE_PERL}/Net/SMS/PChome.pm:${PORTSDIR}/net/p5-Net-SMS-PChome
+		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
+		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
