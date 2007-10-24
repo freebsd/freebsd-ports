@@ -3,12 +3,12 @@
 # Whom:                 Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/editors/abiword/Makefile,v 1.6 2006/09/30 04:39:56 ahze Exp $
+#   $MCom: ports/editors/abiword/Makefile,v 1.8 2007/07/24 04:25:21 mezz Exp $
 #
 
 PORTNAME=	abiword
 PORTVERSION=	2.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -110,9 +110,9 @@ post-install:
 	@${MKDIR} ${LOCALBASE}/libdata/bonobo/servers
 	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/GNOME_AbiWord_Control_${ABIVERSION:S/./_/}.server \
 		${LOCALBASE}/libdata/bonobo/servers/
-	@${MKDIR} ${LOCALBASE}/share/gnome/gnome-2.0/ui
+	@${MKDIR} ${LOCALBASE}/share/gnome-2.0/ui
 	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/abi-nautilus-view-file.xml \
-		${LOCALBASE}/share/gnome/gnome-2.0/ui/
+		${LOCALBASE}/share/gnome-2.0/ui/
 .endif
 	@-update-desktop-database
 

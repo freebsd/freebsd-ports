@@ -176,7 +176,7 @@ share/icons/Industrial/scalable/filesystems/gnome-fs-trash-full-accept.svg
 share/icons/Industrial/scalable/filesystems/gnome-fs-trash-full.svg
 share/icons/Industrial/scalable/filesystems/gnome-fs-directory.icon
 share/icons/Industrial/index.theme
-share/gnome/themes/Industrial/metacity-1/metacity-theme-1.xml
+share/themes/Industrial/metacity-1/metacity-theme-1.xml
 share/themes/Industrial/index.theme
 %%XMMS%%share/xmms/Skins/Industrial/balance.bmp
 %%XMMS%%share/xmms/Skins/Industrial/cbuttons.bmp
@@ -215,7 +215,8 @@ share/themes/Industrial/index.theme
 @dirrm share/icons/Industrial/scalable/filesystems
 @dirrm share/icons/Industrial/scalable
 @dirrm share/icons/Industrial
-@dirrm share/gnome/themes/Industrial/metacity-1
-@dirrm share/gnome/themes/Industrial
+@dirrm share/themes/Industrial/metacity-1
+@dirrm share/themes/Industrial
 @dirrmtry share/themes/Industrial
+@dirrmtry share/themes
 %%XMMS%%@dirrm share/xmms/Skins/Industrial

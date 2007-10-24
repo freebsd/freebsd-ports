@@ -7,7 +7,7 @@
 
 PORTNAME=	alltray
 PORTVERSION=	0.69
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -37,7 +37,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/lib/Makefile.in
 	@${REINPLACE_CMD} -e 's|-L/usr/X11R6/lib||' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|/etc/gconf|${LOCALBASE}/etc/gconf|; \
-		/THEME_DIR1/ s|/usr/share/|${LOCALBASE}/share/gnome/themes/|' \
+		/THEME_DIR1/ s|/usr/share/|${LOCALBASE}/share/themes/|' \
 		${WRKSRC}/src/gnome_theme.c
 	@${REINPLACE_CMD} -e 's|liballtray\.so\.0\.0\.0|liballtray.so.0|; \
 		s|/usr/lib|${PREFIX}/lib|' ${WRKSRC}/src/child.c

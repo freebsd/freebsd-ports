@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	splashsetter
-PORTVERSION=	0.6.5.2
-PORTREVISION=	1
+PORTVERSION=	0.6.5.3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://webonaut.com/distfiles/${PORTNAME}/
 
@@ -20,7 +19,7 @@ USE_PYTHON=	yes
 USE_GNOME=	pygnome2 gnomeprefix
 
 do-build:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
 		${WRKSRC}/*.py
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
@@ -28,20 +27,20 @@ do-build:
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	${MKDIR} ${PREFIX}/share/gnome/pixmaps/${PORTNAME}/splash
+	${MKDIR} ${PREFIX}/share/pixmaps/${PORTNAME}/splash
 	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
 		${PREFIX}/libexec/${PORTNAME}/
 	@${INSTALL_DATA} ${WRKSRC}/*.py* \
 		${PREFIX}/libexec/${PORTNAME}/
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
-		${PREFIX}/share/gnome/applications/
+		${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKSRC}/*.svg \
-		${PREFIX}/share/gnome/pixmaps/${PORTNAME}/
+		${PREFIX}/share/pixmaps/${PORTNAME}/
 	@${INSTALL_DATA} ${WRKSRC}/splashsetter_icon.svg \
-		${PREFIX}/share/gnome/pixmaps/${PORTNAME}.svg
+		${PREFIX}/share/pixmaps/${PORTNAME}.svg
 	@${INSTALL_DATA} ${WRKSRC}/*.png \
-		${PREFIX}/share/gnome/pixmaps/${PORTNAME}/splash/
+		${PREFIX}/share/pixmaps/${PORTNAME}/splash/
 	@${LN} -sf ${PREFIX}/libexec/${PORTNAME}/${PORTNAME} \
 		${PREFIX}/bin/${PORTNAME}
 

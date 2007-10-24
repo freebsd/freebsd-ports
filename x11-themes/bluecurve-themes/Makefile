@@ -41,7 +41,7 @@ do-install:	# empty
 .else					# master port
 
 PORTVERSION=	5.0.11
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX:S|$|:fedora|} ${MASTER_SITE_LOCAL:S|$|:local|}
 MASTER_SITE_SUBDIR=	development/source/SRPMS/:fedora jylefort/:local

@@ -90,68 +90,68 @@ libdata/pkgconfig/libral.pc
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-share/gnome/applications/rubrica2.desktop
-share/gnome/mime-info/rubrica2.keys
-share/gnome/mime-info/rubrica2.mime
-share/gnome/pixmaps/rubrica2/16x16/ccare.png
-share/gnome/pixmaps/rubrica2/16x16/green.png
-share/gnome/pixmaps/rubrica2/16x16/operator.png
-share/gnome/pixmaps/rubrica2/24x24/stuffs.png
-share/gnome/pixmaps/rubrica2/24x24/university.png
-share/gnome/pixmaps/rubrica2/48x48/all.png
-share/gnome/pixmaps/rubrica2/48x48/bussines.png
-share/gnome/pixmaps/rubrica2/48x48/chat.png
-share/gnome/pixmaps/rubrica2/48x48/contacts.png
-share/gnome/pixmaps/rubrica2/48x48/customer.png
-share/gnome/pixmaps/rubrica2/48x48/flame.png
-share/gnome/pixmaps/rubrica2/48x48/freebsd.png
-share/gnome/pixmaps/rubrica2/48x48/gnu.png
-share/gnome/pixmaps/rubrica2/48x48/hobbies.png
-share/gnome/pixmaps/rubrica2/48x48/keys.png
-share/gnome/pixmaps/rubrica2/48x48/lock.png
-share/gnome/pixmaps/rubrica2/48x48/mailbox.png
-share/gnome/pixmaps/rubrica2/48x48/net.png
-share/gnome/pixmaps/rubrica2/48x48/notes.png
-share/gnome/pixmaps/rubrica2/48x48/phone.png
-share/gnome/pixmaps/rubrica2/48x48/photo.png
-share/gnome/pixmaps/rubrica2/48x48/puzzle.png
-share/gnome/pixmaps/rubrica2/48x48/rate1.png
-share/gnome/pixmaps/rubrica2/48x48/rate2.png
-share/gnome/pixmaps/rubrica2/48x48/rate3.png
-share/gnome/pixmaps/rubrica2/48x48/rate4.png
-share/gnome/pixmaps/rubrica2/48x48/rate5.png
-share/gnome/pixmaps/rubrica2/48x48/role.png
-share/gnome/pixmaps/rubrica2/48x48/rubrica.png
-share/gnome/pixmaps/rubrica2/48x48/search-contact.png
-share/gnome/pixmaps/rubrica2/48x48/sport.png
-share/gnome/pixmaps/rubrica2/48x48/strategies.png
-share/gnome/pixmaps/rubrica2/48x48/tux.png
-share/gnome/pixmaps/rubrica2/scalable/card_photo.svg
-share/gnome/pixmaps/rubrica2/scalable/query.svg
-share/gnome/rubrica2/interface/CompanyCard.glade
-share/gnome/rubrica2/interface/GroupManager.glade
-share/gnome/rubrica2/interface/MainWindow.glade
-share/gnome/rubrica2/interface/Menu.glade
-share/gnome/rubrica2/interface/MenuTrash.glade
-share/gnome/rubrica2/interface/PersonalCard.glade
-share/gnome/rubrica2/interface/Preferences.glade
-share/gnome/rubrica2/interface/Search.glade
-share/gnome/rubrica2/interface/logo.png
+share/applications/rubrica2.desktop
+share/mime-info/rubrica2.keys
+share/mime-info/rubrica2.mime
+share/pixmaps/rubrica2/16x16/ccare.png
+share/pixmaps/rubrica2/16x16/green.png
+share/pixmaps/rubrica2/16x16/operator.png
+share/pixmaps/rubrica2/24x24/stuffs.png
+share/pixmaps/rubrica2/24x24/university.png
+share/pixmaps/rubrica2/48x48/all.png
+share/pixmaps/rubrica2/48x48/bussines.png
+share/pixmaps/rubrica2/48x48/chat.png
+share/pixmaps/rubrica2/48x48/contacts.png
+share/pixmaps/rubrica2/48x48/customer.png
+share/pixmaps/rubrica2/48x48/flame.png
+share/pixmaps/rubrica2/48x48/freebsd.png
+share/pixmaps/rubrica2/48x48/gnu.png
+share/pixmaps/rubrica2/48x48/hobbies.png
+share/pixmaps/rubrica2/48x48/keys.png
+share/pixmaps/rubrica2/48x48/lock.png
+share/pixmaps/rubrica2/48x48/mailbox.png
+share/pixmaps/rubrica2/48x48/net.png
+share/pixmaps/rubrica2/48x48/notes.png
+share/pixmaps/rubrica2/48x48/phone.png
+share/pixmaps/rubrica2/48x48/photo.png
+share/pixmaps/rubrica2/48x48/puzzle.png
+share/pixmaps/rubrica2/48x48/rate1.png
+share/pixmaps/rubrica2/48x48/rate2.png
+share/pixmaps/rubrica2/48x48/rate3.png
+share/pixmaps/rubrica2/48x48/rate4.png
+share/pixmaps/rubrica2/48x48/rate5.png
+share/pixmaps/rubrica2/48x48/role.png
+share/pixmaps/rubrica2/48x48/rubrica.png
+share/pixmaps/rubrica2/48x48/search-contact.png
+share/pixmaps/rubrica2/48x48/sport.png
+share/pixmaps/rubrica2/48x48/strategies.png
+share/pixmaps/rubrica2/48x48/tux.png
+share/pixmaps/rubrica2/scalable/card_photo.svg
+share/pixmaps/rubrica2/scalable/query.svg
+share/rubrica2/interface/CompanyCard.glade
+share/rubrica2/interface/GroupManager.glade
+share/rubrica2/interface/MainWindow.glade
+share/rubrica2/interface/Menu.glade
+share/rubrica2/interface/MenuTrash.glade
+share/rubrica2/interface/PersonalCard.glade
+share/rubrica2/interface/Preferences.glade
+share/rubrica2/interface/Search.glade
+share/rubrica2/interface/logo.png
 share/locale/de/LC_MESSAGES/rubrica2.mo
 share/locale/it/LC_MESSAGES/rubrica2.mo
 share/locale/uk/LC_MESSAGES/rubrica2.mo
-@dirrm share/gnome/rubrica2/interface
-@dirrm share/gnome/rubrica2
-@dirrm share/gnome/pixmaps/rubrica2/scalable
-@dirrm share/gnome/pixmaps/rubrica2/48x48
-@dirrm share/gnome/pixmaps/rubrica2/24x24
-@dirrm share/gnome/pixmaps/rubrica2/22x22
-@dirrm share/gnome/pixmaps/rubrica2/16x16
-@dirrm share/gnome/pixmaps/rubrica2
+@dirrm share/rubrica2/interface
+@dirrm share/rubrica2
+@dirrm share/pixmaps/rubrica2/scalable
+@dirrm share/pixmaps/rubrica2/48x48
+@dirrm share/pixmaps/rubrica2/24x24
+@dirrm share/pixmaps/rubrica2/22x22
+@dirrm share/pixmaps/rubrica2/16x16
+@dirrm share/pixmaps/rubrica2
 %%PORTDOCS%%@dirrm share/doc/libRAL
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry lib/libral/plugins
 @dirrmtry lib/libral
 @dirrmtry include/libral-1.0/libral
 @dirrmtry include/libral-1.0
-
+@dirrmtry share/applications

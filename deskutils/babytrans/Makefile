@@ -8,7 +8,7 @@
 
 PORTNAME=	babytrans
 PORTVERSION=	0.9.1
-PORTREVISION=	4
+PORTREVISION=	7
 CATEGORIES=	deskutils
 MASTER_SITES=	http://fjolliton.free.fr/babytrans/
 
@@ -33,6 +33,7 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${PREFIX}/share/applets/Utility
 	${INSTALL_DATA} ${WRKSRC}/config-file/dictionary ${DATADIR}
 	@${CAT} ${PKGMESSAGE}
 

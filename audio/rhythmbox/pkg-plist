@@ -206,7 +206,7 @@ share/dbus-1/services/org.gnome.Rhythmbox.service
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
-share/gnome/applications/rhythmbox.desktop
+share/applications/rhythmbox.desktop
 share/gnome/help/rhythmbox/C/fdl-appendix.xml
 share/gnome/help/rhythmbox/C/figures/rb-iradio-main.png
 share/gnome/help/rhythmbox/C/figures/rb-notification-area-menu.png
@@ -307,35 +307,35 @@ share/gnome/help/rhythmbox/zh_CN/figures/rb-volume-changer.png
 share/gnome/help/rhythmbox/zh_CN/figures/rb-window-small.png
 share/gnome/help/rhythmbox/zh_CN/figures/rb-window.png
 share/gnome/help/rhythmbox/zh_CN/rhythmbox.xml
-share/gnome/omf/rhythmbox/rhythmbox-C.omf
-share/gnome/omf/rhythmbox/rhythmbox-el.omf
-share/gnome/omf/rhythmbox/rhythmbox-es.omf
-share/gnome/omf/rhythmbox/rhythmbox-fr.omf
-share/gnome/omf/rhythmbox/rhythmbox-ru.omf
-share/gnome/omf/rhythmbox/rhythmbox-sv.omf
-share/gnome/omf/rhythmbox/rhythmbox-zh_CN.omf
-share/gnome/rhythmbox/art/about-logo.png
-share/gnome/rhythmbox/art/media-eject.png
-share/gnome/rhythmbox/art/rhythmbox-no-star.png
-share/gnome/rhythmbox/art/rhythmbox-podcast.png
-share/gnome/rhythmbox/art/rhythmbox-set-star.png
-share/gnome/rhythmbox/art/rhythmbox-tray-icon.png
-share/gnome/rhythmbox/art/rhythmbox-unset-star.png
-share/gnome/rhythmbox/glade/create-playlist.glade
-share/gnome/rhythmbox/glade/druid.glade
-share/gnome/rhythmbox/glade/general-prefs.glade
-share/gnome/rhythmbox/glade/library-prefs.glade
-share/gnome/rhythmbox/glade/playlist-save.glade
-share/gnome/rhythmbox/glade/plugins.glade
-share/gnome/rhythmbox/glade/podcast-feed-properties.glade
-share/gnome/rhythmbox/glade/podcast-prefs.glade
-share/gnome/rhythmbox/glade/podcast-properties.glade
-share/gnome/rhythmbox/glade/song-info-multiple.glade
-share/gnome/rhythmbox/glade/song-info.glade
-share/gnome/rhythmbox/glade/uri-new.glade
-share/gnome/rhythmbox/glade/uri.glade
-share/gnome/rhythmbox/playlists.xml
-share/gnome/rhythmbox/rhythmbox-ui.xml
+share/omf/rhythmbox/rhythmbox-C.omf
+share/omf/rhythmbox/rhythmbox-el.omf
+share/omf/rhythmbox/rhythmbox-es.omf
+share/omf/rhythmbox/rhythmbox-fr.omf
+share/omf/rhythmbox/rhythmbox-ru.omf
+share/omf/rhythmbox/rhythmbox-sv.omf
+share/omf/rhythmbox/rhythmbox-zh_CN.omf
+share/rhythmbox/art/about-logo.png
+share/rhythmbox/art/media-eject.png
+share/rhythmbox/art/rhythmbox-no-star.png
+share/rhythmbox/art/rhythmbox-podcast.png
+share/rhythmbox/art/rhythmbox-set-star.png
+share/rhythmbox/art/rhythmbox-tray-icon.png
+share/rhythmbox/art/rhythmbox-unset-star.png
+share/rhythmbox/glade/create-playlist.glade
+share/rhythmbox/glade/druid.glade
+share/rhythmbox/glade/general-prefs.glade
+share/rhythmbox/glade/library-prefs.glade
+share/rhythmbox/glade/playlist-save.glade
+share/rhythmbox/glade/plugins.glade
+share/rhythmbox/glade/podcast-feed-properties.glade
+share/rhythmbox/glade/podcast-prefs.glade
+share/rhythmbox/glade/podcast-properties.glade
+share/rhythmbox/glade/song-info-multiple.glade
+share/rhythmbox/glade/song-info.glade
+share/rhythmbox/glade/uri-new.glade
+share/rhythmbox/glade/uri.glade
+share/rhythmbox/playlists.xml
+share/rhythmbox/rhythmbox-ui.xml
 share/icons/hicolor/48x48/apps/rhythmbox.png
 share/locale/am/LC_MESSAGES/rhythmbox.mo
 share/locale/ar/LC_MESSAGES/rhythmbox.mo
@@ -394,10 +394,10 @@ share/locale/vi/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_CN/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_HK/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
-@dirrm share/gnome/rhythmbox/glade
-@dirrm share/gnome/rhythmbox/art
-@dirrm share/gnome/rhythmbox
-@dirrm share/gnome/omf/rhythmbox
+@dirrm share/rhythmbox/glade
+@dirrm share/rhythmbox/art
+@dirrm share/rhythmbox
+@dirrm share/omf/rhythmbox
 @dirrm share/gnome/help/rhythmbox/zh_CN/figures
 @dirrm share/gnome/help/rhythmbox/zh_CN
 @dirrm share/gnome/help/rhythmbox/sv/figures
@@ -439,3 +439,4 @@ share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/applications

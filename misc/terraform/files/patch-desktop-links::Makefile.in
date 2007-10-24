@@ -8,8 +8,8 @@
 -		$(INSTALL_DATA) Terraform.desktop $(GNOME_DATADIR)/gnome/apps/Graphics; \
 -		$(mkinstalldirs) $(GNOME_DATADIR)/gnome/ximian/Programs/Graphics; \
 -		$(INSTALL_DATA) Terraform.desktop $(GNOME_DATADIR)/gnome/ximian/Programs/Graphics; \
-+		$(mkinstalldirs) $(GNOME_DATADIR)/apps/Graphics; \
-+		$(INSTALL_DATA) Terraform.desktop $(GNOME_DATADIR)/apps/Graphics; \
++		$(mkinstalldirs) $(GNOME_DATADIR)/gnome/apps/Graphics; \
++		$(INSTALL_DATA) Terraform.desktop $(GNOME_DATADIR)/gnome/apps/Graphics; \
  		$(mkinstalldirs) $(GNOME_DATADIR)/pixmaps; \
  		$(INSTALL_DATA) terraform.png $(GNOME_DATADIR)/pixmaps; \
  	fi

@@ -8,6 +8,7 @@
 
 PORTNAME=	blam
 PORTVERSION=	1.8.4
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.cmartin.tk/blam/
 
@@ -32,9 +33,9 @@ MAN1=	blam.1
 GCONF_SCHEMAS=	blam.schemas
 
 post-patch:
-	@${REINPLACE_CMD} 's|img src="|img src="file://${PREFIX}/share/gnome/blam/themes/blam/|g' \
+	@${REINPLACE_CMD} 's|img src="|img src="file://${PREFIX}/share/blam/themes/blam/|g' \
 		${WRKSRC}/themes/blam/theme.html
-	@${REINPLACE_CMD} 's|img src="|img src="file://${PREFIX}/share/gnome/blam/themes/pimped/|g' \
+	@${REINPLACE_CMD} 's|img src="|img src="file://${PREFIX}/share/blam/themes/pimped/|g' \
 		${WRKSRC}/themes/pimped/theme.html
 
 

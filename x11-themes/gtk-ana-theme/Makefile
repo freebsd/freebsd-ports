@@ -7,7 +7,7 @@
 
 PORTNAME=	ana
 PORTVERSION=	0.11
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://ana.netart.eu.org/
 PKGNAMEPREFIX=	${TYPE}-
@@ -18,7 +18,7 @@ MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Clean and white GTK engine
 
 LIB_DEPENDS=	rsvg-2:${PORTSDIR}/graphics/librsvg2
-RUN_DEPENDS=	${LOCALBASE}/share/themes/Gorilla/index.theme:${PORTSDIR}/x11-themes/gnome-themes-extras
+RUN_DEPENDS=	${LOCALBASE}/share/icons/Foxtrot/index.theme:${PORTSDIR}/x11-themes/gnome-themes-extras
 
 TYPE?=		gtk
 THEME_NAME=	Ana
@@ -33,7 +33,7 @@ PLIST_SUB+=	GTK20=""
 PLIST_SUB+=	METACITY="@comment "
 USE_GNOME=	gtk20
 .else   # metacity
-THEME_DIR=	${PREFIX}/share/gnome/themes/${THEME_NAME}
+THEME_DIR=	${PREFIX}/share/themes/${THEME_NAME}
 PLIST_SUB+=	GTK="@comment "
 PLIST_SUB+=	GTK20="@comment "
 PLIST_SUB+=	METACITY=""

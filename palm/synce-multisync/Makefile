@@ -3,10 +3,11 @@
 # Whom:                        Sam Lawrance <boris@brooknet.com.au>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	synce-multisync_plugin
 PORTVERSION=	0.9.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	palm deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce

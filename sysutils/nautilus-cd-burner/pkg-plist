@@ -19,17 +19,8 @@ lib/nautilus/extensions-1.0/libnautilus-burn-extension.la
 lib/nautilus/extensions-1.0/libnautilus-burn-extension.so
 libdata/pkgconfig/libnautilus-burn.pc
 libexec/mapping-daemon
-share/gnome/applications/nautilus-cd-burner-open-iso.desktop
-share/gnome/applications/nautilus-cd-burner.desktop
-share/gnome/nautilus-cd-burner/cdspin1.png
-share/gnome/nautilus-cd-burner/cdspin2.png
-share/gnome/nautilus-cd-burner/cdspin3.png
-share/gnome/nautilus-cd-burner/cdspin4.png
-share/gnome/nautilus-cd-burner/cdspin5.png
-share/gnome/nautilus-cd-burner/cdspin6.png
-share/gnome/nautilus-cd-burner/cdspin7.png
-share/gnome/nautilus-cd-burner/cdspin8.png
-share/gnome/nautilus-cd-burner/nautilus-cd-burner.glade
+share/applications/nautilus-cd-burner-open-iso.desktop
+share/applications/nautilus-cd-burner.desktop
 share/icons/hicolor/16x16/apps/nautilus-cd-burner.png
 share/icons/hicolor/22x22/apps/nautilus-cd-burner.png
 share/icons/hicolor/24x24/apps/nautilus-cd-burner.png
@@ -84,6 +75,7 @@ share/locale/nb/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/ne/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/nl/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/nn/LC_MESSAGES/nautilus-cd-burner.mo
+share/locale/oc/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/or/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/pa/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/pl/LC_MESSAGES/nautilus-cd-burner.mo
@@ -92,6 +84,7 @@ share/locale/pt_BR/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/ro/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/ru/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/rw/LC_MESSAGES/nautilus-cd-burner.mo
+share/locale/si/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/sk/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/sl/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/sq/LC_MESSAGES/nautilus-cd-burner.mo
@@ -109,7 +102,16 @@ share/locale/xh/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/zh_HK/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus-cd-burner.mo
-@dirrm share/gnome/nautilus-cd-burner
+%%DATADIR%%/cdspin1.png
+%%DATADIR%%/cdspin2.png
+%%DATADIR%%/cdspin3.png
+%%DATADIR%%/cdspin4.png
+%%DATADIR%%/cdspin5.png
+%%DATADIR%%/cdspin6.png
+%%DATADIR%%/cdspin7.png
+%%DATADIR%%/cdspin8.png
+%%DATADIR%%/nautilus-cd-burner.glade
+@dirrm %%DATADIR%%
 @dirrm include/libnautilus-burn
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
@@ -121,8 +123,12 @@ share/locale/zh_TW/LC_MESSAGES/nautilus-cd-burner.mo
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/ku/LC_MESSAGES
@@ -135,3 +141,4 @@ share/locale/zh_TW/LC_MESSAGES/nautilus-cd-burner.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/applications

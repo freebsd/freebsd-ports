@@ -3,12 +3,12 @@
 # Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/planner/Makefile,v 1.1 2005/10/08 19:33:55 marcus Exp $
+#   $MCom: ports/deskutils/planner/Makefile,v 1.4 2007/05/19 21:36:03 marcus Exp $
 #
 
 PORTNAME=	planner
 PORTVERSION=	0.14.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.14
@@ -47,10 +47,6 @@ PLIST_SUB+=	GDA=""
 .else
 PLIST_SUB+=	GDA="@comment "
 .endif
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/doc|(prefix)/share/doc|g'
 
 post-install:
 	@-update-desktop-database

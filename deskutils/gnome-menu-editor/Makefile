@@ -3,12 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/gnome-menu-editor/Makefile,v 1.11 2006/09/01 20:29:54 ahze Exp $
+#   $MCom: ports/deskutils/gnome-menu-editor/Makefile,v 1.13 2007/07/23 20:25:55 mezz Exp $
 #
 
 PORTNAME=	gnome-menu-editor
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://manny.cluecoder.org/packages/gnome-menu-editor/
 

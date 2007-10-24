@@ -3,12 +3,11 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/security/gnome-keyring/Makefile,v 1.31 2007/03/12 19:28:27 mezz Exp $
+#   $MCom: ports/security/gnome-keyring/Makefile,v 1.47 2007/10/15 17:36:20 mezz Exp $
 #
 
 PORTNAME=	gnome-keyring
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	2.20.1
 CATEGORIES=	security gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -18,16 +17,15 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program that keeps passwords and other secrets
 
-LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal \
+    		gcrypt.13:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gtk20
+USE_GNOME=	gnomehack gnomeprefix gtk20 ltverhack
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-gtk-doc \
-		--with-html-dir=${GNOME_HTML_DIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

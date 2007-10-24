@@ -5,11 +5,11 @@
  stdir = $(datadir)/soundtracker
  
 -#INCLUDES = -DDATADIR=\"$(stdir)\" \
--#	-DLOCALEDIR=\"$(prefix)/share/locale\"
--INCLUDES = -DLOCALEDIR=\"$(prefix)/share/locale\"
+-#	-DLOCALEDIR=\"$(datadir)/locale\"
+-INCLUDES = -DLOCALEDIR=\"$(datadir)/locale\"
 +INCLUDES = -DDATADIR=\"$(stdir)\" \
-+	-DLOCALEDIR=\"$(prefix)/share/locale\"
-+#INCLUDES = -DLOCALEDIR=\"$(prefix)/share/locale\"
++	-DLOCALEDIR=\"$(datadir)/locale\"
++#INCLUDES = -DLOCALEDIR=\"$(datadir)/locale\"
  subdir = app
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = $(top_builddir)/config.h

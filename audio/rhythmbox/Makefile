@@ -3,12 +3,12 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/rhythmbox/Makefile,v 1.70 2007/03/07 17:00:36 adamw Exp $
+#   $MCom: ports/audio/rhythmbox/Makefile,v 1.81 2007/07/30 19:41:19 mezz Exp $
 #
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.10.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
@@ -19,7 +19,7 @@ COMMENT=	Audio player for GNOME
 
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
-		totem-plparser.1:${PORTSDIR}/multimedia/totem \
+		totem-plparser.7:${PORTSDIR}/multimedia/totem \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
 		soup-2.2.8:${PORTSDIR}/devel/libsoup \
@@ -38,8 +38,8 @@ CONFIGURE_ARGS=	--enable-nautilus-menu --with-playback=gstreamer-0-10
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS="-lm" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
 
 GCONF_SCHEMAS=	rhythmbox.schemas
 

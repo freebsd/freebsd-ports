@@ -7,6 +7,7 @@
 
 PORTNAME=	nightfall
 PORTVERSION=	1.62
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://www.la-samhna.de/nightfall/ CENKES
 
@@ -33,9 +34,7 @@ MAN1=		nightfall.1
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomeprefix libgnomeui
-CONFIGURE_ARGS+=	--with-gnomedoc-prefix=${PREFIX}/share
 INSTALLS_OMF=	yes
-DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 .else
 CONFIGURE_ARGS+=	--disable-gnome
 .endif
@@ -69,12 +68,12 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS -O3|CFLAGS|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|^Icon=gnome|Icon=${DATADIR}/pixmaps/gnome|g' \
+	@${REINPLACE_CMD} -e 's|^Icon=gnome|Icon=${DATADIR}/pixmaps|g' \
 		${WRKSRC}/nightfall.desktop
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/gnome/applications
+	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/nightfall.desktop \
-		${PREFIX}/share/gnome/applications
+		${PREFIX}/share/applications
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,5 @@
---- layout/applications.menu.orig	Wed Mar  9 11:49:53 2005
-+++ layout/applications.menu	Fri Mar 25 11:45:09 2005
+--- layout/applications.menu.orig	Sun Jul  8 18:04:11 2007
++++ layout/applications.menu	Sun Jul  8 18:04:35 2007
 @@ -6,24 +6,26 @@
    <Name>Applications</Name>
    <Directory>Applications.directory</Directory>
@@ -60,7 +60,7 @@
        </And>
        <Filename>emacs.desktop</Filename>
 @@ -64,6 +78,12 @@
-     <Directory>Edutainment.directory</Directory>
+     <Directory>Education.directory</Directory>
      <Include>
        <And>
 +        <Not>
@@ -160,9 +160,9 @@
 +            <Category>KDE</Category>
 +          </Or>
 +        </Not>
-         <Category>Application</Category>
          <Not><Category>Core</Category></Not>
          <Not><Category>Settings</Category></Not>
+         <Not><Category>Screensaver</Category></Not>
        </And>
      </Include>
    </Menu> <!-- End Other -->
@@ -227,10 +227,10 @@
 +      </Include>
 +    </Menu> <!-- End KDevelopment Tools -->
 +
-+    <!-- KEdutainment -->
++    <!-- KEducation -->
 +    <Menu>
-+      <Name>Edutainment</Name>
-+      <Directory>Edutainment.directory</Directory>
++      <Name>Education</Name>
++      <Directory>Education.directory</Directory>
 +      <Include>
 +        <And>
 +          <Or>
@@ -240,7 +240,7 @@
 +          <Category>Education</Category>
 +        </And>
 +      </Include>
-+    </Menu> <!-- End KEdutainment -->
++    </Menu> <!-- End KEducation -->
 +
 +    <!-- KGames -->
 +    <Menu>

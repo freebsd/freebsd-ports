@@ -3,10 +3,11 @@
 # Whom:					Vincent Tantardini <vinc@freebsd-fr.org>
 #
 # $FreeBSD$
+#    $MCom: ports/audio/gspeakers/Makefile,v 1.6 2007/05/30 17:08:11 mezz Exp $
 
 PORTNAME=	gspeakers
 PORTVERSION=	0.11
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -37,18 +38,12 @@ post-extract:
 	@${FIND} ${WRKSRC} -type l -delete
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/gnome/apps/|/apps/|g' \
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(datadir)/pixmaps|$$(pkgdatadir)/pixmaps|g' \
 		${WRKSRC}/pixmaps/Makefile.in
 	@${REINPLACE_CMD} -e 's|-Wall -O0|@CXXFLAGS@|g' \
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(datadir)/xml|$$(pkgdatadir)/xml|g' \
 		${WRKSRC}/xml/Makefile.in
-	@${FIND} ${WRKSRC} \( -name "*.cc" -or -name "*.xml" \) | \
-		${XARGS} ${REINPLACE_CMD} -e \
-		's|/share/pixmaps/|/share/gnome/gspeakers/pixmaps/|g ; \
-		 s|/share/xml/|/share/gnome/gspeakers/xml/|g'
 
 pre-configure:
 	@${CP} ${AUTOMAKE_DIR}/depcomp ${WRKSRC}

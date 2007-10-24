@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-osd
 DISTVERSION=	0.11.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://telecom.inescporto.pt/~gjc/gnome-osd/${DISTVERSION:C|-.*$||}/
 
@@ -25,8 +25,7 @@ PORTDOCS=	AUTHORS NEWS README
 MAN1=		gnome-osd-client.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|control-center-2.0/capplets|applications|; \
-		s|$$(datadir)/dbus-1|$$(prefix)/share/dbus-1|' \
+	@${REINPLACE_CMD} -e 's|control-center-2.0/capplets|applications|' \
 		${WRKSRC}/Makefile.in
 
 post-install:

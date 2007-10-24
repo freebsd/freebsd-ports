@@ -280,7 +280,7 @@ share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-yi
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-zh_CN
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-zh_TW
 share/applications/abiword.desktop
-%%GNOME:%%share/gnome/gnome-2.0/ui/abi-nautilus-view-file.xml
+%%GNOME:%%share/gnome-2.0/ui/abi-nautilus-view-file.xml
 share/pixmaps/abiword_48.png
 @dirrmtry share/applications
 @dirrm share/AbiSuite-%%ABIVERSION%%/templates

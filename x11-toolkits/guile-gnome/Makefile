@@ -3,11 +3,11 @@
 # Whom:                			Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-toolkits/guile-gnome/Makefile,v 1.2 2007/07/30 21:23:18 mezz Exp $
 
 PORTNAME=	guile-gnome
 PORTVERSION=	0.20
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-toolkits gnome scheme
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-guile/0.20

@@ -16,6 +16,7 @@ include/pango-1.0/pango/pango-glyph-item.h
 include/pango-1.0/pango/pango-glyph.h
 include/pango-1.0/pango/pango-gravity.h
 include/pango-1.0/pango/pango-item.h
+include/pango-1.0/pango/pango-language.h
 include/pango-1.0/pango/pango-layout.h
 include/pango-1.0/pango/pango-matrix.h
 include/pango-1.0/pango/pango-modules.h

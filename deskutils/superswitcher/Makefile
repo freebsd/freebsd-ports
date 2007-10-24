@@ -3,6 +3,7 @@
 # Whom:					Remington Lang <MrL0Lz@gmail.com>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	superswitcher
 PORTVERSION=	0.3
@@ -20,11 +21,16 @@ RUN_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libwnck pango
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-extract:
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${RM} -f
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/x11//g' ${WRKSRC}/configure
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/superswitcher ${PREFIX}/bin
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-D.*_DISABLE_DEPRECATED||g'
 
 .include <bsd.port.mk>

@@ -1,14 +1,14 @@
 libdata/bonobo/servers/GNOME_GLunarclockApplet_Factory.server
 libexec/glunarclock-applet-2
-share/gnome/glunarclock/glunarclock.glade
-share/gnome/gnome-2.0/ui/GNOME_GLunarclockApplet.xml
+share/glunarclock/glunarclock.glade
+share/gnome-2.0/ui/GNOME_GLunarclockApplet.xml
 share/gnome/help/glunarclock-applet-2/C/figures/glunarclock_applet.png
 share/gnome/help/glunarclock-applet-2/C/glunarclock-applet-2.xml
 share/gnome/help/glunarclock-applet-2/C/legal.xml
-share/gnome/omf/glunarclock/glunarclock-applet-2-C.omf
-share/gnome/pixmaps/glunarclock-logo.png
-share/gnome/pixmaps/glunarclock/cartoonmoon_12frames.png
-share/gnome/pixmaps/glunarclock/moon_56frames.png
+share/omf/glunarclock/glunarclock-applet-2-C.omf
+share/pixmaps/glunarclock-logo.png
+share/pixmaps/glunarclock/cartoonmoon_12frames.png
+share/pixmaps/glunarclock/moon_56frames.png
 share/locale/ast_ES/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/br/LC_MESSAGES/glunarclock-%%VERSION%%.mo
@@ -32,12 +32,12 @@ share/locale/sr/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/wa/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-@dirrm share/gnome/pixmaps/glunarclock
-@dirrm share/gnome/omf/glunarclock
+@dirrm share/pixmaps/glunarclock
+@dirrm share/omf/glunarclock
 @dirrm share/gnome/help/glunarclock-applet-2/C/figures
 @dirrm share/gnome/help/glunarclock-applet-2/C
 @dirrm share/gnome/help/glunarclock-applet-2
-@dirrm share/gnome/glunarclock
+@dirrm share/glunarclock
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/ast_ES/LC_MESSAGES

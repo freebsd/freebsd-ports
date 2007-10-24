@@ -15,8 +15,6 @@ include/gedit-%%VERSION%%/gedit/gedit-panel.h
 include/gedit-%%VERSION%%/gedit/gedit-plugin.h
 include/gedit-%%VERSION%%/gedit/gedit-prefs-manager-app.h
 include/gedit-%%VERSION%%/gedit/gedit-prefs-manager.h
-include/gedit-%%VERSION%%/gedit/gedit-print-job-preview.h
-include/gedit-%%VERSION%%/gedit/gedit-print.h
 include/gedit-%%VERSION%%/gedit/gedit-progress-message-area.h
 include/gedit-%%VERSION%%/gedit/gedit-statusbar.h
 include/gedit-%%VERSION%%/gedit/gedit-tab.h
@@ -59,8 +57,8 @@ lib/gedit-2/plugins/libfilebrowser.la
 lib/gedit-2/plugins/libfilebrowser.so
 lib/gedit-2/plugins/libindent.la
 lib/gedit-2/plugins/libindent.so
-%%PYTHON%%lib/gedit-2/plugins/libmodelines.la
-%%PYTHON%%lib/gedit-2/plugins/libmodelines.so
+lib/gedit-2/plugins/libmodelines.la
+lib/gedit-2/plugins/libmodelines.so
 lib/gedit-2/plugins/libsample.la
 lib/gedit-2/plugins/libsample.so
 lib/gedit-2/plugins/libsort.la
@@ -71,7 +69,7 @@ lib/gedit-2/plugins/libtaglist.la
 lib/gedit-2/plugins/libtaglist.so
 lib/gedit-2/plugins/libtime.la
 lib/gedit-2/plugins/libtime.so
-%%PYTHON%%lib/gedit-2/plugins/modelines.gedit-plugin
+lib/gedit-2/plugins/modelines.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/pythonconsole.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/pythonconsole/__init__.py
 %%PYTHON%%lib/gedit-2/plugins/pythonconsole/__init__.pyc
@@ -81,42 +79,55 @@ lib/gedit-2/plugins/libtime.so
 %%PYTHON%%lib/gedit-2/plugins/pythonconsole/console.pyo
 lib/gedit-2/plugins/sample.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/snippets.gedit-plugin
+%%PYTHON%%lib/gedit-2/plugins/snippets/Document.py
+%%PYTHON%%lib/gedit-2/plugins/snippets/Document.pyc
+%%PYTHON%%lib/gedit-2/plugins/snippets/Document.pyo
 %%PYTHON%%lib/gedit-2/plugins/snippets/ElementTree.py
 %%PYTHON%%lib/gedit-2/plugins/snippets/ElementTree.pyc
 %%PYTHON%%lib/gedit-2/plugins/snippets/ElementTree.pyo
+%%PYTHON%%lib/gedit-2/plugins/snippets/Exporter.py
+%%PYTHON%%lib/gedit-2/plugins/snippets/Exporter.pyc
+%%PYTHON%%lib/gedit-2/plugins/snippets/Exporter.pyo
+%%PYTHON%%lib/gedit-2/plugins/snippets/Helper.py
+%%PYTHON%%lib/gedit-2/plugins/snippets/Helper.pyc
+%%PYTHON%%lib/gedit-2/plugins/snippets/Helper.pyo
+%%PYTHON%%lib/gedit-2/plugins/snippets/Importer.py
+%%PYTHON%%lib/gedit-2/plugins/snippets/Importer.pyc
+%%PYTHON%%lib/gedit-2/plugins/snippets/Importer.pyo
+%%PYTHON%%lib/gedit-2/plugins/snippets/Library.py
+%%PYTHON%%lib/gedit-2/plugins/snippets/Library.pyc
+%%PYTHON%%lib/gedit-2/plugins/snippets/Library.pyo
+%%PYTHON%%lib/gedit-2/plugins/snippets/Manager.py
+%%PYTHON%%lib/gedit-2/plugins/snippets/Manager.pyc
+%%PYTHON%%lib/gedit-2/plugins/snippets/Manager.pyo
+%%PYTHON%%lib/gedit-2/plugins/snippets/Parser.py
+%%PYTHON%%lib/gedit-2/plugins/snippets/Parser.pyc
+%%PYTHON%%lib/gedit-2/plugins/snippets/Parser.pyo
+%%PYTHON%%lib/gedit-2/plugins/snippets/Placeholder.py
+%%PYTHON%%lib/gedit-2/plugins/snippets/Placeholder.pyc
+%%PYTHON%%lib/gedit-2/plugins/snippets/Placeholder.pyo
 %%PYTHON%%lib/gedit-2/plugins/snippets/Snippet.py
 %%PYTHON%%lib/gedit-2/plugins/snippets/Snippet.pyc
 %%PYTHON%%lib/gedit-2/plugins/snippets/Snippet.pyo
 %%PYTHON%%lib/gedit-2/plugins/snippets/SnippetComplete.py
 %%PYTHON%%lib/gedit-2/plugins/snippets/SnippetComplete.pyc
 %%PYTHON%%lib/gedit-2/plugins/snippets/SnippetComplete.pyo
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetController.py
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetController.pyc
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetController.pyo
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetPlaceholders.py
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetPlaceholders.pyc
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetPlaceholders.pyo
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetPluginInstance.py
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetPluginInstance.pyc
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetPluginInstance.pyo
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetsDialog.py
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetsDialog.pyc
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetsDialog.pyo
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetsLibrary.py
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetsLibrary.pyc
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetsLibrary.pyo
+%%PYTHON%%lib/gedit-2/plugins/snippets/SubstitutionParser.py
+%%PYTHON%%lib/gedit-2/plugins/snippets/SubstitutionParser.pyc
+%%PYTHON%%lib/gedit-2/plugins/snippets/SubstitutionParser.pyo
+%%PYTHON%%lib/gedit-2/plugins/snippets/WindowHelper.py
+%%PYTHON%%lib/gedit-2/plugins/snippets/WindowHelper.pyc
+%%PYTHON%%lib/gedit-2/plugins/snippets/WindowHelper.pyo
 %%PYTHON%%lib/gedit-2/plugins/snippets/__init__.py
 %%PYTHON%%lib/gedit-2/plugins/snippets/__init__.pyc
 %%PYTHON%%lib/gedit-2/plugins/snippets/__init__.pyo
-%%PYTHON%%lib/gedit-2/plugins/snippets/functions.py
-%%PYTHON%%lib/gedit-2/plugins/snippets/functions.pyc
-%%PYTHON%%lib/gedit-2/plugins/snippets/functions.pyo
 %%PYTHON%%lib/gedit-2/plugins/snippets/snippets.glade
 lib/gedit-2/plugins/sort.gedit-plugin
 lib/gedit-2/plugins/spell.gedit-plugin
 lib/gedit-2/plugins/taglist.gedit-plugin
 lib/gedit-2/plugins/time.gedit-plugin
 libdata/pkgconfig/gedit-%%VERSION%%.pc
+share/applications/gedit.desktop
 %%DOCSDIR%%/GeditApp.html
 %%DOCSDIR%%/GeditDocument.html
 %%DOCSDIR%%/GeditEncodingsOptionMenu.html
@@ -150,47 +161,48 @@ libdata/pkgconfig/gedit-%%VERSION%%.pc
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
-share/gnome/applications/gedit.desktop
-share/gnome/gedit-2/glade/docinfo.glade2
-share/gnome/gedit-2/glade/gedit-encodings-dialog.glade
-share/gnome/gedit-2/glade/gedit-open-location-dialog.glade
-share/gnome/gedit-2/glade/gedit-page-setup-dialog.glade
-share/gnome/gedit-2/glade/gedit-preferences-dialog.glade
-share/gnome/gedit-2/glade/gedit-search-dialog.glade
-share/gnome/gedit-2/glade/languages-dialog.glade2
-share/gnome/gedit-2/glade/sort.glade2
-share/gnome/gedit-2/glade/spell-checker.glade2
-share/gnome/gedit-2/glade/time.glade2
-share/gnome/gedit-2/icons/gedit-plugin.png
-share/gnome/gedit-2/logo/gedit-logo.png
-share/gnome/gedit-2/plugins/filebrowser/gedit-file-browser-widget-ui.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/c++.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/c.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/css.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/docbook.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/global.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/haskell.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/html.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/idl.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/java.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/javascript.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/latex.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/perl.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/php.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/python.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/ruby.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/sh.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/tcl.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/snippets/xml.xml
-%%PYTHON%%share/gnome/gedit-2/plugins/tools/build
-%%PYTHON%%share/gnome/gedit-2/plugins/tools/open-terminal-here
-%%PYTHON%%share/gnome/gedit-2/plugins/tools/remove-trailing-spaces
-%%PYTHON%%share/gnome/gedit-2/plugins/tools/run-command
-share/gnome/gedit-2/taglist/HTML.tags.gz
-share/gnome/gedit-2/taglist/Latex.tags.gz
-share/gnome/gedit-2/taglist/XSLT.tags.gz
-share/gnome/gedit-2/taglist/XUL.tags.gz
-share/gnome/gedit-2/ui/gedit-ui.xml
+share/gedit-2/glade/docinfo.glade2
+share/gedit-2/glade/gedit-encodings-dialog.glade
+share/gedit-2/glade/gedit-open-location-dialog.glade
+share/gedit-2/glade/gedit-page-setup-dialog.glade
+share/gedit-2/glade/gedit-preferences-dialog.glade
+share/gedit-2/glade/gedit-search-dialog.glade
+share/gedit-2/glade/languages-dialog.glade2
+share/gedit-2/glade/sort.glade2
+share/gedit-2/glade/spell-checker.glade2
+share/gedit-2/glade/time.glade2
+share/gedit-2/icons/gedit-plugin.png
+share/gedit-2/logo/gedit-logo.png
+share/gedit-2/plugins/filebrowser/gedit-file-browser-widget-ui.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/c++.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/c.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/css.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/docbook.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/global.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/haskell.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/html.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/idl.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/java.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/javascript.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/lang/snippets.lang
+%%PYTHON%%share/gedit-2/plugins/snippets/latex.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/perl.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/php.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/python.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/ruby.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/sh.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/snippets.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/tcl.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/xml.xml
+%%PYTHON%%share/gedit-2/plugins/tools/build
+%%PYTHON%%share/gedit-2/plugins/tools/open-terminal-here
+%%PYTHON%%share/gedit-2/plugins/tools/remove-trailing-spaces
+%%PYTHON%%share/gedit-2/plugins/tools/run-command
+share/gedit-2/taglist/HTML.tags.gz
+share/gedit-2/taglist/Latex.tags.gz
+share/gedit-2/taglist/XSLT.tags.gz
+share/gedit-2/taglist/XUL.tags.gz
+share/gedit-2/ui/gedit-ui.xml
 share/gnome/help/gedit/C/figures/gedit_format_bold.png
 share/gnome/help/gedit/C/figures/gedit_format_italic.png
 share/gnome/help/gedit/C/figures/gedit_format_strikethrough.png
@@ -235,6 +247,14 @@ share/gnome/help/gedit/fr/figures/gedit_recent_files_menu_icon.png
 share/gnome/help/gedit/fr/figures/gedit_window.png
 share/gnome/help/gedit/fr/gedit.xml
 share/gnome/help/gedit/fr/legal.xml
+share/gnome/help/gedit/hu/figures/gedit_format_bold.png
+share/gnome/help/gedit/hu/figures/gedit_format_italic.png
+share/gnome/help/gedit/hu/figures/gedit_format_strikethrough.png
+share/gnome/help/gedit/hu/figures/gedit_format_underline.png
+share/gnome/help/gedit/hu/figures/gedit_recent_files_menu_icon.png
+share/gnome/help/gedit/hu/figures/gedit_window.png
+share/gnome/help/gedit/hu/gedit.xml
+share/gnome/help/gedit/hu/legal.xml
 share/gnome/help/gedit/it/figures/gedit_format_bold.png
 share/gnome/help/gedit/it/figures/gedit_format_italic.png
 share/gnome/help/gedit/it/figures/gedit_format_strikethrough.png
@@ -251,10 +271,22 @@ share/gnome/help/gedit/ja/figures/gedit_recent_files_menu_icon.png
 share/gnome/help/gedit/ja/figures/gedit_window.png
 share/gnome/help/gedit/ja/gedit.xml
 share/gnome/help/gedit/ja/legal.xml
+share/gnome/help/gedit/ko/figures/gedit_format_bold.png
+share/gnome/help/gedit/ko/figures/gedit_format_italic.png
+share/gnome/help/gedit/ko/figures/gedit_format_strikethrough.png
+share/gnome/help/gedit/ko/figures/gedit_format_underline.png
 share/gnome/help/gedit/ko/figures/gedit_recent_files_menu_icon.png
 share/gnome/help/gedit/ko/figures/gedit_window.png
 share/gnome/help/gedit/ko/gedit.xml
 share/gnome/help/gedit/ko/legal.xml
+share/gnome/help/gedit/oc/figures/gedit_format_bold.png
+share/gnome/help/gedit/oc/figures/gedit_format_italic.png
+share/gnome/help/gedit/oc/figures/gedit_format_strikethrough.png
+share/gnome/help/gedit/oc/figures/gedit_format_underline.png
+share/gnome/help/gedit/oc/figures/gedit_recent_files_menu_icon.png
+share/gnome/help/gedit/oc/figures/gedit_window.png
+share/gnome/help/gedit/oc/gedit.xml
+share/gnome/help/gedit/oc/legal.xml
 share/gnome/help/gedit/ro/figures/gedit_window.png
 share/gnome/help/gedit/ro/gedit.xml
 share/gnome/help/gedit/ro/legal.xml
@@ -306,27 +338,12 @@ share/gnome/help/gedit/zh_TW/figures/gedit_recent_files_menu_icon.png
 share/gnome/help/gedit/zh_TW/figures/gedit_window.png
 share/gnome/help/gedit/zh_TW/gedit.xml
 share/gnome/help/gedit/zh_TW/legal.xml
-share/gnome/omf/gedit/gedit-C.omf
-share/gnome/omf/gedit/gedit-bg.omf
-share/gnome/omf/gedit/gedit-de.omf
-share/gnome/omf/gedit/gedit-es.omf
-share/gnome/omf/gedit/gedit-eu.omf
-share/gnome/omf/gedit/gedit-fr.omf
-share/gnome/omf/gedit/gedit-it.omf
-share/gnome/omf/gedit/gedit-ja.omf
-share/gnome/omf/gedit/gedit-ko.omf
-share/gnome/omf/gedit/gedit-ro.omf
-share/gnome/omf/gedit/gedit-ru.omf
-share/gnome/omf/gedit/gedit-sv.omf
-share/gnome/omf/gedit/gedit-uk.omf
-share/gnome/omf/gedit/gedit-zh_CN.omf
-share/gnome/omf/gedit/gedit-zh_HK.omf
-share/gnome/omf/gedit/gedit-zh_TW.omf
 share/locale/af/LC_MESSAGES/gedit.mo
 share/locale/am/LC_MESSAGES/gedit.mo
 share/locale/ar/LC_MESSAGES/gedit.mo
 share/locale/az/LC_MESSAGES/gedit.mo
 share/locale/be/LC_MESSAGES/gedit.mo
+share/locale/be@latin/LC_MESSAGES/gedit.mo
 share/locale/bg/LC_MESSAGES/gedit.mo
 share/locale/bn/LC_MESSAGES/gedit.mo
 share/locale/bn_IN/LC_MESSAGES/gedit.mo
@@ -404,7 +421,25 @@ share/locale/xh/LC_MESSAGES/gedit.mo
 share/locale/zh_CN/LC_MESSAGES/gedit.mo
 share/locale/zh_HK/LC_MESSAGES/gedit.mo
 share/locale/zh_TW/LC_MESSAGES/gedit.mo
-@dirrm share/gnome/omf/gedit
+share/omf/gedit/gedit-C.omf
+share/omf/gedit/gedit-bg.omf
+share/omf/gedit/gedit-de.omf
+share/omf/gedit/gedit-es.omf
+share/omf/gedit/gedit-eu.omf
+share/omf/gedit/gedit-fr.omf
+share/omf/gedit/gedit-hu.omf
+share/omf/gedit/gedit-it.omf
+share/omf/gedit/gedit-ja.omf
+share/omf/gedit/gedit-ko.omf
+share/omf/gedit/gedit-oc.omf
+share/omf/gedit/gedit-ro.omf
+share/omf/gedit/gedit-ru.omf
+share/omf/gedit/gedit-sv.omf
+share/omf/gedit/gedit-uk.omf
+share/omf/gedit/gedit-zh_CN.omf
+share/omf/gedit/gedit-zh_HK.omf
+share/omf/gedit/gedit-zh_TW.omf
+@dirrm share/omf/gedit
 @dirrm share/gnome/help/gedit/zh_TW/figures
 @dirrm share/gnome/help/gedit/zh_TW
 @dirrm share/gnome/help/gedit/zh_HK/figures
@@ -419,12 +454,16 @@ share/locale/zh_TW/LC_MESSAGES/gedit.mo
 @dirrm share/gnome/help/gedit/ru
 @dirrm share/gnome/help/gedit/ro/figures
 @dirrm share/gnome/help/gedit/ro
+@dirrm share/gnome/help/gedit/oc/figures
+@dirrm share/gnome/help/gedit/oc
 @dirrm share/gnome/help/gedit/ko/figures
 @dirrm share/gnome/help/gedit/ko
 @dirrm share/gnome/help/gedit/ja/figures
 @dirrm share/gnome/help/gedit/ja
 @dirrm share/gnome/help/gedit/it/figures
 @dirrm share/gnome/help/gedit/it
+@dirrm share/gnome/help/gedit/hu/figures
+@dirrm share/gnome/help/gedit/hu
 @dirrm share/gnome/help/gedit/fr/figures
 @dirrm share/gnome/help/gedit/fr
 @dirrm share/gnome/help/gedit/eu/figures
@@ -438,22 +477,23 @@ share/locale/zh_TW/LC_MESSAGES/gedit.mo
 @dirrm share/gnome/help/gedit/C/figures
 @dirrm share/gnome/help/gedit/C
 @dirrm share/gnome/help/gedit
-@dirrm share/gnome/gedit-2/ui
-@dirrm share/gnome/gedit-2/taglist
-%%PYTHON%%@dirrm share/gnome/gedit-2/plugins/tools
-%%PYTHON%%@dirrm share/gnome/gedit-2/plugins/snippets
-@dirrm share/gnome/gedit-2/plugins/filebrowser
-@dirrm share/gnome/gedit-2/plugins
-@dirrm share/gnome/gedit-2/logo
-@dirrm share/gnome/gedit-2/icons
-@dirrm share/gnome/gedit-2/glade
-@dirrm share/gnome/gedit-2
+@dirrm share/gedit-2/ui
+@dirrm share/gedit-2/taglist
+%%PYTHON%%@dirrm share/gedit-2/plugins/tools
+%%PYTHON%%@dirrm share/gedit-2/plugins/snippets/lang
+%%PYTHON%%@dirrm share/gedit-2/plugins/snippets
+@dirrm share/gedit-2/plugins/filebrowser
+@dirrm share/gedit-2/plugins
+@dirrm share/gedit-2/logo
+@dirrm share/gedit-2/icons
+@dirrm share/gedit-2/glade
+@dirrm share/gedit-2
 @dirrm %%DOCSDIR%%
 %%PYTHON%%@dirrm lib/gedit-2/plugins/snippets
 %%PYTHON%%@dirrm lib/gedit-2/plugins/pythonconsole
 %%PYTHON%%@dirrm lib/gedit-2/plugins/externaltools
-@dirrm lib/gedit-2/plugins
-@dirrm lib/gedit-2
+@dirrmtry lib/gedit-2/plugins
+@dirrmtry lib/gedit-2
 @dirrm include/gedit-%%VERSION%%/gedit
 @dirrm include/gedit-%%VERSION%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
@@ -484,3 +524,6 @@ share/locale/zh_TW/LC_MESSAGES/gedit.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/applications

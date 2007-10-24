@@ -11,66 +11,67 @@ etc/kazehakase/proxyrc
 etc/kazehakase/smartbookmarks.xml
 lib/kazehakase/libkazehakase.la
 lib/kazehakase/libkazehakase.so
-lib/kazehakase/libkazehakase.so.0
+lib/kazehakase/libkazehakase.so.1
 lib/kazehakase/embed/gecko.la
 lib/kazehakase/embed/gecko.so
 lib/kazehakase/search/hyper-estraier.la
 lib/kazehakase/search/hyper-estraier.so
-share/gnome/applications/kazehakase.desktop
-share/gnome/kazehakase/icons/autoscroll.xpm
-share/gnome/kazehakase/icons/kz-anchor.png
-share/gnome/kazehakase/icons/kz-book-search.png
-share/gnome/kazehakase/icons/kz-bookmark.png
-share/gnome/kazehakase/icons/kz-closebackward.png
-share/gnome/kazehakase/icons/kz-closeforward.png
-share/gnome/kazehakase/icons/kz-closewindow.png
-share/gnome/kazehakase/icons/kz-copyimagelocation.png
-share/gnome/kazehakase/icons/kz-copyurl.png
-share/gnome/kazehakase/icons/kz-epiphany.png
-share/gnome/kazehakase/icons/kz-firefox.png
-share/gnome/kazehakase/icons/kz-folder-open.png
-share/gnome/kazehakase/icons/kz-folder-search.png
-share/gnome/kazehakase/icons/kz-folder.png
-share/gnome/kazehakase/icons/kz-font-decrease.png
-share/gnome/kazehakase/icons/kz-font-increase.png
-share/gnome/kazehakase/icons/kz-galeon.png
-share/gnome/kazehakase/icons/kz-google.png
-share/gnome/kazehakase/icons/kz-gray.png
-share/gnome/kazehakase/icons/kz-green.png
-share/gnome/kazehakase/icons/kz-history.png
-share/gnome/kazehakase/icons/kz-konqueror.png
-share/gnome/kazehakase/icons/kz-logo-bg.png
-share/gnome/kazehakase/icons/kz-logo.png
-share/gnome/kazehakase/icons/kz-mozilla.png
-share/gnome/kazehakase/icons/kz-netscape.png
-share/gnome/kazehakase/icons/kz-newwindow.png
-share/gnome/kazehakase/icons/kz-openimagewindow.png
-share/gnome/kazehakase/icons/kz-openlinkwindow.png
-share/gnome/kazehakase/icons/kz-openselectedlink.png
-share/gnome/kazehakase/icons/kz-red.png
-share/gnome/kazehakase/icons/kz-remote-bookmark.png
-share/gnome/kazehakase/icons/kz-rss-feed.png
-share/gnome/kazehakase/icons/kz-savelink.png
-share/gnome/kazehakase/icons/kz-scrap-bookmark.png
-share/gnome/kazehakase/icons/kz-search.png
-share/gnome/kazehakase/icons/kz-select-all.png
-share/gnome/kazehakase/icons/kz-separator.png
-share/gnome/kazehakase/icons/kz-smart-bookmark.png
-share/gnome/kazehakase/icons/kz-tab-next.png
-share/gnome/kazehakase/icons/kz-tab-prev.png
-share/gnome/kazehakase/icons/kz-view-source.png
-share/gnome/kazehakase/icons/kz-yellow.png
-share/gnome/kazehakase/kz-no-thumbnail.png
-share/gnome/kazehakase/search-result.css
-share/gnome/pixmaps/kazehakase-icon.png
+share/applications/kazehakase.desktop
+share/kazehakase/icons/autoscroll.xpm
+share/kazehakase/icons/kz-anchor.png
+share/kazehakase/icons/kz-book-search.png
+share/kazehakase/icons/kz-bookmark.png
+share/kazehakase/icons/kz-closebackward.png
+share/kazehakase/icons/kz-closeforward.png
+share/kazehakase/icons/kz-closewindow.png
+share/kazehakase/icons/kz-copyimagelocation.png
+share/kazehakase/icons/kz-copyurl.png
+share/kazehakase/icons/kz-epiphany.png
+share/kazehakase/icons/kz-firefox.png
+share/kazehakase/icons/kz-folder-open.png
+share/kazehakase/icons/kz-folder-search.png
+share/kazehakase/icons/kz-folder.png
+share/kazehakase/icons/kz-font-decrease.png
+share/kazehakase/icons/kz-font-increase.png
+share/kazehakase/icons/kz-galeon.png
+share/kazehakase/icons/kz-google.png
+share/kazehakase/icons/kz-gray.png
+share/kazehakase/icons/kz-green.png
+share/kazehakase/icons/kz-history.png
+share/kazehakase/icons/kz-konqueror.png
+share/kazehakase/icons/kz-logo-bg.png
+share/kazehakase/icons/kz-logo.png
+share/kazehakase/icons/kz-mozilla.png
+share/kazehakase/icons/kz-netscape.png
+share/kazehakase/icons/kz-newwindow.png
+share/kazehakase/icons/kz-openimagewindow.png
+share/kazehakase/icons/kz-openlinkwindow.png
+share/kazehakase/icons/kz-openselectedlink.png
+share/kazehakase/icons/kz-red.png
+share/kazehakase/icons/kz-remote-bookmark.png
+share/kazehakase/icons/kz-rss-feed.png
+share/kazehakase/icons/kz-savelink.png
+share/kazehakase/icons/kz-scrap-bookmark.png
+share/kazehakase/icons/kz-search.png
+share/kazehakase/icons/kz-select-all.png
+share/kazehakase/icons/kz-separator.png
+share/kazehakase/icons/kz-smart-bookmark.png
+share/kazehakase/icons/kz-tab-next.png
+share/kazehakase/icons/kz-tab-prev.png
+share/kazehakase/icons/kz-view-source.png
+share/kazehakase/icons/kz-yellow.png
+share/kazehakase/kz-no-thumbnail.png
+share/kazehakase/search-result.css
+share/pixmaps/kazehakase-icon.png
 share/locale/cs/LC_MESSAGES/kazehakase.mo
 share/locale/fr/LC_MESSAGES/kazehakase.mo
 share/locale/ja/LC_MESSAGES/kazehakase.mo
 share/locale/ru/LC_MESSAGES/kazehakase.mo
-@dirrm share/gnome/kazehakase/icons
-@dirrm share/gnome/kazehakase
+@dirrm share/kazehakase/icons
+@dirrm share/kazehakase
 @dirrm lib/kazehakase/search
 @dirrm lib/kazehakase/embed
 @dirrm lib/kazehakase
 @dirrm etc/kazehakase/mozilla
 @dirrm etc/kazehakase
+@dirrmtry share/applications

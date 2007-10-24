@@ -6,7 +6,7 @@
 
 PORTNAME=	stardict2-dict-zh_CN
 PORTVERSION=	2.4.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	chinese textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	stardict
@@ -27,12 +27,12 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 
 do-install:
-		${MKDIR} ${PREFIX}/share/gnome/stardict/dic/
-		${INSTALL_DATA} ${WRKDIR}/stardict-cdict-gb-${PORTVERSION}/* ${PREFIX}/share/gnome/stardict/dic/
-		${INSTALL_DATA} ${WRKDIR}/stardict-cedict-gb-${PORTVERSION}/* ${PREFIX}/share/gnome/stardict/dic/
-		${INSTALL_DATA} ${WRKDIR}/stardict-oxford-gb-${PORTVERSION}/* ${PREFIX}/share/gnome/stardict/dic/
-		${INSTALL_DATA} ${WRKDIR}/stardict-stardict1.3-${PORTVERSION}/* ${PREFIX}/share/gnome/stardict/dic/
-		${INSTALL_DATA} ${WRKDIR}/stardict-xdict-ce-gb-${PORTVERSION}/* ${PREFIX}/share/gnome/stardict/dic/
-		${INSTALL_DATA} ${WRKDIR}/stardict-xdict-ec-gb-${PORTVERSION}/* ${PREFIX}/share/gnome/stardict/dic/
+		${MKDIR} ${PREFIX}/share/stardict/dic/
+		${INSTALL_DATA} ${WRKDIR}/stardict-cdict-gb-${PORTVERSION}/* ${PREFIX}/share/stardict/dic/
+		${INSTALL_DATA} ${WRKDIR}/stardict-cedict-gb-${PORTVERSION}/* ${PREFIX}/share/stardict/dic/
+		${INSTALL_DATA} ${WRKDIR}/stardict-oxford-gb-${PORTVERSION}/* ${PREFIX}/share/stardict/dic/
+		${INSTALL_DATA} ${WRKDIR}/stardict-stardict1.3-${PORTVERSION}/* ${PREFIX}/share/stardict/dic/
+		${INSTALL_DATA} ${WRKDIR}/stardict-xdict-ce-gb-${PORTVERSION}/* ${PREFIX}/share/stardict/dic/
+		${INSTALL_DATA} ${WRKDIR}/stardict-xdict-ec-gb-${PORTVERSION}/* ${PREFIX}/share/stardict/dic/
 
 .include <bsd.port.mk>

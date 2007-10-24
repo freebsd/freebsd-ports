@@ -1,6 +1,6 @@
 bin/glife
 share/gnome/apps/Games/glife.desktop
-share/gnome/glife/glife.glade
+share/glife/glife.glade
 share/gnome/help/glife/C/appearance.html
 share/gnome/help/glife/C/docbook.css
 share/gnome/help/glife/C/glife-attributes.html
@@ -17,4 +17,4 @@ share/gnome/help/glife/C/topic.dat
 share/locale/ru/LC_MESSAGES/gLife.mo
 @dirrm share/gnome/help/glife/C
 @dirrm share/gnome/help/glife
-@dirrm share/gnome/glife
+@dirrm share/glife

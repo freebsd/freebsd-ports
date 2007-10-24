@@ -3,7 +3,7 @@
 #
 # $FreeBSD$
 #	$NetBSD: $
-#     $MCom: ports/Mk/bsd.gnome.mk,v 1.414 2007/03/13 01:24:54 marcus Exp $
+#     $MCom: ports/Mk/bsd.gnome.mk,v 1.429 2007/08/04 22:09:00 marcus Exp $
 #
 # Please view me with 4 column tabs!
 
@@ -40,9 +40,9 @@ Gnome_Pre_Include=			bsd.gnome.mk
 #					  each .omf file found to track OMF registration database.
 #
 # INSTALLS_ICONS	- If your port installs Freedesktop-style icons to
-#					  ${LOCALBASE}/share/icons or ${X11BASE}/share/icons, then
-#					  you should use this macro. If the icons are not cached,
-#					  they will not be displayed.
+#					  ${LOCALBASE}/share/icons, then you should use this
+#					  macro. If the icons are not cached, they will not be
+#					  displayed.
 #
 
 # non-version specific components
@@ -59,40 +59,25 @@ _USE_GNOME_ALL+= bonobo gal gconf gdkpixbuf glib12 glibwww \
 _USE_GNOME_ALL+= atk atspi desktopfileutils eel2 evolutiondataserver gail \
 		gal2 gconf2 glib20 gnomecontrolcenter2 gnomedesktop gnomedocutils \
 		gnomemenus gnomepanel gnomesharp20 gnomespeech gnomevfs2 gtk20 \
-		gtkhtml3 gtksharp10 gtksharp20 gtksourceview libartlgpl2 libbonobo \
-		libbonoboui libgailgnome libgda2 libgda3 libglade2 libgnome \
-		libgnomecanvas libgnomedb libgnomeprint libgnomeprintui \
-		libgnomeui libgsf libgsf_gnome libgtkhtml libidl librsvg2 libwnck \
-		libxml2 libxslt libzvt linc metacity nautilus2 nautiluscdburner \
-		orbit2 pango pygnome2 pygnomeextras pygtk2 vte pygnomedesktop \
-		libgnomekbd
+		gtkhtml3 gtksharp10 gtksharp20 gtksourceview gtksourceview2 \
+		libartlgpl2 libbonobo libbonoboui libgailgnome libgda2 libgda3 \
+		libglade2 libgnome libgnomecanvas libgnomedb libgnomekbd libgnomeprint \
+		libgnomeprintui libgnomeui libgsf libgsf_gnome libgtkhtml libidl \
+		librsvg2 libwnck libxml2 libxslt libzvt linc metacity nautilus2 \
+		nautiluscdburner orbit2 pango pygnome2 pygnomedesktop pygnomeextras \
+		pygtk2 pygtksourceview vte
 
 GNOME_MAKEFILEIN?=	Makefile.in
-SCROLLKEEPER_DIR=	/var/db/scrollkeeper
+SCROLLKEEPER_DIR=	/var/db/rarian
 gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "${GNOME_MAKEFILEIN}*" -type f | ${XARGS} ${REINPLACE_CMD} -e \
-				's|[(]GNOME_datadir[)]/gnome/|(datadir)/|g ; \
-				 s|[(]GNOME_datadir[)]/locale|(prefix)/share/locale|g ; \
-				 s|[(]datadir[)]/locale|(prefix)/share/locale|g ; \
-				 s|[(]libdir[)]/locale|(prefix)/share/locale|g ; \
-				 s|[(]gnomedatadir[)]/gnome|(gnomedatadir)|g ; \
-				 s|[(]datadir[)]/aclocal|(prefix)/share/aclocal|g ; \
-				 s|[(]datadir[)]/gnome/|(datadir)/|g ; \
-				 s|[(]datadir[)]/mime/|(prefix)/share/mime/|g ; \
-				 s|[(]datadir[)]/mime"|(prefix)/share/mime"|g ; \
-				 s|[(]datadir[)]/mime;|(prefix)/share/mime;|g ; \
-				 s|[(]datadir[)]/mime$$|(prefix)/share/mime|g ; \
-				 s|[(]datadir[)]/dbus-1|(prefix)/share/dbus-1|g ; \
+				's|[(]libdir[)]/locale|(prefix)/share/locale|g ; \
 				 s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
+				 s|[(]datadir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 				 s|[$$][(]localstatedir[)]/scrollkeeper|${SCROLLKEEPER_DIR}|g ; \
-				 s|[(]datadir[)]/icons/hicolor|(prefix)/share/icons/hicolor|g ; \
-				 s|{datadir}/icons/hicolor|{prefix}/share/icons/hicolor|g ; \
 				 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g' ; \
 			${FIND} ${WRKSRC} -name "configure" -type f | ${XARGS} ${REINPLACE_CMD} -e \
 				's|-lpthread|${PTHREAD_LIBS}|g ; \
 				 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-				 s|{datadir}/locale|{prefix}/share/locale|g ; \
-				 s|DATADIR/dbus-1/services|prefix/share/dbus-1/services|g ; \
-				 s|datadir/dbus-1/services|prefix/share/dbus-1/services|g ; \
 				 s|{libdir}/locale|{prefix}/share/locale|g'
 
 referencehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in" -type f | ${XARGS} ${REINPLACE_CMD} -e \
@@ -109,12 +94,10 @@ GNOME_HTML_DIR?=	${PREFIX}/share/doc
 GCONF_CONFIG_OPTIONS?=	merged
 GCONF_CONFIG_DIRECTORY?=etc/gconf/gconf.xml.defaults
 GCONF_CONFIG_SOURCE?=xml:${GCONF_CONFIG_OPTIONS}:${PREFIX}/${GCONF_CONFIG_DIRECTORY}
-GNOME_LOCALSTATEDIR?=	${PREFIX}/share/gnome
+GNOME_LOCALSTATEDIR?=	${PREFIX}/share
 gnomeprefix_CONFIGURE_ENV=GTKDOC="false"
 gnomeprefix_CONFIGURE_ARGS=--localstatedir=${GNOME_LOCALSTATEDIR} \
-			   --datadir=${PREFIX}/share/gnome \
 			   --with-html-dir=${GNOME_HTML_DIR} \
-			   --with-help-dir=${PREFIX}/share/gnome/help \
 			   --disable-gtk-doc \
 			   --with-gconf-source=${GCONF_CONFIG_SOURCE}
 gnomeprefix_USE_GNOME_IMPL=gnomehier
@@ -322,11 +305,11 @@ gnomevfs2_USE_GNOME_IMPL=gconf2 libbonobo gnomemimedata
 
 gail_LIB_DEPENDS=	gailutil.18:${PORTSDIR}/accessibility/gail
 gail_DETECT=		${LOCALBASE}/libdata/pkgconfig/gail.pc
-gail_USE_GNOME_IMPL=	libgnomecanvas
+gail_USE_GNOME_IMPL=	gtk20
 
 libgnomecanvas_LIB_DEPENDS=	gnomecanvas-2.0:${PORTSDIR}/graphics/libgnomecanvas
 libgnomecanvas_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomecanvas-2.0.pc
-libgnomecanvas_USE_GNOME_IMPL=	libglade2 libartlgpl2
+libgnomecanvas_USE_GNOME_IMPL=	libglade2 libartlgpl2 gail
 
 libartlgpl2_LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl
 libartlgpl2_DETECT=		${LOCALBASE}/libdata/pkgconfig/libart-2.0.pc
@@ -369,7 +352,7 @@ gnomedesktop_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-2.0.pc
 gnomedesktop_USE_GNOME_IMPL=	libgnomeui gnomedocutils
 gnomedesktop_GNOME_DESKTOP_VERSION=2
 
-libwnck_LIB_DEPENDS=	wnck-1.18:${PORTSDIR}/x11-toolkits/libwnck
+libwnck_LIB_DEPENDS=	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck
 libwnck_DETECT=		${LOCALBASE}/libdata/pkgconfig/libwnck-1.0.pc
 libwnck_USE_GNOME_IMPL=	gtk20
 
@@ -426,6 +409,10 @@ libgnomedb_USE_GNOME_IMPL=libgnomeui libgda3
 gtksourceview_LIB_DEPENDS=	gtksourceview-1.0.0:${PORTSDIR}/x11-toolkits/gtksourceview
 gtksourceview_DETECT=	${LOCALBASE}/libdata/pkgconfig/gtksourceview-1.0.pc
 gtksourceview_USE_GNOME_IMPL=libgnome libgnomeprintui
+
+gtksourceview2_LIB_DEPENDS=	gtksourceview-2.0.0:${PORTSDIR}/x11-toolkits/gtksourceview2
+gtksourceview2_DETECT=	${LOCALBASE}/libdata/pkgconfig/gtksourceview-2.0.pc
+gtksourceview2_USE_GNOME_IMPL=gtk20 libxml2
 
 pkgconfig_DETECT=			${LOCALBASE}/bin/pkg-config
 pkgconfig_BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
@@ -517,6 +504,11 @@ gnomesharp20_USE_GNOME_IMPL=	gnomepanel gtkhtml3 gtksharp20 librsvg2 vte
 libgnomekbd_DETECT=			${LOCALBASE}/libdata/pkgconfig/libgnomekbd.pc
 libgnomekbd_LIB_DEPENDS=	gnomekbd.1:${PORTSDIR}/x11/libgnomekbd
 libgnomekbd_USE_GNOME_IMPL=	libgnomeui
+
+pygtksourceview_DETECT=		${LOCALBASE}/libdata/pkgconfig/pygtksourceview-2.0.pc
+pygtksourceview_BUILD_DEPENDS=	${pygtksourceview_DETECT}:${PORTSDIR}/x11-toolkits/py-gtksourceview
+pygtksourceview_RUN_DEPENDS=	${pygtksourceview_DETECT}:${PORTSDIR}/x11-toolkits/py-gtksourceview
+pygtksourceview_USE_GNOME_IMPL=	gtksourceview2 pygtk2
 
 # End component definition section
 

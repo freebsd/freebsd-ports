@@ -1,6 +1,6 @@
 bin/qalculate
 bin/qalculate-gtk
-share/gnome/applications/qalculate-gtk.desktop
+share/applications/qalculate-gtk.desktop
 share/gnome/help/qalculate-gtk/C/appendixa.xml
 share/gnome/help/qalculate-gtk/C/appendixb.xml
 share/gnome/help/qalculate-gtk/C/appendixc.xml
@@ -30,38 +30,39 @@ share/gnome/help/qalculate-gtk/C/figures/unit-manager.png
 share/gnome/help/qalculate-gtk/C/figures/variable-manager.png
 share/gnome/help/qalculate-gtk/C/legal.xml
 share/gnome/help/qalculate-gtk/C/qalculate-gtk.xml
-share/gnome/omf/qalculate-gtk/qalculate-gtk-C.omf
-share/gnome/pixmaps/qalculate.png
-share/gnome/qalculate-gtk/glade/about.glade
-share/gnome/qalculate-gtk/glade/argumentrules.glade
-share/gnome/qalculate-gtk/glade/csvexport.glade
-share/gnome/qalculate-gtk/glade/csvimport.glade
-share/gnome/qalculate-gtk/glade/datasetedit.glade
-share/gnome/qalculate-gtk/glade/datasets.glade
-share/gnome/qalculate-gtk/glade/decimals.glade
-share/gnome/qalculate-gtk/glade/functionedit.glade
-share/gnome/qalculate-gtk/glade/functions.glade
-share/gnome/qalculate-gtk/glade/main.glade
-share/gnome/qalculate-gtk/glade/matrix.glade
-share/gnome/qalculate-gtk/glade/matrixedit.glade
-share/gnome/qalculate-gtk/glade/namesedit.glade
-share/gnome/qalculate-gtk/glade/nbases.glade
-share/gnome/qalculate-gtk/glade/periodictable.glade
-share/gnome/qalculate-gtk/glade/plot.glade
-share/gnome/qalculate-gtk/glade/precision.glade
-share/gnome/qalculate-gtk/glade/preferences.glade
-share/gnome/qalculate-gtk/glade/setbase.glade
-share/gnome/qalculate-gtk/glade/unit.glade
-share/gnome/qalculate-gtk/glade/unitedit.glade
-share/gnome/qalculate-gtk/glade/units.glade
-share/gnome/qalculate-gtk/glade/unknownedit.glade
-share/gnome/qalculate-gtk/glade/variableedit.glade
-share/gnome/qalculate-gtk/glade/variables.glade
+share/omf/qalculate-gtk/qalculate-gtk-C.omf
+share/pixmaps/qalculate.png
+share/qalculate-gtk/glade/about.glade
+share/qalculate-gtk/glade/argumentrules.glade
+share/qalculate-gtk/glade/csvexport.glade
+share/qalculate-gtk/glade/csvimport.glade
+share/qalculate-gtk/glade/datasetedit.glade
+share/qalculate-gtk/glade/datasets.glade
+share/qalculate-gtk/glade/decimals.glade
+share/qalculate-gtk/glade/functionedit.glade
+share/qalculate-gtk/glade/functions.glade
+share/qalculate-gtk/glade/main.glade
+share/qalculate-gtk/glade/matrix.glade
+share/qalculate-gtk/glade/matrixedit.glade
+share/qalculate-gtk/glade/namesedit.glade
+share/qalculate-gtk/glade/nbases.glade
+share/qalculate-gtk/glade/periodictable.glade
+share/qalculate-gtk/glade/plot.glade
+share/qalculate-gtk/glade/precision.glade
+share/qalculate-gtk/glade/preferences.glade
+share/qalculate-gtk/glade/setbase.glade
+share/qalculate-gtk/glade/unit.glade
+share/qalculate-gtk/glade/unitedit.glade
+share/qalculate-gtk/glade/units.glade
+share/qalculate-gtk/glade/unknownedit.glade
+share/qalculate-gtk/glade/variableedit.glade
+share/qalculate-gtk/glade/variables.glade
 share/locale/nl/LC_MESSAGES/qalculate-gtk.mo
 share/locale/sv/LC_MESSAGES/qalculate-gtk.mo
-@dirrm share/gnome/qalculate-gtk/glade
-@dirrm share/gnome/qalculate-gtk
-@dirrm share/gnome/omf/qalculate-gtk
+@dirrm share/qalculate-gtk/glade
+@dirrm share/qalculate-gtk
+@dirrm share/omf/qalculate-gtk
 @dirrm share/gnome/help/qalculate-gtk/C/figures
 @dirrm share/gnome/help/qalculate-gtk/C
 @dirrm share/gnome/help/qalculate-gtk
+@dirrmtry share/applications

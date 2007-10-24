@@ -3,11 +3,11 @@
 # Whom:			Vincent Tantardini <vinc@freebsd-fr.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/astro/glunarclock/Makefile,v 1.5 2007/05/19 21:35:54 marcus Exp $
 
 PORTNAME=	glunarclock
 PORTVERSION=	0.32.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,6 +20,7 @@ LIB_DEPENDS=	xklavier.11:${PORTSDIR}/x11/libxklavier
 USE_XLIB=	yes
 USE_GNOME=	gail gnomehack gnomepanel gnomeprefix gnometarget intlhack
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -30,8 +31,6 @@ PLIST_SUB=	VERSION="${PORTVERSION:R}"
 GCONF_SCHEMAS=	glunarclock.schemas
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|$${prefix}/share|$${datadir}|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-DGNOME_DISABLE_DEPRECATED||g'
 

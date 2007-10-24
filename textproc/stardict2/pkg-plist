@@ -1,6 +1,6 @@
 bin/stardict
 %%GNOME%%libdata/bonobo/servers/GNOME_Stardict.server
-share/gnome/applications/stardict.desktop
+share/applications/stardict.desktop
 %%GNOME%%share/gnome/help/stardict/C/figures/stardict_float_window.png
 %%GNOME%%share/gnome/help/stardict/C/figures/stardict_main_window.png
 %%GNOME%%share/gnome/help/stardict/C/figures/stardict_notification_area.png
@@ -36,24 +36,24 @@ share/gnome/applications/stardict.desktop
 %%GNOME%%share/gnome/help/stardict/zh_TW/figures/stardict_notification_area.png
 %%GNOME%%share/gnome/help/stardict/zh_TW/legal.xml
 %%GNOME%%share/gnome/help/stardict/zh_TW/stardict.xml
-%%GNOME%%share/gnome/idl/GNOME_Stardict.idl
-%%GNOME%%share/gnome/omf/stardict/stardict-C.omf
-%%GNOME%%share/gnome/omf/stardict/stardict-mk.omf
-%%GNOME%%share/gnome/omf/stardict/stardict-nl.omf
-%%GNOME%%share/gnome/omf/stardict/stardict-ru.omf
-%%GNOME%%share/gnome/omf/stardict/stardict-uk.omf
-%%GNOME%%share/gnome/omf/stardict/stardict-zh_CN.omf
-%%GNOME%%share/gnome/omf/stardict/stardict-zh_TW.omf
-share/gnome/pixmaps/stardict.png
-share/gnome/stardict/pixmaps/docklet_normal.png
-share/gnome/stardict/pixmaps/docklet_scan.png
-share/gnome/stardict/pixmaps/docklet_stop.png
-share/gnome/stardict/pixmaps/index_appendix.png
-share/gnome/stardict/pixmaps/index_dictlist.png
-share/gnome/stardict/pixmaps/index_wazard.png
-share/gnome/stardict/pixmaps/splash.png
-share/gnome/stardict/sounds/buttonactive.wav
-share/gnome/stardict/sounds/menushow.wav
+%%GNOME%%share/idl/GNOME_Stardict.idl
+%%GNOME%%share/omf/stardict/stardict-C.omf
+%%GNOME%%share/omf/stardict/stardict-mk.omf
+%%GNOME%%share/omf/stardict/stardict-nl.omf
+%%GNOME%%share/omf/stardict/stardict-ru.omf
+%%GNOME%%share/omf/stardict/stardict-uk.omf
+%%GNOME%%share/omf/stardict/stardict-zh_CN.omf
+%%GNOME%%share/omf/stardict/stardict-zh_TW.omf
+share/pixmaps/stardict.png
+share/stardict/pixmaps/docklet_normal.png
+share/stardict/pixmaps/docklet_scan.png
+share/stardict/pixmaps/docklet_stop.png
+share/stardict/pixmaps/index_appendix.png
+share/stardict/pixmaps/index_dictlist.png
+share/stardict/pixmaps/index_wazard.png
+share/stardict/pixmaps/splash.png
+share/stardict/sounds/buttonactive.wav
+share/stardict/sounds/menushow.wav
 share/locale/cs/LC_MESSAGES/stardict.mo
 share/locale/de/LC_MESSAGES/stardict.mo
 share/locale/el/LC_MESSAGES/stardict.mo
@@ -73,10 +73,10 @@ share/locale/zh_CN/LC_MESSAGES/stardict.mo
 share/locale/zh_TW/LC_MESSAGES/stardict.mo
 @dirrmtry share/locale/tt/LC_MESSAGES
 @dirrmtry share/locale/tt
-@dirrm share/gnome/stardict/sounds
-@dirrm share/gnome/stardict/pixmaps
-@dirrmtry share/gnome/stardict
-%%GNOME%%@dirrm share/gnome/omf/stardict
+@dirrm share/stardict/sounds
+@dirrm share/stardict/pixmaps
+@dirrmtry share/stardict
+%%GNOME%%@dirrm share/omf/stardict
 %%GNOME%%@dirrm share/gnome/help/stardict/zh_TW/figures
 %%GNOME%%@dirrm share/gnome/help/stardict/zh_TW
 %%GNOME%%@dirrm share/gnome/help/stardict/zh_CN/figures
@@ -92,3 +92,4 @@ share/locale/zh_TW/LC_MESSAGES/stardict.mo
 %%GNOME%%@dirrm share/gnome/help/stardict/C/figures
 %%GNOME%%@dirrm share/gnome/help/stardict/C
 %%GNOME%%@dirrm share/gnome/help/stardict
+@dirrmtry share/applications

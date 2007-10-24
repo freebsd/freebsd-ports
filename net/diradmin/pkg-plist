@@ -1,23 +1,23 @@
 bin/directory_administrator
 share/applications/dragonfear-directory_administrator.desktop
-share/gnome/pixmaps/directory_administrator/briefcase.png
-share/gnome/pixmaps/directory_administrator/byruddo.png
-share/gnome/pixmaps/directory_administrator/cellphone.png
-share/gnome/pixmaps/directory_administrator/diradminlogo.ico
-share/gnome/pixmaps/directory_administrator/diradminlogo.png
-share/gnome/pixmaps/directory_administrator/diradminlogo.xcf
-share/gnome/pixmaps/directory_administrator/gnome-computer.png
-share/gnome/pixmaps/directory_administrator/gnome-gnomecard.png
-share/gnome/pixmaps/directory_administrator/gnome-who.png
-share/gnome/pixmaps/directory_administrator/group-icon.xpm
-share/gnome/pixmaps/directory_administrator/house.png
-share/gnome/pixmaps/directory_administrator/ico-mail.png
-share/gnome/pixmaps/directory_administrator/new-16.xpm
-share/gnome/pixmaps/directory_administrator/new.xpm
-share/gnome/pixmaps/directory_administrator/newgroup-16.xpm
-share/gnome/pixmaps/directory_administrator/newgroup.xpm
-share/gnome/pixmaps/directory_administrator/old-group-icon.xpm
-share/gnome/pixmaps/directory_administrator/old-user-icon.xpm
-share/gnome/pixmaps/directory_administrator/user-icon.xpm
-@dirrm share/gnome/pixmaps/directory_administrator
+share/pixmaps/directory_administrator/briefcase.png
+share/pixmaps/directory_administrator/byruddo.png
+share/pixmaps/directory_administrator/cellphone.png
+share/pixmaps/directory_administrator/diradminlogo.ico
+share/pixmaps/directory_administrator/diradminlogo.png
+share/pixmaps/directory_administrator/diradminlogo.xcf
+share/pixmaps/directory_administrator/gnome-computer.png
+share/pixmaps/directory_administrator/gnome-gnomecard.png
+share/pixmaps/directory_administrator/gnome-who.png
+share/pixmaps/directory_administrator/group-icon.xpm
+share/pixmaps/directory_administrator/house.png
+share/pixmaps/directory_administrator/ico-mail.png
+share/pixmaps/directory_administrator/new-16.xpm
+share/pixmaps/directory_administrator/new.xpm
+share/pixmaps/directory_administrator/newgroup-16.xpm
+share/pixmaps/directory_administrator/newgroup.xpm
+share/pixmaps/directory_administrator/old-group-icon.xpm
+share/pixmaps/directory_administrator/old-user-icon.xpm
+share/pixmaps/directory_administrator/user-icon.xpm
+@dirrm share/pixmaps/directory_administrator
 @dirrmtry share/applications

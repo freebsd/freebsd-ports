@@ -7,7 +7,7 @@
 
 PORTNAME=	scigraphica
 PORTVERSION=	0.8.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	math gnome
 MASTER_SITES=	http://scigraphica.sourceforge.net/src/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -37,12 +37,9 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 post-install:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/gnome/scigraphica
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/gnome/scigraphica
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/scigraphica
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/scigraphica
 
 .include <bsd.port.post.mk>

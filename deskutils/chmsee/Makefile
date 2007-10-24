@@ -7,7 +7,7 @@
 
 PORTNAME=	chmsee
 PORTVERSION=	0.9.6
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://chmsee.gro.clinux.org/
 

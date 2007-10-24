@@ -1,7 +1,7 @@
 bin/guikachu
 bin/guikachu2rcp
-share/gnome/application-registry/guikachu.applications
-share/gnome/applications/guikachu.desktop
+share/application-registry/guikachu.applications
+share/applications/guikachu.desktop
 share/gnome/help/guikachu/C/bitmaps.html
 share/gnome/help/guikachu/C/form-editor.html
 share/gnome/help/guikachu/C/guikachu-doc-html.css
@@ -34,9 +34,9 @@ share/gnome/help/guikachu/C/resource-win.html
 share/gnome/help/guikachu/C/resources.html
 share/gnome/help/guikachu/C/using.html
 share/gnome/help/guikachu/C/widgets.html
-share/gnome/pixmaps/guikachu-96.png
-share/gnome/pixmaps/guikachu-application-x-guikachu-96.png
-share/gnome/pixmaps/guikachu.png
+share/pixmaps/guikachu-96.png
+share/pixmaps/guikachu-application-x-guikachu-96.png
+share/pixmaps/guikachu.png
 share/locale/az/LC_MESSAGES/guikachu.mo
 share/locale/ca/LC_MESSAGES/guikachu.mo
 share/locale/cs/LC_MESSAGES/guikachu.mo
@@ -67,3 +67,4 @@ share/mime/packages/guikachu.mime.xml
 @dirrm share/gnome/help/guikachu
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@dirrmtry share/applications

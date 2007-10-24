@@ -8,7 +8,7 @@
 
 PORTNAME=	truevision
 PORTVERSION=	0.5.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -43,9 +43,7 @@ post-patch:
 		 s|-I/usr/local/include/gtkglext-1.0/||g ; \
 		 s|-I/usr/lib/gtkglext-1.0/include/||g ; \
 		 s|-I/usr/local/lib/gtkglext-1.0/include/||g ; \
-		 s|-I/usr/local/include ||g ; \
-		 s|=share$$|=share/gnome|g ; \
-		 s|=share/pixmap|=share/gnome/pixmap|g' ${WRKSRC}/configure
+		 s|-I/usr/local/include ||g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-I/usr/include||g ; \
 		 s|-I/usr/local/include||g ; \
@@ -54,8 +52,6 @@ post-patch:
 		 s|-L/usr/local/lib||g ; \
 		 s|-L/usr/X11R6/lib||g ; \
 		 s|-O2||g ; \
-		 s|share/application|share/gnome/application|g ; \
-		 s|share/mime-info|share/gnome/mime-info|g ; \
 		 s|^truevisiondoc|#truevisiondoc|g'
 
 .include <bsd.port.mk>

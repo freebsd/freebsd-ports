@@ -118,25 +118,12 @@ share/gnome/help/gnome-db/pt_BR/manager.html
 share/gnome/help/gnome-db/pt_BR/topic.dat
 share/gnome/help/gnome-db/pt_BR/widgetlib-overview.html
 share/gnome/help/gnome-db/pt_BR/widgetlib.html
-share/gnome/idl/GNOME_Database_UI.idl
-share/gnome/oaf/GNOME_DB_Builder.oaf
-share/gnome/oaf/GNOME_DB_ComponentFactory.oaf
-share/gnome/oaf/GNOME_DB_Connection.oaf
-share/gnome/oaf/GNOME_DB_Designer.oaf
-share/gnome/oaf/GNOME_DB_Export.oaf
-share/gnome/oaf/GNOME_DB_Log.oaf
-share/gnome/oaf/GNOME_DB_Manager.oaf
-share/gnome/oaf/GNOME_DB_Monikers.oaf
-share/gnome/omf/gnome-db/gnome-db-C.omf
-share/gnome/omf/gnome-db/gnome-db-es.omf
-share/gnome/omf/gnome-db/gnome-db-it.omf
-share/gnome/omf/gnome-db/gnome-db-pt_BR.omf
-share/gnome/pixmaps/gnome-db.png
 share/gnome/ui/gnomedb-com-connection.xml
 share/gnome/ui/gnomedb-com-designer.xml
 share/gnome/ui/gnomedb-com-log.xml
 share/gnome/ui/gnomedb-fe.xml
 share/gnome/ui/gnomedb-manager.xml
+share/idl/GNOME_Database_UI.idl
 share/locale/az/LC_MESSAGES/gnome-db.mo
 share/locale/ca/LC_MESSAGES/gnome-db.mo
 share/locale/da/LC_MESSAGES/gnome-db.mo
@@ -164,7 +151,20 @@ share/locale/sv/LC_MESSAGES/gnome-db.mo
 share/locale/tr/LC_MESSAGES/gnome-db.mo
 share/locale/uk/LC_MESSAGES/gnome-db.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-db.mo
-@dirrm share/gnome/omf/gnome-db
+share/oaf/GNOME_DB_Builder.oaf
+share/oaf/GNOME_DB_ComponentFactory.oaf
+share/oaf/GNOME_DB_Connection.oaf
+share/oaf/GNOME_DB_Designer.oaf
+share/oaf/GNOME_DB_Export.oaf
+share/oaf/GNOME_DB_Log.oaf
+share/oaf/GNOME_DB_Manager.oaf
+share/oaf/GNOME_DB_Monikers.oaf
+share/omf/gnome-db/gnome-db-C.omf
+share/omf/gnome-db/gnome-db-es.omf
+share/omf/gnome-db/gnome-db-it.omf
+share/omf/gnome-db/gnome-db-pt_BR.omf
+share/pixmaps/gnome-db.png
+@dirrm share/omf/gnome-db
 @dirrm share/gnome/help/gnome-db/pt_BR/images
 @dirrm share/gnome/help/gnome-db/pt_BR
 @dirrm share/gnome/help/gnome-db/it/images

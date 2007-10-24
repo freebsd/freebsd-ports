@@ -48,7 +48,7 @@ libdata/pkgconfig/libplanner-1.pc
 %%DOCSDIR%%/README.sql
 %%DOCSDIR%%/kitchen.planner
 %%DOCSDIR%%/sample-1.planner
-share/gnome/applications/planner.desktop
+share/applications/planner.desktop
 share/gnome/help/planner/C/figures/calendar-new.png
 share/gnome/help/planner/C/figures/calendar-week.png
 share/gnome/help/planner/C/figures/calendar-working-time.png
@@ -143,64 +143,64 @@ share/gnome/help/planner/eu/figures/task-up.png
 share/gnome/help/planner/eu/figures/task-view.png
 share/gnome/help/planner/eu/legal.xml
 share/gnome/help/planner/eu/planner.xml
-share/gnome/omf/planner/planner-C.omf
-share/gnome/omf/planner/planner-eu.omf
-share/gnome/pixmaps/gnome-planner.png
-share/gnome/planner/dtd/mrproject-0.5.1.dtd
-share/gnome/planner/dtd/mrproject-0.6.dtd
-share/gnome/planner/glade/add-predecessor.glade
-share/gnome/planner/glade/calendar-dialog.glade
-share/gnome/planner/glade/column-dialog.glade
-share/gnome/planner/glade/eds.glade
-share/gnome/planner/glade/group-dialog.glade
-share/gnome/planner/glade/new-property.glade
-share/gnome/planner/glade/project-properties.glade
-share/gnome/planner/glade/property-dialog.glade
-share/gnome/planner/glade/resource-dialog.glade
-share/gnome/planner/glade/resource-input-dialog.glade
-share/gnome/planner/glade/sql.glade
-share/gnome/planner/glade/task-date-widget.glade
-share/gnome/planner/glade/task-dialog.glade
-share/gnome/planner/glade/task-input-dialog.glade
-share/gnome/planner/images/24_edit_resource.png
-share/gnome/planner/images/24_groups.png
-share/gnome/planner/images/24_indent_task.png
-share/gnome/planner/images/24_insert_resource.png
-share/gnome/planner/images/24_insert_task.png
-share/gnome/planner/images/24_link_task.png
-share/gnome/planner/images/24_remove_resource.png
-share/gnome/planner/images/24_remove_task.png
-share/gnome/planner/images/24_task_down.png
-share/gnome/planner/images/24_task_up.png
-share/gnome/planner/images/24_unindent_task.png
-share/gnome/planner/images/24_unlink_task.png
-share/gnome/planner/images/gantt.png
-share/gnome/planner/images/gnome-planner.png
-share/gnome/planner/images/resources.png
-share/gnome/planner/images/resources_usage.png
-share/gnome/planner/images/tasks.png
-share/gnome/planner/sql/database-0.11.sql
-share/gnome/planner/sql/database-0.13.sql
-share/gnome/planner/sql/upgrade-0.11-0.13.sql
-share/gnome/planner/sql/database.sql
-share/gnome/planner/sql/upgrade-0.6.x-0.11.sql
-share/gnome/planner/stylesheets/html1_css.xsl
-share/gnome/planner/stylesheets/html1_gantt.xsl
-share/gnome/planner/stylesheets/html1_resources.xsl
-share/gnome/planner/stylesheets/html1_tasks.xsl
-share/gnome/planner/stylesheets/msp2planner.xsl
-share/gnome/planner/stylesheets/planner2html.xsl
-share/gnome/planner/stylesheets/planner2plannerv011.xsl
-share/gnome/planner/ui/eds-plugin.ui
-share/gnome/planner/ui/gantt-view.ui
-share/gnome/planner/ui/html-plugin.ui
-share/gnome/planner/ui/main-window.ui
-share/gnome/planner/ui/msp-plugin.ui
-share/gnome/planner/ui/resource-view.ui
-share/gnome/planner/ui/sql-plugin.ui
-share/gnome/planner/ui/task-view.ui
-share/gnome/planner/ui/time-table-view.ui
-share/gnome/planner/ui/xml-planner-plugin.ui
+share/omf/planner/planner-C.omf
+share/omf/planner/planner-eu.omf
+share/pixmaps/gnome-planner.png
+share/planner/dtd/mrproject-0.5.1.dtd
+share/planner/dtd/mrproject-0.6.dtd
+share/planner/glade/add-predecessor.glade
+share/planner/glade/calendar-dialog.glade
+share/planner/glade/column-dialog.glade
+share/planner/glade/eds.glade
+share/planner/glade/group-dialog.glade
+share/planner/glade/new-property.glade
+share/planner/glade/project-properties.glade
+share/planner/glade/property-dialog.glade
+share/planner/glade/resource-dialog.glade
+share/planner/glade/resource-input-dialog.glade
+share/planner/glade/sql.glade
+share/planner/glade/task-date-widget.glade
+share/planner/glade/task-dialog.glade
+share/planner/glade/task-input-dialog.glade
+share/planner/images/24_edit_resource.png
+share/planner/images/24_groups.png
+share/planner/images/24_indent_task.png
+share/planner/images/24_insert_resource.png
+share/planner/images/24_insert_task.png
+share/planner/images/24_link_task.png
+share/planner/images/24_remove_resource.png
+share/planner/images/24_remove_task.png
+share/planner/images/24_task_down.png
+share/planner/images/24_task_up.png
+share/planner/images/24_unindent_task.png
+share/planner/images/24_unlink_task.png
+share/planner/images/gantt.png
+share/planner/images/gnome-planner.png
+share/planner/images/resources.png
+share/planner/images/resources_usage.png
+share/planner/images/tasks.png
+share/planner/sql/database-0.11.sql
+share/planner/sql/database-0.13.sql
+share/planner/sql/upgrade-0.11-0.13.sql
+share/planner/sql/database.sql
+share/planner/sql/upgrade-0.6.x-0.11.sql
+share/planner/stylesheets/html1_css.xsl
+share/planner/stylesheets/html1_gantt.xsl
+share/planner/stylesheets/html1_resources.xsl
+share/planner/stylesheets/html1_tasks.xsl
+share/planner/stylesheets/msp2planner.xsl
+share/planner/stylesheets/planner2html.xsl
+share/planner/stylesheets/planner2plannerv011.xsl
+share/planner/ui/eds-plugin.ui
+share/planner/ui/gantt-view.ui
+share/planner/ui/html-plugin.ui
+share/planner/ui/main-window.ui
+share/planner/ui/msp-plugin.ui
+share/planner/ui/resource-view.ui
+share/planner/ui/sql-plugin.ui
+share/planner/ui/task-view.ui
+share/planner/ui/time-table-view.ui
+share/planner/ui/xml-planner-plugin.ui
 share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-planner.png
 share/locale/ar/LC_MESSAGES/planner.mo
 share/locale/am/LC_MESSAGES/planner.mo
@@ -255,18 +255,14 @@ share/locale/zh_CN/LC_MESSAGES/planner.mo
 share/locale/zh_TW/LC_MESSAGES/planner.mo
 share/mime/application/x-planner.xml
 share/mime/packages/planner.xml
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrm share/gnome/planner/ui
-@dirrm share/gnome/planner/stylesheets
-@dirrm share/gnome/planner/sql
-@dirrm share/gnome/planner/images
-@dirrm share/gnome/planner/glade
-@dirrm share/gnome/planner/dtd
-@dirrm share/gnome/planner
-@dirrm share/gnome/omf/planner
+@dirrm share/planner/ui
+@dirrm share/planner/stylesheets
+@dirrm share/planner/sql
+@dirrm share/planner/images
+@dirrm share/planner/glade
+@dirrm share/planner/dtd
+@dirrm share/planner
+@dirrm share/omf/planner
 @dirrm share/gnome/help/planner/eu/figures
 @dirrm share/gnome/help/planner/eu
 @dirrm share/gnome/help/planner/C/figures
@@ -284,3 +280,8 @@ share/mime/packages/planner.xml
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/applications

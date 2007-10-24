@@ -4,7 +4,7 @@ bin/ekiga-config-tool
 libdata/bonobo/servers/ekiga.server
 %%DBUS:%%share/dbus-1/services/net.ekiga.helper.service
 %%DBUS:%%share/dbus-1/services/net.ekiga.instance.service
-share/gnome/applications/ekiga.desktop
+share/applications/ekiga.desktop
 share/gnome/help/ekiga/C/ekiga.xml
 share/gnome/help/ekiga/C/figures/accounts_d1.png
 share/gnome/help/ekiga/C/figures/accounts_h323.png
@@ -24,6 +24,25 @@ share/gnome/help/ekiga/C/figures/config_d8.png
 share/gnome/help/ekiga/C/figures/config_d9.png
 share/gnome/help/ekiga/C/figures/lumi.png
 share/gnome/help/ekiga/C/figures/stats.png
+share/gnome/help/ekiga/pt_BR/ekiga.xml
+share/gnome/help/ekiga/pt_BR/figures/accounts_d1.png
+share/gnome/help/ekiga/pt_BR/figures/accounts_h323.png
+share/gnome/help/ekiga/pt_BR/figures/accounts_sip.png
+share/gnome/help/ekiga/pt_BR/figures/audio_codecs.png
+share/gnome/help/ekiga/pt_BR/figures/call_d1.png
+share/gnome/help/ekiga/pt_BR/figures/chat_d1.png
+share/gnome/help/ekiga/pt_BR/figures/config_d1.png
+share/gnome/help/ekiga/pt_BR/figures/config_d10.png
+share/gnome/help/ekiga/pt_BR/figures/config_d2.png
+share/gnome/help/ekiga/pt_BR/figures/config_d3.png
+share/gnome/help/ekiga/pt_BR/figures/config_d4.png
+share/gnome/help/ekiga/pt_BR/figures/config_d5.png
+share/gnome/help/ekiga/pt_BR/figures/config_d6.png
+share/gnome/help/ekiga/pt_BR/figures/config_d7.png
+share/gnome/help/ekiga/pt_BR/figures/config_d8.png
+share/gnome/help/ekiga/pt_BR/figures/config_d9.png
+share/gnome/help/ekiga/pt_BR/figures/lumi.png
+share/gnome/help/ekiga/pt_BR/figures/stats.png
 share/gnome/help/ekiga/bg/ekiga.xml
 share/gnome/help/ekiga/bg/figures/accounts_d1.png
 share/gnome/help/ekiga/bg/figures/accounts_h323.png
@@ -100,25 +119,6 @@ share/gnome/help/ekiga/fr/figures/config_d8.png
 share/gnome/help/ekiga/fr/figures/config_d9.png
 share/gnome/help/ekiga/fr/figures/lumi.png
 share/gnome/help/ekiga/fr/figures/stats.png
-share/gnome/help/ekiga/pt_BR/ekiga.xml
-share/gnome/help/ekiga/pt_BR/figures/accounts_d1.png
-share/gnome/help/ekiga/pt_BR/figures/accounts_h323.png
-share/gnome/help/ekiga/pt_BR/figures/accounts_sip.png
-share/gnome/help/ekiga/pt_BR/figures/audio_codecs.png
-share/gnome/help/ekiga/pt_BR/figures/call_d1.png
-share/gnome/help/ekiga/pt_BR/figures/chat_d1.png
-share/gnome/help/ekiga/pt_BR/figures/config_d1.png
-share/gnome/help/ekiga/pt_BR/figures/config_d10.png
-share/gnome/help/ekiga/pt_BR/figures/config_d2.png
-share/gnome/help/ekiga/pt_BR/figures/config_d3.png
-share/gnome/help/ekiga/pt_BR/figures/config_d4.png
-share/gnome/help/ekiga/pt_BR/figures/config_d5.png
-share/gnome/help/ekiga/pt_BR/figures/config_d6.png
-share/gnome/help/ekiga/pt_BR/figures/config_d7.png
-share/gnome/help/ekiga/pt_BR/figures/config_d8.png
-share/gnome/help/ekiga/pt_BR/figures/config_d9.png
-share/gnome/help/ekiga/pt_BR/figures/lumi.png
-share/gnome/help/ekiga/pt_BR/figures/stats.png
 share/gnome/help/ekiga/sv/ekiga.xml
 share/gnome/help/ekiga/sv/figures/accounts_d1.png
 share/gnome/help/ekiga/sv/figures/accounts_h323.png
@@ -157,22 +157,22 @@ share/gnome/help/ekiga/uk/figures/config_d8.png
 share/gnome/help/ekiga/uk/figures/config_d9.png
 share/gnome/help/ekiga/uk/figures/lumi.png
 share/gnome/help/ekiga/uk/figures/stats.png
-share/gnome/omf/ekiga/ekiga-C.omf
-share/gnome/omf/ekiga/ekiga-bg.omf
-share/gnome/omf/ekiga/ekiga-de.omf
-share/gnome/omf/ekiga/ekiga-es.omf
-share/gnome/omf/ekiga/ekiga-fr.omf
-share/gnome/omf/ekiga/ekiga-pt_BR.omf
-share/gnome/omf/ekiga/ekiga-sv.omf
-share/gnome/omf/ekiga/ekiga-uk.omf
-share/gnome/pixmaps/ekiga.png
-share/gnome/pixmaps/ekiga/ekiga-logo.png
-share/gnome/pixmaps/ekiga/ekiga.png
-share/gnome/sounds/ekiga/busytone.wav
-share/gnome/sounds/ekiga/dialtone.wav
-share/gnome/sounds/ekiga/newmessage.wav
-share/gnome/sounds/ekiga/ring.wav
-share/gnome/sounds/ekiga/voicemail.wav
+share/omf/ekiga/ekiga-C.omf
+share/omf/ekiga/ekiga-bg.omf
+share/omf/ekiga/ekiga-de.omf
+share/omf/ekiga/ekiga-es.omf
+share/omf/ekiga/ekiga-fr.omf
+share/omf/ekiga/ekiga-pt_BR.omf
+share/omf/ekiga/ekiga-sv.omf
+share/omf/ekiga/ekiga-uk.omf
+share/pixmaps/ekiga.png
+share/pixmaps/ekiga/ekiga-logo.png
+share/pixmaps/ekiga/ekiga.png
+share/sounds/ekiga/busytone.wav
+share/sounds/ekiga/dialtone.wav
+share/sounds/ekiga/newmessage.wav
+share/sounds/ekiga/ring.wav
+share/sounds/ekiga/voicemail.wav
 share/locale/am/LC_MESSAGES/ekiga.mo
 share/locale/ar/LC_MESSAGES/ekiga.mo
 share/locale/az/LC_MESSAGES/ekiga.mo
@@ -244,9 +244,9 @@ share/locale/xh/LC_MESSAGES/ekiga.mo
 share/locale/zh_CN/LC_MESSAGES/ekiga.mo
 share/locale/zh_HK/LC_MESSAGES/ekiga.mo
 share/locale/zh_TW/LC_MESSAGES/ekiga.mo
-@dirrm share/gnome/sounds/ekiga
-@dirrm share/gnome/pixmaps/ekiga
-@dirrm share/gnome/omf/ekiga
+@dirrm share/sounds/ekiga
+@dirrm share/pixmaps/ekiga
+@dirrm share/omf/ekiga
 @dirrm share/gnome/help/ekiga/uk/figures
 @dirrm share/gnome/help/ekiga/uk
 @dirrm share/gnome/help/ekiga/sv/figures
@@ -278,3 +278,4 @@ share/locale/zh_TW/LC_MESSAGES/ekiga.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/applications

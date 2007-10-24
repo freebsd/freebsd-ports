@@ -7,7 +7,7 @@
 
 PORTNAME=	gupsc
 PORTVERSION=	0.3.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://heim.ifi.uio.no/~hennikul/gupsc/download/
 
@@ -27,8 +27,5 @@ pre-patch:
 		 s|/usr/local|${PREFIX}|; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure \
 		${WRKSRC}/src/Makefile.in
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

@@ -1,0 +1,16 @@
+bin/avahi-discover-standalone
+bin/bssh
+bin/bvnc
+include/avahi-ui/avahi-ui.h
+lib/libavahi-ui.a
+lib/libavahi-ui.la
+lib/libavahi-ui.so
+lib/libavahi-ui.so.0
+libdata/pkgconfig/avahi-ui.pc
+share/applications/bssh.desktop
+share/applications/bvnc.desktop
+%%DATADIR%%/interfaces/avahi-discover.glade
+@dirrm %%DATADIR%%/interfaces
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrm include/avahi-ui

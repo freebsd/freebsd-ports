@@ -41,8 +41,8 @@ lib/f-spot/extensions/DefaultExporters.addin.xml
 libdata/pkgconfig/f-spot.pc
 libexec/gnome-screensaver/f-spot-screensaver
 share/gnome-screensaver/themes/f-spot-screensaver.desktop
-share/gnome/applications/f-spot-view.desktop
-share/gnome/applications/f-spot.desktop
+share/applications/f-spot-view.desktop
+share/applications/f-spot.desktop
 share/gnome/help/f-spot/C/f-spot.xml
 share/gnome/help/f-spot/C/figures/f-spot-adjust-colors.png
 share/gnome/help/f-spot/C/figures/f-spot-autocolor.png
@@ -120,13 +120,13 @@ share/gnome/help/f-spot/sv/figures/f-spot-sepia.png
 share/gnome/help/f-spot/sv/figures/f-spot-slideshow.png
 share/gnome/help/f-spot/sv/figures/f-spot-soft-focus.png
 share/gnome/help/f-spot/sv/figures/f-spot-straighten.png
-share/gnome/omf/f-spot/f-spot-C.omf
-share/gnome/omf/f-spot/f-spot-da.omf
-share/gnome/omf/f-spot/f-spot-es.omf
-share/gnome/omf/f-spot/f-spot-fr.omf
-share/gnome/omf/f-spot/f-spot-it.omf
-share/gnome/omf/f-spot/f-spot-pt_BR.omf
-share/gnome/omf/f-spot/f-spot-sv.omf
+share/omf/f-spot/f-spot-C.omf
+share/omf/f-spot/f-spot-da.omf
+share/omf/f-spot/f-spot-es.omf
+share/omf/f-spot/f-spot-fr.omf
+share/omf/f-spot/f-spot-it.omf
+share/omf/f-spot/f-spot-pt_BR.omf
+share/omf/f-spot/f-spot-sv.omf
 share/icons/hicolor/16x16/apps/f-spot.png
 share/icons/hicolor/16x16/apps/f-spot.svg
 share/icons/hicolor/22x22/apps/f-spot.png
@@ -179,7 +179,7 @@ share/locale/zh_TW/LC_MESSAGES/f-spot.mo
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
-@dirrm share/gnome/omf/f-spot
+@dirrm share/omf/f-spot
 @dirrm share/gnome/help/f-spot/sv/figures
 @dirrm share/gnome/help/f-spot/sv
 @dirrm share/gnome/help/f-spot/pt_BR/figures
@@ -200,3 +200,4 @@ share/locale/zh_TW/LC_MESSAGES/f-spot.mo
 @dirrmtry libexec/gnome-screensaver
 @dirrm lib/f-spot/extensions
 @dirrm lib/f-spot
+@dirrmtry share/applications

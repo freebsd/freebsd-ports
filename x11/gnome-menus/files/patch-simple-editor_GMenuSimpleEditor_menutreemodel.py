@@ -14,7 +14,7 @@
          data_dirs = os.environ["XDG_DATA_DIRS"]
      if not data_dirs:
 -        data_dirs = "/usr/local/share/:/usr/share/"
-+	data_dirs = "%%LOCALBASE%%/share/gnome/:%%LOCALBASE%%/share/:/usr/share/"
++	data_dirs = "%%LOCALBASE%%/share/"
  
      for data_dir in data_dirs.split (":"):
          retval = load_icon_from_path (os.path.join (data_dir, "pixmaps", icon_value))

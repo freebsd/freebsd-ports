@@ -1,12 +1,12 @@
 @comment $FreeBSD$
 bin/winefish
-share/gnome/application-registry/winefish.applications
-share/gnome/applications/winefish.desktop
-share/gnome/applications/winefish-project.desktop
-share/gnome/mime-info/winefish.mime
-share/gnome/mime-info/winefish.keys
-share/gnome/pixmaps/gnome-application-winefish-project.png
-share/gnome/pixmaps/winefish-icon.png
+share/application-registry/winefish.applications
+share/applications/winefish.desktop
+share/applications/winefish-project.desktop
+share/mime-info/winefish.mime
+share/mime-info/winefish.keys
+share/pixmaps/gnome-application-winefish-project.png
+share/pixmaps/winefish-icon.png
 %%IFNLS%%share/locale/fr/LC_MESSAGES/winefish.mo
 %%IFNLS%%share/locale/it/LC_MESSAGES/winefish.mo
 %%IFNLS%%share/locale/vi/LC_MESSAGES/winefish.mo
@@ -31,3 +31,4 @@ share/mime/packages/winefish.xml
 @dirrm %%DATADIR%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/applications

@@ -26,10 +26,8 @@ lib/liboaf.la
 lib/liboaf.so
 lib/liboaf.so.0
 share/aclocal/oaf.m4
-share/gnome/idl/oaf-factory.idl
-share/gnome/idl/oaf.idl
-share/gnome/oaf/OAF_naming-service.oaf
-share/gnome/oaf/empty.oafinfo
+share/idl/oaf-factory.idl
+share/idl/oaf.idl
 share/locale/az/LC_MESSAGES/oaf.mo
 share/locale/bg/LC_MESSAGES/oaf.mo
 share/locale/da/LC_MESSAGES/oaf.mo
@@ -61,6 +59,8 @@ share/locale/tr/LC_MESSAGES/oaf.mo
 share/locale/uk/LC_MESSAGES/oaf.mo
 share/locale/zh_CN/LC_MESSAGES/oaf.mo
 share/locale/zh_TW/LC_MESSAGES/oaf.mo
+%%DATADIR%%/OAF_naming-service.oaf
+%%DATADIR%%/empty.oafinfo
 @dirrm include/liboaf
 @dirrm etc/oaf
 @unexec ps gx | grep '[0-9]:[0-9][0-9]\.[0-9][0-9] oafd --ac-activate' | awk '{print $1}' | xargs kill 2>/dev/null || true

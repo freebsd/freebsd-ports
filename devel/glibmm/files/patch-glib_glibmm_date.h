@@ -1,19 +1,17 @@
---- glib/glibmm/date.h.orig	Sun Apr 22 12:29:49 2007
-+++ glib/glibmm/date.h	Sun Apr 22 12:30:39 2007
-@@ -121,7 +121,7 @@
- 
+--- glib/glibmm/date.h.orig	Sun May  6 00:22:03 2007
++++ glib/glibmm/date.h	Sun May  6 00:22:31 2007
+@@ -120,6 +120,7 @@ enum DMY
+   void set_parse (const Glib::ustring& str);
  
    #ifndef GLIBMM_DISABLE_DEPRECATED
--
 +#if GLIB_SIZEOF_LONG != 4 && !defined(__alpha__)
-   
-   //Avoid a build problem in the case that time_t is equivalent to guint32 (GTime is also guint32)
-   //That would make the set_time() method overload impossible.
-@@ -134,7 +134,7 @@
+ 
+   /** Sets the value of a date from a GTime (time_t) value. 
+    *
+@@ -128,6 +129,7 @@ enum DMY
+    * @deprecated Please use set_time(time_t) or set_time(const GTimeVal&).
     */
    void set_time(GTime time);
-   #endif //GLIBMM_HAVE_C_STD_TIME_T_IS_NOT_INT32
--
 +#endif
    #endif // GLIBMM_DISABLE_DEPRECATED
  

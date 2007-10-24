@@ -1,51 +1,51 @@
-share/gnome/themes/Gray-Flat/metacity-1/button-close-focused.png
-share/gnome/themes/Gray-Flat/metacity-1/button-close-pressed.png
-share/gnome/themes/Gray-Flat/metacity-1/button-close-unfocused.png
-share/gnome/themes/Gray-Flat/metacity-1/button-maximize-focused.png
-share/gnome/themes/Gray-Flat/metacity-1/button-maximize-pressed.png
-share/gnome/themes/Gray-Flat/metacity-1/button-maximize-unfocused.png
-share/gnome/themes/Gray-Flat/metacity-1/button-menu-focused.png
-share/gnome/themes/Gray-Flat/metacity-1/button-menu-pressed.png
-share/gnome/themes/Gray-Flat/metacity-1/button-menu-unfocused.png
-share/gnome/themes/Gray-Flat/metacity-1/button-minimize-focused.png
-share/gnome/themes/Gray-Flat/metacity-1/button-minimize-pressed.png
-share/gnome/themes/Gray-Flat/metacity-1/button-minimize-unfocused.png
-share/gnome/themes/Gray-Flat/metacity-1/frame-bottom-left-focused.png
-share/gnome/themes/Gray-Flat/metacity-1/frame-bottom-mid-focused.png
-share/gnome/themes/Gray-Flat/metacity-1/frame-bottom-right-focused.png
-share/gnome/themes/Gray-Flat/metacity-1/frame-left-focused.png
-share/gnome/themes/Gray-Flat/metacity-1/frame-right-focused.png
-share/gnome/themes/Gray-Flat/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Gray-Flat/metacity-1/titlebar-left-focused.png
-share/gnome/themes/Gray-Flat/metacity-1/titlebar-left-shaded-focused.png
-share/gnome/themes/Gray-Flat/metacity-1/titlebar-mid-focused.png
-share/gnome/themes/Gray-Flat/metacity-1/titlebar-mid-shaded-focused.png
-share/gnome/themes/Gray-Flat/metacity-1/titlebar-right-focused.png
-share/gnome/themes/Gray-Flat/metacity-1/titlebar-right-shaded-focused.png
-share/gnome/themes/Gray/metacity-1/button-close-focused.png
-share/gnome/themes/Gray/metacity-1/button-close-pressed.png
-share/gnome/themes/Gray/metacity-1/button-close-unfocused.png
-share/gnome/themes/Gray/metacity-1/button-maximize-focused.png
-share/gnome/themes/Gray/metacity-1/button-maximize-pressed.png
-share/gnome/themes/Gray/metacity-1/button-maximize-unfocused.png
-share/gnome/themes/Gray/metacity-1/button-menu-focused.png
-share/gnome/themes/Gray/metacity-1/button-menu-pressed.png
-share/gnome/themes/Gray/metacity-1/button-menu-unfocused.png
-share/gnome/themes/Gray/metacity-1/button-minimize-focused.png
-share/gnome/themes/Gray/metacity-1/button-minimize-pressed.png
-share/gnome/themes/Gray/metacity-1/button-minimize-unfocused.png
-share/gnome/themes/Gray/metacity-1/frame-bottom-left-focused.png
-share/gnome/themes/Gray/metacity-1/frame-bottom-mid-focused.png
-share/gnome/themes/Gray/metacity-1/frame-bottom-right-focused.png
-share/gnome/themes/Gray/metacity-1/frame-left-focused.png
-share/gnome/themes/Gray/metacity-1/frame-right-focused.png
-share/gnome/themes/Gray/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Gray/metacity-1/titlebar-left-focused.png
-share/gnome/themes/Gray/metacity-1/titlebar-left-shaded-focused.png
-share/gnome/themes/Gray/metacity-1/titlebar-mid-focused.png
-share/gnome/themes/Gray/metacity-1/titlebar-mid-shaded-focused.png
-share/gnome/themes/Gray/metacity-1/titlebar-right-focused.png
-share/gnome/themes/Gray/metacity-1/titlebar-right-shaded-focused.png
+share/themes/Gray-Flat/metacity-1/button-close-focused.png
+share/themes/Gray-Flat/metacity-1/button-close-pressed.png
+share/themes/Gray-Flat/metacity-1/button-close-unfocused.png
+share/themes/Gray-Flat/metacity-1/button-maximize-focused.png
+share/themes/Gray-Flat/metacity-1/button-maximize-pressed.png
+share/themes/Gray-Flat/metacity-1/button-maximize-unfocused.png
+share/themes/Gray-Flat/metacity-1/button-menu-focused.png
+share/themes/Gray-Flat/metacity-1/button-menu-pressed.png
+share/themes/Gray-Flat/metacity-1/button-menu-unfocused.png
+share/themes/Gray-Flat/metacity-1/button-minimize-focused.png
+share/themes/Gray-Flat/metacity-1/button-minimize-pressed.png
+share/themes/Gray-Flat/metacity-1/button-minimize-unfocused.png
+share/themes/Gray-Flat/metacity-1/frame-bottom-left-focused.png
+share/themes/Gray-Flat/metacity-1/frame-bottom-mid-focused.png
+share/themes/Gray-Flat/metacity-1/frame-bottom-right-focused.png
+share/themes/Gray-Flat/metacity-1/frame-left-focused.png
+share/themes/Gray-Flat/metacity-1/frame-right-focused.png
+share/themes/Gray-Flat/metacity-1/metacity-theme-1.xml
+share/themes/Gray-Flat/metacity-1/titlebar-left-focused.png
+share/themes/Gray-Flat/metacity-1/titlebar-left-shaded-focused.png
+share/themes/Gray-Flat/metacity-1/titlebar-mid-focused.png
+share/themes/Gray-Flat/metacity-1/titlebar-mid-shaded-focused.png
+share/themes/Gray-Flat/metacity-1/titlebar-right-focused.png
+share/themes/Gray-Flat/metacity-1/titlebar-right-shaded-focused.png
+share/themes/Gray/metacity-1/button-close-focused.png
+share/themes/Gray/metacity-1/button-close-pressed.png
+share/themes/Gray/metacity-1/button-close-unfocused.png
+share/themes/Gray/metacity-1/button-maximize-focused.png
+share/themes/Gray/metacity-1/button-maximize-pressed.png
+share/themes/Gray/metacity-1/button-maximize-unfocused.png
+share/themes/Gray/metacity-1/button-menu-focused.png
+share/themes/Gray/metacity-1/button-menu-pressed.png
+share/themes/Gray/metacity-1/button-menu-unfocused.png
+share/themes/Gray/metacity-1/button-minimize-focused.png
+share/themes/Gray/metacity-1/button-minimize-pressed.png
+share/themes/Gray/metacity-1/button-minimize-unfocused.png
+share/themes/Gray/metacity-1/frame-bottom-left-focused.png
+share/themes/Gray/metacity-1/frame-bottom-mid-focused.png
+share/themes/Gray/metacity-1/frame-bottom-right-focused.png
+share/themes/Gray/metacity-1/frame-left-focused.png
+share/themes/Gray/metacity-1/frame-right-focused.png
+share/themes/Gray/metacity-1/metacity-theme-1.xml
+share/themes/Gray/metacity-1/titlebar-left-focused.png
+share/themes/Gray/metacity-1/titlebar-left-shaded-focused.png
+share/themes/Gray/metacity-1/titlebar-mid-focused.png
+share/themes/Gray/metacity-1/titlebar-mid-shaded-focused.png
+share/themes/Gray/metacity-1/titlebar-right-focused.png
+share/themes/Gray/metacity-1/titlebar-right-shaded-focused.png
 share/themes/Gray-Flat/gtk-2.0/Arrows/arrow-down.png
 share/themes/Gray-Flat/gtk-2.0/Arrows/arrow-left.png
 share/themes/Gray-Flat/gtk-2.0/Arrows/arrow-right-norm.png
@@ -320,10 +320,8 @@ share/themes/Gray/index.theme
 @dirrm share/themes/Gray-Flat/gtk-2.0
 @dirrm share/themes/Gray-Flat
 @dirrm share/themes/Gray
+@dirrm share/themes/Gray/metacity-1
+@dirrm share/themes/Gray-Flat/metacity-1
+@dirrm share/themes/Gray-Flat
+@dirrm share/themes/Gray
 @dirrmtry share/themes
-@dirrm share/gnome/themes/Gray/metacity-1
-@dirrm share/gnome/themes/Gray-Flat/metacity-1
-@dirrm share/gnome/themes/Gray-Flat
-@dirrm share/gnome/themes/Gray
-@dirrmtry share/gnome/themes
-@dirrmtry share/gnome

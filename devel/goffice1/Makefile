@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/goffice/Makefile,v 1.9 2006/01/31 22:13:22 ahze Exp $
+#   $MCom: ports/devel/goffice1/Makefile,v 1.1 2007/07/23 21:36:19 mezz Exp $
 #
 
 PORTNAME=	goffice
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2

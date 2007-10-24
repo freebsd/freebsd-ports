@@ -108,7 +108,7 @@ share/gnome/help/gchempaint/C/figures/templates.png
 share/gnome/help/gchempaint/C/figures/text.png
 share/gnome/help/gchempaint/C/figures/texttools-bar.png
 share/gnome/help/gchempaint/C/figures/toolbox.png
-share/gnome/omf/gchempaint/gchempaint-C.omf
+share/omf/gchempaint/gchempaint-C.omf
 share/icons/hicolor/32x32/apps/gchempaint.png
 share/icons/hicolor/32x32/mimetypes/gnome-mime-application-x-gchempaint.png
 share/icons/hicolor/48x48/apps/gchempaint.png
@@ -137,9 +137,10 @@ share/mimelnk/application/x-gchempaint.desktop
 @dirrm share/gnome/help/gchempaint/C/figures
 @dirrm share/gnome/help/gchempaint/C
 @dirrm share/gnome/help/gchempaint
-@dirrm share/gnome/omf/gchempaint
+@dirrm share/omf/gchempaint
 @dirrm lib/goffice/0.4.3/plugins/gchempaint
 @dirrm lib/gchempaint/plugins
 @dirrm lib/gchempaint
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@dirrmtry share/applications

@@ -7,7 +7,7 @@
 
 PORTNAME=	raine
 PORTVERSION=	0.43.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators games
 MASTER_SITES=	http://www.rainemu.com/html/archive/
 DISTNAME=	${PORTNAME}s-${PORTVERSION}
@@ -34,7 +34,7 @@ ONLY_FOR_ARCHS=	i386
 
 post-patch:
 	@${REINPLACE_CMD} -e "s, [$$]_mcpu,,g" ${WRKSRC}/detect-cpu
-	@${REINPLACE_CMD} -e "s,sdl-config,${SDL_CONFIG},g" -e "s,/usr/share/,/share/gnome/,g" \
+	@${REINPLACE_CMD} -e "s,sdl-config,${SDL_CONFIG},g" -e "s,/usr/share/,/share/,g" \
 		${WRKSRC}/makefile
 	@${REINPLACE_CMD} -e "s,/usr/share/games/raine,${DATADIR},g" \
 		${WRKSRC}/source/raine.c

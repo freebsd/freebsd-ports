@@ -7,7 +7,7 @@
 
 PORTNAME=	junglemonkey
 PORTVERSION=	0.1.11
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	ftp gnome
 MASTER_SITES=	http://www.gizmolabs.org/~dhelder/junglemonkey/src/
 DISTNAME=	jm-${PORTVERSION}
@@ -31,10 +31,6 @@ MAN1=		jm.1 jmlite.1 mtprendezvous.1
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|/gnome/help/|/help/|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\$$(datadir)/gnome/|\$$(datadir)/|g ; \
-		 s|\$$(datadir)/locale|\$$(prefix)/share/locale|g'
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	paman
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/paman/
 
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--disable-lynx
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
 
-DATADIR=	share/gnome/${PORTNAME}
+DATADIR=	share/${PORTNAME}
 
 PLIST_FILES=	bin/paman \
 		%%DATADIR%%/paman.glade

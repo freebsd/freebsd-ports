@@ -1,13 +1,11 @@
 bin/homebank
+share/application-registry/homebank.applications
 share/applications/homebank.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%GNOME:%%share/gnome/application-registry/homebank.applications
-%%GNOME:%%share/gnome/mime-info/homebank.keys
-%%GNOME:%%share/gnome/mime-info/homebank.mime
 %%DATADIR%%/help/02balance.html
 %%DATADIR%%/help/02concepts.html
 %%DATADIR%%/help/02intro.html
@@ -157,6 +155,8 @@ share/locale/nl/LC_MESSAGES/homebank.mo
 share/locale/pt_BR/LC_MESSAGES/homebank.mo
 share/locale/ru/LC_MESSAGES/homebank.mo
 share/locale/zh_CN/LC_MESSAGES/homebank.mo
+share/mime-info/homebank.keys
+share/mime-info/homebank.mime
 share/mime/packages/homebank.xml
 share/pixmaps/homebank.svg
 @dirrm %%DATADIR%%/images
@@ -164,8 +164,8 @@ share/pixmaps/homebank.svg
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/applications

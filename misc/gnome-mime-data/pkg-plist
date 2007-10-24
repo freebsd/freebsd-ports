@@ -1,8 +1,8 @@
 etc/gnome-vfs-mime-magic
 libdata/pkgconfig/gnome-mime-data-2.0.pc
-share/gnome/application-registry/gnome-vfs.applications
-share/gnome/mime-info/gnome-vfs.keys
-share/gnome/mime-info/gnome-vfs.mime
+share/application-registry/gnome-vfs.applications
+share/mime-info/gnome-vfs.keys
+share/mime-info/gnome-vfs.mime
 share/locale/af/LC_MESSAGES/gnome-mime-data.mo
 share/locale/am/LC_MESSAGES/gnome-mime-data.mo
 share/locale/ar/LC_MESSAGES/gnome-mime-data.mo

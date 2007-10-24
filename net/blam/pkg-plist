@@ -7,31 +7,31 @@ lib/blam/libblam.a
 lib/blam/libblam.la
 lib/blam/libblam.so
 lib/blam/libblam.so.0
-share/gnome/applications/blam.desktop
-share/gnome/blam/themes/planet/theme.html
-share/gnome/blam/themes/planet/planet.css
-share/gnome/blam/themes/planet/bubble-top.png
-share/gnome/blam/themes/planet/bubble-top-right.png
-share/gnome/blam/themes/planet/bubble-top-left.png
-share/gnome/blam/themes/planet/bubble-right.png
-share/gnome/blam/themes/planet/bubble-nipple.png
-share/gnome/blam/themes/planet/bubble-left.png
-share/gnome/blam/themes/planet/bubble-bottom.png
-share/gnome/blam/themes/planet/bubble-bottom-right.png
-share/gnome/blam/themes/planet/bubble-bottom-left.png
-share/gnome/blam/themes/pimped/theme.html
-share/gnome/blam/themes/pimped/pimped.css
-share/gnome/blam/themes/pimped/news.png
-share/gnome/blam/themes/pimped/blam.png
-share/gnome/blam/themes/blam/theme.html
-share/gnome/blam/themes/blam/blam-box-top-right.png
-share/gnome/blam/themes/blam/blam-box-top-left.png
-share/gnome/blam/themes/blam/blam-box-pad.png
-share/gnome/blam/themes/blam/blam-box-bottom-right.png
-share/gnome/blam/themes/blam/blam-box-bottom-left.png
-share/gnome/blam/themes/akregator/theme.html
-share/gnome/blam/collection.xml
-share/gnome/pixmaps/blam.png
+share/applications/blam.desktop
+share/blam/themes/planet/theme.html
+share/blam/themes/planet/planet.css
+share/blam/themes/planet/bubble-top.png
+share/blam/themes/planet/bubble-top-right.png
+share/blam/themes/planet/bubble-top-left.png
+share/blam/themes/planet/bubble-right.png
+share/blam/themes/planet/bubble-nipple.png
+share/blam/themes/planet/bubble-left.png
+share/blam/themes/planet/bubble-bottom.png
+share/blam/themes/planet/bubble-bottom-right.png
+share/blam/themes/planet/bubble-bottom-left.png
+share/blam/themes/pimped/theme.html
+share/blam/themes/pimped/pimped.css
+share/blam/themes/pimped/news.png
+share/blam/themes/pimped/blam.png
+share/blam/themes/blam/theme.html
+share/blam/themes/blam/blam-box-top-right.png
+share/blam/themes/blam/blam-box-top-left.png
+share/blam/themes/blam/blam-box-pad.png
+share/blam/themes/blam/blam-box-bottom-right.png
+share/blam/themes/blam/blam-box-bottom-left.png
+share/blam/themes/akregator/theme.html
+share/blam/collection.xml
+share/pixmaps/blam.png
 share/locale/bg/LC_MESSAGES/blam.mo
 share/locale/bs/LC_MESSAGES/blam.mo
 share/locale/ca/LC_MESSAGES/blam.mo
@@ -82,10 +82,11 @@ share/locale/zh_TW/LC_MESSAGES/blam.mo
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/ne/LC_MESSAGES
 @dirrmtry share/locale/ne
-@dirrm share/gnome/blam/themes/planet
-@dirrm share/gnome/blam/themes/pimped
-@dirrm share/gnome/blam/themes/blam
-@dirrm share/gnome/blam/themes/akregator
-@dirrm share/gnome/blam/themes
-@dirrm share/gnome/blam
+@dirrm share/blam/themes/planet
+@dirrm share/blam/themes/pimped
+@dirrm share/blam/themes/blam
+@dirrm share/blam/themes/akregator
+@dirrm share/blam/themes
+@dirrm share/blam
 @dirrm lib/blam
+@dirrmtry share/applications

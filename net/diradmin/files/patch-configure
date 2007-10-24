@@ -9,12 +9,3 @@
  
  
  
-@@ -5625,7 +5625,7 @@
- 
- fi
- 
--PACKAGE_PIXMAPS_DIR="/share/pixmaps/${PACKAGE}"
-+PACKAGE_PIXMAPS_DIR="/share/gnome/pixmaps/${PACKAGE}"
- 
- PACKAGE_APPLNK_DIR="/share/applications"
- SYSTEM_MENU_DIR="/lib/menu"

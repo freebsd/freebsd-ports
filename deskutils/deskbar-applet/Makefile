@@ -3,12 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/deskutils/deskbar-applet/Makefile,v 1.54 2007/03/14 11:58:47 ahze Exp $
+#   $MCom: ports/deskutils/deskbar-applet/Makefile,v 1.69 2007/10/15 17:32:49 mezz Exp $
 #
 
 PORTNAME=	deskbar-applet
-PORTVERSION=	2.18.1
-PORTREVISION=	2
+PORTVERSION=	2.20.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -49,19 +48,17 @@ PLIST_SUB+=	EVO="@comment "
 
 .if !defined(DISPLAY)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
-		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
+		${LOCALBASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
 .if !defined(PACKAGE_BUILDING)
 CONFIGURE_ENV+=	DISPLAY="localhost:1001"
 .endif
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC}/deskbar -name "*.py" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|/usr/share/applications|${LOCALBASE}/share/gnome/applications|g'
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/deskbar/handlers/mozilla.py \
-		${WRKSRC}/deskbar/Utils.py
+		${WRKSRC}/deskbar/core/Utils.py
 
 .if !defined(DISPLAY)
 pre-configure:
@@ -69,7 +66,7 @@ pre-configure:
 		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
 		${RM} -f ${WRKDIR}/.Xvfb.pid ; \
 	fi
-	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
+	@${LOCALBASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
 
 post-configure:

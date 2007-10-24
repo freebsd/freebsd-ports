@@ -7,7 +7,7 @@
 
 PORTNAME=	tasklist
 PORTVERSION=	0.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://gdesklets.zencomputer.ca/
 PKGNAMEPREFIX=	gdesklets-
@@ -21,7 +21,7 @@ RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 USE_XLIB=	yes
 
 NAME=		tasklist
-DATADIR=	${PREFIX}/share/gnome
+DATADIR=	${PREFIX}/share
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}-desklet-${PORTVERSION}
 

@@ -1,8 +1,8 @@
 bin/logjam
 %%WITH_XMMS%%bin/logjam-xmms-client
-share/gnome/applications/logjam.desktop
-share/gnome/pixmaps/logjam_goat.png
-share/gnome/pixmaps/logjam_pencil.png
+share/applications/logjam.desktop
+share/pixmaps/logjam_goat.png
+share/pixmaps/logjam_pencil.png
 share/locale/de/LC_MESSAGES/logjam.mo
 share/locale/en_GB/LC_MESSAGES/logjam.mo
 share/locale/en_US.UTF-8/LC_MESSAGES/logjam.mo
@@ -17,3 +17,4 @@ share/locale/ja/LC_MESSAGES/logjam.mo
 @dirrmtry share/locale/ru_RU
 @dirrmtry share/locale/uk_UA/LC_MESSAGES
 @dirrmtry share/locale/uk_UA
+@dirrmtry share/applications

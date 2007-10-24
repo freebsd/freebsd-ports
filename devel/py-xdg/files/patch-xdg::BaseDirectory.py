@@ -5,7 +5,7 @@
  
  xdg_data_dirs = [xdg_data_home] + \
 -	os.environ.get('XDG_DATA_DIRS', '/usr/local/share:/usr/share').split(':')
-+	os.environ.get('XDG_DATA_DIRS', '%%LOCALBASE%%/share/gnome:%%LOCALBASE%%/share:/usr/share').split(':')
++	os.environ.get('XDG_DATA_DIRS', '%%LOCALBASE%%/share').split(':')
  
  xdg_config_home = os.environ.get('XDG_CONFIG_HOME',
  			os.path.join(_home, '.config'))

@@ -7,6 +7,7 @@
 
 PORTNAME=	homebank
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -15,7 +16,7 @@ COMMENT=	Manage your personal accounts at home
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 desktopfileutils
+USE_GNOME=	gnomeprefix gtk20 desktopfileutils
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
@@ -24,26 +25,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README
-
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mgnomehier}!=""
-USE_GNOME+=	gnomehier
-PLIST_SUB+=	GNOME:=""
-GNOME_ENABLED=	yes
-.else
-PLIST_SUB+=	GNOME:="@comment "
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|[(]datadir[)]/application-registry|(prefix)/share/gnome/application-registry|g ; \
-		s|[(]datadir[)]/mime-info|(prefix)/share/gnome/mime-info|g' \
-			${WRKSRC}/mime/Makefile.in
-.ifndef (GNOME_ENABLED)
-	@${REINPLACE_CMD} -e 's|install-appDATA install|install|g ; \
-		s| install-mimeDATA||g' \
-			${WRKSRC}/mime/Makefile.in
-.endif
 
 post-install:
 .ifndef (NOPORTDOCS)
@@ -54,4 +35,4 @@ post-install:
 .endif
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

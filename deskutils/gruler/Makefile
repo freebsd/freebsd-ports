@@ -7,7 +7,7 @@
 
 PORTNAME=	gruler
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://linuxadvocate.org/projects/gruler/downloads/
 
@@ -23,9 +23,5 @@ USE_GCC=	3.4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=""||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|PACKAGE_DATA_DIR|"${PREFIX}/share/gnome"|' \
-		${WRKSRC}/src/gui.c
-	@${REINPLACE_CMD} -e 's|^\(gruler_pixmapsdir = \).*|\1${PREFIX}/share/gnome/pixmaps|' \
-		${WRKSRC}/pixmaps/Makefile.in
 
 .include <bsd.port.mk>

@@ -10,6 +10,25 @@ bin/ui-properties
 bin/url-properties
 bin/wm-properties-capplet
 etc/CORBA/servers/gnomecc.gnorba
+share/control-center/.directory
+share/control-center/Desktop/.directory
+share/control-center/Desktop/background-properties.desktop
+share/control-center/Desktop/theme-selector.desktop
+share/control-center/Desktop/wm-properties.desktop
+share/control-center/Documents/.directory
+share/control-center/Documents/default-application-properties.desktop
+share/control-center/Documents/file-types-capplet.desktop
+share/control-center/Documents/url-properties.desktop
+share/control-center/Multimedia/.directory
+share/control-center/Multimedia/sound-properties.desktop
+share/control-center/Peripherals/.directory
+share/control-center/Peripherals/keyboard-properties.desktop
+share/control-center/Peripherals/mouse-properties.desktop
+share/control-center/Session/.directory
+share/control-center/UIOptions/.directory
+share/control-center/UIOptions/application.desktop
+share/control-center/UIOptions/dialogs.desktop
+share/control-center/UIOptions/mdi.desktop
 share/gnome/apps/Settings/Desktop/.directory
 share/gnome/apps/Settings/Desktop/background-properties.desktop
 share/gnome/apps/Settings/Desktop/theme-selector.desktop
@@ -26,25 +45,6 @@ share/gnome/apps/Settings/Session/.directory
 share/gnome/apps/Settings/UIOptions/.directory
 share/gnome/apps/Settings/file-types-capplet.desktop
 share/gnome/apps/Settings/gnomecc.desktop
-share/gnome/control-center/.directory
-share/gnome/control-center/Desktop/.directory
-share/gnome/control-center/Desktop/background-properties.desktop
-share/gnome/control-center/Desktop/theme-selector.desktop
-share/gnome/control-center/Desktop/wm-properties.desktop
-share/gnome/control-center/Documents/.directory
-share/gnome/control-center/Documents/default-application-properties.desktop
-share/gnome/control-center/Documents/file-types-capplet.desktop
-share/gnome/control-center/Documents/url-properties.desktop
-share/gnome/control-center/Multimedia/.directory
-share/gnome/control-center/Multimedia/sound-properties.desktop
-share/gnome/control-center/Peripherals/.directory
-share/gnome/control-center/Peripherals/keyboard-properties.desktop
-share/gnome/control-center/Peripherals/mouse-properties.desktop
-share/gnome/control-center/Session/.directory
-share/gnome/control-center/UIOptions/.directory
-share/gnome/control-center/UIOptions/application.desktop
-share/gnome/control-center/UIOptions/dialogs.desktop
-share/gnome/control-center/UIOptions/mdi.desktop
 share/gnome/help/control-center/C/control-center.sgml
 share/gnome/help/control-center/C/desktop-intro.html
 share/gnome/help/control-center/C/doc-handlers.html
@@ -125,10 +125,6 @@ share/gnome/help/control-center/eu/stylesheet-images/up.gif
 share/gnome/help/control-center/eu/stylesheet-images/warning.gif
 share/gnome/help/control-center/eu/topic.dat
 share/gnome/help/control-center/eu/usage.html
-share/gnome/omf/control-center/control-center-C.omf
-share/gnome/omf/control-center/control-center-eu.omf
-share/gnome/pixmaps/ccsplash.png
-share/gnome/pixmaps/control-center.png
 share/gnome/wm-properties/Enlightenment.desktop
 share/gnome/wm-properties/IceWM.desktop
 share/gnome/wm-properties/Scwm.desktop
@@ -171,15 +167,19 @@ share/locale/uk/LC_MESSAGES/control-center.mo
 share/locale/wa/LC_MESSAGES/control-center.mo
 share/locale/zh_CN/LC_MESSAGES/control-center.mo
 share/locale/zh_TW/LC_MESSAGES/control-center.mo
-@dirrm share/gnome/omf/control-center
-@dirrm share/gnome/help/control-center/C/stylesheet-images
-@dirrm share/gnome/help/control-center/C/figures
-@dirrm share/gnome/help/control-center/C
+share/omf/control-center/control-center-C.omf
+share/omf/control-center/control-center-eu.omf
+share/pixmaps/ccsplash.png
+share/pixmaps/control-center.png
+@dirrm share/omf/control-center
 @dirrm share/gnome/help/control-center/eu/stylesheet-images
 @dirrm share/gnome/help/control-center/eu/figures
 @dirrm share/gnome/help/control-center/eu
+@dirrm share/gnome/help/control-center/C/stylesheet-images
+@dirrm share/gnome/help/control-center/C/figures
+@dirrm share/gnome/help/control-center/C
 @dirrm share/gnome/help/control-center
-@dirrm share/gnome/control-center/UIOptions
-@dirrm share/gnome/control-center/Multimedia
 @dirrm share/gnome/apps/Settings/UIOptions
 @dirrm share/gnome/apps/Settings/Multimedia
+@dirrm share/control-center/UIOptions
+@dirrm share/control-center/Multimedia

@@ -7,7 +7,7 @@
 
 PORTNAME=	linux-realplayer
 DISTVERSION=	10.0.8.805-20060718
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio linux
 MASTER_SITES=	https://helixcommunity.org/download.php/2152/:player \
 		http://ftp.nluug.nl/ftp/pub/os/Linux/distr/pardusrepo/sources/:playeralt \
@@ -27,6 +27,7 @@ USE_LINUX=	yes
 USE_X_PREFIX=	yes
 RESTRICTED=	Redistribution not allowed
 NO_BUILD=	yes
+WANT_GNOME=	yes
 
 RADIR=		${PREFIX}/lib/RealPlayer
 PLUGINSDIR=	${PREFIX}/lib/linux-mozilla/plugins
@@ -47,7 +48,7 @@ PLIST_SUB+=	ICONS=""
 PLIST_SUB+=	ICONS="@comment "
 .endif
 
-.if exists(${LOCALBASE}/share/gnome)
+.if ${HAVE_GNOME:Mgnomehier}!=""
 WITH_GNOME=	yes
 PLIST_SUB+=	GNOME=""
 .else
@@ -115,21 +116,21 @@ do-install:
 .endif
 
 .if defined(WITH_GNOME)
-	@${MKDIR} ${LOCALBASE}/share/gnome/pixmaps
+	@${MKDIR} ${LOCALBASE}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/share/realplay.png \
-		${LOCALBASE}/share/gnome/pixmaps
+		${LOCALBASE}/share/pixmaps
 
-	@${MKDIR} ${LOCALBASE}/share/gnome/applications
+	@${MKDIR} ${LOCALBASE}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/share/realplay.desktop \
-		${LOCALBASE}/share/gnome/applications
+		${LOCALBASE}/share/applications
 
-	@${MKDIR} ${LOCALBASE}/share/gnome/application-registry
+	@${MKDIR} ${LOCALBASE}/share/application-registry
 	${INSTALL_DATA} ${WRKSRC}/share/realplay.applications \
-		${LOCALBASE}/share/gnome/application-registry
+		${LOCALBASE}/share/application-registry
 
-	@${MKDIR} ${LOCALBASE}/share/gnome/mime-info
+	@${MKDIR} ${LOCALBASE}/share/mime-info
 	${INSTALL_DATA} ${WRKSRC}/share/realplay.keys ${WRKSRC}/share/realplay.mime \
-		${LOCALBASE}/share/gnome/mime-info
+		${LOCALBASE}/share/mime-info
 .endif
 
 .include <bsd.port.post.mk>

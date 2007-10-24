@@ -1,36 +1,36 @@
 bin/sanduhr
 libdata/bonobo/servers/sanduhr.server
-share/locale/de/LC_MESSAGES/sanduhr.mo
 share/gnome/apps/Utilities/sanduhr.desktop
-share/gnome/help/sanduhr/C/sanduhr.xml
-share/gnome/help/sanduhr/C/factoryref.xml
 share/gnome/help/sanduhr/C/alarmref.xml
+share/gnome/help/sanduhr/C/factoryref.xml
+share/gnome/help/sanduhr/C/sanduhr.xml
 share/gnome/help/sanduhr/C/timerref.xml
 share/gnome/help/sanduhr/C/topic.dat
-share/gnome/help/sanduhr/de/sanduhr.xml
-share/gnome/help/sanduhr/de/factoryref.xml
 share/gnome/help/sanduhr/de/alarmref.xml
+share/gnome/help/sanduhr/de/factoryref.xml
+share/gnome/help/sanduhr/de/sanduhr.xml
 share/gnome/help/sanduhr/de/timerref.xml
-share/gnome/idl/sanduhr.idl
-share/gnome/omf/sanduhr/sanduhr-C.omf
-share/gnome/omf/sanduhr/sanduhr-de.omf
-share/gnome/pixmaps/sanduhr/default/back.png
-share/gnome/pixmaps/sanduhr/default/front.png
-share/gnome/pixmaps/sanduhr/default/mask.png
-share/gnome/pixmaps/sanduhr/steel/back.png
-share/gnome/pixmaps/sanduhr/steel/front.png
-share/gnome/pixmaps/sanduhr/steel/mask.png
-share/gnome/pixmaps/sanduhr/about.png
-share/gnome/pixmaps/sanduhr/logo.png
-share/gnome/pixmaps/sanduhr/icon.xpm
-share/gnome/sounds/sanduhr/bell.wav
-@dirrmtry share/gnome/pixmaps/sanduhr/steel
-@dirrmtry share/gnome/pixmaps/sanduhr/default
-@dirrmtry share/gnome/pixmaps/sanduhr
-@dirrmtry share/gnome/help/sanduhr/de/figures
-@dirrmtry share/gnome/help/sanduhr/de
-@dirrmtry share/gnome/help/sanduhr/C/figures
-@dirrmtry share/gnome/help/sanduhr/C
-@dirrmtry share/gnome/help/sanduhr
-@dirrmtry share/gnome/sounds/sanduhr
-@dirrmtry share/gnome/omf/sanduhr
+share/idl/sanduhr.idl
+share/locale/de/LC_MESSAGES/sanduhr.mo
+share/omf/sanduhr/sanduhr-C.omf
+share/omf/sanduhr/sanduhr-de.omf
+share/pixmaps/sanduhr/about.png
+share/pixmaps/sanduhr/default/back.png
+share/pixmaps/sanduhr/default/front.png
+share/pixmaps/sanduhr/default/mask.png
+share/pixmaps/sanduhr/icon.xpm
+share/pixmaps/sanduhr/logo.png
+share/pixmaps/sanduhr/steel/back.png
+share/pixmaps/sanduhr/steel/front.png
+share/pixmaps/sanduhr/steel/mask.png
+share/sounds/sanduhr/bell.wav
+@dirrm share/sounds/sanduhr
+@dirrm share/pixmaps/sanduhr/steel
+@dirrm share/pixmaps/sanduhr/default
+@dirrm share/pixmaps/sanduhr
+@dirrm share/omf/sanduhr
+@dirrm share/gnome/help/sanduhr/de/figures
+@dirrm share/gnome/help/sanduhr/de
+@dirrm share/gnome/help/sanduhr/C/figures
+@dirrm share/gnome/help/sanduhr/C
+@dirrm share/gnome/help/sanduhr

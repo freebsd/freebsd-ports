@@ -1,9 +1,9 @@
 bin/gnome-volume-manager
 bin/gnome-volume-properties
-share/gnome/applications/gnome-volume-properties.desktop
+share/applications/gnome-volume-properties.desktop
 share/gnome/autostart/gnome-volume-manager.desktop
-share/gnome/gnome-volume-manager/gnome-volume-properties.glade
-share/gnome/gnome-volume-manager/icons/gvm-dev-tablet.png
+share/gnome-volume-manager/gnome-volume-properties.glade
+share/gnome-volume-manager/icons/gvm-dev-tablet.png
 share/locale/ang/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/ar/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/az/LC_MESSAGES/gnome-volume-manager.mo
@@ -73,9 +73,8 @@ share/locale/xh/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-volume-manager.mo
-@dirrmtry share/gnome/autostart
-@dirrm share/gnome/gnome-volume-manager/icons
-@dirrm share/gnome/gnome-volume-manager
+@dirrm share/gnome-volume-manager/icons
+@dirrm share/gnome-volume-manager
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -92,3 +91,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-volume-manager.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/ang/LC_MESSAGES
 @dirrmtry share/locale/ang
+@dirrmtry share/applications

@@ -14,16 +14,14 @@ lib/libgnomecupsui-1.0.so.1
 libdata/bonobo/servers/Gnome_CupsManager.server
 libdata/pkgconfig/libgnomecupsui-1.0.pc
 sbin/gnome-cups-switch
-share/gnome/applications/gnome-cups-manager.desktop
-share/gnome/gnome-cups-manager/gnome-cups-add-druid.png
-share/gnome/gnome-cups-manager/gnome-cups-add.glade
-share/gnome/gnome-cups-manager/gnome-cups-manager.glade
-share/gnome/gnome-cups-manager/gnome-cups-ui-connection.glade
-share/gnome/gnome-cups-manager/gnome-cups-ui-driver.glade
-share/gnome/gnome-cups-manager/xd2-testpage-a4.eps
-share/gnome/gnome-cups-manager/xd2-testpage-letter.eps
-share/gnome/pixmaps/gnome-cups-manager/printer-tray-normal.png
-share/gnome/pixmaps/gnome-cups-manager/printer-tray-stopped.png
+share/applications/gnome-cups-manager.desktop
+%%DATADIR%%/gnome-cups-add-druid.png
+%%DATADIR%%/gnome-cups-add.glade
+%%DATADIR%%/gnome-cups-manager.glade
+%%DATADIR%%/gnome-cups-ui-connection.glade
+%%DATADIR%%/gnome-cups-ui-driver.glade
+%%DATADIR%%/xd2-testpage-a4.eps
+%%DATADIR%%/xd2-testpage-letter.eps
 share/icons/hicolor/48x48/devices/gnome-dev-printer-network.png
 share/icons/hicolor/48x48/devices/gnome-dev-printer-new.png
 share/icons/hicolor/48x48/devices/gnome-dev-printer.png
@@ -66,8 +64,10 @@ share/locale/uk/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/xh/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-cups-manager.mo
-@dirrm share/gnome/pixmaps/gnome-cups-manager
-@dirrm share/gnome/gnome-cups-manager
+share/pixmaps/gnome-cups-manager/printer-tray-normal.png
+share/pixmaps/gnome-cups-manager/printer-tray-stopped.png
+@dirrm share/pixmaps/gnome-cups-manager
+@dirrm %%DATADIR%%
 @unexec /bin/rmdir %D/sbin 2>/dev/null || /usr/bin/true
 @dirrmtry include/libgnomecups-1/libgnomecups
 @dirrmtry include/libgnomecups-1
@@ -75,3 +75,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-cups-manager.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/applications

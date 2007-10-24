@@ -5,15 +5,15 @@ bin/gnomesword2
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-share/gnome/applications/gnomesword.desktop
-share/gnome/gnomesword/bookmarks.glade
-share/gnome/gnomesword/editor_note.xml
-share/gnome/gnomesword/editor_studypad.xml
-share/gnome/gnomesword/logo.png
-share/gnome/gnomesword/module-manager.glade
-share/gnome/gnomesword/prefs.glade
-share/gnome/gnomesword/search-dialog.glade
-share/gnome/gnomesword/sword3.png
+share/applications/gnomesword.desktop
+share/gnomesword/bookmarks.glade
+share/gnomesword/editor_note.xml
+share/gnomesword/editor_studypad.xml
+share/gnomesword/logo.png
+share/gnomesword/module-manager.glade
+share/gnomesword/prefs.glade
+share/gnomesword/search-dialog.glade
+share/gnomesword/sword3.png
 share/gnome/help/gnomesword/C/authors.xml
 share/gnome/help/gnomesword/C/figures/first_start.png
 share/gnome/help/gnomesword/C/figures/interface.png
@@ -144,25 +144,25 @@ share/gnome/help/gnomesword/fr/preferences.xml
 share/gnome/help/gnomesword/fr/search.xml
 share/gnome/help/gnomesword/fr/start.xml
 share/gnome/help/gnomesword/fr/studypad.xml
-share/gnome/pixmaps/gnomesword/about.png
-share/gnome/pixmaps/gnomesword/dlg-un.png
-share/gnome/pixmaps/gnomesword/epiphany-bookmark-page.png
-share/gnome/pixmaps/gnomesword/epiphany-bookmarks.png
-share/gnome/pixmaps/gnomesword/epiphany-secure.png
-share/gnome/pixmaps/gnomesword/epiphany-unsecure.png
-share/gnome/pixmaps/gnomesword/gnome-session.png
-share/gnome/pixmaps/gnomesword/gnome-window-manager.png
-share/gnome/pixmaps/gnomesword/gnome-windows.png
-share/gnome/pixmaps/gnomesword/gs2-48x48.ico
-share/gnome/pixmaps/gnomesword/gs2-48x48.png
-share/gnome/pixmaps/gnomesword/init-settings.png
-share/gnome/pixmaps/gnomesword/logo.png
-share/gnome/pixmaps/gnomesword/new_tab_button.png
-share/gnome/pixmaps/gnomesword/splash.png
-share/gnome/pixmaps/gnomesword/splash2.png
-share/gnome/pixmaps/gnomesword/sword.png
-share/gnome/pixmaps/gnomesword/sword3.png
-share/gnome/pixmaps/gnomesword/tt.png
+share/pixmaps/gnomesword/about.png
+share/pixmaps/gnomesword/dlg-un.png
+share/pixmaps/gnomesword/epiphany-bookmark-page.png
+share/pixmaps/gnomesword/epiphany-bookmarks.png
+share/pixmaps/gnomesword/epiphany-secure.png
+share/pixmaps/gnomesword/epiphany-unsecure.png
+share/pixmaps/gnomesword/gnome-session.png
+share/pixmaps/gnomesword/gnome-window-manager.png
+share/pixmaps/gnomesword/gnome-windows.png
+share/pixmaps/gnomesword/gs2-48x48.ico
+share/pixmaps/gnomesword/gs2-48x48.png
+share/pixmaps/gnomesword/init-settings.png
+share/pixmaps/gnomesword/logo.png
+share/pixmaps/gnomesword/new_tab_button.png
+share/pixmaps/gnomesword/splash.png
+share/pixmaps/gnomesword/splash2.png
+share/pixmaps/gnomesword/sword.png
+share/pixmaps/gnomesword/sword3.png
+share/pixmaps/gnomesword/tt.png
 share/locale/bg/LC_MESSAGES/gnomesword.mo
 share/locale/cs/LC_MESSAGES/gnomesword.mo
 share/locale/de/LC_MESSAGES/gnomesword.mo
@@ -174,7 +174,7 @@ share/locale/nl/LC_MESSAGES/gnomesword.mo
 share/locale/ru/LC_MESSAGES/gnomesword.mo
 share/locale/sk/LC_MESSAGES/gnomesword.mo
 share/locale/uk/LC_MESSAGES/gnomesword.mo
-@dirrm share/gnome/pixmaps/gnomesword
+@dirrm share/pixmaps/gnomesword
 @dirrm share/gnome/help/gnomesword/fr/figures
 @dirrm share/gnome/help/gnomesword/fr
 @dirrm share/gnome/help/gnomesword/de/figures
@@ -182,5 +182,6 @@ share/locale/uk/LC_MESSAGES/gnomesword.mo
 @dirrm share/gnome/help/gnomesword/C/figures
 @dirrm share/gnome/help/gnomesword/C
 @dirrm share/gnome/help/gnomesword
-@dirrm share/gnome/gnomesword
+@dirrm share/gnomesword
 @dirrm %%DOCSDIR%%
+@dirrmtry share/applications

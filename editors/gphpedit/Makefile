@@ -7,7 +7,7 @@
 
 PORTNAME=	gphpedit
 PORTVERSION=	0.9.80
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors gnome
 MASTER_SITES=	http://www.gphpedit.org/download/store/ \
 		http://ftp.ceid.upatras.gr/pub/linux/gentoo/distfiles/ \
@@ -46,9 +46,9 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share/gnome|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share|g' \
 		${WRKSRC}/src/main.h
-	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share/gnome|g' \
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/src/calltip.c ${WRKSRC}/src/main_window.c
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/tab.c

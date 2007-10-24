@@ -232,34 +232,35 @@
 %%GTK20%%@dirrm share/themes/Digital-Cream/gtk-2.0
 %%GTK20%%share/themes/Digital-Cream/index.theme
 %%GTK20%%@dirrm share/themes/Digital-Cream
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/button-close-focus.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/button-close-push.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/button-close.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/button-inactive.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/button-max-focus.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/button-max-push.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/button-max.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/button-min-focus.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/button-min-push.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/button-min.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/close-button-inactive.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/close_normal.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/close_normal.svg
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/close_prelight.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/left-side-inactive.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/left-side.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/maximize_normal.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/maximize_prelight.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/menu-button-inactive.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/menu-button-push.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/menu-button.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/metacity-theme-1.xml
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/minimize_normal.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/minimize_prelight.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/right-side-inactive.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/right-side.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/title-bar-inactive.png
-%%METACITY%%share/gnome/themes/Digital-Cream/metacity-1/title-bar.png
-%%METACITY%%@dirrm share/gnome/themes/Digital-Cream/metacity-1
-%%METACITY%%share/gnome/themes/Digital-Cream/index.theme
-%%METACITY%%@dirrm share/gnome/themes/Digital-Cream
+%%METACITY%%share/themes/Digital-Cream/metacity-1/button-close-focus.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/button-close-push.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/button-close.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/button-inactive.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/button-max-focus.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/button-max-push.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/button-max.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/button-min-focus.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/button-min-push.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/button-min.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/close-button-inactive.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/close_normal.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/close_normal.svg
+%%METACITY%%share/themes/Digital-Cream/metacity-1/close_prelight.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/left-side-inactive.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/left-side.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/maximize_normal.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/maximize_prelight.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/menu-button-inactive.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/menu-button-push.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/menu-button.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/metacity-theme-1.xml
+%%METACITY%%share/themes/Digital-Cream/metacity-1/minimize_normal.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/minimize_prelight.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/right-side-inactive.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/right-side.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/title-bar-inactive.png
+%%METACITY%%share/themes/Digital-Cream/metacity-1/title-bar.png
+%%METACITY%%@dirrm share/themes/Digital-Cream/metacity-1
+%%METACITY%%share/themes/Digital-Cream/index.theme
+%%METACITY%%@dirrm share/themes/Digital-Cream
+@dirrmtry share/themes

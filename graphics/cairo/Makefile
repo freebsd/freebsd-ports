@@ -3,12 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/cairo/Makefile,v 1.56 2007/03/06 13:39:18 ahze Exp $
+#   $MCom: ports/graphics/cairo/Makefile,v 1.59 2007/09/09 22:45:26 mezz Exp $
 #
 
 PORTNAME=	cairo
 PORTVERSION=	1.4.10
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
 #MASTER_SITES=	http://cairographics.org/snapshots/
@@ -32,6 +32,14 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS}"
 
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=--disable-xlib
+PLIST_SUB+=	X11="@comment "
+.else
+USE_XORG+=	xrender
+PLIST_SUB+=	X11=""
+.endif
+
 OPTIONS+=	GLITZ "Enable Glitz OpenGL Support" Off
 
 .include <bsd.port.pre.mk>
@@ -43,14 +51,6 @@ PLIST_SUB+=	GLITZ=""
 .else
 CONFIGURE_ARGS+=	--disable-glitz
 PLIST_SUB+=	GLITZ="@comment "
-.endif
-
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--disable-xlib
-PLIST_SUB+=	X11="@comment "
-.else
-USE_XLIB=	yes
-PLIST_SUB+=	X11=""
 .endif
 
 post-patch:

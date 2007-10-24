@@ -3,10 +3,11 @@
 # Whom:					Juan Salaverria <rael@vectorstar.net>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	sagasu
 PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 

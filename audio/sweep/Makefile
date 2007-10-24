@@ -6,37 +6,36 @@
 #
 
 PORTNAME=	sweep
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.1
+PORTREVISION=	5
 CATEGORIES=	audio gnome
-MASTER_SITES=	SF
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sound editor for the GNOME/GTK 2.0 desktop
 
-LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
+LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		speex.1:${PORTSDIR}/audio/speex
+		speex.1:${PORTSDIR}/audio/speex \
+		mad.2:${PORTSDIR}/audio/mad
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnometarget gtk20
+USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-extraincdir=${LOCALBASE}/include \
-		--with-vorbis-libraries=${LOCALBASE}/lib \
-		--with-vorbis-includes=${LOCALBASE}/include/vorbis \
-		--with-ogg-libraries=${LOCALBASE}/lib \
-		--with-ogg-includes=${LOCALBASE}/include/ogg
+		--with-vorbis=${LOCALBASE}/lib \
+		--with-vorbis=${LOCALBASE}/include/vorbis \
+		--with-ogg=${LOCALBASE}/lib \
+		--with-ogg=${LOCALBASE}/include/ogg
 
 MAN1=		sweep.1
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|^ac_enable_alsa=yes|ac_enable_alsa=no|g ; \
-		 s|$${datadir}|$${datarootdir}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

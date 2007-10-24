@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql-query-browser
 PORTVERSION=	1.1.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQLAdministrationSuite
@@ -16,15 +16,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A database querying tool for MySQL servers
 
 LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.0:${PORTSDIR}/devel/pcre \
+		rarian.0:${PORTSDIR}/textproc/rarian
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 		gtkdoc-mkhtml:${PORTSDIR}/textproc/gtk-doc \
-		scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
-RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
-
-BROKEN=		fails to fetch
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=	2007-12-24
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
@@ -40,7 +35,7 @@ IGNORE_WITH_MYSQL=	323
 GTKHTML_VER=	${gtkhtml3_DETECT:R}
 CONFIGURE_ARGS_GUI=	--prefix=${X11BASE} \
 			--datadir=${DATADIR} \
-			--localstatedir=${PREFIX}/share/gnome
+			--localstatedir=${PREFIX}/share
 CONFIGURE_ARGS_MAIN=	${CONFIGURE_ARGS_GUI} \
 			--with-gtkhtml=${GTKHTML_VER:C/^.*\///g}
 
@@ -81,12 +76,4 @@ do-install:
 	@cd ${MAIN_DIR}; \
 	${GMAKE} ${INSTALL_TARGET}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

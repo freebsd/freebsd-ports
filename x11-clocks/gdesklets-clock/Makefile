@@ -7,7 +7,7 @@
 
 PORTNAME=	clock
 PORTVERSION=	0.32
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -23,7 +23,7 @@ USE_PYTHON=	yes
 USE_XLIB=	yes
 
 NAME=		Clock
-DATADIR=	${PREFIX}/share/gnome
+DATADIR=	${PREFIX}/share
 LANG=		de fr pt sq sr sr@Latn sv
 
 do-build:

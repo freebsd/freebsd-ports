@@ -13,7 +13,7 @@
  EXECDIR=$PREFIX/bin
  LOCALEDIR=$PREFIX/share/locale
 -ASSETMLDIR=/usr/share/assetml
-+ASSETMLDIR=$PREFIX/share/gnome/assetml
++ASSETMLDIR=$PREFIX/share/assetml
  SCOREDIR=/var/games
  SCOREFILE=$SCOREDIR/childsplay.score
  DOCDIR=$PREFIX/share/doc/childsplay

@@ -7,7 +7,7 @@
 
 PORTNAME=	starterbar
 PORTVERSION=	0.31.2
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -24,7 +24,7 @@ USE_PYTHON=	yes
 USE_XLIB=	yes
 
 NAME=		StarterBar
-DATADIR=	${PREFIX}/share/gnome
+DATADIR=	${PREFIX}/share
 PKGMESSAGE=	${WRKDIR}/pkg-message
 LANG=		ca cs de es fr hr nl pt pt_BR sq sr sr@Latn sv
 

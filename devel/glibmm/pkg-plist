@@ -16,6 +16,7 @@ include/glibmm-%%API_VERSION%%/glibmm/i18n.h
 include/glibmm-%%API_VERSION%%/glibmm/init.h
 include/glibmm-%%API_VERSION%%/glibmm/interface.h
 include/glibmm-%%API_VERSION%%/glibmm/iochannel.h
+include/glibmm-%%API_VERSION%%/glibmm/keyfile.h
 include/glibmm-%%API_VERSION%%/glibmm/listhandle.h
 include/glibmm-%%API_VERSION%%/glibmm/main.h
 include/glibmm-%%API_VERSION%%/glibmm/markup.h
@@ -32,12 +33,14 @@ include/glibmm-%%API_VERSION%%/glibmm/private/date_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/fileutils_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/interface_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/iochannel_p.h
+include/glibmm-%%API_VERSION%%/glibmm/private/keyfile_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/markup_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/module_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/object_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/optioncontext_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/optionentry_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/optiongroup_p.h
+include/glibmm-%%API_VERSION%%/glibmm/private/regex_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/shell_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/spawn_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/thread_p.h
@@ -48,6 +51,7 @@ include/glibmm-%%API_VERSION%%/glibmm/propertyproxy_base.h
 include/glibmm-%%API_VERSION%%/glibmm/quark.h
 include/glibmm-%%API_VERSION%%/glibmm/random.h
 include/glibmm-%%API_VERSION%%/glibmm/refptr.h
+include/glibmm-%%API_VERSION%%/glibmm/regex.h
 include/glibmm-%%API_VERSION%%/glibmm/sarray.h
 include/glibmm-%%API_VERSION%%/glibmm/shell.h
 include/glibmm-%%API_VERSION%%/glibmm/signalproxy.h

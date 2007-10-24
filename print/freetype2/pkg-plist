@@ -12,11 +12,13 @@ include/freetype2/freetype/ftcache.h
 include/freetype2/freetype/ftchapters.h
 include/freetype2/freetype/fterrdef.h
 include/freetype2/freetype/fterrors.h
+include/freetype2/freetype/ftgasp.h
 include/freetype2/freetype/ftglyph.h
 include/freetype2/freetype/ftgxval.h
 include/freetype2/freetype/ftgzip.h
 include/freetype2/freetype/ftimage.h
 include/freetype2/freetype/ftincrem.h
+include/freetype2/freetype/ftlcdfil.h
 include/freetype2/freetype/ftlist.h
 include/freetype2/freetype/ftlzw.h
 include/freetype2/freetype/ftmac.h

@@ -7,7 +7,7 @@
 
 PORTNAME=	timer-applet
 PORTVERSION=	1.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	timerapplet
@@ -16,7 +16,7 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A timer applet for the GNOME panel
 
 LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS=	${LOCALBASE}/share/gnome/sounds/gtk-events/clicked.wav:${PORTSDIR}/audio/gnome-audio
+RUN_DEPENDS=	${LOCALBASE}/share/sounds/gtk-events/clicked.wav:${PORTSDIR}/audio/gnome-audio
 
 USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack
 GNU_CONFIGURE=	yes
@@ -28,10 +28,7 @@ INSTALLS_OMF=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|/usr/share/pixmaps/|${PREFIX}/share/gnome/pixmaps/|' \
+		's|/usr/share/pixmaps/|${PREFIX}/share/pixmaps/|' \
 		${WRKSRC}/GNOME_TimerApplet.server.in.in
-	@${REINPLACE_CMD} -e \
-		's|$$(datadir)/sounds|${LOCALBASE}/share/gnome/sounds|' \
-		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

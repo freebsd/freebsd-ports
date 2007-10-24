@@ -1,0 +1,58 @@
+--- avahi-compat-libdns_sd/Makefile.in.orig	2007-07-31 12:31:07.000000000 -0400
++++ avahi-compat-libdns_sd/Makefile.in	2007-07-31 12:35:41.000000000 -0400
+@@ -101,17 +101,14 @@
+ null_test_OBJECTS = $(am_null_test_OBJECTS)
+ am__DEPENDENCIES_1 =
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@null_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(am__DEPENDENCIES_1) \
+-@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	../avahi-common/libavahi-common.la \
+-@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	../avahi-client/libavahi-client.la
++@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(am__DEPENDENCIES_1)
+ am__txt_test_SOURCES_DIST = dns_sd.h txt.c txt-test.c warn.c warn.h
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@am_txt_test_OBJECTS = txt_test-txt.$(OBJEXT) \
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	txt_test-txt-test.$(OBJEXT) \
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	txt_test-warn.$(OBJEXT)
+ txt_test_OBJECTS = $(am_txt_test_OBJECTS)
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@txt_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(am__DEPENDENCIES_1) \
+-@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	../avahi-common/libavahi-common.la
++@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -430,7 +427,7 @@
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	warn.c warn.h
+ 
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@libdns_sd_la_CFLAGS = $(AM_CFLAGS) $(PTHREAD_CFLAGS)
+-@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@libdns_sd_la_LDFLAGS = $(AM_LDFLAGS) -export-dynamic -version-info $(LIBAVAHI_COMPAT_LIBDNS_SD_VERSION_INFO) $(PTHREAD_LIBS) $(PTHREAD_CFLAGS) ../avahi-common/libavahi-common.la ../avahi-client/libavahi-client.la
++@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@libdns_sd_la_LDFLAGS = $(AM_LDFLAGS) -export-dynamic -version-info $(LIBAVAHI_COMPAT_LIBDNS_SD_VERSION_INFO) $(PTHREAD_LIBS) $(PTHREAD_CFLAGS) `$(PKG_CONFIG) --libs --cflags avahi-client`
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@txt_test_SOURCES = \
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	dns_sd.h \
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	txt.c \
+@@ -438,7 +435,7 @@
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	warn.c warn.h
+ 
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@txt_test_CFLAGS = $(AM_CFLAGS) $(PTHREAD_CFLAGS)
+-@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@txt_test_LDADD = $(AM_LDADD) $(PTHREAD_LIBS) $(PTHREAD_CFLAGS) ../avahi-common/libavahi-common.la
++@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@txt_test_LDADD = $(AM_LDADD) $(PTHREAD_LIBS) $(PTHREAD_CFLAGS) `$(PKG_CONFIG) --libs --cflags avahi-client`
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@null_test_SOURCES = \
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	dns_sd.h \
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	compat.c \
+@@ -446,7 +443,7 @@
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	warn.c warn.h
+ 
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@null_test_CFLAGS = $(AM_CFLAGS) $(PTHREAD_CFLAGS)
+-@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@null_test_LDADD = $(AM_LDADD) $(PTHREAD_LIBS) $(PTHREAD_CFLAGS) ../avahi-common/libavahi-common.la ../avahi-client/libavahi-client.la
++@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@null_test_LDADD = $(AM_LDADD) $(PTHREAD_LIBS) $(PTHREAD_CFLAGS) `$(PKG_CONFIG) --libs --cflags avahi-client`
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@CLEANFILES = libdns_sd-test.o libdns_sd-test
+ all: all-am
+ 
+@@ -883,7 +880,7 @@
+ 
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@libdns_sd-test: libdns_sd-test.c libdns_sd.la
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(LIBTOOL) --mode=compile $(CC) $(AM_CFLAGS) $(PTHREAD_CFLAGS) -o libdns_sd-test.o -c libdns_sd-test.c 
+-@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(LIBTOOL) --mode=link $(CC) $(AM_CFLAGS) $(PTHREAD_CFLAGS) -o libdns_sd-test libdns_sd-test.o $(PTHREAD_LIBS) ../avahi-common/libavahi-common.la libdns_sd.la 
++@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(LIBTOOL) --mode=link $(CC) $(AM_CFLAGS) $(PTHREAD_CFLAGS) -o libdns_sd-test libdns_sd-test.o $(PTHREAD_LIBS) libdns_sd.la 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

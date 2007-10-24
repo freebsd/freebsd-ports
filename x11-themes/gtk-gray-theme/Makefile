@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-gray-theme
 PORTVERSION=	1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	34132-Gray
@@ -23,13 +23,13 @@ USE_GNOME=	gtk20
 do-install:
 	${MKDIR} ${PREFIX}/share/themes/Gray/gtk-2.0
 	${MKDIR} ${PREFIX}/share/themes/Gray-Flat/gtk-2.0
-	${MKDIR} ${PREFIX}/share/gnome/themes/Gray/metacity-1
-	${MKDIR} ${PREFIX}/share/gnome/themes/Gray-Flat/metacity-1
+	${MKDIR} ${PREFIX}/share/themes/Gray/metacity-1
+	${MKDIR} ${PREFIX}/share/themes/Gray-Flat/metacity-1
 	@${CP} ${WRKDIR}/Gray/index.theme ${PREFIX}/share/themes/Gray
 	@${CP} -R ${WRKDIR}/Gray/gtk-2.0/* ${PREFIX}/share/themes/Gray/gtk-2.0
 	@${CP} ${WRKDIR}/Gray-Flat/index.theme ${PREFIX}/share/themes/Gray-Flat
 	@${CP} -R ${WRKDIR}/Gray-Flat/gtk-2.0/* ${PREFIX}/share/themes/Gray-Flat/gtk-2.0
-	@${CP} -R ${WRKDIR}/Gray/metacity-1/* ${PREFIX}/share/gnome/themes/Gray/metacity-1
-	@${CP} -R ${WRKDIR}/Gray-Flat/metacity-1/* ${PREFIX}/share/gnome/themes/Gray-Flat/metacity-1
+	@${CP} -R ${WRKDIR}/Gray/metacity-1/* ${PREFIX}/share/themes/Gray/metacity-1
+	@${CP} -R ${WRKDIR}/Gray-Flat/metacity-1/* ${PREFIX}/share/themes/Gray-Flat/metacity-1
 
 .include <bsd.port.mk>

@@ -3,11 +3,12 @@
 # Whom:				Anders Andersson <anders@hack.org>
 #
 # $FreeBSD$
-#    $MCom: ports/cad/oregano/Makefile,v 1.7 2006/10/10 05:25:08 ahze Exp $
+#   $MCom: ports/cad/oregano/Makefile,v 1.9 2007/07/23 19:25:26 mezz Exp $
+#
 
 PORTNAME=	oregano
 PORTVERSION=	0.60.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad gnome
 MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/84/
 
@@ -27,12 +28,7 @@ INSTALLS_OMF=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-Wall|${CFLAGS}|g ; \
-		 s|'/share'|'/share/gnome'|g ; \
-		 s|'share/applications'|'share/gnome/applications'|g ; \
-		 s|'share/mime-info'|'share/gnome/mime-info'|g" ${WRKSRC}/SConstruct
-	@${FIND} ${WRKSRC} -name "SConscript" | ${XARGS} ${REINPLACE_CMD} -e \
-		"s|share/oregano|share/gnome/oregano|g"
+	@${REINPLACE_CMD} -e "s|-Wall|${CFLAGS}|g" ${WRKSRC}/SConstruct
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/oregano
@@ -40,11 +36,11 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/gnome/help/oregano/${lang}
 	${INSTALL_DATA} ${WRKSRC}/help/${lang}/*.xml \
 		${PREFIX}/share/gnome/help/oregano/${lang}
-	@${MKDIR} ${PREFIX}/share/gnome/omf/oregano
+	@${MKDIR} ${PREFIX}/share/omf/oregano
 	${INSTALL_DATA} ${WRKSRC}/help/${lang}/*.omf \
-		${PREFIX}/share/gnome/omf/oregano
+		${PREFIX}/share/omf/oregano
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/gnome-oregano.svg \
-		${PREFIX}/share/gnome/pixmaps/gnome-oregano.svg
+		${PREFIX}/share/pixmaps/gnome-oregano.svg
 
 .include <bsd.port.post.mk>

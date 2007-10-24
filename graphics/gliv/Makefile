@@ -7,7 +7,7 @@
 
 PORTNAME=	gliv
 PORTVERSION=	1.9.6
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://guichaz.free.fr/gliv/files/
 
@@ -35,9 +35,10 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 post-install:
+	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gliv.desktop \
-		${PREFIX}/share/gnome/applications
+		${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gliv.png \
-		${PREFIX}/share/gnome/pixmaps
+		${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

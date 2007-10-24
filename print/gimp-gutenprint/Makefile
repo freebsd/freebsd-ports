@@ -3,7 +3,7 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/print/gimp-gutenprint/Makefile,v 1.2 2007/03/30 16:42:46 ahze Exp $
+#    $MCom: ports/print/gimp-gutenprint/Makefile,v 1.5 2007/10/24 21:05:40 ahze Exp $
 
 PORTREVISION=	2
 PORTEPOCH=	0
@@ -15,7 +15,7 @@ COMMENT=	Gimp print plug-in
 
 MASTERDIR=	${.CURDIR}/../../print/gutenprint-base
 
-GUT_SLAVE=	gimp
+GUT_SLAVE=	gimp-devel
 PLIST=	${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile"

@@ -7,7 +7,7 @@
 
 PORTNAME=	xscorch
 PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xscorch/ \
 		http://mirror.dok.org/xscorch/
@@ -33,10 +33,8 @@ NOMANCOMPRESS=	yes
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 USE_GNOME+=	gnomeprefix gnomelibs
 PKGNAMESUFFIX=	-gnome
-PLIST_SUB+=	GNOME="gnome"
 .else
 CONFIGURE_ARGS+=	--without-gnome
-PLIST_SUB+=	GNOME=""
 .endif
 
 post-patch:

@@ -7,7 +7,7 @@
 
 PORTNAME=	gno3dtet
 PORTVERSION=	1.96.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games gnome
 MASTER_SITES=	http://eseb.net/ftp/gno3dtet/
 EXTRACT_SUFX=	.tgz
@@ -36,10 +36,6 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e '/LIBTOOL/d ; \
 		 s|gnome-games|gno3dtet|g' ${WRKSRC}/configure.in
-	@${REINPLACE_CMD} -e 's|/gnome/help/|/help/|g' \
-		${WRKSRC}/xmldocs.make
-	@${REINPLACE_CMD} -e 's|/gnome/help/|/help/|g ; \
-		 s|datadir)/locale|prefix)/share/locale|g' ${WRKSRC}/src/Makefile.am
 
 pre-configure:
 	@${INSTALL_SCRIPT} ${AUTOMAKE_DIR}/mkinstalldirs ${WRKSRC}
@@ -47,7 +43,7 @@ pre-configure:
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/gno3dtet
 	${CHMOD} 2555 ${PREFIX}/bin/gno3dtet
-	${CHOWN} root:games ${PREFIX}/share/gnome/games/gno3dtet.hof
-	${CHMOD} 664 ${PREFIX}/share/gnome/games/gno3dtet.hof
+	${CHOWN} root:games ${PREFIX}/share/games/gno3dtet.hof
+	${CHMOD} 664 ${PREFIX}/share/games/gno3dtet.hof
 
 .include <bsd.port.mk>

@@ -135,6 +135,7 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%%%EXAMPLESDIR%%/gobject/properties.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/gobject/signal.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/gtk/bin.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk/customtreemodel.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/gtk/filechooser.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/gtk/scrollable.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/gtk/sizegroup.py
@@ -252,12 +253,15 @@ share/pygtk/2.0/codegen/scmexpr.pyo
 share/pygtk/2.0/defs/atk-types.defs
 share/pygtk/2.0/defs/atk.defs
 share/pygtk/2.0/defs/gdk-2.10.defs
+share/pygtk/2.0/defs/gdk-2.12.defs
 share/pygtk/2.0/defs/gdk-base-types.defs
 share/pygtk/2.0/defs/gdk-base.defs
 share/pygtk/2.0/defs/gdk-types.defs
 share/pygtk/2.0/defs/gdk.defs
 share/pygtk/2.0/defs/gtk-2.10-types.defs
 share/pygtk/2.0/defs/gtk-2.10.defs
+share/pygtk/2.0/defs/gtk-2.12-types.defs
+share/pygtk/2.0/defs/gtk-2.12.defs
 share/pygtk/2.0/defs/gtk-base-types.defs
 share/pygtk/2.0/defs/gtk-base.defs
 share/pygtk/2.0/defs/gtk-types.defs

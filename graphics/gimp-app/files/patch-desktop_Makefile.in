@@ -1,0 +1,33 @@
+--- desktop/Makefile.in.orig	Mon Jan  1 02:31:10 2007
++++ desktop/Makefile.in	Mon Jan  1 02:33:44 2007
+@@ -65,8 +65,7 @@
+ 	"$(DESTDIR)$(icons16dir)" "$(DESTDIR)$(icons22dir)" \
+ 	"$(DESTDIR)$(icons24dir)" "$(DESTDIR)$(icons32dir)" \
+ 	"$(DESTDIR)$(icons48dir)" "$(DESTDIR)$(icons64dir)" \
+-	"$(DESTDIR)$(iconsscalabledir)" "$(DESTDIR)$(mimeinfodir)" \
+-	"$(DESTDIR)$(registrydir)"
++	"$(DESTDIR)$(iconsscalabledir)"
+ applicationsDATA_INSTALL = $(INSTALL_DATA)
+ icons16DATA_INSTALL = $(INSTALL_DATA)
+ icons22DATA_INSTALL = $(INSTALL_DATA)
+@@ -79,8 +78,7 @@
+ registryDATA_INSTALL = $(INSTALL_DATA)
+ DATA = $(applications_DATA) $(icons16_DATA) $(icons22_DATA) \
+ 	$(icons24_DATA) $(icons32_DATA) $(icons48_DATA) \
+-	$(icons64_DATA) $(iconsscalable_DATA) $(mimeinfo_DATA) \
+-	$(registry_DATA)
++	$(icons64_DATA) $(iconsscalable_DATA)
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ AA = @AA@
+ ACLOCAL = @ACLOCAL@
+@@ -445,10 +443,6 @@
+ desktop_files = $(desktop_in_files:.desktop.in.in=.desktop)
+ @DESKTOP_DATADIR_TRUE@applicationsdir = $(DESKTOP_DATADIR)/applications
+ @DESKTOP_DATADIR_TRUE@applications_DATA = $(desktop_files)
+-@DESKTOP_DATADIR_TRUE@mimeinfodir = $(DESKTOP_DATADIR)/mime-info
+-@DESKTOP_DATADIR_TRUE@mimeinfo_DATA = gimp.keys
+-@DESKTOP_DATADIR_TRUE@registrydir = $(DESKTOP_DATADIR)/application-registry
+-@DESKTOP_DATADIR_TRUE@registry_DATA = gimp.applications
+ @DESKTOP_DATADIR_TRUE@icons16dir = $(DESKTOP_DATADIR)/icons/hicolor/16x16/apps
+ @DESKTOP_DATADIR_TRUE@icons16_DATA = 16x16/gimp.png
+ @DESKTOP_DATADIR_TRUE@icons22dir = $(DESKTOP_DATADIR)/icons/hicolor/22x22/apps

@@ -7,7 +7,7 @@
 
 PORTNAME=	gdeskcal-skins
 PORTVERSION=	0.56
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	http://www.pycage.de/download/skins/gdeskcal/
 DISTNAME=
@@ -42,12 +42,12 @@ DATA_DIRS=	GNOME Grey_skin LCD Red_skin SimpleForDark XFCE august \
 		miderat_RTL tiny_and_simple tnf
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/gnome/gdeskcal
+	@${MKDIR} ${PREFIX}/share/gdeskcal
 .for d in ${DATA_DIRS}
-		@${MKDIR} ${PREFIX}/share/gnome/gdeskcal/skins/${d}
+		@${MKDIR} ${PREFIX}/share/gdeskcal/skins/${d}
 		@cd ${WRKSRC}/${d} && ${FIND} . | \
 	    		${CPIO} --quiet -pdm -L -R ${LIBOWN}:${LIBGRP}  \
-			${PREFIX}/share/gnome/gdeskcal/skins/${d}
+			${PREFIX}/share/gdeskcal/skins/${d}
 .endfor
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@
 -	if ( getenv ("PKG_CONFIG_PATH") ) {
 -		path = g_strconcat(getenv("PKG_CONFIG_PATH"),":DIRS_DONE",NULL);
 -	}
-+	path = "%%LOCALBASE%%/libdata/pkgconfig:%%X11BASE%%/libdata/pkgconfig:DIRS_DONE";
++	path = "%%LOCALBASE%%/libdata/pkgconfig:DIRS_DONE";
  
  	/* walk the PKG_CONFIG_PATH for other files */
  	if ( path ) {

@@ -418,11 +418,11 @@ bin/isartags
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/info/x-symbol.info
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/README.x-symbol-for-ProofGeneral
 %%EMACS_SITE_LISPDIR%%/site-start.d/pg-init.el
-share/gnome/application-registry/proofgeneral.applications
-share/gnome/applications/proofgeneral.desktop
-share/gnome/mime-info/proofgeneral.keys
-share/gnome/mime-info/proofgeneral.mime
-share/gnome/pixmaps/proofgeneral.png
+share/application-registry/proofgeneral.applications
+share/applications/proofgeneral.desktop
+share/mime-info/proofgeneral.keys
+share/mime-info/proofgeneral.mime
+share/pixmaps/proofgeneral.png
 share/icons/hicolor/16x16/proofgeneral.png
 share/icons/hicolor/32x32/proofgeneral.png
 share/icons/hicolor/48x48/proofgeneral.png
@@ -548,3 +548,4 @@ share/icons/hicolor/48x48/proofgeneral.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ProofGeneral
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/PG-adapting
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications

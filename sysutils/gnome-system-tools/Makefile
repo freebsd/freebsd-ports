@@ -3,11 +3,10 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/sysutils/gnome-system-tools/Makefile,v 1.59 2007/03/12 12:55:31 ahze Exp $
+#    $MCom: ports/sysutils/gnome-system-tools/Makefile,v 1.68 2007/09/16 16:56:43 ahze Exp $
 
 PORTNAME=	gnome-system-tools
-PORTVERSION=	2.18.1
-PORTREVISION=	2
+PORTVERSION=	2.20.0
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-system-tools/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -34,9 +33,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	gnome-system-tools.schemas
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$${prefix}/$${DATADIRNAME}|$${datadir}|g' \
-	    	${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	soundtracker
 PORTVERSION=	0.6.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.soundtracker.org/dl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	v${PORTVERSION:R}
@@ -44,7 +44,6 @@ CONFIGURE_ARGS+=	--enable-asm
 .if defined(WITH_GNOME)
 USE_GNOME+=	gnomelibs gnomeprefix
 CONFIGURE_ARGS+=	--enable-gnome
-DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 .else
 CONFIGURE_ARGS+=	--disable-gnome
 .endif

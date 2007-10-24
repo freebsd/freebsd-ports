@@ -3,11 +3,11 @@
 # Whom:				Adam Weinberger <adamw@freebsd.org>
 #
 # $FreeBSD$
-#    $MCom: ports/accessibility/gok/Makefile,v 1.72 2006/08/26 03:50:50 marcus Exp $
+#    $MCom: ports/accessibility/gok/Makefile,v 1.83 2007/10/15 13:40:59 ahze Exp $
 #
 
 PORTNAME=	gok
-PORTVERSION=	1.2.5
+PORTVERSION=	1.3.7
 PORTEPOCH=	1
 CATEGORIES=	accessibility sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -26,8 +26,8 @@ USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui atspi libwnck \
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	gok.schemas
 

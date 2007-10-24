@@ -18,64 +18,12 @@ lib/libnautilus-extension.so
 lib/libnautilus-extension.so.1
 libdata/bonobo/servers/Nautilus_shell.server
 libdata/pkgconfig/libnautilus-extension.pc
-share/gnome/applications/nautilus-computer.desktop
-share/gnome/applications/nautilus-file-management-properties.desktop
-share/gnome/applications/nautilus-folder-handler.desktop
-share/gnome/applications/nautilus-home.desktop
-share/gnome/applications/nautilus.desktop
-share/gnome/applications/network-scheme.desktop
-share/gnome/nautilus/browser.xml
-share/gnome/nautilus/glade/nautilus-bookmarks-window.glade
-share/gnome/nautilus/glade/nautilus-file-management-properties.glade
-share/gnome/nautilus/nautilus-extras.placeholder
-share/gnome/nautilus/nautilus-suggested.placeholder
-share/gnome/nautilus/patterns/blue_gray_rough.png
-share/gnome/nautilus/patterns/blue_ridge.png
-share/gnome/nautilus/patterns/blue_type.png
-share/gnome/nautilus/patterns/brushed_metal.png
-share/gnome/nautilus/patterns/burlap.jpg
-share/gnome/nautilus/patterns/camouflage.png
-share/gnome/nautilus/patterns/chalk.jpg
-share/gnome/nautilus/patterns/cork.png
-share/gnome/nautilus/patterns/countertop.png
-share/gnome/nautilus/patterns/dark-gnome.jpg
-share/gnome/nautilus/patterns/dots.png
-share/gnome/nautilus/patterns/fibers.png
-share/gnome/nautilus/patterns/fleur_de_lis.png
-share/gnome/nautilus/patterns/floral.png
-share/gnome/nautilus/patterns/fossil.png
-share/gnome/nautilus/patterns/gnome.jpg
-share/gnome/nautilus/patterns/green_weave.png
-share/gnome/nautilus/patterns/ice.png
-share/gnome/nautilus/patterns/manila_paper.png
-share/gnome/nautilus/patterns/moss_ridge.png
-share/gnome/nautilus/patterns/numbers.png
-share/gnome/nautilus/patterns/ocean_stripes.png
-share/gnome/nautilus/patterns/purple_marble.png
-share/gnome/nautilus/patterns/reset.png
-share/gnome/nautilus/patterns/ridged_paper.png
-share/gnome/nautilus/patterns/rough_paper.png
-share/gnome/nautilus/patterns/sky_ridge.png
-share/gnome/nautilus/patterns/snow_ridge.png
-share/gnome/nautilus/patterns/stucco.jpg
-share/gnome/nautilus/patterns/terracotta.png
-share/gnome/nautilus/patterns/wavy_white.png
-share/gnome/nautilus/ui/nautilus-desktop-icon-view-ui.xml
-share/gnome/nautilus/ui/nautilus-directory-view-ui.xml
-share/gnome/nautilus/ui/nautilus-icon-view-ui.xml
-share/gnome/nautilus/ui/nautilus-list-view-ui.xml
-share/gnome/nautilus/ui/nautilus-navigation-window-ui.xml
-share/gnome/nautilus/ui/nautilus-shell-ui.xml
-share/gnome/nautilus/ui/nautilus-spatial-window-ui.xml
-share/gnome/pixmaps/nautilus/audio.svg
-share/gnome/pixmaps/nautilus/backgrounds.png
-share/gnome/pixmaps/nautilus/chit_frame.png
-share/gnome/pixmaps/nautilus/colors.png
-share/gnome/pixmaps/nautilus/emblems.png
-share/gnome/pixmaps/nautilus/erase.png
-share/gnome/pixmaps/nautilus/knob.png
-share/gnome/pixmaps/nautilus/note-indicator.png
-share/gnome/pixmaps/nautilus/thumbnail_frame.png
+share/applications/nautilus-computer.desktop
+share/applications/nautilus-file-management-properties.desktop
+share/applications/nautilus-folder-handler.desktop
+share/applications/nautilus-home.desktop
+share/applications/nautilus.desktop
+share/applications/network-scheme.desktop
 share/icons/hicolor/16x16/apps/nautilus.png
 share/icons/hicolor/22x22/apps/nautilus.png
 share/icons/hicolor/24x24/apps/nautilus.png
@@ -84,6 +32,7 @@ share/icons/hicolor/scalable/apps/nautilus.svg
 share/locale/af/LC_MESSAGES/nautilus.mo
 share/locale/am/LC_MESSAGES/nautilus.mo
 share/locale/ar/LC_MESSAGES/nautilus.mo
+share/locale/as/LC_MESSAGES/nautilus.mo
 share/locale/az/LC_MESSAGES/nautilus.mo
 share/locale/be/LC_MESSAGES/nautilus.mo
 share/locale/be@latin/LC_MESSAGES/nautilus.mo
@@ -122,6 +71,7 @@ share/locale/it/LC_MESSAGES/nautilus.mo
 share/locale/ja/LC_MESSAGES/nautilus.mo
 share/locale/ka/LC_MESSAGES/nautilus.mo
 share/locale/km/LC_MESSAGES/nautilus.mo
+share/locale/kn/LC_MESSAGES/nautilus.mo
 share/locale/ko/LC_MESSAGES/nautilus.mo
 share/locale/ku/LC_MESSAGES/nautilus.mo
 share/locale/li/LC_MESSAGES/nautilus.mo
@@ -147,6 +97,7 @@ share/locale/pt_BR/LC_MESSAGES/nautilus.mo
 share/locale/ro/LC_MESSAGES/nautilus.mo
 share/locale/ru/LC_MESSAGES/nautilus.mo
 share/locale/rw/LC_MESSAGES/nautilus.mo
+share/locale/si/LC_MESSAGES/nautilus.mo
 share/locale/sk/LC_MESSAGES/nautilus.mo
 share/locale/sl/LC_MESSAGES/nautilus.mo
 share/locale/sq/LC_MESSAGES/nautilus.mo
@@ -170,16 +121,68 @@ share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 share/locale/zu/LC_MESSAGES/nautilus.mo
 share/mime/application/x-gnome-saved-search.xml
 share/mime/packages/nautilus.xml
-@dirrm share/gnome/pixmaps/nautilus
-@dirrm share/gnome/nautilus/ui
-@dirrm share/gnome/nautilus/patterns
-@dirrm share/gnome/nautilus/glade
-@dirrm share/gnome/nautilus
-@dirrm include/nautilus/libnautilus-extension
-@dirrm include/nautilus
+%%DATADIR%%/browser.xml
+%%DATADIR%%/glade/nautilus-bookmarks-window.glade
+%%DATADIR%%/glade/nautilus-file-management-properties.glade
+%%DATADIR%%/nautilus-extras.placeholder
+%%DATADIR%%/nautilus-suggested.placeholder
+%%DATADIR%%/patterns/blue_gray_rough.png
+%%DATADIR%%/patterns/blue_ridge.png
+%%DATADIR%%/patterns/blue_type.png
+%%DATADIR%%/patterns/brushed_metal.png
+%%DATADIR%%/patterns/burlap.jpg
+%%DATADIR%%/patterns/camouflage.png
+%%DATADIR%%/patterns/chalk.jpg
+%%DATADIR%%/patterns/cork.png
+%%DATADIR%%/patterns/countertop.png
+%%DATADIR%%/patterns/dark-gnome.jpg
+%%DATADIR%%/patterns/dots.png
+%%DATADIR%%/patterns/fibers.png
+%%DATADIR%%/patterns/fleur_de_lis.png
+%%DATADIR%%/patterns/floral.png
+%%DATADIR%%/patterns/fossil.png
+%%DATADIR%%/patterns/gnome.jpg
+%%DATADIR%%/patterns/green_weave.png
+%%DATADIR%%/patterns/ice.png
+%%DATADIR%%/patterns/manila_paper.png
+%%DATADIR%%/patterns/moss_ridge.png
+%%DATADIR%%/patterns/numbers.png
+%%DATADIR%%/patterns/ocean_stripes.png
+%%DATADIR%%/patterns/purple_marble.png
+%%DATADIR%%/patterns/reset.png
+%%DATADIR%%/patterns/ridged_paper.png
+%%DATADIR%%/patterns/rough_paper.png
+%%DATADIR%%/patterns/sky_ridge.png
+%%DATADIR%%/patterns/snow_ridge.png
+%%DATADIR%%/patterns/stucco.jpg
+%%DATADIR%%/patterns/terracotta.png
+%%DATADIR%%/patterns/wavy_white.png
+%%DATADIR%%/ui/nautilus-desktop-icon-view-ui.xml
+%%DATADIR%%/ui/nautilus-directory-view-ui.xml
+%%DATADIR%%/ui/nautilus-icon-view-ui.xml
+%%DATADIR%%/ui/nautilus-list-view-ui.xml
+%%DATADIR%%/ui/nautilus-navigation-window-ui.xml
+%%DATADIR%%/ui/nautilus-shell-ui.xml
+%%DATADIR%%/ui/nautilus-spatial-window-ui.xml
+share/pixmaps/nautilus/audio.svg
+share/pixmaps/nautilus/backgrounds.png
+share/pixmaps/nautilus/chit_frame.png
+share/pixmaps/nautilus/colors.png
+share/pixmaps/nautilus/emblems.png
+share/pixmaps/nautilus/erase.png
+share/pixmaps/nautilus/knob.png
+share/pixmaps/nautilus/note-indicator.png
+share/pixmaps/nautilus/thumbnail_frame.png
+@dirrm share/pixmaps/nautilus
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/patterns
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
 @exec /bin/mkdir -p %D/lib/nautilus/extensions-1.0
 @dirrmtry lib/nautilus/extensions-1.0
 @dirrmtry lib/nautilus
+@dirrm include/nautilus/libnautilus-extension
+@dirrm include/nautilus
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
@@ -196,6 +199,8 @@ share/mime/packages/nautilus.xml
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@ije/LC_MESSAGES
 @dirrmtry share/locale/sr@ije
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
@@ -218,3 +223,6 @@ share/mime/packages/nautilus.xml
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrmtry share/applications

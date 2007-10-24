@@ -14,97 +14,97 @@ lib/libmetacity-private.so
 lib/libmetacity-private.so.0
 libdata/pkgconfig/libmetacity-private.pc
 libexec/metacity-dialog
-share/gnome/expocity/glade/metacity-properties.glade
-share/gnome/expocity/icons/metacity-window-demo.png
-share/gnome/pixmaps/metacity-properties.png
-share/gnome/themes/AgingGorilla/metacity-1/active-button.png
-share/gnome/themes/AgingGorilla/metacity-1/active-close-button.png
-share/gnome/themes/AgingGorilla/metacity-1/active-close-menu-icon.png
-share/gnome/themes/AgingGorilla/metacity-1/active-maximize-button.png
-share/gnome/themes/AgingGorilla/metacity-1/active-maximize-menu-icon.png
-share/gnome/themes/AgingGorilla/metacity-1/active-menu-button.png
-share/gnome/themes/AgingGorilla/metacity-1/active-minimize-button.png
-share/gnome/themes/AgingGorilla/metacity-1/active-minimize-menu-icon.png
-share/gnome/themes/AgingGorilla/metacity-1/inactive-close-button.png
-share/gnome/themes/AgingGorilla/metacity-1/inactive-maximize-button.png
-share/gnome/themes/AgingGorilla/metacity-1/inactive-menu-button.png
-share/gnome/themes/AgingGorilla/metacity-1/inactive-minimize-button.png
-share/gnome/themes/AgingGorilla/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Atlanta/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Bright/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Crux/metacity-1/active-border-top-left-border.png
-share/gnome/themes/Crux/metacity-1/active-border-top-right-border.png
-share/gnome/themes/Crux/metacity-1/active-bottom-left-border.png
-share/gnome/themes/Crux/metacity-1/active-bottom-left-corner.png
-share/gnome/themes/Crux/metacity-1/active-bottom-mid-left-border.png
-share/gnome/themes/Crux/metacity-1/active-bottom-mid-right-border.png
-share/gnome/themes/Crux/metacity-1/active-bottom-right-border.png
-share/gnome/themes/Crux/metacity-1/active-bottom-right-corner.png
-share/gnome/themes/Crux/metacity-1/active-button-prelight.png
-share/gnome/themes/Crux/metacity-1/active-button-pressed.png
-share/gnome/themes/Crux/metacity-1/active-button.png
-share/gnome/themes/Crux/metacity-1/active-close-button.png
-share/gnome/themes/Crux/metacity-1/active-left-border.png
-share/gnome/themes/Crux/metacity-1/active-left-top-border-shaded.png
-share/gnome/themes/Crux/metacity-1/active-left-top-border.png
-share/gnome/themes/Crux/metacity-1/active-maximize-button.png
-share/gnome/themes/Crux/metacity-1/active-menu-button-prelight.png
-share/gnome/themes/Crux/metacity-1/active-menu-button-pressed.png
-share/gnome/themes/Crux/metacity-1/active-menu-button.png
-share/gnome/themes/Crux/metacity-1/active-minimize-button.png
-share/gnome/themes/Crux/metacity-1/active-restore-button.png
-share/gnome/themes/Crux/metacity-1/active-right-border.png
-share/gnome/themes/Crux/metacity-1/active-right-top-border-shaded.png
-share/gnome/themes/Crux/metacity-1/active-right-top-border.png
-share/gnome/themes/Crux/metacity-1/active-top-center-left.png
-share/gnome/themes/Crux/metacity-1/active-top-center-mid-left.png
-share/gnome/themes/Crux/metacity-1/active-top-center-mid-right.png
-share/gnome/themes/Crux/metacity-1/active-top-center-right.png
-share/gnome/themes/Crux/metacity-1/active-top-left-border.png
-share/gnome/themes/Crux/metacity-1/active-top-left-corner.png
-share/gnome/themes/Crux/metacity-1/active-top-mid-left-border.png
-share/gnome/themes/Crux/metacity-1/active-top-mid-right-border.png
-share/gnome/themes/Crux/metacity-1/active-top-right-border.png
-share/gnome/themes/Crux/metacity-1/active-top-right-corner.png
-share/gnome/themes/Crux/metacity-1/inactive-border-top-left-border.png
-share/gnome/themes/Crux/metacity-1/inactive-border-top-right-border.png
-share/gnome/themes/Crux/metacity-1/inactive-bottom-left-border.png
-share/gnome/themes/Crux/metacity-1/inactive-bottom-left-corner.png
-share/gnome/themes/Crux/metacity-1/inactive-bottom-mid-border.png
-share/gnome/themes/Crux/metacity-1/inactive-bottom-right-border.png
-share/gnome/themes/Crux/metacity-1/inactive-bottom-right-corner.png
-share/gnome/themes/Crux/metacity-1/inactive-button-prelight.png
-share/gnome/themes/Crux/metacity-1/inactive-button-pressed.png
-share/gnome/themes/Crux/metacity-1/inactive-button.png
-share/gnome/themes/Crux/metacity-1/inactive-close-button.png
-share/gnome/themes/Crux/metacity-1/inactive-left-border.png
-share/gnome/themes/Crux/metacity-1/inactive-left-top-border-shaded.png
-share/gnome/themes/Crux/metacity-1/inactive-left-top-border.png
-share/gnome/themes/Crux/metacity-1/inactive-maximize-button.png
-share/gnome/themes/Crux/metacity-1/inactive-menu-button-prelight.png
-share/gnome/themes/Crux/metacity-1/inactive-menu-button-pressed.png
-share/gnome/themes/Crux/metacity-1/inactive-menu-button.png
-share/gnome/themes/Crux/metacity-1/inactive-minimize-button.png
-share/gnome/themes/Crux/metacity-1/inactive-restore-button.png
-share/gnome/themes/Crux/metacity-1/inactive-right-border.png
-share/gnome/themes/Crux/metacity-1/inactive-right-top-border-shaded.png
-share/gnome/themes/Crux/metacity-1/inactive-right-top-border.png
-share/gnome/themes/Crux/metacity-1/inactive-top-center-left.png
-share/gnome/themes/Crux/metacity-1/inactive-top-center-mid.png
-share/gnome/themes/Crux/metacity-1/inactive-top-center-right.png
-share/gnome/themes/Crux/metacity-1/inactive-top-left-border.png
-share/gnome/themes/Crux/metacity-1/inactive-top-left-corner.png
-share/gnome/themes/Crux/metacity-1/inactive-top-mid-border.png
-share/gnome/themes/Crux/metacity-1/inactive-top-right-border.png
-share/gnome/themes/Crux/metacity-1/inactive-top-right-corner.png
-share/gnome/themes/Crux/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Esco/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Metabox/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Simple/metacity-1/close.png
-share/gnome/themes/Simple/metacity-1/maximize.png
-share/gnome/themes/Simple/metacity-1/maximized.png
-share/gnome/themes/Simple/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Simple/metacity-1/minimize.png
+share/expocity/glade/metacity-properties.glade
+share/expocity/icons/metacity-window-demo.png
+share/pixmaps/metacity-properties.png
+share/themes/AgingGorilla/metacity-1/active-button.png
+share/themes/AgingGorilla/metacity-1/active-close-button.png
+share/themes/AgingGorilla/metacity-1/active-close-menu-icon.png
+share/themes/AgingGorilla/metacity-1/active-maximize-button.png
+share/themes/AgingGorilla/metacity-1/active-maximize-menu-icon.png
+share/themes/AgingGorilla/metacity-1/active-menu-button.png
+share/themes/AgingGorilla/metacity-1/active-minimize-button.png
+share/themes/AgingGorilla/metacity-1/active-minimize-menu-icon.png
+share/themes/AgingGorilla/metacity-1/inactive-close-button.png
+share/themes/AgingGorilla/metacity-1/inactive-maximize-button.png
+share/themes/AgingGorilla/metacity-1/inactive-menu-button.png
+share/themes/AgingGorilla/metacity-1/inactive-minimize-button.png
+share/themes/AgingGorilla/metacity-1/metacity-theme-1.xml
+share/themes/Atlanta/metacity-1/metacity-theme-1.xml
+share/themes/Bright/metacity-1/metacity-theme-1.xml
+share/themes/Crux/metacity-1/active-border-top-left-border.png
+share/themes/Crux/metacity-1/active-border-top-right-border.png
+share/themes/Crux/metacity-1/active-bottom-left-border.png
+share/themes/Crux/metacity-1/active-bottom-left-corner.png
+share/themes/Crux/metacity-1/active-bottom-mid-left-border.png
+share/themes/Crux/metacity-1/active-bottom-mid-right-border.png
+share/themes/Crux/metacity-1/active-bottom-right-border.png
+share/themes/Crux/metacity-1/active-bottom-right-corner.png
+share/themes/Crux/metacity-1/active-button-prelight.png
+share/themes/Crux/metacity-1/active-button-pressed.png
+share/themes/Crux/metacity-1/active-button.png
+share/themes/Crux/metacity-1/active-close-button.png
+share/themes/Crux/metacity-1/active-left-border.png
+share/themes/Crux/metacity-1/active-left-top-border-shaded.png
+share/themes/Crux/metacity-1/active-left-top-border.png
+share/themes/Crux/metacity-1/active-maximize-button.png
+share/themes/Crux/metacity-1/active-menu-button-prelight.png
+share/themes/Crux/metacity-1/active-menu-button-pressed.png
+share/themes/Crux/metacity-1/active-menu-button.png
+share/themes/Crux/metacity-1/active-minimize-button.png
+share/themes/Crux/metacity-1/active-restore-button.png
+share/themes/Crux/metacity-1/active-right-border.png
+share/themes/Crux/metacity-1/active-right-top-border-shaded.png
+share/themes/Crux/metacity-1/active-right-top-border.png
+share/themes/Crux/metacity-1/active-top-center-left.png
+share/themes/Crux/metacity-1/active-top-center-mid-left.png
+share/themes/Crux/metacity-1/active-top-center-mid-right.png
+share/themes/Crux/metacity-1/active-top-center-right.png
+share/themes/Crux/metacity-1/active-top-left-border.png
+share/themes/Crux/metacity-1/active-top-left-corner.png
+share/themes/Crux/metacity-1/active-top-mid-left-border.png
+share/themes/Crux/metacity-1/active-top-mid-right-border.png
+share/themes/Crux/metacity-1/active-top-right-border.png
+share/themes/Crux/metacity-1/active-top-right-corner.png
+share/themes/Crux/metacity-1/inactive-border-top-left-border.png
+share/themes/Crux/metacity-1/inactive-border-top-right-border.png
+share/themes/Crux/metacity-1/inactive-bottom-left-border.png
+share/themes/Crux/metacity-1/inactive-bottom-left-corner.png
+share/themes/Crux/metacity-1/inactive-bottom-mid-border.png
+share/themes/Crux/metacity-1/inactive-bottom-right-border.png
+share/themes/Crux/metacity-1/inactive-bottom-right-corner.png
+share/themes/Crux/metacity-1/inactive-button-prelight.png
+share/themes/Crux/metacity-1/inactive-button-pressed.png
+share/themes/Crux/metacity-1/inactive-button.png
+share/themes/Crux/metacity-1/inactive-close-button.png
+share/themes/Crux/metacity-1/inactive-left-border.png
+share/themes/Crux/metacity-1/inactive-left-top-border-shaded.png
+share/themes/Crux/metacity-1/inactive-left-top-border.png
+share/themes/Crux/metacity-1/inactive-maximize-button.png
+share/themes/Crux/metacity-1/inactive-menu-button-prelight.png
+share/themes/Crux/metacity-1/inactive-menu-button-pressed.png
+share/themes/Crux/metacity-1/inactive-menu-button.png
+share/themes/Crux/metacity-1/inactive-minimize-button.png
+share/themes/Crux/metacity-1/inactive-restore-button.png
+share/themes/Crux/metacity-1/inactive-right-border.png
+share/themes/Crux/metacity-1/inactive-right-top-border-shaded.png
+share/themes/Crux/metacity-1/inactive-right-top-border.png
+share/themes/Crux/metacity-1/inactive-top-center-left.png
+share/themes/Crux/metacity-1/inactive-top-center-mid.png
+share/themes/Crux/metacity-1/inactive-top-center-right.png
+share/themes/Crux/metacity-1/inactive-top-left-border.png
+share/themes/Crux/metacity-1/inactive-top-left-corner.png
+share/themes/Crux/metacity-1/inactive-top-mid-border.png
+share/themes/Crux/metacity-1/inactive-top-right-border.png
+share/themes/Crux/metacity-1/inactive-top-right-corner.png
+share/themes/Crux/metacity-1/metacity-theme-1.xml
+share/themes/Esco/metacity-1/metacity-theme-1.xml
+share/themes/Metabox/metacity-1/metacity-theme-1.xml
+share/themes/Simple/metacity-1/close.png
+share/themes/Simple/metacity-1/maximize.png
+share/themes/Simple/metacity-1/maximized.png
+share/themes/Simple/metacity-1/metacity-theme-1.xml
+share/themes/Simple/metacity-1/minimize.png
 share/gnome/wm-properties/metacity.desktop
 share/locale/am/LC_MESSAGES/metacity.mo
 share/locale/ar/LC_MESSAGES/metacity.mo
@@ -160,22 +160,22 @@ share/locale/vi/LC_MESSAGES/metacity.mo
 share/locale/wa/LC_MESSAGES/metacity.mo
 share/locale/zh_CN/LC_MESSAGES/metacity.mo
 share/locale/zh_TW/LC_MESSAGES/metacity.mo
-@dirrm share/gnome/themes/Simple/metacity-1
-@dirrm share/gnome/themes/Simple
-@dirrm share/gnome/themes/Metabox/metacity-1
-@dirrm share/gnome/themes/Metabox
-@dirrm share/gnome/themes/AgingGorilla/metacity-1
-@dirrm share/gnome/themes/AgingGorilla
-@dirrm share/gnome/themes/Esco/metacity-1
-@dirrm share/gnome/themes/Esco
-@dirrm share/gnome/themes/Crux/metacity-1
-@dirrm share/gnome/themes/Crux
-@dirrm share/gnome/themes/Bright/metacity-1
-@dirrm share/gnome/themes/Bright
-@dirrm share/gnome/themes/Atlanta/metacity-1
-@dirrm share/gnome/themes/Atlanta
-@dirrm share/gnome/expocity/icons
-@dirrm share/gnome/expocity/glade
-@dirrm share/gnome/expocity
+@dirrm share/themes/Simple/metacity-1
+@dirrm share/themes/Simple
+@dirrm share/themes/Metabox/metacity-1
+@dirrm share/themes/Metabox
+@dirrm share/themes/AgingGorilla/metacity-1
+@dirrm share/themes/AgingGorilla
+@dirrm share/themes/Esco/metacity-1
+@dirrm share/themes/Esco
+@dirrm share/themes/Crux/metacity-1
+@dirrm share/themes/Crux
+@dirrm share/themes/Bright/metacity-1
+@dirrm share/themes/Bright
+@dirrm share/themes/Atlanta/metacity-1
+@dirrm share/themes/Atlanta
+@dirrm share/expocity/icons
+@dirrm share/expocity/glade
+@dirrm share/expocity
 @dirrm include/metacity-1/metacity-private
 @dirrm include/metacity-1

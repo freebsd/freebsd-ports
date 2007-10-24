@@ -3,11 +3,11 @@
 # Whom:					Rene Hexel <rh@netbsd.org>
 #
 # $FreeBSD$
-#    $MCom: ports/textproc/scrollkeeper/Makefile,v 1.7 2007/02/20 20:26:47 marcus Exp $
+#    $MCom: ports/textproc/scrollkeeper/Makefile,v 1.12 2007/10/17 21:36:13 mezz Exp $
 
 PORTNAME=	scrollkeeper
 PORTVERSION=	0.3.14
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -28,6 +28,8 @@ RUN_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 
 DOCBOOK_VERSION=4.2
 
+CONFLICTS=	rarian-[0-9]*
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -35,8 +37,8 @@ USE_AUTOTOOLS=	libtool:15
 USE_BISON=	build
 USE_GNOME=	gnomehack gnomehier gnometarget libxslt intlhack
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome \
-		--with-omfdirs=${PREFIX}/share/gnome/omf \
+CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share \
+		--with-omfdirs=${PREFIX}/share/omf \
 		--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl" \

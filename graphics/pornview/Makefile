@@ -7,7 +7,7 @@
 
 PORTNAME=	pornview
 PORTVERSION=	0.2.0.p.1
-PORTREVISION=	12
+PORTREVISION=	14
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -41,7 +41,7 @@ PLIST_SUB+=	WITH_NLS=""
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|INCLUDED_LIBINTL=yes|INCLUDED_LIBINTL=no|g ; \
-		 s|\\[$$][{]top_builddir[}]/intl/libintl.a|-lintl|g ; \
-		 s|[{]datadir[}]/locale|{prefix}/share/locale|g' ${WRKSRC}/configure
+		 s|\\[$$][{]top_builddir[}]/intl/libintl.a|-lintl|g' \
+		 	${WRKSRC}/configure
 
 .include <bsd.port.mk>

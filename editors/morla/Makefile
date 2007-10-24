@@ -7,7 +7,6 @@
 
 PORTNAME=	morla
 PORTVERSION=	0.13
-#PORTREVISION=	0
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://www.morlardf.net/src/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -36,5 +35,9 @@ DESKTOP_ENTRIES="morla" \
 		"morla" \
 		"Application;WebDevelopment;" \
 		true
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

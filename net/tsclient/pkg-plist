@@ -1,29 +1,29 @@
 bin/tsclient
-share/gnome/application-registry/tsclient.applications
-share/gnome/applications/tsclient.desktop
-share/gnome/mime-info/tsclient.keys
-share/gnome/mime-info/tsclient.mime
-share/gnome/pixmaps/tsclient.png
-share/gnome/pixmaps/tsclient/banner-ar.png
-share/gnome/pixmaps/tsclient/banner-en.png
-share/gnome/pixmaps/tsclient/banner-es.png
-share/gnome/pixmaps/tsclient/banner-hu.png
-share/gnome/pixmaps/tsclient/banner-ja.png
-share/gnome/pixmaps/tsclient/banner-ms.png
-share/gnome/pixmaps/tsclient/banner-nl.png
-share/gnome/pixmaps/tsclient/banner-pa.png
-share/gnome/pixmaps/tsclient/banner-ru.png
-share/gnome/pixmaps/tsclient/banner-sv.png
-share/gnome/pixmaps/tsclient/banner-zh-cn.png
-share/gnome/pixmaps/tsclient/banner-zh-tw.png
-share/gnome/pixmaps/tsclient/colors.png
-share/gnome/pixmaps/tsclient/computer.png
-share/gnome/pixmaps/tsclient/keyboard.png
-share/gnome/pixmaps/tsclient/perform.png
-share/gnome/pixmaps/tsclient/program.png
-share/gnome/pixmaps/tsclient/size.png
-share/gnome/pixmaps/tsclient/sound.png
-share/gnome/pixmaps/tsclient/tsclient.png
+share/application-registry/tsclient.applications
+share/applications/tsclient.desktop
+share/mime-info/tsclient.keys
+share/mime-info/tsclient.mime
+share/pixmaps/tsclient.png
+share/pixmaps/tsclient/banner-ar.png
+share/pixmaps/tsclient/banner-en.png
+share/pixmaps/tsclient/banner-es.png
+share/pixmaps/tsclient/banner-hu.png
+share/pixmaps/tsclient/banner-ja.png
+share/pixmaps/tsclient/banner-ms.png
+share/pixmaps/tsclient/banner-nl.png
+share/pixmaps/tsclient/banner-pa.png
+share/pixmaps/tsclient/banner-ru.png
+share/pixmaps/tsclient/banner-sv.png
+share/pixmaps/tsclient/banner-zh-cn.png
+share/pixmaps/tsclient/banner-zh-tw.png
+share/pixmaps/tsclient/colors.png
+share/pixmaps/tsclient/computer.png
+share/pixmaps/tsclient/keyboard.png
+share/pixmaps/tsclient/perform.png
+share/pixmaps/tsclient/program.png
+share/pixmaps/tsclient/size.png
+share/pixmaps/tsclient/sound.png
+share/pixmaps/tsclient/tsclient.png
 share/locale/ar/LC_MESSAGES/tsclient.mo
 share/locale/ca/LC_MESSAGES/tsclient.mo
 share/locale/cs/LC_MESSAGES/tsclient.mo
@@ -62,4 +62,5 @@ share/locale/zh_TW/LC_MESSAGES/tsclient.mo
 @dirrmtry share/locale/se
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
-@dirrm share/gnome/pixmaps/tsclient
+@dirrm share/pixmaps/tsclient
+@dirrmtry share/applications

@@ -1,11 +1,11 @@
 bin/gksu
 bin/gksudo
 bin/gksuexec
-share/gnome/applications/gksu.desktop
-share/gnome/applications/gksuexec.desktop
-share/gnome/pixmaps/gksu-icon.png
-share/gnome/pixmaps/gksu-root-terminal.png
-share/gnome/gksu/gksu-migrate-conf.sh
+share/applications/gksu.desktop
+share/applications/gksuexec.desktop
+share/pixmaps/gksu-icon.png
+share/pixmaps/gksu-root-terminal.png
+share/gksu/gksu-migrate-conf.sh
 share/locale/ca/LC_MESSAGES/gksu.mo
 share/locale/da/LC_MESSAGES/gksu.mo
 share/locale/de/LC_MESSAGES/gksu.mo
@@ -24,4 +24,5 @@ share/locale/pt/LC_MESSAGES/gksu.mo
 share/locale/ro/LC_MESSAGES/gksu.mo
 share/locale/sk/LC_MESSAGES/gksu.mo
 share/locale/xh/LC_MESSAGES/gksu.mo
-@dirrm share/gnome/gksu
+@dirrm share/gksu
+@dirrmtry share/applications

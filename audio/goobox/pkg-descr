@@ -1,0 +1,4 @@
+Goobox is a CD player and ripper for the GNOME Desktop environment,
+it uses gstreamer to play and rip CDs and cddb-slave2 (distributed
+with gnome-media) to get and edit CD metadata such as track titles
+and album name.

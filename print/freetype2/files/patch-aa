@@ -1,6 +1,16 @@
---- builds/unix/detect.mk.orig	Tue Aug 22 17:53:59 2006
-+++ builds/unix/detect.mk	Tue Aug 22 17:54:09 2006
-@@ -78,9 +78,9 @@ ifeq ($(PLATFORM),unix)
+--- builds/unix/detect.mk.orig	2006-12-09 13:51:54.000000000 -0500
++++ builds/unix/detect.mk	2007-07-06 12:55:05.000000000 -0400
+@@ -21,6 +21,9 @@ ifeq ($(PLATFORM),ansi)
+   is_unix := $(strip $(wildcard /sbin/init) \
+                      $(wildcard /usr/sbin/init) \
+                      $(wildcard /hurd/auth))
++  # FreeBSD is "unix" so just mandate this to fix the build in
++  # jails that do not have init (see PR#113470).
++  is_unix := true
+   ifneq ($(is_unix),)
+ 
+     PLATFORM := unix
+@@ -79,9 +82,9 @@ ifeq ($(PLATFORM),unix)
    ifdef must_configure
      ifneq ($(have_Makefile),)
        # we are building FT2 not in the src tree

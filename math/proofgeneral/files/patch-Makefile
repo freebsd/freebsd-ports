@@ -77,18 +77,18 @@
 +	  ${BSD_INSTALL_DATA} etc/desktop/icons/48x48/proofgeneral.png ${DESKTOP}/icons/hicolor/48x48; \
 +	fi
 +
-+	if [ -d ${DESKTOP}/gnome ]; then \
-+	  ${BSD_INSTALL_DATA} etc/desktop/icons/48x48/proofgeneral.png ${DESKTOP}/gnome/pixmaps; \
-+	  ${BSD_INSTALL_DATA} etc/desktop/proofgeneral.desktop ${DESKTOP}/gnome/applications; \
-+	  ${BSD_INSTALL_DATA} etc/desktop/mime-info/proofgeneral.mime ${DESKTOP}/gnome/mime-info; \
-+	  ${BSD_INSTALL_DATA} etc/desktop/mime-info/proofgeneral.keys ${DESKTOP}/gnome/mime-info; \
++	if [ -d ${DESKTOP} ]; then \
++	  ${BSD_INSTALL_DATA} etc/desktop/icons/48x48/proofgeneral.png ${DESKTOP}/pixmaps; \
++	  ${BSD_INSTALL_DATA} etc/desktop/proofgeneral.desktop ${DESKTOP}/applications; \
++	  ${BSD_INSTALL_DATA} etc/desktop/mime-info/proofgeneral.mime ${DESKTOP}/mime-info; \
++	  ${BSD_INSTALL_DATA} etc/desktop/mime-info/proofgeneral.keys ${DESKTOP}/mime-info; \
 +	fi
 +
  # backwards compatibility with old linuxes
 -	mkdir -p ${DESKTOP}/application-registry
 -	cp etc/desktop/application-registry/proofgeneral.applications ${DESKTOP}/application-registry
-+	mkdir -p ${DESKTOP}/gnome/application-registry
-+	cp etc/desktop/application-registry/proofgeneral.applications ${DESKTOP}/gnome/application-registry
++	mkdir -p ${DESKTOP}/application-registry
++	cp etc/desktop/application-registry/proofgeneral.applications ${DESKTOP}/application-registry
  
  # NB: .el files are not strictly necessary, but we package/install them
  # for the time being to help with debugging, or for users to recompile.

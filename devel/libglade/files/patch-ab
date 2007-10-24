@@ -10,7 +10,7 @@ $FreeBSD$
 -SUBDIRS = intl macros glade doc
 +SUBDIRS = intl macros glade
  
- m4datadir = $(prefix)/share/aclocal
+ m4datadir = $(datadir)/aclocal
  m4data_DATA = libglade.m4
  
 -confexecdir = $(libdir)

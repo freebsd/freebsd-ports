@@ -20,7 +20,6 @@ include/libtracker-gtk/tracker-ui.h
 include/libtracker-gtk/tracker-utils.h
 include/tracker-client.h
 include/tracker.h
-lib/deskbar-applet/handlers/tracker-handler.py
 lib/libtracker-gtk.a
 lib/libtracker-gtk.la
 lib/libtracker-gtk.so
@@ -67,44 +66,9 @@ lib/tracker/thumbnailers/image/jpeg_thumbnailer
 lib/tracker/thumbnailers/image/png_thumbnailer
 libdata/pkgconfig/libtracker-gtk.pc
 libdata/pkgconfig/tracker.pc
+share/applications/tracker-preferences.desktop
+share/applications/tracker-search-tool.desktop
 share/dbus-1/services/tracker.service
-share/gnome/applications/tracker-preferences.desktop
-share/gnome/applications/tracker-search-tool.desktop
-share/gnome/tracker/icons/thumbnail_frame.png
-share/gnome/tracker/languages/stopwords.da
-share/gnome/tracker/languages/stopwords.de
-share/gnome/tracker/languages/stopwords.en
-share/gnome/tracker/languages/stopwords.es
-share/gnome/tracker/languages/stopwords.fi
-share/gnome/tracker/languages/stopwords.fr
-share/gnome/tracker/languages/stopwords.it
-share/gnome/tracker/languages/stopwords.nb
-share/gnome/tracker/languages/stopwords.nl
-share/gnome/tracker/languages/stopwords.pt
-share/gnome/tracker/languages/stopwords.ru
-share/gnome/tracker/languages/stopwords.sv
-share/gnome/tracker/services/application.metadata
-share/gnome/tracker/services/audio.metadata
-share/gnome/tracker/services/default.metadata
-share/gnome/tracker/services/default.service
-share/gnome/tracker/services/document.metadata
-share/gnome/tracker/services/email.metadata
-share/gnome/tracker/services/file.metadata
-share/gnome/tracker/services/image.metadata
-share/gnome/tracker/services/video.metadata
-share/gnome/tracker/sqlite-cache.sql
-share/gnome/tracker/sqlite-email.sql
-share/gnome/tracker/sqlite-metadata.sql
-share/gnome/tracker/sqlite-service-stored-procs.sql
-share/gnome/tracker/sqlite-service-triggers.sql
-share/gnome/tracker/sqlite-service-types.sql
-share/gnome/tracker/sqlite-service.sql
-share/gnome/tracker/sqlite-stored-procs.sql
-share/gnome/tracker/sqlite-tracker-triggers.sql
-share/gnome/tracker/sqlite-tracker.sql
-share/gnome/tracker/sqlite-user-data.sql
-share/gnome/tracker/tracker-introspect.xml
-share/gnome/tracker/tracker-preferences.glade
 share/icons/hicolor/16x16/apps/tracker.png
 share/icons/hicolor/22x22/apps/tracker.png
 share/icons/hicolor/24x24/apps/tracker.png
@@ -122,14 +86,55 @@ share/locale/fi/LC_MESSAGES/tracker.mo
 share/locale/fr/LC_MESSAGES/tracker.mo
 share/locale/gl/LC_MESSAGES/tracker.mo
 share/locale/it/LC_MESSAGES/tracker.mo
+share/locale/lt/LC_MESSAGES/tracker.mo
 share/locale/mk/LC_MESSAGES/tracker.mo
 share/locale/nb/LC_MESSAGES/tracker.mo
+share/locale/nl/LC_MESSAGES/tracker.mo
 share/locale/oc/LC_MESSAGES/tracker.mo
+share/locale/pl/LC_MESSAGES/tracker.mo
 share/locale/pt/LC_MESSAGES/tracker.mo
 share/locale/ru/LC_MESSAGES/tracker.mo
 share/locale/sl/LC_MESSAGES/tracker.mo
 share/locale/sv/LC_MESSAGES/tracker.mo
-@dirrm include/libtracker-gtk
+%%DATADIR%%/icons/thumbnail_frame.png
+%%DATADIR%%/languages/stopwords.da
+%%DATADIR%%/languages/stopwords.de
+%%DATADIR%%/languages/stopwords.en
+%%DATADIR%%/languages/stopwords.es
+%%DATADIR%%/languages/stopwords.fi
+%%DATADIR%%/languages/stopwords.fr
+%%DATADIR%%/languages/stopwords.it
+%%DATADIR%%/languages/stopwords.nb
+%%DATADIR%%/languages/stopwords.nl
+%%DATADIR%%/languages/stopwords.pt
+%%DATADIR%%/languages/stopwords.ru
+%%DATADIR%%/languages/stopwords.sv
+%%DATADIR%%/services/application.metadata
+%%DATADIR%%/services/audio.metadata
+%%DATADIR%%/services/default.metadata
+%%DATADIR%%/services/default.service
+%%DATADIR%%/services/document.metadata
+%%DATADIR%%/services/email.metadata
+%%DATADIR%%/services/file.metadata
+%%DATADIR%%/services/image.metadata
+%%DATADIR%%/services/video.metadata
+%%DATADIR%%/sqlite-cache.sql
+%%DATADIR%%/sqlite-email.sql
+%%DATADIR%%/sqlite-metadata.sql
+%%DATADIR%%/sqlite-service-stored-procs.sql
+%%DATADIR%%/sqlite-service-triggers.sql
+%%DATADIR%%/sqlite-service-types.sql
+%%DATADIR%%/sqlite-service.sql
+%%DATADIR%%/sqlite-stored-procs.sql
+%%DATADIR%%/sqlite-tracker-triggers.sql
+%%DATADIR%%/sqlite-tracker.sql
+%%DATADIR%%/sqlite-user-data.sql
+%%DATADIR%%/tracker-introspect.xml
+%%DATADIR%%/tracker-preferences.glade
+@dirrm %%DATADIR%%/services
+@dirrm %%DATADIR%%/languages
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
 @dirrm lib/tracker/thumbnailers/image
 @dirrm lib/tracker/thumbnailers/application
 @dirrm lib/tracker/thumbnailers
@@ -137,15 +142,11 @@ share/locale/sv/LC_MESSAGES/tracker.mo
 @dirrm lib/tracker/filters/application
 @dirrm lib/tracker/filters
 @dirrm lib/tracker
-@dirrm share/gnome/tracker/services
-@dirrm share/gnome/tracker/languages
-@dirrm share/gnome/tracker/icons
-@dirrm share/gnome/tracker
+@dirrm include/libtracker-gtk
 @dirrmtry etc/xdg/autostart
 @dirrmtry etc/xdg
-@dirrmtry lib/deskbar-applet/handlers
-@dirrmtry lib/deskbar-applet
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/applications

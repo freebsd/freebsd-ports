@@ -1,7 +1,7 @@
 bin/regexxer
-share/gnome/applications/regexxer.desktop
-share/gnome/regexxer/mainwindow.glade
-share/gnome/regexxer/prefdialog.glade
+share/applications/regexxer.desktop
+share/regexxer/mainwindow.glade
+share/regexxer/prefdialog.glade
 share/icons/hicolor/48x48/apps/regexxer.png
 share/locale/ar/LC_MESSAGES/regexxer.mo
 share/locale/bg/LC_MESSAGES/regexxer.mo
@@ -34,8 +34,9 @@ share/locale/vi/LC_MESSAGES/regexxer.mo
 share/locale/zh_CN/LC_MESSAGES/regexxer.mo
 share/locale/zh_HK/LC_MESSAGES/regexxer.mo
 share/locale/zh_TW/LC_MESSAGES/regexxer.mo
-@dirrm share/gnome/regexxer
+@dirrm share/regexxer
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/applications

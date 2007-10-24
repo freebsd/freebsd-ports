@@ -3,11 +3,12 @@
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
-#   $MCom: ports/finance/gnucash/Makefile,v 1.14 2007/03/13 05:58:37 marcus Exp $
+#   $MCom: ports/finance/gnucash/Makefile,v 1.22 2007/07/30 20:05:51 mezz Exp $
 #
 
 PORTNAME=	gnucash
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
@@ -29,7 +30,7 @@ RUN_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
 		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/finance/p5-Finance-Quote \
 		${SITE_PERL}/HTML/TableExtract.pm:${PORTSDIR}/www/p5-HTML-TableExtract \
 		${SITE_PERL}/Finance/QuoteHist.pm:${PORTSDIR}/finance/p5-Finance-QuoteHist \
-		${LOCALBASE}/share/gnome/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
+		${LOCALBASE}/share/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
 
 OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off
 
@@ -46,8 +47,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=--with-glib-config=${GLIB_CONFIG} \
 		--enable-ofx \
 		--disable-error-on-warning
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lintl"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lintl"
 
 MAN1=		gnc-prices.1 gnucash.1
 INFO=		gnucash-design
@@ -79,11 +80,5 @@ PLIST_SUB=	AQBANKING=""
 CONFIGURE_ARGS+=--disable-hbci
 PLIST_SUB=	AQBANKING="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$${datarootdir}/info|${PREFIX}/info|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|$$(datadir)/aclocal|${PREFIX}/share/aclocal|' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>

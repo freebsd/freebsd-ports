@@ -1,52 +1,52 @@
 bin/glimmer
 bin/glimmerout
+%%DATADIR%%/docs/AUTHORS
+%%DATADIR%%/docs/COPYING
+%%DATADIR%%/docs/ChangeLog
+%%DATADIR%%/docs/NEWS
+%%DATADIR%%/docs/PROPS
+%%DATADIR%%/docs/README
+%%DATADIR%%/docs/TODO
+%%DATADIR%%/languages/ada.lang
+%%DATADIR%%/languages/asp.lang
+%%DATADIR%%/languages/bash.lang
+%%DATADIR%%/languages/c.lang
+%%DATADIR%%/languages/cpp.lang
+%%DATADIR%%/languages/dtml.lang
+%%DATADIR%%/languages/fortran.lang
+%%DATADIR%%/languages/html.lang
+%%DATADIR%%/languages/java.lang
+%%DATADIR%%/languages/js.lang
+%%DATADIR%%/languages/lang.lang
+%%DATADIR%%/languages/latex.lang
+%%DATADIR%%/languages/make.lang
+%%DATADIR%%/languages/ocaml.lang
+%%DATADIR%%/languages/oolong.lang
+%%DATADIR%%/languages/perl.lang
+%%DATADIR%%/languages/php.lang
+%%DATADIR%%/languages/po.lang
+%%DATADIR%%/languages/python.lang
+%%DATADIR%%/languages/ruby.lang
+%%DATADIR%%/languages/scheme.lang
+%%DATADIR%%/languages/sgml.lang
+%%DATADIR%%/languages/sql.lang
+%%DATADIR%%/languages/tcltk.lang
+%%DATADIR%%/languages/wml.lang
+%%DATADIR%%/languages/x86.lang
+%%DATADIR%%/languages/xhtml-trans.lang
+%%DATADIR%%/languages/xml.lang
+%%DATADIR%%/languages/z80.lang
+%%DATADIR%%/scripts/Bookmarks.py
+%%DATADIR%%/scripts/Delete_To_End.py
+%%DATADIR%%/scripts/Delete_To_Start.py
+%%DATADIR%%/scripts/FileSelector.py
+%%DATADIR%%/scripts/Global.py
+%%DATADIR%%/scripts/ISO2HTML.py
+%%DATADIR%%/scripts/Replace_Spaces.py
+%%DATADIR%%/scripts/Replace_Tabs.py
+%%DATADIR%%/scripts/To_Lower.py
+%%DATADIR%%/scripts/To_Upper.py
 share/gnome/apps/Development/glimmer.desktop
-share/gnome/glimmer/docs/AUTHORS
-share/gnome/glimmer/docs/COPYING
-share/gnome/glimmer/docs/ChangeLog
-share/gnome/glimmer/docs/NEWS
-share/gnome/glimmer/docs/PROPS
-share/gnome/glimmer/docs/README
-share/gnome/glimmer/docs/TODO
-share/gnome/glimmer/languages/ada.lang
-share/gnome/glimmer/languages/asp.lang
-share/gnome/glimmer/languages/bash.lang
-share/gnome/glimmer/languages/c.lang
-share/gnome/glimmer/languages/cpp.lang
-share/gnome/glimmer/languages/dtml.lang
-share/gnome/glimmer/languages/fortran.lang
-share/gnome/glimmer/languages/html.lang
-share/gnome/glimmer/languages/java.lang
-share/gnome/glimmer/languages/js.lang
-share/gnome/glimmer/languages/lang.lang
-share/gnome/glimmer/languages/latex.lang
-share/gnome/glimmer/languages/make.lang
-share/gnome/glimmer/languages/ocaml.lang
-share/gnome/glimmer/languages/oolong.lang
-share/gnome/glimmer/languages/perl.lang
-share/gnome/glimmer/languages/php.lang
-share/gnome/glimmer/languages/po.lang
-share/gnome/glimmer/languages/python.lang
-share/gnome/glimmer/languages/ruby.lang
-share/gnome/glimmer/languages/scheme.lang
-share/gnome/glimmer/languages/sgml.lang
-share/gnome/glimmer/languages/sql.lang
-share/gnome/glimmer/languages/tcltk.lang
-share/gnome/glimmer/languages/wml.lang
-share/gnome/glimmer/languages/x86.lang
-share/gnome/glimmer/languages/xhtml-trans.lang
-share/gnome/glimmer/languages/xml.lang
-share/gnome/glimmer/languages/z80.lang
-share/gnome/glimmer/scripts/Bookmarks.py
-share/gnome/glimmer/scripts/Delete_To_End.py
-share/gnome/glimmer/scripts/Delete_To_Start.py
-share/gnome/glimmer/scripts/FileSelector.py
-share/gnome/glimmer/scripts/Global.py
-share/gnome/glimmer/scripts/ISO2HTML.py
-share/gnome/glimmer/scripts/Replace_Spaces.py
-share/gnome/glimmer/scripts/Replace_Tabs.py
-share/gnome/glimmer/scripts/To_Lower.py
-share/gnome/glimmer/scripts/To_Upper.py
 share/gnome/help/glimmer/C/bugs.html
 share/gnome/help/glimmer/C/customize.html
 share/gnome/help/glimmer/C/faq.html
@@ -58,16 +58,16 @@ share/gnome/help/glimmer/C/preferences.html
 share/gnome/help/glimmer/C/properties.html
 share/gnome/help/glimmer/C/sessions.html
 share/gnome/help/glimmer/C/topic.dat
-share/gnome/pixmaps/glimmer-icon.png
-share/gnome/pixmaps/glimmer-splash.png
-share/gnome/pixmaps/glimmer-title.png
 share/locale/de/LC_MESSAGES/glimmer.mo
 share/locale/es/LC_MESSAGES/glimmer.mo
 share/locale/ja/LC_MESSAGES/glimmer.mo
 share/locale/sv/LC_MESSAGES/glimmer.mo
+share/pixmaps/glimmer-icon.png
+share/pixmaps/glimmer-splash.png
+share/pixmaps/glimmer-title.png
 @dirrm share/gnome/help/glimmer/C
 @dirrm share/gnome/help/glimmer
-@dirrm share/gnome/glimmer/scripts
-@dirrm share/gnome/glimmer/languages
-@dirrm share/gnome/glimmer/docs
-@dirrm share/gnome/glimmer
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/languages
+@dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%

@@ -1,4 +1,4 @@
 bin/mmc
 share/gnome/apps/Internet/mmc.desktop
-share/gnome/pixmaps/mmc-logo.png
 share/locale/de/LC_MESSAGES/mmc.mo
+share/pixmaps/mmc-logo.png

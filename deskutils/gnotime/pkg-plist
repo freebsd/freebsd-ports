@@ -26,40 +26,40 @@ lib/libqofsql.a
 lib/libqofsql.la
 lib/libqofsql.so
 lib/libqofsql.so.0
-share/gnome/applications/gnotime.desktop
-share/gnome/gnotime/ghtml/C/activity.ghtml
-share/gnome/gnotime/ghtml/C/basic-daily.ghtml
-share/gnome/gnotime/ghtml/C/basic-invoice.ghtml
-share/gnome/gnotime/ghtml/C/basic-journal.ghtml
-share/gnome/gnotime/ghtml/C/basic-todo.ghtml
-share/gnome/gnotime/ghtml/C/daily.ghtml
-share/gnome/gnotime/ghtml/C/gnotime-logo.png
-share/gnome/gnotime/ghtml/C/gtt-style.css
-share/gnome/gnotime/ghtml/C/gtt.scm
-share/gnome/gnotime/ghtml/C/invoice.ghtml
-share/gnome/gnotime/ghtml/C/journal-rss.ghtml
-share/gnome/gnotime/ghtml/C/journal.ghtml
-share/gnome/gnotime/ghtml/C/noproject.ghtml
-share/gnome/gnotime/ghtml/C/primer.ghtml
-share/gnome/gnotime/ghtml/C/query.ghtml
-share/gnome/gnotime/ghtml/C/status.ghtml
-share/gnome/gnotime/ghtml/C/tab-delim.ghtml
-share/gnome/gnotime/ghtml/C/todo-export.ghtml
-share/gnome/gnotime/ghtml/C/todo.ghtml
-share/gnome/gnotime/glade/active.glade
-share/gnome/gnotime/glade/column_menu.glade
-share/gnome/gnotime/glade/idle.glade
-share/gnome/gnotime/glade/interval_edit.glade
-share/gnome/gnotime/glade/interval_popup.glade
-share/gnome/gnotime/glade/journal.glade
-share/gnome/gnotime/glade/not-implemented.glade
-share/gnome/gnotime/glade/notes.glade
-share/gnome/gnotime/glade/plugin.glade
-share/gnome/gnotime/glade/plugin_editor.glade
-share/gnome/gnotime/glade/prefs.glade
-share/gnome/gnotime/glade/project_properties.glade
-share/gnome/gnotime/glade/task_popup.glade
-share/gnome/gnotime/glade/task_properties.glade
+share/applications/gnotime.desktop
+share/gnotime/ghtml/C/activity.ghtml
+share/gnotime/ghtml/C/basic-daily.ghtml
+share/gnotime/ghtml/C/basic-invoice.ghtml
+share/gnotime/ghtml/C/basic-journal.ghtml
+share/gnotime/ghtml/C/basic-todo.ghtml
+share/gnotime/ghtml/C/daily.ghtml
+share/gnotime/ghtml/C/gnotime-logo.png
+share/gnotime/ghtml/C/gtt-style.css
+share/gnotime/ghtml/C/gtt.scm
+share/gnotime/ghtml/C/invoice.ghtml
+share/gnotime/ghtml/C/journal-rss.ghtml
+share/gnotime/ghtml/C/journal.ghtml
+share/gnotime/ghtml/C/noproject.ghtml
+share/gnotime/ghtml/C/primer.ghtml
+share/gnotime/ghtml/C/query.ghtml
+share/gnotime/ghtml/C/status.ghtml
+share/gnotime/ghtml/C/tab-delim.ghtml
+share/gnotime/ghtml/C/todo-export.ghtml
+share/gnotime/ghtml/C/todo.ghtml
+share/gnotime/glade/active.glade
+share/gnotime/glade/column_menu.glade
+share/gnotime/glade/idle.glade
+share/gnotime/glade/interval_edit.glade
+share/gnotime/glade/interval_popup.glade
+share/gnotime/glade/journal.glade
+share/gnotime/glade/not-implemented.glade
+share/gnotime/glade/notes.glade
+share/gnotime/glade/plugin.glade
+share/gnotime/glade/plugin_editor.glade
+share/gnotime/glade/prefs.glade
+share/gnotime/glade/project_properties.glade
+share/gnotime/glade/task_popup.glade
+share/gnotime/glade/task_properties.glade
 share/gnome/help/gnotime/C/figures/gtt_startprojwin.png
 share/gnome/help/gnotime/C/figures/gtt_restartwin.png
 share/gnome/help/gnotime/C/figures/gtt_mainwin.png
@@ -71,9 +71,9 @@ share/gnome/help/gnotime/es/gnotime.xml
 share/gnome/help/gnotime/eu/figures/gtt_mainwin.png
 share/gnome/help/gnotime/eu/figures/gtt_prefswin.png
 share/gnome/help/gnotime/eu/gnotime.xml
-share/gnome/omf/gnotime/gnotime-C.omf
-share/gnome/omf/gnotime/gnotime-es.omf
-share/gnome/omf/gnotime/gnotime-eu.omf
+share/omf/gnotime/gnotime-C.omf
+share/omf/gnotime/gnotime-es.omf
+share/omf/gnotime/gnotime-eu.omf
 share/locale/az/LC_MESSAGES/gnotime-2.0.mo
 share/locale/bg/LC_MESSAGES/gnotime-2.0.mo
 share/locale/ca/LC_MESSAGES/gnotime-2.0.mo
@@ -114,7 +114,7 @@ share/locale/vi/LC_MESSAGES/gnotime-2.0.mo
 share/locale/wa/LC_MESSAGES/gnotime-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnotime-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnotime-2.0.mo
-@dirrm share/gnome/omf/gnotime
+@dirrm share/omf/gnotime
 @dirrm share/gnome/help/gnotime/eu/figures
 @dirrm share/gnome/help/gnotime/eu
 @dirrm share/gnome/help/gnotime/es/figures
@@ -122,8 +122,9 @@ share/locale/zh_TW/LC_MESSAGES/gnotime-2.0.mo
 @dirrm share/gnome/help/gnotime/C/figures
 @dirrm share/gnome/help/gnotime/C
 @dirrm share/gnome/help/gnotime
-@dirrm share/gnome/gnotime/glade
-@dirrm share/gnome/gnotime/ghtml/C
-@dirrm share/gnome/gnotime/ghtml
-@dirrm share/gnome/gnotime
+@dirrm share/gnotime/glade
+@dirrm share/gnotime/ghtml/C
+@dirrm share/gnotime/ghtml
+@dirrm share/gnotime
 @dirrm include/gnotime
+@dirrmtry share/applications

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtstarter
-PORTVERSION=	0.4.6.2
-PORTREVISION=	1
+PORTVERSION=	0.4.6.3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://webonaut.com/distfiles/${PORTNAME}/
 
@@ -20,7 +19,7 @@ USE_PYTHON=	yes
 USE_GNOME=	pygnome2 pygnomeextras gnomeprefix
 
 do-build:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
 		${WRKSRC}/*.py ${WRKSRC}/*.server
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
@@ -33,7 +32,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/*.py* \
 		${PREFIX}/libexec/${PORTNAME}/
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
-		${PREFIX}/share/gnome/applications/
+		${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKSRC}/*.server \
 		${PREFIX}/libdata/bonobo/servers/
 	@${LN} -sf ${PREFIX}/libexec/${PORTNAME}/${PORTNAME} \

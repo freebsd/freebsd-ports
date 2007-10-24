@@ -7,8 +7,8 @@ $FreeBSD$
  gnorbadir = $(sysconfdir)/CORBA/servers
  gnorba_DATA = gnomecal.gnorba
  
--help_base = $(datadir)/help/cal
-+help_base = $(datadir)/help/gnomecal
+-help_base = $(datadir)/gnome/help/cal
++help_base = $(datadir)/gnome/help/gnomecal
  
  bin_PROGRAMS = gnomecal
  

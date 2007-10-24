@@ -1,37 +1,37 @@
 bin/gnomebaker
-share/gnome/applications/gnomebaker.desktop
-share/gnome/gnomebaker/BurnFailed.wav
-share/gnome/gnomebaker/BurnOk.wav
-share/gnome/gnomebaker/baker-add-dir.png
-share/gnome/gnomebaker/baker-add-files.png
-share/gnome/gnomebaker/baker-audio-copy.png
-share/gnome/gnomebaker/baker-blank-cdrw.png
-share/gnome/gnomebaker/baker-blank-dvdrw.png
-share/gnome/gnomebaker/baker-burn-cd.png
-share/gnome/gnomebaker/baker-cd-iso.png
-share/gnome/gnomebaker/baker-cd.png
-share/gnome/gnomebaker/baker-cue-image.png
-share/gnome/gnomebaker/baker-data-copy.png
-share/gnome/gnomebaker/baker-dvd-iso.png
-share/gnome/gnomebaker/baker-import-session.png
-share/gnome/gnomebaker/baker-remove-files.png
-share/gnome/gnomebaker/gnomebaker-48.png
-share/gnome/gnomebaker/gnomebaker.glade
-share/gnome/gnomebaker/splash_2.png
-share/gnome/gnomebaker/state00.png
-share/gnome/gnomebaker/state01.png
-share/gnome/gnomebaker/state02.png
-share/gnome/gnomebaker/state03.png
-share/gnome/gnomebaker/state04.png
-share/gnome/gnomebaker/state05.png
-share/gnome/gnomebaker/state06.png
-share/gnome/gnomebaker/state07.png
-share/gnome/gnomebaker/state08.png
-share/gnome/gnomebaker/state09.png
-share/gnome/gnomebaker/state10.png
-share/gnome/gnomebaker/state11.png
-share/gnome/gnomebaker/state12.png
-share/gnome/gnomebaker/state13.png
+share/applications/gnomebaker.desktop
+share/gnomebaker/BurnFailed.wav
+share/gnomebaker/BurnOk.wav
+share/gnomebaker/baker-add-dir.png
+share/gnomebaker/baker-add-files.png
+share/gnomebaker/baker-audio-copy.png
+share/gnomebaker/baker-blank-cdrw.png
+share/gnomebaker/baker-blank-dvdrw.png
+share/gnomebaker/baker-burn-cd.png
+share/gnomebaker/baker-cd-iso.png
+share/gnomebaker/baker-cd.png
+share/gnomebaker/baker-cue-image.png
+share/gnomebaker/baker-data-copy.png
+share/gnomebaker/baker-dvd-iso.png
+share/gnomebaker/baker-import-session.png
+share/gnomebaker/baker-remove-files.png
+share/gnomebaker/gnomebaker-48.png
+share/gnomebaker/gnomebaker.glade
+share/gnomebaker/splash_2.png
+share/gnomebaker/state00.png
+share/gnomebaker/state01.png
+share/gnomebaker/state02.png
+share/gnomebaker/state03.png
+share/gnomebaker/state04.png
+share/gnomebaker/state05.png
+share/gnomebaker/state06.png
+share/gnomebaker/state07.png
+share/gnomebaker/state08.png
+share/gnomebaker/state09.png
+share/gnomebaker/state10.png
+share/gnomebaker/state11.png
+share/gnomebaker/state12.png
+share/gnomebaker/state13.png
 share/gnome/help/gnomebaker/C/figures/gnomebaker-blank-cdrw.png
 share/gnome/help/gnomebaker/C/figures/gnomebaker-burn-iso.png
 share/gnome/help/gnomebaker/C/figures/gnomebaker-copy-audio-cd.png
@@ -43,7 +43,7 @@ share/gnome/help/gnomebaker/C/figures/gnomebaker_prefs-tmp.png
 share/gnome/help/gnomebaker/C/figures/gnomebaker_window.png
 share/gnome/help/gnomebaker/C/gnomebaker.xml
 share/gnome/help/gnomebaker/C/legal.xml
-share/gnome/omf/gnomebaker/gnomebaker-C.omf
+share/omf/gnomebaker/gnomebaker-C.omf
 share/icons/hicolor/48x48/apps/gnomebaker-48.png
 share/icons/hicolor/icon-theme.cache
 share/locale/af/LC_MESSAGES/gnomebaker.mo
@@ -159,10 +159,11 @@ share/locale/zh_TW/LC_MESSAGES/gnomebaker.mo
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrm share/gnome/omf/gnomebaker
+@dirrm share/omf/gnomebaker
 @dirrm share/gnome/help/gnomebaker/C/figures
 @dirrm share/gnome/help/gnomebaker/C
 @dirrm share/gnome/help/gnomebaker
-@dirrm share/gnome/gnomebaker
+@dirrm share/gnomebaker
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/applications

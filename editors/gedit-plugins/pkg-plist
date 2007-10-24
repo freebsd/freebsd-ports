@@ -71,6 +71,7 @@ share/locale/he/LC_MESSAGES/gedit-plugins.mo
 share/locale/hi/LC_MESSAGES/gedit-plugins.mo
 share/locale/hr/LC_MESSAGES/gedit-plugins.mo
 share/locale/hu/LC_MESSAGES/gedit-plugins.mo
+share/locale/it/LC_MESSAGES/gedit-plugins.mo
 share/locale/ja/LC_MESSAGES/gedit-plugins.mo
 share/locale/kn/LC_MESSAGES/gedit-plugins.mo
 share/locale/ko/LC_MESSAGES/gedit-plugins.mo
@@ -85,6 +86,7 @@ share/locale/ne/LC_MESSAGES/gedit-plugins.mo
 share/locale/nl/LC_MESSAGES/gedit-plugins.mo
 share/locale/nn/LC_MESSAGES/gedit-plugins.mo
 share/locale/no/LC_MESSAGES/gedit-plugins.mo
+share/locale/oc/LC_MESSAGES/gedit-plugins.mo
 share/locale/or/LC_MESSAGES/gedit-plugins.mo
 share/locale/pa/LC_MESSAGES/gedit-plugins.mo
 share/locale/pl/LC_MESSAGES/gedit-plugins.mo
@@ -113,5 +115,7 @@ share/locale/zh_TW/LC_MESSAGES/gedit-plugins.mo
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz

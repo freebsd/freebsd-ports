@@ -7,7 +7,7 @@
 
 PORTNAME=		linux-nx-client
 PORTVERSION=		2.1.0
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		net
 MASTER_SITES=		http://web04.nomachine.com/download/${PORTVERSION}/Linux/
 DISTNAME=		nxclient-${PORTVERSION}-17.i386
@@ -48,8 +48,8 @@ do-install:
 	${MKDIR} ${NXDST}/share/images
 	${INSTALL_DATA} ${NXSRC}/share/images/* ${NXDST}/share/images
 
-	${MKDIR} ${LOCALBASE}/share/gnome/pixmaps
-	${INSTALL_DATA} ${NXSRC}/share/icons/*.png ${LOCALBASE}/share/gnome/pixmaps
+	${MKDIR} ${LOCALBASE}/share/pixmaps
+	${INSTALL_DATA} ${NXSRC}/share/icons/*.png ${LOCALBASE}/share/pixmaps
 	${MKDIR} ${LOCALBASE}/share/icons/crystalsvg/48x48 \
 		${LOCALBASE}/share/icons/crystalsvg/32x32
 	${INSTALL_DATA} ${NXSRC}/share/icons/nx-desktop.png \

@@ -3,11 +3,11 @@
 # Whom:                 erich@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/gimp/Makefile,v 1.9 2007/04/04 14:54:04 ahze Exp $
+#   $MCom: ports/graphics/gimp/Makefile,v 1.12 2007/10/24 21:31:11 ahze Exp $
 #
 
 PORTNAME=	gimp
-PORTVERSION?=	2.2.17
+DISTVERSION?=	2.4.0
 PORTEPOCH?=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES?=	# empty
@@ -17,9 +17,10 @@ EXTRACT_ONLY?=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The "meta-port" for The Gimp
 
-RUN_DEPENDS=	gimp-2.2:${PORTSDIR}/graphics/gimp-app
+RUN_DEPENDS=	gimp-2.4:${PORTSDIR}/graphics/gimp-app
 
-OPTIONS=	PRINT "Gutenprint (gimp-print) plugin" On \
+OPTIONS=	PYTHON "Python-fu support" Off \
+		PRINT "Gutenprint (gimp-print) plugin" On \
 		HELP "Install Gimp-Help (50+MB distfile)" Off
 
 NO_BUILD=	yes
@@ -30,12 +31,12 @@ NO_BUILD=	yes
 RUN_DEPENDS+=	gimp-help>0:${PORTSDIR}/graphics/gimp-help
 .endif
 
-#.if defined(WITH_PYTHON)
-#RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/environ/pygimp.env:${PORTSDIR}/graphics/py-gimp
-#.endif
+.if defined(WITH_PYTHON)
+RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/environ/pygimp.env:${PORTSDIR}/graphics/py-gimp
+.endif
 
 .if !defined(WITHOUT_PRINT)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/plug-ins/print:${PORTSDIR}/print/gimp-gutenprint
+RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/plug-ins/gutenprint:${PORTSDIR}/print/gimp-gutenprint
 .endif
 
 do-install:	# empty

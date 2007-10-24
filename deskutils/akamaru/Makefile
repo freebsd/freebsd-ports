@@ -7,7 +7,7 @@
 
 PORTNAME=	akamaru
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://people.freedesktop.org/~krh/
 DISTNAME=	${PORTNAME}

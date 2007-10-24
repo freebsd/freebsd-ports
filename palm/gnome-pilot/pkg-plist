@@ -40,26 +40,26 @@ libdata/bonobo/servers/GNOME_Pilot_Daemon.server
 libdata/pkgconfig/gnome-pilot-2.0.pc
 libexec/gpilot-applet
 libexec/gpilotd
-share/gnome/applications/gpilotd-control-applet.desktop
-share/gnome/gnome-pilot/conduits/backup.conduit
-share/gnome/gnome-pilot/conduits/file.conduit
-share/gnome/gnome-pilot/conduits/test.conduit
-share/gnome/gnome-pilot/devices.xml
-share/gnome/gnome-pilot/glade/gnome-palm.png
-share/gnome/gnome-pilot/glade/gnome-pilot-watermark.png
-share/gnome/gnome-pilot/glade/gpilotd-capplet.glade
-share/gnome/gnome-pilot/glade/pilot-applet.glade
+share/applications/gpilotd-control-applet.desktop
+share/gnome-pilot/conduits/backup.conduit
+share/gnome-pilot/conduits/file.conduit
+share/gnome-pilot/conduits/test.conduit
+share/gnome-pilot/devices.xml
+share/gnome-pilot/glade/gnome-palm.png
+share/gnome-pilot/glade/gnome-pilot-watermark.png
+share/gnome-pilot/glade/gpilotd-capplet.glade
+share/gnome-pilot/glade/pilot-applet.glade
 share/gnome/help/gnome-pilot/C/gnome-pilot.xml
-share/gnome/idl/gnome-pilot.idl
-share/gnome/mime-info/palm.keys
-share/gnome/mime-info/palm.mime
-share/gnome/omf/gnome-pilot/gnome-pilot-C.omf
-share/gnome/pixmaps/gnome-palm-conduit.png
-share/gnome/pixmaps/gnome-palm.png
-share/gnome/pixmaps/sync_broken.png
-share/gnome/pixmaps/sync_icon.png
-share/gnome/pixmaps/sync_paused.png
-share/gnome/pixmaps/syncing_icon.png
+share/idl/gnome-pilot.idl
+share/mime-info/palm.keys
+share/mime-info/palm.mime
+share/omf/gnome-pilot/gnome-pilot-C.omf
+share/pixmaps/gnome-palm-conduit.png
+share/pixmaps/gnome-palm.png
+share/pixmaps/sync_broken.png
+share/pixmaps/sync_icon.png
+share/pixmaps/sync_paused.png
+share/pixmaps/syncing_icon.png
 share/locale/am/LC_MESSAGES/gnome-pilot.mo
 share/locale/ar/LC_MESSAGES/gnome-pilot.mo
 share/locale/az/LC_MESSAGES/gnome-pilot.mo
@@ -107,15 +107,20 @@ share/locale/xh/LC_MESSAGES/gnome-pilot.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-pilot.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-pilot.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-pilot.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrm share/gnome/omf/gnome-pilot
+@dirrm share/omf/gnome-pilot
 @dirrm share/gnome/help/gnome-pilot/C
 @dirrm share/gnome/help/gnome-pilot
-@dirrm share/gnome/gnome-pilot/glade
+@dirrm share/gnome-pilot/glade
 @dirrm include/libgpilotdCM
 @dirrm include/gpilotd
-@dirrmtry share/gnome/gnome-pilot/conduits
-@dirrmtry share/gnome/gnome-pilot
+@dirrmtry share/gnome-pilot/conduits
+@dirrmtry share/gnome-pilot
 @dirrmtry lib/gnome-pilot/conduits
 @dirrmtry lib/gnome-pilot
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/applications

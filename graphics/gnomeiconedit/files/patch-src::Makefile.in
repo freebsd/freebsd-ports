@@ -7,8 +7,8 @@ $FreeBSD$
  
  bin_PROGRAMS = gnome-iconedit $(COMPONENT)
  
--INCLUDES =   -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"  -DGNOMEDATADIR=\""$(datadir)"\"  -I$(includedir)  -I$(top_srcdir)  -I$(top_srcdir)/src/widgets  $(GNOME_INCLUDEDIR)
-+INCLUDES =   $(GDK_PIXBUF_CFLAGS) -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"  -DGNOMEDATADIR=\""$(datadir)"\"  -I$(includedir)  -I$(top_srcdir)  -I$(top_srcdir)/src/widgets  $(GNOME_INCLUDEDIR)
+-INCLUDES =   -DGNOMELOCALEDIR=\""$(datadir)/locale"\"  -DGNOMEDATADIR=\""$(datadir)"\"  -I$(includedir)  -I$(top_srcdir)  -I$(top_srcdir)/src/widgets  $(GNOME_INCLUDEDIR)
++INCLUDES =   $(GDK_PIXBUF_CFLAGS) -DGNOMELOCALEDIR=\""$(datadir)/locale"\"  -DGNOMEDATADIR=\""$(datadir)"\"  -I$(includedir)  -I$(top_srcdir)  -I$(top_srcdir)/src/widgets  $(GNOME_INCLUDEDIR)
  
  
  CORBA_GENERATED =  	Iconedit.h			Iconedit-stubs.c		Iconedit-skels.c		Iconedit-common.c	

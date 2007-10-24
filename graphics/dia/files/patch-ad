@@ -9,15 +9,6 @@
  
  pkg_failed=no
  echo "$as_me:$LINENO: checking for PANGOFT2" >&5
-@@ -20835,7 +20835,7 @@ _ACEOF
- 
- 
- cat >>confdefs.h <<_ACEOF
--#define GNOME_ICONDIR "${prefix}/share/pixmaps"
-+#define GNOME_ICONDIR "${datadir}/pixmaps"
- _ACEOF
- 
-     have_gnome=true
 @@ -20989,7 +20989,7 @@ if test "${with_gnomeprint+set}" = set; 
  else
    with_gnomeprint=no

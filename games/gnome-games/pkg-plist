@@ -15,9 +15,7 @@ bin/iagno
 bin/mahjongg
 bin/same-gnome
 bin/sol
-etc/sound/events/gnibbles.soundlist
-etc/sound/events/gnobots2.soundlist
-etc/sound/events/iagno.soundlist
+lib/gnome-games/gnome-games-render-cards
 %%PYTHON_SITELIBDIR%%/glchess/__init__.py
 %%PYTHON_SITELIBDIR%%/glchess/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glchess/__init__.pyo
@@ -30,6 +28,9 @@ etc/sound/events/iagno.soundlist
 %%PYTHON_SITELIBDIR%%/glchess/chess/__init__.py
 %%PYTHON_SITELIBDIR%%/glchess/chess/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glchess/chess/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/bitboard.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/bitboard.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/bitboard.pyo
 %%PYTHON_SITELIBDIR%%/glchess/chess/board.py
 %%PYTHON_SITELIBDIR%%/glchess/chess/board.pyc
 %%PYTHON_SITELIBDIR%%/glchess/chess/board.pyo
@@ -57,6 +58,9 @@ etc/sound/events/iagno.soundlist
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/__init__.py
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/chessview.py
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/chessview.pyc
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/chessview.pyo
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/dialogs.py
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/dialogs.pyc
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/dialogs.pyo
@@ -66,15 +70,6 @@ etc/sound/events/iagno.soundlist
 %%PYTHON_SITELIBDIR%%/glchess/main.py
 %%PYTHON_SITELIBDIR%%/glchess/main.pyc
 %%PYTHON_SITELIBDIR%%/glchess/main.pyo
-%%PYTHON_SITELIBDIR%%/glchess/network/__init__.py
-%%PYTHON_SITELIBDIR%%/glchess/network/__init__.pyc
-%%PYTHON_SITELIBDIR%%/glchess/network/__init__.pyo
-%%PYTHON_SITELIBDIR%%/glchess/network/announce.py
-%%PYTHON_SITELIBDIR%%/glchess/network/announce.pyc
-%%PYTHON_SITELIBDIR%%/glchess/network/announce.pyo
-%%PYTHON_SITELIBDIR%%/glchess/network/protocol.py
-%%PYTHON_SITELIBDIR%%/glchess/network/protocol.pyc
-%%PYTHON_SITELIBDIR%%/glchess/network/protocol.pyo
 %%PYTHON_SITELIBDIR%%/glchess/scene/__init__.py
 %%PYTHON_SITELIBDIR%%/glchess/scene/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glchess/scene/__init__.pyo
@@ -177,177 +172,294 @@ etc/sound/events/iagno.soundlist
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/timer.py
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/timer.pyc
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/timer.pyo
-share/gnome/applications/blackjack.desktop
-share/gnome/applications/freecell.desktop
-share/gnome/applications/glchess.desktop
-share/gnome/applications/glines.desktop
-share/gnome/applications/gnect.desktop
-share/gnome/applications/gnibbles.desktop
-share/gnome/applications/gnobots2.desktop
-share/gnome/applications/gnome-sudoku.desktop
-share/gnome/applications/gnometris.desktop
-share/gnome/applications/gnomine.desktop
-share/gnome/applications/gnotravex.desktop
-share/gnome/applications/gnotski.desktop
-share/gnome/applications/gtali.desktop
-share/gnome/applications/iagno.desktop
-share/gnome/applications/mahjongg.desktop
-share/gnome/applications/same-gnome.desktop
-share/gnome/applications/sol.desktop
-share/gnome/blackjack/Ameristar.rules
-share/gnome/blackjack/Atlantic_City.rules
-share/gnome/blackjack/Vegas_Downtown.rules
-share/gnome/blackjack/Vegas_Strip.rules
-@unexec [ -s %D/share/gnome/games/glines.Large.scores ] || rm -f %D/share/gnome/games/glines.Large.scores
-@unexec [ -s %D/share/gnome/games/glines.Medium.scores ] || rm -f %D/share/gnome/games/glines.Medium.scores
-@unexec [ -s %D/share/gnome/games/glines.Small.scores ] || rm -f %D/share/gnome/games/glines.Small.scores
-@unexec [ -s %D/share/gnome/games/gnibbles.1.0.scores ] || rm -f %D/share/gnome/games/gnibbles.1.0.scores
-@unexec [ -s %D/share/gnome/games/gnibbles.1.1.scores ] || rm -f %D/share/gnome/games/gnibbles.1.1.scores
-@unexec [ -s %D/share/gnome/games/gnibbles.2.0.scores ] || rm -f %D/share/gnome/games/gnibbles.2.0.scores
-@unexec [ -s %D/share/gnome/games/gnibbles.2.1.scores ] || rm -f %D/share/gnome/games/gnibbles.2.1.scores
-@unexec [ -s %D/share/gnome/games/gnibbles.3.0.scores ] || rm -f %D/share/gnome/games/gnibbles.3.0.scores
-@unexec [ -s %D/share/gnome/games/gnibbles.3.1.scores ] || rm -f %D/share/gnome/games/gnibbles.3.1.scores
-@unexec [ -s %D/share/gnome/games/gnibbles.4.0.scores ] || rm -f %D/share/gnome/games/gnibbles.4.0.scores
-@unexec [ -s %D/share/gnome/games/gnibbles.4.1.scores ] || rm -f %D/share/gnome/games/gnibbles.4.1.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.classic_robots-safe.scores ] || rm -f %D/share/gnome/games/gnobots2.classic_robots-safe.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.classic_robots-super-safe.scores ] || rm -f %D/share/gnome/games/gnobots2.classic_robots-super-safe.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.classic_robots.scores ] || rm -f %D/share/gnome/games/gnobots2.classic_robots.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.nightmare-safe.scores ] || rm -f %D/share/gnome/games/gnobots2.nightmare-safe.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.nightmare-super-safe.scores ] || rm -f %D/share/gnome/games/gnobots2.nightmare-super-safe.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.nightmare.scores ] || rm -f %D/share/gnome/games/gnobots2.nightmare.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.robots2-safe.scores ] || rm -f %D/share/gnome/games/gnobots2.robots2-safe.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.robots2-super-safe.scores ] || rm -f %D/share/gnome/games/gnobots2.robots2-super-safe.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.robots2.scores ] || rm -f %D/share/gnome/games/gnobots2.robots2.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.robots2_easy-safe.scores ] || rm -f %D/share/gnome/games/gnobots2.robots2_easy-safe.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.robots2_easy-super-safe.scores ] || rm -f %D/share/gnome/games/gnobots2.robots2_easy-super-safe.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.robots2_easy.scores ] || rm -f %D/share/gnome/games/gnobots2.robots2_easy.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.robots_with_safe_teleport-safe.scores ] || rm -f %D/share/gnome/games/gnobots2.robots_with_safe_teleport-safe.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.robots_with_safe_teleport-super-safe.scores ] || rm -f %D/share/gnome/games/gnobots2.robots_with_safe_teleport-super-safe.scores
-@unexec [ -s %D/share/gnome/games/gnobots2.robots_with_safe_teleport.scores ] || rm -f %D/share/gnome/games/gnobots2.robots_with_safe_teleport.scores
-@unexec [ -s %D/share/gnome/games/gnometris.scores ] || rm -f %D/share/gnome/games/gnometris.scores
-@unexec [ -s %D/share/gnome/games/gnomine.Custom.scores ] || rm -f %D/share/gnome/games/gnomine.Custom.scores
-@unexec [ -s %D/share/gnome/games/gnomine.Large.scores ] || rm -f %D/share/gnome/games/gnomine.Large.scores
-@unexec [ -s %D/share/gnome/games/gnomine.Medium.scores ] || rm -f %D/share/gnome/games/gnomine.Medium.scores
-@unexec [ -s %D/share/gnome/games/gnomine.Small.scores ] || rm -f %D/share/gnome/games/gnomine.Small.scores
-@unexec [ -s %D/share/gnome/games/gnotravex.2x2.scores ] || rm -f %D/share/gnome/games/gnotravex.2x2.scores
-@unexec [ -s %D/share/gnome/games/gnotravex.3x3.scores ] || rm -f %D/share/gnome/games/gnotravex.3x3.scores
-@unexec [ -s %D/share/gnome/games/gnotravex.4x4.scores ] || rm -f %D/share/gnome/games/gnotravex.4x4.scores
-@unexec [ -s %D/share/gnome/games/gnotravex.5x5.scores ] || rm -f %D/share/gnome/games/gnotravex.5x5.scores
-@unexec [ -s %D/share/gnome/games/gnotravex.6x6.scores ] || rm -f %D/share/gnome/games/gnotravex.6x6.scores
-@unexec [ -s %D/share/gnome/games/gnotski.1.scores ] || rm -f %D/share/gnome/games/gnotski.1.scores
-@unexec [ -s %D/share/gnome/games/gnotski.10.scores ] || rm -f %D/share/gnome/games/gnotski.10.scores
-@unexec [ -s %D/share/gnome/games/gnotski.11.scores ] || rm -f %D/share/gnome/games/gnotski.11.scores
-@unexec [ -s %D/share/gnome/games/gnotski.12.scores ] || rm -f %D/share/gnome/games/gnotski.12.scores
-@unexec [ -s %D/share/gnome/games/gnotski.13.scores ] || rm -f %D/share/gnome/games/gnotski.13.scores
-@unexec [ -s %D/share/gnome/games/gnotski.14.scores ] || rm -f %D/share/gnome/games/gnotski.14.scores
-@unexec [ -s %D/share/gnome/games/gnotski.15.scores ] || rm -f %D/share/gnome/games/gnotski.15.scores
-@unexec [ -s %D/share/gnome/games/gnotski.16.scores ] || rm -f %D/share/gnome/games/gnotski.16.scores
-@unexec [ -s %D/share/gnome/games/gnotski.17.scores ] || rm -f %D/share/gnome/games/gnotski.17.scores
-@unexec [ -s %D/share/gnome/games/gnotski.18.scores ] || rm -f %D/share/gnome/games/gnotski.18.scores
-@unexec [ -s %D/share/gnome/games/gnotski.19.scores ] || rm -f %D/share/gnome/games/gnotski.19.scores
-@unexec [ -s %D/share/gnome/games/gnotski.2.scores ] || rm -f %D/share/gnome/games/gnotski.2.scores
-@unexec [ -s %D/share/gnome/games/gnotski.20.scores ] || rm -f %D/share/gnome/games/gnotski.20.scores
-@unexec [ -s %D/share/gnome/games/gnotski.21.scores ] || rm -f %D/share/gnome/games/gnotski.21.scores
-@unexec [ -s %D/share/gnome/games/gnotski.22.scores ] || rm -f %D/share/gnome/games/gnotski.22.scores
-@unexec [ -s %D/share/gnome/games/gnotski.23.scores ] || rm -f %D/share/gnome/games/gnotski.23.scores
-@unexec [ -s %D/share/gnome/games/gnotski.24.scores ] || rm -f %D/share/gnome/games/gnotski.24.scores
-@unexec [ -s %D/share/gnome/games/gnotski.25.scores ] || rm -f %D/share/gnome/games/gnotski.25.scores
-@unexec [ -s %D/share/gnome/games/gnotski.26.scores ] || rm -f %D/share/gnome/games/gnotski.26.scores
-@unexec [ -s %D/share/gnome/games/gnotski.27.scores ] || rm -f %D/share/gnome/games/gnotski.27.scores
-@unexec [ -s %D/share/gnome/games/gnotski.28.scores ] || rm -f %D/share/gnome/games/gnotski.28.scores
-@unexec [ -s %D/share/gnome/games/gnotski.29.scores ] || rm -f %D/share/gnome/games/gnotski.29.scores
-@unexec [ -s %D/share/gnome/games/gnotski.3.scores ] || rm -f %D/share/gnome/games/gnotski.3.scores
-@unexec [ -s %D/share/gnome/games/gnotski.30.scores ] || rm -f %D/share/gnome/games/gnotski.30.scores
-@unexec [ -s %D/share/gnome/games/gnotski.31.scores ] || rm -f %D/share/gnome/games/gnotski.31.scores
-@unexec [ -s %D/share/gnome/games/gnotski.32.scores ] || rm -f %D/share/gnome/games/gnotski.32.scores
-@unexec [ -s %D/share/gnome/games/gnotski.33.scores ] || rm -f %D/share/gnome/games/gnotski.33.scores
-@unexec [ -s %D/share/gnome/games/gnotski.34.scores ] || rm -f %D/share/gnome/games/gnotski.34.scores
-@unexec [ -s %D/share/gnome/games/gnotski.35.scores ] || rm -f %D/share/gnome/games/gnotski.35.scores
-@unexec [ -s %D/share/gnome/games/gnotski.36.scores ] || rm -f %D/share/gnome/games/gnotski.36.scores
-@unexec [ -s %D/share/gnome/games/gnotski.37.scores ] || rm -f %D/share/gnome/games/gnotski.37.scores
-@unexec [ -s %D/share/gnome/games/gnotski.4.scores ] || rm -f %D/share/gnome/games/gnotski.4.scores
-@unexec [ -s %D/share/gnome/games/gnotski.5.scores ] || rm -f %D/share/gnome/games/gnotski.5.scores
-@unexec [ -s %D/share/gnome/games/gnotski.6.scores ] || rm -f %D/share/gnome/games/gnotski.6.scores
-@unexec [ -s %D/share/gnome/games/gnotski.7.scores ] || rm -f %D/share/gnome/games/gnotski.7.scores
-@unexec [ -s %D/share/gnome/games/gnotski.8.scores ] || rm -f %D/share/gnome/games/gnotski.8.scores
-@unexec [ -s %D/share/gnome/games/gnotski.9.scores ] || rm -f %D/share/gnome/games/gnotski.9.scores
-@unexec [ -s %D/share/gnome/games/gtali.Colors.scores ] || rm -f %D/share/gnome/games/gtali.Colors.scores
-@unexec [ -s %D/share/gnome/games/gtali.Regular.scores ] || rm -f %D/share/gnome/games/gtali.Regular.scores
-@unexec [ -s %D/share/gnome/games/mahjongg.bridges.scores ] || rm -f %D/share/gnome/games/mahjongg.bridges.scores
-@unexec [ -s %D/share/gnome/games/mahjongg.cloud.scores ] || rm -f %D/share/gnome/games/mahjongg.cloud.scores
-@unexec [ -s %D/share/gnome/games/mahjongg.confounding.scores ] || rm -f %D/share/gnome/games/mahjongg.confounding.scores
-@unexec [ -s %D/share/gnome/games/mahjongg.difficult.scores ] || rm -f %D/share/gnome/games/mahjongg.difficult.scores
-@unexec [ -s %D/share/gnome/games/mahjongg.dragon.scores ] || rm -f %D/share/gnome/games/mahjongg.dragon.scores
-@unexec [ -s %D/share/gnome/games/mahjongg.easy.scores ] || rm -f %D/share/gnome/games/mahjongg.easy.scores
-@unexec [ -s %D/share/gnome/games/mahjongg.pyramid.scores ] || rm -f %D/share/gnome/games/mahjongg.pyramid.scores
-@unexec [ -s %D/share/gnome/games/mahjongg.tictactoe.scores ] || rm -f %D/share/gnome/games/mahjongg.tictactoe.scores
-@unexec [ -s %D/share/gnome/games/mahjongg.ziggurat.scores ] || rm -f %D/share/gnome/games/mahjongg.ziggurat.scores
-@unexec [ -s %D/share/gnome/games/same-gnome.Large.scores ] || rm -f %D/share/gnome/games/same-gnome.Large.scores
-@unexec [ -s %D/share/gnome/games/same-gnome.Medium.scores ] || rm -f %D/share/gnome/games/same-gnome.Medium.scores
-@unexec [ -s %D/share/gnome/games/same-gnome.Small.scores ] || rm -f %D/share/gnome/games/same-gnome.Small.scores
-@unexec [ -L %D/share/gnome/games/same-gnome.scores ] || rm -f %D/share/gnome/games/same-gnome.scores
-share/gnome/ggz/gnome-games/about_bg.png
-share/gnome/ggz/gnome-games/ggz_gtk_admin.svg
-share/gnome/ggz/gnome-games/ggz_gtk_bot.svg
-share/gnome/ggz/gnome-games/ggz_gtk_guest.svg
-share/gnome/ggz/gnome-games/ggz_gtk_lag0.svg
-share/gnome/ggz/gnome-games/ggz_gtk_lag1.svg
-share/gnome/ggz/gnome-games/ggz_gtk_lag2.svg
-share/gnome/ggz/gnome-games/ggz_gtk_lag3.svg
-share/gnome/ggz/gnome-games/ggz_gtk_lag4.svg
-share/gnome/ggz/gnome-games/ggz_gtk_lag5.svg
-share/gnome/ggz/gnome-games/ggz_gtk_registered.svg
-share/gnome/glchess/ai.glade
-share/gnome/glchess/ai.xml
-share/gnome/glchess/chess_view.glade
-share/gnome/glchess/error_dialog.glade
-share/gnome/glchess/glchess.glade
-share/gnome/glchess/glchess.svg
-share/gnome/glchess/load_game.glade
-share/gnome/glchess/new_game.glade
-share/gnome/glchess/save_game.glade
-share/gnome/gnect/white_ob.cn4.gz
-share/gnome/gnibbles/level001.gnl
-share/gnome/gnibbles/level002.gnl
-share/gnome/gnibbles/level003.gnl
-share/gnome/gnibbles/level004.gnl
-share/gnome/gnibbles/level005.gnl
-share/gnome/gnibbles/level006.gnl
-share/gnome/gnibbles/level007.gnl
-share/gnome/gnibbles/level008.gnl
-share/gnome/gnibbles/level009.gnl
-share/gnome/gnibbles/level010.gnl
-share/gnome/gnibbles/level011.gnl
-share/gnome/gnibbles/level012.gnl
-share/gnome/gnibbles/level013.gnl
-share/gnome/gnibbles/level014.gnl
-share/gnome/gnibbles/level015.gnl
-share/gnome/gnibbles/level016.gnl
-share/gnome/gnibbles/level017.gnl
-share/gnome/gnibbles/level018.gnl
-share/gnome/gnibbles/level019.gnl
-share/gnome/gnibbles/level020.gnl
-share/gnome/gnibbles/level021.gnl
-share/gnome/gnibbles/level022.gnl
-share/gnome/gnibbles/level023.gnl
-share/gnome/gnibbles/level024.gnl
-share/gnome/gnibbles/level025.gnl
-share/gnome/gnibbles/level026.gnl
-share/gnome/gnobots2/classic_robots.cfg
-share/gnome/gnobots2/nightmare.cfg
-share/gnome/gnobots2/robots2.cfg
-share/gnome/gnobots2/robots2_easy.cfg
-share/gnome/gnobots2/robots_with_safe_teleport.cfg
-share/gnome/gnome-games/mahjongg/maps/mahjongg.map
-share/gnome/gnome-games/same-gnome/themes/2.10/planets.png
-share/gnome/gnome-games/same-gnome/themes/2.10/stones.png
-share/gnome/gnome-sudoku/high_scores.glade
-share/gnome/gnome-sudoku/new_game.glade
-share/gnome/gnome-sudoku/open_game.glade
-share/gnome/gnome-sudoku/print_games.glade
-share/gnome/gnome-sudoku/puzzle_generator.glade
-share/gnome/gnome-sudoku/starter_puzzles
-share/gnome/gnome-sudoku/tracker.glade
+share/applications/blackjack.desktop
+share/applications/freecell.desktop
+share/applications/glchess.desktop
+share/applications/glines.desktop
+share/applications/gnect.desktop
+share/applications/gnibbles.desktop
+share/applications/gnobots2.desktop
+share/applications/gnome-sudoku.desktop
+share/applications/gnometris.desktop
+share/applications/gnomine.desktop
+share/applications/gnotravex.desktop
+share/applications/gnotski.desktop
+share/applications/gtali.desktop
+share/applications/iagno.desktop
+share/applications/mahjongg.desktop
+share/applications/same-gnome.desktop
+share/applications/sol.desktop
+@unexec [ -s %D/share/games/glines.Large.scores ] || rm -f %D/share/games/glines.Large.scores
+@unexec [ -s %D/share/games/glines.Medium.scores ] || rm -f %D/share/games/glines.Medium.scores
+@unexec [ -s %D/share/games/glines.Small.scores ] || rm -f %D/share/games/glines.Small.scores
+@unexec [ -s %D/share/games/gnibbles.1.0.scores ] || rm -f %D/share/games/gnibbles.1.0.scores
+@unexec [ -s %D/share/games/gnibbles.1.1.scores ] || rm -f %D/share/games/gnibbles.1.1.scores
+@unexec [ -s %D/share/games/gnibbles.2.0.scores ] || rm -f %D/share/games/gnibbles.2.0.scores
+@unexec [ -s %D/share/games/gnibbles.2.1.scores ] || rm -f %D/share/games/gnibbles.2.1.scores
+@unexec [ -s %D/share/games/gnibbles.3.0.scores ] || rm -f %D/share/games/gnibbles.3.0.scores
+@unexec [ -s %D/share/games/gnibbles.3.1.scores ] || rm -f %D/share/games/gnibbles.3.1.scores
+@unexec [ -s %D/share/games/gnibbles.4.0.scores ] || rm -f %D/share/games/gnibbles.4.0.scores
+@unexec [ -s %D/share/games/gnibbles.4.1.scores ] || rm -f %D/share/games/gnibbles.4.1.scores
+@unexec [ -s %D/share/games/gnobots2.classic_robots-safe.scores ] || rm -f %D/share/games/gnobots2.classic_robots-safe.scores
+@unexec [ -s %D/share/games/gnobots2.classic_robots-super-safe.scores ] || rm -f %D/share/games/gnobots2.classic_robots-super-safe.scores
+@unexec [ -s %D/share/games/gnobots2.classic_robots.scores ] || rm -f %D/share/games/gnobots2.classic_robots.scores
+@unexec [ -s %D/share/games/gnobots2.nightmare-safe.scores ] || rm -f %D/share/games/gnobots2.nightmare-safe.scores
+@unexec [ -s %D/share/games/gnobots2.nightmare-super-safe.scores ] || rm -f %D/share/games/gnobots2.nightmare-super-safe.scores
+@unexec [ -s %D/share/games/gnobots2.nightmare.scores ] || rm -f %D/share/games/gnobots2.nightmare.scores
+@unexec [ -s %D/share/games/gnobots2.robots2-safe.scores ] || rm -f %D/share/games/gnobots2.robots2-safe.scores
+@unexec [ -s %D/share/games/gnobots2.robots2-super-safe.scores ] || rm -f %D/share/games/gnobots2.robots2-super-safe.scores
+@unexec [ -s %D/share/games/gnobots2.robots2.scores ] || rm -f %D/share/games/gnobots2.robots2.scores
+@unexec [ -s %D/share/games/gnobots2.robots2_easy-safe.scores ] || rm -f %D/share/games/gnobots2.robots2_easy-safe.scores
+@unexec [ -s %D/share/games/gnobots2.robots2_easy-super-safe.scores ] || rm -f %D/share/games/gnobots2.robots2_easy-super-safe.scores
+@unexec [ -s %D/share/games/gnobots2.robots2_easy.scores ] || rm -f %D/share/games/gnobots2.robots2_easy.scores
+@unexec [ -s %D/share/games/gnobots2.robots_with_safe_teleport-safe.scores ] || rm -f %D/share/games/gnobots2.robots_with_safe_teleport-safe.scores
+@unexec [ -s %D/share/games/gnobots2.robots_with_safe_teleport-super-safe.scores ] || rm -f %D/share/games/gnobots2.robots_with_safe_teleport-super-safe.scores
+@unexec [ -s %D/share/games/gnobots2.robots_with_safe_teleport.scores ] || rm -f %D/share/games/gnobots2.robots_with_safe_teleport.scores
+@unexec [ -s %D/share/games/gnometris.scores ] || rm -f %D/share/games/gnometris.scores
+@unexec [ -s %D/share/games/gnomine.Custom.scores ] || rm -f %D/share/games/gnomine.Custom.scores
+@unexec [ -s %D/share/games/gnomine.Large.scores ] || rm -f %D/share/games/gnomine.Large.scores
+@unexec [ -s %D/share/games/gnomine.Medium.scores ] || rm -f %D/share/games/gnomine.Medium.scores
+@unexec [ -s %D/share/games/gnomine.Small.scores ] || rm -f %D/share/games/gnomine.Small.scores
+@unexec [ -s %D/share/games/gnotravex.2x2.scores ] || rm -f %D/share/games/gnotravex.2x2.scores
+@unexec [ -s %D/share/games/gnotravex.3x3.scores ] || rm -f %D/share/games/gnotravex.3x3.scores
+@unexec [ -s %D/share/games/gnotravex.4x4.scores ] || rm -f %D/share/games/gnotravex.4x4.scores
+@unexec [ -s %D/share/games/gnotravex.5x5.scores ] || rm -f %D/share/games/gnotravex.5x5.scores
+@unexec [ -s %D/share/games/gnotravex.6x6.scores ] || rm -f %D/share/games/gnotravex.6x6.scores
+@unexec [ -s %D/share/games/gnotski.1.scores ] || rm -f %D/share/games/gnotski.1.scores
+@unexec [ -s %D/share/games/gnotski.10.scores ] || rm -f %D/share/games/gnotski.10.scores
+@unexec [ -s %D/share/games/gnotski.11.scores ] || rm -f %D/share/games/gnotski.11.scores
+@unexec [ -s %D/share/games/gnotski.12.scores ] || rm -f %D/share/games/gnotski.12.scores
+@unexec [ -s %D/share/games/gnotski.13.scores ] || rm -f %D/share/games/gnotski.13.scores
+@unexec [ -s %D/share/games/gnotski.14.scores ] || rm -f %D/share/games/gnotski.14.scores
+@unexec [ -s %D/share/games/gnotski.15.scores ] || rm -f %D/share/games/gnotski.15.scores
+@unexec [ -s %D/share/games/gnotski.16.scores ] || rm -f %D/share/games/gnotski.16.scores
+@unexec [ -s %D/share/games/gnotski.17.scores ] || rm -f %D/share/games/gnotski.17.scores
+@unexec [ -s %D/share/games/gnotski.18.scores ] || rm -f %D/share/games/gnotski.18.scores
+@unexec [ -s %D/share/games/gnotski.19.scores ] || rm -f %D/share/games/gnotski.19.scores
+@unexec [ -s %D/share/games/gnotski.2.scores ] || rm -f %D/share/games/gnotski.2.scores
+@unexec [ -s %D/share/games/gnotski.20.scores ] || rm -f %D/share/games/gnotski.20.scores
+@unexec [ -s %D/share/games/gnotski.21.scores ] || rm -f %D/share/games/gnotski.21.scores
+@unexec [ -s %D/share/games/gnotski.22.scores ] || rm -f %D/share/games/gnotski.22.scores
+@unexec [ -s %D/share/games/gnotski.23.scores ] || rm -f %D/share/games/gnotski.23.scores
+@unexec [ -s %D/share/games/gnotski.24.scores ] || rm -f %D/share/games/gnotski.24.scores
+@unexec [ -s %D/share/games/gnotski.25.scores ] || rm -f %D/share/games/gnotski.25.scores
+@unexec [ -s %D/share/games/gnotski.26.scores ] || rm -f %D/share/games/gnotski.26.scores
+@unexec [ -s %D/share/games/gnotski.27.scores ] || rm -f %D/share/games/gnotski.27.scores
+@unexec [ -s %D/share/games/gnotski.28.scores ] || rm -f %D/share/games/gnotski.28.scores
+@unexec [ -s %D/share/games/gnotski.29.scores ] || rm -f %D/share/games/gnotski.29.scores
+@unexec [ -s %D/share/games/gnotski.3.scores ] || rm -f %D/share/games/gnotski.3.scores
+@unexec [ -s %D/share/games/gnotski.30.scores ] || rm -f %D/share/games/gnotski.30.scores
+@unexec [ -s %D/share/games/gnotski.31.scores ] || rm -f %D/share/games/gnotski.31.scores
+@unexec [ -s %D/share/games/gnotski.32.scores ] || rm -f %D/share/games/gnotski.32.scores
+@unexec [ -s %D/share/games/gnotski.33.scores ] || rm -f %D/share/games/gnotski.33.scores
+@unexec [ -s %D/share/games/gnotski.34.scores ] || rm -f %D/share/games/gnotski.34.scores
+@unexec [ -s %D/share/games/gnotski.35.scores ] || rm -f %D/share/games/gnotski.35.scores
+@unexec [ -s %D/share/games/gnotski.36.scores ] || rm -f %D/share/games/gnotski.36.scores
+@unexec [ -s %D/share/games/gnotski.37.scores ] || rm -f %D/share/games/gnotski.37.scores
+@unexec [ -s %D/share/games/gnotski.4.scores ] || rm -f %D/share/games/gnotski.4.scores
+@unexec [ -s %D/share/games/gnotski.5.scores ] || rm -f %D/share/games/gnotski.5.scores
+@unexec [ -s %D/share/games/gnotski.6.scores ] || rm -f %D/share/games/gnotski.6.scores
+@unexec [ -s %D/share/games/gnotski.7.scores ] || rm -f %D/share/games/gnotski.7.scores
+@unexec [ -s %D/share/games/gnotski.8.scores ] || rm -f %D/share/games/gnotski.8.scores
+@unexec [ -s %D/share/games/gnotski.9.scores ] || rm -f %D/share/games/gnotski.9.scores
+@unexec [ -s %D/share/games/gtali.Colors.scores ] || rm -f %D/share/games/gtali.Colors.scores
+@unexec [ -s %D/share/games/gtali.Regular.scores ] || rm -f %D/share/games/gtali.Regular.scores
+@unexec [ -s %D/share/games/mahjongg.bridges.scores ] || rm -f %D/share/games/mahjongg.bridges.scores
+@unexec [ -s %D/share/games/mahjongg.cloud.scores ] || rm -f %D/share/games/mahjongg.cloud.scores
+@unexec [ -s %D/share/games/mahjongg.confounding.scores ] || rm -f %D/share/games/mahjongg.confounding.scores
+@unexec [ -s %D/share/games/mahjongg.difficult.scores ] || rm -f %D/share/games/mahjongg.difficult.scores
+@unexec [ -s %D/share/games/mahjongg.dragon.scores ] || rm -f %D/share/games/mahjongg.dragon.scores
+@unexec [ -s %D/share/games/mahjongg.easy.scores ] || rm -f %D/share/games/mahjongg.easy.scores
+@unexec [ -s %D/share/games/mahjongg.pyramid.scores ] || rm -f %D/share/games/mahjongg.pyramid.scores
+@unexec [ -s %D/share/games/mahjongg.tictactoe.scores ] || rm -f %D/share/games/mahjongg.tictactoe.scores
+@unexec [ -s %D/share/games/mahjongg.ziggurat.scores ] || rm -f %D/share/games/mahjongg.ziggurat.scores
+@unexec [ -s %D/share/games/same-gnome.Large.scores ] || rm -f %D/share/games/same-gnome.Large.scores
+@unexec [ -s %D/share/games/same-gnome.Medium.scores ] || rm -f %D/share/games/same-gnome.Medium.scores
+@unexec [ -s %D/share/games/same-gnome.Small.scores ] || rm -f %D/share/games/same-gnome.Small.scores
+@unexec [ -L %D/share/games/same-gnome.scores ] || rm -f %D/share/games/same-gnome.scores
+share/ggz/gnome-games/about_bg.png
+share/ggz/gnome-games/ggz_gtk_admin.svg
+share/ggz/gnome-games/ggz_gtk_bot.svg
+share/ggz/gnome-games/ggz_gtk_guest.svg
+share/ggz/gnome-games/ggz_gtk_lag0.svg
+share/ggz/gnome-games/ggz_gtk_lag1.svg
+share/ggz/gnome-games/ggz_gtk_lag2.svg
+share/ggz/gnome-games/ggz_gtk_lag3.svg
+share/ggz/gnome-games/ggz_gtk_lag4.svg
+share/ggz/gnome-games/ggz_gtk_lag5.svg
+share/ggz/gnome-games/ggz_gtk_registered.svg
+share/glchess/ai.glade
+share/glchess/ai.xml
+share/glchess/chess_view.glade
+share/glchess/glchess.glade
+share/glchess/load_game.glade
+share/glchess/new_game.glade
+share/glchess/save_game.glade
+share/gnect/white_ob.cn4.gz
+share/gnibbles/level001.gnl
+share/gnibbles/level002.gnl
+share/gnibbles/level003.gnl
+share/gnibbles/level004.gnl
+share/gnibbles/level005.gnl
+share/gnibbles/level006.gnl
+share/gnibbles/level007.gnl
+share/gnibbles/level008.gnl
+share/gnibbles/level009.gnl
+share/gnibbles/level010.gnl
+share/gnibbles/level011.gnl
+share/gnibbles/level012.gnl
+share/gnibbles/level013.gnl
+share/gnibbles/level014.gnl
+share/gnibbles/level015.gnl
+share/gnibbles/level016.gnl
+share/gnibbles/level017.gnl
+share/gnibbles/level018.gnl
+share/gnibbles/level019.gnl
+share/gnibbles/level020.gnl
+share/gnibbles/level021.gnl
+share/gnibbles/level022.gnl
+share/gnibbles/level023.gnl
+share/gnibbles/level024.gnl
+share/gnibbles/level025.gnl
+share/gnibbles/level026.gnl
+share/gnobots2/classic_robots.cfg
+share/gnobots2/nightmare.cfg
+share/gnobots2/robots2.cfg
+share/gnobots2/robots2_easy.cfg
+share/gnobots2/robots_with_safe_teleport.cfg
+share/gnome-games-common/cards/bonded.svg
+share/gnome-games-common/icons/rteleport.png
+share/gnome-games-common/icons/teleport.png
+%%DATADIR%%/aisleriot/games/agnes.scm
+%%DATADIR%%/aisleriot/games/athena.scm
+%%DATADIR%%/aisleriot/games/auld_lang_syne.scm
+%%DATADIR%%/aisleriot/games/aunt_mary.scm
+%%DATADIR%%/aisleriot/games/backbone.scm
+%%DATADIR%%/aisleriot/games/bakers_dozen.scm
+%%DATADIR%%/aisleriot/games/bakers_game.scm
+%%DATADIR%%/aisleriot/games/beleaguered_castle.scm
+%%DATADIR%%/aisleriot/games/block_ten.scm
+%%DATADIR%%/aisleriot/games/bristol.scm
+%%DATADIR%%/aisleriot/games/camelot.scm
+%%DATADIR%%/aisleriot/games/canfield.scm
+%%DATADIR%%/aisleriot/games/carpet.scm
+%%DATADIR%%/aisleriot/games/chessboard.scm
+%%DATADIR%%/aisleriot/games/clock.scm
+%%DATADIR%%/aisleriot/games/cover.scm
+%%DATADIR%%/aisleriot/games/cruel.scm
+%%DATADIR%%/aisleriot/games/diamond_mine.scm
+%%DATADIR%%/aisleriot/games/doublets.scm
+%%DATADIR%%/aisleriot/games/eagle_wing.scm
+%%DATADIR%%/aisleriot/games/easthaven.scm
+%%DATADIR%%/aisleriot/games/eight_off.scm
+%%DATADIR%%/aisleriot/games/elevator.scm
+%%DATADIR%%/aisleriot/games/escalator.scm
+%%DATADIR%%/aisleriot/games/first_law.scm
+%%DATADIR%%/aisleriot/games/fortress.scm
+%%DATADIR%%/aisleriot/games/fortunes.scm
+%%DATADIR%%/aisleriot/games/fourteen.scm
+%%DATADIR%%/aisleriot/games/freecell.scm
+%%DATADIR%%/aisleriot/games/gaps.scm
+%%DATADIR%%/aisleriot/games/gay_gordons.scm
+%%DATADIR%%/aisleriot/games/glenwood.scm
+%%DATADIR%%/aisleriot/games/golf.scm
+%%DATADIR%%/aisleriot/games/gypsy.scm
+%%DATADIR%%/aisleriot/games/helsinki.scm
+%%DATADIR%%/aisleriot/games/hopscotch.scm
+%%DATADIR%%/aisleriot/games/isabel.scm
+%%DATADIR%%/aisleriot/games/jamestown.scm
+%%DATADIR%%/aisleriot/games/jumbo.scm
+%%DATADIR%%/aisleriot/games/kansas.scm
+%%DATADIR%%/aisleriot/games/king_albert.scm
+%%DATADIR%%/aisleriot/games/kings_audience.scm
+%%DATADIR%%/aisleriot/games/klondike.scm
+%%DATADIR%%/aisleriot/games/labyrinth.scm
+%%DATADIR%%/aisleriot/games/lady_jane.scm
+%%DATADIR%%/aisleriot/games/maze.scm
+%%DATADIR%%/aisleriot/games/monte_carlo.scm
+%%DATADIR%%/aisleriot/games/napoleons_tomb.scm
+%%DATADIR%%/aisleriot/games/neighbor.scm
+%%DATADIR%%/aisleriot/games/odessa.scm
+%%DATADIR%%/aisleriot/games/osmosis.scm
+%%DATADIR%%/aisleriot/games/peek.scm
+%%DATADIR%%/aisleriot/games/pileon.scm
+%%DATADIR%%/aisleriot/games/plait.scm
+%%DATADIR%%/aisleriot/games/poker.scm
+%%DATADIR%%/aisleriot/games/quatorze.scm
+%%DATADIR%%/aisleriot/games/royal_east.scm
+%%DATADIR%%/aisleriot/games/saratoga.scm
+%%DATADIR%%/aisleriot/games/scorpion.scm
+%%DATADIR%%/aisleriot/games/scuffle.scm
+%%DATADIR%%/aisleriot/games/seahaven.scm
+%%DATADIR%%/aisleriot/games/sir_tommy.scm
+%%DATADIR%%/aisleriot/games/sol.scm
+%%DATADIR%%/aisleriot/games/spider.scm
+%%DATADIR%%/aisleriot/games/spider_three_decks.scm
+%%DATADIR%%/aisleriot/games/spiderette.scm
+%%DATADIR%%/aisleriot/games/straight_up.scm
+%%DATADIR%%/aisleriot/games/streets_and_alleys.scm
+%%DATADIR%%/aisleriot/games/ten_across.scm
+%%DATADIR%%/aisleriot/games/thieves.scm
+%%DATADIR%%/aisleriot/games/thirteen.scm
+%%DATADIR%%/aisleriot/games/thumb_and_pouch.scm
+%%DATADIR%%/aisleriot/games/treize.scm
+%%DATADIR%%/aisleriot/games/triple_peaks.scm
+%%DATADIR%%/aisleriot/games/union_square.scm
+%%DATADIR%%/aisleriot/games/valentine.scm
+%%DATADIR%%/aisleriot/games/westhaven.scm
+%%DATADIR%%/aisleriot/games/whitehead.scm
+%%DATADIR%%/aisleriot/games/will_o_the_wisp.scm
+%%DATADIR%%/aisleriot/games/yield.scm
+%%DATADIR%%/aisleriot/games/yukon.scm
+%%DATADIR%%/aisleriot/games/zebra.scm
+%%DATADIR%%/blackjack/pixmaps/baize.png
+%%DATADIR%%/blackjack/pixmaps/blackjack-splash.png
+%%DATADIR%%/blackjack/pixmaps/chip-1.svg
+%%DATADIR%%/blackjack/pixmaps/chip-100.svg
+%%DATADIR%%/blackjack/pixmaps/chip-25.svg
+%%DATADIR%%/blackjack/pixmaps/chip-5.svg
+%%DATADIR%%/blackjack/pixmaps/white-outline.svg
+%%DATADIR%%/blackjack/rules/Ameristar.rules
+%%DATADIR%%/blackjack/rules/Atlantic_City.rules
+%%DATADIR%%/blackjack/rules/Vegas_Downtown.rules
+%%DATADIR%%/blackjack/rules/Vegas_Strip.rules
+%%DATADIR%%/gnotski/gnotski.svg
+%%DATADIR%%/mahjongg/maps/mahjongg.map
+%%DATADIR%%/pixmaps/baize.png
+%%DATADIR%%/pixmaps/slot.svg
+%%DATADIR%%/same-gnome/themes/2.10/planets.png
+%%DATADIR%%/same-gnome/themes/2.10/stones.png
+%%DATADIR%%/sounds/appear.ogg
+%%DATADIR%%/sounds/bad.ogg
+%%DATADIR%%/sounds/bonus.ogg
+%%DATADIR%%/sounds/click.ogg
+%%DATADIR%%/sounds/crash.ogg
+%%DATADIR%%/sounds/die.ogg
+%%DATADIR%%/sounds/flip-piece.ogg
+%%DATADIR%%/sounds/gameover.ogg
+%%DATADIR%%/sounds/gnometris.ogg
+%%DATADIR%%/sounds/gobble.ogg
+%%DATADIR%%/sounds/land.ogg
+%%DATADIR%%/sounds/laughter.ogg
+%%DATADIR%%/sounds/life.ogg
+%%DATADIR%%/sounds/lines1.ogg
+%%DATADIR%%/sounds/lines2.ogg
+%%DATADIR%%/sounds/lines3.ogg
+%%DATADIR%%/sounds/pop.ogg
+%%DATADIR%%/sounds/reverse.ogg
+%%DATADIR%%/sounds/slide.ogg
+%%DATADIR%%/sounds/splat.ogg
+%%DATADIR%%/sounds/teleport.ogg
+%%DATADIR%%/sounds/turn.ogg
+%%DATADIR%%/sounds/victory.ogg
+%%DATADIR%%/sounds/yahoo.ogg
+share/gnome-sudoku/high_scores.glade
+share/gnome-sudoku/new_game.glade
+share/gnome-sudoku/open_game.glade
+share/gnome-sudoku/print_games.glade
+share/gnome-sudoku/puzzle_generator.glade
+share/gnome-sudoku/starter_puzzles
+share/gnome-sudoku/tracker.glade
 share/gnome/help/aisleriot/C/agnes.xml
 share/gnome/help/aisleriot/C/aisleriot.xml
 share/gnome/help/aisleriot/C/athena.xml
@@ -400,6 +512,7 @@ share/gnome/help/aisleriot/C/lady_jane.xml
 share/gnome/help/aisleriot/C/legal.xml
 share/gnome/help/aisleriot/C/maze.xml
 share/gnome/help/aisleriot/C/monte_carlo.xml
+share/gnome/help/aisleriot/C/napoleons_tomb.xml
 share/gnome/help/aisleriot/C/neighbor.xml
 share/gnome/help/aisleriot/C/odessa.xml
 share/gnome/help/aisleriot/C/osmosis.xml
@@ -415,6 +528,7 @@ share/gnome/help/aisleriot/C/scuffle.xml
 share/gnome/help/aisleriot/C/seahaven.xml
 share/gnome/help/aisleriot/C/sir_tommy.xml
 share/gnome/help/aisleriot/C/spider.xml
+share/gnome/help/aisleriot/C/spider_three_decks.xml
 share/gnome/help/aisleriot/C/spiderette.xml
 share/gnome/help/aisleriot/C/straight_up.xml
 share/gnome/help/aisleriot/C/streets_and_alleys.xml
@@ -432,100 +546,40 @@ share/gnome/help/aisleriot/C/will_o_the_wisp.xml
 share/gnome/help/aisleriot/C/yield.xml
 share/gnome/help/aisleriot/C/yukon.xml
 share/gnome/help/aisleriot/C/zebra.xml
-share/gnome/help/aisleriot/fr/agnes.xml
+share/gnome/help/aisleriot/es/aisleriot.xml
+share/gnome/help/aisleriot/es/figures/camelot-goal.png
+share/gnome/help/aisleriot/es/figures/clock-rules.png
 share/gnome/help/aisleriot/fr/aisleriot.xml
-share/gnome/help/aisleriot/fr/athena.xml
-share/gnome/help/aisleriot/fr/auld_lang_syne.xml
-share/gnome/help/aisleriot/fr/aunt_mary.xml
-share/gnome/help/aisleriot/fr/backbone.xml
-share/gnome/help/aisleriot/fr/bakers_dozen.xml
-share/gnome/help/aisleriot/fr/bakers_game.xml
-share/gnome/help/aisleriot/fr/beleaguered_castle.xml
-share/gnome/help/aisleriot/fr/block_ten.xml
-share/gnome/help/aisleriot/fr/bristol.xml
-share/gnome/help/aisleriot/fr/camelot.xml
-share/gnome/help/aisleriot/fr/canfield.xml
-share/gnome/help/aisleriot/fr/carpet.xml
-share/gnome/help/aisleriot/fr/chessboard.xml
-share/gnome/help/aisleriot/fr/clock.xml
-share/gnome/help/aisleriot/fr/cover.xml
-share/gnome/help/aisleriot/fr/cruel.xml
-share/gnome/help/aisleriot/fr/definitions.xml
-share/gnome/help/aisleriot/fr/diamond_mine.xml
-share/gnome/help/aisleriot/fr/doublets.xml
-share/gnome/help/aisleriot/fr/eagle-wing.xml
-share/gnome/help/aisleriot/fr/easthaven.xml
-share/gnome/help/aisleriot/fr/eight_off.xml
-share/gnome/help/aisleriot/fr/elevator.xml
-share/gnome/help/aisleriot/fr/escalator.xml
 share/gnome/help/aisleriot/fr/figures/camelot-goal.png
 share/gnome/help/aisleriot/fr/figures/clock-rules.png
-share/gnome/help/aisleriot/fr/first_law.xml
-share/gnome/help/aisleriot/fr/fortress.xml
-share/gnome/help/aisleriot/fr/fortunes.xml
-share/gnome/help/aisleriot/fr/fourteen.xml
-share/gnome/help/aisleriot/fr/freecell.xml
-share/gnome/help/aisleriot/fr/gaps.xml
-share/gnome/help/aisleriot/fr/gay_gordons.xml
-share/gnome/help/aisleriot/fr/glenwood.xml
-share/gnome/help/aisleriot/fr/golf.xml
-share/gnome/help/aisleriot/fr/gypsy.xml
-share/gnome/help/aisleriot/fr/helsinki.xml
-share/gnome/help/aisleriot/fr/hopscotch.xml
-share/gnome/help/aisleriot/fr/isabel.xml
-share/gnome/help/aisleriot/fr/jamestown.xml
-share/gnome/help/aisleriot/fr/jumbo.xml
-share/gnome/help/aisleriot/fr/kansas.xml
-share/gnome/help/aisleriot/fr/king_albert.xml
-share/gnome/help/aisleriot/fr/kings_audience.xml
-share/gnome/help/aisleriot/fr/klondike.xml
-share/gnome/help/aisleriot/fr/labyrinth.xml
-share/gnome/help/aisleriot/fr/lady_jane.xml
-share/gnome/help/aisleriot/fr/legal.xml
-share/gnome/help/aisleriot/fr/maze.xml
-share/gnome/help/aisleriot/fr/monte_carlo.xml
-share/gnome/help/aisleriot/fr/neighbor.xml
-share/gnome/help/aisleriot/fr/odessa.xml
-share/gnome/help/aisleriot/fr/osmosis.xml
-share/gnome/help/aisleriot/fr/peek.xml
-share/gnome/help/aisleriot/fr/pileon.xml
-share/gnome/help/aisleriot/fr/plait.xml
-share/gnome/help/aisleriot/fr/poker.xml
-share/gnome/help/aisleriot/fr/quatorze.xml
-share/gnome/help/aisleriot/fr/royal_east.xml
-share/gnome/help/aisleriot/fr/saratoga.xml
-share/gnome/help/aisleriot/fr/scorpion.xml
-share/gnome/help/aisleriot/fr/scuffle.xml
-share/gnome/help/aisleriot/fr/seahaven.xml
-share/gnome/help/aisleriot/fr/sir_tommy.xml
-share/gnome/help/aisleriot/fr/spider.xml
-share/gnome/help/aisleriot/fr/spider_one_suit.xml
-share/gnome/help/aisleriot/fr/spider_two_suit.xml
-share/gnome/help/aisleriot/fr/spiderette.xml
-share/gnome/help/aisleriot/fr/straight_up.xml
-share/gnome/help/aisleriot/fr/streets_and_alleys.xml
-share/gnome/help/aisleriot/fr/ten_across.xml
-share/gnome/help/aisleriot/fr/thieves.xml
-share/gnome/help/aisleriot/fr/thirteen.xml
-share/gnome/help/aisleriot/fr/thumb_and_pouch.xml
-share/gnome/help/aisleriot/fr/treize.xml
-share/gnome/help/aisleriot/fr/triple_peaks.xml
-share/gnome/help/aisleriot/fr/union_square.xml
-share/gnome/help/aisleriot/fr/valentine.xml
-share/gnome/help/aisleriot/fr/westhaven.xml
-share/gnome/help/aisleriot/fr/whitehead.xml
-share/gnome/help/aisleriot/fr/will_o_the_wisp.xml
-share/gnome/help/aisleriot/fr/yield.xml
-share/gnome/help/aisleriot/fr/yukon.xml
-share/gnome/help/aisleriot/fr/zebra.xml
+share/gnome/help/aisleriot/oc/aisleriot.xml
+share/gnome/help/aisleriot/oc/figures/camelot-goal.png
+share/gnome/help/aisleriot/oc/figures/clock-rules.png
+share/gnome/help/aisleriot/sv/aisleriot.xml
+share/gnome/help/aisleriot/sv/figures/camelot-goal.png
+share/gnome/help/aisleriot/sv/figures/clock-rules.png
 share/gnome/help/blackjack/C/blackjack.xml
 share/gnome/help/blackjack/C/figures/blackjack_start_window.png
 share/gnome/help/blackjack/C/figures/blackjack_win_window.png
 share/gnome/help/blackjack/C/legal.xml
+share/gnome/help/blackjack/es/blackjack.xml
+share/gnome/help/blackjack/es/figures/blackjack_start_window.png
+share/gnome/help/blackjack/es/figures/blackjack_win_window.png
+share/gnome/help/blackjack/fr/blackjack.xml
+share/gnome/help/blackjack/fr/figures/blackjack_start_window.png
+share/gnome/help/blackjack/fr/figures/blackjack_win_window.png
+share/gnome/help/blackjack/oc/blackjack.xml
+share/gnome/help/blackjack/oc/figures/blackjack_start_window.png
+share/gnome/help/blackjack/oc/figures/blackjack_win_window.png
+share/gnome/help/blackjack/sv/blackjack.xml
+share/gnome/help/blackjack/sv/figures/blackjack_start_window.png
+share/gnome/help/blackjack/sv/figures/blackjack_win_window.png
 share/gnome/help/glchess/C/glchess.xml
 share/gnome/help/glchess/C/legal.xml
 share/gnome/help/glchess/es/glchess.xml
 share/gnome/help/glchess/fr/glchess.xml
+share/gnome/help/glchess/oc/glchess.xml
+share/gnome/help/glchess/pt_BR/glchess.xml
 share/gnome/help/glchess/sv/glchess.xml
 share/gnome/help/glines/C/figures/glines-gameover.png
 share/gnome/help/glines/C/figures/glines-startgame.png
@@ -544,6 +598,10 @@ share/gnome/help/glines/fr/figures/glines-gameover.png
 share/gnome/help/glines/fr/figures/glines-startgame.png
 share/gnome/help/glines/fr/figures/preferences.png
 share/gnome/help/glines/fr/glines.xml
+share/gnome/help/glines/oc/figures/glines-gameover.png
+share/gnome/help/glines/oc/figures/glines-startgame.png
+share/gnome/help/glines/oc/figures/preferences.png
+share/gnome/help/glines/oc/glines.xml
 share/gnome/help/glines/ru/figures/glines-gameover.png
 share/gnome/help/glines/ru/figures/glines-startgame.png
 share/gnome/help/glines/ru/figures/preferences.png
@@ -552,37 +610,92 @@ share/gnome/help/glines/sv/figures/glines-gameover.png
 share/gnome/help/glines/sv/figures/glines-startgame.png
 share/gnome/help/glines/sv/figures/preferences.png
 share/gnome/help/glines/sv/glines.xml
+share/gnome/help/gnect/C/figures/connect.png
 share/gnome/help/gnect/C/figures/mainwindow.png
+share/gnome/help/gnect/C/figures/tables.png
 share/gnome/help/gnect/C/figures/tileset.png
 share/gnome/help/gnect/C/gnect.xml
 share/gnome/help/gnect/C/legal.xml
+share/gnome/help/gnect/C/network-games.xml
+share/gnome/help/gnect/en_GB/figures/connect.png
 share/gnome/help/gnect/en_GB/figures/mainwindow.png
+share/gnome/help/gnect/en_GB/figures/tables.png
 share/gnome/help/gnect/en_GB/figures/tileset.png
 share/gnome/help/gnect/en_GB/gnect.xml
+share/gnome/help/gnect/es/figures/connect.png
 share/gnome/help/gnect/es/figures/mainwindow.png
+share/gnome/help/gnect/es/figures/tables.png
 share/gnome/help/gnect/es/figures/tileset.png
 share/gnome/help/gnect/es/gnect.xml
+share/gnome/help/gnect/fr/figures/connect.png
 share/gnome/help/gnect/fr/figures/mainwindow.png
+share/gnome/help/gnect/fr/figures/tables.png
 share/gnome/help/gnect/fr/figures/tileset.png
 share/gnome/help/gnect/fr/gnect.xml
+share/gnome/help/gnect/oc/figures/connect.png
+share/gnome/help/gnect/oc/figures/mainwindow.png
+share/gnome/help/gnect/oc/figures/tables.png
+share/gnome/help/gnect/oc/figures/tileset.png
+share/gnome/help/gnect/oc/gnect.xml
+share/gnome/help/gnect/sv/figures/connect.png
 share/gnome/help/gnect/sv/figures/mainwindow.png
+share/gnome/help/gnect/sv/figures/tables.png
 share/gnome/help/gnect/sv/figures/tileset.png
 share/gnome/help/gnect/sv/gnect.xml
+share/gnome/help/gnibbles/C/figures/connect.png
 share/gnome/help/gnibbles/C/figures/game.png
 share/gnome/help/gnibbles/C/figures/intro.png
 share/gnome/help/gnibbles/C/figures/playing.png
+share/gnome/help/gnibbles/C/figures/tables.png
 share/gnome/help/gnibbles/C/figures/worm_op.png
 share/gnome/help/gnibbles/C/gnibbles.xml
 share/gnome/help/gnibbles/C/legal.xml
+share/gnome/help/gnibbles/C/network-games.xml
+share/gnome/help/gnibbles/es/figures/connect.png
+share/gnome/help/gnibbles/es/figures/game.png
+share/gnome/help/gnibbles/es/figures/intro.png
+share/gnome/help/gnibbles/es/figures/playing.png
+share/gnome/help/gnibbles/es/figures/tables.png
+share/gnome/help/gnibbles/es/figures/worm_op.png
+share/gnome/help/gnibbles/es/gnibbles.xml
+share/gnome/help/gnibbles/fr/figures/connect.png
+share/gnome/help/gnibbles/fr/figures/game.png
+share/gnome/help/gnibbles/fr/figures/intro.png
+share/gnome/help/gnibbles/fr/figures/playing.png
+share/gnome/help/gnibbles/fr/figures/tables.png
+share/gnome/help/gnibbles/fr/figures/worm_op.png
+share/gnome/help/gnibbles/fr/gnibbles.xml
+share/gnome/help/gnibbles/oc/figures/connect.png
+share/gnome/help/gnibbles/oc/figures/game.png
+share/gnome/help/gnibbles/oc/figures/intro.png
+share/gnome/help/gnibbles/oc/figures/playing.png
+share/gnome/help/gnibbles/oc/figures/tables.png
+share/gnome/help/gnibbles/oc/figures/worm_op.png
+share/gnome/help/gnibbles/oc/gnibbles.xml
+share/gnome/help/gnibbles/sv/figures/connect.png
+share/gnome/help/gnibbles/sv/figures/game.png
+share/gnome/help/gnibbles/sv/figures/intro.png
+share/gnome/help/gnibbles/sv/figures/playing.png
+share/gnome/help/gnibbles/sv/figures/tables.png
+share/gnome/help/gnibbles/sv/figures/worm_op.png
+share/gnome/help/gnibbles/sv/gnibbles.xml
 share/gnome/help/gnobots2/C/figures/gnobots2-main.png
 share/gnome/help/gnobots2/C/gnobots2.xml
 share/gnome/help/gnobots2/C/legal.xml
 share/gnome/help/gnobots2/da/gnobots2.xml
 share/gnome/help/gnobots2/da/legal.xml
+share/gnome/help/gnobots2/de/figures/gnobots2-main.png
+share/gnome/help/gnobots2/de/gnobots2.xml
+share/gnome/help/gnobots2/es/figures/gnobots2-main.png
 share/gnome/help/gnobots2/es/gnobots2.xml
-share/gnome/help/gnobots2/es/legal.xml
+share/gnome/help/gnobots2/fr/figures/gnobots2-main.png
+share/gnome/help/gnobots2/fr/gnobots2.xml
 share/gnome/help/gnobots2/it/gnobots2.xml
 share/gnome/help/gnobots2/it/legal.xml
+share/gnome/help/gnobots2/oc/figures/gnobots2-main.png
+share/gnome/help/gnobots2/oc/gnobots2.xml
+share/gnome/help/gnobots2/sv/figures/gnobots2-main.png
+share/gnome/help/gnobots2/sv/gnobots2.xml
 share/gnome/help/gnome-sudoku/C/figures/Print_Sudokus.png
 share/gnome/help/gnome-sudoku/C/figures/always_show_hint.png
 share/gnome/help/gnome-sudoku/C/figures/error_highlighting.png
@@ -590,8 +703,37 @@ share/gnome/help/gnome-sudoku/C/figures/highlighting.png
 share/gnome/help/gnome-sudoku/C/figures/hints.png
 share/gnome/help/gnome-sudoku/C/gnome-sudoku.xml
 share/gnome/help/gnome-sudoku/C/legal.xml
+share/gnome/help/gnome-sudoku/es/figures/Print_Sudokus.png
+share/gnome/help/gnome-sudoku/es/figures/always_show_hint.png
+share/gnome/help/gnome-sudoku/es/figures/error_highlighting.png
+share/gnome/help/gnome-sudoku/es/figures/highlighting.png
+share/gnome/help/gnome-sudoku/es/figures/hints.png
+share/gnome/help/gnome-sudoku/es/gnome-sudoku.xml
+share/gnome/help/gnome-sudoku/fr/figures/Print_Sudokus.png
+share/gnome/help/gnome-sudoku/fr/figures/always_show_hint.png
+share/gnome/help/gnome-sudoku/fr/figures/error_highlighting.png
+share/gnome/help/gnome-sudoku/fr/figures/highlighting.png
+share/gnome/help/gnome-sudoku/fr/figures/hints.png
+share/gnome/help/gnome-sudoku/fr/gnome-sudoku.xml
+share/gnome/help/gnome-sudoku/oc/figures/Print_Sudokus.png
+share/gnome/help/gnome-sudoku/oc/figures/always_show_hint.png
+share/gnome/help/gnome-sudoku/oc/figures/error_highlighting.png
+share/gnome/help/gnome-sudoku/oc/figures/highlighting.png
+share/gnome/help/gnome-sudoku/oc/figures/hints.png
+share/gnome/help/gnome-sudoku/oc/gnome-sudoku.xml
+share/gnome/help/gnome-sudoku/sv/figures/Print_Sudokus.png
+share/gnome/help/gnome-sudoku/sv/figures/always_show_hint.png
+share/gnome/help/gnome-sudoku/sv/figures/error_highlighting.png
+share/gnome/help/gnome-sudoku/sv/figures/highlighting.png
+share/gnome/help/gnome-sudoku/sv/figures/hints.png
+share/gnome/help/gnome-sudoku/sv/gnome-sudoku.xml
 share/gnome/help/gnometris/C/gnometris.xml
 share/gnome/help/gnometris/C/legal.xml
+share/gnome/help/gnometris/el/gnometris.xml
+share/gnome/help/gnometris/es/gnometris.xml
+share/gnome/help/gnometris/fr/gnometris.xml
+share/gnome/help/gnometris/oc/gnometris.xml
+share/gnome/help/gnometris/sv/gnometris.xml
 share/gnome/help/gnomine/C/figures/easy-hints-1.png
 share/gnome/help/gnomine/C/figures/easy-hints-2.png
 share/gnome/help/gnomine/C/figures/easy-hints-3.png
@@ -607,33 +749,200 @@ share/gnome/help/gnomine/C/figures/preferences.png
 share/gnome/help/gnomine/C/figures/statusbar.png
 share/gnome/help/gnomine/C/gnomine.xml
 share/gnome/help/gnomine/C/legal.xml
+share/gnome/help/gnomine/de/figures/easy-hints-1.png
+share/gnome/help/gnomine/de/figures/easy-hints-2.png
+share/gnome/help/gnomine/de/figures/easy-hints-3.png
+share/gnome/help/gnomine/de/figures/faces.png
+share/gnome/help/gnomine/de/figures/flags.png
+share/gnome/help/gnomine/de/figures/hard-hints-1.png
+share/gnome/help/gnomine/de/figures/hard-hints-2.png
+share/gnome/help/gnomine/de/figures/hard-hints-3.png
+share/gnome/help/gnomine/de/figures/highscores.png
+share/gnome/help/gnomine/de/figures/imnotsureflagscheckbox.png
+share/gnome/help/gnomine/de/figures/main-window.png
+share/gnome/help/gnomine/de/figures/preferences.png
+share/gnome/help/gnomine/de/figures/statusbar.png
+share/gnome/help/gnomine/de/gnomine.xml
+share/gnome/help/gnomine/es/figures/easy-hints-1.png
+share/gnome/help/gnomine/es/figures/easy-hints-2.png
+share/gnome/help/gnomine/es/figures/easy-hints-3.png
+share/gnome/help/gnomine/es/figures/faces.png
+share/gnome/help/gnomine/es/figures/flags.png
+share/gnome/help/gnomine/es/figures/hard-hints-1.png
+share/gnome/help/gnomine/es/figures/hard-hints-2.png
+share/gnome/help/gnomine/es/figures/hard-hints-3.png
+share/gnome/help/gnomine/es/figures/highscores.png
+share/gnome/help/gnomine/es/figures/imnotsureflagscheckbox.png
+share/gnome/help/gnomine/es/figures/main-window.png
+share/gnome/help/gnomine/es/figures/preferences.png
+share/gnome/help/gnomine/es/figures/statusbar.png
+share/gnome/help/gnomine/es/gnomine.xml
+share/gnome/help/gnomine/fr/figures/easy-hints-1.png
+share/gnome/help/gnomine/fr/figures/easy-hints-2.png
+share/gnome/help/gnomine/fr/figures/easy-hints-3.png
+share/gnome/help/gnomine/fr/figures/faces.png
+share/gnome/help/gnomine/fr/figures/flags.png
+share/gnome/help/gnomine/fr/figures/hard-hints-1.png
+share/gnome/help/gnomine/fr/figures/hard-hints-2.png
+share/gnome/help/gnomine/fr/figures/hard-hints-3.png
+share/gnome/help/gnomine/fr/figures/highscores.png
+share/gnome/help/gnomine/fr/figures/imnotsureflagscheckbox.png
+share/gnome/help/gnomine/fr/figures/main-window.png
+share/gnome/help/gnomine/fr/figures/preferences.png
+share/gnome/help/gnomine/fr/figures/statusbar.png
+share/gnome/help/gnomine/fr/gnomine.xml
+share/gnome/help/gnomine/oc/figures/easy-hints-1.png
+share/gnome/help/gnomine/oc/figures/easy-hints-2.png
+share/gnome/help/gnomine/oc/figures/easy-hints-3.png
+share/gnome/help/gnomine/oc/figures/faces.png
+share/gnome/help/gnomine/oc/figures/flags.png
+share/gnome/help/gnomine/oc/figures/hard-hints-1.png
+share/gnome/help/gnomine/oc/figures/hard-hints-2.png
+share/gnome/help/gnomine/oc/figures/hard-hints-3.png
+share/gnome/help/gnomine/oc/figures/highscores.png
+share/gnome/help/gnomine/oc/figures/imnotsureflagscheckbox.png
+share/gnome/help/gnomine/oc/figures/main-window.png
+share/gnome/help/gnomine/oc/figures/preferences.png
+share/gnome/help/gnomine/oc/figures/statusbar.png
+share/gnome/help/gnomine/oc/gnomine.xml
+share/gnome/help/gnomine/sv/figures/easy-hints-1.png
+share/gnome/help/gnomine/sv/figures/easy-hints-2.png
+share/gnome/help/gnomine/sv/figures/easy-hints-3.png
+share/gnome/help/gnomine/sv/figures/faces.png
+share/gnome/help/gnomine/sv/figures/flags.png
+share/gnome/help/gnomine/sv/figures/hard-hints-1.png
+share/gnome/help/gnomine/sv/figures/hard-hints-2.png
+share/gnome/help/gnomine/sv/figures/hard-hints-3.png
+share/gnome/help/gnomine/sv/figures/highscores.png
+share/gnome/help/gnomine/sv/figures/imnotsureflagscheckbox.png
+share/gnome/help/gnomine/sv/figures/main-window.png
+share/gnome/help/gnomine/sv/figures/preferences.png
+share/gnome/help/gnomine/sv/figures/statusbar.png
+share/gnome/help/gnomine/sv/gnomine.xml
 share/gnome/help/gnotravex/C/figures/gnotravex_game.png
 share/gnome/help/gnotravex/C/figures/gnotravex_mainwindow.png
 share/gnome/help/gnotravex/C/gnotravex.xml
 share/gnome/help/gnotravex/C/legal.xml
+share/gnome/help/gnotravex/de/figures/gnotravex_game.png
+share/gnome/help/gnotravex/de/figures/gnotravex_mainwindow.png
+share/gnome/help/gnotravex/de/gnotravex.xml
+share/gnome/help/gnotravex/el/figures/gnotravex_game.png
+share/gnome/help/gnotravex/el/figures/gnotravex_mainwindow.png
+share/gnome/help/gnotravex/el/gnotravex.xml
+share/gnome/help/gnotravex/es/figures/gnotravex_game.png
+share/gnome/help/gnotravex/es/figures/gnotravex_mainwindow.png
+share/gnome/help/gnotravex/es/gnotravex.xml
+share/gnome/help/gnotravex/fr/figures/gnotravex_game.png
+share/gnome/help/gnotravex/fr/figures/gnotravex_mainwindow.png
+share/gnome/help/gnotravex/fr/gnotravex.xml
+share/gnome/help/gnotravex/oc/figures/gnotravex_game.png
+share/gnome/help/gnotravex/oc/figures/gnotravex_mainwindow.png
+share/gnome/help/gnotravex/oc/gnotravex.xml
+share/gnome/help/gnotravex/sv/figures/gnotravex_game.png
+share/gnome/help/gnotravex/sv/figures/gnotravex_mainwindow.png
+share/gnome/help/gnotravex/sv/gnotravex.xml
 share/gnome/help/gnotski/C/figures/gnotski_start_window.png
 share/gnome/help/gnotski/C/figures/gnotski_win.png
 share/gnome/help/gnotski/C/gnotski.xml
 share/gnome/help/gnotski/C/legal.xml
+share/gnome/help/gnotski/es/figures/gnotski_start_window.png
+share/gnome/help/gnotski/es/figures/gnotski_win.png
+share/gnome/help/gnotski/es/gnotski.xml
+share/gnome/help/gnotski/fr/figures/gnotski_start_window.png
+share/gnome/help/gnotski/fr/figures/gnotski_win.png
+share/gnome/help/gnotski/fr/gnotski.xml
+share/gnome/help/gnotski/oc/figures/gnotski_start_window.png
+share/gnome/help/gnotski/oc/figures/gnotski_win.png
+share/gnome/help/gnotski/oc/gnotski.xml
+share/gnome/help/gnotski/sv/figures/gnotski_start_window.png
+share/gnome/help/gnotski/sv/figures/gnotski_win.png
+share/gnome/help/gnotski/sv/gnotski.xml
 share/gnome/help/gtali/C/figures/mainwindow.png
 share/gnome/help/gtali/C/figures/preferences.png
 share/gnome/help/gtali/C/gtali.xml
 share/gnome/help/gtali/C/legal.xml
 share/gnome/help/gtali/da/gtali.xml
 share/gnome/help/gtali/da/legal.xml
+share/gnome/help/gtali/es/figures/mainwindow.png
+share/gnome/help/gtali/es/figures/preferences.png
+share/gnome/help/gtali/es/gtali.xml
+share/gnome/help/gtali/fr/figures/mainwindow.png
+share/gnome/help/gtali/fr/figures/preferences.png
+share/gnome/help/gtali/fr/gtali.xml
+share/gnome/help/gtali/oc/figures/mainwindow.png
+share/gnome/help/gtali/oc/figures/preferences.png
+share/gnome/help/gtali/oc/gtali.xml
+share/gnome/help/gtali/sv/figures/mainwindow.png
+share/gnome/help/gtali/sv/figures/preferences.png
+share/gnome/help/gtali/sv/gtali.xml
 share/gnome/help/iagno/C/figures/ANIMATION.png
 share/gnome/help/iagno/C/figures/BLOCK.png
 share/gnome/help/iagno/C/figures/FIRST.png
 share/gnome/help/iagno/C/figures/PLAYER.png
 share/gnome/help/iagno/C/figures/START.png
+share/gnome/help/iagno/C/figures/connect.png
+share/gnome/help/iagno/C/figures/tables.png
 share/gnome/help/iagno/C/iagno.xml
 share/gnome/help/iagno/C/legal.xml
+share/gnome/help/iagno/C/network-games.xml
+share/gnome/help/iagno/es/figures/ANIMATION.png
+share/gnome/help/iagno/es/figures/BLOCK.png
+share/gnome/help/iagno/es/figures/FIRST.png
+share/gnome/help/iagno/es/figures/PLAYER.png
+share/gnome/help/iagno/es/figures/START.png
+share/gnome/help/iagno/es/figures/connect.png
+share/gnome/help/iagno/es/figures/tables.png
+share/gnome/help/iagno/es/iagno.xml
+share/gnome/help/iagno/fr/figures/ANIMATION.png
+share/gnome/help/iagno/fr/figures/BLOCK.png
+share/gnome/help/iagno/fr/figures/FIRST.png
+share/gnome/help/iagno/fr/figures/PLAYER.png
+share/gnome/help/iagno/fr/figures/START.png
+share/gnome/help/iagno/fr/figures/connect.png
+share/gnome/help/iagno/fr/figures/tables.png
+share/gnome/help/iagno/fr/iagno.xml
+share/gnome/help/iagno/oc/figures/ANIMATION.png
+share/gnome/help/iagno/oc/figures/BLOCK.png
+share/gnome/help/iagno/oc/figures/FIRST.png
+share/gnome/help/iagno/oc/figures/PLAYER.png
+share/gnome/help/iagno/oc/figures/START.png
+share/gnome/help/iagno/oc/figures/connect.png
+share/gnome/help/iagno/oc/figures/tables.png
+share/gnome/help/iagno/oc/iagno.xml
+share/gnome/help/iagno/sv/figures/ANIMATION.png
+share/gnome/help/iagno/sv/figures/BLOCK.png
+share/gnome/help/iagno/sv/figures/FIRST.png
+share/gnome/help/iagno/sv/figures/PLAYER.png
+share/gnome/help/iagno/sv/figures/START.png
+share/gnome/help/iagno/sv/figures/connect.png
+share/gnome/help/iagno/sv/figures/tables.png
+share/gnome/help/iagno/sv/iagno.xml
 share/gnome/help/mahjongg/C/figures/mahjongg.png
 share/gnome/help/mahjongg/C/figures/no-move.png
 share/gnome/help/mahjongg/C/figures/preferences.png
 share/gnome/help/mahjongg/C/figures/toolbar.png
 share/gnome/help/mahjongg/C/legal.xml
 share/gnome/help/mahjongg/C/mahjongg.xml
+share/gnome/help/mahjongg/es/figures/mahjongg.png
+share/gnome/help/mahjongg/es/figures/no-move.png
+share/gnome/help/mahjongg/es/figures/preferences.png
+share/gnome/help/mahjongg/es/figures/toolbar.png
+share/gnome/help/mahjongg/es/mahjongg.xml
+share/gnome/help/mahjongg/fr/figures/mahjongg.png
+share/gnome/help/mahjongg/fr/figures/no-move.png
+share/gnome/help/mahjongg/fr/figures/preferences.png
+share/gnome/help/mahjongg/fr/figures/toolbar.png
+share/gnome/help/mahjongg/fr/mahjongg.xml
+share/gnome/help/mahjongg/oc/figures/mahjongg.png
+share/gnome/help/mahjongg/oc/figures/no-move.png
+share/gnome/help/mahjongg/oc/figures/preferences.png
+share/gnome/help/mahjongg/oc/figures/toolbar.png
+share/gnome/help/mahjongg/oc/mahjongg.xml
+share/gnome/help/mahjongg/sv/figures/mahjongg.png
+share/gnome/help/mahjongg/sv/figures/no-move.png
+share/gnome/help/mahjongg/sv/figures/preferences.png
+share/gnome/help/mahjongg/sv/figures/toolbar.png
+share/gnome/help/mahjongg/sv/mahjongg.xml
 share/gnome/help/same-gnome/C/figures/play.png
 share/gnome/help/same-gnome/C/figures/start-up.png
 share/gnome/help/same-gnome/C/legal.xml
@@ -647,283 +956,117 @@ share/gnome/help/same-gnome/es/same-gnome.xml
 share/gnome/help/same-gnome/fr/figures/play.png
 share/gnome/help/same-gnome/fr/figures/start-up.png
 share/gnome/help/same-gnome/fr/same-gnome.xml
+share/gnome/help/same-gnome/oc/figures/play.png
+share/gnome/help/same-gnome/oc/figures/start-up.png
+share/gnome/help/same-gnome/oc/same-gnome.xml
 share/gnome/help/same-gnome/ru/figures/play.png
 share/gnome/help/same-gnome/ru/figures/start-up.png
 share/gnome/help/same-gnome/ru/same-gnome.xml
 share/gnome/help/same-gnome/sv/figures/play.png
 share/gnome/help/same-gnome/sv/figures/start-up.png
 share/gnome/help/same-gnome/sv/same-gnome.xml
-share/gnome/omf/glchess/glchess-C.omf
-share/gnome/omf/glchess/glchess-es.omf
-share/gnome/omf/glchess/glchess-fr.omf
-share/gnome/omf/glchess/glchess-sv.omf
-share/gnome/omf/glines/glines-C.omf
-share/gnome/omf/glines/glines-en_GB.omf
-share/gnome/omf/glines/glines-es.omf
-share/gnome/omf/glines/glines-fr.omf
-share/gnome/omf/glines/glines-ru.omf
-share/gnome/omf/glines/glines-sv.omf
-share/gnome/omf/gnect/gnect-C.omf
-share/gnome/omf/gnect/gnect-en_GB.omf
-share/gnome/omf/gnect/gnect-es.omf
-share/gnome/omf/gnect/gnect-fr.omf
-share/gnome/omf/gnect/gnect-sv.omf
-share/gnome/omf/gnome-games/aisleriot-C.omf
-share/gnome/omf/gnome-games/aisleriot-fr.omf
-share/gnome/omf/gnome-games/blackjack-C.omf
-share/gnome/omf/gnome-games/gnibbles-C.omf
-share/gnome/omf/gnome-games/gnobots2-C.omf
-share/gnome/omf/gnome-games/gnobots2-da.omf
-share/gnome/omf/gnome-games/gnobots2-es.omf
-share/gnome/omf/gnome-games/gnobots2-it.omf
-share/gnome/omf/gnome-games/gnometris-C.omf
-share/gnome/omf/gnome-games/gnomine-C.omf
-share/gnome/omf/gnome-games/gnotravex-C.omf
-share/gnome/omf/gnome-games/gnotski-C.omf
-share/gnome/omf/gnome-games/gtali-C.omf
-share/gnome/omf/gnome-games/gtali-da.omf
-share/gnome/omf/gnome-games/iagno-C.omf
-share/gnome/omf/gnome-games/mahjongg-C.omf
-share/gnome/omf/same-gnome/same-gnome-C.omf
-share/gnome/omf/same-gnome/same-gnome-en_GB.omf
-share/gnome/omf/same-gnome/same-gnome-es.omf
-share/gnome/omf/same-gnome/same-gnome-fr.omf
-share/gnome/omf/same-gnome/same-gnome-ru.omf
-share/gnome/omf/same-gnome/same-gnome-sv.omf
-share/gnome/pixmaps/blackjack/baize.png
-share/gnome/pixmaps/blackjack/blackjack-splash.png
-share/gnome/pixmaps/blackjack/chip-1.svg
-share/gnome/pixmaps/blackjack/chip-100.svg
-share/gnome/pixmaps/blackjack/chip-25.svg
-share/gnome/pixmaps/blackjack/chip-5.svg
-share/gnome/pixmaps/cards/baize.png
-share/gnome/pixmaps/cards/slot.svg
-share/gnome/pixmaps/cards/slots/white-outline.svg
-share/gnome/pixmaps/glchess.svg
-share/gnome/pixmaps/glchess/board.png
-share/gnome/pixmaps/glchess/piece.png
-share/gnome/pixmaps/glines/balls.svg
-share/gnome/pixmaps/glines/shapes.svg
-share/gnome/pixmaps/gnect/bg_grotty.jpg
-share/gnome/pixmaps/gnect/bg_nightfall.jpg
-share/gnome/pixmaps/gnect/bg_toplight.png
-share/gnome/pixmaps/gnect/tileset_50x50_catseyes.png
-share/gnome/pixmaps/gnect/tileset_50x50_glassy.png
-share/gnome/pixmaps/gnect/tileset_50x50_hcinverse.svg
-share/gnome/pixmaps/gnect/tileset_50x50_hcontrast.svg
-share/gnome/pixmaps/gnect/tileset_50x50_square.png
-share/gnome/pixmaps/gnect/tileset_50x50_sunspot.svg
-share/gnome/pixmaps/gnibbles/blank.svg
-share/gnome/pixmaps/gnibbles/bonus1.svg
-share/gnome/pixmaps/gnibbles/bonus2.svg
-share/gnome/pixmaps/gnibbles/bonus3.svg
-share/gnome/pixmaps/gnibbles/bonus4.svg
-share/gnome/pixmaps/gnibbles/bonus5.svg
-share/gnome/pixmaps/gnibbles/diamond.svg
-share/gnome/pixmaps/gnibbles/gnibbles-logo.svg
-share/gnome/pixmaps/gnibbles/life.svg
-share/gnome/pixmaps/gnibbles/questionmark.svg
-share/gnome/pixmaps/gnibbles/snake-blue.svg
-share/gnome/pixmaps/gnibbles/snake-cyan.svg
-share/gnome/pixmaps/gnibbles/snake-green.svg
-share/gnome/pixmaps/gnibbles/snake-grey.svg
-share/gnome/pixmaps/gnibbles/snake-magenta.svg
-share/gnome/pixmaps/gnibbles/snake-red.svg
-share/gnome/pixmaps/gnibbles/snake-yellow.svg
-share/gnome/pixmaps/gnibbles/wall-corner-bottom-left.svg
-share/gnome/pixmaps/gnibbles/wall-corner-bottom-right.svg
-share/gnome/pixmaps/gnibbles/wall-corner-top-left.svg
-share/gnome/pixmaps/gnibbles/wall-corner-top-right.svg
-share/gnome/pixmaps/gnibbles/wall-cross.svg
-share/gnome/pixmaps/gnibbles/wall-empty.svg
-share/gnome/pixmaps/gnibbles/wall-straight-side.svg
-share/gnome/pixmaps/gnibbles/wall-straight-up.svg
-share/gnome/pixmaps/gnibbles/wall-tee-down.svg
-share/gnome/pixmaps/gnibbles/wall-tee-left.svg
-share/gnome/pixmaps/gnibbles/wall-tee-right.svg
-share/gnome/pixmaps/gnibbles/wall-tee-up.svg
-share/gnome/pixmaps/gnobots2/aieee.png
-share/gnome/pixmaps/gnobots2/boo.svg
-share/gnome/pixmaps/gnobots2/gnomes.png
-share/gnome/pixmaps/gnobots2/robots.svg
-share/gnome/pixmaps/gnobots2/splat.png
-share/gnome/pixmaps/gnobots2/ufo.svg
-share/gnome/pixmaps/gnobots2/yahoo.png
-share/gnome/pixmaps/gnome-games-common/cards/bonded.svg
-share/gnome/pixmaps/gnome-games-common/icons/rteleport.png
-share/gnome/pixmaps/gnome-games-common/icons/teleport.png
-share/gnome/pixmaps/gnome-sudoku/footprints.png
-share/gnome/pixmaps/gnometris/7blocks-gw.png
-share/gnome/pixmaps/gnometris/7blocks-tig.png
-share/gnome/pixmaps/gnomine/bang.svg
-share/gnome/pixmaps/gnomine/face-cool.png
-share/gnome/pixmaps/gnomine/face-sad.png
-share/gnome/pixmaps/gnomine/face-smile.png
-share/gnome/pixmaps/gnomine/face-win.png
-share/gnome/pixmaps/gnomine/face-worried.png
-share/gnome/pixmaps/gnomine/flag-question.svg
-share/gnome/pixmaps/gnomine/flag.svg
-share/gnome/pixmaps/gnomine/mine.svg
-share/gnome/pixmaps/gnomine/warning.svg
-share/gnome/pixmaps/gnotravex/baize.png
-share/gnome/pixmaps/gnotski.svg
-share/gnome/pixmaps/gtali/gnome-dice-1.svg
-share/gnome/pixmaps/gtali/gnome-dice-2.svg
-share/gnome/pixmaps/gtali/gnome-dice-3.svg
-share/gnome/pixmaps/gtali/gnome-dice-4.svg
-share/gnome/pixmaps/gtali/gnome-dice-5.svg
-share/gnome/pixmaps/gtali/gnome-dice-6.svg
-share/gnome/pixmaps/gtali/gnome-dice-none.svg
-share/gnome/pixmaps/gtali/kismet-none.svg
-share/gnome/pixmaps/gtali/kismet1.svg
-share/gnome/pixmaps/gtali/kismet2.svg
-share/gnome/pixmaps/gtali/kismet3.svg
-share/gnome/pixmaps/gtali/kismet4.svg
-share/gnome/pixmaps/gtali/kismet5.svg
-share/gnome/pixmaps/gtali/kismet6.svg
-share/gnome/pixmaps/iagno/classic.png
-share/gnome/pixmaps/iagno/woodtrim.png
-share/gnome/pixmaps/mahjongg/postmodern.svg
-share/gnome/pixmaps/mahjongg/smooth.png
-share/gnome/pixmaps/sudoku.png
-share/gnome/sol-games/agnes.scm
-share/gnome/sol-games/athena.scm
-share/gnome/sol-games/auld_lang_syne.scm
-share/gnome/sol-games/aunt_mary.scm
-share/gnome/sol-games/backbone.scm
-share/gnome/sol-games/bakers_dozen.scm
-share/gnome/sol-games/bakers_game.scm
-share/gnome/sol-games/beleaguered_castle.scm
-share/gnome/sol-games/block_ten.scm
-share/gnome/sol-games/bristol.scm
-share/gnome/sol-games/camelot.scm
-share/gnome/sol-games/canfield.scm
-share/gnome/sol-games/carpet.scm
-share/gnome/sol-games/chessboard.scm
-share/gnome/sol-games/clock.scm
-share/gnome/sol-games/cover.scm
-share/gnome/sol-games/cruel.scm
-share/gnome/sol-games/diamond_mine.scm
-share/gnome/sol-games/doublets.scm
-share/gnome/sol-games/eagle_wing.scm
-share/gnome/sol-games/easthaven.scm
-share/gnome/sol-games/eight_off.scm
-share/gnome/sol-games/elevator.scm
-share/gnome/sol-games/escalator.scm
-share/gnome/sol-games/first_law.scm
-share/gnome/sol-games/fortress.scm
-share/gnome/sol-games/fortunes.scm
-share/gnome/sol-games/fourteen.scm
-share/gnome/sol-games/freecell.scm
-share/gnome/sol-games/gaps.scm
-share/gnome/sol-games/gay_gordons.scm
-share/gnome/sol-games/glade/statistics.glade
-share/gnome/sol-games/glenwood.scm
-share/gnome/sol-games/golf.scm
-share/gnome/sol-games/gypsy.scm
-share/gnome/sol-games/helsinki.scm
-share/gnome/sol-games/hopscotch.scm
-share/gnome/sol-games/isabel.scm
-share/gnome/sol-games/jamestown.scm
-share/gnome/sol-games/jumbo.scm
-share/gnome/sol-games/kansas.scm
-share/gnome/sol-games/king_albert.scm
-share/gnome/sol-games/kings_audience.scm
-share/gnome/sol-games/klondike.scm
-share/gnome/sol-games/labyrinth.scm
-share/gnome/sol-games/lady_jane.scm
-share/gnome/sol-games/maze.scm
-share/gnome/sol-games/monte_carlo.scm
-share/gnome/sol-games/neighbor.scm
-share/gnome/sol-games/odessa.scm
-share/gnome/sol-games/osmosis.scm
-share/gnome/sol-games/peek.scm
-share/gnome/sol-games/pileon.scm
-share/gnome/sol-games/plait.scm
-share/gnome/sol-games/poker.scm
-share/gnome/sol-games/quatorze.scm
-share/gnome/sol-games/royal_east.scm
-share/gnome/sol-games/saratoga.scm
-share/gnome/sol-games/scorpion.scm
-share/gnome/sol-games/scuffle.scm
-share/gnome/sol-games/seahaven.scm
-share/gnome/sol-games/sir_tommy.scm
-share/gnome/sol-games/sol.scm
-share/gnome/sol-games/spider.scm
-share/gnome/sol-games/spiderette.scm
-share/gnome/sol-games/straight_up.scm
-share/gnome/sol-games/streets_and_alleys.scm
-share/gnome/sol-games/ten_across.scm
-share/gnome/sol-games/thieves.scm
-share/gnome/sol-games/thirteen.scm
-share/gnome/sol-games/thumb_and_pouch.scm
-share/gnome/sol-games/treize.scm
-share/gnome/sol-games/triple_peaks.scm
-share/gnome/sol-games/union_square.scm
-share/gnome/sol-games/valentine.scm
-share/gnome/sol-games/westhaven.scm
-share/gnome/sol-games/whitehead.scm
-share/gnome/sol-games/will_o_the_wisp.scm
-share/gnome/sol-games/yield.scm
-share/gnome/sol-games/yukon.scm
-share/gnome/sol-games/zebra.scm
-share/gnome/sounds/gnibbles/appear.wav
-share/gnome/sounds/gnibbles/bonus.wav
-share/gnome/sounds/gnibbles/crash.wav
-share/gnome/sounds/gnibbles/gobble.wav
-share/gnome/sounds/gnibbles/laughter.wav
-share/gnome/sounds/gnibbles/life.wav
-share/gnome/sounds/gnibbles/pop.wav
-share/gnome/sounds/gnibbles/reverse.wav
-share/gnome/sounds/gnibbles/teleport.wav
-share/gnome/sounds/gnobots2/bad.wav
-share/gnome/sounds/gnobots2/die.wav
-share/gnome/sounds/gnobots2/splat.wav
-share/gnome/sounds/gnobots2/teleport.wav
-share/gnome/sounds/gnobots2/victory.wav
-share/gnome/sounds/gnobots2/yahoo.wav
-share/gnome/sounds/gnometris/gameover.wav
-share/gnome/sounds/gnometris/gnometris.wav
-share/gnome/sounds/gnometris/land.wav
-share/gnome/sounds/gnometris/lines1.wav
-share/gnome/sounds/gnometris/lines2.wav
-share/gnome/sounds/gnometris/lines3.wav
-share/gnome/sounds/gnometris/slide.wav
-share/gnome/sounds/gnometris/turn.wav
-share/gnome/sounds/iagno/flip-piece.wav
-share/gnome/sounds/iagno/gameover.wav
-share/icons/hicolor/16x16/apps/gnome-gnomine.png
+share/icons/hicolor/16x16/apps/gnome-aisleriot.png
+share/icons/hicolor/16x16/apps/gnome-blackjack.png
+share/icons/hicolor/16x16/apps/gnome-freecell.png
+share/icons/hicolor/16x16/apps/gnome-glchess.png
+share/icons/hicolor/16x16/apps/gnome-glines.png
+share/icons/hicolor/16x16/apps/gnome-gnect.png
+share/icons/hicolor/16x16/apps/gnome-gnibbles.png
+share/icons/hicolor/16x16/apps/gnome-gnometris.png
 share/icons/hicolor/16x16/apps/gnome-iagno.png
-share/icons/hicolor/16x16/apps/gnome-nibbles.png
+share/icons/hicolor/16x16/apps/gnome-klotski.png
+share/icons/hicolor/16x16/apps/gnome-mahjongg.png
+share/icons/hicolor/16x16/apps/gnome-mines.png
+share/icons/hicolor/16x16/apps/gnome-robots.png
+share/icons/hicolor/16x16/apps/gnome-samegnome.png
+share/icons/hicolor/16x16/apps/gnome-sudoku.png
 share/icons/hicolor/16x16/apps/gnome-tali.png
-share/icons/hicolor/22x22/apps/gnome-gnomine.png
+share/icons/hicolor/16x16/apps/gnome-tetravex.png
+share/icons/hicolor/22x22/apps/gnome-aisleriot.png
+share/icons/hicolor/22x22/apps/gnome-blackjack.png
+share/icons/hicolor/22x22/apps/gnome-freecell.png
+share/icons/hicolor/22x22/apps/gnome-glchess.png
+share/icons/hicolor/22x22/apps/gnome-glines.png
+share/icons/hicolor/22x22/apps/gnome-gnect.png
+share/icons/hicolor/22x22/apps/gnome-gnibbles.png
+share/icons/hicolor/22x22/apps/gnome-gnometris.png
 share/icons/hicolor/22x22/apps/gnome-iagno.png
-share/icons/hicolor/22x22/apps/gnome-nibbles.png
+share/icons/hicolor/22x22/apps/gnome-klotski.png
+share/icons/hicolor/22x22/apps/gnome-mahjongg.png
+share/icons/hicolor/22x22/apps/gnome-mines.png
+share/icons/hicolor/22x22/apps/gnome-robots.png
+share/icons/hicolor/22x22/apps/gnome-samegnome.png
+share/icons/hicolor/22x22/apps/gnome-sudoku.png
 share/icons/hicolor/22x22/apps/gnome-tali.png
-share/icons/hicolor/32x32/apps/gnome-gnomine.png
+share/icons/hicolor/22x22/apps/gnome-tetravex.png
+share/icons/hicolor/24x24/apps/gnome-aisleriot.png
+share/icons/hicolor/24x24/apps/gnome-blackjack.png
+share/icons/hicolor/24x24/apps/gnome-freecell.png
+share/icons/hicolor/24x24/apps/gnome-glchess.png
+share/icons/hicolor/24x24/apps/gnome-glines.png
+share/icons/hicolor/24x24/apps/gnome-gnect.png
+share/icons/hicolor/24x24/apps/gnome-gnibbles.png
+share/icons/hicolor/24x24/apps/gnome-gnometris.png
+share/icons/hicolor/24x24/apps/gnome-iagno.png
+share/icons/hicolor/24x24/apps/gnome-klotski.png
+share/icons/hicolor/24x24/apps/gnome-mahjongg.png
+share/icons/hicolor/24x24/apps/gnome-mines.png
+share/icons/hicolor/24x24/apps/gnome-robots.png
+share/icons/hicolor/24x24/apps/gnome-samegnome.png
+share/icons/hicolor/24x24/apps/gnome-sudoku.png
+share/icons/hicolor/24x24/apps/gnome-tali.png
+share/icons/hicolor/24x24/apps/gnome-tetravex.png
+share/icons/hicolor/32x32/apps/gnome-aisleriot.png
+share/icons/hicolor/32x32/apps/gnome-blackjack.png
+share/icons/hicolor/32x32/apps/gnome-freecell.png
+share/icons/hicolor/32x32/apps/gnome-glchess.png
+share/icons/hicolor/32x32/apps/gnome-glines.png
+share/icons/hicolor/32x32/apps/gnome-gnect.png
+share/icons/hicolor/32x32/apps/gnome-gnibbles.png
+share/icons/hicolor/32x32/apps/gnome-gnometris.png
 share/icons/hicolor/32x32/apps/gnome-iagno.png
-share/icons/hicolor/32x32/apps/gnome-nibbles.png
+share/icons/hicolor/32x32/apps/gnome-klotski.png
+share/icons/hicolor/32x32/apps/gnome-mahjongg.png
+share/icons/hicolor/32x32/apps/gnome-mines.png
+share/icons/hicolor/32x32/apps/gnome-robots.png
+share/icons/hicolor/32x32/apps/gnome-samegnome.png
+share/icons/hicolor/32x32/apps/gnome-sudoku.png
 share/icons/hicolor/32x32/apps/gnome-tali.png
+share/icons/hicolor/32x32/apps/gnome-tetravex.png
 share/icons/hicolor/48x48/apps/gnome-aisleriot.png
 share/icons/hicolor/48x48/apps/gnome-blackjack.png
-share/icons/hicolor/48x48/apps/gnome-five-or-more.png
-share/icons/hicolor/48x48/apps/gnome-four-in-a-row.png
 share/icons/hicolor/48x48/apps/gnome-freecell.png
+share/icons/hicolor/48x48/apps/gnome-glchess.png
+share/icons/hicolor/48x48/apps/gnome-glines.png
+share/icons/hicolor/48x48/apps/gnome-gnect.png
+share/icons/hicolor/48x48/apps/gnome-gnibbles.png
 share/icons/hicolor/48x48/apps/gnome-gnometris.png
-share/icons/hicolor/48x48/apps/gnome-gnomine.png
 share/icons/hicolor/48x48/apps/gnome-iagno.png
 share/icons/hicolor/48x48/apps/gnome-klotski.png
 share/icons/hicolor/48x48/apps/gnome-mahjongg.png
-share/icons/hicolor/48x48/apps/gnome-nibbles.png
+share/icons/hicolor/48x48/apps/gnome-mines.png
 share/icons/hicolor/48x48/apps/gnome-robots.png
-share/icons/hicolor/48x48/apps/gnome-same-gnome.png
+share/icons/hicolor/48x48/apps/gnome-samegnome.png
+share/icons/hicolor/48x48/apps/gnome-sudoku.png
 share/icons/hicolor/48x48/apps/gnome-tali.png
 share/icons/hicolor/48x48/apps/gnome-tetravex.png
-share/icons/hicolor/scalable/apps/gnome-gnomine.svg
+share/icons/hicolor/scalable/apps/gnome-aisleriot.svg
+share/icons/hicolor/scalable/apps/gnome-blackjack.svg
+share/icons/hicolor/scalable/apps/gnome-freecell.svg
+share/icons/hicolor/scalable/apps/gnome-glchess.svg
+share/icons/hicolor/scalable/apps/gnome-glines.svg
+share/icons/hicolor/scalable/apps/gnome-gnect.svg
+share/icons/hicolor/scalable/apps/gnome-gnibbles.svg
+share/icons/hicolor/scalable/apps/gnome-gnometris.svg
 share/icons/hicolor/scalable/apps/gnome-iagno.svg
-share/icons/hicolor/scalable/apps/gnome-nibbles.svg
+share/icons/hicolor/scalable/apps/gnome-klotski.svg
+share/icons/hicolor/scalable/apps/gnome-mines.svg
 share/icons/hicolor/scalable/apps/gnome-robots.svg
+share/icons/hicolor/scalable/apps/gnome-samegnome.svg
+share/icons/hicolor/scalable/apps/gnome-sudoku.svg
 share/icons/hicolor/scalable/apps/gnome-tali.svg
+share/icons/hicolor/scalable/apps/gnome-tetravex.svg
+share/locale/af/LC_MESSAGES/gnome-games.mo
 share/locale/am/LC_MESSAGES/gnome-games.mo
 share/locale/ar/LC_MESSAGES/gnome-games.mo
 share/locale/az/LC_MESSAGES/gnome-games.mo
@@ -971,6 +1114,7 @@ share/locale/nb/LC_MESSAGES/gnome-games.mo
 share/locale/ne/LC_MESSAGES/gnome-games.mo
 share/locale/nl/LC_MESSAGES/gnome-games.mo
 share/locale/nn/LC_MESSAGES/gnome-games.mo
+share/locale/oc/LC_MESSAGES/gnome-games.mo
 share/locale/or/LC_MESSAGES/gnome-games.mo
 share/locale/pa/LC_MESSAGES/gnome-games.mo
 share/locale/pl/LC_MESSAGES/gnome-games.mo
@@ -979,6 +1123,7 @@ share/locale/pt_BR/LC_MESSAGES/gnome-games.mo
 share/locale/ro/LC_MESSAGES/gnome-games.mo
 share/locale/ru/LC_MESSAGES/gnome-games.mo
 share/locale/rw/LC_MESSAGES/gnome-games.mo
+share/locale/si/LC_MESSAGES/gnome-games.mo
 share/locale/sk/LC_MESSAGES/gnome-games.mo
 share/locale/sl/LC_MESSAGES/gnome-games.mo
 share/locale/sq/LC_MESSAGES/gnome-games.mo
@@ -986,6 +1131,7 @@ share/locale/sr/LC_MESSAGES/gnome-games.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-games.mo
 share/locale/sv/LC_MESSAGES/gnome-games.mo
 share/locale/ta/LC_MESSAGES/gnome-games.mo
+share/locale/te/LC_MESSAGES/gnome-games.mo
 share/locale/th/LC_MESSAGES/gnome-games.mo
 share/locale/tr/LC_MESSAGES/gnome-games.mo
 share/locale/uk/LC_MESSAGES/gnome-games.mo
@@ -995,39 +1141,217 @@ share/locale/xh/LC_MESSAGES/gnome-games.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-games.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-games.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
-@dirrm share/gnome/sounds/iagno
-@dirrm share/gnome/sounds/gnometris
-@dirrm share/gnome/sounds/gnobots2
-@dirrm share/gnome/sounds/gnibbles
-@dirrm share/gnome/sol-games/glade
-@dirrm share/gnome/sol-games
-@dirrm share/gnome/pixmaps/mahjongg
-@dirrm share/gnome/pixmaps/iagno
-@dirrm share/gnome/pixmaps/gtali
-@dirrm share/gnome/pixmaps/gnotravex
-@dirrm share/gnome/pixmaps/gnomine
-@dirrm share/gnome/pixmaps/gnometris
-@dirrm share/gnome/pixmaps/gnome-sudoku
-@dirrm share/gnome/pixmaps/gnome-games-common/icons
-@dirrm share/gnome/pixmaps/gnome-games-common/cards
-@dirrm share/gnome/pixmaps/gnome-games-common
-@dirrm share/gnome/pixmaps/gnobots2
-@dirrm share/gnome/pixmaps/gnibbles
-@dirrm share/gnome/pixmaps/gnect
-@dirrm share/gnome/pixmaps/glines
-@dirrm share/gnome/pixmaps/glchess
-@dirrm share/gnome/pixmaps/cards/slots
-@dirrm share/gnome/pixmaps/cards
-@dirrm share/gnome/pixmaps/blackjack
-@dirrm share/gnome/omf/same-gnome
-@dirrm share/gnome/omf/gnome-games
-@dirrm share/gnome/omf/gnect
-@dirrm share/gnome/omf/glines
-@dirrm share/gnome/omf/glchess
+share/omf/aisleriot/aisleriot-C.omf
+share/omf/aisleriot/aisleriot-es.omf
+share/omf/aisleriot/aisleriot-fr.omf
+share/omf/aisleriot/aisleriot-oc.omf
+share/omf/aisleriot/aisleriot-sv.omf
+share/omf/blackjack/blackjack-C.omf
+share/omf/blackjack/blackjack-es.omf
+share/omf/blackjack/blackjack-fr.omf
+share/omf/blackjack/blackjack-oc.omf
+share/omf/blackjack/blackjack-sv.omf
+share/omf/glchess/glchess-C.omf
+share/omf/glchess/glchess-es.omf
+share/omf/glchess/glchess-fr.omf
+share/omf/glchess/glchess-oc.omf
+share/omf/glchess/glchess-pt_BR.omf
+share/omf/glchess/glchess-sv.omf
+share/omf/glines/glines-C.omf
+share/omf/glines/glines-en_GB.omf
+share/omf/glines/glines-es.omf
+share/omf/glines/glines-fr.omf
+share/omf/glines/glines-oc.omf
+share/omf/glines/glines-ru.omf
+share/omf/glines/glines-sv.omf
+share/omf/gnect/gnect-C.omf
+share/omf/gnect/gnect-en_GB.omf
+share/omf/gnect/gnect-es.omf
+share/omf/gnect/gnect-fr.omf
+share/omf/gnect/gnect-oc.omf
+share/omf/gnect/gnect-sv.omf
+share/omf/gnibbles/gnibbles-C.omf
+share/omf/gnibbles/gnibbles-es.omf
+share/omf/gnibbles/gnibbles-fr.omf
+share/omf/gnibbles/gnibbles-oc.omf
+share/omf/gnibbles/gnibbles-sv.omf
+share/omf/gnobots2/gnobots2-C.omf
+share/omf/gnobots2/gnobots2-de.omf
+share/omf/gnobots2/gnobots2-es.omf
+share/omf/gnobots2/gnobots2-fr.omf
+share/omf/gnobots2/gnobots2-oc.omf
+share/omf/gnobots2/gnobots2-sv.omf
+share/omf/gnome-games/gnobots2-da.omf
+share/omf/gnome-games/gnobots2-it.omf
+share/omf/gnome-games/gtali-da.omf
+share/omf/gnome-sudoku/gnome-sudoku-C.omf
+share/omf/gnome-sudoku/gnome-sudoku-es.omf
+share/omf/gnome-sudoku/gnome-sudoku-fr.omf
+share/omf/gnome-sudoku/gnome-sudoku-oc.omf
+share/omf/gnome-sudoku/gnome-sudoku-sv.omf
+share/omf/gnometris/gnometris-C.omf
+share/omf/gnometris/gnometris-el.omf
+share/omf/gnometris/gnometris-es.omf
+share/omf/gnometris/gnometris-fr.omf
+share/omf/gnometris/gnometris-oc.omf
+share/omf/gnometris/gnometris-sv.omf
+share/omf/gnomine/gnomine-C.omf
+share/omf/gnomine/gnomine-de.omf
+share/omf/gnomine/gnomine-es.omf
+share/omf/gnomine/gnomine-fr.omf
+share/omf/gnomine/gnomine-oc.omf
+share/omf/gnomine/gnomine-sv.omf
+share/omf/gnotravex/gnotravex-C.omf
+share/omf/gnotravex/gnotravex-de.omf
+share/omf/gnotravex/gnotravex-el.omf
+share/omf/gnotravex/gnotravex-es.omf
+share/omf/gnotravex/gnotravex-fr.omf
+share/omf/gnotravex/gnotravex-oc.omf
+share/omf/gnotravex/gnotravex-sv.omf
+share/omf/gnotski/gnotski-C.omf
+share/omf/gnotski/gnotski-es.omf
+share/omf/gnotski/gnotski-fr.omf
+share/omf/gnotski/gnotski-oc.omf
+share/omf/gnotski/gnotski-sv.omf
+share/omf/gtali/gtali-C.omf
+share/omf/gtali/gtali-es.omf
+share/omf/gtali/gtali-fr.omf
+share/omf/gtali/gtali-oc.omf
+share/omf/gtali/gtali-sv.omf
+share/omf/iagno/iagno-C.omf
+share/omf/iagno/iagno-es.omf
+share/omf/iagno/iagno-fr.omf
+share/omf/iagno/iagno-oc.omf
+share/omf/iagno/iagno-sv.omf
+share/omf/mahjongg/mahjongg-C.omf
+share/omf/mahjongg/mahjongg-es.omf
+share/omf/mahjongg/mahjongg-fr.omf
+share/omf/mahjongg/mahjongg-oc.omf
+share/omf/mahjongg/mahjongg-sv.omf
+share/omf/same-gnome/same-gnome-C.omf
+share/omf/same-gnome/same-gnome-en_GB.omf
+share/omf/same-gnome/same-gnome-es.omf
+share/omf/same-gnome/same-gnome-fr.omf
+share/omf/same-gnome/same-gnome-oc.omf
+share/omf/same-gnome/same-gnome-ru.omf
+share/omf/same-gnome/same-gnome-sv.omf
+share/pixmaps/glchess/board.png
+share/pixmaps/glchess/piece.png
+share/pixmaps/glines/balls.svg
+share/pixmaps/glines/shapes.svg
+share/pixmaps/gnect/bg_grotty.jpg
+share/pixmaps/gnect/bg_nightfall.jpg
+share/pixmaps/gnect/bg_toplight.png
+share/pixmaps/gnect/tileset_50x50_catseyes.png
+share/pixmaps/gnect/tileset_50x50_glassy.png
+share/pixmaps/gnect/tileset_50x50_hcinverse.svg
+share/pixmaps/gnect/tileset_50x50_hcontrast.svg
+share/pixmaps/gnect/tileset_50x50_square.png
+share/pixmaps/gnect/tileset_50x50_sunspot.svg
+share/pixmaps/gnibbles/blank.svg
+share/pixmaps/gnibbles/bonus1.svg
+share/pixmaps/gnibbles/bonus2.svg
+share/pixmaps/gnibbles/bonus3.svg
+share/pixmaps/gnibbles/bonus4.svg
+share/pixmaps/gnibbles/bonus5.svg
+share/pixmaps/gnibbles/diamond.svg
+share/pixmaps/gnibbles/gnibbles-logo.svg
+share/pixmaps/gnibbles/life.svg
+share/pixmaps/gnibbles/questionmark.svg
+share/pixmaps/gnibbles/snake-blue.svg
+share/pixmaps/gnibbles/snake-cyan.svg
+share/pixmaps/gnibbles/snake-green.svg
+share/pixmaps/gnibbles/snake-grey.svg
+share/pixmaps/gnibbles/snake-magenta.svg
+share/pixmaps/gnibbles/snake-red.svg
+share/pixmaps/gnibbles/snake-yellow.svg
+share/pixmaps/gnibbles/wall-corner-bottom-left.svg
+share/pixmaps/gnibbles/wall-corner-bottom-right.svg
+share/pixmaps/gnibbles/wall-corner-top-left.svg
+share/pixmaps/gnibbles/wall-corner-top-right.svg
+share/pixmaps/gnibbles/wall-cross.svg
+share/pixmaps/gnibbles/wall-empty.svg
+share/pixmaps/gnibbles/wall-straight-side.svg
+share/pixmaps/gnibbles/wall-straight-up.svg
+share/pixmaps/gnibbles/wall-tee-down.svg
+share/pixmaps/gnibbles/wall-tee-left.svg
+share/pixmaps/gnibbles/wall-tee-right.svg
+share/pixmaps/gnibbles/wall-tee-up.svg
+share/pixmaps/gnobots2/aieee.png
+share/pixmaps/gnobots2/boo.svg
+share/pixmaps/gnobots2/gnomes.png
+share/pixmaps/gnobots2/robots.svg
+share/pixmaps/gnobots2/splat.png
+share/pixmaps/gnobots2/ufo.svg
+share/pixmaps/gnobots2/yahoo.png
+share/pixmaps/gnome-sudoku/footprints.png
+share/pixmaps/gnometris/7blocks-gw.png
+share/pixmaps/gnometris/7blocks-tig.png
+share/pixmaps/gnometris/gnometris.svg
+share/pixmaps/gnomine/bang.svg
+share/pixmaps/gnomine/face-cool.png
+share/pixmaps/gnomine/face-sad.png
+share/pixmaps/gnomine/face-smile.png
+share/pixmaps/gnomine/face-win.png
+share/pixmaps/gnomine/face-worried.png
+share/pixmaps/gnomine/flag-question.svg
+share/pixmaps/gnomine/flag.svg
+share/pixmaps/gnomine/mine.svg
+share/pixmaps/gnomine/warning.svg
+share/pixmaps/gnotravex/baize.png
+share/pixmaps/gtali/gnome-dice-1.svg
+share/pixmaps/gtali/gnome-dice-2.svg
+share/pixmaps/gtali/gnome-dice-3.svg
+share/pixmaps/gtali/gnome-dice-4.svg
+share/pixmaps/gtali/gnome-dice-5.svg
+share/pixmaps/gtali/gnome-dice-6.svg
+share/pixmaps/gtali/gnome-dice-none.svg
+share/pixmaps/gtali/kismet-none.svg
+share/pixmaps/gtali/kismet1.svg
+share/pixmaps/gtali/kismet2.svg
+share/pixmaps/gtali/kismet3.svg
+share/pixmaps/gtali/kismet4.svg
+share/pixmaps/gtali/kismet5.svg
+share/pixmaps/gtali/kismet6.svg
+share/pixmaps/iagno/classic.png
+share/pixmaps/iagno/woodtrim.png
+share/pixmaps/mahjongg/postmodern.svg
+share/pixmaps/mahjongg/smooth.png
+@dirrm share/pixmaps/mahjongg
+@dirrm share/pixmaps/iagno
+@dirrm share/pixmaps/gtali
+@dirrm share/pixmaps/gnotravex
+@dirrm share/pixmaps/gnomine
+@dirrm share/pixmaps/gnometris
+@dirrm share/pixmaps/gnome-sudoku
+@dirrm share/pixmaps/gnobots2
+@dirrm share/pixmaps/gnibbles
+@dirrm share/pixmaps/gnect
+@dirrm share/pixmaps/glines
+@dirrm share/pixmaps/glchess
+@dirrm share/omf/same-gnome
+@dirrm share/omf/mahjongg
+@dirrm share/omf/iagno
+@dirrm share/omf/gtali
+@dirrm share/omf/gnotski
+@dirrm share/omf/gnotravex
+@dirrm share/omf/gnomine
+@dirrm share/omf/gnometris
+@dirrm share/omf/gnome-sudoku
+@dirrm share/omf/gnome-games
+@dirrm share/omf/gnobots2
+@dirrm share/omf/gnibbles
+@dirrm share/omf/gnect
+@dirrm share/omf/glines
+@dirrm share/omf/glchess
+@dirrm share/omf/blackjack
+@dirrm share/omf/aisleriot
 @dirrm share/gnome/help/same-gnome/sv/figures
 @dirrm share/gnome/help/same-gnome/sv
 @dirrm share/gnome/help/same-gnome/ru/figures
 @dirrm share/gnome/help/same-gnome/ru
+@dirrm share/gnome/help/same-gnome/oc/figures
+@dirrm share/gnome/help/same-gnome/oc
 @dirrm share/gnome/help/same-gnome/fr/figures
 @dirrm share/gnome/help/same-gnome/fr
 @dirrm share/gnome/help/same-gnome/es/figures
@@ -1037,41 +1361,127 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/same-gnome/C/figures
 @dirrm share/gnome/help/same-gnome/C
 @dirrm share/gnome/help/same-gnome
+@dirrm share/gnome/help/mahjongg/sv/figures
+@dirrm share/gnome/help/mahjongg/sv
+@dirrm share/gnome/help/mahjongg/oc/figures
+@dirrm share/gnome/help/mahjongg/oc
+@dirrm share/gnome/help/mahjongg/fr/figures
+@dirrm share/gnome/help/mahjongg/fr
+@dirrm share/gnome/help/mahjongg/es/figures
+@dirrm share/gnome/help/mahjongg/es
 @dirrm share/gnome/help/mahjongg/C/figures
 @dirrm share/gnome/help/mahjongg/C
 @dirrm share/gnome/help/mahjongg
+@dirrm share/gnome/help/iagno/sv/figures
+@dirrm share/gnome/help/iagno/sv
+@dirrm share/gnome/help/iagno/oc/figures
+@dirrm share/gnome/help/iagno/oc
+@dirrm share/gnome/help/iagno/fr/figures
+@dirrm share/gnome/help/iagno/fr
+@dirrm share/gnome/help/iagno/es/figures
+@dirrm share/gnome/help/iagno/es
 @dirrm share/gnome/help/iagno/C/figures
 @dirrm share/gnome/help/iagno/C
 @dirrm share/gnome/help/iagno
+@dirrm share/gnome/help/gtali/sv/figures
+@dirrm share/gnome/help/gtali/sv
+@dirrm share/gnome/help/gtali/oc/figures
+@dirrm share/gnome/help/gtali/oc
+@dirrm share/gnome/help/gtali/fr/figures
+@dirrm share/gnome/help/gtali/fr
+@dirrm share/gnome/help/gtali/es/figures
+@dirrm share/gnome/help/gtali/es
 @dirrm share/gnome/help/gtali/da
 @dirrm share/gnome/help/gtali/C/figures
 @dirrm share/gnome/help/gtali/C
 @dirrm share/gnome/help/gtali
+@dirrm share/gnome/help/gnotski/sv/figures
+@dirrm share/gnome/help/gnotski/sv
+@dirrm share/gnome/help/gnotski/oc/figures
+@dirrm share/gnome/help/gnotski/oc
+@dirrm share/gnome/help/gnotski/fr/figures
+@dirrm share/gnome/help/gnotski/fr
+@dirrm share/gnome/help/gnotski/es/figures
+@dirrm share/gnome/help/gnotski/es
 @dirrm share/gnome/help/gnotski/C/figures
 @dirrm share/gnome/help/gnotski/C
 @dirrm share/gnome/help/gnotski
+@dirrm share/gnome/help/gnotravex/sv/figures
+@dirrm share/gnome/help/gnotravex/sv
+@dirrm share/gnome/help/gnotravex/oc/figures
+@dirrm share/gnome/help/gnotravex/oc
+@dirrm share/gnome/help/gnotravex/fr/figures
+@dirrm share/gnome/help/gnotravex/fr
+@dirrm share/gnome/help/gnotravex/es/figures
+@dirrm share/gnome/help/gnotravex/es
+@dirrm share/gnome/help/gnotravex/el/figures
+@dirrm share/gnome/help/gnotravex/el
+@dirrm share/gnome/help/gnotravex/de/figures
+@dirrm share/gnome/help/gnotravex/de
 @dirrm share/gnome/help/gnotravex/C/figures
 @dirrm share/gnome/help/gnotravex/C
 @dirrm share/gnome/help/gnotravex
+@dirrm share/gnome/help/gnomine/sv/figures
+@dirrm share/gnome/help/gnomine/sv
+@dirrm share/gnome/help/gnomine/oc/figures
+@dirrm share/gnome/help/gnomine/oc
+@dirrm share/gnome/help/gnomine/fr/figures
+@dirrm share/gnome/help/gnomine/fr
+@dirrm share/gnome/help/gnomine/es/figures
+@dirrm share/gnome/help/gnomine/es
+@dirrm share/gnome/help/gnomine/de/figures
+@dirrm share/gnome/help/gnomine/de
 @dirrm share/gnome/help/gnomine/C/figures
 @dirrm share/gnome/help/gnomine/C
 @dirrm share/gnome/help/gnomine
+@dirrm share/gnome/help/gnometris/sv
+@dirrm share/gnome/help/gnometris/oc
+@dirrm share/gnome/help/gnometris/fr
+@dirrm share/gnome/help/gnometris/es
+@dirrm share/gnome/help/gnometris/el
 @dirrm share/gnome/help/gnometris/C
 @dirrm share/gnome/help/gnometris
+@dirrm share/gnome/help/gnome-sudoku/sv/figures
+@dirrm share/gnome/help/gnome-sudoku/sv
+@dirrm share/gnome/help/gnome-sudoku/oc/figures
+@dirrm share/gnome/help/gnome-sudoku/oc
+@dirrm share/gnome/help/gnome-sudoku/fr/figures
+@dirrm share/gnome/help/gnome-sudoku/fr
+@dirrm share/gnome/help/gnome-sudoku/es/figures
+@dirrm share/gnome/help/gnome-sudoku/es
 @dirrm share/gnome/help/gnome-sudoku/C/figures
 @dirrm share/gnome/help/gnome-sudoku/C
 @dirrm share/gnome/help/gnome-sudoku
+@dirrm share/gnome/help/gnobots2/sv/figures
+@dirrm share/gnome/help/gnobots2/sv
+@dirrm share/gnome/help/gnobots2/oc/figures
+@dirrm share/gnome/help/gnobots2/oc
 @dirrm share/gnome/help/gnobots2/it
+@dirrm share/gnome/help/gnobots2/fr/figures
+@dirrm share/gnome/help/gnobots2/fr
+@dirrm share/gnome/help/gnobots2/es/figures
 @dirrm share/gnome/help/gnobots2/es
+@dirrm share/gnome/help/gnobots2/de/figures
+@dirrm share/gnome/help/gnobots2/de
 @dirrm share/gnome/help/gnobots2/da
 @dirrm share/gnome/help/gnobots2/C/figures
 @dirrm share/gnome/help/gnobots2/C
 @dirrm share/gnome/help/gnobots2
+@dirrm share/gnome/help/gnibbles/sv/figures
+@dirrm share/gnome/help/gnibbles/sv
+@dirrm share/gnome/help/gnibbles/oc/figures
+@dirrm share/gnome/help/gnibbles/oc
+@dirrm share/gnome/help/gnibbles/fr/figures
+@dirrm share/gnome/help/gnibbles/fr
+@dirrm share/gnome/help/gnibbles/es/figures
+@dirrm share/gnome/help/gnibbles/es
 @dirrm share/gnome/help/gnibbles/C/figures
 @dirrm share/gnome/help/gnibbles/C
 @dirrm share/gnome/help/gnibbles
 @dirrm share/gnome/help/gnect/sv/figures
 @dirrm share/gnome/help/gnect/sv
+@dirrm share/gnome/help/gnect/oc/figures
+@dirrm share/gnome/help/gnect/oc
 @dirrm share/gnome/help/gnect/fr/figures
 @dirrm share/gnome/help/gnect/fr
 @dirrm share/gnome/help/gnect/es/figures
@@ -1085,6 +1495,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/glines/sv
 @dirrm share/gnome/help/glines/ru/figures
 @dirrm share/gnome/help/glines/ru
+@dirrm share/gnome/help/glines/oc/figures
+@dirrm share/gnome/help/glines/oc
 @dirrm share/gnome/help/glines/fr/figures
 @dirrm share/gnome/help/glines/fr
 @dirrm share/gnome/help/glines/es/figures
@@ -1095,50 +1507,82 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/glines/C
 @dirrm share/gnome/help/glines
 @dirrm share/gnome/help/glchess/sv
+@dirrm share/gnome/help/glchess/pt_BR
+@dirrm share/gnome/help/glchess/oc
 @dirrm share/gnome/help/glchess/fr
 @dirrm share/gnome/help/glchess/es
 @dirrm share/gnome/help/glchess/C
 @dirrm share/gnome/help/glchess
+@dirrm share/gnome/help/blackjack/sv/figures
+@dirrm share/gnome/help/blackjack/sv
+@dirrm share/gnome/help/blackjack/oc/figures
+@dirrm share/gnome/help/blackjack/oc
+@dirrm share/gnome/help/blackjack/fr/figures
+@dirrm share/gnome/help/blackjack/fr
+@dirrm share/gnome/help/blackjack/es/figures
+@dirrm share/gnome/help/blackjack/es
 @dirrm share/gnome/help/blackjack/C/figures
 @dirrm share/gnome/help/blackjack/C
 @dirrm share/gnome/help/blackjack
+@dirrm share/gnome/help/aisleriot/sv/figures
+@dirrm share/gnome/help/aisleriot/sv
+@dirrm share/gnome/help/aisleriot/oc/figures
+@dirrm share/gnome/help/aisleriot/oc
 @dirrm share/gnome/help/aisleriot/fr/figures
 @dirrm share/gnome/help/aisleriot/fr
+@dirrm share/gnome/help/aisleriot/es/figures
+@dirrm share/gnome/help/aisleriot/es
 @dirrm share/gnome/help/aisleriot/C/figures
 @dirrm share/gnome/help/aisleriot/C
 @dirrm share/gnome/help/aisleriot
-@dirrm share/gnome/gnome-sudoku
-@dirrm share/gnome/gnome-games/same-gnome/themes/2.10
-@dirrm share/gnome/gnome-games/same-gnome/themes
-@dirrm share/gnome/gnome-games/same-gnome
-@dirrm share/gnome/gnome-games/mahjongg/maps
-@dirrm share/gnome/gnome-games/mahjongg
-@dirrm share/gnome/gnome-games
-@dirrm share/gnome/gnobots2
-@dirrm share/gnome/gnibbles
-@dirrm share/gnome/gnect
-@dirrm share/gnome/glchess
-@dirrm share/gnome/ggz/gnome-games
-@dirrm share/gnome/ggz
-@dirrm share/gnome/blackjack
+@dirrm share/gnome-sudoku
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/same-gnome/themes/2.10
+@dirrm %%DATADIR%%/same-gnome/themes
+@dirrm %%DATADIR%%/same-gnome
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/mahjongg/maps
+@dirrm %%DATADIR%%/mahjongg
+@dirrm %%DATADIR%%/gnotski
+@dirrm %%DATADIR%%/blackjack/rules
+@dirrm %%DATADIR%%/blackjack/pixmaps
+@dirrm %%DATADIR%%/blackjack
+@dirrm %%DATADIR%%/aisleriot/games
+@dirrm %%DATADIR%%/aisleriot
+@dirrm share/gnome-games-common/icons
+@dirrm share/gnome-games-common/cards
+@dirrm share/gnome-games-common
+@dirrm %%DATADIR%%
+@dirrm share/gnobots2
+@dirrm share/gnibbles
+@dirrm share/gnect
+@dirrm share/glchess
+@dirrmtry share/ggz/gnome-games
+@dirrmtry share/ggz
 @dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies
 @dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/ui
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/scene/opengl
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/scene/cairo
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/scene
-@dirrm %%PYTHON_SITELIBDIR%%/glchess/network
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/gtkui
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/chess
 @dirrm %%PYTHON_SITELIBDIR%%/glchess
+@dirrm lib/gnome-games
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/ku/LC_MESSAGES
@@ -1147,3 +1591,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/applications

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-font-sampler
 PORTVERSION=	0.4
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://linuxadvocate.org/projects/gfontsampler/downloads/
 DISTNAME=	gfontsampler-${PORTVERSION}
@@ -23,9 +23,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|^packagedatadir=.*|packagedatadir=share/gnome| ; \
-		 s|^packagepixmapsdir=.*|packagepixmapsdir=share/gnome/pixmaps| ; \
-		 s|^packagemenudir=.*|packagemenudir=share/gnome/applications|; \
+		's|^packagedatadir=.*|packagedatadir=share| ; \
+		 s|^packagepixmapsdir=.*|packagepixmapsdir=share/pixmaps| ; \
+		 s|^packagemenudir=.*|packagemenudir=share/applications|; \
 		 /^CFLAGS=""$$/ d; s|gtk+-2.0|pangoxft &|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|\(@NO_PREFIX_PACKAGE_MENU_DIR@\)/Utilities|\1|' \

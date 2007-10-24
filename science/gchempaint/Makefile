@@ -3,9 +3,11 @@
 # Whom:				Pav Lucistnik <pav@oook.cz>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	gchempaint
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/0.8
@@ -26,7 +28,7 @@ USE_GNOME=	gnomehack intlhack libgnomeprintui libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-help-dir=${PREFIX}/share/gnome/help --with-omf-dir=${PREFIX}/share/gnome/omf
+CONFIGURE_ARGS=	--with-help-dir=${PREFIX}/share/gnome/help --with-omf-dir=${PREFIX}/share/omf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-release $$(VERSION)|-version @GCP_VERSION_INFO@|' \

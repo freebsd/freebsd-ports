@@ -6,7 +6,7 @@
 
 PORTNAME=	stardict2-dict-ja
 PORTVERSION=	2.4.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	stardict
@@ -23,8 +23,8 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 
 do-install:
-		${MKDIR} ${PREFIX}/share/gnome/stardict/dic/
-		${INSTALL_DATA} ${WRKDIR}/stardict-jmdict-en-ja-${PORTVERSION}/* ${PREFIX}/share/gnome/stardict/dic/
-		${INSTALL_DATA} ${WRKDIR}/stardict-jmdict-ja-en-${PORTVERSION}/* ${PREFIX}/share/gnome/stardict/dic/
+		${MKDIR} ${PREFIX}/share/stardict/dic/
+		${INSTALL_DATA} ${WRKDIR}/stardict-jmdict-en-ja-${PORTVERSION}/* ${PREFIX}/share/stardict/dic/
+		${INSTALL_DATA} ${WRKDIR}/stardict-jmdict-ja-en-${PORTVERSION}/* ${PREFIX}/share/stardict/dic/
 
 .include <bsd.port.mk>

@@ -158,32 +158,32 @@ lib/libgal-a11y-%%SHLIBVERSION%%.la
 lib/libgal-a11y-%%SHLIBVERSION%%.so
 lib/libgal-a11y-%%SHLIBVERSION%%.so.0
 libdata/pkgconfig/gal-%%VERSION%%.pc
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/glade/e-categories-master-list-dialog.glade
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/glade/e-table-config-no-group.glade
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/glade/e-table-config.glade
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/glade/e-table-field-chooser.glade
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/glade/gal-categories.glade
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/glade/gal-define-views.glade
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/glade/gal-view-instance-save-as-dialog.glade
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/glade/gal-view-new-dialog.glade
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_birthday_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_business_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_favorites_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_gifts_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_goals_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_holiday-cards_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_holiday_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_hot-contacts_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_ideas_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_international_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_key-customer_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_miscellaneous_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_personal_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_phonecalls_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_status_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_strategies_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_suppliers_16.png
-share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_time-and-expenses_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/glade/e-categories-master-list-dialog.glade
+share/gal-%%VERSION%%/%%PORTVERSION%%/glade/e-table-config-no-group.glade
+share/gal-%%VERSION%%/%%PORTVERSION%%/glade/e-table-config.glade
+share/gal-%%VERSION%%/%%PORTVERSION%%/glade/e-table-field-chooser.glade
+share/gal-%%VERSION%%/%%PORTVERSION%%/glade/gal-categories.glade
+share/gal-%%VERSION%%/%%PORTVERSION%%/glade/gal-define-views.glade
+share/gal-%%VERSION%%/%%PORTVERSION%%/glade/gal-view-instance-save-as-dialog.glade
+share/gal-%%VERSION%%/%%PORTVERSION%%/glade/gal-view-new-dialog.glade
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_birthday_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_business_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_favorites_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_gifts_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_goals_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_holiday-cards_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_holiday_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_hot-contacts_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_ideas_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_international_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_key-customer_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_miscellaneous_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_personal_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_phonecalls_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_status_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_strategies_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_suppliers_16.png
+share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories/category_time-and-expenses_16.png
 share/locale/am/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/ar/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gal-%%VERSION%%.mo
@@ -245,15 +245,11 @@ share/locale/vi/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/xh/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/gal-%%VERSION%%.mo
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrm share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories
-@dirrm share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps
-@dirrm share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/glade
-@dirrm share/gnome/gal-%%VERSION%%/%%PORTVERSION%%
-@dirrm share/gnome/gal-%%VERSION%%
+@dirrm share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories
+@dirrm share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps
+@dirrm share/gal-%%VERSION%%/%%PORTVERSION%%/glade
+@dirrm share/gal-%%VERSION%%/%%PORTVERSION%%
+@dirrm share/gal-%%VERSION%%
 @dirrm include/gal-%%VERSION%%/gal/widgets
 @dirrm include/gal-%%VERSION%%/gal/util
 @dirrm include/gal-%%VERSION%%/gal/shortcut-bar
@@ -265,3 +261,7 @@ share/locale/zh_TW/LC_MESSAGES/gal-%%VERSION%%.mo
 @dirrm include/gal-%%VERSION%%/gal/a11y
 @dirrm include/gal-%%VERSION%%/gal
 @dirrm include/gal-%%VERSION%%
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw

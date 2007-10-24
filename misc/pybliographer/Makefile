@@ -7,7 +7,7 @@
 
 PORTNAME=	pybliographer
 PORTVERSION=	1.0.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/pybliographer/1.0
@@ -41,8 +41,8 @@ pre-patch:
 
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
-		${PREFIX}/share/gnome/${PORTNAME}
+		${PREFIX}/share/${PORTNAME}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
-		${PREFIX}/share/gnome/${PORTNAME}
+		${PREFIX}/share/${PORTNAME}
 
 .include <bsd.port.post.mk>

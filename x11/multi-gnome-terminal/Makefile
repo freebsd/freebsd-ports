@@ -3,11 +3,12 @@
 # Whom:		 	Frederic Dubuy <fdubuy@free.fr>
 #
 # $FreeBSD$
-#    $MCom: ports/x11/multi-gnome-terminal/Makefile,v 1.1 2006/10/04 20:27:01 ahze Exp $
+#   $MCom: ports/x11/multi-gnome-terminal/Makefile,v 1.3 2007/08/07 03:43:51 mezz Exp $
+#
 
 PORTNAME=	multi-gnome-terminal
 PORTVERSION=	1.6.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	multignometerm
@@ -29,6 +30,6 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/multignometerm.png \
-		${PREFIX}/share/gnome/pixmaps/multignometerm.png
+		${PREFIX}/share/pixmaps/multignometerm.png
 
 .include <bsd.port.mk>

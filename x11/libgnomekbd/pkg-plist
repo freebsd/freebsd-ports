@@ -18,38 +18,59 @@ lib/libgnomekbdui.so
 lib/libgnomekbdui.so.1
 libdata/pkgconfig/libgnomekbd.pc
 libdata/pkgconfig/libgnomekbdui.pc
-share/gnome/applications/gkbd-indicator-plugins-capplet.desktop
-share/gnome/libgnomekbd/glade/gkbd-indicator-plugins.glade
+share/applications/gkbd-indicator-plugins-capplet.desktop
 share/icons/hicolor/48x48/apps/gkbd-indicator-plugins-capplet.png
+%%DATADIR%%/glade/gkbd-indicator-plugins.glade
 share/locale/ar/LC_MESSAGES/libgnomekbd.mo
 share/locale/be@latin/LC_MESSAGES/libgnomekbd.mo
 share/locale/bg/LC_MESSAGES/libgnomekbd.mo
+share/locale/bn_IN/LC_MESSAGES/libgnomekbd.mo
 share/locale/ca/LC_MESSAGES/libgnomekbd.mo
 share/locale/da/LC_MESSAGES/libgnomekbd.mo
+share/locale/de/LC_MESSAGES/libgnomekbd.mo
 share/locale/dz/LC_MESSAGES/libgnomekbd.mo
 share/locale/el/LC_MESSAGES/libgnomekbd.mo
 share/locale/en_GB/LC_MESSAGES/libgnomekbd.mo
 share/locale/es/LC_MESSAGES/libgnomekbd.mo
+share/locale/et/LC_MESSAGES/libgnomekbd.mo
+share/locale/fi/LC_MESSAGES/libgnomekbd.mo
 share/locale/fr/LC_MESSAGES/libgnomekbd.mo
 share/locale/gl/LC_MESSAGES/libgnomekbd.mo
 share/locale/gu/LC_MESSAGES/libgnomekbd.mo
 share/locale/hu/LC_MESSAGES/libgnomekbd.mo
 share/locale/it/LC_MESSAGES/libgnomekbd.mo
 share/locale/ja/LC_MESSAGES/libgnomekbd.mo
+share/locale/ka/LC_MESSAGES/libgnomekbd.mo
 share/locale/ko/LC_MESSAGES/libgnomekbd.mo
 share/locale/lt/LC_MESSAGES/libgnomekbd.mo
 share/locale/mk/LC_MESSAGES/libgnomekbd.mo
 share/locale/nb/LC_MESSAGES/libgnomekbd.mo
+share/locale/nl/LC_MESSAGES/libgnomekbd.mo
+share/locale/oc/LC_MESSAGES/libgnomekbd.mo
+share/locale/or/LC_MESSAGES/libgnomekbd.mo
 share/locale/pa/LC_MESSAGES/libgnomekbd.mo
+share/locale/pl/LC_MESSAGES/libgnomekbd.mo
 share/locale/pt/LC_MESSAGES/libgnomekbd.mo
 share/locale/pt_BR/LC_MESSAGES/libgnomekbd.mo
 share/locale/ru/LC_MESSAGES/libgnomekbd.mo
+share/locale/si/LC_MESSAGES/libgnomekbd.mo
 share/locale/sv/LC_MESSAGES/libgnomekbd.mo
+share/locale/ta/LC_MESSAGES/libgnomekbd.mo
+share/locale/th/LC_MESSAGES/libgnomekbd.mo
 share/locale/uk/LC_MESSAGES/libgnomekbd.mo
-@dirrm share/gnome/libgnomekbd/glade
-@dirrm share/gnome/libgnomekbd
+share/locale/vi/LC_MESSAGES/libgnomekbd.mo
+share/locale/zh_CN/LC_MESSAGES/libgnomekbd.mo
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
 @dirrm include/libgnomekbd
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/applications

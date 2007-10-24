@@ -3,11 +3,12 @@
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/ruby-libart2/Makefile,v 1.2 2005/10/17 07:05:41 mezz Exp $
+#   $MCom: ports/graphics/ruby-libart2/Makefile,v 1.4 2007/10/09 23:12:07 mezz Exp $
 #
 
 PORTNAME=	libart2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}

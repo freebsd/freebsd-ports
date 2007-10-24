@@ -3,7 +3,7 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.83 2007/04/03 01:14:24 ahze Exp $
+#   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.92 2007/10/18 23:45:20 marcus Exp $
 #
 
 PORTREVISION=	0
@@ -21,17 +21,18 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		pidgin:${PORTSDIR}/net-im/pidgin \
 		tsclient:${PORTSDIR}/net/tsclient \
 		galeon:${PORTSDIR}/www/galeon \
-		${LOCALBASE}/share/gnome/themes/Gorilla/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/gnome-themes-extras \
+		${LOCALBASE}/share/icons/Foxtrot/index.theme:${PORTSDIR}/x11-themes/gnome-themes-extras \
 		bluefish:${PORTSDIR}/www/bluefish \
 		gossip:${PORTSDIR}/net-im/gossip \
 		liferea:${PORTSDIR}/net/liferea \
 		gnotime:${PORTSDIR}/deskutils/gnotime \
 		rhythmbox:${PORTSDIR}/audio/rhythmbox \
-		${LOCALBASE}/share/gnome/pixmaps/glines/classic.png:${PORTSDIR}/games/gnome-games-extra-data \
+		${LOCALBASE}/share/pixmaps/glines/classic.png:${PORTSDIR}/games/gnome-games-extra-data \
 		nautilus-sendto:${PORTSDIR}/deskutils/nautilus-sendto \
 		inkscape:${PORTSDIR}/graphics/inkscape \
 		atomix:${PORTSDIR}/games/atomix \
-		straw:${PORTSDIR}/net/straw
+		straw:${PORTSDIR}/net/straw \
+		${LOCALBASE}/share/gnome/help/gdp-handbook/C/builddocs.xml:${PORTSDIR}/misc/gnome-devel-docs
 
 MASTERDIR=	${.CURDIR}/../gnome2
 GNOME_SLAVE=	yes

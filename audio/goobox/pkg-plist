@@ -1,0 +1,70 @@
+bin/goobox
+libdata/bonobo/servers/GNOME_Goobox.server
+share/application-registry/goobox.applications
+share/applications/goobox.desktop
+share/gnome/help/goobox/C/goobox.xml
+share/gnome/help/goobox/C/legal.xml
+share/gnome/help/goobox/ca/goobox.xml
+share/gnome/help/goobox/es/goobox.xml
+share/gnome/help/goobox/sv/goobox.xml
+%%DATADIR%%/glade/cover_chooser.glade
+%%DATADIR%%/glade/extract_dialog.glade
+%%DATADIR%%/glade/format_dialog.glade
+%%DATADIR%%/glade/preferences.glade
+%%DATADIR%%/glade/properties.glade
+%%DATADIR%%/glade/ripper_dialog.glade
+share/icons/hicolor/48x48/apps/goobox.png
+share/locale/ar/LC_MESSAGES/goobox.mo
+share/locale/bg/LC_MESSAGES/goobox.mo
+share/locale/ca/LC_MESSAGES/goobox.mo
+share/locale/cs/LC_MESSAGES/goobox.mo
+share/locale/da/LC_MESSAGES/goobox.mo
+share/locale/de/LC_MESSAGES/goobox.mo
+share/locale/dz/LC_MESSAGES/goobox.mo
+share/locale/el/LC_MESSAGES/goobox.mo
+share/locale/en_CA/LC_MESSAGES/goobox.mo
+share/locale/en_GB/LC_MESSAGES/goobox.mo
+share/locale/es/LC_MESSAGES/goobox.mo
+share/locale/eu/LC_MESSAGES/goobox.mo
+share/locale/fi/LC_MESSAGES/goobox.mo
+share/locale/fr/LC_MESSAGES/goobox.mo
+share/locale/hu/LC_MESSAGES/goobox.mo
+share/locale/it/LC_MESSAGES/goobox.mo
+share/locale/ja/LC_MESSAGES/goobox.mo
+share/locale/ko/LC_MESSAGES/goobox.mo
+share/locale/lt/LC_MESSAGES/goobox.mo
+share/locale/lv/LC_MESSAGES/goobox.mo
+share/locale/nb/LC_MESSAGES/goobox.mo
+share/locale/ne/LC_MESSAGES/goobox.mo
+share/locale/nl/LC_MESSAGES/goobox.mo
+share/locale/oc/LC_MESSAGES/goobox.mo
+share/locale/pa/LC_MESSAGES/goobox.mo
+share/locale/pl/LC_MESSAGES/goobox.mo
+share/locale/pt/LC_MESSAGES/goobox.mo
+share/locale/pt_BR/LC_MESSAGES/goobox.mo
+share/locale/ru/LC_MESSAGES/goobox.mo
+share/locale/rw/LC_MESSAGES/goobox.mo
+share/locale/sq/LC_MESSAGES/goobox.mo
+share/locale/sv/LC_MESSAGES/goobox.mo
+share/locale/vi/LC_MESSAGES/goobox.mo
+share/locale/zh_CN/LC_MESSAGES/goobox.mo
+share/locale/zh_TW/LC_MESSAGES/goobox.mo
+share/omf/goobox/goobox-C.omf
+share/omf/goobox/goobox-ca.omf
+share/omf/goobox/goobox-es.omf
+share/omf/goobox/goobox-sv.omf
+@dirrm share/omf/goobox
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
+@dirrm share/gnome/help/goobox/sv
+@dirrm share/gnome/help/goobox/es
+@dirrm share/gnome/help/goobox/ca
+@dirrm share/gnome/help/goobox/C
+@dirrm share/gnome/help/goobox
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/applications

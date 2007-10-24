@@ -5,7 +5,7 @@
    xdg_data_dirs = getenv ("XDG_DATA_DIRS");
    if (xdg_data_dirs == NULL)
 -    xdg_data_dirs = "/usr/local/share/:/usr/share/";
-+    xdg_data_dirs = "%%LOCALBASE%%/share/gnome/:%%LOCALBASE%%/share/:/usr/share/";
++    xdg_data_dirs = "%%LOCALBASE%%/share/";
  
    ptr = xdg_data_dirs;
  

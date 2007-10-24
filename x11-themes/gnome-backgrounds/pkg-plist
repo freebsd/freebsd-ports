@@ -1,16 +1,7 @@
-share/gnome/gnome-background-properties/gnome-branded.xml
-share/gnome/gnome-background-properties/gnome-nature.xml
-share/gnome/gnome-background-properties/gnome-tiles.xml
-share/gnome/gnome-background-properties/gnome-translucent.xml
-share/gnome/pixmaps/backgrounds/gnome/branded/GNOME-Curves.png
-share/gnome/pixmaps/backgrounds/gnome/nature/FreshFlower.jpg
-share/gnome/pixmaps/backgrounds/gnome/nature/GreenMeadow.jpg
-share/gnome/pixmaps/backgrounds/gnome/nature/OpenFlower.jpg
-share/gnome/pixmaps/backgrounds/gnome/tiles/pattern-boats.svg
-share/gnome/pixmaps/backgrounds/gnome/tiles/pattern-clouds.svg
-share/gnome/pixmaps/backgrounds/gnome/tiles/pattern-stars.svg
-share/gnome/pixmaps/backgrounds/gnome/translucent/ellipsis.svg
-share/gnome/pixmaps/backgrounds/gnome/translucent/tentacles.svg
+share/gnome-background-properties/gnome-branded.xml
+share/gnome-background-properties/gnome-nature.xml
+share/gnome-background-properties/gnome-tiles.xml
+share/gnome-background-properties/gnome-translucent.xml
 share/locale/ar/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/as/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/be/LC_MESSAGES/gnome-backgrounds.mo
@@ -48,6 +39,7 @@ share/locale/ku/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ky/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/lt/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/lv/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/mai/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/mg/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/mk/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ml/LC_MESSAGES/gnome-backgrounds.mo
@@ -82,13 +74,22 @@ share/locale/vi/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-backgrounds.mo
-@dirrm share/gnome/pixmaps/backgrounds/gnome/translucent
-@dirrm share/gnome/pixmaps/backgrounds/gnome/tiles
-@dirrm share/gnome/pixmaps/backgrounds/gnome/nature
-@dirrm share/gnome/pixmaps/backgrounds/gnome/branded
-@dirrm share/gnome/pixmaps/backgrounds/gnome
-@dirrm share/gnome/pixmaps/backgrounds
-@dirrmtry share/gnome/gnome-background-properties
+share/pixmaps/backgrounds/gnome/branded/GNOME-Curves.png
+share/pixmaps/backgrounds/gnome/nature/FreshFlower.jpg
+share/pixmaps/backgrounds/gnome/nature/GreenMeadow.jpg
+share/pixmaps/backgrounds/gnome/nature/OpenFlower.jpg
+share/pixmaps/backgrounds/gnome/tiles/pattern-boats.svg
+share/pixmaps/backgrounds/gnome/tiles/pattern-clouds.svg
+share/pixmaps/backgrounds/gnome/tiles/pattern-stars.svg
+share/pixmaps/backgrounds/gnome/translucent/ellipsis.svg
+share/pixmaps/backgrounds/gnome/translucent/tentacles.svg
+@dirrm share/pixmaps/backgrounds/gnome/translucent
+@dirrm share/pixmaps/backgrounds/gnome/tiles
+@dirrm share/pixmaps/backgrounds/gnome/nature
+@dirrm share/pixmaps/backgrounds/gnome/branded
+@dirrm share/pixmaps/backgrounds/gnome
+@dirrm share/pixmaps/backgrounds
+@dirrmtry share/gnome-background-properties
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -103,6 +104,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-backgrounds.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES

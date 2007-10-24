@@ -1,6 +1,6 @@
 bin/gmenu-simple-editor
 bin/gnome-menu-editor
-share/gnome/applications/gnome-menu-editor.desktop
+share/applications/gnome-menu-editor.desktop
 share/locale/bg/LC_MESSAGES/gnome-menu-editor.mo
 share/locale/ca/LC_MESSAGES/gnome-menu-editor.mo
 share/locale/cs/LC_MESSAGES/gnome-menu-editor.mo
@@ -31,3 +31,4 @@ share/locale/zh_CN/LC_MESSAGES/gnome-menu-editor.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-menu-editor.mo
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/applications

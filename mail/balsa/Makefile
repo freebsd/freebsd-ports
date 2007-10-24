@@ -3,11 +3,12 @@
 # Whom:					Glenn Johnson <gljohns@bellsouth.net>
 #
 # $FreeBSD$
-#   $MCom: ports/mail/balsa/Makefile,v 1.10 2007/03/14 17:45:39 marcus Exp $
+#   $MCom: ports/mail/balsa/Makefile,v 1.19 2007/10/11 04:42:18 mezz Exp $
 #
 
 PORTNAME=	balsa
 PORTVERSION=	2.3.17
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -92,9 +93,7 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(HICOLOR_ICON_DIR)[^/]+/|\1=${PREFIX}/|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-
-post-install:
-	@${LOCALBASE}/bin/gtk-update-icon-cache -f -q --ignore-theme-index \
-		${PREFIX}/share/gnome/balsa/hicolor
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-D.*_DISABLE_DEPRECATED_SOURCE||g ; s|-D.*_DISABLE_DEPRECATED||g'
 
 .include <bsd.port.post.mk>

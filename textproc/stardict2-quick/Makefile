@@ -1,12 +1,13 @@
 # Ports collection makefile for:	stardict-quick
 # Date created:				16 Dec 2004
 # Whom:					Timur I. Bakeyev <timur@gnome.org>
+#
 # $FreeBSD$
 #
 
 PORTNAME=	stardict
 PORTVERSION=	2.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	stardict
@@ -23,7 +24,7 @@ USE_BZIP2=	yes
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
-DICTDIR=	share/gnome/stardict/dic
+DICTDIR=	share/stardict/dic
 
 DICTIONARIES=	afr-eng afr-swe bul-swe dan-deu dan-eng dan-fin dan-fra \
 		dan-hun dan-ind dan-ita dan-jpn dan-lat dan-nld dan-nor \

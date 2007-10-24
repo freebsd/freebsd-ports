@@ -223,6 +223,7 @@
     SUBDIR += gnustep-cdplayer
     SUBDIR += gogo
     SUBDIR += gogo-petit
+    SUBDIR += goobox
     SUBDIR += gqmpeg
     SUBDIR += gqmpeg-devel
     SUBDIR += gqradio

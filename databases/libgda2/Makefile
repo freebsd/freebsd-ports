@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/libgda2/Makefile,v 1.35 2006/09/10 00:51:06 mezz Exp $
+#   $MCom: ports/databases/libgda2/Makefile,v 1.41 2007/10/21 03:13:52 mezz Exp $
 #
 
 PORTNAME=	libgda2
 PORTVERSION=	1.2.4
-PORTREVISION?=	1
+PORTREVISION?=	3
 PORTEPOCH?=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -23,14 +23,13 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
-RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+    		rarian.0:${PORTSDIR}/textproc/rarian
 
 CONFLICTS=	libgda-0*
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack glib20 libxslt referencehack
+USE_GNOME=	gnomeprefix gnomehack glib20 libxslt referencehack intlhack
 USE_GETTEXT=	yes
 USE_XLIB=	yes
 INSTALLS_OMF=	yes
@@ -61,8 +60,10 @@ WITH_MYSQL=	yes
 WITH_LDAP=yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libgds.so)
+.if exists(${LOCALBASE}/lib/libgds.so.1)
 WITH_FIREBIRD=	yes
+.elif exists(${LOCALBASE}/lib/libgds.so.2)
+WITHOUT_FIREBIRD=yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libtds.so)
@@ -117,7 +118,7 @@ LIB_DEPENDS+=		gds.1:${PORTSDIR}/databases/firebird-client
 CONFIGURE_ARGS+=	--with-firebird=${LOCALBASE}
 PLIST_SUB+=		FIREBIRD:=""
 .else
-CONFIGURE_ARGS+=	--without-interbase
+CONFIGURE_ARGS+=	--without-firebird
 PLIST_SUB+=		FIREBIRD:="@comment "
 .endif
 

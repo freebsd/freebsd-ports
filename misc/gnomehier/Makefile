@@ -3,13 +3,13 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/misc/gnomehier/Makefile,v 1.14 2006/10/10 20:22:15 mezz Exp $
+#    $MCom: ports/misc/gnomehier/Makefile,v 1.29 2007/09/12 14:40:40 ahze Exp $
 #
 # !!DON'T BUMP PORTREVISION ON MTREE CHANGES ANYMORE!!
 
 PORTNAME=	gnomehier
-PORTVERSION=	2.2
-PORTREVISION=	2
+PORTVERSION=	2.3
+PORTREVISION=	10
 CATEGORIES=	misc gnome
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -44,8 +44,8 @@ pre-install:
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 
 pre-su-install:
-	${CHGRP} games ${WRKSRC}/share/gnome/games
-	${CHMOD} g=rwXs ${WRKSRC}/share/gnome/games
+	${CHGRP} games ${WRKSRC}/share/games
+	${CHMOD} g=rwXs ${WRKSRC}/share/games
 	cd ${WRKSRC} && \
 		${MTREE_CMD} -U -d -n -i -c -k "uname, gname, mode" \
 			> ${WRKDIR}/${GNOME_MTREE}

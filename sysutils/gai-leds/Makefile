@@ -3,9 +3,11 @@
 # Whom:					Douglas Thrift <douglas@douglasthrift.net>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	gai-leds
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gai
@@ -23,14 +25,12 @@ USE_GNOME=	gnomehack gnomeprefix
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|\(GNOMEDIR=\).*|\1"${PREFIX}"|; \
-		 s|share\(/pixmaps\)|share/gnome\1|; \
 		 s|:GNOME_|:GAI-|g; \
 		 s|\(@APPLET_NAME@\)\(Applet\)|\1-\2|g; \
 		 s|\(Applet\)_\(Factory\)|\1-\2|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|lib\(/bonobo\)|libdata\1|; \
-		 s|share\(/pixmaps\)|share/gnome\1|; \
 		 s|-O3||' \
 		${WRKSRC}/Makefile.in
 

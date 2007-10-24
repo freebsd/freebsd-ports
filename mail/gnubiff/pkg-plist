@@ -14,28 +14,28 @@ bin/gnubiff
 %%NLS%%share/locale/rw/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gnubiff.mo
-%%SHAREDIR%%/gnubiff/applet-gtk.glade
-%%SHAREDIR%%/gnubiff/authentication.glade
-%%SHAREDIR%%/gnubiff/certificate.glade
-%%SHAREDIR%%/gnubiff/coin.wav
-%%SHAREDIR%%/gnubiff/envelopes.png
-%%SHAREDIR%%/gnubiff/gnubiff.png
-%%SHAREDIR%%/gnubiff/mail.wav
-%%SHAREDIR%%/gnubiff/popup.glade
-%%SHAREDIR%%/gnubiff/preferences.glade
-%%SHAREDIR%%/gnubiff/properties.glade
-%%SHAREDIR%%/gnubiff/tux-awake.png
-%%SHAREDIR%%/gnubiff/tux-big.png
-%%SHAREDIR%%/gnubiff/tux-jump(64x64).png
-%%SHAREDIR%%/gnubiff/tux-sleep(64x64).png
-%%SHAREDIR%%/gnubiff/tux-sleep.png
-%%SHAREDIR%%/pixmaps/gnubiff.png
+share/gnubiff/applet-gtk.glade
+share/gnubiff/authentication.glade
+share/gnubiff/certificate.glade
+share/gnubiff/coin.wav
+share/gnubiff/envelopes.png
+share/gnubiff/gnubiff.png
+share/gnubiff/mail.wav
+share/gnubiff/popup.glade
+share/gnubiff/preferences.glade
+share/gnubiff/properties.glade
+share/gnubiff/tux-awake.png
+share/gnubiff/tux-big.png
+share/gnubiff/tux-jump(64x64).png
+share/gnubiff/tux-sleep(64x64).png
+share/gnubiff/tux-sleep.png
+share/pixmaps/gnubiff.png
 %%WITH_GNOME%%%%BONOBODIR%%/servers/GNOME_gnubiffApplet.server
-%%WITH_GNOME%%%%SHAREDIR%%/gnome-2.0/ui/GNOME_gnubiffApplet.xml
+%%WITH_GNOME%%share/gnome-2.0/ui/GNOME_gnubiffApplet.xml
 @dirrmtry %%BONOBODIR%%/servers
 @dirrmtry %%BONOBODIR%%
-@dirrmtry %%SHAREDIR%%/gnome-2.0/ui
-@dirrmtry %%SHAREDIR%%/gnome-2.0
+@dirrmtry share/gnome-2.0/ui
+@dirrmtry share/gnome-2.0
 %%NLS%%@dirrmtry share/locale/fr_CA/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fr_CA
-@dirrm %%SHAREDIR%%/gnubiff
+@dirrm share/gnubiff

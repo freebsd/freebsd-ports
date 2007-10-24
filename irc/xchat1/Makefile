@@ -7,7 +7,7 @@
 
 PORTNAME=		xchat
 PORTVERSION=		1.8.11
-PORTREVISION=		8
+PORTREVISION=		9
 CATEGORIES+=		irc gnome ipv6
 MASTER_SITES=		http://xchat.org/files/source/1.8/ \
 			http://xchat.linuxpower.org/files/source/1.8/
@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=	--enable-gdk-pixbuf
 USE_GNOME=		imlib
 CONFIGURE_ARGS+=	--enable-gnome --enable-panel --enable-gdk-pixbuf \
 			--enable-zvt
-MAKE_ARGS=		icondir="${PREFIX}/share/gnome/pixmaps" \
+MAKE_ARGS=		icondir="${PREFIX}/share/pixmaps" \
 			utildir="${PREFIX}/share/gnome/apps/Internet"
 .else
 CONFIGURE_ARGS+=	--disable-gnome --disable-zvt

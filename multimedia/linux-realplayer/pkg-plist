@@ -180,11 +180,11 @@ lib/linux-mozilla/plugins/nphelix.xpt
 @dirrmtry lib/linux-mozilla/plugins
 @dirrmtry lib/linux-mozilla
 %%X11%%@cwd %%LOCALBASE%%
-%%GNOME%%share/gnome/application-registry/realplay.applications
-%%GNOME%%share/gnome/applications/realplay.desktop
-%%GNOME%%share/gnome/mime-info/realplay.keys
-%%GNOME%%share/gnome/mime-info/realplay.mime
-%%GNOME%%share/gnome/pixmaps/realplay.png
+%%GNOME%%share/application-registry/realplay.applications
+%%GNOME%%share/applications/realplay.desktop
+%%GNOME%%share/mime-info/realplay.keys
+%%GNOME%%share/mime-info/realplay.mime
+%%GNOME%%share/pixmaps/realplay.png
 %%ICONS%%share/icons/hicolor/16x16/apps/realplay_16x16.png
 %%ICONS%%share/icons/hicolor/192x192/apps/realplay_192x192.png
 %%ICONS%%share/icons/hicolor/192x192/mimetypes/mime-application-generic_192x192.png
@@ -231,10 +231,10 @@ lib/linux-mozilla/plugins/nphelix.xpt
 %%ICONS%%share/icons/hicolor/48x48/mimetypes/mime-video-ogg_48x48.png
 %%ICONS%%share/icons/hicolor/48x48/mimetypes/mime-video-rv_48x48.png
 %%ICONS%%share/icons/hicolor/48x48/mimetypes/mime-video-swf_48x48.png
-%%GNOME%%@dirrmtry share/gnome/application-registry
-%%GNOME%%@dirrmtry share/gnome/applications
-%%GNOME%%@dirrmtry share/gnome/mime-info
-%%GNOME%%@dirrmtry share/gnome/pixmaps
+%%GNOME%%@dirrmtry share/application-registry
+%%GNOME%%@dirrmtry share/applications
+%%GNOME%%@dirrmtry share/mime-info
+%%GNOME%%@dirrmtry share/pixmaps
 %%ICONS%%@dirrmtry share/icons/hicolor/48x48/apps
 %%ICONS%%@dirrmtry share/icons/hicolor/48x48/mimetypes
 %%ICONS%%@dirrmtry share/icons/hicolor/48x48

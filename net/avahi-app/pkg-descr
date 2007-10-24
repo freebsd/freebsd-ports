@@ -1,0 +1,7 @@
+Service discovery on a local network -- this means that you can plug your
+laptop or computer into a network and instantly be able to view other people
+who you can chat with, find printers to print to or find files being shared.
+This kind of technology is already found in MacOS X (branded 'Rendezvous',
+'Bonjour' and sometimes 'ZeroConf') and is very convenient.
+
+WWW: http://www.avahi.org/

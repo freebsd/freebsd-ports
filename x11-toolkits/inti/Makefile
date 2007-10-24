@@ -4,11 +4,11 @@
 # Whom:				ijliao
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-toolkits/inti/Makefile,v 1.3 2007/05/23 16:18:51 ahze Exp $
 
 PORTNAME=	inti
 PORTVERSION=	1.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	inti
@@ -47,9 +47,9 @@ post-install:
 	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endif
-	@${FIND} ${PREFIX}/share/gnome/inti -type f | \
+	@${FIND} ${PREFIX}/share/inti -type f | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/share/gnome/inti -type d | ${SORT} -r | \
+	@${FIND} ${PREFIX}/share/inti -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

@@ -338,6 +338,6 @@ share/pixmaps/gg2.png
 @dirrm lib/gg2
 %%GNOME:%%@cwd %%LOCALBASE%%
 %%GNOME:%%share/gnome/apps/Internet/gg2.desktop
-%%GNOME:%%share/gnome/pixmaps/gg2.png
+%%GNOME:%%share/pixmaps/gg2.png
 %%KDE:%%@cwd %%LOCALBASE%%
 %%KDE:%%share/applnk/Internet/gg2.desktop

@@ -150,18 +150,18 @@ lib/libgda-%%VERSION%%/providers/libgda-sqlite.a
 lib/libgda-%%VERSION%%/providers/libgda-sqlite.la
 lib/libgda-%%VERSION%%/providers/libgda-sqlite.so
 libdata/pkgconfig/libgda-2.0.pc
-share/gnome/libgda/dtd/libgda-array.dtd
-share/gnome/libgda/dtd/libgda-dict.dtd
-%%MYSQL:%%share/gnome/libgda/mysql_specs_create_db.xml
-%%MYSQL:%%share/gnome/libgda/mysql_specs_dsn.xml
-%%POSTGRES:%%share/gnome/libgda/postgres_specs_create_db.xml
-%%POSTGRES:%%share/gnome/libgda/postgres_specs_dsn.xml
-share/gnome/libgda/sqlite_specs_create_db.xml
-share/gnome/libgda/sqlite_specs_dsn.xml
-share/gnome/libgda/xml/gda-report.dtd
-share/gnome/libgda/xml/gda-report-result.dtd
-share/gnome/libgda/xml/gda-xml-query.dtd
-share/gnome/libgda/xml/gda-xml-query.xsl
+share/libgda/dtd/libgda-array.dtd
+share/libgda/dtd/libgda-dict.dtd
+%%MYSQL:%%share/libgda/mysql_specs_create_db.xml
+%%MYSQL:%%share/libgda/mysql_specs_dsn.xml
+%%POSTGRES:%%share/libgda/postgres_specs_create_db.xml
+%%POSTGRES:%%share/libgda/postgres_specs_dsn.xml
+share/libgda/sqlite_specs_create_db.xml
+share/libgda/sqlite_specs_dsn.xml
+share/libgda/xml/gda-report.dtd
+share/libgda/xml/gda-report-result.dtd
+share/libgda/xml/gda-xml-query.dtd
+share/libgda/xml/gda-xml-query.xsl
 share/locale/az/LC_MESSAGES/libgda-3.mo
 share/locale/ca/LC_MESSAGES/libgda-3.mo
 share/locale/cs/LC_MESSAGES/libgda-3.mo
@@ -205,9 +205,9 @@ share/locale/vi/LC_MESSAGES/libgda-3.mo
 share/locale/zh_CN/LC_MESSAGES/libgda-3.mo
 share/locale/zh_HK/LC_MESSAGES/libgda-3.mo
 share/locale/zh_TW/LC_MESSAGES/libgda-3.mo
-@dirrm share/gnome/libgda/xml
-@dirrm share/gnome/libgda/dtd
-@dirrm share/gnome/libgda
+@dirrm share/libgda/xml
+@dirrm share/libgda/dtd
+@dirrm share/libgda
 @dirrm lib/libgda-%%VERSION%%/providers
 @dirrm lib/libgda-%%VERSION%%
 @dirrm lib/libgda

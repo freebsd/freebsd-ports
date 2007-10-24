@@ -1,6 +1,7 @@
 bin/charm-quark
 bin/quark
 bin/strange-quark
-share/gnome/applications/quark.desktop
-share/gnome/pixmaps/quark.png
+share/applications/quark.desktop
+share/pixmaps/quark.png
 share/locale/ko/LC_MESSAGES/quark.mo
+@dirrmtry share/applications

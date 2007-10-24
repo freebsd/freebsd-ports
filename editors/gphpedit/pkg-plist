@@ -1,5 +1,6 @@
 bin/gphpedit
-share/gnome/applications/gphpedit.desktop
-share/gnome/gphpedit/php-gphpedit.api
-share/gnome/pixmaps/gphpedit.png
-@dirrm share/gnome/gphpedit
+share/applications/gphpedit.desktop
+share/gphpedit/php-gphpedit.api
+share/pixmaps/gphpedit.png
+@dirrm share/gphpedit
+@dirrmtry share/applications

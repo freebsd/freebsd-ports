@@ -38,112 +38,47 @@ sbin/gdm-restart
 sbin/gdm-safe-restart
 sbin/gdm-stop
 sbin/gdmsetup
-share/gnome/applications/gdmflexiserver-xnest.desktop
-share/gnome/applications/gdmflexiserver.desktop
-share/gnome/applications/gdmphotosetup.desktop
-share/gnome/applications/gdmsetup.desktop
-share/gnome/gdm/BuiltInSessions/default.desktop
-share/gnome/gdm/defaults.conf
-share/gnome/gdm/factory-defaults.conf
-share/gnome/gdm/gdmchooser.glade
-share/gnome/gdm/gdmphotosetup.glade
-share/gnome/gdm/gdmsetup.glade
-share/gnome/gdm/themes/circles/GdmGreeterTheme.desktop
-share/gnome/gdm/themes/circles/background.svg
-share/gnome/gdm/themes/circles/circles.xml
-share/gnome/gdm/themes/circles/flower.png
-share/gnome/gdm/themes/circles/help.png
-share/gnome/gdm/themes/circles/options.png
-share/gnome/gdm/themes/circles/screenshot.png
-share/gnome/gdm/themes/happygnome-list/GdmGreeterTheme.desktop
-share/gnome/gdm/themes/happygnome-list/background.svg
-share/gnome/gdm/themes/happygnome-list/gnome-logo.svg
-share/gnome/gdm/themes/happygnome-list/happygnome.xml
-share/gnome/gdm/themes/happygnome-list/options.png
-share/gnome/gdm/themes/happygnome-list/screenshot.png
-share/gnome/gdm/themes/happygnome/GdmGreeterTheme.desktop
-share/gnome/gdm/themes/happygnome/background.svg
-share/gnome/gdm/themes/happygnome/gnome-logo.svg
-share/gnome/gdm/themes/happygnome/happygnome.xml
-share/gnome/gdm/themes/happygnome/options.png
-share/gnome/gdm/themes/happygnome/screenshot.png
+%%DATADIR%%/BuiltInSessions/default.desktop
+%%DATADIR%%/applications/gdmflexiserver-xnest.desktop
+%%DATADIR%%/applications/gdmflexiserver.desktop
+%%DATADIR%%/applications/gdmphotosetup.desktop
+%%DATADIR%%/applications/gdmsetup.desktop
+%%DATADIR%%/defaults.conf
+%%DATADIR%%/factory-defaults.conf
+%%DATADIR%%/gdmchooser.glade
+%%DATADIR%%/gdmphotosetup.glade
+%%DATADIR%%/gdmsetup.glade
+%%DATADIR%%/themes/circles/GdmGreeterTheme.desktop
+%%DATADIR%%/themes/circles/background.svg
+%%DATADIR%%/themes/circles/circles.xml
+%%DATADIR%%/themes/circles/flower.png
+%%DATADIR%%/themes/circles/screenshot.png
+%%DATADIR%%/themes/happygnome-list/GdmGreeterTheme.desktop
+%%DATADIR%%/themes/happygnome-list/background.svg
+%%DATADIR%%/themes/happygnome-list/gnome-logo.svg
+%%DATADIR%%/themes/happygnome-list/happygnome-list.xml
+%%DATADIR%%/themes/happygnome-list/screenshot.png
+%%DATADIR%%/themes/happygnome/GdmGreeterTheme.desktop
+%%DATADIR%%/themes/happygnome/background.svg
+%%DATADIR%%/themes/happygnome/gnome-logo.svg
+%%DATADIR%%/themes/happygnome/happygnome.xml
+%%DATADIR%%/themes/happygnome/screenshot.png
 share/gnome/help/gdm/C/gdm.xml
 share/gnome/help/gdm/C/legal.xml
-share/gnome/help/gdm/de/figures/gdm_window.png
-share/gnome/help/gdm/de/gdm.xml
-share/gnome/help/gdm/de/legal.xml
-share/gnome/help/gdm/es/figures/gdm_window.png
+share/gnome/help/gdm/en_GB/gdm.xml
 share/gnome/help/gdm/es/gdm.xml
-share/gnome/help/gdm/es/legal.xml
-share/gnome/help/gdm/fr/figures/gdm_window.png
 share/gnome/help/gdm/fr/gdm.xml
-share/gnome/help/gdm/fr/legal.xml
-share/gnome/help/gdm/it/figures/gdm_window.png
-share/gnome/help/gdm/it/gdm.xml
-share/gnome/help/gdm/it/legal.xml
-share/gnome/help/gdm/ja/figures/gdm_window.png
-share/gnome/help/gdm/ja/gdm.xml
-share/gnome/help/gdm/ja/legal.xml
-share/gnome/help/gdm/ko/figures/gdm_window.png
 share/gnome/help/gdm/ko/gdm.xml
-share/gnome/help/gdm/ko/legal.xml
+share/gnome/help/gdm/oc/gdm.xml
+share/gnome/help/gdm/sv/gdm.xml
 share/gnome/help/gdm/uk/gdm.xml
-share/gnome/help/gdm/uk/legal.xml
-share/gnome/help/gdm/zh_CN/figures/gdm_window.png
-share/gnome/help/gdm/zh_CN/gdm.xml
-share/gnome/help/gdm/zh_CN/legal.xml
-share/gnome/help/gdm/zh_HK/figures/gdm_window.png
-share/gnome/help/gdm/zh_HK/gdm.xml
-share/gnome/help/gdm/zh_HK/legal.xml
-share/gnome/help/gdm/zh_TW/figures/gdm_window.png
-share/gnome/help/gdm/zh_TW/gdm.xml
-share/gnome/help/gdm/zh_TW/legal.xml
-share/gnome/omf/gdm/gdm-C.omf
-share/gnome/omf/gdm/gdm-de.omf
-share/gnome/omf/gdm/gdm-es.omf
-share/gnome/omf/gdm/gdm-fr.omf
-share/gnome/omf/gdm/gdm-it.omf
-share/gnome/omf/gdm/gdm-ja.omf
-share/gnome/omf/gdm/gdm-ko.omf
-share/gnome/omf/gdm/gdm-uk.omf
-share/gnome/omf/gdm/gdm-zh_CN.omf
-share/gnome/omf/gdm/gdm-zh_HK.omf
-share/gnome/omf/gdm/gdm-zh_TW.omf
-share/gnome/pixmaps/faces/astronaut.jpg
-share/gnome/pixmaps/faces/baseball.png
-share/gnome/pixmaps/faces/butterfly.png
-share/gnome/pixmaps/faces/cat-eye.jpg
-share/gnome/pixmaps/faces/chess.jpg
-share/gnome/pixmaps/faces/coffee.jpg
-share/gnome/pixmaps/faces/dice.jpg
-share/gnome/pixmaps/faces/energy-arc.jpg
-share/gnome/pixmaps/faces/fish.jpg
-share/gnome/pixmaps/faces/flake.jpg
-share/gnome/pixmaps/faces/flower.jpg
-share/gnome/pixmaps/faces/grapes.jpg
-share/gnome/pixmaps/faces/guitar.jpg
-share/gnome/pixmaps/faces/launch.jpg
-share/gnome/pixmaps/faces/leaf.jpg
-share/gnome/pixmaps/faces/lightning.jpg
-share/gnome/pixmaps/faces/penguin.jpg
-share/gnome/pixmaps/faces/puppy.jpg
-share/gnome/pixmaps/faces/sky.jpg
-share/gnome/pixmaps/faces/soccerball.png
-share/gnome/pixmaps/faces/sunflower.jpg
-share/gnome/pixmaps/faces/sunset.jpg
-share/gnome/pixmaps/faces/tennis-ball.png
-share/gnome/pixmaps/faces/yellow-rose.jpg
-share/gnome/pixmaps/gdm-foot-logo.png
-share/gnome/pixmaps/gdm-setup.png
-share/gnome/pixmaps/gdm-xnest.png
-share/gnome/pixmaps/gdm.png
-share/gnome/pixmaps/login-photo.png
-share/gnome/pixmaps/nobody.png
-share/gnome/pixmaps/nohost.png
-share/gnome/xsessions/gnome.desktop
 share/icons/hicolor/16x16/apps/gdm-xnest.png
 share/icons/hicolor/32x32/apps/gdm-setup.png
 share/icons/hicolor/32x32/apps/gdm-xnest.png
+share/icons/hicolor/48x48/apps/gdm-login-photo.png
+share/icons/hicolor/48x48/apps/gdm-setup.png
+share/icons/hicolor/48x48/apps/gdm-xnest.png
+share/icons/hicolor/48x48/apps/gdm.png
 share/locale/af/LC_MESSAGES/gdm.mo
 share/locale/am/LC_MESSAGES/gdm.mo
 share/locale/ar/LC_MESSAGES/gdm.mo
@@ -182,6 +117,7 @@ share/locale/is/LC_MESSAGES/gdm.mo
 share/locale/it/LC_MESSAGES/gdm.mo
 share/locale/ja/LC_MESSAGES/gdm.mo
 share/locale/ka/LC_MESSAGES/gdm.mo
+share/locale/kn/LC_MESSAGES/gdm.mo
 share/locale/ko/LC_MESSAGES/gdm.mo
 share/locale/ku/LC_MESSAGES/gdm.mo
 share/locale/lt/LC_MESSAGES/gdm.mo
@@ -207,6 +143,7 @@ share/locale/pt_BR/LC_MESSAGES/gdm.mo
 share/locale/ro/LC_MESSAGES/gdm.mo
 share/locale/ru/LC_MESSAGES/gdm.mo
 share/locale/rw/LC_MESSAGES/gdm.mo
+share/locale/si/LC_MESSAGES/gdm.mo
 share/locale/sk/LC_MESSAGES/gdm.mo
 share/locale/sl/LC_MESSAGES/gdm.mo
 share/locale/sq/LC_MESSAGES/gdm.mo
@@ -214,6 +151,7 @@ share/locale/sr/LC_MESSAGES/gdm.mo
 share/locale/sr@Latn/LC_MESSAGES/gdm.mo
 share/locale/sv/LC_MESSAGES/gdm.mo
 share/locale/ta/LC_MESSAGES/gdm.mo
+share/locale/te/LC_MESSAGES/gdm.mo
 share/locale/th/LC_MESSAGES/gdm.mo
 share/locale/tr/LC_MESSAGES/gdm.mo
 share/locale/uk/LC_MESSAGES/gdm.mo
@@ -224,36 +162,61 @@ share/locale/zh_CN/LC_MESSAGES/gdm.mo
 share/locale/zh_HK/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/LC_MESSAGES/gdm.mo
-@dirrm share/gnome/xsessions
-@dirrm share/gnome/pixmaps/faces
-@dirrm share/gnome/omf/gdm
-@dirrm share/gnome/help/gdm/zh_TW/figures
-@dirrm share/gnome/help/gdm/zh_TW
-@dirrm share/gnome/help/gdm/zh_HK/figures
-@dirrm share/gnome/help/gdm/zh_HK
-@dirrm share/gnome/help/gdm/zh_CN/figures
-@dirrm share/gnome/help/gdm/zh_CN
+share/omf/gdm/gdm-C.omf
+share/omf/gdm/gdm-en_GB.omf
+share/omf/gdm/gdm-es.omf
+share/omf/gdm/gdm-fr.omf
+share/omf/gdm/gdm-ko.omf
+share/omf/gdm/gdm-oc.omf
+share/omf/gdm/gdm-sv.omf
+share/omf/gdm/gdm-uk.omf
+share/pixmaps/faces/astronaut.jpg
+share/pixmaps/faces/baseball.png
+share/pixmaps/faces/butterfly.png
+share/pixmaps/faces/cat-eye.jpg
+share/pixmaps/faces/chess.jpg
+share/pixmaps/faces/coffee.jpg
+share/pixmaps/faces/dice.jpg
+share/pixmaps/faces/energy-arc.jpg
+share/pixmaps/faces/fish.jpg
+share/pixmaps/faces/flake.jpg
+share/pixmaps/faces/flower.jpg
+share/pixmaps/faces/grapes.jpg
+share/pixmaps/faces/guitar.jpg
+share/pixmaps/faces/launch.jpg
+share/pixmaps/faces/leaf.jpg
+share/pixmaps/faces/lightning.jpg
+share/pixmaps/faces/penguin.jpg
+share/pixmaps/faces/puppy.jpg
+share/pixmaps/faces/sky.jpg
+share/pixmaps/faces/soccerball.png
+share/pixmaps/faces/sunflower.jpg
+share/pixmaps/faces/sunset.jpg
+share/pixmaps/faces/tennis-ball.png
+share/pixmaps/faces/yellow-rose.jpg
+share/pixmaps/gdm-foot-logo.png
+share/pixmaps/nobody.png
+share/pixmaps/nohost.png
+share/xsessions/gnome.desktop
+@dirrm share/xsessions
+@dirrm share/pixmaps/faces
+@dirrm share/omf/gdm
 @dirrm share/gnome/help/gdm/uk
-@dirrm share/gnome/help/gdm/ko/figures
+@dirrm share/gnome/help/gdm/sv
+@dirrm share/gnome/help/gdm/oc
 @dirrm share/gnome/help/gdm/ko
-@dirrm share/gnome/help/gdm/ja/figures
-@dirrm share/gnome/help/gdm/ja
-@dirrm share/gnome/help/gdm/it/figures
-@dirrm share/gnome/help/gdm/it
-@dirrm share/gnome/help/gdm/fr/figures
 @dirrm share/gnome/help/gdm/fr
-@dirrm share/gnome/help/gdm/es/figures
 @dirrm share/gnome/help/gdm/es
-@dirrm share/gnome/help/gdm/de/figures
-@dirrm share/gnome/help/gdm/de
+@dirrm share/gnome/help/gdm/en_GB
 @dirrm share/gnome/help/gdm/C
 @dirrm share/gnome/help/gdm
-@dirrm share/gnome/gdm/themes/happygnome-list
-@dirrm share/gnome/gdm/themes/happygnome
-@dirrm share/gnome/gdm/themes/circles
-@dirrm share/gnome/gdm/themes
-@dirrm share/gnome/gdm/BuiltInSessions
-@dirrm share/gnome/gdm
+@dirrm %%DATADIR%%/themes/happygnome-list
+@dirrm %%DATADIR%%/themes/happygnome
+@dirrm %%DATADIR%%/themes/circles
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/applications
+@dirrm %%DATADIR%%/BuiltInSessions
+@dirrm %%DATADIR%%
 @dirrm etc/gdm/modules
 @dirrm etc/gdm/Sessions
 @dirrm etc/gdm/PreSession
@@ -264,8 +227,8 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 @dirrmtry etc/dm/Sessions
 @dirrmtry etc/dm
 @dirrmtry sbin
-@dirrmtry share/gnome/log/gdm
-@dirrmtry share/gnome/log
+@dirrmtry share/log/gdm
+@dirrmtry share/log
 @unexec /bin/rm -rf /var/gdm 2>/dev/null || /usr/bin/true
 @unexec /bin/rm -rf /var/log/gdm 2>/dev/null || /usr/bin/true
 @dirrmtry share/locale/zu/LC_MESSAGES
@@ -274,6 +237,10 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES

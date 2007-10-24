@@ -3,12 +3,11 @@
 # Whom:				Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net/gnome-nettool/Makefile,v 1.35 2007/03/13 12:41:51 ahze Exp $
+#   $MCom: ports/net/gnome-nettool/Makefile,v 1.40 2007/09/18 14:09:24 ahze Exp $
 #
 
 PORTNAME=	gnome-nettool
-PORTVERSION=	2.18.0
-PORTREVISION=	1
+PORTVERSION=	2.20.0
 PORTEPOCH=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -32,8 +31,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CFLAGS+=	-DHAVE_SOCKADDR_SA_LEN
 
 post-install:
-	${MKDIR} ${PREFIX}/share/gnome/pixmaps
-	${LN} -sf ${PREFIX}/share/gnome/gnome-nettool/pixmaps/gnome-nettool.png \
-		${PREFIX}/share/gnome/pixmaps/gnome-nettool.png
+	${MKDIR} ${PREFIX}/share/pixmaps
+	${LN} -sf ${PREFIX}/share/gnome-nettool/pixmaps/gnome-nettool.png \
+		${PREFIX}/share/pixmaps/gnome-nettool.png
 
 .include <bsd.port.mk>

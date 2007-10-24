@@ -1,5 +1,5 @@
 bin/gxmame
-share/gnome/applications/gxmame.desktop
+share/applications/gxmame.desktop
 %%NLS%%share/locale/de/LC_MESSAGES/gxmame.mo
 %%NLS%%share/locale/el/LC_MESSAGES/gxmame.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gxmame.mo
@@ -9,11 +9,11 @@ share/gnome/applications/gxmame.desktop
 %%NLS%%share/locale/pl/LC_MESSAGES/gxmame.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gxmame.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gxmame.mo
-share/gnome/gxmame/gxmame.png
-share/gnome/gxmame/gxmame-general.png
-share/gnome/gxmame/gxmame-screen.png
-share/gnome/pixmaps/gxmame.png
-share/gnome/pixmaps/gxmame.xpm
+share/gxmame/gxmame.png
+share/gxmame/gxmame-general.png
+share/gxmame/gxmame-screen.png
+share/pixmaps/gxmame.png
+share/pixmaps/gxmame.xpm
 share/doc/gxmame/AUTHORS
 share/doc/gxmame/BUGS
 share/doc/gxmame/COPYING
@@ -30,8 +30,9 @@ share/doc/gxmame/html/gxmame-doc-5.html
 share/doc/gxmame/html/gxmame-doc-6.html
 share/doc/gxmame/html/gxmame-doc.html
 share/doc/gxmame/html/includes/gxmame.css
-@dirrm share/gnome/gxmame
+@dirrm share/gxmame
 @dirrm share/doc/gxmame/html/gui
 @dirrm share/doc/gxmame/html/includes
 @dirrm share/doc/gxmame/html
 @dirrm share/doc/gxmame
+@dirrmtry share/applications

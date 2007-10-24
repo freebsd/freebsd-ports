@@ -21,25 +21,25 @@ childsplay/lib/soundNpic.py
 childsplay/lib/soundNpic.pyc
 childsplay/lib/soundmemory.py
 childsplay/lib/soundmemory.pyc
-share/gnome/assetml/childsplay/sounds-misc/po/Translation.raw
-share/gnome/assetml/childsplay/sounds-misc/catmeow.ogg
-share/gnome/assetml/childsplay/sounds-misc/cow.ogg
-share/gnome/assetml/childsplay/sounds-misc/elephant.ogg
-share/gnome/assetml/childsplay/sounds-misc/frog.ogg
-share/gnome/assetml/childsplay/sounds-misc/lion.ogg
-share/gnome/assetml/childsplay/sounds-misc/passby.ogg
-share/gnome/assetml/childsplay/sounds-misc/phone1.ogg
-share/gnome/assetml/childsplay/sounds-misc/plane.ogg
-share/gnome/assetml/childsplay/sounds-misc/police.ogg
-share/gnome/assetml/childsplay/sounds-misc/rocket.ogg
-share/gnome/assetml/childsplay/sounds-misc/rooster.ogg
-share/gnome/assetml/childsplay/sounds-misc/sheep.ogg
-share/gnome/assetml/childsplay/sounds-misc/slideup.ogg
-share/gnome/assetml/childsplay/sounds-misc/smackzin.ogg
-share/gnome/assetml/childsplay/sounds-misc/sneeze3.ogg
-share/gnome/assetml/childsplay/sounds-misc/sounds-misc.assetml
-share/gnome/assetml/childsplay/sounds-misc/tomtom.ogg
-share/gnome/assetml/childsplay/sounds-misc/train.ogg
+share/assetml/childsplay/sounds-misc/po/Translation.raw
+share/assetml/childsplay/sounds-misc/catmeow.ogg
+share/assetml/childsplay/sounds-misc/cow.ogg
+share/assetml/childsplay/sounds-misc/elephant.ogg
+share/assetml/childsplay/sounds-misc/frog.ogg
+share/assetml/childsplay/sounds-misc/lion.ogg
+share/assetml/childsplay/sounds-misc/passby.ogg
+share/assetml/childsplay/sounds-misc/phone1.ogg
+share/assetml/childsplay/sounds-misc/plane.ogg
+share/assetml/childsplay/sounds-misc/police.ogg
+share/assetml/childsplay/sounds-misc/rocket.ogg
+share/assetml/childsplay/sounds-misc/rooster.ogg
+share/assetml/childsplay/sounds-misc/sheep.ogg
+share/assetml/childsplay/sounds-misc/slideup.ogg
+share/assetml/childsplay/sounds-misc/smackzin.ogg
+share/assetml/childsplay/sounds-misc/sneeze3.ogg
+share/assetml/childsplay/sounds-misc/sounds-misc.assetml
+share/assetml/childsplay/sounds-misc/tomtom.ogg
+share/assetml/childsplay/sounds-misc/train.ogg
 share/childsplay/Data/icons/billiard.icon.png
 share/childsplay/Data/icons/soundNpic.icon.png
 share/childsplay/Data/icons/pong.icon.png
@@ -214,8 +214,8 @@ share/childsplay/lib/SoundNpicData/Level1/rooster.ogg
 share/childsplay/lib/SoundNpicData/Level1/rooster.png
 share/childsplay/lib/SoundNpicData/Level1/sheep.ogg
 share/childsplay/lib/SoundNpicData/Level1/elephant.ogg
-@dirrm share/gnome/assetml/childsplay/sounds-misc/po
-@dirrm share/gnome/assetml/childsplay/sounds-misc
+@dirrm share/assetml/childsplay/sounds-misc/po
+@dirrm share/assetml/childsplay/sounds-misc
 @dirrm share/childsplay/Data/AlphabetSounds/en
 @dirrm share/childsplay/Data/AlphabetSounds
 @dirrm share/childsplay/lib/BilliardData

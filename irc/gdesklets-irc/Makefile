@@ -7,7 +7,7 @@
 
 PORTNAME=	irc
 PORTVERSION=	1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	irc gnome deskutils
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -22,7 +22,7 @@ USE_PYTHON=	yes
 USE_XLIB=	yes
 
 NAME=		irc
-DATADIR=	${PREFIX}/share/gnome/gdesklets
+DATADIR=	${PREFIX}/share/gdesklets
 LANG=		ko
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/${NAME}

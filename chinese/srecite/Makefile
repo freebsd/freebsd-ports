@@ -7,7 +7,7 @@
 
 PORTNAME=	srecite
 PORTVERSION=	0.6.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	chinese textproc
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -25,10 +25,10 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
 
-WORDBOOKS_PATH=	${PREFIX}/share/gnome/${PORTNAME}/wordbooks
+WORDBOOKS_PATH=	${PREFIX}/share/${PORTNAME}/wordbooks
 
 post-install:
 	cd ${WRKDIR}/wordbooks && ${INSTALL_DATA} * ${WORDBOOKS_PATH}
-	${INSTALL_DATA} ${FILESDIR}/srecite.desktop ${PREFIX}/share/gnome/applications
+	${INSTALL_DATA} ${FILESDIR}/srecite.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.mk>

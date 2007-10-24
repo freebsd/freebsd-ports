@@ -2,12 +2,12 @@ bin/terminatorX
 share/gnome/apps/Multimedia/terminatorX.desktop
 share/gnome/help/terminatorX/C/terminatorX.xml
 share/gnome/help/terminatorX/C/figures/signalflow.png
-share/gnome/mime-info/terminatorX.keys
-share/gnome/mime-info/terminatorX.mime
-share/gnome/omf/terminatorX/terminatorX-C.omf
-share/gnome/pixmaps/terminatorX-app.png
-share/gnome/pixmaps/terminatorX-mime.png
-@dirrm share/gnome/omf/terminatorX
+share/mime-info/terminatorX.keys
+share/mime-info/terminatorX.mime
+share/omf/terminatorX/terminatorX-C.omf
+share/pixmaps/terminatorX-app.png
+share/pixmaps/terminatorX-mime.png
+@dirrm share/omf/terminatorX
 @dirrm share/gnome/help/terminatorX/C/figures
 @dirrm share/gnome/help/terminatorX/C
 @dirrm share/gnome/help/terminatorX

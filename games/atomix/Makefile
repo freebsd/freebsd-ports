@@ -3,12 +3,12 @@
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/games/atomix/Makefile,v 1.9 2006/04/13 07:52:34 bland Exp $
+#   $MCom: ports/games/atomix/Makefile,v 1.14 2007/09/10 05:39:33 mezz Exp $
 #
 
 PORTNAME=	atomix
 PORTVERSION=	2.14.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}

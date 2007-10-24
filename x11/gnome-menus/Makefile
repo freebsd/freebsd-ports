@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-menus/Makefile,v 1.50 2007/03/12 22:36:46 marcus Exp $
+#   $MCom: ports/x11/gnome-menus/Makefile,v 1.64 2007/10/15 21:09:56 mezz Exp $
 #
 
 PORTNAME=	gnome-menus
-PORTVERSION=	2.18.3
+PORTVERSION=	2.20.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -47,10 +47,9 @@ post-patch:
 		${WRKSRC}/simple-editor/GMenuSimpleEditor/menutreemodel.py
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/gnome/desktop-directories
 	@${INSTALL_DATA} ${WRKSRC}/layout/applications.menu \
 		${PREFIX}/etc/xdg/menus/gnome-applications.menu
 	@${INSTALL_DATA} ${WRKSRC}/KDE.directory \
-		${PREFIX}/share/gnome/desktop-directories
+		${PREFIX}/share/desktop-directories
 
 .include <bsd.port.post.mk>

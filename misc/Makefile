@@ -121,10 +121,12 @@
     SUBDIR += gkx86info
     SUBDIR += gkx86info2
     SUBDIR += gman
+    SUBDIR += gnome-devel-docs
     SUBDIR += gnome-icon-theme
     SUBDIR += gnome-mime-data
     SUBDIR += gnome-osd
     SUBDIR += gnome-user-docs
+    SUBDIR += gnome2-reference
     SUBDIR += gnomehier
     SUBDIR += gnomesword
     SUBDIR += gnu-watch

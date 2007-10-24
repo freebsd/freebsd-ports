@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-industrial-theme
 PORTVERSION=	0.2.29
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://ftp.ximian.com/pub/xd2/redhat-9-i386/source/ \
 		${MASTER_SITE_GENTOO:S,%SUBDIR%,distfiles,}
@@ -20,6 +20,10 @@ COMMENT=	Slick GNOME2 theme from Ximian
 EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 BUILD_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras
 RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras
+
+BROKEN=		gnome-themes-extras no longer has industrial engine
+DEPRECATED=	yes
+EXPIRATION_DATE=2007-11-22
 
 NO_BUILD=	yes
 USE_GNOME=	gnomehack libgnomeui
@@ -101,8 +105,8 @@ do-install:
 
 	@${INSTALL_DATA} ${WRKSRC}/icons/Industrial/index.theme ${PREFIX}/share/icons/Industrial
 
-	@${MKDIR} ${PREFIX}/share/gnome/themes/Industrial/metacity-1
-	@${INSTALL_DATA} ${WRKSRC}/metacity/metacity-theme-1.xml ${PREFIX}/share/gnome/themes/Industrial/metacity-1
+	@${MKDIR} ${PREFIX}/share/themes/Industrial/metacity-1
+	@${INSTALL_DATA} ${WRKSRC}/metacity/metacity-theme-1.xml ${PREFIX}/share/themes/Industrial/metacity-1
 	@${INSTALL_DATA} ${WRKSRC}/index.theme ${PREFIX}/share/themes/Industrial
 
 .if defined(WITH_XMMS)

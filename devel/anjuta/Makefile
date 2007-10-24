@@ -3,11 +3,12 @@
 # Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/anjuta-devel/Makefile,v 1.14 2006/09/10 00:51:07 mezz Exp $
+#   $MCom: ports/devel/anjuta/Makefile,v 1.13 2007/09/07 05:03:33 marcus Exp $
 #
 
 PORTNAME=	anjuta
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 		neato:${PORTSDIR}/graphics/graphviz
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		gbf-1.1:${PORTSDIR}/devel/gnome-build \
-		gladeui-1.5:${PORTSDIR}/devel/glade3 \
+		gladeui-1.7:${PORTSDIR}/devel/glade3 \
 		devhelp-1.0:${PORTSDIR}/devel/devhelp
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		autogen:${PORTSDIR}/devel/autogen \
@@ -66,13 +67,10 @@ PLIST_SUB+=	SVN="@comment "
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash| ; \
-	    	s|/usr/local|${PREFIX}| ; \
-		s|share/anjuta|share/gnome/anjuta|' \
+	    	s|/usr/local|${PREFIX}|' \
 	    	${WRKSRC}/global-tags/create_global_tags.sh
 	@${REINPLACE_CMD} -e 's|PKG_PATH|PKG_CONFIG_PATH|g' \
 	    	${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|[(]datadir[)]/icons/gnome|(prefix)/share/icons/gnome|g' \
-	    	${WRKSRC}/mime/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)

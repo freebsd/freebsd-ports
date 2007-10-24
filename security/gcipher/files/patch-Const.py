@@ -6,4 +6,4 @@ diff -ur ../gcipher-1.0.orig/src/Const.py ./src/Const.py
  as a command line filter or as a network proxy."""
  AUTHORS = ["Shannon -jj Behrens <jjinux@yahoo.com>"]
 -GLADEDIR = "."
-+GLADEDIR = "/usr/X11R6/share/gnome/gcipher/lib"
++GLADEDIR = "%%PREFIX%%/share/gcipher/lib"

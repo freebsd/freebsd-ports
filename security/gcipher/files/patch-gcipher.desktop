@@ -6,7 +6,7 @@ diff -ur ../gcipher-1.0.orig/src/gcipher.desktop ./src/gcipher.desktop
  Comment[en_US.ISO8859-15]=A simple encryption tool
  Exec=gcipher
 -Icon=/usr/share/pixmaps/gnome-lockscreen.png
-+Icon=/usr/X11R6/share/gnome/pixmaps/gnome-lockscreen.png
++Icon=gnome-lockscreen.png
  Terminal=false
  Type=Application
  StartupNotify=true

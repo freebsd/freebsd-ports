@@ -177,41 +177,29 @@ libdata/pkgconfig/libefs.pc
 %%DOCSDIR%%/bonobo/bonobo-ui.html
 %%DOCSDIR%%/bonobo/bonobo-view.html
 %%DOCSDIR%%/bonobo/book1.html
-share/gnome/help/audio_ulaw/C/index.html
-share/gnome/idl/Bonobo.idl
-share/gnome/idl/Bonobo_Advise.idl
-share/gnome/idl/Bonobo_Canvas.idl
-share/gnome/idl/Bonobo_ClientSite.idl
-share/gnome/idl/Bonobo_Context.idl
-share/gnome/idl/Bonobo_Control.idl
-share/gnome/idl/Bonobo_Desktop.idl
-share/gnome/idl/Bonobo_Embeddable.idl
-share/gnome/idl/Bonobo_Exception.idl
-share/gnome/idl/Bonobo_ItemContainer.idl
-share/gnome/idl/Bonobo_Listener.idl
-share/gnome/idl/Bonobo_Moniker.idl
-share/gnome/idl/Bonobo_Persist.idl
-share/gnome/idl/Bonobo_Print.idl
-share/gnome/idl/Bonobo_Progressive.idl
-share/gnome/idl/Bonobo_Property.idl
-share/gnome/idl/Bonobo_Sample_Echo.idl
-share/gnome/idl/Bonobo_Storage.idl
-share/gnome/idl/Bonobo_UI.idl
-share/gnome/idl/Bonobo_Unknown.idl
-share/gnome/idl/Bonobo_Zoomable.idl
-share/gnome/oaf/Bonobo_Moniker_gzip.oaf
-share/gnome/oaf/Bonobo_Moniker_http.oaf
-share/gnome/oaf/Bonobo_Moniker_std.oaf
-share/gnome/oaf/Bonobo_Sample_Audio.oaf
-share/gnome/oaf/Bonobo_Sample_CanvasItem.oaf
-share/gnome/oaf/Bonobo_Sample_Controls.oaf
-share/gnome/oaf/Bonobo_Sample_Echo.oaf
-share/gnome/oaf/Bonobo_Sample_Hello.oafinfo
-share/gnome/oaf/Bonobo_Sample_Mines.oaf
-share/gnome/oaf/Bonobo_Sample_Paint.oaf
-share/gnome/oaf/Bonobo_Sample_Text.oaf
-share/gnome/oaf/Bonobo_Selector.oaf
+share/gnome/help/bonobo/audio_ulaw/C/index.html
 share/gnome/ui/gshell-ui.xml
+share/idl/Bonobo.idl
+share/idl/Bonobo_Advise.idl
+share/idl/Bonobo_Canvas.idl
+share/idl/Bonobo_ClientSite.idl
+share/idl/Bonobo_Context.idl
+share/idl/Bonobo_Control.idl
+share/idl/Bonobo_Desktop.idl
+share/idl/Bonobo_Embeddable.idl
+share/idl/Bonobo_Exception.idl
+share/idl/Bonobo_ItemContainer.idl
+share/idl/Bonobo_Listener.idl
+share/idl/Bonobo_Moniker.idl
+share/idl/Bonobo_Persist.idl
+share/idl/Bonobo_Print.idl
+share/idl/Bonobo_Progressive.idl
+share/idl/Bonobo_Property.idl
+share/idl/Bonobo_Sample_Echo.idl
+share/idl/Bonobo_Storage.idl
+share/idl/Bonobo_UI.idl
+share/idl/Bonobo_Unknown.idl
+share/idl/Bonobo_Zoomable.idl
 share/locale/az/LC_MESSAGES/bonobo.mo
 share/locale/ca/LC_MESSAGES/bonobo.mo
 share/locale/da/LC_MESSAGES/bonobo.mo
@@ -244,9 +232,22 @@ share/locale/uk/LC_MESSAGES/bonobo.mo
 share/locale/wa/LC_MESSAGES/bonobo.mo
 share/locale/zh_CN/LC_MESSAGES/bonobo.mo
 share/locale/zh_TW/LC_MESSAGES/bonobo.mo
-@dirrm share/gnome/help/audio_ulaw/C/images
-@dirrm share/gnome/help/audio_ulaw/C
-@dirrm share/gnome/help/audio_ulaw
+share/oaf/Bonobo_Moniker_gzip.oaf
+share/oaf/Bonobo_Moniker_http.oaf
+share/oaf/Bonobo_Moniker_std.oaf
+share/oaf/Bonobo_Sample_Audio.oaf
+share/oaf/Bonobo_Sample_CanvasItem.oaf
+share/oaf/Bonobo_Sample_Controls.oaf
+share/oaf/Bonobo_Sample_Echo.oaf
+share/oaf/Bonobo_Sample_Hello.oafinfo
+share/oaf/Bonobo_Sample_Mines.oaf
+share/oaf/Bonobo_Sample_Paint.oaf
+share/oaf/Bonobo_Sample_Text.oaf
+share/oaf/Bonobo_Selector.oaf
+@dirrm share/gnome/help/bonobo/audio_ulaw/C/images
+@dirrm share/gnome/help/bonobo/audio_ulaw/C
+@dirrm share/gnome/help/bonobo/audio_ulaw
+@dirrm share/gnome/help/bonobo
 @dirrm %%DOCSDIR%%/libefs
 @dirrm %%DOCSDIR%%/bonobo
 @dirrm %%DOCSDIR%%

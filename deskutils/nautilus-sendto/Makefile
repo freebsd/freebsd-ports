@@ -3,11 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/deskutils/nautilus-sendto/Makefile,v 1.7 2007/03/12 11:50:11 ahze Exp $
+#    $MCom: ports/deskutils/nautilus-sendto/Makefile,v 1.13 2007/08/14 17:53:30 marcus Exp $
 
 PORTNAME=	nautilus-sendto
-PORTVERSION=	0.10
-PORTREVISION=	2
+PORTVERSION=	0.12
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
@@ -28,4 +27,14 @@ USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/pidgin)
+BUILD_DEPENDS+=	pidgin:${PORTSDIR}/net-im/pidgin
+RUN_DEPENDS+=	pidgin:${PORTSDIR}/net-im/pidgin
+PLIST_SUB+=	PIDGIN=""
+.else
+PLIST_SUB+=	PIDGIN="@comment "
+.endif
+
+.include <bsd.port.post.mk>

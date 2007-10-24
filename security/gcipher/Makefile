@@ -7,7 +7,7 @@
 
 PORTNAME=	gcipher
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	security gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,9 +21,13 @@ USE_PYTHON=	yes
 USE_XLIB=	yes
 USE_GNOME=	libgnomeui
 
-GCIPHER_PREFIX=	${PREFIX}/share/gnome/gcipher
+GCIPHER_PREFIX=	${PREFIX}/share/gcipher
 
 MAN1=	gcipher.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/src/Const.py ${WRKSRC}/src/gcipher
 
 do-build:
 	(cd ${WRKSRC}/src; \
@@ -42,7 +46,7 @@ do-install:
 
 	(cd ${WRKSRC}/src; \
 	 ${INSTALL_SCRIPT} gcipher ${PREFIX}/bin/gcipher; \
-	 ${INSTALL_DATA} gcipher.desktop ${PREFIX}/share/gnome/applications; \
+	 ${INSTALL_DATA} gcipher.desktop ${PREFIX}/share/applications; \
 	 for i in `${FIND} . -name '*.py' \
 		       -o -name '*.pyc' \
 		       -o -name '*.glade' \

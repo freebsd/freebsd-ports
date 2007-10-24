@@ -27,21 +27,21 @@ lib/xchat-gnome/plugins/urlscraper.a
 lib/xchat-gnome/plugins/urlscraper.la
 lib/xchat-gnome/plugins/urlscraper.so
 %%DBUS%%share/dbus-1/services/org.gnome.Xchat.service
-share/gnome/applications/xchat-gnome.desktop
+share/applications/xchat-gnome.desktop
 share/gnome/help/xchat-gnome/C/figures/xchat-gnome_main_window.png
 share/gnome/help/xchat-gnome/C/legal.xml
 share/gnome/help/xchat-gnome/C/xchat-gnome.xml
-share/gnome/omf/xchat-gnome/xchat-gnome-C.omf
-share/gnome/xchat-gnome/channel-list.glade
-share/gnome/xchat-gnome/connect-dialog.glade
-share/gnome/xchat-gnome/dcc-window.glade
-share/gnome/xchat-gnome/irc-network-editor.glade
-share/gnome/xchat-gnome/message.wav
-share/gnome/xchat-gnome/preferences-dialog.glade
-share/gnome/xchat-gnome/setup-dialog.glade
-share/gnome/xchat-gnome/topic-change.glade
-share/gnome/xchat-gnome/xchat-gnome-ui.xml
-share/gnome/xchat-gnome/xchat-gnome.glade
+share/omf/xchat-gnome/xchat-gnome-C.omf
+share/xchat-gnome/channel-list.glade
+share/xchat-gnome/connect-dialog.glade
+share/xchat-gnome/dcc-window.glade
+share/xchat-gnome/irc-network-editor.glade
+share/xchat-gnome/message.wav
+share/xchat-gnome/preferences-dialog.glade
+share/xchat-gnome/setup-dialog.glade
+share/xchat-gnome/topic-change.glade
+share/xchat-gnome/xchat-gnome-ui.xml
+share/xchat-gnome/xchat-gnome.glade
 share/icons/hicolor/128x128/apps/xchat-gnome.png
 share/icons/hicolor/16x16/apps/xchat-gnome-dcc.png
 share/icons/hicolor/16x16/apps/xchat-gnome-message-data.png
@@ -112,8 +112,8 @@ share/locale/wa/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_CN/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_HK/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_TW/LC_MESSAGES/xchat-gnome.mo
-@dirrm share/gnome/xchat-gnome
-@dirrm share/gnome/omf/xchat-gnome
+@dirrm share/xchat-gnome
+@dirrm share/omf/xchat-gnome
 @dirrm share/gnome/help/xchat-gnome/C/figures
 @dirrm share/gnome/help/xchat-gnome/C
 @dirrm share/gnome/help/xchat-gnome
@@ -129,3 +129,4 @@ share/locale/zh_TW/LC_MESSAGES/xchat-gnome.mo
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/jbo/LC_MESSAGES
 @dirrmtry share/locale/jbo
+@dirrmtry share/applications

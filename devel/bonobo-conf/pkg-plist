@@ -20,10 +20,10 @@ lib/libbonobo_conf.a
 lib/libbonobo_conf.la
 lib/libbonobo_conf.so
 lib/libbonobo_conf.so.0
-share/gnome/idl/Bonobo_Config.idl
-share/gnome/oaf/Bonobo_Moniker_config.oaf
-share/gnome/oaf/Bonobo_Moniker_gconf.oaf
-share/gnome/oaf/Bonobo_Moniker_xmldb.oaf
+share/idl/Bonobo_Config.idl
+share/oaf/Bonobo_Moniker_config.oaf
+share/oaf/Bonobo_Moniker_gconf.oaf
+share/oaf/Bonobo_Moniker_xmldb.oaf
 share/locale/az/LC_MESSAGES/bonobo-conf.mo
 share/locale/da/LC_MESSAGES/bonobo-conf.mo
 share/locale/de/LC_MESSAGES/bonobo-conf.mo

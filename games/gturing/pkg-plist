@@ -19,16 +19,16 @@ bin/gturing
 %%EXAMPLESDIR%%/dec2bin_shift.tur
 %%EXAMPLESDIR%%/sort.tur
 %%EXAMPLESDIR%%/subst.tur
-share/gnome/applications/gturing.desktop
+share/applications/gturing.desktop
 share/gnome/help/gturing/C/figures/mainwin.png
 share/gnome/help/gturing/C/gturing.xml
 share/gnome/help/gturing/C/legal.xml
-share/gnome/omf/gturing/gturing-C.omf
-share/gnome/pixmaps/gnome-gturing.png
-share/gnome/pixmaps/play.xpm
-share/gnome/pixmaps/power.xpm
-share/gnome/pixmaps/step.xpm
-share/gnome/pixmaps/stop.xpm
+share/omf/gturing/gturing-C.omf
+share/pixmaps/gnome-gturing.png
+share/pixmaps/play.xpm
+share/pixmaps/power.xpm
+share/pixmaps/step.xpm
+share/pixmaps/stop.xpm
 share/locale/az/LC_MESSAGES/gturing-2.0.mo
 share/locale/cs/LC_MESSAGES/gturing-2.0.mo
 share/locale/da/LC_MESSAGES/gturing-2.0.mo
@@ -61,9 +61,10 @@ share/locale/vi/LC_MESSAGES/gturing-2.0.mo
 share/locale/wa/LC_MESSAGES/gturing-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gturing-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gturing-2.0.mo
-@dirrm share/gnome/omf/gturing
+@dirrm share/omf/gturing
 @dirrm share/gnome/help/gturing/C/figures
 @dirrm share/gnome/help/gturing/C
 @dirrm share/gnome/help/gturing
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications

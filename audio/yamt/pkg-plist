@@ -1,7 +1,7 @@
 bin/yamt
 share/gnome/apps/Applications/yamt.desktop
-share/gnome/pixmaps/yamt-logo.png
-share/gnome/pixmaps/yamt-icon.png
+share/pixmaps/yamt-logo.png
+share/pixmaps/yamt-icon.png
 share/locale/de/LC_MESSAGES/yamt.mo
 share/locale/fr/LC_MESSAGES/yamt.mo
 share/locale/hu/LC_MESSAGES/yamt.mo

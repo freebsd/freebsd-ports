@@ -45,7 +45,8 @@ share/themes/Clearlooks/index.theme
 @dirrm share/themes/Clearlooks-DeepSky/gtk-2.0
 @dirrm share/themes/Clearlooks-DeepSky
 @dirrm share/themes/Clearlooks
-@dirrm share/gnome/themes/Clearlooks
+@dirrm share/themes/Clearlooks
+@dirrmtry share/themes
 @dirrm share/icons/Clearlooks/24x24/gtk
 @dirrm share/icons/Clearlooks/24x24
 @dirrm share/icons/Clearlooks/16x16/gtk

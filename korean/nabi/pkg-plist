@@ -1,54 +1,54 @@
 bin/nabi
-share/gnome/nabi/candidate/nabi.txt
-share/gnome/nabi/compose/default
-share/gnome/nabi/compose/full
-share/gnome/nabi/keyboard/2qwerty
-share/gnome/nabi/keyboard/32qwerty
-share/gnome/nabi/keyboard/39qwerty
-share/gnome/nabi/keyboard/3fqwerty
-share/gnome/nabi/keyboard/3sqwerty
-share/gnome/nabi/nabi-about.png
-share/gnome/nabi/nabi.png
-share/gnome/nabi/nabi.svg
-share/gnome/nabi/themes/KingSejong/README
-share/gnome/nabi/themes/KingSejong/english.png
-share/gnome/nabi/themes/KingSejong/hangul.png
-share/gnome/nabi/themes/KingSejong/none.png
-share/gnome/nabi/themes/MSWindows/english.png
-share/gnome/nabi/themes/MSWindows/hangul.png
-share/gnome/nabi/themes/MSWindows/none.png
-share/gnome/nabi/themes/MSWindowsXP/english.png
-share/gnome/nabi/themes/MSWindowsXP/hangul.png
-share/gnome/nabi/themes/MSWindowsXP/none.png
-share/gnome/nabi/themes/Mac/README
-share/gnome/nabi/themes/Mac/english.png
-share/gnome/nabi/themes/Mac/hangul.png
-share/gnome/nabi/themes/Mac/none.png
-share/gnome/nabi/themes/Onion/README
-share/gnome/nabi/themes/Onion/english.png
-share/gnome/nabi/themes/Onion/hangul.png
-share/gnome/nabi/themes/Onion/none.png
-share/gnome/nabi/themes/SimplyRed/english.png
-share/gnome/nabi/themes/SimplyRed/hangul.png
-share/gnome/nabi/themes/SimplyRed/none.png
-share/gnome/nabi/themes/Tux/english.png
-share/gnome/nabi/themes/Tux/hangul.png
-share/gnome/nabi/themes/Tux/none.png
-share/gnome/nabi/themes/keyboard/README
-share/gnome/nabi/themes/keyboard/english.png
-share/gnome/nabi/themes/keyboard/hangul.png
-share/gnome/nabi/themes/keyboard/none.png
+share/nabi/candidate/nabi.txt
+share/nabi/compose/default
+share/nabi/compose/full
+share/nabi/keyboard/2qwerty
+share/nabi/keyboard/32qwerty
+share/nabi/keyboard/39qwerty
+share/nabi/keyboard/3fqwerty
+share/nabi/keyboard/3sqwerty
+share/nabi/nabi-about.png
+share/nabi/nabi.png
+share/nabi/nabi.svg
+share/nabi/themes/KingSejong/README
+share/nabi/themes/KingSejong/english.png
+share/nabi/themes/KingSejong/hangul.png
+share/nabi/themes/KingSejong/none.png
+share/nabi/themes/MSWindows/english.png
+share/nabi/themes/MSWindows/hangul.png
+share/nabi/themes/MSWindows/none.png
+share/nabi/themes/MSWindowsXP/english.png
+share/nabi/themes/MSWindowsXP/hangul.png
+share/nabi/themes/MSWindowsXP/none.png
+share/nabi/themes/Mac/README
+share/nabi/themes/Mac/english.png
+share/nabi/themes/Mac/hangul.png
+share/nabi/themes/Mac/none.png
+share/nabi/themes/Onion/README
+share/nabi/themes/Onion/english.png
+share/nabi/themes/Onion/hangul.png
+share/nabi/themes/Onion/none.png
+share/nabi/themes/SimplyRed/english.png
+share/nabi/themes/SimplyRed/hangul.png
+share/nabi/themes/SimplyRed/none.png
+share/nabi/themes/Tux/english.png
+share/nabi/themes/Tux/hangul.png
+share/nabi/themes/Tux/none.png
+share/nabi/themes/keyboard/README
+share/nabi/themes/keyboard/english.png
+share/nabi/themes/keyboard/hangul.png
+share/nabi/themes/keyboard/none.png
 share/locale/ko/LC_MESSAGES/nabi.mo
-@dirrm share/gnome/nabi/themes/KingSejong
-@dirrm share/gnome/nabi/themes/MSWindows
-@dirrm share/gnome/nabi/themes/MSWindowsXP
-@dirrm share/gnome/nabi/themes/Mac
-@dirrm share/gnome/nabi/themes/Onion
-@dirrm share/gnome/nabi/themes/SimplyRed
-@dirrm share/gnome/nabi/themes/Tux
-@dirrm share/gnome/nabi/themes/keyboard
-@dirrm share/gnome/nabi/candidate
-@dirrm share/gnome/nabi/compose
-@dirrm share/gnome/nabi/keyboard
-@dirrm share/gnome/nabi/themes
-@dirrm share/gnome/nabi
+@dirrm share/nabi/themes/KingSejong
+@dirrm share/nabi/themes/MSWindows
+@dirrm share/nabi/themes/MSWindowsXP
+@dirrm share/nabi/themes/Mac
+@dirrm share/nabi/themes/Onion
+@dirrm share/nabi/themes/SimplyRed
+@dirrm share/nabi/themes/Tux
+@dirrm share/nabi/themes/keyboard
+@dirrm share/nabi/candidate
+@dirrm share/nabi/compose
+@dirrm share/nabi/keyboard
+@dirrm share/nabi/themes
+@dirrm share/nabi

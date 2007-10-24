@@ -1,9 +1,9 @@
---- src/Makefile.in.orig	Sat Jul 10 03:03:28 2004
-+++ src/Makefile.in	Sat Jul 10 03:04:15 2004
-@@ -92,6 +92,7 @@
+--- src/Makefile.in.orig	Fri Jul 14 09:19:07 2006
++++ src/Makefile.in	Fri Jun 29 18:31:59 2007
+@@ -96,6 +96,7 @@ install : all force
  	if [ ! -d $(DESTDIR)$(bindir) ] ; then $(mkinstalldirs) $(DESTDIR)$(bindir) ; fi
  	case "@host_os@" in \
- 	  hpux*) $(CC) $(LDFLAGS) $(iconv_LDFLAGS) iconv.@OBJEXT@ ../srclib/libicrt.a -L$(libdir) -liconv @LIBINTL@ -o iconv;; \
+ 	  hpux*) $(CC) $(LDFLAGS) $(iconv_LDFLAGS) iconv.@OBJEXT@ ../srclib/libicrt.a -L$(DESTDIR)$(libdir) -liconv @LIBINTL@ `if test -n '$(DESTDIR)'; then echo " -Wl,+b -Wl,$(libdir)"; fi` -o iconv;; \
 +	  freebsd*) $(LIBTOOL_LINK) $(CC) $(LDFLAGS) $(iconv_LDFLAGS) iconv.@OBJEXT@ ../srclib/libicrt.a ../lib//libiconv.la @LTLIBINTL@ -o iconv;; \
  	  *) $(LIBTOOL_LINK) $(CC) $(LDFLAGS) $(iconv_LDFLAGS) iconv.@OBJEXT@ ../srclib/libicrt.a $(DESTDIR)$(libdir)/libiconv.la @LTLIBINTL@ -o iconv;; \
  	esac

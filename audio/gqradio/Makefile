@@ -7,7 +7,7 @@
 
 PORTNAME=	gqradio
 PORTVERSION=	1.9.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=gqmpeg
@@ -25,9 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|share/gqradio|share/gnome/gqradio|; \
-		 s|\(doc/gqradio\)-\$$VERSION|\1|' \
+	@${REINPLACE_CMD} -e 's|\(doc/gqradio\)-\$$VERSION|\1|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|^\(readmedir = \).*|\1$$(prefix)/share/doc/gqradio|; \

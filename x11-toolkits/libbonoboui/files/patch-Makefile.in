@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Jan 28 17:47:38 2007
-+++ Makefile.in	Sun Jan 28 17:47:59 2007
-@@ -254,7 +254,7 @@ sysconfdir = @sysconfdir@
+--- Makefile.in.orig	2007-07-31 00:33:13.000000000 -0400
++++ Makefile.in	2007-07-31 00:33:29.000000000 -0400
+@@ -253,7 +253,7 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@

@@ -3,11 +3,11 @@
 # Whom:                 Hendrik Scholz <hendrik@scholz.net>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/totem/Makefile,v 1.77 2007/03/11 05:25:07 mezz Exp $
+#   $MCom: ports/multimedia/totem/Makefile,v 1.89 2007/10/17 17:22:32 mezz Exp $
 #
 
 PORTNAME=	totem
-PORTVERSION=	2.18.2
+PORTVERSION=	2.20.1
 PORTREVISION?=	0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomedesktop desktopfileutils \
-		nautiluscdburner ltverhack
+		nautiluscdburner ltverhack gnomecontrolcenter2
 GNOME_DESKTOP_VERSION=2
 WANT_GSTREAMER=	yes
 INSTALLS_ICONS=	yes
@@ -34,15 +34,37 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-	       	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXrandr"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+	       	LIBS="-L${LOCALBASE}/lib -lXrandr"
+CONFIGURE_ARGS=	--with-plugins="${TOTEM_PLUGINS}"
 
 MAN1=		totem.1 totem-video-thumbnailer.1
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
 		totem.schemas
 CONFLICTS?=	totem-gstreamer-[0-9]* totem-xine-[0-9]*
 
+OPTIONS=	LIRC "Enable lirc support" off \
+		GALAGO "Enable Galago support" off
+
+TOTEM_PLUGINS=	screensaver ontop gromit media-player-keys properties sidebar-test skipto
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_LIRC)
+LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
+PLIST_SUB+=	LIRC=""
+TOTEM_PLUGINS:=	${TOTEM_PLUGINS} lirc
+.else
+PLIST_SUB+=	LIRC="@comment "
+.endif
+
+.if defined(WITH_GALAGO)
+LIB_DEPENDS+=	galago.3:${PORTSDIR}/devel/libgalago
+PLIST_SUB+=	GALAGO=""
+TOTEM_PLUGINS:=	${TOTEM_PLUGINS} galago
+.else
+PLIST_SUB+=	GALAGO="@comment "
+.endif
 
 .if defined(WITH_MOZILLA_PLUGIN) && ${SLAVE_PORT:L}=="yes"
 USE_GECKO=	firefox mozilla seamonkey xulrunner<->firefox firefox-devel<->firefox
@@ -102,5 +124,8 @@ post-patch:
 
 post-install:
 	@-update-desktop-database
+	${MKDIR} ${PREFIX}/share/vala/vapi
+	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.vala ${PREFIX}/share/vala/vapi
+	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.deps ${PREFIX}/share/vala/vapi
 
 .include <bsd.port.post.mk>

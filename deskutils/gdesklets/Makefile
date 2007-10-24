@@ -7,7 +7,7 @@
 
 PORTNAME=	gdesklets
 PORTVERSION=	0.35.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gdesklets.org/downloads/ \
 		http://www.pycage.de/download/${PORTNAME}/ \
@@ -45,8 +45,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Displays
-	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Sensors
+	@${MKDIR} ${PREFIX}/share/gdesklets/Displays
+	@${MKDIR} ${PREFIX}/share/gdesklets/Sensors
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets
 	@${CAT} ${PKGMESSAGE}
 

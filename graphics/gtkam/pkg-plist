@@ -3,7 +3,7 @@ bin/gtkam
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/gnome/applications/gtkam.desktop
+share/applications/gtkam.desktop
 %%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_add_camera_enhanced_window.png
 %%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_add_camera_window.png
 %%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_fileinfo.png
@@ -22,9 +22,9 @@ share/gnome/applications/gtkam.desktop
 %%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_start_window.png
 %%GNOME:%%share/gnome/help/gtkam/ru/gtkam.xml
 %%GNOME:%%share/gnome/help/gtkam/ru/legal.xml
-%%GNOME:%%share/gnome/omf/gtkam/gtkam-C.omf
-%%GNOME:%%share/gnome/omf/gtkam/gtkam-ru.omf
-share/gnome/pixmaps/gtkam.png
+%%GNOME:%%share/omf/gtkam/gtkam-C.omf
+%%GNOME:%%share/omf/gtkam/gtkam-ru.omf
+share/pixmaps/gtkam.png
 %%DATADIR%%/images/gtkam-audio.png
 %%DATADIR%%/images/gtkam-camera.png
 %%DATADIR%%/images/gtkam-folder-camera.png
@@ -56,10 +56,11 @@ share/locale/uk/LC_MESSAGES/gtkam.mo
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
-%%GNOME:%%@dirrm share/gnome/omf/gtkam
+%%GNOME:%%@dirrm share/omf/gtkam
 %%GNOME:%%@dirrm share/gnome/help/gtkam/ru/figures
 %%GNOME:%%@dirrm share/gnome/help/gtkam/ru
 %%GNOME:%%@dirrm share/gnome/help/gtkam/C/figures
 %%GNOME:%%@dirrm share/gnome/help/gtkam/C
 %%GNOME:%%@dirrm share/gnome/help/gtkam
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications

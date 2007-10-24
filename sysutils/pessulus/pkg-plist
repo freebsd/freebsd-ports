@@ -38,6 +38,7 @@ bin/pessulus
 %%PYTHON_SITELIBDIR%%/Pessulus/simpleeditabletreeview.py
 %%PYTHON_SITELIBDIR%%/Pessulus/simpleeditabletreeview.pyc
 %%PYTHON_SITELIBDIR%%/Pessulus/simpleeditabletreeview.pyo
+share/applications/pessulus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -46,9 +47,10 @@ bin/pessulus
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-share/gnome/applications/pessulus.desktop
-share/gnome/pessulus/glade/pessulus.glade
 share/locale/ar/LC_MESSAGES/pessulus.mo
+share/locale/as/LC_MESSAGES/pessulus.mo
+share/locale/be/LC_MESSAGES/pessulus.mo
+share/locale/be@latin/LC_MESSAGES/pessulus.mo
 share/locale/bg/LC_MESSAGES/pessulus.mo
 share/locale/bn/LC_MESSAGES/pessulus.mo
 share/locale/bn_IN/LC_MESSAGES/pessulus.mo
@@ -76,6 +78,7 @@ share/locale/it/LC_MESSAGES/pessulus.mo
 share/locale/ja/LC_MESSAGES/pessulus.mo
 share/locale/ka/LC_MESSAGES/pessulus.mo
 share/locale/ko/LC_MESSAGES/pessulus.mo
+share/locale/ku/LC_MESSAGES/pessulus.mo
 share/locale/lt/LC_MESSAGES/pessulus.mo
 share/locale/lv/LC_MESSAGES/pessulus.mo
 share/locale/mk/LC_MESSAGES/pessulus.mo
@@ -85,6 +88,7 @@ share/locale/mr/LC_MESSAGES/pessulus.mo
 share/locale/nb/LC_MESSAGES/pessulus.mo
 share/locale/ne/LC_MESSAGES/pessulus.mo
 share/locale/nl/LC_MESSAGES/pessulus.mo
+share/locale/oc/LC_MESSAGES/pessulus.mo
 share/locale/or/LC_MESSAGES/pessulus.mo
 share/locale/pa/LC_MESSAGES/pessulus.mo
 share/locale/pl/LC_MESSAGES/pessulus.mo
@@ -98,6 +102,7 @@ share/locale/sr/LC_MESSAGES/pessulus.mo
 share/locale/sr@Latn/LC_MESSAGES/pessulus.mo
 share/locale/sv/LC_MESSAGES/pessulus.mo
 share/locale/ta/LC_MESSAGES/pessulus.mo
+share/locale/te/LC_MESSAGES/pessulus.mo
 share/locale/th/LC_MESSAGES/pessulus.mo
 share/locale/tr/LC_MESSAGES/pessulus.mo
 share/locale/uk/LC_MESSAGES/pessulus.mo
@@ -105,17 +110,27 @@ share/locale/vi/LC_MESSAGES/pessulus.mo
 share/locale/zh_CN/LC_MESSAGES/pessulus.mo
 share/locale/zh_HK/LC_MESSAGES/pessulus.mo
 share/locale/zh_TW/LC_MESSAGES/pessulus.mo
-@dirrm share/gnome/pessulus/glade
-@dirrm share/gnome/pessulus
+%%DATADIR%%/glade/pessulus.glade
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/Pessulus
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrmtry share/applications

@@ -3,11 +3,11 @@
 # Whom:					lewiz <purple@lewiz.net>
 #
 # $FreeBSD$
-#   $MCom: ports/accessibility/dasher/Makefile,v 1.50 2007/03/12 20:16:34 mezz Exp $
+#   $MCom: ports/accessibility/dasher/Makefile,v 1.59 2007/10/15 22:05:41 mezz Exp $
 #
 
 PORTNAME=	dasher
-PORTVERSION=	4.4.2
+PORTVERSION=	4.6.1
 PORTEPOCH=	1
 CATEGORIES=	accessibility editors x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -17,8 +17,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Information efficient text-entry interface
 
-BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
-RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
+RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -39,14 +39,19 @@ MAN1=		dasher.1
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgnomespeech}!=""
-USE_GNOME+=	gnomespeech
-CONFIGURE_ARGS+=--enable-speech
-.endif
+#.if ${HAVE_GNOME:Mgnomespeech}!=""
+#USE_GNOME+=	gnomespeech
+#CONFIGURE_ARGS+=--enable-speech
+#.endif
+CONFIGURE_ARGS+=	--disable-speech
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-O2||g'
+.if ${OSVERSION} >= 700042
+	@${REINPLACE_CMD} -e 's|__gnu_cxx::lldiv|lldiv|' \
+	    	${WRKSRC}/Src/DasherCore/DasherViewSquare.cpp
+.endif
 
 .include <bsd.port.post.mk>

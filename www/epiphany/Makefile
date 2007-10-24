@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/epiphany/Makefile,v 1.141 2007/03/11 20:12:27 mezz Exp $
+#   $MCom: ports/www/epiphany/Makefile,v 1.155 2007/10/15 21:47:21 mezz Exp $
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	2.18.3
+PORTVERSION=	2.20.1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +17,8 @@ COMMENT=	An extremely lightweight and simple web browser for GNOME 2
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
+    		${LOCALBASE}/share/themes/LowContrast/index.theme:${PORTSDIR}/x11-themes/gnome-themes
 
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
@@ -32,7 +33,7 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
-CONFIGURE_ARGS=	--with-mozilla=${GECKO}
+CONFIGURE_ARGS=	--with-gecko=${GECKO}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
@@ -77,8 +78,6 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/lib/mozilla/plugins"|/lib/browser_plugins" ":" MOZILLA_PREFIX "/lib/browser_linux_plugins"|' \
 		${WRKSRC}/embed/mozilla/mozilla-embed-single.cpp
-	@${REINPLACE_CMD} -e 's|[$$](datadir)/pygtk/2.0/defs|${LOCALBASE}/share/pygtk/2.0/defs|' \
-		${WRKSRC}/src/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/epiphany-fonts.schemas \

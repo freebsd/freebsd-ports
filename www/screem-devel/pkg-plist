@@ -25,8 +25,8 @@ lib/screem/plugins/tableWizard.so
 lib/screem/plugins/uploadWizard.la
 lib/screem/plugins/uploadWizard.so
 libdata/pkgconfig/screem-plugin.pc
-share/gnome/application-registry/screem.applications
-share/gnome/applications/screem.desktop
+share/application-registry/screem.applications
+share/applications/screem.desktop
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/help/screem/C/figures/color-wizard.png
 share/gnome/help/screem/C/figures/css-wizard1.png
@@ -75,125 +75,125 @@ share/gnome/help/screem/C/figures/table-wizard.png
 share/gnome/help/screem/C/figures/tree.png
 share/gnome/help/screem/C/legal.xml
 share/gnome/help/screem/C/screem.xml
-share/gnome/omf/screem/screem-C.omf
-share/gnome/pixmaps/screem/splash/splash.png
-share/gnome/pixmaps/screem.png
-share/gnome/screem/doctypes.xml
-share/gnome/screem/dtd/HTMLlat1.ent
-share/gnome/screem/dtd/HTMLspecial.ent
-share/gnome/screem/dtd/HTMLsymbols.ent
-share/gnome/screem/dtd/catalog
-share/gnome/screem/dtd/gtkuimanager.dtd
-share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Fframeset.dtd
-share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Floose.dtd
-share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Fstrict.dtd
-share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-frameset.dtd
-share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-strict.dtd
-share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-transitional.dtd
-share/gnome/screem/dtd/screem-doctypes.dtd
-share/gnome/screem/dtd/screem-tagtree-config.dtd
-share/gnome/screem/dtd/screem-tagtree.dtd
-share/gnome/screem/dtd/xhtml-lat1.ent
-share/gnome/screem/dtd/xhtml-special.ent
-share/gnome/screem/dtd/xhtml-symbol.ent
-share/gnome/screem/features.xml
-share/gnome/screem/glade/css-wizard.glade
-share/gnome/screem/glade/entityWizard.glade
-share/gnome/screem/glade/linkwizard.glade
-share/gnome/screem/glade/object-wizard.glade
-share/gnome/screem/glade/screem.glade
-share/gnome/screem/glade/ssiwizard.glade
-share/gnome/screem/glade/tablewizard.glade
-share/gnome/screem/glade/uploadwizard.glade
-share/gnome/screem/helpers/Tidy/TidyHTML.desktop
-share/gnome/screem/helpers/Tidy/TidyXML.desktop
-share/gnome/screem/helpers/browsers/epiphany.desktop
-share/gnome/screem/helpers/browsers/konqueror.desktop
-share/gnome/screem/helpers/browsers/opera.desktop
-share/gnome/screem/helpers/browsers-remote/epiphany.desktop
-share/gnome/screem/helpers/browsers-remote/konqueror.desktop
-share/gnome/screem/helpers/browsers-remote/opera.desktop
-share/gnome/screem/hints/screem_hints.txt
-share/gnome/screem/hints/screem_hints_fr.txt
-share/gnome/screem/hints/screem_hints_pt_BR.txt
-share/gnome/screem/hints/screem_hints_sv.txt
-share/gnome/screem/pixmaps/add-link-16.png
-share/gnome/screem/pixmaps/add-link-24.png
-share/gnome/screem/pixmaps/add_column-16.png
-share/gnome/screem/pixmaps/add_column-24.png
-share/gnome/screem/pixmaps/add_row-16.png
-share/gnome/screem/pixmaps/add_row-24.png
-share/gnome/screem/pixmaps/bookmarks-open.png
-share/gnome/screem/pixmaps/bookmarks-preferences.png
-share/gnome/screem/pixmaps/browser.xpm
-share/gnome/screem/pixmaps/button.xpm
-share/gnome/screem/pixmaps/caption.xpm
-share/gnome/screem/pixmaps/checkbutton.xpm
-share/gnome/screem/pixmaps/cvs-add-16.png
-share/gnome/screem/pixmaps/cvs-add-24.png
-share/gnome/screem/pixmaps/cvs-add.png
-share/gnome/screem/pixmaps/cvs-checkout-16.png
-share/gnome/screem/pixmaps/cvs-checkout-24.png
-share/gnome/screem/pixmaps/cvs-checkout.png
-share/gnome/screem/pixmaps/cvs-commit-16.png
-share/gnome/screem/pixmaps/cvs-commit-24.png
-share/gnome/screem/pixmaps/cvs-remove-16.png
-share/gnome/screem/pixmaps/cvs-remove-24.png
-share/gnome/screem/pixmaps/cvs-remove.png
-share/gnome/screem/pixmaps/cvs-update-16.png
-share/gnome/screem/pixmaps/cvs-update-24.png
-share/gnome/screem/pixmaps/cvs-update.png
-share/gnome/screem/pixmaps/entry.xpm
-share/gnome/screem/pixmaps/fixed.xpm
-share/gnome/screem/pixmaps/gallery.xpm
-share/gnome/screem/pixmaps/gnome-fileentry.xpm
-share/gnome/screem/pixmaps/hand-open.png
-share/gnome/screem/pixmaps/insert-symbol-16.png
-share/gnome/screem/pixmaps/insert-symbol-24.png
-share/gnome/screem/pixmaps/optionmenu.xpm
-share/gnome/screem/pixmaps/paragraphs.png
-share/gnome/screem/pixmaps/pre.xpm
-share/gnome/screem/pixmaps/radiobutton.xpm
-share/gnome/screem/pixmaps/resources.png
-share/gnome/screem/pixmaps/screem_site.png
-share/gnome/screem/pixmaps/site_preview.png
-share/gnome/screem/pixmaps/site_structure-48.png
-share/gnome/screem/pixmaps/stock-close-12.png
-share/gnome/screem/pixmaps/stock-menu-left-12.png
-share/gnome/screem/pixmaps/stock-menu-right-12.png
-share/gnome/screem/pixmaps/stock_connect.png
-share/gnome/screem/pixmaps/stock_disconnect.png
-share/gnome/screem/pixmaps/stock_insert_image-16.png
-share/gnome/screem/pixmaps/stock_insert_image.png
-share/gnome/screem/pixmaps/stock_insert_object-16.png
-share/gnome/screem/pixmaps/stock_insert_object.png
-share/gnome/screem/pixmaps/stock_insert_table-16.png
-share/gnome/screem/pixmaps/sub.xpm
-share/gnome/screem/pixmaps/sup.xpm
-share/gnome/screem/pixmaps/td.xpm
-share/gnome/screem/pixmaps/text.xpm
-share/gnome/screem/pixmaps/th.xpm
-share/gnome/screem/pixmaps/todo.png
-share/gnome/screem/pixmaps/tr.xpm
-share/gnome/screem/resources/Images/made.png
-share/gnome/screem/resources/Javascript/linktitle.js
-share/gnome/screem/resources/Javascript/preload.js
-share/gnome/screem/resources/Javascript/rollover.js
-share/gnome/screem/resources/Templates/template.html
-share/gnome/screem/tagtrees/apache.tagtree
-share/gnome/screem/tagtrees/cfml.tagtree
-share/gnome/screem/tagtrees/css.tagtree
-share/gnome/screem/tagtrees/funcref_php.tagtree
-share/gnome/screem/tagtrees/funcref_python.tagtree
-share/gnome/screem/tagtrees/html.tagtree
-share/gnome/screem/tagtrees/javascript.tagtree
-share/gnome/screem/tagtrees/teixlite.tagtree
-share/gnome/screem/ui/layout
-share/gnome/screem/ui/screem-editable-toolbars.xml
-share/gnome/screem/ui/screem-tag-tree-bar.xml
-share/gnome/screem/ui/screem-window-menu.xml
-share/gnome/screem/ui/screem-window-popups.xml
-share/gnome/screem/ui/screem-window-toolbar.xml
+share/omf/screem/screem-C.omf
+share/pixmaps/screem/splash/splash.png
+share/pixmaps/screem.png
+share/screem/doctypes.xml
+share/screem/dtd/HTMLlat1.ent
+share/screem/dtd/HTMLspecial.ent
+share/screem/dtd/HTMLsymbols.ent
+share/screem/dtd/catalog
+share/screem/dtd/gtkuimanager.dtd
+share/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Fframeset.dtd
+share/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Floose.dtd
+share/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Fstrict.dtd
+share/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-frameset.dtd
+share/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-strict.dtd
+share/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-transitional.dtd
+share/screem/dtd/screem-doctypes.dtd
+share/screem/dtd/screem-tagtree-config.dtd
+share/screem/dtd/screem-tagtree.dtd
+share/screem/dtd/xhtml-lat1.ent
+share/screem/dtd/xhtml-special.ent
+share/screem/dtd/xhtml-symbol.ent
+share/screem/features.xml
+share/screem/glade/css-wizard.glade
+share/screem/glade/entityWizard.glade
+share/screem/glade/linkwizard.glade
+share/screem/glade/object-wizard.glade
+share/screem/glade/screem.glade
+share/screem/glade/ssiwizard.glade
+share/screem/glade/tablewizard.glade
+share/screem/glade/uploadwizard.glade
+share/screem/helpers/Tidy/TidyHTML.desktop
+share/screem/helpers/Tidy/TidyXML.desktop
+share/screem/helpers/browsers/epiphany.desktop
+share/screem/helpers/browsers/konqueror.desktop
+share/screem/helpers/browsers/opera.desktop
+share/screem/helpers/browsers-remote/epiphany.desktop
+share/screem/helpers/browsers-remote/konqueror.desktop
+share/screem/helpers/browsers-remote/opera.desktop
+share/screem/hints/screem_hints.txt
+share/screem/hints/screem_hints_fr.txt
+share/screem/hints/screem_hints_pt_BR.txt
+share/screem/hints/screem_hints_sv.txt
+share/screem/pixmaps/add-link-16.png
+share/screem/pixmaps/add-link-24.png
+share/screem/pixmaps/add_column-16.png
+share/screem/pixmaps/add_column-24.png
+share/screem/pixmaps/add_row-16.png
+share/screem/pixmaps/add_row-24.png
+share/screem/pixmaps/bookmarks-open.png
+share/screem/pixmaps/bookmarks-preferences.png
+share/screem/pixmaps/browser.xpm
+share/screem/pixmaps/button.xpm
+share/screem/pixmaps/caption.xpm
+share/screem/pixmaps/checkbutton.xpm
+share/screem/pixmaps/cvs-add-16.png
+share/screem/pixmaps/cvs-add-24.png
+share/screem/pixmaps/cvs-add.png
+share/screem/pixmaps/cvs-checkout-16.png
+share/screem/pixmaps/cvs-checkout-24.png
+share/screem/pixmaps/cvs-checkout.png
+share/screem/pixmaps/cvs-commit-16.png
+share/screem/pixmaps/cvs-commit-24.png
+share/screem/pixmaps/cvs-remove-16.png
+share/screem/pixmaps/cvs-remove-24.png
+share/screem/pixmaps/cvs-remove.png
+share/screem/pixmaps/cvs-update-16.png
+share/screem/pixmaps/cvs-update-24.png
+share/screem/pixmaps/cvs-update.png
+share/screem/pixmaps/entry.xpm
+share/screem/pixmaps/fixed.xpm
+share/screem/pixmaps/gallery.xpm
+share/screem/pixmaps/gnome-fileentry.xpm
+share/screem/pixmaps/hand-open.png
+share/screem/pixmaps/insert-symbol-16.png
+share/screem/pixmaps/insert-symbol-24.png
+share/screem/pixmaps/optionmenu.xpm
+share/screem/pixmaps/paragraphs.png
+share/screem/pixmaps/pre.xpm
+share/screem/pixmaps/radiobutton.xpm
+share/screem/pixmaps/resources.png
+share/screem/pixmaps/screem_site.png
+share/screem/pixmaps/site_preview.png
+share/screem/pixmaps/site_structure-48.png
+share/screem/pixmaps/stock-close-12.png
+share/screem/pixmaps/stock-menu-left-12.png
+share/screem/pixmaps/stock-menu-right-12.png
+share/screem/pixmaps/stock_connect.png
+share/screem/pixmaps/stock_disconnect.png
+share/screem/pixmaps/stock_insert_image-16.png
+share/screem/pixmaps/stock_insert_image.png
+share/screem/pixmaps/stock_insert_object-16.png
+share/screem/pixmaps/stock_insert_object.png
+share/screem/pixmaps/stock_insert_table-16.png
+share/screem/pixmaps/sub.xpm
+share/screem/pixmaps/sup.xpm
+share/screem/pixmaps/td.xpm
+share/screem/pixmaps/text.xpm
+share/screem/pixmaps/th.xpm
+share/screem/pixmaps/todo.png
+share/screem/pixmaps/tr.xpm
+share/screem/resources/Images/made.png
+share/screem/resources/Javascript/linktitle.js
+share/screem/resources/Javascript/preload.js
+share/screem/resources/Javascript/rollover.js
+share/screem/resources/Templates/template.html
+share/screem/tagtrees/apache.tagtree
+share/screem/tagtrees/cfml.tagtree
+share/screem/tagtrees/css.tagtree
+share/screem/tagtrees/funcref_php.tagtree
+share/screem/tagtrees/funcref_python.tagtree
+share/screem/tagtrees/html.tagtree
+share/screem/tagtrees/javascript.tagtree
+share/screem/tagtrees/teixlite.tagtree
+share/screem/ui/layout
+share/screem/ui/screem-editable-toolbars.xml
+share/screem/ui/screem-tag-tree-bar.xml
+share/screem/ui/screem-window-menu.xml
+share/screem/ui/screem-window-popups.xml
+share/screem/ui/screem-window-toolbar.xml
 share/locale/az/LC_MESSAGES/screem.mo
 share/locale/cs/LC_MESSAGES/screem.mo
 share/locale/da/LC_MESSAGES/screem.mo
@@ -217,27 +217,27 @@ share/locale/uk/LC_MESSAGES/screem.mo
 share/locale/vi/LC_MESSAGES/screem.mo
 share/locale/zh_CN/LC_MESSAGES/screem.mo
 share/mime/packages/screem.xml
-@dirrm share/gnome/screem/ui
-@dirrm share/gnome/screem/tagtrees
-@dirrm share/gnome/screem/resources/Templates
-@dirrm share/gnome/screem/resources/PHP3
-@dirrm share/gnome/screem/resources/Javascript
-@dirrm share/gnome/screem/resources/Images
-@dirrm share/gnome/screem/resources/HTML
-@dirrm share/gnome/screem/resources/Applets
-@dirrm share/gnome/screem/resources
-@dirrm share/gnome/screem/pixmaps
-@dirrm share/gnome/screem/hints
-@dirrm share/gnome/screem/helpers/browsers-remote
-@dirrm share/gnome/screem/helpers/browsers
-@dirrm share/gnome/screem/helpers/Tidy
-@dirrm share/gnome/screem/helpers
-@dirrm share/gnome/screem/glade
-@dirrm share/gnome/screem/dtd
-@dirrm share/gnome/screem
-@dirrm share/gnome/pixmaps/screem/splash
-@dirrm share/gnome/pixmaps/screem
-@dirrm share/gnome/omf/screem
+@dirrm share/screem/ui
+@dirrm share/screem/tagtrees
+@dirrm share/screem/resources/Templates
+@dirrm share/screem/resources/PHP3
+@dirrm share/screem/resources/Javascript
+@dirrm share/screem/resources/Images
+@dirrm share/screem/resources/HTML
+@dirrm share/screem/resources/Applets
+@dirrm share/screem/resources
+@dirrm share/screem/pixmaps
+@dirrm share/screem/hints
+@dirrm share/screem/helpers/browsers-remote
+@dirrm share/screem/helpers/browsers
+@dirrm share/screem/helpers/Tidy
+@dirrm share/screem/helpers
+@dirrm share/screem/glade
+@dirrm share/screem/dtd
+@dirrm share/screem
+@dirrm share/pixmaps/screem/splash
+@dirrm share/pixmaps/screem
+@dirrm share/omf/screem
 @dirrm share/gnome/help/screem/C/figures
 @dirrm share/gnome/help/screem/C
 @dirrm share/gnome/help/screem
@@ -249,3 +249,4 @@ share/mime/packages/screem.xml
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/applications

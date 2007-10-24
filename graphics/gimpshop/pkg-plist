@@ -1207,10 +1207,10 @@ share/gimp/menus/vectors-menu.xml
 share/gimp/misc/gimp.applications
 share/gimp/misc/gimp.desktop
 share/gimp/misc/gimp.keys
-%%GNOMEPANEL:%%share/gnome/application-registry/gimp-2.2.applications
-%%GNOMEPANEL:%%share/gnome/applications/gimp-2.2.desktop
-%%GNOMEPANEL:%%@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-%%GNOMEPANEL:%%share/gnome/mime-info/gimp-2.2.keys
+share/application-registry/gimp-2.2.applications
+share/applications/gimp-2.2.desktop
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+share/mime-info/gimp-2.2.keys
 share/gimp/palettes/Bears.gpl
 share/gimp/palettes/Bgold.gpl
 share/gimp/palettes/Blues.gpl
@@ -1936,6 +1936,7 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrm include/gimp-2.0
 @dirrmtry etc/gimp/2.2
 @dirrmtry etc/gimp
-%%GNOMEPANEL:%%@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/yi/LC_MESSAGES
 @dirrmtry share/locale/yi
+@dirrmtry share/applications

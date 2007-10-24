@@ -9,6 +9,5 @@ share/locale/ja/LC_MESSAGES/gsynaptics.mo
 share/locale/zh_CN/LC_MESSAGES/gsynaptics.mo
 share/locale/zh_TW/LC_MESSAGES/gsynaptics.mo
 share/pixmaps/touchpad.png
-@dirrmtry share/gnome/autostart
 @dirrmtry share/applications
 @dirrm share/gsynaptics

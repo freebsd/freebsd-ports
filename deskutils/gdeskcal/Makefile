@@ -3,11 +3,12 @@
 # Whom:			Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 #
 # $FreeBSD$
-#    $MCom: ports/deskutils/gdeskcal/Makefile,v 1.2 2006/09/30 03:23:19 ahze Exp $
+#   $MCom: ports/deskutils/gdeskcal/Makefile,v 1.4 2007/07/23 20:22:27 mezz Exp $
+#
 
 PORTNAME=	gdeskcal
 PORTVERSION=	0.57.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	http://www.pycage.de/download/
 DISTNAME=	gDeskCal-${PORTVERSION:S/./_/g}
@@ -31,15 +32,15 @@ post-patch:
 		${WRKSRC}/code/values.py
 
 do-install:
-	${MKDIR} ${PREFIX}/share/gnome/gdeskcal
+	${MKDIR} ${PREFIX}/share/gdeskcal
 	for d in ${DATA_DIRS}; do \
-	    ${MKDIR} ${PREFIX}/share/gnome/gdeskcal/$$d ; \
+	    ${MKDIR} ${PREFIX}/share/gdeskcal/$$d ; \
 	    cd ${WRKSRC}/$$d && ${FIND} . | \
 	    	${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP}  \
-		${PREFIX}/share/gnome/gdeskcal/$$d ; \
+		${PREFIX}/share/gdeskcal/$$d ; \
 	done
 	${INSTALL_SCRIPT} ${WRKSRC}/gdeskcal \
-		${PREFIX}/share/gnome/gdeskcal
+		${PREFIX}/share/gdeskcal
 
 	${MKDIR} ${PREFIX}/share/locale/ar/LC_MESSAGES
 
@@ -49,6 +50,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/locale/${i}/LC_MESSAGES/gdeskcal.mo \
 		${PREFIX}/share/locale/${i}/LC_MESSAGES
 .endfor
-	${LN} -sf ${PREFIX}/share/gnome/gdeskcal/gdeskcal ${PREFIX}/bin/gdeskcal
+	${LN} -sf ${PREFIX}/share/gdeskcal/gdeskcal ${PREFIX}/bin/gdeskcal
 
 .include <bsd.port.mk>

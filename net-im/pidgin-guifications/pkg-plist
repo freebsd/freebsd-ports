@@ -1,35 +1,35 @@
 lib/pidgin/guifications.la
 lib/pidgin/guifications.so
-share/gnome/pixmaps/pidgin/guifications/conf/item_icon_size_big.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_icon_size_huge.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_icon_size_large.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_icon_size_little.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_icon_size_normal.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_icon_size_small.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_icon_size_tiny.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_position_center.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_position_east.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_position_north.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_position_north_east.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_position_north_west.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_position_south.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_position_south_east.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_position_south_west.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_position_west.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_text_clipping_ellipsis_end.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_text_clipping_ellipsis_middle.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_text_clipping_ellipsis_start.png
-share/gnome/pixmaps/pidgin/guifications/conf/item_text_clipping_truncate.png
-share/gnome/pixmaps/pidgin/guifications/conf/window_position_north_east.png
-share/gnome/pixmaps/pidgin/guifications/conf/window_position_north_west.png
-share/gnome/pixmaps/pidgin/guifications/conf/window_position_south_east.png
-share/gnome/pixmaps/pidgin/guifications/conf/window_position_south_west.png
-share/gnome/pixmaps/pidgin/guifications/themes/Penguins/penguin.png
-share/gnome/pixmaps/pidgin/guifications/themes/Penguins/theme.xml
-share/gnome/pixmaps/pidgin/guifications/themes/default/background.png
-share/gnome/pixmaps/pidgin/guifications/themes/default/theme.xml
-share/gnome/pixmaps/pidgin/guifications/themes/mini/background.png
-share/gnome/pixmaps/pidgin/guifications/themes/mini/theme.xml
+share/pixmaps/pidgin/guifications/conf/item_icon_size_big.png
+share/pixmaps/pidgin/guifications/conf/item_icon_size_huge.png
+share/pixmaps/pidgin/guifications/conf/item_icon_size_large.png
+share/pixmaps/pidgin/guifications/conf/item_icon_size_little.png
+share/pixmaps/pidgin/guifications/conf/item_icon_size_normal.png
+share/pixmaps/pidgin/guifications/conf/item_icon_size_small.png
+share/pixmaps/pidgin/guifications/conf/item_icon_size_tiny.png
+share/pixmaps/pidgin/guifications/conf/item_position_center.png
+share/pixmaps/pidgin/guifications/conf/item_position_east.png
+share/pixmaps/pidgin/guifications/conf/item_position_north.png
+share/pixmaps/pidgin/guifications/conf/item_position_north_east.png
+share/pixmaps/pidgin/guifications/conf/item_position_north_west.png
+share/pixmaps/pidgin/guifications/conf/item_position_south.png
+share/pixmaps/pidgin/guifications/conf/item_position_south_east.png
+share/pixmaps/pidgin/guifications/conf/item_position_south_west.png
+share/pixmaps/pidgin/guifications/conf/item_position_west.png
+share/pixmaps/pidgin/guifications/conf/item_text_clipping_ellipsis_end.png
+share/pixmaps/pidgin/guifications/conf/item_text_clipping_ellipsis_middle.png
+share/pixmaps/pidgin/guifications/conf/item_text_clipping_ellipsis_start.png
+share/pixmaps/pidgin/guifications/conf/item_text_clipping_truncate.png
+share/pixmaps/pidgin/guifications/conf/window_position_north_east.png
+share/pixmaps/pidgin/guifications/conf/window_position_north_west.png
+share/pixmaps/pidgin/guifications/conf/window_position_south_east.png
+share/pixmaps/pidgin/guifications/conf/window_position_south_west.png
+share/pixmaps/pidgin/guifications/themes/Penguins/penguin.png
+share/pixmaps/pidgin/guifications/themes/Penguins/theme.xml
+share/pixmaps/pidgin/guifications/themes/default/background.png
+share/pixmaps/pidgin/guifications/themes/default/theme.xml
+share/pixmaps/pidgin/guifications/themes/mini/background.png
+share/pixmaps/pidgin/guifications/themes/mini/theme.xml
 share/locale/bn/LC_MESSAGES/guifications.mo
 share/locale/cs/LC_MESSAGES/guifications.mo
 share/locale/de/LC_MESSAGES/guifications.mo
@@ -55,9 +55,9 @@ share/locale/sv/LC_MESSAGES/guifications.mo
 share/locale/uk/LC_MESSAGES/guifications.mo
 share/locale/zh_CN/LC_MESSAGES/guifications.mo
 share/locale/zh_TW/LC_MESSAGES/guifications.mo
-@dirrm share/gnome/pixmaps/pidgin/guifications/themes/mini
-@dirrm share/gnome/pixmaps/pidgin/guifications/themes/default
-@dirrm share/gnome/pixmaps/pidgin/guifications/themes/Penguins
-@dirrm share/gnome/pixmaps/pidgin/guifications/themes
-@dirrm share/gnome/pixmaps/pidgin/guifications/conf
-@dirrm share/gnome/pixmaps/pidgin/guifications
+@dirrm share/pixmaps/pidgin/guifications/themes/mini
+@dirrm share/pixmaps/pidgin/guifications/themes/default
+@dirrm share/pixmaps/pidgin/guifications/themes/Penguins
+@dirrm share/pixmaps/pidgin/guifications/themes
+@dirrm share/pixmaps/pidgin/guifications/conf
+@dirrm share/pixmaps/pidgin/guifications

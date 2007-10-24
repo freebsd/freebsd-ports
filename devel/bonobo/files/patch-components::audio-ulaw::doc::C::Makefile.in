@@ -7,8 +7,8 @@ $FreeBSD$
  cxxflags_set = @cxxflags_set@
  l = @l@
  
--audio_ulaw_helpdir = $(datadir)/bonobo/docs/audio_ulaw/C
-+audio_ulaw_helpdir = $(datadir)/help/audio_ulaw/C
+-audio_ulaw_helpdir = $(datadir)/gnome/bonobo/docs/audio_ulaw/C
++audio_ulaw_helpdir = $(datadir)/gnome/help/bonobo/audio_ulaw/C
  
  # 
  # Module configuration information

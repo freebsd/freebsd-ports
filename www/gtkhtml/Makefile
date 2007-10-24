@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkhtml
 PORTVERSION=	1.1.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
@@ -40,7 +40,6 @@ LIB_DEPENDS+=	soup.6:${PORTSDIR}/devel/soup
 post-configure:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		s|%%X11BASE%%|${X11BASE}|g ; \
 		s|%%VERSION%%|${VERSION}|g' ${FILESDIR}/gtkhtmlConf.sh \
 			> ${WRKSRC}/gtkhtmlConf.sh
 

@@ -1,15 +1,15 @@
 bin/uf-view
-share/gnome/applications/uf-view.desktop
-share/gnome/pixmaps/uf-view/gnome-uf-view.png
-share/gnome/pixmaps/uf-view/uf-logo.png
-share/gnome/uf-view/at.desktop
-share/gnome/uf-view/ch.desktop
-share/gnome/uf-view/lg.desktop
-share/gnome/uf-view/ft.desktop
-share/gnome/uf-view/uf.desktop
-share/gnome/uf-view/pa.desktop
-share/gnome/uf-view/pvp.desktop
-share/gnome/uf-view/sf.desktop
+share/applications/uf-view.desktop
+share/pixmaps/uf-view/gnome-uf-view.png
+share/pixmaps/uf-view/uf-logo.png
+share/uf-view/at.desktop
+share/uf-view/ch.desktop
+share/uf-view/lg.desktop
+share/uf-view/ft.desktop
+share/uf-view/uf.desktop
+share/uf-view/pa.desktop
+share/uf-view/pvp.desktop
+share/uf-view/sf.desktop
 share/locale/az/LC_MESSAGES/uf-view.mo
 share/locale/be/LC_MESSAGES/uf-view.mo
 share/locale/cs/LC_MESSAGES/uf-view.mo
@@ -34,5 +34,6 @@ share/locale/sv/LC_MESSAGES/uf-view.mo
 share/locale/vi/LC_MESSAGES/uf-view.mo
 share/locale/wa/LC_MESSAGES/uf-view.mo
 share/locale/zh_CN/LC_MESSAGES/uf-view.mo
-@dirrm share/gnome/pixmaps/uf-view
-@dirrm share/gnome/uf-view
+@dirrm share/pixmaps/uf-view
+@dirrm share/uf-view
+@dirrmtry share/applications

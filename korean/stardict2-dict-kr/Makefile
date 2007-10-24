@@ -1,11 +1,13 @@
 # Ports collection makefile for:	stardict-dict-korean
 # Date created:				20 May 2007
 # Whom:					Yinghong Liu <relaxbsd@gmail.com>
+#
 # $FreeBSD$
 #
 
 PORTNAME=	stardict2-dict-kr
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	korean textproc
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	stardict
@@ -21,7 +23,7 @@ USE_BZIP2=	yes
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
-DICTDIR=	share/gnome/stardict/dic
+DICTDIR=	share/stardict/dic
 
 DICTIONARIES=	GPL_korean-russian-dic Hanja_KoreanHanzi_Dic KoreanAnimalMedicalDic \
 		KoreanDic KoreanEnglishDic KoreanLawDic KoreanMedicalDic quick_eng-kor

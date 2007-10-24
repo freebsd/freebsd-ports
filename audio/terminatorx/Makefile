@@ -3,10 +3,11 @@
 # Whom:				Tilman Linneweh <arved@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/audio/terminatorx/Makefile,v 1.6 2007/08/04 03:51:28 marcus Exp $
 
 PORTNAME=	terminatorx
 PORTVERSION=	3.82
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://terminatorx.org/dist/
 DISTNAME=	terminatorX-${PORTVERSION}
@@ -15,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime audio synthesizer that allows you to "scratch" on audio data
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
-		scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+		rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		jack.0:${PORTSDIR}/audio/jack
@@ -78,11 +79,11 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/terminatorX.1 ${MANPREFIX}/man/man1
 .for file in terminatorX-app.png terminatorX-mime.png
 	${INSTALL_DATA} ${WRKSRC}/gnome-support/${file} \
-		${PREFIX}/share/gnome/pixmaps
+		${PREFIX}/share/pixmaps
 .endfor
 .for file in terminatorX.mime terminatorX.keys
 	${INSTALL_DATA} ${WRKSRC}/gnome-support/${file} \
-		${PREFIX}/share/gnome/mime-info
+		${PREFIX}/share/mime-info
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/gnome-support/terminatorX.desktop \
 		${PREFIX}/share/gnome/apps/Multimedia
@@ -92,9 +93,9 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/gnome/help/terminatorX/C/figures
 	${INSTALL_DATA} ${WRKSRC}/doc/terminatorX-manual/C/figures/signalflow.png \
 		${PREFIX}/share/gnome/help/terminatorX/C/figures
-	@${MKDIR} ${PREFIX}/share/gnome/omf/terminatorX
+	@${MKDIR} ${PREFIX}/share/omf/terminatorX
 	${INSTALL_DATA} ${WRKSRC}/doc/terminatorX-manual/C/terminatorX-manual-C.omf \
-		${PREFIX}/share/gnome/omf/terminatorX/terminatorX-C.omf
-	@scrollkeeper-install -q ${PREFIX}/share/gnome/omf/terminatorX/terminatorX-C.omf 2>/dev/null || ${TRUE}
+		${PREFIX}/share/omf/terminatorX/terminatorX-C.omf
+	@scrollkeeper-install -q ${PREFIX}/share/omf/terminatorX/terminatorX-C.omf 2>/dev/null || ${TRUE}
 
 .include <bsd.port.post.mk>

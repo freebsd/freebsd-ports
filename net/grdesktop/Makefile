@@ -7,7 +7,7 @@
 
 PORTNAME=	grdesktop
 PORTVERSION=	0.23
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,6 +32,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^\(GETTEXT_PACKAGE =\).*|\1 grdesktop|' ${WRKSRC}/po/Makefile.in.in
 
 post-install:
-	@${INSTALL_DATA} ${PREFIX}/share/gnome/pixmaps/grdesktop/icon.png ${PREFIX}/share/gnome/pixmaps/grdesktop.png
+	@${INSTALL_DATA} ${PREFIX}/share/pixmaps/grdesktop/icon.png ${PREFIX}/share/pixmaps/grdesktop.png
 
 .include <bsd.port.mk>

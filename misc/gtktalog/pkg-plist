@@ -11,53 +11,53 @@ lib/gtktalog/mpeginfo
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 share/gnome/apps/Applications/gtktalog.desktop
-share/gnome/gtktalog/gtktalog.cf
-share/gnome/gtktalog/icons/c.xpm
-share/gnome/gtktalog/icons/cat.xpm
-share/gnome/gtktalog/icons/cpp.xpm
-share/gnome/gtktalog/icons/deb.xpm
-share/gnome/gtktalog/icons/default_dir.xpm
-share/gnome/gtktalog/icons/default_disk.xpm
-share/gnome/gtktalog/icons/default_file.xpm
-share/gnome/gtktalog/icons/default_opened_dir.xpm
-share/gnome/gtktalog/icons/default_opened_disk.xpm
-share/gnome/gtktalog/icons/default_opened_vfs.xpm
-share/gnome/gtktalog/icons/default_unreadable.xpm
-share/gnome/gtktalog/icons/default_vfs.xpm
-share/gnome/gtktalog/icons/doc.xpm
-share/gnome/gtktalog/icons/file.xpm
-share/gnome/gtktalog/icons/gz.xpm
-share/gnome/gtktalog/icons/h.xpm
-share/gnome/gtktalog/icons/html.xpm
-share/gnome/gtktalog/icons/image.xpm
-share/gnome/gtktalog/icons/java.xpm
-share/gnome/gtktalog/icons/logo.xpm
-share/gnome/gtktalog/icons/movie.xpm
-share/gnome/gtktalog/icons/mp3.xpm
-share/gnome/gtktalog/icons/pdf.xpm
-share/gnome/gtktalog/icons/rpm.xpm
-share/gnome/gtktalog/icons/so.xpm
-share/gnome/gtktalog/icons/son.xpm
-share/gnome/gtktalog/icons/txt.xpm
-share/gnome/gtktalog/xpm/add.xpm
-share/gnome/gtktalog/xpm/exit.xpm
-share/gnome/gtktalog/xpm/find.xpm
-share/gnome/gtktalog/xpm/help.xpm
-share/gnome/gtktalog/xpm/new.xpm
-share/gnome/gtktalog/xpm/off.xpm
-share/gnome/gtktalog/xpm/on.xpm
-share/gnome/gtktalog/xpm/open.xpm
-share/gnome/gtktalog/xpm/report.xpm
-share/gnome/gtktalog/xpm/save.xpm
-share/gnome/gtktalog/xpm/setup__Disk_setup.xpm
-share/gnome/gtktalog/xpm/setup__General_options.xpm
-share/gnome/gtktalog/xpm/setup__Information_plugins.xpm
-share/gnome/gtktalog/xpm/setup__LoadSave_options.xpm
-share/gnome/gtktalog/xpm/setup__MIME_type_icons.xpm
-share/gnome/gtktalog/xpm/setup__MIME_types_to_skip_during_a_scan.xpm
-share/gnome/gtktalog/xpm/setup__Scan_mime_types.xpm
-share/gnome/gtktalog/xpm/setup__Scan_options.xpm
-share/gnome/gtktalog/xpm/setup__Virtual_File_Systems.xpm
+%%DATADIR%%/gtktalog.cf
+%%DATADIR%%/icons/c.xpm
+%%DATADIR%%/icons/cat.xpm
+%%DATADIR%%/icons/cpp.xpm
+%%DATADIR%%/icons/deb.xpm
+%%DATADIR%%/icons/default_dir.xpm
+%%DATADIR%%/icons/default_disk.xpm
+%%DATADIR%%/icons/default_file.xpm
+%%DATADIR%%/icons/default_opened_dir.xpm
+%%DATADIR%%/icons/default_opened_disk.xpm
+%%DATADIR%%/icons/default_opened_vfs.xpm
+%%DATADIR%%/icons/default_unreadable.xpm
+%%DATADIR%%/icons/default_vfs.xpm
+%%DATADIR%%/icons/doc.xpm
+%%DATADIR%%/icons/file.xpm
+%%DATADIR%%/icons/gz.xpm
+%%DATADIR%%/icons/h.xpm
+%%DATADIR%%/icons/html.xpm
+%%DATADIR%%/icons/image.xpm
+%%DATADIR%%/icons/java.xpm
+%%DATADIR%%/icons/logo.xpm
+%%DATADIR%%/icons/movie.xpm
+%%DATADIR%%/icons/mp3.xpm
+%%DATADIR%%/icons/pdf.xpm
+%%DATADIR%%/icons/rpm.xpm
+%%DATADIR%%/icons/so.xpm
+%%DATADIR%%/icons/son.xpm
+%%DATADIR%%/icons/txt.xpm
+%%DATADIR%%/xpm/add.xpm
+%%DATADIR%%/xpm/exit.xpm
+%%DATADIR%%/xpm/find.xpm
+%%DATADIR%%/xpm/help.xpm
+%%DATADIR%%/xpm/new.xpm
+%%DATADIR%%/xpm/off.xpm
+%%DATADIR%%/xpm/on.xpm
+%%DATADIR%%/xpm/open.xpm
+%%DATADIR%%/xpm/report.xpm
+%%DATADIR%%/xpm/save.xpm
+%%DATADIR%%/xpm/setup__Disk_setup.xpm
+%%DATADIR%%/xpm/setup__General_options.xpm
+%%DATADIR%%/xpm/setup__Information_plugins.xpm
+%%DATADIR%%/xpm/setup__LoadSave_options.xpm
+%%DATADIR%%/xpm/setup__MIME_type_icons.xpm
+%%DATADIR%%/xpm/setup__MIME_types_to_skip_during_a_scan.xpm
+%%DATADIR%%/xpm/setup__Scan_mime_types.xpm
+%%DATADIR%%/xpm/setup__Scan_options.xpm
+%%DATADIR%%/xpm/setup__Virtual_File_Systems.xpm
 share/gnome/help/gtktalog/C/book1.html
 share/gnome/help/gtktalog/C/c1019.html
 share/gnome/help/gtktalog/C/c114.html
@@ -152,7 +152,7 @@ share/gnome/help/gtktalog/fr/x779.html
 share/gnome/help/gtktalog/fr/x835.html
 share/gnome/help/gtktalog/fr/x846.html
 share/gnome/help/gtktalog/fr/x947.html
-share/gnome/pixmaps/gtktalog.png
+share/pixmaps/gtktalog.png
 %%NLS%%share/locale/ca/LC_MESSAGES/gtktalog.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gtktalog.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gtktalog.mo
@@ -171,7 +171,7 @@ share/gnome/pixmaps/gtktalog.png
 @dirrm share/gnome/help/gtktalog/fr
 @dirrm share/gnome/help/gtktalog/C
 @dirrm share/gnome/help/gtktalog
-@dirrm share/gnome/gtktalog/xpm
-@dirrm share/gnome/gtktalog/icons
-@dirrm share/gnome/gtktalog
+@dirrm %%DATADIR%%/xpm
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
 @dirrm lib/gtktalog

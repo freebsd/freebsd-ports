@@ -7,7 +7,7 @@
 
 PORTNAME=	gnoemoe
 PORTVERSION=	0.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://www.icecrew.nl/software/gnoemoe/download/
 

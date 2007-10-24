@@ -3,12 +3,12 @@
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
-#    $MCom: ports/net/crescendo/Makefile,v 1.2 2006/10/07 16:29:01 mezz Exp $
+#   $MCom: ports/net/crescendo/Makefile,v 1.6 2007/05/30 18:26:15 mezz Exp $
 #
 
 PORTNAME=	crescendo
 PORTVERSION=	1.1.7
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	net gnome
 # Master Site broken
 #MASTER_SITES=	http://crescendo.lyrical.net/files/
@@ -27,7 +27,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CFLAGS+=	-g
 PLIST_SUB=	DOCDIR=share/doc/${PORTNAME}
-MODIFY=		Makefile.in data/Makefile.in
 
 USE_XLIB=	yes
 USE_GNOME=	gnomelibs
@@ -37,13 +36,6 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|txtOutput|txtNotepadOutput|g' \
 		${WRKSRC}/src/notepad.c
-
-pre-patch:
-.for i in ${MODIFY}
-	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
-	${SED} -e 's=$$(prefix)/share/=$$(datadir)/gnome/=g' \
-		${WRKSRC}/${i}.sed > ${WRKSRC}/${i}
-.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)

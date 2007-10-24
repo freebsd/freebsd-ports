@@ -5,7 +5,7 @@
  SUBDIRS = macros intl po pixmaps src doc
  
 +.ifdef HAVE_GNOME
- sysdir   = $(datadir)/apps/Applications
+ sysdir   = $(datadir)/gnome/apps/Applications
  sys_DATA = gicq.desktop
 +.endif
  

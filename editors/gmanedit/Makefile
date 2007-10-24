@@ -7,7 +7,7 @@
 
 PORTNAME=	gmanedit
 PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors gnome
 MASTER_SITES=	http://gmanedit.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -28,9 +28,12 @@ ALL_TARGET=	clean all
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/config.cache
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${RM} -f
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+		 s|PACKAGE_PIXMAPS_DIR=".*/pixmaps|PACKAGE_PIXMAPS_DIR="${PREFIX}/share/pixmaps|g' \
+		 	${WRKSRC}/configure
 
 .include <bsd.port.mk>

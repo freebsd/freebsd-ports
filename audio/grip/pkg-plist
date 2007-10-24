@@ -1,5 +1,5 @@
 bin/grip
-share/gnome/applications/grip.desktop
+share/applications/grip.desktop
 share/gnome/help/grip/C/cdconfig.png
 share/gnome/help/grip/C/cdplayer.png
 share/gnome/help/grip/C/cdplayersmall.png
@@ -48,7 +48,7 @@ share/gnome/help/grip/C/smile8.png
 share/gnome/help/grip/C/stop.png
 share/gnome/help/grip/C/trkedit.png
 share/gnome/help/grip/C/volume.png
-share/gnome/pixmaps/gripicon.png
+share/pixmaps/gripicon.png
 share/locale/be/LC_MESSAGES/grip-2.2.mo
 share/locale/bg/LC_MESSAGES/grip-2.2.mo
 share/locale/ca/LC_MESSAGES/grip-2.2.mo
@@ -67,3 +67,4 @@ share/locale/zh_TW/LC_MESSAGES/grip-2.2.mo
 @dirrm share/gnome/help/grip
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/applications

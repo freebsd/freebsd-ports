@@ -7,6 +7,7 @@
 
 PORTNAME=	scim
 PORTVERSION=	1.4.7
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
@@ -32,11 +33,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 post-patch:
-	${REINPLACE_CMD} 's|$$(datadir)/pixmaps|$$(prefix)/share/gnome/pixmaps|' \
-			${WRKSRC}/data/pixmaps/Makefile.in
-	${REINPLACE_CMD} -e 's|$$(datadir)/app|$$(prefix)/share/gnome/app| ; \
-		 s|$$(datadir)/control|$$(prefix)/share/gnome/control| ; \
-		 /^scim_setup_LDFLAGS/s|=|= ${PTHREAD_LIBS}|' \
+	${REINPLACE_CMD} -e '/^scim_setup_LDFLAGS/s|=|= ${PTHREAD_LIBS}|' \
 			${WRKSRC}/extras/setup/Makefile.in
 
 post-install:

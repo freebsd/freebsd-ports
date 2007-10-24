@@ -8,7 +8,7 @@
 
 PORTNAME=	GSubEdit
 PORTVERSION=	0.4.p1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -36,7 +36,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 # prefix safeness for pixmaps
 	@${REINPLACE_CMD} -E -e \
-		's|^(packagepixmapsdir[[:space:]]*=).*$$|\1share/gnome/pixmaps/\$${PACKAGE}|' \
+		's|^(packagepixmapsdir[[:space:]]*=).*$$|\1share/pixmaps/\$${PACKAGE}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
 # install neither charset.alias nor locale.alias. Therefore, do not
 # build distfiles' gettext

@@ -3,12 +3,12 @@
 # Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/x11-themes/gtk-milk-theme/Makefile,v 1.2 2006/09/22 19:53:01 mezz Exp $
+#   $MCom: ports/x11-themes/gtk-milk-theme/Makefile,v 1.4 2007/08/07 04:37:40 mezz Exp $
 #
 
 PORTNAME=	milk
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.users.monornet.hu/linux/gtk2/oldies/
 PKGNAMEPREFIX?=	${TYPE}-
@@ -30,7 +30,7 @@ THEME_DIR=	${PREFIX}/share/themes/${THEME_NAME}
 PLIST_SUB+=	GTK20="" METACITY="@comment "
 USE_GNOME=	gtk20
 .else	# metacity
-THEME_DIR=	${PREFIX}/share/gnome/themes/${THEME_NAME}
+THEME_DIR=	${PREFIX}/share/themes/${THEME_NAME}
 PLIST_SUB+=	GTK20="@comment " METACITY=""
 USE_GNOME=	gnomehier
 .endif

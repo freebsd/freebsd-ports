@@ -17,7 +17,7 @@ lib/muine/plugins/TrayIcon.dll
 libdata/pkgconfig/muine-dbus.pc
 libdata/pkgconfig/muine-plugin.pc
 share/dbus-1/services/org.gnome.Muine.service
-share/gnome/applications/muine.desktop
+share/applications/muine.desktop
 share/icons/hicolor/16x16/apps/muine.png
 share/icons/hicolor/22x22/apps/muine.png
 share/icons/hicolor/24x24/apps/muine.png
@@ -68,3 +68,4 @@ share/locale/vi/LC_MESSAGES/muine.mo
 share/locale/zh_CN/LC_MESSAGES/muine.mo
 @dirrmtry lib/muine/plugins
 @dirrmtry lib/muine
+@dirrmtry share/applications

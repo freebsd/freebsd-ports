@@ -3,11 +3,12 @@
 # Whom:                saper@system.pl
 #
 # $FreeBSD$
+#   $MCom: ports/graphics/dia/Makefile,v 1.16 2007/10/11 02:49:12 mezz Exp $
 #
 
 PORTNAME=	dia
 DISTVERSION=	0.96.1
-PORTREVISION=	1
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -49,9 +50,15 @@ PLIST_SUB=	PYTHON:="@comment "
 USE_GNOME+=		libgnomeui
 CONFIGURE_ARGS+=	--enable-gnome --enable-bonobo
 PKGNAMESUFFIX=		-gnome
-.else
+GNOME_ENABLED=		yes
+.endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/lib/intl.c
+	@${REINPLACE_CMD} -e 's|[(]pkgdatadir[)]/help|(datadir)/gnome/help/dia|g' \
+		${WRKSRC}/doc/Makefile.in
+.ifndef (GNOME_ENABLED)
 	@${FIND} ${WRKSRC} -name Makefile.in | \
 		${XARGS} ${REINPLACE_CMD} -e \
 		's,\(^GTK_LIBS.*\),\1 ${PTHREAD_LIBS}, ; \
@@ -64,7 +71,7 @@ pre-configure:
 		${WRKSRC}/configure
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/dia.xpm ${PREFIX}/share/gnome/dia/
+	@${INSTALL_DATA} ${WRKSRC}/dia.xpm ${PREFIX}/share/dia/
 	@-update-desktop-database
 
 .include <bsd.port.post.mk>

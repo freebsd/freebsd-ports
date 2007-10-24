@@ -31,24 +31,24 @@ lib/libguilezvt.a
 lib/libguilezvt.la
 lib/libguilezvt.so
 lib/libguilezvt.so.0
-share/gnome/guile-gnome/bonobo.defs
-share/gnome/guile-gnome/ghttp.defs
-share/gnome/guile-gnome/gnome.defs
-share/gnome/guile-gnome/gnorba.defs
-share/gnome/guile-gnome/gtkhtml.defs
-share/gnome/guile-gnome/zvt.defs
-share/gnome/guile-gtk/gdkpixbuf.defs
-share/gnome/guile-gtk/libglade.defs
-share/gnome/guile/gnome/bonobo.scm
-share/gnome/guile/gnome/ghttp.scm
-share/gnome/guile/gnome/gnome.scm
-share/gnome/guile/gnome/gnorba.scm
-share/gnome/guile/gnome/zvt.scm
-share/gnome/guile/gtk/gdkpixbuf.scm
-share/gnome/guile/gtk/gtkhtml.scm
-share/gnome/guile/gtk/libglade.scm
-@dirrm share/gnome/guile/gtk
-@dirrm share/gnome/guile/gnome
-@dirrm share/gnome/guile
-@dirrm share/gnome/guile-gtk
-@dirrm share/gnome/guile-gnome
+share/guile-gnome/bonobo.defs
+share/guile-gnome/ghttp.defs
+share/guile-gnome/gnome.defs
+share/guile-gnome/gnorba.defs
+share/guile-gnome/gtkhtml.defs
+share/guile-gnome/zvt.defs
+share/guile-gtk/gdkpixbuf.defs
+share/guile-gtk/libglade.defs
+share/guile/gnome/bonobo.scm
+share/guile/gnome/ghttp.scm
+share/guile/gnome/gnome.scm
+share/guile/gnome/gnorba.scm
+share/guile/gnome/zvt.scm
+share/guile/gtk/gdkpixbuf.scm
+share/guile/gtk/gtkhtml.scm
+share/guile/gtk/libglade.scm
+@dirrm share/guile/gtk
+@dirrm share/guile/gnome
+@dirrm share/guile
+@dirrm share/guile-gtk
+@dirrm share/guile-gnome

@@ -3,10 +3,11 @@
 # Whom:                Dominique Goncalves <dominique.goncalves@gmail.com>
 #
 # $FreeBSD$
+#
 
 PORTNAME=		gnomebaker
 PORTVERSION=		0.6.1
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		sysutils gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomebaker
@@ -37,12 +38,6 @@ RUN_DEPENDS+=		cdrdao:${PORTSDIR}/sysutils/cdrdao
 .if defined(WITH_DVD)
 RUN_DEPENDS+=		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|docdir = $(datadir)/gnome/help/$(docname)/$(lang)|docdir = $(datadir)/help/$(docname)/$(lang)|' \
-		${WRKSRC}/help/C/Makefile.in
-	@${REINPLACE_CMD} -e 's|Icon=@prefix@/share/gnomebaker/gnomebaker-48.png|Icon=@prefix@/share/gnome/gnomebaker/gnomebaker-48.png|' \
-		${WRKSRC}/gnomebaker.desktop.in
 
 post-install:
 	@-update-desktop-database

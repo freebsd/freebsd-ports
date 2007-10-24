@@ -10,7 +10,7 @@ diff -ur ../gcipher-1.0.orig/src/gcipher ./src/gcipher
  # Edit the path below if you need to port GCipher.
  import sys
 -# sys.path.append("/usr/share/gcipher/lib")
-+sys.path.append("/usr/X11R6/share/gnome/gcipher/lib")
++sys.path.append("%%PREFIX%%/share/gcipher/lib")
  
  from os import environ 
  from os.path import join

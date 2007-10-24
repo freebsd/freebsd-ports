@@ -7,7 +7,7 @@
 
 PORTNAME=	libassetml
 PORTVERSION=	1.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ofset
@@ -31,6 +31,6 @@ CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
 INFO=	libassetml
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/gnome/assetml
+	@${MKDIR} ${PREFIX}/share/assetml
 
 .include <bsd.port.mk>

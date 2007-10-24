@@ -7,6 +7,7 @@
 
 PORTNAME=	icewm
 PORTVERSION=	1.2.32
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
@@ -101,8 +102,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		's|/usr/share/control|${LOCALBASE}/share/gnome/control|g ; \
-		 s|/usr/share/app|${LOCALBASE}/share/gnome/app|g ; \
+		's|/usr/share/control|${LOCALBASE}/share/control|g ; \
+		 s|/usr/share/app|${LOCALBASE}/share/app|g ; \
 		 s|/usr/share/gnome|${LOCALBASE}/share/gnome|g' \
 		 ${WRKSRC}/src/gnome2.cc
 

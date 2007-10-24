@@ -7,7 +7,7 @@
 
 PORTNAME=	countdown
 PORTVERSION=	0.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -23,7 +23,7 @@ USE_XLIB=	yes
 USE_PYTHON=	yes
 
 NAME=		Countdown
-DATADIR=	${PREFIX}/share/gnome
+DATADIR=	${PREFIX}/share
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-build:

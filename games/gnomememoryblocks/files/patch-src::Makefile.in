@@ -7,8 +7,8 @@ $FreeBSD$
  
  SUBDIRS = animation-engines
  
--INCLUDES = -I$(top_srcdir) -I$(includedir) $(GNOME_INCLUDEDIR)            -DG_LOG_DOMAIN=\"GnomeMemBlocks\" -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"           -I../intl -I$(srcdir) $(GDK_PIXBUF_CFLAGS)
-+INCLUDES = $(GDK_PIXBUF_INCS) -I$(top_srcdir) -I$(includedir) $(GNOME_INCLUDEDIR)            -DG_LOG_DOMAIN=\"GnomeMemBlocks\" -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"           -I../intl -I$(srcdir) $(GDK_PIXBUF_CFLAGS)
+-INCLUDES = -I$(top_srcdir) -I$(includedir) $(GNOME_INCLUDEDIR)            -DG_LOG_DOMAIN=\"GnomeMemBlocks\" -DGNOMELOCALEDIR=\""$(datadir)/locale"\"           -I../intl -I$(srcdir) $(GDK_PIXBUF_CFLAGS)
++INCLUDES = $(GDK_PIXBUF_INCS) -I$(top_srcdir) -I$(includedir) $(GNOME_INCLUDEDIR)            -DG_LOG_DOMAIN=\"GnomeMemBlocks\" -DGNOMELOCALEDIR=\""$(datadir)/locale"\"           -I../intl -I$(srcdir) $(GDK_PIXBUF_CFLAGS)
  
  
  bin_PROGRAMS = gnome-memblocks

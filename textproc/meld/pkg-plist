@@ -68,17 +68,17 @@ lib/meld/vc/tla.pyo
 lib/meld/vcview.py
 lib/meld/vcview.pyc
 lib/meld/vcview.pyo
-share/gnome/application-registry/meld.applications
-share/gnome/applications/meld.desktop
+share/application-registry/meld.applications
+share/applications/meld.desktop
 share/gnome/help/meld/C/figures/dirdiff.png
 share/gnome/help/meld/C/figures/filediff.png
 share/gnome/help/meld/C/meld.xml
 share/gnome/help/meld/es/figures/dirdiff.png
 share/gnome/help/meld/es/figures/filediff.png
 share/gnome/help/meld/es/meld.xml
-share/gnome/omf/meld/meld-C.omf
-share/gnome/omf/meld/meld-es.omf
-share/gnome/pixmaps/meld.png
+share/omf/meld/meld-C.omf
+share/omf/meld/meld-es.omf
+share/pixmaps/meld.png
 share/locale/ar/LC_MESSAGES/meld.mo
 share/locale/bg/LC_MESSAGES/meld.mo
 share/locale/ca/LC_MESSAGES/meld.mo
@@ -144,7 +144,7 @@ share/locale/zh_TW/LC_MESSAGES/meld.mo
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrm share/gnome/omf/meld
+@dirrm share/omf/meld
 @dirrm share/gnome/help/meld/es/figures
 @dirrm share/gnome/help/meld/es
 @dirrm share/gnome/help/meld/C/figures
@@ -154,3 +154,4 @@ share/locale/zh_TW/LC_MESSAGES/meld.mo
 @dirrm %%DOCSDIR%%
 @dirrm lib/meld/vc
 @dirrm lib/meld
+@dirrmtry share/applications

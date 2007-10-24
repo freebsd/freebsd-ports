@@ -7,7 +7,7 @@
 
 PORTNAME=	screem
 PORTVERSION=	0.16.1
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -45,10 +45,10 @@ CONFIGURE_ARGS+=	--enable-enchant
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${DATADIRNAME}/$${PACKAGE}|$${DATADIRNAME}/gnome/$${PACKAGE}|g ; \
-		s|-DGNOME_DISABLE_DEPRECATED||g ; \
+	@${REINPLACE_CMD} -e 's|-DGNOME_DISABLE_DEPRECATED||g ; \
 		s|-DGNOMEUI_DISABLE_DEPRECATED||g ; \
 		s|-DGTK_DISABLE_DEPRECATED||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|\&\& make|\&\& $$(MAKE)|g' ${WRKSRC}/tests/Makefile.in
+	@${REINPLACE_CMD} -e 's|\&\& make|\&\& $$(MAKE)|g' \
+		${WRKSRC}/tests/Makefile.in
 
 .include <bsd.port.mk>

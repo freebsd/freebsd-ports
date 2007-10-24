@@ -7,7 +7,7 @@
 
 PORTNAME=	apwal
 PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://apwal.free.fr/download/
 
@@ -24,7 +24,8 @@ PLIST_FILES=	bin/apwal bin/apwal-editor
 
 post-patch:
 	@${CP} ${FILESDIR}/group_member.c ${WRKSRC}
-	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share/gnome|g' ${WRKSRC}/cereimg.c ${WRKSRC}/../example/apwalrc.xml
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
+		${WRKSRC}/cereimg.c ${WRKSRC}/../example/apwalrc.xml
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/apwal ${PREFIX}/bin

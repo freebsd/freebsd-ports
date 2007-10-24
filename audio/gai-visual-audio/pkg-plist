@@ -1,7 +1,7 @@
 bin/gai-va
 libdata/bonobo/servers/GNOME_gai-vaApplet.server
-share/gnome/pixmaps/gai-va-icon.png
-share/gnome/pixmaps/gai-va/va.png
-@dirrm share/gnome/pixmaps/gai-va
+share/pixmaps/gai-va-icon.png
+share/pixmaps/gai-va/va.png
+@dirrm share/pixmaps/gai-va
 @cwd %%X11BASE%%
 lib/xmms/Visualization/spec_plugin.so

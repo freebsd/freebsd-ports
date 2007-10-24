@@ -114,15 +114,3 @@
  
  
  
-@@ -26461,9 +26461,9 @@
- packagedatadir=share/${PACKAGE}
- packagedocdir=share/doc/${PACKAGE}
- 
--packagepixmapsdir=share/pixmaps/${PACKAGE}
-+packagepixmapsdir=share/gnome/pixmaps/${PACKAGE}
- packagehelpdir=share/gnome/help/${PACKAGE}
--packagemenudir=share/applications
-+packagemenudir=share/gnome/applications
- 
- NO_PREFIX_PACKAGE_DATA_DIR="${packagedatadir}"
- 

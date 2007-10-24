@@ -1,9 +1,9 @@
 bin/gnome-find
 share/gnome/apps/Utilities/gnome-find.desktop
-share/gnome/gnome-find/gnome-find.glade
-share/gnome/gnome-find/gnome-find.xpm
-share/gnome/gnome-find/multiple.xpm
-share/gnome/gnome-find/shell.xpm
+share/gnome-find/gnome-find.glade
+share/gnome-find/gnome-find.xpm
+share/gnome-find/multiple.xpm
+share/gnome-find/shell.xpm
 share/gnome/help/gnome-find/C/bugreport.html
 share/gnome/help/gnome-find/C/contacting.html
 share/gnome/help/gnome-find/C/copyright.html
@@ -31,4 +31,4 @@ share/locale/sv/LC_MESSAGES/gnome-find.mo
 share/locale/uk/LC_MESSAGES/gnome-find.mo
 @dirrm share/gnome/help/gnome-find/C
 @dirrm share/gnome/help/gnome-find
-@dirrm share/gnome/gnome-find
+@dirrm share/gnome-find

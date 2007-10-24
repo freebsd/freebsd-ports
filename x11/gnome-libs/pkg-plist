@@ -382,30 +382,30 @@ share/doc/libart/problems.html
 share/doc/libart/sample-display.html
 share/doc/libart/sample.html
 share/doc/libart/x35.html
-share/gnome/doc/gnome-doc
-share/gnome/doc/gnome-doc.1
-share/gnome/doc/gnome-doc.el
-share/gnome/doc/gnome-mkstub.1
-share/gnome/doc/mkstub
-share/gnome/gtkrc
-share/gnome/gtkrc.el
-share/gnome/gtkrc.eo
-share/gnome/gtkrc.he
-share/gnome/gtkrc.hy
-share/gnome/gtkrc.iso88592
-share/gnome/gtkrc.iso88595
-share/gnome/gtkrc.ja
-share/gnome/gtkrc.ka_GE.georgianacademy
-share/gnome/gtkrc.ka_GE.georgianps
-share/gnome/gtkrc.ko
-share/gnome/gtkrc.ru
-share/gnome/gtkrc.th
-share/gnome/gtkrc.tr
-share/gnome/gtkrc.uk
-share/gnome/gtkrc.vi_VN.tcvn
-share/gnome/gtkrc.vi_VN.viscii
-share/gnome/gtkrc.zh_CN
-share/gnome/gtkrc.zh_TW.Big5
+share/doc/gnome-doc
+share/doc/gnome-doc.1
+share/doc/gnome-doc.el
+share/doc/gnome-mkstub.1
+share/doc/mkstub
+share/gtkrc
+share/gtkrc.el
+share/gtkrc.eo
+share/gtkrc.he
+share/gtkrc.hy
+share/gtkrc.iso88592
+share/gtkrc.iso88595
+share/gtkrc.ja
+share/gtkrc.ka_GE.georgianacademy
+share/gtkrc.ka_GE.georgianps
+share/gtkrc.ko
+share/gtkrc.ru
+share/gtkrc.th
+share/gtkrc.tr
+share/gtkrc.uk
+share/gtkrc.vi_VN.tcvn
+share/gtkrc.vi_VN.viscii
+share/gtkrc.zh_CN
+share/gtkrc.zh_TW.Big5
 share/gnome/help/gnome-dev-info/C/addauth.html
 share/gnome/help/gnome-dev-info/C/altpol.html
 share/gnome/help/gnome-dev-info/C/arch.html
@@ -485,25 +485,25 @@ share/gnome/help/gnome-dev-info/C/x1453.html
 share/gnome/help/gnome-dev-info/C/x2161.html
 share/gnome/help/gnome-dev-info/C/x2674.html
 share/gnome/help/gnome-dev-info/C/x671.html
-share/gnome/idl/GnomeObject.idl
-share/gnome/idl/Table.idl
-share/gnome/idl/desktop-editor.idl
-share/gnome/idl/desktop-textviewer.idl
-share/gnome/idl/gnome-factory.idl
-share/gnome/idl/gnome-unknown.idl
-share/gnome/idl/name-service.idl
-share/gnome/mime-info/gnome.mime
-share/gnome/pixmaps/calculator-font.png
-share/gnome/pixmaps/gnome-default-dlg.png
-share/gnome/pixmaps/gnome-error.png
-share/gnome/pixmaps/gnome-info.png
-share/gnome/pixmaps/gnome-question.png
-share/gnome/pixmaps/gnome-warning.png
-share/gnome/pixmaps/no.xpm
-share/gnome/pixmaps/yes.xpm
-share/gnome/type-convert/gnome-make-postscript-mimes
-share/gnome/type-convert/postscript.convert
-share/gnome/type-convert/type.convert
+share/idl/GnomeObject.idl
+share/idl/Table.idl
+share/idl/desktop-editor.idl
+share/idl/desktop-textviewer.idl
+share/idl/gnome-factory.idl
+share/idl/gnome-unknown.idl
+share/idl/name-service.idl
+share/mime-info/gnome.mime
+share/pixmaps/calculator-font.png
+share/pixmaps/gnome-default-dlg.png
+share/pixmaps/gnome-error.png
+share/pixmaps/gnome-info.png
+share/pixmaps/gnome-question.png
+share/pixmaps/gnome-warning.png
+share/pixmaps/no.xpm
+share/pixmaps/yes.xpm
+share/type-convert/gnome-make-postscript-mimes
+share/type-convert/postscript.convert
+share/type-convert/type.convert
 share/locale/az/LC_MESSAGES/gnome-libs.mo
 share/locale/ca/LC_MESSAGES/gnome-libs.mo
 share/locale/cs/LC_MESSAGES/gnome-libs.mo
@@ -546,10 +546,9 @@ share/locale/vi/LC_MESSAGES/gnome-libs.mo
 share/locale/wa/LC_MESSAGES/gnome-libs.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-libs.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-libs.mo
-@dirrm share/gnome/type-convert
+@dirrm share/type-convert
 @dirrm share/gnome/help/gnome-dev-info/C
 @dirrm share/gnome/help/gnome-dev-info
-@dirrm share/gnome/doc
 @dirrm share/doc/libart
 @dirrm %%DOCSDIR%%/zvt
 @dirrm %%DOCSDIR%%/gnorba
