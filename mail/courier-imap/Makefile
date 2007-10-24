@@ -143,6 +143,9 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ -rpath=:${LOCALBASE}/lib/courier-authlib|' \
 		${WRKSRC}/imap/Makefile.in
+	@${REINPLACE_CMD} -e 's|TLS_PROTOCOL=SSL3|TLS_PROTOCOL=SSL23|g' \
+		${WRKSRC}/imap/pop3d-ssl.dist.in \
+		${WRKSRC}/imap/imapd-ssl.dist.in
 
 post-install:
 .for i in imapd pop3d
