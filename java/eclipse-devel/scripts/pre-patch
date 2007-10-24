@@ -61,7 +61,6 @@ prepare_files()
 
 	find ${WRKSRC} -name \*.so -delete
 	find ${WRKSRC} -name \*.so.\* -delete
-        #rm ${WRKSRC}/plugins/org.eclipse.platform/launchersrc.zip
 }
 #features/org.eclipse.platform.launchers/library/gtk/make_linux.mak
 COPY_LIST="

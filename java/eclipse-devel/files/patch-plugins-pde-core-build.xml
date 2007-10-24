@@ -1,5 +1,5 @@
---- plugins/org.eclipse.pde.core/build.xml.orig	2007-06-26 04:39:42.000000000 +0900
-+++ plugins/org.eclipse.pde.core/build.xml	2007-09-05 23:31:12.000000000 +0900
+--- plugins/org.eclipse.pde.core/build.xml.orig	2007-09-22 01:24:18.000000000 +0900
++++ plugins/org.eclipse.pde.core/build.xml      2007-10-10 22:28:24.000000000 +0900
 @@ -148,6 +148,10 @@
  			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.hpux.PA_RISC_1.0.0.v20060603/@dot"/>
  			<pathelement path="../org.eclipse.core.filesystem.linux.ppc/@dot"/>
@@ -12,9 +12,9 @@
  			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.linux.x86_1.1.0.v20070416/@dot"/>
  			<pathelement path="../org.eclipse.core.filesystem.linux.x86_64/@dot"/>
 @@ -204,6 +208,8 @@
- 			<pathelement path="${build.result.folder}/../org.eclipse.update.core_3.2.100.v20070615/bin/"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.update.core_3.2.101.R33x_v20070911/bin/"/>
  			<pathelement path="${build.result.folder}/../org.eclipse.update.core/@dot"/>
- 			<pathelement path="${build.result.folder}/../org.eclipse.update.core_3.2.100.v20070615/@dot"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.update.core_3.2.101.R33x_v20070911/@dot"/>
 +			<pathelement path="../org.eclipse.update.core.freebsd/@dot"/>
 +			<pathelement path="${build.result.folder}/../org.eclipse.update.core.freebsd_3.2.0.v20070615/@dot"/>
  			<pathelement path="../org.eclipse.update.core.linux/@dot"/>
@@ -32,9 +32,9 @@
  			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.linux.x86_1.1.0.v20070416/@dot"/>
  			<pathelement path="../org.eclipse.core.filesystem.linux.x86_64/@dot"/>
 @@ -392,6 +402,8 @@
- 			<pathelement path="${build.result.folder}/../org.eclipse.update.core_3.2.100.v20070615/bin/"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.update.core_3.2.101.R33x_v20070911/bin/"/>
  			<pathelement path="${build.result.folder}/../org.eclipse.update.core/@dot"/>
- 			<pathelement path="${build.result.folder}/../org.eclipse.update.core_3.2.100.v20070615/@dot"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.update.core_3.2.101.R33x_v20070911/@dot"/>
 +			<pathelement path="../org.eclipse.update.core.freebsd/@dot"/>
 +			<pathelement path="${build.result.folder}/../org.eclipse.update.core.freebsd_3.2.0.v20070615/@dot"/>
  			<pathelement path="../org.eclipse.update.core.linux/@dot"/>

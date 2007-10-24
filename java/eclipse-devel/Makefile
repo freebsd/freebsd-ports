@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	eclipse
-PORTVERSION=	3.3
+PORTVERSION=	3.3.1
 CATEGORIES=	java devel
-MASTER_SITES=	${MASTER_SITE_ECLIPSE:S|%SUBDIR%|R-${PORTVERSION}-200706251500|:S|$|:0|}/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/eclipse|:S|$|:1|}
-DISTFILES=	${PORTNAME}-sourceBuild-srcIncluded-${PORTVERSION}${EXTRACT_SUFX}:0 \
-		launchersrc${EXTRACT_SUFX}:1
+MASTER_SITES=	${MASTER_SITE_ECLIPSE}
+MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200709211145
+DISTNAME=	${PORTNAME}-sourceBuild-srcIncluded-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
@@ -108,8 +107,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%GECKO%%|${GECKO}|g' \
 		"${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh" \
 		"${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak"
-	@${RM} ${WRKSRC}/plugins/org.eclipse.platform/launchersrc${EXTRACT_SUFX}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/launchersrc${EXTRACT_SUFX} ${WRKSRC}/plugins/org.eclipse.platform/
 	@${RM} ${WRKSRC}/features/org.eclipse.platform/build.xml
 	@${CP} ${FILESDIR}/org.eclipse.platform-build.xml ${WRKSRC}/features/org.eclipse.platform/build.xml
 	@${RM} ${WRKSRC}/features/org.eclipse.rcp/build.xml
@@ -117,9 +114,7 @@ post-patch:
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
-	./build -os ${ECLIPSE_OS} -ws ${ECLIPSE_WS} -arch ${ECLIPSE_ARCH}  -compilelibs)
-	@${CP} ${WRKSRC}/launchertmp/library/${ECLIPSE_WS}/eclipse_1017a.so \
-	  ${WRKSRC}/eclipse/plugins/org.eclipse.equinox.launcher.${ECLIPSE_WS}.${ECLIPSE_OS}.${ECLIPSE_ARCH}_1.0.0.v20070606
+	./build -os ${ECLIPSE_OS} -ws ${ECLIPSE_WS} -arch ${ECLIPSE_ARCH} -compilelibs)
 
 do-install:
 	@${MKDIR} ${PORTDESTDIR}
@@ -137,11 +132,10 @@ do-install:
 	@${SED} \
 	  -e "s+%%ECLIPSE_HOME%%+${PORTDESTDIR}+g" \
 	  -e "s+%%PREFIX%%+${PREFIX}+g" \
-	  -e "s+/bin/eclipse+/bin/eclipse-europa+g" \
 	${FILESDIR}/eclipse.desktop > ${WRKSRC}/eclipse.desktop.tmp
 	${MKDIR} ${PREFIX}/share/applications/ || ${TRUE}
 	${INSTALL_DATA} ${WRKSRC}/eclipse.desktop.tmp ${PREFIX}/share/applications/${ECLIPSE}.desktop
-	${INSTALL_PROGRAM} ${WRKSRC}/launchertmp/eclipse ${PORTDESTDIR}/eclipse
+	${INSTALL_PROGRAM} ${WRKSRC}/features/org.eclipse.equinox.executable/library/gtk/eclipse ${PORTDESTDIR}/eclipse
 	@-update-desktop-database
 	@(cd ${WRKSRC}; ${FIND} -s eclipse -not -type d) \
 	  | ${SED} -e "s+^eclipse+${ECLIPSE}+g" >> ${TMPPLIST}

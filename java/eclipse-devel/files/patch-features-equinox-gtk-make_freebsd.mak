@@ -1,25 +1,14 @@
---- features/org.eclipse.equinox.executable/library/gtk/make_freebsd.mak.orig	2007-06-26 04:57:08.000000000 +0900
-+++ features/org.eclipse.equinox.executable/library/gtk/make_freebsd.mak	2007-08-26 18:26:22.000000000 +0900
-@@ -23,15 +23,15 @@
- # DEFAULT_WS      - the default value of the "-ws" switch
- # JAVA_HOME      - JAVA_HOME for jni headers      
- #default value for PROGRAM_OUTPUT
--ifeq ($(PROGRAM_OUTPUT),)
-+.ifeq ($(PROGRAM_OUTPUT),)
-   PROGRAM_OUTPUT=eclipse
--endif
-+.endif
- 
- PROGRAM_LIBRARY=$(PROGRAM_OUTPUT)_$(LIB_VERSION).so
- 
--ifeq ($(DEFAULT_JAVA),)
-+.ifeq ($(DEFAULT_JAVA),)
+--- features/org.eclipse.equinox.executable/library/gtk/make_freebsd.mak.orig	2007-10-11 15:42:00.000000000 +0900
++++ features/org.eclipse.equinox.executable/library/gtk/make_freebsd.mak	2007-10-11 15:57:13.000000000 +0900
+@@ -32,7 +32,7 @@
+ ifeq ($(DEFAULT_JAVA),)
    DEFAULT_JAVA=DEFAULT_JAVA_JNI
--endif
-+.endif
- 
+ endif
+-
++
  # Define the object modules to be compiled and flags.
  CC=gcc
+ MAIN_OBJS = eclipseMain.o
 @@ -41,11 +41,11 @@
  
  EXEC = $(PROGRAM_OUTPUT)
