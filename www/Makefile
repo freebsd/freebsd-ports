@@ -705,6 +705,7 @@
     SUBDIR += p5-HTML-Chunks
     SUBDIR += p5-HTML-Clean
     SUBDIR += p5-HTML-Diff
+    SUBDIR += p5-HTML-Display
     SUBDIR += p5-HTML-Element-Extended
     SUBDIR += p5-HTML-Element-Library
     SUBDIR += p5-HTML-Embperl
