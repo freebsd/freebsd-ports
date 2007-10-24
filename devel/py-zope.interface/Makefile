@@ -15,28 +15,16 @@ DISTNAME=	zope.interface-${PORTVERSION}
 MAINTAINER=	neal@nelson.name
 COMMENT=	Zope.interface package from Zope 3
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_NOEGGINFO=	yes
 PYDISTUTILS_PKGNAME=	zope.interface
-PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
-
-PYDISTUTILS_BUILD_TARGET=	bdist_egg
-PYDISTUTILS_INSTALL_TARGET=	easy_install
-PYDISTUTILS_INSTALLARGS=	-O 1 -N -S ${PYTHON_SITELIBDIR} ${WRKSRC}/dist/${PYZOPEINTERFACE_EGG}
-
-PYZOPEINTERFACE_EGG=	zope.interface-${PORTVERSION}-py${PYTHON_VER}-${OPSYS:L}-${OSRELEASE}-${ARCH}.egg
-
-PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PYZOPEINTERFACE_EGG=${PYZOPEINTERFACE_EGG} \
-		PYZOPEINTERFACE_EGG_VER="zope.interface==${PORTVERSION}"
+PYEASYINSTALL_ARCHDEP=	yes
 
 .include <bsd.port.pre.mk>
 
-OSRELEASE!=	/usr/bin/uname -r
+.if ${OSVERSION} < 600000
+MANUAL_PACKAGE_BUILD=	does not build in tinderbox environment
+.endif
 
 .include <bsd.port.post.mk>
