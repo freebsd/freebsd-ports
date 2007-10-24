@@ -8,7 +8,7 @@
 
 PORTNAME?=	gutenprint
 PORTVERSION=	5.1.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gimp-print
@@ -96,6 +96,8 @@ CONFIGURE_ARGS+=	--with-user-guide=no
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/lpstat|${LOCALBASE}/bin/lpstat|' \
+		${WRKSRC}/src/gutenprintui2/plist.c
 .if ${SLAVE_PORT}=="no" || ${GUT_SLAVE}!="cups"
 	@${REINPLACE_CMD} -e 's|cups	||' ${WRKSRC}/src/Makefile.in
 .endif
