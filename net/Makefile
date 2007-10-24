@@ -481,6 +481,7 @@
     SUBDIR += p5-Net-NBsocket
     SUBDIR += p5-Net-NIS
     SUBDIR += p5-Net-NIS-Listgroup
+    SUBDIR += p5-Net-OAuth
     SUBDIR += p5-Net-OpenDHT
     SUBDIR += p5-Net-OpenID-Consumer
     SUBDIR += p5-Net-Packet
