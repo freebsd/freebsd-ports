@@ -7,8 +7,8 @@
 -all: seehelp zxid zxidhlo zxidsimple zxlogview samlmod phpzxid javazxid
 +all: seehelp zxid zxidhlo zxidsimple zxlogview
  
- ZXIDREL=0.17
- ZXIDVERSION=0x000017
+ ZXIDREL=0.22
+ ZXIDVERSION=0x000022
  
  ### Where package is installed (use `make PREFIX=/your/path' to change)
 -PREFIX=/usr/local/zxid/$(ZXIDREL)
