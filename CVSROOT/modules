@@ -193,6 +193,7 @@ abs		ports/math/abs
 abuse		ports/games/abuse
 abuse_sdl	ports/games/abuse_sdl
 abyssws		ports/www/abyssws
+accerciser	ports/accessibility/accerciser
 accessibility_orca	ports/accessibility/orca
 accessx		ports/x11/accessx
 accrete		ports/astro/accrete
@@ -666,6 +667,10 @@ autotools	ports/devel/autotools
 autotrace	ports/graphics/autotrace
 autozen		ports/audio/autozen
 avahi		ports/net/avahi
+avahi-app	ports/net/avahi-app
+avahi-autoipd	ports/net/avahi-autoipd
+avahi-gtk	ports/net/avahi-gtk
+avahi-libdns	ports/net/avahi-libdns
 avahi-qt3	ports/net/avahi-qt3
 avahi-sharp	ports/net/avahi-sharp
 avalon-framework	ports/devel/avalon-framework
@@ -2681,6 +2686,7 @@ evolution-exchange	ports/mail/evolution-exchange
 evolution-gconf-tools	ports/devel/evolution-gconf-tools
 evolution-jescs		ports/deskutils/evolution-jescs
 evolution-sharp		ports/mail/evolution-sharp
+evolution-rss		ports/net/evolution-rss
 evolution-webcal	ports/www/evolution-webcal
 evolvotron	ports/graphics/evolvotron
 evq3		ports/games/evq3
@@ -3867,6 +3873,7 @@ gnome-cups-manager	ports/print/gnome-cups-manager
 gnome-db	ports/databases/gnome-db
 gnome-desktop	ports/x11/gnome-desktop
 gnome-desktop-reference	ports/x11/gnome-desktop-reference
+gnome-devel-docs	ports/misc/gnome-devel-docs
 gnome-doc-utils	ports/textproc/gnome-doc-utils
 gnome-font-sampler	ports/x11-fonts/gnome-font-sampler
 gnome-games	ports/games/gnome-games
@@ -3948,6 +3955,7 @@ gnome2-hacker-tools	ports/devel/gnome2-hacker-tools
 gnome2-lite	ports/x11/gnome2-lite
 gnome2-office	ports/editors/gnome2-office
 gnome2-power-tools	ports/x11/gnome2-power-tools
+gnome2-reference	ports/misc/gnome2-reference
 gnome_subr	ports/sysutils/gnome_subr
 gnomeattacks	ports/games/gnomeattacks
 gnomebaker	ports/sysutils/gnomebaker
@@ -4050,6 +4058,7 @@ gomoku.app	ports/games/gomoku.app
 gone		ports/misc/gone
 gonvert		ports/misc/gonvert
 gonzui		ports/devel/gonzui
+goobox		ports/audio/goobox
 goocanvas	ports/graphics/goocanvas
 google-ctemplate	ports/textproc/google-ctemplate
 google-earth	ports/astro/google-earth
@@ -4385,6 +4394,8 @@ gtksee		ports/graphics/gtksee
 gtksourceview	ports/x11-toolkits/gtksourceview
 gtksourceview-reference	ports/x11-toolkits/gtksourceview-reference
 gtksourceview-sharp	ports/x11-toolkits/gtksourceview-sharp
+gtksourceview2		ports/x11-toolkits/gtksourceview2
+gtksourceview2-reference	ports/x11-toolkits/gtksourceview2-reference
 gtkspell	ports/textproc/gtkspell
 gtkspell-reference	ports/textproc/gtkspell-reference
 gtksql		ports/databases/gtksql
@@ -13093,6 +13104,7 @@ py-gtk2		ports/x11-toolkits/py-gtk2
 py-gtkextra	ports/x11-toolkits/py-gtkextra
 py-gtkglext	ports/x11-toolkits/py-gtkglext
 py-gtkscintilla	ports/x11-toolkits/py-gtkscintilla
+py-gtksourceview	ports/x11-toolkits/py-gtksourceview
 py-gui		ports/x11-toolkits/py-gui
 py-hashlib	ports/security/py-hashlib
 py-html2text	ports/textproc/py-html2text
@@ -13778,6 +13790,7 @@ raproxy		ports/audio/raproxy
 raptor		ports/textproc/raptor
 raqdevil	ports/www/raqdevil
 rar		ports/archivers/rar
+rarian		ports/textproc/rarian
 rascal		ports/math/rascal
 rasmol		ports/biology/rasmol
 rast		ports/textproc/rast
