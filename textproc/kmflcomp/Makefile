@@ -7,6 +7,7 @@
 
 PORTNAME=	kmflcomp
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://anthesphoria.net/files/distribution/
@@ -19,7 +20,8 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Compiler of Keyman keyboard sources to use with SCIM KMFL IMEngine
 
-USE_BISON=	yes
+BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
+
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
