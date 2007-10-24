@@ -40,6 +40,12 @@ OPTIONS=	LARGEFILE	"Enable 64-bit file I/O support (BROKEN!)" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
+
 .if defined(WITH_LARGEFILE)
 CONFIGURE_ARGS+=	--enable-largefile
 BROKEN=		no expl(), logl(), nearbyintl(), et al
